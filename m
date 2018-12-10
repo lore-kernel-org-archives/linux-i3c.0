@@ -1,32 +1,32 @@
-From: bbrezillon@kernel.org (Boris Brezillon)
-Date: Fri, 7 Dec 2018 11:49:16 +0100
-Subject: [ANNOUNCE] Creation of the linux-i3c mailing list
-In-Reply-To: <20181207103704.GD1097@kunai>
-References: <20181205172048.4bc4d44c@bbrezillon> <20181207103704.GD1097@kunai>
-Message-ID: <20181207114916.13327aa5@bbrezillon>
+From: vitor.soares@synopsys.com (vitor)
+Date: Mon, 10 Dec 2018 19:21:37 +0000
+Subject: i3c_master_add_i3c_dev_locked() accept PID, BCR, DCR
+Message-ID: <fd731fb8-3b47-9364-baf7-da530bf9c786@synopsys.com>
 To: linux-i3c@lists.infradead.org
 List-Id: linux-i3c.lists.infradead.org
 
-On Fri, 7 Dec 2018 11:37:04 +0100
-Wolfram Sang <wsa@the-dreams.de> wrote:
+Hi,
 
-> > The I3C mailing has been created on infradead. Please use it instead of  
-> 
-> Thanks, Boris and good luck with the subsystem!
+The function bellow doesn't accept the PID, BCR and DCR captured
+during the ENTDAA.
 
-No problem, and thanks for your support.
+int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
+?? ??? ??? ??? ?? u8 addr)
+{
+?? ?struct i3c_device_info info = { .dyn_addr = addr };
 
-> 
-> > Cc-ing linux-i2c on your future I3C-related contributions.  
-> 
-> Well, if the I2C parts of I3C need to be discussed, then you are very
-> welcome, of course :)
 
-Absolutely.
+I would like to change it to received those parameters. Something like this:
 
-> 
-> Happy hacking,
+int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
+?? ??? ??? ??? ?? u64 pid, u8 bcr, u8 dcr, u8 addr)
+{
+?? ?struct i3c_device_info info = { .pid = pid,
+?? ??? ??? ??? ??? ?.bcr = bcr,
+?? ??? ??? ??? ??? ?.dcr = dcr,
+?? ??? ??? ??? ??? ?.dyn_addr = addr };
 
-Thanks,
+Do you agree?
 
-Boris
+Best regards,
+Vitor Soares
