@@ -1,61 +1,102 @@
-From: bbrezillon@kernel.org (Boris Brezillon)
-Date: Wed, 12 Dec 2018 10:09:53 +0100
-Subject: i3c_master_add_i3c_dev_locked() accept PID, BCR, DCR
-In-Reply-To: <E493F29A-767B-486F-8630-10200F0F54DD@cadence.com>
-References: <fd731fb8-3b47-9364-baf7-da530bf9c786@synopsys.com>
- <20181210204330.76e6b615@bbrezillon>
- <20181210211411.7f64f5cb@bbrezillon>
- <3f21dc46-97e1-1a64-a91b-07e623d82184@synopsys.com>
- <20181211125832.7a7b224f@bbrezillon>
- <ccf3667b-a491-759e-a476-e795df4ab9cb@synopsys.com>
- <20181211132103.34ae80c8@bbrezillon>
- <20181211132446.4d93fd10@bbrezillon>
- <ff58869b-acdd-28e4-0e89-72b46e54d5b9@synopsys.com>
- <AACD7E8D-80FA-453B-AB9E-9A0D84598123@cadence.com>
- <20181212092103.5f0f7217@bbrezillon>
- <4FE5C6B6-5235-4B45-B57E-61416203B7D5@cadence.com>
- <20181212095211.060a44a9@bbrezillon>
- <E493F29A-767B-486F-8630-10200F0F54DD@cadence.com>
-Message-ID: <20181212100953.11d7cbdf@bbrezillon>
-To: linux-i3c@lists.infradead.org
-List-Id: linux-i3c.lists.infradead.org
+Return-Path: <SRS0=IOfj=OV=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+	aws-us-west-2-korg-lkml-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.2 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,MAILING_LIST_MULTI,SPF_PASS,URIBL_BLOCKED autolearn=ham
+	autolearn_force=no version=3.4.0
+Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 2DD91C65BAF
+	for <linux-i3c@archiver.kernel.org>; Wed, 12 Dec 2018 15:54:39 +0000 (UTC)
+Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mail.kernel.org (Postfix) with ESMTPS id F38B02086D
+	for <linux-i3c@archiver.kernel.org>; Wed, 12 Dec 2018 15:54:38 +0000 (UTC)
+Authentication-Results: mail.kernel.org;
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="bb24VVAB";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=kernel.org header.i=@kernel.org header.b="VFVhczhB"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org F38B02086D
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=d6jcw5h293CXwlbC13H9+zN+dA/LVLfyJCA9oGW03tQ=; b=bb24VVABCx0DrF
+	eAfCrhm/6t8U2dE4+5cvNzv79Px8xwfnElJ+mCowcfZ7Zw1RuAjy0+HrLQZvetcTUkQdQm/We8COB
+	MEV5xm+qjp9mH0aN9dM0wp0RD0BCcKR0syUuJAlbEpqeldM5SY/rYS68yvzp1zzbkyHnsoIQEW3ke
+	WjBemiqQfd1Vy5/W5zGeLdlGcZblU4Ycek21Nqegz938iHe9Fa8YBOKJbauzPXqyrxPAHZ26mxUXS
+	NfM5H5tZQAA8Tkw1uL4alJRk8y5TbFheZgTE5YrnOtY5arlhYcnHVtrgTLUuakAb4agy2/O6WwxwI
+	PmdRPalTJZogfQiZxLIQ==;
+Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
+	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+	id 1gX6qM-0004dA-II; Wed, 12 Dec 2018 15:54:38 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1gX6qJ-0004ch-Pq
+ for linux-i3c@lists.infradead.org; Wed, 12 Dec 2018 15:54:37 +0000
+Received: from bbrezillon (aaubervilliers-681-1-89-7.w90-88.abo.wanadoo.fr
+ [90.88.30.7])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A01482084E;
+ Wed, 12 Dec 2018 15:54:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1544630064;
+ bh=4vsGlT23c4Y58ffPUSYz4645uNfPFpgpJoOa8HjFoGk=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=VFVhczhB81fATb7rUQaN8LEqwobFs9SovdC3cQdVwQviCVNQx8RrWB30kNKXZmJAM
+ umH/4ZrI4WeMq/rK7C980MZ9YCATS0EwCRajAo3XWhuXB0XMWqWXLASdRxc6K3h6fJ
+ 1LPjiXigdDHAX95g6HsKo47KlxeU7bIOXJgdWNVs=
+Date: Wed, 12 Dec 2018 16:54:20 +0100
+From: Boris Brezillon <bbrezillon@kernel.org>
+To: linux-i3c <linux-i3c@lists.infradead.org>
+Subject: Re: [ANNOUNCE] Creation of the linux-i3c mailing list
+Message-ID: <20181212165420.2ea17eb9@bbrezillon>
+In-Reply-To: <20181205172048.4bc4d44c@bbrezillon>
+References: <20181205172048.4bc4d44c@bbrezillon>
+X-Mailer: Claws Mail 3.16.0 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20181212_075435_852889_F6681C87 
+X-CRM114-Status: UNSURE (   6.48  )
+X-CRM114-Notice: Please train this message.
+X-BeenThere: linux-i3c@lists.infradead.org
+X-Mailman-Version: 2.1.21
+Precedence: list
+List-Id: Linux I3C <linux-i3c.lists.infradead.org>
+List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-i3c>,
+ <mailto:linux-i3c-request@lists.infradead.org?subject=unsubscribe>
+List-Archive: <http://lists.infradead.org/pipermail/linux-i3c/>
+List-Post: <mailto:linux-i3c@lists.infradead.org>
+List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
+List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
+ <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Cc: Przemyslaw Gaj <pgaj@cadence.com>, Vitor Soares <Vitor.Soares@synopsys.com>,
+ Mike Shettel <mshettel@codeaurora.org>, Wolfram Sang <wsa@the-dreams.de>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
+Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, 12 Dec 2018 09:02:17 +0000
-Przemyslaw Gaj <pgaj@cadence.com> wrote:
->     >     
->     >     Okay, so this is actually one reason we'd want to add devices without
->     >     triggering transfers on the bus. The thing is, we need more than just
->     >     PID, BCR and DCR, and those information are not passed in the DEFSLVS
->     >     frame (MXDS, MRL, MWL, HDRCAP). IIRC, we started discussing that with
->     >     Arnd, Vitor and you and we listed 2 options:
->     >     
->     >     1/ force the secondary master to take bus ownership after it has
->     >        received DEFSLVS so that it can retrieve the missing bits and finally
->     >        expose devices to its users
->     >     2/ bind partially discovered devices to drivers and retrieve the device
->     >        information on-demand (when i3c_device_get_info() is called).
->     >     
->     >     If we go for option #2, we'll need a separate function that does more
->     >     than just skipping GETPID, GETDCR and GETBCR. Of course #2 is more
->     >     elegant in that it doesn't force a mastership handover until someone
->     >     really wants to access a device through the secondary master, but #1 is
->     >     definitely simpler to implement.
->     > 
->     > Ok, I see. Regarding #2, device is matched by PID, how do you want to handle this?  
->     
->     As I said, if we go for #2, we'll need a way to pass the PID, BCR and
->     DCR we received from the DEFSLVS frame. So yes, that's actually one
->     case where passing this info to i3c_master_add_i3c_dev_locked() makes
->     sense. But, you'll also have to modify this function to skip
->     i3c_master_retrieve_dev_info(). So maybe it's just simpler to have a
->     separate function for this case (i3c_master_defslvs_add_dev_locked()?)
->     
->     > I think we still need to use GETPID before registering the device. Can you see different path?  
->     
->     We need the PID for sure, but it's passed in DEFSLVS, so we should be
->     good.
-> 
-> As far as I remember it's not. Only BCR, DCR, DA and SA.
+On Wed, 5 Dec 2018 17:20:48 +0100
+Boris Brezillon <bbrezillon@kernel.org> wrote:
 
-Oh, I thought it was. So option #2 is not even possible, which means
-we don't have a choice, we must implement solution #1.
+> The I3C mailing has been created on infradead. Please use it instead of
+> Cc-ing linux-i2c on your future I3C-related contributions. I'll update
+> the MAINTAINERS file accordingly.
+
+Patchwork instance is available here [1], and I also asked Konstantin
+to add a lore.kernel.org archive [2].
+I think we're all set up now.
+
+[1]https://patchwork.kernel.org/project/linux-i3c/list/
+[2]https://lore.kernel.org/linux-i3c/
+
+_______________________________________________
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
