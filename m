@@ -1,122 +1,87 @@
-From: pgaj@cadence.com (Przemyslaw Gaj)
-Date: Wed, 12 Dec 2018 06:06:18 +0000
+From: bbrezillon@kernel.org (Boris Brezillon)
+Date: Wed, 12 Dec 2018 09:21:03 +0100
 Subject: i3c_master_add_i3c_dev_locked() accept PID, BCR, DCR
-In-Reply-To: <ff58869b-acdd-28e4-0e89-72b46e54d5b9@synopsys.com>
+In-Reply-To: <AACD7E8D-80FA-453B-AB9E-9A0D84598123@cadence.com>
 References: <fd731fb8-3b47-9364-baf7-da530bf9c786@synopsys.com>
- <20181210204330.76e6b615@bbrezillon> <20181210211411.7f64f5cb@bbrezillon>
+ <20181210204330.76e6b615@bbrezillon>
+ <20181210211411.7f64f5cb@bbrezillon>
  <3f21dc46-97e1-1a64-a91b-07e623d82184@synopsys.com>
  <20181211125832.7a7b224f@bbrezillon>
  <ccf3667b-a491-759e-a476-e795df4ab9cb@synopsys.com>
- <20181211132103.34ae80c8@bbrezillon> <20181211132446.4d93fd10@bbrezillon>
+ <20181211132103.34ae80c8@bbrezillon>
+ <20181211132446.4d93fd10@bbrezillon>
  <ff58869b-acdd-28e4-0e89-72b46e54d5b9@synopsys.com>
-Message-ID: <AACD7E8D-80FA-453B-AB9E-9A0D84598123@cadence.com>
+ <AACD7E8D-80FA-453B-AB9E-9A0D84598123@cadence.com>
+Message-ID: <20181212092103.5f0f7217@bbrezillon>
 To: linux-i3c@lists.infradead.org
 List-Id: linux-i3c.lists.infradead.org
 
-Hi Boris,
+Hi Przemek,
 
-?On 12/11/18, 4:48 PM, "linux-i3c on behalf of vitor" <linux-i3c-bounces at lists.infradead.org on behalf of vitor.soares@synopsys.com> wrote:
+On Wed, 12 Dec 2018 06:06:18 +0000
+Przemyslaw Gaj <pgaj@cadence.com> wrote:
 
-    EXTERNAL MAIL
-    
-    
-    
-    
-    
-    
-    On 11/12/18 12:25, Boris Brezillon wrote:
-    
-    > On Tue, 11 Dec 2018 13:21:03 +0100
-    
-    > Boris Brezillon <bbrezillon@kernel.org> wrote:
-    
-    >
-    
-    >> On Tue, 11 Dec 2018 12:07:16 +0000
-    
-    >> vitor <vitor.soares@synopsys.com> wrote:
-    
-    >>
-    
-    >>> On 11/12/18 11:58, Boris Brezillon wrote:  
-    
-    >>>>> I just want to skip GETBCR/DCR/PID operations since those data are
-    
-    >>>>> already available in the controller. There's advantages but they
-    
-    >>>>> only have relevance depending of use case.    
-    
-    >>>> Can you detail those use cases please?    
-    
-    >>> If the bus has a lot of devices and you want to decrease the
-    
-    >>> initialization time this could be the first step.
-    
-    >>>   
-    
-    >> Did you quantify the boot-time/perf improvement? The clk should be
-    
-    >> running at 12.5MHz, GETPID takes 9bytes and GETBCR/DCR take 4 bytes
-    
-    >> each. Let's add one byte per command to account for the start/stop
-    
-    >> bits. That makes a total of 20bytes per device, with a maximum of 11
-    
-    >> devices per bus:
-    
-    >>
-    
-    >> max_time_to_query_pid_bcr_dcr_per_bus = 20 * 10 / 12500000 = 17.6 usec.
-    
-    > Sorry, small mistake, I counted bytes instead of bits.
-    
-    >
-    
-    > max_time_to_query_pid_bcr_dcr_per_bus = 20 * 8 * 11 / 12500000 = 141usec.
-    
-    
-    
-    In fact there is missing other things like, S time, Sr time, stop time, stall time in t-bit and OD speed for the addresses...
-    
-    
-    
-    I measured in my setup with a scope and the additional time to get that information is around 110 us per device and with only one device the bus takes around 550 us for the initialization.
-    
-So, for now, we are transferring the same information two times over the bus, during DAA procedure and then manually. Three commands per device GETBCR/DCR/PID need six register accesses to write (in our controller). Don't you think it is more significant overhead? I'm just wondering.
-    
-    
-    >> Let's assume we have a huge overhead caused by the OS (and all the
-    
-    >> scheduling involved), and make it 100usec.
-    
-    > And let's make it 500usec with the OS overhead, which is still not
-    
-    > particularly worrisome in term of boot-time.
-    
-    
-    
-    Ok, it can be done in the future.
+>     
+>     I measured in my setup with a scope and the additional time to get that information is around 110 us per device and with only one device the bus takes around 550 us for the initialization.
+>     
+> So, for now, we are transferring the same information two times over the bus, during DAA procedure and then manually. Three commands per device GETBCR/DCR/PID need six register accesses to write (in our controller). Don't you think it is more significant overhead? I'm just wondering.
 
-I was thinking also how to skip this in case of mastership request where device information is received in DEFSLVS command, secondary master can't do DAA. Mastership takeover can be faster without need to get BCR/DCR from devices again.
-    
-    
-    
-    Thanks.
-    
-Thanks,
-Przemek
-    
-    
-    
-    
-    
-    
-    _______________________________________________
-    
-    linux-i3c mailing list
-    
-    linux-i3c at lists.infradead.org
-    
-    https://urldefense.proofpoint.com/v2/url?u=http-3A__lists.infradead.org_mailman_listinfo_linux-2Di3c&d=DwICAg&c=aUq983L2pue2FqKFoP6PGHMJQyoJ7kl3s3GZ-_haXqY&r=CMnAfM_OfpqcWZRfiqcRWw&m=trNUbFnImlZoS093pWZERer4mHsTchT6X8dOa6-jfgw&s=uCZJLvo-KNMKIPKv9Tia18uSSdtzAFTMgSumhmAYRzk&e=
-    
-    
+Not really, and I think it's actually more than 3 reg accesses per
+device (you also have to clear the interrupts and read the RX FIFO). My
+point is, this should only happen once at init (DAA) time and once in a
+while if devices are joining the bus afterwards (Hot-Join requests). So,
+this is not really a hot path, hence my decision to choose simplicity
+over perfs: have a single function for the DAA (where PID, BCR and
+DCR are available) and SETDASA (where these have to be retrieved using
+GETPID, GETDCR, GETBCR) cases.
+
+Nothing is set in stone, and if one of you comes with a patch that
+keep things simple while allowing one to skip the GET{PID,BCR,DCR}
+commands, I'll consider merging it. But, to be honest, I don't think
+this a priority. We still don't have support for DDR and mastership
+handover, which in my opinion are much more valuable than optimizing
+the bus-discovery path.
+
+>     
+>     
+>     >> Let's assume we have a huge overhead caused by the OS (and all the  
+>     
+>     >> scheduling involved), and make it 100usec.  
+>     
+>     > And let's make it 500usec with the OS overhead, which is still not  
+>     
+>     > particularly worrisome in term of boot-time.  
+>     
+>     
+>     
+>     Ok, it can be done in the future.
+> 
+> I was thinking also how to skip this in case of mastership request where device information is received in DEFSLVS command, secondary master can't do DAA.
+
+Okay, so this is actually one reason we'd want to add devices without
+triggering transfers on the bus. The thing is, we need more than just
+PID, BCR and DCR, and those information are not passed in the DEFSLVS
+frame (MXDS, MRL, MWL, HDRCAP). IIRC, we started discussing that with
+Arnd, Vitor and you and we listed 2 options:
+
+1/ force the secondary master to take bus ownership after it has
+   received DEFSLVS so that it can retrieve the missing bits and finally
+   expose devices to its users
+2/ bind partially discovered devices to drivers and retrieve the device
+   information on-demand (when i3c_device_get_info() is called).
+
+If we go for option #2, we'll need a separate function that does more
+than just skipping GETPID, GETDCR and GETBCR. Of course #2 is more
+elegant in that it doesn't force a mastership handover until someone
+really wants to access a device through the secondary master, but #1 is
+definitely simpler to implement.
+
+> Mastership takeover can be faster without need to get BCR/DCR from devices again.
+
+Again, this should only happen once, not every time the master changes,
+simply because devices on the bus will stay the same. So I don't think
+optimization is a good argument.
+
+Regards,
+
+Boris
