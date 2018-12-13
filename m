@@ -2,23 +2,23 @@ Return-Path: <SRS0=JcjT=OW=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-9.1 required=3.0 tests=BAD_ENC_HEADER,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-6.3 required=3.0 tests=BAD_ENC_HEADER,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SIGNED_OFF_BY,SPF_PASS,T_MIXED_ES,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+	MAILING_LIST_MULTI,SIGNED_OFF_BY,SPF_PASS,UNWANTED_LANGUAGE_BODY,
+	URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E97F2C67872
-	for <linux-i3c@archiver.kernel.org>; Thu, 13 Dec 2018 12:19:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 01E7BC65BAE
+	for <linux-i3c@archiver.kernel.org>; Thu, 13 Dec 2018 12:19:22 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id B778920851
-	for <linux-i3c@archiver.kernel.org>; Thu, 13 Dec 2018 12:19:17 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id C0CCC20851
+	for <linux-i3c@archiver.kernel.org>; Thu, 13 Dec 2018 12:19:21 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="N1PmKkRK";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=cadence.com header.i=@cadence.com header.b="ildKSwvw";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=cadence.com header.i=@cadence.com header.b="RaCM34mi"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org B778920851
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="d2Lk02zg";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=cadence.com header.i=@cadence.com header.b="cJK3AyQk";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=cadence.com header.i=@cadence.com header.b="IYMVfYqH"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org C0CCC20851
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cadence.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -27,83 +27,82 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tHYZ+1/wVPFMYeW8sYGBVzcQwjCFDldfGyUgv4HaqWE=; b=N1PmKkRKfFfjSn
-	69r2mxCitouZgTkMJ+V2qzIBjTKCB4pX+njLQWTeKA1RAViDlYMacQ9aowzRjBUy1rybRH4XcpQmu
-	3Xt8Vf5bYiTA37QJEzsAUH9DhINkYVKnD6z3nOKjDcaUqEUZIjyKxnMffnCZ2Z6Mcz8E5Zrwt80Qu
-	4P0qq9VFHNBA9r1T3gdjsSIETSMq3XOo6ZcNCTBVzzKlGoKkTdK9sSJwpTTVrRkLdnQftwA/+WUt1
-	kUXNGd7Xt77MURR5aqA6XC3Inz4Q5WAPZFMuSgPY9yOJ2THlxL7XXpdL1gBakctslHpmDjYly54mz
-	6WGBD4av3RA3geIvSS+A==;
+	List-Owner; bh=GDYljpq5CY1boVCTQnLePvR2e5M8ekkWsjeFYTNNX0M=; b=d2Lk02zgBPBkX7
+	udV7KiIqcY415pUN2g5Y3+KEi+pE3ZN5QTaVUpBxmEDr6yzhG5CK35nTCTlw9vEiFKJpU6bk4WIJF
+	5qu9EABx/Y+b8glUX3C3mNTo6hSKv6Ck+wVAwKuzhvUdo6kpwPTqEhRq+JweDc3gkrwAzxQDH5MxD
+	g8rgLCp09YIS27oK9g0q4A/2SQ5rgQAZ57+y34LVFDrQqEWcoTg4Lz+mBvCOxDHSF1ppTlBaLAjH+
+	3a5w+QvjMmgutX+dU0IhqjnKuQYJFtFv9iRozkLmXz71CpWLZbnPaPlahxRwoYXAnKWMAOaVyrlsy
+	22b/cifcVuqjDBhwRKJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1gXPxV-0003Ee-B9; Thu, 13 Dec 2018 12:19:17 +0000
+	id 1gXPxZ-0003F8-Dq; Thu, 13 Dec 2018 12:19:21 +0000
 Received: from mx0a-0014ca01.pphosted.com ([208.84.65.235])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1gXPxR-0003DK-T6
- for linux-i3c@lists.infradead.org; Thu, 13 Dec 2018 12:19:15 +0000
+ id 1gXPxR-0003DM-T8
+ for linux-i3c@lists.infradead.org; Thu, 13 Dec 2018 12:19:19 +0000
 Received: from pps.filterd (m0042385.ppops.net [127.0.0.1])
  by mx0a-0014ca01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- wBDC7Y2s008445; Thu, 13 Dec 2018 04:19:02 -0800
+ wBDC7Rqa008400; Thu, 13 Dec 2018 04:19:04 -0800
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
  h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-type; s=proofpoint;
- bh=YZGj9K3zbMl5AEcdDINUpagKmy8fEB7RXJzIBMJlOKI=;
- b=ildKSwvwQwrHWd1WlPyooayVegIjhZWogwZvkvaBHt0vHZYs2Wb9jY2Js/u5+auNSx88
- bSNymisTlCw5cL4+AvdxN9unV6remKAJS5V7J+62uXg1yQS0kcqEZEDbEgiKWJBBuI4d
- 8/077YZz4BUwRdk3w79aQ5fBQBR5fTW6tzgNFO59pFUDPqfaZnq4y7xb3MLsrXyFbrZq
- ixsgZ2qQoINzmeQlgE21IKqNgNaiC2EKbvaHvv3YzBa1UgWncoApRqqwLuB4lV6k36rk
- EZzU884UM90YryZUPdBEvQW5uDmrH30My+ZlJc5zgrzzfstywrvzfcd0JKYoO/f2x2cZ Gw== 
+ bh=/I4Y7lueZznEtB6BEFjyGenufLRsqC1HRVec8MuWyiY=;
+ b=cJK3AyQk9Ejz8FcBaA4Ix1KY4SeaWWYsCi/LmI8qJtIAjQ48G8UrhfjaWoQ/OM/oAmo4
+ blY9rlG08GCUOmUHRhMWjP2CRE7cCGC9p7rPKyuropxWWC78+UwMKiEj5pAxPbA3u5PP
+ PLIsPLncDUvjBubqAXvTLt5uOdeYcTwtRPMWhItGSJGNpzyfZDzH8uOc62iHd/7qLi5s
+ G1RmnRXr3xpLJxNAgSPkZMuuNn+8HLz1451npwI0tMJiq0kHTJwOktVMgvPLCBuGOnUZ
+ rxGCjiXwOheEQRKTifxTRQkhNVfEZX+uXVj8v1jO0FFek7I+K/auo8LuDzTKVW69GDdH mg== 
 Authentication-Results: cadence.com;
 	spf=pass smtp.mailfrom=pgaj@cadence.com
-Received: from nam01-bn3-obe.outbound.protection.outlook.com
- (mail-bn3nam01lp2058.outbound.protection.outlook.com [104.47.33.58])
- by mx0a-0014ca01.pphosted.com with ESMTP id 2pbf1ujbnj-1
+Received: from nam05-dm3-obe.outbound.protection.outlook.com
+ (mail-dm3nam05lp2052.outbound.protection.outlook.com [104.47.49.52])
+ by mx0a-0014ca01.pphosted.com with ESMTP id 2pbf1ujbnq-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Thu, 13 Dec 2018 04:19:01 -0800
+ Thu, 13 Dec 2018 04:19:04 -0800
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
  s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YZGj9K3zbMl5AEcdDINUpagKmy8fEB7RXJzIBMJlOKI=;
- b=RaCM34miCg49Cc7Fqjm3o1arjOc9gZ75byLzFRlvjyXs5OprXVgVQivMCHkdG8pWmAxkGs8r6+66jUannKViMllS6jUxwbLDFgGGdjbazrc5YpYJ1nwkipALP28Xl4VH9sdVHBB4CU2lu2V1j0Xt5N+HfHDPJEk8p9XF8vx0NU4=
-Received: from DM5PR07CA0089.namprd07.prod.outlook.com (2603:10b6:4:ae::18) by
- MWHPR0701MB3722.namprd07.prod.outlook.com (2603:10b6:301:7e::27) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1425.20; Thu, 13 Dec
- 2018 12:18:58 +0000
-Received: from DM3NAM05FT021.eop-nam05.prod.protection.outlook.com
- (2a01:111:f400:7e51::204) by DM5PR07CA0089.outlook.office365.com
- (2603:10b6:4:ae::18) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1425.19 via Frontend
- Transport; Thu, 13 Dec 2018 12:18:58 +0000
+ bh=/I4Y7lueZznEtB6BEFjyGenufLRsqC1HRVec8MuWyiY=;
+ b=IYMVfYqH6toaF949MZDnVj2Ewoc5jZ7tz+INzVB2rorkgIDIvBbW/4IjSWGq2U1yYqjLhvtW7Wf9oHx95SWeYNY9VvRPq4YTBKZDvS5RuVKg35mpmyrQsxEpmSLo3fSkOfp2l/FCF9/nHXVIigot5jOUetCzVPPv5lGPonPQp8M=
+Received: from DM5PR07CA0087.namprd07.prod.outlook.com (52.132.138.16) by
+ DM3PR07MB2171.namprd07.prod.outlook.com (10.164.4.153) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1425.19; Thu, 13 Dec 2018 12:19:02 +0000
+Received: from CO1NAM05FT008.eop-nam05.prod.protection.outlook.com
+ (2a01:111:f400:7e50::202) by DM5PR07CA0087.outlook.office365.com
+ (2603:10b6:4:ae::16) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1425.19 via Frontend
+ Transport; Thu, 13 Dec 2018 12:19:02 +0000
 Received-SPF: SoftFail (protection.outlook.com: domain of transitioning
  cadence.com discourages use of 158.140.1.28 as permitted sender)
-Received: from sjmaillnx1.cadence.com (158.140.1.28) by
- DM3NAM05FT021.mail.protection.outlook.com (10.152.98.130) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1446.5 via Frontend Transport; Thu, 13 Dec 2018 12:18:57 +0000
+Received: from sjmaillnx2.cadence.com (158.140.1.28) by
+ CO1NAM05FT008.mail.protection.outlook.com (10.152.96.114) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.20.1446.5 via Frontend Transport; Thu, 13 Dec 2018 12:19:01 +0000
 Received: from maileu3.global.cadence.com (maileu3.cadence.com [10.160.88.99])
- by sjmaillnx1.cadence.com (8.14.4/8.14.4) with ESMTP id
- wBDCIskA017230
+ by sjmaillnx2.cadence.com (8.14.4/8.14.4) with ESMTP id
+ wBDCIxuk026009
  (version=TLSv1/SSLv3 cipher=AES256-SHA bits=256 verify=OK);
- Thu, 13 Dec 2018 04:18:56 -0800
+ Thu, 13 Dec 2018 04:19:00 -0800
 X-CrossPremisesHeadersFilteredBySendConnector: maileu3.global.cadence.com
 Received: from maileu3.global.cadence.com (10.160.88.99) by
  maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
- 15.0.1367.3; Thu, 13 Dec 2018 13:18:58 +0100
+ 15.0.1367.3; Thu, 13 Dec 2018 13:19:00 +0100
 Received: from lvlogina.cadence.com (10.165.176.102) by
  maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
- 15.0.1367.3 via Frontend Transport; Thu, 13 Dec 2018 13:18:57 +0100
+ 15.0.1367.3 via Frontend Transport; Thu, 13 Dec 2018 13:19:00 +0100
 Received: from lvlogina.cadence.com (localhost.localdomain [127.0.0.1])
- by lvlogina.cadence.com (8.14.4/8.14.4) with ESMTP id wBDCItN1011804;
- Thu, 13 Dec 2018 12:18:55 GMT
+ by lvlogina.cadence.com (8.14.4/8.14.4) with ESMTP id wBDCIv6X011907;
+ Thu, 13 Dec 2018 12:18:57 GMT
 Received: (from pgaj@localhost)
- by lvlogina.cadence.com (8.14.4/8.14.4/Submit) id wBDCItac011803;
- Thu, 13 Dec 2018 12:18:55 GMT
+ by lvlogina.cadence.com (8.14.4/8.14.4/Submit) id wBDCIvR0011906;
+ Thu, 13 Dec 2018 12:18:57 GMT
 From: Przemyslaw Gaj <pgaj@cadence.com>
 To: <bbrezillon@kernel.org>, <linux-i3c@lists.infradead.org>
-Subject: [PATCH 1/2] i3c: Add support for HDR modes.
-Date: Thu, 13 Dec 2018 12:18:31 +0000
-Message-ID: <efb3b8692d3579ab3369cc0f80e237550f3e8209.1544702829.git.pgaj@cadence.com>
+Subject: [PATCH 2/2] i3c: master: cdns: Add support for HDR-DDR mode
+Date: Thu, 13 Dec 2018 12:18:32 +0000
+Message-ID: <adcd3c336c8285483b1741b145cad945bc813ce9.1544702829.git.pgaj@cadence.com>
 X-Mailer: git-send-email 2.4.5
 In-Reply-To: <cover.1544702829.git.pgaj@cadence.com>
 References: <cover.1544702829.git.pgaj@cadence.com>
@@ -112,71 +111,69 @@ X-OrganizationHeadersPreserved: maileu3.global.cadence.com
 X-EOPAttributedMessage: 0
 X-Forefront-Antispam-Report: CIP:158.140.1.28; IPV:CAL; SCL:-1; CTRY:US;
  EFV:NLI; SFV:NSPM;
- SFS:(10009020)(979002)(376002)(346002)(396003)(136003)(39860400002)(2980300002)(36092001)(199004)(189003)(87636003)(305945005)(118296001)(316002)(36756003)(54906003)(42186006)(110136005)(8936002)(16586007)(107886003)(47776003)(5024004)(8676002)(14444005)(478600001)(126002)(486006)(2906002)(246002)(26826003)(106466001)(7636002)(476003)(2616005)(5660300001)(86362001)(11346002)(446003)(6666004)(48376002)(26005)(356004)(336012)(50466002)(105596002)(50226002)(186003)(4326008)(51416003)(551934003)(76176011)(426003)(969003)(989001)(999001)(1009001)(1019001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR0701MB3722; H:sjmaillnx1.cadence.com; FPR:;
- SPF:SoftFail; LANG:en; PTR:corp.cadence.com; A:1; MX:1; 
-X-Microsoft-Exchange-Diagnostics: 1; DM3NAM05FT021;
- 1:L00nvk150iI6+QnKjHqKvbIe5mNga94bDAXB5QAKc5Y0ALhHLbBCvdk8Hx1frqrK4h66ADfdNjBYf2YetF4YrIVEqMCAviLmLb5MyxNTgY/YTNkg7FAVsYRzC9+9lwCt
+ SFS:(10009020)(376002)(136003)(396003)(346002)(39860400002)(2980300002)(189003)(36092001)(199004)(54906003)(110136005)(4326008)(14444005)(316002)(42186006)(16586007)(106466001)(105596002)(2906002)(47776003)(107886003)(48376002)(50466002)(426003)(118296001)(446003)(336012)(5660300001)(11346002)(476003)(36756003)(7636002)(26005)(246002)(26826003)(76176011)(2616005)(6666004)(356004)(50226002)(305945005)(86362001)(51416003)(8676002)(478600001)(126002)(186003)(486006)(8936002)(87636003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM3PR07MB2171; H:sjmaillnx2.cadence.com; FPR:;
+ SPF:SoftFail; LANG:en; PTR:corp.cadence.com; MX:1; A:1; 
+X-Microsoft-Exchange-Diagnostics: 1; CO1NAM05FT008;
+ 1:e5wklat4aYmYhUXbLCLEn8SlKDStTrz3yI8r+qsBS80Mwi2CBUTIW04XQBp3824YBJrudZzDu63g2Zyy+izMY+Ke9PKBXFd9OUuo3y/KZbxFlXKDxJBrtvBSe6XtJbr/
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: a3b10e53-cabc-4d04-a42d-08d660f52874
+X-MS-Office365-Filtering-Correlation-Id: 1c3d8593-f6a6-4867-579a-08d660f52aac
 X-Microsoft-Antispam: BCL:0; PCL:0;
  RULEID:(2390098)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600074)(711020)(2017052603328)(7153060);
- SRVR:MWHPR0701MB3722; 
-X-Microsoft-Exchange-Diagnostics: 1; MWHPR0701MB3722;
- 3:rKJ1mWPOUfNadcPOCvHJJ03xIAh2KhqR/Aai8L3fPfWr+N5ugXNJx/CXBg8kcT6OWPV6W+dBgCNCraT/7mkV6+ZeFxDf0MBOeXDk8iE8FXKCl3ZrLe+ysEP9MePfrqeIZXzDuaLI39aza/wnyfuqraL65eJUhay6yhLy/6yGvugxz2elDoa8f7WtvVkVupff7DBHdshhTycHvqisk5dTmK+hTThncoZ8auLvoWl2Xc56mZzK8MsFpRRXJ5F8GEYap071WueRxnF1m3qJi39kE+v/Z/NUMIaA8YstfHacCS47CpuQrSrkgrkp9p2CUfJMYRCqMdQNt5J92xlxGA4+XltIF9rHvrrXt075oke0Qps=;
- 25:i5yYToVU1XdKuJu2AHC81VhtWUgY0jpruE+hhMl7EKsAgFQFwcteqT+GaRwCevbhz1KS0gweS7EEJvSWJZWj/34eFkVevMnOf18iInm7qmcleK+RHm7uEn1aX0D4vpdFLEZJnttt9UrCHgqt9dkwn73SQ97R48cEPR0ke/6ygTctT7GFCCjmaTFg+MDPpoCRrEtlYgKQihEnHw0thMP2+j5YR7o3QuWIFfZB835kVAa+C5x8ID5mStwlKlySffD16gcPZwMZrI/C0oBgpWiMaM8YG5Wh8Y+zTttTjnscWz9+ji+nFtLvERC7q9xUosrjz79PkNDNP/lZkiwWWzn5EA==
-X-MS-TrafficTypeDiagnostic: MWHPR0701MB3722:
-X-Microsoft-Exchange-Diagnostics: 1; MWHPR0701MB3722;
- 31:d8kXWtK6Wsk66RbyukkRajlYBGpfm1X7Ft9YLGWSh87iyzEBqGen0G0yjoBLVaUA11nyhB7cG8bEvtvAt0d/vVWZDbN2W3Qm7hpkKdbpOsqgFjT3cBqCNWoE09VkI+vvqt1UZ/PZucYpOP3gWRBJsca/XpRMdaYt9e7C3JewaKTuQYMTQmJOli/mOlsFShGwjI4WEc/Oxx/e7JGNm7OtEkg4sOVNhaoS7Sia8ujKuao=;
- 20:WschtCk36irMk6cDld5CD3C2nLyC5VhecszhdjSQWldMm4cRVgZ7nu8VSAo2+EtT/JgcDv1vR9SvIZgnn6Gx6vLW5jm7SyJboDqayxQh3A55JoXho8/koDc1gs4hmxeb90YBPmEfEYbvScru6HOc8eKQbmbkxtZAjmVPFpTG3oVKQQgSXXy9tQBhL2JeQ4AiasxK+/TLyZIkpvWq0VAdwLNelimFw7ZLNM8CnVN3IbFWK3Amw31ZKQAg6Fnq8TfMkmZYS4VXalgbA3osygo7InmyYTGpqqjKON2kDOBUL58zFnAHpfPYt9p6JdMzGi2D1pfqqrdjCT3xQYTmxgU8jtROl+SlYpwYUqdzeOd3gE8ucnFp8AdHemHyMuWa7hTV0NsHMmfXkLwW52nBLdV43Mx0S5RyK46PKC8Ew+DDHo8h3rdEME8KYHDd9xeGelFfqrVWB3e0RqoAlKVpUDky1ko6/27k3YS86Wj539grfOxaYh8dKfZmGXpXVkoe7jad
-X-Microsoft-Antispam-PRVS: <MWHPR0701MB37229D3129BF5DDB9A7C3450C2A00@MWHPR0701MB3722.namprd07.prod.outlook.com>
+ SRVR:DM3PR07MB2171; 
+X-Microsoft-Exchange-Diagnostics: 1; DM3PR07MB2171;
+ 3:WWH5DE0vZQMcJvrHHZZDmINv/qnfuLVmSTJhHKChTlvCvghGknMVLqjIxbSyuKjutHNCnGVGo/fDcyNnSXrxFXu299LQX4RDK9dHF2eVmVpwGjFpEzElSKc3w9CYNijGHQF7nyiBHpSTyxQHgIA7YyeEaNPCXJXkNESIOhg6dGxTkuFhxtWZa2hWRImC589EsQQxKzGVTT10V8azBTb5SWIMKcL19aeVPn7jKMufaEVYmw4mrkQb0hWz5NJRjNuicqzfuIs4zp0I4nAoFQrhujq/WEbDSpBwhhU8lcWUs4Zm+6JuEcjcSCF+ECxrbf91mkU1BESuEi1nJqJUhaDwS2nuDL2/TFdw/MaVSUNumEw=;
+ 25:7EmF5tI7h7peX8PrVTlVSpwCFgneG79LrP/9g8D2GRoBlWrXwXycq/Lh9k1KZhzpUbxj1xpaYMtOz1x0HDeuDV8IRteHvYQ63dK/VXfWYrJb0wUOxaWJciBmzkO0r4rcJMkphEWaD+jj5imI5QwxQOJQni0W+0c8OkHtSD22A+sU+hYpPzabCCmaYrd5h46hrzDDWoIsg3b0CRFJnP4R63Lq2DuPE6IzpDRnOZAcGeO3VYvLitFUUoPHoomhjsTKkDQQttEBeKtQmEq40ZvXRx+bedCuTZzt6kmiX+wSYtklq5wdDXFC6ghmi9LE30kNMSgUzS9kQfJjmgwmqlmeKA==
+X-MS-TrafficTypeDiagnostic: DM3PR07MB2171:
+X-Microsoft-Exchange-Diagnostics: 1; DM3PR07MB2171;
+ 31:5CBgvueE3ag6sCiUUPGWdfgdmjfNtwE93Xca9lcqjU4kWpob7wWctjjYaer/azzEmxd6iglnSm4Z8GfERVDcYhWnLJoup43vpuAEVGvCINofQH8yXw9IXMXISgyEouDVkZBrPuAba/IqYGCexKkMvAZsE+OfW5iAvXDt6avcB4qjEOx4T/yZAsTmMNLE58/nD8WCL7IE0O8u/3iqM5F5nj15AnD21Ya7d46gP90DUIs=;
+ 20:2bn4yY+YtaXcra8nEB/BQt+311+DotHEC6G7zdeNQGufc7LBhiJ1bjHbtjBAF7XO3Z3Ln6BlMW9VA/mzAiiZe6CmKrfg5JzgcVuF9ZDhliiUPWLwdPSENZIgpJBWzlyjhsixbW+1EVnJfPRiCeU56zB/gzGRd4E1sqogVxB1TSCCNwjX72T9b7UvEU9ORzZGP9B8D/36vqGT4ZcnK4ScuSbOjQl9k96anSgMYoYebv2Y/Zlz2pBYsfmKxK0RlyIEMZE5BGHnFoMwQonDPTWFddepLvncdr3Is3Yw5c/69XNVIMyRV5n2jjgSaImc+HsqvbrTAnc6dtWIBhCKNuRnRza7hqbg8ZJ+p+rmb9QuOmh2t/RlkHw9YDRA5GzOzILoj/OBBRiqcmapm5JUOudoY1T0DQ3S3jFtmkvvOmqBaGcL1tY7+mPxPx4NjUoPVHUQ2YFLPSX6zy1TUgNnJ5xu4HJ4lK9Xc87jug5e2823oe4YWnMROXPAT1sMlrwkhgdT
+X-Microsoft-Antispam-PRVS: <DM3PR07MB2171C870CD405C26897EF778C2A00@DM3PR07MB2171.namprd07.prod.outlook.com>
 X-MS-Exchange-SenderADCheck: 1
 X-Exchange-Antispam-Report-CFA-Test: BCL:0; PCL:0;
- RULEID:(8211001083)(3230021)(999002)(6040522)(2401047)(5005006)(8121501046)(3231475)(944501520)(52105112)(93006095)(93003095)(3002001)(10201501046)(148016)(149066)(150057)(6041310)(20161123560045)(20161123564045)(20161123558120)(20161123562045)(201703131423095)(201702281528075)(20161123555045)(201703061421075)(201703061406153)(201708071742011)(7699051)(76991095);
- SRVR:MWHPR0701MB3722; BCL:0; PCL:0; RULEID:; SRVR:MWHPR0701MB3722; 
-X-Microsoft-Exchange-Diagnostics: 1; MWHPR0701MB3722;
- 4:Nnwi17yzpRPPd7FFAeucJopDQ/K0vWH9X6mlsRsx6MEp694JEhq5rFwx0ORczkoyHMTX2WTSEuTJC5JB9O6LgzePWUssAP0g4NCspt6hAOZykcOh54FmB1f6s2aO4ixpguTP/vzd1HcribhFIDsOHZ4btWpmRPMwIalRrs7xJTGv/WiXF1gCdMq4Y0bVysIno+G+gJYysojuIWv5QA+KJuh5fIdprML7RCiACHvDHxa47kTr4LrpxpnYc6Y9Op3kGxmHTGGPeCP59bvHYv3PDw==
+ RULEID:(8211001083)(3230021)(999002)(6040522)(2401047)(8121501046)(5005006)(93006095)(93003095)(3231475)(944501520)(52105112)(10201501046)(3002001)(148016)(149066)(150057)(6041310)(20161123558120)(201703131423095)(201702281528075)(20161123555045)(201703061421075)(201703061406153)(20161123562045)(20161123560045)(20161123564045)(201708071742011)(7699051)(76991095);
+ SRVR:DM3PR07MB2171; BCL:0; PCL:0; RULEID:; SRVR:DM3PR07MB2171; 
+X-Microsoft-Exchange-Diagnostics: 1; DM3PR07MB2171;
+ 4:uO/Gk7tsAD/ArxgxDrJJa9BnUX9+XctqT7gvS6JzhyB5kbchQaPl/DWWDlLDa2ZClVs61uU387CzaTsiebdiGXl0akab6PDDo/oOytEUI/KVaZVkTtNFr1XXa3F8nAFc9szlM35TJGnIsCybtefN1iBUWoNqyA80tZdcZGSzf9z3732+rss8r1lsjPuo3eMBKPasn9mTzpbGnGxRrbUKUEOlgA7JIam2LM05Q+pEFZkhJlUAEveit3musjEY8R43CK5IdwgdkT08wUDYORw5IA==
 X-Forefront-PRVS: 088552DE73
-X-Microsoft-Exchange-Diagnostics: =?us-ascii?Q?1; MWHPR0701MB3722;
- 23:Qc2ACdfmK2JJObHiD1Y3thOzdOT5E1lPQNr+QDf?=
- =?us-ascii?Q?LxNrtlDD1S5WT9kG5D0uRNZ/y+dbBzgHi38pp9GspE96s3OFISJhbteRv9Dd?=
- =?us-ascii?Q?OJcvgMh3L9HOSgw1P/ZxSJEq9kVfTm+xOjR5RlMQ5QwQiZga3ZgNFRcvb4tm?=
- =?us-ascii?Q?9QRPBfnGd5CFUpYT8TRlhqwIAFHHXvaIfvMLTtc9TIqwnMeYogTuMZeNZWv/?=
- =?us-ascii?Q?P/oanK5YYQAhuvXDqPdOBx/TKbtBgLugLacygWH3l284MKhUrZyM/UmVpRmF?=
- =?us-ascii?Q?ApelUymQOPkkmLRxprTT1m0oXx+Rd5QuJtkj2MpEYRfBvwdLVsBwsta80bei?=
- =?us-ascii?Q?e6dzjrBFqwb8QLKFeWAR6jYTSfxHEGR9cdnY9dzVaWZeZ4X7SUJXRL7QW4wa?=
- =?us-ascii?Q?SIPdPdAk9rDX9/xFaYKzMnfL4CwDDzSQL1/uR2hXgIwnZSD4E54q/WofuMMv?=
- =?us-ascii?Q?Ausd5H79y+iXzhHNABKGT9prHy53IsQfc0YWwbvY8jlec5ZB8GbwiKf2/Ama?=
- =?us-ascii?Q?Lr+yn400FtDecf7+Koop7/ns11eTuKlOxgA9Kv+efxpYy22xoQOZyMbKN6Wq?=
- =?us-ascii?Q?uYYXopKwMKeUIoNKPibbSFg3spZoLTnoyzXfDjkj2P0I5opOCLD5QKGkTe/8?=
- =?us-ascii?Q?hXij3wuKa0cucnwnR5RUs2LKk44NMlQ5ZsOah8XRabaOotxvVCBRDV2drn0o?=
- =?us-ascii?Q?sk8Z2QHQwUulDk5W7gc75lKZYgVapTOed8VCbvHUxpMDrgRcZx5fC/n155QP?=
- =?us-ascii?Q?3tqTl2hcAcaqwgKAptKZdTAW2VB//pxDzlHCUUM0xE9HCr3UNfMzr7AMkyZX?=
- =?us-ascii?Q?IejQJ07DjBW3TZ3eorMnvxl0ifhf3mGPPeB26Sk560rg6kCYGfD57TD6enNK?=
- =?us-ascii?Q?j7alqjIn+Lruhn6N4NWQM/aNefXRnVwkS77vDvv7Axmvs25OhSRQbGe5EAMD?=
- =?us-ascii?Q?vkPrRu7ffHVfHFO+5739FIZDji4nUK2qrTx/RIXbow9LTWyb3LBM7oPpQeFA?=
- =?us-ascii?Q?p32SXWk62WMvEHdf46nevBJ6jgvTmt7kw+fAWfEPi2xvZ4qSxlCA7ZPyY4nA?=
- =?us-ascii?Q?QQVJ3hxt3fNw3ICUMxdDEzcKdeQaplYuxxbgJdszWCXsV84qwMeN4LbkEVK9?=
- =?us-ascii?Q?w7iAIGmzrXUbqcZxW9aJ4pjzPXV4x+pQgGh0dE8Fg4jkKTjZIHWgeBqVJMeo?=
- =?us-ascii?Q?D9WfeQWRBcjwpKKqIxb3EzoJPqfurCmOH0bNw4B4a/oantmtmdB4BiFXOlro?=
- =?us-ascii?Q?c5TvB8E7A7E17G5YhENk=3D?=
-X-Microsoft-Antispam-Message-Info: 7pd6wxudoq9trIUuePn0l2lnDtqn8OaZEMMFsbFx0W5grTOvIRuI0iaX43IdjZ63vpxOC5VyeCjKVme0JqjE2zSSWCL6xbjieI2bgz+sqWOKIILs9y2HzBf+QAQWpvuzpjBQQurmpaFxqgSDqbFYGNoRGd4lK3H3+9lgU2Ge8kHjJe+FVJaZuAzBby18uUC74QbagTFqeGQPz3l22bnzlDzhmVpYZ10RC2o8v/3uqZnPKqIoUz/fCmSRxv4eEVMURhmDl1aMZXgEoQDq7Gs6ASoYRv9MSSNDHU48JvCDRMyVc/9isHZ/CmXAgH0fviOF
-X-Microsoft-Exchange-Diagnostics: 1; MWHPR0701MB3722;
- 6:33bmDmFwiy3bqrdmgph6GfRPuL9URbIYWt9qFz8hK3wnqBKLtdbWlYfvSQoHAoVS/x7TJZx2v8kP8qpkq6+ju9pfoOu0AHvvukTDvl+HFZUwUo6DX48KL8pzpvkdizpNXk73B5J6yKNscbopy+rAdwYPIlObU9S2PP9+J9zkg+L56tW8FWSjqul9NZ2RSDKKqJU64Zd7BiI3wJEW6rxojOm9i7Kjav5TVnb7NXehweTeqo69ViRCCUfZYPwCr1cDmjHXcXAE1d2wXABM/v+R+HIdCAfC4cAqRqgXzjaH/ICfZehuu3aitk7kYmiVwPyqJ3BhF7ALzFMi+ex5lywTXDs/4P8TURrZBIy7/9apS+SMUJc5CCQXbcXMQ8sfaG6unkV3ga2SYV0XuYGbuq30eCfO5rBQ9Grj9NccoryaevFWL+TRmksGZ8VKEPJHpkxCjnmfhyKJkc73amN12gFKRw==;
- 5:Z5ZgLFKpxEl6UyakeSY3oQNCI0vShf6uR0R4uq/E3hM2CZ4GyBmcGSumuwW4HDCLz0OZmGJQnuN0cMnH6BQM9YPknL7W1fNl30beOn5XWNUgFOndnclkMAg291U9cT+igWCvjje3LZHc+ReLm9IMpneebJBYNFSAo3fHKHIvt3w=;
- 7:6NAbRlkGpqES7l3iMpImsr/zvNdRjxA0GZN5hQgkFhP9+IXFaKWCIcUA1Kjqx9WTRrYkRoL2pBS8qxXKgAsx6lisFlXtYtMgnFglkcONMGtmynfUVCc5VV8ZzlLN8Y+t4TM/dhWAh25JO4FCO3uNFg==
+X-Microsoft-Exchange-Diagnostics: =?us-ascii?Q?1; DM3PR07MB2171;
+ 23:d2M6f0/tdu3Hewt98g2jBaMlxblN0893Ge1GzdXxL?=
+ =?us-ascii?Q?LTb0/XpQEF39bopW3s5PfSj4wzKAqgMv8NqwuEs3rmkabhrIcz7lWYOV9glG?=
+ =?us-ascii?Q?YVuK31iGJZ2BR133xSaAsi4XjY13oShXxpU5yFtd1P+80HPsmNOjI87xyzrl?=
+ =?us-ascii?Q?N7wh3qidoL83uVr/270Kc7faBRkFH+5uIm9vxT4EwfPGM2J0O3Z4yCPyMFov?=
+ =?us-ascii?Q?Q6OiPQyxLmAdR05mRJDa8geieJu1cWUzPZXW+dv1ZeOUHSRKPXT4/fgvnbrV?=
+ =?us-ascii?Q?Qsc7A8ma1ilRtarktKFwl52hFA65im57gfSpiVJQ0ZNC4l2ANUJhGQeh02Am?=
+ =?us-ascii?Q?cyh2zHzhCEiylc0h/Kh+HapXOEw9wxxx12QkC2KhptcWn1Um/37fKEm0msKN?=
+ =?us-ascii?Q?9VRR+WqlhDYXAywG3lgYWkpN2h5ugaHsILLrJ3emx+XlK1rJlhLmsWZWPFW/?=
+ =?us-ascii?Q?aDnYRaZTqsncX99AoX/uCIrGPaQulxwi1sZ8ou2sXT/mkK4Bpn6BG1LhZ36U?=
+ =?us-ascii?Q?TcOVCCLEyI8odPwy6m4FTwd5mk2DCslvmcPr6bslVhyYvcOTlkv1qb8BNyU5?=
+ =?us-ascii?Q?SM9N1X0puTy3vntJw0WaKZ4shzkrtrwDl0olkOEaqcEEQuXs4vMqOsAmfpu9?=
+ =?us-ascii?Q?9WEoiMEfZoZ0cbtnAA4Av6N3/zbyeHd957bL9aiHofT9i/qNPGISCbtxhHEs?=
+ =?us-ascii?Q?mBzaJoQQSqiGYJr9XwIN206ANHpUj16fW8ZHXHLTtrrvixcZ9WAVkHXuH5vP?=
+ =?us-ascii?Q?WX5QXFN+/t5zaZQpkDGdO/9rrYWVzlRrytTBcArH8iDfJpPdVP7CUkEaWX8X?=
+ =?us-ascii?Q?RVyMgFcSilPS52xx/dyTngAzC4HibzJ6L6SOEbTy6EiRZqSDiavJ5mN/tcfF?=
+ =?us-ascii?Q?5SDu+lHd+VIheBHPJqmmAtKpHcQv8n28ExqjBGsinFxj2lmR6dGlFlKlrru8?=
+ =?us-ascii?Q?9vSpgPk/S/Tf86y0H2kt6qtJr2GhS8x7OTypk1uYVX9z1QVaQ2QS03+rc5AW?=
+ =?us-ascii?Q?QtEYufzchQfsZYQuJx2os8pwRnf1dKDWgoP9XBXz330iihndr2161wAMSh8/?=
+ =?us-ascii?Q?28IU8BwLfZKf21Y6rWsOkK/0Gw6F4FHUC97IdjGgNpHIoXSx7K5U2eD5PZTA?=
+ =?us-ascii?Q?nto93LiiJU=3D?=
+X-Microsoft-Antispam-Message-Info: sbJZwHrLJ8/nJDdLFFvV24zGcctAxZhyPQpBscYQGDoRuIk4mxcSx2Gx2FXznd/JjB7OQYqUfCv0HUvjvs8mi1qjJ9KtBCfH85sLrZ3g77uTBaXwnCK1QFhUKB/yjCwiZ9vo60mV8WaGEMnqX/ZZeBPJlILhQCngJ58cRcMYQkzY+PhpF1BCkjY9vyBqB90NKd+6ewDJ+VgDQgyf6ukM8BTGLf5xlWg1oMIIQ3QwPoh4//0X66iOmO5CqGN6hq78KjaHGBjlaeW/teB+XR8xwOHWnvc+gXSUVIy7r9mXUXgfAhQ3eBDNXVtCcK9SBpIs
+X-Microsoft-Exchange-Diagnostics: 1; DM3PR07MB2171;
+ 6:BuOk9pm4yPvQnqnFqd34bgYCw2ed5ljcI+k/nOIk8ZbTTvqdApbshsHADjMHnrp/afM/tDzBNbbShXVWcuvpU8NnkmgmtfREBAzNCIglOidYMoe6kN0kmwS8O6bPe94nSaO/tLKw5jfy5mgiJsePmdF/oKNS1idaLjlKytJy6zUommnD8F1jRuNsoJRRUTZ/oSwRU/1EXjyWX//lgK5LcQ69wnxmI7A1RIFAcqFmtzU4iorT32qXonmPojWOFzs4QxL/tqFgdjQX2VH/qXttHE9dCdtwgiXtCWgocJDomvZnf9KLLmDUvQZ7aRivIIv4WCu3YIqLqG2dpyrKmSLNg+HrsWos+NwoOjO7+Sjx4wZwwIruTpE3HARTFTi24YLcMGVKdqBlXBRcP9KRSTcMbI1pYzgcl1/IWdOUZjrwm6ihxkJqFzRAEQCymt4vKzsefMv8lf2Cb0w1KTisNbnPNg==;
+ 5:hkI4GuKn/jRP0g+kmGWOdHoVDg88AE0UBQqScRQaqstmjphJvRQEzOwpihPVUHRbY/vUO40ddWF/K2Ofs8oscXLJKlfg5t+fC2/kuRIg2qAgQiacR0qLpJBgv+o2DRM+yFvVFQmUqefgjRWuMH3XUWWUntbpFMilidCFWVVItgY=;
+ 7:AeKdWljpIg6dxzNCJsAgJcmNZO8YmYd7vPUKEXWyyi8zeDPxUT/3Ak5kAk3VhmHNZ0Y10HekYl/32On0zxLcB/yOh0T0vTeEaEuAVVmjMWWkiwbc+qgzULaRr+0TKsbLAkjsl0XReVIXqqzwMp2p0Q==
 SpamDiagnosticOutput: 1:99
 SpamDiagnosticMetadata: NSPM
-X-Microsoft-Exchange-Diagnostics: 1; MWHPR0701MB3722;
- 20:oOsN6oFlT+MKXwaHke1dXSzxK+6nuCYBa4Gk16Fhhb9HzCGmDXwgdKXfR2k1n3slVhw8aPQHVb5w1NKBN/ZnXTRHkOaRKxEwdiFtB/hUVZK8BfZBdkhl1dkZSOqAJbVhZgYNLFKfSh7KjYAPk1xXOW6UzUFsxIORP3j4JA5fA52TZ35MOXFD4LWVpvaLQF0mqmQebEFR19CYOh0P2vU8QnlSeFR1aNa0gJ3GWz6Pg4vjvqkWeJ3U7KllghHgj3vi
+X-Microsoft-Exchange-Diagnostics: 1; DM3PR07MB2171;
+ 20:suHfNgbS6LkwsOflOEHLuDm1vy90w8kALkune72UEGilXaI5hpCVt+mT5w2bs6KLLCq4NBnxFHUUot5ddn3wP+thsoTpU/Siqkgzu1RnIHmZ4kviNRja8qTV9e/sKUc++DOZUmBJI4W4N1Ymjs7iCsV3WpCtJZe3WDAABRKVl0Zs5F4VGLeHr0SeTnpyj/HdJ4mrfsLmq8jq5lF6Av4qIZsE0s3lVfqug3LZhPQoRuhKGnPaujpildssHmOVyWGH
 X-OriginatorOrg: cadence.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Dec 2018 12:18:57.9303 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: a3b10e53-cabc-4d04-a42d-08d660f52874
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Dec 2018 12:19:01.7289 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1c3d8593-f6a6-4867-579a-08d660f52aac
 X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9; Ip=[158.140.1.28];
- Helo=[sjmaillnx1.cadence.com]
+ Helo=[sjmaillnx2.cadence.com]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR0701MB3722
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM3PR07MB2171
 X-Proofpoint-SPF-Result: pass
 X-Proofpoint-SPF-Record: v=spf1 include:_spf.salesforce.com
  include:mktomail.com
@@ -186,13 +183,13 @@ X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2018-12-13_03:, , signatures=0
 X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
  score=0
- priorityscore=1501 malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0
+ priorityscore=1501 malwarescore=0 suspectscore=29 phishscore=0 bulkscore=0
  spamscore=0 clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
  mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
  scancount=1 engine=8.0.1-1810050000 definitions=main-1812130110
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20181213_041914_124697_CE36FC50 
-X-CRM114-Status: GOOD (  12.60  )
+X-CRM114-CacheID: sfid-20181213_041914_130520_C34A52C6 
+X-CRM114-Status: GOOD (  11.80  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -211,201 +208,243 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-HDR (High Data Rate) modes is an important feature of the I3C protocol
-as it allows to get higher throughput than with the SDR (Single Data
-Rate) mode.
-
-Add new controller hooks and extend the I3C device API to expose this
-new feature.
+Cadence I3C master controller HDR-DDR mode support.
 
 This feature was originally created by Boris Brezillon
-<boris.brezillon@bootlin.com>.
+<boris.brezillon@bootlin.com>. I made some changes/fixes.
 
 Signed-off-by: Przemyslaw Gaj <pgaj@cadence.com>
 ---
- drivers/i3c/device.c       | 37 +++++++++++++++++++++++++++++++++++++
- drivers/i3c/internals.h    |  3 +++
- drivers/i3c/master.c       | 31 +++++++++++++++++++++++++++++++
- include/linux/i3c/device.h | 29 +++++++++++++++++++++++++++++
- include/linux/i3c/master.h |  7 +++++++
- 5 files changed, 107 insertions(+)
+ drivers/i3c/master/i3c-master-cdns.c | 195 ++++++++++++++++++++++++++++++++++-
+ 1 file changed, 193 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/i3c/device.c b/drivers/i3c/device.c
-index 69cc040..97910aa 100644
---- a/drivers/i3c/device.c
-+++ b/drivers/i3c/device.c
-@@ -51,6 +51,43 @@ int i3c_device_do_priv_xfers(struct i3c_device *dev,
- EXPORT_SYMBOL_GPL(i3c_device_do_priv_xfers);
+diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
+index a33f3a6..b1a97be 100644
+--- a/drivers/i3c/master/i3c-master-cdns.c
++++ b/drivers/i3c/master/i3c-master-cdns.c
+@@ -571,7 +571,7 @@ static void cdns_i3c_master_end_xfer_locked(struct cdns_i3c_master *master,
+ 	     !(status0 & MST_STATUS0_CMDR_EMP);
+ 	     status0 = readl(master->regs + MST_STATUS0)) {
+ 		struct cdns_i3c_cmd *cmd;
+-		u32 cmdr, rx_len, id;
++		u32 cmdr, rx_len, id, xfer_bytes;
  
- /**
-+ * i3c_device_send_hdr_cmds() - send HDR commands to a specific device
-+ *
-+ * @dev: device to which these commands should be sent
-+ * @xfers: array of commands
-+ * @nxfers: number of commands
-+ *
-+ * Send one or several HDR commands to @dev.
-+ *
-+ * This function can sleep and thus cannot be called in atomic context.
-+ *
-+ * Return: 0 in case of success, a negative error core otherwise.
-+ */
-+int i3c_device_send_hdr_cmds(struct i3c_device *dev,
-+			     struct i3c_hdr_cmd *cmds,
-+			     int ncmds)
+ 		cmdr = readl(master->regs + CMDR);
+ 		id = CMDR_CMDID(cmdr);
+@@ -581,7 +581,11 @@ static void cdns_i3c_master_end_xfer_locked(struct cdns_i3c_master *master,
+ 			continue;
+ 
+ 		cmd = &xfer->cmds[CMDR_CMDID(cmdr)];
+-		rx_len = min_t(u32, CMDR_XFER_BYTES(cmdr), cmd->rx_len);
++		xfer_bytes = CMDR_XFER_BYTES(cmdr);
++		if(cmd->cmd0 & CMD0_FIFO_IS_DDR)
++			xfer_bytes = xfer_bytes * 4;
++		rx_len = min_t(u32, xfer_bytes, cmd->rx_len);
++
+ 		cdns_i3c_master_rd_from_rx_fifo(master, cmd->rx_buf, rx_len);
+ 		cmd->error = CMDR_ERROR(cmdr);
+ 	}
+@@ -893,6 +897,192 @@ static int cdns_i3c_master_priv_xfers(struct i3c_dev_desc *dev,
+ 	return ret;
+ }
+ 
++#define I3C_DDR_FIRST_DATA_WORD_PREAMBLE	0x2
++#define I3C_DDR_DATA_WORD_PREAMBLE		0x3
++
++#define I3C_DDR_PREAMBLE(p)			((p) << 18)
++
++static u32 prepare_ddr_word(u16 payload)
 +{
-+	int ret, i;
-+	enum i3c_hdr_mode mode;
++	u32 ret;
++	u16 pb;
++
++	ret = (u32)payload << 2;
++
++	/* Calculate parity. */
++	pb = (payload >> 15) ^ (payload >> 13) ^ (payload >> 11) ^
++	     (payload >> 9) ^ (payload >> 7) ^ (payload >> 5) ^
++	     (payload >> 3) ^ (payload >> 1);
++	ret |= (pb & 1) << 1;
++	pb = (payload >> 14) ^ (payload >> 12) ^ (payload >> 10) ^
++	     (payload >> 8) ^ (payload >> 6) ^ (payload >> 4) ^
++	     (payload >> 2) ^ payload ^ 1;
++	ret |= (pb & 1);
++
++	return ret;
++}
++
++static u32 prepare_ddr_data_word(u16 data, bool first)
++{
++	return prepare_ddr_word(data) |
++	       I3C_DDR_PREAMBLE(first ?
++			        I3C_DDR_FIRST_DATA_WORD_PREAMBLE :
++				I3C_DDR_DATA_WORD_PREAMBLE);
++}
++
++#define I3C_DDR_READ_CMD	BIT(15)
++
++static u32 prepare_ddr_cmd_word(u16 cmd)
++{
++	return prepare_ddr_word(cmd) | I3C_DDR_PREAMBLE(1);
++}
++
++static u32 prepare_ddr_crc_word(u8 crc5)
++{
++	return (((u32)crc5 & 0x1f) << 9) | (0xc << 14) |
++	       I3C_DDR_PREAMBLE(1);
++}
++
++static u32 prepare_ddr_parity_bit(u32 cmdword)
++{
++	u16 pb;
++
++	pb = (cmdword >> 14) ^ (cmdword >> 12) ^ (cmdword >> 10) ^
++	     (cmdword >> 8) ^ (cmdword >> 6) ^ (cmdword >> 4) ^
++	     (cmdword >> 2);
++
++	if (pb & 1)
++		cmdword |= BIT(0);
++
++	return cmdword;
++}
++
++static u8 update_crc5(u8 crc5, u16 word)
++{
++	u8 crc0;
++	int i;
++
++	/*
++	 * crc0 = next_data_bit ^ crc[4]
++	 *                1         2            3       4
++	 * crc[4:0] = { crc[3:2], crc[1]^crc0, crc[0], crc0 }
++	 */
++	for (i = 15; i >= 0; --i) {
++		crc0 = ((word >> i) ^ (crc5 >> 4)) & 0x1;
++		crc5 = ((crc5 << 1) & 0x1a) |
++		       (((crc5 >> 1) ^ crc0) << 2) |
++		       crc0;
++	}
++
++	return crc5 & 0x1f;
++}
++
++static int cdns_i3c_master_send_hdr_cmd(struct i3c_dev_desc *dev,
++					const struct i3c_hdr_cmd *cmds,
++					int ncmds)
++{
++	struct i3c_master_controller *m = i3c_dev_get_master(dev);
++	struct cdns_i3c_master *master = to_cdns_i3c_master(m);
++	int ret, i, ntxwords = 1, nrxwords = 0;
++	struct cdns_i3c_xfer *xfer;
++	struct cdns_i3c_cmd *ccmd;
++	u16 cmdword, datain;
++	u32 checkword, word;
++	u32 *buf = NULL;
++	u8 crc5;
 +
 +	if (ncmds < 1)
 +		return 0;
 +
-+	mode = cmds[0].mode;
-+	for (i = 1; i < ncmds; i++) {
-+		if (mode != cmds[i].mode)
-+			return -EINVAL;
++	if (ncmds > 1 || cmds[0].ndatawords > CMD0_FIFO_PL_LEN_MAX)
++		return -ENOTSUPP;
++
++	if (cmds[0].mode != I3C_HDR_DDR)
++		return -ENOTSUPP;
++
++	cmdword = ((u16)cmds[0].code << 8) | (dev->info.dyn_addr << 1);
++	if (cmdword & I3C_DDR_READ_CMD)
++		nrxwords += cmds[0].ndatawords + 1;
++	else
++		ntxwords += cmds[0].ndatawords + 1;
++
++	if (ntxwords > master->caps.txfifodepth ||
++	    nrxwords > master->caps.rxfifodepth)
++		return -ENOTSUPP;
++
++	buf = kzalloc((nrxwords + ntxwords) * sizeof(*buf), GFP_KERNEL);
++	if (!buf)
++		return -ENOMEM;
++
++	xfer = cdns_i3c_master_alloc_xfer(master, 2);
++	if (!xfer) {
++		ret = -ENOMEM;
++		goto out_free_buf;
 +	}
 +
-+	i3c_bus_normaluse_lock(dev->bus);
-+	ret = i3c_dev_send_hdr_cmds_locked(dev->desc, cmds, ncmds);
-+	i3c_bus_normaluse_unlock(dev->bus);
++	ccmd = &xfer->cmds[0];
++	ccmd->cmd1 = CMD1_FIFO_CCC(I3C_CCC_ENTHDR(0));
++	ccmd->cmd0 = CMD0_FIFO_IS_CCC;
++
++	ccmd = &xfer->cmds[1];
++
++	if (cmdword & I3C_DDR_READ_CMD)
++		cmdword = prepare_ddr_parity_bit(cmdword);
++
++	ccmd->tx_len = ntxwords * sizeof(u32);
++	ccmd->tx_buf = buf;
++	ccmd->rx_len = nrxwords * sizeof(u32);
++	ccmd->rx_buf = buf + ntxwords;
++
++	buf[0] = prepare_ddr_cmd_word(cmdword);
++	crc5 = update_crc5(0x1f, cmdword);
++	for (i = 0; i < ntxwords - 2; i++) {
++		crc5 = update_crc5(crc5, cmds[0].data.out[i]);
++		buf[i + 1] = prepare_ddr_data_word(cmds[0].data.out[i], !i);
++	}
++
++	if(!(cmdword & I3C_DDR_READ_CMD))
++		buf[ntxwords-1] = prepare_ddr_crc_word(crc5);
++
++	ccmd->cmd0 = CMD0_FIFO_IS_DDR | CMD0_FIFO_PL_LEN(ntxwords);
++
++	cdns_i3c_master_queue_xfer(master, xfer);
++	if (!wait_for_completion_timeout(&xfer->comp, msecs_to_jiffies(1000)))
++		cdns_i3c_master_unqueue_xfer(master, xfer);
++
++	ret = xfer->ret;
++
++	if (!xfer->ret && nrxwords) {
++		for (i = 0; i < nrxwords - 1; i++) {
++			word = (((u32 *)ccmd->rx_buf)[i] & GENMASK(19, 0));
++			datain = (word >> 2) & GENMASK(15, 0);
++			checkword = prepare_ddr_data_word(datain, !i);
++
++			if (checkword != word) {
++				ret = -EIO;
++				break;
++			}
++
++			crc5 = update_crc5(crc5, datain);
++			cmds[0].data.in[i] = datain;
++		}
++
++		word = (((u32 *)ccmd->rx_buf)[i] & GENMASK(19, 9));
++		datain = (word >> 2) & GENMASK(15, 0);
++		checkword = prepare_ddr_crc_word(crc5);
++
++		if (checkword != word)
++			ret = -EIO;
++	}
++
++	cdns_i3c_master_free_xfer(xfer);
++
++out_free_buf:
++	kfree(buf);
 +
 +	return ret;
 +}
-+EXPORT_SYMBOL_GPL(i3c_device_send_hdr_cmds);
 +
-+/**
-  * i3c_device_get_info() - get I3C device information
-  *
-  * @dev: device we want information on
-diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
-index 86b7b44..46c4de7 100644
---- a/drivers/i3c/internals.h
-+++ b/drivers/i3c/internals.h
-@@ -18,6 +18,9 @@ void i3c_bus_normaluse_unlock(struct i3c_bus *bus);
- int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
- 				 struct i3c_priv_xfer *xfers,
- 				 int nxfers);
-+int i3c_dev_send_hdr_cmds_locked(struct i3c_dev_desc *dev,
-+				 struct i3c_hdr_cmd *cmds,
-+				 int ncmds);
- int i3c_dev_disable_ibi_locked(struct i3c_dev_desc *dev);
- int i3c_dev_enable_ibi_locked(struct i3c_dev_desc *dev);
- int i3c_dev_request_ibi_locked(struct i3c_dev_desc *dev,
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index e98b600..16d6dd5 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -2791,6 +2791,37 @@ int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
- 	return master->ops->priv_xfers(dev, xfers, nxfers);
- }
- 
-+int i3c_dev_send_hdr_cmds_locked(struct i3c_dev_desc *dev,
-+				 struct i3c_hdr_cmd *cmds,
-+				 int ncmds)
-+{
-+	struct i3c_master_controller *master;
-+	int i;
-+
-+	if (!dev)
-+		return -ENOENT;
-+
-+	master = i3c_dev_get_master(dev);
-+	if (!master || !cmds)
-+		return -EINVAL;
-+
-+	if (master->op_mode == I3C_SLAVE_MODE) {
-+		if (i3c_master_request_mastership(master))
-+			return -EIO;
-+	}
-+
-+	if (!master->ops->send_hdr_cmds)
-+		return -ENOTSUPP;
-+
-+	for (i = 0; i < ncmds; i++) {
-+		if (!(master->this->info.hdr_cap & BIT(cmds->mode)))
-+			return -ENOTSUPP;
-+	}
-+
-+	return master->ops->send_hdr_cmds(dev, cmds, ncmds);
-+}
-+
-+
- int i3c_dev_disable_ibi_locked(struct i3c_dev_desc *dev)
+ static int cdns_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
+ 				     const struct i2c_msg *xfers, int nxfers)
  {
- 	struct i3c_master_controller *master;
-diff --git a/include/linux/i3c/device.h b/include/linux/i3c/device.h
-index 5ecb055..75a947f 100644
---- a/include/linux/i3c/device.h
-+++ b/include/linux/i3c/device.h
-@@ -49,6 +49,31 @@ enum i3c_hdr_mode {
- 	I3C_HDR_TSL,
- };
- 
-+#define I3C_HDR_GEN_WRITE_CMD(id)    	(id)
-+#define I3C_HDR_VENDOR_WRITE_CMD(id) 	(0x20 + (id))
-+#define I3C_HDR_IS_READ_CMD        	BIT(7)
-+#define I3C_HDR_GEN_READ_CMD(id)    	(0x80 + (id))
-+#define I3C_HDR_VENDOR_READ_CMD(id)    	(0xa0 + (id))
-+
-+/**
-+ * struct i3c_hdr_cmd - I3C HDR command
-+ * @mode: HDR mode selected for this command
-+ * @code: command opcode. Bit 7 encodes the direction of the data transfer, if
-+ *      set this is a read, otherwise this is a write
-+ * @ndatawords: number of data words (a word is 16bits wide) to transfer
-+ * @data: input/output buffer
-+ */
-+struct i3c_hdr_cmd {
-+    enum i3c_hdr_mode mode;
-+    u8 code;
-+    int ndatawords;
-+    union {
-+        u16 *in;
-+        const u16 *out;
-+    } data;
-+};
-+
-+
- /**
-  * struct i3c_priv_xfer - I3C SDR private transfer
-  * @rnw: encodes the transfer direction. true for a read, false for a write
-@@ -289,6 +314,10 @@ int i3c_device_do_priv_xfers(struct i3c_device *dev,
- 			     struct i3c_priv_xfer *xfers,
- 			     int nxfers);
- 
-+int i3c_device_send_hdr_cmds(struct i3c_device *dev,
-+			     struct i3c_hdr_cmd *cmds,
-+			     int ncmds);
-+
- void i3c_device_get_info(struct i3c_device *dev, struct i3c_device_info *info);
- 
- struct i3c_ibi_payload {
-diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
-index ada956a..fd50473 100644
---- a/include/linux/i3c/master.h
-+++ b/include/linux/i3c/master.h
-@@ -386,6 +386,10 @@ struct i3c_bus {
-  *		  This method is mandatory.
-  * @priv_xfers: do one or several private I3C SDR transfers
-  *		This method is mandatory.
-+ * @send_hdr_cmds: send one or several HDR commands. If there is more than one
-+ *		   command, they should ideally be sent in the same HDR
-+ *		   transaction.
-+ *		   This method is optional.
-  * @attach_i2c_dev: called every time an I2C device is attached to the bus.
-  *		    This is a good place to attach master controller specific
-  *		    data to I2C devices.
-@@ -457,6 +461,9 @@ struct i3c_master_controller_ops {
- 	int (*priv_xfers)(struct i3c_dev_desc *dev,
- 			  struct i3c_priv_xfer *xfers,
- 			  int nxfers);
-+	int (*send_hdr_cmds)(struct i3c_dev_desc *dev,
-+			     const struct i3c_hdr_cmd *cmds,
-+			     int ncmds);
- 	int (*attach_i2c_dev)(struct i2c_dev_desc *dev);
- 	void (*detach_i2c_dev)(struct i2c_dev_desc *dev);
- 	int (*i2c_xfers)(struct i2c_dev_desc *dev,
+@@ -1714,6 +1904,7 @@ static const struct i3c_master_controller_ops cdns_i3c_master_ops = {
+ 	.supports_ccc_cmd = cdns_i3c_master_supports_ccc_cmd,
+ 	.send_ccc_cmd = cdns_i3c_master_send_ccc_cmd,
+ 	.priv_xfers = cdns_i3c_master_priv_xfers,
++	.send_hdr_cmds = cdns_i3c_master_send_hdr_cmd,
+ 	.i2c_xfers = cdns_i3c_master_i2c_xfers,
+ 	.i2c_funcs = cdns_i3c_master_i2c_funcs,
+ 	.enable_ibi = cdns_i3c_master_enable_ibi,
 -- 
 2.4.5
 
