@@ -2,174 +2,181 @@ Return-Path: <SRS0=JcjT=OW=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-3.1 required=3.0 tests=BAD_ENC_HEADER,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_PASS,T_MIXED_ES,URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-9.1 required=3.0 tests=BAD_ENC_HEADER,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SIGNED_OFF_BY,SPF_PASS,T_MIXED_ES,URIBL_BLOCKED,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id DA202C67839
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E97F2C67872
 	for <linux-i3c@archiver.kernel.org>; Thu, 13 Dec 2018 12:19:17 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 9ECD520645
+	by mail.kernel.org (Postfix) with ESMTPS id B778920851
 	for <linux-i3c@archiver.kernel.org>; Thu, 13 Dec 2018 12:19:17 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="OS44lZWa";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=cadence.com header.i=@cadence.com header.b="d2SLaUYg";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=cadence.com header.i=@cadence.com header.b="pQH1KEbe"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9ECD520645
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="N1PmKkRK";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=cadence.com header.i=@cadence.com header.b="ildKSwvw";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=cadence.com header.i=@cadence.com header.b="RaCM34mi"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org B778920851
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cadence.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=gky5dELv+e4Ohvny8NAEv6X1l3b1pYIften83SpnDWk=; b=OS44lZWaTPpso6
-	RsaL3pdcbyfxa9VtQaYzviusq47j+RqT8l7Da96nfHN12NehBM+m5IqguvCApmXbEbsxc89dVhk7Q
-	fCARLJc5fH46KVdEoui21KcQz4I8TLQ3UdzytfqgaL2rNHbdJi652S+CqqUbyhQSt9ngitBpcvFmv
-	+C6S0/6t9qiLOkBP2nGiRbJ9synFB1xSHvrMy6viSAeUmJ80aOcWG21x3RiS9tQ8iMnBa6lJC0eIx
-	PqSXuuKj5xLEBU1o/zzYgZyGyliLRaTjFLPMHkCLlK4OBiAk/rSTz9mHHbRKR4lr3NGgUCCS6Lt4r
-	K6BbG9hq1cVMdBx+NVEw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tHYZ+1/wVPFMYeW8sYGBVzcQwjCFDldfGyUgv4HaqWE=; b=N1PmKkRKfFfjSn
+	69r2mxCitouZgTkMJ+V2qzIBjTKCB4pX+njLQWTeKA1RAViDlYMacQ9aowzRjBUy1rybRH4XcpQmu
+	3Xt8Vf5bYiTA37QJEzsAUH9DhINkYVKnD6z3nOKjDcaUqEUZIjyKxnMffnCZ2Z6Mcz8E5Zrwt80Qu
+	4P0qq9VFHNBA9r1T3gdjsSIETSMq3XOo6ZcNCTBVzzKlGoKkTdK9sSJwpTTVrRkLdnQftwA/+WUt1
+	kUXNGd7Xt77MURR5aqA6XC3Inz4Q5WAPZFMuSgPY9yOJ2THlxL7XXpdL1gBakctslHpmDjYly54mz
+	6WGBD4av3RA3geIvSS+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1gXPxV-0003Ea-8T; Thu, 13 Dec 2018 12:19:17 +0000
+	id 1gXPxV-0003Ee-B9; Thu, 13 Dec 2018 12:19:17 +0000
 Received: from mx0a-0014ca01.pphosted.com ([208.84.65.235])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1gXPxR-0003DF-T7
+ id 1gXPxR-0003DK-T6
  for linux-i3c@lists.infradead.org; Thu, 13 Dec 2018 12:19:15 +0000
 Received: from pps.filterd (m0042385.ppops.net [127.0.0.1])
  by mx0a-0014ca01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- wBDC7hwL009020; Thu, 13 Dec 2018 04:19:00 -0800
+ wBDC7Y2s008445; Thu, 13 Dec 2018 04:19:02 -0800
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
  h=from : to : cc :
- subject : date : message-id : mime-version : content-type; s=proofpoint;
- bh=8BuA2+3qqa8TK6rnVzKyRjw1jfiaak9Xsk3FZkE0YL4=;
- b=d2SLaUYgVnTPBXlpV/qF8CJhJ7evN2Is2l/l+njcVSqYuR3d6LW0Ha0tOUpKfjc1C66F
- fPyG1wB3n1BLgLEqEdrwr+FOe0yRYHojS9OTM6jOB15fsU6spDde38QEEpsH5gc+8t78
- uz5G6bVWrvgRq/5QqfiGr6Z8nH8ACbD+sIfLLMinHvS0ENdAVdTaJoVtHBeZCZraMjkF
- a54UTjD4RMOQ6yQLWOUYIikfIq64/iENj++g+/qwCYl3r96Sz+1sFO6xVkQ7Rct2imKK
- DhaXYNJSSbgno0WNWEAxoDR/41GGyvvfXW3EBwB2Wch0kKX7mIrRtpXvpTlATwT4dfDT GQ== 
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=proofpoint;
+ bh=YZGj9K3zbMl5AEcdDINUpagKmy8fEB7RXJzIBMJlOKI=;
+ b=ildKSwvwQwrHWd1WlPyooayVegIjhZWogwZvkvaBHt0vHZYs2Wb9jY2Js/u5+auNSx88
+ bSNymisTlCw5cL4+AvdxN9unV6remKAJS5V7J+62uXg1yQS0kcqEZEDbEgiKWJBBuI4d
+ 8/077YZz4BUwRdk3w79aQ5fBQBR5fTW6tzgNFO59pFUDPqfaZnq4y7xb3MLsrXyFbrZq
+ ixsgZ2qQoINzmeQlgE21IKqNgNaiC2EKbvaHvv3YzBa1UgWncoApRqqwLuB4lV6k36rk
+ EZzU884UM90YryZUPdBEvQW5uDmrH30My+ZlJc5zgrzzfstywrvzfcd0JKYoO/f2x2cZ Gw== 
 Authentication-Results: cadence.com;
 	spf=pass smtp.mailfrom=pgaj@cadence.com
-Received: from nam04-sn1-obe.outbound.protection.outlook.com
- (mail-sn1nam04lp2050.outbound.protection.outlook.com [104.47.44.50])
- by mx0a-0014ca01.pphosted.com with ESMTP id 2pbf1ujbng-1
+Received: from nam01-bn3-obe.outbound.protection.outlook.com
+ (mail-bn3nam01lp2058.outbound.protection.outlook.com [104.47.33.58])
+ by mx0a-0014ca01.pphosted.com with ESMTP id 2pbf1ujbnj-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Thu, 13 Dec 2018 04:19:00 -0800
+ Thu, 13 Dec 2018 04:19:01 -0800
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
  s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8BuA2+3qqa8TK6rnVzKyRjw1jfiaak9Xsk3FZkE0YL4=;
- b=pQH1KEbergDoK8O99FUfgOtCNk3kfBpppCB1ITATGK7W7Za5d3Oi5SQCmYXJnCBrSd83fhBuPVFBTaXcOhHDrdBPIeQCnFor04NP0CgQzl87+VykPCr9XntENen/g1P6SKWQRK1KFpzDNHRB7wCPphf7RgdG2D2qT5OkRcwOMMg=
-Received: from CO2PR07CA0044.namprd07.prod.outlook.com (2603:10b6:100::12) by
- BN4PR07MB2164.namprd07.prod.outlook.com (2a01:111:e400:59c6::22) with
+ bh=YZGj9K3zbMl5AEcdDINUpagKmy8fEB7RXJzIBMJlOKI=;
+ b=RaCM34miCg49Cc7Fqjm3o1arjOc9gZ75byLzFRlvjyXs5OprXVgVQivMCHkdG8pWmAxkGs8r6+66jUannKViMllS6jUxwbLDFgGGdjbazrc5YpYJ1nwkipALP28Xl4VH9sdVHBB4CU2lu2V1j0Xt5N+HfHDPJEk8p9XF8vx0NU4=
+Received: from DM5PR07CA0089.namprd07.prod.outlook.com (2603:10b6:4:ae::18) by
+ MWHPR0701MB3722.namprd07.prod.outlook.com (2603:10b6:301:7e::27) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1425.19; Thu, 13 Dec
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1425.20; Thu, 13 Dec
  2018 12:18:58 +0000
-Received: from CO1NAM05FT007.eop-nam05.prod.protection.outlook.com
- (2a01:111:f400:7e50::208) by CO2PR07CA0044.outlook.office365.com
- (2603:10b6:100::12) with Microsoft SMTP Server (version=TLS1_2,
+Received: from DM3NAM05FT021.eop-nam05.prod.protection.outlook.com
+ (2a01:111:f400:7e51::204) by DM5PR07CA0089.outlook.office365.com
+ (2603:10b6:4:ae::18) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1425.19 via Frontend
- Transport; Thu, 13 Dec 2018 12:18:57 +0000
+ Transport; Thu, 13 Dec 2018 12:18:58 +0000
 Received-SPF: SoftFail (protection.outlook.com: domain of transitioning
  cadence.com discourages use of 158.140.1.28 as permitted sender)
 Received: from sjmaillnx1.cadence.com (158.140.1.28) by
- CO1NAM05FT007.mail.protection.outlook.com (10.152.96.113) with Microsoft SMTP
+ DM3NAM05FT021.mail.protection.outlook.com (10.152.98.130) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
  15.20.1446.5 via Frontend Transport; Thu, 13 Dec 2018 12:18:57 +0000
 Received: from maileu3.global.cadence.com (maileu3.cadence.com [10.160.88.99])
  by sjmaillnx1.cadence.com (8.14.4/8.14.4) with ESMTP id
- wBDCIsk9017230
+ wBDCIskA017230
  (version=TLSv1/SSLv3 cipher=AES256-SHA bits=256 verify=OK);
  Thu, 13 Dec 2018 04:18:56 -0800
 X-CrossPremisesHeadersFilteredBySendConnector: maileu3.global.cadence.com
 Received: from maileu3.global.cadence.com (10.160.88.99) by
  maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
- 15.0.1367.3; Thu, 13 Dec 2018 13:18:56 +0100
+ 15.0.1367.3; Thu, 13 Dec 2018 13:18:58 +0100
 Received: from lvlogina.cadence.com (10.165.176.102) by
  maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
- 15.0.1367.3 via Frontend Transport; Thu, 13 Dec 2018 13:18:55 +0100
+ 15.0.1367.3 via Frontend Transport; Thu, 13 Dec 2018 13:18:57 +0100
 Received: from lvlogina.cadence.com (localhost.localdomain [127.0.0.1])
- by lvlogina.cadence.com (8.14.4/8.14.4) with ESMTP id wBDCIqkx011640;
- Thu, 13 Dec 2018 12:18:52 GMT
+ by lvlogina.cadence.com (8.14.4/8.14.4) with ESMTP id wBDCItN1011804;
+ Thu, 13 Dec 2018 12:18:55 GMT
 Received: (from pgaj@localhost)
- by lvlogina.cadence.com (8.14.4/8.14.4/Submit) id wBDCIpsm011576;
- Thu, 13 Dec 2018 12:18:51 GMT
+ by lvlogina.cadence.com (8.14.4/8.14.4/Submit) id wBDCItac011803;
+ Thu, 13 Dec 2018 12:18:55 GMT
 From: Przemyslaw Gaj <pgaj@cadence.com>
 To: <bbrezillon@kernel.org>, <linux-i3c@lists.infradead.org>
-Subject: [PATCH 0/2] Add the I3C HDR modes
-Date: Thu, 13 Dec 2018 12:18:30 +0000
-Message-ID: <cover.1544702829.git.pgaj@cadence.com>
+Subject: [PATCH 1/2] i3c: Add support for HDR modes.
+Date: Thu, 13 Dec 2018 12:18:31 +0000
+Message-ID: <efb3b8692d3579ab3369cc0f80e237550f3e8209.1544702829.git.pgaj@cadence.com>
 X-Mailer: git-send-email 2.4.5
+In-Reply-To: <cover.1544702829.git.pgaj@cadence.com>
+References: <cover.1544702829.git.pgaj@cadence.com>
 MIME-Version: 1.0
 X-OrganizationHeadersPreserved: maileu3.global.cadence.com
 X-EOPAttributedMessage: 0
 X-Forefront-Antispam-Report: CIP:158.140.1.28; IPV:CAL; SCL:-1; CTRY:US;
  EFV:NLI; SFV:NSPM;
- SFS:(10009020)(346002)(39860400002)(376002)(136003)(396003)(2980300002)(36092001)(189003)(199004)(8936002)(336012)(2906002)(4326008)(2616005)(476003)(50466002)(126002)(7636002)(246002)(86362001)(305945005)(186003)(51416003)(426003)(48376002)(26005)(356004)(26826003)(478600001)(47776003)(8676002)(316002)(16586007)(110136005)(54906003)(42186006)(105596002)(50226002)(87636003)(5660300001)(6666004)(107886003)(486006)(106466001)(36756003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BN4PR07MB2164; H:sjmaillnx1.cadence.com; FPR:;
- SPF:SoftFail; LANG:en; PTR:corp.cadence.com; MX:1; A:1; 
-X-Microsoft-Exchange-Diagnostics: 1; CO1NAM05FT007;
- 1:x2QTUtLSf4llREXXPMsz3ww16an/fRewUXHtPeYt9sgUkfQdTaFvcOFBUvzxqG+81tewiInQwPD10m4MgIEebtNQErNsJN3UXYGaZGD0sdvfqzVl/vu6YWv2jXXacIc6
+ SFS:(10009020)(979002)(376002)(346002)(396003)(136003)(39860400002)(2980300002)(36092001)(199004)(189003)(87636003)(305945005)(118296001)(316002)(36756003)(54906003)(42186006)(110136005)(8936002)(16586007)(107886003)(47776003)(5024004)(8676002)(14444005)(478600001)(126002)(486006)(2906002)(246002)(26826003)(106466001)(7636002)(476003)(2616005)(5660300001)(86362001)(11346002)(446003)(6666004)(48376002)(26005)(356004)(336012)(50466002)(105596002)(50226002)(186003)(4326008)(51416003)(551934003)(76176011)(426003)(969003)(989001)(999001)(1009001)(1019001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR0701MB3722; H:sjmaillnx1.cadence.com; FPR:;
+ SPF:SoftFail; LANG:en; PTR:corp.cadence.com; A:1; MX:1; 
+X-Microsoft-Exchange-Diagnostics: 1; DM3NAM05FT021;
+ 1:L00nvk150iI6+QnKjHqKvbIe5mNga94bDAXB5QAKc5Y0ALhHLbBCvdk8Hx1frqrK4h66ADfdNjBYf2YetF4YrIVEqMCAviLmLb5MyxNTgY/YTNkg7FAVsYRzC9+9lwCt
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 0e1a1be3-da0a-4d73-a529-08d660f527db
+X-MS-Office365-Filtering-Correlation-Id: a3b10e53-cabc-4d04-a42d-08d660f52874
 X-Microsoft-Antispam: BCL:0; PCL:0;
  RULEID:(2390098)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600074)(711020)(2017052603328)(7153060);
- SRVR:BN4PR07MB2164; 
-X-Microsoft-Exchange-Diagnostics: 1; BN4PR07MB2164;
- 3:L36rgFkUWfiN41X1mP/Vgiu5BIqMPr1lYV1svc7fBM2BjlmZhaRTVxwkWYxCnkRCQnAVL217kuHswDsOzeyBtIXwMxnqGdsprejenof2MiycvWl0mGaapjwmCNe5qSQh2ORePGwueFklMrWxmA39oIw7WIYtW4/z11rHDeod3Waa6bpxZ2tHPXLXOEmYr21/05ZiR+cF42i5fuXhW/jbDVDaT0me0DvZSIDA2bqERLthfEzyjCPLOvoK7d0XPBoDlcOXuNVTR+fDyxx6u+FPK/oFN4jGJxP1ACm8BM78nuFVEc3aLEDZt8yZqnN5q6pvTwUGXVZZE+P7wdbYwTChPLl6ND/YHZoXIGy+Xb8o5gk=;
- 25:x1wKjP7y8apNDUFFKOm5Lxg687vVxKPn/0x8K/oa126hauBt87T0mI0z2rCzD75Opd1v3qRsdwd5Gyyc+he+AOZH8Bsz2Nt+27uoXGqAbcOTB5kto/Y/x7cZgH412Ka7fDuM00b6BU8nagjXenb/S29g827EOzB88pv9uxkigINOwJCY0jDW/1HLv8xwFMXwooMoyCD10kJcaG4gG3wsi3WwDksCZYIm+/t1Vdi92zUyOpUMUEHy2xI6SHA/s7Ud3wIGow1v2qtudpGvYbP0xExAvIJUCXMjTqnmSm53X6Se7I3MQkSnErqQlZW6rWYDg2tLq5tbja8tP6qwOvv3rnKGt+UAuQu2NSnyaN31KcE=
-X-MS-TrafficTypeDiagnostic: BN4PR07MB2164:
-X-Microsoft-Exchange-Diagnostics: 1; BN4PR07MB2164;
- 31:fkhuBKMqIQX5QsUAWkIUkZJ5Ui/esNSQBDn0ge9IO8Q6b4KbjTkHijAiKaatEMSxXLWgcfiE+RkP1I/sH3DBgruiscaoIr99pH5uLovQA5gCRbxjZE9Mlr1quJZX28kUY654S0AOeoY7c9WQyI0bE+rmtKyHB61aWEQHRGrB9fcFt9DGi12TQMONXmR/ZIRxx2zn5vJOKLys+q69rzIWI/WJuoZetaUTVF9mGRIHdJo=;
- 20:b0DQP9w3BNbK4MEG8hB/dFSJjJLJqlj5NsIONFX32SxsgcJHveUboEuq89VC4A8/lvEQhlXqXJLC27vlDLmPfB7NIXnOrGNwzzzvrCF50rYuGEmCmULbCll/cLXbl/dnb5qtAT64ac6NvEGMFDMkRMSHwmpkFQbRstBKU2qFtBhKfmoCKubqp+Fqkbk8TyOAHoURHp2xqh7oCZKIrWN5n5frSEmGHTx/AiFfltC7HizDvOXBrvRBU4xuSmlvU4RbosOX6O8eIbrEX0m+ujqo3ozt9KogPaJdUp9yT/JPUSIl8gfXGIOv3XDQcmvgLDrASIf8UoXY5Bae83umGu+VmmIdIJwe5MV6vl+NO52FBBoMIc97g2oZI2lhoWAMGPAgBxEAEBuKrjR9JoYU0YeZ5uS0rh1qEclcBCsfHV4JvuIq7UkDg3OyRHpiGOi39mPyeYOE/f/41iH7qcUF8bEu+67RB/MwfpARtqn7tx+5Q2OKm7o0aZE2iUcpDXx1ZR1A
-X-Microsoft-Antispam-PRVS: <BN4PR07MB2164AF36C1891FA9796D8096C2A00@BN4PR07MB2164.namprd07.prod.outlook.com>
+ SRVR:MWHPR0701MB3722; 
+X-Microsoft-Exchange-Diagnostics: 1; MWHPR0701MB3722;
+ 3:rKJ1mWPOUfNadcPOCvHJJ03xIAh2KhqR/Aai8L3fPfWr+N5ugXNJx/CXBg8kcT6OWPV6W+dBgCNCraT/7mkV6+ZeFxDf0MBOeXDk8iE8FXKCl3ZrLe+ysEP9MePfrqeIZXzDuaLI39aza/wnyfuqraL65eJUhay6yhLy/6yGvugxz2elDoa8f7WtvVkVupff7DBHdshhTycHvqisk5dTmK+hTThncoZ8auLvoWl2Xc56mZzK8MsFpRRXJ5F8GEYap071WueRxnF1m3qJi39kE+v/Z/NUMIaA8YstfHacCS47CpuQrSrkgrkp9p2CUfJMYRCqMdQNt5J92xlxGA4+XltIF9rHvrrXt075oke0Qps=;
+ 25:i5yYToVU1XdKuJu2AHC81VhtWUgY0jpruE+hhMl7EKsAgFQFwcteqT+GaRwCevbhz1KS0gweS7EEJvSWJZWj/34eFkVevMnOf18iInm7qmcleK+RHm7uEn1aX0D4vpdFLEZJnttt9UrCHgqt9dkwn73SQ97R48cEPR0ke/6ygTctT7GFCCjmaTFg+MDPpoCRrEtlYgKQihEnHw0thMP2+j5YR7o3QuWIFfZB835kVAa+C5x8ID5mStwlKlySffD16gcPZwMZrI/C0oBgpWiMaM8YG5Wh8Y+zTttTjnscWz9+ji+nFtLvERC7q9xUosrjz79PkNDNP/lZkiwWWzn5EA==
+X-MS-TrafficTypeDiagnostic: MWHPR0701MB3722:
+X-Microsoft-Exchange-Diagnostics: 1; MWHPR0701MB3722;
+ 31:d8kXWtK6Wsk66RbyukkRajlYBGpfm1X7Ft9YLGWSh87iyzEBqGen0G0yjoBLVaUA11nyhB7cG8bEvtvAt0d/vVWZDbN2W3Qm7hpkKdbpOsqgFjT3cBqCNWoE09VkI+vvqt1UZ/PZucYpOP3gWRBJsca/XpRMdaYt9e7C3JewaKTuQYMTQmJOli/mOlsFShGwjI4WEc/Oxx/e7JGNm7OtEkg4sOVNhaoS7Sia8ujKuao=;
+ 20:WschtCk36irMk6cDld5CD3C2nLyC5VhecszhdjSQWldMm4cRVgZ7nu8VSAo2+EtT/JgcDv1vR9SvIZgnn6Gx6vLW5jm7SyJboDqayxQh3A55JoXho8/koDc1gs4hmxeb90YBPmEfEYbvScru6HOc8eKQbmbkxtZAjmVPFpTG3oVKQQgSXXy9tQBhL2JeQ4AiasxK+/TLyZIkpvWq0VAdwLNelimFw7ZLNM8CnVN3IbFWK3Amw31ZKQAg6Fnq8TfMkmZYS4VXalgbA3osygo7InmyYTGpqqjKON2kDOBUL58zFnAHpfPYt9p6JdMzGi2D1pfqqrdjCT3xQYTmxgU8jtROl+SlYpwYUqdzeOd3gE8ucnFp8AdHemHyMuWa7hTV0NsHMmfXkLwW52nBLdV43Mx0S5RyK46PKC8Ew+DDHo8h3rdEME8KYHDd9xeGelFfqrVWB3e0RqoAlKVpUDky1ko6/27k3YS86Wj539grfOxaYh8dKfZmGXpXVkoe7jad
+X-Microsoft-Antispam-PRVS: <MWHPR0701MB37229D3129BF5DDB9A7C3450C2A00@MWHPR0701MB3722.namprd07.prod.outlook.com>
 X-MS-Exchange-SenderADCheck: 1
 X-Exchange-Antispam-Report-CFA-Test: BCL:0; PCL:0;
- RULEID:(8211001083)(3230021)(999002)(6040522)(2401047)(8121501046)(5005006)(10201501046)(3231475)(944501520)(52105112)(93006095)(93003095)(3002001)(148016)(149066)(150057)(6041310)(201703131423095)(201702281528075)(20161123555045)(201703061421075)(201703061406153)(20161123562045)(20161123558120)(20161123564045)(20161123560045)(201708071742011)(7699051)(76991095);
- SRVR:BN4PR07MB2164; BCL:0; PCL:0; RULEID:; SRVR:BN4PR07MB2164; 
-X-Microsoft-Exchange-Diagnostics: 1; BN4PR07MB2164;
- 4:H9tVjrNcE43g1hF0+ZBgqLeLq/VOKgFyOKWTZyfP1VJXLXly6equ+yPBEgpTL5GJbT+3bi9MR6SCdDbFCSHxFpEnzb+7mzAiYU9PBcdof5bLDFfVWdm/GhOrGDoDqL+VTSblDlO3hb8wNvw6NW6AG0bL7WQuVa6eK2QURcvCRcvCc+xvUKM8rqlVLuxNliTFcMDioPR/FrwqRTJCKzvp0OF0aYR2OUUB7cyUWk2xIu7Tp4TKYDADk2kktqdglLXEjzigavHFVrKll6WXiPq2Pg==
+ RULEID:(8211001083)(3230021)(999002)(6040522)(2401047)(5005006)(8121501046)(3231475)(944501520)(52105112)(93006095)(93003095)(3002001)(10201501046)(148016)(149066)(150057)(6041310)(20161123560045)(20161123564045)(20161123558120)(20161123562045)(201703131423095)(201702281528075)(20161123555045)(201703061421075)(201703061406153)(201708071742011)(7699051)(76991095);
+ SRVR:MWHPR0701MB3722; BCL:0; PCL:0; RULEID:; SRVR:MWHPR0701MB3722; 
+X-Microsoft-Exchange-Diagnostics: 1; MWHPR0701MB3722;
+ 4:Nnwi17yzpRPPd7FFAeucJopDQ/K0vWH9X6mlsRsx6MEp694JEhq5rFwx0ORczkoyHMTX2WTSEuTJC5JB9O6LgzePWUssAP0g4NCspt6hAOZykcOh54FmB1f6s2aO4ixpguTP/vzd1HcribhFIDsOHZ4btWpmRPMwIalRrs7xJTGv/WiXF1gCdMq4Y0bVysIno+G+gJYysojuIWv5QA+KJuh5fIdprML7RCiACHvDHxa47kTr4LrpxpnYc6Y9Op3kGxmHTGGPeCP59bvHYv3PDw==
 X-Forefront-PRVS: 088552DE73
-X-Microsoft-Exchange-Diagnostics: =?us-ascii?Q?1; BN4PR07MB2164;
- 23:5BNBrQUvgHMnnYW1V2hXUZiaR57HsrgHZxBzMTNYl?=
- =?us-ascii?Q?DIP0320aq6ujU5XpXHnX0VsSAQWQIeKz9ITNNqCf4d2TzHnZ+PWvSx1Xk+KB?=
- =?us-ascii?Q?AGtb5BuQjInKDhkm2Yva/01gwzGFynh/A9SzgWBhl6bxbUyE75QiEHLg90aW?=
- =?us-ascii?Q?RgVuG/FQGCx8NGYH5MuPG1zuNJ+zH6+QR0Plvcpt2apqiFn3oyNQfuXnh/eu?=
- =?us-ascii?Q?MXY0tiVhgn7WoQFyJ2EtFX2e4xdfl5QNdsqlgCbip0Qk7ByqTtycdiEDDLTh?=
- =?us-ascii?Q?O6uwlMcKWWE9Pfaew4SMD5Pb5DXjjv6/SnapwYuiaS//zv8km7z2W8R5n6qd?=
- =?us-ascii?Q?gjo+WZaXbCNKba17s/qxjAhiB3j/6tTWNUKd4/F2t/MLbvuH7h8tEh0TIBBK?=
- =?us-ascii?Q?iYMmOK0kYwQKBKo3Sd68tTgqFBZiE/ZRVOYTRh2f3KHxt5QjCw1fA9aeoc0L?=
- =?us-ascii?Q?korke8Vbd1zeS15whNhtwBdIywGo1J+z6uKG2BDhXQpoIZ97Y3vyvC+iVEoq?=
- =?us-ascii?Q?cfZRXpYYl591g3TP4r2eBv9ffe+YSFenNftziI4fWZRvgYVENlgex6FKl1ZL?=
- =?us-ascii?Q?Tj1Gfv6uaEslPmfqK9pwVBNMceZon9/ztyRpsDiTyVt4EVJyFPvHVqohXQ68?=
- =?us-ascii?Q?2e/r/ze2PaQh0PolV+JcJzU/TKG9Pehi8jHs5Nlp5oP+iiiXfvFd31A1/Zom?=
- =?us-ascii?Q?O0++sVJRIwum9X76AJYcnEDJj891fqbAvEkcomNVIq4mdoX/qn7s84rvExST?=
- =?us-ascii?Q?uIEU5NBVeRvSG8XQ8Uhh5o1ttaSGJpNt0ame3KbQtyZRXgKpmW7AtuATuhZ5?=
- =?us-ascii?Q?rBI0/6Bprd1trceB9EgdKFLm2H7Apevqt7quilfC2pO3NGCb1eoF82qgAH2x?=
- =?us-ascii?Q?PSyn2dDC2Dz1nKKYUaaPeRrYM5lr85L2o1UdShtj/GGCbexoTwu5Q30HUuKI?=
- =?us-ascii?Q?wNlAByGwBE7nd9nddJQ+ch56e1XCIczAI8a4nTJZ08ec9EqHByJ4wxEJHUyn?=
- =?us-ascii?Q?NOsx8NB8XKK2VEChWs3P0BR?=
-X-Microsoft-Antispam-Message-Info: yYGNK1jO7eM7+zsRK7EDVjxlSTnqnJ/R0hmw+URrXmw8vSYfG7ap2pFDfSL5ved/ZkbDvUoG/pZjsauhrxhHJcN/igxBrU14admlitpY52RZce+sVOtX+XZf8KqObc6s2NQA0eVN1otPgfVlIJsHyqZNoW/kak1qag0etW7dRtVXvjUXoNVIOy0B7++pOQzO3S/+nz97tMHJaLbnRKJxStPYE9rBHw7YCDG6IC1Hs6JTl4+G8KSKKzFz/AN6Z396sT+ImhySr/q9zsHYqnCsN/tjm9/Z3mr35pFC/YTckUboZhqlY3tTjX+gsyceDnBA
-X-Microsoft-Exchange-Diagnostics: 1; BN4PR07MB2164;
- 6:jiL9Xp57I5V89CFkSB8wHkl0jp64+tSgW8VyBOBp9ww0xMvPxS7H4eqFmpMnuG3QZezpmY16wAYaeQdfqiJbX382Ti9HBuOcVOeHcXXa8OpQRBWzx///GvYaYt76O2262edLAHdmYNmuHs0A7LtXqFWDUarI50m2z8z4ZQyPSBVw5ea7UTS5/s60fO4pbGDgzITgNxLceDPjjQKopsTw9IU5BelSBJD/qvyeY4mWRMIWSwJrSQI8pv+17QdW+jMg2hQCTwdDNrUawZ2B+66YjvORAVi2RZZNGfD6xJeGeVFfd/MR89Yp/pjKCym3hwrTLkTY+EZ/3ujTiThHjFZ4UA7DwDk0ZQJQvbap0NF4gGHtgeCL816FIKBR5BrsE6RUlqDbqo2uwBoN2b88EWUNqh/d8q4zUrwg5cUw63cMuzYRxEU4ATfquo6IzUkU8AcoHB9JCHzvEpei8ONSgggXuA==;
- 5:0kfTowORxAUF1uIb5Zu8Gqf92Wa0l7OYYt6GmZ5TH+TUI4zNpClwbrb3bjxPlFI2D2aeHuNPERGF/t2e5NzgSK+Gng+tE50AdZMRICVOtf4nuAyR703/YUdvGFcfgil/O62zmPUj8dw+c/AL3B8ofIYiRkIFNDFONGJRsWRPsZY=;
- 7:Yq9ZZhx03yyZUiYMEamZvYn5JrX8+BMsiq8JwR/UQoDQLdU4ustGdtts6PCIj++0G9JiNkAmsvbuRZrBRZyc1nZ609/7kF7xlLuY1K4noIO3A3Fd1qD/IVq7D59PTjRh5zEuvSRdtH5pFhdmmfht0Q==
+X-Microsoft-Exchange-Diagnostics: =?us-ascii?Q?1; MWHPR0701MB3722;
+ 23:Qc2ACdfmK2JJObHiD1Y3thOzdOT5E1lPQNr+QDf?=
+ =?us-ascii?Q?LxNrtlDD1S5WT9kG5D0uRNZ/y+dbBzgHi38pp9GspE96s3OFISJhbteRv9Dd?=
+ =?us-ascii?Q?OJcvgMh3L9HOSgw1P/ZxSJEq9kVfTm+xOjR5RlMQ5QwQiZga3ZgNFRcvb4tm?=
+ =?us-ascii?Q?9QRPBfnGd5CFUpYT8TRlhqwIAFHHXvaIfvMLTtc9TIqwnMeYogTuMZeNZWv/?=
+ =?us-ascii?Q?P/oanK5YYQAhuvXDqPdOBx/TKbtBgLugLacygWH3l284MKhUrZyM/UmVpRmF?=
+ =?us-ascii?Q?ApelUymQOPkkmLRxprTT1m0oXx+Rd5QuJtkj2MpEYRfBvwdLVsBwsta80bei?=
+ =?us-ascii?Q?e6dzjrBFqwb8QLKFeWAR6jYTSfxHEGR9cdnY9dzVaWZeZ4X7SUJXRL7QW4wa?=
+ =?us-ascii?Q?SIPdPdAk9rDX9/xFaYKzMnfL4CwDDzSQL1/uR2hXgIwnZSD4E54q/WofuMMv?=
+ =?us-ascii?Q?Ausd5H79y+iXzhHNABKGT9prHy53IsQfc0YWwbvY8jlec5ZB8GbwiKf2/Ama?=
+ =?us-ascii?Q?Lr+yn400FtDecf7+Koop7/ns11eTuKlOxgA9Kv+efxpYy22xoQOZyMbKN6Wq?=
+ =?us-ascii?Q?uYYXopKwMKeUIoNKPibbSFg3spZoLTnoyzXfDjkj2P0I5opOCLD5QKGkTe/8?=
+ =?us-ascii?Q?hXij3wuKa0cucnwnR5RUs2LKk44NMlQ5ZsOah8XRabaOotxvVCBRDV2drn0o?=
+ =?us-ascii?Q?sk8Z2QHQwUulDk5W7gc75lKZYgVapTOed8VCbvHUxpMDrgRcZx5fC/n155QP?=
+ =?us-ascii?Q?3tqTl2hcAcaqwgKAptKZdTAW2VB//pxDzlHCUUM0xE9HCr3UNfMzr7AMkyZX?=
+ =?us-ascii?Q?IejQJ07DjBW3TZ3eorMnvxl0ifhf3mGPPeB26Sk560rg6kCYGfD57TD6enNK?=
+ =?us-ascii?Q?j7alqjIn+Lruhn6N4NWQM/aNefXRnVwkS77vDvv7Axmvs25OhSRQbGe5EAMD?=
+ =?us-ascii?Q?vkPrRu7ffHVfHFO+5739FIZDji4nUK2qrTx/RIXbow9LTWyb3LBM7oPpQeFA?=
+ =?us-ascii?Q?p32SXWk62WMvEHdf46nevBJ6jgvTmt7kw+fAWfEPi2xvZ4qSxlCA7ZPyY4nA?=
+ =?us-ascii?Q?QQVJ3hxt3fNw3ICUMxdDEzcKdeQaplYuxxbgJdszWCXsV84qwMeN4LbkEVK9?=
+ =?us-ascii?Q?w7iAIGmzrXUbqcZxW9aJ4pjzPXV4x+pQgGh0dE8Fg4jkKTjZIHWgeBqVJMeo?=
+ =?us-ascii?Q?D9WfeQWRBcjwpKKqIxb3EzoJPqfurCmOH0bNw4B4a/oantmtmdB4BiFXOlro?=
+ =?us-ascii?Q?c5TvB8E7A7E17G5YhENk=3D?=
+X-Microsoft-Antispam-Message-Info: 7pd6wxudoq9trIUuePn0l2lnDtqn8OaZEMMFsbFx0W5grTOvIRuI0iaX43IdjZ63vpxOC5VyeCjKVme0JqjE2zSSWCL6xbjieI2bgz+sqWOKIILs9y2HzBf+QAQWpvuzpjBQQurmpaFxqgSDqbFYGNoRGd4lK3H3+9lgU2Ge8kHjJe+FVJaZuAzBby18uUC74QbagTFqeGQPz3l22bnzlDzhmVpYZ10RC2o8v/3uqZnPKqIoUz/fCmSRxv4eEVMURhmDl1aMZXgEoQDq7Gs6ASoYRv9MSSNDHU48JvCDRMyVc/9isHZ/CmXAgH0fviOF
+X-Microsoft-Exchange-Diagnostics: 1; MWHPR0701MB3722;
+ 6:33bmDmFwiy3bqrdmgph6GfRPuL9URbIYWt9qFz8hK3wnqBKLtdbWlYfvSQoHAoVS/x7TJZx2v8kP8qpkq6+ju9pfoOu0AHvvukTDvl+HFZUwUo6DX48KL8pzpvkdizpNXk73B5J6yKNscbopy+rAdwYPIlObU9S2PP9+J9zkg+L56tW8FWSjqul9NZ2RSDKKqJU64Zd7BiI3wJEW6rxojOm9i7Kjav5TVnb7NXehweTeqo69ViRCCUfZYPwCr1cDmjHXcXAE1d2wXABM/v+R+HIdCAfC4cAqRqgXzjaH/ICfZehuu3aitk7kYmiVwPyqJ3BhF7ALzFMi+ex5lywTXDs/4P8TURrZBIy7/9apS+SMUJc5CCQXbcXMQ8sfaG6unkV3ga2SYV0XuYGbuq30eCfO5rBQ9Grj9NccoryaevFWL+TRmksGZ8VKEPJHpkxCjnmfhyKJkc73amN12gFKRw==;
+ 5:Z5ZgLFKpxEl6UyakeSY3oQNCI0vShf6uR0R4uq/E3hM2CZ4GyBmcGSumuwW4HDCLz0OZmGJQnuN0cMnH6BQM9YPknL7W1fNl30beOn5XWNUgFOndnclkMAg291U9cT+igWCvjje3LZHc+ReLm9IMpneebJBYNFSAo3fHKHIvt3w=;
+ 7:6NAbRlkGpqES7l3iMpImsr/zvNdRjxA0GZN5hQgkFhP9+IXFaKWCIcUA1Kjqx9WTRrYkRoL2pBS8qxXKgAsx6lisFlXtYtMgnFglkcONMGtmynfUVCc5VV8ZzlLN8Y+t4TM/dhWAh25JO4FCO3uNFg==
 SpamDiagnosticOutput: 1:99
 SpamDiagnosticMetadata: NSPM
-X-Microsoft-Exchange-Diagnostics: 1; BN4PR07MB2164;
- 20:EbBV7fqBnOxsNE8D3HLoHDpsoDMtA5frBUFF3NTrBdHlOYXoIsvcraqBenJDCmFKZfKaz8+/03MdidtrETyEzdhFU8HYecudZDQLtk+06kzdKRCwPxLVCWj8hdjdAsmVJK4IUU1GxSP6CaHYPf3p8PS4rkqLvaOU3ZtrPIVQYkfenh17N2XQ1JZ2jF4MZb12RdzS9S94f6DtZqcXnJk9NKlf4Nh/DMeTS6DFAiGL9+VtMdLNHAO7kytMX6YUXKFE
+X-Microsoft-Exchange-Diagnostics: 1; MWHPR0701MB3722;
+ 20:oOsN6oFlT+MKXwaHke1dXSzxK+6nuCYBa4Gk16Fhhb9HzCGmDXwgdKXfR2k1n3slVhw8aPQHVb5w1NKBN/ZnXTRHkOaRKxEwdiFtB/hUVZK8BfZBdkhl1dkZSOqAJbVhZgYNLFKfSh7KjYAPk1xXOW6UzUFsxIORP3j4JA5fA52TZ35MOXFD4LWVpvaLQF0mqmQebEFR19CYOh0P2vU8QnlSeFR1aNa0gJ3GWz6Pg4vjvqkWeJ3U7KllghHgj3vi
 X-OriginatorOrg: cadence.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Dec 2018 12:18:57.0057 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0e1a1be3-da0a-4d73-a529-08d660f527db
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Dec 2018 12:18:57.9303 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: a3b10e53-cabc-4d04-a42d-08d660f52874
 X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9; Ip=[158.140.1.28];
  Helo=[sjmaillnx1.cadence.com]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN4PR07MB2164
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR0701MB3722
 X-Proofpoint-SPF-Result: pass
 X-Proofpoint-SPF-Record: v=spf1 include:_spf.salesforce.com
  include:mktomail.com
@@ -181,12 +188,11 @@ X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
  score=0
  priorityscore=1501 malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0
  spamscore=0 clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=529 adultscore=0 classifier=spam adjust=0 reason=mlx
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
  scancount=1 engine=8.0.1-1810050000 definitions=main-1812130110
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20181213_041914_128725_7DC9819A 
-X-CRM114-Status: UNSURE (   7.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20181213_041914_124697_CE36FC50 
+X-CRM114-Status: GOOD (  12.60  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -205,21 +211,201 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-This patch series adds support for HDR modes to the I3C
-subsystem and Cadence I3C master driver.
+HDR (High Data Rate) modes is an important feature of the I3C protocol
+as it allows to get higher throughput than with the SDR (Single Data
+Rate) mode.
 
-Przemyslaw Gaj (2):
-  i3c: Add support for HDR modes.
-  i3c: master: cdns: Add support for HDR-DDR mode
+Add new controller hooks and extend the I3C device API to expose this
+new feature.
 
- drivers/i3c/device.c                 |  37 +++++++
- drivers/i3c/internals.h              |   3 +
- drivers/i3c/master.c                 |  31 ++++++
- drivers/i3c/master/i3c-master-cdns.c | 195 ++++++++++++++++++++++++++++++++++-
- include/linux/i3c/device.h           |  29 ++++++
- include/linux/i3c/master.h           |   7 ++
- 6 files changed, 300 insertions(+), 2 deletions(-)
+This feature was originally created by Boris Brezillon
+<boris.brezillon@bootlin.com>.
 
+Signed-off-by: Przemyslaw Gaj <pgaj@cadence.com>
+---
+ drivers/i3c/device.c       | 37 +++++++++++++++++++++++++++++++++++++
+ drivers/i3c/internals.h    |  3 +++
+ drivers/i3c/master.c       | 31 +++++++++++++++++++++++++++++++
+ include/linux/i3c/device.h | 29 +++++++++++++++++++++++++++++
+ include/linux/i3c/master.h |  7 +++++++
+ 5 files changed, 107 insertions(+)
+
+diff --git a/drivers/i3c/device.c b/drivers/i3c/device.c
+index 69cc040..97910aa 100644
+--- a/drivers/i3c/device.c
++++ b/drivers/i3c/device.c
+@@ -51,6 +51,43 @@ int i3c_device_do_priv_xfers(struct i3c_device *dev,
+ EXPORT_SYMBOL_GPL(i3c_device_do_priv_xfers);
+ 
+ /**
++ * i3c_device_send_hdr_cmds() - send HDR commands to a specific device
++ *
++ * @dev: device to which these commands should be sent
++ * @xfers: array of commands
++ * @nxfers: number of commands
++ *
++ * Send one or several HDR commands to @dev.
++ *
++ * This function can sleep and thus cannot be called in atomic context.
++ *
++ * Return: 0 in case of success, a negative error core otherwise.
++ */
++int i3c_device_send_hdr_cmds(struct i3c_device *dev,
++			     struct i3c_hdr_cmd *cmds,
++			     int ncmds)
++{
++	int ret, i;
++	enum i3c_hdr_mode mode;
++
++	if (ncmds < 1)
++		return 0;
++
++	mode = cmds[0].mode;
++	for (i = 1; i < ncmds; i++) {
++		if (mode != cmds[i].mode)
++			return -EINVAL;
++	}
++
++	i3c_bus_normaluse_lock(dev->bus);
++	ret = i3c_dev_send_hdr_cmds_locked(dev->desc, cmds, ncmds);
++	i3c_bus_normaluse_unlock(dev->bus);
++
++	return ret;
++}
++EXPORT_SYMBOL_GPL(i3c_device_send_hdr_cmds);
++
++/**
+  * i3c_device_get_info() - get I3C device information
+  *
+  * @dev: device we want information on
+diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
+index 86b7b44..46c4de7 100644
+--- a/drivers/i3c/internals.h
++++ b/drivers/i3c/internals.h
+@@ -18,6 +18,9 @@ void i3c_bus_normaluse_unlock(struct i3c_bus *bus);
+ int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
+ 				 struct i3c_priv_xfer *xfers,
+ 				 int nxfers);
++int i3c_dev_send_hdr_cmds_locked(struct i3c_dev_desc *dev,
++				 struct i3c_hdr_cmd *cmds,
++				 int ncmds);
+ int i3c_dev_disable_ibi_locked(struct i3c_dev_desc *dev);
+ int i3c_dev_enable_ibi_locked(struct i3c_dev_desc *dev);
+ int i3c_dev_request_ibi_locked(struct i3c_dev_desc *dev,
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index e98b600..16d6dd5 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -2791,6 +2791,37 @@ int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
+ 	return master->ops->priv_xfers(dev, xfers, nxfers);
+ }
+ 
++int i3c_dev_send_hdr_cmds_locked(struct i3c_dev_desc *dev,
++				 struct i3c_hdr_cmd *cmds,
++				 int ncmds)
++{
++	struct i3c_master_controller *master;
++	int i;
++
++	if (!dev)
++		return -ENOENT;
++
++	master = i3c_dev_get_master(dev);
++	if (!master || !cmds)
++		return -EINVAL;
++
++	if (master->op_mode == I3C_SLAVE_MODE) {
++		if (i3c_master_request_mastership(master))
++			return -EIO;
++	}
++
++	if (!master->ops->send_hdr_cmds)
++		return -ENOTSUPP;
++
++	for (i = 0; i < ncmds; i++) {
++		if (!(master->this->info.hdr_cap & BIT(cmds->mode)))
++			return -ENOTSUPP;
++	}
++
++	return master->ops->send_hdr_cmds(dev, cmds, ncmds);
++}
++
++
+ int i3c_dev_disable_ibi_locked(struct i3c_dev_desc *dev)
+ {
+ 	struct i3c_master_controller *master;
+diff --git a/include/linux/i3c/device.h b/include/linux/i3c/device.h
+index 5ecb055..75a947f 100644
+--- a/include/linux/i3c/device.h
++++ b/include/linux/i3c/device.h
+@@ -49,6 +49,31 @@ enum i3c_hdr_mode {
+ 	I3C_HDR_TSL,
+ };
+ 
++#define I3C_HDR_GEN_WRITE_CMD(id)    	(id)
++#define I3C_HDR_VENDOR_WRITE_CMD(id) 	(0x20 + (id))
++#define I3C_HDR_IS_READ_CMD        	BIT(7)
++#define I3C_HDR_GEN_READ_CMD(id)    	(0x80 + (id))
++#define I3C_HDR_VENDOR_READ_CMD(id)    	(0xa0 + (id))
++
++/**
++ * struct i3c_hdr_cmd - I3C HDR command
++ * @mode: HDR mode selected for this command
++ * @code: command opcode. Bit 7 encodes the direction of the data transfer, if
++ *      set this is a read, otherwise this is a write
++ * @ndatawords: number of data words (a word is 16bits wide) to transfer
++ * @data: input/output buffer
++ */
++struct i3c_hdr_cmd {
++    enum i3c_hdr_mode mode;
++    u8 code;
++    int ndatawords;
++    union {
++        u16 *in;
++        const u16 *out;
++    } data;
++};
++
++
+ /**
+  * struct i3c_priv_xfer - I3C SDR private transfer
+  * @rnw: encodes the transfer direction. true for a read, false for a write
+@@ -289,6 +314,10 @@ int i3c_device_do_priv_xfers(struct i3c_device *dev,
+ 			     struct i3c_priv_xfer *xfers,
+ 			     int nxfers);
+ 
++int i3c_device_send_hdr_cmds(struct i3c_device *dev,
++			     struct i3c_hdr_cmd *cmds,
++			     int ncmds);
++
+ void i3c_device_get_info(struct i3c_device *dev, struct i3c_device_info *info);
+ 
+ struct i3c_ibi_payload {
+diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
+index ada956a..fd50473 100644
+--- a/include/linux/i3c/master.h
++++ b/include/linux/i3c/master.h
+@@ -386,6 +386,10 @@ struct i3c_bus {
+  *		  This method is mandatory.
+  * @priv_xfers: do one or several private I3C SDR transfers
+  *		This method is mandatory.
++ * @send_hdr_cmds: send one or several HDR commands. If there is more than one
++ *		   command, they should ideally be sent in the same HDR
++ *		   transaction.
++ *		   This method is optional.
+  * @attach_i2c_dev: called every time an I2C device is attached to the bus.
+  *		    This is a good place to attach master controller specific
+  *		    data to I2C devices.
+@@ -457,6 +461,9 @@ struct i3c_master_controller_ops {
+ 	int (*priv_xfers)(struct i3c_dev_desc *dev,
+ 			  struct i3c_priv_xfer *xfers,
+ 			  int nxfers);
++	int (*send_hdr_cmds)(struct i3c_dev_desc *dev,
++			     const struct i3c_hdr_cmd *cmds,
++			     int ncmds);
+ 	int (*attach_i2c_dev)(struct i2c_dev_desc *dev);
+ 	void (*detach_i2c_dev)(struct i2c_dev_desc *dev);
+ 	int (*i2c_xfers)(struct i2c_dev_desc *dev,
 -- 
 2.4.5
 
