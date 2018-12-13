@@ -6,17 +6,17 @@ X-Spam-Status: No, score=-7.2 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	DKIM_VALID,INCLUDES_PATCH,MAILING_LIST_MULTI,SIGNED_OFF_BY,SPF_PASS,
 	T_MIXED_ES,URIBL_BLOCKED autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D90DCC65BAE
-	for <linux-i3c@archiver.kernel.org>; Thu, 13 Dec 2018 12:44:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 050F0C65BAE
+	for <linux-i3c@archiver.kernel.org>; Thu, 13 Dec 2018 12:45:24 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id A5D2F20870
-	for <linux-i3c@archiver.kernel.org>; Thu, 13 Dec 2018 12:44:45 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id BD2FC20870
+	for <linux-i3c@archiver.kernel.org>; Thu, 13 Dec 2018 12:45:23 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="mHY65NoR";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=kernel.org header.i=@kernel.org header.b="BGgFqfgr"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org A5D2F20870
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="JDhZJmJP";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=kernel.org header.i=@kernel.org header.b="Ixzqg9VA"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org BD2FC20870
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -25,45 +25,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q2hbZF4vvnKXfvdTuQ78+8Cmb/7q6amqr+caLy3QcE4=; b=mHY65NoR8ftM9g
-	Y2g7fNa8fOGK4X4a1ZGW/uFYL3IR7hGj0vxPka5JTEIVahvVo+MvPrP+RVEAlJog3HucF/TzK0uQV
-	xPBYgCq3b9+sfAUKn5GGLJPTjstMq2hbbVNgq1zaHeMypw7zwVUWzUC4vmA/xQC8TjmbekRydTk/T
-	/lN5PSRWyA0V6XwMF4XM6XuVplrHFs8VuuIgp2xSL9Ffp5WaVy2Nb+iAJUA9g73jFuq6WPPjc8rfO
-	2US5kkDmJ/qeUQ4Pb6K3M0BqgPeMvassRXq8k97uRSR7M1GNT7CxmEDGEKzVkMSGMnMC3dBj39c91
-	joWAqxGu7des672KyE4Q==;
+	List-Owner; bh=eqQhm9xgGrlSfpGVgaSpIVLjMXMQTzTyBrT0TgTMpIg=; b=JDhZJmJPM6AIuo
+	8WhToH+IWvb612Ay1z6IjdGmKmjDW0a1sazmAOu2mIVkscRX6+oGJuh3tlJ/TmJjuXEp9JWW2pnZb
+	qDawbmWFGZT+ls1luIWaYQc3ofSrgulKyxR8OTqx1uo7jOyNN8XrSePONcYYwPYlbyJnWV64+HV6W
+	RFwQV36aVR+km3CI6PdvM9Boo3ZGMK5tGSQdcxP9sPh9F7MSFPfphe9Smze3WDoyI0tzJOPO3HT/p
+	WwCm0SkU2Btnw4Vhhq4RQhIjbFm1Y3fA5d92vuoMBfzmCCM7VWIn1cNvmFyIlMn3yXwJ63b/N2hM+
+	I+ORTH59vOsADg+VIgAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1gXQM9-0004N8-7y; Thu, 13 Dec 2018 12:44:45 +0000
+	id 1gXQMl-0006hC-DS; Thu, 13 Dec 2018 12:45:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1gXQM5-0003w8-JQ
- for linux-i3c@lists.infradead.org; Thu, 13 Dec 2018 12:44:43 +0000
+ id 1gXQMh-0006BZ-VS
+ for linux-i3c@lists.infradead.org; Thu, 13 Dec 2018 12:45:21 +0000
 Received: from bbrezillon (aaubervilliers-681-1-89-7.w90-88.abo.wanadoo.fr
  [90.88.30.7])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 50D5A20870;
- Thu, 13 Dec 2018 12:44:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3B34720870;
+ Thu, 13 Dec 2018 12:45:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1544705070;
- bh=M1AAYpTxsgNCU6o6lx5bFpvs9R+HnPaa8TYI6+lpMqs=;
+ s=default; t=1544705109;
+ bh=N/5FI+IupEFEkMOYEh2muLNY6/lYnMPmVKuEsQ+OE8I=;
  h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=BGgFqfgrEOoOvWc8Y51HAvj+1prM7ouoO14CQh2jJBEgyxBcm3B+Mz8+QMYxrTFEk
- mC+8LuW8qIhxXZ3N9lWDNvou619CoeaY3fd8ThenHv+ffGOxeImx7T2DnnGzxk7Jon
- s7bdrBQv24j6y8MTW+ayR3Bm6VD+8LvmwRJJmPxY=
-Date: Thu, 13 Dec 2018 13:44:22 +0100
+ b=Ixzqg9VANlVSpSXIUeYpGVpgI907pr+T4xM6OupaoqidqH8k3oSvl9WXV2bvzYgm5
+ 9cm/Tu3Kuqlgv1ViXclXUHCJidUc3LqJIBb5hgUZO4bKwo8TBWz2Q8j2fxkvYEupJI
+ aEwPL0/qDB4AfO7npMf5sp1NlmGazMr1CmyE6wyg=
+Date: Thu, 13 Dec 2018 13:45:02 +0100
 From: Boris Brezillon <bbrezillon@kernel.org>
 To: Przemyslaw Gaj <pgaj@cadence.com>
-Subject: Re: [PATCH 1/2] i3c: Add support for HDR modes.
-Message-ID: <20181213134422.30bdc7c4@bbrezillon>
-In-Reply-To: <efb3b8692d3579ab3369cc0f80e237550f3e8209.1544702829.git.pgaj@cadence.com>
+Subject: Re: [PATCH 2/2] i3c: master: cdns: Add support for HDR-DDR mode
+Message-ID: <20181213134502.101f5fa5@bbrezillon>
+In-Reply-To: <adcd3c336c8285483b1741b145cad945bc813ce9.1544702829.git.pgaj@cadence.com>
 References: <cover.1544702829.git.pgaj@cadence.com>
- <efb3b8692d3579ab3369cc0f80e237550f3e8209.1544702829.git.pgaj@cadence.com>
+ <adcd3c336c8285483b1741b145cad945bc813ce9.1544702829.git.pgaj@cadence.com>
 X-Mailer: Claws Mail 3.16.0 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20181213_044441_693077_73621B1A 
-X-CRM114-Status: GOOD (  23.79  )
+X-CRM114-CacheID: sfid-20181213_044520_050442_C733E0C8 
+X-CRM114-Status: GOOD (  18.13  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -82,208 +82,249 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, 13 Dec 2018 12:18:31 +0000
+On Thu, 13 Dec 2018 12:18:32 +0000
 Przemyslaw Gaj <pgaj@cadence.com> wrote:
 
-> HDR (High Data Rate) modes is an important feature of the I3C protocol
-> as it allows to get higher throughput than with the SDR (Single Data
-> Rate) mode.
-> 
-> Add new controller hooks and extend the I3C device API to expose this
-> new feature.
+> Cadence I3C master controller HDR-DDR mode support.
 > 
 > This feature was originally created by Boris Brezillon
-> <boris.brezillon@bootlin.com>.
+> <boris.brezillon@bootlin.com>. I made some changes/fixes.
 
-You should keep the orginal author and it's SoB and then add your own
-SoB.
+Same here.
 
 > 
 > Signed-off-by: Przemyslaw Gaj <pgaj@cadence.com>
 > ---
->  drivers/i3c/device.c       | 37 +++++++++++++++++++++++++++++++++++++
->  drivers/i3c/internals.h    |  3 +++
->  drivers/i3c/master.c       | 31 +++++++++++++++++++++++++++++++
->  include/linux/i3c/device.h | 29 +++++++++++++++++++++++++++++
->  include/linux/i3c/master.h |  7 +++++++
->  5 files changed, 107 insertions(+)
+>  drivers/i3c/master/i3c-master-cdns.c | 195 ++++++++++++++++++++++++++++++++++-
+>  1 file changed, 193 insertions(+), 2 deletions(-)
 > 
-> diff --git a/drivers/i3c/device.c b/drivers/i3c/device.c
-> index 69cc040..97910aa 100644
-> --- a/drivers/i3c/device.c
-> +++ b/drivers/i3c/device.c
-> @@ -51,6 +51,43 @@ int i3c_device_do_priv_xfers(struct i3c_device *dev,
->  EXPORT_SYMBOL_GPL(i3c_device_do_priv_xfers);
+> diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
+> index a33f3a6..b1a97be 100644
+> --- a/drivers/i3c/master/i3c-master-cdns.c
+> +++ b/drivers/i3c/master/i3c-master-cdns.c
+> @@ -571,7 +571,7 @@ static void cdns_i3c_master_end_xfer_locked(struct cdns_i3c_master *master,
+>  	     !(status0 & MST_STATUS0_CMDR_EMP);
+>  	     status0 = readl(master->regs + MST_STATUS0)) {
+>  		struct cdns_i3c_cmd *cmd;
+> -		u32 cmdr, rx_len, id;
+> +		u32 cmdr, rx_len, id, xfer_bytes;
 >  
->  /**
-> + * i3c_device_send_hdr_cmds() - send HDR commands to a specific device
-> + *
-> + * @dev: device to which these commands should be sent
-> + * @xfers: array of commands
-> + * @nxfers: number of commands
-> + *
-> + * Send one or several HDR commands to @dev.
-> + *
-> + * This function can sleep and thus cannot be called in atomic context.
-> + *
-> + * Return: 0 in case of success, a negative error core otherwise.
-> + */
-> +int i3c_device_send_hdr_cmds(struct i3c_device *dev,
-> +			     struct i3c_hdr_cmd *cmds,
-> +			     int ncmds)
+>  		cmdr = readl(master->regs + CMDR);
+>  		id = CMDR_CMDID(cmdr);
+> @@ -581,7 +581,11 @@ static void cdns_i3c_master_end_xfer_locked(struct cdns_i3c_master *master,
+>  			continue;
+>  
+>  		cmd = &xfer->cmds[CMDR_CMDID(cmdr)];
+> -		rx_len = min_t(u32, CMDR_XFER_BYTES(cmdr), cmd->rx_len);
+> +		xfer_bytes = CMDR_XFER_BYTES(cmdr);
+> +		if(cmd->cmd0 & CMD0_FIFO_IS_DDR)
+> +			xfer_bytes = xfer_bytes * 4;
+> +		rx_len = min_t(u32, xfer_bytes, cmd->rx_len);
+> +
+>  		cdns_i3c_master_rd_from_rx_fifo(master, cmd->rx_buf, rx_len);
+>  		cmd->error = CMDR_ERROR(cmdr);
+>  	}
+> @@ -893,6 +897,192 @@ static int cdns_i3c_master_priv_xfers(struct i3c_dev_desc *dev,
+>  	return ret;
+>  }
+>  
+> +#define I3C_DDR_FIRST_DATA_WORD_PREAMBLE	0x2
+> +#define I3C_DDR_DATA_WORD_PREAMBLE		0x3
+> +
+> +#define I3C_DDR_PREAMBLE(p)			((p) << 18)
+> +
+> +static u32 prepare_ddr_word(u16 payload)
 > +{
-> +	int ret, i;
-> +	enum i3c_hdr_mode mode;
+> +	u32 ret;
+> +	u16 pb;
+> +
+> +	ret = (u32)payload << 2;
+> +
+> +	/* Calculate parity. */
+> +	pb = (payload >> 15) ^ (payload >> 13) ^ (payload >> 11) ^
+> +	     (payload >> 9) ^ (payload >> 7) ^ (payload >> 5) ^
+> +	     (payload >> 3) ^ (payload >> 1);
+> +	ret |= (pb & 1) << 1;
+> +	pb = (payload >> 14) ^ (payload >> 12) ^ (payload >> 10) ^
+> +	     (payload >> 8) ^ (payload >> 6) ^ (payload >> 4) ^
+> +	     (payload >> 2) ^ payload ^ 1;
+> +	ret |= (pb & 1);
+> +
+> +	return ret;
+> +}
+> +
+> +static u32 prepare_ddr_data_word(u16 data, bool first)
+> +{
+> +	return prepare_ddr_word(data) |
+> +	       I3C_DDR_PREAMBLE(first ?
+> +			        I3C_DDR_FIRST_DATA_WORD_PREAMBLE :
+> +				I3C_DDR_DATA_WORD_PREAMBLE);
+> +}
+> +
+> +#define I3C_DDR_READ_CMD	BIT(15)
+> +
+> +static u32 prepare_ddr_cmd_word(u16 cmd)
+> +{
+> +	return prepare_ddr_word(cmd) | I3C_DDR_PREAMBLE(1);
+> +}
+> +
+> +static u32 prepare_ddr_crc_word(u8 crc5)
+> +{
+> +	return (((u32)crc5 & 0x1f) << 9) | (0xc << 14) |
+> +	       I3C_DDR_PREAMBLE(1);
+> +}
+> +
+> +static u32 prepare_ddr_parity_bit(u32 cmdword)
+> +{
+> +	u16 pb;
+> +
+> +	pb = (cmdword >> 14) ^ (cmdword >> 12) ^ (cmdword >> 10) ^
+> +	     (cmdword >> 8) ^ (cmdword >> 6) ^ (cmdword >> 4) ^
+> +	     (cmdword >> 2);
+> +
+> +	if (pb & 1)
+> +		cmdword |= BIT(0);
+> +
+> +	return cmdword;
+> +}
+> +
+> +static u8 update_crc5(u8 crc5, u16 word)
+> +{
+> +	u8 crc0;
+> +	int i;
+> +
+> +	/*
+> +	 * crc0 = next_data_bit ^ crc[4]
+> +	 *                1         2            3       4
+> +	 * crc[4:0] = { crc[3:2], crc[1]^crc0, crc[0], crc0 }
+> +	 */
+> +	for (i = 15; i >= 0; --i) {
+> +		crc0 = ((word >> i) ^ (crc5 >> 4)) & 0x1;
+> +		crc5 = ((crc5 << 1) & 0x1a) |
+> +		       (((crc5 >> 1) ^ crc0) << 2) |
+> +		       crc0;
+> +	}
+> +
+> +	return crc5 & 0x1f;
+> +}
+> +
+> +static int cdns_i3c_master_send_hdr_cmd(struct i3c_dev_desc *dev,
+> +					const struct i3c_hdr_cmd *cmds,
+> +					int ncmds)
+> +{
+> +	struct i3c_master_controller *m = i3c_dev_get_master(dev);
+> +	struct cdns_i3c_master *master = to_cdns_i3c_master(m);
+> +	int ret, i, ntxwords = 1, nrxwords = 0;
+> +	struct cdns_i3c_xfer *xfer;
+> +	struct cdns_i3c_cmd *ccmd;
+> +	u16 cmdword, datain;
+> +	u32 checkword, word;
+> +	u32 *buf = NULL;
+> +	u8 crc5;
 > +
 > +	if (ncmds < 1)
 > +		return 0;
 > +
-> +	mode = cmds[0].mode;
-> +	for (i = 1; i < ncmds; i++) {
-> +		if (mode != cmds[i].mode)
-> +			return -EINVAL;
+> +	if (ncmds > 1 || cmds[0].ndatawords > CMD0_FIFO_PL_LEN_MAX)
+> +		return -ENOTSUPP;
+> +
+> +	if (cmds[0].mode != I3C_HDR_DDR)
+> +		return -ENOTSUPP;
+> +
+> +	cmdword = ((u16)cmds[0].code << 8) | (dev->info.dyn_addr << 1);
+> +	if (cmdword & I3C_DDR_READ_CMD)
+> +		nrxwords += cmds[0].ndatawords + 1;
+> +	else
+> +		ntxwords += cmds[0].ndatawords + 1;
+> +
+> +	if (ntxwords > master->caps.txfifodepth ||
+> +	    nrxwords > master->caps.rxfifodepth)
+> +		return -ENOTSUPP;
+> +
+> +	buf = kzalloc((nrxwords + ntxwords) * sizeof(*buf), GFP_KERNEL);
+> +	if (!buf)
+> +		return -ENOMEM;
+> +
+> +	xfer = cdns_i3c_master_alloc_xfer(master, 2);
+> +	if (!xfer) {
+> +		ret = -ENOMEM;
+> +		goto out_free_buf;
 > +	}
 > +
-> +	i3c_bus_normaluse_lock(dev->bus);
-> +	ret = i3c_dev_send_hdr_cmds_locked(dev->desc, cmds, ncmds);
-> +	i3c_bus_normaluse_unlock(dev->bus);
+> +	ccmd = &xfer->cmds[0];
+> +	ccmd->cmd1 = CMD1_FIFO_CCC(I3C_CCC_ENTHDR(0));
+> +	ccmd->cmd0 = CMD0_FIFO_IS_CCC;
+> +
+> +	ccmd = &xfer->cmds[1];
+> +
+> +	if (cmdword & I3C_DDR_READ_CMD)
+> +		cmdword = prepare_ddr_parity_bit(cmdword);
+> +
+> +	ccmd->tx_len = ntxwords * sizeof(u32);
+> +	ccmd->tx_buf = buf;
+> +	ccmd->rx_len = nrxwords * sizeof(u32);
+> +	ccmd->rx_buf = buf + ntxwords;
+> +
+> +	buf[0] = prepare_ddr_cmd_word(cmdword);
+> +	crc5 = update_crc5(0x1f, cmdword);
+> +	for (i = 0; i < ntxwords - 2; i++) {
+> +		crc5 = update_crc5(crc5, cmds[0].data.out[i]);
+> +		buf[i + 1] = prepare_ddr_data_word(cmds[0].data.out[i], !i);
+> +	}
+> +
+> +	if(!(cmdword & I3C_DDR_READ_CMD))
+> +		buf[ntxwords-1] = prepare_ddr_crc_word(crc5);
+> +
+> +	ccmd->cmd0 = CMD0_FIFO_IS_DDR | CMD0_FIFO_PL_LEN(ntxwords);
+> +
+> +	cdns_i3c_master_queue_xfer(master, xfer);
+> +	if (!wait_for_completion_timeout(&xfer->comp, msecs_to_jiffies(1000)))
+> +		cdns_i3c_master_unqueue_xfer(master, xfer);
+> +
+> +	ret = xfer->ret;
+> +
+> +	if (!xfer->ret && nrxwords) {
+> +		for (i = 0; i < nrxwords - 1; i++) {
+> +			word = (((u32 *)ccmd->rx_buf)[i] & GENMASK(19, 0));
+> +			datain = (word >> 2) & GENMASK(15, 0);
+> +			checkword = prepare_ddr_data_word(datain, !i);
+> +
+> +			if (checkword != word) {
+> +				ret = -EIO;
+> +				break;
+> +			}
+> +
+> +			crc5 = update_crc5(crc5, datain);
+> +			cmds[0].data.in[i] = datain;
+> +		}
+> +
+> +		word = (((u32 *)ccmd->rx_buf)[i] & GENMASK(19, 9));
+> +		datain = (word >> 2) & GENMASK(15, 0);
+> +		checkword = prepare_ddr_crc_word(crc5);
+> +
+> +		if (checkword != word)
+> +			ret = -EIO;
+> +	}
+> +
+> +	cdns_i3c_master_free_xfer(xfer);
+> +
+> +out_free_buf:
+> +	kfree(buf);
 > +
 > +	return ret;
 > +}
-> +EXPORT_SYMBOL_GPL(i3c_device_send_hdr_cmds);
 > +
-> +/**
->   * i3c_device_get_info() - get I3C device information
->   *
->   * @dev: device we want information on
-> diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
-> index 86b7b44..46c4de7 100644
-> --- a/drivers/i3c/internals.h
-> +++ b/drivers/i3c/internals.h
-> @@ -18,6 +18,9 @@ void i3c_bus_normaluse_unlock(struct i3c_bus *bus);
->  int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
->  				 struct i3c_priv_xfer *xfers,
->  				 int nxfers);
-> +int i3c_dev_send_hdr_cmds_locked(struct i3c_dev_desc *dev,
-> +				 struct i3c_hdr_cmd *cmds,
-> +				 int ncmds);
->  int i3c_dev_disable_ibi_locked(struct i3c_dev_desc *dev);
->  int i3c_dev_enable_ibi_locked(struct i3c_dev_desc *dev);
->  int i3c_dev_request_ibi_locked(struct i3c_dev_desc *dev,
-> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index e98b600..16d6dd5 100644
-> --- a/drivers/i3c/master.c
-> +++ b/drivers/i3c/master.c
-> @@ -2791,6 +2791,37 @@ int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
->  	return master->ops->priv_xfers(dev, xfers, nxfers);
->  }
->  
-> +int i3c_dev_send_hdr_cmds_locked(struct i3c_dev_desc *dev,
-> +				 struct i3c_hdr_cmd *cmds,
-> +				 int ncmds)
-> +{
-> +	struct i3c_master_controller *master;
-> +	int i;
-> +
-> +	if (!dev)
-> +		return -ENOENT;
-> +
-> +	master = i3c_dev_get_master(dev);
-> +	if (!master || !cmds)
-> +		return -EINVAL;
-> +
-> +	if (master->op_mode == I3C_SLAVE_MODE) {
-> +		if (i3c_master_request_mastership(master))
-> +			return -EIO;
-> +	}
-> +
-> +	if (!master->ops->send_hdr_cmds)
-> +		return -ENOTSUPP;
-> +
-> +	for (i = 0; i < ncmds; i++) {
-> +		if (!(master->this->info.hdr_cap & BIT(cmds->mode)))
-> +			return -ENOTSUPP;
-> +	}
-> +
-> +	return master->ops->send_hdr_cmds(dev, cmds, ncmds);
-> +}
-> +
-> +
->  int i3c_dev_disable_ibi_locked(struct i3c_dev_desc *dev)
+>  static int cdns_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
+>  				     const struct i2c_msg *xfers, int nxfers)
 >  {
->  	struct i3c_master_controller *master;
-> diff --git a/include/linux/i3c/device.h b/include/linux/i3c/device.h
-> index 5ecb055..75a947f 100644
-> --- a/include/linux/i3c/device.h
-> +++ b/include/linux/i3c/device.h
-> @@ -49,6 +49,31 @@ enum i3c_hdr_mode {
->  	I3C_HDR_TSL,
->  };
->  
-> +#define I3C_HDR_GEN_WRITE_CMD(id)    	(id)
-> +#define I3C_HDR_VENDOR_WRITE_CMD(id) 	(0x20 + (id))
-> +#define I3C_HDR_IS_READ_CMD        	BIT(7)
-> +#define I3C_HDR_GEN_READ_CMD(id)    	(0x80 + (id))
-> +#define I3C_HDR_VENDOR_READ_CMD(id)    	(0xa0 + (id))
-> +
-> +/**
-> + * struct i3c_hdr_cmd - I3C HDR command
-> + * @mode: HDR mode selected for this command
-> + * @code: command opcode. Bit 7 encodes the direction of the data transfer, if
-> + *      set this is a read, otherwise this is a write
-> + * @ndatawords: number of data words (a word is 16bits wide) to transfer
-> + * @data: input/output buffer
-> + */
-> +struct i3c_hdr_cmd {
-> +    enum i3c_hdr_mode mode;
-> +    u8 code;
-> +    int ndatawords;
-> +    union {
-> +        u16 *in;
-> +        const u16 *out;
-> +    } data;
-> +};
-> +
-> +
->  /**
->   * struct i3c_priv_xfer - I3C SDR private transfer
->   * @rnw: encodes the transfer direction. true for a read, false for a write
-> @@ -289,6 +314,10 @@ int i3c_device_do_priv_xfers(struct i3c_device *dev,
->  			     struct i3c_priv_xfer *xfers,
->  			     int nxfers);
->  
-> +int i3c_device_send_hdr_cmds(struct i3c_device *dev,
-> +			     struct i3c_hdr_cmd *cmds,
-> +			     int ncmds);
-> +
->  void i3c_device_get_info(struct i3c_device *dev, struct i3c_device_info *info);
->  
->  struct i3c_ibi_payload {
-> diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
-> index ada956a..fd50473 100644
-> --- a/include/linux/i3c/master.h
-> +++ b/include/linux/i3c/master.h
-> @@ -386,6 +386,10 @@ struct i3c_bus {
->   *		  This method is mandatory.
->   * @priv_xfers: do one or several private I3C SDR transfers
->   *		This method is mandatory.
-> + * @send_hdr_cmds: send one or several HDR commands. If there is more than one
-> + *		   command, they should ideally be sent in the same HDR
-> + *		   transaction.
-> + *		   This method is optional.
->   * @attach_i2c_dev: called every time an I2C device is attached to the bus.
->   *		    This is a good place to attach master controller specific
->   *		    data to I2C devices.
-> @@ -457,6 +461,9 @@ struct i3c_master_controller_ops {
->  	int (*priv_xfers)(struct i3c_dev_desc *dev,
->  			  struct i3c_priv_xfer *xfers,
->  			  int nxfers);
-> +	int (*send_hdr_cmds)(struct i3c_dev_desc *dev,
-> +			     const struct i3c_hdr_cmd *cmds,
-> +			     int ncmds);
->  	int (*attach_i2c_dev)(struct i2c_dev_desc *dev);
->  	void (*detach_i2c_dev)(struct i2c_dev_desc *dev);
->  	int (*i2c_xfers)(struct i2c_dev_desc *dev,
+> @@ -1714,6 +1904,7 @@ static const struct i3c_master_controller_ops cdns_i3c_master_ops = {
+>  	.supports_ccc_cmd = cdns_i3c_master_supports_ccc_cmd,
+>  	.send_ccc_cmd = cdns_i3c_master_send_ccc_cmd,
+>  	.priv_xfers = cdns_i3c_master_priv_xfers,
+> +	.send_hdr_cmds = cdns_i3c_master_send_hdr_cmd,
+>  	.i2c_xfers = cdns_i3c_master_i2c_xfers,
+>  	.i2c_funcs = cdns_i3c_master_i2c_funcs,
+>  	.enable_ibi = cdns_i3c_master_enable_ibi,
 
 
 _______________________________________________
