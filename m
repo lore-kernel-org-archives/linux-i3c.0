@@ -1,70 +1,144 @@
-Return-Path: <SRS0=JcjT=OW=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=FsXb=OX=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-7.2 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,INCLUDES_PATCH,MAILING_LIST_MULTI,SIGNED_OFF_BY,SPF_PASS,
-	T_MIXED_ES,URIBL_BLOCKED autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-7.1 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SIGNED_OFF_BY,SPF_PASS autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 7DF7EC65BAE
-	for <linux-i3c@archiver.kernel.org>; Thu, 13 Dec 2018 13:50:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 28C91C67839
+	for <linux-i3c@archiver.kernel.org>; Fri, 14 Dec 2018 07:15:10 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 454B32080F
-	for <linux-i3c@archiver.kernel.org>; Thu, 13 Dec 2018 13:50:45 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id E4B992086D
+	for <linux-i3c@archiver.kernel.org>; Fri, 14 Dec 2018 07:15:09 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="X5F+B68i";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=kernel.org header.i=@kernel.org header.b="cGszVItJ"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 454B32080F
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="MsznqvMt";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=cadence.com header.i=@cadence.com header.b="tBFO3uBd";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=cadence.com header.i=@cadence.com header.b="WPn/Ob14"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E4B992086D
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cadence.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=40aOVs8rESLLmMeBfjSELeCmXEaaMk3qDf9A4E75JNM=; b=X5F+B68i39IMkK
-	0WlCXBwVBsuKnQI0fqptPpRUKjn045E5wCDLH7sYPgJhRuWD5Lng7mzXocyIDr21uxUWBZGaQr1Ze
-	MOn/wepheU3uv0eyZ/SJvXMHJuQYyNFIOTWZxxOU+aZYC/DUWPyQlbaAK5ySHY2OcUG7RLfzQGDFG
-	fvmAO01rJovuIdAoEflGDN3w44AxOJ6rsvByrlrmDEZOBh31cWcYsF42Y49O9q5dwie9CHzpO3Bgu
-	mF5wO4BT7KG73i3mGTEtzCiGqMcwdINJy3YieZcDxWQUoLIwA6v+5KQYFrDXhWEGNwfyhL5DRF91j
-	Ku11SlaqUpcgnBm0/iRw==;
+	List-Owner; bh=RXAxzIBFmMKKr+hGpHBsE+o+8lqriVQIZGJiyaos8lU=; b=MsznqvMtWkxMzV
+	4kgDYi9rWzV+/KDq2vL0JO/N5bpVRh/mJHIgXxX/LGVj6OQW8XfFEtKC986Z3blh4RAwKf2XVcMCU
+	chZuFIcNnZJyz1d8SgO6aABoNLVZa/T6thxPmD1Y33+Kskio2SfKl9ZRyt8eIzrfj6FX2fm7ArkOE
+	r999epuvanaMNEjCCJPB1MY+CC31+a8MV2/2Ucj+wreHlAg3Skr6m7C55BrfLOX2pVt11USjAwdtI
+	aWsIbEeC1I4LnUE5SSWbKrZBSter9WmlBNuNHBzUnTHBqLFiCAUI2pWmk5yRX6WQA5FRB8HuEPOOs
+	i1MmbVdchBaSG0whl+aQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1gXRO0-0005sn-Sf; Thu, 13 Dec 2018 13:50:44 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1gXhgj-0006jm-Ej; Fri, 14 Dec 2018 07:15:09 +0000
+Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193]
+ helo=mx0a-0014ca01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1gXRNs-0005h9-1G
- for linux-i3c@lists.infradead.org; Thu, 13 Dec 2018 13:50:43 +0000
-Received: from bbrezillon (aaubervilliers-681-1-89-7.w90-88.abo.wanadoo.fr
- [90.88.30.7])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EB4F620849;
- Thu, 13 Dec 2018 13:50:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1544709025;
- bh=wXQs+cWEnCxHjtLCIYj+sWqBDtwumR3lDQfs8O4cuf8=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=cGszVItJjNA/QzmPw9VJAliq/eQh/+YsdO1TiW+B74G+kVdCILVZIWazau+rozG/4
- VuauOZHcn7mhUmz5E81uEJFbn0IvydzG/mxFY7XBPVY3omlWnBMZrNSuit7uLfE9UQ
- kKX8f0oX1UeJOoQ3f7NBBcw6UBCMUkNA7qEk1/jc=
-Date: Thu, 13 Dec 2018 14:50:20 +0100
-From: Boris Brezillon <bbrezillon@kernel.org>
-To: Przemyslaw Gaj <pgaj@cadence.com>
+ id 1gXhgf-0005is-1k
+ for linux-i3c@lists.infradead.org; Fri, 14 Dec 2018 07:15:08 +0000
+Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
+ by mx0b-0014ca01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ wBE7DO2T012586; Thu, 13 Dec 2018 23:14:47 -0800
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ h=from : to : cc :
+ subject : date : message-id : references : in-reply-to : content-type :
+ content-id : content-transfer-encoding : mime-version; s=proofpoint;
+ bh=VEi15t/vPn0ZADaScLH3R5U1ISKZPvOLOMvEg74hUXg=;
+ b=tBFO3uBd/PDJdKVKfyshl4PiriTRPQ5FigChKmmmIbia/rlLuGxSxdwPpCYxW9VxPf8V
+ hUYFBsVPWKkUYM6Q9+Vt8BtaC0uHpYnwj9Lv3ne/RxResU5mnXwvfdiN2AYgvy6JDI9X
+ ciSLPBFviLpD81dOr8kF4MZq4YEfNcA/jHQUGPa9hSYZYf5f7RDHUdxZu0cJq0oAg4z4
+ 4f1x4YmJ+MQSTKSCeDK8VJyCkfVF2C1DR4o6EhY76Wfg9gxeYX+90FcMKtAdC+jv4ySN
+ JrJEvELM0frRo+3RoCB2vMYOz9m16KWK+xaoz7B93nVjLahagAmkU+0CIpBAt8cSgAEa +Q== 
+Authentication-Results: cadence.com;
+	spf=pass smtp.mailfrom=pgaj@cadence.com
+Received: from nam02-bl2-obe.outbound.protection.outlook.com
+ (mail-bl2nam02lp2054.outbound.protection.outlook.com [104.47.38.54])
+ by mx0b-0014ca01.pphosted.com with ESMTP id 2pc7n983ek-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
+ Thu, 13 Dec 2018 23:14:47 -0800
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=VEi15t/vPn0ZADaScLH3R5U1ISKZPvOLOMvEg74hUXg=;
+ b=WPn/Ob14L3JqlYbtol9YllAy+rxfi0NsyLQV1B2tG6QfAy4vReMAdRG/hk3CE89rUBdIEcgv872IRA6rcZD2zrwFg6R4FruGS0qJ/CsGav2s4tK4GKOQA8hDoGg0QAF5HxWcR9Hh2RQnpCKrPu0FLeYSYXMS18gVe4P0O5WykcY=
+Received: from SN6PR07MB5151.namprd07.prod.outlook.com (52.135.101.32) by
+ SN6PR07MB4797.namprd07.prod.outlook.com (52.135.77.153) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.1425.19; Fri, 14 Dec 2018 07:14:45 +0000
+Received: from SN6PR07MB5151.namprd07.prod.outlook.com
+ ([fe80::7018:ef07:8837:66a2]) by SN6PR07MB5151.namprd07.prod.outlook.com
+ ([fe80::7018:ef07:8837:66a2%2]) with mapi id 15.20.1425.016; Fri, 14 Dec 2018
+ 07:14:44 +0000
+From: Przemyslaw Gaj <pgaj@cadence.com>
+To: Boris Brezillon <bbrezillon@kernel.org>
 Subject: Re: [PATCH 1/2] i3c: Add support for mastership request to I3C
  subsystem
-Message-ID: <20181213145020.124cb103@bbrezillon>
-In-Reply-To: <68ffa8026fb3cc32415058861ece07f158b00647.1544703840.git.pgaj@cadence.com>
+Thread-Topic: [PATCH 1/2] i3c: Add support for mastership request to I3C
+ subsystem
+Thread-Index: AQHUkt757JTaqWlguUiNWQhE11cuKqV8r9QAgAE0kIA=
+Date: Fri, 14 Dec 2018 07:14:44 +0000
+Message-ID: <DCAE2FA2-D22C-4010-A13C-3413DBCF4721@cadence.com>
 References: <cover.1544703840.git.pgaj@cadence.com>
  <68ffa8026fb3cc32415058861ece07f158b00647.1544703840.git.pgaj@cadence.com>
-X-Mailer: Claws Mail 3.16.0 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ <20181213145020.124cb103@bbrezillon>
+In-Reply-To: <20181213145020.124cb103@bbrezillon>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [185.217.253.59]
+x-ms-publictraffictype: Email
+x-microsoft-exchange-diagnostics: 1; SN6PR07MB4797;
+ 20:Myk/1XJzOkqrgf7EmTYndnYUPM6AAFculLHmgtSFurujhuLBUCa9ZbjdJMa3ZbwfjhIr1eX/YA6a7XgMpjpiHLKZNSg4v7WomPLgkgRnW52k1k0M/Bp/roekKoyR4fD6Cx+JdWkWOaA3nMkye2FSrEiCfkD5HszM1zuZUGpNYnGZ5mxH/453m7h9MnYRdS7COLUGI8XSVSKhYK1dL1q709t/wUwy35HBM8MfGa7xX4kuHTwiCPwLlhMRTyLPgA2J
+x-ms-office365-filtering-correlation-id: 1fc54cfe-9e0b-490e-75e3-08d66193d321
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600074)(711020)(2017052603328)(7153060)(7193020);
+ SRVR:SN6PR07MB4797; 
+x-ms-traffictypediagnostic: SN6PR07MB4797:
+x-microsoft-antispam-prvs: <SN6PR07MB479799FA379C0F869D8EB1E0C2A10@SN6PR07MB4797.namprd07.prod.outlook.com>
+x-ms-exchange-senderadcheck: 1
+x-exchange-antispam-report-cfa-test: BCL:0; PCL:0;
+ RULEID:(8211001083)(3230021)(999002)(6040522)(2401047)(8121501046)(5005006)(3231475)(944501520)(52105112)(10201501046)(93006095)(93001095)(3002001)(148016)(149066)(150057)(6041310)(20161123558120)(20161123562045)(20161123560045)(20161123564045)(201703131423095)(201702281528075)(20161123555045)(201703061421075)(201703061406153)(201708071742011)(7699051)(76991095);
+ SRVR:SN6PR07MB4797; BCL:0; PCL:0; RULEID:; SRVR:SN6PR07MB4797; 
+x-forefront-prvs: 08864C38AC
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(136003)(376002)(346002)(396003)(366004)(39860400002)(199004)(189003)(51444003)(43544003)(36092001)(25786009)(551934003)(14444005)(478600001)(53946003)(68736007)(6436002)(6486002)(5660300001)(2906002)(4326008)(76176011)(3846002)(6116002)(33656002)(316002)(54906003)(53936002)(102836004)(6506007)(26005)(6916009)(99286004)(186003)(345774005)(86362001)(36756003)(229853002)(6512007)(11346002)(106356001)(486006)(2616005)(476003)(446003)(71190400001)(71200400001)(97736004)(4744004)(83716004)(82746002)(8676002)(14454004)(105586002)(66066001)(5024004)(256004)(107886003)(81156014)(81166006)(8936002)(6246003)(305945005)(7736002)(579004)(559001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:SN6PR07MB4797;
+ H:SN6PR07MB5151.namprd07.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: cadence.com does not designate
+ permitted sender hosts)
+x-microsoft-antispam-message-info: ewrtwdDAM/JjE/OTbYF/IbmzubMZWjDMRzVxsXyuGuuqbr9z19GvfeaLxqsJBkzsRbpkvsHM43m7bfXd56TJMU07eSaIW1QH7juo7q0Z+nh/AFWCBoRwfIfRrjh42+1hBueeIf6K2WJ6Vr2KLN704SQ01FASioGr2CpJmm/6KhYg80n6YRj6eIWHklNdycFqAT+bNqkJuwMjUOX4bkc52O3fpQKNX55FHi/E7xXESpwiJLthSnBAP7KD6HbrLCb3SMMfawzYuCXaZabkiN6alUBLB6XUlmrj0ZUEvsJdq0Uhf7rXfIZfydUp0Lrum056
+spamdiagnosticoutput: 1:99
+spamdiagnosticmetadata: NSPM
+Content-ID: <376BB66A8DC2374C808986931F5F5342@namprd07.prod.outlook.com>
 MIME-Version: 1.0
+X-OriginatorOrg: cadence.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1fc54cfe-9e0b-490e-75e3-08d66193d321
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Dec 2018 07:14:44.8014 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR07MB4797
+X-Proofpoint-SPF-Result: pass
+X-Proofpoint-SPF-Record: v=spf1 include:_spf.salesforce.com
+ include:mktomail.com
+ include:spf-0014ca01.pphosted.com include:spf.protection.outlook.com
+ include:auth.msgapp.com include:spf.mandrillapp.com ~all
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2018-12-14_03:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
+ score=0
+ priorityscore=1501 malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0
+ spamscore=0 clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1810050000 definitions=main-1812140067
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20181213_055036_118802_BD4174DA 
-X-CRM114-Status: GOOD (  42.27  )
+X-CRM114-CacheID: sfid-20181213_231505_317538_DCEA9052 
+X-CRM114-Status: GOOD (  33.96  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,701 +150,525 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: linux-i3c@lists.infradead.org, psroka@cadence.com, rafalc@cadence.com,
- vitor.soares@synopsys.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
+ Przemyslaw Sroka <psroka@cadence.com>, Rafal Ciepiela <rafalc@cadence.com>,
+ "vitor.soares@synopsys.com" <vitor.soares@synopsys.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, 13 Dec 2018 12:28:00 +0000
-Przemyslaw Gaj <pgaj@cadence.com> wrote:
-
-> This patch adds support for mastership request to I3C subsystem.
-> 
-> Mastership event is enabled for all the masters on the I3C bus
-> by default.
-> 
-> Mastership request occurs in the following cases:
-> - Mastership is requested automatically after secondary master
-> receives mastership ENEC event. This allows secondary masters to
-> initialize their bus
-
-I guess this only happens when the secondary master received a DEFSLVS
-packet, right?
-
-> - If above procedure fails for some reason, user can force
-> mastership request through sysfs. Of course, mastership event
-> still has to be enabled on current master side
-
-Sounds like a good idea.
-
-> - Mastership is also requested automatically when device driver
-> tries to transfer data using master controller in slave mode.
-
-And that too.
-
-> 
-> There is still some limitation:
-> - I2C devices are not registered on secondary master side. I2C
-> devices received in DEFSLVS CCC command are added to device list
-> just to send back this information to the other master controllers
-> in case of bus handoff. We can add support for this in the future
-> if there is such use case.
-
-I2C devices must be described under the bus represented by the
-secondary master for that to work properly (we need a way to bind
-devices to drivers). So, it's probably a good thing to discard (or
-leave them inactive) any devices that do not have a i2c_board_info entry
-on the secondary master side.
-
-> 
-> Signed-off-by: Przemyslaw Gaj <pgaj@cadence.com>
-> ---
->  drivers/i3c/master.c       | 260 ++++++++++++++++++++++++++++++++++++++++++---
->  include/linux/i3c/master.h |  43 +++++++-
->  2 files changed, 289 insertions(+), 14 deletions(-)
-> 
-> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index 68d6553..e98b600 100644
-> --- a/drivers/i3c/master.c
-> +++ b/drivers/i3c/master.c
-> @@ -460,6 +460,15 @@ static int i3c_bus_init(struct i3c_bus *i3cbus)
->  	return 0;
->  }
->  
-> +static int i3c_master_request_mastership(struct i3c_master_controller *master)
-> +{
-> +	if (!master->ops->request_mastership)
-> +		return -ENOTSUPP;
-
-Please add a blank line here
-
-> +	if (master->ops->request_mastership(master))
-> +		return -EIO;
-
-and here.
-
-> +	return 0;
-> +}
-> +
->  static const char * const i3c_bus_mode_strings[] = {
->  	[I3C_BUS_MODE_PURE] = "pure",
->  	[I3C_BUS_MODE_MIXED_FAST] = "mixed-fast",
-> @@ -491,8 +500,15 @@ static ssize_t current_master_show(struct device *dev,
->  				   char *buf)
->  {
->  	struct i3c_bus *i3cbus = dev_to_i3cbus(dev);
-> +	struct i3c_master_controller *master;
->  	ssize_t ret;
->  
-> +	if (!i3cbus->cur_master) {
-> +		master = container_of(i3cbus, struct i3c_master_controller, bus);
-> +		if (i3c_master_request_mastership(master))
-> +			return sprintf(buf, "unknown\n");
-> +	}
-
-Hm, why is that needed? When you are a secondary master ->cur_master
-should be set to the i3c_dev_desc representing the main master at init
-time.
-
-> +
->  	i3c_bus_normaluse_lock(i3cbus);
->  	ret = sprintf(buf, "%d-%llx\n", i3cbus->id,
->  		      i3cbus->cur_master->info.pid);
-> @@ -659,6 +675,11 @@ static int i3c_master_send_ccc_cmd_locked(struct i3c_master_controller *master,
->  	if (!cmd || !master)
->  		return -EINVAL;
->  
-> +	if (master->op_mode == I3C_SLAVE_MODE) {
-> +		if (i3c_master_request_mastership(master))
-> +			return -EIO;
-> +	}
-> +
-
-This shouldn't be needed either. if i3cbus->cur_master != master->this,
-that means the master is operating in slave mode.
-
->  	if (WARN_ON(master->init_done &&
->  		    !rwsem_is_locked(&master->bus.lock)))
->  		return -EINVAL;
-> @@ -1371,6 +1392,7 @@ static int i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
->  						      dev->info.dyn_addr);
->  		if (status != I3C_ADDR_SLOT_FREE)
->  			return -EBUSY;
-> +
-
-Drop this change (or make it part of a separate patch fixing coding
-style issues).
-
->  		i3c_bus_set_addr_slot_status(&master->bus,
->  					     dev->info.dyn_addr,
->  					     I3C_ADDR_SLOT_I3C_DEV);
-> @@ -1491,6 +1513,46 @@ i3c_master_register_new_i3c_devs(struct i3c_master_controller *master)
->  }
->  
->  /**
-> + * i3c_master_get_accmst_locked() - send a GETACCMST CCC command
-> + * @master: master used to send frames on the bus
-> + * @info: I3C device information
-
-Maybe you can simply pass the dynamic address instead of the full
-device_info struct.
-
-> + *
-> + * Send a GETACCMST CCC command.
-> + *
-> + * This should be called if the curent master acknowledges bus takeover.
-
-I really thought this would be all automated by the master IP, but
-apparently it's not :-).
-
-> + *
-> + * This function must be called with the bus lock held in write mode.
-> + *
-> + * Return: 0 in case of success, a positive I3C error code if the error is
-> + * one of the official Mx error codes, and a negative error code otherwise.
-> + */
-> +int i3c_master_get_accmst_locked(struct i3c_master_controller *master,
-> +				 const struct i3c_device_info *info)
-> +{
-> +	struct i3c_ccc_getaccmst *accmst;
-> +	struct i3c_ccc_cmd_dest dest;
-> +	struct i3c_ccc_cmd cmd;
-> +	int ret;
-> +
-> +	accmst = i3c_ccc_cmd_dest_init(&dest, info->dyn_addr, sizeof(*accmst));
-> +	if (!accmst)
-> +		return -ENOMEM;
-> +
-> +	i3c_ccc_cmd_init(&cmd, true, I3C_CCC_GETACCMST, &dest, 1);
-> +
-> +	ret = i3c_master_send_ccc_cmd_locked(master, &cmd);
-> +
-> +	if (ret)
-> +		return ret;
-> +
-> +	if (dest.payload.len != sizeof(*accmst))
-> +		return -EIO;
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL_GPL(i3c_master_get_accmst_locked);
-> +
-> +/**
->   * i3c_master_do_daa() - do a DAA (Dynamic Address Assignment)
->   * @master: master doing the DAA
->   *
-> @@ -1554,11 +1616,8 @@ int i3c_master_set_info(struct i3c_master_controller *master,
->  	struct i3c_dev_desc *i3cdev;
->  	int ret;
->  
-> -	if (!i3c_bus_dev_addr_is_avail(&master->bus, info->dyn_addr))
-> -		return -EINVAL;
-> -
-> -	if (I3C_BCR_DEVICE_ROLE(info->bcr) == I3C_BCR_I3C_MASTER &&
-> -	    master->secondary)
-> +	if (master->op_mode == I3C_MASTER_MODE &&
-> +	    !i3c_bus_dev_addr_is_avail(&master->bus, info->dyn_addr))
-
-Please place this test in a separate if branch, as they are not really
-related.
-
->  		return -EINVAL;
->  
->  	if (master->this)
-> @@ -1569,7 +1628,8 @@ int i3c_master_set_info(struct i3c_master_controller *master,
->  		return PTR_ERR(i3cdev);
->  
->  	master->this = i3cdev;
-> -	master->bus.cur_master = master->this;
-> +	if (master->op_mode == I3C_MASTER_MODE)
-> +		master->bus.cur_master = master->this;
-
-When you hare a secondary master, you should make ->cur_master point to
-an i3c_dev_desc describing the current/main master. Should be possible
-thanks to the DEFSLVS info.
-
->  
->  	ret = i3c_master_attach_i3c_dev(master, i3cdev);
->  	if (ret)
-> @@ -1727,6 +1787,12 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
->  	}
->  
->  	/*
-> +	 * Don't reset addresses if this is secondary master.
-> +	 * Secondary masters can't do DAA.
-> +	 */
-
-Hm, I'm not sure how that's supposed to work. What if the secondary
-master was initialized by the bootloader. Don't you need to reset
-something and maybe trigger a MSTREQ+DAA or a HotJoin?
-
-> +	if (master->secondary)
-> +		return 0;
-
-Add a blank like here.
-
-> +	/*
->  	 * Reset all dynamic address that may have been assigned before
->  	 * (assigned by the bootloader for example).
->  	 */
-> @@ -1738,6 +1804,7 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
->  	ret = i3c_master_disec_locked(master, I3C_BROADCAST_ADDR,
->  				      I3C_CCC_EVENT_SIR | I3C_CCC_EVENT_MR |
->  				      I3C_CCC_EVENT_HJ);
-> +
-
-Drop this blank line.
-
->  	if (ret && ret != I3C_ERROR_M2)
->  		goto err_bus_cleanup;
->  
-> @@ -1789,6 +1856,44 @@ i3c_master_search_i3c_dev_duplicate(struct i3c_dev_desc *refdev)
->  	return NULL;
->  }
->  
-> +int i3c_master_add_i2c_dev(struct i3c_master_controller *master,
-> +			   struct i2c_dev_boardinfo *info)
-> +{
-> +	enum i3c_addr_slot_status status;
-> +	struct device *dev = &master->dev;
-> +	struct i2c_dev_boardinfo *boardinfo;
-> +	struct i2c_dev_desc *i2cdev;
-> +	int ret;
-> +
-> +	status = i3c_bus_get_addr_slot_status(&master->bus,
-> +					      info->base.addr);
-> +	if (status != I3C_ADDR_SLOT_FREE)
-> +		return -EBUSY;
-> +
-> +	boardinfo = devm_kzalloc(dev, sizeof(*boardinfo), GFP_KERNEL);
-> +	if (!boardinfo)
-> +		return -ENOMEM;
-> +
-> +	i3c_bus_set_addr_slot_status(&master->bus,
-> +				     info->base.addr,
-> +				     I3C_ADDR_SLOT_I2C_DEV);
-> +
-> +	boardinfo->base.addr = info->base.addr;
-> +	boardinfo->lvr = info->lvr;
-> +
-> +	i2cdev = i3c_master_alloc_i2c_dev(master, boardinfo);
-> +	if (IS_ERR(i2cdev))
-> +		return PTR_ERR(i2cdev);
-> +
-> +	ret = i3c_master_attach_i2c_dev(master, i2cdev);
-> +	if (ret) {
-> +		i3c_master_free_i2c_dev(i2cdev);
-> +		return ret;
-> +	}
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL_GPL(i3c_master_add_i2c_dev);
-> +
->  /**
->   * i3c_master_add_i3c_dev_locked() - add an I3C slave to the bus
->   * @master: master used to send frames on the bus
-> @@ -1832,6 +1937,15 @@ int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
->  	if (ret)
->  		goto err_free_dev;
->  
-> +	if (I3C_BCR_DEVICE_ROLE(newdev->info.bcr) == I3C_BCR_I3C_MASTER &&
-> +	    master->ops->enable_mastership) {
-> +		if (master->ops->enable_mastership(newdev)) {
-> +			dev_warn(&master->dev,
-> +				 "Failed to enable mastership for device: %d%llx",
-> +				 master->bus.id, newdev->info.pid);
-> +		}
-> +	}
-> +
->  	olddev = i3c_master_search_i3c_dev_duplicate(newdev);
->  	if (olddev) {
->  		newdev->boardinfo = olddev->boardinfo;
-> @@ -2102,6 +2216,11 @@ static int i3c_master_i2c_adapter_xfer(struct i2c_adapter *adap,
->  			return -ENOTSUPP;
->  	}
->  
-> +	if (master->op_mode == I3C_SLAVE_MODE) {
-> +		if (i3c_master_request_mastership(master))
-
-Shouldn't this be called with the lock held?
-
-Oh, and we might have a race here if the master gains bus ownership and
-looses it just after that and before it was able to the transfer. I
-think we should:
-
-1/ send a GETACCMST
-2/ disable MR EVENTS
-3/ do the I3C/I2C transfers
-4/ enable MR EVENTS
-
-1 and 2 should be sent in the same transaction to avoid cases where
-another master tries to acquire the bus, or if that's not possible, the
-master that just gained ownership of the bus should reject any incoming
-MR until DISEC(MR) has been sent.
-
-
-
-> +			return -EIO;
-> +	}
-> +
->  	i3c_bus_normaluse_lock(&master->bus);
->  	dev = i3c_master_find_i2c_dev_by_addr(master, addr);
->  	if (!dev)
-> @@ -2393,15 +2512,31 @@ static int i3c_master_check_ops(const struct i3c_master_controller_ops *ops)
->  	return 0;
->  }
->  
-> +static void i3c_master_bus_takeover(struct work_struct *work)
-> +{
-> +	struct i3c_master_controller *master;
-> +
-> +	master = container_of(work, struct i3c_master_controller, mastership);
-> +
-> +	i3c_bus_maintenance_lock(&master->bus);
-> +	master->ops->update_devs(master);
-> +	i3c_bus_maintenance_unlock(&master->bus);
-
-Blank like here please.
-
-> +	/*
-> +	 * We can register I3C devices received from master by DEFSLVS.
-> +	 */
-> +	master->init_done = true;
-
-I think this should be set before that, in the i3c_master_register()
-function. When a secondary master is initialized, it should populate
-the dev list based on a previous DEFSLVS frame it has received before
-the ->probe() call, or just start with an empty list.
-
-> +	i3c_bus_normaluse_lock(&master->bus);
-> +	i3c_master_register_new_i3c_devs(master);
-> +	i3c_bus_normaluse_unlock(&master->bus);
-> +}
-> +
->  /**
->   * i3c_master_register() - register an I3C master
->   * @master: master used to send frames on the bus
->   * @parent: the parent device (the one that provides this I3C master
->   *	    controller)
->   * @ops: the master controller operations
-> - * @secondary: true if you are registering a secondary master. Will return
-> - *	       -ENOTSUPP if set to true since secondary masters are not yet
-> - *	       supported
-> + * @secondary: true if you are registering a secondary master.
->   *
->   * This function takes care of everything for you:
->   *
-> @@ -2424,10 +2559,6 @@ int i3c_master_register(struct i3c_master_controller *master,
->  	struct i2c_dev_boardinfo *i2cbi;
->  	int ret;
->  
-> -	/* We do not support secondary masters yet. */
-> -	if (secondary)
-> -		return -ENOTSUPP;
-> -
->  	ret = i3c_master_check_ops(ops);
->  	if (ret)
->  		return ret;
-> @@ -2439,6 +2570,7 @@ int i3c_master_register(struct i3c_master_controller *master,
->  	master->dev.release = i3c_masterdev_release;
->  	master->ops = ops;
->  	master->secondary = secondary;
-> +	master->op_mode = secondary ? I3C_SLAVE_MODE : I3C_MASTER_MODE;
->  	INIT_LIST_HEAD(&master->boardinfo.i2c);
->  	INIT_LIST_HEAD(&master->boardinfo.i3c);
->  
-> @@ -2497,6 +2629,13 @@ int i3c_master_register(struct i3c_master_controller *master,
->  		goto err_del_dev;
->  
->  	/*
-> +	 * We can stop here. Devices will be attached after bus takeover.
-> +	 * Secondary masters can't do DAA.
-> +	 */
-> +	if (master->secondary)
-> +		return 0;
-
-See, I don't think we should stop here. We should provide a hook to let
-secondary slaves populate the dev list based on data they might have
-received before that.
-
-> +
-> +	/*
->  	 * We're done initializing the bus and the controller, we can now
->  	 * register I3C devices dicovered during the initial DAA.
->  	 */
-> @@ -2521,6 +2660,95 @@ int i3c_master_register(struct i3c_master_controller *master,
->  EXPORT_SYMBOL_GPL(i3c_master_register);
->  
->  /**
-> + * i3c_master_switch_operation_mode() - changes operation mode of the controller
-> + * @master: master used to send frames on the bus
-> + * @new_master: the device that takes control of the bus
-> + * @op_mode: the master new operation mode
-> + *
-> + * Return: 0 in case of success, a negative error code otherwise.
-> + */
-> +int i3c_master_switch_operation_mode(struct i3c_master_controller *master,
-> +				     struct i3c_dev_desc *new_master,
-> +				     enum i3c_op_mode new_op_mode)
-> +{
-> +	if (master->op_mode == new_op_mode)
-> +		return -EEXIST;
-> +
-> +	master->op_mode = new_op_mode;
-> +
-> +	if (new_op_mode == I3C_SLAVE_MODE) {
-> +		master->bus.cur_master = new_master;
-> +	} else {
-> +		master->bus.cur_master = master->this;
-
-This is done too early. You should update cur->master only after the
-GETACCMST operation succeeds.
-
-> +		INIT_WORK(&master->mastership, i3c_master_bus_takeover);
-
-INIT_WORK() should be called once at init time, not everytime you
-switch from one mode to another.
-
-> +		queue_work(master->wq, &master->mastership);
-> +	}
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL_GPL(i3c_master_switch_operation_mode);
-> +
-> +/**
-> + * i3c_master_mastership_ack() - performs operations before bus handover.
-> + * @master: master used to send frames on the bus
-> + * @info: I3C device information
-> + *
-> + * Basically, it sends DEFSLVS command to ensure new master is taking
-> + * the bus with complete list of devices and then acknowledges bus takeover.
-> + *
-> + * Return: 0 in case of success, a negative error code otherwise.
-> + */
-> +int i3c_master_mastership_ack(struct i3c_master_controller *master,
-> +			      const struct i3c_device_info *info)
-> +{
-> +	int ret;
-> +
-> +	i3c_bus_maintenance_lock(&master->bus);
-> +	ret = i3c_master_defslvs_locked(master);
-> +	i3c_bus_maintenance_unlock(&master->bus);
-> +	if (ret)
-> +		return ret;
-> +
-
-Hm, this should have been sent during DAA, no need to do it again here,
-right?
-
-> +	i3c_bus_maintenance_lock(&master->bus);
-> +	ret = i3c_master_get_accmst_locked(master, info);
-> +	i3c_bus_maintenance_unlock(&master->bus);
-> +	if (ret)
-> +		return ret;
-
-Hm, will this really work? I thought the mastership handover procedure
-had to be done atomically (using Sr between each transfer to avoid
-external interruptions). I might be wrong though (need to read the
-spec to refresh my memory).
-
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL_GPL(i3c_master_mastership_ack);
-> +
-> +static void i3c_secondary_master_bus_init(struct work_struct *work)
-> +{
-> +	struct i3c_master_controller *master;
-> +
-> +	master = container_of(work, struct i3c_master_controller, mastership);
-> +
-> +	if (i3c_master_request_mastership(master))
-> +		dev_err(&master->dev, "Mastership failed.");
-> +}
-> +
-> +/**
-> + * i3c_secondary_master_events_enabled() - event from current master
-> + * @master: master used to send frames on the bus
-> + * @evts: enabled events
-> + *
-> + * This function allows to perform required operations after current
-> + * master enables particular events on the bus.
-> + */
-> +void i3c_secondary_master_events_enabled(struct i3c_master_controller *master,
-> +					 u8 evts)
-> +{
-> +	if ((evts & I3C_CCC_EVENT_MR) &&
-> +	    !master->init_done) {
-> +		INIT_WORK(&master->mastership, i3c_secondary_master_bus_init);
-> +		queue_work(master->wq, &master->mastership);
-> +	}
-> +}
-> +EXPORT_SYMBOL_GPL(i3c_secondary_master_events_enabled);
-
-Hm, so you're trying to standardize events handling. I had initially
-left that to the driver as it's likely to be controller specific.
-
-> +
-> +/**
->   * i3c_master_unregister() - unregister an I3C master
->   * @master: master used to send frames on the bus
->   *
-> @@ -2552,6 +2780,11 @@ int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
->  	if (!master || !xfers)
->  		return -EINVAL;
->  
-> +	if (master->op_mode == I3C_SLAVE_MODE) {
-> +		if (i3c_master_request_mastership(master))
-> +			return -EIO;
-> +	}
-> +
->  	if (!master->ops->priv_xfers)
->  		return -ENOTSUPP;
->  
-> @@ -2657,5 +2890,6 @@ static void __exit i3c_exit(void)
->  module_exit(i3c_exit);
->  
->  MODULE_AUTHOR("Boris Brezillon <boris.brezillon@bootlin.com>");
-> +MODULE_AUTHOR("Przemyslaw Gaj <pgaj@cadence.com>");
-
-Please do that in a separate patch.
-
->  MODULE_DESCRIPTION("I3C core");
->  MODULE_LICENSE("GPL v2");
-> diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
-> index f13fd8b..ada956a 100644
-> --- a/include/linux/i3c/master.h
-> +++ b/include/linux/i3c/master.h
-> @@ -282,6 +282,16 @@ enum i3c_addr_slot_status {
->  };
->  
->  /**
-> + * enum i3c_op_mode - I3C controller operation mode
-> + * @I3C_SLAVE_MODE: I3C controller operates in slave mode
-> + * @I3C_MASTER_MODE: I3C controller operates in master mode
-> + */
-> +enum i3c_op_mode {
-> +	I3C_SLAVE_MODE,
-> +	I3C_MASTER_MODE
-> +};
-> +
-> +/**
->   * struct i3c_bus - I3C bus object
->   * @cur_master: I3C master currently driving the bus. Since I3C is multi-master
->   *		this can change over the time. Will be used to let a master
-> @@ -418,6 +428,20 @@ struct i3c_bus {
->   *		      for a future IBI
->   *		      This method is mandatory only if ->request_ibi is not
->   *		      NULL.
-> + * @update_devs: updates device list. Called after bus takeover. Secondary
-> + *               master can't perform DAA procedure.
-
-Is that really true? Can you point me to the relevant section in the
-spec describing this constraint?
-
->		     This function allows to
-> + *               update devices received from previous bus owner in DEFSLVS
-> + *               command. Useful also when new device joins the bus controlled
-> + *               by secondary master, main master will be able to add
-> + *               this device after mastership takeover.
-> + * @request_mastership: requests bus mastership. By default called by secondary
-> + *                      master after ENEC CCC is received and when devices were
-> + *                      not fully initialized yet. Mastership is also requested
-> + *                      when device driver wants to transfer data using master
-> + *                      in slave mode.
-> + * @enable_mastership: enable the Mastership for specified device. Mastership
-> + *                     does not require handler. Mastership is enabled for all
-> + *                     masters by default.
-
-Maybe ->enable_mr_events() (->enable_mastership() is just unclear to
-me). Oh, and if you have an enable function you should have a disable
-one too.
-
->   */
->  struct i3c_master_controller_ops {
->  	int (*bus_init)(struct i3c_master_controller *master);
-> @@ -445,6 +469,9 @@ struct i3c_master_controller_ops {
->  	int (*disable_ibi)(struct i3c_dev_desc *dev);
->  	void (*recycle_ibi_slot)(struct i3c_dev_desc *dev,
->  				 struct i3c_ibi_slot *slot);
-> +	void (*update_devs)(struct i3c_master_controller *master);
-> +	int (*request_mastership)(struct i3c_master_controller *master);
-> +	int (*enable_mastership)(struct i3c_dev_desc *dev);
->  };
->  
->  /**
-> @@ -458,6 +485,7 @@ struct i3c_master_controller_ops {
->   * @ops: master operations. See &struct i3c_master_controller_ops
->   * @secondary: true if the master is a secondary master
->   * @init_done: true when the bus initialization is done
-> + * @op_mode: controller operation mode
-
-As said earlier, I don't think this is needed. Just check ->cur_master
-to know whether the master owns the bus or not.
-
->   * @boardinfo.i3c: list of I3C  boardinfo objects
->   * @boardinfo.i2c: list of I2C boardinfo objects
->   * @boardinfo: board-level information attached to devices connected on the bus
-> @@ -467,6 +495,7 @@ struct i3c_master_controller_ops {
->   *	in a thread context. Typical examples are Hot Join processing which
->   *	requires taking the bus lock in maintenance, which in turn, can only
->   *	be done from a sleep-able context
-> + * @mastership: work for switching operation mode after bus takeover
-
-How about mr_work or something like that. mastership is a bit
-ambiguous, and it's not really clear that it's representing a work
-object.
-
->   *
->   * A &struct i3c_master_controller has to be registered to the I3C subsystem
->   * through i3c_master_register(). None of &struct i3c_master_controller fields
-> @@ -480,12 +509,14 @@ struct i3c_master_controller {
->  	const struct i3c_master_controller_ops *ops;
->  	unsigned int secondary : 1;
->  	unsigned int init_done : 1;
-> +	enum i3c_op_mode op_mode;
->  	struct {
->  		struct list_head i3c;
->  		struct list_head i2c;
->  	} boardinfo;
->  	struct i3c_bus bus;
->  	struct workqueue_struct *wq;
-> +	struct work_struct mastership;
->  };
->  
->  /**
-> @@ -523,7 +554,8 @@ int i3c_master_defslvs_locked(struct i3c_master_controller *master);
->  
->  int i3c_master_get_free_addr(struct i3c_master_controller *master,
->  			     u8 start_addr);
-> -
-> +int i3c_master_add_i2c_dev(struct i3c_master_controller *master,
-> +			   struct i2c_dev_boardinfo *info);
->  int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
->  				  u8 addr);
->  int i3c_master_do_daa(struct i3c_master_controller *master);
-> @@ -536,6 +568,15 @@ int i3c_master_register(struct i3c_master_controller *master,
->  			const struct i3c_master_controller_ops *ops,
->  			bool secondary);
->  int i3c_master_unregister(struct i3c_master_controller *master);
-> +int i3c_master_get_accmst_locked(struct i3c_master_controller *master,
-> +				 const struct i3c_device_info *info);
-> +int i3c_master_switch_operation_mode(struct i3c_master_controller *master,
-> +				     struct i3c_dev_desc *new_master,
-> +				     enum i3c_op_mode new_op_mode);
-> +int i3c_master_mastership_ack(struct i3c_master_controller *master,
-> +			      const struct i3c_device_info *info);
-> +void i3c_secondary_master_events_enabled(struct i3c_master_controller *master,
-> +					 u8 evts);
->  
->  /**
->   * i3c_dev_get_master_data() - get master private data attached to an I3C
-
-
-_______________________________________________
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+SGkgQm9yaXMsDQoNClRoYW5rIHlvdSBmb3IgcmV2aWV3aW5nIHRoaXMgc28gcXVpY2tseS4NCg0K
+77u/T24gMTIvMTMvMTgsIDI6NTAgUE0sICJCb3JpcyBCcmV6aWxsb24iIDxiYnJlemlsbG9uQGtl
+cm5lbC5vcmc+IHdyb3RlOg0KDQogICAgRVhURVJOQUwgTUFJTA0KICAgIA0KICAgIA0KICAgIE9u
+IFRodSwgMTMgRGVjIDIwMTggMTI6Mjg6MDAgKzAwMDANCiAgICBQcnplbXlzbGF3IEdhaiA8cGdh
+akBjYWRlbmNlLmNvbT4gd3JvdGU6DQogICAgDQogICAgPiBUaGlzIHBhdGNoIGFkZHMgc3VwcG9y
+dCBmb3IgbWFzdGVyc2hpcCByZXF1ZXN0IHRvIEkzQyBzdWJzeXN0ZW0uDQogICAgPiANCiAgICA+
+IE1hc3RlcnNoaXAgZXZlbnQgaXMgZW5hYmxlZCBmb3IgYWxsIHRoZSBtYXN0ZXJzIG9uIHRoZSBJ
+M0MgYnVzDQogICAgPiBieSBkZWZhdWx0Lg0KICAgID4gDQogICAgPiBNYXN0ZXJzaGlwIHJlcXVl
+c3Qgb2NjdXJzIGluIHRoZSBmb2xsb3dpbmcgY2FzZXM6DQogICAgPiAtIE1hc3RlcnNoaXAgaXMg
+cmVxdWVzdGVkIGF1dG9tYXRpY2FsbHkgYWZ0ZXIgc2Vjb25kYXJ5IG1hc3Rlcg0KICAgID4gcmVj
+ZWl2ZXMgbWFzdGVyc2hpcCBFTkVDIGV2ZW50LiBUaGlzIGFsbG93cyBzZWNvbmRhcnkgbWFzdGVy
+cyB0bw0KICAgID4gaW5pdGlhbGl6ZSB0aGVpciBidXMNCiAgICANCiAgICBJIGd1ZXNzIHRoaXMg
+b25seSBoYXBwZW5zIHdoZW4gdGhlIHNlY29uZGFyeSBtYXN0ZXIgcmVjZWl2ZWQgYSBERUZTTFZT
+DQogICAgcGFja2V0LCByaWdodD8NCg0KQWN0dWFsbHksIHRoaXMgaGFwcGVucyB3aGVuIGN1cnJl
+bnQgbWFzdGVyIGVuYWJsZXMgTVIgZXZlbnQuIA0KSGUgc2hvdWxkIHRha2UgY2FyZSBvZiBwcm92
+aWRpbmcgZGV2aWNlcyBsaXN0Lg0KT2YgY291cnNlLCB3ZSBjYW4gY29uc2lkZXIgYWRkaW5nIGEg
+ZmxhZyB3aGljaCBpbmRpY2F0ZXMgaWYgc2xhdmVzIGFyZSBhbHJlYWR5IGRlZmluZWQgb3Igbm90
+Lg0KICAgIA0KICAgID4gLSBJZiBhYm92ZSBwcm9jZWR1cmUgZmFpbHMgZm9yIHNvbWUgcmVhc29u
+LCB1c2VyIGNhbiBmb3JjZQ0KICAgID4gbWFzdGVyc2hpcCByZXF1ZXN0IHRocm91Z2ggc3lzZnMu
+IE9mIGNvdXJzZSwgbWFzdGVyc2hpcCBldmVudA0KICAgID4gc3RpbGwgaGFzIHRvIGJlIGVuYWJs
+ZWQgb24gY3VycmVudCBtYXN0ZXIgc2lkZQ0KICAgIA0KICAgIFNvdW5kcyBsaWtlIGEgZ29vZCBp
+ZGVhLg0KICAgIA0KICAgID4gLSBNYXN0ZXJzaGlwIGlzIGFsc28gcmVxdWVzdGVkIGF1dG9tYXRp
+Y2FsbHkgd2hlbiBkZXZpY2UgZHJpdmVyDQogICAgPiB0cmllcyB0byB0cmFuc2ZlciBkYXRhIHVz
+aW5nIG1hc3RlciBjb250cm9sbGVyIGluIHNsYXZlIG1vZGUuDQogICAgDQogICAgQW5kIHRoYXQg
+dG9vLg0KICAgIA0KICAgID4gDQogICAgPiBUaGVyZSBpcyBzdGlsbCBzb21lIGxpbWl0YXRpb246
+DQogICAgPiAtIEkyQyBkZXZpY2VzIGFyZSBub3QgcmVnaXN0ZXJlZCBvbiBzZWNvbmRhcnkgbWFz
+dGVyIHNpZGUuIEkyQw0KICAgID4gZGV2aWNlcyByZWNlaXZlZCBpbiBERUZTTFZTIENDQyBjb21t
+YW5kIGFyZSBhZGRlZCB0byBkZXZpY2UgbGlzdA0KICAgID4ganVzdCB0byBzZW5kIGJhY2sgdGhp
+cyBpbmZvcm1hdGlvbiB0byB0aGUgb3RoZXIgbWFzdGVyIGNvbnRyb2xsZXJzDQogICAgPiBpbiBj
+YXNlIG9mIGJ1cyBoYW5kb2ZmLiBXZSBjYW4gYWRkIHN1cHBvcnQgZm9yIHRoaXMgaW4gdGhlIGZ1
+dHVyZQ0KICAgID4gaWYgdGhlcmUgaXMgc3VjaCB1c2UgY2FzZS4NCiAgICANCiAgICBJMkMgZGV2
+aWNlcyBtdXN0IGJlIGRlc2NyaWJlZCB1bmRlciB0aGUgYnVzIHJlcHJlc2VudGVkIGJ5IHRoZQ0K
+ICAgIHNlY29uZGFyeSBtYXN0ZXIgZm9yIHRoYXQgdG8gd29yayBwcm9wZXJseSAod2UgbmVlZCBh
+IHdheSB0byBiaW5kDQogICAgZGV2aWNlcyB0byBkcml2ZXJzKS4gU28sIGl0J3MgcHJvYmFibHkg
+YSBnb29kIHRoaW5nIHRvIGRpc2NhcmQgKG9yDQogICAgbGVhdmUgdGhlbSBpbmFjdGl2ZSkgYW55
+IGRldmljZXMgdGhhdCBkbyBub3QgaGF2ZSBhIGkyY19ib2FyZF9pbmZvIGVudHJ5DQogICAgb24g
+dGhlIHNlY29uZGFyeSBtYXN0ZXIgc2lkZS4NCiAgICANCiAgICA+IA0KICAgID4gU2lnbmVkLW9m
+Zi1ieTogUHJ6ZW15c2xhdyBHYWogPHBnYWpAY2FkZW5jZS5jb20+DQogICAgPiAtLS0NCiAgICA+
+ICBkcml2ZXJzL2kzYy9tYXN0ZXIuYyAgICAgICB8IDI2MCArKysrKysrKysrKysrKysrKysrKysr
+KysrKysrKysrKysrKysrKysrKystLS0NCiAgICA+ICBpbmNsdWRlL2xpbnV4L2kzYy9tYXN0ZXIu
+aCB8ICA0MyArKysrKysrLQ0KICAgID4gIDIgZmlsZXMgY2hhbmdlZCwgMjg5IGluc2VydGlvbnMo
+KyksIDE0IGRlbGV0aW9ucygtKQ0KICAgID4gDQogICAgPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9p
+M2MvbWFzdGVyLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIuYw0KICAgID4gaW5kZXggNjhkNjU1My4u
+ZTk4YjYwMCAxMDA2NDQNCiAgICA+IC0tLSBhL2RyaXZlcnMvaTNjL21hc3Rlci5jDQogICAgPiAr
+KysgYi9kcml2ZXJzL2kzYy9tYXN0ZXIuYw0KICAgID4gQEAgLTQ2MCw2ICs0NjAsMTUgQEAgc3Rh
+dGljIGludCBpM2NfYnVzX2luaXQoc3RydWN0IGkzY19idXMgKmkzY2J1cykNCiAgICA+ICAJcmV0
+dXJuIDA7DQogICAgPiAgfQ0KICAgID4gIA0KICAgID4gK3N0YXRpYyBpbnQgaTNjX21hc3Rlcl9y
+ZXF1ZXN0X21hc3RlcnNoaXAoc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlciAqbWFzdGVyKQ0K
+ICAgID4gK3sNCiAgICA+ICsJaWYgKCFtYXN0ZXItPm9wcy0+cmVxdWVzdF9tYXN0ZXJzaGlwKQ0K
+ICAgID4gKwkJcmV0dXJuIC1FTk9UU1VQUDsNCiAgICANCiAgICBQbGVhc2UgYWRkIGEgYmxhbmsg
+bGluZSBoZXJlDQogICAgDQogICAgPiArCWlmIChtYXN0ZXItPm9wcy0+cmVxdWVzdF9tYXN0ZXJz
+aGlwKG1hc3RlcikpDQogICAgPiArCQlyZXR1cm4gLUVJTzsNCiAgICANCiAgICBhbmQgaGVyZS4N
+Cg0KT2sgZm9yIGJvdGguDQogICAgDQogICAgPiArCXJldHVybiAwOw0KICAgID4gK30NCiAgICA+
+ICsNCiAgICA+ICBzdGF0aWMgY29uc3QgY2hhciAqIGNvbnN0IGkzY19idXNfbW9kZV9zdHJpbmdz
+W10gPSB7DQogICAgPiAgCVtJM0NfQlVTX01PREVfUFVSRV0gPSAicHVyZSIsDQogICAgPiAgCVtJ
+M0NfQlVTX01PREVfTUlYRURfRkFTVF0gPSAibWl4ZWQtZmFzdCIsDQogICAgPiBAQCAtNDkxLDgg
+KzUwMCwxNSBAQCBzdGF0aWMgc3NpemVfdCBjdXJyZW50X21hc3Rlcl9zaG93KHN0cnVjdCBkZXZp
+Y2UgKmRldiwNCiAgICA+ICAJCQkJICAgY2hhciAqYnVmKQ0KICAgID4gIHsNCiAgICA+ICAJc3Ry
+dWN0IGkzY19idXMgKmkzY2J1cyA9IGRldl90b19pM2NidXMoZGV2KTsNCiAgICA+ICsJc3RydWN0
+IGkzY19tYXN0ZXJfY29udHJvbGxlciAqbWFzdGVyOw0KICAgID4gIAlzc2l6ZV90IHJldDsNCiAg
+ICA+ICANCiAgICA+ICsJaWYgKCFpM2NidXMtPmN1cl9tYXN0ZXIpIHsNCiAgICA+ICsJCW1hc3Rl
+ciA9IGNvbnRhaW5lcl9vZihpM2NidXMsIHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIsIGJ1
+cyk7DQogICAgPiArCQlpZiAoaTNjX21hc3Rlcl9yZXF1ZXN0X21hc3RlcnNoaXAobWFzdGVyKSkN
+CiAgICA+ICsJCQlyZXR1cm4gc3ByaW50ZihidWYsICJ1bmtub3duXG4iKTsNCiAgICA+ICsJfQ0K
+ICAgIA0KICAgIEhtLCB3aHkgaXMgdGhhdCBuZWVkZWQ/IFdoZW4geW91IGFyZSBhIHNlY29uZGFy
+eSBtYXN0ZXIgLT5jdXJfbWFzdGVyDQogICAgc2hvdWxkIGJlIHNldCB0byB0aGUgaTNjX2Rldl9k
+ZXNjIHJlcHJlc2VudGluZyB0aGUgbWFpbiBtYXN0ZXIgYXQgaW5pdA0KICAgIHRpbWUuDQoNCkkg
+ZG8gbm90IGFkZCBkZXZpY2VzIGF0IGluaXRpYWxpemF0aW9uIHRpbWUsIHNvIHNlY29uZGFyeSBt
+YXN0ZXIgZG9lcyBub3QgaGF2ZSBpM2NfZGV2X2Rlc2Mgb2JqZWN0IGRlc2NyaWJpbmcgbWFpbiBt
+YXN0ZXIuDQpERUZTTFZTIGlzIHByb3ZpZGluZyB1cyBpbmNvbXBsZXRlIGluZm9ybWF0aW9uLCB3
+ZSBkb27igJl0IGhhdmUgUElEIHlldC4gUElEIGlzIHJldHJpZXZlZCBmcm9tIGRldmljZSB3aGVu
+IHNlY29uZGFyeSBtYXN0ZXIgYWRkcyBkZXZpY2UuIA0KVGhpcyBpcyBwb3NzaWJsZSBvbmx5IGlm
+IGN1cnJlbnQgbWFzdGVyIGlzIHJlYWR5IHRvIHJlbGlucXVpc2ggYnVzIGNvbnRyb2wuDQoNCkkg
+ZGVjaWRlZCB0byBzZXQgY3VyX21hc3RlciBhZnRlciBzZWNvbmRhcnkgbWFzdGVyIGNvbXBsZXRl
+bHkgaW5pdGlhbGl6ZWQgaGlzIGJ1cy4gV2hhdCBkbyB5b3UgdGhpbms/DQogICAgDQogICAgPiAr
+DQogICAgPiAgCWkzY19idXNfbm9ybWFsdXNlX2xvY2soaTNjYnVzKTsNCiAgICA+ICAJcmV0ID0g
+c3ByaW50ZihidWYsICIlZC0lbGx4XG4iLCBpM2NidXMtPmlkLA0KICAgID4gIAkJICAgICAgaTNj
+YnVzLT5jdXJfbWFzdGVyLT5pbmZvLnBpZCk7DQogICAgPiBAQCAtNjU5LDYgKzY3NSwxMSBAQCBz
+dGF0aWMgaW50IGkzY19tYXN0ZXJfc2VuZF9jY2NfY21kX2xvY2tlZChzdHJ1Y3QgaTNjX21hc3Rl
+cl9jb250cm9sbGVyICptYXN0ZXIsDQogICAgPiAgCWlmICghY21kIHx8ICFtYXN0ZXIpDQogICAg
+PiAgCQlyZXR1cm4gLUVJTlZBTDsNCiAgICA+ICANCiAgICA+ICsJaWYgKG1hc3Rlci0+b3BfbW9k
+ZSA9PSBJM0NfU0xBVkVfTU9ERSkgew0KICAgID4gKwkJaWYgKGkzY19tYXN0ZXJfcmVxdWVzdF9t
+YXN0ZXJzaGlwKG1hc3RlcikpDQogICAgPiArCQkJcmV0dXJuIC1FSU87DQogICAgPiArCX0NCiAg
+ICA+ICsNCiAgICANCiAgICBUaGlzIHNob3VsZG4ndCBiZSBuZWVkZWQgZWl0aGVyLiBpZiBpM2Ni
+dXMtPmN1cl9tYXN0ZXIgIT0gbWFzdGVyLT50aGlzLA0KICAgIHRoYXQgbWVhbnMgdGhlIG1hc3Rl
+ciBpcyBvcGVyYXRpbmcgaW4gc2xhdmUgbW9kZS4NCg0KSSdsbCB0cnkgdGhhdC4NCiAgICANCiAg
+ICA+ICAJaWYgKFdBUk5fT04obWFzdGVyLT5pbml0X2RvbmUgJiYNCiAgICA+ICAJCSAgICAhcndz
+ZW1faXNfbG9ja2VkKCZtYXN0ZXItPmJ1cy5sb2NrKSkpDQogICAgPiAgCQlyZXR1cm4gLUVJTlZB
+TDsNCiAgICA+IEBAIC0xMzcxLDYgKzEzOTIsNyBAQCBzdGF0aWMgaW50IGkzY19tYXN0ZXJfcmVh
+dHRhY2hfaTNjX2RldihzdHJ1Y3QgaTNjX2Rldl9kZXNjICpkZXYsDQogICAgPiAgCQkJCQkJICAg
+ICAgZGV2LT5pbmZvLmR5bl9hZGRyKTsNCiAgICA+ICAJCWlmIChzdGF0dXMgIT0gSTNDX0FERFJf
+U0xPVF9GUkVFKQ0KICAgID4gIAkJCXJldHVybiAtRUJVU1k7DQogICAgPiArDQogICAgDQogICAg
+RHJvcCB0aGlzIGNoYW5nZSAob3IgbWFrZSBpdCBwYXJ0IG9mIGEgc2VwYXJhdGUgcGF0Y2ggZml4
+aW5nIGNvZGluZw0KICAgIHN0eWxlIGlzc3VlcykuDQoNCk9rLg0KICAgIA0KICAgID4gIAkJaTNj
+X2J1c19zZXRfYWRkcl9zbG90X3N0YXR1cygmbWFzdGVyLT5idXMsDQogICAgPiAgCQkJCQkgICAg
+IGRldi0+aW5mby5keW5fYWRkciwNCiAgICA+ICAJCQkJCSAgICAgSTNDX0FERFJfU0xPVF9JM0Nf
+REVWKTsNCiAgICA+IEBAIC0xNDkxLDYgKzE1MTMsNDYgQEAgaTNjX21hc3Rlcl9yZWdpc3Rlcl9u
+ZXdfaTNjX2RldnMoc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlciAqbWFzdGVyKQ0KICAgID4g
+IH0NCiAgICA+ICANCiAgICA+ICAvKioNCiAgICA+ICsgKiBpM2NfbWFzdGVyX2dldF9hY2Ntc3Rf
+bG9ja2VkKCkgLSBzZW5kIGEgR0VUQUNDTVNUIENDQyBjb21tYW5kDQogICAgPiArICogQG1hc3Rl
+cjogbWFzdGVyIHVzZWQgdG8gc2VuZCBmcmFtZXMgb24gdGhlIGJ1cw0KICAgID4gKyAqIEBpbmZv
+OiBJM0MgZGV2aWNlIGluZm9ybWF0aW9uDQogICAgDQogICAgTWF5YmUgeW91IGNhbiBzaW1wbHkg
+cGFzcyB0aGUgZHluYW1pYyBhZGRyZXNzIGluc3RlYWQgb2YgdGhlIGZ1bGwNCiAgICBkZXZpY2Vf
+aW5mbyBzdHJ1Y3QuDQoNCk5vIHByb2JsZW0uIE5vdyBJIHNlZSBpdCdzIG5vdCBuZWVkZWQuDQog
+ICAgDQogICAgPiArICoNCiAgICA+ICsgKiBTZW5kIGEgR0VUQUNDTVNUIENDQyBjb21tYW5kLg0K
+ICAgID4gKyAqDQogICAgPiArICogVGhpcyBzaG91bGQgYmUgY2FsbGVkIGlmIHRoZSBjdXJlbnQg
+bWFzdGVyIGFja25vd2xlZGdlcyBidXMgdGFrZW92ZXIuDQogICAgDQogICAgSSByZWFsbHkgdGhv
+dWdodCB0aGlzIHdvdWxkIGJlIGFsbCBhdXRvbWF0ZWQgYnkgdGhlIG1hc3RlciBJUCwgYnV0DQog
+ICAgYXBwYXJlbnRseSBpdCdzIG5vdCA6LSkuDQogICAgDQogICAgPiArICoNCiAgICA+ICsgKiBU
+aGlzIGZ1bmN0aW9uIG11c3QgYmUgY2FsbGVkIHdpdGggdGhlIGJ1cyBsb2NrIGhlbGQgaW4gd3Jp
+dGUgbW9kZS4NCiAgICA+ICsgKg0KICAgID4gKyAqIFJldHVybjogMCBpbiBjYXNlIG9mIHN1Y2Nl
+c3MsIGEgcG9zaXRpdmUgSTNDIGVycm9yIGNvZGUgaWYgdGhlIGVycm9yIGlzDQogICAgPiArICog
+b25lIG9mIHRoZSBvZmZpY2lhbCBNeCBlcnJvciBjb2RlcywgYW5kIGEgbmVnYXRpdmUgZXJyb3Ig
+Y29kZSBvdGhlcndpc2UuDQogICAgPiArICovDQogICAgPiAraW50IGkzY19tYXN0ZXJfZ2V0X2Fj
+Y21zdF9sb2NrZWQoc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlciAqbWFzdGVyLA0KICAgID4g
+KwkJCQkgY29uc3Qgc3RydWN0IGkzY19kZXZpY2VfaW5mbyAqaW5mbykNCiAgICA+ICt7DQogICAg
+PiArCXN0cnVjdCBpM2NfY2NjX2dldGFjY21zdCAqYWNjbXN0Ow0KICAgID4gKwlzdHJ1Y3QgaTNj
+X2NjY19jbWRfZGVzdCBkZXN0Ow0KICAgID4gKwlzdHJ1Y3QgaTNjX2NjY19jbWQgY21kOw0KICAg
+ID4gKwlpbnQgcmV0Ow0KICAgID4gKw0KICAgID4gKwlhY2Ntc3QgPSBpM2NfY2NjX2NtZF9kZXN0
+X2luaXQoJmRlc3QsIGluZm8tPmR5bl9hZGRyLCBzaXplb2YoKmFjY21zdCkpOw0KICAgID4gKwlp
+ZiAoIWFjY21zdCkNCiAgICA+ICsJCXJldHVybiAtRU5PTUVNOw0KICAgID4gKw0KICAgID4gKwlp
+M2NfY2NjX2NtZF9pbml0KCZjbWQsIHRydWUsIEkzQ19DQ0NfR0VUQUNDTVNULCAmZGVzdCwgMSk7
+DQogICAgPiArDQogICAgPiArCXJldCA9IGkzY19tYXN0ZXJfc2VuZF9jY2NfY21kX2xvY2tlZCht
+YXN0ZXIsICZjbWQpOw0KICAgID4gKw0KICAgID4gKwlpZiAocmV0KQ0KICAgID4gKwkJcmV0dXJu
+IHJldDsNCiAgICA+ICsNCiAgICA+ICsJaWYgKGRlc3QucGF5bG9hZC5sZW4gIT0gc2l6ZW9mKCph
+Y2Ntc3QpKQ0KICAgID4gKwkJcmV0dXJuIC1FSU87DQogICAgPiArDQogICAgPiArCXJldHVybiAw
+Ow0KICAgID4gK30NCiAgICA+ICtFWFBPUlRfU1lNQk9MX0dQTChpM2NfbWFzdGVyX2dldF9hY2Nt
+c3RfbG9ja2VkKTsNCiAgICA+ICsNCiAgICA+ICsvKioNCiAgICA+ICAgKiBpM2NfbWFzdGVyX2Rv
+X2RhYSgpIC0gZG8gYSBEQUEgKER5bmFtaWMgQWRkcmVzcyBBc3NpZ25tZW50KQ0KICAgID4gICAq
+IEBtYXN0ZXI6IG1hc3RlciBkb2luZyB0aGUgREFBDQogICAgPiAgICoNCiAgICA+IEBAIC0xNTU0
+LDExICsxNjE2LDggQEAgaW50IGkzY19tYXN0ZXJfc2V0X2luZm8oc3RydWN0IGkzY19tYXN0ZXJf
+Y29udHJvbGxlciAqbWFzdGVyLA0KICAgID4gIAlzdHJ1Y3QgaTNjX2Rldl9kZXNjICppM2NkZXY7
+DQogICAgPiAgCWludCByZXQ7DQogICAgPiAgDQogICAgPiAtCWlmICghaTNjX2J1c19kZXZfYWRk
+cl9pc19hdmFpbCgmbWFzdGVyLT5idXMsIGluZm8tPmR5bl9hZGRyKSkNCiAgICA+IC0JCXJldHVy
+biAtRUlOVkFMOw0KICAgID4gLQ0KICAgID4gLQlpZiAoSTNDX0JDUl9ERVZJQ0VfUk9MRShpbmZv
+LT5iY3IpID09IEkzQ19CQ1JfSTNDX01BU1RFUiAmJg0KICAgID4gLQkgICAgbWFzdGVyLT5zZWNv
+bmRhcnkpDQogICAgPiArCWlmIChtYXN0ZXItPm9wX21vZGUgPT0gSTNDX01BU1RFUl9NT0RFICYm
+DQogICAgPiArCSAgICAhaTNjX2J1c19kZXZfYWRkcl9pc19hdmFpbCgmbWFzdGVyLT5idXMsIGlu
+Zm8tPmR5bl9hZGRyKSkNCiAgICANCiAgICBQbGVhc2UgcGxhY2UgdGhpcyB0ZXN0IGluIGEgc2Vw
+YXJhdGUgaWYgYnJhbmNoLCBhcyB0aGV5IGFyZSBub3QgcmVhbGx5DQogICAgcmVsYXRlZC4NCg0K
+T2suDQogICAgDQogICAgPiAgCQlyZXR1cm4gLUVJTlZBTDsNCiAgICA+ICANCiAgICA+ICAJaWYg
+KG1hc3Rlci0+dGhpcykNCiAgICA+IEBAIC0xNTY5LDcgKzE2MjgsOCBAQCBpbnQgaTNjX21hc3Rl
+cl9zZXRfaW5mbyhzdHJ1Y3QgaTNjX21hc3Rlcl9jb250cm9sbGVyICptYXN0ZXIsDQogICAgPiAg
+CQlyZXR1cm4gUFRSX0VSUihpM2NkZXYpOw0KICAgID4gIA0KICAgID4gIAltYXN0ZXItPnRoaXMg
+PSBpM2NkZXY7DQogICAgPiAtCW1hc3Rlci0+YnVzLmN1cl9tYXN0ZXIgPSBtYXN0ZXItPnRoaXM7
+DQogICAgPiArCWlmIChtYXN0ZXItPm9wX21vZGUgPT0gSTNDX01BU1RFUl9NT0RFKQ0KICAgID4g
+KwkJbWFzdGVyLT5idXMuY3VyX21hc3RlciA9IG1hc3Rlci0+dGhpczsNCiAgICANCiAgICBXaGVu
+IHlvdSBoYXJlIGEgc2Vjb25kYXJ5IG1hc3RlciwgeW91IHNob3VsZCBtYWtlIC0+Y3VyX21hc3Rl
+ciBwb2ludCB0bw0KICAgIGFuIGkzY19kZXZfZGVzYyBkZXNjcmliaW5nIHRoZSBjdXJyZW50L21h
+aW4gbWFzdGVyLiBTaG91bGQgYmUgcG9zc2libGUNCiAgICB0aGFua3MgdG8gdGhlIERFRlNMVlMg
+aW5mby4NCg0KQXMgSSBzYWlkIGJlZm9yZSBpdCdzIG5vdCBzbyBlYXN5IHdpdGggREVGU0xWUy4g
+DQpXZSBjYW4gY29uc2lkZXIgY3JlYXRpbmcgZGV2aWNlIGxpc3Qgd2l0aG91dCBmdWxsIGluZm9y
+bWF0aW9uLiBEbyB5b3UgYWdyZWU/DQogICAgDQogICAgPiAgDQogICAgPiAgCXJldCA9IGkzY19t
+YXN0ZXJfYXR0YWNoX2kzY19kZXYobWFzdGVyLCBpM2NkZXYpOw0KICAgID4gIAlpZiAocmV0KQ0K
+ICAgID4gQEAgLTE3MjcsNiArMTc4NywxMiBAQCBzdGF0aWMgaW50IGkzY19tYXN0ZXJfYnVzX2lu
+aXQoc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlciAqbWFzdGVyKQ0KICAgID4gIAl9DQogICAg
+PiAgDQogICAgPiAgCS8qDQogICAgPiArCSAqIERvbid0IHJlc2V0IGFkZHJlc3NlcyBpZiB0aGlz
+IGlzIHNlY29uZGFyeSBtYXN0ZXIuDQogICAgPiArCSAqIFNlY29uZGFyeSBtYXN0ZXJzIGNhbid0
+IGRvIERBQS4NCiAgICA+ICsJICovDQogICAgDQogICAgSG0sIEknbSBub3Qgc3VyZSBob3cgdGhh
+dCdzIHN1cHBvc2VkIHRvIHdvcmsuIFdoYXQgaWYgdGhlIHNlY29uZGFyeQ0KICAgIG1hc3RlciB3
+YXMgaW5pdGlhbGl6ZWQgYnkgdGhlIGJvb3Rsb2FkZXIuIERvbid0IHlvdSBuZWVkIHRvIHJlc2V0
+DQogICAgc29tZXRoaW5nIGFuZCBtYXliZSB0cmlnZ2VyIGEgTVNUUkVRK0RBQSBvciBhIEhvdEpv
+aW4/DQoNCkV2ZW4gaWYgc2Vjb25kYXJ5IG1hc3RlciBkb2VzIE1TVFJFUSwgaGUgY2FuJ3QgZG8g
+REFBLiBIZSBjYW4ndCBtYW5hZ2UgdGhlIGJ1cywgb25seSBtYWluIG1hc3RlciBjYW4gZG8gdGhh
+dC4NCkknbGwgcG9pbnQgdGhpcyBpbmZvcm1hdGlvbiBpbiBzcGVjIGJlbG93Lg0KDQpJJ20gd29u
+ZGVyaW5nIGFib3V0IEhvdEpvaW4uIEkgY2FuJ3QgZmluZCB0aGlzIHVzZSBjYXNlIGluIG15IG1p
+bmQuDQogICAgDQogICAgPiArCWlmIChtYXN0ZXItPnNlY29uZGFyeSkNCiAgICA+ICsJCXJldHVy
+biAwOw0KICAgIA0KICAgIEFkZCBhIGJsYW5rIGxpa2UgaGVyZS4NCg0KT2suDQogICAgDQogICAg
+PiArCS8qDQogICAgPiAgCSAqIFJlc2V0IGFsbCBkeW5hbWljIGFkZHJlc3MgdGhhdCBtYXkgaGF2
+ZSBiZWVuIGFzc2lnbmVkIGJlZm9yZQ0KICAgID4gIAkgKiAoYXNzaWduZWQgYnkgdGhlIGJvb3Rs
+b2FkZXIgZm9yIGV4YW1wbGUpLg0KICAgID4gIAkgKi8NCiAgICA+IEBAIC0xNzM4LDYgKzE4MDQs
+NyBAQCBzdGF0aWMgaW50IGkzY19tYXN0ZXJfYnVzX2luaXQoc3RydWN0IGkzY19tYXN0ZXJfY29u
+dHJvbGxlciAqbWFzdGVyKQ0KICAgID4gIAlyZXQgPSBpM2NfbWFzdGVyX2Rpc2VjX2xvY2tlZCht
+YXN0ZXIsIEkzQ19CUk9BRENBU1RfQUREUiwNCiAgICA+ICAJCQkJICAgICAgSTNDX0NDQ19FVkVO
+VF9TSVIgfCBJM0NfQ0NDX0VWRU5UX01SIHwNCiAgICA+ICAJCQkJICAgICAgSTNDX0NDQ19FVkVO
+VF9ISik7DQogICAgPiArDQogICAgDQogICAgRHJvcCB0aGlzIGJsYW5rIGxpbmUuDQoNCk9rLg0K
+ICAgIA0KICAgID4gIAlpZiAocmV0ICYmIHJldCAhPSBJM0NfRVJST1JfTTIpDQogICAgPiAgCQln
+b3RvIGVycl9idXNfY2xlYW51cDsNCiAgICA+ICANCiAgICA+IEBAIC0xNzg5LDYgKzE4NTYsNDQg
+QEAgaTNjX21hc3Rlcl9zZWFyY2hfaTNjX2Rldl9kdXBsaWNhdGUoc3RydWN0IGkzY19kZXZfZGVz
+YyAqcmVmZGV2KQ0KICAgID4gIAlyZXR1cm4gTlVMTDsNCiAgICA+ICB9DQogICAgPiAgDQogICAg
+PiAraW50IGkzY19tYXN0ZXJfYWRkX2kyY19kZXYoc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxl
+ciAqbWFzdGVyLA0KICAgID4gKwkJCSAgIHN0cnVjdCBpMmNfZGV2X2JvYXJkaW5mbyAqaW5mbykN
+CiAgICA+ICt7DQogICAgPiArCWVudW0gaTNjX2FkZHJfc2xvdF9zdGF0dXMgc3RhdHVzOw0KICAg
+ID4gKwlzdHJ1Y3QgZGV2aWNlICpkZXYgPSAmbWFzdGVyLT5kZXY7DQogICAgPiArCXN0cnVjdCBp
+MmNfZGV2X2JvYXJkaW5mbyAqYm9hcmRpbmZvOw0KICAgID4gKwlzdHJ1Y3QgaTJjX2Rldl9kZXNj
+ICppMmNkZXY7DQogICAgPiArCWludCByZXQ7DQogICAgPiArDQogICAgPiArCXN0YXR1cyA9IGkz
+Y19idXNfZ2V0X2FkZHJfc2xvdF9zdGF0dXMoJm1hc3Rlci0+YnVzLA0KICAgID4gKwkJCQkJICAg
+ICAgaW5mby0+YmFzZS5hZGRyKTsNCiAgICA+ICsJaWYgKHN0YXR1cyAhPSBJM0NfQUREUl9TTE9U
+X0ZSRUUpDQogICAgPiArCQlyZXR1cm4gLUVCVVNZOw0KICAgID4gKw0KICAgID4gKwlib2FyZGlu
+Zm8gPSBkZXZtX2t6YWxsb2MoZGV2LCBzaXplb2YoKmJvYXJkaW5mbyksIEdGUF9LRVJORUwpOw0K
+ICAgID4gKwlpZiAoIWJvYXJkaW5mbykNCiAgICA+ICsJCXJldHVybiAtRU5PTUVNOw0KICAgID4g
+Kw0KICAgID4gKwlpM2NfYnVzX3NldF9hZGRyX3Nsb3Rfc3RhdHVzKCZtYXN0ZXItPmJ1cywNCiAg
+ICA+ICsJCQkJICAgICBpbmZvLT5iYXNlLmFkZHIsDQogICAgPiArCQkJCSAgICAgSTNDX0FERFJf
+U0xPVF9JMkNfREVWKTsNCiAgICA+ICsNCiAgICA+ICsJYm9hcmRpbmZvLT5iYXNlLmFkZHIgPSBp
+bmZvLT5iYXNlLmFkZHI7DQogICAgPiArCWJvYXJkaW5mby0+bHZyID0gaW5mby0+bHZyOw0KICAg
+ID4gKw0KICAgID4gKwlpMmNkZXYgPSBpM2NfbWFzdGVyX2FsbG9jX2kyY19kZXYobWFzdGVyLCBi
+b2FyZGluZm8pOw0KICAgID4gKwlpZiAoSVNfRVJSKGkyY2RldikpDQogICAgPiArCQlyZXR1cm4g
+UFRSX0VSUihpMmNkZXYpOw0KICAgID4gKw0KICAgID4gKwlyZXQgPSBpM2NfbWFzdGVyX2F0dGFj
+aF9pMmNfZGV2KG1hc3RlciwgaTJjZGV2KTsNCiAgICA+ICsJaWYgKHJldCkgew0KICAgID4gKwkJ
+aTNjX21hc3Rlcl9mcmVlX2kyY19kZXYoaTJjZGV2KTsNCiAgICA+ICsJCXJldHVybiByZXQ7DQog
+ICAgPiArCX0NCiAgICA+ICsJcmV0dXJuIDA7DQogICAgPiArfQ0KICAgID4gK0VYUE9SVF9TWU1C
+T0xfR1BMKGkzY19tYXN0ZXJfYWRkX2kyY19kZXYpOw0KICAgID4gKw0KICAgID4gIC8qKg0KICAg
+ID4gICAqIGkzY19tYXN0ZXJfYWRkX2kzY19kZXZfbG9ja2VkKCkgLSBhZGQgYW4gSTNDIHNsYXZl
+IHRvIHRoZSBidXMNCiAgICA+ICAgKiBAbWFzdGVyOiBtYXN0ZXIgdXNlZCB0byBzZW5kIGZyYW1l
+cyBvbiB0aGUgYnVzDQogICAgPiBAQCAtMTgzMiw2ICsxOTM3LDE1IEBAIGludCBpM2NfbWFzdGVy
+X2FkZF9pM2NfZGV2X2xvY2tlZChzdHJ1Y3QgaTNjX21hc3Rlcl9jb250cm9sbGVyICptYXN0ZXIs
+DQogICAgPiAgCWlmIChyZXQpDQogICAgPiAgCQlnb3RvIGVycl9mcmVlX2RldjsNCiAgICA+ICAN
+CiAgICA+ICsJaWYgKEkzQ19CQ1JfREVWSUNFX1JPTEUobmV3ZGV2LT5pbmZvLmJjcikgPT0gSTND
+X0JDUl9JM0NfTUFTVEVSICYmDQogICAgPiArCSAgICBtYXN0ZXItPm9wcy0+ZW5hYmxlX21hc3Rl
+cnNoaXApIHsNCiAgICA+ICsJCWlmIChtYXN0ZXItPm9wcy0+ZW5hYmxlX21hc3RlcnNoaXAobmV3
+ZGV2KSkgew0KICAgID4gKwkJCWRldl93YXJuKCZtYXN0ZXItPmRldiwNCiAgICA+ICsJCQkJICJG
+YWlsZWQgdG8gZW5hYmxlIG1hc3RlcnNoaXAgZm9yIGRldmljZTogJWQlbGx4IiwNCiAgICA+ICsJ
+CQkJIG1hc3Rlci0+YnVzLmlkLCBuZXdkZXYtPmluZm8ucGlkKTsNCiAgICA+ICsJCX0NCiAgICA+
+ICsJfQ0KICAgID4gKw0KICAgID4gIAlvbGRkZXYgPSBpM2NfbWFzdGVyX3NlYXJjaF9pM2NfZGV2
+X2R1cGxpY2F0ZShuZXdkZXYpOw0KICAgID4gIAlpZiAob2xkZGV2KSB7DQogICAgPiAgCQluZXdk
+ZXYtPmJvYXJkaW5mbyA9IG9sZGRldi0+Ym9hcmRpbmZvOw0KICAgID4gQEAgLTIxMDIsNiArMjIx
+NiwxMSBAQCBzdGF0aWMgaW50IGkzY19tYXN0ZXJfaTJjX2FkYXB0ZXJfeGZlcihzdHJ1Y3QgaTJj
+X2FkYXB0ZXIgKmFkYXAsDQogICAgPiAgCQkJcmV0dXJuIC1FTk9UU1VQUDsNCiAgICA+ICAJfQ0K
+ICAgID4gIA0KICAgID4gKwlpZiAobWFzdGVyLT5vcF9tb2RlID09IEkzQ19TTEFWRV9NT0RFKSB7
+DQogICAgPiArCQlpZiAoaTNjX21hc3Rlcl9yZXF1ZXN0X21hc3RlcnNoaXAobWFzdGVyKSkNCiAg
+ICANCiAgICBTaG91bGRuJ3QgdGhpcyBiZSBjYWxsZWQgd2l0aCB0aGUgbG9jayBoZWxkPw0KICAg
+IA0KICAgIE9oLCBhbmQgd2UgbWlnaHQgaGF2ZSBhIHJhY2UgaGVyZSBpZiB0aGUgbWFzdGVyIGdh
+aW5zIGJ1cyBvd25lcnNoaXAgYW5kDQogICAgbG9vc2VzIGl0IGp1c3QgYWZ0ZXIgdGhhdCBhbmQg
+YmVmb3JlIGl0IHdhcyBhYmxlIHRvIHRoZSB0cmFuc2Zlci4gSQ0KICAgIHRoaW5rIHdlIHNob3Vs
+ZDoNCiAgICANCiAgICAxLyBzZW5kIGEgR0VUQUNDTVNUDQogICAgMi8gZGlzYWJsZSBNUiBFVkVO
+VFMNCiAgICAzLyBkbyB0aGUgSTNDL0kyQyB0cmFuc2ZlcnMNCiAgICA0LyBlbmFibGUgTVIgRVZF
+TlRTDQogICAgDQogICAgMSBhbmQgMiBzaG91bGQgYmUgc2VudCBpbiB0aGUgc2FtZSB0cmFuc2Fj
+dGlvbiB0byBhdm9pZCBjYXNlcyB3aGVyZQ0KICAgIGFub3RoZXIgbWFzdGVyIHRyaWVzIHRvIGFj
+cXVpcmUgdGhlIGJ1cywgb3IgaWYgdGhhdCdzIG5vdCBwb3NzaWJsZSwgdGhlDQogICAgbWFzdGVy
+IHRoYXQganVzdCBnYWluZWQgb3duZXJzaGlwIG9mIHRoZSBidXMgc2hvdWxkIHJlamVjdCBhbnkg
+aW5jb21pbmcNCiAgICBNUiB1bnRpbCBESVNFQyhNUikgaGFzIGJlZW4gc2VudC4NCg0KSSBzdHJv
+bmdseSBhZ3JlZSB3aXRoIHlvdXIgb3Bpbmlvbi4gSSdsbCBpbXBsZW1lbnQgaXQgdGhpcyB3YXku
+DQogICAgDQogICAgPiArCQkJcmV0dXJuIC1FSU87DQogICAgPiArCX0NCiAgICA+ICsNCiAgICA+
+ICAJaTNjX2J1c19ub3JtYWx1c2VfbG9jaygmbWFzdGVyLT5idXMpOw0KICAgID4gIAlkZXYgPSBp
+M2NfbWFzdGVyX2ZpbmRfaTJjX2Rldl9ieV9hZGRyKG1hc3RlciwgYWRkcik7DQogICAgPiAgCWlm
+ICghZGV2KQ0KICAgID4gQEAgLTIzOTMsMTUgKzI1MTIsMzEgQEAgc3RhdGljIGludCBpM2NfbWFz
+dGVyX2NoZWNrX29wcyhjb25zdCBzdHJ1Y3QgaTNjX21hc3Rlcl9jb250cm9sbGVyX29wcyAqb3Bz
+KQ0KICAgID4gIAlyZXR1cm4gMDsNCiAgICA+ICB9DQogICAgPiAgDQogICAgPiArc3RhdGljIHZv
+aWQgaTNjX21hc3Rlcl9idXNfdGFrZW92ZXIoc3RydWN0IHdvcmtfc3RydWN0ICp3b3JrKQ0KICAg
+ID4gK3sNCiAgICA+ICsJc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlciAqbWFzdGVyOw0KICAg
+ID4gKw0KICAgID4gKwltYXN0ZXIgPSBjb250YWluZXJfb2Yod29yaywgc3RydWN0IGkzY19tYXN0
+ZXJfY29udHJvbGxlciwgbWFzdGVyc2hpcCk7DQogICAgPiArDQogICAgPiArCWkzY19idXNfbWFp
+bnRlbmFuY2VfbG9jaygmbWFzdGVyLT5idXMpOw0KICAgID4gKwltYXN0ZXItPm9wcy0+dXBkYXRl
+X2RldnMobWFzdGVyKTsNCiAgICA+ICsJaTNjX2J1c19tYWludGVuYW5jZV91bmxvY2soJm1hc3Rl
+ci0+YnVzKTsNCiAgICANCiAgICBCbGFuayBsaWtlIGhlcmUgcGxlYXNlLg0KDQpPaw0KICAgIA0K
+ICAgID4gKwkvKg0KICAgID4gKwkgKiBXZSBjYW4gcmVnaXN0ZXIgSTNDIGRldmljZXMgcmVjZWl2
+ZWQgZnJvbSBtYXN0ZXIgYnkgREVGU0xWUy4NCiAgICA+ICsJICovDQogICAgPiArCW1hc3Rlci0+
+aW5pdF9kb25lID0gdHJ1ZTsNCiAgICANCiAgICBJIHRoaW5rIHRoaXMgc2hvdWxkIGJlIHNldCBi
+ZWZvcmUgdGhhdCwgaW4gdGhlIGkzY19tYXN0ZXJfcmVnaXN0ZXIoKQ0KICAgIGZ1bmN0aW9uLiBX
+aGVuIGEgc2Vjb25kYXJ5IG1hc3RlciBpcyBpbml0aWFsaXplZCwgaXQgc2hvdWxkIHBvcHVsYXRl
+DQogICAgdGhlIGRldiBsaXN0IGJhc2VkIG9uIGEgcHJldmlvdXMgREVGU0xWUyBmcmFtZSBpdCBo
+YXMgcmVjZWl2ZWQgYmVmb3JlDQogICAgdGhlIC0+cHJvYmUoKSBjYWxsLCBvciBqdXN0IHN0YXJ0
+IHdpdGggYW4gZW1wdHkgbGlzdC4NCg0KU2FtZSBoZXJlLiBJIGRvIG5vdCBwb3B1bGF0ZSBsaXN0
+IG9mIGRldmljZXMgdW50aWwgSSdtIGFibGUgdG8gZ2V0IGZ1bGwgaW5mb3JtYXRpb24gZnJvbSBk
+ZXZpY2VzLg0KICAgIA0KICAgID4gKwlpM2NfYnVzX25vcm1hbHVzZV9sb2NrKCZtYXN0ZXItPmJ1
+cyk7DQogICAgPiArCWkzY19tYXN0ZXJfcmVnaXN0ZXJfbmV3X2kzY19kZXZzKG1hc3Rlcik7DQog
+ICAgPiArCWkzY19idXNfbm9ybWFsdXNlX3VubG9jaygmbWFzdGVyLT5idXMpOw0KICAgID4gK30N
+CiAgICA+ICsNCiAgICA+ICAvKioNCiAgICA+ICAgKiBpM2NfbWFzdGVyX3JlZ2lzdGVyKCkgLSBy
+ZWdpc3RlciBhbiBJM0MgbWFzdGVyDQogICAgPiAgICogQG1hc3RlcjogbWFzdGVyIHVzZWQgdG8g
+c2VuZCBmcmFtZXMgb24gdGhlIGJ1cw0KICAgID4gICAqIEBwYXJlbnQ6IHRoZSBwYXJlbnQgZGV2
+aWNlICh0aGUgb25lIHRoYXQgcHJvdmlkZXMgdGhpcyBJM0MgbWFzdGVyDQogICAgPiAgICoJICAg
+IGNvbnRyb2xsZXIpDQogICAgPiAgICogQG9wczogdGhlIG1hc3RlciBjb250cm9sbGVyIG9wZXJh
+dGlvbnMNCiAgICA+IC0gKiBAc2Vjb25kYXJ5OiB0cnVlIGlmIHlvdSBhcmUgcmVnaXN0ZXJpbmcg
+YSBzZWNvbmRhcnkgbWFzdGVyLiBXaWxsIHJldHVybg0KICAgID4gLSAqCSAgICAgICAtRU5PVFNV
+UFAgaWYgc2V0IHRvIHRydWUgc2luY2Ugc2Vjb25kYXJ5IG1hc3RlcnMgYXJlIG5vdCB5ZXQNCiAg
+ICA+IC0gKgkgICAgICAgc3VwcG9ydGVkDQogICAgPiArICogQHNlY29uZGFyeTogdHJ1ZSBpZiB5
+b3UgYXJlIHJlZ2lzdGVyaW5nIGEgc2Vjb25kYXJ5IG1hc3Rlci4NCiAgICA+ICAgKg0KICAgID4g
+ICAqIFRoaXMgZnVuY3Rpb24gdGFrZXMgY2FyZSBvZiBldmVyeXRoaW5nIGZvciB5b3U6DQogICAg
+PiAgICoNCiAgICA+IEBAIC0yNDI0LDEwICsyNTU5LDYgQEAgaW50IGkzY19tYXN0ZXJfcmVnaXN0
+ZXIoc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlciAqbWFzdGVyLA0KICAgID4gIAlzdHJ1Y3Qg
+aTJjX2Rldl9ib2FyZGluZm8gKmkyY2JpOw0KICAgID4gIAlpbnQgcmV0Ow0KICAgID4gIA0KICAg
+ID4gLQkvKiBXZSBkbyBub3Qgc3VwcG9ydCBzZWNvbmRhcnkgbWFzdGVycyB5ZXQuICovDQogICAg
+PiAtCWlmIChzZWNvbmRhcnkpDQogICAgPiAtCQlyZXR1cm4gLUVOT1RTVVBQOw0KICAgID4gLQ0K
+ICAgID4gIAlyZXQgPSBpM2NfbWFzdGVyX2NoZWNrX29wcyhvcHMpOw0KICAgID4gIAlpZiAocmV0
+KQ0KICAgID4gIAkJcmV0dXJuIHJldDsNCiAgICA+IEBAIC0yNDM5LDYgKzI1NzAsNyBAQCBpbnQg
+aTNjX21hc3Rlcl9yZWdpc3RlcihzdHJ1Y3QgaTNjX21hc3Rlcl9jb250cm9sbGVyICptYXN0ZXIs
+DQogICAgPiAgCW1hc3Rlci0+ZGV2LnJlbGVhc2UgPSBpM2NfbWFzdGVyZGV2X3JlbGVhc2U7DQog
+ICAgPiAgCW1hc3Rlci0+b3BzID0gb3BzOw0KICAgID4gIAltYXN0ZXItPnNlY29uZGFyeSA9IHNl
+Y29uZGFyeTsNCiAgICA+ICsJbWFzdGVyLT5vcF9tb2RlID0gc2Vjb25kYXJ5ID8gSTNDX1NMQVZF
+X01PREUgOiBJM0NfTUFTVEVSX01PREU7DQogICAgPiAgCUlOSVRfTElTVF9IRUFEKCZtYXN0ZXIt
+PmJvYXJkaW5mby5pMmMpOw0KICAgID4gIAlJTklUX0xJU1RfSEVBRCgmbWFzdGVyLT5ib2FyZGlu
+Zm8uaTNjKTsNCiAgICA+ICANCiAgICA+IEBAIC0yNDk3LDYgKzI2MjksMTMgQEAgaW50IGkzY19t
+YXN0ZXJfcmVnaXN0ZXIoc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlciAqbWFzdGVyLA0KICAg
+ID4gIAkJZ290byBlcnJfZGVsX2RldjsNCiAgICA+ICANCiAgICA+ICAJLyoNCiAgICA+ICsJICog
+V2UgY2FuIHN0b3AgaGVyZS4gRGV2aWNlcyB3aWxsIGJlIGF0dGFjaGVkIGFmdGVyIGJ1cyB0YWtl
+b3Zlci4NCiAgICA+ICsJICogU2Vjb25kYXJ5IG1hc3RlcnMgY2FuJ3QgZG8gREFBLg0KICAgID4g
+KwkgKi8NCiAgICA+ICsJaWYgKG1hc3Rlci0+c2Vjb25kYXJ5KQ0KICAgID4gKwkJcmV0dXJuIDA7
+DQogICAgDQogICAgU2VlLCBJIGRvbid0IHRoaW5rIHdlIHNob3VsZCBzdG9wIGhlcmUuIFdlIHNo
+b3VsZCBwcm92aWRlIGEgaG9vayB0byBsZXQNCiAgICBzZWNvbmRhcnkgc2xhdmVzIHBvcHVsYXRl
+IHRoZSBkZXYgbGlzdCBiYXNlZCBvbiBkYXRhIHRoZXkgbWlnaHQgaGF2ZQ0KICAgIHJlY2VpdmVk
+IGJlZm9yZSB0aGF0Lg0KDQpEbyB3ZSB3YW50IHRvIHBvcHVsYXRlIGxpc3Qgd2l0aCBkYXRhIHJl
+Y2VpdmVkIGJ5IERFRlNMVlM/IA0KSWYgeWVzLCBJIGNhbiBwb3B1bGF0ZSBsaXN0IGJ1dCB3ZSBh
+cmUgbm90IGFibGUgdG8gcmVnaXN0ZXIgZGV2aWNlcyBiZWNhdXNlIHdlIGRvbuKAmXQgaGF2ZSAN
+ClBJRCB5ZXQgYW5kIGRldmljZSBkcml2ZXJzIGFyZSBtYXRjaGVkIGJ5IFBJRC4NCiAgICANCiAg
+ICA+ICsNCiAgICA+ICsJLyoNCiAgICA+ICAJICogV2UncmUgZG9uZSBpbml0aWFsaXppbmcgdGhl
+IGJ1cyBhbmQgdGhlIGNvbnRyb2xsZXIsIHdlIGNhbiBub3cNCiAgICA+ICAJICogcmVnaXN0ZXIg
+STNDIGRldmljZXMgZGljb3ZlcmVkIGR1cmluZyB0aGUgaW5pdGlhbCBEQUEuDQogICAgPiAgCSAq
+Lw0KICAgID4gQEAgLTI1MjEsNiArMjY2MCw5NSBAQCBpbnQgaTNjX21hc3Rlcl9yZWdpc3Rlcihz
+dHJ1Y3QgaTNjX21hc3Rlcl9jb250cm9sbGVyICptYXN0ZXIsDQogICAgPiAgRVhQT1JUX1NZTUJP
+TF9HUEwoaTNjX21hc3Rlcl9yZWdpc3Rlcik7DQogICAgPiAgDQogICAgPiAgLyoqDQogICAgPiAr
+ICogaTNjX21hc3Rlcl9zd2l0Y2hfb3BlcmF0aW9uX21vZGUoKSAtIGNoYW5nZXMgb3BlcmF0aW9u
+IG1vZGUgb2YgdGhlIGNvbnRyb2xsZXINCiAgICA+ICsgKiBAbWFzdGVyOiBtYXN0ZXIgdXNlZCB0
+byBzZW5kIGZyYW1lcyBvbiB0aGUgYnVzDQogICAgPiArICogQG5ld19tYXN0ZXI6IHRoZSBkZXZp
+Y2UgdGhhdCB0YWtlcyBjb250cm9sIG9mIHRoZSBidXMNCiAgICA+ICsgKiBAb3BfbW9kZTogdGhl
+IG1hc3RlciBuZXcgb3BlcmF0aW9uIG1vZGUNCiAgICA+ICsgKg0KICAgID4gKyAqIFJldHVybjog
+MCBpbiBjYXNlIG9mIHN1Y2Nlc3MsIGEgbmVnYXRpdmUgZXJyb3IgY29kZSBvdGhlcndpc2UuDQog
+ICAgPiArICovDQogICAgPiAraW50IGkzY19tYXN0ZXJfc3dpdGNoX29wZXJhdGlvbl9tb2RlKHN0
+cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIgKm1hc3RlciwNCiAgICA+ICsJCQkJICAgICBzdHJ1
+Y3QgaTNjX2Rldl9kZXNjICpuZXdfbWFzdGVyLA0KICAgID4gKwkJCQkgICAgIGVudW0gaTNjX29w
+X21vZGUgbmV3X29wX21vZGUpDQogICAgPiArew0KICAgID4gKwlpZiAobWFzdGVyLT5vcF9tb2Rl
+ID09IG5ld19vcF9tb2RlKQ0KICAgID4gKwkJcmV0dXJuIC1FRVhJU1Q7DQogICAgPiArDQogICAg
+PiArCW1hc3Rlci0+b3BfbW9kZSA9IG5ld19vcF9tb2RlOw0KICAgID4gKw0KICAgID4gKwlpZiAo
+bmV3X29wX21vZGUgPT0gSTNDX1NMQVZFX01PREUpIHsNCiAgICA+ICsJCW1hc3Rlci0+YnVzLmN1
+cl9tYXN0ZXIgPSBuZXdfbWFzdGVyOw0KICAgID4gKwl9IGVsc2Ugew0KICAgID4gKwkJbWFzdGVy
+LT5idXMuY3VyX21hc3RlciA9IG1hc3Rlci0+dGhpczsNCiAgICANCiAgICBUaGlzIGlzIGRvbmUg
+dG9vIGVhcmx5LiBZb3Ugc2hvdWxkIHVwZGF0ZSBjdXItPm1hc3RlciBvbmx5IGFmdGVyIHRoZQ0K
+ICAgIEdFVEFDQ01TVCBvcGVyYXRpb24gc3VjY2VlZHMuDQoNCkluZGVlZC4NCiAgICANCiAgICA+
+ICsJCUlOSVRfV09SSygmbWFzdGVyLT5tYXN0ZXJzaGlwLCBpM2NfbWFzdGVyX2J1c190YWtlb3Zl
+cik7DQogICAgDQogICAgSU5JVF9XT1JLKCkgc2hvdWxkIGJlIGNhbGxlZCBvbmNlIGF0IGluaXQg
+dGltZSwgbm90IGV2ZXJ5dGltZSB5b3UNCiAgICBzd2l0Y2ggZnJvbSBvbmUgbW9kZSB0byBhbm90
+aGVyLg0KDQpNeSBtaXN0YWtlLg0KICAgIA0KICAgID4gKwkJcXVldWVfd29yayhtYXN0ZXItPndx
+LCAmbWFzdGVyLT5tYXN0ZXJzaGlwKTsNCiAgICA+ICsJfQ0KICAgID4gKw0KICAgID4gKwlyZXR1
+cm4gMDsNCiAgICA+ICt9DQogICAgPiArRVhQT1JUX1NZTUJPTF9HUEwoaTNjX21hc3Rlcl9zd2l0
+Y2hfb3BlcmF0aW9uX21vZGUpOw0KICAgID4gKw0KICAgID4gKy8qKg0KICAgID4gKyAqIGkzY19t
+YXN0ZXJfbWFzdGVyc2hpcF9hY2soKSAtIHBlcmZvcm1zIG9wZXJhdGlvbnMgYmVmb3JlIGJ1cyBo
+YW5kb3Zlci4NCiAgICA+ICsgKiBAbWFzdGVyOiBtYXN0ZXIgdXNlZCB0byBzZW5kIGZyYW1lcyBv
+biB0aGUgYnVzDQogICAgPiArICogQGluZm86IEkzQyBkZXZpY2UgaW5mb3JtYXRpb24NCiAgICA+
+ICsgKg0KICAgID4gKyAqIEJhc2ljYWxseSwgaXQgc2VuZHMgREVGU0xWUyBjb21tYW5kIHRvIGVu
+c3VyZSBuZXcgbWFzdGVyIGlzIHRha2luZw0KICAgID4gKyAqIHRoZSBidXMgd2l0aCBjb21wbGV0
+ZSBsaXN0IG9mIGRldmljZXMgYW5kIHRoZW4gYWNrbm93bGVkZ2VzIGJ1cyB0YWtlb3Zlci4NCiAg
+ICA+ICsgKg0KICAgID4gKyAqIFJldHVybjogMCBpbiBjYXNlIG9mIHN1Y2Nlc3MsIGEgbmVnYXRp
+dmUgZXJyb3IgY29kZSBvdGhlcndpc2UuDQogICAgPiArICovDQogICAgPiAraW50IGkzY19tYXN0
+ZXJfbWFzdGVyc2hpcF9hY2soc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlciAqbWFzdGVyLA0K
+ICAgID4gKwkJCSAgICAgIGNvbnN0IHN0cnVjdCBpM2NfZGV2aWNlX2luZm8gKmluZm8pDQogICAg
+PiArew0KICAgID4gKwlpbnQgcmV0Ow0KICAgID4gKw0KICAgID4gKwlpM2NfYnVzX21haW50ZW5h
+bmNlX2xvY2soJm1hc3Rlci0+YnVzKTsNCiAgICA+ICsJcmV0ID0gaTNjX21hc3Rlcl9kZWZzbHZz
+X2xvY2tlZChtYXN0ZXIpOw0KICAgID4gKwlpM2NfYnVzX21haW50ZW5hbmNlX3VubG9jaygmbWFz
+dGVyLT5idXMpOw0KICAgID4gKwlpZiAocmV0KQ0KICAgID4gKwkJcmV0dXJuIHJldDsNCiAgICA+
+ICsNCiAgICANCiAgICBIbSwgdGhpcyBzaG91bGQgaGF2ZSBiZWVuIHNlbnQgZHVyaW5nIERBQSwg
+bm8gbmVlZCB0byBkbyBpdCBhZ2FpbiBoZXJlLA0KICAgIHJpZ2h0Pw0KDQpJIHRob3VnaHQgdGhh
+dCB0aGVyZSBjb3VsZCBiZSB0aGUgY2FzZSB3aGVuIHNvbWV0aGluZyBoYXMgY2hhbmdlZCBvbiB0
+aGUgYnVzIGJ1dCBub3cgSSB0aGluaw0KZGV2aWNlIGxpc3Qgb24gc2Vjb25kYXJ5IG1hc3RlciBz
+aWRlIGlzIHVwLXRvLWRhdGUgd2l0aG91dCB0aGF0LiBJJ2xsIGRyb3AgdGhpcy4NCiAgICANCiAg
+ICA+ICsJaTNjX2J1c19tYWludGVuYW5jZV9sb2NrKCZtYXN0ZXItPmJ1cyk7DQogICAgPiArCXJl
+dCA9IGkzY19tYXN0ZXJfZ2V0X2FjY21zdF9sb2NrZWQobWFzdGVyLCBpbmZvKTsNCiAgICA+ICsJ
+aTNjX2J1c19tYWludGVuYW5jZV91bmxvY2soJm1hc3Rlci0+YnVzKTsNCiAgICA+ICsJaWYgKHJl
+dCkNCiAgICA+ICsJCXJldHVybiByZXQ7DQogICAgDQogICAgSG0sIHdpbGwgdGhpcyByZWFsbHkg
+d29yaz8gSSB0aG91Z2h0IHRoZSBtYXN0ZXJzaGlwIGhhbmRvdmVyIHByb2NlZHVyZQ0KICAgIGhh
+ZCB0byBiZSBkb25lIGF0b21pY2FsbHkgKHVzaW5nIFNyIGJldHdlZW4gZWFjaCB0cmFuc2ZlciB0
+byBhdm9pZA0KICAgIGV4dGVybmFsIGludGVycnVwdGlvbnMpLiBJIG1pZ2h0IGJlIHdyb25nIHRo
+b3VnaCAobmVlZCB0byByZWFkIHRoZQ0KICAgIHNwZWMgdG8gcmVmcmVzaCBteSBtZW1vcnkpLg0K
+DQpUaGVyZSB3b3VsZG4ndCBiZSBpbnRlcnJ1cHRpb24uIFNlY29uZGFyeSBtYXN0ZXIgbWF5IGFj
+ayBvciBuYWNrIHRoaXMgY29tbWFuZC4NCklmIGhlIGFja3MsIGl0J3MgZG9uZSwgaGUgYmVjYW1l
+IGN1cnJlbnQgbWFzdGVyLg0KSWYgaGUgbmFja3Mgb3IgdHJhbnNtaXRzIGluY29ycmVjdCBhZGRy
+ZXNzLCBoZSB3aWxsIG5vdCBhY3F1aXJlIG1hc3RlcnNoaXAuDQogICAgDQogICAgPiArDQogICAg
+PiArCXJldHVybiAwOw0KICAgID4gK30NCiAgICA+ICtFWFBPUlRfU1lNQk9MX0dQTChpM2NfbWFz
+dGVyX21hc3RlcnNoaXBfYWNrKTsNCiAgICA+ICsNCiAgICA+ICtzdGF0aWMgdm9pZCBpM2Nfc2Vj
+b25kYXJ5X21hc3Rlcl9idXNfaW5pdChzdHJ1Y3Qgd29ya19zdHJ1Y3QgKndvcmspDQogICAgPiAr
+ew0KICAgID4gKwlzdHJ1Y3QgaTNjX21hc3Rlcl9jb250cm9sbGVyICptYXN0ZXI7DQogICAgPiAr
+DQogICAgPiArCW1hc3RlciA9IGNvbnRhaW5lcl9vZih3b3JrLCBzdHJ1Y3QgaTNjX21hc3Rlcl9j
+b250cm9sbGVyLCBtYXN0ZXJzaGlwKTsNCiAgICA+ICsNCiAgICA+ICsJaWYgKGkzY19tYXN0ZXJf
+cmVxdWVzdF9tYXN0ZXJzaGlwKG1hc3RlcikpDQogICAgPiArCQlkZXZfZXJyKCZtYXN0ZXItPmRl
+diwgIk1hc3RlcnNoaXAgZmFpbGVkLiIpOw0KICAgID4gK30NCiAgICA+ICsNCiAgICA+ICsvKioN
+CiAgICA+ICsgKiBpM2Nfc2Vjb25kYXJ5X21hc3Rlcl9ldmVudHNfZW5hYmxlZCgpIC0gZXZlbnQg
+ZnJvbSBjdXJyZW50IG1hc3Rlcg0KICAgID4gKyAqIEBtYXN0ZXI6IG1hc3RlciB1c2VkIHRvIHNl
+bmQgZnJhbWVzIG9uIHRoZSBidXMNCiAgICA+ICsgKiBAZXZ0czogZW5hYmxlZCBldmVudHMNCiAg
+ICA+ICsgKg0KICAgID4gKyAqIFRoaXMgZnVuY3Rpb24gYWxsb3dzIHRvIHBlcmZvcm0gcmVxdWly
+ZWQgb3BlcmF0aW9ucyBhZnRlciBjdXJyZW50DQogICAgPiArICogbWFzdGVyIGVuYWJsZXMgcGFy
+dGljdWxhciBldmVudHMgb24gdGhlIGJ1cy4NCiAgICA+ICsgKi8NCiAgICA+ICt2b2lkIGkzY19z
+ZWNvbmRhcnlfbWFzdGVyX2V2ZW50c19lbmFibGVkKHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xs
+ZXIgKm1hc3RlciwNCiAgICA+ICsJCQkJCSB1OCBldnRzKQ0KICAgID4gK3sNCiAgICA+ICsJaWYg
+KChldnRzICYgSTNDX0NDQ19FVkVOVF9NUikgJiYNCiAgICA+ICsJICAgICFtYXN0ZXItPmluaXRf
+ZG9uZSkgew0KICAgID4gKwkJSU5JVF9XT1JLKCZtYXN0ZXItPm1hc3RlcnNoaXAsIGkzY19zZWNv
+bmRhcnlfbWFzdGVyX2J1c19pbml0KTsNCiAgICA+ICsJCXF1ZXVlX3dvcmsobWFzdGVyLT53cSwg
+Jm1hc3Rlci0+bWFzdGVyc2hpcCk7DQogICAgPiArCX0NCiAgICA+ICt9DQogICAgPiArRVhQT1JU
+X1NZTUJPTF9HUEwoaTNjX3NlY29uZGFyeV9tYXN0ZXJfZXZlbnRzX2VuYWJsZWQpOw0KICAgIA0K
+ICAgIEhtLCBzbyB5b3UncmUgdHJ5aW5nIHRvIHN0YW5kYXJkaXplIGV2ZW50cyBoYW5kbGluZy4g
+SSBoYWQgaW5pdGlhbGx5DQogICAgbGVmdCB0aGF0IHRvIHRoZSBkcml2ZXIgYXMgaXQncyBsaWtl
+bHkgdG8gYmUgY29udHJvbGxlciBzcGVjaWZpYy4NCg0KSSB0aGluayB0aGF0IEkzQyBzcGVjIGRl
+c2NyaWJlcyBjb21tb24gc2V0IG9mIGV2ZW50cy4NCiAgICANCiAgICA+ICsNCiAgICA+ICsvKioN
+CiAgICA+ICAgKiBpM2NfbWFzdGVyX3VucmVnaXN0ZXIoKSAtIHVucmVnaXN0ZXIgYW4gSTNDIG1h
+c3Rlcg0KICAgID4gICAqIEBtYXN0ZXI6IG1hc3RlciB1c2VkIHRvIHNlbmQgZnJhbWVzIG9uIHRo
+ZSBidXMNCiAgICA+ICAgKg0KICAgID4gQEAgLTI1NTIsNiArMjc4MCwxMSBAQCBpbnQgaTNjX2Rl
+dl9kb19wcml2X3hmZXJzX2xvY2tlZChzdHJ1Y3QgaTNjX2Rldl9kZXNjICpkZXYsDQogICAgPiAg
+CWlmICghbWFzdGVyIHx8ICF4ZmVycykNCiAgICA+ICAJCXJldHVybiAtRUlOVkFMOw0KICAgID4g
+IA0KICAgID4gKwlpZiAobWFzdGVyLT5vcF9tb2RlID09IEkzQ19TTEFWRV9NT0RFKSB7DQogICAg
+PiArCQlpZiAoaTNjX21hc3Rlcl9yZXF1ZXN0X21hc3RlcnNoaXAobWFzdGVyKSkNCiAgICA+ICsJ
+CQlyZXR1cm4gLUVJTzsNCiAgICA+ICsJfQ0KICAgID4gKw0KICAgID4gIAlpZiAoIW1hc3Rlci0+
+b3BzLT5wcml2X3hmZXJzKQ0KICAgID4gIAkJcmV0dXJuIC1FTk9UU1VQUDsNCiAgICA+ICANCiAg
+ICA+IEBAIC0yNjU3LDUgKzI4OTAsNiBAQCBzdGF0aWMgdm9pZCBfX2V4aXQgaTNjX2V4aXQodm9p
+ZCkNCiAgICA+ICBtb2R1bGVfZXhpdChpM2NfZXhpdCk7DQogICAgPiAgDQogICAgPiAgTU9EVUxF
+X0FVVEhPUigiQm9yaXMgQnJlemlsbG9uIDxib3Jpcy5icmV6aWxsb25AYm9vdGxpbi5jb20+Iik7
+DQogICAgPiArTU9EVUxFX0FVVEhPUigiUHJ6ZW15c2xhdyBHYWogPHBnYWpAY2FkZW5jZS5jb20+
+Iik7DQogICAgDQogICAgUGxlYXNlIGRvIHRoYXQgaW4gYSBzZXBhcmF0ZSBwYXRjaC4NCg0KT2su
+DQogICAgDQogICAgPiAgTU9EVUxFX0RFU0NSSVBUSU9OKCJJM0MgY29yZSIpOw0KICAgID4gIE1P
+RFVMRV9MSUNFTlNFKCJHUEwgdjIiKTsNCiAgICA+IGRpZmYgLS1naXQgYS9pbmNsdWRlL2xpbnV4
+L2kzYy9tYXN0ZXIuaCBiL2luY2x1ZGUvbGludXgvaTNjL21hc3Rlci5oDQogICAgPiBpbmRleCBm
+MTNmZDhiLi5hZGE5NTZhIDEwMDY0NA0KICAgID4gLS0tIGEvaW5jbHVkZS9saW51eC9pM2MvbWFz
+dGVyLmgNCiAgICA+ICsrKyBiL2luY2x1ZGUvbGludXgvaTNjL21hc3Rlci5oDQogICAgPiBAQCAt
+MjgyLDYgKzI4MiwxNiBAQCBlbnVtIGkzY19hZGRyX3Nsb3Rfc3RhdHVzIHsNCiAgICA+ICB9Ow0K
+ICAgID4gIA0KICAgID4gIC8qKg0KICAgID4gKyAqIGVudW0gaTNjX29wX21vZGUgLSBJM0MgY29u
+dHJvbGxlciBvcGVyYXRpb24gbW9kZQ0KICAgID4gKyAqIEBJM0NfU0xBVkVfTU9ERTogSTNDIGNv
+bnRyb2xsZXIgb3BlcmF0ZXMgaW4gc2xhdmUgbW9kZQ0KICAgID4gKyAqIEBJM0NfTUFTVEVSX01P
+REU6IEkzQyBjb250cm9sbGVyIG9wZXJhdGVzIGluIG1hc3RlciBtb2RlDQogICAgPiArICovDQog
+ICAgPiArZW51bSBpM2Nfb3BfbW9kZSB7DQogICAgPiArCUkzQ19TTEFWRV9NT0RFLA0KICAgID4g
+KwlJM0NfTUFTVEVSX01PREUNCiAgICA+ICt9Ow0KICAgID4gKw0KICAgID4gKy8qKg0KICAgID4g
+ICAqIHN0cnVjdCBpM2NfYnVzIC0gSTNDIGJ1cyBvYmplY3QNCiAgICA+ICAgKiBAY3VyX21hc3Rl
+cjogSTNDIG1hc3RlciBjdXJyZW50bHkgZHJpdmluZyB0aGUgYnVzLiBTaW5jZSBJM0MgaXMgbXVs
+dGktbWFzdGVyDQogICAgPiAgICoJCXRoaXMgY2FuIGNoYW5nZSBvdmVyIHRoZSB0aW1lLiBXaWxs
+IGJlIHVzZWQgdG8gbGV0IGEgbWFzdGVyDQogICAgPiBAQCAtNDE4LDYgKzQyOCwyMCBAQCBzdHJ1
+Y3QgaTNjX2J1cyB7DQogICAgPiAgICoJCSAgICAgIGZvciBhIGZ1dHVyZSBJQkkNCiAgICA+ICAg
+KgkJICAgICAgVGhpcyBtZXRob2QgaXMgbWFuZGF0b3J5IG9ubHkgaWYgLT5yZXF1ZXN0X2liaSBp
+cyBub3QNCiAgICA+ICAgKgkJICAgICAgTlVMTC4NCiAgICA+ICsgKiBAdXBkYXRlX2RldnM6IHVw
+ZGF0ZXMgZGV2aWNlIGxpc3QuIENhbGxlZCBhZnRlciBidXMgdGFrZW92ZXIuIFNlY29uZGFyeQ0K
+ICAgID4gKyAqICAgICAgICAgICAgICAgbWFzdGVyIGNhbid0IHBlcmZvcm0gREFBIHByb2NlZHVy
+ZS4NCiAgICANCiAgICBJcyB0aGF0IHJlYWxseSB0cnVlPyBDYW4geW91IHBvaW50IG1lIHRvIHRo
+ZSByZWxldmFudCBzZWN0aW9uIGluIHRoZQ0KICAgIHNwZWMgZGVzY3JpYmluZyB0aGlzIGNvbnN0
+cmFpbnQ/DQoNClN1cmUsIEkzQyBEZXZpY2VzIFJvbGVzIHZzIFJlc3BvbnNpYmlsaXRpZXMsIFRh
+YmxlIGluIHNwZWMuIER5bmFtaWMgQWRkcmVzcw0KQXNzaWdubWVudCwgU2Vjb25kYXJ5IG1hc3Rl
+ciBpcyBub3QgY2FwYWJsZSB0byBkbyB0aGF0Lg0KDQpQbGVhc2UgYWxzbyB0YWtlIGEgbG9vayBh
+dCBIb3QtSm9pbiBEeW5hbWljIEFkZHJlc3MgQXNzaWdubWVudC4gU29tZSBvZiBjb250cm9sbGVy
+cyBtYXkNCmhhdmUgSEotREFBIGltcGxlbWVudGVkIGluIHRoZSBoYXJkd2FyZSwgbWF5YmUgaXQn
+cyBiZXR0ZXIgdG8gc2VuZCBERUZTTFZTIHJpZ2h0IGJlZm9yZQ0KR0VUQUNDTVNUPw0KICAgIA0K
+ICAgID4JCSAgICAgVGhpcyBmdW5jdGlvbiBhbGxvd3MgdG8NCiAgICA+ICsgKiAgICAgICAgICAg
+ICAgIHVwZGF0ZSBkZXZpY2VzIHJlY2VpdmVkIGZyb20gcHJldmlvdXMgYnVzIG93bmVyIGluIERF
+RlNMVlMNCiAgICA+ICsgKiAgICAgICAgICAgICAgIGNvbW1hbmQuIFVzZWZ1bCBhbHNvIHdoZW4g
+bmV3IGRldmljZSBqb2lucyB0aGUgYnVzIGNvbnRyb2xsZWQNCiAgICA+ICsgKiAgICAgICAgICAg
+ICAgIGJ5IHNlY29uZGFyeSBtYXN0ZXIsIG1haW4gbWFzdGVyIHdpbGwgYmUgYWJsZSB0byBhZGQN
+CiAgICA+ICsgKiAgICAgICAgICAgICAgIHRoaXMgZGV2aWNlIGFmdGVyIG1hc3RlcnNoaXAgdGFr
+ZW92ZXIuDQogICAgPiArICogQHJlcXVlc3RfbWFzdGVyc2hpcDogcmVxdWVzdHMgYnVzIG1hc3Rl
+cnNoaXAuIEJ5IGRlZmF1bHQgY2FsbGVkIGJ5IHNlY29uZGFyeQ0KICAgID4gKyAqICAgICAgICAg
+ICAgICAgICAgICAgIG1hc3RlciBhZnRlciBFTkVDIENDQyBpcyByZWNlaXZlZCBhbmQgd2hlbiBk
+ZXZpY2VzIHdlcmUNCiAgICA+ICsgKiAgICAgICAgICAgICAgICAgICAgICBub3QgZnVsbHkgaW5p
+dGlhbGl6ZWQgeWV0LiBNYXN0ZXJzaGlwIGlzIGFsc28gcmVxdWVzdGVkDQogICAgPiArICogICAg
+ICAgICAgICAgICAgICAgICAgd2hlbiBkZXZpY2UgZHJpdmVyIHdhbnRzIHRvIHRyYW5zZmVyIGRh
+dGEgdXNpbmcgbWFzdGVyDQogICAgPiArICogICAgICAgICAgICAgICAgICAgICAgaW4gc2xhdmUg
+bW9kZS4NCiAgICA+ICsgKiBAZW5hYmxlX21hc3RlcnNoaXA6IGVuYWJsZSB0aGUgTWFzdGVyc2hp
+cCBmb3Igc3BlY2lmaWVkIGRldmljZS4gTWFzdGVyc2hpcA0KICAgID4gKyAqICAgICAgICAgICAg
+ICAgICAgICAgZG9lcyBub3QgcmVxdWlyZSBoYW5kbGVyLiBNYXN0ZXJzaGlwIGlzIGVuYWJsZWQg
+Zm9yIGFsbA0KICAgID4gKyAqICAgICAgICAgICAgICAgICAgICAgbWFzdGVycyBieSBkZWZhdWx0
+Lg0KICAgIA0KICAgIE1heWJlIC0+ZW5hYmxlX21yX2V2ZW50cygpICgtPmVuYWJsZV9tYXN0ZXJz
+aGlwKCkgaXMganVzdCB1bmNsZWFyIHRvDQogICAgbWUpLiBPaCwgYW5kIGlmIHlvdSBoYXZlIGFu
+IGVuYWJsZSBmdW5jdGlvbiB5b3Ugc2hvdWxkIGhhdmUgYSBkaXNhYmxlDQogICAgb25lIHRvby4N
+Cg0KSSBhZ3JlZS4NCiAgICANCiAgICA+ICAgKi8NCiAgICA+ICBzdHJ1Y3QgaTNjX21hc3Rlcl9j
+b250cm9sbGVyX29wcyB7DQogICAgPiAgCWludCAoKmJ1c19pbml0KShzdHJ1Y3QgaTNjX21hc3Rl
+cl9jb250cm9sbGVyICptYXN0ZXIpOw0KICAgID4gQEAgLTQ0NSw2ICs0NjksOSBAQCBzdHJ1Y3Qg
+aTNjX21hc3Rlcl9jb250cm9sbGVyX29wcyB7DQogICAgPiAgCWludCAoKmRpc2FibGVfaWJpKShz
+dHJ1Y3QgaTNjX2Rldl9kZXNjICpkZXYpOw0KICAgID4gIAl2b2lkICgqcmVjeWNsZV9pYmlfc2xv
+dCkoc3RydWN0IGkzY19kZXZfZGVzYyAqZGV2LA0KICAgID4gIAkJCQkgc3RydWN0IGkzY19pYmlf
+c2xvdCAqc2xvdCk7DQogICAgPiArCXZvaWQgKCp1cGRhdGVfZGV2cykoc3RydWN0IGkzY19tYXN0
+ZXJfY29udHJvbGxlciAqbWFzdGVyKTsNCiAgICA+ICsJaW50ICgqcmVxdWVzdF9tYXN0ZXJzaGlw
+KShzdHJ1Y3QgaTNjX21hc3Rlcl9jb250cm9sbGVyICptYXN0ZXIpOw0KICAgID4gKwlpbnQgKCpl
+bmFibGVfbWFzdGVyc2hpcCkoc3RydWN0IGkzY19kZXZfZGVzYyAqZGV2KTsNCiAgICA+ICB9Ow0K
+ICAgID4gIA0KICAgID4gIC8qKg0KICAgID4gQEAgLTQ1OCw2ICs0ODUsNyBAQCBzdHJ1Y3QgaTNj
+X21hc3Rlcl9jb250cm9sbGVyX29wcyB7DQogICAgPiAgICogQG9wczogbWFzdGVyIG9wZXJhdGlv
+bnMuIFNlZSAmc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlcl9vcHMNCiAgICA+ICAgKiBAc2Vj
+b25kYXJ5OiB0cnVlIGlmIHRoZSBtYXN0ZXIgaXMgYSBzZWNvbmRhcnkgbWFzdGVyDQogICAgPiAg
+ICogQGluaXRfZG9uZTogdHJ1ZSB3aGVuIHRoZSBidXMgaW5pdGlhbGl6YXRpb24gaXMgZG9uZQ0K
+ICAgID4gKyAqIEBvcF9tb2RlOiBjb250cm9sbGVyIG9wZXJhdGlvbiBtb2RlDQogICAgDQogICAg
+QXMgc2FpZCBlYXJsaWVyLCBJIGRvbid0IHRoaW5rIHRoaXMgaXMgbmVlZGVkLiBKdXN0IGNoZWNr
+IC0+Y3VyX21hc3Rlcg0KICAgIHRvIGtub3cgd2hldGhlciB0aGUgbWFzdGVyIG93bnMgdGhlIGJ1
+cyBvciBub3QuDQoNCkknbGwgdHJ5Lg0KICAgIA0KICAgID4gICAqIEBib2FyZGluZm8uaTNjOiBs
+aXN0IG9mIEkzQyAgYm9hcmRpbmZvIG9iamVjdHMNCiAgICA+ICAgKiBAYm9hcmRpbmZvLmkyYzog
+bGlzdCBvZiBJMkMgYm9hcmRpbmZvIG9iamVjdHMNCiAgICA+ICAgKiBAYm9hcmRpbmZvOiBib2Fy
+ZC1sZXZlbCBpbmZvcm1hdGlvbiBhdHRhY2hlZCB0byBkZXZpY2VzIGNvbm5lY3RlZCBvbiB0aGUg
+YnVzDQogICAgPiBAQCAtNDY3LDYgKzQ5NSw3IEBAIHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xs
+ZXJfb3BzIHsNCiAgICA+ICAgKglpbiBhIHRocmVhZCBjb250ZXh0LiBUeXBpY2FsIGV4YW1wbGVz
+IGFyZSBIb3QgSm9pbiBwcm9jZXNzaW5nIHdoaWNoDQogICAgPiAgICoJcmVxdWlyZXMgdGFraW5n
+IHRoZSBidXMgbG9jayBpbiBtYWludGVuYW5jZSwgd2hpY2ggaW4gdHVybiwgY2FuIG9ubHkNCiAg
+ICA+ICAgKgliZSBkb25lIGZyb20gYSBzbGVlcC1hYmxlIGNvbnRleHQNCiAgICA+ICsgKiBAbWFz
+dGVyc2hpcDogd29yayBmb3Igc3dpdGNoaW5nIG9wZXJhdGlvbiBtb2RlIGFmdGVyIGJ1cyB0YWtl
+b3Zlcg0KICAgIA0KICAgIEhvdyBhYm91dCBtcl93b3JrIG9yIHNvbWV0aGluZyBsaWtlIHRoYXQu
+IG1hc3RlcnNoaXAgaXMgYSBiaXQNCiAgICBhbWJpZ3VvdXMsIGFuZCBpdCdzIG5vdCByZWFsbHkg
+Y2xlYXIgdGhhdCBpdCdzIHJlcHJlc2VudGluZyBhIHdvcmsNCiAgICBvYmplY3QuDQoNCkkgYWdy
+ZWUuDQogICAgDQogICAgPiAgICoNCiAgICA+ICAgKiBBICZzdHJ1Y3QgaTNjX21hc3Rlcl9jb250
+cm9sbGVyIGhhcyB0byBiZSByZWdpc3RlcmVkIHRvIHRoZSBJM0Mgc3Vic3lzdGVtDQogICAgPiAg
+ICogdGhyb3VnaCBpM2NfbWFzdGVyX3JlZ2lzdGVyKCkuIE5vbmUgb2YgJnN0cnVjdCBpM2NfbWFz
+dGVyX2NvbnRyb2xsZXIgZmllbGRzDQogICAgPiBAQCAtNDgwLDEyICs1MDksMTQgQEAgc3RydWN0
+IGkzY19tYXN0ZXJfY29udHJvbGxlciB7DQogICAgPiAgCWNvbnN0IHN0cnVjdCBpM2NfbWFzdGVy
+X2NvbnRyb2xsZXJfb3BzICpvcHM7DQogICAgPiAgCXVuc2lnbmVkIGludCBzZWNvbmRhcnkgOiAx
+Ow0KICAgID4gIAl1bnNpZ25lZCBpbnQgaW5pdF9kb25lIDogMTsNCiAgICA+ICsJZW51bSBpM2Nf
+b3BfbW9kZSBvcF9tb2RlOw0KICAgID4gIAlzdHJ1Y3Qgew0KICAgID4gIAkJc3RydWN0IGxpc3Rf
+aGVhZCBpM2M7DQogICAgPiAgCQlzdHJ1Y3QgbGlzdF9oZWFkIGkyYzsNCiAgICA+ICAJfSBib2Fy
+ZGluZm87DQogICAgPiAgCXN0cnVjdCBpM2NfYnVzIGJ1czsNCiAgICA+ICAJc3RydWN0IHdvcmtx
+dWV1ZV9zdHJ1Y3QgKndxOw0KICAgID4gKwlzdHJ1Y3Qgd29ya19zdHJ1Y3QgbWFzdGVyc2hpcDsN
+CiAgICA+ICB9Ow0KICAgID4gIA0KICAgID4gIC8qKg0KICAgID4gQEAgLTUyMyw3ICs1NTQsOCBA
+QCBpbnQgaTNjX21hc3Rlcl9kZWZzbHZzX2xvY2tlZChzdHJ1Y3QgaTNjX21hc3Rlcl9jb250cm9s
+bGVyICptYXN0ZXIpOw0KICAgID4gIA0KICAgID4gIGludCBpM2NfbWFzdGVyX2dldF9mcmVlX2Fk
+ZHIoc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlciAqbWFzdGVyLA0KICAgID4gIAkJCSAgICAg
+dTggc3RhcnRfYWRkcik7DQogICAgPiAtDQogICAgPiAraW50IGkzY19tYXN0ZXJfYWRkX2kyY19k
+ZXYoc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlciAqbWFzdGVyLA0KICAgID4gKwkJCSAgIHN0
+cnVjdCBpMmNfZGV2X2JvYXJkaW5mbyAqaW5mbyk7DQogICAgPiAgaW50IGkzY19tYXN0ZXJfYWRk
+X2kzY19kZXZfbG9ja2VkKHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIgKm1hc3RlciwNCiAg
+ICA+ICAJCQkJICB1OCBhZGRyKTsNCiAgICA+ICBpbnQgaTNjX21hc3Rlcl9kb19kYWEoc3RydWN0
+IGkzY19tYXN0ZXJfY29udHJvbGxlciAqbWFzdGVyKTsNCiAgICA+IEBAIC01MzYsNiArNTY4LDE1
+IEBAIGludCBpM2NfbWFzdGVyX3JlZ2lzdGVyKHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIg
+Km1hc3RlciwNCiAgICA+ICAJCQljb25zdCBzdHJ1Y3QgaTNjX21hc3Rlcl9jb250cm9sbGVyX29w
+cyAqb3BzLA0KICAgID4gIAkJCWJvb2wgc2Vjb25kYXJ5KTsNCiAgICA+ICBpbnQgaTNjX21hc3Rl
+cl91bnJlZ2lzdGVyKHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIgKm1hc3Rlcik7DQogICAg
+PiAraW50IGkzY19tYXN0ZXJfZ2V0X2FjY21zdF9sb2NrZWQoc3RydWN0IGkzY19tYXN0ZXJfY29u
+dHJvbGxlciAqbWFzdGVyLA0KICAgID4gKwkJCQkgY29uc3Qgc3RydWN0IGkzY19kZXZpY2VfaW5m
+byAqaW5mbyk7DQogICAgPiAraW50IGkzY19tYXN0ZXJfc3dpdGNoX29wZXJhdGlvbl9tb2RlKHN0
+cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIgKm1hc3RlciwNCiAgICA+ICsJCQkJICAgICBzdHJ1
+Y3QgaTNjX2Rldl9kZXNjICpuZXdfbWFzdGVyLA0KICAgID4gKwkJCQkgICAgIGVudW0gaTNjX29w
+X21vZGUgbmV3X29wX21vZGUpOw0KICAgID4gK2ludCBpM2NfbWFzdGVyX21hc3RlcnNoaXBfYWNr
+KHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIgKm1hc3RlciwNCiAgICA+ICsJCQkgICAgICBj
+b25zdCBzdHJ1Y3QgaTNjX2RldmljZV9pbmZvICppbmZvKTsNCiAgICA+ICt2b2lkIGkzY19zZWNv
+bmRhcnlfbWFzdGVyX2V2ZW50c19lbmFibGVkKHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIg
+Km1hc3RlciwNCiAgICA+ICsJCQkJCSB1OCBldnRzKTsNCiAgICA+ICANCiAgICA+ICAvKioNCiAg
+ICA+ICAgKiBpM2NfZGV2X2dldF9tYXN0ZXJfZGF0YSgpIC0gZ2V0IG1hc3RlciBwcml2YXRlIGRh
+dGEgYXR0YWNoZWQgdG8gYW4gSTNDDQogICAgDQoNClRoYW5rcywNClByemVtZWsNCg0KX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtaTNjIG1haWxp
+bmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
