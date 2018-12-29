@@ -1,69 +1,64 @@
-Return-Path: <SRS0=8pL7=PE=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=52QZ=PG=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-7.1 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_PASS,URIBL_BLOCKED
-	autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-7.9 required=3.0 tests=DATE_IN_PAST_06_12,
+	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,SIGNED_OFF_BY,
+	SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 9E956C43387
-	for <linux-i3c@archiver.kernel.org>; Thu, 27 Dec 2018 11:40:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 6885BC43387
+	for <linux-i3c@archiver.kernel.org>; Sat, 29 Dec 2018 09:17:14 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 5B9F3208E4
-	for <linux-i3c@archiver.kernel.org>; Thu, 27 Dec 2018 11:40:53 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 1255B20643
+	for <linux-i3c@archiver.kernel.org>; Sat, 29 Dec 2018 09:17:13 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="jjn3Vvuv";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=kernel.org header.i=@kernel.org header.b="GPz/6Tqn"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 5B9F3208E4
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="tqBCRqpR"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1255B20643
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=wanadoo.fr
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sA3qiQxwbCAso4hu8oQER3UiKHoL/K27VkaIoawgBk4=; b=jjn3VvuvbreyuM
-	cI8X+38W89NCx3IE8znWR0Hdj40MSfT5263zuba3+ZOldYPufq0NTgzklubJ9KWlhwGrpRptWW4ks
-	5RyljwCMWCXiopoLzi0I2ToiD1Tp5aM0iakIVbb9pS3LnuBp+NE1fk73aHxH5rhpXX0MF8MhLakzr
-	mj9E/RZ5oRXzBULrnDdK68RRCdrbfabjUql7iM6sK5AOmE/GB+bj6Nrmc09rWR8IcG2w1zkM9lLUq
-	pZjepkPHh98baDkMg++2AaLJb0wmtztpkvxPV8mWMjrIoMhBUB1FsTRxsObP1v5EYdQj084bn84BM
-	3JogXzIuSo7jLnP/vTyg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ocpDex4gvto7opkam0+ODz/s6Sul65V/F5UJl+vo9pg=; b=tqBCRqpR46y9Su
+	JObZ7NmDllCGOq4DOaa2XqoHxZqaBBMqwPsU/jEim3f2sCdvcEeQeJPJ63pKAfwzUlp1XVyFS59Ae
+	HbbKzVAdNCBRgzJ7Nd36p8gBTG/0Gz8cK0ca/MMydlXhiFJMKqfYQwUy2bxqiYqB1ylJiGIeXGwHe
+	1oEP/iHap+MrRQWJcW/kY/eCdCAxL5hUXi2Bza/OSmWAtsKmg0fqO8Uv/0Opm5f/iXQRwssc03cGL
+	fm9A+6OMHPEsOKDwQj3ut5C6UmvDgWS6/jmSam4IfSwyZ0C8Uc8/joqg/sNGHUBA4wkqflRP3RcTg
+	PIGoR65jIxh20BQFlaiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1gcU20-0001Y9-Tn; Thu, 27 Dec 2018 11:40:52 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1gdAk5-0005Cy-Cx; Sat, 29 Dec 2018 09:17:13 +0000
+Received: from smtp09.smtpout.orange.fr ([80.12.242.131]
+ helo=smtp.smtpout.orange.fr)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1gbvzi-00064A-CI
- for linux-i3c@lists.infradead.org; Tue, 25 Dec 2018 23:20:16 +0000
-Subject: Re: [GIT PULL] i3c: Initial pull request
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1545780003;
- bh=4Bf0tFi+yqRTHPneajSSWAw5w6A5KqzTcOz0OHwKQWU=;
- h=From:In-Reply-To:References:Date:To:Cc:From;
- b=GPz/6TqnlULhb6Nmw4zYtG6wmKXGWADD5KY+nMxM+cSBYhjvpF2h2bipjGThrd8YS
- +hx8Vzlld22/fZ3WsuB1TymooanCv5NjyZpFSt3eCHrBvROjqdkzXEtn/cJgTS2pj3
- P8agx07us3vlesZbFKS/nEHbSfFM2ebRHH+ZOykM=
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <20181219165447.2db6a689@bbrezillon>
-References: <20181219165447.2db6a689@bbrezillon>
-X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
-X-PR-Tracked-Message-Id: <20181219165447.2db6a689@bbrezillon>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-4.21
-X-PR-Tracked-Commit-Id: 25ac3da61ba144f8dbfe377eeec6b1da7ad0854a
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: b3cc2bfe7244e848f5e8caa77bbdc72c04abd17c
-Message-Id: <20181225232003.23808.40308.pr-tracker-bot@pdx-korg-gitolite-1.ci.codeaurora.org>
-Date: Tue, 25 Dec 2018 23:20:03 +0000
-To: Boris Brezillon <boris.brezillon@bootlin.com>
+ id 1gdANw-0006Tp-1X
+ for linux-i3c@lists.infradead.org; Sat, 29 Dec 2018 08:54:22 +0000
+Received: from localhost.localdomain ([90.126.241.217]) by mwinf5d85 with ME
+ id Hku01z0024i89ZE03ku0uR; Sat, 29 Dec 2018 09:54:06 +0100
+X-ME-Helo: localhost.localdomain
+X-ME-Auth: Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI=
+X-ME-Date: Sat, 29 Dec 2018 09:54:06 +0100
+X-ME-IP: 90.126.241.217
+From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+To: bbrezillon@kernel.org, pgaj@cadence.com, yuehaibing@huawei.com,
+ gregkh@linuxfoundation.org, arnd@arndb.de
+Subject: [PATCH] i3c: master: Fix an error checking typo in
+ 'cdns_i3c_master_probe()'
+Date: Sat, 29 Dec 2018 01:05:40 +0100
+Message-Id: <20181229000540.25283-1-christophe.jaillet@wanadoo.fr>
+X-Mailer: git-send-email 2.19.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20181225_152014_641703_D5E502CB 
-X-CRM114-Status: UNSURE (   1.78  )
-X-CRM114-Notice: Please train this message.
-X-Mailman-Approved-At: Thu, 27 Dec 2018 03:40:51 -0800
+X-CRM114-CacheID: sfid-20181229_005420_369076_3E441397 
+X-CRM114-Status: GOOD (  14.82  )
+X-Mailman-Approved-At: Sat, 29 Dec 2018 01:17:12 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -75,31 +70,41 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: Rafal Ciepiela <rafalc@cadence.com>, Arnd Bergmann <arnd@arndb.de>,
- Wolfram Sang <wsa@the-dreams.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Vitor Soares <Vitor.Soares@synopsys.com>, Przemyslaw Gaj <pgaj@cadence.com>,
- linux-i3c <linux-i3c@lists.infradead.org>,
- Linus Torvalds <torvalds@linux-foundation.org>
-MIME-Version: 1.0
+Cc: Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
+ linux-i3c@lists.infradead.org, kernel-janitors@vger.kernel.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The pull request you sent on Wed, 19 Dec 2018 16:54:47 +0100:
+Fix a cut'n'paste typo.
+Checking 'master->sysclk' is expected here.
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-4.21
+Fixes: 603f2bee2c54 ("i3c: master: Add driver for Cadence IP")
+Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+---
+ drivers/i3c/master/i3c-master-cdns.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/b3cc2bfe7244e848f5e8caa77bbdc72c04abd17c
-
-Thank you!
-
+diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
+index bbd79b8b1a80..8889a4fdb454 100644
+--- a/drivers/i3c/master/i3c-master-cdns.c
++++ b/drivers/i3c/master/i3c-master-cdns.c
+@@ -1556,8 +1556,8 @@ static int cdns_i3c_master_probe(struct platform_device *pdev)
+ 		return PTR_ERR(master->pclk);
+ 
+ 	master->sysclk = devm_clk_get(&pdev->dev, "sysclk");
+-	if (IS_ERR(master->pclk))
+-		return PTR_ERR(master->pclk);
++	if (IS_ERR(master->sysclk))
++		return PTR_ERR(master->sysclk);
+ 
+ 	irq = platform_get_irq(pdev, 0);
+ 	if (irq < 0)
 -- 
-Deet-doot-dot, I am a bot.
-https://korg.wiki.kernel.org/userdoc/prtracker
+2.19.1
+
 
 _______________________________________________
 linux-i3c mailing list
