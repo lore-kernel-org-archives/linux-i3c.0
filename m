@@ -1,64 +1,71 @@
-Return-Path: <SRS0=52QZ=PG=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=kSke=PR=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-7.9 required=3.0 tests=DATE_IN_PAST_06_12,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,SIGNED_OFF_BY,
-	SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-13.6 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SIGNED_OFF_BY,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 6885BC43387
-	for <linux-i3c@archiver.kernel.org>; Sat, 29 Dec 2018 09:17:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 236B1C43387
+	for <linux-i3c@archiver.kernel.org>; Wed,  9 Jan 2019 14:58:23 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 1255B20643
-	for <linux-i3c@archiver.kernel.org>; Sat, 29 Dec 2018 09:17:13 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id E7865206BB
+	for <linux-i3c@archiver.kernel.org>; Wed,  9 Jan 2019 14:58:22 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="tqBCRqpR"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1255B20643
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=wanadoo.fr
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="L0zoH46Z";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="WgtjT2mI"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E7865206BB
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ocpDex4gvto7opkam0+ODz/s6Sul65V/F5UJl+vo9pg=; b=tqBCRqpR46y9Su
-	JObZ7NmDllCGOq4DOaa2XqoHxZqaBBMqwPsU/jEim3f2sCdvcEeQeJPJ63pKAfwzUlp1XVyFS59Ae
-	HbbKzVAdNCBRgzJ7Nd36p8gBTG/0Gz8cK0ca/MMydlXhiFJMKqfYQwUy2bxqiYqB1ylJiGIeXGwHe
-	1oEP/iHap+MrRQWJcW/kY/eCdCAxL5hUXi2Bza/OSmWAtsKmg0fqO8Uv/0Opm5f/iXQRwssc03cGL
-	fm9A+6OMHPEsOKDwQj3ut5C6UmvDgWS6/jmSam4IfSwyZ0C8Uc8/joqg/sNGHUBA4wkqflRP3RcTg
-	PIGoR65jIxh20BQFlaiA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=i+18TwlPVmQNrrdWjF0Pm2WH0Zbivzgp0v0Ji28QrDQ=; b=L0z
+	oH46ZESgJWhLeiQdGwCGpHy20XzhvBaQnrvtNIMVC6nT/A3abXgZmcHGKq1rCLlqE6Sv+hJx9ZZDs
+	rtMzDb5D6DHbv/L8OcaUn4cPPm+cHGMCgjd/D3yQ9P9EnKtbMytijsbHhgyElzodK9R8o1Ub/sId7
+	otfReXd35CPhSBtqhc7CBEHT4O9lKYtDmkuB4ZEWyEPZnMgyHVwSdVLFsZRD1VRQf8DXiI9AnojOM
+	o/JDUIMwnU2ZONUM5rFg/r2hoDEF0zgIl+838k+jFJkE2/EicjWRENHdWAD1C/2OJ0cIG1nb087aD
+	JfHavYNwTOmx/T/+VUsHQmbsjNYYfPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1gdAk5-0005Cy-Cx; Sat, 29 Dec 2018 09:17:13 +0000
-Received: from smtp09.smtpout.orange.fr ([80.12.242.131]
- helo=smtp.smtpout.orange.fr)
+	id 1ghFJG-0008GU-8e; Wed, 09 Jan 2019 14:58:22 +0000
+Received: from us01smtprelay-2.synopsys.com ([198.182.47.9]
+ helo=smtprelay.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1gdANw-0006Tp-1X
- for linux-i3c@lists.infradead.org; Sat, 29 Dec 2018 08:54:22 +0000
-Received: from localhost.localdomain ([90.126.241.217]) by mwinf5d85 with ME
- id Hku01z0024i89ZE03ku0uR; Sat, 29 Dec 2018 09:54:06 +0100
-X-ME-Helo: localhost.localdomain
-X-ME-Auth: Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI=
-X-ME-Date: Sat, 29 Dec 2018 09:54:06 +0100
-X-ME-IP: 90.126.241.217
-From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-To: bbrezillon@kernel.org, pgaj@cadence.com, yuehaibing@huawei.com,
- gregkh@linuxfoundation.org, arnd@arndb.de
-Subject: [PATCH] i3c: master: Fix an error checking typo in
- 'cdns_i3c_master_probe()'
-Date: Sat, 29 Dec 2018 01:05:40 +0100
-Message-Id: <20181229000540.25283-1-christophe.jaillet@wanadoo.fr>
-X-Mailer: git-send-email 2.19.1
-MIME-Version: 1.0
+ id 1ghFJ5-00086c-3U
+ for linux-i3c@lists.infradead.org; Wed, 09 Jan 2019 14:58:12 +0000
+Received: from mailhost.synopsys.com (mailhost1.synopsys.com [10.12.238.239])
+ by smtprelay.synopsys.com (Postfix) with ESMTP id 2E4D524E14FB;
+ Wed,  9 Jan 2019 06:58:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1547045888; bh=8AwVsi0qvDh+rgfT/vt5PEcypnkBnL+xnltrtMhWZ58=;
+ h=From:To:Cc:Subject:Date:From;
+ b=WgtjT2mI++7WIiNvanUutiM6QDliwTE5Ht3N/zWRSNsNxl29v1RA1kD6ENb36zuyK
+ bjPUSGydPseuD8uwPLXI4L/FABknfHUl7a1za6nf1bTSmfePB97Ht3GOfL1a8WUCi3
+ ChY0xgZkPFXHXRQTCCI7O1cExelm7BGwVQUZkVzLKVkZrQ0NqE7PBdD6r6P7yfkYD0
+ YRVwaLBbSU/tNhBp7k8yppoeGqsJBsu2RPiLQjUBHJl98Sd2ism+gBoGJAwJAKR39e
+ hPdQGs8v1u9rKACe4Mbv4JIuMb8EEOJGb2DaH/VqYfmOm69e34XE7LDMq3DKzJ/aZe
+ 0I26dWhvx5w9w==
+Received: from de02dwia024.internal.synopsys.com
+ (de02dwia024.internal.synopsys.com [10.225.19.81])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 4159157E7;
+ Wed,  9 Jan 2019 06:58:07 -0800 (PST)
+From: Vitor Soares <vitor.soares@synopsys.com>
+To: linux-i3c@lists.infradead.org
+Subject: [PATCH] i3c: master: dw-i3c-master: fix i3c_attach/reatach
+Date: Wed,  9 Jan 2019 15:58:05 +0100
+Message-Id: <2e33e1f72db978f77ced019ae085c972050ca4e9.1547040890.git.vitor.soares@synopsys.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20181229_005420_369076_3E441397 
-X-CRM114-Status: GOOD (  14.82  )
-X-Mailman-Approved-At: Sat, 29 Dec 2018 01:17:12 -0800
+X-CRM114-CacheID: sfid-20190109_065811_147978_390AC635 
+X-CRM114-Status: UNSURE (   9.21  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -70,40 +77,57 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
- linux-i3c@lists.infradead.org, kernel-janitors@vger.kernel.org,
- linux-kernel@vger.kernel.org
+Cc: joao.pinto@synopsys.com, Vitor Soares <vitor.soares@synopsys.com>,
+ bbrezillon@kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Fix a cut'n'paste typo.
-Checking 'master->sysclk' is expected here.
+This patch fix i3c attach/reatach functions.
 
-Fixes: 603f2bee2c54 ("i3c: master: Add driver for Cadence IP")
-Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+During the i3c_attach the driver doesn't threat the static address used for
+SETDASA CCC command.
+
+During the i3c_reatach the driver doesn't update master->addrs[data->index] with
+new address if old_dyn_addr = 0.
+
+Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
 ---
- drivers/i3c/master/i3c-master-cdns.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/i3c/master/dw-i3c-master.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
-index bbd79b8b1a80..8889a4fdb454 100644
---- a/drivers/i3c/master/i3c-master-cdns.c
-+++ b/drivers/i3c/master/i3c-master-cdns.c
-@@ -1556,8 +1556,8 @@ static int cdns_i3c_master_probe(struct platform_device *pdev)
- 		return PTR_ERR(master->pclk);
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index b532e2c..b84acbc 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -901,9 +901,6 @@ static int dw_i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
+ 	       master->regs +
+ 	       DEV_ADDR_TABLE_LOC(master->datstartaddr, data->index));
  
- 	master->sysclk = devm_clk_get(&pdev->dev, "sysclk");
--	if (IS_ERR(master->pclk))
--		return PTR_ERR(master->pclk);
-+	if (IS_ERR(master->sysclk))
-+		return PTR_ERR(master->sysclk);
+-	if (!old_dyn_addr)
+-		return 0;
+-
+ 	master->addrs[data->index] = dev->info.dyn_addr;
  
- 	irq = platform_get_irq(pdev, 0);
- 	if (irq < 0)
+ 	return 0;
+@@ -925,11 +922,11 @@ static int dw_i3c_master_attach_i3c_dev(struct i3c_dev_desc *dev)
+ 		return -ENOMEM;
+ 
+ 	data->index = pos;
+-	master->addrs[pos] = dev->info.dyn_addr;
++	master->addrs[pos] = dev->info.dyn_addr ?: dev->info.static_addr;
+ 	master->free_pos &= ~BIT(pos);
+ 	i3c_dev_set_master_data(dev, data);
+ 
+-	writel(DEV_ADDR_TABLE_DYNAMIC_ADDR(dev->info.dyn_addr),
++	writel(DEV_ADDR_TABLE_DYNAMIC_ADDR(master->addrs[pos]),
+ 	       master->regs +
+ 	       DEV_ADDR_TABLE_LOC(master->datstartaddr, data->index));
+ 
 -- 
-2.19.1
+2.7.4
 
 
 _______________________________________________
