@@ -2,86 +2,70 @@ Return-Path: <SRS0=5ZYP=PS=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-11.5 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+X-Spam-Status: No, score=-13.5 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SIGNED_OFF_BY,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
-	version=3.4.0
+	SIGNED_OFF_BY,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 41696C43387
-	for <linux-i3c@archiver.kernel.org>; Thu, 10 Jan 2019 15:16:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A42D8C43387
+	for <linux-i3c@archiver.kernel.org>; Thu, 10 Jan 2019 15:35:07 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 10EC9214DA
-	for <linux-i3c@archiver.kernel.org>; Thu, 10 Jan 2019 15:16:29 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 72C4B214C6
+	for <linux-i3c@archiver.kernel.org>; Thu, 10 Jan 2019 15:35:07 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="uVNhdSNI";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="gqsqj2eV"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 10EC9214DA
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="Bnq8gZQ5";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="ldpz9rKE"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 72C4B214C6
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l1j14jx9l/U+Vod8FAAkNurh8etLoLBiM0xk85MjyWA=; b=uVNhdSNId/leum
-	wOyp5petzqKbPZy9AvbyMiv1Xm4q/dwzHgoU0gJiXtai/j4OEmP2CtMs968Jr6Raz/vbk8c71TVCY
-	jDKs+JQcHCQZCvPIjN8LszAnhan/UluVGaKqn4+L4eG2cMl/rMB3XwxQ+exFCnEM1xeY9+jkIGkIH
-	IS74k2MthmyYu+p+tgHwjGSIoZ0vz2zXKSOgkRoxWGPkdBpa4kl1zm/wHyS6R621hS9c4PKhpDBLM
-	zT7ClxK4RPCLR7+5gyh9DoivKAulbXXoefazogtAQQPyDNaxqEtocTRjmJ7q7xulIrBOOZJD9UldG
-	UhXDvciqQ6wfVIUwUbow==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=iDokrOoFd3gwBl8foEuxVNe0mDVc37UFO2SqqurxL70=; b=Bnq
+	8gZQ5mRSkdE4By7TtSz/lAWUl+q6AOB4XyaVhhgSwyxPrB658BJtfhdMR4BqgIghgtDshXN+XacjH
+	Xhtv9W5JAp7/Xah4JLL3RFxMv8NWA9a81D9ETzoAGONsnhar4r1HOf8a2WlT1OiaRRhgI3zb7XjU0
+	cqZpFmTQL5CuUKSJfAM1qG3lMEXD8FyClFW0Uxupj7WhB+Q7TUxTUxJfGf29Dz58wh6smwFtGITBT
+	youwMe2d0/QwenS3YaGjcwBbrGDbJbjqKOeDNa/Y5SeUphgx/Q5xL7MMzsF/riHledCHuSKZ2eB6w
+	h3nioe9skOnRPeE6blo8ddosjAXssOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1ghc4J-0003Zl-KT; Thu, 10 Jan 2019 15:16:27 +0000
-Received: from us01smtprelay-2.synopsys.com ([198.182.60.111]
+	id 1ghcMM-0001gr-T9; Thu, 10 Jan 2019 15:35:06 +0000
+Received: from smtprelay2.synopsys.com ([198.182.60.111]
  helo=smtprelay.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1ghc47-0003LH-Ua
- for linux-i3c@lists.infradead.org; Thu, 10 Jan 2019 15:16:19 +0000
+ id 1ghcMK-000191-PO
+ for linux-i3c@lists.infradead.org; Thu, 10 Jan 2019 15:35:06 +0000
 Received: from mailhost.synopsys.com (mailhost1.synopsys.com [10.12.238.239])
- by smtprelay.synopsys.com (Postfix) with ESMTP id 7DF3C10C0AE2;
- Thu, 10 Jan 2019 07:16:12 -0800 (PST)
+ by smtprelay.synopsys.com (Postfix) with ESMTP id E385510C125F;
+ Thu, 10 Jan 2019 07:35:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1547133372; bh=egLuX8E4ilRS7rKST4GSkxfiChUsc7W5IvknoV+ihTc=;
- h=Subject:To:CC:References:From:Date:In-Reply-To:From;
- b=gqsqj2eVqgRjjvoxQ5sjTIZ1MBIbKPQ6XjYBXRFlgxzL5gNK3v6l5uCDhlEIrhYn2
- /kmnqg1Va/ckV3n2mgQl7S+DU4Qk/m0aid7CIAok40JTKXRdem+sJFTu208b9wPZsd
- WnCb1i8rLeO0PLBGVfFSGA+cfCBvC6dDNOn1G+Ba9L9YIjZpHivr8Ly439cRWfrmF5
- +/W62NW1PHkKYxeL/vvHCXuV4c/aMRYPvFAKT/CN0bhgdLW7nGSXBVW1ze2BBaQABB
- 6eGWZ+DEyp1D5S5XZkxjU4shWf0DsCw2x6w9pk8SXqRmKvlTchzRq4iRb/4aII9NVk
- agzEMJkhyctwA==
-Received: from US01WXQAHTC1.internal.synopsys.com
- (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
- by mailhost.synopsys.com (Postfix) with ESMTP id 71F4557E4;
- Thu, 10 Jan 2019 07:16:12 -0800 (PST)
-Received: from DE02WEHTCB.internal.synopsys.com (10.225.19.94) by
- US01WXQAHTC1.internal.synopsys.com (10.12.238.230) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Thu, 10 Jan 2019 07:16:12 -0800
-Received: from DE02WEHTCA.internal.synopsys.com (10.225.19.92) by
- DE02WEHTCB.internal.synopsys.com (10.225.19.94) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Thu, 10 Jan 2019 16:16:10 +0100
-Received: from [10.0.2.15] (10.107.19.92) by DE02WEHTCA.internal.synopsys.com
- (10.225.19.80) with Microsoft SMTP Server (TLS) id 14.3.408.0;
- Thu, 10 Jan 2019 16:16:09 +0100
-Subject: Re: [PATCH] i3c: master: dw-i3c-master: fix i3c_attach/reatach
-To: Boris Brezillon <bbrezillon@kernel.org>,
- Vitor Soares <vitor.soares@synopsys.com>
-References: <2e33e1f72db978f77ced019ae085c972050ca4e9.1547040890.git.vitor.soares@synopsys.com>
- <20190109184846.56c75c3f@bbrezillon>
-From: vitor <vitor.soares@synopsys.com>
-Message-ID: <62425765-2484-b998-7573-685aa4996976@synopsys.com>
-Date: Thu, 10 Jan 2019 15:16:06 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.2.1
-MIME-Version: 1.0
-In-Reply-To: <20190109184846.56c75c3f@bbrezillon>
-Content-Language: en-US
-X-Originating-IP: [10.107.19.92]
+ t=1547134502; bh=8is7arKEt+v6y/W0hvvhRP7Az7DBj/LBbvlYfK7M9KQ=;
+ h=From:To:Cc:Subject:Date:From;
+ b=ldpz9rKEPkQutaTcVzvhoAWXTsI8Jw/jnFcg9yKa2GiYr6aIKQiviAYQzX4KzclDQ
+ gs5e/sgAmyO0xiFDraoD1XhD/68CsHxa+gTS9HIhtT08SBHAw8v1YtBcLEKRuiWtgS
+ 9hfv78syZICvSuE6C1fJDTBCVmEE5wkcqGJb1LkRNTVQvlsnH5z/tXObO1CtRnEWNR
+ HutVz1PRUOKHVChI0W+ORDFa0CUY3rLhlaCAoyuasR82JeMEADoFgpNDr41pYx8Rqn
+ ltt0BETrL97tr+FVy/VYLmWxkOtyFA7wHfDg8PyKuULeFA5TOrKJK0fL/bo4Cv6xXJ
+ MLlgaSn58U6jA==
+Received: from de02dwia024.internal.synopsys.com
+ (de02dwia024.internal.synopsys.com [10.225.19.81])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 0E8D157C0;
+ Thu, 10 Jan 2019 07:35:01 -0800 (PST)
+From: Vitor Soares <vitor.soares@synopsys.com>
+To: linux-i3c@lists.infradead.org
+Subject: [PATCH v2] i3c: master: dw-i3c-master: fix i3c_attach/reattach
+Date: Thu, 10 Jan 2019 16:34:59 +0100
+Message-Id: <0314b6939b1aad59a972e7c3109d01e76b24dc35.1547133644.git.vitor.soares@synopsys.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190110_071616_496925_BF731734 
-X-CRM114-Status: GOOD (  16.08  )
+X-CRM114-CacheID: sfid-20190110_073504_836297_E82AF3E4 
+X-CRM114-Status: UNSURE (   9.77  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,79 +77,64 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: linux-i3c@lists.infradead.org, joao.pinto@synopsys.com
+Cc: joao.pinto@synopsys.com, Vitor Soares <vitor.soares@synopsys.com>,
+ bbrezillon@kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Boris,
+This patch fix i3c_attach/reattach functions.
 
-On 09/01/19 17:48, Boris Brezillon wrote:
-> On Wed,  9 Jan 2019 15:58:05 +0100
-> Vitor Soares <vitor.soares@synopsys.com> wrote:
->
->> This patch fix i3c attach/reatach functions.
->>
->> During the i3c_attach the driver doesn't threat the static address used for
-> 					   ^treat?
->
->> SETDASA CCC command.
-> Or maybe
->
-> "
-> During the i3c_attach the driver *ignores* the static address used for ...
-> "
->
->> During the i3c_reatach the driver doesn't update master->addrs[data->index] with
-> 		 ^reattach
->
->> new address if old_dyn_addr = 0.
->>
-> Missing Fixes tag here:
->
-> Fixes: 1dd728f5d4d4 ("i3c: master: Add driver for Synopsys DesignWare IP")
->
->> Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
->> ---
->>  drivers/i3c/master/dw-i3c-master.c | 7 ++-----
->>  1 file changed, 2 insertions(+), 5 deletions(-)
->>
->> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
->> index b532e2c..b84acbc 100644
->> --- a/drivers/i3c/master/dw-i3c-master.c
->> +++ b/drivers/i3c/master/dw-i3c-master.c
->> @@ -901,9 +901,6 @@ static int dw_i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
->>  	       master->regs +
->>  	       DEV_ADDR_TABLE_LOC(master->datstartaddr, data->index));
->>  
->> -	if (!old_dyn_addr)
->> -		return 0;
->> -
->>  	master->addrs[data->index] = dev->info.dyn_addr;
->>  
->>  	return 0;
->> @@ -925,11 +922,11 @@ static int dw_i3c_master_attach_i3c_dev(struct i3c_dev_desc *dev)
->>  		return -ENOMEM;
->>  
->>  	data->index = pos;
->> -	master->addrs[pos] = dev->info.dyn_addr;
->> +	master->addrs[pos] = dev->info.dyn_addr ?: dev->info.static_addr;
-> 						^ add a space between '?' and ':'
->
->>  	master->free_pos &= ~BIT(pos);
->>  	i3c_dev_set_master_data(dev, data);
->>  
->> -	writel(DEV_ADDR_TABLE_DYNAMIC_ADDR(dev->info.dyn_addr),
->> +	writel(DEV_ADDR_TABLE_DYNAMIC_ADDR(master->addrs[pos]),
->>  	       master->regs +
->>  	       DEV_ADDR_TABLE_LOC(master->datstartaddr, data->index));
->>  
+During the i3c_attach the driver *ignores* the static address used for
+SETDASA CCC command.
 
-Thanks for your feedback. I will fix it and resend.
+During the i3c_reattach the driver doesn't update master->addrs[data->index]
+with new address if old_dyn_addr = 0.
 
-Best regards,
-Vitor Soares
+Fixes: 1dd728f5d4d4 ("i3c: master: Add driver for Synopsys DesignWare IP")
+Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
+---
+Change in V2:
+-Coding style fix
+-Edit commit message with Boris sugestion
+-Add Fixes tag
+
+ drivers/i3c/master/dw-i3c-master.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index b532e2c..f8c00b9 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -901,9 +901,6 @@ static int dw_i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
+ 	       master->regs +
+ 	       DEV_ADDR_TABLE_LOC(master->datstartaddr, data->index));
+ 
+-	if (!old_dyn_addr)
+-		return 0;
+-
+ 	master->addrs[data->index] = dev->info.dyn_addr;
+ 
+ 	return 0;
+@@ -925,11 +922,11 @@ static int dw_i3c_master_attach_i3c_dev(struct i3c_dev_desc *dev)
+ 		return -ENOMEM;
+ 
+ 	data->index = pos;
+-	master->addrs[pos] = dev->info.dyn_addr;
++	master->addrs[pos] = dev->info.dyn_addr ? : dev->info.static_addr;
+ 	master->free_pos &= ~BIT(pos);
+ 	i3c_dev_set_master_data(dev, data);
+ 
+-	writel(DEV_ADDR_TABLE_DYNAMIC_ADDR(dev->info.dyn_addr),
++	writel(DEV_ADDR_TABLE_DYNAMIC_ADDR(master->addrs[pos]),
+ 	       master->regs +
+ 	       DEV_ADDR_TABLE_LOC(master->datstartaddr, data->index));
+ 
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-i3c mailing list
