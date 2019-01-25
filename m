@@ -4,106 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 X-Spam-Level: 
 X-Spam-Status: No, score=-8.1 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SIGNED_OFF_BY,SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no
-	version=3.4.0
+	SIGNED_OFF_BY,SPF_PASS autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 9D54CC282C0
-	for <linux-i3c@archiver.kernel.org>; Fri, 25 Jan 2019 07:42:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 44E03C282C0
+	for <linux-i3c@archiver.kernel.org>; Fri, 25 Jan 2019 11:56:17 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 6A53D218D9
-	for <linux-i3c@archiver.kernel.org>; Fri, 25 Jan 2019 07:42:05 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 0580A218E2
+	for <linux-i3c@archiver.kernel.org>; Fri, 25 Jan 2019 11:56:17 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="Zx42bvn+";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=Synaptics.onmicrosoft.com header.i=@Synaptics.onmicrosoft.com header.b="n78qvGGL"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 6A53D218D9
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=synaptics.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="tkempcwf";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="JYCLunqc"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 0580A218E2
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vLM8N/4xsHKMBy1GgDbQiXvDYW+Lh+1T2Pr1CdOUvxI=; b=Zx42bvn+qTpR8e
-	71JwyuFIFv2D5lT0S4LmD+jum5boYTFbLg9ct/LfAHo5NYJ2mweCwmuw/ZwzkyauXGeFxc9jHmY5E
-	A4juPkZ2JSMikNLlw2MIIS8smpJ7oPqgdN1rfTk2CJNJyzIxNvpZQ92DKeGa+/AcCELFKFcSgajfL
-	1vUK1wC+hxndwRlTDUzPaGq6wt0oLFpwcJE8lCE8j6C0NQgQrfrC4W8xCLu08UstLXkKOlitMLTgu
-	vLjRdeh1XoloNT/VG4ZPgaWGDb4+jBd6rngX0ONq0tj64lJzpur2PnGlguj6QTtRXdiOL34PfC6fS
-	hJ9dx6+7FsZk+MCg/X5A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MMF2yrrssBVRyJt99vsc7lR/1cUVrpJncFgTokff6PQ=; b=tkempcwf9LOsJh
+	frWuuRk4gwcbrGly0fEu401cGvAxkUUawBJk/n+VESvj/ULR8J1bp8xZNkDaDnDeifYOk5x5Y/tq5
+	9D5IZ0tzWVuRPdI+TwoKPzkfugavMcRaFzvy77iAn9wx/HLTmKQqrAEvtx4XcyNvR/AmynPl90eNO
+	uQxYqXBTt9Bn2sdNxPMvVq2dg7gT4XKWgsWvKmrcawj+skJl0UrpcZ7DFYZTL23F25v+03gs6Anug
+	iLpZujwJ7QoEt8/7PIDD1voldxukpH0ryz3lCqJdP02ITo1l9N815llfeF/epGzC5UGpKtjg5fFeT
+	pIwmlNfUXIs92zEZOjpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1gmw7o-0002Vn-Po; Fri, 25 Jan 2019 07:42:04 +0000
-Received: from mail-eopbgr720089.outbound.protection.outlook.com
- ([40.107.72.89] helo=NAM05-CO1-obe.outbound.protection.outlook.com)
+	id 1gn05o-0004Yn-7O; Fri, 25 Jan 2019 11:56:16 +0000
+Received: from us01smtprelay-2.synopsys.com ([198.182.47.9]
+ helo=smtprelay.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1gmw6N-00027P-Kh; Fri, 25 Jan 2019 07:40:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=Synaptics.onmicrosoft.com; s=selector1-synaptics-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ZK4fBTFSIMw6I8Ka1Z2zTKEC1C8kcDFKFZd6k3RITMg=;
- b=n78qvGGL6SBcx67UW62KyG9ldTdFg4cC7C6UfKiGFcHRlIHU0wl8KmyCnvO1S4b5v5pFc6vdjMQqJHOMahv/cSLS3/zAw7il4Kqf+rPaQeR6saXCiYDZ9CwRjl7DFz3tjFIw4LynRa0RiDPoWQEvhp0ULLOXkgnEKAgc/4+yUmI=
-Received: from SN6PR03MB4398.namprd03.prod.outlook.com (20.177.255.219) by
- SN6PR03MB3503.namprd03.prod.outlook.com (52.135.79.32) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1558.16; Fri, 25 Jan 2019 07:40:32 +0000
-Received: from SN6PR03MB4398.namprd03.prod.outlook.com
- ([fe80::59c4:7034:c325:36f]) by SN6PR03MB4398.namprd03.prod.outlook.com
- ([fe80::59c4:7034:c325:36f%2]) with mapi id 15.20.1558.021; Fri, 25 Jan 2019
- 07:40:32 +0000
-From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-To: Boris Brezillon <bbrezillon@kernel.org>
-Subject: [PATCH] i3c: fix missing detach if failed to retrieve i3c dev
-Thread-Topic: [PATCH] i3c: fix missing detach if failed to retrieve i3c dev
-Thread-Index: AQHUtIFA6VlT+4CX00GLhIOQTsp/gQ==
-Date: Fri, 25 Jan 2019 07:40:32 +0000
-Message-ID: <20190125153420.0533d156@xhacker.debian>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [199.33.119.15]
-x-clientproxiedby: TY2PR01CA0050.jpnprd01.prod.outlook.com
- (2603:1096:404:10a::14) To SN6PR03MB4398.namprd03.prod.outlook.com
- (2603:10b6:805:fd::27)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Jisheng.Zhang@synaptics.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-x-ms-publictraffictype: Email
-x-microsoft-exchange-diagnostics: 1; SN6PR03MB3503;
- 6:tEXvl7wQxAEhWUYlFoTUXRTnMDfPjustfN8m7A7FKr1CHoSFJlpBgP1cmYfVfWV+aloT2+B7aVF+xvnrgfLufThqfL/W1/IHtCzUhNUePKZRj3IC2I453qULJsH0+EkuF84dLFYR3x9+nOyYmRX2/4jhJimNMk2es8a0pY28ut1mJo11d9zlJvvxlSTG09ihwyR5LnO3RtHwZH+err4/IprOB5bG4V2DaKPoO02wiBx1SwbOaQEsMKPhu02TaxEofeI1VkPkfKGqyGh6fY3f/2k79sReygNJFfcN+kn3Kwh8ll1EftYRVqMpSiwQvc5FtmKJF9nKwgHmMDoRgWu+m6arGf7Qrkw0kwd5fD3Qv8k2Ydj8f4Diony24HNTMLn63C0dor19AkqZbIzkab8KY4d185E01LPWoLHbVr1qjhnPH7NkVEMPO3QlZ9jFeOQXtGupK6BZ93pqd0uFaas9+g==;
- 5:avtHNqSHmZYpnPA7zfsOKI/NBj/6iUWGEVzK8mzy1cOqso2VaE4HMrOfQRFZ+Kwt58SFrIplATaaxkQXcSFYQ7+WQ59syqNEKbqgSLb+wA/JlbyiogJGXuXKVPgxHPeJVCGuVQr9pm/hxFygs+l/ViBd3+DYx4QNfjCv0UvLwW5uMH5j4cnR6BwOnu3uLQzjN4iFuE56qMQxsryYTSpAAw==;
- 7:GEE72wAk0lP/T8thRgEdWeJxu+JEAmbnBy5UtRvgBm2DqZdrhif5G7Q+qLQZrOAsmB513GKPVuSabT0T8xuQQrzyMM1imgBsuJeCQD8rdHyvrns6mjtFjoBKWrjkko0weriweG4Y/1zt16hKMHzC1A==
-x-ms-office365-filtering-correlation-id: d7ebe86a-1922-4e21-c944-08d6829862a1
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600110)(711020)(4605077)(2017052603328)(7153060)(7193020);
- SRVR:SN6PR03MB3503; 
-x-ms-traffictypediagnostic: SN6PR03MB3503:
-x-microsoft-antispam-prvs: <SN6PR03MB3503C30113AB4D14DB89C907ED9B0@SN6PR03MB3503.namprd03.prod.outlook.com>
-x-forefront-prvs: 0928072091
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(396003)(136003)(39860400002)(376002)(346002)(189003)(199004)(486006)(3846002)(6116002)(476003)(53936002)(68736007)(7736002)(305945005)(25786009)(50226002)(105586002)(8936002)(4326008)(81166006)(8676002)(66066001)(81156014)(86362001)(6916009)(106356001)(6436002)(6486002)(97736004)(72206003)(99286004)(14454004)(386003)(6506007)(2906002)(9686003)(6512007)(4744005)(186003)(316002)(102836004)(26005)(54906003)(1076003)(256004)(14444005)(71190400001)(71200400001)(52116002)(478600001)(33896004)(42413003)(39210200001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:SN6PR03MB3503;
- H:SN6PR03MB4398.namprd03.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:0; 
-received-spf: None (protection.outlook.com: synaptics.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: YKB4J5r6KxxAVsb6VsAA4a64m6JgJwsTKU4m1Oes5sOGcbBBoMb9udzk98Ro/IJlLvMobquRVvmIfsL27lmGjC6scK4y/d2ryfATNpvZxKmdUphmuTavCuBBrXuyHVfTZCUeTDlEZ6uPak6TcveaaVillO6Hrv9mdKfHVdvFde/cdF2JofgQkZD0rNBFelEhp3srVgU8cYvrzfXF4JeoQNP0OTkiTKeoyy5vFZDvopXuZxA5g1LkLDCjHVIyt8F6vwMS6dD6smHhXSBLbLECVtojxYVGx0bvhRNpO386n3HQGvM9hnAcqxST5vTI6T9R7dz2GpVYf7pUZ9p3GGngs5KFS+l02PZ1wcB+xyqMOCmdWxTSA33+hRPFQUbIAfCbs21QuPLyefnD7QD0CWwGkkVWPXRu5QrvPOnFfiv6ayc=
-Content-ID: <6910436CE5444249A38A01E2D35CC120@namprd03.prod.outlook.com>
+ id 1gn05Z-0004LF-LQ; Fri, 25 Jan 2019 11:56:03 +0000
+Received: from mailhost.synopsys.com (badc-mailhost1.synopsys.com
+ [10.192.0.17])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay.synopsys.com (Postfix) with ESMTPS id B62EE24E1F01;
+ Fri, 25 Jan 2019 03:55:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1548417358; bh=sLzsIhrHvnKuCoZpk2jbAO+U4ETDaqmUABewGzbAhzA=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To:From;
+ b=JYCLunqcNvalhBK2S/mHJvCbRb2d4tzRXaSFmbaco84rirEBfUJ32hW2m8gP1DD+T
+ UwwTLXTbBUTeBNugz/ZsPEPuhRTzIicH3Nz/2NFpom6pv4e8zyy4sa9dFDE0RZXCge
+ Cez8TmfzAhzb7Vp63YDPYgi9VECs1+uE0GGtACzYch9VxIswGH2+uIaFdW5qTHGVz3
+ JN0VHsGrDfNvVfGiycPqrg2UoxKi82cN693apNVokWOKwdQRYbRtYHc4pmzh2G41Sl
+ has0AwyZcIWJG154QEhjSXVYQqMt6uXYJJTT2ka4u4gioX1udlTl0v44CtuH52MBtF
+ fo/J9eGprqenA==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id ADBCDA0071;
+ Fri, 25 Jan 2019 11:55:56 +0000 (UTC)
+Received: from DE02WEHTCB.internal.synopsys.com (10.225.19.94) by
+ US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Fri, 25 Jan 2019 03:55:56 -0800
+Received: from DE02WEHTCA.internal.synopsys.com (10.225.19.92) by
+ DE02WEHTCB.internal.synopsys.com (10.225.19.94) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Fri, 25 Jan 2019 12:55:55 +0100
+Received: from [10.0.2.15] (10.107.19.109) by DE02WEHTCA.internal.synopsys.com
+ (10.225.19.80) with Microsoft SMTP Server (TLS) id 14.3.408.0;
+ Fri, 25 Jan 2019 12:55:55 +0100
+Subject: Re: [PATCH] i3c: master: dw: fix deadlock
+To: Jisheng Zhang <Jisheng.Zhang@synaptics.com>,
+ Vitor Soares <vitor.soares@synopsys.com>,
+ Boris Brezillon <bbrezillon@kernel.org>
+References: <20190125152300.248d58f4@xhacker.debian>
+From: vitor <vitor.soares@synopsys.com>
+Message-ID: <54d8926f-f0fd-c2c7-1b8a-dce1384892b7@synopsys.com>
+Date: Fri, 25 Jan 2019 11:55:50 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.4.0
 MIME-Version: 1.0
-X-OriginatorOrg: synaptics.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d7ebe86a-1922-4e21-c944-08d6829862a1
-X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Jan 2019 07:40:30.7454 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 335d1fbc-2124-4173-9863-17e7051a2a0e
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR03MB3503
+In-Reply-To: <20190125152300.248d58f4@xhacker.debian>
+Content-Language: en-US
+X-Originating-IP: [10.107.19.109]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190124_234035_677596_73286EDD 
-X-CRM114-Status: GOOD (  10.51  )
-X-Mailman-Approved-At: Thu, 24 Jan 2019 23:42:03 -0800
+X-CRM114-CacheID: sfid-20190125_035601_705632_7C218FCE 
+X-CRM114-Status: GOOD (  16.25  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -118,37 +99,51 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
 Cc: "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-If we failed to retrieve the i3c dev, we should detach the i3c dev
-I.E i3c_master_detach_i3c_dev().
-
-Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
----
- drivers/i3c/master.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index c39f89d2deba..2dc628d4f1ae 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -1828,7 +1828,7 @@ int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
- 
- 	ret = i3c_master_retrieve_dev_info(newdev);
- 	if (ret)
--		goto err_free_dev;
-+		goto err_detach_dev;
- 
- 	olddev = i3c_master_search_i3c_dev_duplicate(newdev);
- 	if (olddev) {
--- 
-2.20.1
-
-
-_______________________________________________
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+SGkgSmlzaGVuZywKClRoYW5rcyBmb3IgeW91ciByZXBvcnQuCgpPbiAyNS8wMS8xOSAwNzoyOSwg
+SmlzaGVuZyBaaGFuZyB3cm90ZToKPiBJbiBkd19pM2NfbWFzdGVyX2lycV9oYW5kbGVyKCksIHdl
+IGFscmVhZHkgaGF2ZSBnb3R0ZW4KPiAmbWFzdGVyLT54ZmVycXVldWUubG9jaywgaWYgd2UgdHJ5
+IHRvIGdldCB0aGUgc2FtZSBsb2NrIGFnYWluIGluCj4gZHdfaTNjX21hc3Rlcl9kZXF1ZXVlX3hm
+ZXIoKSwgZGVhZGxvY2sgaGFwcGVucy4KPgo+IFdlIGZpeCB0aGlzIGlzc3VlIGJ5IGludHJvZHVp
+bmcgZHdfaTNjX21hc3Rlcl9kZXF1ZXVlX3hmZXJfbG9ja2VkKCkKPiB3aGljaCBkb2VzIGFsbCB3
+aGF0IGR3X2kzY19tYXN0ZXJfZGVxdWV1ZV94ZmVyKCkgZG9lcyB3aXRob3V0IHRyeWluZwo+IHRv
+IGxvY2sgJm1hc3Rlci0+eGZlcnF1ZXVlLmxvY2suCj4KPiBTaWduZWQtb2ZmLWJ5OiBKaXNoZW5n
+IFpoYW5nIDxKaXNoZW5nLlpoYW5nQHN5bmFwdGljcy5jb20+Cj4gLS0tCj4gIGRyaXZlcnMvaTNj
+L21hc3Rlci9kdy1pM2MtbWFzdGVyLmMgfCAxOCArKysrKysrKysrKystLS0tLS0KPiAgMSBmaWxl
+IGNoYW5nZWQsIDEyIGluc2VydGlvbnMoKyksIDYgZGVsZXRpb25zKC0pCj4KPiBkaWZmIC0tZ2l0
+IGEvZHJpdmVycy9pM2MvbWFzdGVyL2R3LWkzYy1tYXN0ZXIuYyBiL2RyaXZlcnMvaTNjL21hc3Rl
+ci9kdy1pM2MtbWFzdGVyLmMKPiBpbmRleCBmOGMwMGI5NDgxN2YuLmJiMDMwNzlmYmFkZSAxMDA2
+NDQKPiAtLS0gYS9kcml2ZXJzL2kzYy9tYXN0ZXIvZHctaTNjLW1hc3Rlci5jCj4gKysrIGIvZHJp
+dmVycy9pM2MvbWFzdGVyL2R3LWkzYy1tYXN0ZXIuYwo+IEBAIC00MTksMTIgKzQxOSw5IEBAIHN0
+YXRpYyB2b2lkIGR3X2kzY19tYXN0ZXJfZW5xdWV1ZV94ZmVyKHN0cnVjdCBkd19pM2NfbWFzdGVy
+ICptYXN0ZXIsCj4gIAlzcGluX3VubG9ja19pcnFyZXN0b3JlKCZtYXN0ZXItPnhmZXJxdWV1ZS5s
+b2NrLCBmbGFncyk7Cj4gIH0KPiAgCj4gLXN0YXRpYyB2b2lkIGR3X2kzY19tYXN0ZXJfZGVxdWV1
+ZV94ZmVyKHN0cnVjdCBkd19pM2NfbWFzdGVyICptYXN0ZXIsCj4gLQkJCQkgICAgICAgc3RydWN0
+IGR3X2kzY194ZmVyICp4ZmVyKQo+ICtzdGF0aWMgdm9pZCBkd19pM2NfbWFzdGVyX2RlcXVldWVf
+eGZlcl9sb2NrZWQoc3RydWN0IGR3X2kzY19tYXN0ZXIgKm1hc3RlciwKPiArCQkJCQkgICAgICBz
+dHJ1Y3QgZHdfaTNjX3hmZXIgKnhmZXIpCj4gIHsKPiAtCXVuc2lnbmVkIGxvbmcgZmxhZ3M7Cj4g
+LQo+IC0Jc3Bpbl9sb2NrX2lycXNhdmUoJm1hc3Rlci0+eGZlcnF1ZXVlLmxvY2ssIGZsYWdzKTsK
+PiAgCWlmIChtYXN0ZXItPnhmZXJxdWV1ZS5jdXIgPT0geGZlcikgewo+ICAJCXUzMiBzdGF0dXM7
+Cj4gIAo+IEBAIC00MzksNiArNDM2LDE1IEBAIHN0YXRpYyB2b2lkIGR3X2kzY19tYXN0ZXJfZGVx
+dWV1ZV94ZmVyKHN0cnVjdCBkd19pM2NfbWFzdGVyICptYXN0ZXIsCj4gIAl9IGVsc2Ugewo+ICAJ
+CWxpc3RfZGVsX2luaXQoJnhmZXItPm5vZGUpOwo+ICAJfQo+ICt9Cj4gKwo+ICtzdGF0aWMgdm9p
+ZCBkd19pM2NfbWFzdGVyX2RlcXVldWVfeGZlcihzdHJ1Y3QgZHdfaTNjX21hc3RlciAqbWFzdGVy
+LAo+ICsJCQkJICAgICAgIHN0cnVjdCBkd19pM2NfeGZlciAqeGZlcikKPiArewo+ICsJdW5zaWdu
+ZWQgbG9uZyBmbGFnczsKPiArCj4gKwlzcGluX2xvY2tfaXJxc2F2ZSgmbWFzdGVyLT54ZmVycXVl
+dWUubG9jaywgZmxhZ3MpOwo+ICsJZHdfaTNjX21hc3Rlcl9kZXF1ZXVlX3hmZXJfbG9ja2VkKG1h
+c3RlciwgeGZlcik7Cj4gIAlzcGluX3VubG9ja19pcnFyZXN0b3JlKCZtYXN0ZXItPnhmZXJxdWV1
+ZS5sb2NrLCBmbGFncyk7Cj4gIH0KPiAgCj4gQEAgLTQ5NCw3ICs1MDAsNyBAQCBzdGF0aWMgdm9p
+ZCBkd19pM2NfbWFzdGVyX2VuZF94ZmVyX2xvY2tlZChzdHJ1Y3QgZHdfaTNjX21hc3RlciAqbWFz
+dGVyLCB1MzIgaXNyKQo+ICAJY29tcGxldGUoJnhmZXItPmNvbXApOwo+ICAKPiAgCWlmIChyZXQg
+PCAwKSB7Cj4gLQkJZHdfaTNjX21hc3Rlcl9kZXF1ZXVlX3hmZXIobWFzdGVyLCB4ZmVyKTsKPiAr
+CQlkd19pM2NfbWFzdGVyX2RlcXVldWVfeGZlcl9sb2NrZWQobWFzdGVyLCB4ZmVyKTsKPiAgCQl3
+cml0ZWwocmVhZGwobWFzdGVyLT5yZWdzICsgREVWSUNFX0NUUkwpIHwgREVWX0NUUkxfUkVTVU1F
+LAo+ICAJCSAgICAgICBtYXN0ZXItPnJlZ3MgKyBERVZJQ0VfQ1RSTCk7Cj4gIAl9CkFja2VkLWJ5
+OsKgVml0b3LCoFNvYXJlc8KgPHZpdG9yLnNvYXJlc0BzeW5vcHN5cy5jb20+CgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1pM2MgbWFpbGluZyBs
+aXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNjCg==
