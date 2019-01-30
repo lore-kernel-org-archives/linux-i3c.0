@@ -2,70 +2,67 @@ Return-Path: <SRS0=WTHI=QG=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,MAILING_LIST_MULTI,SPF_PASS autolearn=ham autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-14.0 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,INCLUDES_PATCH,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,
+	SIGNED_OFF_BY,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 315E2C282D4
-	for <linux-i3c@archiver.kernel.org>; Wed, 30 Jan 2019 07:56:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 97AF9C282D5
+	for <linux-i3c@archiver.kernel.org>; Wed, 30 Jan 2019 08:21:34 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id F36C120882
-	for <linux-i3c@archiver.kernel.org>; Wed, 30 Jan 2019 07:56:44 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 661682087F
+	for <linux-i3c@archiver.kernel.org>; Wed, 30 Jan 2019 08:21:34 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="Cb+vl2dT";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=kernel.org header.i=@kernel.org header.b="t7xfm6Qf"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org F36C120882
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="VGInX9B2";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=kernel.org header.i=@kernel.org header.b="H6rAwXpN"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 661682087F
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+eSEMMCsq50iU4IUFnfF3p8TB08maqImk+TiWfHAR1U=; b=Cb+vl2dTST9Q0S
-	aCqR+rgm05zwmKA7hPH+OR+TyDY2YqonrrQVLcej+9mNdvb14moPFkV0tqfvRhOUy9cbHNR74hgxm
-	DPeteTJvSEIoz2o5ygjQm94Glm+Nmg5CFF+nXGaH22yxqCTstMPj+5VyF84gPoqa1aDqyy9JYjRK3
-	xZblBzsS4zlNrzDP1loLkQNQWb2T7tB7qXN2uoivKRCvOXoPuwz6yc3ZFnYreDyxs+MvCdcJP5O5B
-	4vW0f57KQcQM976ho2+d5Oc9VtG/NjgC/ODuaCxftbTGV+llASXZ+mFHFJp8H+JUBxWGk1zk9XTfG
-	MFwUsF70usHYUyEKPxpg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=mvOi/lzdrovXPHhPUYJ4TSng+D7BSMkJ9Pec90C5L5o=; b=VGI
+	nX9B2VxdFd6pV6Yo+/Nzb7ZgvXesuub3Ge1Kzs6VNgfcprJRzw+HLDh2e8ooiiN8EXAxy584IN3Jc
+	VOT17ICda52jeNe4OWxTb9wSkEc4NoGAq+rGNYuYqjnlulavG51VEPSSA7TG7gIpg+gGLtareHs4F
+	MauqSSI9Uwsdar7LY+ZHJZeUfeGOVD0tD2ZohZaA+xZ7QNqRqewYsfSJ/yXwP/VZsG4M1WCQ/jS5m
+	/3u++9U2KDBuA74d33lzdX6BHYs3Zci5tjmeQrDo9a5VGZVa5tUEytSaBlZvAjsl3ScdCQIaX7lOt
+	PNIxOGRxkgztddjsTSpc91Zf2JYVHIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1gokjk-0002Ac-Js; Wed, 30 Jan 2019 07:56:44 +0000
+	id 1gol7m-00035K-1D; Wed, 30 Jan 2019 08:21:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1gokjc-0002A9-2t
- for linux-i3c@lists.infradead.org; Wed, 30 Jan 2019 07:56:43 +0000
-Received: from bbrezillon (91-160-177-164.subs.proxad.net [91.160.177.164])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1gol7i-000352-PM
+ for linux-i3c@lists.infradead.org; Wed, 30 Jan 2019 08:21:32 +0000
+Received: from localhost.localdomain (91-160-177-164.subs.proxad.net
+ [91.160.177.164])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3C4AA20882;
- Wed, 30 Jan 2019 07:56:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6CF922087F;
+ Wed, 30 Jan 2019 08:21:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1548834995;
- bh=HBqwdX/ogc4xX+WI9fyRMynoctB4Z09wRdmB2GIQUy4=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=t7xfm6Qf5vUj4g9MkzWgEkh8YoaB1m+IO0tB7pE5YtU8gp1Z7Z3vknl6Ia7TZrqMI
- rX3HDrnEwc0rhgSVMe0zZfVcUkCBvHxVhWy4dQs0YhkZ+QKaY5yldTqritQpI55IvV
- epCY72VvAygvv+W+sTs479UBmEiJyHNWukVSs+U0=
-Date: Wed, 30 Jan 2019 08:56:26 +0100
+ s=default; t=1548836489;
+ bh=drqORmh8SjL8JRdhJnSs/Un8W613PATqh97qSiBAjcY=;
+ h=From:To:Cc:Subject:Date:From;
+ b=H6rAwXpNU/bMyBDg5o33a3F1ege/5q5iJJzQZD6WINYZAVdSWtNJsGVStoPnfSfP0
+ fA4NhPj/iPmRRiUXN4ml1wAMx77c6DmMADSnBHeMKdT1aQlfwUd+K5bGq7dszFk5A7
+ tLHoHP2QzwUMAe52eDOFSV+APlLSvD9cj+qj0vH8=
 From: Boris Brezillon <bbrezillon@kernel.org>
-To: Przemyslaw Gaj <pgaj@cadence.com>
-Subject: Re: [PATCH v2 1/3] i3c: Add support for mastership request to I3C
- subsystem
-Message-ID: <20190130085626.7576b311@bbrezillon>
-In-Reply-To: <20190129181335.GA8271@global.cadence.com>
-References: <cover.1547227861.git.pgaj@cadence.com>
- <1eca82e2d7bbff19597b78a3ce1ad62273015529.1547227861.git.pgaj@cadence.com>
- <20190115220953.400d06e7@bbrezillon>
- <20190129181335.GA8271@global.cadence.com>
-X-Mailer: Claws Mail 3.16.0 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-MIME-Version: 1.0
+To: Boris Brezillon <bbrezillon@kernel.org>,
+	linux-i3c@lists.infradead.org
+Subject: [PATCH] MAINTAINERS: Add an IRC channel for the I3C subsystem
+Date: Wed, 30 Jan 2019 09:21:22 +0100
+Message-Id: <20190130082122.5636-1-bbrezillon@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190129_235639_683090_C0A879A3 
-X-CRM114-Status: GOOD (  18.15  )
+X-CRM114-CacheID: sfid-20190130_002130_837596_837A2BF4 
+X-CRM114-Status: UNSURE (   8.00  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -77,97 +74,36 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: linux-i3c@lists.infradead.org, psroka@cadence.com, rafalc@cadence.com,
- vitor.soares@synopsys.com
+Cc: Przemyslaw Gaj <pgaj@cadence.com>, Vitor Soares <vitor.soares@synopsys.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, 29 Jan 2019 18:13:37 +0000
-Przemyslaw Gaj <pgaj@cadence.com> wrote:
+The #linux-i3c chan has been created on freenode to discuss I3C related
+topics.
 
-> The 01/15/2019 22:09, Boris Brezillon wrote:
-> > EXTERNAL MAIL
-> > 
-> > 
-> > On Fri, 11 Jan 2019 17:43:35 +0000
-> > Przemyslaw Gaj <pgaj@cadence.com> wrote:
-> >   
-> > > +		i3c_bus_normaluse_unlock(i3cbus);
-> > > +	}
-> > > +
-> > >  	i3c_bus_normaluse_lock(i3cbus);
-> > >  	ret = sprintf(buf, "%d-%llx\n", i3cbus->id,
-> > >  		      i3cbus->cur_master->info.pid);
-> > > @@ -663,6 +728,12 @@ static int i3c_master_send_ccc_cmd_locked(struct i3c_master_controller *master,
-> > >  		    !rwsem_is_locked(&master->bus.lock)))
-> > >  		return -EINVAL;
-> > >  
-> > > +	if (!i3c_master_owns_bus(master)) {
-> > > +		ret = i3c_master_request_mastership(master);
-> > > +		if (ret)
-> > > +			return ret;
-> > > +	}  
-> > 
-> > As I said above, I think bus ownership should be requested in
-> > maintenance mode, which means it has to be done before entering this
-> > function. You can probably start acquiring the lock in write (AKA
-> > maintenance) mode and downgrade it to read (AKA normal) mode before we
-> > start sending the frame (CCC, SDR, I2C or HDR). 
-> >   
-> 
-> So, I'll have to call all the _locked functions with maintenance lock.
-> Inside i3c_master_send_ccc_cmd_locked() I will downgrade the lock to read
-> (normal use).
+Signed-off-by: Boris Brezillon <bbrezillon@kernel.org>
+---
+ MAINTAINERS | 1 +
+ 1 file changed, 1 insertion(+)
 
-No, definitely not. The prefix _locked() means that the lock has been
-acquired by the caller, and the function itself is not responsible for
-downgrading the lock. What I meant is that the
-i3c_master_owns_bus()+i3c_master_request_mastership() sequence does not
-belong in xxxx_locked() funcs. It should be done by the caller with the
-lock held in write/maintenance mode, and then downgraded to a read/normal
-lock once the bus has been acquired. i3c_master_send_ccc_cmd_locked()
-was probably not the best example, as this function might be
-intentionally called with the lock held in write/maintenance mode
-sometimes (depends on the CCC command), but for other funcs, it should
-be pretty easy to do:
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 51029a425dbe..ce1380284e82 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -7163,6 +7163,7 @@ F:	drivers/i2c/i2c-stub.c
+ I3C SUBSYSTEM
+ M:	Boris Brezillon <bbrezillon@kernel.org>
+ L:	linux-i3c@lists.infradead.org
++C:	irc://chat.freenode.net/linux-i3c
+ T:	git git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git
+ S:	Maintained
+ F:	Documentation/ABI/testing/sysfs-bus-i3c
+-- 
+2.17.1
 
-int i3c_master_acquire_bus_ownership_locked(struct i3c_master_controller *master)
-{
-	if (i3c_master_owns_bus(master))
-		return 0;
-
-	return i3c_master_request_mastership(master);
-}
-
-int i3c_device_do_priv_xfers(struct i3c_device *dev,
-			     struct i3c_priv_xfer *xfers,
-			     int nxfers)
-{
-	...
-
-	i3c_bus_maintenance_lock(dev->bus);
-	ret = i3c_master_acquire_bus_ownership(master);
-	if (ret) {
-		i3c_bus_maintenance_unlock(dev->bus);
-		return ret;
-	}
-
-	i3c_bus_downgrade_maintenance_lock(dev->bus);
-	ret = i3c_dev_do_priv_xfers_locked(dev->desc, xfers, nxfers);
-	i3c_bus_normaluse_unlock(dev->bus);
-
-	return ret;
-} 
-
-> Isn't it inconsistent that after _locked functions I will
-> unlock the bus from normal use, even if I locked it for maintenance?> 
-> Also, I will have to downgrade the lock in case of failure in all _locked
-> functions to unlock the bus properly using i3c_bus_normaluse_lock(). DO you
-> think this looks good?
-
-No, see above for an explanation.
 
 _______________________________________________
 linux-i3c mailing list
