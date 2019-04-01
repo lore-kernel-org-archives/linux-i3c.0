@@ -2,20 +2,20 @@ Return-Path: <SRS0=6/zw=SD=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-4.0 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+X-Spam-Status: No, score=-7.0 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no version=3.4.0
+	SIGNED_OFF_BY,SPF_PASS autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id EEB32C43381
-	for <linux-i3c@archiver.kernel.org>; Mon,  1 Apr 2019 19:18:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 8B675C43381
+	for <linux-i3c@archiver.kernel.org>; Mon,  1 Apr 2019 19:25:00 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id B0EB22084B
-	for <linux-i3c@archiver.kernel.org>; Mon,  1 Apr 2019 19:18:50 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 574A420857
+	for <linux-i3c@archiver.kernel.org>; Mon,  1 Apr 2019 19:25:00 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="IVmBYSVS"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org B0EB22084B
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="H7G/lK61"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 574A420857
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=collabora.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -24,41 +24,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=shwl4EiPYVqQ0Y+v4Q7/OXXpNVRP3c4NH3yDGDVPfbM=; b=IVmBYSVSeTruJ6
-	MXjwPerKPryahyV5XtGdzqjQ/aftmO61hO/dju2kl2765ir9ssL2rc1lOZb2w5vV3Vm2L2HQ+vyYM
-	hWc9okQj9tHgJXlxMy4V3RSukpyAuHcSh6QPYrWZgWvYncL77OBSAnay+eaRZ5cRQJAYtyX9Rla0F
-	9D6VSG8EMWlq9tPWFAHAVcijm/znhpx5hJd+l/2/ZAh7b2MUj99ZITlrB2Z5grpON5Py63fkCoBy0
-	dvHwtd7IqGr8JTIWF2q2N4hYS7VIabHf8Hfz05KFh7uzq4FAIS4dzKHhgu6i7UHoNpsY/Go/8TEWS
-	biMdz6BZydOO8PXaorhA==;
+	List-Owner; bh=IQBVxGjd0wjVhtBZ9OranE3C71NO5M27H13+NMkcxrw=; b=H7G/lK614CMFTB
+	oJHlotR5JygyLyhb94ri3rsHlzOiY6AXCmYXe6jbcmhLd0GzcpbTJVz3ZOYwWTLhwcmJfT4AfB0bX
+	1hT6pEveXqPbbm7sJz6sqKQ4E1B3YM2qKkupzu+46RJFKZctc6GIsLeB/q3/GMNDlpXLcKszfiaj5
+	aNHMh5N4YMKM7zbPrvwL8wOR/P0CfzWEmvX6uwYqCsO5Xv2ng+Zf6S4WtbbRUToL3POf2AdUzGqaY
+	li+4Jz0aKLxax0wnLzd+2iHRY4jGXTrBIpx4CwiKYiCBnZDw88eX9mUJBQHkRl/gkFgXHmHNMtBcM
+	x9gMTe0vkKyG9keb+Txw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hB2SI-0005dz-D5; Mon, 01 Apr 2019 19:18:50 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hB2YG-00078Z-0t; Mon, 01 Apr 2019 19:25:00 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hB2SF-0005de-AA
- for linux-i3c@lists.infradead.org; Mon, 01 Apr 2019 19:18:49 +0000
+ id 1hB2YC-000788-V7
+ for linux-i3c@lists.infradead.org; Mon, 01 Apr 2019 19:24:58 +0000
 Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
  (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id ECAEF2823A8;
- Mon,  1 Apr 2019 20:18:44 +0100 (BST)
-Date: Mon, 1 Apr 2019 21:18:41 +0200
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 5CFD12822A0;
+ Mon,  1 Apr 2019 20:24:55 +0100 (BST)
+Date: Mon, 1 Apr 2019 21:24:47 +0200
 From: Boris Brezillon <boris.brezillon@collabora.com>
 To: vitor <vitor.soares@synopsys.com>
-Subject: Re: [PATCH v4 3/6] i3c: Add support for mastership request to I3C
- subsystem
-Message-ID: <20190401211841.645f79e3@collabora.com>
-In-Reply-To: <06a6f65b-a397-27c9-fa4f-e2147080be12@synopsys.com>
+Subject: Re: [PATCH v4 1/6] i3c: add addr and lvr to i2c_dev_desc structure
+Message-ID: <20190401212447.4e992f60@collabora.com>
+In-Reply-To: <2257791c-6bef-3015-664b-470ebf55b726@synopsys.com>
 References: <20190310135843.21154-1-pgaj@cadence.com>
- <20190310135843.21154-4-pgaj@cadence.com>
- <06a6f65b-a397-27c9-fa4f-e2147080be12@synopsys.com>
+ <20190310135843.21154-2-pgaj@cadence.com>
+ <20190330153618.48719ee5@collabora.com>
+ <87ba262f-384e-711c-4673-103099cdb8ad@synopsys.com>
+ <20190401203148.028cdf01@collabora.com>
+ <2257791c-6bef-3015-664b-470ebf55b726@synopsys.com>
 Organization: Collabora
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190401_121847_621448_D3BED1F1 
-X-CRM114-Status: GOOD (  23.93  )
+X-CRM114-CacheID: sfid-20190401_122457_261991_A6B5CA66 
+X-CRM114-Status: GOOD (  21.01  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -72,109 +74,80 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
 Cc: Przemyslaw Gaj <pgaj@cadence.com>, agolec@cadence.com,
  linux-i3c@lists.infradead.org, rafalc@cadence.com, bbrezillon@kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCAxIEFwciAyMDE5IDE5OjQxOjM5ICswMTAwCnZpdG9yIDx2aXRvci5zb2FyZXNAc3lu
-b3BzeXMuY29tPiB3cm90ZToKCj4gPiAgdm9pZCBpM2NfZGV2aWNlX2ZyZWVfaWJpKHN0cnVjdCBp
-M2NfZGV2aWNlICpkZXYpCj4gPiAgewo+ID4gKwlpbnQgcmV0Owo+ID4gKwo+ID4gIAlpM2NfYnVz
-X25vcm1hbHVzZV9sb2NrKGRldi0+YnVzKTsKPiA+ICsJcmV0ID0gaTNjX21hc3Rlcl9hY3F1aXJl
-X2J1c19vd25lcnNoaXAoZGV2LT5kZXNjLT5jb21tb24ubWFzdGVyKTsKPiA+ICsJaWYgKHJldCkK
-PiA+ICsJCWdvdG8gZXJyX3VubG9ja19idXM7Cj4gPiArCj4gPiAgCWlmIChkZXYtPmRlc2MpIHsK
-PiA+ICAJCW11dGV4X2xvY2soJmRldi0+ZGVzYy0+aWJpX2xvY2spOwo+ID4gIAkJaTNjX2Rldl9m
-cmVlX2liaV9sb2NrZWQoZGV2LT5kZXNjKTsKPiA+ICAJCW11dGV4X3VubG9jaygmZGV2LT5kZXNj
-LT5pYmlfbG9jayk7Cj4gPiAgCX0KPiA+ICsKPiA+ICtlcnJfdW5sb2NrX2J1czoKPiA+ICAJaTNj
-X2J1c19ub3JtYWx1c2VfdW5sb2NrKGRldi0+YnVzKTsKPiA+ICB9Cj4gPiAgRVhQT1JUX1NZTUJP
-TF9HUEwoaTNjX2RldmljZV9mcmVlX2liaSk7ICAKPiAKPiBDYW4ndCB3ZSB2ZXJpZnkgaWYgaXQg
-aXMgdGhlIGN1cnJlbnQgbWFzdGVyIG5vIG1hc3Rlci5jIHNpZGU/CgpZb3UgbWVhbiBhY3F1aXJp
-bmcgdGhlIGJ1cyBpbiBpM2NfZGV2X2ZyZWVfaWJpX2xvY2tlZCgpPyBJdCBkb2Vzbid0Cndvcmsg
-aWYgd2Ugd2FudCB0aGluZ3MgdG8gcGxheSB3ZWxsIHdpdGggbG9ja2RlcCAod2hpY2ggdHJhY2tz
-IGxvY2tpbmcKb3JkZXIgdG8gbWFrZSBzdXJlIGRlYWRsb2NrcyBjYW4ndCBoYXBwZW4pLiBUbyBh
-Y3F1aXJlIHRoZSBidXMgeW91IG5lZWQKdG8gdGFrZSB0aGUgYnVzIGxvY2sgaW4gd3JpdGUvbWFp
-bnRlbmFuY2UgbW9kZSBhbmQgZG93bmdyYWRlIGl0IHRvIGEKcmVhZC9ub3JtYWx1c2UgbG9jayBv
-bmNlIHlvdSdyZSBkb25lLiBJZiB5b3UgcmVsZWFzZS9hY3F1aXJlIHRoZSBsb2NrCmluc2lkZSBp
-M2NfZGV2X2ZyZWVfaWJpX2xvY2tlZCgpIHRoYXQgbWVhbnMgc29tZSBwYXRoIHdpbGwgaGF2ZQoK
-TE9DSyhidXMpOwpMT0NLKGliaSk7ClVOTE9DSyhidXMpOwpMT0NLKGJ1cyk7ClVOTE9DSyhpYmkp
-OwpVTkxPQ0soYnVzKTsKCmFuZCBvdGhlcnMKCkxPQ0soYnVzKTsKTE9DSyhpYmkpOwpVTkxPQ0so
-aWJpKTsKVU5MT0NLKGJ1cyk7CgpCVFcsIGl0IHdvbid0IG1ha2UgYSBkaWZmZXJlbmNlIGluIHRl
-cm0gb2YgTG9DIHRvIG1vdmUgdGhhdCB0byBsb2dpYwptYXN0ZXIuYywgYW5kIHRoZSBpM2NfbWFz
-dGVyX2FjcXVpcmVfYnVzX293bmVyc2hpcCgpIGhlbHBlciBhbHJlYWR5CmhpZGVzIG1vc3Qgb2Yg
-dGhlIGNvbXBsZXhpdHkuCgo+IAo+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaTNjL2ludGVybmFs
-cy5oIGIvZHJpdmVycy9pM2MvaW50ZXJuYWxzLmgKPiA+IGluZGV4IDg2YjdiNDQuLjkyOWNhNmIg
-MTAwNjQ0Cj4gPiAtLS0gYS9kcml2ZXJzL2kzYy9pbnRlcm5hbHMuaAo+ID4gKysrIGIvZHJpdmVy
-cy9pM2MvaW50ZXJuYWxzLmgKPiA+IEBAIC0xNCw2ICsxNCwxMCBAQCBleHRlcm4gc3RydWN0IGJ1
-c190eXBlIGkzY19idXNfdHlwZTsKPiA+ICAKPiA+ICB2b2lkIGkzY19idXNfbm9ybWFsdXNlX2xv
-Y2soc3RydWN0IGkzY19idXMgKmJ1cyk7Cj4gPiAgdm9pZCBpM2NfYnVzX25vcm1hbHVzZV91bmxv
-Y2soc3RydWN0IGkzY19idXMgKmJ1cyk7Cj4gPiArdm9pZCBpM2NfYnVzX2Rvd25ncmFkZV9tYWlu
-dGVuYW5jZV9sb2NrKHN0cnVjdCBpM2NfYnVzICpidXMpOwo+ID4gK2ludCBpM2NfbWFzdGVyX2Fj
-cXVpcmVfYnVzX293bmVyc2hpcChzdHJ1Y3QgaTNjX21hc3Rlcl9jb250cm9sbGVyICptYXN0ZXIp
-Owo+ID4gK2ludCBpM2NfbWFzdGVyX3JlcXVlc3RfbWFzdGVyc2hpcF9sb2NrZWQoc3RydWN0IGkz
-Y19tYXN0ZXJfY29udHJvbGxlciAqbWFzdGVyKTsKPiA+ICsKPiA+ICAKPiA+ICBpbnQgaTNjX2Rl
-dl9kb19wcml2X3hmZXJzX2xvY2tlZChzdHJ1Y3QgaTNjX2Rldl9kZXNjICpkZXYsCj4gPiAgCQkJ
-CSBzdHJ1Y3QgaTNjX3ByaXZfeGZlciAqeGZlcnMsCj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9p
-M2MvbWFzdGVyLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIuYwo+ID4gaW5kZXggYWVhNDMwOS4uN2E4
-NDE1OCAxMDA2NDQKPiA+IC0tLSBhL2RyaXZlcnMvaTNjL21hc3Rlci5jCj4gPiArKysgYi9kcml2
-ZXJzL2kzYy9tYXN0ZXIuYwo+ID4gQEAgLTkzLDYgKzkzLDIwIEBAIHZvaWQgaTNjX2J1c19ub3Jt
-YWx1c2VfdW5sb2NrKHN0cnVjdCBpM2NfYnVzICpidXMpCj4gPiAgCXVwX3JlYWQoJmJ1cy0+bG9j
-ayk7Cj4gPiAgfQo+ID4gIAo+ID4gKy8qKgo+ID4gKyAqIGkzY19idXNfZG93bmdyYWRlX21haW50
-ZW5hbmNlX2xvY2sgLSBEb3duZ3JhZGUgdGhlIGJ1cyBsb2NrIHRvIG5vcm1hbAo+ID4gKyAqIG9w
-ZXJhdGlvbgo+ID4gKyAqIEBidXM6IEkzQyBidXMgdG8gZG93bmdyYWRlIHRoZSBsb2NrIG9uCj4g
-PiArICoKPiA+ICsgKiBTaG91bGQgYmUgY2FsbGVkIHdoZW4gYSBtYWludGVuYW5jZSBvcGVyYXRp
-b24gaXMgZG9uZSBhbmQgbm9ybWFsCj4gPiArICogb3BlcmF0aW9uIGlzIHBsYW5uZWQuIFNlZSBp
-M2NfYnVzX21haW50ZW5hbmNlX2xvY2soKSBhbmQKPiA+ICsgKiBpM2NfYnVzX25vcm1hbHVzZV9s
-b2NrKCkgZm9yIG1vcmUgZGV0YWlscy4KPiA+ICsgKi8KPiA+ICt2b2lkIGkzY19idXNfZG93bmdy
-YWRlX21haW50ZW5hbmNlX2xvY2soc3RydWN0IGkzY19idXMgKmJ1cykKPiA+ICt7Cj4gPiArCWRv
-d25ncmFkZV93cml0ZSgmYnVzLT5sb2NrKTsKPiA+ICt9Cj4gPiArCj4gPiAgc3RhdGljIHN0cnVj
-dCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIgKmRldl90b19pM2NtYXN0ZXIoc3RydWN0IGRldmljZSAq
-ZGV2KQo+ID4gIHsKPiA+ICAJcmV0dXJuIGNvbnRhaW5lcl9vZihkZXYsIHN0cnVjdCBpM2NfbWFz
-dGVyX2NvbnRyb2xsZXIsIGRldik7Cj4gPiBAQCAtMzQxLDYgKzM1NSwyMiBAQCBzdGF0aWMgaW50
-IGkzY19kZXZpY2VfcHJvYmUoc3RydWN0IGRldmljZSAqZGV2KQo+ID4gIAlyZXR1cm4gZHJpdmVy
-LT5wcm9iZShpM2NkZXYpOwo+ID4gIH0KPiA+ICAKPiA+ICtzdGF0aWMgdm9pZCBpM2NfbWFzdGVy
-X2VuYWJsZV9tcl9ldmVudHMoc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlciAqbWFzdGVyKQo+
-ID4gK3sKPiA+ICsJaWYgKCFtYXN0ZXItPm9wcy0+ZW5hYmxlX21yX2V2ZW50cykKPiA+ICsJCXJl
-dHVybjsKPiA+ICsKPiA+ICsJbWFzdGVyLT5vcHMtPmVuYWJsZV9tcl9ldmVudHMobWFzdGVyKTsK
-PiA+ICt9Cj4gPiArCj4gPiArc3RhdGljIHZvaWQgaTNjX21hc3Rlcl9kaXNhYmxlX21yX2V2ZW50
-cyhzdHJ1Y3QgaTNjX21hc3Rlcl9jb250cm9sbGVyICptYXN0ZXIpCj4gPiArewo+ID4gKwlpZiAo
-IW1hc3Rlci0+b3BzLT5kaXNhYmxlX21yX2V2ZW50cykKPiA+ICsJCXJldHVybjsKPiA+ICsKPiA+
-ICsJbWFzdGVyLT5vcHMtPmRpc2FibGVfbXJfZXZlbnRzKG1hc3Rlcik7Cj4gPiArfQo+ID4gKyAg
-Cj4gCj4gZG8gd2Ugd2FudCB0byBkbyB0aGlzIGluIGJyb2FkY2FzdD8gSXMgaXQgc2F2ZSB0byBn
-aXZlIG1hc3RlcnNoaXAgY2FwYWJpbGl0aWVzIHRvIGFsbCBkZXZpY2VzPwoKR29vZCBxdWVzdGlv
-bi4gU291bmRzIGxpa2UgYSBwb2xpY3kgZGVjaXNpb24gdGhhdCB3ZSBzaG91bGQgbGVhdmUgdG8g
-dGhlCnVzZXIgKGtlcm5lbCBwYXJhbWV0ZXIsIHN5c2ZzIGlmYWNlPykuIFJlZ2FyZGluZyB0aGUK
-aTNjX21hc3Rlcl9jb250cm9sbGVyX29wcyBpZmFjZSwgaWYgd2Ugd2FudCB0byBhbGxvdyBNUiBv
-biBhIHBlci1tYXN0ZXIKYmFzaXMsIHRoYXQncyBzb21ldGhpbmcgd2UgY291bGQgc3RvcmUgaW4g
-dGhlIGkzY19kZXZfZGVzYyBzdHJ1Y3QgYW5kCmxldCBtYXN0ZXJzIGl0ZXJhdGUgb3ZlciB0aGlz
-IGxpc3QgdG8gZGVjaWRlIHdobyB0aGV5IHNob3VsZCBzZW5kCkVORUMoKSBldmVudHMgdG8uIFdl
-IHByb2JhYmx5IGFsc28gd2FudCBhIGRlZmF1bHQgcG9saWN5IGxpa2UgcmVqZWN0IG9yCmFjY2Vw
-dCBhbGwuCgpBbnl3YXksIHRob3NlIGFyZSB0aGluZ3Mgd2UgY2FuIHdvcmsgb24gb25jZSB0aGlz
-IHBhdGNoIHNlcmllcyBoYXMKbGFuZGVkLgoKPiA+ICAvKioKPiA+ICsgKiBpM2NfbWFzdGVyX3Jl
-Z2lzdGVyX25ld19kZXZzKCkgLSByZWdpc3RlciBuZXcgZGV2aWNlcwo+ID4gKyAqIEBtYXN0ZXI6
-IG1hc3RlciB1c2VkIHRvIHNlbmQgZnJhbWVzIG9uIHRoZSBidXMKPiA+ICsgKgo+ID4gKyAqIFRo
-aXMgZnVuY3Rpb24gaXMgdXNlZnVsIHdoZW4gZGV2aWNlcyB3ZXJlIG5vdCBhZGRlZAo+ID4gKyAq
-IGR1cmluZyBpbml0aWFsaXphdGlvbiBvciB3aGVuIG5ldyBkZXZpY2Ugam9pbmVkIHRoZSBidXMK
-PiA+ICsgKiB3aGljaCB3YXMgdW5kZXIgY29udHJvbCBvZiBkaWZmZXJlbnQgbWFzdGVyLgo+ID4g
-KyAqLwo+ID4gK3ZvaWQgaTNjX21hc3Rlcl9yZWdpc3Rlcl9uZXdfZGV2cyhzdHJ1Y3QgaTNjX21h
-c3Rlcl9jb250cm9sbGVyICptYXN0ZXIpCj4gPiArewo+ID4gKwkvKgo+ID4gKwkgKiBXZSBjYW4g
-cmVnaXN0ZXIgSTNDIGRldmljZXMgcmVjZWl2ZWQgZnJvbSBtYXN0ZXIgYnkgREVGU0xWUy4KPiA+
-ICsJICovCj4gPiArCWkzY19idXNfbm9ybWFsdXNlX2xvY2soJm1hc3Rlci0+YnVzKTsKPiA+ICsJ
-aTNjX21hc3Rlcl9yZWdpc3Rlcl9uZXdfaTNjX2RldnMobWFzdGVyKTsKPiA+ICsJaTNjX2J1c19u
-b3JtYWx1c2VfdW5sb2NrKCZtYXN0ZXItPmJ1cyk7Cj4gPiArCj4gPiArCWkzY19idXNfbm9ybWFs
-dXNlX2xvY2soJm1hc3Rlci0+YnVzKTsKPiA+ICsJaTNjX21hc3Rlcl9yZWdpc3Rlcl9uZXdfaTJj
-X2RldnMobWFzdGVyKTsKPiA+ICsJaTNjX2J1c19ub3JtYWx1c2VfdW5sb2NrKCZtYXN0ZXItPmJ1
-cyk7Cj4gPiArfQo+ID4gK0VYUE9SVF9TWU1CT0xfR1BMKGkzY19tYXN0ZXJfcmVnaXN0ZXJfbmV3
-X2RldnMpOwo+ID4gKyAgCj4gCj4gwqBJIHdvdWxkIHNheSBhIGZ1bmN0aW9uIHRvIGFkZCBERVZT
-TFZTLiBGcm9tIHRoZSBtYXN0ZXIgZHJpdmVyIHlvdSBjYW4gcGFjayBhbGwKPiDCoHJlY2VpdmVk
-IHNsYXZlcyBpbnRvIGkzY19jY2NfZGVmc2x2cyBzdHJ1Y3QgYW5kIHJlbHkgdGhlIHRhc2sgb2Yg
-YWRkIHRob3NlCj4gwqBkZXZpY2VzIHRvIHRoZSBzdWJzeXN0ZW0uCgpVbmZvcnR1bmF0ZWx5LCBj
-b250cm9sbGVycyBtaWdodCBoYXZlIGRlZGljYXRlZCBsb2dpYyBwYXJzaW5nIHRoZQpERUZTTFYg
-ZnJhbWUgYW5kIHBvcHVsYXRpbmcgdGhlIGRldmljZSB0YWJsZSAoQUZBSVIgQ2FkZW5jZSBjb250
-cm9sbGVyCmlzIHdvcmtpbmcgdGhpcyB3YXkpLiBZb3VyIHNvbHV0aW9uIHdvdWxkIGltcGx5IHJl
-Y29uc3RydWN0aW5nIGEKREVGU0xWUyBmcmFtZSB3aGljaCBJIGRvbid0IHRoaW5rIGlzIHdvcnRo
-IGl0LiBJZiB3ZSBoYXZlIHNldmVyYWwKY29udHJvbGxlcnMgZXhwb3NpbmcgZGlyZWN0bHkgdGhl
-IERFRlNMVlMgZnJhbWVzLCB0aGVuIHdlIGNhbiBhZGQgYW4KaGVscGVyIHRvIGRvIHdoYXQgeW91
-IHN1Z2dlc3QgdGhvdWdoLgoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRl
-YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
-aTNjCg==
+On Mon, 1 Apr 2019 19:48:45 +0100
+vitor <vitor.soares@synopsys.com> wrote:
+
+> Hi,
+> 
+> On 01/04/19 19:31, Boris Brezillon wrote:
+> > On Mon, 1 Apr 2019 19:17:03 +0100
+> > vitor <vitor.soares@synopsys.com> wrote:
+> >  
+> >> Hi,
+> >>
+> >> On 30/03/19 14:36, Boris Brezillon wrote:  
+> >>> On Sun, 10 Mar 2019 13:58:38 +0000
+> >>> Przemyslaw Gaj <pgaj@cadence.com> wrote:
+> >>>    
+> >>>> I need to store address and lvr value for I2C devices without static definition
+> >>>> in DT. This allows secondary master to transmit DEFSLVS command properly.
+> >>>>
+> >>>> Signed-off-by: Przemyslaw Gaj <pgaj@cadence.com>
+> >>>> ---
+> >>>>  include/linux/i3c/master.h | 5 +++++
+> >>>>  1 file changed, 5 insertions(+)
+> >>>>
+> >>>> diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
+> >>>> index eca8337..3c27d9f 100644
+> >>>> --- a/include/linux/i3c/master.h
+> >>>> +++ b/include/linux/i3c/master.h
+> >>>> @@ -71,6 +71,9 @@ struct i2c_dev_boardinfo {
+> >>>>   * @common: common part of the I2C device descriptor
+> >>>>   * @boardinfo: pointer to the boardinfo attached to this I2C device
+> >>>>   * @dev: I2C device object registered to the I2C framework
+> >>>> + * @addr: I2C device address
+> >>>> + * @lvr: LVR (Legacy Virtual Register) needed by the I3C core to know about
+> >>>> + *	 the I2C device limitations
+> >>>>   *
+> >>>>   * Each I2C device connected on the bus will have an i2c_dev_desc.
+> >>>>   * This object is created by the core and later attached to the controller
+> >>>> @@ -84,6 +87,8 @@ struct i2c_dev_desc {
+> >>>>  	struct i3c_i2c_dev_desc common;
+> >>>>  	const struct i2c_dev_boardinfo *boardinfo;
+> >>>>  	struct i2c_client *dev;
+> >>>> +	u16 addr;
+> >>>> +	u8 lvr;    
+> >>> You also need to remove lvr from i2c_dev_boardinfo and adjust the code
+> >>> to use i2c_dev_desc->addr and i2c_dev_desc->lvr in this patch, not in
+> >>> patch 3.
+> >>>    
+> >> Why can't we keep the lvr and addr in i2c_dev_boardinfo and need this information on i2c_dev_desc?  
+> > Because i2c_dev_boardinfo is extracted from the DT and the secondary
+> > slaves does not necessarily have this description. The idea is to keep
+> > reserving the address slot for the I2C device even if we don't expose
+> > it to the upper layers.  
+> 
+> So you are using i2c_dev_boardinfo just for DT devices?
+
+All devices that are described in some way, can be through DT, ACPI or
+board-file desc (only DT is supported right now, but we can easily add
+support for other formats).
+
+> Because at end we need to register the new i2c devs.
+
+No, only those that have a valid description, because there's nothing
+you can expose if you only have the address and LVR values. You at
+least need to know which driver this dev should be attached to
+(compatible string in your DT) and most drivers also need extra
+information (basically all the DT props that are described a the DT
+binding).
+
+_______________________________________________
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
