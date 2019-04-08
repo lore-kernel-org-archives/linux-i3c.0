@@ -4,20 +4,20 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 X-Spam-Level: 
 X-Spam-Status: No, score=-9.0 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SIGNED_OFF_BY,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham
-	autolearn_force=no version=3.4.0
+	SIGNED_OFF_BY,SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 2AB31C10F13
-	for <linux-i3c@archiver.kernel.org>; Mon,  8 Apr 2019 11:14:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3B366C10F14
+	for <linux-i3c@archiver.kernel.org>; Mon,  8 Apr 2019 23:20:55 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id F020820863
-	for <linux-i3c@archiver.kernel.org>; Mon,  8 Apr 2019 11:14:17 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 08767206C0
+	for <linux-i3c@archiver.kernel.org>; Mon,  8 Apr 2019 23:20:54 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="RjqfvaeC";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="LAMFISyv"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org F020820863
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="StJ86CLb";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="Dd5p3X7p"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 08767206C0
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -26,46 +26,47 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=5OOgg3/tW1f/TrNbXjc9C/cvAtL42AFLLq6IA9ibM3g=; b=Rjq
-	fvaeCjma3l2WbI7NxslpPZsOf9u4Ra5Gih7qrg+2CkwrrtmXgPkCcvjazvF+SHKRKu26t2z4sGQrM
-	IKNoqJVOIE/CEkmFNaEOey6sQm58xlTiffqjj3ZkFH8A+UhjQrEjk2+1JtSpa3ZBVXdzSeC6Nx1rG
-	5mMs0RqzFCapJ9lkA0fuOMmJ1kubPROZ9ct2tXp5GtIgLXvjyXSgTTTz30KjWdLIv8Rgj0HxTR0cm
-	4TFVGzkvZ+UgNbRbQx/7ck7K1thj5GHdXe3c51/Z8kJQiE8XbfVOWwqIv/OX6LahCMQWeqJldVtwM
-	FKXaJ+gvsw2W12H9+NsjuQzU09lGDTQ==;
+	References:List-Owner; bh=184DpA6jkACC1Hk5rwVwgYo7u8X2wOF5A+3ZAqoXnHc=; b=StJ
+	86CLbU6NV0TsS7RdYf1Cz+lOhYZ+pJ/YaEiMmCBXN5YBEsPmnIomzaLvg1XuCwY0Vm1aUNqPz1N6f
+	AYA8IixSDZ6RRsyUY8YROdWpk2y+pxitHBIpAsv3VZ0L4e77xg3GfBOI6SNccBEBCILFzP079MxGg
+	hd71IIJqwTOHYS1tcCel8rVWqmJVoyNTWXU7zCpvia3fBEJEARR9gMMpUmNbKFML9FDAXk1S4L5FK
+	/OETs3OX/nCu3N1ULEDiiL3Dk4Zvdq+Rd9qh/DQS/N7E/spBkHyCFOIH8EVAjKwJuT85zKPKYOHXc
+	QxM7l3U4vSNw2khtAeLhaDcshzBr09w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hDSED-0001uN-Ig; Mon, 08 Apr 2019 11:14:17 +0000
-Received: from smtprelay2.synopsys.com ([198.182.60.111]
+	id 1hDdZO-00087o-Hn; Mon, 08 Apr 2019 23:20:54 +0000
+Received: from us01smtprelay-2.synopsys.com ([198.182.60.111]
  helo=smtprelay.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hDSEB-0001tz-CJ
- for linux-i3c@lists.infradead.org; Mon, 08 Apr 2019 11:14:16 +0000
+ id 1hDdZL-00087S-CK
+ for linux-i3c@lists.infradead.org; Mon, 08 Apr 2019 23:20:53 +0000
 Received: from mailhost1.synopsys.com (mailhost1.synopsys.com [10.12.238.239])
- by smtprelay.synopsys.com (Postfix) with ESMTP id DAF2110C1411;
- Mon,  8 Apr 2019 04:14:09 -0700 (PDT)
+ by smtprelay.synopsys.com (Postfix) with ESMTP id D937C10C154F;
+ Mon,  8 Apr 2019 16:20:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1554722049; bh=X2CXJnXZVJ1jXjm2UfONkSoB2BvCy5dWqEMklkWqNTA=;
+ t=1554765648; bh=Q2Otr1EuOF+LzU7O4g8np3htvxKlIQoa5LQV04MBFs0=;
  h=From:To:Cc:Subject:Date:From;
- b=LAMFISyvk/MARxD9QS+NE8O9JJj5lkiLVytXo0OrfobBm1Kz1puSwgImfMT/1mEAf
- G2hMV4jhB1phw+PcuLooHMV2jxPXWOg7mjzLcewrKF7e4CJ1Yj1ZiS0s6XBpwA069K
- gEf7RHzNmHw6lofPh/u5qkzrngP42aF2bob/gWEb0jqwsY6qiRjEzbY1LPyLpo5+A/
- FhgwpbzpKzgkCZ7XBlCm1ssg2WB8PHd2Q+hHx9U3P4RSWX8CROeeluAVdpofXL3Dms
- TLNzQmmGlu/aGcmrnJIIPjCtjGLpAOsF1jq4DSmsz11lLjMNoaNIobdamTzgn8KhV2
- /HiKRR+qBPczg==
+ b=Dd5p3X7p8Hgl/6D01yOhJQKRYM/Sn/o9evXiY+dr1r1EJXIKUt6QNNxb1cwkoza1z
+ 8tmQnS/g4xOSfzj4GnpgggcDIvZMvTRgBZWkeMBFG4Tsw594U+7Q85wPSt9DJLljTZ
+ PbXOOrdjMS5NW/VfKMyxDxqEL5+xUDRMBRJ/72RYei7oiYbtIqUFsIu1SYWSf5itxa
+ z6/sPF9JsqJvnEgMia243UnIjN3e/r9ceYOcb9OOUc/6YFu76lDlcg4NGAzrNbXyuf
+ KAd8/cnTHfshV3s8XxtrR9WZokKY5qmoe46mnsTgwPsZ2a0cajJ6lHi/VhsOMgpO8N
+ YYyxZzb2X5FWw==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost1.synopsys.com (Postfix) with ESMTP id 9044D5C36;
- Mon,  8 Apr 2019 04:13:38 -0700 (PDT)
+ by mailhost1.synopsys.com (Postfix) with ESMTP id 8E6855D15;
+ Mon,  8 Apr 2019 16:20:47 -0700 (PDT)
 From: Vitor Soares <vitor.soares@synopsys.com>
 To: linux-i3c@lists.infradead.org
-Subject: [PATCH v2] i3c: dw: Fix dw_i3c_master_disable controller by using
+Subject: [PATCH v3] i3c: dw: Fix dw_i3c_master_disable controller by using
  correct mask
-Date: Mon,  8 Apr 2019 13:13:34 +0200
-Message-Id: <72bc802eb51555b8cf33595a87e06940e367777c.1554721267.git.vitor.soares@synopsys.com>
+Date: Tue,  9 Apr 2019 01:20:44 +0200
+Message-Id:
+ <72bc802eb51555b8cf33595a87e06940e367777c.1554721267.git.vitor.soares@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190408_041415_421608_F4AA3D5D 
-X-CRM114-Status: UNSURE (   8.14  )
+X-CRM114-CacheID: sfid-20190408_162051_429418_B8FEBBF5 
+X-CRM114-Status: UNSURE (   8.28  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -81,21 +82,26 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
 Cc: joao.pinto@synopsys.com, Boris Brezillon <bbrezillon@kernel.org>,
  stable@vger.kernel.org, Vitor Soares <vitor.soares@synopsys.com>
 MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
+Message-ID: <20190408232044.E5-AnPWcygTGPuKoaNkrSiWWlz8xTaDrhIGcjSfJXII@z>
 
 The controller was being disabled incorrectly. The correct way is to clear
 the DEV_CTRL_ENABLE bit.
 
 Fix this by by clearing this bit.
 
+Fixes: 1dd728f5d4d4 ("i3c: master: Add driver for Synopsys DesignWare IP")
 Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
 
 Cc: Boris Brezillon <bbrezillon@kernel.org>
 Cc: <stable@vger.kernel.org>
 ---
+Changes v2 to v3:
+  Add Fixes tag
+
 Changes v1 to v2:
   Fix commit Message
   Add Cc: <stable@vger.kernel.org>
