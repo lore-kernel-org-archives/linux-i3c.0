@@ -7,16 +7,16 @@ X-Spam-Status: No, score=-7.0 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	SIGNED_OFF_BY,SPF_PASS,URIBL_BLOCKED autolearn=unavailable autolearn_force=no
 	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B02ABC282DD
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E5C6DC282E2
 	for <linux-i3c@archiver.kernel.org>; Tue, 16 Apr 2019 11:12:28 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 7DD7320857
+	by mail.kernel.org (Postfix) with ESMTPS id B9ADD2075B
 	for <linux-i3c@archiver.kernel.org>; Tue, 16 Apr 2019 11:12:28 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="Wmbav75F"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7DD7320857
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="PVIDC4rl"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org B9ADD2075B
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=collabora.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -25,39 +25,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=urTptU3uBQz69OFdE574bE9beNUchv4lRcv1SCtOL44=; b=Wmbav75FMNwJdA
-	zj7/xmK1MgQx82sXa8hQUIvonJT4f2kuswW+djzRcGZvz38QH7GB1N/Zvhd+KuYLsRLosRuxrVMrx
-	+4YkX4ziAealBz8lFu+g33VfpUKcKXpsj8u0SdZOt9mN2M5XX1u9dzTpB4xmCZo3/pwe/e9t7+G8f
-	ouUGsOI5hdJBKcZJ3+3KNFu5DXc3yJQcXHM0FfrKGIlGHxCvAoGiWttY/M7ZyBnPqjjSG/angzjgG
-	C7QUZfgCsWdobZkkzsYu8E3LnXVNgcQRsTGCzUEnZI8cMrgViZo7l5vJrtWEK0pEkGyxsjuLGtgV2
-	dBdS2gVvtJozGBsXqZ+g==;
+	List-Owner; bh=T+3VUnxAcWrll/KrRrezuQg9G0BlRiMoJs4TTa+WvXQ=; b=PVIDC4rlXS5jRH
+	/kgtjJyGa2ZhueZc+SQOPzhXnFjSmuLaW0cDETblgc32ePov5Jf5HRUsUdWVKJVBfV6S0bm1wf0WB
+	617h2YmXl+WuLr21PHnvvBED56Rn+arGcCGHaYd1+I/v/JI+HHgbgt4uAdZ7+hA4EFoSCbalLE6ts
+	S1CJh2XgN2N4bF35SE0akNGn+1SxkaFf6SPfJpPtrWmpBEwVs+vMyKO5UNs76UbO0pHjWROWn2E5c
+	747F5FZxh7UBYHZ2vUx2WIjOF/qG2PyfEE7gEmww+PVltI3+zFSnDTzawvGRfEYncy9Pbpkf7OsWW
+	4OBItY9IfxLso5p/0sOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hGM0p-0001Fb-Uo; Tue, 16 Apr 2019 11:12:27 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1hGM0q-0001Fp-53; Tue, 16 Apr 2019 11:12:28 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hGHNs-0001Cm-K0
- for linux-i3c@lists.infradead.org; Tue, 16 Apr 2019 06:16:00 +0000
+ id 1hGHXM-00043i-KB
+ for linux-i3c@lists.infradead.org; Tue, 16 Apr 2019 06:25:46 +0000
 Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:b93f:9fae:b276:a89a])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
  (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id F0993260C42;
- Tue, 16 Apr 2019 07:15:54 +0100 (BST)
-Date: Tue, 16 Apr 2019 08:15:51 +0200
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 0B048260C42;
+ Tue, 16 Apr 2019 07:25:43 +0100 (BST)
+Date: Tue, 16 Apr 2019 08:25:39 +0200
 From: Boris Brezillon <boris.brezillon@collabora.com>
 To: Vitor Soares <vitor.soares@synopsys.com>
-Subject: Re: [PATCH 1/3] remap: Add I3C bus support
-Message-ID: <20190416081551.6f21bc38@collabora.com>
-In-Reply-To: <c38e3cb9e8524af58c995a9cf1f79ddba69b47b4.1555354268.git.vitor.soares@synopsys.com>
+Subject: Re: [PATCH 3/3] iio: imu: st_lsm6dsx: Add i3c basic support
+Message-ID: <20190416082539.2f12b38f@collabora.com>
+In-Reply-To: <302f8296299d6cd25b3689f5eca1c510a3290db3.1555354268.git.vitor.soares@synopsys.com>
 References: <cover.1555354268.git.vitor.soares@synopsys.com>
- <c38e3cb9e8524af58c995a9cf1f79ddba69b47b4.1555354268.git.vitor.soares@synopsys.com>
+ <302f8296299d6cd25b3689f5eca1c510a3290db3.1555354268.git.vitor.soares@synopsys.com>
 Organization: Collabora
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190415_231556_921872_B9D1AD11 
-X-CRM114-Status: GOOD (  22.21  )
+X-CRM114-CacheID: sfid-20190415_232544_929347_67E93B0C 
+X-CRM114-Status: GOOD (  21.76  )
 X-Mailman-Approved-At: Tue, 16 Apr 2019 04:12:26 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -80,60 +80,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Typo in the subject: s/remap/regmap/
-
-On Mon, 15 Apr 2019 21:19:39 +0200
+On Mon, 15 Apr 2019 21:19:41 +0200
 Vitor Soares <vitor.soares@synopsys.com> wrote:
 
-> Add basic support for I3C bus.
-> This is a simple implementation that only give support
-> for Read and Write commands.
+> For today the st_lsm6dsx driver support lsm6dso sensor only in
+> spi and i2c mode.
+> 
+> The lsm6dso is also i3c capable so lets give i3c support to it.
 > 
 > Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
 > ---
->  drivers/base/regmap/Kconfig      |  6 +++-
->  drivers/base/regmap/Makefile     |  1 +
->  drivers/base/regmap/regmap-i3c.c | 62 ++++++++++++++++++++++++++++++++++++++++
->  include/linux/regmap.h           | 20 +++++++++++++
->  4 files changed, 88 insertions(+), 1 deletion(-)
->  create mode 100644 drivers/base/regmap/regmap-i3c.c
+>  drivers/iio/imu/st_lsm6dsx/Kconfig          |  8 +++-
+>  drivers/iio/imu/st_lsm6dsx/Makefile         |  1 +
+>  drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c | 67 +++++++++++++++++++++++++++++
+>  3 files changed, 75 insertions(+), 1 deletion(-)
+>  create mode 100644 drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
 > 
-> diff --git a/drivers/base/regmap/Kconfig b/drivers/base/regmap/Kconfig
-> index 6ad5ef4..c8bbf53 100644
-> --- a/drivers/base/regmap/Kconfig
-> +++ b/drivers/base/regmap/Kconfig
-> @@ -4,7 +4,7 @@
->  # subsystems should select the appropriate symbols.
+> diff --git a/drivers/iio/imu/st_lsm6dsx/Kconfig b/drivers/iio/imu/st_lsm6dsx/Kconfig
+> index 094fd00..1ab9bbf 100644
+> --- a/drivers/iio/imu/st_lsm6dsx/Kconfig
+> +++ b/drivers/iio/imu/st_lsm6dsx/Kconfig
+> @@ -1,11 +1,12 @@
 >  
->  config REGMAP
-> -	default y if (REGMAP_I2C || REGMAP_SPI || REGMAP_SPMI || REGMAP_W1 || REGMAP_AC97 || REGMAP_MMIO || REGMAP_IRQ)
-> +	default y if (REGMAP_I2C || REGMAP_SPI || REGMAP_SPMI || REGMAP_W1 || REGMAP_AC97 || REGMAP_MMIO || REGMAP_IRQ || REGMAP_I3C)
->  	select IRQ_DOMAIN if REGMAP_IRQ
->  	bool
->  
-> @@ -49,3 +49,7 @@ config REGMAP_SOUNDWIRE
->  config REGMAP_SCCB
+>  config IIO_ST_LSM6DSX
+>  	tristate "ST_LSM6DSx driver for STM 6-axis IMU MEMS sensors"
+> -	depends on (I2C || SPI)
+> +	depends on (I2C || SPI || I3C)
+>  	select IIO_BUFFER
+>  	select IIO_KFIFO_BUF
+>  	select IIO_ST_LSM6DSX_I2C if (I2C)
+>  	select IIO_ST_LSM6DSX_SPI if (SPI_MASTER)
+> +	select IIO_ST_LSM6DSX_I3C if (I3C)
+>  	help
+>  	  Say yes here to build support for STMicroelectronics LSM6DSx imu
+>  	  sensor. Supported devices: lsm6ds3, lsm6ds3h, lsm6dsl, lsm6dsm,
+> @@ -23,3 +24,8 @@ config IIO_ST_LSM6DSX_SPI
 >  	tristate
->  	depends on I2C
+>  	depends on IIO_ST_LSM6DSX
+>  	select REGMAP_SPI
 > +
-> +config REGMAP_I3C
+> +config IIO_ST_LSM6DSX_I3C
 > +	tristate
-> +	depends on I3C
-> diff --git a/drivers/base/regmap/Makefile b/drivers/base/regmap/Makefile
-> index f5b4e88..ff6c7d8 100644
-> --- a/drivers/base/regmap/Makefile
-> +++ b/drivers/base/regmap/Makefile
-> @@ -16,3 +16,4 @@ obj-$(CONFIG_REGMAP_IRQ) += regmap-irq.o
->  obj-$(CONFIG_REGMAP_W1) += regmap-w1.o
->  obj-$(CONFIG_REGMAP_SOUNDWIRE) += regmap-sdw.o
->  obj-$(CONFIG_REGMAP_SCCB) += regmap-sccb.o
-> +obj-$(CONFIG_REGMAP_I3C) += regmap-i3c.o
-> diff --git a/drivers/base/regmap/regmap-i3c.c b/drivers/base/regmap/regmap-i3c.c
+> +	depends on IIO_ST_LSM6DSX
+> +	select REGMAP_I3C
+> diff --git a/drivers/iio/imu/st_lsm6dsx/Makefile b/drivers/iio/imu/st_lsm6dsx/Makefile
+> index e5f733c..c676965 100644
+> --- a/drivers/iio/imu/st_lsm6dsx/Makefile
+> +++ b/drivers/iio/imu/st_lsm6dsx/Makefile
+> @@ -4,3 +4,4 @@ st_lsm6dsx-y := st_lsm6dsx_core.o st_lsm6dsx_buffer.o \
+>  obj-$(CONFIG_IIO_ST_LSM6DSX) += st_lsm6dsx.o
+>  obj-$(CONFIG_IIO_ST_LSM6DSX_I2C) += st_lsm6dsx_i2c.o
+>  obj-$(CONFIG_IIO_ST_LSM6DSX_SPI) += st_lsm6dsx_spi.o
+> +obj-$(CONFIG_IIO_ST_LSM6DSX_I3C) += st_lsm6dsx_i3c.o
+> diff --git a/drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c b/drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
 > new file mode 100644
-> index 0000000..565997b
+> index 0000000..2df5e70
 > --- /dev/null
-> +++ b/drivers/base/regmap/regmap-i3c.c
-> @@ -0,0 +1,62 @@
+> +++ b/drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
+> @@ -0,0 +1,67 @@
 > +// SPDX-License-Identifier: GPL-2.0
 > +/*
 > + * Copyright (c) 2018 Synopsys, Inc. and/or its affiliates.
@@ -141,111 +145,83 @@ Vitor Soares <vitor.soares@synopsys.com> wrote:
 > + * Author: Vitor Soares <vitor.soares@synopsys.com>
 > + */
 > +
-> +#include <linux/regmap.h>
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
 > +#include <linux/i3c/device.h>
 > +#include <linux/i3c/master.h>
-> +#include <linux/module.h>
+> +#include <linux/slab.h>
+> +#include <linux/of.h>
+> +#include <linux/regmap.h>
 > +
-> +static int regmap_i3c_write(void *context, const void *data, size_t count)
-> +{
-> +	struct device *dev = context;
-> +	struct i3c_device *i3c = dev_to_i3cdev(dev);
-> +	struct i3c_priv_xfer xfers[] = {
-> +		{
-> +			.rnw = false,
-> +			.len = count,
-> +			.data.out = data,
-> +		},
-> +	};
+> +#include "st_lsm6dsx.h"
 > +
-> +	return i3c_device_do_priv_xfers(i3c, xfers, 1);
-> +}
+> +#define NAME_SIZE	32
 > +
-> +static int regmap_i3c_read(void *context,
-> +			   const void *reg, size_t reg_size,
-> +			   void *val, size_t val_size)
-> +{
-> +	struct device *dev = context;
-> +	struct i3c_device *i3c = dev_to_i3cdev(dev);
-> +	struct i3c_priv_xfer xfers[2];
-> +
-> +	xfers[0].rnw = false;
-> +	xfers[0].len = reg_size;
-> +	xfers[0].data.out = reg;
-> +
-> +	xfers[1].rnw = true;
-> +	xfers[1].len = val_size;
-> +	xfers[1].data.in = val;
-> +
-> +	return i3c_device_do_priv_xfers(i3c, xfers, 2);
-> +}
-> +
-> +static struct regmap_bus regmap_i3c = {
-> +	.write = regmap_i3c_write,
-> +	.read = regmap_i3c_read,
+> +struct st_lsm6dsx_i3c_data {
+> +	char name[NAME_SIZE];
+
+	const char *name;
+
+> +	enum st_lsm6dsx_hw_id id;
 > +};
 > +
-> +struct regmap *__devm_regmap_init_i3c(struct i3c_device *i3c,
-> +				      const struct regmap_config *config,
-> +				      struct lock_class_key *lock_key,
-> +				      const char *lock_name)
+> +static const struct st_lsm6dsx_i3c_data hw_data[] = {
+
+No need to make it an array, and it should probably be named
+st_lsm6dso_data not hw_data.
+
+> +	{ ST_LSM6DSO_DEV_NAME, ST_LSM6DSO_ID },
+> +};
+> +
+> +static const struct regmap_config st_lsm6dsx_i3c_regmap_config = {
+> +	.reg_bits = 8,
+> +	.val_bits = 8,
+> +};
+> +
+> +static int st_lsm6dsx_i3c_probe(struct i3c_device *i3cdev)
 > +{
-> +	return __devm_regmap_init(&i3c->dev, &regmap_i3c, &i3c->dev, config,
-> +				  lock_key, lock_name);
+> +	const struct i3c_device_id *id = i3c_get_device_id(i3cdev);
+
+					 i3c_device_match_id(i3cdev,
+					 		     st_lsm6dsx_i3c_ids);
+
+> +	const struct st_lsm6dsx_i3c_data *hw_data = id->data;
+> +	struct regmap *regmap;
+> +
+> +	regmap = devm_regmap_init_i3c(i3cdev, &st_lsm6dsx_i3c_regmap_config);
+> +	if (IS_ERR(regmap)) {
+> +		dev_err(&i3cdev->dev, "Failed to register i3c regmap %d\n",
+> +			(int)PTR_ERR(regmap));
+> +		return PTR_ERR(regmap);
+> +	}
+> +
+> +	return st_lsm6dsx_probe(&i3cdev->dev, 0, hw_data->id,
+> +				hw_data->name, regmap);
 > +}
-> +EXPORT_SYMBOL_GPL(__devm_regmap_init_i3c);
 > +
-> +MODULE_LICENSE("GPL");
-> diff --git a/include/linux/regmap.h b/include/linux/regmap.h
-> index daeec7d..f65984d 100644
-> --- a/include/linux/regmap.h
-> +++ b/include/linux/regmap.h
-> @@ -25,6 +25,7 @@ struct module;
->  struct clk;
->  struct device;
->  struct i2c_client;
-> +struct i3c_device;
->  struct irq_domain;
->  struct slim_device;
->  struct spi_device;
-> @@ -624,6 +625,10 @@ struct regmap *__devm_regmap_init_slimbus(struct slim_device *slimbus,
->  				 const struct regmap_config *config,
->  				 struct lock_class_key *lock_key,
->  				 const char *lock_name);
-> +struct regmap *__devm_regmap_init_i3c(struct i3c_device *i3c,
-> +				 const struct regmap_config *config,
-> +				 struct lock_class_key *lock_key,
-> +				 const char *lock_name);
->  /*
->   * Wrapper for regmap_init macros to include a unique lockdep key and name
->   * for each call. No-op if CONFIG_LOCKDEP is not set.
-> @@ -982,6 +987,21 @@ bool regmap_ac97_default_volatile(struct device *dev, unsigned int reg);
->  #define devm_regmap_init_slimbus(slimbus, config)			\
->  	__regmap_lockdep_wrapper(__devm_regmap_init_slimbus, #config,	\
->  				slimbus, config)
 > +
-> +/**
-> + * devm_regmap_init_i3c() - Initialise managed register map
-
-Maybe we should have a more specific name here, as some might want to
-access registers using HDR modes (devm_regmap_init_i3c_sdr()?)
-
-
-> + *
-> + * @i3c: Device that will be interacted with
-> + * @config: Configuration for register map
-> + *
-> + * The return value will be an ERR_PTR() on error or a valid pointer
-> + * to a struct regmap.  The regmap will be automatically freed by the
-> + * device management code.
-> + */
-> +#define devm_regmap_init_i3c(i3c, config)				\
-> +	__regmap_lockdep_wrapper(__devm_regmap_init_i3c, #config,	\
-> +				i3c, config)
+> +static const struct i3c_device_id st_lsm6dsx_i3c_ids[] = {
+> +	I3C_DEVICE(0x0104, 0x006C, &hw_data[0]),
+> +	{ /* sentinel */ },
+> +};
+> +MODULE_DEVICE_TABLE(i3c, st_lsm6dsx_i3c_ids);
 > +
->  int regmap_mmio_attach_clk(struct regmap *map, struct clk *clk);
->  void regmap_mmio_detach_clk(struct regmap *map);
->  void regmap_exit(struct regmap *map);
+> +static struct i3c_driver st_lsm6dsx_driver = {
+> +	.driver.name = "st_lsm6dsx_i3c",
+> +	.probe = st_lsm6dsx_i3c_probe,
+> +	.id_table = st_lsm6dsx_i3c_ids,
+
+You should probably set the pm_ops here (st_lsm6dsx_pm_ops).
+
+> +};
+> +module_i3c_driver(st_lsm6dsx_driver);
+> +
+> +MODULE_AUTHOR("Vitor Soares <vitor.soares@synopsys.com>");
+> +MODULE_DESCRIPTION("STMicroelectronics st_lsm6dsx i3c driver");
+> +MODULE_LICENSE("GPL v2");
+> +
+
+You can remove this blank line.
 
 
 _______________________________________________
