@@ -2,21 +2,20 @@ Return-Path: <SRS0=s+0C=SS=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-4.2 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SIGNED_OFF_BY,SPF_PASS,UNWANTED_LANGUAGE_BODY,URIBL_BLOCKED
-	autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-1.0 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_PASS,
+	URIBL_BLOCKED autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 24FD6C282E3
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 01E95C282E1
 	for <linux-i3c@archiver.kernel.org>; Tue, 16 Apr 2019 11:12:29 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id EA0A120868
+	by mail.kernel.org (Postfix) with ESMTPS id CB45620693
 	for <linux-i3c@archiver.kernel.org>; Tue, 16 Apr 2019 11:12:28 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="Zudy7H+k"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org EA0A120868
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="tsEw4RxO"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org CB45620693
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=collabora.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -25,41 +24,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZVIj0HJQiuki5FmZ7gcgV/5+l9Tozz8QyyKLKKdgkz4=; b=Zudy7H+koQLsTM
-	V7vgeCTgR8iGlxcO3q8m9ATBbuACD+JfXE/PnLfdhLKTngY7Tu7T4AbAy1+gfNpFo0lvYqIrNDHLi
-	Li/4FzMzKGNYk/kV7WDdq/uFLe7c5wY/CwvcGkdVxCPtJZ1s7G9ibxkGethnBzwyc6capRAwPKLJI
-	xkO8MBv7l6j/MAM9mkbWx17dWivw+4Tv0Z1zMb5dsVibVZTOkllDLWpquXOQ/E26NgahzZqYv9Agm
-	oHeCqEOBUg8/NyQZpliLfjEZd+qliEDVOrICy+sx6c15fJM2vG3OcdqvE0IRB6H6CMZsTBNecZFRN
-	o70Fpz8ULcczaZLe1DiQ==;
+	List-Owner; bh=okz7tkhbXLk2GAqZF9qNMirRn7mPt7B1shxVfD6dirM=; b=tsEw4RxONq80LJ
+	S/gwvLFeT2WhmyAxlKrhEpPVYgbr5cvmWawUhG+ilGkLjr1m4siSbKaKUa2eazwD8wAolCI1CGpOg
+	h4JRzvtUP3yI5osv5Lbu6JLdtLDTlSyKy7A88REcVfHgVCtPXRB6SBK2EIY+rbmCmjvHF2K6w32VL
+	rINkIznsYrJ2rastwDrk7KmYKhrfY0cHJ0UnRnQd1JGO6smWvpVhPJ1xscrP5ukgAwhywKK13a+0l
+	JLZAZ0FhW2aF0OaQoJGZ42ZeW1ZgcUI2CqdgqVpwYKm0qTAXenWvPkNYePeAV4pNH2c0ZIkebCCZT
+	Pbe3E9n1Or73+BBXyaGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hGM0q-0001G9-G5; Tue, 16 Apr 2019 11:12:28 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hGM0q-0001Fv-9A; Tue, 16 Apr 2019 11:12:28 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hGJ6A-0001S9-Lp
- for linux-i3c@lists.infradead.org; Tue, 16 Apr 2019 08:05:48 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ id 1hGHeJ-0005Yh-Ae
+ for linux-i3c@lists.infradead.org; Tue, 16 Apr 2019 06:32:56 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:b93f:9fae:b276:a89a])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
  (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id E02F127F05B;
- Tue, 16 Apr 2019 09:05:43 +0100 (BST)
-Date: Tue, 16 Apr 2019 10:05:40 +0200
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 6499A260C42;
+ Tue, 16 Apr 2019 07:32:53 +0100 (BST)
+Date: Tue, 16 Apr 2019 08:32:50 +0200
 From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Lorenzo Bianconi <lorenzo.bianconi83@gmail.com>
-Subject: Re: [PATCH 3/3] iio: imu: st_lsm6dsx: Add i3c basic support
-Message-ID: <20190416100540.7adf1fe5@collabora.com>
-In-Reply-To: <CAA2SeNJ1cTxAp6+5Q4Z5L4VFBfA3U4e11_Obpk8muD1Vh3v52A@mail.gmail.com>
+To: Vitor Soares <vitor.soares@synopsys.com>
+Subject: Re: [PATCH 0/3] Add ST lsm6dso i3c suppport
+Message-ID: <20190416083250.272edfe1@collabora.com>
+In-Reply-To: <cover.1555354268.git.vitor.soares@synopsys.com>
 References: <cover.1555354268.git.vitor.soares@synopsys.com>
- <302f8296299d6cd25b3689f5eca1c510a3290db3.1555354268.git.vitor.soares@synopsys.com>
- <20190416082539.2f12b38f@collabora.com>
- <CAA2SeNJ1cTxAp6+5Q4Z5L4VFBfA3U4e11_Obpk8muD1Vh3v52A@mail.gmail.com>
 Organization: Collabora
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190416_010546_976555_DFF2CFD8 
-X-CRM114-Status: GOOD (  26.96  )
+X-CRM114-CacheID: sfid-20190415_233255_499792_D66E44F6 
+X-CRM114-Status: GOOD (  10.63  )
 X-Mailman-Approved-At: Tue, 16 Apr 2019 04:12:26 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -72,178 +68,46 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: Lars-Peter Clausen <lars@metafoo.de>, bbrezillon@kernel.org,
- linux-iio@vger.kernel.org, gregkh@linuxfoundation.org, joao.pinto@synopsys.com,
- rafael@kernel.org, Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Vitor Soares <vitor.soares@synopsys.com>, broonie@kernel.org,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
- linux-i3c@lists.infradead.org, Jonathan Cameron <jic23@kernel.org>
+Cc: lars@metafoo.de, bbrezillon@kernel.org, linux-iio@vger.kernel.org,
+ gregkh@linuxfoundation.org, joao.pinto@synopsys.com, rafael@kernel.org,
+ linux-kernel@vger.kernel.org, broonie@kernel.org, pmeerw@pmeerw.net,
+ knaack.h@gmx.de, lorenzo.bianconi83@gmail.com, linux-i3c@lists.infradead.org,
+ jic23@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, 16 Apr 2019 09:58:33 +0200
-Lorenzo Bianconi <lorenzo.bianconi83@gmail.com> wrote:
+Hi Vitor,
 
-> >
-> > On Mon, 15 Apr 2019 21:19:41 +0200
-> > Vitor Soares <vitor.soares@synopsys.com> wrote:
-> >  
-> > > For today the st_lsm6dsx driver support lsm6dso sensor only in
-> > > spi and i2c mode.
-> > >
-> > > The lsm6dso is also i3c capable so lets give i3c support to it.
-> > >
-> > > Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
-> > > ---
-> > >  drivers/iio/imu/st_lsm6dsx/Kconfig          |  8 +++-
-> > >  drivers/iio/imu/st_lsm6dsx/Makefile         |  1 +
-> > >  drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c | 67 +++++++++++++++++++++++++++++
-> > >  3 files changed, 75 insertions(+), 1 deletion(-)
-> > >  create mode 100644 drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
-> > >
-> > > diff --git a/drivers/iio/imu/st_lsm6dsx/Kconfig b/drivers/iio/imu/st_lsm6dsx/Kconfig
-> > > index 094fd00..1ab9bbf 100644
-> > > --- a/drivers/iio/imu/st_lsm6dsx/Kconfig
-> > > +++ b/drivers/iio/imu/st_lsm6dsx/Kconfig
-> > > @@ -1,11 +1,12 @@
-> > >
-> > >  config IIO_ST_LSM6DSX
-> > >       tristate "ST_LSM6DSx driver for STM 6-axis IMU MEMS sensors"
-> > > -     depends on (I2C || SPI)
-> > > +     depends on (I2C || SPI || I3C)
-> > >       select IIO_BUFFER
-> > >       select IIO_KFIFO_BUF
-> > >       select IIO_ST_LSM6DSX_I2C if (I2C)
-> > >       select IIO_ST_LSM6DSX_SPI if (SPI_MASTER)
-> > > +     select IIO_ST_LSM6DSX_I3C if (I3C)
-> > >       help
-> > >         Say yes here to build support for STMicroelectronics LSM6DSx imu
-> > >         sensor. Supported devices: lsm6ds3, lsm6ds3h, lsm6dsl, lsm6dsm,
-> > > @@ -23,3 +24,8 @@ config IIO_ST_LSM6DSX_SPI
-> > >       tristate
-> > >       depends on IIO_ST_LSM6DSX
-> > >       select REGMAP_SPI
-> > > +
-> > > +config IIO_ST_LSM6DSX_I3C
-> > > +     tristate
-> > > +     depends on IIO_ST_LSM6DSX
-> > > +     select REGMAP_I3C
-> > > diff --git a/drivers/iio/imu/st_lsm6dsx/Makefile b/drivers/iio/imu/st_lsm6dsx/Makefile
-> > > index e5f733c..c676965 100644
-> > > --- a/drivers/iio/imu/st_lsm6dsx/Makefile
-> > > +++ b/drivers/iio/imu/st_lsm6dsx/Makefile
-> > > @@ -4,3 +4,4 @@ st_lsm6dsx-y := st_lsm6dsx_core.o st_lsm6dsx_buffer.o \
-> > >  obj-$(CONFIG_IIO_ST_LSM6DSX) += st_lsm6dsx.o
-> > >  obj-$(CONFIG_IIO_ST_LSM6DSX_I2C) += st_lsm6dsx_i2c.o
-> > >  obj-$(CONFIG_IIO_ST_LSM6DSX_SPI) += st_lsm6dsx_spi.o
-> > > +obj-$(CONFIG_IIO_ST_LSM6DSX_I3C) += st_lsm6dsx_i3c.o
-> > > diff --git a/drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c b/drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
-> > > new file mode 100644
-> > > index 0000000..2df5e70
-> > > --- /dev/null
-> > > +++ b/drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
-> > > @@ -0,0 +1,67 @@
-> > > +// SPDX-License-Identifier: GPL-2.0
-> > > +/*
-> > > + * Copyright (c) 2018 Synopsys, Inc. and/or its affiliates.
-> > > + *
-> > > + * Author: Vitor Soares <vitor.soares@synopsys.com>
-> > > + */
-> > > +
-> > > +#include <linux/kernel.h>
-> > > +#include <linux/module.h>
-> > > +#include <linux/i3c/device.h>
-> > > +#include <linux/i3c/master.h>
-> > > +#include <linux/slab.h>
-> > > +#include <linux/of.h>
-> > > +#include <linux/regmap.h>
-> > > +
-> > > +#include "st_lsm6dsx.h"
-> > > +
-> > > +#define NAME_SIZE    32
-> > > +
-> > > +struct st_lsm6dsx_i3c_data {
-> > > +     char name[NAME_SIZE];  
-> >
-> >         const char *name;
-> >  
-> > > +     enum st_lsm6dsx_hw_id id;
-> > > +};
-> > > +
-> > > +static const struct st_lsm6dsx_i3c_data hw_data[] = {  
-> >
-> > No need to make it an array, and it should probably be named
-> > st_lsm6dso_data not hw_data.  
-> 
-> I guess it will be used even for future devices so I would prefer to
-> make it an array with a 'general' name
+On Mon, 15 Apr 2019 21:19:38 +0200
+Vitor Soares <vitor.soares@synopsys.com> wrote:
 
-I find it more error-prone to reference an array with an opaque index
-number than reference an instance with a name that clearly reflects
-what HW it describes (see the I3C_DEVICE() entry at the end of the
-driver), but okay.
+I like the very detailed description in your cover letter :P.
+Anyway, glad to see I3C support added to regmap. Also happy to have a
+new driver for an I3C device.
 
+Thanks for working on that.
+
+Boris
+
+> Vitor Soares (3):
+>   remap: Add i3c bus support
+>   i3c: Add i3c_get_device_id helper
+>   iio: imu: st_lsm6dsx: Add i3c basic support
 > 
-> Regards,
-> Lorenzo
-> 
-> >  
-> > > +     { ST_LSM6DSO_DEV_NAME, ST_LSM6DSO_ID },
-> > > +};
-> > > +
-> > > +static const struct regmap_config st_lsm6dsx_i3c_regmap_config = {
-> > > +     .reg_bits = 8,
-> > > +     .val_bits = 8,
-> > > +};
-> > > +
-> > > +static int st_lsm6dsx_i3c_probe(struct i3c_device *i3cdev)
-> > > +{
-> > > +     const struct i3c_device_id *id = i3c_get_device_id(i3cdev);  
-> >
-> >                                          i3c_device_match_id(i3cdev,
-> >                                                              st_lsm6dsx_i3c_ids);
-> >  
-> > > +     const struct st_lsm6dsx_i3c_data *hw_data = id->data;
-> > > +     struct regmap *regmap;
-> > > +
-> > > +     regmap = devm_regmap_init_i3c(i3cdev, &st_lsm6dsx_i3c_regmap_config);
-> > > +     if (IS_ERR(regmap)) {
-> > > +             dev_err(&i3cdev->dev, "Failed to register i3c regmap %d\n",
-> > > +                     (int)PTR_ERR(regmap));
-> > > +             return PTR_ERR(regmap);
-> > > +     }
-> > > +
-> > > +     return st_lsm6dsx_probe(&i3cdev->dev, 0, hw_data->id,
-> > > +                             hw_data->name, regmap);
-> > > +}
-> > > +
-> > > +
-> > > +static const struct i3c_device_id st_lsm6dsx_i3c_ids[] = {
-> > > +     I3C_DEVICE(0x0104, 0x006C, &hw_data[0]),
-> > > +     { /* sentinel */ },
-> > > +};
-> > > +MODULE_DEVICE_TABLE(i3c, st_lsm6dsx_i3c_ids);
-> > > +
-> > > +static struct i3c_driver st_lsm6dsx_driver = {
-> > > +     .driver.name = "st_lsm6dsx_i3c",
-> > > +     .probe = st_lsm6dsx_i3c_probe,
-> > > +     .id_table = st_lsm6dsx_i3c_ids,  
-> >
-> > You should probably set the pm_ops here (st_lsm6dsx_pm_ops).
-> >  
-> > > +};
-> > > +module_i3c_driver(st_lsm6dsx_driver);
-> > > +
-> > > +MODULE_AUTHOR("Vitor Soares <vitor.soares@synopsys.com>");
-> > > +MODULE_DESCRIPTION("STMicroelectronics st_lsm6dsx i3c driver");
-> > > +MODULE_LICENSE("GPL v2");
-> > > +  
-> >
-> > You can remove this blank line.
-> >  
-> 
+>  drivers/base/regmap/Kconfig                 |  6 ++-
+>  drivers/base/regmap/Makefile                |  1 +
+>  drivers/base/regmap/regmap-i3c.c            | 62 ++++++++++++++++++++++++++
+>  drivers/i3c/device.c                        |  8 ++++
+>  drivers/iio/imu/st_lsm6dsx/Kconfig          |  8 +++-
+>  drivers/iio/imu/st_lsm6dsx/Makefile         |  1 +
+>  drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c | 67 +++++++++++++++++++++++++++++
+>  include/linux/i3c/device.h                  |  1 +
+>  include/linux/regmap.h                      | 20 +++++++++
+>  9 files changed, 172 insertions(+), 2 deletions(-)
+>  create mode 100644 drivers/base/regmap/regmap-i3c.c
+>  create mode 100644 drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
 > 
 
 
