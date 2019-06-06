@@ -2,23 +2,22 @@ Return-Path: <SRS0=CE6j=UF=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-8.5 required=3.0 tests=DKIM_SIGNED,DKIM_VALID,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,
+X-Spam-Status: No, score=-2.5 required=3.0 tests=DKIM_SIGNED,DKIM_VALID,
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
 	T_DKIMWL_WL_HIGH,URIBL_BLOCKED,USER_AGENT_MUTT autolearn=ham
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 05EC6C46476
-	for <linux-i3c@archiver.kernel.org>; Thu,  6 Jun 2019 18:54:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B78BDC28EB5
+	for <linux-i3c@archiver.kernel.org>; Thu,  6 Jun 2019 18:54:33 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id D9A2C2083D
+	by mail.kernel.org (Postfix) with ESMTPS id 974F82089E
 	for <linux-i3c@archiver.kernel.org>; Thu,  6 Jun 2019 18:54:33 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="e7fK8J9V";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=kernel.org header.i=@kernel.org header.b="BO9DcAvc"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org D9A2C2083D
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="WVvcF3Ir"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 974F82089E
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=the-dreams.de
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
@@ -26,46 +25,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=bVLRXfeHl4w8RtSvNc29w9dZkxvcGs/2o4Zru3MuziM=; b=e7fK8J9V9DrQUCnsqot5YzSon
-	Hcw2Orpdh1V/WE8UI0br06VqoiynJdajyG37DXSL3R5ILR4mTqPjLLOWwRkG64wMiWEst4OqIcP3i
-	R1ekh9cacM4NBf+P/62Z0/ana6CDvxJvE9yRkJDmsO18P5tGWfUc1YV/OKmArYILdqbxQ72v5ZKli
-	fMlvdJXHARuqy4KRw7rWpS+0P8saLFO1v8hVSZMfswdlLdJBUES3Zhpt+nvIYhaYXibnGl34d6K5B
-	7Jpgni5d6o8LBCxwJNtXS+C9v5Rdbeq3P+QDw37DPGAPZ53s46moY6Xy3ZJNbK84C7zTS8khJGuMt
-	LNWO0iwfw==;
+	 bh=kAZt1cnKcqCsBPnk70u3rq0FpC4Cd+monTt/uZoRNlE=; b=WVvcF3IrBnuoTPqaOWYoEOxer
+	MWfwTtkaFTGjlh7FfNFlCHgG5r2qsuPm+0pK/zVsVagDzgj4I3/aLjHoZ5VS3qOPRRu2kTD3nCv6T
+	atyEum+hvvPy9e5CI0TWydMfQ8fVlOwHomtploe4j+IYMRsFV23ja048+uOv5/rb+/e5D3l2YsLXh
+	wmNGbK5Qo22uDljttDNMNufGPzQy9XUL3s12A3djmtq1gy9SECmj13+0/d5E3FBIRzidN8xoO+oUx
+	rNgkoQXEOnC/EfhZJvW5nvlFiY84n1YX3e1JvUnQNXfX2Nk9Ta8f5aGUtzrouDzYGovN4mEHYm0Sk
+	wY2tx9Oxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYxWz-0000Av-70; Thu, 06 Jun 2019 18:54:33 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYviz-0008BP-Ud
- for linux-i3c@lists.infradead.org; Thu, 06 Jun 2019 16:58:52 +0000
-Received: from localhost.localdomain (nat-pool-mxp-t.redhat.com
- [149.6.153.186])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0155E20693;
- Thu,  6 Jun 2019 16:58:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1559840329;
- bh=YfQPguzAqsesPyTNbKdNkGI/9IVehUonN3ApIuvgM/o=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=BO9DcAvctY5CqhrOEHCKrQaw5dPq052snhzErz+eQQ3sarmxOJrJxPVSPJDGsTjoD
- Lvn4A0JWh9rX+Izwfj18tsW9Yk91iMgrOFiUiXyYqsa9kgqV9OSbDMra0sL7NKkItT
- MOd0UClPaAvU+xEuZqBTsYrA7cbqzyKPv2S5DIrI=
-Date: Thu, 6 Jun 2019 18:58:43 +0200
-From: Lorenzo Bianconi <lorenzo@kernel.org>
+	id 1hYxWy-0000Ab-Qy; Thu, 06 Jun 2019 18:54:32 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hYvCh-00044o-1L
+ for linux-i3c@lists.infradead.org; Thu, 06 Jun 2019 16:25:29 +0000
+Received: from localhost (p5486CDEB.dip0.t-ipconnect.de [84.134.205.235])
+ by pokefinder.org (Postfix) with ESMTPSA id 7FAEA2C35BF;
+ Thu,  6 Jun 2019 18:25:23 +0200 (CEST)
+Date: Thu, 6 Jun 2019 18:25:23 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
 To: Vitor Soares <Vitor.Soares@synopsys.com>
-Subject: Re: [PATCH v2 3/3] iio: imu: st_lsm6dsx: add i3c basic support for
- LSM6DSO and LSM6DSR
-Message-ID: <20190606165841.GA10356@localhost.localdomain>
+Subject: Re: [PATCH v2 0/3] Add ST lsm6dso i3c support
+Message-ID: <20190606162522.GA3782@kunai>
 References: <cover.1559831663.git.vitor.soares@synopsys.com>
- <6195f3cd21636a5f85c0107b5c3b217be868a4b9.1559831663.git.vitor.soares@synopsys.com>
 MIME-Version: 1.0
-In-Reply-To: <6195f3cd21636a5f85c0107b5c3b217be868a4b9.1559831663.git.vitor.soares@synopsys.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+In-Reply-To: <cover.1559831663.git.vitor.soares@synopsys.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_095850_018222_8D40F88B 
-X-CRM114-Status: GOOD (  19.64  )
+X-CRM114-CacheID: sfid-20190606_092527_227937_0D9D04B7 
+X-CRM114-Status: UNSURE (   6.06  )
+X-CRM114-Notice: Please train this message.
 X-Mailman-Approved-At: Thu, 06 Jun 2019 11:54:30 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.21
@@ -82,171 +70,51 @@ Cc: Joao.Pinto@synopsys.com, rafael@kernel.org, linux-iio@vger.kernel.org,
  gregkh@linuxfoundation.org, bbrezillon@kernel.org,
  linux-kernel@vger.kernel.org, broonie@kernel.org, linux-i2c@vger.kernel.org,
  lorenzo.bianconi83@gmail.com, linux-i3c@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3467876716178012450=="
+Content-Type: multipart/mixed; boundary="===============8215829000310717621=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 
---===============3467876716178012450==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="mP3DRpeJDSE+ciuQ"
+--===============8215829000310717621==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="2oS5YaxWCcQjTEyO"
 Content-Disposition: inline
 
 
---mP3DRpeJDSE+ciuQ
+--2oS5YaxWCcQjTEyO
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
 
-> For today the st_lsm6dsx driver support LSM6DSO and LSM6DSR sensor only in
-> spi and i2c mode.
->=20
-> The LSM6DSO and LSM6DSR are also i3c capable so lets give i3c support to
-> them.
->=20
-> Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
-> ---
+On Thu, Jun 06, 2019 at 05:12:01PM +0200, Vitor Soares wrote:
+> This patch series add i3c support for STM LSM6DSO and LSM6DSR sensors.
 
-Hi Vitor,
+Why is the I2C list on CC? Is there something relevant I missed?
 
-just a nit inline, but you can add my acked-by for st_lsm6dsx part in v3
 
-Acked-by: Lorenzo Bianconi <lorenzo@kernel.org>
-
-Regards,
-Lorenzo
-
-> Changes in v2:
->   Add support for LSM6DSR
->   Set pm_ops to st_lsm6dsx_pm_ops
->=20
->  drivers/iio/imu/st_lsm6dsx/Kconfig          |  8 ++-
->  drivers/iio/imu/st_lsm6dsx/Makefile         |  1 +
->  drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c | 76 +++++++++++++++++++++++=
-++++++
->  3 files changed, 84 insertions(+), 1 deletion(-)
->  create mode 100644 drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
->=20
-> diff --git a/drivers/iio/imu/st_lsm6dsx/Kconfig b/drivers/iio/imu/st_lsm6=
-dsx/Kconfig
-> index 002a423..8115936 100644
-> --- a/drivers/iio/imu/st_lsm6dsx/Kconfig
-> +++ b/drivers/iio/imu/st_lsm6dsx/Kconfig
-> @@ -2,11 +2,12 @@
-> =20
->  config IIO_ST_LSM6DSX
->  	tristate "ST_LSM6DSx driver for STM 6-axis IMU MEMS sensors"
-> -	depends on (I2C || SPI)
-> +	depends on (I2C || SPI || I3C)
->  	select IIO_BUFFER
->  	select IIO_KFIFO_BUF
->  	select IIO_ST_LSM6DSX_I2C if (I2C)
->  	select IIO_ST_LSM6DSX_SPI if (SPI_MASTER)
-> +	select IIO_ST_LSM6DSX_I3C if (I3C)
->  	help
->  	  Say yes here to build support for STMicroelectronics LSM6DSx imu
->  	  sensor. Supported devices: lsm6ds3, lsm6ds3h, lsm6dsl, lsm6dsm,
-> @@ -24,3 +25,8 @@ config IIO_ST_LSM6DSX_SPI
->  	tristate
->  	depends on IIO_ST_LSM6DSX
->  	select REGMAP_SPI
-> +
-
-[...]
-
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/i3c/device.h>
-> +#include <linux/i3c/master.h>
-> +#include <linux/slab.h>
-> +#include <linux/of.h>
-> +#include <linux/regmap.h>
-> +
-> +#include "st_lsm6dsx.h"
-> +
-> +#define NAME_SIZE	32
-> +
-> +struct st_lsm6dsx_i3c_data {
-> +	const char name[NAME_SIZE];
-> +	enum st_lsm6dsx_hw_id id;
-> +};
-> +
-> +enum st_lsm6dsx_i3c_data_id {
-> +	ST_LSM6DSO_I3C_DATA_ID,
-> +	ST_LSM6DSR_I3C_DATA_ID,
-> +};
-
-do we really need them? maybe just use hw_data[n] adding a comment to indic=
-ate
-the related sensor defining st_lsm6dsx_i3c_ids[]
-
-> +
-> +static const struct st_lsm6dsx_i3c_data hw_data[] =3D {
-> +	{ ST_LSM6DSO_DEV_NAME, ST_LSM6DSO_ID },
-> +	{ ST_LSM6DSR_DEV_NAME, ST_LSM6DSR_ID },
-> +};
-> +
-> +static const struct regmap_config st_lsm6dsx_i3c_regmap_config =3D {
-> +	.reg_bits =3D 8,
-> +	.val_bits =3D 8,
-> +};
-> +
-> +static int st_lsm6dsx_i3c_probe(struct i3c_device *i3cdev)
-> +{
-> +	const struct i3c_device_id *id =3D i3c_get_device_id(i3cdev);
-> +	const struct st_lsm6dsx_i3c_data *hw_data =3D id->data;
-> +	struct regmap *regmap;
-> +
-> +	regmap =3D devm_regmap_init_i3c(i3cdev, &st_lsm6dsx_i3c_regmap_config);
-> +	if (IS_ERR(regmap)) {
-> +		dev_err(&i3cdev->dev, "Failed to register i3c regmap %d\n",
-> +			(int)PTR_ERR(regmap));
-> +		return PTR_ERR(regmap);
-> +	}
-> +
-> +	return st_lsm6dsx_probe(&i3cdev->dev, 0, hw_data->id,
-> +				hw_data->name, regmap);
-> +}
-> +
-> +static const struct i3c_device_id st_lsm6dsx_i3c_ids[] =3D {
-> +	I3C_DEVICE(0x0104, 0x006C, &hw_data[ST_LSM6DSO_I3C_DATA_ID]),
-> +	I3C_DEVICE(0x0104, 0x006B, &hw_data[ST_LSM6DSR_I3C_DATA_ID]),
-> +	{ /* sentinel */ },
-> +};
-> +MODULE_DEVICE_TABLE(i3c, st_lsm6dsx_i3c_ids);
-> +
-> +static struct i3c_driver st_lsm6dsx_driver =3D {
-> +	.driver =3D {
-> +		.name =3D "st_lsm6dsx_i3c",
-> +		.pm =3D &st_lsm6dsx_pm_ops,
-> +	},
-> +	.probe =3D st_lsm6dsx_i3c_probe,
-> +	.id_table =3D st_lsm6dsx_i3c_ids,
-> +};
-> +module_i3c_driver(st_lsm6dsx_driver);
-> +
-> +MODULE_AUTHOR("Vitor Soares <vitor.soares@synopsys.com>");
-> +MODULE_DESCRIPTION("STMicroelectronics st_lsm6dsx i3c driver");
-> +MODULE_LICENSE("GPL v2");
-> --=20
-> 2.7.4
->=20
-
---mP3DRpeJDSE+ciuQ
+--2oS5YaxWCcQjTEyO
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQTquNwa3Txd3rGGn7Y6cBh0uS2trAUCXPlGPwAKCRA6cBh0uS2t
-rPqMAP44h3ZeX39OaxRtCeAjFaVA461EPlzIZOpxST1c3RRKvwD/S/enVcgJjWIc
-SSwRn2zrrKVUs7mYZsyKAcRBo9+Pvgs=
-=G/Yz
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAlz5Pm4ACgkQFA3kzBSg
+KbapNg//cBKxDRaQW1S7u+5yCetAmE74WJLlzFtJOzL0oS+qcPOsi5YATvPGnu/1
+k+bPwNGKf3MT1fvax7/qcZjGxLsiGqUfx7AkDYwUEK9Z1Uy6ZN+zdvGjNw9hw5mB
+vbF4un8buF3bMxM31ggNx3nQL28SXKgnCiqKkyL/7Ohr1x9jodcSeCrZlLsDjebm
+x68IPtUsPZkd3sVfUEdirkoBuX7j0H0dbzUyoxYM/Zfooo79uDH/pXKhiBMWQmtK
+vixrFUwZdPO3i2hUtvG4K+8gMUNfH7Z0bLBRVV3P8yZ1Zae0IcBPilJUZifirOLr
+8BOxiI03pzrn1LbOG0HkB6RcsgnSaHWZmycLyWJmdcrm6TDzq8e/eCFs9ZhVl0Hx
+12OSitCoI2oX8GJnW2uCdruh/twfwXtZMOvJpaRHFApGQbnH+FRIfC9Bm3+Jrt/K
+z0baLeWx4fl+YDeKyHhtNcTR0o3hAT7yMiNDDU2duYiCbpH7/+Bp6Pun61WHsPSX
+aNmH0UwyPyRQNxrVHi3ytxSfJQ/Zi/dr9XI+ls2idGR5OnjpZhUR1QxNd84Rm529
+WTBKK/1ygE72ulUl5aX45FcyGEVLf6QMjDRBAJZebVXNVcEYQauMr/C/JjFUMQN1
+1Nitl/qlfEf4FITpEWE351oJF3RjrNgmSmpyEI0vNccDLOVl134=
+=/qTU
 -----END PGP SIGNATURE-----
 
---mP3DRpeJDSE+ciuQ--
+--2oS5YaxWCcQjTEyO--
 
 
---===============3467876716178012450==
+--===============8215829000310717621==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -257,5 +125,5 @@ linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
 
---===============3467876716178012450==--
+--===============8215829000310717621==--
 
