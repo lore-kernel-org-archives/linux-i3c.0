@@ -5,19 +5,19 @@ X-Spam-Level:
 X-Spam-Status: No, score=-9.0 required=3.0 tests=DKIM_SIGNED,DKIM_VALID,
 	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,SIGNED_OFF_BY,
 	SPF_HELO_NONE,SPF_PASS,T_DKIMWL_WL_HIGH,URIBL_BLOCKED,USER_AGENT_GIT
-	autolearn=unavailable autolearn_force=no version=3.4.0
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id CE96CC28EB4
-	for <linux-i3c@archiver.kernel.org>; Thu,  6 Jun 2019 14:00:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 00733C04AB5
+	for <linux-i3c@archiver.kernel.org>; Thu,  6 Jun 2019 14:00:17 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id A85C820652
-	for <linux-i3c@archiver.kernel.org>; Thu,  6 Jun 2019 14:00:15 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id C9A7220652
+	for <linux-i3c@archiver.kernel.org>; Thu,  6 Jun 2019 14:00:16 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="tfZV3AA4";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="epaHTtua"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org A85C820652
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="o1bvS797";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="OvWqhG7D"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org C9A7220652
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -27,56 +27,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=1W0pfFGoUxAC5XbBT0GGMTCF6/voqvMIDKfjBet8g+k=; b=tfZV3AA45dbImvzOzds3XPPV29
-	AhvjK91n6HEexJx3JS9fm/vdOoV+eJaZLVH0BqjMpZyUrEObuYM6PMZyIpwfVSvgy8u5kO6LEVRx8
-	U71GDjiFaXogT261+nNFK2tvUixyfR4RUT8j8hJTA7P4C6FWbc51Y8FEDPlz0Iyh2HtRzvtMk6v5G
-	518oGSOK2liD5TL3NKtqk+HZaXgj+V32fJCqb7qj0u+2I/3lpu1S826mRWpOf2Rev0XQvMlSJzHFq
-	53yOJuYNqbHZHE3ya2rNxtjI7QTV30w9FnkUFNRresocbW/qzyA2lBssPz9mNtPtHl7rUYixdeMCu
-	5IQUFH0A==;
+	bh=D/EyyLZ/2vwPUGem6AnLLBPCaIeFMFdV4ZwCVg18LO8=; b=o1bvS797gfF9XVi51XAIO8YvQv
+	136UAIS3qgT5BIez7xrDkHA6Jg6pAXz34zl3iCv0aREluMnZQsUS7KZQCCqt6JBqqdJRFOVhtV7YG
+	AuCcOU/ojF9oBdT8fBW57C5DGFn8npuWcQ3mG8HLQqaPk/nMY5oNRv4XwLdWmu+AQLPHR7RRtvU6b
+	yiGqvy1uriEjbqyjJClqPj+NeWd6GcodtnD2HbH/jeqZXxVqnw1Exq2khr73afrL+16T1R/vvkwDE
+	NPxUU6+8mBufjyJmRCRoruriN7glOC6X3rG97dwoEOIJKkHec4l07leSOydvqT+VdJBpo90Rj6kr/
+	RHhWdryg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYswB-0004aU-7V; Thu, 06 Jun 2019 14:00:15 +0000
+	id 1hYswC-0004b1-DX; Thu, 06 Jun 2019 14:00:16 +0000
 Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYsw9-0004YS-2t
- for linux-i3c@lists.infradead.org; Thu, 06 Jun 2019 14:00:14 +0000
+ id 1hYswA-0004Ya-1M
+ for linux-i3c@lists.infradead.org; Thu, 06 Jun 2019 14:00:15 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 25C51C0B9F;
- Thu,  6 Jun 2019 13:59:49 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 3A3BFC0BA1;
+ Thu,  6 Jun 2019 13:59:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1559829589; bh=6XGIkYC8pr3tc2Zq6ZaUBCFOv5OZZX8H6H8+9IoAnSQ=;
+ t=1559829590; bh=KvCwUMSc/ssxfCEfFG115Dj1KyU+yGJ4OOCQiO1T/DE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=epaHTtuav4+i5QQdICoqbuS0LTHYQ1U93qVfR8Ii2dDtaMGGHImIVNgmzjaljf6d2
- ngU1+FJEv0DfJBLgjA5c2vJjulpcS8ZLypQHDDoEI2rQXPqSIb9S532y4PL+328Obq
- 2NT7wQBU1Mm4cc5F7lPIN5mboS3jFiL6owHQhVz0m2uK5gJpdz+AlkJ9GN8IrEU+xp
- vb0wK5s5AaJphx9KC1hYByPt8DXdPbQJ5xlAfLl7ac15AhWrvI86HfW6ansGLtlmQi
- mMUK4XcBKNj/1PPYzCDvLcJC9sLqswtBQIdbv90f/4VlFURih6f4ACfIzKTpeIcBz7
- OVIbI/o6MokJg==
-Received: from de02.synopsys.com (de02.internal.synopsys.com [10.225.17.21])
- by mailhost.synopsys.com (Postfix) with ESMTP id D484EA0057;
- Thu,  6 Jun 2019 14:00:08 +0000 (UTC)
+ b=OvWqhG7DC9kXTDHWRl+4vDmhLV4ibiqfp+y2yR8GqyZxR/1NvCUiXNvYYiwcG8RQS
+ d//2ochfyTZEAkrqqtXH0p+5EZxHOyKHzKiyD09EYrZybMkmIUMxVxRlzCY6xqcj1H
+ m19wSlHmuO6Grg5rHekpX0v9aXffekWNoEAgb7aogeAuatF6q4VpzuxiyMY0evC3yk
+ Cl9t5mX888hhdRhNjkoh5GfND26J67g6H3WP0VzTjkRbnmbnZuntMIwjIEkE43OZF4
+ RWLeMlW7L/1jQOtM0OFZvqLgb1JMMSVRNzUxSo4/2XuVsVPlf4O0Id7TrQbgnxcjt4
+ mwa8e00H1m3Hg==
+Received: from de02.synopsys.com (germany.internal.synopsys.com [10.225.17.21])
+ by mailhost.synopsys.com (Postfix) with ESMTP id E7E1FA005D;
+ Thu,  6 Jun 2019 14:00:09 +0000 (UTC)
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by de02.synopsys.com (Postfix) with ESMTP id C35D43F6D1;
- Thu,  6 Jun 2019 16:00:08 +0200 (CEST)
+ by de02.synopsys.com (Postfix) with ESMTP id D6F4D3F6D4;
+ Thu,  6 Jun 2019 16:00:09 +0200 (CEST)
 From: Vitor Soares <Vitor.Soares@synopsys.com>
 To: linux-i3c@lists.infradead.org
-Subject: [PATCH v2 2/3] i3c: add mixed limited bus mode
-Date: Thu,  6 Jun 2019 16:00:02 +0200
-Message-Id: <47db801ee13bd7a831c1cc24353653ea0ddd3721.1559821228.git.vitor.soares@synopsys.com>
+Subject: [PATCH v2 3/3] i3c: dw: add limited bus mode support
+Date: Thu,  6 Jun 2019 16:00:03 +0200
+Message-Id: <5d0fe045c9a557f24f76a01d1066de2831b8489f.1559821228.git.vitor.soares@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1559821227.git.vitor.soares@synopsys.com>
 References: <cover.1559821227.git.vitor.soares@synopsys.com>
 In-Reply-To: <cover.1559821227.git.vitor.soares@synopsys.com>
 References: <cover.1559821227.git.vitor.soares@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_070013_138229_7307278A 
-X-CRM114-Status: GOOD (  12.74  )
+X-CRM114-CacheID: sfid-20190606_070014_078630_98441A56 
+X-CRM114-Status: GOOD (  10.38  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,75 +96,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The i3c bus spec defines a bus configuration where i2c devices don't
-have a 50ns filter but support SCL running at SDR max rate (12.5MHz).
-
-This patch introduces the limited bus mode so that users can use
-a higher speed in presence of i2c devices index 1.
+This patch add limited bus mode support for DesignWare i3c master
 
 Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
 Cc: Boris Brezillon <bbrezillon@kernel.org>
 Cc: <linux-kernel@vger.kernel.org>
 ---
 Changes in v2:
-  Enhance commit message
+  None
 
- drivers/i3c/master.c       | 5 +++++
- include/linux/i3c/master.h | 5 +++++
- 2 files changed, 10 insertions(+)
+ drivers/i3c/master/dw-i3c-master.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 8cd5824..f446c4d 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -470,6 +470,7 @@ static int i3c_bus_init(struct i3c_bus *i3cbus)
- static const char * const i3c_bus_mode_strings[] = {
- 	[I3C_BUS_MODE_PURE] = "pure",
- 	[I3C_BUS_MODE_MIXED_FAST] = "mixed-fast",
-+	[I3C_BUS_MODE_MIXED_LIMITED] = "mixed-limited",
- 	[I3C_BUS_MODE_MIXED_SLOW] = "mixed-slow",
- };
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index 1d83c97..9612d93 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -599,6 +599,7 @@ static int dw_i3c_master_bus_init(struct i3c_master_controller *m)
  
-@@ -585,6 +586,7 @@ int i3c_bus_set_mode(struct i3c_bus *i3cbus, enum i3c_bus_mode mode,
- 			i3cbus->scl_rate.i3c = I3C_BUS_TYP_I3C_SCL_RATE;
- 		break;
+ 	switch (bus->mode) {
  	case I3C_BUS_MODE_MIXED_FAST:
 +	case I3C_BUS_MODE_MIXED_LIMITED:
- 		if (!i3cbus->scl_rate.i3c)
- 			i3cbus->scl_rate.i3c = I3C_BUS_TYP_I3C_SCL_RATE;
- 		if (!i3cbus->scl_rate.i2c)
-@@ -2490,6 +2492,9 @@ int i3c_master_register(struct i3c_master_controller *master,
- 				mode = I3C_BUS_MODE_MIXED_FAST;
- 			break;
- 		case I3C_LVR_I2C_INDEX(1):
-+			if (mode < I3C_BUS_MODE_MIXED_LIMITED)
-+				mode = I3C_BUS_MODE_MIXED_LIMITED;
-+			break;
- 		case I3C_LVR_I2C_INDEX(2):
- 			if (mode < I3C_BUS_MODE_MIXED_SLOW)
- 				mode = I3C_BUS_MODE_MIXED_SLOW;
-diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
-index f13fd8b..89ea461 100644
---- a/include/linux/i3c/master.h
-+++ b/include/linux/i3c/master.h
-@@ -250,12 +250,17 @@ struct i3c_device {
-  *			     the bus. The only impact in this mode is that the
-  *			     high SCL pulse has to stay below 50ns to trick I2C
-  *			     devices when transmitting I3C frames
-+ * @I3C_BUS_MODE_MIXED_LIMITED: I2C devices without 50ns spike filter are
-+ *				present on the bus. However they allows
-+ *				compliance up to the maximum SDR SCL clock
-+ *				frequency.
-  * @I3C_BUS_MODE_MIXED_SLOW: I2C devices without 50ns spike filter are present
-  *			     on the bus
-  */
- enum i3c_bus_mode {
- 	I3C_BUS_MODE_PURE,
- 	I3C_BUS_MODE_MIXED_FAST,
-+	I3C_BUS_MODE_MIXED_LIMITED,
- 	I3C_BUS_MODE_MIXED_SLOW,
- };
- 
+ 		ret = dw_i2c_clk_cfg(master);
+ 		if (ret)
+ 			return ret;
 -- 
 2.7.4
 
