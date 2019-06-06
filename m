@@ -4,62 +4,192 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 X-Spam-Level: 
 X-Spam-Status: No, score=-7.0 required=3.0 tests=DKIM_SIGNED,DKIM_VALID,
 	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,SIGNED_OFF_BY,
-	SPF_HELO_NONE,SPF_PASS,T_DKIMWL_WL_HIGH,URIBL_BLOCKED autolearn=unavailable
+	SPF_HELO_NONE,SPF_PASS,T_DKIMWL_WL_HIGH autolearn=unavailable
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BBEBFC04AB5
-	for <linux-i3c@archiver.kernel.org>; Thu,  6 Jun 2019 17:35:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 726F5C04AB5
+	for <linux-i3c@archiver.kernel.org>; Thu,  6 Jun 2019 18:08:31 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 930AB2083D
-	for <linux-i3c@archiver.kernel.org>; Thu,  6 Jun 2019 17:35:48 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 4CFA62083D
+	for <linux-i3c@archiver.kernel.org>; Thu,  6 Jun 2019 18:08:31 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="XupDmc1V"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 930AB2083D
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=collabora.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="Qo0NQM4k";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="ADgfWKOd"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4CFA62083D
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ixBG3s0V8XFU0fRuC2BJ33W3GuQ0yRH34m5RfRU0Fgw=; b=XupDmc1Vf38+y2
-	riWmnZm7qf3Qb72r2oaY+rh5IiJtbgp+Qpmm+bsCjULfpNKhnBEGUoCkNCQw63yJ3E3ZWkKMowVyH
-	LRulhf97DD0D6SM+aIqLNRi3jse2BnsmJPIiK4G1QdkqcUBe2kPuF0wp14jFQP08mcdT4CbKgC7y/
-	B/eYs3HRCtGvomTuuUXil5MscnByREvVQTbYBviq2LO0o/+HFkfzi9mZKwI6mYJNcae5RSOt0rXYE
-	X7UVt+19IpIDDQTEgxnldzNVrqW57gbuD5QsYPSzzYNuReGT3z5QjseGZO6IkeWSY5hZW/LZIGz/Z
-	rDgQGAgsvOzSOlpTyeQA==;
+	List-Owner; bh=Jz9YbbgrDMqEMc87Qmg1aY9ilYLl+ZiGQuwOolEMqmw=; b=Qo0NQM4kn6yx/i
+	atE/Z6IiDQyTQZGIndhI3FUlDTHDwDgQFFaMTgLcVWUwvsNJ3aiurfT3lROPVUFA9BFWc+MSBVHUG
+	8oV007Zc30OlaVyqk9dJlSL1vxMMwjL3sL6xphzg+pnGL8TndUff2JD3CqVKosoYchHwnYTz5eyVa
+	uNPGYnHb9RncLIEfqy/AJB/BDhpSq8kWIYfU/XWlEhNPpaxl29VOSOpbPwERp5CbGZ8ovja6YP6Wk
+	J53v3eDYvIEXZv6rzkGGzhkQou27dWTO3lgguLI4cOJvS6/RLnvi1l+rTBMsK0M7453ZTdiV3GnHt
+	0xupn8Znk/P7aVCqH8Dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYwIm-0005ol-7b; Thu, 06 Jun 2019 17:35:48 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hYwoQ-0000Hn-Hg; Thu, 06 Jun 2019 18:08:30 +0000
+Received: from smtprelay-out1.synopsys.com ([198.182.47.102])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYwIj-0005oQ-Sj
- for linux-i3c@lists.infradead.org; Thu, 06 Jun 2019 17:35:47 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id E47C82605F9;
- Thu,  6 Jun 2019 18:35:43 +0100 (BST)
-Date: Thu, 6 Jun 2019 19:35:40 +0200
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Vitor Soares <Vitor.Soares@synopsys.com>
-Subject: Re: [PATCH v2 1/3] i3c: fix i2c and i3c scl rate by bus mode
-Message-ID: <20190606193540.680d391b@collabora.com>
-In-Reply-To: <13D59CF9CEBAF94592A12E8AE55501350AABE7FC@DE02WEMBXB.internal.synopsys.com>
+ id 1hYwoD-00007F-4c
+ for linux-i3c@lists.infradead.org; Thu, 06 Jun 2019 18:08:18 +0000
+Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
+ [10.12.135.162])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 09D6FC007E;
+ Thu,  6 Jun 2019 18:08:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1559844506; bh=LYXWwebVH6yB78rc/9b3yggO6RRjrpo0PTnBJ04IcEE=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=ADgfWKOd1zEb4cwAm2sGKAsKIh8WYxeIU57EAAF5kLjECs9hmY/FIowi1QxXmNEhf
+ IdPUAgd2Z6AJw2az7TyQhKhg/XqOGvZ5SL7BWOW5xZvhqG1FhxgMAmz2I5P9a8gSRP
+ 8jeec0Z3puhz48FLsIyO++msVL2RdlAXVOD1w97qwMerrtSyi/ScJqf93KZW7iYL7A
+ DuynxTM43wuYvASr+yBsWPKxdneXHMVGcGkRGEuQnK0dYotIdtaQAInCKDXr4zqjVJ
+ bkkhwOTHN+s4oMvxMAsq97mdVVGUoiDqwxDieE9X3ppf6+mcxAZMo+HQMqUI4s1y9z
+ Wg+X14RR3Lt+A==
+Received: from US01WEHTC2.internal.synopsys.com
+ (us01wehtc2.internal.synopsys.com [10.12.239.237])
+ (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 98E5CA0093;
+ Thu,  6 Jun 2019 18:08:14 +0000 (UTC)
+Received: from DE02WEHTCA.internal.synopsys.com (10.225.19.92) by
+ US01WEHTC2.internal.synopsys.com (10.12.239.237) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Thu, 6 Jun 2019 11:08:14 -0700
+Received: from DE02WEMBXB.internal.synopsys.com ([fe80::95ce:118a:8321:a099])
+ by DE02WEHTCA.internal.synopsys.com ([::1]) with mapi id
+ 14.03.0415.000; Thu, 6 Jun 2019 20:08:12 +0200
+From: Vitor Soares <Vitor.Soares@synopsys.com>
+To: Boris Brezillon <boris.brezillon@collabora.com>,
+ Vitor Soares <Vitor.Soares@synopsys.com>
+Subject: RE: [PATCH v2 1/3] i3c: fix i2c and i3c scl rate by bus mode
+Thread-Topic: [PATCH v2 1/3] i3c: fix i2c and i3c scl rate by bus mode
+Thread-Index: AQHVHGF3lXrsgZbBP0uzVGVfPAtbX6aOizQAgABOUdD//+i1AIAAJSsA
+Date: Thu, 6 Jun 2019 18:08:11 +0000
+Message-ID: <13D59CF9CEBAF94592A12E8AE55501350AABE85C@DE02WEMBXB.internal.synopsys.com>
 References: <cover.1559821227.git.vitor.soares@synopsys.com>
  <47de89f2335930df0ed6903be9afe6de4f46e503.1559821228.git.vitor.soares@synopsys.com>
  <20190606161844.4a6b759c@collabora.com>
  <13D59CF9CEBAF94592A12E8AE55501350AABE7FC@DE02WEMBXB.internal.synopsys.com>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ <20190606193540.680d391b@collabora.com>
+In-Reply-To: <20190606193540.680d391b@collabora.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-dg-ref: =?utf-8?B?UEcxbGRHRStQR0YwSUc1dFBTSmliMlI1TG5SNGRDSWdjRDBpWXpwY2RYTmxj?=
+ =?utf-8?B?bk5jYzI5aGNtVnpYR0Z3Y0dSaGRHRmNjbTloYldsdVoxd3dPV1E0TkRsaU5p?=
+ =?utf-8?B?MHpNbVF6TFRSaE5EQXRPRFZsWlMwMllqZzBZbUV5T1dVek5XSmNiWE5uYzF4?=
+ =?utf-8?B?dGMyY3RNRFZqWlRBMk1tTXRPRGc0TmkweE1XVTVMVGd5TkRZdFlqZ3dPR05t?=
+ =?utf-8?B?TlRsa04yWmpYR0Z0WlMxMFpYTjBYREExWTJVd05qSmtMVGc0T0RZdE1URmxP?=
+ =?utf-8?B?UzA0TWpRMkxXSTRNRGhqWmpVNVpEZG1ZMkp2WkhrdWRIaDBJaUJ6ZWowaU5q?=
+ =?utf-8?B?QXpPU0lnZEQwaU1UTXlNRFF6TVRnd09UQXlNREF4TWpNeUlpQm9QU0pPZFd0?=
+ =?utf-8?B?WWNXTjJWSFZVVW1kaGFXVkxhbFZ2TDBvMWVsSkpTR2M5SWlCcFpEMGlJaUJp?=
+ =?utf-8?B?YkQwaU1DSWdZbTg5SWpFaUlHTnBQU0pqUVVGQlFVVlNTRlV4VWxOU1ZVWk9R?=
+ =?utf-8?B?MmRWUVVGQ1VVcEJRVUpSUzNFelRXdG9lbFpCVW1nM1Ztd3dkMFo1TmtGSFNI?=
+ =?utf-8?B?UlhXRlJCV0V4dlFVOUJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVG?=
+ =?utf-8?B?QlNFRkJRVUZEYTBOQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZC?=
+ =?utf-8?B?UlVGQlVVRkNRVUZCUVZaNlpHaEhaMEZCUVVGQlFVRkJRVUZCUVVGQlFVbzBR?=
+ =?utf-8?B?VUZCUW0xQlIydEJZbWRDYUVGSE5FRlpkMEpzUVVZNFFXTkJRbk5CUjBWQllt?=
+ =?utf-8?B?ZENkVUZIYTBGaVowSnVRVVk0UVdSM1FtaEJTRkZCV2xGQ2VVRkhNRUZaVVVK?=
+ =?utf-8?B?NVFVZHpRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZC?=
+ =?utf-8?B?UVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJR?=
+ =?utf-8?B?VUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFV?=
+ =?utf-8?B?RkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZGUVVGQlFVRkJRVUZCUVdk?=
+ =?utf-8?B?QlFVRkJRVUZ1WjBGQlFVZFpRV0ozUWpGQlJ6UkJXa0ZDZVVGSWEwRllkMEoz?=
+ =?utf-8?B?UVVkRlFXTm5RakJCUnpSQldsRkNlVUZJVFVGWWQwSnVRVWRaUVVGQlFVRkJR?=
+ =?utf-8?B?VUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFV?=
+ =?utf-8?B?RkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVG?=
+ =?utf-8?B?QlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZC?=
+ =?utf-8?B?UVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlVVRkJR?=
+ =?utf-8?B?VUZCUVVGQlFVTkJRVUZCUVVGRFpVRkJRVUZhWjBKMlFVaFZRV0puUW10QlNF?=
+ =?utf-8?B?bEJaVkZDWmtGSVFVRlpVVUo1UVVoUlFXSm5RbXhCU0VsQlkzZENaa0ZJVFVG?=
+ =?utf-8?B?WlVVSjBRVWhOUVdSUlFuVkJSMk5CV0hkQ2FrRkhPRUZpWjBKdFFVRkJRVUZC?=
+ =?utf-8?B?UVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJR?=
+ =?utf-8?B?VUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFV?=
+ =?utf-8?B?RkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVG?=
+ =?utf-8?B?QlFVRkJRa0ZCUVVGQlFVRkJRVUZKUVVGQlFVRkJTalJCUVVGQ2JVRkhPRUZr?=
+ =?utf-8?B?VVVKMVFVZFJRV05uUWpWQlJqaEJZMEZDYUVGSVNVRmtRVUoxUVVkVlFXTm5R?=
+ =?utf-8?B?bnBCUmpoQlkzZENhRUZITUVGamQwSXhRVWMwUVZwM1FtWkJTRWxCV2xGQ2Vr?=
+ =?utf-8?B?RkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVG?=
+ =?utf-8?B?QlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZC?=
+ =?utf-8?B?UVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJR?=
+ =?utf-8?B?VUZCUVVGQlFVRkJRVUZCUVVWQlFVRkJRVUZCUVVGQlowRkJRVUZCUVc1blFV?=
+ =?utf-8?B?RkJSMWxCWW5kQ01VRkhORUZhUVVKNVFVaHJRVmgzUW5kQlIwVkJZMmRDTUVG?=
+ =?utf-8?B?SE5FRmFVVUo1UVVoTlFWaDNRbnBCUnpCQllWRkNha0ZCUVVGQlFVRkJRVUZC?=
+ =?utf-8?B?UVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJR?=
+ =?utf-8?B?VUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFV?=
+ =?utf-8?B?RkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVG?=
+ =?utf-8?B?QlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRlJRVUZCUVVGQlFVRkJRMEZC?=
+ =?utf-8?B?UVVGQlFVTmxRVUZCUVZwblFuWkJTRlZCWW1kQ2EwRklTVUZsVVVKbVFVaEJR?=
+ =?utf-8?B?VmxSUW5sQlNGRkJZbWRDYkVGSVNVRmpkMEptUVVoTlFXUkJRVUZCUVVGQlFV?=
+ =?utf-8?B?RkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVG?=
+ =?utf-8?B?QlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZC?=
+ =?utf-8?B?UVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJR?=
+ =?utf-8?B?VUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZDUVVGQlFV?=
+ =?utf-8?B?RkJRVUZCUVVsQlFVRkJRVUZLTkVGQlFVSnRRVWM0UVdSUlFuVkJSMUZCWTJk?=
+ =?utf-8?B?Q05VRkdPRUZqUVVKb1FVaEpRV1JCUW5WQlIxVkJZMmRDZWtGR09FRmtRVUo2?=
+ =?utf-8?B?UVVjd1FWbDNRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJR?=
+ =?utf-8?B?VUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFV?=
+ =?utf-8?B?RkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVG?=
+ =?utf-8?B?QlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZC?=
+ =?utf-8?B?UVVGQlJVRkJRVUZCUVVGQlFVRm5RVUZCUVVGQmJtZEJRVUZIV1VGaWQwSXhR?=
+ =?utf-8?B?VWMwUVZwQlFubEJTR3RCV0hkQ2QwRkhSVUZqWjBJd1FVYzBRVnBSUW5sQlNF?=
+ =?utf-8?B?MUJXSGRDTVVGSE1FRlpkMEZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVG?=
+ =?utf-8?B?QlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZC?=
+ =?utf-8?B?UVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJR?=
+ =?utf-8?B?VUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFV?=
+ =?utf-8?B?RkJRVUZCUVVGQlFVRkJRVkZCUVVGQlFVRkJRVUZEUVVGQlFVRkJRMlZCUVVG?=
+ =?utf-8?B?QlduZENNRUZJVFVGWWQwSjNRVWhKUVdKM1FtdEJTRlZCV1hkQ01FRkdPRUZr?=
+ =?utf-8?B?UVVKNVFVZEZRV0ZSUW5WQlIydEJZbWRDYmtGQlFVRkJRVUZCUVVGQlFVRkJR?=
+ =?utf-8?B?VUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFV?=
+ =?utf-8?B?RkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVG?=
+ =?utf-8?B?QlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZC?=
+ =?utf-8?B?UVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVKQlFVRkJRVUZCUVVGQlNVRkJR?=
+ =?utf-8?B?VUZCUVVvMFFVRkJRbnBCUjBWQllrRkNiRUZJVFVGWWQwSm9RVWROUVZsM1Fu?=
+ =?utf-8?B?WkJTRlZCWW1kQ01FRkdPRUZqUVVKelFVZEZRV0puUVVGQlFVRkJRVUZCUVVG?=
+ =?utf-8?B?QlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZC?=
+ =?utf-8?B?UVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJR?=
+ =?utf-8?B?VUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFV?=
+ =?utf-8?B?RkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkZRVUZCUVVG?=
+ =?utf-8?B?QlFVRkJRV2RCUVVGQlFVRnVaMEZCUVVoTlFWbFJRbk5CUjFWQlkzZENaa0ZJ?=
+ =?utf-8?B?UlVGa1VVSjJRVWhSUVZwUlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJR?=
+ =?utf-8?B?VUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFV?=
+ =?utf-8?B?RkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVG?=
+ =?utf-8?B?QlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZC?=
+ =?utf-8?B?UVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJR?=
+ =?utf-8?B?VUZCVVVGQlFVRkJRVUZCUVVOQlFVRkJRVUZEWlVGQlFVRmpkMEoxUVVoQlFX?=
+ =?utf-8?B?TjNRbVpCUjNkQllWRkNha0ZIVlVGaVowSjZRVWRWUVZoM1FqQkJSMVZCWTJk?=
+ =?utf-8?B?Q2RFRkdPRUZOVVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZC?=
+ =?utf-8?B?UVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJR?=
+ =?utf-8?B?VUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFV?=
+ =?utf-8?B?RkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVG?=
+ =?utf-8?B?QlFVRkJRVUZCUVVGQlFrRkJRVUZCUVVGQlFVRkpRVUZCUVVGQlNqUkJRVUZD?=
+ =?utf-8?B?ZWtGSE5FRmpRVUo2UVVZNFFXSkJRbkJCUjAxQldsRkNkVUZJVFVGYVVVSm1R?=
+ =?utf-8?B?VWhSUVZwUlFubEJSekJCV0hkQ2VrRklVVUZrVVVKclFVZFZRV0puUWpCQlFV?=
+ =?utf-8?B?RkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVG?=
+ =?utf-8?B?QlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZC?=
+ =?utf-8?B?UVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJR?=
+ =?utf-8?B?VUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVVZCUVVGQlFVRkJRVUZCWjBGQlFV?=
+ =?utf-8?B?RkJRVzVuUVVGQlNGbEJXbmRDWmtGSGMwRmFVVUkxUVVoalFXSjNRbmxCUjFG?=
+ =?utf-8?B?QlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZC?=
+ =?utf-8?B?UVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJR?=
+ =?utf-8?B?VUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFV?=
+ =?utf-8?B?RkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVG?=
+ =?utf-8?B?QlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGUlFVRkJRVUZC?=
+ =?utf-8?B?UVVGQlEwRkJRVUZCUVVFOUlpOCtQQzl0WlhSaFBnPT0=?=
+x-originating-ip: [10.107.19.103]
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_103546_190606_710D0972 
-X-CRM114-Status: GOOD (  27.44  )
+X-CRM114-CacheID: sfid-20190606_110817_257095_C7C62A2D 
+X-CRM114-Status: GOOD (  20.00  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,142 +206,116 @@ Cc: "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  "stable@vger.kernel.org" <stable@vger.kernel.org>,
  Boris Brezillon <bbrezillon@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, 6 Jun 2019 17:16:55 +0000
-Vitor Soares <Vitor.Soares@synopsys.com> wrote:
-
-> From: Boris Brezillon <boris.brezillon@collabora.com>
-> Date: Thu, Jun 06, 2019 at 15:18:44
-> 
-> > On Thu,  6 Jun 2019 16:00:01 +0200
-> > Vitor Soares <Vitor.Soares@synopsys.com> wrote:
-> >   
-> > > Currently the I3C framework limits SCL frequency to FM speed when
-> > > dealing with a mixed slow bus, even if all I2C devices are FM+ capable.
-> > > 
-> > > The core was also not accounting for I3C speed limitations when
-> > > operating in mixed slow mode and was erroneously using FM+ speed as the
-> > > max I2C speed when operating in mixed fast mode.
-> > > 
-> > > Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
-> > > Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
-> > > Cc: Boris Brezillon <bbrezillon@kernel.org>
-> > > Cc: <stable@vger.kernel.org>
-> > > Cc: <linux-kernel@vger.kernel.org>
-> > > ---
-> > > Changes in v2:
-> > >   Enhance commit message
-> > >   Add dev_warn() in case user-defined i2c rate doesn't match LVR constraint
-> > >   Add dev_warn() in case user-defined i3c rate lower than i2c rate.
-> > > 
-> > >  drivers/i3c/master.c | 61 +++++++++++++++++++++++++++++++++++++++++-----------
-> > >  1 file changed, 48 insertions(+), 13 deletions(-)
-> > > 
-> > > diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> > > index 5f4bd52..8cd5824 100644
-> > > --- a/drivers/i3c/master.c
-> > > +++ b/drivers/i3c/master.c
-> > > @@ -91,6 +91,12 @@ void i3c_bus_normaluse_unlock(struct i3c_bus *bus)
-> > >  	up_read(&bus->lock);
-> > >  }
-> > >  
-> > > +static struct i3c_master_controller *
-> > > +i3c_bus_to_i3c_master(struct i3c_bus *i3cbus)
-> > > +{
-> > > +	return container_of(i3cbus, struct i3c_master_controller, bus);
-> > > +}
-> > > +
-> > >  static struct i3c_master_controller *dev_to_i3cmaster(struct device *dev)
-> > >  {
-> > >  	return container_of(dev, struct i3c_master_controller, dev);
-> > > @@ -565,20 +571,48 @@ static const struct device_type i3c_masterdev_type = {
-> > >  	.groups	= i3c_masterdev_groups,
-> > >  };
-> > >  
-> > > -int i3c_bus_set_mode(struct i3c_bus *i3cbus, enum i3c_bus_mode mode)
-> > > +int i3c_bus_set_mode(struct i3c_bus *i3cbus, enum i3c_bus_mode mode,
-> > > +		     unsigned long max_i2c_scl_rate)
-> > >  {
-> > > -	i3cbus->mode = mode;
-> > >  
-> > > -	if (!i3cbus->scl_rate.i3c)
-> > > -		i3cbus->scl_rate.i3c = I3C_BUS_TYP_I3C_SCL_RATE;
-> > > +	struct i3c_master_controller *master = i3c_bus_to_i3c_master(i3cbus);
-> > >  
-> > > -	if (!i3cbus->scl_rate.i2c) {
-> > > -		if (i3cbus->mode == I3C_BUS_MODE_MIXED_SLOW)
-> > > -			i3cbus->scl_rate.i2c = I3C_BUS_I2C_FM_SCL_RATE;
-> > > -		else
-> > > -			i3cbus->scl_rate.i2c = I3C_BUS_I2C_FM_PLUS_SCL_RATE;
-> > > +	i3cbus->mode = mode;
-> > > +
-> > > +	switch (i3cbus->mode) {
-> > > +	case I3C_BUS_MODE_PURE:
-> > > +		if (!i3cbus->scl_rate.i3c)
-> > > +			i3cbus->scl_rate.i3c = I3C_BUS_TYP_I3C_SCL_RATE;
-> > > +		break;
-> > > +	case I3C_BUS_MODE_MIXED_FAST:
-> > > +		if (!i3cbus->scl_rate.i3c)
-> > > +			i3cbus->scl_rate.i3c = I3C_BUS_TYP_I3C_SCL_RATE;
-> > > +		if (!i3cbus->scl_rate.i2c)
-> > > +			i3cbus->scl_rate.i2c = max_i2c_scl_rate;
-> > > +		break;
-> > > +	case I3C_BUS_MODE_MIXED_SLOW:
-> > > +		if (!i3cbus->scl_rate.i2c)
-> > > +			i3cbus->scl_rate.i2c = max_i2c_scl_rate;
-> > > +		if (!i3cbus->scl_rate.i3c ||
-> > > +		    i3cbus->scl_rate.i3c > i3cbus->scl_rate.i2c)
-> > > +			i3cbus->scl_rate.i3c = i3cbus->scl_rate.i2c;
-> > > +		break;
-> > > +	default:
-> > > +		return -EINVAL;
-> > >  	}
-> > >  
-> > > +	if (i3cbus->scl_rate.i3c < i3cbus->scl_rate.i2c)
-> > > +		dev_warn(&master->dev,
-> > > +			 "i3c-scl-hz=%ld lower than i2c-scl-hz=%ld\n",
-> > > +			 i3cbus->scl_rate.i3c, i3cbus->scl_rate.i2c);
-> > > +
-> > > +	if (i3cbus->scl_rate.i2c != I3C_BUS_I2C_FM_SCL_RATE &&
-> > > +	    i3cbus->scl_rate.i2c != I3C_BUS_I2C_FM_PLUS_SCL_RATE &&
-> > > +	    i3cbus->mode != I3C_BUS_MODE_PURE)  
-> > 
-> > If you are so strict, there's clearly no point exposing an i2c-scl-hz
-> > property. I'm still not convinced having an i2c rate that's slower than
-> > what the I2C/I3C spec defines as the *typical* rate is a bad thing,   
-> 
-> I'm not been strictive, I just inform the user about that case.
-
-Then use dev_debug() and don't make the trace conditional on
-i2c_rate != typical_rate. The only case where we should warn users
-is i2c_rate > typical_rate, because that might lead to malfunctions.
-
-> 
-> > just
-> > like I'm not convinced having an I3C rate that's slower than the I2C
-> > one is a problem (it's definitely a weird situation, but there's nothing
-> > preventing that in the spec).  
-> 
-> You agree that there is no point for case where i3c rate < i2c rate yet 
-> you are not convinced.
-
-I didn't say that, there might be use cases where one wants to slow
-down the I3C bus to be able to probe it or use a slower rate when
-things do not work properly. It's rather unlikely to happen, but I
-don't think it deserves a warning message when that's the case.
-
-> Do you thing that will be users for this case?
-> 
-> Anyway, this isn't a high requirement for me. The all point of this patch 
-> is to introduce the limited bus configuration.
-
-And yet, you keep insisting (and ignoring my feedback) on that point :P.
-
-_______________________________________________
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+RnJvbTogQm9yaXMgQnJlemlsbG9uIDxib3Jpcy5icmV6aWxsb25AY29sbGFib3JhLmNvbT4NCkRh
+dGU6IFRodSwgSnVuIDA2LCAyMDE5IGF0IDE4OjM1OjQwDQoNCj4gT24gVGh1LCA2IEp1biAyMDE5
+IDE3OjE2OjU1ICswMDAwDQo+IFZpdG9yIFNvYXJlcyA8Vml0b3IuU29hcmVzQHN5bm9wc3lzLmNv
+bT4gd3JvdGU6DQo+IA0KPiA+IEZyb206IEJvcmlzIEJyZXppbGxvbiA8Ym9yaXMuYnJlemlsbG9u
+QGNvbGxhYm9yYS5jb20+DQo+ID4gRGF0ZTogVGh1LCBKdW4gMDYsIDIwMTkgYXQgMTU6MTg6NDQN
+Cj4gPiANCj4gPiA+IE9uIFRodSwgIDYgSnVuIDIwMTkgMTY6MDA6MDEgKzAyMDANCj4gPiA+IFZp
+dG9yIFNvYXJlcyA8Vml0b3IuU29hcmVzQHN5bm9wc3lzLmNvbT4gd3JvdGU6DQo+ID4gPiAgIA0K
+PiA+ID4gPiBDdXJyZW50bHkgdGhlIEkzQyBmcmFtZXdvcmsgbGltaXRzIFNDTCBmcmVxdWVuY3kg
+dG8gRk0gc3BlZWQgd2hlbg0KPiA+ID4gPiBkZWFsaW5nIHdpdGggYSBtaXhlZCBzbG93IGJ1cywg
+ZXZlbiBpZiBhbGwgSTJDIGRldmljZXMgYXJlIEZNKyBjYXBhYmxlLg0KPiA+ID4gPiANCj4gPiA+
+ID4gVGhlIGNvcmUgd2FzIGFsc28gbm90IGFjY291bnRpbmcgZm9yIEkzQyBzcGVlZCBsaW1pdGF0
+aW9ucyB3aGVuDQo+ID4gPiA+IG9wZXJhdGluZyBpbiBtaXhlZCBzbG93IG1vZGUgYW5kIHdhcyBl
+cnJvbmVvdXNseSB1c2luZyBGTSsgc3BlZWQgYXMgdGhlDQo+ID4gPiA+IG1heCBJMkMgc3BlZWQg
+d2hlbiBvcGVyYXRpbmcgaW4gbWl4ZWQgZmFzdCBtb2RlLg0KPiA+ID4gPiANCj4gPiA+ID4gRml4
+ZXM6IDNhMzc5YmJjZWEwYSAoImkzYzogQWRkIGNvcmUgSTNDIGluZnJhc3RydWN0dXJlIikNCj4g
+PiA+ID4gU2lnbmVkLW9mZi1ieTogVml0b3IgU29hcmVzIDx2aXRvci5zb2FyZXNAc3lub3BzeXMu
+Y29tPg0KPiA+ID4gPiBDYzogQm9yaXMgQnJlemlsbG9uIDxiYnJlemlsbG9uQGtlcm5lbC5vcmc+
+DQo+ID4gPiA+IENjOiA8c3RhYmxlQHZnZXIua2VybmVsLm9yZz4NCj4gPiA+ID4gQ2M6IDxsaW51
+eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnPg0KPiA+ID4gPiAtLS0NCj4gPiA+ID4gQ2hhbmdlcyBp
+biB2MjoNCj4gPiA+ID4gICBFbmhhbmNlIGNvbW1pdCBtZXNzYWdlDQo+ID4gPiA+ICAgQWRkIGRl
+dl93YXJuKCkgaW4gY2FzZSB1c2VyLWRlZmluZWQgaTJjIHJhdGUgZG9lc24ndCBtYXRjaCBMVlIg
+Y29uc3RyYWludA0KPiA+ID4gPiAgIEFkZCBkZXZfd2FybigpIGluIGNhc2UgdXNlci1kZWZpbmVk
+IGkzYyByYXRlIGxvd2VyIHRoYW4gaTJjIHJhdGUuDQo+ID4gPiA+IA0KPiA+ID4gPiAgZHJpdmVy
+cy9pM2MvbWFzdGVyLmMgfCA2MSArKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysr
+KysrKy0tLS0tLS0tLS0tDQo+ID4gPiA+ICAxIGZpbGUgY2hhbmdlZCwgNDggaW5zZXJ0aW9ucygr
+KSwgMTMgZGVsZXRpb25zKC0pDQo+ID4gPiA+IA0KPiA+ID4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVy
+cy9pM2MvbWFzdGVyLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIuYw0KPiA+ID4gPiBpbmRleCA1ZjRi
+ZDUyLi44Y2Q1ODI0IDEwMDY0NA0KPiA+ID4gPiAtLS0gYS9kcml2ZXJzL2kzYy9tYXN0ZXIuYw0K
+PiA+ID4gPiArKysgYi9kcml2ZXJzL2kzYy9tYXN0ZXIuYw0KPiA+ID4gPiBAQCAtOTEsNiArOTEs
+MTIgQEAgdm9pZCBpM2NfYnVzX25vcm1hbHVzZV91bmxvY2soc3RydWN0IGkzY19idXMgKmJ1cykN
+Cj4gPiA+ID4gIAl1cF9yZWFkKCZidXMtPmxvY2spOw0KPiA+ID4gPiAgfQ0KPiA+ID4gPiAgDQo+
+ID4gPiA+ICtzdGF0aWMgc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlciAqDQo+ID4gPiA+ICtp
+M2NfYnVzX3RvX2kzY19tYXN0ZXIoc3RydWN0IGkzY19idXMgKmkzY2J1cykNCj4gPiA+ID4gK3sN
+Cj4gPiA+ID4gKwlyZXR1cm4gY29udGFpbmVyX29mKGkzY2J1cywgc3RydWN0IGkzY19tYXN0ZXJf
+Y29udHJvbGxlciwgYnVzKTsNCj4gPiA+ID4gK30NCj4gPiA+ID4gKw0KPiA+ID4gPiAgc3RhdGlj
+IHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIgKmRldl90b19pM2NtYXN0ZXIoc3RydWN0IGRl
+dmljZSAqZGV2KQ0KPiA+ID4gPiAgew0KPiA+ID4gPiAgCXJldHVybiBjb250YWluZXJfb2YoZGV2
+LCBzdHJ1Y3QgaTNjX21hc3Rlcl9jb250cm9sbGVyLCBkZXYpOw0KPiA+ID4gPiBAQCAtNTY1LDIw
+ICs1NzEsNDggQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBkZXZpY2VfdHlwZSBpM2NfbWFzdGVyZGV2
+X3R5cGUgPSB7DQo+ID4gPiA+ICAJLmdyb3Vwcwk9IGkzY19tYXN0ZXJkZXZfZ3JvdXBzLA0KPiA+
+ID4gPiAgfTsNCj4gPiA+ID4gIA0KPiA+ID4gPiAtaW50IGkzY19idXNfc2V0X21vZGUoc3RydWN0
+IGkzY19idXMgKmkzY2J1cywgZW51bSBpM2NfYnVzX21vZGUgbW9kZSkNCj4gPiA+ID4gK2ludCBp
+M2NfYnVzX3NldF9tb2RlKHN0cnVjdCBpM2NfYnVzICppM2NidXMsIGVudW0gaTNjX2J1c19tb2Rl
+IG1vZGUsDQo+ID4gPiA+ICsJCSAgICAgdW5zaWduZWQgbG9uZyBtYXhfaTJjX3NjbF9yYXRlKQ0K
+PiA+ID4gPiAgew0KPiA+ID4gPiAtCWkzY2J1cy0+bW9kZSA9IG1vZGU7DQo+ID4gPiA+ICANCj4g
+PiA+ID4gLQlpZiAoIWkzY2J1cy0+c2NsX3JhdGUuaTNjKQ0KPiA+ID4gPiAtCQlpM2NidXMtPnNj
+bF9yYXRlLmkzYyA9IEkzQ19CVVNfVFlQX0kzQ19TQ0xfUkFURTsNCj4gPiA+ID4gKwlzdHJ1Y3Qg
+aTNjX21hc3Rlcl9jb250cm9sbGVyICptYXN0ZXIgPSBpM2NfYnVzX3RvX2kzY19tYXN0ZXIoaTNj
+YnVzKTsNCj4gPiA+ID4gIA0KPiA+ID4gPiAtCWlmICghaTNjYnVzLT5zY2xfcmF0ZS5pMmMpIHsN
+Cj4gPiA+ID4gLQkJaWYgKGkzY2J1cy0+bW9kZSA9PSBJM0NfQlVTX01PREVfTUlYRURfU0xPVykN
+Cj4gPiA+ID4gLQkJCWkzY2J1cy0+c2NsX3JhdGUuaTJjID0gSTNDX0JVU19JMkNfRk1fU0NMX1JB
+VEU7DQo+ID4gPiA+IC0JCWVsc2UNCj4gPiA+ID4gLQkJCWkzY2J1cy0+c2NsX3JhdGUuaTJjID0g
+STNDX0JVU19JMkNfRk1fUExVU19TQ0xfUkFURTsNCj4gPiA+ID4gKwlpM2NidXMtPm1vZGUgPSBt
+b2RlOw0KPiA+ID4gPiArDQo+ID4gPiA+ICsJc3dpdGNoIChpM2NidXMtPm1vZGUpIHsNCj4gPiA+
+ID4gKwljYXNlIEkzQ19CVVNfTU9ERV9QVVJFOg0KPiA+ID4gPiArCQlpZiAoIWkzY2J1cy0+c2Ns
+X3JhdGUuaTNjKQ0KPiA+ID4gPiArCQkJaTNjYnVzLT5zY2xfcmF0ZS5pM2MgPSBJM0NfQlVTX1RZ
+UF9JM0NfU0NMX1JBVEU7DQo+ID4gPiA+ICsJCWJyZWFrOw0KPiA+ID4gPiArCWNhc2UgSTNDX0JV
+U19NT0RFX01JWEVEX0ZBU1Q6DQo+ID4gPiA+ICsJCWlmICghaTNjYnVzLT5zY2xfcmF0ZS5pM2Mp
+DQo+ID4gPiA+ICsJCQlpM2NidXMtPnNjbF9yYXRlLmkzYyA9IEkzQ19CVVNfVFlQX0kzQ19TQ0xf
+UkFURTsNCj4gPiA+ID4gKwkJaWYgKCFpM2NidXMtPnNjbF9yYXRlLmkyYykNCj4gPiA+ID4gKwkJ
+CWkzY2J1cy0+c2NsX3JhdGUuaTJjID0gbWF4X2kyY19zY2xfcmF0ZTsNCj4gPiA+ID4gKwkJYnJl
+YWs7DQo+ID4gPiA+ICsJY2FzZSBJM0NfQlVTX01PREVfTUlYRURfU0xPVzoNCj4gPiA+ID4gKwkJ
+aWYgKCFpM2NidXMtPnNjbF9yYXRlLmkyYykNCj4gPiA+ID4gKwkJCWkzY2J1cy0+c2NsX3JhdGUu
+aTJjID0gbWF4X2kyY19zY2xfcmF0ZTsNCj4gPiA+ID4gKwkJaWYgKCFpM2NidXMtPnNjbF9yYXRl
+LmkzYyB8fA0KPiA+ID4gPiArCQkgICAgaTNjYnVzLT5zY2xfcmF0ZS5pM2MgPiBpM2NidXMtPnNj
+bF9yYXRlLmkyYykNCj4gPiA+ID4gKwkJCWkzY2J1cy0+c2NsX3JhdGUuaTNjID0gaTNjYnVzLT5z
+Y2xfcmF0ZS5pMmM7DQo+ID4gPiA+ICsJCWJyZWFrOw0KPiA+ID4gPiArCWRlZmF1bHQ6DQo+ID4g
+PiA+ICsJCXJldHVybiAtRUlOVkFMOw0KPiA+ID4gPiAgCX0NCj4gPiA+ID4gIA0KPiA+ID4gPiAr
+CWlmIChpM2NidXMtPnNjbF9yYXRlLmkzYyA8IGkzY2J1cy0+c2NsX3JhdGUuaTJjKQ0KPiA+ID4g
+PiArCQlkZXZfd2FybigmbWFzdGVyLT5kZXYsDQo+ID4gPiA+ICsJCQkgImkzYy1zY2wtaHo9JWxk
+IGxvd2VyIHRoYW4gaTJjLXNjbC1oej0lbGRcbiIsDQo+ID4gPiA+ICsJCQkgaTNjYnVzLT5zY2xf
+cmF0ZS5pM2MsIGkzY2J1cy0+c2NsX3JhdGUuaTJjKTsNCj4gPiA+ID4gKw0KPiA+ID4gPiArCWlm
+IChpM2NidXMtPnNjbF9yYXRlLmkyYyAhPSBJM0NfQlVTX0kyQ19GTV9TQ0xfUkFURSAmJg0KPiA+
+ID4gPiArCSAgICBpM2NidXMtPnNjbF9yYXRlLmkyYyAhPSBJM0NfQlVTX0kyQ19GTV9QTFVTX1ND
+TF9SQVRFICYmDQo+ID4gPiA+ICsJICAgIGkzY2J1cy0+bW9kZSAhPSBJM0NfQlVTX01PREVfUFVS
+RSkgIA0KPiA+ID4gDQo+ID4gPiBJZiB5b3UgYXJlIHNvIHN0cmljdCwgdGhlcmUncyBjbGVhcmx5
+IG5vIHBvaW50IGV4cG9zaW5nIGFuIGkyYy1zY2wtaHoNCj4gPiA+IHByb3BlcnR5LiBJJ20gc3Rp
+bGwgbm90IGNvbnZpbmNlZCBoYXZpbmcgYW4gaTJjIHJhdGUgdGhhdCdzIHNsb3dlciB0aGFuDQo+
+ID4gPiB3aGF0IHRoZSBJMkMvSTNDIHNwZWMgZGVmaW5lcyBhcyB0aGUgKnR5cGljYWwqIHJhdGUg
+aXMgYSBiYWQgdGhpbmcsICAgDQo+ID4gDQo+ID4gSSdtIG5vdCBiZWVuIHN0cmljdGl2ZSwgSSBq
+dXN0IGluZm9ybSB0aGUgdXNlciBhYm91dCB0aGF0IGNhc2UuDQo+IA0KPiBUaGVuIHVzZSBkZXZf
+ZGVidWcoKSBhbmQgZG9uJ3QgbWFrZSB0aGUgdHJhY2UgY29uZGl0aW9uYWwgb24NCj4gaTJjX3Jh
+dGUgIT0gdHlwaWNhbF9yYXRlLiANCg0KT2suIEkgd2lsbCBjaGFuZ2UgdG8gZGV2X2RlYnVnKCku
+DQoNCj4gVGhlIG9ubHkgY2FzZSB3aGVyZSB3ZSBzaG91bGQgd2FybiB1c2Vycw0KPiBpcyBpMmNf
+cmF0ZSA+IHR5cGljYWxfcmF0ZSwgYmVjYXVzZSB0aGF0IG1pZ2h0IGxlYWQgdG8gbWFsZnVuY3Rp
+b25zLg0KDQpDYW4geW91IGV4cGxhaW4gd2h5Pw0KDQo+IA0KPiA+IA0KPiA+ID4ganVzdA0KPiA+
+ID4gbGlrZSBJJ20gbm90IGNvbnZpbmNlZCBoYXZpbmcgYW4gSTNDIHJhdGUgdGhhdCdzIHNsb3dl
+ciB0aGFuIHRoZSBJMkMNCj4gPiA+IG9uZSBpcyBhIHByb2JsZW0gKGl0J3MgZGVmaW5pdGVseSBh
+IHdlaXJkIHNpdHVhdGlvbiwgYnV0IHRoZXJlJ3Mgbm90aGluZw0KPiA+ID4gcHJldmVudGluZyB0
+aGF0IGluIHRoZSBzcGVjKS4gIA0KPiA+IA0KPiA+IFlvdSBhZ3JlZSB0aGF0IHRoZXJlIGlzIG5v
+IHBvaW50IGZvciBjYXNlIHdoZXJlIGkzYyByYXRlIDwgaTJjIHJhdGUgeWV0IA0KPiA+IHlvdSBh
+cmUgbm90IGNvbnZpbmNlZC4NCj4gDQo+IEkgZGlkbid0IHNheSB0aGF0LCB0aGVyZSBtaWdodCBi
+ZSB1c2UgY2FzZXMgd2hlcmUgb25lIHdhbnRzIHRvIHNsb3cNCj4gZG93biB0aGUgSTNDIGJ1cyB0
+byBiZSBhYmxlIHRvIHByb2JlIGl0IG9yIHVzZSBhIHNsb3dlciByYXRlIHdoZW4NCj4gdGhpbmdz
+IGRvIG5vdCB3b3JrIHByb3Blcmx5LiBJdCdzIHJhdGhlciB1bmxpa2VseSB0byBoYXBwZW4sIGJ1
+dCBJDQo+IGRvbid0IHRoaW5rIGl0IGRlc2VydmVzIGEgd2FybmluZyBtZXNzYWdlIHdoZW4gdGhh
+dCdzIHRoZSBjYXNlLg0KPiANCj4gPiBEbyB5b3UgdGhpbmcgdGhhdCB3aWxsIGJlIHVzZXJzIGZv
+ciB0aGlzIGNhc2U/DQo+ID4gDQo+ID4gQW55d2F5LCB0aGlzIGlzbid0IGEgaGlnaCByZXF1aXJl
+bWVudCBmb3IgbWUuIFRoZSBhbGwgcG9pbnQgb2YgdGhpcyBwYXRjaCANCj4gPiBpcyB0byBpbnRy
+b2R1Y2UgdGhlIGxpbWl0ZWQgYnVzIGNvbmZpZ3VyYXRpb24uDQo+IA0KPiBBbmQgeWV0LCB5b3Ug
+a2VlcCBpbnNpc3RpbmcgKGFuZCBpZ25vcmluZyBteSBmZWVkYmFjaykgb24gdGhhdCBwb2ludCA6
+UC4NCg0KSWYgeW91IGNoZWNrIHRoZSBwcmV2aW91cyB2ZXJzaW9uIHlvdSBzZWUgdGhhdCBJJ20g
+dHJ5aW5nIHRvIGZvbGxvdyDwn5iJDQpJIHdpbGwgY2hhbmdlIHRoZSBkZXZfd2FybigpIHRvIGRl
+dl9kYmcoKSBkdWUgdGhlIHRyYWNlIGlzIGluZGVlZCB0b28gDQptdWNoLg0KDQpCZXN0IHJlZ2Fy
+ZHMsDQpWaXRvciBTb2FyZXMNCg0KDQpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwpsaW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZy
+YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
+dXgtaTNjCg==
