@@ -2,20 +2,21 @@ Return-Path: <SRS0=UgBl=UL=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-0.7 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-6.7 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS autolearn=unavailable autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B3898C31E47
-	for <linux-i3c@archiver.kernel.org>; Wed, 12 Jun 2019 06:12:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 0C8B6C31E46
+	for <linux-i3c@archiver.kernel.org>; Wed, 12 Jun 2019 06:15:44 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 8C044206E0
-	for <linux-i3c@archiver.kernel.org>; Wed, 12 Jun 2019 06:12:03 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id D6A8F206E0
+	for <linux-i3c@archiver.kernel.org>; Wed, 12 Jun 2019 06:15:43 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="aHgHTU3l"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 8C044206E0
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="e12WVGUV"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org D6A8F206E0
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=collabora.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -24,42 +25,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qT1hdaKBMlr7Wj5YUBqk5xRapaDL5s2Uxo3wW+U2dX8=; b=aHgHTU3lBVA0Oi
-	nxPZTURqi0xHjp6AiFwxlm9ynLqXAWsO1WzSEJfKtL9xiCNpJrTg3jNGd5rrBi0Z3bSyBuvbU4B0P
-	BpBjcimfxVn2aNv+oxkggm2wr9X4HR4Rfwdiw/h1VOTvhjKgZZ6PZrJWI7k7JBYN+44nPAmhShkdJ
-	z7wvYw/Xd1yldJnIvDNNYJbNDtGVrBvMcbFysRScdqxuBWoPpW+s+v8CdFTJ+ZX5fKiWQij+Byw/x
-	a8vJsIQ5D8xKO3CTCgJ9vx2torGbeOGWWyQz01Em11e03vJ4cfIjVIAZ+QDIgXNStwdqlGju9Q+G1
-	dF1GIZuy6tt17WpSuhYg==;
+	List-Owner; bh=tvFIUaXY1tNgUvnASh9+oMIKd4AJ6oS8u3ArNjcy7+c=; b=e12WVGUVqMKALw
+	sK3t8g6XA1doKJECo1Yr+aZMwrTAhCxGNwwB0d+pC7nBx+Y9NscuUTDv6wJhsMkz3gyizgyYEHmE3
+	ch8RpXog2w37Zb0lAtQ0xodhovxCfNx6leHVga1U6UKqalgCaYNdTPal/CBXSv8sabS+GVO9Qd3lL
+	BTOfHZWYvF+fI7r4KcNCfQYZUSxScF3JTBPGS1qA6D+GvLYFUJg4VVKrq00myrkDBLA5QU/MtRcgC
+	v46wmRPGIfOgJnHGVtIK7Sss6G70z8hbyjxFda5R9y7jTtdlE1apwtGSW6S2DWa27/W7FQtxWznDL
+	ZnW8B90w2CthxRc2KFww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hawUN-0002N4-6u; Wed, 12 Jun 2019 06:12:03 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1hawXv-0004Ou-EE; Wed, 12 Jun 2019 06:15:43 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haftZ-0004OZ-S9; Tue, 11 Jun 2019 12:29:00 +0000
+ id 1hawXr-0004OK-SQ
+ for linux-i3c@lists.infradead.org; Wed, 12 Jun 2019 06:15:41 +0000
 Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
  (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id C1223285914;
- Tue, 11 Jun 2019 13:28:52 +0100 (BST)
-Date: Tue, 11 Jun 2019 14:28:49 +0200
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 27A76263ACA;
+ Wed, 12 Jun 2019 07:15:36 +0100 (BST)
+Date: Wed, 12 Jun 2019 08:15:33 +0200
 From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Qii Wang <qii.wang@mediatek.com>
-Subject: Re: [PATCH 2/2] i3c: master: Add driver for MediaTek IP
-Message-ID: <20190611142849.43f6d1e4@collabora.com>
-In-Reply-To: <1560255922.12217.3.camel@mhfsdcap03>
-References: <1559533863-10292-1-git-send-email-qii.wang@mediatek.com>
- <1559533863-10292-3-git-send-email-qii.wang@mediatek.com>
- <20190604095858.38ed9a28@collabora.com>
- <1559651200.5871.2.camel@mhfsdcap03>
- <1560255922.12217.3.camel@mhfsdcap03>
+To: Vitor Soares <Vitor.Soares@synopsys.com>
+Subject: Re: [PATCH v3 1/3] i3c: fix i2c and i3c scl rate by bus mode
+Message-ID: <20190612081533.2cf9e12a@collabora.com>
+In-Reply-To: <b39923bda3625a5c6874755ae81cdfe85fb5abef.1560261604.git.vitor.soares@synopsys.com>
+References: <cover.1560261604.git.vitor.soares@synopsys.com>
+ <b39923bda3625a5c6874755ae81cdfe85fb5abef.1560261604.git.vitor.soares@synopsys.com>
 Organization: Collabora
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_052858_105915_0F895514 
-X-CRM114-Status: GOOD (  16.54  )
-X-Mailman-Approved-At: Tue, 11 Jun 2019 23:12:01 -0700
+X-CRM114-CacheID: sfid-20190611_231540_187539_C8A16FE4 
+X-CRM114-Status: GOOD (  19.52  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,77 +69,158 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
- bbrezillon@kernel.org, leilk.liu@mediatek.com, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, liguo.zhang@mediatek.com,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- matthias.bgg@gmail.com, linux-i3c@lists.infradead.org,
- xinping.qian@mediatek.com
+Cc: linux-i3c@lists.infradead.org, Joao.Pinto@synopsys.com,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ Boris Brezillon <bbrezillon@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, 11 Jun 2019 20:25:22 +0800
-Qii Wang <qii.wang@mediatek.com> wrote:
+On Tue, 11 Jun 2019 16:06:43 +0200
+Vitor Soares <Vitor.Soares@synopsys.com> wrote:
 
-> On Tue, 2019-06-04 at 20:26 +0800, Qii Wang wrote:
-> > On Tue, 2019-06-04 at 09:58 +0200, Boris Brezillon wrote:  
-> > > On Mon, 3 Jun 2019 11:51:03 +0800
-> > > Qii Wang <qii.wang@mediatek.com> wrote:
-> > > 
-> > >   
-> > > > +static int mtk_i3c_master_probe(struct platform_device *pdev)
-> > > > +{
-> > > > +	struct device *dev = &pdev->dev;
-> > > > +	struct mtk_i3c_master *master;
-> > > > +	struct resource *res;
-> > > > +	int ret, irqnr;
-> > > > +
-> > > > +	master = devm_kzalloc(dev, sizeof(*master), GFP_KERNEL);
-> > > > +	if (!master)
-> > > > +		return -ENOMEM;
-> > > > +
-> > > > +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "main");
-> > > > +	master->regs = devm_ioremap_resource(dev, res);
-> > > > +	if (IS_ERR(master->regs))
-> > > > +		return PTR_ERR(master->regs);
-> > > > +
-> > > > +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "dma");
-> > > > +	master->dma_regs = devm_ioremap_resource(dev, res);
-> > > > +	if (IS_ERR(master->dma_regs))
-> > > > +		return PTR_ERR(master->dma_regs);
-> > > > +
-> > > > +	irqnr = platform_get_irq(pdev, 0);
-> > > > +	if (irqnr < 0)
-> > > > +		return irqnr;
-> > > > +
-> > > > +	ret = devm_request_irq(dev, irqnr, mtk_i3c_master_irq,
-> > > > +			       IRQF_TRIGGER_NONE, DRV_NAME, master);
-> > > > +	if (ret < 0) {
-> > > > +		dev_err(dev, "Request I3C IRQ %d fail\n", irqnr);
-> > > > +		return ret;
-> > > > +	}
-> > > > +
-> > > > +	ret = of_property_read_u32(pdev->dev.of_node, "clock-div",
-> > > > +				   &master->clk_src_div);  
-> > > 
-> > > You say in one comment that this clock divider is fixed in HW but might
-> > > change on a per-SoC basis. If that's the case, you should get rid of
-> > > this clock-div prop and attach the divider to the compatible (using an
-> > > mtk_i3c_master_variant struct that contains a divider field).
-> > >   
-> > 
-> > ok, I will attach the divider to the compatible.
-> >   
-> I have rechecked your comment, maybe I have misunderstood what you mean.
-> "clock-div" changes according to i2c source clock, different project may
-> change i2c source clock, The previous dt-binding may be misleading, I
-> will modify it.
+> Currently the I3C framework limits SCL frequency to FM speed when
+> dealing with a mixed slow bus, even if all I2C devices are FM+ capable.
+> 
+> The core was also not accounting for I3C speed limitations when
+> operating in mixed slow mode and was erroneously using FM+ speed as the
+> max I2C speed when operating in mixed fast mode.
+> 
+> Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
+> Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
+> Cc: Boris Brezillon <bbrezillon@kernel.org>
+> Cc: <stable@vger.kernel.org>
+> Cc: <linux-kernel@vger.kernel.org>
+> ---
+> Changes in v3:
+>   Change dev_warn() to dev_dbg()
+> 
+> Changes in v2:
+>   Enhance commit message
+>   Add dev_warn() in case user-defined i2c rate doesn't match LVR constraint
+>   Add dev_warn() in case user-defined i3c rate lower than i2c rate
+> 
+>  drivers/i3c/master.c | 61 +++++++++++++++++++++++++++++++++++++++++-----------
+>  1 file changed, 48 insertions(+), 13 deletions(-)
+> 
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index 5f4bd52..f8e580e 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -91,6 +91,12 @@ void i3c_bus_normaluse_unlock(struct i3c_bus *bus)
+>  	up_read(&bus->lock);
+>  }
+>  
+> +static struct i3c_master_controller *
+> +i3c_bus_to_i3c_master(struct i3c_bus *i3cbus)
+> +{
+> +	return container_of(i3cbus, struct i3c_master_controller, bus);
+> +}
+> +
+>  static struct i3c_master_controller *dev_to_i3cmaster(struct device *dev)
+>  {
+>  	return container_of(dev, struct i3c_master_controller, dev);
+> @@ -565,20 +571,48 @@ static const struct device_type i3c_masterdev_type = {
+>  	.groups	= i3c_masterdev_groups,
+>  };
+>  
+> -int i3c_bus_set_mode(struct i3c_bus *i3cbus, enum i3c_bus_mode mode)
+> +int i3c_bus_set_mode(struct i3c_bus *i3cbus, enum i3c_bus_mode mode,
+> +		     unsigned long max_i2c_scl_rate)
+>  {
+> -	i3cbus->mode = mode;
+>  
+> -	if (!i3cbus->scl_rate.i3c)
+> -		i3cbus->scl_rate.i3c = I3C_BUS_TYP_I3C_SCL_RATE;
+> +	struct i3c_master_controller *master = i3c_bus_to_i3c_master(i3cbus);
+>  
+> -	if (!i3cbus->scl_rate.i2c) {
+> -		if (i3cbus->mode == I3C_BUS_MODE_MIXED_SLOW)
+> -			i3cbus->scl_rate.i2c = I3C_BUS_I2C_FM_SCL_RATE;
+> -		else
+> -			i3cbus->scl_rate.i2c = I3C_BUS_I2C_FM_PLUS_SCL_RATE;
+> +	i3cbus->mode = mode;
+> +
+> +	switch (i3cbus->mode) {
+> +	case I3C_BUS_MODE_PURE:
+> +		if (!i3cbus->scl_rate.i3c)
+> +			i3cbus->scl_rate.i3c = I3C_BUS_TYP_I3C_SCL_RATE;
+> +		break;
+> +	case I3C_BUS_MODE_MIXED_FAST:
+> +		if (!i3cbus->scl_rate.i3c)
+> +			i3cbus->scl_rate.i3c = I3C_BUS_TYP_I3C_SCL_RATE;
+> +		if (!i3cbus->scl_rate.i2c)
+> +			i3cbus->scl_rate.i2c = max_i2c_scl_rate;
+> +		break;
+> +	case I3C_BUS_MODE_MIXED_SLOW:
+> +		if (!i3cbus->scl_rate.i2c)
+> +			i3cbus->scl_rate.i2c = max_i2c_scl_rate;
+> +		if (!i3cbus->scl_rate.i3c ||
+> +		    i3cbus->scl_rate.i3c > i3cbus->scl_rate.i2c)
+> +			i3cbus->scl_rate.i3c = i3cbus->scl_rate.i2c;
+> +		break;
+> +	default:
+> +		return -EINVAL;
+>  	}
+>  
+> +	if (i3cbus->scl_rate.i3c < i3cbus->scl_rate.i2c)
+> +		dev_dbg(&master->dev,
+> +			"i3c-scl-hz=%ld lower than i2c-scl-hz=%ld\n",
+> +			i3cbus->scl_rate.i3c, i3cbus->scl_rate.i2c);
+> +
+> +	if (i3cbus->scl_rate.i2c != I3C_BUS_I2C_FM_SCL_RATE &&
+> +	    i3cbus->scl_rate.i2c != I3C_BUS_I2C_FM_PLUS_SCL_RATE &&
+> +	    i3cbus->mode != I3C_BUS_MODE_PURE)
+> +		dev_dbg(&master->dev,
+> +			"i2c-scl-hz=%ld not defined according MIPI I3C spec\n",
+> +			i3cbus->scl_rate.i2c);
+> +
 
-Is it fixed or configurable? Maybe it should be modeled as a clk
-driver. What's for sure is that we shouldn't have this divider defined
-in the DT.
+Again, that's not what I suggested, so I'll write it down:
+
+	dev_dbg(&master->dev, "i2c-scl = %ld Hz i3c-scl = %ld Hz\n",
+		i3cbus->scl_rate.i2c, i3cbus->scl_rate.i3c);
+
+dev_dbg() is not printed by default, so it's just fine to have a trace
+that prints the I3C and I2C rate unconditionally.
+
+>  	/*
+>  	 * I3C/I2C frequency may have been overridden, check that user-provided
+>  	 * values are not exceeding max possible frequency.
+> @@ -1966,9 +2000,6 @@ of_i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
+>  	/* LVR is encoded in reg[2]. */
+>  	boardinfo->lvr = reg[2];
+>  
+> -	if (boardinfo->lvr & I3C_LVR_I2C_FM_MODE)
+> -		master->bus.scl_rate.i2c = I3C_BUS_I2C_FM_SCL_RATE;
+> -
+>  	list_add_tail(&boardinfo->node, &master->boardinfo.i2c);
+>  	of_node_get(node);
+>  
+> @@ -2417,6 +2448,7 @@ int i3c_master_register(struct i3c_master_controller *master,
+>  			const struct i3c_master_controller_ops *ops,
+>  			bool secondary)
+>  {
+> +	unsigned long i2c_scl_rate = I3C_BUS_I2C_FM_PLUS_SCL_RATE;
+>  	struct i3c_bus *i3cbus = i3c_master_get_bus(master);
+>  	enum i3c_bus_mode mode = I3C_BUS_MODE_PURE;
+>  	struct i2c_dev_boardinfo *i2cbi;
+> @@ -2466,9 +2498,12 @@ int i3c_master_register(struct i3c_master_controller *master,
+>  			ret = -EINVAL;
+>  			goto err_put_dev;
+>  		}
+> +
+> +		if (i2cbi->lvr & I3C_LVR_I2C_FM_MODE)
+> +			i2c_scl_rate = I3C_BUS_I2C_FM_SCL_RATE;
+>  	}
+>  
+> -	ret = i3c_bus_set_mode(i3cbus, mode);
+> +	ret = i3c_bus_set_mode(i3cbus, mode, i2c_scl_rate);
+>  	if (ret)
+>  		goto err_put_dev;
+>  
+
 
 _______________________________________________
 linux-i3c mailing list
