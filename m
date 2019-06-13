@@ -2,74 +2,74 @@ Return-Path: <SRS0=bY92=UM=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-0.7 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,UNPARSEABLE_RELAY,URIBL_BLOCKED autolearn=unavailable
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-7.5 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,
+	USER_AGENT_MUTT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 4D09AC31E45
-	for <linux-i3c@archiver.kernel.org>; Thu, 13 Jun 2019 07:19:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 66689C31E4A
+	for <linux-i3c@archiver.kernel.org>; Thu, 13 Jun 2019 18:38:31 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E3FCF2084D
-	for <linux-i3c@archiver.kernel.org>; Thu, 13 Jun 2019 07:18:59 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 4362F208CA
+	for <linux-i3c@archiver.kernel.org>; Thu, 13 Jun 2019 18:38:31 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="Q/ghyLKw"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E3FCF2084D
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=mediatek.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="m0Sujuau";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=sirena.org.uk header.i=@sirena.org.uk header.b="KVerzfWI"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4362F208CA
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DFEAr/5swUVBIKb/AVoplRtzybv0ny+3DttD2xjPnIg=; b=Q/ghyLKwZcbp3N
-	jurpkUDeH2cxTDhPgfslmLTde0EF3fxDqzjwdbEHpAXpyhJi0Tb0RDj+rcf+RntjIMfL1Hk11IxdS
-	UCZ00/SnxA9LgiuuW8LyL8eMrAe5LDDHAin2f5WxGTE7R0P2/ypTLS/CgbMEk9AVGOfyl7NwAE749
-	V1VSz0Xlk/nONxLAPymys5jXy11m2YXVrrzrVaZ+4kiWmT2XDvegU40yD2zyZHpVzudF2TYwW3EYD
-	jrftCJvw2PAvzoUSuC58gFrNU9EmihY+bLo7ydF7AggMQym9bFG1nUM6fLrdF5IFoTOgMNM08UmJ3
-	SKwBR79RAPJpIFh8o1vw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=lao4oWn7n/FusKG/UwB4HmpaRek7RdageIvj8D5Foug=; b=m0SujuauFvMz3KV8mXq+KIzUy
+	h5g3zdkuk8U4U1RZ86f4TlfXMurNpkIJRWmCv8md1LzRKCEnBZVE4+mCX/Z7juY486I7k26VpAXwQ
+	NZCaL29vBCR+f0h9I7MCZBIcHmJTq6liL8cjVZYbfhQXqlY0n9bU6Y+ATuZPz5Lz/2maWydLLtpjR
+	CH6twAhvCe+g2MsZxeuDG6cbvqMBotYXHi+iA7AfWlW/6NDkZxclOE34e1LLU2Ywk5YX32u5NLsGB
+	CXJ7nltaD7uABor0m9YW/leuS3GAApT5bLXk7dX50aB8fpLndSE7CgLuEiksV4mgUBbfuqZym2oul
+	CvPYvXcwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbK0h-0005re-Fm; Thu, 13 Jun 2019 07:18:59 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hbUcI-0008Ga-Sh; Thu, 13 Jun 2019 18:38:30 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbFUh-0005uj-UX; Thu, 13 Jun 2019 02:29:43 +0000
-X-UUID: 4cee5152e24e4304a66589aa8fbea6bc-20190612
-X-UUID: 4cee5152e24e4304a66589aa8fbea6bc-20190612
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <qii.wang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1341577592; Wed, 12 Jun 2019 18:29:25 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 12 Jun 2019 19:29:24 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Thu, 13 Jun 2019 10:29:22 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 13 Jun 2019 10:29:21 +0800
-Message-ID: <1560392961.12217.7.camel@mhfsdcap03>
-Subject: Re: [PATCH 2/2] i3c: master: Add driver for MediaTek IP
-From: Qii Wang <qii.wang@mediatek.com>
-To: Boris Brezillon <boris.brezillon@collabora.com>
-Date: Thu, 13 Jun 2019 10:29:21 +0800
-In-Reply-To: <20190611142849.43f6d1e4@collabora.com>
-References: <1559533863-10292-1-git-send-email-qii.wang@mediatek.com>
- <1559533863-10292-3-git-send-email-qii.wang@mediatek.com>
- <20190604095858.38ed9a28@collabora.com>
- <1559651200.5871.2.camel@mhfsdcap03> <1560255922.12217.3.camel@mhfsdcap03>
- <20190611142849.43f6d1e4@collabora.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1hbUcG-0008G5-Ki
+ for linux-i3c@lists.infradead.org; Thu, 13 Jun 2019 18:38:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=N5gjGcYoQZZl5JqrcxsUv1o4lauQ728+0lZMR0CyIYo=; b=KVerzfWIuvgOGWj2T9+4xZwpz
+ SPEygCiZ+IwCDwxWi17byi9WoJLv220Lg9VWaSRDHpxJj35cTBKSsOHyrT8B5/wBxWgYb7B4XC+A6
+ JDIpMtJIdmhAVNRQpM/uq6kXhytOSAYEaafiQJFdlJOVWY5vQIiZ4q2DPgcrBqy5aNDb4=;
+Received: from [2001:470:1f1d:6b5:7e7a:91ff:fede:4a45]
+ (helo=finisterre.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hbUcB-0005Oc-Il; Thu, 13 Jun 2019 18:38:23 +0000
+Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
+ id 0726D440046; Thu, 13 Jun 2019 19:38:22 +0100 (BST)
+Date: Thu, 13 Jun 2019 19:38:22 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Vitor Soares <Vitor.Soares@synopsys.com>
+Subject: Re: [PATCH v2 0/3] Add ST lsm6dso i3c support
+Message-ID: <20190613183822.GS5316@sirena.org.uk>
+References: <cover.1559831663.git.vitor.soares@synopsys.com>
+ <13D59CF9CEBAF94592A12E8AE55501350AABEAF3@DE02WEMBXB.internal.synopsys.com>
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <13D59CF9CEBAF94592A12E8AE55501350AABEAF3@DE02WEMBXB.internal.synopsys.com>
+X-Cookie: Editing is a rewording activity.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190612_192939_993390_5B9A48AC 
-X-CRM114-Status: GOOD (  16.89  )
-X-Mailman-Approved-At: Thu, 13 Jun 2019 00:16:17 -0700
+X-CRM114-CacheID: sfid-20190613_113828_827981_CA16314D 
+X-CRM114-Status: UNSURE (   8.32  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,85 +81,69 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
- bbrezillon@kernel.org, leilk.liu@mediatek.com, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, liguo.zhang@mediatek.com,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- matthias.bgg@gmail.com, linux-i3c@lists.infradead.org,
- xinping.qian@mediatek.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
+ "bbrezillon@kernel.org" <bbrezillon@kernel.org>,
+ "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "rafael@kernel.org" <rafael@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "lorenzo.bianconi83@gmail.com" <lorenzo.bianconi83@gmail.com>,
+ "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============8821528634290686737=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, 2019-06-11 at 14:28 +0200, Boris Brezillon wrote:
-> On Tue, 11 Jun 2019 20:25:22 +0800
-> Qii Wang <qii.wang@mediatek.com> wrote:
-> 
-> > On Tue, 2019-06-04 at 20:26 +0800, Qii Wang wrote:
-> > > On Tue, 2019-06-04 at 09:58 +0200, Boris Brezillon wrote:  
-> > > > On Mon, 3 Jun 2019 11:51:03 +0800
-> > > > Qii Wang <qii.wang@mediatek.com> wrote:
-> > > > 
-> > > >   
-> > > > > +static int mtk_i3c_master_probe(struct platform_device *pdev)
-> > > > > +{
-> > > > > +	struct device *dev = &pdev->dev;
-> > > > > +	struct mtk_i3c_master *master;
-> > > > > +	struct resource *res;
-> > > > > +	int ret, irqnr;
-> > > > > +
-> > > > > +	master = devm_kzalloc(dev, sizeof(*master), GFP_KERNEL);
-> > > > > +	if (!master)
-> > > > > +		return -ENOMEM;
-> > > > > +
-> > > > > +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "main");
-> > > > > +	master->regs = devm_ioremap_resource(dev, res);
-> > > > > +	if (IS_ERR(master->regs))
-> > > > > +		return PTR_ERR(master->regs);
-> > > > > +
-> > > > > +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "dma");
-> > > > > +	master->dma_regs = devm_ioremap_resource(dev, res);
-> > > > > +	if (IS_ERR(master->dma_regs))
-> > > > > +		return PTR_ERR(master->dma_regs);
-> > > > > +
-> > > > > +	irqnr = platform_get_irq(pdev, 0);
-> > > > > +	if (irqnr < 0)
-> > > > > +		return irqnr;
-> > > > > +
-> > > > > +	ret = devm_request_irq(dev, irqnr, mtk_i3c_master_irq,
-> > > > > +			       IRQF_TRIGGER_NONE, DRV_NAME, master);
-> > > > > +	if (ret < 0) {
-> > > > > +		dev_err(dev, "Request I3C IRQ %d fail\n", irqnr);
-> > > > > +		return ret;
-> > > > > +	}
-> > > > > +
-> > > > > +	ret = of_property_read_u32(pdev->dev.of_node, "clock-div",
-> > > > > +				   &master->clk_src_div);  
-> > > > 
-> > > > You say in one comment that this clock divider is fixed in HW but might
-> > > > change on a per-SoC basis. If that's the case, you should get rid of
-> > > > this clock-div prop and attach the divider to the compatible (using an
-> > > > mtk_i3c_master_variant struct that contains a divider field).
-> > > >   
-> > > 
-> > > ok, I will attach the divider to the compatible.
-> > >   
-> > I have rechecked your comment, maybe I have misunderstood what you mean.
-> > "clock-div" changes according to i2c source clock, different project may
-> > change i2c source clock, The previous dt-binding may be misleading, I
-> > will modify it.
-> 
-> Is it fixed or configurable? Maybe it should be modeled as a clk
-> driver. What's for sure is that we shouldn't have this divider defined
-> in the DT.
 
-ok, I have let the clk driver handle it, and remove it in DT and i3c
-driver. Thanks!
+--===============8821528634290686737==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="1Sa0i77dkqaUxqYg"
+Content-Disposition: inline
 
 
+--1Sa0i77dkqaUxqYg
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, Jun 11, 2019 at 11:42:50AM +0000, Vitor Soares wrote:
+
+> Since the regmap-i3c.c was already applied in:
+>   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regmap.git=20
+> tags/regmap-i3c
+
+> I wonder what is clean way to submit this patch set?
+
+Just mention in the cover letter that it depends on that tag, the point
+with the tag is to allow other trees to pull it in if they need it.
+
+--1Sa0i77dkqaUxqYg
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl0CmB4ACgkQJNaLcl1U
+h9DdLAf6A5rVHIcRFaF0D/uW7cFQ1G2BO4pg7pNoyrzr8oOHuBBi48aBuLG2UETF
+9QXMIPL3tXBf1d+zYcAadqM1mmZJ1Rhqb9KmRSMVrHj14gmHJ0t/9WOiwA3kCpdJ
+ka0ybLtuSwRilY6jyol7h6sMsaIhn32Ua4tWwBBpiPvsIxGYwZE0sdvmG0racV5p
+rjEVIJhfPrRIfH4+C9g9W3EwzhfAiyolf+8+r7SgoQCrAiNTCQjc8Kyg8iGLObbj
+ORZwz4GDHk0FJq0ntnYhN317EQflHz3NXyqPkNpEzVtYTvNmnLkk1TZpvPvPbAQD
+fP8ERKAe0E5wwy+9AKHTlB+iWfqLVQ==
+=DRFp
+-----END PGP SIGNATURE-----
+
+--1Sa0i77dkqaUxqYg--
+
+
+--===============8821528634290686737==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
+
+--===============8821528634290686737==--
+
