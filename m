@@ -1,75 +1,82 @@
-Return-Path: <SRS0=bY92=UM=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=zVsY=US=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-7.5 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,
-	USER_AGENT_MUTT autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-8.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 66689C31E4A
-	for <linux-i3c@archiver.kernel.org>; Thu, 13 Jun 2019 18:38:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 26357C31E5D
+	for <linux-i3c@archiver.kernel.org>; Wed, 19 Jun 2019 18:36:54 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 4362F208CA
-	for <linux-i3c@archiver.kernel.org>; Thu, 13 Jun 2019 18:38:31 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 0469E21734
+	for <linux-i3c@archiver.kernel.org>; Wed, 19 Jun 2019 18:36:53 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="m0Sujuau";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=sirena.org.uk header.i=@sirena.org.uk header.b="KVerzfWI"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4362F208CA
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="dRe6UY4H";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="M7B34DN6"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 0469E21734
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=lao4oWn7n/FusKG/UwB4HmpaRek7RdageIvj8D5Foug=; b=m0SujuauFvMz3KV8mXq+KIzUy
-	h5g3zdkuk8U4U1RZ86f4TlfXMurNpkIJRWmCv8md1LzRKCEnBZVE4+mCX/Z7juY486I7k26VpAXwQ
-	NZCaL29vBCR+f0h9I7MCZBIcHmJTq6liL8cjVZYbfhQXqlY0n9bU6Y+ATuZPz5Lz/2maWydLLtpjR
-	CH6twAhvCe+g2MsZxeuDG6cbvqMBotYXHi+iA7AfWlW/6NDkZxclOE34e1LLU2Ywk5YX32u5NLsGB
-	CXJ7nltaD7uABor0m9YW/leuS3GAApT5bLXk7dX50aB8fpLndSE7CgLuEiksV4mgUBbfuqZym2oul
-	CvPYvXcwg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=7jZpOYqHX4LLH422pPJNum9+w5w7Oa9z3HPTITH0sLk=; b=dRe6UY4HXzLjh+kfcxGAU7QWBP
+	M3+Yr6oC9HJ5GVNP6fMzFTRaBYr1CwYugp1iheC+zE+6dgA8Hf3X7xo2Yt4HZ9z/8UaHZfssCnHO0
+	3bEnWXy8lV8lDmFvjCW5OjMQbR+09o7hcGMGQcsrRf+pfgmx5QmA0v4V9echUiyh5w89GotX1Ez7Q
+	i6P0Vh7yJTDhiJY2kV3KULYdjSMGZ8POAs0AKkcKytQYH4cchqLHiLQCHZPyG7qNzjN3KkAIfszv9
+	d71jyowbvbaCOHutCdaOxSOJ8O/v+LVkb10C4Z7e+SwHhdaQAXecFXitD2oFQGd8T2Tdo8ZZh5z4Z
+	aLZ+9bTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbUcI-0008Ga-Sh; Thu, 13 Jun 2019 18:38:30 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1hdfS1-0005wm-Cj; Wed, 19 Jun 2019 18:36:53 +0000
+Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbUcG-0008G5-Ki
- for linux-i3c@lists.infradead.org; Thu, 13 Jun 2019 18:38:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=N5gjGcYoQZZl5JqrcxsUv1o4lauQ728+0lZMR0CyIYo=; b=KVerzfWIuvgOGWj2T9+4xZwpz
- SPEygCiZ+IwCDwxWi17byi9WoJLv220Lg9VWaSRDHpxJj35cTBKSsOHyrT8B5/wBxWgYb7B4XC+A6
- JDIpMtJIdmhAVNRQpM/uq6kXhytOSAYEaafiQJFdlJOVWY5vQIiZ4q2DPgcrBqy5aNDb4=;
-Received: from [2001:470:1f1d:6b5:7e7a:91ff:fede:4a45]
- (helo=finisterre.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <broonie@sirena.org.uk>)
- id 1hbUcB-0005Oc-Il; Thu, 13 Jun 2019 18:38:23 +0000
-Received: by finisterre.sirena.org.uk (Postfix, from userid 1000)
- id 0726D440046; Thu, 13 Jun 2019 19:38:22 +0100 (BST)
-Date: Thu, 13 Jun 2019 19:38:22 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Vitor Soares <Vitor.Soares@synopsys.com>
-Subject: Re: [PATCH v2 0/3] Add ST lsm6dso i3c support
-Message-ID: <20190613183822.GS5316@sirena.org.uk>
-References: <cover.1559831663.git.vitor.soares@synopsys.com>
- <13D59CF9CEBAF94592A12E8AE55501350AABEAF3@DE02WEMBXB.internal.synopsys.com>
-MIME-Version: 1.0
-In-Reply-To: <13D59CF9CEBAF94592A12E8AE55501350AABEAF3@DE02WEMBXB.internal.synopsys.com>
-X-Cookie: Editing is a rewording activity.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1hdfRy-0005ui-9S
+ for linux-i3c@lists.infradead.org; Wed, 19 Jun 2019 18:36:51 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
+ [10.225.0.209])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 91AA7C0CAF;
+ Wed, 19 Jun 2019 18:36:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1560969408; bh=wuJso1hif5l+TevIvXSskXT7xugWbLyyyXYKC8aX+1k=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
+ References:From;
+ b=M7B34DN6cpwZaD9kNltLdZxt93WgCPJrq5KPIU7CkwC0Pd6auNAse1s0zDm5K1Fh4
+ xNrPKE6DMP4NFsCrAuKUcTTAMxznXl8lwK/u/BgafjlaaqFEDdT8eLfQrWGWxLBy1p
+ /JjPtp6LPF5cQNEpkVbkOoLR0dOiUmxmuEgzu4EZo1DwjmDfvI73v58o48SXWasqDt
+ qUMwxF+YgHygoCPMMYvb9FzcF+gTE1MST4bOjc/I689Z8ZohrPEWokZ92V+GIjNWD4
+ k+c6iy4geXZgarVdWzX+wQiBOeNujoZYenADu3qEraBN1i+ffxY6L8UZ+4eoxEWtx2
+ +LBA0tjkwzXTQ==
+Received: from de02.synopsys.com (de02.internal.synopsys.com [10.225.17.21])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 11BA5A0064;
+ Wed, 19 Jun 2019 18:36:45 +0000 (UTC)
+Received: from de02dwia024.internal.synopsys.com
+ (de02dwia024.internal.synopsys.com [10.225.19.81])
+ by de02.synopsys.com (Postfix) with ESMTP id B39D83F21A;
+ Wed, 19 Jun 2019 20:36:45 +0200 (CEST)
+From: Vitor Soares <Vitor.Soares@synopsys.com>
+To: linux-i3c@lists.infradead.org, Joao.Pinto@synopsys.com
+Subject: [PATCH v4 3/3] i3c: dw: add limited bus mode support
+Date: Wed, 19 Jun 2019 20:36:33 +0200
+Message-Id: <10b810c9afa9f06515b52a8fd580720f239e0a99.1560968688.git.vitor.soares@synopsys.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <cover.1560968688.git.vitor.soares@synopsys.com>
+References: <cover.1560968688.git.vitor.soares@synopsys.com>
+In-Reply-To: <cover.1560968688.git.vitor.soares@synopsys.com>
+References: <cover.1560968688.git.vitor.soares@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_113828_827981_CA16314D 
-X-CRM114-Status: UNSURE (   8.32  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190619_113650_356497_F401645D 
+X-CRM114-Status: GOOD (  10.14  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,69 +88,49 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
- "bbrezillon@kernel.org" <bbrezillon@kernel.org>,
- "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "rafael@kernel.org" <rafael@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "lorenzo.bianconi83@gmail.com" <lorenzo.bianconi83@gmail.com>,
- "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============8821528634290686737=="
+Cc: Boris Brezillon <bbrezillon@kernel.org>, linux-kernel@vger.kernel.org,
+ Vitor Soares <Vitor.Soares@synopsys.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+This patch add limited bus mode support for DesignWare i3c master
 
---===============8821528634290686737==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="1Sa0i77dkqaUxqYg"
-Content-Disposition: inline
+Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
+Cc: Boris Brezillon <bbrezillon@kernel.org>
+Cc: <linux-kernel@vger.kernel.org>
+---
+Changes in v4:
+  None
 
+Changes in v3:
+  None
 
---1Sa0i77dkqaUxqYg
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Changes in v2:
+  None
 
-On Tue, Jun 11, 2019 at 11:42:50AM +0000, Vitor Soares wrote:
+ drivers/i3c/master/dw-i3c-master.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-> Since the regmap-i3c.c was already applied in:
->   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regmap.git=20
-> tags/regmap-i3c
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index 1d83c97..9612d93 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -599,6 +599,7 @@ static int dw_i3c_master_bus_init(struct i3c_master_controller *m)
+ 
+ 	switch (bus->mode) {
+ 	case I3C_BUS_MODE_MIXED_FAST:
++	case I3C_BUS_MODE_MIXED_LIMITED:
+ 		ret = dw_i2c_clk_cfg(master);
+ 		if (ret)
+ 			return ret;
+-- 
+2.7.4
 
-> I wonder what is clean way to submit this patch set?
-
-Just mention in the cover letter that it depends on that tag, the point
-with the tag is to allow other trees to pull it in if they need it.
-
---1Sa0i77dkqaUxqYg
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl0CmB4ACgkQJNaLcl1U
-h9DdLAf6A5rVHIcRFaF0D/uW7cFQ1G2BO4pg7pNoyrzr8oOHuBBi48aBuLG2UETF
-9QXMIPL3tXBf1d+zYcAadqM1mmZJ1Rhqb9KmRSMVrHj14gmHJ0t/9WOiwA3kCpdJ
-ka0ybLtuSwRilY6jyol7h6sMsaIhn32Ua4tWwBBpiPvsIxGYwZE0sdvmG0racV5p
-rjEVIJhfPrRIfH4+C9g9W3EwzhfAiyolf+8+r7SgoQCrAiNTCQjc8Kyg8iGLObbj
-ORZwz4GDHk0FJq0ntnYhN317EQflHz3NXyqPkNpEzVtYTvNmnLkk1TZpvPvPbAQD
-fP8ERKAe0E5wwy+9AKHTlB+iWfqLVQ==
-=DRFp
------END PGP SIGNATURE-----
-
---1Sa0i77dkqaUxqYg--
-
-
---===============8821528634290686737==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
-
---===============8821528634290686737==--
-
