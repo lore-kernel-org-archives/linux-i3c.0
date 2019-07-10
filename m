@@ -2,69 +2,76 @@ Return-Path: <SRS0=FZv/=VM=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-9.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,UNPARSEABLE_RELAY,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-8.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 97FFDC7618E
-	for <linux-i3c@archiver.kernel.org>; Mon, 15 Jul 2019 07:25:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B1590C76192
+	for <linux-i3c@archiver.kernel.org>; Mon, 15 Jul 2019 07:25:02 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 37B2520868
-	for <linux-i3c@archiver.kernel.org>; Mon, 15 Jul 2019 07:25:01 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 8358520868
+	for <linux-i3c@archiver.kernel.org>; Mon, 15 Jul 2019 07:25:02 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="oPFPOnad"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 37B2520868
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=mediatek.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="jOOo7mdG";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="OjpWs0Y4"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 8358520868
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5ZSWiaSW0LWB0uh2051zC1BGG4NfUgn0QGGBY/Cuqh4=; b=oPFPOnadF5wiI9
-	5d1hMZ3YjO7zegbfbn0nyjyMN/Nd24ux5R5Io5R+lubdvnCsISWna3YxXAifVFr9rNFG7G+jeseVu
-	0mvZmTNp8GRu4lyXAHBSZf5C8rGFFzEi8jpH9OBXhdQdyZqNcTk8zwfoDM/7WHmvX9b5MVTt1JkGc
-	ccyszi8uqxGmzSbFfGA1kNeBE1w5SV6qlLg+75yYyqNin/4mvMSUSkHWLi9bMT5V1ZaEcxYXS7hRu
-	2bD22PcUaljy2glKpjFtXdLkUwFGydbEa9mjJYOYv4Y3lBi56Vm1IPHqFHnj1yVGADauXDSJ9e4tW
-	bTb7ViHbt44Xp7DcbXVw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=5GBDPvlEZ0GMuLY6oBqNJpEbtQFYw+iEGXdBU7+sOqg=; b=jOO
+	o7mdG0mRm4YUG5Att/AoxGuomTZgLmZWOHLDXvfLFsx19B46Ta/M0Rge5pqREuzbMM4sVmBUyPB+2
+	9JfPjaicVgE/JdkcdTO8KcT5pRJUNk7Tq3mzr/pU7dSHnrbeiv+QG2N/zy6K1IO8RBUnyGcq9fkiJ
+	ElYvSGof8JgnPW7FhIlwPlMHb4ZVSxBetTgr+SwIpf6CgBYnK/x5ySWXAF4cm601U9i+bXeKsb6Qs
+	EEZ9JU7iC957UTDPTDcpbAz+vucfIxdJFgjO6uldx9mffVzA4nP8TrHKMXV2SaPPp94yZR2zx0/mJ
+	SncwbKiPXJtvRxfAXMFhYApf32L2tCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmvM4-0000sL-Jh; Mon, 15 Jul 2019 07:25:00 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1hmvM6-0000tI-0a; Mon, 15 Jul 2019 07:25:02 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkpsW-0002mI-Nd; Tue, 09 Jul 2019 13:09:54 +0000
-X-UUID: 52725f3a980a421cbaddb4741bcf1e30-20190709
-X-UUID: 52725f3a980a421cbaddb4741bcf1e30-20190709
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <qii.wang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 320629930; Tue, 09 Jul 2019 05:09:47 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 9 Jul 2019 06:09:46 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 9 Jul 2019 21:09:45 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 9 Jul 2019 21:09:45 +0800
-From: Qii Wang <qii.wang@mediatek.com>
-To: <bbrezillon@kernel.org>
-Subject: [PATCH v3 1/2] dt-bindings: i3c: Document MediaTek I3C master bindings
-Date: Tue, 9 Jul 2019 21:09:21 +0800
-Message-ID: <1562677762-24067-2-git-send-email-qii.wang@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
-In-Reply-To: <1562677762-24067-1-git-send-email-qii.wang@mediatek.com>
-References: <1562677762-24067-1-git-send-email-qii.wang@mediatek.com>
-MIME-Version: 1.0
-X-MTK: N
+ id 1hlE1W-0000Oq-OI
+ for linux-i3c@lists.infradead.org; Wed, 10 Jul 2019 14:56:49 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
+ [10.225.0.210])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 64173C1C7F;
+ Wed, 10 Jul 2019 14:56:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1562770604; bh=wlZvgrVT1cnhuSHx1zID1cemmfpVHJ+ubZIZzKEp5eM=;
+ h=From:To:Cc:Subject:Date:From;
+ b=OjpWs0Y4Qg+BBOtqLlD7heYkPssrjR3AOfFSvw9SX4JRMwIF0Yka8UKgEIEoqore7
+ 5jJi8Vg++vwsHFQDIlEbnSILEoF1EEDIeXVZiLgbV5hmydzP3YPLlV7PEoWQpAf83N
+ 4UG65yGR2yyUOHLPaoiAW0KlVZfStCUArPW6ORmF0sx+ywz/WObRDK8ELSXXwCDE2y
+ 8ZrablIAkPrUUZFO7AEUdHxRjfe3khI1L66YlanQZBE8zH9bM5ghaYhAOtu4PWhPu6
+ tLVyytJVFLfb0RnkNdaKG6CGh8VMLjIGxjUq4tP+Jd2L6hYJ0B7pPrbJOweX3IPyli
+ nO2AncxBoKeOg==
+Received: from de02.synopsys.com (de02.internal.synopsys.com [10.225.17.21])
+ by mailhost.synopsys.com (Postfix) with ESMTP id E6898A0057;
+ Wed, 10 Jul 2019 14:56:41 +0000 (UTC)
+Received: from de02dwia024.internal.synopsys.com
+ (de02dwia024.internal.synopsys.com [10.225.19.81])
+ by de02.synopsys.com (Postfix) with ESMTP id BCB503FA2F;
+ Wed, 10 Jul 2019 16:56:41 +0200 (CEST)
+From: Vitor Soares <Vitor.Soares@synopsys.com>
+To: linux-iio@vger.kernel.org, linux-i3c@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH v3 0/3] Add ST lsm6dso i3c support
+Date: Wed, 10 Jul 2019 16:56:36 +0200
+Message-Id: <cover.1562767521.git.vitor.soares@synopsys.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_060952_775364_57651D22 
-X-CRM114-Status: GOOD (  10.07  )
+X-CRM114-CacheID: sfid-20190710_075646_799428_D24C6D57 
+X-CRM114-Status: GOOD (  10.96  )
 X-Mailman-Approved-At: Mon, 15 Jul 2019 00:24:58 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -77,81 +84,54 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- srv_heupstream@mediatek.com, leilk.liu@mediatek.com, xinping.qian@mediatek.com,
- linux-kernel@vger.kernel.org, liguo.zhang@mediatek.com, robh+dt@kernel.org,
- linux-mediatek@lists.infradead.org, qii.wang@mediatek.com,
- matthias.bgg@gmail.com, linux-i3c@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Joao.Pinto@synopsys.com, rafael@kernel.org, gregkh@linuxfoundation.org,
+ Vitor Soares <Vitor.Soares@synopsys.com>, broonie@kernel.org,
+ bbrezillon@knernel.org, lorenzo@kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Document MediaTek I3C master DT bindings.
+This patch series add i3c support for STM LSM6DSO and LSM6DSR sensors.
 
-Signed-off-by: Qii Wang <qii.wang@mediatek.com>
----
- .../devicetree/bindings/i3c/mtk,i3c-master.txt     |   48 ++++++++++++++++++++
- 1 file changed, 48 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/i3c/mtk,i3c-master.txt
+It is also introduced i3c support on regmap api. Due the lack of
+i3c devices HDR capables on the market the support for now is only for
+i3c sdr mode by using i3c_device_do_priv_xfers() method.
 
-diff --git a/Documentation/devicetree/bindings/i3c/mtk,i3c-master.txt b/Documentation/devicetree/bindings/i3c/mtk,i3c-master.txt
-new file mode 100644
-index 0000000..d32eda6
---- /dev/null
-+++ b/Documentation/devicetree/bindings/i3c/mtk,i3c-master.txt
-@@ -0,0 +1,48 @@
-+Bindings for MediaTek I3C master block
-+=====================================
-+
-+Required properties:
-+--------------------
-+- compatible: shall be "mediatek,i3c-master"
-+- reg: physical base address of the controller and apdma base, length of
-+  memory mapped region.
-+- reg-names: shall be "main" for master controller and "dma" for apdma.
-+- interrupts: the interrupt line connected to this I3C master.
-+- clocks: shall reference the i3c and apdma clocks.
-+- clock-names: shall include "main" and "dma".
-+
-+Mandatory properties defined by the generic binding (see
-+Documentation/devicetree/bindings/i3c/i3c.txt for more details):
-+
-+- #address-cells: shall be set to 3
-+- #size-cells: shall be set to 0
-+
-+Optional properties defined by the generic binding (see
-+Documentation/devicetree/bindings/i3c/i3c.txt for more details):
-+
-+- i2c-scl-hz
-+- i3c-scl-hz
-+
-+I3C device connected on the bus follow the generic description (see
-+Documentation/devicetree/bindings/i3c/i3c.txt for more details).
-+
-+Example:
-+
-+	i3c0: i3c@1100d000 {
-+		compatible = "mediatek,i3c-master";
-+		reg = <0x1100d000 0x1000>,
-+		      <0x11000300 0x80>;
-+		reg-names = "main", "dma";
-+		interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_LOW>;
-+		clocks = <&infracfg CLK_INFRA_I3C0>,
-+			 <&infracfg CLK_INFRA_AP_DMA>;
-+		clock-names = "main", "dma";
-+		#address-cells = <3>;
-+		#size-cells = <0>;
-+		i2c-scl-hz = <100000>;
-+
-+		nunchuk: nunchuk@52 {
-+			compatible = "nintendo,nunchuk";
-+			reg = <0x52 0x0 0x10>;
-+		};
-+	};
+The i3c regmap api is already available in the Git repository at:
+  https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regmap.git
+  tags/regmap-i3c
+
+Change in v3:
+  Update st_lsm6dsx_probe() call
+  Remove i3c_get_device_id() and use i3c_device_match_id()
+
+Changes in v2:
+  Change i3c_get_device_id() to drivers/i3c/device.c
+  Add support for LSM6DSR
+
+Vitor Soares (3):
+  regmap: add i3c bus support
+  i3c: add i3c_get_device_id helper
+  iio: imu: st_lsm6dsx: add i3c basic support for LSM6DSO and LSM6DSR
+
+ drivers/base/regmap/Kconfig                 |  6 ++-
+ drivers/base/regmap/Makefile                |  1 +
+ drivers/base/regmap/regmap-i3c.c            | 60 ++++++++++++++++++++++++++++
+ drivers/i3c/device.c                        | 46 ++++++++++++++++++++++
+ drivers/i3c/master.c                        | 45 ---------------------
+ drivers/iio/imu/st_lsm6dsx/Kconfig          |  8 +++-
+ drivers/iio/imu/st_lsm6dsx/Makefile         |  1 +
+ drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c | 61 +++++++++++++++++++++++++++++
+ include/linux/i3c/device.h                  |  4 ++
+ include/linux/regmap.h                      | 20 ++++++++++
+ 10 files changed, 205 insertions(+), 47 deletions(-)
+ create mode 100644 drivers/base/regmap/regmap-i3c.c
+ create mode 100644 drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
+
 -- 
-1.7.9.5
+2.7.4
 
 
 _______________________________________________
