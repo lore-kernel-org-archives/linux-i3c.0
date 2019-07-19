@@ -2,83 +2,59 @@ Return-Path: <SRS0=tlLU=VQ=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-9.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+X-Spam-Status: No, score=-8.2 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT
+	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,UNPARSEABLE_RELAY,USER_AGENT_SANE_2
 	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 28FF1C76197
-	for <linux-i3c@archiver.kernel.org>; Fri, 19 Jul 2019 11:19:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id EB5E7C76195
+	for <linux-i3c@archiver.kernel.org>; Fri, 19 Jul 2019 12:49:55 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id F214421849
-	for <linux-i3c@archiver.kernel.org>; Fri, 19 Jul 2019 11:19:34 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id C10B421849
+	for <linux-i3c@archiver.kernel.org>; Fri, 19 Jul 2019 12:49:55 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="kbg681Rr";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="d6PWqVq/"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org F214421849
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="EKakWRgu"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org C10B421849
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=collabora.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=fR1PkFu8IQ8uqCxVzOpZK87cpuPh5FclgqKL2rkiI24=; b=kbg681RrQr+5NJe6PfwpAZvi9q
-	+Blz0+WDpVTZlqLZcENx4WD0v+EXEteQRPHRMhjTWhnn0Eey6EvbobtZx+s00HYpYvTUUfj8YfLOB
-	Tsl9lUbVmdyzgSqlY2rHzAtZtujA5if3sspF41DALft89BeBXd1xDjDgmR1hxRbHd8UEQJ1fXi1dN
-	8mAlUG4C+KQBQb3EWpRaw1ggUY2rDBI973vHZa4rEcCXK3G0btaqDSj+zSuOFhEUoAuPf4vobQoLQ
-	ya0BYDGu++P79WXaOqdAzKiB7QLNMCV2ozR2/sMdBMz4kE8fOqOANZDWBzwSkX7ADq7bqloJ+wn8v
-	YrRnZC7g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/pfsDC0S1enUswvUKbsR6ki/naaZk3/SjotMbFfubg8=; b=EKakWRgu32P59l
+	UEHXeqtwQKyI9Iv+cLkAg/N+vzA5Zz1Q5pXQAnDoK4uoFVPg5L+pBRcX0mqK4RQO0SsPccOUKKMmr
+	q+8M6VL4hMu9clEXENFGGEjK957RzrHn8jSiQaaFDLBpk65isc3dS2eKAJfQUlkzxN8l6ZjwwIIZ6
+	eOJLnD9nzzoagNXnQuQc7X8wmNzOGUH+u6kzScudWzi7r4zo1KxY2wA/wIJW/4/w9K4cSTiKaVClz
+	23EEUapGcmZr0BQRTzroIrZRAluBPkYDU1+PH8NVFr4xcGihaCMsdwIQMfr6W/5dHmKp5l+Wxrmpz
+	fSVhEWiQw1yUzhJHfi1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoQvG-0007T0-Lq; Fri, 19 Jul 2019 11:19:34 +0000
-Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
- helo=smtprelay-out1.synopsys.com)
+	id 1hoSKh-0005xj-2t; Fri, 19 Jul 2019 12:49:55 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoQvC-0007R3-Jz
- for linux-i3c@lists.infradead.org; Fri, 19 Jul 2019 11:19:33 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
- [10.225.0.209])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id C001EC01DD;
- Fri, 19 Jul 2019 11:19:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1563535168; bh=DkxvOy+T/mz+azrBV6QR9q61ABi4LwrB8tpYcS1uaF4=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
- References:From;
- b=d6PWqVq/0oJnkfMJZkNHS7cIZ4t4TzuoiJcL3SxFDy/A3vz5KZj53sZJUzh/Ql3S8
- 6MKwF/brIRrUMuMhQstpMbU+JTbhUWKmHAM0XoLlGHRUujOxhQNfnmoHX0ESHBDN/z
- fh2ZCU6wdoSxtIh5jsOMcW5lB/4R9qhGbkBTU6hlYzt7DBekJNoYJmW02FauW8Ggz8
- +1INEzNCvK/UkJJ3Jd+3gnBHk+ymHysMEc2BcPt3z1Ys/DhVUl0yZz0XAUBZapMPu9
- peuNmTR3JbYWKhZNcjFvpUTP5lULGIBbsjDMfroEw2PrBLbnJVeTm6YWmbH83l2ELl
- sODQPTecoR6Nw==
-Received: from de02.synopsys.com (germany.internal.synopsys.com [10.225.17.21])
- by mailhost.synopsys.com (Postfix) with ESMTP id 3922DA0057;
- Fri, 19 Jul 2019 11:19:26 +0000 (UTC)
-Received: from de02dwia024.internal.synopsys.com
- (de02dwia024.internal.synopsys.com [10.225.19.81])
- by de02.synopsys.com (Postfix) with ESMTP id 211243CA34;
- Fri, 19 Jul 2019 13:19:26 +0200 (CEST)
-From: Vitor Soares <Vitor.Soares@synopsys.com>
-To: linux-iio@vger.kernel.org, linux-i3c@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH v5 2/2] iio: imu: st_lsm6dsx: add i3c basic support for
- LSM6DSO and LSM6DSR
-Date: Fri, 19 Jul 2019 13:19:05 +0200
-Message-Id: <2a181b502eb69f8506873e2ff93239cbb4108e98.1563533343.git.vitor.soares@synopsys.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <cover.1563533342.git.vitor.soares@synopsys.com>
+ id 1hoSKe-0005w7-4q
+ for linux-i3c@lists.infradead.org; Fri, 19 Jul 2019 12:49:54 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: bbrezillon) with ESMTPSA id 9979628C684
+Date: Fri, 19 Jul 2019 14:49:45 +0200
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: Vitor Soares <Vitor.Soares@synopsys.com>
+Subject: Re: [PATCH v5 1/2] i3c: move i3c_device_match_id to device.c and
+ export it
+Message-ID: <20190719144945.0a43b37f@pc-375.home>
+In-Reply-To: <40addcc18ac82a3156cd86e153e2b4fc1de2fe54.1563533343.git.vitor.soares@synopsys.com>
 References: <cover.1563533342.git.vitor.soares@synopsys.com>
-In-Reply-To: <cover.1563533342.git.vitor.soares@synopsys.com>
-References: <cover.1563533342.git.vitor.soares@synopsys.com>
+ <40addcc18ac82a3156cd86e153e2b4fc1de2fe54.1563533343.git.vitor.soares@synopsys.com>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190719_041930_670665_70E59BF4 
-X-CRM114-Status: GOOD (  15.78  )
+X-CRM114-CacheID: sfid-20190719_054952_447789_5088A3FA 
+X-CRM114-Status: GOOD (  20.13  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,146 +66,188 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: Joao.Pinto@synopsys.com, bbrezillon@kernel.org, gregkh@linuxfoundation.org,
- rafael@kernel.org, Vitor Soares <Vitor.Soares@synopsys.com>,
+Cc: Joao.Pinto@synopsys.com, rafael@kernel.org, linux-iio@vger.kernel.org,
+ gregkh@linuxfoundation.org, bbrezillon@kernel.org,
+ linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
  lorenzo@kernel.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-For today the st_lsm6dsx driver support LSM6DSO and LSM6DSR sensor only in
-spi and i2c mode.
+On Fri, 19 Jul 2019 13:19:04 +0200
+Vitor Soares <Vitor.Soares@synopsys.com> wrote:
 
-The LSM6DSO and LSM6DSR are also i3c capable so let's give i3c support to
-them.
+> Some I3C device drivers need to know which entry matches the
+> i3c_device object passed to the probe function
+> 
+> Let's move i3c_device_match_id() to device.c and export it so it can be
+> used by drivers.
+> 
+> Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
+> ---
+> Changes in v5:
+>   Add kerneldoc
+>   Improve commit message
+> 
+> Changes in v4:
+>   None
+> 
+> Changes in v3:
+>   Remove i3c_get_device_id
+>   Move i3c_device_match_id from drivers/i3c/master.c to drivers/i3c/device.c
+>   Export i3c_device_match_id
+> 
+> Changes in v2:
+>   move this function to drivers/i3c/device.c
+> 
+>  drivers/i3c/device.c       | 53 ++++++++++++++++++++++++++++++++++++++++++++++
+>  drivers/i3c/master.c       | 45 ---------------------------------------
+>  include/linux/i3c/device.h |  4 ++++
+>  3 files changed, 57 insertions(+), 45 deletions(-)
+> 
+> diff --git a/drivers/i3c/device.c b/drivers/i3c/device.c
+> index 69cc040..5349059 100644
+> --- a/drivers/i3c/device.c
+> +++ b/drivers/i3c/device.c
+> @@ -201,6 +201,59 @@ struct i3c_device *dev_to_i3cdev(struct device *dev)
+>  EXPORT_SYMBOL_GPL(dev_to_i3cdev);
+>  
+>  /**
+> + * i3c_device_match_id() - Returns the I3C device match id in @i3cdev
 
-Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
-Acked-by: Lorenzo Bianconi <lorenzo@kernel.org>
----
-Changes in v5:
-  Move regmap_config declaration inside st_lsm6dsx_i3c_probe()
-  Fix warning [-Wint-to-void-pointer-cast] when compiling in 64-bit arch
+			      Returns the i3c_device_id entry matching
+			      @i3cdev
 
-Changes in v4:
-  Remove hw_id variable
+> + * @i3cdev: I3C device
+> + * @id_table: I3C device match table
+> + *
+> + * Return: a pointer to I3C device id object
+			   an i3c_device_id object or NULL if there's
+no match.
 
-Changes in v3:
-  Remove unnecessary st_lsm6dsx_i3c_data table used to hold device name
-  Use st_lsm6dsx_probe new form
-
-Changes in v2:
-  Add support for LSM6DSR
-  Set pm_ops to st_lsm6dsx_pm_ops
-
- drivers/iio/imu/st_lsm6dsx/Kconfig          |  8 +++-
- drivers/iio/imu/st_lsm6dsx/Makefile         |  1 +
- drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c | 57 +++++++++++++++++++++++++++++
- 3 files changed, 65 insertions(+), 1 deletion(-)
- create mode 100644 drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
-
-diff --git a/drivers/iio/imu/st_lsm6dsx/Kconfig b/drivers/iio/imu/st_lsm6dsx/Kconfig
-index 9e59297..6b5a73c 100644
---- a/drivers/iio/imu/st_lsm6dsx/Kconfig
-+++ b/drivers/iio/imu/st_lsm6dsx/Kconfig
-@@ -1,11 +1,12 @@
- 
- config IIO_ST_LSM6DSX
- 	tristate "ST_LSM6DSx driver for STM 6-axis IMU MEMS sensors"
--	depends on (I2C || SPI)
-+	depends on (I2C || SPI || I3C)
- 	select IIO_BUFFER
- 	select IIO_KFIFO_BUF
- 	select IIO_ST_LSM6DSX_I2C if (I2C)
- 	select IIO_ST_LSM6DSX_SPI if (SPI_MASTER)
-+	select IIO_ST_LSM6DSX_I3C if (I3C)
- 	help
- 	  Say yes here to build support for STMicroelectronics LSM6DSx imu
- 	  sensor. Supported devices: lsm6ds3, lsm6ds3h, lsm6dsl, lsm6dsm,
-@@ -23,3 +24,8 @@ config IIO_ST_LSM6DSX_SPI
- 	tristate
- 	depends on IIO_ST_LSM6DSX
- 	select REGMAP_SPI
-+
-+config IIO_ST_LSM6DSX_I3C
-+	tristate
-+	depends on IIO_ST_LSM6DSX
-+	select REGMAP_I3C
-diff --git a/drivers/iio/imu/st_lsm6dsx/Makefile b/drivers/iio/imu/st_lsm6dsx/Makefile
-index e5f733c..c676965 100644
---- a/drivers/iio/imu/st_lsm6dsx/Makefile
-+++ b/drivers/iio/imu/st_lsm6dsx/Makefile
-@@ -4,3 +4,4 @@ st_lsm6dsx-y := st_lsm6dsx_core.o st_lsm6dsx_buffer.o \
- obj-$(CONFIG_IIO_ST_LSM6DSX) += st_lsm6dsx.o
- obj-$(CONFIG_IIO_ST_LSM6DSX_I2C) += st_lsm6dsx_i2c.o
- obj-$(CONFIG_IIO_ST_LSM6DSX_SPI) += st_lsm6dsx_spi.o
-+obj-$(CONFIG_IIO_ST_LSM6DSX_I3C) += st_lsm6dsx_i3c.o
-diff --git a/drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c b/drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
-new file mode 100644
-index 0000000..57e6331
---- /dev/null
-+++ b/drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
-@@ -0,0 +1,57 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (c) 2018 Synopsys, Inc. and/or its affiliates.
-+ *
-+ * Author: Vitor Soares <vitor.soares@synopsys.com>
-+ */
-+
-+#include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/i3c/device.h>
-+#include <linux/i3c/master.h>
-+#include <linux/slab.h>
-+#include <linux/of.h>
-+#include <linux/regmap.h>
-+
-+#include "st_lsm6dsx.h"
-+
-+static const struct i3c_device_id st_lsm6dsx_i3c_ids[] = {
-+	I3C_DEVICE(0x0104, 0x006C, (void *)ST_LSM6DSO_ID),
-+	I3C_DEVICE(0x0104, 0x006B, (void *)ST_LSM6DSR_ID),
-+	{ /* sentinel */ },
-+};
-+MODULE_DEVICE_TABLE(i3c, st_lsm6dsx_i3c_ids);
-+
-+static int st_lsm6dsx_i3c_probe(struct i3c_device *i3cdev)
-+{
-+	struct regmap_config st_lsm6dsx_i3c_regmap_config = {
-+		.reg_bits = 8,
-+		.val_bits = 8,
-+	};
-+	const struct i3c_device_id *id = i3c_device_match_id(i3cdev,
-+							    st_lsm6dsx_i3c_ids);
-+	struct regmap *regmap;
-+
-+	regmap = devm_regmap_init_i3c(i3cdev, &st_lsm6dsx_i3c_regmap_config);
-+	if (IS_ERR(regmap)) {
-+		dev_err(&i3cdev->dev, "Failed to register i3c regmap %d\n",
-+			(int)PTR_ERR(regmap));
-+		return PTR_ERR(regmap);
-+	}
-+
-+	return st_lsm6dsx_probe(&i3cdev->dev, 0, (uintptr_t)id->data, regmap);
-+}
-+
-+static struct i3c_driver st_lsm6dsx_driver = {
-+	.driver = {
-+		.name = "st_lsm6dsx_i3c",
-+		.pm = &st_lsm6dsx_pm_ops,
-+	},
-+	.probe = st_lsm6dsx_i3c_probe,
-+	.id_table = st_lsm6dsx_i3c_ids,
-+};
-+module_i3c_driver(st_lsm6dsx_driver);
-+
-+MODULE_AUTHOR("Vitor Soares <vitor.soares@synopsys.com>");
-+MODULE_DESCRIPTION("STMicroelectronics st_lsm6dsx i3c driver");
-+MODULE_LICENSE("GPL v2");
--- 
-2.7.4
+> + */
+> +const struct i3c_device_id *
+> +i3c_device_match_id(struct i3c_device *i3cdev,
+> +		    const struct i3c_device_id *id_table)
+> +{
+> +	struct i3c_device_info devinfo;
+> +	const struct i3c_device_id *id;
+> +
+> +	i3c_device_get_info(i3cdev, &devinfo);
+> +
+> +	/*
+> +	 * The lower 32bits of the provisional ID is just filled with a random
+> +	 * value, try to match using DCR info.
+> +	 */
+> +	if (!I3C_PID_RND_LOWER_32BITS(devinfo.pid)) {
+> +		u16 manuf = I3C_PID_MANUF_ID(devinfo.pid);
+> +		u16 part = I3C_PID_PART_ID(devinfo.pid);
+> +		u16 ext_info = I3C_PID_EXTRA_INFO(devinfo.pid);
+> +
+> +		/* First try to match by manufacturer/part ID. */
+> +		for (id = id_table; id->match_flags != 0; id++) {
+> +			if ((id->match_flags & I3C_MATCH_MANUF_AND_PART) !=
+> +			    I3C_MATCH_MANUF_AND_PART)
+> +				continue;
+> +
+> +			if (manuf != id->manuf_id || part != id->part_id)
+> +				continue;
+> +
+> +			if ((id->match_flags & I3C_MATCH_EXTRA_INFO) &&
+> +			    ext_info != id->extra_info)
+> +				continue;
+> +
+> +			return id;
+> +		}
+> +	}
+> +
+> +	/* Fallback to DCR match. */
+> +	for (id = id_table; id->match_flags != 0; id++) {
+> +		if ((id->match_flags & I3C_MATCH_DCR) &&
+> +		    id->dcr == devinfo.dcr)
+> +			return id;
+> +	}
+> +
+> +	return NULL;
+> +}
+> +EXPORT_SYMBOL_GPL(i3c_device_match_id);
+> +
+> +/**
+>   * i3c_driver_register_with_owner() - register an I3C device driver
+>   *
+>   * @drv: driver to register
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index 5f4bd52..7667f84 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -270,51 +270,6 @@ static const struct device_type i3c_device_type = {
+>  	.uevent = i3c_device_uevent,
+>  };
+>  
+> -static const struct i3c_device_id *
+> -i3c_device_match_id(struct i3c_device *i3cdev,
+> -		    const struct i3c_device_id *id_table)
+> -{
+> -	struct i3c_device_info devinfo;
+> -	const struct i3c_device_id *id;
+> -
+> -	i3c_device_get_info(i3cdev, &devinfo);
+> -
+> -	/*
+> -	 * The lower 32bits of the provisional ID is just filled with a random
+> -	 * value, try to match using DCR info.
+> -	 */
+> -	if (!I3C_PID_RND_LOWER_32BITS(devinfo.pid)) {
+> -		u16 manuf = I3C_PID_MANUF_ID(devinfo.pid);
+> -		u16 part = I3C_PID_PART_ID(devinfo.pid);
+> -		u16 ext_info = I3C_PID_EXTRA_INFO(devinfo.pid);
+> -
+> -		/* First try to match by manufacturer/part ID. */
+> -		for (id = id_table; id->match_flags != 0; id++) {
+> -			if ((id->match_flags & I3C_MATCH_MANUF_AND_PART) !=
+> -			    I3C_MATCH_MANUF_AND_PART)
+> -				continue;
+> -
+> -			if (manuf != id->manuf_id || part != id->part_id)
+> -				continue;
+> -
+> -			if ((id->match_flags & I3C_MATCH_EXTRA_INFO) &&
+> -			    ext_info != id->extra_info)
+> -				continue;
+> -
+> -			return id;
+> -		}
+> -	}
+> -
+> -	/* Fallback to DCR match. */
+> -	for (id = id_table; id->match_flags != 0; id++) {
+> -		if ((id->match_flags & I3C_MATCH_DCR) &&
+> -		    id->dcr == devinfo.dcr)
+> -			return id;
+> -	}
+> -
+> -	return NULL;
+> -}
+> -
+>  static int i3c_device_match(struct device *dev, struct device_driver *drv)
+>  {
+>  	struct i3c_device *i3cdev;
+> diff --git a/include/linux/i3c/device.h b/include/linux/i3c/device.h
+> index 5ecb055..de102e4 100644
+> --- a/include/linux/i3c/device.h
+> +++ b/include/linux/i3c/device.h
+> @@ -188,6 +188,10 @@ static inline struct i3c_driver *drv_to_i3cdrv(struct device_driver *drv)
+>  struct device *i3cdev_to_dev(struct i3c_device *i3cdev);
+>  struct i3c_device *dev_to_i3cdev(struct device *dev);
+>  
+> +const struct i3c_device_id *
+> +i3c_device_match_id(struct i3c_device *i3cdev,
+> +		    const struct i3c_device_id *id_table);
+> +
+>  static inline void i3cdev_set_drvdata(struct i3c_device *i3cdev,
+>  				      void *data)
+>  {
 
 
 _______________________________________________
