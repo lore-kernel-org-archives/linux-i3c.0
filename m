@@ -1,56 +1,105 @@
-Return-Path: <SRS0=wpU+=WI=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=1QaF=WS=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-2.3 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+X-Spam-Status: No, score=-0.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_2 autolearn=no autolearn_force=no
-	version=3.4.0
+	SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 233D4C31E40
-	for <linux-i3c@archiver.kernel.org>; Mon, 12 Aug 2019 14:55:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id E3747C3A5A1
+	for <linux-i3c@archiver.kernel.org>; Thu, 22 Aug 2019 11:08:49 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E5A7E20679
-	for <linux-i3c@archiver.kernel.org>; Mon, 12 Aug 2019 14:55:41 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id B6F2321726
+	for <linux-i3c@archiver.kernel.org>; Thu, 22 Aug 2019 11:08:49 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="ZaXf9YPU"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E5A7E20679
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=collabora.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="fl9KIoXs";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="iFRenLba";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=synopsys.onmicrosoft.com header.i=@synopsys.onmicrosoft.com header.b="PQhXAjCK"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org B6F2321726
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SifXlWkDxgjcAUbIW+nGXKGbsQALSpReYNfqTmOpYCo=; b=ZaXf9YPUD942pI
-	Dx5ox4KkphhdGKEaNvLjYgp95Q/KiiTboXikzv22bBjBdc9NTOOJ4A0zF0Cxwmf/pK0pYyzDQhPgN
-	quTcHfAX5E0wR2+YgqkFRMi1fPG427J025KBwsg6//0hZkgvolZ11NLoBuEuzBz1ALAZ3eTL2PxX3
-	FT10uCF+0nr5+7y2s6G7KcAAeVwa1MwzzKNf4MXhKZGnpAIKAbengFrGlgXVp8hLSFHvb2pBGaKfK
-	rZXFc82yI8AO9cDhndDNe7FMp/CiB8QmhMo8UjO/mKWr5YfAYSoutQgyS0/2kUfNAtpJW2HmatSK1
-	1ezHag0PVjLK4KMZrwIw==;
+	List-Owner; bh=gLZq3uzNRchAfMA+GZqMcv6mC1g3Jmzhehq5lkKxIGs=; b=fl9KIoXs/gcTzR
+	xs4pMTsIoxLaY+qsX1Ecm06QwgIfHFMLZTXIIPok26pl5CBWqDSJiuX+1+ahdBYOO2SudTZ965IJp
+	RDCDCy7Jq3cdjh2BXx+aRwxooH4vOhabDZ1jNkkwHAPSrbjXft81JYtv4/fQtk9t/lm2vXyj354bD
+	Nh9JXg5gB3QOAwBlUwlYiHgmUArpPr9ALBGU1gmVEJUMn+T+/gypkTZyAZgCgUFEg2tEDQog9PKA7
+	4/j1UOe5SG7MyfH0Za9pTgULHkXs8Cuffq1ejuurDEEBJ941bezlWMb9yRREeXfKEBiz1p32kmMPS
+	5+b9JKVs/v+q7dULNCdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxBjZ-0003Hh-GR; Mon, 12 Aug 2019 14:55:41 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1i0kxV-0002sC-BE; Thu, 22 Aug 2019 11:08:49 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxBjV-0003Gp-NK
- for linux-i3c@lists.infradead.org; Mon, 12 Aug 2019 14:55:40 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 8F88228A1B0;
- Mon, 12 Aug 2019 15:55:34 +0100 (BST)
-Date: Mon, 12 Aug 2019 16:55:31 +0200
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Vitor Soares <Vitor.Soares@synopsys.com>
-Subject: Re: [PATCH v5 4/7] i3c: Add support for mastership request to I3C
+ id 1i0kxS-0002rN-UX
+ for linux-i3c@lists.infradead.org; Thu, 22 Aug 2019 11:08:48 +0000
+Received: from mailhost.synopsys.com (dc2-mailhost1.synopsys.com
+ [10.12.135.161])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 42DDAC03C2;
+ Thu, 22 Aug 2019 11:08:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1566472124; bh=LP7CVGGK1IS0ibpvIRZMhcsijCOqivHm4ucS1JXIHEI=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=iFRenLba8l2QK/nW4/9DEB+LH821NbdPWpxF37hPZm8ZPefD0eSpJHpNCR6zoXOMW
+ OcJOFViGeq30OLW/rVPQre0VKWNqqXIR5wHfi/r0NJ2yurgQFL6exCmQ7prH5lr5FF
+ jVi3TOiUXiBk9989/CgvQrgi5CwHHa44mvJ/uAUCgQGP2xXwyYq/gNEUt8BXmQJ/gt
+ QbM22hJF12nfNNUgl4AUMUDUHGI7xH/2sI9QHxoqAM7Hbb4bcGAGGb43hXUR/CIQ8d
+ WHOC2E1MJTo4jiPwcjse6qndJIW4id2nlbo+Hbe14BGtEaqF1zvQSKKyYkZg+j9vHi
+ kcXVLen/TDjwA==
+Received: from us01wehtc1.internal.synopsys.com
+ (us01wehtc1-vip.internal.synopsys.com [10.12.239.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id BEFD8A0097;
+ Thu, 22 Aug 2019 11:08:42 +0000 (UTC)
+Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
+ us01wehtc1.internal.synopsys.com (10.12.239.235) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Thu, 22 Aug 2019 04:08:42 -0700
+Received: from NAM03-CO1-obe.outbound.protection.outlook.com (10.13.134.195)
+ by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Thu, 22 Aug 2019 04:08:42 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=EyqqkEzg5/Xpc4tGnUwA+6CgQiE7mV7/S/gDjUTTXCt8csoj8DT+qkWkjjEr/XSdYpDmOo0/jPRoei2VxUT6qKq6fer/59jdOFLLbAzo0sbPuGnPrR+CHP+7VLrjYT2rIM3TNW2y59dMfuui6aJiZwHlaMoDk7ehfuGgmfYIoR0kBmY2Bw8l9WX60opuv7l3+cQINKNTKc3E5j1k3IzDhLeMeLmoqPmcldUJjTK3lcl0y4rtn+rhhWLqGfDbgk58d12oVyS1GbAHwTIHVJwQ8dXPfR4Twv/1w2PYKnTJJqKCBFpBc1x7mlmX3egpNc8TPJs0iLag7+5aY/YfRLkZ0g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lK8cAN6zZSBXzWuL6n8Rdgy8e++AYZFeNoVF3VHiWbw=;
+ b=ZCxmksLiyMfhxK3ubk5WJkddMcaOmmzZvLDbHaDRL0UlT+CwkWbcAFbLRj0vl1UQW7uFJI3qjAPNtE4CRWAHrmhpa9naOei6m/hz4GmxxDa9LuXW6LGUNTKz8+YVc9MSBqPsB6pmRpmuiFAaHX5hXxvvX7BtFjWQllfBUz1zMiJArO+H7mM+uP631Y14xDqAoxXUgw4TtjnELK8QlxmITMCdtwT1bYhLXYcvXuPiZZmg/2IghzPT56xL7b2znctmYafdKTWVhHXIIE5hMrXDZW/bzpLoi1lu4qqPn8HNyo40TmWS/SLFBIqLXvbiQE9elZGA7d50Gx6eODACqBte0g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
+ dkim=pass header.d=synopsys.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=lK8cAN6zZSBXzWuL6n8Rdgy8e++AYZFeNoVF3VHiWbw=;
+ b=PQhXAjCKB5SxWlLJn6boTKdQoIlzLeZM5mc6egcBUV5hq2QXGHrabzXxb01Ag2uEUOfzyqi9LrvlNcvyj2uTmwSbqgfzxeaskTADiWcHdaAjGgmCk9LtCEoPG57yhnqpPHpL3GZVdMW6IP57rLXs/6zZwoTljyKTTuMuJdXZsWk=
+Received: from SN6PR12MB2655.namprd12.prod.outlook.com (52.135.103.20) by
+ SN6PR12MB2671.namprd12.prod.outlook.com (52.135.103.24) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2178.18; Thu, 22 Aug 2019 11:08:41 +0000
+Received: from SN6PR12MB2655.namprd12.prod.outlook.com
+ ([fe80::89a7:a50:147b:52c6]) by SN6PR12MB2655.namprd12.prod.outlook.com
+ ([fe80::89a7:a50:147b:52c6%4]) with mapi id 15.20.2178.020; Thu, 22 Aug 2019
+ 11:08:41 +0000
+From: Vitor Soares <Vitor.Soares@synopsys.com>
+To: Boris Brezillon <boris.brezillon@collabora.com>,
+ Vitor Soares <Vitor.Soares@synopsys.com>
+Subject: RE: [PATCH v5 4/7] i3c: Add support for mastership request to I3C
  subsystem
-Message-ID: <20190812165531.28a38c78@collabora.com>
-In-Reply-To: <SN6PR12MB26550DA8761E71DDAABED36FAED30@SN6PR12MB2655.namprd12.prod.outlook.com>
+Thread-Topic: [PATCH v5 4/7] i3c: Add support for mastership request to I3C
+ subsystem
+Thread-Index: AQHVKTzvS0luBz5Hrkq+/RgY+Ornt6bEKIMAgADX5wCAAEBC0IABoPuAgAAJhgCALx5ZAIABmX0wgABGfICAD3bfAA==
+Date: Thu, 22 Aug 2019 11:08:41 +0000
+Message-ID: <SN6PR12MB26551AEDEC830BE3A75859F3AEA50@SN6PR12MB2655.namprd12.prod.outlook.com>
 References: <1561236905-8901-1-git-send-email-pgaj@cadence.com>
  <1561236905-8901-5-git-send-email-pgaj@cadence.com>
  <SN6PR12MB2655AA801F30D1C237C18CFAAEF00@SN6PR12MB2655.namprd12.prod.outlook.com>
@@ -60,12 +109,122 @@ References: <1561236905-8901-1-git-send-email-pgaj@cadence.com>
  <SN6PR12MB2655A1F005B691E4E98B282CAEF20@SN6PR12MB2655.namprd12.prod.outlook.com>
  <20190811121738.71b55bb1@collabora.com>
  <SN6PR12MB26550DA8761E71DDAABED36FAED30@SN6PR12MB2655.namprd12.prod.outlook.com>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ <20190812165531.28a38c78@collabora.com>
+In-Reply-To: <20190812165531.28a38c78@collabora.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-dg-ref: =?us-ascii?Q?PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNcc29hcmVzXGFw?=
+ =?us-ascii?Q?cGRhdGFccm9hbWluZ1wwOWQ4NDliNi0zMmQzLTRhNDAtODVlZS02Yjg0YmEy?=
+ =?us-ascii?Q?OWUzNWJcbXNnc1xtc2ctMzA4ODY1YzQtYzRjZC0xMWU5LTgyNTItYjgwOGNm?=
+ =?us-ascii?Q?NTlkN2ZjXGFtZS10ZXN0XDMwODg2NWM2LWM0Y2QtMTFlOS04MjUyLWI4MDhj?=
+ =?us-ascii?Q?ZjU5ZDdmY2JvZHkudHh0IiBzej0iMTgzMyIgdD0iMTMyMTA5NDU3MTgzMzQ1?=
+ =?us-ascii?Q?MjA3IiBoPSJ4czJoN1lkeE9kWkhlSFRId3hJancwd2hjV289IiBpZD0iIiBi?=
+ =?us-ascii?Q?bD0iMCIgYm89IjEiIGNpPSJjQUFBQUVSSFUxUlNSVUZOQ2dVQUFCUUpBQUEz?=
+ =?us-ascii?Q?Q3VMeTJWalZBVlVza0w3aTdFeThWU3lRdnVMc1RMd09BQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBSEFBQUFDa0NBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?RUFBUUFCQUFBQVZ6ZGhHZ0FBQUFBQUFBQUFBQUFBQUo0QUFBQm1BR2tBYmdC?=
+ =?us-ascii?Q?aEFHNEFZd0JsQUY4QWNBQnNBR0VBYmdCdUFHa0FiZ0JuQUY4QWR3QmhBSFFB?=
+ =?us-ascii?Q?WlFCeUFHMEFZUUJ5QUdzQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFF?=
+ =?us-ascii?Q?QUFBQUFBQUFBQWdBQUFBQUFuZ0FBQUdZQWJ3QjFBRzRBWkFCeUFIa0FYd0J3?=
+ =?us-ascii?Q?QUdFQWNnQjBBRzRBWlFCeUFITUFYd0JuQUdZQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBUUFBQUFBQUFBQUNBQUFB?=
+ =?us-ascii?Q?QUFDZUFBQUFaZ0J2QUhVQWJnQmtBSElBZVFCZkFIQUFZUUJ5QUhRQWJnQmxB?=
+ =?us-ascii?Q?SElBY3dCZkFITUFZUUJ0QUhNQWRRQnVBR2NBWHdCakFHOEFiZ0JtQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQkFBQUFBQUFBQUFJQUFBQUFBSjRBQUFCbUFHOEFk?=
+ =?us-ascii?Q?UUJ1QUdRQWNnQjVBRjhBY0FCaEFISUFkQUJ1QUdVQWNnQnpBRjhBY3dCaEFH?=
+ =?us-ascii?Q?MEFjd0IxQUc0QVp3QmZBSElBWlFCekFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUVBQUFBQUFBQUFBZ0FBQUFBQW5nQUFBR1lBYndCMUFHNEFaQUJ5QUhrQVh3?=
+ =?us-ascii?Q?QndBR0VBY2dCMEFHNEFaUUJ5QUhNQVh3QnpBRzBBYVFCakFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFRQUFBQUFBQUFBQ0FB?=
+ =?us-ascii?Q?QUFBQUNlQUFBQVpnQnZBSFVBYmdCa0FISUFlUUJmQUhBQVlRQnlBSFFBYmdC?=
+ =?us-ascii?Q?bEFISUFjd0JmQUhNQWRBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFCQUFBQUFBQUFBQUlBQUFBQUFKNEFBQUJtQUc4?=
+ =?us-ascii?Q?QWRRQnVBR1FBY2dCNUFGOEFjQUJoQUhJQWRBQnVBR1VBY2dCekFGOEFkQUJ6?=
+ =?us-ascii?Q?QUcwQVl3QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBRUFBQUFBQUFBQUFnQUFBQUFBbmdBQUFHWUFid0IxQUc0QVpBQnlBSGtB?=
+ =?us-ascii?Q?WHdCd0FHRUFjZ0IwQUc0QVpRQnlBSE1BWHdCMUFHMEFZd0FBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQVFBQUFBQUFBQUFD?=
+ =?us-ascii?Q?QUFBQUFBQ2VBQUFBWndCMEFITUFYd0J3QUhJQWJ3QmtBSFVBWXdCMEFGOEFk?=
+ =?us-ascii?Q?QUJ5QUdFQWFRQnVBR2tBYmdCbkFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUJBQUFBQUFBQUFBSUFBQUFBQUo0QUFBQnpB?=
+ =?us-ascii?Q?R0VBYkFCbEFITUFYd0JoQUdNQVl3QnZBSFVBYmdCMEFGOEFjQUJzQUdFQWJn?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFFQUFBQUFBQUFBQWdBQUFBQUFuZ0FBQUhNQVlRQnNBR1VBY3dCZkFI?=
+ =?us-ascii?Q?RUFkUUJ2QUhRQVpRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBUUFBQUFBQUFB?=
+ =?us-ascii?Q?QUNBQUFBQUFDZUFBQUFjd0J1QUhBQWN3QmZBR3dBYVFCakFHVUFiZ0J6QUdV?=
+ =?us-ascii?Q?QVh3QjBBR1VBY2dCdEFGOEFNUUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQkFBQUFBQUFBQUFJQUFBQUFBSjRBQUFC?=
+ =?us-ascii?Q?ekFHNEFjQUJ6QUY4QWJBQnBBR01BWlFCdUFITUFaUUJmQUhRQVpRQnlBRzBB?=
+ =?us-ascii?Q?WHdCekFIUUFkUUJrQUdVQWJnQjBBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUVBQUFBQUFBQUFBZ0FBQUFBQW5nQUFBSFlBWndCZkFHc0FaUUI1?=
+ =?us-ascii?Q?QUhjQWJ3QnlBR1FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFRQUFBQUFB?=
+ =?us-ascii?Q?QUFBQ0FBQUFBQUE9Ii8+PC9tZXRhPg=3D=3D?=
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=soares@synopsys.com; 
+x-originating-ip: [83.174.63.141]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 54f1869a-d7b1-492f-ec21-08d726f1170a
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600166)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:SN6PR12MB2671; 
+x-ms-traffictypediagnostic: SN6PR12MB2671:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <SN6PR12MB2671AFEA67468C295D54F833AEA50@SN6PR12MB2671.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-forefront-prvs: 01371B902F
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(346002)(376002)(366004)(136003)(396003)(39850400004)(199004)(189003)(6506007)(229853002)(316002)(8936002)(66066001)(66446008)(66556008)(9686003)(102836004)(33656002)(478600001)(14454004)(53936002)(55016002)(76116006)(52536014)(6246003)(66946007)(66476007)(6436002)(64756008)(6636002)(5660300002)(6116002)(71190400001)(446003)(86362001)(71200400001)(25786009)(256004)(14444005)(4326008)(305945005)(54906003)(476003)(7696005)(26005)(7736002)(74316002)(3846002)(8676002)(486006)(76176011)(99286004)(2906002)(11346002)(81166006)(81156014)(110136005)(186003);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:SN6PR12MB2671;
+ H:SN6PR12MB2655.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: synopsys.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 9yJJazc1uArSuJWy1qcKKOF4xiJXfy2L/XvGu27NZble82FJv3OWjobafum1tqhhpywdP4oYXB30SdjAdTv+uLDijXxFPsm+wMjQ7QB5Y/1SQvNBGZKzEWmKeBVS9M3+p5LhXeegHOlhxidBQ8+z1VprfhKPRDOduKbzzBkJbpdU2Fb2tqacn1ikj4nU7WcHumVx4mF7x7cdtVF5yNDJD5rJIABj2svJDI7Mtn76kYi/yR2iF7HjLsjBB28+GInik6JTcGVbc0ewHrpbEomWcpN1R9LImRkD/1CMarP64FbloPnS1U/2cdqRTgtRntXWSCOTrwZGY8mXVnS+3xhK8kXqmodhhDuKENU565vFNw+r+CtuNuMxTxNMWEoEZ9pgxJ5FQSlP2e5CKkCx8EbBPAm2ThFEp0CPuuo9tFH+8Gk=
 MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 54f1869a-d7b1-492f-ec21-08d726f1170a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Aug 2019 11:08:41.0450 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: zRXHkv3ltSLShzOLVuiSJQACN30YKrX0aTmxx+J/CHCcyaRfJdvqs2bq9Vmz8Wmlh5M+GM4huZ8FfXOHvYRLig==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR12MB2671
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_075538_025717_7ED75C63 
-X-CRM114-Status: GOOD (  53.37  )
+X-CRM114-CacheID: sfid-20190822_040847_055561_D49EC17A 
+X-CRM114-Status: GOOD (  18.60  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,334 +246,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Vitor,
+Hi Boris,
 
-On Mon, 12 Aug 2019 13:55:34 +0000
-Vitor Soares <Vitor.Soares@synopsys.com> wrote:
+From: Boris Brezillon <boris.brezillon@collabora.com>
+Date: Mon, Aug 12, 2019 at 15:55:31
 
-> > > > > > I need to inform subsystem that there are new
-> > > > > > device (if any).
-> > > > > > I remember we talkad about that already, you have access to
-> > > > > > DEFSLVS information directly, correct?    
-> > > > > 
-> > > > > I can process it in the HC driver, but my point is that I want to rely it 
-> > > > > to the subsystem the bus population with the function already present.
-> > > > >     
-> > > > 
-> > > > So, do you want to pack those informations back to i3c_ccc_defslvs and pass to
-> > > > the subsystem?    
-> > > 
-> > > Not necessary. It can be passed addr, bcr, dcr and lvr. 
-> > > 
-> > > In the subsystem I think it should be a list of i3c_ccc_defslvs that 
-> > > holds DEFSLVS information.  
-> > 
-> > Sorry, I don't get what you mean here. Why would we want a list of
-> > i3c_ccc_defslvs objects when i3c_ccc_defslvs already stores an
-> > array of devices. I guess you meant a list of struct i3c_ccc_dev_desc
-> > objects.  
-> 
-> I'm using a list with i3c_ccc_dev_desc objects to hold the DEFSLVS. When 
-> secondary master to get the bus ownership I initialize those devices and 
-> after I clean the list.
-
-Okay, sounds reasonable.
-
-> IMO we should avoid initializing devices when having device drivers 
-> trying to talk with the bus.
-
-This initialization has to happen at some point, even if drivers keep
-doing transfers on the bus, but I guess we can try delaying that a bit
-until all already queued transfers have been issued.
-
-> > > > > > > > +int i3c_master_acquire_bus_ownership(struct i3c_master_controller *master);
-> > > > > > > > +    
+> > > > > > > > 
+> > > > > > > > It is not clear to me what you expect with these functions. Do you want 
+> > > > > > > > to enable MR from all devices? Just some of them? How do you decide which 
+> > > > > > > > secondary masters are allow earn the bus ownership?
+> > > > > > > >     
 > > > > > > > 
-> > > > > > > What do you think to pass this logic to master.c?
-> > > > > > >     
+> > > > > > > We discussed this also. For now, we enable ENEC for all masters on the bus, we
+> > > > > > > can change it later if needed.     
 > > > > > > 
-> > > > > > Isn't it there?    
+> > > > > > I would say to expand the current ibi framework to accommodate MR and    
 > > > > > 
-> > > > > I meant make it static and remove its call from device.c.  
-> > 
-> > Can you be more specific? Where would you move the
-> > i3c_master_acquire_bus_ownership() call? Note that we already
-> > considered different options and the solution proposed here was the
-> > cleanest race-free one.  
-> 
-> Did you consider to pass it to i3c_dev_do_priv_xfers_locked()?
-
-Yes.
-
-> Can you help me to understand the drawbacks?
-
-Because then this function can't be used from inside the framework,
-when the master already owns the bus. For i3c_dev_do_priv_xfers_locked()
-that's not a problem, because we shouldn't use it inside master.c, but
-that's an issue for IBI related functions
-(i3c_dev_{enable,request,free}_ibi_locked()).
-
-
-> > > > > > > 
-> > > > > > > It is not clear to me what you expect with these functions. Do you want 
-> > > > > > > to enable MR from all devices? Just some of them? How do you decide which 
-> > > > > > > secondary masters are allow earn the bus ownership?
-> > > > > > >     
-> > > > > > 
-> > > > > > We discussed this also. For now, we enable ENEC for all masters on the bus, we
-> > > > > > can change it later if needed.     
-> > > > > 
-> > > > > I would say to expand the current ibi framework to accommodate MR and    
+> > > > > Can you tell something more here? What benefits you see    
 > > > > 
-> > > > Can you tell something more here? What benefits you see    
-> > > 
-> > > Just starting with the name. IBI stands for In Band Interrupt which can 
-> > > be MR, HJ or SIR.
-> > > 
-> > > Also the concept is the same, let say you are registering a SIR w/out 
-> > > data but in fact it is a MR.  
-> > 
-> > No, it's not from a SW PoV. IBI are events I3C device drivers can
-> > register a handler for, MR and HJ events are things the HC drivers are
-> > expected to handle, and that's a big difference. While re-using the IBI
-> > API to handle them should be doable I don't think it will make things
-> > simpler.
-> >   
-> 
-> In that case we need to rename the functions with slave interrupt request 
-> (SIR) in mind.
-
-I'm fine changing ibi for sir. Can you send a patch doing that?
-
-> 
-> > >   
-> > > >     
-> > > > > also add platform entry to allow secondary masters on the bus.    
+> > > > Just starting with the name. IBI stands for In Band Interrupt which can 
+> > > > be MR, HJ or SIR.
 > > > > 
-> > > > This is something we can consider, to select devices which can request
-> > > > mastership. But I don't see the problem adding that later also.    
+> > > > Also the concept is the same, let say you are registering a SIR w/out 
+> > > > data but in fact it is a MR.  
+> > > 
+> > > No, it's not from a SW PoV. IBI are events I3C device drivers can
+> > > register a handler for, MR and HJ events are things the HC drivers are
+> > > expected to handle, and that's a big difference. While re-using the IBI
+> > > API to handle them should be doable I don't think it will make things
+> > > simpler.
 > > >   
 > > 
-> > Fully agree with that, that's still something we can consider
-> > restricting afterwards. Remember that I3C is still not widely deployed
-> > and we only have 2 controller drivers so far, so patching them should be
-> > fairly easy if we decide to change the interface.  
+> > In that case we need to rename the functions with slave interrupt request 
+> > (SIR) in mind.
 > 
-> I think is too premature have a secondary master implementation. For now, 
-> I would say this is only good for testing purposes.
-
-I don't think that's a problem, as long as we're not afraid of changing
-things afterward. Keeping this implementation out-of-tree does not help
-either since it forces potential users to apply the patches (or even
-worse, re-implement the whole thing if they don't notice people have
-already worked on the feature).
-
-
-> > > > > > > > +/**
-> > > > > > > > + * i3c_master_bus_takeover() - register new I3C devices on bus takeover
-> > > > > > > > + * @master: master used to send frames on the bus
-> > > > > > > > + *
-> > > > > > > > + * This function is useful when devices were not added
-> > > > > > > > + * during initialization or when new device joined the bus
-> > > > > > > > + * which wasn't under our control.
-> > > > > > > > + */
-> > > > > > > > +void i3c_master_bus_takeover(struct i3c_master_controller *master)
-> > > > > > > > +{
-> > > > > > > > +	struct i3c_dev_desc *i3cdev, *i3ctmp;
-> > > > > > > > +	int ret;
-> > > > > > > > +
-> > > > > > > > +	master->want_to_acquire_bus = false;    
-> > > > > > > 
-> > > > > > > Can you explain the usage of this variable?
-> > > > > > >     
-> > > > > > 
-> > > > > > The idea of this was to let HC know that we want to acquire the bus after
-> > > > > > ENEC(MR) received in slave mode.    
-> > > > > 
-> > > > > With the logic that I proposed you don't need this. When received ENEC 
-> > > > > you will try to get the bus ownership if HC not fully initialized or have 
-> > > > > DEFSLVS to add, otherwise you don't need to get the bus ownership.    
-> > > > 
-> > > > In case devices on the bus are the same, I agree. But please consider the case
-> > > > when slave joins the bus (Hot-Join) and MR event is disabled for now, our
-> > > > secondary master receives DEFSLVS, we add that device to the subsystem but
-> > > > cannot request mastership yet. We need a flag to indicate that we should
-> > > > request mastership on next ENEC(MR). It doesn't make sense to request
-> > > > mastership every time when ENEC(MR) is received.    
-> > > 
-> > > At least I think you can give a mean for the flag name, otherwise it is 
-> > > not clear why sec master want bus ownership.  
-> > 
-> > Well, I guess the idea was to use the same flag for any kind of
-> > deferred MR requests. Not sure the reason for this MR request is really
-> > important since the same set of actions will be done anyway. Do you have
-> > a use case where we need to know the reason of a MR? If that's the
-> > case, or if we want to know it for debug purpose, I'd recommend adding
-> > extra flags to express that while keeping the want_to_acquire_bus one.  
+> I'm fine changing ibi for sir. Can you send a patch doing that?
 > 
-> In my case, I don't need such a flag.
-> For now, I do MR when having Sec. Master to initialize, DEFSLVS to add or 
-> clients wanting transfer data.
 
-Okay.
+I address this topic on MIPI forum and it is correct to assume IBI as SIR 
+and not MR.
+With this clarification is not necessary to change the 
+functions/structures/variables names.
 
-
-> > > > > > > >  /**
-> > > > > > > > + * i3c_secondary_master_register() - register an secondary I3C master
-> > > > > > > > + * @master: master used to send frames on the bus
-> > > > > > > > + * @info: master info, describes this device
-> > > > > > > > + *
-> > > > > > > > + * This function takes care of everything for you:
-> > > > > > > > + *
-> > > > > > > > + * - updates this master info
-> > > > > > > > + * - registers the I2C adapter
-> > > > > > > > + * - if possible, populates the bus with devices received by DEFSLVS
-> > > > > > > > + *   command
-> > > > > > > > + *
-> > > > > > > > + * Return: 0 in case of success, a negative error code otherwise.
-> > > > > > > > + */
-> > > > > > > > +int i3c_secondary_master_register(struct i3c_master_controller *master,
-> > > > > > > > +				  struct i3c_device_info *info)
-> > > > > > > > +{
-> > > > > > > > +	int ret;
-> > > > > > > > +
-> > > > > > > > +	ret = i3c_master_set_info(master, info, master->secondary);
-> > > > > > > > +	if (ret)
-> > > > > > > > +		return ret;
-> > > > > > > > +
-> > > > > > > > +	ret = master->ops->bus_init(master);
-> > > > > > > > +	if (ret)
-> > > > > > > > +		return ret;    
-> > > > > > > 
-> > > > > > > At this point you don't have enough information to do the bus 
-> > > > > > > initialization.
-> > > > > > >     
-> > > > > > 
-> > > > > > Actually, current ->bus_init() implementations (in CDNS and DW) does not
-> > > > > > initialize the bus. We are just setting the mode, configuring some init values
-> > > > > > in the registers and enabling the core. Maybe we should rename it?    
-> > > > > 
-> > > > > The name for me its ok. My point was that when you call 
-> > > > > i3c_secondary_master_register() in CDNS you don't have yet DEFSLVS 
-> > > > > information.    
-> > > > 
-> > > > It depends. When current master did not initialize the bus yet, this is true.
-> > > > But when master and the bus are already initialized, I have DEFSLVS. Different
-> > > > story is that devices aren't added to the subsystem yet. So what I have do in
-> > > > that case is to enable to let HC operate and populate the bus later (using    
-> > > > ->populate_bus() hook)    
-> > > 
-> > > Ahh I didn't see, you are calling it in two different places. Does it 
-> > > make sense?
-> > > 
-> > > It is more logical to do the secondary_master_register() after get the 
-> > > bus ownership (just need the first time), otherwise the HC is just a 
-> > > slave.  
-> > 
-> > I think we've tried that approach, and I wasn't happy with the end
-> > result. Don't remember the exact reason, but it was something related
-> > to extra complexity related to init/registration steps in HC drivers.
-> > You can look at my previous reviews if you want more details.  
-> 
-> I tested both cases and doing secondary_master_register() after get the 
-> bus ownership I was able to reuse more code.
-
-Fine, then post the code or push it somewhere so we can review it.
-
-> 
-> >   
-> > > > > > > 
-> > > > > > > In generally I found this intrusive for the current eco system.
-> > > > > > > 
-> > > > > > > I propose the following:
-> > > > > > > 1 - Keep the function i3c_master_register() as is and go out before     
-> > > > > > 
-> > > > > > We had that version previously. We decided to split it.    
-> > > > > 
-> > > > > You just need to split the secondary master part from it. So you can go 
-> > > > > out before i3c_master_bus_init() and keep the same function.    
-> > > > 
-> > > > We discussed that with Boris and we decided to split this function in this
-> > > > version to make things clear.    
-> > > 
-> > > My proposal isn't to much different with the advantage that it not broke 
-> > > the existing code.  
-> > 
-> > How do we break existing code? Can you please be more specific when you
-> > make such statements so we can fix the problems. And no, keeping kernel
-> > APIs/interfaces stable has never been our goal. Actually, it's quite the
-> > opposite: the I3C subsystem is new, and if we see some of the initial
-> > functions/interfaces/hooks do not apply well to some of the new
-> > features we want to support, we should fix them, instead of trying to
-> > workaround them.  
-> 
-> I wasn't able to apply the patch directly and I based my comments on the 
-> tests that I made.
-> During the process I didn't feel the need to work around anything (on 
-> current API) to implement secondary master.
-
-Sorry, didn't notice the DW driver was not patched in this series,
-which is wrong. I guess that's what you meant when you said it was
-breaking existing implems. Przemek, if you send a new version please
-make sure to patch the DW driver to take API changes into account. Also
-noticed that patch 4 breaks bisectability (users of the API should be
-patched along with the API changes).
-
-> 
-> The secondary master is probably the most advanced feature in I3C and 
-> since beginning I'm complaining that it just fit your use case.
-
-I don't think it fits only 'my use case' since I personally have no
-particular use case to support.
-
-> Even now, I don't see clear how to fit slave API in this use case.
-
-Slave API is completely orthogonal. All we need is a way for secondary
-slaves to switch between slave and master roles, which I guess is
-something HW specific anyway. In any case, secondary masters that want
-to expose real features (by real I mean something more than just MR
-support, like a GPIO controller, a sensor of whatever feature that can
-be implemented by a slave-only device) will still have to register both
-a slave and a master controller (we could add a wrapper registering
-both, but that's just a detail). Each role will use a different set of
-APIs/interfaces.
-
-> In beginning when we started this secondary master topic, I pointed out 
-> the i2c multi master approach and you the OTG from USB. So far I don't 
-> see neither approach being used and we trying to reinvent the wheel.
-
-Re-using what? You can't re-use the I2C or USB logic, simply because
-none of them directly apply to I3C. What I said was that, conceptually,
-I3C slave support would be something closer to USB gadgets than I2C
-slaves, which has to do with how devices are exposed on the bus. The
-concepts of BCR/DCR and PID look similar to the USB class, vendor and
-product ID concepts and those are things that will be exposed by I3C
-slave blocks so other masters on the bus can know what those slaves are
-capable of and the standard interface (if any) they support.
-
-> 
-> Anyway I will try to come-up with a RFC based on what you are currently 
-> working yet it is only for testing.
-> Maybe we can split secondary master feature in phases:
->   - Sec Master initialization
->   - Mastership request
->   - Mastership deliver
->   - Mastership handoff
->   - Mastership takeover 
->   - Register DEFSLVS
->   - Restore SIR request from slaves
->   - Handle I3C device driver clients transfers on sec master side
-> 
-> It will be easier to follow the patches.
-
-Well, if you can split it like that and keep bisectability intact
-(that means each step in the series has to compile and work correctly),
-then why not. In any case, please share the code you have so we can
-discuss the implementation.
-
-Thanks,
-
-Boris
+Best regards,
+Vitor Soares
 
 _______________________________________________
 linux-i3c mailing list
