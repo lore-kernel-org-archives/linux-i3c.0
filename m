@@ -7,17 +7,17 @@ X-Spam-Status: No, score=-9.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT
 	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 218C4C3A5A3
+	by smtp.lore.kernel.org (Postfix) with ESMTP id BC4C0C3A5A9
 	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 10:20:16 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id EB0282339E
-	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 10:20:15 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 8E86623426
+	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 10:20:16 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="hMB1dUGE";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="AvcrUPSe"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org EB0282339E
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="fFQTMIK+";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="Ld9hkTWW"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 8E86623426
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -27,58 +27,58 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=2CHEM5qDph5eczadKEUy4CtM2q9SYojNyNTHWZuV5Ro=; b=hMB1dUGEFXMFkyjhgkSXnIIeyF
-	vfgWuiBsIBhuSd/lsksNgOCjD2FXd7ZmATEcVNhQlAHvpjFmUgko97ff9RvP+upJ31kdAJmXq0BUf
-	bJvi+VDJR5lX8ZrLi71I+UJi1RW3NDPe48abJY4XgxphGNtOmhDuelpSWhApyWSimszimCqvdqjOV
-	HfChwZoGIAwf7aQbWanAglSEb2XqFfFaBxaoU8V6NKt0T4FIWsEK66DcqLD5ccvroSUWwqWlWp71t
-	jIfqOygQXtr1tyF9eiAC4a/5sBM0iZ7O3z1UeB2t3ogNrQGjf1bHNb9VSbu6wuYUsuei/So8EbuWe
-	dlO046Vw==;
+	bh=83+TenHk/aVujCazS5skQ4aY9w7vtPbh5N+rhqD397E=; b=fFQTMIK+FyxrozFLi9QJcsySul
+	ilv0MIhlPg9bRmKTzrGXNFqFeIQiA/XQym33qoNqKtIiB9ODmxsL+wS/g4tSqgN4gKFix06FZvIAb
+	VWkD2x61UtRmcmfK01Vx9rzDHX0qGrW2tO+bkT8BeXUo0wH0Y3uJulkQyvpf6JIcoqTEaUBfR3lWV
+	uMzsbANtI6DBZXMEM97ljLdj5ENPnt4OPhRrey3+dgq5GZtxDjtg8GuEuD/hZM8hlTV3u6rt21v7a
+	K5sgr/bzdF/QtNkeuKkafGacxgASefVxvDkLE0hqnd0+lTMfGMV8c/XcNmd/Ie6DcifI8NDkD5IPI
+	JnXjyyvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3HXJ-0006c8-Gm; Thu, 29 Aug 2019 10:20:13 +0000
+	id 1i3HXK-0006cN-0S; Thu, 29 Aug 2019 10:20:14 +0000
 Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3HWq-00054a-2C
- for linux-i3c@lists.infradead.org; Thu, 29 Aug 2019 10:19:45 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
- [10.225.0.210])
+ id 1i3HWq-00054V-5X
+ for linux-i3c@lists.infradead.org; Thu, 29 Aug 2019 10:19:46 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
+ [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id EEFC8C0051;
- Thu, 29 Aug 2019 10:19:39 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 24BAAC0392;
+ Thu, 29 Aug 2019 10:19:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1567073980; bh=MbJFBF3yNfMCCzFo8zZdLZFc5T6ridAamiovEWdZ+Fc=;
+ t=1567073980; bh=QDbC66s0MbpPHltxDTwd7lR7K6eOPJkK1UO9tfAzUE4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=AvcrUPSeAuGvPBdt69A5krNoudlmlgOz4ooksW/NZ/a3NNnVBn9IkPjJ6Eg0NsPBR
- 4tz/77BpZ7+qorfbJ4hrDEKs87Xt0ZpULSj7xIDdwEK1d2FFcwpRET6WJVnuAAOwQq
- QNyKzZGIofB3otP8tf0fFH0kMFsFOaLwuksnl1u6a9YAkpb5iiLRi+Njd8WPk1B9v+
- 5X7DzCjCmIRkTp4mJUC6sOSZRpxSwvfbjDDpirEN3esezcmeZTwR2ZFNH/0n0frTYQ
- LygqC112lUcXaJRV+/6PxquX2klWmFfWvxF9udwmenLQ5GcLEEbGJpg2ZKiwsN1mD1
- 3Zh9ZLJvHy9vA==
-Received: from de02.synopsys.com (germany.internal.synopsys.com [10.225.17.21])
- by mailhost.synopsys.com (Postfix) with ESMTP id 59ADFA0062;
+ b=Ld9hkTWWxN/DsnaOXBnAvHG4pNKtD5vOcsH6ELjzWOfgOAz4grSJ/ttRqRJ0fyQmM
+ qJiBDB/OnkbEYoPqchH52tQp22bk11Xz/L15yp52udkSUzkkYY2NOyOckVF8psRH7k
+ iTYaN6b7wfakoUXrMhDIQlHReNwGgCk8iwqgRE24TDCb/uLqmd66hkJY7URkbaWon1
+ EBy7kzZGCLB/x2FAYUoCT44pRpKKFfPr/bb06wvcLT4TRp56V4KMSzicktNeHQPRAW
+ ykfP5SGXZR0vQQRH5sM+QvwVbSC9fyfbrZtxQL1cs9kUVbvj8lvfLDP/jF+w0D8hLP
+ BzGmWo2a/Mebw==
+Received: from de02.synopsys.com (de02.internal.synopsys.com [10.225.17.21])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 52DA3A0064;
  Thu, 29 Aug 2019 10:19:38 +0000 (UTC)
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by de02.synopsys.com (Postfix) with ESMTP id 43C473B649;
+ by de02.synopsys.com (Postfix) with ESMTP id 3759A3B646;
  Thu, 29 Aug 2019 12:19:38 +0200 (CEST)
 From: Vitor Soares <Vitor.Soares@synopsys.com>
 To: linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
  linux-i3c@lists.infradead.org
-Subject: [PATCH 3/4] dt-bindings: i3c: Make 'assigned-address' valid if static
- address != 0
-Date: Thu, 29 Aug 2019 12:19:34 +0200
-Message-Id: <9d69c83c7193e377bbc77bea7f1812fc17dafaee.1567071213.git.vitor.soares@synopsys.com>
+Subject: [PATCH 2/4] i3c: master: Check if devices have i3c_dev_boardinfo on
+ i3c_master_add_i3c_dev_locked()
+Date: Thu, 29 Aug 2019 12:19:33 +0200
+Message-Id: <3e21481ddf53ea58f5899df6ec542b79b8cbcd68.1567071213.git.vitor.soares@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1567071213.git.vitor.soares@synopsys.com>
 References: <cover.1567071213.git.vitor.soares@synopsys.com>
 In-Reply-To: <cover.1567071213.git.vitor.soares@synopsys.com>
 References: <cover.1567071213.git.vitor.soares@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_031944_294758_D102CADB 
-X-CRM114-Status: GOOD (  11.43  )
+X-CRM114-CacheID: sfid-20190829_031944_360615_3BBE593A 
+X-CRM114-Status: GOOD (  11.79  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,48 +98,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The I3C devices without a static address can require a specific dynamic
-address for priority reasons.
+The I3C devices described in DT might not be attached to the master which
+doesn't allow to assign a specific dynamic address.
 
-Let's update the binding document to make the 'assigned-address' property
-valid if static address != 0 and add an example with this use case.
+This patch check if a device has i3c_dev_boardinfo and add it to
+i3c_dev_desc structure. In this conditions, the framework will try to
+assign the i3c_dev_boardinfo->init_dyn_addr even if stactic address = 0.
 
 Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
 ---
- Documentation/devicetree/bindings/i3c/i3c.txt | 13 ++++++++++---
- 1 file changed, 10 insertions(+), 3 deletions(-)
+ drivers/i3c/master.c | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/i3c/i3c.txt b/Documentation/devicetree/bindings/i3c/i3c.txt
-index ab729a0..c851e75 100644
---- a/Documentation/devicetree/bindings/i3c/i3c.txt
-+++ b/Documentation/devicetree/bindings/i3c/i3c.txt
-@@ -98,9 +98,7 @@ Required properties
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 4d29e1f..85fbda6 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -1795,6 +1795,23 @@ i3c_master_search_i3c_dev_duplicate(struct i3c_dev_desc *refdev)
+ 	return NULL;
+ }
  
- Optional properties
- -------------------
--- assigned-address: dynamic address to be assigned to this device. This
--		    property is only valid if the I3C device has a static
--		    address (first cell of the reg property != 0).
-+- assigned-address: dynamic address to be assigned to this device.
- 
- 
- Example:
-@@ -129,6 +127,15 @@ Example:
- 
- 		/*
- 		 * I3C device without a static I2C address but requiring
-+		 * specific dynamic address.
-+		 */
-+		sensor@0,39200154004 {
-+			reg = <0x0 0x6072 0x303904d2>;
-+			assigned-address = <0xb>;
-+		};
++static struct i3c_dev_boardinfo *
++i3c_master_search_i3c_boardinfo(struct i3c_dev_desc *dev)
++{
++	struct i3c_master_controller *master = i3c_dev_get_master(dev);
++	struct i3c_dev_boardinfo *boardinfo;
 +
-+		/*
-+		 * I3C device without a static I2C address but requiring
- 		 * resources described in the DT.
- 		 */
- 		sensor@0,39200154004 {
++	if (dev->boardinfo)
++		return NULL;
++
++	list_for_each_entry(boardinfo, &master->boardinfo.i3c, node) {
++		if (dev->info.pid == boardinfo->pid)
++			return boardinfo;
++	}
++
++	return NULL;
++}
++
+ /**
+  * i3c_master_add_i3c_dev_locked() - add an I3C slave to the bus
+  * @master: master used to send frames on the bus
+@@ -1816,6 +1833,7 @@ int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
+ {
+ 	struct i3c_device_info info = { .dyn_addr = addr };
+ 	struct i3c_dev_desc *newdev, *olddev;
++	struct i3c_dev_boardinfo *boardinfo;
+ 	u8 old_dyn_addr = addr, expected_dyn_addr;
+ 	struct i3c_ibi_setup ibireq = { };
+ 	bool enable_ibi = false;
+@@ -1875,6 +1893,10 @@ int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
+ 	if (ret)
+ 		goto err_detach_dev;
+ 
++	boardinfo = i3c_master_search_i3c_boardinfo(newdev);
++	if (boardinfo)
++		newdev->boardinfo = boardinfo;
++
+ 	/*
+ 	 * Depending on our previous state, the expected dynamic address might
+ 	 * differ:
 -- 
 2.7.4
 
