@@ -2,67 +2,229 @@ Return-Path: <SRS0=0Lh8=WZ=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-2.3 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+X-Spam-Status: No, score=-0.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_2 autolearn=no autolearn_force=no
-	version=3.4.0
+	SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 9935FC3A5A3
-	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 15:37:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id AA4C2C3A59F
+	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 15:57:40 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 6D75B21726
-	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 15:37:25 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 7D2AD2173E
+	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 15:57:40 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="H6eL55SO"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 6D75B21726
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=collabora.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="tO1nFr5S";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="IQ0E1lzm";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=synopsys.onmicrosoft.com header.i=@synopsys.onmicrosoft.com header.b="Sm5UU91t"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7D2AD2173E
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6XQ2+60c+FFEq2fd6wQUujtNEJ5wA/ps0m1RzaOmKug=; b=H6eL55SOlCiP6Z
-	dtJqtOiXExLxKteH/5G0u0eW8rU9ReiqrudcoFXWVtjxhy/ob30nEV7+QKwKfXM+zN7N9ZbXtf+lz
-	Vz8mj1US/P8u8dke4l5K/dsbgjN88fmiEYOHItQptbt5sYJYmhQxmHI55wGHgrAnjhyFyu5Z4TRRA
-	i9Yr+LlwPnMvRu5wcJMdjuBE5EEx9gmTQb7bFmzf5/5lMetwbhU9MQpG6Zgrft+D1bN6Mrur+ov6G
-	QUtQyv78BqKaEXYzF4YyDAXvAH6Noa4NEIv6rMNH4z8cTpGKhZ2uaSKPzXaP2uCOsS4Hw5oZGJOeN
-	RZ9OYXrdl5WLa90+EBaQ==;
+	List-Owner; bh=krMHvwSVABd6sSBaUvHaIzjsg/LImnCO5n1lQrHAykw=; b=tO1nFr5SsluxMl
+	Bv4bvoUi5WpuOedcSoqPAvtS24q6F29L4Cz+kqmJhUuAV+hSGBW6x8w3EYbxeSddhTEoS7QNdNr13
+	k4YL0jT8ZZTfSdU+DvlN1nMnKZGGMojOmZf9m52qMFEZsqPmXlyLWqcTCgmqy6K32W8gmQZ8M/k6r
+	XkQnTqk1DhNrcSpiKDbYtd3goiPryDYn3IpyeY7S8mYbTfwBUvRLPYrQ2NzxHMqRVPLPAeRJwfN2i
+	OTxWuosDbq0NuDBQeg1HGqyjHwWsvr6sMLmCAHFXbtWfpudfuqMkbGuR2ozX44l07BbZCsocfs49w
+	ORw1IW9co2RciFjag7Aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3MUG-0005lE-Hw; Thu, 29 Aug 2019 15:37:24 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1i3Mns-0008A3-6S; Thu, 29 Aug 2019 15:57:40 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3MUA-0005kP-42
- for linux-i3c@lists.infradead.org; Thu, 29 Aug 2019 15:37:22 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id CC30F283C49;
- Thu, 29 Aug 2019 16:37:13 +0100 (BST)
-Date: Thu, 29 Aug 2019 17:37:09 +0200
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Vitor Soares <Vitor.Soares@synopsys.com>
-Subject: Re: [PATCH 1/4] i3c: master: detach and free device if
- pre_assign_dyn_addr() fails
-Message-ID: <20190829173709.79c093dd@collabora.com>
-In-Reply-To: <SN6PR12MB2655E9E544D7E96323BAC796AEA20@SN6PR12MB2655.namprd12.prod.outlook.com>
+ id 1i3Mno-000890-VW
+ for linux-i3c@lists.infradead.org; Thu, 29 Aug 2019 15:57:38 +0000
+Received: from mailhost.synopsys.com (dc8-mailhost2.synopsys.com
+ [10.13.135.210])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 5D1D0C03A1;
+ Thu, 29 Aug 2019 15:57:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1567094256; bh=OnXX76kgUMC/ulpjzDP0C9w9K0v+XAwTva8ZSTGW3Mc=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=IQ0E1lzmkvhDZepyQmvkAaNjlBsyX0FkKqU5DwLUqtNCCVmPQngwWzXakoI/nVvEW
+ tDlxYQ2M7cpNUAkHzUnoJjg6haToTpat3VZzuq0XccKtrxZw+46F7iCSHFEdA/tylq
+ 564s19pGGGTxsqq8ugEMKOkGyg4gfbImX2enpS4CNKk1eJhqmYRdG6GOgVVR7mbAlN
+ yJvtoQbXug01gHVeaYPsdbqBsV6f+njUjSJfW+HFWV1VQctXxJPo7TVVDyB+u44e5h
+ REaVmznRXm5mKZwSukYfeznT8LoQbk0fuWQQ398xt0iERL64ImMW+22fgP6b95mikt
+ zT+5ygjTcwS/g==
+Received: from us01wehtc1.internal.synopsys.com
+ (us01wehtc1-vip.internal.synopsys.com [10.12.239.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id E3E10A005A;
+ Thu, 29 Aug 2019 15:57:35 +0000 (UTC)
+Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
+ us01wehtc1.internal.synopsys.com (10.12.239.231) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Thu, 29 Aug 2019 08:57:35 -0700
+Received: from NAM02-BL2-obe.outbound.protection.outlook.com (10.13.134.195)
+ by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Thu, 29 Aug 2019 08:57:35 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=XjzAUwAOxvLeyPy+JxvJ3h6dbcu49ItJ7WJAPd7aTZ22LdKqSmGSMRbFmjZmmwBlmwknkVqdOOZLA3EKXJg0rBaAYdLLMHqAXcM5Fm2mP9oIyqauMow44qGXCiOcNthgY4jMAwstYUzI53bLc5Whsm89QGwTi5iah513uudlgEkC2wIo/jb7/uIqyU+4TEJLbn8Xz1kXXPQBJ46A83xwx4MCOckrJEa9pu4lhR0GjnrZESL54j4g+0GCKdL8BvucxW2gSuGo/1KMn3QPUZIkGs+iPwYembZIOP8bumppEnLMor6EYOoC0+7SOvDifJhMcmJxs9Z4ZHsEKW6HgSD4rA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OKYIB47aSV1KWayBDqlhI0JOGMi8v+xWXDSkOg70D3U=;
+ b=Iwxgt1hFbwMKwTaXayYBEjCuRznWfeyBQMxjqv75Ua2dEsSseTX5/EUTQevbBusKnWWP25BZmBv3iWM4VP3peXS86KsgPC8pJJn4ianr4TWy0wfRXgRDhM9K/TdOnPmo1xFE3AS0U25Em5EwsQZxwxjlf6yzfY/FQN3BI6kT+XILlBpLuGo9Exa8wnnzYn7XrrTdb61mbw4PYhStK1leGC91Svbtn5RIXA+EkOrnmaC0SEgajElmC4Cx8xbSc43zUnzqYkW6oFzijM1QqjWLN4bjKUuTFpkyY3v2iNagRrsMKL+1sMwnuCnMt3X9nCFQwu+B04DwbN1umORFE9MQzA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
+ dkim=pass header.d=synopsys.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OKYIB47aSV1KWayBDqlhI0JOGMi8v+xWXDSkOg70D3U=;
+ b=Sm5UU91tJyAwS9NwkLIpTuXy6iTqsNA9g3L3eLO3buYOTIrTGhRF8PbvWtuSqH+OHWi/sgeYKutDqSur5QOmKn5J9Qs2ZwSXXGUI3SrdCN7GxzkTsfJuZMQYyRxxvRAUGnWyAmyZcWgU6MHSfNcKWRTTKJdvR1uYTAmH5v7tAX0=
+Received: from SN6PR12MB2655.namprd12.prod.outlook.com (52.135.103.20) by
+ SN6PR12MB2717.namprd12.prod.outlook.com (52.135.103.138) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2199.20; Thu, 29 Aug 2019 15:57:32 +0000
+Received: from SN6PR12MB2655.namprd12.prod.outlook.com
+ ([fe80::89a7:a50:147b:52c6]) by SN6PR12MB2655.namprd12.prod.outlook.com
+ ([fe80::89a7:a50:147b:52c6%4]) with mapi id 15.20.2199.021; Thu, 29 Aug 2019
+ 15:57:32 +0000
+From: Vitor Soares <Vitor.Soares@synopsys.com>
+To: Boris Brezillon <boris.brezillon@collabora.com>,
+ Vitor Soares <Vitor.Soares@synopsys.com>
+Subject: RE: [PATCH 2/4] i3c: master: Check if devices have i3c_dev_boardinfo
+ on i3c_master_add_i3c_dev_locked()
+Thread-Topic: [PATCH 2/4] i3c: master: Check if devices have i3c_dev_boardinfo
+ on i3c_master_add_i3c_dev_locked()
+Thread-Index: AQHVXlJtbJoJFO7ydka+l2zwcEQXe6cR8PSAgAA0rSCAAAzNAIAAABuAgAAGkYCAAAYCgIAACQgw
+Date: Thu, 29 Aug 2019 15:57:32 +0000
+Message-ID: <SN6PR12MB26553867412178B3F7190F0CAEA20@SN6PR12MB2655.namprd12.prod.outlook.com>
 References: <cover.1567071213.git.vitor.soares@synopsys.com>
- <e26948eaaf765f683d8fe0618a31a98e2ecc0e65.1567071213.git.vitor.soares@synopsys.com>
- <20190829124115.482cd8ec@collabora.com>
- <SN6PR12MB26551F172804D039F3EAA991AEA20@SN6PR12MB2655.namprd12.prod.outlook.com>
- <20190829163520.126d42d6@collabora.com>
- <SN6PR12MB2655E9E544D7E96323BAC796AEA20@SN6PR12MB2655.namprd12.prod.outlook.com>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ <3e21481ddf53ea58f5899df6ec542b79b8cbcd68.1567071213.git.vitor.soares@synopsys.com>
+ <20190829124457.3a750932@collabora.com>
+ <SN6PR12MB265551F73B9B516CACB5B807AEA20@SN6PR12MB2655.namprd12.prod.outlook.com>
+ <20190829163918.571fd0d8@collabora.com>
+ <20190829163941.45380b19@collabora.com>
+ <SN6PR12MB2655B08176E14BE9DF2BACA2AEA20@SN6PR12MB2655.namprd12.prod.outlook.com>
+ <20190829172441.3a76385e@collabora.com>
+In-Reply-To: <20190829172441.3a76385e@collabora.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-dg-rorf: true
+x-dg-ref: =?us-ascii?Q?PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNcc29hcmVzXGFw?=
+ =?us-ascii?Q?cGRhdGFccm9hbWluZ1wwOWQ4NDliNi0zMmQzLTRhNDAtODVlZS02Yjg0YmEy?=
+ =?us-ascii?Q?OWUzNWJcbXNnc1xtc2ctYjM5MTYwNGQtY2E3NS0xMWU5LTgyNTQtYjU5ZDc5?=
+ =?us-ascii?Q?N2QzNzhiXGFtZS10ZXN0XGIzOTE2MDRmLWNhNzUtMTFlOS04MjU0LWI1OWQ3?=
+ =?us-ascii?Q?OTdkMzc4YmJvZHkudHh0IiBzej0iMjY2NiIgdD0iMTMyMTE1Njc4NDk0Mzg4?=
+ =?us-ascii?Q?MDEzIiBoPSJHcDlpWG81eWZnaEJWVFdzbWduRzVPcEVYdHM9IiBpZD0iIiBi?=
+ =?us-ascii?Q?bD0iMCIgYm89IjEiIGNpPSJjQUFBQUVSSFUxUlNSVUZOQ2dVQUFCUUpBQUF0?=
+ =?us-ascii?Q?NytwMWdsN1ZBUm4xd2xySkxFajlHZlhDV3Nrc1NQME9BQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBSEFBQUFDa0NBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?RUFBUUFCQUFBQVZ6ZGhHZ0FBQUFBQUFBQUFBQUFBQUo0QUFBQm1BR2tBYmdC?=
+ =?us-ascii?Q?aEFHNEFZd0JsQUY4QWNBQnNBR0VBYmdCdUFHa0FiZ0JuQUY4QWR3QmhBSFFB?=
+ =?us-ascii?Q?WlFCeUFHMEFZUUJ5QUdzQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFF?=
+ =?us-ascii?Q?QUFBQUFBQUFBQWdBQUFBQUFuZ0FBQUdZQWJ3QjFBRzRBWkFCeUFIa0FYd0J3?=
+ =?us-ascii?Q?QUdFQWNnQjBBRzRBWlFCeUFITUFYd0JuQUdZQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBUUFBQUFBQUFBQUNBQUFB?=
+ =?us-ascii?Q?QUFDZUFBQUFaZ0J2QUhVQWJnQmtBSElBZVFCZkFIQUFZUUJ5QUhRQWJnQmxB?=
+ =?us-ascii?Q?SElBY3dCZkFITUFZUUJ0QUhNQWRRQnVBR2NBWHdCakFHOEFiZ0JtQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQkFBQUFBQUFBQUFJQUFBQUFBSjRBQUFCbUFHOEFk?=
+ =?us-ascii?Q?UUJ1QUdRQWNnQjVBRjhBY0FCaEFISUFkQUJ1QUdVQWNnQnpBRjhBY3dCaEFH?=
+ =?us-ascii?Q?MEFjd0IxQUc0QVp3QmZBSElBWlFCekFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUVBQUFBQUFBQUFBZ0FBQUFBQW5nQUFBR1lBYndCMUFHNEFaQUJ5QUhrQVh3?=
+ =?us-ascii?Q?QndBR0VBY2dCMEFHNEFaUUJ5QUhNQVh3QnpBRzBBYVFCakFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFRQUFBQUFBQUFBQ0FB?=
+ =?us-ascii?Q?QUFBQUNlQUFBQVpnQnZBSFVBYmdCa0FISUFlUUJmQUhBQVlRQnlBSFFBYmdC?=
+ =?us-ascii?Q?bEFISUFjd0JmQUhNQWRBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFCQUFBQUFBQUFBQUlBQUFBQUFKNEFBQUJtQUc4?=
+ =?us-ascii?Q?QWRRQnVBR1FBY2dCNUFGOEFjQUJoQUhJQWRBQnVBR1VBY2dCekFGOEFkQUJ6?=
+ =?us-ascii?Q?QUcwQVl3QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBRUFBQUFBQUFBQUFnQUFBQUFBbmdBQUFHWUFid0IxQUc0QVpBQnlBSGtB?=
+ =?us-ascii?Q?WHdCd0FHRUFjZ0IwQUc0QVpRQnlBSE1BWHdCMUFHMEFZd0FBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQVFBQUFBQUFBQUFD?=
+ =?us-ascii?Q?QUFBQUFBQ2VBQUFBWndCMEFITUFYd0J3QUhJQWJ3QmtBSFVBWXdCMEFGOEFk?=
+ =?us-ascii?Q?QUJ5QUdFQWFRQnVBR2tBYmdCbkFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUJBQUFBQUFBQUFBSUFBQUFBQUo0QUFBQnpB?=
+ =?us-ascii?Q?R0VBYkFCbEFITUFYd0JoQUdNQVl3QnZBSFVBYmdCMEFGOEFjQUJzQUdFQWJn?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFFQUFBQUFBQUFBQWdBQUFBQUFuZ0FBQUhNQVlRQnNBR1VBY3dCZkFI?=
+ =?us-ascii?Q?RUFkUUJ2QUhRQVpRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBUUFBQUFBQUFB?=
+ =?us-ascii?Q?QUNBQUFBQUFDZUFBQUFjd0J1QUhBQWN3QmZBR3dBYVFCakFHVUFiZ0J6QUdV?=
+ =?us-ascii?Q?QVh3QjBBR1VBY2dCdEFGOEFNUUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQkFBQUFBQUFBQUFJQUFBQUFBSjRBQUFC?=
+ =?us-ascii?Q?ekFHNEFjQUJ6QUY4QWJBQnBBR01BWlFCdUFITUFaUUJmQUhRQVpRQnlBRzBB?=
+ =?us-ascii?Q?WHdCekFIUUFkUUJrQUdVQWJnQjBBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUVBQUFBQUFBQUFBZ0FBQUFBQW5nQUFBSFlBWndCZkFHc0FaUUI1?=
+ =?us-ascii?Q?QUhjQWJ3QnlBR1FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFRQUFBQUFB?=
+ =?us-ascii?Q?QUFBQ0FBQUFBQUE9Ii8+PC9tZXRhPg=3D=3D?=
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=soares@synopsys.com; 
+x-originating-ip: [83.174.63.141]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: ab7a619a-d955-451c-b65a-08d72c999a6e
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:SN6PR12MB2717; 
+x-ms-traffictypediagnostic: SN6PR12MB2717:
+x-ms-exchange-purlcount: 1
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <SN6PR12MB27175BDFA3F6EC06CF76057BAEA20@SN6PR12MB2717.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 0144B30E41
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(376002)(136003)(366004)(346002)(396003)(39860400002)(199004)(189003)(13464003)(81166006)(53936002)(14454004)(5660300002)(6636002)(2906002)(478600001)(8676002)(316002)(81156014)(52536014)(66946007)(76116006)(110136005)(66446008)(66556008)(8936002)(66476007)(229853002)(54906003)(64756008)(186003)(6306002)(9686003)(74316002)(71200400001)(71190400001)(107886003)(76176011)(7696005)(446003)(256004)(6436002)(5024004)(14444005)(55016002)(11346002)(486006)(3846002)(53546011)(66066001)(6116002)(26005)(6506007)(102836004)(6246003)(7736002)(25786009)(33656002)(86362001)(476003)(4326008)(305945005)(99286004)(70780200001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:SN6PR12MB2717;
+ H:SN6PR12MB2655.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: synopsys.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: Lrl08eRjjOIeH8jYYqZmNbyTZv0am7m/8SS1nV8IF2JobhVku9OaBNa42scuCsP6Jm3uUGc0ztb947sM7IKxvL76C7F6G3mlqmC4t/VkENTrkqEWQg8vUojJE02my3c+QhBK0Xp5u1ZzebJ3m7PE90Pt88y7fRylqhO3srDIB8KxgAIsB56uTxlJpw/oIkPOxJOzkjIPPFDEASVEFRAJqDsb+T6DhAKdHiW5lwL5Ga1da7nHiSgjq4kQ7Q2ag9Hbjzp3AkIFfCv8U1lSLSb+iE2ugrzo83qsNQpZQdAkN/2GtTcWFcOYwuxe/NlUbr8rW5nKf5WBocoQXaGzN4//eaty6oU+sqfk/VKQ4TizN88KkhdL6AxHHa5B3t8nUvcm5r3GRJW61AzCH2yykH0jbwSO0h+1e6YFeXd9vS+T5Oc=
 MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: ab7a619a-d955-451c-b65a-08d72c999a6e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Aug 2019 15:57:32.7340 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: BkUR7WRWPuuEVhZUe7VZ75PhKZLJQmX7P40NH3jzB4BEM1QRjpuKlThCA4P+vJ7diBmB8EGtHBKsOn7wo3xG4A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR12MB2717
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_083718_891932_E1326711 
-X-CRM114-Status: GOOD (  30.94  )
+X-CRM114-CacheID: sfid-20190829_085737_022844_A53716E6 
+X-CRM114-Status: GOOD (  16.37  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,139 +241,75 @@ Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
  "Joao.Pinto@synopsys.com" <Joao.Pinto@synopsys.com>,
  "bbrezillon@kernel.org" <bbrezillon@kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Przemyslaw Gaj <pgaj@cadence.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
  "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, 29 Aug 2019 15:23:30 +0000
+
+
+-----Original Message-----
+From: Boris Brezillon 
+<boris.brezillon@collabora.com> 
+Sent: Thursday, August 29, 2019 4:25 
+PM
+To: Vitor Soares <Vitor.Soares@synopsys.com>
+Cc: 
+linux-kernel@vger.kernel.org; devicetree@vger.kernel.org; 
+linux-i3c@lists.infradead.org; bbrezillon@kernel.org; robh+dt@kernel.org; 
+mark.rutland@arm.com; Joao.Pinto@synopsys.com
+Subject: Re: [PATCH 2/4] 
+i3c: master: Check if devices have i3c_dev_boardinfo on 
+i3c_master_add_i3c_dev_locked()
+
+On Thu, 29 Aug 2019 15:07:08 +0000
 Vitor Soares <Vitor.Soares@synopsys.com> wrote:
 
-> From: Boris Brezillon <boris.brezillon@collabora.com>
-> Date: Thu, Aug 29, 2019 at 15:35:20
+> From: Boris Brezillon 
+<boris.brezillon@collabora.com>
+> Date: Thu, Aug 29, 2019 at 15:39:41
 > 
-> > On Thu, 29 Aug 2019 13:53:24 +0000
-> > Vitor Soares <Vitor.Soares@synopsys.com> wrote:
+
+> > On Thu, 29 Aug 2019 16:39:18 +0200
+> > Boris Brezillon <boris.brezillon@collabora.com> wrote:
 > >   
-> > > Hi Boris,
-> > > 
-> > > From: Boris Brezillon <boris.brezillon@collabora.com>
-> > > Date: Thu, Aug 29, 2019 at 11:41:15
+> > > On Thu, 29 Aug 2019 14:00:44 +0000
+> > > Vitor Soares <Vitor.Soares@synopsys.com> wrote:
 > > >   
-> > > > +Przemek
+> > > > Hi Boris,
 > > > > 
-> > > > Please try to Cc active I3C contributors so they get a chance to
-> > > > comment on your patches.    
-> > > 
-> > > I can do that next time.
-> > >   
-> > > > 
-> > > > On Thu, 29 Aug 2019 12:19:32 +0200
-> > > > Vitor Soares <Vitor.Soares@synopsys.com> wrote:
+> > > > From: Boris Brezillon <boris.brezillon@collabora.com>
+> > > > Date: Thu, Aug 29, 2019 at 11:44:57
 > > > >     
-> > > > > On pre_assing_dyn_addr() the devices that fail:
-> > > > >   i3c_master_setdasa_locked()
-> > > > >   i3c_master_reattach_i3c_dev()
-> > > > >   i3c_master_retrieve_dev_info()
+> > > > > On Thu, 29 Aug 2019 12:19:33 +0200
+> > > > > Vitor Soares <Vitor.Soares@synopsys.com> wrote:
+> > > > >       
+> > > > > > The I3C devices described in DT might not be attached to the master which
+> > > > > > doesn't allow to assign a specific dynamic address.      
 > > > > > 
-> > > > > are kept in memory and master->bus.devs list. This makes the i3c devices
-> > > > > without a dynamic address are sent on DEFSLVS CCC command. Fix this by
-> > > > > detaching and freeing the devices that fail on pre_assign_dyn_addr().    
+> > > > > I remember testing this when developing the framework, so, unless
+> > > > > another patch regressed it, it should already work. I suspect patch 1
+> > > > > is actually the regressing this use case.      
 > > > > 
-> > > > I don't think removing those entries is a good strategy, as one might
-> > > > want to try to use a different dynamic address if the requested one
-> > > > is not available.    
+> > > > For today it doesn't address the case where the device is described with 
+> > > > static address = 0, which isn't attached to the controller.    
 > > > 
-> > > Do you mean same 'assigned-address' attribute in DT?  
-> > 
-> > Yes, or say it's another device that got the address we want and this
-> > device doesn't want to release the address (I'm assuming the !SA case).
-> >   
-> > > 
-> > > If so, it is checked here:
-> > > 
-> > > static int i3c_master_bus_init(struct i3c_master_controller *master)
-> > > ...
-> > > 	list_for_each_entry(i3cboardinfo, &master->boardinfo.i3c, node) {
-> > > 		struct i3c_device_info info = {
-> > > 			.static_addr = i3cboardinfo->static_addr,
-> > > 		};
-> > > 
-> > > 		if (i3cboardinfo->init_dyn_addr) {
-> > > 			status = i3c_bus_get_addr_slot_status(&master->bus,
-> > > 			^
-> > > 						i3cboardinfo->init_dyn_addr);
-> > > 			if (status != I3C_ADDR_SLOT_FREE) {
-> > > 				ret = -EBUSY;
-> > > 				goto err_detach_devs;
-> > > 			}
-> > > 		}
-> > > 
-> > > 		i3cdev = i3c_master_alloc_i3c_dev(master, &info);
-> > > 		if (IS_ERR(i3cdev)) {
-> > > 			ret = PTR_ERR(i3cdev);
-> > > 			goto err_detach_devs;
-> > > 		}
-> > > 
-> > > 		i3cdev->boardinfo = i3cboardinfo;
-> > > 
-> > > 		ret = i3c_master_attach_i3c_dev(master, i3cdev);
-> > > 		if (ret) {
-> > > 			i3c_master_free_i3c_dev(i3cdev);
-> > > 			goto err_detach_devs;
-> > > 		}
-> > > 	}
-> > > ...
-> > > 
-> > > and later if it fails i3c_master_pre_assign_dyn_addr(), the device can 
-> > > participate in Enter Dynamic Address Assignment process.
-> > > I may need to check the boardinfo->init_dyn_addr status on 
-> > > i3c_master_add_i3c_dev_locked before i3c_master_setnewda_locked().  
-> > 
-> > I need to double check but I thought we were already handling that case
-> > properly.  
-> 
-> Yes, it is handled in the code above.
-
-No, I meant the 'assign init_dyn_addr even if !SA', and the code I
-pointed in my other reply tends to confirm that this is something we
-already take into account (maybe not correctly, but the code is here).
-
-> 
-> >   
+> > > Hm, I'm pretty sure I had designed the code to support that case (see
+> > > [1]). It might be buggy, but nothing we can't fix I guess.
 > > >   
-> > > > Why not simply skipping entries that have ->dyn_addr
-> > > > set to 0 when preparing a DEFSLVS frame    
-> > > 
-> > > I considered that solution too but if the device isn't enumerated why 
-> > > should it be attached and kept in memory?  
 > > 
-> > Might be a device that supports HJ, and in that case we might want the
-> > controller to reserve a slot in its device table for that device.
-> > Anyway, it doesn't hurt to have it around as long as we don't pass the
-> > device through DEFSLVS if it doesn't have a dynamic address. I really
-> > prefer to keep the logic unchanged and fix it if it needs to be fixed.  
+> > [1]https://urldefense.proofpoint.com/v2/url?u=https-3A__elixir.bootlin.com_linux_v5.3-2Drc6_source_drivers_i3c_master.c-23L1898&d=DwICAg&c=DPL6_X_6JkXFx7AXWqB0tg&r=qVuU64u9x77Y0Kd0PhDK_lpxFgg6PK9PateHwjb_DY0&m=IXS1ygIgEo5vwajk0iwd5aBDVBzRnVTjO3cg4iBmGNc&s=HC-AcYm-AZPrUBoALioej_BDnqOtJHltr39Z2yPkuU4&e=   
 > 
-> Well, we aren't reserving a slot because we need another one to attach 
-> the device when it is enumerated and hence a device may be using 2 slots 
-> in the controller.
+> That is only valid if you have olddev which will only exist if static 
+> address != 0.
 
-Right, you shouldn't reserve a slot when ->static_address == 0 &&
-->dynamic_address == 0, but I still don't see where the problem is with
-the solution we have right now, sorry. Note that even if you reserve a
-slot in that case, the device only occupies 2 slots for a short amount
-of time, because the add_i3c_dev() logic will detect that the descriptor
-already exists and reattach the device with its new address.
+Hm, if you revert patch 1 (and assuming the device is properly defined
+in the DT), you should have olddev != NULL when reaching that point. If
+that's not the case there's a bug somewhere that should be fixed.
 
-> It may cause problems in HC with reduced slots and it is another reason 
-> why I think we should detach device without dynamic address after the 
-> enumeration phase.
-
-Can you please try the approach I suggest? => fix the existing logic to
-make it work without this "free undiscovered dev desc, reallocate later"
-dance.
+No, because the device is not attached.
 
 _______________________________________________
 linux-i3c mailing list
