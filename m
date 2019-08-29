@@ -7,18 +7,18 @@ X-Spam-Status: No, score=-6.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 2DC60C3A5A3
-	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 14:06:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 851E2C3A59F
+	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 14:09:14 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 017C52339E
-	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 14:06:12 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 57D742339E
+	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 14:09:14 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="nYB695Br";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="WS8pZLwo";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=synopsys.onmicrosoft.com header.i=@synopsys.onmicrosoft.com header.b="Wi2qBgen"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 017C52339E
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="oNihEkPU";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="jsUUxeis";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=synopsys.onmicrosoft.com header.i=@synopsys.onmicrosoft.com header.b="ZDIGq3Ee"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 57D742339E
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -27,96 +27,96 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wGMit1M1dCSlA+WS0CEnkpsZkZPXMElQ73BilzcV7Wk=; b=nYB695BrHh8y6c
-	Eiu9npyBU0YvRS115nUPMRuQtRiIwmoa+5/wFoUv1iTMoTLFrVBodk1bZOJoJkv0XHSPneyipRiM/
-	YiZeCz0ScWWqZuVTPgS+06tu0nQ+C1vsRWC4e4x07uYqoeE9xbVkcvR5X+xWbt9XanhFQJpZ1aOPD
-	vqlEWecO8I00Lq4CpeE/pNymgBbZ2EeXCo1eMaq7mi5Li9bAJFiprC2JOWZ6kuZrc9x+20We3bI7T
-	sgz4Sps+3CfO9z8qlW4R/3uo/we1tnupJItvoDuAYeo/S/jJEINbRyRolhe7+DwgSzGpB4/f5rX6s
-	Dtdv61noYhZhZH0wJ0DQ==;
+	List-Owner; bh=IxSK5Sw9CMNlQpdgUELIgn9gqq9gYzDkGyeJJJn85Qo=; b=oNihEkPUR05nJ/
+	VvjFeLJwxh6pNnhe23X7n7BrOymN1D50A2nNHxEPj+x+3v829D6JizU9lK0ci94SQPi7k3khImuri
+	z5cqPDvGWc9WJz0lNamDsoJUffES15glI/WJqkOGvJnukDsAqnx8csIINlaNadeZJl+bd7FvUMqu2
+	0y64T6mQ4rCKJxhHIyYe0P0SwmeM5JLjQfbL2wyC3XojDyYNfZzLYi+NZSObxwxrFQrkzXcEc67gU
+	osclVCoYk+X4crYJOcT1DVzxHZtWWwFCRED3WDG2nUHeGuHrSoyHZKJfPvZOsjFNNcmi6UGjWfxjs
+	h+IZJgV3PxXdzC1o2zlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3L3z-0006gW-Lq; Thu, 29 Aug 2019 14:06:11 +0000
+	id 1i3L6w-0006l3-1f; Thu, 29 Aug 2019 14:09:14 +0000
 Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3L3w-0006g5-FG
- for linux-i3c@lists.infradead.org; Thu, 29 Aug 2019 14:06:09 +0000
-Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
- [10.12.135.162])
+ id 1i3L6t-0006kN-6D
+ for linux-i3c@lists.infradead.org; Thu, 29 Aug 2019 14:09:12 +0000
+Received: from mailhost.synopsys.com (dc8-mailhost1.synopsys.com
+ [10.13.135.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 23945C03A5;
- Thu, 29 Aug 2019 14:06:08 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 0E580C0390;
+ Thu, 29 Aug 2019 14:09:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1567087568; bh=qGeCbyiA0vw0RMQwU9Wfe7tWiDvDlI1yeXrp7Gjw/xU=;
+ t=1567087751; bh=Layv2dt5riqfJOLGDz3cvqpfNNT1XqASYgyV14nGNnA=;
  h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=WS8pZLwoRkL4NoUDpXtSSDE78M9YPIk0LwSPyI4v9sKA6XE33N+9rhmaGnOVetojh
- tIzcDXxXoMNGHdnIQ0wTINjA4uezW4v1AN/HWtLygdDIPHiIZBKqIOktkGuKl/dXPf
- 5wEJbWJDzyui550+VFqNZ9X1mJH+Moi5QPwl+h3Zt6bgcG1W0K9w/tK3Xl3ZssktVN
- +YYAUt0faDdF7Fnyd953Dmb1CeNlvi4uFJ+kVmiozywLFcft3iZZeRgp82yH/l5TTS
- oXMy6hehKWfXOW15hnhETT6OyclXpON6/uUjJKES2NzwpSpS84bvzcZdNvCWmD/6G3
- a9qXy9mPMLgYg==
+ b=jsUUxeisjka1mye0hORR8vTYt4BL3andOJgpfbWLVlI9ubQ57RMNNgfkhBzsjnRiL
+ jXDKTd4zsocvGgT8t+9yijUfPLf/qmUyX/FwDPH7+Km495bgHXaA3jassXVfxHWyjQ
+ 92dw5IEvSLfUiMpDMXXb5lqAPERR3p8tjbWDRl9aGFaJy4kzBJPxXQMSMtJ581UX3o
+ gLB2heVplCCq3LANi8wp90q+/+b0TNZ/wpS2f2zCeJRpWcRPB9seAQj6IrU/YWjv/i
+ crHDeXqg1dDBhdE8p13S98LmtQJ1Jy/yZuLSqeDQqODFmpgeIG5oL23yWsu02uOhmj
+ 9bXkPyhHngBgg==
 Received: from US01WXQAHTC1.internal.synopsys.com
  (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
  (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id 934F3A0091;
- Thu, 29 Aug 2019 14:06:02 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id E0C28A023B;
+ Thu, 29 Aug 2019 14:09:10 +0000 (UTC)
 Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
  US01WXQAHTC1.internal.synopsys.com (10.12.238.230) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Thu, 29 Aug 2019 07:06:01 -0700
+ (TLS) id 14.3.408.0; Thu, 29 Aug 2019 07:09:09 -0700
 Received: from NAM01-SN1-obe.outbound.protection.outlook.com (10.13.134.195)
  by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Thu, 29 Aug 2019 07:06:02 -0700
+ 14.3.408.0; Thu, 29 Aug 2019 07:09:10 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=b7FKMWx8yCSKdVhnTXoTwn1LCmu1K9tG68ud8Y1smf5cjOiOBzMisHMp6Sw8aocB9JNKaltnIFSqf3eHZcAeHBudTXWB2cDCSoHwKCrNAUxHwgLj1EikaBXtuGlsW3lk79hOIAMHGWnjFb0AGX8tFVZ+uqIk8FVUT+i46JOU5Hjdz/5VeCW8jLIRRTh/M7r0Cb/AM7MeJSFk3Uqiz5nbwpH8M9F3fIuZofhgW2Od2fzaBosSRH2syQXBAOB0uHPHNQaQyMn82pxNg+JqF3swWPXvSi5DWX2ZOuHkCFkgyowZ9OK5+cfLF98JCyL5a0iqcXIgL3Rdvp1WXmKLqoeRuw==
+ b=WjEWvHtDw/CWc/ng4JaL6p8Or7imQvSQLbbRNe+CMgd1NQotewzG6kjHbtE2AW+x3jqhj/g17E9Dj2i2NfRSsAJMduXxHGxcOohK2D7SOBu32pdzUQZBgDuzPjjwP9TDhesN/6Ww1BsTDGVJDm31XD4fSDiJp5TSiueYkAeg4eUW1S4TGguOYca5e6BzAdvnTOATLlake/Byv3stod3fRaEpPZXh1EirEH8WZWv0kJjnXIlf//9oVaYf9ceo2ru1+scX8xo/fr/N2mgqF1kLkN+ViGqOpERWPV3wIAUwK5NfGhUqtSFcePiIrHj1YY8XC2VbuxUnvQLLa8qkl5zx7w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=GuYJVvTkFQcD6HgAAhIwpcR3yXEnaMkfvFkLW2t2+8E=;
- b=B3XZ1PBmY7AwRHRQzcJOWQG3hcCEFKVzUXyoNciDPNj1DkkzZd9663QUDq1goS+6B7Q0/AvuyN8bFs2jW5dG4hX0ndyk3zEXtNxZb1xs8L1N9EV6KdR0l3PPSctxKPP2NYVsT7msG54mqKXloznyH/aS/dy8eUV0wr89EZl4zBtwLdx9sUJlE+3z18sTxfDtgBjEorJMnRQfJusRZPBcKaaP7CDnhaNeocX8tn3lH9Su14cklLQiGWg1F/6VY/goMGkEVe2MwkghOAT/kdiuAWc+o1AbLTb3UpgSLWXf4jMSfQ80VPxW0ZZRM2koRRfx2yLAzh2CYtgailT0b3siyQ==
+ bh=JzRhcCAWxUTgsw7qcL2abvwSlBoD4LUcNanOtUu80kQ=;
+ b=CidKY3amkFmL9OHlQpwuyMXezu59lJ6XmoyCIbIPR8eeSclPstJ7nmKAb4083pGD+d0JgAtI7nePSoqU5qv3veWHRCqtfZj6HuLrgjCkl4NmFLropye6KeKhXRRFNqKu9TwSb2oLd67usm1st/XuniPuR75mLr+dxlttKdyTtYUy2n+5pWILw7Kq8zNr73Y5fTW7SV+1t6wXUFlyzfF02s+j9iApgN+VcCANljeOuiG8lv952i6V1IBoWowWgWsVMVfGF5ANtwMqxUtWo94oFPRCt6qKYEGd9rvJqSXTiZ1PZpZCWq2PZWNJPl71okkLHK08j8skbuygNm0yNGMyFQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
  dkim=pass header.d=synopsys.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=GuYJVvTkFQcD6HgAAhIwpcR3yXEnaMkfvFkLW2t2+8E=;
- b=Wi2qBgen3UE/nLYjsbSPBt4VqLMVuUOkxTeev2OtzGJJ1DKmk8H1BkoMXmIY2Cw1+z38V5MUkFzl+YXINu+cdG/YQqKDSB1rVmm0ydqKoepYnDjH6ps61PznK5hJV96fu+Ul0p87bWSJozpKE9pkNQHXrBtEeZJDH2BKRpDJRxY=
+ bh=JzRhcCAWxUTgsw7qcL2abvwSlBoD4LUcNanOtUu80kQ=;
+ b=ZDIGq3Ee+lD/n2HRKpP4YZ7KfcSvyvjcHiiWt5QRap7obsds3V5nM5GHJL5T5bfQ4uDoLosiHYeVtbNS1Aq+NDPXrNFJoc/rQX3XIQBpdO4ErfXx1DqV0UfQEvV6qSn65oJIbYufHO1UbGR0994CXCAGrSS/68LYsljWOwbxIK0=
 Received: from SN6PR12MB2655.namprd12.prod.outlook.com (52.135.103.20) by
  SN6PR12MB2734.namprd12.prod.outlook.com (52.135.107.25) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2220.18; Thu, 29 Aug 2019 14:06:00 +0000
+ 15.20.2220.18; Thu, 29 Aug 2019 14:09:09 +0000
 Received: from SN6PR12MB2655.namprd12.prod.outlook.com
  ([fe80::89a7:a50:147b:52c6]) by SN6PR12MB2655.namprd12.prod.outlook.com
  ([fe80::89a7:a50:147b:52c6%4]) with mapi id 15.20.2199.021; Thu, 29 Aug 2019
- 14:06:00 +0000
+ 14:09:09 +0000
 From: Vitor Soares <Vitor.Soares@synopsys.com>
 To: Boris Brezillon <boris.brezillon@collabora.com>,
  Vitor Soares <Vitor.Soares@synopsys.com>
-Subject: RE: [PATCH 3/4] dt-bindings: i3c: Make 'assigned-address' valid if
- static address != 0
-Thread-Topic: [PATCH 3/4] dt-bindings: i3c: Make 'assigned-address' valid if
- static address != 0
-Thread-Index: AQHVXlJtqpSoyJg8pkCEOIHWVr8BrqcR8tIAgAA02zA=
-Date: Thu, 29 Aug 2019 14:06:00 +0000
-Message-ID: <SN6PR12MB2655528456BB8E6661A5F962AEA20@SN6PR12MB2655.namprd12.prod.outlook.com>
+Subject: RE: [PATCH 4/4] i3c: master: dw: reattach device on first available
+ location of address table
+Thread-Topic: [PATCH 4/4] i3c: master: dw: reattach device on first available
+ location of address table
+Thread-Index: AQHVXlJtIp4F4pXufkmtQ4ohVfCkbKcR+XCAgAAvvRA=
+Date: Thu, 29 Aug 2019 14:09:08 +0000
+Message-ID: <SN6PR12MB265539D98E3B4571C1705799AEA20@SN6PR12MB2655.namprd12.prod.outlook.com>
 References: <cover.1567071213.git.vitor.soares@synopsys.com>
- <9d69c83c7193e377bbc77bea7f1812fc17dafaee.1567071213.git.vitor.soares@synopsys.com>
- <20190829125138.4b36b8f6@collabora.com>
-In-Reply-To: <20190829125138.4b36b8f6@collabora.com>
+ <e03fb41054a8431b27cc84c3d83ada9464172ef7.1567071213.git.vitor.soares@synopsys.com>
+ <20190829131519.3f420c64@collabora.com>
+In-Reply-To: <20190829131519.3f420c64@collabora.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 x-dg-ref: =?us-ascii?Q?PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNcc29hcmVzXGFw?=
  =?us-ascii?Q?cGRhdGFccm9hbWluZ1wwOWQ4NDliNi0zMmQzLTRhNDAtODVlZS02Yjg0YmEy?=
- =?us-ascii?Q?OWUzNWJcbXNnc1xtc2ctMWU5M2NlMzctY2E2Ni0xMWU5LTgyNTQtYjU5ZDc5?=
- =?us-ascii?Q?N2QzNzhiXGFtZS10ZXN0XDFlOTNjZTM5LWNhNjYtMTFlOS04MjU0LWI1OWQ3?=
- =?us-ascii?Q?OTdkMzc4YmJvZHkudHh0IiBzej0iMjc3NiIgdD0iMTMyMTE1NjExNTcwMTcx?=
- =?us-ascii?Q?ODU0IiBoPSJzdlJqWEk3aUVYcko3aStMUXk1WkZreWNROUE9IiBpZD0iIiBi?=
- =?us-ascii?Q?bD0iMCIgYm89IjEiIGNpPSJjQUFBQUVSSFUxUlNSVUZOQ2dVQUFCUUpBQURP?=
- =?us-ascii?Q?Yit6Z2NsN1ZBVlVmU2RYb3hLYkNWUjlKMWVqRXBzSU9BQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?OWUzNWJcbXNnc1xtc2ctOGY3N2UzMmMtY2E2Ni0xMWU5LTgyNTQtYjU5ZDc5?=
+ =?us-ascii?Q?N2QzNzhiXGFtZS10ZXN0XDhmNzdlMzJlLWNhNjYtMTFlOS04MjU0LWI1OWQ3?=
+ =?us-ascii?Q?OTdkMzc4YmJvZHkudHh0IiBzej0iMjI0OCIgdD0iMTMyMTE1NjEzNDY0MjU0?=
+ =?us-ascii?Q?MDk2IiBoPSIyaU5tMXE5K2F2eXoyRUZ4WlJGc2NWWWRSVTA9IiBpZD0iIiBi?=
+ =?us-ascii?Q?bD0iMCIgYm89IjEiIGNpPSJjQUFBQUVSSFUxUlNSVUZOQ2dVQUFCUUpBQUNR?=
+ =?us-ascii?Q?MXRGUmMxN1ZBZVZjOElRbUpzOWI1Vnp3aENZbXoxc09BQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBSEFBQUFDa0NBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?RUFBUUFCQUFBQVZ6ZGhHZ0FBQUFBQUFBQUFBQUFBQUo0QUFBQm1BR2tBYmdC?=
  =?us-ascii?Q?aEFHNEFZd0JsQUY4QWNBQnNBR0VBYmdCdUFHa0FiZ0JuQUY4QWR3QmhBSFFB?=
@@ -189,36 +189,36 @@ authentication-results: spf=none (sender IP is )
  smtp.mailfrom=soares@synopsys.com; 
 x-originating-ip: [83.174.63.141]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 54466226-9e80-4c7c-0163-08d72c8a05ac
+x-ms-office365-filtering-correlation-id: 810117fe-844c-4a17-d2de-08d72c8a75d4
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
  SRVR:SN6PR12MB2734; 
 x-ms-traffictypediagnostic: SN6PR12MB2734:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <SN6PR12MB27346AB7DE40FD66197AF480AEA20@SN6PR12MB2734.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-microsoft-antispam-prvs: <SN6PR12MB27343EEA41851C0108E40ECFAEA20@SN6PR12MB2734.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6108;
 x-forefront-prvs: 0144B30E41
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(376002)(39860400002)(366004)(346002)(396003)(136003)(199004)(189003)(14444005)(478600001)(316002)(4326008)(2906002)(6636002)(8936002)(81166006)(81156014)(8676002)(305945005)(74316002)(25786009)(6246003)(107886003)(7736002)(6436002)(14454004)(99286004)(55016002)(53936002)(110136005)(54906003)(9686003)(52536014)(7696005)(76176011)(71190400001)(71200400001)(102836004)(26005)(6506007)(86362001)(33656002)(476003)(486006)(446003)(11346002)(66946007)(76116006)(66446008)(64756008)(66556008)(66476007)(186003)(66066001)(5660300002)(229853002)(3846002)(256004)(6116002);
+ SFS:(10019020)(136003)(396003)(346002)(39860400002)(376002)(366004)(199004)(189003)(11346002)(446003)(476003)(486006)(186003)(66476007)(66556008)(64756008)(66446008)(66946007)(76116006)(71200400001)(71190400001)(6506007)(102836004)(26005)(7696005)(76176011)(86362001)(33656002)(3846002)(6116002)(256004)(229853002)(5660300002)(66066001)(52536014)(2906002)(4326008)(6636002)(74316002)(305945005)(8936002)(81166006)(8676002)(81156014)(14444005)(316002)(478600001)(9686003)(54906003)(110136005)(99286004)(53936002)(55016002)(7736002)(107886003)(6246003)(14454004)(6436002)(25786009);
  DIR:OUT; SFP:1102; SCL:1; SRVR:SN6PR12MB2734;
  H:SN6PR12MB2655.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: synopsys.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: YBUP0+4SddD5JQIzFH71iqk+xq2vxTw9S4Z7+LL0zko0wNXErpNa4SXslFXZgovwTXWv/880KKqkZWpFgprz7TQeJjHpaPa6SP0FKaAzlaaSBqG52g1n5PZSsWrxyhePhLSStnldL9wkwCxHVe2zHeBW9DiZLKlY6EhWigua86h1y5zO/x/BCB+O6tUutK1RarAbBVFkJ9NsIiQ0WAjik33YgOFUO3sk8m2t7i5fgTz8QZ9REWn0JNougAlGf7eMl5oP7Ccusr0Oq3lIbN/DrwAnZpKHQVxfzBSpFnre1xcuWRL1w8LzJqntZEHnUMuZgFC+KsxDLsjF2aUxJHA+9cHYxEqALG/OVmQP+4tSR3y/rDmFbd2fL9K4/qutinjIaQpeMayWwC8Uzg1mEJqP5vNxJENeXR8hILvyQ+iLurU=
+x-microsoft-antispam-message-info: nIG8ZvUnaTVqmTuM4PJ6TWBW0+paSYCyJh/k8JedD8q8C/j2w4dIMOVG3Abkl8WMhSFoZ3o4xYuvLKg1XB2eERHCQlOzvP+jh/CW3W1kIAG+hQu21bNul21+WgY5FznThlPNNbv5PJhgA8FLv69dVdJnQVKIe4DBruVR5qsWALhROBOdTvBvAgW6NK1F8P2DWXLlqDcIjFpmaO075fSXvu9STjmqbTuCUjGxT7TOPn0YQFkQxBsun8ljhEE8JnrTB6bpab/62lr0XEAFZgMiXRURSjKbSxTNpa1WDTjK9Q6XEjdkrpjk2G4LoQbCvCASb+aKQp6x0jk5xNYji6SfFKVvBzpeJvdEiGH0MR/XOV1NpXSP+eYDgkfQsjh4ECtht/Hy8lqc+K08LWyGuqsuhF9YQlTmV7GnJN/Gqoux5Aw=
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 54466226-9e80-4c7c-0163-08d72c8a05ac
-X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Aug 2019 14:06:00.6793 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 810117fe-844c-4a17-d2de-08d72c8a75d4
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Aug 2019 14:09:08.8866 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: JHQ6MeVk+bpGWFYkzqIa3EoZRic5KkmmPilwPrUqjvZbCG7u8lnuNURSRHc4SVNgrdC8KeuJbbI7IJ3mlU64tg==
+X-MS-Exchange-CrossTenant-userprincipalname: 5/UEr987AcGMFSR/DzKtR1IJFRwsxVw97VpJ3dysho5/fUyxN1CUAlEGt/V+if7eWSg/66pdCx8h/4SOsoX61Q==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR12MB2734
 X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_070608_526180_C079BA58 
-X-CRM114-Status: GOOD (  19.41  )
+X-CRM114-CacheID: sfid-20190829_070911_243845_51E495D7 
+X-CRM114-Status: GOOD (  18.21  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -245,82 +245,65 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 Hi Boris,
 
 From: Boris Brezillon <boris.brezillon@collabora.com>
-Date: Thu, Aug 29, 2019 at 11:51:38
+Date: Thu, Aug 29, 2019 at 12:15:19
 
-> On Thu, 29 Aug 2019 12:19:34 +0200
+> On Thu, 29 Aug 2019 12:19:35 +0200
 > Vitor Soares <Vitor.Soares@synopsys.com> wrote:
 > 
-> > The I3C devices without a static address can require a specific dynamic
-> > address for priority reasons.
+> > For today the reattach function only update the device address on the
+> > controller.
 > > 
-> > Let's update the binding document to make the 'assigned-address' property
-> > valid if static address != 0 and add an example with this use case.
+> > Update the location to the first available too, will optimize the
+> > enumeration process avoiding additional checks to keep the available
+> > positions on address table consecutive.
 > 
->            ^ you mean static address == 0, right?
+> Given the number of available slots I honestly don't think it makes a
+> difference, but I also don't mind this change, so
 
-Indeed.
+The slots are HW dependent. The point is, I need to guarantee the 
+available slot are consecutives.
+If you have any suggestion I appreciate.
 
 > 
-> Yes, it makes sense to support that case and do our best to assign the
-> requested address after DAA has taken place by explicitly executing
-> SETDA.
+> Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
 > 
 > > 
 > > Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
 > > ---
-> >  Documentation/devicetree/bindings/i3c/i3c.txt | 13 ++++++++++---
-> >  1 file changed, 10 insertions(+), 3 deletions(-)
+> >  drivers/i3c/master/dw-i3c-master.c | 16 ++++++++++++++++
+> >  1 file changed, 16 insertions(+)
 > > 
-> > diff --git a/Documentation/devicetree/bindings/i3c/i3c.txt b/Documentation/devicetree/bindings/i3c/i3c.txt
-> > index ab729a0..c851e75 100644
-> > --- a/Documentation/devicetree/bindings/i3c/i3c.txt
-> > +++ b/Documentation/devicetree/bindings/i3c/i3c.txt
-> > @@ -98,9 +98,7 @@ Required properties
-> >  
-> >  Optional properties
-> >  -------------------
-> > -- assigned-address: dynamic address to be assigned to this device. This
-> > -		    property is only valid if the I3C device has a static
-> > -		    address (first cell of the reg property != 0).
-> > +- assigned-address: dynamic address to be assigned to this device.
-> 
-> We should probably mention that we don't provide strong guarantees
-> here. We will try to assign this dynamic address to the device, but if
-> something fails (like another device owning the address and refusing to
-> give it up), the actual dynamic address will be different.
-> This clarification can be done in a separate patch.
-
-So, another patch on top of this one explaining that, right?
-
-I would suggest to use a dynamic address, like 0x40 (mid priority), on 
-ENTDAA so lowers addresses (High Priority) can be used in DT or another 
-method.
-
-What do you think about this? 
-
-> 
-> >  
-> >  
-> >  Example:
-> > @@ -129,6 +127,15 @@ Example:
-> >  
-> >  		/*
-> >  		 * I3C device without a static I2C address but requiring
-> > +		 * specific dynamic address.
-> > +		 */
-> > +		sensor@0,39200154004 {
-> > +			reg = <0x0 0x6072 0x303904d2>;
-> > +			assigned-address = <0xb>;
-> > +		};
+> > diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+> > index 1d83c97..62261ac 100644
+> > --- a/drivers/i3c/master/dw-i3c-master.c
+> > +++ b/drivers/i3c/master/dw-i3c-master.c
+> > @@ -898,6 +898,22 @@ static int dw_i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
+> >  	struct dw_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
+> >  	struct i3c_master_controller *m = i3c_dev_get_master(dev);
+> >  	struct dw_i3c_master *master = to_dw_i3c_master(m);
+> > +	int pos;
 > > +
-> > +		/*
-> > +		 * I3C device without a static I2C address but requiring
-> >  		 * resources described in the DT.
-> >  		 */
-> >  		sensor@0,39200154004 {
+> > +	pos = dw_i3c_master_get_free_pos(master);
+> > +
+> > +	if (data->index > pos && pos > 0) {
+> > +		writel(0,
+> > +		       master->regs +
+> > +		       DEV_ADDR_TABLE_LOC(master->datstartaddr, data->index));
+> > +
+> > +		master->addrs[data->index] = 0;
+> > +		master->free_pos |= BIT(data->index);
+> > +
+> > +		data->index = pos;
+> > +		master->addrs[pos] = dev->info.dyn_addr;
+> > +		master->free_pos &= ~BIT(pos);
+> > +	}
+> >  
+> >  	writel(DEV_ADDR_TABLE_DYNAMIC_ADDR(dev->info.dyn_addr),
+> >  	       master->regs +
 
 Best regards,
 Vitor Soares
+
 
 _______________________________________________
 linux-i3c mailing list
