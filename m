@@ -1,90 +1,78 @@
-Return-Path: <SRS0=1QaF=WS=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=0Lh8=WZ=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-9.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT
-	autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-3.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=no autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D9DD4C3A5A1
-	for <linux-i3c@archiver.kernel.org>; Thu, 22 Aug 2019 14:22:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 8AF89C48BEB
+	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 10:20:15 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 9F337233FD
-	for <linux-i3c@archiver.kernel.org>; Thu, 22 Aug 2019 14:22:02 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 6025523403
+	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 10:20:15 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="GN0LqliF";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=ingics-com.20150623.gappssmtp.com header.i=@ingics-com.20150623.gappssmtp.com header.b="AUF9nXfi"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9F337233FD
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=ingics.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="kUMEjNP6";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="ZCpfD6NX"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 6025523403
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Ge2yyK/202Q69J9H0JoE5+uiBuGbhGwPbdclpnMszh0=; b=GN0LqliF1QtpGf
-	TZhOZp0FrFh5PIAtNeplFNYcYMS1FEyRwpKtSF+Sv2lRJTew20iyzffjbLr/e8rvLYoBbnwmCqhpb
-	k7PHkzoAUv36npGSwjk+H2rJZzBomEZYQpev+Bq3ivs90boQhzW0gh03rA9RoM/9ERD+XNy8E29f/
-	8UvBV60z8hN/Bk5VnjqTGySLA6uPbKmW2or9jiptMxMtnZYQ4O1K6EvMccEHuXeKEzbVqZDe5vZfC
-	He68hKpGNNZqXOtp54nq0g7CH4umGmCkFTHE83wQSIAWWxNBM/6yfYPtyQ+TsAHxQkO/HuoOmuEcl
-	lC6S41HXx5PhK7bFloNA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=qfVPG/u9q75SNi6urTUWwICsaEVvDwBhXzHqREX4U8M=; b=kUM
+	EjNP6nF9QnWNDhZkir1SokgYDhuRg4DV0XMMl2Ta5dHjvGSYFvBeU7IObD9ReTU62EQbb9Jga9t1l
+	cujihOQImrIlcRYFl0E4SVq3yCt08EjXFCry6KsxSqtFYfbdvioAuuNHfhnrfbkv2BEKP7by0hPvh
+	4C6r8MtmiicPySDHNgIK3lgaGI3uFzU7hTFnEcMxFMAowi6qApF69hKkUwod0I0UtuNH1W0vrIQD1
+	w+wC0j0UxUeQNI4KUdrUTY3bj11/knNBrNWdYesihVMYTh0027vh9xGDqAc4pfSncXAnubUWunm/+
+	//5YTJAXUZRGZfEHZTTaY9D/4XW59cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0nyU-0000wL-7l; Thu, 22 Aug 2019 14:22:02 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1i3HXK-0006ci-Fk; Thu, 29 Aug 2019 10:20:14 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyWLk-000507-Ep
- for linux-i3c@lists.infradead.org; Fri, 16 Aug 2019 07:08:37 +0000
-Received: by mail-pf1-x444.google.com with SMTP id w16so2667911pfn.7
- for <linux-i3c@lists.infradead.org>; Fri, 16 Aug 2019 00:08:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=ingics-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=JUMUZcob84f0e2jFptSOnFkTdtMpnI1uLzH0W5R65Qc=;
- b=AUF9nXfiuT/6J8rVlIemwuQWuYGzV7XL5GKHrx7TNdRGDy2NRYq6oGSSxkTUpdnRzh
- plXXQfBEmY1yw9UcbHOA8vOsrO3zl+yReRnLnKYZy0DNE8YIn8j8Yd0GBZ7psnvbRpdY
- 6Uawx9nBQwQilmMFckGr8QruIN9/EtacNRUK65G25U+7/DCdriVBNX93Z868CwM4MNRs
- QLV0rnn5O+HvazJ+4I9oMlCOUcsx6U3VTW8Um4Tu//X2HcFb1nxAfbIb21M7FyNvFPtl
- GvOK4WUMT/b5hQzBZCKxK6/vakX18r2QApOBbU/Zzrv9WLzlsWXa8iegq1o6GepRAU4z
- yBcw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=JUMUZcob84f0e2jFptSOnFkTdtMpnI1uLzH0W5R65Qc=;
- b=iQ2mNIVJTFmlNu4YO4+tJeMxwKBrZ9XiexNYT7cwiXE17Tz9hMq2acTZATAxEIfxXJ
- CwlVu/9tgAuFwjihXZCnbc1jyeNAjvBImIXr+Z0S6hZCYp9CuOSPibMySz6gV5bx2X/Y
- W1v3Cb244jMqaJxDt2kVJn6ejFXFoSUeizwWhKwYVFca+vRIDHE8g0e9lMBiP78UUJ/s
- t4AzN17k99KQSBElw7wForV+dZhFJfvRVXX/pTDZfXQRHLWakeV1RuuP7AGXugk5fbCM
- rpF5h6OXcuXM4YJNCV3i+Wqd4L/AzidDqsXaIKifjdCK17n27PL9vBhcQsaqMf04c85O
- yHGg==
-X-Gm-Message-State: APjAAAWrnUALT+DvlbVooRwewo15u3K/9nxj4eWP6kq9eQzfKm35Na5p
- Xejrgm2vcr3nbUGmleAmg2Ce6A==
-X-Google-Smtp-Source: APXvYqy+5plMxV2ujL10uFZ0fxmzM04VulLJ7XgmP7Hh4ly1Wx29tWAxrDVRGWiApIDBD6U3JLBb0g==
-X-Received: by 2002:a62:5207:: with SMTP id g7mr840686pfb.152.1565939314929;
- Fri, 16 Aug 2019 00:08:34 -0700 (PDT)
-Received: from localhost.localdomain (122-117-179-2.HINET-IP.hinet.net.
- [122.117.179.2])
- by smtp.gmail.com with ESMTPSA id w11sm5161746pfi.105.2019.08.16.00.08.33
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 16 Aug 2019 00:08:34 -0700 (PDT)
-From: Axel Lin <axel.lin@ingics.com>
-To: Boris Brezillon <bbrezillon@kernel.org>
-Subject: [PATCH] i3c: master: Use dev_to_i3cmaster()
-Date: Fri, 16 Aug 2019 15:08:25 +0800
-Message-Id: <20190816070825.5411-1-axel.lin@ingics.com>
-X-Mailer: git-send-email 2.20.1
-MIME-Version: 1.0
+ id 1i3HWq-00054c-7a
+ for linux-i3c@lists.infradead.org; Thu, 29 Aug 2019 10:19:46 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
+ [10.225.0.210])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 20432C0391;
+ Thu, 29 Aug 2019 10:19:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1567073980; bh=od80gmY2zZhh+3Bcew23DiiwRVI+IoD71SEOvgTHG9g=;
+ h=From:To:Cc:Subject:Date:From;
+ b=ZCpfD6NXKGjUIDyuyy6P1W/RWFyrnEbssFCR4FlNciPZnoNwnK4hSjHHsciqeGWvj
+ csro7zd7SZAZh0DCnfIBbf3NUL3+o0LR8nfrt/WweoO5Mr2s7sYVuQ3Kr9kqlSHbue
+ SSm8KGVcVawD/Fx3v5AmvjqXgCkwu2ObxiOm0Z1c8vAeEpTEvOAPtXDfI0SrjNhapt
+ xgppE8g+DyxZToCwFV+TDQTHULhTyRGl6/qae1RQxj7g8cMi7/N02EhunlgLKMl+Oz
+ kswwWiVz9H0z4sIjPUfWp+xwNF1Z3Hh9YmZTX8ZQX9pt5kKnPrK0cnOBRBS3sXVfMe
+ uXKrEtyBe4lng==
+Received: from de02.synopsys.com (de02.internal.synopsys.com [10.225.17.21])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 37493A005F;
+ Thu, 29 Aug 2019 10:19:38 +0000 (UTC)
+Received: from de02dwia024.internal.synopsys.com
+ (de02dwia024.internal.synopsys.com [10.225.19.81])
+ by de02.synopsys.com (Postfix) with ESMTP id 1176B3B640;
+ Thu, 29 Aug 2019 12:19:38 +0200 (CEST)
+From: Vitor Soares <Vitor.Soares@synopsys.com>
+To: linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-i3c@lists.infradead.org
+Subject: [PATCH 0/4] i3c: remove device if failed on pre_assign_dyn_addr()
+Date: Thu, 29 Aug 2019 12:19:31 +0200
+Message-Id: <cover.1567071213.git.vitor.soares@synopsys.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_000836_561432_C257BFF5 
-X-CRM114-Status: UNSURE (   8.60  )
+X-CRM114-CacheID: sfid-20190829_031944_448954_FDF1530F 
+X-CRM114-Status: UNSURE (   9.28  )
 X-CRM114-Notice: Please train this message.
-X-Mailman-Approved-At: Thu, 22 Aug 2019 07:22:01 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,34 +84,35 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: linux-i3c@lists.infradead.org, Axel Lin <axel.lin@ingics.com>
+Cc: mark.rutland@arm.com, Joao.Pinto@synopsys.com, robh+dt@kernel.org,
+ Vitor Soares <Vitor.Soares@synopsys.com>, bbrezillon@kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Since we have dev_to_i3cmaster() available, use it.
+This patch series remove the devices that fail during
+pre_assign_dyn_addr() and were being sent on DEFSVLS command.
+With the change above, during the i3c_master_add_i3c_dev_locked() is
+necessary to check if the device has i3c_boardinfo and try to assign the
+i3c_dev_boardinfo->init_dyn_addr if there no oldev. This change will
+allow to describe in DT device with preferable dynamic address but without
+static address.
 
-Signed-off-by: Axel Lin <axel.lin@ingics.com>
----
- drivers/i3c/master.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Vitor Soares (4):
+  "i3c: detach and free device if pre_assign_dyn_addr fails "
+  i3c: check i3c_boardinfo during i3c_master_add_i3c_dev_locked
+  update i3c bingins
+  i3c: master: dw: Reattach device on first empty location of DAT
 
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 8ff527263f46..5c051dba32a5 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -123,7 +123,7 @@ static struct i3c_dev_desc *dev_to_i3cdesc(struct device *dev)
- 	if (dev->type == &i3c_device_type)
- 		return dev_to_i3cdev(dev)->desc;
- 
--	master = container_of(dev, struct i3c_master_controller, dev);
-+	master = dev_to_i3cmaster(dev);
- 
- 	return master->this;
- }
+ Documentation/devicetree/bindings/i3c/i3c.txt | 13 ++++++++---
+ drivers/i3c/master.c                          | 33 ++++++++++++++++++++++++---
+ drivers/i3c/master/dw-i3c-master.c            | 16 +++++++++++++
+ 3 files changed, 56 insertions(+), 6 deletions(-)
+
 -- 
-2.20.1
+2.7.4
 
 
 _______________________________________________
