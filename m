@@ -5,18 +5,18 @@ X-Spam-Level:
 X-Spam-Status: No, score=-8.3 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
 	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_2
-	autolearn=unavailable autolearn_force=no version=3.4.0
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 50C5AC3A5A3
-	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 10:51:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 7EC9BC3A59F
+	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 11:15:30 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 264432341B
-	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 10:51:49 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 5449C22CF5
+	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 11:15:30 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="NiPZaELV"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 264432341B
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="W3qso+GP"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 5449C22CF5
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=collabora.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -25,40 +25,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LtGUmz57Jf8wxSHkWPW0ssr5BOezQm7vXoixfo8k/uI=; b=NiPZaELVdVNgP1
-	CbPcCXOaJP4HD4a2Bh5H9UzNSqLXS7KrVunxbdiUU+lcg5VtSLWjYZ5Qea9taHNdF+UEKWLn7swWE
-	zs2nDRuLoTWnMdshRg2gyd4fPm04dNtXLAj9gEeIQlbdEyERB1s2yOaX63vA4ZyRS0BCBqJWF1gXK
-	LphQpfMuIz1cOWU6x2j0fiV5yQxzOv/Cv2PXu2Ygidsg9a438lw0YMfWPev0o3MWOnWjXAcVcW0OB
-	ek5Eo3vLrBAFczSKX2fH8UlKiI6wkteedvQ+LFFtpfDxcIXXVcGfIw0N33rU9jVn2RM3fPAuP4PGm
-	ix0SzUTcXJMHkstdAsvg==;
+	List-Owner; bh=cZBnzkdeOyiQ03g2DKI+/Uh+DetLWiNEi7ZharmvhCY=; b=W3qso+GPhaYk0O
+	gCvnZjRA/RdCmtN+3uMN/mIln6CeSmD/bqeVVP5Big3C6NczDIxW91+nv/rmrLheNRgGsuJkSV+gF
+	9oSGhDIwQ12txLT9StfIdVxOkbgdDfkT9hqLYpYxDSiOVwwh2Y6acVmZGXkyhA4ioxO79F6kMu/4h
+	Hq3c/L8fw2L7+gEB0famOqebau0C3//kO3txCcqsxpPAMfyDKs2s5AgSs5fnKRPOFMXDKogv5g/QO
+	9YR5VBBBV27YUQiXO024y4j+U7mUY/rzhPzu3d0BFPmmMJ4bzxnMeFsh3251noTT8XjQLeTJ7Hs1n
+	5eKwUjqGbVQ8cP4vu8+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3I1s-0000dw-VC; Thu, 29 Aug 2019 10:51:48 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1i3IOn-0008UE-VL; Thu, 29 Aug 2019 11:15:29 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3I1p-0000dP-Pg
- for linux-i3c@lists.infradead.org; Thu, 29 Aug 2019 10:51:47 +0000
+ id 1i3IOl-0008Tq-LX
+ for linux-i3c@lists.infradead.org; Thu, 29 Aug 2019 11:15:29 +0000
 Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
  (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 5149428D325;
- Thu, 29 Aug 2019 11:51:43 +0100 (BST)
-Date: Thu, 29 Aug 2019 12:51:38 +0200
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 18C5527900A;
+ Thu, 29 Aug 2019 12:15:24 +0100 (BST)
+Date: Thu, 29 Aug 2019 13:15:19 +0200
 From: Boris Brezillon <boris.brezillon@collabora.com>
 To: Vitor Soares <Vitor.Soares@synopsys.com>
-Subject: Re: [PATCH 3/4] dt-bindings: i3c: Make 'assigned-address' valid if
- static address != 0
-Message-ID: <20190829125138.4b36b8f6@collabora.com>
-In-Reply-To: <9d69c83c7193e377bbc77bea7f1812fc17dafaee.1567071213.git.vitor.soares@synopsys.com>
+Subject: Re: [PATCH 4/4] i3c: master: dw: reattach device on first available
+ location of address table
+Message-ID: <20190829131519.3f420c64@collabora.com>
+In-Reply-To: <e03fb41054a8431b27cc84c3d83ada9464172ef7.1567071213.git.vitor.soares@synopsys.com>
 References: <cover.1567071213.git.vitor.soares@synopsys.com>
- <9d69c83c7193e377bbc77bea7f1812fc17dafaee.1567071213.git.vitor.soares@synopsys.com>
+ <e03fb41054a8431b27cc84c3d83ada9464172ef7.1567071213.git.vitor.soares@synopsys.com>
 Organization: Collabora
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_035145_965679_94BB4B68 
-X-CRM114-Status: GOOD (  17.57  )
+X-CRM114-CacheID: sfid-20190829_041527_936930_79552AB7 
+X-CRM114-Status: GOOD (  15.58  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,65 +78,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, 29 Aug 2019 12:19:34 +0200
+On Thu, 29 Aug 2019 12:19:35 +0200
 Vitor Soares <Vitor.Soares@synopsys.com> wrote:
 
-> The I3C devices without a static address can require a specific dynamic
-> address for priority reasons.
+> For today the reattach function only update the device address on the
+> controller.
 > 
-> Let's update the binding document to make the 'assigned-address' property
-> valid if static address != 0 and add an example with this use case.
+> Update the location to the first available too, will optimize the
+> enumeration process avoiding additional checks to keep the available
+> positions on address table consecutive.
 
-           ^ you mean static address == 0, right?
+Given the number of available slots I honestly don't think it makes a
+difference, but I also don't mind this change, so
 
-Yes, it makes sense to support that case and do our best to assign the
-requested address after DAA has taken place by explicitly executing
-SETDA.
+Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
 
 > 
 > Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
 > ---
->  Documentation/devicetree/bindings/i3c/i3c.txt | 13 ++++++++++---
->  1 file changed, 10 insertions(+), 3 deletions(-)
+>  drivers/i3c/master/dw-i3c-master.c | 16 ++++++++++++++++
+>  1 file changed, 16 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/i3c/i3c.txt b/Documentation/devicetree/bindings/i3c/i3c.txt
-> index ab729a0..c851e75 100644
-> --- a/Documentation/devicetree/bindings/i3c/i3c.txt
-> +++ b/Documentation/devicetree/bindings/i3c/i3c.txt
-> @@ -98,9 +98,7 @@ Required properties
->  
->  Optional properties
->  -------------------
-> -- assigned-address: dynamic address to be assigned to this device. This
-> -		    property is only valid if the I3C device has a static
-> -		    address (first cell of the reg property != 0).
-> +- assigned-address: dynamic address to be assigned to this device.
-
-We should probably mention that we don't provide strong guarantees
-here. We will try to assign this dynamic address to the device, but if
-something fails (like another device owning the address and refusing to
-give it up), the actual dynamic address will be different.
-This clarification can be done in a separate patch.
-
->  
->  
->  Example:
-> @@ -129,6 +127,15 @@ Example:
->  
->  		/*
->  		 * I3C device without a static I2C address but requiring
-> +		 * specific dynamic address.
-> +		 */
-> +		sensor@0,39200154004 {
-> +			reg = <0x0 0x6072 0x303904d2>;
-> +			assigned-address = <0xb>;
-> +		};
+> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+> index 1d83c97..62261ac 100644
+> --- a/drivers/i3c/master/dw-i3c-master.c
+> +++ b/drivers/i3c/master/dw-i3c-master.c
+> @@ -898,6 +898,22 @@ static int dw_i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
+>  	struct dw_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
+>  	struct i3c_master_controller *m = i3c_dev_get_master(dev);
+>  	struct dw_i3c_master *master = to_dw_i3c_master(m);
+> +	int pos;
 > +
-> +		/*
-> +		 * I3C device without a static I2C address but requiring
->  		 * resources described in the DT.
->  		 */
->  		sensor@0,39200154004 {
+> +	pos = dw_i3c_master_get_free_pos(master);
+> +
+> +	if (data->index > pos && pos > 0) {
+> +		writel(0,
+> +		       master->regs +
+> +		       DEV_ADDR_TABLE_LOC(master->datstartaddr, data->index));
+> +
+> +		master->addrs[data->index] = 0;
+> +		master->free_pos |= BIT(data->index);
+> +
+> +		data->index = pos;
+> +		master->addrs[pos] = dev->info.dyn_addr;
+> +		master->free_pos &= ~BIT(pos);
+> +	}
+>  
+>  	writel(DEV_ADDR_TABLE_DYNAMIC_ADDR(dev->info.dyn_addr),
+>  	       master->regs +
 
 
 _______________________________________________
