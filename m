@@ -7,18 +7,18 @@ X-Spam-Status: No, score=-6.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 26A10C3A5A6
-	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 14:00:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 2DC60C3A5A3
+	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 14:06:12 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id ECDC7215EA
-	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 14:00:48 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 017C52339E
+	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 14:06:12 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="vDI4eb+x";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="MMr5uGt0";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=synopsys.onmicrosoft.com header.i=@synopsys.onmicrosoft.com header.b="aCbbriIP"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org ECDC7215EA
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="nYB695Br";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="WS8pZLwo";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=synopsys.onmicrosoft.com header.i=@synopsys.onmicrosoft.com header.b="Wi2qBgen"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 017C52339E
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -27,96 +27,96 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wVIOhAYZutn3yen5IKlO0usI4U8KPM+QXW7ja7ZgqWQ=; b=vDI4eb+xTbYpog
-	xtwAOUu3tSMqzzdIfowb2NYowt+fGiJexTsp9rQnf3Q5wnOffQeM/RL8+eXeYBYIsZbjj2eVQsfBi
-	w9XLUkkJHvDwN9LVqG8fQHPaJzAVWH1YrFOiMHBGKfDK5yD5fvKTAjsybbCI1dgcjImuil+2Y+iPr
-	hm4Wt92C/570gR21VWg3nHnfMP6P70bUUOOhoqw+AESUFu3lf0q2GAig6gKs16C+My4+sW+EUDy9t
-	rXnWe0qR3e3ks9c970hnnqd8z2+VCDmt5s0/Xas46dev+E/scnGXZIcaBqpTY/Wbzi7VTLY/0/QGR
-	UwDxFF9kAVr/zRS8gPQw==;
+	List-Owner; bh=wGMit1M1dCSlA+WS0CEnkpsZkZPXMElQ73BilzcV7Wk=; b=nYB695BrHh8y6c
+	Eiu9npyBU0YvRS115nUPMRuQtRiIwmoa+5/wFoUv1iTMoTLFrVBodk1bZOJoJkv0XHSPneyipRiM/
+	YiZeCz0ScWWqZuVTPgS+06tu0nQ+C1vsRWC4e4x07uYqoeE9xbVkcvR5X+xWbt9XanhFQJpZ1aOPD
+	vqlEWecO8I00Lq4CpeE/pNymgBbZ2EeXCo1eMaq7mi5Li9bAJFiprC2JOWZ6kuZrc9x+20We3bI7T
+	sgz4Sps+3CfO9z8qlW4R/3uo/we1tnupJItvoDuAYeo/S/jJEINbRyRolhe7+DwgSzGpB4/f5rX6s
+	Dtdv61noYhZhZH0wJ0DQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3Kym-00057J-JM; Thu, 29 Aug 2019 14:00:48 +0000
+	id 1i3L3z-0006gW-Lq; Thu, 29 Aug 2019 14:06:11 +0000
 Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3Kyk-00056z-Gw
- for linux-i3c@lists.infradead.org; Thu, 29 Aug 2019 14:00:47 +0000
-Received: from mailhost.synopsys.com (dc8-mailhost2.synopsys.com
- [10.13.135.210])
+ id 1i3L3w-0006g5-FG
+ for linux-i3c@lists.infradead.org; Thu, 29 Aug 2019 14:06:09 +0000
+Received: from mailhost.synopsys.com (dc2-mailhost2.synopsys.com
+ [10.12.135.162])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 58053C03AD;
- Thu, 29 Aug 2019 14:00:46 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 23945C03A5;
+ Thu, 29 Aug 2019 14:06:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1567087246; bh=rCptWp0xdou8NoY8S4W0EyKjcLsvKbN1bUGDHNhvVCQ=;
+ t=1567087568; bh=qGeCbyiA0vw0RMQwU9Wfe7tWiDvDlI1yeXrp7Gjw/xU=;
  h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=MMr5uGt0EbUmjghl2Ddm/adn2Rq/T9yEA3HqN1yXQkXu7yGb8h4IFbN9pZLubhr/R
- X0sGG9cLw7EMlI6jjHc2vRY4FU24rTMa4i4bQT86AQ6Zv/3+jlI9gpQkSpYg8pmLI2
- bGlpMZKKXH91lZ165cJNc+zhi3a+WMvi9iP+qh/+JmJwws8zAjXI8N6qmlO1ZMnj3+
- LFkeid5tcwky1WF4crULD7SBBGb+n6eXG3myIiU4bA+nS6sWnEWLL+d91LBuk82qvx
- 4vcjnEF2enGYQHqpSNGvPijx8GlFqKd/wXm588YWsa0h1v4RssecwksD1xhgfmgz7p
- OKh/tdmsgfETg==
-Received: from us01wehtc1.internal.synopsys.com
- (us01wehtc1-vip.internal.synopsys.com [10.12.239.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ b=WS8pZLwoRkL4NoUDpXtSSDE78M9YPIk0LwSPyI4v9sKA6XE33N+9rhmaGnOVetojh
+ tIzcDXxXoMNGHdnIQ0wTINjA4uezW4v1AN/HWtLygdDIPHiIZBKqIOktkGuKl/dXPf
+ 5wEJbWJDzyui550+VFqNZ9X1mJH+Moi5QPwl+h3Zt6bgcG1W0K9w/tK3Xl3ZssktVN
+ +YYAUt0faDdF7Fnyd953Dmb1CeNlvi4uFJ+kVmiozywLFcft3iZZeRgp82yH/l5TTS
+ oXMy6hehKWfXOW15hnhETT6OyclXpON6/uUjJKES2NzwpSpS84bvzcZdNvCWmD/6G3
+ a9qXy9mPMLgYg==
+Received: from US01WXQAHTC1.internal.synopsys.com
+ (us01wxqahtc1.internal.synopsys.com [10.12.238.230])
+ (using TLSv1.2 with cipher AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id 23D32A005A;
- Thu, 29 Aug 2019 14:00:46 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 934F3A0091;
+ Thu, 29 Aug 2019 14:06:02 +0000 (UTC)
 Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
- us01wehtc1.internal.synopsys.com (10.12.239.231) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Thu, 29 Aug 2019 07:00:45 -0700
-Received: from NAM05-BY2-obe.outbound.protection.outlook.com (10.13.134.195)
+ US01WXQAHTC1.internal.synopsys.com (10.12.238.230) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Thu, 29 Aug 2019 07:06:01 -0700
+Received: from NAM01-SN1-obe.outbound.protection.outlook.com (10.13.134.195)
  by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Thu, 29 Aug 2019 07:00:45 -0700
+ 14.3.408.0; Thu, 29 Aug 2019 07:06:02 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Mbk3U70azJYppO459HJg9ZoeZ/up50EctgeWJ1hjPqalfRkI1D65xqSeG6vi5l91QSpxYcovhyIrOhEZzDG+awDx28k97FPQ0pYtYCaLcjxp8YaXSDqO85V+uYYhTkWkfCo6mQswfgWXwt1ZSGrbUMx4hcDMKk57fh5bmohoenzJgIpcjT1ypxoXugThDM4KLp+avzXN0G43D4UWWliBTJ6BMe7O7NoQgRr6wwp13/MMjJChkOWliOUHS0CZrZRQ3X0YeuQTOXeyKBeZq9gZoeUK+5dCfZLNZ8wLKPhX4RWFBImHKy37iPZ7TMwjDbgkA+OuAcEoemGh/sIwOR8wpA==
+ b=b7FKMWx8yCSKdVhnTXoTwn1LCmu1K9tG68ud8Y1smf5cjOiOBzMisHMp6Sw8aocB9JNKaltnIFSqf3eHZcAeHBudTXWB2cDCSoHwKCrNAUxHwgLj1EikaBXtuGlsW3lk79hOIAMHGWnjFb0AGX8tFVZ+uqIk8FVUT+i46JOU5Hjdz/5VeCW8jLIRRTh/M7r0Cb/AM7MeJSFk3Uqiz5nbwpH8M9F3fIuZofhgW2Od2fzaBosSRH2syQXBAOB0uHPHNQaQyMn82pxNg+JqF3swWPXvSi5DWX2ZOuHkCFkgyowZ9OK5+cfLF98JCyL5a0iqcXIgL3Rdvp1WXmKLqoeRuw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5OfwU6Fw66gnKEN3nT8jimXwGcR4QLS/Qf5R8n9Up9Q=;
- b=LgRAYVwK1ztKmpqCzMds0QxY9sg3yA1l9bVYxncS5ouM9M79XTVHl9kZ1A8SJPxnZ5V6+JiN/JqbOlj/T1+KtK4+MMqy8ARYL/4mJ6UlR0wzTAMmMT7L1HHFp891cLWioJ+l0gFy+Nu3l/CuOf1c492M3ekLuJprH/G4SP+EsGMH+/GVbj4vrDsL8FvGBTeJLSobOKsZMtNfS2x6b9qEoDmTFbq41VhdTaU4lyD8DSk17X72PuWGuiPHVrI4NU1VOKvAfRqyJiJi4OHY9vEQL1IEGC2rETMXOZLXm7YrO1yarDfWQ0qn1Y78mdJCa6XYQZU2gr0ilE9oRiudlKDciA==
+ bh=GuYJVvTkFQcD6HgAAhIwpcR3yXEnaMkfvFkLW2t2+8E=;
+ b=B3XZ1PBmY7AwRHRQzcJOWQG3hcCEFKVzUXyoNciDPNj1DkkzZd9663QUDq1goS+6B7Q0/AvuyN8bFs2jW5dG4hX0ndyk3zEXtNxZb1xs8L1N9EV6KdR0l3PPSctxKPP2NYVsT7msG54mqKXloznyH/aS/dy8eUV0wr89EZl4zBtwLdx9sUJlE+3z18sTxfDtgBjEorJMnRQfJusRZPBcKaaP7CDnhaNeocX8tn3lH9Su14cklLQiGWg1F/6VY/goMGkEVe2MwkghOAT/kdiuAWc+o1AbLTb3UpgSLWXf4jMSfQ80VPxW0ZZRM2koRRfx2yLAzh2CYtgailT0b3siyQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
  dkim=pass header.d=synopsys.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5OfwU6Fw66gnKEN3nT8jimXwGcR4QLS/Qf5R8n9Up9Q=;
- b=aCbbriIPv5tcrABTxaugTsXdYNqjesZTxZAgHQaUKAdFp0A2KRUYLjH6ReuxGpiGjn+0HDfjyfQo0MFvqXbwOG9QAPs5cApBL3J+qrv3mtCRY4CVQQIh3tQHTSpMoH921/dCHyvmNqnNdIGigsxwR78TBoP/Puo/IqNLfnK4BX4=
+ bh=GuYJVvTkFQcD6HgAAhIwpcR3yXEnaMkfvFkLW2t2+8E=;
+ b=Wi2qBgen3UE/nLYjsbSPBt4VqLMVuUOkxTeev2OtzGJJ1DKmk8H1BkoMXmIY2Cw1+z38V5MUkFzl+YXINu+cdG/YQqKDSB1rVmm0ydqKoepYnDjH6ps61PznK5hJV96fu+Ul0p87bWSJozpKE9pkNQHXrBtEeZJDH2BKRpDJRxY=
 Received: from SN6PR12MB2655.namprd12.prod.outlook.com (52.135.103.20) by
- SN6PR12MB2815.namprd12.prod.outlook.com (52.135.107.152) with Microsoft SMTP
+ SN6PR12MB2734.namprd12.prod.outlook.com (52.135.107.25) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2199.19; Thu, 29 Aug 2019 14:00:44 +0000
+ 15.20.2220.18; Thu, 29 Aug 2019 14:06:00 +0000
 Received: from SN6PR12MB2655.namprd12.prod.outlook.com
  ([fe80::89a7:a50:147b:52c6]) by SN6PR12MB2655.namprd12.prod.outlook.com
  ([fe80::89a7:a50:147b:52c6%4]) with mapi id 15.20.2199.021; Thu, 29 Aug 2019
- 14:00:44 +0000
+ 14:06:00 +0000
 From: Vitor Soares <Vitor.Soares@synopsys.com>
 To: Boris Brezillon <boris.brezillon@collabora.com>,
  Vitor Soares <Vitor.Soares@synopsys.com>
-Subject: RE: [PATCH 2/4] i3c: master: Check if devices have i3c_dev_boardinfo
- on i3c_master_add_i3c_dev_locked()
-Thread-Topic: [PATCH 2/4] i3c: master: Check if devices have i3c_dev_boardinfo
- on i3c_master_add_i3c_dev_locked()
-Thread-Index: AQHVXlJtbJoJFO7ydka+l2zwcEQXe6cR8PSAgAA0rSA=
-Date: Thu, 29 Aug 2019 14:00:44 +0000
-Message-ID: <SN6PR12MB265551F73B9B516CACB5B807AEA20@SN6PR12MB2655.namprd12.prod.outlook.com>
+Subject: RE: [PATCH 3/4] dt-bindings: i3c: Make 'assigned-address' valid if
+ static address != 0
+Thread-Topic: [PATCH 3/4] dt-bindings: i3c: Make 'assigned-address' valid if
+ static address != 0
+Thread-Index: AQHVXlJtqpSoyJg8pkCEOIHWVr8BrqcR8tIAgAA02zA=
+Date: Thu, 29 Aug 2019 14:06:00 +0000
+Message-ID: <SN6PR12MB2655528456BB8E6661A5F962AEA20@SN6PR12MB2655.namprd12.prod.outlook.com>
 References: <cover.1567071213.git.vitor.soares@synopsys.com>
- <3e21481ddf53ea58f5899df6ec542b79b8cbcd68.1567071213.git.vitor.soares@synopsys.com>
- <20190829124457.3a750932@collabora.com>
-In-Reply-To: <20190829124457.3a750932@collabora.com>
+ <9d69c83c7193e377bbc77bea7f1812fc17dafaee.1567071213.git.vitor.soares@synopsys.com>
+ <20190829125138.4b36b8f6@collabora.com>
+In-Reply-To: <20190829125138.4b36b8f6@collabora.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 x-dg-ref: =?us-ascii?Q?PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNcc29hcmVzXGFw?=
  =?us-ascii?Q?cGRhdGFccm9hbWluZ1wwOWQ4NDliNi0zMmQzLTRhNDAtODVlZS02Yjg0YmEy?=
- =?us-ascii?Q?OWUzNWJcbXNnc1xtc2ctNjFmMTUwZDctY2E2NS0xMWU5LTgyNTQtYjU5ZDc5?=
- =?us-ascii?Q?N2QzNzhiXGFtZS10ZXN0XDYxZjE1MGQ4LWNhNjUtMTFlOS04MjU0LWI1OWQ3?=
- =?us-ascii?Q?OTdkMzc4YmJvZHkudHh0IiBzej0iMjk1NyIgdD0iMTMyMTE1NjA4NDE5MjA0?=
- =?us-ascii?Q?Njc0IiBoPSJnc3BpUzBHcHp4aGNDc3o2T0dGZVBmc0NWa0U9IiBpZD0iIiBi?=
- =?us-ascii?Q?bD0iMCIgYm89IjEiIGNpPSJjQUFBQUVSSFUxUlNSVUZOQ2dVQUFCUUpBQUJD?=
- =?us-ascii?Q?Zmh3bGNsN1ZBV0JwQjVVWGZJSWlZR2tIbFJkOGdpSU9BQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?OWUzNWJcbXNnc1xtc2ctMWU5M2NlMzctY2E2Ni0xMWU5LTgyNTQtYjU5ZDc5?=
+ =?us-ascii?Q?N2QzNzhiXGFtZS10ZXN0XDFlOTNjZTM5LWNhNjYtMTFlOS04MjU0LWI1OWQ3?=
+ =?us-ascii?Q?OTdkMzc4YmJvZHkudHh0IiBzej0iMjc3NiIgdD0iMTMyMTE1NjExNTcwMTcx?=
+ =?us-ascii?Q?ODU0IiBoPSJzdlJqWEk3aUVYcko3aStMUXk1WkZreWNROUE9IiBpZD0iIiBi?=
+ =?us-ascii?Q?bD0iMCIgYm89IjEiIGNpPSJjQUFBQUVSSFUxUlNSVUZOQ2dVQUFCUUpBQURP?=
+ =?us-ascii?Q?Yit6Z2NsN1ZBVlVmU2RYb3hLYkNWUjlKMWVqRXBzSU9BQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBSEFBQUFDa0NBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?RUFBUUFCQUFBQVZ6ZGhHZ0FBQUFBQUFBQUFBQUFBQUo0QUFBQm1BR2tBYmdC?=
  =?us-ascii?Q?aEFHNEFZd0JsQUY4QWNBQnNBR0VBYmdCdUFHa0FiZ0JuQUY4QWR3QmhBSFFB?=
@@ -189,36 +189,36 @@ authentication-results: spf=none (sender IP is )
  smtp.mailfrom=soares@synopsys.com; 
 x-originating-ip: [83.174.63.141]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 1c21017f-9d54-430f-2037-08d72c89490d
+x-ms-office365-filtering-correlation-id: 54466226-9e80-4c7c-0163-08d72c8a05ac
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:SN6PR12MB2815; 
-x-ms-traffictypediagnostic: SN6PR12MB2815:
+ SRVR:SN6PR12MB2734; 
+x-ms-traffictypediagnostic: SN6PR12MB2734:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <SN6PR12MB28153556F0FEC8700DBFFC6AAEA20@SN6PR12MB2815.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-microsoft-antispam-prvs: <SN6PR12MB27346AB7DE40FD66197AF480AEA20@SN6PR12MB2734.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
 x-forefront-prvs: 0144B30E41
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(346002)(376002)(396003)(366004)(136003)(39860400002)(189003)(199004)(71190400001)(71200400001)(8936002)(110136005)(54906003)(5660300002)(186003)(7736002)(478600001)(256004)(5024004)(14444005)(66946007)(76116006)(8676002)(66476007)(66556008)(64756008)(6506007)(66446008)(102836004)(33656002)(53936002)(107886003)(52536014)(316002)(81166006)(81156014)(26005)(6246003)(11346002)(9686003)(6436002)(76176011)(4326008)(305945005)(476003)(99286004)(229853002)(6636002)(14454004)(2906002)(486006)(55016002)(66066001)(74316002)(7696005)(25786009)(446003)(86362001)(6116002)(3846002)(70780200001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:SN6PR12MB2815;
+ SFS:(10019020)(376002)(39860400002)(366004)(346002)(396003)(136003)(199004)(189003)(14444005)(478600001)(316002)(4326008)(2906002)(6636002)(8936002)(81166006)(81156014)(8676002)(305945005)(74316002)(25786009)(6246003)(107886003)(7736002)(6436002)(14454004)(99286004)(55016002)(53936002)(110136005)(54906003)(9686003)(52536014)(7696005)(76176011)(71190400001)(71200400001)(102836004)(26005)(6506007)(86362001)(33656002)(476003)(486006)(446003)(11346002)(66946007)(76116006)(66446008)(64756008)(66556008)(66476007)(186003)(66066001)(5660300002)(229853002)(3846002)(256004)(6116002);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:SN6PR12MB2734;
  H:SN6PR12MB2655.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
+ PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: synopsys.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: G/pkRoUUis86N9kKXbG87L0fWPOxECmS5nfnrfaPv7YKl+ntVK2PaZwbZ5N3K6H/O6zAYIFO2n2Bdz2efc1SzvBkraN0K4/17DgyBUCuxYXc/u0YuJPeb3V+HEVTUk+40iKJ+tXdLS4ydDInBbE/xuPxUlZqOAG9TcJMc/0eQkzk4YZwl8bpC0VEuV6g5XbsVbUsAvBRwsBDZ6kEtGOwa1H6Ra1rxbjoZ0F+eAW/ahbTFrtfDm4inXopLLk4oE2z/v86wT0Rp9PfwL2z3VXmPVmOxNZgJO6HEtjrnBVFGOqi428Z5frrgW2vQUF/6LHpwXecMI3kRylchulSlYOL1o8Vs7m7gsGYwxmokbOaM2GVYI3wam9QNXzI+OC44zgooG1w6pFwLYteIxZ0MJEenymy2iMVNBX0XULT2R68MZM=
+x-microsoft-antispam-message-info: YBUP0+4SddD5JQIzFH71iqk+xq2vxTw9S4Z7+LL0zko0wNXErpNa4SXslFXZgovwTXWv/880KKqkZWpFgprz7TQeJjHpaPa6SP0FKaAzlaaSBqG52g1n5PZSsWrxyhePhLSStnldL9wkwCxHVe2zHeBW9DiZLKlY6EhWigua86h1y5zO/x/BCB+O6tUutK1RarAbBVFkJ9NsIiQ0WAjik33YgOFUO3sk8m2t7i5fgTz8QZ9REWn0JNougAlGf7eMl5oP7Ccusr0Oq3lIbN/DrwAnZpKHQVxfzBSpFnre1xcuWRL1w8LzJqntZEHnUMuZgFC+KsxDLsjF2aUxJHA+9cHYxEqALG/OVmQP+4tSR3y/rDmFbd2fL9K4/qutinjIaQpeMayWwC8Uzg1mEJqP5vNxJENeXR8hILvyQ+iLurU=
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1c21017f-9d54-430f-2037-08d72c89490d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Aug 2019 14:00:44.3023 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 54466226-9e80-4c7c-0163-08d72c8a05ac
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Aug 2019 14:06:00.6793 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: VWw0dl9H8IM1X9FUvXm+KaFmrCd2+XtM2lAfM1iSiWL0JEsqSpubLO7LbK2D4QqOk24mnsNpy31FPt6J58QMFw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR12MB2815
+X-MS-Exchange-CrossTenant-userprincipalname: JHQ6MeVk+bpGWFYkzqIa3EoZRic5KkmmPilwPrUqjvZbCG7u8lnuNURSRHc4SVNgrdC8KeuJbbI7IJ3mlU64tg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR12MB2734
 X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_070046_575666_347DB7DA 
-X-CRM114-Status: GOOD (  21.01  )
+X-CRM114-CacheID: sfid-20190829_070608_526180_C079BA58 
+X-CRM114-Status: GOOD (  19.41  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -245,84 +245,82 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 Hi Boris,
 
 From: Boris Brezillon <boris.brezillon@collabora.com>
-Date: Thu, Aug 29, 2019 at 11:44:57
+Date: Thu, Aug 29, 2019 at 11:51:38
 
-> On Thu, 29 Aug 2019 12:19:33 +0200
+> On Thu, 29 Aug 2019 12:19:34 +0200
 > Vitor Soares <Vitor.Soares@synopsys.com> wrote:
 > 
-> > The I3C devices described in DT might not be attached to the master which
-> > doesn't allow to assign a specific dynamic address.
-> 
-> I remember testing this when developing the framework, so, unless
-> another patch regressed it, it should already work. I suspect patch 1
-> is actually the regressing this use case.
-
-For today it doesn't address the case where the device is described with 
-static address = 0, which isn't attached to the controller.
-With this change both cases are covered.
-
-> 
+> > The I3C devices without a static address can require a specific dynamic
+> > address for priority reasons.
 > > 
-> > This patch check if a device has i3c_dev_boardinfo and add it to
-> > i3c_dev_desc structure. In this conditions, the framework will try to
-> > assign the i3c_dev_boardinfo->init_dyn_addr even if stactic address = 0.
+> > Let's update the binding document to make the 'assigned-address' property
+> > valid if static address != 0 and add an example with this use case.
+> 
+>            ^ you mean static address == 0, right?
+
+Indeed.
+
+> 
+> Yes, it makes sense to support that case and do our best to assign the
+> requested address after DAA has taken place by explicitly executing
+> SETDA.
+> 
 > > 
 > > Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
 > > ---
-> >  drivers/i3c/master.c | 22 ++++++++++++++++++++++
-> >  1 file changed, 22 insertions(+)
+> >  Documentation/devicetree/bindings/i3c/i3c.txt | 13 ++++++++++---
+> >  1 file changed, 10 insertions(+), 3 deletions(-)
 > > 
-> > diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> > index 4d29e1f..85fbda6 100644
-> > --- a/drivers/i3c/master.c
-> > +++ b/drivers/i3c/master.c
-> > @@ -1795,6 +1795,23 @@ i3c_master_search_i3c_dev_duplicate(struct i3c_dev_desc *refdev)
-> >  	return NULL;
-> >  }
+> > diff --git a/Documentation/devicetree/bindings/i3c/i3c.txt b/Documentation/devicetree/bindings/i3c/i3c.txt
+> > index ab729a0..c851e75 100644
+> > --- a/Documentation/devicetree/bindings/i3c/i3c.txt
+> > +++ b/Documentation/devicetree/bindings/i3c/i3c.txt
+> > @@ -98,9 +98,7 @@ Required properties
 > >  
-> > +static struct i3c_dev_boardinfo *
-> > +i3c_master_search_i3c_boardinfo(struct i3c_dev_desc *dev)
-> > +{
-> > +	struct i3c_master_controller *master = i3c_dev_get_master(dev);
-> > +	struct i3c_dev_boardinfo *boardinfo;
-> > +
-> > +	if (dev->boardinfo)
-> > +		return NULL;
-> > +
-> > +	list_for_each_entry(boardinfo, &master->boardinfo.i3c, node) {
-> > +		if (dev->info.pid == boardinfo->pid)
-> > +			return boardinfo;
-> > +	}
-> > +
-> > +	return NULL;
-> > +}
-> > +
-> >  /**
-> >   * i3c_master_add_i3c_dev_locked() - add an I3C slave to the bus
-> >   * @master: master used to send frames on the bus
-> > @@ -1816,6 +1833,7 @@ int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
-> >  {
-> >  	struct i3c_device_info info = { .dyn_addr = addr };
-> >  	struct i3c_dev_desc *newdev, *olddev;
-> > +	struct i3c_dev_boardinfo *boardinfo;
-> >  	u8 old_dyn_addr = addr, expected_dyn_addr;
-> >  	struct i3c_ibi_setup ibireq = { };
-> >  	bool enable_ibi = false;
-> > @@ -1875,6 +1893,10 @@ int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
-> >  	if (ret)
-> >  		goto err_detach_dev;
+> >  Optional properties
+> >  -------------------
+> > -- assigned-address: dynamic address to be assigned to this device. This
+> > -		    property is only valid if the I3C device has a static
+> > -		    address (first cell of the reg property != 0).
+> > +- assigned-address: dynamic address to be assigned to this device.
+> 
+> We should probably mention that we don't provide strong guarantees
+> here. We will try to assign this dynamic address to the device, but if
+> something fails (like another device owning the address and refusing to
+> give it up), the actual dynamic address will be different.
+> This clarification can be done in a separate patch.
+
+So, another patch on top of this one explaining that, right?
+
+I would suggest to use a dynamic address, like 0x40 (mid priority), on 
+ENTDAA so lowers addresses (High Priority) can be used in DT or another 
+method.
+
+What do you think about this? 
+
+> 
 > >  
-> > +	boardinfo = i3c_master_search_i3c_boardinfo(newdev);
-> > +	if (boardinfo)
-> > +		newdev->boardinfo = boardinfo;
+> >  
+> >  Example:
+> > @@ -129,6 +127,15 @@ Example:
+> >  
+> >  		/*
+> >  		 * I3C device without a static I2C address but requiring
+> > +		 * specific dynamic address.
+> > +		 */
+> > +		sensor@0,39200154004 {
+> > +			reg = <0x0 0x6072 0x303904d2>;
+> > +			assigned-address = <0xb>;
+> > +		};
 > > +
-> >  	/*
-> >  	 * Depending on our previous state, the expected dynamic address might
-> >  	 * differ:
+> > +		/*
+> > +		 * I3C device without a static I2C address but requiring
+> >  		 * resources described in the DT.
+> >  		 */
+> >  		sensor@0,39200154004 {
 
 Best regards,
 Vitor Soares
-
 
 _______________________________________________
 linux-i3c mailing list
