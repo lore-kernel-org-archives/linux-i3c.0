@@ -2,21 +2,21 @@ Return-Path: <SRS0=0Lh8=WZ=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-8.3 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_2
-	autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-2.3 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_2 autolearn=no autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 15221C3A5A3
-	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 14:35:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 44BC5C3A59F
+	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 14:39:35 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id DFC7F23407
-	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 14:35:28 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 17F4A22CED
+	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2019 14:39:34 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="GDkD3kZy"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org DFC7F23407
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="IJLemivG"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 17F4A22CED
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=collabora.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -25,42 +25,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OimMU/6w3My/u1cTToV34YAIPInAxn7Q2UtNZUNw+NE=; b=GDkD3kZyb31ayW
-	wbeLaT//+MwOJngATXMz6vvMdURsV2elieSk4xs6SNdNgVinbGa3gv9Kc3St5E4xu2MlY/K0Y3X17
-	g5flT8ijMUQvU/F/902YnafDNcpwcp1Raac/f0al40A78HNKx20lh7gSj+5kidQINu/rSbXKW5ED6
-	ieQG1o+zI4TF7X2H3uEuB2nKNzKHcSVp6Z5ChB6gqmu6lOX32q1k5r+7Y4zl4JbTz++imqnu6ruDH
-	vGaOK0lpLHVlvRcNLRcKrdra3lr3zUBgmvM4N1IfxM+2gei4u3Y2aFOX67PnnfhyOejZPkqURv+GP
-	rLRD0a6tszJ07f57bcBQ==;
+	List-Owner; bh=kyWoAC8szGy8eAbTtsz9TmBbgY5zdbhd638vqXsEG28=; b=IJLemivGt+b8/x
+	5JjTv7M4dFbbuZc66A+fSNZVuXpDA/z/rfacTYMCVsYVdGQUQTsDKatvavIRlzf5EtCOUVYl8R7hb
+	oVPPKjalAOGnLpUVMlNpgcaxyq9pEoNkxYXukBkrrG30aCGg9fcFRfk9rgvy0rdfLoalYv1pGaPTe
+	lnYkUtRtku/i5u5G0jNHzActJzNVd8nV0GLdjl4BxDfVeJ+R72aksoo8uUo8KPwfH20gy48VJ01Jh
+	1dGj7i9vLBjYqKWUYcHLFdjaKqbOKzVV8YohgdzrmZHfgzlphRNP4BLijkQhMRlSR7RDZtuQejI9G
+	niYN42xa+YEUMJ19+50g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3LWK-0007pR-DC; Thu, 29 Aug 2019 14:35:28 +0000
+	id 1i3LaH-0008A8-I4; Thu, 29 Aug 2019 14:39:33 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3LWH-0007p3-MR
- for linux-i3c@lists.infradead.org; Thu, 29 Aug 2019 14:35:27 +0000
+ id 1i3La7-000880-AT
+ for linux-i3c@lists.infradead.org; Thu, 29 Aug 2019 14:39:31 +0000
 Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
  (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id D6BC028D56B;
- Thu, 29 Aug 2019 15:35:22 +0100 (BST)
-Date: Thu, 29 Aug 2019 16:35:20 +0200
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 7D27628A16C;
+ Thu, 29 Aug 2019 15:39:21 +0100 (BST)
+Date: Thu, 29 Aug 2019 16:39:18 +0200
 From: Boris Brezillon <boris.brezillon@collabora.com>
 To: Vitor Soares <Vitor.Soares@synopsys.com>
-Subject: Re: [PATCH 1/4] i3c: master: detach and free device if
- pre_assign_dyn_addr() fails
-Message-ID: <20190829163520.126d42d6@collabora.com>
-In-Reply-To: <SN6PR12MB26551F172804D039F3EAA991AEA20@SN6PR12MB2655.namprd12.prod.outlook.com>
+Subject: Re: [PATCH 2/4] i3c: master: Check if devices have
+ i3c_dev_boardinfo on i3c_master_add_i3c_dev_locked()
+Message-ID: <20190829163918.571fd0d8@collabora.com>
+In-Reply-To: <SN6PR12MB265551F73B9B516CACB5B807AEA20@SN6PR12MB2655.namprd12.prod.outlook.com>
 References: <cover.1567071213.git.vitor.soares@synopsys.com>
- <e26948eaaf765f683d8fe0618a31a98e2ecc0e65.1567071213.git.vitor.soares@synopsys.com>
- <20190829124115.482cd8ec@collabora.com>
- <SN6PR12MB26551F172804D039F3EAA991AEA20@SN6PR12MB2655.namprd12.prod.outlook.com>
+ <3e21481ddf53ea58f5899df6ec542b79b8cbcd68.1567071213.git.vitor.soares@synopsys.com>
+ <20190829124457.3a750932@collabora.com>
+ <SN6PR12MB265551F73B9B516CACB5B807AEA20@SN6PR12MB2655.namprd12.prod.outlook.com>
 Organization: Collabora
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_073526_003163_CD4923AB 
-X-CRM114-Status: GOOD (  31.46  )
+X-CRM114-CacheID: sfid-20190829_073924_338446_60C5E89F 
+X-CRM114-Status: GOOD (  14.87  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,174 +77,36 @@ Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
  "Joao.Pinto@synopsys.com" <Joao.Pinto@synopsys.com>,
  "bbrezillon@kernel.org" <bbrezillon@kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Przemyslaw Gaj <pgaj@cadence.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
  "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, 29 Aug 2019 13:53:24 +0000
+On Thu, 29 Aug 2019 14:00:44 +0000
 Vitor Soares <Vitor.Soares@synopsys.com> wrote:
 
 > Hi Boris,
 > 
 > From: Boris Brezillon <boris.brezillon@collabora.com>
-> Date: Thu, Aug 29, 2019 at 11:41:15
+> Date: Thu, Aug 29, 2019 at 11:44:57
 > 
-> > +Przemek
-> > 
-> > Please try to Cc active I3C contributors so they get a chance to
-> > comment on your patches.  
-> 
-> I can do that next time.
-> 
-> > 
-> > On Thu, 29 Aug 2019 12:19:32 +0200
+> > On Thu, 29 Aug 2019 12:19:33 +0200
 > > Vitor Soares <Vitor.Soares@synopsys.com> wrote:
 > >   
-> > > On pre_assing_dyn_addr() the devices that fail:
-> > >   i3c_master_setdasa_locked()
-> > >   i3c_master_reattach_i3c_dev()
-> > >   i3c_master_retrieve_dev_info()
-> > > 
-> > > are kept in memory and master->bus.devs list. This makes the i3c devices
-> > > without a dynamic address are sent on DEFSLVS CCC command. Fix this by
-> > > detaching and freeing the devices that fail on pre_assign_dyn_addr().  
+> > > The I3C devices described in DT might not be attached to the master which
+> > > doesn't allow to assign a specific dynamic address.  
 > > 
-> > I don't think removing those entries is a good strategy, as one might
-> > want to try to use a different dynamic address if the requested one
-> > is not available.  
+> > I remember testing this when developing the framework, so, unless
+> > another patch regressed it, it should already work. I suspect patch 1
+> > is actually the regressing this use case.  
 > 
-> Do you mean same 'assigned-address' attribute in DT?
+> For today it doesn't address the case where the device is described with 
+> static address = 0, which isn't attached to the controller.
 
-Yes, or say it's another device that got the address we want and this
-device doesn't want to release the address (I'm assuming the !SA case).
-
-> 
-> If so, it is checked here:
-> 
-> static int i3c_master_bus_init(struct i3c_master_controller *master)
-> ...
-> 	list_for_each_entry(i3cboardinfo, &master->boardinfo.i3c, node) {
-> 		struct i3c_device_info info = {
-> 			.static_addr = i3cboardinfo->static_addr,
-> 		};
-> 
-> 		if (i3cboardinfo->init_dyn_addr) {
-> 			status = i3c_bus_get_addr_slot_status(&master->bus,
-> 			^
-> 						i3cboardinfo->init_dyn_addr);
-> 			if (status != I3C_ADDR_SLOT_FREE) {
-> 				ret = -EBUSY;
-> 				goto err_detach_devs;
-> 			}
-> 		}
-> 
-> 		i3cdev = i3c_master_alloc_i3c_dev(master, &info);
-> 		if (IS_ERR(i3cdev)) {
-> 			ret = PTR_ERR(i3cdev);
-> 			goto err_detach_devs;
-> 		}
-> 
-> 		i3cdev->boardinfo = i3cboardinfo;
-> 
-> 		ret = i3c_master_attach_i3c_dev(master, i3cdev);
-> 		if (ret) {
-> 			i3c_master_free_i3c_dev(i3cdev);
-> 			goto err_detach_devs;
-> 		}
-> 	}
-> ...
-> 
-> and later if it fails i3c_master_pre_assign_dyn_addr(), the device can 
-> participate in Enter Dynamic Address Assignment process.
-> I may need to check the boardinfo->init_dyn_addr status on 
-> i3c_master_add_i3c_dev_locked before i3c_master_setnewda_locked().
-
-I need to double check but I thought we were already handling that case
-properly.
-
-> 
-> > Why not simply skipping entries that have ->dyn_addr
-> > set to 0 when preparing a DEFSLVS frame  
-> 
-> I considered that solution too but if the device isn't enumerated why 
-> should it be attached and kept in memory?
-
-Might be a device that supports HJ, and in that case we might want the
-controller to reserve a slot in its device table for that device.
-Anyway, it doesn't hurt to have it around as long as we don't pass the
-device through DEFSLVS if it doesn't have a dynamic address. I really
-prefer to keep the logic unchanged and fix it if it needs to be fixed.
-
-> Anyway we have i3c_boardinfo 
-> with DT information.
-> 
-> >   
-> > > 
-> > > Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
-> > > ---
-> > >  drivers/i3c/master.c | 11 ++++++++---
-> > >  1 file changed, 8 insertions(+), 3 deletions(-)
-> > > 
-> > > diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> > > index 5f4bd52..4d29e1f 100644
-> > > --- a/drivers/i3c/master.c
-> > > +++ b/drivers/i3c/master.c
-> > > @@ -1438,7 +1438,7 @@ static void i3c_master_pre_assign_dyn_addr(struct i3c_dev_desc *dev)
-> > >  	ret = i3c_master_setdasa_locked(master, dev->info.static_addr,
-> > >  					dev->boardinfo->init_dyn_addr);
-> > >  	if (ret)
-> > > -		return;
-> > > +		goto err_detach_dev;
-> > >  
-> > >  	dev->info.dyn_addr = dev->boardinfo->init_dyn_addr;
-> > >  	ret = i3c_master_reattach_i3c_dev(dev, 0);
-> > > @@ -1453,6 +1453,10 @@ static void i3c_master_pre_assign_dyn_addr(struct i3c_dev_desc *dev)
-> > >  
-> > >  err_rstdaa:
-> > >  	i3c_master_rstdaa_locked(master, dev->boardinfo->init_dyn_addr);
-> > > +
-> > > +err_detach_dev:
-> > > +	i3c_master_detach_i3c_dev(dev);
-> > > +	i3c_master_free_i3c_dev(dev);  
-> > 
-> > We certainly shouldn't detach/free the i3c_dev_desc from here. If it
-> > has to be done somewhere (which I'd like to avoid), it should be done
-> > in i3c_master_bus_init() (i3c_master_pre_assign_dyn_addr() should be
-> > converted to return an int in that case).  
-> 
-> I can change it to return an error. 
-> 
-> >   
-> > >  }
-> > >  
-> > >  static void
-> > > @@ -1647,7 +1651,7 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
-> > >  	enum i3c_addr_slot_status status;
-> > >  	struct i2c_dev_boardinfo *i2cboardinfo;
-> > >  	struct i3c_dev_boardinfo *i3cboardinfo;
-> > > -	struct i3c_dev_desc *i3cdev;
-> > > +	struct i3c_dev_desc *i3cdev, *i3ctmp;
-> > >  	struct i2c_dev_desc *i2cdev;
-> > >  	int ret;
-> > >  
-> > > @@ -1746,7 +1750,8 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
-> > >  	 * Pre-assign dynamic address and retrieve device information if
-> > >  	 * needed.
-> > >  	 */
-> > > -	i3c_bus_for_each_i3cdev(&master->bus, i3cdev)
-> > > +	list_for_each_entry_safe(i3cdev, i3ctmp, &master->bus.devs.i3c,
-> > > +				 common.node)
-> > >  		i3c_master_pre_assign_dyn_addr(i3cdev);
-> > >  
-> > >  	ret = i3c_master_do_daa(master);  
-> 
-> Thank for your feedback.
-> 
-> Best regards,
-> Vitor Soares
+Hm, I'm pretty sure I had designed the code to support that case (see
+[1]). It might be buggy, but nothing we can't fix I guess.
 
 
 _______________________________________________
