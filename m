@@ -7,18 +7,18 @@ X-Spam-Status: No, score=-6.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E3CA9C4CEC9
-	for <linux-i3c@archiver.kernel.org>; Tue, 17 Sep 2019 09:42:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 5CB86C4CEC9
+	for <linux-i3c@archiver.kernel.org>; Tue, 17 Sep 2019 10:03:56 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 7D3DE20862
-	for <linux-i3c@archiver.kernel.org>; Tue, 17 Sep 2019 09:42:25 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 2AFEC21852
+	for <linux-i3c@archiver.kernel.org>; Tue, 17 Sep 2019 10:03:56 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="ROwSwEUb";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="MY/d8HlM";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=synopsys.onmicrosoft.com header.i=@synopsys.onmicrosoft.com header.b="TBK0XvN8"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7D3DE20862
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="YFI3Ziqw";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="h6VeJ4VC";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=synopsys.onmicrosoft.com header.i=@synopsys.onmicrosoft.com header.b="lSpPhTaT"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 2AFEC21852
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -27,93 +27,97 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ByyzINsLrP77uTZtxG5015v6nTnowEn+beBXNrv8oek=; b=ROwSwEUbpr6N/y
-	s8ok4cGEBW4AKSL3UmilmJpHtDA8P7IfISLAhdoB9NW5/WwRrRoE8pekzl8NJcUDiu0bErkbKH+Ay
-	489YovswAoeCeRq7obb/xKk9phAlGf2LCFA3SlBrxDx3L/NbKoRxsi8rfNIZUErGjkukog1W17fCI
-	LevB5KbkCO8Ww3jm8TwL50cxNeRFVplJmZKW/3qQ2WhX6wOO+oadvCDwFQrKbm15fdyvE3+/SXjsX
-	ah8oHmBuBk75P9RQjrNJnajTYvvHuCyXVKYAZFTLJUytarvVG3cbJZppVRBokPCZzxSmMlSnEAQON
-	AlzPgIBZ2+r2lNoUTAbQ==;
+	List-Owner; bh=2By1sk1zTRhItuZ+JALVLLKqvQW3weVC9hFX2i5iVtw=; b=YFI3Ziqwr8riPR
+	k+jLOZw7/BLwHb+yWyj/KhKeO+gt7EZI+RvgxPsZjv1a8IR6w9CTT/EOwVqlzXCl0yqpHnDFZcLs+
+	xgcVPItCDU2LK1MegcxSGCbeLSBNi/GmdGlmJ4WeOOn+r+5J/ij2pL+akcbPy6qezDqyox8kyrE9o
+	nebkMPdH6fwhG5pXQ8RtZjJlDe37SBku0pjYMzL8Dh95BvgOTsKRGyxMNitSwDJI+zpijc3m2zvaI
+	V0iw0/ac9unrCBmNiNY9ZdKlznq6iHFXWIHHy+YD3uCwUKvEHh8Hfdv2zBEjaEHmWIfieTCs760pC
+	WX4xMGH1nNXrxjTjJEvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAA08-0007XY-94; Tue, 17 Sep 2019 09:42:24 +0000
+	id 1iAAKw-0008LP-As; Tue, 17 Sep 2019 10:03:54 +0000
 Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAA04-0007X1-HK
- for linux-i3c@lists.infradead.org; Tue, 17 Sep 2019 09:42:22 +0000
+ id 1iAAKQ-0008Bi-Bb
+ for linux-i3c@lists.infradead.org; Tue, 17 Sep 2019 10:03:33 +0000
 Received: from mailhost.synopsys.com (badc-mailhost1.synopsys.com
  [10.192.0.17])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D8B7EC0E20;
- Tue, 17 Sep 2019 09:42:17 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 7135AC0E0B;
+ Tue, 17 Sep 2019 10:03:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1568713338; bh=KkrEd5rUDdBh4ubpGkXg1RdoFwL5z1mrFl6FU99uM0I=;
+ t=1568714598; bh=surh/H/yvKorjvOXHP4YiDr62kVl/pQn+BviV+7LozU=;
  h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=MY/d8HlMqRgbZa2TlpC+GklFb5zci9xAmy7fp1I7AnVgw2N6ZYb3jDj7694zltgi0
- 3hgBBABVld6GKUdfRSAlxCBtC3CqBEREbYg1vOQ71EbDOvpXYfdRACZha3Du75OFWL
- LMn6NVPpPCGODXvRBv0yUgIOpuf22M6+GCd6NBS/qKWgaDxheKTDVihIJYi6xf/CNa
- BPuH+Gr6dwm1NUVKQP4yvF/BS1UiFcmv00WlSuHHryf2XeMeGGQvMXlqPccjf/BbFM
- 37fCG1DH6yKCo/XPz7QsDhoUbBgnc6b1MpnO9a2pBIdb7gSHYAfwx0Y/Ujs84e2ma8
- IJHsJ9rxcVBbg==
+ b=h6VeJ4VCRRSdkGIXTQMlwVauYr+ksU1TFPzC9zkFfeY4HzIj852RrZs8IaxdR/80l
+ mh0dClalmlOmoGOcSh4mRuR9Zragx8cVHaBeK4cjIU7goIVturiYpA0dhO73sV6mRg
+ mlHyDNOPwQLCOXgUU4PtaUvhQcmBYH1skIEY/UcK4Tpml67rnCwp1II8SiTBOTUXL9
+ lP0Hbm1A932XXBhsgYPzbSogylYmbPU3aJot8GfrTKr3yoNYOyCFh2cJk249tCphK/
+ mjfZMY0ULMvW8Qi4zHnvhxJYuIKXZqqA0inIKbNIk8MEgT5zdJqKVtnenA5cm8OxYD
+ XZ5JEKj82TsCw==
 Received: from US01WEHTC3.internal.synopsys.com
  (us01wehtc3.internal.synopsys.com [10.15.84.232])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
  (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id B1527A00B1;
- Tue, 17 Sep 2019 09:42:17 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id D566FA005A;
+ Tue, 17 Sep 2019 10:03:08 +0000 (UTC)
 Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
  US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 17 Sep 2019 02:42:10 -0700
-Received: from NAM03-DM3-obe.outbound.protection.outlook.com (10.13.134.195)
+ (TLS) id 14.3.408.0; Tue, 17 Sep 2019 03:03:07 -0700
+Received: from NAM04-SN1-obe.outbound.protection.outlook.com (10.13.134.195)
  by mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Tue, 17 Sep 2019 02:42:10 -0700
+ 14.3.408.0; Tue, 17 Sep 2019 03:03:07 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=nK6XdHzcRz0JegvQLhXH6DpLcBn7Tu4XdIkZKDELICehwdIdrWNEx+VQ2pbXSIeu4AwkmCmnI8z0YgeHswOtcdk8ihy+h/XJYpVFHeYc3RsFsYik8OO4wjOV5xozgYasanLCGHj1z7JZIVAJxdi2nykYllMd7Ovu7QDcrsH985B50WWtFMGGRdPbd8WXGij+CnpdIc4FvJxxOeVEWbn+8eu5OcKyo5i3zsRAHRZJBfXM6+YQNJGc8OmthZ8csvdA8mVV/mO81D+5gOOP7X+vrC6QTx7qSY8wuzklssdcJy69FQP73TtNf5aZunBN5G1uli0U7gckwwY++YvgyL4Gcw==
+ b=hzGahz6A38vRA5ZYh7nhBvTOyEZNMaqTG1R6Cl6z5RF5tavM3XM1Q90y98i0TxB6kWqtLzA14qlrVmIvFYe4yOYL+FRRYDJ5N6/MfED1KfdBwwUuLIQ/j/E/xjM0PI4M595Sn2dqfFEd2Zuuf4VsoM5xVYA317TQl2ts2dYP+tPhg/Yf9AZeUXbKVKVjn2f9VirshMP/SHwrftI3RUSFkpTEKZ9nY7NDU3ykQx5nvWnCsX138GfaBuvLcExqQ+blBDjUxFj8Kf2tBKQrFSNPDfz4ilwTRuZ6GWeHUxsCE8kQ0Zp5QpNNYLwJQJKW36fKphx9RK1zu/V8xCKd68qAMA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=O7zXq4lALPPl+MdMDLZSefQBFim1u3CGB0dJ3ILdicY=;
- b=CtdQ9cxclG1CU8jxjS+RKZ6FTETWq86XafKRvHmr4rRoWnXTxz+wFwDohO0B+6R2j+qbuaJH/DX5AK7o6yc0MC3Fhl8oDb91Ft2MVFQkUcKoxVjWJb0WBHgu7gz+FYV2FykS6F9790UOBzULTF64VHX9DJXLV8Cgn8o65fKByX/sDjgoTYEFftsKm5ggPwONJpY5KPJGMy+7xGa0/6I5j4gU9YnGcxww5UJS0Pu6GWq5GIbVcmfPpshwHQ716Pf80Srmr8ayKSmMG7pXnlYwY1PqzMFbWxJNurHAuel9J+Hga3udBmDJmFJWy5H20kJwW9aGezHvXOGvGi4OzGYtNA==
+ bh=ogxdiieH+kDtDiHj5HMtKHopzvCzb0h066DZHTOxNSM=;
+ b=S+IuBL7SxCtynj6G+M8yCyUfqdS2ccaHEUL/8ztDOQirG3dFCI1HUAmGDvlX7OV96ZxP6+6QjYBO3hxu84MMmrODvl1gvox9I1zIZ/nL+pLHBLiSS3vtouC1AZACdIvOL8ZS+Mbsrsg5w6LtQo6wJpY5aZ4XUmejQEM9HXcdBVfsII6IIExA0f6yOewAAeXjMxVI2d2gy9NyQ70svPcMgwHVlV+kl9bXg3dc7lhlUru6o0/pqBtgzZfT3+mg24VOdV3Q8ClcG66ydLzgiHBimOb2J6DlQTKb8mIuPtoGtnXaIbmXuiAe8ZM+T1ky3weJzu8B2waDOvGpRCGomgwUkQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
  dkim=pass header.d=synopsys.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=O7zXq4lALPPl+MdMDLZSefQBFim1u3CGB0dJ3ILdicY=;
- b=TBK0XvN85CCcQU57M7EffwUPzG5DaTxZaiePO4eymwqV8w4U53rG2rueY9hRwVER0UGShQF+8i6kpV0npJuE2LvgqMMEGpIwD+Z0IG2u9hx5kJP67xs2z540YA2Z1EhRkN8n4Po2rTuQbTurkws+d3XF36oNMvEqpgy+PV9/XB8=
+ bh=ogxdiieH+kDtDiHj5HMtKHopzvCzb0h066DZHTOxNSM=;
+ b=lSpPhTaTzfWs3gz5NsLRlzz59BbVX12VfSge09+QLBa8svqZovAlykQJqhy3fvo0KrKYLepomf0DLdFYGotUx9HANTBbGzJXpPHC/zT40w/6EUjG/X8zl3I4g9RF8e24mJuNNsr8ePdsvMb2DkqmC0CaWbAGUKz+703kRRQR/cg=
 Received: from SN6PR12MB2655.namprd12.prod.outlook.com (52.135.103.20) by
- SN6PR12MB2767.namprd12.prod.outlook.com (52.135.107.139) with Microsoft SMTP
+ SN6PR12MB2816.namprd12.prod.outlook.com (52.135.107.153) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2263.26; Tue, 17 Sep 2019 09:42:07 +0000
+ 15.20.2263.17; Tue, 17 Sep 2019 10:02:35 +0000
 Received: from SN6PR12MB2655.namprd12.prod.outlook.com
  ([fe80::c4b9:6813:9c58:3fb9]) by SN6PR12MB2655.namprd12.prod.outlook.com
  ([fe80::c4b9:6813:9c58:3fb9%7]) with mapi id 15.20.2263.023; Tue, 17 Sep 2019
- 09:42:07 +0000
+ 10:02:35 +0000
 From: Vitor Soares <Vitor.Soares@synopsys.com>
 To: Vitor Soares <Vitor.Soares@synopsys.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
  "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>
-Subject: RE: [PATCH] i3c: master: use i3c_dev_get_master()
-Thread-Topic: [PATCH] i3c: master: use i3c_dev_get_master()
-Thread-Index: AQHVY9ofbg+C1bMU0k+qNlxSsKEUt6cvsIIA
-Date: Tue, 17 Sep 2019 09:42:07 +0000
-Message-ID: <SN6PR12MB265578DF9D15725F93D7E568AE8F0@SN6PR12MB2655.namprd12.prod.outlook.com>
-References: <a9d994b78d50a21e4eeb3a92004c56e68bb52e79.1567681102.git.vitor.soares@synopsys.com>
-In-Reply-To: <a9d994b78d50a21e4eeb3a92004c56e68bb52e79.1567681102.git.vitor.soares@synopsys.com>
+Subject: RE: [PATCH v3 1/5] i3c: master: detach/free devices fail on
+ pre_assign_dyn_addr()
+Thread-Topic: [PATCH v3 1/5] i3c: master: detach/free devices fail on
+ pre_assign_dyn_addr()
+Thread-Index: AQHVY0hlgS4HVQdOUk+p1+/PaaUrZacvt3pg
+Date: Tue, 17 Sep 2019 10:02:34 +0000
+Message-ID: <SN6PR12MB26553AEDB14A6B6275AA98CCAE8F0@SN6PR12MB2655.namprd12.prod.outlook.com>
+References: <cover.1567608245.git.vitor.soares@synopsys.com>
+ <d16914bbe06cf82cdbf9a0480310bd9cc2e4d8a9.1567608245.git.vitor.soares@synopsys.com>
+In-Reply-To: <d16914bbe06cf82cdbf9a0480310bd9cc2e4d8a9.1567608245.git.vitor.soares@synopsys.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-dg-rorf: true
 x-dg-ref: =?us-ascii?Q?PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNcc29hcmVzXGFw?=
  =?us-ascii?Q?cGRhdGFccm9hbWluZ1wwOWQ4NDliNi0zMmQzLTRhNDAtODVlZS02Yjg0YmEy?=
- =?us-ascii?Q?OWUzNWJcbXNnc1xtc2ctNjczYTFkNGItZDkyZi0xMWU5LTgyNTktYjgwOGNm?=
- =?us-ascii?Q?NTlkN2ZjXGFtZS10ZXN0XDY3M2ExZDRkLWQ5MmYtMTFlOS04MjU5LWI4MDhj?=
- =?us-ascii?Q?ZjU5ZDdmY2JvZHkudHh0IiBzej0iMTIzNSIgdD0iMTMyMTMxODY5MjQwMzA4?=
- =?us-ascii?Q?MzU1IiBoPSJTRjVJUm5mVlZmNHZOVEwxYUVHc2FGM0QxSDg9IiBpZD0iIiBi?=
- =?us-ascii?Q?bD0iMCIgYm89IjEiIGNpPSJjQUFBQUVSSFUxUlNSVUZOQ2dVQUFCUUpBQUNE?=
- =?us-ascii?Q?c3BNcFBHM1ZBZFVSRFVoMjJjdHoxUkVOU0hiWnkzTU9BQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?OWUzNWJcbXNnc1xtc2ctNDIzYzMzZWUtZDkzMi0xMWU5LTgyNTktYjgwOGNm?=
+ =?us-ascii?Q?NTlkN2ZjXGFtZS10ZXN0XDQyM2MzM2VmLWQ5MzItMTFlOS04MjU5LWI4MDhj?=
+ =?us-ascii?Q?ZjU5ZDdmY2JvZHkudHh0IiBzej0iMzcxNyIgdD0iMTMyMTMxODgxNTE4ODUw?=
+ =?us-ascii?Q?NjI1IiBoPSJxQ0dnbjNZQTQ1YkdFNlFVT3hyajVLYkdSbnc9IiBpZD0iIiBi?=
+ =?us-ascii?Q?bD0iMCIgYm89IjEiIGNpPSJjQUFBQUVSSFUxUlNSVUZOQ2dVQUFCUUpBQUJC?=
+ =?us-ascii?Q?WW04RlAyM1ZBWnpyYXoyYTFnY1luT3RyUFpyV0J4Z09BQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBSEFBQUFDa0NBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?RUFBUUFCQUFBQVZ6ZGhHZ0FBQUFBQUFBQUFBQUFBQUo0QUFBQm1BR2tBYmdC?=
  =?us-ascii?Q?aEFHNEFZd0JsQUY4QWNBQnNBR0VBYmdCdUFHa0FiZ0JuQUY4QWR3QmhBSFFB?=
@@ -186,36 +190,36 @@ authentication-results: spf=none (sender IP is )
  smtp.mailfrom=soares@synopsys.com; 
 x-originating-ip: [83.174.63.141]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 6cc0c88f-20e9-48b5-6674-08d73b534e40
+x-ms-office365-filtering-correlation-id: 72eadc19-fb1b-4538-1bd0-08d73b5629eb
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(5600167)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:SN6PR12MB2767; 
-x-ms-traffictypediagnostic: SN6PR12MB2767:
+ SRVR:SN6PR12MB2816; 
+x-ms-traffictypediagnostic: SN6PR12MB2816:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <SN6PR12MB2767AD6D386EEFF69AB72D0DAE8F0@SN6PR12MB2767.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2512;
+x-microsoft-antispam-prvs: <SN6PR12MB28167213632A2DF3734C6FA9AE8F0@SN6PR12MB2816.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 01630974C0
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(136003)(346002)(376002)(366004)(396003)(39860400002)(189003)(13464003)(199004)(71190400001)(6116002)(54906003)(316002)(110136005)(8936002)(476003)(229853002)(33656002)(55016002)(6436002)(7736002)(99286004)(7696005)(186003)(305945005)(66476007)(446003)(11346002)(52536014)(66446008)(76116006)(81156014)(9686003)(53546011)(74316002)(64756008)(26005)(66556008)(76176011)(6506007)(102836004)(66946007)(86362001)(3846002)(6246003)(66066001)(2501003)(81166006)(2906002)(8676002)(107886003)(14454004)(25786009)(5660300002)(486006)(478600001)(14444005)(4326008)(71200400001)(4744005)(256004);
- DIR:OUT; SFP:1102; SCL:1; SRVR:SN6PR12MB2767;
+ SFS:(10019020)(346002)(39860400002)(366004)(376002)(136003)(396003)(189003)(199004)(7696005)(81156014)(81166006)(8936002)(99286004)(6116002)(6246003)(66946007)(64756008)(52536014)(66446008)(66066001)(66476007)(76116006)(33656002)(2906002)(107886003)(110136005)(229853002)(316002)(9686003)(54906003)(55016002)(6436002)(76176011)(4326008)(2501003)(2201001)(71200400001)(8676002)(256004)(561944003)(3846002)(26005)(186003)(6506007)(86362001)(25786009)(102836004)(71190400001)(14454004)(7736002)(478600001)(476003)(66556008)(74316002)(11346002)(446003)(5660300002)(486006)(305945005)(14444005)(5024004);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:SN6PR12MB2816;
  H:SN6PR12MB2655.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: synopsys.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: tH5yvjEJ1w9B2tvUpq9kH1PmeX3JhLSQKyuoFPhAhJ0HSPyvWTVzwKtuKE+UNFWZuuJRTmCA/JofxiswJo6oZYZ90EcBRNSZ4Us94gDkG8fXp3zBo7ikRMQpCZ7fybN1MZ+DsB9pmxcVA8gl0hqd9/NPIp/S2hFAxa7xwIr6g+nswk0TrfqIQhjV6ehLGeEYpkxv1MWxzGb8YhZXcJbQh9NB6JsqNsuXUDEQUJLXvAjxI+BuU424qncMNlFzA/YlKPvUl+HqFB7x9Py8/R59f+4EBa4jLyT38B3Z8nB8OVutWF6YeOvF8zy3Hig69eZOGiOTHzAnpdVKLFGJXYIqJn4A0XgBec1tUp/lRJVo0LDav5penXZFkXp7Y0nXsEB+lEvExcX1EHpzzPRXnpfNl0hfpDpAR2REb5FmQI+K9zM=
+x-microsoft-antispam-message-info: TBBLA6j8V8pSXkIKWix1gELwr7wtqBz1pwiXxPoI2kqr+0+FUOYYYtthNzeHVfdt97C5YPK2coGTcKFFjuGnvRxbL7gAMkfIxirLtBIvEKMXQVd4jFVdLCJOAzQ6qlYcKsZu5JoPyTM8C239XVPoKPs9MZVMcJN9C2OrB/Fw659e55xZYLWG5eufcJVXvePRGIXKf2p2NQx5tTN2jFRbHNhiH3ZE9OPfOYfphrCpmvV6H5tBSJMfKTIDGmDkDyvgLUFHrC46xyajBqlvnQcchnOgEcogEE8POdZoJF2NuaVrB26NLim4OAfir95grWvfQvHFWPWP2IUUTJfs1GMy/0emBErkMk4QHRH9CvrEXpgtsLkF2ZLCNeS4z9nou68Xeq6IWDtrDaq16GmEVw2/UCPLj3a5lTFzZtIoC9waFJw=
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6cc0c88f-20e9-48b5-6674-08d73b534e40
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Sep 2019 09:42:07.6472 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 72eadc19-fb1b-4538-1bd0-08d73b5629eb
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Sep 2019 10:02:34.9616 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: DjWRNxp8d21robLEV4qqen+66MSvMrUgqYj0mb+ydE9t3pDaWq9kcqrqUR7Sa/lCRCMjd32BMGQz7J37QAA46g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR12MB2767
+X-MS-Exchange-CrossTenant-userprincipalname: UGLom1cbalPf8UZ9Fu7151VlzTKgxeTEWKY4SP3DXtviHySxk5DLGCaAYIppR5UR+Rg2Ow/DkDYAborI8XVZKA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR12MB2816
 X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_024220_804939_90FC9F23 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20190917_030323_375985_8F74520C 
+X-CRM114-Status: GOOD (  16.85  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -227,7 +231,9 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Joao Pinto <Joao.Pinto@synopsys.com>, "pgaj@cadence.com" <pgaj@cadence.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
  "bbrezillon@kernel.org" <bbrezillon@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -236,47 +242,111 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 Hi Boris,
 
-Friendly ping.
+From: Vitor Soares <vitor.soares@synopsys.com>
+Date: Thu, Sep 05, 2019 at 11:00:34
+
+> As for today, the I3C framework is keeping in memory and master->bus.devs
+> list the devices that fail during pre_assign_dyn_addr() and send them on
+> DEFSLVS command.
+> 
+> According to MIPI I3C Bus spec the DEFSLVS command is used to inform any
+> Secondary Master about the Dynamic Addresses that were assigned to I3C
+> devices and the I2C devices present on the bus.
+> 
+> This issue could be fixed by changing i3c_master_defslvs_locked() to
+> ignore unaddressed i3c devices but the i3c_dev_desc would be allocated and
+> attached to HC unnecessarily. This can cause that some HC aren't able to
+> do DAA for HJ capable devices due to lack of space in controller.
+> 
+> Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
+> ---
+> Changes in v3:
+>   - Change commit message
+> 
+> Changes in v2:
+>   - Move out detach/free the i3c_dev_desc from pre_assign_dyn_addr()
+>   - Convert i3c_master_pre_assign_dyn_addr() to return an int
+> 
+>  drivers/i3c/master.c | 22 +++++++++++++++-------
+>  1 file changed, 15 insertions(+), 7 deletions(-)
+> 
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index 5f4bd52..586e34f 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -1426,19 +1426,19 @@ static void i3c_master_detach_i2c_dev(struct i2c_dev_desc *dev)
+>  		master->ops->detach_i2c_dev(dev);
+>  }
+>  
+> -static void i3c_master_pre_assign_dyn_addr(struct i3c_dev_desc *dev)
+> +static int i3c_master_pre_assign_dyn_addr(struct i3c_dev_desc *dev)
+>  {
+>  	struct i3c_master_controller *master = i3c_dev_get_master(dev);
+>  	int ret;
+>  
+>  	if (!dev->boardinfo || !dev->boardinfo->init_dyn_addr ||
+>  	    !dev->boardinfo->static_addr)
+> -		return;
+> +		return 0;
+>  
+>  	ret = i3c_master_setdasa_locked(master, dev->info.static_addr,
+>  					dev->boardinfo->init_dyn_addr);
+>  	if (ret)
+> -		return;
+> +		return ret;
+>  
+>  	dev->info.dyn_addr = dev->boardinfo->init_dyn_addr;
+>  	ret = i3c_master_reattach_i3c_dev(dev, 0);
+> @@ -1449,10 +1449,12 @@ static void i3c_master_pre_assign_dyn_addr(struct i3c_dev_desc *dev)
+>  	if (ret)
+>  		goto err_rstdaa;
+>  
+> -	return;
+> +	return 0;
+>  
+>  err_rstdaa:
+>  	i3c_master_rstdaa_locked(master, dev->boardinfo->init_dyn_addr);
+> +
+> +	return ret;
+>  }
+>  
+>  static void
+> @@ -1647,7 +1649,7 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
+>  	enum i3c_addr_slot_status status;
+>  	struct i2c_dev_boardinfo *i2cboardinfo;
+>  	struct i3c_dev_boardinfo *i3cboardinfo;
+> -	struct i3c_dev_desc *i3cdev;
+> +	struct i3c_dev_desc *i3cdev, *i3ctmp;
+>  	struct i2c_dev_desc *i2cdev;
+>  	int ret;
+>  
+> @@ -1746,8 +1748,14 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
+>  	 * Pre-assign dynamic address and retrieve device information if
+>  	 * needed.
+>  	 */
+> -	i3c_bus_for_each_i3cdev(&master->bus, i3cdev)
+> -		i3c_master_pre_assign_dyn_addr(i3cdev);
+> +	list_for_each_entry_safe(i3cdev, i3ctmp, &master->bus.devs.i3c,
+> +				 common.node) {
+> +		ret = i3c_master_pre_assign_dyn_addr(i3cdev);
+> +		if (ret) {
+> +			i3c_master_detach_i3c_dev(i3cdev);
+> +			i3c_master_free_i3c_dev(i3cdev);
+> +		}
+> +	}
+>  
+>  	ret = i3c_master_do_daa(master);
+>  	if (ret)
+> -- 
+> 2.7.4
+
+I think I clearly explain why the current solution is problematic and my 
+choices for the proposal solution.
+Please let me know if there is anything else that I can improve in this 
+patch.
 
 Best regards,
 Vitor Soares
-
------Original Message-----
-From: Vitor Soares <vitor.soares@synopsys.com> 
-
-Sent: Thursday, September 5, 2019 12:07 PM
-To: 
-linux-i3c@lists.infradead.org
-Cc: bbrezillon@kernel.org; Joao Pinto 
-<jpinto@synopsys.com>; Vitor Soares <vitor.soares@synopsys.com>
-Subject: 
-[PATCH] i3c: master: use i3c_dev_get_master()
-
-Since we have i3c_dev_get_master() available, use it.
-
-Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
----
- 
-drivers/i3c/master.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 5f4bd52..d54039a 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -1779,7 +1779,7 @@ static void i3c_master_bus_cleanup(struct 
-i3c_master_controller *master)
- static struct i3c_dev_desc *
- i3c_master_search_i3c_dev_duplicate(struct i3c_dev_desc *refdev)
- {
--	struct i3c_master_controller *master = refdev->common.master;
-+	struct i3c_master_controller *master = i3c_dev_get_master(refdev);
- 	struct i3c_dev_desc *i3cdev;
- 
- 	i3c_bus_for_each_i3cdev(&master->bus, i3cdev) {
--- 
-2.7.4
-
 
 _______________________________________________
 linux-i3c mailing list
