@@ -2,153 +2,156 @@ Return-Path: <SRS0=SSUK=ZG=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-3.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_GIT autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-9.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B54A4C432C3
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B91C5C43215
 	for <linux-i3c@archiver.kernel.org>; Thu, 14 Nov 2019 05:52:34 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 9A8E620723
+	by mail.kernel.org (Postfix) with ESMTPS id 9A6412071B
 	for <linux-i3c@archiver.kernel.org>; Thu, 14 Nov 2019 05:52:34 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="lLG/Wd71";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=cadence.com header.i=@cadence.com header.b="erVyKKAF";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=cadence.com header.i=@cadence.com header.b="2Z8wZqKz"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9A8E620723
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="O4YbSb2P";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=cadence.com header.i=@cadence.com header.b="Ytg/keAu";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=cadence.com header.i=@cadence.com header.b="S8Lujxtz"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9A6412071B
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cadence.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SHsdWaKE4vv02MQfnTMsrUsDNfpoE9X9FiBaZCPdMDI=; b=lLG/Wd71xr9tMF
-	4esTihIfoVXYfCHLaQjA1zXk2v9meLZJ5O+6f4gxEXZFJJPDFSdNa5P+nYdL4I7nlU3Wwd2GA/fvU
-	Ok2S8zZ94o+vn4KhKX2x1dBfZQPgShuE6jH9637XE3bFrzRBR8hJaD2nbkK8qbCs2PUkZHKor88sL
-	lOKljUUZV2DZzm6xpFlWvy2B1a27+yoemUF9VAshWIeidKz+yHbwCZE7coHXfk8gsGS7g33cU5iK3
-	1R8aaGdZAYGhpBeqlzMY2qPU7n9WnHtpFjF3MNgHBjMdvMCdc+9g2eriFpOq2edQi8j9CAgQd1d4w
-	sGt32Yj5IPp63A26uudQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=y3Ahovsh0KW1IoRqCJY/kVcRv5qoEok+tm6Y/rHTLaw=; b=O4YbSb2PsJTX8b
+	K+eBlcbRWzfvNegLlE1XuoDeuw7qgoamYjUjs8Fjtm3SIVMBVTvlr7SnMGwVkLvUTpdkyyv0JzqrN
+	hywttxjJONnaTGEtfJhd0Dt+0Ia/3YQwOSYGbpVvO4+H2j5mxGD3lrzQ9MVqTtKlG8kVjjIMvuHGE
+	Jwmmq4FkoYZpWBLGQxDM3FDp6wPTpGC4utox2TCnuYKLU3BsYvclhm+kLRmtqOKBFt5IZvgiEnZHw
+	1/QhZx4fEJrecWqCPzAQ98FBKgYmfYXiOmfT1SWnY8j23WdR991sAh1pwoXwgYbgDhtlzGEm2hmxj
+	fCmTKVE8buSj4Wjz7FAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iV83W-0000AM-3Z; Thu, 14 Nov 2019 05:52:34 +0000
+	id 1iV83W-0000AU-6P; Thu, 14 Nov 2019 05:52:34 +0000
 Received: from mx0a-0014ca01.pphosted.com ([208.84.65.235])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iV83S-00009K-MX
+ id 1iV83T-00009S-9r
  for linux-i3c@lists.infradead.org; Thu, 14 Nov 2019 05:52:33 +0000
 Received: from pps.filterd (m0042385.ppops.net [127.0.0.1])
  by mx0a-0014ca01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xAE5klL3032198; Wed, 13 Nov 2019 21:52:27 -0800
+ xAE5l2oM032247; Wed, 13 Nov 2019 21:52:29 -0800
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
  h=from : to : cc :
- subject : date : message-id : mime-version : content-type; s=proofpoint;
- bh=a9Qeb4xLH/LgQF/v/iOEjiumnZgIT0i0KD3EgLiVf3w=;
- b=erVyKKAFDzz5sI5ovgT67dshHeCP/iLmF12b6kThRqS13cDb5D6oea6CqXWx/O025tVM
- hYTSDnIsHTP0hjm2oceetf2j69hjdEhAIW3iUMJWzVLyPB2h4ZlwhTlBO3sJPrKlYICs
- dKJRqykMXTWDInx3oE1ILCpn/uCuOmKootO6gVTqmQC/QAZZVS24+PNVn5xxOWh1bTJm
- zSp4Ovq8SV1D8e35y9K+sZc9nglU5AXrbzlM16O9aaVuCZ9iGAJMPX7CgCI/LDoaR0GP
- mCCLth+jznptC/pULhp5tNpqGHCBy0rwEi50eA88A8xD5jEXO+XeVReitCPgYAqWTMtR FA== 
-Received: from nam05-dm3-obe.outbound.protection.outlook.com
- (mail-dm3nam05lp2055.outbound.protection.outlook.com [104.47.49.55])
- by mx0a-0014ca01.pphosted.com with ESMTP id 2w7prt0v9p-1
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=proofpoint;
+ bh=8wcQyIW538VgXMrmLFvTmjYfQjXV1ED2YIuePXqozMw=;
+ b=Ytg/keAuObhxk0+hAoPwQzr+H9r2WNNek1D6BAMrVAyW6bC+sZ+lzaMiKHzKIHwS0JSH
+ tmE0Ok50QFZZaY9cXXQ0cVUG1mh7UFtAFQARLaECIirBag7nenezMp8+Yqn0bTMNJqjM
+ JTLkLQserHIAN2/DIKOCeqhTOZJX/ar45UKfE+TzHCOes1ndYa+C+pzspQij5x+FT4Cb
+ CGC1+VOkDVn0f7elsW+r1GkoJfdyK064+tOAL8RHr0CeKahDKa7XQvmfOTf7jnuPR8XC
+ oNMQavUaC3xP3yNT1AnsvTiMV88RhQPOz86dxbmfca9C7DQvzr1M/5FbXKv/nnqqeqJw Jw== 
+Received: from nam04-sn1-obe.outbound.protection.outlook.com
+ (mail-sn1nam04lp2057.outbound.protection.outlook.com [104.47.44.57])
+ by mx0a-0014ca01.pphosted.com with ESMTP id 2w7prt0v9x-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 13 Nov 2019 21:52:27 -0800
+ Wed, 13 Nov 2019 21:52:29 -0800
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=XoaLYYrHu5r4pr9T3DqUmEKbCRYLifyRWJDutrJhKioo0YGNLLuod84EdZ1mDzKX3M2s9TJe+lPQdj5XF4KAeYDnbHnu6UGTtDWdbivPglNsLwVUP/JrYvSBch8HDjW3e7nNlElPGhYq9ZCSomjVSq9HyYR+ISWHd9iemZZperB5QEn0e+NEC2/OiHeFmpVxUaH8dSmPPsRn5nwhX6ioxHSEXzsoAwwdOMy0ZYC4sNgLDZHbGfmF23KA6INcFT/RzTvAlU2ovysRzTF5U/Fg6MloNbtMnjrXUhvAZ4oWznWoNFw0kl/hyML7ieni7KvWTP1bSS3y6tR+agmSTja67w==
+ b=f8FhsveFNmnrYjmTwfDH1AIAr/KehRfC3VmKd0n1I8R0IAigKZXEBILVIJFYdsukVC7VADYrge53SbVEmZRNu9/yYlQ1WFrins05EOa5n1WLEvgDjCbMHsRqNSLZiOeCy1Nej8xgbFjhaiQeIBJUWQ2SfiBx6Y2xjElyo4rrgm7wHn6uqy7fRJDsSQVNxO0GIqHpr9c3y0zg2PBfN2axana5yIglc2rq5qss2LRLbm3bwY/i/0vI9JVYz9M7kXSLxgjTRooS9d4dK4u00OTbKr3FZ51ua3TGX2FlQnyI0KV/MyHnUGHka1Vt1yo3G8H9WAXVGg1H2fiyE8QS1VCDzg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=a9Qeb4xLH/LgQF/v/iOEjiumnZgIT0i0KD3EgLiVf3w=;
- b=KQaPAPDLBQxrajMzP2UmPl+rCJSTYcuRTonaHU1wKTNLdQlA7kXSlLY/SW1BpwPb8u3/UvVB+FSZm0wG7inDyYX0eBllYO5uhUWpaZsRxHbIL3+AjHFmm5IUTSPwyh4HIkPGxlijnYguNGX8xsJjSX8/KS6eXbMT9CwSLnj2V2xyoHOyNDGLi9IpB4GrPqz7wm01ZNGFbR4bafxL/jRypL5dlrLmcqwSLgc9I/fru3EZf1Agt3mAYrEP+ctdafawIZzRydhhjBG5h7kBmfqawIJELXSA1VMiSDWIDrHN0PgjE5e5wMqknMfJ6q7Uz4hmnV/gltfLnpIIo+JqO7RMVA==
+ bh=8wcQyIW538VgXMrmLFvTmjYfQjXV1ED2YIuePXqozMw=;
+ b=G8T7k5CqCFlWnMWU2FLRS8nj/zKJqEzIugWzqQhSb8xl6w1Bcdwxk3RRwGhutJXf691Pg3Qw9x7tysjvphkJyEbUgNS0kl7noQRY+YQsQVijsl0grmnC0fUWsPGsNkOf2GYY4vq0vQ+w+Xt8GMXpIskJCbrj/7ri8Z8GrIYZkiGCxHqOAabY7JErY3gqQcDaBm4vxa7UQjV6zQy6TcnQXjQZzLRwGj/WUzpdzFhu/vvpFDHeN1XGsw1y+wA4DkR0AHR+DzJcxMsw8b22pEUmbgaQEYKbnYl+MEOy08RFClOHh60YanJxcdPYXmddKRVebu19dEIc27seSM0c9z2zIA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=softfail (sender ip
- is 199.43.4.28) smtp.rcpttodomain=kernel.org smtp.mailfrom=cadence.com;
+ is 158.140.1.28) smtp.rcpttodomain=kernel.org smtp.mailfrom=cadence.com;
  dmarc=fail (p=none sp=none pct=100) action=none header.from=cadence.com;
  dkim=none (message not signed); arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=a9Qeb4xLH/LgQF/v/iOEjiumnZgIT0i0KD3EgLiVf3w=;
- b=2Z8wZqKzTlDivolPy+Hwzpx49qW25o3RG2Rgr+2GMXULlwrSk4TXzylf4Z39XkFnFuoGV/rd0r+AQRI0iOShmnAjlBaqK1MIZBvCqqU5ubsgBWVyRuRLUHHIJrzHErg1lx/217Awnis2+QcLev1AY2WISTRh+iNTmB2nRKSfaTI=
-Received: from CY1PR07CA0039.namprd07.prod.outlook.com
- (2a01:111:e400:c60a::49) by DM6PR07MB4988.namprd07.prod.outlook.com
- (2603:10b6:5:2d::29) with Microsoft SMTP Server (version=TLS1_2,
+ bh=8wcQyIW538VgXMrmLFvTmjYfQjXV1ED2YIuePXqozMw=;
+ b=S8LujxtzAi2glGDlOrdBqyQAku65RpIFZhxekAXDTmUqi7OHwZtBLuZf8+j8CXn1atZL/q8+VBsK4J8EaLvUEq3QFalECUZQR6ny9Uj0pUYfXWRZA26H7BxwgAccMDrOIMRPQGWuqXxaPDqVR+p3b4eT1qxTTuRI9tY6ohMLqjo=
+Received: from BYAPR07CA0101.namprd07.prod.outlook.com (2603:10b6:a03:12b::42)
+ by BYAPR07MB4488.namprd07.prod.outlook.com (2603:10b6:a02:c4::30)
+ with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2430.24; Thu, 14 Nov
- 2019 05:52:25 +0000
-Received: from CO1NAM05FT061.eop-nam05.prod.protection.outlook.com
- (2a01:111:f400:7e50::206) by CY1PR07CA0039.outlook.office365.com
- (2a01:111:e400:c60a::49) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2451.22 via Frontend
- Transport; Thu, 14 Nov 2019 05:52:25 +0000
+ 2019 05:52:27 +0000
+Received: from DM3NAM05FT007.eop-nam05.prod.protection.outlook.com
+ (2a01:111:f400:7e51::206) by BYAPR07CA0101.outlook.office365.com
+ (2603:10b6:a03:12b::42) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2451.23 via Frontend
+ Transport; Thu, 14 Nov 2019 05:52:27 +0000
 Received-SPF: SoftFail (protection.outlook.com: domain of transitioning
- cadence.com discourages use of 199.43.4.28 as permitted sender)
-Received: from rmmaillnx1.cadence.com (199.43.4.28) by
- CO1NAM05FT061.mail.protection.outlook.com (10.152.96.179) with Microsoft SMTP
+ cadence.com discourages use of 158.140.1.28 as permitted sender)
+Received: from sjmaillnx1.cadence.com (158.140.1.28) by
+ DM3NAM05FT007.mail.protection.outlook.com (10.152.98.113) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2451.15 via Frontend Transport; Thu, 14 Nov 2019 05:52:24 +0000
+ 15.20.2451.15 via Frontend Transport; Thu, 14 Nov 2019 05:52:26 +0000
 Received: from maileu3.global.cadence.com (maileu3.cadence.com [10.160.88.99])
- by rmmaillnx1.cadence.com (8.14.4/8.14.4) with ESMTP id
- xAE5qKn4030933
+ by sjmaillnx1.cadence.com (8.14.4/8.14.4) with ESMTP id
+ xAE5qNCT011070
  (version=TLSv1/SSLv3 cipher=AES256-SHA bits=256 verify=OK);
- Thu, 14 Nov 2019 00:52:21 -0500
+ Wed, 13 Nov 2019 21:52:25 -0800
 X-CrossPremisesHeadersFilteredBySendConnector: maileu3.global.cadence.com
 Received: from maileu3.global.cadence.com (10.160.88.99) by
  maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
- 15.0.1367.3; Thu, 14 Nov 2019 06:52:19 +0100
+ 15.0.1367.3; Thu, 14 Nov 2019 06:52:23 +0100
 Received: from vleu-orange.cadence.com (10.160.88.83) by
  maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
- 15.0.1367.3 via Frontend Transport; Thu, 14 Nov 2019 06:52:19 +0100
+ 15.0.1367.3 via Frontend Transport; Thu, 14 Nov 2019 06:52:23 +0100
 Received: from vleu-orange.cadence.com (localhost.localdomain [127.0.0.1])
- by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id xAE5qJd7020515;
- Thu, 14 Nov 2019 06:52:19 +0100
+ by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id xAE5qNQw020526;
+ Thu, 14 Nov 2019 06:52:23 +0100
 Received: (from pgaj@localhost)
- by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id xAE5qJxb020514;
- Thu, 14 Nov 2019 06:52:19 +0100
+ by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id xAE5qN9g020525;
+ Thu, 14 Nov 2019 06:52:23 +0100
 From: Przemyslaw Gaj <pgaj@cadence.com>
 To: <bbrezillon@kernel.org>
-Subject: [PATCH 0/3] Add data hold delay support
-Date: Thu, 14 Nov 2019 06:51:52 +0100
-Message-ID: <20191114055155.20446-1-pgaj@cadence.com>
+Subject: [PATCH 1/3] i3c: master: add data hold delay support
+Date: Thu, 14 Nov 2019 06:51:53 +0100
+Message-ID: <20191114055155.20446-2-pgaj@cadence.com>
 X-Mailer: git-send-email 2.14.0
+In-Reply-To: <20191114055155.20446-1-pgaj@cadence.com>
+References: <20191114055155.20446-1-pgaj@cadence.com>
 MIME-Version: 1.0
 X-OrganizationHeadersPreserved: maileu3.global.cadence.com
 X-EOPAttributedMessage: 0
-X-Forefront-Antispam-Report: CIP:199.43.4.28; IPV:CAL; SCL:-1; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(376002)(346002)(39860400002)(136003)(36092001)(189003)(199004)(47776003)(356004)(87636003)(486006)(36756003)(5660300002)(6666004)(2616005)(107886003)(48376002)(4744005)(50466002)(126002)(476003)(14444005)(26005)(4326008)(336012)(76130400001)(86362001)(1076003)(186003)(478600001)(26826003)(42186006)(50226002)(54906003)(16586007)(8936002)(316002)(8676002)(70206006)(2351001)(6916009)(426003)(51416003)(81166006)(70586007)(81156014)(305945005)(2906002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR07MB4988; H:rmmaillnx1.cadence.com; FPR:;
- SPF:SoftFail; LANG:en; PTR:InfoDomainNonexistent; MX:1; A:1; 
+X-Forefront-Antispam-Report: CIP:158.140.1.28; IPV:CAL; SCL:-1; CTRY:US;
+ EFV:NLI; SFV:NSPM;
+ SFS:(10009020)(4636009)(39850400004)(136003)(346002)(396003)(376002)(36092001)(199004)(189003)(426003)(186003)(446003)(7636002)(107886003)(16586007)(316002)(54906003)(42186006)(4326008)(50466002)(2351001)(11346002)(70206006)(336012)(70586007)(26005)(305945005)(6916009)(126002)(476003)(2616005)(486006)(14444005)(6666004)(356004)(26826003)(48376002)(86362001)(51416003)(478600001)(76176011)(8676002)(50226002)(2906002)(47776003)(246002)(8936002)(36756003)(1076003)(5660300002)(76130400001)(87636003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR07MB4488; H:sjmaillnx1.cadence.com; FPR:;
+ SPF:SoftFail; LANG:en; PTR:corp.cadence.com; A:1; MX:1; 
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: d2f94c1e-e7c6-47d8-e093-08d768c6d2d5
-X-MS-TrafficTypeDiagnostic: DM6PR07MB4988:
-X-Microsoft-Antispam-PRVS: <DM6PR07MB4988538E48ECE5C547F1BD33C2710@DM6PR07MB4988.namprd07.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:6430;
+X-MS-Office365-Filtering-Correlation-Id: d7a7f768-24ac-4c0c-18a2-08d768c6d412
+X-MS-TrafficTypeDiagnostic: BYAPR07MB4488:
+X-Microsoft-Antispam-PRVS: <BYAPR07MB4488A90B05686A7330F7EC27C2710@BYAPR07MB4488.namprd07.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:4941;
 X-Forefront-PRVS: 02213C82F8
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: GUCALUPGlhtJxRZ8Oveo+OF06LSYuWsGMB8Ldk7zFAWQ1lb6MyvN1ZEny5lN0yzSik04WKV2ZLmC/jdfXNx3RQBzLuYq7TyA6rNY3HyzTsJKYvLD5YxBJ6Wv4hgBDn6KIVV5yfUaLFMJInLqUlpaCZliYheILdEXYGTkDpddBoQGS9eYDe6A5TN2nKkh+Q/ETgycEtryhj5/5iSww0pWPu8UurpjXLJpXyEvsiK9mnEsY3HSz2X/t1bat8IA8mtc5L60FU0bis0AkUAoUOMKFz4Z1+mSiJ8cufdOjdfGMCK4MWATm1JDfON5XN791F/Ci1DRlmoyba1J3C+hbLC4hsZGsAy3GpNYWLjvljwwiXSoVKSa+To7zt7eZRqXkR9iNuHqn5f30GvwS9S3RiAYTaKFWckoXnbvXJIe9TeUvyl78+CfisUuVNvEWTk76jMgMlTUkcAEkEaFvEdapWczjg==
+X-Microsoft-Antispam-Message-Info: 4QvapGJS9LgYgMAYlCURyNWAaCejwRS2kGY/NvRVMv08zbdhx9hT3URV6fLaOgTtdDEoQDuTdvRrn+EJMhLzwchYuWKu9fp8Zhre6u7QS93JpIUcbLsKC9UQGhCkFTfrDn1X11sa4OiXHRHMH8tIDDdEcIwvqV6jDM0P1PplcL2pypAdJX3Gwlwti2495fboT0dfF6rlQg5shopFc4sNmZ7zdVS4LRwqduhgETDi1H3TKjBKH7Mxin69f3f5YVo6dOEUAA7x/y8WPdm6wpbIow5iagBxmCiA516nr3qH1w6hz4uL4WDs5+HxoPG7DCdTENuDuSvMlIhCCY3GFjwd2qIqAGlaymiBGTBofRl0UzkYTqSuzZeZsrjiyRimaByKVuNopq3hh+6Rj5peAYmF4G7kS7M/2WYc5lRIr6R2UOvF53mqb/yLShttM0VuRuhboiZWXTrt5DqOgkAVV0aqNQ==
 X-OriginatorOrg: cadence.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Nov 2019 05:52:24.4774 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: d2f94c1e-e7c6-47d8-e093-08d768c6d2d5
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Nov 2019 05:52:26.5892 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: d7a7f768-24ac-4c0c-18a2-08d768c6d412
 X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9; Ip=[199.43.4.28];
- Helo=[rmmaillnx1.cadence.com]
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9; Ip=[158.140.1.28];
+ Helo=[sjmaillnx1.cadence.com]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR07MB4988
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR07MB4488
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
  definitions=2019-11-13_06:2019-11-13,2019-11-13 signatures=0
 X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
  score=0 adultscore=0
  spamscore=0 clxscore=1015 impostorscore=0 mlxscore=0 lowpriorityscore=0
  malwarescore=0 priorityscore=1501 bulkscore=0 suspectscore=1
- mlxlogscore=768 phishscore=0 classifier=spam adjust=0 reason=mlx
+ mlxlogscore=854 phishscore=0 classifier=spam adjust=0 reason=mlx
  scancount=1 engine=8.12.0-1910280000 definitions=main-1911140055
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_215231_742827_70BDC29C 
-X-CRM114-Status: UNSURE (   7.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191113_215231_742335_AB0E532F 
+X-CRM114-Status: GOOD (  10.99  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -168,23 +171,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add THD_DEL (Data Hold Delay) support. After testing different scenarios,
-on various systems, sometimes there is a need to delay SDA_OUT propagation.
+This patch adds support for THD_DEL (Data Hold Delay) to Cadence
+I3C master constoller driver.
 
-Adding support which allows to configure that delay using the device
-tree parameter.
+Signed-off-by: Przemyslaw Gaj <pgaj@cadence.com>
+---
+ drivers/i3c/master/i3c-master-cdns.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-Przemyslaw Gaj (3):
-  i3c: master: add data hold delay support
-  dt-bindings: i3c: Document data hold delay feature
-  MAINTAINERS: add myself as maintainer of Cadence I3C master controller
-    driver
-
- Documentation/devicetree/bindings/i3c/cdns,i3c-master.txt | 6 ++++++
- MAINTAINERS                                               | 6 ++++++
- drivers/i3c/master/i3c-master-cdns.c                      | 5 ++++-
- 3 files changed, 16 insertions(+), 1 deletion(-)
-
+diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
+index 10db0bf0655a..90ea98eef905 100644
+--- a/drivers/i3c/master/i3c-master-cdns.c
++++ b/drivers/i3c/master/i3c-master-cdns.c
+@@ -60,6 +60,7 @@
+ #define CTRL_HALT_EN			BIT(30)
+ #define CTRL_MCS			BIT(29)
+ #define CTRL_MCS_EN			BIT(28)
++#define CTRL_THD_DEL(x) 		(((x) << 24) & GENMASK(25, 24))
+ #define CTRL_HJ_DISEC			BIT(8)
+ #define CTRL_MST_ACK			BIT(7)
+ #define CTRL_HJ_ACK			BIT(6)
+@@ -1186,7 +1187,7 @@ static int cdns_i3c_master_bus_init(struct i3c_master_controller *m)
+ 	struct cdns_i3c_master *master = to_cdns_i3c_master(m);
+ 	unsigned long pres_step, sysclk_rate, max_i2cfreq;
+ 	struct i3c_bus *bus = i3c_master_get_bus(m);
+-	u32 ctrl, prescl0, prescl1, pres, low;
++	u32 ctrl, prescl0, prescl1, pres, low, thd_del;
+ 	struct i3c_device_info info = { };
+ 	int ret, ncycles;
+ 
+@@ -1264,6 +1265,8 @@ static int cdns_i3c_master_bus_init(struct i3c_master_controller *m)
+ 	 * We will issue ENTDAA afterwards from the threaded IRQ handler.
+ 	 */
+ 	ctrl |= CTRL_HJ_ACK | CTRL_HJ_DISEC | CTRL_HALT_EN | CTRL_MCS_EN;
++	if (!of_property_read_u32(m->dev.of_node, "thd_del", &thd_del))
++		ctrl |= CTRL_THD_DEL(thd_del);
+ 	writel(ctrl, master->regs + CTRL);
+ 
+ 	cdns_i3c_master_enable(master);
 -- 
 2.14.0
 
