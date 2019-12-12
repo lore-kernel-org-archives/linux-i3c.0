@@ -6,18 +6,18 @@ X-Spam-Status: No, score=-0.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
 	SPF_PASS autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 297ECC00454
-	for <linux-i3c@archiver.kernel.org>; Thu, 12 Dec 2019 14:49:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id AA6AEC00454
+	for <linux-i3c@archiver.kernel.org>; Thu, 12 Dec 2019 14:57:07 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id EEA4A206A5
-	for <linux-i3c@archiver.kernel.org>; Thu, 12 Dec 2019 14:49:14 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 79E5622527
+	for <linux-i3c@archiver.kernel.org>; Thu, 12 Dec 2019 14:57:07 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="mizmEwz9";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="DYMREVS7";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=synopsys.onmicrosoft.com header.i=@synopsys.onmicrosoft.com header.b="RkVyNXjW"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org EEA4A206A5
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="AnG/zDzl";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="ZcdDaRfU";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=synopsys.onmicrosoft.com header.i=@synopsys.onmicrosoft.com header.b="hPmVIuSQ"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 79E5622527
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -26,192 +26,194 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4PVTVtaL5KsnyIU4UiII2KwmpXzWh3U+nkXxfD7haNA=; b=mizmEwz94gjofD
-	PiAB0b0yxUfxti3aDSmnPm8MPlEeRfL5ZPLblybadokMKxFVteIY3HzMkPWMtUH7sNFb0rxcNLdr7
-	WFpRlJaJmw/27eDHY+rK/MPWfQDf3xdVjdk3YpL6B8PD4q5r8cqUwryntvDb819ImSWofiGds5RH1
-	DoNtslLzv7ap0+Vmh9IvgXn/hOIU5Rlxu3aFiqH5p55snH0/Z4Np+jCxrZOn3iWuDagUEFro6WUmp
-	9uIf/8b1lkkF/oPy4zRytrCHACHuM3TWlxwgXnKTGmRh//VokbCJ9TzbcZ7eni+C+UOAhKYJnP0vY
-	c9dn1WPmJ+UnkFQLLuJw==;
+	List-Owner; bh=uDpSitpMaT8KhB3gnOazXoJeTu2WbPUXa9n9s3XY0dg=; b=AnG/zDzlc79VEC
+	QPL1i6nTfwhlFy+O9RO79BHvhvxKZCY2JjxnoedYN9lKtXfOdYvG1205KWaXxu5qJVAKB1lY1K5mY
+	SmCAyxmP0isOUOfFzOxNjH5OevMYhswH16HL9ulNFklm6pD8TWjHydg+ldp4XW4U/2CuSYDgdTfGD
+	WzgUYxzC3Uc0qGsvDBm9XIxw6Sp0MYXdr2rje8WY9xRXr7sjpkU9o/CLMFFLX4CJ3NKKnX33k8I0+
+	NTEFakDluf6ICKCEgMJc4zV0TfpPttfZ0MEj19fDSU+jHToFXNpaempPb2a2K/pyRB2/fUWm2RM5W
+	jd29/u4yeOI5iRBxpmxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifPmE-0002YV-1m; Thu, 12 Dec 2019 14:49:14 +0000
-Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
+	id 1ifPtq-0005xO-Mb; Thu, 12 Dec 2019 14:57:06 +0000
+Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifPmB-0002Xw-Oo
- for linux-i3c@lists.infradead.org; Thu, 12 Dec 2019 14:49:13 +0000
+ id 1ifPtn-0005x7-SJ
+ for linux-i3c@lists.infradead.org; Thu, 12 Dec 2019 14:57:05 +0000
 Received: from mailhost.synopsys.com (badc-mailhost2.synopsys.com
  [10.192.0.18])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 763E5C00C6;
- Thu, 12 Dec 2019 14:49:08 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 6F7A7C00C7;
+ Thu, 12 Dec 2019 14:57:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1576162150; bh=J+4517qcqBaymE6yCV6qNc8cqPBywGiYHuuAkHR0kFo=;
+ t=1576162623; bh=4RDIewSHGGc4VPKeG8VxfXCXCndT4eEv+G+nqJEV0gw=;
  h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=DYMREVS7htJl4nJFe6s0VLCilSoZyccrZ7zuy/vbLpEwi0wJQswEUGsq+91SeZVzw
- FU37hBnE/Y1yo6SUY8K0evhSorvq6grQFU7TWBfSdGHvjf9A3II06pgjl6QSf+CIqX
- WJuK7VKhsLSaEixo474BN3piWdlmjIfbnRz3F+9R1n07mECaVpob9OIhEdZOPneCkp
- iJDTx9qDL++elOhJxXhu3xZbWh4hLLx1YTer/5EYLvY7HhMOKvTaaxBNIUFXJnkRR0
- S1lMt89a3ilympk/LBy2Zl4kIkHMfFq/ps0IvnX3CFaljDOt+52sR/G+wL2fvxvqoi
- CpZ5d0Tjr8GqA==
+ b=ZcdDaRfUBp1tE8KOQftXfwp5zd60H/ggd7uuRIMP7FR9zxOsrlofLoPXeaph373ym
+ L7AZB4zh81ugoxmZy1e5GZGqlWu/Xx+BbhvzjDqCtqR8AKfyHcmR2Mv1CHGVv+Cga8
+ MLXxeqwYSuzkbgl2NWXvZc/c7UTt4xFb3+qstCMlvbbI9kqL0K6U7t8afloVVZ9XL4
+ yCkQ/ZZbUNgSMYWo01ltVIHT8gZzDRnzJ9nz2Jyekl6unTjLhAFlucj7NLO5AGtjYG
+ GeNoAodCJ2rjyhcv48jr84giUts0bvi7hZC6f+bhHvneV9ZOXO5MWHNRo+9rv/uIAO
+ ez0vKf3HTsQxA==
 Received: from US01WEHTC3.internal.synopsys.com
  (us01wehtc3.internal.synopsys.com [10.15.84.232])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
  (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id 284A2A0087;
- Thu, 12 Dec 2019 14:49:06 +0000 (UTC)
-Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 4248CA008D;
+ Thu, 12 Dec 2019 14:57:03 +0000 (UTC)
+Received: from us01hybrid1.internal.synopsys.com (10.13.188.44) by
  US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Thu, 12 Dec 2019 06:48:59 -0800
-Received: from NAM10-MW2-obe.outbound.protection.outlook.com (10.202.3.67) by
- mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
- 14.3.408.0; Thu, 12 Dec 2019 06:48:59 -0800
+ (TLS) id 14.3.408.0; Thu, 12 Dec 2019 06:56:58 -0800
+Received: from NAM12-BN8-obe.outbound.protection.outlook.com (10.202.3.67) by
+ mrs.synopsys.com (10.13.188.44) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Thu, 12 Dec 2019 06:56:58 -0800
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=AI63fJ2MLUlLipBKuJsvl9+7+wIJYhXD/9wEhiVy63MVtUDuzsv9KrE14lvx29hMf3R23iiO35BjlL+1YR1KJ7nt0f5RGnMRQlF1dBliVHo626pN0SaQDrNZatFYxPOynEtuLIhjyGJXuAWQSDnBA7yfI+eYq4x3EGCEpqR+uPLfYetSA/fLibLuakz2w6ATNZBX6eHXHBvMyQJ4JZSCN1EoNt9JVoaAOH2zkFYFCacPq6cOdHfeVqQjweOGxeP/CoulMuhIyPclcSZ/6T+FK9T0Wgwk7fROwMv8rjevae5wfxp6UGRvKC4c2cfJbjBS0ZwCM7c7rd7ZKPmsvG1Z6Q==
+ b=gq0hJxGutyxl/ZdEeRD6EyhbllB6HRiWVunpBU3edohNRjrorLDueV9s/JX0wSZsu0ClL9T/XNzVeITAyGb3EqZw4xpuw8DNJ8/YvvP45VZh8OXpk8HL8QEVerGgf/YarsMgpW+5O7NKXMpqMzbhXJXdSErIW8FlVqDJlcMbxUhw5CXlNlmtQYcax4r9n4rjB7JFRoVV8UrcEmYuqTvQm57HucLRlsQj1aDczW746ajVBnivKOx5Lsr4uEW+cLtFZbPZC4HNoTm7hiJ48HrqhvYfy9zUVL4kvCc45sULvxxdiGCq5M85NHkBLkQboIyDurBUtSsm5n+G9ONCT+ytDw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JtpYoHuXaQO0Jeb5taM9Urax/gHOFpPzglpCUQo/3P0=;
- b=AOc+b2IWOmHEIZKpH2UF32CrSQSqaxJL/mAg/Rgkkv8HWn1kS2fz/5zMtpczpsTleYQKI95tFuQMOQAfgEoasZ/hQQc8hxzP2q4OLRQ6me6h7eQEAzZ0qafYe3tv0EO6pbipwiBbYeDY/YqLykYtqKfMd0QOJ/aM3YX9igyfd92e18lsWZdUpM3tbx42l9C8g4+Woa0v4pU565M8G1nSzx/5BVuQq35+26lbzCv9SAQxxfI7fCstuVKqfqV7+3yCO7UmkYEGZQr3R2KQlUlWVOdQnueedm1VAE4bx0LTprIbKozbg93cVIAsQA55AtT6gXMf50gUS1QOcPP5LIQvWg==
+ bh=yGzZy7F1LvTWB30jZIsBFr34QykTO+1e2xfOHyAelkA=;
+ b=FdSt+4IkrR4pp1L3CDAea2Nud4OnlUZPQ1XYw50Z4quZSAwrE2uDvGbfV+9JJ5jAnZE5Vv0iWOk9jLRSNlOJ5HD1s+cKBBM+kJr8/EBnvw/ylqOeWsU0Ze5/HYr2qMpASkjjr0KJrD1Lv/inVIcAD7MGGwQbZvYeGT344/Ftl+53VtBy0830fNVYHxpmdixUK32CE4sFbXdyg+0I8VrjKnfOhx5b17zC+ScV8ZT72qJfBvbNJLN3HHzW5QImJcmjdTOtID0bblIvG3lec1WLE9TjaU8gGk65xTMlRtgWtKzal+paaldAu9BssssThrU0p2Ij6Q0pWWpDXi7MzAEiUw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
  dkim=pass header.d=synopsys.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JtpYoHuXaQO0Jeb5taM9Urax/gHOFpPzglpCUQo/3P0=;
- b=RkVyNXjW9G0X87LuQrcpKThkQo9akvhR/iVDjpjV0ErphiRA4D4IOTk7AERzkh3NdjDNUA6+dU8doclh9OWdJR1/MKkh8jeDS8ET4P+WHYq4LxRSfARCDOLnmZBYmbGbY1d9hdMbIB7QKtvgT/pN9TdSIjdQj9GzVQpc9roO+uI=
+ bh=yGzZy7F1LvTWB30jZIsBFr34QykTO+1e2xfOHyAelkA=;
+ b=hPmVIuSQ/5vdjz51cKGFBEszHOk37tdM9tZWb8LixF2DjTxT+EqHwbfzv4Cehi+fX/HSSXewvvCOK4SgbBRO8JGoVmkd66S1LkBp6OFnOY2yevEe/A90NV54jghZoQq1MI4Z7SbLGCNYXYJp6VVJYvkqpMGBddJEVkdRqf4aGBE=
 Received: from CH2PR12MB4216.namprd12.prod.outlook.com (20.180.6.151) by
- CH2PR12MB3733.namprd12.prod.outlook.com (52.132.247.142) with Microsoft SMTP
+ CH2PR12MB4183.namprd12.prod.outlook.com (20.180.17.24) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2538.15; Thu, 12 Dec 2019 14:48:58 +0000
+ 15.20.2538.18; Thu, 12 Dec 2019 14:56:56 +0000
 Received: from CH2PR12MB4216.namprd12.prod.outlook.com
  ([fe80::81fc:ad3e:6315:c6ff]) by CH2PR12MB4216.namprd12.prod.outlook.com
  ([fe80::81fc:ad3e:6315:c6ff%7]) with mapi id 15.20.2516.018; Thu, 12 Dec 2019
- 14:48:57 +0000
+ 14:56:56 +0000
 From: Vitor Soares <Vitor.Soares@synopsys.com>
 To: Greg KH <gregkh@linuxfoundation.org>
-Subject: RE: [RFC 3/5] i3c: device: expose transfer strutures to uapi
-Thread-Topic: [RFC 3/5] i3c: device: expose transfer strutures to uapi
-Thread-Index: AQHVr2/iHsu4jOchCU+9H34Yn/scM6e2leaAgAABKzA=
-Date: Thu, 12 Dec 2019 14:48:57 +0000
-Message-ID: <CH2PR12MB4216295D1763BF4C0E5FEC85AE550@CH2PR12MB4216.namprd12.prod.outlook.com>
+Subject: RE: [RFC 5/5] i3c: add i3cdev module to expose i3c dev in /dev
+Thread-Topic: [RFC 5/5] i3c: add i3cdev module to expose i3c dev in /dev
+Thread-Index: AQHVr2/iKIpGMGLN70aN99S9k54hW6e2lpSAgAABfqA=
+Date: Thu, 12 Dec 2019 14:56:56 +0000
+Message-ID: <CH2PR12MB421658E00DF331400728DB6CAE550@CH2PR12MB4216.namprd12.prod.outlook.com>
 References: <cover.1575977795.git.vitor.soares@synopsys.com>
- <fcc51a2758fd7920e1c0163a818fe7c12bd33765.1575977795.git.vitor.soares@synopsys.com>
- <20191212144233.GA1668196@kroah.com>
-In-Reply-To: <20191212144233.GA1668196@kroah.com>
+ <f9f20eaf900ed5629dd3d824bc1e90c7e6b4a371.1575977795.git.vitor.soares@synopsys.com>
+ <20191212144459.GB1668196@kroah.com>
+In-Reply-To: <20191212144459.GB1668196@kroah.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 x-dg-ref: =?us-ascii?Q?PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNcc29hcmVzXGFw?=
  =?us-ascii?Q?cGRhdGFccm9hbWluZ1wwOWQ4NDliNi0zMmQzLTRhNDAtODVlZS02Yjg0YmEy?=
- =?us-ascii?Q?OWUzNWJcbXNnc1xtc2ctODNkMzdkZDctMWNlZS0xMWVhLTgyNzQtYjgwOGNm?=
- =?us-ascii?Q?NTlkN2ZjXGFtZS10ZXN0XDgzZDM3ZGQ5LTFjZWUtMTFlYS04Mjc0LWI4MDhj?=
- =?us-ascii?Q?ZjU5ZDdmY2JvZHkudHh0IiBzej0iMjY2NiIgdD0iMTMyMjA2MzU3MzM3OTkw?=
- =?us-ascii?Q?NDQ5IiBoPSJQMXIxVHI0OGJrNHRac3ZRWGhOYzJYWGZybjA9IiBpZD0iIiBi?=
- =?us-ascii?Q?bD0iMCIgYm89IjEiIGNpPSJjQUFBQUVSSFUxUlNSVUZOQ2dVQUFCUUpBQUF4?=
- =?us-ascii?Q?NVMxRys3RFZBWEZmdDV1dFJLeVNjViszbTYxRXJKSU9BQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBSEFBQUFDa0NBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?RUFBUUFCQUFBQWt4V29sUUFBQUFBQUFBQUFBQUFBQUo0QUFBQm1BR2tBYmdC?=
- =?us-ascii?Q?aEFHNEFZd0JsQUY4QWNBQnNBR0VBYmdCdUFHa0FiZ0JuQUY4QWR3QmhBSFFB?=
- =?us-ascii?Q?WlFCeUFHMEFZUUJ5QUdzQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?OWUzNWJcbXNnc1xtc2ctYTIxOWZjNWUtMWNlZi0xMWVhLTgyNzQtYjgwOGNm?=
+ =?us-ascii?Q?NTlkN2ZjXGFtZS10ZXN0XGEyMTlmYzVmLTFjZWYtMTFlYS04Mjc0LWI4MDhj?=
+ =?us-ascii?Q?ZjU5ZDdmY2JvZHkudHh0IiBzej0iODEyIiB0PSIxMzIyMDYzNjIxNDQ1Njk5?=
+ =?us-ascii?Q?NzciIGg9ImlXcUxUcVhOcEJuVWRoZTBkeEZQaEtYdXkxWT0iIGlkPSIiIGJs?=
+ =?us-ascii?Q?PSIwIiBibz0iMSIgY2k9ImNBQUFBRVJIVTFSU1JVRk5DZ1VBQUJRSkFBQjVl?=
+ =?us-ascii?Q?cXhrL0xEVkFWRFNlU1J4ZStsSFVOSjVKSEY3NlVjT0FBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFIQUFBQUNrQ0FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFF?=
+ =?us-ascii?Q?QUFRQUJBQUFBa3hXb2xRQUFBQUFBQUFBQUFBQUFBSjRBQUFCbUFHa0FiZ0Jo?=
+ =?us-ascii?Q?QUc0QVl3QmxBRjhBY0FCc0FHRUFiZ0J1QUdrQWJnQm5BRjhBZHdCaEFIUUFa?=
+ =?us-ascii?Q?UUJ5QUcwQVlRQnlBR3NBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFF?=
- =?us-ascii?Q?QUFBQUFBQUFBQWdBQUFBQUFuZ0FBQUdZQWJ3QjFBRzRBWkFCeUFIa0FYd0J3?=
- =?us-ascii?Q?QUdFQWNnQjBBRzRBWlFCeUFITUFYd0JuQUdZQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBUUFBQUFBQUFBQUNBQUFB?=
- =?us-ascii?Q?QUFDZUFBQUFaZ0J2QUhVQWJnQmtBSElBZVFCZkFIQUFZUUJ5QUhRQWJnQmxB?=
- =?us-ascii?Q?SElBY3dCZkFITUFZUUJ0QUhNQWRRQnVBR2NBWHdCakFHOEFiZ0JtQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUVB?=
+ =?us-ascii?Q?QUFBQUFBQUFBZ0FBQUFBQW5nQUFBR1lBYndCMUFHNEFaQUJ5QUhrQVh3QndB?=
+ =?us-ascii?Q?R0VBY2dCMEFHNEFaUUJ5QUhNQVh3Qm5BR1lBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQkFBQUFBQUFBQUFJQUFBQUFBSjRBQUFCbUFHOEFk?=
- =?us-ascii?Q?UUJ1QUdRQWNnQjVBRjhBY0FCaEFISUFkQUJ1QUdVQWNnQnpBRjhBY3dCaEFH?=
- =?us-ascii?Q?MEFjd0IxQUc0QVp3QmZBSElBWlFCekFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFRQUFBQUFBQUFBQ0FBQUFB?=
+ =?us-ascii?Q?QUNlQUFBQVpnQnZBSFVBYmdCa0FISUFlUUJmQUhBQVlRQnlBSFFBYmdCbEFI?=
+ =?us-ascii?Q?SUFjd0JmQUhNQVlRQnRBSE1BZFFCdUFHY0FYd0JqQUc4QWJnQm1BQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUVBQUFBQUFBQUFBZ0FBQUFBQW5nQUFBR1lBYndCMUFHNEFaQUJ5QUhrQVh3?=
- =?us-ascii?Q?QndBR0VBY2dCMEFHNEFaUUJ5QUhNQVh3QnpBRzBBYVFCakFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFCQUFBQUFBQUFBQUlBQUFBQUFKNEFBQUJtQUc4QWRR?=
+ =?us-ascii?Q?QnVBR1FBY2dCNUFGOEFjQUJoQUhJQWRBQnVBR1VBY2dCekFGOEFjd0JoQUcw?=
+ =?us-ascii?Q?QWN3QjFBRzRBWndCZkFISUFaUUJ6QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFRQUFBQUFBQUFBQ0FB?=
- =?us-ascii?Q?QUFBQUNlQUFBQVpnQnZBSFVBYmdCa0FISUFlUUJmQUhBQVlRQnlBSFFBYmdC?=
- =?us-ascii?Q?bEFISUFjd0JmQUhNQWRBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?RUFBQUFBQUFBQUFnQUFBQUFBbmdBQUFHWUFid0IxQUc0QVpBQnlBSGtBWHdC?=
+ =?us-ascii?Q?d0FHRUFjZ0IwQUc0QVpRQnlBSE1BWHdCekFHMEFhUUJqQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFCQUFBQUFBQUFBQUlBQUFBQUFKNEFBQUJtQUc4?=
- =?us-ascii?Q?QWRRQnVBR1FBY2dCNUFGOEFjQUJoQUhJQWRBQnVBR1VBY2dCekFGOEFkQUJ6?=
- =?us-ascii?Q?QUcwQVl3QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQVFBQUFBQUFBQUFDQUFB?=
+ =?us-ascii?Q?QUFBQ2VBQUFBWmdCdkFIVUFiZ0JrQUhJQWVRQmZBSEFBWVFCeUFIUUFiZ0Js?=
+ =?us-ascii?Q?QUhJQWN3QmZBSE1BZEFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBRUFBQUFBQUFBQUFnQUFBQUFBbmdBQUFHWUFid0IxQUc0QVpBQnlBSGtB?=
- =?us-ascii?Q?WHdCd0FHRUFjZ0IwQUc0QVpRQnlBSE1BWHdCMUFHMEFZd0FBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUJBQUFBQUFBQUFBSUFBQUFBQUo0QUFBQm1BRzhB?=
+ =?us-ascii?Q?ZFFCdUFHUUFjZ0I1QUY4QWNBQmhBSElBZEFCdUFHVUFjZ0J6QUY4QWRBQnpB?=
+ =?us-ascii?Q?RzBBWXdBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQVFBQUFBQUFBQUFD?=
- =?us-ascii?Q?QUFBQUFBQ2VBQUFBWndCMEFITUFYd0J3QUhJQWJ3QmtBSFVBWXdCMEFGOEFk?=
- =?us-ascii?Q?QUJ5QUdFQWFRQnVBR2tBYmdCbkFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFFQUFBQUFBQUFBQWdBQUFBQUFuZ0FBQUdZQWJ3QjFBRzRBWkFCeUFIa0FY?=
+ =?us-ascii?Q?d0J3QUdFQWNnQjBBRzRBWlFCeUFITUFYd0IxQUcwQVl3QUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUJBQUFBQUFBQUFBSUFBQUFBQUo0QUFBQnpB?=
- =?us-ascii?Q?R0VBYkFCbEFITUFYd0JoQUdNQVl3QnZBSFVBYmdCMEFGOEFjQUJzQUdFQWJn?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBUUFBQUFBQUFBQUNB?=
+ =?us-ascii?Q?QUFBQUFDZUFBQUFad0IwQUhNQVh3QndBSElBYndCa0FIVUFZd0IwQUY4QWRB?=
+ =?us-ascii?Q?QnlBR0VBYVFCdUFHa0FiZ0JuQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQkFBQUFBQUFBQUFJQUFBQUFBSjRBQUFCekFH?=
+ =?us-ascii?Q?RUFiQUJsQUhNQVh3QmhBR01BWXdCdkFIVUFiZ0IwQUY4QWNBQnNBR0VBYmdB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFFQUFBQUFBQUFBQWdBQUFBQUFuZ0FBQUhNQVlRQnNBR1VBY3dCZkFI?=
- =?us-ascii?Q?RUFkUUJ2QUhRQVpRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUVBQUFBQUFBQUFBZ0FBQUFBQW5nQUFBSE1BWVFCc0FHVUFjd0JmQUhF?=
+ =?us-ascii?Q?QWRRQnZBSFFBWlFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBUUFBQUFBQUFB?=
- =?us-ascii?Q?QUNBQUFBQUFDZUFBQUFjd0J1QUhBQWN3QmZBR3dBYVFCakFHVUFiZ0J6QUdV?=
- =?us-ascii?Q?QVh3QjBBR1VBY2dCdEFGOEFNUUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFRQUFBQUFBQUFB?=
+ =?us-ascii?Q?Q0FBQUFBQUNlQUFBQWN3QnVBSEFBY3dCZkFHd0FhUUJqQUdVQWJnQnpBR1VB?=
+ =?us-ascii?Q?WHdCMEFHVUFjZ0J0QUY4QU1RQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQkFBQUFBQUFBQUFJQUFBQUFBSjRBQUFC?=
- =?us-ascii?Q?ekFHNEFjQUJ6QUY4QWJBQnBBR01BWlFCdUFITUFaUUJmQUhRQVpRQnlBRzBB?=
- =?us-ascii?Q?WHdCekFIUUFkUUJrQUdVQWJnQjBBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFCQUFBQUFBQUFBQUlBQUFBQUFKNEFBQUJ6?=
+ =?us-ascii?Q?QUc0QWNBQnpBRjhBYkFCcEFHTUFaUUJ1QUhNQVpRQmZBSFFBWlFCeUFHMEFY?=
+ =?us-ascii?Q?d0J6QUhRQWRRQmtBR1VBYmdCMEFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUVBQUFBQUFBQUFBZ0FBQUFBQW5nQUFBSFlBWndCZkFHc0FaUUI1?=
- =?us-ascii?Q?QUhjQWJ3QnlBR1FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBRUFBQUFBQUFBQUFnQUFBQUFBbmdBQUFIWUFad0JmQUdzQVpRQjVB?=
+ =?us-ascii?Q?SGNBYndCeUFHUUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
  =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFRQUFBQUFB?=
- =?us-ascii?Q?QUFBQ0FBQUFBQUE9Ii8+PC9tZXRhPg=3D=3D?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQVFBQUFBQUFB?=
+ =?us-ascii?Q?QUFDQUFBQUFBQT0iLz48L21ldGE+?=
 authentication-results: spf=none (sender IP is )
  smtp.mailfrom=soares@synopsys.com; 
 x-originating-ip: [83.174.63.141]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 667c3637-5af6-4e88-7691-08d77f126b22
-x-ms-traffictypediagnostic: CH2PR12MB3733:
+x-ms-office365-filtering-correlation-id: 2c9b4286-ca2b-41c3-14ba-08d77f138831
+x-ms-traffictypediagnostic: CH2PR12MB4183:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <CH2PR12MB3733A86485420121B09C3A22AE550@CH2PR12MB3733.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-microsoft-antispam-prvs: <CH2PR12MB4183FDA14AE6D421E0CB54D6AE550@CH2PR12MB4183.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3173;
 x-forefront-prvs: 0249EFCB0B
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(396003)(376002)(346002)(136003)(39860400002)(366004)(189003)(199004)(81166006)(81156014)(66556008)(6506007)(66946007)(4326008)(478600001)(316002)(66476007)(66446008)(8676002)(71200400001)(186003)(64756008)(54906003)(26005)(8936002)(6916009)(52536014)(9686003)(86362001)(5660300002)(7696005)(2906002)(33656002)(76116006)(55016002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:CH2PR12MB3733;
+ SFS:(10019020)(396003)(39860400002)(136003)(376002)(346002)(366004)(189003)(199004)(26005)(8936002)(54906003)(55016002)(2906002)(6916009)(9686003)(316002)(86362001)(186003)(4326008)(33656002)(81166006)(81156014)(52536014)(478600001)(6506007)(8676002)(5660300002)(76116006)(4744005)(71200400001)(66446008)(66946007)(66556008)(64756008)(66476007)(7696005)(42413003)(32563001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:CH2PR12MB4183;
  H:CH2PR12MB4216.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: synopsys.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: XMex8i0OsDQMWVWETg4SMqcTjMSmPkeKQScq04o9bCUVp3ssTBAvEagFHaS/78WTFVDfsXGz96/FgMZGXXDONTnQUQe0B+fYIIl5FWKppOhSY5/KoxYQInEtKU6P7oGqMncavwCMZQT7CfNr90dxFsLm9qFUukPZaex/TJUTdJXVjiyPoD6W7NKxe9ixLubxpfUQHHlEM2ScSmq7ksUJaKSEnekS82NiHW89OOOQgMwI6iT9AB1Ll/OjD25IJTAMCS5ziGyWtRO7LI5zoAm0l7qsimeKXAnoJ9WmJhJJsfnxJCP9uEVAmRhNsiBWxYO4hayFL6onwqx4j6EJGAI9f2nuNr1QuoONpr7UHJePpFTJIzPCI/0hyFvnQVz8kkZingVxynxuwKk4d62saIv6tmlpxZ8IzJ2Cbgko+uO4k8gUaSZxJswc/ZrPXgKzkkJO
+x-microsoft-antispam-message-info: 9QoolYsDI4yytAb0i66SGGdxZ7qTjc2ToNSqb0Zc0C22ggmXS0Pm2ExomZdJeWgKehdk9TCbzJrJnPqe8w+nUz0gtQdzVwRwJwQc5rb5HWqMwbMYLChmnkexxQqCrZRdb75PnzkPy1/KHDV2O4qa3Lno96NgQSa6BwrFyk+uQL4nmEh+Jy/TisZb8m3kG+FveNL3P/bRvyfN4jChMnFQhsN+buqxRXuRl4lI/w/6r89cQNT8X5lDPfBAZESGni59SpRJe9/lCwNUTtbB5o1wIxG7kjQMxa023NeDUbntGvV90oJ8arYm5Su50+6v3GWr9AYGeeTcqRfulm1LiYHSlrUTM5xnYNuwcNZOzF3ymaU3MGm3haSY834Unu4RhU3mdBzwLTAQesxTl6n6B0DSt8BmJ7cUNSHOMqk23z42VaO3i72pmLGkUorzB684vKmPMO1S2fE70RnfseXAiocqJ1/xlvTxnE7qyXdMiszgVHNGWmU5v3BU5d6JGVBj8KUije/R8cwRW7338omvv7kwYA==
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 667c3637-5af6-4e88-7691-08d77f126b22
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Dec 2019 14:48:57.9286 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2c9b4286-ca2b-41c3-14ba-08d77f138831
+X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Dec 2019 14:56:56.1133 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: NC8Kgu9PyGKIKmNa0blqQAHKxwdGPvgbVax1G30VpHHCjFQvP2LcdJeGQW5KjbIL5YeE7maByntygAHi3iQBbQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR12MB3733
+X-MS-Exchange-CrossTenant-userprincipalname: vXINpWd0xSIitXUzLT2UO2tNTk/ccbtqboLS+gHTI6VJEIuwEFcYudiE3nlZpiKktp9Ln4RsmUN4Kdv9KSQNwg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR12MB4183
 X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_064911_930530_D74F0A68 
-X-CRM114-Status: GOOD (  15.77  )
+X-CRM114-CacheID: sfid-20191212_065703_986271_FCE9FB9E 
+X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -234,103 +236,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-HI Greg,
+Hi Greg,
 
 From: Greg KH <gregkh@linuxfoundation.org>
-Date: Thu, Dec 12, 2019 at 14:42:33
+Date: Thu, Dec 12, 2019 at 14:44:59
 
-> On Tue, Dec 10, 2019 at 04:37:31PM +0100, Vitor Soares wrote:
-> > --- /dev/null
-> > +++ b/include/uapi/linux/i3c/device.h
-> > @@ -0,0 +1,66 @@
-> > +/* SPDX-License-Identifier: GPL-2.0 */
+> On Tue, Dec 10, 2019 at 04:37:33PM +0100, Vitor Soares wrote:
+> > +static int __init i3cdev_init(void)
+> > +{
+> > +	int res;
+> > +
+> > +	pr_info("i3c /dev entries driver\n");
 > 
-> Not a valid uapi SPDX license :(
+> Please remove debugging information, kernel code should be quiet unless
+> something goes wrong.
 
-Sorry, I missed that one. I already got the right SPDX.
+I will remove it.
 
 > 
+> > +	/* Dynamically request unused major number */
+> > +	res = alloc_chrdev_region(&i3cdev_number, 0, N_I3C_MINORS, "i3c");
 > 
-> > +/*
-> > + * Copyright (c) 2019 Synopsys, Inc. and/or its affiliates.
-> > + *
-> > + * Author: Vitor Soares <vitor.soares@synopsys.com>
-> > + */
-> > +
-> > +#ifndef _UAPI_LINUX_I3C_DEVICE_H
-> > +#define _UAPI_LINUX_I3C_DEVICE_H
-> > +
-> > +#include <linux/types.h>
-> > +
-> > +/**
-> > + * enum i3c_error_code - I3C error codes
-> > + *
-> > + * These are the standard error codes as defined by the I3C specification.
-> > + * When -EIO is returned by the i3c_device_do_priv_xfers() or
-> > + * i3c_device_send_hdr_cmds() one can check the error code in
-> > + * &struct_i3c_priv_xfer.err or &struct i3c_hdr_cmd.err to get a better idea of
-> > + * what went wrong.
-> > + *
-> > + * @I3C_ERROR_UNKNOWN: unknown error, usually means the error is not I3C
-> > + *		       related
-> > + * @I3C_ERROR_M0: M0 error
-> > + * @I3C_ERROR_M1: M1 error
-> > + * @I3C_ERROR_M2: M2 error
-> > + */
-> > +enum i3c_error_code {
-> > +	I3C_ERROR_UNKNOWN = 0,
-> > +	I3C_ERROR_M0 = 1,
-> > +	I3C_ERROR_M1,
-> > +	I3C_ERROR_M2,
-> 
-> You have to specify all of these.
-> 
-> > +};
-> > +
-> > +/**
-> > + * enum i3c_hdr_mode - HDR mode ids
-> > + * @I3C_HDR_DDR: DDR mode
-> > + * @I3C_HDR_TSP: TSP mode
-> > + * @I3C_HDR_TSL: TSL mode
-> > + */
-> > +enum i3c_hdr_mode {
-> > +	I3C_HDR_DDR,
-> > +	I3C_HDR_TSP,
-> > +	I3C_HDR_TSL,
-> 
-> same here.
-> 
-> 
-> > +};
-> > +
-> > +/**
-> > + * struct i3c_priv_xfer - I3C SDR private transfer
-> > + * @rnw: encodes the transfer direction. true for a read, false for a write
-> > + * @len: transfer length in bytes of the transfer
-> > + * @data: input/output buffer
-> > + * @data.in: input buffer. Must point to a DMA-able buffer
-> > + * @data.out: output buffer. Must point to a DMA-able buffer
-> > + * @err: I3C error code
-> > + */
-> > +struct i3c_priv_xfer {
-> > +	u8 rnw;
-> > +	u16 len;
-> > +	union {
-> > +		void *in;
-> > +		const void *out;
-> > +	} data;
-> > +	enum i3c_error_code err;
-> 
-> Ick, that's a horrid user/kernel api structure that will not work at
-> all.
-> 
-> Please fix.
+> Do you really need a whole major, or will a few minors work?
 > 
 > thanks,
 > 
 > greg k-h
 
-Thanks for your feedback, I will address it in next version.
+I'm reserving one per device. What do you suggest?
 
 Best regards,
 Vitor Soares
