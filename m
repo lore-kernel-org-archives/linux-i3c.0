@@ -2,83 +2,63 @@ Return-Path: <SRS0=EbLq=4F=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-0.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-8.3 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_2
+	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 28C06C34022
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 34D91C34027
 	for <linux-i3c@archiver.kernel.org>; Mon, 17 Feb 2020 16:45:45 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id EC5AF22525
+	by mail.kernel.org (Postfix) with ESMTPS id ED87B24125
 	for <linux-i3c@archiver.kernel.org>; Mon, 17 Feb 2020 16:45:44 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="PLmQ9IQ/"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org EC5AF22525
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=arndb.de
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="JSBaIAJ9"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org ED87B24125
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=collabora.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mGpv+x/ctpKUOTret9v9U5N7FZ83JsM0ugRVLbHYrKg=; b=PLmQ9IQ/9taW+0
-	QGP81NhLwdTttN3AdPygoGcPB2vudUiUpuLS68YVU+5XU9QNLL/6y2CNXZWdQhK4SSzCkJmV2rqTV
-	qY0HHzk8zDgAvxuBB7WKdzUdX2+k2P6Ja8tq29dR0swLXw+hQzfmFF2OvD+n5eUVQ+Qe11GK6eUxl
-	fKmYDn/yZV+zBaPM3z5Jl7AlLrEe/nSXu4xPOc7ctQV8STi2P8IKC0E+p1Os9FFpbR3WQEQ4ZGlK1
-	lg59eakWndzmxXTXFjsPIf1HnjCQT6sjL4SY8HuPatM4pbg6Uvxx/LaW0oji+hiH22DAdDTRp5K3R
-	To3e4JQNB3Vt+qqMgc5A==;
+	List-Owner; bh=aW2cY2XcpuSRz5HttZVOcSnUmTloFoUjE33ShosYMsw=; b=JSBaIAJ9/tko5R
+	SgnKQ6UCM6xEnLwXt9KR07g/y9Sj+OyEALmQKz7Phx1uOR+fj9ilsSlUsk0M4DBe4Y2Xfga73jHfu
+	CvJ/N0z2OAGcZws6L5QHG8uxpfAkAfTH7z4G+4UeZSpct9A1QNiQ8CknRWz+u1APV/4U9MsM3OxyH
+	RQql3RFw9ZG3PC6xkMnaCdXG848kDHYrGjm72QRL9tieqx3D45M+vTyma8A+eak1buAZKTVTs1nEu
+	CIxFNxa9QwbULOCl9J374AQupoWVrC48Yhhie8BCaWtCHZLTrjnbTz/XbxgQpZStiv4qQKZ4Lumqa
+	GPolOHrFYFuftLpPiIiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3jWi-0005Fg-8v; Mon, 17 Feb 2020 16:45:44 +0000
-Received: from mout.kundenserver.de ([212.227.126.131])
+	id 1j3jWi-0005FY-5B; Mon, 17 Feb 2020 16:45:44 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3hzI-0002X3-BY
- for linux-i3c@lists.infradead.org; Mon, 17 Feb 2020 15:07:09 +0000
-Received: from mail-qk1-f173.google.com ([209.85.222.173]) by
- mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MoNy4-1jnk7E1SHo-00oqhD for <linux-i3c@lists.infradead.org>; Mon, 17 Feb
- 2020 16:07:04 +0100
-Received: by mail-qk1-f173.google.com with SMTP id h4so16494990qkm.0
- for <linux-i3c@lists.infradead.org>; Mon, 17 Feb 2020 07:07:03 -0800 (PST)
-X-Gm-Message-State: APjAAAVIKfaq+5Y+X4Mq2P2lA3AK5vfUzSoyLy/sC/eHcNrH25MTW4uL
- 9eOrE0xhY5Q9rJA2H8eEZ9oomL2GENkQMPD6/8c=
-X-Google-Smtp-Source: APXvYqz9OqBtba+abUUUMNKz6i3LC/Dw5ZdyGM5IHyBgCPdVBvXaDD8QWPzvQe5BJJJR3ttaBrcK7BJIlG+yyD9Ni5o=
-X-Received: by 2002:a05:620a:909:: with SMTP id
- v9mr14320839qkv.138.1581952022158; 
- Mon, 17 Feb 2020 07:07:02 -0800 (PST)
-MIME-Version: 1.0
+ id 1j3hrn-0005wP-D2
+ for linux-i3c@lists.infradead.org; Mon, 17 Feb 2020 14:59:24 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 356FA27636B;
+ Mon, 17 Feb 2020 14:59:21 +0000 (GMT)
+Date: Mon, 17 Feb 2020 15:59:17 +0100
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: Vitor Soares <Vitor.Soares@synopsys.com>
+Subject: Re: [RFC v2 1/4] i3c: master: export i3c_masterdev_type
+Message-ID: <20200217155917.592e8ded@collabora.com>
+In-Reply-To: <20200217155623.13a94802@collabora.com>
 References: <cover.1580299067.git.vitor.soares@synopsys.com>
- <20200217155141.08e87b3f@collabora.com>
-In-Reply-To: <20200217155141.08e87b3f@collabora.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 17 Feb 2020 16:06:45 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a0jAbevb6mjy7Q=C-TFGn7uHRvshHNEO8XrDPRvRoAiTA@mail.gmail.com>
-Message-ID: <CAK8P3a0jAbevb6mjy7Q=C-TFGn7uHRvshHNEO8XrDPRvRoAiTA@mail.gmail.com>
-Subject: Re: [RFC v2 0/4] Introduce i3c device userspace interface
-To: Boris Brezillon <boris.brezillon@collabora.com>
-X-Provags-ID: V03:K1:m9o/B/UAs8fheEl691eQDAco8P/HDt73b77iguM66yN/tbQwaMC
- Yufgjs9Do7MFe7Yl5/UMaDJ+O+iy+3LOhXcPo4BzC0230Q6LOVwy/IegR9HLGQfeJRHy0AL
- qXrkR1E90iK9OkLgVvsbVliCtDxkri8/r5OauXomZi4UhwZKGJfws9XvjvzbRYSBVqVUDoY
- RtsebhF+1RR0WBTU8XygA==
-X-UI-Out-Filterresults: notjunk:1;V03:K0:iA8uR/A3M1o=:+Fukz03Lxssb6TajBEvz3d
- v12JoQVjjs6+GkRwJ0T2uSdy+3Qur/yeIQiD3pLhQnZomv8v5B+HLdjG7kjJXj5nKxyVnKI1G
- fHV2r43Md+1Xt9fLGQDl160VmDk+3bKuuVh84dFmU3t620RJGGXwvT7Nx9He3Cu6UP54QCGKO
- 5zD+pqxjo/pf0Hl6vDeqRnxweSW8HyF/RpR6X3O05WiXSyX9hzYI0OTP8Vf9kk/nN8c/e0Hsg
- 17bpSTGEiZvqqMI7CJVrlNty/k+eDvKLNG8qCKiqq2115ydZcn0Sz01fd86iYAvcnrDR/0vuG
- XB1uEUvf4jFCWMV5vumxj2DVsoBi094eT6s6MTaoDaSbgFfNMNOSz/S5fDrrPfU66s2qFM81+
- 1harTnoh6WSfdRZGADWQGKA/mlbWQ4TxYphk49ARpgG3VZXIGARhF11ee/PqMGiPMyamInVKV
- 4iS44PbnRlNj3jX5J1YuLC/3oQfMF4Cem3IgoHX7w7ZGI/hlX3hiOtcmLTk9nBJAyONFAqt0Z
- lFECLQpx7040xjdyYRSfm3muzSUqxptTERzlKA9EeEcGdsQYLV427orWj4BWV0BIU4VVp9jDy
- GjKvtgxiUY/k1bVbQnX+yTlYZh1SzhxZalvDigRS0LM1jvMk6BQNuYjU19kdIpYGhl6epc+n2
- DkFBba8qT+Qq5C0qiw1eYdgazQZvmM5sjTBI9xTwoeCGTlfPa6l0LxaMNfSHAAiK1ZBAfbfI7
- ZAqtvgtMl721nFOSGjNjQ/MiUm/dr6abaDQilVGPwyrnk0if7oUKtn5/eD2l79mwkS0mDqIof
- pYmXdvFHcw5nMukxgawUSgYkUyIbzET2Pr6dFBaHzR1BwOArfA=
+ <7c742fba6c488b29f6fb15a5b910e799d50c5051.1580299067.git.vitor.soares@synopsys.com>
+ <20200217155623.13a94802@collabora.com>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_070708_695035_C6039496 
-X-CRM114-Status: GOOD (  18.00  )
+X-CRM114-CacheID: sfid-20200217_065923_580461_A9DD1A19 
+X-CRM114-Status: GOOD (  18.55  )
 X-Mailman-Approved-At: Mon, 17 Feb 2020 08:45:42 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -91,50 +71,76 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
- Wolfram Sang <wsa@the-dreams.de>, gregkh <gregkh@linuxfoundation.org>,
- Boris Brezillon <bbrezillon@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Vitor Soares <Vitor.Soares@synopsys.com>, Mark Brown <broonie@kernel.org>,
+Cc: Jose.Abreu@synopsys.com, Joao.Pinto@synopsys.com, arnd@arndb.de,
+ bbrezillon@kernel.org, gregkh@linuxfoundation.org, wsa@the-dreams.de,
+ linux-kernel@vger.kernel.org, broonie@kernel.org,
  linux-i3c@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, Feb 17, 2020 at 3:51 PM Boris Brezillon
-<boris.brezillon@collabora.com> wrote:
-> Sorry for taking so long to reply, and thanks for working on that topic.
->
-> On Wed, 29 Jan 2020 13:17:31 +0100
+On Mon, 17 Feb 2020 15:56:23 +0100
+Boris Brezillon <boris.brezillon@collabora.com> wrote:
+
+> On Wed, 29 Jan 2020 13:17:32 +0100
 > Vitor Soares <Vitor.Soares@synopsys.com> wrote:
->
-> > For today there is no way to use i3c devices from user space and
-> > the introduction of such API will help developers during the i3c device
-> > or i3c host controllers development.
-> >
-> > The i3cdev module is highly based on i2c-dev and yet I tried to address
-> > the concerns raised in [1].
-> >
-> > NOTES:
-> > - The i3cdev dynamically request an unused major number.
-> >
-> > - The i3c devices are dynamically exposed/removed from dev/ folder based
-> >   on if they have a device driver bound to it.
->
-> May I ask why you need to automatically bind devices to the i3cdev
-> driver when they don't have a driver matching the device id
-> loaded/compiled-in? If we get the i3c subsystem to generate proper
-> uevents we should be able to load the i3cdev module and bind the device
-> to this driver using a udev rule.
+> 
+> > Exporte i3c_masterdev_type so i3cdev module can verify if an i3c device
+> > is a master.
+> > 
+> > Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
+> > ---
+> >  drivers/i3c/internals.h | 1 +
+> >  drivers/i3c/master.c    | 3 ++-
+> >  2 files changed, 3 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
+> > index 86b7b44..bc062e8 100644
+> > --- a/drivers/i3c/internals.h
+> > +++ b/drivers/i3c/internals.h
+> > @@ -11,6 +11,7 @@
+> >  #include <linux/i3c/master.h>
+> >  
+> >  extern struct bus_type i3c_bus_type;
+> > +extern const struct device_type i3c_masterdev_type;
+> >  
+> >  void i3c_bus_normaluse_lock(struct i3c_bus *bus);
+> >  void i3c_bus_normaluse_unlock(struct i3c_bus *bus);
+> > diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> > index 7f8f896..8a0ba34 100644
+> > --- a/drivers/i3c/master.c
+> > +++ b/drivers/i3c/master.c
+> > @@ -523,9 +523,10 @@ static void i3c_masterdev_release(struct device *dev)
+> >  	of_node_put(dev->of_node);
+> >  }
+> >  
+> > -static const struct device_type i3c_masterdev_type = {
+> > +const struct device_type i3c_masterdev_type = {
+> >  	.groups	= i3c_masterdev_groups,
+> >  };
+> > +EXPORT_SYMBOL_GPL(i3c_masterdev_type);  
+> 
+> No need to export the symbol, removing the static and adding the
+> definition to internal.h should work just fine (i3c.o contains
+> both master.o and device.o).
 
-I think that would require manual configuration to ensure that the correct
-set of devices get bound to either the userspace driver or an in-kernel
-driver. The method from the current patch series is more complicated,
-but it means that any device can be accessed by the user space driver
-as long as it's not already owned by a kernel driver.
+Hm, my bad. Looks like i3cdev is a separate module/driver. If that's
+the case, it should not have direct access to internals.h. I see 2
+options here:
 
-     Arnd
+1/ make the i3cdev logic part of the core
+2/ provide helpers to find devices by type
+
+But maybe none of that is needed if you let userspace bind i3c devices
+to the i3cdev driver.
+
+> 
+> >  
+> >  static int i3c_bus_set_mode(struct i3c_bus *i3cbus, enum i3c_bus_mode mode,
+> >  			    unsigned long max_i2c_scl_rate)  
+> 
+
 
 _______________________________________________
 linux-i3c mailing list
