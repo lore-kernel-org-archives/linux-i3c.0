@@ -2,69 +2,218 @@ Return-Path: <SRS0=8b81=4H=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-6.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=ham
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-0.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 6AD3CC34022
-	for <linux-i3c@archiver.kernel.org>; Wed, 19 Feb 2020 08:42:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 2E90BC34050
+	for <linux-i3c@archiver.kernel.org>; Wed, 19 Feb 2020 08:46:05 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 36E4424658
-	for <linux-i3c@archiver.kernel.org>; Wed, 19 Feb 2020 08:42:51 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id EC473208E4
+	for <linux-i3c@archiver.kernel.org>; Wed, 19 Feb 2020 08:46:04 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="EfDR1qrf";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=kernel.org header.i=@kernel.org header.b="FALzDx6u"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 36E4424658
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=linuxfoundation.org
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="S2miBYAI";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="K89q23lb";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=synopsys.onmicrosoft.com header.i=@synopsys.onmicrosoft.com header.b="ih7ihSMI"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org EC473208E4
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SgGnV59qm4zfugUaVEV1lYyu2P0B8kODu2NNHUab1XI=; b=EfDR1qrfVWniJS
-	QZ1iQL2t4EK/TF/eQy2MkmRu/TSIq/8Wv/jEDSt14+u916eFfZXcVM4NQx0Z6WA55u+l8MAAr1zYf
-	ClIIWBW103WG7E/27iZ3PjAUcgSdDrr4Y91Mcv66wrBf4T24IP0MQc+Tx9L72RnrPrZfI07Qgo1eS
-	l6qCwGsNRzcOT1f+2m1uwa9f293Eu3AzJw2ooQ+PDFFsyDRejsEQntRjr6lzqhOvv/mt4XkI8lvpE
-	GPqJleC9JBrSkkRkR5jVQ6rGqkWfzLIkIF16u6n+hMbjJzfezlNCBjt6WiCVQ5FaCL4yMwuX7PXYF
-	78+2ujJEyBU7IfCYj5CA==;
+	List-Owner; bh=oW7eC23ulfNLHC4RsmOddxkYud+WcJ27v2z72bHRYCo=; b=S2miBYAIuyULMg
+	8K6B+bdbHbNZaPFeH1oLCSm+6QIZEsipqBCrQwESU2MNDWeTdZcHlT/jDETbVS8Q/Wy3oAKISmwgd
+	EoaT3FJqdt6AtFjP+FZIul64EmhBf8UQejKeNBnshTxjIgjFxtQVqUhbv7HRyR5ZDbz0sE+6kSiwV
+	oKIySS4QM68bKt6RO++n54lPo0hKRAVEwEs022S9EJyRJR570N2qs8PYLevrPgXpsnLaGphApJRUO
+	vWTdNDBQRBcxVyrDsRwjwDu9xrIVDwsvXSHyoH4J4Yes7BskUMMw3DrAtKC+JMDGWdr345SElknj7
+	LjgrlrIFtExuPS5srGOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4KwU-0000uO-Db; Wed, 19 Feb 2020 08:42:50 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j4Kzc-0002uJ-L1; Wed, 19 Feb 2020 08:46:04 +0000
+Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4KwO-0000se-3A
- for linux-i3c@lists.infradead.org; Wed, 19 Feb 2020 08:42:48 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1j4KzY-0002od-SV
+ for linux-i3c@lists.infradead.org; Wed, 19 Feb 2020 08:46:03 +0000
+Received: from mailhost.synopsys.com (badc-mailhost1.synopsys.com
+ [10.192.0.17])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 962C8208E4;
- Wed, 19 Feb 2020 08:42:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582101762;
- bh=e6tNZV1/FpHd+hNRbBxi3D3UPac4QwtGNmcrf8soYT0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=FALzDx6uGG1r6+p2NMtFTxz7kb3CAI53SlzvdFnBlqmiNwTayUPCtP5v8cXnliLOJ
- zX2jXw0+KSo4+2Rg6ZNHUEFfTshNxQq7XwNMyejyvl3Pz2+HSgJU+yMQ04sz7LckME
- WTtsEZTSmaySZLegaPTmOmP0+dFmnWQC3s9gekdU=
-Date: Wed, 19 Feb 2020 09:42:39 +0100
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Vitor Soares <Vitor.Soares@synopsys.com>
-Subject: Re: [PATCH v3 4/5] i3c: add i3cdev module to expose i3c dev in /dev
-Message-ID: <20200219084239.GA2737861@kroah.com>
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 03C41C009D;
+ Wed, 19 Feb 2020 08:45:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1582101959; bh=1l4A2TdCEpz8HeG8U8Puj+FjfJohwQ7pRsG+8bQ1Jds=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=K89q23lbkYHqi4PvegzKtEThYkrTXkt46tI9g+982HQssi4bujDhj9U/EtKXIobeA
+ RqW+0cz58dOB7JBGGo/92sQPWWyuzvM2x1TybC6DA68WC9OQCBS/hKzLMI4pJfWUNQ
+ yQF9tkeSHz9r/FGx6LmLzgTHgAOwzGGoqsiLJf1LCvbxBJ1RJkYkdq4CZkGA1hTx1S
+ 0V95CJaWMsDGq6YEfzVZgG5zSLfO/T+5B7Br5dmww/Cuf2IUhdzmZVc7RwIIOUXJvM
+ qzFT5D4TSdPikTHHZUyO6z9fH1goW5xDmQ4UW8pJusUeecCl86kxOVDCotDFw7GvIx
+ refHIfYJ3y2wg==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id B1B96A0079;
+ Wed, 19 Feb 2020 08:45:57 +0000 (UTC)
+Received: from us01hybrid1.internal.synopsys.com (10.200.27.51) by
+ US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Wed, 19 Feb 2020 00:45:57 -0800
+Received: from NAM10-BN7-obe.outbound.protection.outlook.com (10.202.3.67) by
+ mrs.synopsys.com (10.200.27.51) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Wed, 19 Feb 2020 00:45:56 -0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ATXOD4pq4H6RvzX9vG+gIV6c6K+ToNK7tyTa/uNif8oPDZ1zcxFl+/qQ5NjM90GOEGNoFOH/gVhY7edW2iTD7d6KWszOiy17lJ+I9Cl4kNVoeCFroKuAAOqXaP3wsw62PhrJ0gLvM+tY+HHE9EOMc/G3A33tZuExHYbRZFvQTtQ419J2o0m51xU+8IztiOxgDqvPckSQyOW34osX/lzots7cvqGQ6hXo39rtt+OIjdBvcl7XFgr1hoXUkBul9MFYJVRdq03Y3LMUMmg2urZwJSqUC7X8Fmg9VY52/FsQca8dMaRc9fO23fzsTDBEQ2kbu6Z5TzPazn1a+gdHxkDIUw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=bxjEyV7vD3Qxt1xfOQ5liVkqiqkDLuTrBrPB3kSX0pw=;
+ b=ivp5bIl1cDUj2FVW/h1/v5pPTAuMkw/QY1M60Po1mu6QloqxOjb84CYCAcj+8isexvljEpo8p46VI8g16OS1kxecIR8ynZdrqEkeFh6Bz16HUhA4qZY74nD6KwO4c+fMhTefDT5dlFJj4EpOo9SWaANQbntu4Q+hZxq2cBKyMgH7+OhISMxcNpag8K6J8c+5K0GhzTcTY4Hnut4PRDSktNh6etetPwUjuRwv6nlB9mDcWTqPxG3+PnZgOktG4Yh9WaoJVhtQoGLR+Qir96ZrRESXiNnKLDfHQX14hoSCzvEP90zsyp6u0faAZCZt9qyui3haczWij5nzUxSlqL7ozA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
+ dkim=pass header.d=synopsys.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=bxjEyV7vD3Qxt1xfOQ5liVkqiqkDLuTrBrPB3kSX0pw=;
+ b=ih7ihSMIT0k0qlm55yyl7uDBfTQdeJE6nRTW3eiYquieUt/gcMx0kTNaCiRA5pqEfoSzNAtiBu91Y4xmboOMHtZNVcNydLb5nU0xCcoj7cD6IugrGSWu0xUDimny5fSNbmG23duO/Z211YSLKYKV8T/KIOBifKXPq+5wXw8O6Fo=
+Received: from CH2PR12MB4216.namprd12.prod.outlook.com (20.180.6.151) by
+ CH2PR12MB4246.namprd12.prod.outlook.com (20.180.6.210) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2729.23; Wed, 19 Feb 2020 08:45:55 +0000
+Received: from CH2PR12MB4216.namprd12.prod.outlook.com
+ ([fe80::c8d1:bea7:c855:bcfe]) by CH2PR12MB4216.namprd12.prod.outlook.com
+ ([fe80::c8d1:bea7:c855:bcfe%5]) with mapi id 15.20.2729.032; Wed, 19 Feb 2020
+ 08:45:55 +0000
+From: Vitor Soares <Vitor.Soares@synopsys.com>
+To: Greg KH <gregkh@linuxfoundation.org>
+Subject: RE: [PATCH v3 4/5] i3c: add i3cdev module to expose i3c dev in /dev
+Thread-Topic: [PATCH v3 4/5] i3c: add i3cdev module to expose i3c dev in /dev
+Thread-Index: AQHV5rqGCzs/XZoBrU+kjYi0pz6mk6giIVOAgAATCIA=
+Date: Wed, 19 Feb 2020 08:45:55 +0000
+Message-ID: <CH2PR12MB42169E22641024B57E78CFF2AE100@CH2PR12MB4216.namprd12.prod.outlook.com>
 References: <cover.1582069402.git.vitor.soares@synopsys.com>
  <e093ae9da81e7702c188a20d1e8b9d7f8024bfeb.1582069402.git.vitor.soares@synopsys.com>
+ <20200219073709.GB2728338@kroah.com>
+In-Reply-To: <20200219073709.GB2728338@kroah.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-dg-ref: =?us-ascii?Q?PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNcc29hcmVzXGFw?=
+ =?us-ascii?Q?cGRhdGFccm9hbWluZ1wwOWQ4NDliNi0zMmQzLTRhNDAtODVlZS02Yjg0YmEy?=
+ =?us-ascii?Q?OWUzNWJcbXNnc1xtc2ctM2I5NTA4MjgtNTJmNC0xMWVhLTgyOGQtYjgwOGNm?=
+ =?us-ascii?Q?NTlkN2ZjXGFtZS10ZXN0XDNiOTUwODJhLTUyZjQtMTFlYS04MjhkLWI4MDhj?=
+ =?us-ascii?Q?ZjU5ZDdmY2JvZHkudHh0IiBzej0iMTA1MyIgdD0iMTMyMjY1NzU1NTIzNjIw?=
+ =?us-ascii?Q?MDU2IiBoPSJIQUIxT2k0TDhPOS9mK0t4YU5IbmNkTldqMWM9IiBpZD0iIiBi?=
+ =?us-ascii?Q?bD0iMCIgYm89IjEiIGNpPSJjQUFBQUVSSFUxUlNSVUZOQ2dVQUFCUUpBQURZ?=
+ =?us-ascii?Q?SE8vOUFPZlZBWnEwOWZNYWpqTlltclQxOHhxT00xZ09BQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBSEFBQUFDa0NBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?RUFBUUFCQUFBQXNQcFJHUUFBQUFBQUFBQUFBQUFBQUo0QUFBQm1BR2tBYmdC?=
+ =?us-ascii?Q?aEFHNEFZd0JsQUY4QWNBQnNBR0VBYmdCdUFHa0FiZ0JuQUY4QWR3QmhBSFFB?=
+ =?us-ascii?Q?WlFCeUFHMEFZUUJ5QUdzQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFF?=
+ =?us-ascii?Q?QUFBQUFBQUFBQWdBQUFBQUFuZ0FBQUdZQWJ3QjFBRzRBWkFCeUFIa0FYd0J3?=
+ =?us-ascii?Q?QUdFQWNnQjBBRzRBWlFCeUFITUFYd0JuQUdZQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBUUFBQUFBQUFBQUNBQUFB?=
+ =?us-ascii?Q?QUFDZUFBQUFaZ0J2QUhVQWJnQmtBSElBZVFCZkFIQUFZUUJ5QUhRQWJnQmxB?=
+ =?us-ascii?Q?SElBY3dCZkFITUFZUUJ0QUhNQWRRQnVBR2NBWHdCakFHOEFiZ0JtQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQkFBQUFBQUFBQUFJQUFBQUFBSjRBQUFCbUFHOEFk?=
+ =?us-ascii?Q?UUJ1QUdRQWNnQjVBRjhBY0FCaEFISUFkQUJ1QUdVQWNnQnpBRjhBY3dCaEFH?=
+ =?us-ascii?Q?MEFjd0IxQUc0QVp3QmZBSElBWlFCekFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUVBQUFBQUFBQUFBZ0FBQUFBQW5nQUFBR1lBYndCMUFHNEFaQUJ5QUhrQVh3?=
+ =?us-ascii?Q?QndBR0VBY2dCMEFHNEFaUUJ5QUhNQVh3QnpBRzBBYVFCakFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFRQUFBQUFBQUFBQ0FB?=
+ =?us-ascii?Q?QUFBQUNlQUFBQVpnQnZBSFVBYmdCa0FISUFlUUJmQUhBQVlRQnlBSFFBYmdC?=
+ =?us-ascii?Q?bEFISUFjd0JmQUhNQWRBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFCQUFBQUFBQUFBQUlBQUFBQUFKNEFBQUJtQUc4?=
+ =?us-ascii?Q?QWRRQnVBR1FBY2dCNUFGOEFjQUJoQUhJQWRBQnVBR1VBY2dCekFGOEFkQUJ6?=
+ =?us-ascii?Q?QUcwQVl3QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBRUFBQUFBQUFBQUFnQUFBQUFBbmdBQUFHWUFid0IxQUc0QVpBQnlBSGtB?=
+ =?us-ascii?Q?WHdCd0FHRUFjZ0IwQUc0QVpRQnlBSE1BWHdCMUFHMEFZd0FBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQVFBQUFBQUFBQUFD?=
+ =?us-ascii?Q?QUFBQUFBQ2VBQUFBWndCMEFITUFYd0J3QUhJQWJ3QmtBSFVBWXdCMEFGOEFk?=
+ =?us-ascii?Q?QUJ5QUdFQWFRQnVBR2tBYmdCbkFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUJBQUFBQUFBQUFBSUFBQUFBQUo0QUFBQnpB?=
+ =?us-ascii?Q?R0VBYkFCbEFITUFYd0JoQUdNQVl3QnZBSFVBYmdCMEFGOEFjQUJzQUdFQWJn?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFFQUFBQUFBQUFBQWdBQUFBQUFuZ0FBQUhNQVlRQnNBR1VBY3dCZkFI?=
+ =?us-ascii?Q?RUFkUUJ2QUhRQVpRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBUUFBQUFBQUFB?=
+ =?us-ascii?Q?QUNBQUFBQUFDZUFBQUFjd0J1QUhBQWN3QmZBR3dBYVFCakFHVUFiZ0J6QUdV?=
+ =?us-ascii?Q?QVh3QjBBR1VBY2dCdEFGOEFNUUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQkFBQUFBQUFBQUFJQUFBQUFBSjRBQUFC?=
+ =?us-ascii?Q?ekFHNEFjQUJ6QUY4QWJBQnBBR01BWlFCdUFITUFaUUJmQUhRQVpRQnlBRzBB?=
+ =?us-ascii?Q?WHdCekFIUUFkUUJrQUdVQWJnQjBBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUVBQUFBQUFBQUFBZ0FBQUFBQW5nQUFBSFlBWndCZkFHc0FaUUI1?=
+ =?us-ascii?Q?QUhjQWJ3QnlBR1FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
+ =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFRQUFBQUFB?=
+ =?us-ascii?Q?QUFBQ0FBQUFBQUE9Ii8+PC9tZXRhPg=3D=3D?=
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=soares@synopsys.com; 
+x-originating-ip: [2.83.222.20]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 3c95bb62-fde9-424d-3f7f-08d7b5182274
+x-ms-traffictypediagnostic: CH2PR12MB4246:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <CH2PR12MB42464540E1C49D4CE1092B57AE100@CH2PR12MB4246.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6430;
+x-forefront-prvs: 0318501FAE
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(376002)(366004)(136003)(346002)(39860400002)(396003)(199004)(189003)(54906003)(478600001)(2906002)(7696005)(4744005)(5660300002)(33656002)(8676002)(8936002)(81156014)(86362001)(4326008)(6506007)(81166006)(52536014)(66556008)(55016002)(71200400001)(6916009)(64756008)(66476007)(26005)(186003)(76116006)(66946007)(66446008)(9686003)(316002)(42413003)(32563001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:CH2PR12MB4246;
+ H:CH2PR12MB4216.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: synopsys.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: M3Uc8qrP+o55jMCu2L002gTYUflFTIa8c6ysEWHOnFdEHV72qRHZW9BloSv34ABnEy/xoNZShLCdZGC2+BkelR95r/hU99fZPDWEqQspBZXLlUwsLiQCN244ML2w44g38YUobAc+OSFb1cpnHy/oNaLDyKwWRQShyfxTseMdZOiB6HdmuF9LIQy4dNVFbo20UB6wBI+5fCPkDJ7+U3ZfoB1VK7hPXWTGkX1uhzS96DAYQHZKtKBUg9LoViAJQ7wEy+POnXHkdBIHHvKZC4LE+AdDn/m3p1Rh9Mpu17QLQide/zc04adkVLxJLDTqL8jnLXsPwyMHiL2X/h9wREms2S4DEGFF+h2h3IKzAOCGPJqbou7Yy4BBwbsW9+e3kNsoi0RGZv6ZvYoRZpIEQVQMmNUhrIMG/xuReiaVHR3zrBYIKriRSbNDxpyJluToryKycNz9U3KRATbHJawXkhmD9diIKfIjteaCxCxmTF6VFW5TEpvNAdHyTW5c6fuHKcLpRZsKfCDVXZb0EnVqhYmJuQ==
+x-ms-exchange-antispam-messagedata: irSYoXi4Jrj4iLoq8DiL/KM2EssjkAwYOB6zCCwYCv5QRw8wImp4ekgjc0Zq8P8RpPaaLvfhDJJtJrEw8TKefuQgNKoUOJ9lo9yivDDomWt/G0i3M1w+EGTB+IUiqOrGXhWffAEeh9keMDjLheXSbw==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e093ae9da81e7702c188a20d1e8b9d7f8024bfeb.1582069402.git.vitor.soares@synopsys.com>
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3c95bb62-fde9-424d-3f7f-08d7b5182274
+X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Feb 2020 08:45:55.6786 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: aDmKcx/2EBanB7vDkFoTtCzSk0zR4AM0IErqzsdOBL9I5SZQJxXjgbyVzLZkNV07UFmVXNjQ6kPKNW7LIy/c6A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR12MB4246
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_004244_179367_360298BE 
-X-CRM114-Status: GOOD (  33.08  )
+X-CRM114-CacheID: sfid-20200219_004601_059746_35B4B45D 
+X-CRM114-Status: GOOD (  15.19  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,606 +225,47 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: Jose.Abreu@synopsys.com, corbet@lwn.net, Joao.Pinto@synopsys.com,
- arnd@arndb.de, wsa@the-dreams.de, bbrezillon@kernel.org,
- linux-kernel@vger.kernel.org, broonie@kernel.org,
- linux-i3c@lists.infradead.org
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, "corbet@lwn.net" <corbet@lwn.net>,
+ Joao Pinto <Joao.Pinto@synopsys.com>, "arnd@arndb.de" <arnd@arndb.de>,
+ "wsa@the-dreams.de" <wsa@the-dreams.de>,
+ "bbrezillon@kernel.org" <bbrezillon@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "broonie@kernel.org" <broonie@kernel.org>,
+ "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Feb 19, 2020 at 01:20:42AM +0100, Vitor Soares wrote:
-> This patch adds user mode support to I3C SDR transfers.
+Hi Greg,
+
+From: Greg KH <gregkh@linuxfoundation.org>
+Date: Wed, Feb 19, 2020 at 07:37:09
+
+> On Wed, Feb 19, 2020 at 01:20:42AM +0100, Vitor Soares wrote:
+> > +config I3CDEV
+> > +	tristate "I3C device interface"
+> > +	depends on I3C
+> > +	help
+> > +	  Say Y here to use i3c-* device files, usually found in the /dev
+> > +	  directory on your system.  They make it possible to have user-space
+> > +	  programs use the I3C devices.
+> > +
+> > +	  This support is also available as a module.  If so, the module
+> > +	  will be called i3cdev.
+> > +
+> > +	  Note that this application programming interface is EXPERIMENTAL
+> > +	  and hence SUBJECT TO CHANGE WITHOUT NOTICE while it stabilizes.
 > 
-> The module is based on i2c-dev.c with the follow features:
->   - expose on /dev the i3c devices dynamically based on if they have
->     a device driver bound.
->   - Dynamically allocate the char device Major number.
+> Hah, no, we don't get to say stuff like that.  It's hard to write good
+> apis, but once this is merged, we need to support what is there, right?
 > 
-> Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
-> ---
-> Changes in v3:
->   Use the xfer_lock to prevent device detach during ioctl call
->   Expose i3cdev under /dev/bus/i3c/ folder like usb does
->   Change NOTIFY_BOUND to NOTIFY_BIND, this allows the device detach occur
->   before driver->probe
->   Avoid use of IS_ERR_OR_NULL
->   Use u64_to_user_ptr instead of (void __user *)(uintptr_t) cast
->   Allocate k_xfer and data_ptrs at once to eliminate duble allocation check
->   Pass i3cdev to dev->driver_data
->   Make all minors available
-> 
-> Changes in v2:
->   Use IDR api for minor numbering
->   Modify ioctl struct
->   Fix SPDX license
-> 
->  drivers/i3c/Kconfig             |  15 ++
->  drivers/i3c/Makefile            |   1 +
->  drivers/i3c/i3cdev.c            | 429 ++++++++++++++++++++++++++++++++++++++++
->  include/uapi/linux/i3c/i3cdev.h |  38 ++++
->  4 files changed, 483 insertions(+)
->  create mode 100644 drivers/i3c/i3cdev.c
->  create mode 100644 include/uapi/linux/i3c/i3cdev.h
-> 
-> diff --git a/drivers/i3c/Kconfig b/drivers/i3c/Kconfig
-> index 30a4415..0164276 100644
-> --- a/drivers/i3c/Kconfig
-> +++ b/drivers/i3c/Kconfig
-> @@ -20,5 +20,20 @@ menuconfig I3C
->  	  will be called i3c.
->  
->  if I3C
-> +
-> +config I3CDEV
-> +	tristate "I3C device interface"
-> +	depends on I3C
-> +	help
-> +	  Say Y here to use i3c-* device files, usually found in the /dev
-> +	  directory on your system.  They make it possible to have user-space
-> +	  programs use the I3C devices.
-> +
-> +	  This support is also available as a module.  If so, the module
-> +	  will be called i3cdev.
-> +
-> +	  Note that this application programming interface is EXPERIMENTAL
-> +	  and hence SUBJECT TO CHANGE WITHOUT NOTICE while it stabilizes.
-> +
->  source "drivers/i3c/master/Kconfig"
->  endif # I3C
-> diff --git a/drivers/i3c/Makefile b/drivers/i3c/Makefile
-> index 11982ef..606d422 100644
-> --- a/drivers/i3c/Makefile
-> +++ b/drivers/i3c/Makefile
-> @@ -1,4 +1,5 @@
->  # SPDX-License-Identifier: GPL-2.0
->  i3c-y				:= device.o master.o
->  obj-$(CONFIG_I3C)		+= i3c.o
-> +obj-$(CONFIG_I3CDEV)		+= i3cdev.o
->  obj-$(CONFIG_I3C)		+= master/
-> diff --git a/drivers/i3c/i3cdev.c b/drivers/i3c/i3cdev.c
-> new file mode 100644
-> index 0000000..1a6bd35
-> --- /dev/null
-> +++ b/drivers/i3c/i3cdev.c
-> @@ -0,0 +1,429 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (c) 2020 Synopsys, Inc. and/or its affiliates.
-> + *
-> + * Author: Vitor Soares <soares@synopsys.com>
-> + */
-> +
-> +#include <linux/cdev.h>
-> +#include <linux/compat.h>
-> +#include <linux/device.h>
-> +#include <linux/fs.h>
-> +#include <linux/init.h>
-> +#include <linux/jiffies.h>
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/notifier.h>
-> +#include <linux/slab.h>
-> +#include <linux/uaccess.h>
-> +
-> +#include <linux/i3c/i3cdev.h>
-> +
-> +#include "internals.h"
-> +
-> +struct i3cdev_data {
-> +	struct i3c_device *i3c;
-> +	struct device *dev;
-> +	struct mutex xfer_lock; /* prevent detach while transferring */
-> +	struct cdev cdev;
-> +	int id;
-> +};
-> +
-> +static DEFINE_IDA(i3cdev_ida);
-> +static dev_t i3cdev_number;
-> +#define I3C_MINORS (MINORMASK + 1)
-> +
-> +static struct i3cdev_data *get_free_i3cdev(struct i3c_device *i3c)
-> +{
-> +	struct i3cdev_data *i3cdev;
-> +	int id;
-> +
-> +	id = ida_simple_get(&i3cdev_ida, 0, I3C_MINORS, GFP_KERNEL);
-> +	if (id < 0) {
-> +		pr_err("i3cdev: no minor number available!\n");
-> +		return ERR_PTR(id);
-> +	}
-> +
-> +	i3cdev = kzalloc(sizeof(*i3cdev), GFP_KERNEL);
-> +	if (!i3cdev) {
-> +		ida_simple_remove(&i3cdev_ida, id);
-> +		return ERR_PTR(-ENOMEM);
-> +	}
-> +
-> +	i3cdev->i3c = i3c;
-> +	i3cdev->id = id;
-> +	i3cdev_set_drvdata(i3c, i3cdev);
-> +
-> +	return i3cdev;
-> +}
-> +
-> +static void put_i3cdev(struct i3cdev_data *i3cdev)
-> +{
-> +	i3cdev_set_drvdata(i3cdev->i3c, NULL);
-> +	kfree(i3cdev);
-> +}
-> +
-> +static ssize_t
-> +i3cdev_read(struct file *file, char __user *buf, size_t count, loff_t *f_pos)
-> +{
-> +	struct i3cdev_data *i3cdev = file->private_data;
-> +	struct i3c_device *i3c = i3cdev->i3c;
-> +	struct i3c_priv_xfer xfers = {
-> +		.rnw = true,
-> +		.len = count,
-> +	};
-> +	int ret = -EACCES;
-> +	char *tmp;
-> +
-> +	mutex_lock(&i3cdev->xfer_lock);
-> +	if (i3c->dev.driver)
-> +		goto err_out;
-> +
-> +	tmp = kzalloc(count, GFP_KERNEL);
-> +	if (!tmp)
-> +		return -ENOMEM;
-> +
-> +	xfers.data.in = tmp;
-> +
-> +	dev_dbg(&i3c->dev, "Reading %zu bytes.\n", count);
-> +
-> +	ret = i3c_device_do_priv_xfers(i3c, &xfers, 1);
-> +	if (!ret)
-> +		ret = copy_to_user(buf, tmp, xfers.len) ? -EFAULT : xfers.len;
-> +
-> +	kfree(tmp);
-> +
-> +err_out:
-> +	mutex_unlock(&i3cdev->xfer_lock);
-> +	return ret;
-> +}
-> +
-> +static ssize_t
-> +i3cdev_write(struct file *file, const char __user *buf, size_t count,
-> +	     loff_t *f_pos)
-> +{
-> +	struct i3cdev_data *i3cdev = file->private_data;
-> +	struct i3c_device *i3c = i3cdev->i3c;
-> +	struct i3c_priv_xfer xfers = {
-> +		.rnw = false,
-> +		.len = count,
+> kernel programming is hard :(
 
-No error checking of count?
+I will remove this part.
 
-> +	};
-
-You can have this structure on the stack?
-
-> +	int ret = -EACCES;
-> +	char *tmp;
-> +
-> +	mutex_lock(&i3cdev->xfer_lock);
-> +	if (i3c->dev.driver)
-> +		goto err_out;
-> +
-> +	tmp = memdup_user(buf, count);
-
-So userspace can allocate any amount of memory they want to?
-
-Not good :(
-
-> +	if (IS_ERR(tmp))
-> +		return PTR_ERR(tmp);
-> +
-> +	xfers.data.out = tmp;
-> +
-> +	dev_dbg(&i3c->dev, "Writing %zu bytes.\n", count);
-> +
-> +	ret = i3c_device_do_priv_xfers(i3c, &xfers, 1);
-> +	kfree(tmp);
-> +
-> +err_out:
-> +	mutex_unlock(&i3cdev->xfer_lock);
-> +	return (!ret) ? count : ret;
-> +}
-> +
-> +static int
-> +i3cdev_do_priv_xfer(struct i3c_device *dev, struct i3c_ioc_priv_xfer *xfers,
-> +		    unsigned int nxfers)
-> +{
-> +	struct i3c_priv_xfer *k_xfers;
-> +	u8 **data_ptrs;
-> +	int i, ret = 0;
-> +
-> +	/* Since we have nxfers we may allocate k_xfer + *data_ptrs together */
-> +	k_xfers = kcalloc(nxfers, sizeof(*k_xfers) + sizeof(*data_ptrs),
-> +			  GFP_KERNEL);
-> +	if (!k_xfers)
-> +		return -ENOMEM;
-> +
-> +	/* set data_ptrs to be after nxfers * i3c_priv_xfer */
-> +	data_ptrs = (void *)k_xfers + (nxfers * sizeof(*k_xfers));
-> +
-> +	for (i = 0; i < nxfers; i++) {
-> +		data_ptrs[i] = memdup_user((const u8 __user *)
-> +					   (uintptr_t)xfers[i].data,
-> +					   xfers[i].len);
-> +		if (IS_ERR(data_ptrs[i])) {
-> +			ret = PTR_ERR(data_ptrs[i]);
-> +			break;
-> +		}
-> +
-> +		k_xfers[i].len = xfers[i].len;
-> +		if (xfers[i].rnw) {
-> +			k_xfers[i].rnw = true;
-> +			k_xfers[i].data.in = data_ptrs[i];
-> +		} else {
-> +			k_xfers[i].rnw = false;
-> +			k_xfers[i].data.out = data_ptrs[i];
-> +		}
-> +	}
-> +
-> +	if (ret < 0) {
-> +		i--;
-> +		goto err_free_mem;
-> +	}
-> +
-> +	ret = i3c_device_do_priv_xfers(dev, k_xfers, nxfers);
-> +	if (ret)
-> +		goto err_free_mem;
-> +
-> +	for (i = 0; i < nxfers; i++) {
-> +		if (xfers[i].rnw) {
-> +			if (copy_to_user(u64_to_user_ptr(xfers[i].data),
-> +					 data_ptrs[i], xfers[i].len))
-> +				ret = -EFAULT;
-
-You should bail out of the loop here.
-
-> +		}
-> +	}
-> +
-> +err_free_mem:
-> +	for (; i >= 0; i--)
-> +		kfree(data_ptrs[i]);
-> +	kfree(k_xfers);
-> +	return ret;
-> +}
-> +
-> +static struct i3c_ioc_priv_xfer *
-> +i3cdev_get_ioc_priv_xfer(unsigned int cmd, struct i3c_ioc_priv_xfer *u_xfers,
-> +			 unsigned int *nxfers)
-> +{
-> +	u32 tmp = _IOC_SIZE(cmd);
-> +
-> +	if ((tmp % sizeof(struct i3c_ioc_priv_xfer)) != 0)
-> +		return ERR_PTR(-EINVAL);
-> +
-> +	*nxfers = tmp / sizeof(struct i3c_ioc_priv_xfer);
-> +	if (*nxfers == 0)
-> +		return ERR_PTR(-EINVAL);
-
-But no error checking for too many of these?
-
-> +
-> +	return memdup_user(u_xfers, tmp);
-> +}
-> +
-> +static int
-> +i3cdev_ioc_priv_xfer(struct i3c_device *i3c, unsigned int cmd,
-> +		     struct i3c_ioc_priv_xfer *u_xfers)
-
-You lost your __user marking of this pointer :(
-
-Please fix that up, have you run sparse on this?
-
-> +{
-> +	struct i3c_ioc_priv_xfer *k_xfers;
-> +	unsigned int nxfers;
-> +	int ret;
-> +
-> +	k_xfers = i3cdev_get_ioc_priv_xfer(cmd, u_xfers, &nxfers);
-> +	if (IS_ERR(k_xfers))
-> +		return PTR_ERR(k_xfers);
-> +
-> +	ret = i3cdev_do_priv_xfer(i3c, k_xfers, nxfers);
-> +
-> +	kfree(k_xfers);
-> +
-> +	return ret;
-> +}
-> +
-> +static long
-> +i3cdev_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
-> +{
-> +	struct i3cdev_data *i3cdev = file->private_data;
-> +	struct i3c_device *i3c = i3cdev->i3c;
-> +	int ret = -EACCES;
-> +
-> +	dev_dbg(&i3c->dev, "ioctl, cmd=0x%02x, arg=0x%02lx\n", cmd, arg);
-> +
-> +	if (_IOC_TYPE(cmd) != I3C_DEV_IOC_MAGIC)
-> +		return -ENOTTY;
-> +
-> +	/* Use the xfer_lock to prevent device detach during ioctl call */
-> +	mutex_lock(&i3cdev->xfer_lock);
-> +	if (i3c->dev.driver)
-> +		goto err_no_dev;
-> +
-> +	/* Check command number and direction */
-> +	if (_IOC_NR(cmd) == _IOC_NR(I3C_IOC_PRIV_XFER(0)) &&
-> +	    _IOC_DIR(cmd) == (_IOC_READ | _IOC_WRITE))
-
-Shouldn't the ioctl core already handle this for you?
-
-> +		ret = i3cdev_ioc_priv_xfer(i3c, cmd,
-> +					(struct i3c_ioc_priv_xfer __user *)arg);
-> +
-> +err_no_dev:
-> +	mutex_unlock(&i3cdev->xfer_lock);
-> +	return ret;
-> +}
-> +
-> +static int i3cdev_open(struct inode *inode, struct file *file)
-> +{
-> +	struct i3cdev_data *i3cdev = container_of(inode->i_cdev,
-> +						  struct i3cdev_data,
-> +						  cdev);
-> +	file->private_data = i3cdev;
-> +
-> +	return 0;
-> +}
-> +
-> +static int i3cdev_release(struct inode *inode, struct file *file)
-> +{
-> +	file->private_data = NULL;
-
-Why does this matter?
-
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct file_operations i3cdev_fops = {
-> +	.owner		= THIS_MODULE,
-> +	.read		= i3cdev_read,
-> +	.write		= i3cdev_write,
-> +	.unlocked_ioctl	= i3cdev_ioctl,
-> +	.compat_ioctl	= compat_ptr_ioctl,
-> +	.open		= i3cdev_open,
-> +	.release	= i3cdev_release,
-> +};
-> +
-> +/* ------------------------------------------------------------------------- */
-> +
-> +static struct class *i3cdev_class;
-> +
-> +static int i3cdev_attach(struct device *dev, void *dummy)
-> +{
-> +	struct i3cdev_data *i3cdev;
-> +	struct i3c_device *i3c;
-> +	int res;
-> +
-> +	if (dev->type == &i3c_masterdev_type || dev->driver)
-> +		return 0;
-> +
-> +	i3c = dev_to_i3cdev(dev);
-> +
-> +	/* Get a device */
-> +	i3cdev = get_free_i3cdev(i3c);
-> +	if (IS_ERR(i3cdev))
-> +		return PTR_ERR(i3cdev);
-> +
-> +	mutex_init(&i3cdev->xfer_lock);
-> +	cdev_init(&i3cdev->cdev, &i3cdev_fops);
-> +	i3cdev->cdev.owner = THIS_MODULE;
-> +	res = cdev_add(&i3cdev->cdev,
-> +		       MKDEV(MAJOR(i3cdev_number), i3cdev->id), 1);
-> +	if (res)
-> +		goto error_cdev;
-> +
-> +	/* register this i3c device with the driver core */
-> +	i3cdev->dev = device_create(i3cdev_class, &i3c->dev,
-> +				    MKDEV(MAJOR(i3cdev_number), i3cdev->id),
-> +				    NULL, "bus!i3c!%s", dev_name(&i3c->dev));
-> +	if (IS_ERR(i3cdev->dev)) {
-> +		res = PTR_ERR(i3cdev->dev);
-> +		goto error;
-> +	}
-> +	pr_debug("i3cdev: I3C device [%s] registered as minor %d\n",
-> +		 dev_name(&i3c->dev), i3cdev->id);
-
-dev_dbg()?
-
-> +	return 0;
-> +
-> +error:
-> +	cdev_del(&i3cdev->cdev);
-> +error_cdev:
-> +	put_i3cdev(i3cdev);
-> +	return res;
-> +}
-> +
-> +static int i3cdev_detach(struct device *dev, void *dummy)
-> +{
-> +	struct i3cdev_data *i3cdev;
-> +	struct i3c_device *i3c;
-> +
-> +	if (dev->type == &i3c_masterdev_type)
-> +		return 0;
-> +
-> +	i3c = dev_to_i3cdev(dev);
-> +
-> +	i3cdev = i3cdev_get_drvdata(i3c);
-> +	if (!i3cdev)
-> +		return 0;
-> +
-> +	/* Prevent transfers while cdev removal */
-> +	mutex_lock(&i3cdev->xfer_lock);
-> +	cdev_del(&i3cdev->cdev);
-> +	device_destroy(i3cdev_class, MKDEV(MAJOR(i3cdev_number), i3cdev->id));
-> +	mutex_unlock(&i3cdev->xfer_lock);
-> +
-> +	ida_simple_remove(&i3cdev_ida, i3cdev->id);
-> +	put_i3cdev(i3cdev);
-> +
-> +	pr_debug("i3cdev: device [%s] unregistered\n", dev_name(&i3c->dev));
-
-dev_dbg()?
-
-> +
-> +	return 0;
-> +}
-> +
-> +static int i3cdev_notifier_call(struct notifier_block *nb,
-> +				unsigned long action,
-> +				void *data)
-> +{
-> +	struct device *dev = data;
-> +
-> +	switch (action) {
-> +	case BUS_NOTIFY_ADD_DEVICE:
-> +	case BUS_NOTIFY_UNBOUND_DRIVER:
-> +		return i3cdev_attach(dev, NULL);
-> +	case BUS_NOTIFY_DEL_DEVICE:
-> +	case BUS_NOTIFY_BIND_DRIVER:
-> +		return i3cdev_detach(dev, NULL);
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static struct notifier_block i3cdev_notifier = {
-> +	.notifier_call = i3cdev_notifier_call,
-> +};
-> +
-> +static int __init i3cdev_init(void)
-> +{
-> +	int res;
-> +
-> +	/* Dynamically request unused major number */
-> +	res = alloc_chrdev_region(&i3cdev_number, 0, I3C_MINORS, "i3c");
-> +	if (res)
-> +		goto out;
-> +
-> +	/* Create a classe to populate sysfs entries*/
-> +	i3cdev_class = class_create(THIS_MODULE, "i3cdev");
-> +	if (IS_ERR(i3cdev_class)) {
-> +		res = PTR_ERR(i3cdev_class);
-> +		goto out_unreg_chrdev;
-> +	}
-> +
-> +	/* Keep track of busses which have devices to add or remove later */
-> +	res = bus_register_notifier(&i3c_bus_type, &i3cdev_notifier);
-> +	if (res)
-> +		goto out_unreg_class;
-> +
-> +	/* Bind to already existing device without driver right away */
-> +	i3c_for_each_dev(NULL, i3cdev_attach);
-> +
-> +	return 0;
-> +
-> +out_unreg_class:
-> +	class_destroy(i3cdev_class);
-> +out_unreg_chrdev:
-> +	unregister_chrdev_region(i3cdev_number, I3C_MINORS);
-> +out:
-> +	pr_err("%s: Driver Initialisation failed\n", __FILE__);
-
-spelling?
-
-> +	return res;
-> +}
-> +
-> +static void __exit i3cdev_exit(void)
-> +{
-> +	bus_unregister_notifier(&i3c_bus_type, &i3cdev_notifier);
-> +	i3c_for_each_dev(NULL, i3cdev_detach);
-> +	class_destroy(i3cdev_class);
-> +	unregister_chrdev_region(i3cdev_number, I3C_MINORS);
-> +}
-> +
-> +MODULE_AUTHOR("Vitor Soares <soares@synopsys.com>");
-> +MODULE_DESCRIPTION("I3C /dev entries driver");
-> +MODULE_LICENSE("GPL");
-> +
-> +module_init(i3cdev_init);
-> +module_exit(i3cdev_exit);
-> diff --git a/include/uapi/linux/i3c/i3cdev.h b/include/uapi/linux/i3c/i3cdev.h
-> new file mode 100644
-> index 0000000..656a686
-> --- /dev/null
-> +++ b/include/uapi/linux/i3c/i3cdev.h
-> @@ -0,0 +1,37 @@
-> +/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-> +/*
-> + * Copyright (c) 2020 Synopsys, Inc. and/or its affiliates.
-> + *
-> + * Author: Vitor Soares <vitor.soares@synopsys.com>
-> + */
-> +
-> +#ifndef _UAPI_I3C_DEV_H_
-> +#define _UAPI_I3C_DEV_H_
-> +
-> +#include <linux/types.h>
-> +#include <linux/ioctl.h>
-> +
-> +/* IOCTL commands */
-> +#define I3C_DEV_IOC_MAGIC	0x07
-> +
-> +/**
-> + * struct i3c_ioc_priv_xfer - I3C SDR ioctl private transfer
-> + * @data: Holds pointer to userspace buffer with transmit data.
-> + * @len: Length of data buffer buffers, in bytes.
-> + * @rnw: encodes the transfer direction. true for a read, false for a write
-> + */
-> +struct i3c_ioc_priv_xfer {
-> +	__u64 data;
-> +	__u16 len;
-> +	__u8 rnw;
-
-Shouldn't this be an enum type?  "true" is not a __u8 value :)
-
-> +	__u8 pad[5];
-> +};
-> +
-> +#define I3C_PRIV_XFER_SIZE(N)	\
-> +	((((sizeof(struct i3c_ioc_priv_xfer)) * (N)) < (1 << _IOC_SIZEBITS)) \
-> +	? ((sizeof(struct i3c_ioc_priv_xfer)) * (N)) : 0)
-> +
-> +#define I3C_IOC_PRIV_XFER(N)	\
-> +	_IOC(_IOC_READ|_IOC_WRITE, I3C_DEV_IOC_MAGIC, 30, I3C_PRIV_XFER_SIZE(N))
-
-_IOCWR()?
-
-thanks,
-
-greg k-h
+Best regards,
+Vitor Soares
 
 _______________________________________________
 linux-i3c mailing list
