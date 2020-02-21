@@ -7,16 +7,16 @@ X-Spam-Status: No, score=-3.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
 	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 3CF80C35641
-	for <linux-i3c@archiver.kernel.org>; Fri, 21 Feb 2020 09:50:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 99462C35640
+	for <linux-i3c@archiver.kernel.org>; Fri, 21 Feb 2020 09:54:32 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 12BD0222C4
-	for <linux-i3c@archiver.kernel.org>; Fri, 21 Feb 2020 09:50:17 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 6EFC324650
+	for <linux-i3c@archiver.kernel.org>; Fri, 21 Feb 2020 09:54:32 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="NlcsWip4"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 12BD0222C4
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="mWbF1BGY"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 6EFC324650
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=linux-m68k.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -25,51 +25,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cdzomzBVPqKRspRpweH1ggAYDZdhBE8cpMJ3z5pJKVo=; b=NlcsWip4UCVl0B
-	fPr/6cl+4rfw9xTWKwxB6dEsrJg5Z83BoJqObL/TbEMtdoedTyflthZF3Sdi13m4Td43563nHaQ4o
-	8pR9zOoASk/8ThLY3qwbapkNZf3qXggFonWcjdC02qh6cdTEh/RpDMv12E3ZnAvUEOLWvm9211L/G
-	VkcIBPPof0TxdLYS+s0Rz5bblDDspUoLY2szJIkEZ9WYNbSQtpZ3h6mGCyJcLDywWJZJwiDJjLQXh
-	v9hSho7HddasbeKGpzpTs1Ttb8SM+G87s+4atUfN4gaf+mopWli65FrKVHVA1X7BXlCaHhEIRQbR2
-	GCQEHsb0UD1bs05Oe/CA==;
+	List-Owner; bh=mLRX7urTMR3xKzW356+KIPteHMYSf7kO3XL49rn1R3c=; b=mWbF1BGYGxsUvq
+	VgbXubPuotYru0Xk2DQtT+VdMgKrNfnUnNYlUctlm3KVgh/MdAwuJA+jMfIkDFXxU/gdJujN1DLvT
+	NgZmCbjQY/3dQLUCH8qGuXUX5iCUEbNQFpD7SRtcvo25WTsyQ9z56OCbVpe19E/ZwP/5ZSn0rEVC1
+	Wl7Syl/nZbNHEyAWx8rLo4TYvYNvQypIcKwRk+7rK/HTU5LVs6Clx7ek95VsQZGFpLlnv0ClW7to5
+	aMLovnY+tBFDKWfBEkc6DSzXqPM4I2hn8VskvlnkkSQ5i7mWay/qaYWjxtreKbpBeyd1IRf1Q3YGv
+	7yeoiuC1PiKPQs+nFGRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j54wq-0001t6-Ng; Fri, 21 Feb 2020 09:50:16 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1j550y-0002mg-0s; Fri, 21 Feb 2020 09:54:32 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j54wo-0001sm-AT
- for linux-i3c@lists.infradead.org; Fri, 21 Feb 2020 09:50:15 +0000
-Received: by mail-ot1-f66.google.com with SMTP id r16so1493295otd.2
- for <linux-i3c@lists.infradead.org>; Fri, 21 Feb 2020 01:50:13 -0800 (PST)
+ id 1j550v-0002mI-Jb
+ for linux-i3c@lists.infradead.org; Fri, 21 Feb 2020 09:54:30 +0000
+Received: by mail-ot1-f65.google.com with SMTP id 77so1482721oty.6
+ for <linux-i3c@lists.infradead.org>; Fri, 21 Feb 2020 01:54:29 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=LGtPhAVjIvRquefayqs6YiIA/tNdWVoN+WLDPh1u7gE=;
- b=G6/r8fCBDUrVIy7f9mYTwRjmGGmMsK8ncsD3WjNuE06Jf78+a8zali5VYtHYc9vxWO
- mKqWTY1f9XhUrvUDzWfiW2s4vB5E2DberrvAWJAQeSA6a2RsNUwQbLIFNv/7oqoHjYQM
- LeXByOdrMrgj2WTj+2sHGahbZ5vLQAQy+Cno0xG5bC9i8Hd+lp2+MeiXam/afsM0r6P2
- +AP7LDEGAMua0TByGMCRbMaqxvRey0uRUcG/RECW2zQrRSoiOcWAfsLdykPjXa0hMieP
- ZBBs7FT0dSV93XJwabJo+gWg8UKOS0hTocn6lPHVpXbz992eB0sYRyTH2HnZAT4mtVbV
- 3zeQ==
-X-Gm-Message-State: APjAAAW2sPFhuhLwVUP+0yLbQ1+CIvU/MUObHUv+WbwN+Sd5ritGqgjg
- YnMqgld5vpG1Z8f1OBe3J2z3MdEnfa0Y+9ci32I=
-X-Google-Smtp-Source: APXvYqwm+9QUakxr4sAH21zwcX7ad8NwXiWnkq/zDR06hcy6RD3aCDm8gQ7zDkbZbqGMQTUgWgb5ROsz2Bqdvv3L3xg=
-X-Received: by 2002:a9d:5c0c:: with SMTP id o12mr12558550otk.145.1582278613276; 
- Fri, 21 Feb 2020 01:50:13 -0800 (PST)
+ bh=6KWuWbwpy5eV1ugbAOKbTPCDhSjq5tBX3gsYSurm6FU=;
+ b=ZZU3zhFUCraUhz1o4tkpiWdoCIkJQ6yeMwhKjWGSnG8VLbMVo4PKSQadGHW8S07A9b
+ Q+2Wz8E/4AzHcmV4VI7W3soRzi4SeCAc2KdPb5ZeJGeQSZ3RyegNtWIarwQzErsmHhKg
+ kCE3Q3pHAMGY1sBaHtKljIsfbPi84YqqShC8TCQHIOp5LKDChgkgAoik/zkOyRCzO0JV
+ 4hVg9lIvSkLQGYvl20jN+aKhgyowFk5KUENY4EVApl7nWkUSmDTSoW2WCXuliMB0RQp1
+ JwVRf9yaEZ4K/BewxUQTVNIhAOWhOumNIC9F+PRbestAn5qqeoLyuWeUCqgEiGErgM/G
+ BCGg==
+X-Gm-Message-State: APjAAAUivFI5+JqSdzDtG5sBF3Hfxw5YGiDkuAh5FpWVlncfE7jkhr5o
+ ozBQBM16a5jShZk3ZcWvd5usYNVf1XSwDQQtmP0=
+X-Google-Smtp-Source: APXvYqyhskulP9XNKEDIW8WGFVwSFpIZubz6Szsv+4aJV+5XVybq6Gl2c8lJKMieOTMpUoN9JopRyDO5qSQyZQelS5w=
+X-Received: by 2002:a9d:dc1:: with SMTP id 59mr27510706ots.250.1582278869027; 
+ Fri, 21 Feb 2020 01:54:29 -0800 (PST)
 MIME-Version: 1.0
 References: <20200220172403.26062-1-wsa+renesas@sang-engineering.com>
- <20200220172403.26062-5-wsa+renesas@sang-engineering.com>
-In-Reply-To: <20200220172403.26062-5-wsa+renesas@sang-engineering.com>
+ <20200220172403.26062-6-wsa+renesas@sang-engineering.com>
+In-Reply-To: <20200220172403.26062-6-wsa+renesas@sang-engineering.com>
 From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Fri, 21 Feb 2020 10:50:02 +0100
-Message-ID: <CAMuHMdW-foZ+o1RbvEH8xX_zPa0sJ_kqRX+u4=bFRFNCHbLdwg@mail.gmail.com>
-Subject: Re: [RFC PATCH 4/7] i2c: of: remove superfluous parameter from
- exported function
+Date: Fri, 21 Feb 2020 10:54:18 +0100
+Message-ID: <CAMuHMdXy=B6ZjC=X12yeOjSfr5-Z6HNL4vp0vQciMsW31i-CPw@mail.gmail.com>
+Subject: Re: [RFC PATCH 5/7] i2c: of: error message unification
 To: Wolfram Sang <wsa+renesas@sang-engineering.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_015014_360877_C7A970F8 
-X-CRM114-Status: UNSURE (   8.34  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200221_015429_642692_91D3A950 
+X-CRM114-Status: GOOD (  11.77  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,14 +93,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+Hi Wolfram,
+
+Thanks for your patch!
+
 On Thu, Feb 20, 2020 at 6:26 PM Wolfram Sang
 <wsa+renesas@sang-engineering.com> wrote:
-> 'dev' is only used for printing an error message. However, that
-> information is not needed because '%pOF' fully describes the location of
-> the error. Drop the 'dev' and remove the superfluous parameter.
+> - don't prefix the device if %pOF is provided. That information is
+>   enough.
+
+While that information is sufficient to identify the device, using a mix
+of dev_*() and pr_*("... %pOF...") makes it harder to grep for relevant
+information in the kernel log.  Hence I'm not convinced this is an
+improvement.
+
+> - move the prefix to pr_fmt
+> - change prefix from "of_i2c" to "i2c_of" because the code was moved
+>   out of the of-domain long ago
 >
 > Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
 
+Nevertheless:
 Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
 Gr{oetje,eeting}s,
