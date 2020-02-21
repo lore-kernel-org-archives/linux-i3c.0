@@ -2,21 +2,20 @@ Return-Path: <SRS0=HGQP=4J=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-3.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SIGNED_OFF_BY,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-0.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E9B6EC35642
-	for <linux-i3c@archiver.kernel.org>; Fri, 21 Feb 2020 10:14:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 27626C35640
+	for <linux-i3c@archiver.kernel.org>; Fri, 21 Feb 2020 10:15:19 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id BFD4524650
-	for <linux-i3c@archiver.kernel.org>; Fri, 21 Feb 2020 10:14:02 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id F1B8A24650
+	for <linux-i3c@archiver.kernel.org>; Fri, 21 Feb 2020 10:15:18 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="TIbFIxET"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org BFD4524650
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="XhdrMifD"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org F1B8A24650
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=linux-m68k.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -25,50 +24,48 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z5T6CThKESTCFh1HX0lk+6NxNB/Du90kxBmMK7N9rZs=; b=TIbFIxETuKfi6m
-	BZGElDEWGWf15p30ES6ZOtB0OkJuP/GYYS2NEujnUcnQWkzwQ8+BvYDPvAZK0vHRV1j3BfkhycqSB
-	KFg7dabIxqt9D3HezFQW/n/MDKJY6acBMRtHT/H3kwU2C1JWdVsswoGtwRCNjXQpo2uW8MoX46LY6
-	kh6bb+bRh0DFVzYkInF9kv7Jvv6cRkeTZ3sOkMTOuIVqu8fFP4qbh5tSFMH2pn+TK8BoTLPew8Hvk
-	xAOtS81dDC6QKxRuJFpngYiuJGLVg9v78bN5YGpM7hrQGIbKn+f9K2N/FxPjba006dmnO7nkZWT7k
-	aC3OX9fb/Z6U032Xtghw==;
+	List-Owner; bh=v5/zvuf5WqVf9PQi5p6nebkpgANjlOkmL6wREA4bXFg=; b=XhdrMifDwXf7qH
+	fNVwKML4pMOSpr3d1WDDH0iCsHycIwKwmJJPDXHFzPr6SZqfEAFiHf9oHAW8Pc1cPRDyGEHgR1I9z
+	V862mJhV9svX3j1/liDAAPj/wCGccjGbpyspvlSpTrNtQxLC9RaKHErEdnm+ydPvhiG8aJRZwscRQ
+	DUHxTKCVwR5KCGq1HC7gImZHC4ytn+gy9Pe7fTMC/MqSphGiIe35HdALyA+/Rx9aAnoJJQ9gwghW/
+	i0+KP4EXWH2zgoAvs2DQdCCHbRxzMN90z7NuHT1d+4u1imITwCtUupNZxJjtuZwt2/laPkvvrHjoW
+	kGpChtHyUOZzK9qaXD5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j55Jq-0003Rb-Ga; Fri, 21 Feb 2020 10:14:02 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1j55L4-0004jb-Mx; Fri, 21 Feb 2020 10:15:18 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j55Jo-0003RE-Ad
- for linux-i3c@lists.infradead.org; Fri, 21 Feb 2020 10:14:01 +0000
-Received: by mail-oi1-f194.google.com with SMTP id a22so1046537oid.13
- for <linux-i3c@lists.infradead.org>; Fri, 21 Feb 2020 02:14:00 -0800 (PST)
+ id 1j55L2-0004j2-7U
+ for linux-i3c@lists.infradead.org; Fri, 21 Feb 2020 10:15:17 +0000
+Received: by mail-oi1-f196.google.com with SMTP id i1so1067893oie.8
+ for <linux-i3c@lists.infradead.org>; Fri, 21 Feb 2020 02:15:16 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=IZocKraqIUJZ35HEbFK9lQ7GF0tGKhiv0gssLBu8UR0=;
- b=OeNUR55yMLybTDUfscHiSlljIK0MsWXW99cz0X4ZQlZEtF0+5c6n0J3uNXBRO5rrFO
- cB9L7BI3v/olndQxrAoPHx2kBxoa+VlwO0RuK4Q5c6WCUS2VX4xYcXY2vClfB2Gb1sZw
- VPTstnkKrJ4IKwUqjhy/6nb36vfDTaDpXP5EI9/YsyDT92p5dqzu6Yxlo9gKYhuqMti8
- 5g4qMvrcoOLANdo1XZXhepAWbqFdKjdHE2E+rWgXJJHVm+JxsE+uvLoMkmsgvZN8ecfm
- pC+10IpN2f+x5iGA0q2G8bWycbrSw8GZv6tZPDaBXMOF4WuP7+qLA70ZHReU0cXKxnzf
- UZ6w==
-X-Gm-Message-State: APjAAAUm256Vq3Afl47yV/a7V0O/UDR+Ew2n/CQ4n7SKQnUplwsfWtYX
- vapWD5VpRRmNUDSRaGTtOKCvfR5pfNHFxfIb7oQ=
-X-Google-Smtp-Source: APXvYqy8ctrMdeADSQHxwR9cRnUsbwVavhFTJOapRHb2udJuBdEfDAXWSOiRn1HggkpBEl/pTw91mKIAc1cco0Xe+B8=
-X-Received: by 2002:aca:1a06:: with SMTP id a6mr1284059oia.148.1582280039481; 
- Fri, 21 Feb 2020 02:13:59 -0800 (PST)
+ bh=Nm8XPNj2T3vUB6cqjEXZ7nGfKAwujbY0F04qFgjkmjQ=;
+ b=lC+c1sm2W5HLR3iWjy3E+JMG4EaGFKwQrkcKb3JiXM8UEdmAaaUuCewvly4cEH63qS
+ qD+FDSJ7+GSHM2sA/JB1g+AYRGBrrgjmnm5I51NRQSzdy/JhY99IIXRvPnZJjz5hjU7e
+ HQ125Dr0j9Z4tki0GGWEuvzJHrr5KiTsn3ZXlPtI/La2tXO0yZV1CMW56BhxUl8wEYud
+ 56VqXeENLrevFimfXl34gqi57xGtn4YgGUzSi88lrOsZZsHQh5bUOpdpz73iEEXeFt0W
+ +HBQdqMVzketkS3LWbOhaH755iFPOIHe4SUyUuDyf3VqNOYrYMqO2YMaZU4C87bSzVb8
+ ZXSg==
+X-Gm-Message-State: APjAAAXxMc3v9vMr7TLLKJNNHEaVTptmy8m8Y53LeALzShIUStP8D/8z
+ XopoeW2LTOYccWbvqwXKH0QCYcixrRboXRG/XME=
+X-Google-Smtp-Source: APXvYqz7WikUrMhKLOm0sNqPcWz6d/IUuDU0jmDC9Xjm9FDq7/MpI0yqLXOdcKkSOPan01jsEb1TTlk2L7zVqUGNO5k=
+X-Received: by 2002:aca:c4d2:: with SMTP id u201mr1394043oif.54.1582280115669; 
+ Fri, 21 Feb 2020 02:15:15 -0800 (PST)
 MIME-Version: 1.0
 References: <20200220172403.26062-1-wsa+renesas@sang-engineering.com>
- <20200220172403.26062-8-wsa+renesas@sang-engineering.com>
-In-Reply-To: <20200220172403.26062-8-wsa+renesas@sang-engineering.com>
+In-Reply-To: <20200220172403.26062-1-wsa+renesas@sang-engineering.com>
 From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Fri, 21 Feb 2020 11:13:48 +0100
-Message-ID: <CAMuHMdV-dfjukuSKiFg4vb4Ntn+XWU0XwHPxyoaWs1vtQVg4cw@mail.gmail.com>
-Subject: Re: [RFC PATCH 7/7] i2c: core: hand over reserved devices when
- requesting ancillary addresses
+Date: Fri, 21 Feb 2020 11:15:04 +0100
+Message-ID: <CAMuHMdX+SJPTvDqKDwD_3DaAxDT3KcEbcjLNjj4JsbcpRwd92w@mail.gmail.com>
+Subject: Re: [RFC PATCH 0/7] i2c: of: reserve unknown and ancillary addresses
 To: Wolfram Sang <wsa+renesas@sang-engineering.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_021400_366981_0CD786F0 
-X-CRM114-Status: GOOD (  13.76  )
+X-CRM114-CacheID: sfid-20200221_021516_273580_37BE90B0 
+X-CRM114-Status: GOOD (  10.17  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,58 +95,25 @@ Hi Wolfram,
 
 On Thu, Feb 20, 2020 at 6:26 PM Wolfram Sang
 <wsa+renesas@sang-engineering.com> wrote:
-> With i2c_new_ancillary_address, we can check if the intended driver is
-> requesting a reserved address. Update the function to do these checks.
-> If the check passes, the "reserved" device will become a regular "dummy"
-> device.
+> One outcome of my dynamic address assignment RFC series[1] was that we
+> need a way to describe an I2C bus in DT fully. This includes unknown
+> devices and devices requiring multiple addresses. This series implements
+> that.
 >
-> Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
-
-Thanks for your patch!
-
-> --- a/drivers/i2c/i2c-core-base.c
-> +++ b/drivers/i2c/i2c-core-base.c
-> @@ -975,6 +975,8 @@ struct i2c_client *i2c_new_ancillary_device(struct i2c_client *client,
->                                                 u16 default_addr)
->  {
->         struct device_node *np = client->dev.of_node;
-> +       struct device *reserved_dev, *adapter_dev = &client->adapter->dev;
-> +       struct i2c_client *reserved_client;
->         u32 addr = default_addr;
->         int i;
+> Patches 1+2 do some preparational refactoring. After patch 3, we can
+> have child nodes with an address, but no compatible. Those addresses
+> will be marked busy now. They are handled by the dummy driver as well,
+> but named "reserved" instead of dummy. Patches 4+5 are again some
+> preparational refactoring. After patch 6, all addresses in a 'reg' array
+> are now blocked by the I2C core, also using the dummy driver but named
+> "reserved". So, we can have something like this:
 >
-> @@ -984,7 +986,21 @@ struct i2c_client *i2c_new_ancillary_device(struct i2c_client *client,
->                         of_property_read_u32_index(np, "reg", i, &addr);
->         }
->
-> -       dev_dbg(&client->adapter->dev, "Address for %s : 0x%x\n", name, addr);
-> +       dev_info(adapter_dev, "Address for %s : 0x%x\n", name, addr);
-> +
-> +       /* No need to scan muxes, siblings must sit on the same adapter */
-> +       reserved_dev = device_find_child(adapter_dev, &addr, __i2c_check_addr_busy);
-> +       reserved_client = i2c_verify_client(reserved_dev);
-> +
-> +       if (reserved_client) {
-> +               if (reserved_client->dev.of_node != np ||
-> +                   strcmp(reserved_client->name, I2C_RESERVED_DRV_NAME) != 0)
-> +                       return ERR_PTR(-EBUSY);
+>         dummy@13 {
 
-Missing put_device(reserved_dev).
+Hence should that be "reserved@13"?
 
-> +
-> +               strlcpy(reserved_client->name, I2C_DUMMY_DRV_NAME, sizeof(client->name));
-> +               return reserved_client;
-> +       }
-
-else put_device(reserved_dev)
-
-(perhaps i2c_verify_client() checking dev was not such a great idea, as
- callers need to act on dev && !verified anyway?)
-
-> +
->         return i2c_new_dummy_device(client->adapter, addr);
->  }
->  EXPORT_SYMBOL_GPL(i2c_new_ancillary_device);
+>                reg = <0x13>, <0x14>;
+>         };
 
 Gr{oetje,eeting}s,
 
