@@ -1,22 +1,22 @@
-Return-Path: <SRS0=HGQP=4J=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=ktag=4K=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-2.3 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_2 autolearn=no autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-8.3 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_2 autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D8FCDC35669
-	for <linux-i3c@archiver.kernel.org>; Fri, 21 Feb 2020 22:32:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id C5D34C35671
+	for <linux-i3c@archiver.kernel.org>; Sat, 22 Feb 2020 08:38:54 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id AF4DB206EF
-	for <linux-i3c@archiver.kernel.org>; Fri, 21 Feb 2020 22:32:25 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 9082F208C3
+	for <linux-i3c@archiver.kernel.org>; Sat, 22 Feb 2020 08:38:54 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="Mj1+oCou"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org AF4DB206EF
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="smj4tkfm"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9082F208C3
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=collabora.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -25,39 +25,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fwbNJZln4Obh6mDLXHPla6Bc1hDePsSpb6NDZnnXlds=; b=Mj1+oCouLI9d8r
-	J5/qTX7R+5IFtHvZjiqMDze4jg31JQ+RME2t3yhOEofiLhTo6wkKR+NQnBJQQI/7lNd32RRI4V2Ed
-	sIhvqz4zBH9XvKynH90lf9wDfkfz+eB/wY+2Ap0zMwTesDvYEDhBSb0xrcpst4o1ut45ka1r2pNFR
-	bCIjSHPAcRe2TAEsIv344623lUelBKUZrE7WmgomXbvVf5CKf1z56/eQAnu/kfIhcux5m/pX5/FOW
-	4q3fmNamk6+X1qA4iQRvGCQv5kp3/xNnWQ/tz2CA1aZjPi/EKq71TElR4KmUoYHLcUd1jfRwUUCVo
-	xRN2wpHgUh5gSCVpNLTA==;
+	List-Owner; bh=AY5PWWQYRxc/f6IdNTe4rLm2AOe/oWP0+F0OWn/tIQg=; b=smj4tkfma3aTgF
+	chkUbqZ+D9lEnjbqpc9nd0zauj8chxbjx/bHtz+pTkdt9ngT4Y2QYX6gg1LuUGU3Dogl68t+yy8v4
+	PsTIGrkKuZJ7EQgjbWTGimEkPCDXki49GUImU3dTR/SnaT7Ba4OS3zWTSnDuxAPqooESzH19bblVq
+	WA64zM6UQHDzwB2bcuOrDThujOEf4AKX/CMZ4YSoO2RGIyMtjYfhduOjJt25NZumuODerEvxA7rse
+	+YCsynp7D5N6e+tDQ+ptBFb9Ath/srwApZPnGoHMNLEbG9fGX0mNxc5VBTQcwrs2ahD8Hy6V8C2ff
+	LoAXCKOUxcWp9L5mDgFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5GqO-0002OU-NG; Fri, 21 Feb 2020 22:32:24 +0000
+	id 1j5QJJ-0007Kh-Be; Sat, 22 Feb 2020 08:38:53 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5GqM-0002Nf-0y
- for linux-i3c@lists.infradead.org; Fri, 21 Feb 2020 22:32:23 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ id 1j5QJG-0007Js-QH
+ for linux-i3c@lists.infradead.org; Sat, 22 Feb 2020 08:38:52 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:b93f:9fae:b276:a89a])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
  (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id D6056295BD2;
- Fri, 21 Feb 2020 22:32:19 +0000 (GMT)
-Date: Fri, 21 Feb 2020 23:32:16 +0100
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 04F3628FF15;
+ Sat, 22 Feb 2020 08:38:46 +0000 (GMT)
+Date: Sat, 22 Feb 2020 09:38:44 +0100
 From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Vitor Soares <Vitor.Soares@synopsys.com>
-Subject: Re: [PATCH v3 4/5] i3c: add i3cdev module to expose i3c dev in /dev
-Message-ID: <20200221233216.3b2038f8@collabora.com>
-In-Reply-To: <e093ae9da81e7702c188a20d1e8b9d7f8024bfeb.1582069402.git.vitor.soares@synopsys.com>
+To: Greg KH <gregkh@linuxfoundation.org>
+Subject: Re: [PATCH v3 3/5] i3c: master: add i3c_for_each_dev helper
+Message-ID: <20200222093844.2f5ed538@collabora.com>
+In-Reply-To: <20200221174428.77696ab6@collabora.com>
 References: <cover.1582069402.git.vitor.soares@synopsys.com>
- <e093ae9da81e7702c188a20d1e8b9d7f8024bfeb.1582069402.git.vitor.soares@synopsys.com>
+ <868e5b37fd817b65e6953ed7279f5063e5fc06c5.1582069402.git.vitor.soares@synopsys.com>
+ <20200219073548.GA2728338@kroah.com>
+ <CH2PR12MB4216D5141E562974634430B8AE120@CH2PR12MB4216.namprd12.prod.outlook.com>
+ <20200221115229.GA116368@kroah.com>
+ <20200221135911.1300170b@collabora.com>
+ <20200221174428.77696ab6@collabora.com>
 Organization: Collabora
 X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_143222_196259_DC266AFE 
-X-CRM114-Status: GOOD (  10.12  )
+X-CRM114-CacheID: sfid-20200222_003851_115918_721A79FC 
+X-CRM114-Status: GOOD (  29.52  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,58 +74,116 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: Jose.Abreu@synopsys.com, Joao.Pinto@synopsys.com, arnd@arndb.de,
- corbet@lwn.net, gregkh@linuxfoundation.org, wsa@the-dreams.de,
- linux-kernel@vger.kernel.org, broonie@kernel.org,
- linux-i3c@lists.infradead.org, bbrezillon@kernel.org
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
+ "arnd@arndb.de" <arnd@arndb.de>, "corbet@lwn.net" <corbet@lwn.net>,
+ "wsa@the-dreams.de" <wsa@the-dreams.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Vitor Soares <Vitor.Soares@synopsys.com>,
+ "broonie@kernel.org" <broonie@kernel.org>,
+ "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
+ "bbrezillon@kernel.org" <bbrezillon@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, 19 Feb 2020 01:20:42 +0100
-Vitor Soares <Vitor.Soares@synopsys.com> wrote:
+On Fri, 21 Feb 2020 17:44:28 +0100
+Boris Brezillon <boris.brezillon@collabora.com> wrote:
 
-> +static int i3cdev_detach(struct device *dev, void *dummy)
-> +{
-> +	struct i3cdev_data *i3cdev;
-> +	struct i3c_device *i3c;
-> +
-> +	if (dev->type == &i3c_masterdev_type)
-> +		return 0;
-> +
-> +	i3c = dev_to_i3cdev(dev);
-> +
-> +	i3cdev = i3cdev_get_drvdata(i3c);
-> +	if (!i3cdev)
-> +		return 0;
-> +
-> +	/* Prevent transfers while cdev removal */
-> +	mutex_lock(&i3cdev->xfer_lock);
-> +	cdev_del(&i3cdev->cdev);
+> On Fri, 21 Feb 2020 13:59:11 +0100
+> Boris Brezillon <boris.brezillon@collabora.com> wrote:
+> 
+> > On Fri, 21 Feb 2020 12:52:29 +0100
+> > Greg KH <gregkh@linuxfoundation.org> wrote:
+> >   
+> > > On Fri, Feb 21, 2020 at 11:47:22AM +0000, Vitor Soares wrote:    
+> > > > Hi Greg,
+> > > > 
+> > > > From: Greg KH <gregkh@linuxfoundation.org>
+> > > > Date: Wed, Feb 19, 2020 at 07:35:48
+> > > >       
+> > > > > On Wed, Feb 19, 2020 at 01:20:41AM +0100, Vitor Soares wrote:      
+> > > > > > Introduce i3c_for_each_dev(), an i3c device iterator for use by i3cdev.
+> > > > > > 
+> > > > > > Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
+> > > > > > ---
+> > > > > >  drivers/i3c/internals.h |  1 +
+> > > > > >  drivers/i3c/master.c    | 12 ++++++++++++
+> > > > > >  2 files changed, 13 insertions(+)
+> > > > > > 
+> > > > > > diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
+> > > > > > index bc062e8..a6deedf 100644
+> > > > > > --- a/drivers/i3c/internals.h
+> > > > > > +++ b/drivers/i3c/internals.h
+> > > > > > @@ -24,4 +24,5 @@ int i3c_dev_enable_ibi_locked(struct i3c_dev_desc *dev);
+> > > > > >  int i3c_dev_request_ibi_locked(struct i3c_dev_desc *dev,
+> > > > > >  			       const struct i3c_ibi_setup *req);
+> > > > > >  void i3c_dev_free_ibi_locked(struct i3c_dev_desc *dev);
+> > > > > > +int i3c_for_each_dev(void *data, int (*fn)(struct device *, void *));
+> > > > > >  #endif /* I3C_INTERNAL_H */
+> > > > > > diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> > > > > > index 21c4372..8e22da2 100644
+> > > > > > --- a/drivers/i3c/master.c
+> > > > > > +++ b/drivers/i3c/master.c
+> > > > > > @@ -2640,6 +2640,18 @@ void i3c_dev_free_ibi_locked(struct i3c_dev_desc *dev)
+> > > > > >  	dev->ibi = NULL;
+> > > > > >  }
+> > > > > >  
+> > > > > > +int i3c_for_each_dev(void *data, int (*fn)(struct device *, void *))
+> > > > > > +{
+> > > > > > +	int res;
+> > > > > > +
+> > > > > > +	mutex_lock(&i3c_core_lock);
+> > > > > > +	res = bus_for_each_dev(&i3c_bus_type, NULL, data, fn);
+> > > > > > +	mutex_unlock(&i3c_core_lock);      
+> > > > > 
+> > > > > Ick, why the lock?  Are you _sure_ you need that?  The core should
+> > > > > handle any list locking issues here, right?      
+> > > > 
+> > > > I want to make sure that no new devices (eg: Hot-Join capable device) are 
+> > > > added during this iteration and after this call, each new device will 
+> > > > release a bus notification.
+> > > >       
+> > > > > 
+> > > > > I don't see bus-specific-locks around other subsystem functions that do
+> > > > > this (like usb_for_each_dev).      
+> > > > 
+> > > > I based in I2C use case.      
+> > > 
+> > > Check to see if this is really needed, for some reason I doubt it...    
+> > 
+> > Can we please try the spidev approach before fixing those problems. None
+> > of that would be needed if we declare the i3cdev driver as a regular
+> > i3c_device_driver and let user space bind devices it wants to expose
+> > through the sysfs interface. As I said earlier, we even have all the
+> > pieces we need to automate that using a udev rule, and the resulting
+> > patchset would be 'less invasive'/simpler for pretty much the same
+> > result.  
+> 
+> So, I went ahead and implemented it the way I suggest. The diffstat is
+> not representative here (though it's still in favor of this new version)
+> since I also changed the way we expose/handle SDR transfers. What's
+> most important IMO is the fact that
+> 
+> * we no longer need to access the internal I3C API
+> * we no longer need to care about transitions between i3cdev and
+>   other drivers (the core guarantees that a device is always bound to at
+>   most one driver)
+> * the registration/unregistration procedure is simplified
 
-When cdev_del() returns there might be opened FDs pointing to your
-i3cdev [1] ...
+Looks like I was wrong, there's no way to disable auto-binding and keep
+manual binding possible (they both use the bus->match() hook to know if
+a dev can be attached to a driver, and the type of binding is not
+specified here). There are of course other options to do this:
 
-> +	device_destroy(i3cdev_class, MKDEV(MAJOR(i3cdev_number), i3cdev->id));
-> +	mutex_unlock(&i3cdev->xfer_lock);
-> +
-> +	ida_simple_remove(&i3cdev_ida, i3cdev->id);
-> +	put_i3cdev(i3cdev);
+* add a i3c_driver->match() hook and expose driver-specific sysfs knobs
+  to explicitly add devices to attach to this driver
+* make the i3cdev module register one driver per-device, each time with
+  its own i3c_device_id table and add sysfs knobs to trigger this
+  registration
 
-... and you call put_i3cdev() here which frees the i3cdev object,
-leading to potential use-after-free if any of the fops (ioctl, read,
-write) are called on those dangling FDs. That's exactly the kind of
-nightmare I'd like to avoid.
-
-> +
-> +	pr_debug("i3cdev: device [%s] unregistered\n", dev_name(&i3c->dev));
-> +
-> +	return 0;
-> +}
-> +
-
-[1]https://elixir.bootlin.com/linux/latest/source/fs/char_dev.c#L587
+but none of these option sounds reasonable to me, so let's pursue with
+your approach.
 
 _______________________________________________
 linux-i3c mailing list
