@@ -2,82 +2,98 @@ Return-Path: <SRS0=/dce=4P=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-7.0 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+X-Spam-Status: No, score=-13.3 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,UNWANTED_LANGUAGE_BODY,USER_AGENT_GIT
+	MENTIONS_GIT_HOSTING,SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
 	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 25049C4BA24
-	for <linux-i3c@archiver.kernel.org>; Thu, 27 Feb 2020 11:31:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id DC312C4BA24
+	for <linux-i3c@archiver.kernel.org>; Thu, 27 Feb 2020 13:10:28 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E7F5A24696
-	for <linux-i3c@archiver.kernel.org>; Thu, 27 Feb 2020 11:31:41 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 8906D2469B
+	for <linux-i3c@archiver.kernel.org>; Thu, 27 Feb 2020 13:10:28 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="h6NZKms8";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=synopsys.com header.i=@synopsys.com header.b="URetjbda"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E7F5A24696
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=synopsys.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="MVjff7IY";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=embeddedor.com header.i=@embeddedor.com header.b="RyWYqttg"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 8906D2469B
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=embeddedor.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=0Om5UQ69KmbwomGKbPe1QRSul0s8/K9PAwBol1t4zT0=; b=h6NZKms887LpLKq47/VS6wQlfS
-	KK2HEBBK6FARVlvEezZtO3God/eIG7EnOf6ynwJ5Ks96Zrgx8Y5mP8MpDYIAnf+RyaXamA64y2EJG
-	TJ/wu51vsjr0Z4smWGh8drDYRgvhjqD5QBaSQpsVlAwUZYc3cV6VzBY0R5VqKq+RE2iRwydeWRFPR
-	VrsfO3qOV/Gcybj0DS/+LY2cIJobXeAWuACrkJKTQzz5kLITcCyfBWmQv7zEtfGbgoGxvaGVoaJ1g
-	5om4o8VDgkcgJ/G0Qp6sBfV2qoPMUi6e8ScILtw+BDMhVPvH7HhKlYdz2HZFhCyqXxYFv1o8TAy3S
-	/TKuUdgA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vdnWaD93fVFrouSTpYpvEOYBOgzrPlKvRsrIA5Tch4A=; b=MVjff7IYYYN59B
+	AW0ORWj+FpQtYR9ZhbH0IFyl9JJJffoj1+2noTo+bxLfsByLvrZMxVz6EK2IISBDU7eznEBOr0xrG
+	cHVWwhxJiB7Mm5L1eE/oLiyfus3nh825VpSfFSuFk4KXq8uuDfBHPEUpXCDlwOiKZEh5b5MGd2gDg
+	4GEUtwLLWdG8w9twTBnvCRyglnQjz4qXm/4FkkirBzMG/ezGNQjooDNZyvhYRkMCsEJ4Xhh28Lodx
+	ZazGd9KNYwdR+iMxHGKFZrA9I06fn1Q1aLP1Vu1iI7dQQt6uoVstavQ8qTFJVipBuU2KXDrGcmLHz
+	o4aK9zVs2I0ZUfJoOPcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7HOE-00066z-Ox; Thu, 27 Feb 2020 11:31:38 +0000
-Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
+	id 1j7Ivn-00048M-0j; Thu, 27 Feb 2020 13:10:23 +0000
+Received: from gateway34.websitewelcome.com ([192.185.149.72])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7HO6-00062w-RI
- for linux-i3c@lists.infradead.org; Thu, 27 Feb 2020 11:31:36 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
- [10.225.0.210])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 5B4D6C0AD1;
- Thu, 27 Feb 2020 11:31:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1582803090; bh=nnsAv9kQ8j3lGYt/imLE7LxPTTFBc+oOVMrkSeC4fMI=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
- References:From;
- b=URetjbdaQJuKFWZwAWWsxk24JtycNe7lMt715a7o3mbnSwc7B0prMJMUMYx6bRO8N
- 3JMS6WkgBFd8HrhMN62qbuoBGZvtEkJ153KZbv/5r83GkH37mmFV42PFv+EZLMHvq7
- YKc/NLbH8W42KDLTlJGtQozymUwYjaMX3jwr68dC7N0FPTcEeFe0uZlN/ND91Deodr
- 9x47ohEDpCwCrn5AlmXsJOJIdC5tXKVpmrxlOfnIKGXjnlH+SuBLVBcYxxXkaSJlaV
- K0EKjMwi1ST8KdL8cj+X9mdzf48YhzxIRFBTOXwETSNj3REybPbhUlxvnrczm5yBC/
- XuNHZg1UEc7Iw==
-Received: from de02.synopsys.com (germany.internal.synopsys.com [10.225.17.21])
- by mailhost.synopsys.com (Postfix) with ESMTP id 817A5A005C;
- Thu, 27 Feb 2020 11:31:26 +0000 (UTC)
-Received: from de02dwia024.internal.synopsys.com
- (de02dwia024.internal.synopsys.com [10.225.19.81])
- by de02.synopsys.com (Postfix) with ESMTP id 6FBB83E9E7;
- Thu, 27 Feb 2020 12:31:26 +0100 (CET)
-From: Vitor Soares <Vitor.Soares@synopsys.com>
-To: pgaj@cadence.com,
-	bbrezillon@kernel.org,
-	linux-i3c@lists.infradead.org
-Subject: [PATCH v2 3/4] i3c: Generate aliases for i3c modules
-Date: Thu, 27 Feb 2020 12:31:08 +0100
-Message-Id: <79687073b915182e06fccfb18adcedfd0fadbc99.1582796652.git.vitor.soares@synopsys.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <cover.1582796652.git.vitor.soares@synopsys.com>
-References: <cover.1582796652.git.vitor.soares@synopsys.com>
-In-Reply-To: <cover.1582796652.git.vitor.soares@synopsys.com>
-References: <cover.1582796652.git.vitor.soares@synopsys.com>
+ id 1j7Ivj-00047i-KX
+ for linux-i3c@lists.infradead.org; Thu, 27 Feb 2020 13:10:21 +0000
+Received: from cm11.websitewelcome.com (cm11.websitewelcome.com [100.42.49.5])
+ by gateway34.websitewelcome.com (Postfix) with ESMTP id D4F576B2EEC
+ for <linux-i3c@lists.infradead.org>;
+ Thu, 27 Feb 2020 07:10:16 -0600 (CST)
+Received: from gator4166.hostgator.com ([108.167.133.22]) by cmsmtp with SMTP
+ id 7IvgjRLBaSl8q7Ivgj5crS; Thu, 27 Feb 2020 07:10:16 -0600
+X-Authority-Reason: nr=8
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=embeddedor.com; s=default; h=Content-Type:MIME-Version:Message-ID:Subject:
+ Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=qzDnfPXQnwdKlHtoPz0jeIpy5o9H6yWTrMabKluFuZg=; b=RyWYqttgdcI7GrTHQ98ocNUFIL
+ G8sByhHkV+6Bx16Q8Q+Mnnnkkfy4gC0h4yS8vMWLrhHfpZ5QfyradEaQlQvF7NG5orD2PcbTlDefY
+ QjPyzb8zIFv0h3GKVYOq94Ru6eGzgpFGLyMDICkiWvXOm/6fz2ZZkfhrsYrnWaVMAQpR3dw+EfcoK
+ 7QVD2EFoyNrY6dJvqgz6AiU6lCTWPbxqnjUumVicoGykBCuSKlpO07zvpWbFo6iXP92ojV2XilHBu
+ 6PA9dK0CD/5QpQ5XT8QGpsdU1UiUAKkxsgfYVejIbdSl+bvJwwAsaOHCL80aqz8L0KLFVyXkv3byu
+ nMw565cA==;
+Received: from [201.162.161.188] (port=40506 helo=embeddedor)
+ by gator4166.hostgator.com with esmtpa (Exim 4.92)
+ (envelope-from <gustavo@embeddedor.com>)
+ id 1j7Ive-000s4k-OE; Thu, 27 Feb 2020 07:10:15 -0600
+Date: Thu, 27 Feb 2020 07:13:07 -0600
+From: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
+To: Vitor Soares <vitor.soares@synopsys.com>,
+ Boris Brezillon <bbrezillon@kernel.org>,
+ =?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>
+Subject: [PATCH] i3c: master: Replace zero-length array with flexible-array
+ member
+Message-ID: <20200227131307.GA24935@embeddedor>
+MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - gator4166.hostgator.com
+X-AntiAbuse: Original Domain - lists.infradead.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - embeddedor.com
+X-BWhitelist: no
+X-Source-IP: 201.162.161.188
+X-Source-L: No
+X-Exim-ID: 1j7Ive-000s4k-OE
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Source-Sender: (embeddedor) [201.162.161.188]:40506
+X-Source-Auth: gustavo@embeddedor.com
+X-Email-Count: 4
+X-Source-Cap: Z3V6aWRpbmU7Z3V6aWRpbmU7Z2F0b3I0MTY2Lmhvc3RnYXRvci5jb20=
+X-Local-Domain: yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_033133_477890_0C04ABA4 
-X-CRM114-Status: UNSURE (   9.78  )
+X-CRM114-CacheID: sfid-20200227_051019_764998_8AF807F8 
+X-CRM114-Status: UNSURE (   6.75  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -90,83 +106,75 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: Boris Brezillon <boris.brezillon@collabora.com>,
- linux-kernel@vger.kernel.org, Vitor Soares <Vitor.Soares@synopsys.com>
-MIME-Version: 1.0
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Boris Brezillon <boris.brezillon@collabora.com>
+The current codebase makes use of the zero-length array language
+extension to the C90 standard, but the preferred mechanism to declare
+variable-length types such as these ones is a flexible array member[1][2],
+introduced in C99:
 
-This part was missing, thus preventing user space from loading modules
-automatically when MODALIAS uevents are received.
+struct foo {
+        int stuff;
+        struct boo array[];
+};
 
-Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
-Signed-off-by: Vitor Soares <vitor.soares@synopsys.com>
+By making use of the mechanism above, we will get a compiler warning
+in case the flexible array does not occur last in the structure, which
+will help us prevent some kind of undefined behavior bugs from being
+inadvertently introduced[3] to the codebase from now on.
+
+Also, notice that, dynamic memory allocations won't be affected by
+this change:
+
+"Flexible array members have incomplete type, and so the sizeof operator
+may not be applied. As a quirk of the original implementation of
+zero-length arrays, sizeof evaluates to zero."[1]
+
+This issue was found with the help of Coccinelle.
+
+[1] https://gcc.gnu.org/onlinedocs/gcc/Zero-Length.html
+[2] https://github.com/KSPP/linux/issues/21
+[3] commit 76497732932f ("cxgb3/l2t: Fix undefined behaviour")
+
+Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
 ---
- scripts/mod/devicetable-offsets.c |  7 +++++++
- scripts/mod/file2alias.c          | 19 +++++++++++++++++++
- 2 files changed, 26 insertions(+)
+ drivers/i3c/master/dw-i3c-master.c   | 2 +-
+ drivers/i3c/master/i3c-master-cdns.c | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/scripts/mod/devicetable-offsets.c b/scripts/mod/devicetable-offsets.c
-index 054405b..d3c237b 100644
---- a/scripts/mod/devicetable-offsets.c
-+++ b/scripts/mod/devicetable-offsets.c
-@@ -145,6 +145,13 @@ int main(void)
- 	DEVID(i2c_device_id);
- 	DEVID_FIELD(i2c_device_id, name);
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index bd26c3b9634e..5c5306cd50ec 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -221,7 +221,7 @@ struct dw_i3c_xfer {
+ 	struct completion comp;
+ 	int ret;
+ 	unsigned int ncmds;
+-	struct dw_i3c_cmd cmds[0];
++	struct dw_i3c_cmd cmds[];
+ };
  
-+	DEVID(i3c_device_id);
-+	DEVID_FIELD(i3c_device_id, match_flags);
-+	DEVID_FIELD(i3c_device_id, dcr);
-+	DEVID_FIELD(i3c_device_id, manuf_id);
-+	DEVID_FIELD(i3c_device_id, part_id);
-+	DEVID_FIELD(i3c_device_id, extra_info);
-+
- 	DEVID(spi_device_id);
- 	DEVID_FIELD(spi_device_id, name);
+ struct dw_i3c_master {
+diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
+index 54712793709e..3fee8bd7fe20 100644
+--- a/drivers/i3c/master/i3c-master-cdns.c
++++ b/drivers/i3c/master/i3c-master-cdns.c
+@@ -388,7 +388,7 @@ struct cdns_i3c_xfer {
+ 	struct completion comp;
+ 	int ret;
+ 	unsigned int ncmds;
+-	struct cdns_i3c_cmd cmds[0];
++	struct cdns_i3c_cmd cmds[];
+ };
  
-diff --git a/scripts/mod/file2alias.c b/scripts/mod/file2alias.c
-index c91eba7..f81cbe0 100644
---- a/scripts/mod/file2alias.c
-+++ b/scripts/mod/file2alias.c
-@@ -919,6 +919,24 @@ static int do_i2c_entry(const char *filename, void *symval,
- 	return 1;
- }
- 
-+static int do_i3c_entry(const char *filename, void *symval,
-+			char *alias)
-+{
-+	DEF_FIELD(symval, i3c_device_id, match_flags);
-+	DEF_FIELD(symval, i3c_device_id, dcr);
-+	DEF_FIELD(symval, i3c_device_id, manuf_id);
-+	DEF_FIELD(symval, i3c_device_id, part_id);
-+	DEF_FIELD(symval, i3c_device_id, extra_info);
-+
-+	strcpy(alias, "i3c:");
-+	ADD(alias, "dcr", match_flags & I3C_MATCH_DCR, dcr);
-+	ADD(alias, "manuf", match_flags & I3C_MATCH_MANUF, manuf_id);
-+	ADD(alias, "part", match_flags & I3C_MATCH_PART, part_id);
-+	ADD(alias, "ext", match_flags & I3C_MATCH_EXTRA_INFO, extra_info);
-+
-+	return 1;
-+}
-+
- /* Looks like: spi:S */
- static int do_spi_entry(const char *filename, void *symval,
- 			char *alias)
-@@ -1386,6 +1404,7 @@ static const struct devtable devtable[] = {
- 	{"vmbus", SIZE_hv_vmbus_device_id, do_vmbus_entry},
- 	{"rpmsg", SIZE_rpmsg_device_id, do_rpmsg_entry},
- 	{"i2c", SIZE_i2c_device_id, do_i2c_entry},
-+	{"i3c", SIZE_i3c_device_id, do_i3c_entry},
- 	{"spi", SIZE_spi_device_id, do_spi_entry},
- 	{"dmi", SIZE_dmi_system_id, do_dmi_entry},
- 	{"platform", SIZE_platform_device_id, do_platform_entry},
+ struct cdns_i3c_data {
 -- 
-2.7.4
+2.25.0
 
 
 _______________________________________________
