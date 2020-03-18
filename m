@@ -4,19 +4,19 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 X-Spam-Level: 
 X-Spam-Status: No, score=-9.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=unavailable
+	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B904DC5ACDA
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B3129C5ACD8
 	for <linux-i3c@archiver.kernel.org>; Wed, 18 Mar 2020 15:01:27 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 8961B2077A
+	by mail.kernel.org (Postfix) with ESMTPS id 898042077D
 	for <linux-i3c@archiver.kernel.org>; Wed, 18 Mar 2020 15:01:27 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="nOh0shgX"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 8961B2077A
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="c77FTwas"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 898042077D
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=sang-engineering.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -25,35 +25,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mufbPVontC5NJBbNjfSbU2h69vHnNBFxRe01DFVNpnc=; b=nOh0shgXvc8u10
-	IYknuLnWxoNeBjQpET2jcYnMz2dYsX4bM0PSPl8SjdqnMSz1odUPCZ+owCcpk6ibbj0ecDxP+mAU3
-	P+PGV4Q0Xl67YofdTwcjmYE00nPKW9xbqdrBp7tVVGBbftHLn7T0EObW6RsAhNlS/DoiuJlt6jzHl
-	kFzmb3cGyGZz6cIk6b3gfSRj6CnW/+cjaJutyGVeDmjM7WxGrLQkJNHjxxojfhSjrzbBIZ5ncreoo
-	X/f5f3hHCmFSCbUeb7MxMad96j1c00WyebLz6vk6soERxGBc1+7Q75pC1H8qulOvdm6Drf0KGWvkd
-	N69K7s3aNcScBCtYem1g==;
+	List-Owner; bh=D8eCn6sMiHeFt0bCUW2N/T5+vIf81w90p5hTrE8uW1M=; b=c77FTwaskZ+FHq
+	gr4fkEroJ7hXBwDN3ATbO78XzdM1Kn9++BPx7MFoFIJ/CEUJJsGk3HstVCXbfstHtUFXay0j7nIuF
+	yF129yirgV7VnJL6i45EBnnsd8EzMNprxoo2YBX5GyFDSungQwXGUn8cY0ZXo1gJ33dWU1HVzXwZp
+	uyjieacc5sp02iANSCPMWi3G6ms3apBPxhdd01G5snKWZDxA7OHg/nxYQkOeO7d72VknU1p04vo0H
+	YXh3oVlvG/RVCMYV+jFyU0nnl5N7Ldb5YLQuIQjmAsbXsD+USviIwnqpOKwjuWYnNRPgPfsXhi6Qk
+	vpp2QDOCZ7Pu+hot3piw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEaCE-0001Vf-Ox; Wed, 18 Mar 2020 15:01:26 +0000
+	id 1jEaCE-0001WT-Vk; Wed, 18 Mar 2020 15:01:26 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEaBx-0000Xt-TG
+ id 1jEaBz-0000md-AJ
  for linux-i3c@lists.infradead.org; Wed, 18 Mar 2020 15:01:12 +0000
 Received: from localhost (p54B333FA.dip0.t-ipconnect.de [84.179.51.250])
- by pokefinder.org (Postfix) with ESMTPSA id 2A5E62C2E7D;
- Wed, 18 Mar 2020 16:01:06 +0100 (CET)
+ by pokefinder.org (Postfix) with ESMTPSA id 79B7A2C2E85;
+ Wed, 18 Mar 2020 16:01:07 +0100 (CET)
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 To: linux-i2c@vger.kernel.org
-Subject: [RFC PATCH v2 3/6] i2c: of: remove superfluous parameter from
- exported function
-Date: Wed, 18 Mar 2020 16:00:56 +0100
-Message-Id: <20200318150059.21714-4-wsa+renesas@sang-engineering.com>
+Subject: [RFC PATCH v2 6/6] i2c: core: hand over reserved devices when
+ requesting ancillary addresses
+Date: Wed, 18 Mar 2020 16:00:59 +0100
+Message-Id: <20200318150059.21714-7-wsa+renesas@sang-engineering.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200318150059.21714-1-wsa+renesas@sang-engineering.com>
 References: <20200318150059.21714-1-wsa+renesas@sang-engineering.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200318_080110_086372_D63511BD 
-X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-CacheID: sfid-20200318_080111_503129_6D0764B6 
+X-CRM114-Status: UNSURE (   9.96  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -68,7 +68,6 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
 Cc: Jacopo Mondi <jacopo@jmondi.org>,
  =?UTF-8?q?Niklas=20S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
  Wolfram Sang <wsa+renesas@sang-engineering.com>, linux-kernel@vger.kernel.org,
  Vladimir Zapolskiy <vz@mleia.com>, linux-renesas-soc@vger.kernel.org,
  Kieran Bingham <kieran@bingham.xyz>,
@@ -79,88 +78,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-'dev' is only used for printing an error message. However, that
-information is not needed because '%pOF' fully describes the location of
-the error. Drop the 'dev' and remove the superfluous parameter.
+With i2c_new_ancillary_address, we can check if the intended driver is
+requesting a reserved address. Update the function to do these checks.
+If the check passes, the "reserved" device will become a regular "dummy"
+device.
 
 Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-Reviewed-by: Luca Ceresoli <luca@lucaceresoli.net>
 ---
- drivers/i2c/i2c-core-of.c | 7 +++----
- drivers/i3c/master.c      | 2 +-
- include/linux/i2c.h       | 6 ++----
- 3 files changed, 6 insertions(+), 9 deletions(-)
+ drivers/i2c/i2c-core-base.c | 24 ++++++++++++++++++++++--
+ 1 file changed, 22 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/i2c/i2c-core-of.c b/drivers/i2c/i2c-core-of.c
-index d8d111ad6c85..710704cd583e 100644
---- a/drivers/i2c/i2c-core-of.c
-+++ b/drivers/i2c/i2c-core-of.c
-@@ -19,8 +19,7 @@
- 
- #include "i2c-core.h"
- 
--int of_i2c_get_board_info(struct device *dev, struct device_node *node,
--			  struct i2c_board_info *info)
-+int of_i2c_get_board_info(struct device_node *node, struct i2c_board_info *info)
+diff --git a/drivers/i2c/i2c-core-base.c b/drivers/i2c/i2c-core-base.c
+index 84464e439df5..81fb320de28d 100644
+--- a/drivers/i2c/i2c-core-base.c
++++ b/drivers/i2c/i2c-core-base.c
+@@ -974,7 +974,9 @@ struct i2c_client *i2c_new_ancillary_device(struct i2c_client *client,
+ 						const char *name,
+ 						u16 default_addr)
  {
- 	u32 addr;
- 	int ret;
-@@ -29,7 +28,7 @@ int of_i2c_get_board_info(struct device *dev, struct device_node *node,
+-	struct device_node *np = client->dev.of_node;
++	struct device_node *reserved_np, *np = client->dev.of_node;
++	struct device *reserved_dev, *adapter_dev = &client->adapter->dev;
++	struct i2c_client *reserved_client = NULL;
+ 	u32 addr = default_addr;
+ 	int i;
  
- 	ret = of_property_read_u32(node, "reg", &addr);
- 	if (ret) {
--		dev_err(dev, "of_i2c: invalid reg on %pOF\n", node);
-+		pr_err("of_i2c: invalid reg on %pOF\n", node);
- 		return ret;
+@@ -984,7 +986,25 @@ struct i2c_client *i2c_new_ancillary_device(struct i2c_client *client,
+ 			of_property_read_u32_index(np, "reg", i, &addr);
  	}
  
-@@ -69,7 +68,7 @@ static struct i2c_client *of_i2c_register_device(struct i2c_adapter *adap,
- 
- 	dev_dbg(&adap->dev, "of_i2c: register %pOF\n", node);
- 
--	ret = of_i2c_get_board_info(&adap->dev, node, &info);
-+	ret = of_i2c_get_board_info(node, &info);
- 	if (ret)
- 		return ERR_PTR(ret);
- 
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 7f8f896fa0c3..cc0549a9fc64 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -1943,7 +1943,7 @@ of_i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
- 	if (!boardinfo)
- 		return -ENOMEM;
- 
--	ret = of_i2c_get_board_info(dev, node, &boardinfo->base);
-+	ret = of_i2c_get_board_info(node, &boardinfo->base);
- 	if (ret)
- 		return ret;
- 
-diff --git a/include/linux/i2c.h b/include/linux/i2c.h
-index f834687989f7..d84aaf0d83d5 100644
---- a/include/linux/i2c.h
-+++ b/include/linux/i2c.h
-@@ -942,8 +942,7 @@ const struct of_device_id
- *i2c_of_match_device(const struct of_device_id *matches,
- 		     struct i2c_client *client);
- 
--int of_i2c_get_board_info(struct device *dev, struct device_node *node,
--			  struct i2c_board_info *info);
-+int of_i2c_get_board_info(struct device_node *node, struct i2c_board_info *info);
- 
- #else
- 
-@@ -969,8 +968,7 @@ static inline const struct of_device_id
- 	return NULL;
+-	dev_dbg(&client->adapter->dev, "Address for %s : 0x%x\n", name, addr);
++	dev_info(adapter_dev, "Address for %s : 0x%x\n", name, addr);
++
++	/* No need to scan muxes, siblings must sit on the same adapter */
++	reserved_dev = device_find_child(adapter_dev, &addr, __i2c_check_addr_busy);
++	if (reserved_dev) {
++		reserved_np = reserved_dev->of_node;
++		reserved_client = i2c_verify_client(reserved_dev);
++		put_device(reserved_dev);
++	}
++
++	if (reserved_client) {
++		if (reserved_np != np ||
++		    strcmp(reserved_client->name, I2C_RESERVED_DRV_NAME) != 0)
++			return ERR_PTR(-EBUSY);
++
++		strlcpy(reserved_client->name, I2C_DUMMY_DRV_NAME, sizeof(client->name));
++		return reserved_client;
++	}
++
+ 	return i2c_new_dummy_device(client->adapter, addr);
  }
- 
--static inline int of_i2c_get_board_info(struct device *dev,
--					struct device_node *node,
-+static inline int of_i2c_get_board_info(struct device_node *node,
- 					struct i2c_board_info *info)
- {
- 	return -ENOTSUPP;
+ EXPORT_SYMBOL_GPL(i2c_new_ancillary_device);
 -- 
 2.20.1
 
