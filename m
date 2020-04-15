@@ -1,75 +1,60 @@
-Return-Path: <SRS0=U4tU=55=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=g9Ly=57=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-8.3 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1 autolearn=unavailable
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-2.3 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,USER_AGENT_SANE_1 autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 5A4E8C2BA19
-	for <linux-i3c@archiver.kernel.org>; Mon, 13 Apr 2020 09:55:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 32806C2BA19
+	for <linux-i3c@archiver.kernel.org>; Wed, 15 Apr 2020 07:59:25 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 2DAFE20731
-	for <linux-i3c@archiver.kernel.org>; Mon, 13 Apr 2020 09:55:26 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 034FA206F9
+	for <linux-i3c@archiver.kernel.org>; Wed, 15 Apr 2020 07:59:25 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="IAzK1g97"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 2DAFE20731
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=lucaceresoli.net
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="PPtMTfMx"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 034FA206F9
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=the-dreams.de
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=It7f4jTdteJYcTzHV+g6wv6qazd4Lqqb+Wlajl7jXhk=; b=IAzK1g973sQzTD
-	KG2gUMRA34PJhxO7KHU1/YLjg/+C6EfBjGZgbsVL7MpEn2uukZK0/WhK9ILP6/TEFU5wy66c6DOGm
-	Shk3R0OZcpbNmuFUW+nBtvPRftyKmzym678CVywomwOIigjNTG70t4kdrHzjdQ6aJ8xcd+LAdZivK
-	DkzQ3w6r8W49XPjjgpuF+UJjYet2ugOxdb5jGtXv1+7pW3rhY3RDaGt1iKcomq5UYmR4Geyw51x+2
-	QHen0A04ihKZRXqwC5uZUL+V+SKOfi15j5088yhtVM7y80Vii21vjStjnj76sugisu7dmwUW4W5vh
-	86bqhj1YnWgnvrOzQxlA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=CchYR7fjv5xubPrjqofYyOE+cRUzUfnIgAU44jtpPlQ=; b=PPtMTfMxWXnI94wRJ/Yt+qYL1
+	Xx1kCcNFEdFE9+BibthxtkCDDEy8VnSpctrNxUsYeSvfKGJsoqjUuRkKnv+f+gjr2Dlwgi40vL3VG
+	Lyt9+BOAGM2brAYBGJTngzikFg3ObIRyzDhpf61DUAVs99Z51sJc1FwcHxYPft/FjIPJhEbw6Ej77
+	mX9dggYHJ9vryh4HpDIuBBtlyx/TNpKiXFiUuqk8EYOTyjL5QFB71bJaPg7DdL0OIWcLP8z6xU8sE
+	4TTx8/D7N39EmPkJbmYsvFhU/5A2n3Gg5eEQxGmVbNjrBg2KNNVaUDJkW3BkE80n9VA+AC3vsd5Yg
+	LgBw4Wr4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNvoK-0005yY-8R; Mon, 13 Apr 2020 09:55:24 +0000
-Received: from hostingweb31-40.netsons.net ([89.40.174.40])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNvoG-0005ny-Vg
- for linux-i3c@lists.infradead.org; Mon, 13 Apr 2020 09:55:22 +0000
-Received: from [5.157.111.77] (port=45414 helo=[192.168.77.66])
- by hostingweb31.netsons.net with esmtpsa (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (Exim 4.93)
- (envelope-from <luca@lucaceresoli.net>)
- id 1jNvo9-00A9CE-It; Mon, 13 Apr 2020 11:55:13 +0200
-Subject: Re: [RFC PATCH v2 5/6] i2c: of: mark a whole array of regs as reserved
-To: Wolfram Sang <wsa+renesas@sang-engineering.com>, linux-i2c@vger.kernel.org
+	id 1jOcx7-0002wW-Rz; Wed, 15 Apr 2020 07:59:21 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOcx4-0002vM-GC
+ for linux-i3c@lists.infradead.org; Wed, 15 Apr 2020 07:59:20 +0000
+Received: from localhost (p54B33507.dip0.t-ipconnect.de [84.179.53.7])
+ by pokefinder.org (Postfix) with ESMTPSA id DD7442C1F58;
+ Wed, 15 Apr 2020 09:59:14 +0200 (CEST)
+Date: Wed, 15 Apr 2020 09:59:11 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Luca Ceresoli <luca@lucaceresoli.net>
+Subject: Re: [RFC PATCH v2 2/6] i2c: allow DT nodes without 'compatible'
+Message-ID: <20200415075911.GA1141@ninjato>
 References: <20200318150059.21714-1-wsa+renesas@sang-engineering.com>
- <20200318150059.21714-6-wsa+renesas@sang-engineering.com>
-From: Luca Ceresoli <luca@lucaceresoli.net>
-Message-ID: <c4e41b0a-4b9a-0db9-94dc-bbbc2f013133@lucaceresoli.net>
-Date: Mon, 13 Apr 2020 11:55:11 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ <20200318150059.21714-3-wsa+renesas@sang-engineering.com>
+ <11ca7487-ac07-f714-8573-20d1a0040212@lucaceresoli.net>
 MIME-Version: 1.0
-In-Reply-To: <20200318150059.21714-6-wsa+renesas@sang-engineering.com>
-Content-Language: en-US
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - hostingweb31.netsons.net
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - lucaceresoli.net
-X-Get-Message-Sender-Via: hostingweb31.netsons.net: authenticated_id:
- luca@lucaceresoli.net
-X-Authenticated-Sender: hostingweb31.netsons.net: luca@lucaceresoli.net
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
+In-Reply-To: <11ca7487-ac07-f714-8573-20d1a0040212@lucaceresoli.net>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_025521_194864_8B06FBEB 
-X-CRM114-Status: GOOD (  13.35  )
+X-CRM114-CacheID: sfid-20200415_005918_688097_5CA7FDAB 
+X-CRM114-Status: UNSURE (   7.79  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,68 +66,75 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: Jacopo Mondi <jacopo@jmondi.org>, linux-kernel@vger.kernel.org,
+Cc: Rob Herring <robh@kernel.org>, Jacopo Mondi <jacopo@jmondi.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Kieran Bingham <kieran@bingham.xyz>, linux-kernel@vger.kernel.org,
  Vladimir Zapolskiy <vz@mleia.com>, linux-renesas-soc@vger.kernel.org,
- Kieran Bingham <kieran@bingham.xyz>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- =?UTF-8?Q?Niklas_S=c3=b6derlund?= <niklas.soderlund@ragnatech.se>,
- linux-i3c@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Wolfram Sang <wsa+renesas@sang-engineering.com>, linux-i2c@vger.kernel.org,
+ Niklas =?utf-8?Q?S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>,
+ linux-i3c@lists.infradead.org,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Content-Type: multipart/mixed; boundary="===============5400427326787648539=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi,
 
-On 18/03/20 16:00, Wolfram Sang wrote:
-> Back then, 'reg' properties in I2C DT bindings only contained one
-> address and this address was assigned a device and, thus, blocked.
-> Meanwhile, chips using multiple addresses are common and the 'reg'
-> property can be an array described by 'reg-names'. This code enhances
-> I2C DT parsing, so it will reserve all addresses described in an array.
-> They will be bound to the 'dummy' driver as 'reserved' iff the first
-> address can be assigned successfully. If that is not the case, the array
-> is not further considered. If one later address of the array can not be
-> assigned, it will be reported but we don't bail out. The driver has to
-> decide if that address is critical or not.
-> 
-> Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
-> ---
->  drivers/i2c/i2c-core-of.c | 70 +++++++++++++++++++++++++--------------
->  1 file changed, 46 insertions(+), 24 deletions(-)
-> 
-> diff --git a/drivers/i2c/i2c-core-of.c b/drivers/i2c/i2c-core-of.c
-> index f2d09ea0d336..67eb2cd305cf 100644
-> --- a/drivers/i2c/i2c-core-of.c
-> +++ b/drivers/i2c/i2c-core-of.c
-> @@ -16,25 +16,18 @@
->  #include <linux/i2c.h>
->  #include <linux/module.h>
->  #include <linux/of.h>
-> +#include <linux/of_address.h>
->  #include <linux/of_device.h>
->  #include <linux/sysfs.h>
->  
->  #include "i2c-core.h"
->  
-> -int of_i2c_get_board_info(struct device_node *node, struct i2c_board_info *info)
-> +static void of_i2c_decode_board_info(struct device_node *node, u32 addr,
-> +				     bool first_addr, struct i2c_board_info *info)
+--===============5400427326787648539==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="2fHTh5uZTiUOsy+g"
+Content-Disposition: inline
 
-While I confirm the patch looks generally OK, let me add the name of
-this function is not quite self-explaining. The difference between "get"
-and "decode" has nothing to do with the different actions these
-functions do, i.e. the new function gets (or: decodes) info about  a
-single address that is passed, the old "get" function gets the info for
-the first address.
 
-I'd suggest the new function be named of_i2c_get_board_info_one_addr or
-similar. Not super nice, a bit long, but self-explanatory.
+--2fHTh5uZTiUOsy+g
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
--- 
-Luca
+
+> As I said in the reply to v1, I think we should reserve addresses also
+> when there is a compatible string but no matching driver, but this is
+> another story and can be handled separately.
+
+Unless I misunderstand you, I think they do already. Note that
+only 'i2cdetect' shows a device as busy *IFF* there is a driver bound to
+it. The internal 'i2c_check_addr_busy' does not care about a driver
+being bound. You can check this by trying to use
+i2c_new_ancillary_device() with an address which is already described in
+DT but which driver is disabled.
+
+
+--2fHTh5uZTiUOsy+g
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl6WvssACgkQFA3kzBSg
+KbYQ8hAAruiFHx6/xDYq9vD1D8WLWFXqoxuwD4NbJPlRSuzJvimBjPE7ynrPH4Ga
+S96O5ehETCXYz2yXLQmo1cwCbnIRo8W9kl+H/knosYOOdBd5jFpKNd7Z3+R2ldHL
+jr7z0qYXDcN+ErsIKUL4jJpmcSQL26GrNSmUFbadRvcsGDTq19Qwc+mhNx90oDyh
+xxb3RZs1cZWdkc+PygDNWwbh0dvbMHL0LBl6smJxf0z4wyVEx3YWxB4Rzfb4wVo6
+HRr1Ubdz1sSGhxyJoZ1PZqQy7lrpg+vLNv+sYG5nrdPsX5KTXlKBXowdWHeSFlXv
+nZ2DtsHzwSzE2LaeY9HmlV9iZEFGD/21NQ+u5B5wxcV5EbPyPHeOLUXp2t+6gOLC
+TT5vjxshNUPKBYBC/XrPIPC8P08Ajp6+gzckYqLY2/E+Nzmv8akKSNq4+idrw+59
++Gj89nHXXzqSPMDUJ3XfMgLTQcRVNW46H+f6Ix+xwj/JuV1uR0XWELnn/cfH+Q7V
+rAuCawvjljjh/h9KfcHAbzpfCSkxXR4dYdKQGD8YeVCrQFvC5IMrZ/cwqF6W0Jj1
+xJ5lngRYJsdqRc0Y2/rLpAae8UT54bzPbn4KFNCZ9LHx2Qx0dStIFhG+k927OlZe
+6cDCHUXGwC4ypb0pJdeSxD8Y3rRe7GbHfawZkLzzl8z3OjQ3K54=
+=LEQy
+-----END PGP SIGNATURE-----
+
+--2fHTh5uZTiUOsy+g--
+
+
+--===============5400427326787648539==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
+
+--===============5400427326787648539==--
+
