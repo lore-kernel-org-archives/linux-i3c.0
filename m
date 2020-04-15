@@ -7,17 +7,17 @@ X-Spam-Status: No, score=-8.3 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1 autolearn=unavailable
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 1C51FC2BB85
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 16DC6C2BB55
 	for <linux-i3c@archiver.kernel.org>; Thu, 16 Apr 2020 12:03:12 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 5BF4C20767
+	by mail.kernel.org (Postfix) with ESMTPS id 5A5A1206E9
 	for <linux-i3c@archiver.kernel.org>; Thu, 16 Apr 2020 12:03:11 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="nM1t2AMN";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=bingham-xyz.20150623.gappssmtp.com header.i=@bingham-xyz.20150623.gappssmtp.com header.b="m9HUIq5H"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 5BF4C20767
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="saqpAiQ8";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=bingham-xyz.20150623.gappssmtp.com header.i=@bingham-xyz.20150623.gappssmtp.com header.b="WEm8jhqd"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 5A5A1206E9
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bingham.xyz
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -26,60 +26,59 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9NronLHK9i85bN/7G427xcD3mCiPQ8GndijiqbfP5SI=; b=nM1t2AMNgZl3Kr
-	Pbv264twosF+1SrDozPNg73vQo7RiKDLJ9KhElNEgJ/lY3qwiOIjRRu9YpxjH7gkQSXsuNmnRNSYR
-	JYFrctGaF8MWQZVo8x+p9xfvauskySiICT1HD0NK8KTXoHmJ7YZyF+K3a3K7HVnZfQJYuwPkZLhTf
-	H1puCmckMg+gcrFgeMGk2NdrJa/XR1e2bw/FvQQpU0rqpoKzopHM7swzTHbDXqnGqX9DiEQ01w5O5
-	rHb+ExwBoohqoSnyIXGFk8OA0+3cu2fpXachLQD2L/QiiSGp/spQpd/WlsTZDGt2EhwD88uYNR1rI
-	5spJ5rKeMiTs0wqTFncA==;
+	List-Owner; bh=+XGnrdvgk07B6aM907b5YREZFJvYViVLzL2aM+hwBkU=; b=saqpAiQ86vKlDF
+	Avn0zsgk39stPtEHcpbrkMqyjYbkajT1aDcFCtDe+GdB2yFnmo0BzE2tbJKj6gzPy5ziyDxf9ETWo
+	y490+5c7w23SFsBLfA+snQWmmfO2Qh1h7EvYWVoGAyMkIfSuNY/3Q0IhwyEW7o7x3DITBm9zDG0HE
+	TiI+jrHxd2skcnlpt/BJ4zzWgbr3Rz3uTDODmb5p+oGr+h8UmRGn89koBHd5Rkwx5rLn8yY8BNFvb
+	AVx7pDLMcETOxGRubLySAN0yfPRBBKgjlkXT/zsoZoRGvFpT7tn+zuGqSqKtKST55XpILImaLI34L
+	Q4NLna9SEYNcRpaxRXeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jP3Ec-0004wR-KG; Thu, 16 Apr 2020 12:03:10 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jP3Ec-0004wo-Sh; Thu, 16 Apr 2020 12:03:10 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOdAg-0002QZ-AJ
- for linux-i3c@lists.infradead.org; Wed, 15 Apr 2020 08:13:24 +0000
-Received: by mail-wr1-x441.google.com with SMTP id j2so17987399wrs.9
- for <linux-i3c@lists.infradead.org>; Wed, 15 Apr 2020 01:13:20 -0700 (PDT)
+ id 1jOdiy-0004VQ-7k
+ for linux-i3c@lists.infradead.org; Wed, 15 Apr 2020 08:48:49 +0000
+Received: by mail-wr1-x444.google.com with SMTP id u13so17619761wrp.3
+ for <linux-i3c@lists.infradead.org>; Wed, 15 Apr 2020 01:48:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=bingham-xyz.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=LkJy1QzawqhjFU7Ju2mePtspWxjtg9KAS6B4M0eMNdU=;
- b=m9HUIq5H+oLIX2WC1BdZc/+CaqnS09MKSv702r41ixSbnu6dII7McQQOZnDsxKkm8j
- 5atEvh0mJi2JmQV8o6X9KZ9sY14Ei8LNscSoOLiD5uYV8Gx86FZFW4HviHRGDB+NJHPP
- +se3bh/MfXbs5bu1nS8ujaKCM1Rg8q2c+O3XOFLVL9Un5bVs4IrWLL5Iw6X4ZXSN/vKu
- KbRanE8tCncfNTQ9jFOwu6Hgtw8p5zSVHQ4+lMODAbYutEURV3PHfKhX9VgXZsWGl12G
- vwYqIBxkkvvsbjjwsc7RUSgcppwdYO2CIEI+uhY0BWFGwu1GM8nm3ioMITveHTRSlVpB
- C0/w==
+ bh=EV5cZQCkbQanB0lPQS10XkYLf15qJlxPNzHeKA7zsLw=;
+ b=WEm8jhqdU1woAxVuZBEqvWaqlQkGFqXgT0EEeizN/GYrDU8HzSam3p5Bh0bKFdPIUV
+ 3E3T9OEkaeu2Lq6dG5A2NxKCHa/dRd7m6cYtQC6DU+grEEb9y1YcSXKqCwHA6VuVeb5a
+ xOk7Lf6NIj7aQF6KYpKp1Juxn/bCnifH//THfrr0HVIiTaEfVGaupdRS554jdY3C/FRa
+ 94KD8mtj5A5WJlxMl36ainFivi0yCJ8l7ZdwWNHKx0nvq9sgBaa+oFU0IhZmYktEhu++
+ k05ptqfH8j3mLQbrbM1h/2CieyAjHdYIME2g9eQyH4fJ++zhwNb/Htd5j8YT/n8DZ5AW
+ 0JzA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=LkJy1QzawqhjFU7Ju2mePtspWxjtg9KAS6B4M0eMNdU=;
- b=LDVZyjuxUh3PJCZybNV+nJbE71q6O3fW0l0XZiJ0/2mzhDUmsCppbNIKVLHB07pvll
- /XKL5aF01NAbIqRgAXP8OMsYlNY5V0u9YaMnyRq9GpJTqhBXNeQZv1dJ6B3LAemHEM2t
- BbYHnZCwyCT3OuSdynLsw+hwoJASbVML93zXvM6Q+Wx/ACHzA5FSFC7eBS4BNlANqS35
- hRTywx8e82gNnTnmOPmkibguTnpoItIk7O2ScS+iDiOgzljcunY/xxKoEVGENQzSpL8K
- rAGZKNZnegHkmbTrFSxyTMoGCPBdAW9V30jS+CZ5Hma3RoOz9RaLYgwZ35Pzp0f7gQEG
- OLrw==
-X-Gm-Message-State: AGi0PuYJnR/gdbe7eQqtfde5l3vFc0ZfIn9JTa2M3iyRXIduFxEue7HW
- nm0mtwtl+edMqFZ+Dm/tBpokIFUr1wkiZA==
-X-Google-Smtp-Source: APiQypLXLpjm+jS1Epc7+Y97OpuX6dRuEM1+IHfEN7ZGnv4H1zPYyEbLzHb4vQSNVrR6FJ3J1/N5Og==
-X-Received: by 2002:a5d:69c9:: with SMTP id s9mr28118889wrw.307.1586938399681; 
- Wed, 15 Apr 2020 01:13:19 -0700 (PDT)
+ bh=EV5cZQCkbQanB0lPQS10XkYLf15qJlxPNzHeKA7zsLw=;
+ b=nZ+X1bKaTCFaRMo7pvYrpHR5P1Z76kl2N6r0fCw10fGvL42GN53DCDQEcwAmMjxjTq
+ T41ElZ6R2SW9Of1mmx8W9xqBSbV7+1e8wzBVVsB3grPneaW0xSt8oepdZn4c3Ti7M614
+ IGiux6IGpRymHVHqREkALZvSWNSmPU+3yhTmQ1BIe2iEd5kDqbvL3Iy6WrYX3AKxP9qF
+ u/Iz8puzj0gZJ1D5y15hCU0pKsUOCfaoLrZEVIvDt2arbpdhDOD6ExwI/YJMPKil4Wgt
+ zjvWQBQGgLK4VNABo016G1HmKRmlNSZ7tEW7tZae11xLxL0tbdaQhRVxY5AM3hn1iAYg
+ FEpQ==
+X-Gm-Message-State: AGi0PuZvClYPi8hP+r4xdD3pxus8wxcAQz/tWR+tABo1c0yLmSut7oyD
+ dX6DHvfaCjzHcDrIon8VS58gAA==
+X-Google-Smtp-Source: APiQypJ1QuWXon39j7rg9O4EUM0G25LnqKPwxKa/minvpBY5w+Ttpn13mJtxU3cCUWEm65PHXRdisg==
+X-Received: by 2002:a5d:6645:: with SMTP id f5mr29429303wrw.280.1586940526517; 
+ Wed, 15 Apr 2020 01:48:46 -0700 (PDT)
 Received: from [192.168.0.20]
  (cpc89242-aztw30-2-0-cust488.18-1.cable.virginm.net. [86.31.129.233])
- by smtp.gmail.com with ESMTPSA id v1sm17867775wrv.19.2020.04.15.01.13.17
+ by smtp.gmail.com with ESMTPSA id i25sm21874124wml.43.2020.04.15.01.48.45
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 15 Apr 2020 01:13:18 -0700 (PDT)
-Subject: Re: [RFC PATCH v2 3/6] i2c: of: remove superfluous parameter from
- exported function
+ Wed, 15 Apr 2020 01:48:45 -0700 (PDT)
+Subject: Re: [RFC PATCH v2 2/6] i2c: allow DT nodes without 'compatible'
 To: Wolfram Sang <wsa+renesas@sang-engineering.com>, linux-i2c@vger.kernel.org
 References: <20200318150059.21714-1-wsa+renesas@sang-engineering.com>
- <20200318150059.21714-4-wsa+renesas@sang-engineering.com>
+ <20200318150059.21714-3-wsa+renesas@sang-engineering.com>
 From: Kieran Bingham <kieran@bingham.xyz>
 Openpgp: preference=signencrypt
 Autocrypt: addr=kieran@bingham.xyz; keydata=
@@ -125,16 +124,16 @@ Autocrypt: addr=kieran@bingham.xyz; keydata=
  cpG0pX8PrmjQ0YV8pvfUFyrfHtHzTMA4ktMNzF5FhNkE1WNwXZHD+P6nmPEZiOi45tqI7Ro6
  mX/IKTr6GLCzg0OVP6NSsgSJeR6Hd2GvSI2Vw1jfnZI4tCNU2BmODPBkGBRLhNR+L5eRqOMm
  QglrIkyNWSZm4Hhw98VxYDwOwmYhoXmAFg==
-Message-ID: <24725e14-232c-49be-3b11-dc8afe685c43@bingham.xyz>
-Date: Wed, 15 Apr 2020 09:13:16 +0100
+Message-ID: <74aa4084-588f-1b6f-2256-44588c48edf6@bingham.xyz>
+Date: Wed, 15 Apr 2020 09:48:44 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.1
 MIME-Version: 1.0
-In-Reply-To: <20200318150059.21714-4-wsa+renesas@sang-engineering.com>
+In-Reply-To: <20200318150059.21714-3-wsa+renesas@sang-engineering.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_011322_421939_FFC3D88F 
-X-CRM114-Status: GOOD (  18.80  )
+X-CRM114-CacheID: sfid-20200415_014848_279365_6B55C58C 
+X-CRM114-Status: GOOD (  26.08  )
 X-Mailman-Approved-At: Thu, 16 Apr 2020 05:03:09 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -147,7 +146,7 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: Jacopo Mondi <jacopo@jmondi.org>,
+Cc: Rob Herring <robh@kernel.org>, Jacopo Mondi <jacopo@jmondi.org>,
  Geert Uytterhoeven <geert+renesas@glider.be>, linux-kernel@vger.kernel.org,
  Vladimir Zapolskiy <vz@mleia.com>, linux-renesas-soc@vger.kernel.org,
  Luca Ceresoli <luca@lucaceresoli.net>,
@@ -162,91 +161,117 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 Hi Wolfram,
 
 On 18/03/2020 15:00, Wolfram Sang wrote:
-> 'dev' is only used for printing an error message. However, that
-> information is not needed because '%pOF' fully describes the location of
-> the error. Drop the 'dev' and remove the superfluous parameter.
-> 
-> Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
-> Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> Reviewed-by: Luca Ceresoli <luca@lucaceresoli.net>
+> Sometimes, we have unknown devices in a system and still want to block
+> their address. For that, we allow DT nodes with only a 'reg' property.
+> These devices will be bound to the "dummy" driver but with the name
+> "reserved". That way, we can distinguish them and even hand them over to
+> the "dummy" driver later when they are really requested using
+> i2c_new_ancillary_device().
+
+Oh how I long to be able to give these 'identifiable names' within the
+system, but that will probably mess up all the driver matching and
+binding, so would be quite tricky perhaps.
+
+But I like the ability to distinguish the two different types.
 
 Reviewed-by: Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>
 
+
+> Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+> Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> Acked-by: Rob Herring <robh@kernel.org>
 > ---
->  drivers/i2c/i2c-core-of.c | 7 +++----
->  drivers/i3c/master.c      | 2 +-
->  include/linux/i2c.h       | 6 ++----
->  3 files changed, 6 insertions(+), 9 deletions(-)
+>  Documentation/devicetree/bindings/i2c/i2c-ocores.txt | 2 --
+>  Documentation/devicetree/bindings/i2c/i2c.txt        | 4 +++-
+>  drivers/i2c/i2c-core-base.c                          | 1 +
+>  drivers/i2c/i2c-core-of.c                            | 8 +++-----
+>  drivers/i2c/i2c-core.h                               | 1 +
+>  5 files changed, 8 insertions(+), 8 deletions(-)
 > 
+> diff --git a/Documentation/devicetree/bindings/i2c/i2c-ocores.txt b/Documentation/devicetree/bindings/i2c/i2c-ocores.txt
+> index 6b25a80ae8d3..fc8ea27934b3 100644
+> --- a/Documentation/devicetree/bindings/i2c/i2c-ocores.txt
+> +++ b/Documentation/devicetree/bindings/i2c/i2c-ocores.txt
+> @@ -50,7 +50,6 @@ Examples:
+>  		reg-io-width = <1>;	/* 8 bit read/write */
+>  
+>  		dummy@60 {
+> -			compatible = "dummy";
+>  			reg = <0x60>;
+>  		};
+>  	};
+> @@ -68,7 +67,6 @@ or
+>  		reg-io-width = <1>;	/* 8 bit read/write */
+>  
+>  		dummy@60 {
+> -			compatible = "dummy";
+>  			reg = <0x60>;
+>  		};
+>  	};
+> diff --git a/Documentation/devicetree/bindings/i2c/i2c.txt b/Documentation/devicetree/bindings/i2c/i2c.txt
+> index 9a53df4243c6..989b315e09dc 100644
+> --- a/Documentation/devicetree/bindings/i2c/i2c.txt
+> +++ b/Documentation/devicetree/bindings/i2c/i2c.txt
+> @@ -21,7 +21,9 @@ flags can be attached to the address. I2C_TEN_BIT_ADDRESS is used to mark a 10
+>  bit address. It is needed to avoid the ambiguity between e.g. a 7 bit address
+>  of 0x50 and a 10 bit address of 0x050 which, in theory, can be on the same bus.
+>  Another flag is I2C_OWN_SLAVE_ADDRESS to mark addresses on which we listen to
+> -be devices ourselves.
+> +be devices ourselves. The 'reg' property of a child is required. The
+> +'compatible' property is not. Empty 'compatible' child entries can be used to
+> +describe unknown devices or addresses which shall be blocked for other reasons.
+>  
+>  Optional properties
+>  -------------------
+> diff --git a/drivers/i2c/i2c-core-base.c b/drivers/i2c/i2c-core-base.c
+> index 3d7b8a00a7d9..84464e439df5 100644
+> --- a/drivers/i2c/i2c-core-base.c
+> +++ b/drivers/i2c/i2c-core-base.c
+> @@ -854,6 +854,7 @@ EXPORT_SYMBOL_GPL(i2c_unregister_device);
+>  
+>  static const struct i2c_device_id dummy_id[] = {
+>  	{ I2C_DUMMY_DRV_NAME, 0 },
+> +	{ I2C_RESERVED_DRV_NAME, 0 },
+>  	{ },
+>  };
+>  
 > diff --git a/drivers/i2c/i2c-core-of.c b/drivers/i2c/i2c-core-of.c
-> index d8d111ad6c85..710704cd583e 100644
+> index 6787c1f71483..d8d111ad6c85 100644
 > --- a/drivers/i2c/i2c-core-of.c
 > +++ b/drivers/i2c/i2c-core-of.c
-> @@ -19,8 +19,7 @@
+> @@ -27,17 +27,15 @@ int of_i2c_get_board_info(struct device *dev, struct device_node *node,
 >  
->  #include "i2c-core.h"
+>  	memset(info, 0, sizeof(*info));
 >  
-> -int of_i2c_get_board_info(struct device *dev, struct device_node *node,
-> -			  struct i2c_board_info *info)
-> +int of_i2c_get_board_info(struct device_node *node, struct i2c_board_info *info)
->  {
->  	u32 addr;
->  	int ret;
-> @@ -29,7 +28,7 @@ int of_i2c_get_board_info(struct device *dev, struct device_node *node,
->  
+> -	if (of_modalias_node(node, info->type, sizeof(info->type)) < 0) {
+> -		dev_err(dev, "of_i2c: modalias failure on %pOF\n", node);
+> -		return -EINVAL;
+> -	}
+> -
 >  	ret = of_property_read_u32(node, "reg", &addr);
 >  	if (ret) {
-> -		dev_err(dev, "of_i2c: invalid reg on %pOF\n", node);
-> +		pr_err("of_i2c: invalid reg on %pOF\n", node);
+>  		dev_err(dev, "of_i2c: invalid reg on %pOF\n", node);
 >  		return ret;
 >  	}
 >  
-> @@ -69,7 +68,7 @@ static struct i2c_client *of_i2c_register_device(struct i2c_adapter *adap,
+> +	if (of_modalias_node(node, info->type, sizeof(info->type)) < 0)
+> +		strlcpy(info->type, I2C_RESERVED_DRV_NAME, sizeof(I2C_RESERVED_DRV_NAME));
+> +
+>  	if (addr & I2C_TEN_BIT_ADDRESS) {
+>  		addr &= ~I2C_TEN_BIT_ADDRESS;
+>  		info->flags |= I2C_CLIENT_TEN;
+> diff --git a/drivers/i2c/i2c-core.h b/drivers/i2c/i2c-core.h
+> index fb89fabf84d3..77b3a925ed95 100644
+> --- a/drivers/i2c/i2c-core.h
+> +++ b/drivers/i2c/i2c-core.h
+> @@ -23,6 +23,7 @@ int i2c_dev_irq_from_resources(const struct resource *resources,
+>  			       unsigned int num_resources);
 >  
->  	dev_dbg(&adap->dev, "of_i2c: register %pOF\n", node);
+>  #define I2C_DUMMY_DRV_NAME "dummy"
+> +#define I2C_RESERVED_DRV_NAME "reserved"
 >  
-> -	ret = of_i2c_get_board_info(&adap->dev, node, &info);
-> +	ret = of_i2c_get_board_info(node, &info);
->  	if (ret)
->  		return ERR_PTR(ret);
->  
-> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index 7f8f896fa0c3..cc0549a9fc64 100644
-> --- a/drivers/i3c/master.c
-> +++ b/drivers/i3c/master.c
-> @@ -1943,7 +1943,7 @@ of_i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
->  	if (!boardinfo)
->  		return -ENOMEM;
->  
-> -	ret = of_i2c_get_board_info(dev, node, &boardinfo->base);
-> +	ret = of_i2c_get_board_info(node, &boardinfo->base);
->  	if (ret)
->  		return ret;
->  
-> diff --git a/include/linux/i2c.h b/include/linux/i2c.h
-> index f834687989f7..d84aaf0d83d5 100644
-> --- a/include/linux/i2c.h
-> +++ b/include/linux/i2c.h
-> @@ -942,8 +942,7 @@ const struct of_device_id
->  *i2c_of_match_device(const struct of_device_id *matches,
->  		     struct i2c_client *client);
->  
-> -int of_i2c_get_board_info(struct device *dev, struct device_node *node,
-> -			  struct i2c_board_info *info);
-> +int of_i2c_get_board_info(struct device_node *node, struct i2c_board_info *info);
->  
->  #else
->  
-> @@ -969,8 +968,7 @@ static inline const struct of_device_id
->  	return NULL;
->  }
->  
-> -static inline int of_i2c_get_board_info(struct device *dev,
-> -					struct device_node *node,
-> +static inline int of_i2c_get_board_info(struct device_node *node,
->  					struct i2c_board_info *info)
->  {
->  	return -ENOTSUPP;
+>  /*
+>   * We only allow atomic transfers for very late communication, e.g. to send
 > 
 
 
