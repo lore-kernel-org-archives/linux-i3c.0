@@ -2,58 +2,75 @@ Return-Path: <SRS0=g9Ly=57=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-2.3 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,USER_AGENT_SANE_1 autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-8.2 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_1
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id F0EBCC2BA19
-	for <linux-i3c@archiver.kernel.org>; Wed, 15 Apr 2020 09:47:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 815DCC2BB55
+	for <linux-i3c@archiver.kernel.org>; Wed, 15 Apr 2020 10:07:34 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id C27FC206D9
-	for <linux-i3c@archiver.kernel.org>; Wed, 15 Apr 2020 09:47:06 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 2D51820768
+	for <linux-i3c@archiver.kernel.org>; Wed, 15 Apr 2020 10:07:34 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="npsJ7HPi"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org C27FC206D9
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=the-dreams.de
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="pkkTpQ73"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 2D51820768
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=lucaceresoli.net
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ycpMk1E2YzF2NM+0fTCyfLz2bx5FL/kPET7Z2g+YEiM=; b=npsJ7HPiAqvviWuUpeOZBrUfV
-	0HzaL8LfIo/KqBk4kBoN7P280vb0wU1YGzdG2i/PQRAj/unXSvnDXic+rKNGlnRs5xlQhKUh8EjzF
-	jZpeU+H4JiUTi4T/POSitp6ALyrdmQMD3u4G/RbsYp/JsEQoWDINeg+FH3wTmC7XTZsL/+i0WMPml
-	8ntkS4XBvgoxpSRAm8fKcVQa3Bz2soT5/X1kfkNyEn9G/SFkNQvIe+V1xaOe6eNgYLQZ4Q8RzYQGT
-	k0wklp0tVFUdVaNUqHoorxm5Hrw4oWHyU0JUCpXIBljeKABSeD4nlFZHMOtpWlaAgUa4or0wRFB3i
-	jPGvL5ekQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yJaeI9iRtBwH4XPJODXMwZfp3DiTcowzFhbDTg6/VR4=; b=pkkTpQ73+M/rR7
+	RfOg9PzNZQRaxxvrugczmQ7BE516l+/pwtnyeIvRCFC3haZB/3yaoKUBUpBeMOt3qGOsqRZaFCJeB
+	YrRk0bJSkI9eYUOThYPYgtpM0aFOzDELKgwuw/xE1pTU7F23p41nBKllqi3qASvFbZsC2O1+KPhjD
+	S3kjqOdEHjHFgfVS5dKsHOngSt0X5br6R+amgOJpmDgeIdWkEzrtM1TUZ5OinCnj3FCFrbKw9Qaza
+	Ty9+M3UYopE9htZ6N1OPfdcEc1Vpmexowdu/vTNrugKwNRjQlkJkFdKm9qn9y5HN1c6Vr4bcLYSjQ
+	tL4AL5ZYsJKN+eU1SBAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOedJ-0005oI-Uj; Wed, 15 Apr 2020 09:47:01 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOedH-0005nA-E4
- for linux-i3c@lists.infradead.org; Wed, 15 Apr 2020 09:47:00 +0000
-Received: from localhost (p54B33507.dip0.t-ipconnect.de [84.179.53.7])
- by pokefinder.org (Postfix) with ESMTPSA id 5E9472C1F58;
- Wed, 15 Apr 2020 11:46:57 +0200 (CEST)
-Date: Wed, 15 Apr 2020 11:46:57 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Kieran Bingham <kieran@bingham.xyz>
-Subject: Re: [RFC PATCH v2 2/6] i2c: allow DT nodes without 'compatible'
-Message-ID: <20200415094656.GE1141@ninjato>
+	id 1jOex9-0005zl-SZ; Wed, 15 Apr 2020 10:07:31 +0000
+Received: from hostingweb31-40.netsons.net ([89.40.174.40])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jOex7-0005yJ-Js
+ for linux-i3c@lists.infradead.org; Wed, 15 Apr 2020 10:07:31 +0000
+Received: from [88.147.20.223] (port=52218 helo=[192.168.77.62])
+ by hostingweb31.netsons.net with esmtpsa (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (Exim 4.93)
+ (envelope-from <luca@lucaceresoli.net>)
+ id 1jOex2-009Eu1-UU; Wed, 15 Apr 2020 12:07:24 +0200
+Subject: Re: [RFC PATCH v2 6/6] i2c: core: hand over reserved devices when
+ requesting ancillary addresses
+To: Wolfram Sang <wsa+renesas@sang-engineering.com>, linux-i2c@vger.kernel.org
 References: <20200318150059.21714-1-wsa+renesas@sang-engineering.com>
- <20200318150059.21714-3-wsa+renesas@sang-engineering.com>
- <74aa4084-588f-1b6f-2256-44588c48edf6@bingham.xyz>
+ <20200318150059.21714-7-wsa+renesas@sang-engineering.com>
+From: Luca Ceresoli <luca@lucaceresoli.net>
+Message-ID: <610bbd01-e245-3320-c315-7a5c945a700d@lucaceresoli.net>
+Date: Wed, 15 Apr 2020 12:07:24 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <74aa4084-588f-1b6f-2256-44588c48edf6@bingham.xyz>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200318150059.21714-7-wsa+renesas@sang-engineering.com>
+Content-Language: en-US
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - hostingweb31.netsons.net
+X-AntiAbuse: Original Domain - lists.infradead.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - lucaceresoli.net
+X-Get-Message-Sender-Via: hostingweb31.netsons.net: authenticated_id:
+ luca@lucaceresoli.net
+X-Authenticated-Sender: hostingweb31.netsons.net: luca@lucaceresoli.net
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_024659_616877_4BA44B1F 
-X-CRM114-Status: GOOD (  10.74  )
+X-CRM114-CacheID: sfid-20200415_030729_818430_95D20BBD 
+X-CRM114-Status: GOOD (  15.59  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,79 +82,73 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Jacopo Mondi <jacopo@jmondi.org>,
- Niklas =?utf-8?Q?S=C3=B6derlund?= <niklas.soderlund@ragnatech.se>,
- Geert Uytterhoeven <geert+renesas@glider.be>, linux-kernel@vger.kernel.org,
+Cc: Jacopo Mondi <jacopo@jmondi.org>, linux-kernel@vger.kernel.org,
  Vladimir Zapolskiy <vz@mleia.com>, linux-renesas-soc@vger.kernel.org,
- Wolfram Sang <wsa+renesas@sang-engineering.com>, linux-i2c@vger.kernel.org,
- Luca Ceresoli <luca@lucaceresoli.net>, linux-i3c@lists.infradead.org,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Content-Type: multipart/mixed; boundary="===============1406786024054318606=="
+ Kieran Bingham <kieran@bingham.xyz>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ =?UTF-8?Q?Niklas_S=c3=b6derlund?= <niklas.soderlund@ragnatech.se>,
+ linux-i3c@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+Hi,
 
---===============1406786024054318606==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="SNIs70sCzqvszXB4"
-Content-Disposition: inline
+On 18/03/20 16:00, Wolfram Sang wrote:
+> With i2c_new_ancillary_address, we can check if the intended driver is
+> requesting a reserved address. Update the function to do these checks.
+> If the check passes, the "reserved" device will become a regular "dummy"
+> device.
+> 
+> Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+> ---
+>  drivers/i2c/i2c-core-base.c | 24 ++++++++++++++++++++++--
+>  1 file changed, 22 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/i2c/i2c-core-base.c b/drivers/i2c/i2c-core-base.c
+> index 84464e439df5..81fb320de28d 100644
+> --- a/drivers/i2c/i2c-core-base.c
+> +++ b/drivers/i2c/i2c-core-base.c
+> @@ -974,7 +974,9 @@ struct i2c_client *i2c_new_ancillary_device(struct i2c_client *client,
+>  						const char *name,
+>  						u16 default_addr)
+>  {
+> -	struct device_node *np = client->dev.of_node;
+> +	struct device_node *reserved_np, *np = client->dev.of_node;
+> +	struct device *reserved_dev, *adapter_dev = &client->adapter->dev;
+> +	struct i2c_client *reserved_client = NULL;
+>  	u32 addr = default_addr;
+>  	int i;
+>  
+> @@ -984,7 +986,25 @@ struct i2c_client *i2c_new_ancillary_device(struct i2c_client *client,
+>  			of_property_read_u32_index(np, "reg", i, &addr);
+>  	}
+>  
+> -	dev_dbg(&client->adapter->dev, "Address for %s : 0x%x\n", name, addr);
+> +	dev_info(adapter_dev, "Address for %s : 0x%x\n", name, addr);
 
+Here if we have two identical chips on the same bus, they probably will
+both add an ancillary device with the same name. Then a message like:
 
---SNIs70sCzqvszXB4
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+  i2c i2c-0: ds90ub954-q1: Address for rxport0: 0x40
 
+won't tell which ds90ub954-q1 device is using that address. I'd rather
+disambiguate using something like:
 
-> > Sometimes, we have unknown devices in a system and still want to block
-> > their address. For that, we allow DT nodes with only a 'reg' property.
-> > These devices will be bound to the "dummy" driver but with the name
-> > "reserved". That way, we can distinguish them and even hand them over to
-> > the "dummy" driver later when they are really requested using
-> > i2c_new_ancillary_device().
->=20
-> Oh how I long to be able to give these 'identifiable names' within the
-> system, but that will probably mess up all the driver matching and
-> binding, so would be quite tricky perhaps.
+  dev_info(adapter_dev, "%s: Address for %s: 0x%x\n",
+           dev_name(&client->dev), name, addr);
 
-I haven't found a way yet to use 'name' to give more meaningful
-descriptions to dummies. My best bet so far is to use additional links
-in sysfs.
+Sure, this issue did exist before this patch, but since the line is
+being promoted from dbg to info (which is OK), it's probably a good idea
+to improve the content, perhaps in a separate patch.
 
+Except for that, I tested the patch and it's working fine.
 
---SNIs70sCzqvszXB4
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl6W2AwACgkQFA3kzBSg
-KbZ74Q//XCUnM5Uqs3MGl93+zlEkU9qid076otxKrc7nkRrR4PlkbIAd6KTkD74F
-ElytalAQei2cjwYeI6rj6gNh1QgIFn5Fp7VE3cmu/QGVGksVNkPlonP+gjsxbvSp
-j+UWFHfi5FxKDgFPdj+0N9UjqsnhLu1zOyAiLw6IXJOSd8uyEX87MWx3Ga60tzwN
-QlZ1B/7Yn1Ysg0Xxtxmr1xtBm+9BzJh0zlBbgSvswju+qLzAVVImbT+WeNloVilz
-PPoynShY7BhHHxMyPX8cXUYD6z8x2OqCDhPQn4Z+rsnq78Oqx+zLr2k/4RylC1BZ
-xSYjqa77r79swX/pn42ycef9pWfuS3tKnja0hFEt3FdIFTW1bJwGDsV1/Q7HFrSL
-+z/ZB/+6EP5oHq95lKtWyaUohGSRjZiMTi2l5EuYW6hS5RyYBYMpHWjG22EwfqK/
-XiH/cPlD0FpEHem9TeiadOhH7DRKzZziLNLI9bNIL29jzQ3xu2LcPZUHp3zJvXD6
-aZoRH7JYWHoyXNrbS/EbPVNW7k4Q1ebgk3oTqz//BUjzqAciLnj6ZMWgqvDGt2ig
-XV1SMC20tyS2NlR6gvGt2tj9y3PEnAUJMHJgIXCv9tIvCRUmBsSBO5BRuc3hc5sO
-+0+tMY/luasA3dfosRj5qwt46+zTB0YKYMRumDhBKmpFB1K5hvU=
-=XY5W
------END PGP SIGNATURE-----
-
---SNIs70sCzqvszXB4--
-
-
---===============1406786024054318606==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Luca
 
 _______________________________________________
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
-
---===============1406786024054318606==--
-
