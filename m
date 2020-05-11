@@ -7,16 +7,16 @@ X-Spam-Status: No, score=-8.4 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
 	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_2 autolearn=unavailable
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 191B9C54E8E
-	for <linux-i3c@archiver.kernel.org>; Mon, 11 May 2020 16:05:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3FA93C47255
+	for <linux-i3c@archiver.kernel.org>; Mon, 11 May 2020 16:14:43 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id DD4D9206E6
-	for <linux-i3c@archiver.kernel.org>; Mon, 11 May 2020 16:05:09 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 10C2D206DB
+	for <linux-i3c@archiver.kernel.org>; Mon, 11 May 2020 16:14:42 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="gYcZOIGi"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org DD4D9206E6
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="dcoR8pGZ"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 10C2D206DB
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=collabora.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -25,40 +25,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CPFXlXLrGdbmW85YAzT1Kf9D7/P6sV/WItPdE74eFvQ=; b=gYcZOIGinuspwl
-	5pTVwR/UjPy0DVNVeLy/QmuNtq+35d6LfRt3LMAaSLvF69P/tym551rXSrilY2n22yv7evW28/97X
-	D96VUVIkWYCTAy3yuqimBC78WpMUviwXrS8KnlvmrEqNFjI58zGH39fKhuwSUx3MxKPNofk3gXpHg
-	hsmgQQ9qRpWDVlopa0eUZB8TwQaEVxz/kQmB4nqkJgaGMuKvtN78umcelrxXF7RwmZkc8Cx9IbJlx
-	q93zqC+ZwBtUR8kPxiPGh6aSob3nxmDChT8J3NKS0wp/jPSX45PzklufzHHDfZl/IRk6srKY+cRWS
-	AcjL2mR757dyCya6Q4IA==;
+	List-Owner; bh=QjRCWn56SHLnzdaP/YeUR5OF/tWSzM4dETKIl9jEXSo=; b=dcoR8pGZfXCYkX
+	uvlf47HQDgUM1pxQ4QpZgVcXQNr3Wb6b2jDqpexdJpa1rcdFjD2+vgQfF/q9UtKbxSs0pM6kPel7K
+	NCamWDeNi+Q1rmRWyrK4WzTIuSp8eWqKrRqEUvJA7kmglaR6wOfX91/vknV1XgPiWzyydItBB4/kK
+	GEk1CG5PRovHZWpAWNvdvNc/ZLvgd8yGy3P8oJapMQF3T4/CxbF8vil63wxnfHIIlnQJUkm/1JZ4D
+	sQTfCibEYk5do8SaM7GY6auAUQH50O2pyu4U8U4da26gnprFQLvPPYnaOCRm1F2eK4FUVscRmHIW4
+	QChroyLsgUd0+k/6v1pA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYAvV-0003V9-8Q; Mon, 11 May 2020 16:05:09 +0000
+	id 1jYB4k-0008ML-43; Mon, 11 May 2020 16:14:42 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYAvR-0002RR-Ti
- for linux-i3c@lists.infradead.org; Mon, 11 May 2020 16:05:08 +0000
+ id 1jYB4g-0008L2-76
+ for linux-i3c@lists.infradead.org; Mon, 11 May 2020 16:14:40 +0000
 Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
  (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 1897E2A0A89;
- Mon, 11 May 2020 17:05:04 +0100 (BST)
-Date: Mon, 11 May 2020 18:05:00 +0200
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 2494F2A0E1A;
+ Mon, 11 May 2020 17:14:35 +0100 (BST)
+Date: Mon, 11 May 2020 18:14:31 +0200
 From: Boris Brezillon <boris.brezillon@collabora.com>
 To: Parshuram Thombare <pthombar@cadence.com>
-Subject: Re: [PATCH v7 1/7] i3c: master: secondary master initialization
- document
-Message-ID: <20200511180500.6e1c4453@collabora.com>
-In-Reply-To: <1589202759-5677-1-git-send-email-pthombar@cadence.com>
+Subject: Re: [PATCH v7 3/7] i3c: master: add i3c_secondary_master_register
+Message-ID: <20200511181431.442cdf0b@collabora.com>
+In-Reply-To: <1589202833-6908-1-git-send-email-pthombar@cadence.com>
 References: <1589202702-4879-1-git-send-email-pthombar@cadence.com>
- <1589202759-5677-1-git-send-email-pthombar@cadence.com>
+ <1589202833-6908-1-git-send-email-pthombar@cadence.com>
 Organization: Collabora
 X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_090506_258155_D26BA7AA 
-X-CRM114-Status: GOOD (  25.74  )
+X-CRM114-CacheID: sfid-20200511_091438_521155_015BE0E7 
+X-CRM114-Status: GOOD (  26.56  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,161 +77,227 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, 11 May 2020 15:12:39 +0200
+On Mon, 11 May 2020 15:13:53 +0200
 Parshuram Thombare <pthombar@cadence.com> wrote:
 
-> Document describing secondary master initialization,
-> mastership handover and DEFSLVS handling processes.
-
-Thanks for doing that, but you probably didn't try to compile the doc
-(the formatting is all messed up).
-
-# make htmldocs
-
-and then check the output in Documentation/output/ (open index.html
-with a web-browser and go to the i3c section).
-
+> add i3c_secondary_master_register which is used
+> to register secondary masters.
 > 
 > Signed-off-by: Parshuram Thombare <pthombar@cadence.com>
 > ---
->  Documentation/driver-api/i3c/index.rst        |   1 +
->  .../i3c/secondary-master-initialization.rst   | 118 ++++++++++++++++++
->  2 files changed, 119 insertions(+)
->  create mode 100644 Documentation/driver-api/i3c/secondary-master-initialization.rst
+>  drivers/i3c/master.c       | 154 ++++++++++++++++++++++++++++++++++++-
+>  include/linux/i3c/master.h |   3 +
+>  2 files changed, 156 insertions(+), 1 deletion(-)
 > 
-> diff --git a/Documentation/driver-api/i3c/index.rst b/Documentation/driver-api/i3c/index.rst
-> index 783d6dad054b..af2a0aa68f5b 100644
-> --- a/Documentation/driver-api/i3c/index.rst
-> +++ b/Documentation/driver-api/i3c/index.rst
-> @@ -9,3 +9,4 @@ I3C subsystem
->     protocol
->     device-driver-api
->     master-driver-api
-> +   secondary-master-initialization
-> diff --git a/Documentation/driver-api/i3c/secondary-master-initialization.rst b/Documentation/driver-api/i3c/secondary-master-initialization.rst
-> new file mode 100644
-> index 000000000000..9d1869550807
-> --- /dev/null
-> +++ b/Documentation/driver-api/i3c/secondary-master-initialization.rst
-> @@ -0,0 +1,118 @@
-> +.. SPDX-License-Identifier: GPL-2.0
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index ba07a7d49633..669bd7e45810 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -1768,6 +1768,90 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
+>  	return ret;
+>  }
+>  
+> +/**
+> + * i3c_secondary_master_bus_init() - initialize an I3C bus for secondary
+> + * master
+> + * @master: secondary master initializing the bus
+> + *
+> + * This function does
+> + *
+> + * 1. Attach I2C devs to the master
+> + *
+> + * 2. Call &i3c_master_controller_ops->bus_init() method to initialize
+> + *    the master controller. That's usually where the bus mode is selected
+> + *    (pure bus or mixed fast/slow bus)
+
+Can you really select the bus mode without knowing the I3C devices you
+have on the bus? Or maybe that's a preliminary initialization which is
+then updated when you receive DEFSLVS events.
+
+> + *
+> + * Once this is done, I2C devices should be usable.
+
+I suspect you'll have to request bus ownership first, which means
+they're not really usable, just registered to the I2C subsystem. This
+might lead to a whole bunch of problems when drivers will try to send
+messages to the I2C devices and receive ETIMEDOUT/EBUSY errors. We'll
+probably need some updates to the I2C framework if we want I2C to play
+nicely with bus handover, but I think we can keep that for later. I'd
+suggest to forget about I2C for now and mark that as a limitation (no
+I2C devs on secondary masters).
+
+> + *
+> + * Return: a 0 in case of success, an negative error code otherwise.
+> + */
+> +static int i3c_secondary_master_bus_init(struct i3c_master_controller *master)
+> +{
+> +	enum i3c_addr_slot_status status;
+> +	struct i2c_dev_boardinfo *i2cboardinfo;
+> +	struct i2c_dev_desc *i2cdev;
+> +	int ret;
 > +
-> +===================================
-> +I3C Secondary Master Initialization
-> +===================================
+> +	/*
+> +	 * First attach all devices with static definitions provided by the
+> +	 * FW.
+> +	 */
+> +	list_for_each_entry(i2cboardinfo, &master->boardinfo.i2c, node) {
+> +		status = i3c_bus_get_addr_slot_status(&master->bus,
+> +						      i2cboardinfo->base.addr);
+> +		if (status != I3C_ADDR_SLOT_FREE) {
+> +			ret = -EBUSY;
+> +			goto err_detach_devs;
+> +		}
 > +
-> ++-----------------------------------------+-------------------------------------------+
-> +| **Main master**                         | **Secondary master**                      |
-> ++=========================================+===========================================+
-> +|                                         |                                           |
-> +| | Do I3C master controller specific     | | Do I3C master controller specefic       |
-> +|   initialization.                       |   initialization, except enabling         |
-> +|                                         |   the DEFSLVS interrupt.                  |
-> +| | Call i3c_master_register              | | Call i3c_secondary_master_register      |
-> +|                                         |                                           |
-> +|   *i3c_master_register*                 |   *i3c_secondary_master_register*         |
-> +|    | Initialize I3C master controller   |    | Initialize I3C master controller     |
-> +|      object.                            |      object.                              |
-> +|    | Scan I3C and I2C devices from DTS. |    | Scan I2C devices from DTS.           |
-> +|    | Set appropriate bus mode based on  |    | Set appropriate bus mode based on    |
-> +|      I2C devices information.           |      I3C and I2C devices information.     |
-> +|    | Create a work queue.               |    | Create a work queue.                 |
-> +|    | Call i3c_master_bus_init           |    | Call i3c_secondary_master_bus_init   |
-> +|                                         |                                           |
-> +|      *i3c_master_bus_init*              |      *i3c_secondary_master_bus_init*      |
-> +|       | Call bus_init to do controller  |       | Call bus_init to do controller    |
-> +|         specific bus initialization and |         specific bus initialization and   |
-> +|         enabling the controller.        |         enabling the controller.          |
-> +|       | Create I3C device representing a|       | Create I3C device representing a  |
-> +|         master and add it to the I3C    |         master and add it to the I3C      |
-> +|         device list.                    |         device list.                      |
-> +|       | Set current master to the device|                                           |
-> +|         created to represent I3C master |    | Allocate memory for 'defslvs_data',  |
-> +|         device.                         |      that will be used to pass I3C        |
-> +|       | Reset all dynamic address that  |      device list received in DEFSLVS      |
-> +|         may have been assigned before.  |      to I3C core DEFSLVS processing       |
-> +|       | Disable all slave events before |    | Add I3C device representing this     |
-> +|         starting DAA.                   |      master to the system.                |
-> +|       | Pre-assign dynamic address and  |    | Expose our I3C bus as an I2C adapter |
-> +|         retrieve device information if  |      so that I2C devices are exposed      |
-> +|         needed.                         |      through the I2C subsystem.           |
-> +|       | Do dynamic address assignment to|                                           |
-> +|         all I3C devices currenly present| | Enable DEFSLVS interrupt.               |
-> +|         on the bus.                     |                                           |
-> +|       | Create I3C devices representing |                                           |
-> +|         those found during DAA.         +-------------------------------------------+
-> +|       | Send DEFSVLS message            | | *DEFSLVS interrupt*                     |
-> +|         containing information about all| | Controller driver can chose how to      |
-> +|         known I3C and I2C devices.      |   to handle I2C devices received in       |
-> +|                                         |   DEFSLVS e.g. Cadence's controller       |
-> +|                                         |   driver ignore I2C devices from          |
-> +|                                         |   DEFSLVS and only uses I2C device        |
-> +|                                         |   information from DTS.                   |
-> +|                                         | | Read all I3C devices information        |
-> +|                                         |   from DEFSLVS message in hardware to     |
-> +|                                         |   defslvs_data in master object.          |
-> +|                                         | | Call i3c_master_process_defslvs         |
-> +|                                         |                                           |
-> +|                                         |   *i3c_master_process_defslvs*            |
-> +|                                         |    | Acquire I3c bus                      |
-> +|                                         |                                           |
-> +|                                         |      *i3c_master_acquire_bus*             |
-> +|    | Add I3C device representing this   |       | If device is already holding the  |
-> +|      master to the system.              |         mastership, just broadcast DISEC  |
-> +|    | Expose our I3C bus as an I2C       |         MR, HJ message and return.        |
-> +|      adapter so that I2C devices are    |       | Check if device has got a address |
-> +|      exposed through the I2C subsystem. |         by polling with a timeout.        |
-> +|    | Register all I3C devices.          |                                           |
-> +|                                         |       | Send MR request: Controller driver|
-> +|                                         |         should check if it is already in  |
-> +|                                         |         master mode, to handle the case   |
-> +|                                         |         of mastership yielded but due to  |
-> +|                                         |         poll timeout acquire failed.      |
-> +|                                         |       | If not a master, wait until MR    |
-> +|                                         |         ENEC is received if currently it  |
-> +|                                         |         is disabled.                      |
-> +|    | Broadcast ENEC MR, HJ message.     |       | Send MR request.                  |
-> ++-----------------------------------------+                                           |
-> +| | *MR request interrupt*                |                                           |
-> +|                                         |                                           |
-> +|   *i3c_master_yield_bus*                |                                           |
-> +|    | Check if this device is still a    |                                           |
-> +|      master to handle a case of         |                                           |
-> +|      multiple MR requests from different|                                           |
-> +|      devices at a same time.            |                                           |
-> +|    | Broadcast DISEC MR, HJ message.    |                                           |
-> +|      New master should broadcast ENEC   |                                           |
-> +|      MR, HJ once it's usage of bus is   |                                           |
-> +|      done.                              |                                           |
-> +|    | Get accept mastership acknowldege  |                                           |
-> +|      from requesting master.            |                                           |
-> +|    | Mastership hand over is done.      |       | Check if device enter master      |
-> +|    | In case of failure reenable        |         mode by polling with a timeout.   |
-> +|      MR requests by broadcasting ENEC   |                                           |
-> +|      MR, HJ.                            |    Handle I3C device list from DEFSLVS.   |
-> +|                                         |                                           |
-> +|                                         |    *i3c_master_populate_bus*              |
-> +|                                         |     | Free up all I3C addresses to handle |
-> +|                                         |       address re assignment by main       |
-> +|                                         |       master.                             |
-> +|                                         |     | Move all devices from I3C list to a |
-> +|                                         |       temporary list.                     |
-> +|                                         |     | For every device from defslvs_data  |
-> +|                                         |       list except the receiving master    |
-> +|                                         |       device, retrieve pid and compare it |
-> +|                                         |       with already known I3C devices from |
-> +|                                         |       I3C list. If match is found,        |
-> +|                                         |       allocate new address and move the   |
-> +|                                         |       device to the original I3C device   |
-> +|                                         |       list. If no match is found, it is a |
-> +|                                         |       new device. Register and add it to  |
-> +|                                         |       the original I3C list.              |
-> +|                                         |     | At the end if temporary list is not |
-> +|                                         |       empty, it contains unplugged I3C    |
-> +|                                         |       device. Deregister and delete them. |
-> +|                                         |                                           |
-> +|                                         |     Broadcast ENEC MR, HJ message.        |
-> ++-----------------------------------------+-------------------------------------------+
+> +		i3c_bus_set_addr_slot_status(&master->bus,
+> +					     i2cboardinfo->base.addr,
+> +					     I3C_ADDR_SLOT_I2C_DEV);
+> +
+> +		i2cdev = i3c_master_alloc_i2c_dev(master, i2cboardinfo);
+> +		if (IS_ERR(i2cdev)) {
+> +			ret = PTR_ERR(i2cdev);
+> +			goto err_detach_devs;
+> +		}
+> +
+> +		ret = i3c_master_attach_i2c_dev(master, i2cdev);
+> +		if (ret) {
+> +			i3c_master_free_i2c_dev(i2cdev);
+> +			goto err_detach_devs;
+> +		}
+> +	}
+> +
+> +	/*
+> +	 * Now execute the controller specific ->bus_init() routine, which
+> +	 * might configure its internal logic to match the bus limitations.
+> +	 */
+> +	ret = master->ops->bus_init(master);
+> +	if (ret)
+> +		goto err_detach_devs;
+> +
+> +	/*
+> +	 * The master device should have been instantiated in ->bus_init(),
+> +	 * complain if this was not the case.
+> +	 */
+> +	if (!master->this) {
+> +		dev_err(&master->dev,
+> +			"master_set_info() was not called in ->bus_init()\n");
+> +		ret = -EINVAL;
+> +		goto err_bus_cleanup;
+> +	}
+> +
+> +	return 0;
+> +
+> +err_bus_cleanup:
+> +	if (master->ops->bus_cleanup)
+> +		master->ops->bus_cleanup(master);
+> +
+> +err_detach_devs:
+> +	i3c_master_detach_free_devs(master);
+> +
+> +	return ret;
+> +}
+> +
+>  static void i3c_master_bus_cleanup(struct i3c_master_controller *master)
+>  {
+>  	if (master->ops->bus_cleanup)
+> @@ -2457,7 +2541,10 @@ static int i3c_master_init(struct i3c_master_controller *master,
+>  		goto err_put_dev;
+>  	}
+>  
+> -	ret = i3c_master_bus_init(master);
+> +	if (secondary)
+> +		ret = i3c_secondary_master_bus_init(master);
+> +	else
+> +		ret = i3c_master_bus_init(master);
+>  	if (ret)
+>  		goto err_put_dev;
+>  
+> @@ -2535,6 +2622,71 @@ int i3c_master_register(struct i3c_master_controller *master,
+>  }
+>  EXPORT_SYMBOL_GPL(i3c_master_register);
+>  
+> +/**
+> + * i3c_secondary_master_register() - register an I3C secondary master
+> + * @master: master used to send frames on the bus
+> + * @parent: the parent device (the one that provides this I3C master
+> + *	    controller)
+> + * @ops: the master controller operations
+> + *
+> + * This function does minimal required initialization for secondary
+> + * master, rest functionality like creating and registering I2C
+> + * and I3C devices is done in defslvs processing.
+> + *
+> + *  i3c_secondary_master_register() does following things -
+> + * - creates and initializes the I3C bus
+> + * - populates the bus with static I2C devs if @parent->of_node is not
+> + *   NULL
+> + *   initialization
+> + * - allocate memory for defslvs_data.devs, which is used to receive
+> + *   defslvs list
+> + * - create I3C device representing this master
+> + * - registers the I2C adapter and all I2C devices
+> + *
+> + * Return: 0 in case of success, a negative error code otherwise.
+> + */
+> +int i3c_secondary_master_register(struct i3c_master_controller *master,
+> +				  struct device *parent,
+> +				  const struct i3c_master_controller_ops *ops)
+> +{
+> +	int ret;
+> +
+> +	ret = i3c_master_init(master, parent, ops, true);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = device_add(&master->dev);
+> +	if (ret)
+> +		goto err_cleanup_bus;
+> +
+> +	/*
+> +	 * Expose our I3C bus as an I2C adapter so that I2C devices are exposed
+> +	 * through the I2C subsystem.
+> +	 */
+> +	ret = i3c_master_i2c_adapter_init(master);
+> +	if (ret)
+> +		goto err_del_dev;
+> +
+> +	/*
+> +	 * We're done initializing the bus and the controller, we can now
+> +	 * register I3C devices from defslvs list.
+> +	 */
+> +	master->init_done = true;
+> +
+> +	return 0;
+> +
+> +err_del_dev:
+> +	device_del(&master->dev);
+> +
+> +err_cleanup_bus:
+> +	i3c_master_bus_cleanup(master);
+> +
+> +	put_device(&master->dev);
+> +
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(i3c_secondary_master_register);
+> +
+>  /**
+>   * i3c_master_unregister() - unregister an I3C master
+>   * @master: master used to send frames on the bus
+> diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
+> index f5ba82c390bc..5124ff4831eb 100644
+> --- a/include/linux/i3c/master.h
+> +++ b/include/linux/i3c/master.h
+> @@ -534,6 +534,9 @@ int i3c_master_set_info(struct i3c_master_controller *master,
+>  int i3c_master_register(struct i3c_master_controller *master,
+>  			struct device *parent,
+>  			const struct i3c_master_controller_ops *ops);
+> +int i3c_secondary_master_register(struct i3c_master_controller *master,
+> +				  struct device *parent,
+> +				  const struct i3c_master_controller_ops *ops);
+>  int i3c_master_unregister(struct i3c_master_controller *master);
+>  
+>  /**
+
 
 _______________________________________________
 linux-i3c mailing list
