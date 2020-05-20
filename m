@@ -2,61 +2,143 @@ Return-Path: <SRS0=RbR2=7C=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-8.3 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
-	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_2
-	autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-0.8 required=3.0 tests=DKIMWL_WL_HIGH,DKIM_SIGNED,
+	DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 96C86C433E0
-	for <linux-i3c@archiver.kernel.org>; Wed, 20 May 2020 08:59:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id C87ABC433DF
+	for <linux-i3c@archiver.kernel.org>; Wed, 20 May 2020 09:20:41 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 53C3D2075F
-	for <linux-i3c@archiver.kernel.org>; Wed, 20 May 2020 08:59:06 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 87F5C204EA
+	for <linux-i3c@archiver.kernel.org>; Wed, 20 May 2020 09:20:41 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="c2iPxjwY"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 53C3D2075F
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=collabora.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="nqxoTZvz";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=cadence.com header.i=@cadence.com header.b="gH9x2ETj";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=cadence.com header.i=@cadence.com header.b="laK7b1Ot"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 87F5C204EA
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cadence.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9q0SHjaAjWQY3/NkJkWye+nZ3kpugcAZ6vsr304Q/CM=; b=c2iPxjwYch+NIU
-	paYgvNbZf6eh3Phsl2Q9rmWnpQ0Xc8NoOoyQLegMFvUunMjS2MpenZQ0CP6tr0xgut2lKo70iO29y
-	J8jUyWoQRs/unuADEWoCQmE4B0BoGCK3af0f/xi4GvPyFtExV5lch/LyEH1RNMXl+ZVHMcz5CaB9N
-	eSn8TFfpof1wupM8qa7TTehT6B72S8vkhO8lSMIjtgN51q+shHwiTFnUCrGGRv+DVzjYG+8bdrM7L
-	YjKDDQ+bCUWqKP5fQJuQE/luTfm6Q4yLqXYmNgKPvzgASbG+blOLFI/o9Q2emH1hwPF1d/jfkrCR3
-	mL6KekOioXR1b4qXOgAQ==;
+	List-Owner; bh=J9SYigoxXkUonppMreHPHCR4WXsTxHFiJDH52D9D+jg=; b=nqxoTZvzQi6lCE
+	3rOGPnxs6rPix0/HkBRgYyal3uod2bCS2RNX6tWiOK0+wwDBg/SjiaSNXVyS/wJNuiW33fafAiErT
+	P4j8O083N47Zr76ymMYcAX9Y0mQfueD265qw75pZ+br9Me+hikHI9dqB2CNlozco0p7a/9httfChp
+	tex6lYM3maKU8z3uudx+mPx5qQObeF9TzXiZDLl9NYO5bWQIKJ0ErJCwO4GLcULc2+NauBO9L5GDT
+	VYmhkTlEfb5dfWBg0/sqXlSGgRES5QoMYTz8WuYCOhVtXIPr08Iq+G5nt8ZwYhr8Re7rPSu/Jv8Q7
+	uPVzdULX5G2d1O52AFxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbKZ7-0000Q6-IN; Wed, 20 May 2020 08:59:05 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jbKu0-0007zc-24; Wed, 20 May 2020 09:20:40 +0000
+Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193]
+ helo=mx0a-0014ca01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbKZ4-0000KO-1G
- for linux-i3c@lists.infradead.org; Wed, 20 May 2020 08:59:04 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:b93f:9fae:b276:a89a])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id E4E5B2A29CA;
- Wed, 20 May 2020 09:58:58 +0100 (BST)
-Date: Wed, 20 May 2020 10:58:55 +0200
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Parshuram Thombare <pthombar@cadence.com>
-Subject: Re: [PATCH] i3c: master: fix for SETDASA and DAA process
-Message-ID: <20200520105855.71db98d1@collabora.com>
-In-Reply-To: <1589473809-16708-1-git-send-email-pthombar@cadence.com>
+ id 1jbKtw-0007z1-SW
+ for linux-i3c@lists.infradead.org; Wed, 20 May 2020 09:20:39 +0000
+Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
+ by mx0b-0014ca01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 04K9FUwI020252; Wed, 20 May 2020 02:20:30 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ h=from : to : cc :
+ subject : date : message-id : references : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=proofpoint;
+ bh=4LDDn39SzKBsde2EQy+nKB8TD75KA9/iZfFj8qU6YFI=;
+ b=gH9x2ETjHn9D88UcWhUx2kpiJNS+n07olFv3rlxMPhHwIvOBUCoTwcWHQgo/YzrivA1S
+ 6R8miuZJIJIP626sxfZs1k4ywYdpwF/2WGs0z6akpM2kvhI2DHB6zHDNonNRFJl/FFxE
+ t3cot+iIJGA26vKb7bMzC7CmtSRwtXQdyYipgwX4IO1aSwbiYMAIO3sW8abH9SnnmoIz
+ AydWP2D1kXmHfG7Y/6yGkqibgWSmAk7OzarusPOXqhUd7N66FzEGddRm5Zwdl04UbQfl
+ ol12qrxqwpIRDG1CQlt51+wCZ6oFM+vLpYafPl86oJvt9YAzVsYR1mPkJa0ix8TSeD9D Vw== 
+Received: from nam10-dm6-obe.outbound.protection.outlook.com
+ (mail-dm6nam10lp2100.outbound.protection.outlook.com [104.47.58.100])
+ by mx0b-0014ca01.pphosted.com with ESMTP id 312bs0frcy-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 20 May 2020 02:20:30 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=A5oNohkHjaM3uE/+qMKgLx7NfGrP5m+/T7bxyUBENHPWjzmqjZW6sMSIu5FZKKydVFlNYWfYtcr4in3FiAClbpMJX4CwxzxpCH7stSMeojP+iQIt3A/wsDGeJkpq+Jx8MGptTI/0nq8Dxl658QwsTbXbJ7hHnRuINswTM3p6xbCiGQDE3NCGxmZg20jbLrWHWXcZvocimc0D7c1ioM8OcND6CboEHYaXbrL/TF9l3GFCmZCUIoDmnUFQgla5vGaymhv7k26SeLVQeCsmMBaegyu4W7oS9i2a+vl4/N8SOyzELslA9dJjd1EEeVz13PaZH7vVebw7WXQ/w6pQ5X62Dg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4LDDn39SzKBsde2EQy+nKB8TD75KA9/iZfFj8qU6YFI=;
+ b=JxQLvjxQ6q1naRv67yvqBBkBZxpg0TIsZ7N7MxHxfGAZsYUgIFNlbZPa6UN8H5w0SI0CHgAVjRqT59Kx+cSfubRgPMY7QLzpPrd5W07+J0wwGLFjnAtIoL056vjBWU7O7N4Iq5uvmdlZjxImrHjJJbsFJ01EcXqGlNk3BpCdWE+fzSpVZykACbCEO7i8LvNIjggCFHdFGyhFZSzRAq6gXYQGkObFMvnBf38A2fb2T+MvKOcpM8gVK7beUUm0/IHqmldsN3f9wy5KPZw2faQTLjqV6a6GZ/9Fdz8IYvOeBW+OVY7tnHB7gCqQKRpDaVatTwqUE6tgWx5bYWxw4RCv5w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=cadence.com; dmarc=pass action=none header.from=cadence.com;
+ dkim=pass header.d=cadence.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4LDDn39SzKBsde2EQy+nKB8TD75KA9/iZfFj8qU6YFI=;
+ b=laK7b1Ot+VlvixdjawqCOXibkQZgG4wvANc0SNui8JPgXJ2Z63m0G6AHuGfKist0DOW1hcOurxA6m2H1lucUFTUhe9BxB/aiIEe8lObWp6ApumGwnVYEDUt7wcRbAzs8NgxROY4s6sTMCzOc23lfCAY/3jiyU9HtOLZQINysGog=
+Received: from DM5PR07MB3196.namprd07.prod.outlook.com (2603:10b6:3:e4::16) by
+ DM5PR07MB2827.namprd07.prod.outlook.com (2603:10b6:3:c::9) with
+ Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3000.26; Wed, 20 May 2020 09:20:29 +0000
+Received: from DM5PR07MB3196.namprd07.prod.outlook.com
+ ([fe80::6dd1:88b3:ffcc:72f5]) by DM5PR07MB3196.namprd07.prod.outlook.com
+ ([fe80::6dd1:88b3:ffcc:72f5%4]) with mapi id 15.20.3000.034; Wed, 20 May 2020
+ 09:20:28 +0000
+From: Parshuram Raju Thombare <pthombar@cadence.com>
+To: Boris Brezillon <boris.brezillon@collabora.com>
+Subject: RE: [PATCH] i3c: master: fix for SETDASA and DAA process
+Thread-Topic: [PATCH] i3c: master: fix for SETDASA and DAA process
+Thread-Index: AQHWKgz+88gnAmL4TkiR0l1R8HfhWKiwta6AgAAA/dA=
+Date: Wed, 20 May 2020 09:20:28 +0000
+Message-ID: <DM5PR07MB3196ACBCC6128E6C87CF0B7DC1B60@DM5PR07MB3196.namprd07.prod.outlook.com>
 References: <1589473809-16708-1-git-send-email-pthombar@cadence.com>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ <20200520105855.71db98d1@collabora.com>
+In-Reply-To: <20200520105855.71db98d1@collabora.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-dg-ref: PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNccHRob21iYXJcYXBwZGF0YVxyb2FtaW5nXDA5ZDg0OWI2LTMyZDMtNGE0MC04NWVlLTZiODRiYTI5ZTM1Ylxtc2dzXG1zZy0yMjY4NDM4YS05YTdiLTExZWEtODU4OC0xMDY1MzBlZjIyZjVcYW1lLXRlc3RcMjI2ODQzOGMtOWE3Yi0xMWVhLTg1ODgtMTA2NTMwZWYyMmY1Ym9keS50eHQiIHN6PSIyMDUwIiB0PSIxMzIzNDQ0MDAyNDc0Mzk2NDQiIGg9ImkvS24zTk9abXhaMnA0a1hodFZqZmFxQjBXZz0iIGlkPSIiIGJsPSIwIiBibz0iMSIvPjwvbWV0YT4=
+x-dg-rorf: true
+authentication-results: collabora.com; dkim=none (message not signed)
+ header.d=none;collabora.com; dmarc=none action=none header.from=cadence.com;
+x-originating-ip: [59.145.174.78]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: c399b694-cccb-46e8-7980-08d7fc9f09b2
+x-ms-traffictypediagnostic: DM5PR07MB2827:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM5PR07MB28278F3DF6C317A031F82FE8C1B60@DM5PR07MB2827.namprd07.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 04097B7F7F
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: pAY/AO3xWIqBDUZQv5SiGYuKJKUTrwUkF1KWVkY46dkj2TY9BPLB0+IUgc2G678BSIR4qAKrumrabn6UU/81Dv5sHuHNr4kRmjbm7dcVaLIcwl/rZcvWWuODQ6INH0vrcu9cCV/7YUoYgcUebzIEdkwcV6vLHOjEiz+QEKeY4/j8P16g5CApEDz3z7dDMTTxrYXdxW/UJHevbIRzJfgFg9cW0I/iMp4Yh1QAVe2jsMN/WzLL/NKLO3a2s4dJb5IsJgJIzAjnZa2u4DWnSCJV7feGs9ho6CdO1Ylrm4hcbgtebjFklKeOMK6qc55PP0AKs60ik0VQ9TXSjQxZjENt/1tTln6KOdoMWOAwvR5qJ0AMCKODhbL1g4qa9aHkr1jGSXaf3Dhft6hrrew47376B7B60NP4n5KMk47ttqXVfmcv6dKozzwuQ/Y7/bG65YHOGrxj7bVTfWRYqZjzgbbLc41QThQUK2m0lbmMxG1R4R63nTuLM+Nx8STj0ovgl3YF
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DM5PR07MB3196.namprd07.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(39860400002)(376002)(346002)(396003)(366004)(136003)(36092001)(186003)(52536014)(6916009)(478600001)(66556008)(8676002)(33656002)(8936002)(7696005)(5660300002)(66946007)(66476007)(76116006)(71200400001)(26005)(54906003)(6506007)(55016002)(4326008)(86362001)(9686003)(2906002)(64756008)(316002)(66446008);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: DF7YWFX52SYgGNcks/+GS1aIeitJuodxYWN7rqAvZZWStjrrzEPjh7oHvXk+hmIKUJDt/Zu3r6g+OMiAyvgVu6H3kG66SHh4xqKnJTvRw1X4arhO1wbp3Kag2nJ3CAdJRv3YOSPfD+74eUGaYYEGkvuBG7veHQCbZl/KV6srR3Fl0mTLL14QiOhvUz78KBpi8L1nU6OEb2KfAAY3KQtbwaGyxGFD+MfyITGF3qtaF2QOY9o+cI62wZLENziK1yXWL3KKgGBzQabNh3FluIONANd56aorLBEm0HDmm9nSrMo6nvNOHqsxdhzlCN4fvGDZM8LBVm0w/qrBqPZNQk+aKNa53i73N5ECguC8x5Nmjd0u1A4581u4sKVLRsL0/la0r27SqjAQVLfY9cK/A4Df3/bQvsWEWcgD0EzuMPBQxQWgDEOhcmPfZoq5pG2wdmjhUdJ7PB0fQQcQxPu+l133Kq2KKceKirXRy9ql1ks9U0A=
 MIME-Version: 1.0
+X-OriginatorOrg: cadence.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: c399b694-cccb-46e8-7980-08d7fc9f09b2
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 May 2020 09:20:28.7446 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: pztQJTWJh2clmanggn+aLZPMkMGExq1HP/TZN9+uXFupTNrxalf3XYxQ1QQbS+pe00LgAdK45A5sQZ/19pb8Tnk2fZN82qN1QUlAY2BJ3AQ=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR07MB2827
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
+ definitions=2020-05-20_03:2020-05-19,
+ 2020-05-20 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
+ score=0 phishscore=0
+ clxscore=1015 impostorscore=0 adultscore=0 spamscore=0 mlxlogscore=814
+ cotscore=-2147483648 lowpriorityscore=0 bulkscore=0 priorityscore=1501
+ suspectscore=0 mlxscore=0 malwarescore=0 classifier=spam adjust=0
+ reason=mlx scancount=1 engine=8.12.0-2004280000
+ definitions=main-2005200082
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_015902_347693_44886AE2 
-X-CRM114-Status: GOOD (  30.29  )
+X-CRM114-CacheID: sfid-20200520_022037_934594_91659CB1 
+X-CRM114-Status: GOOD (  12.66  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,253 +150,56 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: mparab@cadence.com, bbrezillon@kernel.org, praneeth@ti.com,
- linux-kernel@vger.kernel.org, vitor.soares@synopsys.com, pgaj@cadence.com,
- linux-i3c@lists.infradead.org
+Cc: Milind Parab <mparab@cadence.com>,
+ "bbrezillon@kernel.org" <bbrezillon@kernel.org>,
+ "praneeth@ti.com" <praneeth@ti.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "vitor.soares@synopsys.com" <vitor.soares@synopsys.com>,
+ Przemyslaw Gaj <pgaj@cadence.com>,
+ "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, 14 May 2020 18:30:09 +0200
-Parshuram Thombare <pthombar@cadence.com> wrote:
+>> This patch fix following issues.
+>> 1. Controller slots blocked for devices with static_addr
+>>    but no init_dyn_addr may limit the number of I3C devices
+>>    on the bus which gets dynamic address in DAA. So
+>>    instead of attaching all the devices with static_addr,
+>>    now we only attach the devices which successfully
+>>    complete SETDASA. Remaining devices are handled in DAA.
+>> 2. Since we alreay handled devices with init_dyn_addr, removed
+>>    it's handling from i3c_master_add_i3c_dev_locked().
+>>    Now only case handled is devices already with dyn_addr
+>>    participated in DAA, and again got new dyn_addr with an
+>>    extra slot in the master controller.
+>
+>I don't get that one.
 
-> This patch fix following issues.
-> 1. Controller slots blocked for devices with static_addr
->    but no init_dyn_addr may limit the number of I3C devices
->    on the bus which gets dynamic address in DAA. So
->    instead of attaching all the devices with static_addr,
->    now we only attach the devices which successfully
->    complete SETDASA. Remaining devices are handled in DAA.
-> 2. Since we alreay handled devices with init_dyn_addr, removed
->    it's handling from i3c_master_add_i3c_dev_locked().
->    Now only case handled is devices already with dyn_addr
->    participated in DAA, and again got new dyn_addr with an
->    extra slot in the master controller.
+I mean retry  to assign requested init_dyn_addr in i3c_master_add_i3c_dev_locked().
+Since we handle devices with init_dyn_addr in i3c_master_pre_assign_dyn_addr,
+we should have assigned dynamic address to all devices with both static_addr and
+init_dyn_addr. Unless SETDASA failed or device only have init_dyn_addr but no static_addr, 
+in those cases dyn_addr is allocated in DAA.
 
-I don't get that one.
+>I think we should fix re-attach instead, which is what we discussed
+>with Przemek if I remember correctly.
 
-> 3. Removed unnecessary i3c_master_reattach_i3c_dev() from
->    i3c_master_add_i3c_dev_locked(), right away after finding
->    if duplicate device exists in the I3C list.
->    In case of different new and old dyn_addr
->    i3c_master_reattach_i3c_dev() will fail which is wrong,
->    and in case of same dyn_addr it doesn't add anything new.
+Sorry, I was not aware of that. But, yes I agree to fix driver re-attach instead of removing 
+re attach here. But we should keep in mind about potential failure here.
+Currently reattach only update dyn_addr, but IMO it should update other fields as well.
+Also I see re attach have a unused argument, which I suppose we can get rid of.
+For now I will keep reattach here and post reattach fix in separate patch.
 
-I think we should fix re-attach instead, which is what we discussed
-with Przemek if I remember correctly.
+>Can you please split the patch accordingly (one fix per commit)
+I think only extra changes are releasing the old address in reattach API
+and removal of reattach call in i3c_master_add_i3c_dev_locked()
+after a scan for duplicate I3C device. 
+I will remove those changes and repost rest.
 
-> 
-
-Can you please split the patch accordingly (one fix per commit)?
-
-> Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
-> Signed-off-by: Parshuram Thombare <pthombar@cadence.com>
-> ---
->  drivers/i3c/master.c | 111 ++++++++++++++++++-------------------------
->  1 file changed, 46 insertions(+), 65 deletions(-)
-> 
-> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index 5f4bd52121fe..f1d929b58549 100644
-> --- a/drivers/i3c/master.c
-> +++ b/drivers/i3c/master.c
-> @@ -1375,6 +1375,11 @@ static int i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
->  		i3c_bus_set_addr_slot_status(&master->bus,
->  					     dev->info.dyn_addr,
->  					     I3C_ADDR_SLOT_I3C_DEV);
-> +
-> +		if (old_dyn_addr)
-> +			i3c_bus_set_addr_slot_status(&master->bus,
-> +						     old_dyn_addr,
-> +						     I3C_ADDR_SLOT_FREE);
->  	}
->  
->  	if (master->ops->reattach_i3c_dev) {
-> @@ -1426,33 +1431,52 @@ static void i3c_master_detach_i2c_dev(struct i2c_dev_desc *dev)
->  		master->ops->detach_i2c_dev(dev);
->  }
->  
-> -static void i3c_master_pre_assign_dyn_addr(struct i3c_dev_desc *dev)
-> +static void i3c_master_pre_assign_dyn_addr(struct i3c_master_controller *master,
-> +					   struct i3c_dev_boardinfo *boardinfo)
->  {
-> -	struct i3c_master_controller *master = i3c_dev_get_master(dev);
-> +	struct i3c_device_info info = {
-> +		.static_addr = boardinfo->static_addr,
-> +	};
-> +	struct i3c_dev_desc *i3cdev;
->  	int ret;
->  
-> -	if (!dev->boardinfo || !dev->boardinfo->init_dyn_addr ||
-> -	    !dev->boardinfo->static_addr)
-> +	/*
-> +	 * We anyway don't attach devices which are not addressable
-> +	 * (no static_addr and dyn_addr) and devices with static_addr
-> +	 * but no init_dyn_addr will participate in DAA.
-> +	 */
-> +	if (!boardinfo->static_addr || !boardinfo->init_dyn_addr)
-> +		return;
-> +
-> +	i3cdev = i3c_master_alloc_i3c_dev(master, &info);
-> +	if (IS_ERR(i3cdev))
->  		return;
->  
-> -	ret = i3c_master_setdasa_locked(master, dev->info.static_addr,
-> -					dev->boardinfo->init_dyn_addr);
-> +	i3cdev->boardinfo = boardinfo;
-> +
-> +	ret = i3c_master_attach_i3c_dev(master, i3cdev);
->  	if (ret)
->  		return;
->  
-> -	dev->info.dyn_addr = dev->boardinfo->init_dyn_addr;
-> -	ret = i3c_master_reattach_i3c_dev(dev, 0);
-> +	ret = i3c_master_setdasa_locked(master, i3cdev->info.static_addr,
-> +					i3cdev->boardinfo->init_dyn_addr);
->  	if (ret)
-> -		goto err_rstdaa;
-> +		goto err_setdasa;
->  
-> -	ret = i3c_master_retrieve_dev_info(dev);
-> +	i3cdev->info.dyn_addr = i3cdev->boardinfo->init_dyn_addr;
-> +	ret = i3c_master_reattach_i3c_dev(i3cdev, 0);
->  	if (ret)
->  		goto err_rstdaa;
->  
-> -	return;
-> +	ret = i3c_master_retrieve_dev_info(i3cdev);
-> +	if (ret)
-> +		goto err_rstdaa;
->  
->  err_rstdaa:
-> -	i3c_master_rstdaa_locked(master, dev->boardinfo->init_dyn_addr);
-> +	i3c_master_rstdaa_locked(master, i3cdev->boardinfo->init_dyn_addr);
-> +err_setdasa:
-> +	i3c_master_detach_i3c_dev(i3cdev);
-> +	i3c_master_free_i3c_dev(i3cdev);
->  }
->  
->  static void
-> @@ -1619,8 +1643,8 @@ static void i3c_master_detach_free_devs(struct i3c_master_controller *master)
->   * This function is following all initialisation steps described in the I3C
->   * specification:
->   *
-> - * 1. Attach I2C and statically defined I3C devs to the master so that the
-> - *    master can fill its internal device table appropriately
-> + * 1. Attach I2C devs to the master so that the master can fill its internal
-> + *    device table appropriately
->   *
->   * 2. Call &i3c_master_controller_ops->bus_init() method to initialize
->   *    the master controller. That's usually where the bus mode is selected
-> @@ -1647,7 +1671,6 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
->  	enum i3c_addr_slot_status status;
->  	struct i2c_dev_boardinfo *i2cboardinfo;
->  	struct i3c_dev_boardinfo *i3cboardinfo;
-> -	struct i3c_dev_desc *i3cdev;
->  	struct i2c_dev_desc *i2cdev;
->  	int ret;
->  
-> @@ -1679,34 +1702,6 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
->  			goto err_detach_devs;
->  		}
->  	}
-> -	list_for_each_entry(i3cboardinfo, &master->boardinfo.i3c, node) {
-> -		struct i3c_device_info info = {
-> -			.static_addr = i3cboardinfo->static_addr,
-> -		};
-> -
-> -		if (i3cboardinfo->init_dyn_addr) {
-> -			status = i3c_bus_get_addr_slot_status(&master->bus,
-> -						i3cboardinfo->init_dyn_addr);
-> -			if (status != I3C_ADDR_SLOT_FREE) {
-> -				ret = -EBUSY;
-> -				goto err_detach_devs;
-> -			}
-> -		}
-> -
-> -		i3cdev = i3c_master_alloc_i3c_dev(master, &info);
-> -		if (IS_ERR(i3cdev)) {
-> -			ret = PTR_ERR(i3cdev);
-> -			goto err_detach_devs;
-> -		}
-> -
-> -		i3cdev->boardinfo = i3cboardinfo;
-> -
-> -		ret = i3c_master_attach_i3c_dev(master, i3cdev);
-> -		if (ret) {
-> -			i3c_master_free_i3c_dev(i3cdev);
-> -			goto err_detach_devs;
-> -		}
-> -	}
->  
->  	/*
->  	 * Now execute the controller specific ->bus_init() routine, which
-> @@ -1746,8 +1741,8 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
->  	 * Pre-assign dynamic address and retrieve device information if
->  	 * needed.
->  	 */
-> -	i3c_bus_for_each_i3cdev(&master->bus, i3cdev)
-> -		i3c_master_pre_assign_dyn_addr(i3cdev);
-> +	list_for_each_entry(i3cboardinfo, &master->boardinfo.i3c, node)
-> +		i3c_master_pre_assign_dyn_addr(master, i3cboardinfo);
->  
->  	ret = i3c_master_do_daa(master);
->  	if (ret)
-> @@ -1811,7 +1806,7 @@ int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
->  {
->  	struct i3c_device_info info = { .dyn_addr = addr };
->  	struct i3c_dev_desc *newdev, *olddev;
-> -	u8 old_dyn_addr = addr, expected_dyn_addr;
-> +	u8 old_dyn_addr = addr;
->  	struct i3c_ibi_setup ibireq = { };
->  	bool enable_ibi = false;
->  	int ret;
-> @@ -1866,39 +1861,25 @@ int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
->  		i3c_master_free_i3c_dev(olddev);
->  	}
->  
-> -	ret = i3c_master_reattach_i3c_dev(newdev, old_dyn_addr);
-> -	if (ret)
-> -		goto err_detach_dev;
-> -
->  	/*
->  	 * Depending on our previous state, the expected dynamic address might
->  	 * differ:
->  	 * - if the device already had a dynamic address assigned, let's try to
-> -	 *   re-apply this one
-> -	 * - if the device did not have a dynamic address and the firmware
-> -	 *   requested a specific address, pick this one
-> +	 *   re-apply this one. Device with dyn_addr participated in DAA ?
->  	 * - in any other case, keep the address automatically assigned by the
->  	 *   master
->  	 */
-> -	if (old_dyn_addr && old_dyn_addr != newdev->info.dyn_addr)
-> -		expected_dyn_addr = old_dyn_addr;
-> -	else if (newdev->boardinfo && newdev->boardinfo->init_dyn_addr)
-> -		expected_dyn_addr = newdev->boardinfo->init_dyn_addr;
-> -	else
-> -		expected_dyn_addr = newdev->info.dyn_addr;
-> -
-> -	if (newdev->info.dyn_addr != expected_dyn_addr) {
-> +	if (old_dyn_addr && old_dyn_addr != newdev->info.dyn_addr) {
->  		/*
->  		 * Try to apply the expected dynamic address. If it fails, keep
->  		 * the address assigned by the master.
->  		 */
->  		ret = i3c_master_setnewda_locked(master,
->  						 newdev->info.dyn_addr,
-> -						 expected_dyn_addr);
-> +						 old_dyn_addr);
->  		if (!ret) {
-> -			old_dyn_addr = newdev->info.dyn_addr;
-> -			newdev->info.dyn_addr = expected_dyn_addr;
-> -			i3c_master_reattach_i3c_dev(newdev, old_dyn_addr);
-> +			newdev->info.dyn_addr = old_dyn_addr;
-> +			i3c_master_reattach_i3c_dev(newdev, addr);
->  		} else {
->  			dev_err(&master->dev,
->  				"Failed to assign reserved/old address to device %d%llx",
-
+Regards,
+Parshuram Thombare
 
 _______________________________________________
 linux-i3c mailing list
