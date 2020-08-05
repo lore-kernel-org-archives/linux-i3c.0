@@ -2,23 +2,22 @@ Return-Path: <SRS0=EJcj=BP=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-7.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-4.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no
-	autolearn_force=no version=3.4.0
+	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 37436C433E0
-	for <linux-i3c@archiver.kernel.org>; Wed,  5 Aug 2020 08:10:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id CABCAC433E0
+	for <linux-i3c@archiver.kernel.org>; Wed,  5 Aug 2020 15:13:58 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id B57F42177B
-	for <linux-i3c@archiver.kernel.org>; Wed,  5 Aug 2020 08:10:35 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 5B7512333B
+	for <linux-i3c@archiver.kernel.org>; Wed,  5 Aug 2020 15:13:58 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="inPNfjIM";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=pobox.com header.i=@pobox.com header.b="dddKWnC4";
-	dkim=fail reason="key not found in DNS" (0-bit key) header.d=fluxnic.net header.i=@fluxnic.net header.b="PLDu4peJ"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org B57F42177B
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="OwBrh3Kr";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=pobox.com header.i=@pobox.com header.b="Xln+P+yx";
+	dkim=fail reason="key not found in DNS" (0-bit key) header.d=fluxnic.net header.i=@fluxnic.net header.b="jZLFbTc4"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 5B7512333B
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=fluxnic.net
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -27,61 +26,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:In-Reply-To:
 	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OEIGj+eeS4nxz2xiM9l7tCXN/Za1CzcBWIcU1l7NMDs=; b=inPNfjIMVVE4kox5erYA0V0qD
-	UJnBwgOwhjQynnFsLg9wUqm6WJej5aaazh1xsyYgxzauF05RQfg7qsBtbM0ywD1sZUJZzCLdN2nAz
-	zlBLQU+gUZonfAlByI6NTHtOzku6SeLw66yBaiF5agY5RQQdZKTXqr2BBqRQ+Syylhy7N2lgSMkuE
-	bDOcii28qG1XyCcr06SNWKGcOzhCRiIJai9e5iT2DNGsfgCtX+lWJMta051Na/QelxiqifJAruj8s
-	EKd42kxH2KvWm+Mt7k2T7hNX1ZMPScVJWwtsD/3QqRn2OyHzjmhFOEtMadAEvwSYuXOWDlJvF+/4E
-	cf1RCvqmA==;
+	 bh=knMqFfq6vQYB7gyeN8QXKdrpbtMeW+WYQuTwoLiRFgM=; b=OwBrh3Krq4nPA+gmkUT14Y4XP
+	VRPB7dWhrN9mo+S1AdXE4ZkkhtB7xDPdXsOTYs4mDUnMrJ0Rq+DkxFbX2RPuYiRwY3eAzd+f1mPFY
+	6Fu17Vbvj/iVf1HvQ6baPyKTDEiHjBSXc/8t4rU75mEKngnSMjaCkk5XFyfglcGZei8eeunTRsPwW
+	jUGIXIdcPcDPzsKvq2Bo8LYeHqMT4VyLizXceylM5V7hkWrs+9C09g6QLQ0c313snmxZAwe9OLnLR
+	eHAsYfmdTrRJBPRL0+xkVIGmVbul+x2DJwOewrTFkxJ6ZmgkoCv+xSHREAUPz3zf+ebNlGttLULC0
+	pycU64zAw==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1k3EVO-0005X6-TS
-	for linux-i3c@archiver.kernel.org; Wed, 05 Aug 2020 08:10:34 +0000
-Received: from pb-smtp20.pobox.com ([173.228.157.52])
+	id 1k3L77-0004jJ-FG
+	for linux-i3c@archiver.kernel.org; Wed, 05 Aug 2020 15:13:57 +0000
+Received: from pb-smtp2.pobox.com ([64.147.108.71])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1k2gwb-0004m5-AS
- for linux-i3c@lists.infradead.org; Mon, 03 Aug 2020 20:20:27 +0000
-Received: from pb-smtp20.pobox.com (unknown [127.0.0.1])
- by pb-smtp20.pobox.com (Postfix) with ESMTP id 8731CF554D;
- Mon,  3 Aug 2020 16:20:16 -0400 (EDT)
+ id 1k3L73-0004ht-KR
+ for linux-i3c@lists.infradead.org; Wed, 05 Aug 2020 15:13:55 +0000
+Received: from pb-smtp2.pobox.com (unknown [127.0.0.1])
+ by pb-smtp2.pobox.com (Postfix) with ESMTP id 3153987992;
+ Wed,  5 Aug 2020 11:13:43 -0400 (EDT)
  (envelope-from nico@fluxnic.net)
 DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=pobox.com; h=date:from:to
  :cc:subject:in-reply-to:message-id:references:mime-version
- :content-type; s=sasl; bh=PF90wNMuKpjCQ5V/5619nvwTLro=; b=dddKWn
- C44X0MRBNrallMp/OYIZNUaHHnSOD31wde63SYuclky+jvS7AokK5gpWV4ZpDQp8
- 1YS2JK/IY5WAZcq1jarHa6cRuFYp/jvIy4hyBAXdxB5LRAz+W4kPtznwOMHlWmc0
- 2aUvRMw7tYOPek0quk9K5ioEvcyKfG+qDDKrs=
-Received: from pb-smtp20.sea.icgroup.com (unknown [127.0.0.1])
- by pb-smtp20.pobox.com (Postfix) with ESMTP id 7F25CF554C;
- Mon,  3 Aug 2020 16:20:16 -0400 (EDT)
+ :content-type; s=sasl; bh=t4fVhjQVDWtzEETmfxy67PMJ+aE=; b=Xln+P+
+ yxlSY/84uqmszJffyoR/qH2KB/720zEYc/zh05B9w6FYOZo4SNr9h8RIRD9YGwUd
+ 11XTHGNxdeatYBx7fwQRKn1KMzxfvb1+tEQj7ZOISPLsts5x+dWLdNJC25uO6khI
+ B+/WIr6D7qtNubL+35i4I2hjOMe31sYeorLtc=
+Received: from pb-smtp2.nyi.icgroup.com (unknown [127.0.0.1])
+ by pb-smtp2.pobox.com (Postfix) with ESMTP id 28FEC87991;
+ Wed,  5 Aug 2020 11:13:43 -0400 (EDT)
  (envelope-from nico@fluxnic.net)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; d=fluxnic.net;
  h=date:from:to:cc:subject:in-reply-to:message-id:references:mime-version:content-type;
- s=2016-12.pbsmtp; bh=Q9xTu3Q7G6ybCTets5WU0b++RTe3jw3gfIDCaIw+Fog=;
- b=PLDu4peJV9GFqRgQ/gK3uKs6SclhX6iumGQpARWgslvZ828s41isyydhcY7iIHhe2e64FRi8PUaMlo1CFSRE4HJYWM8Dru0DeXAh61lbYkj3l5iYcA95R9VwQbau3alTvFj1CKrn/zpzhsFyb/bU85/IesAEyZdhQ/WtDqbkfjA=
+ s=2016-12.pbsmtp; bh=Cvq6oQrzezpY4LxASPSDQy3sp0oeiiOQ+kGdMlRFHB4=;
+ b=jZLFbTc4/NjzG+eJj6EfBs0AT33scg8HOgZvS0M5ev35O9kw6hCDbVnZHJr7GRhvS4AXf1ayxSbZqCUXBnU8mD4YbXbkqVt9Qtt48z1QSieFOrL5wCXG2xJOz2hMROcuo+zeGXbk7SKI2a7+E5OMeNcaERHPAyyuHU/tojg6Kvw=
 Received: from yoda.home (unknown [24.203.50.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by pb-smtp20.pobox.com (Postfix) with ESMTPSA id 6E6C2F554B;
- Mon,  3 Aug 2020 16:20:13 -0400 (EDT)
+ by pb-smtp2.pobox.com (Postfix) with ESMTPSA id 700B987990;
+ Wed,  5 Aug 2020 11:13:42 -0400 (EDT)
  (envelope-from nico@fluxnic.net)
 Received: from xanadu.home (xanadu.home [192.168.2.2])
- by yoda.home (Postfix) with ESMTPSA id 851B62DA0BFC;
- Mon,  3 Aug 2020 16:20:11 -0400 (EDT)
-Date: Mon, 3 Aug 2020 16:20:11 -0400 (EDT)
+ by yoda.home (Postfix) with ESMTPSA id 380822DA0AA7;
+ Wed,  5 Aug 2020 11:13:41 -0400 (EDT)
+Date: Wed, 5 Aug 2020 11:13:41 -0400 (EDT)
 From: Nicolas Pitre <nico@fluxnic.net>
-To: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Conor Culhane <conor.culhane@silvaco.com>
 Subject: Re: [PATCH 3/4] i3c: master: svc: Add Silvaco I3C master driver
-In-Reply-To: <20200709080159.2178-3-miquel.raynal@bootlin.com>
-Message-ID: <nycvar.YSQ.7.77.849.2008031546570.1112668@knanqh.ubzr>
+In-Reply-To: <BN6PR16MB1762D6CE430AB08B7A2BE5FCF14A0@BN6PR16MB1762.namprd16.prod.outlook.com>
+Message-ID: <nycvar.YSQ.7.77.849.2008051105550.1112668@knanqh.ubzr>
 References: <20200709080159.2178-1-miquel.raynal@bootlin.com>
- <20200709080159.2178-3-miquel.raynal@bootlin.com>
+ <20200709080159.2178-3-miquel.raynal@bootlin.com>,
+ <nycvar.YSQ.7.77.849.2008031546570.1112668@knanqh.ubzr>
+ <BN6PR16MB1762D6CE430AB08B7A2BE5FCF14A0@BN6PR16MB1762.namprd16.prod.outlook.com>
 MIME-Version: 1.0
-X-Pobox-Relay-ID: BCB8755A-D5C6-11EA-B562-F0EA2EB3C613-78420484!pb-smtp20.pobox.com
+X-Pobox-Relay-ID: 3FA9ABCE-D72E-11EA-93F8-2F5D23BA3BAF-78420484!pb-smtp2.pobox.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200803_162025_467836_5903FD8F 
-X-CRM114-Status: GOOD (  14.77  )
-X-Mailman-Approved-At: Wed, 05 Aug 2020 04:10:33 -0400
+X-CRM114-CacheID: sfid-20200805_111353_960110_D6417CCE 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,61 +94,28 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
  Rajeev Huralikoppi <rajeev.huralikoppi@silvaco.com>,
- linux-kernel@vger.kernel.org, npitre@baylibre.com,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  Rob Herring <robh+dt@kernel.org>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Boris Brezillon <boris.brezillon@collabora.com>, linux-i3c@lists.infradead.org,
- Conor Culhane <conor.culhane@silvaco.com>
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, 9 Jul 2020, Miquel Raynal wrote:
+On Tue, 4 Aug 2020, Conor Culhane wrote:
 
-> Add support for Silvaco I3C dual-role IP. The master role is supported
-> in SDR mode only. I2C transfers have not been tested but are shared
-> because they are so close to the I3C transfers in terms of registers
-> configuration.
-> 
-> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+> Miquel is passing 0 as the delay_us argument.
 
-I'm worried by constructs like these:
+Good point.
 
-> +static int svc_i3c_master_handle_ibi(struct svc_i3c_master *master,
-> +				     struct i3c_dev_desc *dev)
-> +{
-> +	struct svc_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
-> +	struct i3c_ibi_slot *slot;
-> +	unsigned int count;
-> +	u32 mdatactrl;
-> +	u8 *buf;
-> +	int ret;
-> +	u32 reg;
-> +
-> +	spin_lock(&master->ibi.lock);
-> +
-> +	slot = i3c_generic_ibi_get_free_slot(data->ibi_pool);
-> +	if (!slot) {
-> +		ret = -ENOSPC;
-> +		goto unlock;
-> +	}
-> +
-> +	slot->len = 0;
-> +	buf = slot->data;
-> +
-> +	ret = readl_poll_timeout(master->regs + SVC_I3C_MSTATUS, reg,
-> +				 reg & SVC_I3C_MINT_RXPEND, 0, 1000);
+> Is this still a concern?
 
-Here you're in atomic context due to the lock, and 
-readl_poll_timeout(() is built using usleep() which may ... sleep.
-
-Also, is it actually possible for execution to reach this point if 
-SVC_I3C_MINT_RXPEND is not set?
-
-The rest looks reasonable to me.
+Not in that case.
 
 
 Nicolas
