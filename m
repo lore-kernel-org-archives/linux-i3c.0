@@ -2,62 +2,85 @@ Return-Path: <SRS0=korR=B6=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-11.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-6.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_SANE_2 autolearn=ham autolearn_force=no version=3.4.0
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 5A66FC433E1
-	for <linux-i3c@archiver.kernel.org>; Thu, 20 Aug 2020 14:48:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 326A6C433DF
+	for <linux-i3c@archiver.kernel.org>; Thu, 20 Aug 2020 16:34:28 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 2B35F2075E
-	for <linux-i3c@archiver.kernel.org>; Thu, 20 Aug 2020 14:48:29 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id E67D32054F
+	for <linux-i3c@archiver.kernel.org>; Thu, 20 Aug 2020 16:34:27 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="XaYB5TKT"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 2B35F2075E
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=collabora.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="oXAr//pg";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=pobox.com header.i=@pobox.com header.b="lb43PE57";
+	dkim=fail reason="key not found in DNS" (0-bit key) header.d=fluxnic.net header.i=@fluxnic.net header.b="wtUQOsQJ"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E67D32054F
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=fluxnic.net
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:
+	List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:In-Reply-To:
 	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=jwMhvDW/NUAZiAeKfXIDO806Ha92bIADhpeluh//ml8=; b=XaYB5TKTIVBXcx5AKNj1YBVN9
-	MKaCjJgSxfYz5/VmiV3MnTS/itNYggMfUYpYSTuv/RGEJszsThbkwS01HNZrZHxvz6EcAOJNbjDBh
-	6R0gpGHa9Tra1aaEiojIXgqWTomd1SO+otGUXWE9HXihKf7rzrrx4yPwEBnTgntemE6wKh+/TL0hm
-	tSGXTjdEwEWkrt0ecAFqLPm/969+DH8OLiUHPKbZBOBKEfArPQWsUg5zswphzMfPbxPBfr/hpLO2h
-	rMaooXNbvKG8k7fzaBawCH//GlDOqeXnjYExj3+iqSLlnRbvAB2JYxileFaBz6/vzp9f5wZgjNuIv
-	BfINOacLA==;
+	 bh=0NPta8m70CciwlBGK3GMXXeqRG/8gHdiH5eprRaAxIc=; b=oXAr//pgaWo+DssEJFcwrP3mf
+	UgxDykK9soXP5yqwwwQccgoTij96yIcet5X6QAR0Kv+mSjjLTj7HIYXRBvxCotNHVmJXr1gvesAkc
+	qDy71ZpCmbotpwJNs4//5vG5kB2ug9GAMok8lP2vrc3klgzlwi9wDpijeDASSfz2kdAfQ38OVaCNk
+	pUePzRdFevaAjYktOftkntOly5sFqXncgv3brYyQKBCkebtYjxku+wsS/PZRaLtlgj/OC4xiP94g3
+	AN/ibptASqP5YpmvPjlRvUZGe/ndmyPomCrUZDpp+OxPY9IHFRfznj8GU7hEnS0FVFiY6ymKNkuh/
+	G9YY5PAlg==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1k8lrg-0007FH-GL
-	for linux-i3c@archiver.kernel.org; Thu, 20 Aug 2020 14:48:28 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1k8nWF-00018D-3M
+	for linux-i3c@archiver.kernel.org; Thu, 20 Aug 2020 16:34:27 +0000
+Received: from pb-smtp20.pobox.com ([173.228.157.52])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1k8lrd-0007ET-Iu
- for linux-i3c@lists.infradead.org; Thu, 20 Aug 2020 14:48:26 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:b93f:9fae:b276:a89a])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 2A93C29AAD2;
- Thu, 20 Aug 2020 15:48:24 +0100 (BST)
-Date: Thu, 20 Aug 2020 16:48:20 +0200
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Parshuram Thombare <pthombar@cadence.com>
-Subject: Re: [PATCH v3] i3c: master: fix for SETDASA and DAA process
-Message-ID: <20200820164820.4fec97b3@collabora.com>
-In-Reply-To: <1597930706-15744-1-git-send-email-pthombar@cadence.com>
-References: <1597930706-15744-1-git-send-email-pthombar@cadence.com>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.6 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ id 1k8nWA-00017c-O1
+ for linux-i3c@lists.infradead.org; Thu, 20 Aug 2020 16:34:25 +0000
+Received: from pb-smtp20.pobox.com (unknown [127.0.0.1])
+ by pb-smtp20.pobox.com (Postfix) with ESMTP id CF99FD866B;
+ Thu, 20 Aug 2020 12:34:18 -0400 (EDT)
+ (envelope-from nico@fluxnic.net)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=pobox.com; h=date:from:to
+ :cc:subject:in-reply-to:message-id:references:mime-version
+ :content-type; s=sasl; bh=us97tkQ6PLUX0XkrL5tU1rmprkA=; b=lb43PE
+ 57IY30v/Blr1K0M3Vy34sVar9RA/Q96N41QICIi8cduo6pNgtnuyaZRB3klWrJV8
+ GSi5Vojm238/u2eVk0U8U4/ACOadYgEIhrQlKZ8nuEddNUF/WDyiaDqHRBaJ0mGV
+ fx6Hp/eZiOHOHGNzUTu75t+9BffFNsLWNzQ8M=
+Received: from pb-smtp20.sea.icgroup.com (unknown [127.0.0.1])
+ by pb-smtp20.pobox.com (Postfix) with ESMTP id C74C7D866A;
+ Thu, 20 Aug 2020 12:34:18 -0400 (EDT)
+ (envelope-from nico@fluxnic.net)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; d=fluxnic.net;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references:mime-version:content-type;
+ s=2016-12.pbsmtp; bh=BBldfq5HtCQVSDxqkIF7Q7liFlyCRCk9GmylPj0R7Po=;
+ b=wtUQOsQJcfyrQhL6K9DS3nwbXZlB/pR2bcFj6uRdahmr14lkvh+7U5qWgVm8pIq9oQtKK3nBn2aQlhZVhG42a1lZ8U2mVGGSoIdczV80t7Yfef+od38i3SY1l9HFT4zGAe85u24/Ufn/Ggrc3gyXTBZtexnYr0UJRJDdzvLrjQU=
+Received: from yoda.home (unknown [24.203.50.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by pb-smtp20.pobox.com (Postfix) with ESMTPSA id A6C7AD8668;
+ Thu, 20 Aug 2020 12:34:15 -0400 (EDT)
+ (envelope-from nico@fluxnic.net)
+Received: from xanadu.home (xanadu.home [192.168.2.2])
+ by yoda.home (Postfix) with ESMTPSA id A13F62DA01C4;
+ Thu, 20 Aug 2020 12:34:13 -0400 (EDT)
+Date: Thu, 20 Aug 2020 12:34:13 -0400 (EDT)
+From: Nicolas Pitre <nico@fluxnic.net>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH 2/2] i3c/master: add the mipi-i3c-hci driver
+In-Reply-To: <20200820100829.0e44200a@xps13>
+Message-ID: <nycvar.YSQ.7.78.906.2008201102500.1479@knanqh.ubzr>
+References: <20200814034854.460830-1-nico@fluxnic.net>
+ <20200814034854.460830-3-nico@fluxnic.net> <20200820100829.0e44200a@xps13>
 MIME-Version: 1.0
+X-Pobox-Relay-ID: FCAECF80-E302-11EA-95A9-F0EA2EB3C613-78420484!pb-smtp20.pobox.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200820_104825_828241_3534DFF1 
-X-CRM114-Status: GOOD (  36.64  )
+X-CRM114-CacheID: sfid-20200820_123423_027493_47E98C04 
+X-CRM114-Status: GOOD (  44.02  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,266 +92,313 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: mparab@cadence.com, bbrezillon@kernel.org, praneeth@ti.com,
- linux-kernel@vger.kernel.org, vitor.soares@synopsys.com, pgaj@cadence.com,
- linux-i3c@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Robert Gough <robert.gough@intel.com>,
+ Laura Nixon <laura.nixon@team.mipi.org>, Rob Herring <robh+dt@kernel.org>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Matthew Schnoor <matthew.schnoor@intel.com>, linux-i3c@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, 20 Aug 2020 15:38:26 +0200
-Parshuram Thombare <pthombar@cadence.com> wrote:
+On Thu, 20 Aug 2020, Miquel Raynal wrote:
 
-> This patch fix following issue.
-> Controller slots blocked for devices with static_addr
-> but no init_dyn_addr may limit the number of I3C devices
-> on the bus which gets dynamic address in DAA. So
-> instead of attaching all the devices with static_addr,
-> now we only attach the devices which successfully
-> complete SETDASA. For remaining devices with init_dyn_addr,
-> i3c_master_add_i3c_dev_locked() will try to set requested
-> dynamic address after DAA.
+> Hi Nicolas,
 > 
-> Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
-
-Hm, not sure that qualifies as a fix. The current implementation was
-correct, it was just reserving a slot in the device table for devices
-that didn't have an init address or on which SETDASA failed.
-
-> Signed-off-by: Parshuram Thombare <pthombar@cadence.com>
-> ---
-> Changes between v2 and v3 are:
-> 1. Keeping init_dyn_addr reserved.
-> 2. Code refactoring and changes in comments.
+> Nicolas Pitre <nico@fluxnic.net> wrote on Thu, 13 Aug 2020 23:48:54 -0400:
 > 
-> Changes between v1 and v2 are:
-> 1. Added boardinfo attach fix.
-> 2. Removed reattach issue related fix.
-> 3. Reserve init_dyn_addr initially, so that it will not
->    be used in DAA and  attempt can be made to set those
->    firmware requested dynamic address after DAA.
-> ---
->  drivers/i3c/master.c |  115 ++++++++++++++++++++++++++++----------------------
->  1 files changed, 65 insertions(+), 50 deletions(-)
+> > From: Nicolas Pitre <npitre@baylibre.com>
+> > 
+> > This adds basic support for hardware implementing the MIPI I3C HCI
+> > specification. This driver is currently limited by the capabilities
+> > of the I3C subsystem, meaning things like scheduled commands,
+> > auto-commands and NCM are not yet supported.
+> > 
+> > This supports version 1.0 of the MIPI I3C HCI spec, as well as the
+> > imminent release of version 1.1. Support for draft version 2.0 of the
+> > spec is also partially included but is guaranteed to change as the spec
+> > is still a work in progress.
+> > 
+> > This is also lightly tested as actual hardware is still very scarse,
+> > even for HCI v1.0. Further contributions to this driver are expected
+> > once vendor implementations and new I3C devices become available.
 > 
-> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index 3d995f2..24543d8 100644
-> --- a/drivers/i3c/master.c
-> +++ b/drivers/i3c/master.c
-> @@ -1367,7 +1367,9 @@ static int i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
->  	enum i3c_addr_slot_status status;
->  	int ret;
->  
-> -	if (dev->info.dyn_addr != old_dyn_addr) {
-> +	if (dev->info.dyn_addr != old_dyn_addr &&
-> +	    (!dev->boardinfo ||
-> +	     dev->info.dyn_addr != dev->boardinfo->init_dyn_addr)) {
->  		status = i3c_bus_get_addr_slot_status(&master->bus,
->  						      dev->info.dyn_addr);
->  		if (status != I3C_ADDR_SLOT_FREE)
-> @@ -1426,33 +1428,49 @@ static void i3c_master_detach_i2c_dev(struct i2c_dev_desc *dev)
->  		master->ops->detach_i2c_dev(dev);
->  }
->  
-> -static void i3c_master_pre_assign_dyn_addr(struct i3c_dev_desc *dev)
-> +static int i3c_master_pre_assign_dyn_addr(struct i3c_master_controller *master,
-> +					  struct i3c_dev_boardinfo *boardinfo)
+> Nice work! I honnestly do not know a lot about HCIs and I basically
+> had only minor nits to point out, see below.
 
-That function now does more than just assigning a dynamic address: it
-also creates the i3c_dev_desc. It should be renamed accordingly
-(i3c_master_early_i3c_dev_add() maybe).
+Thanks for your comments.
+Please find my replies inline.
 
->  {
-> -	struct i3c_master_controller *master = i3c_dev_get_master(dev);
-> +	struct i3c_device_info info = {
-> +		.static_addr = boardinfo->static_addr,
-> +	};
-> +	struct i3c_dev_desc *i3cdev;
->  	int ret;
->  
-> -	if (!dev->boardinfo || !dev->boardinfo->init_dyn_addr ||
-> -	    !dev->boardinfo->static_addr)
-> -		return;
-> +	i3cdev = i3c_master_alloc_i3c_dev(master, &info);
-> +	if (IS_ERR(i3cdev))
-> +		return -ENOMEM;
-> +
-> +	i3cdev->boardinfo = boardinfo;
->  
-> -	ret = i3c_master_setdasa_locked(master, dev->info.static_addr,
-> -					dev->boardinfo->init_dyn_addr);
-> +	ret = i3c_master_attach_i3c_dev(master, i3cdev);
->  	if (ret)
-> -		return;
-> +		goto err_attach;
-> +
-> +	ret = i3c_master_setdasa_locked(master, i3cdev->info.static_addr,
-> +					i3cdev->boardinfo->init_dyn_addr);
-> +	if (ret)
-> +		goto err_setdasa;
->  
-> -	dev->info.dyn_addr = dev->boardinfo->init_dyn_addr;
-> -	ret = i3c_master_reattach_i3c_dev(dev, 0);
-> +	i3cdev->info.dyn_addr = i3cdev->boardinfo->init_dyn_addr;
-> +	ret = i3c_master_reattach_i3c_dev(i3cdev, 0);
->  	if (ret)
->  		goto err_rstdaa;
->  
-> -	ret = i3c_master_retrieve_dev_info(dev);
-> +	ret = i3c_master_retrieve_dev_info(i3cdev);
->  	if (ret)
->  		goto err_rstdaa;
->  
-> -	return;
-> +	return 0;
->  
->  err_rstdaa:
-> -	i3c_master_rstdaa_locked(master, dev->boardinfo->init_dyn_addr);
-> +	i3c_master_rstdaa_locked(master, i3cdev->boardinfo->init_dyn_addr);
-> +err_setdasa:
-> +	i3c_master_detach_i3c_dev(i3cdev);
-> +err_attach:
-> +	i3c_master_free_i3c_dev(i3cdev);
-> +
-> +	return ret;
->  }
->  
->  static void
-> @@ -1619,8 +1637,8 @@ static void i3c_master_detach_free_devs(struct i3c_master_controller *master)
->   * This function is following all initialisation steps described in the I3C
->   * specification:
->   *
-> - * 1. Attach I2C and statically defined I3C devs to the master so that the
-> - *    master can fill its internal device table appropriately
-> + * 1. Attach I2C devs to the master so that the master can fill its internal
-> + *    device table appropriately
->   *
->   * 2. Call &i3c_master_controller_ops->bus_init() method to initialize
->   *    the master controller. That's usually where the bus mode is selected
-> @@ -1633,10 +1651,14 @@ static void i3c_master_detach_free_devs(struct i3c_master_controller *master)
->   * 4. Disable all slave events.
->   *
->   * 5. Pre-assign dynamic addresses requested by the FW with SETDASA for I3C
-> - *    devices that have a static address
-> + *    devices that have a static address and attach corresponding statically
-> + *    defined I3C devices to the master. If only init_dyn_addr is available
-> + *    or if SETDASA fails, reserve those init_dyn_addr to be used later to set
-> + *    address using SETNEWDA after DAA.
->   *
->   * 6. Do a DAA (Dynamic Address Assignment) to assign dynamic addresses to all
-> - *    remaining I3C devices
-> + *    remaining I3C devices and attach them to the master if the dynamic address
-> + *    assignment succeeds
->   *
->   * Once this is done, all I3C and I2C devices should be usable.
->   *
-> @@ -1647,7 +1669,6 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
->  	enum i3c_addr_slot_status status;
->  	struct i2c_dev_boardinfo *i2cboardinfo;
->  	struct i3c_dev_boardinfo *i3cboardinfo;
-> -	struct i3c_dev_desc *i3cdev;
->  	struct i2c_dev_desc *i2cdev;
->  	int ret;
->  
-> @@ -1679,34 +1700,6 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
->  			goto err_detach_devs;
->  		}
->  	}
-> -	list_for_each_entry(i3cboardinfo, &master->boardinfo.i3c, node) {
-> -		struct i3c_device_info info = {
-> -			.static_addr = i3cboardinfo->static_addr,
-> -		};
-> -
-> -		if (i3cboardinfo->init_dyn_addr) {
-> -			status = i3c_bus_get_addr_slot_status(&master->bus,
-> -						i3cboardinfo->init_dyn_addr);
-> -			if (status != I3C_ADDR_SLOT_FREE) {
-> -				ret = -EBUSY;
-> -				goto err_detach_devs;
-> -			}
-> -		}
-> -
-> -		i3cdev = i3c_master_alloc_i3c_dev(master, &info);
-> -		if (IS_ERR(i3cdev)) {
-> -			ret = PTR_ERR(i3cdev);
-> -			goto err_detach_devs;
-> -		}
-> -
-> -		i3cdev->boardinfo = i3cboardinfo;
-> -
-> -		ret = i3c_master_attach_i3c_dev(master, i3cdev);
-> -		if (ret) {
-> -			i3c_master_free_i3c_dev(i3cdev);
-> -			goto err_detach_devs;
-> -		}
-> -	}
->  
->  	/*
->  	 * Now execute the controller specific ->bus_init() routine, which
-> @@ -1744,10 +1737,32 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
->  
->  	/*
->  	 * Pre-assign dynamic address and retrieve device information if
-> -	 * needed.
-> +	 * needed. And reserve the init_dyn_addr in case of failure, to retry
-> +	 * setting the requested address after DAA is done in
-> +	 * i3c_master_add_i3c_dev_locked().
->  	 */
-> -	i3c_bus_for_each_i3cdev(&master->bus, i3cdev)
-> -		i3c_master_pre_assign_dyn_addr(i3cdev);
-> +	list_for_each_entry(i3cboardinfo, &master->boardinfo.i3c, node) {
-> +		/*
-> +		 * We don't attach devices which are not addressable
-> +		 * (no static_addr and dyn_addr) and devices with static_addr
-> +		 * but no init_dyn_addr will participate in DAA.
-> +		 */
-> +		if (!i3cboardinfo->init_dyn_addr ||
-> +		    (i3cboardinfo->static_addr &&
-> +		     !i3c_master_pre_assign_dyn_addr(master, i3cboardinfo)))
-> +			continue;
-> +
-> +		ret = i3c_bus_get_addr_slot_status(&master->bus,
-> +						   i3cboardinfo->init_dyn_addr);
-> +		if (ret != I3C_ADDR_SLOT_FREE) {
-> +			ret = -EBUSY;
-> +			goto err_rstdaa;
-> +		}
-> +
-> +		i3c_bus_set_addr_slot_status(&master->bus,
-> +					     i3cboardinfo->init_dyn_addr,
-> +					     I3C_ADDR_SLOT_I3C_DEV);
+> > diff --git a/drivers/i3c/master/mipi-i3c-hci/Makefile b/drivers/i3c/master/mipi-i3c-hci/Makefile
+> > new file mode 100644
+> > index 0000000000..8349960c5b
+> > --- /dev/null
+> > +++ b/drivers/i3c/master/mipi-i3c-hci/Makefile
+> > @@ -0,0 +1,9 @@
+> > +# SPDX-License-Identifier: BSD-3-Clause
+> 
+> Just out of curiosity, why this license?
 
-You should reserve the address before calling
-i3c_master_pre_assign_dyn_addr():
+MIPI is sponsoring this work and they own the copyright. It is their 
+policy to license all their Open Source code as BSD.
 
-		/*
-		 * We don't attach devices which are not addressable
-		 * (no static_addr and dyn_addr) and devices with
-		 * static_addr but no init_dyn_addr will participate in DAA.
-		 */
-		if (!i3cboardinfo->init_dyn_addr ||
-		    !i3cboardinfo->static_addr)
-			continue;
+> > +
+> > +#ccflags-y := -DDEBUG
+> 
+> Probably a leftover?
 
-		ret = i3c_bus_get_addr_slot_status(&master->bus,
-						   i3cboardinfo->init_dyn_addr);
-		if (ret != I3C_ADDR_SLOT_FREE) {
-			ret = -EBUSY;
-			goto err_rstdaa;
-		}
+Well, I left it there intentionally as the code is still actively being 
+developed, so full debugging can quickly be reactivated by anyone.
+I can remove it if deemed too distracting.
 
-		i3c_bus_set_addr_slot_status(&master->bus,
-					     i3cboardinfo->init_dyn_addr,
-					     I3C_ADDR_SLOT_I3C_DEV);
+> [...]
+> 
+> > +#define CMD_C1_DATA_LENGTH(v)		FIELD_PREP(W1_MASK(63, 48), v)
+> > +#define CMD_C1_OFFSET(v)		FIELD_PREP(W1_MASK(47, 32), v)
+> > +#define CMD_C0_TOC			           W0_BIT_(31)
+> > +#define CMD_C0_ROC			           W0_BIT_(30)
+> > +#define CMD_C0_RNW			           W0_BIT_(29)
+> > +#define CMD_C0_MODE(v)			FIELD_PREP(W0_MASK(28, 26), v)
+> > +#define CMD_C0_16_BIT_SUBOFFSET		W0_bit(25)
+> > +#define CMD_C0_FIRST_PHASE_MODE		           W0_BIT_(24)
+> > +#define CMD_C0_DATA_LENGTH_POSITION(v)	FIELD_PREP(W0_MASK(23, 22), v)
+> > +#define CMD_C0_DEV_INDEX(v)		FIELD_PREP(W0_MASK(20, 16), v)
+> > +#define CMD_C0_CP			           W0_BIT_(15)
+> > +#define CMD_C0_CMD(v)			FIELD_PREP(W0_MASK(14, 7), v)
+> > +#define CMD_C0_TID(v)			FIELD_PREP(W0_MASK(6, 3), v)
+> > +
+> > +/*
+> > + * Internal Control Command
+> > + */
+> > +
+> > +#define CMD_0_ATTR_M			FIELD_PREP(CMD_0_ATTR, 0x7)
+> > +
+> > +#define CMD_M1_VENDOR_SPECIFIC		           W1_MASK(63, 32)
+> > +#define CMD_M0_MIPI_RESERVED		           W0_MASK(31, 12)
+> > +#define CMD_M0_MIPI_CMD			           W0_MASK(11, 8)
+> > +#define CMD_M0_VENDOR_INFO_PRESENT	           W0_BIT_(7)
+> > +#define CMD_M0_TID(v)			FIELD_PREP(W0_MASK(6, 3), v)
+> > +
+> > +
+> > +static int hci_cmd_v1_prep_ccc(struct i3c_hci *hci,
+> > +			       struct hci_xfer *xfer,
+> > +			       u8 ccc_addr, u8 ccc_cmd, bool raw)
+> > +{
+> > +	u_int dat_idx = 0;
+> 
+> I guess u_int her and below is not the preferred way to declare an unsigned int?
 
-		i3c_master_pre_assign_dyn_addr(master, i3cboardinfo);
+Why not?
 
-> +	}
->  
->  	ret = i3c_master_do_daa(master);
->  	if (ret)
+> > +	int mode = hci_get_i3c_mode(hci);
+> > +	u8 *data = xfer->data;
+> > +	u_int data_len = xfer->data_len;
+> > +	bool rnw = xfer->rnw;
+> > +	int ret;
+> > +
+> > +	BUG_ON(raw);
+> 
+> It looks like 'raw' cannot be used with v1 (at least you seem to take
+> care of it in v2), so maybe BUG_ON is a bit radical here and you can
+> simply return an error? I think the use of BUG() is not appreciated in
+> general.
 
+That depends. Judgement is needed for BUG() usage.
+
+Here raw is absolutely impossible with v1 hardware and if ever this 
+happens this is definitely a software bug that needs fixing right away. 
+There is no point returning a runtime error code in that case as the 
+upper layer won't know what to do about it.
+
+On the other hand, you absolutely don't want to BUG() on a condition 
+that could _eventually_ happen at run time during normal usage. But 
+that's not the case here.
+
+> > +const struct hci_cmd_ops i3c_hci_cmd_v1 = {
+> > +	.prep_ccc		= hci_cmd_v1_prep_ccc,
+> > +	.prep_i3c_xfer		= hci_cmd_v1_prep_i3c_xfer,
+> > +	.prep_i2c_xfer		= hci_cmd_v1_prep_i2c_xfer,
+> > +	.perform_daa		= hci_cmd_v1_daa,
+> 
+> I know Boris does not like such space alignment :)
+
+Well... unfortunately for Boris, this is overwhelmingly prevalent in the 
+kernel code:
+
+$ git grep "^"$'\t'"\.[^ ]*"$'\t'"*= "
+
+And I do like it.  ;-P
+
+> > +void i3c_hci_pio_reset(struct i3c_hci *hci)
+> > +{
+> > +	reg_write(RESET_CONTROL, RX_FIFO_RST|TX_FIFO_RST|RESP_QUEUE_RST);
+> 
+> Style with missing spaces                  ^ ^
+
+True. Will fix.
+
+> > +static int i3c_hci_send_ccc_cmd(struct i3c_master_controller *m,
+> > +				struct i3c_ccc_cmd *ccc)
+> > +{
+> > +	struct i3c_hci *hci = to_i3c_hci(m);
+> > +	struct hci_xfer *xfer;
+> > +	bool raw = !!(hci->quirks & HCI_QUIRK_RAW_CCC);
+> > +	bool prefixed = raw && !!(ccc->id & I3C_CCC_DIRECT);
+> > +	u_int nxfers = ccc->ndests + prefixed;
+> > +	DECLARE_COMPLETION_ONSTACK(done);
+> > +	int i, last, ret = 0;
+> > +
+> > +	DBG("cmd=%#x rnw=%d ndests=%d data[0].len=%d",
+> > +	    ccc->id, ccc->rnw, ccc->ndests, ccc->dests[0].payload.len);
+> > +
+> > +	xfer = hci_alloc_xfer(nxfers);
+> > +	if (!xfer)
+> > +		return -ENOMEM;
+> > +
+> > +	if (prefixed) {
+> > +		xfer->data = NULL;
+> > +		xfer->data_len = 0;
+> > +		xfer->rnw = false;
+> > +		hci->cmd->prep_ccc(hci, xfer, I3C_BROADCAST_ADDR,
+> > +				   ccc->id, true);
+> > +		xfer++;
+> > +	}
+> > +
+> > +	for (i = 0; i < nxfers - prefixed; i++) {
+> > +		xfer[i].data = ccc->dests[i].payload.data;
+> > +		xfer[i].data_len = ccc->dests[i].payload.len;
+> > +		xfer[i].rnw = ccc->rnw;
+> > +		ret = hci->cmd->prep_ccc(hci, &xfer[i], ccc->dests[i].addr,
+> > +					 ccc->id, raw);
+> > +		if (ret)
+> > +			goto out;
+> > +		xfer[i].cmd_desc[0] |= CMD_0_ROC;
+> > +	}
+> > +	last = i - 1;
+> > +	xfer[last].cmd_desc[0] |= CMD_0_TOC;
+> > +	xfer[last].completion = &done;
+> > +
+> > +	if (prefixed)
+> > +		xfer--;
+> > +
+> > +	ret = hci->io->queue_xfer(hci, xfer, nxfers);
+> > +	if (ret)
+> > +		goto out;
+> > +	if (!wait_for_completion_timeout(&done, HZ) &&
+> > +	    hci->io->dequeue_xfer(hci, xfer, nxfers)) {
+> > +		ret = -ETIME;
+> > +		goto out;
+> > +	}
+> > +	for (i = prefixed; i < nxfers; i++) {
+> > +		if (ccc->rnw)
+> > +			ccc->dests[i - prefixed].payload.len =
+> > +				RESP_DATA_LENGTH(xfer[i].response);
+> > +		if (RESP_STATUS(xfer[i].response) != RESP_SUCCESS) {
+> > +			ret = -EIO;
+> > +			goto out;
+> > +		}
+> > +	}
+> > +
+> > +#if 0
+> > +	if (ccc->rnw) {
+> > +		HEXDUMP("got: ", ccc->dests[0].payload.data,
+> > +				 ccc->dests[0].payload.len);
+> > +	}
+> > +#endif
+> 
+> I guess this debug block can be dropped too (there are many debug
+> information the should probably be dropped or turned into dev_info()
+> or similar).
+
+Again, hardware bringup from different vendors and other developments 
+are still ongoing. I'd wish for those to stay for the time being unless 
+people feel strongly enough about these to become a merge show stopper.
+
+> > +/*
+> > + * Paul Kimelman's debug trace log facility.
+> > + * This is completely vendor and hardware specific.
+> > + */
+> > +void __PK_debug_trace(struct i3c_hci *hci, const char *func)
+> > +{
+> > +	void __iomem *trcp = (void __iomem *)hci->vendor_data + 7*4;
+> 
+> Maybe you need to define what is 7*4 , 0*4 below, v >> 27, etc
+> 
+> Also there are many missing spaces between operators (7 * 4,w & (1 <<9).
+
+I think in this case this is really crossing the distraction threshold. 
+This is used to extract debugging traces out of a specific FPGA 
+implementation and is of no use to anyone else. I'll just rip that out 
+from the next submission.
+
+> > +		if (rh->ibi_data_phys)
+> 
+> I was told that _phys was a very bad suffix for something which is a
+> DMA address an not focibly a physical address.
+
+Fair enough. The HCI spec refers to these as "physical memory" hence the 
+suffix. What were you told to use instead?
+
+> > +static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
+> > +				 struct hci_xfer *xfer_list, int n)
+> > +{
+> > +	struct hci_rings_data *rings = hci->io_data;
+> > +	struct hci_rh_data *rh = &rings->headers[xfer_list[0].ring];
+> > +	u_int i;
+> > +	bool did_unqueue = false;
+> > +
+> > +	/* stop the ring */
+> > +	rh_reg_write(RING_CONTROL, RING_CTRL_ABORT);
+> > +	if (wait_for_completion_timeout(&rh->op_done, HZ) == 0) {
+> > +		/*
+> > +		 * We're deep in it if ever this condition is ever met.
+> > +		 * Hardware might still be writing to memory, etc.
+> > +		 */
+> > +		ERR("unable to abort the ring");
+> > +		BUG();
+> 
+> Why not just treating the error as always?
+
+Again, if this ever happens, you're screwed. That means potential DMA 
+engines could still be alive and about to scribble over memory that is 
+about to be freed which may cause all sorts of impossible-to-find bugs 
+in unrelated parts of the kernel. There is no point going on reporting 
+such error condition to upper layers until the software, or possibly the 
+hardware, is fixed
+
+> > +struct hci_xfer {
+> > +	u32 cmd_desc[4];
+> > +	u32 response;
+> > +	bool rnw;
+> > +	void *data;
+> > +	u_int data_len;
+> > +	u_int cmd_tid;
+> > +	struct completion *completion;
+> > +	union {
+> > +		struct {
+> > +			/* PIO specific */
+> > +			struct hci_xfer *next_xfer;
+> > +			struct hci_xfer *next_data;
+> > +			struct hci_xfer *next_resp;
+> > +			u_int data_left;
+> > +			u32 data_word_before_partial;
+> > +		};
+> 
+> I think anonymous unions are prohibited because the kernel is supposed
+> to be built with old gcc versions which do not support it.
+
+Hmmm... let's see:
+
+According to Documentation/process/changes.rst the current minimal 
+required gcc version is 4.9.
+
+The oldest gcc I have lying around is 4.5.1 and it supports anonymous 
+unions just fine.
+
+So I think we're clear.
+
+
+Nicolas
 
 -- 
 linux-i3c mailing list
