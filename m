@@ -7,16 +7,16 @@ X-Spam-Status: No, score=-5.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_2 autolearn=no
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E8651C433E3
-	for <linux-i3c@archiver.kernel.org>; Thu, 20 Aug 2020 16:56:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 8EC50C433DF
+	for <linux-i3c@archiver.kernel.org>; Thu, 20 Aug 2020 17:14:30 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id A99B62072D
-	for <linux-i3c@archiver.kernel.org>; Thu, 20 Aug 2020 16:56:52 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 5E2AA208E4
+	for <linux-i3c@archiver.kernel.org>; Thu, 20 Aug 2020 17:14:30 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="dcV0BQJQ"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org A99B62072D
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="MjLUog/P"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 5E2AA208E4
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=collabora.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -25,43 +25,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:
 	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=XEHX5Hn5PkdlnyCQKWTLS+TOTC6eZda0O8MalsKaGms=; b=dcV0BQJQzwN575oJ1FDS7HwvI
-	WFet9Iw6pqz15dGb2D2hjrRv5B5RvQHq1d9GCkKBfcZbYK+t1kW6aonzaiusHBPQT/tHcVh2Jnij9
-	RozMKPypqSklrbfmMA6wsh21GLHyXK24yh9xoxGY0BNf5l/cTphNgnVYnupIeSVFg+bqpWRcOz9Zb
-	+L/pxoiGOdpB8IAa9a/NrNn6Hhj8UWD+IVKpquRVj/TgqHlKLZF2HY477ua0lyS4wTMfhVp2o2j/m
-	pdPXbjSYQq79NIhCEE/atelDz043mbp2CeAxuvw/5g7XeZcJLG+Q/G+fiWboUqCVU2I6aZuECrBaY
-	pOF7dDTjg==;
+	 bh=jnJQTTLmMpjFYKFiWcv+nDWzzuUaIVFmDau3Z/tqqJI=; b=MjLUog/PuizmU5jv/bGPN0GBO
+	0IwQCI4VYWrnHJ2oNilxKt5jVY5rq0ocsYett25/GbydevQJpVT0w4qOgtHciCnOIjluLQFzHCG4x
+	bjL4MYJ0iULijJm0MBDJn/nI2P5pAOr+xqpd18Z1QjswQpuLksPcycV4bCJzqMzHgJCis8zkW5YDk
+	hKBNwVxichak6RkCJyBuEdxaJLoiNIDrwrJKAXVpwOcbIgQaCETBROVs7nwipEU3oYCr3Z24s7cw3
+	YfWwGjrjR9fAqgJ39zbK6eggVd3LopPZp0FPtXEYCnRJRnfAThUxEBMR/uBvuf9Xv44JkGr1fIEna
+	T35GFa8Wg==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1k8nrw-0003jE-4U
-	for linux-i3c@archiver.kernel.org; Thu, 20 Aug 2020 16:56:52 +0000
+	id 1k8o8z-0007z1-QE
+	for linux-i3c@archiver.kernel.org; Thu, 20 Aug 2020 17:14:29 +0000
 Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1k8nrs-0003i0-PM
- for linux-i3c@lists.infradead.org; Thu, 20 Aug 2020 16:56:50 +0000
+ id 1k8o8x-0007yK-Se
+ for linux-i3c@lists.infradead.org; Thu, 20 Aug 2020 17:14:28 +0000
 Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
  (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 16D1B298C52;
- Thu, 20 Aug 2020 17:56:47 +0100 (BST)
-Date: Thu, 20 Aug 2020 18:56:42 +0200
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 9F33329AB27;
+ Thu, 20 Aug 2020 18:14:26 +0100 (BST)
+Date: Thu, 20 Aug 2020 19:14:24 +0200
 From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Nicolas Pitre <nico@fluxnic.net>, Matthew Schnoor
- <matthew.schnoor@intel.com>
+To: Nicolas Pitre <nico@fluxnic.net>
 Subject: Re: [PATCH 2/2] i3c/master: add the mipi-i3c-hci driver
-Message-ID: <20200820185642.04f184e9@collabora.com>
-In-Reply-To: <nycvar.YSQ.7.78.906.2008201102500.1479@knanqh.ubzr>
+Message-ID: <20200820191424.29c42972@collabora.com>
+In-Reply-To: <nycvar.YSQ.7.78.906.2008201234370.1479@knanqh.ubzr>
 References: <20200814034854.460830-1-nico@fluxnic.net>
  <20200814034854.460830-3-nico@fluxnic.net>
  <20200820100829.0e44200a@xps13>
- <nycvar.YSQ.7.78.906.2008201102500.1479@knanqh.ubzr>
+ <20200820103944.08a55ba4@collabora.com>
+ <nycvar.YSQ.7.78.906.2008201234370.1479@knanqh.ubzr>
 Organization: Collabora
 X-Mailer: Claws Mail 3.17.6 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200820_125649_009649_BDE00939 
-X-CRM114-Status: GOOD (  44.52  )
+X-CRM114-CacheID: sfid-20200820_131428_027725_75D8A242 
+X-CRM114-Status: GOOD (  23.38  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,301 +75,49 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, Laura Nixon <laura.nixon@team.mipi.org>,
  Rob Herring <robh+dt@kernel.org>, Robert Gough <robert.gough@intel.com>,
+ Matthew Schnoor <matthew.schnoor@intel.com>,
  Miquel Raynal <miquel.raynal@bootlin.com>, linux-i3c@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, 20 Aug 2020 12:34:13 -0400 (EDT)
+On Thu, 20 Aug 2020 12:47:49 -0400 (EDT)
 Nicolas Pitre <nico@fluxnic.net> wrote:
 
-> On Thu, 20 Aug 2020, Miquel Raynal wrote:
-
-> > > +
-> > > +#ccflags-y := -DDEBUG  
-> > 
-> > Probably a leftover?  
+> On Thu, 20 Aug 2020, Boris Brezillon wrote:
 > 
-> Well, I left it there intentionally as the code is still actively being 
-> developed, so full debugging can quickly be reactivated by anyone.
-> I can remove it if deemed too distracting.
-
-How about using dynamic printk instead? I'm pretty sure you don't need
-to debug I3C stuff early enough to warrant usage of DDEBUG.
-
-> 
-> > [...]
+> > On Thu, 20 Aug 2020 10:08:29 +0200
+> > Miquel Raynal <miquel.raynal@bootlin.com> wrote:
 > >   
-> > > +#define CMD_C1_DATA_LENGTH(v)		FIELD_PREP(W1_MASK(63, 48), v)
-> > > +#define CMD_C1_OFFSET(v)		FIELD_PREP(W1_MASK(47, 32), v)
-> > > +#define CMD_C0_TOC			           W0_BIT_(31)
-> > > +#define CMD_C0_ROC			           W0_BIT_(30)
-> > > +#define CMD_C0_RNW			           W0_BIT_(29)
-> > > +#define CMD_C0_MODE(v)			FIELD_PREP(W0_MASK(28, 26), v)
-> > > +#define CMD_C0_16_BIT_SUBOFFSET		W0_bit(25)
-> > > +#define CMD_C0_FIRST_PHASE_MODE		           W0_BIT_(24)
-> > > +#define CMD_C0_DATA_LENGTH_POSITION(v)	FIELD_PREP(W0_MASK(23, 22), v)
-> > > +#define CMD_C0_DEV_INDEX(v)		FIELD_PREP(W0_MASK(20, 16), v)
-> > > +#define CMD_C0_CP			           W0_BIT_(15)
-> > > +#define CMD_C0_CMD(v)			FIELD_PREP(W0_MASK(14, 7), v)
-> > > +#define CMD_C0_TID(v)			FIELD_PREP(W0_MASK(6, 3), v)
-> > > +
-> > > +/*
-> > > + * Internal Control Command
-> > > + */
-> > > +
-> > > +#define CMD_0_ATTR_M			FIELD_PREP(CMD_0_ATTR, 0x7)
-> > > +
-> > > +#define CMD_M1_VENDOR_SPECIFIC		           W1_MASK(63, 32)
-> > > +#define CMD_M0_MIPI_RESERVED		           W0_MASK(31, 12)
-> > > +#define CMD_M0_MIPI_CMD			           W0_MASK(11, 8)
-> > > +#define CMD_M0_VENDOR_INFO_PRESENT	           W0_BIT_(7)
-> > > +#define CMD_M0_TID(v)			FIELD_PREP(W0_MASK(6, 3), v)
-> > > +
-> > > +
-> > > +static int hci_cmd_v1_prep_ccc(struct i3c_hci *hci,
-> > > +			       struct hci_xfer *xfer,
-> > > +			       u8 ccc_addr, u8 ccc_cmd, bool raw)
-> > > +{
-> > > +	u_int dat_idx = 0;  
+> > > > +		/*
+> > > > +		 * TODO: Extend the subsystem layer to allow for registering
+> > > > +		 * new device and provide BCR/DCR/PID at the same time.    
+> > > 
+> > > Not sure this is needed if you don't use it directly as the core will
+> > > anyway (in its current form) send the relevant CCC to read these
+> > > registers.  
 > > 
-> > I guess u_int her and below is not the preferred way to declare an unsigned int?  
+> > We considered optimizing that in the past but that means making the DAA
+> > and SETDASA registration different. I'm not sure it's worth it to be
+> > honest, PID/DCR/BCR only happens when initializing devices and I
+> > suspect the overhead of querying those DATA twice in case of DAA is
+> > negligible anyway.  
 > 
-> Why not?
-> 
-> > > +	int mode = hci_get_i3c_mode(hci);
-> > > +	u8 *data = xfer->data;
-> > > +	u_int data_len = xfer->data_len;
-> > > +	bool rnw = xfer->rnw;
-> > > +	int ret;
-> > > +
-> > > +	BUG_ON(raw);  
-> > 
-> > It looks like 'raw' cannot be used with v1 (at least you seem to take
-> > care of it in v2), so maybe BUG_ON is a bit radical here and you can
-> > simply return an error? I think the use of BUG() is not appreciated in
-> > general.  
-> 
-> That depends. Judgement is needed for BUG() usage.
-> 
-> Here raw is absolutely impossible with v1 hardware and if ever this 
-> happens this is definitely a software bug that needs fixing right away. 
-> There is no point returning a runtime error code in that case as the 
-> upper layer won't know what to do about it.
-> 
-> On the other hand, you absolutely don't want to BUG() on a condition 
-> that could _eventually_ happen at run time during normal usage. But 
-> that's not the case here.
+> Wellllll... I know some people who do feel strongly about this 
+> particular issue for some reasons.
 
-Well, people have tried to eradicate BUG() occurrences, so let's not add
-new ones if we can avoid it. How about a WARN_ON()+error:
+Mind developing a bit why? Boot-time maybe?
 
-	if (WARN_ON(raw))
-		return -EINVAL;
+> So I'd prefer giving them some hope 
+> and leave the door open to some i3c_master_add_i3c_dev_and_info() 
+> interface. In the end, it's just a matter of pre-filling the info struct 
+> and skipping the PID retrieval in i3c_master_getpid_locked() if already 
+> available, etc.
 
-> 
-> > > +const struct hci_cmd_ops i3c_hci_cmd_v1 = {
-> > > +	.prep_ccc		= hci_cmd_v1_prep_ccc,
-> > > +	.prep_i3c_xfer		= hci_cmd_v1_prep_i3c_xfer,
-> > > +	.prep_i2c_xfer		= hci_cmd_v1_prep_i2c_xfer,
-> > > +	.perform_daa		= hci_cmd_v1_daa,  
-> > 
-> > I know Boris does not like such space alignment :)  
-> 
-> Well... unfortunately for Boris, this is overwhelmingly prevalent in the 
-> kernel code:
-> 
-> $ git grep "^"$'\t'"\.[^ ]*"$'\t'"*= "
-> 
-> And I do like it.  ;-P
-
-The rational being this preference is that sooner or later someone will
-add a field to hci_cmd_ops that messes up your nice formatting :P.
-Anyway, that's definitely not a blocker.
-
-> 
-> > > +void i3c_hci_pio_reset(struct i3c_hci *hci)
-> > > +{
-> > > +	reg_write(RESET_CONTROL, RX_FIFO_RST|TX_FIFO_RST|RESP_QUEUE_RST);  
-> > 
-> > Style with missing spaces                  ^ ^  
-> 
-> True. Will fix.
-> 
-> > > +static int i3c_hci_send_ccc_cmd(struct i3c_master_controller *m,
-> > > +				struct i3c_ccc_cmd *ccc)
-> > > +{
-> > > +	struct i3c_hci *hci = to_i3c_hci(m);
-> > > +	struct hci_xfer *xfer;
-> > > +	bool raw = !!(hci->quirks & HCI_QUIRK_RAW_CCC);
-> > > +	bool prefixed = raw && !!(ccc->id & I3C_CCC_DIRECT);
-> > > +	u_int nxfers = ccc->ndests + prefixed;
-> > > +	DECLARE_COMPLETION_ONSTACK(done);
-> > > +	int i, last, ret = 0;
-> > > +
-> > > +	DBG("cmd=%#x rnw=%d ndests=%d data[0].len=%d",
-> > > +	    ccc->id, ccc->rnw, ccc->ndests, ccc->dests[0].payload.len);
-> > > +
-> > > +	xfer = hci_alloc_xfer(nxfers);
-> > > +	if (!xfer)
-> > > +		return -ENOMEM;
-> > > +
-> > > +	if (prefixed) {
-> > > +		xfer->data = NULL;
-> > > +		xfer->data_len = 0;
-> > > +		xfer->rnw = false;
-> > > +		hci->cmd->prep_ccc(hci, xfer, I3C_BROADCAST_ADDR,
-> > > +				   ccc->id, true);
-> > > +		xfer++;
-> > > +	}
-> > > +
-> > > +	for (i = 0; i < nxfers - prefixed; i++) {
-> > > +		xfer[i].data = ccc->dests[i].payload.data;
-> > > +		xfer[i].data_len = ccc->dests[i].payload.len;
-> > > +		xfer[i].rnw = ccc->rnw;
-> > > +		ret = hci->cmd->prep_ccc(hci, &xfer[i], ccc->dests[i].addr,
-> > > +					 ccc->id, raw);
-> > > +		if (ret)
-> > > +			goto out;
-> > > +		xfer[i].cmd_desc[0] |= CMD_0_ROC;
-> > > +	}
-> > > +	last = i - 1;
-> > > +	xfer[last].cmd_desc[0] |= CMD_0_TOC;
-> > > +	xfer[last].completion = &done;
-> > > +
-> > > +	if (prefixed)
-> > > +		xfer--;
-> > > +
-> > > +	ret = hci->io->queue_xfer(hci, xfer, nxfers);
-> > > +	if (ret)
-> > > +		goto out;
-> > > +	if (!wait_for_completion_timeout(&done, HZ) &&
-> > > +	    hci->io->dequeue_xfer(hci, xfer, nxfers)) {
-> > > +		ret = -ETIME;
-> > > +		goto out;
-> > > +	}
-> > > +	for (i = prefixed; i < nxfers; i++) {
-> > > +		if (ccc->rnw)
-> > > +			ccc->dests[i - prefixed].payload.len =
-> > > +				RESP_DATA_LENGTH(xfer[i].response);
-> > > +		if (RESP_STATUS(xfer[i].response) != RESP_SUCCESS) {
-> > > +			ret = -EIO;
-> > > +			goto out;
-> > > +		}
-> > > +	}
-> > > +
-> > > +#if 0
-> > > +	if (ccc->rnw) {
-> > > +		HEXDUMP("got: ", ccc->dests[0].payload.data,
-> > > +				 ccc->dests[0].payload.len);
-> > > +	}
-> > > +#endif  
-> > 
-> > I guess this debug block can be dropped too (there are many debug
-> > information the should probably be dropped or turned into dev_info()
-> > or similar).  
-> 
-> Again, hardware bringup from different vendors and other developments 
-> are still ongoing. I'd wish for those to stay for the time being unless 
-> people feel strongly enough about these to become a merge show stopper.
-
-Can't we replace that by a dev_dbg() using the %*pE formater?
-
-> 
-> > > +/*
-> > > + * Paul Kimelman's debug trace log facility.
-> > > + * This is completely vendor and hardware specific.
-> > > + */
-> > > +void __PK_debug_trace(struct i3c_hci *hci, const char *func)
-> > > +{
-> > > +	void __iomem *trcp = (void __iomem *)hci->vendor_data + 7*4;  
-> > 
-> > Maybe you need to define what is 7*4 , 0*4 below, v >> 27, etc
-> > 
-> > Also there are many missing spaces between operators (7 * 4,w & (1 <<9).  
-> 
-> I think in this case this is really crossing the distraction threshold. 
-> This is used to extract debugging traces out of a specific FPGA 
-> implementation and is of no use to anyone else. I'll just rip that out 
-> from the next submission.
-> 
-> > > +		if (rh->ibi_data_phys)  
-> > 
-> > I was told that _phys was a very bad suffix for something which is a
-> > DMA address an not focibly a physical address.  
-> 
-> Fair enough. The HCI spec refers to these as "physical memory" hence the 
-> suffix. What were you told to use instead?
-
-Maybe _dma instead of _phys?
-
-> 
-> > > +static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
-> > > +				 struct hci_xfer *xfer_list, int n)
-> > > +{
-> > > +	struct hci_rings_data *rings = hci->io_data;
-> > > +	struct hci_rh_data *rh = &rings->headers[xfer_list[0].ring];
-> > > +	u_int i;
-> > > +	bool did_unqueue = false;
-> > > +
-> > > +	/* stop the ring */
-> > > +	rh_reg_write(RING_CONTROL, RING_CTRL_ABORT);
-> > > +	if (wait_for_completion_timeout(&rh->op_done, HZ) == 0) {
-> > > +		/*
-> > > +		 * We're deep in it if ever this condition is ever met.
-> > > +		 * Hardware might still be writing to memory, etc.
-> > > +		 */
-> > > +		ERR("unable to abort the ring");
-> > > +		BUG();  
-> > 
-> > Why not just treating the error as always?  
-> 
-> Again, if this ever happens, you're screwed. That means potential DMA 
-> engines could still be alive and about to scribble over memory that is 
-> about to be freed which may cause all sorts of impossible-to-find bugs 
-> in unrelated parts of the kernel. There is no point going on reporting 
-> such error condition to upper layers until the software, or possibly the 
-> hardware, is fixed
-
-Again, I think adding a WARN_ON() and letting hci_dma_dequeue_xfer()
-return an error code is a good compromise. 
-
-> 
-> > > +struct hci_xfer {
-> > > +	u32 cmd_desc[4];
-> > > +	u32 response;
-> > > +	bool rnw;
-> > > +	void *data;
-> > > +	u_int data_len;
-> > > +	u_int cmd_tid;
-> > > +	struct completion *completion;
-> > > +	union {
-> > > +		struct {
-> > > +			/* PIO specific */
-> > > +			struct hci_xfer *next_xfer;
-> > > +			struct hci_xfer *next_data;
-> > > +			struct hci_xfer *next_resp;
-> > > +			u_int data_left;
-> > > +			u32 data_word_before_partial;
-> > > +		};  
-> > 
-> > I think anonymous unions are prohibited because the kernel is supposed
-> > to be built with old gcc versions which do not support it.  
-> 
-> Hmmm... let's see:
-> 
-> According to Documentation/process/changes.rst the current minimal 
-> required gcc version is 4.9.
-> 
-> The oldest gcc I have lying around is 4.5.1 and it supports anonymous 
-> unions just fine.
-> 
-> So I think we're clear.
-
-We had problems with a buggy version of gcc 4.<something> at some
-point, and that was only when initializing anonymous unions, but I
-think it's all behind us now.
+I'm definitely not closing the door, but I'd like to understand why this
+is so important to them :-). Anyway, if the changes are not invasive, I
+don't have a good reason to refuse it.
 
 -- 
 linux-i3c mailing list
