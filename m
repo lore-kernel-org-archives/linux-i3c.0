@@ -7,18 +7,18 @@ X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	MAILING_LIST_MULTI,SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
 	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BB1A6C433EB
+	by smtp.lore.kernel.org (Postfix) with ESMTP id B9B8AC433E4
 	for <linux-i3c@archiver.kernel.org>; Sun, 23 Aug 2020 09:47:06 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 23FC720768
+	by mail.kernel.org (Postfix) with ESMTPS id 543B4207CD
 	for <linux-i3c@archiver.kernel.org>; Sun, 23 Aug 2020 09:47:06 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="TXYjSnjd";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=cadence.com header.i=@cadence.com header.b="h9Xf3BBb";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=cadence.com header.i=@cadence.com header.b="f5O+AxRV"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 23FC720768
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="idQgWl4d";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=cadence.com header.i=@cadence.com header.b="LsfJVkF+";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=cadence.com header.i=@cadence.com header.b="jLl1UIXb"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 543B4207CD
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cadence.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -27,136 +27,135 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To:From:
 	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
 	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=RXxi1Fw7pf5ZAIX5+mUlXzihHi2LlZNZpTiD83a+0I4=; b=TXYjSnjd53zf0UUDXjrF3GhFI6
-	CG4vN+ISYAfmr5pi/nZmQINUMCpgOr207v654jTTI8ogl5aUlIdaQhnpJQ7PmhGYZQEGhrI783GGq
-	5pTde3hf5yEwswCgrpUs42hEUAER2KHGDKjfA3ruNoZ4r8aAut4O92SX6I7OzA0GuwSIBgadF4Wm9
-	P2tNkFJWN/kXEoMJZ2t+dztldvafSU6zkyu6Mxx7h2cd0Tk+t0xxoQgocEjRPGmnt4CQWyCfY9UFm
-	G0AgshvAy18+LGzJGbbzLZK5SWOVWqCzEBt1lMRFH1iBWTQIh8IIfmOm9oimCqm3BQqk9utvjV2aN
-	qvV3rtbw==;
+	bh=hqV0JP4A+OEHxXHT+et6aDbl0TjPrmnpZ/shXzvxf3Y=; b=idQgWl4d5p+unqpiNiD9feu8iu
+	QiTXK+Em5M1OiMW04kNyJTkTMBhnO0cCp+mIOHlxYJKiOZCtHb8sAPeu8DflExF52WuJtCM76xy9D
+	7a3r4xlIZ8CUfRFLKQavo87bBadBh6XeoRjSNQjLZVVC6ZBLSZAgN+0twf5hLnOSaveAnJHdPVWzZ
+	2fNDfdd4dtfoAkwajBnhp9ch8hgl+fBVTpOA6s0J/DWv/T24ktDdFS+FQy7xqcXNHIxHFQ2Jltgjj
+	G7I/luwaDXJsxCzorri08Zc0s9v12P/WnFGCCMv2/kWNDmRX5zmciY01U8r5nIULAUCYHQUBN1nC9
+	VvXOXxjA==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1k9maf-0001k1-Dl
+	id 1k9maf-0001kE-Qa
 	for linux-i3c@archiver.kernel.org; Sun, 23 Aug 2020 09:47:05 +0000
 Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193]
  helo=mx0a-0014ca01.pphosted.com)
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1k8kmB-0007fm-Fw
- for linux-i3c@lists.infradead.org; Thu, 20 Aug 2020 13:38:45 +0000
+ id 1k9374-0006T4-RV
+ for linux-i3c@lists.infradead.org; Fri, 21 Aug 2020 09:13:32 +0000
 Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
  by mx0b-0014ca01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 07KDZKp9004650; Thu, 20 Aug 2020 06:38:39 -0700
+ 07L999x0000548; Fri, 21 Aug 2020 02:13:26 -0700
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
  h=from : to : cc :
  subject : date : message-id : mime-version : content-type; s=proofpoint;
- bh=zBBLu7HUgXmF/EFUE6V3RsAR6ZyTq/hhPB0GN6/des0=;
- b=h9Xf3BBbaJZHmTqhUsSJqzV/qLSESO5oXNUu7Dc/z5Bn/RXTeLc2ya35YSb8bgv3sY3+
- wiXsKC0eTfB9cSQ9JRHAIY/773T+SAIQTR64HLNgUw4E9bJD6qo7Lm0YXlEIY86EBpgj
- 7b/rTvxPI2XKUhkK1SzCOMQ29SyJ/RKMX3kEWeW3fRMGQFB+6Xf7jvPsNqkNfCCO6vH7
- Fv2O7uwXyMvyvi6lqTvwAJq5RVXEnvSCb7/hRMIclW39xL6aaWIEHm/7r6Mg2G41VWtC
- Iv9p1kda6pfumDyo9I4PGl5Lt1shzdCjs315UbIh3O6J2r2RnUOxliOqAiLNt/YR+Yy3 1g== 
-Received: from nam02-sn1-obe.outbound.protection.outlook.com
- (mail-sn1nam02lp2050.outbound.protection.outlook.com [104.47.36.50])
- by mx0b-0014ca01.pphosted.com with ESMTP id 3306jnt9t2-1
+ bh=l5FOAz/NpKhBkb0URCEcNILRDQGGA1HogBh29rdx6Vk=;
+ b=LsfJVkF+s9J/33W+llpSW0KCJVAma3/bB8Ag9iuoY00gdKc+Yi9WZ3LQtKrIOxCyi+SV
+ XaIS8r3ul9oLOjsaVFN9Gubag+s18K4GaFxR2pWiudZzxu57tZBqiEt+WqZzK0f1pH/9
+ WuM5fBlwtGNLbzsmOL3RVoHtSUjfLahWCDXAElmk/z9+gH57eFKTibLsda1XkxMbHT87
+ 97ccvJX86KYRdx1viN0kzizKZIAPFbtPsg8ni7P+xlikyDOsVQPgXjaFJmIoTooKfTb/
+ y+pcIOSB3iEz6S10WZ9WvSXAuG/20H/V7UkiF7comD/Ccji1EYmrN2xQRVPaFklDx1+j aQ== 
+Received: from nam12-dm6-obe.outbound.protection.outlook.com
+ (mail-dm6nam12lp2168.outbound.protection.outlook.com [104.47.59.168])
+ by mx0b-0014ca01.pphosted.com with ESMTP id 332399hc07-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 20 Aug 2020 06:38:38 -0700
+ Fri, 21 Aug 2020 02:13:26 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Y5JRe3+JoorSoKuB3MmmbX3uHu1ywOH6HMs9QEO6Ob11udqKq8aFSbW0Ly1RMSLaG7pg8oBmzfweA7EE5AlsXNxEaVnbnudcp65DbJ4jXUvsq2VFQ5rcuU9OmFFvO2Q9JoWiXZfLvfUkCWEp/EA11Vr2L58qWTeSnUCTNvjtw8dJLtLXAysaH/Cwv3NF7/gtxG60z5lrVadICt4VV+C+qatKAvQpZ4Tu/T0/o+jREQdehIWIueIGyUyWs5uEoLoTTnhhsrAGom+/xPL7FqUB+2QonY7Hy0Gce+HqDhtOv8o+mYotKCTpeNaDA/zWQSsgEufKsCBEQcHgBZN3AZNYyQ==
+ b=ca40qawdKN7w5VDidwnJ6jtu4iQHhiUC1HOilCzcBS+0TFpSRKbxHFR7gcvfzcOVqyOOVElhaQW+LCgfOew5ZpUDcP0zYTlmZVx+Ncyr89ckpkW1jYLawUwei6rnS9qCS/H2s37oo3vWsVl4yRnZUdHC+58jDWuV1zXDmur48fNzyxtUYBPQWMeS2LKH6IKvgSC1rQiGN2away1B+ZUbZG0GFxK+WoIfnqKN6TM3yb9VjxGuAZeV3HuI0g8CbqL3rd7MbhUB6OySoVK18iddhjEYNw6uB7bOC4GVAiN9Ab6pR/C19E2hycXaE/JlZADEke7infvwVErBDLVfOvPPew==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zBBLu7HUgXmF/EFUE6V3RsAR6ZyTq/hhPB0GN6/des0=;
- b=gr8EwBzE+sKkM8hINjf6PPGYo77MnN5HaWFKnRec/uZZ27FdxLvY0C1iNq6YVlhN3HR1C9kt4toR9glOuChtVrJeBez7sL+lh+tTtheO3QeSUw7mP8D/9IqiBLEos2bmr5NBs6Vg1m3yVm6vHzn2EG5pSKKUPXH1nPYxs1hmF+r7Bv283NNnaY1VVFUOa7fjJgTgLzrLgy5f401pJ42WuhtIBhx8w9m0idxXW6tmWumKcaqbgVCzY8yChwU8QbEeDj04BK+Kw7MSc8VFNVDISU2f49+9KCV9CQRWHcTUj1xhQkKLUsbAcQkvmeq5JUo4Rj8e++OJgDWL9Vy8hx1EBw==
+ bh=l5FOAz/NpKhBkb0URCEcNILRDQGGA1HogBh29rdx6Vk=;
+ b=P9JZKu11I50xytlxH4oDxGgbeSluo1TLjd3UZus/z3rgNuCKuiC7JxVZoLzqqw0pqU4V5c5WZO9O1t4u60z1bpW/27AYyT81u0Gg34tO1sRdH4miDJ8SU2u5NLzZFZVdyFE1VUYzQEi+2Ym0tAlEjpr77QL8WRkqsyr0B5JiP82/uNr6F0yv+bJkvJdkLQTv88V+Grj5+1HkIg0DJMszwFGtV779SOjDr/yaRGCTjwbE3OFyGCqFVV64Xse4YZa/7FkYhJVvViM2CihhL3rXJf3DgJRMzVdPs8SA0b5PKyD41QhH6bk7oxLn30dO6cAUd6Kedl3r2P6dWr3+2opdFA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 199.43.4.23) smtp.rcpttodomain=synopsys.com smtp.mailfrom=cadence.com;
+ 64.207.220.244) smtp.rcpttodomain=synopsys.com smtp.mailfrom=cadence.com;
  dmarc=pass (p=none sp=none pct=100) action=none header.from=cadence.com;
  dkim=none (message not signed); arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zBBLu7HUgXmF/EFUE6V3RsAR6ZyTq/hhPB0GN6/des0=;
- b=f5O+AxRVqmtHSRtB48F4YMhFCpIDG5/n+IYMHV5otMbj6F90vaNlVm/RoDr1bk48V1sbjCkF5sPxpliVtFcd8cda514I7PiI6Rp6e9rW5x4XewA44c3nRLfI7+1w0OzlwgbcRnToPcmKzZQwQIr5gM4URGZP5nYa7atoWdmoR3Q=
-Received: from BN6PR03CA0097.namprd03.prod.outlook.com (2603:10b6:404:10::11)
- by SN6PR07MB4352.namprd07.prod.outlook.com (2603:10b6:805:57::12)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3305.24; Thu, 20 Aug
- 2020 13:38:36 +0000
-Received: from BN8NAM12FT059.eop-nam12.prod.protection.outlook.com
- (2603:10b6:404:10:cafe::e2) by BN6PR03CA0097.outlook.office365.com
- (2603:10b6:404:10::11) with Microsoft SMTP Server (version=TLS1_2,
+ bh=l5FOAz/NpKhBkb0URCEcNILRDQGGA1HogBh29rdx6Vk=;
+ b=jLl1UIXbb5b0ZwVr0QfKKuqUnCfZ6WuQbUC3Ym2HI43rpBfsZj+vZ9M2ep8IKC4MJIX/lGsfq5NAP36MhmN9oUXIp0MhhqbaGTcAT2Cl3cCXLBn/fF/j0HcDIsYhxxwgAnenNoVI9z1Z7hFYQF9ZTl/y1CxZc+z7H5daWVAOS3g=
+Received: from DM6PR07CA0044.namprd07.prod.outlook.com (2603:10b6:5:74::21) by
+ MWHPR07MB3168.namprd07.prod.outlook.com (2603:10b6:300:ec::22) with
+ Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3305.25; Fri, 21 Aug 2020 09:13:23 +0000
+Received: from DM6NAM12FT039.eop-nam12.prod.protection.outlook.com
+ (2603:10b6:5:74:cafe::b7) by DM6PR07CA0044.outlook.office365.com
+ (2603:10b6:5:74::21) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3305.24 via Frontend
- Transport; Thu, 20 Aug 2020 13:38:36 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 199.43.4.23)
+ Transport; Fri, 21 Aug 2020 09:13:23 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 64.207.220.244)
  smtp.mailfrom=cadence.com; synopsys.com; dkim=none (message not signed)
  header.d=none;synopsys.com; dmarc=pass action=none header.from=cadence.com;
 Received-SPF: Pass (protection.outlook.com: domain of cadence.com designates
- 199.43.4.23 as permitted sender) receiver=protection.outlook.com;
- client-ip=199.43.4.23; helo=rmmaillnx1.cadence.com;
-Received: from rmmaillnx1.cadence.com (199.43.4.23) by
- BN8NAM12FT059.mail.protection.outlook.com (10.13.183.55) with Microsoft SMTP
+ 64.207.220.244 as permitted sender) receiver=protection.outlook.com;
+ client-ip=64.207.220.244; helo=wcmailrelayl01.cadence.com;
+Received: from wcmailrelayl01.cadence.com (64.207.220.244) by
+ DM6NAM12FT039.mail.protection.outlook.com (10.13.179.59) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3305.16 via Frontend Transport; Thu, 20 Aug 2020 13:38:35 +0000
+ 15.20.3305.16 via Frontend Transport; Fri, 21 Aug 2020 09:13:21 +0000
 Received: from maileu3.global.cadence.com (maileu3.cadence.com [10.160.88.99])
- by rmmaillnx1.cadence.com (8.14.4/8.14.4) with ESMTP id
- 07KDcVpV016996
- (version=TLSv1/SSLv3 cipher=AES256-SHA bits=256 verify=OK);
- Thu, 20 Aug 2020 09:38:33 -0400
+ by wcmailrelayl01.cadence.com (8.14.7/8.14.4) with ESMTP id
+ 07L9DIQm197779
+ (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=OK);
+ Fri, 21 Aug 2020 02:13:19 -0700
 X-CrossPremisesHeadersFilteredBySendConnector: maileu3.global.cadence.com
 Received: from maileu3.global.cadence.com (10.160.88.99) by
  maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
- 15.0.1367.3; Thu, 20 Aug 2020 15:38:30 +0200
+ 15.0.1367.3; Fri, 21 Aug 2020 11:13:18 +0200
 Received: from vleu-orange.cadence.com (10.160.88.83) by
  maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
- 15.0.1367.3 via Frontend Transport; Thu, 20 Aug 2020 15:38:30 +0200
+ 15.0.1367.3 via Frontend Transport; Fri, 21 Aug 2020 11:13:18 +0200
 Received: from vleu-orange.cadence.com (localhost.localdomain [127.0.0.1])
- by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 07KDcUV8015786;
- Thu, 20 Aug 2020 15:38:30 +0200
+ by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 07L9DID2018549;
+ Fri, 21 Aug 2020 11:13:18 +0200
 Received: (from pthombar@localhost)
- by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 07KDcSiQ015784;
- Thu, 20 Aug 2020 15:38:28 +0200
+ by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 07L9DHUQ018548;
+ Fri, 21 Aug 2020 11:13:17 +0200
 From: Parshuram Thombare <pthombar@cadence.com>
 To: <bbrezillon@kernel.org>, <vitor.soares@synopsys.com>
-Subject: [PATCH v3] i3c: master: fix for SETDASA and DAA process
-Date: Thu, 20 Aug 2020 15:38:26 +0200
-Message-ID: <1597930706-15744-1-git-send-email-pthombar@cadence.com>
+Subject: [PATCH v4] i3c: master: fix for SETDASA and DAA process
+Date: Fri, 21 Aug 2020 11:13:15 +0200
+Message-ID: <1598001195-18511-1-git-send-email-pthombar@cadence.com>
 X-Mailer: git-send-email 2.2.2
 MIME-Version: 1.0
 X-OrganizationHeadersPreserved: maileu3.global.cadence.com
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: c661d762-21f2-4e63-4149-08d8450e568c
-X-MS-TrafficTypeDiagnostic: SN6PR07MB4352:
-X-Microsoft-Antispam-PRVS: <SN6PR07MB4352DC10FE71B9F22C6A8858C15A0@SN6PR07MB4352.namprd07.prod.outlook.com>
+X-MS-Office365-Filtering-Correlation-Id: f7cb8679-7011-429b-2b35-08d845b273b1
+X-MS-TrafficTypeDiagnostic: MWHPR07MB3168:
+X-Microsoft-Antispam-PRVS: <MWHPR07MB31684F9CDF6F0AE44D505ADDC15B0@MWHPR07MB3168.namprd07.prod.outlook.com>
 X-MS-Oob-TLC-OOBClassifiers: OLM:8882;
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 0HJ/uyArF0dP9/f8LF148UfPGeAHnXVdoljNYJ4peGCwrK9SkZn/fIBuhfBQyqB3EplX+b6NPZuTWUZTVqktwpDzhQ7y37oCl2WaP6U+fb9qHZA4SCtGN0cW0Bgr4r5+hmXmoJif0MrM910wdw5P1M/KxEYykFRkrrUP3aiXbqxnqmGmx8MHVvCNDZlVuujszYH8EyIt0HMB4Kjgzu5BuOKznbtsgsMwMzDHxqHyWa/AtoTyDfeGVxGYWW4j6jqhJ8rzbQphzr+KX83jwrzKY0qWY26U1VBHrdRUpTb2VVR0YsbSHqaBsst7cuyJlv1AM9QvO/OiZ+SdIvyUR8I4QEmqT+kVCHHv7aj0gcakfMEGknrEoesDoLV3FodppjcTjXJOQWj83+fQ8CSSY2iC9ffqAUJbznKSHrOvL11WeUA=
-X-Forefront-Antispam-Report: CIP:199.43.4.23; CTRY:US; LANG:en; SCL:1; SRV:;
- IPV:CAL; SFV:NSPM; H:rmmaillnx1.cadence.com; PTR:InfoDomainNonexistent;
- CAT:NONE;
- SFS:(4636009)(346002)(376002)(136003)(39860400002)(396003)(36092001)(46966005)(110136005)(36756003)(26005)(478600001)(186003)(5660300002)(316002)(426003)(336012)(47076004)(83380400001)(2906002)(2616005)(107886003)(8676002)(82310400002)(8936002)(42186006)(54906003)(86362001)(4326008)(356005)(70206006)(70586007)(81166007)(82740400003);
+X-Microsoft-Antispam-Message-Info: v3myhHc4zYJozkH0SX8YnPN9PX8+X9vENc6dMEJqM7Fic6ee4HKJXMJe8KthBW3GlsoLqb2OLYblUb05fWiaC3mTT5KQD1Mi9zveo2yobW5bSBzK2RS4DBErsz4TGd/bEyKYrb/l5nOxUQI++Sd9+gfrf69c7vy/mbyruY7Qhs/eSMGh2FyXX9LuLKMtEtJ7a5hMfoYzx8R80imxjjcRkdMGdqPSeTuHimp05imd0ajSkOOkwLKFNCbjSxb7duBNeQkzyB50W8gpydCbnOBkeyVSfocP3OXEMBGjKT6VCKhw5/BbniUVAQ4oiXsfX08Iujvmj+wEm+ohQloPCrtosKTo2mtX50o5qJu0h3BldfcDTXuo+3WZ+W4cgYc7FoixHDEF3WJDMCAGJNWENxx9UZ8Q9jqOF+Z7kkYxSHddcCA=
+X-Forefront-Antispam-Report: CIP:64.207.220.244; CTRY:CN; LANG:en; SCL:1; SRV:;
+ IPV:CAL; SFV:NSPM; H:wcmailrelayl01.cadence.com; PTR:ErrorRetry; CAT:NONE;
+ SFS:(4636009)(39860400002)(136003)(346002)(376002)(396003)(36092001)(46966005)(70206006)(8936002)(26005)(2906002)(70586007)(5660300002)(54906003)(36756003)(8676002)(110136005)(478600001)(82740400003)(2616005)(36906005)(82310400002)(336012)(4326008)(186003)(426003)(316002)(42186006)(86362001)(81166007)(107886003)(83380400001)(47076004)(356005);
  DIR:OUT; SFP:1101; 
 X-OriginatorOrg: cadence.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Aug 2020 13:38:35.6566 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: c661d762-21f2-4e63-4149-08d8450e568c
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Aug 2020 09:13:21.9361 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: f7cb8679-7011-429b-2b35-08d845b273b1
 X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9; Ip=[199.43.4.23];
- Helo=[rmmaillnx1.cadence.com]
-X-MS-Exchange-CrossTenant-AuthSource: BN8NAM12FT059.eop-nam12.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9; Ip=[64.207.220.244];
+ Helo=[wcmailrelayl01.cadence.com]
+X-MS-Exchange-CrossTenant-AuthSource: DM6NAM12FT039.eop-nam12.prod.protection.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR07MB4352
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR07MB3168
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.235, 18.0.687
- definitions=2020-08-20_03:2020-08-19,
- 2020-08-20 signatures=0
+ definitions=2020-08-21_06:2020-08-21,
+ 2020-08-21 signatures=0
 X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
- score=0 phishscore=0
- mlxscore=0 priorityscore=1501 clxscore=1015 lowpriorityscore=0
- adultscore=0 impostorscore=0 malwarescore=0 spamscore=0 suspectscore=2
- bulkscore=0 mlxlogscore=999 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2006250000 definitions=main-2008200113
+ score=0 adultscore=0
+ spamscore=0 mlxlogscore=999 mlxscore=0 phishscore=0 impostorscore=0
+ priorityscore=1501 malwarescore=0 bulkscore=0 clxscore=1015 suspectscore=2
+ lowpriorityscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2006250000 definitions=main-2008210086
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200820_093843_935062_6AE6C154 
-X-CRM114-Status: GOOD (  29.08  )
+X-CRM114-CacheID: sfid-20200821_051331_423704_9114926D 
+X-CRM114-Status: GOOD (  28.41  )
 X-Mailman-Approved-At: Sun, 23 Aug 2020 05:47:03 -0400
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -187,9 +186,11 @@ complete SETDASA. For remaining devices with init_dyn_addr,
 i3c_master_add_i3c_dev_locked() will try to set requested
 dynamic address after DAA.
 
-Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
 Signed-off-by: Parshuram Thombare <pthombar@cadence.com>
 ---
+Changes between v3 and v4 are:
+1. Code rectoring and removed Fixes tag
+
 Changes between v2 and v3 are:
 1. Keeping init_dyn_addr reserved.
 2. Code refactoring and changes in comments.
@@ -201,11 +202,11 @@ Changes between v1 and v2 are:
    be used in DAA and  attempt can be made to set those
    firmware requested dynamic address after DAA.
 ---
- drivers/i3c/master.c |  115 ++++++++++++++++++++++++++++----------------------
- 1 files changed, 65 insertions(+), 50 deletions(-)
+ drivers/i3c/master.c |  116 ++++++++++++++++++++++++++++---------------------
+ 1 files changed, 66 insertions(+), 50 deletions(-)
 
 diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 3d995f2..24543d8 100644
+index 3d995f2..3ff95e4 100644
 --- a/drivers/i3c/master.c
 +++ b/drivers/i3c/master.c
 @@ -1367,7 +1367,9 @@ static int i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
@@ -224,7 +225,7 @@ index 3d995f2..24543d8 100644
  }
  
 -static void i3c_master_pre_assign_dyn_addr(struct i3c_dev_desc *dev)
-+static int i3c_master_pre_assign_dyn_addr(struct i3c_master_controller *master,
++static int i3c_master_early_i3c_dev_add(struct i3c_master_controller *master,
 +					  struct i3c_dev_boardinfo *boardinfo)
  {
 -	struct i3c_master_controller *master = i3c_dev_get_master(dev);
@@ -240,11 +241,11 @@ index 3d995f2..24543d8 100644
 +	i3cdev = i3c_master_alloc_i3c_dev(master, &info);
 +	if (IS_ERR(i3cdev))
 +		return -ENOMEM;
-+
-+	i3cdev->boardinfo = boardinfo;
  
 -	ret = i3c_master_setdasa_locked(master, dev->info.static_addr,
 -					dev->boardinfo->init_dyn_addr);
++	i3cdev->boardinfo = boardinfo;
++
 +	ret = i3c_master_attach_i3c_dev(master, i3cdev);
  	if (ret)
 -		return;
@@ -353,7 +354,7 @@ index 3d995f2..24543d8 100644
  
  	/*
  	 * Now execute the controller specific ->bus_init() routine, which
-@@ -1744,10 +1737,32 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
+@@ -1744,10 +1737,33 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
  
  	/*
  	 * Pre-assign dynamic address and retrieve device information if
@@ -370,9 +371,7 @@ index 3d995f2..24543d8 100644
 +		 * (no static_addr and dyn_addr) and devices with static_addr
 +		 * but no init_dyn_addr will participate in DAA.
 +		 */
-+		if (!i3cboardinfo->init_dyn_addr ||
-+		    (i3cboardinfo->static_addr &&
-+		     !i3c_master_pre_assign_dyn_addr(master, i3cboardinfo)))
++		if (!i3cboardinfo->init_dyn_addr)
 +			continue;
 +
 +		ret = i3c_bus_get_addr_slot_status(&master->bus,
@@ -385,6 +384,9 @@ index 3d995f2..24543d8 100644
 +		i3c_bus_set_addr_slot_status(&master->bus,
 +					     i3cboardinfo->init_dyn_addr,
 +					     I3C_ADDR_SLOT_I3C_DEV);
++
++		if (i3cboardinfo->static_addr)
++			i3c_master_early_i3c_dev_add(master, i3cboardinfo);
 +	}
  
  	ret = i3c_master_do_daa(master);
