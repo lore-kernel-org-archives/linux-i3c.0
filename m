@@ -1,80 +1,161 @@
-Return-Path: <SRS0=jjtB=CC=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=OcUj=CD=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-11.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_PATCH,MAILING_LIST_MULTI,SIGNED_OFF_BY,
-	SPF_HELO_NONE,SPF_PASS autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 02445C433E3
-	for <linux-i3c@archiver.kernel.org>; Mon, 24 Aug 2020 23:24:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id BAC00C433E1
+	for <linux-i3c@archiver.kernel.org>; Tue, 25 Aug 2020 06:21:29 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id B234320656
-	for <linux-i3c@archiver.kernel.org>; Mon, 24 Aug 2020 23:24:43 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 799F02075F
+	for <linux-i3c@archiver.kernel.org>; Tue, 25 Aug 2020 06:21:29 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="O+QT4Fxx"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org B234320656
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="uB4bb9u9";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=cadence.com header.i=@cadence.com header.b="kIy4Mvaq";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=cadence.com header.i=@cadence.com header.b="itpoxEJ2"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 799F02075F
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=cadence.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0xG20kXroF3i2LftKHeAacpvQOcMhjZ88dCuIVJeAQg=; b=O+QT4FxxoxiQkgVIk/FA7iYGG
-	dy4UQWBPvpGoQ70wanFHdGlGYOcQsCbOL4wpJowCFQIn1y91vZzOd8IbPX6srncPVHqK7TzKMYL7C
-	0Tk1TpK4j2zhohGXQLq8KnToEM/WG3Ps5rJbyrw7bhHSqPYzqIYjBZntfvQmu1RgFNjgPqDrkPM+1
-	bcrSmiys1GYwPUbrWaHMOBrlLV9sxZCGP4M/DxCtYu4F/XSrSZWfVc/Ab1HTS9pDTaX9+GomM1N/f
-	Y0jfo+Y4rZATCslKntVPIRyKg5mThZQkctc6vwlVWnWNaOSqi0qB9GjElnXSL5xjLxGUIiM7rgG59
-	4YPzesJEQ==;
+	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=JthSFy33/wH5ARDlr3KHlKmUaSgmf5o0CDs5gqqPeS4=; b=uB4bb9u9uK2s6uF6Sy+/UMqIjE
+	hconXq7rSNaO9jpJIgWFrFjnDBAcwYvjt3m0TCFjVbdDTzbYVer1glQhhq3ftbl3ZD4ikXPs7ri3W
+	K2853OvkIA+LGMh3kHa/onVo6HUNCqp6pECe4u7cfa9/VBeR3bpStiMxRW9dMSAMbHfd/Ufb9Ftpf
+	oiR06IpFfkMTkYFQzpiNJ9+HJ1uc8XLjkMrPcAKbTvxTW6fze3qOvjv58cqwRZBl3CXO0je+nhDUR
+	lr9MThejwkjHwA2p0udVqpSMVwAaP1oQOV5hc9CgkxGZ+hD+RHQOZ6/AyAl0OLmXCQUYIIZmcNwmt
+	+jlVoDwg==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1kALpS-0004nk-Qq
-	for linux-i3c@archiver.kernel.org; Mon, 24 Aug 2020 23:24:42 +0000
-Received: from mail-il1-f194.google.com ([209.85.166.194])
+	id 1kASKm-0003Sr-Lx
+	for linux-i3c@archiver.kernel.org; Tue, 25 Aug 2020 06:21:28 +0000
+Received: from mx0b-0014ca01.pphosted.com ([208.86.201.193]
+ helo=mx0a-0014ca01.pphosted.com)
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1kALpQ-0004ms-M0
- for linux-i3c@lists.infradead.org; Mon, 24 Aug 2020 23:24:41 +0000
-Received: by mail-il1-f194.google.com with SMTP id r13so8849630iln.0
- for <linux-i3c@lists.infradead.org>; Mon, 24 Aug 2020 16:24:40 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=JwCY8rswka2evtE21QF7ein3AFgooZR8ofb7Ek5G2oQ=;
- b=Zswu+u6ShnZklTriRHG0eXdBv+BX+SyXvuJp7CrfVsYysBepxbiHClorKb6Q7MrqTu
- FrCp6QgR9tN615zXH0RKMKgP4lchtkSt0hMj/EmgZn93WJ6HH66KMGvFmbjkxg3FaG7X
- 89fRKKwKOn/1nu3vZ/2LWHvtF7l2xVr6TD+UqaFgKin6L9i9OZrqJlsvDuavTRVdqZXV
- vOl0ZyiHivNmjBAeHzDHqzvb0MQDpsjP4TehN/YJvxwbZFghUPFe9M450+IOpCM8paYG
- 3pOSm/VLDVk+/dvX8OLYwXwAI30J6FH8E5q2N7lNTb7X7N5ij/rXvX/XT+BpF8gPrUEh
- DKOw==
-X-Gm-Message-State: AOAM533M+5CIGC9RSpuIPcuc+f7rbBfPG/WRq2sIcDWj02JlNjSRzRWN
- 9KM2neMthIk+OZmCGaVrtw==
-X-Google-Smtp-Source: ABdhPJx7LtfsqA1qY3DyB66QRPALZplHC090bvD6c3U46iI9qD4WKEflLmoQC5seq1+YwsA9qyvLjA==
-X-Received: by 2002:a92:a188:: with SMTP id b8mr7329457ill.81.1598311480006;
- Mon, 24 Aug 2020 16:24:40 -0700 (PDT)
-Received: from xps15 ([64.188.179.249])
- by smtp.gmail.com with ESMTPSA id a16sm8105572ilp.23.2020.08.24.16.24.38
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 24 Aug 2020 16:24:39 -0700 (PDT)
-Received: (nullmailer pid 3530535 invoked by uid 1000);
- Mon, 24 Aug 2020 23:24:38 -0000
-Date: Mon, 24 Aug 2020 17:24:38 -0600
-From: Rob Herring <robh@kernel.org>
-To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Re: [PATCH v2 2/4] dt-bindings: i3c: Describe Silvaco master binding
-Message-ID: <20200824232438.GA3525200@bogus>
-References: <20200812141312.3331-1-miquel.raynal@bootlin.com>
- <20200812141312.3331-2-miquel.raynal@bootlin.com>
+ id 1kASKj-0003Rj-5S
+ for linux-i3c@lists.infradead.org; Tue, 25 Aug 2020 06:21:27 +0000
+Received: from pps.filterd (m0042333.ppops.net [127.0.0.1])
+ by mx0b-0014ca01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 07P6Ff5u005142; Mon, 24 Aug 2020 23:21:21 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ h=from : to : cc :
+ subject : date : message-id : mime-version : content-type; s=proofpoint;
+ bh=b51Fa7VwPvrCivb/l0b/RDniP27UiksgCioJXHRmh/g=;
+ b=kIy4MvaqsvugSxU6ye8vXsjZ899EVLC2p+z9i3o/r56iHBdIgubXG/FCBRoqcL9PkYZk
+ 4G5cCvojdykdQPzaGXTiuaa5gvhMfmTArprq+DTDoX+T/SCiSlk19OSRp6ShGUjlKcqT
+ kZNq5tYOqr022Poe5dn/Z7SaStMh1RvMVFaOOdzkKzaxZ6QqjXObwcGxA0OywmrceeFr
+ d2e52YTCYmU2Cuz4/fTAp7cov5fd9xMP269znx2Jch2j5Izaovv+dk/mtRKIG5CKMS6v
+ XfjUAlBqLac+MdrlXatLYRjLSeryzDsWoB9cjgxKuqeaePMHTaBEbQmiRX5FRcc5mpRv tA== 
+Received: from nam10-mw2-obe.outbound.protection.outlook.com
+ (mail-mw2nam10lp2107.outbound.protection.outlook.com [104.47.55.107])
+ by mx0b-0014ca01.pphosted.com with ESMTP id 332xxx1rdy-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 24 Aug 2020 23:21:20 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=XDYla8JvkIlPef8g654AXsqv2Iyryin4glB6xItoTLUq3JX+f9y+EugRiAKPS/UCx+Y/V+CHFC2JtLEqAg1OuUv5Z9uodmmXjxRX1s0Yqe9kDrMI2Dw+dVi5fIZhe6hKx2YhH9bglRyNbI62RRxrUpiTv6kR0C8U8W1+UOlTn/UR45I3F+UlW2qx9bZMLfGJ4nEAOhp+ANsqkBiZQxZ/2DV2svtMKKgLiJdPiuRqTTmF80RKHXX+WnBk6vVfrIy4VJVMfAgSsyr2nw4p2F0wjqORj1t6Jj7g0FCT92RvLMTofIJLuelMyN/lPKSEP8JEPcLHS+X7gN9ARvCy+mTtKg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=b51Fa7VwPvrCivb/l0b/RDniP27UiksgCioJXHRmh/g=;
+ b=DbxA3VZQjEZOAodeN1Uhs7NicQNAJYTuqoz2nXqbZz4Mg3awfQi7LuO7HsMs+Ebjowo8j88MmvUR2qfz2ENIgac1zhBiNOHL440fykWkAbO8izJdyGnVMs8xl3jEjQXJ8vaeqS+iWPucKGQ6oZzqhvKFi0bhz3qeniiI4OmFxZFWGIZT/iLR/Q5MnoinCLpsJf/WCiDFhD1Xn55LEiO4jywRhdjUKAUxMOem4cuguJSU/SiQt/fRljyh0uCxq3ovjQvSUuCIx/Sw13GzZN2l5lmEmVXIwuI71mO/E75cZ6T6YyTBSWH+8sgVhc9/i9tAClSDUASMRxWVKHS7JEoTUQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 158.140.1.147) smtp.rcpttodomain=synopsys.com smtp.mailfrom=cadence.com;
+ dmarc=pass (p=none sp=none pct=100) action=none header.from=cadence.com;
+ dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cadence.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=b51Fa7VwPvrCivb/l0b/RDniP27UiksgCioJXHRmh/g=;
+ b=itpoxEJ2D9sHV7TD25d0pFrnCX1AJ5w3BpBjQ+oro7Xvu8ALCr4ZRAMwqngMhcdZ84TenR6R+H8Ovw3ASYrcEo+b+ue6KhVXiWHDxqmal0jbRMsWr39g2yWxZ7syIq7gSTPSLNyr075IWSCTRre7vMXMy12kaqPPtutGL6l6v3w=
+Received: from DM6PR06CA0005.namprd06.prod.outlook.com (2603:10b6:5:120::18)
+ by MW2PR07MB3931.namprd07.prod.outlook.com (2603:10b6:907:5::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3305.26; Tue, 25 Aug
+ 2020 06:21:16 +0000
+Received: from DM6NAM12FT030.eop-nam12.prod.protection.outlook.com
+ (2603:10b6:5:120:cafe::aa) by DM6PR06CA0005.outlook.office365.com
+ (2603:10b6:5:120::18) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3305.24 via Frontend
+ Transport; Tue, 25 Aug 2020 06:21:16 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 158.140.1.147)
+ smtp.mailfrom=cadence.com; synopsys.com; dkim=none (message not signed)
+ header.d=none;synopsys.com; dmarc=pass action=none header.from=cadence.com;
+Received-SPF: Pass (protection.outlook.com: domain of cadence.com designates
+ 158.140.1.147 as permitted sender) receiver=protection.outlook.com;
+ client-ip=158.140.1.147; helo=sjmaillnx1.cadence.com;
+Received: from sjmaillnx1.cadence.com (158.140.1.147) by
+ DM6NAM12FT030.mail.protection.outlook.com (10.13.178.167) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3305.16 via Frontend Transport; Tue, 25 Aug 2020 06:21:15 +0000
+Received: from maileu3.global.cadence.com (maileu3.cadence.com [10.160.88.99])
+ by sjmaillnx1.cadence.com (8.14.4/8.14.4) with ESMTP id
+ 07P6LCLZ013612
+ (version=TLSv1/SSLv3 cipher=AES256-SHA bits=256 verify=OK);
+ Mon, 24 Aug 2020 23:21:13 -0700
+X-CrossPremisesHeadersFilteredBySendConnector: maileu3.global.cadence.com
+Received: from maileu3.global.cadence.com (10.160.88.99) by
+ maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
+ 15.0.1367.3; Tue, 25 Aug 2020 08:21:11 +0200
+Received: from vleu-orange.cadence.com (10.160.88.83) by
+ maileu3.global.cadence.com (10.160.88.99) with Microsoft SMTP Server (TLS) id
+ 15.0.1367.3 via Frontend Transport; Tue, 25 Aug 2020 08:21:11 +0200
+Received: from vleu-orange.cadence.com (localhost.localdomain [127.0.0.1])
+ by vleu-orange.cadence.com (8.14.4/8.14.4) with ESMTP id 07P6LBqm009623;
+ Tue, 25 Aug 2020 08:21:11 +0200
+Received: (from pthombar@localhost)
+ by vleu-orange.cadence.com (8.14.4/8.14.4/Submit) id 07P6LAb7009612;
+ Tue, 25 Aug 2020 08:21:10 +0200
+From: Parshuram Thombare <pthombar@cadence.com>
+To: <bbrezillon@kernel.org>, <vitor.soares@synopsys.com>
+Subject: [PATCH v5] i3c: master: fix for SETDASA and DAA process
+Date: Tue, 25 Aug 2020 08:21:08 +0200
+Message-ID: <1598336468-9564-1-git-send-email-pthombar@cadence.com>
+X-Mailer: git-send-email 2.2.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200812141312.3331-2-miquel.raynal@bootlin.com>
+X-OrganizationHeadersPreserved: maileu3.global.cadence.com
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: b88927a9-83aa-4a3c-fba9-08d848bf1259
+X-MS-TrafficTypeDiagnostic: MW2PR07MB3931:
+X-Microsoft-Antispam-PRVS: <MW2PR07MB393187B24900C45FFB2382F7C1570@MW2PR07MB3931.namprd07.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:7219;
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: fzc9l2G1VV29pqtHbL36pUqxnm1On9o2Fd9lcgp7Wr1o5yUrt1GpskwsbsDfao5GTG4f09yQzgVKdcB5inws+8cujKp/VXG/rXN9kHqgLGBv50Gv2O1Kw2t4TDhO/ylnd+ipqe1A3M0mPasYtqJQ90sHlC++dvzeiCndlorkuWxy5+iNuDCyLL8JN+Ki597BG0iMtrV9Fqjwx9hIcE+Jdx9SG7KelHqpk4zH4uh6FjKc75cJvzSiFkNsPz2XUbrNcCNbJ2PbupzQCz69axZASuf4tcXyni9GOEAbWDT2RWYsmwUlJS0R/r1GRyT3gPpMAse9kQC5utv2x3PdquXb9YuzB4GYS8HIM7FXENEVi3YS3Q4Tg5zuv7tEV4OQb+guiQpHioH0Qf3xQ7THdzKaJtKEMvxb58TddRf1VCXZVrg=
+X-Forefront-Antispam-Report: CIP:158.140.1.147; CTRY:US; LANG:en; SCL:1; SRV:;
+ IPV:CAL; SFV:NSPM; H:sjmaillnx1.cadence.com; PTR:unknown.Cadence.COM; CAT:NONE;
+ SFS:(4636009)(136003)(346002)(376002)(396003)(39860400002)(36092001)(46966005)(4326008)(2906002)(82310400002)(478600001)(426003)(5660300002)(356005)(36756003)(7636003)(36906005)(2616005)(186003)(8676002)(336012)(110136005)(42186006)(316002)(86362001)(107886003)(26005)(82740400003)(70586007)(83380400001)(47076004)(54906003)(8936002)(70206006);
+ DIR:OUT; SFP:1101; 
+X-OriginatorOrg: cadence.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Aug 2020 06:21:15.5766 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: b88927a9-83aa-4a3c-fba9-08d848bf1259
+X-MS-Exchange-CrossTenant-Id: d36035c5-6ce6-4662-a3dc-e762e61ae4c9
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=d36035c5-6ce6-4662-a3dc-e762e61ae4c9; Ip=[158.140.1.147];
+ Helo=[sjmaillnx1.cadence.com]
+X-MS-Exchange-CrossTenant-AuthSource: DM6NAM12FT030.eop-nam12.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MW2PR07MB3931
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.235, 18.0.687
+ definitions=2020-08-24_12:2020-08-24,
+ 2020-08-24 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_check_notspam policy=outbound_check
+ score=0 bulkscore=0
+ adultscore=0 phishscore=0 impostorscore=0 lowpriorityscore=0
+ mlxlogscore=999 spamscore=0 clxscore=1015 mlxscore=0 suspectscore=2
+ malwarescore=0 priorityscore=1501 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.12.0-2006250000 definitions=main-2008250048
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200824_192440_785670_9DD59434 
-X-CRM114-Status: GOOD (  18.83  )
+X-CRM114-CacheID: sfid-20200825_022125_726948_2A373049 
+X-CRM114-Status: GOOD (  29.12  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,117 +167,248 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Rajeev Huralikoppi <rajeev.huralikoppi@silvaco.com>,
- Nicolas Pitre <nico@fluxnic.net>, linux-kernel@vger.kernel.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-i3c@lists.infradead.org,
- Conor Culhane <conor.culhane@silvaco.com>
+Cc: mparab@cadence.com, Parshuram Thombare <pthombar@cadence.com>,
+ praneeth@ti.com, linux-kernel@vger.kernel.org, pgaj@cadence.com,
+ linux-i3c@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Aug 12, 2020 at 04:13:10PM +0200, Miquel Raynal wrote:
-> Silvaco provide a dual-role I3C master.
-> 
-> Description is rather simple: it needs a register mapping, three
-> clocks and an interrupt.
-> 
-> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-> ---
-> 
-> Changes in v2:
-> * Updated Rob's tool and fixed the mistake reported.
-> * Updated the vendor prefix.
-> 
->  .../bindings/i3c/silvaco,i3c-master.yaml      | 59 +++++++++++++++++++
->  1 file changed, 59 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
-> new file mode 100644
-> index 000000000000..63731e8a9068
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
-> @@ -0,0 +1,59 @@
-> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/i3c/silvaco,i3c-master.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Silvaco I3C master
-> +
-> +maintainers:
-> +  - Conor Culhane <conor.culhane@silvaco.com>
-> +
-> +properties:
-> +  compatible:
-> +    const: silvaco,i3c-master
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clock-names:
-> +    description: |
-> +      There are three clocks:
-> +        pclk:     System clock
-> +        fast_clk: Fast clock (for the bus)
-> +        slow_clk: Slow clock (for other events)
+This patch fixes the following issue.
+Controller slots blocked for the devices with only static_addr
+or init_dyn_addr may limit the number of I3C devices
+on the bus which gets dynamic address in DAA. So
+instead of attaching all the devices with static_addr,
+now we only attach the devices which successfully
+complete SETDASA. Similarly, for the devices with only
+init_dyn_addr, init_dyn_addr are reserved, and after DAA
+i3c_master_add_i3c_dev_locked() will try to set the requested
+dynamic address.
 
-You basically say this in the schema... If you want some description, do 
-it in 'clocks':
+Signed-off-by: Parshuram Thombare <pthombar@cadence.com>
+---
+Changes between v4 and v5 are:
+1. Modifications in comments and labels.
 
-clocks:
-  items:
-    - description: ...
-    - description: ...
-    - description: ...
+Changes between v3 and v4 are:
+1. Code rectoring and removed Fixes tag.
 
-> +
-> +    items:
-> +      - const: pclk
-> +      - const: fast_clk
-> +      - const: slow_clk
-> +
-> +  clocks:
-> +    minItems: 3
-> +    maxItems: 3
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clock-names
-> +  - clocks
+Changes between v2 and v3 are:
+1. Keeping init_dyn_addr reserved.
+2. Code refactoring and changes in comments.
 
-additionalProperties: false
+Changes between v1 and v2 are:
+1. Added boardinfo attach fix.
+2. Removed reattach issue related fix.
+3. Reserve init_dyn_addr initially, so that it will not
+   be used in DAA and  attempt can be made to set those
+   firmware requested dynamic address after DAA.
+---
+ drivers/i3c/master.c |  128 +++++++++++++++++++++++++++++--------------------
+ 1 files changed, 76 insertions(+), 52 deletions(-)
 
-And that will point out some errors in the example.
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 3d995f2..ccf9b4e 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -1367,7 +1367,9 @@ static int i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
+ 	enum i3c_addr_slot_status status;
+ 	int ret;
+ 
+-	if (dev->info.dyn_addr != old_dyn_addr) {
++	if (dev->info.dyn_addr != old_dyn_addr &&
++	    (!dev->boardinfo ||
++	     dev->info.dyn_addr != dev->boardinfo->init_dyn_addr)) {
+ 		status = i3c_bus_get_addr_slot_status(&master->bus,
+ 						      dev->info.dyn_addr);
+ 		if (status != I3C_ADDR_SLOT_FREE)
+@@ -1426,33 +1428,49 @@ static void i3c_master_detach_i2c_dev(struct i2c_dev_desc *dev)
+ 		master->ops->detach_i2c_dev(dev);
+ }
+ 
+-static void i3c_master_pre_assign_dyn_addr(struct i3c_dev_desc *dev)
++static int i3c_master_early_i3c_dev_add(struct i3c_master_controller *master,
++					  struct i3c_dev_boardinfo *boardinfo)
+ {
+-	struct i3c_master_controller *master = i3c_dev_get_master(dev);
++	struct i3c_device_info info = {
++		.static_addr = boardinfo->static_addr,
++	};
++	struct i3c_dev_desc *i3cdev;
+ 	int ret;
+ 
+-	if (!dev->boardinfo || !dev->boardinfo->init_dyn_addr ||
+-	    !dev->boardinfo->static_addr)
+-		return;
++	i3cdev = i3c_master_alloc_i3c_dev(master, &info);
++	if (IS_ERR(i3cdev))
++		return -ENOMEM;
++
++	i3cdev->boardinfo = boardinfo;
+ 
+-	ret = i3c_master_setdasa_locked(master, dev->info.static_addr,
+-					dev->boardinfo->init_dyn_addr);
++	ret = i3c_master_attach_i3c_dev(master, i3cdev);
+ 	if (ret)
+-		return;
++		goto err_free_dev;
++
++	ret = i3c_master_setdasa_locked(master, i3cdev->info.static_addr,
++					i3cdev->boardinfo->init_dyn_addr);
++	if (ret)
++		goto err_detach_dev;
+ 
+-	dev->info.dyn_addr = dev->boardinfo->init_dyn_addr;
+-	ret = i3c_master_reattach_i3c_dev(dev, 0);
++	i3cdev->info.dyn_addr = i3cdev->boardinfo->init_dyn_addr;
++	ret = i3c_master_reattach_i3c_dev(i3cdev, 0);
+ 	if (ret)
+ 		goto err_rstdaa;
+ 
+-	ret = i3c_master_retrieve_dev_info(dev);
++	ret = i3c_master_retrieve_dev_info(i3cdev);
+ 	if (ret)
+ 		goto err_rstdaa;
+ 
+-	return;
++	return 0;
+ 
+ err_rstdaa:
+-	i3c_master_rstdaa_locked(master, dev->boardinfo->init_dyn_addr);
++	i3c_master_rstdaa_locked(master, i3cdev->boardinfo->init_dyn_addr);
++err_detach_dev:
++	i3c_master_detach_i3c_dev(i3cdev);
++err_free_dev:
++	i3c_master_free_i3c_dev(i3cdev);
++
++	return ret;
+ }
+ 
+ static void
+@@ -1619,8 +1637,8 @@ static void i3c_master_detach_free_devs(struct i3c_master_controller *master)
+  * This function is following all initialisation steps described in the I3C
+  * specification:
+  *
+- * 1. Attach I2C and statically defined I3C devs to the master so that the
+- *    master can fill its internal device table appropriately
++ * 1. Attach I2C devs to the master so that the master can fill its internal
++ *    device table appropriately
+  *
+  * 2. Call &i3c_master_controller_ops->bus_init() method to initialize
+  *    the master controller. That's usually where the bus mode is selected
+@@ -1632,11 +1650,14 @@ static void i3c_master_detach_free_devs(struct i3c_master_controller *master)
+  *
+  * 4. Disable all slave events.
+  *
+- * 5. Pre-assign dynamic addresses requested by the FW with SETDASA for I3C
+- *    devices that have a static address
++ * 5. Reserve address slots for I3C devices with init_dyn_addr. And if devices
++ *    also have static_addr, try to pre-assign dynamic addresses requested by
++ *    the FW with SETDASA and attach corresponding statically defined I3C
++ *    devices to the master.
+  *
+  * 6. Do a DAA (Dynamic Address Assignment) to assign dynamic addresses to all
+- *    remaining I3C devices
++ *    remaining I3C devices and attach them to the master if the dynamic address
++ *    assignment succeeds
+  *
+  * Once this is done, all I3C and I2C devices should be usable.
+  *
+@@ -1647,7 +1668,6 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
+ 	enum i3c_addr_slot_status status;
+ 	struct i2c_dev_boardinfo *i2cboardinfo;
+ 	struct i3c_dev_boardinfo *i3cboardinfo;
+-	struct i3c_dev_desc *i3cdev;
+ 	struct i2c_dev_desc *i2cdev;
+ 	int ret;
+ 
+@@ -1679,34 +1699,6 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
+ 			goto err_detach_devs;
+ 		}
+ 	}
+-	list_for_each_entry(i3cboardinfo, &master->boardinfo.i3c, node) {
+-		struct i3c_device_info info = {
+-			.static_addr = i3cboardinfo->static_addr,
+-		};
+-
+-		if (i3cboardinfo->init_dyn_addr) {
+-			status = i3c_bus_get_addr_slot_status(&master->bus,
+-						i3cboardinfo->init_dyn_addr);
+-			if (status != I3C_ADDR_SLOT_FREE) {
+-				ret = -EBUSY;
+-				goto err_detach_devs;
+-			}
+-		}
+-
+-		i3cdev = i3c_master_alloc_i3c_dev(master, &info);
+-		if (IS_ERR(i3cdev)) {
+-			ret = PTR_ERR(i3cdev);
+-			goto err_detach_devs;
+-		}
+-
+-		i3cdev->boardinfo = i3cboardinfo;
+-
+-		ret = i3c_master_attach_i3c_dev(master, i3cdev);
+-		if (ret) {
+-			i3c_master_free_i3c_dev(i3cdev);
+-			goto err_detach_devs;
+-		}
+-	}
+ 
+ 	/*
+ 	 * Now execute the controller specific ->bus_init() routine, which
+@@ -1743,11 +1735,43 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
+ 		goto err_bus_cleanup;
+ 
+ 	/*
+-	 * Pre-assign dynamic address and retrieve device information if
+-	 * needed.
++	 * Reserve init_dyn_addr first, and then try to pre-assign dynamic
++	 * address and retrieve device information if needed.
++	 * In case pre-assign dynamic address fails, setting dynamic address to
++	 * the requested init_dyn_addr is retried after DAA is done in
++	 * i3c_master_add_i3c_dev_locked().
+ 	 */
+-	i3c_bus_for_each_i3cdev(&master->bus, i3cdev)
+-		i3c_master_pre_assign_dyn_addr(i3cdev);
++	list_for_each_entry(i3cboardinfo, &master->boardinfo.i3c, node) {
++
++		/*
++		 * We don't reserve a dynamic address for devices that
++		 * don't explicitly request one.
++		 */
++		if (!i3cboardinfo->init_dyn_addr)
++			continue;
++
++		ret = i3c_bus_get_addr_slot_status(&master->bus,
++						   i3cboardinfo->init_dyn_addr);
++		if (ret != I3C_ADDR_SLOT_FREE) {
++			ret = -EBUSY;
++			goto err_rstdaa;
++		}
++
++		i3c_bus_set_addr_slot_status(&master->bus,
++					     i3cboardinfo->init_dyn_addr,
++					     I3C_ADDR_SLOT_I3C_DEV);
++
++		/*
++		 * Only try to create/attach devices that have a static
++		 * address. Other devices will be created/attached when
++		 * DAA happens, and the requested dynamic address will
++		 * be set using SETNEWDA once those devices become
++		 * addressable.
++		 */
++
++		if (i3cboardinfo->static_addr)
++			i3c_master_early_i3c_dev_add(master, i3cboardinfo);
++	}
+ 
+ 	ret = i3c_master_do_daa(master);
+ 	if (ret)
+-- 
+1.7.1
 
-> +
-> +examples:
-> +  - |
-> +    i3c-master@a0000000 {
-> +        compatible = "silvaco,i3c-master";
-> +        clocks = <&zynqmp_clk 71>, <&fclk>, <&sclk>;
-> +        clock-names = "pclk", "fast_clk", "slow_clk";
-> +        interrupt-parent = <&gic>;
-> +        interrupts = <0 89 4>;
-> +        reg = <0xa0000000 0x1000>;
-> +        #address-cells = <1>;
-> +        #size-cells = <0>;
-> +    };
-> -- 
-> 2.20.1
-> 
 
 -- 
 linux-i3c mailing list
