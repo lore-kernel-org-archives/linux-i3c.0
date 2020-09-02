@@ -2,71 +2,85 @@ Return-Path: <SRS0=qFpp=CX=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-5.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-3.5 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id CAA13C433E2
-	for <linux-i3c@archiver.kernel.org>; Mon, 14 Sep 2020 07:02:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id CE7B5C31E51
+	for <linux-i3c@archiver.kernel.org>; Mon, 14 Sep 2020 07:02:57 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 4808021D24
-	for <linux-i3c@archiver.kernel.org>; Mon, 14 Sep 2020 07:02:56 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 663B421548
+	for <linux-i3c@archiver.kernel.org>; Mon, 14 Sep 2020 07:02:57 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="RuRr4Ibv"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4808021D24
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=perches.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="tA132Y2F";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.b="kCY1WNft"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 663B421548
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Date:To:From:
-	Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:In-Reply-To:
+	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qPyUea7UBaHz8r8MbDYjuHt4TsovnCwGhZ5H7AkyaWU=; b=RuRr4Ibvb5qzSAfcCsFnAwnUT
-	HBhn18/U52h2Nv3QJ/dd4Lue3b0x3QOesKJZryeAchLmYyggiIiFVrBEZkSrYg8I07mgT31SPpkBt
-	zbgXYuY/RRNSmoW9i9FpBJvkhx/fOx7yN9bdsquFMqhwQfzPPOyBepK5kyEoVlEGng+fsntQ6kLx2
-	cew8ccL9df6wA1dU4cv1NaYFFqhVa68Y+ocakH+Ez1lEqwW0V6brMxNdZVvOPI8akdcsSXQDKpvIQ
-	STx7CqtdZEDJlBF0OoHjhbgBeiTbV9j1IMmzdq9osexLrs7BsIsGvicZJ2luvdLjNUIM6iP0/OMGD
-	AJ6OaApQw==;
+	 bh=qCRDzxbxiokBS77qm2+z26LNLDZnxU02guShpUY6veA=; b=tA132Y2FTvtwbKIR0q7GajUvg
+	DUxi4OEmEZQoSTlRCGkzi3Nqa5j19CmVCBWyZqAl6eTdBVW58FNO1UnfdPW11vVSd3qsyBGZER0RP
+	iao/thD2NARZpL4fP/sFwisAl+8Gn5/GoXz/YYWMKaXtNpf68SjSemtrVncir3pC4TOxXzmF/XiW1
+	1zpxt6sioe7PbsxQy2oWKzcFgrdvbCQRzPs2sNnAxxwxOc5KON9PWNUR2dggGEWs0Aq1CCwqK2Ym9
+	P7rBAYwHAkrgbTe4OdcEYEaq5HmnAyb7Z/xZjERrhN4NAaEbU0S0H7Rps+V8P3YWwllmsct+DIXu1
+	kBeLJNRWw==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1kHiVr-0007qP-GA
-	for linux-i3c@archiver.kernel.org; Mon, 14 Sep 2020 07:02:55 +0000
-Received: from smtprelay0138.hostedemail.com ([216.40.44.138]
- helo=smtprelay.hostedemail.com)
+	id 1kHiVs-0007r4-Ql
+	for linux-i3c@archiver.kernel.org; Mon, 14 Sep 2020 07:02:56 +0000
+Received: from mail-pg1-x536.google.com ([2607:f8b0:4864:20::536])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1kC7Y6-0005eb-U9; Sat, 29 Aug 2020 20:34:07 +0000
-Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
- [216.40.38.60])
- by smtprelay06.hostedemail.com (Postfix) with ESMTP id 4AD2918225DF6;
- Sat, 29 Aug 2020 20:34:03 +0000 (UTC)
-X-Session-Marker: 6A6F6540706572636865732E636F6D
-X-HE-Tag: head85_181739b27081
-X-Filterd-Recvd-Size: 3499
-Received: from XPS-9350.home (unknown [47.151.133.149])
- (Authenticated sender: joe@perches.com)
- by omf19.hostedemail.com (Postfix) with ESMTPA;
- Sat, 29 Aug 2020 20:33:57 +0000 (UTC)
-Message-ID: <b64a4cb0ee68fee01973616e5ef0f299ac191f6d.camel@perches.com>
-Subject: Re: sysfs output without newlines
-From: Joe Perches <joe@perches.com>
-To: Denis Efremov <efremov@linux.com>, LKML <linux-kernel@vger.kernel.org>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, "Rafael J. Wysocki"
- <rafael@kernel.org>, Kees Cook <keescook@chromium.org>, "Gustavo A . R .
- Silva" <gustavoars@kernel.org>,  Julia Lawall <julia.lawall@inria.fr>, Alex
- Dewar <alex.dewar90@gmail.com>
-Date: Sat, 29 Aug 2020 13:33:56 -0700
-In-Reply-To: <4cd6275c-6e95-3aeb-9924-141f62e00449@linux.com>
+ id 1kDNeW-0006Rp-LI; Wed, 02 Sep 2020 07:57:57 +0000
+Received: by mail-pg1-x536.google.com with SMTP id u13so1216329pgh.1;
+ Wed, 02 Sep 2020 00:57:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=6ELYmotvS/7WaNIEySp1GWwOwqJBOSpN6R4SFzrr8XA=;
+ b=kCY1WNftxa59g7pQcQzobr9ciB9wOWaNqnKSO52/l0Smn1CiQoHA44JtGwSrvijO37
+ ddnNnHzNDZl6Ce9QFexVw3yNsqcRqOsx674uWFRE13CdcDjhCA5Lk9+0JfiJevOkFcrX
+ FIGvtTgx/WbtENsQi0PekUttATxZ8v5CqsCm5BATiPY7uVAOJn4gQnANjjIAf6Ol+BDH
+ CNtP9N38vJ8JgGRLGzcHqWgp09pgA54Z0YdndxgUrzIWEWPWjwLqBInheB2VOJPvympB
+ F73tF/CTuQW/+CTX8MQZtbZCSeLX7HuEwM/aeN9AAPfSTAs28bGug7IGGN9apHahogIS
+ SlZg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=6ELYmotvS/7WaNIEySp1GWwOwqJBOSpN6R4SFzrr8XA=;
+ b=pA0WSL8QzYqU8HjkTQJNYVlgprs6H/or6ZsgViQDZBbnRBIkJrMsHj2a3+EykcaP7P
+ jJg1j/f7/Hzu/4ufndgY5A11Iv5pdrdVbz7zSstn46mAzblMsDUf6JBSpgrU78GRoqSH
+ dPvlJCQMG3hEfnx/TdGLRd9YGtLvwBa+MmQjMsMdvcUbIwU8MGKUcBqDNr3i264HZcRG
+ ml+GQLFTP6UJSPlcOnAMXpmFhglC55QsHWpnroPBXJ0fThi+B7u8wgaJEUY4vYxMQ3l7
+ Nf+pnR60mN3M9zKJ2WOh+OgQeUUK3tmtNL/J6kQPrtcQg34owF6rGipYQzKomu9xv9K7
+ ghLQ==
+X-Gm-Message-State: AOAM530ux2ToMBuLfQrb/esEc27a+2KDYe9vZqX21PnFHchBo6P5H5j0
+ NjIJb1310t8ftrKZGoFgBwYxAq4MZ12HQTuLh6E=
+X-Google-Smtp-Source: ABdhPJzQ/VIkMaj5iyeTmn5mfx7w1ja0eZ6d1BLOZ+87jzlIJ2HQl4rcEVHnLekoUfb87iVSI5xYEVm2r7P3lzJThwA=
+X-Received: by 2002:a63:c543:: with SMTP id g3mr1042950pgd.203.1599033473518; 
+ Wed, 02 Sep 2020 00:57:53 -0700 (PDT)
+MIME-Version: 1.0
 References: <0f837bfb394ac632241eaac3e349b2ba806bce09.camel@perches.com>
  <4cd6275c-6e95-3aeb-9924-141f62e00449@linux.com>
-User-Agent: Evolution 3.36.4-0ubuntu1 
-MIME-Version: 1.0
+ <b64a4cb0ee68fee01973616e5ef0f299ac191f6d.camel@perches.com>
+ <5f0b48e0291b4b54bc1caeb8b5715c65@AcuMS.aculab.com>
+ <20200901172230.531decf6@suzdal.zaitcev.lan>
+In-Reply-To: <20200901172230.531decf6@suzdal.zaitcev.lan>
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+Date: Wed, 2 Sep 2020 10:57:36 +0300
+Message-ID: <CAHp75VekCuRCxg_J1V4Rsfq6LEfkH+EC8WEhFzteGpuR51WpCQ@mail.gmail.com>
+Subject: Re: sysfs output without newlines
+To: Pete Zaitcev <zaitcev@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200829_163406_994083_1CA6C113 
-X-CRM114-Status: GOOD (  16.30  )
+X-CRM114-CacheID: sfid-20200902_035756_731821_D632228E 
+X-CRM114-Status: GOOD (  15.80  )
 X-Mailman-Approved-At: Mon, 14 Sep 2020 03:02:53 -0400
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -79,64 +93,71 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: linux-wireless@vger.kernel.org, Ulf Hansson <ulf.hansson@linaro.org>,
- linux-usb@vger.kernel.org, Madalin Bucur <madalin.bucur@nxp.com>,
- linux-mmc@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- Kai =?ISO-8859-1?Q?M=E4kisara?= <Kai.Makisara@kolumbus.fi>,
- Pete Zaitcev <zaitcev@redhat.com>, linux-i3c@lists.infradead.org,
- Maxim Levitsky <maximlevitsky@gmail.com>, linux-scsi@vger.kernel.org,
- Michal Simek <michal.simek@xilinx.com>, linux-arm-kernel@lists.infradead.org,
- Jakub Kicinski <kuba@kernel.org>, York Sun <york.sun@nxp.com>,
- Stanislav Yakovlev <stas.yakovlev@gmail.com>,
- platform-driver-x86@vger.kernel.org, Robert Richter <rric@kernel.org>,
- Alex Dubov <oakad@yahoo.com>, "James E.J.
- Bottomley" <jejb@linux.ibm.com>, Mark Brown <broonie@kernel.org>,
+Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>,
+ Ulf Hansson <ulf.hansson@linaro.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ =?UTF-8?Q?Kai_M=C3=A4kisara?= <Kai.Makisara@kolumbus.fi>,
+ "Gustavo A . R . Silva" <gustavoars@kernel.org>,
+ "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
+ Maxim Levitsky <maximlevitsky@gmail.com>,
+ "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
+ Madalin Bucur <madalin.bucur@nxp.com>, Michal Simek <michal.simek@xilinx.com>,
+ Alex Dewar <alex.dewar90@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Jakub Kicinski <kuba@kernel.org>, Tomas Winkler <tomas.winkler@intel.com>,
+ Arnd Bergmann <arnd@arndb.de>,
+ "platform-driver-x86@vger.kernel.org" <platform-driver-x86@vger.kernel.org>,
+ Robert Richter <rric@kernel.org>, Kees Cook <keescook@chromium.org>,
+ Alex Dubov <oakad@yahoo.com>, "James E.J. Bottomley" <jejb@linux.ibm.com>,
+ Denis Efremov <efremov@linux.com>, Mark Brown <broonie@kernel.org>,
  Borislav Petkov <bp@alien8.de>, Darren Hart <dvhart@infradead.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Tomas Winkler <tomas.winkler@intel.com>, Kalle Valo <kvalo@codeaurora.org>,
- linux-edac@vger.kernel.org, Tony Luck <tony.luck@intel.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, York Sun <york.sun@nxp.com>,
+ Kalle Valo <kvalo@codeaurora.org>,
+ "linux-edac@vger.kernel.org" <linux-edac@vger.kernel.org>,
+ Tony Luck <tony.luck@intel.com>,
  "Martin K. Petersen" <martin.petersen@oracle.com>,
- Boris Brezillon <bbrezillon@kernel.org>, netdev@vger.kernel.org,
+ Boris Brezillon <bbrezillon@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Oliver Neukum <oneukum@suse.com>, Douglas Miller <dougmill@linux.ibm.com>,
- linux-spi@vger.kernel.org, James Morse <james.morse@arm.com>,
- "David S. Miller" <davem@davemloft.net>, Andy Shevchenko <andy@infradead.org>
+ LKML <linux-kernel@vger.kernel.org>,
+ "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
+ Julia Lawall <julia.lawall@inria.fr>, David Laight <David.Laight@aculab.com>,
+ James Morse <james.morse@arm.com>,
+ Stanislav Yakovlev <stas.yakovlev@gmail.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Joe Perches <joe@perches.com>, "David S. Miller" <davem@davemloft.net>,
+ Andy Shevchenko <andy@infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Sat, 2020-08-29 at 23:23 +0300, Denis Efremov wrote:
-> Hi,
-> 
-> On 8/29/20 9:23 PM, Joe Perches wrote:
-> > While doing an investigation for a possible treewide conversion of
-> > sysfs output using sprintf/snprintf/scnprintf, I discovered
-> > several instances of sysfs output without terminating newlines.
-> > 
-> > It seems likely all of these should have newline terminations
-> > or have the \n\r termination changed to a single newline.
-> 
-> I think that it could break badly written scripts in rare cases.
+On Wed, Sep 2, 2020 at 1:24 AM Pete Zaitcev <zaitcev@redhat.com> wrote:
+>
+> On Tue, 1 Sep 2020 09:07:42 +0000
+> David Laight <David.Laight@ACULAB.COM> wrote:
+>
+> > The shell will remove trailing '\n' (but not '\r') from:
+> >       foo=$(cat bar)
+> > So shell scripts are unlikely to be affected.
+>
+> Surprisingly enough, Python is okay with this:
+>
+>     with open("/proc/sys/net/ipv4/ip_forward",'r') as fp:
+>         print(int(fp.read()))
+>
+> Nonetheless, I would rather no add those newlines. I saw enough
+> weird software that is sensitive where it's should not bee.
 
-Maybe.
+There are still a lot of scripts in PHP and Perl. Besides that I think
+the many users of such files are in clouds, means Go should be checked
+even before these.
 
-Is sysfs output a nominally unchangeable api like seq_?
-Dunno.  seq_ output is extended all the time.
-
-I think whitespace isn't generally considered part of
-sscanf type input content awareness.
-
-> > Anyone have any objection to patches adding newlines to these
-> > in their original forms using sprintf/snprintf/scnprintf?
-> 
-> I'm not sure about existing cases, but I think it's a good
-> checkpatch.pl warning for new patches. It should be 
-> possible to check sysfs_emit() calls.
-
-Eventually, yes.
-
-cheers, Joe
-
+-- 
+With Best Regards,
+Andy Shevchenko
 
 -- 
 linux-i3c mailing list
