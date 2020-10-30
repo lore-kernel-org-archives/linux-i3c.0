@@ -1,4 +1,4 @@
-Return-Path: <SRS0=k7kV=EK=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=u14M=EJ=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
@@ -7,80 +7,111 @@ X-Spam-Status: No, score=-9.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	MAILING_LIST_MULTI,SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
 	autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 2820FC2D0A3
-	for <linux-i3c@archiver.kernel.org>; Wed,  4 Nov 2020 19:28:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 7AD83C55178
+	for <linux-i3c@archiver.kernel.org>; Tue,  3 Nov 2020 18:06:58 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 86DDF205ED
-	for <linux-i3c@archiver.kernel.org>; Wed,  4 Nov 2020 19:28:31 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id B81A2207BB
+	for <linux-i3c@archiver.kernel.org>; Tue,  3 Nov 2020 18:06:57 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="0Sl/kelU";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=pobox.com header.i=@pobox.com header.b="ZZ4iPSoI";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=fluxnic.net header.i=@fluxnic.net header.b="o+YUSEP9"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 86DDF205ED
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=fluxnic.net
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="NzXUCQ21";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=ibm.com header.i=@ibm.com header.b="ASUzYsr9"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org B81A2207BB
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linux.ibm.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:In-Reply-To:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=y5GrAPIEwCjGOsd6xcxsqt/5BCq7SnUXrAjmUGSL298=; b=0Sl/kelUY1cDCwZBSABmKiqUE
-	0AnXBUfGbAU3Wni6yEvpyZfxot7ElT1dBKhFGr94FEUglMdPOurrLk3hRnZFk9P+P8uoS9xYPnMfY
-	ZotFLkprToJ5pPp/P269d1TuCwkfcaGL4H2KXW3ddYMHrZWRy9g4KR4O6VSZnXfchq+FlBDCcRl1r
-	aqa2AdY5kSMbz2ATywZfzqoN9kUxGTKSkaw3cZFZpV0wRLrUfjFpR1TayGmErTbS2/ncjWWiIj4g+
-	iCxdqOsAE7dWIzcy/SB+HK+SkZckBNT7gGlLFdHjEkFpNdv9AXMesMGdLKV7JtTUAf8PEwIgTsSQr
-	0WyQMUDVA==;
+	 bh=MSSam4UaCRdn4RXeOvJoQDsfiMwP0oBDuAsyLr994G4=; b=NzXUCQ218/xh75ESa9GsQDW3N
+	Nis+Srw83kp6kCfJps3xdO2guAaRpyNrj8tuXAHOCYows9JTf4fH6slPYyQpj8E0YJ1ZLl6+nN0OI
+	+tZpO6OTd5tGPifBK/OEbZzu2KwB3ndXkbXxOCsWjA36lsKwXHeuh+B09Uqgsa0uvGG9Dq6hGRQ1g
+	RXvD/R2TYUtWAxALCEkmx/DrM7JLNSlBdjcURAD9SKbj2kijJx9t8yHlRA3mgR+irAF1p/qb6fWgF
+	w2KCrPRVIFqaN9JjXsuk2fs92xFheNmjWIMLcgo0EmVVBgQldlnlc9fy9++y8PEIrwvHA7Wc39uoR
+	agpna6TPA==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1kaOSL-0008LJ-Th; Wed, 04 Nov 2020 19:28:29 +0000
-Received: from pb-smtp2.pobox.com ([64.147.108.71])
+	id 1ka0hp-0000Nr-VT; Tue, 03 Nov 2020 18:06:54 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1kaOSJ-0008KX-BA
- for linux-i3c@lists.infradead.org; Wed, 04 Nov 2020 19:28:29 +0000
-Received: from pb-smtp2.pobox.com (unknown [127.0.0.1])
- by pb-smtp2.pobox.com (Postfix) with ESMTP id 18CB9A2DAA;
- Wed,  4 Nov 2020 14:28:24 -0500 (EST)
- (envelope-from nico@fluxnic.net)
-DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=pobox.com; h=date:from:to
- :cc:subject:in-reply-to:message-id:references:mime-version
- :content-type; s=sasl; bh=G+dk0mBlfkCULTNUZaRBFLqVdz4=; b=ZZ4iPS
- oIWsAm4utT8EGv4vgwBE0vIBH8xTWR11q/DF9j3WKgfzyGFjQc9gh8QIB2BjRJni
- BkFhrX+nQY4dWfLmuPJ8HpQTSrPgdeAEwCz3AKJj27JWI3q8bV1IYywOoaO6jSbC
- 62ai295OBkwY7X6BkNjC59+NQD5LLUtatEUvs=
-Received: from pb-smtp2.nyi.icgroup.com (unknown [127.0.0.1])
- by pb-smtp2.pobox.com (Postfix) with ESMTP id 0D041A2DA9;
- Wed,  4 Nov 2020 14:28:24 -0500 (EST)
- (envelope-from nico@fluxnic.net)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; d=fluxnic.net;
- h=date:from:to:cc:subject:in-reply-to:message-id:references:mime-version:content-type;
- s=2016-12.pbsmtp; bh=TNrDFyivsmri7uxFpYE9s+Jf/mb+dymkKvwe4ozyex0=;
- b=o+YUSEP9eVgNrVApMFASY1LNtDsROLdOnNB/PwKAboWUVwa1XVIuMwTMsMKxQaHfP47kCMrIiUXuhRQgs9VGs7oYRiVaEV3bUVIznAIN/xk3itfSmuQJfEZSQh16vubYjHLPGicB3YvhiaJtvc8fdat3DNqeJd/NhlMY5jgoTAs=
-Received: from yoda.home (unknown [24.203.50.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by pb-smtp2.pobox.com (Postfix) with ESMTPSA id 66D10A2DA8;
- Wed,  4 Nov 2020 14:28:23 -0500 (EST)
- (envelope-from nico@fluxnic.net)
-Received: from xanadu.home (xanadu.home [192.168.2.2])
- by yoda.home (Postfix) with ESMTPSA id 4B1AE2DA0AC8;
- Wed,  4 Nov 2020 14:28:22 -0500 (EST)
-Date: Wed, 4 Nov 2020 14:28:22 -0500 (EST)
-From: Nicolas Pitre <nico@fluxnic.net>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v3 1/2] dt-bindings: i3c: MIPI I3C Host Controller
- Interface
-In-Reply-To: <20201104183459.GA3917393@bogus>
-Message-ID: <nycvar.YSQ.7.78.906.2011041420420.2184@knanqh.ubzr>
-References: <20201102222220.1785859-1-nico@fluxnic.net>
- <20201102222220.1785859-2-nico@fluxnic.net> <20201104183459.GA3917393@bogus>
+ id 1kYNz7-0007cH-NQ; Fri, 30 Oct 2020 06:34:02 +0000
+Received: from pps.filterd (m0098404.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 09U6XMCn186747; Fri, 30 Oct 2020 02:33:46 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ibm.com;
+ h=from : to : cc : subject
+ : in-reply-to : references : date : message-id : mime-version :
+ content-type; s=pp1; bh=a5fAtWaCtw2lw0dSgLdjA+CSR8i93E5P4UH6V5O3U0U=;
+ b=ASUzYsr9w5PpIlo1FB1Ujvp4AT5YXH/OUre7Gkp3TDu90qGcpRmvyPjU0AUUYnRxmqG0
+ 7vmmN2sP3M7cVc/O+Rda3iOTvpOVji7shv3DHKfGIdcDJXRZZuSMGr6NLUnJbjG+tBFp
+ Juc6oDm95+h5SspcMspge/3HT+LWaYZ9I0uL4oB9nGfzicRJ6Wsfl7zvItlgDNcyTWt4
+ nnY2QLVyYwMf//UzG7l+fzLLAO4V6HLrUQRGqTEM11EUfSLTfK3Sys6tWbG+1CfiTrPZ
+ D3H7tFAQ317lT4utCRZMHCVhNuIYSoO8jmtflcv4DnHKDeKyWHhyzdUDndjk605C6MTD VA== 
+Received: from pps.reinject (localhost [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 34fww7sga3-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 30 Oct 2020 02:33:46 -0400
+Received: from m0098404.ppops.net (m0098404.ppops.net [127.0.0.1])
+ by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 09U6XjOW191034;
+ Fri, 30 Oct 2020 02:33:45 -0400
+Received: from ppma04fra.de.ibm.com (6a.4a.5195.ip4.static.sl-reverse.com
+ [149.81.74.106])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 34fww7sg85-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 30 Oct 2020 02:33:45 -0400
+Received: from pps.filterd (ppma04fra.de.ibm.com [127.0.0.1])
+ by ppma04fra.de.ibm.com (8.16.0.42/8.16.0.42) with SMTP id 09U6O1Zv017390;
+ Fri, 30 Oct 2020 06:33:41 GMT
+Received: from b06avi18626390.portsmouth.uk.ibm.com
+ (b06avi18626390.portsmouth.uk.ibm.com [9.149.26.192])
+ by ppma04fra.de.ibm.com with ESMTP id 34f7s3s051-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 30 Oct 2020 06:33:41 +0000
+Received: from d06av26.portsmouth.uk.ibm.com (d06av26.portsmouth.uk.ibm.com
+ [9.149.105.62])
+ by b06avi18626390.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP
+ id 09U6Xc8235455466
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 30 Oct 2020 06:33:38 GMT
+Received: from d06av26.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id EA5E7AE04D;
+ Fri, 30 Oct 2020 06:33:37 +0000 (GMT)
+Received: from d06av26.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id EF445AE055;
+ Fri, 30 Oct 2020 06:33:04 +0000 (GMT)
+Received: from vajain21.in.ibm.com (unknown [9.79.209.23])
+ by d06av26.portsmouth.uk.ibm.com (Postfix) with SMTP;
+ Fri, 30 Oct 2020 06:33:04 +0000 (GMT)
+Received: by vajain21.in.ibm.com (sSMTP sendmail emulation);
+ Fri, 30 Oct 2020 12:03:03 +0530
+From: Vaibhav Jain <vaibhav@linux.ibm.com>
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>, Linux Doc Mailing
+ List <linux-doc@vger.kernel.org>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>
+Subject: Re: [PATCH 30/33] docs: ABI: cleanup several ABI documents
+In-Reply-To: <95ef2cf3a58f4e50f17d9e58e0d9440ad14d0427.1603893146.git.mchehab+huawei@kernel.org>
+References: <cover.1603893146.git.mchehab+huawei@kernel.org>
+ <95ef2cf3a58f4e50f17d9e58e0d9440ad14d0427.1603893146.git.mchehab+huawei@kernel.org>
+Date: Fri, 30 Oct 2020 12:03:03 +0530
+Message-ID: <87k0v8jk9s.fsf@vajain21.in.ibm.com>
 MIME-Version: 1.0
-X-Pobox-Relay-ID: E76BBFC2-1ED3-11EB-BEA4-74DE23BA3BAF-78420484!pb-smtp2.pobox.com
+X-TM-AS-GCONF: 00
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.312, 18.0.737
+ definitions=2020-10-29_12:2020-10-29,
+ 2020-10-29 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ suspectscore=2 spamscore=0
+ clxscore=1011 mlxscore=0 priorityscore=1501 phishscore=0 adultscore=0
+ malwarescore=0 mlxlogscore=999 bulkscore=0 lowpriorityscore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2009150000 definitions=main-2010300048
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201104_142827_417556_0EE57CD5 
-X-CRM114-Status: GOOD (  21.28  )
+X-CRM114-CacheID: sfid-20201030_023401_892010_D5165A21 
+X-CRM114-Status: GOOD (  24.25  )
+X-Mailman-Approved-At: Tue, 03 Nov 2020 13:06:49 -0500
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,109 +123,108 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Robert Gough <robert.gough@intel.com>,
- Laura Nixon <laura.nixon@team.mipi.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Sakari Ailus <sakari.ailus@iki.fi>, Miquel Raynal <miquel.raynal@bootlin.com>,
- Matthew Schnoor <matthew.schnoor@intel.com>, linux-i3c@lists.infradead.org
+Cc: Andrew Lunn <andrew@lunn.ch>, Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
+ Peter Chen <peter.chen@nxp.com>, Linus Walleij <linus.walleij@linaro.org>,
+ Jerry Snitselaar <jsnitsel@redhat.com>, dri-devel@lists.freedesktop.org,
+ "Barrat <fbarrat"@linux.ibm.com,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Pavel Machek <pavel@ucw.cz>, Hanjun Guo <guohanjun@huawei.com>,
+ Christian Gromm <christian.gromm@microchip.com>,
+ Oleh Kravchenko <oleg@kaa.org.ua>, Thomas Gleixner <tglx@linutronix.de>,
+ Kan Liang <kan.liang@linux.intel.com>, Frederic@d06av26.portsmouth.uk.ibm.com,
+ Lars-Peter Clausen <lars@metafoo.de>, Bart Van Assche <bvanassche@acm.org>,
+ Saravana Kannan <saravanak@google.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>,
+ Anton Vorontsov <anton@enomsg.org>,
+ Marek =?utf-8?Q?Marczykowski-G=C3=B3r?= =?utf-8?Q?ecki?=
+ <marmarek@invisiblethingslab.com>, linux-stm32@st-md-mailman.stormreply.com,
+ linux-acpi@vger.kernel.org, Danil Kipnis <danil.kipnis@cloud.ionos.com>,
+ Samuel Thibault <samuel.thibault@ens-lyon.org>,
+ Guenter Roeck <linux@roeck-us.net>, Wu Hao <hao.wu@intel.com>,
+ Ohad Ben-Cohen <ohad@wizery.com>, Alexandre Torgue <alexandre.torgue@st.com>,
+ Michael Hennerich <Michael.Hennerich@analog.com>, linux-pm@vger.kernel.org,
+ coresight@lists.linaro.org, linux-media@vger.kernel.org,
+ Simon Gaiser <simon@invisiblethingslab.com>, Avri Altman <avri.altman@wdc.com>,
+ Dan Murphy <dmurphy@ti.com>, ceph-devel@vger.kernel.org,
+ Stefan Achatz <erazor_de@users.sourceforge.net>,
+ Konstantin Khlebnikov <koct9i@gmail.com>,
+ Andy Shevchenko <andriy.shevchenko@intel.com>,
+ Alexander Antonov <alexander.antonov@linux.intel.com>,
+ Mathieu Malaterre <malat@debian.org>, Jingoo Han <jingoohan1@gmail.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>,
+ Andrew Morton <akpm@linux-foundation.org>, Len Brown <lenb@kernel.org>,
+ Mimi Zohar <zohar@linux.ibm.com>, Suzuki K Poulose <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, 4 Nov 2020, Rob Herring wrote:
+Mauro Carvalho Chehab <mchehab+huawei@kernel.org> writes:
 
-> On Mon, Nov 02, 2020 at 05:22:19PM -0500, Nicolas Pitre wrote:
-> > From: Nicolas Pitre <npitre@baylibre.com>
-> > 
-> > The MIPI I3C HCI (Host Controller Interface) specification defines
-> > a common software driver interface to support compliant MIPI I3C
-> > host controller hardware implementations from multiple vendors.
-> > 
-> > All that is needed is an I/O area and an interrupt signal;. The hardware
-> > is self-advertising wrt its implementor and implemented capabilities so
-> > there is currently no details that the driver can't figure out on its own.
-> > 
-> > Signed-off-by: Nicolas Pitre <npitre@baylibre.com>
-> > ---
-> >  .../devicetree/bindings/i3c/mipi-i3c-hci.yaml | 45 +++++++++++++++++++
-> >  1 file changed, 45 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/i3c/mipi-i3c-hci.yaml
-> 
-> With additionalProperties added,
-> 
-> Reviewed-by: Rob Herring <robh@kernel.org>
+> There are some ABI documents that, while they don't generate
+> any warnings, they have issues when parsed by get_abi.pl script
+> on its output result.
+>
+> Address them, in order to provide a clean output.
+>
+> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
 
-Thanks. Fixed patch below.
+<snip>
+> diff --git a/Documentation/ABI/testing/sysfs-bus-papr-pmem b/Documentation/ABI/testing/sysfs-bus-papr-pmem
+> index c1a67275c43f..8316c33862a0 100644
+> --- a/Documentation/ABI/testing/sysfs-bus-papr-pmem
+> +++ b/Documentation/ABI/testing/sysfs-bus-papr-pmem
+> @@ -11,19 +11,26 @@ Description:
+>  		at 'Documentation/powerpc/papr_hcalls.rst' . Below are
+>  		the flags reported in this sysfs file:
+>  
+> -		* "not_armed"	: Indicates that NVDIMM contents will not
+> +		* "not_armed"
+> +				  Indicates that NVDIMM contents will not
+>  				  survive a power cycle.
+> -		* "flush_fail"	: Indicates that NVDIMM contents
+> +		* "flush_fail"
+> +				  Indicates that NVDIMM contents
+>  				  couldn't be flushed during last
+>  				  shut-down event.
+> -		* "restore_fail": Indicates that NVDIMM contents
+> +		* "restore_fail"
+> +				  Indicates that NVDIMM contents
+>  				  couldn't be restored during NVDIMM
+>  				  initialization.
+> -		* "encrypted"	: NVDIMM contents are encrypted.
+> -		* "smart_notify": There is health event for the NVDIMM.
+> -		* "scrubbed"	: Indicating that contents of the
+> +		* "encrypted"
+> +				  NVDIMM contents are encrypted.
+> +		* "smart_notify"
+> +				  There is health event for the NVDIMM.
+> +		* "scrubbed"
+> +				  Indicating that contents of the
+>  				  NVDIMM have been scrubbed.
+> -		* "locked"	: Indicating that NVDIMM contents cant
+> +		* "locked"
+> +				  Indicating that NVDIMM contents cant
+>  				  be modified until next power cycle.
+>  
+>  What:		/sys/bus/nd/devices/nmemX/papr/perf_stats
+> @@ -51,4 +58,4 @@ Description:
+>  		* "MedWDur " : Media Write Duration
+>  		* "CchRHCnt" : Cache Read Hit Count
+>  		* "CchWHCnt" : Cache Write Hit Count
+> -		* "FastWCnt" : Fast Write Count
+> \ No newline at end of file
+> +		* "FastWCnt" : Fast Write Count
+<snip>
 
------ >8
-From: Nicolas Pitre <npitre@baylibre.com>
-Subject: [PATCH] dt-bindings: i3c: MIPI I3C Host Controller Interface
+Thanks,
 
-The MIPI I3C HCI (Host Controller Interface) specification defines
-a common software driver interface to support compliant MIPI I3C
-host controller hardware implementations from multiple vendors.
+I am fine with proposed changes to sysfs-bus-papr-pmem.
 
-All that is needed is an I/O area and an interrupt signal;. The hardware
-is self-advertising wrt its implementor and implemented capabilities so
-there is currently no details that the driver can't figure out on its own.
+Acked-by: Vaibhav Jain <vaibhav@linux.ibm.com> # for sysfs-bus-papr-pmem
 
-Signed-off-by: Nicolas Pitre <npitre@baylibre.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
-
-diff --git a/Documentation/devicetree/bindings/i3c/mipi-i3c-hci.yaml b/Documentation/devicetree/bindings/i3c/mipi-i3c-hci.yaml
-new file mode 100644
-index 0000000000..07a7b10163
---- /dev/null
-+++ b/Documentation/devicetree/bindings/i3c/mipi-i3c-hci.yaml
-@@ -0,0 +1,47 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: "http://devicetree.org/schemas/i3c/mipi-i3c-hci.yaml#"
-+$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-+
-+title: MIPI I3C HCI Device Tree Bindings
-+
-+maintainers:
-+  - Nicolas Pitre <npitre@baylibre.com>
-+
-+description: |
-+  MIPI I3C Host Controller Interface
-+
-+  The MIPI I3C HCI (Host Controller Interface) specification defines
-+  a common software driver interface to support compliant MIPI I3C
-+  host controller hardware implementations from multiple vendors.
-+
-+  The hardware is self-advertising for differences in implementation
-+  capabilities, including the spec version it is based on, so there
-+  isn't much to describe here (yet).
-+
-+  For details, please see:
-+  https://www.mipi.org/specifications/i3c-hci
-+
-+properties:
-+  compatible:
-+    const: mipi-i3c-hci
-+  reg:
-+    maxItems: 1
-+  interrupts:
-+    maxItems: 1
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    i3c@a0000000 {
-+      compatible = "mipi-i3c-hci";
-+      reg = <0xa0000000 0x2000>;
-+      interrupts = <89>;
-+    };
 
 -- 
 linux-i3c mailing list
