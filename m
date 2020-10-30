@@ -2,23 +2,23 @@ Return-Path: <SRS0=u14M=EJ=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-6.5 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SIGNED_OFF_BY,SPF_HELO_NONE,
-	SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-6.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	SIGNED_OFF_BY,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E156EC61DD8
-	for <linux-i3c@archiver.kernel.org>; Tue,  3 Nov 2020 18:07:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 8B23AC63697
+	for <linux-i3c@archiver.kernel.org>; Tue,  3 Nov 2020 18:07:06 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 7056A20757
-	for <linux-i3c@archiver.kernel.org>; Tue,  3 Nov 2020 18:07:05 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 215FF20757
+	for <linux-i3c@archiver.kernel.org>; Tue,  3 Nov 2020 18:07:06 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="KGJ4Lw3U";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.b="frLzaxmw"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 7056A20757
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="I4ET15zn";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=linaro.org header.i=@linaro.org header.b="INVfZz/f"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 215FF20757
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
@@ -26,57 +26,58 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:In-Reply-To:
 	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=uOZGmBXrnBlYUDwHxleDrKnE/xvAQ6ZHQilc54oKEOU=; b=KGJ4Lw3UDqqH+xAE1hhfriPRT
-	HyVlZ+4N1BLWnqxEuprhtFPRlQNjoNiRMqFjuZ9kAvK0LFkBY5v8iD05nz/8SboRlpwOTJOGrxySW
-	x5U6q+PPDqyO2pzC7eznbQcTmAy1WspVH6npNgYyuN72lDTPdv0JfV6M4kYYK8th91Vm87X8xmWc9
-	KRS7N53ZPm660wJ9bJUcUD0d2MfUSsLT9kBN+U71t27YUZHT0m2eA46cab8pyKropq7Z8ixrETFnZ
-	tKYZi3+g/ImBfToyu437oyNr0i210VavVgt66HETqM/GxoCyzr7Vpvn6YMWX7W5H7wZKZTPGm7klz
-	aC+dDSrQw==;
+	 bh=UM6xFJDj5EDrxMuHdza1IiPet3Im7xQN5glHwPgBhI8=; b=I4ET15znKvRd+QyBY8h89Zq+p
+	taIVnQugwnSTwHV/5nhBmbdZOXV3RE/WBspiUvuHX+RUtIrT2MBz9+xQpzgG/NPm1Ca4+kVb5l8Kg
+	uRek5CC9r25BHseXwvjzu/Fvmh4GMycyNfW9BvSP8nEFgku1bRy2+UkDSP9YtK9RXkdi3nZV1Dn65
+	c77XU3ZUReRHtBfT5EDUy//Mu9SqOsIHTr89QTYJtqcKAnlc6a+rZjXnoVKpl9yfOQY/2rGB55G3a
+	K8spSgpk4f5xOoqVZ2XnzjQe7K9joBqhlW4wprwBUcviGleLWbhF13DiGKWzWVahDm7xtvMzdp1ZZ
+	hhX+rqpEQ==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ka0hz-0000Rq-0z; Tue, 03 Nov 2020 18:07:03 +0000
-Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1ka0hz-0000SU-Mg; Tue, 03 Nov 2020 18:07:03 +0000
+Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1kYSK6-0005sl-Jq; Fri, 30 Oct 2020 11:11:59 +0000
-Received: by mail-il1-x141.google.com with SMTP id g7so6122403ilr.12;
- Fri, 30 Oct 2020 04:11:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ id 1kYXUY-0005Ky-DO
+ for linux-i3c@lists.infradead.org; Fri, 30 Oct 2020 16:43:09 +0000
+Received: by mail-il1-x143.google.com with SMTP id p10so7061764ile.3
+ for <linux-i3c@lists.infradead.org>; Fri, 30 Oct 2020 09:43:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ZV0ThIiPZfP1J2R9nyVt8QkuejC8cSVT80sCSgcOxz0=;
- b=frLzaxmwhGcVkXjbtKiS94LkaEgTCIqs5lcLgp7qud2oXWRlC0QKI3bu8As+Qe/3+/
- YswYlbhwudFEROgXLO0RidFvUATOBI7jk1lDLjY+whOmmq9Wr466RzZ5uuDqGV3FbAQG
- l5ts/Dwn0MzkC2R6n6o7hulkK9e/L4r9462cvEbQnmU+Vp4izCFhUSz5rYUeyvvecom/
- skR+qlhyOuiRDMt/6fAEhtpRAkvua7TqwnEmsCShc8NHMqgmHLM3NnLpiiyehNei+OWa
- WZsv0NfFfxPPWvhOiranGCdFjTSZKT7qkP3ITLJ8wRX/70+d0XR4v07v323ob3Nx/pYz
- m4IQ==
+ :cc; bh=NZmqGfCg08N6iXx9q7TVWlSnhQqIDOwOjzOwbvXDxjI=;
+ b=INVfZz/fkvsZivy8jdRFY4jjuumPUnT03fIMmAZxhr2j3OQtTxmqWeMui9FFLMvZFz
+ QB2ePhBsJkuNysGjMHbU9DiLLxlLmss4JFzjBmUNAkJoiiGzYBFH/upOKm0AUQMizu+W
+ okAB9PgkVOM5lyq7RfM3eZWziu4Lw6xFmIPsA3WEdWrepzCLkMsPGFysW4PIdG4Ix46W
+ ABDHiqA089OjzR7YGXqWWnY73UPmGi5ssu5dObic6I8EipSHtDNSFTIEabkYZFtOUw53
+ gKZFvyCe8mIA4cQPQ5Ji/NguzzOPrnGBpJ5jXdtWnz2BLO+k8PETRjkg1JznRZelvTOY
+ uyUg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=ZV0ThIiPZfP1J2R9nyVt8QkuejC8cSVT80sCSgcOxz0=;
- b=J5eN3lFtEW2scCvsF88iUjO8inm1sG/x508VfAH1gshKhZVyZJhTzjVSdMcW7GZ9s1
- ogMzSnZthioCRb6D3D78TzP797EXfchonJrLb5RRFix5/6h7eW1KBX01w65+Z28eAxFw
- KvaEQXdetYtQu6YqwVgp4y7sXDPBW9Sop+D2i84m5OYEJEcgJXF7uXZQMKJGWT/mdzDt
- 3VONqTRerIFbcr9+exgkaKqDb6AUvR0/qu1Tt5iQ0SXlxkGGnqRj36rflDhkZD9uIwoE
- ueug+/kSq8yYYqp7gdkV5sbJ03S0fAMZFNhtTVLDHIq3KPXYndzLTveoNCTVYOVEeF7e
- jG8g==
-X-Gm-Message-State: AOAM532KOtQLnZJPFBYHWE0Hme3s/ufBkflx9jlZdHeszrDs06lF3V1t
- QqgYVHeyZYUnfjWhT/lYVkaLgOF+zUng6VSEGyY=
-X-Google-Smtp-Source: ABdhPJzTddVFvGcRMfdnfgtj3RhHYeI8lzSbPQsDbDZuu+e8Z0f5KxtsaoxhCUlFTZHA3Ubj6PmYhDwWjpnLL1nJZe4=
-X-Received: by 2002:a92:4442:: with SMTP id a2mr1368452ilm.220.1604056315371; 
- Fri, 30 Oct 2020 04:11:55 -0700 (PDT)
+ bh=NZmqGfCg08N6iXx9q7TVWlSnhQqIDOwOjzOwbvXDxjI=;
+ b=kV/19VHaFdLGvveN9pazImJSijnws164ahZFcLTYZ7X1mi+tnxdvzYCLb4pWSTFaAb
+ Q5VYA5fnsXVKBRcE7NdPsbVfLGa86byNYTc++pmUcvt2FxfgDSHMuwi1vPIv3uUv2qF1
+ qHQG2qmxeBrP5swzc/BYK3pp2DIyfsvbNG5eUE157oFQw2HtXpqwx+HPeV1f2ePKVnGX
+ ZmmqXYv7X85DfZaVwsav1vJdPx0k+bAhUImA305VoevYjL8RE5MWXNcthk88Lyo/eHM4
+ uybFGGZ7vGNAANNEWihfrsw/p92gV9ctAAGa/5hKo8wpZEXRBXuIvjuttVIm2u0FbImh
+ qwtw==
+X-Gm-Message-State: AOAM531jMM/WlFp9voKdAXCErfQ3mW8GmVy22mM+E9cRSdmq0oIT2Ud4
+ 2xPgen7ii6lucNdac7Vpcp7rEQbfShvpbDoW5g3qsg==
+X-Google-Smtp-Source: ABdhPJwYf7SWuKIRh8xsBOBodbVLmuU+KCM1QaVpZsez95JZOYKTbDYung3PLxm+lfmttII+vBXdnzsUUs8NHjrseg0=
+X-Received: by 2002:a92:6403:: with SMTP id y3mr2528711ilb.72.1604076184121;
+ Fri, 30 Oct 2020 09:43:04 -0700 (PDT)
 MIME-Version: 1.0
 References: <cover.1604042072.git.mchehab+huawei@kernel.org>
  <5bc78e5b68ed1e9e39135173857cb2e753be868f.1604042072.git.mchehab+huawei@kernel.org>
 In-Reply-To: <5bc78e5b68ed1e9e39135173857cb2e753be868f.1604042072.git.mchehab+huawei@kernel.org>
-From: Ilya Dryomov <idryomov@gmail.com>
-Date: Fri, 30 Oct 2020 12:11:54 +0100
-Message-ID: <CAOi1vP-gKLw7shFy5rUeH6Z14hr_B9fW0epaRyuw45tg4EuCcQ@mail.gmail.com>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Fri, 30 Oct 2020 10:42:53 -0600
+Message-ID: <CANLsYkxc2uzA57Hg5OX31JOx08JCZfynzebjABv=6H01796xGA@mail.gmail.com>
 Subject: Re: [PATCH v2 31/39] docs: ABI: cleanup several ABI documents
 To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201030_071158_669840_B235EAB6 
-X-CRM114-Status: GOOD (  14.81  )
+X-CRM114-CacheID: sfid-20201030_124306_840443_FB3B7E1E 
+X-CRM114-Status: GOOD (  14.39  )
 X-Mailman-Approved-At: Tue, 03 Nov 2020 13:06:49 -0500
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -93,9 +94,9 @@ Cc: Andrew Lunn <andrew@lunn.ch>, Peter Chen <peter.chen@nxp.com>,
  Linus Walleij <linus.walleij@linaro.org>,
  Jerry Snitselaar <jsnitsel@redhat.com>, dri-devel@lists.freedesktop.org,
  Pavel Machek <pavel@ucw.cz>, Christian Gromm <christian.gromm@microchip.com>,
- Ceph Development <ceph-devel@vger.kernel.org>,
- Bart Van Assche <bvanassche@acm.org>, Michael Ellerman <mpe@ellerman.id.au>,
- linux-acpi@vger.kernel.org, Danil Kipnis <danil.kipnis@cloud.ionos.com>,
+ ceph-devel@vger.kernel.org, Bart Van Assche <bvanassche@acm.org>,
+ Michael Ellerman <mpe@ellerman.id.au>, linux-acpi@vger.kernel.org,
+ Danil Kipnis <danil.kipnis@cloud.ionos.com>,
  Samuel Thibault <samuel.thibault@ens-lyon.org>,
  Guenter Roeck <linux@roeck-us.net>, Ohad Ben-Cohen <ohad@wizery.com>,
  linux-pm@vger.kernel.org,
@@ -103,7 +104,8 @@ Cc: Andrew Lunn <andrew@lunn.ch>, Peter Chen <peter.chen@nxp.com>,
  Dan Murphy <dmurphy@ti.com>, Thomas Gleixner <tglx@linutronix.de>,
  Stefan Achatz <erazor_de@users.sourceforge.net>,
  Konstantin Khlebnikov <koct9i@gmail.com>, Jingoo Han <jingoohan1@gmail.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, LKML <linux-kernel@vger.kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Hans Verkuil <hverkuil-cisco@xs4all.nl>, Wu Hao <hao.wu@intel.com>,
  Vineela Tummalapalli <vineela.tummalapalli@intel.com>,
@@ -119,13 +121,13 @@ Cc: Andrew Lunn <andrew@lunn.ch>, Peter Chen <peter.chen@nxp.com>,
  Bartosz Golaszewski <bgolaszewski@baylibre.com>, Len Brown <lenb@kernel.org>,
  Alexandre Torgue <alexandre.torgue@st.com>,
  Michael Hennerich <Michael.Hennerich@analog.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, coresight@lists.linaro.org,
- linux-media@vger.kernel.org, Frederic Barrat <fbarrat@linux.ibm.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Jaegeuk Kim <jaegeuk@kernel.org>,
- Boris Ostrovsky <boris.ostrovsky@oracle.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Coresight ML <coresight@lists.linaro.org>, linux-media@vger.kernel.org,
+ Frederic Barrat <fbarrat@linux.ibm.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Jaegeuk Kim <jaegeuk@kernel.org>, Boris Ostrovsky <boris.ostrovsky@oracle.com>,
  Mika Westerberg <mika.westerberg@linux.intel.com>,
- linux-arm-kernel@lists.infradead.org, Oded Gabbay <oded.gabbay@gmail.com>,
- Tony Luck <tony.luck@intel.com>, Mathieu Poirier <mathieu.poirier@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Oded Gabbay <oded.gabbay@gmail.com>, Tony Luck <tony.luck@intel.com>,
  Boris Brezillon <bbrezillon@kernel.org>,
  PrasannaKumar Muralidharan <prasannatsmkumar@gmail.com>,
  linux-gpio@vger.kernel.org, Dongsheng Yang <dongsheng.yang@easystack.cn>,
@@ -143,8 +145,9 @@ Cc: Andrew Lunn <andrew@lunn.ch>, Peter Chen <peter.chen@nxp.com>,
  Jonas Meurer <jonas@freesources.org>,
  Daniel Thompson <daniel.thompson@linaro.org>,
  Florian Fainelli <f.fainelli@gmail.com>, Mark Gross <mgross@linux.intel.com>,
- Jonathan Corbet <corbet@lwn.net>, Jack Wang <jinpu.wang@cloud.ionos.com>,
- Kees Cook <keescook@chromium.org>, Dan Williams <dan.j.williams@intel.com>,
+ Jonathan Corbet <corbet@lwn.net>, Ilya Dryomov <idryomov@gmail.com>,
+ Jack Wang <jinpu.wang@cloud.ionos.com>, Kees Cook <keescook@chromium.org>,
+ Dan Williams <dan.j.williams@intel.com>,
  Kranthi Kuntala <kranthi.kuntala@intel.com>,
  Dmitry Torokhov <dmitry.torokhov@gmail.com>,
  Sebastian Reichel <sre@kernel.org>, Colin Cross <ccross@android.com>,
@@ -152,9 +155,9 @@ Cc: Andrew Lunn <andrew@lunn.ch>, Peter Chen <peter.chen@nxp.com>,
  Roman Sudarikov <roman.sudarikov@linux.intel.com>,
  =?UTF-8?Q?Roger_Pau_Monn=C3=A9?= <roger.pau@citrix.com>,
  "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
- linux-remoteproc@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-i3c@lists.infradead.org, Lee Jones <lee.jones@linaro.org>,
- Russell King <linux@armlinux.org.uk>,
+ linux-remoteproc <linux-remoteproc@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, linux-i3c@lists.infradead.org,
+ Lee Jones <lee.jones@linaro.org>, Russell King <linux@armlinux.org.uk>,
  =?UTF-8?B?TWFyZWsgQmVow7pu?= <marek.behun@nic.cz>,
  Jason Gunthorpe <jgg@ziepe.ca>,
  Pawan Gupta <pawan.kumar.gupta@linux.intel.com>,
@@ -163,14 +166,14 @@ Cc: Andrew Lunn <andrew@lunn.ch>, Peter Chen <peter.chen@nxp.com>,
  Johan Hovold <johan@kernel.org>, Andreas Klinger <ak@it-klinger.de>,
  Jonathan Cameron <Jonathan.Cameron@huawei.com>,
  David Sterba <dsterba@suse.com>, Jens Axboe <axboe@kernel.dk>,
- netdev <netdev@vger.kernel.org>, linux-iio@vger.kernel.org,
+ netdev@vger.kernel.org, linux-iio@vger.kernel.org,
  Asutosh Das <asutoshd@codeaurora.org>, linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Oct 30, 2020 at 8:41 AM Mauro Carvalho Chehab
+On Fri, 30 Oct 2020 at 01:41, Mauro Carvalho Chehab
 <mchehab+huawei@kernel.org> wrote:
 >
 > There are some ABI documents that, while they don't generate
@@ -185,16 +188,13 @@ On Fri, Oct 30, 2020 at 8:41 AM Mauro Carvalho Chehab
 > Acked-by: Oded Gabbay <oded.gabbay@gmail.com> # for Habanalabs
 > Acked-by: Vaibhav Jain <vaibhav@linux.ibm.com> # for sysfs-bus-papr-pmem
 > Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
->
-> [...]
->
->  Documentation/ABI/testing/sysfs-bus-rbd       |  37 ++-
+> ---
 
-Acked-by: Ilya Dryomov <idryomov@gmail.com> # for rbd
+>  .../testing/sysfs-bus-coresight-devices-etb10 |   5 +-
 
-Thanks,
+For the CoreSight part:
 
-                Ilya
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 
 -- 
 linux-i3c mailing list
