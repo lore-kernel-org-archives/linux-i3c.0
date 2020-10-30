@@ -7,85 +7,108 @@ X-Spam-Status: No, score=-3.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
 	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id BC191C388F2
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 363F8C6369E
 	for <linux-i3c@archiver.kernel.org>; Tue,  3 Nov 2020 18:07:08 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 496A820757
-	for <linux-i3c@archiver.kernel.org>; Tue,  3 Nov 2020 18:07:08 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 9C49A20757
+	for <linux-i3c@archiver.kernel.org>; Tue,  3 Nov 2020 18:07:07 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="1RVUDjbv";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=linaro.org header.i=@linaro.org header.b="rrVlj56y"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 496A820757
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=linaro.org
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="H9eVDIRD";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=nxp.com header.i=@nxp.com header.b="b6byclA7"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9C49A20757
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:Message-ID:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=H5e2JyrF9ivHRKrtnSeB/y/N8LzABCstd0BGepN80KI=; b=1RVUDjbvqa5Kfoh9pLTdfa9A8
-	XG9DR9JXPXI/D6MsCmdwrm2mcYJuHi4xSeJo2zXMcf/OA7dSb3b2CH3IO9CHTM62DN6hlKKK/TI5u
-	8c/yT9c4s/fgZn3pKu0pmYiGt4nmjHGmwJq/4A+Ow5rB1fjYsP3I3z0rybLnheefL2zQzmc0GZvtD
-	NRZyjgtA6zwmBPkykpL+Ty6e7S9UB9PEli9gjekHlTaaUIYJGccqz20Xn2XIytVQwI4EfHt1ZCSuY
-	3zql+1MIG8BrOZC+3u4u5CiFHqrkHLjm06j96f9uF3CjhmRCKkjn7AKVFUC5bRxmt72VwpQph9nfz
-	X9hCcCu6A==;
+	 bh=kswI6xvhLynI8+iPCuseBMLgfVAbWaGrBiGKViZsJVM=; b=H9eVDIRDdZQ2mjDnyxZTvl8Hz
+	75mMh1hY92di2WtaDmTipYUTGyh66/wQylBZNOuozlu8AcqjUbygn+34NzmYlGHJGlRvj+lGLjvCd
+	FH0A5ahBmaZ+r18EtAtYohipbf7el1L2PfGlsHH1WZmJ7k+v7ES6OdweC4GUlwcmqPyD2K1NmDAiA
+	j0CTfbIqZz7i4SxW6gAegTNpghDUvkdhpx8lzt8EKj7Ge9TCh03c73ZimXXC4OcauvlcRA4bIDHAx
+	vVGfuiTQ2EXIu7zEwVkiKFTSmnp6hVDb58dLYcUOiOl1yomB98Cwx4Xi8lIADkf672O1GmnCFQdWL
+	yqi3Zev+w==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ka0i1-0000T9-N4; Tue, 03 Nov 2020 18:07:05 +0000
-Received: from mail-oo1-xc35.google.com ([2607:f8b0:4864:20::c35])
+	id 1ka0i0-0000Ss-GE; Tue, 03 Nov 2020 18:07:04 +0000
+Received: from mail-am6eur05on2068.outbound.protection.outlook.com
+ ([40.107.22.68] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1kZyAg-0000qY-Ik
- for linux-i3c@lists.infradead.org; Tue, 03 Nov 2020 15:24:31 +0000
-Received: by mail-oo1-xc35.google.com with SMTP id l26so4272672oop.9
- for <linux-i3c@lists.infradead.org>; Tue, 03 Nov 2020 07:24:28 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=N71Zs4qg4W+XUXzJvJITvEfPb9AWspIlQairrp1whfg=;
- b=rrVlj56yk2trpBYSpi4k2yd1xCK2bo7zfyPwMRTDKgj2zJFZf+rsg3l64hS6mNlXsJ
- /lsnCjsBYlscUhZQjxreix9yr1FDyyJ44isM98ku6PfR5nfH8ewfPGTyJoG+z8DaKf3B
- GC0lFyYci0jWLRuivuAjfzCGQfauYD+FIBoJ65Z0ysgZFvM7r9APNUcj/A/ERVF2MbLf
- yty4WBGjCP2WpSIZHr96/NF2lvOu9gyd0kH5dNJE6T16tbnf8/wDcP2ZEnVaZTeW+uv8
- AOywb/DHyLh7Si/JMqeCh4eS5XqaKQQMWQhjlysMgge2i4X83N4I6vLqLPfg4x7OeC6p
- Yirg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=N71Zs4qg4W+XUXzJvJITvEfPb9AWspIlQairrp1whfg=;
- b=uNkclzH8k1aZcLWpIU6nQqjk9dxysHMjy6ZaBNy6ynLCNL9zP9R0caWeGLjWes4JAn
- cjtxoBZOXhv5Oppnnmt4rbqdyxcvkDmtWs+0Vld87ut5vZyTswVykNZI7eE/Imr310rt
- kRjGOBITljNDzZXWq6amfKdZbTwIf1mNA2YLL4ApDK2/gNdw5A5fu/sTVQAFtiy7qNV6
- 5cTYmZpTvtXWzw1jTplAA9cpBhK2FH50BzlAnw08RmZePaeQmWVw89ENUEQuy8gGK3OL
- uuo/sAENQXkS1sRDiUw3KfFJlXUUeuUYRhfKBdIBS6RFRrg7T5h07KLz5aPIkMT+M99h
- wBiw==
-X-Gm-Message-State: AOAM533l9EY16fG+B7qtFLr/msSv2EqSQ39lTEhVhB/+1ROWzuAR+p+k
- A1eNw57iPrvYf0JouMMJ6pJgeg==
-X-Google-Smtp-Source: ABdhPJwU2NP+qjv7T5X33Bc5Qb64pjBRUiEN1Yk0nWz/TQ1GhwOuIu9xrFu+5vjm7/EyqQJ1LvpBNw==
-X-Received: by 2002:a4a:6b1a:: with SMTP id g26mr10661391ooc.13.1604417066733; 
- Tue, 03 Nov 2020 07:24:26 -0800 (PST)
-Received: from builder.lan (104-57-184-186.lightspeed.austtx.sbcglobal.net.
- [104.57.184.186])
- by smtp.gmail.com with ESMTPSA id v5sm4548511otb.44.2020.11.03.07.24.25
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Nov 2020 07:24:25 -0800 (PST)
-Date: Tue, 3 Nov 2020 09:24:23 -0600
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Subject: Re: [PATCH 30/33] docs: ABI: cleanup several ABI documents
-Message-ID: <20201103004241.GD223412@builder.lan>
-References: <cover.1603893146.git.mchehab+huawei@kernel.org>
- <95ef2cf3a58f4e50f17d9e58e0d9440ad14d0427.1603893146.git.mchehab+huawei@kernel.org>
+ id 1kYdkP-0000FS-EW; Fri, 30 Oct 2020 23:23:55 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=O72TZe+b4fHEENL9RgHrteipUNZQ4AgyaPc8u5OGEZ1uWMDlc0/fVuXqtDM3zSOkahATKhmaeE2W1HPh/6QzXxOMKafzWHnXDWEZGfWVkVgSJ5m2dk+/qsKKJ0fOUa+LMLjWSIhubK0vkcBl1XfgdLxFOVdgclA3atuJrjC7g5YOvXAj1yloRqIDxWWADAwL5kVs2HJo4mCQEGhmQKcISNfTj71ps5O/2enMvn3d/e4NcG2xOxR507lMU+4zst0UX8j+1+EAGFrYHsg2WDRWznCRv2yzEgWWjvqBr5CK3OBTmpg4Xpqn0hZ5lHwQr+yVxmSYewjitzwg5c6XP0Zkng==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Vhj8bR0FEYSQLe26u0naRbFfDHrX8s0dwrX3QaS7wGs=;
+ b=jzpzll8g7Py1H/O4i1lHoukCTQ5E+caFHmSg9BwjkY7sTnEUZMNoyIi3R22uszHJzXjUD4qCHkDu7wfA7NE8TLSSiI96p4F5nrFTN5m3Xw8cxVRr6krFwZa7kvbvrGzwL2Trni5nPGUiiZlcQZJTrB4b3axvO24i7AFWid3E6PaLld6EqPGB4b/KNg9l6Z5pgiIs5oJv6gv5+yXC6M4r8rVK2NhlQX3w4xRYc19QJHItPv2WJ4PAngO6XruN8zAHRFOxP0YTvfNbfCJAEWQM06gIRAddCxguSSMJxovmOVHYeh1aXApkSkeur1pZAfG3oXAyjefM33VVmub1yGpIIw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Vhj8bR0FEYSQLe26u0naRbFfDHrX8s0dwrX3QaS7wGs=;
+ b=b6byclA7ptlazZI8GuuWgH8I8ZqLwy6whn2pyx0KnJRnU1QeJ4D3aPRf1h8EICWf4GVe10kwX/wKaQuPchI90gi6NwN5zMEx2C6QgQL/WT+QitQt4gfCNo8gMlpZhMWy2HezwALezW+iTPQAyJE4biKPGbB7ZD2p4vpQUJZCfCg=
+Received: from AM8PR04MB7300.eurprd04.prod.outlook.com (2603:10a6:20b:1c7::12)
+ by AM0PR0402MB3364.eurprd04.prod.outlook.com (2603:10a6:208:17::28)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3499.19; Fri, 30 Oct
+ 2020 23:23:48 +0000
+Received: from AM8PR04MB7300.eurprd04.prod.outlook.com
+ ([fe80::b902:6be0:622b:26c2]) by AM8PR04MB7300.eurprd04.prod.outlook.com
+ ([fe80::b902:6be0:622b:26c2%4]) with mapi id 15.20.3499.029; Fri, 30 Oct 2020
+ 23:23:48 +0000
+From: Peter Chen <peter.chen@nxp.com>
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>, Linux Doc Mailing List
+ <linux-doc@vger.kernel.org>
+Subject: RE: [PATCH v2 31/39] docs: ABI: cleanup several ABI documents
+Thread-Topic: [PATCH v2 31/39] docs: ABI: cleanup several ABI documents
+Thread-Index: AQHWrpAP/5fyi5IMO0mg3rPCeBI8xamwyZ5A
+Date: Fri, 30 Oct 2020 23:23:48 +0000
+Message-ID: <AM8PR04MB73004CAA0D31628FD8E0A7878B150@AM8PR04MB7300.eurprd04.prod.outlook.com>
+References: <cover.1604042072.git.mchehab+huawei@kernel.org>
+ <5bc78e5b68ed1e9e39135173857cb2e753be868f.1604042072.git.mchehab+huawei@kernel.org>
+In-Reply-To: <5bc78e5b68ed1e9e39135173857cb2e753be868f.1604042072.git.mchehab+huawei@kernel.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: kernel.org; dkim=none (message not signed)
+ header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [222.65.215.201]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: ab56f412-7e05-43a2-c8a2-08d87d2adaf8
+x-ms-traffictypediagnostic: AM0PR0402MB3364:
+x-microsoft-antispam-prvs: <AM0PR0402MB3364418B792F35188BB317EC8B150@AM0PR0402MB3364.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1728;
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 6cFTuXK2Z9T7IjE5nPSWOSW0H399lElCPFWNLu6mHH4GG8v3HOSeMavESO4H4I9gowW5Afs8cqovZdsdk4diWdRNgTMHQYwDH1gIcaeh79GVjuaHKoAYOp3+UqMXYEwxQUjNdknu4G2opTbyTt5NGMl3eveYDFQ1g+yALBS2JXjYDgu4OTZDsAdNins5Z9iDdhCsUh0n0Ac2pzEW3Phd67aVAH58rexxKss/OEMy3djmxSUwQ9eE4OVx9tAi4dePxA3E9MEfzHQJw/slZ/Ty7x+f7PPl2UIexlQS7zANo59gM4rJc6WFgnp+Rv6XZzIwB/1/1oMSKbmZPfGlnXqUqg==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM8PR04MB7300.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(4636009)(136003)(376002)(346002)(366004)(396003)(39850400004)(66446008)(64756008)(66556008)(66476007)(66946007)(8676002)(8936002)(26005)(76116006)(33656002)(9686003)(558084003)(2906002)(6506007)(86362001)(71200400001)(4270600006)(7366002)(7416002)(7276002)(7336002)(7406005)(55016002)(478600001)(44832011)(316002)(4326008)(7696005)(52536014)(54906003)(110136005)(186003)(5660300002);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: LmyEy8+AlZr0dH3UtrHGN0gD8GkdEEPWI6n0X0Rk9JUl98O2+sB6+ZwOqVeIHcBYcxrKBjxFhjCb8dqfdB/GiKbLBrA0yyNdIPWoaTbTwIsLEJ1DBRVPEmlTd0blnrcQx9YbXzGI8eyhzke/H8OTBO8bY+bql8ELMv1wkrZDm9dzENVDiUbtBX3wGEYJYG+bR31awYvDh9k6VGUIH/Su5TWldhdNDcKPXkVmWmEM5d0sA1jF3QTyzY988DJJR6tJME+CvU93PQruGK+n3wrUZcn5HsmXC5AHnv3gFK+mMmGJRkDvfOtHItzNPyLoxDHdtbOd4hBKu9Eb6rw5XJ/PpWTH9gNj2Q2CaloNw7FWZfRwJ1nvMg/iUFq+eRpwELo1IANZ/LbdrOw/dIvuKtzdPbLUKTlyUm4qOqJjYqDF/OJ+LuAGU+BiWOBseSX7crvpQWuinc5ZbXMMgn1dkD/01Xls89DDDRP7Iw1ciEB4Im/5vXLnyyySSOlgIAQayat+uTuzaoD3U6VWZ3Kk8LLN5AeIKfYe5W6q7eUbyqOl1eeCC03y1tBciW6p5XccP84xOHvRLzjPponAsdRrafe1wbkM0cZhg0BrYnwpUtwg8KWqJ85Mk1ba56CTOL8R6NfE4LQ7lQBUVRpnNQl92xjpng==
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <95ef2cf3a58f4e50f17d9e58e0d9440ad14d0427.1603893146.git.mchehab+huawei@kernel.org>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: AM8PR04MB7300.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ab56f412-7e05-43a2-c8a2-08d87d2adaf8
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Oct 2020 23:23:48.6948 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 8UMbaQT8WSLKAWQn2nnLbTWgleWz5CJPLtzNg9ghlA+i2S0NB1XdlA7k+9UyIpcqSYEp8v3iM7Y8S+CVX+++sQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR0402MB3364
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201103_102430_749938_454A5A57 
-X-CRM114-Status: UNSURE (   7.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20201030_192353_534246_290FBA52 
+X-CRM114-Status: GOOD (  12.14  )
 X-Mailman-Approved-At: Tue, 03 Nov 2020 13:06:49 -0500
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -98,31 +121,105 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: linux-stm32@st-md-mailman.stormreply.com,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>, linux-iio@vger.kernel.org,
- netdev@vger.kernel.org, coresight@lists.linaro.org, linux-pm@vger.kernel.org,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-f2fs-devel@lists.sourceforge.net,
- linux-acpi@vger.kernel.org, linux-gpio@vger.kernel.org,
- linux-i3c@lists.infradead.org, linuxppc-dev@lists.ozlabs.org,
- linux-fpga@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Andrew Lunn <andrew@lunn.ch>, Linus Walleij <linus.walleij@linaro.org>,
+ Jerry Snitselaar <jsnitsel@redhat.com>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ Pavel Machek <pavel@ucw.cz>, Christian Gromm <christian.gromm@microchip.com>,
+ "ceph-devel@vger.kernel.org" <ceph-devel@vger.kernel.org>,
+ Bart Van Assche <bvanassche@acm.org>, Michael Ellerman <mpe@ellerman.id.au>,
+ "linux-acpi@vger.kernel.org" <linux-acpi@vger.kernel.org>,
+ Danil Kipnis <danil.kipnis@cloud.ionos.com>,
+ Samuel Thibault <samuel.thibault@ens-lyon.org>,
+ Guenter Roeck <linux@roeck-us.net>, Ohad Ben-Cohen <ohad@wizery.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ Alexander Antonov <alexander.antonov@linux.intel.com>,
+ Dan Murphy <dmurphy@ti.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Stefan Achatz <erazor_de@users.sourceforge.net>,
+ Konstantin Khlebnikov <koct9i@gmail.com>, Jingoo Han <jingoohan1@gmail.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>, Wu Hao <hao.wu@intel.com>,
+ Vineela Tummalapalli <vineela.tummalapalli@intel.com>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Hanjun Guo <guohanjun@huawei.com>, Oleh Kravchenko <oleg@kaa.org.ua>,
+ Lars-Peter Clausen <lars@metafoo.de>,
+ Andy Shevchenko <andriy.shevchenko@intel.com>,
+ Saravana Kannan <saravanak@google.com>, Anton Vorontsov <anton@enomsg.org>,
+ =?utf-8?B?TWFyZWsgTWFyY3p5a293c2tpLUfDs3JlY2tp?=
+ <marmarek@invisiblethingslab.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, Len Brown <lenb@kernel.org>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Michael Hennerich <Michael.Hennerich@analog.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ "coresight@lists.linaro.org" <coresight@lists.linaro.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>,
+ Frederic Barrat <fbarrat@linux.ibm.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Jaegeuk Kim <jaegeuk@kernel.org>, Boris Ostrovsky <boris.ostrovsky@oracle.com>,
+ Mika Westerberg <mika.westerberg@linux.intel.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Oded Gabbay <oded.gabbay@gmail.com>, Tony Luck <tony.luck@intel.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Boris Brezillon <bbrezillon@kernel.org>,
+ PrasannaKumar Muralidharan <prasannatsmkumar@gmail.com>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ Dongsheng Yang <dongsheng.yang@easystack.cn>,
+ "linux-f2fs-devel@lists.sourceforge.net"
+ <linux-f2fs-devel@lists.sourceforge.net>, Jarkko Sakkinen <jarkko@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Vaibhav Jain <vaibhav@linux.ibm.com>,
+ =?utf-8?B?UGFsaSBSb2jDoXI=?= <pali@kernel.org>,
+ Jonathan Cameron <jic23@kernel.org>, Heiner Kallweit <hkallweit1@gmail.com>,
+ "Gautham R. Shenoy" <ego@linux.vnet.ibm.com>,
+ Cezary Rojewski <cezary.rojewski@intel.com>,
+ Mario Limonciello <mario.limonciello@dell.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Tom Rix <trix@redhat.com>,
+ "linux-fpga@vger.kernel.org" <linux-fpga@vger.kernel.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Jonas Meurer <jonas@freesources.org>,
+ Daniel Thompson <daniel.thompson@linaro.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, Mark Gross <mgross@linux.intel.com>,
+ Jonathan Corbet <corbet@lwn.net>, Ilya Dryomov <idryomov@gmail.com>,
+ Jack Wang <jinpu.wang@cloud.ionos.com>, Kees Cook <keescook@chromium.org>,
+ Dan Williams <dan.j.williams@intel.com>,
+ Kranthi Kuntala <kranthi.kuntala@intel.com>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Sebastian Reichel <sre@kernel.org>, Colin Cross <ccross@android.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Roman Sudarikov <roman.sudarikov@linux.intel.com>,
+ =?utf-8?B?Um9nZXIgUGF1IE1vbm7DqQ==?= <roger.pau@citrix.com>,
+ "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
+ "linux-remoteproc@vger.kernel.org" <linux-remoteproc@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
+ Lee Jones <lee.jones@linaro.org>, Russell King <linux@armlinux.org.uk>,
+ =?utf-8?B?TWFyZWsgQmVow7pu?= <marek.behun@nic.cz>,
+ Jason Gunthorpe <jgg@ziepe.ca>,
+ Pawan Gupta <pawan.kumar.gupta@linux.intel.com>,
+ Mike Leach <mike.leach@linaro.org>, Andrew Donnellan <ajd@linux.ibm.com>,
+ Kajol Jain <kjain@linux.ibm.com>, Chao Yu <chao@kernel.org>,
+ Johan Hovold <johan@kernel.org>, Andreas Klinger <ak@it-klinger.de>,
+ Jonathan Cameron <Jonathan.Cameron@huawei.com>,
+ David Sterba <dsterba@suse.com>, Jens Axboe <axboe@kernel.dk>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>,
+ Asutosh Das <asutoshd@codeaurora.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed 28 Oct 09:23 CDT 2020, Mauro Carvalho Chehab wrote:
-[..]
->  .../ABI/testing/sysfs-class-remoteproc        |  14 +-
+Acked-by: Peter Chen <peter.chen@nxp.com> 
 
-for this:
+For:
+Documentation/ABI/testing/usb-charger-uevent
 
-Acked-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-
-Thanks,
-Bjorn
-
+Peter
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
