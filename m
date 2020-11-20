@@ -2,66 +2,82 @@ Return-Path: <SRS0=M/mW=E7=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-4.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+X-Spam-Status: No, score=-0.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
 	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 4B928C5519F
+	by smtp.lore.kernel.org (Postfix) with ESMTP id D5CECC64E75
 	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:13 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id C6EA7206B7
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:12 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 5A3FA20872
+	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:13 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="Y8TMPO5c";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=kernel.org header.i=@kernel.org header.b="y6BwGzsU"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org C6EA7206B7
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="TwPUR4bB";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.b="th/UjqVc"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 5A3FA20872
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:In-Reply-To:
+	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=DWAPu11mPnDYT0C6iiXq0dPQs8ROaYuAwrPA2tTw/KU=; b=Y8TMPO5cFFp8C0MM+bMK7FneR
-	eKYMq4ENlkdjHvXNZustIQLktRyvTOH5WUB7pdLAzzGkvgbdV4rLkPzU3UkWA08J4C1DagqClYIZD
-	96CqW5Eyay/s0DeEBRj7Fd6aOk/eth/sAlF/bFgJ2NZBEsEM24vd0VwAPayUFJvHXK/bmXUL+2CQ+
-	CB3W03jMz+Jo/tsismz0AJW6alKRCMaLgir8lrT6c3l3nfKwzUYiXqYBqWDWV4jG2obnZUG7Cxh9c
-	cImpAOzzy+LLuKquBWq/Rgj0SbOHunfD+nV4HvQVSCi6mm2Uxn9RNDcOnBaHb3hAkyGw74CDaSKlM
-	96pBa54SA==;
+	 bh=ilJeqobGMuJEGkvhNaUaaUihi1GObNmF9ykOuhJxn3E=; b=TwPUR4bBLvT30NIPu4ARHQKJm
+	jPf5HmkPWJs63Lr5IpaIdxf9buzqzM3/4UslqheBLlH//50fC4OAvis4h3WRqPIENDhvkoH6f55pr
+	aJELN4q9Gq4AtoilKB6dJIZCKnrJ8WrBWEN25EgmeH3ZG8Xlh8xDAf2O2CIrk19W+NyEpR/uDlg/N
+	xwbZeuwIFY+PbHmj6rXuUb4d+KuhgFqeXUPcAMe+yWlgyeslehX8w473xW/Cr4REAbZ4Fem6tNc4T
+	Gz9nf7uu01IRuIvOqayWSVnswtAAGu0lS0YFLy97oKX0vHMwyruodv8mKDW34IJUDF/QRbIV7rlZt
+	t0T9No5aw==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1khrXz-0006RV-MD; Wed, 25 Nov 2020 09:57:11 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1khrY0-0006S1-Ie; Wed, 25 Nov 2020 09:57:12 +0000
+Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1kgBXa-0006ul-Bs; Fri, 20 Nov 2020 18:53:51 +0000
-Received: from kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com (unknown
- [163.114.132.6])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D19712242B;
- Fri, 20 Nov 2020 18:53:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1605898429;
- bh=RlEnelajx5E1UvOiu4TwGuYZq41CYqRzy+OE2vpEZwM=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=y6BwGzsUDu1zr4tV0nGpfLuqNb1AQVwTl3HIlZXKXQmalkVaXzcKTw6PaiYzn6cs4
- cCrQcjpmBltf5qc0pbll6lEfWSr4jv5MMDA/VHBdadKQQtZqXFk9pYOspqu5FdKf1A
- HiIo+vycYYhwL3jW0KIV5eL5D/2xlLalPiHVxUuA=
-Date: Fri, 20 Nov 2020 10:53:44 -0800
-From: Jakub Kicinski <kuba@kernel.org>
-To: "Gustavo A. R. Silva" <gustavoars@kernel.org>
-Subject: Re: [PATCH 000/141] Fix fall-through warnings for Clang
-Message-ID: <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
-In-Reply-To: <cover.1605896059.git.gustavoars@kernel.org>
-References: <cover.1605896059.git.gustavoars@kernel.org>
+ id 1kgEmd-0003Dr-Pt; Fri, 20 Nov 2020 22:21:36 +0000
+Received: by mail-yb1-xb44.google.com with SMTP id x17so9968614ybr.8;
+ Fri, 20 Nov 2020 14:21:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=29/AaAKKWIjlxKBDiu42mXe16/c3LUzQvTdn0Wctw9g=;
+ b=th/UjqVcversiy9gEUr46cKRrhHywr0iTgf9mzUejm+T3/Jtu2c6ftjob7N1dnOe2S
+ rGVMit/4Gqy7ZDqW+do8x9wI8RCPt/cmuWncILsoBuux3CBAtfG8gT+eTL8wiBVSM5EH
+ rDgxqkIvK+vUXnfhgj71GxYIUQH1hInVNMbCl5+3prik9RGhi+hsmul85xXuf9uJVr2L
+ NGLQGWDmOXXHg4l9XujW0HrVyacbE3Q1QSLAkLJ0BjE5AdFqhLyeU3T8/6+nJ9hH0JSR
+ o1vAVeqr6Bt+/W6rGIwrn7PuvAvMGRmk1Avx4k6vjCg8etglRiDTMnimrqKcX/KEsNCP
+ 0CAw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=29/AaAKKWIjlxKBDiu42mXe16/c3LUzQvTdn0Wctw9g=;
+ b=RRbLKEWsaVx293aNeup4kIGetgiJ7rs94caA1qhVHTuXu4dKXUehTmSzFRmq7nJuog
+ dXCkzLCmoRzYarAvEEXkEk6p50ua4NLoJXxTWRU0e5oCSsLo9aw7/JbnbRsI+p6bfBS+
+ uS3UIC1nJpFwOtnKzhoBviyLBJ6JN7p2iIgaXqg0RP/YHc7GMA5dw3o9gGkWq48ROGQf
+ fy9Br3N4r9hiivvmn2Fms+FPwOm8iyjzyaOE5Peiyar7ldsnl9D/sNw6oXRt2gxPrRCU
+ n3TMyfogGqtGbn3ychOhAYNTd0wU9BXiEIukRFBUmCLd9h374jSzgF701JyeyRL2IdIK
+ T0nA==
+X-Gm-Message-State: AOAM5301+gwC0OQfZCHLC9dp9A0WVVW6Buua/tTA5thwYEfHAdcM+LG2
+ Nt5NZh7Y6kMNMJIiModaKhPOiHeiw/f3iyx4i2E=
+X-Google-Smtp-Source: ABdhPJzYUhkcjTyH5GIcOV5fWMsl+OUdzem471zLY9usW3RhV8izQIRbyESMTmZwFikqgbfOQQqVvSSQCZzBPJX4q90=
+X-Received: by 2002:a5b:40e:: with SMTP id m14mr22113400ybp.33.1605910888617; 
+ Fri, 20 Nov 2020 14:21:28 -0800 (PST)
 MIME-Version: 1.0
+References: <cover.1605896059.git.gustavoars@kernel.org>
+In-Reply-To: <cover.1605896059.git.gustavoars@kernel.org>
+From: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
+Date: Fri, 20 Nov 2020 23:21:17 +0100
+Message-ID: <CANiq72=E_gEVvqUUTSqU4zegC2=yZSTM4b=4G-iofp6d3=UgWQ@mail.gmail.com>
+Subject: Re: [PATCH 000/141] Fix fall-through warnings for Clang
+To: "Gustavo A. R. Silva" <gustavoars@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201120_135350_573842_1D87D5EF 
-X-CRM114-Status: GOOD (  14.88  )
-X-Mailman-Approved-At: Wed, 25 Nov 2020 04:57:00 -0500
+X-CRM114-CacheID: sfid-20201120_172135_863785_293BD361 
+X-CRM114-Status: UNSURE (   8.97  )
+X-CRM114-Notice: Please train this message.
+X-Mailman-Approved-At: Wed, 25 Nov 2020 04:56:59 -0500
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,7 +91,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
 Cc: alsa-devel@alsa-project.org, linux-atm-general@lists.sourceforge.net,
  reiserfs-devel@vger.kernel.org, linux-iio@vger.kernel.org,
- linux-wireless@vger.kernel.org, linux-fbdev@vger.kernel.org,
+ linux-wireless <linux-wireless@vger.kernel.org>, linux-fbdev@vger.kernel.org,
  dri-devel@lists.freedesktop.org, virtualization@lists.linux-foundation.org,
  Nathan Chancellor <natechancellor@gmail.com>, linux-ide@vger.kernel.org,
  dm-devel@redhat.com, keyrings@vger.kernel.org, linux-mtd@lists.infradead.org,
@@ -90,9 +106,10 @@ Cc: alsa-devel@alsa-project.org, linux-atm-general@lists.sourceforge.net,
  linux-security-module@vger.kernel.org, amd-gfx@lists.freedesktop.org,
  linux-stm32@st-md-mailman.stormreply.com, cluster-devel@redhat.com,
  linux-acpi@vger.kernel.org, coreteam@netfilter.org,
- intel-wired-lan@lists.osuosl.org, linux-input@vger.kernel.org,
+ intel-wired-lan@lists.osuosl.org, linux-input <linux-input@vger.kernel.org>,
  Miguel Ojeda <ojeda@kernel.org>, tipc-discussion@lists.sourceforge.net,
- linux-ext4@vger.kernel.org, linux-media@vger.kernel.org,
+ Ext4 Developers List <linux-ext4@vger.kernel.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>,
  linux-watchdog@vger.kernel.org, selinux@vger.kernel.org,
  linux-arm-msm@vger.kernel.org, intel-gfx@lists.freedesktop.org,
  linux-geode@lists.infradead.org, linux-can@vger.kernel.org,
@@ -100,13 +117,16 @@ Cc: alsa-devel@alsa-project.org, linux-atm-general@lists.sourceforge.net,
  op-tee@lists.trustedfirmware.org, linux-mediatek@lists.infradead.org,
  xen-devel@lists.xenproject.org, nouveau@lists.freedesktop.org,
  linux-hams@vger.kernel.org, ceph-devel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
- x86@kernel.org, linux-nfs@vger.kernel.org, GR-Linux-NIC-Dev@marvell.com,
- Kees Cook <keescook@chromium.org>, linux-mm@kvack.org, netdev@vger.kernel.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-hwmon@vger.kernel.org,
+ "maintainer:X86 ARCHITECTURE \(32-BIT AND 64-BIT\)" <x86@kernel.org>,
+ linux-nfs@vger.kernel.org, GR-Linux-NIC-Dev@marvell.com,
+ Kees Cook <keescook@chromium.org>, Linux-MM <linux-mm@kvack.org>,
+ Network Development <netdev@vger.kernel.org>,
  linux-decnet-user@lists.sourceforge.net, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+ linux-kernel <linux-kernel@vger.kernel.org>, linux-renesas-soc@vger.kernel.org,
  linux-sctp@vger.kernel.org, linux-usb@vger.kernel.org,
- netfilter-devel@vger.kernel.org, linux-crypto@vger.kernel.org,
+ netfilter-devel@vger.kernel.org,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
  patches@opensource.cirrus.com, Joe Perches <joe@perches.com>,
  linux-integrity@vger.kernel.org, target-devel@vger.kernel.org,
  linux-hardening@vger.kernel.org
@@ -115,30 +135,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, 20 Nov 2020 12:21:39 -0600 Gustavo A. R. Silva wrote:
+Hi Gustavo,
+
+On Fri, Nov 20, 2020 at 7:21 PM Gustavo A. R. Silva
+<gustavoars@kernel.org> wrote:
+>
+> Hi all,
+>
 > This series aims to fix almost all remaining fall-through warnings in
 > order to enable -Wimplicit-fallthrough for Clang.
-> 
-> In preparation to enable -Wimplicit-fallthrough for Clang, explicitly
-> add multiple break/goto/return/fallthrough statements instead of just
-> letting the code fall through to the next case.
-> 
-> Notice that in order to enable -Wimplicit-fallthrough for Clang, this
-> change[1] is meant to be reverted at some point. So, this patch helps
-> to move in that direction.
-> 
-> Something important to mention is that there is currently a discrepancy
-> between GCC and Clang when dealing with switch fall-through to empty case
-> statements or to cases that only contain a break/continue/return
-> statement[2][3][4].
 
-Are we sure we want to make this change? Was it discussed before?
+Thanks for this.
 
-Are there any bugs Clangs puritanical definition of fallthrough helped
-find?
+Since this warning is reliable in both/all compilers and we are
+eventually getting rid of all the cases, what about going even further
+and making it an error right after?
 
-IMVHO compiler warnings are supposed to warn about issues that could
-be bugs. Falling through to default: break; can hardly be a bug?!
+Cheers,
+Miguel
 
 -- 
 linux-i3c mailing list
