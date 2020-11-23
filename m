@@ -2,77 +2,70 @@ Return-Path: <SRS0=M/mW=E7=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-3.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-0.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 99A59C64E7C
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 7D8DEC56201
+	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:21 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 149C2206B7
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:19 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 087A92083E
+	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:20 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="ehQjnSvu";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=hansenpartnership.com header.i=@hansenpartnership.com header.b="WmZvrZ8S";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=hansenpartnership.com header.i=@hansenpartnership.com header.b="WmZvrZ8S"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 149C2206B7
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=HansenPartnership.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="zImmPm0e";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.b="b0LkeT2q"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 087A92083E
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Date:To:From:
-	Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:In-Reply-To:
+	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=M4ytdDRwurhcX62HSrcmM85G7fkdcIMlbL4qnDr7GK4=; b=ehQjnSvunNYYnrOlj9sXrsnFR
-	GQXvVwS9V2JhjBxWgo5ZtgS6l6FcA24qSbH1pEtNKqy55XXIdTJY0SuHFHL3aMd5LelY15eA7clwh
-	XHegdePWNEYeFa5F2QUjDQSecw8H7qLFM59XBXxBGy+4Ak7cURI2XDCMdeI85y/8cwoNHinLEtkJN
-	ojmd4BV/653pz2KSV/DK9ZHSDzsRdFUOb7r4r/1GKfetb5oK/avNKV2jH7pyNiBQKwMMa9mpJwMs4
-	YCtl7X8+9c+eZl2Ol1O56FUdfccDclF/7uhwQEMnE6qLgeilTX8hJnnU+UlG7veDYepz4uyRE8076
-	9E+xER3zg==;
+	 bh=9lgwoyrJrdNFpnuSEopfQgIEaJ73KeWdQ1WaOD+ZM44=; b=zImmPm0emhApp6lGePDRdJhKU
+	d3E/2PeCh/ldTOWKxYT/N1xtpR/xyQ1dcVJhu9abgvCIap6z6dGXaNth88e/ZKQjRSrXti0V84XHT
+	7tLIZBaGxUw2MXPju9A12ucE+88eql8dSPGjY3bvsZQoDlrUngVsjVC1Bc81qfilwvUbNkybtfAYg
+	1tgw6rdaasKOjqcf15GJCp7HjdpI3VEmyxyDG5I5XSkh9oWTpZzeqJhXJ5k6lu8rleksktnNdOyvU
+	nR0TgWZQv0IIIODL9Ldn3dd6Zuio7sZ8tvOdrs8VZfDwZgcoEeDFsNJJZ5G+a8IZuqA6Q7zNnwdFj
+	QXyRpbHQg==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1khrY7-0006V2-1U; Wed, 25 Nov 2020 09:57:19 +0000
-Received: from bedivere.hansenpartnership.com ([2607:fcd0:100:8a00::2])
+	id 1khrY8-0006Vw-1z; Wed, 25 Nov 2020 09:57:20 +0000
+Received: from mail-yb1-xb41.google.com ([2607:f8b0:4864:20::b41])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1kgyPT-0005Vs-Kg; Sun, 22 Nov 2020 23:04:44 +0000
-Received: from localhost (localhost [127.0.0.1])
- by bedivere.hansenpartnership.com (Postfix) with ESMTP id 5C1741280900;
- Sun, 22 Nov 2020 15:04:41 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
- d=hansenpartnership.com; s=20151216; t=1606086281;
- bh=ampKVWKUqLiKYyObj0dhEgltdPGbsuliUrstEBadWMw=;
- h=Message-ID:Subject:From:To:Date:In-Reply-To:References:From;
- b=WmZvrZ8SISP4O7CkmRRwRn7Ww4EqbFeoj9AudkGWHrTHPvBGVyYGXPtxxL5/3UBwZ
- KEGMUiR7FBhAVO42W5uBkyouydambEWUMRvvMR32eyWutkJh8vdHwfKrPde3Z6lPQr
- zwZuERjUvzNlbmlNByqn4M9h7sLDVk7BBiQeo3h4=
-Received: from bedivere.hansenpartnership.com ([127.0.0.1])
- by localhost (bedivere.hansenpartnership.com [127.0.0.1]) (amavisd-new,
- port 10024)
- with ESMTP id PvG_3ynFL_Uj; Sun, 22 Nov 2020 15:04:41 -0800 (PST)
-Received: from jarvis.int.hansenpartnership.com (unknown
- [IPv6:2601:600:8280:66d1::527])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by bedivere.hansenpartnership.com (Postfix) with ESMTPSA id 9178D12808F6;
- Sun, 22 Nov 2020 15:04:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
- d=hansenpartnership.com; s=20151216; t=1606086281;
- bh=ampKVWKUqLiKYyObj0dhEgltdPGbsuliUrstEBadWMw=;
- h=Message-ID:Subject:From:To:Date:In-Reply-To:References:From;
- b=WmZvrZ8SISP4O7CkmRRwRn7Ww4EqbFeoj9AudkGWHrTHPvBGVyYGXPtxxL5/3UBwZ
- KEGMUiR7FBhAVO42W5uBkyouydambEWUMRvvMR32eyWutkJh8vdHwfKrPde3Z6lPQr
- zwZuERjUvzNlbmlNByqn4M9h7sLDVk7BBiQeo3h4=
-Message-ID: <c3371b7c15ed30b92e9bb8609ff65bdaa0ef61fa.camel@HansenPartnership.com>
-Subject: Re: [PATCH 000/141] Fix fall-through warnings for Clang
-From: James Bottomley <James.Bottomley@HansenPartnership.com>
-To: Finn Thain <fthain@telegraphics.com.au>, Miguel Ojeda
- <miguel.ojeda.sandonis@gmail.com>
-Date: Sun, 22 Nov 2020 15:04:36 -0800
-In-Reply-To: <alpine.LNX.2.23.453.2011230938390.7@nippy.intranet>
+ id 1khChM-0004zf-Ca; Mon, 23 Nov 2020 14:20:09 +0000
+Received: by mail-yb1-xb41.google.com with SMTP id g15so16066752ybq.6;
+ Mon, 23 Nov 2020 06:20:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=WUYMqcUnfpAQa1YuH9tQ3ze5bp2bxaoGLXc9Sg/470Y=;
+ b=b0LkeT2q71Z3peIccxL7MkU5QadaCN3igdEC89IE4ykmdOxIlhuoo/0+H7pQCoNmlh
+ 0UX19Z7soasUpz2fDZHX56luUWrH4GLKAJ9K28HwPu9km7qlcvasqfBffaQW+LtXvh6a
+ fVP4J8wQFxbi1QWFB10Wsq9dLONxRShLcqQtcaktrZCy3tSRV5R4FOw2MSdgwNuCxNwd
+ cKQMyE/jYgmlc9Qm972BZKz9xJaasT5iW6gpZgai8YpCh1sxJNgZFzlfCpv21Fvd7rwb
+ akOsznbnFT4mJT95mXFDUPnplTdAJirWAcm8YfzHFRAfOGn9Vk91PuRcq7JipLelDPMB
+ VWgQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=WUYMqcUnfpAQa1YuH9tQ3ze5bp2bxaoGLXc9Sg/470Y=;
+ b=cUwbMOPAkdeYOY+CPd91q7p6JUvB1Qo3s4RliCrVUWhF7ddCJAySI1340v07Dc+szA
+ LoH76R23HGor07AZtZUiV0WQM8g7rkbFXyx/Ozw7nT5hJLxfxJIajEtuIfARmaLUZpt5
+ ZihWDvmR776trAwbOL8tB+NUwVnfhogqwsL16LKK7efdClmdp3dyf3oeKpjTM/66ahGO
+ wYpytA6HBfx3zh3X15gbRZYNdN0rihry3aywZHbdNOs7HEePmrbpwU7Gr+yhXSsBxHCt
+ yGUuNxo+OGe8CXFm4hmJUM9ZTYshLDXOE6eMbLC+VYfdh9MG8p8J2CwEnXLqjAFqqXiG
+ lZiQ==
+X-Gm-Message-State: AOAM531nTUrsC3Ah23GFchkQR7GcyHASv51jBRkKzVk9kO2qQC9hKOhV
+ fX6VTP6JTU8dQYJoXZplizFfxaDntrCExt+l4so=
+X-Google-Smtp-Source: ABdhPJyiJqjBIpEzWlk5pyqpoGG3+KpoWdKnlyza2YA6ODhXnRhATytwh5Bq+iGOzNqc5gs+zuqHC8iB1cjfDTXU/ik=
+X-Received: by 2002:a25:bcc7:: with SMTP id l7mr32380985ybm.115.1606141205830; 
+ Mon, 23 Nov 2020 06:20:05 -0800 (PST)
+MIME-Version: 1.0
 References: <cover.1605896059.git.gustavoars@kernel.org>
  <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
  <202011201129.B13FDB3C@keescook>
@@ -80,14 +73,17 @@ References: <cover.1605896059.git.gustavoars@kernel.org>
  <202011220816.8B6591A@keescook>
  <9b57fd4914b46f38d54087d75e072d6e947cb56d.camel@HansenPartnership.com>
  <CANiq72nZrHWTA4_Msg6MP9snTyenC6-eGfD27CyfNSu7QoVZbw@mail.gmail.com>
- <alpine.LNX.2.23.453.2011230938390.7@nippy.intranet>
-User-Agent: Evolution 3.34.4 
-MIME-Version: 1.0
+ <1c7d7fde126bc0acf825766de64bf2f9b888f216.camel@HansenPartnership.com>
+In-Reply-To: <1c7d7fde126bc0acf825766de64bf2f9b888f216.camel@HansenPartnership.com>
+From: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
+Date: Mon, 23 Nov 2020 15:19:55 +0100
+Message-ID: <CANiq72m22Jb5_+62NnwX8xds2iUdWDMAqD8PZw9cuxdHd95W0A@mail.gmail.com>
+Subject: Re: [PATCH 000/141] Fix fall-through warnings for Clang
+To: James Bottomley <James.Bottomley@hansenpartnership.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201122_180443_964949_2B69443B 
-X-CRM114-Status: UNSURE (   8.91  )
-X-CRM114-Notice: Please train this message.
-X-Mailman-Approved-At: Wed, 25 Nov 2020 04:56:58 -0500
+X-CRM114-CacheID: sfid-20201123_092008_469436_AA0CA968 
+X-CRM114-Status: GOOD (  18.68  )
+X-Mailman-Approved-At: Wed, 25 Nov 2020 04:56:59 -0500
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -146,24 +142,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, 2020-11-23 at 09:54 +1100, Finn Thain wrote:
-> But is anyone keeping score of the regressions? If unreported bugs
-> count, what about unreported regressions?
+On Sun, Nov 22, 2020 at 11:36 PM James Bottomley
+<James.Bottomley@hansenpartnership.com> wrote:
+>
+> Well, it seems to be three years of someone's time plus the maintainer
+> review time and series disruption of nearly a thousand patches.  Let's
+> be conservative and assume the producer worked about 30% on the series
+> and it takes about 5-10 minutes per patch to review, merge and for
+> others to rework existing series.  So let's say it's cost a person year
+> of a relatively junior engineer producing the patches and say 100h of
+> review and application time.  The latter is likely the big ticket item
+> because it's what we have in least supply in the kernel (even though
+> it's 20x vs the producer time).
 
-Well, I was curious about the former (obviously no tool will tell me
-about the latter), so I asked git what patches had a fall-through
-series named in a fixes tag and these three popped out:
+How are you arriving at such numbers? It is a total of ~200 trivial lines.
 
-9cf51446e686 bpf, powerpc: Fix misuse of fallthrough in bpf_jit_comp()
-6a9dc5fd6170 lib: Revert use of fallthrough pseudo-keyword in lib/
-91dbd73a1739 mips/oprofile: Fix fallthrough placement
+> It's not about the risk of the changes it's about the cost of
+> implementing them.  Even if you discount the producer time (which
+> someone gets to pay for, and if I were the engineering manager, I'd be
+> unhappy about), the review/merge/rework time is pretty significant in
+> exchange for six minor bug fixes.  Fine, when a new compiler warning
+> comes along it's certainly reasonable to see if we can benefit from it
+> and the fact that the compiler people think it's worthwhile is enough
+> evidence to assume this initially.  But at some point you have to ask
+> whether that assumption is supported by the evidence we've accumulated
+> over the time we've been using it.  And if the evidence doesn't support
+> it perhaps it is time to stop the experiment.
 
-I don't think any of these is fixing a significant problem, but they
-did cause someone time and trouble to investigate.
+Maintainers routinely review 1-line trivial patches, not to mention
+internal API changes, etc.
 
-James
+If some company does not want to pay for that, that's fine, but they
+don't get to be maintainers and claim `Supported`.
 
-
+Cheers,
+Miguel
 
 -- 
 linux-i3c mailing list
