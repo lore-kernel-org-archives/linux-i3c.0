@@ -2,60 +2,70 @@ Return-Path: <SRS0=M/mW=E7=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-3.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-0.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id AA2A7C64E7A
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 098E1C56201
+	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:24 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 30D03206B7
+	by mail.kernel.org (Postfix) with ESMTPS id 8D5812083E
 	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:23 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="MhQVA2vf"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 30D03206B7
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=perches.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="vNmjbg9N";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.b="ZA1WcoeO"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 8D5812083E
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Date:To:From:
-	Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:In-Reply-To:
+	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=tE0Z02YABWK6tFFllRNQJEAlwfYPfNG+lOBcNwtDwlo=; b=MhQVA2vfh9iF0dB551O+AcgdB
-	H/KXEAKtn2jreJOSd8q2aZiKG6tz4ROAOXTwq3XZuWNM6ycGzhKYKpvMxDOyHwznw5MOkpwY5PwPT
-	B2PzUFtYXdpfhFu8ibbwVVBxzLSQNRlYtdVrkiIk7Xh4yltjVKxQi0sPu/8XaVsqyXdXPTEP+rMtR
-	e2vh6N9S6/+/heXqLQ1a47oPQjKB/0u5/2k/YMXn2j39o99UZLt4s2m1LHDsQnRQoqT0V9svysEBt
-	aifu45oBu5ra7JWDhbNzzRn4jqUkNTm9VVi4iKSHpaLfg3xx7HdBGYMaDI/sh058Mt9QtS/15+CkS
-	UNeZS4noQ==;
+	 bh=MKI4XfQCE/vh2Zonwmg+YahcejIW+kCBBgBlGNrngUw=; b=vNmjbg9NHqJ7ob61mYEJ0U+Fj
+	1MFb+YV6IWP8i++QYDMOBfG/d+fAFZOCB2+rb/Q6p9ycZdHM8GEsqnEFJVtz5je9UlW++TpJ4kZyT
+	543/j3QEAmZE9Ux8mU1o26XjSHjaD62SU0whWWL4eGH7efB3s1w1PVX9jh6RGskmqg3TU3M+7y3+d
+	IAQNoBfK7WG/BjTlrkAiW1es1WpUD2KyqheC3dAn9p2wbPsCAcKTeWICpxfPi1rXMjIh7bhe7rl5v
+	unQUsAFdH9vawAsk88/Nqf1WGgGWoSUdwzkM8agESrqbU06sxaAc9ZZLozZgCB8IJfH0uiOejVlus
+	Zap6ndZeg==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1khrYA-0006X5-Fb; Wed, 25 Nov 2020 09:57:22 +0000
-Received: from smtprelay0241.hostedemail.com ([216.40.44.241]
- helo=smtprelay.hostedemail.com)
+	id 1khrYA-0006XH-RN; Wed, 25 Nov 2020 09:57:22 +0000
+Received: from mail-yb1-xb42.google.com ([2607:f8b0:4864:20::b42])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1khElt-0007dm-Ff; Mon, 23 Nov 2020 16:32:58 +0000
-Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
- [216.40.38.60])
- by smtprelay07.hostedemail.com (Postfix) with ESMTP id A722B181D3025;
- Mon, 23 Nov 2020 16:32:53 +0000 (UTC)
-X-Session-Marker: 6A6F6540706572636865732E636F6D
-X-HE-Tag: can43_5c1502d27366
-X-Filterd-Recvd-Size: 5503
-Received: from XPS-9350.home (unknown [47.151.128.180])
- (Authenticated sender: joe@perches.com)
- by omf03.hostedemail.com (Postfix) with ESMTPA;
- Mon, 23 Nov 2020 16:32:42 +0000 (UTC)
-Message-ID: <32dc7423124b51da4e144e931bf099a368ab50a8.camel@perches.com>
-Subject: Re: [PATCH 000/141] Fix fall-through warnings for Clang
-From: Joe Perches <joe@perches.com>
-To: James Bottomley <James.Bottomley@HansenPartnership.com>, Miguel Ojeda
- <miguel.ojeda.sandonis@gmail.com>
-Date: Mon, 23 Nov 2020 08:32:41 -0800
-In-Reply-To: <fc45750b6d0277c401015b7aa11e16cd15f32ab2.camel@HansenPartnership.com>
+ id 1khH0Y-00018H-Bj; Mon, 23 Nov 2020 18:56:15 +0000
+Received: by mail-yb1-xb42.google.com with SMTP id l14so16929379ybq.3;
+ Mon, 23 Nov 2020 10:56:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=KNG9rf3jiBLOHJ1Qe+5HClUHwDC8G2v5PJoNSRMQj2o=;
+ b=ZA1WcoeOdsWbRfOoumZEJTLTRH6V2Lpq2CDbZ0VVs1hbOT/vd/v8/YkJaULhb4MkV5
+ MHmDtgQZ7Y6vQOoRafNcjdab1m8jmYbh8Ox0xcyAJF866JXyArBCoNYzebFkQV1wRZF3
+ r3hM3WSnIq7Ht5VQ2PIwvurJMfamtV7PLgYZxEoHoT74qEv3IGeXPryfDRdu7AW/qetQ
+ L1ocOXaYsoIrsq1AVQ8cgaa4G2qWRkZviQ+mOBHOVW/MFUti3ALLJAr2MKUeWh+s4BW6
+ tAJsdEl41qUIuUvcW5DdLnVlmhWMC8lZFuXyyo4x1R3eX3DaWLHh1JzDrRZDt/CN6qga
+ 036w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=KNG9rf3jiBLOHJ1Qe+5HClUHwDC8G2v5PJoNSRMQj2o=;
+ b=tPBJvC7qzSKn8I89NViTOUIaCldIWRXSFlH/V17//qA+HYsDSxMNIHnBgjQJmJV0aQ
+ H2bP71sI+kgCx0AoeXhVbULUv7byvLNJZ7555J48bQnta/+zhVFjBacEXlpgLoV4yYq9
+ apXMXV35yqLPEoO6heIQtOTCYBpZh4HGie+Tz8aBTbwxCt/GemO2+Orh+BdPyiP+FiQ1
+ xGDrY6CjtDjY/xU0BBj5wmSEbcNqK4ySWCyrgYJ1SuhF1V15AJPJLGS+jzUBv/gwgQNl
+ DK8fLUYSfjZuRa5/HlLb+430OsQ7sXShqSLXd+/DKfhhxB8Eq1suHCSyu+KfiL7GDokA
+ wUvg==
+X-Gm-Message-State: AOAM5336UZ554dFRqbUzRd/LQwsH2JvpYFnrDlXNptHpxt5zilgnmKkR
+ 6sIqSgqxH/iTJuYdh96M6zIY3d+/qKQMQ5U03go=
+X-Google-Smtp-Source: ABdhPJyhWLCSkpSmtD0p55Cmpr9Ao1aJs0IYHWLu4Tcyj9q39OBvqgrIxMZMaEy7w1zacpD3mVr5R93EsjzwMBkGuSA=
+X-Received: by 2002:a25:df55:: with SMTP id w82mr977719ybg.135.1606157772316; 
+ Mon, 23 Nov 2020 10:56:12 -0800 (PST)
+MIME-Version: 1.0
 References: <cover.1605896059.git.gustavoars@kernel.org>
  <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
  <202011201129.B13FDB3C@keescook>
@@ -66,12 +76,16 @@ References: <cover.1605896059.git.gustavoars@kernel.org>
  <1c7d7fde126bc0acf825766de64bf2f9b888f216.camel@HansenPartnership.com>
  <CANiq72m22Jb5_+62NnwX8xds2iUdWDMAqD8PZw9cuxdHd95W0A@mail.gmail.com>
  <fc45750b6d0277c401015b7aa11e16cd15f32ab2.camel@HansenPartnership.com>
-User-Agent: Evolution 3.38.1-1 
-MIME-Version: 1.0
+In-Reply-To: <fc45750b6d0277c401015b7aa11e16cd15f32ab2.camel@HansenPartnership.com>
+From: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
+Date: Mon, 23 Nov 2020 19:56:01 +0100
+Message-ID: <CANiq72k5tpDoDPmJ0ZWc1DGqm+81Gi-uEENAtvEs9v3SZcx6_Q@mail.gmail.com>
+Subject: Re: [PATCH 000/141] Fix fall-through warnings for Clang
+To: James Bottomley <James.Bottomley@hansenpartnership.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201123_113257_659486_8AF3AE28 
-X-CRM114-Status: GOOD (  11.29  )
-X-Mailman-Approved-At: Wed, 25 Nov 2020 04:57:00 -0500
+X-CRM114-CacheID: sfid-20201123_135614_460213_B3F9BE02 
+X-CRM114-Status: GOOD (  16.32  )
+X-Mailman-Approved-At: Wed, 25 Nov 2020 04:56:59 -0500
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -122,53 +136,71 @@ Cc: alsa-devel@alsa-project.org, linux-atm-general@lists.sourceforge.net,
  linux-renesas-soc@vger.kernel.org, linux-sctp@vger.kernel.org,
  linux-usb@vger.kernel.org, netfilter-devel@vger.kernel.org,
  Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
- patches@opensource.cirrus.com, linux-integrity@vger.kernel.org,
- target-devel@vger.kernel.org, linux-hardening@vger.kernel.org
+ patches@opensource.cirrus.com, Joe Perches <joe@perches.com>,
+ linux-integrity@vger.kernel.org, target-devel@vger.kernel.org,
+ linux-hardening@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, 2020-11-23 at 07:58 -0800, James Bottomley wrote:
+On Mon, Nov 23, 2020 at 4:58 PM James Bottomley
+<James.Bottomley@hansenpartnership.com> wrote:
+>
+> Well, I used git.  It says that as of today in Linus' tree we have 889
+> patches related to fall throughs and the first series went in in
+> october 2017 ... ignoring a couple of outliers back to February.
+
+I can see ~10k insertions over ~1k commits and 15 years that mention a
+fallthrough in the entire repo. That is including some commits (like
+the biggest one, 960 insertions) that have nothing to do with C
+fallthrough. A single kernel release has an order of magnitude more
+changes than this...
+
+But if we do the math, for an author, at even 1 minute per line change
+and assuming nothing can be automated at all, it would take 1 month of
+work. For maintainers, a couple of trivial lines is noise compared to
+many other patches.
+
+In fact, this discussion probably took more time than the time it
+would take to review the 200 lines. :-)
+
 > We're also complaining about the inability to recruit maintainers:
-> 
+>
 > https://www.theregister.com/2020/06/30/hard_to_find_linux_maintainers_says_torvalds/
-> 
+>
 > And burn out:
-> 
+>
 > http://antirez.com/news/129
 
-https://www.wired.com/story/open-source-coders-few-tired/
+Accepting trivial and useful 1-line patches is not what makes a
+voluntary maintainer quit... Thankless work with demanding deadlines is.
+
+> The whole crux of your argument seems to be maintainers' time isn't
+> important so we should accept all trivial patches
+
+I have not said that, at all. In fact, I am a voluntary one and I
+welcome patches like this. It takes very little effort on my side to
+review and it helps the kernel overall. Paid maintainers are the ones
+that can take care of big features/reviews.
 
 > What I'm actually trying to articulate is a way of measuring value of
 > the patch vs cost ... it has nothing really to do with who foots the
 > actual bill.
 
-It's unclear how to measure value in consistency.
-
-But one way that costs can be reduced is by automation and _not_
-involving maintainers when the patch itself is provably correct.
+I understand your point, but you were the one putting it in terms of a
+junior FTE. In my view, 1 month-work (worst case) is very much worth
+removing a class of errors from a critical codebase.
 
 > One thesis I'm actually starting to formulate is that this continual
 > devaluing of maintainers is why we have so much difficulty keeping and
 > recruiting them.
 
-The linux kernel has something like 1500 different maintainers listed
-in the MAINTAINERS file.  That's not a trivial number.
+That may very well be true, but I don't feel anybody has devalued
+maintainers in this discussion.
 
-$ git grep '^M:' MAINTAINERS | sort | uniq -c | wc -l
-1543
-$ git grep '^M:' MAINTAINERS| cut -f1 -d'<' | sort | uniq -c | wc -l
-1446
-
-I think the question you are asking is about trust and how it
-effects development.
-
-And back to that wired story, the actual number of what you might
-be considering to be maintainers is likely less than 10% of the
-listed numbers above.
-
-
+Cheers,
+Miguel
 
 -- 
 linux-i3c mailing list
