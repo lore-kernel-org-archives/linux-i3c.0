@@ -7,19 +7,17 @@ X-Spam-Status: No, score=-3.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
 	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D07B6C6379D
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 96417C64E75
+	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:25 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 5A1AE2083E
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:24 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 280BD2083E
+	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:25 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="zV8GhEtH";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=hansenpartnership.com header.i=@hansenpartnership.com header.b="Tyy0xQy0";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=hansenpartnership.com header.i=@hansenpartnership.com header.b="Tyy0xQy0"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 5A1AE2083E
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=HansenPartnership.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="US7UWV0P"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 280BD2083E
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=perches.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
@@ -27,51 +25,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Date:To:From:
 	Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=W4uRSXmcE0Iys4NeOzIuqNLf0fHoeJHCpe7ibBP94sI=; b=zV8GhEtHFgpQQ3v+trOffElqX
-	ftyub2jAPBul6GgLzyBuFpa2qc3q/CQAnTaXVi39BMigxuFspfLdySg5OQl42lLCdn3gZqP+pDWsO
-	rx3TjomjnG0sIOWdaZtbzEqXW8KY9qD8G5NcyDe7cq9iHu1vy5GBtt8n41KuAGtEj/OUXUTsl3570
-	u6pj2DZUb2e/hUYRywbWepc2IJxUPuBI38pSkq5pux/YySrrEM+bgdcvENz7i8puHlIS0Vk9z+OuO
-	aDnF8Y4mdfuzaois1jmDdKBtdPVAPjNieluizhO05BKlpHOVcbmh2ovaBqEj5g70tOFWeJLzRfqQh
-	4gaE71/dw==;
+	 bh=fePEMevXTVtgYGuCqxhj/3UN0eqwWE33kd37H0CilUI=; b=US7UWV0PUjhxlrd3tvks/z/PO
+	5dzI2Yj7ok9mUnROBxxioKVHXI8wrWIKlClkE+6Gjrd2LFCy5aTLiA3Qq1kHHmdVKUs2R2eC7RLve
+	/DjRMY+J/C4gMXEITxIJDly4FPBP0PSYRNcSP9XoD9+NLwQjqrDbsAwTr6N911jDuECi/e48IcM1S
+	MbE8Yf3wGFRzEFb4Nr/E5BNbXPBrQRGCIpukO5CjAav+rrgTSNuTxX5teI5NEU6gV3/3kxb3T6J9m
+	6TEM/nPC2yRvk125ab3F3ILnxAy4y73PJIJAoDM6/n/kVulC+Rt5jykPr2Lt6WpD+3xxDveCjySd8
+	IRbLh6yLg==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1khrYB-0006Xs-Kn; Wed, 25 Nov 2020 09:57:23 +0000
-Received: from bedivere.hansenpartnership.com ([2607:fcd0:100:8a00::2])
+	id 1khrYC-0006YM-CG; Wed, 25 Nov 2020 09:57:24 +0000
+Received: from smtprelay0107.hostedemail.com ([216.40.44.107]
+ helo=smtprelay.hostedemail.com)
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1khIl1-0008Iy-Gi; Mon, 23 Nov 2020 20:48:20 +0000
-Received: from localhost (localhost [127.0.0.1])
- by bedivere.hansenpartnership.com (Postfix) with ESMTP id 81FC7128092C;
- Mon, 23 Nov 2020 12:38:03 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
- d=hansenpartnership.com; s=20151216; t=1606163883;
- bh=+EDGs3PYzl3z47JpXWUueALZlElPDdJywkYLk/HcIjg=;
- h=Message-ID:Subject:From:To:Date:In-Reply-To:References:From;
- b=Tyy0xQy0htMQEdpfMUvFUuPG04g7ZXvYvYsCjWoq+QOlUp2WQfo8Vk+CnXXw5nkQT
- a3Wz7+ONj/4K4WJ6m4qOiNdEl9e5tbHlW07s/zxEoMhv+eMdbQKfvYZ25zqNb6Olj/
- onXIz2W3FBWOnXIoTYXwnsUNPzdRLL+aS2e3QsY4=
-Received: from bedivere.hansenpartnership.com ([127.0.0.1])
- by localhost (bedivere.hansenpartnership.com [127.0.0.1]) (amavisd-new,
- port 10024)
- with ESMTP id Fm687JPabQpA; Mon, 23 Nov 2020 12:38:03 -0800 (PST)
-Received: from jarvis.int.hansenpartnership.com (unknown
- [IPv6:2601:600:8280:66d1::527])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by bedivere.hansenpartnership.com (Postfix) with ESMTPSA id EBC5C128091E;
- Mon, 23 Nov 2020 12:37:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
- d=hansenpartnership.com; s=20151216; t=1606163883;
- bh=+EDGs3PYzl3z47JpXWUueALZlElPDdJywkYLk/HcIjg=;
- h=Message-ID:Subject:From:To:Date:In-Reply-To:References:From;
- b=Tyy0xQy0htMQEdpfMUvFUuPG04g7ZXvYvYsCjWoq+QOlUp2WQfo8Vk+CnXXw5nkQT
- a3Wz7+ONj/4K4WJ6m4qOiNdEl9e5tbHlW07s/zxEoMhv+eMdbQKfvYZ25zqNb6Olj/
- onXIz2W3FBWOnXIoTYXwnsUNPzdRLL+aS2e3QsY4=
-Message-ID: <4993259d01a0064f8bb22770503490f9252f3659.camel@HansenPartnership.com>
+ id 1khMm9-0005om-Jk; Tue, 24 Nov 2020 01:05:46 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay08.hostedemail.com (Postfix) with ESMTP id C6794182CED28;
+ Tue, 24 Nov 2020 01:05:42 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-HE-Tag: sea70_4d178da27369
+X-Filterd-Recvd-Size: 4565
+Received: from XPS-9350.home (unknown [47.151.128.180])
+ (Authenticated sender: joe@perches.com)
+ by omf04.hostedemail.com (Postfix) with ESMTPA;
+ Tue, 24 Nov 2020 01:05:31 +0000 (UTC)
+Message-ID: <e72a1aaef8673553a3ee9dfa033d6e893e00abcd.camel@perches.com>
 Subject: Re: [PATCH 000/141] Fix fall-through warnings for Clang
-From: James Bottomley <James.Bottomley@HansenPartnership.com>
-To: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
-Date: Mon, 23 Nov 2020 12:37:58 -0800
-In-Reply-To: <CANiq72k5tpDoDPmJ0ZWc1DGqm+81Gi-uEENAtvEs9v3SZcx6_Q@mail.gmail.com>
+From: Joe Perches <joe@perches.com>
+To: Finn Thain <fthain@telegraphics.com.au>, Miguel Ojeda
+ <miguel.ojeda.sandonis@gmail.com>
+Date: Mon, 23 Nov 2020 17:05:30 -0800
+In-Reply-To: <alpine.LNX.2.23.453.2011241036520.7@nippy.intranet>
 References: <cover.1605896059.git.gustavoars@kernel.org>
  <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
  <202011201129.B13FDB3C@keescook>
@@ -79,16 +63,16 @@ References: <cover.1605896059.git.gustavoars@kernel.org>
  <202011220816.8B6591A@keescook>
  <9b57fd4914b46f38d54087d75e072d6e947cb56d.camel@HansenPartnership.com>
  <CANiq72nZrHWTA4_Msg6MP9snTyenC6-eGfD27CyfNSu7QoVZbw@mail.gmail.com>
- <1c7d7fde126bc0acf825766de64bf2f9b888f216.camel@HansenPartnership.com>
- <CANiq72m22Jb5_+62NnwX8xds2iUdWDMAqD8PZw9cuxdHd95W0A@mail.gmail.com>
- <fc45750b6d0277c401015b7aa11e16cd15f32ab2.camel@HansenPartnership.com>
- <CANiq72k5tpDoDPmJ0ZWc1DGqm+81Gi-uEENAtvEs9v3SZcx6_Q@mail.gmail.com>
-User-Agent: Evolution 3.34.4 
+ <alpine.LNX.2.23.453.2011230938390.7@nippy.intranet>
+ <CANiq72=z+tmuey9wj3Kk7wX5s0hTHpsQdLhAqcOVNrHon6xn5Q@mail.gmail.com>
+ <alpine.LNX.2.23.453.2011241036520.7@nippy.intranet>
+User-Agent: Evolution 3.38.1-1 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201123_154819_992765_C32CF706 
-X-CRM114-Status: GOOD (  30.95  )
-X-Mailman-Approved-At: Wed, 25 Nov 2020 04:56:59 -0500
+X-CRM114-CacheID: sfid-20201123_200545_789954_2C0133F3 
+X-CRM114-Status: UNSURE (   6.69  )
+X-CRM114-Notice: Please train this message.
+X-Mailman-Approved-At: Wed, 25 Nov 2020 04:57:00 -0500
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,16 +87,18 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
 Cc: alsa-devel@alsa-project.org, linux-atm-general@lists.sourceforge.net,
  reiserfs-devel@vger.kernel.org, linux-iio@vger.kernel.org,
  linux-wireless <linux-wireless@vger.kernel.org>, linux-fbdev@vger.kernel.org,
- dri-devel@lists.freedesktop.org, "Gustavo A. R. Silva" <gustavoars@kernel.org>,
- Nathan Chancellor <natechancellor@gmail.com>, linux-ide@vger.kernel.org,
- dm-devel@redhat.com, keyrings@vger.kernel.org, linux-mtd@lists.infradead.org,
- GR-everest-linux-l2@marvell.com, wcn36xx@lists.infradead.org,
- samba-technical@lists.samba.org, linux-i3c@lists.infradead.org,
- linux1394-devel@lists.sourceforge.net, linux-afs@lists.infradead.org,
- usb-storage@lists.one-eyed-alien.net, drbd-dev@lists.linbit.com,
- devel@driverdev.osuosl.org, linux-cifs@vger.kernel.org,
- rds-devel@oss.oracle.com, Nick Desaulniers <ndesaulniers@google.com>,
- linux-scsi@vger.kernel.org, linux-rdma@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, "Gustavo A. R.
+ Silva" <gustavoars@kernel.org>,
+ James Bottomley <James.Bottomley@hansenpartnership.com>,
+ linux-ide@vger.kernel.org, dm-devel@redhat.com, keyrings@vger.kernel.org,
+ linux-mtd@lists.infradead.org, GR-everest-linux-l2@marvell.com,
+ wcn36xx@lists.infradead.org, samba-technical@lists.samba.org,
+ linux-i3c@lists.infradead.org, linux1394-devel@lists.sourceforge.net,
+ linux-afs@lists.infradead.org, usb-storage@lists.one-eyed-alien.net,
+ drbd-dev@lists.linbit.com, devel@driverdev.osuosl.org,
+ linux-cifs@vger.kernel.org, rds-devel@oss.oracle.com,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-scsi@vger.kernel.org,
+ Nathan Chancellor <natechancellor@gmail.com>, linux-rdma@vger.kernel.org,
  oss-drivers@netronome.com, bridge@lists.linux-foundation.org,
  linux-security-module@vger.kernel.org, amd-gfx@lists.freedesktop.org,
  linux-stm32@st-md-mailman.stormreply.com, cluster-devel@redhat.com,
@@ -139,114 +125,22 @@ Cc: alsa-devel@alsa-project.org, linux-atm-general@lists.sourceforge.net,
  linux-renesas-soc@vger.kernel.org, linux-sctp@vger.kernel.org,
  linux-usb@vger.kernel.org, netfilter-devel@vger.kernel.org,
  Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
- patches@opensource.cirrus.com, Joe Perches <joe@perches.com>,
- linux-integrity@vger.kernel.org, target-devel@vger.kernel.org,
- linux-hardening@vger.kernel.org
+ patches@opensource.cirrus.com, linux-integrity@vger.kernel.org,
+ target-devel@vger.kernel.org, linux-hardening@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, 2020-11-23 at 19:56 +0100, Miguel Ojeda wrote:
-> On Mon, Nov 23, 2020 at 4:58 PM James Bottomley
-> <James.Bottomley@hansenpartnership.com> wrote:
-> > Well, I used git.  It says that as of today in Linus' tree we have
-> > 889 patches related to fall throughs and the first series went in
-> > in october 2017 ... ignoring a couple of outliers back to February.
-> 
-> I can see ~10k insertions over ~1k commits and 15 years that mention
-> a fallthrough in the entire repo. That is including some commits
-> (like the biggest one, 960 insertions) that have nothing to do with C
-> fallthrough. A single kernel release has an order of magnitude more
-> changes than this...
-> 
-> But if we do the math, for an author, at even 1 minute per line
-> change and assuming nothing can be automated at all, it would take 1
-> month of work. For maintainers, a couple of trivial lines is noise
-> compared to many other patches.
+On Tue, 2020-11-24 at 11:58 +1100, Finn Thain wrote:
+> it's not for me to prove that such patches don't affect code 
+> generation. That's for the patch author and (unfortunately) for reviewers.
 
-So you think a one line patch should take one minute to produce ... I
-really don't think that's grounded in reality.  I suppose a one line
-patch only takes a minute to merge with b4 if no-one reviews or tests
-it, but that's not really desirable.
+Ideally, that proof would be provided by the compilation system itself
+and not patch authors nor reviewers nor maintainers.
 
-> In fact, this discussion probably took more time than the time it
-> would take to review the 200 lines. :-)
-
-I'm framing the discussion in terms of the whole series of changes we
-have done for fall through, both what's in the tree currently (889
-patches) both in terms of the produce and the consumer.  That's what I
-used for my figures for cost.
-
-> > We're also complaining about the inability to recruit maintainers:
-> > 
-> > https://www.theregister.com/2020/06/30/hard_to_find_linux_maintainers_says_torvalds/
-> > 
-> > And burn out:
-> > 
-> > http://antirez.com/news/129
-> 
-> Accepting trivial and useful 1-line patches
-
-Part of what I'm trying to measure is the "and useful" bit because
-that's not a given.
-
-> is not what makes a voluntary maintainer quit...
-
-so the proverb "straw which broke the camel's back" uniquely doesn't
-apply to maintainers
-
->  Thankless work with demanding deadlines is.
-
-That's another potential reason, but it doesn't may other reasons less
-valid.
-
-> > The whole crux of your argument seems to be maintainers' time isn't
-> > important so we should accept all trivial patches
-> 
-> I have not said that, at all. In fact, I am a voluntary one and I
-> welcome patches like this. It takes very little effort on my side to
-> review and it helps the kernel overall.
-
-Well, you know, subsystems are very different in terms of the amount of
-patches a maintainer has to process per release cycle of the kernel. 
-If a maintainer is close to capacity, additional patches, however
-trivial, become a problem.  If a maintainer has spare cycles, trivial
-patches may look easy.
-
-> Paid maintainers are the ones that can take care of big
-> features/reviews.
-> 
-> > What I'm actually trying to articulate is a way of measuring value
-> > of the patch vs cost ... it has nothing really to do with who foots
-> > the actual bill.
-> 
-> I understand your point, but you were the one putting it in terms of
-> a junior FTE.
-
-No, I evaluated the producer side in terms of an FTE.  What we're
-mostly arguing about here is the consumer side: the maintainers and
-people who have to rework their patch sets. I estimated that at 100h.
-
->  In my view, 1 month-work (worst case) is very much worth
-> removing a class of errors from a critical codebase.
-> 
-> > One thesis I'm actually starting to formulate is that this
-> > continual devaluing of maintainers is why we have so much
-> > difficulty keeping and recruiting them.
-> 
-> That may very well be true, but I don't feel anybody has devalued
-> maintainers in this discussion.
-
-You seem to be saying that because you find it easy to merge trivial
-patches, everyone should.  I'm reminded of a friend long ago who
-thought being a Tees River Pilot was a sinecure because he could
-navigate the Tees blindfold.  What he forgot, of course, is that just
-because it's easy with a trawler doesn't mean it's easy with an oil
-tanker.  In fact it takes longer to qualify as a Tees River Pilot than
-it does to get a PhD.
-
-James
+Unfortunately gcc does not guarantee repeatability or deterministic output.
+To my knowledge, neither does clang.
 
 
 
