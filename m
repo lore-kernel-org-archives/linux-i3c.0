@@ -2,23 +2,22 @@ Return-Path: <SRS0=M/mW=E7=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
-	autolearn=ham autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-3.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 6F5FFC5519F
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 4D120C63777
+	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:29 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 6EE682083E
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:27 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id CBD862083E
+	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:28 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="yCKSreoE";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=baylibre-com.20150623.gappssmtp.com header.i=@baylibre-com.20150623.gappssmtp.com header.b="hHQILDw0"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 6EE682083E
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=baylibre.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="hBvnUGr4"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org CBD862083E
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=telegraphics.com.au
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
@@ -26,64 +25,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:In-Reply-To:
 	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Ejdqu/BYUsDmQbqFDvqRXPqoDQOfwZgqVcr6qoG7CAg=; b=yCKSreoE4jrwDHqE8Ac/cXjb4
-	O4/plKtgzT0RyGAvQLqw8/L78iyqj/41/k9ckYiR9qgByGqcy35a3FqbXacUIf1ZQna1t3PH1gUAr
-	JdnvH3iKpOJ8LZ0Y+W2w9ZJ/u/1Og1hOYm6CcMz6zl2eJiL+nfsWnq9qLolYmupAezEGsbtxvkk4p
-	8wx+almtIpstgDoT4V/ulbrduSyPj7KbROTxTL4ttfHgLPPiIoFARupVJiBRWDsNsFey1NHL7NT1P
-	hDC8j+MGvdDTeoNEyUl7MDdfVwe7tEpatnjqliUiQ9P/ZaWP+TcPGntUJcT55BweZW4BUojjMeW2l
-	witwwHJsg==;
+	 bh=vETAowz5myfpccm+sDRfrrUdjKtXDlH6KcMBNFxLGsk=; b=hBvnUGr4feoq/4Ok0Grh6flS7
+	YLMKh+NjQsZISe0ECKe5FbqZKonk+yq8BpP/kteLyG+EPHkdHdRd1fuSZo7XLFObTdic+EqeKNIyN
+	prvYpvXY4ospoRrr5iti6oQAu4vlH80PH5oVEnkQPU6NSXD0wtGNhyg4aB9V7d6OTOfFEIRm9O6et
+	LiaY7KlMLvnI1j9K9EPvlULITKX5YeY2P6XO0AxSbA1ZgT7mIn8vy56ZDDtssGiIhC2BvjbgP+mMv
+	hg8TOT7qBL8Ai2wugRL+cKPOPWr1QtCY/yapZL1J/klDIeZMzAdAJ0xjG6jpQ9hsndXmLxaAmfUov
+	WtQh7zjOw==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1khrYE-0006Zr-MA; Wed, 25 Nov 2020 09:57:26 +0000
-Received: from mail-qv1-xf42.google.com ([2607:f8b0:4864:20::f42])
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1khaY1-0004Rd-ST
- for linux-i3c@lists.infradead.org; Tue, 24 Nov 2020 15:48:07 +0000
-Received: by mail-qv1-xf42.google.com with SMTP id x13so10793923qvk.8
- for <linux-i3c@lists.infradead.org>; Tue, 24 Nov 2020 07:48:03 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:in-reply-to:message-id:references
- :mime-version; bh=ubJInrGSsPLGKGouG7fpjnMRMu6mjU1dee+kkLRQJso=;
- b=hHQILDw03u/sl9BOCAlhrVjo9pT1JNk1zqKicW8pDpjpdemn2tv0bQrmpqWWp9TJPp
- 9WRL3NIb6Oyo/7pQmptCxsdnzIgS4TZC+smRhtxd34Vj6OvTCQWwuPS7kFj2+UAO0Xgy
- 4/0c9vuOfTsKe5SFMTjEs+G8oz0P5j3G7CxmCLKbzuAE8hevvUEVPk5huxPVSZ4cBm7f
- JVIG/DOVhd6fUdJA+yPBVPBoMjucv8i/mhsuJdwb+V9mEc8pocbx72lGwXRhFQ7FxBYO
- c4k508M0ay+aTrTr3wbwrpo4b+kQu5nNDoW/aFjAK/pypvbh7Cby3FBjs7cmT3ChR44g
- IlVQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
- :references:mime-version;
- bh=ubJInrGSsPLGKGouG7fpjnMRMu6mjU1dee+kkLRQJso=;
- b=FrY8rVG1Lx7P5NyeqrRK6wRHRs3Y2Zl/bmX6yX3+2nDtLggogS8wi0efTsOzaWYfnT
- 2wpMAq+imz3i9hTEZLW/vqj0h/cNxs8mWoTn07B+XqWspUsVI6Ecj7mUyoNJQdfKpiQi
- qruybofTTM6fnmny8kCFB3hbQRMNFW8Rjbl0TDq8FFoWTfV9VyJ78tcccXXOC7j/KACJ
- /gwby0qIBCLaDDBMEGDlVPmjUoIbECpbiDWLCE768p5atvXqj+d9sIgLbWrM9K62dCaw
- VkIZG/nQD5IE18/EGCsHRVZ5oVtGmu7nukIAinOq59Dcxa8NJoMD1eoxiFO9CB5Jeqlq
- pgjw==
-X-Gm-Message-State: AOAM532GZ6jw+763jYtu4DXEo1TECizlJdueFj8uek3uTIZaHRCTW8y8
- 36KZpgshngIBWazEzFHJjZ992w==
-X-Google-Smtp-Source: ABdhPJydlpNAWXjt4Gk87KvAf/FoPLdSEj4YPKw88iYN9nz6ZjtmfbEXGr3ZkwuOUekwx2ztrZ7ydg==
-X-Received: by 2002:ad4:524b:: with SMTP id s11mr5485759qvq.3.1606232882237;
- Tue, 24 Nov 2020 07:48:02 -0800 (PST)
-Received: from xanadu.home (modemcable076.50-203-24.mc.videotron.ca.
- [24.203.50.76])
- by smtp.gmail.com with ESMTPSA id i9sm12931180qtp.72.2020.11.24.07.48.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 24 Nov 2020 07:48:01 -0800 (PST)
-Date: Tue, 24 Nov 2020 10:48:00 -0500 (EST)
-From: Nicolas Pitre <npitre@baylibre.com>
-To: Colin King <colin.king@canonical.com>
-Subject: Re: [PATCH][next] i3c/master: Fix uninitialized variable next_addr
-In-Reply-To: <20201124123504.396249-1-colin.king@canonical.com>
-Message-ID: <nycvar.YSQ.7.78.906.2011241046530.2184@knanqh.ubzr>
-References: <20201124123504.396249-1-colin.king@canonical.com>
+	id 1khrYG-0006aj-17; Wed, 25 Nov 2020 09:57:28 +0000
+Received: from kvm5.telegraphics.com.au ([98.124.60.144])
+ by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1khgjO-0000Bv-Gb; Tue, 24 Nov 2020 22:24:15 +0000
+Received: from localhost (localhost.localdomain [127.0.0.1])
+ by kvm5.telegraphics.com.au (Postfix) with ESMTP id 8A96E22AD6;
+ Tue, 24 Nov 2020 17:24:09 -0500 (EST)
+Date: Wed, 25 Nov 2020 09:24:08 +1100 (AEDT)
+From: Finn Thain <fthain@telegraphics.com.au>
+To: Kees Cook <keescook@chromium.org>
+Subject: Re: [Intel-wired-lan] [PATCH 000/141] Fix fall-through warnings for
+ Clang
+In-Reply-To: <202011241327.BB28F12F6@keescook>
+Message-ID: <alpine.LNX.2.23.453.2011250859290.15@nippy.intranet>
+References: <202011201129.B13FDB3C@keescook>
+ <20201120115142.292999b2@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+ <202011220816.8B6591A@keescook>
+ <9b57fd4914b46f38d54087d75e072d6e947cb56d.camel@HansenPartnership.com>
+ <ca071decb87cc7e905411423c05a48f9fd2f58d7.camel@perches.com>
+ <0147972a72bc13f3629de8a32dee6f1f308994b5.camel@HansenPartnership.com>
+ <d8d1e9add08cdd4158405e77762d4946037208f8.camel@perches.com>
+ <dbd2cb703ed9eefa7dde9281ea26ab0f7acc8afe.camel@HansenPartnership.com>
+ <20201123130348.GA3119@embeddedor>
+ <8f5611bb015e044fa1c0a48147293923c2d904e4.camel@HansenPartnership.com>
+ <202011241327.BB28F12F6@keescook>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201124_104806_072329_A74C9316 
-X-CRM114-Status: GOOD (  17.02  )
-X-Mailman-Approved-At: Wed, 25 Nov 2020 04:56:58 -0500
+X-CRM114-CacheID: sfid-20201124_172414_589838_88C45691 
+X-CRM114-Status: GOOD (  15.20  )
+X-Mailman-Approved-At: Wed, 25 Nov 2020 04:56:59 -0500
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,53 +74,84 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: linux-i3c@lists.infradead.org, kernel-janitors@vger.kernel.org,
- linux-kernel@vger.kernel.org, Boris Brezillon <bbrezillon@kernel.org>
+Cc: alsa-devel@alsa-project.org, bridge@lists.linux-foundation.org,
+ target-devel@vger.kernel.org, Greg KH <gregkh@linuxfoundation.org>,
+ linux-iio@vger.kernel.org, linux-wireless@vger.kernel.org,
+ Jonathan Cameron <Jonathan.Cameron@huawei.com>, linux-fbdev@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, "Gustavo A. R. Silva" <gustavoars@kernel.org>,
+ James Bottomley <James.Bottomley@HansenPartnership.com>,
+ linux-ide@vger.kernel.org, dm-devel@redhat.com, keyrings@vger.kernel.org,
+ linux-mtd@lists.infradead.org, GR-everest-linux-l2@marvell.com,
+ wcn36xx@lists.infradead.org, linux-i3c@lists.infradead.org,
+ linux1394-devel@lists.sourceforge.net, linux-afs@lists.infradead.org,
+ drbd-dev@lists.linbit.com, devel@driverdev.osuosl.org,
+ linux-cifs@vger.kernel.org, rds-devel@oss.oracle.com,
+ linux-scsi@vger.kernel.org, linux-acpi@vger.kernel.org,
+ linux-rdma@vger.kernel.org, oss-drivers@netronome.com,
+ linux-atm-general@lists.sourceforge.net, ceph-devel@vger.kernel.org,
+ amd-gfx@lists.freedesktop.org, linux-stm32@st-md-mailman.stormreply.com,
+ cluster-devel@redhat.com, usb-storage@lists.one-eyed-alien.net,
+ linux-mmc@vger.kernel.org, coreteam@netfilter.org,
+ intel-wired-lan@lists.osuosl.org, linux-input@vger.kernel.org,
+ Miguel Ojeda <ojeda@kernel.org>, Jakub Kicinski <kuba@kernel.org>,
+ linux-ext4@vger.kernel.org, virtualization@lists.linux-foundation.org,
+ netfilter-devel@vger.kernel.org, linux-media@vger.kernel.org,
+ linux-watchdog@vger.kernel.org, selinux@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, intel-gfx@lists.freedesktop.org,
+ linux-sctp@vger.kernel.org, reiserfs-devel@vger.kernel.org,
+ linux-geode@lists.infradead.org, linux-block@vger.kernel.org,
+ linux-gpio@vger.kernel.org, op-tee@lists.trustedfirmware.org,
+ linux-mediatek@lists.infradead.org, xen-devel@lists.xenproject.org,
+ nouveau@lists.freedesktop.org, linux-hams@vger.kernel.org,
+ Nathan Chancellor <natechancellor@gmail.com>, linux-can@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-nfs@vger.kernel.org,
+ GR-Linux-NIC-Dev@marvell.com, linux-mm@kvack.org, netdev@vger.kernel.org,
+ linux-decnet-user@lists.sourceforge.net, samba-technical@lists.samba.org,
+ linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+ linux-security-module@vger.kernel.org, linux-usb@vger.kernel.org,
+ tipc-discussion@lists.sourceforge.net, linux-crypto@vger.kernel.org,
+ patches@opensource.cirrus.com, Joe Perches <joe@perches.com>,
+ linux-integrity@vger.kernel.org, x86@kernel.org,
+ linux-hardening@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, 24 Nov 2020, Colin King wrote:
+On Tue, 24 Nov 2020, Kees Cook wrote:
 
-> From: Colin Ian King <colin.king@canonical.com>
+> On Mon, Nov 23, 2020 at 08:31:30AM -0800, James Bottomley wrote:
+> > Really, no ... something which produces no improvement has no value at 
+> > all ... we really shouldn't be wasting maintainer time with it because 
+> > it has a cost to merge.  I'm not sure we understand where the balance 
+> > lies in value vs cost to merge but I am confident in the zero value 
+> > case.
 > 
-> The variable next_addr is not initialized and is being used in a call
-> to i3c_master_get_free_addr as a starting point to find the next address.
-> Fix this by initializing next_addr to 0 to avoid an uninitialized garbage
-> starting address from being used.
+> What? We can't measure how many future bugs aren't introduced because 
+> the kernel requires explicit case flow-control statements for all new 
+> code.
 > 
-> Addresses-Coverity: ("Uninitialized scalar variable")
-> Fixes: 9ad9a52cce28 ("i3c/master: introduce the mipi-i3c-hci driver")
-> Signed-off-by: Colin Ian King <colin.king@canonical.com>
 
-Acked-by: Nicolas Pitre <npitre@baylibre.com>
+These statements are not "missing" unless you presume that code written 
+before the latest de facto language spec was written should somehow be 
+held to that spec.
 
+If the 'fallthrough' statement is not part of the latest draft spec then 
+we should ask why not before we embrace it. Being that the kernel still 
+prefers -std=gnu89 you might want to consider what has prevented 
+-std=gnu99 or -std=gnu2x etc.
 
-
-
-
-> ---
->  drivers/i3c/master/mipi-i3c-hci/cmd_v1.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+> We already enable -Wimplicit-fallthrough globally, so that's not the 
+> discussion. The issue is that Clang is (correctly) even more strict than 
+> GCC for this, so these are the remaining ones to fix for full Clang 
+> coverage too.
 > 
-> diff --git a/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c b/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
-> index 6dd234a82892..d97c3175e0e2 100644
-> --- a/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
-> +++ b/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
-> @@ -293,7 +293,7 @@ static int hci_cmd_v1_daa(struct i3c_hci *hci)
->  {
->  	struct hci_xfer *xfer;
->  	int ret, dat_idx = -1;
-> -	u8 next_addr;
-> +	u8 next_addr = 0;
->  	u64 pid;
->  	unsigned int dcr, bcr;
->  	DECLARE_COMPLETION_ONSTACK(done);
-> -- 
-> 2.29.2
-> 
-> 
+
+Seems to me you should be patching the compiler.
+
+When you have consensus among the language lawyers you'll have more 
+credibility with those being subjected to enforcement.
 
 -- 
 linux-i3c mailing list
