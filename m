@@ -2,96 +2,105 @@ Return-Path: <SRS0=EM71=FF=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-5.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
+X-Spam-Status: No, score=-2.2 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
+	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,NICE_REPLY_A,SPF_HELO_NONE,
+	SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_1 autolearn=no autolearn_force=no
 	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 498EBC64E7A
-	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 07:39:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 42031C71156
+	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 07:39:29 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 82AA42087C
-	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 07:39:27 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id A9A042087C
+	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 07:39:28 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="x/PGdC3z";
-	dkim=fail reason="signature verification failed" (1024-bit key) header.d=chromium.org header.i=@chromium.org header.b="AWR/7M4m"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 82AA42087C
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=chromium.org
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="A3oVkaQQ";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.b="mE3/9/w1"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org A9A042087C
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NhgTwvPurHIl+T7BEDFsbzs9Rys//Y1uQXluLUT7JeM=; b=x/PGdC3z/kbygB8SCeaAmqRQ2
-	nISrjIkPECdqjNpRRxT+lppTfDHTj45ZQ0RyeiUde++1WGfiWBfY7Jy17XJs2/uEjLrzGH6pb119q
-	nYXmffPll6owpRCTc4NAkSph1QWnCp4yrXSFyX5W3DTZOdadrCyZBJEvbmIozEbX5KUXYq44GX8pk
-	94397Udn/HyiCSbKDCw62pUCvouJ4eaANCYCxe0aNC3QWh4Fbm0ahIfadxXgP/nVTb3Jp1jY+7vEp
-	f1sRcNJw3LYht6ijrNWXaks1h+GtXB4RRYcoaxGFRl8fgnos/f/a5/rxaxUxBFy+2g7Hav7zXojD0
-	KJ5YDGbpQ==;
+	 bh=0Fa1rJuEZMAr2ggEvc2UmIGtwND5ApmFo9yUQlx7jCc=; b=A3oVkaQQCRQ+OIBNssOfckSEP
+	fnMPbuDmjhOFPGn0BVVr8YOI8r0DbR6/de2nsHD5Y9w8eFFIz1wkSf4bq1nE1KfcALC4BXNe2kM3Y
+	7CEMaiPxDLZK5ft+mRpvrb6xI0L1tYNE/JFUwEF7YYtXLo4Reh6pww2QveRX6NzGpoP58PrGOAoqo
+	Iy4VpHaxhhXm1na+Ng32lSkeP4posKVlAaBdy3bubrcnWjNllZV9JD0WlnTIaXMV8Gdp6MJUIPtm0
+	MoypdR3MwKQ76AB3Hy19veObShy2tJbg1+xD/axdqbjkgP+0ElEn+XoPODx9oKTyD7VJ2EU/i29M7
+	C5HsyiZRw==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1kk0Fy-0007Rj-Nf; Tue, 01 Dec 2020 07:39:26 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1kk0Fz-0007S5-QY; Tue, 01 Dec 2020 07:39:27 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ki23C-0007Zt-15
- for linux-i3c@lists.infradead.org; Wed, 25 Nov 2020 21:10:11 +0000
-Received: by mail-pg1-x542.google.com with SMTP id j19so3506180pgg.5
- for <linux-i3c@lists.infradead.org>; Wed, 25 Nov 2020 13:10:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=5kDOOuMOjwqEdI4fOY8lF/zJwxoesF7EbkKd66qXZt4=;
- b=AWR/7M4mhE4fi43nRvdimsQoF0WR0/yRvzcmpbbdNnukQZ4s3FUnDOA4HlPrcfy1KL
- TnDV3Sp7ib0l66wO1u9Qkihqc0ymqk7uAD73hLx1Hbj+4zgGkd46Av0r6N17g4aWHL9f
- T52peLS6H3gWn2HtVm1n8SJNqsSbmk3lehF9k=
+ id 1ki3Wj-0005pk-Op; Wed, 25 Nov 2020 22:44:42 +0000
+Received: by mail-wm1-x343.google.com with SMTP id 1so243602wme.3;
+ Wed, 25 Nov 2020 14:44:40 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=mMrMdknFbsC77SFRvwwD3pm1cwl3V2MP65kzVJE6tY4=;
+ b=mE3/9/w1S1BsFafykdzrNl6nUKLQtv3irXzEz/AwtJdLppuZQnzVWeoYFC7Qb5OQef
+ 2DAcZ7D6Froq/rlKPIBwqGtt0C/0XmhDJf/Ua0btTGl1wBl77rh04suLM7Drqc/fd1vb
+ erjCUGXrwTRfKAEK60/5plkWP59Lm5M7QZ9ENMraFyUEU5TYdKtuuKGBjQ65xtLyj0UE
+ nayIBzzwS8QdOAkDbWxTvDHZJGPoguOAiztDitejPSo1Rp931ceTN4KgHMls79AEVEp8
+ 0UjkiGW0It0CwNfB/koaXcS1sEgjLFm2K1jcT9QDdZUmcgiCMPoll+6KvJ2hAfFlaA1V
+ 8PSw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=5kDOOuMOjwqEdI4fOY8lF/zJwxoesF7EbkKd66qXZt4=;
- b=S88sDw2YnIDbbI9XIkWoFRcrLLfw65h1qnfXbGOqkuTuYscmBWchpH1SYb+aFP8YqX
- qXnkZuQfww6d0yysHzwG7jr93LQt3n3l8iBWYbpbjdtNF7dQE6shlfoMLKvMPze9yl3Y
- zqf3v2DY7LPb6u+/RNWtY8KUTbXrsbtU1kqh9pGooRK221vOD9dxGJPq9OQDvNDyutSI
- l70bb+RKBCon/IqVsn8xFNOIEtb01kUP1pQadU250+gcRDNR4RUxZqn581eXU2EoPpdE
- H0fKjuD7+LjjsNBZ9t+kA+nwgXCrUT9acDZLTx7gYSJqf3NL+sr5cmMarXKfJA+CaZuI
- SG7Q==
-X-Gm-Message-State: AOAM530/oahGjA1/wXS8GwsjbqFyWHiPGFg3JLaS8yNA5y3hBDthNQBx
- +FjuyeNYJp7Fa4fAuz47H8argA==
-X-Google-Smtp-Source: ABdhPJxtOU3VPA7Y7ucN799oMICSzuh5uhFKuAq1LiQpUAr5IO1/6yxlbfPxSFBqrEGEx7Z+PADUmw==
-X-Received: by 2002:a17:90b:3505:: with SMTP id
- ls5mr6437623pjb.55.1606338602947; 
- Wed, 25 Nov 2020 13:10:02 -0800 (PST)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id z68sm2599034pgb.37.2020.11.25.13.10.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 25 Nov 2020 13:10:01 -0800 (PST)
-Date: Wed, 25 Nov 2020 13:10:00 -0800
-From: Kees Cook <keescook@chromium.org>
-To: James Bottomley <James.Bottomley@HansenPartnership.com>
-Subject: Re: [Intel-wired-lan] [PATCH 000/141] Fix fall-through warnings for
- Clang
-Message-ID: <202011251240.1E67BE900@keescook>
-References: <202011220816.8B6591A@keescook>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=mMrMdknFbsC77SFRvwwD3pm1cwl3V2MP65kzVJE6tY4=;
+ b=oGAqpj9E/KfdFnHEtC0k0hHL5+RSQVkEn+gyE0MvoXXbQUWwtldjnQnlb67XsWp8oA
+ RtsnXKopItez/Xu8D8eauXvy7DCYAkOu1UwvjkGO8j8dXWBZJB35riiDfGbAU4aMe3s0
+ p257MMfY+uKAJsqSNIaA9SrsEw87JKumSs9zDlEMtNAceQPi7fjBfvczczm5aG26GeB3
+ 6+KxtD+YLmaW+D9xEKpT+Mtn5hebRenUN2+Rr5S2wBkM5Jm5U9LEV+80sWseXndGo/ik
+ KoynxKOGbgr8vtq1VPflKAPDuLDXaSXfJzg2+EsmDlkWdZ0eeHjm9IJ7NcIzTStswTb2
+ Zp2A==
+X-Gm-Message-State: AOAM531SAElA6JcQ1sDOGRj6tokjc8efiyKv/8rgtSW0PF0ghouqHCTG
+ lG6KV4dCY6lIeCPWub4Y5jXadyI8+ggOwcHCF1Q=
+X-Google-Smtp-Source: ABdhPJzVXPr1uOlB1vaw2cfl6zSoOiLq1F6oo5r6Yg/UanqxqpZONWe00UKvdrBaRFZ4o0pgYT/ByA==
+X-Received: by 2002:a7b:cf0a:: with SMTP id l10mr6364382wmg.103.1606344279394; 
+ Wed, 25 Nov 2020 14:44:39 -0800 (PST)
+Received: from [192.168.1.122]
+ (cpc92720-cmbg20-2-0-cust364.5-4.cable.virginm.net. [82.21.83.109])
+ by smtp.gmail.com with ESMTPSA id h15sm6411655wrw.15.2020.11.25.14.44.35
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 25 Nov 2020 14:44:38 -0800 (PST)
+Subject: Re: [PATCH 000/141] Fix fall-through warnings for Clang
+To: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ James Bottomley <James.Bottomley@hansenpartnership.com>
+References: <cover.1605896059.git.gustavoars@kernel.org>
+ <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+ <202011201129.B13FDB3C@keescook>
+ <20201120115142.292999b2@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+ <202011220816.8B6591A@keescook>
  <9b57fd4914b46f38d54087d75e072d6e947cb56d.camel@HansenPartnership.com>
- <ca071decb87cc7e905411423c05a48f9fd2f58d7.camel@perches.com>
- <0147972a72bc13f3629de8a32dee6f1f308994b5.camel@HansenPartnership.com>
- <d8d1e9add08cdd4158405e77762d4946037208f8.camel@perches.com>
- <dbd2cb703ed9eefa7dde9281ea26ab0f7acc8afe.camel@HansenPartnership.com>
- <20201123130348.GA3119@embeddedor>
- <8f5611bb015e044fa1c0a48147293923c2d904e4.camel@HansenPartnership.com>
- <202011241327.BB28F12F6@keescook>
- <a841536fe65bb33f1c72ce2455a6eb47a0107565.camel@HansenPartnership.com>
+ <CANiq72nZrHWTA4_Msg6MP9snTyenC6-eGfD27CyfNSu7QoVZbw@mail.gmail.com>
+ <1c7d7fde126bc0acf825766de64bf2f9b888f216.camel@HansenPartnership.com>
+ <CANiq72m22Jb5_+62NnwX8xds2iUdWDMAqD8PZw9cuxdHd95W0A@mail.gmail.com>
+ <fc45750b6d0277c401015b7aa11e16cd15f32ab2.camel@HansenPartnership.com>
+ <CANiq72k5tpDoDPmJ0ZWc1DGqm+81Gi-uEENAtvEs9v3SZcx6_Q@mail.gmail.com>
+ <4993259d01a0064f8bb22770503490f9252f3659.camel@HansenPartnership.com>
+ <CANiq72kqO=bYMJnFS2uYRpgWATJ=uXxZuNUsTXT+3aLtrpnzvQ@mail.gmail.com>
+From: Edward Cree <ecree.xilinx@gmail.com>
+Message-ID: <44005bde-f6d4-5eaa-39b8-1a5efeedb2d3@gmail.com>
+Date: Wed, 25 Nov 2020 22:44:35 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <a841536fe65bb33f1c72ce2455a6eb47a0107565.camel@HansenPartnership.com>
+In-Reply-To: <CANiq72kqO=bYMJnFS2uYRpgWATJ=uXxZuNUsTXT+3aLtrpnzvQ@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201125_161006_500801_FB9A636D 
-X-CRM114-Status: GOOD (  16.70  )
-X-Mailman-Approved-At: Tue, 01 Dec 2020 02:39:24 -0500
+X-CRM114-CacheID: sfid-20201125_174441_877151_86A686BA 
+X-CRM114-Status: GOOD (  16.33  )
+X-Mailman-Approved-At: Tue, 01 Dec 2020 02:39:23 -0500
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,186 +112,93 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, bridge@lists.linux-foundation.org,
- target-devel@vger.kernel.org, Greg KH <gregkh@linuxfoundation.org>,
- linux-iio@vger.kernel.org, samba-technical@lists.samba.org,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>, linux-fbdev@vger.kernel.org,
+Cc: alsa-devel@alsa-project.org, linux-atm-general@lists.sourceforge.net,
+ reiserfs-devel@vger.kernel.org, linux-iio@vger.kernel.org,
+ linux-wireless <linux-wireless@vger.kernel.org>, linux-fbdev@vger.kernel.org,
  dri-devel@lists.freedesktop.org, "Gustavo A. R. Silva" <gustavoars@kernel.org>,
- linux-ide@vger.kernel.org, dm-devel@redhat.com, keyrings@vger.kernel.org,
- linux-mtd@lists.infradead.org, GR-everest-linux-l2@marvell.com,
- wcn36xx@lists.infradead.org, linux-i3c@lists.infradead.org,
+ Nathan Chancellor <natechancellor@gmail.com>, linux-ide@vger.kernel.org,
+ dm-devel@redhat.com, keyrings@vger.kernel.org, linux-mtd@lists.infradead.org,
+ GR-everest-linux-l2@marvell.com, wcn36xx@lists.infradead.org,
+ samba-technical@lists.samba.org, linux-i3c@lists.infradead.org,
  linux1394-devel@lists.sourceforge.net, linux-afs@lists.infradead.org,
- drbd-dev@lists.linbit.com, devel@driverdev.osuosl.org,
- linux-cifs@vger.kernel.org, rds-devel@oss.oracle.com,
- linux-scsi@vger.kernel.org, linux-acpi@vger.kernel.org,
- linux-rdma@vger.kernel.org, oss-drivers@netronome.com,
- linux-atm-general@lists.sourceforge.net, ceph-devel@vger.kernel.org,
- amd-gfx@lists.freedesktop.org, linux-stm32@st-md-mailman.stormreply.com,
- cluster-devel@redhat.com, usb-storage@lists.one-eyed-alien.net,
- linux-mmc@vger.kernel.org, coreteam@netfilter.org,
- intel-wired-lan@lists.osuosl.org, linux-input@vger.kernel.org,
+ usb-storage@lists.one-eyed-alien.net, drbd-dev@lists.linbit.com,
+ devel@driverdev.osuosl.org, linux-cifs@vger.kernel.org,
+ rds-devel@oss.oracle.com, Nick Desaulniers <ndesaulniers@google.com>,
+ linux-scsi@vger.kernel.org, linux-rdma@vger.kernel.org,
+ oss-drivers@netronome.com, bridge@lists.linux-foundation.org,
+ linux-security-module@vger.kernel.org, amd-gfx@lists.freedesktop.org,
+ linux-stm32@st-md-mailman.stormreply.com, cluster-devel@redhat.com,
+ linux-acpi@vger.kernel.org, coreteam@netfilter.org,
+ intel-wired-lan@lists.osuosl.org, linux-input <linux-input@vger.kernel.org>,
  Miguel Ojeda <ojeda@kernel.org>, Jakub Kicinski <kuba@kernel.org>,
- linux-ext4@vger.kernel.org, virtualization@lists.linux-foundation.org,
- netfilter-devel@vger.kernel.org, linux-media@vger.kernel.org,
- linux-watchdog@vger.kernel.org, selinux@vger.kernel.org,
+ Ext4 Developers List <linux-ext4@vger.kernel.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>,
+ Kees Cook <keescook@chromium.org>, selinux@vger.kernel.org,
  linux-arm-msm@vger.kernel.org, intel-gfx@lists.freedesktop.org,
- linux-sctp@vger.kernel.org, reiserfs-devel@vger.kernel.org,
- linux-geode@lists.infradead.org, linux-block@vger.kernel.org,
- linux-gpio@vger.kernel.org, op-tee@lists.trustedfirmware.org,
- linux-mediatek@lists.infradead.org, xen-devel@lists.xenproject.org,
- nouveau@lists.freedesktop.org, linux-hams@vger.kernel.org,
- Nathan Chancellor <natechancellor@gmail.com>, linux-can@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
- Nick Desaulniers <ndesaulniers@google.com>, linux-nfs@vger.kernel.org,
- GR-Linux-NIC-Dev@marvell.com, linux-mm@kvack.org, netdev@vger.kernel.org,
- linux-decnet-user@lists.sourceforge.net, linux-wireless@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- linux-security-module@vger.kernel.org, linux-usb@vger.kernel.org,
- tipc-discussion@lists.sourceforge.net, linux-crypto@vger.kernel.org,
+ linux-geode@lists.infradead.org, linux-can@vger.kernel.org,
+ linux-block@vger.kernel.org, linux-gpio@vger.kernel.org,
+ op-tee@lists.trustedfirmware.org, linux-mediatek@lists.infradead.org,
+ xen-devel@lists.xenproject.org, nouveau@lists.freedesktop.org,
+ linux-hams@vger.kernel.org, ceph-devel@vger.kernel.org,
+ virtualization@lists.linux-foundation.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-hwmon@vger.kernel.org,
+ linux-watchdog@vger.kernel.org, linux-nfs@vger.kernel.org,
+ GR-Linux-NIC-Dev@marvell.com, tipc-discussion@lists.sourceforge.net,
+ Linux-MM <linux-mm@kvack.org>, Network Development <netdev@vger.kernel.org>,
+ linux-decnet-user@lists.sourceforge.net, linux-mmc@vger.kernel.org,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ "maintainer:X86 ARCHITECTURE \(32-BIT AND 64-BIT\)" <x86@kernel.org>,
+ linux-renesas-soc@vger.kernel.org, linux-sctp@vger.kernel.org,
+ linux-usb@vger.kernel.org, netfilter-devel@vger.kernel.org,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
  patches@opensource.cirrus.com, Joe Perches <joe@perches.com>,
- linux-integrity@vger.kernel.org, x86@kernel.org,
+ linux-integrity@vger.kernel.org, target-devel@vger.kernel.org,
  linux-hardening@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Nov 24, 2020 at 11:05:35PM -0800, James Bottomley wrote:
-> Now, what we have seems to be about 6 cases (at least what's been shown
-> in this thread) where a missing break would cause potentially user
-> visible issues.  That means the value of this isn't zero, but it's not
-> a no-brainer massive win either.  That's why I think asking what we've
-> invested vs the return isn't a useless exercise.
-
-The number is much higher[1]. If it were 6 in the entire history of the
-kernel, I would agree with you. :) Some were fixed _before_ Gustavo's
-effort too, which I also count towards the idea of "this is a dangerous
-weakness in C, and now we have stopped it forever."
-
-> But the broader point I'm making is just because the compiler people
-> come up with a shiny new warning doesn't necessarily mean the problem
-> it's detecting is one that causes us actual problems in the code base. 
-> I'd really be happier if we had a theory about what classes of CVE or
-> bug we could eliminate before we embrace the next new warning.
-
-But we did! It was long ago justified and documented[2], and even links to
-the CWE[3] for it. This wasn't random joy over discovering a new warning
-we could turn on, this was turning on a warning that the compiler folks
-finally gave us to handle an entire class of flaws. If we need to update
-the code-base to address it not a useful debate -- that was settled
-already, even if you're only discovering it now. :P. This last patch
-set is about finishing that work for Clang, which is correctly even
-more strict than GCC.
-
--Kees
-
-[1] https://outflux.net/slides/2019/lss/kspp.pdf calls out specific
-    numbers (about 6.5% of the patches fixed missing breaks):
-	v4.19:  3 of 129
-	v4.20:  2 of  59
-	v5.0:   3 of  56
-	v5.1:  10 of 100
-	v5.2:   6 of  71
-	v5.3:   7 of  69
-
-    And in the history of the kernel, it's been an ongoing source of
-    flaws:
-
-    $ l --no-merges | grep -i 'missing break' | wc -l
-    185
-
-    The frequency of such errors being "naturally" found was pretty
-    steady until the static checkers started warning, and then it was
-    on the rise, but the full effort flushed the rest out, and now it's
-    dropped to almost zero:
-
-      1 v2.6.12
-      3 v2.6.16.28
-      1 v2.6.17
-      1 v2.6.19
-      2 v2.6.21
-      1 v2.6.22
-      3 v2.6.24
-      3 v2.6.29
-      1 v2.6.32
-      1 v2.6.33
-      1 v2.6.35
-      4 v2.6.36
-      3 v2.6.38
-      2 v2.6.39
-      7 v3.0
-      2 v3.1
-      2 v3.2
-      2 v3.3
-      3 v3.4
-      1 v3.5
-      8 v3.6
-      7 v3.7
-      3 v3.8
-      6 v3.9
-      3 v3.10
-      2 v3.11
-      5 v3.12
-      5 v3.13
-      2 v3.14
-      4 v3.15
-      2 v3.16
-      3 v3.17
-      2 v3.18
-      2 v3.19
-      1 v4.0
-      2 v4.1
-      5 v4.2
-      4 v4.5
-      5 v4.7
-      6 v4.8
-      1 v4.9
-      3 v4.10
-      2 v4.11
-      6 v4.12
-      3 v4.13
-      2 v4.14
-      5 v4.15
-      2 v4.16
-      7 v4.18
-      2 v4.19
-      6 v4.20
-      3 v5.0
-     12 v5.1
-      3 v5.2
-      4 v5.3
-      2 v5.4
-      1 v5.8
-
-
-    And the reason it's fully zero, is because we still have the cases we're
-    cleaning up right now. Even this last one from v5.8 is specifically of
-    the same type this series addresses:
-
-        case 4:
-                color_index = TrueCModeIndex;
-+               break;
-        default:
-                return;
-        }
-
-
-[2] https://www.kernel.org/doc/html/latest/process/deprecated.html#implicit-switch-case-fall-through
-
-	All switch/case blocks must end in one of:
-
-	break;
-	fallthrough;
-	continue;
-	goto <label>;
-	return [expression];
-
-[3] https://cwe.mitre.org/data/definitions/484.html
-
--- 
-Kees Cook
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+T24gMjUvMTEvMjAyMCAwMDozMiwgTWlndWVsIE9qZWRhIHdyb3RlOgo+IEkgaGF2ZSBzYWlkICph
+dXRob3JpbmcqIGxpbmVzIG9mICp0aGlzKiBraW5kIHRha2VzIGEgbWludXRlIHBlciBsaW5lLgo+
+IFNwZWNpZmljYWxseTogbGluZXMgZml4aW5nIHRoZSBmYWxsdGhyb3VnaCB3YXJuaW5nIG1lY2hh
+bmljYWxseSBhbmQKPiByZXBlYXRlZGx5IHdoZXJlIHRoZSBjb21waWxlciB0ZWxscyB5b3UgdG8s
+IGFuZCBkb2luZyBzbyBmdWxsLXRpbWUgZm9yCj4gYSBtb250aC4KPHNuaXA+Cj4gSXQgaXMgdXNl
+ZnVsIHNpbmNlIGl0IG1ha2VzIGludGVudCBjbGVhci4KVG8gbWFrZSB0aGUgaW50ZW50IGNsZWFy
+LCB5b3UgaGF2ZSB0byBmaXJzdCBiZSBjZXJ0YWluIHRoYXQgeW91CiB1bmRlcnN0YW5kIHRoZSBp
+bnRlbnQ7IG90aGVyd2lzZSBieSBhZGRpbmcgZWl0aGVyIGEgYnJlYWsgb3IgYQogZmFsbHRocm91
+Z2ggdG8gc3VwcHJlc3MgdGhlIHdhcm5pbmcgeW91IGFyZSBqdXN0IGRlc3Ryb3lpbmcgdGhlCiBp
+bmZvcm1hdGlvbiB0aGF0ICJ0aGUgaW50ZW50IG9mIHRoaXMgY29kZSBpcyB1bmtub3duIi4KRmln
+dXJpbmcgb3V0IHRoZSBpbnRlbnQgb2YgYSBwaWVjZSBvZiB1bmZhbWlsaWFyIGNvZGUgdGFrZXMg
+bW9yZQogdGhhbiAxIG1pbnV0ZTsganVzdCBiZWNhdXNlCiAgICBjYXNlIGZvbzoKICAgICAgICB0
+aGluZzsKICAgIGNhc2UgYmFyOgogICAgICAgIGJyZWFrOwogcHJvZHVjZXMgaWRlbnRpY2FsIGNv
+ZGUgdG8KICAgIGNhc2UgZm9vOgogICAgICAgIHRoaW5nOwogICAgICAgIGJyZWFrOwogICAgY2Fz
+ZSBiYXI6CiAgICAgICAgYnJlYWs7CiBkb2Vzbid0IG1lYW4gdGhhdCAqZWl0aGVyKiBpcyBjb3Jy
+ZWN0IOKAlCBtYXliZSB0aGUgYXV0aG9yIG1lYW50CiB0byB3cml0ZQogICAgY2FzZSBmb286CiAg
+ICAgICAgcmV0dXJuIHRoaW5nOwogICAgY2FzZSBiYXI6CiAgICAgICAgYnJlYWs7CiBhbmQgYnkg
+aW5zZXJ0aW5nIHRoYXQgYnJlYWsgeW91J3ZlIGRlc3Ryb3llZCB0aGUgbWFya2VyIHRoYXQKIHdv
+dWxkIGRpcmVjdCBzb21lb25lIHdobyBrbmV3IHdoYXQgdGhlIGNvZGUgd2FzIGFib3V0IHRvIGxv
+b2sKIGF0IHRoYXQgcG9pbnQgaW4gdGhlIGNvZGUgYW5kIHNwb3QgdGhlIHByb2JsZW0uClRodXMs
+IHlvdSAqYWx3YXlzKiBoYXZlIHRvIGxvb2sgYXQgbW9yZSB0aGFuIGp1c3QgdGhlIGltbWVkaWF0
+ZQogbWVjaGFuaWNhbCBjb250ZXh0IG9mIHRoZSBjb2RlLCB0byBtYWtlIGEgcHJvcGVyIGp1ZGdl
+bWVudCB0aGF0CiB5ZXMsIHRoaXMgd2FzIHRoZSBpbnRlbnQuICBJZiB5b3UgdGhpbmsgdGhhdCB0
+aGF0IHNvcnQgb2YgdGhpbmcKIGNhbiBiZSBkb25lIGluIGFuICphdmVyYWdlKiB0aW1lIG9mIG9u
+ZSBtaW51dGUsIHRoZW4gSSBob3BlIHlvdQogc3RheSBhd2F5IGZyb20gY29kZSBJJ20gcmVzcG9u
+c2libGUgZm9yIQpPbmUgbWludXRlIHdvdWxkIGJlIGFuIG9wdGltaXN0aWMgdGFyZ2V0IGZvciBj
+b2RlIHRoYXQsIGFzIHRoZQogbWFpbnRhaW5lciwgb25lIGlzIGFscmVhZHkgc29tZXdoYXQgZmFt
+aWxpYXIgd2l0aC4gIEZvciBjb2RlCiB0aGF0IHlvdSdyZSBzZWVpbmcgZm9yIHRoZSBmaXJzdCB0
+aW1lLCBhcyBpcyB1c3VhbGx5IHRoZSBjYXNlCiB3aXRoIHRoZSBwZW9wbGUgZG9pbmcgdGhlc2Ug
+bWVjaGFuaWNhbCBmaXgtYS13YXJuaW5nIHBhdGNoZXMsCiBpdCdzIGNvbXBsZXRlbHkgdW5yZWFs
+aXN0aWMuCgpBIHdhcm5pbmcgaXMgb25seSB1c2VmdWwgYmVjYXVzZSBpdCBtYWtlcyB5b3UgKnRo
+aW5rKiBhYm91dCB0aGUKIGNvZGUuICBJZiB5b3Ugc3VwcHJlc3MgdGhlIHdhcm5pbmcgd2l0aG91
+dCBkb2luZyB0aGF0IHRoaW5raW5nLAogdGhlbiB5b3UgbWFkZSB0aGUgd2FybmluZyB1c2VsZXNz
+OyBhbmQgaWYgdGhlIHdhcm5pbmcgbWFkZSB5b3UKIHRoaW5rIGFib3V0IGNvZGUgdGhhdCBkaWRu
+J3QgKm5lZWQqIGl0LCB0aGVuIHRoZSB3YXJuaW5nIHdhcwogdXNlbGVzcyBmcm9tIHRoZSBzdGFy
+dC4KClNvIG1ha2UgeW91ciBtaW5kIHVwOiBkb2VzIENsYW5nJ3Mgc3RyaWN0ZXIgLVdpbXBsaWNp
+dC1mYWxsdGhyb3VnaAogZmxhZyB1cCBjb2RlIHRoYXQgbmVlZHMgdGhvdWdodCAoaW4gd2hpY2gg
+Y2FzZSB0aGUgZml4ZXMgdGFrZQogZWZmb3J0IGJvdGggdG8gYXV0aG9yIGFuZCB0byByZXZpZXcp
+IG9yIGRvZXMgaXQgZmxhZyB1cCBjb2RlCiB0aGF0IGNhbiBiZSBtaW5kbGVzc2x5ICJmaXhlZCIg
+KGluIHdoaWNoIGNhc2UgdGhlIHdhcm5pbmcgaXMKIHdvcnRobGVzcyk/ICBQcm9wb25lbnRzIGlu
+IHRoaXMgdGhyZWFkIHNlZW0gdG8gYmUgdHJ5aW5nIHRvCiBoYXZlIGl0IGJvdGggd2F5cy4KCi1l
+ZAoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
