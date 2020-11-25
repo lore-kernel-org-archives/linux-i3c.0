@@ -3,74 +3,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
 X-Spam-Status: No, score=-5.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no
-	autolearn_force=no version=3.4.0
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id E0991C64E7B
-	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 07:39:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 498EBC64E7A
+	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 07:39:28 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 43B7E2085B
+	by mail.kernel.org (Postfix) with ESMTPS id 82AA42087C
 	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 07:39:27 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="on7kNOOS";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=google.com header.i=@google.com header.b="GyrkIL7r"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 43B7E2085B
-Authentication-Results: mail.kernel.org; dmarc=fail (p=reject dis=none) header.from=google.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="x/PGdC3z";
+	dkim=fail reason="signature verification failed" (1024-bit key) header.d=chromium.org header.i=@chromium.org header.b="AWR/7M4m"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 82AA42087C
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=chromium.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:In-Reply-To:
-	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3S941vxmLH5Lhq/rWnQIrafuxKSXr9gj3CZHfjhOD/w=; b=on7kNOOSdO+E5OYqDvPT7DUUh
-	yq8mHM++k/EifkShV6goKu6BtkWEe51qfME3+1UQvHBM4NW7EemIzdSAztcsPODYxsswH7pBs2lYh
-	D7n3qxedBfzXFQzsR1X6d8L0Cri+9DgqO2Jtf905o91SZKm95wjkkz52OPShBUqN7ibV1jb0VJ4SF
-	QsxIso7cwRm1RER4cDMWFD4u6tr3/WZ/lujnj1wVUPIKcjT5vTwNv43CxcKWjvbyKH/998J9viwXw
-	AahfneJV54NrOf8ZgU+NoOU8Cc1w4YhoDyIqetqyEXQhVvSHoUmmpd10Lwe7TMuRnlFu9yB5MW+Kw
-	k5L2BV0Tg==;
+	 bh=NhgTwvPurHIl+T7BEDFsbzs9Rys//Y1uQXluLUT7JeM=; b=x/PGdC3z/kbygB8SCeaAmqRQ2
+	nISrjIkPECdqjNpRRxT+lppTfDHTj45ZQ0RyeiUde++1WGfiWBfY7Jy17XJs2/uEjLrzGH6pb119q
+	nYXmffPll6owpRCTc4NAkSph1QWnCp4yrXSFyX5W3DTZOdadrCyZBJEvbmIozEbX5KUXYq44GX8pk
+	94397Udn/HyiCSbKDCw62pUCvouJ4eaANCYCxe0aNC3QWh4Fbm0ahIfadxXgP/nVTb3Jp1jY+7vEp
+	f1sRcNJw3LYht6ijrNWXaks1h+GtXB4RRYcoaxGFRl8fgnos/f/a5/rxaxUxBFy+2g7Hav7zXojD0
+	KJ5YDGbpQ==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1kk0Fy-0007Ra-6R; Tue, 01 Dec 2020 07:39:26 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1kk0Fy-0007Rj-Nf; Tue, 01 Dec 2020 07:39:26 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1khtqj-0008WI-1e
- for linux-i3c@lists.infradead.org; Wed, 25 Nov 2020 12:24:42 +0000
-Received: by mail-pg1-x544.google.com with SMTP id t21so2330397pgl.3
- for <linux-i3c@lists.infradead.org>; Wed, 25 Nov 2020 04:24:40 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=9IH0l2L/ELs04A0W/6GC4nhC0e+RvRGWJ1bAzD1+dFc=;
- b=GyrkIL7rJc/Wrkz9wtYqXZYvGBry6qXFkQono0nmrBFDlUCiGmbX9ByD1wUhih87ZW
- XCd/8etF0h65aGuVNHVvGVnSoIRV2cIFxWeuMsMEKDZ+SIKsK6eM3KIHPaY2Au+pxfCB
- jFmSmO0a8jtSnIjbAi/709gkMW9hnqxggrhUNIGI/2GrlejcLn7tyz9MFlSEpE31y19Z
- 9ARaZhNBbaKZzII6ioDoEFmbbi01XI+4/fF65wWR3SGfZuCMoV2cgGUJ8Osa8sFeqdbz
- KLllcyBsC3gtRPDbq4Yc+z3inKaZT7D05cYTb7CBHNDdR/afLH0A7E5JHrBWilMAefn4
- uS6g==
+ id 1ki23C-0007Zt-15
+ for linux-i3c@lists.infradead.org; Wed, 25 Nov 2020 21:10:11 +0000
+Received: by mail-pg1-x542.google.com with SMTP id j19so3506180pgg.5
+ for <linux-i3c@lists.infradead.org>; Wed, 25 Nov 2020 13:10:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=5kDOOuMOjwqEdI4fOY8lF/zJwxoesF7EbkKd66qXZt4=;
+ b=AWR/7M4mhE4fi43nRvdimsQoF0WR0/yRvzcmpbbdNnukQZ4s3FUnDOA4HlPrcfy1KL
+ TnDV3Sp7ib0l66wO1u9Qkihqc0ymqk7uAD73hLx1Hbj+4zgGkd46Av0r6N17g4aWHL9f
+ T52peLS6H3gWn2HtVm1n8SJNqsSbmk3lehF9k=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=9IH0l2L/ELs04A0W/6GC4nhC0e+RvRGWJ1bAzD1+dFc=;
- b=tWeVZ4pcQl/8/RHU9z5hNTvKRVD30kabz+UqKDj86J+yKPpzxXsE2Fj0PfnPJQk43P
- TXpz4cqUUHKnxq4ntbellPUlemi/wLkBz733kQcJNfgDpw7QW7ae1MQYmI65V/WHAiqF
- G39ZJ0GM3ps5u83xpByL5EbkYbL4BrrXUc4XH/UEGAgXuduDJ4ARSEXeRpkGCvhUZV7v
- LDLhSMIxSD1dKCLJEoC+UGIgPyYuVGNdhMvSZta5iTp6I8EBiaP6mylpOYWVf+WvwPSr
- k7MfjAljUK4MdWRRaJ51SQJe+5xVw6k8VwixoCq3k7jjMNCIIJ+mm/7f9DXKRrkNPjpR
- i7Hw==
-X-Gm-Message-State: AOAM530mmn0ABoCyVnGOA9+2IWxcUTokXbazL+wbVL2zvDcMdZ7iPIH2
- ejDUUJE2vGlXHIpqrvkwILL5NIR0hqsh6WaneP7eTw==
-X-Google-Smtp-Source: ABdhPJySo35UzNwHodlreVMfJuWPwHO1z+zkcbFfSYU3Avf+sN4n16LJPBb97SBockWyJEKx3Xs8q1wCvzejZmwrmAM=
-X-Received: by 2002:a62:7905:0:b029:197:f300:5a2a with SMTP id
- u5-20020a6279050000b0290197f3005a2amr2898775pfc.30.1606307078380; Wed, 25 Nov
- 2020 04:24:38 -0800 (PST)
-MIME-Version: 1.0
-References: <202011201129.B13FDB3C@keescook>
- <20201120115142.292999b2@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
- <202011220816.8B6591A@keescook>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=5kDOOuMOjwqEdI4fOY8lF/zJwxoesF7EbkKd66qXZt4=;
+ b=S88sDw2YnIDbbI9XIkWoFRcrLLfw65h1qnfXbGOqkuTuYscmBWchpH1SYb+aFP8YqX
+ qXnkZuQfww6d0yysHzwG7jr93LQt3n3l8iBWYbpbjdtNF7dQE6shlfoMLKvMPze9yl3Y
+ zqf3v2DY7LPb6u+/RNWtY8KUTbXrsbtU1kqh9pGooRK221vOD9dxGJPq9OQDvNDyutSI
+ l70bb+RKBCon/IqVsn8xFNOIEtb01kUP1pQadU250+gcRDNR4RUxZqn581eXU2EoPpdE
+ H0fKjuD7+LjjsNBZ9t+kA+nwgXCrUT9acDZLTx7gYSJqf3NL+sr5cmMarXKfJA+CaZuI
+ SG7Q==
+X-Gm-Message-State: AOAM530/oahGjA1/wXS8GwsjbqFyWHiPGFg3JLaS8yNA5y3hBDthNQBx
+ +FjuyeNYJp7Fa4fAuz47H8argA==
+X-Google-Smtp-Source: ABdhPJxtOU3VPA7Y7ucN799oMICSzuh5uhFKuAq1LiQpUAr5IO1/6yxlbfPxSFBqrEGEx7Z+PADUmw==
+X-Received: by 2002:a17:90b:3505:: with SMTP id
+ ls5mr6437623pjb.55.1606338602947; 
+ Wed, 25 Nov 2020 13:10:02 -0800 (PST)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id z68sm2599034pgb.37.2020.11.25.13.10.01
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 25 Nov 2020 13:10:01 -0800 (PST)
+Date: Wed, 25 Nov 2020 13:10:00 -0800
+From: Kees Cook <keescook@chromium.org>
+To: James Bottomley <James.Bottomley@HansenPartnership.com>
+Subject: Re: [Intel-wired-lan] [PATCH 000/141] Fix fall-through warnings for
+ Clang
+Message-ID: <202011251240.1E67BE900@keescook>
+References: <202011220816.8B6591A@keescook>
  <9b57fd4914b46f38d54087d75e072d6e947cb56d.camel@HansenPartnership.com>
  <ca071decb87cc7e905411423c05a48f9fd2f58d7.camel@perches.com>
  <0147972a72bc13f3629de8a32dee6f1f308994b5.camel@HansenPartnership.com>
@@ -80,16 +85,12 @@ References: <202011201129.B13FDB3C@keescook>
  <8f5611bb015e044fa1c0a48147293923c2d904e4.camel@HansenPartnership.com>
  <202011241327.BB28F12F6@keescook>
  <a841536fe65bb33f1c72ce2455a6eb47a0107565.camel@HansenPartnership.com>
+MIME-Version: 1.0
+Content-Disposition: inline
 In-Reply-To: <a841536fe65bb33f1c72ce2455a6eb47a0107565.camel@HansenPartnership.com>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Wed, 25 Nov 2020 04:24:27 -0800
-Message-ID: <CAKwvOdkGBn7nuWTAqrORMeN1G+w3YwBfCqqaRD2nwvoAXKi=Aw@mail.gmail.com>
-Subject: Re: [Intel-wired-lan] [PATCH 000/141] Fix fall-through warnings for
- Clang
-To: James Bottomley <James.Bottomley@hansenpartnership.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201125_072441_132372_4742F8B7 
-X-CRM114-Status: GOOD (  35.78  )
+X-CRM114-CacheID: sfid-20201125_161006_500801_FB9A636D 
+X-CRM114-Status: GOOD (  16.70  )
 X-Mailman-Approved-At: Tue, 01 Dec 2020 02:39:24 -0500
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -106,168 +107,180 @@ Cc: alsa-devel@alsa-project.org, bridge@lists.linux-foundation.org,
  target-devel@vger.kernel.org, Greg KH <gregkh@linuxfoundation.org>,
  linux-iio@vger.kernel.org, samba-technical@lists.samba.org,
  Jonathan Cameron <Jonathan.Cameron@huawei.com>, linux-fbdev@vger.kernel.org,
- dri-devel <dri-devel@lists.freedesktop.org>,
- "Gustavo A. R. Silva" <gustavoars@kernel.org>, linux-ide@vger.kernel.org,
- dm-devel@redhat.com, keyrings@vger.kernel.org, linux-mtd@lists.infradead.org,
- GR-everest-linux-l2@marvell.com, wcn36xx@lists.infradead.org,
- linux-i3c@lists.infradead.org, linux1394-devel@lists.sourceforge.net,
- linux-afs@lists.infradead.org, drbd-dev@lists.linbit.com,
- devel@driverdev.osuosl.org, linux-cifs@vger.kernel.org,
- rds-devel@oss.oracle.com, linux-scsi@vger.kernel.org,
- linux-acpi@vger.kernel.org, linux-rdma@vger.kernel.org,
- oss-drivers@netronome.com, linux-atm-general@lists.sourceforge.net,
- ceph-devel@vger.kernel.org, amd-gfx list <amd-gfx@lists.freedesktop.org>,
- linux-stm32@st-md-mailman.stormreply.com, cluster-devel@redhat.com,
- usb-storage@lists.one-eyed-alien.net, linux-mmc@vger.kernel.org,
- coreteam@netfilter.org, intel-wired-lan@lists.osuosl.org,
- linux-input@vger.kernel.org, Miguel Ojeda <ojeda@kernel.org>,
- Jakub Kicinski <kuba@kernel.org>, linux-ext4@vger.kernel.org,
- virtualization@lists.linux-foundation.org, netfilter-devel@vger.kernel.org,
- linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
- selinux@vger.kernel.org, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- intel-gfx@lists.freedesktop.org, linux-sctp@vger.kernel.org,
- reiserfs-devel@vger.kernel.org, linux-geode@lists.infradead.org,
- linux-block@vger.kernel.org, linux-gpio@vger.kernel.org,
- op-tee@lists.trustedfirmware.org, linux-mediatek@lists.infradead.org,
- xen-devel@lists.xenproject.org, nouveau@lists.freedesktop.org,
- linux-hams@vger.kernel.org, Nathan Chancellor <natechancellor@gmail.com>,
- linux-can@vger.kernel.org, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- linux-hwmon@vger.kernel.org,
- "maintainer:X86 ARCHITECTURE \(32-BIT AND 64-BIT\)" <x86@kernel.org>,
- linux-watchdog@vger.kernel.org, GR-Linux-NIC-Dev@marvell.com,
- Linux Memory Management List <linux-mm@kvack.org>,
- Network Development <netdev@vger.kernel.org>,
- linux-decnet-user@lists.sourceforge.net,
- linux-wireless <linux-wireless@vger.kernel.org>,
- LKML <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ dri-devel@lists.freedesktop.org, "Gustavo A. R. Silva" <gustavoars@kernel.org>,
+ linux-ide@vger.kernel.org, dm-devel@redhat.com, keyrings@vger.kernel.org,
+ linux-mtd@lists.infradead.org, GR-everest-linux-l2@marvell.com,
+ wcn36xx@lists.infradead.org, linux-i3c@lists.infradead.org,
+ linux1394-devel@lists.sourceforge.net, linux-afs@lists.infradead.org,
+ drbd-dev@lists.linbit.com, devel@driverdev.osuosl.org,
+ linux-cifs@vger.kernel.org, rds-devel@oss.oracle.com,
+ linux-scsi@vger.kernel.org, linux-acpi@vger.kernel.org,
+ linux-rdma@vger.kernel.org, oss-drivers@netronome.com,
+ linux-atm-general@lists.sourceforge.net, ceph-devel@vger.kernel.org,
+ amd-gfx@lists.freedesktop.org, linux-stm32@st-md-mailman.stormreply.com,
+ cluster-devel@redhat.com, usb-storage@lists.one-eyed-alien.net,
+ linux-mmc@vger.kernel.org, coreteam@netfilter.org,
+ intel-wired-lan@lists.osuosl.org, linux-input@vger.kernel.org,
+ Miguel Ojeda <ojeda@kernel.org>, Jakub Kicinski <kuba@kernel.org>,
+ linux-ext4@vger.kernel.org, virtualization@lists.linux-foundation.org,
+ netfilter-devel@vger.kernel.org, linux-media@vger.kernel.org,
+ linux-watchdog@vger.kernel.org, selinux@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, intel-gfx@lists.freedesktop.org,
+ linux-sctp@vger.kernel.org, reiserfs-devel@vger.kernel.org,
+ linux-geode@lists.infradead.org, linux-block@vger.kernel.org,
+ linux-gpio@vger.kernel.org, op-tee@lists.trustedfirmware.org,
+ linux-mediatek@lists.infradead.org, xen-devel@lists.xenproject.org,
+ nouveau@lists.freedesktop.org, linux-hams@vger.kernel.org,
+ Nathan Chancellor <natechancellor@gmail.com>, linux-can@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-nfs@vger.kernel.org,
+ GR-Linux-NIC-Dev@marvell.com, linux-mm@kvack.org, netdev@vger.kernel.org,
+ linux-decnet-user@lists.sourceforge.net, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
  linux-security-module@vger.kernel.org, linux-usb@vger.kernel.org,
- tipc-discussion@lists.sourceforge.net,
- "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
- <linux-crypto@vger.kernel.org>, patches@opensource.cirrus.com,
- Joe Perches <joe@perches.com>, linux-integrity@vger.kernel.org,
- linux-nfs@vger.kernel.org, linux-hardening@vger.kernel.org
+ tipc-discussion@lists.sourceforge.net, linux-crypto@vger.kernel.org,
+ patches@opensource.cirrus.com, Joe Perches <joe@perches.com>,
+ linux-integrity@vger.kernel.org, x86@kernel.org,
+ linux-hardening@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Nov 24, 2020 at 11:05 PM James Bottomley
-<James.Bottomley@hansenpartnership.com> wrote:
->
-> On Tue, 2020-11-24 at 13:32 -0800, Kees Cook wrote:
-> > We already enable -Wimplicit-fallthrough globally, so that's not the
-> > discussion. The issue is that Clang is (correctly) even more strict
-> > than GCC for this, so these are the remaining ones to fix for full
-> > Clang coverage too.
-> >
-> > People have spent more time debating this already than it would have
-> > taken to apply the patches. :)
->
-> You mean we've already spent 90% of the effort to come this far so we
-> might as well go the remaining 10% because then at least we get some
-> return? It's certainly a clinching argument in defence procurement ...
+On Tue, Nov 24, 2020 at 11:05:35PM -0800, James Bottomley wrote:
+> Now, what we have seems to be about 6 cases (at least what's been shown
+> in this thread) where a missing break would cause potentially user
+> visible issues.  That means the value of this isn't zero, but it's not
+> a no-brainer massive win either.  That's why I think asking what we've
+> invested vs the return isn't a useless exercise.
 
-So developers and distributions using Clang can't have
--Wimplicit-fallthrough enabled because GCC is less strict (which has
-been shown in this thread to lead to bugs)?  We'd like to have nice
-things too, you know.
+The number is much higher[1]. If it were 6 in the entire history of the
+kernel, I would agree with you. :) Some were fixed _before_ Gustavo's
+effort too, which I also count towards the idea of "this is a dangerous
+weakness in C, and now we have stopped it forever."
 
-I even agree that most of the churn comes from
-
-case 0:
-  ++x;
-default:
-  break;
-
-which I have a patch for: https://reviews.llvm.org/D91895.  I agree
-that can never lead to bugs.  But that's not the sole case of this
-series, just most of them.
-
-Though, note how the reviewer (C++ spec editor and clang front end
-owner) in https://reviews.llvm.org/D91895 even asks in that review how
-maybe a new flag would be more appropriate for a watered
-down/stylistic variant of the existing behavior.  And if the current
-wording of Documentation/process/deprecated.rst around "fallthrough"
-is a straightforward rule of thumb, I kind of agree with him.
-
->
-> > This is about robustness and language wrangling. It's a big code-
-> > base, and this is the price of our managing technical debt for
-> > permanent robustness improvements. (The numbers I ran from Gustavo's
-> > earlier patches were that about 10% of the places adjusted were
-> > identified as legitimate bugs being fixed. This final series may be
-> > lower, but there are still bugs being found from it -- we need to
-> > finish this and shut the door on it for good.)
->
-> I got my six patches by analyzing the lwn.net report of the fixes that
-> was cited which had 21 of which 50% didn't actually change the emitted
-> code, and 25% didn't have a user visible effect.
->
 > But the broader point I'm making is just because the compiler people
 > come up with a shiny new warning doesn't necessarily mean the problem
-
-That's not what this is though; you're attacking a strawman.  I'd
-encourage you to bring that up when that actually occurs, unlike this
-case since it's actively hindering getting -Wimplicit-fallthrough
-enabled for Clang.  This is not a shiny new warning; it's already on
-for GCC and has existed in both compilers for multiple releases.
-
-And I'll also note that warnings are warnings and not errors because
-they cannot be proven to be bugs in 100% of cases, but they have led
-to bugs in the past.  They require a human to review their intent and
-remove ambiguities.  If 97% of cases would end in a break ("Expert C
-Programming: Deep C Secrets" - Peter van der Linden), then it starts
-to look to me like a language defect; certainly an incorrectly chosen
-default.  But the compiler can't know those 3% were intentional,
-unless you're explicit for those exceptional cases.
-
-> it's detecting is one that causes us actual problems in the code base.
+> it's detecting is one that causes us actual problems in the code base. 
 > I'd really be happier if we had a theory about what classes of CVE or
 > bug we could eliminate before we embrace the next new warning.
 
-We don't generally file CVEs and waiting for them to occur might be
-too reactive, but I agree that pointing to some additional
-documentation in commit messages about how a warning could lead to a
-bug would make it clearer to reviewers why being able to enable it
-treewide, even if there's no bug in their particular subsystem, is in
-the general interest of the commons.
+But we did! It was long ago justified and documented[2], and even links to
+the CWE[3] for it. This wasn't random joy over discovering a new warning
+we could turn on, this was turning on a warning that the compiler folks
+finally gave us to handle an entire class of flaws. If we need to update
+the code-base to address it not a useful debate -- that was settled
+already, even if you're only discovering it now. :P. This last patch
+set is about finishing that work for Clang, which is correctly even
+more strict than GCC.
 
-On Mon, Nov 23, 2020 at 7:58 AM James Bottomley
-<James.Bottomley@hansenpartnership.com> wrote:
->
-> We're also complaining about the inability to recruit maintainers:
->
-> https://www.theregister.com/2020/06/30/hard_to_find_linux_maintainers_says_torvalds/
->
-> And burn out:
->
-> http://antirez.com/news/129
->
-> The whole crux of your argument seems to be maintainers' time isn't
-> important so we should accept all trivial patches ... I'm pushing back
-> on that assumption in two places, firstly the valulessness of the time
-> and secondly that all trivial patches are valuable.
+-Kees
 
-It's critical to the longevity of any open source project that there
-are not single points of failure.  If someone is not expendable or
-replaceable (or claims to be) then that's a risk to the project and a
-bottleneck.  Not having a replacement in training or some form of
-redundancy is short sighted.
+[1] https://outflux.net/slides/2019/lss/kspp.pdf calls out specific
+    numbers (about 6.5% of the patches fixed missing breaks):
+	v4.19:  3 of 129
+	v4.20:  2 of  59
+	v5.0:   3 of  56
+	v5.1:  10 of 100
+	v5.2:   6 of  71
+	v5.3:   7 of  69
 
-If trivial patches are adding too much to your workload, consider
-training a co-maintainer or asking for help from one of your reviewers
-whom you trust.  I don't doubt it's hard to find maintainers, but
-existing maintainers should go out of their way to entrust
-co-maintainers especially when they find their workload becomes too
-high.  And reviewing/picking up trivial patches is probably a great
-way to get started.  If we allow too much knowledge of any one
-subsystem to collect with one maintainer, what happens when that
-maintainer leaves the community (which, given a finite lifespan, is an
-inevitability)?
+    And in the history of the kernel, it's been an ongoing source of
+    flaws:
+
+    $ l --no-merges | grep -i 'missing break' | wc -l
+    185
+
+    The frequency of such errors being "naturally" found was pretty
+    steady until the static checkers started warning, and then it was
+    on the rise, but the full effort flushed the rest out, and now it's
+    dropped to almost zero:
+
+      1 v2.6.12
+      3 v2.6.16.28
+      1 v2.6.17
+      1 v2.6.19
+      2 v2.6.21
+      1 v2.6.22
+      3 v2.6.24
+      3 v2.6.29
+      1 v2.6.32
+      1 v2.6.33
+      1 v2.6.35
+      4 v2.6.36
+      3 v2.6.38
+      2 v2.6.39
+      7 v3.0
+      2 v3.1
+      2 v3.2
+      2 v3.3
+      3 v3.4
+      1 v3.5
+      8 v3.6
+      7 v3.7
+      3 v3.8
+      6 v3.9
+      3 v3.10
+      2 v3.11
+      5 v3.12
+      5 v3.13
+      2 v3.14
+      4 v3.15
+      2 v3.16
+      3 v3.17
+      2 v3.18
+      2 v3.19
+      1 v4.0
+      2 v4.1
+      5 v4.2
+      4 v4.5
+      5 v4.7
+      6 v4.8
+      1 v4.9
+      3 v4.10
+      2 v4.11
+      6 v4.12
+      3 v4.13
+      2 v4.14
+      5 v4.15
+      2 v4.16
+      7 v4.18
+      2 v4.19
+      6 v4.20
+      3 v5.0
+     12 v5.1
+      3 v5.2
+      4 v5.3
+      2 v5.4
+      1 v5.8
+
+
+    And the reason it's fully zero, is because we still have the cases we're
+    cleaning up right now. Even this last one from v5.8 is specifically of
+    the same type this series addresses:
+
+        case 4:
+                color_index = TrueCModeIndex;
++               break;
+        default:
+                return;
+        }
+
+
+[2] https://www.kernel.org/doc/html/latest/process/deprecated.html#implicit-switch-case-fall-through
+
+	All switch/case blocks must end in one of:
+
+	break;
+	fallthrough;
+	continue;
+	goto <label>;
+	return [expression];
+
+[3] https://cwe.mitre.org/data/definitions/484.html
+
 -- 
-Thanks,
-~Nick Desaulniers
+Kees Cook
 
 -- 
 linux-i3c mailing list
