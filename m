@@ -2,70 +2,58 @@ Return-Path: <SRS0=M/mW=E7=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-5.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-5.3 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_1 autolearn=no
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id AE482C6379D
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 49E57C56201
 	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:31 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 44076208CA
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:31 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 59CB42083E
+	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:30 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="FjzQUCVk";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.b="DYdo15DH"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 44076208CA
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="ft4SNDwc";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=mess.org header.i=@mess.org header.b="SJYLrwiK"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 59CB42083E
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=mess.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:In-Reply-To:
-	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SvAzcTgC3A1o5PVAhyCIMtav9Hp0iR4dALriq9mqWpk=; b=FjzQUCVkb2yYZNZGVaxZ+wZZP
-	mrOe7w1ogKsYLAv1tSOm38/TJMuU9EYNHrXPcUhvb0tEigOiRSJcVMrecTU64AiEM2nuNp/jAcpRh
-	uah26pwTYgAPjpl1/epFOwijkM+octW4oIKkT3W6SWoPtBkWdepqHpx8nh06+DeAFL7CLdYeUXxVY
-	7cHYCy1AzgOttzbbmaFYve5BhicF5YdwBSQIkFg5SteH4gbeu7E9uWSBmevWf3sYH/G0RqWbShIvi
-	LzA/XTKvUnBLd7m2hZwz83Di9Ak3zKEbROZ1NY3ce6Qi9mNPWc9sKR9hCjw9QY9xqGiF7sD/dYbfs
-	JAuJRyFCg==;
+	 bh=3r/lVWwmxXYZtI7P1q0hQ8Ob6JWqM5GCT80J/f0VczA=; b=ft4SNDwcg5lOeaPx2Qz0QinSX
+	yV/rHzFzyD8mFl7Y7YoZbxq1WYoJv0cV/upellv0XZ0PIFDVeOtQYE9WC1+BKJbAnwD70ZXt/MLDS
+	5rX9z5+9SgicNlS7fuc5YrtgcV53AUkNPKia/5HIpbDTioW4agLVjNLH0Pjii30IQMWwT9VIcG0qE
+	5fqrp45cINh8o6RulrSnjrLvi4H5fl9NeIOLV4fx/IATeLGwCehCtuXag/MVdULE9LXTpocPFNjHn
+	oUwJv3oYgLMeK/DQPUZz0rd/bip9sI9vLobUyAEExxZ6kMW6rUaZ1KCEwXMFVa4NCJIkaEYzOwsBf
+	i8v0VzenA==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1khrYI-0006cU-H5; Wed, 25 Nov 2020 09:57:30 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1khrYH-0006bq-Hf; Wed, 25 Nov 2020 09:57:29 +0000
+Received: from gofer.mess.org ([2a02:8011:d000:212::1])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1khijW-0003rb-Cx; Wed, 25 Nov 2020 00:32:31 +0000
-Received: by mail-qk1-x741.google.com with SMTP id b144so1289460qkc.13;
- Tue, 24 Nov 2020 16:32:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=QqqubA90NyDjnD5SH+OxnZbso0TzlLiuZ5gzRUm0zsY=;
- b=DYdo15DH5n4eMCA51W2vXZfybVLPbTpwO6CR+j1CET94cx9FmUQEkAzz4OadVdmrht
- /5QscdfYh1sAKLvu6dkrheNjvEoR4Mdvvl3diWkBzFiGJNP9BCqxLhr4zTkKEaaVMxi5
- qUA6kNkUTJzI9KEPxIujLpbBVVOhJKSQSAf+FeTM6jY84RGcXl9jGks4AfD2ojo1GxQQ
- uEwHm9wuAxdOf70IRL+AXs8sujZOQd+kSEI1eU2QAsFia5W6QaIddZOITngYX9DSKM5R
- mNvBJUTqyzODtQONxErP8O8dRkCcVm25oDOfEuyrse782pSy0gFJjFFgzHOgMIi8mZem
- jSGA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=QqqubA90NyDjnD5SH+OxnZbso0TzlLiuZ5gzRUm0zsY=;
- b=DAsvKkYU/AXgBiuKqT4cPuiFfjAIsrmUzeG/jFVsLhPJymjbGtisDNECatHYClryJK
- w7KDzJWw/l60YO1kgWy2CUWamJxlvH1yu4/M682fxdqVAbjc8BW+57UTDo3+LdrAPGis
- xV43JdOWkg7DSXFy+vc+1iKKQl0Kmn7crDbtIkt28xPEhz+wRYqVY5RJGuugIEFyFIbq
- v8pIgryqY8g7Y1BYlNWKZvzomIfzwywxiMMC4STgdexZiQZVW3oluV3sN7UdMR1ptl4O
- cyZdqCFC7RagdLsHAnyXK+uU+4Ghx2U59cNF4wNHDFoFd3S+9xJZ2NqybB/e9vYFC16r
- bQyw==
-X-Gm-Message-State: AOAM533b2xRm55uDUuYmz9CEwZ6p/U7Y2toorJrs0qotPG+VYB9v+Nwg
- y8YGz7cb0SQlNIxzBsIxH+28PefAZoHQIj78nFg=
-X-Google-Smtp-Source: ABdhPJwwVKQFQuxzNO/2Mi/lJ3RUII3vPq9FIwhq+sZ6y3vyBbFPDKm/uCaEGwo9LU3j1fjBVCpYTO563lD14rGXSok=
-X-Received: by 2002:a25:5f0f:: with SMTP id t15mr779915ybb.26.1606264348932;
- Tue, 24 Nov 2020 16:32:28 -0800 (PST)
-MIME-Version: 1.0
+ id 1khqfw-0006r3-3s; Wed, 25 Nov 2020 09:01:21 +0000
+Received: by gofer.mess.org (Postfix, from userid 1000)
+ id C2D44C63FB; Wed, 25 Nov 2020 09:01:14 +0000 (GMT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=mess.org; s=2020;
+ t=1606294874; bh=KH9dzgywMXfGPGDwmO8Qm6o//zr8KQDL4nO6EawRuDY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=SJYLrwiKZrmMRjkeBYo7cqsbs6xljPuQypU3vE6W0mhxhiBNmXN2bqL5RV07d2awA
+ Wb5Oa7L0TiIxfU/vxoLt2vFycI3gN8Kh1qdOF59uK2dEnqITAnDV+wsiQw/exDF78D
+ hoTz22IC76edW7bl4Xm8hYrqoRAlLOCNTSbizDTKI7x8BBnutJW03OyPsTxurVqfdC
+ T9t8y4uSMzXA9L5TYoAbkkzEdR07qHfBTYdhaiYGGYuE1E1bdzLhtRTU2iYu251NBa
+ zqIr2827TZMk9I1fNh/951tgkmCQWewUCt5nrmXnkgqHhLp9nxDE6gWAGCUXG6XCXv
+ 3mw8Hv064saVQ==
+Date: Wed, 25 Nov 2020 09:01:14 +0000
+From: Sean Young <sean@mess.org>
+To: James Bottomley <James.Bottomley@HansenPartnership.com>
+Subject: Re: [PATCH 000/141] Fix fall-through warnings for Clang
+Message-ID: <20201125090114.GA24274@gofer.mess.org>
 References: <cover.1605896059.git.gustavoars@kernel.org>
  <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
  <202011201129.B13FDB3C@keescook>
@@ -76,18 +64,14 @@ References: <cover.1605896059.git.gustavoars@kernel.org>
  <1c7d7fde126bc0acf825766de64bf2f9b888f216.camel@HansenPartnership.com>
  <CANiq72m22Jb5_+62NnwX8xds2iUdWDMAqD8PZw9cuxdHd95W0A@mail.gmail.com>
  <fc45750b6d0277c401015b7aa11e16cd15f32ab2.camel@HansenPartnership.com>
- <CANiq72k5tpDoDPmJ0ZWc1DGqm+81Gi-uEENAtvEs9v3SZcx6_Q@mail.gmail.com>
- <4993259d01a0064f8bb22770503490f9252f3659.camel@HansenPartnership.com>
-In-Reply-To: <4993259d01a0064f8bb22770503490f9252f3659.camel@HansenPartnership.com>
-From: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
-Date: Wed, 25 Nov 2020 01:32:17 +0100
-Message-ID: <CANiq72kqO=bYMJnFS2uYRpgWATJ=uXxZuNUsTXT+3aLtrpnzvQ@mail.gmail.com>
-Subject: Re: [PATCH 000/141] Fix fall-through warnings for Clang
-To: James Bottomley <James.Bottomley@hansenpartnership.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <fc45750b6d0277c401015b7aa11e16cd15f32ab2.camel@HansenPartnership.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201124_193230_496574_CD7C6423 
-X-CRM114-Status: GOOD (  16.30  )
-X-Mailman-Approved-At: Wed, 25 Nov 2020 04:56:59 -0500
+X-CRM114-CacheID: sfid-20201125_040120_405194_6275BD6F 
+X-CRM114-Status: GOOD (  24.11  )
+X-Mailman-Approved-At: Wed, 25 Nov 2020 04:56:58 -0500
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,7 +86,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
 Cc: alsa-devel@alsa-project.org, linux-atm-general@lists.sourceforge.net,
  reiserfs-devel@vger.kernel.org, linux-iio@vger.kernel.org,
  linux-wireless <linux-wireless@vger.kernel.org>, linux-fbdev@vger.kernel.org,
- dri-devel@lists.freedesktop.org, "Gustavo A. R. Silva" <gustavoars@kernel.org>,
+ dri-devel@lists.freedesktop.org, linux-kernel <linux-kernel@vger.kernel.org>,
  Nathan Chancellor <natechancellor@gmail.com>, linux-ide@vger.kernel.org,
  dm-devel@redhat.com, keyrings@vger.kernel.org, linux-mtd@lists.infradead.org,
  GR-everest-linux-l2@marvell.com, wcn36xx@lists.infradead.org,
@@ -133,9 +117,10 @@ Cc: alsa-devel@alsa-project.org, linux-atm-general@lists.sourceforge.net,
  GR-Linux-NIC-Dev@marvell.com, tipc-discussion@lists.sourceforge.net,
  Linux-MM <linux-mm@kvack.org>, Network Development <netdev@vger.kernel.org>,
  linux-decnet-user@lists.sourceforge.net, linux-mmc@vger.kernel.org,
- linux-kernel <linux-kernel@vger.kernel.org>,
+ "Gustavo A. R. Silva" <gustavoars@kernel.org>,
  "maintainer:X86 ARCHITECTURE \(32-BIT AND 64-BIT\)" <x86@kernel.org>,
- linux-renesas-soc@vger.kernel.org, linux-sctp@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>, linux-sctp@vger.kernel.org,
  linux-usb@vger.kernel.org, netfilter-devel@vger.kernel.org,
  Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
  patches@opensource.cirrus.com, Joe Perches <joe@perches.com>,
@@ -146,69 +131,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, Nov 23, 2020 at 9:38 PM James Bottomley
-<James.Bottomley@hansenpartnership.com> wrote:
->
-> So you think a one line patch should take one minute to produce ... I
-> really don't think that's grounded in reality.
+On Mon, Nov 23, 2020 at 07:58:06AM -0800, James Bottomley wrote:
+> On Mon, 2020-11-23 at 15:19 +0100, Miguel Ojeda wrote:
+> > On Sun, Nov 22, 2020 at 11:36 PM James Bottomley
+> > <James.Bottomley@hansenpartnership.com> wrote:
+> > > It's not about the risk of the changes it's about the cost of
+> > > implementing them.  Even if you discount the producer time (which
+> > > someone gets to pay for, and if I were the engineering manager, I'd
+> > > be unhappy about), the review/merge/rework time is pretty
+> > > significant in exchange for six minor bug fixes.  Fine, when a new
+> > > compiler warning comes along it's certainly reasonable to see if we
+> > > can benefit from it and the fact that the compiler people think
+> > > it's worthwhile is enough evidence to assume this initially.  But
+> > > at some point you have to ask whether that assumption is supported
+> > > by the evidence we've accumulated over the time we've been using
+> > > it.  And if the evidence doesn't support it perhaps it is time to
+> > > stop the experiment.
+> > 
+> > Maintainers routinely review 1-line trivial patches, not to mention
+> > internal API changes, etc.
+> 
+> We're also complaining about the inability to recruit maintainers:
+> 
+> https://www.theregister.com/2020/06/30/hard_to_find_linux_maintainers_says_torvalds/
+> 
+> And burn out:
+> 
+> http://antirez.com/news/129
+> 
+> The whole crux of your argument seems to be maintainers' time isn't
+> important so we should accept all trivial patches ... I'm pushing back
+> on that assumption in two places, firstly the valulessness of the time
+> and secondly that all trivial patches are valuable.
 
-No, I have not said that. Please don't put words in my mouth (again).
+You're assuming burn out or recruitment problems is due to patch workload
+or too many "trivial" patches.
 
-I have said *authoring* lines of *this* kind takes a minute per line.
-Specifically: lines fixing the fallthrough warning mechanically and
-repeatedly where the compiler tells you to, and doing so full-time for
-a month.
+In my experience, "other maintainers" is by far the biggest cause of
+burn out for my kernel maintenance work.
 
-For instance, take the following one from Gustavo. Are you really
-saying it takes 12 minutes (your number) to write that `break;`?
+Certainly arguing with a maintainer about some obviously-correct patch
+series must be a good example of this.
 
-diff --git a/drivers/gpu/drm/via/via_irq.c b/drivers/gpu/drm/via/via_irq.c
-index 24cc445169e2..a3e0fb5b8671 100644
---- a/drivers/gpu/drm/via/via_irq.c
-+++ b/drivers/gpu/drm/via/via_irq.c
-@@ -364,6 +364,7 @@ int via_wait_irq(struct drm_device *dev, void
-*data, struct drm_file *file_priv)
-                irqwait->request.sequence +=
-                        atomic_read(&cur_irq->irq_received);
-                irqwait->request.type &= ~_DRM_VBLANK_RELATIVE;
-+               break;
-        case VIA_IRQ_ABSOLUTE:
-                break;
-        default:
 
->  I suppose a one line
-> patch only takes a minute to merge with b4 if no-one reviews or tests
-> it, but that's not really desirable.
-
-I have not said that either. I said reviewing and merging those are
-noise compared to any complex patch. Testing should be done by the
-author comparing codegen.
-
-> Part of what I'm trying to measure is the "and useful" bit because
-> that's not a given.
-
-It is useful since it makes intent clear. It also catches actual bugs,
-which is even more valuable.
-
-> Well, you know, subsystems are very different in terms of the amount of
-> patches a maintainer has to process per release cycle of the kernel.
-> If a maintainer is close to capacity, additional patches, however
-> trivial, become a problem.  If a maintainer has spare cycles, trivial
-> patches may look easy.
-
-First of all, voluntary maintainers choose their own workload.
-Furthermore, we already measure capacity in the `MAINTAINERS` file:
-maintainers can state they can only handle a few patches. Finally, if
-someone does not have time for a trivial patch, they are very unlikely
-to have any time to review big ones.
-
-> You seem to be saying that because you find it easy to merge trivial
-> patches, everyone should.
-
-Again, I have not said anything of the sort.
-
-Cheers,
-Miguel
+Sean
 
 -- 
 linux-i3c mailing list
