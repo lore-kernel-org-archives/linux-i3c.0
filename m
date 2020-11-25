@@ -2,90 +2,59 @@ Return-Path: <SRS0=M/mW=E7=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-0.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-18.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,SPF_PASS,
+	URIBL_BLOCKED autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 0C6B9C64E75
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 61EE4C5519F
+	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:31 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 8F9592083E
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:29 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id CF6C5208B8
+	for <linux-i3c@archiver.kernel.org>; Wed, 25 Nov 2020 09:57:30 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="Se58Gqf3";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.b="rGjC6KnG"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 8F9592083E
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="Peek5BHZ"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org CF6C5208B8
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bootlin.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:In-Reply-To:
-	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7KgUfnvT7adb/XnUVbPkE9EvBXIB/FTs3wpXoJBmmCQ=; b=Se58Gqf3xxp+ANPQJoAdvtUD6
-	sHQMdJdfpsKrfV+6+W0TolVa6JKhXieZwlUaa9azkXRHLNbJiaD+U4TyE+ZwnUf7rzI+GgJK8x9Ii
-	imEGFr6cdQF7/BfXN0lMtnfHwEtngFf8kPoQrT/p8rUs4knAE8pBNLdKRfZH/ChuCfccm+9uQAB/N
-	A0ieOLjiibQ4SoPIBCzS5TXEtJOY900KiFOr67d2rbU1yUmbh098mT1EZIgbcl4uRErvAviar3S7w
-	ybdqinujFKoQ5AEa6HQtymKIFe+vH0VHa1cUDKXE0qSHP+Q0njIVL0F/oNacc7j1LQoiK2nph4zft
-	rFfPBmojA==;
+	 bh=mF2XZtxbvvylpo+0hMC6Vos6dsrSln7Q/5Syew4r4jw=; b=Peek5BHZS61KVM/45uyR5vnbw
+	X/fz+4FmgbDjrQH6+5KC62seHNLSPFKZr1VaA8i3wx2Yicm0UFg+xSQavnrffOzHNsf54hJxvQw9v
+	HFV+/uqVnhRJxp68meRcw3isSU9TcqofzbJgu9W8UOf44f3E/SeHFD28OuLmreXah/DFtiuPzbEB6
+	JD8EcT3FjnXH12doEs/ZHkUq/dAGewaVl7P2UKKlt2SzgZT6Eob3rf6VvyLND0ATlPRieCtVUUs7E
+	++UANajHKjJINwRpfKPi07DE6kaykK7Dd4/WQul2NYV16pFzXkYG7zwEyoN6GzXfGsb9fkdNGuY65
+	KCgc934VQ==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1khrYG-0006bM-RQ; Wed, 25 Nov 2020 09:57:28 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1khrYI-0006cB-28; Wed, 25 Nov 2020 09:57:30 +0000
+Received: from relay10.mail.gandi.net ([217.70.178.230])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1khi16-0007Fo-9K; Tue, 24 Nov 2020 23:46:37 +0000
-Received: by mail-qk1-x744.google.com with SMTP id q22so1190287qkq.6;
- Tue, 24 Nov 2020 15:46:35 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=H+rGPaoJ9R3rr7zK4cuxMwlBlLpdlGUAwlQnvIZjZd8=;
- b=rGjC6KnGzC9NIfLo6IfoTM7C5TiZmv4q08vYNRt8cewMWpFhbX886WW47/gIiopas/
- e2jKhT73QJs/dRAIbILcJdQSFnVW9dal1rOBoIKd0ECBe+nqcukIgJrBRfX2wbZlPbrR
- 27L+0GE9CXpbAta7TZEIdoDweQHp+sEvmypYMH9hyutdrnRkkklGbspFfFiZY+HYfDHj
- jsH/8tjPy+0JiTdJWitSDoQxXZntWXoEWL0cWLR+fmdpM332GBoSCjfuWUHY88IWDiPh
- 04ztpEPYlCjpB7IXy1yQhW/otwe7DgKcwtOpyIrk5XdAw3ZKiOAkll08YWpT8S+NhzMx
- e/Gw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=H+rGPaoJ9R3rr7zK4cuxMwlBlLpdlGUAwlQnvIZjZd8=;
- b=TuAvjxwjT445lMd0pA19KFC41p7wFL3HpX87iRUSwYKecaY5CUfZGct0eplp4BJ0qb
- XiLVR9bkLwYNAqYbnPCeCrmFMmzIYCex6DLHYCnXX+zltCNsaCLpjrQx4r/2rmFuFTxp
- OTWYMwGItGlUPxY9pOrHKkBQk5OsO81nPbRFSRldqVfEmFEQ19oxufnBVpuizZXjTJ3J
- SqcHKA6zqtjv+8GF30372iB+q1pf4m1+gNSwzQ4iPc9XGNvnJVl3zD9hoBWrYyzUvJg7
- rSKHNYAEM+yVkGmxnTuKXOEZmV3wJKia/q5GQqCoZRYdoET7bWZN/1p/1d5q50/73x8u
- UDrQ==
-X-Gm-Message-State: AOAM533cWSfF1GKXDPTkXDzUnQ9dFzxyHvitaynzzfrEbImfdlf5kdde
- /o4zLjdIUAxY8/gXzQXC0P68KCW3n/OI9g4r+DM=
-X-Google-Smtp-Source: ABdhPJzOwu2wFsHHn8A1YNPfZeoFLdmnMgNDFogUYxSXdSyfkKR4RJ+IXZpEdbdh4p7RHhstmUROclNZOq0Hltp8jFg=
-X-Received: by 2002:a5b:40e:: with SMTP id m14mr627984ybp.33.1606261594309;
- Tue, 24 Nov 2020 15:46:34 -0800 (PST)
+ id 1khrK5-00059R-UJ
+ for linux-i3c@lists.infradead.org; Wed, 25 Nov 2020 09:42:51 +0000
+Received: from localhost (lfbn-lyo-1-997-19.w86-194.abo.wanadoo.fr
+ [86.194.74.19]) (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id 7626624001B;
+ Wed, 25 Nov 2020 09:42:46 +0000 (UTC)
+Date: Wed, 25 Nov 2020 10:42:46 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Boris Brezillon <boris.brezillon@collabora.com>
+Subject: Re: [PATCH] i3c: Resign from my maintainer role
+Message-ID: <20201125094246.GW348979@piout.net>
+References: <20201123092753.38304-1-boris.brezillon@collabora.com>
 MIME-Version: 1.0
-References: <cover.1605896059.git.gustavoars@kernel.org>
- <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
- <202011201129.B13FDB3C@keescook>
- <20201120115142.292999b2@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
- <202011220816.8B6591A@keescook>
- <9b57fd4914b46f38d54087d75e072d6e947cb56d.camel@HansenPartnership.com>
- <CANiq72nZrHWTA4_Msg6MP9snTyenC6-eGfD27CyfNSu7QoVZbw@mail.gmail.com>
- <alpine.LNX.2.23.453.2011230938390.7@nippy.intranet>
- <CANiq72=z+tmuey9wj3Kk7wX5s0hTHpsQdLhAqcOVNrHon6xn5Q@mail.gmail.com>
- <alpine.LNX.2.23.453.2011241036520.7@nippy.intranet>
-In-Reply-To: <alpine.LNX.2.23.453.2011241036520.7@nippy.intranet>
-From: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
-Date: Wed, 25 Nov 2020 00:46:23 +0100
-Message-ID: <CANiq72=Ybm2MHmOizo1xQ_QYGuvbthtnLbwCkr8AFb8PcfmuQw@mail.gmail.com>
-Subject: Re: [PATCH 000/141] Fix fall-through warnings for Clang
-To: Finn Thain <fthain@telegraphics.com.au>
+Content-Disposition: inline
+In-Reply-To: <20201123092753.38304-1-boris.brezillon@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201124_184636_515464_638921CF 
-X-CRM114-Status: GOOD (  20.26  )
-X-Mailman-Approved-At: Wed, 25 Nov 2020 04:56:59 -0500
+X-CRM114-CacheID: sfid-20201125_044250_078848_C41DE4DE 
+X-CRM114-Status: GOOD (  15.91  )
+X-Mailman-Approved-At: Wed, 25 Nov 2020 04:56:57 -0500
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,116 +66,53 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, linux-atm-general@lists.sourceforge.net,
- reiserfs-devel@vger.kernel.org, linux-iio@vger.kernel.org,
- linux-wireless <linux-wireless@vger.kernel.org>, linux-fbdev@vger.kernel.org,
- dri-devel@lists.freedesktop.org, "Gustavo A. R. Silva" <gustavoars@kernel.org>,
- James Bottomley <James.Bottomley@hansenpartnership.com>,
- linux-ide@vger.kernel.org, dm-devel@redhat.com, keyrings@vger.kernel.org,
- linux-mtd@lists.infradead.org, GR-everest-linux-l2@marvell.com,
- wcn36xx@lists.infradead.org, samba-technical@lists.samba.org,
- linux-i3c@lists.infradead.org, linux1394-devel@lists.sourceforge.net,
- linux-afs@lists.infradead.org, usb-storage@lists.one-eyed-alien.net,
- drbd-dev@lists.linbit.com, devel@driverdev.osuosl.org,
- linux-cifs@vger.kernel.org, rds-devel@oss.oracle.com,
- Nick Desaulniers <ndesaulniers@google.com>, linux-scsi@vger.kernel.org,
- Nathan Chancellor <natechancellor@gmail.com>, linux-rdma@vger.kernel.org,
- oss-drivers@netronome.com, bridge@lists.linux-foundation.org,
- linux-security-module@vger.kernel.org, amd-gfx@lists.freedesktop.org,
- linux-stm32@st-md-mailman.stormreply.com, cluster-devel@redhat.com,
- linux-acpi@vger.kernel.org, coreteam@netfilter.org,
- intel-wired-lan@lists.osuosl.org, linux-input <linux-input@vger.kernel.org>,
- Miguel Ojeda <ojeda@kernel.org>, Jakub Kicinski <kuba@kernel.org>,
- Ext4 Developers List <linux-ext4@vger.kernel.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>,
- Kees Cook <keescook@chromium.org>, selinux@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, intel-gfx@lists.freedesktop.org,
- linux-geode@lists.infradead.org, linux-can@vger.kernel.org,
- linux-block@vger.kernel.org, linux-gpio@vger.kernel.org,
- op-tee@lists.trustedfirmware.org, linux-mediatek@lists.infradead.org,
- xen-devel@lists.xenproject.org, nouveau@lists.freedesktop.org,
- linux-hams@vger.kernel.org, ceph-devel@vger.kernel.org,
- virtualization@lists.linux-foundation.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-hwmon@vger.kernel.org,
- linux-watchdog@vger.kernel.org, linux-nfs@vger.kernel.org,
- GR-Linux-NIC-Dev@marvell.com, tipc-discussion@lists.sourceforge.net,
- Linux-MM <linux-mm@kvack.org>, Network Development <netdev@vger.kernel.org>,
- linux-decnet-user@lists.sourceforge.net, linux-mmc@vger.kernel.org,
- linux-kernel <linux-kernel@vger.kernel.org>,
- "maintainer:X86 ARCHITECTURE \(32-BIT AND 64-BIT\)" <x86@kernel.org>,
- linux-renesas-soc@vger.kernel.org, linux-sctp@vger.kernel.org,
- linux-usb@vger.kernel.org, netfilter-devel@vger.kernel.org,
- Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
- patches@opensource.cirrus.com, Joe Perches <joe@perches.com>,
- linux-integrity@vger.kernel.org, target-devel@vger.kernel.org,
- linux-hardening@vger.kernel.org
+Cc: linux-i3c@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Nov 24, 2020 at 1:58 AM Finn Thain <fthain@telegraphics.com.au> wrote:
->
-> What I meant was that you've used pessimism as if it was fact.
+Hello,
 
-"future mistakes that it might prevent" is neither pessimism nor states a fact.
+On 23/11/2020 10:27:53+0100, Boris Brezillon wrote:
+> I simply don't have time to maintainer the I3C subsystem anymore.
+> 
+> Signed-off-by: Boris Brezillon <boris.brezillon@collabora.com>
+> ---
+> If anyone is interested in taking over (ideally someone with a korg
+> account, so the transition can be done as smootly as possible), please
+> let me know and I'll make that happen.
 
-> For example, "There is no way to guess what the effect would be if the
-> compiler trained programmers to add a knee-jerk 'break' statement to avoid
-> a warning".
+I'll take the maintenance, can you add me in v2 so you don't have to
+change the status to orphan?
 
-It is only knee-jerk if you think you are infallible.
+> ---
+>  MAINTAINERS | 3 +--
+>  1 file changed, 1 insertion(+), 2 deletions(-)
+> 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index e73636b75f29..8510f13a713c 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -8333,9 +8333,8 @@ F:	Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.txt
+>  F:	drivers/i3c/master/dw*
+>  
+>  I3C SUBSYSTEM
+> -M:	Boris Brezillon <bbrezillon@kernel.org>
+>  L:	linux-i3c@lists.infradead.org (moderated for non-subscribers)
+> -S:	Maintained
+> +S:	Orphan
+>  C:	irc://chat.freenode.net/linux-i3c
+>  T:	git git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git
+>  F:	Documentation/ABI/testing/sysfs-bus-i3c
+> -- 
+> 2.26.2
+> 
 
-> Moreover, what I meant was that preventing programmer mistakes is a
-> problem to be solved by development tools
-
-This warning comes from a development tool -- the compiler.
-
-> The idea that retro-fitting new
-> language constructs onto mature code is somehow necessary to "prevent
-> future mistakes" is entirely questionable.
-
-The kernel is not a frozen codebase.
-
-Further, "mature code vs. risk of change" arguments don't apply here
-because the semantics of the program and binary output isn't changing.
-
-> Sure. And if you put -Wimplicit-fallthrough into the Makefile and if that
-> leads to well-intentioned patches that cause regressions, it is partly on
-> you.
-
-Again: adding a `fallthrough` does not change the program semantics.
-If you are a maintainer and want to cross-check, compare the codegen.
-
-> Have you ever considered the overall cost of the countless
-> -Wpresume-incompetence flags?
-
-Yeah: negative. On the other hand, the overall cost of the countless
--fI-am-infallible flags is very noticeable.
-
-> Perhaps you pay the power bill for a build farm that produces logs that
-> no-one reads? Perhaps you've run git bisect, knowing that the compiler
-> messages are not interesting? Or compiled software in using a language
-> that generates impenetrable messages? If so, here's a tip:
->
-> # grep CFLAGS /etc/portage/make.conf
-> CFLAGS="... -Wno-all -Wno-extra ..."
-> CXXFLAGS="${CFLAGS}"
->
-> Now allow me some pessimism: the hardware upgrades, gigawatt hours and
-> wait time attributable to obligatory static analyses are a net loss.
-
-If you really believe compiler warnings and static analysis are
-useless and costly, I think there is not much point in continuing the
-discussion.
-
-> No, it's not for me to prove that such patches don't affect code
-> generation. That's for the patch author and (unfortunately) for reviewers.
-
-I was not asking you to prove it. I am stating that proving it is very easy.
-
-Cheers,
-Miguel
+-- 
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-i3c mailing list
