@@ -3,50 +3,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
 X-Spam-Status: No, score=-5.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
-	version=3.4.0
+	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 9DA3CC64E8A
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 04AA3C83011
 	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 07:39:34 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 0F9132085B
+	by mail.kernel.org (Postfix) with ESMTPS id 593DD2168B
 	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 07:39:33 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="kENb9Cma"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 0F9132085B
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=telegraphics.com.au
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="ol7BzG40";
+	dkim=fail reason="signature verification failed" (2048-bit key) header.d=google.com header.i=@google.com header.b="L3KZpP3L"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 593DD2168B
+Authentication-Results: mail.kernel.org; dmarc=fail (p=reject dis=none) header.from=google.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:In-Reply-To:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:In-Reply-To:
+	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=b/yDsuHUuqnF7XOXT6eAMn+mhUeeyzJ0F9wJUOLZX1o=; b=kENb9Cmack88b++fd8u+4FNFW
-	JWfs0f0sJ3u59AZ6i3AtsoarV7vRPz/VQZduwU0cfm4zbniNngGex7mNilySkaIdZMU8nOMg2/Ijx
-	95MeiXoXp+M3F8Vu2TsyWQPrfKzyjcyQNvkbbbNyC5w0cFOfNI3GvcKHTWams8TbjRhwuZJNQB0R+
-	bLcoG0ciEXrNi/0kbiXQPsF99l5ui4WPc/ictqYI/kZ/w7h7m7LwzgPCe3xkLXn6Oxt0snJZm3/4N
-	vy82TfJJ3GWahVOsf5uBjnL4g4LPkFK7LLi/Jlkn99BM+4uqAJleYhBJuBFC4c5QYB8Zl9I4sD0ld
-	Ae1buuOEQ==;
+	 bh=ngwckjdQeYX6uS2aWYTCNhAQSAvQNaLVuYXNlf2UR0s=; b=ol7BzG40/E66GHSxqFQttSMkV
+	n19Ac8jSROoqCjEEGgc3hkjXwCSP+GywHIouxLGlSzm2KmQiqlE26xJDZK1VIesrC+JqibDfArJQ/
+	F0jcIxJdL/7aGDtRpBzfZ6yMHtdzFrSK6WEhrywV8uwxZOei64IbOzR+Dq7keSOrNqwKWRouG+dfv
+	pf3BvznIjeViJa5eTqsuildvOr0Qiii05tU2IrOQrNDFlvMDhBykxSWgvTF2QK3OAIgJ1s4hcCAdu
+	DgIF8AYMO1i+UXY6HIAqhWMQjW7ctERTREdPuS8oYSp7hp3XrbYODtrdGCJrELMsLLRyfO6qBNLOM
+	JahwPYirA==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1kk0G4-0007UF-VN; Tue, 01 Dec 2020 07:39:33 +0000
-Received: from kvm5.telegraphics.com.au ([98.124.60.144])
- by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ki46q-0000gF-R0; Wed, 25 Nov 2020 23:22:01 +0000
-Received: from localhost (localhost.localdomain [127.0.0.1])
- by kvm5.telegraphics.com.au (Postfix) with ESMTP id 414EA2A490;
- Wed, 25 Nov 2020 18:21:54 -0500 (EST)
-Date: Thu, 26 Nov 2020 10:21:54 +1100 (AEDT)
-From: Finn Thain <fthain@telegraphics.com.au>
-To: Nick Desaulniers <ndesaulniers@google.com>
-Subject: Re: [Intel-wired-lan] [PATCH 000/141] Fix fall-through warnings for
- Clang
-In-Reply-To: <CAKwvOdna5Zj_O=sB7Q0jHZX0BJSaakX=ZyftwQ_3=L3-ZB54XQ@mail.gmail.com>
-Message-ID: <alpine.LNX.2.23.453.2011260918510.6@nippy.intranet>
+	id 1kk0G4-0007Tt-EU; Tue, 01 Dec 2020 07:39:32 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ki2yt-0003Mn-05
+ for linux-i3c@lists.infradead.org; Wed, 25 Nov 2020 22:09:46 +0000
+Received: by mail-pl1-x641.google.com with SMTP id p6so92784plr.7
+ for <linux-i3c@lists.infradead.org>; Wed, 25 Nov 2020 14:09:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=/ob3FEJdYP5qhdHPeLajEb6PUDm9frxLF1mdXzRdH3M=;
+ b=L3KZpP3LXxZlW/DP5AmTnD4MuZ72/rcy+coOeUVeCNTiwrWtzoVQx/hBMoKUsqDMm0
+ Foet9vcyJsJZ2PSgueU+Q+MvDj0KUWyeWX5guwBWRMdbnXZ08cX56htqXhsZrxHUuRIn
+ vYFnIpmbgrasg1vSD5AH5hKwOy9NejMhVovtjBrzY+2P0ug3w3+5RlYsOk03C83VD9da
+ OdGtf9c6uotPHdYcmuyOqbnF5k3fP8Yo6l5eFDVR7n6m5okfFX1oHlXNOB3u6UsnrVGE
+ wa6MluYkHn1XOYZTDyrE2KQmcun7Qe6vVmhaYurLDnZVMQG/lFJsGakXcuEY3+Obie2U
+ RVfA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=/ob3FEJdYP5qhdHPeLajEb6PUDm9frxLF1mdXzRdH3M=;
+ b=aUTJa7nZF3fMv/6Yx6EuafCeAZCANoUZqATQFxA+xKC2b1NbtFEj6qT6onPyqJGOrh
+ jSAe5c53wN4bvBQFOtP6oNZkS528l7K+Koi63t7FF83JKWm6ycaueMeBvPaCq2/aBqUY
+ gUO2WkhVEiekSodhaRbcO/pgLmbFu26kqU2M+HK+Z4JBUva1wpsVbzrAyIXqnN1z6E24
+ KBd0FSlyKr91mIYyjIgzVIeKqBaSwcHWNgWB4YzG+ydA13+IKYL9IwOiFAW/p4a4Q2ea
+ wGi3U8C64TD7SYoNQyYQKUIyTX6ByGHniZyiriwEPVw3SL2KA8tMDP4LL0+IOdwW5w5h
+ FiJg==
+X-Gm-Message-State: AOAM53271dojvnpws6kiRwrnLBQR8hvyWn5xMWcDIBO3UVO4OjweF92G
+ VSDCLvJbi7mh6kVp5fpch3h/HmI1LKJ9Tr8ivtWJvA==
+X-Google-Smtp-Source: ABdhPJz8lLt/1COGEMpWkFDfyIK6h7HwbxIAa+xtHaAqLUfnjsVh22wexUgkVgdtXLczfRnuDI51yr8PXCWqKuZKul4=
+X-Received: by 2002:a17:902:c14a:b029:d8:dc05:d7ef with SMTP id
+ 10-20020a170902c14ab02900d8dc05d7efmr4885886plj.83.1606342180784; Wed, 25 Nov
+ 2020 14:09:40 -0800 (PST)
+MIME-Version: 1.0
 References: <202011201129.B13FDB3C@keescook>
  <20201120115142.292999b2@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
  <202011220816.8B6591A@keescook>
@@ -61,11 +82,16 @@ References: <202011201129.B13FDB3C@keescook>
  <a841536fe65bb33f1c72ce2455a6eb47a0107565.camel@HansenPartnership.com>
  <CAKwvOdkGBn7nuWTAqrORMeN1G+w3YwBfCqqaRD2nwvoAXKi=Aw@mail.gmail.com>
  <alpine.LNX.2.23.453.2011260750300.6@nippy.intranet>
- <CAKwvOdna5Zj_O=sB7Q0jHZX0BJSaakX=ZyftwQ_3=L3-ZB54XQ@mail.gmail.com>
-MIME-Version: 1.0
+In-Reply-To: <alpine.LNX.2.23.453.2011260750300.6@nippy.intranet>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Wed, 25 Nov 2020 14:09:29 -0800
+Message-ID: <CAKwvOdna5Zj_O=sB7Q0jHZX0BJSaakX=ZyftwQ_3=L3-ZB54XQ@mail.gmail.com>
+Subject: Re: [Intel-wired-lan] [PATCH 000/141] Fix fall-through warnings for
+ Clang
+To: Finn Thain <fthain@telegraphics.com.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201125_182200_905723_F9019AB4 
-X-CRM114-Status: GOOD (  13.21  )
+X-CRM114-CacheID: sfid-20201125_170943_232558_CB2508BB 
+X-CRM114-Status: GOOD (  16.56  )
 X-Mailman-Approved-At: Tue, 01 Dec 2020 02:39:24 -0500
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -129,43 +155,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, 25 Nov 2020, Nick Desaulniers wrote:
+On Wed, Nov 25, 2020 at 1:33 PM Finn Thain <fthain@telegraphics.com.au> wrote:
+>
+> Or do you think that a codebase can somehow satisfy multiple checkers and
+> their divergent interpretations of the language spec?
 
-> On Wed, Nov 25, 2020 at 1:33 PM Finn Thain <fthain@telegraphics.com.au> 
-> wrote:
+Have we found any cases yet that are divergent? I don't think so.  It
+sounds to me like GCC's cases it warns for is a subset of Clang's.
+Having additional coverage with Clang then should ensure coverage for
+both.
+
+> > This is not a shiny new warning; it's already on for GCC and has existed
+> > in both compilers for multiple releases.
 > >
-> > Or do you think that a codebase can somehow satisfy multiple checkers 
-> > and their divergent interpretations of the language spec?
-> 
-> Have we found any cases yet that are divergent? I don't think so.
+>
+> Perhaps you're referring to the compiler feature that lead to the
+> ill-fated, tree-wide /* fallthrough */ patch series.
+>
+> When the ink dries on the C23 language spec and the implementations figure
+> out how to interpret it then sure, enforce the warning for new code -- the
+> cost/benefit analysis is straight forward. However, the case for patching
+> existing mature code is another story.
 
-There are many implementations, so I think you are guaranteed to find more 
-divergence if you look. That's because the spec is full of language like 
-this: "implementations are encouraged not to emit a diagnostic" and 
-"implementations are encouraged to issue a diagnostic".
-
-Some implementations will decide to not emit (under the premise that vast 
-amounts of existing code would have to get patched until the compiler goes 
-quiet) whereas other implementations will decide to emit (under the 
-premise that the author is doing the checking and not the janitor or the 
-packager).
-
-> It sounds to me like GCC's cases it warns for is a subset of Clang's. 
-> Having additional coverage with Clang then should ensure coverage for 
-> both.
-> 
-
-If that claim were true, the solution would be simple. (It's not.)
-
-For the benefit of projects that enable -Werror and projects that 
-nominated gcc as their preferred compiler, clang would simply need a flag 
-to enable conformance with gcc by suppressing those additional warnings 
-that clang would normally produce.
-
-This simple solution is, of course, completely unworkable, since it would 
-force clang to copy some portion of gcc's logic (rewritten under LLVM's 
-unique license) and then to track future changes to that portion of gcc 
-indefinitely.
+I don't think we need to wait for the ink to dry on the C23 language
+spec to understand that implicit fallthrough is an obvious defect of
+the C language.  While the kernel is a mature codebase, it's not
+immune to bugs.  And its maturity has yet to slow its rapid pace of
+development.
+-- 
+Thanks,
+~Nick Desaulniers
 
 -- 
 linux-i3c mailing list
