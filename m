@@ -3,71 +3,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
 X-Spam-Status: No, score=-5.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no
-	autolearn_force=no version=3.4.0
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 04AA3C83011
-	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 07:39:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 104A1C83012
+	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 07:39:35 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 593DD2168B
-	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 07:39:33 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id 854E82087C
+	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 07:39:34 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="ol7BzG40";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=google.com header.i=@google.com header.b="L3KZpP3L"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 593DD2168B
-Authentication-Results: mail.kernel.org; dmarc=fail (p=reject dis=none) header.from=google.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="ToNTMpYN"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 854E82087C
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=telegraphics.com.au
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:In-Reply-To:
-	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:In-Reply-To:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ngwckjdQeYX6uS2aWYTCNhAQSAvQNaLVuYXNlf2UR0s=; b=ol7BzG40/E66GHSxqFQttSMkV
-	n19Ac8jSROoqCjEEGgc3hkjXwCSP+GywHIouxLGlSzm2KmQiqlE26xJDZK1VIesrC+JqibDfArJQ/
-	F0jcIxJdL/7aGDtRpBzfZ6yMHtdzFrSK6WEhrywV8uwxZOei64IbOzR+Dq7keSOrNqwKWRouG+dfv
-	pf3BvznIjeViJa5eTqsuildvOr0Qiii05tU2IrOQrNDFlvMDhBykxSWgvTF2QK3OAIgJ1s4hcCAdu
-	DgIF8AYMO1i+UXY6HIAqhWMQjW7ctERTREdPuS8oYSp7hp3XrbYODtrdGCJrELMsLLRyfO6qBNLOM
-	JahwPYirA==;
+	 bh=S8oCGArVwG55PMeft2zXWau8YeBpzOA0dhLNAkwKmVc=; b=ToNTMpYNJ5vFJYqFp+pB9t1Ub
+	V3sKEhZztNS9tpHZT4QSBnoTriySWxne2WHH6yXmQgkaYIQtUm+Xxawe00B4v5gAQnMLX3BTm1nmG
+	j4eaz5Ce9J1WRDT2YY8ZxZGL+nwTDitQYPq9DEG92drxAjxClMKfb7ptx+Glgvn339Y1dtcFtxn5S
+	C9tk49hCzpl8z0vwKEPDm1idd8VmUphmnlQStMRYumHAP/oelLOnQL9QXTdrQeeIxKMwEwniwLMF8
+	vTjTZWwehQpeW0MrLhgCu0Y9d1qhRjwp3hIGG2g/TrzCB6eS3TZSHZ+1CpPX7a5/AS7r4b85D3NWY
+	/fCCPf2YQ==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1kk0G4-0007Tt-EU; Tue, 01 Dec 2020 07:39:32 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ki2yt-0003Mn-05
- for linux-i3c@lists.infradead.org; Wed, 25 Nov 2020 22:09:46 +0000
-Received: by mail-pl1-x641.google.com with SMTP id p6so92784plr.7
- for <linux-i3c@lists.infradead.org>; Wed, 25 Nov 2020 14:09:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=/ob3FEJdYP5qhdHPeLajEb6PUDm9frxLF1mdXzRdH3M=;
- b=L3KZpP3LXxZlW/DP5AmTnD4MuZ72/rcy+coOeUVeCNTiwrWtzoVQx/hBMoKUsqDMm0
- Foet9vcyJsJZ2PSgueU+Q+MvDj0KUWyeWX5guwBWRMdbnXZ08cX56htqXhsZrxHUuRIn
- vYFnIpmbgrasg1vSD5AH5hKwOy9NejMhVovtjBrzY+2P0ug3w3+5RlYsOk03C83VD9da
- OdGtf9c6uotPHdYcmuyOqbnF5k3fP8Yo6l5eFDVR7n6m5okfFX1oHlXNOB3u6UsnrVGE
- wa6MluYkHn1XOYZTDyrE2KQmcun7Qe6vVmhaYurLDnZVMQG/lFJsGakXcuEY3+Obie2U
- RVfA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=/ob3FEJdYP5qhdHPeLajEb6PUDm9frxLF1mdXzRdH3M=;
- b=aUTJa7nZF3fMv/6Yx6EuafCeAZCANoUZqATQFxA+xKC2b1NbtFEj6qT6onPyqJGOrh
- jSAe5c53wN4bvBQFOtP6oNZkS528l7K+Koi63t7FF83JKWm6ycaueMeBvPaCq2/aBqUY
- gUO2WkhVEiekSodhaRbcO/pgLmbFu26kqU2M+HK+Z4JBUva1wpsVbzrAyIXqnN1z6E24
- KBd0FSlyKr91mIYyjIgzVIeKqBaSwcHWNgWB4YzG+ydA13+IKYL9IwOiFAW/p4a4Q2ea
- wGi3U8C64TD7SYoNQyYQKUIyTX6ByGHniZyiriwEPVw3SL2KA8tMDP4LL0+IOdwW5w5h
- FiJg==
-X-Gm-Message-State: AOAM53271dojvnpws6kiRwrnLBQR8hvyWn5xMWcDIBO3UVO4OjweF92G
- VSDCLvJbi7mh6kVp5fpch3h/HmI1LKJ9Tr8ivtWJvA==
-X-Google-Smtp-Source: ABdhPJz8lLt/1COGEMpWkFDfyIK6h7HwbxIAa+xtHaAqLUfnjsVh22wexUgkVgdtXLczfRnuDI51yr8PXCWqKuZKul4=
-X-Received: by 2002:a17:902:c14a:b029:d8:dc05:d7ef with SMTP id
- 10-20020a170902c14ab02900d8dc05d7efmr4885886plj.83.1606342180784; Wed, 25 Nov
- 2020 14:09:40 -0800 (PST)
-MIME-Version: 1.0
+	id 1kk0G5-0007UT-FB; Tue, 01 Dec 2020 07:39:33 +0000
+Received: from kvm5.telegraphics.com.au ([98.124.60.144])
+ by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ki5BJ-000570-Uy; Thu, 26 Nov 2020 00:30:42 +0000
+Received: from localhost (localhost.localdomain [127.0.0.1])
+ by kvm5.telegraphics.com.au (Postfix) with ESMTP id 742A42A495;
+ Wed, 25 Nov 2020 19:30:37 -0500 (EST)
+Date: Thu, 26 Nov 2020 11:30:36 +1100 (AEDT)
+From: Finn Thain <fthain@telegraphics.com.au>
+To: Nick Desaulniers <ndesaulniers@google.com>
+Subject: Re: [Intel-wired-lan] [PATCH 000/141] Fix fall-through warnings for
+ Clang
+In-Reply-To: <CAKwvOdna5Zj_O=sB7Q0jHZX0BJSaakX=ZyftwQ_3=L3-ZB54XQ@mail.gmail.com>
+Message-ID: <alpine.LNX.2.23.453.2011261031290.6@nippy.intranet>
 References: <202011201129.B13FDB3C@keescook>
  <20201120115142.292999b2@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
  <202011220816.8B6591A@keescook>
@@ -82,16 +61,12 @@ References: <202011201129.B13FDB3C@keescook>
  <a841536fe65bb33f1c72ce2455a6eb47a0107565.camel@HansenPartnership.com>
  <CAKwvOdkGBn7nuWTAqrORMeN1G+w3YwBfCqqaRD2nwvoAXKi=Aw@mail.gmail.com>
  <alpine.LNX.2.23.453.2011260750300.6@nippy.intranet>
-In-Reply-To: <alpine.LNX.2.23.453.2011260750300.6@nippy.intranet>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Wed, 25 Nov 2020 14:09:29 -0800
-Message-ID: <CAKwvOdna5Zj_O=sB7Q0jHZX0BJSaakX=ZyftwQ_3=L3-ZB54XQ@mail.gmail.com>
-Subject: Re: [Intel-wired-lan] [PATCH 000/141] Fix fall-through warnings for
- Clang
-To: Finn Thain <fthain@telegraphics.com.au>
+ <CAKwvOdna5Zj_O=sB7Q0jHZX0BJSaakX=ZyftwQ_3=L3-ZB54XQ@mail.gmail.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201125_170943_232558_CB2508BB 
-X-CRM114-Status: GOOD (  16.56  )
+X-CRM114-CacheID: sfid-20201125_193042_004672_4C70B546 
+X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-Notice: Please train this message.
 X-Mailman-Approved-At: Tue, 01 Dec 2020 02:39:24 -0500
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -155,36 +130,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Nov 25, 2020 at 1:33 PM Finn Thain <fthain@telegraphics.com.au> wrote:
->
-> Or do you think that a codebase can somehow satisfy multiple checkers and
-> their divergent interpretations of the language spec?
 
-Have we found any cases yet that are divergent? I don't think so.  It
-sounds to me like GCC's cases it warns for is a subset of Clang's.
-Having additional coverage with Clang then should ensure coverage for
-both.
 
-> > This is not a shiny new warning; it's already on for GCC and has existed
-> > in both compilers for multiple releases.
+On Wed, 25 Nov 2020, Nick Desaulniers wrote:
+
+> On Wed, Nov 25, 2020 at 1:33 PM Finn Thain <fthain@telegraphics.com.au> wrote:
 > >
->
-> Perhaps you're referring to the compiler feature that lead to the
-> ill-fated, tree-wide /* fallthrough */ patch series.
->
-> When the ink dries on the C23 language spec and the implementations figure
-> out how to interpret it then sure, enforce the warning for new code -- the
-> cost/benefit analysis is straight forward. However, the case for patching
-> existing mature code is another story.
+> > Or do you think that a codebase can somehow satisfy multiple checkers 
+> > and their divergent interpretations of the language spec?
+> 
+> Have we found any cases yet that are divergent? I don't think so. 
 
-I don't think we need to wait for the ink to dry on the C23 language
-spec to understand that implicit fallthrough is an obvious defect of
-the C language.  While the kernel is a mature codebase, it's not
-immune to bugs.  And its maturity has yet to slow its rapid pace of
-development.
--- 
-Thanks,
-~Nick Desaulniers
+You mean, aside from -Wimplicit-fallthrough? I'm glad you asked. How about 
+-Wincompatible-pointer-types and -Wframe-larger-than?
+
+All of the following files have been affected by divergent diagnostics 
+produced by clang and gcc.
+
+arch/arm64/include/asm/neon-intrinsics.h
+arch/powerpc/xmon/Makefile
+drivers/gpu/drm/i915/Makefile
+drivers/gpu/drm/i915/i915_utils.h
+drivers/staging/media/atomisp/pci/atomisp_subdev.c
+fs/ext4/super.c
+include/trace/events/qla.h
+net/mac80211/rate.c
+tools/lib/string.c
+tools/perf/util/setup.py
+tools/scripts/Makefile.include
+
+And if I searched for 'smatch' or 'coverity' instead of 'clang' I'd 
+probably find more divergence.
+
+Here are some of the relevant commits.
+
+0738c8b5915c7eaf1e6007b441008e8f3b460443
+9c87156cce5a63735d1218f0096a65c50a7a32aa
+babaab2f473817f173a2d08e410c25abf5ed0f6b
+065e5e559555e2f100bc95792a8ef1b609bbe130
+93f56de259376d7e4fff2b2d104082e1fa66e237
+6c4798d3f08b81c2c52936b10e0fa872590c96ae
+b7a313d84e853049062011d78cb04b6decd12f5c
+093b75ef5995ea35d7f6bdb6c7b32a42a1999813
+
+And before you object, "but -Wconstant-logical-operand is a clang-only 
+warning! it can't be divergent with gcc!", consider that the special cases 
+added to deal with clang-only warnings have to be removed when gcc catches 
+up, which is more churn. Now multiply that by the number of checkers you 
+care about.
 
 -- 
 linux-i3c mailing list
