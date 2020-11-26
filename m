@@ -2,23 +2,22 @@ Return-Path: <SRS0=EM71=FF=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-0.7 required=3.0 tests=BAYES_00,DKIM_ADSP_CUSTOM_MED,
-	DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-5.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED autolearn=no autolearn_force=no
+	version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id C8B48C83013
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 9A6FCC64E7B
 	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 07:39:36 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 2973F2168B
-	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 07:39:36 +0000 (UTC)
+	by mail.kernel.org (Postfix) with ESMTPS id E5FDC2085B
+	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 07:39:35 +0000 (UTC)
 Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="rtOIZ6J9";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=gmail.com header.i=@gmail.com header.b="YymqsvqK"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 2973F2168B
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="WEGj1f1X"
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E5FDC2085B
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=linux-m68k.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
@@ -26,45 +25,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:In-Reply-To:
 	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=aerLnkfrg8WQ8rfUJn3AG+/kwl8gcqCItKkKdTBU260=; b=rtOIZ6J9KHCPCHnkem4+tGzWn
-	bHoNUGdZE1FuybGheNqX2sJyM9eX9whBrABzmcD/VI0t3Jn2lYxDYmzNKX9rP2D1I8a7/YI2hoYWK
-	em6aboAjAZbcEXzlaC2kf70V/GPKueBGQ9cQUrpD8AKYMmNRed/9HCsmmXCBeVSZjyke0T+kuAOBF
-	f8qRkzfFWx8jIF0OgjFVSKctFXAAv4oB7CDZpZ4JAJpI56+8+kaxRwUzvee1vpgmZEeXLjbX3usEQ
-	WVM17MMJbFMiodvALe2mr5JPUQxyr+f0khviaMgUxyBxWfiH+GvR/+ovUgAkS32SeL1fxZActDOPC
-	Vii579ndA==;
+	 bh=62qVuK5vNqUIfPBcmgRfODDrOOucIS4MrC1WhC4hk9M=; b=WEGj1f1XXb2Vj40X6TGAehL+k
+	xORHHUAlyo/qPtm1mXVKn1xJTr3ABfSZn7AMHtRvcLngMDXZ0Jkl8o8Nv57GKnwUJFs0QjKMF3WFG
+	1VjrG2RnHM4kV/d28fj78IBeYsXYIzfEJVCB0clk4v036eX6CUoq7Ytenq2gpG1ZQxq/rBlBx8hwr
+	dTvF0c/tdnMosj7sAlGsR/sQgKIQ1PCzDqBovvs6lQtpbHyreEcldZJWK9Pm5HC/g7uoCIcfHnAWB
+	xXE9N9HZ9rye3oncPj0AbYpRp8+Q4AKvqdfuAGzg7kU/p9A2MlLiQeosO4iaH4SiEGWG9Be2YR47B
+	AG7iKHCsQ==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1kk0G7-0007VS-Cl; Tue, 01 Dec 2020 07:39:35 +0000
-Received: from mail-yb1-xb31.google.com ([2607:f8b0:4864:20::b31])
+	id 1kk0G6-0007V6-Su; Tue, 01 Dec 2020 07:39:34 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1kiKiV-0005mJ-Li; Thu, 26 Nov 2020 17:06:00 +0000
-Received: by mail-yb1-xb31.google.com with SMTP id t33so2217218ybd.0;
- Thu, 26 Nov 2020 09:05:58 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=O/jaIJrbif54isUECHds/J8Ujq0NdoNxUTCCwJWwQ80=;
- b=YymqsvqKytU8xghgrWvO9q2MBm/qo/QfMLfSKpWw4/r/4uRHhZxuPq9ek+nW3ctzYi
- vs3zi1yLEuFoGUDgrnF15wpJAK9RqJ1aO9sTXa0PjOzjLe+d4O/pTFiiO013Mx2qKoL4
- SkUMUUIjag5bjqwHGLYc9f20TwOaOWbGTale/6i8ahvnaZymX26ArF3ReuQKFVdof495
- iKDDkr6mQvIIbdynQAd2wxd2GUAuBku/vDm4jIdtOw4Ph7wkJ5rD2TxigEVm3yQ5C9tu
- pJCfZKqtAfLebSyeKrm6VDCN2G4oKvj4TFU9uFOnavPNoLjuB5eIt+ODZ6yyvDDDthAD
- GeSQ==
+ id 1kiJC7-00046I-Tv; Thu, 26 Nov 2020 15:28:28 +0000
+Received: by mail-ot1-f68.google.com with SMTP id h19so2195549otr.1;
+ Thu, 26 Nov 2020 07:28:24 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=O/jaIJrbif54isUECHds/J8Ujq0NdoNxUTCCwJWwQ80=;
- b=WCDvCj/LODwYRIN5MGp1LQS6hEOO2JTownvRkBpdJH8ndgXqeF7I/dXNUfPtoz34SR
- 5rOxBZJ9xawnn+yOie5yvpp9CZAYvWndh34UCvRmWTTMliwANlGOuTDiuLQ6sCU6lAJt
- 8kNAjhSxAmY7Tk3vCSQXtW79mCbKUIZXJZBnDZBjyX2w3pueT8gd6QRsSzQw5J2L8LxO
- lwohLkjayG8weQS+VDN4Rndxru7deMOq5jYLLulHD3FvsVj6wbMlYhHqSAeBtOV0UYoQ
- IPvyYVNpY4q+DH9OUjhIsLcO3SA+cMz3Ecz3PKxP30R1LpwSUM3Psm1QgHX4ckoIbUGv
- 9PAA==
-X-Gm-Message-State: AOAM532cIpfgFbWoF6891Evj98vNrSBZ5dlnzXf87a38syZAs/3i+iwO
- 9aD5vvl57dwYtEFIgwK03Llsy8+rSpJ0MqqxRmM=
-X-Google-Smtp-Source: ABdhPJxMy5ncXEZ6TSWkZ0cAXTnkQ7iw+jjdg+cNNUWTZPlZcmFMrQQcJd2JAoeBontKFrtwmzLazAacI3fdsjx9xvQ=
-X-Received: by 2002:a5b:40e:: with SMTP id m14mr4835621ybp.33.1606410357153;
- Thu, 26 Nov 2020 09:05:57 -0800 (PST)
+ bh=kP9MspVOPl/NnVl8oGn1EIC/+F8CcK5+OXo+jY56Nno=;
+ b=HUukhwa9xTbFZG8qqVC0Abcv5TyityQT9itE2F1w5bx6uWsA1xQ6QnG4PD9tNrROD2
+ 3IOYLf6S0sTrNBfwDMKLZWXiOYEFBuFmXWxXNd1oOi/iBf320uJc2CbjrJDl44dXSkC+
+ QwFh3VVI3Ov5djQ1BhA5GMmhxOQeJOn/LCs5+edMlU5mD2uBKwxKA/jHB5ALanxaRgiN
+ 1Eqe1hPnXE/a626Q02gul/ltNsNSvhP0fSb30zkCB7vLIdAW2yyMYyR9e3deLbqawEmL
+ Ee+8aubXMEi6pkhlbu9q2ZNPmXgnvADhWu4BO+VHPowLDWpBA7XQKwSx7o3uNk7dPOaa
+ jc9Q==
+X-Gm-Message-State: AOAM5331y7hwID1l8XQC3gog9VR0b1fVYdZW6AwOS7bHiVrajkjJCSwq
+ 9YxAW7KAbMyuR2k8ILFL2PlbL+x8Z5TPDmsLv0M=
+X-Google-Smtp-Source: ABdhPJyYtol6dSfaI6WhgTcuunq7fhBuSULViECyA4Z+K27bCejCuaia55DZ/aziu9dD69JTQZlYwW/4z6Mu7Di+rU4=
+X-Received: by 2002:a05:6830:210a:: with SMTP id
+ i10mr2551843otc.145.1606404504116; 
+ Thu, 26 Nov 2020 07:28:24 -0800 (PST)
 MIME-Version: 1.0
 References: <cover.1605896059.git.gustavoars@kernel.org>
  <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
@@ -81,16 +72,15 @@ References: <cover.1605896059.git.gustavoars@kernel.org>
  <CANiq72kqO=bYMJnFS2uYRpgWATJ=uXxZuNUsTXT+3aLtrpnzvQ@mail.gmail.com>
  <44005bde-f6d4-5eaa-39b8-1a5efeedb2d3@gmail.com>
  <CANiq72nobq=ptWK-qWxU91JHqkKhMcRtJNnw2XJd5-vSJWZd8Q@mail.gmail.com>
- <CAMuHMdV5kOakvZJMWLxbpigFPS+Xuw6DVYsWCWZy7wGsv3idcw@mail.gmail.com>
-In-Reply-To: <CAMuHMdV5kOakvZJMWLxbpigFPS+Xuw6DVYsWCWZy7wGsv3idcw@mail.gmail.com>
-From: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
-Date: Thu, 26 Nov 2020 18:05:45 +0100
-Message-ID: <CANiq72=n4rVvmKt0RCb5aOfQydA8bgDxfntRLDieV8Q2efP8Zg@mail.gmail.com>
+In-Reply-To: <CANiq72nobq=ptWK-qWxU91JHqkKhMcRtJNnw2XJd5-vSJWZd8Q@mail.gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Thu, 26 Nov 2020 16:28:12 +0100
+Message-ID: <CAMuHMdV5kOakvZJMWLxbpigFPS+Xuw6DVYsWCWZy7wGsv3idcw@mail.gmail.com>
 Subject: Re: [PATCH 000/141] Fix fall-through warnings for Clang
-To: Geert Uytterhoeven <geert@linux-m68k.org>
+To: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201126_120559_756753_AD837783 
-X-CRM114-Status: GOOD (  12.85  )
+X-CRM114-CacheID: sfid-20201126_102828_004389_CEC77C05 
+X-CRM114-Status: GOOD (  21.47  )
 X-Mailman-Approved-At: Tue, 01 Dec 2020 02:39:24 -0500
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -162,29 +152,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Nov 26, 2020 at 4:28 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+Hi Miguel,
+
+On Thu, Nov 26, 2020 at 3:54 PM Miguel Ojeda
+<miguel.ojeda.sandonis@gmail.com> wrote:
+> On Wed, Nov 25, 2020 at 11:44 PM Edward Cree <ecree.xilinx@gmail.com> wrote:
+> > To make the intent clear, you have to first be certain that you
+> >  understand the intent; otherwise by adding either a break or a
+> >  fallthrough to suppress the warning you are just destroying the
+> >  information that "the intent of this code is unknown".
 >
-> The maintainer is not necessarily the owner/author of the code, and
-> thus may not know the intent of the code.
+> If you don't know what the intent of your own code is, then you
+> *already* have a problem in your hands.
 
-Agreed, I was not blaming maintainers -- just trying to point out that
-the problem is there :-)
+The maintainer is not necessarily the owner/author of the code, and
+thus may not know the intent of the code.
 
-In those cases, it is still very useful: we add the `fallthrough` and
-a comment saying `FIXME: fallthrough intended? Figure this out...`.
-Thus a previous unknown unknown is now a known unknown. And no new
-unknown unknowns will be introduced since we enabled the warning
-globally.
+> > or does it flag up code
+> >  that can be mindlessly "fixed" (in which case the warning is
+> >  worthless)?  Proponents in this thread seem to be trying to
+> >  have it both ways.
+>
+> A warning is not worthless just because you can mindlessly fix it.
+> There are many counterexamples, e.g. many
+> checkpatch/lint/lang-format/indentation warnings, functional ones like
+> the `if (a = b)` warning...
 
-> BTW, you cannot mindlessly fix the latter, as you cannot know if
-> "(a == b)" or "((a = b))" was intended, without understanding the code
-> (and the (possibly unavailable) data sheet, and the hardware, ...).
+BTW, you cannot mindlessly fix the latter, as you cannot know if
+"(a == b)" or "((a = b))" was intended, without understanding the code
+(and the (possibly unavailable) data sheet, and the hardware, ...).
 
-That's right, I was referring to the cases where the compiler saves
-someone time from a typo they just made.
+P.S. So far I've stayed out of this thread, as I like it if the compiler
+     flags possible mistakes.  After all I was the one fixing new
+     "may be used uninitialized" warnings thrown up by gcc-4.1, until
+     (a bit later than) support for that compiler was removed...
 
-Cheers,
-Miguel
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 -- 
 linux-i3c mailing list
