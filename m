@@ -1,106 +1,82 @@
-Return-Path: <SRS0=EM71=FF=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=aOv0=FI=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-6.7 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,UNPARSEABLE_RELAY,URIBL_BLOCKED,USER_AGENT_SANE_1
-	autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-15.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id B228CC64E90
-	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 14:21:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id CA905C433FE
+	for <linux-i3c@archiver.kernel.org>; Fri,  4 Dec 2020 04:24:22 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 2E5742076C
-	for <linux-i3c@archiver.kernel.org>; Tue,  1 Dec 2020 14:21:16 +0000 (UTC)
-Authentication-Results: mail.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.b="hdD11WFX";
-	dkim=fail reason="signature verification failed" (2048-bit key) header.d=oracle.com header.i=@oracle.com header.b="Q8Pq03hi"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 2E5742076C
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=oracle.com
+	by mail.kernel.org (Postfix) with ESMTPS id 047F022472
+	for <linux-i3c@archiver.kernel.org>; Fri,  4 Dec 2020 04:24:21 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 047F022472
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=fluxnic.net
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:In-Reply-To:
 	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=enTq//Id+Z2bkjcOrPOkqd8OczawFQUdk3AVRE7impA=; b=hdD11WFXu0ktOn0mNU4+MfT60
-	mD5kk0SPHnMragGlwTrkEYKPuc2FBNKep/rU+n1TrYQ33xfQss9D47OqLFK7iS4Xtg9HP+LFrC4C6
-	ODiPPrVnGy6tuPbzmWvLCQQzB4tQqyM9KLD+hXjV5Ck61JK4KLd5MLo2iB/QPCBmK2D3meKOlRAKA
-	39dQirGC++MOBotKU5on3TVciYS6cyAQtpvaKHiO2RQ2XmAys58fF4FAUuWFWLs7HNnPLsu3PbsCK
-	95HrP+wlarFePXUQhzeIHvuTELdy3eeJk/8ZiKRZ/unMvWc+1WtU/v4dDe7wrZidS8c89q1RILAKA
-	Ff/T+nEoA==;
+	 bh=99OfRyXpqG7iINwzKOs/xDg2I6q+FparrsDlI442tY8=; b=akNJYOTA6aswYFWdhAHTpqVrj
+	Kmeo6Da8d3H1mVpH821PYYup0BKg4TQdK42q0Wx7/eYyzXke+V+RhIyklG9UzMyLN2clCQBZvGp7J
+	8RRq+GCdQu+UugH0YtL7tOkReDAVlgKtkdhH5SLnB7dKmGMnxxEhiaImo5JW4LonowdlGnIyG+8bR
+	MKX2BPk5W3EoAswraUo8xDcm1M8EjrhLHsQFwr5VngMVL0iD6tdCcz3pYo0nF0ypSB9Rw+Q1cis63
+	rr4iS0jPsSY8B8D+v1Tpw1Yqs37s7J0hzUe5nGQCb9+qMeLnL2ccTR9bo2rrcp/BJ9kkuseFopWoa
+	MNiYOts2g==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1kk6Wp-0008Uf-Fy; Tue, 01 Dec 2020 14:21:15 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1kl2do-000689-Ab; Fri, 04 Dec 2020 04:24:20 +0000
+Received: from pb-smtp21.pobox.com ([173.228.157.53])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1kk6Lf-0005qx-4i; Tue, 01 Dec 2020 14:09:44 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 0B1Dt2KT119141;
- Tue, 1 Dec 2020 14:09:31 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=corp-2020-01-29;
- bh=CVxJrJvszPiYRoVvo8QMoaANjq0rT1w3VAIVepGqitY=;
- b=Q8Pq03hifJp4hxcZYQuiJvbKTKZMKP2mLNTS1aHW6hAxlDpObu2xNteC6Yj/L36I1kmY
- WSfMJZMdSk8bN2J9+UmYiF9MWo5KvhVT37I7ctRf5KKEocNW4v8PFVCDeiU3k6pn404k
- Igra+V15xZpvhIpriUlAo6fac2mI985JVt4CqtU5vfkzzkfANqieFePUQJBzO6eRndXt
- r4RGB+aUeJDKgHUaSwwmUD5k/B0oZ1T+RFudNU+Upzz4yF4kbfdExpcaXwIzXbiJCqdd
- NFMbLYQpnYBf2dU4wooUhfeXNwTuWm/ESbR6RxVNN2eeS+ZfeOwZNtuQUXq4Dn72Z2fB vg== 
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by aserp2120.oracle.com with ESMTP id 353egkjmec-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 01 Dec 2020 14:09:31 +0000
-Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 0B1Du5d4003800;
- Tue, 1 Dec 2020 14:09:30 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
- by aserp3020.oracle.com with ESMTP id 3540ey0nww-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 01 Dec 2020 14:09:30 +0000
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [127.0.0.1])
- by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 0B1E8IaF039759;
- Tue, 1 Dec 2020 14:09:29 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
- by aserp3020.oracle.com with ESMTP id 3540ey0nvu-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 01 Dec 2020 14:09:29 +0000
-Received: from abhmp0010.oracle.com (abhmp0010.oracle.com [141.146.116.16])
- by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 0B1E9NOp018011;
- Tue, 1 Dec 2020 14:09:24 GMT
-Received: from kadam (/102.36.221.92) by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 01 Dec 2020 06:09:23 -0800
-Date: Tue, 1 Dec 2020 17:08:49 +0300
-From: Dan Carpenter <dan.carpenter@oracle.com>
-To: Nick Desaulniers <ndesaulniers@google.com>
-Subject: Re: [PATCH 000/141] Fix fall-through warnings for Clang
-Message-ID: <20201201140849.GH2767@kadam>
-References: <cover.1605896059.git.gustavoars@kernel.org>
- <20201120105344.4345c14e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
- <202011201129.B13FDB3C@keescook>
- <20201120115142.292999b2@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
- <202011220816.8B6591A@keescook>
- <CAKwvOdntVfXj2WRR5n6Kw7BfG7FdKpTeHeh5nPu5AzwVMhOHTg@mail.gmail.com>
+ id 1kl2dl-00067e-30
+ for linux-i3c@lists.infradead.org; Fri, 04 Dec 2020 04:24:18 +0000
+Received: from pb-smtp21.pobox.com (unknown [127.0.0.1])
+ by pb-smtp21.pobox.com (Postfix) with ESMTP id 8ED61111CA9;
+ Thu,  3 Dec 2020 23:24:10 -0500 (EST)
+ (envelope-from nico@fluxnic.net)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=pobox.com; h=date:from:to
+ :cc:subject:in-reply-to:message-id:references:mime-version
+ :content-type; s=sasl; bh=3PN7+dhj56TpvZ/QEmMRDjeq+70=; b=m0is3n
+ lruKj+Mxrr/Ats9nNhNbId/4G3c7o7OhzbO4GO80amr33WkTNd3QewIw09HcRYqi
+ dmFrAXQ34iCyu4gBw/KKD1voM4ynH2ot8KF/kwVMuemR4jTnglXk0xMpbKqARAYb
+ onWn2VQsZehT0bTW3OQHSuNlwwiiHBEkKEzSk=
+Received: from pb-smtp21.sea.icgroup.com (unknown [127.0.0.1])
+ by pb-smtp21.pobox.com (Postfix) with ESMTP id 87245111CA8;
+ Thu,  3 Dec 2020 23:24:10 -0500 (EST)
+ (envelope-from nico@fluxnic.net)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; d=fluxnic.net;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references:mime-version:content-type;
+ s=2016-12.pbsmtp; bh=wYsG55wCwVlnNuBZDyuyP9nA7lynkKBaXTgh1MoGBCI=;
+ b=aFsxI2/INdj5cIUuXWogCLdJzLhU0oioyHZ+MFEWed4sdGZzUsq4RgR1P+ijrntXMY8fpDG845udCAnI6oQhf3pV0P0yXhn+OVnr01oaYm3G77W/9SnQvX80kjgEibf+lhGGRID1HQ6wQcrw1aSHqJUPSH5e9I5tptJ3AY8Bpms=
+Received: from yoda.home (unknown [24.203.50.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by pb-smtp21.pobox.com (Postfix) with ESMTPSA id 65654111CA7;
+ Thu,  3 Dec 2020 23:24:07 -0500 (EST)
+ (envelope-from nico@fluxnic.net)
+Received: from xanadu.home (xanadu.home [192.168.2.2])
+ by yoda.home (Postfix) with ESMTPSA id 9844F2DA0639;
+ Thu,  3 Dec 2020 23:24:05 -0500 (EST)
+Date: Thu, 3 Dec 2020 23:24:05 -0500 (EST)
+From: Nicolas Pitre <nico@fluxnic.net>
+To: Parshuram Thombare <pthombar@cadence.com>
+Subject: Re: [PATCH v10 2/7] i3c: master: use i3c_master_register only for
+ main master
+In-Reply-To: <1606717066-3785-1-git-send-email-pthombar@cadence.com>
+Message-ID: <2s3n7419-1nr9-8885-882o-7qrsos6qq6q@syhkavp.arg>
+References: <1606716983-3645-1-git-send-email-pthombar@cadence.com>
+ <1606717066-3785-1-git-send-email-pthombar@cadence.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKwvOdntVfXj2WRR5n6Kw7BfG7FdKpTeHeh5nPu5AzwVMhOHTg@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9821
- signatures=668682
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxscore=0
- bulkscore=0 suspectscore=0
- phishscore=0 mlxlogscore=999 lowpriorityscore=0 malwarescore=0
- priorityscore=1501 spamscore=0 impostorscore=0 clxscore=1015 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2009150000
- definitions=main-2012010090
+X-Pobox-Relay-ID: 8CB4D5B0-35E8-11EB-87AA-D609E328BF65-78420484!pb-smtp21.pobox.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201201_090943_390057_6D0887A7 
-X-CRM114-Status: GOOD (  25.71  )
-X-Mailman-Approved-At: Tue, 01 Dec 2020 09:21:13 -0500
+X-CRM114-CacheID: sfid-20201203_232417_355326_97A1FB3C 
+X-CRM114-Status: GOOD (  13.87  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,117 +88,88 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, bridge@lists.linux-foundation.org,
- target-devel@vger.kernel.org, linux-iio@vger.kernel.org,
- linux-wireless <linux-wireless@vger.kernel.org>, linux-fbdev@vger.kernel.org,
- dri-devel <dri-devel@lists.freedesktop.org>,
- virtualization@lists.linux-foundation.org,
- Linux Memory Management List <linux-mm@kvack.org>, linux-ide@vger.kernel.org,
- dm-devel@redhat.com, keyrings@vger.kernel.org, linux-mtd@lists.infradead.org,
- GR-everest-linux-l2@marvell.com, wcn36xx@lists.infradead.org,
- linux-i3c@lists.infradead.org, linux1394-devel@lists.sourceforge.net,
- linux-afs@lists.infradead.org, linux-watchdog@vger.kernel.org,
- devel@driverdev.osuosl.org, linux-cifs@vger.kernel.org,
- rds-devel@oss.oracle.com, linux-scsi@vger.kernel.org,
- linux-acpi@vger.kernel.org, linux-rdma@vger.kernel.org,
- oss-drivers@netronome.com, linux-atm-general@lists.sourceforge.net,
- ceph-devel@vger.kernel.org, amd-gfx list <amd-gfx@lists.freedesktop.org>,
- linux-stm32@st-md-mailman.stormreply.com, cluster-devel@redhat.com,
- usb-storage@lists.one-eyed-alien.net, linux-mmc@vger.kernel.org,
- coreteam@netfilter.org, intel-wired-lan@lists.osuosl.org,
- "Gustavo A. R. Silva" <gustavoars@kernel.org>, linux-input@vger.kernel.org,
- Miguel Ojeda <ojeda@kernel.org>, Jakub Kicinski <kuba@kernel.org>,
- linux-ext4@vger.kernel.org, netfilter-devel@vger.kernel.org,
- linux-media@vger.kernel.org, Kees Cook <keescook@chromium.org>,
- selinux@vger.kernel.org, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- intel-gfx@lists.freedesktop.org, linux-sctp@vger.kernel.org,
- reiserfs-devel@vger.kernel.org, linux-geode@lists.infradead.org,
- linux-block@vger.kernel.org, linux-gpio@vger.kernel.org,
- op-tee@lists.trustedfirmware.org, linux-mediatek@lists.infradead.org,
- xen-devel@lists.xenproject.org, drbd-dev@tron.linbit.com,
- linux-hams@vger.kernel.org, Nathan Chancellor <natechancellor@gmail.com>,
- linux-can@vger.kernel.org, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- linux-hwmon@vger.kernel.org,
- "maintainer:X86 ARCHITECTURE \(32-BIT AND 64-BIT\)" <x86@kernel.org>,
- linux-nfs@vger.kernel.org, GR-Linux-NIC-Dev@marvell.com,
- nouveau@lists.freedesktop.org, Network Development <netdev@vger.kernel.org>,
- linux-decnet-user@lists.sourceforge.net, samba-technical@lists.samba.org,
- LKML <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- linux-security-module@vger.kernel.org, linux-usb@vger.kernel.org,
- tipc-discussion@lists.sourceforge.net,
- "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
- <linux-crypto@vger.kernel.org>, patches@opensource.cirrus.com,
- Joe Perches <joe@perches.com>, linux-integrity@vger.kernel.org,
- linux-hardening@vger.kernel.org
+Cc: mparab@cadence.com, alexandre.belloni@bootlin.com, praneeth@ti.com,
+ linux-kernel@vger.kernel.org, vitor.soares@synopsys.com, slongerbeam@gmail.com,
+ linux-i3c@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, Nov 23, 2020 at 05:32:51PM -0800, Nick Desaulniers wrote:
-> On Sun, Nov 22, 2020 at 8:17 AM Kees Cook <keescook@chromium.org> wrote:
-> >
-> > On Fri, Nov 20, 2020 at 11:51:42AM -0800, Jakub Kicinski wrote:
-> > > If none of the 140 patches here fix a real bug, and there is no change
-> > > to machine code then it sounds to me like a W=2 kind of a warning.
-> >
-> > FWIW, this series has found at least one bug so far:
-> > https://lore.kernel.org/lkml/CAFCwf11izHF=g1mGry1fE5kvFFFrxzhPSM6qKAO8gxSp=Kr_CQ@mail.gmail.com/
+On Mon, 30 Nov 2020, Parshuram Thombare wrote:
+
+> Removed last argument 'secondary' and restructured i3c_master_register
+> to move code that can be common to i3c_secondary_master_register
+> to separate function i3c_master_init.
 > 
-> So looks like the bulk of these are:
-> switch (x) {
->   case 0:
->     ++x;
->   default:
->     break;
-> }
+> Signed-off-by: Parshuram Thombare <pthombar@cadence.com>
 
-This should not generate a warning.
+[...]
 
-> 
-> I have a patch that fixes those up for clang:
-> https://reviews.llvm.org/D91895
-> 
-> There's 3 other cases that don't quite match between GCC and Clang I
-> observe in the kernel:
-> switch (x) {
->   case 0:
->     ++x;
->   default:
->     goto y;
-> }
-> y:;
+> +static int i3c_master_init(struct i3c_master_controller *master,
+> +			   struct device *parent,
+> +			   const struct i3c_master_controller_ops *ops,
+> +			   bool secondary)
+>  {
+>  	unsigned long i2c_scl_rate = I3C_BUS_I2C_FM_PLUS_SCL_RATE;
+>  	struct i3c_bus *i3cbus = i3c_master_get_bus(master);
+> @@ -2535,10 +2514,49 @@ int i3c_master_register(struct i3c_master_controller *master,
+>  		goto err_put_dev;
+>  	}
+>  
+> -	ret = i3c_master_bus_init(master);
+> +	ret = i3c_primary_master_bus_init(master);
+>  	if (ret)
+>  		goto err_destroy_wq;
+>  
+> +	return 0;
+> +
+> +err_destroy_wq:
+> +	destroy_workqueue(master->wq);
+> +
+> +err_put_dev:
+> +	put_device(&master->dev);
+> +
+> +	return ret;
+> +}
 
-This should generate a warning.
+[...]
 
-> 
-> switch (x) {
->   case 0:
->     ++x;
->   default:
->     return;
-> }
+> +int i3c_primary_master_register(struct i3c_master_controller *master,
+> +				struct device *parent,
+> +				const struct i3c_master_controller_ops *ops)
+> +{
+> +	int ret;
+> +
+> +	ret = i3c_master_init(master, parent, ops, false);
+> +	if (ret)
+> +		return ret;
+> +
+>  	ret = device_add(&master->dev);
+>  	if (ret)
+>  		goto err_cleanup_bus;
+> @@ -2568,15 +2586,13 @@ int i3c_master_register(struct i3c_master_controller *master,
+>  err_cleanup_bus:
+>  	i3c_master_bus_cleanup(master);
+>  
+> -err_destroy_wq:
+>  	destroy_workqueue(master->wq);
+>  
+> -err_put_dev:
+>  	put_device(&master->dev);
+>  
+>  	return ret;
+>  }
 
-Warn for this.
+This looks a bit confusing. Here you're rolling back detailss in 
+i3c_primary_master_register() that were factored out in 
+i3c_master_init(). If i3c_master_init() is successful, then you 
+shouldn't be undoing its things openly in i3c_primary_master_register(). 
+Instead, there should be another function that does the reverse of 
+i3c_master_init() here.
 
 
-> 
-> switch (x) {
->   case 0:
->     ++x;
->   default:
->     ;
-> }
-
-Don't warn for this.
-
-If adding a break statement changes the flow of the code then warn about
-potentially missing break statements, but if it doesn't change anything
-then don't warn about it.
-
-regards,
-dan carpenter
+Nicolas
 
 -- 
 linux-i3c mailing list
