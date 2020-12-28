@@ -2,56 +2,59 @@ Return-Path: <SRS0=GllZ=GA=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-11.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 20B32C433E0
-	for <linux-i3c@archiver.kernel.org>; Mon, 28 Dec 2020 16:11:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id F3669C433DB
+	for <linux-i3c@archiver.kernel.org>; Mon, 28 Dec 2020 16:11:19 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 4B0A9207C9
+	by mail.kernel.org (Postfix) with ESMTPS id 5B362207FB
 	for <linux-i3c@archiver.kernel.org>; Mon, 28 Dec 2020 16:11:19 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4B0A9207C9
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 5B362207FB
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bootlin.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=MGkhsKlsMFZ/2pjVVKWDLiJKtrlXL7r/leQS4p+/fbg=; b=h+NfbZrapqIV05nqQRl2FWNYer
-	koq0a8N2rnuaf30XHzdHN7hPtgLITYhmyPReetkH5Junb15+BtcaGYPTcMpZ9qtOS0zv1pJ0jfC+i
-	HXx0/OCcqXCggUy0y2xAD+F6MbuIhPgnoLYl6e6YMeigmiovk5JWw0SiLyjNGbNdy+8x32TcvoVDF
-	0r62GaJQBryQ4i7uAbjvOojztaFpjF/PXbfKKt3RTqcmuCjb4lo4kMll091+9Id4O6hF8gb1EW+aN
-	QB+VQ7fL8DIFhJNJ9/LqSmoaobrYCDbNJo4p65Sa4C8g6PO9SCvtENDTfRJZHv8Tk4lgCs21IbygJ
-	wjTKseDQ==;
+	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=TeUuizUUaySUkd+1ms5KTGByxR0n2FW1ObtRcCwdNU0=; b=FYaNRbKpI0h6lbj2Dlm30Namf
+	qB3Ik3SZdgVyWNOGCK3i6qNYNvZqZSWovvyht6rQXQiG79aTdRU4S0kVC/+6YqbegMPQJr4KjbOiQ
+	rt/yK97s3wWpFeyJtdNeDiBZKnVpUicVqsryYq9KsO14lYnO3K7K34nNn355r23Q6u8BltFeKs+kN
+	/g9bhjT2CGnn9PvnhvKQQ1kWtbiFf/sAUGPpJ/LIPXNq3Y2TYMSSKRJPuf8eDskJMyoacR+5GwOnJ
+	zEvCvyo6rFz2KjMiwiGtCgBph5KbJ+UJrLwvbJyLj2St/278hAyGXRPxva+I+cSNeWvDlkh26j6H7
+	gG04Z19MQ==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ktv78-0002jM-Cg; Mon, 28 Dec 2020 16:11:18 +0000
+	id 1ktv78-0002jU-Mz; Mon, 28 Dec 2020 16:11:18 +0000
 Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ktv75-0002i7-Pf
+ id 1ktv75-0002i9-Pf
  for linux-i3c@lists.infradead.org; Mon, 28 Dec 2020 16:11:16 +0000
 X-Originating-IP: 91.224.148.103
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 11113240004;
- Mon, 28 Dec 2020 16:11:08 +0000 (UTC)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 7619A240005;
+ Mon, 28 Dec 2020 16:11:13 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
  linux-i3c@lists.infradead.org
-Subject: [PATCH v3 0/4] Silvaco I3C master driver
-Date: Mon, 28 Dec 2020 17:11:03 +0100
-Message-Id: <20201228161107.11804-1-miquel.raynal@bootlin.com>
+Subject: [PATCH v3 1/4] dt-bindings: Add vendor prefix for Silvaco
+Date: Mon, 28 Dec 2020 17:11:04 +0100
+Message-Id: <20201228161107.11804-2-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20201228161107.11804-1-miquel.raynal@bootlin.com>
+References: <20201228161107.11804-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201228_111116_012912_CD5D6F92 
-X-CRM114-Status: GOOD (  11.58  )
+X-CRM114-CacheID: sfid-20201228_111116_000040_793EF506 
+X-CRM114-Status: UNSURE (   8.88  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,52 +70,38 @@ Cc: devicetree@vger.kernel.org,
  Rajeev Huralikoppi <rajeev.huralikoppi@silvaco.com>,
  Nicolas Pitre <nico@fluxnic.net>, Rob Herring <robh+dt@kernel.org>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>, Rob Herring <robh@kernel.org>,
  Conor Culhane <conor.culhane@silvaco.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hello,
+Silvaco, Inc. is an EDA provider of software tools used for process
+and device development and for analog/mixed-signal, power IC and
+memory design [1].
 
-Here is the addition of a driver for the Silvaco I3C master IP.
+[1] https://www.silvaco.com/company/profile/profile.html
 
-Changes in v3:
-* Fix the MAINTAINERS file.
-* Fix the bindings (clocks description, size-cells, etc)
-* Add Rob's Ack on one patch.
-* Dropped unnecessary locks.
-* Used a hardware feature to automatically NACK IBI's during regular
-  data transfers.
-* Stopped flushing FIFOs (not needed).
-* Entirely reworked the IBI handling logic.
-* Dropped the warning when a device does not advertise it's dynamic
-  address during an IBI.
-* Moved the IBI logic into the master's workqueue instead of a
-  threaded handler.
-* Added a svc_i3c_master_readb() helper.
-* Used consistent bit definitions (BIT() vs. FIELD_GET()).
+Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+Acked-by: Rob Herring <robh@kernel.org>
+---
+ Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-Changes in v2:
-* Change the manufacturer name from svc to silvaco.
-
-Miquel Raynal (4):
-  dt-bindings: Add vendor prefix for Silvaco
-  dt-bindings: i3c: Describe Silvaco master binding
-  i3c: master: svc: Add Silvaco I3C master driver
-  MAINTAINERS: Add Silvaco I3C master
-
- .../bindings/i3c/silvaco,i3c-master.yaml      |   63 +
- .../devicetree/bindings/vendor-prefixes.yaml  |    2 +
- MAINTAINERS                                   |    8 +
- drivers/i3c/master/Kconfig                    |    8 +
- drivers/i3c/master/Makefile                   |    1 +
- drivers/i3c/master/svc-i3c-master.c           | 1478 +++++++++++++++++
- 6 files changed, 1560 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
- create mode 100644 drivers/i3c/master/svc-i3c-master.c
-
+diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+index 041ae90b0d8f..df1b7971c07e 100644
+--- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
++++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+@@ -1075,6 +1075,8 @@ patternProperties:
+     description: Shenzhen Sunchip Technology Co., Ltd
+   "^SUNW,.*":
+     description: Sun Microsystems, Inc
++  "^silvaco,.*":
++    description: Silvaco, Inc.
+   "^swir,.*":
+     description: Sierra Wireless
+   "^syna,.*":
 -- 
 2.20.1
 
