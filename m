@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-16.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT
 	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id F3669C433DB
-	for <linux-i3c@archiver.kernel.org>; Mon, 28 Dec 2020 16:11:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 54D6EC433E6
+	for <linux-i3c@archiver.kernel.org>; Mon, 28 Dec 2020 16:11:20 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 5B362207FB
+	by mail.kernel.org (Postfix) with ESMTPS id E57FA20719
 	for <linux-i3c@archiver.kernel.org>; Mon, 28 Dec 2020 16:11:19 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 5B362207FB
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org E57FA20719
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bootlin.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,38 +23,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=TeUuizUUaySUkd+1ms5KTGByxR0n2FW1ObtRcCwdNU0=; b=FYaNRbKpI0h6lbj2Dlm30Namf
-	qB3Ik3SZdgVyWNOGCK3i6qNYNvZqZSWovvyht6rQXQiG79aTdRU4S0kVC/+6YqbegMPQJr4KjbOiQ
-	rt/yK97s3wWpFeyJtdNeDiBZKnVpUicVqsryYq9KsO14lYnO3K7K34nNn355r23Q6u8BltFeKs+kN
-	/g9bhjT2CGnn9PvnhvKQQ1kWtbiFf/sAUGPpJ/LIPXNq3Y2TYMSSKRJPuf8eDskJMyoacR+5GwOnJ
-	zEvCvyo6rFz2KjMiwiGtCgBph5KbJ+UJrLwvbJyLj2St/278hAyGXRPxva+I+cSNeWvDlkh26j6H7
-	gG04Z19MQ==;
+	 bh=rCrdNCPHprG93TlA4/viqUMSkbY7S39Sj85pHpeOZpE=; b=XSBKZ2sPMnpQV7zai0mPz+Nnx
+	eIIDcWoH7c60HbG0fw8Xq3T9YPZX92vTeIADufk0uFSu+mgx0TRUiP6wYoHsYQW/uHsoCZ8fN08iM
+	7YzV+RksBMdd6B2/6Xs7yhFMPLLTi0uDbD+rILQ5BWkPqznSuFWn1bCq/vx7gtlxUbCGun/GXJWwI
+	VMqnlVi7PyRmKVPgPtV15BXfLNPLPX2Ll6j/enDgHpNpqV9zAhHQFYn/r6KFIiJNhjOa/G1p1yWAQ
+	cqFH0K0wyXM8Nu4M74eHKagwwGNKufftIcmHEtDPw4epiVZN31oLEJmTPzyFu3Y96YZ+K90Jsm7l8
+	61wlbJKLw==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ktv78-0002jU-Mz; Mon, 28 Dec 2020 16:11:18 +0000
+	id 1ktv79-0002jp-5H; Mon, 28 Dec 2020 16:11:19 +0000
 Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ktv75-0002i9-Pf
- for linux-i3c@lists.infradead.org; Mon, 28 Dec 2020 16:11:16 +0000
+ id 1ktv76-0002iB-Dv
+ for linux-i3c@lists.infradead.org; Mon, 28 Dec 2020 16:11:17 +0000
 X-Originating-IP: 91.224.148.103
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 7619A240005;
- Mon, 28 Dec 2020 16:11:13 +0000 (UTC)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 993E0240009;
+ Mon, 28 Dec 2020 16:11:14 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
  linux-i3c@lists.infradead.org
-Subject: [PATCH v3 1/4] dt-bindings: Add vendor prefix for Silvaco
-Date: Mon, 28 Dec 2020 17:11:04 +0100
-Message-Id: <20201228161107.11804-2-miquel.raynal@bootlin.com>
+Subject: [PATCH v3 2/4] dt-bindings: i3c: Describe Silvaco master binding
+Date: Mon, 28 Dec 2020 17:11:05 +0100
+Message-Id: <20201228161107.11804-3-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20201228161107.11804-1-miquel.raynal@bootlin.com>
 References: <20201228161107.11804-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20201228_111116_000040_793EF506 
-X-CRM114-Status: UNSURE (   8.88  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20201228_111116_579379_DF536FBD 
+X-CRM114-Status: GOOD (  11.23  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,38 +69,93 @@ Cc: devicetree@vger.kernel.org,
  Rajeev Huralikoppi <rajeev.huralikoppi@silvaco.com>,
  Nicolas Pitre <nico@fluxnic.net>, Rob Herring <robh+dt@kernel.org>,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>, Rob Herring <robh@kernel.org>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
  Conor Culhane <conor.culhane@silvaco.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Silvaco, Inc. is an EDA provider of software tools used for process
-and device development and for analog/mixed-signal, power IC and
-memory design [1].
+Silvaco provide a dual-role I3C master.
 
-[1] https://www.silvaco.com/company/profile/profile.html
+Description is rather simple: it needs a register mapping, three
+clocks and an interrupt.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-Acked-by: Rob Herring <robh@kernel.org>
 ---
- Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
- 1 file changed, 2 insertions(+)
+ .../bindings/i3c/silvaco,i3c-master.yaml      | 63 +++++++++++++++++++
+ 1 file changed, 63 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
 
-diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-index 041ae90b0d8f..df1b7971c07e 100644
---- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
-+++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-@@ -1075,6 +1075,8 @@ patternProperties:
-     description: Shenzhen Sunchip Technology Co., Ltd
-   "^SUNW,.*":
-     description: Sun Microsystems, Inc
-+  "^silvaco,.*":
-+    description: Silvaco, Inc.
-   "^swir,.*":
-     description: Sierra Wireless
-   "^syna,.*":
+diff --git a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
+new file mode 100644
+index 000000000000..509de48455b0
+--- /dev/null
++++ b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
+@@ -0,0 +1,63 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/i3c/silvaco,i3c-master.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Silvaco I3C master
++
++maintainers:
++  - Conor Culhane <conor.culhane@silvaco.com>
++
++properties:
++  compatible:
++    const: silvaco,i3c-master
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: pclk, the system clock
++      - description: fast_clk, for the bus
++      - description: slow_clk, for other events
++
++  clock-names:
++    minItems: 3
++    maxItems: 3
++
++  resets:
++    maxItems: 1
++
++  "#address-cells":
++    const: 1
++
++  "#size-cells":
++    const: 0
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clock-names
++  - clocks
++  - "#address-cells"
++  - "#size-cells"
++
++additionalProperties: false
++
++examples:
++  - |
++    i3c-master@a0000000 {
++        compatible = "silvaco,i3c-master";
++        clocks = <&zynqmp_clk 71>, <&fclk>, <&sclk>;
++        clock-names = "pclk", "fast_clk", "slow_clk";
++        interrupt-parent = <&gic>;
++        interrupts = <0 89 4>;
++        reg = <0xa0000000 0x1000>;
++        #address-cells = <1>;
++        #size-cells = <0>;
++    };
 -- 
 2.20.1
 
