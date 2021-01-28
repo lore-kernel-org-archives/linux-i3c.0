@@ -4,17 +4,17 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 X-Spam-Level: 
 X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,URIBL_BLOCKED,USER_AGENT_GIT
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 55703C433E0
-	for <linux-i3c@archiver.kernel.org>; Mon,  1 Feb 2021 09:31:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id DB7BBC433E6
+	for <linux-i3c@archiver.kernel.org>; Mon,  1 Feb 2021 09:31:13 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id DD31D64E30
+	by mail.kernel.org (Postfix) with ESMTPS id 4A7D064EAA
 	for <linux-i3c@archiver.kernel.org>; Mon,  1 Feb 2021 09:31:13 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org DD31D64E30
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4A7D064EAA
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=pengutronix.de
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,32 +23,32 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To:From:
 	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
 	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=21qXkESMWnFqe++aq14QWaIE/KkHKG2SV6+f841N/wo=; b=btSliWaSo4U1kyiqOErRF1OySx
-	74kzsfC+ZNP+rd7Dgt9vT/PfAsIVRxK09I3Hy+j4e8g9UT4Tu2FQi+UJjvMrT4Jt0JSMbqpFZUEUd
-	72am7cbbtAcceHRj0ceetmsjW72U4hHAC5BJTZsZZAZDjEaXzmx72HFtL3UA6H9engniyyRGG+v6N
-	24TRrwnDQv3oZadTyRQewsoJAEuEptNyZyg6JPfK228kKiJb54U4+n26WXDTQs1QnTyvXfnNAtb2p
-	cmCnUZL+uONlW1EOk7zEvW3+WG6sxtK9QwjhKJypCtovIDpKba/12W7YETKoxXFg3+8Wgqb7OGKt0
-	qwwVNnrw==;
+	bh=21qXkESMWnFqe++aq14QWaIE/KkHKG2SV6+f841N/wo=; b=C8FL5AAr1jjZ7aYva8PsDtqB8t
+	p8k2sZOvqN0DsM1EHKR3pW5oLgdhA9/Mh3UMi4vo+bel610I/GABiile5h5zOV7IgZy4m4500gQ6F
+	TAKIAh3SUUbdCQpG36vxfblhKdEuV1bABtVhY35ERG+/WzKG0KG6vgI3ShScFRqYr3jiJnsNZ4FFW
+	3CkxGytm2yd76gDa0E2eJbIGe5hIgH9nntTGxLbmKZLU31niui249eStAC44ZMX/lcBRJElRm7gBp
+	maZl3dDrqoZIUfNyjH8ibHEUoGulJd9GgCx9vX7ds30t9m+v1D+MMSzPStg8pCXnLN5x76JJ29bXi
+	qlMqZK/w==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1l6VY9-0007Ow-4x; Mon, 01 Feb 2021 09:31:13 +0000
-Received: from metis.ext.pengutronix.de ([85.220.165.71])
+	id 1l6VY8-0007OY-Ir; Mon, 01 Feb 2021 09:31:12 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1l53M9-0008Aj-Pa
- for linux-i3c@lists.infradead.org; Thu, 28 Jan 2021 09:12:50 +0000
+ id 1l53KI-0007sV-H4
+ for linux-i3c@lists.infradead.org; Thu, 28 Jan 2021 09:10:55 +0000
 Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
  by metis.ext.pengutronix.de with esmtps
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <ukl@pengutronix.de>)
- id 1l53K2-00069M-EB; Thu, 28 Jan 2021 10:10:38 +0100
+ id 1l53KF-0006C2-KP; Thu, 28 Jan 2021 10:10:51 +0100
 Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.92)
  (envelope-from <ukl@pengutronix.de>)
- id 1l53K1-0006X5-6C; Thu, 28 Jan 2021 10:10:37 +0100
+ id 1l53KF-00071V-BB; Thu, 28 Jan 2021 10:10:51 +0100
 From: =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>
 Subject: [PATCH 1/2] i3c: Handle drivers without probe or remove callback
-Date: Thu, 28 Jan 2021 10:10:31 +0100
-Message-Id: <20210128091032.16952-1-u.kleine-koenig@pengutronix.de>
+Date: Thu, 28 Jan 2021 10:10:47 +0100
+Message-Id: <20210128091048.17006-1-u.kleine-koenig@pengutronix.de>
 X-Mailer: git-send-email 2.29.2
 MIME-Version: 1.0
 X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
@@ -57,8 +57,8 @@ X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-i3c@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210128_041249_851993_79531719 
-X-CRM114-Status: GOOD (  14.85  )
+X-CRM114-CacheID: sfid-20210128_041054_595472_F4149AD4 
+X-CRM114-Status: GOOD (  14.96  )
 X-Mailman-Approved-At: Mon, 01 Feb 2021 04:31:10 -0500
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -72,7 +72,8 @@ List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
 Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+ linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+ kernel@pengutronix.de
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
