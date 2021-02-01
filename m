@@ -2,64 +2,85 @@ Return-Path: <SRS0=Xn1S=HD=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-14.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,URIBL_BLOCKED,USER_AGENT_GIT
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
 	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id DB7BBC433E6
-	for <linux-i3c@archiver.kernel.org>; Mon,  1 Feb 2021 09:31:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 913D1C433E0
+	for <linux-i3c@archiver.kernel.org>; Mon,  1 Feb 2021 16:18:46 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 4A7D064EAA
-	for <linux-i3c@archiver.kernel.org>; Mon,  1 Feb 2021 09:31:13 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 4A7D064EAA
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=pengutronix.de
+	by mail.kernel.org (Postfix) with ESMTPS id 80ED464E9B
+	for <linux-i3c@archiver.kernel.org>; Mon,  1 Feb 2021 16:18:45 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 80ED464E9B
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=baylibre.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
 	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=21qXkESMWnFqe++aq14QWaIE/KkHKG2SV6+f841N/wo=; b=C8FL5AAr1jjZ7aYva8PsDtqB8t
-	p8k2sZOvqN0DsM1EHKR3pW5oLgdhA9/Mh3UMi4vo+bel610I/GABiile5h5zOV7IgZy4m4500gQ6F
-	TAKIAh3SUUbdCQpG36vxfblhKdEuV1bABtVhY35ERG+/WzKG0KG6vgI3ShScFRqYr3jiJnsNZ4FFW
-	3CkxGytm2yd76gDa0E2eJbIGe5hIgH9nntTGxLbmKZLU31niui249eStAC44ZMX/lcBRJElRm7gBp
-	maZl3dDrqoZIUfNyjH8ibHEUoGulJd9GgCx9vX7ds30t9m+v1D+MMSzPStg8pCXnLN5x76JJ29bXi
-	qlMqZK/w==;
+	List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:In-Reply-To:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=z07xV+G4mJTAWUBXWXUfPJP+2nzb9ifFt+GvPkRE1SY=; b=HvFaYYmfvrKWkojwWeqREHXTp
+	04n83p/izGOaFWBzOooJuhQJUbCfGS6nik8Z9bIUCAEPfqWpGNPL4Nmp+A5tYtiH6DxMYtoJcyJ1r
+	dAnr/0i3OOVti8J9MI18CmpxqTmd+G2om8G4CUg5fCwBfjmV8Ql0ZlczBG4fz/58BpuiVj6RYc3L7
+	gYbmJNLCT1kW2gBSkVx4zH2d4QVCRGQx8IpCpVbqT0it/H/fg+MflZyQhuzFJwdGrqgdKAavADcCQ
+	dEb/b0S7B2NqfaUFx+KbA15pEiv7o8aKcmKwM3ZlkneYQ7x0eh4RqDd2YNJjvqPdAAoQnLt1aFz3V
+	EoltDvMoQ==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1l6VY8-0007OY-Ir; Mon, 01 Feb 2021 09:31:12 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1l6buW-00006t-Hq; Mon, 01 Feb 2021 16:18:44 +0000
+Received: from mail-qk1-x72c.google.com ([2607:f8b0:4864:20::72c])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1l53KI-0007sV-H4
- for linux-i3c@lists.infradead.org; Thu, 28 Jan 2021 09:10:55 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1l53KF-0006C2-KP; Thu, 28 Jan 2021 10:10:51 +0100
-Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1l53KF-00071V-BB; Thu, 28 Jan 2021 10:10:51 +0100
-From: =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: [PATCH 1/2] i3c: Handle drivers without probe or remove callback
-Date: Thu, 28 Jan 2021 10:10:47 +0100
-Message-Id: <20210128091048.17006-1-u.kleine-koenig@pengutronix.de>
-X-Mailer: git-send-email 2.29.2
+ id 1l6buT-000066-7z
+ for linux-i3c@lists.infradead.org; Mon, 01 Feb 2021 16:18:42 +0000
+Received: by mail-qk1-x72c.google.com with SMTP id l27so16748881qki.9
+ for <linux-i3c@lists.infradead.org>; Mon, 01 Feb 2021 08:18:39 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references
+ :mime-version; bh=PZPy7UuU1m89CqE6Ujqo89pfGymoz3TNkAhBIsQ4ftk=;
+ b=b50IC0A7+YwOShtI3lVdvYnTMyg/RIdFTJK6qX5h/7VICPpSxnO+EJoYFvMopauEti
+ bOlUJTMuYE6lPDWe9klcC8QwL//wXYTJsnwCGEihqAK2qw6MpHnF2brWJEMtI44vcP3I
+ mqGjFf/+l5lhj1+NmhhG8roIrx1WbchEbLM3nwpTJqQCu7wna6sYziJ2FQ3SWN+EhvOT
+ 8/nEQLcsl34JXeRUGI2MhSUZnlGEmtobJm58ugBZfG+dq1GhgJfu9pLpbmwEXsdos7ju
+ 3Z5FVm+IXMNBs1pVlzyvmZdRK1ja8SNZJPA8HzjlJwIkPWSZ1/ExOdEC3jSBcID5BKlW
+ iXzQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
+ :references:mime-version;
+ bh=PZPy7UuU1m89CqE6Ujqo89pfGymoz3TNkAhBIsQ4ftk=;
+ b=ff+f+CXyMre8j+4EU8OLsGuDJ2ZYaRQQ3HC63uMxLBuWuLaMwlMjn2PbaDTqcjQfFu
+ xmkhoqBsY29X7t2d6GecRM/iN56ZxnQ3GePtUeRbBqjbjigLCby13jTJ2ac5UBwplLoX
+ iyvbsAGEO1ZB04NXSUi7YiPOi6vY4pzGmnFePm0j5E3stqxdRUeXP1hh8oLctUP7HqYt
+ r2KAElIDUQ9XBKhHFMspoPowJeZbcq5jkAQ4u4YJAhVTm1uwG23XVltRpYNpwgp+y4gd
+ RVbB7OlZwB7iEXaVSerMqvd45g3foXdP5RC1agfSQ/jWDf2DSeMeti18K3udQ5qN8NW9
+ N3LQ==
+X-Gm-Message-State: AOAM531bQU2RegLHEaYc8QEQ8lQjB//Z/dxJIqAqzb5fjKUcXxOI5LEd
+ 1YKctwLLO64l+zo9hmDXZaZJaw==
+X-Google-Smtp-Source: ABdhPJxCgBtVnjR4SVBuGufGMJ+u1XFal/gdEYmXcjkC/kITEPyeUp1hs6S3ABt09dQ2cxSGKo84BA==
+X-Received: by 2002:a37:458c:: with SMTP id
+ s134mr17213587qka.142.1612196318177; 
+ Mon, 01 Feb 2021 08:18:38 -0800 (PST)
+Received: from xanadu.home (modemcable076.50-203-24.mc.videotron.ca.
+ [24.203.50.76])
+ by smtp.gmail.com with ESMTPSA id e5sm14189013qtp.86.2021.02.01.08.18.37
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 01 Feb 2021 08:18:37 -0800 (PST)
+Date: Mon, 1 Feb 2021 11:18:37 -0500 (EST)
+From: Nicolas Pitre <npitre@baylibre.com>
+To: David Gow <davidgow@google.com>
+Subject: Re: [PATCH] i3c/master/mipi-i3c-hci: Specify HAS_IOMEM dependency
+In-Reply-To: <20210127040636.1535722-1-davidgow@google.com>
+Message-ID: <9s6n963q-poro-6qnq-q510-83rr59785on@onlyvoer.pbz>
+References: <20210127040636.1535722-1-davidgow@google.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-i3c@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210128_041054_595472_F4149AD4 
-X-CRM114-Status: GOOD (  14.96  )
-X-Mailman-Approved-At: Mon, 01 Feb 2021 04:31:10 -0500
+X-CRM114-CacheID: sfid-20210201_111841_345045_78DA951C 
+X-CRM114-Status: GOOD (  20.84  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,44 +92,59 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
- kernel@pengutronix.de
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Boris Brezillon <boris.brezillon@collabora.com>, linux-i3c@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-QSByZWdpc3RlcmVkIGRyaXZlciB3aXRob3V0IGEgcHJvYmUgY2FsbGJhY2sgZG9lc24ndCBtYWtl
-IHNlbnNlLCBzbwpyZWZ1c2UgdG8gcmVnaXN0ZXIgc3VjaCBhIGRyaXZlci4gKE90aGVyd2lzZSBp
-M2NfZGV2aWNlX3Byb2JlKCkgeWllbGRzIGEKTlVMTCBwb2ludGVyIGV4Y2VwdGlvbi4pCgpBIGRy
-aXZlciB3aXRob3V0IHJlbW92ZSBpcyBwb3NzaWJsZSwgZS5nLiB3aGVuIGFsbCByZXNvdXJjZXMg
-YXJlIGZyZWVkCnVzaW5nIGRldm0gY2FsbGJhY2tzLiBTbyBndWFyZCB0aGUgY2FsbCB0byBkcml2
-ZXItPnJlbW92ZSBieSBhIGNoZWNrCmZvciBiZWluZyBub24tTlVMTC4KCk5vdGUgdGhhdCB0aGUg
-b25seSBpbi10cmVlIGkzYyBkcml2ZXIKKGRyaXZlcnMvaWlvL2ltdS9zdF9sc202ZHN4L3N0X2xz
-bTZkc3hfaTNjLmMpIGRvZXNuJ3QgaGF2ZSBhIHJlbW92ZQpjYWxsYmFjay4KClNpZ25lZC1vZmYt
-Ynk6IFV3ZSBLbGVpbmUtS8O2bmlnIDx1LmtsZWluZS1rb2VuaWdAcGVuZ3V0cm9uaXguZGU+Ci0t
-LQogZHJpdmVycy9pM2MvZGV2aWNlLmMgfCAgNSArKysrKwogZHJpdmVycy9pM2MvbWFzdGVyLmMg
-fCAxMCArKysrKystLS0tCiAyIGZpbGVzIGNoYW5nZWQsIDExIGluc2VydGlvbnMoKyksIDQgZGVs
-ZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9pM2MvZGV2aWNlLmMgYi9kcml2ZXJzL2kz
-Yy9kZXZpY2UuYwppbmRleCBiYjhlNjBkZmY5ODguLmU5MmQzZTlhNTJiZCAxMDA2NDQKLS0tIGEv
-ZHJpdmVycy9pM2MvZGV2aWNlLmMKKysrIGIvZHJpdmVycy9pM2MvZGV2aWNlLmMKQEAgLTI2Miw2
-ICsyNjIsMTEgQEAgaW50IGkzY19kcml2ZXJfcmVnaXN0ZXJfd2l0aF9vd25lcihzdHJ1Y3QgaTNj
-X2RyaXZlciAqZHJ2LCBzdHJ1Y3QgbW9kdWxlICpvd25lcikKIAlkcnYtPmRyaXZlci5vd25lciA9
-IG93bmVyOwogCWRydi0+ZHJpdmVyLmJ1cyA9ICZpM2NfYnVzX3R5cGU7CiAKKwlpZiAoIWRydi0+
-cHJvYmUpIHsKKwkJcHJfZXJyKCJUcnlpbmcgdG8gcmVnaXN0ZXIgYW4gaTNjIGRyaXZlciB3aXRo
-b3V0IHByb2JlIGNhbGxiYWNrXG4iKTsKKwkJcmV0dXJuIC1FSU5WQUw7CisJfQorCiAJcmV0dXJu
-IGRyaXZlcl9yZWdpc3RlcigmZHJ2LT5kcml2ZXIpOwogfQogRVhQT1JUX1NZTUJPTF9HUEwoaTNj
-X2RyaXZlcl9yZWdpc3Rlcl93aXRoX293bmVyKTsKZGlmZiAtLWdpdCBhL2RyaXZlcnMvaTNjL21h
-c3Rlci5jIGIvZHJpdmVycy9pM2MvbWFzdGVyLmMKaW5kZXggYjYxYmY1M2VjMDdhLi41N2E0ZjY5
-OWViOGQgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvaTNjL21hc3Rlci5jCisrKyBiL2RyaXZlcnMvaTNj
-L21hc3Rlci5jCkBAIC0zMjYsMTEgKzMyNiwxMyBAQCBzdGF0aWMgaW50IGkzY19kZXZpY2VfcmVt
-b3ZlKHN0cnVjdCBkZXZpY2UgKmRldikKIHsKIAlzdHJ1Y3QgaTNjX2RldmljZSAqaTNjZGV2ID0g
-ZGV2X3RvX2kzY2RldihkZXYpOwogCXN0cnVjdCBpM2NfZHJpdmVyICpkcml2ZXIgPSBkcnZfdG9f
-aTNjZHJ2KGRldi0+ZHJpdmVyKTsKLQlpbnQgcmV0OworCWludCByZXQgPSAwOwogCi0JcmV0ID0g
-ZHJpdmVyLT5yZW1vdmUoaTNjZGV2KTsKLQlpZiAocmV0KQotCQlyZXR1cm4gcmV0OworCWlmIChk
-cml2ZXItPnJlbW92ZSkgeworCQlyZXQgPSBkcml2ZXItPnJlbW92ZShpM2NkZXYpOworCQlpZiAo
-cmV0KQorCQkJcmV0dXJuIHJldDsKKwl9CiAKIAlpM2NfZGV2aWNlX2ZyZWVfaWJpKGkzY2Rldik7
-CiAKLS0gCjIuMjkuMgoKCi0tIApsaW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0
-cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
-Zm8vbGludXgtaTNjCg==
+On Tue, 26 Jan 2021, David Gow wrote:
+
+> The MIPI i3c HCI driver makes use of IOMEM functions like
+> devm_platform_ioremap_resource(), which are only available if
+> CONFIG_HAS_IOMEM is defined.
+> 
+> This causes the driver to be enabled under make ARCH=um allyesconfig,
+> even though it won't build.
+> 
+> By adding a dependency on HAS_IOMEM, the driver will not be enabled on
+> architectures which don't support it.
+> 
+> Fixes: 9ad9a52cce28 ("i3c/master: introduce the mipi-i3c-hci driver")
+> Signed-off-by: David Gow <davidgow@google.com>
+
+Acked-by: Nicolas Pitre <npitre@baylibre.com>
+
+
+> ---
+>  drivers/i3c/master/Kconfig | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/i3c/master/Kconfig b/drivers/i3c/master/Kconfig
+> index e68f15f4b4d0..afff0e2320f7 100644
+> --- a/drivers/i3c/master/Kconfig
+> +++ b/drivers/i3c/master/Kconfig
+> @@ -25,6 +25,7 @@ config DW_I3C_MASTER
+>  config MIPI_I3C_HCI
+>  	tristate "MIPI I3C Host Controller Interface driver (EXPERIMENTAL)"
+>  	depends on I3C
+> +	depends on HAS_IOMEM
+>  	help
+>  	  Support for hardware following the MIPI Aliance's I3C Host Controller
+>  	  Interface specification.
+> -- 
+> 2.30.0.280.ga3ce27912f-goog
+> 
+> 
+> -- 
+> linux-i3c mailing list
+> linux-i3c@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-i3c
+> 
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
