@@ -2,66 +2,70 @@ Return-Path: <SRS0=fXmT=HM=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-4.6 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,
-	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-9.6 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,
+	SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id DDB0CC433DB
-	for <linux-i3c@archiver.kernel.org>; Wed, 10 Feb 2021 10:26:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3E6BCC433E0
+	for <linux-i3c@archiver.kernel.org>; Wed, 10 Feb 2021 20:19:36 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 69C4F64E30
-	for <linux-i3c@archiver.kernel.org>; Wed, 10 Feb 2021 10:26:08 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 69C4F64E30
+	by mail.kernel.org (Postfix) with ESMTPS id F344A64EE8
+	for <linux-i3c@archiver.kernel.org>; Wed, 10 Feb 2021 20:19:35 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org F344A64EE8
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
-	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=W6JkMUKRZAVJOrsFX7Rm8oDkc5dTsRQxQ6Q74iqFTXs=; b=sAKgYy2a7ez/F1jnNBCsYJbUC
-	eHNZY72NEH65XJhsTci2yMHqZNfcbBYAn3MZoAz00f91seDfhyJZKrDzRujLMTVjvUNnWemuT8rsp
-	TJRYNvuazpkj+4WSGStULemhhkWlT3+YgAyL8bpR0ugJPn0m57rDnTdBYsiYNIh645HkCrAAdniWs
-	Mggd/2zCGSsnvzVQE7mOzKnEjvaFDPn1LyHMM/RMhlO81j6k8ZxN+OphujaOD493+ylivE4ReZ24H
-	Pn559h9zF5YkONYMFfwaGDMsm/MrUx9wTwynGoirQ8750ooZ9aInB1/oAinNzUvub/i+yDlpWRXtM
-	Ln7IvmJYw==;
+	Content-Type:MIME-Version:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:To:Date:Message-Id:References:In-Reply-To:From:
+	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ZLWGX8J4EXkv75jo6IDB0XEKolQF56GkYbfr/6b9Oc8=; b=zW2QWIHqyzxsQfJ3bKLcjXae8i
+	e/FNKvsQL6KbzgvzrEud5RYwVObq2GgE+sNPES5sZ7UmuSY0Rc/mnqejj8bTnjC5vUK01F2CWUKg6
+	xxvS7XNtdUuP+LjUGWrsoJqgq7qjqgce+Rxh0tW/8xmdHtEalqzy6jM7liXnQYHtrPrnDVYb173z2
+	R1rfcbzwPwIj9RdS0eOjrfKbqDxOrwVShlQkfx2jCm2Psqlay/t1psoI3dA4A2Tx7QtKAsu/n3ltE
+	pC0nAptOcJ/PUxo45pRO0Z/26C+lVoZ637JYkqAj4e9JGqWv+UJUkUx3zLpaYusC+oQWR7i/I7t35
+	KWXGh0UQ==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1l9mhD-00058n-Bn; Wed, 10 Feb 2021 10:26:07 +0000
+	id 1l9vxX-0001B7-3F; Wed, 10 Feb 2021 20:19:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1l9KC2-0002Vr-5Q
- for linux-i3c@lists.infradead.org; Tue, 09 Feb 2021 04:00:03 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id EE5AB64E8C;
- Tue,  9 Feb 2021 03:59:59 +0000 (UTC)
+ id 1l9vxU-0001AK-MR
+ for linux-i3c@lists.infradead.org; Wed, 10 Feb 2021 20:19:33 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPS id 692E064EDC;
+ Wed, 10 Feb 2021 20:19:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1612843200;
- bh=BT5G6hDydO7Z4cLz9dvfPbU6nwbCCY0Hm+9TTgwZdaI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=cTTl5RaqXBiJ020DI3KFCN2+QG9oo9nEBzkeDfRuQHKvjUO/W2lG8+SQE1dNlQWb0
- UIw94m9cO4W8LMyCBkKVwOdTkeeMzVSUEJh4tj8oh30gWyXwni1q2baI5UAc7aQvme
- 4kPiGtSwxa09L41Im7SncLXgoAY/hJtjgfNO1/Uuy1awmqQiAIf69IRCzO0QgBKxab
- bZojKVteJ2XmE7qTNygj18149E7GZXFGS8ErnSraGDcdTMN8hXDLJfOxlMo90hOgJn
- StuNodUbLqD6OLBl01LDQjSu36Nq685UOp5XqV8diNruDs8w72+EZiUew5goALK6Zl
- rIgjdx70cWgaw==
-Date: Mon, 8 Feb 2021 20:59:58 -0700
-From: Nathan Chancellor <nathan@kernel.org>
+ s=k20201202; t=1612988371;
+ bh=Q5EoI2uzbHkB7DE0iTiEoeyLlCuQAvw2ZZHm3QWbVhI=;
+ h=Subject:From:In-Reply-To:References:Date:To:Cc:From;
+ b=nPvoa/k6ef1fsG5da9XGUCYUKp4EInIyg+6XTlTHUb7DFTgMom1kvQHCzOFt67dMz
+ duSX0IYPOcMJOw+YKQ8sRAZhs4xrrrsPVRsDtGTOHvZIG8bQ0EWn5u6oBrwZClro8b
+ rYD5HO41soLFJSRE9XalMX1KYbmnCwUzu/xOHGlrXOC3KPw9pC0snx4Rz+P8zwW/kX
+ oUOsx45lwHpwrBQouSKcb1jQ96PmogSNBJuQpiVWHMUM56xQNJw2X1LzYCl9dNz/Zi
+ D36rXPOxIuJZHUuOGb/+193sV34S7nx2T/vjWsHn/aFZ9OfSF8a8BtlJbGj+O2BJtf
+ G3NYulfeSoAvg==
+Subject: Re: [GIT PULL] I3C fixes for 5.11
+From: pr-tracker-bot@kernel.org
+In-Reply-To: <20210209220527.GA498175@piout.net>
+References: <20210209220527.GA498175@piout.net>
+X-PR-Tracked-List-Id: <linux-i3c.lists.infradead.org>
+X-PR-Tracked-Message-Id: <20210209220527.GA498175@piout.net>
+X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git
+ tags/i3c/fixes-for-5.11
+X-PR-Tracked-Commit-Id: 291b5c9870fc546376d69cf792b7885cd0c9c1b3
+X-PR-Merge-Tree: torvalds/linux.git
+X-PR-Merge-Refname: refs/heads/master
+X-PR-Merge-Commit-Id: ef7d0b599938450c54a8dc0aa4b954d73d9a9370
+Message-Id: <161298837140.25163.5789660091863634580.pr-tracker-bot@kernel.org>
+Date: Wed, 10 Feb 2021 20:19:31 +0000
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH] i3c/master/mipi-i3c-hci: Fix position of __maybe_unused
- in i3c_hci_of_match
-Message-ID: <20210209035958.GA2059815@ubuntu-m3-large-x86>
-References: <20201222025931.3043480-1-natechancellor@gmail.com>
- <160943653614.132002.12499200411415721355.b4-ty@bootlin.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <160943653614.132002.12499200411415721355.b4-ty@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210208_230002_344955_04528B32 
-X-CRM114-Status: GOOD (  12.61  )
-X-Mailman-Approved-At: Wed, 10 Feb 2021 05:26:06 -0500
+X-CRM114-CacheID: sfid-20210210_151932_803181_3D080A44 
+X-CRM114-Status: UNSURE (   3.43  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,52 +77,26 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Nicolas Pitre <npitre@baylibre.com>, clang-built-linux@googlegroups.com,
- Nathan Chancellor <natechancellor@gmail.com>, linux-i3c@lists.infradead.org
+Cc: linux-i3c@lists.infradead.org,
+ Linus Torvalds <torvalds@linux-foundation.org>, linux-kernel@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Dec 31, 2020 at 06:42:23PM +0100, Alexandre Belloni wrote:
-> On Mon, 21 Dec 2020 19:59:31 -0700, Nathan Chancellor wrote:
-> > Clang warns:
-> > 
-> >  ../drivers/i3c/master/mipi-i3c-hci/core.c:780:21: warning: attribute
-> >  declaration must precede definition [-Wignored-attributes]
-> >  static const struct __maybe_unused of_device_id i3c_hci_of_match[] = {
-> >                      ^
-> >  ../include/linux/compiler_attributes.h:267:56: note: expanded from macro
-> >  '__maybe_unused'
-> >  #define __maybe_unused                  __attribute__((__unused__))
-> >                                                         ^
-> >  ../include/linux/mod_devicetable.h:262:8: note: previous definition is
-> >  here
-> >  struct of_device_id {
-> >         ^
-> > 1 warning generated.
-> > 
-> > [...]
-> 
-> Applied, thanks!
-> 
-> [1/1] i3c/master/mipi-i3c-hci: Fix position of __maybe_unused in i3c_hci_of_match
->       commit: 291b5c9870fc546376d69cf792b7885cd0c9c1b3
-> 
-> Best regards,
-> -- 
-> Alexandre Belloni <alexandre.belloni@bootlin.com>
-> 
+The pull request you sent on Tue, 9 Feb 2021 23:05:27 +0100:
 
-Hi Alexandre,
+> git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/fixes-for-5.11
 
-I see as of v5.11-rc7 that this is still an issue even though it has
-been applied to the fixes branch. Is it possible for this to make it in
-to 5.11 final?
+has been merged into torvalds/linux.git:
+https://git.kernel.org/torvalds/c/ef7d0b599938450c54a8dc0aa4b954d73d9a9370
 
-Cheers,
-Nathan
+Thank you!
+
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.docs.kernel.org/prtracker.html
 
 -- 
 linux-i3c mailing list
