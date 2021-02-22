@@ -2,55 +2,83 @@ Return-Path: <SRS0=nbq2=HY=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-19.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
-	INCLUDES_PULL_REQUEST,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,
+X-Spam-Status: No, score=-9.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,SPF_HELO_NONE,
 	SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 1C16EC433E0
-	for <linux-i3c@archiver.kernel.org>; Mon, 22 Feb 2021 00:41:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 1161AC433E0
+	for <linux-i3c@archiver.kernel.org>; Mon, 22 Feb 2021 18:12:36 +0000 (UTC)
 Received: from merlin.infradead.org (merlin.infradead.org [205.233.59.134])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 5C50D64EB2
-	for <linux-i3c@archiver.kernel.org>; Mon, 22 Feb 2021 00:41:34 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 5C50D64EB2
-Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bootlin.com
+	by mail.kernel.org (Postfix) with ESMTPS id 9D11764F4A
+	for <linux-i3c@archiver.kernel.org>; Mon, 22 Feb 2021 18:12:35 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9D11764F4A
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=merlin.20170209; h=Sender:Content-Transfer-Encoding:
-	Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From:Date:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=5uxNf6cdj3YP5CvxGG0NwkYAlhoEKrZlcMHAx4KTAbA=; b=Tr9VtYGC+ps9cFQ518Fg8II55D
-	p+zMrvNSoCcCZ6iav5htyyHM5G6MnUiawbJ8Sg8mpHn+SEcgbg45R3ZM50k6uKBx0QqRqtbb7Xy3c
-	aLe3k8E5joYpIWC7nyUf7On2yZyRNeKoDNuSzGwgQCD2uDCSToGvXhcttm8gmec9EJt4RL7+yKGKt
-	QF/YAKeE/eY8ENvPHAYLcPgHMcyquVJNvAqR6zdb/oe1D/qbBvc2+89feU8wpehGIhHKLRmOe/359
-	Hq+HI8ArDpNeDaoU6ItQw1m1VVtdndUzP+W3Kq8MIsSj5Lu+Az4C64//A/jTpNblwqgl5ZvCWn0pY
-	RNydYzQw==;
+	Content-Type:MIME-Version:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:To:Date:Message-Id:References:In-Reply-To:From:
+	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=9/IYjhX/oEzjnbfWSaDnqLHdmnFoKLHHqLNrkk3C3ss=; b=me6aICvZ9mWAMqb73WF1cfxly3
+	fHXtu94yBQM2gPt5vdA0xJPlCoRHqBMQt2Fnrc6vdJfbOQhr8oIU4GG/6dxadVsF0T8qgT8ubrBZb
+	lojLsjcsUbybeqs3h8Rn07EAxxHOPD+I/eW5Tla6YJ9tuhIcYbWVdBILWAOk1Pd0tRtNPwavOCcX+
+	sGtKkYrWy+I2wvHQJs0XBP9wTypFkpJwIMD/VFOZB/IDJqfkG5Mm6tyQJHYiI9ECdafMrQ9Ed8xKh
+	SAOTsOs38Wnb0HSPbsUBggo8df977vBONn7Pss9+WXCuPjKi5R4N4joDR9YWbWOGSy+jqF20PfhgH
+	s+c9x5zw==;
 Received: from localhost ([::1] helo=merlin.infradead.org)
 	by merlin.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1lDzI4-0003du-Tm; Mon, 22 Feb 2021 00:41:32 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1lEFhA-0000LK-St; Mon, 22 Feb 2021 18:12:33 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1lDzI2-0003dN-Ka
- for linux-i3c@lists.infradead.org; Mon, 22 Feb 2021 00:41:32 +0000
-X-Originating-IP: 90.65.108.55
-Received: from localhost (lfbn-lyo-1-1676-55.w90-65.abo.wanadoo.fr
- [90.65.108.55]) (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id CA25920004;
- Mon, 22 Feb 2021 00:41:22 +0000 (UTC)
-Date: Mon, 22 Feb 2021 01:41:22 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Linus Torvalds <torvalds@linux-foundation.org>
-Subject: [GIT PULL] I3C changes for 5.12
-Message-ID: <YDL9slBuOqU83/RK@piout.net>
-MIME-Version: 1.0
-Content-Disposition: inline
+ id 1lEFh8-0000Fw-Dl
+ for linux-i3c@merlin.infradead.org; Mon, 22 Feb 2021 18:12:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Cc:To:Date:Message-Id:References:
+ In-Reply-To:From:Subject:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=wflQh4P9QrCQnNZ4xEelQWOxnV14rJNulOwjtpo1QuE=; b=v8uFog8IXLt+VWrkGptWxdQ7vd
+ EGPr6xEXpj4DKT8Iq2MCNFveThB9x47FKUcs6125wfaMe7w8lmk3brJ4/oH03ad9SVV9b7Bc/F0fn
+ C68u3x4jMhssyorMXsKODeknEaKgR+a1CPao0yt5m00aReKiqdUAveU4D4EQZdw9rC3cipyloSUQE
+ wAxAqeBrNlR3Gh5KR4WsCDFfh2i1N6LQhFpAo+6QE00sOQHn2Di5MugreEmfK1gisPGUF52nTqbIm
+ O/d1h5D3DLOq0fVKDDH9P5S9eWE0u9L3xZDlQWq/DROhdXmiplhnvkPUJn3rWJT9e/u/RDmNkCACB
+ L9D2KR9A==;
+Received: from mail.kernel.org ([198.145.29.99])
+ by casper.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
+ id 1lEFgo-006uDl-JR
+ for linux-i3c@lists.infradead.org; Mon, 22 Feb 2021 18:12:12 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPS id 6DAE164E77;
+ Mon, 22 Feb 2021 18:12:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1614017520;
+ bh=TWlDqxdjAPXK7Y0HwZjmvPBdNDFxLJ5zbrktq7vyzpE=;
+ h=Subject:From:In-Reply-To:References:Date:To:Cc:From;
+ b=OS6Cn+sZRkm5Du4WWBK56VbJkCxjitO3M0TMSVVwlWaHyuCP9jmmhXE31LXysyTiN
+ Ef19H8u+p8UVhxhAtLGjQOTMipEexNVYcP6xpEEy+bQZn6f3qDCj/c19RyopoumQFC
+ bSkJDJQS4fzie/3KsT41eVyPNv9PAwZdedL6nFRgPv3aqBCTeqq/zI1pk9Pa9Ancmw
+ 9in/UGggcMiq0KXvZL1y7Zu+6vrZlPnZSxcWDVxCnerYR3m+AJpr0m+5FEb4/trdHq
+ /cdklajdaKmFQ0IS50DiA1aLVm0KF6Z4io5kTZJ1E++GIUNkPrgzBHxrv9bSgfJmC4
+ dp7fA/Xb9l5QQ==
+Subject: Re: [GIT PULL] I3C changes for 5.12
+From: pr-tracker-bot@kernel.org
+In-Reply-To: <YDL9slBuOqU83/RK@piout.net>
+References: <YDL9slBuOqU83/RK@piout.net>
+X-PR-Tracked-List-Id: <linux-i3c.lists.infradead.org>
+X-PR-Tracked-Message-Id: <YDL9slBuOqU83/RK@piout.net>
+X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-5.12
+X-PR-Tracked-Commit-Id: 5c34b8e7e8bb605925b33e1aa7dc17966811219a
+X-PR-Merge-Tree: torvalds/linux.git
+X-PR-Merge-Refname: refs/heads/master
+X-PR-Merge-Commit-Id: 36c1b20d15703662aa0f14a32a8bd19ab3a33076
+Message-Id: <161401752042.943.3286519972663636563.pr-tracker-bot@kernel.org>
+Date: Mon, 22 Feb 2021 18:12:00 +0000
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210221_194130_789343_06A92D27 
-X-CRM114-Status: GOOD (  11.70  )
+X-CRM114-CacheID: sfid-20210222_181212_519285_765F6FA4 
+X-CRM114-Status: UNSURE (   2.08  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,87 +90,28 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: linux-i3c@lists.infradead.org,
+ Linus Torvalds <torvalds@linux-foundation.org>, linux-kernel@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hello Linus,
+The pull request you sent on Mon, 22 Feb 2021 01:41:22 +0100:
 
-Here is the I3C pull request for v5.12 with a few improvements for the
-core and a new driver.
+> git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-5.12
 
-The following changes since commit 5c8fe583cce542aa0b84adc939ce85293de36e5e:
+has been merged into torvalds/linux.git:
+https://git.kernel.org/torvalds/c/36c1b20d15703662aa0f14a32a8bd19ab3a33076
 
-  Linux 5.11-rc1 (2020-12-27 15:30:22 -0800)
+Thank you!
 
-are available in the Git repository at:
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.docs.kernel.org/prtracker.html
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-=
-5.12
-
-for you to fetch changes up to 5c34b8e7e8bb605925b33e1aa7dc17966811219a:
-
-  i3c: master: dw: Drop redundant disec call (2021-02-06 00:44:15 +0100)
-
-----------------------------------------------------------------
-I3C for 5.12
-
-Subsystem:
- - Handle drivers without probe or remove callback
- - Remove callback now returns void
- - DT documentation is now in yaml
-
-New driver:
- - Silvaco I3C master
-
-----------------------------------------------------------------
-David Gow (1):
-      i3c/master/mipi-i3c-hci: Specify HAS_IOMEM dependency
-
-Miquel Raynal (7):
-      dt-bindings: i3c: Convert the bus description to yaml
-      dt-bindings: i3c: mipi-hci: Include the bus binding
-      dt-bindings: Add vendor prefix for Silvaco
-      dt-bindings: i3c: Describe Silvaco master binding
-      i3c: master: svc: Add Silvaco I3C master driver
-      MAINTAINERS: Add Silvaco I3C master
-      i3c: master: dw: Drop redundant disec call
-
-Uwe Kleine-K=F6nig (2):
-      i3c: Handle drivers without probe or remove callback
-      i3c: Make remove callback return void
-
- Documentation/devicetree/bindings/i3c/i3c.txt      |  140 --
- Documentation/devicetree/bindings/i3c/i3c.yaml     |  179 +++
- .../devicetree/bindings/i3c/mipi-i3c-hci.yaml      |    9 +-
- .../bindings/i3c/silvaco,i3c-master.yaml           |   60 +
- .../devicetree/bindings/vendor-prefixes.yaml       |    2 +
- MAINTAINERS                                        |    8 +
- drivers/i3c/device.c                               |    5 +
- drivers/i3c/master.c                               |    8 +-
- drivers/i3c/master/Kconfig                         |    9 +
- drivers/i3c/master/Makefile                        |    1 +
- drivers/i3c/master/dw-i3c-master.c                 |    5 -
- drivers/i3c/master/svc-i3c-master.c                | 1478 ++++++++++++++++=
-++++
- include/linux/i3c/device.h                         |    2 +-
- 13 files changed, 1753 insertions(+), 153 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/i3c/i3c.txt
- create mode 100644 Documentation/devicetree/bindings/i3c/i3c.yaml
- create mode 100644 Documentation/devicetree/bindings/i3c/silvaco,i3c-maste=
-r.yaml
- create mode 100644 drivers/i3c/master/svc-i3c-master.c
-
--- =
-
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
--- =
-
+-- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
