@@ -2,86 +2,79 @@ Return-Path: <SRS0=AFd6=JV=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-12.2 required=3.0 tests=BAYES_00,
+	DKIM_ADSP_CUSTOM_MED,DKIM_SIGNED,DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_SANE_1
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 5170DC433B4
-	for <linux-i3c@archiver.kernel.org>; Sat, 24 Apr 2021 20:15:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 3CBEDC43461
+	for <linux-i3c@archiver.kernel.org>; Sat, 24 Apr 2021 20:15:46 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 9550761158
-	for <linux-i3c@archiver.kernel.org>; Sat, 24 Apr 2021 20:15:43 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 9550761158
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=foss.st.com
+	by mail.kernel.org (Postfix) with ESMTPS id 8F18461452
+	for <linux-i3c@archiver.kernel.org>; Sat, 24 Apr 2021 20:15:45 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 8F18461452
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmail.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
-	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=MIB2hbgnEClDnDBN3WCPe03ZFSeOZB4DKa/K1vmJ7fE=; b=Dj5o1cmsJXBPdoaGjLZFHM9/A
-	gSWMwAWJrGdHg6LVQ+Bvz05PTHDGKCWQNz6CuFAZR+H+R8TpI+x+J+PMIWKbbbunhBiHZRYk4Ay5l
-	Op5MZfVsKKmoBgkPIiiqsukFnU2U6H2mpgXxQYkUeBezAgMONEZ4Av6pIDNnV/5AWk0bH/1W7nZKN
-	gyWi9lpgqT4/uvFmnnxONAyRYICh4P85t5KYGpeBjmYKZprHSAnebJC8KpuBXzrGYm8jS5YAkJZdj
-	mFV6hXsxpry5Gac0Eu61SXqvPA0hzNvtS+b/VPsMlKb7Lxr/tMMzkZFgowfCaLJoUZvM1yCpDbpxb
-	dKkD77rcA==;
+	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=f/gr95/L5Fu05Aydfw2Rq6wGbkXXxG6BdabtPsnsTbs=; b=cOE28/6x3ai+OslxyYs7lq+DN
+	wZNDL/iJNO2KoUPYfy+ZUmccSpDTHlCkd5U9j3gjaL1U3gPfhJ8sV6nb8Wunx31ywldJrHsvP6zg8
+	DHSnxAwljnlJeSvhkAM+FrFwDj1NHLFkP+Mnn21zMl0LXKDPF78GLSMdaCYNmDat6OfyQe6JmO9l3
+	/jyf9LFwm1HfUMHehIWnTVBQKl6aGGuYcWGP6yyhlIuO4Ebu8KLsggILKRdYpFYP4SYri03/M1AnZ
+	HAJqBW7RvdSc660fpi4Qpk+NwDFyQ97DOsnIBZvc9G3INur1EqFkyxVHIQ1q0FTalD6vOMsS8INUu
+	5+6WelVrQ==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1laOgo-004Mtj-3E; Sat, 24 Apr 2021 20:15:42 +0000
-Received: from mx07-00178001.pphosted.com ([185.132.182.106])
+	id 1laOgp-004Mu9-VZ; Sat, 24 Apr 2021 20:15:44 +0000
+Received: from mail-ed1-x535.google.com ([2a00:1450:4864:20::535])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lMTs5-002zKd-QY
- for linux-i3c@lists.infradead.org; Wed, 17 Mar 2021 10:57:52 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.43/8.16.0.43) with SMTP id
- 12HApwTB027743; Wed, 17 Mar 2021 11:57:41 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=foss.st.com;
- h=date : from : to :
- cc : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=selector1; bh=ywy0JW8wYUOY2VcO+XEXq2HaVDdPgp6t1+DV/zS0bVI=;
- b=K3P5kFh0vPO8qD0+W7Ip0SxREySWHhHchyu7R+h94GNyb0WlCUadf/fRAybvdHWzcwqH
- Pnus+1LkWIobyUoM20+sEOdNRY0aHrz3lnkk7Dp5pFd+mro3V0xI9C2dO5rzGcai8hR8
- YH5DQeJ6Jw1z6vibs55WWQCoNnZHtYIAeDBLdE8riZmEq8P/sSsuYuWKsirr33mw1R85
- o7Pk+9/Lt2hkNSVKnaNcBTDCceRNHw6qHIEuE/6YzGKC4zh5jJFlBlNbAM81JUe8Yd/J
- 1TSJvaIuW80W7C0QiXlPQGu2Md/cn1AfnPpg+fdaSA0VeyFnzV0ShTPOI9vvCZgyQKzx yA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 378pr5xppd-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 17 Mar 2021 11:57:41 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B6542100034;
- Wed, 17 Mar 2021 11:57:39 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag2node2.st.com [10.75.127.5])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 7004D226D05;
- Wed, 17 Mar 2021 11:57:39 +0100 (CET)
-Received: from gnbcxd0016.gnb.st.com (10.75.127.51) by SFHDAG2NODE2.st.com
- (10.75.127.5) with Microsoft SMTP Server (TLS) id 15.0.1497.2; Wed, 17 Mar
- 2021 11:57:38 +0100
-Date: Wed, 17 Mar 2021 11:57:31 +0100
-From: Alain Volmat <alain.volmat@foss.st.com>
+ id 1lPllt-003WuM-OH
+ for linux-i3c@lists.infradead.org; Fri, 26 Mar 2021 12:41:03 +0000
+Received: by mail-ed1-x535.google.com with SMTP id l18so6128937edc.9
+ for <linux-i3c@lists.infradead.org>; Fri, 26 Mar 2021 05:41:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=Ai/sBaJhqrRCWGFUEsUnLWF/QfwBQ52U7SGdirULJxA=;
+ b=uCjETYGYNoXkWFnAnxrREMGnWCf4CT3WkSUcUIwelIYp/DG4PNHW59MxV0ndLkmKgw
+ L2IWwNo6EyYyTYDtD8OnYmHTc3e6jv9884w6qBn83ztCcGKzBTfT9VZi4FrsY0fAmdgD
+ ur9rC0Au9YibHKnhDtRtnuR6TmiDKHMLiKkdFQBru/Rg3CNOG0AO1xf2t/BfGdTfqqmA
+ XwvFfXkcKbOAT7hy7hseEdn4+/SVJmzCmlcRTdfpBXzf34azVckBOAtF5T9AGODNsmHi
+ JB9fYSTh7FLf8XAc67eXw0GuTEJ4SVHnGJeGbaLRFM/fngNYTBDvYjVjkIiDqEkKOz/Z
+ NJ0g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Ai/sBaJhqrRCWGFUEsUnLWF/QfwBQ52U7SGdirULJxA=;
+ b=YKYtLdZNLbesUISuk3ER+9xCpJdtL4RgHgdfLcmreaP6edvmlic6Ei9uR43vYrJlCc
+ RhZ8LbmWw78DJkSKabDiB9OUHQZ9H+W6nMygnbW0JM9FL49KAQQWGHnGwtgfaZxm4MLJ
+ NoRP3y9kJDbNYLbRvqsQXppu7KQukmNF9MRu3OXyR/FwgpDTgBQG3zUfZ05lBKSK+bL0
+ 4sLsVt0LbeT1tCtfuIQLJxodxREs0C3dlxxaBklkoAXXNABC8mk3HsBiTbWIBQOCExjD
+ 3rjy7YoXEI1Dq+1gkLoykXSO2teokQLSshM56mho8JHXZq8fQjE7gKOG2gtbnoiufx/Q
+ 4iyg==
+X-Gm-Message-State: AOAM531/buj6OXmWbh94Lm82eOtPPzxcCELRS1ULbw4qm5ZxwttuXpG+
+ euHvZxWvdS3hVj7P610FbYE/NSx1AXE=
+X-Google-Smtp-Source: ABdhPJyBfhRplv3kSXtcQVbf9j3CtTsxKbJ2vdFf6xxPS0KZwTr0+U5i0X7OFEFWWah2Xup+2PjS6w==
+X-Received: by 2002:a05:6402:254f:: with SMTP id
+ l15mr14885368edb.189.1616762461102; 
+ Fri, 26 Mar 2021 05:41:01 -0700 (PDT)
+Received: from localhost ([62.96.65.119])
+ by smtp.gmail.com with ESMTPSA id x1sm3830371eji.8.2021.03.26.05.40.59
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 26 Mar 2021 05:40:59 -0700 (PDT)
+Date: Fri, 26 Mar 2021 13:41:22 +0100
+From: Thierry Reding <thierry.reding@gmail.com>
 To: Rob Herring <robh@kernel.org>
-CC: <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>, Stephen Boyd
- <sboyd@kernel.org>, Maxime Ripard <mripard@kernel.org>, Thierry Reding
- <thierry.reding@gmail.com>, Sam Ravnborg <sam@ravnborg.org>, Vinod Koul
- <vkoul@kernel.org>, Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Jonathan Cameron <jic23@kernel.org>, Pavel Machek <pavel@ucw.cz>, Kishon
- Vijay Abraham I <kishon@ti.com>, Sebastian Reichel <sre@kernel.org>, Mark
- Brown <broonie@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- <linux-clk@vger.kernel.org>, <dmaengine@vger.kernel.org>,
- <linux-i3c@lists.infradead.org>, <linux-iio@vger.kernel.org>,
- <linux-leds@vger.kernel.org>, <linux-pm@vger.kernel.org>,
- <linux-serial@vger.kernel.org>, <linux-spi@vger.kernel.org>
-Subject: Re: [PATCH] dt-bindings: Clean-up undocumented compatible strings
-Message-ID: <20210317105731.GA21081@gnbcxd0016.gnb.st.com>
-Mail-Followup-To: Rob Herring <robh@kernel.org>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
- Maxime Ripard <mripard@kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>,
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Maxime Ripard <mripard@kernel.org>,
  Sam Ravnborg <sam@ravnborg.org>, Vinod Koul <vkoul@kernel.org>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>,
  Jonathan Cameron <jic23@kernel.org>, Pavel Machek <pavel@ucw.cz>,
@@ -92,21 +85,16 @@ Mail-Followup-To: Rob Herring <robh@kernel.org>, devicetree@vger.kernel.org,
  linux-i3c@lists.infradead.org, linux-iio@vger.kernel.org,
  linux-leds@vger.kernel.org, linux-pm@vger.kernel.org,
  linux-serial@vger.kernel.org, linux-spi@vger.kernel.org
+Subject: Re: [PATCH] dt-bindings: Clean-up undocumented compatible strings
+Message-ID: <YF3WctL0BJON130C@orome.fritz.box>
 References: <20210316194918.3528417-1-robh@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
 In-Reply-To: <20210316194918.3528417-1-robh@kernel.org>
-X-Disclaimer: ce message est personnel / this message is private
-X-Originating-IP: [10.75.127.51]
-X-ClientProxiedBy: SFHDAG1NODE2.st.com (10.75.127.2) To SFHDAG2NODE2.st.com
- (10.75.127.5)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.369, 18.0.761
- definitions=2021-03-17_05:2021-03-17,
- 2021-03-17 signatures=0
+User-Agent: Mutt/2.0.6 (98f8cb83) (2021-03-06)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210317_105750_085399_52CA9EB8 
-X-CRM114-Status: GOOD (  23.74  )
-X-Mailman-Approved-At: Sat, 24 Apr 2021 21:15:25 +0100
+X-CRM114-CacheID: sfid-20210326_124102_057285_7FDCDE34 
+X-CRM114-Status: GOOD (  15.73  )
+X-Mailman-Approved-At: Sat, 24 Apr 2021 21:15:23 +0100
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,21 +106,33 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0751962824030307979=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
+
+
+--===============0751962824030307979==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="anrc3HovXG4wMGPC"
+Content-Disposition: inline
+
+
+--anrc3HovXG4wMGPC
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
 On Tue, Mar 16, 2021 at 01:49:18PM -0600, Rob Herring wrote:
 > Adding checks for undocumented compatible strings reveals a bunch of
 > warnings in the DT binding examples. Fix the cases which are typos, just
-> a mismatch between the schema and the example, or aren't documented at all.
+> a mismatch between the schema and the example, or aren't documented at al=
+l.
 > In a couple of cases, fixing the compatible revealed some schema errors
 > which are fixed.
-> 
+>=20
 > There's a bunch of others remaining after this which have bindings, but
 > those aren't converted to schema yet.
-> 
+>=20
 > Cc: Stephen Boyd <sboyd@kernel.org>
 > Cc: Maxime Ripard <mripard@kernel.org>
 > Cc: Thierry Reding <thierry.reding@gmail.com>
@@ -174,402 +174,43 @@ On Tue, Mar 16, 2021 at 01:49:18PM -0600, Rob Herring wrote:
 >  .../bindings/spi/spi-controller.yaml          | 21 ++++++++-------
 >  .../devicetree/bindings/spi/spi-mux.yaml      |  8 ++----
 >  .../devicetree/bindings/spi/st,stm32-spi.yaml |  6 -----
-
-Acked-by: Alain Volmat <alain.volmat@foss.st.com>
-
 >  19 files changed, 58 insertions(+), 79 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/clock/allwinner,sun4i-a10-pll1-clk.yaml b/Documentation/devicetree/bindings/clock/allwinner,sun4i-a10-pll1-clk.yaml
-> index e9c4cf834aa7..e5d9d45dab8a 100644
-> --- a/Documentation/devicetree/bindings/clock/allwinner,sun4i-a10-pll1-clk.yaml
-> +++ b/Documentation/devicetree/bindings/clock/allwinner,sun4i-a10-pll1-clk.yaml
-> @@ -44,7 +44,7 @@ examples:
->    - |
->      clk@1c20000 {
->          #clock-cells = <0>;
-> -        compatible = "allwinner,sun4i-a10-pll1";
-> +        compatible = "allwinner,sun4i-a10-pll1-clk";
->          reg = <0x01c20000 0x4>;
->          clocks = <&osc24M>;
->          clock-output-names = "osc24M";
-> diff --git a/Documentation/devicetree/bindings/clock/milbeaut-clock.yaml b/Documentation/devicetree/bindings/clock/milbeaut-clock.yaml
-> index 0e8b07710451..6d39344d2b70 100644
-> --- a/Documentation/devicetree/bindings/clock/milbeaut-clock.yaml
-> +++ b/Documentation/devicetree/bindings/clock/milbeaut-clock.yaml
-> @@ -18,10 +18,12 @@ description: |
->  
->  properties:
->    compatible:
-> -    oneOf:
-> -      - items:
-> -          - enum:
-> -              - socionext,milbeaut-m10v-ccu
-> +    enum:
-> +      - socionext,milbeaut-m10v-ccu
-> +
-> +  reg:
-> +    maxItems: 1
-> +
->    clocks:
->      maxItems: 1
->      description: external clock
-> @@ -41,7 +43,7 @@ examples:
->    # Clock controller node:
->    - |
->      m10v-clk-ctrl@1d021000 {
-> -        compatible = "socionext,milbeaut-m10v-clk-ccu";
-> +        compatible = "socionext,milbeaut-m10v-ccu";
->          reg = <0x1d021000 0x4000>;
->          #clock-cells = <1>;
->          clocks = <&clki40mhz>;
-> diff --git a/Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml b/Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml
-> index 55c60919991f..32608578a352 100644
-> --- a/Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml
-> +++ b/Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml
-> @@ -77,12 +77,6 @@ examples:
->  
->          clock-output-names = "dsi1_byte", "dsi1_ddr2", "dsi1_ddr";
->  
-> -        pitouchscreen: panel@0 {
-> -            compatible = "raspberrypi,touchscreen";
-> -            reg = <0>;
-> -
-> -            /* ... */
-> -        };
->      };
->  
->  ...
-> diff --git a/Documentation/devicetree/bindings/display/panel/panel-dpi.yaml b/Documentation/devicetree/bindings/display/panel/panel-dpi.yaml
-> index 0cd74c8dab42..dae0676b5c6e 100644
-> --- a/Documentation/devicetree/bindings/display/panel/panel-dpi.yaml
-> +++ b/Documentation/devicetree/bindings/display/panel/panel-dpi.yaml
-> @@ -40,7 +40,7 @@ additionalProperties: false
->  examples:
->    - |
->      panel {
-> -        compatible = "osddisplays,osd057T0559-34ts", "panel-dpi";
-> +        compatible = "startek,startek-kd050c", "panel-dpi";
->          label = "osddisplay";
->          power-supply = <&vcc_supply>;
->          backlight = <&backlight>;
-> diff --git a/Documentation/devicetree/bindings/dma/qcom,gpi.yaml b/Documentation/devicetree/bindings/dma/qcom,gpi.yaml
-> index f8142adf9aea..2e66840a78fe 100644
-> --- a/Documentation/devicetree/bindings/dma/qcom,gpi.yaml
-> +++ b/Documentation/devicetree/bindings/dma/qcom,gpi.yaml
-> @@ -64,7 +64,7 @@ examples:
->      #include <dt-bindings/interrupt-controller/arm-gic.h>
->      #include <dt-bindings/dma/qcom-gpi.h>
->      gpi_dma0: dma-controller@800000 {
-> -        compatible = "qcom,gpi-dma";
-> +        compatible = "qcom,sdm845-gpi-dma";
->          #dma-cells = <3>;
->          reg = <0x00800000 0x60000>;
->          iommus = <&apps_smmu 0x0016 0x0>;
-> diff --git a/Documentation/devicetree/bindings/i3c/i3c.yaml b/Documentation/devicetree/bindings/i3c/i3c.yaml
-> index 52042aa44d19..1f82fc923799 100644
-> --- a/Documentation/devicetree/bindings/i3c/i3c.yaml
-> +++ b/Documentation/devicetree/bindings/i3c/i3c.yaml
-> @@ -157,9 +157,10 @@ examples:
->          i2c-scl-hz = <100000>;
->  
->          /* I2C device. */
-> -        nunchuk: nunchuk@52 {
-> -            compatible = "nintendo,nunchuk";
-> -            reg = <0x52 0x0 0x10>;
-> +        eeprom@57 {
-> +            compatible = "atmel,24c01";
-> +            reg = <0x57 0x0 0x10>;
-> +            pagesize = <0x8>;
->          };
->  
->          /* I3C device with a static I2C address. */
-> diff --git a/Documentation/devicetree/bindings/iio/adc/brcm,iproc-static-adc.yaml b/Documentation/devicetree/bindings/iio/adc/brcm,iproc-static-adc.yaml
-> index c562d25bee3b..547697e8bc8b 100644
-> --- a/Documentation/devicetree/bindings/iio/adc/brcm,iproc-static-adc.yaml
-> +++ b/Documentation/devicetree/bindings/iio/adc/brcm,iproc-static-adc.yaml
-> @@ -53,11 +53,6 @@ examples:
->          #address-cells = <1>;
->          #size-cells = <1>;
->  
-> -        ts_adc_syscon: ts_adc_syscon@180a6000 {
-> -            compatible = "brcm,iproc-ts-adc-syscon","syscon";
-> -            reg = <0x180a6000 0xc30>;
-> -        };
-> -
->          adc {
->              compatible = "brcm,iproc-static-adc";
->              adc-syscon = <&ts_adc_syscon>;
-> diff --git a/Documentation/devicetree/bindings/iio/gyroscope/nxp,fxas21002c.yaml b/Documentation/devicetree/bindings/iio/gyroscope/nxp,fxas21002c.yaml
-> index d97ee774d6a6..3f57a1b813e6 100644
-> --- a/Documentation/devicetree/bindings/iio/gyroscope/nxp,fxas21002c.yaml
-> +++ b/Documentation/devicetree/bindings/iio/gyroscope/nxp,fxas21002c.yaml
-> @@ -83,7 +83,7 @@ examples:
->          #size-cells = <0>;
->  
->          gyroscope@0 {
-> -          compatible = "nxp,fxas2102c";
-> +          compatible = "nxp,fxas21002c";
->            reg = <0x0>;
->  
->            spi-max-frequency = <2000000>;
-> diff --git a/Documentation/devicetree/bindings/iio/light/upisemi,us5182.yaml b/Documentation/devicetree/bindings/iio/light/upisemi,us5182.yaml
-> index de5882cb3360..dd78abe0ec8d 100644
-> --- a/Documentation/devicetree/bindings/iio/light/upisemi,us5182.yaml
-> +++ b/Documentation/devicetree/bindings/iio/light/upisemi,us5182.yaml
-> @@ -11,12 +11,12 @@ maintainers:
->  
->  properties:
->    compatible:
-> -    const: upisemi,asd5182
-> +    const: upisemi,usd5182
->  
->    reg:
->      maxItems: 1
->  
-> -  upsemi,glass-coef:
-> +  upisemi,glass-coef:
->      $ref: /schemas/types.yaml#/definitions/uint32
->      description: |
->        glass attenuation factor - compensation factor of resolution 1000
-> diff --git a/Documentation/devicetree/bindings/interrupt-controller/loongson,htpic.yaml b/Documentation/devicetree/bindings/interrupt-controller/loongson,htpic.yaml
-> index d1d52d1db2be..d6bc1a687fc7 100644
-> --- a/Documentation/devicetree/bindings/interrupt-controller/loongson,htpic.yaml
-> +++ b/Documentation/devicetree/bindings/interrupt-controller/loongson,htpic.yaml
-> @@ -47,7 +47,7 @@ examples:
->    - |
->      #include <dt-bindings/interrupt-controller/irq.h>
->      htintc: interrupt-controller@1fb000080 {
-> -      compatible = "loongson,htintc-1.0";
-> +      compatible = "loongson,htpic-1.0";
->        reg = <0xfb000080 0x40>;
->        interrupt-controller;
->        #interrupt-cells = <1>;
-> diff --git a/Documentation/devicetree/bindings/leds/leds-lgm.yaml b/Documentation/devicetree/bindings/leds/leds-lgm.yaml
-> index 32bbf146c01d..f8d7963c3a13 100644
-> --- a/Documentation/devicetree/bindings/leds/leds-lgm.yaml
-> +++ b/Documentation/devicetree/bindings/leds/leds-lgm.yaml
-> @@ -14,6 +14,17 @@ properties:
->    compatible:
->      const: intel,lgm-ssoled
->  
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 2
-> +
-> +  clock-names:
-> +    items:
-> +      - const: sso
-> +      - const: fpid
-> +
->    gpio-controller: true
->  
->    '#gpio-cells':
-> @@ -36,8 +47,15 @@ properties:
->  
->      additionalProperties: false
->  
-> +    properties:
-> +      '#address-cells':
-> +        const: 1
-> +
-> +      '#size-cells':
-> +        const: 0
-> +
->      patternProperties:
-> -      "^led@[0-23]$":
-> +      "^led@[0-2]$":
->          type: object
->  
->          properties:
-> @@ -81,7 +99,7 @@ examples:
->      #include <dt-bindings/leds/common.h>
->  
->      ssogpio: ssogpio@e0d40000 {
-> -      compatible = "intel,sso-led";
-> +      compatible = "intel,lgm-ssoled";
->        reg = <0xE0D40000 0x2E4>;
->        gpio-controller;
->        #gpio-cells = <2>;
-> @@ -103,8 +121,8 @@ examples:
->            led-gpio = <&ssogpio 0 0>;
->          };
->  
-> -        led@23 {
-> -          reg = <23>;
-> +        led@2 {
-> +          reg = <2>;
->            function = LED_FUNCTION_POWER;
->            color = <LED_COLOR_ID_GREEN>;
->            led-gpio = <&ssogpio 23 0>;
-> diff --git a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
-> index bbbd85501ada..d0040255c591 100644
-> --- a/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
-> +++ b/Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
-> @@ -218,7 +218,7 @@ examples:
->             };
->  
->             serdes@5000000 {
-> -                  compatible = "cdns,ti,sierra-phy-t0";
-> +                  compatible = "ti,sierra-phy-t0";
->                    reg-names = "serdes";
->                    reg = <0x5000000 0x10000>;
->                    #address-cells = <1>;
-> diff --git a/Documentation/devicetree/bindings/power/supply/cw2015_battery.yaml b/Documentation/devicetree/bindings/power/supply/cw2015_battery.yaml
-> index 5fcdf5801536..c73abb2ff513 100644
-> --- a/Documentation/devicetree/bindings/power/supply/cw2015_battery.yaml
-> +++ b/Documentation/devicetree/bindings/power/supply/cw2015_battery.yaml
-> @@ -61,7 +61,7 @@ examples:
->          #size-cells = <0>;
->  
->          cw2015@62 {
-> -            compatible = "cellwise,cw201x";
-> +            compatible = "cellwise,cw2015";
->              reg = <0x62>;
->              cellwise,battery-profile = /bits/ 8 <
->                  0x17 0x67 0x80 0x73 0x6E 0x6C 0x6B 0x63
-> diff --git a/Documentation/devicetree/bindings/power/supply/power-supply.yaml b/Documentation/devicetree/bindings/power/supply/power-supply.yaml
-> index c5c55f627251..259760167759 100644
-> --- a/Documentation/devicetree/bindings/power/supply/power-supply.yaml
-> +++ b/Documentation/devicetree/bindings/power/supply/power-supply.yaml
-> @@ -18,25 +18,3 @@ properties:
->  
->  additionalProperties: true
->  
-> -examples:
-> -  - |
-> -    power {
-> -      #address-cells = <1>;
-> -      #size-cells = <0>;
-> -
-> -      usb_charger:charger@e {
-> -        compatible = "some,usb-charger";
-> -        reg = <0xe>;
-> -      };
-> -
-> -      ac_charger:charger@c {
-> -        compatible = "some,ac-charger";
-> -        reg = <0xc>;
-> -      };
-> -
-> -      battery:battery@b {
-> -        compatible = "some,battery";
-> -        reg = <0xb>;
-> -        power-supplies = <&usb_charger>, <&ac_charger>;
-> -      };
-> -    };
-> diff --git a/Documentation/devicetree/bindings/serial/serial.yaml b/Documentation/devicetree/bindings/serial/serial.yaml
-> index 65e75d040521..eea300405816 100644
-> --- a/Documentation/devicetree/bindings/serial/serial.yaml
-> +++ b/Documentation/devicetree/bindings/serial/serial.yaml
-> @@ -134,7 +134,7 @@ examples:
->              interrupts = <1>;
->  
->              bluetooth {
-> -                    compatible = "brcm,bcm43341-bt";
-> +                    compatible = "brcm,bcm4330-bt";
->                      interrupt-parent = <&gpio>;
->                      interrupts = <10>;
->              };
-> diff --git a/Documentation/devicetree/bindings/spi/amlogic,meson-gx-spicc.yaml b/Documentation/devicetree/bindings/spi/amlogic,meson-gx-spicc.yaml
-> index 667dedefd69f..e3fb553d9180 100644
-> --- a/Documentation/devicetree/bindings/spi/amlogic,meson-gx-spicc.yaml
-> +++ b/Documentation/devicetree/bindings/spi/amlogic,meson-gx-spicc.yaml
-> @@ -90,8 +90,8 @@ examples:
->            #address-cells = <1>;
->            #size-cells = <0>;
->  
-> -          ethernet-switch@0 {
-> -              compatible = "micrel,ks8995m";
-> +          display@0 {
-> +              compatible = "lg,lg4573";
->                spi-max-frequency = <1000000>;
->                reg = <0>;
->            };
-> diff --git a/Documentation/devicetree/bindings/spi/spi-controller.yaml b/Documentation/devicetree/bindings/spi/spi-controller.yaml
-> index 06786f1b43d2..0477396e4945 100644
-> --- a/Documentation/devicetree/bindings/spi/spi-controller.yaml
-> +++ b/Documentation/devicetree/bindings/spi/spi-controller.yaml
-> @@ -181,22 +181,23 @@ additionalProperties: true
->  
->  examples:
->    - |
-> -    spi@f00 {
-> +    spi@80010000 {
->          #address-cells = <1>;
->          #size-cells = <0>;
-> -        compatible = "fsl,mpc5200b-spi","fsl,mpc5200-spi";
-> -        reg = <0xf00 0x20>;
-> -        interrupts = <2 13 0 2 14 0>;
-> -        interrupt-parent = <&mpc5200_pic>;
-> -
-> -        ethernet-switch@0 {
-> -            compatible = "micrel,ks8995m";
-> +        compatible = "fsl,imx28-spi";
-> +        reg = <0x80010000 0x2000>;
-> +        interrupts = <96>;
-> +        dmas = <&dma_apbh 0>;
-> +        dma-names = "rx-tx";
-> +
-> +        display@0 {
-> +            compatible = "lg,lg4573";
->              spi-max-frequency = <1000000>;
->              reg = <0>;
->          };
->  
-> -        codec@1 {
-> -            compatible = "ti,tlv320aic26";
-> +        sensor@1 {
-> +            compatible = "bosch,bme680";
->              spi-max-frequency = <100000>;
->              reg = <1>;
->          };
-> diff --git a/Documentation/devicetree/bindings/spi/spi-mux.yaml b/Documentation/devicetree/bindings/spi/spi-mux.yaml
-> index 6c21a132b51f..d09c6355e22d 100644
-> --- a/Documentation/devicetree/bindings/spi/spi-mux.yaml
-> +++ b/Documentation/devicetree/bindings/spi/spi-mux.yaml
-> @@ -75,16 +75,12 @@ examples:
->              spi-flash@0 {
->                  compatible = "jedec,spi-nor";
->                  reg = <0>;
-> -                #address-cells = <1>;
-> -                #size-cells = <0>;
->                  spi-max-frequency = <40000000>;
->              };
->  
-> -            spi-device@1 {
-> -                compatible = "lineartechnology,ltc2488";
-> +            sensor@1 {
-> +                compatible = "bosch,bme680";
->                  reg = <1>;
-> -                #address-cells = <1>;
-> -                #size-cells = <0>;
->                  spi-max-frequency = <10000000>;
->              };
->          };
-> diff --git a/Documentation/devicetree/bindings/spi/st,stm32-spi.yaml b/Documentation/devicetree/bindings/spi/st,stm32-spi.yaml
-> index d11806b1ede3..2d9af4c506bb 100644
-> --- a/Documentation/devicetree/bindings/spi/st,stm32-spi.yaml
-> +++ b/Documentation/devicetree/bindings/spi/st,stm32-spi.yaml
-> @@ -96,12 +96,6 @@ examples:
->        dma-names = "rx", "tx";
->        cs-gpios = <&gpioa 11 0>;
->  
-> -      aardvark@0 {
-> -        compatible = "totalphase,aardvark";
-> -        reg = <0>;
-> -        spi-max-frequency = <4000000>;
-> -        st,spi-midi-ns = <4000>;
-> -      };
->      };
->  
->  ...
-> -- 
-> 2.27.0
-> 
+
+Acked-by: Thierry Reding <thierry.reding@gmail.com>
+
+--anrc3HovXG4wMGPC
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAmBd1nIACgkQ3SOs138+
+s6EKNw/+PWZ5d3e0xEwvPK7F2Ar6aLwrAZTugsDRjLWV08E7tyOy+G9o7fONJcWa
+rYcXHvrQzc3Vr6/H0Aht9gv8h4N1ouQlIYbKkommVUDHWZlKKKKuf2UW9DeIzbLp
+jRdHkqZsdlRy/1UZGl7oXPsDf+OIYG04QbOA1+uBhqW+BdpfEC59ouN/KDCou9aq
+7JvFVhtOB5SZBDQhNNyY9VINpf7uHivV+onqfwg40fO/QTkYaHINb29gb73NBZWr
+fqP16h7YrpKw+JqePYucWisMfZ8hubG6mNypAlhnRBdaqhoPm+OwmRFfbb9hE0f4
+VtTBHT2HndgpshRyqJZegJUueeRQX5scz0IYfDdpHSvJ/+bvZ3HwmxOG3XHOIsEz
+o36PE9KKIX3b9PZqEtMrNfnC7a9KzlnGJzQ0N+ZKvNZufnlkpbGuKC2PN/gTnADi
+p6Shg4Nz6Jg67p2nWhIoFWMA1sYd1b18urfFn133K3B4R+6ox7NfDl7jDoLO//rO
+qxgp4aySmSZyGC0LnhX/rjThoVGggs/Ph99sxbDaObX1bed7K/3MVfuFHv9dgNxq
+BMerE+S1zd+XdeI1iSdQ459gqtFuWyTNTX4Atm3ddd+7P1Ay7iRMjyAjZ5MgwUvn
+NUVQ+ss5oAt4BguhMPXeKvkkJEDQWl8xSzXm5qd39jSxZ06FAL8=
+=w24T
+-----END PGP SIGNATURE-----
+
+--anrc3HovXG4wMGPC--
+
+
+--===============0751962824030307979==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
+
+--===============0751962824030307979==--
+
