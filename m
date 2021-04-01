@@ -2,75 +2,84 @@ Return-Path: <SRS0=/LVT=I6=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-17.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=ham
+X-Spam-Status: No, score=-12.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=unavailable
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 0C840C433ED
-	for <linux-i3c@archiver.kernel.org>; Thu,  1 Apr 2021 12:18:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id EF90BC433B4
+	for <linux-i3c@archiver.kernel.org>; Thu,  1 Apr 2021 12:18:21 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 892796112D
-	for <linux-i3c@archiver.kernel.org>; Thu,  1 Apr 2021 12:18:13 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 892796112D
+	by mail.kernel.org (Postfix) with ESMTPS id 75CDD61108
+	for <linux-i3c@archiver.kernel.org>; Thu,  1 Apr 2021 12:18:21 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 75CDD61108
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:Date:
-	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NJtQ2PBtQVETY6+6fR1Pl99VdGpIS8ZAhP8c4HlYoqo=; b=TComCHZs49eHuiisHd4yEXngZ
-	04aCoZrs7CeDPcyAwVKNR9eorLOjRQHXJz6qX8updbwJmasRqcJ0uQa6M5RH0ru3Cp7p2eIz5xNfK
-	Q+50OMV89KgQtu3XEcoC0cr8CNlo9U30e4cpX/Qx+BT0KwMfX3xTJ3eYzqB4R3KQxibP07YmG8qpC
-	tjHjTw+lVPj5GCGSiTw8fPzrKZCzTCUJXOHYGqO1ZTU306OcVluNN18QBLtXN5omKgZySdqybVxuT
-	7aR2j3wPrNfuIX6uL9DnQBbGZ4TR+O2seOUUcbLPIBtR+6G1REkO52C28KCJh5psF9yltwyix3qU+
-	GTvsfYy+w==;
+	List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=vOORVpu+87VOwBcuGUa/UROhdGQvtn37UD1qfQ0KSR8=; b=GEjRb22IqQR28EZ7rfjeDCTWQW
+	ji78/mq4vF3NY1ThivtYgCi88mV5JBcvAHo5kGy8SCbO6BDwRv93KFFnaO+pwPD8IiVVQdvDm3h8w
+	NTacuzxTh+mqxnZOdUhBTc4xpW0lBXUJwREy6TEIE2pGUahruX0xb8/yfgcmOZ8temOXdn/rKQZfe
+	KtrkNAbeL3IGWd1QItm1UaePgoisoTXTEvhWnTzfSoRarX6Wnp7VqzPb07seEVRMv2g6RvDuibRII
+	kg4bANfDq0VLCoZuDXT+W3OBaoxOBrOzztsoSRZjwR/kNfXSjJ3h0mpT1uZYAkZWmlBpfI84lCmHA
+	K2lIf+gQ==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lRwH5-009ZDD-Sv; Thu, 01 Apr 2021 12:18:11 +0000
+	id 1lRwHE-009ZE4-04; Thu, 01 Apr 2021 12:18:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lRwGu-009ZAe-1m
- for linux-i3c@lists.infradead.org; Thu, 01 Apr 2021 12:18:02 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 726AC611CA;
- Thu,  1 Apr 2021 12:17:56 +0000 (UTC)
+ id 1lRwGt-009ZAY-UH; Thu, 01 Apr 2021 12:18:01 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 0169F6113E;
+ Thu,  1 Apr 2021 12:17:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=k20201202; t=1617279476;
- bh=BnEWnVkqMrbAWG8jRB7Ad1C4L7HMZywQ6hzq4TbT8UM=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=LPnQs3u0SA4q5hbHfq4RzSQs+FvcWBNcfhCTKN6bcNlYj9sKG8msZVimUxSaFruSC
- 8f1cqbBCUwjkAGluou0uqBj+uvjPB8fqBsalkQmfIuD+D3wwo5qv8hiqVsQ59y9VCe
- kbXqitfXDA+PXFQ7KGEcMYafOmZA6tKtx8Ill50H7BtHyJLojLog+YntFnsrwsTSa9
- bT5TlGv2GcTzHNPMD7kXNU4DfRmzv7R5HmIeqHBXovFPOROhDgi4oEYGohT0HzVJtu
- qflkxbJCbDg+Xx/5q6vRLu1FjoQlsj3yct872Nt8rh29A1TOt+ToVBfFbGzycP4PiK
- hnOfig097Jhdg==
+ bh=wRad7N84rWD9dSoio69a4lZ1e70YET8Y/U4ELbCnnho=;
+ h=From:To:Cc:Subject:Date:From;
+ b=Q1xGCX8CjWBXtQC1pgo9/9vi4nDHYsR9ze0Q3GiyebU0GCkZVF2x7Dm68maSFFiUb
+ aYhFb4Mtsxe3dwyRk1InCmoNe+43BkSOmz3+yXmoJlqQon680CoD7Fu0OV/kMatoKB
+ POCl1bXAfQ85z4s39lkLH+3JCvV54zR+CeAxccTEvavGiJh0qGmRlyOcVNt9cvXxRq
+ kYRsUf12VYN3g12XZxM/SAQ9Jf1Po6QForEFkcVk/jW0b2lIFgc1wXKAcg30pF7BC8
+ U8xRKFjOp2o3cBdsuc5vEOD8ftGdy/B8MUbxDoRdCuirrnPb1300SCFtXBNU1EX6Km
+ N9eYgXDgwnnkA==
 Received: by mail.kernel.org with local (Exim 4.94)
  (envelope-from <mchehab@kernel.org>)
- id 1lRwGo-001c3a-HY; Thu, 01 Apr 2021 14:17:54 +0200
+ id 1lRwGn-001c2K-FQ; Thu, 01 Apr 2021 14:17:53 +0200
 From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
 To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
 Cc: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- "Jonathan Corbet" <corbet@lwn.net>,
+ linux-kernel@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
  =?UTF-8?q?Przemys=C5=82aw=20Gaj?= <pgaj@cadence.com>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
+ Andy Whitcroft <apw@canonical.com>, Daniel Vetter <daniel@ffwll.ch>,
+ David Airlie <airlied@linux.ie>, Dwaipayan Ray <dwaipayanray1@gmail.com>,
+ Joe Perches <joe@perches.com>, Jonathan Cameron <jic23@kernel.org>,
+ Lars-Peter Clausen <lars@metafoo.de>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Lukas Bulwahn <lukas.bulwahn@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
  Rob Herring <robh+dt@kernel.org>, Vitor Soares <vitor.soares@synopsys.com>,
- devicetree@vger.kernel.org, linux-i3c@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH 27/32] dt-bindings: i3c: update i3c.yaml references
-Date: Thu,  1 Apr 2021 14:17:47 +0200
-Message-Id: <22b7b53af1907f7cae27e26be725470c04b84725.1617279356.git.mchehab+huawei@kernel.org>
+ alsa-devel@alsa-project.org, devicetree@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
+ linux-gpio@vger.kernel.org, linux-i3c@lists.infradead.org,
+ linux-iio@vger.kernel.org, linux-media@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-pm@vger.kernel.org,
+ patches@opensource.cirrus.com
+Subject: [PATCH 00/32] Fix broken documentation file references
+Date: Thu,  1 Apr 2021 14:17:20 +0200
+Message-Id: <cover.1617279355.git.mchehab+huawei@kernel.org>
 X-Mailer: git-send-email 2.30.2
-In-Reply-To: <cover.1617279355.git.mchehab+huawei@kernel.org>
-References: <cover.1617279355.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210401_131800_393882_8EA72F57 
-X-CRM114-Status: GOOD (  10.34  )
+X-CRM114-CacheID: sfid-20210401_131800_307312_A3AD869C 
+X-CRM114-Status: UNSURE (   9.23  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,75 +96,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Changeset 5e4cdca887fd ("dt-bindings: i3c: Convert the bus description to yaml")
-renamed: Documentation/devicetree/bindings/i3c/i3c.txt
-to: Documentation/devicetree/bindings/i3c/i3c.yaml.
+Each patch on this series can be applied independently. They fix broken
+file references.
 
-Update the cross-references accordingly.
+Most of them are due to DT binding renames, but there are also other
+unrelated changes.
 
-Fixes: 5e4cdca887fd ("dt-bindings: i3c: Convert the bus description to yaml")
-Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
----
- Documentation/devicetree/bindings/i3c/cdns,i3c-master.txt   | 6 +++---
- .../devicetree/bindings/i3c/snps,dw-i3c-master.txt          | 6 +++---
- 2 files changed, 6 insertions(+), 6 deletions(-)
+This series is based on next-20210401.
 
-diff --git a/Documentation/devicetree/bindings/i3c/cdns,i3c-master.txt b/Documentation/devicetree/bindings/i3c/cdns,i3c-master.txt
-index 1cf6182f888c..3716589d6999 100644
---- a/Documentation/devicetree/bindings/i3c/cdns,i3c-master.txt
-+++ b/Documentation/devicetree/bindings/i3c/cdns,i3c-master.txt
-@@ -10,19 +10,19 @@ Required properties:
- - reg: I3C master registers
- 
- Mandatory properties defined by the generic binding (see
--Documentation/devicetree/bindings/i3c/i3c.txt for more details):
-+Documentation/devicetree/bindings/i3c/i3c.yaml for more details):
- 
- - #address-cells: shall be set to 1
- - #size-cells: shall be set to 0
- 
- Optional properties defined by the generic binding (see
--Documentation/devicetree/bindings/i3c/i3c.txt for more details):
-+Documentation/devicetree/bindings/i3c/i3c.yaml for more details):
- 
- - i2c-scl-hz
- - i3c-scl-hz
- 
- I3C device connected on the bus follow the generic description (see
--Documentation/devicetree/bindings/i3c/i3c.txt for more details).
-+Documentation/devicetree/bindings/i3c/i3c.yaml for more details).
- 
- Example:
- 
-diff --git a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.txt b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.txt
-index 5020eb71eb8d..07f35f36085d 100644
---- a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.txt
-+++ b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.txt
-@@ -9,19 +9,19 @@ Required properties:
- - reg: Offset and length of I3C master registers
- 
- Mandatory properties defined by the generic binding (see
--Documentation/devicetree/bindings/i3c/i3c.txt for more details):
-+Documentation/devicetree/bindings/i3c/i3c.yaml for more details):
- 
- - #address-cells: shall be set to 3
- - #size-cells: shall be set to 0
- 
- Optional properties defined by the generic binding (see
--Documentation/devicetree/bindings/i3c/i3c.txt for more details):
-+Documentation/devicetree/bindings/i3c/i3c.yaml for more details):
- 
- - i2c-scl-hz
- - i3c-scl-hz
- 
- I3C device connected on the bus follow the generic description (see
--Documentation/devicetree/bindings/i3c/i3c.txt for more details).
-+Documentation/devicetree/bindings/i3c/i3c.yaml for more details).
- 
- Example:
- 
+Mauro Carvalho Chehab (32):
+  MAINTAINERS: update adi,ad5758.yaml reference
+  MAINTAINERS: update ste,mcde.yaml reference
+  MAINTAINERS: update brcm,bcm-v3d.yaml reference
+  MAINTAINERS: update fsl,dpaa2-console.yaml reference
+  MAINTAINERS: update st,hts221.yaml reference
+  MAINTAINERS: update dpot-dac.yaml reference
+  MAINTAINERS: update envelope-detector.yaml reference
+  MAINTAINERS: update current-sense-amplifier.yaml reference
+  MAINTAINERS: update current-sense-shunt.yaml reference
+  MAINTAINERS: update voltage-divider.yaml reference
+  MAINTAINERS: update invensense,mpu3050.yaml reference
+  MAINTAINERS: update lego,ev3-battery.yaml reference
+  MAINTAINERS: update marvell,armada-3700-utmi-phy.yaml reference
+  MAINTAINERS: update mtk-sd.yaml reference
+  MAINTAINERS: update atmel,sama5d2-adc.yaml reference
+  MAINTAINERS: update pni,rm3100.yaml reference
+  MAINTAINERS: update renesas,rcar-gyroadc.yaml reference
+  MAINTAINERS: update st,lsm6dsx.yaml reference
+  MAINTAINERS: update st,vl53l0x.yaml reference
+  MAINTAINERS: update snps,dw-axi-dmac.yaml reference
+  MAINTAINERS: update ti,dac7612.yaml reference
+  MAINTAINERS: update nxp,imx8-jpeg.yaml reference
+  MAINTAINERS: update ovti,ov2680.yaml reference
+  MAINTAINERS: update imi,rdacm2x-gmsl.yaml reference
+  dt-bindings:iio:dac: update microchip,mcp4725.yaml reference
+  dt-bindings: iommu: mediatek: update mediatek,iommu.yaml references
+  dt-bindings: i3c: update i3c.yaml references
+  dt-bindings: power: update battery.yaml reference
+  docs: dt: update writing-schema.rst references
+  Documentation: net: dsa: update configuration.rst reference
+  Documentation: update sysfs-platform_profile.rst reference
+  pinctrl: update pin-control.rst references
+
+ .../display/mediatek/mediatek,disp.txt        |  2 +-
+ .../bindings/i3c/cdns,i3c-master.txt          |  6 +--
+ .../bindings/i3c/snps,dw-i3c-master.txt       |  6 +--
+ .../bindings/media/mediatek-jpeg-decoder.txt  |  2 +-
+ .../bindings/media/mediatek-jpeg-encoder.txt  |  2 +-
+ .../bindings/media/mediatek-mdp.txt           |  2 +-
+ .../bindings/media/mediatek-vcodec.txt        |  2 +-
+ .../bindings/submitting-patches.rst           |  2 +-
+ Documentation/filesystems/cifs/cifsd.rst      |  2 +-
+ Documentation/power/power_supply_class.rst    |  2 +-
+ MAINTAINERS                                   | 48 +++++++++----------
+ include/linux/device.h                        |  2 +-
+ include/linux/iio/dac/mcp4725.h               |  2 +-
+ include/linux/mfd/madera/pdata.h              |  2 +-
+ include/linux/pinctrl/pinconf-generic.h       |  2 +-
+ include/linux/platform_profile.h              |  2 +-
+ scripts/checkpatch.pl                         |  2 +-
+ 17 files changed, 44 insertions(+), 44 deletions(-)
+
 -- 
 2.30.2
+
 
 
 -- 
