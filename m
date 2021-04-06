@@ -1,85 +1,81 @@
-Return-Path: <SRS0=/LVT=I6=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=Nh6F=JD=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-12.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=unavailable
-	autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-14.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id EF90BC433B4
-	for <linux-i3c@archiver.kernel.org>; Thu,  1 Apr 2021 12:18:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 67386C433B4
+	for <linux-i3c@archiver.kernel.org>; Tue,  6 Apr 2021 15:06:10 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 75CDD61108
-	for <linux-i3c@archiver.kernel.org>; Thu,  1 Apr 2021 12:18:21 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 75CDD61108
+	by mail.kernel.org (Postfix) with ESMTPS id 0CA32613C0
+	for <linux-i3c@archiver.kernel.org>; Tue,  6 Apr 2021 15:06:10 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 0CA32613C0
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=vOORVpu+87VOwBcuGUa/UROhdGQvtn37UD1qfQ0KSR8=; b=GEjRb22IqQR28EZ7rfjeDCTWQW
-	ji78/mq4vF3NY1ThivtYgCi88mV5JBcvAHo5kGy8SCbO6BDwRv93KFFnaO+pwPD8IiVVQdvDm3h8w
-	NTacuzxTh+mqxnZOdUhBTc4xpW0lBXUJwREy6TEIE2pGUahruX0xb8/yfgcmOZ8temOXdn/rKQZfe
-	KtrkNAbeL3IGWd1QItm1UaePgoisoTXTEvhWnTzfSoRarX6Wnp7VqzPb07seEVRMv2g6RvDuibRII
-	kg4bANfDq0VLCoZuDXT+W3OBaoxOBrOzztsoSRZjwR/kNfXSjJ3h0mpT1uZYAkZWmlBpfI84lCmHA
-	K2lIf+gQ==;
+	List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:
+	References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=bMFhWrAHjK1mPnYzratj/XsnAZXKHP+vX3v49mgc/6M=; b=bUHo6ii5S/t39sTmKjfl6jX1J
+	CWlAbSk0OjKXII92XYUPHxSBnOOGMIu9FYfRO/ZBVIGTe5yv9B9kntMpTtoKnX2qxSsaEtU7bgpsc
+	GgsAuAjprFLWL9NpohQqUd9epVTCZRY6JWcLTVjh+d99Vg1er09UGjUrtrj8/LZxz6jzhrjmI/NBF
+	VQTza53CGJDpSCy7iG7ppc96KFJBIa0buSk6HC1RlcJMLQ6Ys3RTUS9OwLitsc7u0M9CyCPpO00PR
+	fbpKQi0WNBQheqgdFiyB3FwBLWUtQAqs3gv7tz0I9kYANo88tB2QkWHjbDeTQu7iH8nHkZ9tfU2AD
+	RRv+vwn4w==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lRwHE-009ZE4-04; Thu, 01 Apr 2021 12:18:20 +0000
+	id 1lTnHM-002tfp-Al; Tue, 06 Apr 2021 15:06:08 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lRwGt-009ZAY-UH; Thu, 01 Apr 2021 12:18:01 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 0169F6113E;
- Thu,  1 Apr 2021 12:17:55 +0000 (UTC)
+ id 1lTnHJ-002tey-KU
+ for linux-i3c@lists.infradead.org; Tue, 06 Apr 2021 15:06:07 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 0E7B5613C6
+ for <linux-i3c@lists.infradead.org>; Tue,  6 Apr 2021 15:06:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1617279476;
- bh=wRad7N84rWD9dSoio69a4lZ1e70YET8Y/U4ELbCnnho=;
- h=From:To:Cc:Subject:Date:From;
- b=Q1xGCX8CjWBXtQC1pgo9/9vi4nDHYsR9ze0Q3GiyebU0GCkZVF2x7Dm68maSFFiUb
- aYhFb4Mtsxe3dwyRk1InCmoNe+43BkSOmz3+yXmoJlqQon680CoD7Fu0OV/kMatoKB
- POCl1bXAfQ85z4s39lkLH+3JCvV54zR+CeAxccTEvavGiJh0qGmRlyOcVNt9cvXxRq
- kYRsUf12VYN3g12XZxM/SAQ9Jf1Po6QForEFkcVk/jW0b2lIFgc1wXKAcg30pF7BC8
- U8xRKFjOp2o3cBdsuc5vEOD8ftGdy/B8MUbxDoRdCuirrnPb1300SCFtXBNU1EX6Km
- N9eYgXDgwnnkA==
-Received: by mail.kernel.org with local (Exim 4.94)
- (envelope-from <mchehab@kernel.org>)
- id 1lRwGn-001c2K-FQ; Thu, 01 Apr 2021 14:17:53 +0200
-From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
-Cc: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- linux-kernel@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
- =?UTF-8?q?Przemys=C5=82aw=20Gaj?= <pgaj@cadence.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Andy Whitcroft <apw@canonical.com>, Daniel Vetter <daniel@ffwll.ch>,
- David Airlie <airlied@linux.ie>, Dwaipayan Ray <dwaipayanray1@gmail.com>,
- Joe Perches <joe@perches.com>, Jonathan Cameron <jic23@kernel.org>,
- Lars-Peter Clausen <lars@metafoo.de>,
- Linus Walleij <linus.walleij@linaro.org>,
- Lukas Bulwahn <lukas.bulwahn@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Vitor Soares <vitor.soares@synopsys.com>,
- alsa-devel@alsa-project.org, devicetree@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
- linux-gpio@vger.kernel.org, linux-i3c@lists.infradead.org,
- linux-iio@vger.kernel.org, linux-media@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-pm@vger.kernel.org,
- patches@opensource.cirrus.com
-Subject: [PATCH 00/32] Fix broken documentation file references
-Date: Thu,  1 Apr 2021 14:17:20 +0200
-Message-Id: <cover.1617279355.git.mchehab+huawei@kernel.org>
-X-Mailer: git-send-email 2.30.2
+ s=k20201202; t=1617721562;
+ bh=oKiK4ApC93CrUYa67wbve2zbWOPAYFHVj94zM59y+yQ=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=aVshd5xxVxPYitoUYR9v9ig/rMRIKsxhG9scO2HkQvZSxqe7k9TWmpvZBZFP+PlOm
+ Q6i6ghqzAQiZSY3QkacgL++PBoMOnRumNk+23sHS9yPK3o3HQ1Z8fp/nBhwOL3kHNr
+ AMHM1TdiA/3m3wCPrLFfF0LSa7WQJ1AONtUx/1y821t5uhT3snuZYjGu/H7b1TUA7s
+ lBi2VF1xmcj9qaIYudlFPUjjsO3LxI8xjo6FDlUpNlXaVhAQ4ncByOjGgv8G+0zh+S
+ Mw26Ssg3BlccZTF88ndfAyygomisjQwXQiPzs6+QdKV3ryRVR20NPsQCKw552k8ale
+ xFY+ZvvVRoI7Q==
+Received: by mail-ej1-f42.google.com with SMTP id mh7so12512866ejb.12
+ for <linux-i3c@lists.infradead.org>; Tue, 06 Apr 2021 08:06:01 -0700 (PDT)
+X-Gm-Message-State: AOAM532H6wlHO5Fh2bh5fp77s5Y4qiA6VVNCv57Bn90xisGBlFL8r7cK
+ +IQw0Bh/cBGDO6UFL8A2w3WCjmfgLgtM6GrASQ==
+X-Google-Smtp-Source: ABdhPJyxyDKARhPWHu4Jr+PfqF7dmXdHRhFbxyLKg+KVWqXlE18eXrf8KY6IuCJJBbg7kaluABfeLXvlp8S1qatvsx4=
+X-Received: by 2002:a17:906:55c9:: with SMTP id
+ z9mr6780057ejp.360.1617721560689; 
+ Tue, 06 Apr 2021 08:06:00 -0700 (PDT)
 MIME-Version: 1.0
+References: <cover.1617279355.git.mchehab+huawei@kernel.org>
+ <22b7b53af1907f7cae27e26be725470c04b84725.1617279356.git.mchehab+huawei@kernel.org>
+In-Reply-To: <22b7b53af1907f7cae27e26be725470c04b84725.1617279356.git.mchehab+huawei@kernel.org>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Tue, 6 Apr 2021 10:05:47 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+d9nU8r_1tvrU9Yk4rCN3fve6D29JMLFN59jJxLWjhrA@mail.gmail.com>
+Message-ID: <CAL_Jsq+d9nU8r_1tvrU9Yk4rCN3fve6D29JMLFN59jJxLWjhrA@mail.gmail.com>
+Subject: Re: [PATCH 27/32] dt-bindings: i3c: update i3c.yaml references
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Cc: Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Jonathan Corbet <corbet@lwn.net>, 
+ =?UTF-8?Q?Przemys=C5=82aw_Gaj?= <pgaj@cadence.com>, 
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>, 
+ Vitor Soares <vitor.soares@synopsys.com>, devicetree@vger.kernel.org, 
+ linux-i3c@lists.infradead.org, 
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210401_131800_307312_A3AD869C 
-X-CRM114-Status: UNSURE (   9.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20210406_160605_921460_9D9277E5 
+X-CRM114-Status: GOOD (  10.70  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,71 +92,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Each patch on this series can be applied independently. They fix broken
-file references.
+On Thu, Apr 1, 2021 at 7:17 AM Mauro Carvalho Chehab
+<mchehab+huawei@kernel.org> wrote:
+>
+> Changeset 5e4cdca887fd ("dt-bindings: i3c: Convert the bus description to yaml")
+> renamed: Documentation/devicetree/bindings/i3c/i3c.txt
+> to: Documentation/devicetree/bindings/i3c/i3c.yaml.
+>
+> Update the cross-references accordingly.
+>
+> Fixes: 5e4cdca887fd ("dt-bindings: i3c: Convert the bus description to yaml")
+> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+> ---
+>  Documentation/devicetree/bindings/i3c/cdns,i3c-master.txt   | 6 +++---
+>  .../devicetree/bindings/i3c/snps,dw-i3c-master.txt          | 6 +++---
+>  2 files changed, 6 insertions(+), 6 deletions(-)
 
-Most of them are due to DT binding renames, but there are also other
-unrelated changes.
+Ugg, I should have remembered this...
 
-This series is based on next-20210401.
-
-Mauro Carvalho Chehab (32):
-  MAINTAINERS: update adi,ad5758.yaml reference
-  MAINTAINERS: update ste,mcde.yaml reference
-  MAINTAINERS: update brcm,bcm-v3d.yaml reference
-  MAINTAINERS: update fsl,dpaa2-console.yaml reference
-  MAINTAINERS: update st,hts221.yaml reference
-  MAINTAINERS: update dpot-dac.yaml reference
-  MAINTAINERS: update envelope-detector.yaml reference
-  MAINTAINERS: update current-sense-amplifier.yaml reference
-  MAINTAINERS: update current-sense-shunt.yaml reference
-  MAINTAINERS: update voltage-divider.yaml reference
-  MAINTAINERS: update invensense,mpu3050.yaml reference
-  MAINTAINERS: update lego,ev3-battery.yaml reference
-  MAINTAINERS: update marvell,armada-3700-utmi-phy.yaml reference
-  MAINTAINERS: update mtk-sd.yaml reference
-  MAINTAINERS: update atmel,sama5d2-adc.yaml reference
-  MAINTAINERS: update pni,rm3100.yaml reference
-  MAINTAINERS: update renesas,rcar-gyroadc.yaml reference
-  MAINTAINERS: update st,lsm6dsx.yaml reference
-  MAINTAINERS: update st,vl53l0x.yaml reference
-  MAINTAINERS: update snps,dw-axi-dmac.yaml reference
-  MAINTAINERS: update ti,dac7612.yaml reference
-  MAINTAINERS: update nxp,imx8-jpeg.yaml reference
-  MAINTAINERS: update ovti,ov2680.yaml reference
-  MAINTAINERS: update imi,rdacm2x-gmsl.yaml reference
-  dt-bindings:iio:dac: update microchip,mcp4725.yaml reference
-  dt-bindings: iommu: mediatek: update mediatek,iommu.yaml references
-  dt-bindings: i3c: update i3c.yaml references
-  dt-bindings: power: update battery.yaml reference
-  docs: dt: update writing-schema.rst references
-  Documentation: net: dsa: update configuration.rst reference
-  Documentation: update sysfs-platform_profile.rst reference
-  pinctrl: update pin-control.rst references
-
- .../display/mediatek/mediatek,disp.txt        |  2 +-
- .../bindings/i3c/cdns,i3c-master.txt          |  6 +--
- .../bindings/i3c/snps,dw-i3c-master.txt       |  6 +--
- .../bindings/media/mediatek-jpeg-decoder.txt  |  2 +-
- .../bindings/media/mediatek-jpeg-encoder.txt  |  2 +-
- .../bindings/media/mediatek-mdp.txt           |  2 +-
- .../bindings/media/mediatek-vcodec.txt        |  2 +-
- .../bindings/submitting-patches.rst           |  2 +-
- Documentation/filesystems/cifs/cifsd.rst      |  2 +-
- Documentation/power/power_supply_class.rst    |  2 +-
- MAINTAINERS                                   | 48 +++++++++----------
- include/linux/device.h                        |  2 +-
- include/linux/iio/dac/mcp4725.h               |  2 +-
- include/linux/mfd/madera/pdata.h              |  2 +-
- include/linux/pinctrl/pinconf-generic.h       |  2 +-
- include/linux/platform_profile.h              |  2 +-
- scripts/checkpatch.pl                         |  2 +-
- 17 files changed, 44 insertions(+), 44 deletions(-)
-
--- 
-2.30.2
-
-
+Acked-by: Rob Herring <robh@kernel.org>
 
 -- 
 linux-i3c mailing list
