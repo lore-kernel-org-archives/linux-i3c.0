@@ -2,75 +2,88 @@ Return-Path: <SRS0=eOHn=JE=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-17.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,
-	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=unavailable
+X-Spam-Status: No, score=-12.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_NONE,URIBL_BLOCKED,USER_AGENT_GIT autolearn=unavailable
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id A9143C433ED
-	for <linux-i3c@archiver.kernel.org>; Wed,  7 Apr 2021 08:21:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 570F8C4361A
+	for <linux-i3c@archiver.kernel.org>; Wed,  7 Apr 2021 08:21:26 +0000 (UTC)
 Received: from desiato.infradead.org (desiato.infradead.org [90.155.92.199])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id BF705613A7
-	for <linux-i3c@archiver.kernel.org>; Wed,  7 Apr 2021 08:21:12 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org BF705613A7
+	by mail.kernel.org (Postfix) with ESMTPS id CD98D613B3
+	for <linux-i3c@archiver.kernel.org>; Wed,  7 Apr 2021 08:21:25 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org CD98D613B3
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=desiato.20200630; h=Sender:Content-Transfer-Encoding
 	:Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:Date:
-	Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CmM2dL2ocazTCm+QRYvOUZfyTM2T/fOrBmKovs1pSf0=; b=I6IoHHYO38+BfdFo6w9mUK04b
-	BA5lrR9Q+Gc6qiZohXxbIcwDU1DaBzs4K7kLEi5cQacI3NtroFY4DjKYVzPIQyqESqnIlIiSGyJTX
-	WFqXT0AKZqmb98jN7IviJE+9FO1FJOIwXVPTrRJMzvH/fclm62qdq47G/YVsq4XTBWajE+bzaa6mp
-	D6D4bxQMqqu8EgHySn2m3Zon5kyikjbL5nYKrGJpmPcak0AmcMXSTUKPbRC+wV1tvrw+uS4gVkGLT
-	ZUUdeGvLZ6cK3syrESo3zay7XMdUkniw8tUTZE7klBC0G068KWBCGGWDZXEGbEQv9mTA1lYcvjNZB
-	ooAKGf/nA==;
+	List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=Ki8G8ChNSoF2OjtSRVupAjoXpcsBIWZzVtMDy3YeyLk=; b=q5PWieA9wgNvRj998+R7pfm10m
+	7/Ermy1uJDUmSSX0PY48qbYvsq2EH25e/0w6sBsWPqEn0GnKxfCr7V2TWB8n5QMyqshiFIiH7u7PQ
+	tEn8OE7/4Q9OGa/WLgwEiR59NKCaBoaqL4rvsn5leKlSZqVVWyZNApV8iAy8FrXAzh3TSRZeQTbwx
+	26H/9fMKOEMjw6gWwC+8udsLW7elLoEwkWGwELyKX55KeHOL5RVebB+hJE6PfbP4uXZZSsgzJex2a
+	xQpy9svLTWrSEp3LQWSacM40Uh2gWkC3L6AMwamCTio2BEAH37aSoMtIYuKQyOxW6KpdoOX4Sfq2f
+	cUwqw3Nw==;
 Received: from localhost ([::1] helo=desiato.infradead.org)
 	by desiato.infradead.org with esmtp (Exim 4.94 #2 (Red Hat Linux))
-	id 1lU3Qz-004SzW-RL; Wed, 07 Apr 2021 08:21:10 +0000
+	id 1lU3RE-004T0Y-24; Wed, 07 Apr 2021 08:21:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lU3Qw-004Sxj-5K
- for linux-i3c@lists.infradead.org; Wed, 07 Apr 2021 08:21:08 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 7741A613CD;
+ id 1lU3Qw-004Sy1-7e; Wed, 07 Apr 2021 08:21:08 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 8F450613CF;
  Wed,  7 Apr 2021 08:21:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=k20201202; t=1617783662;
- bh=FN9fIYc0xtc0WoRKgICBUgYOcktenG0goqi4S9V1/qQ=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ZzpyYrPtPrUdIqRancpV4Zj8Q/SAAt5LA1ZhWdWuoPFzFtm/Bz1lvZ9ySsAJ5jGAX
- cdgVHgP+pdiBRiBIbZrJpbM7GcLFREp9+bSPAfytUMofNCSKTRynu7TiQ3Tj9hDccG
- vwmsYekf7tGJsXAKP66+kMnTzWZD4d/WL5Yf+MGKja2LSm0Xzfqg2wa/RosyTiokie
- eadV3spDUMNVvZe5rUHVMsVqPv/rKhPptjI0LhW/raUqqqP6Hy1ZErJst25Nkmyg1R
- XAtxkpFPRlFNeaAlW5PuXYYR6WM2ppkRvv0AQhyI3VMiK9pqjsoSFxTmYs+JKmP/D5
- CKojS5FdMuhPg==
+ bh=1IWlmRG9OD413dWYIjvrcWiKG5N1mPS/69ftZBnxCPE=;
+ h=From:To:Cc:Subject:Date:From;
+ b=MU/hOdvwtzxehLxToSu65R5aOnRU3HIBxCz57ZiasngM+1MaaWazON3N+zEdOJZYr
+ lE/KionJZjqUql+6V09QR1bUu6M/Qzp30HMFgSPenbnw9CCxb2i+Qqcl0VX7BDmpmR
+ 72Bj0HiREn8JRuhw+qPf2Z0zeTluUs0xTJtuLdltHzF1SvY7HcsWGui04BfyRIU/J3
+ RBXvcAMPzUyJR/kmeTo5tEfpXoyEyzNJ088/ukU4X+xY5oshHbYlcUgWMGVUob0u3b
+ 6EIxlJUed/GABQ+UyyICvPqtEJrxu8Ym8Ad1HvtfmGdAqRpoZG0oW++4Tx/bGTfSnR
+ oSZ3RBmaWKnhg==
 Received: by mail.kernel.org with local (Exim 4.94)
  (envelope-from <mchehab@kernel.org>)
- id 1lU3Qq-005i2Q-IA; Wed, 07 Apr 2021 10:21:00 +0200
+ id 1lU3Qq-005i24-4N; Wed, 07 Apr 2021 10:21:00 +0200
 From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
+To: Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ "Jonathan Corbet" <corbet@lwn.net>
 Cc: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- "Jonathan Corbet" <corbet@lwn.net>,
+ linux-kernel@vger.kernel.org,
  =?UTF-8?q?Przemys=C5=82aw=20Gaj?= <pgaj@cadence.com>,
+ Akira Yokosawa <akiyks@gmail.com>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Rob Herring <robh+dt@kernel.org>, Vitor Soares <vitor.soares@synopsys.com>,
- devicetree@vger.kernel.org, linux-i3c@lists.infradead.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh@kernel.org>
-Subject: [PATCH v2 09/19] dt-bindings: i3c: update i3c.yaml references
-Date: Wed,  7 Apr 2021 10:20:48 +0200
-Message-Id: <8bb8923b4d98b4e8a6336a4c0b548c714e01aef5.1617783062.git.mchehab+huawei@kernel.org>
+ Daniel Lustig <dlustig@nvidia.com>, Daniel Vetter <daniel@ffwll.ch>,
+ David Airlie <airlied@linux.ie>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Federico Vaga <federico.vaga@vaga.pv.it>,
+ Guenter Roeck <linux@roeck-us.net>, Harry Wei <harryxiyou@gmail.com>,
+ Jean Delvare <jdelvare@suse.com>, Joel Fernandes <joel@joelfernandes.org>,
+ Lars-Peter Clausen <lars@metafoo.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
+ Rob Herring <robh+dt@kernel.org>, Sebastian Reichel <sre@kernel.org>,
+ Vitor Soares <vitor.soares@synopsys.com>, devicetree@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, kvm@vger.kernel.org,
+ linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-hwmon@vger.kernel.org, linux-i3c@lists.infradead.org,
+ linux-iio@vger.kernel.org, linux-input@vger.kernel.org,
+ linux-media@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-pm@vger.kernel.org
+Subject: [PATCH v2 00/19] Fix broken documentation file references
+Date: Wed,  7 Apr 2021 10:20:39 +0200
+Message-Id: <cover.1617783062.git.mchehab+huawei@kernel.org>
 X-Mailer: git-send-email 2.30.2
-In-Reply-To: <cover.1617783062.git.mchehab+huawei@kernel.org>
-References: <cover.1617783062.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210407_092106_646235_C0F10199 
-X-CRM114-Status: GOOD (  10.15  )
+X-CRM114-CacheID: sfid-20210407_092106_721930_C1DCA644 
+X-CRM114-Status: GOOD (  12.40  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,76 +100,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Changeset 5e4cdca887fd ("dt-bindings: i3c: Convert the bus description to yaml")
-renamed: Documentation/devicetree/bindings/i3c/i3c.txt
-to: Documentation/devicetree/bindings/i3c/i3c.yaml.
+Hi Jon,
 
-Update the cross-references accordingly.
+As files keep being moved around and DT bindings are 
+converted and renamed to yaml, their doc references get 
+outdated, pointing to an invalid places.
 
-Fixes: 5e4cdca887fd ("dt-bindings: i3c: Convert the bus description to yaml")
-Acked-by: Rob Herring <robh@kernel.org>
-Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
----
- Documentation/devicetree/bindings/i3c/cdns,i3c-master.txt   | 6 +++---
- .../devicetree/bindings/i3c/snps,dw-i3c-master.txt          | 6 +++---
- 2 files changed, 6 insertions(+), 6 deletions(-)
+This series address those. It is based on the top of docs-next tree,
+and most patches here are independent from the other ones.
 
-diff --git a/Documentation/devicetree/bindings/i3c/cdns,i3c-master.txt b/Documentation/devicetree/bindings/i3c/cdns,i3c-master.txt
-index 1cf6182f888c..3716589d6999 100644
---- a/Documentation/devicetree/bindings/i3c/cdns,i3c-master.txt
-+++ b/Documentation/devicetree/bindings/i3c/cdns,i3c-master.txt
-@@ -10,19 +10,19 @@ Required properties:
- - reg: I3C master registers
- 
- Mandatory properties defined by the generic binding (see
--Documentation/devicetree/bindings/i3c/i3c.txt for more details):
-+Documentation/devicetree/bindings/i3c/i3c.yaml for more details):
- 
- - #address-cells: shall be set to 1
- - #size-cells: shall be set to 0
- 
- Optional properties defined by the generic binding (see
--Documentation/devicetree/bindings/i3c/i3c.txt for more details):
-+Documentation/devicetree/bindings/i3c/i3c.yaml for more details):
- 
- - i2c-scl-hz
- - i3c-scl-hz
- 
- I3C device connected on the bus follow the generic description (see
--Documentation/devicetree/bindings/i3c/i3c.txt for more details).
-+Documentation/devicetree/bindings/i3c/i3c.yaml for more details).
- 
- Example:
- 
-diff --git a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.txt b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.txt
-index 5020eb71eb8d..07f35f36085d 100644
---- a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.txt
-+++ b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.txt
-@@ -9,19 +9,19 @@ Required properties:
- - reg: Offset and length of I3C master registers
- 
- Mandatory properties defined by the generic binding (see
--Documentation/devicetree/bindings/i3c/i3c.txt for more details):
-+Documentation/devicetree/bindings/i3c/i3c.yaml for more details):
- 
- - #address-cells: shall be set to 3
- - #size-cells: shall be set to 0
- 
- Optional properties defined by the generic binding (see
--Documentation/devicetree/bindings/i3c/i3c.txt for more details):
-+Documentation/devicetree/bindings/i3c/i3c.yaml for more details):
- 
- - i2c-scl-hz
- - i3c-scl-hz
- 
- I3C device connected on the bus follow the generic description (see
--Documentation/devicetree/bindings/i3c/i3c.txt for more details).
-+Documentation/devicetree/bindings/i3c/i3c.yaml for more details).
- 
- Example:
- 
+v2:
+  - Dropped patches that were already applied, Most of those
+    will be following via Jonathan Cameron's iio tree;
+  - Dropped patches that don't apply on the top of docs next.
+  - Added some new patches fixing other breakages.
+
+PS.:  
+  I placed the dropped patches on a separate branch. I'll track 
+  them and re-submit any missing ones after -rc1.
+
+Mauro Carvalho Chehab (19):
+  MAINTAINERS: update ste,mcde.yaml reference
+  MAINTAINERS: update brcm,bcm-v3d.yaml reference
+  MAINTAINERS: update fsl,dpaa2-console.yaml reference
+  MAINTAINERS: update mtk-sd.yaml reference
+  MAINTAINERS: update snps,dw-axi-dmac.yaml reference
+  dt-bindings: don't use ../dir for doc references
+  dt-bindings: fix references for iio-bindings.txt
+  dt-bindings: iommu: mediatek: update mediatek,iommu.yaml references
+  dt-bindings: i3c: update i3c.yaml references
+  dt-bindings:iio:adc: update motorola,cpcap-adc.yaml reference
+  dt-bindings:iio:adc: update dlg,da9150-gpadc.yaml reference
+  dt-bindings: power: supply: da9150: update da9150-charger.txt
+    reference
+  dt-bindings: power: supply: da9150: update da9150-fg.txt reference
+  docs: update sysfs-platform_profile.rst reference
+  docs: update rcu_dereference.rst reference
+  docs: vcpu-requests.rst: fix reference for atomic ops
+  docs: replace transation references for reporting-bugs.rst
+  docs: translations/zh_CN: fix a typo at 8.Conclusion.rst
+  docs: sched-bwc.rst: fix a typo on a doc name
+
+ .../bindings/display/mediatek/mediatek,disp.txt  |  2 +-
+ .../devicetree/bindings/hwmon/ntc_thermistor.txt |  2 +-
+ .../devicetree/bindings/i3c/cdns,i3c-master.txt  |  6 +++---
+ .../bindings/i3c/snps,dw-i3c-master.txt          |  6 +++---
+ .../devicetree/bindings/iio/adc/ingenic,adc.yaml |  5 +++--
+ .../devicetree/bindings/input/adc-joystick.yaml  |  4 +++-
+ .../input/touchscreen/resistive-adc-touch.txt    |  5 ++++-
+ .../bindings/media/mediatek-jpeg-decoder.txt     |  2 +-
+ .../bindings/media/mediatek-jpeg-encoder.txt     |  2 +-
+ .../devicetree/bindings/media/mediatek-mdp.txt   |  2 +-
+ .../bindings/media/mediatek-vcodec.txt           |  2 +-
+ Documentation/devicetree/bindings/mfd/ab8500.txt |  4 +++-
+ Documentation/devicetree/bindings/mfd/da9150.txt |  8 ++++----
+ .../devicetree/bindings/mfd/motorola-cpcap.txt   | 16 ++++++++--------
+ .../bindings/power/supply/da9150-charger.txt     |  2 +-
+ Documentation/scheduler/sched-bwc.rst            |  2 +-
+ .../translations/it_IT/process/howto.rst         |  2 +-
+ Documentation/translations/ja_JP/howto.rst       |  2 +-
+ Documentation/translations/zh_CN/SecurityBugs    |  2 +-
+ .../zh_CN/admin-guide/reporting-issues.rst       |  4 ++--
+ .../translations/zh_CN/process/8.Conclusion.rst  |  2 +-
+ .../translations/zh_CN/process/howto.rst         |  2 +-
+ Documentation/virt/kvm/vcpu-requests.rst         |  2 +-
+ MAINTAINERS                                      | 10 +++++-----
+ include/linux/platform_profile.h                 |  2 +-
+ tools/memory-model/Documentation/glossary.txt    |  2 +-
+ 26 files changed, 54 insertions(+), 46 deletions(-)
+
 -- 
 2.30.2
+
 
 
 -- 
