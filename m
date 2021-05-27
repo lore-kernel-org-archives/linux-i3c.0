@@ -1,84 +1,60 @@
-Return-Path: <SRS0=hVZS=KU=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=f8rI=KW=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-17.1 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-15.6 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
 	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
-	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
+	USER_AGENT_SANE_2 autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id D1879C2B9F8
-	for <linux-i3c@archiver.kernel.org>; Tue, 25 May 2021 09:37:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 5716CC47089
+	for <linux-i3c@archiver.kernel.org>; Thu, 27 May 2021 10:01:40 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 8A0DA61360
-	for <linux-i3c@archiver.kernel.org>; Tue, 25 May 2021 09:37:17 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 8A0DA61360
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=huawei.com
+	by mail.kernel.org (Postfix) with ESMTPS id 1D0F6610A6
+	for <linux-i3c@archiver.kernel.org>; Thu, 27 May 2021 10:01:40 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 1D0F6610A6
+Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bootlin.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wNdOzhiwOAWQu+MSrjY78wgui5J4VzctS3wpqcY1WWE=; b=RONEUohJNZQa2Z
-	vqZK7AhkG9tgx0jw9/C6+LyFMLH/9eR3BP2WPPp/yjPLW3XT8xgqxBewuNi5FhG2WV2G5o+G4eEKR
-	CdsViTTcLKnw9qM4bjpiV3oE5J5t3qesGVorLf7WzelUqExWRaTT+cVUpcc+G8DXDXfxxvEOITrpG
-	pVzx5ZMH/bJzf4rkCuBLVNOUqdP9j6u0llTPrflq4EBuGycqunoINk5hbMoKxH2YQDUCF8o/foj8g
-	e4wQWgXYl/f6lhjXXiZulKSvvNTUmY2X6s99Ze/OKyfT/RI0JKaADu7OPrEeSnCMt+KTpURWljsCE
-	ww5acWb+XdBHJVgg4DUg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9UGRkxe1HT9PXWKBT8GzOOTFwbSGTU0SZgxPRZFa7m0=; b=mbrolnicfO4WXs
+	iHLr6GVKNXyLh5H9X3fQmJXs/GB533GifyVd/qHm/UoN0+gfRkLym+vphu1Uc5BzZqzdhL0R8sjnN
+	p3XofWnDzIfo0J3eGzMhjL0wvRI8v7CkZj9ORxwEbjXBVzL0FO2ztZgKqBgO4m+vwA4/daAcDsquO
+	xnZsvF0zRuOdSZw+hYFPb4IpFImNgopAEhC7HaNfNzUjCwqS7z2qaaqurqhiT16Y7wVxsJ+gufgQV
+	pDfJ3EgjnF7VxpWorqZJ3szN6ZfrD5rMNBUAiVbVEnnAHlPxsSJAFK6NfV0ddfgJX2JrDHrbgtz85
+	VXc0Gw5IIX3HLdu+X/9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1llTUy-004PyY-Ka; Tue, 25 May 2021 09:37:16 +0000
-Received: from bombadil.infradead.org ([2607:7c80:54:e::133])
- by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lizTQ-000qDq-AB
- for linux-i3c@desiato.infradead.org; Tue, 18 May 2021 13:09:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=Content-Type:
- Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From:
- Sender:Reply-To:Content-ID:Content-Description:In-Reply-To:References;
- bh=H0QekIxKNKlGeD7/ndYNd/O8SXhN9rH5apiBESkQwn4=; b=LluU/VHxQUCJlk9iRAl86JG7D2
- MUL2V4t7LhK8LnPEl7wyLnm7e6wsJH7Eqk0yq4qXQn9Vn4Fn3xpcvmQY1HP4+WXEBFYmmAddNpXK5
- 6pq+b/IiKErNKyQzZDBudQJ1yqYNQQZuRa+gjCpMO7o2ywKKQ2GOKp+K4125pE/I7+0SsKy0S3uPZ
- DTW+S/08TfeCbBLKJnAljdD98U7D1Iahz3KtQ7yBwdk6tCQ0vqYx66fz/AqhHRWnGmcdXt2oUUcTo
- RyQ0QElN9hekgoiwL6Zq44HPlkgM84H+SekUOgzAqMw5suVMTONFC9gdlBBPMHtr1mmqWoYaLaHnX
- 6vVQmEJw==;
-Received: from szxga06-in.huawei.com ([45.249.212.32])
- by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lizTN-00Efke-0O
- for linux-i3c@lists.infradead.org; Tue, 18 May 2021 13:09:22 +0000
-Received: from dggems704-chm.china.huawei.com (unknown [172.30.72.58])
- by szxga06-in.huawei.com (SkyGuard) with ESMTP id 4Fkx9D2CGLzlg38;
- Tue, 18 May 2021 21:06:56 +0800 (CST)
-Received: from dggpeml500017.china.huawei.com (7.185.36.243) by
- dggems704-chm.china.huawei.com (10.3.19.181) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2176.2; Tue, 18 May 2021 21:09:11 +0800
-Received: from huawei.com (10.175.103.91) by dggpeml500017.china.huawei.com
- (7.185.36.243) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2176.2; Tue, 18 May
- 2021 21:09:10 +0800
-From: Yang Yingliang <yangyingliang@huawei.com>
-To: <linux-kernel@vger.kernel.org>, <linux-i3c@lists.infradead.org>
-CC: <alexandre.belloni@bootlin.com>
-Subject: [PATCH -next] i3c: master: svc: drop free_irq of devm_request_irq
- allocated irq
-Date: Tue, 18 May 2021 21:11:27 +0800
-Message-ID: <20210518131127.1308550-1-yangyingliang@huawei.com>
-X-Mailer: git-send-email 2.25.1
+	id 1lmCpf-004aBr-6Y; Thu, 27 May 2021 10:01:39 +0000
+Received: from relay11.mail.gandi.net ([217.70.178.231])
+ by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1lmCpb-004a7M-3F
+ for linux-i3c@lists.infradead.org; Thu, 27 May 2021 10:01:36 +0000
+Received: (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id 75FBD100005;
+ Thu, 27 May 2021 10:01:29 +0000 (UTC)
+Date: Thu, 27 May 2021 12:01:23 +0200
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Yang Yingliang <yangyingliang@huawei.com>
+Cc: <linux-kernel@vger.kernel.org>, <linux-i3c@lists.infradead.org>,
+ <alexandre.belloni@bootlin.com>
+Subject: Re: [PATCH -next] i3c: master: svc: drop free_irq of
+ devm_request_irq allocated irq
+Message-ID: <20210527120123.75f2ea09@xps13>
+In-Reply-To: <20210518131127.1308550-1-yangyingliang@huawei.com>
+References: <20210518131127.1308550-1-yangyingliang@huawei.com>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.7 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-X-Originating-IP: [10.175.103.91]
-X-ClientProxiedBy: dggems703-chm.china.huawei.com (10.3.19.180) To
- dggpeml500017.china.huawei.com (7.185.36.243)
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210518_060921_233064_EB16FF05 
-X-CRM114-Status: UNSURE (   8.06  )
-X-CRM114-Notice: Please train this message.
-X-Mailman-Approved-At: Tue, 25 May 2021 02:37:15 -0700
+X-CRM114-CacheID: sfid-20210527_030135_317415_A92F48B9 
+X-CRM114-Status: GOOD (  14.38  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,39 +66,31 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-irq allocated with devm_request_irq should not be freed using
-free_irq, because doing so causes a dangling pointer, and a
-subsequent double free.
-
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: Yang Yingliang <yangyingliang@huawei.com>
----
- drivers/i3c/master/svc-i3c-master.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-index 1f6ba4221817..761c9c468357 100644
---- a/drivers/i3c/master/svc-i3c-master.c
-+++ b/drivers/i3c/master/svc-i3c-master.c
-@@ -1448,7 +1448,7 @@ static int svc_i3c_master_remove(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
- 
--	free_irq(master->irq, master);
-+	devm_free_irq(&pdev->dev, master->irq, master);
- 	clk_disable_unprepare(master->pclk);
- 	clk_disable_unprepare(master->fclk);
- 	clk_disable_unprepare(master->sclk);
--- 
-2.25.1
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+SGkgWWFuZywKCllhbmcgWWluZ2xpYW5nIDx5YW5neWluZ2xpYW5nQGh1YXdlaS5jb20+IHdyb3Rl
+IG9uIFR1ZSwgMTggTWF5IDIwMjEKMjE6MTE6MjcgKzA4MDA6Cgo+IGlycSBhbGxvY2F0ZWQgd2l0
+aCBkZXZtX3JlcXVlc3RfaXJxIHNob3VsZCBub3QgYmUgZnJlZWQgdXNpbmcKPiBmcmVlX2lycSwg
+YmVjYXVzZSBkb2luZyBzbyBjYXVzZXMgYSBkYW5nbGluZyBwb2ludGVyLCBhbmQgYQo+IHN1YnNl
+cXVlbnQgZG91YmxlIGZyZWUuCj4gCj4gUmVwb3J0ZWQtYnk6IEh1bGsgUm9ib3QgPGh1bGtjaUBo
+dWF3ZWkuY29tPgo+IFNpZ25lZC1vZmYtYnk6IFlhbmcgWWluZ2xpYW5nIDx5YW5neWluZ2xpYW5n
+QGh1YXdlaS5jb20+Cj4gLS0tCj4gIGRyaXZlcnMvaTNjL21hc3Rlci9zdmMtaTNjLW1hc3Rlci5j
+IHwgMiArLQo+ICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkK
+PiAKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9pM2MvbWFzdGVyL3N2Yy1pM2MtbWFzdGVyLmMgYi9k
+cml2ZXJzL2kzYy9tYXN0ZXIvc3ZjLWkzYy1tYXN0ZXIuYwo+IGluZGV4IDFmNmJhNDIyMTgxNy4u
+NzYxYzljNDY4MzU3IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvaTNjL21hc3Rlci9zdmMtaTNjLW1h
+c3Rlci5jCj4gKysrIGIvZHJpdmVycy9pM2MvbWFzdGVyL3N2Yy1pM2MtbWFzdGVyLmMKPiBAQCAt
+MTQ0OCw3ICsxNDQ4LDcgQEAgc3RhdGljIGludCBzdmNfaTNjX21hc3Rlcl9yZW1vdmUoc3RydWN0
+IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiAgCWlmIChyZXQpCj4gIAkJcmV0dXJuIHJldDsKPiAg
+Cj4gLQlmcmVlX2lycShtYXN0ZXItPmlycSwgbWFzdGVyKTsKPiArCWRldm1fZnJlZV9pcnEoJnBk
+ZXYtPmRldiwgbWFzdGVyLT5pcnEsIG1hc3Rlcik7CgpXb3VsZG4ndCByZW1vdmluZyB0aGlzIGNh
+bGwgdGhlIHJpZ2h0IHNvbHV0aW9uPyBJZiBpdCdzIGEgZGV2aWNlCm1hbmFnZWQgcmVzb3VyY2Us
+IGl0IHdvbid0IHByb2JhYmx5IGJlIG5lZWRlZCB0byBmcmVlIGl0IGV4cGxpY2l0bHkgaW4KdGhl
+IHJlbW92ZSBwYXRoLgoKPiAgCWNsa19kaXNhYmxlX3VucHJlcGFyZShtYXN0ZXItPnBjbGspOwo+
+ICAJY2xrX2Rpc2FibGVfdW5wcmVwYXJlKG1hc3Rlci0+ZmNsayk7Cj4gIAljbGtfZGlzYWJsZV91
+bnByZXBhcmUobWFzdGVyLT5zY2xrKTsKClRoYW5rcywKTWlxdcOobAoKLS0gCmxpbnV4LWkzYyBt
+YWlsaW5nIGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
