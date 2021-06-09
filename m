@@ -7,14 +7,14 @@ X-Spam-Status: No, score=-6.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT autolearn=no
 	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 9EE9FC47082
+	by smtp.lore.kernel.org (Postfix) with ESMTP id A1314C4743F
 	for <linux-i3c@archiver.kernel.org>; Wed,  9 Jun 2021 00:03:17 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 662436128E
+	by mail.kernel.org (Postfix) with ESMTPS id 63C1B6108E
 	for <linux-i3c@archiver.kernel.org>; Wed,  9 Jun 2021 00:03:17 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 662436128E
+DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org 63C1B6108E
 Authentication-Results: mail.kernel.org; dmarc=none (p=none dis=none) header.from=bootlin.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -23,37 +23,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RPGwFO26Ah/BvOl76tKnfMcN2PzPXsYWgA40rvrQi/A=; b=O+FobXG8AxubNF
-	+OpO0sDhKBvHKX9Gi5bpAnqCB4kiJJtWiaB0VZ7cNCMQWaLxUAnLs1PTbOnfZTLzlQBkdEmTilIgX
-	mYpm6XfqmgpanRuOGYTdRg5T3PE9dYQyGaa/6zLYceY8/IYiQLOAPJlq51uRW0XvLrH1Flu4pks5X
-	/mHh7v2xc3FPx13yhc1R182xoUkyLdLHu06qZr4zHSQ1LP2ur2d5XigfRPdLKmS2/dh6g/2r02swB
-	BMXYzMFddQn4ACnBxYVjQQJRd7a1FUXZcGJRTdUaHyrHS5YW+o3E8VJLmDjxJXs7WeNcFHtAnhZLQ
-	Qz8zrA9VzqVUoFsndkwA==;
+	List-Owner; bh=gczhQ35/HGCx0IfkIa57KAZk2jlwhmGlgfAKQM3ghuU=; b=p4zCVjBA/4KkWk
+	hDAebfs7h+0Ahqq9evvRQd0W3xXpBd+sNOCwlWr1xiKQ3bwsPW6upZEycSpb/kF/RC3SP2TGi3eoI
+	EVKwrIT7ql8sG7RDRkF8+u+8uHOVVrFcIzBy09mvetChJDrZ1PhUX5XinkCLnfgiE+9GGOJQ8Yub6
+	icM34DLsiv1gribrXADcSIfAlXR9sN4vLR1Y7ZO4rDZoliGWwgtv6m+EZOaks9+dcyCjAOv12HInO
+	lBYCyInVOQ4Tet+9AR6k0TJXO3us4fod3SjAI1oqVZ5BteKiQOqmRmJ1wZKWn3r1WJzRCXR7M+3a1
+	UUgQjdftLACahA4Ep1sg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1lqlgi-00ApjY-Fk; Wed, 09 Jun 2021 00:03:16 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1lqlgi-00ApjR-A9; Wed, 09 Jun 2021 00:03:16 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lqlgg-00Apit-47
+ id 1lqlgf-00Apis-Qe
  for linux-i3c@lists.infradead.org; Wed, 09 Jun 2021 00:03:15 +0000
 Received: (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id 68A3F1BF205;
- Wed,  9 Jun 2021 00:03:12 +0000 (UTC)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id A20F220002;
+ Wed,  9 Jun 2021 00:03:11 +0000 (UTC)
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 To: Yang Yingliang <yangyingliang@huawei.com>, linux-kernel@vger.kernel.org,
  linux-i3c@lists.infradead.org
 Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
  miquel.raynal@bootlin.com
-Subject: Re: [PATCH -next v2] i3c: master: svc: drop free_irq of
- devm_request_irq allocated irq
-Date: Wed,  9 Jun 2021 02:03:10 +0200
-Message-Id: <162319698188.1230434.16937256801626257846.b4-ty@bootlin.com>
+Subject: Re: [PATCH -next] i3c: master: svc: fix doc warning in
+ svc-i3c-master.c
+Date: Wed,  9 Jun 2021 02:03:09 +0200
+Message-Id: <162319698188.1230434.17817139640415078043.b4-ty@bootlin.com>
 X-Mailer: git-send-email 2.31.1
-In-Reply-To: <20210602084935.3977636-1-yangyingliang@huawei.com>
-References: <20210602084935.3977636-1-yangyingliang@huawei.com>
+In-Reply-To: <20210602085544.4101980-1-yangyingliang@huawei.com>
+References: <20210602085544.4101980-1-yangyingliang@huawei.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210608_170314_315445_91A8BBE6 
+X-CRM114-CacheID: sfid-20210608_170314_016701_B6DDF87A 
 X-CRM114-Status: UNSURE (   4.83  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
@@ -72,15 +72,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, 2 Jun 2021 16:49:35 +0800, Yang Yingliang wrote:
-> irq allocated with devm_request_irq() will be freed in devm_irq_release(),
-> using free_irq() in ->remove() will causes a dangling pointer, and a
-> subsequent double free. So remove the free_irq() in svc_i3c_master_remove().
+On Wed, 2 Jun 2021 16:55:44 +0800, Yang Yingliang wrote:
+> Fix the following make W=1 warning:
+> 
+>   drivers/i3c/master/svc-i3c-master.c:207: warning: expecting prototype for struct svc_i3c_i3c_dev_data. Prototype was for struct svc_i3c_i2c_dev_data instead
 
 Applied, thanks!
 
-[1/1] i3c: master: svc: drop free_irq of devm_request_irq allocated irq
-      commit: 59a61e69c4252b4e8ecd15e752b0d2337f0121b7
+[1/1] i3c: master: svc: fix doc warning in svc-i3c-master.c
+      commit: 3e5feb11a82945c88a1518fd2682ca8de66c37d3
 
 Best regards,
 -- 
