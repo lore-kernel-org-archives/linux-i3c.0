@@ -2,56 +2,65 @@ Return-Path: <SRS0=peef=MW=lists.infradead.org=linux-i3c-bounces+linux-i3c=archi
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-11.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,
-	SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_1 autolearn=ham autolearn_force=no
-	version=3.4.0
+X-Spam-Status: No, score=-11.0 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_SANE_1
+	autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 37819C4338F
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 54F12C432BE
 	for <linux-i3c@archiver.kernel.org>; Fri, 30 Jul 2021 19:40:24 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id E4BAD600CD
+	by mail.kernel.org (Postfix) with ESMTPS id C947C60F26
 	for <linux-i3c@archiver.kernel.org>; Fri, 30 Jul 2021 19:40:23 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org E4BAD600CD
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=kernel.org
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org C947C60F26
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=armlinux.org.uk
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2JIAz6T00p+rJaGOD7S7yTa8HKCThnz5trUwc/UpKxg=; b=qa7wyKxERXmD8h9qBVrkPKCFGd
-	RI1ZRUm7fce3tBFLLfl31GCHS42UySRwMUuTVxZSjf2oDNj/vtJU4gVUEm1r27pC11D/4QUYIS2VU
-	vPvMn3obuwOZANgIooyKAtg6qU18UZcFd8NiOMOrLQRIAadacFoLvjhbwLFDm+uR5GERB+iTgbx1f
-	Ld1k95x5xMfru6sAdpGbKgU/KqVUxz9MWbTL+TmNEdHw3Es0Ne5O71wF9prqaqrh4KnztU4Ta2zdY
-	u99SQw2G6TUiHdq6NuK6P84SlFm2WTd5oHOrRmSqBVUz72WnTYHaWWDVftDDt+HkpnKod6XmMNhyG
-	XaKa+Seg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aF/Drt2Xj+/3uhHuK9nsIvuuXs1F8GzsvDXsRZNS5sM=; b=DWg8jArCzmWjxV
+	7dkSkyz/4JdD2Ylg+oOMCrqq4bWYwgZhFcNURlP09UM7uPKvyiHDm1ftIzfDRiYAbGpmz/W2mLoRt
+	K2Y784y9ErvM6Olaqf7c3OXnLnGX6j1dM/gK85bDUcRio/NqzNubuYL3/r0K/eN7ns0JQxBXAqr6B
+	g/iFObsfqzZACx/K2Zaks2VoqNr0Em/QMmuO01BhBk8gBUYcDWwbU2gAA8N8meR/fI2V55VkQzylI
+	V2JhKkuhE3r9YX2e8ciYKThx/appYpywcyybMeSmGlr1pHRcgIkfVK4x7GRP4MWgPZJbXVwQJpZQS
+	1CsvhJ0DX7r8C4L2bTpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m9YMp-00A8Me-EN; Fri, 30 Jul 2021 19:40:23 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1m9YMp-00A8MW-8k; Fri, 30 Jul 2021 19:40:23 +0000
+Received: from pandora.armlinux.org.uk ([2001:4d48:ad52:32c8:5054:ff:fe00:142])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m0iDj-00B1aC-8v; Tue, 06 Jul 2021 10:22:28 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 46675619A2;
- Tue,  6 Jul 2021 10:22:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1625566946;
- bh=CVw0hKyMav3rIRaqV9zNgy7mU4Mw36sPMSvkirDCWbw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Oy+mHp7honxzQyOE+wiK41kmp6JUhn55W2wKSp+Vbq/T3tSaJx6stV0fB6qfwxpuH
- TZMucp2PpXSBWZZ8UuwZi0VErfdCkgx9V9lzMcIIVDbwZ6uoJBpnGqRW6TTGOLGPYG
- UZlgH6BlJ1UcUXPyUgWEQPmEIm5h5aEhRvJ5dQI9JFByS/LCYVZRwDSup+oN35CuLQ
- o6cRp/OvagxKTRqp1mZcWbXtiL+0BErueKp5LxgqFHu+8lCzy/LfC12ocG23wWxgEy
- fwSWUWEZxeGd21itz7GPzm0iIksLONvOP0BBIC/IQaAHE+fWWwMn/rZdpJvXYfuX0L
- B7JCQob2OHz4A==
-Date: Tue, 6 Jul 2021 11:21:53 +0100
-From: Mark Brown <broonie@kernel.org>
+ id 1m0hou-00AwsE-BT; Tue, 06 Jul 2021 09:56:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
+ Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=16iZcd8UM9edxy0w5wY5BQzXODSiQ7QkmW3vxkbk5D0=; b=a3mzSZ9zhXvQ7z72FKA8Fdnpk
+ LWcvpcuWofwRYcFCjviYZJk1oPXrs7M3uQJ+ywY1LHJEnj+NRwjgrzF1fC0F4Her/0HY+w0mU3H3Y
+ 10CG8a1oWmfqpRlDsr7HNnDdAy6f+2/u33SyEsVG77yaTgZQwrs2MZiscSAA5F+AnLuDVz82jgC0J
+ lYqY2gLTqCI0RBtuMN88P4U2IEdFt2eygNpGPrRxU5Qv7iomPheSViajY02rYqXloTzTH8q6Js++w
+ YBqCoH4+kucnPqJUrbotraNf2h/vP6y9RzvkP75RGSjwQMJ9WI7C7sCONSx2yqdBujcUYV4c5FTfO
+ peWj6rYRg==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:45790)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1m0hoi-0006RU-5N; Tue, 06 Jul 2021 10:56:36 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1m0hoO-0001sr-Ht; Tue, 06 Jul 2021 10:56:16 +0100
+Date: Tue, 6 Jul 2021 10:56:16 +0100
+From: "Russell King (Oracle)" <linux@armlinux.org.uk>
 To: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
 Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, kernel@pengutronix.de,
- linux-kernel@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
+ linux-kernel@vger.kernel.org,
  Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
  "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
  Helge Deller <deller@gmx.de>, Geoff Levand <geoff@infradead.org>,
@@ -107,8 +116,9 @@ Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, kernel@pengutronix.de,
  "Martin K. Petersen" <martin.petersen@oracle.com>,
  Thorsten Scherer <t.scherer@eckelmann.de>,
  Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Andy Gross <agross@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Michael Buesch <m@bues.ch>, Sven Van Asbroeck <TheSven73@gmail.com>,
+ Andy Gross <agross@kernel.org>, Mark Brown <broonie@kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, Michael Buesch <m@bues.ch>,
+ Sven Van Asbroeck <TheSven73@gmail.com>,
  Johan Hovold <johan@kernel.org>, Alex Elder <elder@kernel.org>,
  Andreas Noever <andreas.noever@gmail.com>,
  Michael Jamet <michael.jamet@intel.com>,
@@ -158,135 +168,15 @@ Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, kernel@pengutronix.de,
  virtualization@lists.linux-foundation.org, kvm@vger.kernel.org,
  xen-devel@lists.xenproject.org
 Subject: Re: [PATCH] bus: Make remove callback return void
-Message-ID: <20210706102153.GA4529@sirena.org.uk>
-Mail-Followup-To: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?=
- <u.kleine-koenig@pengutronix.de>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- kernel@pengutronix.de, linux-kernel@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- Helge Deller <deller@gmx.de>, Geoff Levand <geoff@infradead.org>,
- Michael Ellerman <mpe@ellerman.id.au>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Paul Mackerras <paulus@samba.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Len Brown <lenb@kernel.org>,
- William Breathitt Gray <vilhelm.gray@gmail.com>,
- =?utf-8?B?UmFmYcWCIE1pxYJlY2tp?= <zajec5@gmail.com>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Jernej Skrabec <jernej.skrabec@gmail.com>,
- Alison Schofield <alison.schofield@intel.com>,
- Vishal Verma <vishal.l.verma@intel.com>,
- Ira Weiny <ira.weiny@intel.com>,
- Ben Widawsky <ben.widawsky@intel.com>,
- Dan Williams <dan.j.williams@intel.com>,
- Dave Jiang <dave.jiang@intel.com>, Vinod Koul <vkoul@kernel.org>,
- Stefan Richter <stefanr@s5r6.in-berlin.de>,
- Sudeep Holla <sudeep.holla@arm.com>,
- Cristian Marussi <cristian.marussi@arm.com>,
- Wu Hao <hao.wu@intel.com>, Tom Rix <trix@redhat.com>,
- Moritz Fischer <mdf@kernel.org>, Jiri Kosina <jikos@kernel.org>,
- Benjamin Tissoires <benjamin.tissoires@redhat.com>,
- Srinivas Pandruvada <srinivas.pandruvada@linux.intel.com>,
- "K. Y. Srinivasan" <kys@microsoft.com>,
- Haiyang Zhang <haiyangz@microsoft.com>,
- Stephen Hemminger <sthemmin@microsoft.com>,
- Wei Liu <wei.liu@kernel.org>, Dexuan Cui <decui@microsoft.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Wolfram Sang <wsa@kernel.org>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Samuel Iglesias Gonsalvez <siglesias@igalia.com>,
- Jens Taprogge <jens.taprogge@taprogge.org>,
- Johannes Thumshirn <morbidrsa@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Maxim Levitsky <maximlevitsky@gmail.com>,
- Alex Dubov <oakad@yahoo.com>, Ulf Hansson <ulf.hansson@linaro.org>,
- Lee Jones <lee.jones@linaro.org>,
- Tomas Winkler <tomas.winkler@intel.com>,
- Arnd Bergmann <arnd@arndb.de>, Jakub Kicinski <kuba@kernel.org>,
- "David S. Miller" <davem@davemloft.net>,
- Jon Mason <jdmason@kudzu.us>, Allen Hubbe <allenbh@gmail.com>,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Krzysztof =?utf-8?Q?Wilczy=C5=84ski?= <kw@linux.com>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Dominik Brodowski <linux@dominikbrodowski.net>,
- Maximilian Luz <luzmaximilian@gmail.com>,
- Hans de Goede <hdegoede@redhat.com>,
- Mark Gross <mgross@linux.intel.com>,
- Matt Porter <mporter@kernel.crashing.org>,
- Alexandre Bounine <alex.bou9@gmail.com>,
- Ohad Ben-Cohen <ohad@wizery.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- "Martin K. Petersen" <martin.petersen@oracle.com>,
- Thorsten Scherer <t.scherer@eckelmann.de>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Andy Gross <agross@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Michael Buesch <m@bues.ch>, Sven Van Asbroeck <TheSven73@gmail.com>,
- Johan Hovold <johan@kernel.org>, Alex Elder <elder@kernel.org>,
- Andreas Noever <andreas.noever@gmail.com>,
- Michael Jamet <michael.jamet@intel.com>,
- Mika Westerberg <mika.westerberg@linux.intel.com>,
- Yehezkel Bernat <YehezkelShB@gmail.com>,
- Rob Herring <robh@kernel.org>, Jiri Slaby <jirislaby@kernel.org>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- "Michael S. Tsirkin" <mst@redhat.com>,
- Jason Wang <jasowang@redhat.com>,
- Kirti Wankhede <kwankhede@nvidia.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- Cornelia Huck <cohuck@redhat.com>,
- Martyn Welch <martyn@welchs.me.uk>,
- Manohar Vanga <manohar.vanga@gmail.com>,
- Boris Ostrovsky <boris.ostrovsky@oracle.com>,
- Juergen Gross <jgross@suse.com>,
- Stefano Stabellini <sstabellini@kernel.org>,
- Johannes Berg <johannes@sipsolutions.net>,
- Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
- Marc Zyngier <maz@kernel.org>,
- Tyrel Datwyler <tyreld@linux.ibm.com>,
- Vladimir Zapolskiy <vz@mleia.com>,
- Samuel Holland <samuel@sholland.org>,
- Qinglang Miao <miaoqinglang@huawei.com>,
- Alexey Kardashevskiy <aik@ozlabs.ru>,
- Kai-Heng Feng <kai.heng.feng@canonical.com>,
- Joey Pabalan <jpabalanb@gmail.com>,
- Pali =?iso-8859-1?Q?Roh=E1r?= <pali@kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>,
- Frank Li <lznuaa@gmail.com>,
- Mike Christie <michael.christie@oracle.com>,
- Bodo Stroesser <bostroesser@gmail.com>,
- Hannes Reinecke <hare@suse.de>, David Woodhouse <dwmw@amazon.co.uk>,
- SeongJae Park <sjpark@amazon.de>, Julien Grall <jgrall@amazon.com>,
- linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
- linux-parisc@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
- linux-acpi@vger.kernel.org, linux-wireless@vger.kernel.org,
- linux-sunxi@lists.linux.dev, linux-cxl@vger.kernel.org,
- nvdimm@lists.linux.dev, dmaengine@vger.kernel.org,
- linux1394-devel@lists.sourceforge.net, linux-fpga@vger.kernel.org,
- linux-input@vger.kernel.org, linux-hyperv@vger.kernel.org,
- linux-i2c@vger.kernel.org, linux-i3c@lists.infradead.org,
- industrypack-devel@lists.sourceforge.net,
- linux-media@vger.kernel.org, linux-mmc@vger.kernel.org,
- netdev@vger.kernel.org, linux-ntb@googlegroups.com,
- linux-pci@vger.kernel.org, platform-driver-x86@vger.kernel.org,
- linux-remoteproc@vger.kernel.org, linux-scsi@vger.kernel.org,
- alsa-devel@alsa-project.org, linux-arm-msm@vger.kernel.org,
- linux-spi@vger.kernel.org, linux-staging@lists.linux.dev,
- greybus-dev@lists.linaro.org, target-devel@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-serial@vger.kernel.org,
- virtualization@lists.linux-foundation.org, kvm@vger.kernel.org,
- xen-devel@lists.xenproject.org
+Message-ID: <20210706095616.GQ22278@shell.armlinux.org.uk>
 References: <20210706095037.1425211-1-u.kleine-koenig@pengutronix.de>
 MIME-Version: 1.0
+Content-Disposition: inline
 In-Reply-To: <20210706095037.1425211-1-u.kleine-koenig@pengutronix.de>
-X-Cookie: Some restrictions may apply.
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210706_032227_392289_6ED59E06 
-X-CRM114-Status: GOOD (  14.61  )
+X-CRM114-CacheID: sfid-20210706_025648_656379_44268A6C 
+X-CRM114-Status: GOOD (  19.06  )
 X-Mailman-Approved-At: Fri, 30 Jul 2021 12:40:21 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -299,56 +189,41 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5409830908295066294=="
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
-
-
---===============5409830908295066294==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="h31gzZEtNLTqOjlF"
-Content-Disposition: inline
-
-
---h31gzZEtNLTqOjlF
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
 
 On Tue, Jul 06, 2021 at 11:50:37AM +0200, Uwe Kleine-K=F6nig wrote:
 > The driver core ignores the return value of this callback because there
 > is only little it can do when a device disappears.
+> =
 
-Acked-by: Mark Brown <broonie@kernel.org>
+> This is the final bit of a long lasting cleanup quest where several
+> buses were converted to also return void from their remove callback.
+> Additionally some resource leaks were fixed that were caused by drivers
+> returning an error code in the expectation that the driver won't go
+> away.
+> =
 
---h31gzZEtNLTqOjlF
-Content-Type: application/pgp-signature; name="signature.asc"
+> With struct bus_type::remove returning void it's prevented that newly
+> implemented buses return an ignored error code and so don't anticipate
+> wrong expectations for driver authors.
+> =
 
------BEGIN PGP SIGNATURE-----
+> Signed-off-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAmDkLsEACgkQJNaLcl1U
-h9DTPwf+KbK6BlKGymyR/lS6jHNFzqdjZJtNgnrGCAQPShECrFWEoT+hh+wbGftz
-+dyPIG3olrPCj20bdTdirf0mN6fK5b1ws7Y51Pl5kFKWSF9anPqHvugsBWlktrLI
-ZQGpHaOaDBzTO9z+a88du417htx2DY8Y84yObqoGeFEMODdEwf+d7aWTAsAumvEd
-W3tqktVLL+RKuqiM2ppKuMZRdRGwtv8d+Mo44RUmPtQGuj5slIJU22Ew0Nrn/eyI
-xRq4Q2GeqkJQJWsXmJ+C6hMJvgdnisNu+4eaDrkhaY/V36HQFRMl+PUAdt0W1ayI
-ftXC4GrcHhpLlLwnb8FUQzYy+hMN1g==
-=PinY
------END PGP SIGNATURE-----
+Yay! For ARM, Amba and related parts:
 
---h31gzZEtNLTqOjlF--
+Acked-by: Russell King (Oracle) <rmk+kernel@armlinux.org.uk>
 
+-- =
 
---===============5409830908295066294==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTP is here! 40Mbps down 10Mbps up. Decent connectivity at last!
 
--- 
+-- =
+
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
-
---===============5409830908295066294==--
-
