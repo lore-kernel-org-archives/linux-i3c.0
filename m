@@ -1,175 +1,137 @@
-Return-Path: <SRS0=peef=MW=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=LFUb=NA=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-14.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,
-	INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED
-	autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-12.5 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_PATCH,
+	MAILING_LIST_MULTI,MSGID_FROM_MTA_HEADER,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
+	USER_AGENT_GIT autolearn=ham autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 72EC1C3F6A3
-	for <linux-i3c@archiver.kernel.org>; Fri, 30 Jul 2021 19:40:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id 7BC43C4338F
+	for <linux-i3c@archiver.kernel.org>; Mon,  9 Aug 2021 06:36:17 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id 3219A60F01
-	for <linux-i3c@archiver.kernel.org>; Fri, 30 Jul 2021 19:40:31 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 3219A60F01
-Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=redhat.com
+	by mail.kernel.org (Postfix) with ESMTPS id 23CB160E52
+	for <linux-i3c@archiver.kernel.org>; Mon,  9 Aug 2021 06:36:17 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 23CB160E52
+Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=nxp.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+cikWyaMmXReAJcHPVxIkZvjlfKeLe3zY99LNJG9QyA=; b=jeLcJSw/uVgJnk
-	WySZeOF0fIMMxebFneoaT2YBnp6ijjv5Lc4EaVKX/ClGzyUim63xkSk6a26S34dcXwkGHlDxR3y4W
-	OSqEMMrrWodSYDX6fXdiTOAI9eAwpUHaxtiaIUabU1N8LxNMIZnFgxiKrIA6DZM0NkHXbEC7hBDjp
-	ST+/+1b9oF5fYhkYv6FQIgXumG6k6w641cLED+wH32WvD6pBp+7T85EsFJNIojJ3hejq3fh8VXda5
-	2MZovPj6dXjGBSufWOMm84XWVHMyXQ4V9fgNjheQI4rRIrcNwerbxmGmFNuvYu/y4VuU5GyXWqOvL
-	EyU4N3Zt4DLiZmgRxo0A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=noDgSYLunOF8ykgnBFmnvAnXfwJqrsw37mJ1/JZCQ1U=; b=pfznLrdbpVWnmF
+	/3y2bIzEwDaYRDfNub/jcq/Dkv3bM/NIdO2o8IfZdAIpQjI72LDBUxKgxVoaGUMNg6nmroBZxg1nk
+	6t2+W9F3543mY9n25clZ38dvfnnwq2NSb/YXf/MNmu+hqYg+lluuPfu4RN07LidjnDUzHjilplgwc
+	PquLNpD3+vu3AnPhqwwGoDbGu+Gzvj6ycLfpsI/aC/LPhrXYSekaTznC/YKS4GDB9cHYdaLXn/1of
+	oURWIIv1icE4DfEZuVEV+rakQ4dIbzjDRroPTqhdmyX8c7jT9fDCZwiyBmo4ATDTz3jDn6dnlnEkh
+	dXxCIrHufs9ADSdJOXAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1m9YMw-00A8Tx-Al; Fri, 30 Jul 2021 19:40:30 +0000
-Received: from us-smtp-delivery-124.mimecast.com ([216.205.24.124])
+	id 1mCytU-00HGBw-Cc; Mon, 09 Aug 2021 06:36:16 +0000
+Received: from mail-eopbgr40056.outbound.protection.outlook.com ([40.107.4.56]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m0ndn-00CDWU-4d
- for linux-i3c@lists.infradead.org; Tue, 06 Jul 2021 16:09:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1625587781;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=5risqcJR3SRZugYRxSjL/FvvM4+olXr1vxcAoe7tQ/0=;
- b=a2Fp2s0RNmEfhOiWtVlAxnwporE8Iec5f9NIyahKVrzYHnh6fhPpnX4ZwINyUJw0wEh3PI
- 5NQ0wg4SC/rIaHvouVrje36CnZ5FjJBDVvQ98lGR6TwWYCbTsW/WwXWM9zeyY5KC1M+kNc
- U2iNFU1hUfBVabsmDJ+GBo7xSi8o23Q=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-211-a5wCyw6hOsih0Wr2yFDVpA-1; Tue, 06 Jul 2021 12:09:40 -0400
-X-MC-Unique: a5wCyw6hOsih0Wr2yFDVpA-1
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 973D9804140;
- Tue,  6 Jul 2021 16:09:34 +0000 (UTC)
-Received: from localhost (ovpn-113-13.ams2.redhat.com [10.36.113.13])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id A281B16D28;
- Tue,  6 Jul 2021 16:09:18 +0000 (UTC)
-From: Cornelia Huck <cohuck@redhat.com>
-To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>, Greg
- Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: kernel@pengutronix.de, linux-kernel@vger.kernel.org, Russell King
- <linux@armlinux.org.uk>, Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>, Helge
- Deller <deller@gmx.de>, Geoff Levand <geoff@infradead.org>, Michael
- Ellerman <mpe@ellerman.id.au>, Benjamin Herrenschmidt
- <benh@kernel.crashing.org>, Paul Mackerras <paulus@samba.org>, "Rafael J.
- Wysocki" <rjw@rjwysocki.net>, Len Brown <lenb@kernel.org>, William
- Breathitt Gray <vilhelm.gray@gmail.com>, =?utf-8?Q?Rafa=C5=82_Mi=C5=82eck?=
- =?utf-8?Q?i?= <zajec5@gmail.com>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>, Jernej
- Skrabec <jernej.skrabec@gmail.com>, Alison Schofield
- <alison.schofield@intel.com>, Vishal Verma <vishal.l.verma@intel.com>, Ira
- Weiny <ira.weiny@intel.com>, Ben Widawsky <ben.widawsky@intel.com>, Dan
- Williams <dan.j.williams@intel.com>, Dave Jiang <dave.jiang@intel.com>,
- Vinod Koul <vkoul@kernel.org>, Stefan Richter <stefanr@s5r6.in-berlin.de>,
- Sudeep Holla <sudeep.holla@arm.com>, Cristian Marussi
- <cristian.marussi@arm.com>, Wu Hao <hao.wu@intel.com>, Tom Rix
- <trix@redhat.com>, Moritz Fischer <mdf@kernel.org>, Jiri Kosina
- <jikos@kernel.org>, Benjamin Tissoires <benjamin.tissoires@redhat.com>,
- Srinivas Pandruvada <srinivas.pandruvada@linux.intel.com>, "K. Y.
- Srinivasan" <kys@microsoft.com>, Haiyang Zhang <haiyangz@microsoft.com>,
- Stephen Hemminger <sthemmin@microsoft.com>, Wei Liu <wei.liu@kernel.org>,
- Dexuan Cui <decui@microsoft.com>, Alexander Shishkin
- <alexander.shishkin@linux.intel.com>, Wolfram Sang <wsa@kernel.org>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, Dmitry Torokhov
- <dmitry.torokhov@gmail.com>, Samuel Iglesias Gonsalvez
- <siglesias@igalia.com>, Jens Taprogge <jens.taprogge@taprogge.org>,
- Johannes Thumshirn <morbidrsa@gmail.com>, Mauro Carvalho Chehab
- <mchehab@kernel.org>, Maxim Levitsky <maximlevitsky@gmail.com>, Alex Dubov
- <oakad@yahoo.com>, Ulf Hansson <ulf.hansson@linaro.org>, Lee Jones
- <lee.jones@linaro.org>, Tomas Winkler <tomas.winkler@intel.com>, Arnd
- Bergmann <arnd@arndb.de>, Jakub Kicinski <kuba@kernel.org>, "David S.
- Miller" <davem@davemloft.net>, Jon Mason <jdmason@kudzu.us>, Allen Hubbe
- <allenbh@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>, Lorenzo
- Pieralisi <lorenzo.pieralisi@arm.com>, Krzysztof =?utf-8?Q?Wilczy=C5=84sk?=
- =?utf-8?Q?i?=
- <kw@linux.com>, Bjorn Helgaas <bhelgaas@google.com>, Dominik Brodowski
- <linux@dominikbrodowski.net>, Maximilian Luz <luzmaximilian@gmail.com>,
- Hans de Goede <hdegoede@redhat.com>, Mark Gross <mgross@linux.intel.com>,
- Matt Porter <mporter@kernel.crashing.org>, Alexandre Bounine
- <alex.bou9@gmail.com>, Ohad Ben-Cohen <ohad@wizery.com>, Bjorn Andersson
- <bjorn.andersson@linaro.org>, Mathieu Poirier
- <mathieu.poirier@linaro.org>, "Martin K. Petersen"
- <martin.petersen@oracle.com>, Thorsten Scherer <t.scherer@eckelmann.de>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>, Andy Gross
- <agross@kernel.org>, Mark Brown <broonie@kernel.org>, Stephen Boyd
- <sboyd@kernel.org>, Michael Buesch <m@bues.ch>, Sven Van Asbroeck
- <TheSven73@gmail.com>, Johan Hovold <johan@kernel.org>, Alex Elder
- <elder@kernel.org>, Andreas Noever <andreas.noever@gmail.com>, Michael
- Jamet <michael.jamet@intel.com>, Mika Westerberg
- <mika.westerberg@linux.intel.com>, Yehezkel Bernat
- <YehezkelShB@gmail.com>, Rob Herring <robh@kernel.org>, Jiri Slaby
- <jirislaby@kernel.org>, Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- "Michael S. Tsirkin" <mst@redhat.com>, Jason Wang <jasowang@redhat.com>,
- Kirti Wankhede <kwankhede@nvidia.com>, Alex Williamson
- <alex.williamson@redhat.com>, Martyn Welch <martyn@welchs.me.uk>, Manohar
- Vanga <manohar.vanga@gmail.com>, Boris Ostrovsky
- <boris.ostrovsky@oracle.com>, Juergen Gross <jgross@suse.com>, Stefano
- Stabellini <sstabellini@kernel.org>, Johannes Berg
- <johannes@sipsolutions.net>, Jaroslav Kysela <perex@perex.cz>, Takashi
- Iwai <tiwai@suse.com>, Marc Zyngier <maz@kernel.org>, Tyrel Datwyler
- <tyreld@linux.ibm.com>, Vladimir Zapolskiy <vz@mleia.com>, Samuel Holland
- <samuel@sholland.org>, Qinglang Miao <miaoqinglang@huawei.com>, Alexey
- Kardashevskiy <aik@ozlabs.ru>, Kai-Heng Feng
- <kai.heng.feng@canonical.com>, Joey Pabalan <jpabalanb@gmail.com>, Pali
- =?utf-8?Q?Roh=C3=A1r?= <pali@kernel.org>, Adrian Hunter
- <adrian.hunter@intel.com>, Frank Li
- <lznuaa@gmail.com>, Mike Christie <michael.christie@oracle.com>, Bodo
- Stroesser <bostroesser@gmail.com>, Hannes Reinecke <hare@suse.de>, David
- Woodhouse <dwmw@amazon.co.uk>, SeongJae Park <sjpark@amazon.de>, Julien
- Grall <jgrall@amazon.com>, linux-arm-kernel@lists.infradead.org,
- linux-mips@vger.kernel.org, linux-parisc@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, linux-acpi@vger.kernel.org,
- linux-wireless@vger.kernel.org, linux-sunxi@lists.linux.dev,
- linux-cxl@vger.kernel.org, nvdimm@lists.linux.dev,
- dmaengine@vger.kernel.org, linux1394-devel@lists.sourceforge.net,
- linux-fpga@vger.kernel.org, linux-input@vger.kernel.org,
- linux-hyperv@vger.kernel.org, linux-i2c@vger.kernel.org,
- linux-i3c@lists.infradead.org, industrypack-devel@lists.sourceforge.net,
- linux-media@vger.kernel.org, linux-mmc@vger.kernel.org,
- netdev@vger.kernel.org, linux-ntb@googlegroups.com,
- linux-pci@vger.kernel.org, platform-driver-x86@vger.kernel.org,
- linux-remoteproc@vger.kernel.org, linux-scsi@vger.kernel.org,
- alsa-devel@alsa-project.org, linux-arm-msm@vger.kernel.org,
- linux-spi@vger.kernel.org, linux-staging@lists.linux.dev,
- greybus-dev@lists.linaro.org, target-devel@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-serial@vger.kernel.org,
- virtualization@lists.linux-foundation.org, kvm@vger.kernel.org,
- xen-devel@lists.xenproject.org, Russell King <rmk+kernel@armlinux.org.uk>,
- Johannes Thumshirn <jth@kernel.org>
-Subject: Re: [PATCH v2 4/4] bus: Make remove callback return void
-In-Reply-To: <20210706154803.1631813-5-u.kleine-koenig@pengutronix.de>
-Organization: Red Hat GmbH
-References: <20210706154803.1631813-1-u.kleine-koenig@pengutronix.de>
- <20210706154803.1631813-5-u.kleine-koenig@pengutronix.de>
-User-Agent: Notmuch/0.32.1 (https://notmuchmail.org)
-Date: Tue, 06 Jul 2021 18:09:17 +0200
-Message-ID: <87r1gbfmqa.fsf@redhat.com>
+ id 1mCytR-00HGA9-O8
+ for linux-i3c@lists.infradead.org; Mon, 09 Aug 2021 06:36:15 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=hEiUMFYIygblOAQjYTWJBMgy81T4Lw07TcsvcR7/sVJhTwtCYyw9M2hoUk2fg3dQcn2/7Q/8lDQn0hlVhoSmH+SuMuYB1en8R5dyT3F25sibEfigQEED3r5hycfab0nQ93PIgvGHQrIWMzT/B7Gam2DqyTPqJIq6U+6KC46PtEytBeOtMgYtCbeuStF3qeTYsxjp3gsogSnjKCgTlUdor5rCbpJDvA69ncrNl3yILRaV7xpYcfvySKbhfa0DAw6cDZSPpCeK2epOaMM9wprW2o5nOhBC/kylOU2QeE9fcOXhQ1SiMOCCtUuyl1rjOG+VAYyog6gdyh1sxr32Sgqpsw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=8elKW8dWaTEX6eeUDyA2Ytt1gEz9TzElvhdV1YtjlXo=;
+ b=VbbWf/XDkadYA1TJz3K5yW+a6CncAch3hBERN/e9T0dUg8p7ntLHZLfjVkvyPz9V5S3Fy55dlP0Ql7ikq5kMN5G+ESLxIwPklJvj5bvoW6/qLFpf6G5LsN+x1slHNeFzijEc7zsLmlxFZsPTWM6zjyKsEmH8Wp0iFdCKxP3Leqtamw3klWlHrHOpVRcA+Ab6ychbVhSVTMSrZXikoMgQf76NISZgtuhLwd12mvw83DR8FDIpruJLzZWXm8RMJTE93z6qfdIE6jUBZOPSdDLKSdZR6bi0kp152lvwHg3p/d6BjkTkzh11EcxPO/VF+/WEoQKfasJ+Drl7lFxSSu5gSg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=8elKW8dWaTEX6eeUDyA2Ytt1gEz9TzElvhdV1YtjlXo=;
+ b=sHb01EBWLIEHc8WZ/mKxh0a2MJpSNp8NeF9YAq1H3SFph8J943sLVc+cs5WIls+usgWGGtGsnFVBCd/HN913VfO3sKrfRcdJu192jfGsI4gTaBk70RM7sUh7iVcGhrlzSNKAu4wAwCqtac+Ppb52KN3xWExKNK1jTG2PXqUJQ84=
+Authentication-Results: bootlin.com; dkim=none (message not signed)
+ header.d=none;bootlin.com; dmarc=none action=none header.from=nxp.com;
+Received: from AM6PR04MB5623.eurprd04.prod.outlook.com (2603:10a6:20b:a9::13)
+ by AS8PR04MB7653.eurprd04.prod.outlook.com (2603:10a6:20b:299::5)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4394.20; Mon, 9 Aug
+ 2021 06:36:06 +0000
+Received: from AM6PR04MB5623.eurprd04.prod.outlook.com
+ ([fe80::74f8:10b:8efd:b265]) by AM6PR04MB5623.eurprd04.prod.outlook.com
+ ([fe80::74f8:10b:8efd:b265%5]) with mapi id 15.20.4394.022; Mon, 9 Aug 2021
+ 06:36:06 +0000
+From: Clark Wang <xiaoning.wang@nxp.com>
+To: miquel.raynal@bootlin.com, conor.culhane@silvaco.com,
+ alexandre.belloni@bootlin.com
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-imx@nxp.com
+Subject: [PATCH V4 0/8] i3c: master: svc: some bug fixes and add runtime pm
+ support
+Date: Mon,  9 Aug 2021 14:36:37 +0800
+Message-Id: <20210809063645.2289988-1-xiaoning.wang@nxp.com>
+X-Mailer: git-send-email 2.25.1
+X-ClientProxiedBy: SG2PR02CA0103.apcprd02.prod.outlook.com
+ (2603:1096:4:92::19) To AM6PR04MB5623.eurprd04.prod.outlook.com
+ (2603:10a6:20b:a9::13)
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
-Authentication-Results: relay.mimecast.com;
- auth=pass smtp.auth=CUSA124A263 smtp.mailfrom=cohuck@redhat.com
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from localhost.localdomain (119.31.174.71) by
+ SG2PR02CA0103.apcprd02.prod.outlook.com (2603:1096:4:92::19) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.4394.16 via Frontend Transport; Mon, 9 Aug 2021 06:36:03 +0000
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 3639a046-97f3-43ed-e7e7-08d95afff724
+X-MS-TrafficTypeDiagnostic: AS8PR04MB7653:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <AS8PR04MB765393749F966D60C37DA5A6F3F69@AS8PR04MB7653.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:4941;
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 8YY7pX+1JaWZefUegxMYeRL663aYp7ekG5jESanfadsb/WVmvZNbjONzp204IaO/+o3jPYMuIwUL8+UgaLWX37Y6HIISRqEAUUhJVx5aEjekA/H6huIXmgj/NAU0UrLRw3bKwqmc8iiDwvIKdJ2InsrvbLrU1WhFynUNQZou2e0rvfs7mGfffv/csh7IYOtuIXBdjp2HXnJrsQrpHbyFoi3SxvFXEUpoHGFC7+Z2oIbJvpiVzwuhYvGjntG+zJ7n/TE+0rx0hA21poNfslzVi+puTjsLibnc4m4ss2nXs76UXLNLt0wZI4PBZh5yhHWPQOUDdHxeo3Iz3OA/qQ9eLWAugGL+CIAzWCXgpMwiYQiGXCxs6IPHWRgu5LJXr+rPllId7t5kNbJNpFkx1Ut3b/jKvL2oS8okeKErXtIIx1ANSgq7egMPlIGcWtMFK2YCYiuRGT2ADJJ0GmSNq2zTzEd8/vxKB7pYnifRVVOQ1VPbTxOVJWrbqzazXyHbhfVIhCshe82gALLKRllAa69swZmkYghB4DiScDQ5g9FhpnSHs/8MkNJUh3OSqfcm2CPH/ex+7echLJmJofxgNIVVqcKxF5Yilxux4D+Ten7PgWJ6bWLg1V45Do5iCuvaBVimfiUHECP2zrppbyRF39Y1ewK9CBSVNRv/10ZfrbM/gtxXUXInIdr1UaqUbtb6/bEOZfCltSv74UB7OGb0PdU25g==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM6PR04MB5623.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(4636009)(376002)(366004)(39860400002)(396003)(136003)(346002)(38100700002)(38350700002)(478600001)(86362001)(36756003)(316002)(186003)(2906002)(8676002)(83380400001)(2616005)(956004)(6506007)(4326008)(26005)(52116002)(8936002)(6512007)(1076003)(5660300002)(6486002)(66476007)(66556008)(66946007)(6666004);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?kSgK12bh5zlDLSmKIAsZr1zQtdapxjsJqWWCSpZxaqW04JcRN+jhI217JhcC?=
+ =?us-ascii?Q?NNq9RXr2uuwtT4xGOar4TVt7QtJ9HPg8meeDNoRe4vWQQ5gm1Uy35cWjC1iF?=
+ =?us-ascii?Q?g+eS2VUoPLGgfYnoXzPVq4BajkXi0d49EsYR6IHPfA9DeZHaWRbIiOJ42a0w?=
+ =?us-ascii?Q?YfFicptza8hKtbs8+22fb2IFT8tbtGFrxzoq+0e0HUbMZKaLmoPljqPEwr71?=
+ =?us-ascii?Q?9IMMF5GUpB17zFu7plqTDbsJt+ZLz0iuGK30CCMhIqBY7HATUbj5mYZqN56M?=
+ =?us-ascii?Q?rCE02oC+eQMdq2/Z+yaI8U7oDew1D3FwnPOQwecpM0MjzZQb1eK8K/eOnvGj?=
+ =?us-ascii?Q?uPTVd3CyyzoMlc8TWBpIOIGZrS8JwSPwG+vYIHc4sbbZdQb8/zfY1rnRAYLH?=
+ =?us-ascii?Q?Gtg7qTLK0wX6TmbavCjBt+zpuQ+jFIE6NWEREfAgJD3CM4OODEUDQSs2uRsZ?=
+ =?us-ascii?Q?MKdknMqMBc5w6BISxjKeHei7qUBi9X2XU7oQx61rj2lI+bJAk0+dZpZf2BOu?=
+ =?us-ascii?Q?PW+CbYcCcnaSTKAhYUGro9VWnStwonwyu/ZoSegrZANFnuhnlfBLs9/YQQ+u?=
+ =?us-ascii?Q?ztgPUnanKrioIWABmSEn1FJ3nCw1azpGmtUXaWPO38VCoH5V/jSOX+Gke3OK?=
+ =?us-ascii?Q?TPAdfGhDUPljwj8Bqq96rs+2lJzNdNgdYDEDikQ+mgh2TtEYHKbMwrVsn87U?=
+ =?us-ascii?Q?VzE98T52C5IrMLKyGv8WlJfJ/I+iMMah9ndaaVVLKTRDAzSxf6HKG1HRnFFV?=
+ =?us-ascii?Q?xvsmZMJmj+8WsJ5Ytx8jWamAet20Y20271kK7jtFEwT0NZwuZOEly2Ltoq4B?=
+ =?us-ascii?Q?rGSR2s2cEvTgqvNWK3ci3led9WzCNbBGApddOkUvdByoaSnqzW/ST00NI24B?=
+ =?us-ascii?Q?5mTDO8Q0kHde+xG0FS7y04dDVSypV9cJ5m0E5WRKEWjY2AnOvo/mtxMcSnSR?=
+ =?us-ascii?Q?bJQry4akpDUF+yt3rELRNGZExeL3nqwP9zHMilMtgoXuONLbdNkBIs5JLuV7?=
+ =?us-ascii?Q?R5w7k53ZQcz4dU/DpPbvL+wJOOm2bUaHj1vKIgvno5/eIA85lDMiE1n/RZjT?=
+ =?us-ascii?Q?NGXjrGuvbodYn9g2rDJCQbnYfuivmIu76gQxBkb6Rsk7QiVmKDj0il8qoszn?=
+ =?us-ascii?Q?3U0fF+pTOS7DaFpKy/whynArdPiHgT7dav3w9mLa3CS2tfMy3jn4qrZwkC/R?=
+ =?us-ascii?Q?k86YttVfzrlGH2ot4osR1+8+Y4W4hCtFxB935KsItIx4OAEMsisaiNmON8t+?=
+ =?us-ascii?Q?6wi5wW6FF2Q3178/sv+0QYrQ0GM8PoRFwm916vu1nULbtPjUwH7DjpshXwro?=
+ =?us-ascii?Q?mKigWV/dgN7iyTJBww60XBSy?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3639a046-97f3-43ed-e7e7-08d95afff724
+X-MS-Exchange-CrossTenant-AuthSource: AM6PR04MB5623.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Aug 2021 06:36:06.1755 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: a5KICqyMJU3ZeY2CGPaJ3gS8AijBRQm4yBVFcbiYFhKCqnvIaJkfoqLe2fSnpNHxtLrOPTbzCvBDIQunsPgO8w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB7653
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210706_090943_351443_A4F9E6B9 
-X-CRM114-Status: GOOD (  19.77  )
-X-Mailman-Approved-At: Fri, 30 Jul 2021 12:40:21 -0700
+X-CRM114-CacheID: sfid-20210808_233613_833165_3C22B2B1 
+X-CRM114-Status: GOOD (  11.00  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -181,52 +143,54 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBKdWwgMDYgMjAyMSwgVXdlIEtsZWluZS1Lw7ZuaWcgPHUua2xlaW5lLWtvZW5pZ0Bw
-ZW5ndXRyb25peC5kZT4gd3JvdGU6Cgo+IFRoZSBkcml2ZXIgY29yZSBpZ25vcmVzIHRoZSByZXR1
-cm4gdmFsdWUgb2YgdGhpcyBjYWxsYmFjayBiZWNhdXNlIHRoZXJlCj4gaXMgb25seSBsaXR0bGUg
-aXQgY2FuIGRvIHdoZW4gYSBkZXZpY2UgZGlzYXBwZWFycy4KPgo+IFRoaXMgaXMgdGhlIGZpbmFs
-IGJpdCBvZiBhIGxvbmcgbGFzdGluZyBjbGVhbnVwIHF1ZXN0IHdoZXJlIHNldmVyYWwKPiBidXNl
-cyB3ZXJlIGNvbnZlcnRlZCB0byBhbHNvIHJldHVybiB2b2lkIGZyb20gdGhlaXIgcmVtb3ZlIGNh
-bGxiYWNrLgo+IEFkZGl0aW9uYWxseSBzb21lIHJlc291cmNlIGxlYWtzIHdlcmUgZml4ZWQgdGhh
-dCB3ZXJlIGNhdXNlZCBieSBkcml2ZXJzCj4gcmV0dXJuaW5nIGFuIGVycm9yIGNvZGUgaW4gdGhl
-IGV4cGVjdGF0aW9uIHRoYXQgdGhlIGRyaXZlciB3b24ndCBnbwo+IGF3YXkuCj4KPiBXaXRoIHN0
-cnVjdCBidXNfdHlwZTo6cmVtb3ZlIHJldHVybmluZyB2b2lkIGl0J3MgcHJldmVudGVkIHRoYXQg
-bmV3bHkKPiBpbXBsZW1lbnRlZCBidXNlcyByZXR1cm4gYW4gaWdub3JlZCBlcnJvciBjb2RlIGFu
-ZCBzbyBkb24ndCBhbnRpY2lwYXRlCj4gd3JvbmcgZXhwZWN0YXRpb25zIGZvciBkcml2ZXIgYXV0
-aG9ycy4KPgo+IEFja2VkLWJ5OiBSdXNzZWxsIEtpbmcgKE9yYWNsZSkgPHJtaytrZXJuZWxAYXJt
-bGludXgub3JnLnVrPiAoRm9yIEFSTSwgQW1iYSBhbmQgcmVsYXRlZCBwYXJ0cykKPiBBY2tlZC1i
-eTogTWFyayBCcm93biA8YnJvb25pZUBrZXJuZWwub3JnPgo+IEFja2VkLWJ5OiBDaGVuLVl1IFRz
-YWkgPHdlbnNAY3NpZS5vcmc+IChmb3IgZHJpdmVycy9idXMvc3VueGktcnNiLmMpCj4gQWNrZWQt
-Ynk6IFBhbGkgUm9ow6FyIDxwYWxpQGtlcm5lbC5vcmc+Cj4gQWNrZWQtYnk6IE1hdXJvIENhcnZh
-bGhvIENoZWhhYiA8bWNoZWhhYkBrZXJuZWwub3JnPiAoZm9yIGRyaXZlcnMvbWVkaWEpCj4gQWNr
-ZWQtYnk6IEhhbnMgZGUgR29lZGUgPGhkZWdvZWRlQHJlZGhhdC5jb20+IChGb3IgZHJpdmVycy9w
-bGF0Zm9ybSkKPiBBY2tlZC1ieTogQWxleGFuZHJlIEJlbGxvbmkgPGFsZXhhbmRyZS5iZWxsb25p
-QGJvb3RsaW4uY29tPgo+IEFja2VkLUJ5OiBWaW5vZCBLb3VsIDx2a291bEBrZXJuZWwub3JnPgo+
-IEFja2VkLWJ5OiBKdWVyZ2VuIEdyb3NzIDxqZ3Jvc3NAc3VzZS5jb20+IChGb3IgWGVuKQo+IEFj
-a2VkLWJ5OiBMZWUgSm9uZXMgPGxlZS5qb25lc0BsaW5hcm8ub3JnPiAoRm9yIGRyaXZlcnMvbWZk
-KQo+IEFja2VkLWJ5OiBKb2hhbm5lcyBUaHVtc2hpcm4gPGp0aEBrZXJuZWwub3JnPiAoRm9yIGRy
-aXZlcnMvbWNiKQo+IEFja2VkLWJ5OiBKb2hhbiBIb3ZvbGQgPGpvaGFuQGtlcm5lbC5vcmc+Cj4g
-QWNrZWQtYnk6IFNyaW5pdmFzIEthbmRhZ2F0bGEgPHNyaW5pdmFzLmthbmRhZ2F0bGFAbGluYXJv
-Lm9yZz4gKEZvciBkcml2ZXJzL3NsaW1idXMpCj4gQWNrZWQtYnk6IEtpcnRpIFdhbmtoZWRlIDxr
-d2Fua2hlZGVAbnZpZGlhLmNvbT4gKEZvciBkcml2ZXJzL3ZmaW8pCj4gQWNrZWQtYnk6IE1heGlt
-aWxpYW4gTHV6IDxsdXptYXhpbWlsaWFuQGdtYWlsLmNvbT4KPiBBY2tlZC1ieTogSGVpa2tpIEty
-b2dlcnVzIDxoZWlra2kua3JvZ2VydXNAbGludXguaW50ZWwuY29tPiAoRm9yIHVscGkgYW5kIHR5
-cGVjKQo+IEFja2VkLWJ5OiBTYW11ZWwgSWdsZXNpYXMgR29uc8OhbHZleiA8c2lnbGVzaWFzQGln
-YWxpYS5jb20+IChGb3IgaXBhY2spCj4gUmV2aWV3ZWQtYnk6IFRvbSBSaXggPHRyaXhAcmVkaGF0
-LmNvbT4gKEZvciBmcGdhKQo+IEFja2VkLWJ5OiBHZW9mZiBMZXZhbmQgPGdlb2ZmQGluZnJhZGVh
-ZC5vcmc+IChGb3IgcHMzKQo+IFNpZ25lZC1vZmYtYnk6IFV3ZSBLbGVpbmUtS8O2bmlnIDx1Lmts
-ZWluZS1rb2VuaWdAcGVuZ3V0cm9uaXguZGU+Cj4gLS0tCj4KPiAgZHJpdmVycy9zMzkwL2Npby9j
-Y3dncm91cC5jICAgICAgICAgICAgICAgfCA0ICstLS0KPiAgZHJpdmVycy9zMzkwL2Npby9jc3Mu
-YyAgICAgICAgICAgICAgICAgICAgfCA0ICstLS0KPiAgZHJpdmVycy9zMzkwL2Npby9kZXZpY2Uu
-YyAgICAgICAgICAgICAgICAgfCA0ICstLS0KPiAgZHJpdmVycy9zMzkwL2Npby9zY20uYyAgICAg
-ICAgICAgICAgICAgICAgfCA0ICstLS0KPiAgZHJpdmVycy9zMzkwL2NyeXB0by9hcF9idXMuYyAg
-ICAgICAgICAgICAgfCA0ICstLS0KPiAgZHJpdmVycy92ZmlvL21kZXYvbWRldl9kcml2ZXIuYyAg
-ICAgICAgICAgfCA0ICstLS0KCkZvciBkcml2ZXJzL3MzOTAgYW5kIGRyaXZlcnMvdmZpbzoKClJl
-dmlld2VkLWJ5OiBDb3JuZWxpYSBIdWNrIDxjb2h1Y2tAcmVkaGF0LmNvbT4KCgotLSAKbGludXgt
-aTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
+Hi,
+
+V4 changes:
+ - New patches:
+   - i3c: master: svc: separate err, fifo and disable interrupt of reset function
+   - i3c: master: svc: add the missing module device table
+   - i3c: master: svc: enable the interrupt in the enable ibi function
+ - i3c: master: svc: add support for slave to stop returning data
+   - Only use COMPLETE flag in the read function.
+   - Add a reset before each transfer.
+ - i3c: master: svc: add runtime pm support
+    - error path emit_stop only used in svc_i3c_master_do_daa() for one time, so
+      remove it. Or it needs another goto command at the end of the function to
+      skip it and to go to rpm_out.
+
+V3 changes:
+ - i3c: master: svc: add runtime pm support:
+   - restore the error path of probe function
+   - enable runtime pm just before i3c module reset
+
+V2 changes:
+ - align the parameters of the function in the second patch
+ - add a new patch to support runtime PM.
+
+Clark Wang (8):
+  i3c: master: svc: move module reset behind clk enable
+  i3c: master: svc: fix atomic issue
+  i3c: master: svc: separate err, fifo and disable interrupt of reset
+    function
+  i3c: master: svc: add support for slave to stop returning data
+  i3c: master: svc: set ODSTOP to let I2C device see the STOP signal
+  i3c: master: svc: add runtime pm support
+  i3c: master: svc: add the missing module device table
+  i3c: master: svc: enable the interrupt in the enable ibi function
+
+ drivers/i3c/master/svc-i3c-master.c | 307 +++++++++++++++++++++-------
+ 1 file changed, 231 insertions(+), 76 deletions(-)
+
+-- 
+2.25.1
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
