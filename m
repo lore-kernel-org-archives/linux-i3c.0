@@ -1,21 +1,21 @@
-Return-Path: <SRS0=bmv/=N5=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
+Return-Path: <SRS0=xdse=OC=lists.infradead.org=linux-i3c-bounces+linux-i3c=archiver.kernel.org@kernel.org>
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 	aws-us-west-2-korg-lkml-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-13.7 required=3.0 tests=BAYES_00,DKIM_SIGNED,
+X-Spam-Status: No, score=-13.8 required=3.0 tests=BAYES_00,DKIM_SIGNED,
 	DKIM_VALID,FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,
 	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,USER_AGENT_GIT
-	autolearn=ham autolearn_force=no version=3.4.0
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
+	autolearn_force=no version=3.4.0
 Received: from mail.kernel.org (mail.kernel.org [198.145.29.99])
-	by smtp.lore.kernel.org (Postfix) with ESMTP id 31B00C433F5
-	for <linux-i3c@archiver.kernel.org>; Tue,  7 Sep 2021 18:48:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTP id BAFC2C433EF
+	for <linux-i3c@archiver.kernel.org>; Sun, 12 Sep 2021 16:46:01 +0000 (UTC)
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.kernel.org (Postfix) with ESMTPS id ECDE9610E8
-	for <linux-i3c@archiver.kernel.org>; Tue,  7 Sep 2021 18:48:49 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org ECDE9610E8
+	by mail.kernel.org (Postfix) with ESMTPS id 7B95961076
+	for <linux-i3c@archiver.kernel.org>; Sun, 12 Sep 2021 16:46:01 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.kernel.org 7B95961076
 Authentication-Results: mail.kernel.org; dmarc=fail (p=none dis=none) header.from=gmx.com
 Authentication-Results: mail.kernel.org; spf=none smtp.mailfrom=lists.infradead.org
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
@@ -24,68 +24,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hq5dnwrICl2J6L4vg4dJeeyBF6bU7CEwB3RhHIAcJJY=; b=zCu8cDOadmzi1n
-	exkp6Sf29tsWdDoNAY4G4y/QWci19OLzXwDHywoAbb9Ep1szlEmv+YKBB4sO3zx5ZzdLvBIw8cb0A
-	pHLxnElMCjQH1btt7mJ2nMtrCKQ4YhSaLL6CA5JvJQhjFuX8/710fpc+wnBkDLoehKyqOXaPrPzfq
-	6/2vDGKZNiSkN+eX+KnZKa9I4GL8f0qUUg5JMxGsP6x6naOkyVIj9bmRQ/1En5NOrHDqIlt7HB5yW
-	wya9kS9sOkc3+KUUMGNHi7fvoPiZaWrDwqDlTnbqkXIOxQJHuuO+VtKSlIIS+J/74Y1L3qjXpIgF5
-	rfNxAadYMIL1DgBK1OEQ==;
+	List-Owner; bh=jD6Ak12Tsjz9Hyh9gdpgdY+c+PuRpAumV7/UEuyz6KY=; b=w1+qZcNqH3DBOo
+	Fo6ho3QyNjeZYYoIwNjU3OHAXblEJfyDgy708OxzNnTmiUgzN0Pn4yVq2KOe3VpOy9/t3+469OAOE
+	sH0YQT/69rayFFBST+CE/YVXTITyI6Fs7z5j2vt7jYWyjPA0CnZWeZOWMwohaWI1jLu/5t8PXZqb4
+	MBSkA5h5T8pw9Osbr8BwRcmTrnDo+5pVgH4DefeB/pAeb6PvHikV2UZ57on3HQogswDmqoeqfzYOi
+	GCKnH6OGwBcp17Gbr3BJoP3Hmf0B5BdE4Mj/ik+wp54uE6FVv5v5cEXF4ULO461DlNu2VxPV3d1Ih
+	jfJOxHFJvM/MpYpXvshA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1mNg9J-004TT4-98; Tue, 07 Sep 2021 18:48:49 +0000
-Received: from mout.gmx.net ([212.227.17.20])
+	id 1mPScC-00Gk61-F0; Sun, 12 Sep 2021 16:46:00 +0000
+Received: from mout.gmx.net ([212.227.15.19])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mMtKn-00FyXh-Pj
- for linux-i3c@lists.infradead.org; Sun, 05 Sep 2021 14:41:27 +0000
+ id 1mPRly-00GeYG-2Z
+ for linux-i3c@lists.infradead.org; Sun, 12 Sep 2021 15:52:03 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1630852879;
- bh=/yNWBRvqjRvVJvu5VKkCkojXul/mjGRN/XfiECWSJkM=;
+ s=badeba3b8450; t=1631461914;
+ bh=acR4bOYsVFW3jWp5YfwQ2ux3deK09WbrFwToGIM5Wr8=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
- b=I7++3TSRXjsTIoUO0U+ZzEorASnxONpYE0w7wjyv8St9DR0Dpgenh3Lz4sKgYrDkF
- QXOJ2bhZ3Zlmuln1CFrDnwKlwqXNnA43RRjP9frPBn4cSl8d5QABO0F0Vc/ew5ZiVm
- QpFmC2lH/i7zaS7Ya7sWB4UuHkJaFlhj+eoxUWe8=
+ b=betXKHWy88VQXJn/oCsS/DwSPiMD2g+7M5yrfDJEOq+jhucC93vV/XtyDal2sGlka
+ xmLZAd1qc95FgGQo/fD6Hexyc1U0eU4F3MOswwlnsRtaIPKVoWwsU/TU3kZU34Ixy1
+ o6q6OUlCeDsHz+PFAxZURE+H4JLobEx+KCy+QK/4=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([79.150.72.99]) by mail.gmx.net
- (mrgmx104 [212.227.17.174]) with ESMTPSA (Nemesis) id
- 1N79u8-1n1PAx1eMG-017V9e; Sun, 05 Sep 2021 16:41:19 +0200
+ (mrgmx004 [212.227.17.184]) with ESMTPSA (Nemesis) id
+ 1N9MpS-1n28f01Ru0-015L0K; Sun, 12 Sep 2021 17:51:54 +0200
 From: Len Baker <len.baker@gmx.com>
-To: Boris Brezillon <boris.brezillon@collabora.com>,
- Nicolas Pitre <npitre@baylibre.com>
-Cc: Len Baker <len.baker@gmx.com>, Kees Cook <keescook@chromium.org>,
- linux-i3c@lists.infradead.org, linux-hardening@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] i3c/master/mipi-i3c-hci: Prefer struct_size over open coded
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: Len Baker <len.baker@gmx.com>, Nicolas Pitre <npitre@baylibre.com>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Kees Cook <keescook@chromium.org>, linux-i3c@lists.infradead.org,
+ linux-hardening@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] i3c/master/mipi-i3c-hci: Prefer kcalloc over open coded
  arithmetic
-Date: Sun,  5 Sep 2021 16:40:54 +0200
-Message-Id: <20210905144054.5124-1-len.baker@gmx.com>
+Date: Sun, 12 Sep 2021 17:51:35 +0200
+Message-Id: <20210912155135.7541-1-len.baker@gmx.com>
 X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:Yc2GaUmluNaGyeUBD5O7eBSPVcxb2yxz/cdqXlCbWGPG4AzBvIx
- swPL75n8TCf1Dh4Mq7gXJOusgv/FFSN+3EHxwyRKa/mKG8lIb0zIjLAlXTl7Sg7A8rY/sF1
- Tiycvr8QMT51Y4Oi2f9ba8iEwhXcTholcGrPp1e0NzzU+SH3ik/uWYWdJMRQ1c+6E9enyYE
- TQ3HcftPZ06G6rFOLgoAQ==
-X-UI-Out-Filterresults: notjunk:1;V03:K0:zYDDzlJ3NSw=:GnvIasji+IGndezvkoibuS
- 4ZravIVL7n+M5ACFaaA5OCTuhuXNa/uOvA2IIRONr/29qzrwjZkaEmanGZ0piUuCiVShq3Pcj
- ryVsYGurW6Sw0hv6ze1K26F0vl3J6P8ZFRg9tNYJIn2x9bucitUm3aonIN2y915kKnfyzcntx
- c1O8+TjUC+7ZEGitpZkdWUvFUDpF54ID7fhFntoNDp5UkOwmLJhDVec7fSl3k9+i2LP9d+sIM
- k7q3Q66cWSV9SB64aQyCoCkKiXz2RJFlvxZ3fxJawbMrs+UMqJmQDRWlH2orb5n648YFFFxNP
- Ct1S5KaY88iGMQK1OfFM6gxIH+5pCw+AIq+zWl3WUkNFRWa1nUdAZA/+gvHc0NW5eyabMydCe
- xYvRX13+i1wEUtrHBuXgBjLKdXMdthzr3ohTzqr/xyC0Ww2N6mCH3SZaB0IEQZlnTLDm0LwD8
- /74yJLyh6PCAaTQsQ/X7qwbfPB9NNaz68F2oUnT6jkTFUrbO40Eg60QeG8RhtT96jm4PcdJky
- gPI4EQDYbGuZwUGENF8gp/uQaBZhUejhbrjiW7TRq81plTD3jG2xK2YoeBKT8+VYI1MFxzdEx
- zz5tVlACh7Ia6VFCB53wV2jAY/DwEB3P2Ks5nIwtG/ASGu4sIxuwZJ9TvmNCkucOAgcHtxjSv
- fh4J2lKxLDTO3VmreCP+R1DqfH7NjV95yRHFavmeqBGHWgW3J7PFylGti4JgVT0Y3JJJJ23GH
- auo9uc/dIl6Fqsd+afZrBk5uVhMnEzRewelyCQQ77IWcjPmOIPZkS7AvYA2D65lOQeNv4hWhs
- YNizgGcOQw7e+NhLF5XwhnaoMAUzLoYmxK9IAM04gCnHZtmDu8YbFp7kUX8oeFQERvPKhdUb9
- DnwOjrs0hmpmPRvu95rG07cWkiLEx/h52ouftJ0r7c4K6hciAhT5GkBL35TIwiNEfz8CX1qIf
- rdd6/HpPBtY/pq4GKEJTMJ2Grh0oRvjy0Z8m6iG7JTe/Go2V/uL+qLnNGS7FDLdxbj8ztmM2D
- yEVFEb9A7wHJ5VO6FRlbaFuJp7YEbegrhj4C7TzJa9vfFTat6CI8RKLKfSRw7JYYerxUSnfEl
- He02EeJDVlzNrrXVmOGDv4z2DwD5qwiKeEMF29NzZhxlSKGjJQe8vcXRw==
+X-Provags-ID: V03:K1:12Wxb35A9HfIn30GEUc5xzIzDRpJ5lPs/PpFMm+D3nx+SYskX9X
+ 5yUBASZXWNG9x2DIsftzvtH+mycCDGn0lBzzRKz56ZNK8N83gYraXbaelZVYvj1qHGY4PRp
+ Bw5Z+ZJYd7WwV06KAuwduDbMYi+PUGmfCriF+/o+ZuERBS9ByFgl0T0wpNjoAKjQtVQRLsX
+ NQGzDGcZrJZxytOJU6ONA==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:Oa08IYzxaO8=:LdljQr4FvbYrpeql8L/94t
+ zY6HFuPCFEUy2ku3dg6IYlfkM0GscR+L/nMs/9++kjR4mt7x5j60SP+LYaND79n/H/z65T1nJ
+ Z8ryXDxs+dUVEXmY2dg0h3oWplA9p5t5TjlsaVefcbZmBz0zJgFff6L8mzPgDzOSAUufA5MiI
+ ywrRDHL8wx4RF0xfm1MF6vpGoV0QUlQH4qakL/tvd511L3E1hovSS4+rJFAKy/KSP/IVIgSM/
+ VHSWz+Nn7/BbBXFvHpReklkCtOw7R/BAYHdruVZ2/npUuVUgugu67nX6gogVqEF76Oq8pIIH9
+ M4XLPoZFaY3Lbxu6KmtP9SMuMpJpbnDo7AOmytJW0X3NspfAgWPAY92IccplqemHE6tXOwGAo
+ IofD6tMF5fTyIr7nqeRSmn+dmRqwth0ZLQtoH3bccwk1J+Q5A6nNz/p7J8HdYK+wz7IQ+ek91
+ i9ExzqqQh2/IKqogfAcnh95n6iA5s3PYNjWXMNuju/Gv9Ku0Ip4Y7+qNSoakbPCnQVb2wo7fe
+ 4dKO5wLEBXZ1gnUwlaO9sisOQ206/MsEavQnzfT7GnTy9sZh7dlpsckaHoVvGdnNOOllOHy4y
+ P7SPrfA+3Z0SG8DBnoG0bIa/kO9JGWyPpW8QmVb1EbqrDBnxC7SmH5ubF3cmbf0NriN11mMY3
+ IHb5Bx5e2Z6iUvKRcFMxKYSdiIM3rRuzioBhueDDDh2OE1fBQ/EciKt4vDD76YhO4KNmFDIPf
+ 7qlnIZ4OVp6nK++R40P/mDcz2IsvaWih/ANNL8/qU2GO76j6UFRW719Gjzk7pbFSGTlgKP6lY
+ HuRGsngGLpUxzKI8cna/stS1NvGKb6Ko0vrHgtalguhIKayqqMlcAF60EtFtLe1Sd4cXAic0p
+ zDzxV4XnAyTqU4ShuSG0NYXgnJP3A/qy4VWWYro1qTvy7/Cygm/a/w2qLH11OljwIkyovBgK7
+ 9RY5/MP0sW2bfJNlT/nNzNlM/UYWZexuXq1aCxL4iljcsCNQYf0DEWbZ5q5evnUw+Jj8KjIPJ
+ HHLn4sDWhIAVH7HVb1tacK0NgwL+2vcujrfjzh/tIaCYlErsWrBp/JxZAYakjJONdxWYM0psl
+ j9QFX9ZDLnT36w=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20210905_074126_173579_3EACD090 
-X-CRM114-Status: UNSURE (   9.94  )
-X-CRM114-Notice: Please train this message.
-X-Mailman-Approved-At: Tue, 07 Sep 2021 11:48:47 -0700
+X-CRM114-CacheID: sfid-20210912_085202_452618_953CE806 
+X-CRM114-Status: GOOD (  10.60  )
+X-Mailman-Approved-At: Sun, 12 Sep 2021 09:45:59 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,29 +109,29 @@ to values wrapping around and a smaller allocation being made than the
 caller was expecting. Using those allocations could lead to linear
 overflows of heap memory and other misbehaviors.
 
-So, use the struct_size() helper to do the arithmetic instead of the
-argument "size + count * size" in the kzalloc() function.
+So, use the purpose specific kcalloc() function instead of the argument
+size * count in the kzalloc() function.
 
 [1] https://www.kernel.org/doc/html/v5.14/process/deprecated.html#open-coded-arithmetic-in-allocator-arguments
 
 Signed-off-by: Len Baker <len.baker@gmx.com>
 ---
- drivers/i3c/master/mipi-i3c-hci/dma.c | 2 +-
+ drivers/i3c/master/mipi-i3c-hci/hci.h | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-index af873a9be050..2990ac9eaade 100644
---- a/drivers/i3c/master/mipi-i3c-hci/dma.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-@@ -223,7 +223,7 @@ static int hci_dma_init(struct i3c_hci *hci)
- 	}
- 	if (nr_rings > XFER_RINGS)
- 		nr_rings = XFER_RINGS;
--	rings = kzalloc(sizeof(*rings) + nr_rings * sizeof(*rh), GFP_KERNEL);
-+	rings = kzalloc(struct_size(rings, headers, nr_rings), GFP_KERNEL);
- 	if (!rings)
- 		return -ENOMEM;
- 	hci->io_data = rings;
+diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
+index 80beb1d5be8f..f109923f6c3f 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/hci.h
++++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
+@@ -98,7 +98,7 @@ struct hci_xfer {
+
+ static inline struct hci_xfer *hci_alloc_xfer(unsigned int n)
+ {
+-	return kzalloc(sizeof(struct hci_xfer) * n, GFP_KERNEL);
++	return kcalloc(n, sizeof(struct hci_xfer), GFP_KERNEL);
+ }
+
+ static inline void hci_free_xfer(struct hci_xfer *xfer, unsigned int n)
 --
 2.25.1
 
