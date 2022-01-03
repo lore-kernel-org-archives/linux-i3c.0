@@ -4,48 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B52FC433F5
-	for <linux-i3c@archiver.kernel.org>; Mon,  3 Jan 2022 16:09:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 697DDC433F5
+	for <linux-i3c@archiver.kernel.org>; Mon,  3 Jan 2022 17:03:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ytUjVr72NumNHRxg//HLkxPiaSSCuWiIUQL80A0YX40=; b=ZvqOAzFfYEIGy1
-	jsauNGazZQkzOwhQZ3sENqLHV54LLaDYuT8bTpItr480lM2coEJzPNsOKh0s/VOzkHkVZPj+OAIzM
-	2VlSF2UUI+dHrjRKaNLeMH74RukIvhXVcZzxiX7reSpMJyqISC4moMxZyl9uBYgWPZUZgEmfi0MJR
-	wjrZD+CJs0jyO1OjAe8bsdpT2aBvbwIfA5ddSJXpA/olpjgdZrisgE19r+DTLeaY7t/hhK+IGLVw4
-	bdF+crrlUl3E8i+ugqp8mtmzYVcrJeTjlLWbBbxfJuzFUpstlnQgrDmfT96A56gGIDugE1r5RIlgm
-	iEUmFBYUjcA3HLNmuFcg==;
+	List-Owner; bh=o/LoW7MVN8lodGcrr8yaXVePlSEEmffyX3GLoPOaci8=; b=KskP3JfbROewqS
+	dKukREi2i9ZHQr/75wIYsyQAcGsAATMGsfjXdD5lNTn4dAb9hd64cHrYBdJNhj+sFQAbwOiaFqtFX
+	OYSZW8CSR/rweMpHDZGg318jd+2nikV7oS+jjv/f/Yvno4MExoKPMDT2hzfrv0k6Dxa0P5uwwKYoV
+	BrnbumsKu5zAuNET5LKKcDzUZ8CosTMyjHIrnrcUEfsVk3XOCo8/bEiRHu/oUh8bk7uJO5RLn+5qU
+	XhkFB34rXqJqngReQtSp3iBMlFedCwnZEn0XwVbPcxZf1Pa2tNOjmjeL2qDwZxAINtfr0X6XnrKxg
+	VtwH+Gq7vEMUovbBijXw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n4Pty-009R55-BV; Mon, 03 Jan 2022 16:09:38 +0000
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
+	id 1n4Qk0-009dCF-MG; Mon, 03 Jan 2022 17:03:24 +0000
+Received: from mail-qt1-x834.google.com ([2607:f8b0:4864:20::834])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n4Ptw-009R4n-9h
- for linux-i3c@lists.infradead.org; Mon, 03 Jan 2022 16:09:37 +0000
-Received: (Authenticated sender: miquel.raynal@bootlin.com)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 03B8460009;
- Mon,  3 Jan 2022 16:09:29 +0000 (UTC)
-Date: Mon, 3 Jan 2022 17:09:28 +0100
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Clark Wang <xiaoning.wang@nxp.com>
-Cc: conor.culhane@silvaco.com, alexandre.belloni@bootlin.com,
- linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH V5 4/8] i3c: master: svc: add support for slave to stop
- returning data
-Message-ID: <20220103170928.76b2369f@xps13>
-In-Reply-To: <20211227074529.1660398-5-xiaoning.wang@nxp.com>
-References: <20211227074529.1660398-1-xiaoning.wang@nxp.com>
- <20211227074529.1660398-5-xiaoning.wang@nxp.com>
-Organization: Bootlin
-X-Mailer: Claws Mail 3.17.7 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1n4Qjy-009dAY-Ln
+ for linux-i3c@lists.infradead.org; Mon, 03 Jan 2022 17:03:24 +0000
+Received: by mail-qt1-x834.google.com with SMTP id f9so31014100qtk.4
+ for <linux-i3c@lists.infradead.org>; Mon, 03 Jan 2022 09:03:19 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20210112.gappssmtp.com; s=20210112;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references
+ :mime-version; bh=yJU9zhwni6o3+iZvN5P4ezbbFlptXIDjM38WRcxQ32E=;
+ b=noF8JJJJnvfKFqf33bkEgTwyL+UX4F10QJG8qoWpz1rTM/BAcfM4zuoGJ5do4kszrw
+ Rg1fvwEhmb0g1xcJ4QtLZ1GUD/qFfGjcMmExVedWogSh8dR7+QqHd43hlZUUyqpWqjtf
+ P8BBZZfluylu1FRF7Wof6nn/wMnS8IsuTaMctpLt1gDi/Vat8TpxY47OneRsgqRxA6pK
+ k5/XMUE1tLNtJWH7ZVCftAu8fdOstJOPt8ndDb7RMAsm/7oJ2uogNGMkhbEs3ckVXngJ
+ fqTFEDvCw60xJ4NKEcx3U+nXrKXjnef5GibvxoAGc/Umf3E3n/qk18l4By+fUUDALHG7
+ 5+bQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
+ :references:mime-version;
+ bh=yJU9zhwni6o3+iZvN5P4ezbbFlptXIDjM38WRcxQ32E=;
+ b=tBEkjhXaTQlMGgRg7GI+tMf9NIzfKt6dh1yvwjtpg4kpezVqbPxKexOtmVbe3eaRKx
+ mgJWB027++t9R5DvqLsSSc1I8B1cRYhs724Fttd80rBDQ6E3pMRMYGCnab+/z5ysbWv/
+ i+/oWIgnlXwCINrifkl886S03IvCU8J7hdVUvX3oSxMxksREx9/dvtBzQUADD1f/g30C
+ NUbnZSzJmKFK526VyavbOw26tZVMHRUdwUACVewHKFLj2YIcPo8zTo7rgBgJsYFQBC+b
+ D3/CjaMOqAug9nCBxlsmTgpvETqIrgOhKOUeS8wROI/cItCPODS8zUxaIDDZXE1vAgc9
+ ZeKQ==
+X-Gm-Message-State: AOAM531LXizBw7QgdrCnpE4vUDsrH2NPMVLNSsHar4Rd/8Pf4j+ypFcf
+ ZqLrSG98T6aFukUtW28srIPW3Q==
+X-Google-Smtp-Source: ABdhPJzA/SHPa7IwwpIDS2Ewwxk0uyuQatuwrlI5IDc0c1N8Iu658RAeumEbJlcYI0R9FitBZ7/n2A==
+X-Received: by 2002:ac8:7fc5:: with SMTP id b5mr40500137qtk.351.1641229399112; 
+ Mon, 03 Jan 2022 09:03:19 -0800 (PST)
+Received: from xanadu.home (modemcable108.170-21-96.mc.videotron.ca.
+ [96.21.170.108])
+ by smtp.gmail.com with ESMTPSA id f12sm27848315qkh.22.2022.01.03.09.03.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 03 Jan 2022 09:03:18 -0800 (PST)
+Date: Mon, 3 Jan 2022 12:03:18 -0500 (EST)
+From: Nicolas Pitre <npitre@baylibre.com>
+To: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ linux-i3c@lists.infradead.org, kernel-janitors@vger.kernel.org, 
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] i3c/master/mipi-i3c-hci: correct the config reference
+ for endianness
+In-Reply-To: <20220103094504.3602-1-lukas.bulwahn@gmail.com>
+Message-ID: <3p9691n5-3qs-7s3q-pp9-389621935prr@onlyvoer.pbz>
+References: <20220103094504.3602-1-lukas.bulwahn@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220103_080936_498394_EF049433 
-X-CRM114-Status: UNSURE (   7.35  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20220103_090322_735531_D61C15E9 
+X-CRM114-Status: GOOD (  18.28  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -57,19 +84,45 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-SGkgQ2xhcmssCgp4aWFvbmluZy53YW5nQG54cC5jb20gd3JvdGUgb24gTW9uLCAyNyBEZWMgMjAy
-MSAxNTo0NToyNSArMDgwMDoKCj4gV2hlbiBpM2MgY29udHJvbGxlciByZWFkcyBkYXRhIGZyb20g
-c2xhdmUgZGV2aWNlLCBzbGF2ZSBkZXZpY2UgY2FuIHN0b3AKPiByZXR1cm5pbmcgZGF0YSB3aXRo
-IGFuIEFDSyBhZnRlciBhbnkgYnl0ZS4KPiBBZGQgdGhpcyBzdXBwb3J0IGZvciBzdmMgaTNjIGNv
-bnRyb2xsZXIuIE90aGVyd2lzZSwgaXQgd2lsbCB0aW1lb3V0Cj4gd2hlbiB0aGUgc2xhdmUgZGV2
-aWNlIGVuZHMgdGhlIHJlYWQgb3BlcmF0aW9uIGVhcmx5Lgo+IAo+IFNpZ25lZC1vZmYtYnk6IENs
-YXJrIFdhbmcgPHhpYW9uaW5nLndhbmdAbnhwLmNvbT4KPiBSZXZpZXdlZC1ieTogSnVuIExpIDxq
-dW4ubGlAbnhwLmNvbT4KCkxvb2tzIGdvb2QgdG8gbWUgOikKClJldmlld2VkLWJ5OiBNaXF1ZWwg
-UmF5bmFsIDxtaXF1ZWwucmF5bmFsQGJvb3RsaW4uY29tPgoKQ2hlZXJzLApNaXF1w6hsCgotLSAK
-bGludXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
+On Mon, 3 Jan 2022, Lukas Bulwahn wrote:
+
+> The referred config BIG_ENDIAN does not exist. The config for the
+> endianness of the CPU architecture is called CPU_BIG_ENDIAN.
+> 
+> Correct the config name to the existing config for the endianness.
+> 
+> Signed-off-by: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+
+Acked-by: Nicolas Pitre <npitre@baylibre.com>
+
+> ---
+>  drivers/i3c/master/mipi-i3c-hci/core.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+> index 1b73647cc3b1..8c01123dc4ed 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/core.c
+> +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+> @@ -662,7 +662,7 @@ static int i3c_hci_init(struct i3c_hci *hci)
+>  
+>  	/* Make sure our data ordering fits the host's */
+>  	regval = reg_read(HC_CONTROL);
+> -	if (IS_ENABLED(CONFIG_BIG_ENDIAN)) {
+> +	if (IS_ENABLED(CONFIG_CPU_BIG_ENDIAN)) {
+>  		if (!(regval & HC_CONTROL_DATA_BIG_ENDIAN)) {
+>  			regval |= HC_CONTROL_DATA_BIG_ENDIAN;
+>  			reg_write(HC_CONTROL, regval);
+> -- 
+> 2.17.1
+> 
+> 
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
