@@ -4,68 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13733C433EF
-	for <linux-i3c@archiver.kernel.org>; Mon, 17 Jan 2022 06:55:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91AE1C433EF
+	for <linux-i3c@archiver.kernel.org>; Mon, 17 Jan 2022 18:20:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bzm1FRIVsy+RTHzJ/+xt7yV+CNSusQEHKtB7KSfJWr4=; b=iNaoIMfSmH75cs
-	z0KOjshLr0Mv6OtAG5E8x7SecpBMFJmd02WPyQx+Swrn7/oz8yGQqxxCYuSEe4pZLg3v12tgglBw/
-	PAlQXFZsuQoGBPy81wbb/sIBwx9i0su3ec+aZaiRLLvTdJKQFH/5pQxhaTxtSvasfIEjcOxQANUqI
-	dfdumw5auoQ7s2b1zRLD+2LrIj0Hg1MIumGqxLB5oaS7QqANhwwBFduUiN2Zwv6UgEbt0croMK15h
-	NmkFiIDwJcITR/XmbGyjQZZOmljso02f6bxSxDH94cv1tX2vPk78afOpbCNDDLxRCPH0q9EYIWcgZ
-	1AlEu7TO6JvlFPYmqIAg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=BAoxzktxsjw6g3H3mc2Zyf2O7mOFL8QN0uuYx4NXOQc=; b=Wmk0jD4bfSV7zo
+	uAMJDm9Ee3se8Eu5c53drhD3FCnPEPv74fAY+ENbNNOzNVyEPHo/BtoG3Ggsq7U7lpJUN0ZvEyny6
+	ft3PNC+72sKaWBbyrOc0SDYfwfcXB07hEs7mJXvTZgV1U8eFUPQY/siVifMsOd0tE6yFW/gkvv1qP
+	ETiIpeB8DdUe0J0SS4EHyXkWv3U70n/FKHpKXOrjbao3RqKWiHi2kvG/NcKdo7dH2P4QYRtrc9nFv
+	2DpB7ZnYQX2U5LQdxUeuV/aYYHtwTWs4UfplXMrN8N2EaQoyYP2hxQ7VqV8tLxVmVJBBldbXBlLvk
+	tawNVKGhrBj508PEZyIA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1n9Luw-00Divb-Sw; Mon, 17 Jan 2022 06:55:02 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1n9WcL-00G4VC-RK; Mon, 17 Jan 2022 18:20:33 +0000
+Received: from alexa-out-sd-02.qualcomm.com ([199.106.114.39])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1n9Luu-00Ditp-Dc
- for linux-i3c@lists.infradead.org; Mon, 17 Jan 2022 06:55:01 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id 72583B80DEF;
- Mon, 17 Jan 2022 06:54:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 4504DC36AE3;
- Mon, 17 Jan 2022 06:54:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1642402497;
- bh=Z9FC3Og25bQuzjGgkjTpc1dbdgHJpSSjhoXKuNr/2zE=;
- h=Subject:From:In-Reply-To:References:Date:To:Cc:From;
- b=jy4LKi9hUsrU/pyclDKQRltMAVMy/qO6Tu6Zn6E/MGzPgweCWLhEClikcSUddXijf
- EiTLoZO2km8PuXf9Id+okpTpXCzQyx4W9w71zeI7RcnA7zP+xv9WNVA1ZVXbTijigq
- zLxt8DXdY7gzUou8TJRbEG3krFTBA8ugfby+EXlx8GJefSA8Mq03CIMSyTUXHjLXuI
- eWLCIhDrozJns/N6CaWuTbVffxNs1DMSWpcIqP2CGRcpwW+Hv5OqYIWaoiJPc8EWcL
- rKwmUmw5uZaFID6fRp4jEQl9yYFZKRhAGxTxIXoampYwn6jbxOCQ+ZDkzgu9jYVP32
- DS//++z8zcdeA==
-Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org
- (localhost.localdomain [127.0.0.1])
- by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id
- 34A80F60798; Mon, 17 Jan 2022 06:54:57 +0000 (UTC)
-Subject: Re: [GIT PULL] I3C changes for 5.17
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <YeSIwUuZHPeBcAKR@piout.net>
-References: <YeSIwUuZHPeBcAKR@piout.net>
-X-PR-Tracked-List-Id: <linux-i3c.lists.infradead.org>
-X-PR-Tracked-Message-Id: <YeSIwUuZHPeBcAKR@piout.net>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-5.17
-X-PR-Tracked-Commit-Id: 13462ba1815db5a96891293a9cfaa2451f7bd623
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: 4b3789512f018819e0c4b0776731dc4ce694c484
-Message-Id: <164240249721.26213.4168214220727839345.pr-tracker-bot@kernel.org>
-Date: Mon, 17 Jan 2022 06:54:57 +0000
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Linus Torvalds <torvalds@linux-foundation.org>,
- linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+ id 1n9W7O-00Fzpq-76
+ for linux-i3c@lists.infradead.org; Mon, 17 Jan 2022 17:48:35 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=quicinc.com; i=@quicinc.com; q=dns/txt; s=qcdkim;
+ t=1642441714; x=1673977714;
+ h=from:to:cc:subject:date:message-id:mime-version:
+ content-transfer-encoding;
+ bh=rgWaKMcI/SNSLHvYlPmxv+NBvUWPkgT4L+32wU+EyhQ=;
+ b=ydXMKxCHgC0Ft+tVwzc1QW3JAIKKl0qbrWoZRqyMAQOa92pFCV4U4CEj
+ fnT8c4Nh5Z+jv9H0FHZc6lmyOH5bLzeB7ZVthlQYfCAvvmpBtScCuwtXw
+ Bg94b/sLl1SC4j8EQi9StlwL3U3IrU8MVr/l2Zxe5ToUiIjStah3rI/eY Q=;
+Received: from unknown (HELO ironmsg-SD-alpha.qualcomm.com) ([10.53.140.30])
+ by alexa-out-sd-02.qualcomm.com with ESMTP; 17 Jan 2022 09:48:29 -0800
+X-QCInternal: smtphost
+Received: from nasanex01c.na.qualcomm.com ([10.47.97.222])
+ by ironmsg-SD-alpha.qualcomm.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 17 Jan 2022 09:48:29 -0800
+Received: from nalasex01b.na.qualcomm.com (10.47.209.197) by
+ nasanex01c.na.qualcomm.com (10.47.97.222) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.922.19; Mon, 17 Jan 2022 09:48:28 -0800
+Received: from localhost (10.80.80.8) by nalasex01b.na.qualcomm.com
+ (10.47.209.197) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.922.19; Mon, 17 Jan
+ 2022 09:48:27 -0800
+From: Jamie Iles <quic_jiles@quicinc.com>
+To: <linux-i3c@lists.infradead.org>
+CC: Jamie Iles <quic_jiles@quicinc.com>
+Subject: [PATCH 0/2] i3c: support for dynamically added i2c devices
+Date: Mon, 17 Jan 2022 17:48:14 +0000
+Message-ID: <20220117174816.1963463-1-quic_jiles@quicinc.com>
+X-Mailer: git-send-email 2.32.0
+MIME-Version: 1.0
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
+ nalasex01b.na.qualcomm.com (10.47.209.197)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220116_225500_641614_7F591DF9 
-X-CRM114-Status: UNSURE (   4.55  )
+X-CRM114-CacheID: sfid-20220117_094834_304616_2B1B2269 
+X-CRM114-Status: UNSURE (   6.70  )
 X-CRM114-Notice: Please train this message.
+X-Mailman-Approved-At: Mon, 17 Jan 2022 10:20:33 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,24 +75,31 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The pull request you sent on Sun, 16 Jan 2022 22:06:09 +0100:
+Devices are currently added at controller initialization time with 
+boardinfo, but the i2c subsystem also supports dynamically adding 
+devices through a variety of mechanisms including user-space through 
+sysfs, device tree overlays and ACPI.
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-5.17
+This small series decouples registration from the boardinfo and then 
+adds a notifier to add the devices at runtime.  A future series will 
+build on this to allow adding the I2C devices through ACPI.
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/4b3789512f018819e0c4b0776731dc4ce694c484
+Jamie Iles (2):
+  i3c: remove i2c board info from i2c_dev_desc
+  i3c: support dynamically added i2c devices
 
-Thank you!
+ drivers/i3c/master.c       | 145 ++++++++++++++++++++++++++++++++++---
+ include/linux/i3c/master.h |   1 -
+ 2 files changed, 136 insertions(+), 10 deletions(-)
 
 -- 
-Deet-doot-dot, I am a bot.
-https://korg.docs.kernel.org/prtracker.html
+2.32.0
+
 
 -- 
 linux-i3c mailing list
