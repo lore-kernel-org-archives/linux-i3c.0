@@ -4,47 +4,48 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1ADF3C433F5
-	for <linux-i3c@archiver.kernel.org>; Tue, 15 Feb 2022 19:13:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 488D9C433EF
+	for <linux-i3c@archiver.kernel.org>; Tue, 15 Feb 2022 19:25:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jbLrVkcPntqpGX9at1ohz0yMrfcWagWv81Ccj9YppZs=; b=uA+RqPAhQMJvSF
-	2JtBSh+IDqNFIROHUxK0F8I3NKYeXEC7bxNw2dDzowgIaeeTDRi2lblJdLG/Gz1bAnuCfi1jR6Yow
-	VPOjreWufz/GvsId3c0dKPFhUQPc8YHJpHVSMexosMb9Nq4X7eyLcWLWuAC0g2uqFjFPgNJpRsZhf
-	cyLVdmMw7IbZEJwzuNepSzVBqS+Z31R0BqSaXjnXOiF+0PyyURxcdUzZZawQwfcNQwhzdE/OvVxuv
-	UWF8x3hmCDBteuNyVXsW2/P+E0ZZAMAEQkuS6R6kiRN8iJ/lW/mcn/cZpaZPMpJf5X6jkBCfjOsuy
-	pStIUgZcKfTZrc0B4z6Q==;
+	List-Owner; bh=YLZNNLpthCQL+yBjv4/LmL/wMTYKjzBAxHoGauDUJ+M=; b=FTr0/iW3Tp1D+0
+	Q0OJXcXuBnKWHzJf6Cn5BLuxC7eMSUBU9NiqXNFp/l897taieOgv33mct2EzVE7yu1/LqYTQtG6h8
+	RAZ46FfAn4haOueEB+0xLeP0Jl2dJPZrO4CPuDirHTxKfNeNxmt5WE6NLAJt9JKacdf4Q1W+A4gE9
+	lpOu7a2Xg3tv45cYM/bnLlP7SZrB2bm5+df0Hj1o5d4nw0JQgEG/r33jpzMSBYQKN77BrVxl8jSn/
+	V9l8tsoLXoYdcVdKmIYzaecPx87J22LQ5myQGwb5P2L5uiBmaDNp73sm3gYWzek+GFRTIjmhff9B9
+	LPT2G9quUZTO2l+zxxAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nK3Gq-004FTY-82; Tue, 15 Feb 2022 19:13:52 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1nK3Rp-004J31-HW; Tue, 15 Feb 2022 19:25:13 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nK3Gc-004FMR-Lw; Tue, 15 Feb 2022 19:13:40 +0000
+ id 1nK3RP-004Is0-Ob; Tue, 15 Feb 2022 19:24:49 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id 2784BB81C66;
- Tue, 15 Feb 2022 19:13:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CA149C340EB;
- Tue, 15 Feb 2022 19:13:32 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 4835061758;
+ Tue, 15 Feb 2022 19:24:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8127AC340EB;
+ Tue, 15 Feb 2022 19:24:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1644952415;
- bh=aWKfLj+OcuQ7ORm2NzKcSLdWPXwTMvCyCCSlhItZJdc=;
+ s=k20201202; t=1644953086;
+ bh=kUCZYr9eynBGfoyFNpGztKhdR0TjeWfPR20goAdEojo=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Pb9b+lIl3czsbILZx4JGaHKfxai5nhmkbafSdXIePkm1+42+PtZWRvtnxsIxieHjT
- 9ekyHuwvisvcr9fVX07+lClUNa2p0vhktIvKZSAjwuXs2gg0KwuzJxVI1eJwsCEsx9
- QAqj6xuEKLMkpaRxHB9Jbh5UZNn3lhP/U/32rVpI9FJi1e5LJ0Z2HLVW0p7KctTIZB
- uH0ohVDX/Qm561zC5FzYDM+alYJWObfXnSGwWXg348TFcT9AqtFzE3U54RAksJmBj5
- t03G17WjapCI9e95mge26r6O7cubp0cNepLCQdTnroGWEV76h8vqtZwzBmUYMX3S66
- UcWCeciahTo0A==
-Date: Tue, 15 Feb 2022 13:21:10 -0600
+ b=pgheRwOAKjRlXMfJul10RwEjs5CBKHR/i0QEhyIM79774uc0ovg3u5myvyhB8s/qu
+ xkZdoun6Ve/NuXn1+qZDB9F/trYlid+yq9euKiwm3PP7bJ4zoGvDfPTjgfeWCzsH6f
+ Z5GtGABFqXnkSAxbAOokUuetZQuukvg8GogLN1PAUilOeXNWgORbaiYjI/aeCr++5W
+ YWvZj7f6KVH+xfahOEVmZaopl52rdr1jj6eaQg39ut/UgM8cVQWsEKIq8K1eRZzAAa
+ TaPAe7uN1AmbZCmz+9XMV8T/S9ihvGxGOcJfBqdWD8uwk44Sq4S7ITZBKug7wSeC6N
+ S7tHpNRHJfaSA==
+Date: Tue, 15 Feb 2022 13:32:21 -0600
 From: "Gustavo A. R. Silva" <gustavoars@kernel.org>
-To: Kees Cook <keescook@chromium.org>
-Cc: GR-QLogic-Storage-Upstream@marvell.com, linux-alpha@vger.kernel.org,
+To: Leon Romanovsky <leon@kernel.org>
+Cc: Kees Cook <keescook@chromium.org>,
+ GR-QLogic-Storage-Upstream@marvell.com, linux-alpha@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-ia64@vger.kernel.org,
  linux-s390@vger.kernel.org, linux-sh@vger.kernel.org,
  sparclinux@vger.kernel.org, linux-um@lists.infradead.org,
@@ -66,15 +67,16 @@ Cc: GR-QLogic-Storage-Upstream@marvell.com, linux-alpha@vger.kernel.org,
  linux-perf-users@vger.kernel.org, linux-hardening@vger.kernel.org
 Subject: Re: [PATCH][next] treewide: Replace zero-length arrays with
  flexible-array members
-Message-ID: <20220215192110.GA883653@embeddedor>
+Message-ID: <20220215193221.GA884407@embeddedor>
 References: <20220215174743.GA878920@embeddedor>
  <202202151016.C0471D6E@keescook>
+ <20220215192110.GA883653@embeddedor> <Ygv8wY75hNqS7zO6@unreal>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <202202151016.C0471D6E@keescook>
+In-Reply-To: <Ygv8wY75hNqS7zO6@unreal>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220215_111338_882572_2FA7C4AB 
-X-CRM114-Status: GOOD (  17.62  )
+X-CRM114-CacheID: sfid-20220215_112447_875657_A2EA62D2 
+X-CRM114-Status: GOOD (  14.80  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,29 +88,34 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBGZWIgMTUsIDIwMjIgYXQgMTA6MTc6NDBBTSAtMDgwMCwgS2VlcyBDb29rIHdyb3Rl
-Ogo+IE9uIFR1ZSwgRmViIDE1LCAyMDIyIGF0IDExOjQ3OjQzQU0gLTA2MDAsIEd1c3Rhdm8gQS4g
-Ui4gU2lsdmEgd3JvdGU6Cj4gPiBUaGVyZSBpcyBhIHJlZ3VsYXIgbmVlZCBpbiB0aGUga2VybmVs
-IHRvIHByb3ZpZGUgYSB3YXkgdG8gZGVjbGFyZQo+ID4gaGF2aW5nIGEgZHluYW1pY2FsbHkgc2l6
-ZWQgc2V0IG9mIHRyYWlsaW5nIGVsZW1lbnRzIGluIGEgc3RydWN0dXJlLgo+ID4gS2VybmVsIGNv
-ZGUgc2hvdWxkIGFsd2F5cyB1c2Ug4oCcZmxleGlibGUgYXJyYXkgbWVtYmVyc+KAnVsxXSBmb3Ig
-dGhlc2UKPiA+IGNhc2VzLiBUaGUgb2xkZXIgc3R5bGUgb2Ygb25lLWVsZW1lbnQgb3IgemVyby1s
-ZW5ndGggYXJyYXlzIHNob3VsZAo+ID4gbm8gbG9uZ2VyIGJlIHVzZWRbMl0uCj4gPiAKPiA+IFRo
-aXMgY29kZSB3YXMgdHJhbnNmb3JtZWQgd2l0aCB0aGUgaGVscCBvZiBDb2NjaW5lbGxlOgo+ID4g
-KG5leHQtMjAyMjAyMTQkIHNwYXRjaCAtLWpvYnMgJChnZXRjb25mIF9OUFJPQ0VTU09SU19PTkxO
-KSAtLXNwLWZpbGUgc2NyaXB0LmNvY2NpIC0taW5jbHVkZS1oZWFkZXJzIC0tZGlyIC4gPiBvdXRw
-dXQucGF0Y2gpCj4gPiAKPiA+IEBACj4gPiBpZGVudGlmaWVyIFMsIG1lbWJlciwgYXJyYXk7Cj4g
-PiB0eXBlIFQxLCBUMjsKPiA+IEBACj4gPiAKPiA+IHN0cnVjdCBTIHsKPiA+ICAgLi4uCj4gPiAg
-IFQxIG1lbWJlcjsKPiA+ICAgVDIgYXJyYXlbCj4gPiAtIDAKPiA+ICAgXTsKPiA+IH07Cj4gCj4g
-VGhlc2UgYWxsIGxvb2sgdHJpdmlhbGx5IGNvcnJlY3QgdG8gbWUuIE9ubHkgdHdvIGRpZG4ndCBo
-YXZlIHRoZSBlbmQgb2YKPiB0aGUgc3RydWN0IHZpc2libGUgaW4gdGhlIHBhdGNoLCBhbmQgY2hl
-Y2tpbmcgdGhvc2Ugc2hvd2VkIHRoZW0gdG8gYmUKPiB0cmFpbGluZyBtZW1iZXJzIGFzIHdlbGws
-IHNvOgo+IAo+IFJldmlld2VkLWJ5OiBLZWVzIENvb2sgPGtlZXNjb29rQGNocm9taXVtLm9yZz4K
-CkknbGwgYWRkIHRoaXMgdG8gbXkgLW5leHQgdHJlZS4KClRoYW5rcyEKLS0KR3VzdGF2bwoKLS0g
-CmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
+On Tue, Feb 15, 2022 at 09:19:29PM +0200, Leon Romanovsky wrote:
+> On Tue, Feb 15, 2022 at 01:21:10PM -0600, Gustavo A. R. Silva wrote:
+> > On Tue, Feb 15, 2022 at 10:17:40AM -0800, Kees Cook wrote:
+> > > On Tue, Feb 15, 2022 at 11:47:43AM -0600, Gustavo A. R. Silva wrote:
+> > > 
+> > > These all look trivially correct to me. Only two didn't have the end of
+> > > the struct visible in the patch, and checking those showed them to be
+> > > trailing members as well, so:
+> > > 
+> > > Reviewed-by: Kees Cook <keescook@chromium.org>
+> > 
+> > I'll add this to my -next tree.
+> 
+> I would like to ask you to send mlx5 patch separately to netdev. We are working
+> to delete that file completely and prefer to avoid from unnecessary merge conflicts.
+
+Oh OK. Sure thing; I will do so.
+
+Thanks
+--
+Gustavo
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
