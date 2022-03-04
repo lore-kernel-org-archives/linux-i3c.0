@@ -4,93 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FB51C433F5
-	for <linux-i3c@archiver.kernel.org>; Wed, 16 Feb 2022 19:38:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E39DBC433F5
+	for <linux-i3c@archiver.kernel.org>; Fri,  4 Mar 2022 10:36:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J6M553GU030cbG6uzfSlF7pjX+6eswfdi3rhhKs+aC4=; b=zyzWRSjeZvjds8
-	3O3zSOqGZpOiru/g05yH5sQIiPHANrbNXOYa114LbBSTUb5mOuXfmT59zwJCvUOeS9DnrPTW1t34a
-	FSeS2pm/yioXBWdoHqsHYU7ltbTpCfleqCwT1/ZIeeYjG3wOhy5iZ8m0DRCoC3jvX7KGmLPaWSo04
-	XODPg/8cAcZVj1Gr2jOP+Sg2D8aQSECZ2udDOomw9mBCWpTq02dtL/+qpXgwBnGu0/MeQF1dx/fi6
-	i7hW3V+qKNWu19CP+WbdqfiWDhU4QFW/GnDGnanah9yPVDvNanMiEGZosWM0z6tmSxby/8RJFJ2Ho
-	9w1D+oyODNqUVDgFlL9w==;
+	List-Owner; bh=J5+tjCcCgPSUt+36so6avXu1Xjqayo9875WlUNFJid4=; b=halQeX34NBxisL
+	EyLbaKDSdQLUI43ygLe4T5Cy8AXmQMV0WEh5yjAidY2qKi4vSq/cWJV9SK1jy6Gm1tbGW5Fhackt/
+	8kURzDIsee6cYwh1Fau00nQCMsa0Pz6sM+gHkhWbVJ/Hk7dkC9aO1NHdgjwmhscjOA55vBJqYEh3a
+	weHqDYET2AZ+TazpCyBN3gTo1CsQiT87qhYrnXdKdB1mYiCHBeH329GfA2P7p2aeJP9sKIACyiuTU
+	W0hO25H11LeMzczHyFYH7vKKuNelWUkcdg04O/4G8aP8pJY8h7U2iEUDMQUfYEXjWMWmT0jj//rBi
+	3p3srOWWNIU5zRz5wCPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nKQ8W-008ECI-Gj; Wed, 16 Feb 2022 19:38:48 +0000
-Received: from ams.source.kernel.org ([145.40.68.75])
+	id 1nQ5I7-009br1-2I; Fri, 04 Mar 2022 10:36:07 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nKQ8K-008E70-Bg; Wed, 16 Feb 2022 19:38:37 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id 01E7BB81ED6;
- Wed, 16 Feb 2022 19:38:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 28A69C004E1;
- Wed, 16 Feb 2022 19:38:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1645040312;
- bh=YUNeMwnffWU/vzA+11lFMuMWe0+JjFTHVyeqME5xzxw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=RvhRgyEjawXUAql0FqCTCcTpqR6GYBvsqNC9EZPqI5ZukTe3YMkyAiJ+1YKBf+Rlr
- sxewfhO7AtNd8GwQy/RQGGJ/AXgX1LgrWMnZTpDKZCiIl4MoI0X8P3b4yUkf4X3JeP
- l7bOM+By1/829q8HEUDp0joAEckiMlN1bSJeEtmm9DT0v1cg0aKN9haMO+KRTEXTKx
- BIawC1huC6S2hOqZ/gswPro0qF/Bzg0858Vu6QjTMbuvQTz7D1gR8uQt+HV6mEdhmv
- BV4TgmRvjAQDxRzfAaigAGsmsMmR8Yj0ESiy1ZrH3LP0qLNGtaqg4OazRGKQ9Qu6L7
- d13KOv1rLre5w==
-Date: Wed, 16 Feb 2022 13:46:09 -0600
-From: "Gustavo A. R. Silva" <gustavoars@kernel.org>
-To: "Rafael J. Wysocki" <rafael@kernel.org>
-Cc: Leon Romanovsky <leon@kernel.org>, Kees Cook <keescook@chromium.org>,
- GR-QLogic-Storage-Upstream@marvell.com, linux-alpha@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-ia64@vger.kernel.org, linux-s390@vger.kernel.org,
- Linux-sh list <linux-sh@vger.kernel.org>,
- sparclinux@vger.kernel.org, linux-um@lists.infradead.org,
- linux-xtensa@linux-xtensa.org,
- Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
- intel-gfx <intel-gfx@lists.freedesktop.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- nouveau <nouveau@lists.freedesktop.org>, coresight@lists.linaro.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- netdev <netdev@vger.kernel.org>,
- Linux OMAP Mailing List <linux-omap@vger.kernel.org>,
- "open list:TARGET SUBSYSTEM" <linux-scsi@vger.kernel.org>,
- target-devel@vger.kernel.org, mpi3mr-linuxdrv.pdl@broadcom.com,
- linux-staging@lists.linux.dev, linux-rpi-kernel@lists.infradead.org,
- sparmaintainer@unisys.com, linux-cifs@vger.kernel.org,
- samba-technical@lists.samba.org,
- Ext4 Developers List <linux-ext4@vger.kernel.org>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- "open list:ACPI COMPONENT ARCHITECTURE (ACPICA)" <devel@acpica.org>,
- linux-arch <linux-arch@vger.kernel.org>,
- Linux Memory Management List <linux-mm@kvack.org>,
- greybus-dev@lists.linaro.org, linux-i3c@lists.infradead.org,
- linux-rdma@vger.kernel.org,
- "open list:BLUETOOTH DRIVERS" <linux-bluetooth@vger.kernel.org>,
- "moderated list:SOUND - SOC LAYER / DYNAMIC AUDIO POWER MANAGEM..."
- <alsa-devel@alsa-project.org>, 
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, 
- linux-perf-users@vger.kernel.org, linux-hardening@vger.kernel.org
-Subject: Re: [PATCH][next] treewide: Replace zero-length arrays with
- flexible-array members
-Message-ID: <20220216194609.GA903947@embeddedor>
-References: <20220215174743.GA878920@embeddedor>
- <202202151016.C0471D6E@keescook>
- <20220215192110.GA883653@embeddedor> <Ygv8wY75hNqS7zO6@unreal>
- <20220215193221.GA884407@embeddedor>
- <CAJZ5v0jpAnQk+Hub6ue6t712RW+W0YBjb_gAcZZbUeuYMGv7mg@mail.gmail.com>
+ id 1nQ5I3-009bq9-MY
+ for linux-i3c@lists.infradead.org; Fri, 04 Mar 2022 10:36:05 +0000
+Received: (Authenticated sender: alexandre.belloni@bootlin.com)
+ by mail.gandi.net (Postfix) with ESMTPSA id 754551C000F;
+ Fri,  4 Mar 2022 10:35:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+ t=1646390159;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=QWrQWa+sb+1JNNiqnt5M+loepT4i+U0+VC1LiXu9Xi0=;
+ b=Vf8X7qkTfYBz5bUj8NU86zDczzVZuyEoaqFqhAXX91zmxfPu20avSUQ1pa7iHlaqnSIT7h
+ ESh1edbTp+zIgTzAr5rL2NlaQ2v1e3lXDKBVUaNFOCbSB7fALgR68NqiS4KV0w7WFu66YX
+ qSzIbnkTRtDy4NUy2LL49J8c0Mt7NVvOYfn23+d38iTUh8ZMWW7YU9RdTG4KiuyF8C4xwy
+ C01u0/RS2EnjYph1rEIEzwt641fJFRI/h1XolNsxwievFYvwfmll1crqj3OrALrSZU/CEh
+ wxMNu1BmWNY9XRjjfl0vmf79WGocDe8vnRNdca/95dNtGPGN1204U/luiOjxmg==
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: linux-i3c@lists.infradead.org,
+	Jamie Iles <quic_jiles@quicinc.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Subject: Re: [PATCH 0/2] i3c: support for dynamically added i2c devices
+Date: Fri,  4 Mar 2022 11:35:54 +0100
+Message-Id: <164639013739.20219.13627775120905663769.b4-ty@bootlin.com>
+X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20220117174816.1963463-1-quic_jiles@quicinc.com>
+References: <20220117174816.1963463-1-quic_jiles@quicinc.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAJZ5v0jpAnQk+Hub6ue6t712RW+W0YBjb_gAcZZbUeuYMGv7mg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220216_113836_596540_31526307 
-X-CRM114-Status: GOOD (  10.66  )
+X-CRM114-CacheID: sfid-20220304_023603_897805_B535ABF9 
+X-CRM114-Status: UNSURE (   8.18  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,19 +71,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Feb 16, 2022 at 08:05:47PM +0100, Rafael J. Wysocki wrote:
-> On Tue, Feb 15, 2022 at 8:24 PM Gustavo A. R. Silva
-> <gustavoars@kernel.org> wrote:
+On Mon, 17 Jan 2022 17:48:14 +0000, Jamie Iles wrote:
+> Devices are currently added at controller initialization time with
+> boardinfo, but the i2c subsystem also supports dynamically adding
+> devices through a variety of mechanisms including user-space through
+> sysfs, device tree overlays and ACPI.
 > 
-> Can you also send the ACPI patch separately, please?
+> This small series decouples registration from the boardinfo and then
+> adds a notifier to add the devices at runtime.  A future series will
+> build on this to allow adding the I2C devices through ACPI.
 > 
-> We would like to route it through the upstream ACPICA code base.
+> [...]
 
-Yeah; no problem.
+Applied, thanks!
 
-Thanks
---
-Gustavo
+[1/2] i3c: remove i2c board info from i2c_dev_desc
+      commit: 97a82882d8529c18ff15a0b5396d8c4bd2a36157
+[2/2] i3c: support dynamically added i2c devices
+      commit: cd5883f7e933764e2ddddd9cbb0f7ce18df127c4
+
+Best regards,
+-- 
+Alexandre Belloni <alexandre.belloni@bootlin.com>
 
 -- 
 linux-i3c mailing list
