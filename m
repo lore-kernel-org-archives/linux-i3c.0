@@ -4,51 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C868C43334
-	for <linux-i3c@archiver.kernel.org>; Wed,  1 Jun 2022 21:18:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D171ACCA473
+	for <linux-i3c@archiver.kernel.org>; Wed,  1 Jun 2022 21:53:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WL18Mvj3p4IkNTsCIX1sC7oYiShcDeMPcXRa7jTt5g0=; b=L3eOt75b/u7LaQ
-	Z3VIRRQazQjf4X1/db2zaZZncDHedb7MRxT4o8ed9eBe5vtUjo1M1i8O80dpw6rh+ywA2CxMxYZiP
-	/x6FwjiT4wAxLW+2emAA4SgpL3IGnThlg+1g3rps443ZNJaNbU0NrXR3rSLMaB5LNEiVVaKNUKITX
-	Sy2S/zItnjF1HWAUOivmUXWW+5uQscUkQYzfVjCH6b/XcJ8LzF8uE43Z4ongxlsfz0HLxMAseng5d
-	SLJ2zRphlh1VYN8VaBKbdSQ59Sc3FOZwp/4fCI2wN6ogZ01iP2Or8MPyqTZyFBeitAtQor6IVvuKx
-	N5rYM2qD0d+qtmfKzQ7w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Date:Message-Id:
+	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Isx5w0MALqcIyq1JI2fX06917BBVXgysopBRnjfTGQE=; b=xio9N+ESpfvrfR
+	dL3v5RBaY7HnDqPHh+Is8Kw5djBQENA+ytBvkrKk0uLyqBqeQYc3ORRQslOhNUNyA7xS4U9Eh7ugl
+	XPzOSsCvF3+k2/i/3oBGRLGOLmVazYgu1ryNfat7ZH/ohj84/QedpNp6MqaB8ja/exsEAz2tSQDST
+	SfiPUElm3Qd30tyBHyr8yDt6TNHFQlP46TxYIl9IpEGAcyzb/3nnqiNAfwLBjJCVqquIYx89xLA6h
+	vysC2j62BygxHAnpFbfyZl74ZQAdMkxVShXmkGNaJsqoe13ME0UFA9wx7P9rN8jb4x6RMagCVH7n9
+	GziVEIoM/WmB2We2qYJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwVj6-000RgH-BA; Wed, 01 Jun 2022 21:18:00 +0000
-Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	id 1nwWH8-000ZHi-Fa; Wed, 01 Jun 2022 21:53:10 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nwVj2-000Rd4-HS
-	for linux-i3c@lists.infradead.org; Wed, 01 Jun 2022 21:17:58 +0000
-Received: (Authenticated sender: alexandre.belloni@bootlin.com)
-	by mail.gandi.net (Postfix) with ESMTPSA id CCCCD1BF204;
-	Wed,  1 Jun 2022 21:17:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1654118272;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type;
-	bh=yDUhBv6XHVz7aAD1gbDoff/7ZzVY1tgq3gAseNLUe94=;
-	b=cfJTjSQnibUPOy+Jo5Lb1kxrzIWavxaygTiwI6e6wMGZFBVDEHdUgpVRy23KU2hZtq/Tng
-	8YwRpNPDVwH6UMe9XRFyKvyy2ih+uWYo/qlrh5pEa0zTPNphrh+Iqk2lovSf9T1cso6zIn
-	7Eh4iMVRnJ7QbXxHEDFO3VVbtn6Pm85itJFkGX8atoQjWW6y0VwXCyZNGkDVtm5ZhaeZHG
-	m9VGbX78KuuRWfmLK67dw6G4ShjsQQub0TZZXxeD+Q4PNrpa57LeS8bkgJ++Uob3lrukQ7
-	/Rk9boN2O0+XW17Sti1ssucCjXch7OmwL0Cmn/S6nOdIBsgUb7tGubcTrNc95g==
-Date: Wed, 1 Jun 2022 23:17:51 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Linus Torvalds <torvalds@linux-foundation.org>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [GIT PULL] I3C changes for 5.19
-Message-ID: <YpfXf/unhrWZkE3j@mail.local>
-MIME-Version: 1.0
-Content-Disposition: inline
+	id 1nwWH5-000ZFn-Nx
+	for linux-i3c@lists.infradead.org; Wed, 01 Jun 2022 21:53:09 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 5A203B8175B;
+	Wed,  1 Jun 2022 21:53:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 01C3DC34119;
+	Wed,  1 Jun 2022 21:53:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1654120384;
+	bh=A3Y/hhUIu9rwXN92/CQd7PyYC9u6dgXtTgA+FUAIEeE=;
+	h=Subject:From:In-Reply-To:References:Date:To:Cc:From;
+	b=hq34C+22to9uUSz1dgZgysCia0AvkocB1xdFtqsvWXOpwUf0xI8ofCGRuLRDsnxfD
+	 bS54mc/1FeZY11RS+FhJxU70066LoFKTVDdgHvNqIZppBiEofImh3UU25qTwCi0KuE
+	 hr4oD+3ZEtnVh4zwf/F9a2VKUSwUjiPn1DoNQvKq5Wl/dfcpp7f8Ziq14tb3U0W6/y
+	 qCAgUxoiTWFv5f8tMz1+evOG3tDzdlEIQj0MAnqXrYjrRLazgeF2s/6A/qcmc9JxFi
+	 OiTHRBqqwfu8BapgAQmdgh0WA3OxmFoPMPrstjyvj99mfiIUg73y74MoQxjpGZ5nd8
+	 Ad7w+SG1PAV/g==
+Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id E0CE7F03950;
+	Wed,  1 Jun 2022 21:53:03 +0000 (UTC)
+Subject: Re: [GIT PULL] I3C changes for 5.19
+From: pr-tracker-bot@kernel.org
+In-Reply-To: <YpfXf/unhrWZkE3j@mail.local>
+References: <YpfXf/unhrWZkE3j@mail.local>
+X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
+X-PR-Tracked-Message-Id: <YpfXf/unhrWZkE3j@mail.local>
+X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-5.19
+X-PR-Tracked-Commit-Id: 66ed42caf286a7aaeb6f1db4b2995dd9416226c2
+X-PR-Merge-Tree: torvalds/linux.git
+X-PR-Merge-Refname: refs/heads/master
+X-PR-Merge-Commit-Id: 55fe92179058406fe00bff2167c94443a7b2e07a
+Message-Id: <165412038391.5556.7245944693656757925.pr-tracker-bot@kernel.org>
+Date: Wed, 01 Jun 2022 21:53:03 +0000
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: Linus Torvalds <torvalds@linux-foundation.org>, linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20220601_141756_768859_597F6BFE 
-X-CRM114-Status: GOOD (  10.30  )
+X-CRM114-CacheID: sfid-20220601_145307_945880_234C0A72 
+X-CRM114-Status: UNSURE (   5.04  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -60,65 +75,24 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hello Linus,
+The pull request you sent on Wed, 1 Jun 2022 23:17:51 +0200:
 
-Here is the pull request for the i3c subsystem. Only clean ups and no
-functional change this cycle.
+> git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-5.19
 
-The following changes since commit 3123109284176b1532874591f7c81f3837bbdc17:
+has been merged into torvalds/linux.git:
+https://git.kernel.org/torvalds/c/55fe92179058406fe00bff2167c94443a7b2e07a
 
-  Linux 5.18-rc1 (2022-04-03 14:08:21 -0700)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-5.19
-
-for you to fetch changes up to 66ed42caf286a7aaeb6f1db4b2995dd9416226c2:
-
-  MAINTAINERS: rectify entries for some i3c drivers after dt conversion (2022-06-01 22:46:58 +0200)
-
-----------------------------------------------------------------
-I3C for 5.19
-
-Subsystem:
- - yaml conversion of the DT bindings
-
-----------------------------------------------------------------
-Guo Zhengkui (1):
-      i3c: master: svc: fix returnvar.cocci warning
-
-Lukas Bulwahn (1):
-      MAINTAINERS: rectify entries for some i3c drivers after dt conversion
-
-Minghao Chi (1):
-      i3c/master: simplify the return expression of i3c_hci_remove()
-
-Rob Herring (2):
-      dt-bindings: i3c: Convert cdns,i3c-master to DT schema
-      dt-bindings: i3c: Convert snps,dw-i3c-master to DT schema
-
- .../devicetree/bindings/i3c/cdns,i3c-master.txt    | 43 ----------------
- .../devicetree/bindings/i3c/cdns,i3c-master.yaml   | 60 ++++++++++++++++++++++
- .../devicetree/bindings/i3c/snps,dw-i3c-master.txt | 41 ---------------
- .../bindings/i3c/snps,dw-i3c-master.yaml           | 52 +++++++++++++++++++
- MAINTAINERS                                        |  4 +-
- drivers/i3c/master/mipi-i3c-hci/core.c             |  7 +--
- drivers/i3c/master/svc-i3c-master.c                |  3 +-
- 7 files changed, 116 insertions(+), 94 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/i3c/cdns,i3c-master.txt
- create mode 100644 Documentation/devicetree/bindings/i3c/cdns,i3c-master.yaml
- delete mode 100644 Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.txt
- create mode 100644 Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
+Thank you!
 
 -- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+Deet-doot-dot, I am a bot.
+https://korg.docs.kernel.org/prtracker.html
 
 -- 
 linux-i3c mailing list
