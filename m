@@ -4,102 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D5FEC47089
-	for <linux-i3c@archiver.kernel.org>; Mon,  5 Dec 2022 23:16:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FBC1C4332F
+	for <linux-i3c@archiver.kernel.org>; Sat, 10 Dec 2022 21:27:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XzPAAY3g5NyJg1o27JhQLS9emqhN1sWtU2OQAeBlcLU=; b=nnnxBRED4WPiTA
-	apWRW5AqXCWBtdYYdFgyS+KldYC+/cDLPEvCTfYy6rHFa7EVJ/NqltSBSpxDargGlQFJLhUpLbyZQ
-	oncm/56me+j1XkAs8ZRq7ksprQTys5sA2D1irTA7Wspz6Kp+TSmpVhUyqSslwNfngx828H8GTeYO3
-	B/sApI6AMkuYUVxe7I8UFdLtRFXkiO3X3cMxNMwUrdClV5vbnFLnlQvarPjnTxsjdDXrR4l2mair+
-	f8W2o1byjJdwKRU0986fesM0v3f1y8czlTem0U4+dQ35SSU66ljJC3BL3rBMrpCYIj4iGspM7OjoH
-	Igx6wsrFvAsX8oLgmvxw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:From:Subject:Message-ID:
+	Mime-Version:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=j7upQuB4ndcWJEDPRK525FHZe7W5a06k4AbtM7zjvb8=; b=LP3
+	JK6nMZK1qdQJ1yhVnFnwtPSdDj35s+t3ABRRhXp40VFpT7LjZl3koVn7i+fVQ5XyPVOx19Hn59z84
+	maMwRYmRt8u83vXvA2roqI+YBDQ1dvcvYOSzsa/YLwRnfWodjquNhStAPpOY2pAHgct0jzwkOr17w
+	84c3oH2KlVUOSt+hRq2ubapa5I6KF6dDb3GWNxYrJwglFSkJarFMcudiOf3cUTZvdDAlfUlQPK3Lu
+	WGTX2ix8NAAmThEbc+GFyBk2EoUYFrVqeVMenaxONjXj91jfSZlOn93bWt5RZ+Eo8uLsCdP8FGViD
+	Ba7MmCH6cG8i4rLAAbV5yGXvNBv2RWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p2Kh4-00Bz7t-15; Mon, 05 Dec 2022 23:16:14 +0000
-Received: from mail-dm6nam12on2060c.outbound.protection.outlook.com ([2a01:111:f400:fe59::60c] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
+	id 1p47NP-005cfT-8A; Sat, 10 Dec 2022 21:27:19 +0000
+Received: from mail-yw1-x114a.google.com ([2607:f8b0:4864:20::114a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p297M-001IAC-V7
-	for linux-i3c@lists.infradead.org; Mon, 05 Dec 2022 10:54:39 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=V3iiqocOncFbH4yYkFRmHQtdhJFEW6N5MX8d2Iamwn9DYRP61r6uJl1M8IoPI5lTwRvtZ6tvJ31EmWpbZctlqjwmTq5pAOs252ASoEj18OOTafsUPTbtTivlUOxNMOMd2O1vhWSHbJjip+u/ChldXYY+qZfVaM0IS2kVyg4Y6a2mjELjvu7VXSrHwPraRjSkHf+NjrSyuMOaSuVX5DOBPpthdsXu0d6eQ2xJZG8UqEMseQuGcZeEGgbImWBSOdVgaZ68NSEFbn3uufyrWE7ajPTFFyTfk+RroTdqrgGCbFG9/g1albh5qnM1RYL4ZC51joHUSYZ21vm0zmSK2PkXCQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=+GkIRKYtBUi1XSOGmh2wwAycFw1LhTdG5ETce4c0W0c=;
- b=X+SOaRDGY+qiwdlacQ8Sn73SS/CF0UUOtDbH/tOzgtX79r0yusL7tuZt7FxSyaXsHwFPcWQHNcUGN+wH5U+1AyXi7nCsjmDXhTPoYdsLEGbu3thGv5sGs5hpT3DnHr2lo0NwhhrFkvmexKaWP6vVDI8hArU6drYxGv+RSjQkDHT8MetO0/HiwHDFJeeHlnu303HmwnbCVahdbime0M0+7ofo7LAa4rIllDNqr1QWYC3LmGFoQvohk0uhNhQCy0/SkMZZ4ta+sZ3/5Cn02W5olaZvQ/gSJwdJHq1GJSi76CUOCaTp7yfTjX+7GhHjTKP8JipGSdrR/J2280gwSFryLg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 165.204.84.17) smtp.rcpttodomain=lists.infradead.org smtp.mailfrom=amd.com;
- dmarc=pass (p=quarantine sp=quarantine pct=100) action=none
- header.from=amd.com; dkim=none (message not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+GkIRKYtBUi1XSOGmh2wwAycFw1LhTdG5ETce4c0W0c=;
- b=4YqlBNUYDKm2oh1pETA9JlGGWSUlooqTaNmvLGHrh/Ju0eBZgEbfxz7Ca2FrCyubI4bYvQ5StKYmArpHKwyrVkcjMnqrzHy4wHgvCjUoyDN46v9HvzhaERGecWOQgF9MYVn2u/DaHJ2pnoXoTrlRl5YdTwFMyUNPy36bVrkQlFc=
-Received: from DM6PR21CA0023.namprd21.prod.outlook.com (2603:10b6:5:174::33)
- by SJ2PR12MB8034.namprd12.prod.outlook.com (2603:10b6:a03:4c7::17) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5880.10; Mon, 5 Dec
- 2022 10:54:30 +0000
-Received: from DM6NAM11FT033.eop-nam11.prod.protection.outlook.com
- (2603:10b6:5:174:cafe::26) by DM6PR21CA0023.outlook.office365.com
- (2603:10b6:5:174::33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5924.4 via Frontend
- Transport; Mon, 5 Dec 2022 10:54:30 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
- smtp.mailfrom=amd.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=amd.com;
-Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
- 165.204.84.17 as permitted sender) receiver=protection.outlook.com;
- client-ip=165.204.84.17; helo=SATLEXMB04.amd.com; pr=C
-Received: from SATLEXMB04.amd.com (165.204.84.17) by
- DM6NAM11FT033.mail.protection.outlook.com (10.13.172.221) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.20.5880.14 via Frontend Transport; Mon, 5 Dec 2022 10:54:30 +0000
-Received: from amd.amd.com (10.180.168.240) by SATLEXMB04.amd.com
- (10.181.40.145) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2375.34; Mon, 5 Dec
- 2022 04:54:27 -0600
-From: Naveen Krishna Chatradhi <naveenkrishna.chatradhi@amd.com>
-To: <linux-i3c@lists.infradead.org>, <alexandre.belloni@bootlin.com>
-CC: <linux-kernel@vger.kernel.org>, <boris.brezillon@collabora.com>, "Naveen
- Krishna Chatradhi" <nchatrad@amd.com>, Akshay Gupta <Akshay.Gupta@amd.com>
-Subject: [PATCH] i3c: Correct the macro module_i3c_i2c_driver
-Date: Mon, 5 Dec 2022 10:54:13 +0000
-Message-ID: <20221205105413.937704-1-naveenkrishna.chatradhi@amd.com>
-X-Mailer: git-send-email 2.25.1
-MIME-Version: 1.0
-X-Originating-IP: [10.180.168.240]
-X-ClientProxiedBy: SATLEXMB04.amd.com (10.181.40.145) To SATLEXMB04.amd.com
- (10.181.40.145)
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DM6NAM11FT033:EE_|SJ2PR12MB8034:EE_
-X-MS-Office365-Filtering-Correlation-Id: ac72c8c1-d869-46ae-3c08-08dad6af15e2
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	OUsxMlssuP+yoUGKbVWQbLEOpQu5vPpsPE8ydoCwUraguSb8Vbo/N1Qk39Zww5JXqXU4+/JXjZpYGcojE8TlGgmOPBGgs9Rz5rAXx3Sr5fX1Bh8Z3GGmJ9RyCZp9uTfHyf8zcwk2reHL939VLj5Zv0CqvwlvF/tiK7jOavULk/8k+pF86XoyTGrlyW6MykIg/dAQcuadtij9L9vt0njgSzWrboUBZ/B3degN+AgDecJkfQziBPAHB3XSVRnNicLxBdh+2ypUoQTpMZ80s+TbKyBm+rGEHFFAivIl0os/cRpEc6Xg5I6B6vP7909+ZrA7WjBejVifFlHp0iYtspkfNcVDoycOzDfngVBtpcbsAhqH2XPO/Ns/UG7kUzWuepvBkcXBZmTDmGTLfpwhpXvCzOp2G4S/mHcqb4rP/rLCMPJWtjqvIjjwC92oX1i6I8zkOLWUkWLSBz6Mq/ahkuWB90/FpV53m7KLqnrBiUL702M7EJ6OOc8fp/hSmTX5Xxua2EG6fYfHnQpvovvbplD8DHvUaW8T5vk+kQDj5lfG7vXc+5AXMVtDI4GjRV7f31y3HyNucRhxPoYPBGQQJBBHpaIPRr08mC4YLuorArLzYXOukdwL1wu30vNK9JEU5HrqKjlVgLd1xAvwARnIe1Znn78ukuD/LWYpFyXNoppyxNyaYmbfQr+cChVehoW8Ro2jylnSuvuYkGceTXMmVIDHZP0mTx8sw6OTexFP7FOlu5n4alWX+xXPAa/8fncoNkFd6JbC82llNFUUHeK6+FM2zw==
-X-Forefront-Antispam-Report: 	CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:SATLEXMB04.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230022)(4636009)(376002)(346002)(396003)(136003)(39860400002)(451199015)(36840700001)(46966006)(40470700004)(186003)(26005)(7696005)(8676002)(478600001)(6666004)(47076005)(426003)(1076003)(41300700001)(5660300002)(8936002)(336012)(2616005)(4326008)(2906002)(36860700001)(70586007)(83380400001)(16526019)(81166007)(82740400003)(36756003)(40460700003)(70206006)(356005)(316002)(82310400005)(110136005)(86362001)(54906003)(40480700001)(70780200001)(36900700001);DIR:OUT;SFP:1101;
-X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Dec 2022 10:54:30.0334
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: ac72c8c1-d869-46ae-3c08-08dad6af15e2
-X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[SATLEXMB04.amd.com]
-X-MS-Exchange-CrossTenant-AuthSource: 	DM6NAM11FT033.eop-nam11.prod.protection.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ2PR12MB8034
+	id 1p31Nw-00CLhJ-SF
+	for linux-i3c@lists.infradead.org; Wed, 07 Dec 2022 20:51:22 +0000
+Received: by mail-yw1-x114a.google.com with SMTP id 00721157ae682-3b102317668so202393057b3.23
+        for <linux-i3c@lists.infradead.org>; Wed, 07 Dec 2022 12:51:17 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20210112;
+        h=cc:to:from:subject:message-id:mime-version:date:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=5mynKz5oCR+Be228hwbU8PAPBPy+Q/WCZLZqKob1ZyY=;
+        b=K9Bw0uYC5EINGJ0SvI1INZ2sag4QfyGThlbB2Zt3HAHUnI+Oa7hKjMuD8YLFZ7rSre
+         8Vfp81jZdch4auKOIS1u61VnYeDU7NnBqrKxpgE+pUgzGyPwVy6OytACzzxNXvbpfbWJ
+         t9+5kaM+8VllcO/yeRnmvOBDMglyHW0TOwz3ri938gHynFPisQ6u2r+twv7wQzDtSqJx
+         UR/lZaYU1G3QIRVxzg4B2jVXa2QRXpjCS7mGEfd/1VJ/VtQbcBNdfz/IOxJCZF8TGI7G
+         oOTDv9EBJnYNEcFFJtCBETYRP6vvcZqsLaGhnXCQvaBevfeHIrM+nrmF/lxC5WW6H4LK
+         SBYg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=cc:to:from:subject:message-id:mime-version:date:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=5mynKz5oCR+Be228hwbU8PAPBPy+Q/WCZLZqKob1ZyY=;
+        b=AdrEx03ZJA7wZX8s8uxf7sKFXcbMBw/isB2W3hzyr7mvSa/K6LdgzsBjujj7ML9rBY
+         vb7G1O9+QUCMbjFXCHX5jGZ3ZhqD8e86NUaajIgE8M42Pe76W7jBY3jk+IQaC/SErsZE
+         wQh2FllblJDWLPp5SHTQMnCMw09K1AW9FFrVBcVNiqb9xSl5JuG0XkZQG1JLyVuLnLYt
+         QWabKB3lygxAtU9xI+FYVtWFVrWUXuW2c+ryPujXh3fwvo1f3C01G5SD/0/T3KFeyeHy
+         n7wtaZbjoO9aT2/+afMqa+jdq39EmxlzaGsmJ0Pi/XPAbUkQhB+oBbPaOJccSEZn3wHN
+         TUxg==
+X-Gm-Message-State: ANoB5plm5/qLgzFJ3j0tKs58DgeLwJs1r/AWYEbo9+ufjp9QGJGqPo+t
+	b23fbbL1N0DEEHk3c8d+zrTEL5ldmZSHwngi
+X-Google-Smtp-Source: AA0mqf7cPlRUzlr+/Oy6wGESiWoB3+7782KRnmnJvA592PmfJn3Lznx+GeaN1wDU+VAVXlItkUO0yYI9mFFPX61a
+X-Received: from zenghuchen.c.googlers.com ([fda3:e722:ac3:cc00:2b:7d90:c0a8:2448])
+ (user=zenghuchen job=sendgmr) by 2002:a25:248d:0:b0:6f1:29d9:44ba with SMTP
+ id k135-20020a25248d000000b006f129d944bamr61196926ybk.632.1670446276466; Wed,
+ 07 Dec 2022 12:51:16 -0800 (PST)
+Date: Wed,  7 Dec 2022 15:50:59 -0500
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.39.0.rc0.267.gcb52ba06e7-goog
+Message-ID: <20221207205059.3848851-1-zenghuchen@google.com>
+Subject: [PATCH] I3C: export SETDASA method
+From: Jack Chen <zenghuchen@google.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	Jesus Sanchez-Palencia <jesussanp@google.com>, Mark Slevinsky <markslevinsky@google.com>, 
+	Jack Chen <zenghuchen@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20221205_025437_236117_922C0457 
-X-CRM114-Status: UNSURE (   8.60  )
-X-CRM114-Notice: Please train this message.
-X-Mailman-Approved-At: Mon, 05 Dec 2022 15:16:13 -0800
+X-CRM114-CacheID: sfid-20221207_125120_946145_5EBEB371 
+X-CRM114-Status: GOOD (  11.88  )
+X-Mailman-Approved-At: Sat, 10 Dec 2022 13:27:18 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,37 +86,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Naveen Krishna Chatradhi <nchatrad@amd.com>
+Because not all I3C drivers have the hot-join feature ready, and
+especially not all I3C devices support hot-join feature, exporting
+SETDASA method could be useful. With this function, the I3C controller
+could perform a DAA to I3C devices when users decide to turn these I3C
+devices off and on again during run-time.
 
-Present definition for module_i3c_i2c_driver uses only the
-1st argument i.e., struct i3c_driver.
-Irrespective of CONFIG_I3C being enabled/disabled,
-struct i2c_driver is never passed to module_driver()
+Tested: This change has been tested with turnning off an I3C device and
+turning on it again during run-time. The device driver calls SETDASA
+method to perform DAA to the device. And communication between I3C
+controller and device is set up again correctly.
 
-Passing struct i2c_driver as the 4th argument works.
-
-Signed-off-by: Akshay Gupta <Akshay.Gupta@amd.com>
-Signed-off-by: Naveen Krishna Chatradhi <nchatrad@amd.com>
+Signed-off-by: Jack Chen <zenghuchen@google.com>
 ---
- include/linux/i3c/device.h | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/i3c/device.c       | 20 ++++++++++++++++++++
+ drivers/i3c/internals.h    |  1 +
+ drivers/i3c/master.c       | 19 +++++++++++++++++++
+ include/linux/i3c/device.h |  2 ++
+ 4 files changed, 42 insertions(+)
 
+diff --git a/drivers/i3c/device.c b/drivers/i3c/device.c
+index e92d3e9a52bd..9762630b917e 100644
+--- a/drivers/i3c/device.c
++++ b/drivers/i3c/device.c
+@@ -50,6 +50,26 @@ int i3c_device_do_priv_xfers(struct i3c_device *dev,
+ }
+ EXPORT_SYMBOL_GPL(i3c_device_do_priv_xfers);
+ 
++/**
++ * i3c_device_do_setdasa() - do I3C dynamic address assignement with
++ *                           static address
++ *
++ * @dev: device with which the DAA should be done
++ *
++ * Return: 0 in case of success, a negative error core otherwise.
++ */
++int i3c_device_do_setdasa(struct i3c_device *dev)
++{
++	int ret;
++
++	i3c_bus_normaluse_lock(dev->bus);
++	ret = i3c_dev_setdasa_locked(dev->desc);
++	i3c_bus_normaluse_unlock(dev->bus);
++
++	return ret;
++}
++EXPORT_SYMBOL_GPL(i3c_device_do_setdasa);
++
+ /**
+  * i3c_device_get_info() - get I3C device information
+  *
+diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
+index 86b7b44cfca2..908a807badaf 100644
+--- a/drivers/i3c/internals.h
++++ b/drivers/i3c/internals.h
+@@ -15,6 +15,7 @@ extern struct bus_type i3c_bus_type;
+ void i3c_bus_normaluse_lock(struct i3c_bus *bus);
+ void i3c_bus_normaluse_unlock(struct i3c_bus *bus);
+ 
++int i3c_dev_setdasa_locked(struct i3c_dev_desc *dev);
+ int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
+ 				 struct i3c_priv_xfer *xfers,
+ 				 int nxfers);
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 351c81a929a6..d7e6f6c99aea 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -2708,6 +2708,25 @@ int i3c_master_unregister(struct i3c_master_controller *master)
+ }
+ EXPORT_SYMBOL_GPL(i3c_master_unregister);
+ 
++int i3c_dev_setdasa_locked(struct i3c_dev_desc *dev)
++{
++	struct i3c_master_controller *master;
++
++	if (!dev)
++		return -ENOENT;
++
++	master = i3c_dev_get_master(dev);
++	if (!master)
++		return -EINVAL;
++
++	if (!dev->boardinfo || !dev->boardinfo->init_dyn_addr ||
++		!dev->boardinfo->static_addr)
++		return -EINVAL;
++
++	return i3c_master_setdasa_locked(master, dev->info.static_addr,
++						dev->boardinfo->init_dyn_addr);
++}
++
+ int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
+ 				 struct i3c_priv_xfer *xfers,
+ 				 int nxfers)
 diff --git a/include/linux/i3c/device.h b/include/linux/i3c/device.h
-index 8242e13e7b0b..419192b5cc4d 100644
+index 8242e13e7b0b..90b6e0f7d29f 100644
 --- a/include/linux/i3c/device.h
 +++ b/include/linux/i3c/device.h
-@@ -287,7 +287,8 @@ static inline void i3c_i2c_driver_unregister(struct i3c_driver *i3cdrv,
- #define module_i3c_i2c_driver(__i3cdrv, __i2cdrv)	\
- 	module_driver(__i3cdrv,				\
- 		      i3c_i2c_driver_register,		\
--		      i3c_i2c_driver_unregister)
-+		      i3c_i2c_driver_unregister,	\
-+		      __i2cdrv)
- 
- int i3c_device_do_priv_xfers(struct i3c_device *dev,
+@@ -293,6 +293,8 @@ int i3c_device_do_priv_xfers(struct i3c_device *dev,
  			     struct i3c_priv_xfer *xfers,
+ 			     int nxfers);
+ 
++int i3c_device_do_setdasa(struct i3c_device *dev);
++
+ void i3c_device_get_info(struct i3c_device *dev, struct i3c_device_info *info);
+ 
+ struct i3c_ibi_payload {
 -- 
-2.25.1
+2.39.0.rc0.267.gcb52ba06e7-goog
 
 
 -- 
