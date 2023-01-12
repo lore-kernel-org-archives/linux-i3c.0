@@ -4,48 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D7B3C678D6
-	for <linux-i3c@archiver.kernel.org>; Wed, 11 Jan 2023 13:33:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E161C61DB3
+	for <linux-i3c@archiver.kernel.org>; Thu, 12 Jan 2023 18:44:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EoVYRSuuQN4VDBWwE3pJ5891MGgEnd8T4Gjb5uZhixY=; b=StjUovy4lwrqpT
-	bklupJZu/dZq6lVWCeDedfbkjJAV+0LEjtLuuFKEZKrk6m/zVDomEUhfKU7K9jd/32qf8HGBM81aH
-	1IMkS8i7BujqbbJI21WQHjQ/v4KBmLkwSFK33K7zaxgrUGUYP9zvyoTa3M8f3mKW98EXCE6B3c7yN
-	yWI6j/IWGAMkoNCd9xuLgcdQMT20R9zSlNHz0zg/+AfpS704pkNrEvfQ73N4R0LGxhDvf3zQb24xx
-	aLvU3Ig7EB/wiUighCBGYdBEb8kr3Bjv2YxKWB+YDgH547O1hLnRf925xDtYXJSNz035+HWZKchtS
-	h9jNL2b+NwK5CahCBSVQ==;
+	List-Owner; bh=vq/nZ4hs5m8ij5e6tCx20QpiUsxrB33Pvv+0HjeoemM=; b=iD7xK7UQZDScji
+	vHUByVfxUyUbHGrF0bxA5KrVsAtu0AhtTggMf8VqLW+aFcoSdTxgIqdBSX8p2D7+7sGTABsuQVUjJ
+	LZtmTThuGHKDXAm1m2kGT7x7aLzJGxIDlEfTCoBiSMgE3cpD48iJRTjpgkJSVBHaqLOnRCiUW6mcQ
+	56Q98K0Rp0DzXb1NBybSABLiuBZRpcrWAUmiy8++usa3mfGw9ampGV5+C+RPIDmaBVhytoas7LqSQ
+	/mxHQ+/p9Oyqu8Isfj2ipgedAEUtqH0k7W7/RRvDN3EtZ/tsBqoB4Nw1r474LJWmVI7GNtKqZjgsQ
+	qM1dvWEB7zWUjw27OILw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFbEO-00Bbin-Ax; Wed, 11 Jan 2023 13:33:28 +0000
-Received: from relay8-d.mail.gandi.net ([2001:4b98:dc4:8::228])
+	id 1pG2ZE-00GKYb-OJ; Thu, 12 Jan 2023 18:44:48 +0000
+Received: from mga06b.intel.com ([134.134.136.31] helo=mga06.intel.com)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pFbDh-00BbEa-Rl
-	for linux-i3c@lists.infradead.org; Wed, 11 Jan 2023 13:32:50 +0000
-Received: (Authenticated sender: alexandre.belloni@bootlin.com)
-	by mail.gandi.net (Postfix) with ESMTPSA id 740041BF20D;
-	Wed, 11 Jan 2023 13:32:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1673443961;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=fhJfy58Wim3I6Uy+3tQwAhlF/9yDhsCxzNqEc6EuAvA=;
-	b=jG7wlacqv9Y4oZQ7Dgp/NGAz9LLTYwSrgd8SsHXtcdljEJlU4npZXLFXbmV+i6GLjVTgzz
-	9dfk2zKK+XffX4XxYwrQI2zzDS+r8tgzF3HnGjyKO0sYe5NYR7URxyujI3YWeXo1po/2kf
-	e4RM4uDN8loTbKTsdVZ2kOp++9X1WSHir11VDASqZlzecnczCP3IBfbdNLcLkIZ4YgObpz
-	BHRcd8ji7zuNG/47lbkulphOSIE7DMqWSpWQbI5d+xZJlu5hKHsRH3TapnepGofg8mGHxs
-	NeEd6je9erlp8UL67B1ZZdlsNedS0Lms6h83S3Bu+feUWSCBAzGQda5Wza2/nA==
-Date: Wed, 11 Jan 2023 14:32:35 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+	id 1pFwE3-00EvxB-9h
+	for linux-i3c@lists.infradead.org; Thu, 12 Jan 2023 11:58:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1673524711; x=1705060711;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=fdZR2d98/iYrGEqZXV6e7SW+75h27l74f19UtobG2zU=;
+  b=JZD5KW1tGOB65s1wRFovDruqvdnB4zNJxxmzvO+MWApDdJUx7XdWtH04
+   rgfkB6rE08Hw06Gs0Fwy5qCBYWgWUVndZKBB8acs8IK4yR6ftmRAEBBzr
+   8q7AY7jb2CPWQChf/2z7NEAwpYsc9W+tOcp3gFNy/VCLThwIV5N7rAm5T
+   T787B0488cAfZyGYVs+P4K7pxEP4YggSNfXUflDIo8jK4oMXMB5cFqgcE
+   JGqiue/ckhB2lZ8+mZ8OrzwvhbURUiHaBgZV9LXDP7V6Mg+rDNLvJbfG1
+   NRIdWiyyaN95mGc2IwQpL3PQ2V/AlzG+HI1+YME1lIcX7iZ7D+12+/s/A
+   g==;
+X-IronPort-AV: E=McAfee;i="6500,9779,10586"; a="386000904"
+X-IronPort-AV: E=Sophos;i="5.97,319,1669104000"; 
+   d="scan'208";a="386000904"
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+  by orsmga104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Jan 2023 03:58:28 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6500,9779,10586"; a="800177263"
+X-IronPort-AV: E=Sophos;i="5.97,319,1669104000"; 
+   d="scan'208";a="800177263"
+Received: from kuha.fi.intel.com ([10.237.72.185])
+  by fmsmga001.fm.intel.com with SMTP; 12 Jan 2023 03:58:16 -0800
+Received: by kuha.fi.intel.com (sSMTP sendmail emulation); Thu, 12 Jan 2023 13:58:15 +0200
+Date: Thu, 12 Jan 2023 13:58:15 +0200
+From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Cc: linux-kernel@vger.kernel.org, Jens Axboe <axboe@kernel.dk>,
 	Len Brown <lenb@kernel.org>,
 	Stefan Richter <stefanr@s5r6.in-berlin.de>,
 	Wolfram Sang <wsa@kernel.org>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Dmitry Torokhov <dmitry.torokhov@gmail.com>,
 	Sean Young <sean@mess.org>, Rob Herring <robh+dt@kernel.org>,
 	Frank Rowand <frowand.list@gmail.com>,
@@ -59,7 +71,6 @@ Cc: linux-kernel@vger.kernel.org, Jens Axboe <axboe@kernel.dk>,
 	Michael Jamet <michael.jamet@intel.com>,
 	Yehezkel Bernat <YehezkelShB@gmail.com>,
 	Jiri Slaby <jirislaby@kernel.org>,
-	Heikki Krogerus <heikki.krogerus@linux.intel.com>,
 	"Matthew Wilcox (Oracle)" <willy@infradead.org>,
 	"Martin K. Petersen" <martin.petersen@oracle.com>,
 	Chaitanya Kulkarni <kch@nvidia.com>, Ming Lei <ming.lei@redhat.com>,
@@ -83,16 +94,16 @@ Cc: linux-kernel@vger.kernel.org, Jens Axboe <axboe@kernel.dk>,
 	Mauro Carvalho Chehab <mchehab@kernel.org>
 Subject: Re: [PATCH v2 05/16] driver core: make struct device_type.uevent()
  take a const *
-Message-ID: <Y766c6QyOaG8oQlu@mail.local>
+Message-ID: <Y7/1163Ahkesgqp0@kuha.fi.intel.com>
 References: <20230111113018.459199-1-gregkh@linuxfoundation.org>
  <20230111113018.459199-6-gregkh@linuxfoundation.org>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20230111113018.459199-6-gregkh@linuxfoundation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230111_053246_276210_9BCB5686 
-X-CRM114-Status: GOOD (  28.46  )
-X-Mailman-Approved-At: Wed, 11 Jan 2023 05:33:24 -0800
+X-CRM114-CacheID: sfid-20230112_035831_534779_FBD5473F 
+X-CRM114-Status: GOOD (  32.15  )
+X-Mailman-Approved-At: Thu, 12 Jan 2023 10:44:47 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,7 +120,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 11/01/2023 12:30:07+0100, Greg Kroah-Hartman wrote:
+On Wed, Jan 11, 2023 at 12:30:07PM +0100, Greg Kroah-Hartman wrote:
 > The uevent() callback in struct device_type should not be modifying the
 > device that is passed into it, so mark it as a const * and propagate the
 > function signature changes out into all relevant subsystems that use
@@ -166,7 +177,8 @@ On 11/01/2023 12:30:07+0100, Greg Kroah-Hartman wrote:
 > Acked-by: Mika Westerberg <mika.westerberg@linux.intel.com> # for Thunderbolt
 > Acked-by: Mauro Carvalho Chehab <mchehab@kernel.org>
 > Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+
+Acked-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
 
 > ---
 >  block/partitions/core.c                   |  4 ++--
@@ -690,12 +702,9 @@ Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 >   * module_sdw_driver() - Helper macro for registering a Soundwire driver
 > -- 
 > 2.39.0
-> 
 
 -- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+heikki
 
 -- 
 linux-i3c mailing list
