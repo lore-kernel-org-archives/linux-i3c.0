@@ -4,64 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0843CC636D4
-	for <linux-i3c@archiver.kernel.org>; Mon, 13 Feb 2023 15:10:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 30389C636D4
+	for <linux-i3c@archiver.kernel.org>; Mon, 13 Feb 2023 20:17:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
-	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IqwYA51frYC/wDApGtAD+bxyqabocQDAknya3bnCpEg=; b=HLUp8l7wu/xQMT
-	jY9gwxIvU7aSJ1/WgTVtwO8zCrULXb8yQ4YxnhoOqVslZpftO5HN5nZ88jaJ6UR4G52Nqs9Z1HlZc
-	l4ismlqDiARfTnpvtOsZAWPL58bOInH1aaZVIcrmJg4RZgvylGFRzBe5VoGtoQdQXuOcV+830mf2M
-	kgWwKR4C//brBYyUlEMJRMAvrhfwPeHPFFwAtvpsack+/seyL96TTWJonLM9u66aHw2igyc8aZHUA
-	Q7z8hNGJCPdGAE67taHvXCoYyzSqaWnNgiocN9eau1ymo29TPp4/GVBLdVvqD79aT8uW4OvxlbP4C
-	Wv9iCgiVZ1o+ZjHs3vgQ==;
+	List-Owner; bh=YsSqWM+Vqp75ecCP1dWlMOne6kBvMqnTa+bzcKZsgCk=; b=UqLBaxLBscsd2R
+	EZZsfsRsSjfxCb6g2c+tr1W41qhKcFI+MABQ+vdWEjIA/tKTpkXIsnVVPtPYd+DgrgP0IpFBEBgMz
+	jmHf7NoTYiPfoHyu7wvLSTtYK4DZhpvVGDDhSucD2/uO+NEj5rwJgsSLlENm+wzAoBrYvaHEHCXpU
+	eAlRHpz0Ihvzag/T6w+5yEdaaFeinpij/2mLrNIh6O7m+pP6TdHTbKzzrEOmotDL5uvCLmaBrVUT0
+	mx7EjVkTJb6zsSfcVjHC48nT7C64jxc3clg9FlWy0Hn2zQXYrwQXuuTxwFDVP1BdXSSHv9p2FXZ2c
+	Hx0Zfd7/79zKR8oPy3Fw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pRaT6-00F8Rh-Rp; Mon, 13 Feb 2023 15:10:12 +0000
-Received: from mail-il1-f177.google.com ([209.85.166.177])
+	id 1pRfGe-00G92P-TZ; Mon, 13 Feb 2023 20:17:40 +0000
+Received: from mga09.intel.com ([134.134.136.24])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pRaSr-00F8JB-Jr
-	for linux-i3c@lists.infradead.org; Mon, 13 Feb 2023 15:10:02 +0000
-Received: by mail-il1-f177.google.com with SMTP id w13so5306568ilv.3
-        for <linux-i3c@lists.infradead.org>; Mon, 13 Feb 2023 07:09:46 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=date:subject:message-id:references:in-reply-to:cc:to:from
-         :mime-version:content-transfer-encoding:x-gm-message-state:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=LTZfJmfMcujhNKLGLoEwVmdMPFYjexvLBhWg/YGsbfM=;
-        b=eoVRdXuhOKNT6ndg3pYMZaTQ0v3gJyXk0u1n9C/QqWJkwT8jrP7jtJ8vHiQGebwofI
-         juxprd1wez47fE1xb8iK2Ic8yKV+PfdzS8vAucX74VmOgKLkUGfJdS/wXYnWkgGJnxvY
-         oZ6bH5kLa+o+fdx9r6trk5W4GujQUVLe4cE0bd0WRVpunQBshdtPyHwebEJG97W3eL+5
-         hfHNBG4zlWPFkxuSru0+7R8OEI8Ll6yy+AIXITF1P3JIIKV+MGoR+jX6FucUndpFHGXo
-         6EHEW814RdoHhJn6HFp8FQOWgfjEv/oqOOT/SiZw+7ELsJ5/uEt9KN9UOXcV/FTPjuga
-         vDig==
-X-Gm-Message-State: AO0yUKX7eHMGCWdDi9PyQU3qH5UFAJ4GOwuIhzBxLitONbwp7uR9ohiq
-	5+cyvu1mgOGCypYJ9LJ1mg==
-X-Google-Smtp-Source: AK7set9GJakT0VAo6Ha4wp16ihDld2jGVNlZAeO8dCGg80o4dGpH05cwMWfC69+yzHtrLzrIGtdJQg==
-X-Received: by 2002:a05:6e02:1b81:b0:315:2d37:993 with SMTP id h1-20020a056e021b8100b003152d370993mr9906162ili.3.1676300985739;
-        Mon, 13 Feb 2023 07:09:45 -0800 (PST)
-Received: from robh_at_kernel.org (c-73-14-99-67.hsd1.co.comcast.net. [73.14.99.67])
-        by smtp.gmail.com with ESMTPSA id h26-20020a02c73a000000b00389d02a032dsm4014411jao.172.2023.02.13.07.09.44
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 13 Feb 2023 07:09:45 -0800 (PST)
-Received: (nullmailer pid 11615 invoked by uid 1000);
-	Mon, 13 Feb 2023 15:09:41 -0000
+	id 1pRfGb-00G91V-Gf
+	for linux-i3c@lists.infradead.org; Mon, 13 Feb 2023 20:17:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1676319457; x=1707855457;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=1Sz/O16hhPwySqsAXoi0RNWs4GAjLfZ9MP3zySBHD/Q=;
+  b=V1Wnr3pTOXCJwrA+D6tSJ2RW7QIJWS3OVQM3oZlCqqDWajCmytbUE62G
+   JBpvvcpTmN2Wkvt80HpIpdjB9N9S9e4JQbUpS9HLBRwB0KqTDlap59WVA
+   c5kZoNju1IK4kGMwP/+3NEi560JL3IOFLp0eM9UwjwxQZqEbhByhySI4h
+   Mn0SFVyOUWrjAJ0sugZ6gWqMkP/oqKM842cXAjUdE/tObqrQKh0n+xA6m
+   lC/1HzxfAQsHaVnQxb2L6/JKWwzRJ/Qnga0axtI+UJH+mOjHUpkhBnX0S
+   3OhBoDnKOWvF+SibWW7dSy/vlJ6DqB4gu8tmJdtf87DjV460mJekCiwoG
+   Q==;
+X-IronPort-AV: E=McAfee;i="6500,9779,10620"; a="332303419"
+X-IronPort-AV: E=Sophos;i="5.97,294,1669104000"; 
+   d="scan'208";a="332303419"
+Received: from orsmga004.jf.intel.com ([10.7.209.38])
+  by orsmga102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Feb 2023 12:17:35 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6500,9779,10620"; a="792848288"
+X-IronPort-AV: E=Sophos;i="5.97,294,1669104000"; 
+   d="scan'208";a="792848288"
+Received: from lkp-server01.sh.intel.com (HELO 4455601a8d94) ([10.239.97.150])
+  by orsmga004.jf.intel.com with ESMTP; 13 Feb 2023 12:17:33 -0800
+Received: from kbuild by 4455601a8d94 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1pRfGW-0007zN-2p;
+	Mon, 13 Feb 2023 20:17:32 +0000
+Date: Tue, 14 Feb 2023 04:17:01 +0800
+From: kernel test robot <lkp@intel.com>
+To: Jack Chen <zenghuchen@google.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Jesus Sanchez-Palencia <jesussanp@google.com>,
+	Mark Slevinsky <markslevinsky@google.com>,
+	Jack Chen <zenghuchen@google.com>
+Subject: Re: [PATCH] i3c: update dw-i3c-master i3c_clk_cfg function
+Message-ID: <202302140331.EVRBei1L-lkp@intel.com>
+References: <20230213142336.192875-1-zenghuchen@google.com>
 MIME-Version: 1.0
-From: Rob Herring <robh@kernel.org>
-To: Jeremy Kerr <jk@codeconstruct.com.au>
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, linux-aspeed@lists.ozlabs.org, Alexandre Belloni <alexandre.belloni@bootlin.com>, devicetree@vger.kernel.org, Dylan Hung <dylan_hung@aspeedtech.com>, Andrew Jeffery <andrew@aj.id.au>, linux-i3c@lists.infradead.org, Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>
-In-Reply-To: <5c047dd91390b9ee4cd8bca3ff107db37a7be4ac.1676273912.git.jk@codeconstruct.com.au>
-References: <5c047dd91390b9ee4cd8bca3ff107db37a7be4ac.1676273912.git.jk@codeconstruct.com.au>
-Message-Id: <167630051588.6318.13648503218765402981.robh@kernel.org>
-Subject: Re: [RFC PATCH] dt-bindings: Add AST2600 i3c controller binding
-Date: Mon, 13 Feb 2023 09:09:41 -0600
+Content-Disposition: inline
+In-Reply-To: <20230213142336.192875-1-zenghuchen@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230213_070958_291317_5462558F 
-X-CRM114-Status: GOOD (  19.16  )
+X-CRM114-CacheID: sfid-20230213_121737_682980_FE2E2705 
+X-CRM114-Status: GOOD (  13.36  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,62 +87,179 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+Hi Jack,
 
-On Mon, 13 Feb 2023 15:41:52 +0800, Jeremy Kerr wrote:
-> This change adds a devicetree binding for the ast2600 i3c controller
-> hardware. This is heavily based on the designware i3c hardware, plus a
-> reset facility and two platform-specific properties:
-> 
->  - sda-pullup-ohms: to specify the value of the configurable pullup
->    resistors on the SDA line
-> 
->  - global-regs: to reference the (ast2600-specific) i3c global register
->    block, and the device index to use within it.
-> 
-> Signed-off-by: Jeremy Kerr <jk@codeconstruct.com.au>
-> ---
-> RFC: the example in this depends on some not-yet-accepted patches for
-> the clock and reset linkages:
-> 
->   https://lore.kernel.org/linux-devicetree/cover.1676267865.git.jk@codeconstruct.com.au/T/
-> 
-> I'm also keen to get some review on the pullup configuration too.
-> 
-> ---
->  .../bindings/i3c/aspeed,ast2600-i3c.yaml      | 75 +++++++++++++++++++
->  1 file changed, 75 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/i3c/aspeed,ast2600-i3c.yaml
-> 
+Thank you for the patch! Perhaps something to improve:
 
-My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
-on your patch (DT_CHECKER_FLAGS is new in v5.13):
+[auto build test WARNING on linus/master]
+[also build test WARNING on v6.2-rc8 next-20230213]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-yamllint warnings/errors:
+url:    https://github.com/intel-lab-lkp/linux/commits/Jack-Chen/i3c-update-dw-i3c-master-i3c_clk_cfg-function/20230213-222533
+patch link:    https://lore.kernel.org/r/20230213142336.192875-1-zenghuchen%40google.com
+patch subject: [PATCH] i3c: update dw-i3c-master i3c_clk_cfg function
+config: hexagon-randconfig-r041-20230213 (https://download.01.org/0day-ci/archive/20230214/202302140331.EVRBei1L-lkp@intel.com/config)
+compiler: clang version 17.0.0 (https://github.com/llvm/llvm-project db89896bbbd2251fff457699635acbbedeead27f)
+reproduce (this is a W=1 build):
+        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+        chmod +x ~/bin/make.cross
+        # https://github.com/intel-lab-lkp/linux/commit/e85b41ae5bb17077ac7d01bdd13c48ea1f83ea42
+        git remote add linux-review https://github.com/intel-lab-lkp/linux
+        git fetch --no-tags linux-review Jack-Chen/i3c-update-dw-i3c-master-i3c_clk_cfg-function/20230213-222533
+        git checkout e85b41ae5bb17077ac7d01bdd13c48ea1f83ea42
+        # save the config file
+        mkdir build_dir && cp config build_dir/.config
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=clang make.cross W=1 O=build_dir ARCH=hexagon olddefconfig
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=clang make.cross W=1 O=build_dir ARCH=hexagon SHELL=/bin/bash drivers/i3c/master/
 
-dtschema/dtc warnings/errors:
-Error: Documentation/devicetree/bindings/i3c/aspeed,ast2600-i3c.example.dts:30.31-32 syntax error
-FATAL ERROR: Unable to parse input tree
-make[1]: *** [scripts/Makefile.lib:434: Documentation/devicetree/bindings/i3c/aspeed,ast2600-i3c.example.dtb] Error 1
-make[1]: *** Waiting for unfinished jobs....
-make: *** [Makefile:1508: dt_binding_check] Error 2
+If you fix the issue, kindly add following tag where applicable
+| Reported-by: kernel test robot <lkp@intel.com>
+| Link: https://lore.kernel.org/oe-kbuild-all/202302140331.EVRBei1L-lkp@intel.com/
 
-doc reference errors (make refcheckdocs):
+All warnings (new ones prefixed by >>):
 
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/5c047dd91390b9ee4cd8bca3ff107db37a7be4ac.1676273912.git.jk@codeconstruct.com.au
+   In file included from drivers/i3c/master/dw-i3c-master.c:13:
+   In file included from include/linux/i3c/master.h:14:
+   In file included from include/linux/i2c.h:19:
+   In file included from include/linux/regulator/consumer.h:35:
+   In file included from include/linux/suspend.h:5:
+   In file included from include/linux/swap.h:9:
+   In file included from include/linux/memcontrol.h:13:
+   In file included from include/linux/cgroup.h:26:
+   In file included from include/linux/kernel_stat.h:9:
+   In file included from include/linux/interrupt.h:11:
+   In file included from include/linux/hardirq.h:11:
+   In file included from ./arch/hexagon/include/generated/asm/hardirq.h:1:
+   In file included from include/asm-generic/hardirq.h:17:
+   In file included from include/linux/irq.h:20:
+   In file included from include/linux/io.h:13:
+   In file included from arch/hexagon/include/asm/io.h:334:
+   include/asm-generic/io.h:547:31: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+           val = __raw_readb(PCI_IOBASE + addr);
+                             ~~~~~~~~~~ ^
+   include/asm-generic/io.h:560:61: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+           val = __le16_to_cpu((__le16 __force)__raw_readw(PCI_IOBASE + addr));
+                                                           ~~~~~~~~~~ ^
+   include/uapi/linux/byteorder/little_endian.h:37:51: note: expanded from macro '__le16_to_cpu'
+   #define __le16_to_cpu(x) ((__force __u16)(__le16)(x))
+                                                     ^
+   In file included from drivers/i3c/master/dw-i3c-master.c:13:
+   In file included from include/linux/i3c/master.h:14:
+   In file included from include/linux/i2c.h:19:
+   In file included from include/linux/regulator/consumer.h:35:
+   In file included from include/linux/suspend.h:5:
+   In file included from include/linux/swap.h:9:
+   In file included from include/linux/memcontrol.h:13:
+   In file included from include/linux/cgroup.h:26:
+   In file included from include/linux/kernel_stat.h:9:
+   In file included from include/linux/interrupt.h:11:
+   In file included from include/linux/hardirq.h:11:
+   In file included from ./arch/hexagon/include/generated/asm/hardirq.h:1:
+   In file included from include/asm-generic/hardirq.h:17:
+   In file included from include/linux/irq.h:20:
+   In file included from include/linux/io.h:13:
+   In file included from arch/hexagon/include/asm/io.h:334:
+   include/asm-generic/io.h:573:61: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+           val = __le32_to_cpu((__le32 __force)__raw_readl(PCI_IOBASE + addr));
+                                                           ~~~~~~~~~~ ^
+   include/uapi/linux/byteorder/little_endian.h:35:51: note: expanded from macro '__le32_to_cpu'
+   #define __le32_to_cpu(x) ((__force __u32)(__le32)(x))
+                                                     ^
+   In file included from drivers/i3c/master/dw-i3c-master.c:13:
+   In file included from include/linux/i3c/master.h:14:
+   In file included from include/linux/i2c.h:19:
+   In file included from include/linux/regulator/consumer.h:35:
+   In file included from include/linux/suspend.h:5:
+   In file included from include/linux/swap.h:9:
+   In file included from include/linux/memcontrol.h:13:
+   In file included from include/linux/cgroup.h:26:
+   In file included from include/linux/kernel_stat.h:9:
+   In file included from include/linux/interrupt.h:11:
+   In file included from include/linux/hardirq.h:11:
+   In file included from ./arch/hexagon/include/generated/asm/hardirq.h:1:
+   In file included from include/asm-generic/hardirq.h:17:
+   In file included from include/linux/irq.h:20:
+   In file included from include/linux/io.h:13:
+   In file included from arch/hexagon/include/asm/io.h:334:
+   include/asm-generic/io.h:584:33: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+           __raw_writeb(value, PCI_IOBASE + addr);
+                               ~~~~~~~~~~ ^
+   include/asm-generic/io.h:594:59: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+           __raw_writew((u16 __force)cpu_to_le16(value), PCI_IOBASE + addr);
+                                                         ~~~~~~~~~~ ^
+   include/asm-generic/io.h:604:59: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
+           __raw_writel((u32 __force)cpu_to_le32(value), PCI_IOBASE + addr);
+                                                         ~~~~~~~~~~ ^
+>> drivers/i3c/master/dw-i3c-master.c:544:9: warning: comparison of distinct pointer types ('typeof ((((200) + (core_period) - 1) / (core_period))) *' (aka 'unsigned long *') and 'typeof (lcnt) *' (aka 'unsigned char *')) [-Wcompare-distinct-pointer-types]
+           lcnt = max(DIV_ROUND_UP(I3C_BUS_TLOW_OD_MIN_NS, core_period), lcnt);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   include/linux/minmax.h:74:19: note: expanded from macro 'max'
+   #define max(x, y)       __careful_cmp(x, y, >)
+                           ^~~~~~~~~~~~~~~~~~~~~~
+   include/linux/minmax.h:36:24: note: expanded from macro '__careful_cmp'
+           __builtin_choose_expr(__safe_cmp(x, y), \
+                                 ^~~~~~~~~~~~~~~~
+   include/linux/minmax.h:26:4: note: expanded from macro '__safe_cmp'
+                   (__typecheck(x, y) && __no_side_effects(x, y))
+                    ^~~~~~~~~~~~~~~~~
+   include/linux/minmax.h:20:28: note: expanded from macro '__typecheck'
+           (!!(sizeof((typeof(x) *)1 == (typeof(y) *)1)))
+                      ~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~
+   7 warnings generated.
 
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
 
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
+vim +544 drivers/i3c/master/dw-i3c-master.c
 
-pip3 install dtschema --upgrade
+   517	
+   518	static int dw_i3c_clk_cfg(struct dw_i3c_master *master)
+   519	{
+   520		unsigned long core_rate, core_period;
+   521		u32 scl_timing;
+   522		u8 hcnt, lcnt;
+   523	
+   524		core_rate = clk_get_rate(master->core_clk);
+   525		if (!core_rate)
+   526			return -EINVAL;
+   527	
+   528		core_period = DIV_ROUND_UP(1000000000, core_rate);
+   529	
+   530		hcnt = DIV_ROUND_UP(I3C_BUS_THIGH_MAX_NS, core_period) - 1;
+   531		if (hcnt < SCL_I3C_TIMING_CNT_MIN)
+   532			hcnt = SCL_I3C_TIMING_CNT_MIN;
+   533	
+   534		lcnt = DIV_ROUND_UP(core_rate, master->base.bus.scl_rate.i3c) - hcnt;
+   535		if (lcnt < SCL_I3C_TIMING_CNT_MIN)
+   536			lcnt = SCL_I3C_TIMING_CNT_MIN;
+   537	
+   538		scl_timing = SCL_I3C_TIMING_HCNT(hcnt) | SCL_I3C_TIMING_LCNT(lcnt);
+   539		writel(scl_timing, master->regs + SCL_I3C_PP_TIMING);
+   540	
+   541		if (!(readl(master->regs + DEVICE_CTRL) & DEV_CTRL_I2C_SLAVE_PRESENT))
+   542			writel(BUS_I3C_MST_FREE(lcnt), master->regs + BUS_FREE_TIMING);
+   543	
+ > 544		lcnt = max(DIV_ROUND_UP(I3C_BUS_TLOW_OD_MIN_NS, core_period), lcnt);
+   545		scl_timing = SCL_I3C_TIMING_HCNT(hcnt) | SCL_I3C_TIMING_LCNT(lcnt);
+   546		writel(scl_timing, master->regs + SCL_I3C_OD_TIMING);
+   547	
+   548		lcnt = DIV_ROUND_UP(core_rate, I3C_BUS_SDR1_SCL_RATE) - hcnt;
+   549		scl_timing = SCL_EXT_LCNT_1(lcnt);
+   550		lcnt = DIV_ROUND_UP(core_rate, I3C_BUS_SDR2_SCL_RATE) - hcnt;
+   551		scl_timing |= SCL_EXT_LCNT_2(lcnt);
+   552		lcnt = DIV_ROUND_UP(core_rate, I3C_BUS_SDR3_SCL_RATE) - hcnt;
+   553		scl_timing |= SCL_EXT_LCNT_3(lcnt);
+   554		lcnt = DIV_ROUND_UP(core_rate, I3C_BUS_SDR4_SCL_RATE) - hcnt;
+   555		scl_timing |= SCL_EXT_LCNT_4(lcnt);
+   556		writel(scl_timing, master->regs + SCL_EXT_LCNT_TIMING);
+   557	
+   558		return 0;
+   559	}
+   560	
 
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
-
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests
 
 -- 
 linux-i3c mailing list
