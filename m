@@ -4,75 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32850C64ED6
-	for <linux-i3c@archiver.kernel.org>; Wed, 15 Feb 2023 10:56:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64D64C636D7
+	for <linux-i3c@archiver.kernel.org>; Thu, 16 Feb 2023 08:59:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:From:Subject:Message-ID:
-	References:Mime-Version:In-Reply-To:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=mKbcOM9ZTzqo2aaMxuitRBzBikCOn/spvu5XA53gjPI=; b=krUTvBhEkDBbOvxFKKJvbUZE8P
-	tmO89/RXqz/tqNIpA/AO7Cl0DR06GdcxAMS6UqpsjIikxVORgUS8d+F9dnL5C4LGihO6+2SWLr+v/
-	PZM43Izd1Ik4cdN2vpOQcmu33DSnsgO5SNSbekVZz792zW9BbyN7PjrXkulKYfl+F8e8mKviQdBje
-	Qr0BaQa3xn+Q/D3avQZo7cFnLU1X6TrSCXT4I8hjl/ZRbWwdlv4YITHaaqVmL/0Pi4QFJGQ1kAW7I
-	nxDRGr/6r5hdVO36hLNPYFGsKzoLpptFjvkQ/dAHafZ15/7q7lqbMwvUTrhnEWNqrLwMMv/uTNJ3Z
-	y4qCOMBw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cXZYkx1c1S6Hojpu3jQX4vLShnZwLyIfhnRgVNzYmlk=; b=mZ6YtLdEyaQBUd
+	cQnsnY6MykWESRuhLRY1KNvtYBe+FTRd+dPrqOjfbzrtliczFGcGdELOlRIKYFUmcyupNE3pFqEq0
+	xquQ8xCDsdRfmHEVSHXtygYVm/lp3UnPbcBW8HFfxwSaTp6iZXRstahBLdqQqai8cW3SrdcYOJgQO
+	w7w9DGCbaEB04qCBjUkdFbt5mjRxTVHfVaAX+XSNlQSNPcm8FN5NQS4JgPD0hZoXsiiZyLLPoZrh7
+	w6aeSjcOyF9rigt931UCHhK8/UznZ7wimsjZVP1gsti2FXmxH+VjvPSxkyAvTC+NkS4HxjkWValON
+	L5z/ekthjj3BCKMt2SiQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pSFSW-005WLI-De; Wed, 15 Feb 2023 10:56:20 +0000
-Received: from mail-yb1-xb4a.google.com ([2607:f8b0:4864:20::b4a])
+	id 1pSa7M-0099IM-Lj; Thu, 16 Feb 2023 08:59:52 +0000
+Received: from pi.codeconstruct.com.au ([203.29.241.158] helo=codeconstruct.com.au)
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pRgTw-00GMfy-9C
-	for linux-i3c@lists.infradead.org; Mon, 13 Feb 2023 21:35:29 +0000
-Received: by mail-yb1-xb4a.google.com with SMTP id x15-20020a25accf000000b008efe9505b2eso10522139ybd.22
-        for <linux-i3c@lists.infradead.org>; Mon, 13 Feb 2023 13:35:26 -0800 (PST)
+	id 1pSYu8-008q9c-9w
+	for linux-i3c@lists.infradead.org; Thu, 16 Feb 2023 07:42:09 +0000
+Received: by codeconstruct.com.au (Postfix, from userid 10000)
+	id 35D4D200E3; Thu, 16 Feb 2023 15:42:00 +0800 (AWST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20210112;
-        h=cc:to:from:subject:message-id:references:mime-version:in-reply-to
-         :date:from:to:cc:subject:date:message-id:reply-to;
-        bh=PdJ1tp5BiJDNMQ/GqapnjMVMjw8EnE0csiFC8jjJC2g=;
-        b=V2+l6S9gRQygVGZUYe2NQVc+BEkwO1tf//aHZaqJaL3ggrS1OqOqBYFcAc8wqnBP66
-         Q2kgejB92NzRa020Ysx4Bw/uzGW4Riob0CdFI7GlTritQSNTE0AoYB7Si/dy7483pSDk
-         tDpBqJg3EgsY4dpa36qtoyjRncfuy1NPeTsUKo9viC+eFT4gLEJnC/t1lXA9jnqwhwui
-         AsLZIk1jCHuAdUNg/LH3puvP93GudCrUEJu/rADnaRUVfGe1cKLCJvGtXqAjZBKAI/l8
-         V9DMIZgPPi+fgqghdQHRFz2HfFeGe9nn8QvldpWW+eFVv9cu/7MFuf4+S4mseH++IgB5
-         Kmig==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=cc:to:from:subject:message-id:references:mime-version:in-reply-to
-         :date:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=PdJ1tp5BiJDNMQ/GqapnjMVMjw8EnE0csiFC8jjJC2g=;
-        b=4uyhMA8IolOgx8Biu7aYIz+n2iIak9s0tojyqttjdLM13tTvP9V62YJLd9frAvHzyc
-         NdqBEO2o5/Toe0SFWDmzKkZL2fVS87kEIAVYPiUU2T4Zrt6Ukiwh5134wPxhGVw04d1i
-         NsQLtcNgHKpiBnL5TJqgf9jbIMB/kRVD3wXzT6AWoLxO1ZsU1/LrSe8V5tei6byyFIG4
-         W3OkF2L+IUUKMx0P/zSJ25+wnBbUMJxx3TRmiCDEmCljI6ws/eYur3AagkHDpnxwOh0G
-         W+6JB9TEyRmWwdpV/+j8EGd/DMcHURHP+CPy2OCvkp01D1u+CbVP+CDxAxzB1L1FMfyR
-         KwRQ==
-X-Gm-Message-State: AO0yUKVlDo9mfqliMv3qb5ecPQNrBUjyMIb1G21nqMvW7tx1vIJs/KwC
-	aTzeSaUjxPSy02aySeZ1PeTWbwGtR9Zc15g0
-X-Google-Smtp-Source: AK7set/HyoEf9l5BGdwVOVkiiAUolD7hmC4qPLzSRYdjMWQNdQVGPD9teOVoWC4bkjYoyvnoQShpLOyegrh1CiRf
-X-Received: from zenghuchen.c.googlers.com ([fda3:e722:ac3:cc00:2b:7d90:c0a8:2448])
- (user=zenghuchen job=sendgmr) by 2002:a81:5f83:0:b0:502:2e7:f7be with SMTP id
- t125-20020a815f83000000b0050202e7f7bemr3401127ywb.30.1676324126092; Mon, 13
- Feb 2023 13:35:26 -0800 (PST)
-Date: Mon, 13 Feb 2023 16:35:21 -0500
-In-Reply-To: <lkp@intel.com>
-Mime-Version: 1.0
-References: <lkp@intel.com>
-X-Mailer: git-send-email 2.39.1.581.gbfd45094c4-goog
-Message-ID: <20230213213521.747253-1-zenghuchen@google.com>
-Subject: [PATCH v2] i3c: update dw-i3c-master i3c_clk_cfg function
-From: Jack Chen <zenghuchen@google.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	Jesus Sanchez-Palencia <jesussanp@google.com>, Mark Slevinsky <markslevinsky@google.com>, 
-	Jack Chen <zenghuchen@google.com>, kernel test robot <lkp@intel.com>
+	d=codeconstruct.com.au; s=2022a; t=1676533320;
+	bh=4WNgPVjHnkyd+O8qT3n0+qVAMObFFFxGFkSm7gNIyyc=;
+	h=From:To:Cc:Subject:Date;
+	b=KSe9yqoyHL6hKI3XVVLn+TrKbxor3hAZuifCG1iXSrz7es7wQGnt+jzQtDV1zBJBS
+	 nQ4o14z7Qp1Cud/UoYhKe6vyhkSUNLVxl/2OrkSl1TVMEVGqy4daaJfyd/2R3tJs8d
+	 p3LfCXsqDbHT8fRnwBWAIkH/HyiSmpAZh2k/2doQtiqCaF1C80bT8SOY45T7MeBzxK
+	 DqOJHpe4hGrve7dXH3zpOBAF74KBWt/mMvrtb75OrjrJQZceKTlzNQfqvWvULD1KCL
+	 kcunY8cORDGx7DYNihRmVZC5PbnHGAK6aidU9aAicWQp2Irs8jfavEJg0zTp3qMFgM
+	 Ohbvs0FGmK/3Q==
+From: Jeremy Kerr <jk@codeconstruct.com.au>
+To: linux-i3c@lists.infradead.org
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Vitor Soares <ivitro@gmail.com>,
+	linux-aspeed@lists.ozlabs.org,
+	devicetree@vger.kernel.org,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Dylan Hung <dylan_hung@aspeedtech.com>,
+	Joel Stanley <joel@jms.id.au>,
+	Andrew Jeffery <andrew@aj.id.au>
+Subject: [PATCH 0/4] i3c: Add support for ast2600 i3c controller
+Date: Thu, 16 Feb 2023 15:41:51 +0800
+Message-Id: <cover.1676532146.git.jk@codeconstruct.com.au>
+X-Mailer: git-send-email 2.39.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230213_133528_350294_6F7FD882 
-X-CRM114-Status: GOOD (  10.93  )
-X-Mailman-Approved-At: Wed, 15 Feb 2023 02:56:19 -0800
+X-CRM114-CacheID: sfid-20230215_234208_560027_908DA057 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
+X-Mailman-Approved-At: Thu, 16 Feb 2023 00:59:51 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,50 +74,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Bus-speed could be default(12.5MHz) or defined by users in dts.
-Dw-i3c-master should not hard-code the initial speed to be
-I3C_BUS_TYP_I3C_SCL_RATE (12.5MHz)
-And because of Synopsys's I3C controller limit (hcnt/lcnt register
-length) and core-clk provided, there is a limit to bus speed, too.
-For example, when core-clk is 250 MHz, the bus speed cannot be
-lowered below 1MHz.
+The AST2600 SoC hardware includes a set of i3c controllers, based on the
+designware i3c core, plus some global registers for SoC integration.
 
-Replace max with max_t.
-Reported-by: kernel test robot <lkp@intel.com>
-Link: https://lore.kernel.org/oe-kbuild-all/202302140331.EVRBei1L-lkp@intel.com/
+This series adds support for these i3c controllers, through the existing
+dw i3c master controller driver, by adding a set of platform-specific
+hooks to handle the global register configuration. This also gives us a
+way to add any future hardware-specific behaviours.
 
-Tested: tested with an i3c sensor and captured with a logic analyzer.
+We also need a DT binding to describe the ast2600-specific hardware.
+Since this involves new (mandatory) properties, I have added this as a
+separate binding rather than add a new compat string to the dw binding.
 
-Signed-off-by: Jack Chen <zenghuchen@google.com>
----
- drivers/i3c/master/dw-i3c-master.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+The dt-binding example depends on a prior submission to the dt binding
+headers:
 
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index 51a8608203de..48954d3e6571 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -531,7 +531,7 @@ static int dw_i3c_clk_cfg(struct dw_i3c_master *master)
- 	if (hcnt < SCL_I3C_TIMING_CNT_MIN)
- 		hcnt = SCL_I3C_TIMING_CNT_MIN;
- 
--	lcnt = DIV_ROUND_UP(core_rate, I3C_BUS_TYP_I3C_SCL_RATE) - hcnt;
-+	lcnt = DIV_ROUND_UP(core_rate, master->base.bus.scl_rate.i3c) - hcnt;
- 	if (lcnt < SCL_I3C_TIMING_CNT_MIN)
- 		lcnt = SCL_I3C_TIMING_CNT_MIN;
- 
-@@ -541,7 +541,8 @@ static int dw_i3c_clk_cfg(struct dw_i3c_master *master)
- 	if (!(readl(master->regs + DEVICE_CTRL) & DEV_CTRL_I2C_SLAVE_PRESENT))
- 		writel(BUS_I3C_MST_FREE(lcnt), master->regs + BUS_FREE_TIMING);
- 
--	lcnt = DIV_ROUND_UP(I3C_BUS_TLOW_OD_MIN_NS, core_period);
-+	lcnt = max_t(u8,
-+		     DIV_ROUND_UP(I3C_BUS_TLOW_OD_MIN_NS, core_period), lcnt);
- 	scl_timing = SCL_I3C_TIMING_HCNT(hcnt) | SCL_I3C_TIMING_LCNT(lcnt);
- 	writel(scl_timing, master->regs + SCL_I3C_OD_TIMING);
- 
+  https://lore.kernel.org/linux-devicetree/cover.1676294433.git.jk@codeconstruct.com.au/
+
+Full support for the global regmap will land with this queued mfd change:
+
+  https://git.kernel.org/pub/scm/linux/kernel/git/lee/mfd.git/commit/?id=cf2271843de835839e91c5c036492a87085af756
+
+Of course, any queries/comments/etc are most welcome.
+
+Cheers,
+
+
+Jeremy
+
+Jeremy Kerr (4):
+  dt-bindings: i3c: Add AST2600 i3c controller
+  i3c: dw: Add platform operations
+  i3c: dw: Add AST2600 platform ops
+  i3c: dw: Add compatible string for ASPEED AST2600 BMC platform
+
+ .../bindings/i3c/aspeed,ast2600-i3c.yaml      |  73 ++++++++
+ drivers/i3c/master/dw-i3c-master.c            | 165 +++++++++++++++++-
+ 2 files changed, 232 insertions(+), 6 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/i3c/aspeed,ast2600-i3c.yaml
+
 -- 
-2.39.1.581.gbfd45094c4-goog
+2.39.1
 
 
 -- 
