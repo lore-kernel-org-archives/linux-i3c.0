@@ -4,78 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56648C761A6
-	for <linux-i3c@archiver.kernel.org>; Thu, 30 Mar 2023 18:54:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7059C77B60
+	for <linux-i3c@archiver.kernel.org>; Thu, 30 Mar 2023 19:19:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G1tIS0qxvb3705KLtIa0jA1VXOUe1wR3OtiKzx0wPQ0=; b=J13CKvOSm/sdON
-	WfIsHn8o9ebbITnbwCoXhrmDLn2YuMdQtQEYa0Q+4EVjFj/8L/ZOdMe7d8oowN468KW1KiYa5t36H
-	4JFBkZEJtv1wOeK7CYtT8SiNd+DXIZSEfbNeQYyv9pgq6lyklayODTbcnXD/hFTgJTEG2bVXjUKN9
-	cBqY0eEp6lPSDZkxOWxUFXOgN2XypQLV2kCEe30ETVvboAd7is+0bCghyBq1Ewf43OnkDzlCd1dfg
-	hBgdCP1P9L5khFcwQx4cOw/Q52KQUNySWd+bUGhc4uzjAK6dMW8HL5nkxqP0HGteFeD1vi6KGHZ8+
-	KYhpFAXzvmDdWNNmCTGQ==;
+	List-Owner; bh=+iMjDxGiZJedFIUY9FGcM3J5Ya/KDO/5tXxlVofKoBE=; b=nmsoSUgdElUHuC
+	3udJ7aBXQRQByZ3vQ1IurXFW657xseaBifFOLHR9807OOclfw3fzHz9yy4+z6B0vi2LnL43h60zJz
+	KEyemLWkCjlAP9ug7vLniEGDexYfFtEsleg/W/Nd1D8FWsjK/zclEvIU/5nlnUid6kuhYpRPtLH1J
+	NFY9eSZa6xaQhrp9RTHHCqbTICuPX+P9qJGx4SGE4vYARanIwD8jv7HFyUzxEXMcinVmtU+ktjhAj
+	OLNovSpJbj55wgeT3HgpLUCansAVqOjbM6hhFlNp9Ad0h4p8yuTCVFfr3ryQMZPo9gkUPBzxecTpm
+	R1d1oDAVoq/obaSyeSNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1phxQ0-004rtJ-1z;
-	Thu, 30 Mar 2023 18:54:40 +0000
-Received: from mail-yb1-xb2f.google.com ([2607:f8b0:4864:20::b2f])
+	id 1phxnd-004uNB-02;
+	Thu, 30 Mar 2023 19:19:05 +0000
+Received: from mail-wm1-x32b.google.com ([2a00:1450:4864:20::32b])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1phtVU-0047la-03
+	id 1phxna-004uMW-1h
 	for linux-i3c@lists.infradead.org;
-	Thu, 30 Mar 2023 14:44:05 +0000
-Received: by mail-yb1-xb2f.google.com with SMTP id b18so23779519ybp.1
-        for <linux-i3c@lists.infradead.org>; Thu, 30 Mar 2023 07:43:54 -0700 (PDT)
+	Thu, 30 Mar 2023 19:19:03 +0000
+Received: by mail-wm1-x32b.google.com with SMTP id o32so11575993wms.1
+        for <linux-i3c@lists.infradead.org>; Thu, 30 Mar 2023 12:19:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20210112; t=1680187434; x=1682779434;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=AXYl+xj0Yw1bF4w8+SBVfRxZF4xXz6R1uvpK88nJQC8=;
-        b=ONzip9KPUdUvbBZsRUcyOv+Hoc1GuB2htGz4prOHePVA4AkkStSVSsV5EPy9vm5d5D
-         BeTWohzlN54Q29xjEGX2MBvFlr4QiSujOs2RNptq76oU7NKnwQRteEbGEILq5YmWP36z
-         9hWGaJoTP1uLzNK0da+XNG5kVkGzlbjkMV78+RwBASRcgk9Uvyp/M+BvEiBOAzRb+uAR
-         a0WcGCIzi1F8FhuyjG7U+6cAlO/Lspp4cAJLJv7sxL5+HZ4LggrJs2wEf+l49AA4k+9J
-         gx5ASTnxueEWbw/LgYUy5vykP+IhipJZum/rHVc63lktiFY2vz/yemMaQpnpgTrtU9Uq
-         GBcA==
+        d=sifive.com; s=google; t=1680203940;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=o2itnY4oDJ000Qz5ydKRWEvoea5AiqZAu0ly2xDDisE=;
+        b=Z4CLw+kmjOxRlMPdzjkqrSlBDgPF/o8to2tkK4tEz0axz6sMkMH9fWtzQ5N4Ve76mO
+         REZyMIpan/iyriYtd0yWjAs0NkawcSFObyow76QTZXiOb0ULvsU6bNpLyDLBRIuWyGP2
+         YgTZ5Ll5wcUelLXgOPcUTBKOcDC9vNPFMGK50UjUu95C4s3HVd760lzuLGsgHX8J5OlW
+         A6bpI7j3J1XcGu43dTOhVylIs0ET1Ag8UQaK5s0Av3SLvsQomC5c1rtVsG5J3kQUMEhD
+         VL+K+ylsz1bLd5fxpTFeg24tp0KWryu/6rX+Uo9ZTQECWo3A3tyJt8YvDZELxHdWRXRr
+         YmoQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112; t=1680187434; x=1682779434;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=AXYl+xj0Yw1bF4w8+SBVfRxZF4xXz6R1uvpK88nJQC8=;
-        b=KiuwAFa9lMqDRUdDIjrU7FfZMLNrfFHCXVx6fl4NyUHhlR9XJbILZ+/Yzf7b/huHpM
-         B1Cg5K0OUgapS0gbUdrsBFvWcBWxXPaA/+5YDHLIdod/hOPtgn3ELvgp5KvE1g+LeOpW
-         FMI2P0rKumRVg6J/di/cbxpUxdffu/AcRCnq9+Xd/Wy4k2plc2XePIZ9TrQxaeIANmkY
-         P5BTgKn8P0vqO+SACTthr3CRXyCUMWKqAJugygZSQm+Fxwr8RW4JmI76otq4WNfAa/Se
-         hPgCUbIbb6e2eKzmqtCeXhxOSztJeFbtoiWQTVCcf0cHaFS6SEkyR+ICiRXHorWcT5yd
-         6M3Q==
-X-Gm-Message-State: AAQBX9d8E78JlrYAWuGPrcctimPpw9yiQ2R3r4l6Isonx9q3kVy64NPJ
-	ZQ7NWZI07hb/9U7cbGe+6HRO5WZLjUSDYf495INMEw==
-X-Google-Smtp-Source: AKy350ZWvrt6LF6hQ0/UwUdP4t82nxFBl3kjZRX6glA7bowsDEsbwUIYdKR6Nwdm5IH/wO4Zzsg8GC5JUryW+xqMSAc=
-X-Received: by 2002:a25:db43:0:b0:b7d:5a67:8c6e with SMTP id
- g64-20020a25db43000000b00b7d5a678c6emr6807042ybf.6.1680187434135; Thu, 30 Mar
- 2023 07:43:54 -0700 (PDT)
+        d=1e100.net; s=20210112; t=1680203940;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=o2itnY4oDJ000Qz5ydKRWEvoea5AiqZAu0ly2xDDisE=;
+        b=eLs5fvqCQJEStR2BuYigi6DXUBU6oE9Awz5CkjJjpQrX0MU66EiYGJtp+eA1sx+Zgc
+         Waj0eFRUlPWLbhs/bR/S7OfYb9PU8m4ivF37wvIG0/i7owUZFiMFAhOMIzUh86DAbCGR
+         f3snxTqeoDyaTtzT1FWSUy2fnF6BdgrVzA+h0lgmONhN/C9Y+HIP3zqUgm0VCsD8qea/
+         MIpBdTOuRZ7lu1WCVbjF/rFPMc3hzyUrLchQzvmdlQbq6h4Nn9vUPKROiGfPZlxQN+L4
+         MeYxFwNfkQe/v1ZrGl9u0RyRMWtbhYYejFHBhCHZ400fzDiIEydx2ZoRq0TRq/xXjXyZ
+         sbjA==
+X-Gm-Message-State: AAQBX9d34cSAZyXMvPonHfUQ1666lhi4eokpPBnTyDfvCxTw/fWyKulf
+	Kh7SZi4mkHwUqzS17TUgfecVfg==
+X-Google-Smtp-Source: AKy350Y6Hw2jwioyUDEOhgIMCrr8x2+0OYs7LIza9+xA94gZtR4ILuxSxXzmljBAbWAumyI5xeoZWw==
+X-Received: by 2002:a1c:6a0b:0:b0:3db:8de:6993 with SMTP id f11-20020a1c6a0b000000b003db08de6993mr5204637wmc.4.1680203940339;
+        Thu, 30 Mar 2023 12:19:00 -0700 (PDT)
+Received: from [192.168.0.16] (cpc152649-stkp13-2-0-cust121.10-2.cable.virginm.net. [86.15.83.122])
+        by smtp.gmail.com with ESMTPSA id 3-20020a05600c228300b003ed2384566fsm157950wmf.21.2023.03.30.12.18.59
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 30 Mar 2023 12:19:00 -0700 (PDT)
+Message-ID: <1981d2b2-8082-ccba-5a41-7f2162410163@sifive.com>
+Date: Thu, 30 Mar 2023 20:18:59 +0100
 MIME-Version: 1.0
-References: <cover.1680160851.git.jk@codeconstruct.com.au>
-In-Reply-To: <cover.1680160851.git.jk@codeconstruct.com.au>
-From: Jack Chen <zenghuchen@google.com>
-Date: Thu, 30 Mar 2023 10:43:43 -0400
-Message-ID: <CALvyBcV9EnwgcuNXF=uUwdQZ=WHjmpinD=s0FkL=KC0OBTwXBA@mail.gmail.com>
-Subject: Re: [PATCH v2 0/3] i3c dw,ast2600: Add a driver for the AST2600 i3c controller
-To: Jeremy Kerr <jk@codeconstruct.com.au>
-Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, 
-	Matt Johnston <matt@codeconstruct.com.au>, Vitor Soares <ivitro@gmail.com>, 
-	Alexandre Belloni <alexandre.belloni@bootlin.com>, Billy Tsai <billy_tsai@aspeedtech.com>, 
-	Dylan Hung <dylan_hung@aspeedtech.com>, Joel Stanley <joel@jms.id.au>, 
-	Andrew Jeffery <andrew@aj.id.au>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.9.0
+Subject: Re: [PATCH 1/5] i3c: dw: Create a generic fifo read function
+Content-Language: en-GB
+To: Jeremy Kerr <jk@codeconstruct.com.au>, linux-i3c@lists.infradead.org
+Cc: Matt Johnston <matt@codeconstruct.com.au>, Vitor Soares
+ <ivitro@gmail.com>, Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Jack Chen <zenghuchen@google.com>, Billy Tsai <billy_tsai@aspeedtech.com>,
+ Dylan Hung <dylan_hung@aspeedtech.com>, Joel Stanley <joel@jms.id.au>,
+ Andrew Jeffery <andrew@aj.id.au>
+References: <cover.1680161823.git.jk@codeconstruct.com.au>
+ <827204789583dd86addffb47ecaeab9d67cf95d5.1680161823.git.jk@codeconstruct.com.au>
+From: Ben Dooks <ben.dooks@sifive.com>
+In-Reply-To: <827204789583dd86addffb47ecaeab9d67cf95d5.1680161823.git.jk@codeconstruct.com.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230330_074404_051607_8F94E37A 
-X-CRM114-Status: GOOD (  17.63  )
-X-Mailman-Approved-At: Thu, 30 Mar 2023 11:54:38 -0700
+X-CRM114-CacheID: sfid-20230330_121902_630139_1C9CA531 
+X-CRM114-Status: GOOD (  16.37  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,46 +93,61 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-SGkgSmVyZW15LApUaGFua3MgZm9yIHRoZSBjaGFuZ2UsIGVzcGVjaWFsbHkgSUJJIGZlYXR1cmVz
-IGluIG90aGVyIHRocmVhZHMuCkZyb20gbXkgdW5kZXJzdGFuZGluZywgQVNQRUVEIEFTVDI2MDAg
-aXMgYSBTb0Mgd2hpY2ggdXNlcyBTeW5vcHN5cycKSTNDIElQIGNvcmUsIGFuZCBzZXZlcmFsIGRp
-ZmZlcmVudCByZWdpc3RlcnMsIGVzcGVjaWFsbHkgdGhlIHB1bGwtdXAKcmVzaXN0b3IuCklmIHNv
-LCBJIGFtIHdvbmRlcmluZyBpZiB0aGlzIGlzIHRoZSByaWdodCBwbGFjZSB0byBhZGQKYXN0MjYw
-MC1pM2MtbWFzdGVyLmMsIGdpdmVuIHRoYXQgYWxsIGN1cnJlbnQgdGhyZWUgeHh4LWkzYy1tYXN0
-ZXIuYwpkcml2ZXJzIGluIHRoaXMgZGlyZWN0b3J5IGFyZSBmcm9tIElQIHByb3ZpZGVycyBkaXJl
-Y3RseS4KV2hhdCBhYm91dCBtb3ZpbmcgaXQgdW5kZXIgfi9kcml2ZXIvc29jLz8KVGhhbmtzClpl
-bmdodSBDaGVuCgpPbiBUaHUsIE1hciAzMCwgMjAyMyBhdCAzOjIy4oCvQU0gSmVyZW15IEtlcnIg
-PGprQGNvZGVjb25zdHJ1Y3QuY29tLmF1PiB3cm90ZToKPgo+IFRoaXMgc2VyaWVzIGFkZHMgYSBu
-ZXcgaTNjIGNvbnRyb2xsZXIgZHJpdmVyLCBmb3IgdGhlIEFTUEVFRCBBU1QyNjAwIDEzYwo+IFNv
-QyBwZXJpcGhlcmFsLiBUaGlzIGRldmljZSBpcyB2ZXJ5IHNpbWlsYXIgdG8gdGhlIGR3IGkzYyBj
-b250cm9sbGVyLCBzbwo+IHdlIGltcGxlbWVudCB0aGlzIGJ5IGFkZGluZyBhIGxpdHRsZSBwbGF0
-Zm9ybSBhYnN0cmFjdGlvbiB0byB0aGUgZHcKPiBkcml2ZXIsIGFuZCB0aGVuIGEgcGxhdGZvcm0g
-aW1wbGVtZW50YXRpb24gZm9yIGFzdDI2MDAuCj4KPiB2MjogVGhpcyBpcyBhIHJld29yayBmcm9t
-IGFuIGVhcmxpZXIgc2VyaWVzIHRoYXQgaW1wbGVtZW50ZWQgdGhpcyBhcwo+IHBhcnQgb2YgdGhl
-IGR3IGRyaXZlcjsgSSBoYXZlIGFkb3B0ZWQgQmVuIERvb2tzJyBzdWdnZXN0aW9uIHRvIHNwbGl0
-Cj4gaW50byBhIG5ldyBkcml2ZXIgKyBleHBvcnRlZCBob29rcyBmcm9tIHRoZSBkdyBiYXNlLgo+
-Cj4gQXMgYWx3YXlzOiBjb21tZW50cywgcXVlcmllcyBldGMuIGFyZSBtb3N0IHdlbGNvbWUuCj4K
-PiBDaGVlcnMsCj4KPgo+IEplcmVteQo+Cj4gSmVyZW15IEtlcnIgKDMpOgo+ICAgaTNjOiBkdzog
-QWRkIGluZnJhc3RydWN0dXJlIGZvciBwbGF0Zm9ybS1zcGVjaWZpYyBpbXBsZW1lbnRhdGlvbnMK
-PiAgIGR0LWJpbmRpbmdzOiBpM2M6IEFkZCBBU1QyNjAwIGkzYyBjb250cm9sbGVyCj4gICBpM2M6
-IGFzdDI2MDA6IEFkZCBBU1QyNjAwIHBsYXRmb3JtLXNwZWNpZmljIGRyaXZlcgo+Cj4gIC4uLi9i
-aW5kaW5ncy9pM2MvYXNwZWVkLGFzdDI2MDAtaTNjLnlhbWwgICAgICB8ICA3MiArKysrKysrKwo+
-ICBNQUlOVEFJTkVSUyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgIDYgKwo+
-ICBkcml2ZXJzL2kzYy9tYXN0ZXIvS2NvbmZpZyAgICAgICAgICAgICAgICAgICAgfCAgMTQgKysK
-PiAgZHJpdmVycy9pM2MvbWFzdGVyL01ha2VmaWxlICAgICAgICAgICAgICAgICAgIHwgICAxICsK
-PiAgZHJpdmVycy9pM2MvbWFzdGVyL2FzdDI2MDAtaTNjLW1hc3Rlci5jICAgICAgIHwgMTY5ICsr
-KysrKysrKysrKysrKysrKwo+ICBkcml2ZXJzL2kzYy9tYXN0ZXIvZHctaTNjLW1hc3Rlci5jICAg
-ICAgICAgICAgfCAgNzYgKysrKy0tLS0KPiAgZHJpdmVycy9pM2MvbWFzdGVyL2R3LWkzYy1tYXN0
-ZXIuaCAgICAgICAgICAgIHwgIDU1ICsrKysrKwo+ICA3IGZpbGVzIGNoYW5nZWQsIDM2MCBpbnNl
-cnRpb25zKCspLCAzMyBkZWxldGlvbnMoLSkKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IERvY3VtZW50
-YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9pM2MvYXNwZWVkLGFzdDI2MDAtaTNjLnlhbWwKPiAg
-Y3JlYXRlIG1vZGUgMTAwNjQ0IGRyaXZlcnMvaTNjL21hc3Rlci9hc3QyNjAwLWkzYy1tYXN0ZXIu
-Ywo+ICBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9pM2MvbWFzdGVyL2R3LWkzYy1tYXN0ZXIu
-aAo+Cj4gLS0KPiAyLjM5LjIKPgoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNj
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1pM2MK
+On 30/03/2023 08:50, Jeremy Kerr wrote:
+> In a future change we'll want to read from the IBI FIFO too, so turn
+> dw_i3c_read_rx_fifo() into a generic read with the FIFO register as a
+> parameter.
+> 
+> Signed-off-by: Jeremy Kerr <jk@codeconstruct.com.au>
+> ---
+>   drivers/i3c/master/dw-i3c-master.c | 14 ++++++++++----
+>   1 file changed, 10 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+> index 9fc03108a5db..cb38ef95f21a 100644
+> --- a/drivers/i3c/master/dw-i3c-master.c
+> +++ b/drivers/i3c/master/dw-i3c-master.c
+> @@ -318,18 +318,24 @@ static void dw_i3c_master_wr_tx_fifo(struct dw_i3c_master *master,
+>   	}
+>   }
+>   
+> -static void dw_i3c_master_read_rx_fifo(struct dw_i3c_master *master,
+> -				       u8 *bytes, int nbytes)
+> +static void dw_i3c_master_read_fifo(struct dw_i3c_master *master,
+> +				    int reg,  u8 *bytes, int nbytes)
+>   {
+> -	readsl(master->regs + RX_TX_DATA_PORT, bytes, nbytes / 4);
+> +	readsl(master->regs + reg, bytes, nbytes / 4);
+>   	if (nbytes & 3) {
+>   		u32 tmp;
+>   
+> -		readsl(master->regs + RX_TX_DATA_PORT, &tmp, 1);
+> +		readsl(master->regs + reg, &tmp, 1);
+>   		memcpy(bytes + (nbytes & ~3), &tmp, nbytes & 3);
+>   	}
+>   }
+>   
+> +static void dw_i3c_master_read_rx_fifo(struct dw_i3c_master *master,
+> +				       u8 *bytes, int nbytes)
+> +{
+> +	return dw_i3c_master_read_fifo(master, RX_TX_DATA_PORT, bytes, nbytes);
+> +}
+> +
+
+Might want to make it inline too.
+
+
+>   static struct dw_i3c_xfer *
+>   dw_i3c_master_alloc_xfer(struct dw_i3c_master *master, unsigned int ncmds)
+>   {
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
