@@ -4,62 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23816C74A5B
-	for <linux-i3c@archiver.kernel.org>; Tue, 21 Mar 2023 18:26:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23432C6FD1D
+	for <linux-i3c@archiver.kernel.org>; Thu, 30 Mar 2023 07:08:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SFW1qSU3wtIWFiLrBCJmzdX4KAgHVeSzVfq7S7VxPTs=; b=HljDea083W29ol
-	ysxHKcG3rxVix9NO3QpnydE9JALSq08G6JHOvccOzGDdVQv7o3j2oK+KQ0dXxIn92Y5ydRzC3+lwy
-	YukQzbqEDGUIJ7VgkXDeX/oF7uC62IbTnWLHplfTO5l5iv0ccJ8pBIjxzIpxbpmuGNo+EpQ9MRM53
-	2EQsbnYTJDqzOpqE/hQ16yE6J84fEnv+sDIxWTXynl3OzBZCei4vvl34ogHJIgNWvrSTLFHK84oxe
-	XHyDJZ2Ie7CVX0jQVSIoXqOCCA/LMYkS0PuRVHdOYH9BIdpp1xrczTc7/ztJnBURNwjoSQI7X6Rec
-	dZYnP2DNY4pvN+p1/mXg==;
+	List-Owner; bh=aHT8LF38W2ZAq4nX0EX1bepTliT8Nww2NITLAlZbVTs=; b=YxjwPqViUxB1hp
+	j2qR0TXjWjBdnVxRnHRJ0lSNYNY5t1/eeitCJ9amWMCiqOoJZ6ofdoSkPZX4toOpv4SylMV+KDwUm
+	94CjziVlUNj0ke1xGMDmaICe/uvcWELmjt9MNuU3tu4PpGq+KpbwLws7AxxAmDaT+agYMM6/ET+HJ
+	lMe/JHxvW+pLp0bJ5ihrVWE2kuDCCpGsztmQfoZRTM6AdHDsKwOrXE0W01nOjgCTAbSRdzcOOo98k
+	fG0y+ELIEpuTkDwBPFQU/2Pz9/Jb8qF+p84sVDH6ZIgI2QA97lATLm8Pm4avoKySkQgqYFsS58yfB
+	6Ykapgzvj1ud1Ar+ovPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1peggV-00DLYV-0Q;
-	Tue, 21 Mar 2023 18:26:11 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1phmOW-002rGe-2T;
+	Thu, 30 Mar 2023 07:08:24 +0000
+Received: from pi.codeconstruct.com.au ([203.29.241.158] helo=codeconstruct.com.au)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1peggR-00DLXY-0Z
+	id 1phlZj-002jPV-02
 	for linux-i3c@lists.infradead.org;
-	Tue, 21 Mar 2023 18:26:09 +0000
-Received: (Authenticated sender: alexandre.belloni@bootlin.com)
-	by mail.gandi.net (Postfix) with ESMTPSA id BFF6C240002;
-	Tue, 21 Mar 2023 18:25:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1679423161;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=Fx26ObpfmO+Nvjh6CF0t7xZdagF88q4yUgAU3nZ5jzA=;
-	b=Aj4HTSl8HITki1X9DB1cG/8gbrS1nB4u56KLlhNESQdrVVx+kVLi29Rc63o59KpxUyvaF3
-	GUcVomXR9LW9K76/NruuftjcI0meWab+E8XYzHCKV7WojV0UjjakAhaPZNkjHWRel8O0RI
-	lpu8JqQL1GYhnWACU/HuCjh8AhNNnb4KuHeqKKTj4hQO/rLnnvRv1B5jy5hvR5TkO4OMH6
-	p2XFXox2tKp1NgtqNV4KiVYdkVzThk1ung6sM1HWlRkn3cZJLVggAG4PeBBdzpBCxS6iAI
-	v0UmMmFBGdDZ3nLG2mcG67/6nEBd5VBeUU//SgIwy0QjYBLwrZ+YKrR1YY42nQ==
-Date: Tue, 21 Mar 2023 19:25:58 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: =?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	Conor Culhane <conor.culhane@silvaco.com>,
-	Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-Cc: linux-i3c@lists.infradead.org, kernel@pengutronix.de
-Subject: Re: [PATCH 0/5] i3c: Convert to platform remove callback returning
- void
-Message-ID: <167942314076.665758.1395808956282122327.b4-ty@bootlin.com>
-References: <20230318233311.265186-1-u.kleine-koenig@pengutronix.de>
+	Thu, 30 Mar 2023 06:15:56 +0000
+Received: by codeconstruct.com.au (Postfix, from userid 10000)
+	id E18AE201F2; Thu, 30 Mar 2023 14:15:40 +0800 (AWST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=codeconstruct.com.au; s=2022a; t=1680156940;
+	bh=VSfWL5J3N0HofMP0Z1GXRuSjpsdhEDDcmRtOaVcYUYM=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=cUH2qq599hF3SDx4Lquc+si+GhAMGFn/heshsCWGmpVCXomV03WKAnq/VjniqUVA4
+	 nQGXSJwVQtya6NGM6pNrd1ffvpLwNowz9ozhuvScF881i1U+W2cs28H70Q0CvoVKX/
+	 0g+FTwkE89q9q7rjFjyl0lwnv8TNgtKQVtGuKgTxhFYwBgeP/gzPygZc180QYvOZmO
+	 fWkXm9O0zlNUlKVTakyNryEmhcSxmNytA7TK1FyWDbtWFxK2n/6ZeQbwItTm5/nCTo
+	 O3aQcf3GTBDeK2972J6qvY1ne/gUtkFAbOWiNO9H97YGq4bfjha0nwjqhlrCSTsowI
+	 9ppaFPOZlzRGQ==
+From: Jeremy Kerr <jk@codeconstruct.com.au>
+To: linux-i3c@lists.infradead.org
+Cc: Matt Johnston <matt@codeconstruct.com.au>,
+	Vitor Soares <ivitro@gmail.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Jack Chen <zenghuchen@google.com>
+Subject: [PATCH 2/2] i3c: dw: use bus mode rather than device reg for conditional tCAS setting
+Date: Thu, 30 Mar 2023 14:15:33 +0800
+Message-Id: <92a933566f7846708a00ad7f5a16ee8e6ed32d0e.1680156630.git.jk@codeconstruct.com.au>
+X-Mailer: git-send-email 2.39.2
+In-Reply-To: <cover.1680156630.git.jk@codeconstruct.com.au>
+References: <cover.1680156630.git.jk@codeconstruct.com.au>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230318233311.265186-1-u.kleine-koenig@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230321_112607_376618_CB264DC7 
-X-CRM114-Status: UNSURE (   8.37  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230329_231555_409567_1DE39A99 
+X-CRM114-Status: GOOD (  10.99  )
+X-Mailman-Approved-At: Thu, 30 Mar 2023 00:08:23 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,50 +67,47 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+In the clock setup path, we set the hardware DEV_CTRL_I2C_SLAVE_PRESENT
+bit on a shared mode bus, then read-back this bit for the conditional
+tCAS set.
 
-On Sun, 19 Mar 2023 00:33:06 +0100, Uwe Kleine-K=F6nig wrote:
-> this series adapts the platform drivers below drivers/i3c to use the
-> .remove_new() callback. Compared to the traditional .remove() callback
-> .remove_new() returns no value. This is a good thing because the driver c=
-ore
-> doesn't (and cannot) cope for errors during remove. The only effect of a
-> non-zero return value in .remove() is that the driver core emits a warnin=
-g. The
-> device is removed anyhow and an early return from .remove() usually yield=
-s a
-> resource leak.
-> =
+Instead, just use the bus->mode setting for the conditional test.
 
-> [...]
+While we're at it, add a little comment about why the conditional is
+there.
 
-Applied, thanks!
+Signed-off-by: Jeremy Kerr <jk@codeconstruct.com.au>
+---
+ drivers/i3c/master/dw-i3c-master.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
-[1/5] i3c: Make i3c_master_unregister() return void
-      commit: 0f74f8b6675cc36d689abb4d9b3d75ab4049b7d7
-[2/5] i3c: dw: Convert to platform remove callback returning void
-      commit: 04b5f1be2673a035b0218c6e0369cfd1460d63a1
-[3/5] i3c: cdns: Convert to platform remove callback returning void
-      commit: 3f8ad583590f7bfeb3b8ee1ddd1cca5f7f9a5a75
-[4/5] i3c: mipi-i3c-hci: Convert to platform remove callback returning void
-      commit: f959ec617521bab177758b7c71b0d56a65615079
-[5/5] i3c: svc: Convert to platform remove callback returning void
-      commit: 2810f1de814adb7728b1068586bebcf733cf1992
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index 97a5442b1ad8..1c146a39e1bd 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -538,7 +538,11 @@ static int dw_i3c_clk_cfg(struct dw_i3c_master *master)
+ 	scl_timing = SCL_I3C_TIMING_HCNT(hcnt) | SCL_I3C_TIMING_LCNT(lcnt);
+ 	writel(scl_timing, master->regs + SCL_I3C_PP_TIMING);
+ 
+-	if (!(readl(master->regs + DEVICE_CTRL) & DEV_CTRL_I2C_SLAVE_PRESENT))
++	/*
++	 * In pure i3c mode, MST_FREE represents tCAS. In shared mode, this
++	 * will be set up by dw_i2c_clk_cfg as tLOW.
++	 */
++	if (master->base.bus.mode == I3C_BUS_MODE_PURE)
+ 		writel(BUS_I3C_MST_FREE(lcnt), master->regs + BUS_FREE_TIMING);
+ 
+ 	lcnt = max_t(u8,
+-- 
+2.39.2
 
-Best regards,
 
--- =
-
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
--- =
-
+-- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
