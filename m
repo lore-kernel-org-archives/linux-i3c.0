@@ -4,41 +4,41 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6335C761AF
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6134C6FD1D
 	for <linux-i3c@archiver.kernel.org>; Thu, 30 Mar 2023 13:47:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GG6LKcZ/rbSpqx2yrlFjAJfLGhIC5ODIms0nEsBVsC8=; b=ii8i/MNQmlJKtX
-	LO/lhnEZ8z+rJvZZbqIKIPBmsCaW1RgW4ZKld/c0FnPn1NhJlbLLN08X/NPGyjUk0M2m6eA0+MNpe
-	HxIZTTO2HV6O6MVb9uT7Pl1cB2ewx/NxNTIeX5JZryQ3t0YjItzBmfsaP74+a7MoKMp6qhlfAJFF2
-	7MNv3jumG4R1NSoJGBXZutitqYzR+CYO1sxPgSCdwEICfj1Lhf6DZ5wCV8KOgXUXv9dfUEW6SIzY9
-	722z8YebvRje8WhF5EV3RXgELmDUOwlDLzw2dJnuyuR+x95vIysK6HEV1P9NKrTqm/Vv42alegGed
-	44dI7IRTusW4OrOe8qFA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nc3RlCZRtbLUx9Mu6VMARGV+S427aCk40euA3BYnDno=; b=DPFiK1SWM0D/3T
+	EC99J67jSCN2x8ASRcunmQfFm7sLqqOmCGfUs8XUlXQlXgOR6PhPhob21yJUdnNjWGWvXKOUivxHb
+	koVRhKVeBwdGpuqRzC+UZdc2S72cDTPwXFd4KDrwtJCrx0TgCdO/d+9G4yD6ujQ02dc2Vm9MjzhX0
+	VQAYfts9T2jQXhsa/T6ApZr992Ye7A9SLUBUYeSk1IwiFnYeZbtLFj2TXTGRyWABcx6OYcoK9hEa9
+	NH48j8qA7moLcNVll7LL9yx6NVVnZNWO89QzAg9NSJgSR/AjyvDbJckhkU09yaERnwyAgiJTJkG7d
+	jL6jegM2HvyUUiUV71aQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1phscu-003vTy-0V;
+	id 1phscu-003vU3-1M;
 	Thu, 30 Mar 2023 13:47:40 +0000
 Received: from pi.codeconstruct.com.au ([203.29.241.158] helo=codeconstruct.com.au)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1phn3a-002yjp-2C
+	id 1phn3a-002yjj-2C
 	for linux-i3c@lists.infradead.org;
 	Thu, 30 Mar 2023 07:50:52 +0000
 Received: by codeconstruct.com.au (Postfix, from userid 10000)
-	id 019F020127; Thu, 30 Mar 2023 15:50:48 +0800 (AWST)
+	id B27B82009F; Thu, 30 Mar 2023 15:50:48 +0800 (AWST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=codeconstruct.com.au; s=2022a; t=1680162649;
-	bh=z/TACczbFu3Yfs10OBzMNiA9zv6dYykbn3vOqc4lSkY=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=gkMJZJqWMQD1OWUeykS/HrQ0XEf9mFLzBXEmdZJKZk5jSVgjsFRWDH78iqwqZzNKo
-	 hGFEZ/w+3Q2P8yeJ52H0Hrq3/jtdJojyR7ZuvwFd+6jrRzVpBZCZxiQb+Lf8UMmT4w
-	 uyxOzn+83izR4TMnKaqSa/3loooxoZE1kFk5Ln4Xy7y/iDycTJmWTa6ht2sQoMtgT9
-	 pi7C5UmcDBqTum33vvl6W97xgHea3K+hOGG+COXQQPIVOmS80xbEfV4mTRWk/fA2R6
-	 pOE5tjwqwJsAuXHxa44Qx+fy7jQUfanBVSUoXVzaYvo7YW+2LuZLMdZ6JRzjiNuSCz
-	 0eVTiDaAiYAjQ==
+	d=codeconstruct.com.au; s=2022a; t=1680162648;
+	bh=Kg4RvNsz9EB2sUJekpfj6PtAgBboCrXADVY5IKaBblc=;
+	h=From:To:Cc:Subject:Date;
+	b=Secu7jTNqOEuVqcKXtXGmq5RH9/l3fEi3gZu1gxLGsgr3zC74u3v9U4EcU75TgxYv
+	 aWxtdWyvPFrC7XV6ks1TEty2aN4rOvf647zQFcLx9XNvowPC7ZDVu+Kd5G2OZHWXmx
+	 XHQJoORFNOkuexRbY/HKCoQVcBOZDVXuRdjCt9itNW4UbT1YatCuZwNStUezrfhJpg
+	 Xkwq8RXM/xvYzCBayevmqbJigheZ5wX9FkAdxy4jebIdvVYRkidfIcw4RPu78Eo9rL
+	 HdtEYFCiPD+HtntEo/AhATWFfodsINZ/rECPzscrartFgodqfd5XP9INUhVmCrowHM
+	 qLTZjgh6mK2Xw==
 From: Jeremy Kerr <jk@codeconstruct.com.au>
 To: linux-i3c@lists.infradead.org
 Cc: Matt Johnston <matt@codeconstruct.com.au>,
@@ -49,16 +49,14 @@ Cc: Matt Johnston <matt@codeconstruct.com.au>,
 	Dylan Hung <dylan_hung@aspeedtech.com>,
 	Joel Stanley <joel@jms.id.au>,
 	Andrew Jeffery <andrew@aj.id.au>
-Subject: [PATCH 1/5] i3c: dw: Create a generic fifo read function
-Date: Thu, 30 Mar 2023 15:50:32 +0800
-Message-Id: <827204789583dd86addffb47ecaeab9d67cf95d5.1680161823.git.jk@codeconstruct.com.au>
+Subject: [PATCH 0/5] i3c: dw,ast2600: Add In-Band Interrupt support
+Date: Thu, 30 Mar 2023 15:50:31 +0800
+Message-Id: <cover.1680161823.git.jk@codeconstruct.com.au>
 X-Mailer: git-send-email 2.39.2
-In-Reply-To: <cover.1680161823.git.jk@codeconstruct.com.au>
-References: <cover.1680161823.git.jk@codeconstruct.com.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230330_005050_910020_8A33F627 
-X-CRM114-Status: UNSURE (   8.40  )
+X-CRM114-CacheID: sfid-20230330_005050_912600_AE90FB34 
+X-CRM114-Status: UNSURE (   6.23  )
 X-CRM114-Notice: Please train this message.
 X-Mailman-Approved-At: Thu, 30 Mar 2023 06:47:39 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
@@ -77,48 +75,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-In a future change we'll want to read from the IBI FIFO too, so turn
-dw_i3c_read_rx_fifo() into a generic read with the FIFO register as a
-parameter.
+This series implements In-Band Interrupt (IBI) support for the ast2600
+i3c driver, by adding the required generic code in the dw driver, then
+enabling that (with a required hardware workaround) in the ast2600
+driver.
 
-Signed-off-by: Jeremy Kerr <jk@codeconstruct.com.au>
----
- drivers/i3c/master/dw-i3c-master.c | 14 ++++++++++----
- 1 file changed, 10 insertions(+), 4 deletions(-)
+As always: comments, queries etc. are most welcome.
 
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index 9fc03108a5db..cb38ef95f21a 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -318,18 +318,24 @@ static void dw_i3c_master_wr_tx_fifo(struct dw_i3c_master *master,
- 	}
- }
- 
--static void dw_i3c_master_read_rx_fifo(struct dw_i3c_master *master,
--				       u8 *bytes, int nbytes)
-+static void dw_i3c_master_read_fifo(struct dw_i3c_master *master,
-+				    int reg,  u8 *bytes, int nbytes)
- {
--	readsl(master->regs + RX_TX_DATA_PORT, bytes, nbytes / 4);
-+	readsl(master->regs + reg, bytes, nbytes / 4);
- 	if (nbytes & 3) {
- 		u32 tmp;
- 
--		readsl(master->regs + RX_TX_DATA_PORT, &tmp, 1);
-+		readsl(master->regs + reg, &tmp, 1);
- 		memcpy(bytes + (nbytes & ~3), &tmp, nbytes & 3);
- 	}
- }
- 
-+static void dw_i3c_master_read_rx_fifo(struct dw_i3c_master *master,
-+				       u8 *bytes, int nbytes)
-+{
-+	return dw_i3c_master_read_fifo(master, RX_TX_DATA_PORT, bytes, nbytes);
-+}
-+
- static struct dw_i3c_xfer *
- dw_i3c_master_alloc_xfer(struct dw_i3c_master *master, unsigned int ncmds)
- {
+Cheers,
+
+
+Jeremy
+
+Jeremy Kerr (5):
+  i3c: dw: Create a generic fifo read function
+  i3c: dw: Turn DAT array entry into a struct
+  i3c: dw: Add support for in-band interrupts
+  i3c: dw: Add a platform facility for IBI PEC workarounds
+  i3c: ast2600: enable IBI support
+
+ drivers/i3c/master/ast2600-i3c-master.c |  21 ++
+ drivers/i3c/master/dw-i3c-master.c      | 336 ++++++++++++++++++++++--
+ drivers/i3c/master/dw-i3c-master.h      |  32 ++-
+ 3 files changed, 370 insertions(+), 19 deletions(-)
+
 -- 
 2.39.2
 
