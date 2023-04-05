@@ -4,65 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B156EC77B60
-	for <linux-i3c@archiver.kernel.org>; Fri, 31 Mar 2023 09:15:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 79691C7619A
+	for <linux-i3c@archiver.kernel.org>; Wed,  5 Apr 2023 04:35:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i6ktTVZ6DQ7BH8UZKK5bnaErse0sBPrOob1GJDB10/Y=; b=bOfmSVG8dtdQTm
-	+0Lq+SsSapWrtjah9qR49dweXvSTdw+La0JZR5RMdj0K0CbjICkz/i2cL82nhfo2A3BEl2ygqQNSk
-	nvc1iQL9fSa9ZkdyuVBe4DvcAFsPVM28JIzxgqEH5CZgRiFaQ6uZXhuMnSCO3WHspYQskRiojUorw
-	xXURsCqnH2iC02z+GBSaCi/LZJh5cBrzJFgtact/8fNOqpR43YwUZn14Pc/d6pGDfsQuEv9OmD0/3
-	D4SlvPRsF6+PfFigS/GripdjFTFUxbUH9twD4iUW1JRhl94wQy6AjFclnOBwfmOrFlSJNgCVR10vz
-	5zvXDAt3NZ+wr4SYmt7g==;
+	List-Owner; bh=jV+RaTkswDdBrFA/dOLC22lOu8G1GR9ttYMu2SO2u18=; b=Aol2uqPhX4oNJd
+	y9nDEagQc0sB8/Polkh4gIYUmiQKDql9d99FIdryIRdXKhlNLzAPQAX+Hy8XmSi+L8XOsoq3b/BLQ
+	R1mqNkBJAPxqIn9WNDtQZfRLKaqkbRKk/k9knKVq8QYT4fTl1roJJ0GSE+gbDHxBiVDz8q/9A9uBF
+	11QACmuOvGtOPZigLbK7TZ0s1ePu142TsgxjfE6nQl/8sPc9QEBilxjIwstg0mmMSyduCS4EvY2t8
+	25eHJrZwx6IGFqoyX/liRyM7SGcWH0nZR9DYdwyr4bfUcfIZDI9LzCLJ6sttogcqVnt1UIK+HNtXv
+	ywJoakH/pjedWxD05FdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1piArC-006dQO-12;
-	Fri, 31 Mar 2023 09:15:38 +0000
+	id 1pjurP-003Kez-2V;
+	Wed, 05 Apr 2023 04:35:03 +0000
 Received: from pi.codeconstruct.com.au ([203.29.241.158] helo=codeconstruct.com.au)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1piAr7-006dLu-2D
+	id 1pjurL-003Kdc-1G
 	for linux-i3c@lists.infradead.org;
-	Fri, 31 Mar 2023 09:15:36 +0000
-Received: by codeconstruct.com.au (Postfix, from userid 10000)
-	id 3D76C203E3; Fri, 31 Mar 2023 17:15:14 +0800 (AWST)
+	Wed, 05 Apr 2023 04:35:00 +0000
+Received: from pecola.lan (unknown [159.196.93.152])
+	by mail.codeconstruct.com.au (Postfix) with ESMTPSA id 4E08120034;
+	Wed,  5 Apr 2023 12:34:46 +0800 (AWST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=codeconstruct.com.au; s=2022a; t=1680254114;
-	bh=DwJVXzMJiN5hjRhApoLO5DGd/N9N6w0f4EJEHeB8P4Q=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=AdXI5EOc2F1wrp2rxwRLFAotgwLg2JiITCq9889wM24yT7ggqLXxJIA+6is9ph6M/
-	 pgfdtkASAVW4Pq0+gcaq3q91PI17S2DTdW3tLS8VvGVDFfWeVsGZlSr33ZBuoSCSse
-	 WJ8/8PNldSvDa4t0DRmWG9d+4qof0y35dVXu/c8gezh8sHePMHHWJa45to8VeFfi4a
-	 dxEbvYKwqu0sT7qTmF+eKzWeGq8XEZeXVYvl7BmtLzIUxF9nBwsSq3GJWf/+PzPsrT
-	 UXxG8+X1SFYc+uo2fH6Pg2IpG46IhXnLBASx8dyP6dqVLIvI3sn3jFUp3gJVUHHhLI
-	 76aLBJRbNj61g==
+	d=codeconstruct.com.au; s=2022a; t=1680669290;
+	bh=/JY2GxUV8U7PZngfK9sN6bkoR5ACX/UvT6PfeNBweuM=;
+	h=Subject:From:To:Cc:Date:In-Reply-To:References;
+	b=IXb2wDEdqFp90wdXnhW8iMMEHY8wgKoHLl7EYL59NXC0Wd/Z+LQP9si5bE78O4Hpu
+	 jgoyRd1c8MVesV4H8maoFsrFl48WhplmDRpRbTEiF0vQtsdi7SaN+TkN+WYSvm54IX
+	 Pi766232ohCgD1zl4lsOIit1FdEjvgI3k3mtTqHTiAhAeSfTRY7X3TsyMgmKCLWhPQ
+	 C/spOsDuM3q1MlJ83SW3pYgbQb2BNvEoL5cdZ7WQH83DKxm1MkudoUpKBLbEcuCNzD
+	 kpp6y9D2Ld8V42fbjI9bTaZVzI9/Z2r9/txrOrz4GkTnYJJog/Ua6Q2pJRjUStX7rp
+	 axgm7LdCgP/Dw==
+Message-ID: <94e941a2895bbb40d7b87acd7de6525b8596b096.camel@codeconstruct.com.au>
+Subject: Re: [PATCH v3 0/3] i3c dw,ast2600: Add a driver for the AST2600 i3c
+ controller
 From: Jeremy Kerr <jk@codeconstruct.com.au>
-To: linux-i3c@lists.infradead.org
-Cc: devicetree@vger.kernel.org,
-	linux-aspeed@lists.ozlabs.org,
-	Matt Johnston <matt@codeconstruct.com.au>,
-	Vitor Soares <ivitro@gmail.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Jack Chen <zenghuchen@google.com>,
-	Billy Tsai <billy_tsai@aspeedtech.com>,
-	Dylan Hung <dylan_hung@aspeedtech.com>,
-	Joel Stanley <joel@jms.id.au>,
-	Andrew Jeffery <andrew@aj.id.au>
-Subject: [PATCH v3 1/3] i3c: dw: Add infrastructure for platform-specific implementations
-Date: Fri, 31 Mar 2023 17:14:59 +0800
-Message-Id: <20230331091501.3800299-2-jk@codeconstruct.com.au>
-X-Mailer: git-send-email 2.39.1
-In-Reply-To: <20230331091501.3800299-1-jk@codeconstruct.com.au>
+To: Joel Stanley <joel@jms.id.au>
+Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-aspeed@lists.ozlabs.org, Matt Johnston <matt@codeconstruct.com.au>, 
+ Vitor Soares <ivitro@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Alexandre Belloni
+ <alexandre.belloni@bootlin.com>, Jack Chen <zenghuchen@google.com>, Billy
+ Tsai <billy_tsai@aspeedtech.com>, Dylan Hung <dylan_hung@aspeedtech.com>,
+ Andrew Jeffery <andrew@aj.id.au>
+Date: Wed, 05 Apr 2023 12:34:45 +0800
+In-Reply-To: <CACPK8XdLpg2H4a2nHo4PokfBc4r3D8MbK2-62jXkPXAq8Q03Rg@mail.gmail.com>
 References: <20230331091501.3800299-1-jk@codeconstruct.com.au>
+	 <CACPK8XdLpg2H4a2nHo4PokfBc4r3D8MbK2-62jXkPXAq8Q03Rg@mail.gmail.com>
+User-Agent: Evolution 3.46.3-1 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230331_021534_114975_68A45F10 
-X-CRM114-Status: GOOD (  22.76  )
+X-CRM114-CacheID: sfid-20230404_213459_654889_05EC24BB 
+X-CRM114-Status: UNSURE (   7.95  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,243 +78,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The dw i3c core can be integrated into various SoC devices. Platforms
-that use this core may need a little configuration that is specific to
-that platform.
+Hi Joel,
 
-Add some infrastructure to allow platform-specific behaviour: common
-probe/remove functions, a set of platform hook operations, and a pointer
-for platform-specific data in struct dw_i3c_master. Move the common api
-into a new (i3c local) header file.
+> Given we have acks on the bindings, I think it's safe to send the
+> device tree changes now so we can merge what you have in the upcoming
+> merge window. If there's changes we can modify or revert.
 
-Platforms will provide their own struct platform_driver, which allocates
-struct dw_i3c_master, does any platform-specific probe behaviour, and
-calls into the common probe.
+OK, I'll get those into shape.
 
-A future change will add new platform support that uses this
-infrastructure.
+There is one dependency on this though, and unfortunately it requires
+solving *two* of the known-hard problems in computer science:
 
-Signed-off-by: Jeremy Kerr <jk@codeconstruct.com.au>
+Do we start at i3c0 or i3c1?
 
----
-v2:
- - structure for platform implementations as separate platform_drivers,
-   to be implemented in separate source files
- - provide default ops rather than null checks
+[i3c1 would match the schematic...]
 
-v3:
- - remove ->platform_data to use an encapsulated dw_i3c_master
-   for platform implementations instead
----
- drivers/i3c/master/dw-i3c-master.c | 76 +++++++++++++++++-------------
- drivers/i3c/master/dw-i3c-master.h | 54 +++++++++++++++++++++
- 2 files changed, 97 insertions(+), 33 deletions(-)
- create mode 100644 drivers/i3c/master/dw-i3c-master.h
+Cheers,
 
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index 1c146a39e1bd..9fc03108a5db 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -21,6 +21,8 @@
- #include <linux/reset.h>
- #include <linux/slab.h>
- 
-+#include "dw-i3c-master.h"
-+
- #define DEVICE_CTRL			0x0
- #define DEV_CTRL_ENABLE			BIT(31)
- #define DEV_CTRL_RESUME			BIT(30)
-@@ -189,8 +191,6 @@
- #define DEV_ADDR_TABLE_STATIC_ADDR(x)	((x) & GENMASK(6, 0))
- #define DEV_ADDR_TABLE_LOC(start, idx)	((start) + ((idx) << 2))
- 
--#define MAX_DEVS 32
--
- #define I3C_BUS_SDR1_SCL_RATE		8000000
- #define I3C_BUS_SDR2_SCL_RATE		6000000
- #define I3C_BUS_SDR3_SCL_RATE		4000000
-@@ -201,11 +201,6 @@
- 
- #define XFER_TIMEOUT (msecs_to_jiffies(1000))
- 
--struct dw_i3c_master_caps {
--	u8 cmdfifodepth;
--	u8 datafifodepth;
--};
--
- struct dw_i3c_cmd {
- 	u32 cmd_lo;
- 	u32 cmd_hi;
-@@ -224,25 +219,6 @@ struct dw_i3c_xfer {
- 	struct dw_i3c_cmd cmds[];
- };
- 
--struct dw_i3c_master {
--	struct i3c_master_controller base;
--	u16 maxdevs;
--	u16 datstartaddr;
--	u32 free_pos;
--	struct {
--		struct list_head list;
--		struct dw_i3c_xfer *cur;
--		spinlock_t lock;
--	} xferqueue;
--	struct dw_i3c_master_caps caps;
--	void __iomem *regs;
--	struct reset_control *core_rst;
--	struct clk *core_clk;
--	char version[5];
--	char type[5];
--	u8 addrs[MAX_DEVS];
--};
--
- struct dw_i3c_i2c_dev_data {
- 	u8 index;
- };
-@@ -602,6 +578,10 @@ static int dw_i3c_master_bus_init(struct i3c_master_controller *m)
- 	u32 thld_ctrl;
- 	int ret;
- 
-+	ret = master->platform_ops->init(master);
-+	if (ret)
-+		return ret;
-+
- 	switch (bus->mode) {
- 	case I3C_BUS_MODE_MIXED_FAST:
- 	case I3C_BUS_MODE_MIXED_LIMITED:
-@@ -1124,14 +1104,23 @@ static const struct i3c_master_controller_ops dw_mipi_i3c_ops = {
- 	.i2c_xfers = dw_i3c_master_i2c_xfers,
- };
- 
--static int dw_i3c_probe(struct platform_device *pdev)
-+/* default platform ops implementations */
-+static int dw_i3c_platform_init_nop(struct dw_i3c_master *i3c)
-+{
-+	return 0;
-+}
-+
-+static const struct dw_i3c_platform_ops dw_i3c_platform_ops_default = {
-+	.init = dw_i3c_platform_init_nop,
-+};
-+
-+int dw_i3c_common_probe(struct dw_i3c_master *master,
-+			struct platform_device *pdev)
- {
--	struct dw_i3c_master *master;
- 	int ret, irq;
- 
--	master = devm_kzalloc(&pdev->dev, sizeof(*master), GFP_KERNEL);
--	if (!master)
--		return -ENOMEM;
-+	if (!master->platform_ops)
-+		master->platform_ops = &dw_i3c_platform_ops_default;
- 
- 	master->regs = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(master->regs))
-@@ -1192,10 +1181,10 @@ static int dw_i3c_probe(struct platform_device *pdev)
- 
- 	return ret;
- }
-+EXPORT_SYMBOL_GPL(dw_i3c_common_probe);
- 
--static int dw_i3c_remove(struct platform_device *pdev)
-+int dw_i3c_common_remove(struct dw_i3c_master *master)
- {
--	struct dw_i3c_master *master = platform_get_drvdata(pdev);
- 	int ret;
- 
- 	ret = i3c_master_unregister(&master->base);
-@@ -1208,6 +1197,27 @@ static int dw_i3c_remove(struct platform_device *pdev)
- 
- 	return 0;
- }
-+EXPORT_SYMBOL_GPL(dw_i3c_common_remove);
-+
-+/* base platform implementation */
-+
-+static int dw_i3c_probe(struct platform_device *pdev)
-+{
-+	struct dw_i3c_master *master;
-+
-+	master = devm_kzalloc(&pdev->dev, sizeof(*master), GFP_KERNEL);
-+	if (!master)
-+		return -ENOMEM;
-+
-+	return dw_i3c_common_probe(master, pdev);
-+}
-+
-+static int dw_i3c_remove(struct platform_device *pdev)
-+{
-+	struct dw_i3c_master *master = platform_get_drvdata(pdev);
-+
-+	return dw_i3c_common_remove(master);
-+}
- 
- static const struct of_device_id dw_i3c_master_of_match[] = {
- 	{ .compatible = "snps,dw-i3c-master-1.00a", },
-diff --git a/drivers/i3c/master/dw-i3c-master.h b/drivers/i3c/master/dw-i3c-master.h
-new file mode 100644
-index 000000000000..cd376daa28cf
---- /dev/null
-+++ b/drivers/i3c/master/dw-i3c-master.h
-@@ -0,0 +1,54 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (c) 2023 Code Construct
-+ *
-+ * Author: Jeremy Kerr <jk@codeconstruct.com.au>
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/i3c/master.h>
-+#include <linux/reset.h>
-+#include <linux/types.h>
-+
-+#define DW_I3C_MAX_DEVS 32
-+
-+struct dw_i3c_master_caps {
-+	u8 cmdfifodepth;
-+	u8 datafifodepth;
-+};
-+
-+struct dw_i3c_master {
-+	struct i3c_master_controller base;
-+	u16 maxdevs;
-+	u16 datstartaddr;
-+	u32 free_pos;
-+	struct {
-+		struct list_head list;
-+		struct dw_i3c_xfer *cur;
-+		spinlock_t lock;
-+	} xferqueue;
-+	struct dw_i3c_master_caps caps;
-+	void __iomem *regs;
-+	struct reset_control *core_rst;
-+	struct clk *core_clk;
-+	char version[5];
-+	char type[5];
-+	u8 addrs[DW_I3C_MAX_DEVS];
-+
-+	/* platform-specific data */
-+	const struct dw_i3c_platform_ops *platform_ops;
-+};
-+
-+struct dw_i3c_platform_ops {
-+	/*
-+	 * Called on early bus init: the i3c has been set up, but before any
-+	 * transactions have taken place. Platform implementations may use to
-+	 * perform actual device enabling with the i3c core ready.
-+	 */
-+	int (*init)(struct dw_i3c_master *i3c);
-+};
-+
-+extern int dw_i3c_common_probe(struct dw_i3c_master *master,
-+			       struct platform_device *pdev);
-+extern int dw_i3c_common_remove(struct dw_i3c_master *master);
-+
--- 
-2.39.1
 
+Jeremy
 
 -- 
 linux-i3c mailing list
