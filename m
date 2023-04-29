@@ -4,54 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63869C77B73
-	for <linux-i3c@archiver.kernel.org>; Sun, 30 Apr 2023 22:12:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 23D9EC77B61
+	for <linux-i3c@archiver.kernel.org>; Mon,  1 May 2023 10:22:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=O30vYOpZTDCPnkPQrH9TVRYXpqKbM2t4aERNDx75ljU=; b=hJLyvzGIoM2HI9
-	yxiZsOiKzD7zPAhDwBgWXt4ea491CsWTSyOLuybdAAKCKwLfjRSFf6yOBDTQa3/Y3Nn+GAabJ4BHC
-	N9v84gj0/oFfHyFojqlzxvq3xIuiWdY+zkX+WlOa2EKIOJglM57pmeqfmoY7R86iWflb2rAWoEgTe
-	0Omk6nJQUvK+etVCpSr/9XdixL3NMs77UQyVIpDlLzuzijoZkjOAMsVVqjeBpwZUyPO+fpgtkW352
-	a3b8hSTtMXK8utm4D/cHZ4Hv03+k/BDSWdCPOmxfNSZFnVJBFvnrNqn6yUGalXtJk1EK7JARoKoaO
-	vFXcqSmdQcVwAcTQFnuA==;
+	List-Owner; bh=O+1t7IXnQnsrRKt3VPEf+p5jaF7WyPwktt0Hq1IXOug=; b=z8WqN7WWdtQ3Vy
+	mi1U5jo8DlviiXb4KhrKFRnxGmM3R1cTrUn+ccyq0KRqaDkHxpAp9qTHGhMY1oVKQtXESLNbmL8Yo
+	yUE9ZjUNJQ4xg78kQjGTnphPWpSFBO1Mzc7o0Cv1S7Hl64sdG7v2WwQO0+aGemki8XB3E4aJRItN/
+	2nlWoUzuMctZ5MgXsxgRsnm4IT+NmtI0rfKZHGA48n/1zu7kbygRQDidJsb2xYy+MRfirbX1bqMpP
+	b6ygmMFVarS46Dgili1hSh70QgXN73jO95vT0qhOp/dxR6pG0EpzwwcVMA4mbK8J257WlCjawq5DW
+	fCkDh1fAnf1SWsJ6fWeQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptFH1-00ErRS-2F;
-	Sun, 30 Apr 2023 22:12:03 +0000
-Received: from relay7-d.mail.gandi.net ([2001:4b98:dc4:8::227])
+	id 1ptQg7-00FaQa-2y;
+	Mon, 01 May 2023 10:22:44 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1ptFGx-00ErQg-2h
+	id 1psktw-00CmRO-1V
 	for linux-i3c@lists.infradead.org;
-	Sun, 30 Apr 2023 22:12:01 +0000
-Received: (Authenticated sender: alexandre.belloni@bootlin.com)
-	by mail.gandi.net (Postfix) with ESMTPSA id 6A07420002;
-	Sun, 30 Apr 2023 22:11:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1682892712;
+	Sat, 29 Apr 2023 13:46:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1682775967;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding;
-	bh=S0PUlY9cWCsgaEVIJLp36/CNwq+4HYBHE9hsb/7K+jY=;
-	b=JKFHbnn0HjZJRK5DbCHEELOHeT8yAPecugKohzLt2cxZdE7/A6S04KtQ4vUbzaZvCuB4WU
-	r8PwFwH8kQdT4Ypkg/WK8UEyjAzU2i0gu0X1X8lyGm4qYWlogaWFqurt9UX59XIEEyiv9X
-	kOW9LgJgplF9x4p5bckpbIfne/fpzk3fQ7TY7pMzoYE0MmAnk0o6mndJb5gTbmGgqyUC3/
-	z8KF67FHMZdkBdOz/6klOdqzKFN0ynhz14uf9nEEPE4sc5Iq9eBUjiFJPCGe8pmcCKJQ5m
-	4LRfFDBhqKXuEGJf8ac/EaY0/yiWs/eCr/oONTNoOtYYQ+LxQyCO2UbkrT+fXw==
-Date: Mon, 1 May 2023 00:11:51 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Linus Torvalds <torvalds@linux-foundation.org>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [GIT PULL] I3C changes for 6.4
-Message-ID: <20230430221151c27da7d9@mail.local>
+	bh=MrC2Plo9OYii15Nm2M6PoTQXMjK5jmikMyISz9U2Pqs=;
+	b=HQwobudDfGpbMWyq4gH44D5b5WQ9vZZIzaycMAogMIjgSl9ZZ2Td8QfvWlPKFoKPDhV8Fb
+	OJRksqScTzIEHfdSFXsTCT+tdLvu73lJm3REtkrUjt4Z8T/FwFEzi6nH5YwHrZb/Mv9PGT
+	A9gyxH3qUrnIDqVI/mGWAkvCa4sUWdk=
+Received: from mail-qv1-f72.google.com (mail-qv1-f72.google.com
+ [209.85.219.72]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-628-bcaUjdmTOpuXFNERYfdfsA-1; Sat, 29 Apr 2023 09:46:06 -0400
+X-MC-Unique: bcaUjdmTOpuXFNERYfdfsA-1
+Received: by mail-qv1-f72.google.com with SMTP id 6a1803df08f44-5eb18c93187so5799566d6.1
+        for <linux-i3c@lists.infradead.org>; Sat, 29 Apr 2023 06:46:06 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1682775966; x=1685367966;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=MrC2Plo9OYii15Nm2M6PoTQXMjK5jmikMyISz9U2Pqs=;
+        b=VZQ5m9tP88azzLYMQ8RX6OxTjbcNX7RY0soZxsrymOFleGAsnReNpWPgbVSjjarNDf
+         OYAF/Ar7SBVRyyTHsar1vqQ1BCnqThkZ07eWMgeZOetYNxvKIWwI8zzqvRfPGi2pcqzA
+         WPNMAOc7ptrIcQqCbmuJmKJ1PD26r2d9tEFyiarQAU+fZQU6VtrFmu1/uK6/ndngCQpf
+         NTbPwquYrUAsQwHwwlzdLwe1c6jfo989AoK+RLN4AByxlYD1E1pxxK8oSfyL+YtXI+i1
+         VhAuT7vy3/o922QtBlSQwi1C03aueBwEFpVeMUkQs4ajktokNmPpO/swDmtDPwzh/2uS
+         Bg6g==
+X-Gm-Message-State: AC+VfDzrh7P3mZpncIvehBed7MCJf8ZLQYxkcNDMnHVjLo7eOP5z2jcg
+	ttoNMR6x+vfhY+Ap7GFUETDOZa5B/Me5oW98lLEQX5vnXCkd3l+ljD0O8Bwuc/DUI6fam5XkyLu
+	tqQcVJLTo8k1wquYW54rFhRor4g==
+X-Received: by 2002:a05:6214:23c9:b0:5ef:a5b5:5b99 with SMTP id hr9-20020a05621423c900b005efa5b55b99mr15853764qvb.0.1682775966166;
+        Sat, 29 Apr 2023 06:46:06 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ49CsiS83CUAu+aC5eNde28TyzbGRWjnbNx01U3hlQtODmk55RuB0tMAIfLw0kfaG9RSSmiNw==
+X-Received: by 2002:a05:6214:23c9:b0:5ef:a5b5:5b99 with SMTP id hr9-20020a05621423c900b005efa5b55b99mr15853582qvb.0.1682775963891;
+        Sat, 29 Apr 2023 06:46:03 -0700 (PDT)
+Received: from dell-per740-01.7a2m.lab.eng.bos.redhat.com (nat-pool-bos-t.redhat.com. [66.187.233.206])
+        by smtp.gmail.com with ESMTPSA id i7-20020a056214030700b005eedb5cebd1sm7112753qvu.130.2023.04.29.06.46.03
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 29 Apr 2023 06:46:03 -0700 (PDT)
+From: Tom Rix <trix@redhat.com>
+To: jk@codeconstruct.com.au,
+	alexandre.belloni@bootlin.com
+Cc: linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Tom Rix <trix@redhat.com>
+Subject: [PATCH] i3c: ast2600: set variable ast2600_i3c_ops storage-class-specifier to static
+Date: Sat, 29 Apr 2023 09:46:01 -0400
+Message-Id: <20230429134601.2688558-1-trix@redhat.com>
+X-Mailer: git-send-email 2.27.0
 MIME-Version: 1.0
-Content-Disposition: inline
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230430_151200_173194_FB909650 
-X-CRM114-Status: GOOD (  11.03  )
+X-CRM114-CacheID: sfid-20230429_064612_740447_C3FB8EAF 
+X-CRM114-Status: GOOD (  10.50  )
+X-Mailman-Approved-At: Mon, 01 May 2023 03:22:42 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,104 +95,40 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hello Linus,
+smatch reports
+drivers/i3c/master/ast2600-i3c-master.c:121:34: warning: symbol
+  'ast2600_i3c_ops' was not declared. Should it be static?
 
-Here is the i3c subsytem pull request for 6.4. Most of the changes are
-there to support a new driver, mostly reusing the existing DW driver.
+This variable is only used in its defining file, so it should be static.
 
-The following changes since commit fe15c26ee26efa11741a7b632e9f23b01aca4cc6:
+Signed-off-by: Tom Rix <trix@redhat.com>
+---
+ drivers/i3c/master/ast2600-i3c-master.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-  Linux 6.3-rc1 (2023-03-05 14:52:03 -0800)
+diff --git a/drivers/i3c/master/ast2600-i3c-master.c b/drivers/i3c/master/ast2600-i3c-master.c
+index b72c12c5168f..09ed19d489e9 100644
+--- a/drivers/i3c/master/ast2600-i3c-master.c
++++ b/drivers/i3c/master/ast2600-i3c-master.c
+@@ -118,7 +118,7 @@ static void ast2600_i3c_set_dat_ibi(struct dw_i3c_master *i3c,
+ 	}
+ }
+ 
+-const struct dw_i3c_platform_ops ast2600_i3c_ops = {
++static const struct dw_i3c_platform_ops ast2600_i3c_ops = {
+ 	.init = ast2600_i3c_init,
+ 	.set_dat_ibi = ast2600_i3c_set_dat_ibi,
+ };
+-- 
+2.27.0
 
-are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-=
-6.4
-
-for you to fetch changes up to 6b496a94c5905fca7879bc0dc438a47de40b7d4f:
-
-  i3c: ast2600: set variable ast2600_i3c_ops storage-class-specifier to sta=
-tic (2023-04-30 23:50:26 +0200)
-
-----------------------------------------------------------------
-I3C for 6.4
-
-Subsystem:
- - OF alias bus numbering
- - convert to platform remove callback returning void
-
-New driver: AST2600 controller, based on Synopsys DesignWare IP
-
-Drivers:
- - dw: add infrastructure to support different platform integrations
-
-----------------------------------------------------------------
-Andy Shevchenko (1):
-      i3c: Correct reference to the I=B2C device data type
-
-Jeremy Kerr (11):
-      i3c: dw: use bus mode rather than device reg for conditional tCAS set=
-ting
-      i3c: dw: Add infrastructure for platform-specific implementations
-      dt-bindings: i3c: Add AST2600 i3c controller
-      i3c: ast2600: Add AST2600 platform-specific driver
-      i3c: Allow OF-alias-based persistent bus numbering
-      i3c: dw: Create a generic fifo read function
-      i3c: dw: Turn DAT array entry into a struct
-      i3c: dw: Add support for in-band interrupts
-      i3c: dw: Add a platform facility for IBI PEC workarounds
-      i3c: ast2600: enable IBI support
-      i3c: ast2600: fix register setting for 545 ohm pullups
-
-Krzysztof Kozlowski (1):
-      i3c: dw: drop of_match_ptr for ID table
-
-Matt Johnston (1):
-      i3c: dw: Return the length from a read priv_xfer
-
-Tom Rix (1):
-      i3c: ast2600: set variable ast2600_i3c_ops storage-class-specifier to=
- static
-
-Uwe Kleine-K=F6nig (5):
-      i3c: Make i3c_master_unregister() return void
-      i3c: dw: Convert to platform remove callback returning void
-      i3c: cdns: Convert to platform remove callback returning void
-      i3c: mipi-i3c-hci: Convert to platform remove callback returning void
-      i3c: svc: Convert to platform remove callback returning void
-
- .../bindings/i3c/aspeed,ast2600-i3c.yaml           |  72 ++++
- MAINTAINERS                                        |   6 +
- drivers/i3c/master.c                               |  36 +-
- drivers/i3c/master/Kconfig                         |  14 +
- drivers/i3c/master/Makefile                        |   1 +
- drivers/i3c/master/ast2600-i3c-master.c            | 189 +++++++++
- drivers/i3c/master/dw-i3c-master.c                 | 435 +++++++++++++++++=
-+---
- drivers/i3c/master/dw-i3c-master.h                 |  84 ++++
- drivers/i3c/master/i3c-master-cdns.c               |  11 +-
- drivers/i3c/master/mipi-i3c-hci/core.c             |   6 +-
- drivers/i3c/master/svc-i3c-master.c                |  11 +-
- include/linux/i3c/master.h                         |   5 +-
- 12 files changed, 779 insertions(+), 91 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/i3c/aspeed,ast2600-i3=
-c.yaml
- create mode 100644 drivers/i3c/master/ast2600-i3c-master.c
- create mode 100644 drivers/i3c/master/dw-i3c-master.h
-
--- =
-
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
--- =
-
+-- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
