@@ -4,120 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 570A7C77B75
-	for <linux-i3c@archiver.kernel.org>; Wed, 17 May 2023 03:46:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA903C77B75
+	for <linux-i3c@archiver.kernel.org>; Mon, 22 May 2023 08:32:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1iNVUuacjLOlV6uTyu0DoyVae0rgcFl9JOUrvb7e5iM=; b=3GNWHBoSl8dZ6r
-	/jIebJYlR07GNXlbMuhm7Wqwc3E2l55XmZ7vl3iL5YYW6iLggsvsemKeBK/fTfH5ZLivR46SzejjH
-	p0c5DDCWcujFnJ865PyKkspGabdcVGWVCPJjQ4h1JqZ6VkYbpv7Pi20tRlAzWqwc9WW//jVkpt19k
-	FJJhK8VZdqv0m8ns12duIuOgA7jJ5xjEgNSCDRbpbEdc3tEIVZ11ubwLUcRj4lZSVhmiWt6MTLebz
-	Xv4PtcJzA7RPQQ3u3FKEXItqcAq7AOM2xhAxv4N2RlksJjERDr/ZkfDz6DQfSwgKwfANNNTQmV7b5
-	Wv+uVneFOwkoolGj9JCA==;
+	List-Owner; bh=6+JihDrbXGPjxsQefqW5r63sxYLTvyoTTHpjv95NDfE=; b=jDvDOXLSV9m91X
+	WB3havYMOlQxeTJ5jFqPU9C76yOWSDN+iCp7vIN32Hkkgxhp99DpUEaEOBEWz02n/tEkV7c9+4VEX
+	5+y8oOtL5cH14atIJ56gY49yn1JBED3d9ckdae1AXGgK1/PBoTAXnPDoOWJiFCFZYjgeEwGWndADl
+	Fl6oFsWrymIgQ2aQM0pL1NBW8R8b1KVUFitHaJO9FeAU9WaLC31zGzZcH6LHEXyp7Cx5gK7JCh2no
+	8LYZurhhMQlf5LdS1TQp2+hv+CetCEpJLDOrQLkWHih1cJDFOC/14iRLNpMgUPStK088kuLvO9a5b
+	4Y28tj7AYXjaSvTAE7tg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1pz878-0080vh-04;
-	Wed, 17 May 2023 03:46:10 +0000
-Received: from mail-am6eur05on20612.outbound.protection.outlook.com ([2a01:111:f400:7e1b::612] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1q10xe-005l1a-0B;
+	Mon, 22 May 2023 08:32:10 +0000
+Received: from relay3-d.mail.gandi.net ([2001:4b98:dc4:8::223])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pz875-0080uB-2G
+	id 1q10xY-005kzq-1f
 	for linux-i3c@lists.infradead.org;
-	Wed, 17 May 2023 03:46:08 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=SnTWSVMgf2Ex+7AUSl1uBlJoXLoSvdp76hbyVRJA/12XbLeEiWmZatmHPcZt/Qy0cPF/IeKDedt0HILxW7E0z0FmqU1qT843fwlw5qdflq5cZnJl+7Hrd1WtQjHz/d8V4IVM7veos4JtM3kgnfOSrOp0WLfXrhpVEmuK1xE2TfkeEYWu7QmfrzB3oQ8FveCAVLNQaxKnC3DJQAm4k8yl9lZYCkTQPCWJDZKWB0pXvZhDx9DRsAWhFTmsYDaJXPUZNCaAjuEPIHhClw5egIuYSBeuKiWwHpiOHLl4p4rZLXCjJTn4S+Bv/c0sL5oqxRUHOCOikpvJRQPw4qBw8EeZkg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=ymrcujo1nlu5lKOjP/sGMh6/oxHbDQDwi2E6Y2R+TnQ=;
- b=SIgdmPaUdf0uxxU8Go9eo2nnfcqaq8k17GOuF5Pq7Xw9j7uRXjr2ttVYPQGPBTE0OpccsAPwZ6OCKsZ8q89hln/E1PVtTmpypgLz+TGsVBZMxIN8J4Xtc7aMoIo7ydm4jsU8e6hvW38CZwLvC92DQjUnKkBXswuZLAiAKoAi/McLpae0C1EKjd1jVc5h2wNfuV6ATCaWO8HaNtgNkZ31FUxy5fzCYQqEcg5BiCAg5G91wYYiF8T7ga/xkERGPQkCI7C2+HnYlAcFfTOFq+UV3YSaUZsmWS94aglm28UCPOftXIo3Tat3kvCEr5wslwUYhWD9g26A7L6m6T4UbHXJKw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ymrcujo1nlu5lKOjP/sGMh6/oxHbDQDwi2E6Y2R+TnQ=;
- b=ACUE6z5xK1T6iag+LeXAes6y9T9RvnwqqecgXkftK/GBL1qXSgkaOBPSH7/ydlPitJo5SzGHESmBxgYrKUlvUgFkmNP7N/0iSEAt3g0+3U2kwbNcvihToYPtn7F8kHxXo7YJ6jKrcOXy0/FBcWqktvBsn9kSqXVEJ2GuMPuKza4=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM0PR04MB5089.eurprd04.prod.outlook.com (2603:10a6:208:c6::21)
- by AS4PR04MB9243.eurprd04.prod.outlook.com (2603:10a6:20b:4e2::18) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6387.33; Wed, 17 May
- 2023 03:30:21 +0000
-Received: from AM0PR04MB5089.eurprd04.prod.outlook.com
- ([fe80::da0c:329a:5bbf:71dd]) by AM0PR04MB5089.eurprd04.prod.outlook.com
- ([fe80::da0c:329a:5bbf:71dd%4]) with mapi id 15.20.6387.032; Wed, 17 May 2023
- 03:30:21 +0000
-From: Clark Wang <xiaoning.wang@nxp.com>
-To: miquel.raynal@bootlin.com,
-	conor.culhane@silvaco.com,
-	alexandre.belloni@bootlin.com
-Cc: linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH] i3c: master: svc: add NACK check after start byte sent
-Date: Wed, 17 May 2023 11:30:30 +0800
-Message-Id: <20230517033030.3068085-3-xiaoning.wang@nxp.com>
-X-Mailer: git-send-email 2.34.1
+	Mon, 22 May 2023 08:32:08 +0000
+Received: (Authenticated sender: miquel.raynal@bootlin.com)
+	by mail.gandi.net (Postfix) with ESMTPSA id 286326000E;
+	Mon, 22 May 2023 08:31:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1684744320;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=9nA+yCnDD+jGhOJLKYTP39879FYeAa+yLpi/+lBJP00=;
+	b=M8brq2KG5LVLd/nmRiduJj+MxtYR2sEYsKOlV2bS9D+idgLdJPi/mcdyAkgoWFZUSbTp4B
+	TpGUQlC8uXHNTUSmVvF2Bzj96QStKnsKleQNeP5jBxGhCJRI2A19fDkyACFvLihNB1hRPe
+	cKQVG0+BF6w4uxoMquzGGnUEDN6H/OIvNFsVOBs+5Ic0v3ma5+59zmj9lAL2Re/FqrmMTK
+	8F10dAJcN2bGRTrP5bOXGbKJvpnL/qGlk/92TRP8ILJkgvK635VZ4X5cAIfmAN11pj00fx
+	lBo1HOeHEoH24PmQjVslJDE1dFpVaff76YchKM0lgF/DyEyhQ8Zd6F/iJC6A+Q==
+Date: Mon, 22 May 2023 10:31:58 +0200
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Clark Wang <xiaoning.wang@nxp.com>
+Cc: conor.culhane@silvaco.com, alexandre.belloni@bootlin.com,
+ linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] i3c: master: svc: fix i3c suspend/resume issue
+Message-ID: <20230522103158.016ae674@xps-13>
 In-Reply-To: <20230517033030.3068085-1-xiaoning.wang@nxp.com>
 References: <20230517033030.3068085-1-xiaoning.wang@nxp.com>
-X-ClientProxiedBy: SI2PR02CA0050.apcprd02.prod.outlook.com
- (2603:1096:4:196::11) To AM0PR04MB5089.eurprd04.prod.outlook.com
- (2603:10a6:208:c6::21)
+Organization: Bootlin
+X-Mailer: Claws Mail 4.0.0 (GTK+ 3.24.33; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM0PR04MB5089:EE_|AS4PR04MB9243:EE_
-X-MS-Office365-Filtering-Correlation-Id: 304425a0-3908-40a5-018e-08db56870ae0
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 	zVsY6MkcsMnTb8Spxqm/d8ForT6D4bK7mj/km8nc0uS+q5mHoedc1W6P/Us8QOVoGCDY0WEyApxcloJt2h6GBuZd9oPNHRc495WjTuVoWxTSOv6uhnuBeoUnqIX44Z/rTRWuZ5YpoSXUtzUA3knPdldfpZ/W9HunVnd6ZuEKAZCORjcQNcD4RPgeHemZxUk867FAp0/vu1jmFH+lsIApCJxS6GwjphyQsCADSe232nDwPrhRRev5BduVsBW4gKQM0Eq65cvhifzGTbDHr49XRzSMVljQfdwkidyVxtuyAwOlpgSl0v8RU/GEI9wkR30IskOmdajgFWMUBdCFgFm2Rp0BrMCasyJqDSjj4AVKEbgb4kyizx1lkRxLYWMwOAbLxGl9wFJ05gIqWp/jUdRddQbbUJeVV+FAh57az7e6jfgDCWC2v2FBNPCHU53SVPThAHtSgeAunyz4N1VKKqGk65PFavMmmeeUYouk6d8GNqYEmMg772/CkZpVznzoBYgLWd0TDx2+38q0jU7bm2ipL4XeFQYTp+K9D7ubXvpAL18Y6m7WmvrRbMdyprUWObH6QzDaJzXCt5lYzto2tWnyw4zhUnebTC0m9xlbYWvQ8dbpIC2p8n0CUboellWFvR4q
-X-Forefront-Antispam-Report: 	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM0PR04MB5089.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230028)(4636009)(136003)(376002)(346002)(366004)(39860400002)(396003)(451199021)(6512007)(66476007)(66556008)(4326008)(66946007)(478600001)(316002)(52116002)(6486002)(2906002)(6666004)(8936002)(8676002)(5660300002)(26005)(1076003)(41300700001)(86362001)(36756003)(38100700002)(38350700002)(83380400001)(2616005)(186003)(6506007);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 	=?us-ascii?Q?ldi+KQNd8XQAAEJSZ6LVyKrpLUEMezPtZg/GzyzpLoSS6y6N89Bez3Fp2vMM?=
- =?us-ascii?Q?p1FNPkG5WtJBW3soVJhytA2dNnplLWRE6rot6TbxxgZbYxxYrurk785vZMFC?=
- =?us-ascii?Q?dOKg6S3bSo5tf0gRtbZ9UZhPPPmKju5tH0IpRnlwsfhDnpjSNoPKPlITrsaK?=
- =?us-ascii?Q?UMB80yFzXhi+BzZ6uDUz7IF+qWeqkbqJeq8hoyOfF9pi755IIJAKXXi9bnRo?=
- =?us-ascii?Q?vEFATuuSvIDtdOBqsYwdlujR2x4dDMgbQslfmOhh6CWbmliObEbr6uKpwMYE?=
- =?us-ascii?Q?4SbmHyH/uDJHgN1qOl/tvB/vOPdo1Qcnz69KJF8bLP2D7TdgiNTFbgIdIgZV?=
- =?us-ascii?Q?lNXiyR80uyJAa8E4GtLV+o74UYvp995S2J6Flqe+xDW4ywH0R3xj8weJms2u?=
- =?us-ascii?Q?AUzCc4PWQsnyr4YTaBVCvN1AIScb74TkV4nv9Rk1NET53UjPS9DbguOoUD8x?=
- =?us-ascii?Q?wWYd1YohRH0I7qXTwVI9y+w1eyGKhp9J2YD9icUi0KSv8dFe8x4/54U6n7F/?=
- =?us-ascii?Q?LL5EuKIbHN8Te8FzUTEVKzKtdW0YIB+YpW7SnUGX2obCxvBKD8QlswAK+WVX?=
- =?us-ascii?Q?8brSLIYj4HuCpSBhpExU3xJm+5YH3exHSUfmAJv19vzHVdG+HYPoxc5HsTgP?=
- =?us-ascii?Q?hux0CC7lI469bNI+0D3oduLI54hzBnW3s2rwQApi7ub+ZfvahYcB2GShxXIo?=
- =?us-ascii?Q?0Ea4qSI9oBaPKF9a5IEuIexUeBhm4hDIm1zrCOiR+TuSNcSKeneV7CGuyUPN?=
- =?us-ascii?Q?geVpLx7I4vkNxHmq01z0PMsrnYTDZ+HVuhCh71BVT6TtxPSJk0OY7K93DKSi?=
- =?us-ascii?Q?TyTAOL8TJ/B0FEyr5MZ3KrAZtiUdMAJuF8jO4t7lqPxpSMJz3wNNRFCXx28l?=
- =?us-ascii?Q?YwXqcaWvKfgrywOVwbHR0Etvf0hYuHtxwam8U8TREyYoqgdvVjxmBA7gRnKV?=
- =?us-ascii?Q?edI101pZ8ZltTOYddyXuDkxLL67f8nhoIUfKewzBe5+vOMQqTFnh9A7MhRlq?=
- =?us-ascii?Q?lB75SGVlnp1QcY/uWJkAhe0P3zOQ1VLt7BPItoksyy6DPeEcQ/jdbA9jV2He?=
- =?us-ascii?Q?cwNbUVznProIIKCEB1CfBWzpZkjhlaL1638pP7may2s+4FCr3SY43yiw5f46?=
- =?us-ascii?Q?ZrlT8tVZWrW4Ju2Qk9v2Fj9sWSFC3UnESWhAXUZ4e6MDh5unVyFUdMkT9jFS?=
- =?us-ascii?Q?gxcKoBzeyr5eG39DbDj4RSxUxz6Vz1zTuG0/3gSqNY8xdVdCVAaoDgOsM2UK?=
- =?us-ascii?Q?irT1m69AWq7RJiVDCWjbEHFsg6S3OHPySAT+sj6kPtIwTuyxUSbfbu7GCGcj?=
- =?us-ascii?Q?2hmGzUhCL0pMli/eOL5dKrD0XBq1yTonJ64eyVGEP1YgiclL9Ff27Z6CHd54?=
- =?us-ascii?Q?QNrT4XVqfADaNJFjVByo1X4K1zotsDFbw9XB443ZPDWeaWu+sa9hEdvii0ms?=
- =?us-ascii?Q?+4kQHUH3Cw8SVJZNxPSqdRIHLEjjArIw/01m49OcYHgaKm/sRrhjz/kDePrj?=
- =?us-ascii?Q?EiWI6pn7G3oprHzAYzGNWawPIYfbCFKKkIU4Kbsk19GtI8hQAfDZs/TNsr+V?=
- =?us-ascii?Q?Wyhuh4wa1U2V6cPDY+quCoaUZUPhkPXthoj+K97e?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 304425a0-3908-40a5-018e-08db56870ae0
-X-MS-Exchange-CrossTenant-AuthSource: AM0PR04MB5089.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 May 2023 03:30:20.9761
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 5wGRzV0VnXr2Srtb/a+niKWW3VkJ/Nlf+GRBXSNlMAIBKADhoCiYsy9ykdrl6nUSi7Q55yfNWHbiMWv3GZb4Pw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS4PR04MB9243
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230516_204607_739142_A27BAD5B 
-X-CRM114-Status: GOOD (  11.06  )
+X-CRM114-CacheID: sfid-20230522_013204_705172_A8953DE7 
+X-CRM114-Status: UNSURE (   7.13  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,49 +69,19 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add NACK check after start byte is sent.
-It is possible to detect early that a device is not on the bus
-and avoid invalid transmissions thereafter.
-
-Signed-off-by: Clark Wang <xiaoning.wang@nxp.com>
----
- drivers/i3c/master/svc-i3c-master.c | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-index 4edf33ed207d..0d63b732ef0c 100644
---- a/drivers/i3c/master/svc-i3c-master.c
-+++ b/drivers/i3c/master/svc-i3c-master.c
-@@ -92,6 +92,7 @@
- #define SVC_I3C_MINTCLR      0x094
- #define SVC_I3C_MINTMASKED   0x098
- #define SVC_I3C_MERRWARN     0x09C
-+#define   SVC_I3C_MERRWARN_NACK BIT(2)
- #define SVC_I3C_MDMACTRL     0x0A0
- #define SVC_I3C_MDATACTRL    0x0AC
- #define   SVC_I3C_MDATACTRL_FLUSHTB BIT(0)
-@@ -1014,6 +1015,11 @@ static int svc_i3c_master_xfer(struct svc_i3c_master *master,
- 	if (ret)
- 		goto emit_stop;
- 
-+	if (readl(master->regs + SVC_I3C_MERRWARN) & SVC_I3C_MERRWARN_NACK) {
-+		ret = -ENXIO;
-+		goto emit_stop;
-+	}
-+
- 	if (rnw)
- 		ret = svc_i3c_master_read(master, in, xfer_len);
- 	else
--- 
-2.34.1
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+SGkgQ2xhcmssCgp4aWFvbmluZy53YW5nQG54cC5jb20gd3JvdGUgb24gV2VkLCAxNyBNYXkgMjAy
+MyAxMTozMDoyOCArMDgwMDoKCj4gV2hlbiBzeXN0ZW0gc3VzcGVuZHMsIGlmIGkzYyBtb2R1bGUg
+aXMgcG93ZXJlZCBkb3duLCByZWdpc3Rlcgo+IHZhbHVlIHdpbGwgbG9zZS4KPiBOZWVkIHRvIHNh
+dmUgdGhlIGtleSByZWdpc3RlcnMgYmVmb3JlIHN5c3RlbSBzdXNwZW5kLgo+IFNvIHNhdmUgdGhl
+c2UgcmVnaXN0ZXJzIHZhbHVlIGluIHJ1bnRpbWUgcG0gc3VzcGVuZCwgYW5kIHJlc3RvcmUgdGhl
+bQo+IGlmIHRoZXNlIHJlZ2lzdGVyJ3MgdmFsdWUgaXMgZGlmZmVyZW50IHdpdGggdGhlIHNhdmVk
+IHZhbHVlcwo+IHdoZW4gcnVudGltZSBwbSByZXN1bWUuCj4gCj4gU2lnbmVkLW9mZi1ieTogQ2xh
+cmsgV2FuZyA8eGlhb25pbmcud2FuZ0BueHAuY29tPgoKUmV2aWV3ZWQtYnk6IE1pcXVlbCBSYXlu
+YWwgPG1pcXVlbC5yYXluYWxAYm9vdGxpbi5jb20+CgpUaGFua3MsCk1pcXXDqGwKCi0tIApsaW51
+eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNjCg==
