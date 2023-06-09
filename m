@@ -4,63 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2F40C7EE23
-	for <linux-i3c@archiver.kernel.org>; Sun,  4 Jun 2023 22:52:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9198C7EE29
+	for <linux-i3c@archiver.kernel.org>; Fri,  9 Jun 2023 22:14:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f9avGQEUZ+gOzEYMCmFZdFNwtbGxz9nIdb9USBMpScI=; b=mDE7+6vneMvgye
-	gQpqit0davNSV/crrbdY9B008APrb/oaEYik8tEyCkfejnG7V9OjIRuByldtKWKkczcCnOcy2TCoa
-	uRFJcFVJd9gs8fO3VXl74DFpcmXREe7svDDJwzW8JxxxmT3XjMop0+JW7/iesKQ+K9nsmbyZzpkax
-	lOuqq72X1QnR5bRE9EXKsGr2XvFzdZYsEsKG1F0fe4EM5w63LZuwoFvBw1auSybae8tuqfx7f6MsV
-	HBjQqugaSqQB5D+YLhKdS1NgbskLZFg4hQn54p45BMvH4RlsnNUUZIXabPHn0LJdCD6k+PaszGGbN
-	c1Ta7AZH3dBRP6L+oy9w==;
+	List-Owner; bh=wMNiAlTplC1ynPavMQ7k41Ho8KoRquljvtm1MLZz0vQ=; b=UOj2NtYpdRZdOR
+	jwlynIDTFWioaElXaveDTkPZZyaGYSYjY+yhHZL7w992G7CIjfzAaRiFw/hJajdnIhq2v0HIkIbMI
+	DWRmaK7Tm8aF/zWH29Be3n0WUPDntq3H5UJ/Obcu8TAAq66A4v96qKSmaVLtfluuZV+nX80iVasSd
+	5XjoT7LC/tFc/Yt/78UYrT71jP25XrnfqMW/XfiLtD2xH6mcz+uB8Uw0c5YqDBoo/XVobxXo2L4U5
+	gB9riaTLTTmVd722kKPEF9Tw5NvR/ZXeSILi65Kn5PHfYc1tqJjDljkHZnKop+JpZExt1J4z6G8ZM
+	XDAGtjF3EIFMKr0Cs1ww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q5wam-00DLuh-0M;
-	Sun, 04 Jun 2023 22:52:56 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+	id 1q7kN2-00EPf5-05;
+	Fri, 09 Jun 2023 22:14:12 +0000
+Received: from mail-il1-f169.google.com ([209.85.166.169])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q5wai-00DLuA-2F
+	id 1q7kMz-00EPdw-0R
 	for linux-i3c@lists.infradead.org;
-	Sun, 04 Jun 2023 22:52:54 +0000
-X-GND-Sasl: alexandre.belloni@bootlin.com
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1685919169;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=hZu8IphVkXP9p8je5/TGN5Q4I1XkOlHWgIEOsgSzKFI=;
-	b=hTvGDqLq6BYRLHbNUcWTKH4QWo4M9RaYlESvNV9Iwq+NqX1w1ikLyKXfcdp7w1IFRJz9ln
-	LkcLixRVpKJVJ+HMymmq6j1txO5jrzpetQQkSFXbWnS7KV9C9mGAyUCJXV/bXEE91NXwKe
-	P4UjgpkgF1omIvhIrb4N2C15ggHzSuTLfy0kcVYgtVelN5iVXcEgrDGasGAhcYqr7Q+pqh
-	wQZ8/7lO9heSsBFaG+qVoYB6b2xtP2kjDfbAkTVZLQ9ScH27MJbxLssFvitD3oxUVNPahv
-	DS5R8o/AOX2I9w1X67EDUzI+rII9IBld1c0orGAJAfAL3XwIQALHoKwMZP5uMg==
-X-GND-Sasl: alexandre.belloni@bootlin.com
-X-GND-Sasl: alexandre.belloni@bootlin.com
-X-GND-Sasl: alexandre.belloni@bootlin.com
-X-GND-Sasl: alexandre.belloni@bootlin.com
-Received: by mail.gandi.net (Postfix) with ESMTPSA id D215DC0003;
-	Sun,  4 Jun 2023 22:52:48 +0000 (UTC)
-Date: Mon, 5 Jun 2023 00:52:48 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: miquel.raynal@bootlin.com, conor.culhane@silvaco.com,
-	Clark Wang <xiaoning.wang@nxp.com>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: (subset) [PATCH] i3c: master: svc: fix cpu schedule in spin lock
-Message-ID: <168591905816.3958179.7662256666359712472.b4-ty@bootlin.com>
-References: <20230517033030.3068085-1-xiaoning.wang@nxp.com>
- <20230517033030.3068085-2-xiaoning.wang@nxp.com>
+	Fri, 09 Jun 2023 22:14:10 +0000
+Received: by mail-il1-f169.google.com with SMTP id e9e14a558f8ab-33c1e7743b7so9899015ab.1
+        for <linux-i3c@lists.infradead.org>; Fri, 09 Jun 2023 15:14:06 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1686348846; x=1688940846;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=6t6u+Mrz/1dBbbMkBNyrqyoA02iIWmNZLtRYGVEXPGQ=;
+        b=SZX/E6bAc+VhZ1C6cigL+QnKNhvA1+VlGf4qlr3hBZRZzEqnXoJeqOr/786Ae/Mqir
+         VMdgHqUE73/txXWWQK+TEl/ICAJG1inIaZ/oYAAVDdcWNkENBRtP5684hXEdebrr7cAS
+         1I3cAnToxQB/UObxDEFk0uQZFXBoyogHPVl11LZISeQf9glNi1kTQ25XV4AvRdoNkDOH
+         8cWQa8eOr8n5l+eIkkkdyiJzz/BZlgbzhwrxkNO9Y26Xh7DgMJkhQ63J7tZ3E2h+/U94
+         GlErrKXxgXkYKfEULM+i/cvWvuuT0RqOVdHQPYSpeAoprXRS8/CPVsRZV/YfY5jJaFw3
+         qQdQ==
+X-Gm-Message-State: AC+VfDwYbbne6w0IsPO8wv7f6DlCp6IdMAJAKxiVKzQC7317QtnW7FDf
+	8CYIefoddDNdpoUM78vXLkbXPbGZLw==
+X-Google-Smtp-Source: ACHHUZ7spV28QOx9P+mLMSMdbxJijLJ+sPQyGMPcKYjCMQj+2YQfFp/o0NoxbuCC5Gm3FxS/L55XwA==
+X-Received: by 2002:a92:c52d:0:b0:335:25e7:1897 with SMTP id m13-20020a92c52d000000b0033525e71897mr2493119ili.32.1686348846262;
+        Fri, 09 Jun 2023 15:14:06 -0700 (PDT)
+Received: from robh_at_kernel.org ([64.188.179.250])
+        by smtp.gmail.com with ESMTPSA id ep27-20020a0566384e1b00b0041855b3a685sm1177478jab.150.2023.06.09.15.14.04
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 09 Jun 2023 15:14:05 -0700 (PDT)
+Received: (nullmailer pid 2555446 invoked by uid 1000);
+	Fri, 09 Jun 2023 22:14:03 -0000
+Date: Fri, 9 Jun 2023 16:14:03 -0600
+From: Rob Herring <robh@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Conor Culhane <conor.culhane@silvaco.com>, Alexandre Belloni <alexandre.belloni@bootlin.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, linux-i3c@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>, Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] dt-bindings: i3c: silvaco,i3c-master: fix missing schema
+ restriction
+Message-ID: <168634884066.2555331.39755837725706368.robh@kernel.org>
+References: <20230609141107.66128-1-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230517033030.3068085-2-xiaoning.wang@nxp.com>
+In-Reply-To: <20230609141107.66128-1-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230604_155252_865458_C95BA6F3 
-X-CRM114-Status: UNSURE (   6.28  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230609_151409_179645_3DF1C302 
+X-CRM114-Status: GOOD (  10.86  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,23 +83,20 @@ Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 
-On Wed, 17 May 2023 11:30:29 +0800, Clark Wang wrote:
-> pm_runtime_resume_and_get() may call sleep(). It cannot be used in
-> svc_i3c_master_start_xfer_locked(), because it is in a spin lock.
+On Fri, 09 Jun 2023 16:11:07 +0200, Krzysztof Kozlowski wrote:
+> Each device schema must end with unevaluatedProperties: false, if it
+> references other common schema.  Otherwise it would allow any properties
+> to be listed.
 > 
-> Move the pm runtime operations to svc_i3c_master_enqueue_xfer().
-> 
+> Fixes: b8b0446f1f1a ("dt-bindings: i3c: Describe Silvaco master binding")
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> ---
+>  Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
 
 Applied, thanks!
 
-[1/1] i3c: master: svc: fix cpu schedule in spin lock
-      commit: 33beadb3b1ab74e69db2c49d9663f3a93a273943
-
--- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
 
 -- 
 linux-i3c mailing list
