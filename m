@@ -4,73 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1EA9C77B7A
-	for <linux-i3c@archiver.kernel.org>; Sun, 11 Jun 2023 15:25:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFDCDEB64DC
+	for <linux-i3c@archiver.kernel.org>; Tue, 20 Jun 2023 14:49:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aJXlBiddMAFZLIOkddkdXXpDRziFbdXUeKXk4WQCH48=; b=Wo+ZBHzmw+x5hP
-	cgpCKqLD/JovBCoC0ay3NmgFMx97TV8y9ZiXovbxEQe3Zdtn/duVa7+DiEQ8WxgdhfYV1io7myaMl
-	91N/vsHotZnMfCh7UmRNNZsYQUGzHNsl2DmVS64xLwA7/6QNGehAWsTbCu+WD0yMKAKxqXSf/6Ku2
-	LiJeWBMK3StqwSMcSlHCmUTmsvbpIZ16NVXGdv/ey4bkWcIzgcMCxwtstjI64bDJQ+UTOPlw7+b5B
-	y6g40xm8C8G+yRl1TN34h7xXXgEghoeYeQMi6+JyL8PkN6GGDbEf4sRscrzbekVMFabQv3J4iugvC
-	Nu0/mI9cDkdjfDzWd2WQ==;
+	List-Owner; bh=pkqMDKhvzhUQbR484K49lNja79JVn8eehtbK3Fv4QvA=; b=PfMv3EQQe5STP0
+	06CR8p8R9FxTHDRbax8n8UZC45KPYbt9zwlR3fzO7cX6+NnP5jCJDqIuXQZrpeJVBSuEYpGkPAW4W
+	vG6NsyLHkbW8zlF/YaHYHiAmGod/9Lbm7MJUo0CzD/2KHeeuoL+Q0G5K3Y5tVptplEBauv8F3zBXc
+	QqgcH8IN1pg7HuavyWh4Zh5LQno7YbficAqJY3TdeWvuMneEPjiBLgaTr6EYJsO5pRuNBhQ8Mb68G
+	7iUGSQljSby58b5ibEZseTacXmiNllk1vHZjei4lGMNNApqxq7TGhWYj4ah9sd9hmK9JRWgZxyh7R
+	uGo9I0VVsr3guP4ScE3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8MwX-001DU7-38;
-	Sun, 11 Jun 2023 15:25:26 +0000
-Received: from relay2-d.mail.gandi.net ([2001:4b98:dc4:8::222])
+	id 1qBcfo-00BZhE-37;
+	Tue, 20 Jun 2023 14:49:36 +0000
+Received: from mail-io1-f41.google.com ([209.85.166.41])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1q8MwU-001DSO-14
+	id 1qBcfm-00BZgh-0e
 	for linux-i3c@lists.infradead.org;
-	Sun, 11 Jun 2023 15:25:24 +0000
-X-GND-Sasl: alexandre.belloni@bootlin.com
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1686497114;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=fiEW/G41BWiGsN06YA7FOjBuZy9frZVGjVph/Ohsgis=;
-	b=ERf26ZnjhSj/0HgohekTGulJ4OdiZInwm21U1G3Y9Ff34NRP4E+OcIacvZ23TAhGQES2TI
-	quWgywmOuvJh5TkwcLkPnAEY/8nD4D/QrEHvLS8MBdeArk0F88eg3m5eQQ5nZ4yBFGIqBy
-	ixEQFuZgdKkHyHqdFpdVISAubexyBLUBvZqKKtNGZ0I7DdkOYPm7ikbvkfLShj2Pfjp1Ct
-	H9F9qCLrLNKPY8h/YJMv15NY/SfUYxwO+L75aJ7C8pkMSlpcvQvCc59AFUT1gV1/jtfznr
-	Ok8Qqa4kHRJrviR+WcUUBl3r+HstFay0SnyTJA8KYzeCEQBu4W3UDLBpbyBBGA==
-X-GND-Sasl: alexandre.belloni@bootlin.com
-X-GND-Sasl: alexandre.belloni@bootlin.com
-X-GND-Sasl: alexandre.belloni@bootlin.com
-X-GND-Sasl: alexandre.belloni@bootlin.com
-X-GND-Sasl: alexandre.belloni@bootlin.com
-X-GND-Sasl: alexandre.belloni@bootlin.com
-X-GND-Sasl: alexandre.belloni@bootlin.com
-X-GND-Sasl: alexandre.belloni@bootlin.com
-X-GND-Sasl: alexandre.belloni@bootlin.com
-Received: by mail.gandi.net (Postfix) with ESMTPSA id C9A6240004;
-	Sun, 11 Jun 2023 15:25:10 +0000 (UTC)
-Date: Sun, 11 Jun 2023 17:25:10 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Rob Herring <robh@kernel.org>
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Conor Culhane <conor.culhane@silvaco.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>, linux-i3c@lists.infradead.org,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] dt-bindings: i3c: silvaco,i3c-master: fix missing schema
- restriction
-Message-ID: <20230611152510003a8361@mail.local>
-References: <20230609141107.66128-1-krzysztof.kozlowski@linaro.org>
- <168634884066.2555331.39755837725706368.robh@kernel.org>
+	Tue, 20 Jun 2023 14:49:36 +0000
+Received: by mail-io1-f41.google.com with SMTP id ca18e2360f4ac-77e3ba2fbbfso107887439f.1
+        for <linux-i3c@lists.infradead.org>; Tue, 20 Jun 2023 07:49:32 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1687272571; x=1689864571;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=lfGW8gXxXc4xOldKhUQqmMtTa1hUcNXAiWfRoW8/qv8=;
+        b=COKxB1jogohFToP3IrFxocrboPg7wvW56lC2jzLqr2HvbfIQR/KNFit0Et0R8PZSGs
+         Mt+dvBtgUuw1Uu2TuHEkU2OW0dS9a/k4GuijJ1vemVe93h3kZsusbLs9224vJQY4SfFO
+         JTaYBW1A2fqzEiyW5XiSMruMnaK17N6J2pRQTvNFGubC1YvtvUGTGjXkkSg+Q7EkmXqi
+         EzDpZgpT+2m2XKhFRZPFuBAGtRMnih9f9eoVt07dwEq+A/XDUFJQM+8/koErnceiW9U7
+         klOO+18XNTzDYO2RBpFq1QTzAP5LnsTRmT3igWb+Z+G2fOnpRdi2En3PuVUsNw30Bde4
+         CjAw==
+X-Gm-Message-State: AC+VfDx0nv+eAqTK8RJQTKdNsvgM7AKtGYkPMFYEnRBwUPsx86NWjSyE
+	QwlsqmDk01zlfC0gQjxJig==
+X-Google-Smtp-Source: ACHHUZ6HuhVgOMehTrCrc0BgkQnyUephcmWsY/z8kAL7h2yHvSPpPgz4eu3wa/QgAeDXBeMlwifExw==
+X-Received: by 2002:a5d:91d6:0:b0:77a:c741:b749 with SMTP id k22-20020a5d91d6000000b0077ac741b749mr11549610ior.1.1687272571543;
+        Tue, 20 Jun 2023 07:49:31 -0700 (PDT)
+Received: from robh_at_kernel.org ([64.188.179.250])
+        by smtp.gmail.com with ESMTPSA id c6-20020a02a406000000b004166c24e30dsm693185jal.32.2023.06.20.07.49.30
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 20 Jun 2023 07:49:30 -0700 (PDT)
+Received: (nullmailer pid 3574420 invoked by uid 1000);
+	Tue, 20 Jun 2023 14:49:29 -0000
+Date: Tue, 20 Jun 2023 08:49:29 -0600
+From: Rob Herring <robh@kernel.org>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Rob Herring <robh+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, linux-i3c@lists.infradead.org, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Alexandre Belloni <alexandre.belloni@bootlin.com>, devicetree@vger.kernel.org, Miquel Raynal <miquel.raynal@bootlin.com>, linux-kernel@vger.kernel.org, Conor Culhane <conor.culhane@silvaco.com>
+Subject: Re: [PATCH] dt-bindings: i3c: silvaco,i3c-master: drop unneeded
+ quotes
+Message-ID: <168727256801.3574342.4318996941129630484.robh@kernel.org>
+References: <20230609140735.64855-1-krzysztof.kozlowski@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <168634884066.2555331.39755837725706368.robh@kernel.org>
+In-Reply-To: <20230609140735.64855-1-krzysztof.kozlowski@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230611_082522_540869_D54FF6A3 
-X-CRM114-Status: GOOD (  12.20  )
+X-CRM114-CacheID: sfid-20230620_074934_263457_3F3B53CF 
+X-CRM114-Status: UNSURE (   9.77  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,28 +83,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 09/06/2023 16:14:03-0600, Rob Herring wrote:
-> 
-> On Fri, 09 Jun 2023 16:11:07 +0200, Krzysztof Kozlowski wrote:
-> > Each device schema must end with unevaluatedProperties: false, if it
-> > references other common schema.  Otherwise it would allow any properties
-> > to be listed.
-> > 
-> > Fixes: b8b0446f1f1a ("dt-bindings: i3c: Describe Silvaco master binding")
-> > Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> > ---
-> >  Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > 
-> 
-> Applied, thanks!
 
-As you took this one, I assume you are going to take the previous patch.
+On Fri, 09 Jun 2023 16:07:35 +0200, Krzysztof Kozlowski wrote:
+> Cleanup bindings dropping unneeded quotes. Once all these are fixed,
+> checking for this can be enabled in yamllint.
+> 
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> ---
+>  Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
 
--- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+Applied, thanks!
+
 
 -- 
 linux-i3c mailing list
