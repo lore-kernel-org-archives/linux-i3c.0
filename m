@@ -4,76 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5DAD4C30657
-	for <linux-i3c@archiver.kernel.org>; Mon,  3 Jul 2023 20:40:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20682C30659
+	for <linux-i3c@archiver.kernel.org>; Mon,  3 Jul 2023 20:40:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rXTXtKVQsLPRvYJo/WbICBUmBa3j2J5TvPxjRq3VNnM=; b=a31k9l1wZ0/iMc
-	3HfnuR2jclVJ5irvQSsCEq4XGGG8Iu4U2tqstwifv0225+wKwKb9jYtOIhmKW1eT4m1629U0cS50v
-	vUzxHBeC0+dM+omMOOpZNWyA7PVNh+V8wzoHhSQPzum+MXE13SuSYzl+hTEzCveLpPlVT3nbOYHCf
-	S9FIbszbfARuX3RYVKwgdf0Ar9gTRfmSomRR0VGFPOogxX2Dkk6WCgFtkbwZd/nh8Gg7VuL2q0V/k
-	uLx8zRY7b5KRKcT/VhYpwIREOdYgwc3vzzE0mODe2//Y7gzn+15iuJlt2lIf/r0xyfQDLKVZEETdp
-	8roNBFM4TlfE456R5tLQ==;
+	List-Owner; bh=G/0qFcLk7K/GLQW2TPDapvQioYxClUkdz6Oj2seHNfk=; b=uDXUIsgHf8wZaA
+	Uux4nXVf4ZUzwHB8dUgrRJ5ntNbTwjfBDBZvJVYadEy3RWDsf+vlRJ3i4cXLOlByywCGlqmYBsppI
+	XiD8glUEsgYCyjTn0qixbL08JgAZIpCkWHFgqT5mCO2duesXQDiruikxbRh+/cULL1qnnz6Sw80BL
+	RCXFJ6+2I1So37BWQfKBy7sHX9xZuDJ8xWmyZs3AFBcC40bxmj4EBRPZH09grJeknEC3LpEeioj2r
+	s7/w4FDbHLEuMr2f2SMWCLwbZKF84bVGSgJzk7vFpeZEows5oWiyH+b6N5WL1jXRYLLKlQhzCL9i9
+	RQEXV5lGyXhfXLuRIGrg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qGQLK-00BPEY-20;
-	Mon, 03 Jul 2023 20:40:18 +0000
-Received: from mail-oa1-x32.google.com ([2001:4860:4864:20::32])
+	id 1qGQLL-00BPFB-2M;
+	Mon, 03 Jul 2023 20:40:19 +0000
+Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qGDmJ-009Y36-2F
+	id 1qGL3Z-00AokB-0F
 	for linux-i3c@lists.infradead.org;
-	Mon, 03 Jul 2023 07:15:20 +0000
-Received: by mail-oa1-x32.google.com with SMTP id 586e51a60fabf-1a1fa977667so3797760fac.1
-        for <linux-i3c@lists.infradead.org>; Mon, 03 Jul 2023 00:15:19 -0700 (PDT)
+	Mon, 03 Jul 2023 15:01:38 +0000
+Received: by mail-ej1-x632.google.com with SMTP id a640c23a62f3a-98e011f45ffso428300966b.3
+        for <linux-i3c@lists.infradead.org>; Mon, 03 Jul 2023 08:01:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1688368518; x=1690960518;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=IAZeTOZazbGFZSDmndWdfTDNm2nB8DtY7mHI7XdQ7lk=;
-        b=fwrYNJNQGr2V0i3pfa9Vg8VYK7yIzXp54Mx+sp9Ejgte1Va2hgY8F+rZDIsw+Y9Q6a
-         nRp4ePOT5h7wKwqbVlcJXN9hTKgM7oyd4UeQO07XFij25ieux3InxE0J+r17kKtg+SOw
-         +KXyXKR5Ml/hsgMppG7m5Hwz9fpFa2difABUqtcE3OrYMVi1I0n2V/1/1h1l5rS9iFGB
-         5oKBkl4Fe8eFguqnOmUgoV8tPNUCW81H57jVYbBJKY+sKxUH7u5iki0WF4DTDw4yxJ6v
-         r7nRIsXBx7VZ8Ul6LRsU7Ac6dILJQPncwm9o5+FgSpMkcd1FJA/yplKZ6q8fbIuqrHw4
-         FPXg==
+        d=linaro.org; s=google; t=1688396495; x=1690988495;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=wIdAV5V5KAnS+h+qxHS03r1FUQFpj/gJ3vvk0BEn92E=;
+        b=ifmaivl4Z+J5L8F8MKx5XFkvPydvR4OFSmVCDYgNVzdBET5oxRjmyWnN2kndVisi4P
+         lh0KEoEm0nCh+Ao5XN1cGX5wQaxlfgIqV77vEmp7203tbGymfBI0Rq7akosGTOmg8Wf8
+         PmWQMd5NuMCt2/cyDk13+/PjRrrJWrMrXJShpcAI37eAsBCWmcKYJtNcJ5raUkOwtyAk
+         Q35E7HeaXRJj7Jt9HW1ZVoD9ofYkcEmiBQGtfN6227PPbG9tO5Y4MLtEEOnLm1/6EuS2
+         vZw7pZBeqXTIklfShbq6TVnnpRut4lKaShTbszCmBOV//5NapwMjQGtaJuGV2iVjzIQg
+         bLdA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1688368518; x=1690960518;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=IAZeTOZazbGFZSDmndWdfTDNm2nB8DtY7mHI7XdQ7lk=;
-        b=jQ5mj+mOZdq/qsb9tRamKoP5dm54ccKEuvefjtkwCOWsrxJpEpmIUAETv1RBA869ox
-         MkK9Up9oDOBck+MDay2Te7oOhYR/fbW0dBMEXWplamy6MpmexKEc56xLJchdR20+lplc
-         G89KwiMwucrayf9mEbvo80EldCqNln04QmqaRlq0pMhX/CAZ89zU5TCZG/xCbmzKzoYv
-         0EiUkzK34UAh0/Buj+zqlyJGbMms3wwtidTXlBDVo253XlrT9aECnqBaq9DbgfqN1ILp
-         bwhwUESQkBF+KRgRKJr+GMCWtnbQCef3dkiGVmbSLdQecyYJGWjYdYj42yGCAfxIH5Pd
-         JqOA==
-X-Gm-Message-State: ABy/qLZ4iVSkHeCiUvQjxMqQo4hwddISklHapTH3gTn6FR6BghYtpQBZ
-	Jn+TelZ1SWOK4MV8cw08WQJObADYchXk0s3EsW4NfA==
-X-Google-Smtp-Source: APBJJlFl1y1DD9smdIG3z9ZwGyRcMYA2S0C03PiyGo2Yyt6cyslQgtkKycE8R19wvHB6Fw36fGyu2SOkeqKm2IpNDeM=
-X-Received: by 2002:a05:6870:6c1c:b0:188:1195:5ec5 with SMTP id
- na28-20020a0568706c1c00b0018811955ec5mr10062907oab.39.1688368518367; Mon, 03
- Jul 2023 00:15:18 -0700 (PDT)
+        d=1e100.net; s=20221208; t=1688396495; x=1690988495;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=wIdAV5V5KAnS+h+qxHS03r1FUQFpj/gJ3vvk0BEn92E=;
+        b=kXHHwIR0b26C9atmB+gmg71lF+fqbe3S8GOiwvpkzlZBJRqB2ba4fM1NtUNRVEVSjm
+         jjbPA08kKAvBPN3aAo4pR+NnTVpipVXeQRZKWUbVPKdF+e5ARN/PclpkLDWS5nDtJqiw
+         7G/Qq1gtk7xTco/7uXPDFBWrEcM/HY3dr0PT7Y9e7jzw0wjysf8oBfJkAM+5BkC2fJXF
+         AhfrHLrHQluDsjKI+EdkBN2gfec8rAZMezYAhC0sDZ30DM3+n9uwf2SItbpyDx2r86Nq
+         jn4i6ITO5s3VTWONAsXICa7DDxFJerMC5QGsoKIWLSxN7yvY8+0sbGrGItfiZAf5Dn7X
+         XIHA==
+X-Gm-Message-State: AC+VfDxd/x2FXsTRVlfwrDFlW7NIytKpBZx71ocRGX7DNYp1XG6+qFZ2
+	/bGRo9fVbaIOlwHhLuWdtixJEQ==
+X-Google-Smtp-Source: APBJJlF4nZmviyLst8bq9ovVEqJK/HZkrp9/ry8hWn6K/xwqIxJjlmWLVSf2GEYdGeflLlSv7IOP3g==
+X-Received: by 2002:a17:906:8699:b0:973:d06d:545f with SMTP id g25-20020a170906869900b00973d06d545fmr5693067ejx.24.1688396495465;
+        Mon, 03 Jul 2023 08:01:35 -0700 (PDT)
+Received: from [192.168.1.20] ([178.197.219.26])
+        by smtp.gmail.com with ESMTPSA id h22-20020a170906829600b009931a3adf64sm3751695ejx.17.2023.07.03.08.01.34
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 03 Jul 2023 08:01:35 -0700 (PDT)
+Message-ID: <56c0783b-59b4-0eda-5a9a-ceed53ebf41d@linaro.org>
+Date: Mon, 3 Jul 2023 17:01:33 +0200
 MIME-Version: 1.0
-References: <20230703053048.275709-1-matt@codeconstruct.com.au> <20230703053048.275709-2-matt@codeconstruct.com.au>
-In-Reply-To: <20230703053048.275709-2-matt@codeconstruct.com.au>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.12.0
+Subject: Re: [PATCH 2/3] i3c: Add support for bus enumeration & notification
+Content-Language: en-US
+To: Matt Johnston <matt@codeconstruct.com.au>, linux-i3c@lists.infradead.org,
+ netdev@vger.kernel.org, devicetree@vger.kernel.org
+Cc: Eric Dumazet <edumazet@google.com>, Jeremy Kerr
+ <jk@codeconstruct.com.au>, "David S. Miller" <davem@davemloft.net>,
+ Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>
+References: <20230703053048.275709-1-matt@codeconstruct.com.au>
+ <20230703053048.275709-3-matt@codeconstruct.com.au>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Date: Mon, 3 Jul 2023 09:15:06 +0200
-Message-ID: <CAGE=qrrqE3Vj1Bs+cC51gKPDmsqMTyHEAJhsrGCyS_jYKf42Gw@mail.gmail.com>
-Subject: Re: [PATCH 1/3] dt-bindings: i3c: Add mctp-controller property
-To: Matt Johnston <matt@codeconstruct.com.au>
-Cc: linux-i3c@lists.infradead.org, netdev@vger.kernel.org, 
-	devicetree@vger.kernel.org, Eric Dumazet <edumazet@google.com>, 
-	"David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>, 
-	Jeremy Kerr <jk@codeconstruct.com.au>, Alexandre Belloni <alexandre.belloni@bootlin.com>, 
-	Rob Herring <robh+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>
+In-Reply-To: <20230703053048.275709-3-matt@codeconstruct.com.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230703_001519_754927_BA34676B 
-X-CRM114-Status: GOOD (  15.63  )
+X-CRM114-CacheID: sfid-20230703_080137_119662_9CB7B824 
+X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-Notice: Please train this message.
 X-Mailman-Approved-At: Mon, 03 Jul 2023 13:40:17 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -91,34 +103,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, 3 Jul 2023 at 07:31, Matt Johnston <matt@codeconstruct.com.au> wrote:
->
-> This property is used to describe a I3C bus with attached MCTP I3C
-> target devices.
->
-> Signed-off-by: Matt Johnston <matt@codeconstruct.com.au>
-> ---
->  Documentation/devicetree/bindings/i3c/i3c.yaml | 4 ++++
->  1 file changed, 4 insertions(+)
->
-> diff --git a/Documentation/devicetree/bindings/i3c/i3c.yaml b/Documentation/devicetree/bindings/i3c/i3c.yaml
-> index fdb4212149e7..08731e2484f2 100644
-> --- a/Documentation/devicetree/bindings/i3c/i3c.yaml
-> +++ b/Documentation/devicetree/bindings/i3c/i3c.yaml
-> @@ -55,6 +55,10 @@ properties:
->
->        May not be supported by all controllers.
->
-> +  mctp-controller:
-> +    description: |
-> +      Indicates that this bus hosts MCTP-over-I3C target devices.
+On 03/07/2023 07:30, Matt Johnston wrote:
+> From: Jeremy Kerr <jk@codeconstruct.com.au>
+> 
+> This allows other drivers to be notified when new i3c busses are
+> attached, referring to a whole i3c bus as opposed to individual
+> devices.
+> 
+> Signed-off-by: Jeremy Kerr <jk@codeconstruct.com.au>
 
-I have doubts you actually tested it - there is no type/ref. Also,
-your description is a bit different than existing from dtschema. Why?
-Aren't these the same things?
+Your SoB is missing.
 
 Best regards,
 Krzysztof
+
 
 -- 
 linux-i3c mailing list
