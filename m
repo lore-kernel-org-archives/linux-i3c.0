@@ -4,88 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20682C30659
-	for <linux-i3c@archiver.kernel.org>; Mon,  3 Jul 2023 20:40:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E59D3C30658
+	for <linux-i3c@archiver.kernel.org>; Mon,  3 Jul 2023 20:40:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G/0qFcLk7K/GLQW2TPDapvQioYxClUkdz6Oj2seHNfk=; b=uDXUIsgHf8wZaA
-	Uux4nXVf4ZUzwHB8dUgrRJ5ntNbTwjfBDBZvJVYadEy3RWDsf+vlRJ3i4cXLOlByywCGlqmYBsppI
-	XiD8glUEsgYCyjTn0qixbL08JgAZIpCkWHFgqT5mCO2duesXQDiruikxbRh+/cULL1qnnz6Sw80BL
-	RCXFJ6+2I1So37BWQfKBy7sHX9xZuDJ8xWmyZs3AFBcC40bxmj4EBRPZH09grJeknEC3LpEeioj2r
-	s7/w4FDbHLEuMr2f2SMWCLwbZKF84bVGSgJzk7vFpeZEows5oWiyH+b6N5WL1jXRYLLKlQhzCL9i9
-	RQEXV5lGyXhfXLuRIGrg==;
+	List-Owner; bh=hZWevDpFThploVbonqrnP/H6itxme0iLTUsGa9Om3A0=; b=gdBA2//BIhg5+U
+	JB7lM9oAcNbi61/FD9N8nEnJ8eiRrOVWKkH63dj/hjRFqxJ+GBnv55/EwDZ2PCXwWpdyiM2tTW0OC
+	4ygCYYj7kimfaIECo5kctmuhCOqwqSnt9l5QcqoqpiwW+xehXuk1cxTazXUW2nUSWur+0S4sr22Kr
+	okIRf6HrbECQ4oJisgC8SXvB7Nh3BeAtOWnPAcP7tsXL+M9IhuOMu+bKzwElTbofWep+BCPVVmLbr
+	BGnINV3fGarAMlyBO2oOJoVEZPZTwsTvQ9hzaeK9rkUFDibGML0nZLkf+Hb3Th1EXv+icwDULRa2E
+	XueOjanP6AGFWTQ/kNpg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qGQLL-00BPFB-2M;
+	id 1qGQLL-00BPF1-1T;
 	Mon, 03 Jul 2023 20:40:19 +0000
-Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
+Received: from vps0.lunn.ch ([156.67.10.101])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qGL3Z-00AokB-0F
+	id 1qGKmR-00Am1v-2r
 	for linux-i3c@lists.infradead.org;
-	Mon, 03 Jul 2023 15:01:38 +0000
-Received: by mail-ej1-x632.google.com with SMTP id a640c23a62f3a-98e011f45ffso428300966b.3
-        for <linux-i3c@lists.infradead.org>; Mon, 03 Jul 2023 08:01:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1688396495; x=1690988495;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=wIdAV5V5KAnS+h+qxHS03r1FUQFpj/gJ3vvk0BEn92E=;
-        b=ifmaivl4Z+J5L8F8MKx5XFkvPydvR4OFSmVCDYgNVzdBET5oxRjmyWnN2kndVisi4P
-         lh0KEoEm0nCh+Ao5XN1cGX5wQaxlfgIqV77vEmp7203tbGymfBI0Rq7akosGTOmg8Wf8
-         PmWQMd5NuMCt2/cyDk13+/PjRrrJWrMrXJShpcAI37eAsBCWmcKYJtNcJ5raUkOwtyAk
-         Q35E7HeaXRJj7Jt9HW1ZVoD9ofYkcEmiBQGtfN6227PPbG9tO5Y4MLtEEOnLm1/6EuS2
-         vZw7pZBeqXTIklfShbq6TVnnpRut4lKaShTbszCmBOV//5NapwMjQGtaJuGV2iVjzIQg
-         bLdA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1688396495; x=1690988495;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=wIdAV5V5KAnS+h+qxHS03r1FUQFpj/gJ3vvk0BEn92E=;
-        b=kXHHwIR0b26C9atmB+gmg71lF+fqbe3S8GOiwvpkzlZBJRqB2ba4fM1NtUNRVEVSjm
-         jjbPA08kKAvBPN3aAo4pR+NnTVpipVXeQRZKWUbVPKdF+e5ARN/PclpkLDWS5nDtJqiw
-         7G/Qq1gtk7xTco/7uXPDFBWrEcM/HY3dr0PT7Y9e7jzw0wjysf8oBfJkAM+5BkC2fJXF
-         AhfrHLrHQluDsjKI+EdkBN2gfec8rAZMezYAhC0sDZ30DM3+n9uwf2SItbpyDx2r86Nq
-         jn4i6ITO5s3VTWONAsXICa7DDxFJerMC5QGsoKIWLSxN7yvY8+0sbGrGItfiZAf5Dn7X
-         XIHA==
-X-Gm-Message-State: AC+VfDxd/x2FXsTRVlfwrDFlW7NIytKpBZx71ocRGX7DNYp1XG6+qFZ2
-	/bGRo9fVbaIOlwHhLuWdtixJEQ==
-X-Google-Smtp-Source: APBJJlF4nZmviyLst8bq9ovVEqJK/HZkrp9/ry8hWn6K/xwqIxJjlmWLVSf2GEYdGeflLlSv7IOP3g==
-X-Received: by 2002:a17:906:8699:b0:973:d06d:545f with SMTP id g25-20020a170906869900b00973d06d545fmr5693067ejx.24.1688396495465;
-        Mon, 03 Jul 2023 08:01:35 -0700 (PDT)
-Received: from [192.168.1.20] ([178.197.219.26])
-        by smtp.gmail.com with ESMTPSA id h22-20020a170906829600b009931a3adf64sm3751695ejx.17.2023.07.03.08.01.34
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 03 Jul 2023 08:01:35 -0700 (PDT)
-Message-ID: <56c0783b-59b4-0eda-5a9a-ceed53ebf41d@linaro.org>
-Date: Mon, 3 Jul 2023 17:01:33 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.12.0
-Subject: Re: [PATCH 2/3] i3c: Add support for bus enumeration & notification
-Content-Language: en-US
-To: Matt Johnston <matt@codeconstruct.com.au>, linux-i3c@lists.infradead.org,
- netdev@vger.kernel.org, devicetree@vger.kernel.org
-Cc: Eric Dumazet <edumazet@google.com>, Jeremy Kerr
- <jk@codeconstruct.com.au>, "David S. Miller" <davem@davemloft.net>,
- Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Rob Herring <robh+dt@kernel.org>,
- Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
- Conor Dooley <conor+dt@kernel.org>
+	Mon, 03 Jul 2023 14:43:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+	s=20171124; h=In-Reply-To:Content-Disposition:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:From:Sender:Reply-To:Subject:
+	Date:Message-ID:To:Cc:MIME-Version:Content-Type:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Content-Disposition:In-Reply-To:References;
+	bh=pteZzJsj4EYRrxGttSfyJ3QdTS0O5i9iUaaO/p8LKvQ=; b=VoZUdS8+3fD1nzIi+CDFXQNRUR
+	ZyXLatUtPhLQQyPCUWnRDCVI85u+/ljrMWFNcVgGpu1eW1h1pmhLfz6Mc3kpoauCQxYmFSWGJa74J
+	Bdtbd/riCPQ9ibHOcdVbeDqs2ljQAYfI87HrCgXUOVPQsbPeDrfwCdl70WeiAC2E1AL4=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.94.2)
+	(envelope-from <andrew@lunn.ch>)
+	id 1qGKmJ-000U8I-46; Mon, 03 Jul 2023 16:43:47 +0200
+Date: Mon, 3 Jul 2023 16:43:47 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Matt Johnston <matt@codeconstruct.com.au>
+Cc: linux-i3c@lists.infradead.org, netdev@vger.kernel.org,
+	devicetree@vger.kernel.org, Eric Dumazet <edumazet@google.com>,
+	"David S. Miller" <davem@davemloft.net>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Jeremy Kerr <jk@codeconstruct.com.au>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>
+Subject: Re: [PATCH 3/3] mctp i3c: MCTP I3C driver
+Message-ID: <8321002c-9b75-44da-9200-23d951148ae9@lunn.ch>
 References: <20230703053048.275709-1-matt@codeconstruct.com.au>
- <20230703053048.275709-3-matt@codeconstruct.com.au>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230703053048.275709-3-matt@codeconstruct.com.au>
+ <20230703053048.275709-4-matt@codeconstruct.com.au>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20230703053048.275709-4-matt@codeconstruct.com.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230703_080137_119662_9CB7B824 
-X-CRM114-Status: UNSURE (   8.71  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230703_074355_926981_7FE8CDD3 
+X-CRM114-Status: GOOD (  24.52  )
 X-Mailman-Approved-At: Mon, 03 Jul 2023 13:40:17 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -103,20 +77,157 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 03/07/2023 07:30, Matt Johnston wrote:
-> From: Jeremy Kerr <jk@codeconstruct.com.au>
-> 
-> This allows other drivers to be notified when new i3c busses are
-> attached, referring to a whole i3c bus as opposed to individual
-> devices.
-> 
-> Signed-off-by: Jeremy Kerr <jk@codeconstruct.com.au>
+> +#define MCTP_I3C_MAXBUF 65536
+> +/* 48 bit Provisioned Id */
+> +#define PID_SIZE 6
+> +
+> +/* 64 byte payload, 4 byte MCTP header */
+> +static const int MCTP_I3C_MINMTU = 64 + 4;
+> +/* One byte less to allow for the PEC */
+> +static const int MCTP_I3C_MAXMTU = MCTP_I3C_MAXBUF - 1;
+> +/* 4 byte MCTP header, no data, 1 byte PEC */
+> +static const int MCTP_I3C_MINLEN = 4 + 1;
 
-Your SoB is missing.
+Why static const and not #define? It would also be normal for
+variables to be lower case, to make it clear they are in fact
+variables, not #defines.
 
-Best regards,
-Krzysztof
+> +struct mctp_i3c_bus {
+> +	struct net_device *ndev;
+> +
+> +	struct task_struct *tx_thread;
+> +	wait_queue_head_t tx_wq;
+> +	/* tx_lock protects tx_skb and devs */
+> +	spinlock_t tx_lock;
+> +	/* Next skb to transmit */
+> +	struct sk_buff *tx_skb;
+> +	/* Scratch buffer for xmit */
+> +	u8 tx_scratch[MCTP_I3C_MAXBUF];
+> +
+> +	/* Element of busdevs */
+> +	struct list_head list;
+> +
+> +	/* Provisioned ID of our controller */
+> +	u64 pid;
+> +
+> +	struct i3c_bus *bus;
+> +	/* Head of mctp_i3c_device.list. Protected by busdevs_lock */
+> +	struct list_head devs;
+> +};
+> +
+> +struct mctp_i3c_device {
+> +	struct i3c_device *i3c;
+> +	struct mctp_i3c_bus *mbus;
+> +	struct list_head list; /* Element of mctp_i3c_bus.devs */
+> +
+> +	/* Held while tx_thread is using this device */
+> +	struct mutex lock;
+> +
+> +	/* Whether BCR indicates MDB is present in IBI */
+> +	bool have_mdb;
+> +	/* I3C dynamic address */
+> +	u8 addr;
+> +	/* Maximum read length */
+> +	u16 mrl;
+> +	/* Maximum write length */
+> +	u16 mwl;
+> +	/* Provisioned ID */
+> +	u64 pid;
+> +};
 
+Since you have commented about most of the members of these
+structures, you could use kerneldoc.
+
+> +/* We synthesise a mac header using the Provisioned ID.
+> + * Used to pass dest to mctp_i3c_start_xmit.
+> + */
+> +struct mctp_i3c_internal_hdr {
+> +	u8 dest[PID_SIZE];
+> +	u8 source[PID_SIZE];
+> +} __packed;
+> +
+> +/* Returns the 48 bit Provisioned Id from an i3c_device_info.pid */
+> +static void pid_to_addr(u64 pid, u8 addr[PID_SIZE])
+> +{
+> +	pid = cpu_to_be64(pid);
+> +	memcpy(addr, ((u8 *)&pid) + 2, PID_SIZE);
+> +}
+> +
+> +static u64 addr_to_pid(u8 addr[PID_SIZE])
+> +{
+> +	u64 pid = 0;
+> +
+> +	memcpy(((u8 *)&pid) + 2, addr, PID_SIZE);
+> +	return be64_to_cpu(pid);
+> +}
+
+I don't know anything about MCTP. But Ethernet MAC addresses are also
+48 bits. Could you make use of u64_to_ether_addr() and ether_addr_to_u64()?
+
+> +static int mctp_i3c_setup(struct mctp_i3c_device *mi)
+> +{
+> +	const struct i3c_ibi_setup ibi = {
+> +		.max_payload_len = 1,
+> +		.num_slots = MCTP_I3C_IBI_SLOTS,
+> +		.handler = mctp_i3c_ibi_handler,
+> +	};
+> +	bool ibi_set = false, ibi_enabled = false;
+> +	struct i3c_device_info info;
+> +	int rc;
+> +
+> +	i3c_device_get_info(mi->i3c, &info);
+> +	mi->have_mdb = info.bcr & BIT(2);
+> +	mi->addr = info.dyn_addr;
+> +	mi->mwl = info.max_write_len;
+> +	mi->mrl = info.max_read_len;
+> +	mi->pid = info.pid;
+> +
+> +	rc = i3c_device_request_ibi(mi->i3c, &ibi);
+> +	if (rc == 0) {
+> +		ibi_set = true;
+> +	} else if (rc == -ENOTSUPP) {
+
+In networking, we try to avoid ENOTSUPP and use EOPNOTSUPP:
+
+https://lore.kernel.org/netdev/20200511165319.2251678-1-kuba@kernel.org/
+
+
+> +static int mctp_i3c_header_create(struct sk_buff *skb, struct net_device *dev,
+> +				  unsigned short type, const void *daddr,
+> +	   const void *saddr, unsigned int len)
+> +{
+> +	struct mctp_i3c_internal_hdr *ihdr;
+> +
+> +	skb_push(skb, sizeof(struct mctp_i3c_internal_hdr));
+> +	skb_reset_mac_header(skb);
+> +	ihdr = (void *)skb_mac_header(skb);
+> +	memcpy(ihdr->dest, daddr, PID_SIZE);
+> +	memcpy(ihdr->source, saddr, PID_SIZE);
+
+ether_addr_copy() ?
+
+> +/* Returns an ERR_PTR on failure */
+> +static struct mctp_i3c_bus *mctp_i3c_bus_add(struct i3c_bus *bus)
+> +__must_hold(&busdevs_lock)
+> +{
+> +	struct mctp_i3c_bus *mbus = NULL;
+> +	struct net_device *ndev = NULL;
+> +	u8 addr[PID_SIZE];
+> +	char namebuf[IFNAMSIZ];
+> +	int rc;
+> +
+> +	if (!mctp_i3c_is_mctp_controller(bus))
+> +		return ERR_PTR(-ENOENT);
+> +
+> +	snprintf(namebuf, sizeof(namebuf), "mctpi3c%d", bus->id);
+> +	ndev = alloc_netdev(sizeof(*mbus), namebuf, NET_NAME_ENUM, mctp_i3c_net_setup);
+> +	if (!ndev) {
+> +		pr_warn("No memory for %s\n", namebuf);
+
+pr_ functions are not liked too much. Is there a struct device you can
+use with dev_warn()?
+
+    Andrew
 
 -- 
 linux-i3c mailing list
