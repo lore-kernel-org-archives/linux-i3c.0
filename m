@@ -4,50 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5BC39EB64DD
-	for <linux-i3c@archiver.kernel.org>; Tue, 11 Jul 2023 08:52:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E2A0EB64DC
+	for <linux-i3c@archiver.kernel.org>; Fri, 14 Jul 2023 17:46:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jd7eorjoGRINSJC77m/FSYvTdLJPfAQHG262vyVOKKg=; b=qM0072qGIp20N1
-	V51gaiHcKSgyKQryPZd/fbJkOG6vgj6U1v6USj4WHZbY+XHbOH50+Ni+rDXfBzZaZ97Q3b7V6PGem
-	onvjP2vQ9XmbY4tsc1S/p8FmjxHbq2uaFVodvmsPcMLpPc29V/jBB6GMYUKXI32b0l70mRtazNWG7
-	6XPPXuQjDu92xLgajjgQ5K4rEXB5D7YBM4jsDceGRp+sgboXKxGhCTdJGzvRt/RmySAoj66uhS0lv
-	QOmf3w64fo2bO6zpF6HUgfr66XKvTet6CHpc704paUADGxgnbRmaUwvRtRziy8Jk+7tSY4lQWgcjN
-	MjtagSnM6DD9jnRCBPqQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cLSG2uHmCHLowpQJl856MgZcy5j0j5/hQ4nnNhrd8UM=; b=iCTIIEEILly26f
+	lMpazGTbUv+UCFzrWnsHPsn7l9hOvpfOWGFNtgrHM5/Ly/AUGjbPJ38kUAKlmUxMwUog6DGX754fY
+	+u0Tyg9uD7krx2HZlsI8mSJAxxKH/NQF7KlInVH70I6BNMXyf57lKqGllfkeLCFXhiY0XISqxUUIL
+	AnfXUx1uIRHTA2uJEJILuFe0e/Zp6FC+ywdKn08a3r5LcUmTtzfsR/CD1TlIqU3AaBEXcdEFgyqS3
+	2PVsbZSLgzpvEyI/G213Z6m+BWjxJ39yEMaUY3Hcs/8UfL/8K6j8LAaBfdFYhUoN8R9rlpwON7Y3r
+	eJGLy3C8mkeXQPI40Sig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJ96l-00EAwu-2I;
-	Tue, 11 Jul 2023 08:52:31 +0000
-Received: from imap5.colo.codethink.co.uk ([78.40.148.171])
+	id 1qKMsS-006oFL-06;
+	Fri, 14 Jul 2023 17:46:48 +0000
+Received: from mail-il1-f177.google.com ([209.85.166.177])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qJ96i-00EAv6-23
+	id 1qKMsO-006oDo-0M
 	for linux-i3c@lists.infradead.org;
-	Tue, 11 Jul 2023 08:52:30 +0000
-Received: from 82-132-229-125.dab.02.net ([82.132.229.125] helo=[192.168.252.81])
-	by imap5.colo.codethink.co.uk with esmtpsa  (Exim 4.94.2 #2 (Debian))
-	id 1qJ96f-007H2X-LE; Tue, 11 Jul 2023 09:52:25 +0100
-Message-ID: <eb115b92-35f7-2ea7-0cd2-b825e769186e@codethink.co.uk>
-Date: Tue, 11 Jul 2023 09:52:24 +0100
+	Fri, 14 Jul 2023 17:46:45 +0000
+Received: by mail-il1-f177.google.com with SMTP id e9e14a558f8ab-3457157a164so9375455ab.1
+        for <linux-i3c@lists.infradead.org>; Fri, 14 Jul 2023 10:46:44 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1689356803; x=1691948803;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=mFbBoaA1fWC8AyIt0h8Dq7hGWKkGohWfmADxlBaqeLk=;
+        b=T+2KDpqfMnoXJo2z1DceRi3jrwebCVpCsdg5sXrrA6bsAkneLkGl65XOhmj6jyAcFG
+         DgvozCtRIDq9E1/1pQK/KUwLcsPbN9Ha/RWRRhLD8wQfdtwjIwHfgGA754LUk0RAryzg
+         6GzK/QI/N7hClotl3OqcRIiLyXVpW/gemo2pVs/wbBpgEGCrf4gNcTF1WLJA9l5l6AbP
+         woVmwxQWjm5mTX8MaUA/XQVD+dVK09gq8KzeyoZrhFttrvKW+DDcATMRcXB4HRupCyBu
+         JFIDh67oUehnbCM8y0XsmcYlEF6HqALM49hpCrqQNk+EHFXnUhseiWMzfBxL4HIrbOpu
+         0fJA==
+X-Gm-Message-State: ABy/qLZv7LFrp5gNJYtey2IAINSxUtYc8X+Fst7KbLsrR7mJ2wy34rN2
+	lCx4hgbAA8wVjW+VAznQvA==
+X-Google-Smtp-Source: APBJJlEeiilEW5h0B13gLjUnKrGnndNPG2UJn7IQVCJcGFSBD8VSbN8xbH+4UrnAGOld1DOdGVlw6Q==
+X-Received: by 2002:a05:6e02:1025:b0:345:66f5:3404 with SMTP id o5-20020a056e02102500b0034566f53404mr5407820ilj.0.1689356803343;
+        Fri, 14 Jul 2023 10:46:43 -0700 (PDT)
+Received: from robh_at_kernel.org ([64.188.179.250])
+        by smtp.gmail.com with ESMTPSA id m8-20020a92cac8000000b003423af2fda6sm2840440ilq.83.2023.07.14.10.46.41
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 14 Jul 2023 10:46:42 -0700 (PDT)
+Received: (nullmailer pid 4057877 invoked by uid 1000);
+	Fri, 14 Jul 2023 17:46:26 -0000
+From: Rob Herring <robh@kernel.org>
+To: Jeremy Kerr <jk@codeconstruct.com.au>, Alexandre Belloni <alexandre.belloni@bootlin.com>, =?UTF-8?q?Przemys=C5=82aw=20Gaj?= <pgaj@cadence.com>
+Cc: devicetree@vger.kernel.org, linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] i3c: Explicitly include correct DT includes
+Date: Fri, 14 Jul 2023 11:46:23 -0600
+Message-Id: <20230714174623.4057784-1-robh@kernel.org>
+X-Mailer: git-send-email 2.40.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.12.0
-Subject: Re: [RFC 5/5] i3c: dw; add print if cannot get resources
-Content-Language: en-GB
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20230621162005.473049-1-ben.dooks@codethink.co.uk>
- <20230621162005.473049-6-ben.dooks@codethink.co.uk>
- <2023070421375530819b2c@mail.local>
-From: Ben Dooks <ben.dooks@codethink.co.uk>
-Organization: Codethink Limited.
-In-Reply-To: <2023070421375530819b2c@mail.local>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230711_015228_670910_0182ACCA 
-X-CRM114-Status: GOOD (  19.80  )
+X-CRM114-CacheID: sfid-20230714_104644_157512_B183CC78 
+X-CRM114-Status: UNSURE (   9.78  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -59,87 +75,52 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 04/07/2023 22:37, Alexandre Belloni wrote:
-> Hello,
-> 
-> Please fix the typo in the subject.
-> 
-> On 21/06/2023 17:20:05+0100, Ben Dooks wrote:
->> The devm_reset_control_get_optional_exclusive() call does
->> not print any errors, neiterh does the clk_prepare_enable
-> Also fix this one.
-> 
->> or devm_request_irq() call.
->>
->> Add some basic error printing to make the probe failures
->> easier to debug.
-> 
-> I guess all those dev_err could be dev_dbg so we don't litter the driver
-> with strings that will only ever be useful during bring up.
+The DT of_device.h and of_platform.h date back to the separate
+of_platform_bus_type before it as merged into the regular platform bus.
+As part of that merge prepping Arm DT support 13 years ago, they
+"temporarily" include each other. They also include platform_device.h
+and of.h. As a result, there's a pretty much random mix of those include
+files used throughout the tree. In order to detangle these headers and
+replace the implicit includes with struct declarations, users need to
+explicitly include the correct includes.
 
-I think dev_err_probe() is probably the right one as we aren't going
-to want to warn on any sort of probe defer errors. However most drivers
-are printing errors if there are resources missing so I think an error
-is the best way to report issues.
+Signed-off-by: Rob Herring <robh@kernel.org>
+---
+ drivers/i3c/master/ast2600-i3c-master.c | 1 -
+ drivers/i3c/master/i3c-master-cdns.c    | 1 -
+ 2 files changed, 2 deletions(-)
 
-I'll correct the spelling when the discussions about the correct way to
-print errors is.
-
->> Signed-off-by: Ben Dooks <ben.dooks@codethink.co.uk>
->> ---
->>   drivers/i3c/master/dw-i3c-master.c | 12 +++++++++---
->>   1 file changed, 9 insertions(+), 3 deletions(-)
->>
->> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
->> index 9332ae5f6419..ffc84ff6225c 100644
->> --- a/drivers/i3c/master/dw-i3c-master.c
->> +++ b/drivers/i3c/master/dw-i3c-master.c
->> @@ -1429,12 +1429,16 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
->>   
->>   	master->core_rst = devm_reset_control_get_optional_exclusive(&pdev->dev,
->>   								    "core_rst");
->> -	if (IS_ERR(master->core_rst))
->> +	if (IS_ERR(master->core_rst)) {
->> +		dev_err(&pdev->dev, "cannot get core_rst\n");
->>   		return PTR_ERR(master->core_rst);
->> +	}
->>   
->>   	ret = clk_prepare_enable(master->core_clk);
->> -	if (ret)
->> +	if (ret) {
->> +		dev_err(&pdev->dev, "cannot enable core_clk\n");
->>   		goto err_disable_core_clk;
->> +	}
->>   
->>   	reset_control_deassert(master->core_rst);
->>   
->> @@ -1446,8 +1450,10 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
->>   	ret = devm_request_irq(&pdev->dev, irq,
->>   			       dw_i3c_master_irq_handler, 0,
->>   			       dev_name(&pdev->dev), master);
->> -	if (ret)
->> +	if (ret) {
->> +		dev_err(&pdev->dev, "cannot get irq\n");
->>   		goto err_assert_rst;
->> +	}
->>   
->>   	platform_set_drvdata(pdev, master);
->>   
->> -- 
->> 2.40.1
->>
-> 
-
+diff --git a/drivers/i3c/master/ast2600-i3c-master.c b/drivers/i3c/master/ast2600-i3c-master.c
+index 09ed19d489e9..01a47d3dd499 100644
+--- a/drivers/i3c/master/ast2600-i3c-master.c
++++ b/drivers/i3c/master/ast2600-i3c-master.c
+@@ -8,7 +8,6 @@
+ #include <linux/mfd/syscon.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
+-#include <linux/of_device.h>
+ #include <linux/platform_device.h>
+ #include <linux/regmap.h>
+ 
+diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
+index 01610fa5b0cc..49551db71bc9 100644
+--- a/drivers/i3c/master/i3c-master-cdns.c
++++ b/drivers/i3c/master/i3c-master-cdns.c
+@@ -22,7 +22,6 @@
+ #include <linux/slab.h>
+ #include <linux/spinlock.h>
+ #include <linux/workqueue.h>
+-#include <linux/of_device.h>
+ 
+ #define DEV_ID				0x0
+ #define DEV_ID_I3C_MASTER		0x5034
 -- 
-Ben Dooks				http://www.codethink.co.uk/
-Senior Engineer				Codethink - Providing Genius
-
-https://www.codethink.co.uk/privacy.html
+2.40.1
 
 
 -- 
