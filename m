@@ -4,61 +4,51 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8BC7C001DF
-	for <linux-i3c@archiver.kernel.org>; Thu,  3 Aug 2023 09:04:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 31AC6C41513
+	for <linux-i3c@archiver.kernel.org>; Tue,  8 Aug 2023 14:02:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wpYgwF2GDIJ355Az3eo6wdJAHCDLJzHHYlqoc5XaD6Y=; b=wAjw1rKlk8IbYK
-	dTUJViZ8hqtJSzvnDFqZSC61He4kEl4xrlMkB/L11kcNxBDNg3guI9+09GG8t/m0wtSdPHcx43GFl
-	HykO890hMQwdUjDnIrFm5kHvGLZCrEJ8M8Wzhz+8qhYNHmtxxyBOKXNewAt9R0VRo/6/RUN77Ucia
-	AD07Ljp8A6XqXDCbyFm1BknxjtznGeFnNKUZFsfsRird4WtpTl5j7zx3pa/77VNabo2H8mlkWuicP
-	dcfHtNh4PdwlD+dk8b/4tuX6hadTQJ1QXklq+Xs+AIhaC1JJ0MyMctzgNd6PjG0/4xQq8OsioL0f4
-	u7oaMGztW+XZNoUzUNvg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dQbg+vkDvjtNMe69xhM2q6yuZEckrGsltgRmHlJ9H9o=; b=gBHlFzs5mJ6VZR
+	NjZHOk/PIqm/SwWMsSwrokIhG3pn2tPaa68TfY7KdcCaP9ht+8495kiq5NeWqIgE27h6VFiq6+9II
+	DPNT0dq+9BLKgOBkWYsJBn2W8S4Xhqx8LjaLRO9XZEuoE98ujNAmBMSD6ty+Vnz9p3wiGY4Z8Y+ep
+	p0T6aNHRr7dGz6GQFB3M3BmDclVp5ha3MI77Zv4fTzzbnwvDCXzGOcyZtCnpSz6SQK5lrqIWX3KIv
+	ujYux6uVk+Bav1YYN53PeMz6WNtuBINCvib3/uDy6WXuOkgLjLHC6YAEuxaqyujcQMSjh70ggcaJ9
+	iRffyj9+P23jPBrV6mWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qRUFo-0076q6-29;
-	Thu, 03 Aug 2023 09:04:21 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+	id 1qTNHb-002iLC-1k;
+	Tue, 08 Aug 2023 14:01:59 +0000
+Received: from mail.aspeedtech.com ([211.20.114.72] helo=TWMBX02.aspeed.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qRUFi-0076ny-2j
+	id 1qR8n8-004ZJ2-2i
 	for linux-i3c@lists.infradead.org;
-	Thu, 03 Aug 2023 09:04:16 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 1ED57C0015;
-	Thu,  3 Aug 2023 09:04:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1691053450;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=doEg/PPvVP0MYheppL2UKW8V2Z1q775yG4RJYswwK40=;
-	b=RsGUpyVgS4FPvbXtrEPwOuTeWhgTlpsIltPnCWFYBHvg1yIwW9MXwZJaHJDWnqeZnHmstQ
-	qnNAl4Aaf+mSXkkGyU597ThPN7Sjl4rds//6sf1CmGrIh+uN981bgE5QeNQO1DNLplIJy0
-	wfCc9hrTzsSr6ucSuU/2lhmzgI3ThrloypK62HbIcVKnkWV9W8t+F9aUS2mtYq5twRV8dU
-	SRPgrL2o/xhqnk4AHVzIaAZrcS2kuD9gYomYCMAEkPyJVmNk0QvfINDv4bvI4Z5EQdom2+
-	rS0DtJK416nEt5RzUR/pijkoFGD8+alocKUQ+vO2LXR7QWgX4Wjx3XybF8ENGQ==
-Date: Thu, 3 Aug 2023 11:04:08 +0200
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Ruan Jinjie <ruanjinjie@huawei.com>
-Cc: <linux-i3c@lists.infradead.org>, Conor Culhane
- <conor.culhane@silvaco.com>, Alexandre Belloni
- <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH -next] i3c: master: svc: Do not check for 0 return after
- calling platform_get_irq()
-Message-ID: <20230803110408.48bbe8ec@xps-13>
-In-Reply-To: <20230803085149.149248-1-ruanjinjie@huawei.com>
-References: <20230803085149.149248-1-ruanjinjie@huawei.com>
-Organization: Bootlin
-X-Mailer: Claws Mail 4.0.0 (GTK+ 3.24.33; x86_64-pc-linux-gnu)
+	Wed, 02 Aug 2023 10:09:20 +0000
+Received: from TWMBX02.aspeed.com (192.168.0.24) by TWMBX02.aspeed.com
+ (192.168.0.24) with Microsoft SMTP Server (TLS) id 15.0.1497.2; Wed, 2 Aug
+ 2023 18:09:10 +0800
+Received: from twmbx02.aspeed.com (192.168.10.10) by TWMBX02.aspeed.com
+ (192.168.0.24) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Wed, 2 Aug 2023 18:09:10 +0800
+From: Billy Tsai <billy_tsai@aspeedtech.com>
+To: <alexandre.belloni@bootlin.com>, <billy_tsai@aspeedtech.com>,
+	<linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH] i3c/master: cmd_v1: Fix the exit criteria for the daa procedure
+Date: Wed, 2 Aug 2023 18:09:09 +0800
+Message-ID: <20230802100909.2568215-1-billy_tsai@aspeedtech.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-GND-Sasl: miquel.raynal@bootlin.com
+Received-SPF: Fail (TWMBX02.aspeed.com: domain of billy_tsai@aspeedtech.com
+ does not designate 192.168.10.10 as permitted sender)
+ receiver=TWMBX02.aspeed.com; client-ip=192.168.10.10;
+ helo=twmbx02.aspeed.com;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230803_020415_046368_A1841349 
-X-CRM114-Status: GOOD (  13.74  )
+X-CRM114-CacheID: sfid-20230802_030918_903712_5D72B0C7 
+X-CRM114-Status: GOOD (  10.63  )
+X-Mailman-Approved-At: Tue, 08 Aug 2023 07:01:57 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,27 +60,37 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-SGkgUnVhbiwKCnJ1YW5qaW5qaWVAaHVhd2VpLmNvbSB3cm90ZSBvbiBUaHUsIDMgQXVnIDIwMjMg
-MTY6NTE6NDkgKzA4MDA6Cgo+IEl0IGlzIG5vdCBwb3NzaWJsZSBmb3IgcGxhdGZvcm1fZ2V0X2ly
-cSgpIHRvIHJldHVybiAwLiBVc2UgdGhlCj4gcmV0dXJuIHZhbHVlIGZyb20gcGxhdGZvcm1fZ2V0
-X2lycSgpLgoKUmV2aWV3ZWQtYnk6IE1pcXVlbCBSYXluYWwgPG1pcXVlbC5yYXluYWxAYm9vdGxp
-bi5jb20+Cgo+IAo+IFNpZ25lZC1vZmYtYnk6IFJ1YW4gSmluamllIDxydWFuamluamllQGh1YXdl
-aS5jb20+Cj4gLS0tCj4gIGRyaXZlcnMvaTNjL21hc3Rlci9zdmMtaTNjLW1hc3Rlci5jIHwgNCAr
-Ky0tCj4gIDEgZmlsZSBjaGFuZ2VkLCAyIGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCj4g
-Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaTNjL21hc3Rlci9zdmMtaTNjLW1hc3Rlci5jIGIvZHJp
-dmVycy9pM2MvbWFzdGVyL3N2Yy1pM2MtbWFzdGVyLmMKPiBpbmRleCAwZDYzYjczMmVmMGMuLjc3
-MGI0MGUyODAxNSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2kzYy9tYXN0ZXIvc3ZjLWkzYy1tYXN0
-ZXIuYwo+ICsrKyBiL2RyaXZlcnMvaTNjL21hc3Rlci9zdmMtaTNjLW1hc3Rlci5jCj4gQEAgLTE1
-MTgsOCArMTUxOCw4IEBAIHN0YXRpYyBpbnQgc3ZjX2kzY19tYXN0ZXJfcHJvYmUoc3RydWN0IHBs
-YXRmb3JtX2RldmljZSAqcGRldikKPiAgCQlyZXR1cm4gUFRSX0VSUihtYXN0ZXItPnNjbGspOwo+
-ICAKPiAgCW1hc3Rlci0+aXJxID0gcGxhdGZvcm1fZ2V0X2lycShwZGV2LCAwKTsKPiAtCWlmICht
-YXN0ZXItPmlycSA8PSAwKQo+IC0JCXJldHVybiAtRU5PRU5UOwo+ICsJaWYgKG1hc3Rlci0+aXJx
-IDwgMCkKPiArCQlyZXR1cm4gbWFzdGVyLT5pcnE7Cj4gIAo+ICAJbWFzdGVyLT5kZXYgPSBkZXY7
-Cj4gIAoKClRoYW5rcywKTWlxdcOobAoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgt
-aTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1pM2MK
+The exit criteria for the DAA should check if the data length is equal to
+1, instead of checking if the response status is equal to 1.
+
+Signed-off-by: Billy Tsai <billy_tsai@aspeedtech.com>
+---
+ drivers/i3c/master/mipi-i3c-hci/cmd_v1.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c b/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
+index d97c3175e0e2..6a781f89b0e4 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
++++ b/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
+@@ -339,7 +339,7 @@ static int hci_cmd_v1_daa(struct i3c_hci *hci)
+ 			break;
+ 		}
+ 		if (RESP_STATUS(xfer[0].response) == RESP_ERR_NACK &&
+-		    RESP_STATUS(xfer[0].response) == 1) {
++		    RESP_DATA_LENGTH(xfer->response) == 1) {
+ 			ret = 0;  /* no more devices to be assigned */
+ 			break;
+ 		}
+-- 
+2.25.1
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
