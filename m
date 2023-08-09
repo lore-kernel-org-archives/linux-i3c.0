@@ -4,86 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CB90DC001B0
-	for <linux-i3c@archiver.kernel.org>; Tue,  8 Aug 2023 16:00:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AADE5C001E0
+	for <linux-i3c@archiver.kernel.org>; Wed,  9 Aug 2023 00:08:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bY7QODjG8uBcHHN1J/nM/hyV8kICmMpoOqB+RDiPsCg=; b=gwW3DIdhZ/10Nk
-	EXyUoNTCFKxX0Lmy3CSlTKx2j0McN0POZvuLZxQDheleh/L8lNKEnE1I91AVY7FI3xVEZLateG9k1
-	WpwANx1Njy4rmtYEJTLNw+1o0TnNjhv1ivamBsAdz/lNuv99IZVbX5cCsPcnml3rw26LcYru8qSxs
-	qPUL90KPuXS0YdZvoY6otZuDMXE5zkGk1kQRWPkSALzve7/tWHaSGYhJsnLRny+NVIozQxbYotPrp
-	8QNTNvx2sDoK5m70jKGehXBrtYMa1PEu10r6Hew5l6dZOmbrROiLgBsOUe1Jo4qg4tqX82dSIOmx3
-	KZsGSAYFa2PALiZZuY2w==;
+	List-Owner; bh=oq+jnH8vSn+CsdtRy8W0JfBO9hhYETWCheu/QEu8EIg=; b=WdvxJmAO9Qp3Lj
+	9OiCGQfKTizRoLGDDZgRTYKUFv54UScImkDR2/JK+JFlbJVCIVmYtUke7ZyvWhNhdS7i3zyVllUmY
+	rBjB777lwNJ9urC4485Nu+Q2nqvzPKX+Xoii0V8t+kQ1YGWy6UgcW3dMKyGfoeVonrPIXRrpytYBN
+	euQM7ly6pk0l3Av4khoQGVlRIC+iWH5tlqOWpShfcUIAekeoyCEmO7yeubKuQcadmassNWkVwZuT5
+	vxeVJ26H5RJ9fBftvEBoTAL3ryhs/4gKnfog1WB3HCXhEQhqXv3V4Gt1oRX+Oev0vQmzP1lZkSfjK
+	jvSLHYy2OYs7DCAzfLCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qTP7x-002sBa-1m;
-	Tue, 08 Aug 2023 16:00:09 +0000
-Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
+	id 1qTWkN-003iWQ-0F;
+	Wed, 09 Aug 2023 00:08:19 +0000
+Received: from pi.codeconstruct.com.au ([203.29.241.158] helo=codeconstruct.com.au)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qTP7u-002sAQ-3A
-	for linux-i3c@lists.infradead.org;
-	Tue, 08 Aug 2023 16:00:08 +0000
-Received: by mail-lf1-x12c.google.com with SMTP id 2adb3069b0e04-4fe1344b707so9166964e87.1
-        for <linux-i3c@lists.infradead.org>; Tue, 08 Aug 2023 09:00:05 -0700 (PDT)
+	id 1qTWkJ-003iTp-28;
+	Wed, 09 Aug 2023 00:08:17 +0000
+Received: from pecola.lan (unknown [159.196.93.152])
+	by mail.codeconstruct.com.au (Postfix) with ESMTPSA id 44F1A20187;
+	Wed,  9 Aug 2023 08:07:59 +0800 (AWST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1691510404; x=1692115204;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=RE7wtMExHdhFwKLLqjqt4LfjR7+37ThDsOcCDy3qTQQ=;
-        b=PwDjsnZPpEOON21XmhMp+u0sisjWLyBSPad9QxaLPGHW7nSgAhPQ1LjU8UOwI1vfor
-         45ifcbnWH1NYoLzcAuTvGv4NZkjNtXLa5B6BV17UibKiSQyTh8i/wDL3p27vY8Fzo7LU
-         2DEQiC1nO0B/mkA/afSZBymtADJ2geddDbPz+lpTZHxbRYPlKJt/uJyqkdm0ZOS0AgRE
-         dqIS/yf3dlUwkL0lvfcDs237LoV3SHlzAVxCBlRku/R4G1vjxTgUuTCzfA7xkw1lOL54
-         7mdiOer0rm7E2e6f1jzUu1hGB8TrtXdhr+55sG74Fhwm+KDUGQGjkteDF4AXRAFFw/fg
-         sv2g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1691510404; x=1692115204;
-        h=content-transfer-encoding:in-reply-to:from:references:cc:to
-         :content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=RE7wtMExHdhFwKLLqjqt4LfjR7+37ThDsOcCDy3qTQQ=;
-        b=BAM10UsCbId25+5R0+w/2Phniib8FUKhrNaaR1fQNWpwqqjU/G+Pl5ISKxerPznFnB
-         N3u5elpzJn5uc7QwUNZ39f0Xg+NL3LRJOV+uRAdYi2qOARyXUxFC+NzzEXaBEky8XV3x
-         xDzMuzQqCJnpTfifnCWxPUdyYIzt7pGK4cVGLWl7SY/DhYWNsS6LKgN3gtKuFRMzXZk9
-         JKR/59BXG2mY7zwUaxmFhhmo0e/0Ll473FzY80UrGFe+1IzfCCVhj7i/C/T5ZG7DBwfB
-         dCL4ot8ksnxHybr0VjOx0TbLgTefrD3/qCXa0cCTKQ+S0wQZh2lfkTQ4BRvngMFqLOQh
-         6TSA==
-X-Gm-Message-State: AOJu0Yy5CTsJsS2K0ve/4p6rJKsQRHK/yrnuof3VPm30AC4o/y3QRMVp
-	wFAZ9EZlxMaJ9SOAB+lZukW8KDHrlvVCKONWdhw=
-X-Google-Smtp-Source: AGHT+IHbksfzqPLdhw5/yCLJTbCZEOgLAM2KQI/YGEb2WX3hUJsxDJkD4J/0HYLK1y1YsVgSMdIzhA==
-X-Received: by 2002:ac2:4850:0:b0:4fe:56d8:631d with SMTP id 16-20020ac24850000000b004fe56d8631dmr8327458lfy.25.1691510404500;
-        Tue, 08 Aug 2023 09:00:04 -0700 (PDT)
-Received: from [192.168.1.20] ([178.197.222.113])
-        by smtp.gmail.com with ESMTPSA id j18-20020aa7c0d2000000b0052239012c65sm6837797edp.82.2023.08.08.09.00.02
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 08 Aug 2023 09:00:03 -0700 (PDT)
-Message-ID: <f85df327-c321-8c1e-2043-c60210fbed56@linaro.org>
-Date: Tue, 8 Aug 2023 18:00:01 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.14.0
-Subject: Re: [PATCH 3/3] i3c: ast2600: Add reset deassertion for global
- registers
-Content-Language: en-US
-To: Dylan Hung <dylan_hung@aspeedtech.com>, jk@codeconstruct.com.au,
- alexandre.belloni@bootlin.com, robh+dt@kernel.org,
- krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org, joel@jms.id.au,
- andrew@aj.id.au, p.zabel@pengutronix.de, linux-i3c@lists.infradead.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org
+	d=codeconstruct.com.au; s=2022a; t=1691539681;
+	bh=6qLqCNRICu2NyTPw0KKNnC7PvvAmPBJh4X1ZTZr4EJg=;
+	h=Subject:From:To:Cc:Date:In-Reply-To:References;
+	b=JSjt8XEr7aLccezZ7hz2yq//uMqicALMQqUct/5ULSgUA3i4ObTRVPYDxnZe/5EKl
+	 jd6XoDEj7vbaMmHve7uHHPd6Bui58TQCVOB7ccPNDDVQpxECNhtGZe0tQFXgkFnQmU
+	 /wiTplEjRbb0MQqlNKhZ2RBFNOvMnp6FJMXq0e3CRQKnjMjvXmwGz6y97+KGORb0c0
+	 DWqvqe1SBfZruvFziYTCSpDhc2AAlBIB2G4UeRvCuU4m9o0Qax2gIRrkWK7QaABykD
+	 TtLjhK+DxsGRXWTC2nH84pbNII17Xi0TewOULHLnBGZs3YpkgMvlkz9b5Q8qjGo7g2
+	 fFBNlMd+JVL7Q==
+Message-ID: <d8d577e91779e045d5a2c7d701f65133a15b5d64.camel@codeconstruct.com.au>
+Subject: Re: [PATCH 0/3] Add Aspeed AST2600 I3C support
+From: Jeremy Kerr <jk@codeconstruct.com.au>
+To: Dylan Hung <dylan_hung@aspeedtech.com>, alexandre.belloni@bootlin.com, 
+ robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+  joel@jms.id.au, andrew@aj.id.au, p.zabel@pengutronix.de, 
+ linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org, 
+ linux-kernel@vger.kernel.org
 Cc: BMC-SW@aspeedtech.com, kobedylan@gmail.com
+Date: Wed, 09 Aug 2023 08:07:58 +0800
+In-Reply-To: <20230808154241.749641-1-dylan_hung@aspeedtech.com>
 References: <20230808154241.749641-1-dylan_hung@aspeedtech.com>
- <20230808154241.749641-4-dylan_hung@aspeedtech.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-In-Reply-To: <20230808154241.749641-4-dylan_hung@aspeedtech.com>
+User-Agent: Evolution 3.46.4-2 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230808_090007_027310_C4CBE40B 
-X-CRM114-Status: GOOD (  15.01  )
+X-CRM114-CacheID: sfid-20230808_170815_903228_F2753043 
+X-CRM114-Status: GOOD (  11.55  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,48 +73,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 08/08/2023 17:42, Dylan Hung wrote:
-> Add missing reset deassertion of the I3C global control registers.
-> 
-> Signed-off-by: Dylan Hung <dylan_hung@aspeedtech.com>
-> ---
->  drivers/i3c/master/ast2600-i3c-master.c | 9 +++++++++
->  1 file changed, 9 insertions(+)
-> 
-> diff --git a/drivers/i3c/master/ast2600-i3c-master.c b/drivers/i3c/master/ast2600-i3c-master.c
-> index 09ed19d489e9..5d9d060134e0 100644
-> --- a/drivers/i3c/master/ast2600-i3c-master.c
-> +++ b/drivers/i3c/master/ast2600-i3c-master.c
-> @@ -11,6 +11,7 @@
->  #include <linux/of_device.h>
->  #include <linux/platform_device.h>
->  #include <linux/regmap.h>
-> +#include <linux/reset.h>
->  
->  #include "dw-i3c-master.h"
->  
-> @@ -128,6 +129,7 @@ static int ast2600_i3c_probe(struct platform_device *pdev)
->  	struct device_node *np = pdev->dev.of_node;
->  	struct of_phandle_args gspec;
->  	struct ast2600_i3c *i3c;
-> +	struct reset_control *rst;
->  	int rc;
->  
->  	i3c = devm_kzalloc(&pdev->dev, sizeof(*i3c), GFP_KERNEL);
-> @@ -156,6 +158,13 @@ static int ast2600_i3c_probe(struct platform_device *pdev)
->  		dev_err(&pdev->dev, "invalid sda-pullup value %d\n",
->  			i3c->sda_pullup);
->  
-> +	rst = devm_reset_control_get_shared(&pdev->dev, "global_rst");
-> +	if (IS_ERR(rst)) {
-> +		dev_err(&pdev->dev, "missing of invalid reset entry");
-> +		return PTR_ERR(rst);
+Hi Dylan,
 
-return dev_err_probe
+> This patch series introduces the necessary changes to enable I3C
+> support for the Aspeed AST2600 I3C controller. Specifically, it addresses the
+> missing pinctrl configuration and reset control for the I3C
+> functionality.
 
-Best regards,
-Krzysztof
++1 for the pinctrl changes for the I3C1 and I3C2 controllers (I'll
+review and ack separately). I have been testing on I3C3 and up, but just
+not with the HVI3C on 1 & 2, hence no pinctrl definition there.
 
+However, I don't think the other two are needed.
+
+For 2/3 and 3/3, you're adding a reset control for the global register
+block within the per-controller driver, but we can already do that on a
+global basis with the existing syscon device. Hence this earlier change:
+
+  https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/drivers/mfd/syscon.c?id=7d1e3bd94828ad9fc86f55253cd6fec8edd65394
+
+For this, I have:
+
+    &i3c {
+        i3c_global: i3c-global {
+            compatible = "aspeed,ast2600-i3c-global", "simple-mfd", "syscon";
+            resets = <&syscon ASPEED_RESET_I3C_DMA>;
+            reg = <0x0 0x1000>;
+        };
+
+        i3c2: i3c-master@4000 {
+            compatible = "aspeed,ast2600-i3c";
+            reg = <0x4000 0x1000>;
+            clocks = <&syscon ASPEED_CLK_GATE_I3C2CLK>;
+            pinctrl-names = "default";
+            pinctrl-0 = <&pinctrl_i3c3_default>;
+            interrupts = <GIC_SPI 104 IRQ_TYPE_LEVEL_HIGH>;
+            aspeed,global-regs = <&i3c_global 2>;
+            status = "disabled";
+        };
+
+        /* ... */
+    };
+
+- with no changes needed to any bindings. I haven't needed any other
+resets; are there per-controller resets specified in the HW docs you
+have?
+
+Does that work for you? If you'd like to test, feel free to use my
+sample dts at:
+
+  https://github.com/CodeConstruct/linux/commit/05cac24705fa62d2176ecbbbf15d955cfe86e753
+
+Cheers,
+
+
+Jeremy
 
 -- 
 linux-i3c mailing list
