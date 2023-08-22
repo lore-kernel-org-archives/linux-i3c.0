@@ -4,74 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3DFAEE49A5
-	for <linux-i3c@archiver.kernel.org>; Tue, 22 Aug 2023 05:12:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB540EE49A8
+	for <linux-i3c@archiver.kernel.org>; Tue, 22 Aug 2023 05:19:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:From:Subject:Message-ID:
 	Mime-Version:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=mCqPIIR9qdiAjpZGdH4sUEvA7SDR/Wc6faC373VcJdM=; b=4PD
-	63m5fA75/Thjr8EgrYn496sLyW4HowxDVRBegz6yvHO5CEanvBa9uhJ4qaSFfbHD9ChCyA6TuTXBr
-	+CjJStIJh+L0/SF56irFDJpe4PrK9/qQm3WtvzGpGmAu2nqLD4O4eI9GkbphmJjF1lxBWmesrHQ/k
-	gF+SOzf0+xWTB9zeR670wuscN8Bo9QyDtJJh+d+XpCbGlp5hRui2o5gTVmIxQS2OaJCbIMijMahlR
-	ktssblMCnLJSIwYboU/sjP8MrLyvfOpZavNqEfzfs118mVgyoVxAjY7PqvXoLW9CtJmotxMqBBLmI
-	Imb+qqnl4nzI5h7c8eaLhobEEzgHOUw==;
+	References:List-Owner; bh=9IMACGWto3HkUgcIKLfro08D0eWzGLfQV4yi1uJsGj8=; b=Q6N
+	sVRfsloFWgWEFPf+sLB4q14uYYZGwZKvqL4lfLvoXS/38SpybQ80P4c3lG3Hc2xBWtspgBIdbgPbK
+	gVh59643BUF6wVIoAwg827evmkho5k2ikMO8To5+SYeqQwInPuSZXp6EsIrj4cdeW/8E84YqCyUGG
+	nfkvqePLaKhPybO/XYbaGb4K06b+qhm0K8AIsyiVZCy2G2xfiGMzxtr9KQYVpfFPBqXAtPRpK65eZ
+	GyAoZRamGssSKuqqdX4gPSTROEP5uxqR9BIvcEHGbEtabii0CoUUCxcwJyGKlsF8mcA9xwRI8r7/I
+	cTr+qqxKHjsIxISR1vSPLG0A43Vd0WQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYJgn-00F8HX-33;
-	Tue, 22 Aug 2023 05:12:25 +0000
-Received: from mail-yb1-xb49.google.com ([2607:f8b0:4864:20::b49])
+	id 1qYJo1-00F8rQ-1U;
+	Tue, 22 Aug 2023 05:19:53 +0000
+Received: from mail-yw1-x1149.google.com ([2607:f8b0:4864:20::1149])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYJgk-00F8GL-0s
+	id 1qYJnz-00F8qw-06
 	for linux-i3c@lists.infradead.org;
-	Tue, 22 Aug 2023 05:12:23 +0000
-Received: by mail-yb1-xb49.google.com with SMTP id 3f1490d57ef6-d7231c761b6so5081872276.1
-        for <linux-i3c@lists.infradead.org>; Mon, 21 Aug 2023 22:12:17 -0700 (PDT)
+	Tue, 22 Aug 2023 05:19:52 +0000
+Received: by mail-yw1-x1149.google.com with SMTP id 00721157ae682-591138c0978so30749917b3.1
+        for <linux-i3c@lists.infradead.org>; Mon, 21 Aug 2023 22:19:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20221208; t=1692681136; x=1693285936;
+        d=google.com; s=20221208; t=1692681589; x=1693286389;
         h=cc:to:from:subject:message-id:mime-version:date:from:to:cc:subject
          :date:message-id:reply-to;
-        bh=y49tMxZ0YY48F/gzN+18jldmFoxIYYQIj22aWek7pLI=;
-        b=1E/HKtR80/j8Afv68qazxtHwIdlC3o7xyddICTzM9am/XQD3utYOsEZpa1EjyYxs7X
-         6QunZdQhbX095QFgceSxbBSO7Kwiok6SN0zRgsJqDe/EkeP2PZJO1NrdUQkCpVpFmVxq
-         I4QwWXy2PbMBKwyashnNcsvqJj6VZevXpnT9CM698beC6M2c3ybsA4sr5Vb+fvF+Zhzf
-         ncM7TZKj7jqzX9g8moiTrZ9Rr4jp5u4mahGfZULheLQfDX4ymuuAiOftRkNNHYxRMRfy
-         uXv6GtUWdXRMLTofeCHX8GmS1+mwQCONcLUah2TTPRm/E8B68E/aCZSvCclywrBfOkSy
-         Mpig==
+        bh=xunZavdtzjWt01wC1liiJk4wBcvrULtLqNfhy014qNU=;
+        b=rkHhc7WKUcOMHjlY8RyBSC2krnfGkUy//kcCShbQusjC8mAbLwFKsyXNJ5l2WO7HIj
+         3VBSMt+T/NHvQnUR8vT7mFZRKE+VqRQFbkZ/iXnps8N6z8kOtDmpCHICT+wgzkyMIIo5
+         HG1TMbKY+SH7A7inrcpi2K7fvCG4FgwGMTZfIQuwCRf+rAcCWeaDh8uyPfyMaVRjU1io
+         QE+D+k9QNdp6oOH0kPFc6z+61zTOSMa6riIQO92/8+6yDOH0+p06JA/52GL6wBsyXfBd
+         T4jsI4MuZYG1METEP/nKOleTx7YeQwaCfbbvmUL71Uh9kMXUOee0dz6Tv+lp2IuoLXT3
+         1jQQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1692681136; x=1693285936;
+        d=1e100.net; s=20221208; t=1692681589; x=1693286389;
         h=cc:to:from:subject:message-id:mime-version:date:x-gm-message-state
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=y49tMxZ0YY48F/gzN+18jldmFoxIYYQIj22aWek7pLI=;
-        b=O22PDk9+gaRki87FyvAFaX/byWoOJ/PkEMD78nbdIg4Gev/ZKmATuFHs6nqAznCvQg
-         /29COyhh0W7gkQEZwJ47wGWF56P2izmhRsJ1XFok5gs/I5iJd4gD4w7b++ybi5L3alIz
-         ghK7Tcz+v7/sqycHHJdLPSXhtXEVSVqpO5s+74f/JoTp1m3M6eidx/2lQuFSOHmH0hgm
-         jBslJuxDQTYottV50TE5ZHFDrktGNltBQPeoVeycWtIQxBnx74+OjB9KxXr3o/+pTgHG
-         jEk0aXA8z74kZTRsyvy1MWAe1sqh/R7vY+bvSBGF2MP/3qdfZ7suBFIHYG66dQyWL5NS
-         RKGw==
-X-Gm-Message-State: AOJu0YwkhQQCE9+DtSOBSdv/B8OGT/MezUy5P2AiN+x9MCmFYWTgwFFA
-	61f1cejDewVAEWHl+hiJ0P46prhEF6fUXZvqQJg=
-X-Google-Smtp-Source: AGHT+IEQs81Q4KusiC28vK3V6P5+x3LAR0lCRrupgbRgEYSKykvPJ/zIapXaq37u0upbNb5/Fn7lcB19OJKAD4QiRPM=
+        bh=xunZavdtzjWt01wC1liiJk4wBcvrULtLqNfhy014qNU=;
+        b=Bi+9PbEQguBJDuuamFgJXa0kosNtfFaP0kAYKuaRe+spcYpPtRA5QsnrZIGQ9NManF
+         QP4H4ieII8d84znyK/o1zt0p5FZAEO/CuzJjC9E+JMW9M4ml3AJ1psBbbzgOSN0oOaEu
+         HkRR/i9QIfTMoUAui0AnORba2E28x1w/GhGcyvJ0N41ECC4RFC0VKYvsFzOoP7I+5N1O
+         sOauoirootcR2+nFqz+nSbZfmoOrdaxkzqlBBNPYo+WwVfJ7eBLArYSIKhYe9F7OJWQy
+         1H+0Zc0LMlLKH9njLB6YGJfFqZIV46CZSQ53jIjyaK3UDb5tEenoaeYjaXK7uftrn0+7
+         tn1A==
+X-Gm-Message-State: AOJu0YwzmsD7w/HMuSDg/EFp9ykvO3718zP6JPb7UcPu6y676Rz8cFmA
+	DvOI6+jO3DVQTq26xl8AOUOc7KFS+k58wX5wB+U=
+X-Google-Smtp-Source: AGHT+IF5G8ksHuUSIQRak/vPBr8Iztca28dWLuc+zQekjuE7jRbspllhQUu6SQDizDotRsqiawmOOK3GhE/WHqTJyoc=
 X-Received: from anikett.c.googlers.com ([fda3:e722:ac3:cc00:4f:4b78:c0a8:2551])
- (user=aniketmaurya job=sendgmr) by 2002:a05:6902:1894:b0:d12:d6e4:a08d with
- SMTP id cj20-20020a056902189400b00d12d6e4a08dmr85489ybb.7.1692681136473; Mon,
- 21 Aug 2023 22:12:16 -0700 (PDT)
-Date: Tue, 22 Aug 2023 05:12:09 +0000
+ (user=aniketmaurya job=sendgmr) by 2002:a25:41c1:0:b0:d4f:638b:d806 with SMTP
+ id o184-20020a2541c1000000b00d4f638bd806mr71733yba.8.1692681589061; Mon, 21
+ Aug 2023 22:19:49 -0700 (PDT)
+Date: Tue, 22 Aug 2023 05:19:38 +0000
 Mime-Version: 1.0
 X-Mailer: git-send-email 2.42.0.rc1.204.g551eb34607-goog
-Message-ID: <20230822051209.2837818-1-aniketmaurya@google.com>
-Subject: [PATCH] dt-bindings: i3c: Fix description for assigned-address
+Message-ID: <20230822051938.2852567-1-aniketmaurya@google.com>
+Subject: [PATCH] i3c: master: Fix SETDASA process
 From: Aniket <aniketmaurya@google.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Rob Herring <robh+dt@kernel.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>
-Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-kernel@vger.kernel.org, joychakr@google.com, manugautam@google.com, 
-	Aniket <aniketmaurya@google.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	joychakr@google.com, manugautam@google.com, Aniket <aniketmaurya@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230821_221222_313154_E4986E60 
-X-CRM114-Status: GOOD (  12.10  )
+X-CRM114-CacheID: sfid-20230821_221951_088453_46CD143F 
+X-CRM114-Status: GOOD (  10.89  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,52 +86,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-assigned-address is a valid property for I3C device with or without
-static address. Fix the description and an example for the same.
+When a I3C DT node has a static_addr and an init_dyn_addr,the
+init_dyn_addr is reserved in i3c_master_bus_init() and then
+the static_addr is reserved in i3c_master_early_i3c_dev_add().
+But if the dynamic address is same as static then above
+procedure would fail.
+Add a check to pass i3c_bus_get_addr_slot_status() when static
+and dynamic address are equal.
 
 Signed-off-by: Aniket <aniketmaurya@google.com>
 ---
- Documentation/devicetree/bindings/i3c/i3c.yaml | 15 +++++++++++----
- 1 file changed, 11 insertions(+), 4 deletions(-)
+ drivers/i3c/master.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/i3c/i3c.yaml b/Documentation/devicetree/bindings/i3c/i3c.yaml
-index fdb4212149e7..ab69f4115de4 100644
---- a/Documentation/devicetree/bindings/i3c/i3c.yaml
-+++ b/Documentation/devicetree/bindings/i3c/i3c.yaml
-@@ -135,9 +135,10 @@ patternProperties:
-         minimum: 0x1
-         maximum: 0xff
-         description: |
--          Dynamic address to be assigned to this device. This property is only
--          valid if the I3C device has a static address (first cell of the reg
--          property != 0).
-+          Dynamic address to be assigned to this device. In case static address is
-+          present (first cell of the reg property != 0), this address is assigned
-+          through SETDASA. If static address is not present, this address is assigned
-+          through SETNEWDA after assigning a temporary address via ENTDAA.
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 08aeb69a7800..87283e4a4607 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -1308,7 +1308,11 @@ static int i3c_master_get_i3c_addrs(struct i3c_dev_desc *dev)
+ 	if (dev->info.static_addr) {
+ 		status = i3c_bus_get_addr_slot_status(&master->bus,
+ 						      dev->info.static_addr);
+-		if (status != I3C_ADDR_SLOT_FREE)
++		/* Since static address and assigned dynamic address can be
++		 * equal, allow this case to pass.
++		 */
++		if (status != I3C_ADDR_SLOT_FREE &&
++		    dev->info.static_addr != dev->boardinfo->init_dyn_addr)
+ 			return -EBUSY;
  
-     required:
-       - reg
-@@ -163,12 +164,18 @@ examples:
-             pagesize = <0x8>;
-         };
- 
--        /* I3C device with a static I2C address. */
-+        /* I3C device with a static I2C address and assigned address. */
-         thermal_sensor: sensor@68,39200144004 {
-             reg = <0x68 0x392 0x144004>;
-             assigned-address = <0xa>;
-         };
- 
-+        /* I3C device with only assigned address. */
-+        pressure_sensor: sensor@0,39200124004 {
-+            reg = <0x0 0x392 0x124000>;
-+            assigned-address = <0xc>;
-+        };
-+
-         /*
-          * I3C device without a static I2C address but requiring
-          * resources described in the DT.
+ 		i3c_bus_set_addr_slot_status(&master->bus,
 -- 
 2.42.0.rc1.204.g551eb34607-goog
 
