@@ -4,72 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB540EE49A8
-	for <linux-i3c@archiver.kernel.org>; Tue, 22 Aug 2023 05:19:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 727BBEE4993
+	for <linux-i3c@archiver.kernel.org>; Wed, 23 Aug 2023 13:20:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:From:Subject:Message-ID:
-	Mime-Version:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=9IMACGWto3HkUgcIKLfro08D0eWzGLfQV4yi1uJsGj8=; b=Q6N
-	sVRfsloFWgWEFPf+sLB4q14uYYZGwZKvqL4lfLvoXS/38SpybQ80P4c3lG3Hc2xBWtspgBIdbgPbK
-	gVh59643BUF6wVIoAwg827evmkho5k2ikMO8To5+SYeqQwInPuSZXp6EsIrj4cdeW/8E84YqCyUGG
-	nfkvqePLaKhPybO/XYbaGb4K06b+qhm0K8AIsyiVZCy2G2xfiGMzxtr9KQYVpfFPBqXAtPRpK65eZ
-	GyAoZRamGssSKuqqdX4gPSTROEP5uxqR9BIvcEHGbEtabii0CoUUCxcwJyGKlsF8mcA9xwRI8r7/I
-	cTr+qqxKHjsIxISR1vSPLG0A43Vd0WQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oXf4uq9s0zpZlcnEr0vRdisKxyPEJ83QiMCAgfudYH0=; b=zOqHwm6klb2auR
+	JEnEmBVmiMgXlU4eGYhochDUC2tZXBzMta+Y24DeDxuchyr5lLACu7ACiWAm45XXXFWzOw/pbGYVv
+	GrH3vthArGHpe3cs/k06kvO0M537QQjWR+0l6mgi6EVnvlCfCDNOs+DlJLL3BfHvOJx/Z68zqpAmj
+	O74dV4Ea5GHT1pd/wXgFQkf7yDAwem7Q5FFDMACgTvJiLsrJ4qKAO3KxwGcvs79GdmPuF1h98rCcc
+	7aEiqJMAt1M3uZtxhCw5oSF9yP0s1i8cV+saHTfnUpwoCpOaLvh2XEms0oqmdj0TzC+0Ik75P+jGQ
+	qli3x6sRHBCVR8uRdagQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYJo1-00F8rQ-1U;
-	Tue, 22 Aug 2023 05:19:53 +0000
-Received: from mail-yw1-x1149.google.com ([2607:f8b0:4864:20::1149])
+	id 1qYnmO-000faW-2R;
+	Wed, 23 Aug 2023 13:20:12 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qYJnz-00F8qw-06
+	id 1qYnmM-000fZj-0S
 	for linux-i3c@lists.infradead.org;
-	Tue, 22 Aug 2023 05:19:52 +0000
-Received: by mail-yw1-x1149.google.com with SMTP id 00721157ae682-591138c0978so30749917b3.1
-        for <linux-i3c@lists.infradead.org>; Mon, 21 Aug 2023 22:19:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20221208; t=1692681589; x=1693286389;
-        h=cc:to:from:subject:message-id:mime-version:date:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=xunZavdtzjWt01wC1liiJk4wBcvrULtLqNfhy014qNU=;
-        b=rkHhc7WKUcOMHjlY8RyBSC2krnfGkUy//kcCShbQusjC8mAbLwFKsyXNJ5l2WO7HIj
-         3VBSMt+T/NHvQnUR8vT7mFZRKE+VqRQFbkZ/iXnps8N6z8kOtDmpCHICT+wgzkyMIIo5
-         HG1TMbKY+SH7A7inrcpi2K7fvCG4FgwGMTZfIQuwCRf+rAcCWeaDh8uyPfyMaVRjU1io
-         QE+D+k9QNdp6oOH0kPFc6z+61zTOSMa6riIQO92/8+6yDOH0+p06JA/52GL6wBsyXfBd
-         T4jsI4MuZYG1METEP/nKOleTx7YeQwaCfbbvmUL71Uh9kMXUOee0dz6Tv+lp2IuoLXT3
-         1jQQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20221208; t=1692681589; x=1693286389;
-        h=cc:to:from:subject:message-id:mime-version:date:x-gm-message-state
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=xunZavdtzjWt01wC1liiJk4wBcvrULtLqNfhy014qNU=;
-        b=Bi+9PbEQguBJDuuamFgJXa0kosNtfFaP0kAYKuaRe+spcYpPtRA5QsnrZIGQ9NManF
-         QP4H4ieII8d84znyK/o1zt0p5FZAEO/CuzJjC9E+JMW9M4ml3AJ1psBbbzgOSN0oOaEu
-         HkRR/i9QIfTMoUAui0AnORba2E28x1w/GhGcyvJ0N41ECC4RFC0VKYvsFzOoP7I+5N1O
-         sOauoirootcR2+nFqz+nSbZfmoOrdaxkzqlBBNPYo+WwVfJ7eBLArYSIKhYe9F7OJWQy
-         1H+0Zc0LMlLKH9njLB6YGJfFqZIV46CZSQ53jIjyaK3UDb5tEenoaeYjaXK7uftrn0+7
-         tn1A==
-X-Gm-Message-State: AOJu0YwzmsD7w/HMuSDg/EFp9ykvO3718zP6JPb7UcPu6y676Rz8cFmA
-	DvOI6+jO3DVQTq26xl8AOUOc7KFS+k58wX5wB+U=
-X-Google-Smtp-Source: AGHT+IF5G8ksHuUSIQRak/vPBr8Iztca28dWLuc+zQekjuE7jRbspllhQUu6SQDizDotRsqiawmOOK3GhE/WHqTJyoc=
-X-Received: from anikett.c.googlers.com ([fda3:e722:ac3:cc00:4f:4b78:c0a8:2551])
- (user=aniketmaurya job=sendgmr) by 2002:a25:41c1:0:b0:d4f:638b:d806 with SMTP
- id o184-20020a2541c1000000b00d4f638bd806mr71733yba.8.1692681589061; Mon, 21
- Aug 2023 22:19:49 -0700 (PDT)
-Date: Tue, 22 Aug 2023 05:19:38 +0000
-Mime-Version: 1.0
-X-Mailer: git-send-email 2.42.0.rc1.204.g551eb34607-goog
-Message-ID: <20230822051938.2852567-1-aniketmaurya@google.com>
-Subject: [PATCH] i3c: master: Fix SETDASA process
-From: Aniket <aniketmaurya@google.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	joychakr@google.com, manugautam@google.com, Aniket <aniketmaurya@google.com>
+	Wed, 23 Aug 2023 13:20:11 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by dfw.source.kernel.org (Postfix) with ESMTPS id 998736628D;
+	Wed, 23 Aug 2023 13:20:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6EEB5C433C8;
+	Wed, 23 Aug 2023 13:20:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1692796808;
+	bh=f0rbuJKzxJUmE0jONDg4fsgdN5yoz/A4HK/gD16iZJI=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=FeTlxarsXj63zuQXvhKyHBN3p+r/9c2+xWXOUG678UNedAmUsTY0h/UKiCrlstEvr
+	 uEgrnaLYLiVsS0N5DGkVwAy9CkvhRcO6GFXlyuWb2DYRVo+zg9LSCDOjD2zkUpQUe+
+	 UsBkv6P/3HYyK/4ZuW0xVc+1yMauNjcNosZ3//e91rBst3Kn2XXlEQtwqxwstdG5g5
+	 eXByjRwRdwNE4z3D0ZssIP2i0HTTffbe8eHTMBe7B8XZ5rukgxFIwyT3P3G+irHCVg
+	 ixFl/Oi7eKrSFjP1YQzTzP6avt/+vH/BgwzklyVx+t8exXy9G7dINJeR39+HhAY6rI
+	 yINPtptmANx9Q==
+Received: (nullmailer pid 2204416 invoked by uid 1000);
+	Wed, 23 Aug 2023 13:20:06 -0000
+Date: Wed, 23 Aug 2023 08:20:06 -0500
+From: Rob Herring <robh@kernel.org>
+To: Aniket <aniketmaurya@google.com>
+Cc: manugautam@google.com, linux-i3c@lists.infradead.org, Conor Dooley <conor+dt@kernel.org>, Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org, joychakr@google.com, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Alexandre Belloni <alexandre.belloni@bootlin.com>, devicetree@vger.kernel.org
+Subject: Re: [PATCH] dt-bindings: i3c: Fix description for assigned-address
+Message-ID: <169279680573.2204361.10063597911204356200.robh@kernel.org>
+References: <20230822051209.2837818-1-aniketmaurya@google.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20230822051209.2837818-1-aniketmaurya@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230821_221951_088453_46CD143F 
-X-CRM114-Status: GOOD (  10.89  )
+X-CRM114-CacheID: sfid-20230823_062010_224550_9482D55D 
+X-CRM114-Status: GOOD (  10.93  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,38 +76,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-When a I3C DT node has a static_addr and an init_dyn_addr,the
-init_dyn_addr is reserved in i3c_master_bus_init() and then
-the static_addr is reserved in i3c_master_early_i3c_dev_add().
-But if the dynamic address is same as static then above
-procedure would fail.
-Add a check to pass i3c_bus_get_addr_slot_status() when static
-and dynamic address are equal.
 
-Signed-off-by: Aniket <aniketmaurya@google.com>
----
- drivers/i3c/master.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+On Tue, 22 Aug 2023 05:12:09 +0000, Aniket wrote:
+> assigned-address is a valid property for I3C device with or without
+> static address. Fix the description and an example for the same.
+> 
+> Signed-off-by: Aniket <aniketmaurya@google.com>
+> ---
+>  Documentation/devicetree/bindings/i3c/i3c.yaml | 15 +++++++++++----
+>  1 file changed, 11 insertions(+), 4 deletions(-)
+> 
 
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 08aeb69a7800..87283e4a4607 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -1308,7 +1308,11 @@ static int i3c_master_get_i3c_addrs(struct i3c_dev_desc *dev)
- 	if (dev->info.static_addr) {
- 		status = i3c_bus_get_addr_slot_status(&master->bus,
- 						      dev->info.static_addr);
--		if (status != I3C_ADDR_SLOT_FREE)
-+		/* Since static address and assigned dynamic address can be
-+		 * equal, allow this case to pass.
-+		 */
-+		if (status != I3C_ADDR_SLOT_FREE &&
-+		    dev->info.static_addr != dev->boardinfo->init_dyn_addr)
- 			return -EBUSY;
- 
- 		i3c_bus_set_addr_slot_status(&master->bus,
--- 
-2.42.0.rc1.204.g551eb34607-goog
+Acked-by: Rob Herring <robh@kernel.org>
 
 
 -- 
