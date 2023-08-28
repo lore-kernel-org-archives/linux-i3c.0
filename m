@@ -4,58 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19282C83F10
-	for <linux-i3c@archiver.kernel.org>; Sun, 27 Aug 2023 22:46:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FDA8C83F11
+	for <linux-i3c@archiver.kernel.org>; Mon, 28 Aug 2023 15:16:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tcRlKocX/n3WqGyVoyk/6ttVJeM4XeG2g6aS6M3HG80=; b=3MhXALeIgUQARo
-	vTjXrnt/Ckk/bKfuhbn/6VClcdFogONEQZ0UGmkaxr7jlG9aSERtfaeqDTdwIsSZ20F4TslxCEwC0
-	dNxux/Yu6qxCZ0fV430WKyk+fFzrwB+rNJufHR/14kMdZMoj8yOJykvZVC8mHEWL57zbHzBSLGrMp
-	KV4mlYtc9AsCMjIwwkRqYe8shs2AimTN6i6swp4qEPL7NCrCWH1eGcjO75SW6++mtYMtjNLmkG7Al
-	BqbNu6sXe7Z/Czxo3n96uLiUX/MUyGoDJ5AcvWEEeyyaaiB68Y+xnmdN7xW0XqxgrOB0H7+97Cjr9
-	ksIsKnxfLPOUZjtGP8sQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ToZWFOQHDwp+xldT+xNykguXJPPHg0AHrckjx7Zj7RA=; b=e+hoNz0eQkj3rK
+	ijmb9Q2FuLmz3ZL1o59xAZDYhzDzdW4F0Fs9exWLLAFEgBBeG/7lkeG6TrzEW8oQR/e+J7CKfatOH
+	9zSYRvveERkoPnM1QD+udBEq876QyU0n7Lp2gt9R3nRH4G4NekNY4FOgkzkxlF+a811j8DV0/rJ9H
+	Ozgs2lZtfhRcBCG4lz0r68A8Z8Yah9UiTcXxEcb1bWD73l4YqhKUseNHKWbDVildgGZGVfNGMZA7x
+	Gz163hIrUPcOxGd9083tBlvOf9IM3Y0ft5hNy9yBIZyaQLsXwTw5m72T12baswHQrlIYGOQMQqPWZ
+	4wh2YoKnL6FrC/FLnfVA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qaOWz-008X1x-2e;
-	Sun, 27 Aug 2023 22:46:53 +0000
-Received: from relay2-d.mail.gandi.net ([217.70.183.194])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qaOWx-008X1D-0C
+	id 1qadyd-009mQH-2a;
+	Mon, 28 Aug 2023 15:16:27 +0000
+Received: from fd01.gateway.ufhost.com ([61.152.239.71])
+	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
+	id 1qadyZ-009mLg-0J
 	for linux-i3c@lists.infradead.org;
-	Sun, 27 Aug 2023 22:46:52 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 27E9840002;
-	Sun, 27 Aug 2023 22:46:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1693176406;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=RiM2QFhHnr1QFEOHj0sVy982q1bfnylCGYd4h2Dcdc8=;
-	b=AzUkqyhepFmumOrPrNzLHjRVroBV4SEwQVw88W9dQQXOAKOU4kjDMSSkSrnrbpuPuBf2HW
-	NPaENyvupE3W1l/ozZMwKuBb0g8h1v6hh9kCQDPVn8rkWopSd88e8/AJzWohisDj9xMFfB
-	caQ51seMFsYipau/6/lbdd/aYkN3rw3w3yYwjQSBZgIWvUwF5eelW/5UGp6x413zU0DvUu
-	Z5VJVPkfsA+m/SSrsouqHT4xSbdB7HPgq9TRRcV7Atwa2+IsM/jjKqkqihSLKFrvkqM4h9
-	8WY8M2ehz7VeHJGhUYMv3qy6vNH4geYyJIOXIZEMtFSrDSbwVmzfLHegNN8zhQ==
-Date: Mon, 28 Aug 2023 00:46:45 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Aniket <aniketmaurya@google.com>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	joychakr@google.com, manugautam@google.com
-Subject: Re: [PATCH] i3c: master: Fix SETDASA process
-Message-ID: <169317639314.563617.17285767371678104909.b4-ty@bootlin.com>
-References: <20230822051938.2852567-1-aniketmaurya@google.com>
+	Mon, 28 Aug 2023 15:16:26 +0000
+Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
+	by fd01.gateway.ufhost.com (Postfix) with ESMTP id 223EF7FD3
+	for <linux-i3c@lists.infradead.org>; Mon, 28 Aug 2023 23:15:41 +0800 (CST)
+Received: from localhost.localdomain (161.142.156.149) by EXMBX166.cuchost.com
+ (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Mon, 28 Aug
+ 2023 23:15:38 +0800
+From: Joshua Yeong <joshua.yeong@starfivetech.com>
+To: <linux-i3c@lists.infradead.org>
+CC: Joshua Yeong <joshua.yeong@starfivetech.com>
+Subject: [PATCH] i3c: master: cdns: Fix reading status register
+Date: Mon, 28 Aug 2023 23:14:58 +0800
+Message-ID: <20230828151458.15085-1-joshua.yeong@starfivetech.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230822051938.2852567-1-aniketmaurya@google.com>
-X-GND-Sasl: alexandre.belloni@bootlin.com
+X-Originating-IP: [161.142.156.149]
+X-ClientProxiedBy: EXCAS062.cuchost.com (172.16.6.22) To EXMBX166.cuchost.com
+ (172.16.6.76)
+X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230827_154651_241075_94F20B0C 
-X-CRM114-Status: UNSURE (   8.36  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230828_081623_306515_A4CD0042 
+X-CRM114-Status: GOOD (  10.87  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,29 +66,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+IBIR_DEPTH and CMDR_DEPTH should read from status0 instead of status1
 
-On Tue, 22 Aug 2023 05:19:38 +0000, Aniket wrote:
-> When a I3C DT node has a static_addr and an init_dyn_addr,the
-> init_dyn_addr is reserved in i3c_master_bus_init() and then
-> the static_addr is reserved in i3c_master_early_i3c_dev_add().
-> But if the dynamic address is same as static then above
-> procedure would fail.
-> Add a check to pass i3c_bus_get_addr_slot_status() when static
-> and dynamic address are equal.
-> 
-> [...]
+Signed-off-by: Joshua Yeong <joshua.yeong@starfivetech.com>
+---
+ drivers/i3c/master/i3c-master-cdns.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-Applied, thanks!
-
-[1/1] i3c: master: Fix SETDASA process
-      commit: c6a7550458922181bb922863d5f5feaf3c453fe5
-
-Best regards,
-
+diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
+index 5b37ffe5ad5b..4a49c75a9408 100644
+--- a/drivers/i3c/master/i3c-master-cdns.c
++++ b/drivers/i3c/master/i3c-master-cdns.c
+@@ -192,7 +192,7 @@
+ #define SLV_STATUS1_HJ_DIS		BIT(18)
+ #define SLV_STATUS1_MR_DIS		BIT(17)
+ #define SLV_STATUS1_PROT_ERR		BIT(16)
+-#define SLV_STATUS1_DA(x)		(((s) & GENMASK(15, 9)) >> 9)
++#define SLV_STATUS1_DA(s)		(((s) & GENMASK(15, 9)) >> 9)
+ #define SLV_STATUS1_HAS_DA		BIT(8)
+ #define SLV_STATUS1_DDR_RX_FULL		BIT(7)
+ #define SLV_STATUS1_DDR_TX_FULL		BIT(6)
+@@ -1624,13 +1624,13 @@ static int cdns_i3c_master_probe(struct platform_device *pdev)
+ 	/* Device ID0 is reserved to describe this master. */
+ 	master->maxdevs = CONF_STATUS0_DEVS_NUM(val);
+ 	master->free_rr_slots = GENMASK(master->maxdevs, 1);
++	master->caps.ibirfifodepth = CONF_STATUS0_IBIR_DEPTH(val);
++	master->caps.cmdrfifodepth = CONF_STATUS0_CMDR_DEPTH(val);
+ 
+ 	val = readl(master->regs + CONF_STATUS1);
+ 	master->caps.cmdfifodepth = CONF_STATUS1_CMD_DEPTH(val);
+ 	master->caps.rxfifodepth = CONF_STATUS1_RX_DEPTH(val);
+ 	master->caps.txfifodepth = CONF_STATUS1_TX_DEPTH(val);
+-	master->caps.ibirfifodepth = CONF_STATUS0_IBIR_DEPTH(val);
+-	master->caps.cmdrfifodepth = CONF_STATUS0_CMDR_DEPTH(val);
+ 
+ 	spin_lock_init(&master->ibi.lock);
+ 	master->ibi.num_slots = CONF_STATUS1_IBI_HW_RES(val);
 -- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+2.25.1
+
 
 -- 
 linux-i3c mailing list
