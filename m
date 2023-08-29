@@ -4,52 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B882C83F11
-	for <linux-i3c@archiver.kernel.org>; Mon, 28 Aug 2023 15:21:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E184EC83F14
+	for <linux-i3c@archiver.kernel.org>; Tue, 29 Aug 2023 09:16:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Ij5I4TOJh0Rg2oHS6FQvcql9IPWIdX3A1ZWyW26eeto=; b=zRBl1ec1e1R35W
-	gGwdVfjIpU+s9K7G0fQov9ULbHhHmobOdi+DGm7oU9faMyUunRgnZaJZDMG4D0y0So/kA5hCJic4H
-	osKYEflJ2nk2mWcw1haD5nQo4AnI2w7GIr5xVvUZEv4DwyCgmFfoxi4YXpiAKXyzZ2rbU8D44vJ4F
-	IF+rsRfqanZbEpoevwPZe3+ESjWXOZ/xxOaPBOAsrxHI7Zty//BnrEBy/ZUfcN2UwP16AZJjGrOT7
-	VGyrvlONnWMR/P8QLvifwY+BJc6m56rWgQJUxLxiA3kelhHVsSjzDSN2gws0nK4m0PCVkhy+x1dTP
-	HYeVyHCH70RTP7BB/3Cw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ukcpAUmuqEWppJKdmjQbleqY8a6nD0W3YufD1tSp0SY=; b=awrqwKM+Sv5NoN
+	GoSkBHi8kz9uTHmYzS+0tZGRtszZzWk27O30RVVNrv4gxoP/ae7nIQ0C7fQ1rf67GiloJwdeZPgBj
+	+D71kYmdVp2X7qdvvxriT7vhQrVcB+o5kJ/2nUMMakG0bIamR82vbSgGysUdwmsOe1obSVMzo83Bh
+	oFPji+Yb4XmFhSscma1wi9ihqz/znNmfvRvwGu6wdtQKbScvyq9jAIgLXIM11oqV9qyR7e0nofY8X
+	tCv4/VZXX0Ywq7iGx3+NeIfqHTuag1O7E9/W+5myiDqlagcfKiLv44YVMFGRJKeBIe2l+RXkaT9S/
+	pbC/WSnEanGKADo3S9ZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qae3I-009mrS-18;
-	Mon, 28 Aug 2023 15:21:16 +0000
-Received: from ex01.ufhost.com ([61.152.239.75])
-	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qae3E-009mpf-1n
+	id 1qaupo-00B6oo-11;
+	Tue, 29 Aug 2023 09:16:28 +0000
+Received: from relay8-d.mail.gandi.net ([217.70.183.201])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1qaupg-00B6lm-03
 	for linux-i3c@lists.infradead.org;
-	Mon, 28 Aug 2023 15:21:14 +0000
-Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
-	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id 6A77924E057
-	for <linux-i3c@lists.infradead.org>; Mon, 28 Aug 2023 23:20:44 +0800 (CST)
-Received: from localhost.localdomain (161.142.156.149) by EXMBX166.cuchost.com
- (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Mon, 28 Aug
- 2023 23:20:43 +0800
-From: Joshua Yeong <joshua.yeong@starfivetech.com>
-To: <linux-i3c@lists.infradead.org>
-CC: Joshua Yeong <joshua.yeong@starfivetech.com>
-Subject: [PATCH] i3c: Add fallback method for GETMXDS CCC
-Date: Mon, 28 Aug 2023 23:20:35 +0800
-Message-ID: <20230828152035.15498-1-joshua.yeong@starfivetech.com>
-X-Mailer: git-send-email 2.25.1
+	Tue, 29 Aug 2023 09:16:26 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 508541BF207;
+	Tue, 29 Aug 2023 09:16:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1693300574;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=9vq4ofEpHyOMcy5b5TahWFabzG08hTAP6j/W1z24Ls4=;
+	b=EO9fZGZj4zW35tOltEoCC0KpG+J/t9xY52fGD7MMn72vc92p0culeB24Sgw72b9zWBgMUD
+	5VpQCIv7B2+DUz9b0Usyfy2zTQdDbEqrRqDulP6p3yMfFykZ73BfupGRbpbkyN4T8SZ+s6
+	USd0LZqzAkTcK3Po6m7jLwAsvEKZ8bA0ou9F9fxY78WLQI9ffiFmkGAKKlMIgCXfn1Q0Eb
+	qJMJNCVk6GO/jZhdtxBDbt6s3liyg5P/xI9TMDyeYvOpD2igO+ibBZ3zc12jd0VPt+l8Pp
+	BN2ZRWvewcN0gJ/KjqXTl/2xYSsEzIsrqs06RJnUSFAHfAscyD02TITD62DXbw==
+Date: Tue, 29 Aug 2023 11:16:11 +0200
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Conor Culhane <conor.culhane@silvaco.com>, Alexandre Belloni
+ <alexandre.belloni@bootlin.com>, linux-i3c@lists.infradead.org (moderated
+ list:SILVACO I3C DUAL-ROLE MASTER), linux-kernel@vger.kernel.org (open
+ list), imx@lists.linux.dev
+Subject: Re: [PATCH 2/2] i3c: master: svc: fix probe failure when no i3c
+ device exist
+Message-ID: <20230829111611.12f91348@xps-13>
+In-Reply-To: <20230828192502.3525418-2-Frank.Li@nxp.com>
+References: <20230828192502.3525418-1-Frank.Li@nxp.com>
+	<20230828192502.3525418-2-Frank.Li@nxp.com>
+Organization: Bootlin
+X-Mailer: Claws Mail 4.0.0 (GTK+ 3.24.33; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-X-Originating-IP: [161.142.156.149]
-X-ClientProxiedBy: EXCAS062.cuchost.com (172.16.6.22) To EXMBX166.cuchost.com
- (172.16.6.76)
-X-YovoleRuleAgent: yovoleflag
+X-GND-Sasl: miquel.raynal@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230828_082113_321385_9CC46A89 
-X-CRM114-Status: GOOD (  15.66  )
+X-CRM114-CacheID: sfid-20230829_021620_204782_F4368B0F 
+X-CRM114-Status: GOOD (  18.44  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -61,119 +72,44 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Some I3C hardware will report error when incorrect length is received from device. GETMXDS CCC are availble in 2 formats; without turnaround time (format 1) and with turnaround time (format 2). There is no mechanics to determine which format is supported by device. In case sending GETMXDS CCC format 2 resulted failure, try sending GETMXDS CCC format 1 instead.
-
-Signed-off-by: Joshua Yeong <joshua.yeong@starfivetech.com>
----
- drivers/i3c/master.c    | 33 ++++++++++++++++++++++++++++-----
- include/linux/i3c/ccc.h | 17 +++++++++++++++--
- 2 files changed, 43 insertions(+), 7 deletions(-)
-
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 351c81a929a6..8e6449ca724b 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -1076,10 +1076,37 @@ static int i3c_master_getmxds_locked(struct i3c_master_controller *master,
- 				     struct i3c_device_info *info)
- {
- 	struct i3c_ccc_getmxds *getmaxds;
-+	struct i3c_ccc_getmxds_turnaround *getmaxds_ta;
- 	struct i3c_ccc_cmd_dest dest;
- 	struct i3c_ccc_cmd cmd;
- 	int ret;
- 
-+	getmaxds_ta = i3c_ccc_cmd_dest_init(&dest, info->dyn_addr,
-+					 sizeof(*getmaxds_ta));
-+	if (!getmaxds_ta)
-+		return -ENOMEM;
-+
-+	i3c_ccc_cmd_init(&cmd, true, I3C_CCC_GETMXDS, &dest, 1);
-+	ret = i3c_master_send_ccc_cmd_locked(master, &cmd);
-+	if (ret) {
-+		goto alternative;
-+	}
-+
-+	if (dest.payload.len != 2 && dest.payload.len != 5) {
-+		ret = -EIO;
-+		goto out;
-+	}
-+
-+	info->max_read_ds = getmaxds_ta->maxrd;
-+	info->max_write_ds = getmaxds_ta->maxwr;
-+	if (dest.payload.len == 5)
-+		info->max_read_turnaround = getmaxds_ta->maxrdturn[0] |
-+					    ((u32)getmaxds_ta->maxrdturn[1] << 8) |
-+					    ((u32)getmaxds_ta->maxrdturn[2] << 16);
-+
-+alternative:
-+	i3c_ccc_cmd_dest_cleanup(&dest);
-+
- 	getmaxds = i3c_ccc_cmd_dest_init(&dest, info->dyn_addr,
- 					 sizeof(*getmaxds));
- 	if (!getmaxds)
-@@ -1090,17 +1117,13 @@ static int i3c_master_getmxds_locked(struct i3c_master_controller *master,
- 	if (ret)
- 		goto out;
- 
--	if (dest.payload.len != 2 && dest.payload.len != 5) {
-+	if (dest.payload.len != 2) {
- 		ret = -EIO;
- 		goto out;
- 	}
- 
- 	info->max_read_ds = getmaxds->maxrd;
- 	info->max_write_ds = getmaxds->maxwr;
--	if (dest.payload.len == 5)
--		info->max_read_turnaround = getmaxds->maxrdturn[0] |
--					    ((u32)getmaxds->maxrdturn[1] << 8) |
--					    ((u32)getmaxds->maxrdturn[2] << 16);
- 
- out:
- 	i3c_ccc_cmd_dest_cleanup(&dest);
-diff --git a/include/linux/i3c/ccc.h b/include/linux/i3c/ccc.h
-index ad59a4ae60d1..50ed41d4d5a1 100644
---- a/include/linux/i3c/ccc.h
-+++ b/include/linux/i3c/ccc.h
-@@ -269,14 +269,27 @@ enum i3c_tsco {
- #define I3C_CCC_MAX_SDR_FSCL(x)		((x) & I3C_CCC_MAX_SDR_FSCL_MASK)
- 
- /**
-- * struct i3c_ccc_getmxds - payload passed to GETMXDS CCC
-+ * struct i3c_ccc_getmxds - payload passed to GETMXDS CCC without turnaround
-+ * (format 1)
-+ *
-+ * @maxwr: write limitations
-+ * @maxrd: read limitations
-+ */
-+struct i3c_ccc_getmxds {
-+	u8 maxwr;
-+	u8 maxrd;
-+} __packed;
-+
-+/**
-+ * struct i3c_ccc_getmxds_ta - payload passed to GETMXDS CCC with turnaround
-+ * (format 2)
-  *
-  * @maxwr: write limitations
-  * @maxrd: read limitations
-  * @maxrdturn: maximum read turn-around expressed micro-seconds and
-  *	       little-endian formatted
-  */
--struct i3c_ccc_getmxds {
-+struct i3c_ccc_getmxds_turnaround {
- 	u8 maxwr;
- 	u8 maxrd;
- 	u8 maxrdturn[3];
--- 
-2.25.1
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+SGkgRnJhbmssCgpGcmFuay5MaUBueHAuY29tIHdyb3RlIG9uIE1vbiwgMjggQXVnIDIwMjMgMTU6
+MjU6MDIgLTA0MDA6Cgo+IElmIHRoZXJlIGFyZSBub3QgaTNjIGRldmljZSwgYWxsIGNjYyBjb21t
+YW5kIHdpbGwgZ2V0IE5BQ0suIFNldAoKCQlubwkJCQkJTkFDS2VkPwoKPiBpM2NfY2NjX2NtZDo6
+ZXJyIGFzIEkzQ19FUlJPUl9NMi4KClRoaXMgc2VudGVuY2Ugc2hvdWxkIGNvbWUgbGFzdCBhbmQg
+YmUgc2xpZ2h0bHkgbW9yZSBleHBsaWNpdC4KCj4gUmV0dXJuIHN1Y2Nlc3Mgd2hlbiBubyBpM2Mg
+ZGV2aWNlIGZvdW5kIGF0IHN2Y19pM2NfbWFzdGVyX2RvX2RhYV9sb2NrZWQoKS4KClBsZWFzZSBl
+eHBsYWluIHdoeSB0aGlzIGlzIGltcG9ydGFudC91c2VmdWwuCgo+IEZpeGVzOiBkZDNjNTI4NDZk
+NTkgKCJpM2M6IG1hc3Rlcjogc3ZjOiBBZGQgU2lsdmFjbyBJM0MgbWFzdGVyIGRyaXZlciIpCgpT
+aGFsbCB3ZSBjb25zaWRlciBhIGJhY2twb3J0IGludG8gc3RhYmxlIGtlcm5lbHM/Cgo+IFNpZ25l
+ZC1vZmYtYnk6IEZyYW5rIExpIDxGcmFuay5MaUBueHAuY29tPgo+IC0tLQo+ICBkcml2ZXJzL2kz
+Yy9tYXN0ZXIvc3ZjLWkzYy1tYXN0ZXIuYyB8IDEzICsrKysrKysrKysrLS0KPiAgMSBmaWxlIGNo
+YW5nZWQsIDExIGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCj4gCj4gZGlmZiAtLWdpdCBh
+L2RyaXZlcnMvaTNjL21hc3Rlci9zdmMtaTNjLW1hc3Rlci5jIGIvZHJpdmVycy9pM2MvbWFzdGVy
+L3N2Yy1pM2MtbWFzdGVyLmMKPiBpbmRleCA3NzBiNDBlMjgwMTVlLi5hNTYyMDEwM2FjYjczIDEw
+MDY0NAo+IC0tLSBhL2RyaXZlcnMvaTNjL21hc3Rlci9zdmMtaTNjLW1hc3Rlci5jCj4gKysrIGIv
+ZHJpdmVycy9pM2MvbWFzdGVyL3N2Yy1pM2MtbWFzdGVyLmMKPiBAQCAtNzg5LDYgKzc4OSw5IEBA
+IHN0YXRpYyBpbnQgc3ZjX2kzY19tYXN0ZXJfZG9fZGFhX2xvY2tlZChzdHJ1Y3Qgc3ZjX2kzY19t
+YXN0ZXIgKm1hc3RlciwKPiAgCQkJCSAqLwo+ICAJCQkJYnJlYWs7Cj4gIAkJCX0gZWxzZSBpZiAo
+U1ZDX0kzQ19NU1RBVFVTX05BQ0tFRChyZWcpKSB7Cj4gKwkJCQkvKiBObyBJM0MgZGV2aWNlcyBh
+dHRhY2hlZCAqLwo+ICsJCQkJaWYgKGRldl9uYiA9PSAwKQo+ICsJCQkJCWJyZWFrOwoKXG4gPwoK
+PiAgCQkJCS8qCj4gIAkJCQkgKiBBIHNsYXZlIGRldmljZSBuYWNrZWQgdGhlIGFkZHJlc3MsIHRo
+aXMgaXMKPiAgCQkJCSAqIGFsbG93ZWQgb25seSBvbmNlLCBEQUEgd2lsbCBiZSBzdG9wcGVkIGFu
+ZAo+IEBAIC0xMjYzLDExICsxMjY2LDE3IEBAIHN0YXRpYyBpbnQgc3ZjX2kzY19tYXN0ZXJfc2Vu
+ZF9jY2NfY21kKHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIgKm0sCj4gIHsKPiAgCXN0cnVj
+dCBzdmNfaTNjX21hc3RlciAqbWFzdGVyID0gdG9fc3ZjX2kzY19tYXN0ZXIobSk7Cj4gIAlib29s
+IGJyb2FkY2FzdCA9IGNtZC0+aWQgPCAweDgwOwo+ICsJaW50IHJldDsKPiAgCj4gIAlpZiAoYnJv
+YWRjYXN0KQo+IC0JCXJldHVybiBzdmNfaTNjX21hc3Rlcl9zZW5kX2JkY2FzdF9jY2NfY21kKG1h
+c3RlciwgY21kKTsKPiArCQlyZXQgPSBzdmNfaTNjX21hc3Rlcl9zZW5kX2JkY2FzdF9jY2NfY21k
+KG1hc3RlciwgY21kKTsKPiAgCWVsc2UKPiAtCQlyZXR1cm4gc3ZjX2kzY19tYXN0ZXJfc2VuZF9k
+aXJlY3RfY2NjX2NtZChtYXN0ZXIsIGNtZCk7Cj4gKwkJcmV0ID0gc3ZjX2kzY19tYXN0ZXJfc2Vu
+ZF9kaXJlY3RfY2NjX2NtZChtYXN0ZXIsIGNtZCk7Cj4gKwo+ICsJaWYgKHJldCkKPiArCQljbWQt
+PmVyciA9IEkzQ19FUlJPUl9NMjsKPiArCj4gKwlyZXR1cm4gcmV0Owo+ICB9Cj4gIAo+ICBzdGF0
+aWMgaW50IHN2Y19pM2NfbWFzdGVyX3ByaXZfeGZlcnMoc3RydWN0IGkzY19kZXZfZGVzYyAqZGV2
+LAoKClRoYW5rcywKTWlxdcOobAoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNj
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1pM2MK
