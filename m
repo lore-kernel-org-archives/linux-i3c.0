@@ -4,122 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9E67EC8734
-	for <linux-i3c@archiver.kernel.org>; Thu,  7 Sep 2023 14:44:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D643EEC875F
+	for <linux-i3c@archiver.kernel.org>; Thu,  7 Sep 2023 23:10:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Date:Message-Id:
+	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ghAaTrOMk65raNwNiJdFhxmCrVeeiC0He3Lqr37KXnU=; b=imVqqMcWTKj8fL
-	MKcp5qz1TEO0dJ+k5iUrQL9pcTxc0d/MrzHufibXmb1kXSHcZ7Ig2apcrV88nxsMCh4YHu8RIqNHX
-	Zd8PulflQeHM1cQxZ+Xd7edDujS/yS9iv7TV2b9R3FSgDj4P3DCRBXgAm886l7ljF4qnEF5RS+Era
-	DvtWAn5PBcDuzxWftBilvZINKJADLqqQ0MoooEo+L6C5d4Blcjy24is9dYJWlU1m7yE0ZsjH7ZPla
-	pcWH3jhnXZSFPy3bKKIbhypvIV0UaWNhmniOGILCyYzBzf8w/DRhp+KwTQvJKneKibL0zbYrCvr7N
-	5UHYlYOP8lislplk/uWQ==;
+	List-Owner; bh=rTyzbJZ9jVWctdNPNCdTVkhlrdSdpukjeiqLplhNUPw=; b=xZpbE2r1mukH8D
+	qJhXkiYqVk7oa1eua9SvuKybElcYad535sqFNeLiJ1n1d3p/d6j3mY1Tl+eiA0djAIB1n7q9JrO8K
+	hlZ6+QSNFLK+JU+ERZvGnx4ysDcRkgz0Eq8BAXUdFj5B3OkgAZXT32A59GBGRQHoNI1oD31mKYJy0
+	Q2biEdAvyDE3AxIHIdYDt+Wd7ZVgQldVOBKOOawAhar4x5TPXEHvFqvJF/OH3woOAnFyHp1ehY/AO
+	UJgTy1ZTZDwx4Bai2UzeRT1jXfu2muc4i38EhYVvpac1cUX+RLhU7sHSLins8mTBxMiVHrPv6OY7e
+	3QfNLjeRfrU+9FI1viGw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qeGFG-00CDBF-2u;
-	Thu, 07 Sep 2023 14:44:34 +0000
-Received: from mail-am6eur05on20616.outbound.protection.outlook.com ([2a01:111:f400:7e1b::616] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1qeO9C-00Cn0A-0c;
+	Thu, 07 Sep 2023 23:10:50 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qeGFE-00CDAn-2o
+	id 1qeO99-00CmyX-2H
 	for linux-i3c@lists.infradead.org;
-	Thu, 07 Sep 2023 14:44:34 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=NGHqcQqwdLy1ARDVulOJgV1lkESN3Gcqdks9SSSRfgDKQm6YmNEtLVzf1nwkfx2rLEYWtN+ksJNQmu6YI0gRWyN74Eu8MwZSy4UcvDIbOUXnFz9mOlKdfqv2oI2Fj5ethqIcj3hIx8pofqWmq4KKlrqDu2zOYOMMVzuDhVAJVSeLobTu+Uu9YmilyYcF6ckA+39AmU2Mh8fpnrwJfRUSDI5ZQ5xiyDxKU0UJVS2Cht3SvsXj8NVt5cMb+dWqWMqzZpS6a/1chcILqm771/5E6lCfKPa/XBmX+b/Q1gLsJUk19YUDE9jzqMGS4et6sMIcPmBTySNPXcqrd71vNPvblQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=HogHCOuUF2Rn3dRl2Mz5hHSZ5NQqH4hr4gu/McGOOTM=;
- b=aS6jckBklpnObH6cmxEb3ZAbeNUYUP9eh7LFLBYmMTzrzwXjfYPXz1vE9aFmw7HO1qpGdbG8g0N4si/ASG2tF9+wszDEuCD4+pmuJ/X3cP+09F0psmIeUQZckTlehePIsoeLjqcvBYJaWZmE7hWrYzpGCwz4hi6MYMyq9p/QmGyIDukz5gdMPjmdCgTFRAyouXgKpBcfz3SuAMXKm86CcsQrdahCbd4mT7zD6rE7+gEEquTqzcydErSs4Nz5yHkwXdA+HyVPkCwvF8BoOspVEWyDiqyJYEhKDi+ZbOoz/K3RZMo8yMBNc9AbKq36DSnG8hYml/qeF1IX/tjiYMDX6w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HogHCOuUF2Rn3dRl2Mz5hHSZ5NQqH4hr4gu/McGOOTM=;
- b=UfJi4vpfSXzBs+ryYjMaGnYsGxk+78bPZnWOqpyK/RIIhEFgez3yhCUq3HQljssxiC8oDsNYn9Fl2WGLjauSQvAC80jecxAx8SLEokkGbajX/lPbVHg54ljNalPQ7Epm7WQS9Gxb4cSNABqsskqK6eV4cGScOmWREzW5W3MkZxU=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM6PR04MB4838.eurprd04.prod.outlook.com (2603:10a6:20b:4::16)
- by AM8PR04MB7250.eurprd04.prod.outlook.com (2603:10a6:20b:1dc::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6745.36; Thu, 7 Sep
- 2023 14:29:03 +0000
-Received: from AM6PR04MB4838.eurprd04.prod.outlook.com
- ([fe80::aa90:117d:c1d0:346a]) by AM6PR04MB4838.eurprd04.prod.outlook.com
- ([fe80::aa90:117d:c1d0:346a%3]) with mapi id 15.20.6745.034; Thu, 7 Sep 2023
- 14:29:03 +0000
-Date: Thu, 7 Sep 2023 10:28:51 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: miquel.raynal@bootlin.com, alexandre.belloni@bootlin.com,
-	conor.culhane@silvaco.com, imx@lists.linux.dev,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [RFC PATCH 4/9] dt-bindings: i3c: svc: add compatible string
- i3c: silvaco,i3c-slave-v1
-Message-ID: <ZPneI4KUw8UXBUze@lizhi-Precision-Tower-5810>
-References: <20230905213842.3035779-1-Frank.Li@nxp.com>
- <20230905213842.3035779-5-Frank.Li@nxp.com>
- <e9880548-11c5-2790-7c77-7ca031849182@kernel.org>
-Content-Disposition: inline
-In-Reply-To: <e9880548-11c5-2790-7c77-7ca031849182@kernel.org>
-X-ClientProxiedBy: BY5PR17CA0050.namprd17.prod.outlook.com
- (2603:10b6:a03:167::27) To AM6PR04MB4838.eurprd04.prod.outlook.com
- (2603:10a6:20b:4::16)
-MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM6PR04MB4838:EE_|AM8PR04MB7250:EE_
-X-MS-Office365-Filtering-Correlation-Id: 156087e2-b07e-4e6d-13cd-08dbafaec8f4
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: +QsZaOP98aASuudS20sVHBjuGMrTgkYKU2LTDmHaHYJuuVt2+QUSj5mbZb/are5WdE7RsH7bzhQaTdHZm1PrxegOKQUxtrTkJ+4eYYzLH8FYB6MNXD31xoyy8crjvB4fpAoyM2zRBfA8K9UITLCm49Z6Ij5ShHi42EiaGDaClsv8s9ZLJZhPA1dojsYK8icJT8rG0ikXUVbo4KkibnUqT7+4HOdnLCo0YV+K7a4VurVh/ryoPuZNbiTocjjiZylxUblbgbtjKAGeaScfZ2/cziYocgj/V+fjey2oJA2Rprlxg4Qz3qfRpdBhEC682MZXbIIKwkpkkd4FeIttHcClp0Dn94o86wrLfqFAVBPN4Zb6RuamckWf8/euRnUXMfQdQCYZebEcFK0shb7/Air5JWmYaXyCZfG6Ago9N3OAgtv5cM8YJT9wu4UNOkoSlseFF6a1mwLYGQGBqBpdn+ZLY9ThzC+chRFyd0vP6VNbZ3hBA5NXkpkyb7ZV7Q8Srh5Wr1KOGOTQ+v1/5/6ahfvK2lrqDPxR8NlbJ/foW8UBiGuw3axPRAUkMj83GGqIhwSggvn2OoeC0JAjzrnERwDZZli9QEdIuPCDHywaSphaCoEAQfiq0zEGmF9+Mut/1653d86LfKdF5dpDkPI4TQSXKrqYMwOqrK5dCiji++TETLI=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM6PR04MB4838.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(7916004)(376002)(366004)(136003)(396003)(39860400002)(346002)(1800799009)(451199024)(186009)(6666004)(52116002)(53546011)(6486002)(6506007)(38100700002)(86362001)(38350700002)(26005)(9686003)(6512007)(478600001)(8936002)(8676002)(5660300002)(4326008)(2906002)(66556008)(66476007)(6916009)(316002)(66946007)(33716001)(41300700001);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?KUf8xRbmvSZ8bCc06q26ljkE0kc7mikuepvitijJmD47b803qW20z+z9Lx7S?=
- =?us-ascii?Q?IkZhm1nk5irwiq5rLXcwU02p6prsbdF8oa/6fxWAkMCdJ5NGq/KBIG4wi9ts?=
- =?us-ascii?Q?R29t8mzYMMYCUBmW2NLveubR3dEy2sQ9UvPR1a4kYWyNOVFdp9UFY7Opa97h?=
- =?us-ascii?Q?fK0MU3AMAOqFxNDxCu5oYojUod/Fw1kMiv+90uyocEI7j5XVIW4tCYmxSezG?=
- =?us-ascii?Q?aibyb8kWglJBXOzKiAa9NYLgrbQ8eY0ssiv1oVnwsCmfaYSFup0OazkC4peh?=
- =?us-ascii?Q?pS6H4tlA1v29XxMghEU9o5JVeqMKYoRMX0Ya3bvnC98Bvq66xiJL3oeOBUda?=
- =?us-ascii?Q?xY7WpurUFKvR4hxA/fo2ddx/8xBxUpMZI8onAEuhFRQz7dekmYD8fKESVuu+?=
- =?us-ascii?Q?EA84+R4a/LBst4i0HDZJw5b9AQ5PD7WozHc/VKuLgc4mBF14YItSW42wFXlQ?=
- =?us-ascii?Q?uHfUgLbJRvCg3FOZpW6jMkqH5YXpS6r5OSbhhimFxLjnxEwBK09qOsyiBQbA?=
- =?us-ascii?Q?UtkQRj1LyC/MdfIl/4ivMZmeHnTLHVWwsyFLlAYcY+YXYfIZ0HrE3OrhzIYM?=
- =?us-ascii?Q?ONsp1bQhzp4Q4Xu59UCbghx5/kuMTU4APPVUTyASSe3F6I+IJLoHJJaUHwio?=
- =?us-ascii?Q?l39I37Gu/pxcHMUBm0XSpd9NFXeTocfpeR0UYMgVhb30waWbzDMzWNfRsEHH?=
- =?us-ascii?Q?vth6XH51On4dDG92vfRX0RbCVj/GPZf0mv65uMXC42AYNScKPUO7P98j7+6q?=
- =?us-ascii?Q?rk/E9Ye3A5k7S7Yrel197kznhIvACSkEGI3tQ0Ctf5iSJcszU6b10uE0ylnV?=
- =?us-ascii?Q?7bb2XQ+WvqFGnZcd97Xkwam/t1nTkj3++kqWlrMFsWwOml0pERLwZNgqICxq?=
- =?us-ascii?Q?pX4NmrwFL9Vcv34upzwVL3BXuSMyXdRVuq2DfQ+KjtaB/B4sinNY1QSZpEWv?=
- =?us-ascii?Q?WOMetiBQWS9cbH+w+ExjafvLfWNixX8ntxYCwCHW6W9phjSOvf50DD+uXXMr?=
- =?us-ascii?Q?mWBwJDxKfkUGYCZ8T35A5SuW0TFCND+llUUa2yLVmxSQhByCK9afp2AZXBMK?=
- =?us-ascii?Q?4+K5kixI01Sm9TuqxzFRfvSOUbMXqD7I6gXiYhPyMC01eIKgjlULed9ykysE?=
- =?us-ascii?Q?2VQlP0k2Iomr1lBlnk+sSsL56fonie2a2dXtATbVQmKRuj7D6Zg6QxW4WStS?=
- =?us-ascii?Q?eZulJkWXnz16uL7e7nlH65liTweYH7aydYJ4//tFQ5Ki5Fun4SKrH3TyIBYp?=
- =?us-ascii?Q?KRtqFrjh6QGVWuyLwibHkKiBifTCuG6oNPP73bmO2IBWhi6ylDCsn152o52J?=
- =?us-ascii?Q?k7jXsn3HAQEzhGfCavIbolkfA/aYUHmZYba/uwxH8oyZY/nGu4WPFjxjmY7T?=
- =?us-ascii?Q?4r4imn7gSGSwuzyuZUUg+IKfIHsG0ubruHIESEqhLwNGCOwJcGCR8u0H+DC4?=
- =?us-ascii?Q?gHLOXrNfzY7VWOGxsVeaB0HGVTsHDivsgryNK1KWI1VZ1FMJ7QNxh3F8r9rv?=
- =?us-ascii?Q?tYlolXAYXcX3LW+L7Nhx3/AYo9LBSrkeK2DnTYc4sJrQ5an+KydttJ/LsHJm?=
- =?us-ascii?Q?TqinWSos4eMPQGJJYWAc17FaJTg13y3pWRZBF58k?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 156087e2-b07e-4e6d-13cd-08dbafaec8f4
-X-MS-Exchange-CrossTenant-AuthSource: AM6PR04MB4838.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 Sep 2023 14:29:03.5736
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: K7l27WPsvL0Tq9F2h1bWtb7fvp/JapwSkO1ddopiL1P2891VbpcWtQD3lUgL/31u28i7EpUhVKJXdjRkN6pu9w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM8PR04MB7250
+	Thu, 07 Sep 2023 23:10:49 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by ams.source.kernel.org (Postfix) with ESMTPS id 922A6B81FDD;
+	Thu,  7 Sep 2023 23:10:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 36810C433C7;
+	Thu,  7 Sep 2023 23:10:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1694128244;
+	bh=6gWp2LzWin1oNp74f1oWXGDjZIu3aUVYay4jiJw+Pas=;
+	h=Subject:From:In-Reply-To:References:Date:To:Cc:From;
+	b=Sdy0QlZx9F7DFfWW1TG0Ct7xAzGMBo93ZdTQNLuzkZqRDprHof+ef0n37uhNiLtNW
+	 7vCm7FvlDvCuJk1C+6DdWGmPHjBQJFsKRlCejJB6ddKaM7T7wkLwus+vvcwyDx0MnL
+	 JsgNLacFhGRkZdpVcMQYe+Ty0QfigEcZ/etOb/LaRZE8jSm2Ka/6adK4dMmjDWa4IR
+	 XpFHV1ufxaYfhLLTyuCI71SqTgx+niulbC4Bw5MB7qK8s5LMuKgr1Mtt8uxw9QA5ag
+	 nv70J1DOIT/IK6cEFebj0cQEnz2+J30rXDl24HgG3Mqr3qlplvVyarD84StNYLaDOI
+	 M1U2r0FKqil9Q==
+Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id 25666C4166F;
+	Thu,  7 Sep 2023 23:10:44 +0000 (UTC)
+Subject: Re: [GIT PULL] I3C changes for 6.6
+From: pr-tracker-bot@kernel.org
+In-Reply-To: <20230906220710e64b2b71@mail.local>
+References: <20230906220710e64b2b71@mail.local>
+X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
+X-PR-Tracked-Message-Id: <20230906220710e64b2b71@mail.local>
+X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-6.6
+X-PR-Tracked-Commit-Id: 6e13d6528be2f7e801af63c8153b87293f25d736
+X-PR-Merge-Tree: torvalds/linux.git
+X-PR-Merge-Refname: refs/heads/master
+X-PR-Merge-Commit-Id: e59a698b2d89b95471769c901d12392134c56eab
+Message-Id: <169412824414.8351.10637565613849854944.pr-tracker-bot@kernel.org>
+Date: Thu, 07 Sep 2023 23:10:44 +0000
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: Linus Torvalds <torvalds@linux-foundation.org>, linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230907_074432_913749_4FE69A47 
-X-CRM114-Status: GOOD (  17.39  )
+X-CRM114-CacheID: sfid-20230907_161047_904500_EF1BD42B 
+X-CRM114-Status: UNSURE (   4.24  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,48 +78,24 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Sep 06, 2023 at 10:01:40AM +0200, Krzysztof Kozlowski wrote:
-> On 05/09/2023 23:38, Frank Li wrote:
-> > Add compatible string 'silvaco,i3c-slave-v1' for slave mode.
-> > 
-> 
-> No, it's the same device.
-> 
-> Anyway, this was not tested.
-> 
-> Please use scripts/get_maintainers.pl to get a list of necessary people
-> and lists to CC. It might happen, that command when run on an older
-> kernel, gives you outdated entries. Therefore please be sure you base
-> your patches on recent Linux kernel.
-> 
-> You missed at least devicetree list (maybe more), so this won't be
-> tested by automated tooling. Performing review on untested code might be
-> a waste of time, thus I will skip this patch entirely till you follow
-> the process allowing the patch to be tested.
-> 
-> Please kindly resend and include all necessary To/Cc entries.
+The pull request you sent on Thu, 7 Sep 2023 00:07:10 +0200:
 
-Thank you for your comments. I write notes at RFC cover letter, this
-patches is not totally completed yet. I want to get more feedback about
-i3c slave mode API and configfs design, which will impact the overall
-design.
+> git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-6.6
 
-So I have not included tty mail list and you in review list.
-I send out all patches just because let i3c reviewer know how to use these
-API. 
+has been merged into torvalds/linux.git:
+https://git.kernel.org/torvalds/c/e59a698b2d89b95471769c901d12392134c56eab
 
-Frank
+Thank you!
 
-> 
-> 
-> Best regards,
-> Krzysztof
-> 
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.docs.kernel.org/prtracker.html
 
 -- 
 linux-i3c mailing list
