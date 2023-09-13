@@ -4,62 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47425EEB596
-	for <linux-i3c@archiver.kernel.org>; Wed, 13 Sep 2023 06:43:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48E88EDEC7C
+	for <linux-i3c@archiver.kernel.org>; Wed, 13 Sep 2023 15:50:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jm/z0GYVULF8yk+5QZjA29fTz0UWvnATA343TdTAGdw=; b=nKvjTlubL/GRG/
-	iXBWOdF7pzOTK8vKnhApaAzzJ2oq8vedYTvZj12nlfT7H8RzAIXGGwZIHjSJD3gqH7mWo0B+GXG13
-	XA1PSlsJp9Q7FKQp1/Jy7uSR5NV0X18NEe3f8CiAQBX9Q+5KggpH6Q6BUoijl2YeyzzAwLWfhqdH9
-	s7G37H7ogANBdhrkiU9+ukmtZoUAN5M8AOVLlEa7GqemgCsNyqrWD3pidnbK6lYAQ2lCZ4xml1YGj
-	YPA+fIfiwEOBABUg56mWtc16HEuPIrIxLse0GrD0w8sKLRqGxgwpbkcKmCxMDyYeU/G3nhkKcE2FM
-	oMqz48v4T7xciTs030Qg==;
+	List-Owner; bh=oiPfw3SUjB5fiYpDbbSn50MN8hAaGOD5oE4f7FUtV0E=; b=zdAe8MgJihxDvt
+	Th1BT1xVqt6rkWnlM+DB07QodvDdeY8G2lCklMlX2ZZThUVyya2lR6bQ3l2P+iVNKw1VpL8v8pIxV
+	zDfFC7MXg8BQ1ubZWHRF9Yf/Z97VJL02TJYc0gaRXoD3N62Izn5tBY+BGzr5Y343LpzHRekZBgpJn
+	WvtIHA7T73Zrbd+FQoF2RAEE9KKb5fPWV6IKgVWcXUnj+fgk6BzkaMQ2gnRMQFA3NyT/HeACwHNlj
+	jvPDJEHW9z5pUgYvzVRLS2sBDTxXlSE/PnBA5+MWH+YlBA+nF5B5OD1OFJBHVTjeg8zJyIuBlW+hh
+	W8YvJa/DYygOsg3R+ZEg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qgJah-004puS-22;
-	Wed, 13 Sep 2023 06:43:11 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1qgS82-006HKT-29;
+	Wed, 13 Sep 2023 15:50:10 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qgJad-004psS-37
+	id 1qgS80-006HJb-0P
 	for linux-i3c@lists.infradead.org;
-	Wed, 13 Sep 2023 06:43:09 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id C8A52E0005;
-	Wed, 13 Sep 2023 06:43:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1694587385;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=Ea7k9WOLK3tR/MQAggc+PLYXhMIIJtMQ+lzPVjE+cg0=;
-	b=HgfplnX22m1hVcMaY8EbaIfiFFjikEywwY94FdmPmRVtwjvHOEgfgxiwFOS6Gpo1Cz52bA
-	2f1hPn9xwdZLPv4+94PB8i9u1dTdE9i36jJ7gFbZGQA3hWX+HOY8FFYSW6j6FKenU/3o9u
-	5u7OBQiLYVjyoBSZt1wAwY2ysvbiSuGwSO0fM5NOI5cUXXQTTvAS2Pe4W0imz8pg5+RKFz
-	ux7Ja2fQAdTxQfagMZl7oyOFHRCM1TB35c9AZp/mLHALOrLS129j7Vu3MO/OwmrqQ/pYV9
-	gYhxhfXKNeYA3XJoVYi0MDzei1yKwTisSlXeups9APKxU36hXbhDdOcnjdyJwQ==
-Date: Wed, 13 Sep 2023 08:43:01 +0200
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Joshua Yeong <joshua.yeong@starfivetech.com>
-Cc: <pgaj@cadence.com>, <alexandre.belloni@bootlin.com>,
- <linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <stable@vger.kernel.org>
-Subject: Re: [PATCH v2 1/1] i3c: master: cdns: Fix reading status register
-Message-ID: <20230913084301.6b2191c2@xps-13>
-In-Reply-To: <20230913031743.11439-2-joshua.yeong@starfivetech.com>
-References: <20230913031743.11439-1-joshua.yeong@starfivetech.com>
-	<20230913031743.11439-2-joshua.yeong@starfivetech.com>
-Organization: Bootlin
-X-Mailer: Claws Mail 4.0.0 (GTK+ 3.24.33; x86_64-pc-linux-gnu)
+	Wed, 13 Sep 2023 15:50:09 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits))
+	(No client certificate requested)
+	by sin.source.kernel.org (Postfix) with ESMTPS id 82144CE2111;
+	Wed, 13 Sep 2023 15:50:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0E18DC433C7;
+	Wed, 13 Sep 2023 15:50:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1694620203;
+	bh=4cS9a9ki/iG8FGG+1HPrLkBPok8PcDHXuEtrMm83LOk=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=MACifao79fmPgw3Q6VWdxD5Kg3dOOmLcvkpKXWF7foUL6wVxnLHpkx7PkxplYuYZx
+	 rZ1uUvdccp2eCbCf5bRfz1GnELembTf0zGe5jpsKW4etePXS9xeBgfHgAUMpYmYxtr
+	 N0/MjPsFtNiFYennz6Z/wkp0SKF8zYekyCfgqSwAclTQrhUSpP7qZfBMhc1FfEmSIp
+	 pXjPKc+/UK0NbNtpOGLiB8ZituG0zZSRGb45HTIB7RIl/dsaHzVDUOJVRVRtdrJhKK
+	 ePX9k0XCcG9uw41lmPlcFUfKXejWA+XKJS7LUkzsnrPjOm5csX2HMCi0LB0G+aNm/z
+	 +JfoHeuQ6lfQA==
+Message-ID: <583b6ce6-48eb-9119-4f71-f9a5689354f2@kernel.org>
+Date: Wed, 13 Sep 2023 17:49:57 +0200
 MIME-Version: 1.0
-X-GND-Sasl: miquel.raynal@bootlin.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.15.0
+Subject: Re: [RFC PATCH 4/9] dt-bindings: i3c: svc: add compatible string i3c:
+ silvaco,i3c-slave-v1
+Content-Language: en-US
+To: Frank Li <Frank.li@nxp.com>
+Cc: miquel.raynal@bootlin.com, alexandre.belloni@bootlin.com,
+ conor.culhane@silvaco.com, imx@lists.linux.dev,
+ linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20230905213842.3035779-1-Frank.Li@nxp.com>
+ <20230905213842.3035779-5-Frank.Li@nxp.com>
+ <e9880548-11c5-2790-7c77-7ca031849182@kernel.org>
+ <ZPneI4KUw8UXBUze@lizhi-Precision-Tower-5810>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+In-Reply-To: <ZPneI4KUw8UXBUze@lizhi-Precision-Tower-5810>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230912_234308_287546_D205BF53 
-X-CRM114-Status: UNSURE (   6.33  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20230913_085008_376364_95E0ECC1 
+X-CRM114-Status: GOOD (  17.68  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,17 +77,51 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-SGkgSm9zaHVhLAoKam9zaHVhLnllb25nQHN0YXJmaXZldGVjaC5jb20gd3JvdGUgb24gV2VkLCAx
-MyBTZXAgMjAyMyAxMToxNzo0NSArMDgwMDoKCj4gSUJJUl9ERVBUSCBhbmQgQ01EUl9ERVBUSCBz
-aG91bGQgcmVhZCBmcm9tIHN0YXR1czAgaW5zdGVhZCBvZiBzdGF0dXMxLgo+IAo+IENjOiBzdGFi
-bGVAdmdlci5rZXJuZWwub3JnCj4gRml4ZXM6IDYwM2YyYmVlMmM1NCAoImkzYzogbWFzdGVyOiBB
-ZGQgZHJpdmVyIGZvciBDYWRlbmNlIElQIikKPiBTaWduZWQtb2ZmLWJ5OiBKb3NodWEgWWVvbmcg
-PGpvc2h1YS55ZW9uZ0BzdGFyZml2ZXRlY2guY29tPgoKUmV2aWV3ZWQtYnk6IE1pcXVlbCBSYXlu
-YWwgPG1pcXVlbC5yYXluYWxAYm9vdGxpbi5jb20+CgpUaGFua3MsCk1pcXXDqGwKCi0tIApsaW51
-eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNjCg==
+On 07/09/2023 16:28, Frank Li wrote:
+> On Wed, Sep 06, 2023 at 10:01:40AM +0200, Krzysztof Kozlowski wrote:
+>> On 05/09/2023 23:38, Frank Li wrote:
+>>> Add compatible string 'silvaco,i3c-slave-v1' for slave mode.
+>>>
+>>
+>> No, it's the same device.
+>>
+>> Anyway, this was not tested.
+>>
+>> Please use scripts/get_maintainers.pl to get a list of necessary people
+>> and lists to CC. It might happen, that command when run on an older
+>> kernel, gives you outdated entries. Therefore please be sure you base
+>> your patches on recent Linux kernel.
+>>
+>> You missed at least devicetree list (maybe more), so this won't be
+>> tested by automated tooling. Performing review on untested code might be
+>> a waste of time, thus I will skip this patch entirely till you follow
+>> the process allowing the patch to be tested.
+>>
+>> Please kindly resend and include all necessary To/Cc entries.
+> 
+> Thank you for your comments. I write notes at RFC cover letter, this
+> patches is not totally completed yet. I want to get more feedback about
+> i3c slave mode API and configfs design, which will impact the overall
+> design.
+> 
+> So I have not included tty mail list and you in review list.
+> I send out all patches just because let i3c reviewer know how to use these
+> API. 
+
+Other people send RFC and they, surprise, expect comments. Probably
+because RFC means Requests For Comments. If you do not expect comments,
+review, call it somehow else, like "BROKEN", so we will know to ignore it.
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
