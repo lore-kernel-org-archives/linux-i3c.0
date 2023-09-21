@@ -4,67 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00800CD495B
-	for <linux-i3c@archiver.kernel.org>; Thu, 21 Sep 2023 05:58:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93724CD495F
+	for <linux-i3c@archiver.kernel.org>; Thu, 21 Sep 2023 05:58:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n1a70ogWgGJ+P6EW2XLeUKDkXRXgenxPllyXTVPfGC8=; b=JWBb0BTK4kFx1p
-	cIiAygpNJq6mpmegEaCFNBROVQDtf/bSflzdiuZ4bRtacwcos1LsLXyvL0rHGsaNuxgZJ+mIKAnWK
-	tRWvWsI3Dwe49+C4C83VUIJ9xjkCMvHLuyemCdd96tcfTYTGIusmTQQVV0G26uY+ilXUz5+PIzFkS
-	IWBv+KVgM6HutS3WLidSGwng3wpROk/uLpf7afFk1Zby9aP0Uz0ARDGz87U0W2v+KetDUsi/EVApS
-	Xbaidu/EoSOUYWeF0usV7eJs7mz7HZPztfpCgokXJgTBFL9QUAFCbfg2c9/HiPSfSByPiBiMZppDZ
-	auJ5o522bz1o0bFk/Rkw==;
+	List-Owner; bh=KIQsFi1JxfbWtWKyXEbiEpOD7RPOHF4ZfzLddRWWPkE=; b=cGPDTLVdEPENuq
+	AfXN/yqIkTvbNZPj6tOzC4T0EMfJHADq08ASGaDOhrJGnoA/hC1VGwaXBrpLmAmQbZUPiwfKEstDf
+	Z2ICas+e2uCvpmg9ODAEtPKyxE4uoMQfiO44AngSjSGHpTfhubLBd2weeJEVCP38E/iVGJ0IjQNXE
+	E8JKyxIGdYCBAB9Jwft537u9R+KhdfFNbosoYKtonpGa6/VzC4uVr1AGTCBIveqMlp2FpzHA2FjVV
+	7rCpvxI/9chwD9s4Q/8eLDczvwXIuqJ4ueiY0wUMkauH8Bq4Xh82jfmdjJtP7iNOEE7yW4FpYO5pH
+	08qATaIDSE9pAw9TQOCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qjCha-005Dy0-2J;
-	Thu, 21 Sep 2023 05:58:14 +0000
+	id 1qjChb-005Dye-13;
+	Thu, 21 Sep 2023 05:58:15 +0000
 Received: from mgamail.intel.com ([192.55.52.151])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qjChW-005Dq5-1Q
+	id 1qjChX-005Dqh-2L
 	for linux-i3c@lists.infradead.org;
-	Thu, 21 Sep 2023 05:58:11 +0000
+	Thu, 21 Sep 2023 05:58:12 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1695275890; x=1726811890;
+  t=1695275891; x=1726811891;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=uE0F/QzPBdoeXwMytzILI4JZgY7ooRtAK/SuixUsuL8=;
-  b=l7IzpqJXmPedP9RLDLRERBpeorsnrf/4d8kpi3yhyzWhxFL06M4hrSJt
-   vXqxFmNJyJVyS5QwFTRnknYO26G02/8OdGka6xGyAYGHGBvVQimvIlNJ7
-   5GMNq+rLlvcNDY8nCwtjp1JUXHaYdBlJm9kOGCm0/47dkLdOk7npAUw7I
-   vyF6fOZdG8I3Xi9Q4htLTcwdUjqrQenZckujcNF4ZrMtDXwfP6uw9R7Is
-   0sPZeQmTfQIlQQ5Z/fGHiIPJSbtjKIUYs3EyCRrdbarLyVKGF+lSIbp5e
-   mG+krRlpGTY9RzunIQGhNGA0MwobPboPKNi0lZA3w0fBU83+TbsVDx8Wi
-   w==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10839"; a="360678502"
+  bh=3qJ1kbEKRiOKgUMdYKHwI/85YY4D8mBZHC6RBZZ0qcs=;
+  b=kPpHAcTxMd1/r7DXKz25pRDDZzGPTf4vwe8YQnc5sC8Z2bT7P4dOUN5z
+   22r7NreUcEs5tI6cEvSsv6FnRMN7TfWwnq96d7pioTAkHft8X++XMxN03
+   GkCQkCpz0Xo5TxFAMZQXoWxJW6WeupoHjRYOgGl6dGDFQxUj6fkZKbjmm
+   vg9paKDOLXG1vhmXEwlxEIC5k2hvLLaCkWr61i+ZvrM0CjGKohW7uKYwK
+   Lql0bQ+HLWETWaYnWe8otpDFxxl6B1UyA4heUZv6ozVYSACW3NI7uaWGL
+   bM5n96ivDT6ET0I4PvdPZwgTdZMmrTRcGdxFiv+9sOM/2nNXShyoNvMi8
+   g==;
+X-IronPort-AV: E=McAfee;i="6600,9927,10839"; a="360678506"
 X-IronPort-AV: E=Sophos;i="6.03,164,1694761200"; 
-   d="scan'208";a="360678502"
+   d="scan'208";a="360678506"
 Received: from fmsmga005.fm.intel.com ([10.253.24.32])
-  by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 20 Sep 2023 22:58:09 -0700
+  by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 20 Sep 2023 22:58:10 -0700
 X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6600,9927,10839"; a="1077771280"
+X-IronPort-AV: E=McAfee;i="6600,9927,10839"; a="1077771284"
 X-IronPort-AV: E=Sophos;i="6.03,164,1694761200"; 
-   d="scan'208";a="1077771280"
+   d="scan'208";a="1077771284"
 Received: from mylly.fi.intel.com (HELO mylly.fi.intel.com.) ([10.237.72.152])
-  by fmsmga005.fm.intel.com with ESMTP; 20 Sep 2023 22:58:05 -0700
+  by fmsmga005.fm.intel.com with ESMTP; 20 Sep 2023 22:58:08 -0700
 From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>
 Cc: linux-i3c@lists.infradead.org,
 	Jarkko Nikula <jarkko.nikula@linux.intel.com>
-Subject: [PATCH 09/12] i3c: mipi-i3c-hci: Do not unmap region not mapped for transfer
-Date: Thu, 21 Sep 2023 08:57:01 +0300
-Message-Id: <20230921055704.1087277-10-jarkko.nikula@linux.intel.com>
+Subject: [PATCH 11/12] i3c: mipi-i3c-hci: Resume controller explicitly
+Date: Thu, 21 Sep 2023 08:57:03 +0300
+Message-Id: <20230921055704.1087277-12-jarkko.nikula@linux.intel.com>
 X-Mailer: git-send-email 2.40.1
 In-Reply-To: <20230921055704.1087277-1-jarkko.nikula@linux.intel.com>
 References: <20230921055704.1087277-1-jarkko.nikula@linux.intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230920_225810_521386_15E5C7C1 
-X-CRM114-Status: GOOD (  10.20  )
+X-CRM114-CacheID: sfid-20230920_225811_795193_6F836F26 
+X-CRM114-Status: GOOD (  11.20  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,32 +81,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Fix following warning (with CONFIG_DMA_API_DEBUG) which happens with a
-transfer without a data buffer.
+On an HW I'm using in enabling work the RESUME bit is not set in the
+HC_CONTROLLER register when Host Controller goes to halt state. Value 1
+should mean controller is suspended when reading and writing 1 resumes it.
 
-	DMA-API: i3c mipi-i3c-hci.0: device driver tries to free DMA memory it has not allocated [device address=0x0000000000000000] [size=0 bytes]
-
-For those transfers the hci_dma_queue_xfer() doesn't create a mapping and
-the DMA address pointer xfer->data_dma is not set.
+Because of this erratic behaviour plain HC_CONTROL read and write back
+won't resume the controller. Therefore do it by setting the RESUME bit
+explicitly.
 
 Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
 ---
- drivers/i3c/master/mipi-i3c-hci/dma.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/i3c/master/mipi-i3c-hci/core.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-index 6c7eef17921a..00d20a020ffb 100644
---- a/drivers/i3c/master/mipi-i3c-hci/dma.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-@@ -347,6 +347,8 @@ static void hci_dma_unmap_xfer(struct i3c_hci *hci,
+diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+index d7fe8e62820a..1ae56a5699c6 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/core.c
++++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+@@ -174,8 +174,7 @@ static void i3c_hci_bus_cleanup(struct i3c_master_controller *m)
  
- 	for (i = 0; i < n; i++) {
- 		xfer = xfer_list + i;
-+		if (!xfer->data)
-+			continue;
- 		dma_unmap_single(&hci->master.dev,
- 				 xfer->data_dma, xfer->data_len,
- 				 xfer->rnw ? DMA_FROM_DEVICE : DMA_TO_DEVICE);
+ void mipi_i3c_hci_resume(struct i3c_hci *hci)
+ {
+-	/* the HC_CONTROL_RESUME bit is R/W1C so just read and write back */
+-	reg_write(HC_CONTROL, reg_read(HC_CONTROL));
++	reg_set(HC_CONTROL, HC_CONTROL_RESUME);
+ }
+ 
+ /* located here rather than pio.c because needed bits are in core reg space */
 -- 
 2.40.1
 
