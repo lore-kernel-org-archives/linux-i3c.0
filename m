@@ -4,67 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E64BCE7A88
-	for <linux-i3c@archiver.kernel.org>; Sat, 23 Sep 2023 08:59:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F270CE7A89
+	for <linux-i3c@archiver.kernel.org>; Sun, 24 Sep 2023 03:04:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tmlUNZDW8862dpEr34rxg+T2xLnEwhbq2G2j5JWi31Y=; b=Vney33Y22tgYs4
-	FtOEhBgw/yak9oD8qJXyV+8SdIi18oGjJ/QUnHHWAbQnpR9Qp66toO5srnNz0UeP2P+ap5XwfqjUK
-	tRgn3WYLQMsRs7m02JUzBODvWDl4Jpv4+aplDYXrBtiAxnNRa7UpD7xIqhSwqVNrXOrdTCRFNscDG
-	m1fIxHI/3ddMlgi9LaIl2tCoHJoiQ1q7DnkU8/LnkwRF81nsbzuhjMdriNNDYdY+5yf/FZYuO6l5V
-	YWE7e8gXx0SePlmi20JCFzCbzFzBBxDgVe+BSKNYSA9DiTem0C8VWy+marnf/Nhx4VydGEH/qz1Oo
-	OXtY8CbgnSWJmSxWDgYw==;
+	List-Owner; bh=otq21vEqIojsE6dhAIRKC6CnTbizdSntcaZrcMN0hkU=; b=r+IXPScT+eE8J5
+	GLQkQXowRfr3+AebBKhmme+wC0E0ImZZHTSf3LwFtn5EYUpUC2TT791ogZjtrCA3MvNm5R2bWjQTM
+	T7NVaJJigi7GolK85Fm25sLLWVskPly/4O+9w9O1n/kR3bT4CSAnBa+ftqW0fHRzKV3pnxZ7ac3Fz
+	jLv4AhqjQ2uczN08UidfThQx4Y7f9FbRo+J0Ymn9oQR91x3TwOy1gREo/MDOB59Tr05E5QD9wQpNy
+	RReoinLBa5rYDVewNgAPrc1dqQEOeiJ0a9u3/HFDo8KwkwbDLIuKDerUovhStYpzG33QhZ2SEeUh+
+	z7AXupA+g6xuEVZ9g+3w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qjyUD-00AfTu-2t;
-	Sat, 23 Sep 2023 08:59:37 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1qkFQP-00BhNS-2C;
+	Sun, 24 Sep 2023 03:04:49 +0000
+Received: from mail-oo1-xc29.google.com ([2607:f8b0:4864:20::c29])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qjyUB-00AfTH-0e
+	id 1qkFQM-00BhMl-2k
 	for linux-i3c@lists.infradead.org;
-	Sat, 23 Sep 2023 08:59:36 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 8287BB8249D;
-	Sat, 23 Sep 2023 08:59:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 69F15C433C8;
-	Sat, 23 Sep 2023 08:59:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1695459571;
-	bh=H52331EVg7A5/+bK/CkdwvyqaImONzevbLINXxNt+x4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=HpEvuWBfhxR/SSWFuXvHoDHil+6oKCVuE8hGCjzOfTPIWbeQ37p/iBHkPx++K+aS/
-	 bxkeIKDodmcyqytigm95aEYLKRC219jPm8VfdVuztMAj7pw3InXoRxqT+4k8FnTXbB
-	 I8ET3lUevsJrfaX9JEQWhhzGhALZ1+mUjE5ajXVgg9KFUIgcbDeE/QZIRp/+DKnQ8K
-	 iZuJC5+xl830vvBtIM/ZeHmUesP2/R4lWT0akhJuSpwPCumVrtmv1hNUk7VHq8KuFd
-	 DSNd7s2AtnjuJPQm2SBLPFvXa1WsR6FWkeLxO4v5aK6XcU+65V9JAhKFHIgJfFgH77
-	 pC/6S2SVGlhKA==
-Date: Sat, 23 Sep 2023 11:00:33 -0600
-From: "Gustavo A. R. Silva" <gustavoars@kernel.org>
-To: Kees Cook <keescook@chromium.org>
+	Sun, 24 Sep 2023 03:04:48 +0000
+Received: by mail-oo1-xc29.google.com with SMTP id 006d021491bc7-57656330b80so2601894eaf.3
+        for <linux-i3c@lists.infradead.org>; Sat, 23 Sep 2023 20:04:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=chromium.org; s=google; t=1695524680; x=1696129480; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=3sQ7m4xt0fK6eu4MW7lFXq5f5EhNnp1BBnPa+JfP91w=;
+        b=ORGPSXZMrQ0GPlKXkWXSgYW1vAPws+uUUdjkcWjcoVdyjQkCytOepf4F7VuXNNgojz
+         YGrEcKCeQyIQIZxAYahZ0VoY175O+v7UGKDT+TjvoHLpB34Z2N3kbuw3yjb9QUvqdmSw
+         QMLWRYYdn9n6X8kxsZ+7Lj4uoZM0J7FEMIOQ8=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1695524680; x=1696129480;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=3sQ7m4xt0fK6eu4MW7lFXq5f5EhNnp1BBnPa+JfP91w=;
+        b=qCONObQ6jA2PB3x6KQ0FRwfjAkb/F8DCYw0QkShAKcNMFcFFKAxYGHjESqC1OZ2Ern
+         bnnBsjCPfVt9GG/azkFVhLFqaADeyNYG6bioQMfJNu5UBWGPP2MyeG50BTZSRPMtdFpC
+         9rzLZYVRiBYUl11no/hdq5kVZ5oSYM2mjHSJDUPjY7P2TRdLQ2w5dy5uKfSs8bgkFYRT
+         xg+u4TuQlowIF9hbL3ftOiv1oSB5Nu3iKePCBhYmvMaiLsVHv5EI1qGAMjsR4Pz7iuKM
+         vx75sULb4jpwnCSC/Ov8fpvuCw/m1gRauZUmixgKVAzjT5AvMC0nA8NG4HNQ7TU0cbkz
+         d77Q==
+X-Gm-Message-State: AOJu0YyC2TRMu06q/lFixED67EtTKc0f16H2O6aTbMWrhcCQqKWituMf
+	IXRtEUO+OSovy89tu+ak3ybcAQ==
+X-Google-Smtp-Source: AGHT+IEyctQpGdRHVqfskRrctSvr+c0AutzD5V01OHg/wphX4795l8UXDPxsR/JiCrGwUFsS6seQ2g==
+X-Received: by 2002:a05:6358:991e:b0:141:d2d:6da7 with SMTP id w30-20020a056358991e00b001410d2d6da7mr4584544rwa.17.1695524680210;
+        Sat, 23 Sep 2023 20:04:40 -0700 (PDT)
+Received: from www.outflux.net (198-0-35-241-static.hfc.comcastbusiness.net. [198.0.35.241])
+        by smtp.gmail.com with ESMTPSA id rm10-20020a17090b3eca00b0027480345180sm7265781pjb.2.2023.09.23.20.04.39
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 23 Sep 2023 20:04:39 -0700 (PDT)
+Date: Sat, 23 Sep 2023 20:04:38 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Justin Stitt <justinstitt@google.com>
 Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Jeremy Kerr <jk@codeconstruct.com.au>,
-	Joel Stanley <joel@jms.id.au>, linux-i3c@lists.infradead.org,
-	Nathan Chancellor <nathan@kernel.org>,
-	Nick Desaulniers <ndesaulniers@google.com>,
-	Tom Rix <trix@redhat.com>,
-	Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
-	Matt Johnston <matt@codeconstruct.com.au>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	Jack Chen <zenghuchen@google.com>, linux-kernel@vger.kernel.org,
-	llvm@lists.linux.dev, linux-hardening@vger.kernel.org
-Subject: Re: [PATCH] i3c: dw: Annotate struct dw_i3c_xfer with __counted_by
-Message-ID: <ZQ8ZsQo4yvBwKn9w@work>
-References: <20230922175011.work.800-kees@kernel.org>
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-hardening@vger.kernel.org
+Subject: Re: [PATCH] i3c: replace deprecated strncpy
+Message-ID: <202309232003.05306BB415@keescook>
+References: <20230921-strncpy-drivers-i3c-master-c-v1-1-9fdb8d8169e1@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230922175011.work.800-kees@kernel.org>
+In-Reply-To: <20230921-strncpy-drivers-i3c-master-c-v1-1-9fdb8d8169e1@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230923_015935_422472_FF7E3523 
-X-CRM114-Status: GOOD (  15.46  )
+X-CRM114-CacheID: sfid-20230923_200446_895515_BFAB8431 
+X-CRM114-Status: GOOD (  14.13  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,50 +89,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Sep 22, 2023 at 10:50:11AM -0700, Kees Cook wrote:
-> Prepare for the coming implementation by GCC and Clang of the __counted_by
-> attribute. Flexible array members annotated with __counted_by can have
-> their accesses bounds-checked at run-time checking via CONFIG_UBSAN_BOUNDS
-> (for array indexing) and CONFIG_FORTIFY_SOURCE (for strcpy/memcpy-family
-> functions).
+On Thu, Sep 21, 2023 at 03:51:04AM +0000, Justin Stitt wrote:
+> `strncpy` is deprecated for use on NUL-terminated destination strings [1].
 > 
-> As found with Coccinelle[1], add __counted_by for struct dw_i3c_xfer.
+> We should prefer more robust and less ambiguous string interfaces.
 > 
-> [1] https://github.com/kees/kernel-tools/blob/trunk/coccinelle/examples/counted_by.cocci
+> We expect adap->name to be NUL-terminated based on i2c_adapter name use:
+> | dev_dbg(&adap->dev, "adapter [%s] registered\n", adap->name);
 > 
-> Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> Cc: Jeremy Kerr <jk@codeconstruct.com.au>
-> Cc: Joel Stanley <joel@jms.id.au>
-> Cc: linux-i3c@lists.infradead.org
-> Signed-off-by: Kees Cook <keescook@chromium.org>
+> NUL-padding does not seem to be required as `master` is zero-allocated
+> and `i3c_master_to_i2c_adapter` simply returns a field from within
+> `master`:
+> |       master = devm_kzalloc(dev, sizeof(*master), GFP_KERNEL);
+> ...
+> |      	struct i2c_adapter *adap = i3c_master_to_i2c_adapter(master);
+> ...
+> |       static struct i2c_adapter *
+> |       i3c_master_to_i2c_adapter(struct i3c_master_controller *master)
+> |       {
+> |       	return &master->i2c;
+> |       }
+> 
+> This means that `adap->name` should already be filled with NUL-bytes.
+> 
+> Considering the above, a suitable replacement is `strscpy` [2] due to
+> the fact that it guarantees NUL-termination on the destination buffer
+> without unnecessarily NUL-padding.
+> 
+> Link: https://www.kernel.org/doc/html/latest/process/deprecated.html#strncpy-on-nul-terminated-strings [1]
+> Link: https://manpages.debian.org/testing/linux-manual-4.8/strscpy.9.en.html [2]
+> Link: https://github.com/KSPP/linux/issues/90
+> Cc: linux-hardening@vger.kernel.org
+> Signed-off-by: Justin Stitt <justinstitt@google.com>
 
-Reviewed-by: Gustavo A. R. Silva <gustavoars@kernel.org>
+Looks right to me; straight replacement.
 
-Thanks
---
-Gustavo
+Reviewed-by: Kees Cook <keescook@chromium.org>
 
-> ---
->  drivers/i3c/master/dw-i3c-master.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-> index 9332ae5f6419..ef5751e91cc9 100644
-> --- a/drivers/i3c/master/dw-i3c-master.c
-> +++ b/drivers/i3c/master/dw-i3c-master.c
-> @@ -233,7 +233,7 @@ struct dw_i3c_xfer {
->  	struct completion comp;
->  	int ret;
->  	unsigned int ncmds;
-> -	struct dw_i3c_cmd cmds[];
-> +	struct dw_i3c_cmd cmds[] __counted_by(ncmds);
->  };
->  
->  struct dw_i3c_i2c_dev_data {
-> -- 
-> 2.34.1
-> 
-> 
+-- 
+Kees Cook
 
 -- 
 linux-i3c mailing list
