@@ -4,56 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7467CE79A1
-	for <linux-i3c@archiver.kernel.org>; Mon, 25 Sep 2023 21:36:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1881ECE79A6
+	for <linux-i3c@archiver.kernel.org>; Mon, 25 Sep 2023 21:36:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=elbOBNHEPNFxWKSGNYkprjA8wjjHM4lGGxN3JOGk6Fo=; b=rsaqcHRS5G422/
-	tb6XcsZ6DE2pqWc73Gn+2zA+hcuZn1WXh1hGoLuo1lkZZ4oPOK11WE9HbVcIIbIthz7cdlZsrejr5
-	HqLVP3YbHQD83tF7WgmHGcDZsLNC1hTEKdODt+DZrwap0Q/zYhJqW1NJT8/7Zk13VgnC9/31gag9Y
-	VSwgDXlx65RipRCNH6mBz5P5KZilLL8T7uu+Y7xcVuOzvETqcVBNQkHatebYpeh9IIctDv42W5Zn4
-	RW/Ng9iXRioifW5IHzXDyVv4mo9ZIL5mLQXDQ2m7n14OZj2i4fvg3/vfs5bqES3GdYrQepJHyv0s6
-	wOmRYnO7+OWWZsJBHPOg==;
+	List-Owner; bh=3OsIy3+UgV2XksBSi8WCdHAAvvcmsT6zUKXn+q4dLFc=; b=NalYkhOav4vFbW
+	RrNcrmemgNoWd/oOVneB9dXmp7U2tZNBpQTQPueWH2pezPeY8kwhg2KOQhFTU2sThWl95CIEUL4r0
+	ejCgOhWuGvqLe2iSa7KvijXG+syTW1rcK3Z7C3Q5Ika4bJwW4LE7SNpEZAjegvX5tWJUTV4tt9jRk
+	ayKYbIqx0As+uXyhQmtrC9yNi8NslPnxB34RotY6iLnJL8qbMOtWGPW2B+6PzYGZ6GlcjXDXSEHRn
+	I7qVfPr9mHuOVhU31oL55NcYzCgG9NGHU/XRYIEFgSkDpmlva1VJcwp7dHOkimvQHT3F9rynDMioZ
+	VPAkG7a4zhHjz2sOywMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qktFg-00F4Kn-0q;
-	Mon, 25 Sep 2023 21:36:24 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1qktFp-00F4N7-2d;
+	Mon, 25 Sep 2023 21:36:33 +0000
+Received: from relay8-d.mail.gandi.net ([2001:4b98:dc4:8::228])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qktFc-00F4KF-2n
+	id 1qktFm-00F4L8-2a
 	for linux-i3c@lists.infradead.org;
-	Mon, 25 Sep 2023 21:36:22 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id AEF2AFF802;
-	Mon, 25 Sep 2023 21:36:14 +0000 (UTC)
+	Mon, 25 Sep 2023 21:36:32 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id D0D4E1BF204;
+	Mon, 25 Sep 2023 21:36:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1695677774;
+	t=1695677787;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 in-reply-to:in-reply-to:references:references;
-	bh=o17xFITY4/tplzqCc9+CZ0IkAV4pFuD/dockO/Ut+E8=;
-	b=mTddVZws4wQoq4B0GXpIXKGUD6O+D8CiJ5TmrWB2quFdC5V4CdC4W10wYEa7GCNtoeAXuV
-	vI79QPSDwTZFW1S/fJ+hlqMl/IZQ916o17qWLPipU0pGGwz/otcDGG2HA6Ta9ZTmEQMhRh
-	TYz1HMDmAMfxU02NFRhQ6ImeS3HbcmDP00GPCCUveYKBg5VdjA5sRCTiu3krxxMO9IE5xD
-	UOIl/OOLw/P+nrdb9GYuTPZz1z1DOYF53pBYujXdABzyRVjb/fWTMf+2BlWxk0KJ+D02kJ
-	eFynX1JGLy06nzcajcBTRFHYnxFlpGvcKq+gCLftCnaYRm9AcUDzMO63pFWdVw==
-Date: Mon, 25 Sep 2023 23:36:14 +0200
+	bh=f2wGeLXAhYMiEQV6PFmquWY/Y7ZW7oHoV6lKqrItjsc=;
+	b=hUusch+GfAF5Yy9LLsV7BGQUOgUfBF8BuHtGScU1AZvzg+MZj+T7RiT3XkqLdYWec4QIvq
+	4PuJMapE5sP6X181rIbQcFfcF6H4g8hZi6WaBE7icYJ8DUCic9Msno6wgUQkg9sRcmo6on
+	pJqYDSYCzzCOkMiwiLfLCBgKRMHHZXZwc3g+jybZHtVBBMiZTsL4bJnWl0GSLMQA31YnnO
+	2VkRvsWMgwqBvzXgf4fvy0Psvi4NjlR1SUvEdZ0To6BjMKHAi0gxIv9cUWCJEZdm4YKTvt
+	kLnRib8IMWgjOUlHq8XyTP6lUm9ZCi8c4tJ5LPkQqTcAmh/Eey8HqY64KNM4qA==
+Date: Mon, 25 Sep 2023 23:36:26 +0200
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-Cc: linux-i3c@lists.infradead.org
-Subject: Re: [PATCH 00/12] i3c: mipi-i3c-hci: Enabling fixes
-Message-ID: <169567773740.243402.12753246943609556153.b4-ty@bootlin.com>
-References: <20230921055704.1087277-1-jarkko.nikula@linux.intel.com>
+To: pgaj@cadence.com, miquel.raynal@bootlin.com,
+	Joshua Yeong <joshua.yeong@starfivetech.com>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: Re: [PATCH v2 0/1] Cadence I3C Status Register Bit Mask Error
+Message-ID: <169567773732.243402.3105216980564759261.b4-ty@bootlin.com>
+References: <20230913031743.11439-1-joshua.yeong@starfivetech.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230921055704.1087277-1-jarkko.nikula@linux.intel.com>
+In-Reply-To: <20230913031743.11439-1-joshua.yeong@starfivetech.com>
 X-GND-Sasl: alexandre.belloni@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20230925_143621_074089_F8E4A584 
-X-CRM114-Status: GOOD (  11.17  )
+X-CRM114-CacheID: sfid-20230925_143630_982931_CF5529C5 
+X-CRM114-Status: UNSURE (   8.48  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,44 +74,22 @@ Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 
-On Thu, 21 Sep 2023 08:56:52 +0300, Jarkko Nikula wrote:
-> I've been hacking with an early MIPI I3C HCI version compatible
-> controller on our development HW. Basically a glue code registering the
-> "mipi-i3c-hci" platform device with some additional code for logic on top
-> of MIPI I3C HCI.
+On Wed, 13 Sep 2023 11:17:43 +0800, Joshua Yeong wrote:
+> I3C ibirfifodepth and cmdrfifodepth field should read from status0 instead of
+> status1. Update I3C slave macro.
 > 
-> This early MIPI I3C HCI version won't be productized and the glue code
-> won't be released in near future but I believe these patches might
-> benefit others who may be also enabling the MIPI I3C HCI on their HW.
+> Joshua Yeong (1):
+>   i3c: master: cdns: Fix reading status register
+> 
+>  drivers/i3c/master/i3c-master-cdns.c | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
 > 
 > [...]
 
 Applied, thanks!
 
-[01/12] i3c: master: Inherit DMA masks and parameters from parent device
-        commit: 0c35691551387e060e6ae7a6652b4101270c73cf
-[02/12] i3c: mipi-i3c-hci: Add MODULE_ALIAS
-        commit: f656f6bd22d7cd08b55c6495fcfaa391c2eb933f
-[03/12] i3c: mipi-i3c-hci: Fix DAT/DCT entry sizes
-        commit: 0676bfebf5766f0a60549f74ba597115028fa39c
-[04/12] i3c: mipi-i3c-hci: Fix out of bounds access in hci_dma_irq_handler
-        commit: 45a832f989e520095429589d5b01b0c65da9b574
-[05/12] i3c: mipi-i3c-hci: Remove BUG() when Ring Abort request times out
-        commit: 361acacaf7c706223968c8186f0d3b6e214e7403
-[06/12] i3c: mipi-i3c-hci: Set ring start request together with enable
-        commit: e141db842766b1d9af32030a842ceb5eaf389bbb
-[07/12] i3c: mipi-i3c-hci: Fix race between bus cleanup and interrupt
-        commit: 4e40642cdb621c669507d7ef098c93ff98e8747c
-[08/12] i3c: mipi-i3c-hci: Set number of SW enabled Ring Bundles earlier
-        commit: 7ccd40edc1f5c43e3f1c7d209336d3981943ab63
-[09/12] i3c: mipi-i3c-hci: Do not unmap region not mapped for transfer
-        commit: b8806e0c939f168237593af0056c309bf31022b0
-[10/12] i3c: mipi-i3c-hci: Fix missing xfer->completion in hci_cmd_v1_daa()
-        commit: 4c36f656b7d1fc00643730c5845c19b3e15be856
-[11/12] i3c: mipi-i3c-hci: Resume controller explicitly
-        commit: 3521fa63c1ee7414e6ba0fdf98b82b07939147d9
-[12/12] i3c: mipi-i3c-hci: Resume controller after aborted transfer
-        commit: fc9176e794d74baccb1e4ef41894ac141f524992
+[1/1] i3c: master: cdns: Fix reading status register
+      commit: 4bd8405257da717cd556f99e5fb68693d12c9766
 
 Best regards,
 
