@@ -4,60 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E66B3E7B61F
-	for <linux-i3c@archiver.kernel.org>; Wed,  4 Oct 2023 14:17:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06118E81E1F
+	for <linux-i3c@archiver.kernel.org>; Sat,  7 Oct 2023 05:51:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fvuPloibzw66o0OcmiXEzUztN+GgZTmzBYCPxoYlEEI=; b=kyNNmjyvFxuxh/
-	PWgeBIe1EvlxZ4Y0CVPJXuuKQ86PAvwaPLFfoKzlzS18bXPC9CPhHt++ODbYXmN4lTLOxwbACdac3
-	jEQYdhbBzKy/ZQgzcg7razkXCVPvQZBDqsNRsCZIn1QRvz9M4g3s1yGBILKd00FtHmTagxn0GYOvG
-	Q1x1ZBQIk8jGeyX5usF+LG8xccWWA5LdQX7mGuZKg04MVtMTDtmckqpUtr4LKrzlJL+2v/lGjoz3Z
-	+k0t840Zt++b30f8L3+yprgXThANh+E7AdhcLirK4lEdAE9r0bVYiSDgKaHT5RrWUl0ohHW7wOj8L
-	N84Am6xhCPwheKetOrLw==;
+	List-Owner; bh=u5ANugFchIaiOAEYnGjip+UA7RVx26BTdUr7NCeeVA0=; b=WIXv/OHSi3yzcI
+	qMkHuLnQSaVHzW/2M6hxPtmVt7Qea6Al24YLTrTtJZqeoSVr0NNz0N4XwRK17mOKCujVkkZcwuJuS
+	gKI0L5N3dxhxGLF2xTwhb+G5SFYaVSgGLQ8385aU2VbOQUzOEnP9uD/udP6JNMWMRGrOWeiMwcPUp
+	3nTpCqnn1jynL9ya1mBOdgh7soPDOEabQOBBjxf2q2I62IveE/OPxjWCMlUTFMS0zC5azo0HFxTLo
+	89oP6gqPwQriZzSJ4Vd+HHO5hmSfa+rSIKrz1mB1MXVVb3ZP8VOHsQ61RcqAejsTRs/uSekiibN+T
+	AuEs3pGDMv5MzdcaGu2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qo2gd-000CYO-1C;
-	Wed, 04 Oct 2023 14:17:15 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1qp0DM-0071Fs-0q;
+	Sat, 07 Oct 2023 05:51:00 +0000
+Received: from mgamail.intel.com ([134.134.136.126])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qo2gZ-000CXJ-11
+	id 1qp0DJ-0071EO-13
 	for linux-i3c@lists.infradead.org;
-	Wed, 04 Oct 2023 14:17:13 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 2AF27B81E71;
-	Wed,  4 Oct 2023 14:17:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 82DC2C433C7;
-	Wed,  4 Oct 2023 14:17:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1696429027;
-	bh=7ATEAWA0d7zV8d/5xNEL0X8Ri5dFJxCHFsqlexmSiBM=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=dk2zLmLMjH5d40IXFZYdPRHHLKWzHMqK22+XJxltzmW9+6Z3ug98wz0PWKyP1D0mM
-	 fUnALGNB15FyyiuLacLUpxgIwbvZTyQH2i/W7vVJohna1SWY11R0+PJzXqKJMs8D9p
-	 Uj7gV3nqcIdHtmgTYJsUPQdNIeT8EMOIKPaf4CSZ5ojc98AKILXzLaD0Bi81vAWbpP
-	 Ex5ri4uGStvhnv7cIaT0vv/ji3rKCdKYLb28CAlvJ6amazAefoEKdA9hRm46kXd2Em
-	 4WCzu4Eis6Ae/gOCWloziRf5pUSp/3Fkkp/09If2pZajoh5naEBlJJFOIOXC7VPjzM
-	 fGqaXYZ7sFOUw==
-Received: (nullmailer pid 2959614 invoked by uid 1000);
-	Wed, 04 Oct 2023 14:17:05 -0000
-Date: Wed, 4 Oct 2023 09:17:05 -0500
-From: Rob Herring <robh@kernel.org>
-To: Matt Johnston <matt@codeconstruct.com.au>
-Cc: linux-i3c@lists.infradead.org, Alexandre Belloni <alexandre.belloni@bootlin.com>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley <conor+dt@kernel.org>, Jonathan Corbet <corbet@lwn.net>, Miquel Raynal <miquel.raynal@bootlin.com>, Conor Culhane <conor.culhane@silvaco.com>, open list <linux-kernel@vger.kernel.org>, "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>, "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>
-Subject: Re: [PATCH] i3c: Fix typo "Provisional ID" to "Provisioned ID"
-Message-ID: <20231004141705.GA2947549-robh@kernel.org>
-References: <20231003075339.197099-1-matt@codeconstruct.com.au>
+	Sat, 07 Oct 2023 05:50:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1696657857; x=1728193857;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=dkHv+oAcL7tENq1Yd73stD/FY/Ihm49Ba/5lg337PbE=;
+  b=Ui2JauOdyJvIkyMau+h8cVWaOEcrqBNSThRbxo2MIduJxoRiPn2WlbvH
+   Vu4qXIIUr+hg03ThqCYt3xcQxRhFjRKzBkCBsQmI/Tpeyjq/z2+Crwi6o
+   U/gwO3Dc642S6R897sorwY1PB2P3/kgEs4ntB8O/HL+fIjnpXZB94QL6e
+   MMfKh4ycoipVF6PkT5q5RlooCXF9vEAbBb1UvukeWCk36nYmllFHpEJtz
+   9+zn1axrTSPn4c1ocEU6RBXdOgtWo0lfhFn+A1xrcqHRP4KRzyOwMbBA5
+   IavlMoUYrZSJfSdszNDrlqO/XX2mQTmhlrHrDQkovqTKWBKvJnVvszNOx
+   Q==;
+X-IronPort-AV: E=McAfee;i="6600,9927,10855"; a="368973972"
+X-IronPort-AV: E=Sophos;i="6.03,205,1694761200"; 
+   d="scan'208";a="368973972"
+Received: from fmsmga004.fm.intel.com ([10.253.24.48])
+  by orsmga106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Oct 2023 22:50:51 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6600,9927,10855"; a="822754753"
+X-IronPort-AV: E=Sophos;i="6.03,205,1694761200"; 
+   d="scan'208";a="822754753"
+Received: from lkp-server01.sh.intel.com (HELO 8a3a91ad4240) ([10.239.97.150])
+  by fmsmga004.fm.intel.com with ESMTP; 06 Oct 2023 22:50:47 -0700
+Received: from kbuild by 8a3a91ad4240 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1qp0D7-000425-2h;
+	Sat, 07 Oct 2023 05:50:45 +0000
+Date: Sat, 7 Oct 2023 13:50:44 +0800
+From: kernel test robot <lkp@intel.com>
+To: Matt Johnston <matt@codeconstruct.com.au>,
+	linux-i3c@lists.infradead.org, netdev@vger.kernel.org,
+	devicetree@vger.kernel.org
+Cc: oe-kbuild-all@lists.linux.dev, Jakub Kicinski <kuba@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>, Eric Dumazet <edumazet@google.com>,
+	Jeremy Kerr <jk@codeconstruct.com.au>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Rob Herring <robh+dt@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>
+Subject: Re: [PATCH net-next v4 3/3] mctp i3c: MCTP I3C driver
+Message-ID: <202310071339.iWeOdKQk-lkp@intel.com>
+References: <20231004031316.725107-4-matt@codeconstruct.com.au>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20231003075339.197099-1-matt@codeconstruct.com.au>
+In-Reply-To: <20231004031316.725107-4-matt@codeconstruct.com.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231004_071711_493861_F7D2CC27 
-X-CRM114-Status: UNSURE (   9.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20231006_225057_413551_5FF37CAE 
+X-CRM114-Status: GOOD (  12.32  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,22 +92,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Oct 03, 2023 at 03:53:39PM +0800, Matt Johnston wrote:
-> The MIPI I3C spec refers to a Provisioned ID, since it is (sometimes)
-> provisioned at device manufacturing.
-> 
-> Signed-off-by: Matt Johnston <matt@codeconstruct.com.au>
-> ---
->  Documentation/ABI/testing/sysfs-bus-i3c        | 4 ++--
->  Documentation/devicetree/bindings/i3c/i3c.yaml | 4 ++--
+Hi Matt,
 
-Acked-by: Rob Herring <robh@kernel.org>
+kernel test robot noticed the following build errors:
 
->  Documentation/driver-api/i3c/protocol.rst      | 4 ++--
->  drivers/i3c/master/svc-i3c-master.c            | 2 +-
->  include/linux/i3c/device.h                     | 2 +-
->  include/linux/i3c/master.h                     | 2 +-
->  6 files changed, 9 insertions(+), 9 deletions(-)
+[auto build test ERROR on net-next/main]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Matt-Johnston/dt-bindings-i3c-Add-mctp-controller-property/20231004-111533
+base:   net-next/main
+patch link:    https://lore.kernel.org/r/20231004031316.725107-4-matt%40codeconstruct.com.au
+patch subject: [PATCH net-next v4 3/3] mctp i3c: MCTP I3C driver
+config: x86_64-buildonly-randconfig-005-20231007 (https://download.01.org/0day-ci/archive/20231007/202310071339.iWeOdKQk-lkp@intel.com/config)
+compiler: gcc-7 (Ubuntu 7.5.0-6ubuntu2) 7.5.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20231007/202310071339.iWeOdKQk-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202310071339.iWeOdKQk-lkp@intel.com/
+
+All errors (new ones prefixed by >>):
+
+   In file included from drivers/net/mctp/mctp-i3c.c:13:0:
+>> drivers/net/mctp/mctp-i3c.c:710:12: error: initializer element is not constant
+     I3C_CLASS(I3C_DCR_MCTP, NULL),
+               ^
+   include/linux/i3c/device.h:166:10: note: in definition of macro 'I3C_CLASS'
+      .dcr = _dcr,      \
+             ^~~~
+   drivers/net/mctp/mctp-i3c.c:710:12: note: (near initialization for 'mctp_i3c_ids[0].dcr')
+     I3C_CLASS(I3C_DCR_MCTP, NULL),
+               ^
+   include/linux/i3c/device.h:166:10: note: in definition of macro 'I3C_CLASS'
+      .dcr = _dcr,      \
+             ^~~~
+
+
+vim +710 drivers/net/mctp/mctp-i3c.c
+
+   708	
+   709	static const struct i3c_device_id mctp_i3c_ids[] = {
+ > 710		I3C_CLASS(I3C_DCR_MCTP, NULL),
+   711		{ 0 },
+   712	};
+   713	
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-i3c mailing list
