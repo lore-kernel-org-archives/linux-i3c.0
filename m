@@ -4,78 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06118E81E1F
-	for <linux-i3c@archiver.kernel.org>; Sat,  7 Oct 2023 05:51:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F12F7E95A8E
+	for <linux-i3c@archiver.kernel.org>; Mon,  9 Oct 2023 02:55:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u5ANugFchIaiOAEYnGjip+UA7RVx26BTdUr7NCeeVA0=; b=WIXv/OHSi3yzcI
-	qMkHuLnQSaVHzW/2M6hxPtmVt7Qea6Al24YLTrTtJZqeoSVr0NNz0N4XwRK17mOKCujVkkZcwuJuS
-	gKI0L5N3dxhxGLF2xTwhb+G5SFYaVSgGLQ8385aU2VbOQUzOEnP9uD/udP6JNMWMRGrOWeiMwcPUp
-	3nTpCqnn1jynL9ya1mBOdgh7soPDOEabQOBBjxf2q2I62IveE/OPxjWCMlUTFMS0zC5azo0HFxTLo
-	89oP6gqPwQriZzSJ4Vd+HHO5hmSfa+rSIKrz1mB1MXVVb3ZP8VOHsQ61RcqAejsTRs/uSekiibN+T
-	AuEs3pGDMv5MzdcaGu2w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WizU4Aeczu8BC9TWfQHD4aNeIYN7Wa91jlxf7qxVTjM=; b=mS6UsJBg4l38NP
+	rUd8ZEpZrQexUiDz+kP6qd03+28axPpwu/AwpQOgdoQ9kblsnt2GB0HRURa6OLqNK79kOUIShE0Xe
+	Q9m8pljE4dh5F93lE0zcf7mJ0FWYHBE4Gq3/vCnZC6o6O7xO9Lg29deWQhbmrnEW/pmpZJBtL2W56
+	Ea8Zj9bqvesLDHJfbx4BxvBUm3sfeFNp1yBUEeggKzm2Iss4RVVGLUM2u3P+z3uCKsVBIQo+xeJvQ
+	Z/wjjoJqg3YmZDWcq4cW6FoL08meRIbxK7PAiFWMzAoaeXNqN0Lv61rl2JEzZrVRo8yaglxdzbUkn
+	i8TZAKpyjyjA4glysdkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qp0DM-0071Fs-0q;
-	Sat, 07 Oct 2023 05:51:00 +0000
-Received: from mgamail.intel.com ([134.134.136.126])
+	id 1qpgQO-009f7F-0a;
+	Mon, 09 Oct 2023 02:55:16 +0000
+Received: from pi.codeconstruct.com.au ([203.29.241.158] helo=codeconstruct.com.au)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qp0DJ-0071EO-13
+	id 1qpgQH-009f3Y-0h
 	for linux-i3c@lists.infradead.org;
-	Sat, 07 Oct 2023 05:50:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1696657857; x=1728193857;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=dkHv+oAcL7tENq1Yd73stD/FY/Ihm49Ba/5lg337PbE=;
-  b=Ui2JauOdyJvIkyMau+h8cVWaOEcrqBNSThRbxo2MIduJxoRiPn2WlbvH
-   Vu4qXIIUr+hg03ThqCYt3xcQxRhFjRKzBkCBsQmI/Tpeyjq/z2+Crwi6o
-   U/gwO3Dc642S6R897sorwY1PB2P3/kgEs4ntB8O/HL+fIjnpXZB94QL6e
-   MMfKh4ycoipVF6PkT5q5RlooCXF9vEAbBb1UvukeWCk36nYmllFHpEJtz
-   9+zn1axrTSPn4c1ocEU6RBXdOgtWo0lfhFn+A1xrcqHRP4KRzyOwMbBA5
-   IavlMoUYrZSJfSdszNDrlqO/XX2mQTmhlrHrDQkovqTKWBKvJnVvszNOx
-   Q==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10855"; a="368973972"
-X-IronPort-AV: E=Sophos;i="6.03,205,1694761200"; 
-   d="scan'208";a="368973972"
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
-  by orsmga106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Oct 2023 22:50:51 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6600,9927,10855"; a="822754753"
-X-IronPort-AV: E=Sophos;i="6.03,205,1694761200"; 
-   d="scan'208";a="822754753"
-Received: from lkp-server01.sh.intel.com (HELO 8a3a91ad4240) ([10.239.97.150])
-  by fmsmga004.fm.intel.com with ESMTP; 06 Oct 2023 22:50:47 -0700
-Received: from kbuild by 8a3a91ad4240 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1qp0D7-000425-2h;
-	Sat, 07 Oct 2023 05:50:45 +0000
-Date: Sat, 7 Oct 2023 13:50:44 +0800
-From: kernel test robot <lkp@intel.com>
-To: Matt Johnston <matt@codeconstruct.com.au>,
-	linux-i3c@lists.infradead.org, netdev@vger.kernel.org,
+	Mon, 09 Oct 2023 02:55:10 +0000
+Received: by codeconstruct.com.au (Postfix, from userid 10001)
+	id 2222520231; Mon,  9 Oct 2023 10:54:58 +0800 (AWST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=codeconstruct.com.au; s=2022a; t=1696820098;
+	bh=QxzJYY9A0zWCE2fJK6lM/URO1TayMPdW+FPIlE3Cck8=;
+	h=From:To:Cc:Subject:Date;
+	b=R7EL1nbjTRsm/43cr/HyKbDuxw5tF1Z8y9HY6pqXbFKDyap8KjZQxxxGlQY9if22N
+	 d+hLUekRKRpFe4VM8WvVoIDRqyM62UO2FqpdOyzIZf8jINrJDw+R46+bKrfziWMZtg
+	 FIBw6vlmrss3FEBN4TrtCuwBqIjPYlW0h6Pv0iAh55BnbhjjJCLoLH6ekEOydi65Sp
+	 YYvOZZmRh+6C2U3Gz4DH0lzHlzGNw/d6qtvrsUmbFAGfUeOI+eMtYNklH8uigA5L0j
+	 5/vyqeb8WPZ6wAY9+zgZEOTnvBq+nDp7VEpOpreCwXQAzsbCpIYV/wkJK6mASVGtZz
+	 7ilpymgpffUmA==
+From: Matt Johnston <matt@codeconstruct.com.au>
+To: linux-i3c@lists.infradead.org,
+	netdev@vger.kernel.org,
 	devicetree@vger.kernel.org
-Cc: oe-kbuild-all@lists.linux.dev, Jakub Kicinski <kuba@kernel.org>,
-	Paolo Abeni <pabeni@redhat.com>, Eric Dumazet <edumazet@google.com>,
+Cc: "David S. Miller" <davem@davemloft.net>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>,
+	Eric Dumazet <edumazet@google.com>,
 	Jeremy Kerr <jk@codeconstruct.com.au>,
 	Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>
-Subject: Re: [PATCH net-next v4 3/3] mctp i3c: MCTP I3C driver
-Message-ID: <202310071339.iWeOdKQk-lkp@intel.com>
-References: <20231004031316.725107-4-matt@codeconstruct.com.au>
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	miquel.raynal@bootlin.com
+Subject: [PATCH net-next v5 0/3] I3C MCTP net driver
+Date: Mon,  9 Oct 2023 10:54:46 +0800
+Message-ID: <20231009025451.490374-1-matt@codeconstruct.com.au>
+X-Mailer: git-send-email 2.42.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20231004031316.725107-4-matt@codeconstruct.com.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231006_225057_413551_5FF37CAE 
-X-CRM114-Status: GOOD (  12.32  )
+X-CRM114-CacheID: sfid-20231008_195509_445288_5B7ED677 
+X-CRM114-Status: GOOD (  11.64  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,54 +77,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Matt,
+This series adds an I3C transport for the kernel's MCTP network
+protocol. MCTP is a communication protocol between system components
+(BMCs, drives, NICs etc), with higher level protocols such as NVMe-MI or
+PLDM built on top of it (in userspace). It runs over various transports
+such as I2C, PCIe, or I3C.
 
-kernel test robot noticed the following build errors:
+The mctp-i3c driver follows a similar approach to the kernel's existing
+mctp-i2c driver, creating a "mctpi3cX" network interface for each
+numbered I3C bus. Busses opt in to support by adding a "mctp-controller"
+property to the devicetree:
 
-[auto build test ERROR on net-next/main]
+&i3c0 {
+        mctp-controller;
+}
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Matt-Johnston/dt-bindings-i3c-Add-mctp-controller-property/20231004-111533
-base:   net-next/main
-patch link:    https://lore.kernel.org/r/20231004031316.725107-4-matt%40codeconstruct.com.au
-patch subject: [PATCH net-next v4 3/3] mctp i3c: MCTP I3C driver
-config: x86_64-buildonly-randconfig-005-20231007 (https://download.01.org/0day-ci/archive/20231007/202310071339.iWeOdKQk-lkp@intel.com/config)
-compiler: gcc-7 (Ubuntu 7.5.0-6ubuntu2) 7.5.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20231007/202310071339.iWeOdKQk-lkp@intel.com/reproduce)
+The driver will bind to MCTP class devices (DCR 0xCC) that are on a
+supported I3C bus. Each bus is represented by a `struct mctp_i3c_bus`
+that keeps state for the network device. An individual I3C device
+(struct mctp_i3c_device) performs operations using the "parent"
+mctp_i3c_bus object. The I3C notify/enumeration patch is needed so that
+the mctp-i3c driver can handle creating/removing mctp_i3c_bus objects as
+required.
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202310071339.iWeOdKQk-lkp@intel.com/
+The mctp-i3c driver is using the Provisioned ID as an identifier for
+target I3C devices (the neighbour address), as that will be more stable
+than the I3C dynamic address. The driver internally translates that to a
+dynamic address for bus operations.
 
-All errors (new ones prefixed by >>):
+The driver has been tested using an AST2600 platform. A remote endpoint 
+has been tested against QEMU, as well as using the target mode support 
+in Aspeed's vendor tree.
 
-   In file included from drivers/net/mctp/mctp-i3c.c:13:0:
->> drivers/net/mctp/mctp-i3c.c:710:12: error: initializer element is not constant
-     I3C_CLASS(I3C_DCR_MCTP, NULL),
-               ^
-   include/linux/i3c/device.h:166:10: note: in definition of macro 'I3C_CLASS'
-      .dcr = _dcr,      \
-             ^~~~
-   drivers/net/mctp/mctp-i3c.c:710:12: note: (near initialization for 'mctp_i3c_ids[0].dcr')
-     I3C_CLASS(I3C_DCR_MCTP, NULL),
-               ^
-   include/linux/i3c/device.h:166:10: note: in definition of macro 'I3C_CLASS'
-      .dcr = _dcr,      \
-             ^~~~
+I3C maintainers have acked merging this through net-next tree.
 
+Thanks,
+Matt
 
-vim +710 drivers/net/mctp/mctp-i3c.c
+---
 
-   708	
-   709	static const struct i3c_device_id mctp_i3c_ids[] = {
- > 710		I3C_CLASS(I3C_DCR_MCTP, NULL),
-   711		{ 0 },
-   712	};
-   713	
+v5:
+
+- Use #define for constant initializer, fixes older gcc
+- Wrap lines at 80 characters, fix parenthesis alignment 
+
+v4:
+
+- Add asm/unaligned.h include
+
+v3:
+
+- Use get_unaligned_be48()
+- Use kthread_run()
+- Don't set net namespace
+
+v2:
+
+- Rebased to net-next
+- Removed unnecessary pr_ printing
+- Fixed reverse christmas tree ordering
+- Reworded DT property description to match I2C
+
+Jeremy Kerr (1):
+  i3c: Add support for bus enumeration & notification
+
+Matt Johnston (2):
+  dt-bindings: i3c: Add mctp-controller property
+  mctp i3c: MCTP I3C driver
+
+ .../devicetree/bindings/i3c/i3c.yaml          |   6 +
+ drivers/i3c/master.c                          |  35 +
+ drivers/net/mctp/Kconfig                      |   9 +
+ drivers/net/mctp/Makefile                     |   1 +
+ drivers/net/mctp/mctp-i3c.c                   | 769 ++++++++++++++++++
+ include/linux/i3c/master.h                    |  11 +
+ 6 files changed, 831 insertions(+)
+ create mode 100644 drivers/net/mctp/mctp-i3c.c
 
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+2.42.0
+
 
 -- 
 linux-i3c mailing list
