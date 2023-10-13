@@ -4,64 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C8C6E95A8F
-	for <linux-i3c@archiver.kernel.org>; Tue, 10 Oct 2023 10:13:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7D995CDB47E
+	for <linux-i3c@archiver.kernel.org>; Fri, 13 Oct 2023 04:06:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aJvnd0ZTLaOrnG7xIqGphPNSV3RRm+MCSSylk+vXLKk=; b=dZm6RQJCiayhpL
-	T9J77oe/qxRDJfjS0MpwmhdUfIpu4Q46SAQo2g6L0DyNJcxctAeMtVBGgtpDKqG09vSM5bltSVP2y
-	O2OnytSuTPy8CTmqHlZHtqbfnM5A4GolJB298HFAfoBANB1C9OprGBEwsXAhhIBrPkjW/UwNPKge/
-	p3iubXRho/SWzDAfA52dmw4aReai8T2S9PGNb10GwI0Q4BrAqctn73PPEo3ZNrzH5n1u1WHflldNT
-	KACGloYbF2kGpu9RKUlkaKvZMcqRrBV/HQJS+aZ7hvsD0WMXZLRVi0EDLGFykOyZtzT+H6mgU2UT7
-	NvjtPSo2hnaL6XJUOX2Q==;
+	List-Owner; bh=9hFBUL/MaNP02yxjrPsjadB4K3aYcjgoq1324X0P424=; b=mdtcT0pKdZIW6x
+	Tj2ZLadZub99hanDQhA4c4FsgK41kKraewwhFmrZjLq0av241NKfeY30RiwWrGKSODq9SmDZ0tY4A
+	Y6W6O21YIgMp//MYb3jfWxNO+qNPGMs2oOUsEVU/N2GQVsKaUfgSqQtUl2vRIL9Roa/DQyMwTeqXI
+	W2ZnNp428XL1qNT4CMaTcbPoxSCuNzAAVVnTBTR8/FIyrtSJoodU66mrWG1fivefEwsQB6EvAcUjw
+	SEEmhjwfNC6u9hSblrMVdZOioRhFiUUDquZWlL52O5DodD3RgSY44130306Ywmi0qwbGosCicgoFz
+	9XKNIb4TJeA/ZAOhdVTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qq9jm-00D08C-2E;
-	Tue, 10 Oct 2023 10:13:14 +0000
-Received: from relay1-d.mail.gandi.net ([2001:4b98:dc4:8::221])
+	id 1qr9Rs-002QVn-0X;
+	Fri, 13 Oct 2023 04:06:52 +0000
+Received: from pi.codeconstruct.com.au ([203.29.241.158] helo=codeconstruct.com.au)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qq9ji-00D07M-1Y
+	id 1qr9Ro-002QU2-0M
 	for linux-i3c@lists.infradead.org;
-	Tue, 10 Oct 2023 10:13:12 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 3B782240010;
-	Tue, 10 Oct 2023 10:13:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1696932783;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=tUJNRfjUuKDFIex/FlVkBB3IJFXVfYCMFME1OSx+B1Q=;
-	b=ooMZcpQQ9d+EZTwSj4Ex/lkRdL5BVBOV/mrBbIZ3BpTjcbG6JWrDXoTX18T/WTyoRkLVWK
-	Ui1KsmIrLO0e58CyJfmXa1EPjj6hT1+xZ0foZI7Qe+g6ndpyxdT78rigRFF8y/kn5ReIgX
-	Uk8h14kB6mb6I/S3AHgnZPmYDXQqPILahEhNbmgO8EWdATehaN677V+prOn2LWFo5I8pFP
-	2ZejcQt6wNfXe8xsDVAcfpZZqhAYWtHGOs48NzT/LnnLG5XjV/eLuArgVrXHfu+RjOeZxR
-	YKcgTv73SEJb5GYitNWi7/22TLOzchudYSSFdsiP05XNA62nEyQXHf4aZD8Mlg==
-Date: Tue, 10 Oct 2023 12:13:01 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+	Fri, 13 Oct 2023 04:06:50 +0000
+Received: by codeconstruct.com.au (Postfix, from userid 10001)
+	id 8D87820038; Fri, 13 Oct 2023 12:06:37 +0800 (AWST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=codeconstruct.com.au; s=2022a; t=1697169997;
+	bh=7sMUa1sObnQgRvW7PGlm0vTqpN700RfSw+k2erhxzhw=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=nKQlGbzrXDNyit+Ze+tzE+EqH9yuCvh8R0DuIYQj29tS3vvPwBSvvl8NroRfymTUX
+	 0E/KV9QEXogiMWmLuNCoCTKazfNEjpi1GonxfFOXNj/HymkVEQ2w7wXN3kPa1mJEgz
+	 LeopLRsOGNgf25IQF9MhxwlJjRI7+MblrXRN9d+VzWs6t0K1ds8nNYD1/h1KsRGpeY
+	 EKqq7L/aS8Hw96jnIGHxJdfR/2vEepfZk8VC6wJuJ4zen5H9EjNumn8qGcKWIYBXGy
+	 7DvMl4cX8+LCZw+EFEBDG2c4ivMmaopWMSbwtDoKUBqDBPfDC7ClcRJ0qvS7cJgtwd
+	 IOI9r074ySCLA==
+From: Matt Johnston <matt@codeconstruct.com.au>
 To: linux-i3c@lists.infradead.org,
-	Matt Johnston <matt@codeconstruct.com.au>
-Cc: Rob Herring <robh+dt@kernel.org>,
+	netdev@vger.kernel.org,
+	devicetree@vger.kernel.org
+Cc: "David S. Miller" <davem@davemloft.net>,
+	Jakub Kicinski <kuba@kernel.org>,
+	Paolo Abeni <pabeni@redhat.com>,
+	Eric Dumazet <edumazet@google.com>,
+	Jeremy Kerr <jk@codeconstruct.com.au>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Rob Herring <robh+dt@kernel.org>,
 	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
 	Conor Dooley <conor+dt@kernel.org>,
-	Jonathan Corbet <corbet@lwn.net>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	Conor Culhane <conor.culhane@silvaco.com>,
-	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
-	linux-doc@vger.kernel.org
-Subject: Re: [PATCH] i3c: Fix typo "Provisional ID" to "Provisioned ID"
-Message-ID: <169693275141.1756460.10774272832837669579.b4-ty@bootlin.com>
-References: <20231003075339.197099-1-matt@codeconstruct.com.au>
+	miquel.raynal@bootlin.com,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: [PATCH net-next v6 1/3] dt-bindings: i3c: Add mctp-controller property
+Date: Fri, 13 Oct 2023 12:06:23 +0800
+Message-ID: <20231013040628.354323-2-matt@codeconstruct.com.au>
+X-Mailer: git-send-email 2.42.0
+In-Reply-To: <20231013040628.354323-1-matt@codeconstruct.com.au>
+References: <20231013040628.354323-1-matt@codeconstruct.com.au>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20231003075339.197099-1-matt@codeconstruct.com.au>
-X-GND-Sasl: alexandre.belloni@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231010_031310_687008_52D76567 
-X-CRM114-Status: UNSURE (   7.24  )
+X-CRM114-CacheID: sfid-20231012_210648_495372_9485AC5D 
+X-CRM114-Status: UNSURE (   7.54  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,24 +81,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+This property is used to describe a I3C bus with attached MCTP I3C
+target devices.
 
-On Tue, 03 Oct 2023 15:53:39 +0800, Matt Johnston wrote:
-> The MIPI I3C spec refers to a Provisioned ID, since it is (sometimes)
-> provisioned at device manufacturing.
-> 
-> 
+Signed-off-by: Matt Johnston <matt@codeconstruct.com.au>
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+---
 
-Applied, thanks!
+v2:
 
-[1/1] i3c: Fix typo "Provisional ID" to "Provisioned ID"
-      commit: 57ec42b9a1b7e4db4a1c2aa4fcc4eefe6d31bcb8
+- Reworded DT property description to match I2C
 
-Best regards,
+ Documentation/devicetree/bindings/i3c/i3c.yaml | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
+diff --git a/Documentation/devicetree/bindings/i3c/i3c.yaml b/Documentation/devicetree/bindings/i3c/i3c.yaml
+index ab69f4115de4..d9483fbd2454 100644
+--- a/Documentation/devicetree/bindings/i3c/i3c.yaml
++++ b/Documentation/devicetree/bindings/i3c/i3c.yaml
+@@ -55,6 +55,12 @@ properties:
+ 
+       May not be supported by all controllers.
+ 
++  mctp-controller:
++    type: boolean
++    description: |
++      Indicates that the system is accessible via this bus as an endpoint for
++      MCTP over I3C transport.
++
+ required:
+   - "#address-cells"
+   - "#size-cells"
 -- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+2.42.0
+
 
 -- 
 linux-i3c mailing list
