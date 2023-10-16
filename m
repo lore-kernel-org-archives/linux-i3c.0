@@ -4,70 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5E5ACDB483
-	for <linux-i3c@archiver.kernel.org>; Sun, 15 Oct 2023 22:23:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9C45FCDB465
+	for <linux-i3c@archiver.kernel.org>; Mon, 16 Oct 2023 15:25:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VCsV6+4gny2qJTBhsI8FO5FBNI+eKtkQuPLBEnxvcQc=; b=qVPmanNzXt1Eoj
-	DTwUzScZ9GnIHVjs3+lpyoUI+iHEe3F29/AvrfhYAIEJ8QaA4sjHPx43nY6AKk5PR8tpkhlkDVmny
-	7Mt6PVojzoGsCu5g2dwYxntQlWhyxLurBCDxO1OshEEn+E2QNq6KeBi+lj4GDh3rnVgjZ9pajCqoe
-	o1wpINQ7Vtv1G4hxMqZzYyvk406DCusQ4MSd04FIseQzdPkni+g/gS6mpt5bxZ8YbGODNEmjB/Lol
-	i0XQj+LQhs+6+73pAccC4nlsoVqEquUl9cK1QBysIexULSAsSmHu6PAfT3T8pVGr6ejjMypY4KZrc
-	/4C0F2kbkCo3wOMNFnLA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1D/TM8OiBnhl5i2dN+9Ete1Pd4HFuYrQclpd/fULObk=; b=GkwZRHNmam/41d
+	NhuTg5L06kqsDirrIB8qV6SjeLsrZHMfXrKRf7kxErFTWG6vwJYxKX8gpOIkKIaFMOoln0wd/f6v2
+	JfPfZpl8Oaoq7pUDQLmqJq0Wl/cPoXm3T2kCKUkS4AJ6N225n1TDb28mU4H8cbhQ9pmNbsIB+6fvz
+	qmyhE7W2ZvkVZNGJ7k6FrwXwHJY7rDdZfsJw8Zq2tFTTQXpotUXm8XNhCTUqqdlQ1uV6k7Z5obrJY
+	hmk6ukVf9xKgROdHzjeZ/Jw0X3VSBtUbPG0XE1SBQkFMgxS28o6PDHIJZ0hK3Jtlabbxqut39cBqf
+	beMDiJBTfnFCxnCx1wmA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qs9Wg-007mSM-1Y;
-	Sun, 15 Oct 2023 22:23:58 +0000
-Received: from mgamail.intel.com ([134.134.136.31])
+	id 1qsPT2-009y9p-1a;
+	Mon, 16 Oct 2023 15:25:16 +0000
+Received: from mail-db3eur04on0600.outbound.protection.outlook.com ([2a01:111:f400:fe0c::600] helo=EUR04-DB3-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qs9We-007mRs-0Q
-	for linux-i3c@lists.infradead.org;
-	Sun, 15 Oct 2023 22:23:57 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1697408636; x=1728944636;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=KgJREo6gRmuWdhLud69FXQUc+lpLxyaQXEue7DTR1oI=;
-  b=V+Cs8EFntuoGs78HXgM2MqBm0fIkorB1XpaGWK9e+elyp0u7rCjszFGV
-   +dY+uu6xHO9UPlwAr9JFGyoS8zo3yvUVHSeE7YxxTHCdls82sc0mEbTst
-   2e6LhdIuEfDehQLayc7mEYbga/cR16SqndgHhhAhCZVCFS1IiiQbIyMLH
-   e+qeHasVfDXqzPvuglOgboLd4S7Z1xlsL/HG4Re1frmKn5PbF/5yoZcqx
-   WjRY1K6m7bNlhLMhU62F6zF2U0pdt5G4W7pbcJaNufclKJ8lOHZ4LaCt7
-   96JoXZLFy3i60eJMMObaTdGElc9mps1SQi6GULWxErVhG4h2HNM3sUoHd
-   A==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10863"; a="449625049"
-X-IronPort-AV: E=Sophos;i="6.03,226,1694761200"; 
-   d="scan'208";a="449625049"
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
-  by orsmga104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 Oct 2023 15:23:53 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6600,9927,10863"; a="784877561"
-X-IronPort-AV: E=Sophos;i="6.03,226,1694761200"; 
-   d="scan'208";a="784877561"
-Received: from linux.intel.com ([10.54.29.200])
-  by orsmga008.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 Oct 2023 15:23:53 -0700
-Received: from zlukwins-pc-neo.igk.intel.com (zlukwins-pc-neo.igk.intel.com [10.237.129.138])
-	by linux.intel.com (Postfix) with ESMTP id 3F9C2580201;
-	Sun, 15 Oct 2023 15:23:52 -0700 (PDT)
-From: Zbigniew Lukwinski <zbigniew.lukwinski@linux.intel.com>
-To: linux-i3c@lists.infradead.org
-Cc: alexandre.belloni@bootlin.com,
-	Zbigniew Lukwinski <zbigniew.lukwinski@linux.intel.com>
-Subject: [PATCH v1 1/1] i3c: master: handle IBIs in order they came
-Date: Mon, 16 Oct 2023 00:23:34 +0200
-Message-Id: <20231015222334.1652401-2-zbigniew.lukwinski@linux.intel.com>
+	id 1qsPT0-009y8x-10;
+	Mon, 16 Oct 2023 15:25:15 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Y72Q22VhM8jlQBnmH0vyFM2EatN+oR1GQqjcVVxE/eTsWHsSDvWU0b1UFfs5TH3OgX6BO7/MNA57qwalYt0TKMozVOjdm42lwn0ygLbx5rwIv7T02RQ3zyX93noOU9dI6NLBdidiYco6mRoDsYCD2JprmekLhVwMtKpT9PadgPj7O16HsLEH2LDO5Yg/OTDFctQK9qBosWfE2erFPzfuj4wyxeRBrHc0GFwqA3gnwp6eO/FSrmSKJHupb5Y6Yutvf9qwpri4eM3cSEPfI/I+zrJrd0QD/mp80BKwLWlb8cEeB98KZpVN0oVqXXGCwLcn2jMtDC8+QRDEKNuAopxuDA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=trVV9USWD4xPQtUqV3CYyFL27JsRPY6/ZwQ10W859wU=;
+ b=NSluX9uIYisNaQqz0mWAqs8VDvmXBF2pLCDuXtI/7k0lTetp0n2+7XvhA5ifeGS8NQNn/CDGv2k7zZH7KVq7zDJaYXTxSS6KcF7fPnAFFs3O9ZpCfJCddOJV/xwHWu5+k7P4xseBvK/OT9AhJxulLvQVGUI3LOY6QR3cleq9cbzLmhe2sp1vHm+pTwcfkXEOkHttLB8hEdYnT604/OO0KVSHkBUqgDXQyThl/op+TBBDT3EZEN9AthAHLMELKvwlB7nuvEn2X1brbVdtGiG+d5Ai0ic+Rmm9MZQ7YNyyJ9Yp72IllWReopRQUUYfh5OLxBRC7WJKMdiEQaE/8FcvGw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=trVV9USWD4xPQtUqV3CYyFL27JsRPY6/ZwQ10W859wU=;
+ b=qpv0EGusteIgJatmmC6wRFlJzBEcaFZACN9x4r5P8F8LIa8y/+x1RBxNwO5bpH3+mfDR7aIKh4JLwTILTdPUfcAUwAevaxUqOAOevDa5kBqtZZyy+KgtLJ/fmE7WrAkonOrVIte3xiGMrkZpwH6surPNQ6sxxtLBNOUsVsBlXCY=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM6PR04MB4838.eurprd04.prod.outlook.com (2603:10a6:20b:4::16)
+ by PAXPR04MB9185.eurprd04.prod.outlook.com (2603:10a6:102:231::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6886.35; Mon, 16 Oct
+ 2023 15:25:07 +0000
+Received: from AM6PR04MB4838.eurprd04.prod.outlook.com
+ ([fe80::1774:e25f:f99:aca2]) by AM6PR04MB4838.eurprd04.prod.outlook.com
+ ([fe80::1774:e25f:f99:aca2%4]) with mapi id 15.20.6886.034; Mon, 16 Oct 2023
+ 15:25:07 +0000
+From: Frank Li <Frank.Li@nxp.com>
+To: miquel.raynal@bootlin.com,
+	conor.culhane@silvaco.com,
+	alexandre.belloni@bootlin.com,
+	robh+dt@kernel.org,
+	krzysztof.kozlowski+dt@linaro.org,
+	conor+dt@kernel.org,
+	shawnguo@kernel.org,
+	s.hauer@pengutronix.de,
+	kernel@pengutronix.de,
+	festevam@gmail.com,
+	linux-imx@nxp.com,
+	joe@perches.com,
+	peng.fan@nxp.com,
+	alexander.stein@ew.tq-group.com,
+	haibo.chen@nxp.com,
+	ping.bai@nxp.com,
+	xiaoning.wang@nxp.com,
+	Frank.Li@nxp.com,
+	sherry.sun@nxp.com,
+	linux-i3c@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	imx@lists.linux.dev
+Subject: [PATCH 1/2] dt-bindings: i3c: Fix silvaco,i3c-master compatible string
+Date: Mon, 16 Oct 2023 11:24:49 -0400
+Message-Id: <20231016152450.2850498-1-Frank.Li@nxp.com>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20231015222334.1652401-1-zbigniew.lukwinski@linux.intel.com>
-References: <20231015222334.1652401-1-zbigniew.lukwinski@linux.intel.com>
+X-ClientProxiedBy: BYAPR11CA0069.namprd11.prod.outlook.com
+ (2603:10b6:a03:80::46) To AM6PR04MB4838.eurprd04.prod.outlook.com
+ (2603:10a6:20b:4::16)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM6PR04MB4838:EE_|PAXPR04MB9185:EE_
+X-MS-Office365-Filtering-Correlation-Id: a6e4d6e1-4c3d-4b3a-ff55-08dbce5c13de
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: gmMsqhYXkuJhixDIzxTi1zAmPBFBSit3wDWl1VQtZsvK7UgJyPGRPZ0G5kWEkJHH0F3ZXM0zF74Ujb0eMCd7sTHRHurJNK0KDf2wSVcy209Lrv0WtWC0N8SzRTgUIa/naQeKWo/0z8zAy0K6uS2W7Qo3KHrZQ/IleNwbaQNW2N49Cw2KITDl++J3e8gR+iQRiM71UyJ8PURhF3j6aOhDlTkQ22Sn7DhnGULRfe4ynAIJA3zULjGI/FxQ1g3oho0lhtuZ2nMLqxgmX/iceXDXLMc3ertT5GAxBK/kabgvU8YRbavIOTbMWwRifEvwl0LMw6gTmxk6xPJAaPoZjW3PZdYx+GO6EjjYQZj39TsVCDZd4+hyebH2AuCbOUDcG36pTPdf3ToDVTUeztQ7sVk94J0UcaiLrkbhVlTlXoqBotOuBzU5iGzJbHLY/d7mag2naGuuEd8Ob0JrHdKgF64KxnBO2zRBBWr+TSRk2Or9c8qGdmQWKQKC/HxHroNut3tbMiLYcmsxHVpQWtgfNuzmqDK5Sg6iltKF/9P2XPV4nNBY5gzoPqLhYRMhOq7Q2rffjKDdMCqgdJkobvOyn16jOoEamCkQi2cVx8duAkSD3VFF+JVStD+GItikvA1vukStKAHYnM6e/pwwUa10YCRrCQ==
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM6PR04MB4838.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(376002)(396003)(39860400002)(366004)(136003)(346002)(230922051799003)(451199024)(186009)(64100799003)(1800799009)(7416002)(2906002)(4744005)(5660300002)(41300700001)(8936002)(8676002)(316002)(66946007)(478600001)(6486002)(6506007)(6666004)(36756003)(52116002)(38350700005)(83380400001)(66556008)(66476007)(26005)(1076003)(86362001)(38100700002)(6512007)(2616005)(921005);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?gYmovskGw+hSJ6jJ4g85RXHr68FmhgA/netnU/Gdp0PqvqnuRNJX+Owv/Yn9?=
+ =?us-ascii?Q?/uPAuHgZIsMv3W0EkafJ8R4kICdThgQUBSIwsCWOhPEKgTnGBqFwyoZzN9FI?=
+ =?us-ascii?Q?J7SAxlt0K/vMpT3f13SBMfw/wDYXfAyWt48+UgrXOG5dtlEg3iQOud5ERfbS?=
+ =?us-ascii?Q?fzMxpTg5a1ZNziBPEhtNxT/RKxb/deKbhuCD8xqSNsdEIAV3BX58QAPbrqkv?=
+ =?us-ascii?Q?UcI+pmnWSy6DcZc9WRfzmVe++e5mg68WFtgPIvWL5SqBEX37v22poHWwoXn2?=
+ =?us-ascii?Q?QcUKPytcDXPoI02qMM4xD52915GDztRQtnCoUvsOqyEGB9ySISpUOSSk34NW?=
+ =?us-ascii?Q?rzB6lS4oXDH0o0lsjdakm+49/LwCIqeq5XW9FhFmn9lbLRcrVkl/FpSaSgdH?=
+ =?us-ascii?Q?DqOnpBACyJ/crwultezA2xqKfAMAUojGPca1XjrztVh9xFzFQMEtuayHB+uL?=
+ =?us-ascii?Q?EP5Oiaxx74wR4eeDv07N6kAD2ohL6+lpYj+5X+7+Svuiv2Q2j84LcFW1yCO9?=
+ =?us-ascii?Q?Z+/BQgadXlpngTf9gax7A5SaTAlqNaAf/xZvPMsLpOfgQhiOOnltp9hy2Vb9?=
+ =?us-ascii?Q?S9W9vvvIaLz7pfL99SGVsAjNCKVUsU3GpRUTfGAi+Mmz+2ZAWhd+69AuobfL?=
+ =?us-ascii?Q?pSTn+SUlZfJXMpsGWM1b64uofmhF5/UzapqjXUW0eKJ6f56n6ZpA9561UUgd?=
+ =?us-ascii?Q?QyoEJUtlNQK9XM1djKYEhfIBVA2MPY8vDDTIR4k7qJt3hyuPEWCe9kGuFqqp?=
+ =?us-ascii?Q?cemnBlnYUQeUNB8+SFbEEi6WU5hmBq6CxNnwsDg/wa6vS7JXHoYTjXrqshEJ?=
+ =?us-ascii?Q?Ii2VXJ23G/UvkyRMg++YbR8Sk1cKUi6e8d+vgTwDn1+VpmRXwpZQeotkYvKp?=
+ =?us-ascii?Q?n4CrJiCnyFvYutRX2H6XF+oKiPzSMAeiOMt57HBOziNm6imbf31QBcGnGvyS?=
+ =?us-ascii?Q?mlg9ouIrTPYqomAgY35XWIQJCikn7zUhaVyYjueGUG2hwZ+7pF1ZY9SscTh9?=
+ =?us-ascii?Q?wtaAu8d0U2G6EUE4AL9ZzN8WZUkBgVlV7Gkb5CfMOsS0gQumNfpbFTp33AGN?=
+ =?us-ascii?Q?nWGAzO62sPxyFekxb/sahS1ESQ99BOhfHOiLjrTL8YyonBNL6ixKMT0wwalJ?=
+ =?us-ascii?Q?hSMkBS9pstfelpkdVeoW8ZBOQXPda+7ACOiv6g8whfM8J5Feg0bZDtokWXOp?=
+ =?us-ascii?Q?vgSyWsB3Sx+/pvQBYhq9HCzDl1DJaphw8Ng3dxXGNWD0rSfEnaKAYAFaPqOh?=
+ =?us-ascii?Q?nlBINslYruRgBDIcOsEsxb8PFCLs1hVs4oCl437Dc0FOkcQ3wlDxOIOYPRJa?=
+ =?us-ascii?Q?2EXGvBlbPTYwLZ16GU3i5OoI27p+Oz50Ug0LNJgOJqh7cmcFsEwbIWHu+r+a?=
+ =?us-ascii?Q?/AStD1yaAKuPE09H/nUfjDvblDvKdMymw5yxnJKl8YaDcD1FLTJ2xy2CEFyj?=
+ =?us-ascii?Q?YtA5Khz3oxjTobiLzepFxmxk4FEhHRgtbiWsMEwdAVSxS/6MysX9getQiamc?=
+ =?us-ascii?Q?C8tpxj/9PsMmbqTefaPw8rxLXd4WeZ3GlY6wjmdoIfXStNN2GWaf0ldVFHHv?=
+ =?us-ascii?Q?FtSLeYdiPeVCwEVzsrZ9C3IhcsBacOv4VIM9lbUr?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: a6e4d6e1-4c3d-4b3a-ff55-08dbce5c13de
+X-MS-Exchange-CrossTenant-AuthSource: AM6PR04MB4838.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Oct 2023 15:25:07.2086
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: xVUv6+wpv1dmKPsyPhv4AiglxiNjvRZbTDv6NrIi3+RNytbQs/XKQdhc65pxtk1BADMfPxjYPGFNvogJ5zo+nw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB9185
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231015_152356_227394_8545F7F3 
-X-CRM114-Status: GOOD (  16.53  )
+X-CRM114-CacheID: sfid-20231016_082514_384304_CB64BDBD 
+X-CRM114-Status: UNSURE (   9.77  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,92 +151,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-IBI shall be handled in order they appear on the bus. Otherwise could hit
-case when order of handling them in device driver will be different. It may
-lead to invalid assembling fragmented packets or events order broken.
+In driver, compatible string is silvaco,i3c-master instead of
+silvaco,i3c-master-v1.
 
-Added separate workqueue with option WQ_MEM_RECLAIM for each device driver.
-This ensures IBI handling order and improves IBI handling performance: IBI
-handlers for device B are not blocked by IBI handlers for device A.
-
-Original solution (single workqueue in main driver) was able to handle also
-general IBI (not related to specific device) like HJ or MR. So leaving this
-for such purposes.
-
-Signed-off-by: Zbigniew Lukwinski <zbigniew.lukwinski@linux.intel.com>
+Signed-off-by: Frank Li <Frank.Li@nxp.com>
 ---
- drivers/i3c/master.c       | 14 +++++++++++++-
- include/linux/i3c/master.h |  4 +++-
- 2 files changed, 16 insertions(+), 2 deletions(-)
+ Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 87283e4a4607..7d3785d11336 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -2372,7 +2372,7 @@ static void i3c_master_unregister_i3c_devs(struct i3c_master_controller *master)
- void i3c_master_queue_ibi(struct i3c_dev_desc *dev, struct i3c_ibi_slot *slot)
- {
- 	atomic_inc(&dev->ibi->pending_ibis);
--	queue_work(dev->common.master->wq, &slot->work);
-+	queue_work(dev->ibi->wq, &slot->work);
- }
- EXPORT_SYMBOL_GPL(i3c_master_queue_ibi);
+diff --git a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
+index 133855f11b4f..19e3f75eb45c 100644
+--- a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
++++ b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
+@@ -14,7 +14,7 @@ allOf:
  
-@@ -2813,6 +2813,12 @@ int i3c_dev_request_ibi_locked(struct i3c_dev_desc *dev,
- 	if (!ibi)
- 		return -ENOMEM;
+ properties:
+   compatible:
+-    const: silvaco,i3c-master-v1
++    const: silvaco,i3c-master
  
-+	ibi->wq = alloc_ordered_workqueue(dev_name(i3cdev_to_dev(dev->dev)), WQ_MEM_RECLAIM);
-+	if (!ibi->wq) {
-+		kfree(ibi);
-+		return -ENOMEM;
-+	}
-+
- 	atomic_set(&ibi->pending_ibis, 0);
- 	init_completion(&ibi->all_ibis_handled);
- 	ibi->handler = req->handler;
-@@ -2840,6 +2846,12 @@ void i3c_dev_free_ibi_locked(struct i3c_dev_desc *dev)
- 		WARN_ON(i3c_dev_disable_ibi_locked(dev));
- 
- 	master->ops->free_ibi(dev);
-+
-+	if (dev->ibi->wq) {
-+		destroy_workqueue(dev->ibi->wq);
-+		dev->ibi->wq = NULL;
-+	}
-+
- 	kfree(dev->ibi);
- 	dev->ibi = NULL;
- }
-diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
-index 0b52da4f2346..0a2a33a0f3af 100644
---- a/include/linux/i3c/master.h
-+++ b/include/linux/i3c/master.h
-@@ -129,6 +129,7 @@ struct i3c_ibi_slot {
-  *		     rejected by the master
-  * @num_slots: number of IBI slots reserved for this device
-  * @enabled: reflect the IBI status
-+ * @wq: workqueue used to execute IBI handlers.
-  * @handler: IBI handler specified at i3c_device_request_ibi() call time. This
-  *	     handler will be called from the controller workqueue, and as such
-  *	     is allowed to sleep (though it is recommended to process the IBI
-@@ -151,6 +152,7 @@ struct i3c_device_ibi_info {
- 	unsigned int max_payload_len;
- 	unsigned int num_slots;
- 	unsigned int enabled;
-+	struct workqueue_struct *wq;
- 	void (*handler)(struct i3c_device *dev,
- 			const struct i3c_ibi_payload *payload);
- };
-@@ -469,7 +471,7 @@ struct i3c_master_controller_ops {
-  * @boardinfo.i2c: list of I2C boardinfo objects
-  * @boardinfo: board-level information attached to devices connected on the bus
-  * @bus: I3C bus exposed by this master
-- * @wq: workqueue used to execute IBI handlers. Can also be used by master
-+ * @wq: workqueue which can be used by master
-  *	drivers if they need to postpone operations that need to take place
-  *	in a thread context. Typical examples are Hot Join processing which
-  *	requires taking the bus lock in maintenance, which in turn, can only
+   reg:
+     maxItems: 1
+@@ -49,7 +49,7 @@ unevaluatedProperties: false
+ examples:
+   - |
+     i3c-master@a0000000 {
+-        compatible = "silvaco,i3c-master-v1";
++        compatible = "silvaco,i3c-master";
+         clocks = <&zynqmp_clk 71>, <&fclk>, <&sclk>;
+         clock-names = "pclk", "fast_clk", "slow_clk";
+         interrupt-parent = <&gic>;
 -- 
 2.34.1
 
