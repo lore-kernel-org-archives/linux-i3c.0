@@ -4,70 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E95BCDB484
-	for <linux-i3c@archiver.kernel.org>; Tue, 17 Oct 2023 08:33:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7019CDB482
+	for <linux-i3c@archiver.kernel.org>; Tue, 17 Oct 2023 13:06:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
-	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=jz+Q+6k0edgFziQe1DJtp9i+Cqe1uE8ERjEKbgrdTrE=; b=AMHOYEaFmojrHpGMtolu85STF+
-	xkfdjQsCFn/jprYiTqEVf1h4t+/dsibNDB+UGcbEE9fWe2Phxa4syff5sZKYHaxGU9bzib7OgNRm5
-	KRa7HGlabny8ZW+gcTEmOmHlZJlG66JRwtzBQ6mKAFdxbptMPf+bdcghncr5J5swcLSfVA66wpKG2
-	tzt9b7Vxk/fXcn29ubDJcgeAajwrwipe95R4A7o0T9pP6XfhhQrDtp4uXeRktrowiu4tvoOoDeFdp
-	g8BfgyS1zj3tnyai+7FdBl5ufrpuV5WZethAtJmXs2H+8heLaHkTFIyN6a5gsyMnfptSmsINbrJcm
-	z9CiJCOA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oc/gyH5k2iqCzskPl6C+bUzRjvkQt6UoQsvAvUjftAU=; b=hd1ncG8wVrtkGt
+	A0X7qHWuYg+3shVgWJhJbjOqlP4W5+cx9AigAyFB4+5yhj3D4cCL4cjeutpITVTzHrPuye9njyZlB
+	Ueke5BPEmvuQq6g5dOfm7fSOpudUMJ5GAocyPhNcogn0IrQToQRRHj54i/5eYf/EL5BeJziTH/TAt
+	1TtwJnij+r9+T+IaY/aChVNAZ5vhfuGUpcqR0s3FpaqwEDHf0zkgrAenKs0ORHkmAl+GNVCRAnhRP
+	oocfc+f1Aqsl7Sio0XmtfBYFMSk5GV0eiXyfaX56ClOHbHzDULsitffX1GUa3ZfK0Cf4a1d4Auh1q
+	Wcn7FUEqCgJrPirMrTYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qsfWI-00Bh5A-1w;
-	Tue, 17 Oct 2023 08:33:42 +0000
-Received: from mgamail.intel.com ([192.55.52.120])
+	id 1qsjm0-00CLc7-17;
+	Tue, 17 Oct 2023 13:06:12 +0000
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qsfWF-00Bh2s-1y
+	id 1qshah-00C7DP-1x
 	for linux-i3c@lists.infradead.org;
-	Tue, 17 Oct 2023 08:33:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1697531619; x=1729067619;
-  h=message-id:date:mime-version:subject:to:references:from:
-   in-reply-to:content-transfer-encoding;
-  bh=MxayT2/XEWdFuARMII+EG5lLXg5UMsqpoavndXRXyTw=;
-  b=f7QvggXYhKOdZQgwmCtvkPcWPqdRqkyYmUG0TV5Ky2LKPyL0xwu2JXWb
-   HJ6HHzTc4c63zjlqCauVOtW9vq5+Rl168+ns5KCsNUfFqAXKlIL3xhJvI
-   T5iEP3MjbodHu8wkhEiCPn+LIqZcvCh4F43UWHdM17SDZY95qI7OEXVBs
-   iwCDO2yR2rfXtnC6gXOtmtRdT0Nr82z2QZSEVlO037Rygh04Vma569CRi
-   ZFt035LR4ayTOsiqirj9yfqa4SoK5er8oIr09uRxje3f+2toPCO+7Fzoy
-   dEed7NrvF1DJSDGr6xtRXlxV/Q3dJUa3ZTfxV59a1P4KhusEg/pbrt3YH
-   A==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10865"; a="384608514"
-X-IronPort-AV: E=Sophos;i="6.03,231,1694761200"; 
-   d="scan'208";a="384608514"
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
-  by fmsmga104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 17 Oct 2023 01:33:37 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6600,9927,10865"; a="826353237"
-X-IronPort-AV: E=Sophos;i="6.03,231,1694761200"; 
-   d="scan'208";a="826353237"
-Received: from mylly.fi.intel.com (HELO [10.237.72.161]) ([10.237.72.161])
-  by fmsmga004.fm.intel.com with ESMTP; 17 Oct 2023 01:33:35 -0700
-Message-ID: <af35a533-2126-4a61-a6cd-31ed1e615f2b@linux.intel.com>
-Date: Tue, 17 Oct 2023 11:33:34 +0300
+	Tue, 17 Oct 2023 10:46:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+	s=mimecast20190719; t=1697539578;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=XV3Ap1A26i/DqLphR/45xsnr4opd4wuPgIrc4h/guyc=;
+	b=HqJA6v3SRGTbaErt593DCDFr3LfPO8eWcC9I3TBrgrScAkhbV0mbTJNIlXAiNJ+fKSObKK
+	/TsTNFItW1jmhxbC2rW4SDJeFawGw1plWsZBYnlpd9GfawCMpcVIiO8d0P8SLuOrxwjl88
+	FbNwtezgBZxghYtp5KSXp3Qf3MbbgCE=
+Received: from mail-lf1-f69.google.com (mail-lf1-f69.google.com
+ [209.85.167.69]) by relay.mimecast.com with ESMTP with STARTTLS
+ (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
+ us-mta-146-ghJBthijPRO4tudn21xJFA-1; Tue, 17 Oct 2023 06:46:12 -0400
+X-MC-Unique: ghJBthijPRO4tudn21xJFA-1
+Received: by mail-lf1-f69.google.com with SMTP id 2adb3069b0e04-50451c54281so1187460e87.0
+        for <linux-i3c@lists.infradead.org>; Tue, 17 Oct 2023 03:46:11 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1697539570; x=1698144370;
+        h=mime-version:user-agent:content-transfer-encoding:references
+         :in-reply-to:date:cc:to:from:subject:message-id:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=zqkbb/k4y19ZoEz8tHHeyQiTb7Pt5hF4nVZg7dtOzKk=;
+        b=lUrdpiSnRUqvtl1kIgIkAITZ26c6GVWxHLpRAEY9/pZANeGNuG1hdjuib3r53lWWDK
+         lzpvgikQCxXp1GUR6zfpM9D27j4MsYEuEJpkUBFmZ8wA29tTTaYe4CQlj8gU9d/Q8K37
+         NtJlrM31JnW2PL7zZgOrs4/JTHqKy67aZbielFFxjTHE+FEMwh0phl9pQdJ07pIIM2In
+         0BeEcfAfK62JIVEurT0XPVLz9R6S4q0kdi1lAcBlWwJLExvX0XmCrqnc6AJuNxpsiC31
+         GRHPwbpU1BlLFTXOBRS71rH9+kFjrvHSIqFL1wCwlX9+UbWb63SI7MpxJcQvjj7yi/Ri
+         A2Ww==
+X-Gm-Message-State: AOJu0YyYEbrCRVgnvQIkeLFmangzSrY/6A7Sp6JzYxhtfNt0XJIpr0NI
+	C+MpS2Rjc+6ookjlvsVIw7uYi64aAvltUfVHdFqK2AakEKes6QYYbBBH7PsE+zeWfiw3mE8g6j2
+	Fdd6FrxI+8dQP/I+ITgzBItoYBw==
+X-Received: by 2002:a05:6512:1188:b0:505:97b9:5d50 with SMTP id g8-20020a056512118800b0050597b95d50mr1595976lfr.5.1697539570789;
+        Tue, 17 Oct 2023 03:46:10 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGM26eZbLoF1xnImDI1P3NpnJ00X/0O1AwfU7XYcu3kmZD6x5Nae+2tZHNg+jy1emwoUXnpJA==
+X-Received: by 2002:a05:6512:1188:b0:505:97b9:5d50 with SMTP id g8-20020a056512118800b0050597b95d50mr1595953lfr.5.1697539570431;
+        Tue, 17 Oct 2023 03:46:10 -0700 (PDT)
+Received: from gerbillo.redhat.com (146-241-233-87.dyn.eolo.it. [146.241.233.87])
+        by smtp.gmail.com with ESMTPSA id q8-20020a056512210800b00505677e7a99sm226862lfr.139.2023.10.17.03.46.08
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 17 Oct 2023 03:46:09 -0700 (PDT)
+Message-ID: <caa89a15568b2d92592476995bfcf362475be11f.camel@redhat.com>
+Subject: Re: [PATCH net-next v6 3/3] mctp i3c: MCTP I3C driver
+From: Paolo Abeni <pabeni@redhat.com>
+To: Simon Horman <horms@kernel.org>, Matt Johnston
+ <matt@codeconstruct.com.au>
+Cc: linux-i3c@lists.infradead.org, netdev@vger.kernel.org, 
+ devicetree@vger.kernel.org, "David S. Miller" <davem@davemloft.net>, Jakub
+ Kicinski <kuba@kernel.org>, Eric Dumazet <edumazet@google.com>, Jeremy Kerr
+ <jk@codeconstruct.com.au>,  Alexandre Belloni
+ <alexandre.belloni@bootlin.com>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, Conor Dooley
+ <conor+dt@kernel.org>,  miquel.raynal@bootlin.com
+Date: Tue, 17 Oct 2023 12:46:07 +0200
+In-Reply-To: <20231017082427.GH1751252@kernel.org>
+References: <20231013040628.354323-1-matt@codeconstruct.com.au>
+	 <20231013040628.354323-4-matt@codeconstruct.com.au>
+	 <20231017082427.GH1751252@kernel.org>
+User-Agent: Evolution 3.46.4 (3.46.4-1.fc37)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 4/5] i3c: master: svc return actual transfer data len
-Content-Language: en-US
-To: Frank Li <Frank.Li@nxp.com>, alexandre.belloni@bootlin.com,
- miquel.raynal@bootlin.com, conor.culhane@silvaco.com, joe@perches.com,
- linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
- imx@lists.linux.dev
-References: <20231016154632.2851957-1-Frank.Li@nxp.com>
- <20231016154632.2851957-5-Frank.Li@nxp.com>
-From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-In-Reply-To: <20231016154632.2851957-5-Frank.Li@nxp.com>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231017_013339_660041_E058B178 
-X-CRM114-Status: GOOD (  13.77  )
+X-CRM114-CacheID: sfid-20231017_034623_713952_E4986AEA 
+X-CRM114-Status: GOOD (  17.40  )
+X-Mailman-Approved-At: Tue, 17 Oct 2023 06:06:10 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,37 +104,66 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi
+On Tue, 2023-10-17 at 10:24 +0200, Simon Horman wrote:
+> On Fri, Oct 13, 2023 at 12:06:25PM +0800, Matt Johnston wrote:
+> > Provides MCTP network transport over an I3C bus, as specified in
+> > DMTF DSP0233.
+> > 
+> > Each I3C bus (with "mctp-controller" devicetree property) gets an
+> > "mctpi3cX" net device created. I3C devices are reachable as remote
+> > endpoints through that net device. Link layer addressing uses the
+> > I3C PID as a fixed hardware address for neighbour table entries.
+> > 
+> > The driver matches I3C devices that have the MIPI assigned DCR 0xCC for
+> > MCTP.
+> > 
+> > Signed-off-by: Matt Johnston <matt@codeconstruct.com.au>
+> 
+> Hi Matt,
+> 
+> one minor nit below, which you can take, leave, or leave for later
+> as far as I am concerned.
+> 
+> Overall the patch looks good to me and I see that Paolo's review of v5 has
+> has been addressed.
+> 
+> Reviewed-by: Simon Horman <horms@kernel.org>
+> 
+> > +/* List of mctp_i3c_busdev */
+> > +static LIST_HEAD(busdevs);
+> > +/* Protects busdevs, as well as mctp_i3c_bus.devs lists */
+> > +static DEFINE_MUTEX(busdevs_lock);
+> > +
+> > +struct mctp_i3c_bus {
+> > +	struct net_device *ndev;
+> > +
+> > +	struct task_struct *tx_thread;
+> > +	wait_queue_head_t tx_wq;
+> > +	/* tx_lock protects tx_skb and devs */
+> > +	spinlock_t tx_lock;
+> > +	/* Next skb to transmit */
+> > +	struct sk_buff *tx_skb;
+> > +	/* Scratch buffer for xmit */
+> > +	u8 tx_scratch[MCTP_I3C_MAXBUF];
+> > +
+> > +	/* Element of busdevs */
+> > +	struct list_head list;
+> 
+> I am unsure if it is important, but I observe that on x86_64
+> list spans a cacheline.
 
-On 10/16/23 18:46, Frank Li wrote:
-> I3C allow devices early terminate data transfer. So set "actual" to
-> indicate how much data get by i3c_priv_xfer.
-> 
-> Signed-off-by: Frank Li <Frank.Li@nxp.com>
-> ---
->   drivers/i3c/master/svc-i3c-master.c | 7 +++++++
->   1 file changed, 7 insertions(+)
-> 
-> diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-> index 3570b709cf60..444825aafa6f 100644
-> --- a/drivers/i3c/master/svc-i3c-master.c
-> +++ b/drivers/i3c/master/svc-i3c-master.c
-> @@ -138,6 +138,7 @@ struct svc_i3c_cmd {
->   	const void *out;
->   	unsigned int len;
->   	unsigned int actual_len;
-> +	struct i3c_priv_xfer *xfer;
->   	bool continued;
->   };
->   
-I'm thinking would it make sense to combine this and previous patch by 
-removing the read_len/actual_len variable from this structure and use 
-the added one (by the patch 2/5) from "struct i3c_priv_xfer" directly?
+It looks like 'list' is only touched on control path, so it's should
+not critical.
+
+Cheers,
+
+Paolo
+
 
 -- 
 linux-i3c mailing list
