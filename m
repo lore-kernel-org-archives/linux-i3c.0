@@ -4,66 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA7FCC41513
-	for <linux-i3c@archiver.kernel.org>; Tue, 17 Oct 2023 13:06:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E9C5CDB474
+	for <linux-i3c@archiver.kernel.org>; Tue, 17 Oct 2023 13:06:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Date:
+	Message-Id:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LVcVTZGJNN1Hn0eg7Prob3xFuxfo/eeh+y6ECwHpjcM=; b=ARP/zmQUlPfd5g
-	NhA8NClNIGJ81Fos+RWWmIw2eADO83tT6A4rtuZ2o2jiW+bv4KLjj3gEUUtl5JFMA6K9AR5q7qm+H
-	SghbvZqUmZKV3emSUW+as+5HF1uxUdSMPhzR1yYGuczMbabzN/wggvgA0b6go+ziwFm7bP/oGo039
-	hNSUUQCrkJHKnYkuHRnVh0YJYejcFvrrgYWqOPeyqup/nYG4mqxqosf+3+Sf1II+EO31VCNZdKVky
-	rkFnNWE5sHCAO/yDnYcZ1Bnqcw9Z7VEZBui/R+grlmo538TYwY/gnnWDFuUIL4Rd94Q917F/NLHEa
-	D/YA9spq0WaX3FQF+zIQ==;
+	List-Owner; bh=MVKeQqNJQ+blW3bODSI1WP3ez9q6eQNkyWeGWSk26zk=; b=H0SM9qGWc0mfDE
+	xc/FzEptfGNqkZpjVKJjniho6p2lagsnYV64U48SLHh8UBHWf+XCz0zmOxLXnwE+ctJaaafHrv6nc
+	3JS6ulN4eUf72HiTFtgAHMXpro2OwXvGUif8aDQdmEAuPrkDleZGZGS6udCUBl2J27GYwDEImg6b4
+	ersyzLiif3kBXsgAhEIm/+zt/Xb225lT+vKHKCdleyW0PNy4Knl3wJaSh5HQ5sm9EwlRMVntoQ/zs
+	sedSyOOV59/d4Rh/3U2eVXr+7al5YRUBzhRCWikSiZTDZ4Pi4zbVpE1Bl+lh9gy6SqWwtdf9mqGdj
+	nKU0bjvo5D8+zpNBrqTg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qsjm0-00CLc2-0D;
+	id 1qsjm0-00CLcF-21;
 	Tue, 17 Oct 2023 13:06:12 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qsfNS-00BfPd-0V
+	id 1qshoH-00C9Ll-0O
 	for linux-i3c@lists.infradead.org;
-	Tue, 17 Oct 2023 08:24:35 +0000
+	Tue, 17 Oct 2023 11:00:27 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id AC2E8612AF;
-	Tue, 17 Oct 2023 08:24:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DC590C433C7;
-	Tue, 17 Oct 2023 08:24:29 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 81AF461388;
+	Tue, 17 Oct 2023 11:00:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 43575C433CA;
+	Tue, 17 Oct 2023 11:00:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1697531072;
-	bh=tom3LKzD4WPrxoOMlWcXOkaTJL2PCHAzD27eMGNLLx8=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=B4i8S7QlyOLUBlWGp+GiUJgclkY3/COY8qdGHgBtegTU+FIthCnqN1sks4Wchm3n+
-	 ZvLhRotboqIec8IrsiX8StkvY4QJl3p4YXrPQVGfgaoHYG1bFBjhxJ+Ww/ONHwroue
-	 0t75VJowGk0w74kGckXoH6NbFcXcxzh+HFcGYmJr0mLmxQE6j6rVQ5OrmeojfNONZH
-	 T3iu192hCqs6kySjc+Uj40AIw5DsnzDb93EbLE5YY4/638MN7PB8cIMdmkLlZIVfqA
-	 h6lrn+w3I8cJD9cTR8PM5mEbk2VFNLkfR60BwGxBHADfAA5y16nMXhRB0e4sv/bfcc
-	 5aX79Mq2hXhnA==
-Date: Tue, 17 Oct 2023 10:24:27 +0200
-From: Simon Horman <horms@kernel.org>
+	s=k20201202; t=1697540424;
+	bh=+ylqmAC9HYbVfV5ircd/gmKrlKKR9WueEkigtzn6t+I=;
+	h=Subject:From:Date:References:In-Reply-To:To:Cc:From;
+	b=F3dl12SZiD3NMsA2CPJPYiMt5SpeEa/lPUH/v2kyJlGUgenNzx1vMJeJd141RF4kD
+	 3PmeRve8Aar/sdlRGakAq3Ovu9JuXRtLjP/bp2Irc1W6DP7lZha+7jRDjc37+PduTP
+	 szf6k2SbcU9TgV+pS/H7/BLU3ycFdDi5/kGp1vWs8uff0aONLr2N0SiZZzI7bjAttV
+	 HO5lIC8qdCnrzLHPkJpMOYnb1pG/f3NwE3rR7i+cwl6PUgBPErNGodIMmVObuXjVpd
+	 sUf5UAwPanNYFqd0Ti/jPKWExeBOrD8cvGNXFtEcy7xGvKKDxAsq+FJ7bjHkXTcBsR
+	 MBHjDROpidkdA==
+Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id 2D757C04E24;
+	Tue, 17 Oct 2023 11:00:24 +0000 (UTC)
+MIME-Version: 1.0
+Subject: Re: [PATCH net-next v6 0/3] I3C MCTP net driver
+From: patchwork-bot+netdevbpf@kernel.org
+Message-Id: <169754042417.23145.5070726957751164458.git-patchwork-notify@kernel.org>
+Date: Tue, 17 Oct 2023 11:00:24 +0000
+References: <20231013040628.354323-1-matt@codeconstruct.com.au>
+In-Reply-To: <20231013040628.354323-1-matt@codeconstruct.com.au>
 To: Matt Johnston <matt@codeconstruct.com.au>
 Cc: linux-i3c@lists.infradead.org, netdev@vger.kernel.org,
-	devicetree@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Eric Dumazet <edumazet@google.com>,
-	Jeremy Kerr <jk@codeconstruct.com.au>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>, miquel.raynal@bootlin.com
-Subject: Re: [PATCH net-next v6 3/3] mctp i3c: MCTP I3C driver
-Message-ID: <20231017082427.GH1751252@kernel.org>
-References: <20231013040628.354323-1-matt@codeconstruct.com.au>
- <20231013040628.354323-4-matt@codeconstruct.com.au>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20231013040628.354323-4-matt@codeconstruct.com.au>
+ devicetree@vger.kernel.org, davem@davemloft.net, kuba@kernel.org,
+ pabeni@redhat.com, edumazet@google.com, jk@codeconstruct.com.au,
+ alexandre.belloni@bootlin.com, robh+dt@kernel.org,
+ krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
+ miquel.raynal@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231017_012434_275710_A4202D7A 
-X-CRM114-Status: GOOD (  13.83  )
+X-CRM114-CacheID: sfid-20231017_040025_215664_F9EE92D4 
+X-CRM114-Status: UNSURE (   9.20  )
+X-CRM114-Notice: Please train this message.
 X-Mailman-Approved-At: Tue, 17 Oct 2023 06:06:10 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -81,63 +80,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Oct 13, 2023 at 12:06:25PM +0800, Matt Johnston wrote:
-> Provides MCTP network transport over an I3C bus, as specified in
-> DMTF DSP0233.
+Hello:
+
+This series was applied to netdev/net-next.git (main)
+by Paolo Abeni <pabeni@redhat.com>:
+
+On Fri, 13 Oct 2023 12:06:22 +0800 you wrote:
+> This series adds an I3C transport for the kernel's MCTP network
+> protocol. MCTP is a communication protocol between system components
+> (BMCs, drives, NICs etc), with higher level protocols such as NVMe-MI or
+> PLDM built on top of it (in userspace). It runs over various transports
+> such as I2C, PCIe, or I3C.
 > 
-> Each I3C bus (with "mctp-controller" devicetree property) gets an
-> "mctpi3cX" net device created. I3C devices are reachable as remote
-> endpoints through that net device. Link layer addressing uses the
-> I3C PID as a fixed hardware address for neighbour table entries.
+> The mctp-i3c driver follows a similar approach to the kernel's existing
+> mctp-i2c driver, creating a "mctpi3cX" network interface for each
+> numbered I3C bus. Busses opt in to support by adding a "mctp-controller"
+> property to the devicetree:
 > 
-> The driver matches I3C devices that have the MIPI assigned DCR 0xCC for
-> MCTP.
-> 
-> Signed-off-by: Matt Johnston <matt@codeconstruct.com.au>
+> [...]
 
-Hi Matt,
+Here is the summary with links:
+  - [net-next,v6,1/3] dt-bindings: i3c: Add mctp-controller property
+    https://git.kernel.org/netdev/net-next/c/ee71d6d5f18b
+  - [net-next,v6,2/3] i3c: Add support for bus enumeration & notification
+    https://git.kernel.org/netdev/net-next/c/0ac6486e5cbd
+  - [net-next,v6,3/3] mctp i3c: MCTP I3C driver
+    https://git.kernel.org/netdev/net-next/c/c8755b29b58e
 
-one minor nit below, which you can take, leave, or leave for later
-as far as I am concerned.
+You are awesome, thank you!
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.docs.kernel.org/patchwork/pwbot.html
 
-Overall the patch looks good to me and I see that Paolo's review of v5 has
-has been addressed.
 
-Reviewed-by: Simon Horman <horms@kernel.org>
-
-> +/* List of mctp_i3c_busdev */
-> +static LIST_HEAD(busdevs);
-> +/* Protects busdevs, as well as mctp_i3c_bus.devs lists */
-> +static DEFINE_MUTEX(busdevs_lock);
-> +
-> +struct mctp_i3c_bus {
-> +	struct net_device *ndev;
-> +
-> +	struct task_struct *tx_thread;
-> +	wait_queue_head_t tx_wq;
-> +	/* tx_lock protects tx_skb and devs */
-> +	spinlock_t tx_lock;
-> +	/* Next skb to transmit */
-> +	struct sk_buff *tx_skb;
-> +	/* Scratch buffer for xmit */
-> +	u8 tx_scratch[MCTP_I3C_MAXBUF];
-> +
-> +	/* Element of busdevs */
-> +	struct list_head list;
-
-I am unsure if it is important, but I observe that on x86_64
-list spans a cacheline.
-
-> +
-> +	/* Provisioned ID of our controller */
-> +	u64 pid;
-> +
-> +	struct i3c_bus *bus;
-> +	/* Head of mctp_i3c_device.list. Protected by busdevs_lock */
-> +	struct list_head devs;
-> +};
-
-...
 
 -- 
 linux-i3c mailing list
