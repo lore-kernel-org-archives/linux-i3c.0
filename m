@@ -4,66 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E9C5CDB474
-	for <linux-i3c@archiver.kernel.org>; Tue, 17 Oct 2023 13:06:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0055BCDB483
+	for <linux-i3c@archiver.kernel.org>; Tue, 17 Oct 2023 13:34:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Date:
-	Message-Id:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MVKeQqNJQ+blW3bODSI1WP3ez9q6eQNkyWeGWSk26zk=; b=H0SM9qGWc0mfDE
-	xc/FzEptfGNqkZpjVKJjniho6p2lagsnYV64U48SLHh8UBHWf+XCz0zmOxLXnwE+ctJaaafHrv6nc
-	3JS6ulN4eUf72HiTFtgAHMXpro2OwXvGUif8aDQdmEAuPrkDleZGZGS6udCUBl2J27GYwDEImg6b4
-	ersyzLiif3kBXsgAhEIm/+zt/Xb225lT+vKHKCdleyW0PNy4Knl3wJaSh5HQ5sm9EwlRMVntoQ/zs
-	sedSyOOV59/d4Rh/3U2eVXr+7al5YRUBzhRCWikSiZTDZ4Pi4zbVpE1Bl+lh9gy6SqWwtdf9mqGdj
-	nKU0bjvo5D8+zpNBrqTg==;
+	List-Owner; bh=kDaTSvrHePzZY6x+tdus2m1wKEm4WQJFaJB/6Ji0G8Y=; b=cyp26IlW3C5q0M
+	J2LV7DL2ZyCyN/7ghvJ/wyr+feICGE9hascXyETI0+gGOr2l3XXEF4jDMcJY+yenDuULQgdnnvTYw
+	jgzR1yG02hJ05pUQ4DLYy1zBmn0wJAJpW4lNgaeqVUsyQ/Xt/gvvk1mQ6a/4DRmkgV419kHqeJFRp
+	3oRPyHcNPOqeR93Jv+R5duS7Z897+2YPAnc1+wbrJs1O6rvwb15YCG9AkINrBf/bgQ5tHCcw4U6Rm
+	+I54eb7Jja7NchGQY/x+N1uVlzsHPiDvU4A9bABh1mbyp/9NeYLO3XTiD/i+lJmgpMBwSEPLkCZb4
+	7NnY09Cc/F78QpVHMjig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qsjm0-00CLcF-21;
-	Tue, 17 Oct 2023 13:06:12 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1qskDK-00CQmh-0i;
+	Tue, 17 Oct 2023 13:34:26 +0000
+Received: from mgamail.intel.com ([134.134.136.31])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qshoH-00C9Ll-0O
+	id 1qskDH-00CQm8-0E
 	for linux-i3c@lists.infradead.org;
-	Tue, 17 Oct 2023 11:00:27 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 81AF461388;
-	Tue, 17 Oct 2023 11:00:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 43575C433CA;
-	Tue, 17 Oct 2023 11:00:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1697540424;
-	bh=+ylqmAC9HYbVfV5ircd/gmKrlKKR9WueEkigtzn6t+I=;
-	h=Subject:From:Date:References:In-Reply-To:To:Cc:From;
-	b=F3dl12SZiD3NMsA2CPJPYiMt5SpeEa/lPUH/v2kyJlGUgenNzx1vMJeJd141RF4kD
-	 3PmeRve8Aar/sdlRGakAq3Ovu9JuXRtLjP/bp2Irc1W6DP7lZha+7jRDjc37+PduTP
-	 szf6k2SbcU9TgV+pS/H7/BLU3ycFdDi5/kGp1vWs8uff0aONLr2N0SiZZzI7bjAttV
-	 HO5lIC8qdCnrzLHPkJpMOYnb1pG/f3NwE3rR7i+cwl6PUgBPErNGodIMmVObuXjVpd
-	 sUf5UAwPanNYFqd0Ti/jPKWExeBOrD8cvGNXFtEcy7xGvKKDxAsq+FJ7bjHkXTcBsR
-	 MBHjDROpidkdA==
-Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id 2D757C04E24;
-	Tue, 17 Oct 2023 11:00:24 +0000 (UTC)
+	Tue, 17 Oct 2023 13:34:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1697549663; x=1729085663;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=0Ff530asQwhzMuaCrXBgBn7hMKrFyVFKwARb+hoQLog=;
+  b=QDKxQ7pCKDcC+Kx5tIUCmSBow7eLsbKatPMSILEboMdWyaAsqh34Tzuc
+   3Lv8AiaSlPeSfdYpvSTz0C3eAp+Yb8D28DlaPxIf8imxFqaq4izaKOnYQ
+   5U4HbRLdSBXlW1N3Xb8r8o6r5fYDSkeXVhfZdjnyEVNAjx9RZFKvyHZwf
+   nfyGsZnOkyb2E8Np6hvjutK+MYtEcbuKdR47mtA353LpBfRllBWKfvfFC
+   YFR1RD0cohC2cBZalcyACRPcKOMfJ+EZJ/30xpedNwYspoVfoH1iJ3yQ/
+   aQJ7C+xo03wTJEI1dpGQ8X+g4VsaG8ugjyyDpw9EbxOS6OtljLNCI0OxB
+   g==;
+X-IronPort-AV: E=McAfee;i="6600,9927,10866"; a="449999746"
+X-IronPort-AV: E=Sophos;i="6.03,232,1694761200"; 
+   d="scan'208";a="449999746"
+Received: from orsmga007.jf.intel.com ([10.7.209.58])
+  by orsmga104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 17 Oct 2023 06:34:21 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6600,9927,10866"; a="749697972"
+X-IronPort-AV: E=Sophos;i="6.03,232,1694761200"; 
+   d="scan'208";a="749697972"
+Received: from lkp-server02.sh.intel.com (HELO f64821696465) ([10.239.97.151])
+  by orsmga007.jf.intel.com with ESMTP; 17 Oct 2023 06:34:18 -0700
+Received: from kbuild by f64821696465 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1qskD8-0009e1-1K;
+	Tue, 17 Oct 2023 13:34:14 +0000
+Date: Tue, 17 Oct 2023 21:33:35 +0800
+From: kernel test robot <lkp@intel.com>
+To: Frank Li <Frank.Li@nxp.com>, miquel.raynal@bootlin.com,
+	conor.culhane@silvaco.com, alexandre.belloni@bootlin.com,
+	joe@perches.com, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev
+Cc: oe-kbuild-all@lists.linux.dev
+Subject: Re: [PATCH 1/6] i3c: master: svc: fix race condition in ibi work
+ thread
+Message-ID: <202310172150.4GVdV44X-lkp@intel.com>
+References: <20231016153232.2851095-2-Frank.Li@nxp.com>
 MIME-Version: 1.0
-Subject: Re: [PATCH net-next v6 0/3] I3C MCTP net driver
-From: patchwork-bot+netdevbpf@kernel.org
-Message-Id: <169754042417.23145.5070726957751164458.git-patchwork-notify@kernel.org>
-Date: Tue, 17 Oct 2023 11:00:24 +0000
-References: <20231013040628.354323-1-matt@codeconstruct.com.au>
-In-Reply-To: <20231013040628.354323-1-matt@codeconstruct.com.au>
-To: Matt Johnston <matt@codeconstruct.com.au>
-Cc: linux-i3c@lists.infradead.org, netdev@vger.kernel.org,
- devicetree@vger.kernel.org, davem@davemloft.net, kuba@kernel.org,
- pabeni@redhat.com, edumazet@google.com, jk@codeconstruct.com.au,
- alexandre.belloni@bootlin.com, robh+dt@kernel.org,
- krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
- miquel.raynal@bootlin.com
+Content-Disposition: inline
+In-Reply-To: <20231016153232.2851095-2-Frank.Li@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231017_040025_215664_F9EE92D4 
-X-CRM114-Status: UNSURE (   9.20  )
-X-CRM114-Notice: Please train this message.
-X-Mailman-Approved-At: Tue, 17 Oct 2023 06:06:10 -0700
+X-CRM114-CacheID: sfid-20231017_063423_204708_BB0DFB4F 
+X-CRM114-Status: GOOD (  11.34  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,39 +88,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hello:
+Hi Frank,
 
-This series was applied to netdev/net-next.git (main)
-by Paolo Abeni <pabeni@redhat.com>:
+kernel test robot noticed the following build warnings:
 
-On Fri, 13 Oct 2023 12:06:22 +0800 you wrote:
-> This series adds an I3C transport for the kernel's MCTP network
-> protocol. MCTP is a communication protocol between system components
-> (BMCs, drives, NICs etc), with higher level protocols such as NVMe-MI or
-> PLDM built on top of it (in userspace). It runs over various transports
-> such as I2C, PCIe, or I3C.
-> 
-> The mctp-i3c driver follows a similar approach to the kernel's existing
-> mctp-i2c driver, creating a "mctpi3cX" network interface for each
-> numbered I3C bus. Busses opt in to support by adding a "mctp-controller"
-> property to the devicetree:
-> 
-> [...]
+[auto build test WARNING on linus/master]
+[also build test WARNING on v6.6-rc6 next-20231017]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-Here is the summary with links:
-  - [net-next,v6,1/3] dt-bindings: i3c: Add mctp-controller property
-    https://git.kernel.org/netdev/net-next/c/ee71d6d5f18b
-  - [net-next,v6,2/3] i3c: Add support for bus enumeration & notification
-    https://git.kernel.org/netdev/net-next/c/0ac6486e5cbd
-  - [net-next,v6,3/3] mctp i3c: MCTP I3C driver
-    https://git.kernel.org/netdev/net-next/c/c8755b29b58e
+url:    https://github.com/intel-lab-lkp/linux/commits/Frank-Li/i3c-master-svc-fix-race-condition-in-ibi-work-thread/20231017-151123
+base:   linus/master
+patch link:    https://lore.kernel.org/r/20231016153232.2851095-2-Frank.Li%40nxp.com
+patch subject: [PATCH 1/6] i3c: master: svc: fix race condition in ibi work thread
+config: m68k-allyesconfig (https://download.01.org/0day-ci/archive/20231017/202310172150.4GVdV44X-lkp@intel.com/config)
+compiler: m68k-linux-gcc (GCC) 13.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20231017/202310172150.4GVdV44X-lkp@intel.com/reproduce)
 
-You are awesome, thank you!
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202310172150.4GVdV44X-lkp@intel.com/
+
+All warnings (new ones prefixed by >>):
+
+>> drivers/i3c/master/svc-i3c-master.c:207: warning: Function parameter or member 'lock' not described in 'svc_i3c_master'
+
+
+vim +207 drivers/i3c/master/svc-i3c-master.c
+
+1c5ee2a77b1bacd Clark Wang    2023-05-17  153  
+dd3c52846d5954a Miquel Raynal 2021-01-21  154  /**
+dd3c52846d5954a Miquel Raynal 2021-01-21  155   * struct svc_i3c_master - Silvaco I3C Master structure
+dd3c52846d5954a Miquel Raynal 2021-01-21  156   * @base: I3C master controller
+dd3c52846d5954a Miquel Raynal 2021-01-21  157   * @dev: Corresponding device
+dd3c52846d5954a Miquel Raynal 2021-01-21  158   * @regs: Memory mapping
+5496eac6ad7428f Miquel Raynal 2023-08-17  159   * @saved_regs: Volatile values for PM operations
+dd3c52846d5954a Miquel Raynal 2021-01-21  160   * @free_slots: Bit array of available slots
+dd3c52846d5954a Miquel Raynal 2021-01-21  161   * @addrs: Array containing the dynamic addresses of each attached device
+dd3c52846d5954a Miquel Raynal 2021-01-21  162   * @descs: Array of descriptors, one per attached device
+dd3c52846d5954a Miquel Raynal 2021-01-21  163   * @hj_work: Hot-join work
+dd3c52846d5954a Miquel Raynal 2021-01-21  164   * @ibi_work: IBI work
+dd3c52846d5954a Miquel Raynal 2021-01-21  165   * @irq: Main interrupt
+dd3c52846d5954a Miquel Raynal 2021-01-21  166   * @pclk: System clock
+dd3c52846d5954a Miquel Raynal 2021-01-21  167   * @fclk: Fast clock (bus)
+dd3c52846d5954a Miquel Raynal 2021-01-21  168   * @sclk: Slow clock (other events)
+dd3c52846d5954a Miquel Raynal 2021-01-21  169   * @xferqueue: Transfer queue structure
+dd3c52846d5954a Miquel Raynal 2021-01-21  170   * @xferqueue.list: List member
+dd3c52846d5954a Miquel Raynal 2021-01-21  171   * @xferqueue.cur: Current ongoing transfer
+dd3c52846d5954a Miquel Raynal 2021-01-21  172   * @xferqueue.lock: Queue lock
+dd3c52846d5954a Miquel Raynal 2021-01-21  173   * @ibi: IBI structure
+dd3c52846d5954a Miquel Raynal 2021-01-21  174   * @ibi.num_slots: Number of slots available in @ibi.slots
+dd3c52846d5954a Miquel Raynal 2021-01-21  175   * @ibi.slots: Available IBI slots
+dd3c52846d5954a Miquel Raynal 2021-01-21  176   * @ibi.tbq_slot: To be queued IBI slot
+dd3c52846d5954a Miquel Raynal 2021-01-21  177   * @ibi.lock: IBI lock
+dd3c52846d5954a Miquel Raynal 2021-01-21  178   */
+dd3c52846d5954a Miquel Raynal 2021-01-21  179  struct svc_i3c_master {
+dd3c52846d5954a Miquel Raynal 2021-01-21  180  	struct i3c_master_controller base;
+dd3c52846d5954a Miquel Raynal 2021-01-21  181  	struct device *dev;
+dd3c52846d5954a Miquel Raynal 2021-01-21  182  	void __iomem *regs;
+1c5ee2a77b1bacd Clark Wang    2023-05-17  183  	struct svc_i3c_regs_save saved_regs;
+dd3c52846d5954a Miquel Raynal 2021-01-21  184  	u32 free_slots;
+dd3c52846d5954a Miquel Raynal 2021-01-21  185  	u8 addrs[SVC_I3C_MAX_DEVS];
+dd3c52846d5954a Miquel Raynal 2021-01-21  186  	struct i3c_dev_desc *descs[SVC_I3C_MAX_DEVS];
+dd3c52846d5954a Miquel Raynal 2021-01-21  187  	struct work_struct hj_work;
+dd3c52846d5954a Miquel Raynal 2021-01-21  188  	struct work_struct ibi_work;
+dd3c52846d5954a Miquel Raynal 2021-01-21  189  	int irq;
+dd3c52846d5954a Miquel Raynal 2021-01-21  190  	struct clk *pclk;
+dd3c52846d5954a Miquel Raynal 2021-01-21  191  	struct clk *fclk;
+dd3c52846d5954a Miquel Raynal 2021-01-21  192  	struct clk *sclk;
+dd3c52846d5954a Miquel Raynal 2021-01-21  193  	struct {
+dd3c52846d5954a Miquel Raynal 2021-01-21  194  		struct list_head list;
+dd3c52846d5954a Miquel Raynal 2021-01-21  195  		struct svc_i3c_xfer *cur;
+dd3c52846d5954a Miquel Raynal 2021-01-21  196  		/* Prevent races between transfers */
+dd3c52846d5954a Miquel Raynal 2021-01-21  197  		spinlock_t lock;
+dd3c52846d5954a Miquel Raynal 2021-01-21  198  	} xferqueue;
+dd3c52846d5954a Miquel Raynal 2021-01-21  199  	struct {
+dd3c52846d5954a Miquel Raynal 2021-01-21  200  		unsigned int num_slots;
+dd3c52846d5954a Miquel Raynal 2021-01-21  201  		struct i3c_dev_desc **slots;
+dd3c52846d5954a Miquel Raynal 2021-01-21  202  		struct i3c_ibi_slot *tbq_slot;
+dd3c52846d5954a Miquel Raynal 2021-01-21  203  		/* Prevent races within IBI handlers */
+dd3c52846d5954a Miquel Raynal 2021-01-21  204  		spinlock_t lock;
+dd3c52846d5954a Miquel Raynal 2021-01-21  205  	} ibi;
+f32ae0219a47f74 Frank Li      2023-10-16  206  	struct mutex lock;
+dd3c52846d5954a Miquel Raynal 2021-01-21 @207  };
+dd3c52846d5954a Miquel Raynal 2021-01-21  208  
+
 -- 
-Deet-doot-dot, I am a bot.
-https://korg.docs.kernel.org/patchwork/pwbot.html
-
-
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-i3c mailing list
