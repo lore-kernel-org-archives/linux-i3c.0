@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9ECA1CDB482
-	for <linux-i3c@archiver.kernel.org>; Wed, 18 Oct 2023 21:00:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2213CDB47E
+	for <linux-i3c@archiver.kernel.org>; Wed, 18 Oct 2023 21:00:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=szeLe5NUEg6R1SGNN/H1a+UCrHF4GiFGr5ccTYUz96c=; b=0QXOPpknmhKX9N
-	HRPL3UO19LbZGVb6RbxkhZmTsGkb4xv+skWiduuutnf6ArrUWwynsboU31NvwVgY8qzC19Q1Ir2Dr
-	loAuB2fp2j8j2qgxuYJNjz3Fz7qHMFgV/dvvW4VwhJ3M1DvQjs2SMtbwo5VQ9vmpMSdVzRHHAIND8
-	BOKXDYFa0MAJiWd1szJMHaiZWTkMRqaDtsFVzShwYvI5EMjU9XAFlhSoCuPSnLW/INGx6u24FcZRr
-	oRqc8ErHLADtjGZVPA8xgKWirO0jjrSrfs0a4C81pmRi3uBZ2FydO6ve0IVo8EBrnp0Y+8LnbvARU
-	SYA/3jDeAsPxlldHQPAg==;
+	List-Owner; bh=zvmrYfWb6Jyzx5plF9p56RaSdTLBSS5cqyyLPh7MCJk=; b=HfLVSQ7jEvNucr
+	+QGVAf/XmiIC45vNzcNNO6xcxCNjuRv6/5hlknBeCj/FrQgiUEcDJ8F/wlV35BZk26+8+4aj/s8Lb
+	RZA2fibO+ioNsxdjIUwGjcHhfLsMqmRTyNuPBpVl1gO/E0GsMgCd9esYd6E2dUaQ3JEwR6BpXozZ0
+	zhHvZZ83dPK6d19Eq2SSRVv6v4CBSzuSTh4RTL1rnSL9LjmlcRG/5OigkK+fG25m+EFm8w4Kx8x1o
+	3qfcmEtyY5pnhFHNKbW5x23D+/nVHeqrGdFQpuGgiBl9gRuBgrxkVBtDdgiNLflEyhmn0SsLXQr5V
+	ijDc1S8npyEFgNJpJTow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtDe8-00FgnH-0c;
-	Wed, 18 Oct 2023 21:00:04 +0000
+	id 1qtDe9-00Fgo6-1p;
+	Wed, 18 Oct 2023 21:00:05 +0000
 Received: from mail-vi1eur04on062e.outbound.protection.outlook.com ([2a01:111:f400:fe0e::62e] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtDe3-00Fgk7-39
+	id 1qtDe6-00Fgk7-2j
 	for linux-i3c@lists.infradead.org;
-	Wed, 18 Oct 2023 21:00:02 +0000
+	Wed, 18 Oct 2023 21:00:04 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=bnoHfGes6zd4u8U2AOxHG2CvtC3lFVkMvxmnFl4OYrPNvMJR0mMYoYSvs3/FCClORrlynCRhvTFDBl3kYCS9la8V4ggjQ7RXM+7fPO1X+79l6X2VREFoXrSxAsraLispuqc0TEXiLAiQImdSDBNvDcxBMlgsSnvmCUu/bV3JAcCu6dJdMJarV/agImCXB5skM4MRhBH5C1fDwHtBCx8HG0Oxm2V7iV0xxjPWGvzD+nHKjKGyIdwtreyF4HVHhSDk6zgA/ZYe1R+XyxAU4lcxeAUeRGuiZD5GxZBXQ6S4cTwXkrN9UTI9hg4M0XCTPcUWuXbc3TU8XcMeF3qRcSO/Tg==
+ b=gGgbfbSncd8p2bDrHLNik5lueWy8SbNxHYWAqL+uoru4wyoCmWS+u4TfX5YVwDQ7hf4NCHe1Vks751atTVmsiHU5MpIcsYDniQZ4cnGNAgjKr6kTLO2GVna1gSYvnHOFBHAVr4xU6hZ+RzsCjOvyyy5o1kJ2YcYkVl+PmhFQuwS33da/V/q1GrbvBAdjnLgsMwg4rYNDRBFsPt7Wts2mdmiwhniQYwsc/H4WPC4C+Ue8wLf5zyOoy/Sx32lECo4ZtYsH7FrN05SfrwD2iFMd2z2E1woxyPiq8gc8FYrir0loPlp7CNT+KOzoW4/Qav83FLcvwCTnhcL7N2hPPs+QFg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=sDlf4xSFouG1bOinSyyY0+9HL8i98T9MXvpDH0ZtEyI=;
- b=ZSrHd3Kv2pxM7Buna4IKFGmK6BaayzbUyN2VocDevMDP/bzTvqtHe7IMegkOmD/8f+EY5PhB+V0wkJgHg5pJA32TRznNxLgYDXHeaM7CCq4T3t+Svfneb7l+4PxfvdNxm1ljir7wiX1L/86cufKhhz/N8Ic1io/RQclhOQqHH4aB3k1xiUNxemk7VBP0ebFKSU6jAelb2mvryD8R+/J8Qd8Fx+F5iQnEIfyfJdctyS2v0YacOizmE1zRc9BnNssoJHDs+dsaxAH9h0/jGyWVM5v2ZPJAGsMSLQ/j7MJOuy4uGKvF0vXqzBM/8bd8LgW+MNuROawcHUtep1zwa92+JQ==
+ bh=++WWKqxHPtPOuShZ9C+n6tM8dcE6BdIrF96tSwG9XqE=;
+ b=jY/hTIw/hGqG5Pb/8e5ruRaKvaHE47YflqAHgqfXfvBCgrFiPH7TZ/VA9Gtc4bjzLGT4ZMyHm/A6cBj5v46/qgwZRSpzE309lW7E5GPOD1o9MwZZfE7aXmodxUhra71152lL+kCAnu3bmzGAjN19XS0oAXZRvQ1N/t+YnrClmTJp7iBEL159rpM0fKzayKpdFwvUOREWdH8AMIYM9+ycbM+vNzqu63ib7svqo2lgElDJOLysrllx3aRyAXWK8aFB7CquFzkDPPIGETp1EX++I4+33k+P+lfL+kEAMwpPGa3lZk/1M5X8kTD4CGnOfhoCGgBoSxhbeN7rdLqTB4sLpA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=sDlf4xSFouG1bOinSyyY0+9HL8i98T9MXvpDH0ZtEyI=;
- b=qvM+vtYSVT7iqOG//bJgA0yG3dNGajkOnC8wfRPun2mtCUXeQwsbDCFkDFWT9oNMLAfns61iw1grQuqiY8CatZjdkpNaCeC1facGhapmQVBf40xAox9ECKuzLybCVFoKEEzdRuW23hkhujF+yGoGUBRMSRAgzvZs4eCxDTDE2YM=
+ bh=++WWKqxHPtPOuShZ9C+n6tM8dcE6BdIrF96tSwG9XqE=;
+ b=M8Hv1gNKjOSb/AdUxOrgoV3OfRHashw3lq3tM0oBR8AGcsrknSpJH4RIfGWqa4BBFkJDXllS1V7/IHUlDXwWVN6vlU+4bi0iSDjyJmY8/0y5v02WCEymqxwp9qoBD7y577qQGHznXbPIN9WK6klxzyh7tpQls3h/26vWoN2S56E=
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AM6PR04MB4838.eurprd04.prod.outlook.com (2603:10a6:20b:4::16)
  by PAXPR04MB8653.eurprd04.prod.outlook.com (2603:10a6:102:21c::24) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6886.36; Wed, 18 Oct
- 2023 20:59:48 +0000
+ 2023 20:59:53 +0000
 Received: from AM6PR04MB4838.eurprd04.prod.outlook.com
  ([fe80::1774:e25f:f99:aca2]) by AM6PR04MB4838.eurprd04.prod.outlook.com
  ([fe80::1774:e25f:f99:aca2%4]) with mapi id 15.20.6907.022; Wed, 18 Oct 2023
- 20:59:48 +0000
+ 20:59:52 +0000
 From: Frank Li <Frank.Li@nxp.com>
 To: miquel.raynal@bootlin.com
 Cc: Frank.Li@nxp.com,
@@ -61,9 +61,9 @@ Cc: Frank.Li@nxp.com,
 	joe@perches.com,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v2 1/6] i3c: master: add enable(disable) hot join in sys entry
-Date: Wed, 18 Oct 2023 16:59:24 -0400
-Message-Id: <20231018205929.3435110-2-Frank.Li@nxp.com>
+Subject: [PATCH v2 3/6] i3c: add actual_len in i3c_priv_xfer
+Date: Wed, 18 Oct 2023 16:59:26 -0400
+Message-Id: <20231018205929.3435110-4-Frank.Li@nxp.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20231018205929.3435110-1-Frank.Li@nxp.com>
 References: <20231018205929.3435110-1-Frank.Li@nxp.com>
@@ -73,54 +73,63 @@ X-ClientProxiedBy: BY3PR10CA0027.namprd10.prod.outlook.com
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: AM6PR04MB4838:EE_|PAXPR04MB8653:EE_
-X-MS-Office365-Filtering-Correlation-Id: abd18189-f3a1-4fc3-5fda-08dbd01d29ef
+X-MS-Office365-Filtering-Correlation-Id: 7e53ad2d-fdd7-4bbd-780d-08dbd01d2cd2
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: RF09ZxiVNeSIRC55hGj8pNrI9yPilx+/CSCqq73QJggaocvl0CuCthZasWMBCwyDiDDnhSM9/D6M4Ak+/NzScVDSiUzIkbU9tjZaUmOuCaFWH0BZjnOedi16RF5tIuPcLggttyX93mgn2ifUaxNFeQnzNhZvgHnZsQLTqukl7MdZnUEIW3WG9C796WqkWCSa3MaUSSX9ZYK7qvEteiIVGw4Y4SO84cAIDLrktaTmvki26xnCezWlsWQPWDcJjXl2cQtlAgC/tzRUNPE1p4BQeU5k8uYw0mgXAf7jhcVD0Zotq5xZr+JBJRttoNaES6TnRXBv4z8Iedi+z9cr26KDaZF0Zy0mKkOIWTRjFUAjhInnKb93DLbI0nSNlRpR3jPNaa8Sgo2av7Ux08ua5xcendbAORNSqrIY39c04SGDsmrmyzeDwHd1AHeszpFjToAbwlBQkFg4GvC09ozt5pnEH2miArvV/zGn1C3jMm83DTUQS6tAUnb2/co2uU5iia2mjkCVxXu/eJFX3HKrVepncwipgNneUS+b9Y5kpGko3YCeC7hi2zE0CfnmzReWQWvFdnx5xSA58bgsNeKiYg4qc/7s5eA+DLP7D2L9RyLkVWsqwC/4OsYKUW4saSFsTQutb7pLJJz/sflet7fiD0TZow==
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM6PR04MB4838.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(136003)(346002)(366004)(376002)(396003)(39860400002)(230922051799003)(1800799009)(186009)(451199024)(64100799003)(6512007)(6666004)(6506007)(52116002)(2906002)(4326008)(41300700001)(478600001)(38350700005)(6486002)(1076003)(26005)(83380400001)(2616005)(36756003)(66476007)(66946007)(6916009)(316002)(66556008)(86362001)(8936002)(8676002)(38100700002)(5660300002)(309714004);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: a8QNzJRvOtNz5fh7/7kTG7y8nBigabHT4b3YaTA6IFQ2DzRMdPMby72LLsfyv+TuXRuc5EKDwnXZbQFNPTw0kC8cbBnSR0OQ+UvaHdKRb5kEBABBNoP9y59aOatA5o0zBobUGUbCXXzrQoFHCjOY/bJufTrCSqCEi9TdtIZIeQ+b0QJTrKHHQyyz51d7/g3uX5xg01qGpGsBGzxvCefJ8zt75n+Xux6auch7gJ5jfj9gfPXplQi2f8bNS89IiXIpeeyLKL+G7kUPzSvMZh6trawOIgoIF0+nO0UBqwMgFvuJ7RuxrJk2H+f19Y2u64tgD2bMgjFBT9qbiUjKSw/vsZsJPTk4z94prNhVIU7gYAA84eMcqxS9ydSOMZrGIioGjKQNQ/H+NABZfuLa8Y6HxIjNleLZ8oioNEMUfs38Jhf1Hmz1T4oSGUxH+xUHYR71eKLT4wwBVoiqTim1E3WND89KUcBhXD0CyO1+dqWzxoJG5n49Ofa+CMNKHk6yMhoNdldyUnegfEmF3KkLfQrNFm3y+oKk5i/k6qZpYmOwl3HRxYj1xy9q2j8xJXme/B4SokvyoLt4CNSNyy4CX0fJMyRnU3G3B27DKFdhk1Yni11nkq7XpGNxyia6HjvqVHBA
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM6PR04MB4838.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(136003)(346002)(366004)(376002)(396003)(39860400002)(230922051799003)(1800799009)(186009)(451199024)(64100799003)(6512007)(6666004)(6506007)(52116002)(2906002)(4326008)(41300700001)(478600001)(38350700005)(6486002)(1076003)(26005)(2616005)(36756003)(66476007)(66946007)(6916009)(316002)(66556008)(86362001)(8936002)(8676002)(38100700002)(5660300002);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Px24vC+CvtzjwezD6mdI5X+kUJxf+XHoR9MF9z1PJWejZEDTy65opOKQaFuk?=
- =?us-ascii?Q?bMiJhNDXOsDmRM4Y231VSeG1lREGF3YkCWG9SV6vej4DVJgn55B6/KpjFZDF?=
- =?us-ascii?Q?cB2Zt4cDoB+Bb9adQnWgttF3sb/Gt7+nstWB8tnuhPijwHGQcSuPjeJUffGM?=
- =?us-ascii?Q?YDLDKDy0PNvSxg3aW24TRSXy9nD6rHWXgQabL+Xa4A49hVMCAUF9zTeZKjOM?=
- =?us-ascii?Q?0nYlmcqOoeRdfSot5z1Ljna62s4HmRv1/EEmFAJVgvWgZDrrdN88epBdTSyj?=
- =?us-ascii?Q?CgxuegulmJatB1IVF051or6g3q/dfEQ8tGFimQwFSQ8XyMRwEzsjjSbmjJTK?=
- =?us-ascii?Q?QGO9oPPmv9WiJDJqj2mIf/+ItJFzavbua7Covvq45yiPEsJTYQKhBkZCAuqQ?=
- =?us-ascii?Q?1MJ1q6Wmj7x8J2pRZctY1rwu7EbnuogyavTIQ7u27ecF0+ZJGzTe8p+WYQhO?=
- =?us-ascii?Q?afR9zXJnJc25nI+CssLbKhUbmCRCGn7p+RrxikKoz9ooFd56WtcCyurbNrZn?=
- =?us-ascii?Q?Wha5uN8NHlHWXOEymXSjZCgG77zNywbF9zncezGX1rZsjLWm72KRm95jyd90?=
- =?us-ascii?Q?x3HmwQEbvEKmI2S9q8KnOR+eZ31IAzhVczulA8e7UoZbiJboNHakp+9f1Rdw?=
- =?us-ascii?Q?RL+3cu41NTRJA+gMtn3Rap6mj2wQSIvytOmIeVAgqM63Ai0Lz5zBa3fMUC99?=
- =?us-ascii?Q?KuMzFi92ceelDYT6lB7rgy4+WeXDT8YcPSkThHiHtlXNmqTtN4O9KmFjJYMZ?=
- =?us-ascii?Q?pynDqRPvtVfwSD0ZqJXYW+iL4tLkaV++IfcAlEQvAVAQNF9YBKa57jHh1/Lf?=
- =?us-ascii?Q?T2ZUk7eHy5lhG8LyW1w6zzuiqr59wPOSXBmnpdZ7Z+uapnPusVYtJpBB4fjQ?=
- =?us-ascii?Q?mKSN7FBV0oHImmePCXvFB0IRyb84xPat0VKGcmgt1HfC2D0iPH/cq/wlw1Co?=
- =?us-ascii?Q?NojQyafHqruDHGiEisAgaMROAMqL7xv2/JM9RTW56z9L9OEyiHygyb7woxH0?=
- =?us-ascii?Q?U4ksHVJNYNoyR5VB6YwHZcbqi1OeSH7pRuMO/xB+yPyjoV4yiKnQcyqNA0eq?=
- =?us-ascii?Q?IVkv9c5v738Wp0yTpskBmgNKA3PYKrVoGXUSoV1RGtH9nQtKiqd119fMupVl?=
- =?us-ascii?Q?JOGors8QWUYgzf9oqlZSKZdzYkSeb9bSAPmeXK8JoqDfmDB384CBpgWQda53?=
- =?us-ascii?Q?5cN5d4n0LuTdHNa1dMlY6rQZsJEhhfkjUCaPUHHIvZI9Yr7wdq8SpbrChTxB?=
- =?us-ascii?Q?m14q42cewQXNeolR554x1jRVwcy5fViM7ze3/i3ifJ0oF2kRq10/VuQNNXES?=
- =?us-ascii?Q?rzoUJxv3x4jmP4mS/DEIuBPRUUH3vEL4Oj88Gl6A38UA4Pi+QshDYiPwjRkK?=
- =?us-ascii?Q?+VCP7KYIzJ8y6G4YqxbVneGrqC7ljiqq7nHaMkTzaedmnP/C16Gw7LDogbsw?=
- =?us-ascii?Q?NlWDLGzZZK3DFKSr/+4upzHK5Hkm6GS1jj23ziX1frtWs9iV7L5OTl6jOuSG?=
- =?us-ascii?Q?7/C3zeIYOeUZ//nxijgvmoWSbxhlWcXZZT6bMn98kF15MKEe1svfQAPb6f6B?=
- =?us-ascii?Q?Q6B7/abhgfSk0a4LLu0WJVMgP8dkAufjzBXMCdrO?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?a2tUYlk0Q2xmcmgwVyt0U3IyVDA5ZjhyU25vYSs3ZmtFelJ1OFczc0hJRVVw?=
+ =?utf-8?B?SzJ3U0FDUUlVL1ozOGNlVitQZU5OSG55ZWZURjk5YnJFRUE3Q3lEOW5mcHNw?=
+ =?utf-8?B?Mm1Fb0JxVXZ4L3V4VTZMSTZkeGZUUm4vRi9JUHltYnZvRnduMUExbkg5bng1?=
+ =?utf-8?B?SDM5NkpQK1N2NUVNdzFYRkhrall0WmlzNEFuNjBlQi9ZZnNodkZTYTVFOFRu?=
+ =?utf-8?B?OUErQ2tFRGpybVZGR0F2WTVtckVrWlRUdmN3NHZJazRkNDd6Yi9YSDhHOWQ0?=
+ =?utf-8?B?NStlbDZTVnVxYTRIVDNNUlF1cEpRbkxvcVRFS2ZXcDdTbXZkUGpmY1JERFdq?=
+ =?utf-8?B?eUNsYlZlVkoxZUhIVXhwYTZYU0ZrN2lQRFYvUmZwQ21UUFlUc2RCSWpnakdS?=
+ =?utf-8?B?aTBBZHFIaTE4dnB6eDlsd2JqRUJoeDIvZDVBYWszZU51Uy9Sb2Q4NVNsQXln?=
+ =?utf-8?B?NHpIZHVIbUdEcmNTVDRXTDVpVGZQd3VnQk1KczJJNFl0VUhuWTFZay8wcXlR?=
+ =?utf-8?B?NXk3cWRpMWJoQU1QQlk4bWpRNVBSMzdwSlJuQVA1WUpZNTVEbVRxditQbzNs?=
+ =?utf-8?B?M2I1dmgvYmo1QURudUlCVnVYZVlRNDQxZFByaVQyMXBQZ1h5NVcyMUZDUFBF?=
+ =?utf-8?B?MVNGSFRLQkV1RkpjbUQ3eldqdjN0eHRQMXY1eW9JMmUxY2hWTUFNZGw2dEpY?=
+ =?utf-8?B?K2Z5eW1xZHZMNys1ckdpSVk0OE9JbTI1MmlVeEZodTBvaEVnb3RFbTh2R28z?=
+ =?utf-8?B?dGsrd0tQb2pyRGxtNmNSZGx3MmhhcFRSN0NlOGtaWjhRYUtmaWl1OVFQeHhq?=
+ =?utf-8?B?S2Y5dnh2Q2JCWENvZHZDZExhaU9sS0FEM3NKRnNGRTE3dUM2d1RhT0orcDFV?=
+ =?utf-8?B?ZW9OWnU4a1gyNzFENVhYL0ZHdy92aFVXdExFdC95aG5mSDQwQVFKWHk1dit6?=
+ =?utf-8?B?OUVtUkNoMk1jMDIyL29yVktwdzVlc1pqMENPcjlQTVpnWE94akwycVlJL2Rq?=
+ =?utf-8?B?OTg1cFl3QUdjWkdrS3hkTHFjQVdNWXlOQWREdldCUjZYVWNnL3NHRDRtZHFs?=
+ =?utf-8?B?MWkrdzZxaHZPeTk0NFhRQS8xSkhWV0g3VkVHUXpkKzZmcWYxelgrOVdhMEFU?=
+ =?utf-8?B?UzYxeW5LdzVDaWpwN0hGTkNKM0ZMYTBvNmk1TDhNK1ZSRmtxTmV5L041Sm44?=
+ =?utf-8?B?RU5PcyswMmhheGpGb1lOSHB2NDArNmRURHIyeGRWbFBEa1FsQzNWQkJVdHVs?=
+ =?utf-8?B?L3FRdFg0ZmNVOVo0Vzc0Nmx0NUZsL0tNUzRpWEZuVFBPSGljQnF0OGQrb3dP?=
+ =?utf-8?B?T3BOanFnR2RINGhZZFJCdXNnVzJON1dmWVdhaFNyQXpZUHZqRGxVQ0cvL1Nz?=
+ =?utf-8?B?Mjg3bk5VME5qeUIzTW0waGJzR0ZQdFhkWEZ1aHJYRWs0bGdrT3VoeEJhN1VS?=
+ =?utf-8?B?SlZyUTlPYURqYS9uK1ora1BTeUJGdUJVSDkwVEZza3lWRjZpbGRLemxTazdF?=
+ =?utf-8?B?eGRvcEtibGhBcUl4ZzJOdkJyV09PTkg2Z24vaEF6ZXhJR3kvbmM2NFVhU2s5?=
+ =?utf-8?B?YkJTVDBjeFNGN3V4aDk1QjZMMFhaVURqUXh2OFVwUTNQRFBtUkE0WDIyOUdo?=
+ =?utf-8?B?TVk3UGZ6bnlXeDdlaFp0a2RKWE12bGtOb3AvbENWV3dsdlNjSnRZS0I0QVFY?=
+ =?utf-8?B?SXU2dVBlV1FJQmU5SC8wZ2JoNE9idFJKWXJIek9Hb0JtdGVaa1pHUWk5YlM3?=
+ =?utf-8?B?Q3lKY3YwUGlJUk53aGZIKzhuekxIYnordU1IMWpHTGZrcitKSUN5OEV0T3Ar?=
+ =?utf-8?B?OHEwMzRwNFBOTmYzS1VjRjB2amFSRXIrUVNaUlZ2NS9UajFhWUFuQWVIL21K?=
+ =?utf-8?B?eHJ3NlYxcllOTEhnOW9menJWdnJNM1N5aTBKNlhIYW1EN1ZTc3hZdHhETTJm?=
+ =?utf-8?B?SXQrU0RMTnNPTlFkZVlXYXNXVXJuYTZzWElJNE45aCthNW5lK0lBblBVdWM1?=
+ =?utf-8?B?Y0YwYTFYNDVsTWJla3VtSi9HaFl2b1pvZzJkbEwxWHczWWJ0Z2VsOVVxRkZT?=
+ =?utf-8?B?YmNWRFE0MURHQjUvdlkzUGhjVFhuM003clJYVjdDUENjVlp0dG5KM3ZTT0RX?=
+ =?utf-8?Q?ezBI=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: abd18189-f3a1-4fc3-5fda-08dbd01d29ef
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7e53ad2d-fdd7-4bbd-780d-08dbd01d2cd2
 X-MS-Exchange-CrossTenant-AuthSource: AM6PR04MB4838.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Oct 2023 20:59:48.0674
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Oct 2023 20:59:52.9226
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: qSwioh/k6nRm/vdWr2UV6OEh9NiCbomkw+qXpzK3egcGYKFgPZEGKZqjlWvIZbWETQFybFWm616bVmgLBBAzMw==
+X-MS-Exchange-CrossTenant-UserPrincipalName: l7t3pknfqVKU8dle9k9zzGg9Gs5dAAs22cI6t5PYcWucNBmZ03wSXWhWCCPLkV5b/80bopHkg/aipAXdi6uwtA==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8653
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231018_140000_019256_013338AC 
-X-CRM114-Status: GOOD (  12.86  )
+X-CRM114-CacheID: sfid-20231018_140002_892585_9A657AB6 
+X-CRM114-Status: GOOD (  10.71  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,160 +141,35 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add hotjoin entry in sys file system allow user enable/disable hotjoin
-feature.
-
-Add (*enable(disable)_hotjoin)() to i3c_master_controller_ops.
-Add api i3c_master_enable(disable)_hotjoin();
-
-Signed-off-by: Frank Li <Frank.Li@nxp.com>
----
- drivers/i3c/master.c       | 84 ++++++++++++++++++++++++++++++++++++++
- include/linux/i3c/master.h |  5 +++
- 2 files changed, 89 insertions(+)
-
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 08aeb69a78003..ed5e27cd20811 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -526,6 +526,89 @@ static ssize_t i2c_scl_frequency_show(struct device *dev,
- }
- static DEVICE_ATTR_RO(i2c_scl_frequency);
- 
-+static int i3c_set_hotjoin(struct i3c_master_controller *master, bool enable)
-+{
-+	int ret;
-+
-+	if (!master ||
-+	    !master->ops ||
-+	    !master->ops->enable_hotjoin ||
-+	    !master->ops->disable_hotjoin
-+	   )
-+		return -EINVAL;
-+
-+	i3c_bus_normaluse_lock(&master->bus);
-+
-+	if (enable)
-+		ret = master->ops->enable_hotjoin(master);
-+	else
-+		ret = master->ops->disable_hotjoin(master);
-+
-+	master->hotjoin = enable;
-+
-+	i3c_bus_normaluse_unlock(&master->bus);
-+
-+	return ret;
-+}
-+
-+static ssize_t hotjoin_store(struct device *dev, struct device_attribute *attr,
-+			     const char *buf, size_t count)
-+{
-+	struct i3c_bus *i3cbus = dev_to_i3cbus(dev);
-+	int ret;
-+	long res;
-+
-+	if (!i3cbus->cur_master)
-+		return -EINVAL;
-+
-+	if (kstrtol(buf, 10, &res))
-+		return -EINVAL;
-+
-+	ret = i3c_set_hotjoin(i3cbus->cur_master->common.master, !!res);
-+	if (ret)
-+		return ret;
-+
-+	return count;
-+}
-+
-+/*
-+ * i3c_master_enable_hotjoin - Enable hotjoin
-+ * @master: I3C master object
-+ *
-+ * Return: a 0 in case of success, an negative error code otherwise.
-+ */
-+int i3c_master_enable_hotjoin(struct i3c_master_controller *master)
-+{
-+	return i3c_set_hotjoin(master, true);
-+}
-+EXPORT_SYMBOL_GPL(i3c_master_enable_hotjoin);
-+
-+/*
-+ * i3c_master_disable_hotjoin - Disable hotjoin
-+ * @master: I3C master object
-+ *
-+ * Return: a 0 in case of success, an negative error code otherwise.
-+ */
-+int i3c_master_disable_hotjoin(struct i3c_master_controller *master)
-+{
-+	return i3c_set_hotjoin(master, false);
-+}
-+EXPORT_SYMBOL_GPL(i3c_master_disable_hotjoin);
-+
-+static ssize_t hotjoin_show(struct device *dev, struct device_attribute *da, char *buf)
-+{
-+	struct i3c_bus *i3cbus = dev_to_i3cbus(dev);
-+	ssize_t ret;
-+
-+	i3c_bus_normaluse_lock(i3cbus);
-+	ret = sysfs_emit(buf, "%d\n", i3cbus->cur_master->common.master->hotjoin);
-+	i3c_bus_normaluse_unlock(i3cbus);
-+
-+	return ret;
-+}
-+
-+static DEVICE_ATTR_RW(hotjoin);
-+
- static struct attribute *i3c_masterdev_attrs[] = {
- 	&dev_attr_mode.attr,
- 	&dev_attr_current_master.attr,
-@@ -536,6 +619,7 @@ static struct attribute *i3c_masterdev_attrs[] = {
- 	&dev_attr_pid.attr,
- 	&dev_attr_dynamic_address.attr,
- 	&dev_attr_hdrcap.attr,
-+	&dev_attr_hotjoin.attr,
- 	NULL,
- };
- ATTRIBUTE_GROUPS(i3c_masterdev);
-diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
-index 0b52da4f23467..65b8965968af2 100644
---- a/include/linux/i3c/master.h
-+++ b/include/linux/i3c/master.h
-@@ -452,6 +452,8 @@ struct i3c_master_controller_ops {
- 	int (*disable_ibi)(struct i3c_dev_desc *dev);
- 	void (*recycle_ibi_slot)(struct i3c_dev_desc *dev,
- 				 struct i3c_ibi_slot *slot);
-+	int (*enable_hotjoin)(struct i3c_master_controller *master);
-+	int (*disable_hotjoin)(struct i3c_master_controller *master);
- };
- 
- /**
-@@ -487,6 +489,7 @@ struct i3c_master_controller {
- 	const struct i3c_master_controller_ops *ops;
- 	unsigned int secondary : 1;
- 	unsigned int init_done : 1;
-+	unsigned int hotjoin: 1;
- 	struct {
- 		struct list_head i3c;
- 		struct list_head i2c;
-@@ -543,6 +546,8 @@ int i3c_master_register(struct i3c_master_controller *master,
- 			const struct i3c_master_controller_ops *ops,
- 			bool secondary);
- void i3c_master_unregister(struct i3c_master_controller *master);
-+int i3c_master_enable_hotjoin(struct i3c_master_controller *master);
-+int i3c_master_disable_hotjoin(struct i3c_master_controller *master);
- 
- /**
-  * i3c_dev_get_master_data() - get master private data attached to an I3C
--- 
-2.34.1
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+SW4gTUlQSSBJM0MgU3BlY2lmaWNhdGlvbjoKCiJOaW50aCBCaXQgb2YgU0RSIFRhcmdldCBSZXR1
+cm5lZCAoUmVhZCkgRGF0YSBhcyBFbmQtb2YtRGF0YTogSW4gSTJDLCB0aGUKbmludGggRGF0YSBi
+aXQgZnJvbSBUYXJnZXQgdG8gQ29udHJvbGxlciBpcyBhbiBBQ0sgYnkgdGhlIENvbnRyb2xsZXIu
+IEJ5CmNvbnRyYXN0LCBpbiBJM0MgdGhpcyBiaXQgYWxsb3dzIHRoZSBUYXJnZXQgdG8gZW5kIGEg
+UmVhZCwgYW5kIGFsbG93cyB0aGUKQ29udHJvbGxlciB0byBBYm9ydCBhIFJlYWQuIEluIFNEUiB0
+ZXJtcywgdGhlIG5pbnRoIGJpdCBvZiBSZWFkIGRhdGEgaXMKcmVmZXJyZWQgdG8gYXMgdGhlIFQt
+Qml0IChmb3Ig4oCYVHJhbnNpdGlvbuKAmSkiCgpJM0MgYWxsb3cgZGV2aWNlcyBlYXJseSB0ZXJt
+aW5hdGUgZGF0YSB0cmFuc2Zlci4gU28gbmVlZCAiYWN0dWFsX2xlbiIgZmllbGQKdG8gaW5kaWNh
+dGUgaG93IG11Y2ggZ2V0IGJ5IGkzY19wcml2X3hmZXIuCgpTaWduZWQtb2ZmLWJ5OiBGcmFuayBM
+aSA8RnJhbmsuTGlAbnhwLmNvbT4KLS0tCiBpbmNsdWRlL2xpbnV4L2kzYy9kZXZpY2UuaCB8IDIg
+KysKIDEgZmlsZSBjaGFuZ2VkLCAyIGluc2VydGlvbnMoKykKCmRpZmYgLS1naXQgYS9pbmNsdWRl
+L2xpbnV4L2kzYy9kZXZpY2UuaCBiL2luY2x1ZGUvbGludXgvaTNjL2RldmljZS5oCmluZGV4IDkw
+ZmE4MzQ2NGYwMDMuLmVmNjIxN2RhODI1M2IgMTAwNjQ0Ci0tLSBhL2luY2x1ZGUvbGludXgvaTNj
+L2RldmljZS5oCisrKyBiL2luY2x1ZGUvbGludXgvaTNjL2RldmljZS5oCkBAIC01NCw2ICs1NCw3
+IEBAIGVudW0gaTNjX2hkcl9tb2RlIHsKICAqIHN0cnVjdCBpM2NfcHJpdl94ZmVyIC0gSTNDIFNE
+UiBwcml2YXRlIHRyYW5zZmVyCiAgKiBAcm53OiBlbmNvZGVzIHRoZSB0cmFuc2ZlciBkaXJlY3Rp
+b24uIHRydWUgZm9yIGEgcmVhZCwgZmFsc2UgZm9yIGEgd3JpdGUKICAqIEBsZW46IHRyYW5zZmVy
+IGxlbmd0aCBpbiBieXRlcyBvZiB0aGUgdHJhbnNmZXIKKyAqIEBhY3R1YWxfbGVuOiBhY3R1YWwg
+bGVuZ3RoIGluIGJ5dGVzIGFyZSB0cmFuc2ZlcnJlZCBieSB0aGUgY29udHJvbGxlcgogICogQGRh
+dGE6IGlucHV0L291dHB1dCBidWZmZXIKICAqIEBkYXRhLmluOiBpbnB1dCBidWZmZXIuIE11c3Qg
+cG9pbnQgdG8gYSBETUEtYWJsZSBidWZmZXIKICAqIEBkYXRhLm91dDogb3V0cHV0IGJ1ZmZlci4g
+TXVzdCBwb2ludCB0byBhIERNQS1hYmxlIGJ1ZmZlcgpAQCAtNjIsNiArNjMsNyBAQCBlbnVtIGkz
+Y19oZHJfbW9kZSB7CiBzdHJ1Y3QgaTNjX3ByaXZfeGZlciB7CiAJdTggcm53OwogCXUxNiBsZW47
+CisJdTE2IGFjdHVhbF9sZW47CiAJdW5pb24gewogCQl2b2lkICppbjsKIAkJY29uc3Qgdm9pZCAq
+b3V0OwotLSAKMi4zNC4xCgoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1pM2MK
