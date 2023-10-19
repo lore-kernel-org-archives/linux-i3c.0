@@ -4,126 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92377CDB465
-	for <linux-i3c@archiver.kernel.org>; Thu, 19 Oct 2023 15:02:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 852C5CDB465
+	for <linux-i3c@archiver.kernel.org>; Thu, 19 Oct 2023 15:39:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lmG7ZYmuXtTGY/dNz9wLxYBL9LfgOHRWtKk4sdkZeR8=; b=NBb/FozMhqdh12
-	qCjIWkTW6UjwxjqCP8I2HUAiWsASso44VC4TVwdb4l1SLd330SO3MPbfbQjdZNOYvgDXljWlyUhaP
-	hjlIHGIY1RYzNIdIoGsJjVPxIt4mMUTwRnGt5t6b4vZD5OZCXHSsyc+97yg1Q9LWEnStakd/9Zovb
-	3Rzj+GVvey+z+nmWs9AmwHzTnII1fKNR1vqbqnkTF3wTd74HlGafta4CeOUIHThfgFORhrv8qm66d
-	pEXblhyRPIasYPWOuGpyp0QVA3INH90UB/XXjAx29AIB6wv2yZ3leyHfOL7qDz9Wq3bSY1i8VEGV1
-	4vBvKSi5kLGcB4liRv1g==;
+	List-Owner; bh=ZBt99afO6F18hAMLGjxKtfTsIQlK/ei0XEOKYBL34j4=; b=N4mL+kU0DdFuHH
+	gsXMeWQ3lJ7Lp2K9eym4Tf4qDtfjgNzmGGRww0ztoi3aTu4u9g99/LYx0fpQ6x2VN0diU5n+nhfmb
+	BbcJXTgX85giI7JxCuckWwq814XbZaZxFQeCKXUAhV9gCY8H65+yP/LaK0BKcGrQEJmEI+Y8NcSGq
+	esdah8deaetBiRxWkPmSwU35yYqLBl5t6QXYzq6EH/vNhTw9VjGaoUJOeABhnxHG0pJ0fbH24mew8
+	2dwtB9mNf48ejsZ2yY1MTYkF27cln5oCOwweAdqm+0Jc1GfHvaH0gTxQ1YMr9JPmZ14jHwlpIbV8c
+	m1k+1MwYsParlU78sb+A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtUXY-0009Zy-0O;
-	Thu, 19 Oct 2023 15:02:24 +0000
-Received: from mail-db3eur04on0614.outbound.protection.outlook.com ([2a01:111:f400:fe0c::614] helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1qtV71-000DZd-2m;
+	Thu, 19 Oct 2023 15:39:03 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtUXW-0009ZU-0b
+	id 1qtV6z-000DYn-21
 	for linux-i3c@lists.infradead.org;
-	Thu, 19 Oct 2023 15:02:23 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=i7qGWAUI+lfJZdD3oNKW0r8H6iA0VIZJm474oQqKcZa7vArDCKygwLBkNCMB+0gbc+4eeoM0guZLFsq8aT/e4KMuzSHTysmkefR4QCc2Z7oXmhOrW0DNWMPXFLv6A1HyYOpLPHne+NmYmKMq7ceyVRZ+C6r2my9DbBd7GMuOpRjwDu0dAr5Y/khB+gBZmg2YlKyrfbpDva9NTg4vKT5SWIDxTSn+Mh1KdcUbsWNNcdZtNT+4y0yuySUqiXO+aVjw1o6iOF1hi+OMuoSxT9uB9AshCYrvvaT1sqmBQzojj/mmdDOWpIVcitbaIGonhCRLmdEO9PELziGJzK+7h0nW9A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=DA3KGuG1Ua7nsKr0/VaYunVZWD4EruJrugpSsA3JckE=;
- b=akI6vpXTVGK9pai2RJ2VU3hSvrg9/MI8I8zEoHBPe2k+Zg6sICv/h1STbG5L8GOjDc11vQ3d0JOAvmnLHlmrq1ospPjaUuhLRv/EXZRT8AXSP/sRvj/p3VwILDC8iyhasZ4VO8FG7bdpFdp3mb71Udu7PneBOxSogw6yyJbf8P277upXQ3Ay0yDRqXtTVwo8mjo/iwbjI21293q15V2xzzPjBnaFyXuJm3dfIpf6XJotWOl+2QOf7lZZ7g7vD18IpeYX2fxZHYsff1vB9oox3QmpJ9Cv+UZ7vus+nXlcKjp/lu92/Uy+I0RjfBBxllTfCR3sV64Zv7euzhTS28RUIg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DA3KGuG1Ua7nsKr0/VaYunVZWD4EruJrugpSsA3JckE=;
- b=RFJBYoMLanb4QzQs18tTFWo0YJQt3ECJCBG9zX/PwoXHJf5ZtidC6J2Rgq9lxVlYeFqe2/o5wFYiN5+TAdnSmZ9Y+u6+LCqVqsZydLJ487bMuSZDsZovEg0zrvk+8Ul24UBbG5KLB19smv2j0Z/mRsdmv/AQc/OQDt1002Tl5Js=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM6PR04MB4838.eurprd04.prod.outlook.com (2603:10a6:20b:4::16)
- by PAXPR04MB8374.eurprd04.prod.outlook.com (2603:10a6:102:1bd::21) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6886.35; Thu, 19 Oct
- 2023 15:02:19 +0000
-Received: from AM6PR04MB4838.eurprd04.prod.outlook.com
- ([fe80::1774:e25f:f99:aca2]) by AM6PR04MB4838.eurprd04.prod.outlook.com
- ([fe80::1774:e25f:f99:aca2%4]) with mapi id 15.20.6907.022; Thu, 19 Oct 2023
- 15:02:18 +0000
-Date: Thu, 19 Oct 2023 11:02:10 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: miquel.raynal@bootlin.com, conor.culhane@silvaco.com,
-	alexandre.belloni@bootlin.com, robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
-	corbet@lwn.net, joe@perches.com, linux-i3c@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-doc@vger.kernel.org, gregkh@linuxfoundation.org,
-	imx@lists.linux.dev, jirislaby@kernel.org,
-	linux-serial@vger.kernel.org
-Subject: Re: [PATCH 1/5] i3c: add slave mode support
-Message-ID: <ZTFE8hrRgPBrb7e3@lizhi-Precision-Tower-5810>
-References: <20231018215809.3477437-1-Frank.Li@nxp.com>
- <20231018215809.3477437-2-Frank.Li@nxp.com>
- <dd06c2d3-e273-4356-835b-42619543dfab@linaro.org>
-Content-Disposition: inline
-In-Reply-To: <dd06c2d3-e273-4356-835b-42619543dfab@linaro.org>
-X-ClientProxiedBy: BYAPR11CA0094.namprd11.prod.outlook.com
- (2603:10b6:a03:f4::35) To AM6PR04MB4838.eurprd04.prod.outlook.com
- (2603:10a6:20b:4::16)
+	Thu, 19 Oct 2023 15:39:02 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by ams.source.kernel.org (Postfix) with ESMTP id 976B8B82753;
+	Thu, 19 Oct 2023 15:38:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 907D1C433CA;
+	Thu, 19 Oct 2023 15:38:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+	s=korg; t=1697729939;
+	bh=AREkZrmSccQRuZ4xGIzEq28d+dMWO3ytqI01nPqGsxk=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=UYBi5Ia4cNzwlQhZHuxcog/XnJeh+GxvXj3dDk7kRzJ545iYDy0kSx0QGHXiUuz9f
+	 8M7ojGLcm1HjqBDTsaffw3GAYXKBaczOF1RGbSjqGMgks59s9Nj4Wx1jdRPMtdDFpR
+	 DdSO0z4pBuRnNKlSMUjDKY22rosC2Cj5KT1NJ3QA=
+Date: Thu, 19 Oct 2023 17:38:55 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Jiri Slaby <jirislaby@kernel.org>,
+	open list <linux-kernel@vger.kernel.org>,
+	"open list:TTY LAYER AND SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+	alexandre.belloni@bootlin.com, conor.culhane@silvaco.com,
+	imx@lists.linux.dev, joe@perches.com, linux-i3c@lists.infradead.org,
+	miquel.raynal@bootlin.com
+Subject: Re: [PATCH 1/1] tty: i3c: add tty over i3c master support
+Message-ID: <2023101906-rimmed-unmarked-0ba2@gregkh>
+References: <20231018211111.3437929-1-Frank.Li@nxp.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM6PR04MB4838:EE_|PAXPR04MB8374:EE_
-X-MS-Office365-Filtering-Correlation-Id: ca83ba9f-c26a-4c53-aba7-08dbd0b463a1
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: JqDJVxr77eDij4wIzFZlnHIqgn7zPsOi+UsHzwOOcV1W9QsaGcme2GCupN4hY2Br15yCATaBb8/7dSBvmV6H27v7f3eSD8W7nkOiqM0+e3rakSla9v4Fyj/wMKUv6tzXK+T/eOgNQfsk0oJ1tDGXespHB3AGN2lUQZHWWJ/YZw8IbE6d1qw2rzxwNlqJT/RApOvvBvpyYHWTPrPjrq00jMsb0Oc73Wea5CpL/90hZoBHq4OaqMR5uX3H/dPqzrUyE1BthVAx/8YHE797V9tpgFsJ9eufcTO8/tacgR7lR30mrV0xnLop4lCvbQo1WB6x4t306IUgtE4B2WuG9SNWi+QGCs8uD33jpFgpXCar2VRjEWZ53U+b1Hu/M/tIknELuwFxhTLe/DyZipqrZu1SbZbzuZGhzAGgI10abjZCWCOkAeH/AetlG6jie7ImvyCLEuI/2p/6awyc4jvCITD159E9Z6CngnC7Ty0Ti0VcthIglvSCwvClkJmRd4vmKttda05ABXXb71+n+AxVqi6yZuTp3gYgs0DDOV6KxzF6smQoXy/BF9uSJ8Ytn2R7Jw+yGyXyv7mZwxa2VHjLtZMWytXzZMXsOFwBpOq4u41VI2mF2P8WrWsypTWpNWW2O3Vr
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM6PR04MB4838.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(7916004)(136003)(376002)(39860400002)(366004)(396003)(346002)(230922051799003)(64100799003)(186009)(1800799009)(451199024)(316002)(38350700005)(6486002)(6916009)(478600001)(52116002)(2906002)(66476007)(66556008)(66946007)(8676002)(5660300002)(4326008)(41300700001)(26005)(6512007)(7416002)(9686003)(8936002)(33716001)(6506007)(86362001)(38100700002)(83380400001)(6666004)(53546011);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?y1uzen23AC68fy4M3SEOegkSnOs6VkSTF8R2/kM+CqkTjC1hCjXXQjq7k6Kk?=
- =?us-ascii?Q?zav6tlWxqO2DWtBaVH8/A3DADup5I6L8exowLXhBdRQs+5EtsGN+hc+QLKbw?=
- =?us-ascii?Q?G8IfqTToqEodokibRjOM4M0fZy3+iD3jfgdC/obSXQEsq2Q5dXjB6nOZpel4?=
- =?us-ascii?Q?f4fs+VERp3nGuk1VcWND8ALnNij+9S3umPpq3s6Ao5YAewIYa44JRvotqyf3?=
- =?us-ascii?Q?d/wdGkzySetNUJrH97NlmMC3sseZd63djsGOAlCp3vrnbdvfI8XgJTi2HDWm?=
- =?us-ascii?Q?kn39gZjCKmWi7nfGb0uEVH4wEDNe2wL4dcp6rVggBBUydLMNvjoT5CNRni5S?=
- =?us-ascii?Q?Yd9OpyxBprLE94LTi6TfsgvrKcxKfk9n6PkcGnD1zon5Kr0py6MnWpY49qSK?=
- =?us-ascii?Q?bx9ne+gZCYBlfVx3J7NdsJBgUFhCLSXfRuww8QdZcbQAhC9G5OnUFYM20R5u?=
- =?us-ascii?Q?3DDWIL3exM7fSSBfCUD23UOj+kiAa8iw6nh6XCqPlVNOrTJHU9HZQg7ug/UJ?=
- =?us-ascii?Q?Fv+ZKlPmjbLVJMAQSpvp3KGOfCriNgyMzFvSVcKBXaWmZw6muYxe3WCeYVtW?=
- =?us-ascii?Q?xMz7kc0BhU+VZbY1NQWZRw3j8EAjumhxpMEgC0kTWI/gWLc5QOrYiR7gMJz0?=
- =?us-ascii?Q?uhoHq5APSNlcCzD7Fp33ZezEGZ6wmrV4oBgpTHKhbfsk8Hqn2bXEgJioVMy5?=
- =?us-ascii?Q?rk/WMeeoTtRz6DDaqovSgBVKsbalrcSLw7BgDJJM99Tx6/CQwtVJ8cs/7anc?=
- =?us-ascii?Q?t4xafduIrqLzOquQiyg3SThdOuRYFEITYxCKTBAly0I2IqgrbOfrcV8oknXo?=
- =?us-ascii?Q?W5km1UZxp/rgNZeul6aNmpTHeE4BwKT0AqoDISHmW3JZU4PoSPVp1EgtioHO?=
- =?us-ascii?Q?Fn5ayv/7M+PL3HfZiyE9UYj2X6IwPF50NoPtzZY2DrbTWJ/+iSabgDFIgLvL?=
- =?us-ascii?Q?6wXx3PO1u+dDrBYL/WOtb4NAsny8ZDRgtmRjPLQKwZCQ+zL1EPT7qGChTZEO?=
- =?us-ascii?Q?qVEEv++feVdrxma8HcjDIe8j2AAAIiXQF1+EyZThx2kcszrY59zkXfKNQRiS?=
- =?us-ascii?Q?5kFPHUcxuq37azP3iC5wo7/blFUTe7ETtA8WISPsOrpAd+SFYk4eHD4RhlpJ?=
- =?us-ascii?Q?nTclptrZeQVjzw6BEOVFcTNf0KMBmIm3kGNs9+gdEKM057pyWruTQv912VlG?=
- =?us-ascii?Q?tkITRqxJ4fVq2zbHOjiy0fIkOW5Jtqj0zT/hZP8b+HJ17VnKWaUmPn9Ss2Pc?=
- =?us-ascii?Q?KmgussQDnkwENjuWUzTyOWFWG59ELrIEoPlHojd4Hg73XYUI2/vWkmNDPPAo?=
- =?us-ascii?Q?Y9JAoAJiD5gp4UUDyydmNEwV1Lu8+LOvud1ojJWRMSL+QcYXw+OOGdzH5+Am?=
- =?us-ascii?Q?92x7eICqVE+2E0SlK1TH6yc5RYB9FVUNLCnSPoN3soKOpyHsKK41z4/nw7VX?=
- =?us-ascii?Q?71IV8o8FHEEcyL6lV82mK9knaWEbTkU4WJVQp6mHvxcitxiH21nBBOYZpOsi?=
- =?us-ascii?Q?jzIAhTWNMdJ1Yfz7yCw+OeUqy17B6TZB9E2yyMfSoNOE+Rf/s8a2dmWFs+bU?=
- =?us-ascii?Q?XBUzIQhd4OnYucK6kriDfzGg9gsSYKKysJC4PQBf?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ca83ba9f-c26a-4c53-aba7-08dbd0b463a1
-X-MS-Exchange-CrossTenant-AuthSource: AM6PR04MB4838.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Oct 2023 15:02:18.8986
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: vXICP/9WotQ3LOcKdW+EXuKigcII7J8u7PVCQrzHlyh0h5bpvxXfi0Lpbtl4diuz6mi+dEsJU+/0+XAXFnYRuA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8374
+Content-Disposition: inline
+In-Reply-To: <20231018211111.3437929-1-Frank.Li@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231019_080222_225147_08FD76D1 
-X-CRM114-Status: GOOD (  19.88  )
+X-CRM114-CacheID: sfid-20231019_083901_839384_F97A31E6 
+X-CRM114-Status: UNSURE (   6.45  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -140,55 +74,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Oct 19, 2023 at 09:00:05AM +0200, Krzysztof Kozlowski wrote:
-> On 18/10/2023 23:58, Frank Li wrote:
-> > Introduce a new slave core layer in order to support slave functions in
-> > linux kernel. This comprises the controller library and function library.
-> > Controller library implements functions specific to an slave controller
-> > and function library implements functions specific to an slave function.
-> > 
-> > Introduce a new configfs entry to configure the slave function configuring
-> > and bind the slave function with slave controller.
-> > 
-> > Signed-off-by: Frank Li <Frank.Li@nxp.com>
-> > ---
-> >  drivers/i3c/Kconfig       |  26 ++
-> >  drivers/i3c/Makefile      |   2 +
-> >  drivers/i3c/i3c-cfs.c     | 389 +++++++++++++++++++++++++++++
-> >  drivers/i3c/slave.c       | 453 ++++++++++++++++++++++++++++++++++
-> >  include/linux/i3c/slave.h | 503 ++++++++++++++++++++++++++++++++++++++
-> >  5 files changed, 1373 insertions(+)
-> >  create mode 100644 drivers/i3c/i3c-cfs.c
-> >  create mode 100644 drivers/i3c/slave.c
-> >  create mode 100644 include/linux/i3c/slave.h
-> > 
-> > diff --git a/drivers/i3c/Kconfig b/drivers/i3c/Kconfig
-> > index 30a441506f61c..d5f5ca7cd6a56 100644
-> > --- a/drivers/i3c/Kconfig
-> > +++ b/drivers/i3c/Kconfig
-> > @@ -22,3 +22,29 @@ menuconfig I3C
-> >  if I3C
-> >  source "drivers/i3c/master/Kconfig"
-> >  endif # I3C
-> > +
-> > +config I3C_SLAVE
-> 
-> It doesn't look like you follow Kernel naming convention (see coding style).
+On Wed, Oct 18, 2023 at 05:11:09PM -0400, Frank Li wrote:
+> Add new driver to allow tty over i3c master.
 
-I checked I3C spec. It use words 'target'.
-Is it okay using I3C_TARGET?
+As Jiri said, you need a lot more description here before we can even
+start to review it.
 
-> 
-> > +	bool "I3C Slave Support"
-> > +	help
-> > +	  Support I3C Slave Mode.
-> > +
-> 
-> 
-> 
-> Best regards,
-> Krzysztof
-> 
+Please fix up and send a v2.
+
+thanks,
+
+greg k-h
 
 -- 
 linux-i3c mailing list
