@@ -4,130 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0C97CDB465
-	for <linux-i3c@archiver.kernel.org>; Thu, 19 Oct 2023 07:00:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86FB3CDB483
+	for <linux-i3c@archiver.kernel.org>; Thu, 19 Oct 2023 12:07:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Date:Subject:Message-Id:References:
+	In-Reply-To:Cc:To:From:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=InPnO6RLUHX48XgCn766dGvd5P5AoLgQbRS3Hz/fiWU=; b=OKavaphGbXkCYt
-	U+iAfEuSKh9P8vqRJmxMtlWS4cBsHiAXHuTVvVc7ysyTMGi8Qq08gNsppRgeXfdIGdrPAuiFEv0hT
-	zeMzeMWqRiQjuNs9t9GVMxriBdzLUpCs7pEqzbNxo04jWS775rZk91k+BaJfIjnfnoa866fHGeptB
-	rXOtpaJ5sGWQnzbMQWgn+F5gtvOTMqQpKxrKMjArp+nRAjdLOGUCjwIbTr5tEMcCti9YiBi9xXkyV
-	pgXb45L+Oijw0LDiN0RKqJzSn70IJKRUlNkRf7SLq8kT6f+gJhaqwO1wjtWxXSTu1WRyQKOv82TwR
-	Nnh8O2cwqX6LGoaZYfzA==;
+	List-Owner; bh=q4JbzQW+hArK9EOTmF+g+nWywe+3GElHez0+sK/ZjR8=; b=cxsNXEEnbQ74Vw
+	Pm2lnttM5bd1Uo4iE6legMWNHATLuV1sF/qVilpB8fCh2tkLFySKsPY/RZOV6SC3EWAhfbegbi91o
+	p50Qu5KGxL58Mn2KiQbsbi5eWwolgTcwCYjaaxuC/c4nSdX6meTXTGaEyc5OVPHueozymx/PZJMaG
+	m59UxECb7bKbEotA1M4I8CS/yovaut4aPsAN9kk+IBawkfb96DinAn8X6BTiLAvcr5pWYW3g/CeD6
+	2jPTqa0iuKQwfa6d6KpknSgkT2qahtIXbaeMZFq7biITDP2SkSHY85xqvza8+weTbyjZthicNE0DV
+	Qrou2Exg5A8drhSD7X6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtN1d-00GYpu-24;
-	Thu, 19 Oct 2023 07:00:57 +0000
-Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
+	id 1qtRo7-00HHMS-2V;
+	Thu, 19 Oct 2023 12:07:19 +0000
+Received: from mail-ot1-f51.google.com ([209.85.210.51])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtN1Z-00GYo7-1h
+	id 1qtRo4-00HHK8-39
 	for linux-i3c@lists.infradead.org;
-	Thu, 19 Oct 2023 07:00:56 +0000
-Received: by mail-wm1-x332.google.com with SMTP id 5b1f17b1804b1-40651a726acso66451705e9.1
-        for <linux-i3c@lists.infradead.org>; Thu, 19 Oct 2023 00:00:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1697698850; x=1698303650; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=xDkxiKIVbMSQfszME6DEpavMVERxa9PMgomAiX+G+5w=;
-        b=dBFA6WMHwER0ZzPTXJMwiJ1Zlmi1ttiKc36lBPsWa2jJV2VBNUo4KvhsibiLZX70Sm
-         hEHkHLCOsumnCgbyVW5dZTm0t4abzDPlJODfXyIwmAIq/L3UwplYxCvPUoxBuqDyn0g3
-         RFOEn1ZNmo/YMewvf+GKfaUD3GawxtsJ6f6y4dvfNlDJ8Ns3yO7nsgks0qWPGdYVDxRN
-         aabztjhQqnriA04L6VSumrPPlnzaYODrm+EXpLOdOf3/5t7Hq8iQqpX8IIoYjwS8ULax
-         Z0Qz04ZYkPZWY0dNEpBdGa50ZTAKOEKKc1/5TIE83uOyXyR2gA7hml+OiW0jLBwR1lmB
-         9kKQ==
+	Thu, 19 Oct 2023 12:07:18 +0000
+Received: by mail-ot1-f51.google.com with SMTP id 46e09a7af769-6c4cbab83aaso5177274a34.1
+        for <linux-i3c@lists.infradead.org>; Thu, 19 Oct 2023 05:07:12 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1697698850; x=1698303650;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=xDkxiKIVbMSQfszME6DEpavMVERxa9PMgomAiX+G+5w=;
-        b=eR2nv8KNf5huObPUFMFRc8kTrU7MLcKWt2kg9w5cyZnBUsuAxDOEh7oc6GTqg/JhRY
-         fnNwoyTAVAxpl4JAXAaakZABJP63tLGsLkzNUZRJw84iGuTMyoHP/uCnxX22ie+1/R30
-         XadT0x4VzAp12ASebYWcU0P9V/sYHqyiN7oYxC34NM+l4tX2ddFW+pgKiOm+q840TnYr
-         aHez4FRIymMZtHKr88trcqEHv4nlcUpSKNI3uxOY4JhE259i9gEJZ1mr7HItbv2p7MSy
-         SVZxYAERPYqc7Y+qPcnj90XnbZkkqVA5lOttmi4mxd0C3dLn64HDoTa6B7ueZMJo1oC+
-         jPTQ==
-X-Gm-Message-State: AOJu0YzsvFuZlM9gIKRkyHJuiUOZtqO8HFBlkj7FMw/IWC+H2BFMnBtl
-	QO9QPWPSygvO2R/briw6PfjpbA==
-X-Google-Smtp-Source: AGHT+IH6btyGcJm7FW21PbfB/V3lHOOxDPGtqv3mkTqew2gYLx2SQ5pP4U1YuKXCgGVEMPYz4G/63w==
-X-Received: by 2002:a05:600c:3b19:b0:408:3707:b199 with SMTP id m25-20020a05600c3b1900b004083707b199mr1106491wms.3.1697698849747;
-        Thu, 19 Oct 2023 00:00:49 -0700 (PDT)
-Received: from [192.168.1.20] ([178.197.223.49])
-        by smtp.gmail.com with ESMTPSA id bh9-20020a05600c3d0900b003feae747ff2sm3612213wmb.35.2023.10.19.00.00.48
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 19 Oct 2023 00:00:49 -0700 (PDT)
-Message-ID: <0e39b69b-c7ed-4fde-a050-7edf9a052e03@linaro.org>
-Date: Thu, 19 Oct 2023 09:00:48 +0200
+        d=1e100.net; s=20230601; t=1697717232; x=1698322032;
+        h=date:subject:message-id:references:in-reply-to:cc:to:from
+         :mime-version:content-transfer-encoding:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=wFRRjT0zTXmC6p8qcDVTA0QbXQCr167IFLosJYeNDXo=;
+        b=SRTzXE+IAga+aBw4KfFYLiQGe/Ox2FwdeZK9zbrR9oQ9stRHUrE05iSd5dPjPNFT2e
+         Wua8xqGr1Mt1Nf9lpeSCnN2m/BjkimHrmjFICA25f5eC+8SuOn4KZfZybdsy79avPj8S
+         oM9WgaOhs5se6ff7lQMHSy3zsK1q+GvWEAduWSoPNyIbwY3Y93J5uwR4dDPeiNOvkt8H
+         Yyy+rMo3aZJSb2BMQIi2rl0sHocpUbQ4/w7Bel5mzy+4BVm7XM0RYvwT1PCIo2mlzvfB
+         qpZoyhs86SGv7tEURNmy2FceQEBY3XYmTxvcX3ZlZ/6pdHd+oU4ky8V/jOaCbNakvm9j
+         wX/A==
+X-Gm-Message-State: AOJu0YzmJeIUoHu5lS1dViwipb3RZwGEzL0dH+G1z8r3eLTKiI+W8plQ
+	IUF6gWE4E9tfpHEZXdrRlQ==
+X-Google-Smtp-Source: AGHT+IEfITQC2V/bgA2b+RHY/6I/+aBRIkh/P1bJ3rw0OSLx58gTCW38pQSGxGPP+yMClqzepIgtvw==
+X-Received: by 2002:a05:6830:2010:b0:6cd:bc23:4b55 with SMTP id e16-20020a056830201000b006cdbc234b55mr2070985otp.13.1697717231931;
+        Thu, 19 Oct 2023 05:07:11 -0700 (PDT)
+Received: from herring.priv (66-90-144-107.dyn.grandenetworks.net. [66.90.144.107])
+        by smtp.gmail.com with ESMTPSA id m3-20020a4abc83000000b0057377b1c1c8sm994141oop.24.2023.10.19.05.07.10
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 19 Oct 2023 05:07:11 -0700 (PDT)
+Received: (nullmailer pid 549233 invoked by uid 1000);
+	Thu, 19 Oct 2023 12:07:10 -0000
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/5] dt-bindings: i3c: svc: add compatible string i3c:
- silvaco,i3c-slave
-Content-Language: en-US
-To: Frank Li <Frank.Li@nxp.com>, miquel.raynal@bootlin.com,
- conor.culhane@silvaco.com, alexandre.belloni@bootlin.com,
- robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
- corbet@lwn.net, joe@perches.com, linux-i3c@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-doc@vger.kernel.org
-Cc: gregkh@linuxfoundation.org, imx@lists.linux.dev, jirislaby@kernel.org,
- linux-serial@vger.kernel.org
+From: Rob Herring <robh@kernel.org>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: gregkh@linuxfoundation.org, linux-doc@vger.kernel.org, conor.culhane@silvaco.com, conor+dt@kernel.org, linux-kernel@vger.kernel.org, devicetree@vger.kernel.org, alexandre.belloni@bootlin.com, imx@lists.linux.dev, linux-i3c@lists.infradead.org, jirislaby@kernel.org, krzysztof.kozlowski+dt@linaro.org, miquel.raynal@bootlin.com, linux-serial@vger.kernel.org, robh+dt@kernel.org, corbet@lwn.net, joe@perches.com
+In-Reply-To: <20231018215809.3477437-3-Frank.Li@nxp.com>
 References: <20231018215809.3477437-1-Frank.Li@nxp.com>
  <20231018215809.3477437-3-Frank.Li@nxp.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
- 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
- D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20231018215809.3477437-3-Frank.Li@nxp.com>
+Message-Id: <169771723040.549216.11346182362736118901.robh@kernel.org>
+Subject: Re: [PATCH 2/5] dt-bindings: i3c: svc: add compatible string i3c:
+ silvaco,i3c-slave
+Date: Thu, 19 Oct 2023 07:07:10 -0500
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231019_000053_572663_65980CC3 
-X-CRM114-Status: GOOD (  11.73  )
+X-CRM114-CacheID: sfid-20231019_050717_009952_FD4F5255 
+X-CRM114-Status: GOOD (  10.30  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,7 +82,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 18/10/2023 23:58, Frank Li wrote:
+
+On Wed, 18 Oct 2023 17:58:06 -0400, Frank Li wrote:
 > Add compatible string 'silvaco,i3c-slave' for slave mode.
 > 
 > Signed-off-by: Frank Li <Frank.Li@nxp.com>
@@ -152,36 +91,38 @@ On 18/10/2023 23:58, Frank Li wrote:
 >  .../devicetree/bindings/i3c/silvaco,i3c-master.yaml       | 8 +++++---
 >  1 file changed, 5 insertions(+), 3 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
-> index 133855f11b4f5..63db63f00a509 100644
-> --- a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
-> +++ b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
-> @@ -4,7 +4,7 @@
->  $id: http://devicetree.org/schemas/i3c/silvaco,i3c-master.yaml#
->  $schema: http://devicetree.org/meta-schemas/core.yaml#
->  
-> -title: Silvaco I3C master
-> +title: Silvaco I3C master/slave
->  
->  maintainers:
->    - Conor Culhane <conor.culhane@silvaco.com>
-> @@ -14,8 +14,10 @@ allOf:
->  
->  properties:
->    compatible:
-> -    const: silvaco,i3c-master-v1
-> -
-> +    const:
-> +      enum:
-> +        - silvaco,i3c-master-v1
-> +        - silvaco,i3c-slave-v1
 
-Missing blank line.
+My bot found errors running 'make DT_CHECKER_FLAGS=-m dt_binding_check'
+on your patch (DT_CHECKER_FLAGS is new in v5.13):
 
-Rather choose name from Coding style.
+yamllint warnings/errors:
 
-Best regards,
-Krzysztof
+dtschema/dtc warnings/errors:
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml: properties:compatible:const: {'enum': ['silvaco,i3c-master-v1', 'silvaco,i3c-slave-v1']} is not of type 'integer', 'string'
+	from schema $id: http://devicetree.org/meta-schemas/keywords.yaml#
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml: properties:compatible:const: {'enum': ['silvaco,i3c-master-v1', 'silvaco,i3c-slave-v1']} is not of type 'string'
+	from schema $id: http://devicetree.org/meta-schemas/string-array.yaml#
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.example.dtb: i3c-master@a0000000: compatible: {'enum': ['silvaco,i3c-master-v1', 'silvaco,i3c-slave-v1']} was expected
+	from schema $id: http://devicetree.org/schemas/i3c/silvaco,i3c-master.yaml#
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.example.dtb: i3c-master@a0000000: Unevaluated properties are not allowed ('compatible' was unexpected)
+	from schema $id: http://devicetree.org/schemas/i3c/silvaco,i3c-master.yaml#
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20231018215809.3477437-3-Frank.Li@nxp.com
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
 
 
 -- 
