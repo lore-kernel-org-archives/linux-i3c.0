@@ -4,70 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0012ECDB483
-	for <linux-i3c@archiver.kernel.org>; Thu, 19 Oct 2023 07:00:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0C97CDB465
+	for <linux-i3c@archiver.kernel.org>; Thu, 19 Oct 2023 07:00:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z6/ZBk62C1dN+PYibTSlWpSxVhiZ5xQfvpaHD1u5CA0=; b=Kyud24GU+iTf5a
-	4HAjd2NTXJkIU+mJV1NSqAIYZBXZCXX3mA2yklR/Xqc8E5Ld5TqMrH0GVRwgLCgwMXNHKEZzB5J71
-	nhHbW4zKtJX2bBiDbWJOJK2dsPp2qq+JkKUB+2Ty0K+DThNuVaeTYh0Vf0z5D0UvPMoQRBFY+shIU
-	E+QEsCpIKpFOh7MDEKlnjF6qsFVd/VZEQPFnCcKXF0ZY6dRWsdnlpIooFMbQTYLwcID6k28MPcfn0
-	eQCAdHHlmhf3iV2VD7+xpYKBusTaCvhokjD4Mgf/VK+uOErPAKlpSw0//IiXtwWu0JUsQdG/NV/GT
-	fPxxSEwWwCaTdSVjw1NQ==;
+	List-Owner; bh=InPnO6RLUHX48XgCn766dGvd5P5AoLgQbRS3Hz/fiWU=; b=OKavaphGbXkCYt
+	U+iAfEuSKh9P8vqRJmxMtlWS4cBsHiAXHuTVvVc7ysyTMGi8Qq08gNsppRgeXfdIGdrPAuiFEv0hT
+	zeMzeMWqRiQjuNs9t9GVMxriBdzLUpCs7pEqzbNxo04jWS775rZk91k+BaJfIjnfnoa866fHGeptB
+	rXOtpaJ5sGWQnzbMQWgn+F5gtvOTMqQpKxrKMjArp+nRAjdLOGUCjwIbTr5tEMcCti9YiBi9xXkyV
+	pgXb45L+Oijw0LDiN0RKqJzSn70IJKRUlNkRf7SLq8kT6f+gJhaqwO1wjtWxXSTu1WRyQKOv82TwR
+	Nnh8O2cwqX6LGoaZYfzA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtN12-00GYgU-0d;
-	Thu, 19 Oct 2023 07:00:20 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
+	id 1qtN1d-00GYpu-24;
+	Thu, 19 Oct 2023 07:00:57 +0000
+Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtN0u-00GYdQ-24
+	id 1qtN1Z-00GYo7-1h
 	for linux-i3c@lists.infradead.org;
-	Thu, 19 Oct 2023 07:00:18 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id 5b1f17b1804b1-40790b0a224so21955945e9.0
-        for <linux-i3c@lists.infradead.org>; Thu, 19 Oct 2023 00:00:08 -0700 (PDT)
+	Thu, 19 Oct 2023 07:00:56 +0000
+Received: by mail-wm1-x332.google.com with SMTP id 5b1f17b1804b1-40651a726acso66451705e9.1
+        for <linux-i3c@lists.infradead.org>; Thu, 19 Oct 2023 00:00:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1697698807; x=1698303607; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=phdopUGhFu1uVNeMVEBY+BMFdVXiqLRcCSRDiN1kr/w=;
-        b=XUBmzMTodGltS1YYouOjVMJpHwawRjwI/hiJWydjdWAtRRnY2rwbSBXT7yCE0tUjmv
-         /AJ353pId+I8apZoNvX/Lki8uRFs8j/X4Eh5ZfT8QP7ipr1atyNMiT99ua1oobFXr+wD
-         9JSE6buTjkV2tccVKvesV9UJ00xx/ComhqsXAki78HR/EBnH6cT7TI7u3tJIX+M0j/FB
-         z7V24ytkm75AQy4MLetl/SRzXztj/+dmdTglShgaBdfJvn07ZvlFcRN3SgkFT839BjG6
-         28FB6GgJA6VESrHsC/FZybu6sxmCH0gsra+8MPQOGFOC85g8rEgtXWtdmZibqhOULypW
-         xKpQ==
+        d=linaro.org; s=google; t=1697698850; x=1698303650; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=xDkxiKIVbMSQfszME6DEpavMVERxa9PMgomAiX+G+5w=;
+        b=dBFA6WMHwER0ZzPTXJMwiJ1Zlmi1ttiKc36lBPsWa2jJV2VBNUo4KvhsibiLZX70Sm
+         hEHkHLCOsumnCgbyVW5dZTm0t4abzDPlJODfXyIwmAIq/L3UwplYxCvPUoxBuqDyn0g3
+         RFOEn1ZNmo/YMewvf+GKfaUD3GawxtsJ6f6y4dvfNlDJ8Ns3yO7nsgks0qWPGdYVDxRN
+         aabztjhQqnriA04L6VSumrPPlnzaYODrm+EXpLOdOf3/5t7Hq8iQqpX8IIoYjwS8ULax
+         Z0Qz04ZYkPZWY0dNEpBdGa50ZTAKOEKKc1/5TIE83uOyXyR2gA7hml+OiW0jLBwR1lmB
+         9kKQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1697698807; x=1698303607;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=phdopUGhFu1uVNeMVEBY+BMFdVXiqLRcCSRDiN1kr/w=;
-        b=M1i2vcwzBbq2hIl3ZQ52Vla99z/RMjT1ukb9rO8Hk+VUtH65RUIqaXwG4cWqIfgks4
-         awmZPKSzKEs1HWOJ+MmH3gjM61ka0/bgqSaeHsTleb3wkEpJQW7qdPkJyljV9h4w67lq
-         w4ilocsLxh2P6dfAq2TsI3tOFQBNeNoe1t1sLBKJACLG5oTFZVTY9bUfQtu1nVhE6GL7
-         GnSFWtOZPYLXHio9ZVK7AjxoxtWx8is9tDw7bBTQ+us1zyq0aM0W3RhNqZsGPryrhpf+
-         8SlvKzHlBZyZM0ak5+MfL1jj30Xt7gPYD2KXeMr3+6W4fFTZHIUhEUdoYfXf8TDuYh91
-         HQJA==
-X-Gm-Message-State: AOJu0YztN+qI6tI+CG+ff91ufKmT2DpJ97IK4AqjoSCmXKczOwE+u7G1
-	GWg8LY89FpZZAZ7T/sLrn1JDdQ==
-X-Google-Smtp-Source: AGHT+IGrb+9TA3G20GqE0KVDUSKCpdd4MuCybi2jrStkzxattFRPwFRE2nZ4Fwjil2NOlUTSbOgIpA==
-X-Received: by 2002:a05:600c:350f:b0:405:75f0:fd31 with SMTP id h15-20020a05600c350f00b0040575f0fd31mr1051854wmq.31.1697698807613;
-        Thu, 19 Oct 2023 00:00:07 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1697698850; x=1698303650;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=xDkxiKIVbMSQfszME6DEpavMVERxa9PMgomAiX+G+5w=;
+        b=eR2nv8KNf5huObPUFMFRc8kTrU7MLcKWt2kg9w5cyZnBUsuAxDOEh7oc6GTqg/JhRY
+         fnNwoyTAVAxpl4JAXAaakZABJP63tLGsLkzNUZRJw84iGuTMyoHP/uCnxX22ie+1/R30
+         XadT0x4VzAp12ASebYWcU0P9V/sYHqyiN7oYxC34NM+l4tX2ddFW+pgKiOm+q840TnYr
+         aHez4FRIymMZtHKr88trcqEHv4nlcUpSKNI3uxOY4JhE259i9gEJZ1mr7HItbv2p7MSy
+         SVZxYAERPYqc7Y+qPcnj90XnbZkkqVA5lOttmi4mxd0C3dLn64HDoTa6B7ueZMJo1oC+
+         jPTQ==
+X-Gm-Message-State: AOJu0YzsvFuZlM9gIKRkyHJuiUOZtqO8HFBlkj7FMw/IWC+H2BFMnBtl
+	QO9QPWPSygvO2R/briw6PfjpbA==
+X-Google-Smtp-Source: AGHT+IH6btyGcJm7FW21PbfB/V3lHOOxDPGtqv3mkTqew2gYLx2SQ5pP4U1YuKXCgGVEMPYz4G/63w==
+X-Received: by 2002:a05:600c:3b19:b0:408:3707:b199 with SMTP id m25-20020a05600c3b1900b004083707b199mr1106491wms.3.1697698849747;
+        Thu, 19 Oct 2023 00:00:49 -0700 (PDT)
 Received: from [192.168.1.20] ([178.197.223.49])
-        by smtp.gmail.com with ESMTPSA id bh9-20020a05600c3d0900b003feae747ff2sm3612213wmb.35.2023.10.19.00.00.06
+        by smtp.gmail.com with ESMTPSA id bh9-20020a05600c3d0900b003feae747ff2sm3612213wmb.35.2023.10.19.00.00.48
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 19 Oct 2023 00:00:07 -0700 (PDT)
-Message-ID: <dd06c2d3-e273-4356-835b-42619543dfab@linaro.org>
-Date: Thu, 19 Oct 2023 09:00:05 +0200
+        Thu, 19 Oct 2023 00:00:49 -0700 (PDT)
+Message-ID: <0e39b69b-c7ed-4fde-a050-7edf9a052e03@linaro.org>
+Date: Thu, 19 Oct 2023 09:00:48 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/5] i3c: add slave mode support
+Subject: Re: [PATCH 2/5] dt-bindings: i3c: svc: add compatible string i3c:
+ silvaco,i3c-slave
+Content-Language: en-US
 To: Frank Li <Frank.Li@nxp.com>, miquel.raynal@bootlin.com,
  conor.culhane@silvaco.com, alexandre.belloni@bootlin.com,
  robh+dt@kernel.org, krzysztof.kozlowski+dt@linaro.org, conor+dt@kernel.org,
@@ -77,8 +78,7 @@ To: Frank Li <Frank.Li@nxp.com>, miquel.raynal@bootlin.com,
 Cc: gregkh@linuxfoundation.org, imx@lists.linux.dev, jirislaby@kernel.org,
  linux-serial@vger.kernel.org
 References: <20231018215809.3477437-1-Frank.Li@nxp.com>
- <20231018215809.3477437-2-Frank.Li@nxp.com>
-Content-Language: en-US
+ <20231018215809.3477437-3-Frank.Li@nxp.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -124,10 +124,10 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
  fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
  D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <20231018215809.3477437-2-Frank.Li@nxp.com>
+In-Reply-To: <20231018215809.3477437-3-Frank.Li@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231019_000012_688201_E86C05B9 
-X-CRM114-Status: GOOD (  14.66  )
+X-CRM114-CacheID: sfid-20231019_000053_572663_65980CC3 
+X-CRM114-Status: GOOD (  11.73  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,45 +145,40 @@ Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 On 18/10/2023 23:58, Frank Li wrote:
-> Introduce a new slave core layer in order to support slave functions in
-> linux kernel. This comprises the controller library and function library.
-> Controller library implements functions specific to an slave controller
-> and function library implements functions specific to an slave function.
-> 
-> Introduce a new configfs entry to configure the slave function configuring
-> and bind the slave function with slave controller.
+> Add compatible string 'silvaco,i3c-slave' for slave mode.
 > 
 > Signed-off-by: Frank Li <Frank.Li@nxp.com>
 > ---
->  drivers/i3c/Kconfig       |  26 ++
->  drivers/i3c/Makefile      |   2 +
->  drivers/i3c/i3c-cfs.c     | 389 +++++++++++++++++++++++++++++
->  drivers/i3c/slave.c       | 453 ++++++++++++++++++++++++++++++++++
->  include/linux/i3c/slave.h | 503 ++++++++++++++++++++++++++++++++++++++
->  5 files changed, 1373 insertions(+)
->  create mode 100644 drivers/i3c/i3c-cfs.c
->  create mode 100644 drivers/i3c/slave.c
->  create mode 100644 include/linux/i3c/slave.h
+>  .../devicetree/bindings/i3c/silvaco,i3c-master.yaml       | 8 +++++---
+>  1 file changed, 5 insertions(+), 3 deletions(-)
 > 
-> diff --git a/drivers/i3c/Kconfig b/drivers/i3c/Kconfig
-> index 30a441506f61c..d5f5ca7cd6a56 100644
-> --- a/drivers/i3c/Kconfig
-> +++ b/drivers/i3c/Kconfig
-> @@ -22,3 +22,29 @@ menuconfig I3C
->  if I3C
->  source "drivers/i3c/master/Kconfig"
->  endif # I3C
-> +
-> +config I3C_SLAVE
+> diff --git a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
+> index 133855f11b4f5..63db63f00a509 100644
+> --- a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
+> +++ b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
+> @@ -4,7 +4,7 @@
+>  $id: http://devicetree.org/schemas/i3c/silvaco,i3c-master.yaml#
+>  $schema: http://devicetree.org/meta-schemas/core.yaml#
+>  
+> -title: Silvaco I3C master
+> +title: Silvaco I3C master/slave
+>  
+>  maintainers:
+>    - Conor Culhane <conor.culhane@silvaco.com>
+> @@ -14,8 +14,10 @@ allOf:
+>  
+>  properties:
+>    compatible:
+> -    const: silvaco,i3c-master-v1
+> -
+> +    const:
+> +      enum:
+> +        - silvaco,i3c-master-v1
+> +        - silvaco,i3c-slave-v1
 
-It doesn't look like you follow Kernel naming convention (see coding style).
+Missing blank line.
 
-> +	bool "I3C Slave Support"
-> +	help
-> +	  Support I3C Slave Mode.
-> +
-
-
+Rather choose name from Coding style.
 
 Best regards,
 Krzysztof
