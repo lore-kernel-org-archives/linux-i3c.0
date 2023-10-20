@@ -4,128 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49CC8CDB474
-	for <linux-i3c@archiver.kernel.org>; Fri, 20 Oct 2023 15:17:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71760CDB474
+	for <linux-i3c@archiver.kernel.org>; Fri, 20 Oct 2023 15:20:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JRL3xdNbAlrGJCJQ0vqWuwzhb9ZOLXxr4lbRdrQzgvw=; b=3sQHRyfp8D5phU
-	amOeMTAgcSrS8ISgxRTDoL+o6n0tqh6yi7DW+UR2k1qs5Yp1DIBHgzAc+u/FKFs9Xy8cFrRrrC2W7
-	blR1K1gVSkBybnwbVnh8dqIfElVGQ26kjtRiyeftLmILxLvpN4nlMY6YVtede4bPFQi8CA7rgos7g
-	tB5BvM5u+lZUAHqech0JOWaJ5b0wOJHXDV2dNtTeDp0+sSYIGY+LpMhjUpCy+Qa6wH3s+yPnLwkJn
-	xQupVwrhek70V7zS5fqBdQxFdjKJllarBueMT+xl7Qvw0cRee3wKVOQebSAUesHtw0ZRA8NC5KIjF
-	r+TibhMWYiT3unn1hguw==;
+	List-Owner; bh=TGczUz8bmasVLrZSAHFiumNIS7t0W6yepbjbiz17Kr0=; b=wfWO3wwczTS2Hb
+	zyGFfIZYPFl86r1jwJDcDCn1iyyaBTRSb1nmRpC5BkgQ7ZM8r/rgMMYP7drl4Yq+dHxfquXQjDw/T
+	OwFloMrB+8XqdJ4WhFijjRaM7vh/hkxK88kFnwiuY2jwBwmivBeAVcKyBrAe+yJkwOvg/LwC3Fw8l
+	TZDhMqLDOr8M100x3jTVadToWTkLIcZ1wxl27oVRpvt61Y3hJ3A+6874KeevCN55dIAxfBiAJdyPQ
+	3dqg5Z9clnOl3/oGfJXMPQSPpR7sN+S7t96E/ndZnIYX9UoatubnHDCQq+XEZBljsAFDzHOvaTGhZ
+	c8prBhUxL8T84VYmeh2A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtrFj-002ahu-2H;
-	Fri, 20 Oct 2023 15:17:31 +0000
-Received: from mail-db3eur04on0600.outbound.protection.outlook.com ([2a01:111:f400:fe0c::600] helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1qtrIN-002ati-0c;
+	Fri, 20 Oct 2023 15:20:15 +0000
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qtrFg-002ahT-2L
+	id 1qtrIK-002atF-02
 	for linux-i3c@lists.infradead.org;
-	Fri, 20 Oct 2023 15:17:30 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=M6hlSLHE0hxFq/wIi7Ab9O4v7DjZChc7gHIsPLrPyX8zCR969SOiWwdqsbEjahmXPFpGZj5uo97IrDuPQz7Fe2rp66NHQ8u1zYd5FpAjD2C/bMFW5pf0THh0taYfDvyGthbrD747lLN2IHafhSIgjesXLNDRdAwMAQ+X0ciQCAPZM8rd7N6YRkYIV35tZg5QFK62cSUX8ayPdM64bny0XvN6uqmHoXfaL6OoS/vqlVm4o7BpvP0uuHo8FEadObSXdvzuRLu6P0UUzaRykbXXkrVWKk4eJXVXaVpxbhLMVxLxD1hXc+ooCXr1Lj5lD8/6qlOi3ppwb6adHI8petz5bQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=f0Bi3bn8qMesLCanq7j4h2Qx8K9aDOprrhmewVyXw2Q=;
- b=OdQYjumGkcWmeioB9aBafmQGk5iMQX0yqWUnIxOtTJ/CKC3uUbCE0WqJICZxDoK3FbyOqzk1x/OyYbEezY9/tWWOq9cx7LGR7cKqTZfNq3rxssdsiob58iz52Jw8RfeCxPv55/NRigpcJWILs+H2TZ932dxxQ6OUY7gn+V0fKrZhrZ4o+hfFCmYSdEmpTsz0yUQut1+QwFWtWk2NP2wW59PwyJe/MqUh/S+7raQjzXxXTg/fSf+KH5tuzkljFv7yRUuu0w8o+fXvQKoQbuZAI7fljEjwVpBMxZ880NAsT7PLo/4eMFF/tHfriyUJ/NC9d4WmtR4Jk4t2jebgcgQnSw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=f0Bi3bn8qMesLCanq7j4h2Qx8K9aDOprrhmewVyXw2Q=;
- b=gyhkkBSv5mCvd5k5ziUw9k/EY9q7q9dMzvyRd0IpEVrq49tg1idSYcM/zm2rs9eC3cX0sECldOFYwgZ1ZJbEfjcRPjL2Q7HnLKowzNynUIZIGqA9HBzoXhcEJ+KkWeOW0Gn3J/Feh3IH4Sb6k4csOxKtzV2Gw/6JRUPq7pf+pfU=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM6PR04MB4838.eurprd04.prod.outlook.com (2603:10a6:20b:4::16)
- by AM7PR04MB6902.eurprd04.prod.outlook.com (2603:10a6:20b:107::20) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6907.22; Fri, 20 Oct
- 2023 15:17:25 +0000
-Received: from AM6PR04MB4838.eurprd04.prod.outlook.com
- ([fe80::1774:e25f:f99:aca2]) by AM6PR04MB4838.eurprd04.prod.outlook.com
- ([fe80::1774:e25f:f99:aca2%4]) with mapi id 15.20.6907.022; Fri, 20 Oct 2023
- 15:17:25 +0000
-Date: Fri, 20 Oct 2023 11:17:17 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Miquel Raynal <miquel.raynal@bootlin.com>
+	Fri, 20 Oct 2023 15:20:14 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 8A0F0E0009;
+	Fri, 20 Oct 2023 15:20:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1697815207;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=oaHjuPcslWN24KOkrEWK0l5r712keu9E2N1sB5NoPOs=;
+	b=Fe+FfZGaDRfcO7OxSpnI7HBHq7pQthX5q1wmELp/2TZ6CBB/BSEsazaWzWmcdM+MsLXzbb
+	tpnZ6nvC76Bz/OIBqfIaIfRJd8qI1EE+dx2Kk5mY9KZ9qpBoWbNQzSoTuXIFPfjp3DiUJp
+	r1VMfnXib18izsQDF4BpRubDCSQYlDe9WiUdZ2r0/gbpHt8g8SbGtdy8o4RuNvtsMgpTq5
+	373/zLtnSo+Caz8d3a+Yx058Mf59Lj7KVWms57EglSS1+nBkvqL5nE7cnEL4kWFhMOHOav
+	wVsfU1yaDInUxUJYJ2vR3lZVX5ZlAGBHzCPihp906pKce+SidNAM/DLo3ysA1g==
+Date: Fri, 20 Oct 2023 17:20:06 +0200
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Frank Li <Frank.li@nxp.com>
 Cc: alexandre.belloni@bootlin.com, conor.culhane@silvaco.com,
-	imx@lists.linux.dev, joe@perches.com, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org
+ imx@lists.linux.dev, joe@perches.com, linux-i3c@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Subject: Re: [PATCH v2 Resent 6/6] i3c: master: svc: fix random hot join
  failure since timeout error
-Message-ID: <ZTKZ/a5T6DLJz/ZQ@lizhi-Precision-Tower-5810>
-References: <20231018155926.3305476-1-Frank.Li@nxp.com>
- <20231018155926.3305476-7-Frank.Li@nxp.com>
- <20231019084452.11fd0645@xps-13>
- <ZTFNvrsSoHOS3P2g@lizhi-Precision-Tower-5810>
- <20231020160645.67e678ee@xps-13>
- <ZTKMTwU6cVAfGCKG@lizhi-Precision-Tower-5810>
- <20231020163525.66485920@xps-13>
- <ZTKTGG7J55Sj19Nd@lizhi-Precision-Tower-5810>
-Content-Disposition: inline
+Message-ID: <20231020172006.5de0998b@xps-13>
 In-Reply-To: <ZTKTGG7J55Sj19Nd@lizhi-Precision-Tower-5810>
-X-ClientProxiedBy: SJ0PR03CA0192.namprd03.prod.outlook.com
- (2603:10b6:a03:2ef::17) To AM6PR04MB4838.eurprd04.prod.outlook.com
- (2603:10a6:20b:4::16)
+References: <20231018155926.3305476-1-Frank.Li@nxp.com>
+	<20231018155926.3305476-7-Frank.Li@nxp.com>
+	<20231019084452.11fd0645@xps-13>
+	<ZTFNvrsSoHOS3P2g@lizhi-Precision-Tower-5810>
+	<20231020160645.67e678ee@xps-13>
+	<ZTKMTwU6cVAfGCKG@lizhi-Precision-Tower-5810>
+	<20231020163525.66485920@xps-13>
+	<ZTKTGG7J55Sj19Nd@lizhi-Precision-Tower-5810>
+Organization: Bootlin
+X-Mailer: Claws Mail 4.0.0 (GTK+ 3.24.33; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM6PR04MB4838:EE_|AM7PR04MB6902:EE_
-X-MS-Office365-Filtering-Correlation-Id: 2c4dc173-b15d-4765-da25-08dbd17faa5d
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 9we8/hZi3b6sXpxIehlxp8glEEzFLKz+zNTR8xscbzzVtVzAEhY3AWT9oeL3JXh6JHwU0bO2++0+ZekvgxqL08flQY5TonL0QHJnQBaVnaYXOiuUebD7a5oDodH/T0nJP4AQUvzpq4ulLaHNPfcvtqTfOoKXj/2hJxsaQWF0K3DKgUR+xIoZEKDzQACptGCYvIXdxgR9OFJ3m7QS0/T1S8Cm8rImZwiGRJF/23lUAx3IZ3iYe6JpcQj8fcDA3d06lAnix4/YVFTDmtB+RtlZCRuZ8HDbZ67/UlNmmYCpa2vEK93Qeg6eQ50YGTXqGiBZpuf9WEQWPM9lnOZOI2nhJBIixk5P/5BwzG1ttWF40Bi3++cDGexGDyUZwZ2qpmjYj+JgGdLnE2vHIDq8YHPNfKjTLC/hbrjnEBDOstMQAtQWT2//K0EMxdynvQkoeoPgZ80VHyX8t2UkxQLDp/062wbwmBMERJ29DDo6qIcYhm4URFnhRrJ7KmRZ6PHVo7RB0CxKWaXMSkteObU/0DKb8UnwxckA9T1UjZkACXINyXvobXkJBOf1W9ckLVNC57rpCOcK3mC8FxxwtGQaizDYJwkRfhXk6SeO2s1N0/BccSrSENiKBc3k4pwabKP05CKu
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM6PR04MB4838.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(7916004)(136003)(346002)(376002)(366004)(396003)(39860400002)(230922051799003)(1800799009)(186009)(64100799003)(451199024)(86362001)(316002)(6486002)(9686003)(38100700002)(66574015)(6512007)(26005)(478600001)(33716001)(41300700001)(66946007)(66556008)(66476007)(6506007)(38350700005)(52116002)(83380400001)(6666004)(6916009)(5660300002)(4326008)(8936002)(2906002)(8676002);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?FgzUpvBY2IBc8Z6LX6O72O5PzqKQ0luIpmagXSJKVKoa+hu5ovJ8sqBibz?=
- =?iso-8859-1?Q?adYX3uMDvnmL0/4B+ffovbVSnAfs+lfXBm3mll567v6GoEMfi99eullRDg?=
- =?iso-8859-1?Q?vyCWwHXSpJJKgN/dAoKbWBC8PNjvEdu3lyUibO80rtgPOwtrRwG8sRtdKY?=
- =?iso-8859-1?Q?W81Ug+eAFd82vm/8lGu7myUtCfZEUQVWCUV95F31t5XEVkyvVNRFFJJ6CO?=
- =?iso-8859-1?Q?lvhZ61fLUHAYqecy8HpjqDNP7DskYQQDRTMfJkIAUYsqkIJ+Jo6Lp0fyKR?=
- =?iso-8859-1?Q?kZBKxpvOQcmf1Te/LWGfg3DqH5c1q/DiV018HNkwZ1DGVhps8OOuwFJ7BF?=
- =?iso-8859-1?Q?139TYforYh4Z7owgqb0J1ktrQ6PAboSn+q5N+JdsjysZoyokbRWYQsmtEm?=
- =?iso-8859-1?Q?eMomASMg7MxJF3NwfQ6K40iU3CGf4ELfkcpEXRffoEY3KETPCIMR7phY6J?=
- =?iso-8859-1?Q?Z1BXuWkAkZ6mC3uMy5utWbVYZ6u6EytnVqoXZ2zVFoNufWSlXpcP2hpjnw?=
- =?iso-8859-1?Q?QaawzJIbRj5LTZyO/kGsHjXtjQQ6P8HG6+V5xRcZI1x5HODN+Xt1UhxXJ3?=
- =?iso-8859-1?Q?OehO3VkrO39C9Sjsc/O8bW36Yh9h0j6Gw7+gHihYLbsz7wCVxuWNG9nPlE?=
- =?iso-8859-1?Q?LCEJTOyQmrOXY5RP2N8Cfhc2bnnJYEWRvdPgEeVRhQrZ2DMEdnUTU91m8y?=
- =?iso-8859-1?Q?JB/ZeZ0H6CYIYywswfzUcEYgh6LrT3QGrzo/2PjrsI+D/SeS9wnhQvJQ5x?=
- =?iso-8859-1?Q?evH49bMlKFUs6wRpPfTNd8AffrA0SV6iuD8w8ymp0dfMDis4MrdpHs4W28?=
- =?iso-8859-1?Q?cQaVfAag+bAXH4ww2VhQxYfPmJm2sU/IRlVYP3aLvbPfCG+ZmVnecEWect?=
- =?iso-8859-1?Q?ZGDYPeXzbX799Idb8BlFA8a3bEH3YhfDAZSVprv+zYBUHDrF+3XS3gNu2r?=
- =?iso-8859-1?Q?Ndmc+7xagKaD0rWTOpTsHFyVNtfOi+2dmJUpJShaSKshq8zH5kY0pgFI/q?=
- =?iso-8859-1?Q?FM1pzSvqPj1/pVWdOdS5fwmy/U5KffMYeIyQR2c/D1Nmp3ULRY/X1Y1BqB?=
- =?iso-8859-1?Q?9yn9XQ6tarcvlcnJY4F0IAVMXh9HTXbHe/du1047XggY2M7PFP6Yn/0jhc?=
- =?iso-8859-1?Q?TUD6V3SZays79camNQYWLwpFUPcml634SHG/3yy3J8aap0vMCJ51C4rTFf?=
- =?iso-8859-1?Q?QIkZTUyQan0x0wPni5Oz8qyQLp7GsIcPfJEpT3ZzWju3+nEGsZ1Ks5gpLY?=
- =?iso-8859-1?Q?rH+H0BEjCQMVToQsITdptbtELjb+61K/rioq1otVog6ZJTj86T8iRdU4Fi?=
- =?iso-8859-1?Q?xf+IRPH5hlp8wZDHGrB0mYhys0ReSZNZGeQLFhArS0TYImuf2Rl0VV6BWS?=
- =?iso-8859-1?Q?UUD9iseJgL7koxKSejHPj2v28Tbe5e5A0Uh9B+zY/eAxz9lvNefMdwr+5X?=
- =?iso-8859-1?Q?DTWMQin58rYen7AFJ9zgJ1HPII7iHDu6CPAvlxGOimej+229kFkdjCj99U?=
- =?iso-8859-1?Q?epFs72Uc0eRewoDmCPqOqA0mPQm+OeRx9dH9cz8VHXSCwymqjOPJfgOAxF?=
- =?iso-8859-1?Q?FmBt8k9Bq4SDSup1RQK82HgVIt+H5KMtc9y8SHo9zsGQK+qgUOJ7D9AMz4?=
- =?iso-8859-1?Q?ZpU660Cm6UofJSY5MLpIctO92mqzZ2Kx+S?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2c4dc173-b15d-4765-da25-08dbd17faa5d
-X-MS-Exchange-CrossTenant-AuthSource: AM6PR04MB4838.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Oct 2023 15:17:25.3577
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: cNLLtHF10lWgjoz8JmiTwTRGKcEHF6u79NIa2M7OcP3i0dWGziZ0MLaT0RcpzjFdiFBZuptxSDcNe17ssL7Hkg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7PR04MB6902
+X-GND-Sasl: miquel.raynal@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231020_081728_788646_C819EE68 
-X-CRM114-Status: GOOD (  34.12  )
+X-CRM114-CacheID: sfid-20231020_082012_333545_E5EFB696 
+X-CRM114-Status: GOOD (  33.41  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,154 +77,74 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Oct 20, 2023 at 10:47:52AM -0400, Frank Li wrote:
-> On Fri, Oct 20, 2023 at 04:35:25PM +0200, Miquel Raynal wrote:
-> > Hi Frank,
-> > =
-
-> > Frank.li@nxp.com wrote on Fri, 20 Oct 2023 10:18:55 -0400:
-> > =
-
-> > > On Fri, Oct 20, 2023 at 04:06:45PM +0200, Miquel Raynal wrote:
-> > > > Hi Frank,
-> > > > =
-
-> > > > Frank.li@nxp.com wrote on Thu, 19 Oct 2023 11:39:42 -0400:
-> > > >   =
-
-> > > > > On Thu, Oct 19, 2023 at 08:44:52AM +0200, Miquel Raynal wrote:  =
-
-> > > > > > Hi Frank,
-> > > > > > =
-
-> > > > > > Frank.Li@nxp.com wrote on Wed, 18 Oct 2023 11:59:26 -0400:
-> > > > > >     =
-
-> > > > > > > master side report:
-> > > > > > >   silvaco-i3c-master 44330000.i3c-master: Error condition: MS=
-TATUS 0x020090c7, MERRWARN 0x00100000
-> > > > > > > =
-
-> > > > > > > BIT 20: TIMEOUT error
-> > > > > > >   The module has stalled too long in a frame. This happens wh=
-en:
-> > > > > > >   - The TX FIFO or RX FIFO is not handled and the bus is stuc=
-k in the
-> > > > > > > middle of a message,
-> > > > > > >   - No STOP was issued and between messages,
-> > > > > > >   - IBI manual is used and no decision was made.    =
-
-> > > > > > =
-
-> > > > > > I am still not convinced this should be ignored in all cases.
-> > > > > > =
-
-> > > > > > Case 1 is a problem because the hardware failed somehow.    =
-
-> > > > > =
-
-> > > > > But so far, no action to handle this case in current code.  =
-
-> > > > =
-
-> > > > Yes, but if you detect an issue and ignore it, it's not better than
-> > > > reporting it without handling it. Instead of totally ignoring this I
-> > > > would at least write a debug message (identical to what's below) be=
-fore
-> > > > returning false, even though I am not convinced unconditionally
-> > > > returning false here is wise. If you fail a hardware sequence becau=
-se
-> > > > you added a printk, it's a problem. Maybe you consider this line as
-> > > > noise, but I believe it's still an error condition. Maybe, however,
-> > > > this bit gets set after the whole sequence, and this is just a "bus
-> > > > is idle" condition. If that's the case, then you need some
-> > > > additional heuristics to properly ignore the bit?
-> > > >   =
-
-> > > =
-
-> > >                 dev_err(master->dev,                                 =
-      =
-
-> > >                         "Error condition: MSTATUS 0x%08x, MERRWARN 0x=
-%08x\n",
-> > >                         mstatus, merrwarn);
-> > > +
-> > > +		/* ignore timeout error */
-> > > +		if (merrwarn & SVC_I3C_MERRWARN_TIMEOUT)
-> > > +			return false;
-> > > +
-> > > =
-
-> > > Is it okay move SVC_I3C_MERRWARN_TIMEOUT after dev_err?
-> > =
-
-> > I think you mentioned earlier that the problem was not the printk but
-> > the return value. So perhaps there is a way to know if the timeout
-> > happened after a transaction and was legitimate or not?
-> =
-
-> Error message just annoise user, don't impact function. But return false
-> let IBI thread running to avoid dead lock. =
-
-
-I forget mention one thing. Any error message here will make SDA low for
-longer.  Before emit stop, SDA is low.
-
-I have not checked I3C spec yet about how long SDA will be allowed. it will
-worser if message go through uart port. The bus will be locked longer.
-
-It's better to print error message after emit_stop to reduce SDA low time.
-
-Frank
-
-> =
-
-> > =
-
-> > In any case we should probably lower the log level for this error.
-> =
-
-> Only SVC_I3C_MERRWARN_TIMEOUT is warning
-> =
-
-> Maybe below logic is better
-> =
-
-> 	if (merrwarn & SVC_I3C_MERRWARN_TIMEOUT) {
-> 		dev_dbg(master->dev, =
-
->                         "Error condition: MSTATUS 0x%08x, MERRWARN 0x%08x=
-\n",
-> 			mstatus, merrwarn);
-> 		return false;
-> 	} =
-
-> 	=
-
-> 	dev_err(master->dev,                                     =
-
->                 "Error condition: MSTATUS 0x%08x, MERRWARN 0x%08x\n",
->                  mstatus, merrwarn); =
-
-> 	....
-> =
-
-> Frank
-> =
-
-> > =
-
-> > Thanks,
-> > Miqu=E8l
-
--- =
-
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+SGkgRnJhbmssCgpGcmFuay5saUBueHAuY29tIHdyb3RlIG9uIEZyaSwgMjAgT2N0IDIwMjMgMTA6
+NDc6NTIgLTA0MDA6Cgo+IE9uIEZyaSwgT2N0IDIwLCAyMDIzIGF0IDA0OjM1OjI1UE0gKzAyMDAs
+IE1pcXVlbCBSYXluYWwgd3JvdGU6Cj4gPiBIaSBGcmFuaywKPiA+IAo+ID4gRnJhbmsubGlAbnhw
+LmNvbSB3cm90ZSBvbiBGcmksIDIwIE9jdCAyMDIzIDEwOjE4OjU1IC0wNDAwOgo+ID4gICAKPiA+
+ID4gT24gRnJpLCBPY3QgMjAsIDIwMjMgYXQgMDQ6MDY6NDVQTSArMDIwMCwgTWlxdWVsIFJheW5h
+bCB3cm90ZTogIAo+ID4gPiA+IEhpIEZyYW5rLAo+ID4gPiA+IAo+ID4gPiA+IEZyYW5rLmxpQG54
+cC5jb20gd3JvdGUgb24gVGh1LCAxOSBPY3QgMjAyMyAxMTozOTo0MiAtMDQwMDoKPiA+ID4gPiAg
+ICAgCj4gPiA+ID4gPiBPbiBUaHUsIE9jdCAxOSwgMjAyMyBhdCAwODo0NDo1MkFNICswMjAwLCBN
+aXF1ZWwgUmF5bmFsIHdyb3RlOiAgICAKPiA+ID4gPiA+ID4gSGkgRnJhbmssCj4gPiA+ID4gPiA+
+IAo+ID4gPiA+ID4gPiBGcmFuay5MaUBueHAuY29tIHdyb3RlIG9uIFdlZCwgMTggT2N0IDIwMjMg
+MTE6NTk6MjYgLTA0MDA6Cj4gPiA+ID4gPiA+ICAgICAgIAo+ID4gPiA+ID4gPiA+IG1hc3RlciBz
+aWRlIHJlcG9ydDoKPiA+ID4gPiA+ID4gPiAgIHNpbHZhY28taTNjLW1hc3RlciA0NDMzMDAwMC5p
+M2MtbWFzdGVyOiBFcnJvciBjb25kaXRpb246IE1TVEFUVVMgMHgwMjAwOTBjNywgTUVSUldBUk4g
+MHgwMDEwMDAwMAo+ID4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiA+IEJJVCAyMDogVElNRU9VVCBl
+cnJvcgo+ID4gPiA+ID4gPiA+ICAgVGhlIG1vZHVsZSBoYXMgc3RhbGxlZCB0b28gbG9uZyBpbiBh
+IGZyYW1lLiBUaGlzIGhhcHBlbnMgd2hlbjoKPiA+ID4gPiA+ID4gPiAgIC0gVGhlIFRYIEZJRk8g
+b3IgUlggRklGTyBpcyBub3QgaGFuZGxlZCBhbmQgdGhlIGJ1cyBpcyBzdHVjayBpbiB0aGUKPiA+
+ID4gPiA+ID4gPiBtaWRkbGUgb2YgYSBtZXNzYWdlLAo+ID4gPiA+ID4gPiA+ICAgLSBObyBTVE9Q
+IHdhcyBpc3N1ZWQgYW5kIGJldHdlZW4gbWVzc2FnZXMsCj4gPiA+ID4gPiA+ID4gICAtIElCSSBt
+YW51YWwgaXMgdXNlZCBhbmQgbm8gZGVjaXNpb24gd2FzIG1hZGUuICAgICAgCj4gPiA+ID4gPiA+
+IAo+ID4gPiA+ID4gPiBJIGFtIHN0aWxsIG5vdCBjb252aW5jZWQgdGhpcyBzaG91bGQgYmUgaWdu
+b3JlZCBpbiBhbGwgY2FzZXMuCj4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiBDYXNlIDEgaXMgYSBw
+cm9ibGVtIGJlY2F1c2UgdGhlIGhhcmR3YXJlIGZhaWxlZCBzb21laG93LiAgICAgIAo+ID4gPiA+
+ID4gCj4gPiA+ID4gPiBCdXQgc28gZmFyLCBubyBhY3Rpb24gdG8gaGFuZGxlIHRoaXMgY2FzZSBp
+biBjdXJyZW50IGNvZGUuICAgIAo+ID4gPiA+IAo+ID4gPiA+IFllcywgYnV0IGlmIHlvdSBkZXRl
+Y3QgYW4gaXNzdWUgYW5kIGlnbm9yZSBpdCwgaXQncyBub3QgYmV0dGVyIHRoYW4KPiA+ID4gPiBy
+ZXBvcnRpbmcgaXQgd2l0aG91dCBoYW5kbGluZyBpdC4gSW5zdGVhZCBvZiB0b3RhbGx5IGlnbm9y
+aW5nIHRoaXMgSQo+ID4gPiA+IHdvdWxkIGF0IGxlYXN0IHdyaXRlIGEgZGVidWcgbWVzc2FnZSAo
+aWRlbnRpY2FsIHRvIHdoYXQncyBiZWxvdykgYmVmb3JlCj4gPiA+ID4gcmV0dXJuaW5nIGZhbHNl
+LCBldmVuIHRob3VnaCBJIGFtIG5vdCBjb252aW5jZWQgdW5jb25kaXRpb25hbGx5Cj4gPiA+ID4g
+cmV0dXJuaW5nIGZhbHNlIGhlcmUgaXMgd2lzZS4gSWYgeW91IGZhaWwgYSBoYXJkd2FyZSBzZXF1
+ZW5jZSBiZWNhdXNlCj4gPiA+ID4geW91IGFkZGVkIGEgcHJpbnRrLCBpdCdzIGEgcHJvYmxlbS4g
+TWF5YmUgeW91IGNvbnNpZGVyIHRoaXMgbGluZSBhcwo+ID4gPiA+IG5vaXNlLCBidXQgSSBiZWxp
+ZXZlIGl0J3Mgc3RpbGwgYW4gZXJyb3IgY29uZGl0aW9uLiBNYXliZSwgaG93ZXZlciwKPiA+ID4g
+PiB0aGlzIGJpdCBnZXRzIHNldCBhZnRlciB0aGUgd2hvbGUgc2VxdWVuY2UsIGFuZCB0aGlzIGlz
+IGp1c3QgYSAiYnVzCj4gPiA+ID4gaXMgaWRsZSIgY29uZGl0aW9uLiBJZiB0aGF0J3MgdGhlIGNh
+c2UsIHRoZW4geW91IG5lZWQgc29tZQo+ID4gPiA+IGFkZGl0aW9uYWwgaGV1cmlzdGljcyB0byBw
+cm9wZXJseSBpZ25vcmUgdGhlIGJpdD8KPiA+ID4gPiAgICAgCj4gPiA+IAo+ID4gPiAgICAgICAg
+ICAgICAgICAgZGV2X2VycihtYXN0ZXItPmRldiwgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAKPiA+ID4gICAgICAgICAgICAgICAgICAgICAgICAgIkVycm9yIGNvbmRpdGlv
+bjogTVNUQVRVUyAweCUwOHgsIE1FUlJXQVJOIDB4JTA4eFxuIiwKPiA+ID4gICAgICAgICAgICAg
+ICAgICAgICAgICAgbXN0YXR1cywgbWVycndhcm4pOwo+ID4gPiArCj4gPiA+ICsJCS8qIGlnbm9y
+ZSB0aW1lb3V0IGVycm9yICovCj4gPiA+ICsJCWlmIChtZXJyd2FybiAmIFNWQ19JM0NfTUVSUldB
+Uk5fVElNRU9VVCkKPiA+ID4gKwkJCXJldHVybiBmYWxzZTsKPiA+ID4gKwo+ID4gPiAKPiA+ID4g
+SXMgaXQgb2theSBtb3ZlIFNWQ19JM0NfTUVSUldBUk5fVElNRU9VVCBhZnRlciBkZXZfZXJyPyAg
+Cj4gPiAKPiA+IEkgdGhpbmsgeW91IG1lbnRpb25lZCBlYXJsaWVyIHRoYXQgdGhlIHByb2JsZW0g
+d2FzIG5vdCB0aGUgcHJpbnRrIGJ1dAo+ID4gdGhlIHJldHVybiB2YWx1ZS4gU28gcGVyaGFwcyB0
+aGVyZSBpcyBhIHdheSB0byBrbm93IGlmIHRoZSB0aW1lb3V0Cj4gPiBoYXBwZW5lZCBhZnRlciBh
+IHRyYW5zYWN0aW9uIGFuZCB3YXMgbGVnaXRpbWF0ZSBvciBub3Q/ICAKPiAKPiBFcnJvciBtZXNz
+YWdlIGp1c3QgYW5ub2lzZSB1c2VyLCBkb24ndCBpbXBhY3QgZnVuY3Rpb24uIEJ1dCByZXR1cm4g
+ZmFsc2UKPiBsZXQgSUJJIHRocmVhZCBydW5uaW5nIHRvIGF2b2lkIGRlYWQgbG9jay4gCj4gCj4g
+PiAKPiA+IEluIGFueSBjYXNlIHdlIHNob3VsZCBwcm9iYWJseSBsb3dlciB0aGUgbG9nIGxldmVs
+IGZvciB0aGlzIGVycm9yLiAgCj4gCj4gT25seSBTVkNfSTNDX01FUlJXQVJOX1RJTUVPVVQgaXMg
+d2FybmluZwo+IAo+IE1heWJlIGJlbG93IGxvZ2ljIGlzIGJldHRlcgo+IAo+IAlpZiAobWVycndh
+cm4gJiBTVkNfSTNDX01FUlJXQVJOX1RJTUVPVVQpIHsKPiAJCWRldl9kYmcobWFzdGVyLT5kZXYs
+IAo+ICAgICAgICAgICAgICAgICAgICAgICAgICJFcnJvciBjb25kaXRpb246IE1TVEFUVVMgMHgl
+MDh4LCBNRVJSV0FSTiAweCUwOHhcbiIsCj4gCQkJbXN0YXR1cywgbWVycndhcm4pOwo+IAkJcmV0
+dXJuIGZhbHNlOwo+IAl9IAo+IAkKPiAJZGV2X2VycihtYXN0ZXItPmRldiwgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgCj4gICAgICAgICAgICAgICAgICJFcnJvciBjb25kaXRp
+b246IE1TVEFUVVMgMHglMDh4LCBNRVJSV0FSTiAweCUwOHhcbiIsCj4gICAgICAgICAgICAgICAg
+ICBtc3RhdHVzLCBtZXJyd2Fybik7IAo+IAkuLi4uCj4gCgpZZXMsIHRoaXMgbG9va3MgYmV0dGVy
+IGJ1dCBJIHdvbmRlciBpZiB3ZSBzaG91bGQgYWRkIGFuIGFkZGl0aW9uYWwKY29uZGl0aW9uIHRv
+IGp1c3QgcmV0dXJuIGZhbHNlIGluIHRoaXMgY2FzZTsgc29tZXRoaW5nIHNheWluZyAidGhpcwp0
+aW1lb3V0IGlzIGxlZ2l0aW1hdGUgYW5kIGhhcyBubyBpbXBhY3QiLgoKVGhhbmtzLApNaXF1w6hs
+CgotLSAKbGludXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
