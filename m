@@ -4,58 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3387C4332F
-	for <linux-i3c@archiver.kernel.org>; Fri,  3 Nov 2023 23:41:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84447C4332F
+	for <linux-i3c@archiver.kernel.org>; Fri,  3 Nov 2023 23:45:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pZ8ZS/ZwjJSDjMJY83trbxMrXKKYvqlABW6k2W9id5s=; b=l8XsKfrL3z16ff
-	lYJyUf2pj/VNzc1Uy99cc4Ce0xyyYcfwOg2pSGX3FH4ytEoOL/car/xNHMISHFZ6cGUB/KYMg3nTB
-	45N3iWVnaKZ9/mO91i2fk8MmirFKf7VPDu7N0aig/HOna1cOKppqAq6IG7STxL7Aymtm4COb5npm6
-	IpnZ74DMHxzb91TiFz2eI4aDyRqwiNRmLrYWKIAu5kWZYW2YST6gYw/ICUEoi+2CBEwfLjvjatg2+
-	1IMWiIJLEKJFquScAGktIQnAOv3bZu7zkRPxk2NPsvLu5hi49LiBork12XRshlY+v2RaGMLrIYrGq
-	gzNOcrzTdh2RK++Irc4w==;
+	List-Owner; bh=PdYpwvENAVqAqwEwIn4clju9dON43gRZs6apaZ1CYQU=; b=EYrkEScDSR2Y8o
+	rUFGkmvTYUZjdFBreYeFY4RT4gTRvFz0cSTXYswwC36Slpmqkao1PjfL5xu1/j6V0LFhqE7qeVJRw
+	6cdTi7/U3pybohpVJb/IhbOjkezCmbw997JMz/4bgxP9Y4Ana3E/UtE2AhNbmaTtC5JiOGU3QTyK7
+	qqaZB4XkBK2Sjr8otcM/KofIISv4SWxndeVYBNArpJTVymXj3MJ7DVVuVk40fHSn1e3eIgJwgtprw
+	xaObgcNwyzTy6I5LBgds7+zjJnP3pMaJySa/YxuOyFwswrss2g5Q2BAuTie7LzY5q/bw8HtjzAo7u
+	0xt7Ye+uNKUgnxzJkTlA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qz3na-00CLJO-0Z;
-	Fri, 03 Nov 2023 23:41:58 +0000
+	id 1qz3qX-00CLTl-0d;
+	Fri, 03 Nov 2023 23:45:01 +0000
 Received: from relay2-d.mail.gandi.net ([2001:4b98:dc4:8::222])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qz3nW-00CLIQ-1M
+	id 1qz3qV-00CLTQ-00
 	for linux-i3c@lists.infradead.org;
-	Fri, 03 Nov 2023 23:41:56 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id C586240002;
-	Fri,  3 Nov 2023 23:41:47 +0000 (UTC)
+	Fri, 03 Nov 2023 23:45:00 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 7F0EC40003;
+	Fri,  3 Nov 2023 23:44:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1699054908;
+	t=1699055096;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
 	 in-reply-to:in-reply-to:references:references;
-	bh=01UalbeeXeLylUyRzF/vSpZA0gSYvuxFA9cB6+h3P1Q=;
-	b=l7vr27CXDc41xs4jbHLNnd0VYqkRE7A5NvcwQnO7NZjSQL/5wzEIKxItB345z97S+G6gfM
-	FHyVvTMaPVFcBoNmuWxZRCtzwWhoinbvoSLoy1ZHYOMG73D4sRSkGsbSkAd5Tj5zqhLnpH
-	6yj9GT1i9A2yOCqNw1TbFWIpZ9SoNb+13KBmx78zI4tgm68dHzOABq3ZoKwax1ZR/uDxPA
-	I00zWwShBj5+WAYLxSSSt+LLItXNFFv2i0vhqH94EN8TxWIuGOQqb3RflwY0UwEEP+/mjh
-	Oe2CoBFzcRUMnyVu14VoBRfE5Dy8v2GnkakgOCQeKE5I7ACkgawj0aFCCOXWrg==
-Date: Sat, 4 Nov 2023 00:41:47 +0100
+	bh=LvZbY8n3TbbqhYlVAfQSZGBZEm+tBQZKIiqgXT9tZZ8=;
+	b=mZIxxhxiV0dqVY89K/UWVJf37U9ZTERrXJStzWUi+rEoOMxqtIIe/q3B5a2OUAB7hdajCY
+	FbRPHtMOct+yJN84cF924eex12ZRte/qE/73kbFeYuQAavPfBMpo0D1MS7QejDVI8ca5Ue
+	01jMO/XCG7FlSm3fmVlaMWOuyNt/V8lOQff9nqXJ7IQf5SeNmyRaYNJIMevM0Sw/2HZhs2
+	iDwSEBCY1HylzkBvpee7hwxL/g8oe6/mxAUvN2afOMoQqLmm9KxaVnETimLKCUmWvrJ4OA
+	trSaXwj3W6MhRqA15oLCUsfqFzBX76Lc7u/gyARcTZMl4vEgXTsjB+/0WKKOjw==
+Date: Sat, 4 Nov 2023 00:44:55 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Billy Tsai <billy_tsai@aspeedtech.com>
-Cc: BMC-SW@aspeedtech.com
-Subject: Re: [PATCH v1] i3c/master/mipi-i3c-hci: Fix a kernel panic for
- accessing DAT_data.
-Message-ID: <169905489155.439104.1007504050351939428.b4-ty@bootlin.com>
-References: <20231023080237.560936-1-billy_tsai@aspeedtech.com>
+To: linux-i3c@lists.infradead.org,
+	Zbigniew Lukwinski <zbigniew.lukwinski@linux.intel.com>
+Subject: Re: [PATCH v1 0/1] Fix for IBI handling order
+Message-ID: <169905508448.440113.6352651253083554612.b4-ty@bootlin.com>
+References: <20231015222334.1652401-1-zbigniew.lukwinski@linux.intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20231023080237.560936-1-billy_tsai@aspeedtech.com>
+In-Reply-To: <20231015222334.1652401-1-zbigniew.lukwinski@linux.intel.com>
 X-GND-Sasl: alexandre.belloni@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231103_164154_759113_8E8910E9 
-X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-CacheID: sfid-20231103_164459_205988_C2796218 
+X-CRM114-Status: UNSURE (   9.14  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -74,20 +72,21 @@ Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 
-On Mon, 23 Oct 2023 16:02:37 +0800, Billy Tsai wrote:
-> The `i3c_master_bus_init` function may attach the I2C devices before the
-> I3C bus initialization. In this flow, the DAT `alloc_entry`` will be used
-> before the DAT `init`. Additionally, if the `i3c_master_bus_init` fails,
-> the DAT `cleanup` will execute before the device is detached, which will
-> execue DAT `free_entry` function. The above scenario can cause the driver
-> to use DAT_data when it is NULL.
+On Mon, 16 Oct 2023 00:23:33 +0200, Zbigniew Lukwinski wrote:
+> I would like to introduce here patch to cover IBI handling order broken.
+> 
+> IBI shall be handled in order they appear on the bus. Otherwise could hit
+> case when order of handling them in device driver will be different. It may
+> lead to invalid assembling fragmented packets or events order broken.
+> 
+> There are two use cases when this problem can happen.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] i3c/master/mipi-i3c-hci: Fix a kernel panic for accessing DAT_data.
-      commit: b53e9758a31c683fc8615df930262192ed5f034b
+[1/1] i3c: master: handle IBIs in order they came
+      commit: 9fd00df05e81a2e1080ce6e9abc35533dca99d74
 
 Best regards,
 
