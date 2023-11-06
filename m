@@ -4,131 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72C4DC4332F
-	for <linux-i3c@archiver.kernel.org>; Sun,  5 Nov 2023 15:51:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53881C4167D
+	for <linux-i3c@archiver.kernel.org>; Mon,  6 Nov 2023 20:24:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nb2HCuuuwo0+JMIIRL5uI22PT/Rh5heAE+7zCZDPxJo=; b=V4doTEi1knWkeA
-	OiO+3Ud5SHXOytNhdXo1kqyym7OThA3CdlLWHUtjY5eVjpMYa7XCI8dXsI0YNhSo7Wujn242ySoFT
-	JtuQFxov0UvYLVA6Im+PB/ff/E/ZibVwPdP7yBaB1mpYcDbJ089MjR0pn8hqIP+2hRocFGgWxADZp
-	W7/xpDvJlFrSVZO4ev0puD0h984bupBIItpJLHadhrH5kBwLxNjjveBg6Z7TcxHeqOJCk02L8oxlw
-	JAKrKGJtauZKMvESNC7lKh5UD97/hkWWfZtNJPMIzPG6+a1c1xfrEC1h4pB8YQJmIyCcEqU5IPweN
-	2YvfzxcrVG5RjEqiST3Q==;
+	List-Owner; bh=Jg8YFcOlRIkrXdSrz7cS50QPdeBtD8WeQaTJLXNdIrU=; b=t8rkGo16hzEe8U
+	k+a+nZYLckPsAPa5zSLkO5j2OfaIaxoU+Rvb018bS5SGj5NesuqoZHbTlSaDcO/82Mzv3sahxHLZv
+	C4gjt9P6GbBk8sjUt2oRvszUuR/Hnddt/OdlxHAz8novd3pE9ALu8uE0IKbKoR9Wv9xMYNKwyNODu
+	XHl3vy1Xc/ptQrtPan0TNcXF7DvU+l/AqO83QmYo9Zqwe6bvJbhhsVV5TE/G3cX7sAa/VYHTyeuKt
+	+cNChGbbENmIvvN8K05HbJkYYuw9zpYHvZYL0S2dZQZUQ7qSdjV3Mh7Orn/phhDS2VA/fPgFX9Y4E
+	bIZhitHpXqhlGxQSpUNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1qzfPX-00F7vJ-2f;
-	Sun, 05 Nov 2023 15:51:39 +0000
-Received: from mail-vi1eur04on0623.outbound.protection.outlook.com ([2a01:111:f400:fe0e::623] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1r068s-00HUck-0v;
+	Mon, 06 Nov 2023 20:24:14 +0000
+Received: from mgamail.intel.com ([134.134.136.31])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qzfPV-00F7uR-1N
+	id 1r068p-00HUc1-15
 	for linux-i3c@lists.infradead.org;
-	Sun, 05 Nov 2023 15:51:39 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=JDdKLQvKv5KyYzKh9s9IGhiL1+QAXGh0rTicXrZ5EaOLiXcclctE8GaUt3Wwydcs37wZ1OJaCzeaMPFPLTn9YMRWS6nzRO4OVfHmCEAS8e8bkALu2UEjOi+yDrGZrHl8JQQsVVqTMlCNA9DyHRvLldNTxW/D/8yjBHu+WZaVOzXNELNcG1LiaMNjWk4hxM759ydn44eP28vl8l0AauyPrMbGHJG2KwxE4xIS+hICRBJBqhnEVFpTUtcJ42q/+Ery2bbj9TWSr8PT/8pq/pZHgnLxmQbfCuEJ9sp+80uJ4maWito/gZ1IsFaYHEgRtmAk5vF2Juh2en/wv48BXCRuGg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=qEh9gN5qE3yQe+vn+12QjSRTTZxQK3bGFlEzGq1KHGE=;
- b=XYyPrGPDJ36MlMTiAyLDDLKIT/vlvgnSQSU7jXJJNQRxPriscad9S4dSmmAwoEn+8oewTwOPIskBRMRSAGewVCqaI4dXhL1TMGbi20aHiEkaZkRLsgNwnKeYNiSQy5Sk2OIXXYlY5H9sycsrsjNi5OIOmWBxYebuDWgYRstd0eiKeXQl+kjndQ/t4jNogic3uRpvF3vdCE3Hgg8WmtAglsIE6UhhQntTAa+oeQmB3AZEqSLtUazm8XCSrG7+Apy3+Bn3AWQU01EDczrP5gOy7UjhLVrz4r4DW9Ojt3bUds0rTOk1rnGVROYxHZxG8LLTgJwI0fVKU/gKo6ZPCrEHxg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=qEh9gN5qE3yQe+vn+12QjSRTTZxQK3bGFlEzGq1KHGE=;
- b=InI0kL6Dbtb4aWMNTVOL7rj1GMn53215zvHV9BIIxKFn/rR3FP7OvTI1O3q/cR89VjOMUslhrMP6h7yBZIGghhfxE8haoTVpg7un4jVN7SHPZTAUPDhcngBVtXW38pADOSMrvtqqm7aTUu+tl5I0U5IWe3++4KUnuKTd5DJXeV4=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM6PR04MB4838.eurprd04.prod.outlook.com (2603:10a6:20b:4::16)
- by AS8PR04MB8914.eurprd04.prod.outlook.com (2603:10a6:20b:42d::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6977.11; Sun, 5 Nov
- 2023 15:36:54 +0000
-Received: from AM6PR04MB4838.eurprd04.prod.outlook.com
- ([fe80::2635:52a:c866:2576]) by AM6PR04MB4838.eurprd04.prod.outlook.com
- ([fe80::2635:52a:c866:2576%6]) with mapi id 15.20.6977.013; Sun, 5 Nov 2023
- 15:36:54 +0000
-Date: Sun, 5 Nov 2023 10:36:46 -0500
-From: Frank Li <Frank.li@nxp.com>
-To: "Zbigniew, Lukwinski" <zbigniew.lukwinski@linux.intel.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
+	Mon, 06 Nov 2023 20:24:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1699302251; x=1730838251;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=HUQJarH/crV1JopZJb9YSb1wHfMu7JhiXQvXe0faobI=;
+  b=ZmA2lpqJz+OhGfhI1LzsPlepTr4WdpepwQS1bmqgOcA2Y4Pt+9VpR5sx
+   3m67tp9Iv7RchHsqkkyCVB+YQ+xrhzgBUf4/HA0SFaCkw2i4C7ATq5Xke
+   rym6I6QQXNrkCUNoPvMzjFWN1HSaubvhWib3mXdircGw15/G3CKgE9Yef
+   S0WsCqw4EFnnRlkf4Hdhgj1plPg8BD48nblm2LIaHqv4bFC8H2UIuETTt
+   OhLbszhCKE9W7WMgfHwGaiIzStOse9cNxh9y2NpvOyNkXKZSZDQpbsoIT
+   7lZg4pj3xTjj4Wflq0U1fftg++aWaFlKFETSdhGbJMgBl4N9VRXUbd/w9
+   A==;
+X-IronPort-AV: E=McAfee;i="6600,9927,10886"; a="453670648"
+X-IronPort-AV: E=Sophos;i="6.03,282,1694761200"; 
+   d="scan'208";a="453670648"
+Received: from orsmga001.jf.intel.com ([10.7.209.18])
+  by orsmga104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Nov 2023 12:24:09 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=McAfee;i="6600,9927,10886"; a="797421965"
+X-IronPort-AV: E=Sophos;i="6.03,282,1694761200"; 
+   d="scan'208";a="797421965"
+Received: from lkp-server01.sh.intel.com (HELO 17d9e85e5079) ([10.239.97.150])
+  by orsmga001.jf.intel.com with ESMTP; 06 Nov 2023 12:24:06 -0800
+Received: from kbuild by 17d9e85e5079 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1r068i-0006i4-0B;
+	Mon, 06 Nov 2023 20:24:04 +0000
+Date: Tue, 7 Nov 2023 04:22:44 +0800
+From: kernel test robot <lkp@intel.com>
+To: Frank Li <Frank.Li@nxp.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Jiri Slaby <jirislaby@kernel.org>,
+	open list <linux-kernel@vger.kernel.org>,
+	"open list:TTY LAYER AND SERIAL DRIVERS" <linux-serial@vger.kernel.org>
+Cc: oe-kbuild-all@lists.linux.dev, alexandre.belloni@bootlin.com,
 	conor.culhane@silvaco.com, imx@lists.linux.dev, joe@perches.com,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 1/6] i3c: master: add enable(disable) hot join in sys
- entry
-Message-ID: <ZUe2jpMa6ntsDVPg@lizhi-Precision-Tower-5810>
-References: <20231018205929.3435110-1-Frank.Li@nxp.com>
- <20231018205929.3435110-2-Frank.Li@nxp.com>
- <57efe6de-cf65-32ed-fd1e-a388e1676c70@linux.intel.com>
- <20231020154528.2f5f68f5@xps-13>
- <ZTKMyW939rB6sSKq@lizhi-Precision-Tower-5810>
- <20231020163348.1752167d@xps-13>
- <8a7ac52e-f102-6f5e-35ab-217e6ecc6ba5@linux.intel.com>
- <20231020202519b2449707@mail.local>
- <ZTLktpI2rbAT4Ztb@lizhi-Precision-Tower-5810>
- <86955c20-22e6-0d02-813f-02f0096c2819@linux.intel.com>
-Content-Disposition: inline
-In-Reply-To: <86955c20-22e6-0d02-813f-02f0096c2819@linux.intel.com>
-X-ClientProxiedBy: SJ0PR03CA0199.namprd03.prod.outlook.com
- (2603:10b6:a03:2ef::24) To AM6PR04MB4838.eurprd04.prod.outlook.com
- (2603:10a6:20b:4::16)
+	linux-i3c@lists.infradead.org, miquel.raynal@bootlin.com
+Subject: Re: [PATCH 1/1] tty: i3c: add tty over i3c master support
+Message-ID: <202311070330.5mylauLR-lkp@intel.com>
+References: <20231018211111.3437929-1-Frank.Li@nxp.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM6PR04MB4838:EE_|AS8PR04MB8914:EE_
-X-MS-Office365-Filtering-Correlation-Id: 254fe1b7-1625-43d7-98d1-08dbde1509a8
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: QuCn8qKV5vtpcVZ3euvx7w2sGfyZfmQgO6DV7BlxOIaDvpy4mDTcRMCK0UlzQDs1jTqyixrJMj2TpBE8i0VRKyX9HQskTeo4X4HekdYYz6PUS0Mc4Vzc3ZTJjp5jl3GTv/nMgwVxtdG/r65M3R/Blr6SQVyyanhX0XVt2rZwbmfAXrJyG77dOtQA/Xznz4c3HFuskA03jrS8v1erkfxYO4g6nGfZc2JLorAmGvqRE+vk1j7ez6evy9XJU8VoMm6LyXmLbcdnvG+HkmD7pWCDq5DNoZBTNcibB4bc2oEwrZQk8BQmeqGK1otrqXGdKR8nQX9MM7770kwl3TiUGOxt1dVUR6kM/2oYGZkPp+ABIIMFl2Na38UbcjxRR33conQPZyuMyhYNsfMoTy1tMubITHi3buM4MhjtlUemmUAM1HtQNUYXZQt7mtvm/nloJN6rqeC3izegi9NGXzgJtzNX0vAv7Hfxx2gcvk2js2v7EYbRe/rrfW+V9/e5uIRwjkbFH2L6CX9houCc3uoHTLZWap1kuQQyk3OBACg5vLlMzCRFV/c8/itD7ALK+6RJbC1J8vFD8eNXvLVlzWcnqSuIqMqRrTzftYm5HOrVRBXJnys=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM6PR04MB4838.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(7916004)(376002)(136003)(39860400002)(396003)(366004)(346002)(230922051799003)(64100799003)(1800799009)(451199024)(186009)(33716001)(6512007)(6506007)(5660300002)(86362001)(38100700002)(53546011)(8936002)(478600001)(316002)(41300700001)(52116002)(66946007)(66476007)(2906002)(966005)(9686003)(66574015)(26005)(6666004)(4326008)(54906003)(8676002)(6916009)(6486002)(66556008)(83380400001)(38350700005);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?SSXxq4aywfyTR3CIbelK3bmMvKOnCduEhiYHeyG44u14oJCf0c1SbLK/gF?=
- =?iso-8859-1?Q?Mg2b5f8RVq3TXEjMIhLfSL0S/EA7hbT2sHbwRTveHlWQGQTuwopzwYxVFb?=
- =?iso-8859-1?Q?1vMo5IH7jajUh8AVvGLW95wZrl52sjIWkfgw1Sms8Ipvt7cnjW/pHZbxwe?=
- =?iso-8859-1?Q?b0cGHnG428boADvLVTYfA1QG8aPbYVsjYaWb+npmU91f8k19+RzgiajXzc?=
- =?iso-8859-1?Q?yA3TQ1NTYhpqww4t1RNO8G1wsxL+4A6xE3sZbJb6eNEbvC/HgSshOFTyfY?=
- =?iso-8859-1?Q?WM38OiH2GF2c6Ol/f+N1HAEaO/A9mFyvoeJJku6gXzww+0M7jYfJK+X7mh?=
- =?iso-8859-1?Q?7Q9ln9nr/LHTS034RIjXld/NswrqqZTDimeDwjPldaSxJxegCJVZuj6goI?=
- =?iso-8859-1?Q?AaFlMp3PenkFn0Ddp0LGAK2HiDhawNDKfQb1iAbuRQRsv2HtlvCW7zUeZ1?=
- =?iso-8859-1?Q?QLz6wMlP1S9U0oGJ3HhWfR7dgWnInrqlooS40Ot6EjJnnXr0LGYEUtgT6F?=
- =?iso-8859-1?Q?nhat537LdNjs+HyEMwyyXBy8IN6RYokZ1rHC1t+9JYQte5EC4ytTbTWgK+?=
- =?iso-8859-1?Q?MLzfmLK1vWoz9c3R9HNsyuf63/OWFWqogvzw2gLel4CI8dLxAUpsGeqENr?=
- =?iso-8859-1?Q?+96g9vtz66fPDahfbuEKDcGZlp7i7Kh1/2im4QDZGs83Fnoq3fJQ5gy2k9?=
- =?iso-8859-1?Q?S/edMtvCRNY176oul3cNjKrEYfnTpnKzkTT3Rp1o+vLWNdIy9HHKagyYiG?=
- =?iso-8859-1?Q?gEpk9phsxyThaxL1s9KVzONKPM6FLlTSzHsuveDfw9l/wiRyMmJOvY2IM7?=
- =?iso-8859-1?Q?w6IgMzfQ2Q+GUqfbwYm56bmL/eNTKmNCaiUCKcCDP0eKa+DOVozlF+3aw3?=
- =?iso-8859-1?Q?wvFP6aprvSh0Yr3mEerKVQNYXHpJaSbLgM2x1Q7ZkUAa14EuUYFXqKavs3?=
- =?iso-8859-1?Q?dVNlFkhbl82x9YEzLRU+zJM+L3cYW6QKHK62t4VLs4+wjQQ64hMR8fA34X?=
- =?iso-8859-1?Q?XY8NWwLW6SfBiuL6Oa9SxNIDvR7QRjmP8/hQQQrFR1Ged2V1/4ucdcsKAf?=
- =?iso-8859-1?Q?oOw2Q+QGkqLlcRP8dHZgChjjlCaJfXyL54ddRUeCtcRxxjDEdhvlYllhSo?=
- =?iso-8859-1?Q?nI31eunRT5sxlbLwbZ4oIU2GEYYMYTddGi4T5v6JTmnmX4zI/HjH41ItXa?=
- =?iso-8859-1?Q?V8p95wdzdjnzHNaBv3+XMtChG02o3yenkNQ2MJ2JzpF1NEXp9IcXJcEUsk?=
- =?iso-8859-1?Q?Lmgs3uHgWvnZILRXVltYQ7HTyRvbxtmS7aNSjQqVpeyVPTcYKD7s2nXnXu?=
- =?iso-8859-1?Q?fYsOg1EfHP7D0Z7BsF3hV9S647epHyUYoODS9zySncRHNxP/NdHOlBI1NS?=
- =?iso-8859-1?Q?hq0oP3bqv51e5K26Wq/5kCrZhnbVwNMK6IQmZpsDg5il8LsUzmsJCn6/EM?=
- =?iso-8859-1?Q?WmY9enonIOG8rwKv+bvwGZSjUhomE3u7JIE12meP7ZhtvoB23/fXyXa9u6?=
- =?iso-8859-1?Q?b0Yp2+DLQQjU45c/5jBzbmBY3nnNzq1GjwsW+e2IQ2kr5ppUfJvWt6lwlg?=
- =?iso-8859-1?Q?nega7XkJr7EybGAhwLHKLCKA+5DTNNbYDBZU70iabE6zqkvlRWM8MNRPKX?=
- =?iso-8859-1?Q?G5OYk0trVgJeE=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 254fe1b7-1625-43d7-98d1-08dbde1509a8
-X-MS-Exchange-CrossTenant-AuthSource: AM6PR04MB4838.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Nov 2023 15:36:54.2409
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: ajnpoXlMfLdiMXvTte54meBlTUrvsMjrfg4FLIFpPmvec0PejZDKhYyCUGIUWtAkk7mU9ooKEvrmmTYaCO1itA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8914
+Content-Disposition: inline
+In-Reply-To: <20231018211111.3437929-1-Frank.Li@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231105_075137_464280_9A5355BF 
-X-CRM114-Status: GOOD (  38.15  )
+X-CRM114-CacheID: sfid-20231106_122411_418322_FBBB683B 
+X-CRM114-Status: GOOD (  15.92  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -140,147 +85,107 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Oct 20, 2023 at 10:42:20PM +0200, Zbigniew, Lukwinski wrote:
-> On 10/20/2023 10:36 PM, Frank Li wrote:
-> > On Fri, Oct 20, 2023 at 10:25:19PM +0200, Alexandre Belloni wrote:
-> > > On 20/10/2023 17:12:53+0200, Zbigniew, Lukwinski wrote:
-> > > > On 10/20/2023 4:33 PM, Miquel Raynal wrote:
-> > > > > Hi Frank,
-> > > > > =
+Hi Frank,
 
-> > > > > Frank.li@nxp.com  wrote on Fri, 20 Oct 2023 10:20:57 -0400:
-> > > > > =
+kernel test robot noticed the following build errors:
 
-> > > > > > On Fri, Oct 20, 2023 at 03:45:28PM +0200, Miquel Raynal wrote:
-> > > > > > > Hi Lukwinski,
-> > > > > > > =
+[auto build test ERROR on tty/tty-testing]
+[also build test ERROR on tty/tty-next tty/tty-linus linus/master v6.6 next-20231106]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-> > > > > > > zbigniew.lukwinski@linux.intel.com  wrote on Fri, 20 Oct 2023=
- 10:55:27
-> > > > > > > +0200:
-> > > > > > > > On 10/18/2023 10:59 PM, Frank Li wrote:
-> > > > > > > > > Add hotjoin entry in sys file system allow user enable/di=
-sable hotjoin
-> > > > > > > > > feature.
-> > > > > > > > > =
+url:    https://github.com/intel-lab-lkp/linux/commits/Frank-Li/tty-i3c-add-tty-over-i3c-master-support/20231019-051407
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/tty.git tty-testing
+patch link:    https://lore.kernel.org/r/20231018211111.3437929-1-Frank.Li%40nxp.com
+patch subject: [PATCH 1/1] tty: i3c: add tty over i3c master support
+config: microblaze-allyesconfig (https://download.01.org/0day-ci/archive/20231107/202311070330.5mylauLR-lkp@intel.com/config)
+compiler: microblaze-linux-gcc (GCC) 13.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20231107/202311070330.5mylauLR-lkp@intel.com/reproduce)
 
-> > > > > > > > > Add (*enable(disable)_hotjoin)() to i3c_master_controller=
-_ops.
-> > > > > > > > > Add api i3c_master_enable(disable)_hotjoin();
-> > > > > > > > What is the use case for having HJ enable knob in sysfs ava=
-ilable for user space other than for debug stuff? In other words, does user=
- space really need to enable/disable HJ in runtime for other reason but deb=
-ug? If it is only for debug maybe it=A0 could be move to debugFS?
-> > > > > > > I don't think hotjoin should be considered as a debug feature=
-. The
-> > > > > > > problem here is the power consumption which is higher if you =
-enable
-> > > > > > > this feature (you need to keep everything clocked and ready t=
-o handle
-> > > > > > > an IBI) whereas if your design is "fixed" (more like an I2C b=
-us) you
-> > > > > > > may save power by disabling this feature.
-> > > > > > > =
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202311070330.5mylauLR-lkp@intel.com/
 
-> > > > > > > A module parameter does not fit here because it's a per-bus
-> > > > > > > configuration.
-> > > > > > I agree. sys entry is more flexiable. and let controller choose=
- better
-> > > > > > power saving policy for difference user case.
-> > > > > Maybe it's not the first time this case is faced, would you mind
-> > > > > including power management maintainers in this discussion? Perhap=
-s they
-> > > > > might have pointers or even have the solution already.
-> > > > =
+All errors (new ones prefixed by >>):
 
-> > > > I did not mind HJ as debug feature. But enabling / disabling the HJ=
- sounds
-> > > > to me like debug option.
-> > > > =
-
-> > > > So the flow you are considering here is like this:?
-> > > > =
-
-> > > >      1. system boot with HJ enabled, so HJ works during initial bus
-> > > >         discovery
-> > > >      2. some entity in user space decides to disable HJ because pow=
-er
-> > > >         consumption?
-> > > >      3. some entity in use space decide some time later to re-enabl=
-e HJ
-> > > >         because some reason?
-> > > > =
-
-> > > > I am just wondering whether there is real use case when you starts =
-with HJ
-> > > > enabled and than disable it
-> > =
-
-> > I think it is validate user case. Assume a I3C GPS device, user only use
-> > it when open map. Before map application open, enable i3c hotjoin and
-> > power on GPS module. After map application close, disable i3c hotjoin a=
-nd
-> > power off GPS module.
-> > =
-
-> Got it. I think we are on the same page. Thanks for explanations!
-> > Frank
-
-Does everyone agree on this method? If still need further discusion, I
-can repost patch 3-6, which is independent on these.
-
-Frank Li =
+   drivers/tty/i3c_tty.c: In function 'tty_i3c_rxwork':
+>> drivers/tty/i3c_tty.c:265:26: error: 'struct i3c_priv_xfer' has no member named 'actual_len'
+     265 |                 if (xfers.actual_len) {
+         |                          ^
+   drivers/tty/i3c_tty.c:266:82: error: 'struct i3c_priv_xfer' has no member named 'actual_len'
+     266 |                         tty_insert_flip_string(&sport->port, sport->buffer, xfers.actual_len);
+         |                                                                                  ^
+>> drivers/tty/i3c_tty.c:271:25: error: implicit declaration of function 'i3c_device_getstatus_format1' [-Werror=implicit-function-declaration]
+     271 |                         i3c_device_getstatus_format1(sport->i3cdev, &status);
+         |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   drivers/tty/i3c_tty.c: At top level:
+   drivers/tty/i3c_tty.c:400:6: warning: no previous prototype for 'i3c_remove' [-Wmissing-prototypes]
+     400 | void i3c_remove(struct i3c_device *dev)
+         |      ^~~~~~~~~~
+   cc1: some warnings being treated as errors
 
 
-> > =
+vim +265 drivers/tty/i3c_tty.c
 
-> > > > =
+   246	
+   247	static void tty_i3c_rxwork(struct work_struct *work)
+   248	{
+   249		struct ttyi3c_port *sport = container_of(work, struct ttyi3c_port, rxwork);
+   250		struct i3c_priv_xfer xfers;
+   251		int retry = I3C_TTY_RETRY;
+   252		u16 status = BIT(0);
+   253	
+   254		do {
+   255			memset(&xfers, 0, sizeof(xfers));
+   256			xfers.data.in = sport->buffer;
+   257			xfers.len = I3C_TTY_TRANS_SIZE;
+   258			xfers.rnw = 1;
+   259	
+   260			if (I3C_TTY_RX_STOP & atomic_read(&sport->status))
+   261				break;
+   262	
+   263			i3c_device_do_priv_xfers(sport->i3cdev, &xfers, 1);
+   264	
+ > 265			if (xfers.actual_len) {
+   266				tty_insert_flip_string(&sport->port, sport->buffer, xfers.actual_len);
+   267				retry = 20;
+   268				continue;
+   269			} else {
+   270				status = BIT(0);
+ > 271				i3c_device_getstatus_format1(sport->i3cdev, &status);
+   272				/*
+   273				 * Target side need some time to fill data into fifo. Target side may not
+   274				 * have hardware update status in real time. Software update status always
+   275				 * need some delays.
+   276				 *
+   277				 * Generally, target side have cicular buffer in memory, it will be moved
+   278				 * into FIFO by CPU or DMA. 'status' just show if cicular buffer empty. But
+   279				 * there are gap, espcially CPU have not response irq to fill FIFO in time.
+   280				 * So xfers.actual will be zero, wait for little time to avoid flood
+   281				 * transfer in i3c bus.
+   282				 */
+   283				usleep_range(I3C_TTY_YIELD_US, 10 * I3C_TTY_YIELD_US);
+   284				retry--;
+   285			}
+   286	
+   287		} while (retry && (status & BIT(0)));
+   288	
+   289		tty_flip_buffer_push(&sport->port);
+   290	}
+   291	
 
-> > > > in runtime or start with HJ disabled and enable it in runtime. If y=
-ou are
-> > > > taking care about power saving
-> > > > =
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
-> > > >  =A0let's keep HJ disabled all the time. Default state for HJ could=
- be
-> > > > controlled by DT entry.
-> > > > =
-
-> > > =
-
-> > > This would be HW configuration and not HW description.
-> > =
-
-> > Yes, DT maintainer may not accept this entry because it is not HW
-> > description.
-> > =
-
-> Sure. Makes sense.
-> > > =
-
-> > > =
-
-> > > > =
-
-> > > > > Thanks,
-> > > > > Miqu=E8l
-> > > =
-
-> > > -- =
-
-> > > Alexandre Belloni, co-owner and COO, Bootlin
-> > > Embedded Linux and Kernel engineering
-> > > https://bootlin.com
-> =
-
-
--- =
-
+-- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
