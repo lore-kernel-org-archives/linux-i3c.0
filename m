@@ -4,67 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A302C0018C
-	for <linux-i3c@archiver.kernel.org>; Thu,  9 Nov 2023 13:38:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5E93C4167B
+	for <linux-i3c@archiver.kernel.org>; Thu,  9 Nov 2023 13:38:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hd0D1u64rq0VptueV7VtFhd4jpWut5ZsbF1b+QJ5Fm8=; b=xF2zx6MNwvinc+
-	HcN6H0EcjB6rRk2w0WdmlafNzvyQp6SGCpMcd2GLfIRgDIpmNMbsXngPYirRw9yPSkhvkQw4dUwjQ
-	rXpnK+N0wyeGCYu+Clgjykg6ZII0FQF+aMKZ23ehJNUAQA+o33sWe1Rb0r1LSM1Nl5n5yM/aPZxLB
-	1ABwrLajY5SUd43+qaaeM0Jn1LdirEiefO5Nd49DrjL0Eq5wD5zlyodX/Z3Esw4adVDi9qcyzndqy
-	Ww/Pkf0UnkBs7YmyfPRY443+3gehkBWOiKbMZkwYZ5xajJzqjBX/E8gieTpjIu/BjRfIrSn8RYokh
-	sRAjUb59gnCZjf7bm0hQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=crDtehrPsNA8MR9EM8jYfjsIjVQVXkASUh9pUJID4aU=; b=gppsdNTu3Ot6NU
+	1E1FPsqvWVfvrsq879EXR/wguPRcZj/SspEQJBiJzhu5iVt5Xmr9z9zCyezcVa5BBrgrrtrXCrg3E
+	zsYYO+JXtDs0zNTBn0BfyoiQarZpVe3vQceTR1Yg9JNPJ25iPNyCDUZqje8DJP6PaxKQ/OPri05qK
+	A/D8/C3bWPwABPzrcIYpN5W9XQpg1YdBBg5Z2j2JAepBVkWXU0NrfRrTkP0NZ0hh7mCHKBMbMMvBj
+	H5eXeLOxsFJBdT0lH0GnA20FDM9SIbewgZLQtel1nab2K5agTkMxa5U1LNrPhIizo2StFgrfiV4t8
+	R5DEqYT9z7QDrpt6envA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r15Eu-006Oux-32;
+	id 1r15Eu-006Oun-24;
 	Thu, 09 Nov 2023 13:38:32 +0000
 Received: from mgamail.intel.com ([192.198.163.8])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r15Er-006OsH-1m
+	id 1r15Eq-006OsB-0H
 	for linux-i3c@lists.infradead.org;
 	Thu, 09 Nov 2023 13:38:30 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1699537109; x=1731073109;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=c9eNuTC8Py04Wkg89wL/NdP4ycI2loadrD7to1ZGSZM=;
-  b=EofJ3pvYvR2NKy47MIUb1UY1/qhoXiAJq8pqbu8NNGgRnGNs04GvxJdR
-   7lB9EWPI3yk3sjsmC5aMbTCdEYBqgVEOAFd6KlIMxV1H49B6KR6Eq0l7S
-   f48nXPOl0XMA5YpB/Z7zXyqE51WWvrRRliWj5rIfQQ6Gvq7yppWbdSOAQ
-   q9V8VJWtNk59XbVjDw1KNsgEAsZcMMUaKwhWZl/drFVnxcx0L3RdbCUw9
-   JHquVR+DaNTANHeEXbCDDXO40Izm2tpbVeEopjNnyebazUQHcGdx+XBrD
-   bnALhOBNCfgIdJbiGGTWSUZiK48cSIMIUClkEdrtkWxXnfx1hKJcJZvfr
-   A==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10888"; a="2949363"
+  t=1699537108; x=1731073108;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=yLKXCxfTF0pVkUoiJ32+WtlUC/LEhoIGbAj/C06sA/A=;
+  b=GVHt8UaUWCv+6hLFbVSoU0AQzBI5Vq38agtkVVxBnRWwYvWIkmL1lzjm
+   AlXKToQ/phW4UepzP4n9MbGQIzq25QrtitQ1OX8N8BoyF2/rFwGx9+Ccp
+   FGHisc67vus+OMDuEaIuGjlxOJepUujGBBgD2mLk97/6oQVaqSB5Xucvd
+   aGEJpIOYQqLJEqcyOdrTPFbjgJhQAQGmU1okhl9VqO90amlR1JWTqpWv9
+   AIfokiWJ875EsSD2s7w75e30MSUiqnt46/pVooyovNfCwsLcy5hkr37pH
+   O9vNrZsVrWRr00U39wF+f5Bh9Iri6bHpF5LS0rLSIjBl2Lg6KywS5VJY2
+   w==;
+X-IronPort-AV: E=McAfee;i="6600,9927,10888"; a="2949348"
 X-IronPort-AV: E=Sophos;i="6.03,289,1694761200"; 
-   d="scan'208";a="2949363"
+   d="scan'208";a="2949348"
 Received: from fmsmga001.fm.intel.com ([10.253.24.23])
-  by fmvoesa102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Nov 2023 05:38:26 -0800
+  by fmvoesa102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Nov 2023 05:38:22 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6600,9927,10888"; a="907127737"
+X-IronPort-AV: E=McAfee;i="6600,9927,10888"; a="907127726"
 X-IronPort-AV: E=Sophos;i="6.03,289,1694761200"; 
-   d="scan'208";a="907127737"
+   d="scan'208";a="907127726"
 Received: from display-mtlp-1.fi.intel.com (HELO mylly.fi.intel.com.) ([10.237.72.68])
-  by fmsmga001.fm.intel.com with ESMTP; 09 Nov 2023 05:38:25 -0800
+  by fmsmga001.fm.intel.com with ESMTP; 09 Nov 2023 05:38:20 -0800
 From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
 To: linux-i3c@lists.infradead.org
 Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Jarkko Nikula <jarkko.nikula@linux.intel.com>
-Subject: [PATCH 3/4] i3c: mipi-i3c-hci: Handle I3C address header error in hci_cmd_v1_daa()
-Date: Thu,  9 Nov 2023 15:37:07 +0200
-Message-ID: <20231109133708.653950-4-jarkko.nikula@linux.intel.com>
+Subject: [PATCH 0/4] i3c: mipi-i3c-hci: Functional update
+Date: Thu,  9 Nov 2023 15:37:04 +0200
+Message-ID: <20231109133708.653950-1-jarkko.nikula@linux.intel.com>
 X-Mailer: git-send-email 2.42.0
-In-Reply-To: <20231109133708.653950-1-jarkko.nikula@linux.intel.com>
-References: <20231109133708.653950-1-jarkko.nikula@linux.intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231109_053829_601045_B96757DF 
-X-CRM114-Status: GOOD (  13.92  )
+X-CRM114-CacheID: sfid-20231109_053828_166499_D64F5CF8 
+X-CRM114-Status: GOOD (  10.61  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,41 +79,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Handle also I3C address header error response status as the end of DAA
-process in hci_cmd_v1_daa().
+Hi
 
-According to MIPI I3C HCI Specification v1.1 the NACK error during DAA
-process comes when the device does not accept the dynamic address.
-Currently code uses it for successful exit from the process and fails
-with any other error response.
+These are v6.8-rc1 material and not for current cycle.
 
-I'm unsure is this MIPI I3C HCI version specific difference or
-specification misunderstanding but on an early MIPI I3C HCI version
-compatible controller responds always with I3C address header error and
-not with NACK error when there is no device on the bus or no more devices
-participating to DAA process.
+With these and handful of local patches [1] I'm able probe this driver
+successfully with an I3C device on the bus and without.
 
-Handle now both response statuses as the end of DAA.
+Also able to communicate with I3C and I2C device from their corresponding
+device drivers. I'm using in my test setup an LSM6DSO sensor (forced to
+I3C mode) and at24c02 I2C EEPROM instantiated from userspace.
 
-Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
----
- drivers/i3c/master/mipi-i3c-hci/cmd_v1.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+Patches are from top of commit 9fd00df05e81 ("i3c: master: handle IBIs
+in order they came").
 
-diff --git a/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c b/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
-index 31f03cb22489..638b054d6c92 100644
---- a/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
-@@ -339,7 +339,8 @@ static int hci_cmd_v1_daa(struct i3c_hci *hci)
- 			ret = -ETIME;
- 			break;
- 		}
--		if (RESP_STATUS(xfer->response) == RESP_ERR_NACK &&
-+		if ((RESP_STATUS(xfer->response) == RESP_ERR_ADDR_HEADER ||
-+		     RESP_STATUS(xfer->response) == RESP_ERR_NACK) &&
- 		    RESP_DATA_LENGTH(xfer->response) == 1) {
- 			ret = 0;  /* no more devices to be assigned */
- 			break;
+1. Glue code and minor hacks for early MIPI I3C HCI version compatible
+   controller on our development HW.
+
+Jarkko Nikula (4):
+  i3c: mipi-i3c-hci: Report NACK response from CCC command to core
+  i3c: mipi-i3c-hci: Do not overallocate transfers in hci_cmd_v1_daa()
+  i3c: mipi-i3c-hci: Handle I3C address header error in hci_cmd_v1_daa()
+  i3c: mipi-i3c-hci: Add DMA bounce buffer for private transfers
+
+ drivers/i3c/master/mipi-i3c-hci/cmd_v1.c |  7 ++--
+ drivers/i3c/master/mipi-i3c-hci/core.c   | 49 +++++++++++++++++++++++-
+ drivers/i3c/master/mipi-i3c-hci/dma.c    |  4 +-
+ drivers/i3c/master/mipi-i3c-hci/hci.h    |  1 +
+ 4 files changed, 56 insertions(+), 5 deletions(-)
+
 -- 
 2.42.0
 
