@@ -4,67 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8419EC04A92
-	for <linux-i3c@archiver.kernel.org>; Thu,  9 Nov 2023 13:38:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E0D8C4332F
+	for <linux-i3c@archiver.kernel.org>; Thu,  9 Nov 2023 16:05:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zOuRAv2IeZwQW4ASMk1/75kM22+Kxwk6UG5G0sWlsAU=; b=2sj+WAxyOTSuV2
-	flI0EJygfUozvhEln+taFj10GnzQsamJNimP52yLA1Ts6b8S+8AyXoTSDYF5gewAcrKyQrm8+NHUk
-	ao9ieLT3q2/Si2AnmOXlG9dON/Y+g3YBnmaqyEtWltJWtfp42y8OSLoPVESfadmMeafQmK5i3njTM
-	sZr24mZulk8TIZK2QZ5NHOxfPXAc4OAUUaDWXDzP6jDxASovwJygExWkYB5HXdMzXd6iRYA3FFITP
-	xNMf3sWxAHUH6KOH+uLreO2UP5YNmuc3sE3c3lA0sed0HyVoh+37rHAoI+mK3zb+FXU59y61THegb
-	CSuj9G7fE/SBDpu8KrEw==;
+	List-Owner; bh=WtQbPEIjORq3aWQNyTvmR9o4KRB9ltyilAZvXLVwLg4=; b=xHVg9ctl79JjrP
+	Y273v07Ku2wtY+5oKzjGQ+yUNKs4/yaIYesJHun0Er1TbcPKImZFi+xJzR+G+JmE39hgwADiuOOiR
+	DbxXIuOoG7XcLZQabF6dzsbum1m9mFCGybeSZvhiakVBzPR7LOr9US1It541XwjINoZVO8S1xDDBK
+	E/sO8D4NIUniLNTAvnRsorM+xf3SIDmigMB+KDCZV8ZTN5Sk8pAbOa7IIN9dK0WPVQ+r4POqLBDb/
+	PSiDcOW8UyYYC6AgIb1KgwOsvhS247Qee1IBzOkoHNdVWo6C48MIvLtQZwkcHqIggtdmz3lQBZ9Op
+	iUbVj3CTrzyV4whFmGYw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r15Ev-006OvB-0s;
-	Thu, 09 Nov 2023 13:38:33 +0000
-Received: from mgamail.intel.com ([192.198.163.8])
+	id 1r17XQ-006gKd-1E;
+	Thu, 09 Nov 2023 16:05:48 +0000
+Received: from mail-db8eur05on20610.outbound.protection.outlook.com ([2a01:111:f400:7e1a::610] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r15Es-006OsE-1m
-	for linux-i3c@lists.infradead.org;
-	Thu, 09 Nov 2023 13:38:32 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1699537110; x=1731073110;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=E8QBdLq/wWB6tcm1H21keeUBmqGI2K83omwnqarsYbc=;
-  b=kxe1cRXVtKsY/Pe12CfQjcFnj/4HpbrSHWce38hQqJfz6ydsOT7FKzPC
-   qskFsBCsKasKObi+VSrfVX9unkU9f0o2r24SSq2L066sp/Acj/ENKRRN6
-   ILVbRTqW7qNJnPSyukfJFOGk3E7V6iwAFv3u4a20MN8aLYkXhxnM5hexR
-   zBPJWazi3TLdU9yarAdlT3t+629wHKlB+aTT+DbpNBIqhQg3OGp8ZoU0l
-   DTelchM82ikVQTtGWoF9gqi3gv0fPKqmINB4EhPMrBrNOByDB9aCal5qm
-   PheZnRTVPew6cVevU2fiWCOZWbdbmkWi4df8N5g5MQJWSZQv09lAoNHYX
-   Q==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10888"; a="2949367"
-X-IronPort-AV: E=Sophos;i="6.03,289,1694761200"; 
-   d="scan'208";a="2949367"
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
-  by fmvoesa102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Nov 2023 05:38:28 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6600,9927,10888"; a="907127740"
-X-IronPort-AV: E=Sophos;i="6.03,289,1694761200"; 
-   d="scan'208";a="907127740"
-Received: from display-mtlp-1.fi.intel.com (HELO mylly.fi.intel.com.) ([10.237.72.68])
-  by fmsmga001.fm.intel.com with ESMTP; 09 Nov 2023 05:38:26 -0800
-From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-To: linux-i3c@lists.infradead.org
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Jarkko Nikula <jarkko.nikula@linux.intel.com>
-Subject: [PATCH 4/4] i3c: mipi-i3c-hci: Add DMA bounce buffer for private transfers
-Date: Thu,  9 Nov 2023 15:37:08 +0200
-Message-ID: <20231109133708.653950-5-jarkko.nikula@linux.intel.com>
-X-Mailer: git-send-email 2.42.0
-In-Reply-To: <20231109133708.653950-1-jarkko.nikula@linux.intel.com>
-References: <20231109133708.653950-1-jarkko.nikula@linux.intel.com>
+	id 1r17XN-006gKD-21;
+	Thu, 09 Nov 2023 16:05:46 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=CtOSQh9A9BneofCz8v6pO1tLufTmgQ/Bz7LLw4TGtGUJS0iK+U62MOe2o3ifJBPmgX2A2fYfRNzK5zSEQdsDSgOKakpd+VmmUUvcvW3U0K3JGGWecEpsyhmHDggNe/w+vwaPBBtB7XBP5UaWAZYiCcGF8tH6WEyaC6mXtlM4PUriAF/ZChrTLM2k83U2YEcExkXEdZtjopg+gZZakLKwEKsspJmz+UKASmI84svT5v7zlyVFGcVXV6cmaSjBv9MiLlFvz0smPYXtiai6J6VORNaGbsjPzGZOlmmdZT3gMxAw7zzNEC6JFBQwC46It3ExJ9H4GwlevtLJNt+E0azmCg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=SFFACPc5t80uex6CXSPHUI7DDVn4dUysbIN9+BVdNzk=;
+ b=ntwYo719FmtA/CWhhTbwYiRV1bd1tCkGL3V/NX0oEi+LeIjmBuxGEWxQcPeFBRc/pBOFXY3lEVoT/PICBGe8V+Tit/0yatmM8iVA/4cCP8HLgxEVXbUh1FoRsZSKGsI0lWRbGuhDFn7A+GwNhG6VCioTnR1cC9UFctD8w3d83tc8CEmoMhn+Pq6BREuOZQAXb1PR5FZArj1jgqz21fyqRhy8iEHHWT7s/G0e1eyuEiIxAdSi7LkhJ3qPc2e0H4hZJTnvHjSh9qbC7YDkF4+iqsztE6MO+x/vmAAoDrCxv/3y5j6de1HMdc2v/kOxpL0Ce5rPxg1HXZRS/pwJeA4IHg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=SFFACPc5t80uex6CXSPHUI7DDVn4dUysbIN9+BVdNzk=;
+ b=piNG7yvmEl3NivrSmhvS4MNuOHfLOlbz1l2v6StAKsC7NrLpzFWtceZwHvKYWD7GnVVIDEh8VUWz5fQaqk6Qc8MZseHouUGEy9OO+Vyqz8m4rjgfqomMp7BPS4lGDYRBapMakkwc27T/J/iC9c0PyyOXVajQ/AjK2hFLTtSYrwE=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM6PR04MB4838.eurprd04.prod.outlook.com (2603:10a6:20b:4::16)
+ by AM8PR04MB7827.eurprd04.prod.outlook.com (2603:10a6:20b:247::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7002.7; Thu, 9 Nov
+ 2023 15:51:24 +0000
+Received: from AM6PR04MB4838.eurprd04.prod.outlook.com
+ ([fe80::55e7:3fd0:68f4:8885]) by AM6PR04MB4838.eurprd04.prod.outlook.com
+ ([fe80::55e7:3fd0:68f4:8885%4]) with mapi id 15.20.6977.018; Thu, 9 Nov 2023
+ 15:51:23 +0000
+Date: Thu, 9 Nov 2023 10:51:13 -0500
+From: Frank Li <Frank.li@nxp.com>
+To: shawnguo@kernel.org
+Cc: alexander.stein@ew.tq-group.com, alexandre.belloni@bootlin.com,
+	conor+dt@kernel.org, conor.culhane@silvaco.com, conor@kernel.org,
+	devicetree@vger.kernel.org, festevam@gmail.com, haibo.chen@nxp.com,
+	imx@lists.linux.dev, joe@perches.com, kernel@pengutronix.de,
+	krzysztof.kozlowski+dt@linaro.org, krzysztof.kozlowski@linaro.org,
+	linux-arm-kernel@lists.infradead.org, linux-i3c@lists.infradead.org,
+	linux-imx@nxp.com, linux-kernel@vger.kernel.org, peng.fan@nxp.com,
+	ping.bai@nxp.com, robh+dt@kernel.org, s.hauer@pengutronix.de,
+	shawnguo@kernel.org, sherry.sun@nxp.com, xiaoning.wang@nxp.com
+Subject: Re: [PATCH v2 2/2] arm64: dts: freescale: imx93: add i3c1 and i3c2
+Message-ID: <ZUz/8fBWtnwdSW9w@lizhi-Precision-Tower-5810>
+References: <20231017194657.3199749-1-Frank.Li@nxp.com>
+ <20231017194657.3199749-2-Frank.Li@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <20231017194657.3199749-2-Frank.Li@nxp.com>
+X-ClientProxiedBy: BYAPR11CA0060.namprd11.prod.outlook.com
+ (2603:10b6:a03:80::37) To AM6PR04MB4838.eurprd04.prod.outlook.com
+ (2603:10a6:20b:4::16)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM6PR04MB4838:EE_|AM8PR04MB7827:EE_
+X-MS-Office365-Filtering-Correlation-Id: 11669db1-449b-49cd-48dd-08dbe13bb9a4
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: otKtvydhCGD8wY9NGBiBHkAqqc881t4IsAcfCW9GPVt1G3yvi3rbYwg8aoqZlhQxO/CZ9NFTORHplxumbQVGFBiH1Q61fwUhzoTK94ArjwjHsJ9kWL3m84tca1UM1JiBuWv43C7isBPvlH9XlHi8LsswIpxmMwbwMvqaQ+MWXMGj2BlX7IcWtcMSOSDBT5Hzd6bBhRcz63ncfCBK02plGhNn9cVF4aVPHWcsRHJc5yhfGTnpPkla7PGXJb/BaibZsrkeej/7FWEl/TEC+ctUOolR+7+iUiTzjmb9wggIc9s0GpcWDMc7pnIaNJRcvpJ3YzU2KCaapXg/iHQt+POLRlSkMjtLlrDR8sfnyl3CMUP7crsbxDgWuxdhfCXyh9zPhjWiPSQp0EtyEmx8QBLp5tmAcDbfZ9ntQYNUkQwObiSDDw9aEVTuL5cDtsvQJs+2UdHei5MdkL7UffCBf5Vt83sn6GB0ZG57LWpGefWoP+ryRzk+uQ2XeUq/TXW/F0pHSCA/txrISP28eoXegyzVM1NGaxVP8Wg2HXgFn9AKgDKoFu3QnXhFBwUvpFCstR83aq0YKqcG0m6okwyupKkqEWjNQtVQ1egFc81aOprIlI67JECZzIrNs/edZz+MfxzoCeCzeYWOoTM7B4NeVJEuKg==
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM6PR04MB4838.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(7916004)(346002)(39860400002)(366004)(396003)(376002)(136003)(230922051799003)(186009)(1800799009)(64100799003)(451199024)(6506007)(478600001)(6666004)(6486002)(9686003)(6512007)(26005)(41300700001)(2906002)(33716001)(8936002)(8676002)(4326008)(6916009)(66556008)(66946007)(66476007)(316002)(5660300002)(7416002)(38350700005)(86362001)(83380400001)(52116002)(38100700002)(138113003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?f4njYIoZk28JNnUq0v2BmUNgG70c5vh5zTepeEEqFVO9kjsVEZwjMtZfDP86?=
+ =?us-ascii?Q?Z6mzmkilMHxdia1cnhRO9+8/LWXVdoEasCXcWTls8xHJ3I9w/5r022cN5II6?=
+ =?us-ascii?Q?+vHbe40PqZ63vb8V11DRpUNH7LPnLQIfntdFxcLOiZTSLI47OOL/xui+ExlK?=
+ =?us-ascii?Q?L+2c5Op6k6TJ9+r9f31uWE4fdKgHPZ+cx+9Cg4eyk1HX8iYMLu0axXIUldwG?=
+ =?us-ascii?Q?G8gbKTbBT7NNlWZWOjTTh77yOV96I0zla3shS0Smd0Xss+k33UKthVRXXH/t?=
+ =?us-ascii?Q?GvvY+piAsHYjMPMWuOzyfdU5xILxccqOgUprtgfvBessL7EdZQL/3CBFy3Fk?=
+ =?us-ascii?Q?STdWxXW8esrsmF37Q2lOTaKYwMY0dkQ8+PtpsHJz5m5jVvLojSePQf/JOjPY?=
+ =?us-ascii?Q?/KCTTL6blEVf9vd6Hw1Qd+UNIJqhN5j7/fQrt8T+KYmz5EsOyc85DLlpvoMf?=
+ =?us-ascii?Q?yvQwoBVE9lEeM/31F4ODfSVL9bV/J2PPdnJgfuDk2y2WB4r7qShxeIxU1Vj6?=
+ =?us-ascii?Q?Cq1gURvWTOfiEhC1YZvP5hZ/H0oookCLOCvna5rJRfMkD+VItnAWKwFN610K?=
+ =?us-ascii?Q?V+4WGEd8kiedwo64CUO0HdjXaWiTqUisSo15LCAQnLmVCdJ15W7KisLmRoXc?=
+ =?us-ascii?Q?szDvNUKk/ZkVYf3WRHGgV4vgoVFIoMOkmYtn17b9py2lW6MmH62n+ydfI2fy?=
+ =?us-ascii?Q?7c9dl3WyBb7RgtVBuxw4PWmqoqNjEvQ5sB3Ib3k5LOQlHA251bkPEob6tOzZ?=
+ =?us-ascii?Q?dArLbPO7394fnbf7mdckFDz/lE5q6gg0gKMS6nfv9/9SYmeIGuMXDlU+0NNz?=
+ =?us-ascii?Q?8x3BCgSv9F75CQbLpcrmr8X7ApTjQ2eev1KOPgeym5jQvo3CdpXH6ih+I/wn?=
+ =?us-ascii?Q?2voV/y1Zxu7r2hL5s/FwwxqvKF2EYztO/fJfd1C49EIXXeSllkRTcvlsrT9s?=
+ =?us-ascii?Q?7JPFc1NKso1k2n5TP0Mm87S0u5y1zMyZtN+s25zxGzPheW21kzM/aHIZCwsk?=
+ =?us-ascii?Q?F3UpUUZ5sga0Y2kWepwQyChwQJ5k/FcbU8RT3WUPDTrySR0Blo0QEIxsdikt?=
+ =?us-ascii?Q?87iODGGXOg3kC0V3LZMZYW07g6x+nZ4huG4Vwu5olUlKHc3RN8whNcdZlXSW?=
+ =?us-ascii?Q?9ISxEDrcQResVqm3BbZueIvMOEGP75pRIVQ4gvkD46fYaS9AWXjCnlLIPN6Q?=
+ =?us-ascii?Q?PLCsUnA4xhWUPUeX2j1NDIu+hJaC2sDBVBf/eEOhjuRWEROC9oaB4OOB7xZf?=
+ =?us-ascii?Q?SIWvawQdHfmKSNE7qHM/k80pfn2Ui/Av72IxWmhlHfXX6jP2Ft7TadOi5SDa?=
+ =?us-ascii?Q?r4i6+6X+7AJwiRnC9LW9mB62vQiKn+xoEm3nC0PNAGJr7MpNM3gjBLrnk568?=
+ =?us-ascii?Q?VFh2DD5lqbMWVqL4hoyyYlrCJ7wQSCKH9rut1jKK3KZhB7puac2XzrsJB+EY?=
+ =?us-ascii?Q?7d9ni4KXvcG8HegCNh1/qbLmxdPKva8FpbV81Dqr/giRvHTFJE6efj4iqFu6?=
+ =?us-ascii?Q?rkLrxHloMPkrHQr3FAkmcwhAo5CeOTLnEXRSZvR94EL8a3qcczL5KlSPsop/?=
+ =?us-ascii?Q?dPGO7cv+/I6LaBIBLAw=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 11669db1-449b-49cd-48dd-08dbe13bb9a4
+X-MS-Exchange-CrossTenant-AuthSource: AM6PR04MB4838.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Nov 2023 15:51:23.8666
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 3wM6dT15VCBeX9tRA1tNvmg6DJU7+lm588/1uS0MauAYF5E2oGmfgoEDIKNHbsv0VAaduQaIGCQucCCeNUoSKg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM8PR04MB7827
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231109_053830_606371_4E903D88 
-X-CRM114-Status: GOOD (  21.10  )
+X-CRM114-CacheID: sfid-20231109_080545_666307_759A51D7 
+X-CRM114-Status: GOOD (  14.56  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,157 +139,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Implement a local bounce buffer for private I3C SDR and I2C transfers
-when using DMA and the buffer attached to the transfer is not DMA safe.
+On Tue, Oct 17, 2023 at 03:46:57PM -0400, Frank Li wrote:
+> Add I3C1 and I3C2.
+> 
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> ---
 
-Otherwise the DMA transfer will fail and with following warning:
+@Guo Shawn:
 
-[   11.411059] i3c mipi-i3c-hci.0: rejecting DMA map of vmalloc memory
-[   11.417313] WARNING: CPU: 3 PID: 357 at include/linux/dma-mapping.h:332 hci_dma_queue_xfer+0x2e2/0x300 [mipi_i3c_hci]
+Driver part already merged. 
 
-Strictly speaking private I3C SDR transfers are expected to pass a
-DMA-able buffer. However I fear this requirement may easily be slipped
-or go unnoticed when I3C interface support is added into a existing
-device driver that use regmap API to read/write stack variables.
+Please pick up dts part
 
-For example this is the case with the commit 2660b0080bb2 ("iio: imu:
-st_lsm6dsx: add i3c basic support for LSM6DSO and LSM6DSR").
+Frank
 
-Buffer of an I2C message is not required to be DMA safe and the I2C core
-provides i2c_(get|put)_dma_safe_msg_buf() helpers for the host
-controllers that do DMA and that is also recommendation for the
-i2c_xfers() callback from the I3C core.
-
-However due to above I3C private transfers reason I decided to implement
-a bounce buffer for them and reuse the same code for the I2C transfers
-too. Since this driver is currently the only I3C host controller driver
-that can do DMA the implementation is done here and not in I3C core.
-
-Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
----
- drivers/i3c/master/mipi-i3c-hci/core.c | 40 ++++++++++++++++++++++++++
- drivers/i3c/master/mipi-i3c-hci/dma.c  |  4 ++-
- drivers/i3c/master/mipi-i3c-hci/hci.h  |  1 +
- 3 files changed, 44 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-index 8471a1fe1dad..d7e966a25583 100644
---- a/drivers/i3c/master/mipi-i3c-hci/core.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-@@ -276,6 +276,34 @@ static int i3c_hci_daa(struct i3c_master_controller *m)
- 	return hci->cmd->perform_daa(hci);
- }
- 
-+static int i3c_hci_alloc_safe_xfer_buf(struct i3c_hci *hci,
-+				       struct hci_xfer *xfer)
-+{
-+	if (hci->io != &mipi_i3c_hci_dma ||
-+	    xfer->data == NULL || !is_vmalloc_addr(xfer->data))
-+		return 0;
-+
-+	if (xfer->rnw)
-+		xfer->bounce_buf = kzalloc(xfer->data_len, GFP_KERNEL);
-+	else
-+		xfer->bounce_buf = kmemdup(xfer->data,
-+					   xfer->data_len, GFP_KERNEL);
-+
-+	return xfer->bounce_buf == NULL ? -ENOMEM : 0;
-+}
-+
-+static void i3c_hci_free_safe_xfer_buf(struct i3c_hci *hci,
-+				       struct hci_xfer *xfer)
-+{
-+	if (hci->io != &mipi_i3c_hci_dma || xfer->bounce_buf == NULL)
-+		return;
-+
-+	if (xfer->rnw)
-+		memcpy(xfer->data, xfer->bounce_buf, xfer->data_len);
-+
-+	kfree(xfer->bounce_buf);
-+}
-+
- static int i3c_hci_priv_xfers(struct i3c_dev_desc *dev,
- 			      struct i3c_priv_xfer *i3c_xfers,
- 			      int nxfers)
-@@ -309,6 +337,9 @@ static int i3c_hci_priv_xfers(struct i3c_dev_desc *dev,
- 		}
- 		hci->cmd->prep_i3c_xfer(hci, dev, &xfer[i]);
- 		xfer[i].cmd_desc[0] |= CMD_0_ROC;
-+		ret = i3c_hci_alloc_safe_xfer_buf(hci, &xfer[i]);
-+		if (ret)
-+			goto out;
- 	}
- 	last = i - 1;
- 	xfer[last].cmd_desc[0] |= CMD_0_TOC;
-@@ -332,6 +363,9 @@ static int i3c_hci_priv_xfers(struct i3c_dev_desc *dev,
- 	}
- 
- out:
-+	for (i = 0; i < nxfers; i++)
-+		i3c_hci_free_safe_xfer_buf(hci, &xfer[i]);
-+
- 	hci_free_xfer(xfer, nxfers);
- 	return ret;
- }
-@@ -357,6 +391,9 @@ static int i3c_hci_i2c_xfers(struct i2c_dev_desc *dev,
- 		xfer[i].rnw = i2c_xfers[i].flags & I2C_M_RD;
- 		hci->cmd->prep_i2c_xfer(hci, dev, &xfer[i]);
- 		xfer[i].cmd_desc[0] |= CMD_0_ROC;
-+		ret = i3c_hci_alloc_safe_xfer_buf(hci, &xfer[i]);
-+		if (ret)
-+			goto out;
- 	}
- 	last = i - 1;
- 	xfer[last].cmd_desc[0] |= CMD_0_TOC;
-@@ -378,6 +415,9 @@ static int i3c_hci_i2c_xfers(struct i2c_dev_desc *dev,
- 	}
- 
- out:
-+	for (i = 0; i < nxfers; i++)
-+		i3c_hci_free_safe_xfer_buf(hci, &xfer[i]);
-+
- 	hci_free_xfer(xfer, nxfers);
- 	return ret;
- }
-diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-index c805a8497319..4e01a95cc4d0 100644
---- a/drivers/i3c/master/mipi-i3c-hci/dma.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-@@ -362,6 +362,7 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
- 	struct hci_rh_data *rh;
- 	unsigned int i, ring, enqueue_ptr;
- 	u32 op1_val, op2_val;
-+	void *buf;
- 
- 	/* For now we only use ring 0 */
- 	ring = 0;
-@@ -390,9 +391,10 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
- 
- 		/* 2nd and 3rd words of Data Buffer Descriptor Structure */
- 		if (xfer->data) {
-+			buf = xfer->bounce_buf ? xfer->bounce_buf : xfer->data;
- 			xfer->data_dma =
- 				dma_map_single(&hci->master.dev,
--					       xfer->data,
-+					       buf,
- 					       xfer->data_len,
- 					       xfer->rnw ?
- 						  DMA_FROM_DEVICE :
-diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
-index f109923f6c3f..f94d95e024be 100644
---- a/drivers/i3c/master/mipi-i3c-hci/hci.h
-+++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
-@@ -90,6 +90,7 @@ struct hci_xfer {
- 		struct {
- 			/* DMA specific */
- 			dma_addr_t data_dma;
-+			void *bounce_buf;
- 			int ring_number;
- 			int ring_entry;
- 		};
--- 
-2.42.0
-
+> 
+> Notes:
+>     Change from v1 to v2
+>     - using compatible string silvaco,i3c-master-v1
+> 
+>  arch/arm64/boot/dts/freescale/imx93.dtsi | 26 ++++++++++++++++++++++++
+>  1 file changed, 26 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/imx93.dtsi b/arch/arm64/boot/dts/freescale/imx93.dtsi
+> index 6f85a05ee7e1a..c6ad9ba9eb9af 100644
+> --- a/arch/arm64/boot/dts/freescale/imx93.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx93.dtsi
+> @@ -242,6 +242,19 @@ tpm2: pwm@44320000 {
+>  				status = "disabled";
+>  			};
+>  
+> +			i3c1: i3c-master@44330000 {
+> +				compatible = "silvaco,i3c-master-v1";
+> +				reg = <0x44330000 0x10000>;
+> +				interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
+> +				#address-cells = <3>;
+> +				#size-cells = <0>;
+> +				clocks = <&clk IMX93_CLK_BUS_AON>,
+> +					 <&clk IMX93_CLK_I3C1_GATE>,
+> +					 <&clk IMX93_CLK_I3C1_SLOW>;
+> +				clock-names = "pclk", "fast_clk", "slow_clk";
+> +				status = "disabled";
+> +			};
+> +
+>  			lpi2c1: i2c@44340000 {
+>  				compatible = "fsl,imx93-lpi2c", "fsl,imx7ulp-lpi2c";
+>  				reg = <0x44340000 0x10000>;
+> @@ -496,6 +509,19 @@ tpm6: pwm@42510000 {
+>  				status = "disabled";
+>  			};
+>  
+> +			i3c2: i3c-master@42520000 {
+> +				compatible = "silvaco,i3c-master-v1";
+> +				reg = <0x42520000 0x10000>;
+> +				interrupts = <GIC_SPI 61 IRQ_TYPE_LEVEL_HIGH>;
+> +				#address-cells = <3>;
+> +				#size-cells = <0>;
+> +				clocks = <&clk IMX93_CLK_BUS_WAKEUP>,
+> +					 <&clk IMX93_CLK_I3C2_GATE>,
+> +					 <&clk IMX93_CLK_I3C2_SLOW>;
+> +				clock-names = "pclk", "fast_clk", "slow_clk";
+> +				status = "disabled";
+> +			};
+> +
+>  			lpi2c3: i2c@42530000 {
+>  				compatible = "fsl,imx93-lpi2c", "fsl,imx7ulp-lpi2c";
+>  				reg = <0x42530000 0x10000>;
+> -- 
+> 2.34.1
+> 
 
 -- 
 linux-i3c mailing list
