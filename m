@@ -4,133 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D30AFC4332F
-	for <linux-i3c@archiver.kernel.org>; Thu,  9 Nov 2023 16:51:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 142FDC4167D
+	for <linux-i3c@archiver.kernel.org>; Mon, 13 Nov 2023 09:14:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KFBJ/PemjhhaCiEiBlefdFbhJW1UiXLZbr1DQZBs1Os=; b=q6YYONe7yKre+W
-	K9ItNitsmMokV7A5iRIsm70b4AXR5rcBB1Y/kKC3YZ4GOUdZ+YVqYJ3q7tPk0JfPoreM7acrIdJjf
-	C4DIqYb7AU7x/8mrTqzZ5tPNneXT436I9e1i1OZN9729uHYOiCX3o1DpxAZ+8H0iVNzoi2KWwVr0A
-	JychzUAGaQ5U+XecSgOsNnzPUL9cUSg6qmT8pQFAIdBKWCkhFdl8N9J42hYigSrMkYV1r7XQU3/HK
-	R0Y7e75lIda75fSGnBftUe5IZVraN8sp75UCR+ojeRv37gwQIDb1ux3QS63R+THU2J1GvOt5v5G/V
-	F7yVN0UVWKNXMBj3mOEw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zCT5N9VhLOADiZ2EP4+mNbnq1MmOd5ljc82UHiKd1to=; b=lsk4IoPSzzhll9
+	lXh4rAsvB6DFCUrv8CHbDxzoKyZj4uuskS9QO+y51NOJT6ZXjXkkqT7OkIIlDzXAT+oKRxZI1HTZc
+	6DoD+l15+Ze/W0sxyA0EsjcpsXRgdRQKagfKqeux6ixzWO2iYrgSvzepCKkC38UZsSV0525mPRK8D
+	6OvLI1cYJr9xB97PapEe76/Qbtrui3k0VTwN9GkjzY800th0sTe70q1qARBLuK34oJbGMwnavcnb/
+	qjeRtBcC1lKPI0Rt59dLSUMImPBjNEA9QMcsWy4/0Ayohx0AdO5xKfO9jeuHiA7TFM8dv2AWuPulF
+	+Ig1YyWrp2PVBQNzNMew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r18Fw-006qXr-0l;
-	Thu, 09 Nov 2023 16:51:48 +0000
-Received: from mail-ed1-x532.google.com ([2a00:1450:4864:20::532])
+	id 1r2T1S-00DXid-1X;
+	Mon, 13 Nov 2023 09:14:22 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r18Ft-006qWy-0l
+	id 1r2AR1-00COo2-2I
 	for linux-i3c@lists.infradead.org;
-	Thu, 09 Nov 2023 16:51:46 +0000
-Received: by mail-ed1-x532.google.com with SMTP id 4fb4d7f45d1cf-53b32dca0bfso2295464a12.0
-        for <linux-i3c@lists.infradead.org>; Thu, 09 Nov 2023 08:51:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1699548702; x=1700153502; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=EB/GVelCwv918J74mEa2RtiTqM5Zt5ATdZIb7vJjWqs=;
-        b=CDxnXqY+xnMawsYH962wHGqE/MHTsX6nEhuTiBIwIKsO6LLgQo8/KzrFMjUaqvFsFW
-         KepMABgr3KMuPVIU6Tgs+ue4e2rPfEsYqlJDJQ+W7PqhJmlO8xFkmolKd1vVpuO8kDrk
-         WdT0Hx3UN7Ttwpthf7cXuJVtejJDKZ+g5/+NwCHZO5Jsxi9gdDuH9khuXO4nHctqq9OW
-         WHiUfjS/0kEJAj0CaYTNd3xcurNAcjGk2nSbnTNLR30fmUeURzGluMMQOWmy0Mwva9Bc
-         OsqOLHgudDp+YZWk6laHQeUJGl9MOXLteTMetZb9g8dMW8MgNZUclNMkhtQ+FmiMgapv
-         wSZw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1699548702; x=1700153502;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=EB/GVelCwv918J74mEa2RtiTqM5Zt5ATdZIb7vJjWqs=;
-        b=UojRPB2Aw2f/kaVtU+/yFdBac7q8Nd2iIUk2NjgkHqKIkhLgDKnDB9FwGcSmG7kV5h
-         I6+zWX9v4+Sv9eERoGO4EBFla4SRkzHaXwXYQMw95/vms+TuLq4byGcvVFz10oUl5HKA
-         AYl9bnQCJOcwtLyngwmYiANeYlnC3EUI8ISw9E3E+gzg5IaCeRGs86c/WKY8V8BJ/k6M
-         l3LkxdlNQFQp1BHQ9rKlkkyFDVdx3Ogbb/30J0GR4k99IHACehW9T6JPAo/+Y2XsWhrX
-         1s+a7+MEFKMp/ZQEDdJaoeZ8NT008MNxDRei3qNBbFqTPS+vMjlyUM0LUmaHg17uv7rk
-         HekQ==
-X-Gm-Message-State: AOJu0YwMqko4xR3tZiTznW+Y0XEC0JGrxP+Ddfv+6vc+twLXG9klQsrd
-	2RuonQlRZYCHKirRxxrd1wxGCg==
-X-Google-Smtp-Source: AGHT+IFbGuVzjNYYjJEj8Z6UtrMmOE+jObppKQkMkmfZJeCsI4LVyZRa2bt4nhjL41nb+31LKc8H+w==
-X-Received: by 2002:aa7:c79a:0:b0:531:14c4:ae30 with SMTP id n26-20020aa7c79a000000b0053114c4ae30mr5471759eds.0.1699548702186;
-        Thu, 09 Nov 2023 08:51:42 -0800 (PST)
-Received: from [192.168.1.20] ([178.197.218.126])
-        by smtp.gmail.com with ESMTPSA id d4-20020a056402516400b0052febc781bfsm34335ede.36.2023.11.09.08.51.39
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 09 Nov 2023 08:51:41 -0800 (PST)
-Message-ID: <847fc857-0229-4e5e-9cac-4be5bec6e9c1@linaro.org>
-Date: Thu, 9 Nov 2023 17:51:39 +0100
+	Sun, 12 Nov 2023 13:23:33 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 0D34160BEF;
+	Sun, 12 Nov 2023 13:23:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5E8EDC433C8;
+	Sun, 12 Nov 2023 13:23:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1699795407;
+	bh=KIXhWrqL7vDKt6zj9PJHDRT9sxGHrsKjJWVor0Hm6qc=;
+	h=From:To:Cc:Subject:Date:From;
+	b=m55gmcU0yOatShkB1n6w3f0JPVSxFamZYKA+t2mtyhfyiXx5aONEapszPtKxKx4bk
+	 R+o/6YnWISaWWi29Pu/uqltNTzFkMOXiqDMjCNKAPn5CFO7ziNGNJ805pPizEbNPto
+	 +WigjWwa+ljFBYa1iAM8LqiXIornDU3rWZxuuOB6PjTzyk4vMQBiNuD3CeET4bhXiy
+	 CFDOZs3K7OG9/bDUAxLlmZWwH8601GYMHGUbopoKQDv5QxKx4RFDUci001LrJakKTk
+	 wYqTMmc+SZCd6ySZEU0TB1e3znkQyMFM79wo5jgO81VWnnzXQcjrOQfILLEI/BkL99
+	 pgDtdXWOPIDew==
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Cc: Jarkko Nikula <jarkko.nikula@linux.intel.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Sasha Levin <sashal@kernel.org>,
+	keescook@chromium.org,
+	gustavoars@kernel.org,
+	linux-i3c@lists.infradead.org
+Subject: [PATCH AUTOSEL 6.6 1/7] i3c: mipi-i3c-hci: Fix out of bounds access in hci_dma_irq_handler
+Date: Sun, 12 Nov 2023 08:23:10 -0500
+Message-ID: <20231112132323.174148-1-sashal@kernel.org>
+X-Mailer: git-send-email 2.42.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 2/2] arm64: dts: freescale: imx93: add i3c1 and i3c2
-Content-Language: en-US
-To: Frank Li <Frank.li@nxp.com>, shawnguo@kernel.org
-Cc: alexander.stein@ew.tq-group.com, alexandre.belloni@bootlin.com,
- conor+dt@kernel.org, conor.culhane@silvaco.com, conor@kernel.org,
- devicetree@vger.kernel.org, festevam@gmail.com, haibo.chen@nxp.com,
- imx@lists.linux.dev, joe@perches.com, kernel@pengutronix.de,
- krzysztof.kozlowski+dt@linaro.org, linux-arm-kernel@lists.infradead.org,
- linux-i3c@lists.infradead.org, linux-imx@nxp.com,
- linux-kernel@vger.kernel.org, peng.fan@nxp.com, ping.bai@nxp.com,
- robh+dt@kernel.org, s.hauer@pengutronix.de, sherry.sun@nxp.com,
- xiaoning.wang@nxp.com
-References: <20231017194657.3199749-1-Frank.Li@nxp.com>
- <20231017194657.3199749-2-Frank.Li@nxp.com>
- <ZUz/8fBWtnwdSW9w@lizhi-Precision-Tower-5810>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
- 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
- D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <ZUz/8fBWtnwdSW9w@lizhi-Precision-Tower-5810>
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.6.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231109_085145_276751_2447F0C0 
-X-CRM114-Status: UNSURE (   7.78  )
+X-CRM114-CacheID: sfid-20231112_052331_805993_CB538D70 
+X-CRM114-Status: UNSURE (   9.81  )
 X-CRM114-Notice: Please train this message.
+X-Mailman-Approved-At: Mon, 13 Nov 2023 01:14:21 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,23 +80,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 09/11/2023 16:51, Frank Li wrote:
-> On Tue, Oct 17, 2023 at 03:46:57PM -0400, Frank Li wrote:
->> Add I3C1 and I3C2.
->>
->> Signed-off-by: Frank Li <Frank.Li@nxp.com>
->> ---
-> 
-> @Guo Shawn:
-> 
-> Driver part already merged. 
-> 
-> Please pick up dts part
+From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
 
-It's merge window. What do you expect exactly?
+[ Upstream commit 45a832f989e520095429589d5b01b0c65da9b574 ]
 
-Best regards,
-Krzysztof
+Do not loop over ring headers in hci_dma_irq_handler() that are not
+allocated and enabled in hci_dma_init(). Otherwise out of bounds access
+will occur from rings->headers[i] access when i >= number of allocated
+ring headers.
+
+Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+Link: https://lore.kernel.org/r/20230921055704.1087277-5-jarkko.nikula@linux.intel.com
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/i3c/master/mipi-i3c-hci/dma.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
+index 2990ac9eaade7..71b5dbe45c45c 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/dma.c
++++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
+@@ -734,7 +734,7 @@ static bool hci_dma_irq_handler(struct i3c_hci *hci, unsigned int mask)
+ 	unsigned int i;
+ 	bool handled = false;
+ 
+-	for (i = 0; mask && i < 8; i++) {
++	for (i = 0; mask && i < rings->total; i++) {
+ 		struct hci_rh_data *rh;
+ 		u32 status;
+ 
+-- 
+2.42.0
 
 
 -- 
