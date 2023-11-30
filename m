@@ -4,64 +4,123 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DAF71C07CA9
-	for <linux-i3c@archiver.kernel.org>; Thu, 30 Nov 2023 19:16:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20D87C10DCE
+	for <linux-i3c@archiver.kernel.org>; Thu, 30 Nov 2023 22:00:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7uIfIHDZxTSy0P5e+ynbUwCNwzrnZQezfUv3nLdyPxQ=; b=fOjU737sFNU347
-	Tm57uxxX6WqTvbJpIoLt0dBXQUiIBVznnTkJp8kSzuKfnPXnhdlNtHP5lT+DErye6RlgsxERVHAyd
-	YmR2QIqFXJbFt6LF8zdGBQgRY7ueJ3YSwkCmC6BHV64E8DV1OewUyHnEGj6LWdYJ2I5HL0n3vSYAI
-	4OvE16w4cCS8T5ySfzi4dKcXNraYMNDiz8k1qgw3MFwhE0DnGaBO8Svs6bnZ8wCFnlCVZIEtRVhus
-	OY9kMyJBi+qiXJOqoe0HzLZslE5A0RLoo39Mnsz6exK4Bcrcz8X54Z2FQaciOemfs+BVBk2bVU3ru
-	983yta/15MLyD1UbE14A==;
+	List-Owner; bh=HpsLiC9seP1+BjVbcQO8zBOJEQR6IFC8r90ng7/SfYU=; b=nm+zS6KXRKtmGe
+	zIyJuPfVzq6ARe3u3hhEySHetljMn7YlkHcQVKqzZqXo8DXT6dhkuOvNW5lRyqeosHH6ECpyWa5zG
+	OUbYDlbw38GawwYm9q5qNEFKAHJ7dheOUps/gDPnlDeW9asZYFf+39NX1mPctZyGUrveYrIsGozbZ
+	vo6X2I1wKUU4d7EFZpjsJiG9GVyFXS6yet2Sjs/rOMlOg7xqT3oXiJm2/5d8u4r9naiMQV59YFzj4
+	Vw+QnTNR2PpaOz7QDubXzAzN/N9bR/Kiv04DR3wW1aEWZVWFxOa5a7f7b29We9xbR+XjkQVzljror
+	G5FWuVNboXok8xxz/5WA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r8mWG-00Bhnp-0e;
-	Thu, 30 Nov 2023 19:16:16 +0000
-Received: from relay5-d.mail.gandi.net ([2001:4b98:dc4:8::225])
+	id 1r8p55-00C0Zb-1S;
+	Thu, 30 Nov 2023 22:00:23 +0000
+Received: from mail-he1eur04on0626.outbound.protection.outlook.com ([2a01:111:f400:fe0d::626] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r8mWD-00Bhm8-0q
+	id 1r8p53-00C0Z4-0t
 	for linux-i3c@lists.infradead.org;
-	Thu, 30 Nov 2023 19:16:14 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 109F01C0003;
-	Thu, 30 Nov 2023 19:16:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1701371766;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=mE9/tLP0eyYG3y00nEhJnVDwOaisqMrxBjBW9/Ybvm0=;
-	b=DM6ceKIhBV6tIWBT1O5ejGiMHISZq82LwOsjaEZcszhe+L61E5vrnfgwaLv1tTDKpVarRP
-	lQfaK3Dz/6iem1wLq2aORwPTg9BRG0gRkygmx97qDxoaDFuHBkSVaFlMB13DtRZeMsiRXV
-	RM5qHfvJrT5U9ABu2DxecrN+isoBUJpNuPKwHQmyQFYR6YuURpD5KlwGVNuSvPA+/Rs3G8
-	MsaCKdBURif4juKKYVGjk50hqlCmcEkhFq4pJnDV3CdTj5N49BO6dCBDetH6BTOvhSGVgZ
-	Hj1MffyQ1K9Ntf49cvTRlmc+on0RYu8MlplBKwSpXFdKXrnAIyDgGvPiS4sHzw==
-Date: Thu, 30 Nov 2023 20:16:02 +0100
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Frank Li <Frank.li@nxp.com>
+	Thu, 30 Nov 2023 22:00:22 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=GNSLkU+EYw0SmaAUDcqqqZ75nHtHqAXl0Hx3036ZuXA8KStF9Ergj/y0sxTyV1+UGDsHPYxfhdaZAieXtNXkbt6Pzn7YoLI6n8/y38oB0BfGxj4NrJ5gTlteOsYeVCLbdkPCJT04T4OsCV8cg/OUMS2lXBuDG6jH0yqKJRDKjRobubZ8NnIqoz3do2/4jDVkBMs+KqoLml00CsBeeVIylEdq9LUc/GXjgMHV8nRQXJYdb8qf7yTJ8GNjU073D/FOoYasi/V6Dj6z0DI4wG86z3xFZYYFMTUfmmTrIYFyl0AmbrnWNmq7RfLFcqssDcWQ6hCTykOISgT2Zg//5cl7eQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=zbB7fLVU7Rh4unQt2fXNYoK5SNQ0WRIoM6f1/wDA+pI=;
+ b=b1IEe0a/HUSni2Tr90XHgm/NiX9LfvwhNOOUnRyrpzi6ozkzdgWQQ2hUrbcGs91R6kA13rVd2vqa+YGbl9Eh2aTpfomoGzqPFq1Un6vmrAis2BGW57alKsDYsUmj1e17WIXe4JjaTbgoFAEHF4csRPKGWGB5JckzgcnGrpc+eFveEecH4QyVo3SWE6tJer7QGwwXVnvfvhQ/AvtpEeF66rxrbRRK1O+MVsMYEv2sxiUrYzfcnAyGXL+sqPwpZTVB0+EFGACdkyejlHj2TjcQgENuP+y+yy70/v3o5NVdjE2/OyAvVDvQUmXkLpjNw6gTTf20zMnsxLAeftMu68s6Qw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=zbB7fLVU7Rh4unQt2fXNYoK5SNQ0WRIoM6f1/wDA+pI=;
+ b=B0ycI+ZM9HCwBTVXvBlnQxESMntS7oNrzabHNowvg8xuTj/o/BA7gcDTPVxAfhfU+HWpaKhlPsXyfZBgIVFkv2cDEYS3uivrCq/A6/pi0sauUe4+LFd+9Pgg2Uv7WiyXnVVdvStYvbceD99H6qV3n6lQvoBMo1MQYjx1btFXocc=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AM6PR04MB4838.eurprd04.prod.outlook.com (2603:10a6:20b:4::16)
+ by PA4PR04MB9392.eurprd04.prod.outlook.com (2603:10a6:102:2ab::8) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7068.13; Thu, 30 Nov
+ 2023 22:00:13 +0000
+Received: from AM6PR04MB4838.eurprd04.prod.outlook.com
+ ([fe80::95f5:5118:258f:ee40]) by AM6PR04MB4838.eurprd04.prod.outlook.com
+ ([fe80::95f5:5118:258f:ee40%6]) with mapi id 15.20.7046.015; Thu, 30 Nov 2023
+ 22:00:12 +0000
+Date: Thu, 30 Nov 2023 17:00:05 -0500
+From: Frank Li <Frank.li@nxp.com>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
 Cc: alexandre.belloni@bootlin.com, conor.culhane@silvaco.com,
- imx@lists.linux.dev, joe@perches.com, linux-i3c@lists.infradead.org,
- linux-kernel@vger.kernel.org, zbigniew.lukwinski@linux.intel.com
+	imx@lists.linux.dev, joe@perches.com, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, zbigniew.lukwinski@linux.intel.com
 Subject: Re: [PATCH v4 6/6] i3c: add API i3c_dev_gettstatus_format1() to get
- target device status
-Message-ID: <20231130201602.2944cc9f@xps-13>
-In-Reply-To: <ZWjLMNKJElPI6uSo@lizhi-Precision-Tower-5810>
+ target device statusy
+Message-ID: <ZWkF5TTkMcdUVTaP@lizhi-Precision-Tower-5810>
 References: <20231129221225.387952-1-Frank.Li@nxp.com>
-	<20231129221225.387952-7-Frank.Li@nxp.com>
-	<20231130111959.11afd8a8@xps-13>
-	<ZWjLMNKJElPI6uSo@lizhi-Precision-Tower-5810>
-Organization: Bootlin
-X-Mailer: Claws Mail 4.0.0 (GTK+ 3.24.33; x86_64-pc-linux-gnu)
+ <20231129221225.387952-7-Frank.Li@nxp.com>
+ <20231130111959.11afd8a8@xps-13>
+Content-Disposition: inline
+In-Reply-To: <20231130111959.11afd8a8@xps-13>
+X-ClientProxiedBy: BYAPR04CA0034.namprd04.prod.outlook.com
+ (2603:10b6:a03:40::47) To AM6PR04MB4838.eurprd04.prod.outlook.com
+ (2603:10a6:20b:4::16)
 MIME-Version: 1.0
-X-GND-Sasl: miquel.raynal@bootlin.com
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM6PR04MB4838:EE_|PA4PR04MB9392:EE_
+X-MS-Office365-Filtering-Correlation-Id: cf00c2db-5b2a-48b3-aa7a-08dbf1efba41
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: eMFXG3WddDFOozE3M7VuCCguSo2pZWEwphooq132tKpe6CiBVTY4z/U9PIarfM+q+1KsW7vaAlaycJV6p/5zVuIrDFyYO+0axOWFy9rl22JJyIvT7DHH+f6DgGSiE1V2PCDXlRykmJeUaGdO8Q3u4+ufk3iHQYyxlrIyCwnLw4Zsju/Ous1c4vwpF41JlrAgNnJfMuoiGeeSBIEHURRQ5qAuIwRuaZJMECsioLIhUJTCaUi+wpC3pPnZbaDVKhMzfvOxim/p/82CmWTvJXToQ6Qr3IfJ5e+GBnOmWuSAxBHePK5g0Edh7A8qkQIaimRntiKdoEYraDoK1Vr2HyrmO5W8o8FieN2NKVwf7WS9ExXBIT2M0P1dLx3Yfn5kQ4Ksw21tvZp3DHbG4bg81VJ+fWASSToUMv0e20+A6ypcbKG5wSOmwQLPtXRgpjvm5Mt3LrEXqtuSn2N1CIhrwWOq+KZ+pEIWVT7jhf41WQiHEjYYKb3ordwglxUyaFqRNFDairIg2mlfEDxYNSpxEu+p8AeME+5OUJmLx00DPoDb/h7LWUtWwvQqmZNKD0rFuIrUKrQPM7AUzUVtApLKe//OWBxutbCCLT4CHmJCEQR6YY24oS/NUfZyqsosEozEx7tt
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM6PR04MB4838.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(7916004)(346002)(396003)(39860400002)(136003)(366004)(376002)(230922051799003)(1800799012)(451199024)(64100799003)(186009)(5660300002)(86362001)(2906002)(38100700002)(83380400001)(26005)(66574015)(8676002)(316002)(6506007)(52116002)(6512007)(9686003)(4326008)(66476007)(6916009)(66946007)(8936002)(66556008)(38350700005)(41300700001)(6486002)(6666004)(478600001)(33716001);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?qfQe9mzy8JQEHAzb8h5aTwZPumbn9okilKaKIcEoSxMkKTg4y0I/dgFhSt?=
+ =?iso-8859-1?Q?abrU7AOoJBpqiZsakaP+Od695t14ebtmUQFRQZcVG+fYBCd4NfETK0G6uX?=
+ =?iso-8859-1?Q?cNbXHLw8yUMhd/YXu5rvKpnV19T3/8715RwwWXHOS/g6IzslgQHKnSMFSM?=
+ =?iso-8859-1?Q?p2y1/Whv3s360qNLCmBQC8fshCU288NBqz91I8iAym40Mr2efIhm6OKZ6k?=
+ =?iso-8859-1?Q?XupwhQUpZXe2AGLgvYRD1PcUYHMXBCI0bEknHVb8LD+5GLsuvFSYq4/3kc?=
+ =?iso-8859-1?Q?gBo2I+DnldQ7jdbfEqBpuNC7VOJ/2RbxTyt4nYbQrh7gCUm6Kx0wi8PVLn?=
+ =?iso-8859-1?Q?TcPemy4AvIO55/njXZq+wsnAQgj/Ylkm5yEQLupny6unKO1KTYSxQuPOQT?=
+ =?iso-8859-1?Q?ZhT1AykCvBjAy+94PTQ0kwEM3HqpE/6spyz5fEJSQz289yzz0c+EC+pIJ6?=
+ =?iso-8859-1?Q?wWNpbsmMoAkErlZicmucZwx95m+AWpWYMS8ibM8sf0ip5+OexqMo/jAHw4?=
+ =?iso-8859-1?Q?5QxC8VGBzjJbbQVaA3JNYYh3P5FFJIYOTDdPKuVmw5RKKzeF3iMy2Cl+zM?=
+ =?iso-8859-1?Q?M3VxWZBFD4+0wr8Ctng6F65XyHKtpD1aJ1vA2xeghM1o7KaJ/kAmMcMtDj?=
+ =?iso-8859-1?Q?zPk3qqa298c0H6BmvTvtIHOrL6aXuOb7/qt+ajDTsC8U/67+mjX0Oei3oZ?=
+ =?iso-8859-1?Q?0XpZRkGSqX95wYhlYmKirqJSyQGYzj7V5SuBmp33fpUZEVLLUFoknSYxy3?=
+ =?iso-8859-1?Q?GmyXDvdqc30VxTwmJieh3QbvlxQSpLJ4P2OSjYbRtP3xozZ3sJthUBgOoa?=
+ =?iso-8859-1?Q?9VlOl9CEYLXW828tAlJMJAMDPnZPfI9NWkVxnCVjaaU9O+lNcVftRU8n2z?=
+ =?iso-8859-1?Q?M/Kp7501bQin+WOuQuEbkyKw9QgruPNAg3cIG4eBpSjnnL0sis5lgDTnIx?=
+ =?iso-8859-1?Q?N3//9fjkA+0qNOthNVBHw1e8QHIUtRn5mQp3IUGurd5FnYHQP3sLkRwcq5?=
+ =?iso-8859-1?Q?eZRBvj6cP/CCOmksAJ3urzQw3j9HwWcUpTSFPSFjRg36vGfBd223by+gi7?=
+ =?iso-8859-1?Q?t/RdshrkYkMPb5gbwzCbiiS3x3G1VEEgMcUMbkdl/vpe2Vtww5ppjOl27z?=
+ =?iso-8859-1?Q?rU7U7LfYpMNs0c82DUr+C1wpC5qgec8Lrpup2jJ+JsirydOvcPCmNsLAzR?=
+ =?iso-8859-1?Q?nVEcC3G8ehk/U5P0Xh1sgnBw9qp0V33F+H0e60NijfJyvFnf85WjJm36Eu?=
+ =?iso-8859-1?Q?W/YtB2jZzbbIm3hNHV7aW7Cvj+5SeLaYbTCCVti6P26ZMZBfVnnF3S8bKA?=
+ =?iso-8859-1?Q?0DK9sjlMrgOGAZFjoHe7aRHrp8TkWEtnY3fRaLrIjj1vrHR8JizpPq6bTD?=
+ =?iso-8859-1?Q?k6MbykIx+kijko1NvHyitlkVTakD/AULpp1MRTfuWh+BHNus2EzPSDlJZ3?=
+ =?iso-8859-1?Q?2oI1+SlvEQTOlhmgboYhfJXIpBHicBep7LlHh6pYYfWzFWKI/FfK8b+niK?=
+ =?iso-8859-1?Q?g/inhrjzj1jYVLWPvxldWCyRNsnEmXKCXypppwBy4/tUVd/2zxXw5Me1PJ?=
+ =?iso-8859-1?Q?FXY981hyS24hXCW8ixKF/OV8xHlmGgs5yildzdlXRpOaDpYnVbD03XwQbr?=
+ =?iso-8859-1?Q?tt1TvxARsNaqM4qwP+10VFPHeYeF4Ohym7?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: cf00c2db-5b2a-48b3-aa7a-08dbf1efba41
+X-MS-Exchange-CrossTenant-AuthSource: AM6PR04MB4838.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Nov 2023 22:00:12.8792
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: rWhLRqf0jPyBCS8vdXpu/R5Nna+VJKpuRAZKD+Tkri73t1Xsjx51lw9MDVF7vn0eZM21Ik2PIth39h/jZY00Tw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB9392
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231130_111613_438436_C0891C42 
-X-CRM114-Status: GOOD (  10.51  )
+X-CRM114-CacheID: sfid-20231130_140021_336122_DDDC9CD3 
+X-CRM114-Status: GOOD (  22.93  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,21 +132,103 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-SGkgRnJhbmssCgo+ID4gPiArCj4gPiA+ICsJaWYgKCFzdGF0dXMpCj4gPiA+ICsJCXJldHVybiAt
-RUlOVkFMOwo+ID4gPiArCj4gPiA+ICsJaTNjX2J1c19ub3JtYWx1c2VfbG9jayhkZXYtPmJ1cyk7
-Cj4gPiA+ICsJaWYgKGRldi0+ZGVzYykKPiA+ID4gKwkJcmV0ID0gaTNjX2Rldl9nZXRzdGF0dXNf
-Zm9ybWF0MV9sb2NrZWQoZGV2LT5kZXNjLCBzdGF0dXMpOwo+ID4gPiArCj4gPiA+ICsJaTNjX2J1
-c19ub3JtYWx1c2VfdW5sb2NrKGRldi0+YnVzKTsKPiA+ID4gKwo+ID4gPiArCXJldHVybiByZXQ7
-Cj4gPiA+ICt9Cj4gPiA+ICtFWFBPUlRfU1lNQk9MX0dQTChpM2NfZGV2aWNlX2dldHN0YXR1c19m
-b3JtYXQxKTsgIAo+ID4gCj4gPiBUaGVyZSBpcyBubyB1c2VyIHlldC4gTWF5YmUgdGhpcyBuZWVk
-cyB0byBiZSBkb25lIGluIGFub3RoZXIgc2VyaWVzPwo+ID4gU2FtZSBiZWxvdy4gIAo+IAo+IFNl
-ZQo+IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2lteC8yMDIzMTEwNzAzMzAuNW15bGF1TFItbGtw
-QGludGVsLmNvbS9ULyN0CgpUaGVuIHRoaXMgcGF0Y2ggc2hvdWxkIGJlIHBhcnQgb2YgdGhlIHNl
-cmllcyB5b3UgbWVudGlvbi4KClRoYW5rcywKTWlxdcOobAoKLS0gCmxpbnV4LWkzYyBtYWlsaW5n
-IGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
+On Thu, Nov 30, 2023 at 11:19:59AM +0100, Miquel Raynal wrote:
+> Hi Frank,
+> =
+
+> Frank.Li@nxp.com wrote on Wed, 29 Nov 2023 17:12:25 -0500:
+> =
+
+> > I3C standard 5.1.9.3.15 Get Device Status (GETSTATUS):
+> > Get request for one I3C Target Device to return its current status.
+> > =
+
+> > Add API to fetch it with format1.
+> > =
+
+> > Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> > ---
+> >  drivers/i3c/device.c       | 24 ++++++++++++++++++++++++
+> >  drivers/i3c/internals.h    |  1 +
+> >  drivers/i3c/master.c       | 26 ++++++++++++++++++++++++++
+> >  include/linux/i3c/device.h |  1 +
+> >  4 files changed, 52 insertions(+)
+> > =
+
+> > diff --git a/drivers/i3c/device.c b/drivers/i3c/device.c
+> > index 1a6a8703dbc3a..aa26cf50ab9c6 100644
+> > --- a/drivers/i3c/device.c
+> > +++ b/drivers/i3c/device.c
+> > @@ -196,6 +196,30 @@ void i3c_device_free_ibi(struct i3c_device *dev)
+> >  }
+> >  EXPORT_SYMBOL_GPL(i3c_device_free_ibi);
+> >  =
+
+> > +/**
+> > + * i3c_device_getstatus_format1() - Get device status with format 1.
+> > + * @dev: device for which you want to get status.
+> > + * @status: I3C status format 1
+> > + *
+> > + * Return: 0 in case of success, a negative error core otherwise.
+> > + */
+> > +int i3c_device_getstatus_format1(struct i3c_device *dev, u16 *status)
+> =
+
+> I'm not a big fan of the opposition between "i3c_device" and "i3c_dev".
+> Could we clarify the prefixes?
+> =
+
+> > +{
+> > +	int ret =3D -EINVAL;
+> =
+
+> Init not useful
+
+No, if dev->desc is NULL, ret will be random value without init.
+
+Frank
+
+> =
+
+> > +
+> > +	if (!status)
+> > +		return -EINVAL;
+> > +
+> > +	i3c_bus_normaluse_lock(dev->bus);
+> > +	if (dev->desc)
+> > +		ret =3D i3c_dev_getstatus_format1_locked(dev->desc, status);
+> > +
+> > +	i3c_bus_normaluse_unlock(dev->bus);
+> > +
+> > +	return ret;
+> > +}
+> > +EXPORT_SYMBOL_GPL(i3c_device_getstatus_format1);
+> =
+
+> There is no user yet. Maybe this needs to be done in another series?
+> Same below.
+> =
+
+> ...
+> =
+
+> > +int i3c_dev_getstatus_format1_locked(struct i3c_dev_desc *dev, u16 *st=
+atus)
+> =
+
+> ...
+> =
+
+> Thanks,
+> Miqu=E8l
+
+-- =
+
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
