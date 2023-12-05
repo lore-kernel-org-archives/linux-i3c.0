@@ -4,124 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED07BC4167B
-	for <linux-i3c@archiver.kernel.org>; Fri,  1 Dec 2023 22:42:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3C21C4167B
+	for <linux-i3c@archiver.kernel.org>; Tue,  5 Dec 2023 09:56:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k8eGGgEjz1oblNDd16RLvCOFBB/unow5f75q9Bz5PJQ=; b=ZbuUwP1K92d7er
-	z7YJW6ZZivykAHJlEtm2Zx84PxM9JoYwZ4wkd/3USPi3t/iy5hZUMRFhojAGi8L+FbgkT2tNAmDPd
-	XCmGPll23F0wqD+7ckCft/GI0vYh/+SKo2dFKrrB3vKk3443GSMtjmt5vfg2XRihrO5PjR+FpPh9D
-	Imcwph7EU/hKpnRXZgyWTZu1ZhZ3Jr8ZGGnWtidbdW5B4jD7Cpd9wlRcS79ae32mjfDFAUjNriYUm
-	e0+gYnN11v5fO1rfHqphoVCbDlkLeXMiLtM2k1A4ML+LVuFr2KXdU4d/t7wg/Qrd3H9T1RwtGLbvK
-	X7rjCS+BebBH7BZ40Qyw==;
+	List-Owner; bh=36wDXdqm/l8kTpq1OTHvo60cOShh0M8rFgWLMbwC5QM=; b=nxJP6UHFTQ4eAl
+	k7vY+DNgHwt2hnNY3IzFTAsLOmurS6XKANmHC0hyrjHjDCRizaP0yYoUNAIBNfDkiaO6NeQfoR4AU
+	741wuAaAZZfhjBhO3NlOE9C6Mquox87GhSQkvSciusL6GB9o5+PFvxRukgzWlW1L9U2CLnwSO9Y5O
+	CpqQ9gaA/jym1GJmqrKdcFONiRLf2TAnagDhMPGNO13IHq2P1YnLZmYT+pLE3ODjYx+7md543uvrw
+	aKvzuL0KJyOSq3lEW7LCccsUNk3dhfH/xiMq20Eti56KDFPJdK7Y5FkJ52zeHLKCTVYHwp+XxgZme
+	8XYxTTb3ZRxJGp4Tymmw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1r9CDD-00EmVv-1y;
-	Fri, 01 Dec 2023 22:42:19 +0000
-Received: from mail-db8eur05on20602.outbound.protection.outlook.com ([2a01:111:f400:7e1a::602] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1rASA4-006tfS-37;
+	Tue, 05 Dec 2023 09:56:16 +0000
+Received: from mail-wr1-f50.google.com ([209.85.221.50])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r9CDA-00EmUt-2v
+	id 1rASA1-006tdv-1m
 	for linux-i3c@lists.infradead.org;
-	Fri, 01 Dec 2023 22:42:18 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=eUuYK5msX9ii8yeSTLUcONLGnDftuResJdKkw1kP6xRQ84QgmLZYkk/FP5BVlQvVlqAx6rEWh3Wfc1OZLK27bCJhKJZtNFV276bmD6GffhhszQmLYqUUTsPqGVQJEvubAv/GbBUff351z1EDGtYV720D3JwbSTi6LzPF7/zoRLITQCeugkeOYWmkTQoHiPq9RBadTii2g1QhZ4NFwMzrJlFVDOjCKNxJktREoIbMudd734hLox5pC3AU79oLFN2FzRg2MeH2WQXHPHcxtx2k7g3c37AMccKCxQoVW8aOQ5Rsh5ihQB5BQDBciF+62eGh6i1+Fi3Vcpu9A8T7hMWtBg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=XXDAhNm+DCe1srAC+lBUWMnfd6Ayz3DSi20A50myyuQ=;
- b=hw+A5dOaA5rUKnG2EGLSxG4lmQ2TWMKO/bsLgaJQSqQte0nqntArkVIimwEmBmF6jtjh7JKwwT9KQbrnKTQ2UWIwuxDVz2mjIl0R06U2KSx8ILNshlvaZdOG15QbX1QjE/9w4etrdnW0rTMAjGHOtXJ2A6u12K+YzprPX57trz+0OnZm0pOb4yXklsejJKnMRiACcHpDY5l0LvnymgP3CVFwqtgR+lnKj7skiDfCyM41jDpJqVw8xpyblYINbzOw85OaNAv9QZXfSGjfMf7ap5GEzbVycZTbyTl6wbxw3Vsl7idLmXBLjgdzJIlKIEi8+X8UQh9Rs2b37MQiemqvRw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=XXDAhNm+DCe1srAC+lBUWMnfd6Ayz3DSi20A50myyuQ=;
- b=BiWV2Yi8BoudG1dCfLMF9dHOMGI0leb0xfaFgasZwD6EFXFgTYGTjnMY5n6LM+i3B3JHn8/l3EpqHV5gD+eyfWLR9pLnFS/pjj+a6HfaMcj8PZ2JiazF4k+q+zZSZGLDKwdAB9uuxNeypR6jWAPVLMpQklqFZaPWALYU9auRHIk=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AM6PR04MB4838.eurprd04.prod.outlook.com (2603:10a6:20b:4::16)
- by AS4PR04MB9573.eurprd04.prod.outlook.com (2603:10a6:20b:4fb::19) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7068.13; Fri, 1 Dec
- 2023 22:26:05 +0000
-Received: from AM6PR04MB4838.eurprd04.prod.outlook.com
- ([fe80::95f5:5118:258f:ee40]) by AM6PR04MB4838.eurprd04.prod.outlook.com
- ([fe80::95f5:5118:258f:ee40%6]) with mapi id 15.20.7068.016; Fri, 1 Dec 2023
- 22:26:05 +0000
-From: Frank Li <Frank.Li@nxp.com>
-To: miquel.raynal@bootlin.com
-Cc: Frank.li@nxp.com,
-	alexandre.belloni@bootlin.com,
-	conor.culhane@silvaco.com,
-	imx@lists.linux.dev,
-	joe@perches.com,
-	linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	zbigniew.lukwinski@linux.intel.com
-Subject: [v5 resend 4/6] i3c: master: svc: rename read_len as actual_len
-Date: Fri,  1 Dec 2023 17:25:30 -0500
-Message-Id: <20231201222532.2431484-5-Frank.Li@nxp.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20231201222532.2431484-1-Frank.Li@nxp.com>
-References: <20231201222532.2431484-1-Frank.Li@nxp.com>
-X-ClientProxiedBy: BY5PR17CA0022.namprd17.prod.outlook.com
- (2603:10b6:a03:1b8::35) To AM6PR04MB4838.eurprd04.prod.outlook.com
- (2603:10a6:20b:4::16)
+	Tue, 05 Dec 2023 09:56:15 +0000
+Received: by mail-wr1-f50.google.com with SMTP id ffacd0b85a97d-332c7d4a6a7so4715567f8f.2
+        for <linux-i3c@lists.infradead.org>; Tue, 05 Dec 2023 01:56:12 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1701770171; x=1702374971;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=NCpUoGEbLa7UgEiPGpxMZ6i6kOTLzyq3xsvNy4X6SA0=;
+        b=Kwzt2BI3i9waX1AxJiPMt5T72Du7eSGZA3Idr6+Ncm/VDOMmyC4xm9VKHRkOcDk2hb
+         8NiFcDBYLCHB2WPtqPeQM3Nmj5gECUM9IBIsXcjOR8YrkeHFTygbjEwM3Fle9MadlnBp
+         VG0XmNP1YKwtFjUD3XkfAy/0Aq43Dn65UyDY2Z8LgwtRpQzmOtutxvJqKJ3LAGcEZTbi
+         XV7sVwyB8NoFSn4auUQvxUMzqjxriJS3oE4lpSGxinURTfN2GORs6IaT/6m/iuzypJNE
+         hE+N47uuwGZ4R2NzDUsFzHwaYh5Nd2fheA3dtoEW+wOI5xJPPPX+JIyPjz/em3l8rlf5
+         13EQ==
+X-Gm-Message-State: AOJu0YzXuwLZhU+79rn98VE7qvS5SZ8BBsm2jhsjEoPNA1bBW2zfvAcm
+	XREtCwbHe8kKMqAdqgJgxN0=
+X-Google-Smtp-Source: AGHT+IErga5sMFcOAXTtwbBqiAzKsvmtb3tfiJ5mpDctNhrImPKy2RXAdmg4Zz6tiUMSv/PO7R35tQ==
+X-Received: by 2002:a05:600c:5013:b0:40b:5e21:c596 with SMTP id n19-20020a05600c501300b0040b5e21c596mr213614wmr.100.1701770170934;
+        Tue, 05 Dec 2023 01:56:10 -0800 (PST)
+Received: from ?IPV6:2a0b:e7c0:0:107::aaaa:59? ([2a0b:e7c0:0:107::aaaa:59])
+        by smtp.gmail.com with ESMTPSA id bh12-20020a05600c3d0c00b0040b2976eb02sm18178185wmb.10.2023.12.05.01.56.10
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 05 Dec 2023 01:56:10 -0800 (PST)
+Message-ID: <2c3824d7-0960-4de7-8fae-01478fdef8fe@kernel.org>
+Date: Tue, 5 Dec 2023 10:56:09 +0100
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AM6PR04MB4838:EE_|AS4PR04MB9573:EE_
-X-MS-Office365-Filtering-Correlation-Id: 8ecc0795-faf3-4e4d-d547-08dbf2bc8221
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 804oIkrUZLt1JqE32wR/UoPLmiFQWLgj7jwxfMBnDlQ/my1GHEBwVLkqOmrCSWpvVjF4UEEm39GGNOby1sY6U+5v6lA1Zz/CfyFqQn0uWIaoJNf6TUiyVm5OjWUcP1Yr6nc7h9h4S8cwi07UbfTUdzlvkynxj3V4Vtbkn7BHLjxS4NWV+18JkUGq5lwEmw+MfW5sREDBSSJL3uOTiqeZLDGhr0ym1Q9n8OVIE0AwzSdIfjQn6L5fDIE23gsWc/TBL55fxpCMbzBc3u1ZkK8gB8cKcZKBgOo7h1fw/Uvmr1Ous3bw+EZZdsPm+2fZH1VjkpYpeFgeYVfvSzGoMu5fxhXIGTmQ/EzXz1zzbSJQTRTzn1xSMDb4ac9nXPyo9jPHDaU138QyJaqmuwZaiBzk7N9oRmw3AVh1lPxCakx8fz/vizhCgYFwh89jw3+OB3abC2185K/igtEpo51aUfFCKrzRP85+zui1noIfQl+zpqJY+MTC5JROkDiC2/ENGP4BK3/8+pPrkjgVxAdncOBE5lZkcJv5rXKa4Kjof++D+2Q68mP/VAIvtDhwK6kh+V1I6EV2fyc+XNHBSNPqKodSYIfOaLLxzirZxUVbOFns8hW8UYHAG4IN/Bzmd1tjNU9t
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AM6PR04MB4838.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(39860400002)(366004)(346002)(376002)(136003)(396003)(230922051799003)(1800799012)(64100799003)(451199024)(186009)(83380400001)(86362001)(6506007)(26005)(1076003)(6666004)(52116002)(2616005)(6512007)(41300700001)(5660300002)(8936002)(8676002)(6486002)(478600001)(2906002)(4326008)(316002)(66556008)(6916009)(66476007)(36756003)(38100700002)(66946007)(38350700005);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?gMwAQf7vX7kXqhUrSiuBMCVeWFFq7RDOZKpaooKJGo0WWFNMGNHq/LrnlT/g?=
- =?us-ascii?Q?qw0uIpeOmJlQ7CZmfFQMf4k68/LFsiUoE7gIIBmCaqFizms24QGh/+HlCVTC?=
- =?us-ascii?Q?2aU0qp/8GjbD4yxfffiEAOA18YejKe5IczC9VzcPCw0p+KW4PK2WNRXeeiZn?=
- =?us-ascii?Q?UaZFAfunoAfZ+BV65PgCiyNo7042HyybTUXn0v2yCravHbYv+4BIfcn876ML?=
- =?us-ascii?Q?hGpaP3a9sysCRo/hMXxa29OCV0U8iVHJtW9P6qScds8XG6fk624jJqmBVDDC?=
- =?us-ascii?Q?C5GD2+keLuwj3ONPS4t3EaqCIUjUXD8JUtPcxwUWMaujkRSnGMiDdPM6Y73n?=
- =?us-ascii?Q?leRAo3+YQUWmoTwDog4qah60G9d8uxCuZHBo7hYQrFi7wevLt4NVs3JwgQiW?=
- =?us-ascii?Q?M72waAh9cF0f9sOrpX2yGpbOWE8j9cWW1+oW3iXzuqiKSDJYjDYDxP0qE8w7?=
- =?us-ascii?Q?k+YB737Hf8t6HOwuQVAnK7jHlZ42s9+4xiEROGPkqVtBjjz1E8dCuQ1JML0+?=
- =?us-ascii?Q?OKyEGdO5I8khLi8VYEFLrmhcybOMcC5iH/rTolaLuWRKnyF35Fq+6Vmv9hxS?=
- =?us-ascii?Q?YYUubyMBvIJsiEFVny4v2Lekztsj2jybPcZQRVZ93TUTWM6T/oe5B3tRUXBK?=
- =?us-ascii?Q?bzKTkDpa3+ntWGlNLp+aMvhjIk7nANjK7dqx03LShMmEpwqR5yprpfeA1XAn?=
- =?us-ascii?Q?WFqdKH7V3oA38NAJ3M4RCF6vVFyzoMNo2pvkDVd6t4/03QdK3z+LHAKR9AFv?=
- =?us-ascii?Q?s/t4Rbhz5nRmt7wQpXfl1yZ9TnseCoLXP8MAp4ZnuI+0kytMOPqLfIXAt2Cp?=
- =?us-ascii?Q?j1DXNrr39yMSb1xtvP6occXNkkLE0I7jp0T94dugrwjI/wUKUUDe9mmrOy3c?=
- =?us-ascii?Q?UXvbOsUeQswa71XauaRaF+EPR5FGrl4co5zB1MXImfrLiVTswtQ6Tv9Tf0Y1?=
- =?us-ascii?Q?1Tyt1NZPM1T/rRdeKG5d2WA0MTJzJ8XMmep0bilYDFRrppWPtqjo9bm44tn7?=
- =?us-ascii?Q?lMQ40hDNdlx/kMuE2a+YfVJ3QV/gjr71o6vArmRM263mTYrvbysc+cbt5Ywj?=
- =?us-ascii?Q?bzqDkBCj8zPYd/1EIDWWPRNOmEAhF3ZzHooa4HvXSQgwxoLSWTjncJToOBGe?=
- =?us-ascii?Q?XZAk36/72y4ftIwKR/V47O+jgwvdAR0eeW+QsFE8Yiy2najLvWpr+0y3MFMj?=
- =?us-ascii?Q?UCVt5ErHpWpQfVcGznbZv0UYYgLgRYjeuH/Is+w0gSTEIlENjs6rOXKJKrYF?=
- =?us-ascii?Q?BDWj+YOvhM/7ydSajo2tV5MasE6UueCGZFbDv3XzIiq4RyveJgiN8Zg8ZDX8?=
- =?us-ascii?Q?s29xEykg5x/94CndlJO6L8lnuQ5VUVnOLRWu/p8tko52+pik0CrurPzegkJO?=
- =?us-ascii?Q?BWVxVAOtsBhZNPyvlMg/u3NkfIqq27qAi+bJXyLNpE/rSOcyW5JqonHXs94g?=
- =?us-ascii?Q?Q0kULWHIz5zR/W7+JSbA9/GZxmWQKZfsMhdny7bHsDKbqaikB6yTDM8k04FO?=
- =?us-ascii?Q?BRvSzIy/LYTf6fFzZ1LILpO8SkYFKI7NGZxdaOm8mbq1Pjrkyuq5BHtS8a8b?=
- =?us-ascii?Q?6soi/t3C1Q+/kNTe/PKdFlKRgUya7eA0WfOBlYh0?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8ecc0795-faf3-4e4d-d547-08dbf2bc8221
-X-MS-Exchange-CrossTenant-AuthSource: AM6PR04MB4838.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Dec 2023 22:26:05.6014
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: EKBLPjwIntT7m4tEhFRpT9nCMr3MJF/sWNsMqlAM0tn8Owx1tKAWzX9eqK3CbS8uOoz89YZobsFiG1rtFb/Ucw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS4PR04MB9573
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v5 7/7] tty: i3c: add TTY over I3C master support
+To: Frank Li <Frank.Li@nxp.com>, miquel.raynal@bootlin.com
+Cc: alexandre.belloni@bootlin.com, conor.culhane@silvaco.com,
+ imx@lists.linux.dev, joe@perches.com, linux-i3c@lists.infradead.org,
+ linux-kernel@vger.kernel.org, zbigniew.lukwinski@linux.intel.com,
+ gregkh@linuxfoundation.org, linux-serial@vger.kernel.org
+References: <20231130224408.3591288-1-Frank.Li@nxp.com>
+ <20231130224408.3591288-8-Frank.Li@nxp.com>
+Content-Language: en-US
+From: Jiri Slaby <jirislaby@kernel.org>
+Autocrypt: addr=jirislaby@kernel.org; keydata=
+ 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
+In-Reply-To: <20231130224408.3591288-8-Frank.Li@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231201_144216_947635_7F6D1BB9 
-X-CRM114-Status: GOOD (  11.17  )
+X-CRM114-CacheID: sfid-20231205_015613_591480_47EECFCF 
+X-CRM114-Status: GOOD (  32.35  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,144 +122,301 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-I3C transfer (SDR), target can early terminate read transfer.
-I3C transfer (HDR), target can end write transfer.
-I2C transfer, target can NACK write transfer.
+On 30. 11. 23, 23:44, Frank Li wrote:
+> In typical embedded Linux systems, UART consoles require at least two pins,
+> TX and RX. In scenarios where I2C/I3C devices like sensors or PMICs are
+> present, we can save these two pins by using this driver. Pins is crucial
+> resources, especially in small chip packages.
+> 
+> This introduces support for using the I3C bus to transfer console tty data,
+> effectively replacing the need for dedicated UART pins. This not only
+> conserves valuable pin resources but also facilitates testing of I3C's
+> advanced features, including early termination, in-band interrupt (IBI)
+> support, and the creation of more complex data patterns. Additionally,
+> it aids in identifying and addressing issues within the I3C controller
+> driver.
+> 
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+...
+> --- a/drivers/tty/Kconfig
+> +++ b/drivers/tty/Kconfig
+> @@ -412,6 +412,19 @@ config RPMSG_TTY
+>   	  To compile this driver as a module, choose M here: the module will be
+>   	  called rpmsg_tty.
+>   
+> +config I3C_TTY
+> +	tristate "TTY over I3C"
+> +	depends on I3C
+> +	help
+> +	  Select this options if you'd like use TTY over I3C master controller
 
-'actual_len' is better name than 'read_len'.
+this option
+to use
+add a period to the end.
 
-Reviewed-by: Miquel Raynal <miquel.raynal@bootlin.com>
-Signed-off-by: Frank Li <Frank.Li@nxp.com>
----
+> +
+> +	  This makes it possible for user-space programs to send and receive
+> +	  data as a standard tty protocol. I3C provide relatively higher data
+> +	  transfer rate and less pin numbers, SDA/SCL are shared with other
+> +	  devices.
+> +
+> +	  If unsure, say N
+> +
+>   endif # TTY
+>   
+>   source "drivers/tty/serdev/Kconfig"
+...
+> --- /dev/null
+> +++ b/drivers/tty/i3c_tty.c
+> @@ -0,0 +1,443 @@
+...
+> +struct ttyi3c_port {
+> +	struct tty_port port;
+> +	int minor;
+> +	spinlock_t xlock; /* protect xmit */
+> +	char tx_buff[I3C_TTY_TRANS_SIZE];
+> +	char rx_buff[I3C_TTY_TRANS_SIZE];
 
-Notes:
-    change from v4 to v5:
-    use i3c: master: svc: prefix
+These should be u8 as per the other changes throughout the tty layer.
 
- drivers/i3c/master/svc-i3c-master.c | 26 +++++++++++++-------------
- 1 file changed, 13 insertions(+), 13 deletions(-)
+> +	struct i3c_device *i3cdev;
+> +	struct work_struct txwork;
+> +	struct work_struct rxwork;
+> +	struct completion txcomplete;
+> +	unsigned long status;
+> +	int buf_overrun;
 
-diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-index f2058a36f869b..13a8b3c2aa541 100644
---- a/drivers/i3c/master/svc-i3c-master.c
-+++ b/drivers/i3c/master/svc-i3c-master.c
-@@ -137,7 +137,7 @@ struct svc_i3c_cmd {
- 	u8 *in;
- 	const void *out;
- 	unsigned int len;
--	unsigned int read_len;
-+	unsigned int actual_len;
- 	bool continued;
- };
- 
-@@ -1038,7 +1038,7 @@ static int svc_i3c_master_write(struct svc_i3c_master *master,
- static int svc_i3c_master_xfer(struct svc_i3c_master *master,
- 			       bool rnw, unsigned int xfer_type, u8 addr,
- 			       u8 *in, const u8 *out, unsigned int xfer_len,
--			       unsigned int *read_len, bool continued)
-+			       unsigned int *actual_len, bool continued)
- {
- 	u32 reg;
- 	int ret;
-@@ -1051,7 +1051,7 @@ static int svc_i3c_master_xfer(struct svc_i3c_master *master,
- 	       SVC_I3C_MCTRL_IBIRESP_NACK |
- 	       SVC_I3C_MCTRL_DIR(rnw) |
- 	       SVC_I3C_MCTRL_ADDR(addr) |
--	       SVC_I3C_MCTRL_RDTERM(*read_len),
-+	       SVC_I3C_MCTRL_RDTERM(*actual_len),
- 	       master->regs + SVC_I3C_MCTRL);
- 
- 	ret = readl_poll_timeout(master->regs + SVC_I3C_MSTATUS, reg,
-@@ -1089,7 +1089,7 @@ static int svc_i3c_master_xfer(struct svc_i3c_master *master,
- 		goto emit_stop;
- 
- 	if (rnw)
--		*read_len = ret;
-+		*actual_len = ret;
- 
- 	ret = readl_poll_timeout(master->regs + SVC_I3C_MSTATUS, reg,
- 				 SVC_I3C_MSTATUS_COMPLETE(reg), 0, 1000);
-@@ -1171,7 +1171,7 @@ static void svc_i3c_master_start_xfer_locked(struct svc_i3c_master *master)
- 
- 		ret = svc_i3c_master_xfer(master, cmd->rnw, xfer->type,
- 					  cmd->addr, cmd->in, cmd->out,
--					  cmd->len, &cmd->read_len,
-+					  cmd->len, &cmd->actual_len,
- 					  cmd->continued);
- 		if (ret)
- 			break;
-@@ -1257,7 +1257,7 @@ static int svc_i3c_master_send_bdcast_ccc_cmd(struct svc_i3c_master *master,
- 	cmd->in = NULL;
- 	cmd->out = buf;
- 	cmd->len = xfer_len;
--	cmd->read_len = 0;
-+	cmd->actual_len = 0;
- 	cmd->continued = false;
- 
- 	mutex_lock(&master->lock);
-@@ -1277,7 +1277,7 @@ static int svc_i3c_master_send_direct_ccc_cmd(struct svc_i3c_master *master,
- 					      struct i3c_ccc_cmd *ccc)
- {
- 	unsigned int xfer_len = ccc->dests[0].payload.len;
--	unsigned int read_len = ccc->rnw ? xfer_len : 0;
-+	unsigned int actual_len = ccc->rnw ? xfer_len : 0;
- 	struct svc_i3c_xfer *xfer;
- 	struct svc_i3c_cmd *cmd;
- 	int ret;
-@@ -1295,7 +1295,7 @@ static int svc_i3c_master_send_direct_ccc_cmd(struct svc_i3c_master *master,
- 	cmd->in = NULL;
- 	cmd->out = &ccc->id;
- 	cmd->len = 1;
--	cmd->read_len = 0;
-+	cmd->actual_len = 0;
- 	cmd->continued = true;
- 
- 	/* Directed message */
-@@ -1305,7 +1305,7 @@ static int svc_i3c_master_send_direct_ccc_cmd(struct svc_i3c_master *master,
- 	cmd->in = ccc->rnw ? ccc->dests[0].payload.data : NULL;
- 	cmd->out = ccc->rnw ? NULL : ccc->dests[0].payload.data,
- 	cmd->len = xfer_len;
--	cmd->read_len = read_len;
-+	cmd->actual_len = actual_len;
- 	cmd->continued = false;
- 
- 	mutex_lock(&master->lock);
-@@ -1314,8 +1314,8 @@ static int svc_i3c_master_send_direct_ccc_cmd(struct svc_i3c_master *master,
- 		svc_i3c_master_dequeue_xfer(master, xfer);
- 	mutex_unlock(&master->lock);
- 
--	if (cmd->read_len != xfer_len)
--		ccc->dests[0].payload.len = cmd->read_len;
-+	if (cmd->actual_len != xfer_len)
-+		ccc->dests[0].payload.len = cmd->actual_len;
- 
- 	ret = xfer->ret;
- 	svc_i3c_master_free_xfer(xfer);
-@@ -1365,7 +1365,7 @@ static int svc_i3c_master_priv_xfers(struct i3c_dev_desc *dev,
- 		cmd->in = xfers[i].rnw ? xfers[i].data.in : NULL;
- 		cmd->out = xfers[i].rnw ? NULL : xfers[i].data.out;
- 		cmd->len = xfers[i].len;
--		cmd->read_len = xfers[i].rnw ? xfers[i].len : 0;
-+		cmd->actual_len = xfers[i].rnw ? xfers[i].len : 0;
- 		cmd->continued = (i + 1) < nxfers;
- 	}
- 
-@@ -1405,7 +1405,7 @@ static int svc_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
- 		cmd->in = cmd->rnw ? xfers[i].buf : NULL;
- 		cmd->out = cmd->rnw ? NULL : xfers[i].buf;
- 		cmd->len = xfers[i].len;
--		cmd->read_len = cmd->rnw ? xfers[i].len : 0;
-+		cmd->actual_len = cmd->rnw ? xfers[i].len : 0;
- 		cmd->continued = (i + 1 < nxfers);
- 	}
- 
+Can this be ever negative?
+
+> +};
+> +
+> +struct workqueue_struct *workqueue;
+
+Is this related:
+     Still below items not be fixed (according to Jiri Slaby's comments)
+     - rxwork thread: need trigger from two position.
+     - common thread queue: need some suggestion
+?
+
+As I don't remember, could you elaborate again why you need your own 
+workqueue? You need to do it in the commit log anyway.
+
+...
+> +static ssize_t i3c_write(struct tty_struct *tty, const unsigned char *buf, size_t count)
+> +{
+> +	struct ttyi3c_port *sport = tty->driver_data;
+> +	unsigned long flags;
+> +	bool is_empty;
+> +	int ret;
+> +
+> +	spin_lock_irqsave(&sport->xlock, flags);
+> +	ret = kfifo_in(&sport->port.xmit_fifo, buf, count);
+> +	is_empty = kfifo_is_empty(&sport->port.xmit_fifo);
+> +	spin_unlock_irqrestore(&sport->xlock, flags);
+> +
+> +	if (!is_empty)
+> +		queue_work(workqueue, &sport->txwork);
+> +
+> +	return ret;
+> +}
+> +
+> +static int i3c_put_char(struct tty_struct *tty, unsigned char ch)
+> +{
+> +	struct ttyi3c_port *sport = tty->driver_data;
+> +	unsigned long flags;
+> +	int ret = 0;
+
+Unneeded initialization.
+
+> +
+> +	spin_lock_irqsave(&sport->xlock, flags);
+> +	ret = kfifo_put(&sport->port.xmit_fifo, ch);
+> +	spin_unlock_irqrestore(&sport->xlock, flags);
+> +
+> +	return ret;
+> +}
+...
+> +static void tty_i3c_rxwork(struct work_struct *work)
+> +{
+> +	struct ttyi3c_port *sport = container_of(work, struct ttyi3c_port, rxwork);
+> +	struct i3c_priv_xfer xfers;
+> +	int retry = I3C_TTY_RETRY;
+
+Likely, should be unsigned.
+
+> +	u16 status = BIT(0);
+> +	int ret;
+> +
+> +	memset(&xfers, 0, sizeof(xfers));
+> +	xfers.data.in = sport->rx_buff;
+> +	xfers.len = I3C_TTY_TRANS_SIZE;
+> +	xfers.rnw = 1;
+> +
+> +	do {
+> +		if (test_bit(I3C_TTY_RX_STOP, &sport->status))
+> +			break;
+> +
+> +		i3c_device_do_priv_xfers(sport->i3cdev, &xfers, 1);
+> +
+> +		if (xfers.actual_len) {
+> +			ret = tty_insert_flip_string(&sport->port, sport->rx_buff,
+> +						     xfers.actual_len);
+> +			if (ret < xfers.actual_len)
+> +				sport->buf_overrun++;
+> +
+> +			retry = I3C_TTY_RETRY;
+> +			continue;
+> +		}
+> +
+> +		status = BIT(0);
+> +		i3c_device_getstatus_format1(sport->i3cdev, &status);
+> +		/*
+> +		 * Target side needs some time to fill data into fifo. Target side may not
+> +		 * have hardware update status in real time. Software update status always
+> +		 * needs some delays.
+> +		 *
+> +		 * Generally, target side have circular buffer in memory, it will be moved
+> +		 * into FIFO by CPU or DMA. 'status' just show if circular buffer empty. But
+> +		 * there are gap, especially CPU have not response irq to fill FIFO in time.
+> +		 * So xfers.actual will be zero, wait for little time to avoid flood
+> +		 * transfer in i3c bus.
+> +		 */
+> +		usleep_range(I3C_TTY_YIELD_US, 10 * I3C_TTY_YIELD_US);
+> +		retry--;
+> +
+> +	} while (retry && (status & BIT(0)));
+> +
+> +	tty_flip_buffer_push(&sport->port);
+> +}
+> +
+> +static void tty_i3c_txwork(struct work_struct *work)
+> +{
+> +	struct ttyi3c_port *sport = container_of(work, struct ttyi3c_port, txwork);
+> +	struct i3c_priv_xfer xfers;
+> +	int retry = I3C_TTY_RETRY;
+
+Detto.
+
+> +	unsigned long flags;
+> +	int ret;
+> +
+> +	xfers.rnw = 0;
+> +	xfers.data.out = sport->tx_buff;
+> +
+> +	while (!kfifo_is_empty(&sport->port.xmit_fifo) && retry) {
+> +		xfers.len = kfifo_len(&sport->port.xmit_fifo);
+> +		xfers.len = min_t(u16, I3C_TTY_TRANS_SIZE, xfers.len);
+> +
+> +		xfers.len = kfifo_out_peek(&sport->port.xmit_fifo, sport->tx_buff, xfers.len);
+
+Can this simply be:
+xfers.len = kfifo_out_peek(&sport->port.xmit_fifo, sport->tx_buff, 
+I3C_TTY_TRANS_SIZE);
+?
+
+> +
+> +		ret = i3c_device_do_priv_xfers(sport->i3cdev, &xfers, 1);
+> +		if (ret) {
+> +			/*
+> +			 * Target side may not move data out of FIFO. delay can't resolve problem,
+> +			 * just reduce some possiblity. Target can't end I3C SDR mode write
+> +			 * transfer, discard data is reasonable when FIFO overrun.
+> +			 */
+> +			usleep_range(I3C_TTY_YIELD_US, 10 * I3C_TTY_YIELD_US);
+> +			retry--;
+> +		} else {
+> +			retry = I3C_TTY_RETRY;
+> +			ret = kfifo_out(&sport->port.xmit_fifo, sport->tx_buff, xfers.len);
+
+Just to make sure: xfers.len is nor overwritten by 
+i3c_device_do_priv_xfers(), right?
+
+> +		}
+> +	}
+> +
+> +	spin_lock_irqsave(&sport->xlock, flags);
+
+Why do you take the lock here, but not during the kfifo operations above?
+
+> +	if (kfifo_is_empty(&sport->port.xmit_fifo))
+> +		complete(&sport->txcomplete);
+> +	spin_unlock_irqrestore(&sport->xlock, flags);
+> +}
+
+> +static int __init i3c_tty_init(void)
+> +{
+> +	int ret;
+> +
+> +	i3c_tty_driver = tty_alloc_driver(I3C_TTY_MINORS,
+> +					  TTY_DRIVER_REAL_RAW | TTY_DRIVER_DYNAMIC_DEV);
+> +
+> +	if (IS_ERR(i3c_tty_driver))
+> +		return PTR_ERR(i3c_tty_driver);
+> +
+> +	i3c_tty_driver->driver_name = "ttyI3C";
+> +	i3c_tty_driver->name = "ttyI3C";
+> +	i3c_tty_driver->minor_start = 0,
+> +	i3c_tty_driver->type = TTY_DRIVER_TYPE_SERIAL,
+> +	i3c_tty_driver->subtype = SERIAL_TYPE_NORMAL,
+> +	i3c_tty_driver->init_termios = tty_std_termios;
+> +	i3c_tty_driver->init_termios.c_cflag = B9600 | CS8 | CREAD | HUPCL |
+> +					       CLOCAL;
+> +	i3c_tty_driver->init_termios.c_lflag = 0;
+> +
+> +	tty_set_operations(i3c_tty_driver, &i3c_tty_ops);
+> +
+> +	ret = tty_register_driver(i3c_tty_driver);
+> +	if (ret)
+> +		goto err_tty_register_driver;
+> +
+> +	ret = i3c_driver_register(&i3c_driver);
+> +	if (ret)
+> +		goto err_i3c_driver_register;
+> +
+> +	workqueue = alloc_workqueue("ttyI3C", 0, 0);
+
+Can it happen that you already queue something on this wq, while not 
+allocated yet? I mean: should this be done first in i3c_tty_init()?
+
+> +	if (!workqueue) {
+> +		ret = PTR_ERR(workqueue);
+> +		goto err_alloc_workqueue;
+> +	}
+> +
+> +	return 0;
+> +
+> +err_alloc_workqueue:
+> +	i3c_driver_unregister(&i3c_driver);
+> +
+> +err_i3c_driver_register:
+> +	tty_unregister_driver(i3c_tty_driver);
+> +
+> +err_tty_register_driver:
+> +	tty_driver_kref_put(i3c_tty_driver);
+> +
+> +	return ret;
+> +}
+> +
+> +static void __exit i3c_tty_exit(void)
+> +{
+> +	i3c_driver_unregister(&i3c_driver);
+> +	tty_unregister_driver(i3c_tty_driver);
+> +	tty_driver_kref_put(i3c_tty_driver);
+> +	idr_destroy(&i3c_tty_minors);
+
+What about the wq?
+
+> +}
+
+regards,
 -- 
-2.34.1
+js
+suse labs
 
 
 -- 
