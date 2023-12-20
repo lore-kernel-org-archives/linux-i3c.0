@@ -4,49 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28F5FC41535
-	for <linux-i3c@archiver.kernel.org>; Wed, 20 Dec 2023 01:52:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C7C43C41535
+	for <linux-i3c@archiver.kernel.org>; Wed, 20 Dec 2023 01:55:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
-	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=HyBJllQnOGHtau3fLyr6puK+68HZQsM71XciWuyg/BY=; b=sRObQZPt1QIwBExGn2hHJ+yMQB
-	0vsOyCd7yOZCKNIUJqFeFvjmT1+b08uifDRAWj/MgyRL+wlmecYRcJSOr0IRsLRUSd2MRHqKG+g2G
-	48eopUUVJDOvpIUKy2erIhcjkd3NXJjvHttGfV54fjQW/WotgvJFR6uqmpV3Nalms4PQDEe4dqwJq
-	8YZqkEBWfyYqTEhfK4IOjJ6nXM9uMAo8JftVOtcm4SUQ4bAcSDsjeakmENPiW43rlhzl6WDcNC5AN
-	5zGQ0psahprzTCIxUIK8ZXe6pb0QjHnJqdRYpuzCZ5wxfG1joq3KHYSBxvDvrZG95ODif7bfJo8Zh
-	XkzUYOIg==;
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HyBJllQnOGHtau3fLyr6puK+68HZQsM71XciWuyg/BY=; b=GQtJfy1xAI5hZK
+	zyBhTWsGPf9fNM7spB0B23nQo8i8MYG/ehWQoLrqKwTI/vcPjxv+1FCG4UEDlqjMCaZmuL63nKRWs
+	Qd/BpxBZl9JAl5aG8fvSQ2XtYvk9VPbwTxuLyjB2qCBi5q5pS8y98q3kkip4RI31ZRPKqT1PGN6tn
+	OFIKIs98kxt8p9ocg0prz7l5C9HDJUc4LK7LiAiHA2KoTCkg3MIzDhasVcZTrTEDOlJ9lT9kaL0y0
+	LkGTdG5bzp0FGrCCmerJQFL3Q0EfCJ8vrRENk5cLIN51G7H85THEvmNUw9M9yrKcgg289sxk6j5nL
+	VEV9dfaAk5rb2WaCwwNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rFlkd-00Fw8l-1G;
-	Wed, 20 Dec 2023 01:51:59 +0000
+	id 1rFloF-00FwPE-1j;
+	Wed, 20 Dec 2023 01:55:43 +0000
 Received: from ex01.ufhost.com ([61.152.239.75])
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rFlkZ-00Fw3l-1I
+	id 1rFloD-00FwOR-07
 	for linux-i3c@lists.infradead.org;
-	Wed, 20 Dec 2023 01:51:57 +0000
-Received: from EXMBX165.cuchost.com (unknown [175.102.18.54])
+	Wed, 20 Dec 2023 01:55:42 +0000
+Received: from EXMBX166.cuchost.com (unknown [175.102.18.54])
 	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
-	(Client CN "EXMBX165", Issuer "EXMBX165" (not verified))
-	by ex01.ufhost.com (Postfix) with ESMTP id F028C24E26B
-	for <linux-i3c@lists.infradead.org>; Wed, 20 Dec 2023 09:51:23 +0800 (CST)
-Received: from EXMBX066.cuchost.com (172.16.7.66) by EXMBX165.cuchost.com
- (172.16.6.75) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Wed, 20 Dec
- 2023 09:51:23 +0800
+	(Client CN "EXMBX166", Issuer "EXMBX166" (not verified))
+	by ex01.ufhost.com (Postfix) with ESMTP id 0A7C224DBFD;
+	Wed, 20 Dec 2023 09:55:29 +0800 (CST)
+Received: from EXMBX066.cuchost.com (172.16.7.66) by EXMBX166.cuchost.com
+ (172.16.6.76) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Wed, 20 Dec
+ 2023 09:55:28 +0800
 Received: from [192.168.151.176] (172.16.6.8) by EXMBX066.cuchost.com
  (172.16.6.66) with Microsoft SMTP Server (TLS) id 15.0.1497.42; Wed, 20 Dec
- 2023 09:51:23 +0800
-Message-ID: <8564662f-f33b-4656-969c-bc41f04fada6@starfivetech.com>
-Date: Wed, 20 Dec 2023 09:51:17 +0800
+ 2023 09:55:27 +0800
+Message-ID: <2cfc670f-56ad-4453-82f3-d72dcfd05840@starfivetech.com>
+Date: Wed, 20 Dec 2023 09:55:26 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [v5 resend 3/6] i3c: add actual_len in i3c_priv_xfer
-To: <linux-i3c@lists.infradead.org>
+Content-Language: en-US
+To: Frank Li <Frank.Li@nxp.com>, <miquel.raynal@bootlin.com>
+CC: <alexandre.belloni@bootlin.com>, <conor.culhane@silvaco.com>,
+	<imx@lists.linux.dev>, <joe@perches.com>, <linux-i3c@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>, <zbigniew.lukwinski@linux.intel.com>
 References: <20231201222532.2431484-1-Frank.Li@nxp.com>
  <20231201222532.2431484-4-Frank.Li@nxp.com>
-Content-Language: en-US
 From: Joshua Yeong <joshua.yeong@starfivetech.com>
 In-Reply-To: <20231201222532.2431484-4-Frank.Li@nxp.com>
 X-Originating-IP: [172.16.6.8]
@@ -54,8 +57,8 @@ X-ClientProxiedBy: EXCAS081.cuchost.com (172.16.6.41) To EXMBX066.cuchost.com
  (172.16.6.66)
 X-YovoleRuleAgent: yovoleflag
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231219_175155_717174_AA7BAFB1 
-X-CRM114-Status: GOOD (  15.30  )
+X-CRM114-CacheID: sfid-20231219_175541_234142_3EC66B38 
+X-CRM114-Status: GOOD (  15.26  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
