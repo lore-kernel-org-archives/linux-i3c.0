@@ -4,77 +4,121 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D690C47077
-	for <linux-i3c@archiver.kernel.org>; Thu, 11 Jan 2024 13:50:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33F24C47077
+	for <linux-i3c@archiver.kernel.org>; Thu, 11 Jan 2024 17:29:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PxZiTorNIzE3VJkBJz66vQ+L38uGaIjd0x/XLNU/8Y8=; b=H8Gp22FVouGAVY
-	97GL5M+h/ePnp6A4Snu+cie3NxFL75e6yR5FLbvAnkL4aqRbFSsrViDlJHp/ukp8haI0o4pZFBUkn
-	8q7rdHUIuUzGwiZy9gsc2sDYUzmN5IODI9y58k8GB0qsvW/oPNz9x/yfBdCOYh3e9yoixJfV3KGmO
-	EOF0pQwMm9uX7cCaErXkk6XObTr+d232uTLc2piqhacLLBo4TeVkvyEB4y/EEWyQRoaRv2cmV4FtI
-	k6LIfxVaI1TuWCczg/bRAzeS3scHOTt9NLoYmfVn2kMcsT2URFaiych9qqbUowycnWFcF2eIRLDSb
-	O0sL6UMPNE1nXykLbGKA==;
+	List-Owner; bh=W5GMGscDxTGMZ6Ha6R5y24TmwW75VXrBjiqqLkmuWKY=; b=WH3x0LOuMJvcQg
+	tnKhZUbt0T68newFNJYYF0K5IXsCdIMVEWKs63YqnHMSYfw/38uxvyC5TVJxv4efAGG2/gadmYOVK
+	Nl8YJPTq8KPpHRgxOo6/bXotw4fM9kNd/2+b196SuQx7RUvZCelheMrxvmhx3yOOdx+uQT8YAJDJg
+	roOu3NRTpqDzQ7XjczWvXVKClhKedFmXc5xPUSoXkb16u4jIyHhgdgTw8OXa734u7Ijx1XrEUvz6h
+	I2Wmc8c9MfG+ddwufgnVg0F4KaR53nyVv0hSBxRno+JC/AA+wT+Cf5saS1Cusa3ncTS5ev0lC1GUu
+	7WnLFrIXcvpuzO46n+8g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rNvRw-000DXu-2g;
-	Thu, 11 Jan 2024 13:50:24 +0000
-Received: from mgamail.intel.com ([198.175.65.13])
+	id 1rNyrw-000jIb-0Y;
+	Thu, 11 Jan 2024 17:29:28 +0000
+Received: from mail-am6eur05on20600.outbound.protection.outlook.com ([2a01:111:f403:2612::600] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rNvRu-000DXF-09
+	id 1rNyrt-000jF0-1v
 	for linux-i3c@lists.infradead.org;
-	Thu, 11 Jan 2024 13:50:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1704981022; x=1736517022;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=df3bhwFei4ovFhoesxHUexUNJ8++z5Jxwlx+x83xoIQ=;
-  b=KdlzgewxvqcwmkXaGHQVrBG7ln8Tfpn5vNRXIX5G0gAx+lAwZU3IEVl3
-   peCQnurYFbCC5nQKoFAY37tLqYMTcrlTCg0C354Ojwt63DMk7Pyr49bF2
-   UdNkO3DzGX6WKvEkiIlA4MBoZZmmH1xkCpYDqXlYrlUonuBZ5R57TdEol
-   cHgaS7pLA8oOWrcWQlW5Ak0pfKWkmT8iM8G4FaIuAIqr12a+QPDCxqygk
-   +VfHHq08RV5srKeRFWOQFoTsUNr7tgNlssa+9Yl2mQIcJitit3CmxJDyb
-   t64rVNHPRSbV7fhdpt089r9i735DYMKO12d9m9qeVYTtWWhuJ8dEhE5Jb
-   A==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10950"; a="5929645"
-X-IronPort-AV: E=Sophos;i="6.04,186,1695711600"; 
-   d="scan'208";a="5929645"
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
-  by orvoesa105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 11 Jan 2024 05:50:17 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6600,9927,10950"; a="926018931"
-X-IronPort-AV: E=Sophos;i="6.04,186,1695711600"; 
-   d="scan'208";a="926018931"
-Received: from lkp-server02.sh.intel.com (HELO b07ab15da5fe) ([10.239.97.151])
-  by fmsmga001.fm.intel.com with ESMTP; 11 Jan 2024 05:50:11 -0800
-Received: from kbuild by b07ab15da5fe with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1rNvRh-0008Jd-2N;
-	Thu, 11 Jan 2024 13:50:09 +0000
-Date: Thu, 11 Jan 2024 21:49:22 +0800
-From: kernel test robot <lkp@intel.com>
-To: Frank Li <Frank.Li@nxp.com>, robh@kernel.org
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	alexandre.belloni@bootlin.com, conor.culhane@silvaco.com,
-	gregkh@linuxfoundation.org, imx@lists.linux.dev,
-	jirislaby@kernel.org, joe@perches.com,
+	Thu, 11 Jan 2024 17:29:26 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=OjMLUqdvO3wcVb0Z7DW9QXTcZX+CCMILTJFa3Z2j5iupFETgTT30GaeD6ZWRzCsAF9TsxuhfeAbVwCkk8LL+/zInS3HarEz6UMHh5a/9YXZQNDSlydksUS/iPpO0cMumj4Rmsd42S7RpAro+ydlfSkQui5F3rWMeWaaYDCeNTWDJyQCEXyCM1Y+x/xXVd0D0njIWG0W8eD+67/PiUxYHkn3u1DevnavWUT5sdj5QDQM0i8/P/m8CHpIa/c9uab9SfsGD8g9XUAAG4bnR4E85CsCQcjoebDfzi3gZhoE02rWbroDcORyDcHNSAqPwPwK0LdsZmPD/ySAjXGtZWg8tog==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=EyDqb6dIjKs/bSyVZNWkRJ6cyxo1vc7oLWtagoNkFz8=;
+ b=IHAXd384GBTZUMxI+8sBrwA7T2hOik/8IYrUzmAoYaWRR52ng16Ja+wWS9itzOCkxZDm+FpR0tIHun37653ib0zXN5rVBg3tAlz2SYuhg91C0O7lWsMYWl9+z/e8cqI/oS6EdkSWrkLIHnaAPG8fW40o+ACHopPwcAb61aJFFtAUUT4jgDf1dUsnTMliRw24WYqXoyZpH6c0rpQmQf8RP25noaX2I3SwNFwQmqhvpFwqCV0phaL7L8k7+T9ImWyvEjgnFIgSf3qR3Q/ZvBqaXYBWwzAPZeMIY6yCPNFOLj/cgvfjpSSa2TzjtZEYx3ZCRoLditQ3WnGTTDhryH7ZDQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=EyDqb6dIjKs/bSyVZNWkRJ6cyxo1vc7oLWtagoNkFz8=;
+ b=RSbD7mgeSRuJZtIVUvELkZif+py7mW5d8HVZrsq4E4OCaOMYa8yU1iRdgR5lTcqO+hEjLkuuDgFD2RTbF45VvhU1FdJHXGrSYTbrkeEbQfAJyXsa3q5KeXWbbe8/tjpQFEOqoj8qF1Yj9o/Q9RPRRmFg/zJlU6XLnE1BTKFohaE=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AS8PR04MB7511.eurprd04.prod.outlook.com (2603:10a6:20b:23f::5)
+ by VI1PR04MB7200.eurprd04.prod.outlook.com (2603:10a6:800:12d::23) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7181.19; Thu, 11 Jan
+ 2024 17:29:08 +0000
+Received: from AS8PR04MB7511.eurprd04.prod.outlook.com
+ ([fe80::8ee3:bac5:a2da:d469]) by AS8PR04MB7511.eurprd04.prod.outlook.com
+ ([fe80::8ee3:bac5:a2da:d469%4]) with mapi id 15.20.7181.019; Thu, 11 Jan 2024
+ 17:29:08 +0000
+Date: Thu, 11 Jan 2024 12:29:00 -0500
+From: Frank Li <Frank.li@nxp.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: conor.culhane@silvaco.com, imx@lists.linux.dev, joe@perches.com,
 	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-serial@vger.kernel.org, miquel.raynal@bootlin.com,
-	zbigniew.lukwinski@linux.intel.com, devicetree@vger.kernel.org,
-	krzysztof.kozlowski+dt@linaro.org, krzysztof.kozlowski@linaro.org
-Subject: Re: [PATCH v2 4/7] i3c: target: add svc target controller support
-Message-ID: <202401112149.TbWJpRfM-lkp@intel.com>
-References: <20240110175221.2335480-5-Frank.Li@nxp.com>
-MIME-Version: 1.0
+	miquel.raynal@bootlin.com, zbigniew.lukwinski@linux.intel.com
+Subject: Re: [PATCH 1/1] i3c: master: svc: return error when read length
+ bigger than 255
+Message-ID: <ZaAlXJQuZbej5o+r@lizhi-Precision-Tower-5810>
+References: <20240110222503.2381599-1-Frank.Li@nxp.com>
+ <20240111001523f69f6a29@mail.local>
 Content-Disposition: inline
-In-Reply-To: <20240110175221.2335480-5-Frank.Li@nxp.com>
+In-Reply-To: <20240111001523f69f6a29@mail.local>
+X-ClientProxiedBy: SJ0PR03CA0283.namprd03.prod.outlook.com
+ (2603:10b6:a03:39e::18) To AS8PR04MB7511.eurprd04.prod.outlook.com
+ (2603:10a6:20b:23f::5)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AS8PR04MB7511:EE_|VI1PR04MB7200:EE_
+X-MS-Office365-Filtering-Correlation-Id: 5cbb2574-713d-4148-ae17-08dc12cad157
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 4SRjBrsKYZk0jJWZHAgAaedpwDhGGY/79fO2rglejM2zjAxl8zXB5TB2R2bzuXFnmys4wi3YHd9qXnnP3RtEvkqufjIFbrexclgsVDakfbcFFZPePJMV+ITFabPTWeS6itLl1Mu1UmxNEQKVJaW38lM4AXY8YqOyq4qxezwx29peQ0rgFAulOaUZo3EJy/k9EUVj6ehCTVrGDVT/c2PQwuBQ1l4rg7HCp7KBJD5uu3k+Tsh88fF42OsbMKOeeST+0q6u6klSIUDBRc/zyv/jTkxDUkxJJa0IsQzf1WA1uzfwwSUYB1XHKqVhe4j2Nmy94V8JQggbV9WNl+efEuTmqA8yF2QxxFXCYPIKvBYmj4bdsAIO/W1yRjGZrkWgUdku0eH+GEFQjbAlCPpjmFN9HzxV1TV+qFI/CqYBX1qBcXWteCDxPZZbuKNczzSC4akFt5mJ75dtKbWGpMApwC4NjSwVp3pd3bswkUviBa5C05oLVw5SwhB5O9960eiQWj6fxeicXgcInKN8MVNA+DRSRjN/4JsgoAkncGzB57TWE400/0L8qKS0se6utbKvPY86kklFLfKomHJxnD5ZqpbpPeiK0yoOoFZAGlygFFnYLbb65YsUEGgdEK7pqOAX61aizZYPS27KmJ0m617n2VshCQ==
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS8PR04MB7511.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(7916004)(136003)(366004)(396003)(39860400002)(346002)(376002)(230922051799003)(64100799003)(451199024)(1800799012)(186009)(966005)(38100700002)(6666004)(478600001)(83380400001)(6512007)(9686003)(26005)(6506007)(52116002)(8936002)(8676002)(316002)(4326008)(2906002)(5660300002)(6486002)(6916009)(38350700005)(66946007)(66556008)(66476007)(41300700001)(86362001)(33716001)(135533001)(67856001);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?mutMHT5mGQi0TBVNxdCEwMJRATH7WJttnNni2O6/LSfn0VNQ2BOssY+S4ieC?=
+ =?us-ascii?Q?gK2Ja2nYiEwHvo0z/xKkT5kpNeGxM5n/tikZEx62NYRvKohyRmadzuJOMbdN?=
+ =?us-ascii?Q?Mrg8nbyX+pDxDfWOV7vCSnhLTtu2I68Nh8NMsXCFte0L/QG/4ZUdY2eLj2ss?=
+ =?us-ascii?Q?8m86/WpTexbOrRN+5dgjoArfAIG/CycwQG73nymUbzUWFDFHKgm0djaOkRJb?=
+ =?us-ascii?Q?A41o6v+oAXPtWPeeZZzsT9aaWN/vhziV3zbmpbBcyym9Fj1HCoS2KIId03bw?=
+ =?us-ascii?Q?WWbFJUTbhP8wjMiWLyj5/sBwWWAmyFQK6cizv9gff+VGstg7aB8asu18aHzm?=
+ =?us-ascii?Q?Azk7+J1jsrCA2o4M0FaFVRZr98e0+j+FGCuUKvWb3qdE7rnhso41dYyO2MIi?=
+ =?us-ascii?Q?2AdH2dQ811B0i15Zk7rlqcjDv7jHi5U9ZtDX0+IBeN/E5IQIOaqV3mjEmbeo?=
+ =?us-ascii?Q?dUtxFHEkeB52IDStAZ4m+dk+Hzy/+HOWdiIPe48CFgCCBLPnkss/8FqKoMC+?=
+ =?us-ascii?Q?v9Hqnm8+HEDzQC9ew6P25QG5DJwyl/bH0ffQSt6NjQU33zyHTJJMGelcfthx?=
+ =?us-ascii?Q?1PHFOpEBGwDGL1gptCkut6vwCSCvSGyjmYmCKdp9H3smLiGtGQEf8KJ+LH+P?=
+ =?us-ascii?Q?9F+MLn8EWSb4267U02y3e/ZvfMafpoyHmS/OynOysEHf340AFfwvkQ3RxoPn?=
+ =?us-ascii?Q?Wr6o7CfeL7XRPC+D/EhHKo6g7D2pW+x8YPks/HR2rjbdDgENZL0CssCA5hSB?=
+ =?us-ascii?Q?10Lfrik5DnsAOvDniQPJntQbr8q2eJxU11EXAo2OxWHVoCroz3RNhm5x36Xy?=
+ =?us-ascii?Q?kqNVhEyMqwuGna+jbfBnn8Wyb/esdTBx+kgtBrwEreOOZARoiYXzKQDNl5W2?=
+ =?us-ascii?Q?VBqrFsHK0R5G/5Y6Il+K39oNPvIVgUnwfit0nDESms+gT4noQU84ySAJcqsB?=
+ =?us-ascii?Q?aTjyMZ5Pw+TevkwsAa+3g8WeLX8Jq/VndPnxWDC5cjdJDDHY6lB9WAODtkL1?=
+ =?us-ascii?Q?QGFax8gT7YfaHhQeCOmKJ4nXmNm+yS4R03UJ4S2TjtG9cO1DtQdCw7v08x9T?=
+ =?us-ascii?Q?C6/Fl+68qcJFNSEr/f4roF7yPMJvQGAu6SuiCG1Jp8wXvZDPoGCYaiz7PRQz?=
+ =?us-ascii?Q?RbKHDHzgbC0mpWSNAqmyFZfcqQDNR4hmOm+KBq1/6E0DAdCTa8eJ5P3OX/NH?=
+ =?us-ascii?Q?nAMuY77zJkd1dtx3lPdHwqaOvPbjbzipgw6plg79m0N7NUoBLW8We+ojf6PS?=
+ =?us-ascii?Q?WofUVLSo/NT9OCF5ylvqIozUWdUMDsKeDWcYf1PJ+Sj0DqPaYCo31jIrdH9/?=
+ =?us-ascii?Q?pETAvQYML0MC4mjUIZkczdYlhkumSSwueK8cKFq1iglm1ulR0hCXBot+DoMK?=
+ =?us-ascii?Q?1t6HEMSg6J0f0tVA6YKRZcxwy5JVh0b6Xkb8BbY1MlH7Ny01P5of/uMeWMHS?=
+ =?us-ascii?Q?5dDzvUH/Rcs3D2oTaJUdPE4ySZSbE90lW9ON/MV8qNoDeZiq79j9zRpWBtm5?=
+ =?us-ascii?Q?VLOabJOTTxhh6A6x2NJZyvthF6XquAmVOKqxxC7GjF9jlQ2R7WcdAGVLj6Em?=
+ =?us-ascii?Q?IELdPGe+ilnd2n/d+A5whzP3ln9MVzmMgQsZ/8Wp?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5cbb2574-713d-4148-ae17-08dc12cad157
+X-MS-Exchange-CrossTenant-AuthSource: AS8PR04MB7511.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Jan 2024 17:29:08.6330
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: PgVf2bbFq8p6CjEnJX7c5vC4dtD1KdqgzjdZjD06cYrS6ItHIXI1KWzN5caRS2SXeB1du0S1G5hwTCY5kUouXg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB7200
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240111_055022_154554_65E988F4 
-X-CRM114-Status: GOOD (  16.92  )
+X-CRM114-CacheID: sfid-20240111_092925_632651_640E4C23 
+X-CRM114-Status: GOOD (  19.00  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,149 +135,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Frank,
+On Thu, Jan 11, 2024 at 01:15:23AM +0100, Alexandre Belloni wrote:
+> On 10/01/2024 17:25:03-0500, Frank Li wrote:
+> > RDTERM in MCTRL is 8 bits. Add a length check to prevent silent data errors
+> > when the read length exceeds 255 bytes during each i3c_priv_xfer operation.
+> > 
+> > Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> > ---
+> >  drivers/i3c/master/svc-i3c-master.c | 5 +++++
+> >  1 file changed, 5 insertions(+)
+> > 
+> > diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
+> > index bd10bb698da0f..181b56953fb28 100644
+> > --- a/drivers/i3c/master/svc-i3c-master.c
+> > +++ b/drivers/i3c/master/svc-i3c-master.c
+> > @@ -1375,6 +1375,11 @@ static int svc_i3c_master_priv_xfers(struct i3c_dev_desc *dev,
+> >  		cmd->len = xfers[i].len;
+> >  		cmd->actual_len = xfers[i].rnw ? xfers[i].len : 0;
+> >  		cmd->continued = (i + 1) < nxfers;
+> > +
+> > +		if (cmd->rnw && cmd->len > 255) {
+> > +			dev_err(master->dev, "only support read less than 255 each xfer\n");
+> 
+> What would be the end user action upon seeing this message? Is it actually
+> useful?
 
-kernel test robot noticed the following build warnings:
+Hold on, I found an method. It may support > 255 transfer.
 
-[auto build test WARNING on tty/tty-testing]
-[also build test WARNING on tty/tty-next tty/tty-linus robh/for-next linus/master v6.7 next-20240111]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+Frank Li
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Frank-Li/i3c-add-target-mode-support/20240111-015711
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/tty.git tty-testing
-patch link:    https://lore.kernel.org/r/20240110175221.2335480-5-Frank.Li%40nxp.com
-patch subject: [PATCH v2 4/7] i3c: target: add svc target controller support
-config: x86_64-allmodconfig (https://download.01.org/0day-ci/archive/20240111/202401112149.TbWJpRfM-lkp@intel.com/config)
-compiler: ClangBuiltLinux clang version 17.0.6 (https://github.com/llvm/llvm-project 6009708b4367171ccdbf4b5905cb6a803753fe18)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20240111/202401112149.TbWJpRfM-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202401112149.TbWJpRfM-lkp@intel.com/
-
-All warnings (new ones prefixed by >>):
-
->> drivers/i3c/target/svc-i3c-target.c:211:40: warning: no previous prototype for function 'svc_i3c_get_features' [-Wmissing-prototypes]
-     211 | const struct i3c_target_ctrl_features *svc_i3c_get_features(struct i3c_target_ctrl *ctrl)
-         |                                        ^
-   drivers/i3c/target/svc-i3c-target.c:211:7: note: declare 'static' if the function is not intended to be used outside of this translation unit
-     211 | const struct i3c_target_ctrl_features *svc_i3c_get_features(struct i3c_target_ctrl *ctrl)
-         |       ^
-         | static 
->> drivers/i3c/target/svc-i3c-target.c:268:63: warning: omitting the parameter name in a function definition is a C2x extension [-Wc2x-extensions]
-     268 | static int svc_i3c_target_queue(struct i3c_request *req, gfp_t)
-         |                                                               ^
->> drivers/i3c/target/svc-i3c-target.c:666:5: warning: no previous prototype for function 'svc_i3c_fifo_status' [-Wmissing-prototypes]
-     666 | int svc_i3c_fifo_status(struct i3c_target_ctrl *ctrl, bool tx)
-         |     ^
-   drivers/i3c/target/svc-i3c-target.c:666:1: note: declare 'static' if the function is not intended to be used outside of this translation unit
-     666 | int svc_i3c_fifo_status(struct i3c_target_ctrl *ctrl, bool tx)
-         | ^
-         | static 
-   3 warnings generated.
-
-
-vim +/svc_i3c_get_features +211 drivers/i3c/target/svc-i3c-target.c
-
-   210	
- > 211	const struct i3c_target_ctrl_features *svc_i3c_get_features(struct i3c_target_ctrl *ctrl)
-   212	{
-   213		struct svc_i3c_target *svc;
-   214	
-   215		svc = dev_get_drvdata(&ctrl->dev);
-   216	
-   217		if (!svc)
-   218			return NULL;
-   219	
-   220		return &svc->features;
-   221	}
-   222	
-   223	static void svc_i3c_queue_complete(struct svc_i3c_target *svc, struct i3c_request *complete)
-   224	{
-   225		unsigned long flags;
-   226	
-   227		spin_lock_irqsave(&svc->cq_lock, flags);
-   228		list_add_tail(&complete->list, &svc->cq);
-   229		spin_unlock_irqrestore(&svc->cq_lock, flags);
-   230		queue_work(svc->workqueue, &svc->work);
-   231	}
-   232	
-   233	static void svc_i3c_fill_txfifo(struct svc_i3c_target *svc)
-   234	{
-   235		struct i3c_request *req, *complete = NULL;
-   236		unsigned long flags;
-   237		int val;
-   238	
-   239		spin_lock_irqsave(&svc->txq_lock, flags);
-   240		while ((!!(req = list_first_entry_or_null(&svc->txq, struct i3c_request, list))) &&
-   241		       !((readl_relaxed(svc->regs + I3C_SDATACTRL) & I3C_SDATACTRL_TXFULL_MASK))) {
-   242			while (!(readl_relaxed(svc->regs + I3C_SDATACTRL)
-   243						& I3C_SDATACTRL_TXFULL_MASK)) {
-   244				val = *(u8 *)(req->buf + req->actual);
-   245	
-   246				if (req->actual + 1 == req->length)
-   247					writel_relaxed(val, svc->regs + I3C_SWDATAE);
-   248				else
-   249					writel_relaxed(val, svc->regs + I3C_SWDATAB);
-   250	
-   251				req->actual++;
-   252	
-   253				if (req->actual == req->length) {
-   254					list_del(&req->list);
-   255					complete = req;
-   256					spin_unlock_irqrestore(&svc->txq_lock, flags);
-   257	
-   258					svc_i3c_queue_complete(svc, complete);
-   259	
-   260					spin_lock_irqsave(&svc->txq_lock, flags);
-   261					break;
-   262				}
-   263			}
-   264		}
-   265		spin_unlock_irqrestore(&svc->txq_lock, flags);
-   266	}
-   267	
- > 268	static int svc_i3c_target_queue(struct i3c_request *req, gfp_t)
-   269	{
-   270		struct svc_i3c_target *svc;
-   271		struct list_head *q;
-   272		unsigned long flags;
-   273		spinlock_t *lk;
-   274	
-   275		svc = dev_get_drvdata(&req->ctrl->dev);
-   276		if (!svc)
-   277			return -EINVAL;
-   278	
-   279		if (req->tx) {
-   280			q = &svc->txq;
-   281			lk = &svc->txq_lock;
-   282		} else {
-   283			q = &svc->rxq;
-   284			lk = &svc->rxq_lock;
-   285		}
-   286	
-   287		spin_lock_irqsave(lk, flags);
-   288		list_add_tail(&req->list, q);
-   289		spin_unlock_irqrestore(lk, flags);
-   290	
-   291		if (req->tx)
-   292			svc_i3c_fill_txfifo(svc);
-   293	
-   294		if (req->tx)
-   295			writel_relaxed(I3C_SINT_TXSEND, svc->regs + I3C_SINTSET);
-   296		else
-   297			writel_relaxed(I3C_SINT_RXPEND, svc->regs + I3C_SINTSET);
-   298	
-   299		return 0;
-   300	}
-   301	
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+> 
+> > +			return -EINVAL;
+> > +		}
+> >  	}
+> >  
+> >  	mutex_lock(&master->lock);
+> > -- 
+> > 2.34.1
+> > 
+> 
+> -- 
+> Alexandre Belloni, co-owner and COO, Bootlin
+> Embedded Linux and Kernel engineering
+> https://bootlin.com
 
 -- 
 linux-i3c mailing list
