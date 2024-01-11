@@ -4,121 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33F24C47077
-	for <linux-i3c@archiver.kernel.org>; Thu, 11 Jan 2024 17:29:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C79ECC4707B
+	for <linux-i3c@archiver.kernel.org>; Thu, 11 Jan 2024 23:46:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W5GMGscDxTGMZ6Ha6R5y24TmwW75VXrBjiqqLkmuWKY=; b=WH3x0LOuMJvcQg
-	tnKhZUbt0T68newFNJYYF0K5IXsCdIMVEWKs63YqnHMSYfw/38uxvyC5TVJxv4efAGG2/gadmYOVK
-	Nl8YJPTq8KPpHRgxOo6/bXotw4fM9kNd/2+b196SuQx7RUvZCelheMrxvmhx3yOOdx+uQT8YAJDJg
-	roOu3NRTpqDzQ7XjczWvXVKClhKedFmXc5xPUSoXkb16u4jIyHhgdgTw8OXa734u7Ijx1XrEUvz6h
-	I2Wmc8c9MfG+ddwufgnVg0F4KaR53nyVv0hSBxRno+JC/AA+wT+Cf5saS1Cusa3ncTS5ev0lC1GUu
-	7WnLFrIXcvpuzO46n+8g==;
+	List-Owner; bh=bejwHDwF/CwlkM9iZfbL7oJr1xyA33nsQ0Xm92kInrs=; b=jyVxekZ3LVRWhv
+	Fkz2r9Em0Iu09JC0OJJnOtXirLlHuwnaQJn3w0tHAEe5+IrJftQRvWO3OgXdwyQPExxsx4pgctNG+
+	DKQmBXeoEYqy24OSOEift+sMW1nY4qaKKHUZeHDiNXWedSOHk0oUDUEle9zIi/h8nMucs9W1HSdYn
+	7c24j+O5GrqxDkufOCpuuvjerSR/2ZtLWN1SplDhVUvIrbZAMlYxj/xR9uUpOre88EGA2yzsQLNrZ
+	kjkAM7IeVn803x3tKK+stjSId02mJrLiK9o+UfsRW5VhGtsgszy3ndUQkHfXYO5OzViKodf+B6Iu0
+	oU5UmRNKXeGUZJ3nii6A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rNyrw-000jIb-0Y;
-	Thu, 11 Jan 2024 17:29:28 +0000
-Received: from mail-am6eur05on20600.outbound.protection.outlook.com ([2a01:111:f403:2612::600] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1rO4l7-001TfE-3C;
+	Thu, 11 Jan 2024 23:46:49 +0000
+Received: from mgamail.intel.com ([192.198.163.7])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rNyrt-000jF0-1v
+	id 1rO4l5-001Tep-1G
 	for linux-i3c@lists.infradead.org;
-	Thu, 11 Jan 2024 17:29:26 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=OjMLUqdvO3wcVb0Z7DW9QXTcZX+CCMILTJFa3Z2j5iupFETgTT30GaeD6ZWRzCsAF9TsxuhfeAbVwCkk8LL+/zInS3HarEz6UMHh5a/9YXZQNDSlydksUS/iPpO0cMumj4Rmsd42S7RpAro+ydlfSkQui5F3rWMeWaaYDCeNTWDJyQCEXyCM1Y+x/xXVd0D0njIWG0W8eD+67/PiUxYHkn3u1DevnavWUT5sdj5QDQM0i8/P/m8CHpIa/c9uab9SfsGD8g9XUAAG4bnR4E85CsCQcjoebDfzi3gZhoE02rWbroDcORyDcHNSAqPwPwK0LdsZmPD/ySAjXGtZWg8tog==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=EyDqb6dIjKs/bSyVZNWkRJ6cyxo1vc7oLWtagoNkFz8=;
- b=IHAXd384GBTZUMxI+8sBrwA7T2hOik/8IYrUzmAoYaWRR52ng16Ja+wWS9itzOCkxZDm+FpR0tIHun37653ib0zXN5rVBg3tAlz2SYuhg91C0O7lWsMYWl9+z/e8cqI/oS6EdkSWrkLIHnaAPG8fW40o+ACHopPwcAb61aJFFtAUUT4jgDf1dUsnTMliRw24WYqXoyZpH6c0rpQmQf8RP25noaX2I3SwNFwQmqhvpFwqCV0phaL7L8k7+T9ImWyvEjgnFIgSf3qR3Q/ZvBqaXYBWwzAPZeMIY6yCPNFOLj/cgvfjpSSa2TzjtZEYx3ZCRoLditQ3WnGTTDhryH7ZDQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EyDqb6dIjKs/bSyVZNWkRJ6cyxo1vc7oLWtagoNkFz8=;
- b=RSbD7mgeSRuJZtIVUvELkZif+py7mW5d8HVZrsq4E4OCaOMYa8yU1iRdgR5lTcqO+hEjLkuuDgFD2RTbF45VvhU1FdJHXGrSYTbrkeEbQfAJyXsa3q5KeXWbbe8/tjpQFEOqoj8qF1Yj9o/Q9RPRRmFg/zJlU6XLnE1BTKFohaE=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AS8PR04MB7511.eurprd04.prod.outlook.com (2603:10a6:20b:23f::5)
- by VI1PR04MB7200.eurprd04.prod.outlook.com (2603:10a6:800:12d::23) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7181.19; Thu, 11 Jan
- 2024 17:29:08 +0000
-Received: from AS8PR04MB7511.eurprd04.prod.outlook.com
- ([fe80::8ee3:bac5:a2da:d469]) by AS8PR04MB7511.eurprd04.prod.outlook.com
- ([fe80::8ee3:bac5:a2da:d469%4]) with mapi id 15.20.7181.019; Thu, 11 Jan 2024
- 17:29:08 +0000
-Date: Thu, 11 Jan 2024 12:29:00 -0500
-From: Frank Li <Frank.li@nxp.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: conor.culhane@silvaco.com, imx@lists.linux.dev, joe@perches.com,
+	Thu, 11 Jan 2024 23:46:48 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1705016807; x=1736552807;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=tDQ+Y25+9tjVLydR7nv5+2kZe3IxdEqqQlgXmpvEyYk=;
+  b=YfCh/zIr4BSuq/DREp1bN/5li/yueQesotdrfvccTIxhYU/yEvfTTqt+
+   YIFDaeOSu1EPflBeQxUaVjimniwHenTQM9RoEHa04Tk+e/XhcW7lnIWOY
+   6HY4EpRwBH3SjamSgFzoJDIUPrpf8wkXBiCuzKs39kv6RuvvA1/0DL9Qi
+   O0PP9ATiqlxJhV+u/AvjoVpSLWSrlbxeG7Vf70iCJ/8KHva2pMxqmjR63
+   M9tu/lDcY0507EV1lqiGOY3/gafm5Vda5wW4502Uaqew2mPpxY9UoA5TG
+   Z0oU5qbCVqUqXuFzMtPEoplKhpjWGQ8pzegfAiWhTBnlYtr69u9TJpLXr
+   Q==;
+X-IronPort-AV: E=McAfee;i="6600,9927,10950"; a="20500693"
+X-IronPort-AV: E=Sophos;i="6.04,187,1695711600"; 
+   d="scan'208";a="20500693"
+Received: from fmviesa002.fm.intel.com ([10.60.135.142])
+  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 11 Jan 2024 15:46:13 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.04,187,1695711600"; 
+   d="scan'208";a="17208593"
+Received: from lkp-server02.sh.intel.com (HELO b07ab15da5fe) ([10.239.97.151])
+  by fmviesa002.fm.intel.com with ESMTP; 11 Jan 2024 15:46:09 -0800
+Received: from kbuild by b07ab15da5fe with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1rO4kR-0008rG-0N;
+	Thu, 11 Jan 2024 23:46:07 +0000
+Date: Fri, 12 Jan 2024 07:45:07 +0800
+From: kernel test robot <lkp@intel.com>
+To: Frank Li <Frank.Li@nxp.com>, robh@kernel.org
+Cc: oe-kbuild-all@lists.linux.dev, alexandre.belloni@bootlin.com,
+	conor.culhane@silvaco.com, gregkh@linuxfoundation.org,
+	imx@lists.linux.dev, jirislaby@kernel.org, joe@perches.com,
 	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	miquel.raynal@bootlin.com, zbigniew.lukwinski@linux.intel.com
-Subject: Re: [PATCH 1/1] i3c: master: svc: return error when read length
- bigger than 255
-Message-ID: <ZaAlXJQuZbej5o+r@lizhi-Precision-Tower-5810>
-References: <20240110222503.2381599-1-Frank.Li@nxp.com>
- <20240111001523f69f6a29@mail.local>
-Content-Disposition: inline
-In-Reply-To: <20240111001523f69f6a29@mail.local>
-X-ClientProxiedBy: SJ0PR03CA0283.namprd03.prod.outlook.com
- (2603:10b6:a03:39e::18) To AS8PR04MB7511.eurprd04.prod.outlook.com
- (2603:10a6:20b:23f::5)
+	linux-serial@vger.kernel.org, miquel.raynal@bootlin.com,
+	zbigniew.lukwinski@linux.intel.com, devicetree@vger.kernel.org,
+	krzysztof.kozlowski+dt@linaro.org, krzysztof.kozlowski@linaro.org
+Subject: Re: [PATCH v2 3/7] Documentation: i3c: Add I3C target mode
+ controller and function
+Message-ID: <202401120713.p7a3HyFl-lkp@intel.com>
+References: <20240110175221.2335480-4-Frank.Li@nxp.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AS8PR04MB7511:EE_|VI1PR04MB7200:EE_
-X-MS-Office365-Filtering-Correlation-Id: 5cbb2574-713d-4148-ae17-08dc12cad157
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 4SRjBrsKYZk0jJWZHAgAaedpwDhGGY/79fO2rglejM2zjAxl8zXB5TB2R2bzuXFnmys4wi3YHd9qXnnP3RtEvkqufjIFbrexclgsVDakfbcFFZPePJMV+ITFabPTWeS6itLl1Mu1UmxNEQKVJaW38lM4AXY8YqOyq4qxezwx29peQ0rgFAulOaUZo3EJy/k9EUVj6ehCTVrGDVT/c2PQwuBQ1l4rg7HCp7KBJD5uu3k+Tsh88fF42OsbMKOeeST+0q6u6klSIUDBRc/zyv/jTkxDUkxJJa0IsQzf1WA1uzfwwSUYB1XHKqVhe4j2Nmy94V8JQggbV9WNl+efEuTmqA8yF2QxxFXCYPIKvBYmj4bdsAIO/W1yRjGZrkWgUdku0eH+GEFQjbAlCPpjmFN9HzxV1TV+qFI/CqYBX1qBcXWteCDxPZZbuKNczzSC4akFt5mJ75dtKbWGpMApwC4NjSwVp3pd3bswkUviBa5C05oLVw5SwhB5O9960eiQWj6fxeicXgcInKN8MVNA+DRSRjN/4JsgoAkncGzB57TWE400/0L8qKS0se6utbKvPY86kklFLfKomHJxnD5ZqpbpPeiK0yoOoFZAGlygFFnYLbb65YsUEGgdEK7pqOAX61aizZYPS27KmJ0m617n2VshCQ==
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS8PR04MB7511.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(7916004)(136003)(366004)(396003)(39860400002)(346002)(376002)(230922051799003)(64100799003)(451199024)(1800799012)(186009)(966005)(38100700002)(6666004)(478600001)(83380400001)(6512007)(9686003)(26005)(6506007)(52116002)(8936002)(8676002)(316002)(4326008)(2906002)(5660300002)(6486002)(6916009)(38350700005)(66946007)(66556008)(66476007)(41300700001)(86362001)(33716001)(135533001)(67856001);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?mutMHT5mGQi0TBVNxdCEwMJRATH7WJttnNni2O6/LSfn0VNQ2BOssY+S4ieC?=
- =?us-ascii?Q?gK2Ja2nYiEwHvo0z/xKkT5kpNeGxM5n/tikZEx62NYRvKohyRmadzuJOMbdN?=
- =?us-ascii?Q?Mrg8nbyX+pDxDfWOV7vCSnhLTtu2I68Nh8NMsXCFte0L/QG/4ZUdY2eLj2ss?=
- =?us-ascii?Q?8m86/WpTexbOrRN+5dgjoArfAIG/CycwQG73nymUbzUWFDFHKgm0djaOkRJb?=
- =?us-ascii?Q?A41o6v+oAXPtWPeeZZzsT9aaWN/vhziV3zbmpbBcyym9Fj1HCoS2KIId03bw?=
- =?us-ascii?Q?WWbFJUTbhP8wjMiWLyj5/sBwWWAmyFQK6cizv9gff+VGstg7aB8asu18aHzm?=
- =?us-ascii?Q?Azk7+J1jsrCA2o4M0FaFVRZr98e0+j+FGCuUKvWb3qdE7rnhso41dYyO2MIi?=
- =?us-ascii?Q?2AdH2dQ811B0i15Zk7rlqcjDv7jHi5U9ZtDX0+IBeN/E5IQIOaqV3mjEmbeo?=
- =?us-ascii?Q?dUtxFHEkeB52IDStAZ4m+dk+Hzy/+HOWdiIPe48CFgCCBLPnkss/8FqKoMC+?=
- =?us-ascii?Q?v9Hqnm8+HEDzQC9ew6P25QG5DJwyl/bH0ffQSt6NjQU33zyHTJJMGelcfthx?=
- =?us-ascii?Q?1PHFOpEBGwDGL1gptCkut6vwCSCvSGyjmYmCKdp9H3smLiGtGQEf8KJ+LH+P?=
- =?us-ascii?Q?9F+MLn8EWSb4267U02y3e/ZvfMafpoyHmS/OynOysEHf340AFfwvkQ3RxoPn?=
- =?us-ascii?Q?Wr6o7CfeL7XRPC+D/EhHKo6g7D2pW+x8YPks/HR2rjbdDgENZL0CssCA5hSB?=
- =?us-ascii?Q?10Lfrik5DnsAOvDniQPJntQbr8q2eJxU11EXAo2OxWHVoCroz3RNhm5x36Xy?=
- =?us-ascii?Q?kqNVhEyMqwuGna+jbfBnn8Wyb/esdTBx+kgtBrwEreOOZARoiYXzKQDNl5W2?=
- =?us-ascii?Q?VBqrFsHK0R5G/5Y6Il+K39oNPvIVgUnwfit0nDESms+gT4noQU84ySAJcqsB?=
- =?us-ascii?Q?aTjyMZ5Pw+TevkwsAa+3g8WeLX8Jq/VndPnxWDC5cjdJDDHY6lB9WAODtkL1?=
- =?us-ascii?Q?QGFax8gT7YfaHhQeCOmKJ4nXmNm+yS4R03UJ4S2TjtG9cO1DtQdCw7v08x9T?=
- =?us-ascii?Q?C6/Fl+68qcJFNSEr/f4roF7yPMJvQGAu6SuiCG1Jp8wXvZDPoGCYaiz7PRQz?=
- =?us-ascii?Q?RbKHDHzgbC0mpWSNAqmyFZfcqQDNR4hmOm+KBq1/6E0DAdCTa8eJ5P3OX/NH?=
- =?us-ascii?Q?nAMuY77zJkd1dtx3lPdHwqaOvPbjbzipgw6plg79m0N7NUoBLW8We+ojf6PS?=
- =?us-ascii?Q?WofUVLSo/NT9OCF5ylvqIozUWdUMDsKeDWcYf1PJ+Sj0DqPaYCo31jIrdH9/?=
- =?us-ascii?Q?pETAvQYML0MC4mjUIZkczdYlhkumSSwueK8cKFq1iglm1ulR0hCXBot+DoMK?=
- =?us-ascii?Q?1t6HEMSg6J0f0tVA6YKRZcxwy5JVh0b6Xkb8BbY1MlH7Ny01P5of/uMeWMHS?=
- =?us-ascii?Q?5dDzvUH/Rcs3D2oTaJUdPE4ySZSbE90lW9ON/MV8qNoDeZiq79j9zRpWBtm5?=
- =?us-ascii?Q?VLOabJOTTxhh6A6x2NJZyvthF6XquAmVOKqxxC7GjF9jlQ2R7WcdAGVLj6Em?=
- =?us-ascii?Q?IELdPGe+ilnd2n/d+A5whzP3ln9MVzmMgQsZ/8Wp?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5cbb2574-713d-4148-ae17-08dc12cad157
-X-MS-Exchange-CrossTenant-AuthSource: AS8PR04MB7511.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Jan 2024 17:29:08.6330
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: PgVf2bbFq8p6CjEnJX7c5vC4dtD1KdqgzjdZjD06cYrS6ItHIXI1KWzN5caRS2SXeB1du0S1G5hwTCY5kUouXg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB7200
+Content-Disposition: inline
+In-Reply-To: <20240110175221.2335480-4-Frank.Li@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240111_092925_632651_640E4C23 
-X-CRM114-Status: GOOD (  19.00  )
+X-CRM114-CacheID: sfid-20240111_154647_464926_884F90A0 
+X-CRM114-Status: GOOD (  11.91  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,49 +90,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jan 11, 2024 at 01:15:23AM +0100, Alexandre Belloni wrote:
-> On 10/01/2024 17:25:03-0500, Frank Li wrote:
-> > RDTERM in MCTRL is 8 bits. Add a length check to prevent silent data errors
-> > when the read length exceeds 255 bytes during each i3c_priv_xfer operation.
-> > 
-> > Signed-off-by: Frank Li <Frank.Li@nxp.com>
-> > ---
-> >  drivers/i3c/master/svc-i3c-master.c | 5 +++++
-> >  1 file changed, 5 insertions(+)
-> > 
-> > diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-> > index bd10bb698da0f..181b56953fb28 100644
-> > --- a/drivers/i3c/master/svc-i3c-master.c
-> > +++ b/drivers/i3c/master/svc-i3c-master.c
-> > @@ -1375,6 +1375,11 @@ static int svc_i3c_master_priv_xfers(struct i3c_dev_desc *dev,
-> >  		cmd->len = xfers[i].len;
-> >  		cmd->actual_len = xfers[i].rnw ? xfers[i].len : 0;
-> >  		cmd->continued = (i + 1) < nxfers;
-> > +
-> > +		if (cmd->rnw && cmd->len > 255) {
-> > +			dev_err(master->dev, "only support read less than 255 each xfer\n");
-> 
-> What would be the end user action upon seeing this message? Is it actually
-> useful?
+Hi Frank,
 
-Hold on, I found an method. It may support > 255 transfer.
+kernel test robot noticed the following build warnings:
 
-Frank Li
+[auto build test WARNING on tty/tty-testing]
+[also build test WARNING on tty/tty-next tty/tty-linus robh/for-next linus/master v6.7 next-20240111]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-> 
-> > +			return -EINVAL;
-> > +		}
-> >  	}
-> >  
-> >  	mutex_lock(&master->lock);
-> > -- 
-> > 2.34.1
-> > 
-> 
-> -- 
-> Alexandre Belloni, co-owner and COO, Bootlin
-> Embedded Linux and Kernel engineering
-> https://bootlin.com
+url:    https://github.com/intel-lab-lkp/linux/commits/Frank-Li/i3c-add-target-mode-support/20240111-015711
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/tty.git tty-testing
+patch link:    https://lore.kernel.org/r/20240110175221.2335480-4-Frank.Li%40nxp.com
+patch subject: [PATCH v2 3/7] Documentation: i3c: Add I3C target mode controller and function
+reproduce: (https://download.01.org/0day-ci/archive/20240112/202401120713.p7a3HyFl-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202401120713.p7a3HyFl-lkp@intel.com/
+
+All warnings (new ones prefixed by >>):
+
+>> Warning: Documentation/driver-api/i3c/target/i3c-target-cfs.rst references a file that doesn't exist: Documentation/I3C/target/pci-target.rst
+>> Documentation/driver-api/i3c/target/i3c-target.rst:38: WARNING: Title underline too short.
+>> Documentation/driver-api/i3c/target/i3c-target-cfs.rst:73: WARNING: Title underline too short.
+>> Documentation/driver-api/i3c/target/i3c-tty-howto.rst:45: WARNING: Title underline too short.
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-i3c mailing list
