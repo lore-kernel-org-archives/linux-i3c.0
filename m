@@ -4,59 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51D0EC4707B
-	for <linux-i3c@archiver.kernel.org>; Sun, 14 Jan 2024 22:01:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 705C4C4707B
+	for <linux-i3c@archiver.kernel.org>; Sun, 14 Jan 2024 22:52:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zhl0tjwIod3DlfG69BPKlobvmNCogux/ldtSbwsuaRg=; b=HcrimiShiPRgjh
-	InCPFGYO331KUVoKMTDVCI61SqBxBsB2kRWhgAB2FRoGYg+UqpMIH7lejrK5e7N6k3vmxIwMcgTcQ
-	eo6N2P8kBHMoyG01z7IspE3IqD0vT68zoqiG1t1LMjiB+pXI/wHUruxWz9Ki+2Ci7ihMmjrMkQPgj
-	hYZbos5GkeXyKXONTy1wgz0W7figc+S6H8725ahGSM4NARuBJs0iIrINcrMaIZl6PM/uTxI23fEi/
-	DH794qWb4uGVD2tKrF4g7kORYulcBgbNMdi1uILJq8NKlseKIKfpsb3HpheXeRNjSJW1xNVqjFbx2
-	y2I8TSd6t0cpAbQCBo0A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xbSbJMj1l8FMxZilmP2NC8A40j4uRffEVwCR/FdY4AQ=; b=QLQlHBcbIMTOl+
+	0HHcR9yF98gLDlvXE/yNVYgFEGrAgY0Gx5lS1vzaPoHZiPQDmnZJZ2YYYLjXQy2OfY63XW83av70W
+	YeNCmjbMagAe5Ba65fVQV9hVU2gCxaAmJlCPP2klZ3nn6OMe1SKGFnlz2+giKmroUKd7D8d/eHmVB
+	147Yp4GWKYrpNsZU0bdug61a+OWaSAiaBo1Puj/PFikYTMOi3zWgXoFcM0dxW/l9jqpRXsR6z2cA6
+	tsOYfQfqynm2wVJYlq1KDac3bHDyyRTds5DiKLWlIwt10mPgVjLpaCbr/JakTJZSSMVDZ5KA9ugeL
+	ISr06dRepdfks6fppDQg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rP8Xp-007PSq-0D;
-	Sun, 14 Jan 2024 22:01:29 +0000
-Received: from relay1-d.mail.gandi.net ([2001:4b98:dc4:8::221])
+	id 1rP9LY-007Svw-1T;
+	Sun, 14 Jan 2024 22:52:52 +0000
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rP8Xk-007PSL-25
+	id 1rP9LU-007SuA-1w
 	for linux-i3c@lists.infradead.org;
-	Sun, 14 Jan 2024 22:01:27 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id D777D240005;
-	Sun, 14 Jan 2024 22:01:17 +0000 (UTC)
+	Sun, 14 Jan 2024 22:52:50 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id CA69440002;
+	Sun, 14 Jan 2024 22:52:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1705269678;
+	t=1705272763;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=fLX61tzEOONDeqXZbwPqPkiVxXM5Uzlbz5ndGUIocoQ=;
-	b=H4KePbSnAwwqEwgms60WfsfX/enwL/ZsFhU1TzKFat5y8jK7qS4WXBfKxlbVcri3MzXCuy
-	I0EtI1mlv9wKpiogZwSca+Hd650+mPDn5SMoVQ9HNJntnQaPMRayrCiOwz2S2e4RUPDeMO
-	sTHcx5yvTZ8OxiH/mWmzbSCXaz3xwmXrRvT5CIwQVBD/7SDeFe9XmWhaUoz3lKB2eVoamJ
-	LNl7OsdnmOzqKbb5WN1hg/ZTc7KCJ9gJK0906uqwwSOrESNgXcNSet2CeTs48bt07CcGzB
-	4Cfe0cqC2BKcbrvi1SEXx5bE+5Fr71LALq4Umf7dpAu9r8HG5rDkmTiayNED/A==
-Date: Sun, 14 Jan 2024 23:01:17 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: linux-kernel@vger.kernel.org, linux-next@vger.kernel.org,
-	Frank Li <Frank.Li@nxp.com>
-Cc: conor.culhane@silvaco.com, imx@lists.linux.dev, joe@perches.com,
-	linux-i3c@lists.infradead.org, miquel.raynal@bootlin.com,
-	zbigniew.lukwinski@linux.intel.com
-Subject: Re: [PATCH 1/1] i3c: master: fix kernel-doc check warning
-Message-ID: <170526966419.132104.16421522756739565942.b4-ty@bootlin.com>
-References: <20240109052548.2128133-1-Frank.Li@nxp.com>
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=E+pmWiFAk9xDSX3xHw8tyfQSE8GLes3W457god8mEvU=;
+	b=cxMyM7oCZSziHqrnDSE/nfEKYLW0fXqfDBpGGENQQPEuhUNCwFwSAu0y+EMs7OhvVo0fKa
+	DTYGi4nUcDKVXHasP2EWXiJ7F1EhVxuqquW8tpHDTis9+86a8C9spd83ty1qlKbAL2wccr
+	VSOxNdzRdSKi7vMgSkB8FemMfOiQTZq9ZLZRY1xzIpYbNCXIvYaS5ZOSUftnJJKHYQzLT/
+	2RnSR+f6VaYg8GafFi3eFNA9W3pCJmXAuckix2LHpTPN2BhSiqXuVwYRbksTwqnaj/C7uT
+	ZqbZ9w3kqMFTXfKLwGdsAH604MvxAB+AjF8OXlq1/oXfGT6XJUb2sGIplZUlng==
+From: alexandre.belloni@bootlin.com
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] i3c: document hotjoin sysfs entry
+Date: Sun, 14 Jan 2024 23:52:25 +0100
+Message-ID: <20240114225232.140860-1-alexandre.belloni@bootlin.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240109052548.2128133-1-Frank.Li@nxp.com>
 X-GND-Sasl: alexandre.belloni@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240114_140125_008984_F8B9E497 
-X-CRM114-Status: UNSURE (   4.97  )
+X-CRM114-CacheID: sfid-20240114_145248_946480_54415AC1 
+X-CRM114-Status: UNSURE (   8.32  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -69,35 +65,35 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-
-On Tue, 09 Jan 2024 00:25:48 -0500, Frank Li wrote:
-> Fix warning found by
-> 	'scripts/kernel-doc -v -none include/linux/i3c/master.h'
-> 
-> include/linux/i3c/master.h:457: warning: Function parameter or member 'enable_hotjoin' not described in 'i3c_master_controller_ops'
-> include/linux/i3c/master.h:457: warning: Function parameter or member 'disable_hotjoin' not described in 'i3c_master_controller_ops'
-> include/linux/i3c/master.h:499: warning: Function parameter or member 'hotjoin' not described in 'i3c_master_controller'
-> 
-> [...]
-
-Applied, thanks!
-
-[1/1] i3c: master: fix kernel-doc check warning
-      commit: 34d946b723b53488ab39d8ac540ddf9db255317a
-
-Best regards,
-
--- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+RnJvbTogQWxleGFuZHJlIEJlbGxvbmkgPGFsZXhhbmRyZS5iZWxsb25pQGJvb3RsaW4uY29tPgoK
+VGhlIGhvdGpvaW4gc3lmcyBlbnRyeSBhbGxvd3MgdG8gZW5hYmxlIG9yIGRpc2FibGUgSG90LUpv
+aW4gb24gdGhlIEN1cnJlbnQKQ29udHJvbGxlciBvZiB0aGUgSTNDIEJ1cy4KClNpZ25lZC1vZmYt
+Ynk6IEFsZXhhbmRyZSBCZWxsb25pIDxhbGV4YW5kcmUuYmVsbG9uaUBib290bGluLmNvbT4KLS0t
+CiBEb2N1bWVudGF0aW9uL0FCSS90ZXN0aW5nL3N5c2ZzLWJ1cy1pM2MgfCAxNSArKysrKysrKysr
+KysrKysKIDEgZmlsZSBjaGFuZ2VkLCAxNSBpbnNlcnRpb25zKCspCgpkaWZmIC0tZ2l0IGEvRG9j
+dW1lbnRhdGlvbi9BQkkvdGVzdGluZy9zeXNmcy1idXMtaTNjIGIvRG9jdW1lbnRhdGlvbi9BQkkv
+dGVzdGluZy9zeXNmcy1idXMtaTNjCmluZGV4IGU1MjQ4ZmQ2N2E1Ni4uYzgxMmFiMTgwZmY0IDEw
+MDY0NAotLS0gYS9Eb2N1bWVudGF0aW9uL0FCSS90ZXN0aW5nL3N5c2ZzLWJ1cy1pM2MKKysrIGIv
+RG9jdW1lbnRhdGlvbi9BQkkvdGVzdGluZy9zeXNmcy1idXMtaTNjCkBAIC04OCw2ICs4OCwyMSBA
+QCBEZXNjcmlwdGlvbjoKIAkJVGhpcyBlbnRyeSBkZXNjcmliZXMgdGhlIEhEUkNBUCBvZiB0aGUg
+bWFzdGVyIGNvbnRyb2xsZXIKIAkJZHJpdmluZyB0aGUgYnVzLgogCitXaGF0OgkJL3N5cy9idXMv
+aTNjL2RldmljZXMvaTNjLTxidXMtaWQ+L2hvdGpvaW4KK0tlcm5lbFZlcnNpb246ICA2LjgKK0Nv
+bnRhY3Q6CWxpbnV4LWkzY0B2Z2VyLmtlcm5lbC5vcmcKK0Rlc2NyaXB0aW9uOgorCQlJM0PigJlz
+IEhvdC1Kb2luIG1lY2hhbmlzbSBhbGxvd3MgYW4gSTNDIERldmljZSB0byBpbmZvcm0gdGhlCisJ
+CUFjdGl2ZSBDb250cm9sbGVyIHRoYXQgYSBuZXdseS1qb2luZWQgVGFyZ2V0IGlzIHByZXNlbnQg
+b24gdGhlCisJCUkzQyBCdXMgYW5kIGlzIHJlYWR5IHRvIHJlY2VpdmUgYSBEeW5hbWljIEFkZHJl
+c3MsIGluIG9yZGVyIHRvCisJCWJlY29tZSBmdWxseSBmdW5jdGlvbmFsIG9uIHRoZSBCdXMuIEhv
+dC1Kb2luIGlzIHVzZWQgd2hlbiB0aGUKKwkJVGFyZ2V0IGlzIG1vdW50ZWQgb24gdGhlIHNhbWUg
+STNDIGJ1cyBhbmQgcmVtYWlucyBkZXBvd2VyZWQKKwkJdW50aWwgbmVlZGVkIG9yIHVudGlsIHRo
+ZSBUYXJnZXQgaXMgcGh5c2ljYWxseSBpbnNlcnRlZCBpbnRvIHRoZQorCQlJM0MgYnVzCisKKwkJ
+VGhpcyBlbnRyeSBhbGxvd3MgdG8gZW5hYmxlIG9yIGRpc2FibGUgSG90LWpvaW4gb2YgdGhlIEN1
+cnJlbnQKKwkJQ29udHJvbGxlciBkcml2aW5nIHRoZSBidXMuCisKIFdoYXQ6CQkvc3lzL2J1cy9p
+M2MvZGV2aWNlcy9pM2MtPGJ1cy1pZD4vPGJ1cy1pZD4tPGRldmljZS1waWQ+CiBLZXJuZWxWZXJz
+aW9uOiAgNS4wCiBDb250YWN0OglsaW51eC1pM2NAdmdlci5rZXJuZWwub3JnCi0tIAoyLjQzLjAK
+CgotLSAKbGludXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
