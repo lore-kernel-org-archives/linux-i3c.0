@@ -4,75 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E793C4706C
-	for <linux-i3c@archiver.kernel.org>; Tue, 16 Jan 2024 07:24:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02091C47077
+	for <linux-i3c@archiver.kernel.org>; Tue, 16 Jan 2024 09:33:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Cwd5y0guat3lFtyPFCYL/SgqdBEa4E7ZsMA/eW3KVuU=; b=hN8HLBd/6sD7n5
-	uwCDtcB4lD0pPkTntgxXMa9S8cba8tj0DMlHJ4OVvWI5bCTNpjehMfBJbpSwVn+rNeJXtfoYohCEe
-	W24OBijuLnKo472oca70eDYaLXRT91NXKjWWPkfLHHS+PzGqEv0HL+8MUfJSnLKbyTcHBdlFjln0s
-	Feiv7ZXwIZqkGxaHlGRbHB4nsjZ2c944YtpwiPH0pmjjjymNLzvsQR3UcNnGVfuHV3XfTlxfd2qhE
-	TZp53msABJH6U/BdE0fiRFeKR4O/djBUddjTb69iRt0srmdC77UbAMzxjFAh6YEa/43RzBr4Q7qr4
-	H3ttnMJdsXaXpT/Zt8rw==;
+	List-Owner; bh=weOv2bYsz+C7nLmDxrwRwwCLNzdzhWkguEYwMovLtRo=; b=EM3vYnsCgO6VzQ
+	pQFnNO6Y0LhWeU4i2Y/4I4Q613RFW9Y8xJiB/GgZLRAPaKwWpgvLRA0yYHlNHXzGPctfp5XRnLbCf
+	nCruLpp+guAqNIBEouSEvfqj4UD258qzBAhOa7dWyHOw08EKH6vXIwAW3IevveX6/tOOryMl9URlJ
+	541wtxFkdhWdUe+is7nGLPdtS5wn389twJ/ZJIgq8/LnGaQN3T943pa3c4Nk6Q8KWRsXG7mGjS8UA
+	C6uoGMMATLk+WNS4i+uqZxk/J8L1KBPMCNoJ0CM/Yjut6XcNdwCInmSc1hlFxlyTS2a44+Yv0QIa0
+	Y8SAvz66Az3nAsdQxuXA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPdoE-00BCm4-2I;
-	Tue, 16 Jan 2024 07:24:30 +0000
-Received: from mail-ej1-x633.google.com ([2a00:1450:4864:20::633])
+	id 1rPfpT-00BXsA-0y;
+	Tue, 16 Jan 2024 09:33:55 +0000
+Received: from mail-ed1-x530.google.com ([2a00:1450:4864:20::530])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPdoB-00BCjt-0B
+	id 1rPfpQ-00BXqS-1m
 	for linux-i3c@lists.infradead.org;
-	Tue, 16 Jan 2024 07:24:29 +0000
-Received: by mail-ej1-x633.google.com with SMTP id a640c23a62f3a-a28da6285c1so1707073466b.0
-        for <linux-i3c@lists.infradead.org>; Mon, 15 Jan 2024 23:24:23 -0800 (PST)
+	Tue, 16 Jan 2024 09:33:54 +0000
+Received: by mail-ed1-x530.google.com with SMTP id 4fb4d7f45d1cf-559bd483877so38720a12.0
+        for <linux-i3c@lists.infradead.org>; Tue, 16 Jan 2024 01:33:51 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705389862; x=1705994662; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1705397630; x=1706002430; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :from:to:cc:subject:date:message-id:reply-to;
-        bh=1JgRjMNs+e9DgLVdT4/phU8KY385TQI72vtZoArIQpM=;
-        b=xmugWXdUwqqamBpzNVQRMUjf7w//nDklvzBu1rjJkabrenOkaSKPB+ciSLG4YbsUXZ
-         us9OGplhtsQTZ8ypUlvYKumvtcpNdpy2T51zPHW1tvpkAJbWisKQNCSTLGcgAc3L/QGC
-         j7uJ2XTCDFZC9lKBjM+gHdW5nerrIhstGdUypUEjTpXitTmdvYLWjF3KYqY+MK1l7CzO
-         Jm09rOusyCcE4yax58TrUA59n44OaS2kfRpvfqPfIuQd5cHBR44ieBVEoUOp0F2dxWRm
-         Ajb93pN7HSdZBW73MDlR2BIa+pNUQC+rLhOtm0FsYWY1p90t/twuemM6tBbF6CL4QOrz
-         Qk8g==
+        bh=S2ccHjphb5B7ggkOSstT0KmaJDuzytG9D3yDcuLHDV0=;
+        b=u6HMsq0ToGWlTymNBnIKWHbTI7SId3TlqW/m5Os7IysePD5liBIisqtseO6MFuBjgY
+         k3NqWB8ZBYSdbV2llrWPEsi5Q/cADzXJcQUoXlwrDtTX4PWOfN7E8SB1x4k2lLLlXyDR
+         FpsgnFjDukRI9yQcqCLbvHDO9stU86ZxxHDL0XBbqczhsn90HREYOgTPGpD0q8YmveUX
+         Plugp5vWxYyA0SNOrFIKJN/mQNzIJyrrOlLNs2KLBr4gLaUHAZT8FLtDk9zGr9O1lM5s
+         78KhcoVz5DOiIJ22nVTMZxMYU/03IOGXzy5RehYmcI3k0Bp3eYwbNb9GnuNrez+BbSce
+         bU2g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705389862; x=1705994662;
+        d=1e100.net; s=20230601; t=1705397630; x=1706002430;
         h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
          :to:content-language:subject:user-agent:mime-version:date:message-id
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=1JgRjMNs+e9DgLVdT4/phU8KY385TQI72vtZoArIQpM=;
-        b=PfmeYdSCG8zZazoCX31h4FBx9NdnYq1aZUuTdgDVGXHxo6ibEiUjugOuuN6cHyMhQt
-         exyPDmM1YRCFinPgzN0HX5RxBDe5BQv+qsYh65ZbvS8obVy2/ILKJ2wJU80j1Hz//PYm
-         GpSTBpXXmp+NkX2gz7zf6ClJVviRxkYgvjK9Zgadd1JTHdb3aCdN0QBsnuPdaWvlHapk
-         /BlBvw/WkfR6IUkk+oW3aaoq3fCCDiqDZeA2C4IkzQ8F49WHWYgWX1gGEuhs4L69uVPQ
-         47QkngTGH71meNVxk9An1kD0zw1LyIlOTASdgvxchjrXs/pZPSA8A1f5ntFcmtzB7U7l
-         EE2A==
-X-Gm-Message-State: AOJu0YyuDyHuz2LNzms3emeeTfGP2jvI7kYZ/RB2bH3nSHa6ZVo2oC+m
-	yxGNxtrNy7Z/qA4X/UMPd7w96o3xKoUhuQ==
-X-Google-Smtp-Source: AGHT+IEM49xmCazIzhhAaJcBTvlIYT3qzttjLgk+gc5Adx4ymvmbJPObcL4w9NIyBRAbJFB15Kt2aA==
-X-Received: by 2002:a17:906:bf47:b0:a2c:f62d:a598 with SMTP id ps7-20020a170906bf4700b00a2cf62da598mr6858249ejb.0.1705389862525;
-        Mon, 15 Jan 2024 23:24:22 -0800 (PST)
+        bh=S2ccHjphb5B7ggkOSstT0KmaJDuzytG9D3yDcuLHDV0=;
+        b=foWisfFm/y7cJn7FAXXsRpACi96hO9yVjKyF+vG6FRIF0RsKdNO3g67Nl3hkOHsV4p
+         BYyqcHMAhJ4BKlnK7sTmiT4DdoK5C+nzrFscNJSQ7x+8Ryn76cZ15lkFfCv0fO+4kJvr
+         PJlyX4MI66dCGSM04fs/b/qWmSd5P3p6ivGmx0YfR9bA4KEHBgnk9mAH7jw2yFl2VGcq
+         /fDDixkWWM3OvtDjsQ/C7erpZTc8bgLfF0sA0rTuUgewfuOgT2l8h0zHNKyyQFpH29aS
+         JKov2R8ocgrEnYmPNss3xuiiqeOmEVL0cn7/AHgmNLQdwcigUrQC/E7UNDpf7WaLjhTB
+         2d7Q==
+X-Gm-Message-State: AOJu0YxDvqr+ldmtd9ZZ1GsrIkLLr2HNNYiBR+aW6GsHMPzeS+NvGTSm
+	NyWdzMcFMAbPuytNTN2VWL5EyaGarzQ2LQ==
+X-Google-Smtp-Source: AGHT+IHqYP/MA+geFFmcZ2IOFSAQ+BBnkauxlOrggUJ8TQGMiee/pqaX/UEqYp5Q4dhCn3XbpmuLDg==
+X-Received: by 2002:a05:6402:48b:b0:557:4054:d09c with SMTP id k11-20020a056402048b00b005574054d09cmr3372335edv.20.1705397630308;
+        Tue, 16 Jan 2024 01:33:50 -0800 (PST)
 Received: from [192.168.1.20] ([178.197.215.66])
-        by smtp.gmail.com with ESMTPSA id cw1-20020a170907160100b00a2dae4e408bsm2554928ejd.15.2024.01.15.23.24.21
+        by smtp.gmail.com with ESMTPSA id ee34-20020a056402292200b00559bb6eef00sm83740edb.85.2024.01.16.01.33.48
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 15 Jan 2024 23:24:22 -0800 (PST)
-Message-ID: <d45e31c4-914e-4cea-a145-9775b6f516ab@linaro.org>
-Date: Tue, 16 Jan 2024 08:24:20 +0100
+        Tue, 16 Jan 2024 01:33:49 -0800 (PST)
+Message-ID: <3199c245-3d2d-49e8-951e-2b059de4d683@linaro.org>
+Date: Tue, 16 Jan 2024 10:33:48 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v2 2/7] dt-bindings: i3c: svc: add compatible string i3c:
  silvaco,i3c-target-v1
 Content-Language: en-US
-To: Frank Li <Frank.li@nxp.com>
-Cc: robh@kernel.org, alexandre.belloni@bootlin.com,
- conor.culhane@silvaco.com, gregkh@linuxfoundation.org, imx@lists.linux.dev,
- jirislaby@kernel.org, joe@perches.com, linux-i3c@lists.infradead.org,
+To: Conor Dooley <conor.dooley@microchip.com>
+Cc: Frank Li <Frank.li@nxp.com>, robh@kernel.org,
+ alexandre.belloni@bootlin.com, conor.culhane@silvaco.com,
+ gregkh@linuxfoundation.org, imx@lists.linux.dev, jirislaby@kernel.org,
+ joe@perches.com, linux-i3c@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-serial@vger.kernel.org,
  miquel.raynal@bootlin.com, zbigniew.lukwinski@linux.intel.com,
  devicetree@vger.kernel.org, krzysztof.kozlowski+dt@linaro.org
@@ -85,6 +86,8 @@ References: <20240110175221.2335480-1-Frank.Li@nxp.com>
  <ZaWLCrWJEMtFx8cR@lizhi-Precision-Tower-5810>
  <1b628901-7f71-4c97-9a16-723912988417@linaro.org>
  <ZaXqCoCHPWER94Hh@lizhi-Precision-Tower-5810>
+ <d45e31c4-914e-4cea-a145-9775b6f516ab@linaro.org>
+ <20240116-bleach-herbicide-48d636967134@wendy>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -130,11 +133,10 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
  fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
  D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <ZaXqCoCHPWER94Hh@lizhi-Precision-Tower-5810>
+In-Reply-To: <20240116-bleach-herbicide-48d636967134@wendy>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240115_232427_096878_916013A3 
-X-CRM114-Status: UNSURE (   7.58  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240116_013352_640730_62F9E9B8 
+X-CRM114-Status: GOOD (  13.43  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -151,23 +153,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 16/01/2024 03:29, Frank Li wrote:
->>> 	Patches were accepted after discussion, what you ponit to. So I
->>> think everyone agree on the name 'silvaco,i3c-master-v1'.
->>> 	I plan send next version to fix auto build error. Any additional
->>> comments about this?
+On 16/01/2024 10:30, Conor Dooley wrote:
+> On Tue, Jan 16, 2024 at 08:24:20AM +0100, Krzysztof Kozlowski wrote:
+>> On 16/01/2024 03:29, Frank Li wrote:
+>>>>> 	Patches were accepted after discussion, what you ponit to. So I
+>>>>> think everyone agree on the name 'silvaco,i3c-master-v1'.
+>>>>> 	I plan send next version to fix auto build error. Any additional
+>>>>> comments about this?
+>>>>
+>>>> I still do not see how did you address Rob's comment and his point is
+>>>> valid. You just did not reply to it.
+>>>
+>>> See https://lore.kernel.org/imx/ZXCiaKfMYYShoiXK@lizhi-Precision-Tower-5810/
 >>
->> I still do not see how did you address Rob's comment and his point is
->> valid. You just did not reply to it.
+>> First of all, that's not the answer to Rob's email, but some other
+>> thread which is 99% ignored by Rob (unless he has filters for
+>> "@Rob"...). Therefore no, it does not count as valid answer.
+>>
+>> Second, explanation does not make sense. There is no argument granting
+>> you exception from SoC specific compatibles.
 > 
-> See https://lore.kernel.org/imx/ZXCiaKfMYYShoiXK@lizhi-Precision-Tower-5810/
+> The patch could have been applied two months ago had Frank done as
+> was requested (multiple times). I don't understand the resistance
+> towards doing so given the process has taken way way longer as a result.
 
-First of all, that's not the answer to Rob's email, but some other
-thread which is 99% ignored by Rob (unless he has filters for
-"@Rob"...). Therefore no, it does not count as valid answer.
-
-Second, explanation does not make sense. There is no argument granting
-you exception from SoC specific compatibles.
+I think that Rob's comment was just skipped and original master binding
+was merged without addressing it. I don't want to repeat the same
+process for the "target". Indeed I could point this earlier... if I only
+knew that Rob pointed out that issue.
 
 Best regards,
 Krzysztof
