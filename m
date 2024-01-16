@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 362D5C47DA7
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF32FC47258
 	for <linux-i3c@archiver.kernel.org>; Wed, 17 Jan 2024 08:40:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
@@ -12,51 +12,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:CC:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=1nLCG09Bk5p2dOm4+oow51Vyq6zPdiGTFY9mNG3K6vw=; b=oVVQMQsTh3GC0iklMuLdf+frvW
-	n+8Jt5FLonhIPstc10ViDK9XCazBZbZAhl0C1cPKu8Jvls9YsCyW9aSTH4FCeGaon3lKyCXraFCNi
-	wi0cUcjRhzHDinPiRMKNGOrwlwNYeUsC9MHWfibTRuxWnAF3LwDnt17Mf6I5HSl//C+ap1gtfx2Iz
-	TvBNdf28x23KvY0GumVcYvyZxbM8cnwnPavkrVejrikUAT3DhqeW1F4zuW0oI/uiQSTBwF1Zm3nSv
-	cGaO5kBoMapY/a2U+9UsGMRDMOAHg2eVq3A+gaMTRKIYghMSkGx7W4mKoc9PGYtBEWUBraU8OGAVI
-	YxzGmcRw==;
+	bh=ggAGEOWtuJ8lZuDjTpzzdzvJAzvSdITQ1CIkCmjjfew=; b=rADKZmiq+NZFFYzoMEdcS6Gnc1
+	0bJTbVaM3+yDn15Ja+R+2AEZOO0P4tTQhRZLw+fS2wXsw/VDT0T9BJvRf+LvsbQ+QusnGwWvNEC5u
+	ItRtf1QLYyKIbgFuKVWeBooF0kDcBpucW8wFBh3fpekeQRClFFvLc/2DmIHho3pnp/2W2C5LZ1LDu
+	FiHzYg9MscDp5aMtn+9NJXRNC1PShjQ3D+ItT4q6mBGVzMZ3Hkd1kdyVcm4lXAV5gkgRCMpyT4Utb
+	sKbUyruwVUDFPMQB3fK2bpOAw4r8A3WnqchIcf3Kl4Nz8MrQ88qI3iONg4BlrsHDSD/FECQquNKto
+	fXRtENFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rQ1St-00Eubo-1n;
-	Wed, 17 Jan 2024 08:40:03 +0000
+	id 1rQ1Su-00Euc1-13;
+	Wed, 17 Jan 2024 08:40:04 +0000
 Received: from esa.microchip.iphmx.com ([68.232.153.233])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPfn4-00BXXY-1p
+	id 1rPg4J-00BaJv-1g
 	for linux-i3c@lists.infradead.org;
-	Tue, 16 Jan 2024 09:31:29 +0000
+	Tue, 16 Jan 2024 09:49:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1705397486; x=1736933486;
+  t=1705398556; x=1736934556;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=+e6Ln558idTWadRn1DXntGL0wDIyCZpJMPP2MxyNkHo=;
-  b=gth/SAgbbXmm+KDF6NUykP0ZpyUJZsM3KbeZvImvJqTzYa6P87VI55ix
-   ynePmH4bHxmQS58qI5RAauG2z/r3XQLrn2kzWsfOPrEswUVNQdfmS7NEQ
-   mE7iICjGLvsgRxE59mJxr/8kqUZe7b8oEapnpp0X9j+D/FNKsVhuY0ucH
-   6qTBMRTtmYE65cKuQ8JXD9QFgr7IY5cyhLzKw/gtIgceqwtLnLuLqdGeF
-   qU4zER2UzdfXQJ+9lMwZcFAYDDqmB1CzRePF3B776WxIuOOuJJRYBsgCT
-   SBCwk8NuQuKaEuupy0IUAVQ3DgkhN2kOn6UsfbXEg2QnxZxdNZPIeb/V5
-   A==;
-X-CSE-ConnectionGUID: WayHWkw8Q7O2gJ+Gskrx3A==
-X-CSE-MsgGUID: 0aICPRxpQsWlKp7G71Bc1A==
+  bh=d/LmQtM6md3wSSgxarWeNXc3nWd8MVX7G2TVJesXeRI=;
+  b=gdhuVufmQweEZdMW3E7ZUIv6G1cfEN1gkw0ENXJTLp8XcOhoKIkrlRI5
+   6AOcp1hgcS672eIXnEeCM2HVETVikdFy9Klp/qixXCVOvnhHT7VngWyTm
+   /n5ugSPEJqnE5BZuvkah2ovUeqXp6t+YpXbO9P/t/zDywOu0QJVSZh9D7
+   QAxRU8BgbZ/g7ybjkSF2QL629HExTWzWhyIJyd2QwyPXKrLMjHAE1rXF+
+   IgiqMiypMziiz2ouEX2LWK9VuzCZEB8/LD6Js8FK7trQU6/bStK3MObZP
+   oAiylVyC5kSlKiKbwhx3ggGX6PbUyxiT+LyrLSAbCQ4fzYkMdBDVNYL9u
+   g==;
+X-CSE-ConnectionGUID: lhV4ifIESgq7KLyVEfkQ/Q==
+X-CSE-MsgGUID: H9BXj9zQRVij7q1BDAfNUw==
 X-IronPort-AV: E=Sophos;i="6.04,198,1695711600"; 
-   d="asc'?scan'208";a="15990500"
+   d="asc'?scan'208";a="245529089"
 X-Amp-Result: UNKNOWN
 X-Amp-Original-Verdict: FILE UNKNOWN
 Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa1.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 16 Jan 2024 02:31:22 -0700
+  by esa5.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 16 Jan 2024 02:49:15 -0700
 Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.35; Tue, 16 Jan 2024 02:31:04 -0700
+ 15.1.2507.35; Tue, 16 Jan 2024 02:48:47 -0700
 Received: from wendy (10.10.85.11) by chn-vm-ex02.mchp-main.com (10.10.85.144)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.35 via Frontend
- Transport; Tue, 16 Jan 2024 02:31:01 -0700
-Date: Tue, 16 Jan 2024 09:30:25 +0000
+ Transport; Tue, 16 Jan 2024 02:48:44 -0700
+Date: Tue, 16 Jan 2024 09:48:08 +0000
 From: Conor Dooley <conor.dooley@microchip.com>
 To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 CC: Frank Li <Frank.li@nxp.com>, <robh@kernel.org>,
@@ -68,10 +68,8 @@ CC: Frank Li <Frank.li@nxp.com>, <robh@kernel.org>,
 	<devicetree@vger.kernel.org>, <krzysztof.kozlowski+dt@linaro.org>
 Subject: Re: [PATCH v2 2/7] dt-bindings: i3c: svc: add compatible string i3c:
  silvaco,i3c-target-v1
-Message-ID: <20240116-bleach-herbicide-48d636967134@wendy>
-References: <20240110175221.2335480-1-Frank.Li@nxp.com>
- <20240110175221.2335480-3-Frank.Li@nxp.com>
- <3c0be658-e7a6-4231-b206-86ffb47e0cb2@linaro.org>
+Message-ID: <20240116-achiness-thievish-10a12b3c08cd@wendy>
+References: <3c0be658-e7a6-4231-b206-86ffb47e0cb2@linaro.org>
  <ZaFbbeQrC7o2dchO@lizhi-Precision-Tower-5810>
  <e3b9aa63-25a5-41cc-9eb7-6e7d1eacb136@linaro.org>
  <ZaFjaWCA6k+tiCSJ@lizhi-Precision-Tower-5810>
@@ -79,11 +77,13 @@ References: <20240110175221.2335480-1-Frank.Li@nxp.com>
  <1b628901-7f71-4c97-9a16-723912988417@linaro.org>
  <ZaXqCoCHPWER94Hh@lizhi-Precision-Tower-5810>
  <d45e31c4-914e-4cea-a145-9775b6f516ab@linaro.org>
+ <20240116-bleach-herbicide-48d636967134@wendy>
+ <3199c245-3d2d-49e8-951e-2b059de4d683@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <d45e31c4-914e-4cea-a145-9775b6f516ab@linaro.org>
+In-Reply-To: <3199c245-3d2d-49e8-951e-2b059de4d683@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240116_013126_764026_CF5F076D 
-X-CRM114-Status: GOOD (  14.42  )
+X-CRM114-CacheID: sfid-20240116_014915_608177_3E16F08F 
+X-CRM114-Status: GOOD (  23.19  )
 X-Mailman-Approved-At: Wed, 17 Jan 2024 00:40:01 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -96,59 +96,79 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2723445890753965360=="
+Content-Type: multipart/mixed; boundary="===============1358520717892823192=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
---===============2723445890753965360==
+--===============1358520717892823192==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="tU9usgt5JDc4MslD"
+	protocol="application/pgp-signature"; boundary="lyAJBZzxW05Or8+L"
 Content-Disposition: inline
 
---tU9usgt5JDc4MslD
+--lyAJBZzxW05Or8+L
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Tue, Jan 16, 2024 at 08:24:20AM +0100, Krzysztof Kozlowski wrote:
-> On 16/01/2024 03:29, Frank Li wrote:
-> >>> 	Patches were accepted after discussion, what you ponit to. So I
-> >>> think everyone agree on the name 'silvaco,i3c-master-v1'.
-> >>> 	I plan send next version to fix auto build error. Any additional
-> >>> comments about this?
+On Tue, Jan 16, 2024 at 10:33:48AM +0100, Krzysztof Kozlowski wrote:
+> On 16/01/2024 10:30, Conor Dooley wrote:
+> > On Tue, Jan 16, 2024 at 08:24:20AM +0100, Krzysztof Kozlowski wrote:
+> >> On 16/01/2024 03:29, Frank Li wrote:
+> >>>>> 	Patches were accepted after discussion, what you ponit to. So I
+> >>>>> think everyone agree on the name 'silvaco,i3c-master-v1'.
+> >>>>> 	I plan send next version to fix auto build error. Any additional
+> >>>>> comments about this?
+> >>>>
+> >>>> I still do not see how did you address Rob's comment and his point is
+> >>>> valid. You just did not reply to it.
+> >>>
+> >>> See https://lore.kernel.org/imx/ZXCiaKfMYYShoiXK@lizhi-Precision-Towe=
+r-5810/
 > >>
-> >> I still do not see how did you address Rob's comment and his point is
-> >> valid. You just did not reply to it.
+> >> First of all, that's not the answer to Rob's email, but some other
+> >> thread which is 99% ignored by Rob (unless he has filters for
+> >> "@Rob"...). Therefore no, it does not count as valid answer.
+> >>
+> >> Second, explanation does not make sense. There is no argument granting
+> >> you exception from SoC specific compatibles.
 > >=20
-> > See https://lore.kernel.org/imx/ZXCiaKfMYYShoiXK@lizhi-Precision-Tower-=
-5810/
+> > The patch could have been applied two months ago had Frank done as
+> > was requested (multiple times). I don't understand the resistance
+> > towards doing so given the process has taken way way longer as a result.
 >=20
-> First of all, that's not the answer to Rob's email, but some other
-> thread which is 99% ignored by Rob (unless he has filters for
-> "@Rob"...). Therefore no, it does not count as valid answer.
->=20
-> Second, explanation does not make sense. There is no argument granting
-> you exception from SoC specific compatibles.
+> I think that Rob's comment was just skipped and original master binding
+> was merged without addressing it. I don't want to repeat the same
+> process for the "target". Indeed I could point this earlier... if I only
+> knew that Rob pointed out that issue.
 
-The patch could have been applied two months ago had Frank done as
-was requested (multiple times). I don't understand the resistance
-towards doing so given the process has taken way way longer as a result.
+Oh I think I got confused here. The context for this mail led me to
+think that this was still trying to push the i3c-master-v1 stuff through
+and I was commenting on my frustration with the resistance to applying
+the feedback received. I didn't realise that this was for another
+patch adding a target.
 
---tU9usgt5JDc4MslD
+I think you already said it, but NAK to adding any more compatibles here
+until the soc-specific compatible that was asked for for the imx93 is
+added.
+
+Thanks,
+Conor.
+
+--lyAJBZzxW05Or8+L
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZaZMsQAKCRB4tDGHoIJi
-0oXjAQD+n2/ohO6suxsrwD5Ou5eVTuKiCJW4yn6SzYminXj4UQEA5Z7Y5G8MfUrU
-u49KfI9asa8Tjp9X2y7YIiNSAtP1Qg0=
-=nQni
+iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZaZQ2AAKCRB4tDGHoIJi
+0pPQAPwOtqo+AaPupCQJlV+rWAmSvitBpzmIYrOAkGb6DlqLfAEAkGGgrQwVHqSi
+f4RUVEYgW3INJX+Bf9bl1aY22t/R4gw=
+=o8PF
 -----END PGP SIGNATURE-----
 
---tU9usgt5JDc4MslD--
+--lyAJBZzxW05Or8+L--
 
 
---===============2723445890753965360==
+--===============1358520717892823192==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -159,5 +179,5 @@ linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
 
---===============2723445890753965360==--
+--===============1358520717892823192==--
 
