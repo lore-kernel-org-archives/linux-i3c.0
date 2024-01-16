@@ -4,71 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E879C47077
-	for <linux-i3c@archiver.kernel.org>; Tue, 16 Jan 2024 20:56:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2AD9C47077
+	for <linux-i3c@archiver.kernel.org>; Tue, 16 Jan 2024 21:01:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lqTaSNmttuVlsO2vt0M6P1zMq1aPVNubyCvppJmuc5Q=; b=UB1xWCeHqbZaxK
-	yqMJVGYoxQq1YlR8WnwU2snAloTjNwVz+RddCxTSgQ0GdzJICETT2oJzhhL0RjhMkoQpi9om1IIkZ
-	YjbMlcdvAwff9IHTJP0zf7x+c8acuo9Dhq3cfrgMeE+Gc71mhhLGesTmnHjY7V6fjWU6jnn+F40+a
-	MKkFxSKzrEdcxcJtxJVeMEh+Dksp7ttJ+mInkiAkldd/g7T+vUfXNdDM0Qzj4X4uV+nm4JNyhdTth
-	f3NU6Gsu9Sg/xtO/QuMYdWXMZXi4OeDUMCDIYkfPTa+E214RUB8+RQ9fWJA24yMNt/h3dsA7OPCmG
-	r/x2yqdHrBWLc/tAo7Ew==;
+	List-Owner; bh=ZUKzc/HLBkGPRslbOpLbX89UEp2P0iy0xS7euoWlZuY=; b=0YR2okhhA6/XNc
+	HpFRGvGtnnFpr4XU2TIInIiAo7KckOBpyMCp6CDwOQQyMkGwudFWr6Pw9JWF3JuDTCrBwIh3JnwF6
+	RJU7EeGUe6nhcfsKpiiOlrYgO3mqCUenhpibPtKjrTx1OTlkrnbbCztCSPPLvzQuESGaFaadUuDka
+	OIPizGH7wVTEmENVVlaMD9zIVn69WB/cdkyen8OTwhLUbDXCaQq3n6+4diWpj97m1gvyUlQT3Qyrz
+	UvoQZ9kAFKpKEfO+frD7dMGx/oqTyjThvS2YD9FG1yifj4/rIn3h0d/MGOUGZCZQgJbunF5SWHMZG
+	AVyapi8fvcITXPTXZDKg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPqTl-00DXYx-2k;
-	Tue, 16 Jan 2024 20:56:13 +0000
-Received: from mail-ej1-x631.google.com ([2a00:1450:4864:20::631])
+	id 1rPqZE-00DYl7-0j;
+	Tue, 16 Jan 2024 21:01:52 +0000
+Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPqTi-00DXWS-1O
+	id 1rPqZB-00DYjo-0a
 	for linux-i3c@lists.infradead.org;
-	Tue, 16 Jan 2024 20:56:12 +0000
-Received: by mail-ej1-x631.google.com with SMTP id a640c23a62f3a-a26f73732c5so1191863566b.3
-        for <linux-i3c@lists.infradead.org>; Tue, 16 Jan 2024 12:56:07 -0800 (PST)
+	Tue, 16 Jan 2024 21:01:50 +0000
+Received: by mail-ed1-x52e.google.com with SMTP id 4fb4d7f45d1cf-553ba2f0c8fso11549625a12.1
+        for <linux-i3c@lists.infradead.org>; Tue, 16 Jan 2024 13:01:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1705438567; x=1706043367; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=IF8tVnwMYq1U0t6qcRppgFDYJQJyz9wzqBY1RGIb1SU=;
-        b=iHeuhK8w99PyYCWl39KPVOzPGCaHEJuIoNu/rXXJqFqaN5TB2pojfB3VyWjn/Uc4WU
-         77dxqW8KUD8ic3xoDtFGau1evF1Wdh1tgpmFTfXPvJFagHw6mCYmuL0svPkvtKlSgeYB
-         JtblfWvcniJi3RfsRyJrVGZn6VOdIxZecg0eL1irb48n+OYd7cJfIR4NV+BpCPq4YGxk
-         jWzm33urCWYFD6nMD/44SKnbNbnWUb4Z6cnH+M6fyz6DCoJYvVClrwx+PTnAAJoP9mxc
-         bEZc3RZ8nDs1w+rcRuxM/YxQRdZk69ZXaR7dk1A5kId7nz+EFgclm8ja+4/mpmEryV9/
-         fhQA==
+        d=linaro.org; s=google; t=1705438904; x=1706043704; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:references:cc:to
+         :from:content-language:subject:user-agent:mime-version:date
+         :message-id:from:to:cc:subject:date:message-id:reply-to;
+        bh=BI0JqMsCv4VcqbNYt8+RzCV7QHNt5sRA33XbIYq+33c=;
+        b=X8gqYB8z5A3GmFGr19qD+GIS2lqM79JWuy+eRPipp8IcYfQIlij6H07SXRiYs7Va1d
+         ZLVQ0hWlumWREKjfpYIyrW0GZTTNge0GAsAQE9pgplEd4RFMbfM/bv3Q/Zni/9WKYm57
+         INk1OLi7s1Fc/NfaAr0t4tKL0T4K254aDtAhpE0Pxn9u0pd8HiQ/G8/Vpxxv8axuC03x
+         HGYhUvO3ZVkUkT+GMbczSFkZBFIc5XEtK5xbneoA/2efqtVTZA/JXphOv0VFxal88+/2
+         FYwZqs1gEwRK+c5rWKNdCAhLSH/C54iZs5iffQma50IJ1nqEBfgcihatSbxunPiIxxZH
+         TdGQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1705438567; x=1706043367;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
-         :to:content-language:subject:user-agent:mime-version:date:message-id
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=IF8tVnwMYq1U0t6qcRppgFDYJQJyz9wzqBY1RGIb1SU=;
-        b=cX2pFuak4euE5ezfc3RsUfblpLOTQfoKeas5Qk9zFdr98GOO3NzbfsK2+VHfzidgX4
-         IReTtLs5MLQYAtGRYYCVLboKkVOjX6WvKMDBBgPR5Y/hTFmo5gI7BBjxHimelVOo2N0Y
-         5Nx2H+hgOOKzlFgE1sbbSguBpXuKcU0yn3+CvsmlyVd7WpjH16KeYWGfk4Gbtip5KXMh
-         JLosqU9sHfS7SkofYC1Pm3ABTUWNhkVQ75nwslsHVpbdrVDiBVxPx7UscJW0UkwC+XTV
-         PTsByEQKjG2axJPWfbvitVP9BbOaIh+kcWrhEEcdi7hM+k/rpk9qSEUdXUwZ6zp9psxE
-         pw+w==
-X-Gm-Message-State: AOJu0YxOtw6+KmLrjpGtHyZkfLDOPczH6Xi3vGEbuN3pW0B4C8c2fRYq
-	qyrpmM6eyaRBsz/AViPp6WiZ34VidZF99A==
-X-Google-Smtp-Source: AGHT+IE52M51qG+jcB2jrmsVxTZTeViqZRn5rP9TyLpElL/GAmz3oXzbPsdfJLKCKJpn8yGCNElM3A==
-X-Received: by 2002:a17:906:604b:b0:a23:58da:c19c with SMTP id p11-20020a170906604b00b00a2358dac19cmr3254627ejj.76.1705438566743;
-        Tue, 16 Jan 2024 12:56:06 -0800 (PST)
+        d=1e100.net; s=20230601; t=1705438904; x=1706043704;
+        h=content-transfer-encoding:in-reply-to:autocrypt:references:cc:to
+         :from:content-language:subject:user-agent:mime-version:date
+         :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=BI0JqMsCv4VcqbNYt8+RzCV7QHNt5sRA33XbIYq+33c=;
+        b=hUb6+H5Cza+DC4QblKgXN/mzEtpZuX1opkzvIPfWzXuN/57nqfae8z8KU4O2UjkrE0
+         /ecC42kLYHyaBLf1DUC44HIKBC7CA6wNpG8AQFH+V4zhRzFo1EOINUYkEGJH0uih0ZN4
+         Fyagj3FxHenUDaY7UKwv5YGTqv95OpsSXt3ZJNookqNpmwty0fkD0m727rNM3/mjOhL9
+         6Jfy2YCQWNPL8r2VZolES8GyLXtKHkysenKMEoU8YOm5XosmWpxL4TTwLGubo9Yx1eS0
+         QN0T4W0mZ4swYSIf9D+0FgRmcYzgRmxO3mlkdnF9gJv+EtSauA32t0i2d3icTbQ/R2RR
+         51Ew==
+X-Gm-Message-State: AOJu0YwL9nZ9yJG/1L2QCPCxwXmIo1Iu48CJW8GuigSb7b7qKo85/03S
+	KZXTil73xvi32zHPSAjcxcgI9S1Bc1MsbA==
+X-Google-Smtp-Source: AGHT+IHSKQjn3iRQ2ltMWmBiWTkmis4S2DCRaFDXIur/tWNxSSuIXUs/UXtiIZnENnqyI9dAW4sdDA==
+X-Received: by 2002:a17:907:a80a:b0:a2d:2328:6d52 with SMTP id vo10-20020a170907a80a00b00a2d23286d52mr1363322ejc.276.1705438904380;
+        Tue, 16 Jan 2024 13:01:44 -0800 (PST)
 Received: from [192.168.1.20] ([178.197.215.66])
-        by smtp.gmail.com with ESMTPSA id i4-20020a17090639c400b00a27a766c6c8sm6920107eje.218.2024.01.16.12.56.04
+        by smtp.gmail.com with ESMTPSA id v1-20020a17090606c100b00a2a04754eb1sm6939441ejb.8.2024.01.16.13.01.42
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 16 Jan 2024 12:56:06 -0800 (PST)
-Message-ID: <c760b89c-efec-489e-8333-c60b38fb5a47@linaro.org>
-Date: Tue, 16 Jan 2024 21:56:03 +0100
+        Tue, 16 Jan 2024 13:01:43 -0800 (PST)
+Message-ID: <e54e2b30-03e7-40e3-bb33-dc71de8511a4@linaro.org>
+Date: Tue, 16 Jan 2024 22:01:42 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v2 2/7] dt-bindings: i3c: svc: add compatible string i3c:
  silvaco,i3c-target-v1
 Content-Language: en-US
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 To: Frank Li <Frank.li@nxp.com>
 Cc: Conor Dooley <conor@kernel.org>, Conor Dooley
  <conor.dooley@microchip.com>, robh@kernel.org,
@@ -89,7 +91,7 @@ References: <1b628901-7f71-4c97-9a16-723912988417@linaro.org>
  <ZabVSYgq1Mz3LPpC@lizhi-Precision-Tower-5810>
  <4a9ed1ca-cd13-4b61-af06-a3d7935aeeee@linaro.org>
  <ZabqxHD4wtiPn6ep@lizhi-Precision-Tower-5810>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+ <c760b89c-efec-489e-8333-c60b38fb5a47@linaro.org>
 Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
  cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
@@ -134,10 +136,10 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
  fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
  D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <ZabqxHD4wtiPn6ep@lizhi-Precision-Tower-5810>
+In-Reply-To: <c760b89c-efec-489e-8333-c60b38fb5a47@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240116_125610_472298_50EEF505 
-X-CRM114-Status: GOOD (  20.43  )
+X-CRM114-CacheID: sfid-20240116_130149_288914_6A13AE52 
+X-CRM114-Status: GOOD (  21.42  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -154,79 +156,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 16/01/2024 21:44, Frank Li wrote:
-> On Tue, Jan 16, 2024 at 09:30:24PM +0100, Krzysztof Kozlowski wrote:
->> On 16/01/2024 20:13, Frank Li wrote:
->>> On Tue, Jan 16, 2024 at 06:23:09PM +0000, Conor Dooley wrote:
->>>> On Tue, Jan 16, 2024 at 12:35:44PM -0500, Frank Li wrote:
->>>>> On Tue, Jan 16, 2024 at 09:48:08AM +0000, Conor Dooley wrote:
->>>>>> On Tue, Jan 16, 2024 at 10:33:48AM +0100, Krzysztof Kozlowski wrote:
->>>>>>> On 16/01/2024 10:30, Conor Dooley wrote:
->>>>>>>> On Tue, Jan 16, 2024 at 08:24:20AM +0100, Krzysztof Kozlowski wrote:
->>>>>>>>> On 16/01/2024 03:29, Frank Li wrote:
->>>>>>>>>>>> 	Patches were accepted after discussion, what you ponit to. So I
->>>>>>>>>>>> think everyone agree on the name 'silvaco,i3c-master-v1'.
->>>>>>>>>>>> 	I plan send next version to fix auto build error. Any additional
->>>>>>>>>>>> comments about this?
+On 16/01/2024 21:56, Krzysztof Kozlowski wrote:
+> On 16/01/2024 21:44, Frank Li wrote:
+>> On Tue, Jan 16, 2024 at 09:30:24PM +0100, Krzysztof Kozlowski wrote:
+>>> On 16/01/2024 20:13, Frank Li wrote:
+>>>> On Tue, Jan 16, 2024 at 06:23:09PM +0000, Conor Dooley wrote:
+>>>>> On Tue, Jan 16, 2024 at 12:35:44PM -0500, Frank Li wrote:
+>>>>>> On Tue, Jan 16, 2024 at 09:48:08AM +0000, Conor Dooley wrote:
+>>>>>>> On Tue, Jan 16, 2024 at 10:33:48AM +0100, Krzysztof Kozlowski wrote:
+>>>>>>>> On 16/01/2024 10:30, Conor Dooley wrote:
+>>>>>>>>> On Tue, Jan 16, 2024 at 08:24:20AM +0100, Krzysztof Kozlowski wrote:
+>>>>>>>>>> On 16/01/2024 03:29, Frank Li wrote:
+>>>>>>>>>>>>> 	Patches were accepted after discussion, what you ponit to. So I
+>>>>>>>>>>>>> think everyone agree on the name 'silvaco,i3c-master-v1'.
+>>>>>>>>>>>>> 	I plan send next version to fix auto build error. Any additional
+>>>>>>>>>>>>> comments about this?
+>>>>>>>>>>>>
+>>>>>>>>>>>> I still do not see how did you address Rob's comment and his point is
+>>>>>>>>>>>> valid. You just did not reply to it.
 >>>>>>>>>>>
->>>>>>>>>>> I still do not see how did you address Rob's comment and his point is
->>>>>>>>>>> valid. You just did not reply to it.
+>>>>>>>>>>> See https://lore.kernel.org/imx/ZXCiaKfMYYShoiXK@lizhi-Precision-Tower-5810/
 >>>>>>>>>>
->>>>>>>>>> See https://lore.kernel.org/imx/ZXCiaKfMYYShoiXK@lizhi-Precision-Tower-5810/
+>>>>>>>>>> First of all, that's not the answer to Rob's email, but some other
+>>>>>>>>>> thread which is 99% ignored by Rob (unless he has filters for
+>>>>>>>>>> "@Rob"...). Therefore no, it does not count as valid answer.
+>>>>>>>>>>
+>>>>>>>>>> Second, explanation does not make sense. There is no argument granting
+>>>>>>>>>> you exception from SoC specific compatibles.
 >>>>>>>>>
->>>>>>>>> First of all, that's not the answer to Rob's email, but some other
->>>>>>>>> thread which is 99% ignored by Rob (unless he has filters for
->>>>>>>>> "@Rob"...). Therefore no, it does not count as valid answer.
->>>>>>>>>
->>>>>>>>> Second, explanation does not make sense. There is no argument granting
->>>>>>>>> you exception from SoC specific compatibles.
+>>>>>>>>> The patch could have been applied two months ago had Frank done as
+>>>>>>>>> was requested (multiple times). I don't understand the resistance
+>>>>>>>>> towards doing so given the process has taken way way longer as a result.
 >>>>>>>>
->>>>>>>> The patch could have been applied two months ago had Frank done as
->>>>>>>> was requested (multiple times). I don't understand the resistance
->>>>>>>> towards doing so given the process has taken way way longer as a result.
+>>>>>>>> I think that Rob's comment was just skipped and original master binding
+>>>>>>>> was merged without addressing it. I don't want to repeat the same
+>>>>>>>> process for the "target". Indeed I could point this earlier... if I only
+>>>>>>>> knew that Rob pointed out that issue.
 >>>>>>>
->>>>>>> I think that Rob's comment was just skipped and original master binding
->>>>>>> was merged without addressing it. I don't want to repeat the same
->>>>>>> process for the "target". Indeed I could point this earlier... if I only
->>>>>>> knew that Rob pointed out that issue.
+>>>>>>> Oh I think I got confused here. The context for this mail led me to
+>>>>>>> think that this was still trying to push the i3c-master-v1 stuff through
+>>>>>>> and I was commenting on my frustration with the resistance to applying
+>>>>>>> the feedback received. I didn't realise that this was for another
+>>>>>>> patch adding a target.
+>>>>>>>
+>>>>>>> I think you already said it, but NAK to adding any more compatibles here
+>>>>>>> until the soc-specific compatible that was asked for for the imx93 is
+>>>>>>> added.
 >>>>>>
->>>>>> Oh I think I got confused here. The context for this mail led me to
->>>>>> think that this was still trying to push the i3c-master-v1 stuff through
->>>>>> and I was commenting on my frustration with the resistance to applying
->>>>>> the feedback received. I didn't realise that this was for another
->>>>>> patch adding a target.
->>>>>>
->>>>>> I think you already said it, but NAK to adding any more compatibles here
->>>>>> until the soc-specific compatible that was asked for for the imx93 is
->>>>>> added.
->>>>>
->>>>> Is it okay for 'silvaco,i3c-target-imx93'?
+>>>>>> Is it okay for 'silvaco,i3c-target-imx93'?
+>>>
+>>> No, because imx93 is product of NXP, not Silvaco.
+>>>
+>>> You need regular SoC-block compatibles, just like we have for all other
+>>> snps, dwc and cdns.
 >>
->> No, because imx93 is product of NXP, not Silvaco.
->>
->> You need regular SoC-block compatibles, just like we have for all other
->> snps, dwc and cdns.
+>> "nxp,imx93-svc-i3c-target" ? 
 > 
-> "nxp,imx93-svc-i3c-target" ? 
+> Could be, now please point me to patch adding such code to DTS. I would
+> like to see the real use case for it.
 
-Could be, now please point me to patch adding such code to DTS. I would
-like to see the real use case for it.
+Probably I was not clear enough, so let's be more precise: I think you
+might have troubles pointing to such code, because it just does not
+exist. It is a bit contradicting to single hardware description, because
+you want to describe one hardware in two different ways, with two
+different compatibles.
 
-> Just little bit strange for binding file name
-> is silvaco,i3c-master.yaml.
-
-Many other bindings do it. I don't see a problem in creating device
-specific schema sharing some parts, if you have some common pieces.
-
-> 
-> look like "dwc,*" compatitble string's file name is "dwc,*".yaml.
-
-? I don't understand how is this related, but if this is what you want
-to discuss then look:
-Documentation/devicetree/bindings/usb/qcom,dwc3.yaml
-
-or many other examples. Please open dwc, snps and cdns bindings and look
-how it is done there.
+Your commit msg is here empty - it says what  patch is does, which is
+obvious. Tells nothing about the hardware being described here, which
+does not help this discussion. This would need solving as well, but main
+point stays - don't add new compatibles for the same hardware, at least
+not without valid reason/explanation.
 
 Best regards,
 Krzysztof
