@@ -4,75 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26253C47422
-	for <linux-i3c@archiver.kernel.org>; Wed, 17 Jan 2024 08:40:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57680C47258
+	for <linux-i3c@archiver.kernel.org>; Wed, 17 Jan 2024 16:20:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=S/R+E1yI60a5gvuHgSp/9Sr1ZRzt2Mw8HHDYFgmzyWs=; b=cqtIMPhsGT3gwjt9gf6wIcazVy
-	xZ51LQD+Eel6yqxEE6XZEhux+j8LY2VUMEfkVSQT1GRZoFlVas8MVnv+tN4LpgDctpQY0qyEW1PQ2
-	RxbmSVoDvmY9XXJXQgH7JE6emf9xBgFDC6hZoiM5oBjOM72rdTVuxJYiyFZiGjFi5UChubBG6+OWI
-	dN11m1wwfjyMWljzzAmnf3L5zZearLNXNu+XGCEF+gDSnfvxrSq7Nuz/K2ePXyv6tin9kLZNj6RiQ
-	vE4XPWfW2x8jLb1iQ13iPFLtdL+2ACULmeJXucuZvj28Xs46fA1FsmB/VQuQXIqrlVmoxQfUH/rVZ
-	wZXJdo+w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tR3L+Hyl67JiPUVHud0PVJGY62L0BfcWPxiuf/TC29E=; b=kKtfCbYSscwGRh
+	k2UyI89p5WUlclRVrnydPgxyh5kmI5ptk0tHna97KMfYkwjtTJgSMhla0Y0K3E5UyC4guPesFy+tj
+	jacz2deRdAbce9XKZW934YCwApPBv0MJHIddSQw/O161fOag15nx8w/7vRZl7RrTDpjnFiXqdFalX
+	JEbarBlAalGrmk5Mk8qzJcJtGpCfJoDPJiUb9PZqx/0+R3AN1RHdK8Gzlr8n8kKhYkZ/o7UElenT/
+	E2UdPyztYH/P4KiZUVdEtfCx9p5QbrJkeu2xEL8DnBBfWLRPSng6CKf6E0IIYfyx6ONOIvnchFOLu
+	gOLcbaIwQ4THWdocdJGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rQ1Su-00EucE-2U;
-	Wed, 17 Jan 2024 08:40:04 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1rQ8dz-00034M-0D;
+	Wed, 17 Jan 2024 16:19:59 +0000
+Received: from mail-db8eur05on20609.outbound.protection.outlook.com ([2a01:111:f400:7e1a::609] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPo5l-00CyGv-06
+	id 1rQ8dv-00033O-22
 	for linux-i3c@lists.infradead.org;
-	Tue, 16 Jan 2024 18:23:19 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 7DDC7B80E77;
-	Tue, 16 Jan 2024 18:23:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9565AC433F1;
-	Tue, 16 Jan 2024 18:23:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1705429394;
-	bh=BZZrwB54NzVpdIKnJH5IBEBJlnxfuCsPO9zMgTYYx0Q=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=udPD62dbadhMBLT6wXnbk/PYsrCAhEDzjxtawZJ9t1xIzxa7qfbeCQZOMjoea3fNW
-	 ny+vVTuIADQ7GD+7sSRh8UkwpzCq8tRLvoVD1YVU3y8RlPNrvhJaPpGtGNVQ7KuO22
-	 UY8nTAwYCb42cZNy+jP21tJ/QioS8vTLwiEwsExq/qag4FgJ8znilhvRbhZm7y66b1
-	 tRzF0R/qHyskJBWBYZfiOHQgcKgDt0IAHFQ8cv33ftqROoOt7W8C7TJgl137N72wn6
-	 VFHO8HARbFh3IEiUgbMNiIv+izNcblv8i63ErRkDoKK+o68aALBny2lm8lYFeq9y9Y
-	 QWDaX98aExH2A==
-Date: Tue, 16 Jan 2024 18:23:09 +0000
-From: Conor Dooley <conor@kernel.org>
-To: Frank Li <Frank.li@nxp.com>
-Cc: Conor Dooley <conor.dooley@microchip.com>,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>,
-	robh@kernel.org, alexandre.belloni@bootlin.com,
-	conor.culhane@silvaco.com, gregkh@linuxfoundation.org,
-	imx@lists.linux.dev, jirislaby@kernel.org, joe@perches.com,
+	Wed, 17 Jan 2024 16:19:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=MGn94ew9d2q/aJTtuLk8Ci7YwwSwCQGARyK3VMFweUqvkhHgZdIc0NYfgKGmGBF2hSONUDGZZ+mdnG0WQuimpXlmw564ifaRlrVJwN6oEzRlvX7FuKJfnlKxKj64NMn5a5ebN3SmSeSHwIB63mLpOOFtIf3fU+FtUFTibMd+ubS61+8EXSqkVxt60h6o0yj6XodFe2HI8OvFPxOAfrB2247cuIyPbxbSEgY6QzZcZCOyhdBSth+4q4RrPBR+0qnlQAvvyfcGA6weANo+ujxh6JrGVJZD7BKERvg1FE9fr0K+h1g44SYWkAOn+SRKh/SZ9J+rWpX69A0GgBeS9NYRuw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=sSYDwtNEVULQuGaJJ6KMtyff8dMhyglgJe+jloBITX4=;
+ b=BzeDIOLpy32973wCZOBk/TRM0X24CqMCJZisLQI6kyF3AxOh919KKOSvDU91bkgfjDGN6W+mj4W33zo69KBSxsrwTei5D+Iz1fzfXIyuiNvTw2UDEhfsYlmA6OUz4GRYJ//82v7sYTouKuX7u8hJKSWU6QMBa/FluyCz1eWhEmwCWjEh2u/Hl57Dgp8ZVQa5sAEpsm1Uj65E5N08edTm0gneoYnMTCYUfZvlAx7y26p4a9gbT2qP0g+7i1ExPlFAyLyEwX7uRJrwkugHJZCj59nxZA+ehpQKrJC+c0Y4AcN4rbVKJlyKrw4gCThyzs+scFfMK5N57qV+wJrv1/cb3w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=sSYDwtNEVULQuGaJJ6KMtyff8dMhyglgJe+jloBITX4=;
+ b=kBFyqHfQPp+GPqej2iuzRVI/rvqSBQhc8ayHsNsNnXmW9VkIYMlM+fkC63IKGZO/d7UMaHu498+HmnncNLSNngPlDZ1p2UjZA3LqGNQ67UDG8lBp4SgWKpuSDNySEQ2LM00e6JpK34mbdgYKzbxKcWZA5ex4BzeoTYh5kX9A3HA=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by AS1PR04MB9312.eurprd04.prod.outlook.com (2603:10a6:20b:4dc::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7202.23; Wed, 17 Jan
+ 2024 16:19:48 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::b8af:bfe5:dffd:59a9]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::b8af:bfe5:dffd:59a9%4]) with mapi id 15.20.7202.020; Wed, 17 Jan 2024
+ 16:19:48 +0000
+Date: Wed, 17 Jan 2024 11:19:38 -0500
+From: Frank Li <Frank.li@nxp.com>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: Conor Dooley <conor@kernel.org>,
+	Conor Dooley <conor.dooley@microchip.com>, robh@kernel.org,
+	alexandre.belloni@bootlin.com, conor.culhane@silvaco.com,
+	gregkh@linuxfoundation.org, imx@lists.linux.dev,
+	jirislaby@kernel.org, joe@perches.com,
 	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
 	linux-serial@vger.kernel.org, miquel.raynal@bootlin.com,
 	zbigniew.lukwinski@linux.intel.com, devicetree@vger.kernel.org,
 	krzysztof.kozlowski+dt@linaro.org
 Subject: Re: [PATCH v2 2/7] dt-bindings: i3c: svc: add compatible string i3c:
  silvaco,i3c-target-v1
-Message-ID: <20240116-retract-conclude-c47a7fc8cb21@spud>
-References: <e3b9aa63-25a5-41cc-9eb7-6e7d1eacb136@linaro.org>
- <ZaFjaWCA6k+tiCSJ@lizhi-Precision-Tower-5810>
- <ZaWLCrWJEMtFx8cR@lizhi-Precision-Tower-5810>
- <1b628901-7f71-4c97-9a16-723912988417@linaro.org>
- <ZaXqCoCHPWER94Hh@lizhi-Precision-Tower-5810>
- <d45e31c4-914e-4cea-a145-9775b6f516ab@linaro.org>
- <20240116-bleach-herbicide-48d636967134@wendy>
- <3199c245-3d2d-49e8-951e-2b059de4d683@linaro.org>
- <20240116-achiness-thievish-10a12b3c08cd@wendy>
+Message-ID: <Zaf+Gn6rYstttnrA@lizhi-Precision-Tower-5810>
+References: <20240116-achiness-thievish-10a12b3c08cd@wendy>
  <Zaa+cLGVVDSB5MYr@lizhi-Precision-Tower-5810>
+ <20240116-retract-conclude-c47a7fc8cb21@spud>
+ <ZabVSYgq1Mz3LPpC@lizhi-Precision-Tower-5810>
+ <4a9ed1ca-cd13-4b61-af06-a3d7935aeeee@linaro.org>
+ <ZabqxHD4wtiPn6ep@lizhi-Precision-Tower-5810>
+ <c760b89c-efec-489e-8333-c60b38fb5a47@linaro.org>
+ <e54e2b30-03e7-40e3-bb33-dc71de8511a4@linaro.org>
+ <ZacCQ1Eysqq5FnA4@lizhi-Precision-Tower-5810>
+ <ad44d51a-ba64-4a4b-bba9-205faa760c78@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <ad44d51a-ba64-4a4b-bba9-205faa760c78@linaro.org>
+X-ClientProxiedBy: BYAPR07CA0100.namprd07.prod.outlook.com
+ (2603:10b6:a03:12b::41) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
 MIME-Version: 1.0
-In-Reply-To: <Zaa+cLGVVDSB5MYr@lizhi-Precision-Tower-5810>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|AS1PR04MB9312:EE_
+X-MS-Office365-Filtering-Correlation-Id: 21676586-b295-46d8-af23-08dc1778201a
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: fx6KxTzz0zwkomlJ7+pL9DUMG+h/Gci4VUNJqBBhwSKPgA3WjGRA4a1fVlGv7WUJsLspIfCX95sZlGg7ZruYRelhRFmOGgxiaxJ8ecb2PQ5BkbIDZH7BoI7JFXCGi/69N+Hr/P7o5aFKCg806qy4Xu01q6qzIa4rzcgSpgcTkkx7nmdWSezlC18s+FET+A76pSZtcFP4YRLTAeutY8zM6KQmvf646QY4l1OxnURECWmS/nY2Z/xhg56DiKf61sFcFrHhYSUt8XKdGfUCCc5+T6m4dkNwZCBap6GntJ0LfrZbBWXZepsZ4mOx0ybVJra6Uat6uTY7a+58kDWmMSzo4ReA6cFtJRRcK4Nt2kal3JvVh+aZgn7Nb37K2Ust3S2ks9fFGiFzeMbVN69hL7QeEM/m0PkGi/K4yC3DMmKeAElnLGcBQDwFyzO8Qgqyhma5L74sB20lF/OwEtGqteI/eaQ06oga8LuFPJ0s+1k40hTidcFFR+g82FX4kbb4o8hGJyw5T8ndcUauwFjFKv6QVjs/G+LKf1D4iREyWwf13k+QC6YkGxcZdsG4oAs9SvflN0PglVOa3pkEbtgb8oTEdu53aDAktKD6brVtecc9+vDH966aUEo1KT8bC4JlYXM2
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(7916004)(396003)(346002)(39860400002)(136003)(366004)(376002)(230922051799003)(1800799012)(451199024)(186009)(64100799003)(8936002)(8676002)(4326008)(5660300002)(6916009)(7416002)(66946007)(66556008)(316002)(54906003)(2906002)(66476007)(26005)(86362001)(38350700005)(6486002)(52116002)(966005)(478600001)(6512007)(6506007)(6666004)(9686003)(53546011)(33716001)(41300700001)(38100700002)(83380400001)(67856001);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?HpsqXnvtPDiv1GgPtCEgG0rnwv+0V+sIPBdYtyJWo4sLPVUMRZ0kWSMWxFcT?=
+ =?us-ascii?Q?xEyYUoKQ7/2E7ovlxQcx606Omfz0f6NalR52fMZEkwIh2D2bfMfq9K4kKOpm?=
+ =?us-ascii?Q?+iG8qKdizxxDJR3Xo9wzHrYLQEl+Q7HYjdM2xGYW6ZyX/8Aco2Ub4dvwUSu7?=
+ =?us-ascii?Q?nshCczu94BTdkTFp71YIbU3LxkcyqjjzmjxnpXyROQubJZKs3YgIjwmG64U1?=
+ =?us-ascii?Q?EKdHNSvDGRmBWXlYcnyKYMa1Y0Z4gZT0C5UmhUFwaG7O4hRidCzWArgKqBuP?=
+ =?us-ascii?Q?6dqE/vWXNZzn1KUZ6OPjXt4A1XfAKKNJKTAnYzlKIHNhM1PO714W0kpGZBRD?=
+ =?us-ascii?Q?AVh/ZJpW0gOFuVtF1ZR0exdiJJko8BkMROYaj/PJUf4FyM1XB0U64TjAY+EB?=
+ =?us-ascii?Q?HtCKgl+/+890na0eK7X97llykC/YStkmtMf7jL8HGlrM5eMOgyCGehCarqO7?=
+ =?us-ascii?Q?K6HYac9YhDksjESUFguMFjhCLbaU0XJxIfYl86nhrR5TWkwxoCm2jhNrduV2?=
+ =?us-ascii?Q?DsuyEyFq62Lgk/WCJyWNweAmwFo34O44m0Dn3/vD48aqlGtzoTwDviCa18uc?=
+ =?us-ascii?Q?Pwl/ASzuUOLTosK5Wy5d34x8CflmDc/sMw4cIT728YnQBOlGClJAXqVtF+zx?=
+ =?us-ascii?Q?LRlp1p+y4Q89m9pn89HCzeLnZdsGhYAodoNkFUsdMxk7eFYPbTZY7sUPML42?=
+ =?us-ascii?Q?qiQwzxfcKKt/GXCj3DOjOOU9InnSlEOnW6TWKJw0dykd2FOzaMM9C2fCkHo2?=
+ =?us-ascii?Q?8Nhd9aARXy/mEDs/fNUvFG1TyjCCRUmj4rZvx2+e7/4SxsYWctKp+J5wHOu6?=
+ =?us-ascii?Q?z8FsJB4ttuoh+VWc9pgoMvMNtDB64STyzMqTwYRItlgz4VSKLB4zRc0tOt8i?=
+ =?us-ascii?Q?6KdXTvuYlckKzw46Zk5mVGGBmvOJf9IXGT8m+dK9YZgd9taF/1GRG5gI7myT?=
+ =?us-ascii?Q?InSv7Jcj3Ptwf6YTxKlxvwQTBnqSg8MvwbYCl7kIFuBjaIMaNJWYJqb1FEdC?=
+ =?us-ascii?Q?kJods3tCr0tm4wjqDWfvNMFsV8j/qCDOA7M5Nl0+5c2qwVPSLYsINUwU8dVl?=
+ =?us-ascii?Q?tIxJDw4pfQ98v7knQpzSg4XYB9gtkee7pOQYW6gigdoUODkwLr9WSxRN/9Ba?=
+ =?us-ascii?Q?rHHWWIBlViCwwRGtChc8Q/RmSJ6ZDNwoQni3yzlxRLZYz41JUPARiXHXVgNY?=
+ =?us-ascii?Q?+DjZdSVCUGoXz1BdiHqhCYetm6aYdGzeJuYKHnXBqVNn4p1eyk72tS0H6Slm?=
+ =?us-ascii?Q?bTVbimmOgZOUs+U+elDI3bFsKor8HEuF1Z1OwGVrXOcP38HzrB5Aa35NHHhJ?=
+ =?us-ascii?Q?xFA/C7jvJ3BlrxRZd9nvpSBm3o52YyfZctdLl3OP50Y7EEYfjxJLYaQpNCJE?=
+ =?us-ascii?Q?xXvtp7LGH9E7QFdGxKTI/6laVVPXFF4UT7uYxW5i8IJXzA3x/ofPs5iZPiB0?=
+ =?us-ascii?Q?2Wi5vgD9Y+WcmnVlYqjuWfxeWHY13nOyaQ1w30INRSxQgyasfRZhAV2M4Br/?=
+ =?us-ascii?Q?ZXZpBoo/5s6QnMgXn2uxNyTp7nmEq0GUZrRGbVpZqzvNfnVR9wQ26LzBFcW6?=
+ =?us-ascii?Q?2VIRbtlmttLtvemDPxgbvRYkqTaJsRZDU1XgoxqF?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 21676586-b295-46d8-af23-08dc1778201a
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Jan 2024 16:19:48.5458
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: gRYuF7NTP0u+/ZrdDiEp9yjuYyHZTf/s3W6CssqOLgEWlfbDCcBO5ZfkMG09WQDVa3seWiu+ZjLWmtZeEo46cA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS1PR04MB9312
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240116_102317_334874_6543D9AB 
-X-CRM114-Status: GOOD (  33.80  )
-X-Mailman-Approved-At: Wed, 17 Jan 2024 00:40:01 -0800
+X-CRM114-CacheID: sfid-20240117_081955_871566_742F782F 
+X-CRM114-Status: GOOD (  43.98  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,110 +144,183 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============5315425179542165981=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+On Wed, Jan 17, 2024 at 07:50:16AM +0100, Krzysztof Kozlowski wrote:
+> On 16/01/2024 23:25, Frank Li wrote:
+> > On Tue, Jan 16, 2024 at 10:01:42PM +0100, Krzysztof Kozlowski wrote:
+> >> On 16/01/2024 21:56, Krzysztof Kozlowski wrote:
+> >>> On 16/01/2024 21:44, Frank Li wrote:
+> >>>> On Tue, Jan 16, 2024 at 09:30:24PM +0100, Krzysztof Kozlowski wrote:
+> >>>>> On 16/01/2024 20:13, Frank Li wrote:
+> >>>>>> On Tue, Jan 16, 2024 at 06:23:09PM +0000, Conor Dooley wrote:
+> >>>>>>> On Tue, Jan 16, 2024 at 12:35:44PM -0500, Frank Li wrote:
+> >>>>>>>> On Tue, Jan 16, 2024 at 09:48:08AM +0000, Conor Dooley wrote:
+> >>>>>>>>> On Tue, Jan 16, 2024 at 10:33:48AM +0100, Krzysztof Kozlowski wrote:
+> >>>>>>>>>> On 16/01/2024 10:30, Conor Dooley wrote:
+> >>>>>>>>>>> On Tue, Jan 16, 2024 at 08:24:20AM +0100, Krzysztof Kozlowski wrote:
+> >>>>>>>>>>>> On 16/01/2024 03:29, Frank Li wrote:
+> >>>>>>>>>>>>>>> 	Patches were accepted after discussion, what you ponit to. So I
+> >>>>>>>>>>>>>>> think everyone agree on the name 'silvaco,i3c-master-v1'.
+> >>>>>>>>>>>>>>> 	I plan send next version to fix auto build error. Any additional
+> >>>>>>>>>>>>>>> comments about this?
+> >>>>>>>>>>>>>>
+> >>>>>>>>>>>>>> I still do not see how did you address Rob's comment and his point is
+> >>>>>>>>>>>>>> valid. You just did not reply to it.
+> >>>>>>>>>>>>>
+> >>>>>>>>>>>>> See https://lore.kernel.org/imx/ZXCiaKfMYYShoiXK@lizhi-Precision-Tower-5810/
+> >>>>>>>>>>>>
+> >>>>>>>>>>>> First of all, that's not the answer to Rob's email, but some other
+> >>>>>>>>>>>> thread which is 99% ignored by Rob (unless he has filters for
+> >>>>>>>>>>>> "@Rob"...). Therefore no, it does not count as valid answer.
+> >>>>>>>>>>>>
+> >>>>>>>>>>>> Second, explanation does not make sense. There is no argument granting
+> >>>>>>>>>>>> you exception from SoC specific compatibles.
+> >>>>>>>>>>>
+> >>>>>>>>>>> The patch could have been applied two months ago had Frank done as
+> >>>>>>>>>>> was requested (multiple times). I don't understand the resistance
+> >>>>>>>>>>> towards doing so given the process has taken way way longer as a result.
+> >>>>>>>>>>
+> >>>>>>>>>> I think that Rob's comment was just skipped and original master binding
+> >>>>>>>>>> was merged without addressing it. I don't want to repeat the same
+> >>>>>>>>>> process for the "target". Indeed I could point this earlier... if I only
+> >>>>>>>>>> knew that Rob pointed out that issue.
+> >>>>>>>>>
+> >>>>>>>>> Oh I think I got confused here. The context for this mail led me to
+> >>>>>>>>> think that this was still trying to push the i3c-master-v1 stuff through
+> >>>>>>>>> and I was commenting on my frustration with the resistance to applying
+> >>>>>>>>> the feedback received. I didn't realise that this was for another
+> >>>>>>>>> patch adding a target.
+> >>>>>>>>>
+> >>>>>>>>> I think you already said it, but NAK to adding any more compatibles here
+> >>>>>>>>> until the soc-specific compatible that was asked for for the imx93 is
+> >>>>>>>>> added.
+> >>>>>>>>
+> >>>>>>>> Is it okay for 'silvaco,i3c-target-imx93'?
+> >>>>>
+> >>>>> No, because imx93 is product of NXP, not Silvaco.
+> >>>>>
+> >>>>> You need regular SoC-block compatibles, just like we have for all other
+> >>>>> snps, dwc and cdns.
+> >>>>
+> >>>> "nxp,imx93-svc-i3c-target" ? 
+> >>>
+> >>> Could be, now please point me to patch adding such code to DTS. I would
+> >>> like to see the real use case for it.
+> >>
+> >> Probably I was not clear enough, so let's be more precise: I think you
+> >> might have troubles pointing to such code, because it just does not
+> >> exist. It is a bit contradicting to single hardware description, because
+> >> you want to describe one hardware in two different ways, with two
+> >> different compatibles.
+> >>
+> >> Your commit msg is here empty - it says what  patch is does, which is
+> >> obvious. Tells nothing about the hardware being described here, which
+> >> does not help this discussion. This would need solving as well, but main
+> >> point stays - don't add new compatibles for the same hardware, at least
+> >> not without valid reason/explanation.
+> > 
+> > I can improve commt msg. It was similar PCI case (There are two work mode:
+> > root complex and endpoint). So there are two kind compatible string for it.
+> > 
+> > If you think it is good for using two compatible string for two work mode
+> > of the same hardware.
+> 
+> Not really, because compatible describes hardware and it is the same
+> hardware here. We do not have two different compatibles for GPIOs being
+> input or output.  Or two different compatibles for serial engines (ones
+> providing UART, SPI or I2C).
 
---===============5315425179542165981==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="qdmJxKjtdyHy6e/u"
-Content-Disposition: inline
+GPIO and UART is simple. Actuall SPI and I2C have two mode, slave and
+master. Many SPI/I2C is dual mode controller. Just seldom use slave mode
+at linux side. So you just see master mode SPI/I2C controller in dt-binding
+and dts file. So few people upstream slave part to linux kernel community.
+They have the exact same problems if support slave mode.
 
+PCI is typical example: 
+EP mode:  Documentation/devicetree/bindings/pci/qcom,pcie-ep.yaml
+RC mode:  Documentation/devicetree/bindings/pci/qcom,pcie.yaml
 
---qdmJxKjtdyHy6e/u
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Which is the same hardware for two difference compatible string.
+> 
+> > 
+> > I can write git commit message like:
+> > 
+> > dt-bindings: i3c: svc: add compatible string nxp,imx93-svc-i3c-target
+> > 
+> > silvaco i3c controller is dual mode controller, which can work as master
+> > and target mode. All clock, reg, irq are the same for both mode. Add
+> > compatible string "nxp,imx93-svc-i3c-target" to let silivaco i3c
+> > controller work as target mode.
+> > 
+> > Of course, alternate method to added a property "mode" to distingiush
+> > master and target mode. but old "silvaco,i3c-master-v1" will actually work
+> > as dual mode support. Driver structure will become complex.
+> 
+> Please send full DTS of user for this, which works for 100%, so we can
+> see how it differs from controller mode. If your code snippet from other
+> thread is correct, then it would suggest "mode" property or lack of
+> children. Maybe lack of children is not enough, if user-space could
+> control I3C bus.
 
-On Tue, Jan 16, 2024 at 12:35:44PM -0500, Frank Li wrote:
-> On Tue, Jan 16, 2024 at 09:48:08AM +0000, Conor Dooley wrote:
-> > On Tue, Jan 16, 2024 at 10:33:48AM +0100, Krzysztof Kozlowski wrote:
-> > > On 16/01/2024 10:30, Conor Dooley wrote:
-> > > > On Tue, Jan 16, 2024 at 08:24:20AM +0100, Krzysztof Kozlowski wrote:
-> > > >> On 16/01/2024 03:29, Frank Li wrote:
-> > > >>>>> 	Patches were accepted after discussion, what you ponit to. So I
-> > > >>>>> think everyone agree on the name 'silvaco,i3c-master-v1'.
-> > > >>>>> 	I plan send next version to fix auto build error. Any addition=
-al
-> > > >>>>> comments about this?
-> > > >>>>
-> > > >>>> I still do not see how did you address Rob's comment and his poi=
-nt is
-> > > >>>> valid. You just did not reply to it.
-> > > >>>
-> > > >>> See https://lore.kernel.org/imx/ZXCiaKfMYYShoiXK@lizhi-Precision-=
-Tower-5810/
-> > > >>
-> > > >> First of all, that's not the answer to Rob's email, but some other
-> > > >> thread which is 99% ignored by Rob (unless he has filters for
-> > > >> "@Rob"...). Therefore no, it does not count as valid answer.
-> > > >>
-> > > >> Second, explanation does not make sense. There is no argument gran=
-ting
-> > > >> you exception from SoC specific compatibles.
-> > > >=20
-> > > > The patch could have been applied two months ago had Frank done as
-> > > > was requested (multiple times). I don't understand the resistance
-> > > > towards doing so given the process has taken way way longer as a re=
-sult.
-> > >=20
-> > > I think that Rob's comment was just skipped and original master bindi=
-ng
-> > > was merged without addressing it. I don't want to repeat the same
-> > > process for the "target". Indeed I could point this earlier... if I o=
-nly
-> > > knew that Rob pointed out that issue.
-> >=20
-> > Oh I think I got confused here. The context for this mail led me to
-> > think that this was still trying to push the i3c-master-v1 stuff through
-> > and I was commenting on my frustration with the resistance to applying
-> > the feedback received. I didn't realise that this was for another
-> > patch adding a target.
-> >=20
-> > I think you already said it, but NAK to adding any more compatibles here
-> > until the soc-specific compatible that was asked for for the imx93 is
-> > added.
->=20
-> Is it okay for 'silvaco,i3c-target-imx93'?
+According to current implment, only need change imx93.dtsi's @i3c1's 
+compatible string to "silvaco,i3c-target-v1". I attached imx93 dts node for
+your reference.
 
-I don't know. Is the device in question capable of also operating in
-master mode? I have no idea from the commit message since it contains
-zero information on the hardware.
-If the exact same controller can operate in master and target mode,
-having two compatibles for the same device does not seem okay to me.
+	i3c1: i3c-master@44330000 {                        
+                                compatible = "silvaco,i3c-master-v1"; 
+					     ^^^^ only need change here!
+   
+                                reg = <0x44330000 0x10000>;                
+                                interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
+                                #address-cells = <3>;                      
+                                #size-cells = <0>;                         
+                                clocks = <&clk IMX93_CLK_BUS_AON>,         
+                                         <&clk IMX93_CLK_I3C1_GATE>,       
+                                         <&clk IMX93_CLK_I3C1_SLOW>;       
+                                clock-names = "pclk", "fast_clk", "slow_clk";
+                                dmas = <&edma1 6 0 1>, <&edma1 5 0 0>;     
+                                dma-names = "rx", "tx";                    
+                                status = "disabled";                       
+                        }; 
 
-Also, "silvaco" does not make the imx93 so that is not a suitable vendor
-prefix. If the imx93 only supports i3c IPs in target mode, I would call
-it "<vendorofimx>,imx93-i3c" with "silvaco,i3c-target-v1" as a fallback.
+For master mode:
+Unlike i2c. Genenally I3C can auto probe children node like USB can auto
+detect attached devices. So I3C master can work without children nodes.
+Such as auto load i3c sensor driver according to i3c standard vendor id and
+production id.
 
-Thanks,
-Conor.
+For target mode: using configfs to controller I3C.
 
---qdmJxKjtdyHy6e/u
-Content-Type: application/pgp-signature; name="signature.asc"
+mkdir /sys/kernel/config/i3c_target/functions/tty/t
+echo 0x011b > /sys/kernel/config/i3c_target/functions/tty/t/vendor_id
+echo 0x1000 > /sys/kernel/config/i3c_target/functions/tty/t/part_id
+echo 0x6 > /sys/kernel/config/i3c_target/functions/tty/t/bcr
 
------BEGIN PGP SIGNATURE-----
+ln -s /sys/kernel/config/i3c_target/functions/tty/t /sys/kernel/config/i3c_target/controllers/44330000.i3c-master/
 
-iHUEABYIAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCZabJjQAKCRB4tDGHoIJi
-0oBVAQDDSQszcWBHPjv+zzPJ4Jwf5F3zvlWOZOaPQSVALMBS1AEAjehMKKMgybnn
-hKiuBGxe+C7CLnu7Tf0NAw78Xj6lcQY=
-=fPBb
------END PGP SIGNATURE-----
+Then you echo test >/dev/ttySI3C0.
 
---qdmJxKjtdyHy6e/u--
+Unlike USB, user can switch host and gadget mode dymatically. Suppose I3C
+only work on one of master or slave mode only, which is static.
 
+Although it is one hardware, I think it is exculsive multi function device.
 
---===============5315425179542165981==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Summary: basice two option to distingiush controller and target mode.
+1. by "compatible" string
+2. by "mode"
+
+I think 1 is relatively simple and easy to understand.
+
+> 
+> Best regards,
+> Krzysztof
+> 
 
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
-
---===============5315425179542165981==--
-
