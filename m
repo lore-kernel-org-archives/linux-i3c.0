@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C8EBC47DDC
-	for <linux-i3c@archiver.kernel.org>; Tue, 23 Jan 2024 21:26:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD0C9C47DDB
+	for <linux-i3c@archiver.kernel.org>; Tue, 23 Jan 2024 21:26:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D5C6eDXWMf61jLp5tYKAKmsFBBHfwsq0MhVMXAbjoxs=; b=0211DGQSkce0B/
-	m1qg0Pe+H8QaEruKGgONZfwdn7ldmWg7R/jJfNS1vdq6cJq/5Gjo4hKCW0p2ON0nyDZQ9joI3t9uN
-	w1koCEsl2H6nSvWqpXFJ8ZenVXw/D4bOtdIBi9K6T302oPEingcO8GvVFmhkX5H11k6q/kE92nP3V
-	z55FYLGZsk9bltiD0qixgNz2TR+Mnh8WSVm00Q2pVcogvHqbiPF7eY0GrKV8G4ov9eEPv6w+itCsA
-	EgyoPcjAB6Y+BgAi45otJ0v+QtvZSPHg8Sx3bgBntgb02e7jCX9s7pdIjzvfNJk1KfRijSFkbvIMy
-	XLLSsqE/uuCQ2+6/7pkw==;
+	List-Owner; bh=g/y6KllVuPUOb7smI3vOibL9NQ0VdlVUSOwZZ2Q600E=; b=NMLM1g/xoMNduq
+	Q9RqUcZ7GFnDwpZCcDUlEnpVrZjKdZ4BNPWUORmiThdpREMhbWcra+xPYRYEpP/y/J+YFaFbQXXx0
+	BZLcqKKLuPUr9lF0VaAaNGKbofoK0k/i2kUoXiPx19N8PSr10QDhz8P57rPIWA38A56KUB8tDktTc
+	lgVxQIXELjeHlwOXPBbJag7oO/zK719e5kmQM0K3oms+/T/u2ZQBUSUfXDMqhws5TF37YCiix/kN2
+	PZnT3XRZM05xuE5xTB9rJhl9ASEoGTpb4ojFuBsIwm5h1leRrnR1WL3KzltYkEz0Soj+DD8dLZ+3s
+	hyN+RHjVFRtev4pcpowQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSOI6-000Wdl-25;
-	Tue, 23 Jan 2024 21:26:42 +0000
-Received: from mail-vi1eur04on062b.outbound.protection.outlook.com ([2a01:111:f400:fe0e::62b] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1rSOI9-000Wes-1H;
+	Tue, 23 Jan 2024 21:26:45 +0000
+Received: from mail-db8eur05on20630.outbound.protection.outlook.com ([2a01:111:f400:7e1a::630] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSOI2-000WSy-1a
+	id 1rSOI5-000WaY-1T
 	for linux-i3c@lists.infradead.org;
-	Tue, 23 Jan 2024 21:26:41 +0000
+	Tue, 23 Jan 2024 21:26:43 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YulzftrDHJay0q7oxkXvx2yOE7y7HqKQeXe7bsjf15mNuoGAPQNF3Kk5fTHVHvDBEPmPuY4MWuywzXaOQKP2BYIRVagaNYbsakOGGZMcdFQLh2khF83J/KCzrNctS8KKUCLCVqGoTZW9nvcBIsZUELHnchX/3CuTw7ejcpWalw6QmZtKjUTXs4fkhH4O5hCPY3bU19m1vGCV6b8s6yp4YZeOGxvpLTDao+CXmKX/wjYLAdN7qdmp67L05Fvq8N5a12LYbbEYDOb4X7Y98Cbw2urangpQSWCr8oRRnxX777R+daH4h5KJohO95D3YjEqvLrF3vfznAzTZpQAJJ7l/wA==
+ b=bSZDlCxSVYQ9eUGxU1Yzxfp8zWuusUqcytA8P+Df0eXdZeI40bqcn0LZ0Z+XSFanmbWLa0RlpvN424uXW/h/WDJcxzNGvnqyr6VgsbxmFZXRRs+navfSC9t2XnUD9OoDV0uNFK7s3ixHhX9NfK3cBPrynz/releQ1J9H6tl7QJabMfDca5ZvwA8aRohZgVJc1dZv2RYE38B0pK2608ieDvhf3pWho12aPZ1iADmM3Xjtf2TxWP/16Fl0rkYn3JFH3fEsfGiOciRsvAqSRRxjs8BjnmZWyNPhFlRTeaQPDWCfoGZXxw3q3k3ck+3aQ7Uoxw9becAjk3S++36/h+jkCA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Jv63bzvfpmi9X4WF+c0Nny0z07mV+I5l+14mQv4nxik=;
- b=RIf68xbrU0sRfxNIsgJXjjq/BYBO9gWKdRMWNR9jELTiLxVrQe2HTM3p120ujI9kTUr4jf04SDgVkg9gWl11yt62maMyrlHxsPka79Aqc3h2Ogmhp7Wdgm7HNXR2jsSI0nSH1NoSSh4Z+2upylKvnGxfGTHUm4EECM0LzRpWIUZn0mY0OPfRSUZbvjB+BK3nJXYvfICOQNGN4OjkK1uUfP88LWUMX9f3ujBa8H8rgryTIbpl7ozYE59rODkRHbRiaX1ABEuXpkk1YGHXhSplYHp0iR1ge5jUFU1OnUDdszKLVvmLZDiQnGYuNtNChrAGZBe5DnVn7v5jRaVWH7GtRQ==
+ bh=l0a37GnWZnsMU291lJrjVO3NUrxAqBjH/CuWqcn4Gho=;
+ b=MvDAoku4Q/jQDwsIO+gpzQ7FYHx4ieQzjWBJGgBJ/95S+VYckHRLD2CPUNRRkLvOuhsNksvJQXWwAG97Mn/cIseeDsw8vyaWxt1SCeiMGxZ1QUB8ctq04Z7K+JGYZ78NMUPmInmLNMVwgwdIghpWI4ndAHSZB0ZMEG3DCIWWFreF7NW7mNAd0ce44STlvHkiE/i/WNjp4hAGEBnEnD1WTvNmhp/gwRY8nomKkC83Pt0MuJg9OQ2YI1cESCu//sh73p5Roo7I29DpbvkczY+qU1S60zFd5Y79/dd9gL5MJgNVrYkOoSOoA5drfPG/UtVsgthl7zDbtAAC5AxoVDI4UA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Jv63bzvfpmi9X4WF+c0Nny0z07mV+I5l+14mQv4nxik=;
- b=UC/9zRjG9VzJCFfAkGeATtd4lgYg95DRSbr60pAGcMPGL8ic9P3qur3WqhVohgfqJ4lAd1nixcFTdeZx9rALgkt2wmhv+wudc2H9ePmMBlFY2vcVukdRzrrZ1Du+g44l7TK2umcYz5XxGRv0Ud3Geo2nZDvx4qezghbkYLAN2Uk=
+ bh=l0a37GnWZnsMU291lJrjVO3NUrxAqBjH/CuWqcn4Gho=;
+ b=DqaDxwyUFzo7iRwUJTfqToLwSnEFcR68vss+GiD7x+141WcdGg/Tk1ZFKZ+kF0SIlIsFx0CN5lGrZLiWLAfI/E4jS/KZ8LT9O/MpsQyo1S4JF9A0S0EIFXb0JXeDIskaJdozY5pB2FhHNNUGoTBnVw7oVJgvjHvUEsd20OwQYBk=
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
- by PA4PR04MB7616.eurprd04.prod.outlook.com (2603:10a6:102:e7::5) with
+ by DB9PR04MB9553.eurprd04.prod.outlook.com (2603:10a6:10:2ed::6) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7202.33; Tue, 23 Jan
- 2024 21:26:27 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7202.32; Tue, 23 Jan
+ 2024 21:26:39 +0000
 Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
  ([fe80::c8b4:5648:8948:e85c]) by PAXPR04MB9642.eurprd04.prod.outlook.com
  ([fe80::c8b4:5648:8948:e85c%3]) with mapi id 15.20.7202.035; Tue, 23 Jan 2024
- 21:26:27 +0000
+ 21:26:38 +0000
 From: Frank Li <Frank.Li@nxp.com>
 To: frank.li@nxp.com
 Cc: alexandre.belloni@bootlin.com,
@@ -69,9 +69,9 @@ Cc: alexandre.belloni@bootlin.com,
 	miquel.raynal@bootlin.com,
 	robh@kernel.org,
 	zbigniew.lukwinski@linux.intel.com
-Subject: [PATCH v3 5/8] i3c: target: add svc target controller support
-Date: Tue, 23 Jan 2024 16:25:46 -0500
-Message-Id: <20240123212549.3858137-6-Frank.Li@nxp.com>
+Subject: [PATCH v3 8/8] tty: i3c: add TTY over I3C master support
+Date: Tue, 23 Jan 2024 16:25:49 -0500
+Message-Id: <20240123212549.3858137-9-Frank.Li@nxp.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20240123212549.3858137-1-Frank.Li@nxp.com>
 References: <20240123212549.3858137-1-Frank.Li@nxp.com>
@@ -80,55 +80,55 @@ X-ClientProxiedBy: SJ0PR13CA0081.namprd13.prod.outlook.com
  (2603:10a6:102:240::14)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|PA4PR04MB7616:EE_
-X-MS-Office365-Filtering-Correlation-Id: dd319862-28d0-472c-93e1-08dc1c59f502
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|DB9PR04MB9553:EE_
+X-MS-Office365-Filtering-Correlation-Id: b14c7e1c-f7bf-4717-77fe-08dc1c59fc19
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: i9byK9W0uRYP2/1ok94v1bhjSHYnilkXdCVFHWZPUmGOirrsURBTCiuHajF68sJr/HXiFxbu3D1VCW05lHXtBk4FSW5X9YIwhVPo21u+mmeBqWSoCjVxZ45oj4nfAnnNgjptOA8d1dQ2Ga85UEZmcwkqwb/SqRRD0Mv7pPyrogK9eRV/AQnpFN5DGSKobE7z2O2O8ZwscLlCmID3gWXz2+VK2YtBAIB/z73dd+w/rVB3FVQD4yPotU+vs+nHt9E2UKHaGIqEiByN0rCDLhZRZhJF7Gs6JcGKkJsLsXse5JFMX2F/Oo9xYPnqmAwVgq/jbBB/DFVqBeJ1RY63QzE5z7oMZBWNjw7CqmuHOK5dTA2p+5ocEhE435hgrMK/uNVAIJkvWWxv07lnCGI5OzoHJtY+7fOklrKTXiJ2Y53QPnWxEPnTrDnBT9Ff1fKgxLP3lR7pzDNxZxi2YYG7aFpfVxO556GjBzrqHg3TjbiImLevfxR+LpWhYIoAHD0LMbLIRrlHDp/41nhB5HMzRHLMR13xF5xnKZD64UaziPO/BDQhFcfHxbyvKYHovw17TcyhBPmI02z8inXkjcMOIt7NKfobummLzHxx2T0EzIfaORVzbpG/eTT99jjlbJPpjsst3kNOd9knc0M7Q0hOpS7ZFX65GXDArqqpOZvpqZ5sBqI=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(396003)(39860400002)(136003)(346002)(366004)(376002)(230173577357003)(230273577357003)(230922051799003)(451199024)(186009)(1800799012)(64100799003)(1076003)(26005)(2616005)(478600001)(52116002)(6666004)(6506007)(6512007)(83380400001)(5660300002)(30864003)(7416002)(41300700001)(2906002)(6486002)(4326008)(8676002)(37006003)(34206002)(66946007)(66476007)(66556008)(316002)(8936002)(36756003)(86362001)(38100700002)(38350700005);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: 6a2fNApsc7Ex2xdkH/xp49280rslq9RnvRF0CzWg0ECrDHhwcaCB+3a5T3KS8ZS5om93yHNvaeyUBjqUo7B9Ny47Wd4GspeOjfFvw3guKWXSZfvFRcP6FxluRfc9e7cxlQ7xswaKgFkGMJFBSCGe1Nm+yDb8z5wtyVxvD/QAR264aJG5rZWU8yAVpQ8iHTJcx9RgvsoNbDqi1MFrwvPhkC9dedPjPH6EVGSNqlALOBcCxmrBnfwJEGNuECoYpNWkPH4fM+Pkw3ZjmDuVMIHXlLh18+Na0sFhjBDPWVX10PpLgtyPoWtDsU6GAzKhCHpa/ySlVAsRpixKAsxMCL73QVGhwCu+qTtfhFDJChZotosWuG8tBIY1aFbVWxmxQxfJiKXMCp9vwl1sGtjEJRtaWxjrz5Fa3uP+T8NNShuBZjROB+TLXHKxed6byGUjQbbeY/BpTI4AIym7qjVBgIhCMhepATnU9US0iL/sbW1+ELcMKiCzNbbthGOGORimr3gjiaX2OM8cU1nEAR3wRQr+Zt9Frj+6vsbV/ij4AUSuZAvY0Xb4dn+jaFPECDOLL/HgFRpgNrFRbVu2SfJptjAW9aDKWIZpwMy9qApeESuWuO4Hdqz8NgmF4gNMVdyc2seM
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(366004)(136003)(376002)(396003)(346002)(39860400002)(230922051799003)(64100799003)(1800799012)(451199024)(186009)(38100700002)(66946007)(37006003)(8676002)(316002)(8936002)(34206002)(66556008)(83380400001)(4326008)(6506007)(52116002)(2616005)(66476007)(6512007)(6666004)(478600001)(5660300002)(41300700001)(36756003)(38350700005)(6486002)(2906002)(7416002)(30864003)(26005)(1076003)(86362001);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?FgLpYtt6iVbrHVjKQ8EnWOjZMACo3bf0SxAZPDrw/aDUSpusUNQUQzcF0nYV?=
- =?us-ascii?Q?JvvgpurBDn2xjQmbBzk0KCTkvTWoF+I1qKq44+0Qh6eQCva7mfxoJGPBAdKK?=
- =?us-ascii?Q?YS16z9ucURUTAuKPJTkNANpNZpbvDZzNXdoF+JHvzibg0srXu/F0QRFTAl2o?=
- =?us-ascii?Q?G3i4PvoXzIh7MqLjN7lP02eHeU53BvOiDDvkYkjznInto9rU1KjksSD4r+hO?=
- =?us-ascii?Q?c/9eRcn2HNXcFx2GShX1I5ahvemUjwkkG56Bp0aky8RMgr7I9mY9A0jEwxgU?=
- =?us-ascii?Q?lb63SFQd4yqo/zezUp0xdcjXP+gjQn4DP4xMi4qf6bLG78s8w83C36R6ZEK9?=
- =?us-ascii?Q?bxxP9q9iYZCryARQCi5gztxFOGcggbQgHBmIZTRg2xfg3d+W+wJosiAfQG39?=
- =?us-ascii?Q?FlYKTU/++/fvuNoiLpG/VmZbrbuHblESeG2XtHSx+nISZjbXDXliK8moUzhJ?=
- =?us-ascii?Q?dFV1ANhcsOg7NpXX/rsHnuFbuJPOdOFBrJ6YKwOzH6JeT04j/tsp+khV17Jd?=
- =?us-ascii?Q?uHOgahz0WK7wogkYAMsmu33tHK10y7cGjJatS3FQnW3G+ym+Ifxr3qzApOe4?=
- =?us-ascii?Q?SWYMe6OniwiwPJINs/ZoYgv3rmxlpt8QGznk0kqHFd9bDSANCzUh3DDrGUmn?=
- =?us-ascii?Q?Y8/uEMoDPe44JVqm+L+gk/R55SXZtSTSODNogQSvSb2t3j2ehaJfV/dKbDHd?=
- =?us-ascii?Q?fxt/HiAxG0GhE2aVWoKCrw4QAy+3r/haZw6MlM/wFIsNYvjgnOAlsW2PF9AK?=
- =?us-ascii?Q?kO9h2guPZrkb3qQwbrJ1BZcyWBaiC5xgdgMoFcLY6YJv1kgl4qsOZWrsXOKU?=
- =?us-ascii?Q?5PT6jVXqeJp6TGwElOSxpZxebfwvQ3tVaxFzs90tmpDbnYbTobPXDK6Y0s/T?=
- =?us-ascii?Q?zvyGiw3lylAnhgJUFZFsQSRvx4Q/YYa3ZifTi/YJOteDi6VqVLPsSHygdN3x?=
- =?us-ascii?Q?5UdzhgpFlZ5Q2lYIRW4AKrREZ4+x30PG5yS0xGPDYDU1PeQojof9o6ZhjUWR?=
- =?us-ascii?Q?Shy+gt674g0zekv0jiOHduLQqmNGukpYEBgIwXZndR7bUR9PK9QuC8utuotq?=
- =?us-ascii?Q?BiuVeZ0ZCKMMXOUsfbb9agIXiy/Odxr4QI7iK0sHvrEr5TUU9LEfH1NI3emP?=
- =?us-ascii?Q?2sjx7cmuoxwjYXTSYwasBabnHT7EPHVg2UCWl4d3NYjzNa0owFZ6uSp0XOwi?=
- =?us-ascii?Q?qIdO8cAvX8mi9jUHgk12Xg9epVHaguW1h1eh4VYA/KF/f946aOyujHb+/oEF?=
- =?us-ascii?Q?2H1SNr+wx0Dmkd1HxeUg70vXx0QkV5LyD/dC+9ON3njol8hAlhcUFMAFMabl?=
- =?us-ascii?Q?cfI7ujWzisRRubo3OvbKyD2flbfpk6bDLMXq7X+nKcQydW7RDmsRJyhmm9WV?=
- =?us-ascii?Q?eRJU7N4a5eyWxX2PkLxHzYl3DdbiZeRK/5H5dZv0bFuJ0fIak0sBp6K/rR+i?=
- =?us-ascii?Q?9h+iNQBJwz715T3MYE1N/DUPaHErssP+gOOwaThABxdgDJ7t6wvfFRi0XYis?=
- =?us-ascii?Q?kVUCCpN30TGZeRmyvfZEqjWsvzELxgF8g3CeJAUwowNvcCvJ3NGUhBIQlfli?=
- =?us-ascii?Q?EptqkMJpq9MdPh5q/ahu4lGQjjCz/bV7og2vaOIZ?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?8pDHD8jbw2NCKj4s+Nxoc6iEUoHfv+kL+ktS358LY8RR4Fqil5teZJ8hJfne?=
+ =?us-ascii?Q?mTLiknYbOPT1Q5CQFW2A0d000tRFsmOTQ/KC5K81qgmxRSlPB0/OuWPz46Bj?=
+ =?us-ascii?Q?pddsO1OFdjLRNrp6Wi4NsG0LtJ2I7fHne4+HYpc79gqGe65VOaidYz53eAx7?=
+ =?us-ascii?Q?00HqQt5Iqd6sLpz48I1nJ1NSo5/7DoRQmREUsBeKKTrBdxjfRwawBBphmlaT?=
+ =?us-ascii?Q?8Wvga0msJmukpMpwMoVZ3EjaIEsXJMNem7sstNl7ITCaaJg8UkIOeNIDD8Nz?=
+ =?us-ascii?Q?zpV8N/UHf+fBizrCkYoHi2v+tUR3ZFGpTFXQHr9xIhnTjKYR+RD03mj2zfPU?=
+ =?us-ascii?Q?nVlXq02jaEtKkbX+xFOcpffZvwF0a+WUrCF7NaxQqOUvA0j0ZFHAkyFvK3xD?=
+ =?us-ascii?Q?lJqB67aoxiJtnZqF2zedthGb51u3KVK3rieEgWBBZWjZEsGtAeE8wghGsk1T?=
+ =?us-ascii?Q?jO9OHb2nzHp/pwlApPGicanilBbGplnrPBA4dGdEby0JK/KQFklpotQuPWXp?=
+ =?us-ascii?Q?oN4txR4lpCoaHnPosxgslR9FQ9c1+I2feIZPhONToXfqvAmYYG7F+00YARZK?=
+ =?us-ascii?Q?28f/N5uQMSNBgcNmEkWr7TUhBuxQcp03iWDbjYQ1RyDwoD7bI6N1fqI4dm14?=
+ =?us-ascii?Q?xqOGcygzEwUmasrAF6osP1eksyJ0gU+Zw/ep43Scl3CtLEFzpSYZfa4u57Ot?=
+ =?us-ascii?Q?z/2VMN1kfJuqwy9UtbxaXT2AIgM9C+YFOjpRZieecg9oOcN7/yKe8ddOh6gj?=
+ =?us-ascii?Q?Ll7uqLAID9HG204f3ly08L+NPOmdOwerDtW3Urxi05qQ2Ae/lZiax96ZmlAM?=
+ =?us-ascii?Q?qD2tS8nvKIelFV60cV9GWfXOEvh95HrpUE4hrfPr80QG1HrZviCm2RP5K7h8?=
+ =?us-ascii?Q?iZH5L1rBKvBi4Cp+X2RXCE6z42iECmQjylJf/RchDXVHdxGXvTkZDx59FvTn?=
+ =?us-ascii?Q?xtSmW4/bFRkxN+dhhrLL9tz0AwoORpLanXx8/4bA2g40vvIhlbnHTwpdSuwB?=
+ =?us-ascii?Q?jJdPiBYPY5HxZUh17E6w7Qi0tB+fz7ZiYiA2R00+Q9TqExyet4RG/MBfcvy6?=
+ =?us-ascii?Q?T6+AeK9p041Vw8qE0xefIsQME1rwHY2fxxwnrsPQeabm3OScE6O0thS7YtUx?=
+ =?us-ascii?Q?7TODlSihxMiJPvR+KIxhcgM7VD6WkxyVljpxUFXQqDPDxqsgkPShqzE+FzpM?=
+ =?us-ascii?Q?et366idOpbX6tqQmFlVwkrXwriCi4p9/xo3mmp9jTwzE9F2QkLzpb9c5xTbi?=
+ =?us-ascii?Q?pes7VnzDEs/hV4jQcUMkq8DK47ucAaE/9uViP0jXVhS06U/jrO6a7hZON0mp?=
+ =?us-ascii?Q?S+LRM79u9uGhdNrbd8IVWBo2Re7pkegVmyXuqOj9UeEIae3nlo64s6NK3aZJ?=
+ =?us-ascii?Q?L1NZwxXdPXaQCYRPfsm3AB3QayWsrOr7vx2VLPGXHGqdGdzvp41j5mvLiqI8?=
+ =?us-ascii?Q?DCLF187VucjLLGjE3cNmAbwx00xJg3tvlLzkSOdsT7nWdLyezRwyU5WzyjcP?=
+ =?us-ascii?Q?lPBcn48l2W0gocYIaXaLcCWZpltdyD7f16iiS5bOTGTpzGS7QP4RslbRqHYS?=
+ =?us-ascii?Q?rP+gypYrRkaX6gU7HxiHLvdbnIyRv+v4YXFg2yR8?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: dd319862-28d0-472c-93e1-08dc1c59f502
+X-MS-Exchange-CrossTenant-Network-Message-Id: b14c7e1c-f7bf-4717-77fe-08dc1c59fc19
 X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Jan 2024 21:26:27.0698
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Jan 2024 21:26:38.9579
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: yWo2R178LgVO+89YkspTrr0jNFzlhSRrapSJPzbj5RYUmibZzOb+va7DXthhOwZq1VOs4JOH3E3uyaAW740yAQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB7616
+X-MS-Exchange-CrossTenant-UserPrincipalName: jBvC5OBD87vr3uy2/pKApdakCyNvZFpLsQjGl+uJT4tPzimSEt4Y8724bGD7RLU/+NSbXSkGziMDFxKLSwvpeA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB9553
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240123_132638_539198_0E5C20FD 
-X-CRM114-Status: GOOD (  19.81  )
+X-CRM114-CacheID: sfid-20240123_132641_508230_11B8201B 
+X-CRM114-Status: GOOD (  22.69  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,107 +145,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add Silvaco I3C target controller support
+In typical embedded Linux systems, UART consoles require at least two pins,
+TX and RX. In scenarios where I2C/I3C devices like sensors or PMICs are
+present, we can save these two pins by using this driver. Pins is crucial
+resources, especially in small chip packages.
+
+This introduces support for using the I3C bus to transfer console tty data,
+effectively replacing the need for dedicated UART pins. This not only
+conserves valuable pin resources but also facilitates testing of I3C's
+advanced features, including early termination, in-band interrupt (IBI)
+support, and the creation of more complex data patterns. Additionally,
+it aids in identifying and addressing issues within the I3C controller
+driver.
 
 Signed-off-by: Frank Li <Frank.Li@nxp.com>
 ---
 
 Notes:
-    Change from v2 to v3
-    - fix build warning
+    Notes:
+        Version number use i3c target patches.
+        Change v2
+        - using system_unbound_wq working queue
+        - fixed accoring to Jiri Slaby's comments
+    
+        Change before send with i3c target support
+    
+        Change from v4 to v5
+        - send in i3c improvememtn patches.
+    
+        Change from v2 to v4
+        - none
+    
+        Change from v1 to v2
+        - update commit message.
+        - using goto for err handle
+        - using one working queue for all tty-i3c device
+        - fixed typo found by js
+        - update kconfig help
+        - using kfifo
+    
+        Still below items not be fixed (according to Jiri Slaby's comments)
+        - rxwork thread: need trigger from two position.
+        - common thread queue: need some suggestion
 
- drivers/i3c/master/Makefile         |   2 +-
- drivers/i3c/master/svc-i3c-main.c   |  37 +-
- drivers/i3c/master/svc-i3c-target.c | 776 ++++++++++++++++++++++++++++
- drivers/i3c/master/svc-i3c.h        |   3 +
- 4 files changed, 812 insertions(+), 6 deletions(-)
- create mode 100644 drivers/i3c/master/svc-i3c-target.c
+ drivers/tty/Kconfig   |  13 ++
+ drivers/tty/Makefile  |   1 +
+ drivers/tty/i3c_tty.c | 426 ++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 440 insertions(+)
+ create mode 100644 drivers/tty/i3c_tty.c
 
-diff --git a/drivers/i3c/master/Makefile b/drivers/i3c/master/Makefile
-index 484cb81f45821..b9ed6c9e7be13 100644
---- a/drivers/i3c/master/Makefile
-+++ b/drivers/i3c/master/Makefile
-@@ -2,6 +2,6 @@
- obj-$(CONFIG_CDNS_I3C_MASTER)		+= i3c-master-cdns.o
- obj-$(CONFIG_DW_I3C_MASTER)		+= dw-i3c-master.o
- obj-$(CONFIG_AST2600_I3C_MASTER)	+= ast2600-i3c-master.o
--svc-i3c-objs				+= svc-i3c-main.o svc-i3c-master.o
-+svc-i3c-objs				+= svc-i3c-main.o svc-i3c-master.o svc-i3c-target.o
- obj-$(CONFIG_SVC_I3C_MASTER)		+= svc-i3c.o
- obj-$(CONFIG_MIPI_I3C_HCI)		+= mipi-i3c-hci/
-diff --git a/drivers/i3c/master/svc-i3c-main.c b/drivers/i3c/master/svc-i3c-main.c
-index 053b2bd9d8317..34d9f1e64b1c0 100644
---- a/drivers/i3c/master/svc-i3c-main.c
-+++ b/drivers/i3c/master/svc-i3c-main.c
-@@ -7,24 +7,51 @@
+diff --git a/drivers/tty/Kconfig b/drivers/tty/Kconfig
+index 5646dc6242cd9..9ab4cd480e9f8 100644
+--- a/drivers/tty/Kconfig
++++ b/drivers/tty/Kconfig
+@@ -412,6 +412,19 @@ config RPMSG_TTY
+ 	  To compile this driver as a module, choose M here: the module will be
+ 	  called rpmsg_tty.
  
- #include "svc-i3c.h"
++config I3C_TTY
++	tristate "TTY over I3C"
++	depends on I3C
++	help
++	  Select this option to use TTY over I3C master controller.
++
++	  This makes it possible for user-space programs to send and receive
++	  data as a standard tty protocol. I3C provide relatively higher data
++	  transfer rate and less pin numbers, SDA/SCL are shared with other
++	  devices.
++
++	  If unsure, say N
++
+ endif # TTY
  
-+static bool svc_i3c_is_master(struct device *dev)
-+{
-+	const char *mode = NULL;
-+
-+	device_property_read_string(dev, "mode", &mode);
-+
-+	if (!mode)
-+		return true;
-+
-+	if (strncmp(mode, "target", 6) == 0)
-+		return false;
-+
-+	return true;
-+}
-+
- static int svc_i3c_probe(struct platform_device *pdev)
- {
--	return svc_i3c_master_probe(pdev);
-+	if (svc_i3c_is_master(&pdev->dev))
-+		return svc_i3c_master_probe(pdev);
-+
-+	return svc_i3c_target_probe(pdev);
- }
+ source "drivers/tty/serdev/Kconfig"
+diff --git a/drivers/tty/Makefile b/drivers/tty/Makefile
+index 07aca5184a55d..f329f9c7d308a 100644
+--- a/drivers/tty/Makefile
++++ b/drivers/tty/Makefile
+@@ -27,5 +27,6 @@ obj-$(CONFIG_GOLDFISH_TTY)	+= goldfish.o
+ obj-$(CONFIG_MIPS_EJTAG_FDC_TTY) += mips_ejtag_fdc.o
+ obj-$(CONFIG_VCC)		+= vcc.o
+ obj-$(CONFIG_RPMSG_TTY)		+= rpmsg_tty.o
++obj-$(CONFIG_I3C_TTY)		+= i3c_tty.o
  
- static void svc_i3c_remove(struct platform_device *pdev)
- {
--	svc_i3c_master_remove(pdev);
-+	if (svc_i3c_is_master(&pdev->dev))
-+		return svc_i3c_master_remove(pdev);
-+
-+	svc_i3c_target_remove(pdev);
- }
- 
- static int __maybe_unused svc_i3c_runtime_suspend(struct device *dev)
- {
--	return svc_i3c_master_runtime_suspend(dev);
-+	if (svc_i3c_is_master(dev))
-+		return svc_i3c_master_runtime_suspend(dev);
-+
-+	return -EINVAL;
- }
- 
- static int __maybe_unused svc_i3c_runtime_resume(struct device *dev)
- {
--	return svc_i3c_master_runtime_resume(dev);
-+	if (svc_i3c_is_master(dev))
-+		return svc_i3c_master_runtime_resume(dev);
-+
-+	return -EINVAL;
- }
- 
- static const struct dev_pm_ops svc_i3c_pm_ops = {
-@@ -49,4 +76,4 @@ static struct platform_driver svc_i3c_master = {
- 		.pm = &svc_i3c_pm_ops,
- 	},
- };
--module_platform_driver(svc_i3c_master);
-\ No newline at end of file
-+module_platform_driver(svc_i3c_master);
-diff --git a/drivers/i3c/master/svc-i3c-target.c b/drivers/i3c/master/svc-i3c-target.c
+ obj-y += ipwireless/
+diff --git a/drivers/tty/i3c_tty.c b/drivers/tty/i3c_tty.c
 new file mode 100644
-index 0000000000000..094efb60cb404
+index 0000000000000..e1e2a64b21863
 --- /dev/null
-+++ b/drivers/i3c/master/svc-i3c-target.c
-@@ -0,0 +1,776 @@
++++ b/drivers/tty/i3c_tty.c
+@@ -0,0 +1,426 @@
 +// SPDX-License-Identifier: GPL-2.0
 +/*
 + * Copyright 2023 NXP.
@@ -253,788 +242,425 @@ index 0000000000000..094efb60cb404
 + * Author: Frank Li <Frank.Li@nxp.com>
 + */
 +
-+#include <linux/bitfield.h>
-+#include <linux/clk.h>
-+#include <linux/completion.h>
-+#include <linux/errno.h>
-+#include <linux/i3c/target.h>
-+#include <linux/i3c/target.h>
-+#include <linux/interrupt.h>
-+#include <linux/iopoll.h>
-+#include <linux/list.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/pinctrl/consumer.h>
-+#include <linux/platform_device.h>
-+#include <linux/pm_runtime.h>
-+#include <linux/clk.h>
-+#include <linux/console.h>
-+#include <linux/i3c/device.h>
++#include <linux/delay.h>
 +#include <linux/kernel.h>
 +#include <linux/mod_devicetable.h>
++#include <linux/module.h>
++#include <linux/i3c/device.h>
++#include <linux/i3c/master.h>
++#include <linux/slab.h>
++#include <linux/console.h>
++#include <linux/serial_core.h>
++#include <linux/interrupt.h>
++#include <linux/workqueue.h>
++#include <linux/tty_flip.h>
 +
-+#include "svc-i3c.h"
++static DEFINE_IDR(i3c_tty_minors);
++static DEFINE_MUTEX(i3c_tty_minors_lock);
 +
-+enum i3c_clks {
-+	PCLK,
-+	FCLK,
-+	SCLK,
-+	MAXCLK,
++static struct tty_driver *i3c_tty_driver;
++
++#define I3C_TTY_MINORS		8
++#define I3C_TTY_TRANS_SIZE	16
++#define I3C_TTY_RX_STOP		0
++#define I3C_TTY_RETRY		20
++#define I3C_TTY_YIELD_US	100
++
++struct ttyi3c_port {
++	struct tty_port port;
++	int minor;
++	spinlock_t xlock; /* protect xmit */
++	u8 tx_buff[I3C_TTY_TRANS_SIZE];
++	u8 rx_buff[I3C_TTY_TRANS_SIZE];
++	struct i3c_device *i3cdev;
++	struct work_struct txwork;
++	struct work_struct rxwork;
++	struct completion txcomplete;
++	unsigned long status;
++	u32 buf_overrun;
 +};
 +
-+struct svc_i3c_target {
-+	struct device *dev;
-+	void __iomem *regs;
-+	int irq;
-+	struct clk_bulk_data clks[MAXCLK];
-+
-+	struct list_head txq;
-+	spinlock_t txq_lock; /* protect tx queue */
-+	struct list_head rxq;
-+	spinlock_t rxq_lock; /* protect rx queue */
-+	struct list_head cq;
-+	spinlock_t cq_lock; /* protect complete queue */
-+
-+	struct work_struct work;
-+	struct workqueue_struct *workqueue;
-+
-+	struct completion dacomplete;
-+	struct i3c_target_ctrl_features features;
-+
-+	spinlock_t ctrl_lock; /* protext access SCTRL register */
++static const struct i3c_device_id i3c_ids[] = {
++	I3C_DEVICE(0x011B, 0x1000, NULL),
++	{ /* sentinel */ },
 +};
 +
-+#define I3C_SCONFIG	0x4
-+#define   I3C_SCONFIG_SLVENA_MASK	BIT(0)
-+#define	  I3C_SCONFIG_OFFLINE_MASK	BIT(9)
-+#define   I3C_SCONFIG_SADDR_MASK	GENMASK(31, 25)
-+
-+#define I3C_SSTATUS	0x8
-+#define	  I3C_SSTATUS_STNOTSTOP_MASK	BIT(0)
-+#define	  I3C_SSTATUS_STOP_MASK		BIT(10)
-+#define	  I3C_SSTATUS_RX_PEND_MASK	BIT(11)
-+#define   I3C_SSTATUS_TXNOTFULL_MASK	BIT(12)
-+#define	  I3C_SSTATUS_DACHG_MASK	BIT(13)
-+#define	  I3C_SSTATUS_EVDET_MASK	GENMASK(21, 20)
-+#define	  I3C_SSTATUS_EVDET_ACKED	0x3
-+#define	  I3C_SSTATUS_IBIDIS_MASK	BIT(24)
-+#define	  I3C_SSTATUS_HJDIS_MASK	BIT(27)
-+
-+#define I3C_SCTRL	0xc
-+#define   I3C_SCTRL_EVENT_MASK		GENMASK(1, 0)
-+#define	  I3C_SCTRL_EVENT_IBI		0x1
-+#define	  I3C_SCTRL_EVENT_HOTJOIN	0x3
-+#define   I3C_SCTRL_EXTDATA_MASK	BIT(3)
-+#define   I3C_SCTRL_IBIDATA_MASK	GENMASK(15, 8)
-+
-+#define I3C_SINTSET	0x10
-+#define I3C_SINTCLR	0x14
-+#define   I3C_SINT_START	BIT(8)
-+#define   I3C_SINT_MATCHED	BIT(9)
-+#define   I3C_SINT_STOP		BIT(10)
-+#define   I3C_SINT_RXPEND	BIT(11)
-+#define   I3C_SINT_TXSEND	BIT(12)
-+#define   I3C_SINT_DACHG	BIT(13)
-+#define   I3C_SINT_CCC		BIT(14)
-+#define   I3C_SINT_ERRWARN	BIT(15)
-+#define   I3C_SINT_DDRMAATCHED	BIT(16)
-+#define   I3C_SINT_CHANDLED	BIT(17)
-+#define   I3C_SINT_EVENT	BIT(18)
-+#define   I3C_SINT_SLVRST	BIT(19)
-+
-+#define I3C_SDATACTRL	0x2c
-+#define   I3C_SDATACTRL_RXEMPTY_MASK	BIT(31)
-+#define   I3C_SDATACTRL_TXFULL_MASK	BIT(30)
-+#define	  I3C_SDATACTRL_RXCOUNT_MASK	GENMASK(28, 24)
-+#define	  I3C_SDATACTRL_TXCOUNT_MASK	GENMASK(20, 16)
-+#define   I3C_SDATACTRL_FLUSHFB_MASK	BIT(1)
-+#define   I3C_SDATACTRL_FLUSHTB_MASK	BIT(0)
-+
-+#define I3C_SWDATAB	0x30
-+#define   I3C_SWDATAB_END_ALSO_MASK	BIT(16)
-+#define	  I3C_SWDATAB_END_MASK		BIT(8)
-+
-+#define I3C_SWDATAE	0x34
-+#define I3C_SRDATAB	0x40
-+
-+#define I3C_SCAPABILITIES 0x60
-+#define   I3C_SCAPABILITIES_FIFOTX_MASK     GENMASK(27, 26)
-+#define   I3C_SCAPABILITIES_FIFORX_MASK     GENMASK(29, 28)
-+
-+#define I3C_SMAXLIMITS	0x68
-+#define   I3C_SMAXLIMITS_MAXRD_MASK  GENMASK(11, 0)
-+#define   I3C_SMAXLIMITS_MAXWR_MASK  GENMASK(27, 16)
-+
-+#define I3C_SIDPARTNO	0x6c
-+
-+#define I3C_SIDEXT	0x70
-+#define	  I3C_SIDEXT_BCR_MASK	GENMASK(23, 16)
-+#define	  I3C_SIDEXT_DCR_MASK	GENMASK(15, 8)
-+#define I3C_SVENDORID	0x74
-+
-+#define I3C_SMAPCTRL0	0x11c
-+#define	  I3C_SMAPCTRL0_ENA_MASK	BIT(0)
-+#define   I3C_SMAPCTRL0_DA_MASK	GENMASK(7, 1)
-+
-+#define I3C_IBIEXT1	0x140
-+#define   I3C_IBIEXT1_CNT_MASK	GEN_MASK(2, 0)
-+#define   I3C_IBIEXT1_MAX_MASK	GEN_MASK(4, 6)
-+#define   I3C_IBIEXT1_EXT1_SHIFT	8
-+#define   I3C_IBIEXT1_EXT2_SHIFT	16
-+#define   I3C_IBIEXT1_EXT3_SHIFT	24
-+
-+#define I3C_IBIEXT2	0x144
-+#define	  I3C_IBIEXT2_EXT4_SHIFT	0
-+#define	  I3C_IBIEXT2_EXT5_SHIFT	8
-+#define	  I3C_IBIEXT2_EXT6_SHIFT	16
-+#define	  I3C_IBIEXT2_EXT7_SHIFT	24
-+
-+static int svc_i3c_target_enable(struct i3c_target_ctrl *ctrl)
++static int i3c_port_activate(struct tty_port *port, struct tty_struct *tty)
 +{
-+	struct svc_i3c_target *svc;
-+	u32 val;
-+
-+	svc = dev_get_drvdata(&ctrl->dev);
-+
-+	val = readl_relaxed(svc->regs + I3C_SCONFIG);
-+	val |= I3C_SCONFIG_SLVENA_MASK;
-+	writel_relaxed(val, svc->regs + I3C_SCONFIG);
-+
-+	return 0;
-+}
-+
-+static int svc_i3c_target_disable(struct i3c_target_ctrl *ctrl)
-+{
-+	struct svc_i3c_target *svc;
-+	u32 val;
-+
-+	svc = dev_get_drvdata(&ctrl->dev);
-+
-+	val = readl_relaxed(svc->regs + I3C_SCONFIG);
-+	val &= ~I3C_SCONFIG_SLVENA_MASK;
-+	writel_relaxed(val, svc->regs + I3C_SCONFIG);
-+
-+	return 0;
-+}
-+
-+static int svc_i3c_target_set_config(struct i3c_target_ctrl *ctrl, struct i3c_target_func *func)
-+{
-+	struct svc_i3c_target *svc;
-+	u32 val;
-+	u32 wm, rm;
-+
-+	svc = dev_get_drvdata(&ctrl->dev);
-+
-+	if (func->static_addr > 0x7F)
-+		return -EINVAL;
-+
-+	val = readl_relaxed(svc->regs + I3C_SCONFIG);
-+	val &= ~I3C_SCONFIG_SLVENA_MASK;
-+	val |= FIELD_PREP(I3C_SCONFIG_SADDR_MASK, func->static_addr);
-+	writel_relaxed(val, svc->regs + I3C_SCONFIG);
-+
-+	if (func->part_id)
-+		writel_relaxed((func->part_id << 16) |
-+				((func->instance_id << 12) & GENMASK(15, 12)) |
-+				(func->ext_id & GENMASK(11, 0)), svc->regs + I3C_SIDPARTNO);
-+
-+	writel_relaxed(FIELD_PREP(I3C_SIDEXT_BCR_MASK, func->bcr) |
-+		       FIELD_PREP(I3C_SIDEXT_DCR_MASK, func->dcr),
-+		       svc->regs + I3C_SIDEXT);
-+
-+	wm = func->max_write_len == 0 ?
-+	     FIELD_GET(I3C_SMAXLIMITS_MAXWR_MASK, I3C_SMAXLIMITS_MAXWR_MASK) : func->max_write_len;
-+
-+	wm = max_t(u32, val, 8);
-+
-+	rm = func->max_read_len == 0 ?
-+	     FIELD_GET(I3C_SMAXLIMITS_MAXRD_MASK, I3C_SMAXLIMITS_MAXRD_MASK) : func->max_read_len;
-+	rm = max_t(u32, val, 16);
-+
-+	val = FIELD_PREP(I3C_SMAXLIMITS_MAXRD_MASK, rm) | FIELD_PREP(I3C_SMAXLIMITS_MAXWR_MASK, wm);
-+	writel_relaxed(val, svc->regs + I3C_SMAXLIMITS);
-+
-+	writel_relaxed(func->vendor_id, svc->regs + I3C_SVENDORID);
-+	return 0;
-+}
-+
-+static const struct i3c_target_ctrl_features *svc_i3c_get_features(struct i3c_target_ctrl *ctrl)
-+{
-+	struct svc_i3c_target *svc;
-+
-+	svc = dev_get_drvdata(&ctrl->dev);
-+
-+	if (!svc)
-+		return NULL;
-+
-+	return &svc->features;
-+}
-+
-+static void svc_i3c_queue_complete(struct svc_i3c_target *svc, struct i3c_request *complete)
-+{
-+	unsigned long flags;
-+
-+	spin_lock_irqsave(&svc->cq_lock, flags);
-+	list_add_tail(&complete->list, &svc->cq);
-+	spin_unlock_irqrestore(&svc->cq_lock, flags);
-+	queue_work(svc->workqueue, &svc->work);
-+}
-+
-+static void svc_i3c_fill_txfifo(struct svc_i3c_target *svc)
-+{
-+	struct i3c_request *req, *complete = NULL;
-+	unsigned long flags;
-+	int val;
-+
-+	spin_lock_irqsave(&svc->txq_lock, flags);
-+	while ((!!(req = list_first_entry_or_null(&svc->txq, struct i3c_request, list))) &&
-+	       !((readl_relaxed(svc->regs + I3C_SDATACTRL) & I3C_SDATACTRL_TXFULL_MASK))) {
-+		while (!(readl_relaxed(svc->regs + I3C_SDATACTRL)
-+					& I3C_SDATACTRL_TXFULL_MASK)) {
-+			val = *(u8 *)(req->buf + req->actual);
-+
-+			if (req->actual + 1 == req->length)
-+				writel_relaxed(val, svc->regs + I3C_SWDATAE);
-+			else
-+				writel_relaxed(val, svc->regs + I3C_SWDATAB);
-+
-+			req->actual++;
-+
-+			if (req->actual == req->length) {
-+				list_del(&req->list);
-+				complete = req;
-+				spin_unlock_irqrestore(&svc->txq_lock, flags);
-+
-+				svc_i3c_queue_complete(svc, complete);
-+				return;
-+
-+				spin_lock_irqsave(&svc->txq_lock, flags);
-+				break;
-+			}
-+		}
-+	}
-+	spin_unlock_irqrestore(&svc->txq_lock, flags);
-+}
-+
-+static int svc_i3c_target_queue(struct i3c_request *req, gfp_t gfp)
-+{
-+	struct svc_i3c_target *svc;
-+	struct list_head *q;
-+	unsigned long flags;
-+	spinlock_t *lk;
-+
-+	svc = dev_get_drvdata(&req->ctrl->dev);
-+	if (!svc)
-+		return -EINVAL;
-+
-+	if (req->tx) {
-+		q = &svc->txq;
-+		lk = &svc->txq_lock;
-+	} else {
-+		q = &svc->rxq;
-+		lk = &svc->rxq_lock;
-+	}
-+
-+	spin_lock_irqsave(lk, flags);
-+	list_add_tail(&req->list, q);
-+	spin_unlock_irqrestore(lk, flags);
-+
-+	if (req->tx)
-+		svc_i3c_fill_txfifo(svc);
-+
-+	if (req->tx)
-+		writel_relaxed(I3C_SINT_TXSEND, svc->regs + I3C_SINTSET);
-+	else
-+		writel_relaxed(I3C_SINT_RXPEND, svc->regs + I3C_SINTSET);
-+
-+	return 0;
-+}
-+
-+static int svc_i3c_dequeue(struct i3c_request *req)
-+{
-+	struct svc_i3c_target *svc;
-+	unsigned long flags;
-+	spinlock_t *lk;
-+
-+	svc = dev_get_drvdata(&req->ctrl->dev);
-+	if (!svc)
-+		return -EINVAL;
-+
-+	if (req->tx)
-+		lk = &svc->txq_lock;
-+	else
-+		lk = &svc->rxq_lock;
-+
-+	spin_lock_irqsave(lk, flags);
-+	list_del(&req->list);
-+	spin_unlock_irqrestore(lk, flags);
-+
-+	return 0;
-+}
-+
-+static void svc_i3c_target_fifo_flush(struct i3c_target_ctrl *ctrl, bool tx)
-+{
-+	struct svc_i3c_target *svc;
-+	u32 val;
-+
-+	svc = dev_get_drvdata(&ctrl->dev);
-+
-+	val = readl_relaxed(svc->regs + I3C_SDATACTRL);
-+
-+	val |= tx ? I3C_SDATACTRL_FLUSHTB_MASK : I3C_SDATACTRL_FLUSHFB_MASK;
-+
-+	writel_relaxed(val, svc->regs + I3C_SDATACTRL);
-+}
-+
-+static int
-+svc_i3c_target_raise_ibi(struct i3c_target_ctrl *ctrl, void *p, u8 size)
-+{
-+	struct svc_i3c_target *svc;
-+	unsigned long flags;
-+	u8 *ibidata = p;
-+	u32 ext1 = 0, ext2 = 0;
-+	u32 val;
++	struct ttyi3c_port *sport = container_of(port, struct ttyi3c_port, port);
 +	int ret;
 +
-+	svc = dev_get_drvdata(&ctrl->dev);
++	ret = tty_port_alloc_xmit_buf(port);
++	if (ret < 0)
++		return ret;
 +
-+	if (size && !p)
-+		return -EINVAL;
++	sport->status = 0;
 +
-+	if (size > 8)
-+		return -EINVAL;
-+
-+	val = readl_relaxed(svc->regs + I3C_SSTATUS);
-+	if (val & I3C_SSTATUS_IBIDIS_MASK)
-+		return -EINVAL;
-+
-+	ret = readl_relaxed_poll_timeout(svc->regs + I3C_SCTRL, val,
-+					 !(val & I3C_SCTRL_EVENT_MASK), 0, 10000);
++	ret = i3c_device_enable_ibi(sport->i3cdev);
 +	if (ret) {
-+		dev_err(&ctrl->dev, "Timeout when polling for NO event pending");
-+		val &= ~I3C_SCTRL_EVENT_MASK;
-+		writel_relaxed(val, svc->regs + I3C_SCTRL);
-+		return -ENAVAIL;
-+	}
-+
-+	spin_lock_irqsave(&svc->ctrl_lock, flags);
-+
-+	val = readl_relaxed(svc->regs + I3C_SCTRL);
-+
-+	val &= ~I3C_SCTRL_EVENT_MASK | I3C_SCTRL_IBIDATA_MASK;
-+	val |= FIELD_PREP(I3C_SCTRL_EVENT_MASK, I3C_SCTRL_EVENT_IBI);
-+
-+	if (size) {
-+		val |= FIELD_PREP(I3C_SCTRL_IBIDATA_MASK, *ibidata);
-+		ibidata++;
-+
-+		if (size > 1)
-+			val |= I3C_SCTRL_EXTDATA_MASK;
-+
-+		size--;
-+		if (size > 0) {
-+			ext1 |= (size + 2);
-+			ext1 |= (*ibidata++) << I3C_IBIEXT1_EXT1_SHIFT;
-+			size--;
-+		}
-+
-+		if (size > 0) {
-+			ext1 |= (*ibidata++) << I3C_IBIEXT1_EXT2_SHIFT;
-+			size--;
-+		}
-+
-+		if (size > 0) {
-+			ext1 |= (*ibidata++) << I3C_IBIEXT1_EXT3_SHIFT;
-+			size--;
-+		}
-+
-+		writel_relaxed(ext1, svc->regs + I3C_IBIEXT1);
-+
-+		if (size > 0) {
-+			ext2 |= (*ibidata++) << I3C_IBIEXT2_EXT4_SHIFT;
-+			size--;
-+		}
-+
-+		if (size > 0) {
-+			ext2 |= (*ibidata++) << I3C_IBIEXT2_EXT5_SHIFT;
-+			size--;
-+		}
-+
-+		if (size > 0) {
-+			ext2 |= (*ibidata++) << I3C_IBIEXT2_EXT6_SHIFT;
-+			size--;
-+		}
-+
-+		if (size > 0) {
-+			ext2 |= (*ibidata++) << I3C_IBIEXT2_EXT7_SHIFT;
-+			size--;
-+		}
-+
-+		writeb_relaxed(ext2, svc->regs + I3C_IBIEXT2);
-+	}
-+
-+	/* Issue IBI*/
-+	writel_relaxed(val, svc->regs + I3C_SCTRL);
-+	spin_unlock_irqrestore(&svc->ctrl_lock, flags);
-+
-+	ret = readl_relaxed_poll_timeout(svc->regs + I3C_SCTRL, val,
-+					 !(val & I3C_SCTRL_EVENT_MASK), 0, 1000000);
-+	if (ret) {
-+		dev_err(&ctrl->dev, "Timeout when polling for IBI finish\n");
-+
-+		//clear event to above hang bus
-+		spin_lock_irqsave(&svc->ctrl_lock, flags);
-+		val = readl_relaxed(svc->regs + I3C_SCTRL);
-+		val &= ~I3C_SCTRL_EVENT_MASK;
-+		writel_relaxed(val, svc->regs + I3C_SCTRL);
-+		spin_unlock_irqrestore(&svc->ctrl_lock, flags);
-+
-+		return -ENAVAIL;
++		tty_port_free_xmit_buf(port);
++		return ret;
 +	}
 +
 +	return 0;
 +}
 +
-+static void svc_i3c_target_complete(struct work_struct *work)
++static void i3c_port_shutdown(struct tty_port *port)
 +{
-+	struct svc_i3c_target *svc = container_of(work, struct svc_i3c_target, work);
-+	struct i3c_request *req;
-+	unsigned long flags;
++	struct ttyi3c_port *sport =
++		container_of(port, struct ttyi3c_port, port);
 +
-+	spin_lock_irqsave(&svc->cq_lock, flags);
-+	while (!list_empty(&svc->cq)) {
-+		req = list_first_entry(&svc->cq, struct i3c_request, list);
-+		list_del(&req->list);
-+		spin_unlock_irqrestore(&svc->cq_lock, flags);
-+		req->complete(req);
-+
-+		spin_lock_irqsave(&svc->cq_lock, flags);
-+	}
-+	spin_unlock_irqrestore(&svc->cq_lock, flags);
++	i3c_device_disable_ibi(sport->i3cdev);
++	tty_port_free_xmit_buf(port);
 +}
 +
-+static irqreturn_t svc_i3c_target_irq_handler(int irq, void *dev_id)
++static void i3c_port_destruct(struct tty_port *port)
 +{
-+	struct i3c_request *req, *complete = NULL;
-+	struct svc_i3c_target *svc = dev_id;
++	struct ttyi3c_port *sport =
++		container_of(port, struct ttyi3c_port, port);
++
++	mutex_lock(&i3c_tty_minors_lock);
++	idr_remove(&i3c_tty_minors, sport->minor);
++	mutex_unlock(&i3c_tty_minors_lock);
++}
++
++static const struct tty_port_operations i3c_port_ops = {
++	.shutdown = i3c_port_shutdown,
++	.activate = i3c_port_activate,
++	.destruct = i3c_port_destruct,
++};
++
++static ssize_t i3c_write(struct tty_struct *tty, const unsigned char *buf, size_t count)
++{
++	struct ttyi3c_port *sport = tty->driver_data;
 +	unsigned long flags;
-+	u32 statusFlags;
++	bool is_empty;
++	int ret;
 +
-+	statusFlags = readl(svc->regs + I3C_SSTATUS);
-+	writel(statusFlags, svc->regs + I3C_SSTATUS);
++	spin_lock_irqsave(&sport->xlock, flags);
++	ret = kfifo_in(&sport->port.xmit_fifo, buf, count);
++	is_empty = kfifo_is_empty(&sport->port.xmit_fifo);
++	spin_unlock_irqrestore(&sport->xlock, flags);
 +
-+	if (statusFlags & I3C_SSTATUS_DACHG_MASK)
-+		complete_all(&svc->dacomplete);
++	if (!is_empty)
++		queue_work(system_unbound_wq, &sport->txwork);
 +
-+	if (statusFlags & I3C_SSTATUS_RX_PEND_MASK) {
-+		spin_lock_irqsave(&svc->rxq_lock, flags);
-+		req = list_first_entry_or_null(&svc->rxq, struct i3c_request, list);
++	return ret;
++}
 +
-+		if (!req) {
-+			writel_relaxed(I3C_SINT_RXPEND, svc->regs + I3C_SINTCLR);
++static int i3c_put_char(struct tty_struct *tty, unsigned char ch)
++{
++	struct ttyi3c_port *sport = tty->driver_data;
++	unsigned long flags;
++	int ret;
++
++	spin_lock_irqsave(&sport->xlock, flags);
++	ret = kfifo_put(&sport->port.xmit_fifo, ch);
++	spin_unlock_irqrestore(&sport->xlock, flags);
++
++	return ret;
++}
++
++static void i3c_flush_chars(struct tty_struct *tty)
++{
++	struct ttyi3c_port *sport = tty->driver_data;
++
++	queue_work(system_unbound_wq, &sport->txwork);
++}
++
++static unsigned int i3c_write_room(struct tty_struct *tty)
++{
++	struct ttyi3c_port *sport = tty->driver_data;
++
++	return kfifo_avail(&sport->port.xmit_fifo);
++}
++
++static void i3c_throttle(struct tty_struct *tty)
++{
++	struct ttyi3c_port *sport = tty->driver_data;
++
++	clear_bit(I3C_TTY_RX_STOP, &sport->status);
++}
++
++static void i3c_unthrottle(struct tty_struct *tty)
++{
++	struct ttyi3c_port *sport = tty->driver_data;
++
++	set_bit(I3C_TTY_RX_STOP, &sport->status);
++
++	queue_work(system_unbound_wq, &sport->rxwork);
++}
++
++static int i3c_open(struct tty_struct *tty, struct file *filp)
++{
++	struct ttyi3c_port *sport = container_of(tty->port, struct ttyi3c_port, port);
++
++	tty->driver_data = sport;
++
++	return tty_port_open(&sport->port, tty, filp);
++}
++
++static void i3c_close(struct tty_struct *tty, struct file *filp)
++{
++	tty_port_close(tty->port, tty, filp);
++}
++
++static const struct tty_operations i3c_tty_ops = {
++	.open = i3c_open,
++	.close = i3c_close,
++	.write = i3c_write,
++	.put_char = i3c_put_char,
++	.flush_chars = i3c_flush_chars,
++	.write_room = i3c_write_room,
++	.throttle = i3c_throttle,
++	.unthrottle = i3c_unthrottle,
++};
++
++static void i3c_controller_irq_handler(struct i3c_device *dev,
++				       const struct i3c_ibi_payload *payload)
++{
++	struct ttyi3c_port *sport = dev_get_drvdata(&dev->dev);
++
++	/* i3c_unthrottle also queue the work to fetch pending data in target side */
++	queue_work(system_unbound_wq, &sport->rxwork);
++}
++
++static void tty_i3c_rxwork(struct work_struct *work)
++{
++	struct ttyi3c_port *sport = container_of(work, struct ttyi3c_port, rxwork);
++	struct i3c_priv_xfer xfers;
++	u32 retry = I3C_TTY_RETRY;
++	u16 status = BIT(0);
++	int ret;
++
++	memset(&xfers, 0, sizeof(xfers));
++	xfers.data.in = sport->rx_buff;
++	xfers.len = I3C_TTY_TRANS_SIZE;
++	xfers.rnw = 1;
++
++	do {
++		if (test_bit(I3C_TTY_RX_STOP, &sport->status))
++			break;
++
++		i3c_device_do_priv_xfers(sport->i3cdev, &xfers, 1);
++
++		if (xfers.actual_len) {
++			ret = tty_insert_flip_string(&sport->port, sport->rx_buff,
++						     xfers.actual_len);
++			if (ret < xfers.actual_len)
++				sport->buf_overrun++;
++
++			retry = I3C_TTY_RETRY;
++			continue;
++		}
++
++		status = BIT(0);
++		i3c_device_getstatus_format1(sport->i3cdev, &status);
++		/*
++		 * Target side needs some time to fill data into fifo. Target side may not
++		 * have hardware update status in real time. Software update status always
++		 * needs some delays.
++		 *
++		 * Generally, target side have circular buffer in memory, it will be moved
++		 * into FIFO by CPU or DMA. 'status' just show if circular buffer empty. But
++		 * there are gap, especially CPU have not response irq to fill FIFO in time.
++		 * So xfers.actual will be zero, wait for little time to avoid flood
++		 * transfer in i3c bus.
++		 */
++		usleep_range(I3C_TTY_YIELD_US, 10 * I3C_TTY_YIELD_US);
++		retry--;
++
++	} while (retry && (status & BIT(0)));
++
++	tty_flip_buffer_push(&sport->port);
++}
++
++static void tty_i3c_txwork(struct work_struct *work)
++{
++	struct ttyi3c_port *sport = container_of(work, struct ttyi3c_port, txwork);
++	struct i3c_priv_xfer xfers;
++	u32 retry = I3C_TTY_RETRY;
++	unsigned long flags;
++	int ret;
++
++	xfers.rnw = 0;
++	xfers.data.out = sport->tx_buff;
++
++	while (!kfifo_is_empty(&sport->port.xmit_fifo)) {
++		spin_lock_irqsave(&sport->xlock, flags);
++		xfers.len = kfifo_out_peek(&sport->port.xmit_fifo, sport->tx_buff,
++					   I3C_TTY_TRANS_SIZE);
++		spin_unlock_irqrestore(&sport->xlock, flags);
++		ret = i3c_device_do_priv_xfers(sport->i3cdev, &xfers, 1);
++		if (ret) {
++			/*
++			 * Target side may not move data out of FIFO. delay can't resolve problem,
++			 * just reduce some possiblity. Target can't end I3C SDR mode write
++			 * transfer, discard data is reasonable when FIFO overrun.
++			 */
++			usleep_range(I3C_TTY_YIELD_US, 10 * I3C_TTY_YIELD_US);
++			retry--;
 +		} else {
-+			while (!(readl_relaxed(svc->regs + I3C_SDATACTRL) &
-+					       I3C_SDATACTRL_RXEMPTY_MASK)) {
-+				*(u8 *)(req->buf + req->actual) =
-+							readl_relaxed(svc->regs + I3C_SRDATAB);
-+				req->actual++;
-+
-+				if (req->actual == req->length) {
-+					complete = req;
-+					list_del(&req->list);
-+					break;
-+				}
-+			}
-+
-+			if (req->actual != req->length && (statusFlags & I3C_SSTATUS_STOP_MASK)) {
-+				complete = req;
-+				list_del(&req->list);
-+			}
++			retry = I3C_TTY_RETRY;
 +		}
-+		spin_unlock_irqrestore(&svc->rxq_lock, flags);
 +
-+		if (complete) {
-+			spin_lock_irqsave(&svc->cq_lock, flags);
-+			list_add_tail(&complete->list, &svc->cq);
-+			spin_unlock_irqrestore(&svc->cq_lock, flags);
-+			queue_work(svc->workqueue, &svc->work);
-+			complete = NULL;
++		if (ret == 0 || retry == 0) {
++			/* when retry == 0, means need discard the data */
++			spin_lock_irqsave(&sport->xlock, flags);
++			ret = kfifo_out(&sport->port.xmit_fifo, sport->tx_buff, xfers.len);
++			spin_unlock_irqrestore(&sport->xlock, flags);
 +		}
 +	}
 +
-+	if (statusFlags & I3C_SSTATUS_TXNOTFULL_MASK) {
-+		svc_i3c_fill_txfifo(svc);
-+		spin_lock_irqsave(&svc->txq_lock, flags);
-+		if (list_empty(&svc->txq))
-+			writel_relaxed(I3C_SINT_TXSEND, svc->regs + I3C_SINTCLR);
-+		spin_unlock_irqrestore(&svc->txq_lock, flags);
-+	}
-+
-+	return IRQ_HANDLED;
++	spin_lock_irqsave(&sport->xlock, flags);
++	if (kfifo_len(&sport->port.xmit_fifo) < WAKEUP_CHARS)
++		tty_port_tty_wakeup(&sport->port);
++	spin_unlock_irqrestore(&sport->xlock, flags);
 +}
 +
-+static void svc_i3c_cancel_all_reqs(struct i3c_target_ctrl *ctrl, bool tx)
++static int i3c_probe(struct i3c_device *i3cdev)
 +{
-+	struct svc_i3c_target *svc;
-+	struct i3c_request *req;
-+	struct list_head *q;
-+	unsigned long flags;
-+	spinlock_t *lk;
-+
-+	svc = dev_get_drvdata(&ctrl->dev);
-+	if (!svc)
-+		return;
-+
-+	if (tx) {
-+		q = &svc->txq;
-+		lk = &svc->txq_lock;
-+	} else {
-+		q = &svc->rxq;
-+		lk = &svc->rxq_lock;
-+	}
-+
-+	spin_lock_irqsave(lk, flags);
-+	while (!list_empty(q)) {
-+		req = list_first_entry(q, struct i3c_request, list);
-+		list_del(&req->list);
-+		spin_unlock_irqrestore(lk, flags);
-+
-+		req->status = I3C_REQUEST_CANCEL;
-+		req->complete(req);
-+		spin_lock_irqsave(lk, flags);
-+	}
-+	spin_unlock_irqrestore(lk, flags);
-+}
-+
-+static int svc_i3c_hotjoin(struct i3c_target_ctrl *ctrl)
-+{
-+	struct svc_i3c_target *svc;
++	struct ttyi3c_port *sport;
++	struct device *tty_dev;
++	struct i3c_ibi_setup req;
++	int minor;
 +	int ret;
-+	u32 val;
-+	u32 cfg;
 +
-+	svc = dev_get_drvdata(&ctrl->dev);
-+	if (!svc)
++	sport = devm_kzalloc(&i3cdev->dev, sizeof(*sport), GFP_KERNEL);
++	if (!sport)
++		return -ENOMEM;
++
++	sport->i3cdev = i3cdev;
++
++	dev_set_drvdata(&i3cdev->dev, sport);
++
++	req.max_payload_len = 8;
++	req.num_slots = 4;
++	req.handler = &i3c_controller_irq_handler;
++
++	ret = i3c_device_request_ibi(i3cdev, &req);
++	if (ret)
 +		return -EINVAL;
 +
-+	reinit_completion(&svc->dacomplete);
++	mutex_lock(&i3c_tty_minors_lock);
++	minor = idr_alloc(&i3c_tty_minors, sport, 0, I3C_TTY_MINORS, GFP_KERNEL);
++	mutex_unlock(&i3c_tty_minors_lock);
 +
-+	val = readl_relaxed(svc->regs + I3C_SSTATUS);
-+	if (val & I3C_SSTATUS_HJDIS_MASK) {
-+		dev_err(&ctrl->dev, "Hotjoin disabled by i3c master\n");
-+		return -EINVAL;
++	if (minor < 0) {
++		ret = -EINVAL;
++		goto err_idr_alloc;
 +	}
 +
-+	ret = readl_relaxed_poll_timeout(svc->regs + I3C_SCTRL, val,
-+					 !(val & I3C_SCTRL_EVENT_MASK), 0, 10000);
-+	if (ret) {
-+		dev_err(&ctrl->dev, "Timeout when polling for none event pending");
-+		return -ENAVAIL;
++	spin_lock_init(&sport->xlock);
++	INIT_WORK(&sport->txwork, tty_i3c_txwork);
++	INIT_WORK(&sport->rxwork, tty_i3c_rxwork);
++	init_completion(&sport->txcomplete);
++
++	tty_port_init(&sport->port);
++	sport->port.ops = &i3c_port_ops;
++
++	tty_dev = tty_port_register_device(&sport->port, i3c_tty_driver, minor,
++					   &i3cdev->dev);
++	if (IS_ERR(tty_dev)) {
++		ret = PTR_ERR(tty_dev);
++		goto err_tty_port_register;
 +	}
 +
-+	cfg = readl_relaxed(svc->regs + I3C_SCONFIG);
-+	cfg |= I3C_SCONFIG_OFFLINE_MASK;
-+	writel_relaxed(cfg, svc->regs + I3C_SCONFIG);
-+
-+	val &= ~(I3C_SCTRL_EVENT_MASK | I3C_SCTRL_IBIDATA_MASK);
-+	val |= FIELD_PREP(I3C_SCTRL_EVENT_MASK, I3C_SCTRL_EVENT_HOTJOIN);
-+	/* Issue hotjoin*/
-+	writel_relaxed(val, svc->regs + I3C_SCTRL);
-+
-+	ret = readl_relaxed_poll_timeout(svc->regs + I3C_SCTRL, val,
-+					 !(val & I3C_SCTRL_EVENT_MASK), 0, 100000);
-+	if (ret) {
-+		val &= ~FIELD_PREP(I3C_SCTRL_EVENT_MASK, I3C_SCTRL_EVENT_MASK);
-+		writel_relaxed(val, svc->regs + I3C_SCTRL);
-+		dev_err(&ctrl->dev, "Timeout when polling for HOTJOIN finish\n");
-+		return -EINVAL;
-+	}
-+
-+	val = readl_relaxed(svc->regs + I3C_SSTATUS);
-+	val = FIELD_GET(I3C_SSTATUS_EVDET_MASK, val);
-+	if (val != I3C_SSTATUS_EVDET_ACKED) {
-+		dev_err(&ctrl->dev, "Master NACKED hotjoin request\n");
-+		return -EINVAL;
-+	}
-+
-+	writel_relaxed(I3C_SINT_DACHG, svc->regs + I3C_SINTSET);
-+	ret = wait_for_completion_timeout(&svc->dacomplete, msecs_to_jiffies(100));
-+	writel_relaxed(I3C_SINT_DACHG, svc->regs + I3C_SINTCLR);
-+	if (!ret) {
-+		dev_err(&ctrl->dev, "wait for da assignment timeout\n");
-+		return -EIO;
-+	}
-+
-+	val = readl_relaxed(svc->regs + I3C_SMAPCTRL0);
-+	val = FIELD_GET(I3C_SMAPCTRL0_DA_MASK, val);
-+	dev_info(&ctrl->dev, "Get dynamtic address 0x%x\n", val);
-+	return 0;
-+}
-+
-+static int svc_i3c_set_status_format1(struct i3c_target_ctrl *ctrl, u16 status)
-+{
-+	struct svc_i3c_target *svc;
-+	unsigned long flags;
-+	u32 val;
-+
-+	svc = dev_get_drvdata(&ctrl->dev);
-+
-+	spin_lock_irqsave(&svc->ctrl_lock, flags);
-+	val = readl_relaxed(svc->regs + I3C_SCTRL);
-+	val &= 0xFFFF;
-+	val |= status << 16;
-+	writel_relaxed(val, svc->regs + I3C_SCTRL);
-+	spin_unlock_irqrestore(&svc->ctrl_lock, flags);
++	sport->minor = minor;
 +
 +	return 0;
++
++err_tty_port_register:
++	tty_port_put(&sport->port);
++
++	mutex_lock(&i3c_tty_minors_lock);
++	idr_remove(&i3c_tty_minors, minor);
++	mutex_unlock(&i3c_tty_minors_lock);
++
++err_idr_alloc:
++	i3c_device_free_ibi(i3cdev);
++
++	return ret;
 +}
 +
-+static u16 svc_i3c_get_status_format1(struct i3c_target_ctrl *ctrl)
++void i3c_remove(struct i3c_device *dev)
 +{
-+	struct svc_i3c_target *svc;
++	struct ttyi3c_port *sport = dev_get_drvdata(&dev->dev);
 +
-+	svc = dev_get_drvdata(&ctrl->dev);
++	tty_port_unregister_device(&sport->port, i3c_tty_driver, sport->minor);
++	cancel_work_sync(&sport->txwork);
 +
-+	return readl_relaxed(svc->regs + I3C_SCTRL) >> 16;
++	tty_port_put(&sport->port);
++
++	mutex_lock(&i3c_tty_minors_lock);
++	idr_remove(&i3c_tty_minors, sport->minor);
++	mutex_unlock(&i3c_tty_minors_lock);
++
++	i3c_device_free_ibi(sport->i3cdev);
 +}
 +
-+static u8 svc_i3c_get_addr(struct i3c_target_ctrl *ctrl)
-+{
-+	struct svc_i3c_target *svc;
-+	int val;
-+
-+	svc = dev_get_drvdata(&ctrl->dev);
-+
-+	val = readl_relaxed(svc->regs + I3C_SMAPCTRL0);
-+
-+	if (val & I3C_SMAPCTRL0_ENA_MASK)
-+		return FIELD_GET(I3C_SMAPCTRL0_DA_MASK, val);
-+
-+	return 0;
-+}
-+
-+static int svc_i3c_fifo_status(struct i3c_target_ctrl *ctrl, bool tx)
-+{
-+	struct svc_i3c_target *svc;
-+	int val;
-+
-+	svc = dev_get_drvdata(&ctrl->dev);
-+
-+	val = readl_relaxed(svc->regs + I3C_SDATACTRL);
-+
-+	if (tx)
-+		return FIELD_GET(I3C_SDATACTRL_TXCOUNT_MASK, val);
-+	else
-+		return FIELD_GET(I3C_SDATACTRL_RXCOUNT_MASK, val);
-+}
-+
-+static struct i3c_target_ctrl_ops svc_i3c_target_ops = {
-+	.set_config = svc_i3c_target_set_config,
-+	.enable = svc_i3c_target_enable,
-+	.disable = svc_i3c_target_disable,
-+	.queue = svc_i3c_target_queue,
-+	.dequeue = svc_i3c_dequeue,
-+	.raise_ibi = svc_i3c_target_raise_ibi,
-+	.fifo_flush = svc_i3c_target_fifo_flush,
-+	.cancel_all_reqs = svc_i3c_cancel_all_reqs,
-+	.get_features = svc_i3c_get_features,
-+	.hotjoin = svc_i3c_hotjoin,
-+	.fifo_status = svc_i3c_fifo_status,
-+	.set_status_format1 = svc_i3c_set_status_format1,
-+	.get_status_format1 = svc_i3c_get_status_format1,
-+	.get_addr = svc_i3c_get_addr,
++static struct i3c_driver i3c_driver = {
++	.driver = {
++		.name = "ttyi3c",
++	},
++	.probe = i3c_probe,
++	.remove = i3c_remove,
++	.id_table = i3c_ids,
 +};
 +
-+int svc_i3c_target_probe(struct platform_device *pdev)
++static int __init i3c_tty_init(void)
 +{
-+	struct device *dev = &pdev->dev;
-+	struct i3c_target_ctrl *target;
-+	struct svc_i3c_target *svc;
 +	int ret;
-+	u32 val;
 +
-+	svc = devm_kzalloc(dev, sizeof(*svc), GFP_KERNEL);
-+	if (!svc)
-+		return -ENOMEM;
++	i3c_tty_driver = tty_alloc_driver(I3C_TTY_MINORS,
++					  TTY_DRIVER_REAL_RAW | TTY_DRIVER_DYNAMIC_DEV);
 +
-+	svc->regs = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(svc->regs))
-+		return PTR_ERR(svc->regs);
++	if (IS_ERR(i3c_tty_driver))
++		return PTR_ERR(i3c_tty_driver);
 +
-+	svc->clks[PCLK].id = "pclk";
-+	svc->clks[FCLK].id = "fast_clk";
-+	svc->clks[SCLK].id = "slow_clk";
++	i3c_tty_driver->driver_name = "ttyI3C";
++	i3c_tty_driver->name = "ttyI3C";
++	i3c_tty_driver->minor_start = 0,
++	i3c_tty_driver->type = TTY_DRIVER_TYPE_SERIAL,
++	i3c_tty_driver->subtype = SERIAL_TYPE_NORMAL,
++	i3c_tty_driver->init_termios = tty_std_termios;
++	i3c_tty_driver->init_termios.c_cflag = B9600 | CS8 | CREAD | HUPCL |
++					       CLOCAL;
++	i3c_tty_driver->init_termios.c_lflag = 0;
 +
-+	ret = devm_clk_bulk_get(dev, MAXCLK, svc->clks);
-+	if (ret < 0) {
-+		dev_err(dev, "fail get clks: %d\n", ret);
-+		return ret;
-+	}
++	tty_set_operations(i3c_tty_driver, &i3c_tty_ops);
 +
-+	ret = clk_bulk_prepare_enable(MAXCLK, svc->clks);
-+	if (ret < 0) {
-+		dev_err(dev, "fail enable clks: %d\n", ret);
-+		return ret;
-+	}
-+
-+	svc->irq = platform_get_irq(pdev, 0);
-+	if (svc->irq < 0)
-+		return svc->irq;
-+
-+	INIT_LIST_HEAD(&svc->txq);
-+	INIT_LIST_HEAD(&svc->rxq);
-+	INIT_LIST_HEAD(&svc->cq);
-+	spin_lock_init(&svc->txq_lock);
-+	spin_lock_init(&svc->rxq_lock);
-+	spin_lock_init(&svc->cq_lock);
-+	spin_lock_init(&svc->ctrl_lock);
-+
-+	init_completion(&svc->dacomplete);
-+
-+	INIT_WORK(&svc->work, svc_i3c_target_complete);
-+	svc->workqueue = alloc_workqueue("%s-cq", 0, 0, dev_name(dev));
-+	if (!svc->workqueue)
-+		return -ENOMEM;
-+
-+	/* Disable all IRQ */
-+	writel_relaxed(0xFFFFFFFF, svc->regs + I3C_SINTCLR);
-+
-+	val = readl_relaxed(svc->regs + I3C_SCAPABILITIES);
-+	svc->features.tx_fifo_sz  = FIELD_GET(I3C_SCAPABILITIES_FIFOTX_MASK, val);
-+	svc->features.tx_fifo_sz = 2 << svc->features.tx_fifo_sz;
-+
-+	svc->features.rx_fifo_sz = FIELD_GET(I3C_SCAPABILITIES_FIFORX_MASK, val);
-+	svc->features.rx_fifo_sz = 2 << svc->features.rx_fifo_sz;
-+
-+	ret = devm_request_irq(dev, svc->irq, svc_i3c_target_irq_handler, 0, "svc-i3c-irq", svc);
++	ret = tty_register_driver(i3c_tty_driver);
 +	if (ret)
-+		return -ENOENT;
++		goto err_tty_register_driver;
 +
-+	target = devm_i3c_target_ctrl_create(dev, &svc_i3c_target_ops);
-+	if (!target)
-+		return -ENOMEM;
-+
-+	dev_set_drvdata(&target->dev, svc);
++	ret = i3c_driver_register(&i3c_driver);
++	if (ret)
++		goto err_i3c_driver_register;
 +
 +	return 0;
++
++err_i3c_driver_register:
++	tty_unregister_driver(i3c_tty_driver);
++
++err_tty_register_driver:
++	tty_driver_kref_put(i3c_tty_driver);
++
++	return ret;
 +}
 +
-+void svc_i3c_target_remove(struct platform_device *pdev)
++static void __exit i3c_tty_exit(void)
 +{
++	i3c_driver_unregister(&i3c_driver);
++	tty_unregister_driver(i3c_tty_driver);
++	tty_driver_kref_put(i3c_tty_driver);
++	idr_destroy(&i3c_tty_minors);
 +}
-diff --git a/drivers/i3c/master/svc-i3c.h b/drivers/i3c/master/svc-i3c.h
-index 0bd1f0112a071..634837f146b2e 100644
---- a/drivers/i3c/master/svc-i3c.h
-+++ b/drivers/i3c/master/svc-i3c.h
-@@ -8,4 +8,7 @@ void svc_i3c_master_remove(struct platform_device *pdev);
- int svc_i3c_master_runtime_suspend(struct device *dev);
- int svc_i3c_master_runtime_resume(struct device *dev);
- 
-+int svc_i3c_target_probe(struct platform_device *pdev);
-+void svc_i3c_target_remove(struct platform_device *pdev);
 +
- #endif
-\ No newline at end of file
++module_init(i3c_tty_init);
++module_exit(i3c_tty_exit);
++
++MODULE_LICENSE("GPL");
 -- 
 2.34.1
 
