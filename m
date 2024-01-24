@@ -4,76 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27B5AC47422
-	for <linux-i3c@archiver.kernel.org>; Sat, 27 Jan 2024 00:59:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91939C48285
+	for <linux-i3c@archiver.kernel.org>; Sat, 27 Jan 2024 19:52:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tDjdEvgy3s9Z73uDjjWqLN/NGig8uEL/65atbNAtYkE=; b=UUqNzrf7nkYkHo
-	CHEjqABsT2H0UGPWq2iykRQoCFbXGBRjJh2znQYhNHxQauh7cPoRCm/vxfxZi+hPoDuyoB4rPacQi
-	+FWdQhsmhYebBEHTPaNDpM6XRp81qjy6lyCN5zsiaw3SJA8OVGToxzvFSYNvHMpgBBjkgH7rm7nnG
-	qkqxebwQwLMHr3VX3KPP8MHT4vWpfUvIurj+wL4GZJX8xCxqkeYRbsMSw3nHIjEVQBBskXtT0TeBN
-	NPWHaZKR/uN/kuKKTJ1DkT7UplhyT/yR0rdoarvipBg2WJcxTkMyCL6puWiNQRiRQHKMjKNVXPZGX
-	zoc9NAeX3F0Qhmi6m+ew==;
+	List-Owner; bh=HAGP1uwg+fnnQamfYrnT30jozKCdk+IWBNzFhCOvRcs=; b=VSKdiBF1KDrNUw
+	GFBOxC8JSnnq0w+cEnBB6q7XzIhmnN5QzSh0SANNWzAtNBCQvN+1Y34ttVFi3fUKKaEgXluKOhWKA
+	qda5N6fhyZaBRQJlDG2CKcKAXVQko2dcgp8WNm8FVX5BQYd9lKhG0fWN9v2tYFwszCb4U/q7xzTJp
+	Iz5CalBZsY0Sn63h78cLwESypXu6cEXwFVTfn0A+d3A3deOoMnoKhiHGIwSrJHccqrmAT2rXiIHzq
+	Xj7EcfhAvIp9zxFtbzOG3jtzff2hDa1H3PT+VCkpxzw/ct2zsJxNG3fkbIpXZ7AcVHXxhebRUDJD5
+	dg8n5C4cX9YrvBHg4Kqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rTX2D-0000000622y-1GA1;
-	Sat, 27 Jan 2024 00:59:01 +0000
-Received: from mgamail.intel.com ([192.198.163.7])
-	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rTX2A-0000000622M-16CE
+	id 1rTojb-000000087tX-00cr;
+	Sat, 27 Jan 2024 19:52:59 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1rSeFt-003fjR-11
 	for linux-i3c@lists.infradead.org;
-	Sat, 27 Jan 2024 00:58:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1706317138; x=1737853138;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=7W44hQbjWJUDeDb618E3eurSBWCBLQAykx5uVsOx6TY=;
-  b=VJos57dmrCzZSPrjncSwSj1Dsvp/2uBsgrC+1R0/gA16i6FiAPGF5yaI
-   LCp+jxFdpbMFwDtbpT0LPXLjLd9zXAilSknE43B2efsYBq/fj9CUe1/49
-   hXPJx5qP2OTSSNCkmCIkCgvfa0c+lanRADLZ8Lscxtit0V/EBrSlEd0oj
-   JP4/r9hXJera8uC8yRsWB4/ipccPbQvuH2Eoxfkcm5okjetVNgja9y3O4
-   Yuv7aVPpzq6SkGG4AS9RNQcnwTrtqUGfUdXZOgLCgn7Kzg3sFmfAJxjLl
-   k3EJ/B7dYOe9K0cfFSYsWkAZ/WM2hA84jkapLK1iJMBdDiaJih/nLcEIN
-   w==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10964"; a="24080958"
-X-IronPort-AV: E=Sophos;i="6.05,220,1701158400"; 
-   d="scan'208";a="24080958"
-Received: from orviesa001.jf.intel.com ([10.64.159.141])
-  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 26 Jan 2024 16:58:56 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.05,220,1701158400"; 
-   d="scan'208";a="35585165"
-Received: from lkp-server01.sh.intel.com (HELO 370188f8dc87) ([10.239.97.150])
-  by orviesa001.jf.intel.com with ESMTP; 26 Jan 2024 16:58:51 -0800
-Received: from kbuild by 370188f8dc87 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1rTX20-0001V8-2f;
-	Sat, 27 Jan 2024 00:58:48 +0000
-Date: Sat, 27 Jan 2024 08:58:28 +0800
-From: kernel test robot <lkp@intel.com>
-To: Frank Li <Frank.Li@nxp.com>
-Cc: oe-kbuild-all@lists.linux.dev, alexandre.belloni@bootlin.com,
-	conor.culhane@silvaco.com, devicetree@vger.kernel.org,
-	gregkh@linuxfoundation.org, imx@lists.linux.dev,
-	jirislaby@kernel.org, joe@perches.com,
-	krzysztof.kozlowski+dt@linaro.org, krzysztof.kozlowski@linaro.org,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-serial@vger.kernel.org, miquel.raynal@bootlin.com,
-	robh@kernel.org, zbigniew.lukwinski@linux.intel.com
-Subject: Re: [PATCH v4 5/8] i3c: target: add svc target controller support
-Message-ID: <202401270838.wdxHPaAT-lkp@intel.com>
-References: <20240123231043.3891847-6-Frank.Li@nxp.com>
+	Wed, 24 Jan 2024 14:29:30 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id BD89261D5E;
+	Wed, 24 Jan 2024 14:29:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8DA14C43142;
+	Wed, 24 Jan 2024 14:29:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1706106568;
+	bh=yw5VLAu6HaIrKQU2W0638c2aTqRWEALE65CVfbIVBI4=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=aGuHu9NIlyjAKN8UN4GjZPEtHIajhqxbhGKc0MvICm1xomtdaX1dRF7KDHEAGXJ+2
+	 ewEYMSzBfAOT/YThxVNGakvgv3f79aavqTt9Cyy4/jLBmlHLA27vQE5l/tsWOypRL1
+	 KBQuUshhW2Cblpyp7V6sRpzs9GmrDUVWj49lwxwdHzPFDEHJrm0SVBTuIhhIzlWSD1
+	 yBAUajjzA5OloqsyDXjBBhCDaiIgdQhKgkNHcqdk2BLogR+H779iZlve8ThIp/MWM9
+	 jHp+6BRWLE9YY5CJMxgu74oS61JA77rALqbHRLCn3BiPGnpaIlCEpsqTqNpiHc4Faf
+	 /VDNVnL0Ub07g==
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Cc: Harshit Shah <harshitshah.opendev@gmail.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Sasha Levin <sashal@kernel.org>,
+	pgaj@cadence.com,
+	linux-i3c@lists.infradead.org
+Subject: [PATCH AUTOSEL 6.6 07/11] i3c: master: cdns: Update maximum prescaler value for i2c clock
+Date: Wed, 24 Jan 2024 09:28:50 -0500
+Message-ID: <20240124142907.1283546-7-sashal@kernel.org>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20240124142907.1283546-1-sashal@kernel.org>
+References: <20240124142907.1283546-1-sashal@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240123231043.3891847-6-Frank.Li@nxp.com>
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.6.13
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240126_165858_380809_E34EFC24 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20240124_062929_395008_8A570CB1 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
+X-Mailman-Approved-At: Sat, 27 Jan 2024 11:52:56 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,103 +81,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Frank,
+From: Harshit Shah <harshitshah.opendev@gmail.com>
 
-kernel test robot noticed the following build errors:
+[ Upstream commit 374c13f9080a1b9835a5ed3e7bea93cf8e2dc262 ]
 
-[auto build test ERROR on tty/tty-testing]
-[also build test ERROR on tty/tty-next tty/tty-linus robh/for-next linus/master v6.8-rc1 next-20240125]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+As per the Cadence IP document fixed the I2C clock divider value limit from
+16 bits instead of 10 bits. Without this change setting up the I2C clock to
+low frequencies will not work as the prescaler value might be greater than
+10 bit number.
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Frank-Li/i3c-add-target-mode-support/20240124-071453
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/tty.git tty-testing
-patch link:    https://lore.kernel.org/r/20240123231043.3891847-6-Frank.Li%40nxp.com
-patch subject: [PATCH v4 5/8] i3c: target: add svc target controller support
-config: i386-buildonly-randconfig-003-20240127 (https://download.01.org/0day-ci/archive/20240127/202401270838.wdxHPaAT-lkp@intel.com/config)
-compiler: gcc-7 (Ubuntu 7.5.0-6ubuntu2) 7.5.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20240127/202401270838.wdxHPaAT-lkp@intel.com/reproduce)
+I3C clock divider value is 10 bits only. Updating the macro names for both.
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202401270838.wdxHPaAT-lkp@intel.com/
+Signed-off-by: Harshit Shah <harshitshah.opendev@gmail.com>
+Link: https://lore.kernel.org/r/1703927483-28682-1-git-send-email-harshitshah.opendev@gmail.com
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/i3c/master/i3c-master-cdns.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
-All error/warnings (new ones prefixed by >>):
-
-   In file included from drivers/i3c/master/svc-i3c-target.c:12:0:
-   include/linux/i3c/target.h: In function 'i3c_target_ctrl_alloc_request':
-   include/linux/i3c/target.h:280:9: error: implicit declaration of function 'kzalloc'; did you mean 'xa_alloc'? [-Werror=implicit-function-declaration]
-      req = kzalloc(sizeof(*req), gfp_flags);
-            ^~~~~~~
-            xa_alloc
->> include/linux/i3c/target.h:280:7: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
-      req = kzalloc(sizeof(*req), gfp_flags);
-          ^
-   include/linux/i3c/target.h: In function 'i3c_target_ctrl_free_request':
-   include/linux/i3c/target.h:306:3: error: implicit declaration of function 'kfree'; did you mean '__free'? [-Werror=implicit-function-declaration]
-      kfree(req);
-      ^~~~~
-      __free
-   In file included from include/linux/resource_ext.h:11:0,
-                    from include/linux/acpi.h:13,
-                    from include/linux/i2c.h:13,
-                    from include/linux/i3c/device.h:13,
-                    from drivers/i3c/master/svc-i3c-target.c:24:
-   include/linux/slab.h: At top level:
->> include/linux/slab.h:227:6: warning: conflicting types for 'kfree'
-    void kfree(const void *objp);
-         ^~~~~
-   In file included from drivers/i3c/master/svc-i3c-target.c:12:0:
-   include/linux/i3c/target.h:306:3: note: previous implicit declaration of 'kfree' was here
-      kfree(req);
-      ^~~~~
-   In file included from include/linux/resource_ext.h:11:0,
-                    from include/linux/acpi.h:13,
-                    from include/linux/i2c.h:13,
-                    from include/linux/i3c/device.h:13,
-                    from drivers/i3c/master/svc-i3c-target.c:24:
->> include/linux/slab.h:709:37: error: conflicting types for 'kzalloc'
-    static inline __alloc_size(1) void *kzalloc(size_t size, gfp_t flags)
-                                        ^~~~~~~
-   In file included from drivers/i3c/master/svc-i3c-target.c:12:0:
-   include/linux/i3c/target.h:280:9: note: previous implicit declaration of 'kzalloc' was here
-      req = kzalloc(sizeof(*req), gfp_flags);
-            ^~~~~~~
-   cc1: some warnings being treated as errors
-
-
-vim +280 include/linux/i3c/target.h
-
-ebda81e6094f36 Frank Li 2024-01-23  264  
-ebda81e6094f36 Frank Li 2024-01-23  265  /**
-ebda81e6094f36 Frank Li 2024-01-23  266   * i3c_target_ctrl_alloc_request() - Alloc an I3C transfer
-ebda81e6094f36 Frank Li 2024-01-23  267   * @ctrl: I3C target controller device
-ebda81e6094f36 Frank Li 2024-01-23  268   * @gfp_flags: additional gfp flags used when allocating the buffers
-ebda81e6094f36 Frank Li 2024-01-23  269   *
-ebda81e6094f36 Frank Li 2024-01-23  270   * Returns: Zero for success, or an error code in case of failure
-ebda81e6094f36 Frank Li 2024-01-23  271   */
-ebda81e6094f36 Frank Li 2024-01-23  272  static inline struct i3c_request *
-ebda81e6094f36 Frank Li 2024-01-23  273  i3c_target_ctrl_alloc_request(struct i3c_target_ctrl *ctrl, gfp_t gfp_flags)
-ebda81e6094f36 Frank Li 2024-01-23  274  {
-ebda81e6094f36 Frank Li 2024-01-23  275  	struct i3c_request *req = NULL;
-ebda81e6094f36 Frank Li 2024-01-23  276  
-ebda81e6094f36 Frank Li 2024-01-23  277  	if (ctrl && ctrl->ops && ctrl->ops->alloc_request)
-ebda81e6094f36 Frank Li 2024-01-23  278  		req = ctrl->ops->alloc_request(ctrl, gfp_flags);
-ebda81e6094f36 Frank Li 2024-01-23  279  	else
-ebda81e6094f36 Frank Li 2024-01-23 @280  		req = kzalloc(sizeof(*req), gfp_flags);
-ebda81e6094f36 Frank Li 2024-01-23  281  
-ebda81e6094f36 Frank Li 2024-01-23  282  	if (req)
-ebda81e6094f36 Frank Li 2024-01-23  283  		req->ctrl = ctrl;
-ebda81e6094f36 Frank Li 2024-01-23  284  
-ebda81e6094f36 Frank Li 2024-01-23  285  	return req;
-ebda81e6094f36 Frank Li 2024-01-23  286  }
-ebda81e6094f36 Frank Li 2024-01-23  287  
-
+diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
+index 8f1fda3c7ac5..fa5aaaf44618 100644
+--- a/drivers/i3c/master/i3c-master-cdns.c
++++ b/drivers/i3c/master/i3c-master-cdns.c
+@@ -76,7 +76,8 @@
+ #define PRESCL_CTRL0			0x14
+ #define PRESCL_CTRL0_I2C(x)		((x) << 16)
+ #define PRESCL_CTRL0_I3C(x)		(x)
+-#define PRESCL_CTRL0_MAX		GENMASK(9, 0)
++#define PRESCL_CTRL0_I3C_MAX		GENMASK(9, 0)
++#define PRESCL_CTRL0_I2C_MAX		GENMASK(15, 0)
+ 
+ #define PRESCL_CTRL1			0x18
+ #define PRESCL_CTRL1_PP_LOW_MASK	GENMASK(15, 8)
+@@ -1233,7 +1234,7 @@ static int cdns_i3c_master_bus_init(struct i3c_master_controller *m)
+ 		return -EINVAL;
+ 
+ 	pres = DIV_ROUND_UP(sysclk_rate, (bus->scl_rate.i3c * 4)) - 1;
+-	if (pres > PRESCL_CTRL0_MAX)
++	if (pres > PRESCL_CTRL0_I3C_MAX)
+ 		return -ERANGE;
+ 
+ 	bus->scl_rate.i3c = sysclk_rate / ((pres + 1) * 4);
+@@ -1246,7 +1247,7 @@ static int cdns_i3c_master_bus_init(struct i3c_master_controller *m)
+ 	max_i2cfreq = bus->scl_rate.i2c;
+ 
+ 	pres = (sysclk_rate / (max_i2cfreq * 5)) - 1;
+-	if (pres > PRESCL_CTRL0_MAX)
++	if (pres > PRESCL_CTRL0_I2C_MAX)
+ 		return -ERANGE;
+ 
+ 	bus->scl_rate.i2c = sysclk_rate / ((pres + 1) * 5);
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+2.43.0
+
 
 -- 
 linux-i3c mailing list
