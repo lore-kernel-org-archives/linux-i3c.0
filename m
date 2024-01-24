@@ -4,66 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3286C4828C
-	for <linux-i3c@archiver.kernel.org>; Sat, 27 Jan 2024 19:53:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 826F7C4828E
+	for <linux-i3c@archiver.kernel.org>; Sat, 27 Jan 2024 19:53:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:cc:To:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qzrDjc7qohNZ9fbuSFHSTorI0ul6I3eXPpsLzfcQWK0=; b=kjsxGe7gBoPvLh
-	vLsLHDwbR31O8Oa9eK3KVnLaOCo6aPX6LcFIctPe+IewuOrSrWToPYHOoGp5tdf+pE1WDpMEVdajY
-	X/PoOtbc1/6M6mjdAL3kpX9Qovgm6xOoftuk2ewBTwCx4Y77W5QyvvGLxQl6IdGqPU27hqMCCjdhm
-	sM/GxllNdpkXuTCcll0oREY6cpYKj7gzRAoCDjc4ej56I3mHe8fpgrpZL5D+NYuuMP694Su1H7uRN
-	ZdBD+9RLhd4kP6vZ6hSCy0v3SwE11RgI3O6YrvJ/AeilL3kimDgRZ64rXjljDMC8WAVyAx2QC4rUW
-	qf+Wrx55XfMgcdk0+fEg==;
+	List-Owner; bh=r9QGyvgEr62oTt1WWuigzTyfHZWPZN+3dG9U0iKZPpA=; b=g6D+F/w3q5WrDh
+	g+guqt0XDuK+ttYLj7oZBUqedwpYbKDKFUzfW/zFQ23ySKo1t5SBEEzzOGWburWETG0Z93xFGVEoo
+	qNu7xkoFVhmsulakKXDInxk4eHIKv2ZHlhVRFZ5abWJnMyQuHZl8jCJisBjW0h/izmi1vsUSYQTeY
+	hNJ0VxQfQCbtcULx2VM5IRR6LYIMndVO1eJlHleIQj3RwZ8q6ZRIhzPJvQ784MijEB87M+8246XdZ
+	/1EG73y1Io/+xnDp0BnlFnJ0Yufti3Ymb8o+Olgg/rMUvBKjZR5O2x/RQBKsJpjFzUWQ7RoQWEPY9
+	YrVRsxmkUn/5LCNOlxsA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rTojc-000000087ub-1vnV;
-	Sat, 27 Jan 2024 19:53:00 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1rTojd-000000087vT-0bw7;
+	Sat, 27 Jan 2024 19:53:01 +0000
+Received: from mgamail.intel.com ([192.55.52.115])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSeHz-003gkz-0n
+	id 1rSey9-003t9j-2k
 	for linux-i3c@lists.infradead.org;
-	Wed, 24 Jan 2024 14:31:40 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id BFAF961D97;
-	Wed, 24 Jan 2024 14:31:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C32DAC43399;
-	Wed, 24 Jan 2024 14:31:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1706106698;
-	bh=ghddF2k3WHRpc3ghPsVmfoFfwi8mMPeqg4/NlpEp0SY=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=a1vlB6odbn2JzowgbW0bl1iJRF4jSTaDoVWQRBq9wRrGK0GEISc9XaihQ24ZLDNPD
-	 NKqWk5LWcSAHThX0rFQtA6oPO83fqLScStQEZy5xmQlQXHGDQmLMwf9UnNHzec1jV6
-	 AdvJK/O4m2RUXAJfcyd6plYLPqoEhG4b1Pjn+8fVnee46KlBRqX4BFx6EOXyS7Gnhj
-	 FwDTIqSXx4tQMtOYUzZxM2lUlZQwceyzviUe4MD0lnKneLq04MCNMVZ6RHstYcwc6/
-	 9Ng2A/RMlM9uq4gm2AvToieWk7SAzVxFhRikPlad/IUDgJc9LKFcOmkRHg63MSCYWa
-	 rfv3bYWE84uIw==
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Cc: Harshit Shah <harshitshah.opendev@gmail.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Sasha Levin <sashal@kernel.org>,
-	pgaj@cadence.com,
-	linux-i3c@lists.infradead.org
-Subject: [PATCH AUTOSEL 5.4 5/6] i3c: master: cdns: Update maximum prescaler value for i2c clock
-Date: Wed, 24 Jan 2024 09:31:14 -0500
-Message-ID: <20240124143124.1284462-5-sashal@kernel.org>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20240124143124.1284462-1-sashal@kernel.org>
-References: <20240124143124.1284462-1-sashal@kernel.org>
+	Wed, 24 Jan 2024 15:15:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1706109313; x=1737645313;
+  h=from:date:to:cc:subject:in-reply-to:message-id:
+   references:mime-version;
+  bh=uzQLDGWYhf9xfb4Lm9GWu2gEumrrxwpUwu6HE1AQ6n0=;
+  b=CKfKiWGwxLJ/ImggqwJZZj1DS9Lzky2rl0zD5cEOI4B2SCJ5CZvudmFN
+   EpGvLCVEDsP0sWmqqwV4VVcO2GPHc26vcTFqEyk/I1O+CCrj9SQZ6Xcgn
+   2ZmJLOf6HyTFsP81J+s9qzzsuVAR1hvzs5MXqbU6aot/NITLumDJ95hXo
+   OeHGC9vfFNyMx6YYsTQpOcd3xA77uEO0wNYFPDx0i6O1gSyQMRBlJMhXZ
+   50cRkQ0VctI4+ktrR6cDH38YFKr/YJL5OMD5jsZOkzd0xaJociA1JlB9f
+   yYC6V5GXn+leeVCKMW9ShoWhLPMhWkOcdD2HSPSj3NlRhk/DQAdNHdBd7
+   Q==;
+X-IronPort-AV: E=McAfee;i="6600,9927,10962"; a="401529937"
+X-IronPort-AV: E=Sophos;i="6.05,216,1701158400"; 
+   d="scan'208";a="401529937"
+Received: from orviesa004.jf.intel.com ([10.64.159.144])
+  by fmsmga103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 24 Jan 2024 07:15:12 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.05,216,1701158400"; 
+   d="scan'208";a="2072375"
+Received: from ijarvine-desk1.ger.corp.intel.com (HELO localhost) ([10.246.48.46])
+  by orviesa004-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 24 Jan 2024 07:15:06 -0800
+From: =?UTF-8?q?Ilpo=20J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>
+Date: Wed, 24 Jan 2024 17:15:01 +0200 (EET)
+To: Frank Li <Frank.Li@nxp.com>
+cc: alexandre.belloni@bootlin.com, conor.culhane@silvaco.com, 
+    devicetree@vger.kernel.org, gregkh@linuxfoundation.org, 
+    imx@lists.linux.dev, jirislaby@kernel.org, joe@perches.com, 
+    krzysztof.kozlowski+dt@linaro.org, krzysztof.kozlowski@linaro.org, 
+    linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
+    linux-serial@vger.kernel.org, miquel.raynal@bootlin.com, robh@kernel.org, 
+    zbigniew.lukwinski@linux.intel.com
+Subject: Re: [PATCH v4 6/8] i3c: target: func: add tty driver
+In-Reply-To: <20240123231043.3891847-7-Frank.Li@nxp.com>
+Message-ID: <744bf8d6-48a3-81b4-baa8-d8c06500a971@linux.intel.com>
+References: <20240123231043.3891847-1-Frank.Li@nxp.com> <20240123231043.3891847-7-Frank.Li@nxp.com>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-stable-base: Linux 5.4.267
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240124_063139_351569_D3B62EA5 
-X-CRM114-Status: UNSURE (   9.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240124_071513_917015_7333F7FB 
+X-CRM114-Status: GOOD (  14.98  )
 X-Mailman-Approved-At: Sat, 27 Jan 2024 11:52:56 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -81,59 +85,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Harshit Shah <harshitshah.opendev@gmail.com>
+On Tue, 23 Jan 2024, Frank Li wrote:
 
-[ Upstream commit 374c13f9080a1b9835a5ed3e7bea93cf8e2dc262 ]
+> Add tty over I3C target function driver.
+> 
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
 
-As per the Cadence IP document fixed the I2C clock divider value limit from
-16 bits instead of 10 bits. Without this change setting up the I2C clock to
-low frequencies will not work as the prescaler value might be greater than
-10 bit number.
+> diff --git a/drivers/i3c/func/tty.c b/drivers/i3c/func/tty.c
+> new file mode 100644
+> index 0000000000000..bad99c08be0ac
+> --- /dev/null
+> +++ b/drivers/i3c/func/tty.c
+> @@ -0,0 +1,475 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (C) 2023 NXP
+> + * Author: Frank Li <Frank.Li@nxp.com>
+> + */
+> +
+> +#include <linux/iopoll.h>
+> +#include <linux/i3c/target.h>
+> +#include <linux/serial_core.h>
+> +#include <linux/slab.h>
+> +#include <linux/tty_flip.h>
+> +
+> +static DEFINE_IDR(i3c_tty_minors);
+> +
+> +static struct tty_driver *i3c_tty_driver;
+> +
+> +#define I3C_TTY_MINORS		8
+> +
+> +#define I3C_TX_NOEMPTY		BIT(0)
+> +#define I3C_TTY_TRANS_SIZE	16
+> +#define I3C_TTY_IBI_TX		BIT(0)
 
-I3C clock divider value is 10 bits only. Updating the macro names for both.
+Lacking #include for BIT()
 
-Signed-off-by: Harshit Shah <harshitshah.opendev@gmail.com>
-Link: https://lore.kernel.org/r/1703927483-28682-1-git-send-email-harshitshah.opendev@gmail.com
-Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/i3c/master/i3c-master-cdns.c | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
-index cc0944e2d330..6e0621e730fa 100644
---- a/drivers/i3c/master/i3c-master-cdns.c
-+++ b/drivers/i3c/master/i3c-master-cdns.c
-@@ -74,7 +74,8 @@
- #define PRESCL_CTRL0			0x14
- #define PRESCL_CTRL0_I2C(x)		((x) << 16)
- #define PRESCL_CTRL0_I3C(x)		(x)
--#define PRESCL_CTRL0_MAX		GENMASK(9, 0)
-+#define PRESCL_CTRL0_I3C_MAX		GENMASK(9, 0)
-+#define PRESCL_CTRL0_I2C_MAX		GENMASK(15, 0)
- 
- #define PRESCL_CTRL1			0x18
- #define PRESCL_CTRL1_PP_LOW_MASK	GENMASK(15, 8)
-@@ -1212,7 +1213,7 @@ static int cdns_i3c_master_bus_init(struct i3c_master_controller *m)
- 		return -EINVAL;
- 
- 	pres = DIV_ROUND_UP(sysclk_rate, (bus->scl_rate.i3c * 4)) - 1;
--	if (pres > PRESCL_CTRL0_MAX)
-+	if (pres > PRESCL_CTRL0_I3C_MAX)
- 		return -ERANGE;
- 
- 	bus->scl_rate.i3c = sysclk_rate / ((pres + 1) * 4);
-@@ -1225,7 +1226,7 @@ static int cdns_i3c_master_bus_init(struct i3c_master_controller *m)
- 	max_i2cfreq = bus->scl_rate.i2c;
- 
- 	pres = (sysclk_rate / (max_i2cfreq * 5)) - 1;
--	if (pres > PRESCL_CTRL0_MAX)
-+	if (pres > PRESCL_CTRL0_I2C_MAX)
- 		return -ERANGE;
- 
- 	bus->scl_rate.i2c = sysclk_rate / ((pres + 1) * 5);
+> +	do {
+> +		req = i3c_target_ctrl_alloc_request(func->ctrl, GFP_KERNEL);
+> +		if (!req)
+> +			goto err_alloc_req;
+> +
+> +		req->buf = (void *) (sport->buffer + offset);
+
+Casting to void is unnecessary.
+
+> +		req->length = rxfifo_size;
+> +		req->context = sport;
+> +		req->complete = i3c_target_tty_rx_complete;
+> +		offset += rxfifo_size;
+> +
+> +		if (i3c_target_ctrl_queue(req, GFP_KERNEL))
+> +			goto err_alloc_req;
+> +	} while (req && (offset + rxfifo_size) < UART_XMIT_SIZE);
+
+Extra ().
+
+> +static void i3c_port_shutdown(struct tty_port *port)
+> +{
+> +	struct ttyi3c_port *sport =
+> +		container_of(port, struct ttyi3c_port, port);
+
+Just put this to a single line, nothing important is lost even on 80 char
+screen.
+
+> +static void i3c_port_destruct(struct tty_port *port)
+> +{
+> +	struct ttyi3c_port *sport =
+> +		container_of(port, struct ttyi3c_port, port);
+
+Ditto.
+
+> +	if (i3c_target_ctrl_set_config(func->ctrl, func)) {
+> +		dev_err(&func->dev, "failure set i3c config\n");
+
+failed to set i3c config
+
+
+> +	read_poll_timeout(i3c_target_ctrl_fifo_status, val, !val, 100, timeout, false,
+> +			  sport->i3cdev->ctrl, true);
+> +
+> +	i3c_target_ctrl_set_status_format1(sport->i3cdev->ctrl, sport->status & (~I3C_TX_NOEMPTY));
+
+Unnecessary ().
+
 -- 
-2.43.0
+ i.
 
 
 -- 
