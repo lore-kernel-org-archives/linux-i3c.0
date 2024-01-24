@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9F14C47DA9
-	for <linux-i3c@archiver.kernel.org>; Sat, 27 Jan 2024 19:52:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1712FC4828A
+	for <linux-i3c@archiver.kernel.org>; Sat, 27 Jan 2024 19:53:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6k2HQuJESUI7jVbKN7xWdujKMMB82ED6dyxMjh/Qv5Y=; b=xoz1WiAczcCGCe
-	AOMAq1Q18mL+ZUmhQo3K9KbdFpyuTvEyHJeZFiUQHrWsErMQ+aaIir/vCKm4jTpL7JGp3ds1fTkX5
-	MZIscX2GunnJI+/m4hZ2twJ8/3GrmKXXg7jdrdYubdSsDVUvWz6Cau8V4NGcnyJre19E41bAdFhsp
-	+SLyE4KIuZbn+T7JCT7UK3yNOW1KO9HRCeMEHiKsy+JKeopGpmOA1tmwj3tiqwd+p2QmWi/yOu9jt
-	X16A/1bkL4fDd1c2J4w7XX8+8wzy2N0Y0JKX6OrEbeZyDI6XaSD5lVy90S64kMj9b44K7MuAnWrAL
-	mACWGSPAAIyEk0FBaKAg==;
+	List-Owner; bh=6k2HQuJESUI7jVbKN7xWdujKMMB82ED6dyxMjh/Qv5Y=; b=l+dKdGQ/GTlb4E
+	yFU1446OOgxajsY6hdKFI9gyRTjLLpaW3YYi33BEe1T8m6VP8loSC5lFB7L9+WUuxrA35KckLVqk8
+	2bV2wDLFMbd5clUATogViOc9T3BIJoXnChuYz17+LY0CmovFM9JKsXpYT3kOgBg/UTcpwc9GLnGwf
+	Nl2oo7aXc4m+WmsqQoT0M/ee6xJah8wfUUu7eMqCsIflbfLst66yIrGuFp6VJM92t+9uV/+wIJyEo
+	Ke4OaIGf6LM/hD+UOt8Mj0zKIfKgZEIVgpSdZsh58pHMyZ5DFR0JQ80xK2FgwZikt+f1e1ju7mz1J
+	SWxJ0mrrvHyKfjy431kQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rTojb-000000087tj-1aFe;
+	id 1rTojb-000000087u3-35A7;
 	Sat, 27 Jan 2024 19:52:59 +0000
 Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSeGW-003g3U-1i
+	id 1rSeH5-003gIw-2B
 	for linux-i3c@lists.infradead.org;
-	Wed, 24 Jan 2024 14:30:10 +0000
+	Wed, 24 Jan 2024 14:30:45 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 08B5161D71;
-	Wed, 24 Jan 2024 14:30:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 01096C433C7;
-	Wed, 24 Jan 2024 14:30:06 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 3632261D78;
+	Wed, 24 Jan 2024 14:30:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2D2F4C433B2;
+	Wed, 24 Jan 2024 14:30:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1706106607;
+	s=k20201202; t=1706106643;
 	bh=t0RZzSt1jjBgxGY4o0ZkWqVOeUyWAuIDWOZJMVJzbJg=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=MF3sMOWC/o7kL65lcLIvl3X8KVM1RRu6X1HMm2jIhYNHGDFkzpJolcjK29FNi3cfN
-	 U2iQtQXHQjvfOIj+LDAc+eqRe1EeDP2KTR2T8pdFuaZcpUYJJJWNEPPcrYPOWpfotn
-	 DQrXNZgzjJtDIMKa9TjU0WZpYs36tj5l+z3lZQDf3oNvl7YR1cBXp4CKKQV02Si540
-	 HG3imkrbO2vDoDV8/UvWd+ZGuuA7jEZ6OBXbolQ13TcMYOo0KcTNF9tWZ3hFav9r/4
-	 ymAdZzAdqxgGzjvfWp6ShnU4EtYSXKGmorz+5cK1xMPTYtr4gDWoh1IMJlMxSU75eZ
-	 mtDXmfo/oiyJw==
+	b=tu4DTE8DmWsnv51jiEwStonyfqVFSonzTNMqkY20sUeuBShZ2V2Xp4ppnLY4RY5ko
+	 ST+HpRvJjHKBCxG0ekWmKUI/2Pk+97E694PPBOLa83ZExnuk+hmalN/jgxZcHO2UAi
+	 h0SrRabyab9eJw8TEGyxDtEhi7OZYSU04y2qMhmgLktShYxcTizH7lzFVfa5QxTuMk
+	 HyNKZzoYjpDGXRkoqDlm2GqbjFvusd7dw79fW+YD8ccKN4NKUzCNRMfeP4Gcewvn0c
+	 h3fQKRJGENcJQa85aNiiwpJVHUc/XaRnw0SZWwSwQDVcoCBTdSD6quBAmEyeVxInlf
+	 /h9SS2kuSPE/A==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
@@ -50,19 +50,19 @@ Cc: Harshit Shah <harshitshah.opendev@gmail.com>,
 	Sasha Levin <sashal@kernel.org>,
 	pgaj@cadence.com,
 	linux-i3c@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.1 6/9] i3c: master: cdns: Update maximum prescaler value for i2c clock
-Date: Wed, 24 Jan 2024 09:29:36 -0500
-Message-ID: <20240124142949.1283818-6-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.15 6/9] i3c: master: cdns: Update maximum prescaler value for i2c clock
+Date: Wed, 24 Jan 2024 09:30:09 -0500
+Message-ID: <20240124143024.1284046-6-sashal@kernel.org>
 X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20240124142949.1283818-1-sashal@kernel.org>
-References: <20240124142949.1283818-1-sashal@kernel.org>
+In-Reply-To: <20240124143024.1284046-1-sashal@kernel.org>
+References: <20240124143024.1284046-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.1.74
+X-stable-base: Linux 5.15.147
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240124_063008_672442_71CC6966 
-X-CRM114-Status: UNSURE (   9.67  )
+X-CRM114-CacheID: sfid-20240124_063043_761046_D0F8938B 
+X-CRM114-Status: UNSURE (   9.26  )
 X-CRM114-Notice: Please train this message.
 X-Mailman-Approved-At: Sat, 27 Jan 2024 11:52:56 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
