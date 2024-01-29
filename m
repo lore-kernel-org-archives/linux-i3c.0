@@ -4,72 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 025B6C48285
-	for <linux-i3c@archiver.kernel.org>; Sat, 27 Jan 2024 19:53:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B970C47DB3
+	for <linux-i3c@archiver.kernel.org>; Mon, 29 Jan 2024 19:53:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:cc:To:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9RMKxyOsYqj8DWhVYEBISoe+ZitZwoJ1IW+SLtFFbMA=; b=0vvaCIhD/IjQeW
-	QOfck/8GyFZVepXtQNzmIralIFJ1x4gZ5Gt1n4XXerluL6WUj9tI2TraptSKO2HFtsdBCCbFevUh4
-	8LK0uo+3V+fC0MLjOQa32RbuYEyJ9yZoyTPgGc/z2Ptw9otHnOYb1oPZlqIcUAcQ2Pd/alTlgprea
-	AZDyCQ/C9UiRmR33QMbQ5eiemH4uA3+670mQqs0EixBKtGrMp3bK4FYSqtrICGM7rAFm7yiQ7xbZQ
-	R6m8zqBFVhR81JOIfFAXyFiaOPunTYYSajQ7jOa4kFwMD7nitXTnCsTDu7tThbr8HMqFVfOfRn4lt
-	l09od9mxZ7kcMiXbUnuQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uRHxlvzRb/q5RRHsyKJGkHlToKYorTwb3AqRZQN7fZ0=; b=cbmFC6vC1s/iXG
+	NCWIm3o1c6lSpLtvlsTIiGvAFcpda/qtYB8YdRsy1k1JTN5sY4t/ffkV5K6aovsSdQRh1YEAibX4o
+	LhO+jhASVq9uw1DeRAqsihjjNgOGekk+LBDBxyPefsHjKE6C+zD1tm98701amkmyBxbhlRF26Q7ls
+	CiB18B15rK3ed3vZtA1/Gx0a9YCxwYopc6dxNjaLhn4w6bjGEgODeG3SJeKc3+U7kmGzQxZYDZOpH
+	l/DvVRApVy8Qad8nhduA/mmj7dbjPi/ZaEtr8fEliE7ZhSuTgETBOsndUdmRbsolXbry7eZi14kNI
+	UKmj+z1NbCV7TM9qy6ig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rTojd-000000087vw-2Wda;
-	Sat, 27 Jan 2024 19:53:01 +0000
-Received: from mgamail.intel.com ([192.55.52.120])
-	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rSf9i-003wLk-1l
+	id 1rUXhU-0000000E9vq-1Iog;
+	Mon, 29 Jan 2024 19:53:48 +0000
+Received: from mail-he1eur01on060f.outbound.protection.outlook.com ([2a01:111:f400:fe1e::60f] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
+	id 1rUXhR-0000000E9uV-0elN
 	for linux-i3c@lists.infradead.org;
-	Wed, 24 Jan 2024 15:27:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1706110031; x=1737646031;
-  h=from:date:to:cc:subject:in-reply-to:message-id:
-   references:mime-version;
-  bh=eWgI5cQzGgxjU8IqhiNLaIrbAIei/iVfjxJTyMVtWCw=;
-  b=UlzkHDtEkAKXCsRS/Keoia7DQXUQmcrUOU0R6vmviwpRIVhmOSHGyK+i
-   me+FgaUA07Kup4xsVCB+mBK/iDrKgfEc+JhVcIfPCd8D0F1P931jWrF17
-   oTmU8Db6dBKu7s0zotjcq3MZxwDE+LVkbX8mPzQoPluT1JgaXwdewgiIi
-   voG9kD1KyIBYtt13DxgcDksfGjX6kLSk8mQ5p1SxcfbPTq6WD/YN+6XIs
-   lT/gajnOLl81cD4WJCUF/02CjJ7v1dYj4/7DjZR6oiow2ggSrLXYa+dp6
-   QVFnd/P/L0sZIIlYDBCR52y3nPPyQKdEpvIWV/6/DnhP8rlgajW/MuU9w
-   A==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10962"; a="400730353"
-X-IronPort-AV: E=Sophos;i="6.05,216,1701158400"; 
-   d="scan'208";a="400730353"
-Received: from orviesa004.jf.intel.com ([10.64.159.144])
-  by fmsmga104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 24 Jan 2024 07:27:05 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.05,216,1701158400"; 
-   d="scan'208";a="2073769"
-Received: from ijarvine-desk1.ger.corp.intel.com (HELO localhost) ([10.246.48.46])
-  by orviesa004-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 24 Jan 2024 07:27:00 -0800
-From: =?UTF-8?q?Ilpo=20J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>
-Date: Wed, 24 Jan 2024 17:26:55 +0200 (EET)
-To: Frank Li <Frank.Li@nxp.com>
-cc: alexandre.belloni@bootlin.com, conor.culhane@silvaco.com, 
-    devicetree@vger.kernel.org, 
-    Greg Kroah-Hartman <gregkh@linuxfoundation.org>, imx@lists.linux.dev, 
-    Jiri Slaby <jirislaby@kernel.org>, joe@perches.com, 
-    krzysztof.kozlowski+dt@linaro.org, krzysztof.kozlowski@linaro.org, 
-    linux-i3c@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>, 
-    linux-serial <linux-serial@vger.kernel.org>, miquel.raynal@bootlin.com, 
-    robh@kernel.org, zbigniew.lukwinski@linux.intel.com
-Subject: Re: [PATCH v4 8/8] tty: i3c: add TTY over I3C master support
-In-Reply-To: <20240123231043.3891847-9-Frank.Li@nxp.com>
-Message-ID: <a2716dab-8681-3bce-d0fb-b83789c51362@linux.intel.com>
-References: <20240123231043.3891847-1-Frank.Li@nxp.com> <20240123231043.3891847-9-Frank.Li@nxp.com>
+	Mon, 29 Jan 2024 19:53:46 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=WC4DOqupsXpcOKpSBlxRArPxAtEJ2fI6m76XWhEJbNsdcZzq9lnezyRmRTWwav0ymTBKfv4ZuYlVARpoPBg58QD+NxETzVs4ZDEeA+Kx4tcVq/Pr46uA1of6zpFt06Z3xCEMvwsGWLiRfkO281i7VeHNYiQInZ4iSIbSNncG5mkQUXdDVs2gDr7s8kQrEA4iF01IaYfG97d4l9cCs6YRdJ9w1Voh5i5WS7gFeXUOimB3OwH5p68T/IYFLEQvqZtONZzxqURJma3rseMlUMoH49IsqiAOrRCt0XFg5OY3W0H99/G6DdymKWM2kzjLzV3xBLxZ/SIXj/cv9sAko5PZrA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=7xvDCYPn0CBpTHGLkColV0AhTkpbGViu/rysOlyeMLo=;
+ b=Pt5WOTV5Y6OYQt/XxitBm0ZkEydBzhkfiX/2i7jXdWdROqyHQ3vr1/3/JDtxUKTNcnUpX5XLlIoBxdMUYGX7FXBd0HJJByh8ym9jd89vS0deH1dI9sRXaVx2Em706ezwuzoqbSQXWNimgjZyF7VTpm34k/OOM8mw4nNKljivmfYp0j75eCpI9BDbcHIfmBzo5DpnsytvByS8BazwZ9TlF6/XJX8Hk1rKwgxX8CzmW3Vficav3ejtDH07anB/TK95dxRd7Z6AKDCoYxwyYPc71aKZmfCxs+u5cuOS8TEiQ7Wec07/xKEYkuYFLtpNxAPnt7AtZl5H/Pba0UJ/rgRX4w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=7xvDCYPn0CBpTHGLkColV0AhTkpbGViu/rysOlyeMLo=;
+ b=K/WVvUO6ENw5GzcC2MhwXZizHmHQsV+jEUqrTJ13tiJvAtEEgo+DhXy1Nhm49xy4lOAYj9pSAxnbU4UHFUKxAWtx5sasw+XUYvq4pLbj5hmFBMqMD6WagNOYcPa5Tc8hNSXXxGZveDR8eKvr5tgqccxCr+PLsopt22gEGDthOog=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by PAXPR04MB8128.eurprd04.prod.outlook.com (2603:10a6:102:1c8::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7228.32; Mon, 29 Jan
+ 2024 19:53:40 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::c8b4:5648:8948:e85c]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::c8b4:5648:8948:e85c%3]) with mapi id 15.20.7228.029; Mon, 29 Jan 2024
+ 19:53:40 +0000
+From: Frank Li <Frank.Li@nxp.com>
+To: ilpo.jarvinen@linux.intel.com
+Cc: Frank.Li@nxp.com,
+	alexandre.belloni@bootlin.com,
+	conor.culhane@silvaco.com,
+	devicetree@vger.kernel.org,
+	gregkh@linuxfoundation.org,
+	imx@lists.linux.dev,
+	jirislaby@kernel.org,
+	joe@perches.com,
+	krzysztof.kozlowski+dt@linaro.org,
+	krzysztof.kozlowski@linaro.org,
+	linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-serial@vger.kernel.org,
+	miquel.raynal@bootlin.com,
+	robh@kernel.org,
+	zbigniew.lukwinski@linux.intel.com
+Subject: [PATCH v5 0/8] I3C target mode support
+Date: Mon, 29 Jan 2024 14:53:13 -0500
+Message-Id: <20240129195321.229867-1-Frank.Li@nxp.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: BYAPR05CA0091.namprd05.prod.outlook.com
+ (2603:10b6:a03:e0::32) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|PAXPR04MB8128:EE_
+X-MS-Office365-Filtering-Correlation-Id: d40ca076-0864-4214-e758-08dc2103fd66
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: Qkg79M6YkMsTNCARYaXvctYEaT6DxYiEszN1MtZlxuAv5d4/JH9CLaC1rurKHiOceeuWzyE3JoLkU/DrHoSkwKJo7urC0n2/bA3mImecJLM+O2c+R+KfmJAO85thhbduk2QI7s+/09VX/FF4w5y/GwjqXxeC25ozvz3dna02Z3IeCiDTCrgtNXNFNkUOkpcHK2EK9W/K1TF9A5LEAzD5DCbzUop+0l7a+dnztCqZGC+JbAh2V7ZetdhfP3EPyU34mymMKaf6hyayTpVgJW17xH771RpDmbYRjgtHVEsL7LhLHR5pwGJq3Gs+FqE0eiqGkZM7+yw440MhLjBs+S7XVPPZxzZiWTbLGczhiUFXnxJUNnuo00G3GatasBPdWqWYf8+cn6ya42RxQRiKkz8DagJMoDruD2EYVzWjoeNhlWCDi7998YFSp+oKaKhCg27CpPai3AyD2X0DP9nZB7Uz9Cq+Z10si48SVap/q4Y/yflNPGF++MPBWfGpfyJ170Z7AAnCSd2gp/mo4J1cICjyDSlUuXNY8wX7krjDRZORKK7Nl4kyvklNpTri5JPKnpkSjUDt8NQegKnNXEtviO7Tds0Xa/ZeqfcfCtl2y4No9ZieQPfJtf7QeSj9BVPeZwTKeait0USU6fpfd3l2kypseKFUdYX1ZY8I3CKBa/CCLrA=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(376002)(39860400002)(136003)(366004)(346002)(396003)(230922051799003)(230173577357003)(230273577357003)(451199024)(1800799012)(186009)(64100799003)(1076003)(26005)(52116002)(83380400001)(6512007)(6666004)(6506007)(38100700002)(66946007)(4326008)(5660300002)(8936002)(8676002)(7416002)(41300700001)(2616005)(316002)(478600001)(6916009)(2906002)(66476007)(6486002)(66556008)(86362001)(36756003)(38350700005);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?OqXCalIMX8Yhk0atflS7Q/IdRwzIJ4gOgKiJtwx2tIMWcgweXLc/BTWQHLjj?=
+ =?us-ascii?Q?hpfpvnDev5ZL5KaTVu4OfHVD7uYkbWeqUyttziljbavKf0T+XxUyI2Um1+dL?=
+ =?us-ascii?Q?Dor0otReIJvccfAOXSH5trp9xSV8kRU+r7uoUV/O6AXbvxrD2DoB9Sk2+45N?=
+ =?us-ascii?Q?9FxSjb/1fGxlYszPjAdsJcE7aVvyd7g00hkH+EonnEi9flBOcB9zSgkohLL0?=
+ =?us-ascii?Q?KKT4KQE4e1ESw/+cFsT5X+9K0/4LlXC5m3dMqfRlGtuZ5lHGzIhJt9zF0G1O?=
+ =?us-ascii?Q?4ospgYQfRaHFNbN7bBeNJWwdO+zLGAn3THbvc7RamLL0t9b9vMPNpgklzmOb?=
+ =?us-ascii?Q?j58CuLihD8EijMz1bW2cdGzIEWu1xl/CBUhtrz+n7gp0kpMnJA8WL1UirkAM?=
+ =?us-ascii?Q?+LdLdxIjEqkSKc9wOIe3u4aCKV3j3OXKCo2uK2FG2IAMsH89TBS1CljXPdJf?=
+ =?us-ascii?Q?x38Mqj1I5uQcTWQA6cYRgdv/QZRGGJnFCO98zy6uVNf7VUE3rtADn/YtGQc1?=
+ =?us-ascii?Q?75POy3dEMHIcN1+ANqpLflbEg8WKMi7kyX9+xFH07Dr3oGKpCdIBG8ix/eZt?=
+ =?us-ascii?Q?m1O+oVT42lywQmA775I93d+OJBuwB/nhs/ozxsPYud35FfdwoDPeRV0GDMIF?=
+ =?us-ascii?Q?j1LP6evP51N/J9zMy4SD79zfIB1VLloxSsGfEIi8b8t0Hm6G4XoEQBdJ4d6L?=
+ =?us-ascii?Q?lRo6jkX04ZwTluGDbXDf8Ldy0QLW85rLPzbxSMkuczXhN/Z87RyiSdBKlF3z?=
+ =?us-ascii?Q?H0GJu+aL54l12VTyG2JLHY8OXT2BLnjn932IxWadG+idXahFTBUZTJTdG6kN?=
+ =?us-ascii?Q?5OFmB098KGgYU5t+7XPUTWh4hJ5vlzfdDZAhbzhfHJoZgnkZWUl59rHxHxMH?=
+ =?us-ascii?Q?zfesbAQqvpjX0lABHeawTPREYO99VrLxuQyrV9X/h6ul09hNKhqsF5Jd1goJ?=
+ =?us-ascii?Q?D3yk9bOoFj1s5YbdkVzlJRUQTG2pdP0PhGNFgpDRdSAHDPC9WIgJ54Yp+nUC?=
+ =?us-ascii?Q?VblG3BpG0mgPpT+v51JtF/MQkC7WxRV6LC88qUmlre/5g9g3oHreIQ2wlsg3?=
+ =?us-ascii?Q?SuAbGphHpgiT8nHQmQ/zipW2XNNfpIjMeMxbCQWq6qKn++ZsjlHuNWhtD2mY?=
+ =?us-ascii?Q?6DO94k3OweSx7fhtKCyQmcyAUfBSyLu2LqTrRMWKQU2jizuXs5RuteyJjqny?=
+ =?us-ascii?Q?R6ADwLDNrrX8kTzKUrhTx1gCaX+49lIvfjVRlgwsurIe0Ho4v6vB5X+PK6J6?=
+ =?us-ascii?Q?vBRbcbMMvRaGYYl8MQzSs9WVHah3NUtDDtEAHF4sR/lj7vOwF4JC4d9OEUz/?=
+ =?us-ascii?Q?4viJwMw6maxzyPcenzWbSSPziMsCWhRjoPoUqqyXKEwmf4zEqXFw5EDiuCgs?=
+ =?us-ascii?Q?dnIcvYsttvz974OkhBHkkN2T0Ql+DV+OCUjlUTj4JJSoXDWMdoZkRbpZPmD8?=
+ =?us-ascii?Q?VKkk1qs0wNzXB+EKxhdFHMDrT/4q8+qiyNaBTFzEVfCB1JRrCFCUYJSHOLfK?=
+ =?us-ascii?Q?tzXaDpCCI5sW24d8maVw2toNF+O7VetzHKbSytMMLi8H55ujzp93pwE9K0P0?=
+ =?us-ascii?Q?5faqpFIqvN0/7WU2rBc=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d40ca076-0864-4214-e758-08dc2103fd66
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Jan 2024 19:53:40.1273
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: hPleUaiN5ZXHoh9E8funKKJmtQvWU2P6Cxa1OmmmfVBAG2NjTiFNiOnsYwSr7176O7q2XukJZ2MYoppvd8cJNA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8128
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240124_072711_260452_9062CB48 
-X-CRM114-Status: GOOD (  36.11  )
-X-Mailman-Approved-At: Sat, 27 Jan 2024 11:52:56 -0800
+X-CRM114-CacheID: sfid-20240129_115345_258334_7CB0D688 
+X-CRM114-Status: GOOD (  14.89  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,234 +144,105 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, 23 Jan 2024, Frank Li wrote:
+This  patch introduces support for I3C target mode, which is referenced
+with a PCIe Endpoint system. It also establishes a configuration framework
+(configfs) for the I3C target controller driver and the I3C target function
+driver
 
-> In typical embedded Linux systems, UART consoles require at least two pins,
-> TX and RX. In scenarios where I2C/I3C devices like sensors or PMICs are
-> present, we can save these two pins by using this driver. Pins is crucial
-> resources, especially in small chip packages.
-> 
-> This introduces support for using the I3C bus to transfer console tty data,
-> effectively replacing the need for dedicated UART pins. This not only
-> conserves valuable pin resources but also facilitates testing of I3C's
-> advanced features, including early termination, in-band interrupt (IBI)
-> support, and the creation of more complex data patterns. Additionally,
-> it aids in identifying and addressing issues within the I3C controller
-> driver.
-> 
-> Signed-off-by: Frank Li <Frank.Li@nxp.com>
-> ---
-> 
-> Notes:
->     Notes:
->         Version number use i3c target patches.
->         Change from v3 to v4
->         - add static at i3c_remove()
->         Change v2
->         - using system_unbound_wq working queue
->         - fixed accoring to Jiri Slaby's comments
->     
->         Change before send with i3c target support
->     
->         Change from v4 to v5
->         - send in i3c improvememtn patches.
->     
->         Change from v2 to v4
->         - none
->     
->         Change from v1 to v2
->         - update commit message.
->         - using goto for err handle
->         - using one working queue for all tty-i3c device
->         - fixed typo found by js
->         - update kconfig help
->         - using kfifo
->     
->         Still below items not be fixed (according to Jiri Slaby's comments)
->         - rxwork thread: need trigger from two position.
->         - common thread queue: need some suggestion
-> 
->  drivers/tty/Kconfig   |  13 ++
->  drivers/tty/Makefile  |   1 +
->  drivers/tty/i3c_tty.c | 426 ++++++++++++++++++++++++++++++++++++++++++
->  3 files changed, 440 insertions(+)
->  create mode 100644 drivers/tty/i3c_tty.c
-> 
-> diff --git a/drivers/tty/Kconfig b/drivers/tty/Kconfig
-> index 5646dc6242cd9..9ab4cd480e9f8 100644
-> --- a/drivers/tty/Kconfig
-> +++ b/drivers/tty/Kconfig
-> @@ -412,6 +412,19 @@ config RPMSG_TTY
->  	  To compile this driver as a module, choose M here: the module will be
->  	  called rpmsg_tty.
->  
-> +config I3C_TTY
-> +	tristate "TTY over I3C"
-> +	depends on I3C
-> +	help
-> +	  Select this option to use TTY over I3C master controller.
-> +
-> +	  This makes it possible for user-space programs to send and receive
-> +	  data as a standard tty protocol. I3C provide relatively higher data
-> +	  transfer rate and less pin numbers, SDA/SCL are shared with other
-> +	  devices.
-> +
-> +	  If unsure, say N
-> +
->  endif # TTY
->  
->  source "drivers/tty/serdev/Kconfig"
-> diff --git a/drivers/tty/Makefile b/drivers/tty/Makefile
-> index 07aca5184a55d..f329f9c7d308a 100644
-> --- a/drivers/tty/Makefile
-> +++ b/drivers/tty/Makefile
-> @@ -27,5 +27,6 @@ obj-$(CONFIG_GOLDFISH_TTY)	+= goldfish.o
->  obj-$(CONFIG_MIPS_EJTAG_FDC_TTY) += mips_ejtag_fdc.o
->  obj-$(CONFIG_VCC)		+= vcc.o
->  obj-$(CONFIG_RPMSG_TTY)		+= rpmsg_tty.o
-> +obj-$(CONFIG_I3C_TTY)		+= i3c_tty.o
->  
->  obj-y += ipwireless/
-> diff --git a/drivers/tty/i3c_tty.c b/drivers/tty/i3c_tty.c
-> new file mode 100644
-> index 0000000000000..8f4e87dfa01cd
-> --- /dev/null
-> +++ b/drivers/tty/i3c_tty.c
-> @@ -0,0 +1,426 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright 2023 NXP.
-> + *
-> + * Author: Frank Li <Frank.Li@nxp.com>
-> + */
-> +
-> +#include <linux/delay.h>
-> +#include <linux/kernel.h>
-> +#include <linux/mod_devicetable.h>
-> +#include <linux/module.h>
-> +#include <linux/i3c/device.h>
-> +#include <linux/i3c/master.h>
-> +#include <linux/slab.h>
-> +#include <linux/console.h>
-> +#include <linux/serial_core.h>
-> +#include <linux/interrupt.h>
+Typic usage as
 
-Do you need this header.
+The user can configure the i3c-target-tty device using configfs entry. In
+order to change the vendorid, the following commands can be used
 
-> +#include <linux/workqueue.h>
-> +#include <linux/tty_flip.h>
-> +
-> +static DEFINE_IDR(i3c_tty_minors);
-> +static DEFINE_MUTEX(i3c_tty_minors_lock);
-> +
-> +static struct tty_driver *i3c_tty_driver;
-> +
-> +#define I3C_TTY_MINORS		8
-> +#define I3C_TTY_TRANS_SIZE	16
-> +#define I3C_TTY_RX_STOP		0
-> +#define I3C_TTY_RETRY		20
-> +#define I3C_TTY_YIELD_US	100
-> +
-> +struct ttyi3c_port {
-> +	struct tty_port port;
+        # echo 0x011b > functions/tty/func1/vendor_id
+        # echo 0x1000 > functions/tty/func1/part_id
+        # echo 0x6 > functions/tty/t/bcr
 
-Missing #include
+Binding i3c-target-tty Device to target Controller
+------------------------------------------------
 
-> +	int minor;
-> +	spinlock_t xlock; /* protect xmit */
+In order for the target function device to be useful, it has to be bound to
+a I3C target controller driver. Use the configfs to bind the function
+device to one of the controller driver present in the system::
 
-Missing #include
+        # ln -s functions/pci_epf_test/func1 controllers/44330000.i3c-target/
 
-> +	u8 tx_buff[I3C_TTY_TRANS_SIZE];
-> +	u8 rx_buff[I3C_TTY_TRANS_SIZE];
-> +	struct i3c_device *i3cdev;
-> +	struct work_struct txwork;
-> +	struct work_struct rxwork;
-> +	struct completion txcomplete;
+Host side:
+        cat /dev/ttyI3C0
+Taret side:
+        echo abc >/dev/ttyI3C0
 
-Missing #include
+Chagne from v2 to v3
+- using 'mode' distingiush master and target.
+- move svc-i3c-target.c to under master,
+- built together with svc-i3c-master.c
 
-> +	unsigned long status;
-> +	u32 buf_overrun;
-> +};
+Change from v1 to v2
+- change "slave" to "target"
+- include master side tty patch
+- fixed dtbcheck problem
+- fixed kerne-doc check warning
 
-> +static void i3c_port_shutdown(struct tty_port *port)
-> +{
-> +	struct ttyi3c_port *sport =
-> +		container_of(port, struct ttyi3c_port, port);
+Some review comment may be lost since it is quite long time since v1. Now
+master side dependent patches already in linux-next. So sent target side
+patches with tty support again.
 
-On one line.
+No sure why an additional "\r\n" appended.
 
-> +
-> +	i3c_device_disable_ibi(sport->i3cdev);
-> +	tty_port_free_xmit_buf(port);
-> +}
-> +
-> +static void i3c_port_destruct(struct tty_port *port)
-> +{
-> +	struct ttyi3c_port *sport =
-> +		container_of(port, struct ttyi3c_port, port);
+Frank Li (8):
+  i3c: add target mode support
+  dt-bindings: i3c: svc: add proptery mode
+  Documentation: i3c: Add I3C target mode controller and function
+  i3c: svc: Add svc-i3c-main.c and svc-i3c.h
+  i3c: target: add svc target controller support
+  i3c: target: func: add tty driver
+  i3c: add API i3c_dev_gettstatus_format1() to get target device status
+  tty: i3c: add TTY over I3C master support
 
-Ditto.
-
-> +static void tty_i3c_rxwork(struct work_struct *work)
-> +{
-> +	struct ttyi3c_port *sport = container_of(work, struct ttyi3c_port, rxwork);
-> +	struct i3c_priv_xfer xfers;
-> +	u32 retry = I3C_TTY_RETRY;
-> +	u16 status = BIT(0);
-
-Unnecessary initialization.
-
-> +	int ret;
-> +
-> +	memset(&xfers, 0, sizeof(xfers));
-> +	xfers.data.in = sport->rx_buff;
-> +	xfers.len = I3C_TTY_TRANS_SIZE;
-> +	xfers.rnw = 1;
-> +
-> +	do {
-> +		if (test_bit(I3C_TTY_RX_STOP, &sport->status))
-> +			break;
-> +
-> +		i3c_device_do_priv_xfers(sport->i3cdev, &xfers, 1);
-> +
-> +		if (xfers.actual_len) {
-> +			ret = tty_insert_flip_string(&sport->port, sport->rx_buff,
-> +						     xfers.actual_len);
-> +			if (ret < xfers.actual_len)
-> +				sport->buf_overrun++;
-> +
-> +			retry = I3C_TTY_RETRY;
-> +			continue;
-> +		}
-> +
-> +		status = BIT(0);
-
-Can this BIT(0) be named with a #define?
-
-> +		i3c_device_getstatus_format1(sport->i3cdev, &status);
-> +		/*
-> +		 * Target side needs some time to fill data into fifo. Target side may not
-> +		 * have hardware update status in real time. Software update status always
-> +		 * needs some delays.
-> +		 *
-> +		 * Generally, target side have circular buffer in memory, it will be moved
-> +		 * into FIFO by CPU or DMA. 'status' just show if circular buffer empty. But
-> +		 * there are gap, especially CPU have not response irq to fill FIFO in time.
-> +		 * So xfers.actual will be zero, wait for little time to avoid flood
-> +		 * transfer in i3c bus.
-> +		 */
-> +		usleep_range(I3C_TTY_YIELD_US, 10 * I3C_TTY_YIELD_US);
-> +		retry--;
-> +
-> +	} while (retry && (status & BIT(0)));
-
-Name with define?
-
+ .../bindings/i3c/silvaco,i3c-master.yaml      |  11 +-
+ Documentation/driver-api/i3c/index.rst        |   1 +
+ .../driver-api/i3c/target/i3c-target-cfs.rst  | 109 +++
+ .../driver-api/i3c/target/i3c-target.rst      | 189 +++++
+ .../driver-api/i3c/target/i3c-tty-howto.rst   | 109 +++
+ Documentation/driver-api/i3c/target/index.rst |  13 +
+ drivers/i3c/Kconfig                           |  31 +-
+ drivers/i3c/Makefile                          |   3 +
+ drivers/i3c/device.c                          |  24 +
+ drivers/i3c/func/Kconfig                      |   9 +
+ drivers/i3c/func/Makefile                     |   3 +
+ drivers/i3c/func/tty.c                        | 474 +++++++++++
+ drivers/i3c/i3c-cfs.c                         | 389 +++++++++
+ drivers/i3c/internals.h                       |   1 +
+ drivers/i3c/master.c                          |  26 +
+ drivers/i3c/master/Makefile                   |   3 +-
+ drivers/i3c/master/svc-i3c-main.c             |  80 ++
+ drivers/i3c/master/svc-i3c-master.c           |  34 +-
+ drivers/i3c/master/svc-i3c-target.c           | 776 ++++++++++++++++++
+ drivers/i3c/master/svc-i3c.h                  |  15 +
+ drivers/i3c/target.c                          | 453 ++++++++++
+ drivers/tty/Kconfig                           |  13 +
+ drivers/tty/Makefile                          |   1 +
+ drivers/tty/i3c_tty.c                         | 427 ++++++++++
+ include/linux/i3c/device.h                    |   1 +
+ include/linux/i3c/target.h                    | 528 ++++++++++++
+ 26 files changed, 3692 insertions(+), 31 deletions(-)
+ create mode 100644 Documentation/driver-api/i3c/target/i3c-target-cfs.rst
+ create mode 100644 Documentation/driver-api/i3c/target/i3c-target.rst
+ create mode 100644 Documentation/driver-api/i3c/target/i3c-tty-howto.rst
+ create mode 100644 Documentation/driver-api/i3c/target/index.rst
+ create mode 100644 drivers/i3c/func/Kconfig
+ create mode 100644 drivers/i3c/func/Makefile
+ create mode 100644 drivers/i3c/func/tty.c
+ create mode 100644 drivers/i3c/i3c-cfs.c
+ create mode 100644 drivers/i3c/master/svc-i3c-main.c
+ create mode 100644 drivers/i3c/master/svc-i3c-target.c
+ create mode 100644 drivers/i3c/master/svc-i3c.h
+ create mode 100644 drivers/i3c/target.c
+ create mode 100644 drivers/tty/i3c_tty.c
+ create mode 100644 include/linux/i3c/target.h
 
 -- 
- i.
+2.34.1
 
 
 -- 
