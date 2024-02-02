@@ -4,77 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93E21C4828F
-	for <linux-i3c@archiver.kernel.org>; Fri,  2 Feb 2024 21:20:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BABBEC48295
+	for <linux-i3c@archiver.kernel.org>; Fri,  2 Feb 2024 23:09:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ilsq13/jGkt9bLcw5j0gJfVqOi0pIXlHVFx/Re9PxJM=; b=sJqtBgVwp9am7S
-	z/F5KxzTCVPjN1s9M/Gq7lGztlBFpxhO2aIUWmS5zModN1SzGhPOwiCq/OMj8K3CcAudDKveb/MKA
-	tepkQxR0dAkJQfcZa1QTeQxFQZz9IFIC+4CtDccoBjhyY9u/pw/MgXWUmXwbuSgJd2v4g3AaFeUI0
-	vI16kF1/LPIepNmk+leEARhVDyq/VhO1y0kDN4Psqs+8HEeVpmVJ+his1ingUrDj53yWWHwnOYmHS
-	yNoD+POzxd8N6SkimTYLS0Dufom61tcFPkPT5hd7L78JctxQlMK3LnAVpA+yenjKhlJS5tDjLGPaG
-	EOR2RbXn1RNLrvA6Fs+w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TMMkzwvhd+ArfO7JV0KhR0zmO1LyfbycC9uYU5iVkes=; b=LbgYOBORT9YktD
+	4qV6FK9u6LPbDPMOePM27jFqh+DJncgxuA+OE+twYbPIw9BMwywIRHwK7q+uo1aDTSzaodaqxVzJf
+	ERa4liZa/C1K1WjcHh8gjOR1/4ItNlMAL8UqGwgNVqGo/HLJ+vLvLFudQY3EUzAjil/9L2dvRVDON
+	VMWa4MWrK5fnQR03RaACXbVGFSj3NZY4XS0TpvPtHmkQPSbnSV7AeKLogrmTkb5SxffNUjrzxxekG
+	dMF8Uf94fExFBtkHydtG9wKYK6+ZOabkMiGPzalPNno5XWYWNusvL+BmLdMwb8PVK+4uvqm2zyw7O
+	e67u3POWAjwMET55j9Ng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rW0x3-0000000DW12-0Es7;
-	Fri, 02 Feb 2024 21:20:05 +0000
-Received: from mgamail.intel.com ([198.175.65.19])
+	id 1rW2fS-0000000DkhO-3t94;
+	Fri, 02 Feb 2024 23:09:54 +0000
+Received: from mail-am7eur03on20601.outbound.protection.outlook.com ([2a01:111:f403:260e::601] helo=EUR03-AM7-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rW0wO-0000000DVsk-0JQm
+	id 1rW2fQ-0000000DkgB-0Yl8
 	for linux-i3c@lists.infradead.org;
-	Fri, 02 Feb 2024 21:19:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1706908756; x=1738444756;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=5ksOdQd8ghM9qXKkEiudkWeCW/Mz361KuBeBg2gzM/4=;
-  b=jCN4/0qXl/KlujQjDEyY4caSFdDwcjq7K1IxvrNrQqd1Vzw9xqCDkmuz
-   kJ5CItoO5hz1ottOUqcfgyJBg55HrtEJO231HNLDNgmiRh5SE3tTI5S7Z
-   gyYYgQCj5qBhlQziqEJC2Cq+ybCPKMRrwUotASG6bjdL/T5gVEYHTw7e1
-   tTGjSu2Nu/g1kAV6T1PuFbQZ4P8qC6m4wxwCJTQQiOnEV3yWXel9jCW/X
-   oXsLj6rPU2IPdubStbuo8QwN1aGndz22iN+7k7/HgsY7lH70S2WA/kXlJ
-   mJWcZE20hMyup72d2uGaq/0gR1f+V8bgG5ufTTARDytilMP8yVf5w9/w7
-   w==;
-X-IronPort-AV: E=McAfee;i="6600,9927,10971"; a="148411"
-X-IronPort-AV: E=Sophos;i="6.05,238,1701158400"; 
-   d="scan'208";a="148411"
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
-  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 Feb 2024 13:19:10 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=McAfee;i="6600,9927,10971"; a="932581866"
-X-IronPort-AV: E=Sophos;i="6.05,238,1701158400"; 
-   d="scan'208";a="932581866"
-Received: from lkp-server02.sh.intel.com (HELO 59f4f4cd5935) ([10.239.97.151])
-  by fmsmga001.fm.intel.com with ESMTP; 02 Feb 2024 13:19:05 -0800
-Received: from kbuild by 59f4f4cd5935 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1rW0wB-0004H0-1Q;
-	Fri, 02 Feb 2024 21:19:03 +0000
-Date: Sat, 3 Feb 2024 05:18:51 +0800
-From: kernel test robot <lkp@intel.com>
-To: Frank Li <Frank.Li@nxp.com>, ilpo.jarvinen@linux.intel.com
-Cc: oe-kbuild-all@lists.linux.dev, Frank.Li@nxp.com,
-	alexandre.belloni@bootlin.com, conor.culhane@silvaco.com,
-	devicetree@vger.kernel.org, gregkh@linuxfoundation.org,
-	imx@lists.linux.dev, jirislaby@kernel.org, joe@perches.com,
-	krzysztof.kozlowski+dt@linaro.org, krzysztof.kozlowski@linaro.org,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-serial@vger.kernel.org, miquel.raynal@bootlin.com,
-	robh@kernel.org, zbigniew.lukwinski@linux.intel.com
-Subject: Re: [PATCH v5 1/8] i3c: add target mode support
-Message-ID: <202402030437.GdGCrKeK-lkp@intel.com>
-References: <20240129195321.229867-2-Frank.Li@nxp.com>
+	Fri, 02 Feb 2024 23:09:53 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Ci1CkSiZdn6/ONSYeiJg1Qu30MC6vLgMLE1CLgsrtdyBY+6AIx+o8E99GJH5HO4mAbhvZ6HFSn8O19ZdxYqdoHcjfEsaFOIpCCrxpGlMwZ8X5IvUtIWm/N17tFO2holabYGGIg59L/WlgpraBuUIr75yA4EChQEUjKTWYSRwdd+RPzVUul1KiXXPfP0UIGyhxfYlVlFPJZYJ//CGzGUl2mAnW1IeOiN5+6IKd/h7lYlghxNbIjt9JCyKq4VECGjeSbZdxocLOy+VHA3fsREJr3SmJSisZ12fclHHg8dBgiCeVUbGsdL3KyohYP2dcqPg49FRFucuFSJg22/gozFLBQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=byDnXsXx+ABdHA0brvZRkAWtWoHaTwoTe+9Xa1hY668=;
+ b=dbzhQz46SAMvtlv8EiIRJeCM3g2goo7g8rhTe1nHIQxO1UMJFa9qtuMm98RnEG01lzfnjEmWW4S094gbEi/FxFObsSGiAnpjY3m3YlcByQMioJj0yr2WvPePfOFlmebicfYDugavvUR1aTTdxa0Bh4xNl+Jhac6ZH+QoU+JYBbGJNet/OUkPvORiJmEQlbusbYS4Zut9Za3Vk1lGVCKWYjwtVpYH0FGnWkfzElWKK6c8ru8rTmcH5dUuYO+G6U0sWtxIDdJU56hnEVVetqyy3NvZk06dx9z16xDOMVjgBnExAVssZhtNevt79vKtMu8np3CQRxkuRDZs99l3hxrM/g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=byDnXsXx+ABdHA0brvZRkAWtWoHaTwoTe+9Xa1hY668=;
+ b=XhTErwsYryB7L7uHHUjlmlxEd4GermKrjUONuRts0CaDCzq2A9mukE8XGGEiDRsNl0SJO7GF+Z3w0S5a18VcOxReWOfAO7RGbhnGlpD4lA57gmAc7DEEN6cbg02TQXWstBvWeI14OE7mb9IBsUUpitxD6DIFk/UVY0KgtgtV9pM=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by AS5PR04MB9997.eurprd04.prod.outlook.com (2603:10a6:20b:67c::21) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7249.26; Fri, 2 Feb
+ 2024 23:09:43 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::c8b4:5648:8948:e85c]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::c8b4:5648:8948:e85c%3]) with mapi id 15.20.7249.027; Fri, 2 Feb 2024
+ 23:09:43 +0000
+From: Frank Li <Frank.Li@nxp.com>
+To: frank.li@nxp.com
+Cc: alexandre.belloni@bootlin.com,
+	conor.culhane@silvaco.com,
+	devicetree@vger.kernel.org,
+	gregkh@linuxfoundation.org,
+	ilpo.jarvinen@linux.intel.com,
+	imx@lists.linux.dev,
+	jirislaby@kernel.org,
+	joe@perches.com,
+	krzysztof.kozlowski+dt@linaro.org,
+	krzysztof.kozlowski@linaro.org,
+	linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-serial@vger.kernel.org,
+	miquel.raynal@bootlin.com,
+	robh@kernel.org,
+	zbigniew.lukwinski@linux.intel.com
+Subject: [PATCH v6 0/8] I3C target mode support
+Date: Fri,  2 Feb 2024 18:09:17 -0500
+Message-Id: <20240202230925.1000659-1-Frank.Li@nxp.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: BYAPR08CA0030.namprd08.prod.outlook.com
+ (2603:10b6:a03:100::43) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240129195321.229867-2-Frank.Li@nxp.com>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|AS5PR04MB9997:EE_
+X-MS-Office365-Filtering-Correlation-Id: fb06fc0f-3d3c-4527-35b3-08dc24440a85
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: waJv7ypB2BvpRoQXCOLL1t6lc1z03UQK6pHJ+IV8HlOYyhj75BOsHGs8jmwXcN5QIvypTXg7C1eij/fCA9hlAnM+Q4KoLNUx786J4u+KL1Du7dle5MpBTa6/CTCCGtoYrV5I27eEjWDQsKu/D27WiujDXVi56jqew3pbJnEPjQ9iQNmy9iSigANnIbjuKgScE2xuAwJUJoHLdxy87xYNcNcDHFm7dqyzk6UycVnRHYCoJXm4ieYbbZp74UinGCUPjwQir3fEzFnQqwGkydpz/1h8fXBibMjqbmI33jdDyc1DxXCF6klZ0g/FaXf11ych5vkXSquCJIvz1Bu1WUR+aUXiqiKp+FLJcNigS92y1wj+rQ9O52VZT3oWH9DVg95diWstX60svmVfVucgLV98v9V2/iF3PqRFN3CeG0cpr8GrwZ2jPGc7XDSWU2dFecGRqEjuUxzKJD6dmGHhls7G9KKpl2m3AjU+YXgs01wS0bmgluZ6JKtEZ6W5xYiTepoQC8Pce+aqkhYkofzyc/Ht1p0HkdHSU8eY/rvCRuWigJGryr1EYqHaFpFJeB/8C/C1a7Bk4Bwl8xplOA78i758m+OS2rIu4rJ7PLiLLMPf2u6mNmOiszwU1d2TZFCAC6tz
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(396003)(366004)(39860400002)(136003)(346002)(376002)(230922051799003)(230273577357003)(1800799012)(451199024)(64100799003)(186009)(2616005)(1076003)(41300700001)(26005)(38350700005)(52116002)(7416002)(6512007)(316002)(36756003)(37006003)(6506007)(83380400001)(6666004)(478600001)(66556008)(38100700002)(66476007)(4326008)(6486002)(2906002)(86362001)(66946007)(8936002)(8676002)(34206002)(5660300002);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?9hQumafEq0tIQ50AZ1zOsgLvyfHrpCm3imAV3WyiyMjxIBNaBpso3w1T5xkI?=
+ =?us-ascii?Q?RaOjQxZcdDwOClaqOx3J4sj/9nQBGgx0hfiCp2CQg9BwuaFsvCfh8fzyFxrc?=
+ =?us-ascii?Q?TCWNb2Ae4zNyZJpkdbVVnHVV5Ri3M6q6Dxx5X40GhWD1MankdBpXdnXWi9/y?=
+ =?us-ascii?Q?TgBg/XbryBlPJYJdRd0I6EZwHRNEMxsrCc6bDGX89zZUQ3lqEzpIChVnn+9k?=
+ =?us-ascii?Q?3z7RxdMbLAAu+xWexD0S16zFWwsc1O7vU3wAjzhAwt3YfFlVfOYTMJ1QHQJ9?=
+ =?us-ascii?Q?oaL7TrqSzuriDEswDkQsHuhKeM0KlPdsY6kwi4GwRxDA3YWw6080wmFSsSai?=
+ =?us-ascii?Q?dditZOqWop8wKaWXFaU3olvgcuQKu/bc0ZTw48rOm0Ajfd73MRlOvmfMXiK3?=
+ =?us-ascii?Q?PaYxQVjUyBUjD6ktIKMSsDB82tSMBS50Ar+JytwkwewgA1ABGslaQ/cHqTMk?=
+ =?us-ascii?Q?PQpZA4FVjX9tpt28ms5lH1Qa6CHJaWDoirtmKzajH29GIA5mTDtdm50AY0Xa?=
+ =?us-ascii?Q?Z4XK2KdICBsQEJEC2ILyU3UNUT3rMR4TOaDyaUuYdWCQkrQWPgmhPGL7YhoY?=
+ =?us-ascii?Q?ox8c5aDyh7OVi+UlgCjLIgbIA0YbELwA7+cCL96eHyAIqBmD9Cr23IEN95Bb?=
+ =?us-ascii?Q?6kxPElXL5ex210V2jsAnPAtdzUhsdgkojZcERtLWPPgSRjEhIEyfcB+zUql/?=
+ =?us-ascii?Q?9cC1Q0cAGXq2WQSbPP/8bKhh7J6nGUYVhDVDLX9bx0YENo222DaqdKYAEEru?=
+ =?us-ascii?Q?uF9ZXXsc8HsvWY5oGmwbeAvxsXLSSPuqNVYphXK4bid+pBrrL02ArUJvzI30?=
+ =?us-ascii?Q?Qyw2BVuKN6X+Rg9U6YIG+L66unVovh645zI8vIOYAnnHy9dDu26I/fYGtrbr?=
+ =?us-ascii?Q?C4kgXKHpy0XnFOosoaNcK7/K4ImWxWMvu+uibY6RRnHDCqPDaDrDWFe53/pK?=
+ =?us-ascii?Q?X5CnBWduovXzexY80D+Li8xRtq70zlj5D865JZ8ptdWMhXziARe7OHt8Emyk?=
+ =?us-ascii?Q?F5+StrVXryV4aJA22omaEpxMsyd1whM4fucbAgyB1ePdGg44QaC5c5gf+Kav?=
+ =?us-ascii?Q?X0cJpD3lWpdNGRBUi2h36ojbc1VZLe0vvN4o+2C7a3luy1My/LOdWidzIDRI?=
+ =?us-ascii?Q?DjPS4w4dAfstTFcQqEvNtgcK+VQsawLW1lgg53ZKvMVOJjAqKY0/LLcGiNSF?=
+ =?us-ascii?Q?Kz6ZJ8iowRfb15RVCsOFjDQfy/4lbQ2tniBrfpcKChXjO6zQr3L81gjQoZXk?=
+ =?us-ascii?Q?D8B3zZpBLuqBIspqFgV3VXct6rwSyPLpg6kS4weKZojpR5Y614xcliPc+Z9z?=
+ =?us-ascii?Q?g8meh+M6fxjWJQnizgsIJPXoH1lLrkMUFDXNtlCiUkHarLHlIXOKJU7jQrUw?=
+ =?us-ascii?Q?NvlhssgmUTAvrPo8kqiIIu8vT4d/CcFKQJSZxKi7rIn0Q9hILQoHs7rd9Uyl?=
+ =?us-ascii?Q?VIYlh8jFe91sYA4rJysYFn+5GGtwP41gLAoce/cAh0l2fPutIaLoXqUfS5MY?=
+ =?us-ascii?Q?qfeNzJ+Z75PECrGatBjzedBZD1kDM1wzthogCz0M07HG/PSpJFzH5zOj+8SM?=
+ =?us-ascii?Q?d9oru1Uh/wnAfK7P8t7LFgu7wOMv7tzjNT2XRzQT?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: fb06fc0f-3d3c-4527-35b3-08dc24440a85
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Feb 2024 23:09:43.3860
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: nyMip/sdnqp4kG12Cp4GuxWAPtPHAiGkcCJDGcAvPQqSg2kwdZW7G1lAG+lJPchsOVKkI1STSNM7NIHtIOzfJw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS5PR04MB9997
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240202_131916_285912_C9FE5132 
-X-CRM114-Status: GOOD (  11.18  )
+X-CRM114-CacheID: sfid-20240202_150952_208353_EFFD31AE 
+X-CRM114-Status: GOOD (  15.04  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,47 +144,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Frank,
+This  patch introduces support for I3C target mode, which is referenced
+with a PCIe Endpoint system. It also establishes a configuration framework
+(configfs) for the I3C target controller driver and the I3C target function
+driver
 
-kernel test robot noticed the following build errors:
+Typic usage as
 
-[auto build test ERROR on tty/tty-testing]
-[also build test ERROR on tty/tty-next tty/tty-linus robh/for-next linus/master v6.8-rc2 next-20240202]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+The user can configure the i3c-target-tty device using configfs entry. In
+order to change the vendorid, the following commands can be used
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Frank-Li/i3c-add-target-mode-support/20240130-035826
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/tty.git tty-testing
-patch link:    https://lore.kernel.org/r/20240129195321.229867-2-Frank.Li%40nxp.com
-patch subject: [PATCH v5 1/8] i3c: add target mode support
-config: sh-randconfig-r122-20240202 (https://download.01.org/0day-ci/archive/20240203/202402030437.GdGCrKeK-lkp@intel.com/config)
-compiler: sh4-linux-gcc (GCC) 13.2.0
-reproduce: (https://download.01.org/0day-ci/archive/20240203/202402030437.GdGCrKeK-lkp@intel.com/reproduce)
+        # echo 0x011b > functions/tty/func1/vendor_id
+        # echo 0x1000 > functions/tty/func1/part_id
+        # echo 0x6 > functions/tty/t/bcr
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202402030437.GdGCrKeK-lkp@intel.com/
+Binding i3c-target-tty Device to target Controller
+------------------------------------------------
 
-All errors (new ones prefixed by >>):
+In order for the target function device to be useful, it has to be bound to
+a I3C target controller driver. Use the configfs to bind the function
+device to one of the controller driver present in the system::
 
-   sh4-linux-ld: drivers/i3c/target.o: in function `i3c_target_ctrl_destroy':
->> target.c:(.text+0x264): undefined reference to `i3c_target_cfs_remove_ctrl_group'
-   sh4-linux-ld: drivers/i3c/target.o: in function `__i3c_target_func_register_driver':
->> target.c:(.text+0x4bc): undefined reference to `i3c_target_cfs_add_func_group'
-   sh4-linux-ld: drivers/i3c/target.o: in function `__i3c_target_ctrl_create':
->> target.c:(.text+0x778): undefined reference to `i3c_target_cfs_add_ctrl_group'
-   sh4-linux-ld: drivers/i3c/target.o: in function `devm_i3c_target_ctrl_release':
-   target.c:(.text+0x7b8): undefined reference to `i3c_target_cfs_remove_ctrl_group'
-   sh4-linux-ld: drivers/media/i2c/tc358746.o: in function `tc358746_probe':
-   tc358746.c:(.text+0x17c4): undefined reference to `devm_clk_hw_register'
-   sh4-linux-ld: tc358746.c:(.text+0x17c8): undefined reference to `devm_of_clk_add_hw_provider'
-   sh4-linux-ld: tc358746.c:(.text+0x17cc): undefined reference to `of_clk_hw_simple_get'
+        # ln -s functions/pci_epf_test/func1 controllers/44330000.i3c-target/
+
+Host side:
+        cat /dev/ttyI3C0
+Taret side:
+        echo abc >/dev/ttyI3C0
+
+Chagne from v2 to v3
+- using 'mode' distingiush master and target.
+- move svc-i3c-target.c to under master,
+- built together with svc-i3c-master.c
+
+Change from v1 to v2
+- change "slave" to "target"
+- include master side tty patch
+- fixed dtbcheck problem
+- fixed kerne-doc check warning
+
+Some review comment may be lost since it is quite long time since v1. Now
+master side dependent patches already in linux-next. So sent target side
+patches with tty support again.
+
+No sure why an additional "\r\n" appended.
+
+Frank Li (8):
+  i3c: add target mode support
+  dt-bindings: i3c: svc: add proptery mode
+  Documentation: i3c: Add I3C target mode controller and function
+  i3c: svc: Add svc-i3c-main.c and svc-i3c.h
+  i3c: target: add svc target controller support
+  i3c: target: func: add tty driver
+  i3c: add API i3c_dev_gettstatus_format1() to get target device status
+  tty: i3c: add TTY over I3C master support
+
+ .../bindings/i3c/silvaco,i3c-master.yaml      |  11 +-
+ Documentation/driver-api/i3c/index.rst        |   1 +
+ .../driver-api/i3c/target/i3c-target-cfs.rst  | 109 +++
+ .../driver-api/i3c/target/i3c-target.rst      | 189 +++++
+ .../driver-api/i3c/target/i3c-tty-howto.rst   | 109 +++
+ Documentation/driver-api/i3c/target/index.rst |  13 +
+ drivers/i3c/Kconfig                           |  31 +-
+ drivers/i3c/Makefile                          |   3 +
+ drivers/i3c/device.c                          |  24 +
+ drivers/i3c/func/Kconfig                      |   9 +
+ drivers/i3c/func/Makefile                     |   3 +
+ drivers/i3c/func/tty.c                        | 474 +++++++++++
+ drivers/i3c/i3c-cfs.c                         | 389 +++++++++
+ drivers/i3c/internals.h                       |   1 +
+ drivers/i3c/master.c                          |  26 +
+ drivers/i3c/master/Makefile                   |   3 +-
+ drivers/i3c/master/svc-i3c-main.c             |  80 ++
+ drivers/i3c/master/svc-i3c-master.c           |  34 +-
+ drivers/i3c/master/svc-i3c-target.c           | 776 ++++++++++++++++++
+ drivers/i3c/master/svc-i3c.h                  |  15 +
+ drivers/i3c/target.c                          | 453 ++++++++++
+ drivers/tty/Kconfig                           |  13 +
+ drivers/tty/Makefile                          |   1 +
+ drivers/tty/i3c_tty.c                         | 427 ++++++++++
+ include/linux/i3c/device.h                    |   1 +
+ include/linux/i3c/target.h                    | 548 +++++++++++++
+ 26 files changed, 3712 insertions(+), 31 deletions(-)
+ create mode 100644 Documentation/driver-api/i3c/target/i3c-target-cfs.rst
+ create mode 100644 Documentation/driver-api/i3c/target/i3c-target.rst
+ create mode 100644 Documentation/driver-api/i3c/target/i3c-tty-howto.rst
+ create mode 100644 Documentation/driver-api/i3c/target/index.rst
+ create mode 100644 drivers/i3c/func/Kconfig
+ create mode 100644 drivers/i3c/func/Makefile
+ create mode 100644 drivers/i3c/func/tty.c
+ create mode 100644 drivers/i3c/i3c-cfs.c
+ create mode 100644 drivers/i3c/master/svc-i3c-main.c
+ create mode 100644 drivers/i3c/master/svc-i3c-target.c
+ create mode 100644 drivers/i3c/master/svc-i3c.h
+ create mode 100644 drivers/i3c/target.c
+ create mode 100644 drivers/tty/i3c_tty.c
+ create mode 100644 include/linux/i3c/target.h
 
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+2.34.1
+
 
 -- 
 linux-i3c mailing list
