@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E647EC4828F
-	for <linux-i3c@archiver.kernel.org>; Thu,  8 Feb 2024 17:18:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 829AAC4828F
+	for <linux-i3c@archiver.kernel.org>; Thu,  8 Feb 2024 18:16:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PPTeRhWS9vdymX4vAKcAANIjf8jubwOQHGJ4gVTqHnc=; b=rXGf7EjNBUxmkq
-	wxxoUJsGzPWB/HqcpCi1lAi0+Qo2ihIkwBZRw1u0nSmLT1vYcGgP5c9HQyFrwJHPYFDPsBUAozExK
-	uvK2LJGtT9/PzFtaHykQv8Awfrk0xKsG1rSwDB1qe9xfln0q29zWpxAYyoyK0YFS49BshW6qA0Yno
-	8Mk5M0kJCrF9yawdC+kvD5AL346V04u1yco8U6yXCLmsQ6FOiMiKcjfQ1CpCnRlVCDDWXk39xB1zg
-	b1c5gB8r4qB31XXTv28won1ROZc7rGetM309XuBOPOUnRqqAw21p+iTmU/UdI9IPy9WngELzo2czU
-	7UjxcaoF2JFxlOcryBHw==;
+	List-Owner; bh=K4VuZJqGGkLJxiZkuAU1rnYFmZ9Ex0tkKle+teKuXDg=; b=23CYdxvW2gCG/h
+	MhleFbq38RJqfR/eSxdaXWCRcj+A2tGRv8p6u3HefRIKX2TxUpGakyERkJsGaayCIRcjao1XceXjT
+	e1WwcfswHXUxeacF3xT/2wnZixsBBcTVwV13WVi/0WsJeqhsaYUAKd56k+MYPtJp+lQitxr5D0uel
+	2TJvCwLLGY1Z2rLcdB2Y787hTP5REEiLyhXwNbNw79aSkKiNcOUbboDT14Fi9Gx/Z+4t74pw3sLUq
+	CJaG/ytmjAs3Sdy4+J7dcz6DsTOVNW/cW7na7naZXY60Wur4+mysPDXWOHMV1Vaxai4PbWpX/eRT6
+	dECQvwYdmDH6m/9kPRZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rY82Q-0000000ESSm-40p3;
-	Thu, 08 Feb 2024 17:18:15 +0000
-Received: from mail-vi1eur05on20600.outbound.protection.outlook.com ([2a01:111:f403:2613::600] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1rY8x4-0000000EaoP-30BU;
+	Thu, 08 Feb 2024 18:16:46 +0000
+Received: from mail-vi1eur05on20601.outbound.protection.outlook.com ([2a01:111:f403:2613::601] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rY820-0000000ESMX-0xiy
+	id 1rY7mm-0000000ENy9-2Lin
 	for linux-i3c@lists.infradead.org;
-	Thu, 08 Feb 2024 17:17:50 +0000
+	Thu, 08 Feb 2024 17:02:23 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=HZ4kH9RemctFH8XbksraMRpV1jUvMMktqtil8EYjxKQM1c3qx3ZZCWcAb12p5kupYmYVAnlKcn5X7syj/mSUhPHPLW2ul5+TG6rFylv6zh7+o5Ppgvd+/nEk/j+tjqfEmxGhTNTWp/hKVSAkmZhptn/pCcFw+YcS6O9dt8BUZBBEADW5ujCtrieqLXVxgKxvD9qX59P5W/6NhWLvyAUoUEdd39Utd0UQhXAH+ScIkYKl1EswvRpv/OWQgE8hRVjZ4w5tqhNO7F5M0kgSUdiX1Dl7aKqa2OVI+Ey/Nss4cbojj9UjW/E/r6r8MZk0zqHa465gUOVkgzo4QkvF2V4uNw==
+ b=SjsO17CvkYwM/Za8jTuYYqniMP1opXDUfF/LbLbpc4jyiW8AEV3lcRD1rvyzteWcci16dD8TDHrDRMzbm64MWtiGZS7Ylv1bBmLCQwxrxl1tTLLe2OSd0/3IAb6c7+qpOsWTr2kTL8qb3eMNn+nFdnoL8Vr/TDLi6iw2uGEIZpyKWB8E/Z7bPzupRcfww1T9QIhukwfvU6n2X8oIkW7YSMtyBIR5jPrIN4FsQF8rQnP6DRHhfOVby5wPc434SzD97QoDe9Cuu9jeNY8c2KsnohyDGgSDUp/0wcN6LGEB/4X/if239PwZXP3GRnUV6zumz8qhkN5XmdhLAyFEhhi7Mg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=qpgZbwICckj3ROCqP6QbkMBGI0lLllPHgqPKuswIHVU=;
- b=kf6BsKc0fRKWYd7duLzPdZJ0PpTdCu994lCvWEzcEitp+MQPKpoR3bMqON4CqAKJjApklyZzj4FjpoQWHXg/+2QYmDA/CpF3FdBOHm924hU1Ccg73VpOrzdx7y4+578Uhb5yFlyOyEc4xpWjkH4mqupvJsBAXTQBLclDGVVURhfvmZsoP0b252BDB1oZVHiLWhSZx833G6+vZ9csjyeKT/CFShonQKqtIo2n4hKd00xgmD56m2zKf3YAlrQCCR4wL/8JlHik8oiighwUwdsNolla+gD9s3YguZFjQnJ2V5uriEQ3od0RhLIae4zCn0LLnzGQNXB9MkB+vbbymUqBwg==
+ bh=NcAD7n5DFC8zY5SMsqG6DN1S/Q3hAt3IaNHuvXjxowM=;
+ b=oFlg0oquYR+rgfF80tHZz/eANY7IUwITq1c5alIlnIR9iFDLWEOsKrNX4K09frIsWgSoCVeuEOoAy2c/JuyAgOaRVQys9EKM6+ShK6ct5qiBfsVUNiHpP6UfDhjPC8AaYkBMx+TnWPmzxmaqVTZBLWGhGs+G+kUcNm86a9Hn+HfGlaSiOuaYxUIVuLiyw0MtQC3hFuc6YpyGmHuY4PYP1R1+Yh3VXh1z8BJIiYXbc/60J+oPWdsgpvgSCm/vl5GAUawt+5tw2dX5MDY215JfYlfH+9/gchn3rlQsWJTTzR4XeNEAPg2yfPqGUK9/1vbPWdPF/rQZ1/MIdhtZBSXx7Q==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=qpgZbwICckj3ROCqP6QbkMBGI0lLllPHgqPKuswIHVU=;
- b=Iq+ozFBYjSiMGlkikk+ycAPgIj/TpQbZCirweJFu538pOTzQkwfzT/FyVe4vA6e9lKI7OFB3/cClr9ZTXIOLgkDcVSxvXyTc/F2vmCKaT2tLt5OKaTvwctw1K62LgNUpTBaVn1cpxhgy5i0GRkbms7ZX546B0G68oEihaikjQOk=
+ bh=NcAD7n5DFC8zY5SMsqG6DN1S/Q3hAt3IaNHuvXjxowM=;
+ b=pF27gAZKXB7efb5prm8LDkEIdhN0NQL1ROTaw4urWxM9Y03z9eLlkaqtjV4qNOlHobmRO942+7LgoN7y3DyM8INHXkhfBKGNuNuaaMRvsF7lJLLcaiyMkfqeEr4m/+7RW/Uq4s9AaGJ8b3qcmMvTpekVua5NfbjDEL5mGWZ60fk=
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
- by AS8PR04MB7734.eurprd04.prod.outlook.com (2603:10a6:20b:2a6::8) with
+ by PA4PR04MB9248.eurprd04.prod.outlook.com (2603:10a6:102:2a3::14) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7249.36; Thu, 8 Feb
- 2024 17:02:10 +0000
+ 2024 17:01:48 +0000
 Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
  ([fe80::c8b4:5648:8948:e85c]) by PAXPR04MB9642.eurprd04.prod.outlook.com
  ([fe80::c8b4:5648:8948:e85c%3]) with mapi id 15.20.7249.035; Thu, 8 Feb 2024
- 17:02:10 +0000
+ 17:01:48 +0000
 From: Frank Li <Frank.Li@nxp.com>
 To: frank.li@nxp.com
 Cc: alexandre.belloni@bootlin.com,
@@ -70,9 +70,9 @@ Cc: alexandre.belloni@bootlin.com,
 	miquel.raynal@bootlin.com,
 	robh@kernel.org,
 	zbigniew.lukwinski@linux.intel.com
-Subject: [PATCH v8 8/8] tty: i3c: add TTY over I3C master support
-Date: Thu,  8 Feb 2024 12:01:17 -0500
-Message-Id: <20240208170117.798357-9-Frank.Li@nxp.com>
+Subject: [PATCH v8 3/8] Documentation: i3c: Add I3C target mode controller and function
+Date: Thu,  8 Feb 2024 12:01:12 -0500
+Message-Id: <20240208170117.798357-4-Frank.Li@nxp.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20240208170117.798357-1-Frank.Li@nxp.com>
 References: <20240208170117.798357-1-Frank.Li@nxp.com>
@@ -81,55 +81,55 @@ X-ClientProxiedBy: SJ0PR03CA0245.namprd03.prod.outlook.com
  (2603:10a6:102:240::14)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|AS8PR04MB7734:EE_
-X-MS-Office365-Filtering-Correlation-Id: c8fa3833-52f6-428d-4090-08dc28c7b041
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|PA4PR04MB9248:EE_
+X-MS-Office365-Filtering-Correlation-Id: bc82f11f-df49-4a2c-c170-08dc28c7a334
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: PkqNFnzsPzD/PJsnJUYhOB+Ee0v6XxaJBfLWRAonNL1Bxo3Yjpy1R9Xcv+CTJoBWbksK3oHHFqFOtA+dZ6msWXiHPPCAQ5hbr9EhGvrWhA4TwQO+nUrffqfkusXWPvNGzfVG4Dywxv1BlPRv6TJbtFY+oKwTY1Ko4cCcn593Cxq7CMM5e4VofWCSxrYYjoOnEgcGRyu+JHTJG4Esdq6vVR1/YdYsL4pE2gDrFw6ObrWPVsEmhlsbbIyMcnCElJwABARIrCApcAWj01BRdvdCtKiKLFHUqHmwc7aVZJ2TNQb1cY7o0Ze6iznLmHXYXcEak9UQPW/M+re84l7dINC8Jt78wKoma668CL8Hv5Og7FLTkBReUhDRhGxtiXeGoE1XOPQ+2KpqbndezNTlL+liFfDfzWnAa16GF1uf8Fgc9JwtsZQvJPyhf2IllPuncs6tj5fX5ZQGAj30jf9rjUzrMUMXUBz9dDANd9rSBNnLl7sDjecUS5l079xLIsp2iyIn+pomm8I+fweNNM8sesp8sDxtihhG+bGSDLICoiKFMfO5r1RnJDTupVOCXG4sh8g25Cbs2Iil5my6sXyHNUGieYGfSZzGn2fsU50YAvB0cIM=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(366004)(39860400002)(396003)(136003)(376002)(346002)(230922051799003)(230273577357003)(1800799012)(64100799003)(451199024)(186009)(41300700001)(86362001)(30864003)(8676002)(8936002)(34206002)(7416002)(4326008)(6506007)(966005)(36756003)(2616005)(1076003)(6486002)(52116002)(478600001)(6512007)(5660300002)(26005)(37006003)(66556008)(38350700005)(66476007)(66946007)(316002)(83380400001)(2906002)(38100700002);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam-Message-Info: EW1Uu2wA5+cUMV+Vpot9boM12mJKpRwLvOE0rRNKP5ENagTri+SHeXXpfG0NOADTnAN1oZnTLq9T22c8CSHc0+7V9hc/VMScTfpY2ELbYdTvn03wOGaWGyqGMY7YY4tRDJKJ8AjX3hH3i5m0Ia0XCR++1WGLwbc6kyrTBYCRjbF6p0yLFrW6YgW0WdmpRtCwfPpkfbzI8ZA98K/SM3qbw5ezCEy7C/NuLMvRswa59Pw7iF+Eq+5B08PoAVK0hI4uoaaWlY+FheraO0BYVA6VO5Ugx5siPYx5WrDfMbeiGQh/lOZng30eXid3/dN4wK3hFiDNnOBUwTF/NLWLbclkITjSHdUoI/18HbDGxpsaThoOSGyMZmUGApgdrwSL7O0cJuXjmjMME48RB1StcVf1Gt770DKEtUrWsPSgPebshJtRiQLVs5HnVmEY9kkD7sC36ISvupSLzzSB1C0TGZAwtDvGtlQE2Hl+GKDRaBhgAQl25VAXtU3iQ3ht/Qaj811Fn0Q5WvmWcJFmX9pfpq1rooxzSSCJcOQVsEslR7VuNwUQu/cs2f3cvvxdaDXsZfohKnC2Sqx9DLw8xTeRBle0tyO1qg7ljRMlU0KYVP01q3p/Ki4LDAMYNDVgN/eT26GH
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(39860400002)(346002)(396003)(366004)(376002)(136003)(230922051799003)(186009)(64100799003)(1800799012)(451199024)(38100700002)(6666004)(52116002)(6506007)(83380400001)(37006003)(86362001)(7416002)(41300700001)(1076003)(2616005)(26005)(34206002)(6512007)(36756003)(8676002)(8936002)(4326008)(6486002)(478600001)(2906002)(30864003)(5660300002)(66476007)(66946007)(316002)(66556008)(38350700005);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?1UGogynTP+83Ilk7zgecr5EY7xyXxVI0kqOYj/uhKjB10ZbMeGRyJXvJhyyy?=
- =?us-ascii?Q?zrOaAEWnP1zFCgbhyLS5kt+IhKkuf/Fk9MG0mKjQojGH1TeQcvZb9F5O5DWD?=
- =?us-ascii?Q?pvdLN/zM6jh7YD3OTrG0Ws8IA9POtngzIrzA1F1lzMfd+HJladq+xfxbCtc8?=
- =?us-ascii?Q?H10SjqxDjBnGnA4OntTTX0WvpOW2uoivVUED38PQdXV7Taec2VKWKBDBSY6t?=
- =?us-ascii?Q?Er+C/Edytotvu0Nfw6VvKjg6g1FoO0fIl4wzmkIWIB3KE/YoQD2tBu6ko7/n?=
- =?us-ascii?Q?uCcyBi/r7W/jFACIfJPbhi7I4kPMS9jT2yAzxIgD09onHSsp2VbPZPulhmU4?=
- =?us-ascii?Q?NSZIxirFRRahMSQOLhQoSnhRSzq6eUjvXXBY1Vte+xtW4mX/Pl99D2SyKvrX?=
- =?us-ascii?Q?nyI6ydAL8B5IdoBOS6ATZfkOX+JY+Wx0eQYWCeMBStPE+Et06VIbdVe93M64?=
- =?us-ascii?Q?hcbEytUd0v7jxeFHvDzar9z80SYLPYgGbA1Ue1SzAz6T5UDfWUD9qy5KmdY3?=
- =?us-ascii?Q?bluD1fMsgI+2khpaxfRrR1pgpDgV5QTi0ungmdcw7X1RR8ISi0vI1FGFMy4D?=
- =?us-ascii?Q?k/uEOfoB1L4iCMjMFZ9ICosoA9JC212ZiupRafmcxMWF6zAwsMZcWe11IAkJ?=
- =?us-ascii?Q?oSdBfscATFVJMderaJWor/fvMGMo0QWycKJ617TDjZK8t0fynRxFnzmm4wrL?=
- =?us-ascii?Q?aqY2Wsi/h8utZZ34okLOqyhjsn7ok/P4gQs5gxU4flYKJqoRffTVm2kU/CFT?=
- =?us-ascii?Q?Fo+qtu8/raWOP3RpjalPZkS2ND+JpUl7wDn+F28psvEkbZaLkjvaWWC/3n82?=
- =?us-ascii?Q?wCtsYMjRRfYnCLSK+8YwzFoq5gDBlq2y+6DV1Ex520tDqAJBYmMkWM6IGRtp?=
- =?us-ascii?Q?36jckJANXWdYr/Ke+gAyBrDFb1XFNiGPB+Gl7PqatDXJaRbZWecI3wWTauRM?=
- =?us-ascii?Q?aettERK8fZnolLqJndLgdYo8rs6/f0WrYc9WbMhlody94I8AXvJOOK6kmOUf?=
- =?us-ascii?Q?oGbT676X3wXtROVMnd8JT/q9q9rIlJsJZBQ0Hv6A74NYBNlExdRG4tz0LDU+?=
- =?us-ascii?Q?+9eRahKs1SL7B9HMsovQe94EHIiPC1xdNJa6+OabDJ9ZEiaMmrxg6pKYEIc8?=
- =?us-ascii?Q?g8nJk/7W7gVM0hRQaJadhu3Y+/dMGg+/t/rc/BaLc0K1yP4+CfdDo+paByPt?=
- =?us-ascii?Q?RSZcdoS7L0jXbM7fBMKJ3fP7t71S0DXKZ+HYnXxg098RTh4nCrinavFJ3E1O?=
- =?us-ascii?Q?xsxk0GD8hCC1A0zkupkAvWzP3XMkYallBZ9lBBZKRBg5lsKT+4fd5+9WlMpx?=
- =?us-ascii?Q?nZmZNRjEFKAxdGpQCOPmIyI+wvdpVJHKXGWYDHVgObP7PkxzPkCmnqZriG1B?=
- =?us-ascii?Q?tVHJRGhRMh+LEPSDb8/7EWDwuCToufZvBlsDEDo9ZdRH2qV5yQ9zQNeWRcCQ?=
- =?us-ascii?Q?Eu4JLcXGmPG5YORuGItd0Ux5eCRfmxyq60L/9mSwZ4mRu8KQd7fSyGdPW0rB?=
- =?us-ascii?Q?c2ukXxHmh+wIuR9sHoY4j5HRuU7PSvTHETEqu9PVN9PcAzKm+3ZSxHj4dWAq?=
- =?us-ascii?Q?CIOM3KOGZqXrfUeZ+d6VB92zKgJRwkI0Mre1Uf7x?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Jrk/jb30LEsA4Wc3yTNpXLwa7IPIdkE1sUKkUe8ohyU/mVVUCB60l7fBkRso?=
+ =?us-ascii?Q?o4rLShmRzsmrGnnG7ID4Bg3aD7iyid/KY98KStepSYVoCut3yv22BvxMVgQT?=
+ =?us-ascii?Q?RS2AV7dikHjJKpx7AdKgVUpXwtevpCSAdKOls50sNsrozUFnTElTaIO7uqM9?=
+ =?us-ascii?Q?OIv3bEUmeGWO2JHiClwLK+iIR3GdXly0rZCT9/uQ+p1f7fH5eBntUKr9m7+Q?=
+ =?us-ascii?Q?HrbMfJotVzD00DSdUwAyOYUH3pXLghs4RlM9IJfc09lS68Gsy+VcRljDENkO?=
+ =?us-ascii?Q?ieXxay5+UTMpZdUvXkLSqigswtRuAsvQSf9PYrjVczvmtGPV1rjHFpRa17Mh?=
+ =?us-ascii?Q?AvHD6o7Zao4F+sdhQoW5EKgO50EZdXOY01Yu4iHqMrBwHw5HI+JvHJcnmGoL?=
+ =?us-ascii?Q?NIm1ZlSWxvL1crA3VkYB8xDoTpw9evF3AWr6MO450/hOc3ukYE0d5ZI/vLQ6?=
+ =?us-ascii?Q?ZU/55EM2SWARY2Jn1wRtLgnqiLkSmV0CxniJP8V/8Nq2I0z/rlP7rlncniRR?=
+ =?us-ascii?Q?cGDSqT9cMexv11Ji7afhk7kF+KSkGL8RBD3+jKU1jblMaWDQEOntKYxUhz+f?=
+ =?us-ascii?Q?vHCVieRhMd620P3BfE7SkDtTBgDjxucLTct5/1w/OOl/6lRcCQieRQs0OKz7?=
+ =?us-ascii?Q?N7s+deM2JRZ4yKJEWbRmuiXEZrKcN0pprQ/nUNX0ul9PJ/zENuQHk1ZHrACg?=
+ =?us-ascii?Q?JmUod/8WU7mgLAOZjafqe96wWbKcwGxGAzRV1yeePEbkg9NsToWsfdrrNbjy?=
+ =?us-ascii?Q?Etiift7VkTbdXFPzKwBHD2cm5060F2w5quKphv9NhsIcSx5Lx4JDxO9TA8xF?=
+ =?us-ascii?Q?b33bo0ZC1SBWm1SoHKDHPZylmyr592AT/SK9mSNkKZVos1Ip2P1CeNx3gRid?=
+ =?us-ascii?Q?TuXE6VAZoqju9eoAM7wCuOBSqk4wvD3gfL7DULT6gG1Z0t2oUfXBYFndsTIB?=
+ =?us-ascii?Q?4xEa80hCTWoB3bcFpb6eNJk+zWOGC04elwNd/gzi4aRNn1w8XmvTGKrKoTlA?=
+ =?us-ascii?Q?jK2uxkLIVvyJ4QaSr7aB2qmHSVuR8cO9ymxYmsZp4lmPa/5zVvPwevWYI8uc?=
+ =?us-ascii?Q?irym7lbw942nYTh8AzpWb4a+FX09FDzSCpSLjJa/aw8HYVXX8EsaQtux5HQJ?=
+ =?us-ascii?Q?+rZfTU+gjvNPLOCu0fEYmDusuVIablnA/EEgHn5gUzXDx1w13SgHBvlSLJZd?=
+ =?us-ascii?Q?WHXjW5FaNokul8TMbzN+K3AtDPt43EUQeP1gCcpTcVoVptiHI4/kk4sx1f/o?=
+ =?us-ascii?Q?2mCjgQWBb9hqR/HOr6E9hlepBBLxa1l4gZ9Zkw8wjpZUIfk4zt8zbRHBxk+Y?=
+ =?us-ascii?Q?F1CQhvxIgO79+/aUcGlpbUwr7jmtdC8qe0qRp0NyPuhboKQKfkZVEMPNOkxk?=
+ =?us-ascii?Q?LbVowX9SV/GbMnxOqq3R7ZQYe5rdJdNeMmzLkFZjCBsfUIYNBUnpRSujNWp+?=
+ =?us-ascii?Q?0tQky7Im8DaX5A86yB4qANrttyakKNi0jbaVbnmxMxUAEc2/L2phX5KyCUBr?=
+ =?us-ascii?Q?Qxso0roJRpQBEovbWrWQTOuJnALBtpLlBf5jcMGXr5VCCtfr4ZJLjgreZjZC?=
+ =?us-ascii?Q?4KBTazuSxM4d+obaaLgVR85kpRHb37EcZIoAea5i?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c8fa3833-52f6-428d-4090-08dc28c7b041
+X-MS-Exchange-CrossTenant-Network-Message-Id: bc82f11f-df49-4a2c-c170-08dc28c7a334
 X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Feb 2024 17:02:10.3909
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Feb 2024 17:01:48.4316
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: AJ/1Z7yL9My2sU9jTQSWDRxir7iFMcUJb+aAiWlHVrZZkNIPXsa8ufEMrSW8fcF/PIFedMIWNMKui5dvZnzu8g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB7734
+X-MS-Exchange-CrossTenant-UserPrincipalName: ioORrWEEYLF8nG+iqKIz3nvSRqkv06ALY1xfgZp7RGih/HfAfFoggBfysk4xrTKUks/i6OvrJX9rqq3wNc/yKQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB9248
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240208_091748_867646_DEDF7EDA 
-X-CRM114-Status: GOOD (  23.57  )
+X-CRM114-CacheID: sfid-20240208_090208_029748_C4E5765B 
+X-CRM114-Status: GOOD (  22.07  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -146,578 +146,474 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-In typical embedded Linux systems, UART consoles require at least two pins,
-TX and RX. In scenarios where I2C/I3C devices like sensors or PMICs are
-present, we can save these two pins by using this driver. Pins is crucial
-resources, especially in small chip packages.
-
-This introduces support for using the I3C bus to transfer console tty data,
-effectively replacing the need for dedicated UART pins. This not only
-conserves valuable pin resources but also facilitates testing of I3C's
-advanced features, including early termination, in-band interrupt (IBI)
-support, and the creation of more complex data patterns. Additionally,
-it aids in identifying and addressing issues within the I3C controller
-driver.
+Add I3C target mode and tty over i3c func driver document.
 
 Signed-off-by: Frank Li <Frank.Li@nxp.com>
 ---
+ Documentation/driver-api/i3c/index.rst        |   1 +
+ .../driver-api/i3c/target/i3c-target-cfs.rst  | 109 ++++++++++
+ .../driver-api/i3c/target/i3c-target.rst      | 189 ++++++++++++++++++
+ .../driver-api/i3c/target/i3c-tty-howto.rst   | 109 ++++++++++
+ Documentation/driver-api/i3c/target/index.rst |  13 ++
+ 5 files changed, 421 insertions(+)
+ create mode 100644 Documentation/driver-api/i3c/target/i3c-target-cfs.rst
+ create mode 100644 Documentation/driver-api/i3c/target/i3c-target.rst
+ create mode 100644 Documentation/driver-api/i3c/target/i3c-tty-howto.rst
+ create mode 100644 Documentation/driver-api/i3c/target/index.rst
 
-Notes:
-    Notes:
-        Version number use i3c target patches.
-        Change from v7 to v8
-        - reorder head files
-        - add missed head files
-    
-        Change from v6 to v7
-        - try to fixed build warning
-    	https://lore.kernel.org/imx/20240202230925.1000659-1-Frank.Li@nxp.com/T/#m4e35da31a4226186b3dc6bc8f2fba28f58be1188
-        but I can't reproduce this error in my machine with powerpc-linux-gcc (GCC) 13.2.0
-        kernel test robot have not show reproduce step.
-        But anyway, status may not init if code through continue branch. So
-        Move status = I3C_TTY_TARGET_RX_READY; before continue branch.
-    
-        Change from v5 to v6
-        -none
-    
-        Change from v4 to v5
-        - add missed header file
-        - add define for BIT(0)
-        - oneline for struct ttyi3c_port *sport
-    
-        Change from v3 to v4
-        - add static at i3c_remove()
-        Change v2
-        - using system_unbound_wq working queue
-        - fixed accoring to Jiri Slaby's comments
-    
-        Change before send with i3c target support
-    
-        Change from v4 to v5
-        - send in i3c improvememtn patches.
-    
-        Change from v2 to v4
-        - none
-    
-        Change from v1 to v2
-        - update commit message.
-        - using goto for err handle
-        - using one working queue for all tty-i3c device
-        - fixed typo found by js
-        - update kconfig help
-        - using kfifo
-    
-        Still below items not be fixed (according to Jiri Slaby's comments)
-        - rxwork thread: need trigger from two position.
-        - common thread queue: need some suggestion
-    
-    Notes:
-        Version number use i3c target patches.
-        Change from v3 to v4
-        - add static at i3c_remove()
-        Change v2
-        - using system_unbound_wq working queue
-        - fixed accoring to Jiri Slaby's comments
-    
-        Change before send with i3c target support
-    
-        Change from v4 to v5
-        - send in i3c improvememtn patches.
-    
-        Change from v2 to v4
-        - none
-    
-        Change from v1 to v2
-        - update commit message.
-        - using goto for err handle
-        - using one working queue for all tty-i3c device
-        - fixed typo found by js
-        - update kconfig help
-        - using kfifo
-    
-        Still below items not be fixed (according to Jiri Slaby's comments)
-        - rxwork thread: need trigger from two position.
-        - common thread queue: need some suggestion
-
- drivers/tty/Kconfig   |  13 ++
- drivers/tty/Makefile  |   1 +
- drivers/tty/i3c_tty.c | 432 ++++++++++++++++++++++++++++++++++++++++++
- 3 files changed, 446 insertions(+)
- create mode 100644 drivers/tty/i3c_tty.c
-
-diff --git a/drivers/tty/Kconfig b/drivers/tty/Kconfig
-index 5646dc6242cd9..9ab4cd480e9f8 100644
---- a/drivers/tty/Kconfig
-+++ b/drivers/tty/Kconfig
-@@ -412,6 +412,19 @@ config RPMSG_TTY
- 	  To compile this driver as a module, choose M here: the module will be
- 	  called rpmsg_tty.
- 
-+config I3C_TTY
-+	tristate "TTY over I3C"
-+	depends on I3C
-+	help
-+	  Select this option to use TTY over I3C master controller.
-+
-+	  This makes it possible for user-space programs to send and receive
-+	  data as a standard tty protocol. I3C provide relatively higher data
-+	  transfer rate and less pin numbers, SDA/SCL are shared with other
-+	  devices.
-+
-+	  If unsure, say N
-+
- endif # TTY
- 
- source "drivers/tty/serdev/Kconfig"
-diff --git a/drivers/tty/Makefile b/drivers/tty/Makefile
-index 07aca5184a55d..f329f9c7d308a 100644
---- a/drivers/tty/Makefile
-+++ b/drivers/tty/Makefile
-@@ -27,5 +27,6 @@ obj-$(CONFIG_GOLDFISH_TTY)	+= goldfish.o
- obj-$(CONFIG_MIPS_EJTAG_FDC_TTY) += mips_ejtag_fdc.o
- obj-$(CONFIG_VCC)		+= vcc.o
- obj-$(CONFIG_RPMSG_TTY)		+= rpmsg_tty.o
-+obj-$(CONFIG_I3C_TTY)		+= i3c_tty.o
- 
- obj-y += ipwireless/
-diff --git a/drivers/tty/i3c_tty.c b/drivers/tty/i3c_tty.c
+diff --git a/Documentation/driver-api/i3c/index.rst b/Documentation/driver-api/i3c/index.rst
+index 783d6dad054b6..345a43c9f61b0 100644
+--- a/Documentation/driver-api/i3c/index.rst
++++ b/Documentation/driver-api/i3c/index.rst
+@@ -9,3 +9,4 @@ I3C subsystem
+    protocol
+    device-driver-api
+    master-driver-api
++   target/index
+diff --git a/Documentation/driver-api/i3c/target/i3c-target-cfs.rst b/Documentation/driver-api/i3c/target/i3c-target-cfs.rst
 new file mode 100644
-index 0000000000000..235cd0524b0b7
+index 0000000000000..1fcf829dc4ae2
 --- /dev/null
-+++ b/drivers/tty/i3c_tty.c
-@@ -0,0 +1,432 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright 2023 NXP.
-+ *
-+ * Author: Frank Li <Frank.Li@nxp.com>
-+ */
-+
-+#include <linux/bits.h>
-+#include <linux/bitops.h>
-+#include <linux/completion.h>
-+#include <linux/console.h>
-+#include <linux/delay.h>
-+#include <linux/kernel.h>
-+#include <linux/kfifo.h>
-+#include <linux/i3c/device.h>
-+#include <linux/i3c/master.h>
-+#include <linux/mod_devicetable.h>
-+#include <linux/module.h>
-+#include <linux/mutex.h>
-+#include <linux/serial_core.h>
-+#include <linux/slab.h>
-+#include <linux/spinlock.h>
-+#include <linux/tty_flip.h>
-+#include <linux/tty_port.h>
-+#include <linux/workqueue.h>
-+
-+static DEFINE_IDR(i3c_tty_minors);
-+static DEFINE_MUTEX(i3c_tty_minors_lock);
-+
-+static struct tty_driver *i3c_tty_driver;
-+
-+#define I3C_TTY_MINORS		8
-+#define I3C_TTY_TRANS_SIZE	16
-+#define I3C_TTY_RX_STOP		0
-+#define I3C_TTY_RETRY		20
-+#define I3C_TTY_YIELD_US	100
-+#define I3C_TTY_TARGET_RX_READY	BIT(0)
-+
-+struct ttyi3c_port {
-+	struct tty_port port;
-+	int minor;
-+	spinlock_t xlock; /* protect xmit */
-+	u8 tx_buff[I3C_TTY_TRANS_SIZE];
-+	u8 rx_buff[I3C_TTY_TRANS_SIZE];
-+	struct i3c_device *i3cdev;
-+	struct work_struct txwork;
-+	struct work_struct rxwork;
-+	struct completion txcomplete;
-+	unsigned long status;
-+	u32 buf_overrun;
-+};
-+
-+static const struct i3c_device_id i3c_ids[] = {
-+	I3C_DEVICE(0x011B, 0x1000, NULL),
-+	{ /* sentinel */ },
-+};
-+
-+static int i3c_port_activate(struct tty_port *port, struct tty_struct *tty)
-+{
-+	struct ttyi3c_port *sport = container_of(port, struct ttyi3c_port, port);
-+	int ret;
-+
-+	ret = tty_port_alloc_xmit_buf(port);
-+	if (ret < 0)
-+		return ret;
-+
-+	sport->status = 0;
-+
-+	ret = i3c_device_enable_ibi(sport->i3cdev);
-+	if (ret) {
-+		tty_port_free_xmit_buf(port);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static void i3c_port_shutdown(struct tty_port *port)
-+{
-+	struct ttyi3c_port *sport = container_of(port, struct ttyi3c_port, port);
-+
-+	i3c_device_disable_ibi(sport->i3cdev);
-+	tty_port_free_xmit_buf(port);
-+}
-+
-+static void i3c_port_destruct(struct tty_port *port)
-+{
-+	struct ttyi3c_port *sport = container_of(port, struct ttyi3c_port, port);
-+
-+	mutex_lock(&i3c_tty_minors_lock);
-+	idr_remove(&i3c_tty_minors, sport->minor);
-+	mutex_unlock(&i3c_tty_minors_lock);
-+}
-+
-+static const struct tty_port_operations i3c_port_ops = {
-+	.shutdown = i3c_port_shutdown,
-+	.activate = i3c_port_activate,
-+	.destruct = i3c_port_destruct,
-+};
-+
-+static ssize_t i3c_write(struct tty_struct *tty, const unsigned char *buf, size_t count)
-+{
-+	struct ttyi3c_port *sport = tty->driver_data;
-+	unsigned long flags;
-+	bool is_empty;
-+	int ret;
-+
-+	spin_lock_irqsave(&sport->xlock, flags);
-+	ret = kfifo_in(&sport->port.xmit_fifo, buf, count);
-+	is_empty = kfifo_is_empty(&sport->port.xmit_fifo);
-+	spin_unlock_irqrestore(&sport->xlock, flags);
-+
-+	if (!is_empty)
-+		queue_work(system_unbound_wq, &sport->txwork);
-+
-+	return ret;
-+}
-+
-+static int i3c_put_char(struct tty_struct *tty, unsigned char ch)
-+{
-+	struct ttyi3c_port *sport = tty->driver_data;
-+	unsigned long flags;
-+	int ret;
-+
-+	spin_lock_irqsave(&sport->xlock, flags);
-+	ret = kfifo_put(&sport->port.xmit_fifo, ch);
-+	spin_unlock_irqrestore(&sport->xlock, flags);
-+
-+	return ret;
-+}
-+
-+static void i3c_flush_chars(struct tty_struct *tty)
-+{
-+	struct ttyi3c_port *sport = tty->driver_data;
-+
-+	queue_work(system_unbound_wq, &sport->txwork);
-+}
-+
-+static unsigned int i3c_write_room(struct tty_struct *tty)
-+{
-+	struct ttyi3c_port *sport = tty->driver_data;
-+
-+	return kfifo_avail(&sport->port.xmit_fifo);
-+}
-+
-+static void i3c_throttle(struct tty_struct *tty)
-+{
-+	struct ttyi3c_port *sport = tty->driver_data;
-+
-+	clear_bit(I3C_TTY_RX_STOP, &sport->status);
-+}
-+
-+static void i3c_unthrottle(struct tty_struct *tty)
-+{
-+	struct ttyi3c_port *sport = tty->driver_data;
-+
-+	set_bit(I3C_TTY_RX_STOP, &sport->status);
-+
-+	queue_work(system_unbound_wq, &sport->rxwork);
-+}
-+
-+static int i3c_open(struct tty_struct *tty, struct file *filp)
-+{
-+	struct ttyi3c_port *sport = container_of(tty->port, struct ttyi3c_port, port);
-+
-+	tty->driver_data = sport;
-+
-+	return tty_port_open(&sport->port, tty, filp);
-+}
-+
-+static void i3c_close(struct tty_struct *tty, struct file *filp)
-+{
-+	tty_port_close(tty->port, tty, filp);
-+}
-+
-+static const struct tty_operations i3c_tty_ops = {
-+	.open = i3c_open,
-+	.close = i3c_close,
-+	.write = i3c_write,
-+	.put_char = i3c_put_char,
-+	.flush_chars = i3c_flush_chars,
-+	.write_room = i3c_write_room,
-+	.throttle = i3c_throttle,
-+	.unthrottle = i3c_unthrottle,
-+};
-+
-+static void i3c_controller_irq_handler(struct i3c_device *dev,
-+				       const struct i3c_ibi_payload *payload)
-+{
-+	struct ttyi3c_port *sport = dev_get_drvdata(&dev->dev);
-+
-+	/* i3c_unthrottle also queue the work to fetch pending data in target side */
-+	queue_work(system_unbound_wq, &sport->rxwork);
-+}
-+
-+static void tty_i3c_rxwork(struct work_struct *work)
-+{
-+	struct ttyi3c_port *sport = container_of(work, struct ttyi3c_port, rxwork);
-+	struct i3c_priv_xfer xfers;
-+	u32 retry = I3C_TTY_RETRY;
-+	u16 status;
-+	int ret;
-+
-+	memset(&xfers, 0, sizeof(xfers));
-+	xfers.data.in = sport->rx_buff;
-+	xfers.len = I3C_TTY_TRANS_SIZE;
-+	xfers.rnw = 1;
-+
-+	do {
-+		if (test_bit(I3C_TTY_RX_STOP, &sport->status))
-+			break;
-+
-+		i3c_device_do_priv_xfers(sport->i3cdev, &xfers, 1);
-+
-+		status = I3C_TTY_TARGET_RX_READY;
-+
-+		if (xfers.actual_len) {
-+			ret = tty_insert_flip_string(&sport->port, sport->rx_buff,
-+						     xfers.actual_len);
-+			if (ret < xfers.actual_len)
-+				sport->buf_overrun++;
-+
-+			retry = I3C_TTY_RETRY;
-+			continue;
-+		}
-+
-+		i3c_device_getstatus_format1(sport->i3cdev, &status);
-+		/*
-+		 * Target side needs some time to fill data into fifo. Target side may not
-+		 * have hardware update status in real time. Software update status always
-+		 * needs some delays.
-+		 *
-+		 * Generally, target side have circular buffer in memory, it will be moved
-+		 * into FIFO by CPU or DMA. 'status' just show if circular buffer empty. But
-+		 * there are gap, especially CPU have not response irq to fill FIFO in time.
-+		 * So xfers.actual will be zero, wait for little time to avoid flood
-+		 * transfer in i3c bus.
-+		 */
-+		usleep_range(I3C_TTY_YIELD_US, 10 * I3C_TTY_YIELD_US);
-+		retry--;
-+
-+	} while (retry && (status & I3C_TTY_TARGET_RX_READY));
-+
-+	tty_flip_buffer_push(&sport->port);
-+}
-+
-+static void tty_i3c_txwork(struct work_struct *work)
-+{
-+	struct ttyi3c_port *sport = container_of(work, struct ttyi3c_port, txwork);
-+	struct i3c_priv_xfer xfers;
-+	u32 retry = I3C_TTY_RETRY;
-+	unsigned long flags;
-+	int ret;
-+
-+	xfers.rnw = 0;
-+	xfers.data.out = sport->tx_buff;
-+
-+	while (!kfifo_is_empty(&sport->port.xmit_fifo)) {
-+		spin_lock_irqsave(&sport->xlock, flags);
-+		xfers.len = kfifo_out_peek(&sport->port.xmit_fifo, sport->tx_buff,
-+					   I3C_TTY_TRANS_SIZE);
-+		spin_unlock_irqrestore(&sport->xlock, flags);
-+		ret = i3c_device_do_priv_xfers(sport->i3cdev, &xfers, 1);
-+		if (ret) {
-+			/*
-+			 * Target side may not move data out of FIFO. delay can't resolve problem,
-+			 * just reduce some possiblity. Target can't end I3C SDR mode write
-+			 * transfer, discard data is reasonable when FIFO overrun.
-+			 */
-+			usleep_range(I3C_TTY_YIELD_US, 10 * I3C_TTY_YIELD_US);
-+			retry--;
-+		} else {
-+			retry = I3C_TTY_RETRY;
-+		}
-+
-+		if (ret == 0 || retry == 0) {
-+			/* when retry == 0, means need discard the data */
-+			spin_lock_irqsave(&sport->xlock, flags);
-+			ret = kfifo_out(&sport->port.xmit_fifo, sport->tx_buff, xfers.len);
-+			spin_unlock_irqrestore(&sport->xlock, flags);
-+		}
-+	}
-+
-+	spin_lock_irqsave(&sport->xlock, flags);
-+	if (kfifo_len(&sport->port.xmit_fifo) < WAKEUP_CHARS)
-+		tty_port_tty_wakeup(&sport->port);
-+	spin_unlock_irqrestore(&sport->xlock, flags);
-+}
-+
-+static int i3c_probe(struct i3c_device *i3cdev)
-+{
-+	struct ttyi3c_port *sport;
-+	struct device *tty_dev;
-+	struct i3c_ibi_setup req;
-+	int minor;
-+	int ret;
-+
-+	sport = devm_kzalloc(&i3cdev->dev, sizeof(*sport), GFP_KERNEL);
-+	if (!sport)
-+		return -ENOMEM;
-+
-+	sport->i3cdev = i3cdev;
-+
-+	dev_set_drvdata(&i3cdev->dev, sport);
-+
-+	req.max_payload_len = 8;
-+	req.num_slots = 4;
-+	req.handler = &i3c_controller_irq_handler;
-+
-+	ret = i3c_device_request_ibi(i3cdev, &req);
-+	if (ret)
-+		return -EINVAL;
-+
-+	mutex_lock(&i3c_tty_minors_lock);
-+	minor = idr_alloc(&i3c_tty_minors, sport, 0, I3C_TTY_MINORS, GFP_KERNEL);
-+	mutex_unlock(&i3c_tty_minors_lock);
-+
-+	if (minor < 0) {
-+		ret = -EINVAL;
-+		goto err_idr_alloc;
-+	}
-+
-+	spin_lock_init(&sport->xlock);
-+	INIT_WORK(&sport->txwork, tty_i3c_txwork);
-+	INIT_WORK(&sport->rxwork, tty_i3c_rxwork);
-+	init_completion(&sport->txcomplete);
-+
-+	tty_port_init(&sport->port);
-+	sport->port.ops = &i3c_port_ops;
-+
-+	tty_dev = tty_port_register_device(&sport->port, i3c_tty_driver, minor,
-+					   &i3cdev->dev);
-+	if (IS_ERR(tty_dev)) {
-+		ret = PTR_ERR(tty_dev);
-+		goto err_tty_port_register;
-+	}
-+
-+	sport->minor = minor;
-+
-+	return 0;
-+
-+err_tty_port_register:
-+	tty_port_put(&sport->port);
-+
-+	mutex_lock(&i3c_tty_minors_lock);
-+	idr_remove(&i3c_tty_minors, minor);
-+	mutex_unlock(&i3c_tty_minors_lock);
-+
-+err_idr_alloc:
-+	i3c_device_free_ibi(i3cdev);
-+
-+	return ret;
-+}
-+
-+static void i3c_remove(struct i3c_device *dev)
-+{
-+	struct ttyi3c_port *sport = dev_get_drvdata(&dev->dev);
-+
-+	tty_port_unregister_device(&sport->port, i3c_tty_driver, sport->minor);
-+	cancel_work_sync(&sport->txwork);
-+
-+	tty_port_put(&sport->port);
-+
-+	mutex_lock(&i3c_tty_minors_lock);
-+	idr_remove(&i3c_tty_minors, sport->minor);
-+	mutex_unlock(&i3c_tty_minors_lock);
-+
-+	i3c_device_free_ibi(sport->i3cdev);
-+}
-+
-+static struct i3c_driver i3c_driver = {
-+	.driver = {
-+		.name = "ttyi3c",
-+	},
-+	.probe = i3c_probe,
-+	.remove = i3c_remove,
-+	.id_table = i3c_ids,
-+};
-+
-+static int __init i3c_tty_init(void)
-+{
-+	int ret;
-+
-+	i3c_tty_driver = tty_alloc_driver(I3C_TTY_MINORS,
-+					  TTY_DRIVER_REAL_RAW | TTY_DRIVER_DYNAMIC_DEV);
-+
-+	if (IS_ERR(i3c_tty_driver))
-+		return PTR_ERR(i3c_tty_driver);
-+
-+	i3c_tty_driver->driver_name = "ttyI3C";
-+	i3c_tty_driver->name = "ttyI3C";
-+	i3c_tty_driver->minor_start = 0,
-+	i3c_tty_driver->type = TTY_DRIVER_TYPE_SERIAL,
-+	i3c_tty_driver->subtype = SERIAL_TYPE_NORMAL,
-+	i3c_tty_driver->init_termios = tty_std_termios;
-+	i3c_tty_driver->init_termios.c_cflag = B9600 | CS8 | CREAD | HUPCL |
-+					       CLOCAL;
-+	i3c_tty_driver->init_termios.c_lflag = 0;
-+
-+	tty_set_operations(i3c_tty_driver, &i3c_tty_ops);
-+
-+	ret = tty_register_driver(i3c_tty_driver);
-+	if (ret)
-+		goto err_tty_register_driver;
-+
-+	ret = i3c_driver_register(&i3c_driver);
-+	if (ret)
-+		goto err_i3c_driver_register;
-+
-+	return 0;
-+
-+err_i3c_driver_register:
-+	tty_unregister_driver(i3c_tty_driver);
-+
-+err_tty_register_driver:
-+	tty_driver_kref_put(i3c_tty_driver);
-+
-+	return ret;
-+}
-+
-+static void __exit i3c_tty_exit(void)
-+{
-+	i3c_driver_unregister(&i3c_driver);
-+	tty_unregister_driver(i3c_tty_driver);
-+	tty_driver_kref_put(i3c_tty_driver);
-+	idr_destroy(&i3c_tty_minors);
-+}
-+
-+module_init(i3c_tty_init);
-+module_exit(i3c_tty_exit);
-+
-+MODULE_LICENSE("GPL");
++++ b/Documentation/driver-api/i3c/target/i3c-target-cfs.rst
+@@ -0,0 +1,109 @@
++.. SPDX-License-Identifier: GPL-2.0
++
++=======================================
++Configuring I3C Target Using CONFIGFS
++=======================================
++
++:Author: Frank Li <Frank.Li@nxp.com>
++
++The I3C Target Core exposes configfs entry (i3c_target) to configure the I3C
++target function and to bind the target function with the target controller.
++(For introducing other mechanisms to configure the I3C Target Function refer to
++[1]).
++
++Mounting configfs
++=================
++
++The I3C Target Core layer creates i3c_target directory in the mounted configfs
++directory. configfs can be mounted using the following command::
++
++	mount -t configfs none /sys/kernel/config
++
++Directory Structure
++===================
++
++The i3c_target configfs has two directories at its root: controllers and
++functions. Every Controller device present in the system will have an entry in
++the *controllers* directory and every Function driver present in the system will
++have an entry in the *functions* directory.
++::
++
++	/sys/kernel/config/i3c_target/
++		.. controllers/
++		.. functions/
++
++Creating Function Device
++===================
++
++Every registered Function driver will be listed in controllers directory. The
++entries corresponding to Function driver will be created by the Function core.
++::
++
++	/sys/kernel/config/i3c_target/functions/
++		.. <Function Driver1>/
++			... <Function Device 11>/
++			... <Function Device 21>/
++			... <Function Device 31>/
++		.. <Function Driver2>/
++			... <Function Device 12>/
++			... <Function Device 22>/
++
++In order to create a <Function device> of the type probed by <Function Driver>,
++the user has to create a directory inside <Function DriverN>.
++
++Every <Function device> directory consists of the following entries that can be
++used to configure the standard configuration header of the target function.
++(These entries are created by the framework when any new <Function Device> is
++created)
++::
++
++		.. <Function Driver1>/
++			... <Function Device 11>/
++				... vendor_id
++				... part_id
++				... bcr
++				... dcr
++				... ext_id
++				... instance_id
++				... max_read_len
++				... max_write_len
++				... vendor_info
++
++Controller Device
++==========
++
++Every registered Controller device will be listed in controllers directory. The
++entries corresponding to Controller device will be created by the Controller
++core.
++::
++
++	/sys/kernel/config/i3c_target/controllers/
++		.. <Controller Device1>/
++			... <Symlink Function Device11>/
++		.. <Controller Device2>/
++			... <Symlink Function Device21>/
++
++The <Controller Device> directory will have a list of symbolic links to
++<Function Device>. These symbolic links should be created by the user to
++represent the functions present in the target device. Only <Function Device>
++that represents a physical function can be linked to a Controller device.
++
++::
++
++			 | controllers/
++				| <Directory: Controller name>/
++					| <Symbolic Link: Function>
++			 | functions/
++				| <Directory: Function driver>/
++					| <Directory: Function device>/
++						| vendor_id
++						| part_id
++						| bcr
++						| dcr
++						| ext_id
++						| instance_id
++						| max_read_len
++						| max_write_len
++						| vendor_info
++
++[1] Documentation/I3C/target/pci-target.rst
+diff --git a/Documentation/driver-api/i3c/target/i3c-target.rst b/Documentation/driver-api/i3c/target/i3c-target.rst
+new file mode 100644
+index 0000000000000..09ae26b1f311a
+--- /dev/null
++++ b/Documentation/driver-api/i3c/target/i3c-target.rst
+@@ -0,0 +1,189 @@
++.. SPDX-License-Identifier: GPL-2.0
++
++:Author: Frank Li <Frank.Li@nxp.com>
++
++This document is a guide to use the I3C Target Framework in order to create
++target controller driver, target function driver, and using configfs interface
++to bind the function driver to the controller driver.
++
++Introduction
++============
++
++Linux has a comprehensive I3C subsystem to support I3C controllers that
++operates in master mode. The subsystem has capability to scan I3C bus,assign
++i3c device address, load I3C driver (based on Manufacturer ID, part ID),
++support other services like hot-join, In-Band Interrupt(IBI).
++
++However the I3C controller IP integrated in some SoCs is capable of operating
++either in Master mode or Target mode. I3C Target Framework will add target mode
++support in Linux. This will help to run Linux in an target system which can
++have a wide variety of use cases from testing or validation, co-processor
++accelerator, etc.
++
++I3C Target Core
++=================
++
++The I3C Target Core layer comprises 3 components: the Target Controller
++library, the Target Function library, and the configfs layer to bind the target
++function with the target controller.
++
++I3C Target Controller Library
++------------------------------------
++
++The Controller library provides APIs to be used by the controller that can
++operate in target mode. It also provides APIs to be used by function
++driver/library in order to implement a particular target function.
++
++APIs for the I3C Target controller Driver
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++
++This section lists the APIs that the I3C Target core provides to be used by the
++I3C controller driver.
++
++* devm_i3c_target_ctrl_create()/i3c_target_ctrl_create()
++
++   The I3C controller driver should implement the following ops:
++
++	* set_config: ops to set i3c configuration
++	* enable: ops to enable controller
++	* disable: ops to disable controller
++	* raise_ibi: ops to raise IBI to master controller
++	* alloc_request: ops to alloc a transfer request
++	* free_request: ops to free a transfer request
++	* queue: ops to queue a request to transfer queue
++	* dequeue: ops to dequeue a request from transfer queue
++	* cancel_all_reqs: ops to cancel all request from transfer queue
++        * fifo_status: ops to get fifo status
++        * fifo_flush: ops to flush hardware fifo
++	* get_features: ops to get controller supported features
++
++   The I3C controller driver can then create a new Controller device by
++   invoking devm_i3c_target_ctrl_create()/i3c_target_ctrl_create().
++
++* devm_i3c_target_ctrl_destroy()/i3c_target_ctrl_destroy()
++
++   The I3C controller driver can destroy the Controller device created by
++   either devm_i3c_target_ctrl_create() or i3c_target_ctrl_create() using
++   devm_i3c_target_ctrl_destroy() or i3c_target_ctrl_destroy().
++
++I3C Target Controller APIs for the I3C Target Function Driver
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++
++This section lists the APIs that the I3C Target core provides to be used by the
++I3C target function driver.
++
++* i3c_target_ctrl_set_config()
++
++   The I3C target function driver should use i3c_target_ctrl_set_config() to
++   write i3c configuration to the target controller.
++
++* i3c_target_ctrl_enable()/i3c_target_ctrl_disable()
++
++   The I3C target function driver should use i3c_target_ctrl_enable()/
++   i3c_target_ctrl_disable() to enable/disable i3c target controller.
++
++* i3c_target_ctrl_alloc_request()/i3c_target_ctrl_free_request()
++
++   The I3C target function driver should usei3c_target_ctrl_alloc_request() /
++   i3c_target_ctrl_free_request() to alloc/free a i3c request.
++
++* i3c_target_ctrl_raise_ibi()
++
++   The I3C target function driver should use i3c_target_ctrl_raise_ibi() to
++   raise IBI.
++
++* i3c_target_ctrl_queue()/i3c_target_ctrl_dequeue()
++
++   The I3C target function driver should use i3c_target_ctrl_queue()/
++   i3c_target_ctrl_dequeue(), to queue/dequeue I3C transfer to/from transfer
++   queue.
++
++* i3c_target_ctrl_get_features()
++
++   The I3C target function driver should use i3c_target_ctrl_get_features() to
++   get I3C target controller supported features.
++
++Other I3C Target Controller APIs
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++
++There are other APIs provided by the Controller library. These are used for
++binding the I3C Target Function device with Controlller device. i3c-cfs.c can
++be used as reference for using these APIs.
++
++* i3c_target_ctrl_get()
++
++   Get a reference to the I3C target controller based on the device name of
++   the controller.
++
++* i3c_target_ctrl_put()
++
++   Release the reference to the I3C target controller obtained using
++   i3c_target_ctrl_get()
++
++* i3c_target_ctrl_add_func()
++
++   Add a I3C target function to a I3C target controller.
++
++* i3c_target_ctrl_remove_func()
++
++   Remove the I3C target function from I3C target controller.
++
++I3C Target Function Library
++----------------------------------
++
++The I3C Target Function library provides APIs to be used by the function driver
++and the Controller library to provide target mode functionality.
++
++I3C Target Function APIs for the I3C Target Function Driver
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++
++This section lists the APIs that the I3C Target core provides to be used
++by the I3C target function driver.
++
++* i3c_target_func_register_driver()
++
++   The I3C Target Function driver should implement the following ops:
++	 * bind: ops to perform when a Controller device has been bound to
++	   Function device
++	 * unbind: ops to perform when a binding has been lost between a
++	   Controller device and Function device
++
++  The I3C Function driver can then register the I3C Function driver by using
++  i3c_target_func_register_driver().
++
++* i3c_target_func_unregister_driver()
++
++  The I3C Function driver can unregister the I3C Function driver by using
++  i3c_epf_unregister_driver().
++
++APIs for the I3C Target Controller Library
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++
++This section lists the APIs that the I3C Target core provides to be used by the
++I3C target controller library.
++
++Other I3C Target APIs
++~~~~~~~~~~~~~~~~~~~~
++
++There are other APIs provided by the Function library. These are used to notify
++the function driver when the Function device is bound to the EPC device.
++i3c-cfs.c can be used as reference for using these APIs.
++
++* i3c_target_func_create()
++
++   Create a new I3C Function device by passing the name of the I3C EPF device.
++   This name will be used to bind the Function device to a Function driver.
++
++* i3c_target_func_destroy()
++
++   Destroy the created I3C Function device.
++
++* i3c_target_func_bind()
++
++   i3c_target_func_bind() should be invoked when the EPF device has been bound
++   to a Controller device.
++
++* i3c_target_func_unbind()
++
++   i3c_target_func_unbind() should be invoked when the binding between EPC
++   device and function device is lost.
+diff --git a/Documentation/driver-api/i3c/target/i3c-tty-howto.rst b/Documentation/driver-api/i3c/target/i3c-tty-howto.rst
+new file mode 100644
+index 0000000000000..43a129b18e938
+--- /dev/null
++++ b/Documentation/driver-api/i3c/target/i3c-tty-howto.rst
+@@ -0,0 +1,109 @@
++.. SPDX-License-Identifier: GPL-2.0
++
++===================
++I3C TTY User Guide
++===================
++
++:Author: Frank Li <Frank.Li@nxp.com>
++
++This document is a guide to help users use i3c-target-tty function driver and
++i3ctty master driver for testing I3C. The list of steps to be followed in the
++master side and target side is given below.
++
++Endpoint Device
++===============
++
++Endpoint Controller Devices
++---------------------------
++
++To find the list of target controller devices in the system::
++
++	# ls  /sys/class/i3c_target/
++	  44330000.i3c-target
++
++If CONFIG_I3C_SLAVE_CONFIGFS is enabled::
++
++	# ls /sys/kernel/config/i3c_target/controllers/
++	  44330000.i3c-target
++
++
++Endpoint Function Drivers
++-------------------------
++
++To find the list of target function drivers in the system::
++
++	# ls /sys/bus/i3c_target_func/drivers
++	  tty
++
++If CONFIG_I3C_SLAVE_CONFIGFS is enabled::
++
++	# ls /sys/kernel/config/i3c_target/functions
++	  tty
++
++
++Creating i3c-target-tty Device
++----------------------------
++
++I3C target function device can be created using the configfs. To create
++i3c-target-tty device, the following commands can be used::
++
++	# mount -t configfs none /sys/kernel/config
++	# cd /sys/kernel/config/i3c_target/
++	# mkdir functions/tty/func1
++
++The "mkdir func1" above creates the i3c-target-tty function device that will
++be probed by i3c tty driver.
++
++The I3C target framework populates the directory with the following
++configurable fields::
++
++	# ls functions/tty/func1
++	bcr  dcr  ext_id  instance_id  max_read_len  max_write_len
++	part_id  vendor_id  vendor_info
++
++The I3C target function driver populates these entries with default values when
++the device is bound to the driver. The i3c-target-tty driver populates vendorid
++with 0xffff and interrupt_pin with 0x0001::
++
++	# cat functions/tty/func1/vendor_id
++	  0x0
++
++Configuring i3c-target-tty Device
++-------------------------------
++
++The user can configure the i3c-target-tty device using configfs entry. In order
++to change the vendorid, the following commands can be used::
++
++	# echo 0x011b > functions/tty/func1/vendor_id
++	# echo 0x1000 > functions/tty/func1/part_id
++	# echo 0x6 > functions/tty/t/bcr
++
++Binding i3c-target-tty Device to target Controller
++------------------------------------------------
++
++In order for the target function device to be useful, it has to be bound to a
++I3C target controller driver. Use the configfs to bind the function device to
++one of the controller driver present in the system::
++
++	# ln -s functions/tty/func1 controllers/44330000.i3c-target/
++
++I3C Master Device
++================
++
++Check I3C tty device is probed
++
++	# ls /sys/bus/i3c/devices/0-23610000000
++	0-23610000000:0  bcr  dcr  driver  dynamic_address  hdrcap
++	modalias  pid  power  subsystem  tty  uevent
++
++Using Target TTY function Device
++-----------------------------------
++
++Host side:
++	cat /dev/ttyI3C0
++Target side
++	echo abc >/dev/ttyI3C0
++
++You will see "abc" show at console.
++
++You can use other tty tool to test I3C target tty device.
+diff --git a/Documentation/driver-api/i3c/target/index.rst b/Documentation/driver-api/i3c/target/index.rst
+new file mode 100644
+index 0000000000000..56eabfae83aa4
+--- /dev/null
++++ b/Documentation/driver-api/i3c/target/index.rst
+@@ -0,0 +1,13 @@
++.. SPDX-License-Identifier: GPL-2.0
++
++======================
++I3C Target Framework
++======================
++
++.. toctree::
++   :maxdepth: 2
++
++   i3c-target
++   i3c-target-cfs
++   i3c-tty-howto
++
 -- 
 2.34.1
 
