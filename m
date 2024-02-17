@@ -4,124 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1808DC48BC3
-	for <linux-i3c@archiver.kernel.org>; Sat, 17 Feb 2024 13:29:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E0EBC48BC4
+	for <linux-i3c@archiver.kernel.org>; Sat, 17 Feb 2024 13:42:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=81Yd+0jgAOrrSpxltu92m9sqx05jD0cUNV25Au89Sos=; b=eQ9Ah+WjxeRwZl
-	TcYpuVLax0QOQSLhS3tNPh77dheF8/czd0lGOKYLLmWKywbFFlSnpCFQJVO3jHy0+eIXhgJ0tvQs0
-	WQCMLr8FVjtpie+E+lbVi2k3GBiBRsbY60Qo5GRWfsBy9unDGB3YOevGTaprViuxCyQ8yfmnGR5RV
-	14rI6FaJrH/FjloJ7NT/DGn6Ew4Ou5X2e1NZI+yNxc7jU8Hj4tdMdFt0LIz890+am0wyAaE/h4fp4
-	ZysSvLrFoOXSsrPrF1kfoxmht4Ui0gCZzgcjRaRnalVn6rJ+9/FPzSBmrLWG2ydyuRJlDzjeR3owL
-	3tMg+F5fI4jSYKPp8JNQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6iLsK5aA03iOhQanNJDmtkkYR7c3rE2PwxxF1Nu2yB0=; b=WW3BXEgwRSPvZx
+	F0LWBIjw20RFOWSMGKvD0xIOH2m1efid/a3TqkP2vwKMUQBgwmOhMSe3kr3FeKPNiHMKTSUSIp0cH
+	hspR6Rm1zN14an3ZwByxcT7Ojdrd9XV3p7nw8p7yWQLidY35PjxKWRID247KB2i5Y/3lL6PYYvmbU
+	9Xd1eIx7T7yMLrhemMe1MV9qC43VlhcjyGUSyvk+/cs1YNslsQSnaTL+/pJ/5Joi2PpoDa2GaMsMg
+	dieQZgHEbl908IpXs6jhntb1WE/UQGiVtl2hiw9G1wxVMEQJd/p7nYELI+goOAY8otc3TVl52NJ3k
+	krhI9jVCjCvV9JV0K8gQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rbKkq-00000005kQy-2MUT;
-	Sat, 17 Feb 2024 13:29:20 +0000
-Received: from mail-tycjpn01on20601.outbound.protection.outlook.com ([2a01:111:f403:2019::601] helo=JPN01-TYC-obe.outbound.protection.outlook.com)
+	id 1rbKxc-00000005lFr-0PiB;
+	Sat, 17 Feb 2024 13:42:32 +0000
+Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rbKkm-00000005kQY-3jpY
+	id 1rbKxZ-00000005lF1-2imu
 	for linux-i3c@lists.infradead.org;
-	Sat, 17 Feb 2024 13:29:18 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=nsqq65J7DfL9UXxZSyHFQuCPd8aTGAxsO8aOSuhAZezpBEFwV1UWu5RBpOyR/1WkgjxJQoO88IXAdykbU/LcagsXYvuq08Slf899QQ/gmiX9FCglr4LgFbnExj5j2FIRtsTxlE80Zq+tKZunaAUDzv+RZjdDqTIQ4+vQtNJ1Izkx0VpOjewaB5QeoftbZJwiBG2U+0K5b0Xbs/5WfXajPi1wzSm5rDJirbj9d0aXf2mCzJnG24YsY9R5Ix3ANb5XoPo/RbuO4E81JA2cmggEd4Y+mn/hb4a8qyycTYE9LbxmOIuGzR99kxAEDDP4PHNJwtVZvzvytNWjtBiCg6a9qg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Lgzce56w6w/LW3dhksydwCVzU3bIOhpmE/ESINnt8JA=;
- b=iLC8y1RQb85cwsMidbO8IbxKnHDLE/bxi1BbzHK5IXsYKqLioHTrSTiKrEGaMxgUrfOv62OvOEIk+19K7z8iGgAShy45/5oQbQPhd44N+P+fDiz6ZG05k6ye5aYUh3+GxOPRqC6FiPXxWvaOnIxsv6TCFAkA3UT5yyC/RaYGTuWhBokabTOrgorgcMSs8xwNwK/CPsOICK4ByYy1Y7q5GvQ9cijL2SHCwGqSXtSnR+koizCFyld5SkklGtr1dg7TSuKllwCXdK/lTGfpTJb0PqxnPv3U2p3BnvW984C9/xRQFmhCrw/i/1/IWdSpEW/ZGLUEFvJgDqrMxPDRP2HSPQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
- dkim=pass header.d=renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Lgzce56w6w/LW3dhksydwCVzU3bIOhpmE/ESINnt8JA=;
- b=A0bqeoZlsXA3IZJZashENO5qGMpHrvGHN9be//Y+0ABDgORMdWuTMUOWQ9lDUSfZXe6ccELR1yoI+Ak7DlC5J474laYMQ3EITpSjl+J1Fga5RY3zlIl5X7C+f8uzsPqnv09Q8Ja83QmlM0PxVzSywDQ3JUeHCZm8VYBhEgvKYCE=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=renesas.com;
-Received: from OSAPR01MB4323.jpnprd01.prod.outlook.com (2603:1096:604:37::10)
- by OSZPR01MB8372.jpnprd01.prod.outlook.com (2603:1096:604:188::12) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7292.31; Sat, 17 Feb
- 2024 13:14:25 +0000
-Received: from OSAPR01MB4323.jpnprd01.prod.outlook.com
- ([fe80::46db:654a:ea70:d399]) by OSAPR01MB4323.jpnprd01.prod.outlook.com
- ([fe80::46db:654a:ea70:d399%6]) with mapi id 15.20.7292.029; Sat, 17 Feb 2024
- 13:14:25 +0000
-From: Steven Niu <steven.niu.uj@renesas.com>
-To: alexandre.belloni@bootlin.com,
-	linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	robh+dt@kernel.org,
-	krzysztof.kozlowski+dt@linaro.org,
-	conor+dt@kernel.org,
-	devicetree@vger.kernel.org
-Cc: zbigniew.lukwinski@linux.intel.com,
-	Steven Niu <steven.niu.uj@renesas.com>
-Subject: [PATCH 1/2] dt-bindings: i3c-hub: Add Renesas RG3MxxB12A1 I3C HUB
-Date: Sat, 17 Feb 2024 21:14:11 +0800
-Message-Id: <20240217131412.4145506-1-steven.niu.uj@renesas.com>
-X-Mailer: git-send-email 2.25.1
-X-ClientProxiedBy: KL1PR01CA0102.apcprd01.prod.exchangelabs.com
- (2603:1096:820:3::18) To OSAPR01MB4323.jpnprd01.prod.outlook.com
- (2603:1096:604:37::10)
+	Sat, 17 Feb 2024 13:42:30 +0000
+Received: by mail-lf1-x129.google.com with SMTP id 2adb3069b0e04-511976c126dso3684568e87.1
+        for <linux-i3c@lists.infradead.org>; Sat, 17 Feb 2024 05:42:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1708177347; x=1708782147; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=OiXDfqGts8feqD9VCLlXe5SRdanfsCFR9TmA/hIZPB4=;
+        b=ltqeHMqarC7ixfYhTGr2c2cvmePlU0chW2f8C9aH3L0FoxHpJBdmzShI2OGdH6Qrkn
+         CBkq80BUGBDvpRnVNSB7rCWBzf7yXIvv6Ol3v0QunH2idAHIjAMhvLzTiTxoV2WkMb+z
+         tkQ1ZNXbPR1JQo1PBxeTDER8aea0e1aJ06WwfuhAoyt7y5PzvJ8hoy4atWauUy6LEbZc
+         holO/MwYRPp5W1Qwn4I5Zx8pKOVaHB19ja7bNgVefyqzAz6+jj10VsbqJRudy0NRY/Xn
+         tVHkKEfAEqVtnGQbXgglBaoR4r6GrmKL/k2sQUF3QEPXUvvkf6RnitlOss4s1OeWD0lD
+         26UA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1708177347; x=1708782147;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from:references:cc
+         :to:content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=OiXDfqGts8feqD9VCLlXe5SRdanfsCFR9TmA/hIZPB4=;
+        b=tlSrWC/n9NE/UzHt79CYCHd/dUXCqlTMfo9o9yanvfrLDF3UhSzAbKOVNBdAEXNOAC
+         UNSnDmVwsFgzaLFkFe8rejIu7tO10QF1VlEFmsS/yy6tVIASBcYCGv3miuaiGXD4ABkE
+         uVD5nhFa4n8PpVbprj0sbkObhsVR10Y2eClSoNomfS3/2fACW8gwjutgjG2TFgu59W3U
+         gFa/eg5Kn/4frh0HMtvA7m/W9LWrZBBty9xpKk9BcFpL46aqGp8B7nMOwXcnsYOQdZ+W
+         Cr/j8GiXbVzAYt6OxzMm+vO5fd59cqUbzDbP9CYEiLHSW/RHqALC8C1E4kHdGS0uHgZJ
+         p2eQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWvXpBpJaqQNpXv9sjZHuT9pQiVo9A0RTe2CLUADywUWltgJaSdjUeUQfp6dyCWPzLbVGA0Bdj/hq+4844FUVwklgkJP1f1pT1EXDxlMg==
+X-Gm-Message-State: AOJu0YyiHIzs1Dw7Z7vXfirjaF4nogEe5jnitjPMXv4fDa+hwNzTcL4W
+	scsF4I/ghOZtO6rFHJH6BCE6Wn+v+XFWU3XfgDi2zAcTNzx0blxkiXkxwRHmd34=
+X-Google-Smtp-Source: AGHT+IFpK2zVJudUZocVcrh8tGHfvqGG/t49pxVjyXnHWhUB5Ndv1Ojk419TIBq8YEYSkzFVybqGLA==
+X-Received: by 2002:a05:6512:2c0e:b0:512:a637:9462 with SMTP id dx14-20020a0565122c0e00b00512a6379462mr792588lfb.16.1708177347296;
+        Sat, 17 Feb 2024 05:42:27 -0800 (PST)
+Received: from [192.168.0.22] ([78.10.207.130])
+        by smtp.gmail.com with ESMTPSA id dh18-20020a0564021d3200b0056176e95a88sm893979edb.32.2024.02.17.05.42.25
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 17 Feb 2024 05:42:26 -0800 (PST)
+Message-ID: <4b34c495-4aaa-4dd3-b7b0-b9d54baf9338@linaro.org>
+Date: Sat, 17 Feb 2024 14:42:25 +0100
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: OSAPR01MB4323:EE_|OSZPR01MB8372:EE_
-X-MS-Office365-Filtering-Correlation-Id: 7ef73c4d-7ad3-4ae8-1e01-08dc2fba5d3a
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: n9T77FBpiPkAiTLvvRs487Kn6kvpzkzMD4PeZxfsZKCJewEy+6ZPobIO887T2VtLobJAtX/4WyuBHxbdkc6fH/QeNIovOykDfyelm+3ZtMXV0F1wypgHTEJ9DmyVaCxzDwhm7sPxthBPSQqzvMPhhnMMJIqzcn7Xqpw1U8O6rnooVUnYqPCX1MWXbXqV+eGRj8dEbD7rAZ+7YhCGWF5mnheifPIrP1pemFwQOp/TrSP+2AN+JDxcSJl0HubVgYgYUff//0yW6Bu9QitTUez7LGQauB3FaH/flSJ8W5N8R0gLPx9azglTAXnbnVmeFnn/ZBd2k8Ux2LHLNfeQbkpw0tFj7JOhGIbl3QIOcRsdagGSCs0ZXCKZYW7G2awX9b6Fr2+FpGEc++/dNPtuZLzRTxoaVipu1A8gQ36no3rDv1lZhQRsyf+OYaoWk3o3xZQ1+93Fsy0p7CFWbRDH9Gd2HaZkSvMQDTzw0ZMvBx8zHX0ji8DQfGxk29hgXnaYzBUcx3QH3j7MLqP4Ksy9t9JMmAOs/B6x5IOrD5+zCmvQAbFjuBCW7qQ2PPLaK2zwIj7w9niHqaGRQOcKb4egBx6ftdkHFJjGCTEsCSc56livrQE=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:OSAPR01MB4323.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(346002)(39860400002)(396003)(376002)(136003)(366004)(230922051799003)(230273577357003)(451199024)(1800799012)(64100799003)(186009)(103116003)(36756003)(86362001)(38100700002)(38350700005)(6666004)(83380400001)(2906002)(8936002)(4326008)(66946007)(66556008)(8676002)(66476007)(30864003)(5660300002)(966005)(6506007)(6512007)(6486002)(316002)(478600001)(52116002)(41300700001)(26005)(107886003)(2616005)(1076003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?TCfD7WNvTMKzny5qmSoj6mk2+IZdyY842A+c8/K/YQVrQCNHyJaht0QElq9C?=
- =?us-ascii?Q?wUkDI3aTcYfL1c8alVNiESMXnKKpiSsfeeWJ3ij2cOXFMyh72SRWF4KFOAwK?=
- =?us-ascii?Q?aZRusXAxVZFlcCwxGdeoOkhx1AGvC3qdtejE82v2TwyuliadWPTHoicQ17d8?=
- =?us-ascii?Q?Lz4Ea6r6Ch8WuPT/o9YFBY9v+Ps4oxChByIk0KyywJNjEkVVGQA1iZBkDIr2?=
- =?us-ascii?Q?+CKIC452iNuULgCqNrmVzCTKE7hVoLWkZDzgsA1GyTlw77qDD91GXybjGpra?=
- =?us-ascii?Q?v8m2tShz5I4WKl1hRHrrb/TvrJ4CBE5Rc3fOWb7Rx3vrYL4XoyzninR0M3xg?=
- =?us-ascii?Q?6rdoc+a1t5lPTASoUjIrD5fuvDcCQ2iyA/mCqy/G4YB8VeCQbPBvQieC4zeX?=
- =?us-ascii?Q?hg8W6NOGffe3o0Ty+As8OdZE8AKjpGTJ/x7mkwzNM7ye57ZlzBtDe8lCSZ60?=
- =?us-ascii?Q?tWVVkjA5ES4MXQdvffpjwA+SuNR62+v8byELDkpo6x0eBiSMZ9/FaZTyFrPx?=
- =?us-ascii?Q?ZMIQR4UzQWe+PiNVpkui5p5ARqaxQusOauwpiQYQdQgGKSp6rETQaCMyB8OS?=
- =?us-ascii?Q?DG+JnuOhGHDfyRjc8b5vUNOx6OEgWk5g4xTDD0xnICcvm5TAw6tqjHNtjfcr?=
- =?us-ascii?Q?XXdNvsIUYn0kUZ2HbpxlpssSLXp474fJHZ14xLsPEV6lNTkUDxRzkiB4/1qb?=
- =?us-ascii?Q?Jap1sF5Cx9wjBWlnsDxFjfv+yZUCNtXjDM+vmpVNHnikOAdG+5vU9Or/RBlu?=
- =?us-ascii?Q?tudCH0BJxuRe+Ute5BzlHFal7F9uFywOcImrdWKn8UHxd4b8sukyFkezZd8A?=
- =?us-ascii?Q?wbsXInnCxUnt8EKWmS/bASYJ3Bo3dCmmHGOaEOcdZ848LOg0NMirB4RAytVP?=
- =?us-ascii?Q?ZZ8oh1U/40rH3r7qik7G2K0K4N/sVnzGP0NaunpRUYKoxWwu3QV0eeQUke4O?=
- =?us-ascii?Q?cc6NbGPMwfMqmiDySzhkAyu8godSRcxH8LTeccAVnHR74vkBLxo64OHR3Ce4?=
- =?us-ascii?Q?5VV0Qh6P+kJjHm3ivTb2YUKiNLrY0/MwR6zKcsGAsjer9GWuMsl0Jm+67k2Q?=
- =?us-ascii?Q?tmlkBM9d3Gk8s0fSiHdADxQR/nzSsg3ej9S4p+kJteddKS0bhdYKATzrpEHV?=
- =?us-ascii?Q?1nVDSfQ/vo7eopVU8KgoI0nfJ+EvG8TidzCtJALvhMUAXrdp0YYeYk2axWUN?=
- =?us-ascii?Q?UuWbk6Zawma6+tjnkSef59jHMtOurikdSL+yV+lfCVMuB7Y1W2FSVWJSsIBb?=
- =?us-ascii?Q?r9ToHCd7PcAfo8TDJi0jnqnF47XGVLWhhf1bGRJw8diw6yG8sNO57AdUGPpM?=
- =?us-ascii?Q?xY2SSiwkdEDbWBzoqkJG9F8nNZ0KNAD+r06Hl9ZUufFUcvsqS7qI7bdy04+q?=
- =?us-ascii?Q?cS0ytu46ClkO1E5PG50EZdL6jlOw+8tboAW7tWxVTEb0R8nnWR2asHajZ023?=
- =?us-ascii?Q?RNCZirvnEfWqqVifUSUrJdRp9nGlJVAmee7p0KtaW0FPaHqs42JM+Wjy3Hxx?=
- =?us-ascii?Q?vDoRs9g+0eWqxG5uXXc6j32uJV/z9kV8sZWItQm9/FigfsGRtjqFfWFaTOVu?=
- =?us-ascii?Q?8oewsCZ6v5k9MbQ64hHGQhvxMgZNS/0TvqEUBfzYjfaFcw9/D4uIVjzZyOTH?=
- =?us-ascii?Q?rA=3D=3D?=
-X-OriginatorOrg: renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7ef73c4d-7ad3-4ae8-1e01-08dc2fba5d3a
-X-MS-Exchange-CrossTenant-AuthSource: OSAPR01MB4323.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Feb 2024 13:14:25.6431
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: kSDAvyAVNcSNgCzB5BbNhtIyvXJNBSAFN3pBkLRiQFtoJ/LTS/FYmo9uxTZ040Znmsrc2lmyT9FLELR9VApSJ8YT5O5oISWSGi03gRMHQF0=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSZPR01MB8372
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/3] dt-bindings: i3c: drop "master" node name suffix
+Content-Language: en-US
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: Jeremy Kerr <jk@codeconstruct.com.au>, Rob Herring <robh+dt@kernel.org>,
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+ Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+ Andrew Jeffery <andrew@codeconstruct.com.au>,
+ =?UTF-8?Q?Przemys=C5=82aw_Gaj?= <pgaj@cadence.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Conor Culhane <conor.culhane@silvaco.com>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Dinh Nguyen <dinguyen@kernel.org>, Boris Brezillon <bbrezillon@kernel.org>,
+ Nicolas Pitre <npitre@baylibre.com>, linux-i3c@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org
+References: <20240117075618.81932-1-krzysztof.kozlowski@linaro.org>
+ <00d6a0d5-6787-4777-8fb2-dcad4304a724@linaro.org>
+ <2024021712422352187ad4@mail.local>
+From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
+ 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
+ D2GYIS41Kv4Isx2dEFh+/Q==
+In-Reply-To: <2024021712422352187ad4@mail.local>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240217_052917_178844_5BD12F16 
-X-CRM114-Status: GOOD (  14.40  )
+X-CRM114-CacheID: sfid-20240217_054229_740157_03339815 
+X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,422 +153,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Document the Renesas RG3MxxB12A1 I3C HUB.
+On 17/02/2024 13:42, Alexandre Belloni wrote:
+> On 16/02/2024 12:26:12+0100, Krzysztof Kozlowski wrote:
+>> On 17/01/2024 08:56, Krzysztof Kozlowski wrote:
+>>> Drop the requirement of "-master" suffix in node names because:
+>>> 1. "Master" word is discouraged and MIPI Alliance renamed it to
+>>>    "Controller".
+>>> 2. Some devices can operate in Controller (Master) or Target mode, thus
+>>>    the name is not accurate in such cases.
+>>> 3. Other buses, like I2C controllers, use simple "i2c".
+>>>
+>>> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+>>> ---
+>>
+>> Rob, can you pick this one up? It seems Alexandre did not take it.
+>>
+> 
+> I'll take it but I don't think it is super urgent.
 
-Signed-off-by: Steven Niu <steven.niu.uj@renesas.com>
----
- .../devicetree/bindings/i3c/i3c-hub.yaml      | 400 ++++++++++++++++++
- 1 file changed, 400 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/i3c/i3c-hub.yaml
+It's not, but it was almost two weeks and we are also getting to end of
+applying cycle of some maintainers, so I was going through my pending
+stuff. Apologies if this was too pingi-ping.
 
-diff --git a/Documentation/devicetree/bindings/i3c/i3c-hub.yaml b/Documentation/devicetree/bindings/i3c/i3c-hub.yaml
-new file mode 100644
-index 000000000000..8ff6ca172975
---- /dev/null
-+++ b/Documentation/devicetree/bindings/i3c/i3c-hub.yaml
-@@ -0,0 +1,400 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/i3c/i3c-hub.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: I3C HUB
-+
-+maintainers:
-+  - Zbigniew Lukwinski <zbigniew.lukwinski@linux.intel.com>
-+  - Steven Niu <steven.niu.uj@renesas.com>
-+
-+description: |
-+  I3C HUB is smart device which provides multiple functionality:
-+  * enabling voltage compatibility across I3C Controller and Target devices,
-+  * bus capacitance isolation
-+  * address conflict isolation
-+  * I3C port expansion
-+  * two controllers in a single I3C bus
-+  * I3C and SMBus device compatibility
-+  * GPIO expansion
-+
-+  Having such big number of features, there is a need to have some DT knobs to tell the I3C HUB
-+  driver which features shall be enabled and how they shall be configured. I3C HUB driver read,
-+  validate DT knobs and set corresponding registers with the right way to satisfy user requests from
-+  DT.
-+
-+  All the DT properties for I3C HUB are located under dedicated (for I3C HUB) DT entry. I3C HUB DT
-+  entry structure is aligned with regular I3C device DT entry described in i3c.yaml.
-+
-+allOf:
-+  - $ref: i3c.yaml#
-+
-+properties:
-+  $nodename:
-+    pattern: "^hub@0,0$"
-+
-+  cp0-ldo-en:
-+    enum:
-+      - disabled
-+      - enabled
-+    description: |
-+      I3C HUB Controller Port 0 LDO disabling/enabling setting. If enabled, voltage produced by
-+      on-die LDO will be available externally on dedicated pin. This option could be used to supply
-+      external pull-up resistors or for any other purpose which does not cross LDO capabilities.
-+
-+      This property is optional. If not provided, LDO will be disabled.
-+
-+  cp1-ldo-en:
-+    enum:
-+      - disabled
-+      - enabled
-+    description: |
-+      I3C HUB Controller Port 1 LDO disabling/enabling setting. If enabled, voltage produced by
-+      on-die LDO will be available externally on dedicated pin. This option could be used to supply
-+      external pull-up resistors or for any other purpose which does not cross LDO capabilities.
-+
-+      This property is optional. If not provided, LDO will be disabled.
-+
-+  tp0145-ldo-en:
-+    enum:
-+      - disabled
-+      - enabled
-+    description: |
-+      I3C HUB Target Ports 0/1/4/5 LDO disabling/enabling setting. If enabled, voltage produced by
-+      on-die LDO will be available externally on dedicated pin. This option could be used to supply
-+      external pull-up resistors or for any other purpose which does not cross LDO capabilities.
-+
-+      This property is optional. If not provided, LDO will be disabled.
-+
-+  tp2367-ldo-en:
-+    enum:
-+      - disabled
-+      - enabled
-+    description: |
-+      I3C HUB Target Ports 2/3/6/7 LDO disabling/enabling setting. If enabled, voltage produced by
-+      on-die LDO will be available externally on dedicated pin. This option could be used to supply
-+      external pull-up resistors or for any other purpose which does not cross LDO capabilities.
-+
-+      This property is optional. If not provided, LDO will be disabled.
-+
-+  cp0-ldo-volt:
-+    enum:
-+      - 1.0V
-+      - 1.1V
-+      - 1.2V
-+      - 1.8V
-+    description: |
-+      I3C HUB Controller Port 0 LDO setting to control the Controller Port 1 voltage level. This
-+      property is optional.
-+
-+      If not provided, LDO configuration is not modified in I3C HUB.
-+
-+  cp1-ldo-volt:
-+    enum:
-+      - 1.0V
-+      - 1.1V
-+      - 1.2V
-+      - 1.8V
-+    description: |
-+      I3C HUB Controller Port 1 LDO setting to control the Controller Port 1 voltage level. This
-+      property is optional.
-+
-+      If not provided, LDO configuration is not modified in I3C HUB.
-+
-+  tp0145-ldo-volt:
-+    enum:
-+      - disabled
-+      - 1.0V
-+      - 1.1V
-+      - 1.2V
-+      - 1.8V
-+    description: |
-+      I3C HUB Target Ports 0/1/4/5 LDO setting to control the Target Ports 0/1/4/5 voltage level.
-+
-+      If not provided, LDO configuration is not modified in I3C HUB.
-+
-+  tp2367-ldo-volt:
-+    enum:
-+      - disabled
-+      - 1.0V
-+      - 1.1V
-+      - 1.2V
-+      - 1.8V
-+    description: |
-+      I3C HUB Target Ports 2/3/6/7 LDO setting to control the Target Ports 2/3/6/7 voltage level.
-+
-+      If not provided, LDO configuration is not modified in I3C HUB.
-+
-+  tp0145-pullup:
-+    enum:
-+      - disabled
-+      - 250R
-+      - 500R
-+      - 1k
-+      - 2k
-+    description: |
-+      I3C HUB Target Ports 0/1/4/5 pull-up setting to control the Target Ports 0/1/4/5 pull-up
-+      resistance level.
-+
-+      This property is optional. If not provided, pull-up configuration is not modified in I3C HUB.
-+
-+  tp2367-pullup:
-+    enum:
-+      - disabled
-+      - 250R
-+      - 500R
-+      - 1k
-+      - 2k
-+    description: |
-+      I3C HUB Target Ports 2/3/6/7 pull-up setting to control the Target Ports 2/3/6/7 pull-up
-+      resistance level.
-+
-+      This property is optional. If not provided, pull-up configuration is not modified in I3C HUB.
-+
-+  cp0-io-strength:
-+    enum:
-+      - 20Ohms
-+      - 30Ohms
-+      - 40Ohms
-+      - 50Ohms
-+    description: |
-+      I3C HUB Controller Port 0 IO strength setting to control the Controller Port 0 output driver
-+      strength.
-+
-+      This property is optional. If not provided, IO strength configuration is not modified in I3C
-+      HUB.
-+
-+  cp1-io-strength:
-+    enum:
-+      - 20Ohms
-+      - 30Ohms
-+      - 40Ohms
-+      - 50Ohms
-+    description: |
-+      I3C HUB Controller Port 1 IO strength setting to control the Controller Port 1 output driver
-+      strength.
-+
-+      This property is optional. If not provided, IO strength configuration is not modified in I3C
-+      HUB.
-+
-+  tp0145-io-strength:
-+    enum:
-+      - 20Ohms
-+      - 30Ohms
-+      - 40Ohms
-+      - 50Ohms
-+    description: |
-+      I3C HUB Target Ports 0/1/4/5 IO strength setting to control the Target Ports 0/1/4/5 output
-+      driver strength.
-+
-+      This property is optional. If not provided, IO strength configuration is not modified in I3C
-+      HUB.
-+
-+  tp2367-io-strength:
-+    enum:
-+      - 20Ohms
-+      - 30Ohms
-+      - 40Ohms
-+      - 50Ohms
-+    description: |
-+      I3C HUB Target Ports 2/3/6/7 IO strength setting to control the Target Ports 2/3/6/7 output
-+      driver strength.
-+
-+      This property is optional. If not provided, IO strength configuration is not modified in I3C
-+      HUB.
-+
-+  id:
-+    enum:
-+      - 0
-+      - 1
-+      - 3
-+    description: |
-+      I3C HUB ID based on CSEL pin. There are three possible values:
-+      0 - CP0 is selected as primary Controller Port
-+      1 - Primary Controller Port is selected by software by writing the REG#56
-+      3 - CP1 is selected as primary Controller Port
-+
-+      I3C HUB driver reads CSEL pin status (REG#121[5:4]) and tries to find DT node with matching
-+      value in 'id' property.
-+
-+      This property is optional. If not provided, DT node can only be used by the I3C HUB driver if
-+      there is no others with matching 'id' or 'id-cp1'. If there is a multiple DT nodes with no
-+      'id' property - the first one will be chosen by I3C HUB driver. If there is a multiple DT
-+      nodes with matching 'id' property - the first one will be chosen by I3C HUB driver.
-+
-+      If both 'id' and 'id-cp1' are available, DT node will chosen only when both values match those
-+      read from I3C HUB.
-+
-+  id-cp1:
-+    enum:
-+      - 0
-+      - 1
-+      - 2
-+      - 3
-+    description: |
-+      I3C HUB ID based on CP1 SDA and SCL pins state probed during power on.
-+
-+      I3C HUB driver reads CP1 SDA and SCL pin status and tries to find DT node with matching value
-+      in 'id-cp1' property.
-+
-+      This property is optional. If not provided, DT node can only be used by the I3C HUB
-+      driver if there is no others with matching 'id' or 'id-cp1'. If there is a multiple DT nodes
-+      with no 'id-cp1' property - the first one will be chosen by I3C HUB driver. If there is a
-+      multiple DT nodes with matching 'id-cp1' property - the first one will be chosen by I3C HUB
-+      driver.
-+
-+      If both 'id' and 'id-cp1' are available, DT node will chosen only when both values match those
-+      read from I3C HUB.
-+
-+patternProperties:
-+  "@[0-9]$":
-+    type: object
-+    description: |
-+      I3C HUB Target Port child, should be named: target-port@<target-port-id>
-+
-+    properties:
-+      mode:
-+        enum:
-+          - disabled
-+          - i3c
-+          - smbus
-+          - gpio
-+        description: |
-+          I3C HUB Target Port mode setting to control Target Port functionality.
-+
-+          This property is optional. If not provided, Target Port mode configuration is not modified
-+          in I3C HUB.
-+
-+      pullup:
-+        enum:
-+          - disabled
-+          - enabled
-+        description: |
-+          I3C HUB Target Port pull-up setting to disable/enable Target Port pull-up.
-+
-+          This property is optional. If not provided, Target Port pull-up configuration is not
-+          modified in I3C HUB.
-+
-+      always-enable:
-+        type: boolean
-+        description: |
-+          I3C HUB Target Port settings to control the port enable/disable policy.
-+
-+          This property is optional. If not provided, Target Port is enabled only on accessing to
-+          the devices connected to it and the port is disabled automatically after the accessing
-+          is done. If provided, the Target Port is always enabled.
-+
-+    patternProperties:
-+      "@0,0$":
-+        type: object
-+        description: |
-+          Backend for handling SMBus mode, should be named: backend@0,0
-+          Adding this node installs the backed for handling SMBus Target mode communication.
-+
-+        properties:
-+          compatible:
-+            description:
-+              Compatible of the I2C/SMBus backend.
-+
-+          target-reg:
-+            description:
-+              Target address used for Target Port in the I3C HUB configured as SMBus Target mode.
-+
-+additionalProperties: true
-+
-+examples:
-+  - |
-+    i3c-master@d040000 {
-+      #address-cells = <1>;
-+      #size-cells = <0>;
-+
-+      hub@0,0 {
-+        cp0-ldo-en = "disabled";
-+        cp1-ldo-en = "enabled";
-+        cp0-ldo-volt = "1.0V";
-+        cp1-ldo-volt = "1.1V";
-+        tp0145-ldo-en = "enabled";
-+        tp2367-ldo-en = "disabled";
-+        tp0145-ldo-volt = "1.2V";
-+        tp2367-ldo-volt = "1.8V";
-+        tp0145-pullup = "2k";
-+        tp2367-pullup = "500R";
-+        tp0145-io-strength = "50Ohms";
-+        tp2367-io-strength = "30Ohms";
-+        cp0-io-strength = "20Ohms";
-+        cp1-io-strength = "40Ohms";
-+
-+        target-port@0 {
-+          mode = "i3c";
-+          pullup = "enabled";
-+          always_enable;
-+        };
-+        target-port@1 {
-+          mode = "smbus";
-+          pullup = "enabled";
-+          backend@0,0{
-+              compatible = "slave-mqueue";
-+              target-reg = <0x10>;
-+          };
-+        };
-+        target-port@2 {
-+          mode = "gpio";
-+          pullup = "disabled";
-+        };
-+        target-port@3 {
-+          mode = "disabled";
-+          pullup = "disabled";
-+        };
-+      };
-+    };
-+
-+  - |
-+    i3c-master@d040000 {
-+      #address-cells = <1>;
-+      #size-cells = <0>;
-+
-+      hub@70,3C000000100 {
-+        reg = <0x70 0x3C0 0x00000100>;
-+        assigned-address = <0x70>;
-+        dcr = <0xC2>;
-+
-+        cp0-ldo-en = "disabled";
-+        cp1-ldo-en = "enabled";
-+        cp0-ldo-volt = "1.0V";
-+        cp1-ldo-volt = "1.1V";
-+        tp0145-ldo-en = "enabled";
-+        tp2367-ldo-en = "disabled";
-+        tp0145-ldo-volt = "1.2V";
-+        tp2367-ldo-volt = "1.8V";
-+        tp0145-pullup = "2k";
-+        tp2367-pullup = "500R";
-+        tp0145-io-strength = "50Ohms";
-+        tp2367-io-strength = "30Ohms";
-+        cp0-io-strength = "20Ohms";
-+        cp1-io-strength = "40Ohms";
-+
-+        target-port@0 {
-+          mode = "i3c";
-+          pullup = "enabled";
-+          always-enable;
-+        };
-+        target-port@1 {
-+          mode = "smbus";
-+          pullup = "enabled";
-+          backend@0,0{
-+              compatible = "slave-mqueue";
-+              target-reg = <0x12>;
-+          };
-+        };
-+        target-port@2 {
-+          mode = "gpio";
-+          pullup = "disabled";
-+        };
-+        target-port@3 {
-+          mode = "disabled";
-+          pullup = "disabled";
-+        };
-+      };
-+    };
--- 
-2.25.1
+Best regards,
+Krzysztof
 
 
 -- 
