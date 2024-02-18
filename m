@@ -4,72 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E5E4C48BF6
-	for <linux-i3c@archiver.kernel.org>; Sun, 18 Feb 2024 22:57:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19550C48BF6
+	for <linux-i3c@archiver.kernel.org>; Sun, 18 Feb 2024 23:33:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=63WkQFiQ14+xnQpSzdzi57Bbzop0S2AZLhB3QpxbL28=; b=eC6z7h3UX3OYpF
-	H36C/Wf3+S9Ud2dqzEGgcQYU9c4SaSZ5tfEOMLxbiNR9TFwOGdftJV1KXDnOAhIscMAYCPfqRx2Zs
-	mzkwVzLcP7UNFKfsNUfbGb3i2b77COzBBoZz7R9RTxkIzrf584LjZQVJd15FPd+v7IkqWJIqxctUp
-	M3oRGSl9OtZFjhCEyK3lGkfGOdMHetF1wRsv6dszT5vHag/lj+fUaB9XUsH6WwHwtPIiLnmAQRngM
-	p7BhD7ApLXMvPm/CuH4XvcBoTLUlWMZ1RExAcXC2l6ExoaqH3MMQbIopc1EPVpJIlM1d3TKQYWx5K
-	yRhZ4z3nFwssFhjiG7kg==;
+	List-Owner; bh=Wo+sYikVkTsGdNAYx7QIz4ENRvsn1m/3kbW/VMLJn2c=; b=3eYK1w0eiVLuzE
+	phTMCrPb5RH8q6+96/iD5wDZuzGsZnDb38XZ0EPfutqrmU5GyKqlLgOYc/R7o9Txy5+gz8JBpRwP0
+	Xp9oVyoaLQigvvvl2Bzaa22Wb0WBO48frZOUDFxVvhAbEjVa+vE3XTtAWHZ+Q6QQxHR4kd+FWqOTo
+	Mgaqk8Hn4v9edZlRHPigfw+JJ/jsKPOd3WQtwX1qINIKu1p8M5spck9Dt/Zzf9cDgd+7UqqVA/Kvo
+	z0LcZyfWyFtlwngrvTxTfRDXsZa4aIVT0/Gn9C4Bs5+VwzS1lXiNgCiMnNB42EklwY2QWyUkh7r1H
+	ngJ2YtEU3GJs84Z/+U2w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rbq6K-00000008aRF-34GN;
-	Sun, 18 Feb 2024 22:57:36 +0000
-Received: from relay6-d.mail.gandi.net ([2001:4b98:dc4:8::226])
+	id 1rbqem-00000008djc-1Dfq;
+	Sun, 18 Feb 2024 23:33:12 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rbq6G-00000008aQa-19Rh;
-	Sun, 18 Feb 2024 22:57:34 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 4725EC0003;
-	Sun, 18 Feb 2024 22:57:19 +0000 (UTC)
+	id 1rbqeh-00000008dj4-1vxy
+	for linux-i3c@lists.infradead.org;
+	Sun, 18 Feb 2024 23:33:10 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 851F01C0002;
+	Sun, 18 Feb 2024 23:33:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1708297044;
+	t=1708299181;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 in-reply-to:in-reply-to:references:references;
-	bh=+pq9/TozG0Ax/9t8pkN6j57YfUyG6l7IZWL75JNMOW8=;
-	b=aRpnIvVpZuOrja+9vi61c+YPFQpEeNKl08VTLi1/D9Yp67pX0qu+9cLwGoH2StmVH7M7dw
-	PY3u/RGrT9J+SIRvSvlo7/SrMU+WjdrQE4GO4HCZdhobF40THyc2kvK5EvwavdKFXuHq4W
-	I9TkNLztch13vUOicb52krzpUuFvlggx7LJ8JLXmmK7E+DagQFja2qG9abHUJE5eQ5oNJ9
-	V+9WBz2U6tO6axVoVC/nBR/Nq2xHQCt+sNYYl/WK/VVZmAZcPhms4GaG0f5MD4aaASFF1e
-	HX7Toqqv+lX88OtgP7ycJtIH4r9CdOkdDQ/wN6AIbx8yt9MXcu9R9cZUwAyPfw==
-Date: Sun, 18 Feb 2024 23:57:19 +0100
+	bh=+no/GNABth1l0cxT+LAZBU7GSVGx2JdSvGLYECdt/oc=;
+	b=LJkToLRMsmXu/iAfv0cwBNopGZkv8ral52E1ilxtwB58ecLPgIjqm5j/33+l7oXcQR7/Iz
+	goi5Mh70PwQTsFFIpbB0qc/GnOkDkdKannSDtdAA9oHcIeOaqiUCDDnbVsGGU8xpIPuc0s
+	hzNPxyYVSYRJs3kA+MlDOe/8/WMKe8MEWSaOo/wl+moTNu7XGtTllPKtBmuQnhQpwehm/z
+	ac3kmjVCfExSRWWHXyE6MiJhBCbDCZ7m15E2vpKRfya5wXxCzpCBwdf77uwI6jPTSLqDnZ
+	uiWp7wve057vMuO4Q6GgmCUK2fMrAah12cndFsArogAz6xIEd/N4SKqLp9muBA==
+Date: Mon, 19 Feb 2024 00:32:59 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Jeremy Kerr <jk@codeconstruct.com.au>, Rob Herring <robh+dt@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
-	Andrew Jeffery <andrew@codeconstruct.com.au>,
-	=?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	Conor Culhane <conor.culhane@silvaco.com>,
-	Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>,
-	Pengutronix Kernel Team <kernel@pengutronix.de>,
-	Fabio Estevam <festevam@gmail.com>,
-	NXP Linux Team <linux-imx@nxp.com>,
-	Dinh Nguyen <dinguyen@kernel.org>,
-	Boris Brezillon <bbrezillon@kernel.org>,
-	Nicolas Pitre <npitre@baylibre.com>, linux-i3c@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org,
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Subject: Re: (subset) [PATCH 1/3] dt-bindings: i3c: drop "master" node name
- suffix
-Message-ID: <170829700336.822203.177392854952786485.b4-ty@bootlin.com>
-References: <20240117075618.81932-1-krzysztof.kozlowski@linaro.org>
+To: jk@codeconstruct.com.au, joel@jms.id.au, u.kleine-koenig@pengutronix.de,
+	gustavoars@kernel.org, krzysztof.kozlowski@linaro.org,
+	zenghuchen@google.com, matt@codeconstruct.com.au,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Dylan Hung <dylan_hung@aspeedtech.com>
+Cc: BMC-SW@aspeedtech.com
+Subject: Re: [PATCH] i3c: dw: Disable IBI IRQ depends on hot-join and SIR
+ enabling
+Message-ID: <170829917129.1161351.6293000766390759805.b4-ty@bootlin.com>
+References: <20240119054547.983693-1-dylan_hung@aspeedtech.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240117075618.81932-1-krzysztof.kozlowski@linaro.org>
+In-Reply-To: <20240119054547.983693-1-dylan_hung@aspeedtech.com>
 X-GND-Sasl: alexandre.belloni@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240218_145732_624937_CD42534E 
-X-CRM114-Status: UNSURE (   7.58  )
+X-CRM114-CacheID: sfid-20240218_153307_801063_DD4877AE 
+X-CRM114-Status: UNSURE (   5.58  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -87,20 +76,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, 17 Jan 2024 08:56:16 +0100, Krzysztof Kozlowski wrote:
-> Drop the requirement of "-master" suffix in node names because:
-> 1. "Master" word is discouraged and MIPI Alliance renamed it to
->    "Controller".
-> 2. Some devices can operate in Controller (Master) or Target mode, thus
->    the name is not accurate in such cases.
-> 3. Other buses, like I2C controllers, use simple "i2c".
+On Fri, 19 Jan 2024 13:45:47 +0800, Dylan Hung wrote:
+> Disable IBI IRQ signal and status only when hot-join and SIR enabling of
+> all target devices attached to the bus are disabled.
 > 
-> [...]
+> Fixes: e389b1d72a62 ("i3c: dw: Add support for in-band interrupts")
+> 
+> 
 
 Applied, thanks!
 
-[1/3] dt-bindings: i3c: drop "master" node name suffix
-      https://git.kernel.org/abelloni/c/c53611f2e27a
+[1/1] i3c: dw: Disable IBI IRQ depends on hot-join and SIR enabling
+      https://git.kernel.org/abelloni/c/10201396ef64
 
 Best regards,
 
