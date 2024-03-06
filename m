@@ -4,89 +4,131 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDD2CC54E55
-	for <linux-i3c@archiver.kernel.org>; Mon,  4 Mar 2024 19:40:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C22EC54E41
+	for <linux-i3c@archiver.kernel.org>; Wed,  6 Mar 2024 16:17:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Luc33fXLvI0gMd03C+UFSIhkjosZvQ+2AJMajaOmAyM=; b=ca9cKJK2DZlT30
-	M8i3OHWUJhIA4fU7/1lxmQtLCrFppGHAMLlRTvabXDXVONVfaP8C8unqjj9co1vZP7gVN3dGWlCg7
-	YwSEGecdYMX1xQj6hO3fSv9fUWg5eejOulBUlvnNrFIrMRrySL6eNAv3qbIOxhLXyhmsILVEiPtEV
-	K+18TvI2NAo0iChZo7eDxJFya48/DAgLcAUU0S71UBD5G3muR/pSuT0XE943brv4N2SZg/vFFelZ6
-	lM44jklQGfwg8GmnnPBcF1ENKdBeht8ZBdEZevhcQ5AAh3293QwO0c7D0KyIV0NNTuMH0km02mNK9
-	7rwDmEiJTMwF1QrDJcAw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kjJeO2JxJ++ozll0jhFEqKrYvoCFHcRHloRWRX6C1ts=; b=mv3HaCw0way2Vw
+	gbPZuQrOtbDi8IAC45IEWeQNlhcCCbcy9ZwmXaNgP2kNhu+yZ1p0D3UY2vyMPNdd6wu0lwO2gNigZ
+	hK+ebMgDi+pvng+MKJaMkwI5xzzpYZa85hYQWEoJl/9gjfz80Gu5fbB10DtZ/dEbjM/YyLOj6gbDQ
+	WLudP+vMjOcHxppQHbLB5t0WlWXJCciirf+4TloWsczkLKz9EHLnp2QiUeEgPUfS4KRbcccCPfIlb
+	8DFeyPuewIrR1a4DtdmALx9IigfaxYGp6sa5tRYyHY9HM7WCgw2bXuT5UUYJis59j+3AGunyFlOeV
+	+3xDkJt90BhU7DEJ/+XQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rhEAo-0000000ATGB-1HTE;
-	Mon, 04 Mar 2024 19:40:30 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1rhtxb-00000000xqZ-2sty;
+	Wed, 06 Mar 2024 16:17:39 +0000
+Received: from mail-sh0chn02on20727.outbound.protection.partner.outlook.cn ([2406:e500:4420:2::727] helo=CHN02-SH0-obe.outbound.protection.partner.outlook.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rfGKu-00000008h6U-1rGi
+	id 1rhtxY-00000000xpb-0gwF
 	for linux-i3c@lists.infradead.org;
-	Wed, 28 Feb 2024 09:34:53 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 41S5jrJv016379;
-	Wed, 28 Feb 2024 09:34:39 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	from:to:cc:subject:date:message-id:mime-version
-	:content-transfer-encoding; s=qcppdkim1; bh=mC1TlTHZ8OiOtXr093yL
-	IlnoHBATtQ3OA9nN4jcVblw=; b=g1i/ND/sZO/H2i6FS46xY1bww0ZvGUKstbVl
-	volNPgdvfaeQyRA3ztISsnloUuMfRScZXDL69ZYjyXByMau4LqE5MueVqjR0YDeh
-	L1KLhSMBsy33wsnMrr/Af1F3GJfe/mB3AmUQdgxkhqsnXSq1Ujt8S2Vp7aBnoJp6
-	jSwxWp53PumrX9HdbpQYuXMazuUWstIace17BZEqkMpFgBG2nYmaHa1XwebOOSni
-	sUU+w6yv4g5aCw4L7SXSF7HBYGyDyZ6FqwU0VzXy0OK96eFdA6yN7/aHV0Pwwi+p
-	uzy1/uGBXAcekIGmCo87G+C6a+UZEcB4QjOrLmtrHLFMTPQmqA==
-Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3whp65sepy-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 28 Feb 2024 09:34:39 +0000 (GMT)
-Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTP id 41S9YaQQ018749;
-	Wed, 28 Feb 2024 09:34:36 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 3wf9hkux7y-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 28 Feb 2024 09:34:36 +0000
-Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 41S9YaRR018744;
-	Wed, 28 Feb 2024 09:34:36 GMT
-Received: from hu-maiyas-hyd.qualcomm.com (hu-msavaliy-hyd.qualcomm.com [10.213.110.207])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 41S9YZFH018743
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 28 Feb 2024 09:34:36 +0000
-Received: by hu-maiyas-hyd.qualcomm.com (Postfix, from userid 429934)
-	id 9729524176; Wed, 28 Feb 2024 15:04:34 +0530 (+0530)
-From: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
-To: alexandre.belloni@bootlin.com, linux-i3c@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-Cc: andersson@kernel.org, vkoul@kernel.org, manivannan.sadhasivam@linaro.org,
-        Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
-Subject: [PATCH v1] i3c: master: Enable runtime PM for master controller
-Date: Wed, 28 Feb 2024 15:04:07 +0530
-Message-Id: <20240228093407.4038399-1-quic_msavaliy@quicinc.com>
-X-Mailer: git-send-email 2.25.1
+	Wed, 06 Mar 2024 16:17:37 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=iBrxq3991/7xKJidC0W0Tzxc7opVjWLEUa+chJW+tDNvl4xJG9Z5fUOKqzPfIaDmso3m8/qQnt6UMI87HZgfhO3wKyDcJKC4Bj0Ub+uu9ZsiV3BRIZw4aEIKHl+4PwzVtU3DhYq5znwIVluQlEdzoyuBmmXcMh4h1Y/bz15m0sjBX7azjLCfLBrStem1TfE+BghcZfmqsfQkMm+LIf5+jUQrSafeQqTV3PVrMp/dDgX2QQsoIuvwBpJs0hlK6pm5j+fhTj1G3ZPmfyWpl0+1oRBjgd5+8MzfnwoDhqEOJ/3Mfdd4JNKOcyUEjmCJwN+15esiHJHhzzjHc23ph8IfAw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=kfdv3AoU0LUfMpoQxN5RD2zAvb6XJFlnInq3BjyyWnE=;
+ b=e6tvEa6FI0CRneLwSkDZMDh0GF3Js9xnO6H7VF88Wf67m1YK3mSxHiQoRVNRk0DkaUTfJAT3kfJ0fXdjQWZH6qRZMgQWsxJkHbgmVLrWr9KwtFl8MJdjx1O4CR7Oq/eOCM0V0lV5RiwlmrTut2cuM4mvaIRz/lC+bFbIFO0iJQeckGMt4EzvPsqc5DmvJmp3MjN8jyIvwBmj+jyrSEUJ5FK2PB7VAd07oY+ghEObfFJqUd5vE7baneEldXPO6OSeHjwBFgj3bOQNKqNXHb71XyWepw/k50dxbjC+Gl7a9UALLmqu3BFVyUJ+4kzkfD3hZEdJfmHoaQsiS+1MGIj4xg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=starfivetech.com; dmarc=pass action=none
+ header.from=starfivetech.com; dkim=pass header.d=starfivetech.com; arc=none
+Received: from SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c311:20::14) by SH0PR01MB0571.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c311:8::20) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7316.53; Wed, 6 Mar
+ 2024 16:01:17 +0000
+Received: from SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
+ ([fe80::f6ed:1a18:3fbf:788]) by SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
+ ([fe80::f6ed:1a18:3fbf:788%6]) with mapi id 15.20.7316.050; Wed, 6 Mar 2024
+ 16:01:17 +0000
+From: Joshua Yeong <joshua.yeong@starfivetech.com>
+To: Frank Li <Frank.Li@nxp.com>
+CC: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
+	"conor.culhane@silvaco.com" <conor.culhane@silvaco.com>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+	"ilpo.jarvinen@linux.intel.com" <ilpo.jarvinen@linux.intel.com>,
+	"imx@lists.linux.dev" <imx@lists.linux.dev>, "jirislaby@kernel.org"
+	<jirislaby@kernel.org>, "joe@perches.com" <joe@perches.com>,
+	"krzysztof.kozlowski+dt@linaro.org" <krzysztof.kozlowski+dt@linaro.org>,
+	"krzysztof.kozlowski@linaro.org" <krzysztof.kozlowski@linaro.org>,
+	"linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
+	"miquel.raynal@bootlin.com" <miquel.raynal@bootlin.com>, "robh@kernel.org"
+	<robh@kernel.org>, "zbigniew.lukwinski@linux.intel.com"
+	<zbigniew.lukwinski@linux.intel.com>
+Subject: RE: [PATCH v7 5/8] i3c: target: add svc target controller support
+Thread-Topic: [PATCH v7 5/8] i3c: target: add svc target controller support
+Thread-Index: AQHaWIvaQw3YyHT02UKJrOMhyC7OnbErDKXQ
+Date: Wed, 6 Mar 2024 16:01:17 +0000
+Message-ID: <SH0PR01MB08410A70ABB956DF9DD4DE25F921A@SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn>
+References: <20240205233326.552576-1-Frank.Li@nxp.com>
+ <20240205233326.552576-6-Frank.Li@nxp.com>
+In-Reply-To: <20240205233326.552576-6-Frank.Li@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=starfivetech.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SH0PR01MB0841:EE_|SH0PR01MB0571:EE_
+x-ms-office365-filtering-correlation-id: 3006193a-a604-486a-d8dc-08dc3df6a822
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: w5jH6AvrA5s6Xg2PxzM3MmJC8M1b5nh1HIPp1c9sFBuPW0/pOWsNneBQAnSE5hzHqy/ESpEvZr9t2AAZPNmnbs0zZpqMneQeO6XcidFSP4V4W5U2uKH/Fu7mFbugNm+QXUCgE6LCXVw9BsEEd7W4Valn9HJ4WR/G08RwI8f3eICfJ1JxpuyCAAsA9W+p+D88CyHujkv30/zgQuUY1k8QuWWMttISbIwGe4eFxoR2Mg99aCY0KQjbP92gtjIWN+61/EVFYyZuMpOa5erUXJV8g9ZQ4FLA7Uiscxc5mNwhRG7UT2P3YRkQ/AYcvwhj4ohPJIN6HWCUyBBpCcXKKwMCucSSbIjyoahoSKSdN8L8seQni9I6cuweLf2Ih0QArcHeNXABYGfM36aXH5GPq5bVrdF9zR9nY8KXLRK8W+PMO/MkjSRcKDqP+uGWfv5khk0Us17sk+XPcYji5IFymXHyVCXEdV7YKZPSqGK4IRwCp6lxdcG01tYPRo/SnRzJdzIBJPQ+tF/F7YkCCHvD2Doi52KOTSfM2jMzy1z79x3mHGSKf3HesLRKiqHiEiVfwigE2QyvS25D0YClrp+ZxThILx9aRSvsqTOWkprvSNrp2z+xTaZKlFEo4NQ2MwGKVm2k
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn;PTR:;CAT:NONE;SFS:(13230031)(41320700004)(38070700009);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?axLzjIVgz7yHQx2rECoVNZrSJhyiSRw7B03ZCrJiNoS3AtPceWUAaR96n5Mn?=
+ =?us-ascii?Q?UuB3v4cmulEhrzXHQZbF7kd23w7XS5ZjCZ6lMLpC/d00Z6RjnFsEJxUmZejb?=
+ =?us-ascii?Q?8U65fw4B4bjtPQGTjEmERlCrpnjyBIWP1T16nWgJVHkg0cm4QZw4edDNAnKd?=
+ =?us-ascii?Q?EG3RhB+g4EV0Pz5GaW0m539eZRdsyK+2qZeQDZ1knpp6TMOA1z3LYA7AjzlN?=
+ =?us-ascii?Q?hElGNBNXhMWv6q1pSndtOmskSj3rP/4+Jq/hRu6rtjGD6X7xxPXmTVXB34R8?=
+ =?us-ascii?Q?M5RIsIX86PgoZsBuoCJCcU9YD56P3TBuA4tOlelYB9rXSocZGIHTBd4lk75E?=
+ =?us-ascii?Q?J+PqH/w4T8qyB/Z5n2ne+Tcoqr+vEPjOZnYg+XOPblxKkqUsm97rICJFFbKt?=
+ =?us-ascii?Q?94z1LxaxxYoaLw6dUixTK9B0TvTTIpcrMPq1CgcoUfNF1fpe3mkEspzMfW+e?=
+ =?us-ascii?Q?JF8uEHC3RkrI/K9t0s3qBTlgnaarofhfkbAqBhhAefj+7jkPnBYpfU/6q8fU?=
+ =?us-ascii?Q?JTtQyI1RawKTn0iWwj3vd6jX0UcbvwCjXM0E1XHll9fh+oriQ6qfT45VXe3c?=
+ =?us-ascii?Q?jXwpwcUkbhfpyHqe5Ly7qpO0s+XZasa5LDL/UhkkxUYsDUPeIuux48jx7oGT?=
+ =?us-ascii?Q?ZdpxlnEnWY+6GpeF5WQaLvp5fz5VNJV1uFGtXYLML9N1tS4wC5G1phebiRtQ?=
+ =?us-ascii?Q?5eLvZ6B5YCoj2/EXeFK77ydxPWUFhYKgtOO4IBQ60I0XczybfiSi/pbMqd9R?=
+ =?us-ascii?Q?ufofTTWWsJuT087/De+uxhjPusLUqirhwozNS4zIG0NADXQ8IiPB9VZX0NWM?=
+ =?us-ascii?Q?EIYkckxCUsIU1Wbxe/ompPOuxKQ6mLcvcFxbIePgY/6PatyieP2yd8CSbCEG?=
+ =?us-ascii?Q?UzinWM2d8n4WF0EUjtUF6C3uW4ukclOlsr2WeWIKYj1rO52ifmnVu2xOFegE?=
+ =?us-ascii?Q?YuXgoi+P/ldoPTo4LR8zluvQCm070D2Xyd/vBf872MHNBkgspJbvDsXJEOEz?=
+ =?us-ascii?Q?apsWRqYfIKs0JEYKAvOjxPXPBX+nC+P947wpDF/4v4guTK70rJV0s5EmlvHu?=
+ =?us-ascii?Q?0bniXhJrbMZHS096luab/lvNQmPoisjKq+2ZxITlKQT0tXN9WPQ1iZXi3rOr?=
+ =?us-ascii?Q?e4jWKmKYir6yf9a1Phcc5PaVBJcEtktUjlSSDnISOmVXbwBLwmvwk8uhK6UO?=
+ =?us-ascii?Q?5VolAqSCTF3EbWQ4xKQ+qm45gGUsNeqv3oH32S3X9oXFbVMuUEjrS0v/uVc6?=
+ =?us-ascii?Q?CHhztsxaCupD7NCKsnJ/7UlYoGCRuCWa7D/eIhPtoa+p9alJoLjE/fLH9XDz?=
+ =?us-ascii?Q?Mt77mHHaT4nn9+pXP/p3DL0VdNleNCdaYtfnHk74rZDbGMnagGOEjR3Byro3?=
+ =?us-ascii?Q?uartzmY6B+zftqcyYGLSbN7nTNERxKjllwD+aqZWfhz3wBi5Qox6csXKB6UW?=
+ =?us-ascii?Q?G6latGXNAB3gNIHTbUKnbV1vIQ1EfcIgGhHNwARx3YxKJW6cWsf7l2IiTWId?=
+ =?us-ascii?Q?4R20qBqdSm56WS6tO+jNG09HKM0MWstpR8MNJyQhJpt5HcVDguIu07OpMSu7?=
+ =?us-ascii?Q?GtnWn+UFFVBHGmzKJx5FakqvrdUsyJ0Gf3vP3IxB+rILzyjCUH/XqliCBrIf?=
+ =?us-ascii?Q?mg=3D=3D?=
 MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: JLMJw9ph6eLPqoAJlm04ymWsw6_J4r7L
-X-Proofpoint-ORIG-GUID: JLMJw9ph6eLPqoAJlm04ymWsw6_J4r7L
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-02-28_04,2024-02-27_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0 spamscore=0
- impostorscore=0 priorityscore=1501 suspectscore=0 bulkscore=0 mlxscore=0
- adultscore=0 lowpriorityscore=0 mlxlogscore=999 clxscore=1011
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2402120000 definitions=main-2402280074
+X-OriginatorOrg: starfivetech.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3006193a-a604-486a-d8dc-08dc3df6a822
+X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Mar 2024 16:01:17.1853
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 06fe3fa3-1221-43d3-861b-5a4ee687a85c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: jaQX3N6ZatN2jQjb7BATAIVcmPLNhPCPV1hVfIPNQ/MwhPiH0PioyKCZ8ZqZuQ2FbjHwrt7y6DBsVG+jjdYDVFe3nCSucZ54S/i8BFYQaQQ=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SH0PR01MB0571
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240228_013448_644280_6949699F 
-X-CRM114-Status: GOOD (  14.52  )
-X-Mailman-Approved-At: Mon, 04 Mar 2024 11:40:27 -0800
+X-CRM114-CacheID: sfid-20240306_081736_220251_A0DAE1D9 
+X-CRM114-Status: UNSURE (   9.19  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,67 +145,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Enable runtime PM for i3c master node during master registration time.
+Hi Frank,
 
-Sometimes i3c client device driver may want to control the PM of the
-parent (master) to perform the transactions and save the power in an
-efficient way by controlling the session. Hence device can call PM
-APIs by passing the parent node.
+> -----Original Message-----
+> From: linux-i3c <linux-i3c-bounces@lists.infradead.org> On Behalf Of Frank Li
+> Sent: Tuesday, February 6, 2024 7:33 AM
+> To: frank.li@nxp.com
+> Cc: alexandre.belloni@bootlin.com; conor.culhane@silvaco.com;
+> devicetree@vger.kernel.org; gregkh@linuxfoundation.org;
+> ilpo.jarvinen@linux.intel.com; imx@lists.linux.dev; jirislaby@kernel.org;
+> joe@perches.com; krzysztof.kozlowski+dt@linaro.org;
+> krzysztof.kozlowski@linaro.org; linux-i3c@lists.infradead.org; linux-
+> kernel@vger.kernel.org; linux-serial@vger.kernel.org;
+> miquel.raynal@bootlin.com; robh@kernel.org;
+> zbigniew.lukwinski@linux.intel.com
+> Subject: [PATCH v7 5/8] i3c: target: add svc target controller support
+> 
+> Add Silvaco I3C target controller support
+> 
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> ---
+> 
+> Notes:
+>     Change from v2 to v3
+>     - fix build warning
+> 
+>  drivers/i3c/master/Makefile         |   2 +-
+>  drivers/i3c/master/svc-i3c-main.c   |  35 +-
+>  drivers/i3c/master/svc-i3c-target.c | 776
 
-Here, I3C target device when calls pm_runtime_get_sync(dev->parent)
-couldn't invoke master drivers runtime PM callback registered by
-the master driver because parent's PM status was disabled in the
-Master node.
+I think putting target mode files under "master" might not make sense. We might have to
+consider that we may have a "secondary master" mode. Some other ways of splitting
+or handling of target mode is needed here.
 
-Also call pm_runtime_no_callbacks() and pm_suspend_ignore_children()
-for the master node to not have any callback addition and ignore the
-children to have runtime PM work just locally in the driver. This
-should be generic and common change for all i3c devices and should
-not have any other impact.
+...
 
-With these changes, I3C client device works and able to invoke
-master driver registered runtime PM callbacks.
+> +
+> +#define I3C_SCONFIG	0x4
+> +#define   I3C_SCONFIG_SLVENA_MASK	BIT(0)
+> +#define	  I3C_SCONFIG_OFFLINE_MASK	BIT(9)
+> +#define   I3C_SCONFIG_SADDR_MASK	GENMASK(31, 25)
+> +
+> +#define I3C_SSTATUS	0x8
+> +#define	  I3C_SSTATUS_STNOTSTOP_MASK	BIT(0)
+> +#define	  I3C_SSTATUS_STOP_MASK		BIT(10)
+> +#define	  I3C_SSTATUS_RX_PEND_MASK	BIT(11)
+> +#define   I3C_SSTATUS_TXNOTFULL_MASK	BIT(12)
+> +#define	  I3C_SSTATUS_DACHG_MASK	BIT(13)
+> +#define	  I3C_SSTATUS_EVDET_MASK	GENMASK(21, 20)
+> +#define	  I3C_SSTATUS_EVDET_ACKED	0x3
+> +#define	  I3C_SSTATUS_IBIDIS_MASK	BIT(24)
+> +#define	  I3C_SSTATUS_HJDIS_MASK	BIT(27)
+> +
 
-Signed-off-by: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
----
- drivers/i3c/master.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+There is couple of space formatting here that requires to be fixed.
 
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 3afa530c5e32..a3dc88974f92 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -13,6 +13,7 @@
- #include <linux/kernel.h>
- #include <linux/list.h>
- #include <linux/of.h>
-+#include <linux/pm_runtime.h>
- #include <linux/slab.h>
- #include <linux/spinlock.h>
- #include <linux/workqueue.h>
-@@ -2812,6 +2813,10 @@ int i3c_master_register(struct i3c_master_controller *master,
- 
- 	i3c_bus_notify(i3cbus, I3C_NOTIFY_BUS_ADD);
- 
-+	pm_runtime_no_callbacks(&master->dev);
-+	pm_suspend_ignore_children(&master->dev, true);
-+	pm_runtime_enable(&master->dev);
-+
- 	/*
- 	 * We're done initializing the bus and the controller, we can now
- 	 * register I3C devices discovered during the initial DAA.
-@@ -2849,6 +2854,7 @@ void i3c_master_unregister(struct i3c_master_controller *master)
- 	i3c_master_i2c_adapter_cleanup(master);
- 	i3c_master_unregister_i3c_devs(master);
- 	i3c_master_bus_cleanup(master);
-+	pm_runtime_disable(&master->dev);
- 	device_unregister(&master->dev);
- }
- EXPORT_SYMBOL_GPL(i3c_master_unregister);
--- 
-The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-a Linux Foundation Collaborative Project
-
+Cheers,
+Joshua
 
 -- 
 linux-i3c mailing list
