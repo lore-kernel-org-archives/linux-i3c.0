@@ -4,85 +4,120 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A7F7C54E49
-	for <linux-i3c@archiver.kernel.org>; Sun, 10 Mar 2024 17:30:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0A33C54E58
+	for <linux-i3c@archiver.kernel.org>; Tue, 12 Mar 2024 11:31:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OjTUubfx4kNjgbbzxntqOnyY8aW1nXuw64N5i+aMhAY=; b=qMF3hAsoAoW4Ey
-	Y8W/vojzZQYDgbDgKDlIctPtxL4ZSZnZu++BVjKdBWpya+mRzMboFAQtrAbaQYF+dlgJCCzjwa9O2
-	BcekPraywxlqmFvNR+bLhsibndmAaY8FXMPkiFMUzYuxuOa+d2FU+ok4RE5U7poGLayPoBERu8sdg
-	5qmBP+GHureq5WRk47gbrQWk64uGhyTw8i+NovkVy6FrM1Ymc3m/8y031tDJ2QY7bQpOwiWDH3oGA
-	8fGAbfpHpvQCSr7zvNuTX8ggkqJyXiqIuwVf65NBB1MUv0gp5cLmcH95bNqMCRQUukSRYP5/GRiz2
-	xCJ/KGNooWPGh8v8A4DQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/IYpJzCcDECTjlc7fzVUTqrTD7ReLbzMD20cjUx7LWU=; b=LHL1Y3mhTdqu2t
+	9DQQtsqGK2p7Mm4qVoXcewb7FkktDOldT1dgFUPbHvDPHWlQd3Q4ENvxMbXCvJYCirma4TJKNK7QD
+	HLMj9CJGA5h6Ep48cnVjBI7PgZpAwcC9YF1G/AG8N87CdxjN6tsrnJgeDHXTHFJQ9nrbYirzDA8ES
+	4SQ91dsAfH1NvLZpCh/QYxpaDQi4/ZHmzLR/RlPVnuyJWq9QcTndFezw5IjxS512xOIlBPbEKO9jl
+	tczqkCztVtepmG+NKOf1oay75nuvOoJKDrIfa/ftdDHR62Udarjk19T3U9L9LtuchBlx/1K2qLCIm
+	GW27gyqT0d/NOuEDlPMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rjN0A-0000000GFvI-2lkg;
-	Sun, 10 Mar 2024 17:30:22 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1rk0MB-00000005XVA-0AVK;
+	Tue, 12 Mar 2024 11:31:43 +0000
+Received: from mail-japaneastazlp170110002.outbound.protection.outlook.com ([2a01:111:f403:c405::2] helo=TY3P286CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rjN07-0000000GFuM-3YDV
+	id 1rk0M6-00000005XTi-1d3x
 	for linux-i3c@lists.infradead.org;
-	Sun, 10 Mar 2024 17:30:21 +0000
-Received: from pps.filterd (m0279872.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.17.1.24/8.17.1.24) with ESMTP id 42AHAmh5020105;
-	Sun, 10 Mar 2024 17:30:01 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	message-id:date:mime-version:subject:to:cc:references:from
-	:in-reply-to:content-type:content-transfer-encoding; s=
-	qcppdkim1; bh=9bQuV0086rWA9FniicQT1Mk0pnODcZNniX4vLVWE8cE=; b=lv
-	6dAmwQRJJ+hvNZv4J9EYNXwgXG0M/yGKTK5CNPcr2hO7UvySkvihwrGvZu2nz54Z
-	yP2woP8sH9Z5iyPMT+sefm/O/2EgNfnUJ69xRX9xqUBP1mvCwTDiJNtF4fdas8qC
-	T130vGG/1FUsHP0Scy/laTxcaH8J/v5gmk+/ozGqTNqGz3pkHa9Ke07Azi0z+FpW
-	hm4UWtuWiyMPen0W2JCBMGpVa+lZrwr6yasbXVl3k5o2lly6fCyt1wAbrO0lcJm6
-	gaYwldLN+AO5OAxWizfzQyefU6Y+kEHCiKjKUlo7y6Z1Q9c7/0/jQY4WJVkVYYsf
-	4L5Mw2gVQ+T/cj1NE2LQ==
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 3wrg5b20sq-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sun, 10 Mar 2024 17:30:01 +0000 (GMT)
-Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA02.qualcomm.com (8.17.1.5/8.17.1.5) with ESMTPS id 42AHU0Eb015354
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sun, 10 Mar 2024 17:30:00 GMT
-Received: from [10.216.43.112] (10.80.80.8) by nasanex01c.na.qualcomm.com
- (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1118.40; Sun, 10 Mar
- 2024 10:29:58 -0700
-Message-ID: <b61f5f4a-7931-411d-9519-bbff1b7fd6f9@quicinc.com>
-Date: Sun, 10 Mar 2024 22:59:55 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v1] i3c: master: Enable runtime PM for master controller
+	Tue, 12 Mar 2024 11:31:41 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=fob9l1zlfZlufzfs1L6jQtt2xm3CuSlcW49monqXu5g8xoePBSyVDcI1zLjIsStYhsX81Jw7IU9gGkit1KYJ/4HQiWpmI3lmIuESPdomgDZ9L+gp6sjTgO2Lf11JcKW19IzqOJCfTavnyYSTJO/o59G6uWzDI4Sd3Lsk1aqXVZisJc03iZCBDtaWq88f0vV8MSKH4ZgXYIuhTbMofVqTetK7TQSjCCekI4soRow159n3ltNcVy84bQxpLpe58V/Sv7XU4koK1E+fFY6rBmeMbYZeH/3YDdP+ZagMeD6ycOIcIvAhvgQBTp6llIvkiKz8HCWgN23hQBKCmw78EUU3dg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=V7sfS+PltoFfw1Hlm7fpVJp5THRqQerDaT9pfQT443E=;
+ b=itWHIapKtNxtMguYHlGiReK6Xk17cho2h88zmeiwJ0otm8oRHzI+d1o7wSvaLp7k0l3a4534lzsAvZoJSifuSlIiQ82fyH1G15RYofO9kjSgUHsFQ8cxHnnagjJYhaZcmQclxD3YO0M8RwHf+zr7Bg5S7xrDFdeih94hxQ3eHWL5DLg7RrmkItzZVVSu23f+nRZrUjE/sHnb1sUxwVDkKjPkrFI+Nk7HxZGoW0IpXtGxQxVBc9EnAPgQ+9t/Q20abvL1B3jBJSYWkBSAwYzTMQuQILUkqU3bFGGGJWg2J6YpV3GiEvsVMZKU87Wcgg204wEUSB7onbWoBnFEeUlHlw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
+ dkim=pass header.d=renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=renesas.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=V7sfS+PltoFfw1Hlm7fpVJp5THRqQerDaT9pfQT443E=;
+ b=nAvhck7yK/cKGRryownyTkxchjsQcTvbucByp1sXMdhBHAfC9cBniANPAoTzXfFU2Y07ZfEBocAJ8Efb3wKEHgxhKudz2vB8xmcD3/ftbr66mmXktAnNTtrd0d/xqOo6j3mO2MfDnDCsBoclHtMJGZP8nCvBkGW5yuhebsdWl30=
+Received: from OSAPR01MB4323.jpnprd01.prod.outlook.com (2603:1096:604:37::10)
+ by TYWPR01MB10885.jpnprd01.prod.outlook.com (2603:1096:400:2a9::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7362.36; Tue, 12 Mar
+ 2024 11:31:31 +0000
+Received: from OSAPR01MB4323.jpnprd01.prod.outlook.com
+ ([fe80::6c55:4f31:d3a4:52ca]) by OSAPR01MB4323.jpnprd01.prod.outlook.com
+ ([fe80::6c55:4f31:d3a4:52ca%7]) with mapi id 15.20.7362.035; Tue, 12 Mar 2024
+ 11:30:30 +0000
+From: Steven Niu <steven.niu.uj@renesas.com>
+To: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>
+CC: "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>, Steven
+ Niu <steven.niu.uj@renesas.com>
+Subject: How to add I3C device node for devices with random PID[31:0]
+Thread-Topic: How to add I3C device node for devices with random PID[31:0]
+Thread-Index: Adp0X5vKTDj+4c4eSROo+B66I1g8Ag==
+Date: Tue, 12 Mar 2024 11:30:30 +0000
+Message-ID: <OSAPR01MB4323733A7B1678DE5B8C3027BA2B2@OSAPR01MB4323.jpnprd01.prod.outlook.com>
+Accept-Language: en-US
 Content-Language: en-US
-To: <alexandre.belloni@bootlin.com>, <linux-i3c@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>
-CC: <andersson@kernel.org>, <vkoul@kernel.org>,
-        <manivannan.sadhasivam@linaro.org>
-References: <20240228093407.4038399-1-quic_msavaliy@quicinc.com>
-From: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
-In-Reply-To: <20240228093407.4038399-1-quic_msavaliy@quicinc.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01c.na.qualcomm.com (10.45.79.139)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: OiANyFU4EYU4vSyFG7NRVzCPdKteTxgz
-X-Proofpoint-ORIG-GUID: OiANyFU4EYU4vSyFG7NRVzCPdKteTxgz
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-03-10_10,2024-03-06_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0 clxscore=1015
- mlxscore=0 phishscore=0 lowpriorityscore=0 impostorscore=0 suspectscore=0
- malwarescore=0 spamscore=0 mlxlogscore=999 bulkscore=0 priorityscore=1501
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.19.0-2402120000
- definitions=main-2403100141
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=renesas.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: OSAPR01MB4323:EE_|TYWPR01MB10885:EE_
+x-ms-office365-filtering-correlation-id: 4678d3d1-746b-4026-2962-08dc4287d2d2
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 1zMmdgCtDPo/PUyuJ124pCqa33qvmN6hFJ9l2W7jijAJ2R4RUO1G8lYMXGArsyTnp16nMQZtUgTKC+VCV/brmfGzp01amZVbawUBrOHp9xd++4dRTS9DaeWnaRHZoW2gsyOB3SVofM1RQa1MozXS87/PLZsk8bySwpy0sq+Ai71XOEr4K6RjzrPPf3cugNHb3+8LWrUWx3ns1tfP7TTtfQfZneKq3xBW4K8hLIfWoIuO0oyLpMzgE97xqv2nic2nYQqCRCF0TsRT5J74otWz73uX9bQhPGx07DaHeLRTN7jKIMSup6Y3NJkILC3WIzfl8jX8eSn7cHS3OjIqqhmsj/ofYQN4S7XZXPpcyyHrZ/a2AHmuenCznJAvme0OPnvsjcP6IuiiugWz1FogZub8EaWRAGRjTMz6haYo9MYQfhJP44cbjfOgSOHSUQTKN71sB0RRYobAfGQ42D7kfxSxWh9qqT1+ru5NevMAlC1fY/4RUL6zVRXdRWFssT8VRnZjJ9Ixf7eAkM9q8t7fnRgl1TsDVeA86ERjJBUiqANzxAjG10yC4bVf1kM6T4PB4w3cCYFS+nO7iEd6FSrlPk80ovhWENzhJGh+F2wM3fp46Ve+q6vk5cZaCZI/RS/p05GoTLWRrEwyEL4/Z7pzLycxFyKuqhKgII6CX2s6DMz8XVQvbzSHkzTPkFQjpnmEt5ggm88bJ6/kg6NZkwri37mC0A44zU3b++Hvxm4C/Iuvo2M=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:OSAPR01MB4323.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(1800799015)(376005)(38070700009);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?yVlovkaKC2Wrkb5hIpG1UtK2zzO0h3NWLINVAkdbv9HrL2FKh6oUKPQW6tUZ?=
+ =?us-ascii?Q?5DQmge+CWFh38Es1ZYzK9C/i0e6fuKO4EV5ewggZczzyQ8Tp4ntvcO8bqZUd?=
+ =?us-ascii?Q?5qQlnUgU0gHxKrlr6+M0N/lYnEa7FAFTGIyzjSnbKmdfxXL0VpDKssrf+zGk?=
+ =?us-ascii?Q?pEvTT6Qv46ibJ988Jndpg2+3FKIBVLi/f0BmaWzVZJu7HnC7ZEvL80yhJbD/?=
+ =?us-ascii?Q?ibH8y3bobenWRXHdzb9ogk5WxAb1LAk0+X4uR29Ql0QR/3CR3Z+48xWMRVnn?=
+ =?us-ascii?Q?5arh9Lv/N/hRQ1ubY2ZrV9M7iC88a/YCYGCwlZ6QQAmSTgsuNUXGaQPcgjtB?=
+ =?us-ascii?Q?QCG9i4/e0WCsYR3W3FI1r7QOCqBR7BvLdvbvbo28AdFNlqV3tlvo3zbFXkwt?=
+ =?us-ascii?Q?0yVNFqV7DNQpu1I2XBpaNX0IF0HKWUBoPYLnrvo4d7YYBVT+d2OKMdz2bjW/?=
+ =?us-ascii?Q?sLxk4dawPH3TbE5KQD+76cqAzb8mZeAmDn2JmDCNTDEkE2H1eKQNDXbsKENk?=
+ =?us-ascii?Q?8J5ayeESOSPaQK8uidJjIvjREa3AFAKOcpr4v9uEezUMJST6TMOmF3zPAkz9?=
+ =?us-ascii?Q?ZCit2DYl6Fq1SypttUjdMUktT+V8GUopQa2dWKoGEQRKt4loLHX15tq6GpoS?=
+ =?us-ascii?Q?Kt3945HrcdTqKutTctoTuLUi/MNyNH9djN7gFbZmhxivgHnK4LbD6moXugtQ?=
+ =?us-ascii?Q?8p2qp05Xh5YeLVjdyfn7AWpxaTKe1xi3unNhK5sT4nqQDQRl+K3IA7RQdns8?=
+ =?us-ascii?Q?ioxvKBqPSPmRcmZYiujSZ/dS70M0DXCBEK1qYKQwuxMD2Bza3LGkM4+jmKi6?=
+ =?us-ascii?Q?E0tJAHuyz9hy2HVonh+NVaJDU+O7o1NrIr1nA80YzWwv8gwI3oVy5SdU9d/q?=
+ =?us-ascii?Q?MUaVSyJKNBlwXAOo9hUkIAL93jZQF8BR7rb3CD/6P8Ach0IMUiD4frkBkjN7?=
+ =?us-ascii?Q?9XC7R8swfY08UPhD3w4czywb7e61o5hypjqtSsFCSfOq0JKymrD4hVhFCJeM?=
+ =?us-ascii?Q?EeJKbivVUMBrI8uJbLtsoiCxJRg4rbgeGS9mpslysMy2z5x7yd1Dh8uffnDa?=
+ =?us-ascii?Q?oaZ6AwRAocKZmOCQsMMhJdXTpSJXf3dT3dHoj32S4fw770yDN+702knzZ+YV?=
+ =?us-ascii?Q?tiMRbBnCY8pAMdpWENJceiU2MLAk1q9KGAxFRt+w5JmwxlIkLlTzw1mwExbO?=
+ =?us-ascii?Q?QDxzB5nGHwiYsyjlIT+LCDJcyEHXVw1cUQs1uCDv9jyZLwUzEzPPFtIzvzyC?=
+ =?us-ascii?Q?HJwmsJYC4oFscoLUB1QlzpRVOV5hdVz6rh5CQ4TN5f9PtTvt3sh0iuT8RXwO?=
+ =?us-ascii?Q?B6EFf1Vy5uiwma5t1LnSeA2zUGIlQNoZZsyCx4O10we1mU1M0A3krkNfz3p6?=
+ =?us-ascii?Q?d6KJlX0r2H8XkI777wWt4IrtoLL1SNwDsU2Z66XudoPq2bOyrwJxhPknh666?=
+ =?us-ascii?Q?V0IdeZ9cuJnf9CQkZwGyThH4dtk501IgUi0hmoDiwkiIrWKlZfgWQor/jUZE?=
+ =?us-ascii?Q?VcDW/akEIz2rCF/b84i2McZMecW4cgb7GvujVJ/ry0X/wuMzCjjGZI7OitqP?=
+ =?us-ascii?Q?VMdpKcsvFiNCxEJymhhAc6yGiLrDgDsN4cVyb3e1?=
+MIME-Version: 1.0
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: OSAPR01MB4323.jpnprd01.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4678d3d1-746b-4026-2962-08dc4287d2d2
+X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Mar 2024 11:30:30.4601
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: U+McSfCwQWvMjhPYaB5Gz6qSIAiK5C/THXG3dEp17tYoP3CMYH5HeJoh9p5nA8b5fVj3UzkQwFcSZUCiSdsiUHSH9Uhbc3aBGB25tEDxFno=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYWPR01MB10885
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240310_103020_076440_80B0F583 
-X-CRM114-Status: GOOD (  19.38  )
+X-CRM114-CacheID: sfid-20240312_043138_714815_D2A2700A 
+X-CRM114-Status: UNSURE (   5.25  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,72 +129,35 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-A Gentle reminder ! As i was not part of the linux-i3c group before 
-raising this gerrit, might not went into right folder.
+Hi, Alexandre,
 
-On 2/28/2024 3:04 PM, Mukesh Kumar Savaliya wrote:
-> Enable runtime PM for i3c master node during master registration time.
-> 
-> Sometimes i3c client device driver may want to control the PM of the
-> parent (master) to perform the transactions and save the power in an
-> efficient way by controlling the session. Hence device can call PM
-> APIs by passing the parent node.
-> 
-> Here, I3C target device when calls pm_runtime_get_sync(dev->parent)
-> couldn't invoke master drivers runtime PM callback registered by
-> the master driver because parent's PM status was disabled in the
-> Master node.
-> 
-> Also call pm_runtime_no_callbacks() and pm_suspend_ignore_children()
-> for the master node to not have any callback addition and ignore the
-> children to have runtime PM work just locally in the driver. This
-> should be generic and common change for all i3c devices and should
-> not have any other impact.
-> 
-> With these changes, I3C client device works and able to invoke
-> master driver registered runtime PM callbacks.
-> 
-> Signed-off-by: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
-> ---
->   drivers/i3c/master.c | 6 ++++++
->   1 file changed, 6 insertions(+)
-> 
-> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index 3afa530c5e32..a3dc88974f92 100644
-> --- a/drivers/i3c/master.c
-> +++ b/drivers/i3c/master.c
-> @@ -13,6 +13,7 @@
->   #include <linux/kernel.h>
->   #include <linux/list.h>
->   #include <linux/of.h>
-> +#include <linux/pm_runtime.h>
->   #include <linux/slab.h>
->   #include <linux/spinlock.h>
->   #include <linux/workqueue.h>
-> @@ -2812,6 +2813,10 @@ int i3c_master_register(struct i3c_master_controller *master,
->   
->   	i3c_bus_notify(i3cbus, I3C_NOTIFY_BUS_ADD);
->   
-> +	pm_runtime_no_callbacks(&master->dev);
-> +	pm_suspend_ignore_children(&master->dev, true);
-> +	pm_runtime_enable(&master->dev);
-> +
->   	/*
->   	 * We're done initializing the bus and the controller, we can now
->   	 * register I3C devices discovered during the initial DAA.
-> @@ -2849,6 +2854,7 @@ void i3c_master_unregister(struct i3c_master_controller *master)
->   	i3c_master_i2c_adapter_cleanup(master);
->   	i3c_master_unregister_i3c_devs(master);
->   	i3c_master_bus_cleanup(master);
-> +	pm_runtime_disable(&master->dev);
->   	device_unregister(&master->dev);
->   }
->   EXPORT_SYMBOL_GPL(i3c_master_unregister);
+There is a class if I3C device with random value in PID[31:0] and these devices
+are identified with PID[32]=1.
+
+In function of_i3c_master_add_i3c_boardinfo(), the node for i3c device with
+random PID is denied to be added to baordinfo with code below:
+
+>  if ((boardinfo->pid & GENMASK_ULL(63, 48)) ||
+>         I3C_PID_RND_LOWER_32BITS(boardinfo->pid))
+>  return -EINVAL;
+
+According i3c.yaml, an I3C device is allowed to attach extra resources by
+adding node in devicetree. I have some questions:
+1. Why the I3C devices with random PID are excluded here?
+2. How to attach extra resources to such kind of devices?
+3. Could 'I3C_PID_RND_LOWER_32BITS(boardinfo->pid)' be removed to allow adding
+   the node of i3c devices with random PID to i3c boardinfo list?
+
+Thank you.
+
+
+Regards,
+Steven
 
 -- 
 linux-i3c mailing list
