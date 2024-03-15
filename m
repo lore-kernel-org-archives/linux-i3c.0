@@ -4,120 +4,121 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0A33C54E58
-	for <linux-i3c@archiver.kernel.org>; Tue, 12 Mar 2024 11:31:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A553C54E66
+	for <linux-i3c@archiver.kernel.org>; Fri, 15 Mar 2024 08:06:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/IYpJzCcDECTjlc7fzVUTqrTD7ReLbzMD20cjUx7LWU=; b=LHL1Y3mhTdqu2t
-	9DQQtsqGK2p7Mm4qVoXcewb7FkktDOldT1dgFUPbHvDPHWlQd3Q4ENvxMbXCvJYCirma4TJKNK7QD
-	HLMj9CJGA5h6Ep48cnVjBI7PgZpAwcC9YF1G/AG8N87CdxjN6tsrnJgeDHXTHFJQ9nrbYirzDA8ES
-	4SQ91dsAfH1NvLZpCh/QYxpaDQi4/ZHmzLR/RlPVnuyJWq9QcTndFezw5IjxS512xOIlBPbEKO9jl
-	tczqkCztVtepmG+NKOf1oay75nuvOoJKDrIfa/ftdDHR62Udarjk19T3U9L9LtuchBlx/1K2qLCIm
-	GW27gyqT0d/NOuEDlPMw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AVAvaXJjO+c+J5D8eovOySVleEAsK7pIJBvJtc+fbF8=; b=T8gp/ZLtucLyIv
+	xUUhYAU8PqKMZjUXR0AeT8PsdPR60CyinvuYgQ411k13P9RvrCAH8DKXvECSnsThWb6I/bqJFjvAI
+	5adBWGE3qJgzjeKM3ZtSqPvXp90auFNu7f2IaFo5cgA04ILPz37udpUhPAN/lbW81PxDiQ8crjgPL
+	cJds045BvZBo7PjfZPWwvhHpp69uOSqUDjvuwD2ktg2VSns9cfF6J0IHHQA3dTmDxD4KMKAnjvUk0
+	e/giHc6+ohQau/W9io5cjpLClYRLKvkl6aUm0XsbOKM8foTYJvL23HXTs1wslmZWWkSoAebJNQPH4
+	UarhQOgmnWxn2P9R1JVg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rk0MB-00000005XVA-0AVK;
-	Tue, 12 Mar 2024 11:31:43 +0000
-Received: from mail-japaneastazlp170110002.outbound.protection.outlook.com ([2a01:111:f403:c405::2] helo=TY3P286CU002.outbound.protection.outlook.com)
+	id 1rl2a9-0000000H4gl-17Jq;
+	Fri, 15 Mar 2024 08:06:25 +0000
+Received: from mail-bjschn02on20704.outbound.protection.partner.outlook.cn ([2406:e500:4440:2::704] helo=CHN02-BJS-obe.outbound.protection.partner.outlook.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rk0M6-00000005XTi-1d3x
+	id 1rl2a5-0000000H4dW-14vS
 	for linux-i3c@lists.infradead.org;
-	Tue, 12 Mar 2024 11:31:41 +0000
+	Fri, 15 Mar 2024 08:06:23 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=fob9l1zlfZlufzfs1L6jQtt2xm3CuSlcW49monqXu5g8xoePBSyVDcI1zLjIsStYhsX81Jw7IU9gGkit1KYJ/4HQiWpmI3lmIuESPdomgDZ9L+gp6sjTgO2Lf11JcKW19IzqOJCfTavnyYSTJO/o59G6uWzDI4Sd3Lsk1aqXVZisJc03iZCBDtaWq88f0vV8MSKH4ZgXYIuhTbMofVqTetK7TQSjCCekI4soRow159n3ltNcVy84bQxpLpe58V/Sv7XU4koK1E+fFY6rBmeMbYZeH/3YDdP+ZagMeD6ycOIcIvAhvgQBTp6llIvkiKz8HCWgN23hQBKCmw78EUU3dg==
+ b=VAbStCcFrFMZyP+SrMWW23JGbc3yWTJOQ0DVAVfPJi2SVEqzESqvubODuddKAX+wGEdg6uph39hL/rUKhjY6wviwYxwWSn63TMjXJQ55gVSnkTRErCIMrysi75QIT9rOFpnuVkInWcGyGCzZRUiif1k1MryBlD2p1bdu++nZVBugtIL0xVdzHg+8seFdoqzKtHL3RSxViA4+KHmADuW8a6alZajzY4JqSi2fH0pRPGoUjlv8i9RfqfEzNnT+FwW9J4oc0dgMcc67it8CJwPreQittE59ELWJaWFliYQSILROaTkNLwoHGWER8SAgKFRqJMlp5mcRacq7pRUkvzjseA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=V7sfS+PltoFfw1Hlm7fpVJp5THRqQerDaT9pfQT443E=;
- b=itWHIapKtNxtMguYHlGiReK6Xk17cho2h88zmeiwJ0otm8oRHzI+d1o7wSvaLp7k0l3a4534lzsAvZoJSifuSlIiQ82fyH1G15RYofO9kjSgUHsFQ8cxHnnagjJYhaZcmQclxD3YO0M8RwHf+zr7Bg5S7xrDFdeih94hxQ3eHWL5DLg7RrmkItzZVVSu23f+nRZrUjE/sHnb1sUxwVDkKjPkrFI+Nk7HxZGoW0IpXtGxQxVBc9EnAPgQ+9t/Q20abvL1B3jBJSYWkBSAwYzTMQuQILUkqU3bFGGGJWg2J6YpV3GiEvsVMZKU87Wcgg204wEUSB7onbWoBnFEeUlHlw==
+ bh=muRXkRjsYyKJcNcIW7cgyLFD22BgLYqO3kQFrknL8/E=;
+ b=jqOzUmo4d8SMArDyvHauPrguATG0gF2omsg0Xw61r92OBJBu3cu35E7PyMPZtvi8g8hek3YdPrgG82+BrPW7qxIc9C49twtBt0zh3YdZLSLckM+Cr5+UiP8XxFY7zyexMK8/V55AfL82mgpi6jM3tzVO1ZKZReQRtuXAvsDYo46mYZQx4XmZvjsh/3ND98Jn8PVSd96wowGwZY3CocXBMt7rpwfka7kysDk5vqDQ2MOZ6yxV5dgCxJAUbEPwUawz8xFuqTU8kdku7Mus+fAy7I65ntY9KxpK8Ksws3XALWmSieO3tBXXH9cspphlhApSw/n2TF8lVGzJZ9XQ2mOBnA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
- dkim=pass header.d=renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=V7sfS+PltoFfw1Hlm7fpVJp5THRqQerDaT9pfQT443E=;
- b=nAvhck7yK/cKGRryownyTkxchjsQcTvbucByp1sXMdhBHAfC9cBniANPAoTzXfFU2Y07ZfEBocAJ8Efb3wKEHgxhKudz2vB8xmcD3/ftbr66mmXktAnNTtrd0d/xqOo6j3mO2MfDnDCsBoclHtMJGZP8nCvBkGW5yuhebsdWl30=
-Received: from OSAPR01MB4323.jpnprd01.prod.outlook.com (2603:1096:604:37::10)
- by TYWPR01MB10885.jpnprd01.prod.outlook.com (2603:1096:400:2a9::14) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7362.36; Tue, 12 Mar
- 2024 11:31:31 +0000
-Received: from OSAPR01MB4323.jpnprd01.prod.outlook.com
- ([fe80::6c55:4f31:d3a4:52ca]) by OSAPR01MB4323.jpnprd01.prod.outlook.com
- ([fe80::6c55:4f31:d3a4:52ca%7]) with mapi id 15.20.7362.035; Tue, 12 Mar 2024
- 11:30:30 +0000
-From: Steven Niu <steven.niu.uj@renesas.com>
-To: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>
-CC: "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>, Steven
- Niu <steven.niu.uj@renesas.com>
-Subject: How to add I3C device node for devices with random PID[31:0]
-Thread-Topic: How to add I3C device node for devices with random PID[31:0]
-Thread-Index: Adp0X5vKTDj+4c4eSROo+B66I1g8Ag==
-Date: Tue, 12 Mar 2024 11:30:30 +0000
-Message-ID: <OSAPR01MB4323733A7B1678DE5B8C3027BA2B2@OSAPR01MB4323.jpnprd01.prod.outlook.com>
+ smtp.mailfrom=starfivetech.com; dmarc=pass action=none
+ header.from=starfivetech.com; dkim=pass header.d=starfivetech.com; arc=none
+Received: from SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c311:20::14) by SH0PR01MB0459.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c311:7::14) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7386.21; Fri, 15 Mar
+ 2024 08:05:55 +0000
+Received: from SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
+ ([fe80::e0a:f88a:cad1:dc1c]) by SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
+ ([fe80::e0a:f88a:cad1:dc1c%7]) with mapi id 15.20.7386.020; Fri, 15 Mar 2024
+ 08:05:55 +0000
+From: Joshua Yeong <joshua.yeong@starfivetech.com>
+To: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>,
+	"alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
+	"linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+CC: "andersson@kernel.org" <andersson@kernel.org>, "vkoul@kernel.org"
+	<vkoul@kernel.org>, "manivannan.sadhasivam@linaro.org"
+	<manivannan.sadhasivam@linaro.org>
+Subject: RE: [PATCH v1] i3c: master: Enable runtime PM for master controller
+Thread-Topic: [PATCH v1] i3c: master: Enable runtime PM for master controller
+Thread-Index: AQHabmvVHa0TJLr8CkqxZnQVcFD1ubExREqAgAc9zsA=
+Date: Fri, 15 Mar 2024 08:05:55 +0000
+Message-ID: <SH0PR01MB08419B8683E8F2DD05A791BBF928A@SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn>
+References: <20240228093407.4038399-1-quic_msavaliy@quicinc.com>
+ <b61f5f4a-7931-411d-9519-bbff1b7fd6f9@quicinc.com>
+In-Reply-To: <b61f5f4a-7931-411d-9519-bbff1b7fd6f9@quicinc.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=renesas.com;
+ header.d=none;dmarc=none action=none header.from=starfivetech.com;
 x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: OSAPR01MB4323:EE_|TYWPR01MB10885:EE_
-x-ms-office365-filtering-correlation-id: 4678d3d1-746b-4026-2962-08dc4287d2d2
+x-ms-traffictypediagnostic: SH0PR01MB0841:EE_|SH0PR01MB0459:EE_
+x-ms-office365-filtering-correlation-id: ad174501-93bd-4792-6f17-08dc44c6bd6d
 x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 1zMmdgCtDPo/PUyuJ124pCqa33qvmN6hFJ9l2W7jijAJ2R4RUO1G8lYMXGArsyTnp16nMQZtUgTKC+VCV/brmfGzp01amZVbawUBrOHp9xd++4dRTS9DaeWnaRHZoW2gsyOB3SVofM1RQa1MozXS87/PLZsk8bySwpy0sq+Ai71XOEr4K6RjzrPPf3cugNHb3+8LWrUWx3ns1tfP7TTtfQfZneKq3xBW4K8hLIfWoIuO0oyLpMzgE97xqv2nic2nYQqCRCF0TsRT5J74otWz73uX9bQhPGx07DaHeLRTN7jKIMSup6Y3NJkILC3WIzfl8jX8eSn7cHS3OjIqqhmsj/ofYQN4S7XZXPpcyyHrZ/a2AHmuenCznJAvme0OPnvsjcP6IuiiugWz1FogZub8EaWRAGRjTMz6haYo9MYQfhJP44cbjfOgSOHSUQTKN71sB0RRYobAfGQ42D7kfxSxWh9qqT1+ru5NevMAlC1fY/4RUL6zVRXdRWFssT8VRnZjJ9Ixf7eAkM9q8t7fnRgl1TsDVeA86ERjJBUiqANzxAjG10yC4bVf1kM6T4PB4w3cCYFS+nO7iEd6FSrlPk80ovhWENzhJGh+F2wM3fp46Ve+q6vk5cZaCZI/RS/p05GoTLWRrEwyEL4/Z7pzLycxFyKuqhKgII6CX2s6DMz8XVQvbzSHkzTPkFQjpnmEt5ggm88bJ6/kg6NZkwri37mC0A44zU3b++Hvxm4C/Iuvo2M=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:OSAPR01MB4323.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(1800799015)(376005)(38070700009);DIR:OUT;SFP:1101;
+x-microsoft-antispam-message-info: 10aSS26U5MYPSe8mJqc9zxYY+zOTiYgjUzs0eOdNyBhQ73gj+/2HKs5GJcSBPAwAo9yejRpZZsPRNXegXn/ipMgjWdOf7seQteEVknpfQxC1KUm/oSVgtNv8YAUpPRd8x+f9tdC/aN1NQGPG4U54md4oPmZfMhEapXanB8ZVQszc7Dfr2yyVrPeDXmSgE9kk2IRl7svCYMuYEspGx9+26VJzl8cp2g56QtUAEz4FKmG9U66BDP6oSitU9h613puhqyHvrWyvs0r5FLLFhLAzsCA/+D9JDJUPXrHS6Hrt351AzIzAZ8qdy4gnSnK2NSt/9Q2xr1DJjutYu0GkwurBIYEAwWlZ6dHPKPo2em5sfklhdrcrL45hY9dz09uzWJHGcszwymSM8cUM/bX8yIswIo85XFS3M6pnWE93PLi5VA7DRSbCAWi9BVzSceHdiKJWFuTGZcvEl/X3GVVpq2QRFWDIaWaMmVdHjYu4UW5v9gTltlfQkcEBRw1aDQCsl1LkqBlOhQmIubusTxO28mzgm70QpLTlLijgl0pUE7NKP5yjOwkqy9jHq5/61KhDJSzVdnWHTvVHVnQNWwjj5LwZPZYOmotPWtk9AJpSuyP7kT3YgmbUTKDEDJFoi522obvt
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn;PTR:;CAT:NONE;SFS:(13230031)(41320700004)(1800799015)(366007)(38070700009);DIR:OUT;SFP:1102;
 x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?yVlovkaKC2Wrkb5hIpG1UtK2zzO0h3NWLINVAkdbv9HrL2FKh6oUKPQW6tUZ?=
- =?us-ascii?Q?5DQmge+CWFh38Es1ZYzK9C/i0e6fuKO4EV5ewggZczzyQ8Tp4ntvcO8bqZUd?=
- =?us-ascii?Q?5qQlnUgU0gHxKrlr6+M0N/lYnEa7FAFTGIyzjSnbKmdfxXL0VpDKssrf+zGk?=
- =?us-ascii?Q?pEvTT6Qv46ibJ988Jndpg2+3FKIBVLi/f0BmaWzVZJu7HnC7ZEvL80yhJbD/?=
- =?us-ascii?Q?ibH8y3bobenWRXHdzb9ogk5WxAb1LAk0+X4uR29Ql0QR/3CR3Z+48xWMRVnn?=
- =?us-ascii?Q?5arh9Lv/N/hRQ1ubY2ZrV9M7iC88a/YCYGCwlZ6QQAmSTgsuNUXGaQPcgjtB?=
- =?us-ascii?Q?QCG9i4/e0WCsYR3W3FI1r7QOCqBR7BvLdvbvbo28AdFNlqV3tlvo3zbFXkwt?=
- =?us-ascii?Q?0yVNFqV7DNQpu1I2XBpaNX0IF0HKWUBoPYLnrvo4d7YYBVT+d2OKMdz2bjW/?=
- =?us-ascii?Q?sLxk4dawPH3TbE5KQD+76cqAzb8mZeAmDn2JmDCNTDEkE2H1eKQNDXbsKENk?=
- =?us-ascii?Q?8J5ayeESOSPaQK8uidJjIvjREa3AFAKOcpr4v9uEezUMJST6TMOmF3zPAkz9?=
- =?us-ascii?Q?ZCit2DYl6Fq1SypttUjdMUktT+V8GUopQa2dWKoGEQRKt4loLHX15tq6GpoS?=
- =?us-ascii?Q?Kt3945HrcdTqKutTctoTuLUi/MNyNH9djN7gFbZmhxivgHnK4LbD6moXugtQ?=
- =?us-ascii?Q?8p2qp05Xh5YeLVjdyfn7AWpxaTKe1xi3unNhK5sT4nqQDQRl+K3IA7RQdns8?=
- =?us-ascii?Q?ioxvKBqPSPmRcmZYiujSZ/dS70M0DXCBEK1qYKQwuxMD2Bza3LGkM4+jmKi6?=
- =?us-ascii?Q?E0tJAHuyz9hy2HVonh+NVaJDU+O7o1NrIr1nA80YzWwv8gwI3oVy5SdU9d/q?=
- =?us-ascii?Q?MUaVSyJKNBlwXAOo9hUkIAL93jZQF8BR7rb3CD/6P8Ach0IMUiD4frkBkjN7?=
- =?us-ascii?Q?9XC7R8swfY08UPhD3w4czywb7e61o5hypjqtSsFCSfOq0JKymrD4hVhFCJeM?=
- =?us-ascii?Q?EeJKbivVUMBrI8uJbLtsoiCxJRg4rbgeGS9mpslysMy2z5x7yd1Dh8uffnDa?=
- =?us-ascii?Q?oaZ6AwRAocKZmOCQsMMhJdXTpSJXf3dT3dHoj32S4fw770yDN+702knzZ+YV?=
- =?us-ascii?Q?tiMRbBnCY8pAMdpWENJceiU2MLAk1q9KGAxFRt+w5JmwxlIkLlTzw1mwExbO?=
- =?us-ascii?Q?QDxzB5nGHwiYsyjlIT+LCDJcyEHXVw1cUQs1uCDv9jyZLwUzEzPPFtIzvzyC?=
- =?us-ascii?Q?HJwmsJYC4oFscoLUB1QlzpRVOV5hdVz6rh5CQ4TN5f9PtTvt3sh0iuT8RXwO?=
- =?us-ascii?Q?B6EFf1Vy5uiwma5t1LnSeA2zUGIlQNoZZsyCx4O10we1mU1M0A3krkNfz3p6?=
- =?us-ascii?Q?d6KJlX0r2H8XkI777wWt4IrtoLL1SNwDsU2Z66XudoPq2bOyrwJxhPknh666?=
- =?us-ascii?Q?V0IdeZ9cuJnf9CQkZwGyThH4dtk501IgUi0hmoDiwkiIrWKlZfgWQor/jUZE?=
- =?us-ascii?Q?VcDW/akEIz2rCF/b84i2McZMecW4cgb7GvujVJ/ry0X/wuMzCjjGZI7OitqP?=
- =?us-ascii?Q?VMdpKcsvFiNCxEJymhhAc6yGiLrDgDsN4cVyb3e1?=
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?APJZdD4FUyd6kzdLBfQYqN4yuUhy9sUJMKBeLnAXRIUvFot+IrG/OWlPCNuS?=
+ =?us-ascii?Q?0qmanwFP2gk4i/SS0Oaf1rej1DUOLZpcpwPcswr2Iapinzh0QvqOAHuiblxq?=
+ =?us-ascii?Q?9g0EKtAXCnPOlpD6TbrLRubo8YsziCmqZ1aVjhyvDHv3kupvVQQqJ72Zp/0w?=
+ =?us-ascii?Q?Hm6TXnFVQMLhEtW/H7aT2Tr3BNMZp9ZI7wSBFn2cGfuxYJFTZPGEpoTGgKA9?=
+ =?us-ascii?Q?0sYNlBaK0FW4gUGhO1rC3f8DRcoFVyqlrzGmNidbxmA3c4ECkodRfi7eKyk1?=
+ =?us-ascii?Q?i54OznWNMQuzpTuzg7T4TpR04Qw8GNNBSzu0ZNzaY4rOC694pxEZ0rHhHZEQ?=
+ =?us-ascii?Q?Q4mh/wFpVPrOk3lGMFMMi6Ws3cVugF8Zc+U84t37nk5a/FmI2TJEyhMGeiem?=
+ =?us-ascii?Q?9F42qZ151TPRktEnQj/z9DaiTPyq+/KOiS3PGSTtvIdxEutJD7wLqe8emEQW?=
+ =?us-ascii?Q?bTbPY9VokD+aGZo6gkq8ehmTVmeO70BbdnvwptXK0M2kxuSLZOTJ56U4B8x+?=
+ =?us-ascii?Q?TgH3tg6T5H1xmYt8l2SNIQbQEIM8HaPY8ZmgVjqKLEmpqQGtrWjfC1B9ulQ0?=
+ =?us-ascii?Q?OCnoLvzx3MJvjjNaUn63OEV1vD/BVS6WcnpwUg0HXiWNXJsMQ6trNa8IHlhk?=
+ =?us-ascii?Q?nVmzP5OqghDwbYgK2tNdoX+vQGZq+Obs81Vgca2gSP2FxkLCz0BtM8LsAXZ4?=
+ =?us-ascii?Q?/jEvVS5uC0DVnjfJB2t+draKE1VZ3hU1wtkTCuVbsZ4OF+D9uNRbX3UAjiJx?=
+ =?us-ascii?Q?H9NIpIX8DvB8XL2ccbgSwP8zEPWnaC2aShw5iaOfQxOMiunlZ+frT1yBYUW5?=
+ =?us-ascii?Q?3i9aYgRSke8hHCaK78oWpKMPgXmsTq532q/LRhQ7PC4N7mXnC6eY3NoI7InH?=
+ =?us-ascii?Q?acBj1qYu893ujBHID5bGkVhzx6RsAGiNzUA0lB7UgCuKNveQu4i8qxpVQhOI?=
+ =?us-ascii?Q?hC7o6Ps8MXsrKwsTlIpTuY5bleNSsTh5gBBYacirxtskVw8AlMMeVsDioZxh?=
+ =?us-ascii?Q?ekGJBIvfNhlLH4dibcw8O0x1hLr5D2DbIa9ZRCxmhS87VG6lZL+r/MFVZXsk?=
+ =?us-ascii?Q?5NIWe5oVmaT/x/yOOu4ZFXQ4ADdgtfTYxnXDl84CusDzY20+aMOOSxWPaYoK?=
+ =?us-ascii?Q?yXtYcbDYCnL7gy2dPfKbkAP4XE3Q1R94q7RdcOK/PeEAUjpHQvA+9pZGrPDo?=
+ =?us-ascii?Q?t2BsFNo0cEW3JTOgbgKxFcJJyJpPvKshNIF6Ir63UtFDJisch1h+TExfVt5D?=
+ =?us-ascii?Q?WknUczdkqiD23/rXUDnC+36CJ6y5GccMruuouvJwReFWz/tVjBXjSyG9Tzbw?=
+ =?us-ascii?Q?uuYZ2mS9nKW48qrSfDhtb+xyi3GVTslwe8w4tEKgczCs0dtgIyFQcpl2I17K?=
+ =?us-ascii?Q?QqpiZTiDCAyDZGUZKE8CvRLB65shmgVCB/p1KN2L7wUpIMwnq+j96tbhycin?=
+ =?us-ascii?Q?EXjJOIZfz3tOV/aDfzqZCDQZDDEUa1aJH1J4XEo4W5kPwFt4W5iv1hhFr0Mn?=
+ =?us-ascii?Q?LK86pHnFIs6qfFO3G7bSz9PgCowGnazKtpy4AtBxvVyPgSS9l9+xgp1TstkI?=
+ =?us-ascii?Q?RTWUf23k8dnkKLNN7nGhAjhMO7d4r1/dDLqL5E3ie/QOxYiuZxVQUMEDTWt5?=
+ =?us-ascii?Q?4g=3D=3D?=
 MIME-Version: 1.0
-X-OriginatorOrg: renesas.com
+X-OriginatorOrg: starfivetech.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: OSAPR01MB4323.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4678d3d1-746b-4026-2962-08dc4287d2d2
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Mar 2024 11:30:30.4601
+X-MS-Exchange-CrossTenant-AuthSource: SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
+X-MS-Exchange-CrossTenant-Network-Message-Id: ad174501-93bd-4792-6f17-08dc44c6bd6d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Mar 2024 08:05:55.1465
  (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-id: 06fe3fa3-1221-43d3-861b-5a4ee687a85c
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: U+McSfCwQWvMjhPYaB5Gz6qSIAiK5C/THXG3dEp17tYoP3CMYH5HeJoh9p5nA8b5fVj3UzkQwFcSZUCiSdsiUHSH9Uhbc3aBGB25tEDxFno=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYWPR01MB10885
+X-MS-Exchange-CrossTenant-userprincipalname: CLTBTpcoCahpKjc1ztLO4PbQqnV4w+XthMla5v8RHU1qjzw9JuRnza/t4h/gLeIFQj9wXbGvhWxbCYjsNstsYSyYdzFGe4igPtzZtwDBPLo=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SH0PR01MB0459
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240312_043138_714815_D2A2700A 
-X-CRM114-Status: UNSURE (   5.25  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240315_010621_423374_E2E78B48 
+X-CRM114-Status: GOOD (  24.22  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,30 +135,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi, Alexandre,
-
-There is a class if I3C device with random value in PID[31:0] and these devices
-are identified with PID[32]=1.
-
-In function of_i3c_master_add_i3c_boardinfo(), the node for i3c device with
-random PID is denied to be added to baordinfo with code below:
-
->  if ((boardinfo->pid & GENMASK_ULL(63, 48)) ||
->         I3C_PID_RND_LOWER_32BITS(boardinfo->pid))
->  return -EINVAL;
-
-According i3c.yaml, an I3C device is allowed to attach extra resources by
-adding node in devicetree. I have some questions:
-1. Why the I3C devices with random PID are excluded here?
-2. How to attach extra resources to such kind of devices?
-3. Could 'I3C_PID_RND_LOWER_32BITS(boardinfo->pid)' be removed to allow adding
-   the node of i3c devices with random PID to i3c boardinfo list?
-
-Thank you.
 
 
-Regards,
-Steven
+> -----Original Message-----
+> From: linux-i3c <linux-i3c-bounces@lists.infradead.org> On Behalf Of Mukesh
+> Kumar Savaliya
+> Sent: Monday, March 11, 2024 1:30 AM
+> To: alexandre.belloni@bootlin.com; linux-i3c@lists.infradead.org; linux-
+> kernel@vger.kernel.org
+> Cc: andersson@kernel.org; vkoul@kernel.org;
+> manivannan.sadhasivam@linaro.org
+> Subject: Re: [PATCH v1] i3c: master: Enable runtime PM for master controller
+> 
+> A Gentle reminder ! As i was not part of the linux-i3c group before raising this
+> gerrit, might not went into right folder.
+> 
+> On 2/28/2024 3:04 PM, Mukesh Kumar Savaliya wrote:
+> > Enable runtime PM for i3c master node during master registration time.
+> >
+> > Sometimes i3c client device driver may want to control the PM of the
+> > parent (master) to perform the transactions and save the power in an
+> > efficient way by controlling the session. Hence device can call PM
+> > APIs by passing the parent node.
+> >
+> > Here, I3C target device when calls pm_runtime_get_sync(dev->parent)
+> > couldn't invoke master drivers runtime PM callback registered by the
+> > master driver because parent's PM status was disabled in the Master
+> > node.
+> >
+> > Also call pm_runtime_no_callbacks() and pm_suspend_ignore_children()
+> > for the master node to not have any callback addition and ignore the
+> > children to have runtime PM work just locally in the driver. This
+> > should be generic and common change for all i3c devices and should not
+> > have any other impact.
+> >
+> > With these changes, I3C client device works and able to invoke master
+> > driver registered runtime PM callbacks.
+> >
+> > Signed-off-by: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
+> > ---
+> >   drivers/i3c/master.c | 6 ++++++
+> >   1 file changed, 6 insertions(+)
+> >
+> > diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c index
+> > 3afa530c5e32..a3dc88974f92 100644
+> > --- a/drivers/i3c/master.c
+> > +++ b/drivers/i3c/master.c
+> > @@ -13,6 +13,7 @@
+> >   #include <linux/kernel.h>
+> >   #include <linux/list.h>
+> >   #include <linux/of.h>
+> > +#include <linux/pm_runtime.h>
+> >   #include <linux/slab.h>
+> >   #include <linux/spinlock.h>
+> >   #include <linux/workqueue.h>
+> > @@ -2812,6 +2813,10 @@ int i3c_master_register(struct
+> > i3c_master_controller *master,
+> >
+> >   	i3c_bus_notify(i3cbus, I3C_NOTIFY_BUS_ADD);
+> >
+> > +	pm_runtime_no_callbacks(&master->dev);
+> > +	pm_suspend_ignore_children(&master->dev, true);
+> > +	pm_runtime_enable(&master->dev);
+> > +
+
+Will runtime pm impact on ibi request from target?
+
+> >   	/*
+> >   	 * We're done initializing the bus and the controller, we can now
+> >   	 * register I3C devices discovered during the initial DAA.
+> > @@ -2849,6 +2854,7 @@ void i3c_master_unregister(struct
+> i3c_master_controller *master)
+> >   	i3c_master_i2c_adapter_cleanup(master);
+> >   	i3c_master_unregister_i3c_devs(master);
+> >   	i3c_master_bus_cleanup(master);
+> > +	pm_runtime_disable(&master->dev);
+> >   	device_unregister(&master->dev);
+> >   }
+> >   EXPORT_SYMBOL_GPL(i3c_master_unregister);
+> 
+> --
+> linux-i3c mailing list
+> linux-i3c@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-i3c
 
 -- 
 linux-i3c mailing list
