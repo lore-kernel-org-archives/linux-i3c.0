@@ -4,66 +4,141 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 521D3C25B78
-	for <linux-i3c@archiver.kernel.org>; Sat, 25 May 2024 21:08:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56F70C25B75
+	for <linux-i3c@archiver.kernel.org>; Fri, 31 May 2024 15:58:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m5GA0rj1lOQ85VMjgwKAr+w49i8RAikl3g5k8zWwl9A=; b=z64NXD2wOz9YmR
-	G8L2+z2fxf6/SgX8tfphYdpuVwMrNoOHAOgbyaCf1zurx6LFvMLF98pxNZ5ScACqpSGes51hMAccc
-	sUAodnr6JvBsvN8VodQ339O034yJ+zhj4P7t/ykVAt94pLKkFsWZcZckj08YOPpxmZet9EAjxit0B
-	ExYCCI6BYcin3KV2mHs3ooLYCpLmGxk45iS0b/5NUr8Y8Y+jeYXZCj00L6Ag8kfQxhKmeaX4gViVq
-	j3vYgXX2XbdBAnbngM/6v6klOzl+3li2ED2Y+3YNjNC56o3vL4CypS4uECsVwF9RJ90zXZtvMWWTJ
-	tEmDc7IYxc91GMKLAULg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MDAXbclFIXhVio7dbN3rDJG0DVoixVDwO2MV5La7SVw=; b=osu8AwR8Nwm51c
+	eLPQlD8j1+iynWe+owIoebOy8M1fIp8Dnw/+sMI+9hHKvaJhjzJmwLHCHBCJMGznLz5EIR9VoATcD
+	6wThgDzFgTPwY32MFoJxPglRnjD8CXwnbDMe2fuzSI1nJX+AoHmrK63A7RWZQkTQ61H1Oxu/npjDw
+	/T5OyXa8srdrzLGpqN0rRl5w0bCyzraKTKQGSk3/Xqc6nFnZPOI2HzAunKB64EFeESXRkpv6uE9oU
+	srTk9zFKp70G/2kpODRe+HYw1gagH/wCvenUbePPL5Z0RxPXoDF2kknhHZLPBqtheGOBQlaYlUVOS
+	yeP+y9WNMDgCvqYBoCxg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sAyd7-0000000BhD3-2cTq;
-	Sat, 25 May 2024 21:08:41 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1sD4eb-0000000Aka2-2aOh;
+	Fri, 31 May 2024 15:58:53 +0000
+Received: from mail-vi1eur02on20601.outbound.protection.outlook.com ([2a01:111:f403:2607::601] helo=EUR02-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sAyd3-0000000BhBW-3HDe
+	id 1sD4eY-0000000AkYx-2CLt
 	for linux-i3c@lists.infradead.org;
-	Sat, 25 May 2024 21:08:39 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id A40B7CE0AB7;
-	Sat, 25 May 2024 21:08:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id E315AC2BD11;
-	Sat, 25 May 2024 21:08:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1716671314;
-	bh=JDCFZ8HEb0NTJwxJbkUKLE+BhXBP8waLZLT+EsxImRQ=;
-	h=Subject:From:In-Reply-To:References:Date:To:Cc:From;
-	b=k9mKDJ4m5dNvrftAkU8WUPDzrvesUCnxQXwzjfUv9SSXT/CyevinobIPQmzFFQjxU
-	 bVhEbkTLb2n4ZRXwB8cKoCl4LJb8ekvh0QRnvfQMFkd4yxdeaTvNUstFa7FEqhFV5T
-	 0214zqUX09aj0W3Zhd3zaDH9cRX4Zbu5Gs9jL5wUDgbAZMQY6nc8B3ygEyRI5GhP28
-	 8IHQJzV63aGjtLoVf0eNmnJ4FTaSVMpooabiiNOnUS93/zimG0ABuvZ/c+s+2s3lJn
-	 6po1o2EXVOEsp9FtaKdhTF2XczvrXzPZStsuYPp58exfM4OF59zjysFdC2CVyk9onr
-	 rDrEN9XQ+SvxA==
-Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (localhost.localdomain [127.0.0.1])
-	by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id DC46DC43617;
-	Sat, 25 May 2024 21:08:34 +0000 (UTC)
-Subject: Re: [GIT PULL] I3C changes for 6.10
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <20240525075217d90cc066@mail.local>
-References: <20240525075217d90cc066@mail.local>
-X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
-X-PR-Tracked-Message-Id: <20240525075217d90cc066@mail.local>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-6.10
-X-PR-Tracked-Commit-Id: 1d08326020fba690cbb7b8f1b38ab4eab6745969
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: 4286e1fceb8c99f25332dc7e85f9879408caa45a
-Message-Id: <171667131489.10959.15105780706399557618.pr-tracker-bot@kernel.org>
-Date: Sat, 25 May 2024 21:08:34 +0000
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Linus Torvalds <torvalds@linux-foundation.org>, linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+	Fri, 31 May 2024 15:58:52 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=jBzXdDw/fxQ6ySZxdRq5+UQRO1OSSyImaOMdCikmlL3gkLCAwxrPdT9/NAZVJx4X4l1aRbmdi6wrTI/aJ9npHkMa+fsTHil4o48UcS/9C9XBYCZy4JFseVeadFXXFzOjledN1sOXMqIDdQh3luiuwN48rPx33DeujGAePX9YGDEnsTl1cWnUt9PLn1KfIyEzfYR+PhJeHM+/O+hEwg7GDFC+nyNc/xsGybxSueUEiFeyzr5oAIGzEhiv8Cfv+e8W6AbPn+64z8QOOGwQOKo6XuGEoSyL2LbAG5f8wNOcwqJ1suUs8gmcU+5ml014QGwzFlWAEcPOWJbMZTQ4M5+U5Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=o3HQz8cnIDtSZICFSDsale5sAWPlHWfAZhfoat1UN2k=;
+ b=c+4Ac8aimc0eVt9oYzCneGkO8KrkB3M4G7n4lyM5zSa86hrtEmlyhAJO1JareUjJHbLNRELmb7san4wCRRd61I+WZL2sTptFW7fSrMQahYUeFPqXjQwgNmrK8sVjfDICgctGmrP54VC4a6AzD1CY1kc3SYH2VP4eYhN67U37AKyX1t5tHutD2TL4cp1GFd0d4i0MfTcYeX8glZp4IUCe2iXvWrDCLvjJWoBDY4IJ+QcFyw9nq8dxnDiaLeoHeG6P+7Mz4LI6u3jM+7w0Z0H1xSgik1lhUPl9IbRp505X4EwfCTbWkmyTYH5Yeu+H8+TN7ffJuP9aIF2sBmmKbJGP/w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=o3HQz8cnIDtSZICFSDsale5sAWPlHWfAZhfoat1UN2k=;
+ b=Qbn6nF8L2dP1L9ka9ZjNNesiKtY70OGvrCNdOgxektfx5GuKunOMKcZ0cKXU+G8eI8Vf2LiRA/WN8MI+wv/2LoDNQPFteJ4CY1JWL43sZ79GGtbfrrStWr5ORwQozb4Q3X6K0OJoveoXErIZ/Z07tfxf8esw3eUjtJvk8PDKuKw=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by AS8PR04MB7605.eurprd04.prod.outlook.com (2603:10a6:20b:292::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7611.30; Fri, 31 May
+ 2024 15:43:27 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06%2]) with mapi id 15.20.7633.018; Fri, 31 May 2024
+ 15:43:27 +0000
+From: Frank Li <Frank.Li@nxp.com>
+To: Miquel Raynal <miquel.raynal@bootlin.com>,
+	Conor Culhane <conor.culhane@silvaco.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	linux-i3c@lists.infradead.org (moderated list:SILVACO I3C DUAL-ROLE MASTER),
+	linux-kernel@vger.kernel.org (open list)
+Cc: imx@lists.linux.dev
+Subject: [PATCH 1/1] i3c: master: svc: fix IBIWON not set if IBI follow a hot join
+Date: Fri, 31 May 2024 11:43:08 -0400
+Message-Id: <20240531154308.1246214-1-Frank.Li@nxp.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: BYAPR08CA0025.namprd08.prod.outlook.com
+ (2603:10b6:a03:100::38) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|AS8PR04MB7605:EE_
+X-MS-Office365-Filtering-Correlation-Id: 5e69c251-ff58-408e-6f01-08dc818869bb
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230031|376005|52116005|366007|1800799015|38350700005;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?AIkaE8I400MQCQ6MCMmTDxzsWc+Y2RXmUUrGTQ51nVAQFlhBA8BI/8a3zn4Q?=
+ =?us-ascii?Q?oXkdAjIXZqtlXSUfbBNm9Vuy5NYdUVkw11+lMemzjDW3ljZ6roMrDJ5nhTzz?=
+ =?us-ascii?Q?+2NOeGL0Plth9YGpAy/MQu6WgSKg9P5ATpvvv2nhPsSVAB8VLRzBu+UOUDN5?=
+ =?us-ascii?Q?4ITvFLGLHJxJeXRf5zXA8Ah/rE04IhTnAyMWLuMlI2LLEmh7m7LLPWNw0CWx?=
+ =?us-ascii?Q?EK3BUXHBfQI2eGiZiQmP3eFwyNmzAoRlhRYHXymHxGRWPXdxY6lvZxKyu/WN?=
+ =?us-ascii?Q?Hb5GWKDGsKpUXuMjW0dpiTVdtLTx30C0YhHgcVu/R3CYNLw4cuXOZCIwiW4L?=
+ =?us-ascii?Q?t0mZBRoTVkgzc7/QZOFaNetlTAQ65QaJhaWR7zmWNe4Iso1GDuXYaa2ydKd7?=
+ =?us-ascii?Q?zfVR7JlFTtY5SU3jRAMlv+lFU+feQNn1se89BEF/a/414K6XmmXCHV+/ByUq?=
+ =?us-ascii?Q?vClyE5TJqB59seZaSy+taPvbtrMl4eh4+GhLZu8tqUltN2YLhzhGrIpgQNeN?=
+ =?us-ascii?Q?U8ATm810rq8B3f7/mMRDsx06iGnV6w6JrL0vGCRuQZWQaFkCC5caHC/1gvH7?=
+ =?us-ascii?Q?enSox04C5QZQxE8TpUhMU1MYDYFgKbmBvIWmJHFK5Eg5un8pJO42viiiGmTP?=
+ =?us-ascii?Q?oxALBaDy87KKcUdt/V+5bd+7oKNrVEvp7k+AELgCQQiiywpLmz/Ju017RVzd?=
+ =?us-ascii?Q?3XUwXzQtnxKnlRVQqYirbNj2Piyj5+p9uRsNZ9bbx2Is7QXUXEBVZDK+IWgQ?=
+ =?us-ascii?Q?c5G9UvlYIBX5cpu2MF2lWFvcoU4F4gL11X6xQHFSKsUplIzxjWHpXLSujI8U?=
+ =?us-ascii?Q?Y7yndz/Jx+j2tb9hfEV5Lj/3N29PSzBzcM7ctK+XECbClO5r2gY5FiVBol5Z?=
+ =?us-ascii?Q?fKxerBYiDRbZLsVGf184XEBW2XxyJlvEcNOtv28SETjtPO4VJ3nicVNUBFvX?=
+ =?us-ascii?Q?achrkych8mWRW+uH3pyi8nsDaEdCgUrao1rBPlYZXjtXmP+L40Y06PRJYFq+?=
+ =?us-ascii?Q?9E8jMaFMBJNLrvBdwBkTUoo9H1XZrf/1ULPlExWwz0sQQDhapS/lS+3YC3RW?=
+ =?us-ascii?Q?20uu0WES/NnAFfSIMWIbdTNm9/lkzJUwdRqdfxP7Op3sSZdqIQCnPKjhFwfm?=
+ =?us-ascii?Q?v7AJOaThd+46R0n5gNRlgZuF8UrW04kAMTptqoaeQ7BgrY1WViXSUBZc10RM?=
+ =?us-ascii?Q?Y7sdZZc5hWbQCcydUXHY1khqBqLckbdtXsEzTTezrwertRNGeg63OzLyWiiR?=
+ =?us-ascii?Q?H3qgzXZxc3a+ft5zKat1evS/wDpoL6jLp54nz4RY7qtRcUhfMVchUBI5aQOx?=
+ =?us-ascii?Q?16Q5b07nGG737EJ6PiuZIAA33UFdtolNv+V+clnA9/VYoQ=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(376005)(52116005)(366007)(1800799015)(38350700005);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Rl4zVHo1yr/bKDTdH4m/ew+QOSvY/Jy0P9+xSTtkZZTHmo/0EM6MJLG6uTqc?=
+ =?us-ascii?Q?yZi8LXHiLGGf0DOttRzL1BuwTuT21aX7i/s0m9wi58iIr3Xo5WH1pfqvXY9o?=
+ =?us-ascii?Q?sJRVsmOOv0yNPeYkgI7k2V+1W6krGXOktwN1qGe8tkD9RliUa+zTad3KcEe+?=
+ =?us-ascii?Q?aSqzouskjsidhVzCAkwFP3pEu5awEVfEyU2fS8diaSD+yHQ2YoUqPmz8HB78?=
+ =?us-ascii?Q?q6LyVpdwKNd2xg4Fhdi3NNKww2srMk7yMGLzN9rN4Kj0rVjZY5ePthPM2Vau?=
+ =?us-ascii?Q?RL4A+SinryZku+JjuJtKi7AuqDSbNG2kHYpDCWPuslY2GQILLGKbiewZModi?=
+ =?us-ascii?Q?iheRCxAJHrRoLc88p/r5xaaTia4NzK/C7wJR+hlj5HrdOpFt0nIjTcGN34oo?=
+ =?us-ascii?Q?H0dbEPIE4my7ccm+BPa7w83SesgD5b1+cdMZyrrvkfh+HX4ZC9KykWUSDJkf?=
+ =?us-ascii?Q?Fwl2j7UzOq7ItcDlog5O0NSfLYdYgo/SalMEBL1mxDeuSHUntoBBMzEB3kC0?=
+ =?us-ascii?Q?Bf3dGmhUqDcHIbdI+6gSiYPomXalR+UQzJmqwmjs8lQLDBWTkXO/LOUvuVpW?=
+ =?us-ascii?Q?qLOoHlqlQGZ0IlBBJK+ZwNcmNTXI5Tk2SgNSea/9Tn3ca2ujUrjR9pNlxorn?=
+ =?us-ascii?Q?odQyuwkteq+uJGo8Z52TDFMepnNOwkz4KmE5ZQnsXKYMv1xJRmz43O4RKMGJ?=
+ =?us-ascii?Q?T/QXZFfjYzSjDH0jGFAFVNl2QM4CZnKp3Hizn23OQOBCLfinrNdGfWrBOWl6?=
+ =?us-ascii?Q?JtMZAj9i/GhKZNG6mqCgXceUPCFQ785NDI8RdYGv1mgMrE0d96BTOk/RCXa+?=
+ =?us-ascii?Q?j65l+aWWMO9nLE7NjkqZwrBMoIY+kF7L98ik2Iy2q+it1DGZACm/Ahkhz0UB?=
+ =?us-ascii?Q?ULGngy98yrfWzEaFb01pN5JMLAArXIfWMYUHeyniCYkxDM9zJjtiApFoYpx3?=
+ =?us-ascii?Q?WAvsIlc3O+66UsQnZuN1jfhUFd6fp/JDBl3UrJuZPOv4Qf+wDRSF9UOSXr+6?=
+ =?us-ascii?Q?vq2lmIee/RhWgBJH2PeNR57txPSnMWZBdeg9OUufxpu67lEIVAeZq/NDGvcZ?=
+ =?us-ascii?Q?bBl+hnh5XY4GE3JVJL6bJpnJV5DQ25fXTJMwlcqLKgJIIE9/ntlNFy11QxBs?=
+ =?us-ascii?Q?KgcYWXyLwDDW+LpPPZhbDEpdR9utZkL/vkRlotlvWuGzZrpBXtesxEaXpKQT?=
+ =?us-ascii?Q?yPtfmmPjijatF1F2y5fidH9KGAfwTp7laxtcCWLqL4tJGgg7kZbIFVOgBaJD?=
+ =?us-ascii?Q?Om/XM0sf4rcI9yLD0m5nIABpbVJiem5NJCH+HxTlL+KyjvAuSas1jGSgZ9M8?=
+ =?us-ascii?Q?5h7gPy5FCCtuyXusiLFIAxVdECX4NH8SXl5jZqgRsl/SJkhOp0bBVRierzgr?=
+ =?us-ascii?Q?lyEhQGcJ+gk6FRntmZD74y3Pn1v1NqSItWazyc5BoHrQ+jADnSrB0gEdWT7d?=
+ =?us-ascii?Q?v60HybaU1FljlbQJuIS96cs2rl07N8tBD1zeh2tMBV0SD4JrimVzte4Wzp4Q?=
+ =?us-ascii?Q?WMxO8NCvA9UMjhygptosKe/hc1HWThPTXIO2WJzfHK9s3b4AIC9FJg5jCGbj?=
+ =?us-ascii?Q?xP4IqqtztuOjL6oGW0LFjiul0wvhC3JwpdH+Irlr?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5e69c251-ff58-408e-6f01-08dc818869bb
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 31 May 2024 15:43:27.0681
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: qtunjkrM1emh+s4EeyFf6gLrD1YZvjNSaBK+7X0V12hKo8zu85VU6FNXxMedWRDGoAtD69qDNWxg6djIYUMWUA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB7605
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240525_140838_020489_689DAC8A 
-X-CRM114-Status: UNSURE (   2.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240531_085850_575790_879C65B6 
+X-CRM114-Status: GOOD (  11.86  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,24 +150,59 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The pull request you sent on Sat, 25 May 2024 09:52:17 +0200:
+When an In-Band Interrupt(IBI) occurs after svc_i3c_master_do_daa_locked(),
+typically triggered during a Hot Join (HJ) event, the IBIWON flag fails to
+be set when issuing an auto IBI command.
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-6.10
+The issue stems from the omission of emitting STOP upon successful
+execution of svc_i3c_master_do_daa_locked(). Consequently, the controller
+interprets it as a repeat start when emitting the auto IBI command. Per the
+I3C specification, an IBI should never occur during a repeat start, thus
+preventing the IBIWON flag from being set.
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/4286e1fceb8c99f25332dc7e85f9879408caa45a
+Emit STOP regardless of the success or failure of
+svc_i3c_master_do_daa_locked() to match I3C spec requirement.
 
-Thank you!
+Cc: <stable@vger.kernel.org>
+Fixes: dd3c52846d59 ("i3c: master: svc: Add Silvaco I3C master driver")
+Signed-off-by: Frank Li <Frank.Li@nxp.com>
+---
 
+Notes:
+    Change from v1 to v2
+    - new patch
+
+ drivers/i3c/master/svc-i3c-master.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
+index bb299ce02cccb..032fe032ec433 100644
+--- a/drivers/i3c/master/svc-i3c-master.c
++++ b/drivers/i3c/master/svc-i3c-master.c
+@@ -961,11 +961,11 @@ static int svc_i3c_master_do_daa(struct i3c_master_controller *m)
+ 	spin_lock_irqsave(&master->xferqueue.lock, flags);
+ 	ret = svc_i3c_master_do_daa_locked(master, addrs, &dev_nb);
+ 	spin_unlock_irqrestore(&master->xferqueue.lock, flags);
+-	if (ret) {
+-		svc_i3c_master_emit_stop(master);
+-		svc_i3c_master_clear_merrwarn(master);
++
++	svc_i3c_master_emit_stop(master);
++	svc_i3c_master_clear_merrwarn(master);
++	if (ret)
+ 		goto rpm_out;
+-	}
+ 
+ 	/* Register all devices who participated to the core */
+ 	for (i = 0; i < dev_nb; i++) {
 -- 
-Deet-doot-dot, I am a bot.
-https://korg.docs.kernel.org/prtracker.html
+2.34.1
+
 
 -- 
 linux-i3c mailing list
