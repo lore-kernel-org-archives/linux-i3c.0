@@ -4,74 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 03FC3C25B75
-	for <linux-i3c@archiver.kernel.org>; Thu,  6 Jun 2024 12:48:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47E2DC27C5E
+	for <linux-i3c@archiver.kernel.org>; Fri,  7 Jun 2024 02:28:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:From:Subject:Message-ID:
-	Mime-Version:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=cq7pH5FmavtoJUb83b9/eb8/aW1TdoPlLIQm3/9I13A=; b=R/P
-	OWHG8GFWke6kphlgPWdc6ItkwEL2cxecgJeHFCMR/saMRQVQsNDiB68kQAxU3JeucFjWYzsyz/CWo
-	dEx6F0ycW6V1bdU6E0bFISFYSrbhdsUaPDub3+Zo/PE3KGwxSWx/qEayBpWHH9/iPju1iLsohoNQv
-	c1gHYr2fBJFikTFFIQFFWISdxTNICzZdla7BThOWXIcvxcCZBV/jqoRZ66yX0BZAxckYxGiPXBBl1
-	5XQTFJBX3HyZSwGi00hWQ6XDyTzKFsFXkWQ1aGUfcAMnpTigWn03IdL03t+Q9L0xWKusgr/Gvo7Xk
-	cz5SmTASnuMbXKCwBGvZ6sTk6XmL3Og==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NsVnSAR9wEuObHXfflL3/OAN7kqR/gIE+ktLAAwvoiU=; b=GoZlneF091yF4G
+	EGBc7AWevHzqsAnQ82fXHt0CosTeLz0+isN48indyLOCZ8EcX7PyZ8UOV1N6QjTEhUgRXR5T/teHV
+	4fIbsrPSzgcvy9EhUZWir6BmbZfFcVg6t2OlDhs3S5WbeR8MWqdbNqfKMpRpS+l8plNfj3AxSC98Q
+	tl2KgevEKAANgFev04rziHtIk5SCKwakgjjjC/fgJV5Lh92YOUsRqH4pNaEuCYrKdGGUGWZuJDFLh
+	pXUaAXEncwT9xzgLCLdt0f26vFg2qagPGCkylqL5cGMuwZN1sOKsvfci5LAUlKMYYORrY6SCBjEBO
+	i/C+/KlB5jlzKL25rMYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFCXh-00000009kL3-1RdO;
-	Thu, 06 Jun 2024 12:48:33 +0000
-Received: from mail-yw1-x114a.google.com ([2607:f8b0:4864:20::114a])
+	id 1sFPLd-0000000C574-1egp;
+	Fri, 07 Jun 2024 02:28:57 +0000
+Received: from pi.codeconstruct.com.au ([203.29.241.158] helo=codeconstruct.com.au)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFCXe-00000009kJW-051b
+	id 1sFPLa-0000000C56O-0TJ8
 	for linux-i3c@lists.infradead.org;
-	Thu, 06 Jun 2024 12:48:31 +0000
-Received: by mail-yw1-x114a.google.com with SMTP id 00721157ae682-629638f1cb0so13333577b3.3
-        for <linux-i3c@lists.infradead.org>; Thu, 06 Jun 2024 05:48:25 -0700 (PDT)
+	Fri, 07 Jun 2024 02:28:56 +0000
+Received: from pecola.lan (unknown [159.196.93.152])
+	by mail.codeconstruct.com.au (Postfix) with ESMTPSA id 350C320075;
+	Fri,  7 Jun 2024 10:28:37 +0800 (AWST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20230601; t=1717678105; x=1718282905; darn=lists.infradead.org;
-        h=cc:to:from:subject:message-id:mime-version:date:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=FNMGfW18oepz3ctHxT2v/fTJlvcIHvl0RqDaCUUXgSw=;
-        b=3DAkcHwPutyikhvP7/A1zFxv/7/btktdE11ABvO565p0MJTT06m9lDlWQCSFQ1vWal
-         /4rFnhwAFeoh9s/EG/OsRVIGL+MlvTazc+3Ko0HyFs142sUJsISmhJx1O77wyeqojSvt
-         /OtOsSEZyjxA7PGmiLZpnpnfTZV0/MUuIP+fIQqgDv5BK6F0X5iwwYps0MTdB3nL15cj
-         YT42wl6Es9Fe4eQE9hWaXI9d6Pio5kvu7w7JzVmBsjMJs0BS9dwfH/dCh1+zUAZ9BnnE
-         moLgRyN8LKbVGlWbng7WzeTUu08dxaMy4xNNt8cj4n9hdkzmoK2qvvooX4KijZf6pEkm
-         bE1Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1717678105; x=1718282905;
-        h=cc:to:from:subject:message-id:mime-version:date:x-gm-message-state
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=FNMGfW18oepz3ctHxT2v/fTJlvcIHvl0RqDaCUUXgSw=;
-        b=quryN8HnjUy6NjQCu7/la4pmYMhNaarUnYrm457lHPafMzo8COMsVsDs8646XvcwQw
-         iqoCHqd4HqV+xMVPwD7/xldDSEanDDtVyaV0t+smwQw3Lm+JRQsY2pySwHnZ49NMdXMa
-         soMJV8cqrYqrCIntmdiEQCNT2lVdPxLLPxdK0EyQmTnrB2bmP2AozVFdRpBbEHmkT6BI
-         jo12ZHyhVe7SOHXFSjjNbSA+fpzRqzuAbK4+LZ4PCS+ZdphiY1DBTREYH0z1MVAvTXY7
-         aVKB/E9Wsw/wA08EuO/1UmWNPwP78z12C+gmASfcHPVAWW+8EdCud5MEQrjK5nHCJ3t2
-         kNHg==
-X-Gm-Message-State: AOJu0YycqAJu4ch94eLxFohPvbdIzrQ+NPg14HU/OM5k0qWULVe8M7Ek
-	eDmmSNqt7ttSrZCHBVsq/I8hWZKqtUnnVWGDNi6+H5FkUJgCVWpNEaxutPCbfVPNcf553VXAS5L
-	19pBeNftZoHh54aIgXwDG0Nf+vQ==
-X-Google-Smtp-Source: AGHT+IGyFFTFa03GCHnZkv1BAA0sPoC1f/yGvtDNotGuIKgkWBUvrfNZqbo7e1nX4X50u55/G66XwMCRh6p0RnlOAn8=
-X-Received: from aniketm.c.googlers.com ([fda3:e722:ac3:cc00:4f:4b78:c0a8:3387])
- (user=aniketmaurya job=sendgmr) by 2002:a25:6851:0:b0:dfa:5cb2:fb1 with SMTP
- id 3f1490d57ef6-dfacab1f6cdmr189986276.2.1717678104783; Thu, 06 Jun 2024
- 05:48:24 -0700 (PDT)
-Date: Thu,  6 Jun 2024 12:48:16 +0000
-Mime-Version: 1.0
-X-Mailer: git-send-email 2.45.1.467.gbab1589fc0-goog
-Message-ID: <20240606124816.723630-1-aniketmaurya@google.com>
-Subject: [PATCH] i3c: dw: Fix IBI intr signal programming
-From: Aniket <aniketmaurya@google.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Jeremy Kerr <jk@codeconstruct.com.au>, 
-	Joel Stanley <joel@jms.id.au>, Billy Tsai <billy_tsai@aspeedtech.com>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	Aniket <aniketmaurya@google.com>
+	d=codeconstruct.com.au; s=2022a; t=1717727319;
+	bh=NR2BjMyojSNVzVA3wiNKVKPivX6F/0FiMK6KwEP4tQk=;
+	h=Subject:From:To:Cc:Date:In-Reply-To:References;
+	b=cWqA0PGAUe9qogFTf92p1oVZmk3M3KWt/YqFP1tdjnrTYq6jOfOdCO/E9lMKnGeEo
+	 nDH0uKjE1yDtGg4z7TCjPeODlO0Goy3esRjN1sp0IH/c1Rry1mXBh4fZI9SkLHAB+P
+	 cWu5/8Ve1EeiiC9nApqJIKJtqxJCkWgaEzAn5ptIA/yoD2P0/vtKympeAScFDJq8wJ
+	 +4OD3qfGntNYUIyFkV6mnAo4QsQ8qzDQ5jTolyAeOUQmi7qtFUSW7F32arbckTMewR
+	 sJiN6a6TafVyoW5jWwYPvZuOXS3xXru/KBpq3T78BICSozOmdZwxbe4U2J1yiEKEbM
+	 MCMiGnRfreOxQ==
+Message-ID: <3c6c319f3aaa60428fd28f4d95c71dc9a8150081.camel@codeconstruct.com.au>
+Subject: Re: [PATCH] i3c: dw: Fix IBI intr signal programming
+From: Jeremy Kerr <jk@codeconstruct.com.au>
+To: Aniket <aniketmaurya@google.com>, Alexandre Belloni
+	 <alexandre.belloni@bootlin.com>, Joel Stanley <joel@jms.id.au>, Billy Tsai
+	 <billy_tsai@aspeedtech.com>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Date: Fri, 07 Jun 2024 10:28:42 +0800
+In-Reply-To: <20240606124816.723630-1-aniketmaurya@google.com>
+References: <20240606124816.723630-1-aniketmaurya@google.com>
+User-Agent: Evolution 3.46.4-2 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240606_054830_084409_0E3224AB 
-X-CRM114-Status: GOOD (  11.99  )
+X-CRM114-CacheID: sfid-20240606_192854_384696_569BF658 
+X-CRM114-Status: GOOD (  13.50  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,61 +66,39 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-IBI_SIR_REQ_REJECT register is not present if the IP
-has IC_HAS_IBI_DATA = 1 set. So don't rely on this
-register to program IBI intr signals.
-Instead use a simple counter to do the job. The counter
-is protected by spinlock.
-
-Signed-off-by: Aniket <aniketmaurya@google.com>
----
- drivers/i3c/master/dw-i3c-master.c | 4 ++--
- drivers/i3c/master/dw-i3c-master.h | 2 +-
- 2 files changed, 3 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index 0ec00e644bd4..08f3ef000206 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -1177,13 +1177,13 @@ static void dw_i3c_master_set_sir_enabled(struct dw_i3c_master *master,
- 
- 	reg = readl(master->regs + IBI_SIR_REQ_REJECT);
- 	if (enable) {
--		global = reg == 0xffffffff;
-+		global = !master->sir_en_cnt++;
- 		reg &= ~BIT(idx);
- 	} else {
- 		bool hj_rejected = !!(readl(master->regs + DEVICE_CTRL) & DEV_CTRL_HOT_JOIN_NACK);
- 
- 		reg |= BIT(idx);
--		global = (reg == 0xffffffff) && hj_rejected;
-+		global = (!--master->sir_en_cnt) && hj_rejected;
- 	}
- 	writel(reg, master->regs + IBI_SIR_REQ_REJECT);
- 
-diff --git a/drivers/i3c/master/dw-i3c-master.h b/drivers/i3c/master/dw-i3c-master.h
-index 4ab94aa72252..44a5f045f007 100644
---- a/drivers/i3c/master/dw-i3c-master.h
-+++ b/drivers/i3c/master/dw-i3c-master.h
-@@ -39,7 +39,7 @@ struct dw_i3c_master {
- 	char version[5];
- 	char type[5];
- 	bool ibi_capable;
--
-+	u8 sir_en_cnt;
- 	/*
- 	 * Per-device hardware data, used to manage the device address table
- 	 * (DAT)
--- 
-2.45.1.467.gbab1589fc0-goog
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+SGkgQW5pa2V0LAoKPiBJQklfU0lSX1JFUV9SRUpFQ1QgcmVnaXN0ZXIgaXMgbm90IHByZXNlbnQg
+aWYgdGhlIElQCj4gaGFzIElDX0hBU19JQklfREFUQSA9IDEgc2V0LgoKSSBkb24ndCBoYXZlIGFu
+eSBhY2Nlc3MgdG8gdGhlIElQIGl0c2VsZiwgYnV0IEkgdW5kZXJzdGFuZCB0aGVyZSBhcmUgYQpm
+ZXcgZGlmZmVyZW50IGNvbmZpZ3VyYXRpb24gc2V0dGluZ3MgaW4gdGhlIElQIHRoYXQgbWF5IGFm
+ZmVjdCB0aGUKcmVnaXN0ZXIgaW50ZXJmYWNlLgoKSSB0aGluayB3ZSdyZSBPSyBpbiB0aGlzIGNh
+c2UgKGp1c3Qgbm90IHJlYWRpbmcgdGhlIHZhbHVlIG91dCBvZiB0aGUKU0lSX1JFUV9SRUpFQ1Qg
+cmVnaXN0ZXIpLCBidXQgYW55IHRob3VnaHRzIG9uIGFkZGluZyBjb3JyZXNwb25kaW5nCnN3aXRj
+aGVzIGluIHRoZSBkcml2ZXIgc28gd2UgY2FuIHN1cHBvcnQgdGhvc2UgY29uZmlndXJhdGlvbnM/
+IFRoZXNlCndvdWxkIGJlIHJlcHJlc2VudGVkIGFzIERUIGNvbmZpZyBvZiB0aGUgc3BlY2lmaWMg
+aGFyZHdhcmUgaW5zdGFuY2UgLSBhdAp0aGUgbW9zdCBncmFudWxhciwganVzdCBieSB0aGUgc3Bl
+Y2lmaWMgY29tcGF0aWJsZSBzdHJpbmcuCgo+IGR3X2kzY19tYXN0ZXJfc2V0X3Npcl9lbmFibGVk
+KHN0cnVjdCBkd19pM2NfbWFzdGVyICptYXN0ZXIsCj4gwqAKPiDCoMKgwqDCoMKgwqDCoMKgcmVn
+ID0gcmVhZGwobWFzdGVyLT5yZWdzICsgSUJJX1NJUl9SRVFfUkVKRUNUKTsKPiDCoMKgwqDCoMKg
+wqDCoMKgaWYgKGVuYWJsZSkgewo+IC3CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqBnbG9i
+YWwgPSByZWcgPT0gMHhmZmZmZmZmZjsKPiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+Z2xvYmFsID0gIW1hc3Rlci0+c2lyX2VuX2NudCsrOwo+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgcmVnICY9IH5CSVQoaWR4KTsKPiDCoMKgwqDCoMKgwqDCoMKgfSBlbHNlIHsKPiDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoGJvb2wgaGpfcmVqZWN0ZWQgPSAhIShyZWFk
+bChtYXN0ZXItPnJlZ3MgKyBERVZJQ0VfQ1RSTCkgJiBERVZfQ1RSTF9IT1RfSk9JTl9OQUNLKTsK
+PiDCoAo+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgcmVnIHw9IEJJVChpZHgpOwo+
+IC3CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqBnbG9iYWwgPSAocmVnID09IDB4ZmZmZmZm
+ZmYpICYmIGhqX3JlamVjdGVkOwo+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqBnbG9i
+YWwgPSAoIS0tbWFzdGVyLT5zaXJfZW5fY250KSAmJiBoal9yZWplY3RlZDsKPiDCoMKgwqDCoMKg
+wqDCoMKgfQoKQ291bGQgd2UgdXNlIHRoZSBTSVIgbWFzayBmb3IgdGhpcywgYnV0IGp1c3QgcmVh
+ZCBpdCBmcm9tIGEgZmllbGQgaW4gdGhlCnN0cnVjdCBkd19pM2NfbWFzdGVyLCBpbnN0ZWFkIG9m
+IElCSV9TSVJfUkVRX1JFSkVDVD8KClRoaXMgd291bGQgbWVhbiB0aGF0IHRoZXJlJ3Mgbm8gcG9z
+c2liaWxpdHkgb2YgdGhlIGNvdW50ZXIgZ29pbmcgb3V0IG9mCnN5bmMgZnJvbSB0aGUgU0lSIHNl
+dHRpbmdzIC0gc2F5LCBvbiB1bmRlcmZsb3cgaWYgd2UgZ2V0IGEgc3B1cmlvdXMKZGlzYWJsZS4K
+CkNoZWVycywKCgpKZXJlbXkKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1pM2MK
