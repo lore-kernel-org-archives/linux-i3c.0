@@ -4,78 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D0151C27C55
-	for <linux-i3c@archiver.kernel.org>; Fri,  7 Jun 2024 06:11:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8CFAC27C53
+	for <linux-i3c@archiver.kernel.org>; Fri,  7 Jun 2024 07:20:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ARLfi2bYGqiQ1cizK225L4+SlhnNSKo7RATuvF1VuLs=; b=T1qYR1Q82ss/GH
-	0MPCyJz/pch3vXCMgNeyo3AAe6djmsEht7XFzCRO7kf3Vb4/61U1wBrmZBsAEe5A3PVyIm653gRGA
-	WhlXocmYj14mnO+GfNuVuu0MUapcf4yijEmJfV+gh8eIEd9Lb3apRUC6BQs4yPQiRU7lPMxWVq7C9
-	XAjVyHhWleNB7cBtAgoArktDO1H4rPmTT8GrZZP2gMGSlrvyzEzWK5wKKqC5ha9LimpXqO5UbTmk6
-	1UdUN3Ec0B3U5Q8Y9j6x86+wUgoWDDtGShJDLmrB86OFlo3SzHVZLkT7Li+vPAP1ADZY1Z6dGEMtD
-	0r+SHgS9+qtSabd54WuA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:From:Subject:Message-ID:
+	References:Mime-Version:In-Reply-To:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=y5W6TFMJ1VLDQ4Tgic7Oyro00qe3FMIqj8ulk3qg7So=; b=sg/kmYz3fyKvgbrXlPTXuY+w15
+	cllNJfkd/bZUlsL8G0NbhQUqI9w76eUaioQXYg9WzkOsogjVy5crKtMaiqsPXAXZU7/57i+usGZiK
+	+tmmQGc5vT+PABEx8O98WftgQDobhnCkhlcbfPCvmMe0bFY+0RcBjKWz7kO1GoTOqU6VJMfxuBv6q
+	8b1GmP6j/qc/gvqVpQbxH8ONWZL7v0fh5lN43zivJdAS2zo6xkoUUFlPfJtQXq9y1QWrTInzEWWIh
+	zLz1p+d4jCJ1Dyb+BBIJGDPihMKT5v99Vls9ClTpoFLpJ85bf+nsACRtBJt+ik8xfka6X6bE7KYuX
+	5sXIZlCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFSpQ-0000000CdCS-1Dc9;
-	Fri, 07 Jun 2024 06:11:56 +0000
-Received: from mail-qt1-x835.google.com ([2607:f8b0:4864:20::835])
+	id 1sFTu6-0000000CsT1-3gbz;
+	Fri, 07 Jun 2024 07:20:51 +0000
+Received: from mail-yb1-xb4a.google.com ([2607:f8b0:4864:20::b4a])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFSpI-0000000Cd7D-0sNk
+	id 1sFTu0-0000000CsMk-2KYI
 	for linux-i3c@lists.infradead.org;
-	Fri, 07 Jun 2024 06:11:55 +0000
-Received: by mail-qt1-x835.google.com with SMTP id d75a77b69052e-4400cc0dad1so230141cf.0
-        for <linux-i3c@lists.infradead.org>; Thu, 06 Jun 2024 23:11:47 -0700 (PDT)
+	Fri, 07 Jun 2024 07:20:48 +0000
+Received: by mail-yb1-xb4a.google.com with SMTP id 3f1490d57ef6-dfa84f6a603so2870667276.3
+        for <linux-i3c@lists.infradead.org>; Fri, 07 Jun 2024 00:20:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20230601; t=1717740706; x=1718345506; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=nsZI/xHYSQm/+dnfipss02DR7ScDWJz4B6NrYN28zeM=;
-        b=v4WsXA3s4ye/ae5wTRw1aV6d0iIX3r0zRuE4Zvc3cvnOz+lpAYRXjATorOziYBog8H
-         vjLcXGNpOGDsuYqLA+kTtZisTYnHTa2er61Z+x3Gt5lbsGmftqaMpG5S+YY6TDq0DY9Q
-         My5WRzxaQ0E9o8G0XfL50MGpp/TSGjV/dSPEFclIZ7UleI/wzrgRLdaVzoze8OGmIc6P
-         kKKSDLFJkF/BhEV5R6MeABTGS+jaJ92wI3cQjRzoOfsrHjFFlJoRpTJ2I7cGY07VEnH6
-         CFhyw+9BPp+A0/xVRR2hXhEPVSCkVt2k6wBPyBmWVL2Iki9AbttkK8U3LRa+H9v2b9DT
-         z47w==
+        d=google.com; s=20230601; t=1717744838; x=1718349638; darn=lists.infradead.org;
+        h=cc:to:from:subject:message-id:references:mime-version:in-reply-to
+         :date:from:to:cc:subject:date:message-id:reply-to;
+        bh=LPMd0YveQHyYq4holtAZQwo//xyVvbIej/9hDc6mCbE=;
+        b=usxa/XlyO1RqSx8Xd9vRhTPj5l8ry3XW6I5WdKk1WRqpoxzAgZe5s6vOsHETYfDaKi
+         CFhk0Ju0wAc0SUGTFjv4H2bqaVW2tdAGHthW8ZApCYVmVtD4KnO08SRigEeBI2ZcqTCv
+         Xyr19iP59VFDk/xJkL316zZJVREDAKbTUQBCJrmisyFXdqOoq0vlTgzBnBcyEtwRSSfw
+         5unkpWYUFW0OXEU1z1IYKqU04kQhilu0vZl5M+TMYuPOMv0WDDCMuxlD0KfGbcF8GZvf
+         ++KHRP6fLLFT2TD2Mgo2rZTHf0EfF36EHlWs0ybp8HAnC6Bh5Z3uHOz9ORegd2Errb5A
+         YeMg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1717740706; x=1718345506;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=nsZI/xHYSQm/+dnfipss02DR7ScDWJz4B6NrYN28zeM=;
-        b=qfXL2MuI3DvF/6nALB7Hm05liSjfDy3uBUbTBl0T0pDtNAEwlE+ux8gJYEKfzecafF
-         aKvig5aKoLW2Wp1Xnx6FwZOgdRMNf7e0l9ZvhlrmUCyWmUH+5WVlVxz3xVcxzgA13MTU
-         /qvj6KfTGuEY4SGk6CDNNG/OPdP1qppNTWlYV84WU2cBVZcyAtSPx5OyvAh7fPTi9C5H
-         74fwIbujB+/ls2kodgayEg9a15sgZY/+Q7JjZB3W0JImerIlxCIewzDh4Cvb06QaTgL2
-         HsNSSfmd6x76u9jMN7BNcirmlPY9WHt1mQYgjeFlQNW5uAwVgBKyrUhe4lbEzCaN1bkm
-         hJnQ==
-X-Forwarded-Encrypted: i=1; AJvYcCVoeq4yrcLs6pwi102KM5U3/QTbzJ+8VSJitoi0xD90U7lNb9oCTuR6R9LSWUaNRKWuLvIx7SvVtJqmxpeFiLn4bGAMVcA1IlZaMtTC3g==
-X-Gm-Message-State: AOJu0YwDwZrfLFEorLDrf6x38HoU3ic2hmyDtOJ21uDOZytfnl1fwffs
-	M64WxcdFJoSEzJ0f37PS+XiBa/oTgWwzwhUD7cTypvcMKtBAxXDxRja7ZhQBizPitBdtsrddF3m
-	7ZidYe6o0+0yBuR6ZaNXfiiAnDbERSpMc9WSt
-X-Google-Smtp-Source: AGHT+IHIGntdfVER17jbc4kETFkRliSQf8UfFv43Za9kOG4EzKX6QZI299z1mCNGrB6uQfkliufbSyrPWQ/1PA9ZFII=
-X-Received: by 2002:a05:622a:6104:b0:440:2d56:488b with SMTP id
- d75a77b69052e-4403726cbe0mr4901381cf.14.1717740706174; Thu, 06 Jun 2024
- 23:11:46 -0700 (PDT)
-MIME-Version: 1.0
-References: <20240606124816.723630-1-aniketmaurya@google.com>
- <3c6c319f3aaa60428fd28f4d95c71dc9a8150081.camel@codeconstruct.com.au>
- <CAMmmMt3u=DB5onXdayMN5ZHvCmdnam4wOo0hKizve4K0LnZLZQ@mail.gmail.com> <3decb5293cb8fb2e8725600a8c5c930c32178602.camel@codeconstruct.com.au>
-In-Reply-To: <3decb5293cb8fb2e8725600a8c5c930c32178602.camel@codeconstruct.com.au>
-From: "Aniket ." <aniketmaurya@google.com>
-Date: Fri, 7 Jun 2024 11:41:34 +0530
-Message-ID: <CAMmmMt2guEx1jajb2NC0iBnMGpkd2vaSiXg_BqgZhwrA=FARLQ@mail.gmail.com>
-Subject: Re: [PATCH] i3c: dw: Fix IBI intr signal programming
-To: Jeremy Kerr <jk@codeconstruct.com.au>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, Joel Stanley <joel@jms.id.au>, 
-	Billy Tsai <billy_tsai@aspeedtech.com>, linux-i3c@lists.infradead.org, 
-	linux-kernel@vger.kernel.org
+        d=1e100.net; s=20230601; t=1717744838; x=1718349638;
+        h=cc:to:from:subject:message-id:references:mime-version:in-reply-to
+         :date:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=LPMd0YveQHyYq4holtAZQwo//xyVvbIej/9hDc6mCbE=;
+        b=W+TcxsICxP/pnFpL+E14Gg7jMkFHNfON2uIWhj+Li03pI7RTAZQgLTyYDo4LzLwZwi
+         GhPUSr0fJDyepNndqy+0VnqBCCCBvAs/Q9cs8QXogk+aOHfgngGwjMyHDbMViXUQ1xeC
+         PB9wanHMw9gb7VAiD3hQmKqe/+HUU9JqesOwxGZM1DURcVK5F8lxSyC+Vvuu7IaRoLz9
+         48acuGASo4hMQUwwz/qqfL8bB8/7lAJTrFJEDG+5qrjeN3cI4VsMZrVU72aaQ7ZDglrR
+         pXUFnXHN+EzoD4oE7mwL39pXdg/WlilGtBKnXP5WuzmYjdfZY/JKKbXXLuY3exPenNIn
+         q55Q==
+X-Gm-Message-State: AOJu0YxVe9y4cme/BVhfcQr3NXFcnjFc9qvjlTmSYBG95Hcs2YiMFsXq
+	6DNWLkioAuhvZItE3VuAEKrCNO1uF3uM5SVeE/Aj7L2xmr+UFde4+d8V4GME262mBwPZ1H1gAYL
+	/uHed+DvYXvL0Gk22xZRfCBIOzQ==
+X-Google-Smtp-Source: AGHT+IHUG1TkmKj0XidS2kJaY5u/jWXEV45MSeqH1d1RNuGh9PvPBtSHCr0zKEXMgGOpve/jlyIaIMUK569tO1UZDKI=
+X-Received: from aniketm.c.googlers.com ([fda3:e722:ac3:cc00:4f:4b78:c0a8:3387])
+ (user=aniketmaurya job=sendgmr) by 2002:a25:a3c3:0:b0:de5:bc2f:72bb with SMTP
+ id 3f1490d57ef6-dfaf66800f7mr100083276.12.1717744838152; Fri, 07 Jun 2024
+ 00:20:38 -0700 (PDT)
+Date: Fri,  7 Jun 2024 07:20:30 +0000
+In-Reply-To: <CAMmmMt2guEx1jajb2NC0iBnMGpkd2vaSiXg_BqgZhwrA=FARLQ@mail.gmail.com>
+Mime-Version: 1.0
+References: <CAMmmMt2guEx1jajb2NC0iBnMGpkd2vaSiXg_BqgZhwrA=FARLQ@mail.gmail.com>
+X-Mailer: git-send-email 2.45.2.505.gda0bf45e8d-goog
+Message-ID: <20240607072030.2618428-1-aniketmaurya@google.com>
+Subject: [PATCH v2] i3c: dw: Fix IBI intr programming
+From: Aniket <aniketmaurya@google.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Jeremy Kerr <jk@codeconstruct.com.au>, 
+	Joel Stanley <joel@jms.id.au>, Billy Tsai <billy_tsai@aspeedtech.com>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	Aniket <aniketmaurya@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240606_231148_382214_766A8AEF 
-X-CRM114-Status: GOOD (  12.08  )
+X-CRM114-CacheID: sfid-20240607_002044_828465_68B77D30 
+X-CRM114-Status: GOOD (  12.53  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,26 +91,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Jeremy,
+IBI_SIR_REQ_REJECT register is not present if the IP has
+IC_HAS_IBI_DATA = 1 set. So don't rely on doing read-
+modify-write op on this register.
+Instead maintain a variable to store the sir reject mask
+and use it to set IBI_SIR_REQ_REJECT.
 
-> This is more for handling IP configuration options we may see in future.
-> For example, I believe support for target/secondary mode is entirely
-> optional too.
+Signed-off-by: Aniket <aniketmaurya@google.com>
+---
+ changed from v1 to v2
+	- replaced counter with the mask
+ drivers/i3c/master/dw-i3c-master.c | 15 ++++++++-------
+ drivers/i3c/master/dw-i3c-master.h |  2 +-
+ 2 files changed, 9 insertions(+), 8 deletions(-)
 
-I was hoping to add support for target/secondary master, we might have
-different drivers instead, something like what's done for i2c-dw drivers. But
-that's a thought for another day.
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index 0ec00e644bd4..03911a5c0264 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -658,7 +658,9 @@ static int dw_i3c_master_bus_init(struct i3c_master_controller *m)
+ 	if (ret)
+ 		return ret;
+ 
+-	writel(IBI_REQ_REJECT_ALL, master->regs + IBI_SIR_REQ_REJECT);
++	master->sir_rej_mask = IBI_REQ_REJECT_ALL;
++	writel(master->sir_rej_mask, master->regs + IBI_SIR_REQ_REJECT);
++
+ 	writel(IBI_REQ_REJECT_ALL, master->regs + IBI_MR_REQ_REJECT);
+ 
+ 	/* For now don't support Hot-Join */
+@@ -1175,17 +1177,16 @@ static void dw_i3c_master_set_sir_enabled(struct dw_i3c_master *master,
+ 	master->platform_ops->set_dat_ibi(master, dev, enable, &reg);
+ 	writel(reg, master->regs + dat_entry);
+ 
+-	reg = readl(master->regs + IBI_SIR_REQ_REJECT);
+ 	if (enable) {
+-		global = reg == 0xffffffff;
+-		reg &= ~BIT(idx);
++		global = (master->sir_rej_mask == IBI_REQ_REJECT_ALL);
++		master->sir_rej_mask &= ~BIT(idx);
+ 	} else {
+ 		bool hj_rejected = !!(readl(master->regs + DEVICE_CTRL) & DEV_CTRL_HOT_JOIN_NACK);
+ 
+-		reg |= BIT(idx);
+-		global = (reg == 0xffffffff) && hj_rejected;
++		master->sir_rej_mask |= BIT(idx);
++		global = (master->sir_rej_mask == IBI_REQ_REJECT_ALL) && hj_rejected;
+ 	}
+-	writel(reg, master->regs + IBI_SIR_REQ_REJECT);
++	writel(master->sir_rej_mask, master->regs + IBI_SIR_REQ_REJECT);
+ 
+ 	if (global)
+ 		dw_i3c_master_enable_sir_signal(master, enable);
+diff --git a/drivers/i3c/master/dw-i3c-master.h b/drivers/i3c/master/dw-i3c-master.h
+index 4ab94aa72252..8cb617b8147e 100644
+--- a/drivers/i3c/master/dw-i3c-master.h
++++ b/drivers/i3c/master/dw-i3c-master.h
+@@ -39,7 +39,7 @@ struct dw_i3c_master {
+ 	char version[5];
+ 	char type[5];
+ 	bool ibi_capable;
+-
++	u32 sir_rej_mask;
+ 	/*
+ 	 * Per-device hardware data, used to manage the device address table
+ 	 * (DAT)
+-- 
+2.45.2.505.gda0bf45e8d-goog
 
-> I think keeping the mask value locally would be best. this means we
->
->  1) cannot get the counter and mask out of sync; and
->  2) don't need to do a read-modify-write on a register that is only
->     updated by the driver.
-
-Sure, let me make the patch.
-
-Thanks,
-Aniket
 
 -- 
 linux-i3c mailing list
