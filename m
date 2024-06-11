@@ -4,78 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD9EBC27C65
-	for <linux-i3c@archiver.kernel.org>; Tue, 11 Jun 2024 17:16:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 967A0C27C65
+	for <linux-i3c@archiver.kernel.org>; Tue, 11 Jun 2024 18:33:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:From:Subject:Message-ID:
-	References:Mime-Version:In-Reply-To:Date:Reply-To:Content-ID:
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:Cc:To:From:MIME-Version:Date:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=kryHff1vj3b8CpQVZgr0l2bNqzF7kXqmEt3Oxp6JRH4=; b=w2nMffCvhatYPG2Mg5eKgTDDAR
-	K1rE7Olt3rMVjMw0vchczk90IWRH8KEvMd1sBhBF/maISFtVKrObcqgcLLhtSidG9a9VfUhaaYNoc
-	8M7ZmH6dJwEf2tC2H9vT0xEANBQlvviC4b3Vc38v3gDbqqse5ez50AuLtwb8Yv0H8mqA6888drruf
-	4ahX9mOUHszMMmOjzDD1xCZPE06Hg0BkaQMolWIPqtgf9ijXszjXm4yJ7UVezlsqh9mTIOp8pOaG1
-	U44xhXICRCjOLOgVnjhJBBUn1VeSUCQr2l/zCfgFvTpO5rNzoL3bcGCI3gvVPfUjzLbxW0rmk2Ncp
-	GinDvZVg==;
+	bh=Xfb1rDpRrK1vAD1vtiG80hOXXYFkUpYhDWZjBaZBNsk=; b=JbbSsqDXyNrLfQ1JA4b4KFjolC
+	NE6gk6+Y/0BF3h0TSporzluSwMUzK14ZymGZln8uXerxLrTEwcx9FFUQ3fgKmML/QI1hdwQWgIfai
+	pyORhQBnU+4Nk7Ue7DCs1joISlwpR6du5Ji9m58YOkIhA/nYQUSxNy6q1jUzp5BIlz8nvRReoVSEX
+	W+czcTUsqQs2/+ivtaTvuBkAJVKlO/DPEnCim1HsUXuBTlGJXFJzWZFW8dVk5ksrEFUC4ajSFkqzJ
+	wTnrfvTR/i7dGg23aMCDvmNcG10wPNsNKOCCrbKCl6l8XDokj9Dps8bTF5Tvy4B5mzd3bkyf+uLGs
+	Q1bEx7vA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sH573-00000009da9-2GNU;
-	Tue, 11 Jun 2024 17:16:49 +0000
-Received: from mail-yw1-x114a.google.com ([2607:f8b0:4864:20::114a])
+	id 1sH6Iy-00000009rNj-08Tb;
+	Tue, 11 Jun 2024 18:33:12 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sH570-00000009dXK-0GMz
+	id 1sH6Iu-00000009rMO-3jFN
 	for linux-i3c@lists.infradead.org;
-	Tue, 11 Jun 2024 17:16:47 +0000
-Received: by mail-yw1-x114a.google.com with SMTP id 00721157ae682-627ec18b115so22969817b3.1
-        for <linux-i3c@lists.infradead.org>; Tue, 11 Jun 2024 10:16:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20230601; t=1718126201; x=1718731001; darn=lists.infradead.org;
-        h=cc:to:from:subject:message-id:references:mime-version:in-reply-to
-         :date:from:to:cc:subject:date:message-id:reply-to;
-        bh=x32GJJg0AlSw6J5DmY/hNwb8LZyaDbs+mRkSRyx7dxM=;
-        b=iTg9r2K68IphvyumbR6CPFfPmg9VWjmZCFSl8+1AnEVdxXncA0VL4z0OW4n4GlXWuU
-         F71hsEUSY5sEQbDdHdHuDY7GNxFICo1+E24J7Qg/q93j9RmRqQxme4je1sEohhTF/BHP
-         0wnlkRwRxjLblhf4bQXB1WqenyrkcbhbLkqn0qe/MZaQlVyVoFAJRykV3W/ZZUZCbRo7
-         z0qbsZa44c38gjrQc6ec3nEXgUJsa1v7MNErQGcTMQEKu28thUwLHvr/PmCONpsqosOD
-         NuVP8T4Gp+2dQK7DVeju/8ovBtDVyoPc1cH+yQ1jGk2Xw3OwJYb7q+NxehFC9vn95aJ2
-         YzDA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1718126201; x=1718731001;
-        h=cc:to:from:subject:message-id:references:mime-version:in-reply-to
-         :date:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=x32GJJg0AlSw6J5DmY/hNwb8LZyaDbs+mRkSRyx7dxM=;
-        b=i/KCevSHLL9Md7srALxC04eiJyaNv6cc9n26uvleamZMGlNlQBCqegH8wzP6zJO16J
-         fjaggaseVREINOvizJGua15MfrBLeXnlbAihuZt66UXhIhAfombW2lCnMZlbHMnjrnsL
-         oUEzNtttrocrPhqzE9eo01/kRSTZLwuqwlROarJNJLS8YYd3fW/GWvs01FVbAcWozcik
-         kDtEk1LS6Mr+K+VgymLNtOTnhHJQS+wD1+43mfQ44f7ptnJ9pxUznhHJ5M/pR1A8eiQR
-         8nalj1ZB3nLtHqqLNHPsXQVADjiCVEwM/feKZPv4p0OyW2ReRYS4vfHVAldMb49qB54e
-         yW7g==
-X-Gm-Message-State: AOJu0YxaHZW6IPa6xG8jG9CQR0D/HhwJ7dQtpFA/sgByKU7c2MeSBzu8
-	296QBq5ykJDmdxkXmVAuKQVI79WfmfJqXc2yYpdu+xzKW0cYgP3bmRerNjeOF9xEQkvPIUIJsJY
-	yA4L2+oSnJyVQ9vX4CovB3749aQ==
-X-Google-Smtp-Source: AGHT+IFZGNAg9puiuuskmC+xjdohP7kvB0J4VVKVnjwy0UefCG8+X6DP4ehy6KYfVSkTF9cqPe0yp7vlXGzijUCB35k=
-X-Received: from aniketm.c.googlers.com ([fda3:e722:ac3:cc00:4f:4b78:c0a8:3387])
- (user=aniketmaurya job=sendgmr) by 2002:a05:690c:dcf:b0:61b:791a:9850 with
- SMTP id 00721157ae682-62cd568d31cmr39052507b3.9.1718126200989; Tue, 11 Jun
- 2024 10:16:40 -0700 (PDT)
-Date: Tue, 11 Jun 2024 17:16:00 +0000
-In-Reply-To: <20240611171600.1105124-1-aniketmaurya@google.com>
-Mime-Version: 1.0
+	Tue, 11 Jun 2024 18:33:10 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 0B50960E71;
+	Tue, 11 Jun 2024 18:33:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 72049C2BD10;
+	Tue, 11 Jun 2024 18:33:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1718130787;
+	bh=zCreM3Z3hAQ/UnimTiSe9eKgPn9+Y6iFAPR6H5PRr94=;
+	h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
+	b=R6/UHIJGRA/bSIGUouGJezFRj+6CUB1yK7Ajec6CreZSu2nH3LeJ92YB9uW5ZFEjf
+	 Ssvm6JGjEQK4beHTrlZns7Q3q945FOZR2zEWYY1pCU8j2nBlvOyP5Sn4Il4wP/bSPz
+	 kNTM349+L9bYtn0OOWYHeE4EvojP9sQiap5nEIhKqk68tsMojTWsbiSXOgXUCtw+9e
+	 lyq4pD0HEOF543slqGYszst7LzX8XVx9o05BB4y0KGZkUSmDVmqLymmRwj4qgSFQ8m
+	 y5Lf8IO8lgrtFB0Z9FN1gdBkmtAd8UzXVZTs6yvFYZf7B9wzneyV9K+riJbKDn015J
+	 d9IyFs/cnd/OQ==
+Date: Tue, 11 Jun 2024 12:33:06 -0600
+MIME-Version: 1.0
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Aniket <aniketmaurya@google.com>
+Cc: Joel Stanley <joel@jms.id.au>, devicetree@vger.kernel.org, 
+ Jeremy Kerr <jk@codeconstruct.com.au>, 
+ Billy Tsai <billy_tsai@aspeedtech.com>, 
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
+ linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org
+In-Reply-To: <20240611171600.1105124-2-aniketmaurya@google.com>
 References: <20240611171600.1105124-1-aniketmaurya@google.com>
-X-Mailer: git-send-email 2.45.2.505.gda0bf45e8d-goog
-Message-ID: <20240611171600.1105124-3-aniketmaurya@google.com>
-Subject: [PATCH 2/2] i3c: dw: Add optional apb clock
-From: Aniket <aniketmaurya@google.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Jeremy Kerr <jk@codeconstruct.com.au>, 
-	Joel Stanley <joel@jms.id.au>, Billy Tsai <billy_tsai@aspeedtech.com>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	devicetree@vger.kernel.org, Aniket <aniketmaurya@google.com>
+ <20240611171600.1105124-2-aniketmaurya@google.com>
+Message-Id: <171813078603.2869501.4487165052485708159.robh@kernel.org>
+Subject: Re: [PATCH 1/2] dt-bindings: i3c: dw: Add clock binding
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240611_101646_251210_3B79F487 
-X-CRM114-Status: GOOD (  10.31  )
+X-CRM114-CacheID: sfid-20240611_113309_011904_A6421303 
+X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -92,73 +78,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Besides the core clock, IP also has an apb
-interface clock. Add an optional hook for
-the same and appropriately enable and disable.
 
-Signed-off-by: Aniket <aniketmaurya@google.com>
----
- drivers/i3c/master/dw-i3c-master.c | 12 ++++++++++++
- drivers/i3c/master/dw-i3c-master.h |  1 +
- 2 files changed, 13 insertions(+)
+On Tue, 11 Jun 2024 17:15:59 +0000, Aniket wrote:
+> Add dt binding for optional apb clock.
+> Core clock is mandatory. Also add
+> an example.
+> 
+> Signed-off-by: Aniket <aniketmaurya@google.com>
+> ---
+>  .../bindings/i3c/snps,dw-i3c-master.yaml      | 19 ++++++++++++++++++-
+>  1 file changed, 18 insertions(+), 1 deletion(-)
+> 
 
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index 77a2a1c3fd1d..41cdfd6741e3 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -1470,12 +1470,20 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
- 	if (IS_ERR(master->core_clk))
- 		return PTR_ERR(master->core_clk);
- 
-+	master->pclk = devm_clk_get_optional(&pdev->dev, "pclk");
-+	if (IS_ERR(master->pclk))
-+		return PTR_ERR(master->pclk);
-+
- 	master->core_rst = devm_reset_control_get_optional_exclusive(&pdev->dev,
- 								    "core_rst");
- 	if (IS_ERR(master->core_rst))
- 		return PTR_ERR(master->core_rst);
- 
- 	ret = clk_prepare_enable(master->core_clk);
-+	if (ret)
-+		return ret;
-+
-+	ret = clk_prepare_enable(master->pclk);
- 	if (ret)
- 		goto err_disable_core_clk;
- 
-@@ -1520,6 +1528,8 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
- err_assert_rst:
- 	reset_control_assert(master->core_rst);
- 
-+	clk_disable_unprepare(master->pclk);
-+
- err_disable_core_clk:
- 	clk_disable_unprepare(master->core_clk);
- 
-@@ -1533,6 +1543,8 @@ void dw_i3c_common_remove(struct dw_i3c_master *master)
- 
- 	reset_control_assert(master->core_rst);
- 
-+	clk_disable_unprepare(master->pclk);
-+
- 	clk_disable_unprepare(master->core_clk);
- }
- EXPORT_SYMBOL_GPL(dw_i3c_common_remove);
-diff --git a/drivers/i3c/master/dw-i3c-master.h b/drivers/i3c/master/dw-i3c-master.h
-index 8cb617b8147e..50c38e790c0e 100644
---- a/drivers/i3c/master/dw-i3c-master.h
-+++ b/drivers/i3c/master/dw-i3c-master.h
-@@ -36,6 +36,7 @@ struct dw_i3c_master {
- 	void __iomem *regs;
- 	struct reset_control *core_rst;
- 	struct clk *core_clk;
-+	struct clk *pclk;
- 	char version[5];
- 	char type[5];
- 	bool ibi_capable;
--- 
-2.45.2.505.gda0bf45e8d-goog
+My bot found errors running 'make dt_binding_check' on your patch:
+
+yamllint warnings/errors:
+
+dtschema/dtc warnings/errors:
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.example.dtb: i3c@10400: '#address-cells' is a required property
+	from schema $id: http://devicetree.org/schemas/i3c/snps,dw-i3c-master.yaml#
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.example.dtb: i3c@10400: '#size-cells' is a required property
+	from schema $id: http://devicetree.org/schemas/i3c/snps,dw-i3c-master.yaml#
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.example.dtb: i3c@10400: '#address-cells' is a required property
+	from schema $id: http://devicetree.org/schemas/i3c/i3c.yaml#
+/builds/robherring/dt-review-ci/linux/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.example.dtb: i3c@10400: '#size-cells' is a required property
+	from schema $id: http://devicetree.org/schemas/i3c/i3c.yaml#
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20240611171600.1105124-2-aniketmaurya@google.com
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
 
 
 -- 
