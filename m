@@ -4,145 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB54DC27C6E
-	for <linux-i3c@archiver.kernel.org>; Thu, 13 Jun 2024 16:06:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3EB6C27C6E
+	for <linux-i3c@archiver.kernel.org>; Fri, 14 Jun 2024 14:02:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zJfKRSoqFD+TlP5nurNAmkvu9RGv1A8uczsYtLwDMFs=; b=Tf1ihMYRUb+bnL
-	fF0Um25FfETCrWx/O5XNEzBVJfnyqIOHsy99WaJQ7dGXHmmFErvf8oL1TNRHoIdtUaK0hFknO+zEJ
-	+ZZebaIqkYE0jGvmCoxGLtqayDh93rEb0VV5AK/SDbcjRKhMcQyystcAzGhH+gA9CY3miC68gGLIx
-	rmNtQDksk2iFBpesAvpYCAURsNlfZTmIOoXJcHhscT4xQ12ygjAh0PLJPE/86mV62zymQVpgfLmif
-	TXw+Ckh4ZnSj9tKdCcxT839w8JDJ193flERq+L7GKvmVdhvWEdTFLoLwlL42ieW6kJMcX6Y3p370D
-	OhNF0ez8ZxsopPZXUXIg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MQ9V57rA+2GTtEJn+PuQishy2wj6D/mzvt2Z3F92m2Q=; b=CHYaXxvP1tfKUm
+	KCO3miIWZ4ky2/HK4bTj0mOln+2+Ix1PlnTKym+bZ6tpLGNyV99nzUO+I9ThlMbTMdMSUonopUQoC
+	pBjvFNnBMIeivz8KSd7zVagpuKfKioDciim9OVmaVr9SMLBc2DzcAyp0OmMJZcLEbzbbRVyiD2YLg
+	i5QgXf4HE/ueilH/c5yrc4GhLcLdjO5miV6fBKVypu/z/9I9mDMEb86Ur1jbQfvxwMoqbDmHG3VQc
+	B8mdPL0SjAx5O69hUx/tGgu7nCxMbpJ+W9bFgpYbvU575nGwYiJWbG4jqLdWmV3EsjGDUBCY82wQC
+	FDkKSzEuopa4fi3JheKw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHmyV-0000000HILY-16j9;
-	Thu, 13 Jun 2024 16:06:55 +0000
-Received: from mail-db5eur01on20601.outbound.protection.outlook.com ([2a01:111:f403:2600::601] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1sI7Vc-00000002x92-2386;
+	Fri, 14 Jun 2024 14:02:28 +0000
+Received: from mgamail.intel.com ([192.198.163.19])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sHmyT-0000000HIKQ-1w4b
+	id 1sI7VZ-00000002x78-1cly
 	for linux-i3c@lists.infradead.org;
-	Thu, 13 Jun 2024 16:06:54 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=kdMpStm+zBvhGmv2XPs+ZFxwxF3a9fajOTkK+3CoZxX/hmonO8ww0cwtv5uPImrShA8uUIYVbsVrc/OJg+bcTuz4Ekd/MV8kcgOoNoXtMmGVdQWOjCx6/UzqYW/d7RKhUcicmf7JVEVcITS60XFHRwh2bhu7MF+IfFhG2YddPGzgSOVIAUaZycXEo+xJze4KNw4UFi+5/75+DHzggsxhhPL4KCk1yukxylDy5Mqe1V3YyDiS+VKn5NsXEstv6qczZZDW/imIiniT5a0iDKmYNLmsRcqYuGAN+ny+DR9TUA8T2xLLTX+7lq6EB86oG0oQocG5CSsAjPTPdfjcRtFTKA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=u3zgztUIByQpM8Bju+MXWFL0POd4NsQyw9gOXPkWTN4=;
- b=Ja3a8YuLKpIZ7h65iDUJcJxrjWEcrs3jUGVibwK1RLONBAZFzBdu9d8Ip9esBbt8DQDJURzSg6M4jDv4GUrHA7cOYv5jgQpOWZE1P2VANO07hCA+OHVaMl8scOXhmLShJ0wp5yLl6cZOINa32NsS1zh3ZEFEfhgTV2eBPfRNPH6RZBDp6YG8q6nOWX8JeoZt/SmjllCC4gdZnTeMRzp9FDnBmzLJ3Nhlo8zsUiO8GbqIm3n4PtK5hi4Dch6nerp82ud40bQXG4VoqE0dx0Nx2AxR39MyukoMTdwwdYqlHNdNyIyBQWn1qs7Ty/csvW+lK1bDVckobaPY1pEQLM9a8Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=u3zgztUIByQpM8Bju+MXWFL0POd4NsQyw9gOXPkWTN4=;
- b=WBmiuDLqwlckSce448AajDtlLXKrvCif9Rbn9PD+ATnIVHq2E+NGHorZm1TaISDsY8XIATlrZU6Kqy72cVF/mqbQhrmB2KXDEYDCfm6LWlxbDXTw5ZLTT9XQXmbrrkb5vTyb0z9jWR83QW/hJoyfJEXepD9TCUSADgNLQIkvsq4=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
- by GVXPR04MB10234.eurprd04.prod.outlook.com (2603:10a6:150:1c1::20) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7633.37; Thu, 13 Jun
- 2024 16:06:46 +0000
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06%2]) with mapi id 15.20.7633.036; Thu, 13 Jun 2024
- 16:06:46 +0000
-Date: Thu, 13 Jun 2024 12:06:38 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Miquel Raynal <miquel.raynal@bootlin.com>
-Cc: alexandre.belloni@bootlin.com, conor.culhane@silvaco.com,
-	imx@lists.linux.dev, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 1/2] i3c: master: svc: fix IBIWON not set if IBI
- follow a hot join
-Message-ID: <ZmsZDpl1eOonPYL6@lizhi-Precision-Tower-5810>
-References: <20240603151527.52235-1-Frank.Li@nxp.com>
- <20240603171919.02c70327@xps-13>
-Content-Disposition: inline
-In-Reply-To: <20240603171919.02c70327@xps-13>
-X-ClientProxiedBy: BY5PR17CA0048.namprd17.prod.outlook.com
- (2603:10b6:a03:167::25) To PAXPR04MB9642.eurprd04.prod.outlook.com
- (2603:10a6:102:240::14)
+	Fri, 14 Jun 2024 14:02:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1718373746; x=1749909746;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=s6xRNmCCbSgnBkdiDlasSc+/0KaX3EhVizmJHdtpVZs=;
+  b=LPMvBqYX6p1ajQRPmX6acTpON+DjL9MhPpZqCp5TkOw4Bjt7i1kL0K/a
+   EEUo/orQMsfSF84+nXGYHDhxxKYgoV7wBO7Zd1rcKg8W5OmnxhGDe4KzU
+   GRu3xlwtytmJxRAFE0+wYSsCGAI7KyLm3pvN3sGLrXtLtfKaXzuTEmV7H
+   VH5I2Y4oK3Ws51e+s8x1YzV+Xq6V7bn6B8sDsOBJmdIZOIFbYHRkuR1xZ
+   ZxkZ9UhpgXDp7qk6fliVMGhVKkoE38xzW1Q7QeT3ewTv06V+YwwEtoJUK
+   vTU4XKhOBIPId1nc3Su8QZsyfeQJQJYJ9Ni240LLt1TYTncCl5Cn2vJzi
+   Q==;
+X-CSE-ConnectionGUID: o6nsDnbiQSuzqUjHSPRiMg==
+X-CSE-MsgGUID: Wj56kC/LSB2WF5FTaW4z9w==
+X-IronPort-AV: E=McAfee;i="6700,10204,11103"; a="15040034"
+X-IronPort-AV: E=Sophos;i="6.08,237,1712646000"; 
+   d="scan'208";a="15040034"
+Received: from orviesa004.jf.intel.com ([10.64.159.144])
+  by fmvoesa113.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Jun 2024 07:02:15 -0700
+X-CSE-ConnectionGUID: Ggwpxcd2T86SJqIhiQgj8w==
+X-CSE-MsgGUID: uA3qFTeERPeyE9d6Q1Egiw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.08,237,1712646000"; 
+   d="scan'208";a="45622567"
+Received: from ehlflashnuc2.fi.intel.com (HELO mylly.fi.intel.com.) ([10.237.72.57])
+  by orviesa004.jf.intel.com with ESMTP; 14 Jun 2024 07:02:14 -0700
+From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+To: linux-i3c@lists.infradead.org
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	stable@vger.kernel.org,
+	Jarkko Nikula <jarkko.nikula@linux.intel.com>
+Subject: [PATCH] i3c: mipi-i3c-hci: Fix number of DAT/DCT entries for HCI versions < 1.1
+Date: Fri, 14 Jun 2024 17:02:08 +0300
+Message-ID: <20240614140208.1100914-1-jarkko.nikula@linux.intel.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|GVXPR04MB10234:EE_
-X-MS-Office365-Filtering-Correlation-Id: 8de426bc-2f73-49a5-1c78-08dc8bc2d30a
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230035|52116009|376009|1800799019|366011|38350700009;
-X-Microsoft-Antispam-Message-Info: =?iso-8859-1?Q?X/djIT3FRyuoOLinGXG26RjAkuJaLEhO6EGMgWb0fsGjSbKEQUjsSLVIXv?=
- =?iso-8859-1?Q?JZJ3TsYaTVoPtNyIq2jTF5/Z+53jyKoD+ZZGomkoHHntQAPplIbump8SpE?=
- =?iso-8859-1?Q?YJHOuFoIZTLNMqjKR8rfb+K4ihP9TH1JmwwsrP+wEeSO4sMW6Tpiwi0wnr?=
- =?iso-8859-1?Q?4m6saPnxoJ7ukXfKVjYfhBabSBUiu2l09EnQxOZTxPHBBGLOwM8KM6QFL2?=
- =?iso-8859-1?Q?rlwKxvfmcBAyQjsmRIBdEFCiY4gvB/lJ1IQ+pbr00b9r+yKrloQjLcqpzU?=
- =?iso-8859-1?Q?xc0Zq5SkjWrmJaNdHRgsQhp+IQX/FWUQ82QgTyEbNBJUXGx6jDSauEPuqG?=
- =?iso-8859-1?Q?rufLWgHXsGW0I5u1TQnUG8DHhzR+GQ+rZTNt+uBMchG/jtu+3J4vESXjZr?=
- =?iso-8859-1?Q?CA2SJNTJTWthtvLSPtB+VXIKjgkPU7rDnBUnJOQBJX+PKo+moYq5nc8wfp?=
- =?iso-8859-1?Q?hJVuDMwM+z6Cntax5g9cIpLEOV+LLKcLBofJHt5dPoPaELh6uZPUIyWaLM?=
- =?iso-8859-1?Q?v7jW3jIbZfK0KMQnoU3LzaHVr/1smBCILr2YgcUM0Ye5quwNLkc6Tyxizn?=
- =?iso-8859-1?Q?PNSx3AUWZSOfqncrLmmDQ/TnCwFI1gPuWhlQfZT9oNncixjhmjAlNHJRTO?=
- =?iso-8859-1?Q?2OXBI1bMlTsb181A0lGZt7HZ+IWYVGoB2HoOfDIaZ0wQGz36VmcNOVZPsQ?=
- =?iso-8859-1?Q?jhtYEwZQWP82ewwfGyb/QLHXm4w2BstVUYjCoZKl5Ptq8/eAbKLn5vdhKD?=
- =?iso-8859-1?Q?Z5n5ZvLQtuMPbYjrtXEGGqp2AyUoNnYqxybuJNj/oeEP6kA2zyqFmjJrhS?=
- =?iso-8859-1?Q?Mtom8zZillNk/ZUHXmxb3dWN0EbfHAVVcw8OpEwbmpRvKpTyaOPzEQW72G?=
- =?iso-8859-1?Q?SQKl2IKbCoMX6K23TJ5tEblfqRZZayCKU3lMlACYC2R2xO9G+eAr/UiRRN?=
- =?iso-8859-1?Q?BSiFatVBv4dg6KBxPngOiOtlIzHeBhE3QO1JVn3VbJeOZyIDJnoSjI6lQw?=
- =?iso-8859-1?Q?H1eut1VB/dLgHp7Yp9w2Enx21rZD0DNXhyXFCRKxCVO/dYeccbxACI6ZfW?=
- =?iso-8859-1?Q?oEJZg66FccCZTp+zPsBSCHcnlr2it0V6trCCAMU8m9JkMdwo9ZvkgzkhXa?=
- =?iso-8859-1?Q?ahD9aFpFuNMxAqnNFjieE4TatKx8TeOdG9Rozs99egamznp9QxsS/NP9dS?=
- =?iso-8859-1?Q?cNVwHa2vw6XOAGpQkBTwD6Bmv/RSGzCClzaKoZuGUStEOfubXUrKjmsmnl?=
- =?iso-8859-1?Q?5OYeD9KqQOs9O2HqU1iMsXcpZvhqsXDaX1H/FsWvevnCE/XYHy6EmUKLNT?=
- =?iso-8859-1?Q?meS/Hhd92/dbPL0+bniWJt8VR8cSUBcXaiCmi7A/evPC3azXeaYlMdvcc1?=
- =?iso-8859-1?Q?9UCceoZ/p0UzhFeHs6ysVOJ+wvSwSFltkGMwZtTWeBwW7YSN6PGzE=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230035)(52116009)(376009)(1800799019)(366011)(38350700009);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?eLzEJoPrRfhyuUwr2tz52KFCBXeuHPrAlQ0VMoYhmU8jJxiudxjlHhjah6?=
- =?iso-8859-1?Q?7ikgu6aTsKrNVnXVz/TC3u/SxDXzZGKH8xN1ViEtv3DUT7JESrnalFT/6U?=
- =?iso-8859-1?Q?pmqmfJ2Ely2bJKq0wS5SPqkzgcsDdPHahmSLRT02cfEz7xmnMl9SWbf3AQ?=
- =?iso-8859-1?Q?9AHNsTv54OC6+DmjpBDVymjAgVIVvlTL3fbCv9JSh6O2+QpVJ7QHwtAFbn?=
- =?iso-8859-1?Q?EYY7iJNW6duUN34DkZ5Ay++LaPTjyAVP09HD0hIKvdxs8n2h9Dq3lVPx5d?=
- =?iso-8859-1?Q?kX7dKrlExTJTidunRsdAMB/8aglQS0qFJhmsv+V1mXm9SRdWird8xZ4oMT?=
- =?iso-8859-1?Q?QIMwCjItWzpmUzCiTWkgiuqfDKg0CYI3xvq26IYaPn86KI/DiAyYkWo+wJ?=
- =?iso-8859-1?Q?4FmlwvEzr8lxLvoS85CdjALjjGRF5oD/8gJXWEnbGq6TW94YCQXVZo8GXo?=
- =?iso-8859-1?Q?JPMuIlBsjvVMAWCcxpqgJenG0WDMIo1B0v6wLiiEzaS/wtij+ajFJV+RHx?=
- =?iso-8859-1?Q?Q6XeePKH/tvCGdfj0g0j4q5jpWRffeKfrDTwFeJUZjhjv5jrxeHq44LyNn?=
- =?iso-8859-1?Q?1BZT30J0y9AqGsj3eQ0r1uaOJOmFbWT1QtM2f5U6g+FvA8BUgrttl4RWF6?=
- =?iso-8859-1?Q?BRigYkjlbqFYxaWwjxhlBSFGqCXofDjMrijAgHfcnX4NWY/GCiEOjgHLre?=
- =?iso-8859-1?Q?fOd3uKObVsNE6nWRf4jxBPluqVsqBqoueK3+qbXqNOgO8TnHWT8B3q4p8w?=
- =?iso-8859-1?Q?005Dnvw5G1J4jKuVqFGH0/HkKDWRO4DP1QCniGDc1/9QO/4X0V+yLXP1V6?=
- =?iso-8859-1?Q?AbPI0iLzBDUMft82NanOl9GCfaR/76ta4UTvDlgDkKOHCJ8sSV4M7RnPOM?=
- =?iso-8859-1?Q?wBypKrIEejTsNXcCpd6PYRKDtHeKklbdd/Vbn3Rq1Gx9CwtId640Y4I/98?=
- =?iso-8859-1?Q?cwrtFlE0MxOuR///+zG5U8P5tVaMYHLooZrATsX3c+S0fPogjwgpW8XXrW?=
- =?iso-8859-1?Q?RiUmU8q1dYZO4ZiplmBM/fpTIy5Q3PwWIo+DdrnDd5uRy6lbiTEhqEHGR0?=
- =?iso-8859-1?Q?DCvT3OZNp/zP/dnpdoB4ZIGYh0GHBCnfTacax2XFs5fYkphOhpW2qodK8T?=
- =?iso-8859-1?Q?PqjIWJaUegbgGzjuCqLBK+XqTmeUfEiX2SGJUGW1X3OJsLTHiBkYp1t2To?=
- =?iso-8859-1?Q?2vF58yllqRjqC1kttmP0CcT1qVIDbDVAMWZHT7C3kT8RBWsv1U/dkYuNTB?=
- =?iso-8859-1?Q?1vZLIVbUmHhOTz4fYVPQmPiNAxb/GfiKVk5pUhEhd393QqfV5OayBcSUQK?=
- =?iso-8859-1?Q?49CC0Bt2vKgR3jPXz1hgfPhpGn2VLhqm6uXpFHMdcMbnhK/dSkgECdR8hz?=
- =?iso-8859-1?Q?kwiUlpDf4HwSaGi2389Gkw1GbQPauLX6gcD4hSE6rV8PDjrTZXewjCjfjj?=
- =?iso-8859-1?Q?vpNd7TmC56QXc6nj6r4ZPOpEiFkXZse5S9lmzMi79TP0kCWGXe1ifXT7oA?=
- =?iso-8859-1?Q?7tGRoULGPO1KD+yOlqenxizyv42LKQTYyhClG6XyrNvRKWjSjC8jE4FcaQ?=
- =?iso-8859-1?Q?NrDf2TcNNdXUYa4C7VpH/TzdVRLQtL3WTE3o2P0i8pLCYBZyoXyyN2asLM?=
- =?iso-8859-1?Q?KQYYzokn0BTDE=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8de426bc-2f73-49a5-1c78-08dc8bc2d30a
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Jun 2024 16:06:46.1573
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: iCf65cq/NJGhngW/ELJ2/DKGPiFd9B/SmuSnL58s16/GZi87gRLbqQikdD5GORtbyHivSUsc1RF1DxSUXV2olA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXPR04MB10234
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240613_090653_529395_1257A7EE 
-X-CRM114-Status: GOOD (  14.96  )
+X-CRM114-CacheID: sfid-20240614_070225_575394_5626B499 
+X-CRM114-Status: GOOD (  10.34  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -154,55 +78,77 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jun 03, 2024 at 05:19:19PM +0200, Miquel Raynal wrote:
-> Hi Frank,
-> =
+I was wrong about the TABLE_SIZE field description in the
+commit 0676bfebf576 ("i3c: mipi-i3c-hci: Fix DAT/DCT entry sizes").
 
-> Frank.Li@nxp.com wrote on Mon,  3 Jun 2024 11:15:26 -0400:
-> =
+For the MIPI I3C HCI versions 1.0 and earlier the TABLE_SIZE field in
+the registers DAT_SECTION_OFFSET and DCT_SECTION_OFFSET is indeed defined
+in DWORDs and not number of entries like it is defined in later versions.
 
-> > When an In-Band Interrupt(IBI) occurs after svc_i3c_master_do_daa_locke=
-d(),
-> > typically triggered during a Hot Join (HJ) event, the IBIWON flag fails=
- to
-> > be set when issuing an auto IBI command.
-> > =
+Where above fix allowed driver initialization to continue the wrongly
+interpreted TABLE_SIZE field leads variables DAT_entries being twice and
+DCT_entries four times as big as they really are.
 
-> > The issue stems from the omission of emitting STOP upon successful
-> > execution of svc_i3c_master_do_daa_locked(). Consequently, the controll=
-er
-> > interprets it as a repeat start when emitting the auto IBI command. Per=
- the
-> > I3C specification, an IBI should never occur during a repeat start, thus
-> > preventing the IBIWON flag from being set.
-> > =
+That in turn leads clearing the DAT table over the boundary in the
+dat_v1.c: hci_dat_v1_init().
 
-> > Emit STOP regardless of the success or failure of
-> > svc_i3c_master_do_daa_locked() to match I3C spec requirement.
-> > =
+So interprete the TABLE_SIZE field in DWORDs for HCI versions < 1.1 and
+fix number of DAT/DCT entries accordingly.
 
-> > Cc: <stable@vger.kernel.org>
-> > Fixes: 05b26c31a485 ("i3c: master: svc: add hot join support")
-> > Signed-off-by: Frank Li <Frank.Li@nxp.com>
-> =
+Fixes: 0676bfebf576 ("i3c: mipi-i3c-hci: Fix DAT/DCT entry sizes")
+Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+---
+ drivers/i3c/master/mipi-i3c-hci/core.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-> Reviewed-by: Miquel Raynal <miquel.raynal@bootlin.com>
+diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+index faf723a0c739..0ff3055b8e78 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/core.c
++++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+@@ -646,6 +646,7 @@ static irqreturn_t i3c_hci_irq_handler(int irq, void *dev_id)
+ static int i3c_hci_init(struct i3c_hci *hci)
+ {
+ 	u32 regval, offset;
++	bool size_in_dwords;
+ 	int ret;
+ 
+ 	/* Validate HCI hardware version */
+@@ -670,11 +671,16 @@ static int i3c_hci_init(struct i3c_hci *hci)
+ 	hci->caps = reg_read(HC_CAPABILITIES);
+ 	DBG("caps = %#x", hci->caps);
+ 
++	size_in_dwords = hci->version_major < 1 ||
++			 (hci->version_major == 1 && hci->version_minor < 1);
++
+ 	regval = reg_read(DAT_SECTION);
+ 	offset = FIELD_GET(DAT_TABLE_OFFSET, regval);
+ 	hci->DAT_regs = offset ? hci->base_regs + offset : NULL;
+ 	hci->DAT_entries = FIELD_GET(DAT_TABLE_SIZE, regval);
+ 	hci->DAT_entry_size = FIELD_GET(DAT_ENTRY_SIZE, regval) ? 0 : 8;
++	if (size_in_dwords)
++		hci->DAT_entries = 4 * hci->DAT_entries / hci->DAT_entry_size;
+ 	dev_info(&hci->master.dev, "DAT: %u %u-bytes entries at offset %#x\n",
+ 		 hci->DAT_entries, hci->DAT_entry_size, offset);
+ 
+@@ -683,6 +689,8 @@ static int i3c_hci_init(struct i3c_hci *hci)
+ 	hci->DCT_regs = offset ? hci->base_regs + offset : NULL;
+ 	hci->DCT_entries = FIELD_GET(DCT_TABLE_SIZE, regval);
+ 	hci->DCT_entry_size = FIELD_GET(DCT_ENTRY_SIZE, regval) ? 0 : 16;
++	if (size_in_dwords)
++		hci->DCT_entries = 4 * hci->DCT_entries / hci->DCT_entry_size;
+ 	dev_info(&hci->master.dev, "DCT: %u %u-bytes entries at offset %#x\n",
+ 		 hci->DCT_entries, hci->DCT_entry_size, offset);
+ 
+-- 
+2.43.0
 
-Please hold on this patch. Hardware can emit stop automatically. It need
-better fix.  Let me work on new version for this one.
 
-> =
-
-> Thanks,
-> Miqu=E8l
-
--- =
-
+-- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
