@@ -4,69 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC3C7C27C79
-	for <linux-i3c@archiver.kernel.org>; Mon, 17 Jun 2024 11:33:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39CBCC27C4F
+	for <linux-i3c@archiver.kernel.org>; Tue, 18 Jun 2024 20:06:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MzXEH2ohNA79k6SBoAdKR1ygxyS/xCO7kt0XaHR1Rkk=; b=gy9V8IMccvW1mj
-	TCaCWD1gA3LmVvuc4vDA5AiTl6Q4kt7WmyoOjOrjkq/x00K3uwgBtQ6vIJDNGrI8FYkVSJdtwDtdx
-	4BEnfJm90HfeglYeK7SwH64TGD4bmFThOITrMmLoJHvWEAl3AinXdToVmsgMu/KuR0B9TXlfqbHx7
-	o1G1Kdx10xnO1a/N45oeSBYyINVfJ4xNVY4/8kdU2Rel4CVuKc71gzSqVe6ZgryoYMILxEQYsHoUs
-	+QliNjlHeKCaLTxzt1DUa0xtvUI8AUhAbmK91zJcFEqEc4ZYRD9EzLYwsqnN98JD56pa3P+dIokOW
-	I6HD3lCfMZG7NUsPhYRQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jp29vsRriskgx1AahX+/Quk0wh2cY2l+MnCXr1kaLVY=; b=hesEM7myfGIiCR
+	Sk5EceNo0MRwKJ4DMVEjuQGKvdlWU9ZJugyUSzyaCh2X1Uw2L6F3MGLirJkhXtV2yu3P5wMRm01jo
+	Uwoh6mN2zvxkhx6Gj/oOOSB27H0gLsMzXFbS4oQRAI3MKZxoMBecNsMohrD9WV/2Ibc8EfLD6LRwe
+	73C6G9kTqXgXcQ+aqhc0m96+maPP5HDBVpRAwycVSQ7ZAzfcTLhz+DsfVWXdBsIdspJZPFR/nGpV6
+	AuFM5v7h8DciS5shJGpBpzYTN/Rrqej7GbRL7L176VKdrreYkdh4JHWrsU1lkaaBSkVDYyx2J/8DA
+	oruwyXVMR+gcW2A9Hi7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJAbd-0000000AV2m-0ij0;
-	Mon, 17 Jun 2024 11:33:01 +0000
-Received: from mgamail.intel.com ([192.198.163.7])
+	id 1sJf5n-0000000GRm3-2Xcr;
+	Tue, 18 Jun 2024 20:06:11 +0000
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJAba-0000000AV1q-2N9O
+	id 1sJf5k-0000000GRjM-04ML
 	for linux-i3c@lists.infradead.org;
-	Mon, 17 Jun 2024 11:32:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1718623979; x=1750159979;
-  h=from:to:cc:subject:date:message-id:mime-version:
-   content-transfer-encoding;
-  bh=Um1unrEpih4RsdNp/FkQUuZ18mOrO0zcEBS1C4T9egQ=;
-  b=jDRxxbHaMK4qZVqWWrooEInhbBCudXNNszTBKEe9pNp1LLbg1b5wqci8
-   fvJG5pvCtundXiFGL/DQxuNIOF38nCtvzJIGPbNWpHCTmYEXjYOzg8BZx
-   bvkftVc9tRtle84HsyE02QEWz9xqbIJLHdAfg8ovrfoRDs7aeKQTRgXAT
-   Dn2AnA0wxPl6P1hPzFRGO8xwl3tr8UOCGFC3K4r7uJrg95W6VBA6MkwOg
-   Rq/PnaaaUWqxkCPEnwcv4Rbz0G7QzGrlEYdyWWmL9re23N54ChMGgqitT
-   ob3LfQPX963g+1G6VtDqJXaWgxRW86tiaIQQ8+cAui3BCqcue9ImQQzQK
-   w==;
-X-CSE-ConnectionGUID: Cza3/PEYSmyKhH/Z9H4yTQ==
-X-CSE-MsgGUID: OtH0PUPuSHW6Q40OPjFBIg==
-X-IronPort-AV: E=McAfee;i="6700,10204,11105"; a="40857574"
-X-IronPort-AV: E=Sophos;i="6.08,244,1712646000"; 
-   d="scan'208";a="40857574"
-Received: from fmviesa003.fm.intel.com ([10.60.135.143])
-  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 17 Jun 2024 04:32:58 -0700
-X-CSE-ConnectionGUID: ny2rQ4Y7QauXrj9Aba8Tpw==
-X-CSE-MsgGUID: iMA1W/G1QQqIB8TaJf0K/Q==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.08,244,1712646000"; 
-   d="scan'208";a="45534347"
-Received: from mylly.fi.intel.com (HELO mylly.fi.intel.com.) ([10.237.72.151])
-  by fmviesa003.fm.intel.com with ESMTP; 17 Jun 2024 04:32:56 -0700
-From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-To: linux-i3c@lists.infradead.org
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Jarkko Nikula <jarkko.nikula@linux.intel.com>,
-	stable@vger.kernel.org
-Subject: [PATCH v2] i3c: mipi-i3c-hci: Fix number of DAT/DCT entries for HCI versions < 1.1
-Date: Mon, 17 Jun 2024 14:32:51 +0300
-Message-ID: <20240617113251.1159534-1-jarkko.nikula@linux.intel.com>
-X-Mailer: git-send-email 2.43.0
+	Tue, 18 Jun 2024 20:06:10 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id C41BA40005;
+	Tue, 18 Jun 2024 20:05:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1718741160;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=xTvCEPU1cab+Z2/A6+9YjBaQ0HypCOH+hj9/cz45SEA=;
+	b=E6x4F7Pe83c+8Eo8TPPTNp6BEbcccZFhCynsoozHSXi/8WXh6gQZ8o/YHs5caaP54rexz6
+	af1NlCpf3HhEZKBmjGungMcaINXnClhcf4niusVKnUFrfmLPomhEyv93Pjs7AhaQ77hej8
+	5yWiKMVdkHgmZOQkbZzaX9IagPQ2Ir9IJUujIUBEV5DlgPqI/b/YmzRFo//nPkYH22ZFl4
+	qKyGd649PDf96Xa5IucHfXCeXtmhwcbknTan8ccHoN+11WLbQUcDs83zDNKzZr1ctEsHUD
+	b+QM5BXeAW5KQLTmbxgfp0Cy9utM+49T1RNRAZpxt/NyadPVPXPL5VaD5qSJrA==
+Date: Tue, 18 Jun 2024 22:05:58 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Aniket <aniketmaurya@google.com>
+Cc: Jeremy Kerr <jk@codeconstruct.com.au>, Joel Stanley <joel@jms.id.au>,
+	Billy Tsai <billy_tsai@aspeedtech.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+	devicetree@vger.kernel.org
+Subject: Re: [PATCH 2/2] i3c: dw: Add optional apb clock
+Message-ID: <202406182005584f0deea8@mail.local>
+References: <20240611171600.1105124-1-aniketmaurya@google.com>
+ <20240611171600.1105124-3-aniketmaurya@google.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20240611171600.1105124-3-aniketmaurya@google.com>
+X-GND-Sasl: alexandre.belloni@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240617_043258_677643_EF7BBFD2 
-X-CRM114-Status: GOOD (  10.42  )
+X-CRM114-CacheID: sfid-20240618_130608_560961_BA091277 
+X-CRM114-Status: GOOD (  16.77  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,73 +76,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-I was wrong about the TABLE_SIZE field description in the
-commit 0676bfebf576 ("i3c: mipi-i3c-hci: Fix DAT/DCT entry sizes").
+Hello,
 
-For the MIPI I3C HCI versions 1.0 and earlier the TABLE_SIZE field in
-the registers DAT_SECTION_OFFSET and DCT_SECTION_OFFSET is indeed defined
-in DWORDs and not number of entries like it is defined in later versions.
+On 11/06/2024 17:16:00+0000, Aniket wrote:
+> Besides the core clock, IP also has an apb
+> interface clock. Add an optional hook for
+> the same and appropriately enable and disable.
+> 
+> Signed-off-by: Aniket <aniketmaurya@google.com>
+> ---
+>  drivers/i3c/master/dw-i3c-master.c | 12 ++++++++++++
+>  drivers/i3c/master/dw-i3c-master.h |  1 +
+>  2 files changed, 13 insertions(+)
+> 
+> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+> index 77a2a1c3fd1d..41cdfd6741e3 100644
+> --- a/drivers/i3c/master/dw-i3c-master.c
+> +++ b/drivers/i3c/master/dw-i3c-master.c
+> @@ -1470,12 +1470,20 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+>  	if (IS_ERR(master->core_clk))
+>  		return PTR_ERR(master->core_clk);
+>  
+> +	master->pclk = devm_clk_get_optional(&pdev->dev, "pclk");
+> +	if (IS_ERR(master->pclk))
+> +		return PTR_ERR(master->pclk);
+> +
 
-Where above fix allowed driver initialization to continue the wrongly
-interpreted TABLE_SIZE field leads variables DAT_entries being twice and
-DCT_entries four times as big as they really are.
+I guess you need to update the device tree binding documentation too.
 
-That in turn leads clearing the DAT table over the boundary in the
-dat_v1.c: hci_dat_v1_init().
+>  	master->core_rst = devm_reset_control_get_optional_exclusive(&pdev->dev,
+>  								    "core_rst");
+>  	if (IS_ERR(master->core_rst))
+>  		return PTR_ERR(master->core_rst);
+>  
+>  	ret = clk_prepare_enable(master->core_clk);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = clk_prepare_enable(master->pclk);
+>  	if (ret)
+>  		goto err_disable_core_clk;
+>  
+> @@ -1520,6 +1528,8 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+>  err_assert_rst:
+>  	reset_control_assert(master->core_rst);
+>  
+> +	clk_disable_unprepare(master->pclk);
+> +
+>  err_disable_core_clk:
+>  	clk_disable_unprepare(master->core_clk);
+>  
+> @@ -1533,6 +1543,8 @@ void dw_i3c_common_remove(struct dw_i3c_master *master)
+>  
+>  	reset_control_assert(master->core_rst);
+>  
+> +	clk_disable_unprepare(master->pclk);
+> +
+>  	clk_disable_unprepare(master->core_clk);
+>  }
+>  EXPORT_SYMBOL_GPL(dw_i3c_common_remove);
+> diff --git a/drivers/i3c/master/dw-i3c-master.h b/drivers/i3c/master/dw-i3c-master.h
+> index 8cb617b8147e..50c38e790c0e 100644
+> --- a/drivers/i3c/master/dw-i3c-master.h
+> +++ b/drivers/i3c/master/dw-i3c-master.h
+> @@ -36,6 +36,7 @@ struct dw_i3c_master {
+>  	void __iomem *regs;
+>  	struct reset_control *core_rst;
+>  	struct clk *core_clk;
+> +	struct clk *pclk;
+>  	char version[5];
+>  	char type[5];
+>  	bool ibi_capable;
+> -- 
+> 2.45.2.505.gda0bf45e8d-goog
+> 
 
-So interprete the TABLE_SIZE field in DWORDs for HCI versions < 1.1 and
-fix number of DAT/DCT entries accordingly.
-
-Fixes: 0676bfebf576 ("i3c: mipi-i3c-hci: Fix DAT/DCT entry sizes")
-Cc: <stable@vger.kernel.org>
-Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
----
-v2: Added Cc: stable tag which I forgot in v1.
----
- drivers/i3c/master/mipi-i3c-hci/core.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
-
-diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-index d7e966a25583..4e7d6a43ee9b 100644
---- a/drivers/i3c/master/mipi-i3c-hci/core.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-@@ -631,6 +631,7 @@ static irqreturn_t i3c_hci_irq_handler(int irq, void *dev_id)
- static int i3c_hci_init(struct i3c_hci *hci)
- {
- 	u32 regval, offset;
-+	bool size_in_dwords;
- 	int ret;
- 
- 	/* Validate HCI hardware version */
-@@ -654,11 +655,16 @@ static int i3c_hci_init(struct i3c_hci *hci)
- 	hci->caps = reg_read(HC_CAPABILITIES);
- 	DBG("caps = %#x", hci->caps);
- 
-+	size_in_dwords = hci->version_major < 1 ||
-+			 (hci->version_major == 1 && hci->version_minor < 1);
-+
- 	regval = reg_read(DAT_SECTION);
- 	offset = FIELD_GET(DAT_TABLE_OFFSET, regval);
- 	hci->DAT_regs = offset ? hci->base_regs + offset : NULL;
- 	hci->DAT_entries = FIELD_GET(DAT_TABLE_SIZE, regval);
- 	hci->DAT_entry_size = FIELD_GET(DAT_ENTRY_SIZE, regval) ? 0 : 8;
-+	if (size_in_dwords)
-+		hci->DAT_entries = 4 * hci->DAT_entries / hci->DAT_entry_size;
- 	dev_info(&hci->master.dev, "DAT: %u %u-bytes entries at offset %#x\n",
- 		 hci->DAT_entries, hci->DAT_entry_size, offset);
- 
-@@ -667,6 +673,8 @@ static int i3c_hci_init(struct i3c_hci *hci)
- 	hci->DCT_regs = offset ? hci->base_regs + offset : NULL;
- 	hci->DCT_entries = FIELD_GET(DCT_TABLE_SIZE, regval);
- 	hci->DCT_entry_size = FIELD_GET(DCT_ENTRY_SIZE, regval) ? 0 : 16;
-+	if (size_in_dwords)
-+		hci->DCT_entries = 4 * hci->DCT_entries / hci->DCT_entry_size;
- 	dev_info(&hci->master.dev, "DCT: %u %u-bytes entries at offset %#x\n",
- 		 hci->DCT_entries, hci->DCT_entry_size, offset);
- 
 -- 
-2.43.0
-
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-i3c mailing list
