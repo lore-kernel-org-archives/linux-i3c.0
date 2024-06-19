@@ -4,63 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 79E5BC27C4F
-	for <linux-i3c@archiver.kernel.org>; Tue, 18 Jun 2024 20:09:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5367BC27C79
+	for <linux-i3c@archiver.kernel.org>; Wed, 19 Jun 2024 06:55:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MrHvMx+CVziUaYw3XiqZE6Onw6OvgPoD7pGjjcFP7fc=; b=N0cXwOR3U09POK
-	idV/+V/Mm96OizyG+M+RvfAtRNwGyXshOW/zX/Ghvt8BZA3tS/4jyyN7GvDOgpnFtLnYs4tkIKsfQ
-	v0Dcv1gcKBWKAW0+K4bUcpZr7kqCoLUVvf40xAH8hmtqot1+xP5ttGIkLYE45o4SHKbsMWu/wxTHI
-	UiWVXGDSROgtrSbczCnPaKCEQYSpg0xb4DxxMH5EhxlOlXb44bDa0SLrkXEKumvEdvjKUybDimiuR
-	YOh3h371ULBjEB2gioEXgJT2ypPOEq8IgtoLnOUplH8UuG4NIg9wet9ZjGTPsVd/apcJM53/DKvS0
-	rB6xEHkYMyJK3699Kt6g==;
+	List-Owner; bh=g3lK/mxUgMwKs/HqkWBAYeuJOBelPWCQz2LubgWqMuw=; b=un9e+pp2Y5qKpT
+	Xodrt3jQAXzGKlxLRPLn2l34I6djovwRwvuX0rBHQOMizAxwJ0TorPTWqiXwrGOFlYCzZ+ADbqZSA
+	YsgeMyXAqkKME9T+oScDY62BDbt0aUmMtWJxhtxTnRk+snJxsBFiCBjVfy12fjjzGXTa2SGPutrOQ
+	bjZMNQ65XOgVkHpq42HIo1Ca2zC3v+WtoSkC+omU4UjOThZtwJvxQNDqLNdBnIBaSBrdjK9KUkioC
+	eC1azOnaimFUso/55gEPllahnQMv9GYvz2+SjzmzuMEJmNk0yx5Sikct0fWmNHXk+1bxDuLPGiUD6
+	8/cmAimK+qDJ8MZgeSgw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJf9D-0000000GSM7-0s1C;
-	Tue, 18 Jun 2024 20:09:43 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1sJpER-000000007Bj-3I45;
+	Wed, 19 Jun 2024 06:55:47 +0000
+Received: from pi.codeconstruct.com.au ([203.29.241.158] helo=codeconstruct.com.au)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sJf9A-0000000GSL2-1Xk3
+	id 1sJpEP-000000007AI-2K8q
 	for linux-i3c@lists.infradead.org;
-	Tue, 18 Jun 2024 20:09:42 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 38F4A20002;
-	Tue, 18 Jun 2024 20:09:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1718741377;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=5QkoL0pNNpii6fLkIcYMP6ZEwDfv27RbGj78tY8cKco=;
-	b=XAM5oCBX/upEqGKEDtOn0CIi7bnlHESrdK45xPDJYlLWzkrkgLPQl7j8mXnYeuepLZ7Aci
-	0Qfx+Nkjtfgp91e6lRWv4/DFqC0J6kSFi+29g+2bF6TsZRzzdetTquL2mrEJqwSvqPpgvt
-	ZcbTQg0lN3etaxx2EDQYbycZA3Qs1Hm4Evc7bmhmCv8gL6/ZiENoXhNkwwAyb7D8+YO4UZ
-	Fs48WHWRnJ3RqSvQzI4bOD4xZhi9k10hOEQNLWbkJsZSBdYWqOJ8vHHpGP+T0V8Man0ENG
-	WDUiNEcKyEb927fiM1BWC2rkGQoq//2X4ToMnWxMzK4qgJRuGCPPpnm2agcDwQ==
-Date: Tue, 18 Jun 2024 22:09:32 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Aniket <aniketmaurya@google.com>
-Cc: Jeremy Kerr <jk@codeconstruct.com.au>, Joel Stanley <joel@jms.id.au>,
-	Billy Tsai <billy_tsai@aspeedtech.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	devicetree@vger.kernel.org
-Subject: Re: [PATCH 2/2] i3c: dw: Add optional apb clock
-Message-ID: <20240618200932858a6e40@mail.local>
-References: <20240611171600.1105124-1-aniketmaurya@google.com>
- <20240611171600.1105124-3-aniketmaurya@google.com>
- <202406182005584f0deea8@mail.local>
+	Wed, 19 Jun 2024 06:55:46 +0000
+Received: from pecola.lan (unknown [159.196.93.152])
+	by mail.codeconstruct.com.au (Postfix) with ESMTPSA id 2112C20127;
+	Wed, 19 Jun 2024 14:55:35 +0800 (AWST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=codeconstruct.com.au; s=2022a; t=1718780136;
+	bh=hgH4DDDvAA9kgOZ2n3TjfNXg8eHsBsoYv2LJciY4Ixw=;
+	h=Subject:From:To:Cc:Date:In-Reply-To:References;
+	b=WTIOUwKRVPebDE+XFoyICYbLin7nX/vvQXC3AKRpUd3b0uxE/GDSDvyMybgzRCTFA
+	 XWz7D6Xw+kLwrrsq0WgD0pMPLdJHz4DTMP8bbs11PjVC+k7Sii4vPzRlPB0jWfF0S4
+	 gVIs5drwwyCeUrJdGWsyE4eAGafdpf56kYUcLC/HBRRpCvCJg7MPf6Fap0yKMpyTeo
+	 I0Ladfm5LUXJWleJl40TjU5ek/Jj2Iwh7yq0Bc4qmzaavWU7NekEBhz+VReWH10Dvw
+	 AnuhpmvXCVf6T3oQXIMfPzcLqzRKGuNMoeSyEkej2v9OE2BvYVcO0EOz1TMcyMdNXa
+	 Urz5aAipwmYnQ==
+Message-ID: <bae054d217aa577838593244eda02b008e3749a5.camel@codeconstruct.com.au>
+Subject: Re: [PATCH 2/2] i3c: i3c-hub: Add Renesas RG3MxxB12A1 I3C HUB driver
+From: Jeremy Kerr <jk@codeconstruct.com.au>
+To: Steven Niu <steven.niu.uj@renesas.com>, alexandre.belloni@bootlin.com, 
+ linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org,  krzysztof.kozlowski+dt@linaro.org,
+ conor+dt@kernel.org,  devicetree@vger.kernel.org
+Cc: zbigniew.lukwinski@linux.intel.com
+Date: Wed, 19 Jun 2024 14:55:35 +0800
+In-Reply-To: <20240217131412.4145506-2-steven.niu.uj@renesas.com>
+References: <20240217131412.4145506-1-steven.niu.uj@renesas.com>
+	 <20240217131412.4145506-2-steven.niu.uj@renesas.com>
+User-Agent: Evolution 3.46.4-2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <202406182005584f0deea8@mail.local>
-X-GND-Sasl: alexandre.belloni@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240618_130940_766196_5E4E5D64 
-X-CRM114-Status: GOOD (  19.70  )
+X-CRM114-CacheID: sfid-20240618_235545_823344_FA662B5C 
+X-CRM114-Status: UNSURE (   6.83  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,96 +74,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 18/06/2024 22:06:00+0200, Alexandre Belloni wrote:
-> Hello,
-> 
-> On 11/06/2024 17:16:00+0000, Aniket wrote:
-> > Besides the core clock, IP also has an apb
-> > interface clock. Add an optional hook for
-> > the same and appropriately enable and disable.
-> > 
-> > Signed-off-by: Aniket <aniketmaurya@google.com>
-> > ---
-> >  drivers/i3c/master/dw-i3c-master.c | 12 ++++++++++++
-> >  drivers/i3c/master/dw-i3c-master.h |  1 +
-> >  2 files changed, 13 insertions(+)
-> > 
-> > diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-> > index 77a2a1c3fd1d..41cdfd6741e3 100644
-> > --- a/drivers/i3c/master/dw-i3c-master.c
-> > +++ b/drivers/i3c/master/dw-i3c-master.c
-> > @@ -1470,12 +1470,20 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
-> >  	if (IS_ERR(master->core_clk))
-> >  		return PTR_ERR(master->core_clk);
-> >  
-> > +	master->pclk = devm_clk_get_optional(&pdev->dev, "pclk");
-> > +	if (IS_ERR(master->pclk))
-> > +		return PTR_ERR(master->pclk);
-> > +
-> 
-> I guess you need to update the device tree binding documentation too.
+Hi Steven,
 
-Sorry, you did and you had changes requested, forget about that.
-> 
-> >  	master->core_rst = devm_reset_control_get_optional_exclusive(&pdev->dev,
-> >  								    "core_rst");
-> >  	if (IS_ERR(master->core_rst))
-> >  		return PTR_ERR(master->core_rst);
-> >  
-> >  	ret = clk_prepare_enable(master->core_clk);
+> RG3MxxB12A1 I3C HUB is smart device which provide multiple
+> functionality:
+> * Enabling voltage compatibility across I3C Controller and Target
+> Device.
+> * Enabling voltage compatibility across I3C Controller and Target
+> devices.
+> * Bus capacitance isolation.
+> * Address conflict isolation.
+> * I3C port expansion.
+> * Two controllers in a single I3C bus.
+> * I3C and SMBus device compatibility.
+> * GPIO expansion.
 
-It could be worth having a look at devm_clk_get_optional_enabled
+Do you plan any more work on this driver? It would be great to have
+this included upstream, but looks like there's a fairly large amount of
+work required to get to that point, particularly in regards to using
+existing kernel infrastructure to support the device functions.
 
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	ret = clk_prepare_enable(master->pclk);
-> >  	if (ret)
-> >  		goto err_disable_core_clk;
-> >  
-> > @@ -1520,6 +1528,8 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
-> >  err_assert_rst:
-> >  	reset_control_assert(master->core_rst);
-> >  
-> > +	clk_disable_unprepare(master->pclk);
-> > +
-> >  err_disable_core_clk:
-> >  	clk_disable_unprepare(master->core_clk);
-> >  
-> > @@ -1533,6 +1543,8 @@ void dw_i3c_common_remove(struct dw_i3c_master *master)
-> >  
-> >  	reset_control_assert(master->core_rst);
-> >  
-> > +	clk_disable_unprepare(master->pclk);
-> > +
-> >  	clk_disable_unprepare(master->core_clk);
-> >  }
-> >  EXPORT_SYMBOL_GPL(dw_i3c_common_remove);
-> > diff --git a/drivers/i3c/master/dw-i3c-master.h b/drivers/i3c/master/dw-i3c-master.h
-> > index 8cb617b8147e..50c38e790c0e 100644
-> > --- a/drivers/i3c/master/dw-i3c-master.h
-> > +++ b/drivers/i3c/master/dw-i3c-master.h
-> > @@ -36,6 +36,7 @@ struct dw_i3c_master {
-> >  	void __iomem *regs;
-> >  	struct reset_control *core_rst;
-> >  	struct clk *core_clk;
-> > +	struct clk *pclk;
-> >  	char version[5];
-> >  	char type[5];
-> >  	bool ibi_capable;
-> > -- 
-> > 2.45.2.505.gda0bf45e8d-goog
-> > 
-> 
-> -- 
-> Alexandre Belloni, co-owner and COO, Bootlin
-> Embedded Linux and Kernel engineering
-> https://bootlin.com
+Anything I can do to help there? Would a (further) review on this
+series be useful?
 
--- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+Cheers,
+
+
+Jeremy
 
 -- 
 linux-i3c mailing list
