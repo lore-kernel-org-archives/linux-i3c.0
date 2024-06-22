@@ -4,59 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC098C27C53
-	for <linux-i3c@archiver.kernel.org>; Sat, 22 Jun 2024 22:33:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01331C27C78
+	for <linux-i3c@archiver.kernel.org>; Sat, 22 Jun 2024 22:33:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z3wyvBIyKbt1Wsp7tXeJtwfcO9vs4Ph+48hux21GD18=; b=zEWSu8YJdxbDHF
-	UnL/93lN52ecISc/ruAWVjGwsbPzd3PbhtqH44AZ4B/Vg96wmJTbfTpXV2BQYxNwjpwoxXpC3y+Xp
-	pJHh2IeiaWmSF4dW6/wyGOyxjbdaUiyPIpVIE/h6lKxZ2mecNCUMxxbPwscKQouKR35rZhJSpN/25
-	5FwEwtcczH/xUWDKbXqyK/x/FEt4Zzb7mCBy/rRcYlHvQLhlYE61KMY50JcJ1C2kT/IHvk5e7tIz0
-	22tiJkGdutcqzHodcvYWLbqltWm8qbmfHmG2HhV2DmQHr07YSYOHdB7smjxf73zX0nwbe0/EsER8a
-	j5tFEb4mLlj4r07L+k3Q==;
+	List-Owner; bh=NLRC/keCAPGcfrOQ8iXak9wfslEuFycJU0Ze3YaxFUo=; b=DdxLwU03AFRKyP
+	LtqWPQ2kXEK3GN4ukhj6HDTcnRFMVJM2ZNpZjMPO2jG7ebCy8hfEbBdHL4lCXM+EZRuSJ6ScKc3c9
+	GOWc4vgHhKG6q1QKbuTAHZa7xAeDEQuhZsEl2l4sY/8tJti06mSRIuvg7SbH1dgsRTKhUTLfc4pnT
+	jIeZOFkCV06MapyVVNdlY124aQtJ7tzWgxhSEQ+GvEjagTPz60fXhKNNWgjyfl4bnw3wdvEUIDirj
+	RN7iFbvng/MSL2ymWBlVPCthwKuCpcy0GZaM4EPtSoeQzMGhD3AwVAx5QjKIBkXqqjWobz8PSNBQu
+	GXoGlsF8M3oaNVXx8O4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sL9Io-0000000CveG-00go;
-	Sat, 22 Jun 2024 22:33:46 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1sL9It-0000000Cvh7-2jHW;
+	Sat, 22 Jun 2024 22:33:51 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sL9Ij-0000000Cvd3-48p2
+	id 1sL9Iq-0000000Cvey-29Jf
 	for linux-i3c@lists.infradead.org;
-	Sat, 22 Jun 2024 22:33:45 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id D2C82240004;
-	Sat, 22 Jun 2024 22:33:37 +0000 (UTC)
+	Sat, 22 Jun 2024 22:33:50 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id C5A2BFF805;
+	Sat, 22 Jun 2024 22:33:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1719095619;
+	t=1719095627;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 in-reply-to:in-reply-to:references:references;
-	bh=LU2ICDL4fp4IsPfmkBKqQ0+h5x4H4+vh585u8iwlvKQ=;
-	b=YI0w9F/4+gsDXJxti2JhDcfgtEYK23ABTaOePkV+6My8LiUYPCcF1NopzoKL407rOdX3Qc
-	8bL+aEbUhnUnB/OFB5gaGcxwwFRDZ4i/yu3dBlOFlzmgqfDnPtgdr3/XHhEkXmzOLcLcQq
-	3v/Fane+HIJ/pVN8wHHWBDHlCfbevmOori/P+Nthm5fK4ijHp+f8Ey3IabvoTsqWkP6jnG
-	zDewbhMwG2fgLOgFTQbnsGzY8ig11OK9OP3jWKSXxOoNTy/KhOQY+/3Vz4eD5xcjL6RLUz
-	6H5b4+dtcnYu5Lo96dy6DPGG7DXCr+U/mzir6Y6vS5ev6vXvlOaVF6soZg9K1g==
-Date: Sun, 23 Jun 2024 00:33:37 +0200
+	bh=Np0HAdoh8EZv8Bq/6GLeT6pSPf91A6nHL3cv9CEp+04=;
+	b=EyC1qKLsRooRDsCc7cZWjDHJk5YCZHERbx2gBaEtJXyPYnxuQ+kvG1QzOo+N0gy6KFn9m/
+	9dTHPEI2CzmGmcq/YyoipSD6y0LXNVOSPsJqJgmzVezwuhT9FCOAyvziA7iAGHuYWPj4Ja
+	oryyWD//xLa0KNnGo97fvstUrLYdXctiq1dUQoMod7BhrDmAgJ+WXfLu69dqZaA1xeoXaH
+	Dj84+I/fc/Yh3C3uTFPITu5uuqPdNlK2QhktCuZM+3ztbg5U5Ly/RqP7fiXdXDVxiW2em1
+	kbm6OBIGkNRvj3WGMDenA1E6u3rZpXSLj74QDZqt+8bPaqQaJcAPjBJzQq924w==
+Date: Sun, 23 Jun 2024 00:33:46 +0200
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Jeremy Kerr <jk@codeconstruct.com.au>, Joel Stanley <joel@jms.id.au>,
-	Billy Tsai <billy_tsai@aspeedtech.com>,
-	Aniket <aniketmaurya@google.com>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2] i3c: dw: Fix IBI intr programming
-Message-ID: <171909557751.2164405.7866528644975058275.b4-ty@bootlin.com>
-References: <CAMmmMt2guEx1jajb2NC0iBnMGpkd2vaSiXg_BqgZhwrA=FARLQ@mail.gmail.com>
- <20240607072030.2618428-1-aniketmaurya@google.com>
+To: miquel.raynal@bootlin.com, Frank Li <Frank.Li@nxp.com>
+Cc: conor.culhane@silvaco.com, imx@lists.linux.dev,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: (subset) [PATCH v2 2/2] i3c: master: svc: resend target address
+ when get NACK
+Message-ID: <171909557749.2164405.8135288010118106502.b4-ty@bootlin.com>
+References: <20240603151527.52235-1-Frank.Li@nxp.com>
+ <20240603151527.52235-2-Frank.Li@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240607072030.2618428-1-aniketmaurya@google.com>
+In-Reply-To: <20240603151527.52235-2-Frank.Li@nxp.com>
 X-GND-Sasl: alexandre.belloni@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240622_153342_288884_A700522D 
-X-CRM114-Status: UNSURE (   7.61  )
+X-CRM114-CacheID: sfid-20240622_153348_721866_64E42DBA 
+X-CRM114-Status: UNSURE (   6.15  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -74,20 +74,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, 07 Jun 2024 07:20:30 +0000, Aniket wrote:
-> IBI_SIR_REQ_REJECT register is not present if the IP has
-> IC_HAS_IBI_DATA = 1 set. So don't rely on doing read-
-> modify-write op on this register.
-> Instead maintain a variable to store the sir reject mask
-> and use it to set IBI_SIR_REQ_REJECT.
+On Mon, 03 Jun 2024 11:15:27 -0400, Frank Li wrote:
+> According to I3C Spec 1.1.1, 11-Jun-2021, section: 5.1.2.2.3:
 > 
+> If the Controller chooses to start an I3C Message with an I3C Dynamic
+> Address, then special provisions shall be made because that same I3C Target
+> may be initiating an IBI or a Controller Role Request. So, one of three
+> things may happen: (skip 1, 2)
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] i3c: dw: Fix IBI intr programming
-      https://git.kernel.org/abelloni/c/76fb85b86b40
+[2/2] i3c: master: svc: resend target address when get NACK
+      https://git.kernel.org/abelloni/c/2d15862dfba6
 
 Best regards,
 
