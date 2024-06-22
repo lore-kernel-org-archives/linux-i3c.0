@@ -4,59 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01331C27C78
-	for <linux-i3c@archiver.kernel.org>; Sat, 22 Jun 2024 22:33:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA46BC27C78
+	for <linux-i3c@archiver.kernel.org>; Sat, 22 Jun 2024 22:34:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NLRC/keCAPGcfrOQ8iXak9wfslEuFycJU0Ze3YaxFUo=; b=DdxLwU03AFRKyP
-	LtqWPQ2kXEK3GN4ukhj6HDTcnRFMVJM2ZNpZjMPO2jG7ebCy8hfEbBdHL4lCXM+EZRuSJ6ScKc3c9
-	GOWc4vgHhKG6q1QKbuTAHZa7xAeDEQuhZsEl2l4sY/8tJti06mSRIuvg7SbH1dgsRTKhUTLfc4pnT
-	jIeZOFkCV06MapyVVNdlY124aQtJ7tzWgxhSEQ+GvEjagTPz60fXhKNNWgjyfl4bnw3wdvEUIDirj
-	RN7iFbvng/MSL2ymWBlVPCthwKuCpcy0GZaM4EPtSoeQzMGhD3AwVAx5QjKIBkXqqjWobz8PSNBQu
-	GXoGlsF8M3oaNVXx8O4Q==;
+	List-Owner; bh=8Qy40aB0pP0pSivLuW1kqeyfr6FtTyvWmpQKpsNCuJ4=; b=aeRh7ghuffOXvX
+	QXTQyZCMS1JjuFWKqL09qkGaLMMMdIrBxl+onOjG5DGOuvZIppdMM0N19amXyZBXsh3lRlqxZE/fq
+	OWTI+PkbHZ5aV8U5ZM+nPxTiz70Bmgy065f35MV90GwUVCQBb2IVcBxZsqNlqagUmV2oIN66BrYCP
+	U3gRkxKyYWpEuVc82HW4DToIo0mvUpRFWZBIPVa6LRzqI3Gh07va5r433i+nLoDioZBQKmFCatqME
+	6MQvGow0RoAqpZfn+MNbHf5X50CS+4F+DS1U+8iMgoPmrSF+AK4qYJr9jGLaN7MUqT3pvOauMFV/+
+	55fLcvDfwP5T8THXCXYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sL9It-0000000Cvh7-2jHW;
-	Sat, 22 Jun 2024 22:33:51 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1sL9J8-0000000Cvm1-1rH8;
+	Sat, 22 Jun 2024 22:34:06 +0000
+Received: from relay8-d.mail.gandi.net ([217.70.183.201])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sL9Iq-0000000Cvey-29Jf
+	id 1sL9J5-0000000CvkM-1VB4
 	for linux-i3c@lists.infradead.org;
-	Sat, 22 Jun 2024 22:33:50 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id C5A2BFF805;
-	Sat, 22 Jun 2024 22:33:46 +0000 (UTC)
+	Sat, 22 Jun 2024 22:34:05 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 675F31BF203;
+	Sat, 22 Jun 2024 22:34:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1719095627;
+	t=1719095641;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 in-reply-to:in-reply-to:references:references;
-	bh=Np0HAdoh8EZv8Bq/6GLeT6pSPf91A6nHL3cv9CEp+04=;
-	b=EyC1qKLsRooRDsCc7cZWjDHJk5YCZHERbx2gBaEtJXyPYnxuQ+kvG1QzOo+N0gy6KFn9m/
-	9dTHPEI2CzmGmcq/YyoipSD6y0LXNVOSPsJqJgmzVezwuhT9FCOAyvziA7iAGHuYWPj4Ja
-	oryyWD//xLa0KNnGo97fvstUrLYdXctiq1dUQoMod7BhrDmAgJ+WXfLu69dqZaA1xeoXaH
-	Dj84+I/fc/Yh3C3uTFPITu5uuqPdNlK2QhktCuZM+3ztbg5U5Ly/RqP7fiXdXDVxiW2em1
-	kbm6OBIGkNRvj3WGMDenA1E6u3rZpXSLj74QDZqt+8bPaqQaJcAPjBJzQq924w==
-Date: Sun, 23 Jun 2024 00:33:46 +0200
+	bh=ZgFWJS2IRsrEQYnSwEJOI9RPmtNPLLE8Zp84vCIF7Qc=;
+	b=TsUUcctjjWpLSlMbJbrCHr7KBW6ag6FR/+akiXJRz0QI7figAFddKfDyPfHjnRDWE5yvy0
+	PnE26Bc3wrKjNqwJkm9VhwNjEkDpVFfkFT7LCg5iK8jodRzsyE6fJRGXyuapiCjQikUWjs
+	L7S7DoNCB4XoEyzhMdy1T1PqlKO9IuUO3oM7/JopS+h8Q837hXxg032bjIOgHlhQBDeL5W
+	vy/P/xdaybtfczrshFFmL/Rn/cwf6V9BwONZIqo9fcohVFxadcEeSsL0zmO/KW2qPOoA2c
+	brco/FT0LME5HVqYyq0ZI05eDrXoY8Zl0x8nzMHb+u7UvMjFqzRRhqlqi54AsA==
+Date: Sun, 23 Jun 2024 00:34:00 +0200
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: miquel.raynal@bootlin.com, Frank Li <Frank.Li@nxp.com>
-Cc: conor.culhane@silvaco.com, imx@lists.linux.dev,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: (subset) [PATCH v2 2/2] i3c: master: svc: resend target address
- when get NACK
-Message-ID: <171909557749.2164405.8135288010118106502.b4-ty@bootlin.com>
-References: <20240603151527.52235-1-Frank.Li@nxp.com>
- <20240603151527.52235-2-Frank.Li@nxp.com>
+To: linux-i3c@lists.infradead.org,
+	Jarkko Nikula <jarkko.nikula@linux.intel.com>
+Cc: stable@vger.kernel.org
+Subject: Re: [PATCH] i3c: mipi-i3c-hci: Fix number of DAT/DCT entries for HCI
+ versions < 1.1
+Message-ID: <171909557751.2164405.18080145631407814648.b4-ty@bootlin.com>
+References: <20240614140208.1100914-1-jarkko.nikula@linux.intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20240603151527.52235-2-Frank.Li@nxp.com>
+In-Reply-To: <20240614140208.1100914-1-jarkko.nikula@linux.intel.com>
 X-GND-Sasl: alexandre.belloni@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240622_153348_721866_64E42DBA 
-X-CRM114-Status: UNSURE (   6.15  )
+X-CRM114-CacheID: sfid-20240622_153403_588948_AE6A96F6 
+X-CRM114-Status: UNSURE (   7.45  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -74,20 +73,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, 03 Jun 2024 11:15:27 -0400, Frank Li wrote:
-> According to I3C Spec 1.1.1, 11-Jun-2021, section: 5.1.2.2.3:
+On Fri, 14 Jun 2024 17:02:08 +0300, Jarkko Nikula wrote:
+> I was wrong about the TABLE_SIZE field description in the
+> commit 0676bfebf576 ("i3c: mipi-i3c-hci: Fix DAT/DCT entry sizes").
 > 
-> If the Controller chooses to start an I3C Message with an I3C Dynamic
-> Address, then special provisions shall be made because that same I3C Target
-> may be initiating an IBI or a Controller Role Request. So, one of three
-> things may happen: (skip 1, 2)
+> For the MIPI I3C HCI versions 1.0 and earlier the TABLE_SIZE field in
+> the registers DAT_SECTION_OFFSET and DCT_SECTION_OFFSET is indeed defined
+> in DWORDs and not number of entries like it is defined in later versions.
 > 
 > [...]
 
 Applied, thanks!
 
-[2/2] i3c: master: svc: resend target address when get NACK
-      https://git.kernel.org/abelloni/c/2d15862dfba6
+[1/1] i3c: mipi-i3c-hci: Fix number of DAT/DCT entries for HCI versions < 1.1
+      https://git.kernel.org/abelloni/c/17bebfeab08b
 
 Best regards,
 
