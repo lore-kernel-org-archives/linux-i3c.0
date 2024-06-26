@@ -4,80 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9EEDEC27C4F
-	for <linux-i3c@archiver.kernel.org>; Wed, 26 Jun 2024 08:06:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAC88C30653
+	for <linux-i3c@archiver.kernel.org>; Wed, 26 Jun 2024 08:06:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=efAjZsHi4MWeWeWTMmA0WT/LQsdWOQS+SCCA/37N5sE=; b=bBL9m05G5W2mDx
-	oLatNIQ82hfZbtpbVkda8a3TAlruYE+oQLQlLjSBcot60cW5y62QO2yKflvToIoY0SvM8ffYrZNLD
-	V8Tsteu3m7AFIfHGC1mIWkFf+zucdKWigTqqoI17dMgbAOKU118ho2dRdevwPaGLzYbbHCUq1EpME
-	VwElvys7XWwqp4pQvVOJpC08RLsUPxbRsUQG0mzucqFPw1Mz0/wG+9cfBIWKMWPxO4DGaXAlpN/fB
-	VT1QspAEiHM9q3l/FYEYaLzzHcWmOkgGHk38sBZ/h7d1Lj6/XJulH8Rr+1SLuJNPCvixN17/2SGjJ
-	T7nYupdw59uTvDaacmCw==;
+	List-Owner; bh=wgtTycM/24lEyVgOlErI9Yu29pGORTiYoGRgy3QRe1k=; b=HpQ1/DAc6J345W
+	RhQA6jLI+nK461AetnqQXZNPmSRRK1h86OvKTuVLNACW5Sn7z8jdrs4pkGBvzBX1z4vid4OTQSfV6
+	EcbVAtkw5IF33IePrZqhR2cAwjgROYkjm6RNpLTVk0q6e6n9IQtlAwNBFEXEpvZP1zXcp8T5eztAK
+	5CR3SJgDm1L15A1/FikhUsyjRYBRnvsbF2VzneekEvv6d2bIyQYmeL3dr9fYUg8oKGfQzI8rfVcCY
+	gnzFPz0OB5ksFir/fA2G/8ZpdX4KH3Q6KxrB3ZW9sxfOPO1tqA2KEf6PNa8/juR4tqrvZ8g2Ujv5n
+	vpuVrFppP3ikPaynRl8g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMNfg-00000005r0S-0FQY;
-	Wed, 26 Jun 2024 08:06:28 +0000
-Received: from mail-wr1-x435.google.com ([2a00:1450:4864:20::435])
+	id 1sMNg5-00000005r5k-1gut;
+	Wed, 26 Jun 2024 08:06:53 +0000
+Received: from mail-lj1-x236.google.com ([2a00:1450:4864:20::236])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sMNfc-00000005qzf-2HBR
+	id 1sMNg2-00000005r5I-0lp5
 	for linux-i3c@lists.infradead.org;
-	Wed, 26 Jun 2024 08:06:26 +0000
-Received: by mail-wr1-x435.google.com with SMTP id ffacd0b85a97d-3629c517da9so6214548f8f.2
-        for <linux-i3c@lists.infradead.org>; Wed, 26 Jun 2024 01:06:22 -0700 (PDT)
+	Wed, 26 Jun 2024 08:06:51 +0000
+Received: by mail-lj1-x236.google.com with SMTP id 38308e7fff4ca-2eaafda3b5cso66342331fa.3
+        for <linux-i3c@lists.infradead.org>; Wed, 26 Jun 2024 01:06:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1719389181; x=1719993981; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1719389208; x=1719994008; darn=lists.infradead.org;
         h=content-transfer-encoding:in-reply-to:autocrypt:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=My9/g0GVPEXpaxxN/7a6H9LSpMIXap4+noEpDsopA0A=;
-        b=AUoFE1KCjXe728KIUjylJf0HXNxj94Vy/WCMVhVkrQ1QHjSH244NU33A5Gi+jAwj6k
-         O/RHKR1HnUosUeQDi5J1LuaZ8jJUw2G8sDBipy9col91EWg5jgo+8yRkzYRuGdpk4szu
-         OCCPJ/ijP0aczF44OCw3YI5zwiU+AdALaFAeO6EfWiIKSXMc5vRtqYDSoc/lgNxrMVfc
-         uR3qFXcs8p/fXUgk3p6KMigB8Tk/GXwf1kM3dJ0A8Hxvqu51IBF1tpayyQcP1yx20r4R
-         BXSmAVUfyjLt8LGwIrY6Eqzgve4imL488EfsWft2Tv1SVnNRRcDDdCsie/yOu7akuWcy
-         ACAQ==
+        bh=qg/ZLjmnnXkbHNjaiPc4GkMr3awTO9l1G9H8oEvMCRI=;
+        b=Syx7fhTQFm7L3f07fIUhjGBoAcCsK9ItdneoGURK/2fDlpDA6TGRctGjwYXiU1clF9
+         zOMc/pJzU16eQDTG1lj8JJxf+C3l/Wo4hbFUXvUObcBFA6W0hd31K9DD82SB3/TWgjfF
+         WRh5Csn79y6d5eY7QO5bNf9Iqd9+sTgtU2Seszn5HtV/zdmU3Q+1K+cD9XWtuQTKaSvN
+         VIoXUvJ5Ug55cVI+e5NI6SuEMcjY9B6f0Rgzz0RR50dIHru2ovcl3lClfyMQA9IYxqkC
+         iHeb0tZkDagvYUZJpDtr0nNIbZsuQ/XTzdDf2slvgcLrYIgtVcoDfg3dfC2K8V5+X5rU
+         WsEQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1719389181; x=1719993981;
+        d=1e100.net; s=20230601; t=1719389208; x=1719994008;
         h=content-transfer-encoding:in-reply-to:autocrypt:content-language
          :from:references:cc:to:subject:user-agent:mime-version:date
          :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=My9/g0GVPEXpaxxN/7a6H9LSpMIXap4+noEpDsopA0A=;
-        b=a5Zfdf62M4OxulhFIJQBAzk+wG3+sxoo0KVOx+E495w/up5ovXbk0AhbC9RH/G6BQV
-         ahSDSKmM8GcV9y9x95iLN43Xe/+2COPalAgOU7OvxzXxNWVl/OM3U8oM8W+VMrClEGh1
-         zEMzZR0RDzNqWc69Yghsb/5C06D+uwHq2Wqo81xrB84Oryh2xLm/LWLvpT8SKC2DR+yM
-         tSSQOL9GK0h+z7J+v1Smf6nf3Mm8F73jI60NKXFmjm/4pWhBcQ3L83DCyXznp20MGimy
-         lGQlOW59tuAdmox0wuKkZlDQdatCgbOS1Nucbkktczw5NA+JJThcmwCt9TlTeDWRYd8N
-         tFFw==
-X-Gm-Message-State: AOJu0YyTcqsxfm8RWqcAvTOQCMWkOf0IvSWAIc2JX3CF5svxjkQ5UtR2
-	qKSpFbO7461ZHPqfLr7JT/0XLrVMqWPJJNoMdld69vQbcU7T02Iz25HJyjRGgJ4=
-X-Google-Smtp-Source: AGHT+IFYPpmEMk0KFhlTbaqHeWEFWJ0uZm/Xuv/BxVjNUrlN6WksxTy7iVYi1YRdDVtylOESgx2QlQ==
-X-Received: by 2002:a5d:5f8f:0:b0:366:f50a:2061 with SMTP id ffacd0b85a97d-366f50a223amr7905774f8f.50.1719389181052;
-        Wed, 26 Jun 2024 01:06:21 -0700 (PDT)
+        bh=qg/ZLjmnnXkbHNjaiPc4GkMr3awTO9l1G9H8oEvMCRI=;
+        b=qAztDxPQMstHnSTCn/53Gfs0CHh8URTYRoNnp32X0DuY2lt9acFE4MFIixU+kHbdsm
+         1W8ofciJjMpEis/kVZGU8mDbJ4RSI04BjmfGgcAJmSCOGZFsYSDrygNKM4CO4Zhk6B3I
+         wpn0S5wiwbUGgoPDXQVwgUmmOt0qfdqHGeNL4G8pWO/qC7xm4nPjCm92MlGZ1GWtDEzQ
+         PoxUDB8gLK4ln0doLMQwVwqX6bOXbO2OanHU4oUhUvYkC3Im1kHL1aP5cmWPzTwnnet0
+         GUGmRcpUum+/1uf0c7QrBZhqkjdBBogNYleWpwLJHPCBpNGvtCRooNKNuv7e9Bi2r1II
+         wmCw==
+X-Gm-Message-State: AOJu0YzCqEXnb9SNYESj4cbAHIJ7LV7DYLUtMmZ7glGZ+NNKQX2FtSIc
+	O2pOPVrRguq9+hq4FHsk29SmZoKIUXZ7PMj+YJV9rUSW+K0O7hekJAjpaHxwEdQ=
+X-Google-Smtp-Source: AGHT+IG/kKwWJ6+3DNpbyGEnq3i9gk9FofbUd3EjDcubfw8Ioe5VISbAU0o/oXh1KTu50D03k0kQ7Q==
+X-Received: by 2002:a05:651c:209:b0:2eb:68d0:88be with SMTP id 38308e7fff4ca-2ec593d8595mr51997431fa.12.1719389204587;
+        Wed, 26 Jun 2024 01:06:44 -0700 (PDT)
 Received: from [192.168.1.20] ([178.197.219.137])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-366388c40c3sm15083853f8f.30.2024.06.26.01.06.19
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-424c8246828sm15753305e9.5.2024.06.26.01.06.43
         (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Wed, 26 Jun 2024 01:06:20 -0700 (PDT)
-Message-ID: <c15045b4-2e5f-4fcc-b25c-76a5e4973e93@linaro.org>
-Date: Wed, 26 Jun 2024 10:06:18 +0200
+        Wed, 26 Jun 2024 01:06:44 -0700 (PDT)
+Message-ID: <07911285-d01c-4456-861a-825c1e9d65cd@linaro.org>
+Date: Wed, 26 Jun 2024 10:06:42 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] dt-bindings: i3c: dw: Add property to select IBI ops
-To: Jeremy Kerr <jk@codeconstruct.com.au>, Aniket <aniketmaurya@google.com>,
+Subject: Re: [PATCH 2/2] i3c: dw: Select ibi ops for base platform driver
+To: Aniket <aniketmaurya@google.com>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Joel Stanley <joel@jms.id.au>, Billy Tsai <billy_tsai@aspeedtech.com>,
- Rob Herring <robh@kernel.org>,
+ Jeremy Kerr <jk@codeconstruct.com.au>, Joel Stanley <joel@jms.id.au>,
+ Billy Tsai <billy_tsai@aspeedtech.com>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
 Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
  devicetree@vger.kernel.org
 References: <20240626052238.1577580-1-aniketmaurya@google.com>
- <20240626052238.1577580-2-aniketmaurya@google.com>
- <e28ba03d1df1c0c5aec987411c40e44fc351ce0d.camel@codeconstruct.com.au>
+ <20240626052238.1577580-3-aniketmaurya@google.com>
 From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 Content-Language: en-US
 Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
@@ -124,10 +123,11 @@ Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
  KQ06ztUMRrj8eVtpImjsWCd0bDWRaaR4vqhCHvAG9iWXZu4qh3ipie2Y0oSJygcZT7H3UZxq
  fyYKiqEmRuqsvv6dcbblD8ZLkz1EVZL6djImH5zc5x8qpVxlA0A0i23v5QvN00m6G9NFF0Le
  D2GYIS41Kv4Isx2dEFh+/Q==
-In-Reply-To: <e28ba03d1df1c0c5aec987411c40e44fc351ce0d.camel@codeconstruct.com.au>
+In-Reply-To: <20240626052238.1577580-3-aniketmaurya@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240626_010624_765409_41B460C7 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20240626_010650_366565_EAF0EDE9 
+X-CRM114-Status: UNSURE (   5.04  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,34 +139,22 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-T24gMjYvMDYvMjAyNCAwNzozMSwgSmVyZW15IEtlcnIgd3JvdGU6Cj4gSGkgQW5pa2V0LAo+IAo+
-PiBVc2UgdGhpcyBwcm9wZXJ0eSB0byBzZWxlY3QgSUJJIHJlbGF0ZWQgb3BzIGluIHRoZSBiYXNl
-IHBsYXRmb3JtCj4+IGRyaXZlci4gT3RoZXJ3aXNlIHRoZSBkcml2ZXIgZGVmYXVsdHMgdG8gcmV0
-dXJuIEVJTlZBTCBmb3IgYW55IElCSQo+PiByZXF1ZXN0cy4KPiAKPiBbLi4uXQo+IAo+PiAtLS0g
-YS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvaTNjL3NucHMsZHctaTNjLW1hc3Rl
-ci55YW1sCj4+ICsrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9pM2Mvc25w
-cyxkdy1pM2MtbWFzdGVyLnlhbWwKPj4gQEAgLTI1LDYgKzI1LDEwIEBAIHByb3BlcnRpZXM6Cj4+
-IMKgwqAgaW50ZXJydXB0czoKPj4gwqDCoMKgwqAgbWF4SXRlbXM6IDEKPj4gwqAKPj4gK8KgIGli
-aS1jYXBhYmxlOgo+PiArwqDCoMKgIGRlc2NyaXB0aW9uOiBTZXQgdG8gc2VsZWN0IElCSSBvcHMu
-CgpXaGF0IGFyZSBJQkkgb3BzPyBTdGFuZGFyZCBmb3JtIGxldHRlcjoKCllvdSBkZXNjcmliZWQg
-dGhlIGRlc2lyZWQgTGludXggZmVhdHVyZSBvciBiZWhhdmlvciwgbm90IHRoZSBhY3R1YWwKaGFy
-ZHdhcmUuIFRoZSBiaW5kaW5ncyBhcmUgYWJvdXQgdGhlIGxhdHRlciwgc28gaW5zdGVhZCB5b3Ug
-bmVlZCB0bwpyZXBocmFzZSB0aGUgcHJvcGVydHkgYW5kIGl0cyBkZXNjcmlwdGlvbiB0byBtYXRj
-aCBhY3R1YWwgaGFyZHdhcmUKY2FwYWJpbGl0aWVzL2ZlYXR1cmVzL2NvbmZpZ3VyYXRpb24gZXRj
-LgoKPj4gK8KgwqDCoCB0eXBlOiBib29sZWFuCj4+ICsKPiAKPiBXb3VsZG4ndCB0aGUgY29tcGF0
-aWJsZSBzdHJpbmcgc2VsZWN0IHdoZXRoZXIgdGhlIGhhcmR3YXJlIGluc3RhbmNlCj4gc3VwcG9y
-dHMgSUJJIG9yIG5vdD8KPiAKPiBJJ2QgaW1hZ2luZSB0aGF0IGVhY2ggc3BlY2lmaWMgc3ludGhl
-c2lzIG9mIHRoZSBEVyBJUCB3b3VsZCBpbXBseQo+IGNvcnJlc3BvbmRpbmcgaGFyZHdhcmUgc2V0
-dGluZ3MsIGFuZCBzbyB3b3VsZCB3YXJyYW50IGl0cyBvd24gY29tcGF0aWJsZQo+IHZhbHVlLgo+
-IAo+IE1heWJlIG9uZSBmb3IgdGhlIERUIGZvbGtzOiB3b3VsZCB0aGlzIHdvcmsgYmV0dGVyIGFz
-IGluZGl2aWR1YWwKPiBwcm9wZXJ0aWVzPyBJcyB0aGVyZSBhIHBvbGljeSBoZXJlPwoKVXN1YWxs
-eSBpZiBmZWF0dXJlIGlzIHNwZWNpZmljIHRvIGdpdmVuIGhhcmR3YXJlLCBlLmcuIGFsd2F5cyBj
-YXBhYmxlIG9mCmZvb2JhciwgdGhlbiBpdCBjYW4gYmUgZGVkdWNlZCBmcm9tIGNvbXBhdGlibGUs
-IHNvIG5vIG5lZWQgZm9yIG5ldyBwcm9wZXJ0eS4KCkJlc3QgcmVnYXJkcywKS3J6eXN6dG9mCgoK
-LS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcK
-aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
+On 26/06/2024 07:22, Aniket wrote:
+> The AST2600 platform driver can always select the IBI ops.
+
+So it is deducible from compatible.
+
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
