@@ -4,80 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42AFDC30653
-	for <linux-i3c@archiver.kernel.org>; Tue, 25 Jun 2024 06:59:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 781C2C27C4F
+	for <linux-i3c@archiver.kernel.org>; Wed, 26 Jun 2024 05:22:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EZ7ZtPYcBZyJzAzokwiw/AOnMIl2ZPkH5I5toFyucdU=; b=z2deY4ktk0SnZ5
-	bpFNMGF+dCu31YxV7vbvb6E8GIk2hcnzGZjV/2B7uGfnaERgRY/kbQmOpRtojVHkJ0HDCydDicV+Z
-	vPmam3yTYONpe6qfyZMahlP/RzTOtOkMD+C37v3m2A8nMtbMrlJPjGCOWPl9oUb+d2AumwR9Vfwd5
-	LMP4LEpjF43AdQMhiK0p/GeIWm2XRJjd/38/y6xr4kAl2or1cJid41f8lqUAsDdp+Me0jWWWmdQK3
-	pKzjEd6QZyQqH/j8FGTjNiV+MQHXKiJRz0Us9SYB2xJVer3LcSKJayVz7zHVYtMznRLfGQR3bpjoG
-	Igj9DZXKHkOg6Nr9+ZSw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:From:Subject:Message-ID:
+	Mime-Version:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=oYpiCAMQVTPuXHXGxU3yvTvS2Ab0ZxGmcY8k2MEF6rQ=; b=i4D
+	DCSxjR/EYcmXXu8DBNIhntcAFeCh3Rr5eD791Bn3sZ/RLKXP5RbY7fOU1e2sOp2u7ybXzcocfQpX3
+	5VsFlT7DH6sVjUK/Z9OExjjEVODF0siu7kdwJAHXj2vwAlKdBHNmZpOsFnhtyocYy5x3fEt7oVabn
+	sY2Jpv3o3WVFmbKS4I9Y8OcSU+7tg66MPNc4IIQyr1eSnpXqh+/zSJx012ytCybeAKo1PkqYEX9xG
+	t1V8EA7OXoniQf3RTaVP/niIx/FjWnodJEccgomksfSPCkfA5J/cnzwtyhSvTEt1dGgSf1qKrNCsH
+	vTQBL/FkMaag78BvbpmO3+ig2i75XVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sM09I-00000001rR1-2Paj;
-	Tue, 25 Jun 2024 06:59:28 +0000
-Received: from mail-qt1-x82a.google.com ([2607:f8b0:4864:20::82a])
+	id 1sML7P-00000005Rmv-1wp1;
+	Wed, 26 Jun 2024 05:22:55 +0000
+Received: from mail-yw1-x114a.google.com ([2607:f8b0:4864:20::114a])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sM09F-00000001rQY-1U2u
+	id 1sML7H-00000005Riw-0KiO
 	for linux-i3c@lists.infradead.org;
-	Tue, 25 Jun 2024 06:59:26 +0000
-Received: by mail-qt1-x82a.google.com with SMTP id d75a77b69052e-444fdaed647so20771cf.1
-        for <linux-i3c@lists.infradead.org>; Mon, 24 Jun 2024 23:59:24 -0700 (PDT)
+	Wed, 26 Jun 2024 05:22:53 +0000
+Received: by mail-yw1-x114a.google.com with SMTP id 00721157ae682-646f6df9683so34130417b3.2
+        for <linux-i3c@lists.infradead.org>; Tue, 25 Jun 2024 22:22:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20230601; t=1719298764; x=1719903564; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=aDB98kbQuG4jMhc+5/YnSzAXedCDskwQrRRjdfeVksw=;
-        b=2YeY5MawzZAx/zlKV0Vkh34tJLDlLxyWR6TQ7CHhlN6sXL26loEG+ZtDsPqlbsNC51
-         AqfQd8dOWtMl/wG9uChNyxaQoA7Wle9le19lJIpILBjS++9/U73Za6lJy4kt4uOcajKO
-         DXthJFkjp2vqK4GHtkbnVanQ6XEpevCH0PXc8h24u6CvznC0NpGJEKFyK+giWeI/91Jq
-         BSnIOQ9/QdtfAr2eg11vk1OlIJ2tr1Ej1rZAb1Yw6nqwCbh51mWNSo6i8MY5jbK8U2nP
-         wUzHbgLzajS+DL/riAxqhTItaZMhmypnyPlOKgvWNsZEkubPT8iI5uP9X5YOHTEx/PAN
-         DYDQ==
+        d=google.com; s=20230601; t=1719379365; x=1719984165; darn=lists.infradead.org;
+        h=cc:to:from:subject:message-id:mime-version:date:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=PvKOlYXT6DEYuH52e2UV3CHMNpzpAZjsjgVTw3pHU3M=;
+        b=Shs1Y+bi7fB/y6AV93x0EIATTtiNsZusZb5oOfJLqFifcfjvSUsM1N8zBd4EavKe3i
+         qmKjk8+ANF4j4+gLKmMGerifPZOME/kQdzyw2uiwlnVJHW+v6uCzq37UzU90qAhXUIsq
+         8woDC51IrS9yPmxLA7OCiuzBC+GvOYTg67JOinRl9aR9ghz9x0icT8jiCGrrhlUyusBY
+         x46Pn6qF8qRddKKpryd9TVgmMsBzKN/mFRu+Wg5Sxln4Pm89zlyTdaak6y8f2FYNDWuq
+         IzuJvRUJQJyOda4zFCQxjcXvmJ7h2I5OZm0mU57siwtOFvwx46PkggSb5Q6/LMjfH3l1
+         Oe1Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1719298764; x=1719903564;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=aDB98kbQuG4jMhc+5/YnSzAXedCDskwQrRRjdfeVksw=;
-        b=cHTR4bqrbSXYGTn9UTjKlLGSI6wUTF6xwpwLxXqVjvxtGwXmEZqz5xevgzUSz480Xc
-         DsScE2E8g3c2CgMxFlBk20KwZcSK1sTlRpmJTqrSDNUFkZRq4gDjE0Ycx5hi9F/3m3h5
-         +whVKEtrSvF1CKCr/hR9ogBiEG+r4QeMidifSzfH6WXkvT5AoJ4B8VxtEKNdMe7QZDyY
-         RGmfmiNRh7WVvm5zO4Q3Zdx/f0q2XrTi9tacCB0OCg6N3bMkQA8Gpxlc5SPFr721abGY
-         WWkTH3X5vGY17EWazkqsoi06tZBMExDiyYAKB+us4K5T/TQwtIkB0PpgzmxyOz8vM02Y
-         JZsg==
-X-Forwarded-Encrypted: i=1; AJvYcCXleccX25YdR1w569JEWF+rltk3BXEmSrbbBnK4wobdId9ZcXjaeRd3mSzdkhpQ7HpIjRCWOwOXzR/8SaPaatH2wBA7dFUmO/2uzc2tfg==
-X-Gm-Message-State: AOJu0YzipAVB+tLACQmX1mRClH8OTInwzNsMaedJynhZ36BwhMfJNH/d
-	2P+I+5p5J5jhobiZUQF1+DNNzheeAZVBrAS+tS7Jk1SMhbTGcEd5BOw15Oyc9ra5V5QbkGFEPOZ
-	aDIlDyWPPXKDUQnZnuoiUHtkwr6MLgXkT/hv1
-X-Google-Smtp-Source: AGHT+IGlJT0nqE32CrXN7HXAt7RK51Q1QHp5YX2obTfJeNPoOwE90ZsgUuMGJJ3b2P0/xpgtbmKWay4QfzyN+SXaZj4=
-X-Received: by 2002:a05:622a:1483:b0:444:bd5c:eb20 with SMTP id
- d75a77b69052e-444f36d473emr1441851cf.19.1719298763626; Mon, 24 Jun 2024
- 23:59:23 -0700 (PDT)
-MIME-Version: 1.0
-References: <20240611171600.1105124-1-aniketmaurya@google.com>
- <20240624052851.1030799-1-aniketmaurya@google.com> <20240624052851.1030799-2-aniketmaurya@google.com>
- <e3160411-59e0-4806-a00d-b99564384180@linaro.org>
-In-Reply-To: <e3160411-59e0-4806-a00d-b99564384180@linaro.org>
-From: "Aniket ." <aniketmaurya@google.com>
-Date: Tue, 25 Jun 2024 12:29:12 +0530
-Message-ID: <CAMmmMt0Qd9tS3TQ0nvC_x=yskBbpTwL4o9tD5+6F8Yi1ueiG5g@mail.gmail.com>
-Subject: Re: [PATCH v2 1/3] dt-bindings: i3c: dw: Add apb clock binding
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, Jeremy Kerr <jk@codeconstruct.com.au>, 
+        d=1e100.net; s=20230601; t=1719379365; x=1719984165;
+        h=cc:to:from:subject:message-id:mime-version:date:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=PvKOlYXT6DEYuH52e2UV3CHMNpzpAZjsjgVTw3pHU3M=;
+        b=UNGDvXy2BGV7lXnZIf+XjlkltgknCyox8yf613GCwERvsEmL78GIeM6I37dG27k1C+
+         1XTS/+iHyXI2VJIVBkQyqRkl0GAe1iQB693+SAeLvtSzsnr9yr+qSFPIZU3pPA3I+5OH
+         SCT2Xa7rEzitKECTaOV1QohZlRl/DbDDJrVlLdlSg2dxxGsM2NYEVSLeOVg7zQO57tTk
+         M4RLWIRcG48LhxrTNvNwo9sbpNUCoqWhk0E3qs+fOQn1KkG2QocWQZvnxtNA+F7B6IUd
+         yXuM23Nm6cAEfrzr5sP1V6K4znA+3VmhteS3dmtq7Zn2JA81Hcrc4gkUiG7qkMGPfqoQ
+         yukQ==
+X-Gm-Message-State: AOJu0Yy0khkK8CBjYlHguQllMNFLUtpdCkmrz5cGer59Wc/YxMufU4RX
+	aUs/og5yKSGYYopC45OAC3hIHQYbC+YUgQwKijxZ/rFYgkqS1XLDW6vKC3+70ZuKR1z+XHiOKbq
+	JLiJCWP6NMwtF2o801woc6NXdDg==
+X-Google-Smtp-Source: AGHT+IGzl8x7DxVv6F3p8R1sVwIyMgFIzmWoKOItdjSMIzZLcv+zWyJvzolxM68jTcTziqMHoGm4QEXPpeTlvxEJdYY=
+X-Received: from aniketm.c.googlers.com ([fda3:e722:ac3:cc00:4f:4b78:c0a8:3387])
+ (user=aniketmaurya job=sendgmr) by 2002:a25:e056:0:b0:e02:bdcd:3bd4 with SMTP
+ id 3f1490d57ef6-e03040e5ea3mr320815276.12.1719379364918; Tue, 25 Jun 2024
+ 22:22:44 -0700 (PDT)
+Date: Wed, 26 Jun 2024 05:22:36 +0000
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.45.2.741.gdbec12cfda-goog
+Message-ID: <20240626052238.1577580-1-aniketmaurya@google.com>
+Subject: [PATCH 0/2] Select IBI ops for base platform
+From: Aniket <aniketmaurya@google.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Jeremy Kerr <jk@codeconstruct.com.au>, 
 	Joel Stanley <joel@jms.id.au>, Billy Tsai <billy_tsai@aspeedtech.com>, 
-	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, 
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	devicetree@vger.kernel.org
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	devicetree@vger.kernel.org, Aniket <aniketmaurya@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240624_235925_414354_41814473 
-X-CRM114-Status: UNSURE (   6.03  )
+X-CRM114-CacheID: sfid-20240625_222247_437609_7929F0A4 
+X-CRM114-Status: UNSURE (   6.11  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -95,15 +90,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-> Your email still suggests mismatch with name. Please confirm that above
-> this is you full name or known identity which you want to consistently
-> use across all contributions. In case of doubts: please consult
-> colleagues in Google (or your legal department, dunno).
+This adds the option to select ibi ops for base platform driver
 
-Hey, my full legal name is "Aniket". Please don't mind the text in the email-id.
+Aniket (2):
+  dt-bindings: i3c: dw: Add property to select IBI ops
+  i3c: dw: Select ibi ops for base platform driver
 
-Thanks,
-Aniket.
+ Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml | 4 ++++
+ drivers/i3c/master/dw-i3c-master.c                            | 3 +++
+ 2 files changed, 7 insertions(+)
+
+-- 
+2.45.2.741.gdbec12cfda-goog
+
 
 -- 
 linux-i3c mailing list
