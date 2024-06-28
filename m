@@ -4,8 +4,8 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7A73CC2BD09
-	for <linux-i3c@archiver.kernel.org>; Fri, 28 Jun 2024 15:45:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB4E8C2BD09
+	for <linux-i3c@archiver.kernel.org>; Fri, 28 Jun 2024 15:46:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,60 +13,60 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:Mime-Version:In-Reply-To:Date:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=a6Al2mxSK9xfM7pg9xA8Ur8H0W5ryZrpOl5DADyZgIw=; b=RvNJ3TZv5w77C8E6swuabvIC8S
-	lZSdECSA+pxRPgQk/XTjDRUD4T7vDFA6YNSNJj+ZhFpTPKzXhEfiMtExCAIPxhQmSjv57ATAChf+r
-	oWKnkQrdOvM+s6SnuSO8xKp5IidY2LoET2SGpdCd9l+mvHJOUEcaLSK/QF4dMu2WNQ0GMkKKWTaNU
-	WAnGnrPWVfRy8yLx1n3YpBiOQqSYGxdm6sJ8MCOZHip0fHLAoRM0QRVGO9NpAx0Y/3D8U2LTOh3YU
-	W7pkrXMZCleMLPpwj7RhL+tZxOZ1H17WF0qn9ywR2adoSUg3i+lnC+md76gxoepIwFBnM4D+TWKRR
-	URp/sodg==;
+	bh=04E2GcSFcP8lA+c7iqrOUNt6sb8no6UALTx4/Xa0xlk=; b=nOEkS4D8dAJcgJ92Jo76p5XvxY
+	8ioH13E3XTP2mYV9osnYIuQlHp9kWkC0q1MXdtA/UUo6YGRIROlkW+asCavrlYnf8RHJkF0kBF3PZ
+	uveYhPN5MgFe7WSU3sHMz6G3/ynvCqd6eZB/3MWnh6u8wPb9u0XXtxap/QKIp8x2raWQu6vSHhLWg
+	t5oR9C+4cL++V5Z4QGKYQ/GxMRPaknCGDMyAq1Jo2Ma6UlXxHKVP0t7E70QYRqM1w6QKFVsuC/TyZ
+	q8ODtcJihJskR4r4z5IPMwiw43sUfMYLdbP7EU3UrBwVM6u6A58CEn9V98+zHcqMoZzadq3cFKJq/
+	L7kDwrlQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sNDn8-0000000EFdX-0dLv;
-	Fri, 28 Jun 2024 15:45:38 +0000
-Received: from mail-yb1-xb49.google.com ([2607:f8b0:4864:20::b49])
+	id 1sNDnj-0000000EFot-2Nvd;
+	Fri, 28 Jun 2024 15:46:15 +0000
+Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sNDn5-0000000EFbt-18EH
+	id 1sNDng-0000000EFoG-35ge
 	for linux-i3c@lists.infradead.org;
-	Fri, 28 Jun 2024 15:45:36 +0000
-Received: by mail-yb1-xb49.google.com with SMTP id 3f1490d57ef6-e035949cc4eso1356011276.1
-        for <linux-i3c@lists.infradead.org>; Fri, 28 Jun 2024 08:45:34 -0700 (PDT)
+	Fri, 28 Jun 2024 15:46:14 +0000
+Received: by mail-pf1-x449.google.com with SMTP id d2e1a72fcca58-7065df788f7so759985b3a.0
+        for <linux-i3c@lists.infradead.org>; Fri, 28 Jun 2024 08:46:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20230601; t=1719589534; x=1720194334; darn=lists.infradead.org;
+        d=google.com; s=20230601; t=1719589571; x=1720194371; darn=lists.infradead.org;
         h=cc:to:from:subject:message-id:references:mime-version:in-reply-to
          :date:from:to:cc:subject:date:message-id:reply-to;
-        bh=yTiNPLIdhtP6pyhi64HYkOcFsA7q03RXOkGSgCbbU/c=;
-        b=BuCtMEcuak46zAIor9gLKMIElwYwhqhw+GwbAt2bXQnrHYgYPUaCGp3nKH2X7FxTGQ
-         CKOP74zK5l3un644PinUHBBiJ3KE0O3TfaHGrUeeTMENQ7UeF7NMP3PVRPGIdqw17d5b
-         +pViMgo5ADe5RpopWi6vpxxhtmVDUYatFIXzNcexYiF1KXPlYhsMDvHryhWZOqLTVsey
-         HpxdHQDm+liPWkcSZukQQG7JSr3c6j3zaM58URkzj+1t5Hr+GVxvAI+kXhNEQT5j0qxD
-         B7dMZwBUWaLSB+WOIwUVywMU7jPC07gkS2KU8iZbSJnmjHrI6Dc9/VtGw7BANpWYJWBI
-         +fqQ==
+        bh=BWwY890+5NLFwmpl4Ncpp5MeSVkTzmaxwxuDQSu9PBk=;
+        b=VV6Vu4jpFVQCEE4GPNLK4eScbh65ohHgka7bF5qIi8TJCZFE2X0Mq3TVvyAMp+9X8T
+         DOtE5bttzOmCHgkG5ldFi36Bj1ei5I3d8XoNjWX4hhaVK8dl27fgDMkuO7M1qsOcQ8OB
+         qki2Oatm8anaxJd/wSIBMkdIInJKpmAtgdiKxqk7PFCrb4BQf/4oBLrH6xvMbWklldf6
+         6BsT+5Sz4mko60Dt/9dubunfJekguP2uQht7BMf0czpK7RYYU+Fjq/42nn6abPFozV2T
+         /oa3HINV5fo+Wus9KLvYub77oGyMdteaplCM83KE41tEZS4x0aELwWHgYBGym6R6PS7R
+         Xy4A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1719589534; x=1720194334;
+        d=1e100.net; s=20230601; t=1719589571; x=1720194371;
         h=cc:to:from:subject:message-id:references:mime-version:in-reply-to
          :date:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=yTiNPLIdhtP6pyhi64HYkOcFsA7q03RXOkGSgCbbU/c=;
-        b=nU8Uz/YYPMGH/qGV5KcnEd2V7vTCfS8leX4Aggsd1r/57v73ZYMblJ6OgqrDbYtOGO
-         BJdhMsX32CHtKvL1iYGZrQY1yuE8TIHzFVuTcbxYl7psrb19mDCq6cgh8YcgviXl6MOu
-         klmzlHXg+xP/Pe2ASSn+O/Jn4XfY6p1OBEv1tjNLF+Qeio/fE6m7nYdoZXoys0hheTIk
-         b5udzv+1ng2y25hmeW10KtJYhdDOWRD+USjde5hfc9UZ5L58uzGarJwUpc+gMdxjIBOD
-         E47z+wuUTsgPJGB7U0ECzqhUCt3f2W+L0UhQ5j/e7k2ehm6rkNxMD77gzru1GzLhkRqs
-         LU7A==
-X-Gm-Message-State: AOJu0YxIQnC4umOUAOl0dRCS8Wdhgn/AWerkSggqI/pgXppiF+4xvOzf
-	cxpQo6Dh4E01hb55bs1B3459jnV/j2+Ebqn5y/RyDIrNphmKPqVwxbnPl9UlCsm2/JO5iLVFD04
-	Ei45pb8jEUz5gF9bmxT7VYYHm0w==
-X-Google-Smtp-Source: AGHT+IHW+w0N4Pm/D4C73M71WR7MUwhZIC3G5b/P9aMWl8aREiz5+MCB11v8g9AB/i/7uh4YYcl8gXlJzUZwxH8Dwyk=
+        bh=BWwY890+5NLFwmpl4Ncpp5MeSVkTzmaxwxuDQSu9PBk=;
+        b=kSBSxqi1xmjsgsYi93Qq7CdOxKp47gyDrM/5uORFw+vwD8ZPpoMfKapFnKh01123q1
+         IFiuDUd6UU2EYgWuGAMp50Lm8ZY3zZCwaD8A2uj0yZbSRxEjPrEUZjtmJthlhkaRgFjk
+         AKExdeGUjDwNyMkT2Xbc4hmiLrF9ByULQGpBPgUd2djj4lpxDv4m7Pmwywcyqk6vFJ5K
+         Hl6XW6+wwaTa8zheEeqTvqi4hsXai5RIjTgKWby1Muj/IMSnX4ramXQi86t98RqyYI22
+         dH+JdxT9nSL5rGdap0SfJteOcH+0eg9Kfxm5bwmz15BOcgTmuzEI5MjaJLjlCpsO4NYN
+         hkZw==
+X-Gm-Message-State: AOJu0Ywb4+nRFscSfYn9jv0wadNChgNFgD3Pj/pfCikzKzFCd6QJjHgf
+	EB2LQzEbazO9/Fa4Xq7i5SqrhU6sE1pQY3OyN9JP/zEcaFI5GL/zJUbngRMwV7LGuMncCnbr9Tv
+	Dw/+XZaBfRNeWL0I4UVuQhVj3+A==
+X-Google-Smtp-Source: AGHT+IG32gMnXvaf3njbjouiPVyRu1hT0usmDZOv2jZJ7sVHWHnnRif/Y+Bn+1rnVmXX5zr8ZtJ4EL4tM4RTBaskLis=
 X-Received: from aniketm.c.googlers.com ([fda3:e722:ac3:cc00:4f:4b78:c0a8:3387])
- (user=aniketmaurya job=sendgmr) by 2002:a05:6902:1109:b0:df7:8f43:f8a3 with
- SMTP id 3f1490d57ef6-e0303e603bfmr1005307276.0.1719589533819; Fri, 28 Jun
- 2024 08:45:33 -0700 (PDT)
-Date: Fri, 28 Jun 2024 15:45:26 +0000
+ (user=aniketmaurya job=sendgmr) by 2002:a05:6a00:23c7:b0:6ec:f400:95a7 with
+ SMTP id d2e1a72fcca58-708536c380bmr89585b3a.3.1719589570648; Fri, 28 Jun 2024
+ 08:46:10 -0700 (PDT)
+Date: Fri, 28 Jun 2024 15:46:03 +0000
 In-Reply-To: <20240624052851.1030799-1-aniketmaurya@google.com>
 Mime-Version: 1.0
 References: <20240624052851.1030799-1-aniketmaurya@google.com>
 X-Mailer: git-send-email 2.45.2.803.g4e1b14247a-goog
-Message-ID: <20240628154526.324068-1-aniketmaurya@google.com>
-Subject: [PATCH v3 1/3] dt-bindings: i3c: dw: Add apb clock binding
+Message-ID: <20240628154603.326075-1-aniketmaurya@google.com>
+Subject: [PATCH v3 2/3] i3c: dw: Use new *_enabled clk API
 From: Aniket <aniketmaurya@google.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Jeremy Kerr <jk@codeconstruct.com.au>, 
 	Joel Stanley <joel@jms.id.au>, Billy Tsai <billy_tsai@aspeedtech.com>, 
@@ -74,8 +74,8 @@ To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Jeremy Kerr <jk@codeconst
 Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
 	devicetree@vger.kernel.org, Aniket <aniketmaurya@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240628_084535_326594_CDA9B75F 
-X-CRM114-Status: UNSURE (   8.32  )
+X-CRM114-CacheID: sfid-20240628_084612_796183_87FD62B9 
+X-CRM114-Status: UNSURE (   8.55  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -93,35 +93,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add dt binding for optional apb clock. Core clock is mandatory.
+Move to "enabled" variant of clk_get API. It takes care
+of enable and disable calls during the probe and remove.
 
 Signed-off-by: Aniket <aniketmaurya@google.com>
 ---
- .../devicetree/bindings/i3c/snps,dw-i3c-master.yaml   | 11 ++++++++++-
- 1 file changed, 10 insertions(+), 1 deletion(-)
+ drivers/i3c/master/dw-i3c-master.c | 11 +----------
+ 1 file changed, 1 insertion(+), 10 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
-index c0e805e531be..4fc13e3c0f75 100644
---- a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
-+++ b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
-@@ -20,7 +20,16 @@ properties:
-     maxItems: 1
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index 9aae5c8dba8d..4e3335641dcd 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -1450,7 +1450,7 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+ 	if (IS_ERR(master->regs))
+ 		return PTR_ERR(master->regs);
  
-   clocks:
--    maxItems: 1
-+    minItems: 1
-+    items:
-+      - description: Core clock
-+      - description: APB clock
-+
-+  clock-names:
-+    minItems: 1
-+    items:
-+      - const: core
-+      - const: apb
+-	master->core_clk = devm_clk_get(&pdev->dev, NULL);
++	master->core_clk = devm_clk_get_enabled(&pdev->dev, NULL);
+ 	if (IS_ERR(master->core_clk))
+ 		return PTR_ERR(master->core_clk);
  
-   interrupts:
-     maxItems: 1
+@@ -1459,10 +1459,6 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+ 	if (IS_ERR(master->core_rst))
+ 		return PTR_ERR(master->core_rst);
+ 
+-	ret = clk_prepare_enable(master->core_clk);
+-	if (ret)
+-		goto err_disable_core_clk;
+-
+ 	reset_control_deassert(master->core_rst);
+ 
+ 	spin_lock_init(&master->xferqueue.lock);
+@@ -1501,9 +1497,6 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+ err_assert_rst:
+ 	reset_control_assert(master->core_rst);
+ 
+-err_disable_core_clk:
+-	clk_disable_unprepare(master->core_clk);
+-
+ 	return ret;
+ }
+ EXPORT_SYMBOL_GPL(dw_i3c_common_probe);
+@@ -1513,8 +1506,6 @@ void dw_i3c_common_remove(struct dw_i3c_master *master)
+ 	i3c_master_unregister(&master->base);
+ 
+ 	reset_control_assert(master->core_rst);
+-
+-	clk_disable_unprepare(master->core_clk);
+ }
+ EXPORT_SYMBOL_GPL(dw_i3c_common_remove);
+ 
 -- 
 2.45.2.803.g4e1b14247a-goog
 
