@@ -4,78 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7A5DC2BD09
-	for <linux-i3c@archiver.kernel.org>; Fri, 28 Jun 2024 15:02:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3894AC3064D
+	for <linux-i3c@archiver.kernel.org>; Fri, 28 Jun 2024 15:38:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y2d1K04D46DsFk+6dFNiWZMT5pQrqBF/3kT6XdU38Y0=; b=IJCC+bdHgNWtZJ
-	9dJ/s7peIhXcB7twBKQXRJCAmG6en5PvelckgdtJuQO+1rIXQR7c+wQVPYO9rEWrUjEDTECcrn6AF
-	WseKPYD0k9U1qbDqIfM+dTwYxGeQCp4/lnRUDjlbMt97/UldOyk3UOP8kovNXTcjPTUqJ88JlNN56
-	AEZYlg+/Zwoge7Br6RooTJH6E9u1VQd6NbpCbdB+NPwef4rdX1F1Ei3+4lu81sSf5pXTeOtf0bzHZ
-	A8lo0Cf7HlxY7q6je7Jmazbaqo5/A72V/1LvqJ1fyCPLIMq3Yzer62vLb/NuAaoAAjcyy+2mC/llG
-	lhEJcpEOQZ8wVI/jGKSA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:From:Subject:Message-ID:
+	References:Mime-Version:In-Reply-To:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=g1j70OQVVGxQo2DcvBtJFxnlYC2WhyD9OC8SW7gt42o=; b=083pIpcOQYRi23FQyUDSsQoSnx
+	8PJDc2j+MMJFI9938WHJeVwc1AtNZnPLG6qzIcZl/KUgVt9e0jFmrkUyC0nkLa9e+VVQXczn5kd/Q
+	osHBiOuLCwuiZd5U3H918OK5NY3F06/iyBlidO0+SOfO9kp13QNgkaYeT5VV0yhe547I8TB8Ow3rz
+	zLBfHkUTEjkNvBXA0zEeM+KkMmI28iXCqLUa8ZRF4avWEoja52Cie9xytQ/WelVVOUiMjo2kUfhRp
+	3gomjcivklwEwkO6t5MRfRL9zq0LlA73Zv9R8aWxvzZgvaDYB31aqpKIRklM+bBVIGuG1lRk4Ii6J
+	8fl1R9gw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sND70-0000000E8RQ-2h92;
-	Fri, 28 Jun 2024 15:02:06 +0000
-Received: from mail-qt1-x82e.google.com ([2607:f8b0:4864:20::82e])
+	id 1sNDgN-0000000EEak-3FCi;
+	Fri, 28 Jun 2024 15:38:39 +0000
+Received: from mail-yb1-xb49.google.com ([2607:f8b0:4864:20::b49])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sND6w-0000000E8NP-44yy
+	id 1sNDgL-0000000EEa6-1k0t
 	for linux-i3c@lists.infradead.org;
-	Fri, 28 Jun 2024 15:02:04 +0000
-Received: by mail-qt1-x82e.google.com with SMTP id d75a77b69052e-445022f78e1so265291cf.1
-        for <linux-i3c@lists.infradead.org>; Fri, 28 Jun 2024 08:01:54 -0700 (PDT)
+	Fri, 28 Jun 2024 15:38:38 +0000
+Received: by mail-yb1-xb49.google.com with SMTP id 3f1490d57ef6-e02bb41247dso1212932276.1
+        for <linux-i3c@lists.infradead.org>; Fri, 28 Jun 2024 08:38:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20230601; t=1719586914; x=1720191714; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=pV4F7RdKKxqX+CEk9cel20GI2s9HbIhc31hrc3gEuKM=;
-        b=fCFmXcDBN04MgpvzsKdcMaV00Uw2EKN3jfgFwKWz9HwjZPO87gXDOM1wrl0Rf7fFEs
-         vud4FSNKRdHUU06NOEIfE52SkN1SWPk2zyrhPoU/sVDs7Ec+E7XESSjgJz9VjugxnAoL
-         1Tlq8mccA7iOd08Opja18AJ+beTaACI1jd7KACGBwljkEHAxuqIKXnSiYuyd8v3vQzN7
-         7xxdvO45OWYELdCx6HTXSUVTh1g2M8V0j0nnRvQEdaAYnyxtqH5qv9u8oWMfxuHQKEnF
-         xLXHEq+/UVhIuaqrY/lwGxyaD0JkbZuJA6/OtuNjfNGZdJcz5zLtYXBWBRT0+5H5ukUO
-         wuSg==
+        d=google.com; s=20230601; t=1719589115; x=1720193915; darn=lists.infradead.org;
+        h=cc:to:from:subject:message-id:references:mime-version:in-reply-to
+         :date:from:to:cc:subject:date:message-id:reply-to;
+        bh=9E6CDkEl8WVKZKqnxjSvSO7qQyb+0+zva6cbAiVPuvs=;
+        b=VVVeBiZkgPUFMUqu+JJ5Jm8k4dqF0pbKRrhnfaLmdti+XNPkR8m6FqKyJGpaqDzH7D
+         XSLFX7Q15sOFIn5kUFzjVXdIvIsvLseR6a+O4XosgeJ799v7pflDP425n52PnjlEBft5
+         8Z6rZGb8QJRtYkHx3rxfsprUMo7B3YcaCWaFkfhGC2j/EJs8gw3W8giQopBrmg1C7LQa
+         24+ZTY2jv0P6Y5klQc1GMw/uitZTWUANVSpPBDK+t/VPW377NFxNLWwddcgSfMbXegiz
+         gdjfmXTG8ROuyy0CizeiCpd6Dt5l64449XcJzxmI5bPNjf7iQNEdhCuPNOltMYNWl23H
+         ELmA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1719586914; x=1720191714;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=pV4F7RdKKxqX+CEk9cel20GI2s9HbIhc31hrc3gEuKM=;
-        b=Q5GruCg//XHr0OYZMm0/YDXhZ/xVswztwmpKnIH7FnPWzYhF1EOgZj0A1hJgmNTO1u
-         8+PBdnaPtnzGXFQL59aiI5wEcE232i6KRMg3fJBO316iAzeL1yB97wT5oSGs+qksgndO
-         ceeSdOirADtu96+fDJg1WUFy6d/icC0fnY7+ksxoFi1366XfebcfBMpzw5Wql4W4HZIq
-         Yfzh6PHOKpl8VOUq0oEBwN088DfiGJq0W9Ku2s4HiEhKgrywr4A+qRaym7ZVFUOcG9r0
-         Ie6dsk/A8hVRJZLl/5IwBU791l14UM4i6CsZLWvMjm1JdzLe03TfcKReSg9nQ6xQ1fpp
-         nYUw==
-X-Forwarded-Encrypted: i=1; AJvYcCVjg+mv4A+PH5/6rFL4ZLpZZZD2AhAi/KeXagriJs7aNz3WGlTcnm9OKVp1U1nWAiG2CGzNuYa05DifavIk6URuOWtSrTsw620+mnBmFw==
-X-Gm-Message-State: AOJu0YxoMQWyLb/N7qhyZ4YCw3iIoiIM7nSgWbjCefVQvUNv97q9W/d0
-	wUvoG21jCNCDLuCbBlrcY2ErgfXU3vP605tsuO4CEy5kSSGzQUAjKstTDi5WhfwJHFUv/2WQs8B
-	8dgttZ2yh53j/cL6GIE9Od7SAGZKpvMoQ4N0Z
-X-Google-Smtp-Source: AGHT+IFSa8ePRVVy+0pw+2BgpZBsYhEdqdOqUKgO/gqHs/9djL6GlfhMWqhA6kA1DlyLbQRpSh8UWRI6Jz7YD4+eot8=
-X-Received: by 2002:ac8:45d4:0:b0:444:aba7:8c07 with SMTP id
- d75a77b69052e-44651b1dac0mr3382951cf.18.1719586913372; Fri, 28 Jun 2024
- 08:01:53 -0700 (PDT)
-MIME-Version: 1.0
-References: <20240611171600.1105124-1-aniketmaurya@google.com>
- <20240624052851.1030799-1-aniketmaurya@google.com> <20240627221225e3517e4e@mail.local>
-In-Reply-To: <20240627221225e3517e4e@mail.local>
-From: "Aniket ." <aniketmaurya@google.com>
-Date: Fri, 28 Jun 2024 20:31:42 +0530
-Message-ID: <CAMmmMt0GKHaTbPbY_qubw09TGnAkVO+M_EAZB1bLZBQ3Ev3iJw@mail.gmail.com>
-Subject: Re: [PATCH v2 0/3] i3c: dw: Add apb clk
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Jeremy Kerr <jk@codeconstruct.com.au>, Joel Stanley <joel@jms.id.au>, 
-	Billy Tsai <billy_tsai@aspeedtech.com>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>, linux-i3c@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
+        d=1e100.net; s=20230601; t=1719589115; x=1720193915;
+        h=cc:to:from:subject:message-id:references:mime-version:in-reply-to
+         :date:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=9E6CDkEl8WVKZKqnxjSvSO7qQyb+0+zva6cbAiVPuvs=;
+        b=IqzOqwZa+vjH37aDxv5hjzs9RnhdaeBn6T3qu6VYycq1TFsOPuiO+WY9kcc/5kivTU
+         46w2oC7/+vEN+RtJQHHwJV10HBbvsTVd9BwzUdWXuG0f8JBe+uKWNhiPvUK/6We+DylV
+         GJy/9RgQ1fPuNucT9i2EOs1fvBv92s1YkMD1Rean6E5hRr+LwbpBfuJWm0DovxMtfOuy
+         lBH4IeESDlEPGa2Wo/naeWcsoXm8Ooo7IJhCfrB6rzTH24MVT+PNrujXDaKZg/czCVaU
+         Tx0wVVeFDriRCQGo7QLlRlB9vJpWmtfq2lWm6+RTR4tQT17YOH+vVPaiAXZmqJ1Y8znT
+         oOvg==
+X-Gm-Message-State: AOJu0YyiaeAeJvurBda41tQQG8mKck/wxLVd0mrftOjXGrAZ0vRXrn3R
+	UKi52C8cikMxWsKJ/6WXd8dx4jtjsi9OoDYyRArGJvYeXmm4yaTrnRumFx2FJOdCt8mBxOkcdGs
+	sxRO1aiIVgTCloqPdWEd3bz0UOA==
+X-Google-Smtp-Source: AGHT+IFbAOblu3KJevq7sqlPwSTEqrm84WW13aJYNyxIrhWTYRRVG7+VxoRMM+Ura64VKD/rC6vfzOSr6fhwJ1JiTyY=
+X-Received: from aniketm.c.googlers.com ([fda3:e722:ac3:cc00:4f:4b78:c0a8:3387])
+ (user=aniketmaurya job=sendgmr) by 2002:a05:6902:20c1:b0:de5:3003:4b64 with
+ SMTP id 3f1490d57ef6-e0300ee84cbmr86403276.1.1719589115375; Fri, 28 Jun 2024
+ 08:38:35 -0700 (PDT)
+Date: Fri, 28 Jun 2024 15:38:26 +0000
+In-Reply-To: <20240624052851.1030799-1-aniketmaurya@google.com>
+Mime-Version: 1.0
+References: <20240624052851.1030799-1-aniketmaurya@google.com>
+X-Mailer: git-send-email 2.45.2.803.g4e1b14247a-goog
+Message-ID: <20240628153829.303719-1-aniketmaurya@google.com>
+Subject: [PATCH v3 0/3] i3c: dw: Add apb clk
+From: Aniket <aniketmaurya@google.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Jeremy Kerr <jk@codeconstruct.com.au>, 
+	Joel Stanley <joel@jms.id.au>, Billy Tsai <billy_tsai@aspeedtech.com>, 
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzysztof.kozlowski+dt@linaro.org>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	devicetree@vger.kernel.org, Aniket <aniketmaurya@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240628_080203_035471_3DAFF396 
-X-CRM114-Status: UNSURE (   6.88  )
+X-CRM114-CacheID: sfid-20240628_083837_473110_D77E987D 
+X-CRM114-Status: UNSURE (   8.47  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -93,17 +93,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-> >   dt-bindings: i3c: dw: Add apb clock binding
-> >   i3c: dw: Add optional apb clock
-> >   i3c: dw: Use new *_enabled clk APIs
->
-> You should reorder your patches to have 3/3 before 2/3, else you
-> introduce code that you immediately remove.
+These patches add APB clk aka pclk to the dw i3c driver
+and the binding doc. Also move to _enabled clk_get APIs.
 
-Ahh! Sorry, let me fix this.
+Changes from v2 to v3
+  - moved to _enabled API first and then added apb clk.
 
-Thanks,
-Aniket.
+Changes from v1 to v2
+ - extra example removed from yaml file, minor renaming.
+ - 3rd patch added to migrate to *_enabled clk_get APIs. 
+
+Aniket (3):
+  dt-bindings: i3c: dw: Add apb clock binding
+  i3c: dw: Use new *_enabled clk API
+  i3c: dw: Add optional apb clock
+
+ .../bindings/i3c/snps,dw-i3c-master.yaml          | 11 ++++++++++-
+ drivers/i3c/master/dw-i3c-master.c                | 15 +++++----------
+ drivers/i3c/master/dw-i3c-master.h                |  1 +
+ 3 files changed, 16 insertions(+), 11 deletions(-)
+
+-- 
+2.45.2.803.g4e1b14247a-goog
+
 
 -- 
 linux-i3c mailing list
