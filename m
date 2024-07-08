@@ -4,142 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9055BC30658
-	for <linux-i3c@archiver.kernel.org>; Tue,  2 Jul 2024 22:31:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A255AC3271E
+	for <linux-i3c@archiver.kernel.org>; Mon,  8 Jul 2024 06:21:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0bUEvAO1z64CRlx7RmDygOPnAlpSipmKA07sofDAgZM=; b=ftngntYH7WaagQ
-	y5qx/eQtu7ZC0YQjHp3yrDoF18GZ6v22qgGvmV6Oi+TCcpuYk9lLnF+6V339GiBMhYFjUPkmOO5MK
-	48GB0trO8WIiJVFXe9erF+4J6ygXqieK5BUifQnb0iC6rc4be2Dh8hr3UiL4cAA3jUxYxU3jnVN/j
-	O0p5+sPqbFoqTQu/tLT9Z4FIt6A4IN9zHbxfm4nFtuIhoUM7i2PfT3EDo3wiz1+BSHGsnLon72IgF
-	lSEkVdXOeKlrC4ieb6sOFA5p03BzBo+LFl2qT1G8WCZA4xjDy/QV2RbX0wOv6TqalqjF2mykITw+a
-	S/k3acy1OLjKIJ22/fkw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:From:Subject:Message-ID:
+	Mime-Version:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=VYHFu2ABZf0J5SrGK9J+PA7WxrEDwlyVwYt5FtZrDSA=; b=N0B
+	fdEdFmwtqLZf7kjb9pFmcd1t0NOghXyIRFjQjhzxL3zCLFMK0yZOPoHKTnY7MTctJJgfeT2qpB/6J
+	FaS+cRmyUZxpILQUcjWv3WYOmjNnjjzzsSjJfmK3ncAXdlm5d4UgyvOh2YG8K7FiXn2ptQdNdZziR
+	VCPBPA5MtdKd5ZlSlKoUd0R9O+4dCkug7j0fA/p008oc9TATuOU+JIT6Ju0S6N0mUvlrOmX2RK74y
+	ffT00/uJG/vPTB495FjaIKCIpWOHDyzz1VbJDz+gZqw61anxbkbQlzciNV/lFUfHjdpcbfc5dul8C
+	ANuFUQAhDcd3PQ02p5qi7Uh9K5aUHVg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOm28-00000008CsQ-2PVG;
-	Tue, 02 Jul 2024 22:31:32 +0000
-Received: from mail-am6eur05on2062d.outbound.protection.outlook.com ([2a01:111:f403:2612::62d] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1sQhkS-00000002rLu-3tnt;
+	Mon, 08 Jul 2024 06:21:17 +0000
+Received: from mail-yw1-x114a.google.com ([2607:f8b0:4864:20::114a])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sOm26-00000008Crs-0IN2
+	id 1sQhkP-00000002rL2-3un4
 	for linux-i3c@lists.infradead.org;
-	Tue, 02 Jul 2024 22:31:31 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ByM2DvtA/7tIVxZve1AfSa1UlF0Heh5iEAHP0j2y+C/lLPUGtRC8EQLHv53FPBezqB54FZGZO1j+OovXzoCxzf9PnlZvmoxqydAGSr9czJBlqob6Rcp2zN/SefxjoFDXdLLsw1jqDMRa5d0K33dWNanYFMpx/qSbpEhV2+eUri4xr5N72AePRmfCdqJpTxE9+11kQV8xo5KAICTP/8eaLS90GTTYZ1lzNJZkIbYyep2OdfChyM0CFP2zrbfr5odCXNWNj6sQU4ZqneD5sgf2txaaiwnOZt2RFqJU4wTVJMqvQFciFB6On4BxUbLwcXOaLLP+gouBy/IaBPzrKbZkcw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=wzAL42YO20r7weK4io8vj2inehx28JjVrNU+qQ6Tiss=;
- b=bkl1446SIB4cwbPwlpKxn20Ejsx/v1bTZObiFx+fVnpCAfCFefJ/aYTC1t5cG8mZONSB9I1RHSdtgqilNSbRqmlSRpTNN6lu6zf+zJkH93pCvJaDBPJnANFJ0cQPLpCG9sHzY/O3SUPcp9ezONo38FCIWUB6mRHcyzhshIXqRY23nXHO4IQvAy8NwzyNVwyJ/mi0Bupl31RShQKVzI+YcnIq9UhB4vPGKLqCPyfYUKOGOAcQdAsvJcRMMt+7X2z/titnLsUEzdi8AePFwvDi0vNofIagfaZJ0Oj9zOgbdw2IT1rlDAHSRzP8eYiMzqtK88oXqgt+JrrEuoUh05Tg3Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=wzAL42YO20r7weK4io8vj2inehx28JjVrNU+qQ6Tiss=;
- b=VAqcyx9MnNA79cb+unV0WX0ND7IMNjx3vsZiAhcewjrUo3D5dsRb8gBvOtovyz5eZJ7sB6VB0C4C91RzzPKlsOPY/+BSc4dR2zGZLMaYk5zRCKYAeIbUpCWPPQSMzoYzF4i4KhdccYlInW2NnQ3PwxxfXjeyWwsRHfvJqHhXzvw=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
- by PA1PR04MB10961.eurprd04.prod.outlook.com (2603:10a6:102:492::19) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7719.32; Tue, 2 Jul
- 2024 22:31:23 +0000
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06%2]) with mapi id 15.20.7719.029; Tue, 2 Jul 2024
- 22:31:23 +0000
-From: Frank Li <Frank.Li@nxp.com>
-To: Miquel Raynal <miquel.raynal@bootlin.com>,
-	Conor Culhane <conor.culhane@silvaco.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	linux-i3c@lists.infradead.org (moderated list:SILVACO I3C DUAL-ROLE MASTER),
-	linux-kernel@vger.kernel.org (open list)
-Cc: imx@lists.linux.dev
-Subject: [PATCH 1/1] i3c: master: svc: Improve DAA STOP handle code logic
-Date: Tue,  2 Jul 2024 18:31:07 -0400
-Message-Id: <20240702223107.403057-1-Frank.Li@nxp.com>
-X-Mailer: git-send-email 2.34.1
-X-ClientProxiedBy: BY3PR05CA0018.namprd05.prod.outlook.com
- (2603:10b6:a03:254::23) To PAXPR04MB9642.eurprd04.prod.outlook.com
- (2603:10a6:102:240::14)
-MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|PA1PR04MB10961:EE_
-X-MS-Office365-Filtering-Correlation-Id: 0b514486-ddc9-4896-1003-08dc9ae6b3d0
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|376014|52116014|1800799024|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?QtEm0DMHjFUMtfFOwuh9EbiYxXLDj/84iJORaDQTK1KH+Jm/OH+tDAr5GPFV?=
- =?us-ascii?Q?2qKkTxEcl36eJcoMZSLrTmnuFx0ngISjiGh0W2BIj16PJlbOwJ0vjQt32czV?=
- =?us-ascii?Q?D50bMEwaNmSo3z/bWo/abPmADhugeF8Y2D8QXFPf34P9CYVOz5Aps55shaOt?=
- =?us-ascii?Q?zqr5WiQF604aY2RATwXsoKWjlTNJ2jKSV1RyiLjKicOx+CJ6JNP4ad+UOeML?=
- =?us-ascii?Q?ZMzNQ0QYOmonAANurSRhgRNfGWdeSH8b0csLC3VWhUWBt9MafDbWhbofKr52?=
- =?us-ascii?Q?tig53LxU5yryOi9s3E4pDhCcyN2UevljTshxPKi3N9ed+CpLwlbuxYt+lzvg?=
- =?us-ascii?Q?OZbOUdZ54/BZqY/2ue9E3NThtnGTJcSXMC0aPubUxgqSE21dqeroYOZBPibG?=
- =?us-ascii?Q?Iu1PHRazHGwwAkQK1eCp+ubjiEyaQG4mNfvdclYLBPqcuTv9bbAPrGjVhUZO?=
- =?us-ascii?Q?UjzJAm3Q6bxCUMhcgdkm2Y6wRUixNWt//stAMQ2wAB+HVnboLHyEkk+jzMeZ?=
- =?us-ascii?Q?0dTKVp3kt1bMOHCX6O2tlpojXGYOOk7qho5f062Y/KZTHHYGVnMJ+J9sPPtF?=
- =?us-ascii?Q?KFZiksfV9BM2uyuFwYaZ+b9KudXRqP7BGkxEnR9ZHHLLOTL/tDryVdpwRRbq?=
- =?us-ascii?Q?haT4ICMAxtULDBDjSET1NbXGWMLldUMMKk8QRO7a/JBV+bYydhyN6EXnoZzL?=
- =?us-ascii?Q?lIvCPbsxRNGiD8p7DUokd0sDpJcvoBYUjsdTlaTcY0R985zRUCNsSoscmkMB?=
- =?us-ascii?Q?iq2aIuT4ZFCSA+W0V7obsMeeUonoxUXEgKnFLdf66p5xyUqJWQJFUCUuwKz2?=
- =?us-ascii?Q?ydyq95EM+EJxoiMsymAKt9LsKnqLHgU59M2vtXYBgPkaeyW+VbFKfHNNRx6v?=
- =?us-ascii?Q?m6oUIhGGGWp8MZY5m5risMAAp694Q/NydrmTN7hBLnbbUdHy9B9B/zpIs4Jx?=
- =?us-ascii?Q?Eq2MVDrKGSfsLmHnVzS/URE8vMRkhVPEGyVE54ajLcxVejVtwuIUza42HHq/?=
- =?us-ascii?Q?iv7qFnae7yQuJLsdStFaLYwaeyCWSwLMH/KmKvCdrqSaQp7UdeKzrmG9TvxB?=
- =?us-ascii?Q?jK2wlizo6I2VZjjmgg2Mwj2jsIAeKg+Ewc0iNKhXdPUE6UwDHSYWiqP4zFSz?=
- =?us-ascii?Q?emg6MozUJTGifkFZCnlH+Gfqcx7eAsOiBAS1ZWgsY/Rk8bJhg+AOOWR0tnrt?=
- =?us-ascii?Q?bknD+BWxT2X4FdWWkPd4ii0hAlqG7u9hUq8cM0r1JohGCjrQwFXr6ilXk1d7?=
- =?us-ascii?Q?9AKsaOk3PlsRpjcWVmvp9jmAWixGzw2Puc4Y4PS4t6B+28WCV2x14Sj5siXg?=
- =?us-ascii?Q?mi/tmzOC9fttYB4mJzLhq4nWk+SsSnotuIRt0wfpfsqoe5IohUgI0o82VsJV?=
- =?us-ascii?Q?nP8F4fj/epYegX/2DzmRjgkARE884P3KtHS4vUZX0wF7Ac1NEA=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(52116014)(1800799024)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?0PkNxK5F5obSg6HNqZ9YLjfMP3psbg4UK/wbCJVyptEOfIn7t2YOiKFoNsl0?=
- =?us-ascii?Q?jeRJIvVjUhuilkxVVzcDAaRSdPMR0o9ffQEv8oWuSx5rWBw9TISdxxy1jnzj?=
- =?us-ascii?Q?wqEuIpPIX0OJn+g6BksATclCbEFUQJvalAkEIG/cF+1DRffHT5dvZY5fjN5H?=
- =?us-ascii?Q?PuknsgRgOZ8qEjDzCvbhdBTgaYJGhzsvvxdyxRDsxozJvjvoC9NiQ37QDxg4?=
- =?us-ascii?Q?XkPhWjlAgSz/ZkeYrR+iocorphk8RI8wX1glWFDn5ldSwCTNLw2fsJM1h6El?=
- =?us-ascii?Q?n/ZImETt5IusO8sMa6DwxiJNRgSUyDW9weZlaiwYGcDCFTgUIlLDd3jcPA5x?=
- =?us-ascii?Q?JRSAv9hm/4BCugYSi0rj4oyOOEGkgq4yCyev7GRlZMHxPMGSdcVSqprYImWH?=
- =?us-ascii?Q?lF4mTRz6XRmJVSbY7w7T/akvkomWC/Qt8kwSyip4P5q0b2rMW7l8+vEgNWQV?=
- =?us-ascii?Q?/VAqHB/Hvw13NCi84xj0rf7JUkRL2qTA2ZxEgslwPmcGZtdQ3yk5QEB+DYZm?=
- =?us-ascii?Q?Eko3zZpmI4USyT6piMY0Rm9qnKkPen4cZXG/UDNK7MKI7G13aT5CCiDfkr/A?=
- =?us-ascii?Q?viwsNseU/fZdCVKOD1mSHoCl8bapvEj4dQAc536bK1AttVnvO24fHQgY0vf5?=
- =?us-ascii?Q?oTIkh/AwxT7uKL6HgpWoOZEIY86GY0+t3aBR543ZwZ54kci3zyjv/0tkJPh7?=
- =?us-ascii?Q?C6YTnva/7W8Y8rEyt33VWYBTzRbcsHOOA/m5ypxLlcUdw5ak5CcKz7zDVWuE?=
- =?us-ascii?Q?ZeoQO23zjxBERFI04MDYX2YeFQLRgP+l8zLEnjxy0qBtj0fj7k/nheKxor10?=
- =?us-ascii?Q?uWiklmkXxEMZmX4GEY2Mtih60w3EbmPOQUSC/yPbGFRb7fyMI90+qEQ4/Vi2?=
- =?us-ascii?Q?K0/b9GU7yI2QNyayv9ABZqiQp7ktPUoSa0qMbw+2hODA7hm6nYOAKLrOQ2X4?=
- =?us-ascii?Q?bIgbZCpj9lhFKee8SgHUu2D9rMKOwFwbImINtAfqdiSUAh7fcm58h+1wHP11?=
- =?us-ascii?Q?op5mqN1UGj9zorNPpBH/4xf4KdC034aYaiGBlEuoVRz31MOuseDWWGYvT32T?=
- =?us-ascii?Q?60v33CdGBzVkY+MgkU0yrbyrXxBtthd8McWqNopOD9wd0r/19IZzaLPccIz0?=
- =?us-ascii?Q?tLv4z0DYs6uoyaqcfuah97PMcYqfaD/zXCnVaXHqlSSrxogU1hMNppzGzGp2?=
- =?us-ascii?Q?MPbO9RxQ1zgj8Aq22DU6xuXlQ+I9TU0ApywIxIwjnbLKEKSOmKyaGLWBciRC?=
- =?us-ascii?Q?tbqjzGMghuQIHIXBDZPT4cGhm8Nq5eaJucy49At1v40pVH9uxCp6amV215t+?=
- =?us-ascii?Q?MSuctrVmd4c5QjtzWD7wcH2wD7LtJiOLqpeKqysGGUl0CS+yejXy7isJq7Pr?=
- =?us-ascii?Q?lcpIxhD6svnCkzi+d8Nx3N7pax+axiTa22HV7lotisg4n840TReI0k3OriEH?=
- =?us-ascii?Q?VX0dJDcoDlp89xc686hVCtom9nan09Gk7PXQwYit55LZreQJZMegjviL+zrn?=
- =?us-ascii?Q?lxSAqM2c2uxdHL9TlCpMNaZY3Pel9pmlY6j1iFUXiSM87aiBjUrC7+11hG4/?=
- =?us-ascii?Q?ysQIPiOVEqgMKeJsyyuAcCscjurHR9Owj6lg2BeH?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0b514486-ddc9-4896-1003-08dc9ae6b3d0
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Jul 2024 22:31:23.1052
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: ZxvSJarpg0uDj/FJYvgqGMQRt9ARX5CSk/HgFWJF2ESzGPuEvLDtqGuMdiGcboKW2mIcaZUwjoAEpJMRzSZy9w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA1PR04MB10961
+	Mon, 08 Jul 2024 06:21:15 +0000
+Received: by mail-yw1-x114a.google.com with SMTP id 00721157ae682-64c3f08ca52so61538347b3.3
+        for <linux-i3c@lists.infradead.org>; Sun, 07 Jul 2024 23:21:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20230601; t=1720419672; x=1721024472; darn=lists.infradead.org;
+        h=cc:to:from:subject:message-id:mime-version:date:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=5XuMB4jWfTK+nrsq0Cd41neWZ7Zk32YaXzBOwDdVumM=;
+        b=JFBGI3+KHXPVaCFzQaK42IItj95EIIqAEldrYl6cwjAd6aZ8tm/11pxe8TsjcWo4Gh
+         SXQwtfJ78JCMS2DIruO9+k+sAt8XPeK7YkoN9YcJrghKmcNUvxVuznZsJuaUrKkzdMzU
+         IQct4BGWBEPdwpLmcvp7sfNUsubjxUcPbEXGVN75wrWl39GDQh62MDXtgACLni6njU3b
+         IZyS+E/gmQyXwzqGbQLPatW/byVlyanx67pd1lc4t8qSPfqRfKfrbDOBiaM7CUpPxlWB
+         NsZQKwUSpDwniLPrO1EbHyZN+oE02uOhXKXEIpRTw7TM+wxrsUV2hIqc9tmyHhv9guT/
+         vm7w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1720419672; x=1721024472;
+        h=cc:to:from:subject:message-id:mime-version:date:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=5XuMB4jWfTK+nrsq0Cd41neWZ7Zk32YaXzBOwDdVumM=;
+        b=krkCPPqsINHNBQTWuiayYL6VhhCy8ZU5eFCQNO6owJUbbfJPjNZ0OJTuQwUeOWAjVr
+         JQz5I9Ou3xSLM3LIOsFJrraeHjyRghP/iQqjv9ndXMuPxYIZzPF2MncSRRUz/WIicBVY
+         l0a+xuU00AwPJE2MtsQ4uEw+NpuTzTn1597fcGditiXW1XXIjyyqzUkpGHX5KQhAozzS
+         SpdT9oeeY8QSjeAPfBWxnSOVI20IoO2THPJN7oZjBMQnhgm8u6AQKwCBufgmU2D1hltP
+         3ne6bgehjSPXdC7KQ6pG7wAng+oWI4qsGi/ATdYTrwV+ooDa8r/bqrtpQCkemNk2wJll
+         p1Sg==
+X-Gm-Message-State: AOJu0Yz6ko6QBRnBHYryWb0D5q030K2pWnszB71DYlqTubs/c7M0ulow
+	HHO6SNBM15F9TTSQDekuDIYHE6dLskvzthvmW6UV1yik86VtIzGOYRCmjtsW8OPtVfADiDf9mc9
+	BHYottX6ukYYOyrklg+9GWwUe0A==
+X-Google-Smtp-Source: AGHT+IG3AtsLI4pAN26wbfZ8bsC5JGvZOcnS9yABDyajFuFbZomTBMcMqoD+dcfc9zTQ3Rn1s2WlpoOvRRXwXHRnnvo=
+X-Received: from aniketm.c.googlers.com ([fda3:e722:ac3:cc00:4f:4b78:c0a8:3387])
+ (user=aniketmaurya job=sendgmr) by 2002:a05:6902:2b85:b0:e03:5220:a9df with
+ SMTP id 3f1490d57ef6-e03c162e79fmr1172527276.0.1720419672035; Sun, 07 Jul
+ 2024 23:21:12 -0700 (PDT)
+Date: Mon,  8 Jul 2024 06:21:00 +0000
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.45.2.803.g4e1b14247a-goog
+Message-ID: <20240708062103.3296587-1-aniketmaurya@google.com>
+Subject: [PATCH 0/3] i3c: dw: Add support for power management
+From: Aniket <aniketmaurya@google.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Jeremy Kerr <jk@codeconstruct.com.au>, 
+	Joel Stanley <joel@jms.id.au>, Billy Tsai <billy_tsai@aspeedtech.com>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	vamshigajjela@google.com, Aniket <aniketmaurya@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240702_153130_149162_995B8371 
-X-CRM114-Status: GOOD (  22.28  )
+X-CRM114-CacheID: sfid-20240707_232114_022066_13800026 
+X-CRM114-Status: UNSURE (   8.56  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -156,173 +89,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The REQUEST_PROC_DAA command behaves differently from other commands.
-Sometimes the hardware can auto emit STOP, but in other conditions, it
-cannot.
+These patches add pm support for the dw i3c controller.
+Controller registers that can be lost are saved and restored during resume.
+Clocks, resets and pads are put in their relevant state during suspend and resume.
+For runtime pm, power is resumed and later suspended for the xfer/IBI APIs.
 
-Improves the code logic to better handle these situations.
+Aniket (3):
+  i3c: dw: Save timing registers and other values
+  i3c: dw: Add some functions for reusability
+  i3c: dw: Add power management support
 
-Hardware can auto emit STOP only when the following conditions are met:
-- The previous I3C device correctly returns a PID and ACKs an I3C address.
-- A NACK is received when emitting 7E to try to get the next I3C device's
-PID.
+ drivers/i3c/master/dw-i3c-master.c | 302 ++++++++++++++++++++++++-----
+ drivers/i3c/master/dw-i3c-master.h |  10 +
+ 2 files changed, 266 insertions(+), 46 deletions(-)
 
-In all other cases, a manual STOP emission is needed.
-
-The code is changed to emit STOP when break the while loop and 'return 0'
-only when the hardware can auto emit STOP.
-
-Signed-off-by: Frank Li <Frank.Li@nxp.com>
----
- drivers/i3c/master/svc-i3c-master.c | 61 ++++++++++++++++++++---------
- 1 file changed, 43 insertions(+), 18 deletions(-)
-
-diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-index f0362509319e0..15fa56383bdc9 100644
---- a/drivers/i3c/master/svc-i3c-master.c
-+++ b/drivers/i3c/master/svc-i3c-master.c
-@@ -790,7 +790,20 @@ static int svc_i3c_master_do_daa_locked(struct svc_i3c_master *master,
- 	int ret, i;
- 
- 	while (true) {
--		/* Enter/proceed with DAA */
-+		/* SVC_I3C_MCTRL_REQUEST_PROC_DAA have two mode, ENTER DAA or PROCESS DAA.
-+		 *
-+		 * ENTER DAA:
-+		 *   1 will issue START, 7E, ENTDAA, and then emits 7E/R to process first target.
-+		 *   2 Stops just before the new Dynamic Address (DA) is to be emitted.
-+		 *
-+		 * PROCESS DAA:
-+		 *   1 The DA is written using MWDATAB or ADDR bits 6:0.
-+		 *   2 ProcessDAA is requested again to write the new address, and then starts the
-+		 *     next (START, 7E, ENTDAA)  unless marked to STOP; an MSTATUS indicating NACK
-+		 *     means DA was not accepted (e.g. parity error). If PROCESSDAA is NACKed on the
-+		 *     7E/R, which means no more Slaves need a DA, then a COMPLETE will be signaled
-+		 *     (along with DONE), and a STOP issued automatically.
-+		 */
- 		writel(SVC_I3C_MCTRL_REQUEST_PROC_DAA |
- 		       SVC_I3C_MCTRL_TYPE_I3C |
- 		       SVC_I3C_MCTRL_IBIRESP_NACK |
-@@ -807,7 +820,7 @@ static int svc_i3c_master_do_daa_locked(struct svc_i3c_master *master,
- 						SVC_I3C_MSTATUS_MCTRLDONE(reg),
- 						1, 1000);
- 		if (ret)
--			return ret;
-+			break;
- 
- 		if (SVC_I3C_MSTATUS_RXPEND(reg)) {
- 			u8 data[6];
-@@ -819,7 +832,7 @@ static int svc_i3c_master_do_daa_locked(struct svc_i3c_master *master,
- 			 */
- 			ret = svc_i3c_master_readb(master, data, 6);
- 			if (ret)
--				return ret;
-+				break;
- 
- 			for (i = 0; i < 6; i++)
- 				prov_id[dev_nb] |= (u64)(data[i]) << (8 * (5 - i));
-@@ -827,7 +840,7 @@ static int svc_i3c_master_do_daa_locked(struct svc_i3c_master *master,
- 			/* We do not care about the BCR and DCR yet */
- 			ret = svc_i3c_master_readb(master, data, 2);
- 			if (ret)
--				return ret;
-+				break;
- 		} else if (SVC_I3C_MSTATUS_MCTRLDONE(reg)) {
- 			if (SVC_I3C_MSTATUS_STATE_IDLE(reg) &&
- 			    SVC_I3C_MSTATUS_COMPLETE(reg)) {
-@@ -835,12 +848,23 @@ static int svc_i3c_master_do_daa_locked(struct svc_i3c_master *master,
- 				 * All devices received and acked they dynamic
- 				 * address, this is the natural end of the DAA
- 				 * procedure.
-+				 *
-+				 * Hardware will auto emit STOP at this case.
- 				 */
--				break;
-+				*count = dev_nb;
-+				return 0;
-+
- 			} else if (SVC_I3C_MSTATUS_NACKED(reg)) {
- 				/* No I3C devices attached */
--				if (dev_nb == 0)
-+				if (dev_nb == 0) {
-+					/*
-+					 * Hardware can't treat first NACK for ENTAA as normal
-+					 * COMPLETE. So need manual emit STOP.
-+					 */
-+					ret = 0;
-+					*count = 0;
- 					break;
-+				}
- 
- 				/*
- 				 * A slave device nacked the address, this is
-@@ -849,8 +873,10 @@ static int svc_i3c_master_do_daa_locked(struct svc_i3c_master *master,
- 				 * answer again immediately and shall ack the
- 				 * address this time.
- 				 */
--				if (prov_id[dev_nb] == nacking_prov_id)
--					return -EIO;
-+				if (prov_id[dev_nb] == nacking_prov_id) {
-+					ret = EIO;
-+					break;
-+				}
- 
- 				dev_nb--;
- 				nacking_prov_id = prov_id[dev_nb];
-@@ -858,7 +884,7 @@ static int svc_i3c_master_do_daa_locked(struct svc_i3c_master *master,
- 
- 				continue;
- 			} else {
--				return -EIO;
-+				break;
- 			}
- 		}
- 
-@@ -870,12 +896,12 @@ static int svc_i3c_master_do_daa_locked(struct svc_i3c_master *master,
- 						SVC_I3C_MSTATUS_BETWEEN(reg),
- 						0, 1000);
- 		if (ret)
--			return ret;
-+			break;
- 
- 		/* Give the slave device a suitable dynamic address */
- 		ret = i3c_master_get_free_addr(&master->base, last_addr + 1);
- 		if (ret < 0)
--			return ret;
-+			break;
- 
- 		addrs[dev_nb] = ret;
- 		dev_dbg(master->dev, "DAA: device %d assigned to 0x%02x\n",
-@@ -885,9 +911,9 @@ static int svc_i3c_master_do_daa_locked(struct svc_i3c_master *master,
- 		last_addr = addrs[dev_nb++];
- 	}
- 
--	*count = dev_nb;
--
--	return 0;
-+	/* Need manual issue STOP except for Complete condition */
-+	svc_i3c_master_emit_stop(master);
-+	return ret;
- }
- 
- static int svc_i3c_update_ibirules(struct svc_i3c_master *master)
-@@ -961,11 +987,10 @@ static int svc_i3c_master_do_daa(struct i3c_master_controller *m)
- 	spin_lock_irqsave(&master->xferqueue.lock, flags);
- 	ret = svc_i3c_master_do_daa_locked(master, addrs, &dev_nb);
- 	spin_unlock_irqrestore(&master->xferqueue.lock, flags);
--	if (ret) {
--		svc_i3c_master_emit_stop(master);
--		svc_i3c_master_clear_merrwarn(master);
-+
-+	svc_i3c_master_clear_merrwarn(master);
-+	if (ret)
- 		goto rpm_out;
--	}
- 
- 	/* Register all devices who participated to the core */
- 	for (i = 0; i < dev_nb; i++) {
 -- 
-2.34.1
+2.45.2.803.g4e1b14247a-goog
 
 
 -- 
