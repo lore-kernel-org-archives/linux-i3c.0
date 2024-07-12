@@ -4,55 +4,142 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 948FFC3271E
-	for <linux-i3c@archiver.kernel.org>; Mon,  8 Jul 2024 07:00:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41FCFC2BD09
+	for <linux-i3c@archiver.kernel.org>; Fri, 12 Jul 2024 16:46:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=f/u8J3R80Z5qS/ZEM6RldF27beDVYa0h6xRSuBjG6s4=; b=Kz1fmkwxq75kRh
-	B7z9wSenTpr5Tb1xCEiJcZvq3wQ9ulbFPzV1Ik1BCBRrd6jo6cQKDxSBRlWrfJxVa28Amn1wcSjej
-	yX7xJYR4m9HUgcawhjUU8xVuh6xwj/1OKCOLl6swPXs1qKOil8sPU0YuCN5qesBa0TMQWFm98UisN
-	JVGsSfinRbU+kLzBGa9eQjewmMOqKnHomJNqYjBcI/PHHtg0F+BkH5yCxBbsoBxdLdxKvlTrr2LSJ
-	DQCOn1BQn8YmMvqMpj/0dKWgiJCAJ7Td1afGB2uh9HgE5orV98/6G2cWEDDurowrxw5Y5RM7+EXBF
-	kFVcxFrXwqDo+osymZLA==;
+	List-Owner; bh=RAuAFWGOm1X6cjw5By8CqEhr62Mt891z1IgWItdNhd4=; b=b53Pq6lyOOOzub
+	SUzJhxEPd9YnN9vnTpMrzHwkN9JFxA0TSqOsGP7BvDRF1iqDw7IVekaXvPNHyZACtfK7FoyBPJ5Og
+	Y66CyBdJQNku1EmLKTlD31GoBCbmHOG7zbgRH8q2b5Pl+UwCfhyLsAWGK+9uLlsCgdmHsdqWfa7TY
+	qPxnsx60/GPVOgPDdeYXhp2Cg4vDSSHKMRFxPYD0LU9dpiDJLblTMDivWGV/rtAMfe49eKamzs2Sp
+	LehatDDrszibfBsgM6hPqPJFdTtoNXtv8DejW3AiiTrzglbWCoIutf+nVwlq1+8HBi3Ln/wtffnGr
+	gqWQHFICqQlzDLFAmRrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sQiM0-00000002xJU-13bq;
-	Mon, 08 Jul 2024 07:00:04 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1sSJPf-00000000iXY-10CQ;
+	Fri, 12 Jul 2024 16:46:27 +0000
+Received: from mail-northeuropeazlp170130004.outbound.protection.outlook.com ([2a01:111:f403:c200::4] helo=DUZPR83CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sQh5M-00000002meF-1Xmf
+	id 1sSJPd-00000000iVw-0lmk
 	for linux-i3c@lists.infradead.org;
-	Mon, 08 Jul 2024 05:38:49 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id BC3F41A09B0;
-	Mon,  8 Jul 2024 07:38:44 +0200 (CEST)
-Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 85B8A1A168E;
-	Mon,  8 Jul 2024 07:38:44 +0200 (CEST)
-Received: from lsv03083.swis.in-blr01.nxp.com (lsv03083.swis.in-blr01.nxp.com [92.120.146.80])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 9DF57181D0F9;
-	Mon,  8 Jul 2024 13:38:43 +0800 (+08)
-From: Bhoomik Gupta <bhoomik.gupta@nxp.com>
-To: alexandre.belloni@bootlin.com,
-	linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Cc: Frank.Li@nxp.com,
-	Bhoomik Gupta <bhoomik.gupta@nxp.com>
-Subject: [PATCH] i3c: master: Enhance i3c_bus_type visibility for device searching & event monitoring
-Date: Mon,  8 Jul 2024 11:08:35 +0530
-Message-ID: <20240708053835.3003986-1-bhoomik.gupta@nxp.com>
-X-Mailer: git-send-email 2.45.2
+	Fri, 12 Jul 2024 16:46:26 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=Y6aRh8QQyeqcL/BNILz6C5HU8Bs1Co1hTkaxVi9GOcOLC9BD/wsThVHqQbo4WIAog396K3AB74JAUS0QRXMwjQDV83HbA/vXvHYyVsYTA620FvZv0/3PCcGnjIiAD1mO6GUBiNGpehxnqlSngS2N2k5WC7lCtNrQTC5KC+AciksHgjzhCBflPMSVENFEv6k3BmigqxZ22AjK8//aSDC6QDqJYWCOUYUrdSXesE3uKiXlJGILoW1bDgQWdwWsmrhTKin/m8ZuzlCBoZjFLcRl2pD+wLKDBIxFbn6558JkXJ0y4lF5iwW0u7rzQb2sAUSTud9LMRr6sKvNRxek/YltSw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=cJTiKcqbvXuQJu/cvx6FQbzHBOJkEOWkZjHAfAhHVE4=;
+ b=HEXWfK34fWhCCdaajDN5Gs9uU2ko1o2WExnSqXUuZXb/p6kWFlKWRIwZn3sUbupScT1m/70hFutErUrifj5Q3ZTEhSxfQEEPCBWzJhbvGc1pleh2lsoYmX4g+6LAtbiq87t+eXG0eA9vH2+jsMrPmNN6gfwvueZQlJhmxpIebj7aCLSMNra8MDPyf3qOf2OCbucEyjvlCyuverLCn7gzjCXR/UTeit2XdIFi289OJEk/AC3fCmlFTvChcd72pTiV6OeEXZM6mKIL+yn6Z0b/48NQhmZsLBpQmvucg1D5QlSg3KjTXOlOgCraI/IkXcQ+qejc6FRRZ7VuTGoitWTlNA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=cJTiKcqbvXuQJu/cvx6FQbzHBOJkEOWkZjHAfAhHVE4=;
+ b=ffefQIYqFBM30FZuom0vNPO0TkCKTR8S8qmqgfeupAc8KEOFIUJq/wuHSTeEU3kJEGGFVLRplAFAAhTG+t8KwptiGiYanoHSjQ+id7Iub0eewf33FrwjLi7XCveyFEieXq9+wDBlugeZoPlKAEWFwD6DKEnqkp3d4GDE6aaVsTU=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by AS8PR04MB8756.eurprd04.prod.outlook.com (2603:10a6:20b:42f::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7762.20; Fri, 12 Jul
+ 2024 16:46:14 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06%4]) with mapi id 15.20.7762.020; Fri, 12 Jul 2024
+ 16:46:14 +0000
+From: Frank Li <Frank.Li@nxp.com>
+To: Miquel Raynal <miquel.raynal@bootlin.com>,
+	Conor Culhane <conor.culhane@silvaco.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	linux-i3c@lists.infradead.org (moderated list:SILVACO I3C DUAL-ROLE MASTER),
+	linux-kernel@vger.kernel.org (open list)
+Cc: imx@lists.linux.dev
+Subject: [PATCH 1/1] i3c: master: svc: adjust SDR timing according to i3c spec
+Date: Fri, 12 Jul 2024 12:46:02 -0400
+Message-Id: <20240712164602.3600659-1-Frank.Li@nxp.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: SJ0PR13CA0007.namprd13.prod.outlook.com
+ (2603:10b6:a03:2c0::12) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
 MIME-Version: 1.0
-X-Virus-Scanned: ClamAV using ClamSMTP
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|AS8PR04MB8756:EE_
+X-MS-Office365-Filtering-Correlation-Id: 3c4ddb58-0274-474b-b568-08dca2922476
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014|52116014|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?JC99mTOU6G4a3ZO5ecgAyberam71dvci4RAtNkeEN8m2QVvKAKUqJXt3a1Nb?=
+ =?us-ascii?Q?d9aLE0UK+5lf6UnKeEK+clXhjwxhbirgge1/ozXzM0Vo0HA2TxAtEQvVdI7P?=
+ =?us-ascii?Q?KUAZGyXGMVcXWSHpHtXOe14C2NxqZMQrJfKYNUhipZ8Y1vcWF+uYYGURHHnt?=
+ =?us-ascii?Q?vSohswqwNbB6qrWMoZQTHyesVzr9lzIehIVvZcbMvVKKWPfeQXJd3V/sGays?=
+ =?us-ascii?Q?y30LLKydfZjG+c62E2hAMftE4wXYsmrB5YdL70CgmfqU/eNtfpKxtALLVmh2?=
+ =?us-ascii?Q?cBIqXWG37khkKWRxOFabwVVIrdSQ8u8tTvxalOxKeKMNlo9cuBQxptOAncNr?=
+ =?us-ascii?Q?me+skuEIv6YiUyrke623MdGs1rc69EjDKt5ed7WXF5i+2INLOeOa0gFnoy2u?=
+ =?us-ascii?Q?SUujgy3eqSPQM6L6Vlqpf3bzdRo/wIIydnmfymJVcLAwe/ekjCxiIqm8ouCJ?=
+ =?us-ascii?Q?2G9LCpjO0R4nOCvbZbO5p1vbVSggn6wHxwgXK1xbkmWdbWfVzs3FpxjtPr1p?=
+ =?us-ascii?Q?wyQAhhhrq2AcI4U0FrTYzCsZvaMdX3M3xr3vz4ZFrJVgY2PWWZn0cL53l4ye?=
+ =?us-ascii?Q?bTUJTScvroT5UW31URrPZQgJcfgXagkJBbUlLK5kkYzfzmFmG/xSAmd3td2n?=
+ =?us-ascii?Q?kzRH6OyRRHoYPB5uCrJ/m+mpGaK2BqJcO26sKLyYor97FTQN/oQ42SAhtGL3?=
+ =?us-ascii?Q?sOXVQdEqK6eiZQeQT0xaKE4u/8oSwXRyWyhYJzBb5yG6mxODSeTHZfJSxScC?=
+ =?us-ascii?Q?2SKNy4agDiT12hkpUhTEL2khn5x78RqNUQkh8FP6u2MGKuR43kgu+8Xg7Qy6?=
+ =?us-ascii?Q?nbcYW0Y/zFPY4TT5wfEVP6qT1ZIq35pMIRNTNoWnGIdj+j36PlHdsQ02T9w9?=
+ =?us-ascii?Q?zWSnc4cXJWDM1nbRyZvFnoQAqkNWEzZ3SOK65kr9MYAMy9g058SAAifatuks?=
+ =?us-ascii?Q?UsX5XywIz+j0RldkQj17wkXqQMtx7mDsX736lUuhHT4UUp3+QyrpTOjtthDf?=
+ =?us-ascii?Q?rYbxktfAiiRfn8vP40hoRh9awAPoy557jjtPtle88bb1CGI0cyyPFklb5Hdj?=
+ =?us-ascii?Q?vaFWDtSFN6Givbb1lgWYP4CfApByEcvwAyP7sbOX9GcvrFb3ehnFU6kUXBsP?=
+ =?us-ascii?Q?T0DANm29KnFhgEoRxI9EBSuUrR2coLHN/7Tost4ySvWKa1klwj+dKI7YaTKP?=
+ =?us-ascii?Q?xAYIAiqNgt/K+Jd1jYm3InoKDngY148DNPlYRmMeV3kg9cPh6j8slGP+5Pae?=
+ =?us-ascii?Q?1m+vGAE2ifzTG2uPm2PjR2ZAJte9KJOvPKPM8hrn3xPYS3MuCw366NOqw1sH?=
+ =?us-ascii?Q?tus2g+p5eo0ut/5uohm1SWM6DvWQMtzmd0UkaV6k/tvQzece5HhG/KNvyNbX?=
+ =?us-ascii?Q?I1N1iT9FdDiXUq2BPeLtCbODEom2mop8OUsFEEQfBSdRLhbhtA=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(52116014)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?4y16WC5k3Hf3Ro46jzSWnkW6tChByvXuSCOU55d3f/oJvO9CawX+o4K7pUbd?=
+ =?us-ascii?Q?n64cl4xstKa6fDNP7nA1D1ZHwyXkr4YzMzMFiSmL5tLkJCLpHwP8phim8EbD?=
+ =?us-ascii?Q?o9JML7ciCAxccrLSRqfiNiU8u6Q2FoAopJ/4Ty0QVFB/qJAfP9EttiZYcBiC?=
+ =?us-ascii?Q?OaTUP2nFYLQeC/9cFSSbxcTG1MjThFZ5WQ3mDhjrVOcduLUg1IPWCrSnTPnO?=
+ =?us-ascii?Q?NKwSNFCVHWXQRUpfjbqQcDl+3eAtDCxMl5948i/xjwMkgPkCPK/v5XLvkeFk?=
+ =?us-ascii?Q?Ktw6SX389QTyy22r/fZCuPVQ87Jwsa25ngzYMZuFC3dvOG7Im6n/6fM6IzQ5?=
+ =?us-ascii?Q?GsvcMxA+t+qMBZHFjgvdDxfrAH0KQpiO4iTKs+jiNmn7fLzuGlEmoD+7WTMq?=
+ =?us-ascii?Q?klKjOrlgjSTADUyy4HjGZ0uCdMwzkX8qkKQvsMPqOnO04rfxMx2pRbaBHxNn?=
+ =?us-ascii?Q?fnVTWo4gEhtBDFWDrRXOpeF7y+4CeEq3+YFxSNLLFqsSNNZfS3yWpxojRxf5?=
+ =?us-ascii?Q?hb/3wEERnWBGVFccWJpdLMOIwxi5wmJHj4PKOpZ6Q8KFv6mwqlwb+x7ND1os?=
+ =?us-ascii?Q?BZMO0mpBUJjOnucoZ4TwiNEiJ1MTQXFrF5iH8pOhgrd53WuS0MeO13nKIVlD?=
+ =?us-ascii?Q?LlXacegdFGhbjZiub4ThdYNyBtdR8WJ0TQ/Qc86cjzkZqBzD1znxGx/uetz7?=
+ =?us-ascii?Q?Y85r7jt/mxijj+hXXZu8e9N0sMXr7HIpaZGDO5Gklijx5WoKi86vrFmLxYgR?=
+ =?us-ascii?Q?maMkEVt701ugOIHzZ8FzGcOFSxxbgXn153vKByRaJxpqy+cSHc/EDj4Zcegj?=
+ =?us-ascii?Q?t3D5UlFz4EPdrK2SnLk0L0hChxDYn7C4jA3xdSR2p2ksMGBXQFct7xo/7CPu?=
+ =?us-ascii?Q?vXC2UieTXwMBSQoXk+J9zSkD/joCGGPhZjVu33fswMit+KLLc/to0ftqauqL?=
+ =?us-ascii?Q?lmpfYVKTNaLukWOsk50oprVZTdeKkeMktA7TUcFjDJQIblSQ7R6w9VseqsdV?=
+ =?us-ascii?Q?jKsv60Q9Hoi6JBN/Bch+8OumkpBjV/phS2ZsulN11JYj3ysO17TR8vGxoPq2?=
+ =?us-ascii?Q?vNQwnYr31wPKMDEWarGp1bpbPsbr6aUnEdHWTnZIB+Kq+Ow2kq1TblK2k0t8?=
+ =?us-ascii?Q?GAlfRs7WgzxwOT5P8oTZK+WoU4qF+uAaYyTNCtKQC5VU29o8bFYVO934DE6E?=
+ =?us-ascii?Q?Rg1odvRF2/YZ5BfwvjVqpIOE9Ebmj3J0XtTnEEWJKYhRCa5MRZE6S7HTE8eO?=
+ =?us-ascii?Q?MM+BnybZcf39mCT5rfeGOsKeZMxrkwoCo3XnIrAyc86VTXsHucztyhpVUdxl?=
+ =?us-ascii?Q?dcR6Tl6QH0V+1K5ERr7hNSFe6fu28eRr8j0PZBHWW6rM/YzXE0e3dH1mEdU2?=
+ =?us-ascii?Q?FDE5DfhUD5kXBm+wF06ukaxWafQV7uyv/4+VM70NUTCv3CxAgW5b8bb5+x8+?=
+ =?us-ascii?Q?ffRHA3tr/Odeb74R441aosWH3/enSHKoF+3MxR+Cvucs+BOLrtLF2pCz3Ndt?=
+ =?us-ascii?Q?Irrmf+XN6PsBk2ZgKQhaJKvPI5F/nmIE3Iy4q+Vg8sj9rzQUXfLROi+i02ew?=
+ =?us-ascii?Q?ZPP9gPZKgtjL5x6O4zZQTum2jqDF0IgMkf1NFiyR?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3c4ddb58-0274-474b-b568-08dca2922476
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Jul 2024 16:46:14.1512
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: s8+ELPX7zygIk9+vgeG16+HgJrmXCu1zu5+eFLY3DTb40+9mhNMZ7qwEewVYKt05kAWVDqgNegFaaUJcu3cqNA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8756
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240707_223848_558188_A1FCF645 
-X-CRM114-Status: UNSURE (   9.55  )
-X-CRM114-Notice: Please train this message.
-X-Mailman-Approved-At: Mon, 08 Jul 2024 00:00:02 -0700
+X-CRM114-CacheID: sfid-20240712_094625_278134_F1E11133 
+X-CRM114-Status: GOOD (  15.71  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,56 +156,127 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Improve the visibility of i3c_bus_type to facilitate searching for
-i3c devices attached to the i3c bus. Enable other drivers to use
-bus_register_notifier to monitor i3c bus device events.
+From: Carlos Song <carlos.song@nxp.com>
 
-Signed-off-by: Bhoomik Gupta <bhoomik.gupta@nxp.com>
+According to I3C Specification(Version 1.1) 5.1.2.4 "Use of Clock
+Speed to Prevent Legacy I2C Devices From Seeing I3C traffic", when
+slow i2c devices(FM/FM+ rate i2c frequency without 50ns filter)
+works on i3c bus, i3c SDR should work at FM/FM+ rate.
+
+Adjust timing for difference mode.
+
+Signed-off-by: Clark Wang <xiaoning.wang@nxp.com>
+Signed-off-by: Carlos Song <carlos.song@nxp.com>
+Signed-off-by: Frank Li <Frank.Li@nxp.com>
 ---
- drivers/i3c/internals.h    | 2 --
- drivers/i3c/master.c       | 1 +
- include/linux/i3c/master.h | 1 +
- 3 files changed, 2 insertions(+), 2 deletions(-)
+ drivers/i3c/master/svc-i3c-master.c | 66 +++++++++++++++++------------
+ 1 file changed, 40 insertions(+), 26 deletions(-)
 
-diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
-index 4d99a3524171..433f6088b7ce 100644
---- a/drivers/i3c/internals.h
-+++ b/drivers/i3c/internals.h
-@@ -10,8 +10,6 @@
+diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
+index bb299ce02cccb..26dc6d833c6e3 100644
+--- a/drivers/i3c/master/svc-i3c-master.c
++++ b/drivers/i3c/master/svc-i3c-master.c
+@@ -127,6 +127,8 @@
  
- #include <linux/i3c/master.h>
+ /* This parameter depends on the implementation and may be tuned */
+ #define SVC_I3C_FIFO_SIZE 16
++#define SVC_I3C_PPBAUD_MAX 15
++#define SVC_I3C_QUICK_I2C_CLK 4170000
  
--extern const struct bus_type i3c_bus_type;
+ #define SVC_I3C_EVENT_IBI	BIT(0)
+ #define SVC_I3C_EVENT_HOTJOIN	BIT(1)
+@@ -535,6 +537,7 @@ static int svc_i3c_master_bus_init(struct i3c_master_controller *m)
+ 	struct i3c_bus *bus = i3c_master_get_bus(m);
+ 	struct i3c_device_info info = {};
+ 	unsigned long fclk_rate, fclk_period_ns;
++	unsigned long i2c_period_ns, i2c_scl_rate, i3c_scl_rate;
+ 	unsigned int high_period_ns, od_low_period_ns;
+ 	u32 ppbaud, pplow, odhpp, odbaud, odstop, i2cbaud, reg;
+ 	int ret;
+@@ -555,44 +558,55 @@ static int svc_i3c_master_bus_init(struct i3c_master_controller *m)
+ 	}
+ 
+ 	fclk_period_ns = DIV_ROUND_UP(1000000000, fclk_rate);
 -
- void i3c_bus_normaluse_lock(struct i3c_bus *bus);
- void i3c_bus_normaluse_unlock(struct i3c_bus *bus);
+-	/*
+-	 * Using I3C Push-Pull mode, target is 12.5MHz/80ns period.
+-	 * Simplest configuration is using a 50% duty-cycle of 40ns.
+-	 */
+-	ppbaud = DIV_ROUND_UP(40, fclk_period_ns) - 1;
+-	pplow = 0;
+-
+-	/*
+-	 * Using I3C Open-Drain mode, target is 4.17MHz/240ns with a
+-	 * duty-cycle tuned so that high levels are filetered out by
+-	 * the 50ns filter (target being 40ns).
+-	 */
+-	odhpp = 1;
+-	high_period_ns = (ppbaud + 1) * fclk_period_ns;
+-	odbaud = DIV_ROUND_UP(240 - high_period_ns, high_period_ns) - 1;
+-	od_low_period_ns = (odbaud + 1) * high_period_ns;
++	i2c_period_ns = DIV_ROUND_UP(1000000000, bus->scl_rate.i2c);
++	i2c_scl_rate = bus->scl_rate.i2c;
++	i3c_scl_rate = bus->scl_rate.i3c;
  
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 3b4d6a8edca3..a211dc4d25bb 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -342,6 +342,7 @@ const struct bus_type i3c_bus_type = {
- 	.probe = i3c_device_probe,
- 	.remove = i3c_device_remove,
- };
-+EXPORT_SYMBOL_GPL(i3c_bus_type);
- 
- static enum i3c_addr_slot_status
- i3c_bus_get_addr_slot_status(struct i3c_bus *bus, u16 addr)
-diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
-index 0ca27dd86956..074f632868d9 100644
---- a/include/linux/i3c/master.h
-+++ b/include/linux/i3c/master.h
-@@ -33,6 +33,7 @@ enum {
- struct i3c_master_controller;
- struct i3c_bus;
- struct i3c_device;
-+extern const struct bus_type i3c_bus_type;
- 
- /**
-  * struct i3c_i2c_dev_desc - Common part of the I3C/I2C device descriptor
+ 	switch (bus->mode) {
+ 	case I3C_BUS_MODE_PURE:
++		/* Using I3C Push-Pull mode and I2C OP 50% duty-cycle. */
++		pplow = 0;
++		ppbaud = DIV_ROUND_UP(fclk_rate / 2, i3c_scl_rate) - 1;
++		high_period_ns = (ppbaud + 1) * fclk_period_ns;
++		odbaud = DIV_ROUND_UP(fclk_rate, SVC_I3C_QUICK_I2C_CLK * (1 + ppbaud)) - 2;
++		od_low_period_ns = (odbaud + 1) * high_period_ns;
+ 		i2cbaud = 0;
+ 		odstop = 0;
+ 		break;
+ 	case I3C_BUS_MODE_MIXED_FAST:
+-	case I3C_BUS_MODE_MIXED_LIMITED:
+ 		/*
+-		 * Using I2C Fm+ mode, target is 1MHz/1000ns, the difference
+-		 * between the high and low period does not really matter.
++		 * I3C in <= 12.5M PP + I3C OP + I2C OP in clk rate
++		 * keep I3C OD clk high period <= 40ns and use odbaud and pplow
++		 * to adjust the i2c/i3c duty cycle.
+ 		 */
+-		i2cbaud = DIV_ROUND_UP(1000, od_low_period_ns) - 2;
++		ppbaud = DIV_ROUND_UP(fclk_rate / 2, I3C_BUS_TYP_I3C_SCL_RATE) - 1;
++		high_period_ns = (ppbaud + 1) * fclk_period_ns;
++		pplow =  DIV_ROUND_UP(fclk_rate, i3c_scl_rate) - (2 + 2 * ppbaud);
++
++		odhpp = 1;
++		odbaud = DIV_ROUND_UP(fclk_rate, SVC_I3C_QUICK_I2C_CLK * (1 + ppbaud)) - 2;
++
++		/* i2c FM/FM+ */
++		od_low_period_ns = (odbaud + 1) * high_period_ns;
++		i2cbaud = DIV_ROUND_UP(i2c_period_ns, od_low_period_ns) - 2;
+ 		odstop = 1;
+ 		break;
++	case I3C_BUS_MODE_MIXED_LIMITED:
+ 	case I3C_BUS_MODE_MIXED_SLOW:
+-		/*
+-		 * Using I2C Fm mode, target is 0.4MHz/2500ns, with the same
+-		 * constraints as the FM+ mode.
+-		 */
+-		i2cbaud = DIV_ROUND_UP(2500, od_low_period_ns) - 2;
++		/* I3C PP + I3C OP + I2C OP both use i2c clk rate */
++		ppbaud = DIV_ROUND_UP(fclk_rate / 2, i3c_scl_rate) - 1;
++		pplow = 0;
++		if (ppbaud > SVC_I3C_PPBAUD_MAX) {
++			ppbaud = SVC_I3C_PPBAUD_MAX;
++			pplow =  DIV_ROUND_UP(fclk_rate, i3c_scl_rate) - (2 + 2 * ppbaud);
++		}
++
++		high_period_ns = (ppbaud + 1) * fclk_period_ns;
++		odhpp = 0;
++		odbaud = DIV_ROUND_UP(fclk_rate, i2c_scl_rate * (2 + 2 * ppbaud)) - 1;
++
++		od_low_period_ns = (odbaud + 1) * high_period_ns;
++		i2cbaud = DIV_ROUND_UP(i2c_period_ns, od_low_period_ns) - 2;
+ 		odstop = 1;
+ 		break;
+ 	default:
 -- 
-2.45.2
+2.34.1
 
 
 -- 
