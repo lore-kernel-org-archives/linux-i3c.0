@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47834C3DA63
-	for <linux-i3c@archiver.kernel.org>; Wed, 24 Jul 2024 07:13:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B66C0C3DA70
+	for <linux-i3c@archiver.kernel.org>; Wed, 24 Jul 2024 07:13:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=64kwzfA36HbkL9LkFfz8bGXhaZzwPvHzdCaOJ3I8BJE=; b=pf1Lmwp9Ky4Frz
-	xxfrBNWmux2b6SeWipl91E6r336tMGE7a1U656/YvxuLdgozB3fovbMSHeCDuz/zckw/faT+sLyNj
-	KGOKArd+Vq8bNXMj1gknwWqvHuW1S3NTwO4RHKbIzAMWu8EMZplURln31koZXiM4HHMlkkuP/VLa2
-	jgCeoj95Ox6tf87DdP4P1kpbpA+Ke6zW1n8XZVkgoTto4EHq4BXRPg+MrnO30A6x/iaxmypNHNktv
-	xypwZyWKG8iMQaDpiHivnWySTupe2VmB97TeJ+r+x1i4iWglIj04boyWYAOKcXPv5NV9Y7XId7t1Q
-	tFwBCve12ReuwCr8YlHg==;
+	List-Owner; bh=uFZB32x35ceBL5oULqPU8AV51dUYH52YvrftAZFitiE=; b=pyY+/5rvrs2pD6
+	Xrnxz00xEbjpS3IV9knzRr2pb+xQ2qKYr55iAu9vvJdEC//RZf9WYmqXv6aOBjDs/MjNOx2lRki4i
+	boMctpWAq2nOmjejaYSpQrggmX9x2hvcqcefBJyC+HBtjtXXlZuFFRW+T0mJTYeL2bU0gj/9JGQ62
+	gKqdCM9xgZEwyFDQA5m8+yjIfDAt65cc2wuseNjfq9BwIfvyXJ7BO5SzjQyq7QFxeKMB/tb6EY/zS
+	8ZO5XDT8hQje9ASoa88G0FoCQRzayjB/pdI1kjBRRSxtYcVEwydZ/j/hYp7H5hHfkVzUKWnQfzDCb
+	jYjrW9viIX7EjIe/o4sg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sWWBs-0000000Eaug-456E;
-	Wed, 24 Jul 2024 07:13:36 +0000
-Received: from mail-dm3nam02on20600.outbound.protection.outlook.com ([2a01:111:f403:2405::600] helo=NAM02-DM3-obe.outbound.protection.outlook.com)
+	id 1sWWBu-0000000Eave-1ZOP;
+	Wed, 24 Jul 2024 07:13:38 +0000
+Received: from mail-bn8nam04on20627.outbound.protection.outlook.com ([2a01:111:f403:2408::627] helo=NAM04-BN8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sWWBp-0000000Earu-0qWS
+	id 1sWWBs-0000000EatY-0BMm
 	for linux-i3c@lists.infradead.org;
-	Wed, 24 Jul 2024 07:13:34 +0000
+	Wed, 24 Jul 2024 07:13:37 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=dD4JC/+N28vO9tPHjq9S1EgkhWg7vqSq9XzMIe1UkshuxJUGf2Qp1ANfHQj1VPU++Hs/C4fQqnqPs5a9tfbGo4xkCOaqmQ4g+MJQeh1UUO6Rc9SRcQYTUJM8sw3RXr3CHiSyMhBJvd6l4lPMe/RUrwUHgJHqGgygW1isVFBLWzcfbJtt+YosiR1/lL4kjwo3JDZOQiu0MUku7G+x/b5M8NXTDNViJY/dB5DAChpW+5oNeZTfpEVmzZLCVOF8CoNz89LKwU/K7Y7nwaMQ6x9ugbTsV2SHh9oFtWPUDsQKI0hq9Ez5uUIXLLNTUSDYVBWyfE4olv81XVmMvFeJGsF2UA==
+ b=tUF1v/8hhYvwYzQ7k5KHRL7DWBLcJpch3ObGtXfns6j/ZosG71pUKaP0J9y6bqhaXw0qPP1zTQYIBRsUfSgsPEABhOUykIi02l95VHyj3joJq/EFomHYJiSYXyWbkFxTKx3XxM6+4bftQXOOpsxVe4vJalE/6cSQS8nWlsjU7QV+oprhdQD4EjnFSEabvyawLJPVXGwdGaVtE0JWirkrUkb5p2ftIqpDmMyvho9HksC1Szy5uYiEy8CtYN0Ts7UV8vduhu2gNhRhT5YzKprKda8PCZDc00TFZXFZouwXG4hm+3+mt1Xj+ahSnEDItr+G9peGiLGCE373VodksmNcDA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=EMrvv5KaVaRLzkoKWn7MmSXd6PTY5shWek6qlzF7EXo=;
- b=ccDcQ4tARop75/0Kcp2zEwwtDzb0x5GSBmg4bpnnPXoN0SG8nkzvccTBg+l4xtKEmn1d+WLxm/twMO+HYHO+pd9l6//121uAl0HrrnhCjU7ph7H8fnpjtyff0vY0HPIHaXe/vjfs0EqccfZpzqc/xbix038K4+9pPdbX5R6RQXiY0sVndN/KRiNdiZbJWzRPQjuT35UoTU3M0Nm6qmbEggHVklwZEY7KIq0nibgQA7B+hs5KWZ2/n8swB6CbWYul59elstZjopz/1ggqIH5BqWFbrwxAV/0ATIy1CcLtEaSEBuo4GiEck2HHYtDSnCzwTdOvDVt92Uh1Y3knd5bGqA==
+ bh=2BX+ubpi5nc8ZdodDNt+PTNMYOgWjtHE5x6tQF/zgCs=;
+ b=szBeYdJWh8H6v6Cddzw3tozw3v3rl3SBaxbprj4bUz5otUhgofyma6M6w143lKsshsW0GCf1yZUUTIAXMz2+eWNM+sRXd1vKCghhq013NECXzGhH9Q6Zg7g65+aj8JUeevhDBBWWPjEqu0hqHVLl57FR1Ndi3SDH3a7qSmep7mcYsWazQZ1qtKRPNqtdZ7QOMxt194m3hVWcgLXuJh1qw1qPEnhxQhg8u1A4EsYBRjilOelOpeta2NfmOj0tJLt0Wh3VjkHuPzHq3QzgpeAHsByKYs7jMmWC0uZursBYiGak2Y9MhuMbPHneBEaVr0ft3j13/i/OMK8nSja7QgP1Bg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  165.204.84.17) smtp.rcpttodomain=bootlin.com smtp.mailfrom=amd.com;
  dmarc=pass (p=quarantine sp=quarantine pct=100) action=none
  header.from=amd.com; dkim=none (message not signed); arc=none (0)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EMrvv5KaVaRLzkoKWn7MmSXd6PTY5shWek6qlzF7EXo=;
- b=Jg/1Ud7COVgtcBn0GdcxRxtgShgJMvWvkgj6MbuYCB3wAcreNLJYrU/q+em/7tEx0ZnAm9qrLM74y3/2hojmjzWIVz/ed0vJFIzxIoXUcdhPfP2iAV3W6an6X6ev+x1N72/6XpHvaVJgxPVV7RwH4OjnK7Qn8hrBBOCtaNuWCqg=
-Received: from BYAPR07CA0100.namprd07.prod.outlook.com (2603:10b6:a03:12b::41)
- by PH0PR12MB8773.namprd12.prod.outlook.com (2603:10b6:510:28d::18) with
+ bh=2BX+ubpi5nc8ZdodDNt+PTNMYOgWjtHE5x6tQF/zgCs=;
+ b=M2M2lhncFoWp70koVovoZ0rR4AEqi04N/Ql30UYkMnxZymytXfD/TcdBZdsUf73c7/XPxFbra/rA0Z/7egBEZ937gYfuD1GLsRi7IVk4FJwhxMiQjEz/CkpzDVC4OwQBZHQSfHozMA5vSEXJbaG1v3nNgvrGYSC0AoTZa/ryJeA=
+Received: from SJ0PR13CA0120.namprd13.prod.outlook.com (2603:10b6:a03:2c5::35)
+ by CH3PR12MB8512.namprd12.prod.outlook.com (2603:10b6:610:158::19) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7762.29; Wed, 24 Jul
- 2024 07:13:24 +0000
-Received: from SJ5PEPF000001D7.namprd05.prod.outlook.com
- (2603:10b6:a03:12b:cafe::97) by BYAPR07CA0100.outlook.office365.com
- (2603:10b6:a03:12b::41) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7762.35; Wed, 24 Jul
+ 2024 07:13:30 +0000
+Received: from SJ5PEPF000001D2.namprd05.prod.outlook.com
+ (2603:10b6:a03:2c5:cafe::6f) by SJ0PR13CA0120.outlook.office365.com
+ (2603:10b6:a03:2c5::35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7784.20 via Frontend
- Transport; Wed, 24 Jul 2024 07:13:24 +0000
+ Transport; Wed, 24 Jul 2024 07:13:30 +0000
 X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
  smtp.mailfrom=amd.com; dkim=none (message not signed)
  header.d=none;dmarc=pass action=none header.from=amd.com;
@@ -59,22 +59,22 @@ Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
  165.204.84.17 as permitted sender) receiver=protection.outlook.com;
  client-ip=165.204.84.17; helo=SATLEXMB04.amd.com; pr=C
 Received: from SATLEXMB04.amd.com (165.204.84.17) by
- SJ5PEPF000001D7.mail.protection.outlook.com (10.167.242.59) with Microsoft
+ SJ5PEPF000001D2.mail.protection.outlook.com (10.167.242.54) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.20.7784.11 via Frontend Transport; Wed, 24 Jul 2024 07:13:24 +0000
+ 15.20.7784.11 via Frontend Transport; Wed, 24 Jul 2024 07:13:29 +0000
 Received: from jatayu.amd.com (10.180.168.240) by SATLEXMB04.amd.com
  (10.181.40.145) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.39; Wed, 24 Jul
- 2024 02:13:21 -0500
+ 2024 02:13:26 -0500
 From: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Jarkko Nikula
 	<jarkko.nikula@linux.intel.com>
 CC: Guruvendra Punugupati <Guruvendra.Punugupati@amd.com>, Krishnamoorthi M
 	<krishnamoorthi.m@amd.com>, <linux-i3c@lists.infradead.org>,
 	<linux-kernel@vger.kernel.org>, Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
-Subject: [PATCH v2 1/5] i3c: mipi-i3c-hci: Add MIPI0100 ACPI ID to the I3C Support List
-Date: Wed, 24 Jul 2024 12:42:41 +0530
-Message-ID: <20240724071245.3833404-2-Shyam-sundar.S-k@amd.com>
+Subject: [PATCH v2 3/5] i3c: mipi-i3c-hci: Relocate helper macros to HCI header file
+Date: Wed, 24 Jul 2024 12:42:43 +0530
+Message-ID: <20240724071245.3833404-4-Shyam-sundar.S-k@amd.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20240724071245.3833404-1-Shyam-sundar.S-k@amd.com>
 References: <20240724071245.3833404-1-Shyam-sundar.S-k@amd.com>
@@ -84,50 +84,50 @@ X-ClientProxiedBy: SATLEXMB03.amd.com (10.181.40.144) To SATLEXMB04.amd.com
  (10.181.40.145)
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SJ5PEPF000001D7:EE_|PH0PR12MB8773:EE_
-X-MS-Office365-Filtering-Correlation-Id: 0e55ff4f-6f96-48d0-d149-08dcabb01b63
+X-MS-TrafficTypeDiagnostic: SJ5PEPF000001D2:EE_|CH3PR12MB8512:EE_
+X-MS-Office365-Filtering-Correlation-Id: 90ebb878-3235-4f9c-b86c-08dcabb01e7f
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|36860700013|1800799024|82310400026;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?hPSEOkk6qSRnvBYAHYnnWrmreStog9ou3cZYc3luaV7KN9GkQN9sWC4rxr68?=
- =?us-ascii?Q?kh3GeUiOvFcDo9csq0bV8jHKixRXtUYintWcnxkk+D4QxkGWQ15XOK6DRq1Y?=
- =?us-ascii?Q?LK8oR9wX/pJEcX9Oej9Q/ExMik3Djd887Qy7xvVeKoMS8R0iRSlfhp5PXZ3q?=
- =?us-ascii?Q?j8TC1XsGzA+oWRZppdD6KXOnm1N7JbVaTAueB+10QIRgTeIZvFzkzYwBbWDK?=
- =?us-ascii?Q?3Lts5YopUOfVQAvcUsDpHs2jF7YEX1OpdaALkPJ1Z+ZyWCsG+tA/cFBIxY2C?=
- =?us-ascii?Q?fF9rnj555hCkeuSOkt5Msdun+UKvz1goKcpp9Ps76bjtl4R6QDkmgrjOUcjE?=
- =?us-ascii?Q?4mjRMELf45IeSvRkWQmcmfE0Hv7yzV7iI+UcIeU6WOiij/fu4wYZ7Y1noLST?=
- =?us-ascii?Q?nAXliq6eDVtU+bPtMPhiCH87wOpTuRUcoGCHeuNtcveBOjAaZ2vwW4vZluDw?=
- =?us-ascii?Q?7rMNXTbafmCDdnpydA8ky0UKG5I0g3Nnut4idIPS9WtCXeHyIeGvRjIjXAjW?=
- =?us-ascii?Q?/SliCJGIgYjx+yADB7AcPo9WYy5aykTaLuJHi4kGgMFjJ5J8dd8H6orIC6GQ?=
- =?us-ascii?Q?+CIo2mMiF3dGrVsvD4S5ZlOJmzPqjUpDqJfsOfvAQ9Q85o/TR7Q5+H538ZA+?=
- =?us-ascii?Q?c2+IxEDqJfDCI0d9Blx1EanMufEi24WRpZPL+cWPzRFs8d/ep0c9SFUyzdPD?=
- =?us-ascii?Q?puiu6HZJh1Iwv8SQ6RBnpNy8SZtf6nYEoh4P62offp9FFIwzn8GjVEoveUfH?=
- =?us-ascii?Q?MVT+2GZ3LSz8Rq2gyO5M9oncZ673w94MZwI0kLa+E9mpWVh2J6t7VzvdOjSH?=
- =?us-ascii?Q?InnJhzhNUgSzAsscObhcjuK/g75ilXaVbz0sed8FRnC9mVxvxUjgX/YVVjlE?=
- =?us-ascii?Q?76WxsTMvo2Rbua77gOy2sC1ig5lwKNU4awa7QcxODfznIYzUQKN2gWaV5CzX?=
- =?us-ascii?Q?mKzwgJjbu/epnr1B0vTiI84lFwd+3WP0VBuEm0OnINjyd2idHDrN26TOcxGq?=
- =?us-ascii?Q?9KCS+XbzPBIdeo1MOr4ZTM0ffRUaqDJfNFFD4FEfv+sDgD2UaVzs8vSohjHn?=
- =?us-ascii?Q?OoCwObGi+Gxz/FazdrrPwKJBH9f7D1BNeth3MqUm1AdE9I60iEm+5Hozsz2Z?=
- =?us-ascii?Q?K44/0DfCNOw4jZ1yIhKnBH8PMYkuqaYtkNeNRUiZoFtPZ89p678kXhjdRBjq?=
- =?us-ascii?Q?agxgpUFujHbmCnv8CMO8nTsL9NIHudnv3Ds62XUI6hTwdQwPV+b7PqA/Tg2I?=
- =?us-ascii?Q?RGdaR9NK6kdyo72f6YBEbwUL6NibaxFalFqCwTlhMdxipDjZjgNi9A26uiRF?=
- =?us-ascii?Q?xgo5W74DuwQ3z0JfYayCGQd1IYppSMyRm5V4YbMek0eXClsM6W55lKXd89pH?=
- =?us-ascii?Q?UXtizBF1Zsqq8GpDouboMoEKr50rRSR1Ig+1t05AcVRDDV5iOsZ/LmQ454C/?=
- =?us-ascii?Q?OpLV+6ENYSMi57FBwH307OUnIUiDU0P3?=
-X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:SATLEXMB04.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(376014)(36860700013)(1800799024)(82310400026);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700013|376014|82310400026|1800799024;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?8dmIFSTFe0LybAk2+Dv7TibLz0/Vzd9zIUJIZW+6zBOQedyTdK5pE3VcA/XC?=
+ =?us-ascii?Q?QXEJsvc3c9eGHuN+PpsdBzMFTSzvRgE1TrGwvGKqWbdUH0btE6u8q2YCoADN?=
+ =?us-ascii?Q?TWDy4S7R8X4SvROLrMv5c8+rAs1ZKuJrl13y/7e9AoUyaFO5G3bFP/f7PcWa?=
+ =?us-ascii?Q?VZvOxc+tFYEphKbLsdJX9vD2z9vae29LRnDbObjOKn4qT7Jm2BPHyoSwwMEB?=
+ =?us-ascii?Q?ikg0OUln/KHUZHfnef8rCYSH6nF00adCPOu9sLSC37dnjbIVJeHjlvFXEJas?=
+ =?us-ascii?Q?T2A/PrRIz2+/Fz/jTdU2jUgqGDI/jOsbjNi7BVPLjmM/gIAvxC8BKTY42oEv?=
+ =?us-ascii?Q?MYXqE8gUalMZIlnjQ9T6LjJMzyMFvZsh1I7EFB3JKkRdXuLSw1vjhJC8btS/?=
+ =?us-ascii?Q?roYdPWgGt+j5HElaSCMCgLptUAQltXONIawZzM/mUb7kl/fF2i7jXI8Oe0nW?=
+ =?us-ascii?Q?zu6Auzv396+9iAhkz9DD908emt638G1JMvAAalRaVFnv2wR8YmAIGD35owvT?=
+ =?us-ascii?Q?3Fg521UmDmfozMK5shC//iOcZoWBwsN/YUIwpmQfzHr+NPES41G5qqEpDz7+?=
+ =?us-ascii?Q?MDZR/rVYDuXV/DjeWgHpM/G/tQrjmGCxZ7+yOAx0pyggc9T00B1iWKgi4rUz?=
+ =?us-ascii?Q?q+UroYPp43SGKwG79+aS/kWkrALojlLICEYe1JrJa58VQTYm8pE2P8Kwcd3k?=
+ =?us-ascii?Q?XQ2bb0rAkIm5Cw8SQ9FJaaAk04vzN4WhshCUc6aD99/1TrMImYL6/0GlDevc?=
+ =?us-ascii?Q?xQQKe7YmYp3LlSLcCAaeZXv9loo2cRo6AWCmjPFxSgZn1w8tLx3g7YfEDDZg?=
+ =?us-ascii?Q?h//5abxg4/FA9509Edqsmz25NCCXf+t/mkN6cFJ7ebFitGoee5FLejOn4/Yg?=
+ =?us-ascii?Q?U5mFuGWu84MrNqCKL5j/mPl1SSsQ/omD7qha2+fA8ymOtUoJRf+0s6nwW3y0?=
+ =?us-ascii?Q?rAWkuKloJECsOgWkRvu/9qR3gCmPVUClp9gDIFzGd6UUZwJss+g+EkcgioWy?=
+ =?us-ascii?Q?LdI+J5QWJSv0tj+N3ubYrScDguaiOk42uJ+Oy1l9XkTVsKkGe/qSFPDYjsuU?=
+ =?us-ascii?Q?gm8xSCHIZ2GgNdrXvPNRusV1wiADekTyGQykzjVTXXjUtcV0jr8hzhqKAukl?=
+ =?us-ascii?Q?nTP+MC11CdhJsthXjuDCAk1HzcNHyPVZ5hDOkwJ+zK8qwiPFTEjEMBj401Cf?=
+ =?us-ascii?Q?YKMe9sp2rqa9RYZ5k9Zj4EdOUmCfo7Yj2e/R4cmZgSISuH/e5C98RZZK6Urx?=
+ =?us-ascii?Q?/kWq6yiuzxqW4O4ow36LDSElCAFZ1nZUL4s/odB71PvzFPxCw4Y79PrEOOrg?=
+ =?us-ascii?Q?ZI7rVU8tI4ddjzTU81OgfOKcja7R8R65u4GTrr56wMzYt2eWifZmT7m1tluF?=
+ =?us-ascii?Q?KrgU33eB1BqcwanKS0QdamUe3G1iucz9NZweS2xYjx21HDfhE2IfT2aZSyQG?=
+ =?us-ascii?Q?IJffdz5QlYWrCKbDxVNIQEnGZBKbTnv0?=
+X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:SATLEXMB04.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(36860700013)(376014)(82310400026)(1800799024);DIR:OUT;SFP:1101;
 X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Jul 2024 07:13:24.0325
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Jul 2024 07:13:29.2485
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0e55ff4f-6f96-48d0-d149-08dcabb01b63
+X-MS-Exchange-CrossTenant-Network-Message-Id: 90ebb878-3235-4f9c-b86c-08dcabb01e7f
 X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[SATLEXMB04.amd.com]
-X-MS-Exchange-CrossTenant-AuthSource: SJ5PEPF000001D7.namprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthSource: SJ5PEPF000001D2.namprd05.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH0PR12MB8773
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH3PR12MB8512
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240724_001333_256157_E3447F0F 
-X-CRM114-Status: GOOD (  13.36  )
+X-CRM114-CacheID: sfid-20240724_001336_107874_0CB72456 
+X-CRM114-Status: GOOD (  12.42  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,42 +144,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The current driver code lacks the necessary plumbing for ACPI IDs,
-preventing the mipi-i3c-hci driver from being loaded on x86
-platforms that advertise I3C ACPI support.
+The reg_* helper macros are currently limited to core.c. Moving them to
+hci.h will allow their functionality to be utilized in other files outside
+of core.c.
 
-This update adds the MIPI0100 ACPI ID to the list of supported IDs.
-
+Co-developed-by: Guruvendra Punugupati <Guruvendra.Punugupati@amd.com>
+Signed-off-by: Guruvendra Punugupati <Guruvendra.Punugupati@amd.com>
 Signed-off-by: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
 ---
-MIPI0100 is the ACPI ID as defined in the MIPI I3C DisCo specification.
-
- drivers/i3c/master/mipi-i3c-hci/core.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+ drivers/i3c/master/mipi-i3c-hci/core.c | 6 ------
+ drivers/i3c/master/mipi-i3c-hci/hci.h  | 5 +++++
+ 2 files changed, 5 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-index d7e966a25583..dbc8c38bd962 100644
+index 8bb422ab1d01..ca9d4e2c80e6 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/core.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-@@ -826,12 +826,18 @@ static const __maybe_unused struct of_device_id i3c_hci_of_match[] = {
- };
- MODULE_DEVICE_TABLE(of, i3c_hci_of_match);
+@@ -12,7 +12,6 @@
+ #include <linux/errno.h>
+ #include <linux/i3c/master.h>
+ #include <linux/interrupt.h>
+-#include <linux/io.h>
+ #include <linux/iopoll.h>
+ #include <linux/module.h>
+ #include <linux/platform_device.h>
+@@ -27,11 +26,6 @@
+  * Host Controller Capabilities and Operation Registers
+  */
  
-+static const struct acpi_device_id i3c_hci_acpi_match[] = {
-+	{"MIPI0100"},
-+	{}
-+};
-+
- static struct platform_driver i3c_hci_driver = {
- 	.probe = i3c_hci_probe,
- 	.remove_new = i3c_hci_remove,
- 	.driver = {
- 		.name = "mipi-i3c-hci",
- 		.of_match_table = of_match_ptr(i3c_hci_of_match),
-+		.acpi_match_table = i3c_hci_acpi_match,
- 	},
- };
- module_platform_driver(i3c_hci_driver);
+-#define reg_read(r)		readl(hci->base_regs + (r))
+-#define reg_write(r, v)		writel(v, hci->base_regs + (r))
+-#define reg_set(r, v)		reg_write(r, reg_read(r) | (v))
+-#define reg_clear(r, v)		reg_write(r, reg_read(r) & ~(v))
+-
+ #define HCI_VERSION			0x00	/* HCI Version (in BCD) */
+ #define HCI_VERSION_V1			0x100	/* MIPI HCI Version number V1.0 */
+ 
+diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
+index 046b65d43e63..8e5af4e55de1 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/hci.h
++++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
+@@ -10,6 +10,7 @@
+ #ifndef HCI_H
+ #define HCI_H
+ 
++#include <linux/io.h>
+ 
+ /* Handy logging macro to save on line length */
+ #define DBG(x, ...) pr_devel("%s: " x "\n", __func__, ##__VA_ARGS__)
+@@ -26,6 +27,10 @@
+ #define W2_BIT_(x)  BIT((x) - 64)
+ #define W3_BIT_(x)  BIT((x) - 96)
+ 
++#define reg_read(r)		readl(hci->base_regs + (r))
++#define reg_write(r, v)		writel(v, hci->base_regs + (r))
++#define reg_set(r, v)		reg_write(r, reg_read(r) | (v))
++#define reg_clear(r, v)		reg_write(r, reg_read(r) & ~(v))
+ 
+ struct hci_cmd_ops;
+ 
 -- 
 2.25.1
 
