@@ -4,80 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45F63C3DA49
-	for <linux-i3c@archiver.kernel.org>; Wed, 24 Jul 2024 02:19:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00F55C3DA63
+	for <linux-i3c@archiver.kernel.org>; Wed, 24 Jul 2024 02:42:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0bfr89SfPxja6imhjy9d8uHRfQ+W4fM3TBw4oHQHip4=; b=gDsVqHlTvRe/mf
-	/t9pgetSopbVv5ryrLI/vcySivz3jqiqxChPYHH7rK2z+P93CZV6c3G/j524NiTMyX8+i3AxAljuo
-	LhZ9V2aqBabFrt/lrGgcQbxkBuFgh3lgGLPUQrRCyHisYgRjwCGPf+or/BfRet4tiua0L4C+Xq7Lt
-	7cXnYVwz/N66w+x4vpPMElL3xnZnkk5tUtidNjVjxd7hpXTOCN0/fkMaDYvscqExgsC8xi1u+L85N
-	JV+SpgyELgzGel9NcMZE4U7kptEgC3ymZL9BVhfo+5jUB92hGStLSCgEy+gJb/q0maPVqMoEDj+NJ
-	YUWdpKJVuXkY4wrcKAhA==;
+	List-Owner; bh=cB7V76VmHLQ1XMBXyS0EgiV9Qw0Sxq6a2Bgp1d2uRgQ=; b=I4Ep9oZsqsJ4/G
+	qtrSekqAptqEvgMQm932pYrXFrraajfJ4DDTBD4YL2890kr3KAVAMgAsNy7obbw9aaQrhYP8+WWE7
+	TTgpYKQH3YVIHcwk8F+PQDMT9P7xiTAVrFn/5lHx6QT1apw5zzn6SGENNM/1PEkVd2JXiRo9EZFwt
+	RkTRj2jEs43NtiYUcDI6hExijPO+tjIL105ujZXKiZ1JtOl0xnsEdPWspa+bDPFGskUMjbqAtrSr1
+	fZ1iF0iA8Yp8v6UlDFsdCTQQ9tun8KYm2SlKUKahL7oMwVmpkkkPqTs9km2HVrFmis1mOiEKy+4Mx
+	vK+mpY4IjfIAG6WRIxvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sWRav-0000000E7tf-2AaR;
-	Wed, 24 Jul 2024 02:19:09 +0000
-Received: from mgamail.intel.com ([198.175.65.13])
+	id 1sWRxA-0000000EAPR-1sfo;
+	Wed, 24 Jul 2024 02:42:08 +0000
+Received: from mgamail.intel.com ([192.198.163.19])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sWRar-0000000E7rj-3DuM
+	id 1sWRx7-0000000EAOh-44sB
 	for linux-i3c@lists.infradead.org;
-	Wed, 24 Jul 2024 02:19:07 +0000
+	Wed, 24 Jul 2024 02:42:07 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1721787546; x=1753323546;
+  t=1721788926; x=1753324926;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=AX7TCzOqF+kRV52BtSQ5g+nfPZuolJtzec1v4oyt74Q=;
-  b=k/sdwE721/2kU3LeXWbAugiW7FQgHETRxfVwW1CFs2wVVuSr2OMhEqHU
-   utTzmw6wyyc5wtOLYNbrYePSNFNINEqTLxOxgH/hA0lOJ081kDbP0w4ly
-   E0AdojoSJ1ZD8p4/VqOns02XaYYW5lnllpqS99d8bEQzO/TTvI7EYoWPc
-   KC5Y9d8WnclzySIsdKxpkEB/GRtDim+LmA9R9519f9ZuUzvZrDLcaX5Cf
-   1tW+yXVYell/Mf7n3w1MN/XwxrN6nzZHaPr9AEyBVmyWEGUPmLfDAt3qe
-   g4Slkew1czeVtTopIrRf6vMJ+pPLiZpI1W+HlnCMwJYWGf5abWDfLkplo
+  bh=Jz6b+V0sp/QHCbI8lkUIWgxo8QZ3onL7lWJZDxQp45w=;
+  b=PMe3AtUJtzI9VNEDimQa8HRct0UW1v0jHLv3VyADc+oGZbJJ3nfuQata
+   y95CSQAGdObFfkM4uyv/trngQH60CV9oaGjQaw3F7LsA+aJBxDIUI8UNV
+   87RwiNlomqWqGJr0bEfLsr42x5hy4KJPGnDHIAOZ5Yow5oHjx9+yBuWy2
+   j4WBYqYXanLRSDlzcwdPI3Sb/NwUoOCewKpFNFnA9Me6qYfln1VZVYwov
+   pUN2oIrVfqEYIn9u9EquN/uDhE71q/K9ULfrvfH0ab+q4c2K4q7UIuNx3
+   IDQ7dd41sELnl+fyTi7RZxnG+WDfXx9EOSAEqnWPKgNNxAQT3kGCAP/Jl
    Q==;
-X-CSE-ConnectionGUID: m8nLYJkaQ2a6KPR36yRn8g==
-X-CSE-MsgGUID: /UmLj39/Ro2/dWTRBrJVcQ==
-X-IronPort-AV: E=McAfee;i="6700,10204,11142"; a="30590397"
+X-CSE-ConnectionGUID: UpeSi9afQCeyiIfpFCTeEQ==
+X-CSE-MsgGUID: q9uftnkzSZqSEZOJV86glg==
+X-IronPort-AV: E=McAfee;i="6700,10204,11142"; a="19139074"
 X-IronPort-AV: E=Sophos;i="6.09,232,1716274800"; 
-   d="scan'208";a="30590397"
-Received: from orviesa008.jf.intel.com ([10.64.159.148])
-  by orvoesa105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Jul 2024 19:19:03 -0700
-X-CSE-ConnectionGUID: Jb5/wmEdQU2qzz/VgI1jNw==
-X-CSE-MsgGUID: UrvIPvw9RDuKqQlUJ23IHg==
+   d="scan'208";a="19139074"
+Received: from orviesa009.jf.intel.com ([10.64.159.149])
+  by fmvoesa113.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Jul 2024 19:42:05 -0700
+X-CSE-ConnectionGUID: oAqvGr1CQJCN1qNZUUJqvA==
+X-CSE-MsgGUID: NqCRA05dT6OJOGwJhwh1Vw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.09,232,1716274800"; 
-   d="scan'208";a="53205678"
+   d="scan'208";a="52460857"
 Received: from lkp-server01.sh.intel.com (HELO 68891e0c336b) ([10.239.97.150])
-  by orviesa008.jf.intel.com with ESMTP; 23 Jul 2024 19:19:01 -0700
+  by orviesa009.jf.intel.com with ESMTP; 23 Jul 2024 19:42:02 -0700
 Received: from kbuild by 68891e0c336b with local (Exim 4.96)
 	(envelope-from <lkp@intel.com>)
-	id 1sWRak-000mZA-2y;
-	Wed, 24 Jul 2024 02:18:58 +0000
-Date: Wed, 24 Jul 2024 10:18:18 +0800
+	id 1sWRx1-000ma6-2v;
+	Wed, 24 Jul 2024 02:41:59 +0000
+Date: Wed, 24 Jul 2024 10:41:42 +0800
 From: kernel test robot <lkp@intel.com>
 To: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>,
 	Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Jarkko Nikula <jarkko.nikula@linux.intel.com>
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+Cc: oe-kbuild-all@lists.linux.dev,
 	Guruvendra Punugupati <Guruvendra.Punugupati@amd.com>,
 	Krishnamoorthi M <krishnamoorthi.m@amd.com>,
 	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
 	Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
 Subject: Re: [PATCH 4/5] i3c: mipi-i3c-hci: Add a quirk to set timing
  parameters
-Message-ID: <202407240917.PpEicOHG-lkp@intel.com>
+Message-ID: <202407241020.dsJauFym-lkp@intel.com>
 References: <20240723173538.3493935-5-Shyam-sundar.S-k@amd.com>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20240723173538.3493935-5-Shyam-sundar.S-k@amd.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240723_191905_915661_ACF4B121 
-X-CRM114-Status: GOOD (  10.87  )
+X-CRM114-CacheID: sfid-20240723_194206_046592_AA44E6B5 
+X-CRM114-Status: GOOD (  14.08  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,42 +108,39 @@ url:    https://github.com/intel-lab-lkp/linux/commits/Shyam-Sundar-S-K/i3c-mipi
 base:   linus/master
 patch link:    https://lore.kernel.org/r/20240723173538.3493935-5-Shyam-sundar.S-k%40amd.com
 patch subject: [PATCH 4/5] i3c: mipi-i3c-hci: Add a quirk to set timing parameters
-config: x86_64-buildonly-randconfig-004-20240724 (https://download.01.org/0day-ci/archive/20240724/202407240917.PpEicOHG-lkp@intel.com/config)
-compiler: clang version 18.1.5 (https://github.com/llvm/llvm-project 617a15a9eac96088ae5e9134248d8236e34b91b1)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20240724/202407240917.PpEicOHG-lkp@intel.com/reproduce)
+config: arm-randconfig-004-20240724 (https://download.01.org/0day-ci/archive/20240724/202407241020.dsJauFym-lkp@intel.com/config)
+compiler: arm-linux-gnueabi-gcc (GCC) 14.1.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20240724/202407241020.dsJauFym-lkp@intel.com/reproduce)
 
 If you fix the issue in a separate patch/commit (i.e. not just a new version of
 the same patch/commit), kindly add following tags
 | Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202407240917.PpEicOHG-lkp@intel.com/
+| Closes: https://lore.kernel.org/oe-kbuild-all/202407241020.dsJauFym-lkp@intel.com/
 
 All errors (new ones prefixed by >>):
 
->> drivers/i3c/master/mipi-i3c-hci/hci_quirks.c:35:2: error: call to undeclared function 'writel'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-      35 |         reg_write(HCI_SCL_I3C_OD_TIMING, AMD_SCL_I3C_OD_TIMING);
-         |         ^
-   drivers/i3c/master/mipi-i3c-hci/hci.h:30:26: note: expanded from macro 'reg_write'
-      30 | #define reg_write(r, v)         writel(v, hci->base_regs + (r))
-         |                                 ^
->> drivers/i3c/master/mipi-i3c-hci/hci_quirks.c:37:9: error: call to undeclared function 'readl'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-      37 |         data = reg_read(HCI_SDA_HOLD_SWITCH_DLY_TIMING);
-         |                ^
-   drivers/i3c/master/mipi-i3c-hci/hci.h:29:22: note: expanded from macro 'reg_read'
-      29 | #define reg_read(r)             readl(hci->base_regs + (r))
-         |                                 ^
-   2 errors generated.
+   drivers/i3c/master/mipi-i3c-hci/hci_quirks.c: In function 'amd_i3c_hci_quirks_init':
+>> drivers/i3c/master/mipi-i3c-hci/hci_quirks.c:25:13: error: 'boot_cpu_data' undeclared (first use in this function)
+      25 |         if (boot_cpu_data.x86_vendor == X86_VENDOR_AMD) {
+         |             ^~~~~~~~~~~~~
+   drivers/i3c/master/mipi-i3c-hci/hci_quirks.c:25:13: note: each undeclared identifier is reported only once for each function it appears in
+>> drivers/i3c/master/mipi-i3c-hci/hci_quirks.c:25:41: error: 'X86_VENDOR_AMD' undeclared (first use in this function); did you mean 'X86_VENDOR_ANY'?
+      25 |         if (boot_cpu_data.x86_vendor == X86_VENDOR_AMD) {
+         |                                         ^~~~~~~~~~~~~~
+         |                                         X86_VENDOR_ANY
 
 
-vim +/writel +35 drivers/i3c/master/mipi-i3c-hci/hci_quirks.c
+vim +/boot_cpu_data +25 drivers/i3c/master/mipi-i3c-hci/hci_quirks.c
 
+    22	
+    23	void amd_i3c_hci_quirks_init(struct i3c_hci *hci)
+    24	{
+  > 25		if (boot_cpu_data.x86_vendor == X86_VENDOR_AMD) {
+    26			hci->quirks |= HCI_QUIRK_AMD_PIO_MODE;
+    27			hci->quirks |= HCI_QUIRK_AMD_OD_PP_TIMING;
+    28		}
+    29	}
     30	
-    31	void amd_set_od_pp_timing(struct i3c_hci *hci)
-    32	{
-    33		u32 data;
-    34	
-  > 35		reg_write(HCI_SCL_I3C_OD_TIMING, AMD_SCL_I3C_OD_TIMING);
-    36		reg_write(HCI_SCL_I3C_PP_TIMING, AMD_SCL_I3C_PP_TIMING);
-  > 37		data = reg_read(HCI_SDA_HOLD_SWITCH_DLY_TIMING);
 
 -- 
 0-DAY CI Kernel Test Service
