@@ -4,53 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7DA4AC3DA7F
-	for <linux-i3c@archiver.kernel.org>; Fri, 26 Jul 2024 12:39:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 907A1C3DA4A
+	for <linux-i3c@archiver.kernel.org>; Sat, 27 Jul 2024 20:07:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9RNZWzwPrJvfxj0e9rJIRcXRjbx8YgzIGfJNFC9cOiw=; b=affKYYiHTdTN1Y
-	Uaaso6GkONTKSWpzqmNu5NSgbmA7WCeORqAqA7uwFlIrNZApGv1hISAFvSs1RwE68/kAJxsX9ux8v
-	gdrz/a+DoEdPcTg+p86rv2nLlnxsmDqphXSYJxAS7U1mdSX6EJv0SUs/a4ym6Vi0t3eoBUPHnS9yz
-	GzIQMm+CmJnU6t1eNodB8PzVNBj7yaLV+GV/pu6wGTl99sy5oLXTgYcDmlwoqsFdx+96/B/hS2Aze
-	737PkZ3E06wk1Mx0tUMNIRA4vLQd6ba44ynsd7bfR1wHjI2P5g9H0TB7Q5g9Lsr8R2G0MS6EWiC0Z
-	0wnYGofqPcVoA0nfNGGQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Date:Message-Id:
+	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=j6Q2gYbWFG3obmztbHiK6f+H1u8YAm8BdxpaSEgGrEw=; b=yN3vjP+SCxSeBW
+	44NYydXrBAowJXxGJkykGRv+YNfqTcf3V6oAEzSVTJC5ZxUvvhKo9Vk/cNG/NIe1JqnC0EPtdeb+t
+	4MucpZyPaxIZpzIIz9/VAxswnnvjknnt0jl2nwpS202qSjPQfB/B2V3zdw1WNxtijkF9d8FBad8hq
+	l+1xqH0w3iV8WpsC47XUq0XgCrjI6VTrYaQXGw7q6fJ4U7FIAXdkw7uaKVDJXBPkS9yK8Gn22sLH4
+	oELz4OvQ8Hqk9DmETF9h/BwwhwjHtnwxqm72js3OZTzt8729bhJRtM45phNIgFWDFQYn15LejK1p1
+	VyCp/cuo/Gq3s2OsqGoQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sXKEQ-00000003sjJ-3dyj;
-	Fri, 26 Jul 2024 12:39:34 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1sXnhR-00000007DOK-01Lb;
+	Sat, 27 Jul 2024 20:07:29 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sXKEL-00000003sf0-3E7x
+	id 1sXnhN-00000007DLv-2rbs
 	for linux-i3c@lists.infradead.org;
-	Fri, 26 Jul 2024 12:39:33 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 43D29FF807;
-	Fri, 26 Jul 2024 12:39:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1721997564;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type;
-	bh=SLfP/QyZ752p6HUH/YkDyZyK8Oli7bXcnIr/09d8Rv8=;
-	b=VhkCY6leCvbvNB2v72ZbhCuL76fp6G4yJ8OP6auTQtq4MxlIXezhCvT0IO1nctFkIG52n0
-	LBli53/gXIqQDwaczvAeKg8Y/GiB1uK6aRsmmiDDuyQ0m+C2DfmuvJhfmQM5RDBcnkwma5
-	5/nxFvwVvQ3Vioq6Cjl9AJkehQRVufHDwZPzLfWm/BYZkGtGo/3ki0kF7faovlAv5555Hi
-	S4THXyjJkjJmH8ayiCod0LMurIo5fGg+UtDZ5mwhtDZjcqfMsibLQpG7t4T2zWpNWIFrT4
-	A8tFUEzmwrWjV1UbbYgYYFR+ECB1oqDZN1l2s2WWN3n7kn5uUL+W4N/y+TUa/A==
-Date: Fri, 26 Jul 2024 14:39:24 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Linus Torvalds <torvalds@linux-foundation.org>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [GIT PULL] I3C changes for 6.11
-Message-ID: <20240726123924fec081e4@mail.local>
-MIME-Version: 1.0
-Content-Disposition: inline
-X-GND-Sasl: alexandre.belloni@bootlin.com
+	Sat, 27 Jul 2024 20:07:27 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sin.source.kernel.org (Postfix) with ESMTP id 94A9DCE03F2;
+	Sat, 27 Jul 2024 20:07:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPS id 45571C4AF0A;
+	Sat, 27 Jul 2024 20:07:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1722110843;
+	bh=HfDokw1KeliRJ+D0UChjNqu3r8C12KMGHI/KXSmySw4=;
+	h=Subject:From:In-Reply-To:References:Date:To:Cc:From;
+	b=T7WtVr2bZjHY7lwd9MpzpEo1UY3C46cRiAg77mFy0pu0yp0DjU2QybUtSqhgKW7F6
+	 RL1pwEqsdogAjDAC3gswCqICEp4szih7qL9lK3aqmz1s3FIH9G92D2ajl6hCJsKBuG
+	 VQ4sC/tNwvT4dbLWL049IWtRBhvtFctgr15/L9JNBJdzWJoOc6zJVlkf3jO75p6xQa
+	 gaC19wwe0jaLKdmWVKcrA8rxl4ir+nBsHIVvYXyJeOFWRPDBZLFe7br1e7j/mWDCLC
+	 5SbmpytPJSV/lHkQuFfkcCQqoA1/3naAUcNCARY7nTwmDstvb6eeH4//aBEE5qmy/S
+	 CD3qxMwmJlMRA==
+Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (localhost.localdomain [127.0.0.1])
+	by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id 3D058C4333D;
+	Sat, 27 Jul 2024 20:07:23 +0000 (UTC)
+Subject: Re: [GIT PULL] I3C changes for 6.11
+From: pr-tracker-bot@kernel.org
+In-Reply-To: <20240726123924fec081e4@mail.local>
+References: <20240726123924fec081e4@mail.local>
+X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
+X-PR-Tracked-Message-Id: <20240726123924fec081e4@mail.local>
+X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-6.11
+X-PR-Tracked-Commit-Id: 24168c5e6dfbdd5b414f048f47f75d64533296ca
+X-PR-Merge-Tree: torvalds/linux.git
+X-PR-Merge-Refname: refs/heads/master
+X-PR-Merge-Commit-Id: c85e1497dd10879f447d6a12f97762c581093e9b
+Message-Id: <172211084324.16614.3773917655928475321.pr-tracker-bot@kernel.org>
+Date: Sat, 27 Jul 2024 20:07:23 +0000
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: Linus Torvalds <torvalds@linux-foundation.org>, linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240726_053930_611722_9B250873 
-X-CRM114-Status: GOOD (  11.68  )
+X-CRM114-CacheID: sfid-20240727_130725_942858_A7CB048B 
+X-CRM114-Status: UNSURE (   2.66  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,91 +75,24 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hello Linus,
+The pull request you sent on Fri, 26 Jul 2024 14:39:24 +0200:
 
-Here is the i3c subsystem pull request for 6.11. This cycle, there are
-new features for the Designware controller and fixes for the other IPs.
+> git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-6.11
 
-The following changes since commit 1613e604df0cd359cf2a7fbd9be7a0bcfacfabd0:
+has been merged into torvalds/linux.git:
+https://git.kernel.org/torvalds/c/c85e1497dd10879f447d6a12f97762c581093e9b
 
-  Linux 6.10-rc1 (2024-05-26 15:20:12 -0700)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-6.11
-
-for you to fetch changes up to 24168c5e6dfbdd5b414f048f47f75d64533296ca:
-
-  dt-bindings: i3c: add header for generic I3C flags (2024-07-26 14:21:30 +0200)
-
-----------------------------------------------------------------
-I3C for 6.11
-
-Drivers:
- - dw: optional apb clock and power management support, IBI handling fixes
- - mipi-i3c-hci: IBI handling fixes
- - svc: few fixes
-
-----------------------------------------------------------------
-Aniket (9):
-      i3c: dw: Fix clearing queue thld
-      i3c: dw: Fix IBI intr programming
-      i3c: dw: Remove ibi_capable property
-      dt-bindings: i3c: dw: Add apb clock binding
-      i3c: dw: Use new *_enabled clk API
-      i3c: dw: Add optional apb clock
-      i3c: dw: Save timing registers and other values
-      i3c: dw: Add some functions for reusability
-      i3c: dw: Add power management support
-
-Bhoomik Gupta (1):
-      i3c: master: Enhance i3c_bus_type visibility for device searching & event monitoring
-
-Carlos Song (1):
-      dt-bindings: i3c: add header for generic I3C flags
-
-Chen Ni (1):
-      i3c: master: svc: Convert comma to semicolon
-
-Dan Carpenter (1):
-      i3c: master: svc: Fix error code in svc_i3c_master_do_daa_locked()
-
-Frank Li (2):
-      i3c: master: svc: resend target address when get NACK
-      i3c: master: svc: Improve DAA STOP handle code logic
-
-Jarkko Nikula (5):
-      i3c: mipi-i3c-hci: Fix number of DAT/DCT entries for HCI versions < 1.1
-      i3c: mipi-i3c-hci: Switch to lower_32_bits()/upper_32_bits() helpers
-      i3c: mipi-i3c-hci: Set IBI Status and Data Ring base addresses
-      i3c: mipi-i3c-hci: Error out instead on BUG_ON() in IBI DMA setup
-      i3c: mipi-i3c-hci: Round IBI data chunk size to HW supported value
-
- Documentation/devicetree/bindings/i3c/i3c.yaml     |   5 +-
- .../bindings/i3c/snps,dw-i3c-master.yaml           |  11 +-
- MAINTAINERS                                        |   1 +
- drivers/i3c/internals.h                            |   2 -
- drivers/i3c/master.c                               |   1 +
- drivers/i3c/master/ast2600-i3c-master.c            |   1 -
- drivers/i3c/master/dw-i3c-master.c                 | 349 ++++++++++++++++-----
- drivers/i3c/master/dw-i3c-master.h                 |  14 +-
- drivers/i3c/master/mipi-i3c-hci/core.c             |   8 +
- drivers/i3c/master/mipi-i3c-hci/dma.c              |  44 +--
- drivers/i3c/master/svc-i3c-master.c                | 121 +++++--
- include/dt-bindings/i3c/i3c.h                      |  16 +
- include/linux/i3c/master.h                         |   1 +
- 13 files changed, 431 insertions(+), 143 deletions(-)
- create mode 100644 include/dt-bindings/i3c/i3c.h
+Thank you!
 
 -- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+Deet-doot-dot, I am a bot.
+https://korg.docs.kernel.org/prtracker.html
 
 -- 
 linux-i3c mailing list
