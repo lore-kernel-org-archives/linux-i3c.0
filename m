@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4CD12C52D6F
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 493E6C3DA7F
 	for <linux-i3c@archiver.kernel.org>; Sun,  4 Aug 2024 21:06:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,36 +12,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pKtt5i7rIvUUgIZcFNREkSFP5a32YbyOBL1IeMS/a4A=; b=tHgvdvvmkAQiUp
-	xD8N04qi8FATdZe5UI0SKUDs4FOwVY8RBY5dtLBzxaUdpjJiwQx1CVl1a0R3XGwj6qyYjbUPgCPFh
-	jxqcFntAkJ+3Y+/RWiJZQFuipcNwiFLuFvwzlk+uZH/9wF5E9/5L9lMo67zE/8D3fVyZxU/5jtewI
-	BF11ogfp4oDBp8sDTl6eIlBJQut3NbchUeaFXm7kAQn4/Rda6F/9NtZSKTvMcREhbugHwJOeDM2Uo
-	GQxwBernC3uHDOG+xeOktfeHeKXprvS+79LsttNZFwhi2/Pbe/sTn3g6ExkBTskrsbJaipNo6WCzZ
-	OoYG3nUhBAyAgKikIwiw==;
+	List-Owner; bh=skZ1MZoeuHGHiv25PO0rZcW3yUBSPWsgWRTxAy8Y4Sc=; b=TerEBYLGYiS4Rj
+	8llSe2sL4vTwDw5M9vUDVZALnHHXt+p+IfjieGAumZUuUnwAo6HGDLN9WB+tugbkmC5PKKqL3TM9P
+	80Ue1kUhplHpKjB+AXQh4FUhynXHWjKDdJw15LODaH7o1zhSuhAS6yy3eUesZ+Z0PIQv9FRL5wPnN
+	ZObzd9AixbEjEs0x00HqHtXss4X+jwyJbo04Z+GpTudkvF8EG68PkZ4zVTKHoRun1oezX9K8Eq9nm
+	XMMt4DjenbE2ApQDB0vnGtWnH/p3+5+X1CotnMik/6ur1Kokp+hAsN7SylYU4hxKuLJOKIpYK2B5f
+	m3acikCmzG5c34dITzeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1saiQR-0000000DvWy-3Vtu;
+	id 1saiQR-0000000DvWc-28LL;
 	Sun, 04 Aug 2024 21:05:59 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sZJe5-00000002zVe-0SS0
+	id 1sZJWf-00000002wv1-0Zrs
 	for linux-i3c@lists.infradead.org;
-	Thu, 01 Aug 2024 00:26:18 +0000
+	Thu, 01 Aug 2024 00:18:39 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 990AD61446;
-	Thu,  1 Aug 2024 00:26:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 39E05C4AF0C;
-	Thu,  1 Aug 2024 00:26:15 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 7BC15CE1846;
+	Thu,  1 Aug 2024 00:18:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BB4C2C32786;
+	Thu,  1 Aug 2024 00:18:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1722471976;
-	bh=G7oC9KzKZ3u+aZnNGCnn8qE3ProuBDlrSs5M5tCVqK8=;
+	s=k20201202; t=1722471514;
+	bh=ufngkK1NW5FJJk3y562A9XzeMfpxXgZhI0+V1MKWuaE=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=OA19v7zgAXVzEJ4iufs07mUxKX5BbzNwcgn0JombbHctfD52z7s6LhemaHcBm0+JP
-	 fBwoVn7Fh73ya3N9KNo3cQMBzPagpPclgpxM08WA01RsQo9/gNIR3I4XYK3JNnH36k
-	 U1/CuaUcoFNgxp06H41Z/F6qWUE5wi6aa/hSmZX5Twer+VjkPgfPc4Igo0MmTdYl4T
-	 g+H6F10WUkif5Yli85oyzKG6KrAMUHBTFJLXFVWqxlmDsTRkYyFCTdX1fQ2bUvsoJt
-	 KlIY0hUFpOP3sC6FFpsWLu5tWW9k0fg6yOpw/yzGHvrnCRjIlU5+A5j7neGW2A67AA
-	 hX2r/kd0fk/IA==
+	b=j7G/NV8H0m6pohW4k5M+xOvZY6yUw57KaGchVXGP82P9+mxy0xi+mHoQQBcJfJcCt
+	 rUu0AD4mupo8/kB5XTohgVU4vVjn4ZMC/1xkNY7SKZteerqwebNaLpHzRno0wZDe1K
+	 tcMQqgDsPCCL7BZKmSLXMoD0Wt7qZGOgC9f7qvQ7YwSqr2CpbHX0/2b0nhMcqxbl6c
+	 MXifeW0UlhrIxQ1fuBLaui0p6QYfHp4BeyuWih5ibMKIAub95K9SzCbjpbOB2cMWUh
+	 7v/03cMSSexo8StIKOYHeaJFkT6Ugn6KoaYzuvG8XtnUjVubsW7aTReCm7iJwEWt0J
+	 4NBAx5Mf3Z7CA==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
@@ -51,18 +51,18 @@ Cc: Jarkko Nikula <jarkko.nikula@linux.intel.com>,
 	kees@kernel.org,
 	gustavoars@kernel.org,
 	linux-i3c@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.6 83/83] i3c: mipi-i3c-hci: Error out instead on BUG_ON() in IBI DMA setup
-Date: Wed, 31 Jul 2024 20:18:38 -0400
-Message-ID: <20240801002107.3934037-83-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.10 121/121] i3c: mipi-i3c-hci: Error out instead on BUG_ON() in IBI DMA setup
+Date: Wed, 31 Jul 2024 20:00:59 -0400
+Message-ID: <20240801000834.3930818-121-sashal@kernel.org>
 X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20240801002107.3934037-1-sashal@kernel.org>
-References: <20240801002107.3934037-1-sashal@kernel.org>
+In-Reply-To: <20240801000834.3930818-1-sashal@kernel.org>
+References: <20240801000834.3930818-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.6.43
+X-stable-base: Linux 6.10.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240731_172617_213818_47F9AB0E 
+X-CRM114-CacheID: sfid-20240731_171837_399247_545469FD 
 X-CRM114-Status: GOOD (  10.61  )
 X-Mailman-Approved-At: Sun, 04 Aug 2024 14:05:58 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
@@ -98,10 +98,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-index 71b5dbe45c45c..a4b56d59a5a13 100644
+index 4e01a95cc4d0a..1a96bf5a0bf87 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/dma.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-@@ -291,7 +291,10 @@ static int hci_dma_init(struct i3c_hci *hci)
+@@ -294,7 +294,10 @@ static int hci_dma_init(struct i3c_hci *hci)
  
  		rh->ibi_chunk_sz = dma_get_cache_alignment();
  		rh->ibi_chunk_sz *= IBI_CHUNK_CACHELINES;
