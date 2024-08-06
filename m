@@ -4,130 +4,162 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95165C52D6D
-	for <linux-i3c@archiver.kernel.org>; Tue,  6 Aug 2024 07:59:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62F09C52D6D
+	for <linux-i3c@archiver.kernel.org>; Tue,  6 Aug 2024 08:06:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qhfZhxQpAb77yqEcOb3AMprWKbVMCYTQXuUbi7dwcHk=; b=lR275z0DD4dlri
-	/IugAxPy/N/NtrDGWumjchWf49hYpvPo2fHmoRkf6PkN+aO/rDXwR905xfWYk7ztAwAIrunZMkG99
-	hXph3BI8KBb0r8pZgZkRUuTOrMaMhvkMAOrSFfGe1o64aYhSPyBDNYIpBX0ZWEVp+d6Z3l3tqJLlP
-	ypSO6WUdqbZ+pzhO/iqfuWaNwmjchEASR8vG+1Bz8WqgWGHZV/qE5yZAqx3nDP7nwOsMf8JQ5Bn52
-	CzdBRv9aI6uqFemCVk14XzH63pNjWkjBfTnTFxXIgkiEr94xMLeIQTdORkSX8Ns7vmqS2BbMb0NUS
-	icDo0y1nU+IwCUuCSm5g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=2/0QGm172uAgI/dTaJw/djGEZU35looqoJ8QGbM/14I=; b=IN4udKXYasr8T9u3GObuwKb0RF
+	+9pRaSI0MJt7NWLIZiNe3aszhDORqjk905cmYLbcelWZFr+LQsdon9BuZymj+kx73nzV6IpSWRq4M
+	VahCCtOt9Wgy7/n+PLB+s5UMhALJlFBbAtUKaHmvfso3Y8qVxraPGK7WwJKjrHIaTfwwbLhc4/NHs
+	UR6uoUiKk9wCqncsj1TL0+xi0J3awfywsLjjGz7n59g1dxdPubekUD0/Wa36SuQHjvz7/m8cqH2On
+	3818fotjJRXOMUcQpCBwR5/eUd+LV6w0aNgI8nkM8pDUmipe6G7J10jFQlYPbx0/+f+k1Inj8CWvY
+	0arlQgoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sbF6Q-00000000rWk-1Klz;
-	Tue, 06 Aug 2024 07:59:30 +0000
-Received: from mail-co1nam11on20601.outbound.protection.outlook.com ([2a01:111:f403:2416::601] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
+	id 1sbFDQ-00000000siU-0PAx;
+	Tue, 06 Aug 2024 08:06:44 +0000
+Received: from mail-mw2nam10on2061d.outbound.protection.outlook.com ([2a01:111:f403:2412::61d] helo=NAM10-MW2-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sbF6N-00000000rU9-0Sg1
+	id 1sbFDI-00000000sgK-2EcA
 	for linux-i3c@lists.infradead.org;
-	Tue, 06 Aug 2024 07:59:28 +0000
+	Tue, 06 Aug 2024 08:06:38 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=yDRDjECauwaVln+sMuYrtyy+w3Cqro5Mp2VvAhADFGPbZcmgxCtgl+EQugxSxCmwpevZldBQcpONYsRU+22ZdyGWf3MTeu+O8ZSx6WQhkiGP2ps3HLVuVmb7sUGZkb9QHyYw0anEjPiKEV9okj5mkSM0Z+oibt9qUOSjIr7BtW2bvQIwDHXORTw7Ld0Y8JznZdW56lfJA4LjQC+K7hvSXSbhgs2mW3vrs4b02Qh9TVS77jCCJ1ILEKEs15nz9zDah0zVucXJWQ3xO3ippSP5eU6xvIy946Zzli9yCyaDneF6AxqXLFfQrN7pl3lw4ii6kzRhrzpT2Yw8dxxNalC8gw==
+ b=B8YhX2TWPSYNb2L8AlAeGsRQs7soIoRGguaed5iH3aukOhKgPrDW4BwunWsrlZMXUz6O++eIFoMKICdnv9IqxV2AGtESCxNkyQ02+NkTEWrKCq2ibCuMkCpX980f6LSd+sjfT1R4YatZGFo6fTSr7hiILfvG+Mwb/DLBhVvBX3y9BZ0drvEuNUwMURpSMl2TCLhneATPosImbiCBCIm7YkVefQbx1TbJTSDggT+g3XuKavnHjZg2eS5UI9qjlo6SxAhYnBady/0VnNyceGX+43mId94XcFCQDSeLTkEDWfCzFrHOqUgUBPygf/CVVoTsYwuNRvXoV0gnSjmLTFGj4g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=B+MpG3FQ6f6K1sK65Q3xCvKHWgQD8wi90mDlKI+icwk=;
- b=QqGe201aqsan39XNJMxNIbNaRvFnwPVf/O0qsK3KCIQDGj9InsvRxZa9Q4GNghCsqo7EhVMXZeggpVzbZ73bW9ri0YXnNhSwvQdKvYG6i+nVFsLBv1T9OwZ2i3qVNR+wbuTwXQaaxGJruL+uAECFh3chQvBf6UZSXFt8PXJADSS1QEdomS48qHNntZdFNO0ibh36AXfv/y4Xk78YpVIZSc7h38UzDXkpOSrGqxTZpkL6n2BWM9/yKZgXWVImrt3AgTCoGKo6FDqsXXpQuyfbSVhqM78vbwC5T9CGTxdGNrHV+m2wm6FiFKjGIQM9Rxtrgz/4RRvV7xwh0iPqOWTpew==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 165.204.84.17) smtp.rcpttodomain=bootlin.com smtp.mailfrom=amd.com;
- dmarc=pass (p=quarantine sp=quarantine pct=100) action=none
- header.from=amd.com; dkim=none (message not signed); arc=none (0)
+ bh=lozNba6u1javkJl4qzI55kiRjiMazsjpJB8slJQ9y1k=;
+ b=UrNEObqHFlqQXkUkIYV1zv0605KKee35kD8oQzmFxoKVsnM5wLuMElE69j8iqUzJY05PVIrH0cvAoFc3r5BdTJJNsQDSL3KagzpL2EbDSEJTjGO7cIVQ1Gnl0f8dVJxmGQEqgPzDC2IoUsXCUwbdA/r+1InqjW1P3H+RoE0/w0JdhJe/wIiB90aRDUR17icZzgvCKGU/yO0NM+WqGCL7GZW9YmpqnDB+QhCrAPpdm9IHthFwCAdwPJhM5jUrmy/Z0lhkABrBqYewXr1Z7TZAX4UmSlIApdHPZ8S/1HUM6N9ZHrE73BuIuJOCrP1Vfx3Tqr7rL0gONSLs0QFZvq7eWg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
+ header.d=amd.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=B+MpG3FQ6f6K1sK65Q3xCvKHWgQD8wi90mDlKI+icwk=;
- b=BNZTqeVsMNRrYqsumjenkxQ7q64aobJwTTGgC7B/eHS0m7TZt9dibyXVIEcY3g/jiCDYtxtucYp3th+un0n0gT2TaTELa6GAouXJ3vP3VtuS6u7C9HibG5zm7nCRvTKIIGfJrqJxUrWkx4AHBIS/x6D/6u1tOSsNkto9dagipqI=
-Received: from PH7PR03CA0001.namprd03.prod.outlook.com (2603:10b6:510:339::26)
- by CH2PR12MB4053.namprd12.prod.outlook.com (2603:10b6:610:7c::10) with
+ bh=lozNba6u1javkJl4qzI55kiRjiMazsjpJB8slJQ9y1k=;
+ b=JWx1cg4bC1XRKfq7F8LqcZfGBcqdoYNUUtq1f0N1hSa7jefwRFwwDs3ES0+sYVV9lFihG2JdTQtgl1/XOX1gjIjaK6GzqXhSAddTrI9BC8Cb6bIdMza8pSI/IlnYTe29KzD6xXz+njZsqdir66RA2MUFEpChxojy7YLEgSIgvsE=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=amd.com;
+Received: from BL1PR12MB5176.namprd12.prod.outlook.com (2603:10b6:208:311::19)
+ by MW4PR12MB5601.namprd12.prod.outlook.com (2603:10b6:303:168::13) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7828.27; Tue, 6 Aug
- 2024 07:59:20 +0000
-Received: from SN1PEPF0002BA4C.namprd03.prod.outlook.com
- (2603:10b6:510:339::4) by PH7PR03CA0001.outlook.office365.com
- (2603:10b6:510:339::26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7828.27 via Frontend
- Transport; Tue, 6 Aug 2024 07:59:20 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
- smtp.mailfrom=amd.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=amd.com;
-Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
- 165.204.84.17 as permitted sender) receiver=protection.outlook.com;
- client-ip=165.204.84.17; helo=SATLEXMB04.amd.com; pr=C
-Received: from SATLEXMB04.amd.com (165.204.84.17) by
- SN1PEPF0002BA4C.mail.protection.outlook.com (10.167.242.69) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.20.7828.19 via Frontend Transport; Tue, 6 Aug 2024 07:59:20 +0000
-Received: from jatayu.amd.com (10.180.168.240) by SATLEXMB04.amd.com
- (10.181.40.145) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.39; Tue, 6 Aug
- 2024 02:59:15 -0500
-From: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Jarkko Nikula
-	<jarkko.nikula@linux.intel.com>
-CC: Guruvendra Punugupati <Guruvendra.Punugupati@amd.com>, Krishnamoorthi M
-	<krishnamoorthi.m@amd.com>, <linux-i3c@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
-Subject: [PATCH v3 5/5] i3c: mipi-i3c-hci: Add a quirk to set Response buffer threshold
-Date: Tue, 6 Aug 2024 13:28:43 +0530
-Message-ID: <20240806075843.277969-6-Shyam-sundar.S-k@amd.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20240806075843.277969-1-Shyam-sundar.S-k@amd.com>
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7828.21; Tue, 6 Aug
+ 2024 08:06:31 +0000
+Received: from BL1PR12MB5176.namprd12.prod.outlook.com
+ ([fe80::ed5b:dd2f:995a:bcf4]) by BL1PR12MB5176.namprd12.prod.outlook.com
+ ([fe80::ed5b:dd2f:995a:bcf4%4]) with mapi id 15.20.7828.023; Tue, 6 Aug 2024
+ 08:06:31 +0000
+Message-ID: <55b113d8-d782-4d6d-b5a9-e916a1a9b3b5@amd.com>
+Date: Tue, 6 Aug 2024 13:36:18 +0530
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 2/5] i3c: mipi-i3c-hci: Add a quirk to set PIO mode
+Content-Language: en-US
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Jarkko Nikula <jarkko.nikula@linux.intel.com>
+Cc: Guruvendra Punugupati <Guruvendra.Punugupati@amd.com>,
+ Krishnamoorthi M <krishnamoorthi.m@amd.com>, linux-i3c@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 References: <20240806075843.277969-1-Shyam-sundar.S-k@amd.com>
+ <20240806075843.277969-3-Shyam-sundar.S-k@amd.com>
+From: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
+In-Reply-To: <20240806075843.277969-3-Shyam-sundar.S-k@amd.com>
+X-ClientProxiedBy: PN2P287CA0001.INDP287.PROD.OUTLOOK.COM
+ (2603:1096:c01:21b::11) To BL1PR12MB5176.namprd12.prod.outlook.com
+ (2603:10b6:208:311::19)
 MIME-Version: 1.0
-X-Originating-IP: [10.180.168.240]
-X-ClientProxiedBy: SATLEXMB04.amd.com (10.181.40.145) To SATLEXMB04.amd.com
- (10.181.40.145)
-X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SN1PEPF0002BA4C:EE_|CH2PR12MB4053:EE_
-X-MS-Office365-Filtering-Correlation-Id: 48b494f7-04d8-46ce-cc11-08dcb5edad8b
+X-MS-TrafficTypeDiagnostic: BL1PR12MB5176:EE_|MW4PR12MB5601:EE_
+X-MS-Office365-Filtering-Correlation-Id: 0f7d1a2a-27c8-4ad4-29ea-08dcb5eeae16
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700013|1800799024|376014|82310400026;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?kiaUt6MqE7x6OHy2j8tEYASPE5SjMzbVFxI9XmFD1TzX/XiLMCOMA3VsuPf4?=
- =?us-ascii?Q?ZkfNgjFz81qJVDegMvTX1K7n9fD7gw5IM9rlf6NSSSZIPpe8sAY1mdBfP8Z5?=
- =?us-ascii?Q?Gxil+9/hMAKykHxLT+6dLipXSVs6Cu7aXCPXFdA1Qq+f5VJEPX+GV1BOFL4c?=
- =?us-ascii?Q?cgBHz3nwWGgN9Co/F7DzhLFA0P8wqxxdZcRaCbQDtK+5W8TLsK1uPQ2Lq82F?=
- =?us-ascii?Q?cvmOWHGtxh5OwwYDTIdJnrn03kw4YGywVmQqZwyn28tyyyAjrjpT0r/9mOg3?=
- =?us-ascii?Q?KTSsf+Ghv3wMfF7ZuutxjhETuvcuy4LGLWg7YPV9hbbWRwp5Mm2LqYldW5RC?=
- =?us-ascii?Q?VkvX0glJCT0fVuUxhZf7P2Px/308AsLBpC7eM5ZaotwiWqrOzk4Yhv0GYzzQ?=
- =?us-ascii?Q?lQtJg02HZyNnvjdwTEaoHneXQXjNrDAprXwmQf4ckKTcL2Q7CjDyoVdMGUxD?=
- =?us-ascii?Q?i5ZaUhm/+ldLtwabSte29Bbut6H8ptyd/rUUvaHUegRQJRwWYze3/DfTL+JR?=
- =?us-ascii?Q?VrdhmFbEVpc2aG2LCYwdQtxCUPysYYCfpcT2IQKX3iZFV5gFRSWp5DfmFSvx?=
- =?us-ascii?Q?IF4N6LXzcQ8qGFNHiyrjdGGxl2xjZVAq7Lwxkl+UeAJQP6H8gy2+Ku8s1h4P?=
- =?us-ascii?Q?A0umtE5XlUu1YE3DY2Zj5EXNHR0ux4KTcoeOgd5K25dAIvquvvopYeWKLCbw?=
- =?us-ascii?Q?3Ntc1AJ2cd6hp4i4I1iutahBHyXNYZkyMFJ8Bu9rYyOO4+zdwft9DvJF7lR+?=
- =?us-ascii?Q?FTwzCzwolFo5Rr0PZHDOIGKIOQPxsQbwZmQ0Pjwdj2nQu9jhgoreqUrwB8Zb?=
- =?us-ascii?Q?qHUBw2sUQvmIWa9VLetgZ9983pw0HXsKzChQXUgZng/sZJULKmH9FdNeMZ11?=
- =?us-ascii?Q?QA7xZ7fKNNxUH9cchhkhecWvR7xtfN6ejgfcXpkgLGv9VTm3GFxAPLURIauH?=
- =?us-ascii?Q?Xm2DEDD8Dw/zdNVg2UNvR91Zw1uJ3ezNjpOV+XpgiyE8USzjYvb9tYpspJMO?=
- =?us-ascii?Q?n4S1wK8SejRSFiz75clRYi1B3YeGhwxNeJ9jyUicCwnMeah6gbIVWojLR9Qw?=
- =?us-ascii?Q?NamqL4CBPDtXjNyodxh4hTpl959beZy6m4QXZTbf98jBy0BFqNP03w0yDSlI?=
- =?us-ascii?Q?D/zKpceoNZTUEwszsYtIbsjwx/Kc1VT4hzPijyK8NtFJ+R0BqlUmCljxMzmR?=
- =?us-ascii?Q?OWuy8q2dn9jfuZJ7ZBozRegzKprIy/iD69yCXSd5TpKTyYb1sExsGiEXjoP7?=
- =?us-ascii?Q?N8Ad/IuV0OXfm/cOxYVKK8tbjbckuYa8wZbkQr2P3TcaahpLSY/MYFTOLf+V?=
- =?us-ascii?Q?KYNOMm2G/fUM5lxjBA8bK23wzWSMPQJ9tBh7NvLHeTX5TqnpzchnsvTfN6Np?=
- =?us-ascii?Q?rPJIKtwcMkd5ebfQB2g0tjyzx1O6Egs8lv6KUaoRKohtHjpPGBczDi9Jo3z5?=
- =?us-ascii?Q?FmVqWNAQk00KH26jGRkv2uOwq8AojIJF?=
-X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:SATLEXMB04.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(36860700013)(1800799024)(376014)(82310400026);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?ZXFWa0xzNDlUV0lyaDIxcWlVVGdWbEtDMFh0UjV6ZFNpdnB2dkM1VUNTYjYv?=
+ =?utf-8?B?b3pFUmVtTmFEZUhEQjhJWW5ibll5NmhHcCthQVRzSVpjYWQzTm1uSmhPYnUx?=
+ =?utf-8?B?d2lEdCtvVURCSmk1cEdsWGMxN2lHQkpzMmF2c0xQT1pZTXRzeGF6d0liTXJv?=
+ =?utf-8?B?K1EyZFpsRHpLVG9OWkptSGc1N3VqNmtFU0RCekxhT0l4WG9kcTJFZDBUY3Bo?=
+ =?utf-8?B?QldtQm50VjVQSlMxTEgxbWZWYmxuRk5janRzWW9sWFVTNVlTMjNBcnd6TkN4?=
+ =?utf-8?B?N1YrMml1RWgzVVd6c2lRYTZoYmNoZnZISEpxQ05od1dBRVRsTGR2czhpTldV?=
+ =?utf-8?B?aEI4dTUwMnpmOE5rUHJVdU9ENUtCdFdyMXRsV3ozelpqeGFuQjNOL0hWTVQr?=
+ =?utf-8?B?Nm8vNExmVHBCZmVPTUVxMmtPdlA5Mng5dGlsaFVNaldDdlRNOVdyZmlKL05h?=
+ =?utf-8?B?R0k2bmtPZEVPbmk0OHFtR0hGR1pIUFJGSWppdG8wK0tpa2dQMFNnSks4UWsw?=
+ =?utf-8?B?Qm1LMCtlZG52VHhQQ09OWUM5NFgxclJMb3hGVTNhS3pnYVM5QUZ2ektaOTRP?=
+ =?utf-8?B?cGxQanJzZDFhcFpXUEd4WXgvR3NUbXpTVVR2aUpqSU1DSVp4eVhNWENtcXVx?=
+ =?utf-8?B?a1B6SEhrUWZkaVl1cHl1NUlwWFc4Sk03ekdhRUFhSCtBMHArYTNXblJZcCts?=
+ =?utf-8?B?WXlUV2ZPejhMb3ZmTFhsREsxNHQrVzd6enQwd0h1NXBaT3dXQmRuUzBld29K?=
+ =?utf-8?B?dEplNUZpQzFOWHBQVHNQQ2FuR0tyOFpHbStJR0tQMFYzcW53a05LeDltRHhk?=
+ =?utf-8?B?N0tYUzc1Q0ZwWi9VSCtQMW5aSklIc1grVjlrK2ZoNUhnQ2liai9CK2FLWmVD?=
+ =?utf-8?B?cURMbzdEYVJsV1ZOeGpiZ0lLeURIaCtUZktPQzRlYStqNUJ5VTAzdXVlNjh4?=
+ =?utf-8?B?Y3lMSCtxWEplVW5xMFVuTHRkMXpMVEg4WkNhc05sQUhNbk5jQ1VlNmV1aFhX?=
+ =?utf-8?B?cFQ2UlpMZDcvbkRqYkIxcWYzSUVOOVdZdmVBemJjTzNOUm9vcnhlenVJZFl1?=
+ =?utf-8?B?a09URjMvbklxZ24rSTBINlR6MlFiQW82TnZXbVlXNFpFVjNDc1B6T1FHcXZW?=
+ =?utf-8?B?cFgyTWVZa2dyYjFBakFWWk0xLzJ5SUhyVlFYMjdJb2E1RENNQkpLakNxMXFi?=
+ =?utf-8?B?c2VQcmk3b3ErVVB1dm56TEtrVE5DZDhvaTVXR0h3d2p0SG9GMEdGb0I5ZjRJ?=
+ =?utf-8?B?ZndIeE5EWDdMenF6ZlRBVHZKNUVPSUJGWmQ2eFlXNzBKUzdVczkyVmpHaFBM?=
+ =?utf-8?B?dVRPZ0xJZUdlcFdYdVZXQWV2d2tJMlNFK2RzR01QNk9OVVhHeGE2TS9DQ2FL?=
+ =?utf-8?B?emZHekpjTDVxS2IydVBnYzh5NE9kUjJacXRGVVR1MWpGNXdncUQvdVNlZUR4?=
+ =?utf-8?B?M2V0bGdkQTM1YmNtcUtGa1pobVBSNi8vd2duT1o4a2FjMyt0Z0FET2txTzNt?=
+ =?utf-8?B?WTA5dlFhUXd0Y1FCcWJTaFZVcjN3R3BXZGVQcGQ1eCtEaTk3Y1FsQVJsVHFI?=
+ =?utf-8?B?aVdoTkRqNVRUaTlHemFDSHFvUHh1SmFjOHFiOVFuNXRnNURDTTZjcmg1eGJ5?=
+ =?utf-8?B?MnlyQmtDZVovVHMwVC9FamkvL2lsQzNjOVlGeHVQYndtdCtNa2NFTzJ4dGpZ?=
+ =?utf-8?B?S05wRkxRNkxMYzJHbWYwQU4yVHRlNG04dEs3SFU0TGxtK3VzcVFLNjdYNGNQ?=
+ =?utf-8?B?V1hQU21NV0VHbzNrdk1jMDdmbkxNRXBUak5vRkZseXZabThYR2JtT3AyTUVo?=
+ =?utf-8?B?b1Nmejd4Z09Kb2pzek0xQT09?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BL1PR12MB5176.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?M1dQNWx3WHJUcGoyZGRvQkd5aFVxRDE1NUhCTGluanNaSDE1OGhXMW54eWlX?=
+ =?utf-8?B?NitqQlgyKzdPT0d1dHN6OUJPT1ViTGlFZjdDVTNpcGh5aWFkQjk1ZXJuZzVN?=
+ =?utf-8?B?TDF0Y2wxODF4cEtkOG9TeU80RHlMRXJBdU9CMFp0V3dXMjFYSW01VnZQMFpS?=
+ =?utf-8?B?Q2tURjJoWlpSWkdNbGcyNW9sRW1YNTJvM1c5c1lTWjRnQWtKR1dTRFVaQVdI?=
+ =?utf-8?B?RndxbllIQWphTkxtdmZabVRqNWVId1drWnNZTUtrTVRCMVBjNG5XMi9DNUlo?=
+ =?utf-8?B?K2xrYlZkWnZCZ0QxUXA1dll4OTVDQUpWbTYvWHhRK2ZQT1JiSmlnTVFFQzlM?=
+ =?utf-8?B?bzVQeTF0bWgrUk9GQVQ5QXAvLzdpakwvMnk0OUd2VExocGtaOFVFb2dEU1Bt?=
+ =?utf-8?B?M1BxS1UwblRnU1ZsZG9UZ2lqbmZFd2VxR21TQ1hSd29rZ3RrZ1JUbFlRak5N?=
+ =?utf-8?B?blFJTFV0RUlXOFhad2tGL1h6M09OUWRFMkoyOW5oZnRxcEI1Qk9yU0ZKT2VJ?=
+ =?utf-8?B?VGlpZU1lR3lBdjd2L1NHLzNKcUk3R2Iva2laK3FiQ29aTTh6ZmdMQUtMVlZR?=
+ =?utf-8?B?ZXA4dWE0VERqR1BjWWpwMmRkMm80TGhXMkEwaXMvUzRnZXBQdVl0M2ZQc2xq?=
+ =?utf-8?B?dUp5Sjh6T2JJSFpjMUJkNHFEMTNlTHVqaXVwNU5HMVV0UlNQRUFSeEtDc2to?=
+ =?utf-8?B?SVkyeWswcmpJLzlqS016K2puY2Q1RW9TOEh3N0M5NzJrdHcxaWRkQkZmczB4?=
+ =?utf-8?B?QkZpV3ZaNExXb2tIcDhFdUt6ZXVtVEtRb01KSk1sNm1ObHp1TDVkWnFqZnNE?=
+ =?utf-8?B?SXVWUTBFYnZXaWJaT1c5R2VrWk04bDJNY1A2VDc5a1Q4U3Vjd1lqc05VUVY4?=
+ =?utf-8?B?dUI4ZzgzQXZwMXI1aUVIT0NkSFJ4WVRGaGZEV1hNd0hDM2JSbTB5NlFjazJQ?=
+ =?utf-8?B?M2RqOThYR1dnN1ZVSFFwTFI0LzFTbjU1dTNPdXRuVjFYa2tLakczckdWeU8v?=
+ =?utf-8?B?M3NYcEJwWHp4bHlHNUpZbHRKSTZqak5iUUFabjNoREcwQi81Ym1IWnVyTGRC?=
+ =?utf-8?B?RDFyd2xYRzFqd3BoTkRmdWpCN0t2WXVKM3dySXJMaEp6OE9EUUFpaVZwMzVV?=
+ =?utf-8?B?SjRVQ3kzSVloOTVYTnh6eXZMdEVObWZrcmpocFhybXZxVFZ6RGFtYk9pTjRh?=
+ =?utf-8?B?QVpFMlMrUjlSMHArY3dBS1JFbURQQkZEZUJ1UjkyT2ZCRS9UQ3NJQjdxVjhq?=
+ =?utf-8?B?MVJmdHdlMC9xbHphTkpiWlhDQm5BamZqclk2NHRvL1h4VjhxNklrbFhmQjBE?=
+ =?utf-8?B?Z0VhWis4L3VrZHNVdDNpSEF2KzJqTHlKaWUyWUJTLzZJcHQ0MHRHT0p0UHVN?=
+ =?utf-8?B?NVAwMmNFYW5Yb2h4UVZYVWZzYzRsbEFvdmJkVklnZS9vZjhCeXFyaThJTVpY?=
+ =?utf-8?B?QzJCNTcvTmF1UXQyamw5MEw1MWdpV3g0WlZibldORHFEYkV1dDNwM0k0eENJ?=
+ =?utf-8?B?ajJxNGtaSVVLL1JNeGVzNEc4ajVEOFR2TzNvZ2NIaXdYcS9NbkFqS3EvWWVj?=
+ =?utf-8?B?WlllMlpLV2cvQkNhSUdpbEgva2cxQWVwRXRJcGI4dU5zT0liblArUjFkbkVz?=
+ =?utf-8?B?dW5kWUI1Zm0zOHc4YnlrK1d3b3hkbVF1WVA3OUVzVGlFazQ5c0dUU29tWVU4?=
+ =?utf-8?B?QzJrT0F1dEt4M3pYaDRxRE0wNWJaUmFCWjhRK2NxNFl6VGlFVGJqWWROTXRV?=
+ =?utf-8?B?Q2pLVDZscUw4SU52VDljVGFaMkN5YzE2VmFCQjJuaXRXSkRnL2xPb2QwRm9l?=
+ =?utf-8?B?bnhLdFQ0Zk1PUG03RVpsczlRclNxZXh3dnZrWUpFb3lWSGkrMzlFNVAzSnBU?=
+ =?utf-8?B?REJlMGV1TDVlNkI2LzUzY2lkN0YyUHpuQ3o0UWErUjl6TWhrYkwyZzJrcUVB?=
+ =?utf-8?B?Z3B5SDc4eTAzSG9LUmgvWjZpRHUxbXZBZG5YdTE0Q3VldUtsYU1nVmV6OXUw?=
+ =?utf-8?B?Qm9XQ1hVU2RBZHNhR1hxYUxwekxEUnlXeEdWZ0hqQnpsY1B0dDhZS3RKZGtk?=
+ =?utf-8?B?aHppWjlvWWNsWnJLNzhLYzVOZlllZEFuTzFoY0ZFSmhOaUNnY25kdzZ6K0hY?=
+ =?utf-8?Q?NEeC9nmuldh/ZIjKkFTObO670?=
 X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Aug 2024 07:59:20.2483
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0f7d1a2a-27c8-4ad4-29ea-08dcb5eeae16
+X-MS-Exchange-CrossTenant-AuthSource: BL1PR12MB5176.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Aug 2024 08:06:31.0184
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 48b494f7-04d8-46ce-cc11-08dcb5edad8b
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[SATLEXMB04.amd.com]
-X-MS-Exchange-CrossTenant-AuthSource: SN1PEPF0002BA4C.namprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR12MB4053
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: TNA0qFO5pdElUHJPr/a0/wr/b8NQ2+Zs29d5vHtk9goJ7ycedkmFnBX/0jkKzzH1fo2amsC6RtUHc7/1aoj1Eg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MW4PR12MB5601
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240806_005927_188308_BD8DEE51 
-X-CRM114-Status: GOOD (  13.67  )
+X-CRM114-CacheID: sfid-20240806_010637_010321_5E189318 
+X-CRM114-Status: GOOD (  25.84  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,95 +176,135 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The current driver sets the response buffer threshold value to 1
-(N+1, 2 DWORDS) in the QUEUE THRESHOLD register. However, the AMD
-I3C controller only generates interrupts when the response buffer
-threshold value is set to 0 (1 DWORD).
 
-Therefore, a quirk is added to set the response buffer threshold value
-to 0.
 
-Co-developed-by: Krishnamoorthi M <krishnamoorthi.m@amd.com>
-Signed-off-by: Krishnamoorthi M <krishnamoorthi.m@amd.com>
-Co-developed-by: Guruvendra Punugupati <Guruvendra.Punugupati@amd.com>
-Signed-off-by: Guruvendra Punugupati <Guruvendra.Punugupati@amd.com>
-Signed-off-by: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
----
- drivers/i3c/master/mipi-i3c-hci/core.c       |  4 ++++
- drivers/i3c/master/mipi-i3c-hci/hci.h        |  2 ++
- drivers/i3c/master/mipi-i3c-hci/hci_quirks.c | 12 ++++++++++++
- 3 files changed, 18 insertions(+)
+On 8/6/2024 13:28, Shyam Sundar S K wrote:
+> The AMD HCI controller currently only supports PIO mode but exposes DMA
+> rings to the OS, which leads to the controller being configured in DMA
+> mode. To address this, add a quirk to avoid configuring the controller in
+> DMA mode and default to PIO mode.
+> 
+> Additionally, introduce a generic quirk infrastructure to the mipi-i3c-hci
+> driver to facilitate seamless future quirk additions.
+> 
+> Co-developed-by: Krishnamoorthi M <krishnamoorthi.m@amd.com>
+> Signed-off-by: Krishnamoorthi M <krishnamoorthi.m@amd.com>
+> Co-developed-by: Guruvendra Punugupati <Guruvendra.Punugupati@amd.com>
+> Signed-off-by: Guruvendra Punugupati <Guruvendra.Punugupati@amd.com>
+> Signed-off-by: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
+> ---
+>  drivers/i3c/master/mipi-i3c-hci/Makefile     |  3 ++-
+>  drivers/i3c/master/mipi-i3c-hci/core.c       | 15 ++++++++++++++-
+>  drivers/i3c/master/mipi-i3c-hci/hci.h        |  3 +++
+>  drivers/i3c/master/mipi-i3c-hci/hci_quirks.c | 20 ++++++++++++++++++++
+>  4 files changed, 39 insertions(+), 2 deletions(-)
+>  create mode 100644 drivers/i3c/master/mipi-i3c-hci/hci_quirks.c
+> 
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/Makefile b/drivers/i3c/master/mipi-i3c-hci/Makefile
+> index a658e7b8262c..1f8cd5c48fde 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/Makefile
+> +++ b/drivers/i3c/master/mipi-i3c-hci/Makefile
+> @@ -3,4 +3,5 @@
+>  obj-$(CONFIG_MIPI_I3C_HCI)		+= mipi-i3c-hci.o
+>  mipi-i3c-hci-y				:= core.o ext_caps.o pio.o dma.o \
+>  					   cmd_v1.o cmd_v2.o \
+> -					   dat_v1.o dct_v1.o
+> +					   dat_v1.o dct_v1.o \
+> +					   hci_quirks.o
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+> index 5ef848833a81..7843a3ac2121 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/core.c
+> +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+> @@ -33,6 +33,7 @@
+>  #define reg_clear(r, v)		reg_write(r, reg_read(r) & ~(v))
+>  
+>  #define HCI_VERSION			0x00	/* HCI Version (in BCD) */
+> +#define HCI_VERSION_V1			0x100	/* MIPI HCI Version number V1.0 */
+>  
+>  #define HC_CONTROL			0x04
+>  #define HC_CONTROL_BUS_ENABLE		BIT(31)
+> @@ -753,6 +754,14 @@ static int i3c_hci_init(struct i3c_hci *hci)
+>  		return -EINVAL;
+>  	}
+>  
+> +	/* Initialize quirks for AMD platforms */
+> +	amd_i3c_hci_quirks_init(hci);
+> +
+> +	regval = reg_read(HCI_VERSION);
+> +
+> +	if (hci->quirks & HCI_QUIRK_PIO_MODE)
+> +		hci->RHS_regs = NULL;
+> +
+>  	/* Try activating DMA operations first */
+>  	if (hci->RHS_regs) {
+>  		reg_clear(HC_CONTROL, HC_CONTROL_PIO_MODE);
+> @@ -768,7 +777,11 @@ static int i3c_hci_init(struct i3c_hci *hci)
+>  	/* If no DMA, try PIO */
+>  	if (!hci->io && hci->PIO_regs) {
+>  		reg_set(HC_CONTROL, HC_CONTROL_PIO_MODE);
+> -		if (!(reg_read(HC_CONTROL) & HC_CONTROL_PIO_MODE)) {
+> +		/*
+> +		 * HC_CONTROL_PIO_MODE bit not present in HC_CONTROL register w.r.t V1.0
+> +		 * specification. So skip checking PIO_MODE bit status
+> +		 */
+> +		if (regval > HCI_VERSION_V1 && !(reg_read(HC_CONTROL) & HC_CONTROL_PIO_MODE)) {
 
-diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-index baec2c42e0e0..248f07f41c16 100644
---- a/drivers/i3c/master/mipi-i3c-hci/core.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-@@ -147,6 +147,10 @@ static int i3c_hci_bus_init(struct i3c_master_controller *m)
- 	if (ret)
- 		return ret;
- 
-+	/* Set RESP_BUF_THLD to 0(n) to get 1(n+1) response */
-+	if (hci->quirks & HCI_QUIRK_RESP_BUF_THLD)
-+		amd_set_resp_buf_thld(hci);
-+
- 	reg_set(HC_CONTROL, HC_CONTROL_BUS_ENABLE);
- 	DBG("HC_CONTROL = %#x", reg_read(HC_CONTROL));
- 
-diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
-index e1a65cfb43c8..b6f1b97f9e04 100644
---- a/drivers/i3c/master/mipi-i3c-hci/hci.h
-+++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
-@@ -142,6 +142,7 @@ struct i3c_hci_dev_data {
- #define HCI_QUIRK_RAW_CCC	BIT(1)	/* CCC framing must be explicit */
- #define HCI_QUIRK_PIO_MODE	BIT(2)  /* Set PIO mode for AMD platforms */
- #define HCI_QUIRK_OD_PP_TIMING		BIT(3)  /* Set OD and PP timings for AMD platforms */
-+#define HCI_QUIRK_RESP_BUF_THLD		BIT(4)  /* Set resp buf thld to 0 for AMD platforms */
- 
- 
- /* global functions */
-@@ -151,5 +152,6 @@ void mipi_i3c_hci_dct_index_reset(struct i3c_hci *hci);
- 
- void amd_i3c_hci_quirks_init(struct i3c_hci *hci);
- void amd_set_od_pp_timing(struct i3c_hci *hci);
-+void amd_set_resp_buf_thld(struct i3c_hci *hci);
- 
- #endif
-diff --git a/drivers/i3c/master/mipi-i3c-hci/hci_quirks.c b/drivers/i3c/master/mipi-i3c-hci/hci_quirks.c
-index a222bfab0676..43210882ec4d 100644
---- a/drivers/i3c/master/mipi-i3c-hci/hci_quirks.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/hci_quirks.c
-@@ -20,12 +20,15 @@
- #define AMD_SCL_I3C_OD_TIMING          0x00cf00cf
- #define AMD_SCL_I3C_PP_TIMING          0x00160016
- 
-+#define QUEUE_THLD_CTRL		0xD0
-+
- void amd_i3c_hci_quirks_init(struct i3c_hci *hci)
- {
- #if defined(CONFIG_X86)
- 	if (boot_cpu_data.x86_vendor == X86_VENDOR_AMD) {
- 		hci->quirks |= HCI_QUIRK_PIO_MODE;
- 		hci->quirks |= HCI_QUIRK_OD_PP_TIMING;
-+		hci->quirks |= HCI_QUIRK_RESP_BUF_THLD;
- 	}
- #endif
- }
-@@ -41,3 +44,12 @@ void amd_set_od_pp_timing(struct i3c_hci *hci)
- 	data |= W0_MASK(18, 16);
- 	reg_write(HCI_SDA_HOLD_SWITCH_DLY_TIMING, data);
- }
-+
-+void amd_set_resp_buf_thld(struct i3c_hci *hci)
-+{
-+	u32 data;
-+
-+	data = reg_read(QUEUE_THLD_CTRL);
-+	data = data & ~W0_MASK(15, 8);
-+	reg_write(QUEUE_THLD_CTRL, data);
-+}
--- 
-2.25.1
+Jarkko, Apologies. I missed to address your comment on splitting the
+version check and quirk stuff separately. Will do a resend, kindly
+ignore this version.
 
+Thanks,
+Shyam
+
+
+>  			dev_err(&hci->master.dev, "DMA mode is stuck\n");
+>  			ret = -EIO;
+>  		} else {
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
+> index f94d95e024be..91e8a3833f3d 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/hci.h
+> +++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
+> @@ -135,6 +135,7 @@ struct i3c_hci_dev_data {
+>  
+>  /* list of quirks */
+>  #define HCI_QUIRK_RAW_CCC	BIT(1)	/* CCC framing must be explicit */
+> +#define HCI_QUIRK_PIO_MODE	BIT(2)  /* Set PIO mode for AMD platforms */
+>  
+>  
+>  /* global functions */
+> @@ -142,4 +143,6 @@ void mipi_i3c_hci_resume(struct i3c_hci *hci);
+>  void mipi_i3c_hci_pio_reset(struct i3c_hci *hci);
+>  void mipi_i3c_hci_dct_index_reset(struct i3c_hci *hci);
+>  
+> +void amd_i3c_hci_quirks_init(struct i3c_hci *hci);
+> +
+>  #endif
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/hci_quirks.c b/drivers/i3c/master/mipi-i3c-hci/hci_quirks.c
+> new file mode 100644
+> index 000000000000..8a8fbd697175
+> --- /dev/null
+> +++ b/drivers/i3c/master/mipi-i3c-hci/hci_quirks.c
+> @@ -0,0 +1,20 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later
+> +/*
+> + * I3C HCI Quirks
+> + *
+> + * Copyright 2024 Advanced Micro Devices, Inc.
+> + *
+> + * Authors: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
+> + *			Guruvendra Punugupati <Guruvendra.Punugupati@amd.com>
+> + */
+> +
+> +#include <linux/i3c/master.h>
+> +#include "hci.h"
+> +
+> +void amd_i3c_hci_quirks_init(struct i3c_hci *hci)
+> +{
+> +#if defined(CONFIG_X86)
+> +	if (boot_cpu_data.x86_vendor == X86_VENDOR_AMD)
+> +		hci->quirks |= HCI_QUIRK_PIO_MODE;
+> +#endif
+> +}
 
 -- 
 linux-i3c mailing list
