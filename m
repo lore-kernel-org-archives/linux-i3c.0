@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90FC1C3DA7F
-	for <linux-i3c@archiver.kernel.org>; Wed,  7 Aug 2024 05:25:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 732D5C52D71
+	for <linux-i3c@archiver.kernel.org>; Wed,  7 Aug 2024 05:25:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a84jI0QGy1DxEu5T8/t0GjcKE77bAnvp3VVQnK7zxSw=; b=sXlE+0jix+nQpV
-	nSgbLFZfYitVY0rSg5Q10Qjz5v76LWKGQrZmpdFfGlegLQ0s8zRtsrXzPq1KTHv3ZuB4vOgVAYpGb
-	wRYHQVghB/49KGYSo4qXLH5dSo0BAF7SoYn3mFT606crwAXemQK+j7wCAm5Y4bauMViXyzHppKQM1
-	8q513x75NSPg/S5y4YjFdPqhT15WoAygf6vy4eVZBoYrwg3cPf9aa03A3bnI9h3Yt/J4I3g/nUuYA
-	zVMNKDIja9/p/a+Fc0mZGAavkGOZqytzGQeiXzhKWIwiJXTieZgC/nwlk0LCot9Nfp7aH7HZFM3ME
-	2NzIxE20cT7LMcEdy68A==;
+	List-Owner; bh=hF3oPmbNS+XjrgnWqQpxI0kVqtYnu+oZPlJ2avzwPQA=; b=uWzHBshLdk2FZU
+	gBxXVfFv2oH0fBo3N0yVGg21aL7UOBq0mBq1xPZ5ND2C3Z7vu6duzA26YexpYWoGjBuZ4xDEViC0N
+	OCXNyxUJjO4UmaOVx5UmzF+4Kzke5qyDLTMuKZgtAI6F1pb6QGYmL+pAiHQ9q4jp/UdW/LsKWR9HX
+	OehGvscprdMOB1J8eT/v4joEYQbyYb8ABXc+x/RHnZZ6d5aeU4WYkgIqUeUxMeDXHvBgTn5p17W19
+	YoJrtyYjbswm8RdKbaXJl5E0cXz1VkjIYZNeq+FvJVsTYVCqNMfEBbfEG4dJNyJGqoGWOstimcMaV
+	35IhyzN1MG8owxsUC5fg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sbZAj-00000003rMK-1Bte;
-	Wed, 07 Aug 2024 05:25:17 +0000
-Received: from mail-bn8nam11on20622.outbound.protection.outlook.com ([2a01:111:f403:2414::622] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
+	id 1sbZAn-00000003rOC-0UHb;
+	Wed, 07 Aug 2024 05:25:21 +0000
+Received: from mail-bn8nam11on20604.outbound.protection.outlook.com ([2a01:111:f403:2414::604] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sbZAh-00000003rK3-06uz
+	id 1sbZAj-00000003rLr-2vrR
 	for linux-i3c@lists.infradead.org;
-	Wed, 07 Aug 2024 05:25:16 +0000
+	Wed, 07 Aug 2024 05:25:19 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=gSmM+/vdgRtDc05QlncWFgHEeYBZu1jySL/Gv8fGRzwJ1JAQvbUYyEEaMzqfIzeI6rE+hMWDXmHRQarF1wzmfv8rS8rzgKXtjbM2csTGuP5a8V9cNQ36yxvTezwVh2Qj5OeN5CCCyd3SjlNgJ7LGZSxenuzxO1Ar5KMk+EvNHmocAVPF0ziC+BEz3qDCq8mx4QpZkOKXOJPPkZN8mdNkmVBsdHN8osvLrE6XZXdwfF4Kt+R9c/9DfsncCFRo2nxMVRbfcWHGKnHUMas7FqI/nc78+E/YM28Dn6WnAAbyqLEI7PaXUc7zm7pEsPc5RVPYzboqy2SwJPC0UeVx2JhZWA==
+ b=j/qbNlPAtxFCPzkPkGyodwLPiXaXcdXM3K87BrdH+C4lpzjmBUNaD/kGqz5Lcaxf/RS93SQD4IOsz1ZjRuFlf4PDe2qCfALDbwU3Gm1BoXcpBT0mGmaqz2RC59tpPx5IYUNA4wGu4qNEfkMTi0yxX4H7NuEvAfkqVTjvCt7hDeMppZC1nOW56nwEYN3jII2yJu068MGmZMqUIt8BMkvox3463OXvUrkezyr49DvehbwJjEAAmerMgrrpmAGn8TGYAfJEfofpfxXDt+MTiyxEGpLRjbQWlnY5WYjaxCujaI+q4aO5MJSPW41Jz5HDz4kLDJIHQVCv3qI5dKFy9eEP3A==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=OOpki+0hB0pDem5UKHVYya5yl2YgcYYMn8pPtyj23yg=;
- b=tl1UscPcVjwnKXCILVuznYKMkOTVRGFtjPhxJlase0KdzLWD92YWVQaOYHt49XGw2KR/u2lxq28JZ5AvJ6i2eevuR0wRs398wVPlkjzSGulqdsxJCO06BgMGo8oBuLGWn1ldmXs++VJfi2C31YCRLg4eoEp+87CpZEETYA1xZLTk5JkW0rTd2la346sTTonp1x2TROMnI5vE/dZbudp8d7C5LGicQZT6cBT8wvHa7Pv0Y4eUDtogQi5lXHaOGGAqh94fCCijX95BcFLmrNiko7YSBGALFnDRM8Bq1oPEc7k8JaaLAaxe9Buv6nEWskbCR+sEBF+A6+lQ752MQvVkrA==
+ bh=TeIRMTuLuC8RbvDwNej5F/2tVh3imeBbCgroiZesH9c=;
+ b=ck6BuHg4CDLLQGBb1rDD3Y+xslWDF7O61cihrFKU4niEJojjCK3IQZrXa/WLqqtn7CHrYeyC6iLXjzZKcSATV4Scbta/SbjmGNv8/HtsUZyoXuC9zOuFm1/N5YQUv7MHJcvXx+aSKL9yj1EVpBhJMHRp+klsreid5F94YHYsPxDVvjXQ/zkZu4L9ZHwkDWYmR4K1zuXjIRQi0tktTZEIgUNQ7qrNLqVli35lfsm+4z45txX191dvIsN50MOxHwnbsunt1Um76KbKYsae4DP01TTswXGMGkNuDk4SF4Sbt9FdgHhpxqb5+DH0Y9D+ZrtxBrf+vemo36cXP8ApRsUKfQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  165.204.84.17) smtp.rcpttodomain=bootlin.com smtp.mailfrom=amd.com;
  dmarc=pass (p=quarantine sp=quarantine pct=100) action=none
  header.from=amd.com; dkim=none (message not signed); arc=none (0)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=OOpki+0hB0pDem5UKHVYya5yl2YgcYYMn8pPtyj23yg=;
- b=VGgmofdxokwekMLRjLMexRSEJ1buoafFkdNZh8ORv0gUtKUpCY8TNt2QVzrnYYRlDB7s32gXXd8GCxdhHsYIzSzNBEv6gGadmsAjtZv3L+/j4CfKQX82Qlm5GlNFaoCj7B8RR/4odaBTHfyfBQ9kWyM0VDu5iDK/72VcQxvMi+4=
-Received: from SA0PR12CA0016.namprd12.prod.outlook.com (2603:10b6:806:6f::21)
- by IA1PR12MB6481.namprd12.prod.outlook.com (2603:10b6:208:3aa::20) with
+ bh=TeIRMTuLuC8RbvDwNej5F/2tVh3imeBbCgroiZesH9c=;
+ b=eCGpQ+iF7KE/eTM35H/ADeJVyZknrdQlTA3EfyMz2f3G3r6kvFJII5TpQDUrEIbsfKwOeMpY1ElgHprMgLLUBMzP6VckHCX49wYmPNemF9SqKRRGs4Hl76OtCb7JU7/3PzE8gzzmnwz0Z2wMWRC2IzWc2/tNWyczO74EvHvGAPg=
+Received: from CH0PR03CA0015.namprd03.prod.outlook.com (2603:10b6:610:b0::20)
+ by DS7PR12MB6311.namprd12.prod.outlook.com (2603:10b6:8:94::10) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7828.26; Wed, 7 Aug
- 2024 05:25:06 +0000
-Received: from SN1PEPF000397B0.namprd05.prod.outlook.com
- (2603:10b6:806:6f:cafe::68) by SA0PR12CA0016.outlook.office365.com
- (2603:10b6:806:6f::21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7828.23 via Frontend
- Transport; Wed, 7 Aug 2024 05:25:05 +0000
+ 2024 05:25:10 +0000
+Received: from CH1PEPF0000A345.namprd04.prod.outlook.com
+ (2603:10b6:610:b0:cafe::5d) by CH0PR03CA0015.outlook.office365.com
+ (2603:10b6:610:b0::20) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7828.27 via Frontend
+ Transport; Wed, 7 Aug 2024 05:25:10 +0000
 X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
  smtp.mailfrom=amd.com; dkim=none (message not signed)
  header.d=none;dmarc=pass action=none header.from=amd.com;
@@ -59,22 +59,22 @@ Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
  165.204.84.17 as permitted sender) receiver=protection.outlook.com;
  client-ip=165.204.84.17; helo=SATLEXMB04.amd.com; pr=C
 Received: from SATLEXMB04.amd.com (165.204.84.17) by
- SN1PEPF000397B0.mail.protection.outlook.com (10.167.248.54) with Microsoft
+ CH1PEPF0000A345.mail.protection.outlook.com (10.167.244.8) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.20.7828.19 via Frontend Transport; Wed, 7 Aug 2024 05:25:05 +0000
+ 15.20.7849.8 via Frontend Transport; Wed, 7 Aug 2024 05:25:09 +0000
 Received: from jatayu.amd.com (10.180.168.240) by SATLEXMB04.amd.com
  (10.181.40.145) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.39; Wed, 7 Aug
- 2024 00:25:01 -0500
+ 2024 00:25:06 -0500
 From: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Jarkko Nikula
 	<jarkko.nikula@linux.intel.com>
 CC: Guruvendra Punugupati <Guruvendra.Punugupati@amd.com>, Krishnamoorthi M
 	<krishnamoorthi.m@amd.com>, <linux-i3c@lists.infradead.org>,
 	<linux-kernel@vger.kernel.org>, Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
-Subject: [PATCH RESEND v3 4/6] i3c: mipi-i3c-hci: Relocate helper macros to HCI header file
-Date: Wed, 7 Aug 2024 10:53:57 +0530
-Message-ID: <20240807052359.290046-5-Shyam-sundar.S-k@amd.com>
+Subject: [PATCH RESEND v3 6/6] i3c: mipi-i3c-hci: Add a quirk to set Response buffer threshold
+Date: Wed, 7 Aug 2024 10:53:59 +0530
+Message-ID: <20240807052359.290046-7-Shyam-sundar.S-k@amd.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20240807052359.290046-1-Shyam-sundar.S-k@amd.com>
 References: <20240807052359.290046-1-Shyam-sundar.S-k@amd.com>
@@ -84,50 +84,50 @@ X-ClientProxiedBy: SATLEXMB04.amd.com (10.181.40.145) To SATLEXMB04.amd.com
  (10.181.40.145)
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SN1PEPF000397B0:EE_|IA1PR12MB6481:EE_
-X-MS-Office365-Filtering-Correlation-Id: a1c66945-16fa-41be-393e-08dcb6a14be4
+X-MS-TrafficTypeDiagnostic: CH1PEPF0000A345:EE_|DS7PR12MB6311:EE_
+X-MS-Office365-Filtering-Correlation-Id: 855716cf-a11f-4a87-c505-08dcb6a14e06
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700013|1800799024|376014|82310400026;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?RKM8DQhkGIB0Mul2SpnjMe9vbxv0s1oWSY3hGgd6iGFYV9srrFojH+Xb0n7D?=
- =?us-ascii?Q?Tg77VIXdvEkRybYDItcANQshvLzQDmIFV+qSQMOoRi0wYUV7GVO8vsyKeO6R?=
- =?us-ascii?Q?uJmY808M6Tg36UqdqBQ4XUg1UJKswq4pVtebg7hszDew7O30r2U0rK7DgzOr?=
- =?us-ascii?Q?h8fznKlFe/icNkHd39f0k5PGw7YjnOSrY1muZ4r3w+uzxZNw99eE0O3+//Sq?=
- =?us-ascii?Q?UiSrPhPqyMsLL6j2+Cn/sUZPOz8xjmdwTOB+lBTTt8L9lR+m4bn58NeswanN?=
- =?us-ascii?Q?KGnFhiFbh6i2GyhStHiLO9jnwUDo/m7EeeOdwlw9xT2WF0wureQ/Yp77/OKG?=
- =?us-ascii?Q?dR8SHV2twcSwssUYPHxheTTf4UqNNKCUtm23VeSe8H3wCI8gj+wxxfSalBCM?=
- =?us-ascii?Q?f8iKqIeWxQK7cKLNIdcRLyOpw8RJLC+n7VN3JHmU/AouLNJ9k2rA1xOj1uJ/?=
- =?us-ascii?Q?rgiWuNgthKaRvNEfwYlvPl9ytSJM1hYtgs76LxAVeAUGjSYUZOjEWGlLWJpW?=
- =?us-ascii?Q?Qw0jZiYkpzrvOrnlUOLExDxvQr3HRDxYmgK0orGvdRJyOirfNXq6zZfF0VhA?=
- =?us-ascii?Q?UgoRzAxao7OxAEaPQbLf2yMuGvaOg/LE9GCakS9sv2RHACXa5WvLbhsiQyZU?=
- =?us-ascii?Q?ER5nl6N6+W6dw7ax6npxVtvdPeDhjeDXlGuEUanv/19D85fjZyxuRZoQwkcV?=
- =?us-ascii?Q?wzS8/ABtzOLzNbhd3vny1ouCoweAXgtq6L9gVFxvDan7bu2Mobn9rYaox6Ay?=
- =?us-ascii?Q?BCrW5KrjDCibaRSxWgQam1+oVPK2zymrfeT3hfHVlHmUQH4DsnCzrq/Gpc+A?=
- =?us-ascii?Q?MO80ZiL2wKUuHB1znJPn4McHbFYY+ebqf06OkdAJLPMrcW/mVNLi7OztunR9?=
- =?us-ascii?Q?llATmvCI1mY0is4IpoPzt9WfwbKCTa74zbErDAuSIKjxZJ5/BkJzZ0ryalRt?=
- =?us-ascii?Q?6yhtCowltUOlOmJ8zrpVVxnlgVzboiKirHRyni9E7FAv57t7o2SASggbzS/2?=
- =?us-ascii?Q?MJTgs/QlW3Vwfiu4ouWUtOx4d0XFbj272ZduteY9nTOKam4ipPmeqED3uMsx?=
- =?us-ascii?Q?TruzqDt6g2zcTHnuK3Nt4ZTJV8Bc2ku3sFkHOWMKnsFw8sFFTHmc/sSJoJow?=
- =?us-ascii?Q?kjjGKXKN6RQrgNY8BxN9yWRLfeuGQ86Yi4mPtYlowaGgv+LXcU6ECKST3xvW?=
- =?us-ascii?Q?ulF1z3IyNiWjYvJDBhrzP3MeyAdAVMx3G4Clt81zbeN+/lefu+WPFEFjti4j?=
- =?us-ascii?Q?zk8/6PhDRrMFzdhOTfJMJ5v65JwZTtWkzOFTPxT45aMifGl0FxTYrfc473Dc?=
- =?us-ascii?Q?jCvhM+HPIdQ80wgIv+i49EUBinQx1YiwE4ZJL2tMLtGOL2faw7Oxx/vmNTPD?=
- =?us-ascii?Q?cnoHKhxBVGrF7d4g8NlFFIu9curCY6vAe7A5mZtlyKDiTjHUGI5Okz/GU78D?=
- =?us-ascii?Q?IopztZlkEKAZJs3D6uAYb3k+BXH/3UFD?=
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?9OdX/dFHSXMkTe2tShHlRXAhWv8PkZOHsZBIDt3MSSOVbk74lql4NfN/pTsA?=
+ =?us-ascii?Q?RBeCoNRIkDKAUd7KR2QDHyuovk38gWDotrHi/EWJWDwpOndUoDgYvC6vs+AT?=
+ =?us-ascii?Q?HGQA/1p48Jjexz3jqGLrIpfRWUSJO9QFNCXyDvHzxIyEr8YVprw1f9YId2yz?=
+ =?us-ascii?Q?LvmkVgMPDIV5CBrGv+7E3r4bFUu2el6DIFpDKMBo91t8wB1GBbIc/rc/aedV?=
+ =?us-ascii?Q?FJb2Ov4os143K2lG1C8ClGcwgQnHWidXJVZj4PU9HQ58Y0x7Zol8ZfDSMQCR?=
+ =?us-ascii?Q?HRdLElBME++ye8Fuu51TgcG2Q7Z8XMNKPvpGat6ShUt4oDN//OlHxrTnARg3?=
+ =?us-ascii?Q?NZrmEjet/AsQ1x8jbTYhVYy9VlDOpT3w5++AjkEnlJrTRIu4MkTkypMp8PdX?=
+ =?us-ascii?Q?A+6q3WYjkZAn0kVIfT/V0W2rI7h08o/4i+Lqj24qO30SuhaIX6P9YuD4V6gQ?=
+ =?us-ascii?Q?I8xCh22X7a3pKpHRbMMohjwA6P6Vjw893AXez7TmFfSuo247Sf/542Q+LWU4?=
+ =?us-ascii?Q?AZQOtPbOqDxnHQqJWAUK2piP73kjehaVQmbPVnF9/PYyzT8Ii2W4+wrcavjL?=
+ =?us-ascii?Q?iV9lMnKxqJlqA0QiRgXD/5A9abj4tZD4kXEsgkLOY8gasJIzm60UAs50dTph?=
+ =?us-ascii?Q?b80iySJdUEa7+lkyH9csGFCUNPEhVRPk0WGOYaE+/DBarIzsHYThAQ6hEUYC?=
+ =?us-ascii?Q?JEfT3UIO5Ez5JmZUZSBCDybRhZsZTIa5r8IrrH2Zjo9SN/n6KyieQVFj8gjJ?=
+ =?us-ascii?Q?/tKGyT6yZt+qm3xPvjoRyX1VkkEvBr948aNNbxoRg4/+e9bzaYGgF5wrGN9i?=
+ =?us-ascii?Q?/s7LDSZbrLby0toN+MrVGVgegtu7Bg7oiCt1cHpEgRsOCOVVj5LVLwu32xuj?=
+ =?us-ascii?Q?x6P93gW2V0oL54qnIrq8EbaOMTSF7uJajAUTub04xGMfU9G2kXRwi9MgQa7l?=
+ =?us-ascii?Q?pqUs+WpvD7JO+Z3MDBDraUuWknaJSgtH4A2e5shb3LdRfR2Wt4SWqPu3YfbI?=
+ =?us-ascii?Q?W2XTcotajhAJIPHL074wUOVwP03Yy3eJhVTLZlZy0oZRcmZvf7niW1pXB4uX?=
+ =?us-ascii?Q?hNgfwAqZh5awpa300RJ29WIFHQaEzTgZ7CJvqRUAnuHmNmFhXZmWXTle5ajZ?=
+ =?us-ascii?Q?colhNxoSo4YekK+UGOji04C17w5qNaGYNhgIyILyEUbBYi1RjnVHYAK/+DR3?=
+ =?us-ascii?Q?IzzfRR3oMTry4ggUlCRG9UbU/kuD+xNlfvKkVxRSfUHvZzqkHOQbzeo6w7DX?=
+ =?us-ascii?Q?0d197V27z88cR7UBKUTlFCUBrInYPlrSfIYjEzMzBB92Nzl9bovnN9AorUUU?=
+ =?us-ascii?Q?NlCgzlmaegqVRuFhqP5VcACe+ElrxSC9ZpDNBAZI8XKa8ZBNiYVBctvQllOm?=
+ =?us-ascii?Q?crHrxyjchmBAT8nGPfS/S+jzPOeiAJ8lNJLcNrzp6lbey5g+o+Bq9xnZpU3g?=
+ =?us-ascii?Q?dB8UFqjTZpk=3D?=
 X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:SATLEXMB04.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(36860700013)(1800799024)(376014)(82310400026);DIR:OUT;SFP:1101;
 X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 Aug 2024 05:25:05.8068
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 Aug 2024 05:25:09.4042
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: a1c66945-16fa-41be-393e-08dcb6a14be4
+X-MS-Exchange-CrossTenant-Network-Message-Id: 855716cf-a11f-4a87-c505-08dcb6a14e06
 X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[SATLEXMB04.amd.com]
-X-MS-Exchange-CrossTenant-AuthSource: SN1PEPF000397B0.namprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthSource: CH1PEPF0000A345.namprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA1PR12MB6481
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS7PR12MB6311
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240806_222515_128651_96853573 
-X-CRM114-Status: GOOD (  11.65  )
+X-CRM114-CacheID: sfid-20240806_222517_772649_37553C0A 
+X-CRM114-Status: GOOD (  14.32  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,65 +144,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The reg_* helper macros are currently limited to core.c. Moving them to
-hci.h will allow their functionality to be utilized in other files outside
-of core.c.
+The current driver sets the response buffer threshold value to 1
+(N+1, 2 DWORDS) in the QUEUE THRESHOLD register. However, the AMD
+I3C controller only generates interrupts when the response buffer
+threshold value is set to 0 (1 DWORD).
 
+Therefore, a quirk is added to set the response buffer threshold value
+to 0.
+
+Co-developed-by: Krishnamoorthi M <krishnamoorthi.m@amd.com>
+Signed-off-by: Krishnamoorthi M <krishnamoorthi.m@amd.com>
 Co-developed-by: Guruvendra Punugupati <Guruvendra.Punugupati@amd.com>
 Signed-off-by: Guruvendra Punugupati <Guruvendra.Punugupati@amd.com>
 Signed-off-by: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
 ---
- drivers/i3c/master/mipi-i3c-hci/core.c | 6 ------
- drivers/i3c/master/mipi-i3c-hci/hci.h  | 5 +++++
- 2 files changed, 5 insertions(+), 6 deletions(-)
+ drivers/i3c/master/mipi-i3c-hci/core.c       |  4 ++++
+ drivers/i3c/master/mipi-i3c-hci/hci.h        |  2 ++
+ drivers/i3c/master/mipi-i3c-hci/hci_quirks.c | 12 ++++++++++++
+ 3 files changed, 18 insertions(+)
 
 diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-index 4926fde6087d..0dbaa1333a0c 100644
+index 23cfdf0059ae..00c085a1187f 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/core.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-@@ -12,7 +12,6 @@
- #include <linux/errno.h>
- #include <linux/i3c/master.h>
- #include <linux/interrupt.h>
--#include <linux/io.h>
- #include <linux/iopoll.h>
- #include <linux/module.h>
- #include <linux/platform_device.h>
-@@ -27,11 +26,6 @@
-  * Host Controller Capabilities and Operation Registers
-  */
+@@ -147,6 +147,10 @@ static int i3c_hci_bus_init(struct i3c_master_controller *m)
+ 	if (ret)
+ 		return ret;
  
--#define reg_read(r)		readl(hci->base_regs + (r))
--#define reg_write(r, v)		writel(v, hci->base_regs + (r))
--#define reg_set(r, v)		reg_write(r, reg_read(r) | (v))
--#define reg_clear(r, v)		reg_write(r, reg_read(r) & ~(v))
--
- #define HCI_VERSION			0x00	/* HCI Version (in BCD) */
- #define HCI_VERSION_V1			0x100   /* MIPI HCI Version number V1.0 */
++	/* Set RESP_BUF_THLD to 0(n) to get 1(n+1) response */
++	if (hci->quirks & HCI_QUIRK_RESP_BUF_THLD)
++		amd_set_resp_buf_thld(hci);
++
+ 	reg_set(HC_CONTROL, HC_CONTROL_BUS_ENABLE);
+ 	DBG("HC_CONTROL = %#x", reg_read(HC_CONTROL));
  
 diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
-index a7ea37f8f8e0..d94e49be3091 100644
+index 5a3b4a014d62..6bda266516a1 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/hci.h
 +++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
-@@ -10,6 +10,7 @@
- #ifndef HCI_H
- #define HCI_H
+@@ -142,6 +142,7 @@ struct i3c_hci_dev_data {
+ #define HCI_QUIRK_RAW_CCC	BIT(1)	/* CCC framing must be explicit */
+ #define HCI_QUIRK_PIO_MODE	BIT(2)  /* Set PIO mode for AMD platforms */
+ #define HCI_QUIRK_OD_PP_TIMING		BIT(3)  /* Set OD and PP timings for AMD platforms */
++#define HCI_QUIRK_RESP_BUF_THLD		BIT(4)  /* Set resp buf thld to 0 for AMD platforms */
  
-+#include <linux/io.h>
  
- /* Handy logging macro to save on line length */
- #define DBG(x, ...) pr_devel("%s: " x "\n", __func__, ##__VA_ARGS__)
-@@ -26,6 +27,10 @@
- #define W2_BIT_(x)  BIT((x) - 64)
- #define W3_BIT_(x)  BIT((x) - 96)
+ /* global functions */
+@@ -150,5 +151,6 @@ void mipi_i3c_hci_pio_reset(struct i3c_hci *hci);
+ void mipi_i3c_hci_dct_index_reset(struct i3c_hci *hci);
+ void amd_i3c_hci_quirks_init(struct i3c_hci *hci);
+ void amd_set_od_pp_timing(struct i3c_hci *hci);
++void amd_set_resp_buf_thld(struct i3c_hci *hci);
  
-+#define reg_read(r)		readl(hci->base_regs + (r))
-+#define reg_write(r, v)		writel(v, hci->base_regs + (r))
-+#define reg_set(r, v)		reg_write(r, reg_read(r) | (v))
-+#define reg_clear(r, v)		reg_write(r, reg_read(r) & ~(v))
+ #endif
+diff --git a/drivers/i3c/master/mipi-i3c-hci/hci_quirks.c b/drivers/i3c/master/mipi-i3c-hci/hci_quirks.c
+index 6530b9b6128f..f906e6476abd 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/hci_quirks.c
++++ b/drivers/i3c/master/mipi-i3c-hci/hci_quirks.c
+@@ -20,12 +20,15 @@
+ #define AMD_SCL_I3C_OD_TIMING          0x00cf00cf
+ #define AMD_SCL_I3C_PP_TIMING          0x00160016
  
- struct hci_cmd_ops;
- 
++#define QUEUE_THLD_CTRL		0xD0
++
+ void amd_i3c_hci_quirks_init(struct i3c_hci *hci)
+ {
+ #if defined(CONFIG_X86)
+ 	if (boot_cpu_data.x86_vendor == X86_VENDOR_AMD) {
+ 		hci->quirks |= HCI_QUIRK_PIO_MODE;
+ 		hci->quirks |= HCI_QUIRK_OD_PP_TIMING;
++		hci->quirks |= HCI_QUIRK_RESP_BUF_THLD;
+ 	}
+ #endif
+ }
+@@ -41,3 +44,12 @@ void amd_set_od_pp_timing(struct i3c_hci *hci)
+ 	data |= W0_MASK(18, 16);
+ 	reg_write(HCI_SDA_HOLD_SWITCH_DLY_TIMING, data);
+ }
++
++void amd_set_resp_buf_thld(struct i3c_hci *hci)
++{
++	u32 data;
++
++	data = reg_read(QUEUE_THLD_CTRL);
++	data = data & ~W0_MASK(15, 8);
++	reg_write(QUEUE_THLD_CTRL, data);
++}
 -- 
 2.25.1
 
