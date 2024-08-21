@@ -4,69 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 63DE2C5472C
-	for <linux-i3c@archiver.kernel.org>; Sun, 25 Aug 2024 01:18:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0954DC54733
+	for <linux-i3c@archiver.kernel.org>; Sun, 25 Aug 2024 01:18:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1BmcjJGGgWIyNLAGXZaMUejliBHOfdYwGmzvZPj0qsc=; b=hh9Klak2hTbCz0
-	EEk1wU+5sJB0BUYa5Y2gcF5rAC/GWhBvD7LUjuPKupKwLz5pYy/tQrYsH7oqLfy2QVamUVFNAAW2m
-	hCQP/qE5SQ23odHvEhI0XgY+yN6x3vtCPvNQYBNIhMODtT83wXa2pjKw4oYySbw/0lFMSyDYcDZYr
-	I51j1HTLZ4b/FOQ3tWN/z+K/P/u7nzBBWjWTabL/u5sSP+SPq96TgL3KeMplF9qji/ewXmyt6GIsM
-	wekF6NjnDXzz8mR/brauOFApIJ7P410In8Uy4yEOkkXfRmU0wWLLtySA0LJL0d2jqUXq2MVsx77uK
-	hM4A5UDA/kQgzTOGYzUQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eoNEPPwgE882uzC7oQ8qtNCGeD9a3870kNxKRHuAA1E=; b=d1xzC2aJjQlfsq
+	/omXZq/inT4T6ltrNpVW2A0Lv3ohAqVxAA3YBylD0wnkYt4df0gPMrDCN5ejOEmeuy2VxIuJgLzjF
+	uGy1c3OQWBxkoMWmntqEQWT5QQOiUjPsEq1ca2oFtl/X2oVAeRqRi+bwxEgTdK69ugjBVO14HhYSo
+	6pWMIhHAz/N54wc5RlREs94RVQE4DGuMoksOrFkue2138cbO/OMMBGEutsBebaXjY1bXHmH2t7iTa
+	gB9Ypt9LHTM1tWD/GbOVX3mDjfY5iPx3zBcthFG5/ipNbsvmMUr8RSY1Xst0zOcQwuh4LAB+pqJpk
+	DBdFbUA05q3skFO6/bDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1si1ts-00000003EBN-2H53;
-	Sun, 25 Aug 2024 01:18:36 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1si1tt-00000003EC6-2N9K;
+	Sun, 25 Aug 2024 01:18:37 +0000
+Received: from mgamail.intel.com ([198.175.65.20])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sgQmY-00000005pME-01GB
-	for linux-i3c@bombadil.infradead.org;
-	Tue, 20 Aug 2024 15:28:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
-	Content-Description:In-Reply-To:References;
-	bh=SrXyxjbR+gNB+saYH77XaycG4zcD6r9nJBJDDav4zxo=; b=bjsOuuUrnmKhleoQixRUfaXdxK
-	TEpYoFirpg3nweOuJfZ3AX1CDj3g3tXolGrwspxwoG/AAHEy43qzkB8euDLMqXDV88tv//zXFsMOx
-	jYqo4I0TIvF5lLluYdCH5H4Jqv+J4Q/ufyMOcOI1WS0nHQYBcqrDcgTZpCjaISG9gsQcofVkF50dZ
-	NDIsV+KntWufm2+6GpPaZ4WSsEQNA29r2j5gowbv+jgj8k5xugz/p3ph7xZJM03M8VaYwG5CU5h3b
-	eAWHP8Z+DiSljEgvsH/1VJkt1ejwv8IVfBs1zuVDdgcRC7Pc5Ha2T58lNc08X29Sj37J/lsvQ071k
-	9DDOSpog==;
-Received: from inva021.nxp.com ([92.121.34.21])
-	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sgQmS-00000009M4f-04GP
+	id 1sgnTW-00000009Y42-0tov
 	for linux-i3c@lists.infradead.org;
-	Tue, 20 Aug 2024 15:28:24 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 53F1F2023DB;
-	Tue, 20 Aug 2024 17:19:23 +0200 (CEST)
-Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id AC4762023D2;
-	Tue, 20 Aug 2024 17:19:22 +0200 (CEST)
-Received: from lsv031045.swis.in-blr01.nxp.com (lsv031045.swis.in-blr01.nxp.com [10.12.176.65])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 250911802200;
-	Tue, 20 Aug 2024 23:19:21 +0800 (+08)
-From: Ravindra Yashvant Shinde <ravindra.yashvant.shinde@nxp.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	linux-i3c@lists.infradead.org (moderated list:I3C SUBSYSTEM),
-	linux-kernel@vger.kernel.org (open list)
-Cc: imx@lists.linux.dev,
-	Frank.Li@nxp.com,
-	Ravindra Yashvant Shinde <ravindra.yashvant.shinde@nxp.com>
-Subject: [PATCH v2 1/1] i3c: master: Avoid sending DISEC command with old device address.
-Date: Tue, 20 Aug 2024 20:49:17 +0530
-Message-ID: <20240820151917.3904956-1-ravindra.yashvant.shinde@nxp.com>
-X-Mailer: git-send-email 2.46.0
+	Wed, 21 Aug 2024 15:42:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1724254937; x=1755790937;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=5HNsShXLMkfgPjD1JIyF6BszZjPotlrn/B9b0UL22AE=;
+  b=S0I0mq7VlGJD/jK7yhQxcMSJ2JKnB57ZvAPP3ZY/bFOUA2tkq3KBEBTD
+   8o4HiLBPYsWNdig5LU2QdX7zjvksDRstoVSfS7JhHz262cI+KmdoI9WUL
+   7IsRBquOP+YNJceqvFytWyWqMURnkNHudenecQ80zZCc34DeZjMsKmHv1
+   0aCfIMy2XhZ2j/pLBZsp93BpowfXOve6nr+om1+BbDjaVjO8KK0l69cly
+   jOf0ppBAjWBKRlJ2yPgqzlAyi7+A0kG6Cbr75BrIH+npAfE59mrlIMPTt
+   3blWgnx0C0zOUybNut5EiUMmDr9Ulq/BdWaAL5mHSLg2LTqPja7i16vRc
+   Q==;
+X-CSE-ConnectionGUID: nqeBGqznRmSRHT1MhlA6nQ==
+X-CSE-MsgGUID: DlTQVJD5Scefi/BpVG3EHQ==
+X-IronPort-AV: E=McAfee;i="6700,10204,11171"; a="22429927"
+X-IronPort-AV: E=Sophos;i="6.10,164,1719903600"; 
+   d="scan'208";a="22429927"
+Received: from orviesa008.jf.intel.com ([10.64.159.148])
+  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Aug 2024 08:42:16 -0700
+X-CSE-ConnectionGUID: Jpy8QNnmQduNWlIAy0UE+A==
+X-CSE-MsgGUID: jPd31TVuStmXPhrLtOfnNg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.10,164,1719903600"; 
+   d="scan'208";a="61878949"
+Received: from smile.fi.intel.com ([10.237.72.54])
+  by orviesa008.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Aug 2024 08:42:16 -0700
+Received: from andy by smile.fi.intel.com with local (Exim 4.98)
+	(envelope-from <andriy.shevchenko@linux.intel.com>)
+	id 1sgnTR-000000008AO-0I9O;
+	Wed, 21 Aug 2024 18:42:13 +0300
+Date: Wed, 21 Aug 2024 18:42:12 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Jarkko Nikula <jarkko.nikula@linux.intel.com>,
+	Guruvendra Punugupati <Guruvendra.Punugupati@amd.com>,
+	Krishnamoorthi M <krishnamoorthi.m@amd.com>,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v4 1/6] i3c: mipi-i3c-hci: Add AMDI5017 ACPI ID to the
+ I3C Support List
+Message-ID: <ZsYK1P5nW5e1U1mJ@smile.fi.intel.com>
+References: <20240821133554.391937-1-Shyam-sundar.S-k@amd.com>
+ <20240821133554.391937-2-Shyam-sundar.S-k@amd.com>
+ <9584ddb0-6e39-4d04-9242-a68eb4b86eba@amd.com>
+ <ZsXyHfLJ8SJOW0RF@smile.fi.intel.com>
+ <236aa6d9-bb5d-4854-86e3-5473f5ea6337@amd.com>
+ <ZsYKGOLN3_2VU6Ld@smile.fi.intel.com>
 MIME-Version: 1.0
-X-Virus-Scanned: ClamAV using ClamSMTP
+Content-Disposition: inline
+In-Reply-To: <ZsYKGOLN3_2VU6Ld@smile.fi.intel.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240820_162820_178385_6620FD7A 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20240821_084218_437983_50FBA125 
+X-CRM114-Status: GOOD (  17.00  )
 X-Mailman-Approved-At: Sat, 24 Aug 2024 18:18:33 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,62 +99,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-When a new device hotjoins, a new dynamic address is assigned.
-i3c_master_add_i3c_dev_locked() identifies that the device was previously
-attached to the bus and locates the olddev.
+On Wed, Aug 21, 2024 at 06:39:04PM +0300, Andy Shevchenko wrote:
+> On Wed, Aug 21, 2024 at 08:42:12PM +0530, Shyam Sundar S K wrote:
+> > On 8/21/2024 19:26, Andy Shevchenko wrote:
+> > > On Wed, Aug 21, 2024 at 07:07:45PM +0530, Shyam Sundar S K wrote:
+> > >> On 8/21/2024 19:05, Shyam Sundar S K wrote:
 
-i3c_master_add_i3c_dev_locked()
-{
-    ...
-    olddev = i3c_master_search_i3c_dev_duplicate(newdev);
-    ...
-    if (olddev) {
-        enable_ibi = true;
-        ...
-    }
-    i3c_dev_free_ibi_locked(olddev);
-    ^^^^^^^^
-    This function internally calls i3c_dev_disable_ibi_locked(addr)
-    function causing to send DISEC command with old Address.
+...
 
-    The olddev should not receive any commands on the i3c bus as it
-    does not exist and has been assigned a new address. This will
-    result in NACK or timeout. So, update the olddev->ibi->enabled
-    flag to false to avoid DISEC with OldAddr.
-    ...
-}
+> > >>> This update adds the AMDI5017 ACPI ID to the list of supported IDs.
+> 
+> s/This update adds/Add/
+> 
+> > > Please, provide a DSDT excerpt to show how it will look like in the ACPI
+> > > tables.
+> > 
+> >     Scope (_SB)
+> >     {
+> > 	...
+> > 
+> >         Name (HCID, "AMDI5017")
+> >         Device (I3CA)
+> >         {
+> >             Method (_HID, 0, Serialized)  // _HID: Hardware ID
+> >             {
+> >                 If ((I30M == Zero))
+> >                 {
+> >                     If (CondRefOf (HCIB))
+> >                     {
+> >                         Return (HCID) /* \_SB_.HCID */
+> >                     }
+> >                     Else
+> >                     {
+> >                         Return (I3ID) /* \_SB_.I3ID */
+> 
+> Do I understand correctly that I3ID is the old one (as per another path I have
+> seen last week or so), i.o.w. *not* a MIPI allocated one?
+> 
+> If it's the case, feel free to add
+> Reviewed-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+> from ACPI ID perspective.
 
-Signed-off-by: Ravindra Yashvant Shinde <ravindra.yashvant.shinde@nxp.com>
----
-change from v1 to v2
-- Fixed the author name.
-- Unconditional set to the false & added some comments.
----
- drivers/i3c/master.c | 9 ++++++++-
- 1 file changed, 8 insertions(+), 1 deletion(-)
+Regarding MIPI ID and using it as a _CID is kinda unsolved now, in any case
+_CID *requires* _HID to be present, and hence _HID has a priority in
+enumeration. It doesn't matter if it's absent now (it's even more flexible in
+case MIPI decides to use _another_ ID for _CID) as long as software uses
+_HID for enumeration.
 
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 7028f03c2c42..0dd8d1c28d58 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -2043,7 +2043,14 @@ int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
- 				enable_ibi = true;
- 				i3c_dev_disable_ibi_locked(olddev);
- 			}
--
-+			/*
-+			 * The olddev should not receive any commands on the
-+			 * i3c bus as it does not exist and has been assigned
-+			 * a new address. This will result in NACK or timeout.
-+			 * So, update the olddev->ibi->enabled flag to false
-+			 * to avoid DISEC with OldAddr.
-+			 */
-+			olddev->ibi->enabled = false;
- 			i3c_dev_free_ibi_locked(olddev);
- 		}
- 		mutex_unlock(&olddev->ibi_lock);
+> >                     }
+> >                 }
+> >                 Else
+> >                 {
+> >                     Return (I2ID) /* \_SB_.I2ID */
+> >                 }
+> >             }
+> > 	
+> > 	...
+> >     }
+
 -- 
-2.46.0
+With Best Regards,
+Andy Shevchenko
+
 
 
 -- 
