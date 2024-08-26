@@ -4,61 +4,156 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48050C5321E
-	for <linux-i3c@archiver.kernel.org>; Mon, 26 Aug 2024 08:13:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CC9BC5321D
+	for <linux-i3c@archiver.kernel.org>; Mon, 26 Aug 2024 15:57:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GzTbVaetuldJLTQzlulGL9ZXzXF0VeBo0VmybyCSnPI=; b=uRo4s187TEZpyb
-	Pdvn6o/KFUYkVWcvWX2eQzKt1IYW/g+0GP8Dh/oUrh9YjYXI49dUvs7RyNmJVTReWyFw4QmjlB/ce
-	G4358+lBoOChgE3DOgqZwdeMddJjN42YKUcBVbogCk1P4OhLWOr18/f/iOnqxQT0HYcl5S91A5abI
-	c5uVJvWKG39BUlvESadNDZPXNQaRImJA6HmHgVNLST4MKpZQlnSkt9GbJ3lAKXAQcDwlaIRMZjLKy
-	DiAxXtq0SGChtmk4Ld3Se+1Z0stnOsQUG49TpUFuIWW+qx6Vl71VeRoGGmyxpE8KjO4fy6vJkzQLl
-	UVLTTcWiDmeXlBq2KFWQ==;
+	List-Owner; bh=+/2yCkUybQyqh2rpjyBvRk60FtEIocf3e1jFp60vyeQ=; b=1YiWHWD1KNhH5T
+	Jmtrxh8M3Hs/TPCXLO8FWXaA/IXlwbcBEcQJRR3k+CWBY+7kQ0o/2H6HEijyxorpopBh7kfVoQJWo
+	0EmVwFSN15MOucSTA5QtGb/uLzEa9fU1RRwpDAEevVRrJsM9vNYG5W4mgoh3cFalFZbHZp+vVCUoA
+	+g1lYxJ17OBuWs9AyurF/I5UcWSdfNod1ii3Ko2ZTkxZ6OvX8LTnslCiE9G8ODv0kK5mb0CexS3hf
+	GgQkeHYU5bERFAX7bDu0OwGcEeV0fG22fqJK8qy9nC9+PIpGMHn+Yf7DsOi1mhpUBYfA0h4doenU8
+	Sk7mg1/gpPUoGsOSiriQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1siUqz-00000006Qeg-4A56;
-	Mon, 26 Aug 2024 08:13:33 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1sic67-00000007uR6-2Iij;
+	Mon, 26 Aug 2024 15:57:39 +0000
+Received: from mail-vi1eur05on2061a.outbound.protection.outlook.com ([2a01:111:f403:2613::61a] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1siUqw-00000006Qck-0vra
+	id 1sic5l-00000007uIp-0wqU
 	for linux-i3c@lists.infradead.org;
-	Mon, 26 Aug 2024 08:13:32 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 3D35D20007;
-	Mon, 26 Aug 2024 08:13:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1724660007;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=Qp/00LpdFt9fyZ9y8QshjY+ptg9wzwMtAYA98L2na+o=;
-	b=LrSIsxdlmUt5Cou9Feh8QCcpu4xZ0fj6zVtQ2So7NSmWHulQyMiQPZs67HToG1ptjSlVRf
-	HGZPAGVF2OZOOdGJ6BXW6X8oOScS/y38En16izvGbzQMHpVdeO9CDkdYMq3x7waYSg0F0t
-	nFwf48cMzmjz1EdvjMOJnE3at65uHFXltVc329sYuKBtUng1mhGkgJ3l/Le/i4YnJMmjIf
-	vn4rIxT8rGOjWv6o4MtnRaaxG4QtA08OMHSTrlq4MPpTBiOH9tzKZc1qZxK8WP1RSYHOrz
-	D8x0HP9JxckoBRAu53ANliqxTAUFC8Tumti1BDG4AdLT+qN9LCn02dnuXUCF2g==
-Date: Mon, 26 Aug 2024 10:13:23 +0200
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: carlos.song@nxp.com
-Cc: alexandre.belloni@bootlin.com, linux-i3c@lists.infradead.org,
- linux-kernel@vger.kernel.org, imx@lists.linux.dev, linux-imx@nxp.com
-Subject: Re: [PATCH v3] i3c: master: support to adjust first broadcast
- address speed
-Message-ID: <20240826101323.746b617c@xps-13>
-In-Reply-To: <20240826050957.1881563-1-carlos.song@nxp.com>
-References: <20240826050957.1881563-1-carlos.song@nxp.com>
-Organization: Bootlin
-X-Mailer: Claws Mail 4.2.0 (GTK 3.24.41; x86_64-pc-linux-gnu)
+	Mon, 26 Aug 2024 15:57:18 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=aP8ocDmHI40gJMu4V7JGt5KNxQ1q7076EShuzQV9RmEwoq38SgHBZcjevUdSQowCaVnAQrIfWbIrTguxHqqIrLMlxQ3kL2urRhxKwJwZKG/ez0ff4KPZaTL5qwDwYocA+WMJ97+KHuwt8S9OGKZPjK4YI3g8qBQqL5TFCiOQCLmD5cyNO41J9ndr5JklFBUjSHrFebSCBW8gtQuRO+7s2q7s3kxjxpOnl3ehHoDF+jfZg/25kn5PR5eAO2I65NDGQQzGN9idOKFiFHUyDbfIfvd8BtDl/dMmK6IquZFO9hp4JYBzMVhiVAWttAe9vKRyhkcLlqogNkoTMJ3foh1dbw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=gKp1TofDTHdFFNF8llcFGmKtNUrVB3lcWnWY66Kj0mI=;
+ b=tMk7NPTlsphmYCv/dWX5ybVDLWSNaYgG4DrIANoi2mEEL37hiZ8tNCWgCQHsRo4UrnZEnxdzMULgKXcDhnWBQ22VrLxAgaUxSapVNSiyKqi0pNrQ1FpFyOTnUEt2BFzPaaCi4n63c7B1W1lx8+JDP7O/KJuqWNbCSswWsz58BVp5pZNqzBmhQP8AZ0MTYcVMnEVU3451MJNupMpTd54H56Jx4pf+2YBZ1RIIh20UIicnzqETXPHxuoDDyQfuxWm8knd2Cp4b4LwNS5OXjCSxaj4IAzG+4zrkKamgsA/eYn5iGHjaNgyu0R8fz9gH66YAQ0obnyL2gU0+mFEJJSsftA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=gKp1TofDTHdFFNF8llcFGmKtNUrVB3lcWnWY66Kj0mI=;
+ b=Yag04vIcwjJiWH37qc57uPGV+Oqe7JpeQQZUqIg/b71asvY/LU8KCtnA2sQ9WAwBg6c8LJf3YtLaBoMXK3i8t0io1zW7DBXZPNWz1+AcgqseSOI9viNFlb+coAlFzraRSdAwZz9zDULmULm0eVIdxh7rVDJpHOYJ2enve/V0HKP+tKLdTD0bWdEV8DrDZNFPmEmyxxkAIqncMplvGRf1QpsHiF6z2iBB/twAjIay+xg4uVaSrQd+g+EWdfN6U93Fk5wVaXg6vRwBt5/xO5T8kU9CIamNR/eJdCnD1GsV7aD0N3T7FTPIoDzjngqheDw2DwD+EGPFFSk36N5CZX3eIA==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by AS8PR04MB8690.eurprd04.prod.outlook.com (2603:10a6:20b:429::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7897.24; Mon, 26 Aug
+ 2024 15:57:07 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06%4]) with mapi id 15.20.7875.019; Mon, 26 Aug 2024
+ 15:57:07 +0000
+Date: Mon, 26 Aug 2024 11:56:57 -0400
+From: Frank Li <Frank.li@nxp.com>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Boris Brezillon <boris.brezillon@collabora.com>,
+	Parshuram Thombare <pthombar@cadence.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Boris Brezillon <bbrezillon@kernel.org>,
+	Arnd Bergmann <arnd@arndb.de>,
+	Conor Culhane <conor.culhane@silvaco.com>,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+	imx@lists.linux.dev
+Subject: Re: [PATCH v3 03/11] i3c: master: Extend address status bit to 4 and
+ add I3C_ADDR_SLOT_EXT_INIT
+Message-ID: <Zsylya9TN4mVFL79@lizhi-Precision-Tower-5810>
+References: <20240819-i3c_fix-v3-0-7d69f7b0a05e@nxp.com>
+ <20240819-i3c_fix-v3-3-7d69f7b0a05e@nxp.com>
+ <20240823180426.056ac093@xps-13>
+ <ZsjNA9JV0UKONV32@lizhi-Precision-Tower-5810>
+ <20240826100430.33194702@xps-13>
+Content-Disposition: inline
+In-Reply-To: <20240826100430.33194702@xps-13>
+X-ClientProxiedBy: SJ0PR13CA0220.namprd13.prod.outlook.com
+ (2603:10b6:a03:2c1::15) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
 MIME-Version: 1.0
-X-GND-Sasl: miquel.raynal@bootlin.com
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|AS8PR04MB8690:EE_
+X-MS-Office365-Filtering-Correlation-Id: 2cef0c46-de5f-4170-bd6b-08dcc5e7bc79
+X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|52116014|7416014|376014|1800799024|38350700014;
+X-Microsoft-Antispam-Message-Info: =?iso-8859-1?Q?05w9wK3h0c7eSnW6tirZYtmxtrhim9ro4ynTD1iMfaPm5wznxa3ZuN2dtz?=
+ =?iso-8859-1?Q?8VVHOja8czS1mHvWPbIhjpNfdBIaI/1hXn5xDTdJDkesOW8aVZRgPr2Xa+?=
+ =?iso-8859-1?Q?X2H7XJkv0k2MVrYYX6fpHikuK8UpSOfeHIG6Q2+RfC6mtfPAkgnnth8aQG?=
+ =?iso-8859-1?Q?vLp5ZbjxrH7MzQyvpyDGxjDsLjXsupGSrOMAgTu3NI+kKAYEVIWyudlZ39?=
+ =?iso-8859-1?Q?253CDMlfTFfvd5ZEI9r4c73IcutQNwq02dHJlmVGd6QD0z+PABWWTouQzN?=
+ =?iso-8859-1?Q?9sf3fQ+qtl0IAWIBhiC5RHqozYiVJEys1G6MwZKRs/dDgby4lDPUZW5RDe?=
+ =?iso-8859-1?Q?JItj1WO3wyf4IVbSm+EbjVeX9rvKaWig5Z+JK5f14C1s1MJr6qon0tUxee?=
+ =?iso-8859-1?Q?e6zJzJNkv1N686Xd7qXadacydFR63hHZCzHX0gdKEoAhnZ+KhqAn92o04v?=
+ =?iso-8859-1?Q?bk3VSm1xQp5xpkP1Hb7YLpb++RR4EOGKrnegdBrp3cez56pQLJ8I/NmS/l?=
+ =?iso-8859-1?Q?SkmIWFxaPmZoLdCTScedpn+Q+Jaj/5a10YMjFpla6fPPmIj2y/mkBqSiXe?=
+ =?iso-8859-1?Q?sPRyEeTuId9yMJ/Joh3sR4Gkgq6r5084VfdQwPeD39QRrpKVJIozrm+dfs?=
+ =?iso-8859-1?Q?4xiLVGR5Y8MWQ+fM3PpzAboyuWuzTkTJqAo/r6w0fFOUz+uy+F7722u63l?=
+ =?iso-8859-1?Q?lzy6m6Hdu1TRzHECdxqT7t5FAQaLvSE7gFm0ypdZtUSpQ4XjFR2LXVPhjV?=
+ =?iso-8859-1?Q?ESJpZHbJ1xbCK/0aVFl3KeARPBcQyGl74iGtnrOPqQFFun3Ajb8pWfkriP?=
+ =?iso-8859-1?Q?Ncy3KxX1JpEqIzLln1bVK4wjARSQPWf1jfW6tc3tbiJvPgHJVJpg4xCnhd?=
+ =?iso-8859-1?Q?k+/gEGOwEJ/iLVULjr6AYYLUp76m/10pWyT+xGfuopq4Nybgf610C0hIBq?=
+ =?iso-8859-1?Q?YGBO4jDEaApC7qlMNTkDUbCEzOUW3mZ8QoijKrzOBd0Kl0QsTRrdoNvlxB?=
+ =?iso-8859-1?Q?7R0UP3yxIU+8ijlg5Oo6B+u45iqGE29tV/BEQyFflEj9dhoKBcGt1AGvcG?=
+ =?iso-8859-1?Q?SSgr5EKND6qfIU/Z7UDnRUK1pP5FhQf6GBdsHe8gGrOmVBKfJpmn7IPVPZ?=
+ =?iso-8859-1?Q?m6KJgmW+dlGd2H9L3JXk9To+vW3mj4rIf8Le/23uF9/NpIPVJwwXamOpzV?=
+ =?iso-8859-1?Q?ECWb0dZpjcHynl6XLK3fnd5atopj/O3DM4ue+PPkp0/bymDtDqIbnuYV2w?=
+ =?iso-8859-1?Q?Uce0qWrVBLqyPU7zfifZFVJ6RZEn4sEveWnYBIFecYWPMKTemRF7i8ENf3?=
+ =?iso-8859-1?Q?8OIIzzgdopUlLXD3kFjXe0I5CM4/nKcEuzfmGTsYFkgfTz5CM/8pQoRllL?=
+ =?iso-8859-1?Q?bBO4Fecprq5Gbv/QI+Nz4vE/JnaFw18aB9bgy4V+qAu2nB8BS+ecqyelF/?=
+ =?iso-8859-1?Q?YIUajCqscILdPRDnay/KOOfiaXqHKed+vELZTw=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(52116014)(7416014)(376014)(1800799024)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?qx5xfv8BNhRaBy/OF53kdVpclSbxhjP7JK/sV2wWbAWaGoQE3rOLPlN8D6?=
+ =?iso-8859-1?Q?vF/fDhuClVp8qHJ7hVHQAiE+3vH4QgKURlAinWGimg/fbdBEA2lMKm5GCE?=
+ =?iso-8859-1?Q?BwJtR21imLp50gYytND9ecSDL6iei4G2DSs03P0cPWyXzjUIQfLgMUJo3+?=
+ =?iso-8859-1?Q?g4qE7nGtuRkmxez4hbVdJe48T8oZFZEXSHVGBiyL9VhwvrHeKWBoVjgwlI?=
+ =?iso-8859-1?Q?uEZOo1Ku2eMsXkLP/iaQM/JB9Klce1lpokTXx2vFfg0pz8yFieQQku4Jvg?=
+ =?iso-8859-1?Q?myNTU9xtu+AlaNZoei2yHyaIEsEz8wC9kpNPsvHxxl6ZHStd9QK87mt3DS?=
+ =?iso-8859-1?Q?hJJlK5lW+Xy+hDN4MUVlBD3iUPc40rjdFlCwC4hqZRpu/8f2b7hwocgNBn?=
+ =?iso-8859-1?Q?xsLMGHAOn1XwU5/jceVzglX4wL/A1VcpkcbjXhoG2RrsEUSrm79Lwh/omO?=
+ =?iso-8859-1?Q?b4d2yi4KDiL0gVs2oz8D4sZN5Wd9HGUwimcrPhh5IuNh7FV9X/TCFbbwiO?=
+ =?iso-8859-1?Q?4/t3Wf/axqdERkFYb3USJMLKdLFoYsT9fYFMwDUR3oXa8wuubL9hamOmSp?=
+ =?iso-8859-1?Q?ILzT57xcE6NIOGOZtwPqzQQ/2tLplShKiGQH4goJCk1YAJcJfN2uPpwct0?=
+ =?iso-8859-1?Q?9NUXzPlRUDj4IcITEslmKCPVi4Ppiw3DEzIxscLrCBeLkJm6FKsPnvXIbg?=
+ =?iso-8859-1?Q?R3hDjJGZjR4yh9sfQf9Y1Fvo56RSwWPZWYZbq9fvbzbzbmSEn0P4SArfNh?=
+ =?iso-8859-1?Q?F2Cn9ydODCts2/OuPwZOIP/5vk9oqa6fkTc8Z4FXkN9oER12n3rbLM/XOj?=
+ =?iso-8859-1?Q?ifXCIeu8qxT3juOfewX2oT8VUerlQMSK1R8PspnjDphr5IEwdsAuq22s8v?=
+ =?iso-8859-1?Q?lTXgzWpNtwZsRsIehUwRqsRIS3JCto/F4DMHTslvM/SVz/zALH4WNF4pNr?=
+ =?iso-8859-1?Q?SlZnXyPE1xVcp7NfP6CvzK8kZ2OMWOU5PuJ0j23xWnH3kvy6C66lKlkjc7?=
+ =?iso-8859-1?Q?u1SVVptqFLNjLnsie5cyCN1ydi1+Gr4U5mUsaZZSACP3w7cLPJNTpOmbyJ?=
+ =?iso-8859-1?Q?2cGKdVqJfVeK3cIXwDOmh4j3PeTeways2Baes6JJVVuSG+ssCzRj5XVOzO?=
+ =?iso-8859-1?Q?oGKSf4Gk7/GfwIPoCB/EPUgHOgSI5XrG3ktM4AS0MandOReWDbfqxtcBA3?=
+ =?iso-8859-1?Q?57apYkKhZoIT4bg7bNDEp03ftNUrgGJ8J93JUXU/4mImKmGlKuiTdxEQKM?=
+ =?iso-8859-1?Q?h9jsagx8CErvdFfulVA0K5Muw/1LTIuyYN4o07ryaGVaRyI6XmOMSxR7XV?=
+ =?iso-8859-1?Q?ly9UfvRk2cSSR/wqHJc0lodA/+EXdDdu1kX/AS30cLE2zI/BBULfqSPV8M?=
+ =?iso-8859-1?Q?/4NfDjiFV5rqr86b62ma5sio9oCIEfTV8TCpmhbyjwSJizS7Npu8hDKEzV?=
+ =?iso-8859-1?Q?uy3TqEf4uKr227Fwf6wgqTwwu0NPbkqi5ZW/lsebo+0UF7497W37mqYILA?=
+ =?iso-8859-1?Q?oSZX5tXFUfnD7UbGKi6/cXUS96DZVsp3j7e2X3FWTIi5B8P49FIClfC/La?=
+ =?iso-8859-1?Q?sYXO4oydJhrpIdFaDUvsKrBpmugk6a7/nEGWlnnBnbeXv0R29BJE8UQyxi?=
+ =?iso-8859-1?Q?/pokDMwul+Lyeh35ds0W7SRfZqhz2hZ2XW?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2cef0c46-de5f-4170-bd6b-08dcc5e7bc79
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Aug 2024 15:57:07.1585
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 9Iyt9HyzqUYnTUEk7cM7xPs2RRcLy2Lr50sR9LSiaOb4KYvKuzq5cP/njX27hSFr3rb7G0+wcrxOTzt6WEud6A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8690
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240826_011330_417519_703CFC03 
-X-CRM114-Status: UNSURE (   5.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240826_085717_297377_243334A8 
+X-CRM114-Status: GOOD (  35.99  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,23 +165,127 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-SGkgQ2FybG9zLAoKY2FybG9zLnNvbmdAbnhwLmNvbSB3cm90ZSBvbiBNb24sIDI2IEF1ZyAyMDI0
-IDEzOjA5OjU3ICswODAwOgoKPiBGcm9tOiBDYXJsb3MgU29uZyA8Y2FybG9zLnNvbmdAbnhwLmNv
-bT4KPiAKPiBBY2NvcmRpbmcgdG8gSTNDIHNwZWMgNi4yIFRpbWluZyBTcGVjaWZpY2F0aW9uLCB0
-aGUgT3BlbiBEcmFpbiBIaWdoIFBlcmlvZAo+IG9mIFNDTCBDbG9jayB0aW1pbmcgZm9yIGZpcnN0
-IGJyb2FkY2FzdCBhZGRyZXNzIHNob3VsZCBiZSBhZGp1c3RlZCB0byAyMDBucwo+IGF0IGxlYXN0
-LiBJM0MgZGV2aWNlIHdvcmtpbmcgYXMgaTJjIGRldmljZSB3aWxsIHNlZSB0aGUgYnJvYWRjYXN0
-IHRvIGNsb3NlCj4gaXRzIFNwaWtlIEZpbHRlciB0aGVuIGNoYW5nZSB0byB3b3JrIGF0IEkzQyBt
-b2RlLiBBZnRlciB0aGF0IEkzQyBvcGVuIGRyYWluCj4gU0NMIGhpZ2ggbGV2ZWwgc2hvdWxkIGJl
-IGFkanVzdGVkIGJhY2suCj4gCj4gU2lnbmVkLW9mZi1ieTogQ2FybG9zIFNvbmcgPGNhcmxvcy5z
-b25nQG54cC5jb20+Cj4gUmV2aWV3ZWQtYnk6IEZyYW5rIExpIDxGcmFuay5MaUBueHAuY29tPgoK
-UmV2aWV3ZWQtYnk6IE1pcXVlbCBSYXluYWwgPG1pcXVlbC5yYXluYWxAYm9vdGxpbi5jb20+CgpG
-cmFuaywgZGlkIHlvdSB0ZXN0IGl0IHdpdGggZWcuIHRoZSBTaWx2YWNvIG1hc3Rlcj8KClRoYW5r
-cywKTWlxdcOobAoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1pM2MK
+On Mon, Aug 26, 2024 at 10:04:30AM +0200, Miquel Raynal wrote:
+> Hi Frank,
+>
+> Frank.li@nxp.com wrote on Fri, 23 Aug 2024 13:55:15 -0400:
+>
+> > On Fri, Aug 23, 2024 at 06:04:26PM +0200, Miquel Raynal wrote:
+> > > Hi Frank,
+> > >
+> > >
+> > > >  static bool i3c_bus_dev_addr_is_avail(struct i3c_bus *bus, u8 addr)
+> > > >  {
+> > > >  	enum i3c_addr_slot_status status;
+> > > > @@ -388,6 +405,14 @@ static int i3c_bus_get_free_addr(struct i3c_bu=
+s *bus, u8 start_addr)
+> > > >  	enum i3c_addr_slot_status status;
+> > > >  	u8 addr;
+> > > >
+> > > > +	/* try find an address, which have not pre-allocated by assigned-=
+address */
+> > >
+> > > 	Try	to find			has   been
+> > >
+> > > pre-allocated?
+> > >
+> > > > +	for (addr =3D start_addr; addr < I3C_MAX_ADDR; addr++) {
+> > > > +		status =3D i3c_bus_get_addr_slot_status_ext(bus, addr);
+> > > > +		if (status =3D=3D I3C_ADDR_SLOT_FREE)
+> > > > +			return addr;
+> > > > +	}
+> > > > +
+> > > > +	/* use pre-allocoated by assigned-address because such device was=
+ removed at bus*/
+> > >
+> > > 	  Use      allocated
+> > >
+> > > pre-allocated or assigned?
+> > >
+> > > I guess the logic should be:
+> > > - try the assigned-address
+> > > - look for a free slot
+> > > - look for an already in use slot that must concern a disconnected
+> > >   device
+> > >
+> > > But the comments are not precise enough IMHO. Can you rephrase them?
+> >
+> > How about:
+> >
+> > Follow the steps below to obtain the I3C dynamic address:
+> >
+> > 1. Retrieve the assigned-address from the device tree (DT).
+>
+> I guess here you mean that you try to pick that address, unless if
+> already in use on the bus, right?
+>
+
+Sorry, It should be typo. See below
+
+
+> > 2. Look for an available slot address.
+>
+> "available address slot"?
+>
+> > 3. Look for an address that is pre-reserved by another device with
+> > assigned-address in DT, but where the device is currently offline.
+>
+> I don't think this part is precise enough. You don't look for addresses
+> "pre-reserved" but rather more for busy address slots, which might no
+> longer be in-use because the device is currently offline. The fact that
+> the slot might have been pre-reserved in the DT is a detail that may,
+> in some cases, not be true. And as far as I understand your changes,
+> you're not checking the DT addresses but rather more the addresses that
+> have been allocated live (which is anyway better, because i3c might
+> very well be used on a !OF platform).
+>
+> Once we settle on a description, maybe this can be part of the kdoc for
+> the main function searching for the best dynamic address?
+
+I am not sure I understand what's your means here. The current framework
+is
+
+1. Get a free address first, the get more infromation from devices, like
+BCR, DCR ...
+2. Check if it is old device, or dt node have assigned-address property.
+3. if it is old device, switch to use old address (if old address is free)
+according to i3c spec. If dt pre-reserved address is free, switch to use
+dt pre-reserved address.
+
+To match 3's requirement as much as possible, when 1 return address, which
+should avoid return dt's assigned-address.
+
+
+/*
+ * I3C Framework Address Assignment Flow:
+ * 1 Initial Address Assignment: Attempt to obtain a free address first,
+then gather additional information such as PID, BCR, and DRCR
+ * 2 Address switch:
+       - 2a: Check if this target device is appeared before. Switch
+to use prevous address of this device.
+ *     - 2b: Check if this target device have assigned-address property in =
+dt,
+switch to this address if it is free.
+ *
+In step 1, i3c_bus_get_free_addr() is called. To optimize for step 2b, this
+function should return an address that is not pre-reserved by any target
+device with an assigned address in the device tree (DT). If no such address
+is available, it can return an address that was pre-reserved by a target
+device that is currently offline.
+
+ */
+
+>
+> Thanks,
+> Miqu=E8l
+
+-- =
+
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
