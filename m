@@ -4,174 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40AD1CA0EC3
-	for <linux-i3c@archiver.kernel.org>; Thu, 29 Aug 2024 21:15:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D391CD13CF
+	for <linux-i3c@archiver.kernel.org>; Mon,  2 Sep 2024 06:15:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Cc:To:In-Reply-To:
-	References:Message-Id:Subject:Date:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=S1bauCkCsy2z0AP0N3wc5zm+U9Kl/JCiIge+V5PJNlA=; b=Ij1XqaPzISS34XwrhR+4Xh+Zme
-	CIc4g6HU5upPJy8CATl033Ev0mOhgyRAUaE/yjaLf/kh3wkQ8mnYZvsqrzW24f8eNvDl/6vEd819j
-	soHMVU7D+GW8eS9414ljYvJwzW04F3ZV4NWqyXiITVkp+0C3/lmE5wSu8f3ZYwzQIh5cx1BKFb2gi
-	rBCdAhTwerDqKBBROeX800KE3uujTi5b3nFw6RSvZg5B6o7q8vJIYIo9/knM+5D3+/H81vCKvCGVX
-	8oN17PKdDnJGSq2Mf4PsF9PzV3IhDxWaJIKxUPp+HeBdcjOuexP/fv3Cx10AJLjaDoj+HU1/3gdlC
-	YAXHv8Og==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wkPTuN2qx61DEMXEU5RAFLpj9f3Bf1Yr0ZAQAYSdqbo=; b=0cPMxQ6eF9fIku
+	6iEfYy80DcRTH+nx4/0BrzgS3S/3nf+2c61VtG2x2WVYOoS9Tc0tGLSapwdiMHZJNc3DtVf2tG3sq
+	UMm7CafUTdOO6JLgh9Pf89xE7f2L93kYpLfdrlzapkX1wMCkQlFCg06ajI/fKg3W4v7QNoK36iSpn
+	W4B/r4sVSPywqJ7bD80dLUV7Y4td6x433vCni3jDUT5R4xiN38zkhSrW6z/fq68O+FInd2NDN6Isl
+	Gwl2IIlbHQfIVvC81JZjacmgcuH936W8KJ/AksLYxAXVSceOQXE5xFdGddC6BNys0ifBlJ/HunOs7
+	cHyrY/9IyxLyJDoYSFbQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjmUO-00000003f4T-3ez6;
-	Thu, 29 Aug 2024 21:15:32 +0000
-Received: from mail-northeuropeazlp170120003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
+	id 1sl0Ln-0000000D7l2-07Lh;
+	Mon, 02 Sep 2024 06:15:43 +0000
+Received: from mgamail.intel.com ([198.175.65.12])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjmUL-00000003f2f-2oAY
+	id 1sl0Lk-0000000D7kV-04qZ
 	for linux-i3c@lists.infradead.org;
-	Thu, 29 Aug 2024 21:15:30 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=ZwxaHeP3MN9BaWjLwO61fPQMynQEQKOlRf8rRmHosmxtWF2oudyvDE+WcOEbjjDpQ7PGi4AZrDiGrAxiC0PZc2vwDkdolFhR09f0KbcUBSNIuih8yK4f4x2ssarA0w9v57oHM3SPZLDIcEvr56apXMyW3OwUOcxFLGHpQ2j7fWQUl4IA9sQ7ux4DOtDhbk5lXabMOMV35Tk7nvOE6Z21pia0WFbZy8hF9Vh8Y2wWi4Tqzsr+B5EsVBjMsZ4GhnN6Cc4Mq43BiEHql5AhA6iHDByFbb6QOAkM48vzqUiqtpXRpFQs4hyIFbr4lTx4IHAKC2rmIEAqh3W81hKx24jDtg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=l+wM5XFFRbRdoH83tWAzH9EHEDGwXzNFWdNBvKh93EY=;
- b=sAxTnOIR0/Tc0Abp/IDfQI4nYm4eVEZl+oHhkQAUCB5xQ2BFBuI0osMScw90ppBigPtDb0doav1bYchbsxO2KI90zTn5RgPEdVhrtMAX9K0SN9czlGJiDESSc7zby7kBb34Ojhb6XszdQZbGsZdxupdGvwWAfdr3wYDZmSkG5ye8L5+4fzux9e8P1XvXqYVlOFt7Wnzw/i/2+QzHCzD48FdlJ2hT4gUUEjWq2gOtESio68NIJqX7IC9K293D88UyS4Qo9mg5EzixDWbjxsiOzusEuJGsBXOwovJyAPtU1pCNOc8EHjYxbqlHbg14qO4Tnjf2VGmO1hHk2j0ZWdHc9A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=l+wM5XFFRbRdoH83tWAzH9EHEDGwXzNFWdNBvKh93EY=;
- b=Eyn0RUq59+ydzykMiopNsweBdpst1oMq5T/MQKL46/pDnEcfx7w2MR0I/9NHu+bhkDc0iruNTwRyZZ5+QGq8qcVh19fRqxfA84Sjq7jxdyD7JPkD/eLrIJvTWuKPjvEicy+dy3KlEbJ+1AtJ0OULS7dTbzLtWhHpRVI6pBdITrHsMDGqc2eIADfDpmRHNMgDC1S7lA6JaZ9eCCUUBZqxOD48le7B8u20i09cu7EZCLLFerpGBZM+CYdMBmP95GY/Qr+Ff4x9cHtJDmvcClA9UCBHlzBKWBxrmgRCA2prWM6W1tmFnoUXOOzVkmNwqcHKdfEvTxcJ6CkK0bJFfGTw0Q==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
- by AM9PR04MB8971.eurprd04.prod.outlook.com (2603:10a6:20b:40a::5) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7918.20; Thu, 29 Aug
- 2024 21:15:21 +0000
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06%4]) with mapi id 15.20.7897.027; Thu, 29 Aug 2024
- 21:15:21 +0000
-From: Frank Li <Frank.Li@nxp.com>
-Date: Thu, 29 Aug 2024 17:14:08 -0400
-Subject: [PATCH v4 11/11] i3c: master: svc: fix possible assignment of the
- same address to two devices
-Message-Id: <20240829-i3c_fix-v4-11-ebcbd5efceba@nxp.com>
-References: <20240829-i3c_fix-v4-0-ebcbd5efceba@nxp.com>
-In-Reply-To: <20240829-i3c_fix-v4-0-ebcbd5efceba@nxp.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
- Boris Brezillon <boris.brezillon@collabora.com>, 
- Parshuram Thombare <pthombar@cadence.com>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Boris Brezillon <bbrezillon@kernel.org>, Arnd Bergmann <arnd@arndb.de>, 
- Miquel Raynal <miquel.raynal@bootlin.com>, 
- Conor Culhane <conor.culhane@silvaco.com>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
- imx@lists.linux.dev, Frank Li <Frank.Li@nxp.com>, stable@kernel.org
-X-Mailer: b4 0.13-dev-e586c
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1724966083; l=3184;
- i=Frank.Li@nxp.com; s=20240130; h=from:subject:message-id;
- bh=AHcqgly/vmoU+jJ+4HNr0fpgvCz9aPVFw5NId2LgYsM=;
- b=0VnkJGxAJrsl06sm4Q7m0MJStVDIHL9X8VwXMfWEyiHZdMs19KXgj9cBZzvu/mZoO7o/agbna
- XxpkRjLB24PBzgJjoLbfBoLT7OIc77CR44IMpbqnnM3g7Vectva8HmV
-X-Developer-Key: i=Frank.Li@nxp.com; a=ed25519;
- pk=I0L1sDUfPxpAkRvPKy7MdauTuSENRq+DnA+G4qcS94Q=
-X-ClientProxiedBy: SJ0PR13CA0219.namprd13.prod.outlook.com
- (2603:10b6:a03:2c1::14) To PAXPR04MB9642.eurprd04.prod.outlook.com
- (2603:10a6:102:240::14)
+	Mon, 02 Sep 2024 06:15:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1725257740; x=1756793740;
+  h=message-id:date:mime-version:subject:to:cc:references:
+   from:in-reply-to:content-transfer-encoding;
+  bh=oQeEtOb2bMnH/NIz8TrJl1Iq8ZuigwPcNPy/sTgYkxk=;
+  b=X4zzpH/fw4eu6YS9rQgrQDPiaRg2YPKzcs0TVDCd3n+mb5sRCxlw7dWD
+   WVsqKrIX7TnVeAKQUZBS6F2OPaqjDS+j+qPcGqdRhqSBxs3uDJYWEE9af
+   W2YkmKRnlvo54O+DH3HgWjFa2vTQiBlLyU8BYeDDBCOVBCXPsF1oTtHsS
+   iE8Xhhuj3ODD9vTnwGwJEsJA8zWEJmUoXqfAxQ2ty4jv6fc+3nrpnuJCk
+   UmwkjUSfa/RKty9YKzOKIGY1N6WxE54PIVxSDASGVxnroehoeJIGfLSL/
+   vZlfnSVMaMyji36jEZGjFNDL63FauDZLRvLOfM/61HaeHLNg9vdpmoKNf
+   w==;
+X-CSE-ConnectionGUID: X5X4mN42Q7ai2ABK1qIvlg==
+X-CSE-MsgGUID: GFd0R5TmQoGXQdywg30fGA==
+X-IronPort-AV: E=McAfee;i="6700,10204,11182"; a="35189756"
+X-IronPort-AV: E=Sophos;i="6.10,195,1719903600"; 
+   d="scan'208";a="35189756"
+Received: from fmviesa007.fm.intel.com ([10.60.135.147])
+  by orvoesa104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 01 Sep 2024 23:15:36 -0700
+X-CSE-ConnectionGUID: Cx2XLCMKT8W4OJJK43fvqA==
+X-CSE-MsgGUID: 8dI3IJJARGic2o30bY8kCQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.10,195,1719903600"; 
+   d="scan'208";a="64196909"
+Received: from mylly.fi.intel.com (HELO [10.237.72.58]) ([10.237.72.58])
+  by fmviesa007.fm.intel.com with ESMTP; 01 Sep 2024 23:15:34 -0700
+Message-ID: <17e2bf2a-0c9d-4668-8f01-23651ce1970f@linux.intel.com>
+Date: Mon, 2 Sep 2024 09:15:33 +0300
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|AM9PR04MB8971:EE_
-X-MS-Office365-Filtering-Correlation-Id: 8a6b77b2-82e0-44f9-a876-08dcc86fb119
-X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|1800799024|52116014|7416014|366016|38350700014;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?Q3puY1B1bDB5WlA2N3RjbVhxaURTa0daNHE0SFBSWW1Fd3RZVEZ0OStKMWty?=
- =?utf-8?B?TEhzU0tRcFFYczNHbnZUbUJhQytra0FHV1hBaVlXUFhVWmFOQ3NqNzZ1M3BL?=
- =?utf-8?B?RUtiSjNaM2FMbzRuaHZKaC8yelVVNVRBMTQ1THUxZmZlQkdocGdVelQ2N2V3?=
- =?utf-8?B?aE9MRDVucGNiWVA1dklLSE40T2JDYXc5T29BVWt2NkNkVVZRR3ZoeXBqeXph?=
- =?utf-8?B?NmJqZFFnTU1IMGZPT1cyek1mVkwyNzFocE9kRGxnUm9BNXRSMnlwMU5oWjg1?=
- =?utf-8?B?akx5WFlCRmZjMWJiM1NLRFp1dnZ4NUx5K09EdWppZEk3bWxoaVdqN0t6bmpC?=
- =?utf-8?B?dDV4VlpxWWhRcVYzWUpHQXZObys0TkRMbzhkNEZGelUyYUszSFNzSHZldkMx?=
- =?utf-8?B?eklMaXgzVVMxQll2eTFrbnNiY3N6ZVpRTGRReDdrVkZJcW1oRnc1TlFHdlhY?=
- =?utf-8?B?MHBCUzFLb05SeFJ0TzZLeWx2WnlUTURob2FsRGZSY2haK0t3RG9yWjdpNzky?=
- =?utf-8?B?RFg4clhMSmk3QWFMVkZYVVd3NXhUNW9vcnJVODRIMEFyOWZrQ0xtblJ4amc3?=
- =?utf-8?B?RmQ5M2plT1RkVTloaG9GVVR2MUlTRzhzOHgvUjBlZ1NjT05sY05LaE1nRDRX?=
- =?utf-8?B?bnhMUHJjeGp2Y3d0bVR4d0dNTkVLYml1ZUVEZFFmTEdEL3BvNUJHTG9RSXp2?=
- =?utf-8?B?TGVvTlZHTVRNWUxZcXRTc25XMUVldFJLSG5ITU5ZekkwdkpBZ3JMdHZENS8r?=
- =?utf-8?B?VGI2RkZTbUo3TUEwK3dLVGhaR01kajV0ZFlXTXRnR0hnc2kyL2JjYVltRk55?=
- =?utf-8?B?OCtGMmJtMTZtSitrcWZHTDlURjhsZmVPaU1uK24vTndVL08zQy9WNnIyem5t?=
- =?utf-8?B?aUZmQ2N6T0RORUhyallleXBtLzFkYWlvekNLaC9SUE5kdVc3Nks1cEh1UTk3?=
- =?utf-8?B?QytRRkZudzhGQjY3S1FoV1dlSWdrUFppRStKQmZCUnNOQ3ROTnlZbVE5KzZk?=
- =?utf-8?B?dnBWajlmZkxuNjYwL0doTnFEM09RRWVpSXpPVXNPMngrQnozK0QzVVEwam00?=
- =?utf-8?B?c08wem5tMHBMZlVIZXlyOTJWTkNXRWtHN3NWOTRMYTJOWnlnL21zWStmWk43?=
- =?utf-8?B?SGV5QThYZ1RSTHRyYjQ5MHlkeGFpRUEvdWljM1JUeFhjN0lkZ0c2TUJaODRY?=
- =?utf-8?B?RUxzUXlYWHU3MXVMaUY5ZFFmUEloV29oVnBlVTJVSXZXemMxcUtQekNWR0pG?=
- =?utf-8?B?NVVaVXFkYmZ2UWlKSmw5VUhwYjBZdXFvSjBDZ3NPTzVNRHpvcUpYMnR4NkJP?=
- =?utf-8?B?S1BoZXhxdXcxWDRZSlM0MG16ZzI4TVNjbmUySDlRQkhWZ3hybVRaZkhtR2hF?=
- =?utf-8?B?cE5sU3MzajhrNk9qRDRiU3A1RkkxVXZ5RDZDSGF0R1B3OG81UnIyc2RTMEtP?=
- =?utf-8?B?eU00UytGVkxSS2JXTGlmQXRMcHdnbE5yREJ2Yi9ORjdDcEQwcklzWXpWVGxa?=
- =?utf-8?B?c0FxbVFnV08xS1pUSVNlNDROZ3JERitPaXhQeTY3eUxBZDQxQTlZTlVSNWJQ?=
- =?utf-8?B?eWtKVVI5eFQ0L3lPWVNDZlZXTUVmV0d4UTE3SG51d2dzSFN5cjBuclQ3NnI1?=
- =?utf-8?B?Zm56a3dGMWNBaWh2NUpjb3ltcDZZU2RveVlSRUY0N1FSelU3L3g0TkUxN0NO?=
- =?utf-8?B?dHNGbTI1ZjVJOGFvVVY3RHRzdDFmcit4TXVrazBXR3RldmROMW4zSVkzYzRl?=
- =?utf-8?B?dG5YcTZXcWx3Y0R3WlB4OHpYT0ljNDBRWUtydGxISy9oQWhSclhHRTNUNGs0?=
- =?utf-8?B?ZWVmazc4Z1ZZSXVHMWRHc0JZb0FUUW1UcDBRWmowWCs3bFR3bURWanl4aVRH?=
- =?utf-8?B?RUkveHlGdHR4SVlzY0RiRlN3ZEd3MFZUUkJIN082dHNLZWc9PQ==?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(52116014)(7416014)(366016)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?ZTVNaTQ2WnVJVmdiRjhieXdYeXF5S2F2ZHRyeEE4M2NOQTJGMlo0RVRSem9B?=
- =?utf-8?B?VXlYOFRwM2ZPWW9XTG8vd2xGQm1EK1NCU3hrVWZpUlU4Y0llTmtZUzhDTEVa?=
- =?utf-8?B?TXJYREpPS2dkVEFOMmFJbkdUeTdPTHY0cTVxWTdlYWpzLzI4b3BTMlNNUGlH?=
- =?utf-8?B?T3pjN3N3NGRnZlZRZWxZVjJDQ0g5U1A2S1FxNWdoYm9XRjlUVUdjVHpZZ2t5?=
- =?utf-8?B?ZWl1QU9rQ0ErYS9CcEdvVm5hZW0zVENhNnQ0akdxMkNvZVN2SitVMTNia2cv?=
- =?utf-8?B?dmp2OEhncURxblByR0R6QXJFbWJhZXNNaC8yNlBCY3FXc1o2RUx1a0VPVk96?=
- =?utf-8?B?dTRJSzhVclFXUnFvVXg1Z3NzWjY0Y1pYSFRpSXA2a3lxWDdUeVdEYzZWVnh0?=
- =?utf-8?B?OWhSU0RSaGxJS1YvVFMxTnA5d1FOSXluSjBmQWFOVE5hOGZMcmVHdjdlVmky?=
- =?utf-8?B?am1vbWJiNGJBcm05Slh1Z3RBYllaUXJuMm1PU3g3SkJxVjNZVXpRdVZ0UlY3?=
- =?utf-8?B?aS8vRUh0ZytvNksrZE4rU2s2QXFVUThuNVlJa3JXWWZxT09XZ3B0RTA4cEcy?=
- =?utf-8?B?d2NVeERhRTlpVHc3UENlWEdZelUwdW1ST2oxTmZqcDRlVzVLTjJGdGhRWVoy?=
- =?utf-8?B?TmMwcHhTcENPNGZXZWFRNlVGcFJScC9jWG9wZCtyNjFSS29oRlI5VHRUNDVD?=
- =?utf-8?B?R1FJVjdYNUFxRzlwRjZUVEg3UFA3ZjdXSUZxeGVpZWxRVGlMZUFoTXl5ZVp1?=
- =?utf-8?B?MnJ6b2Q0OHZDb0t5dWtNRE9wQU9NamhKdytiaFkrQ3I1WHRuQXJRNkJqazdJ?=
- =?utf-8?B?R1VFMU50Nkl6YUhhSEx4TEZ0KzdnUGplY1JRM2NLNXVRR1ZuSHVGMm9PQkhp?=
- =?utf-8?B?TXByZCsyQmZaTm5tK1EzK3oxdjRZQldPNHdoQUZ5VlRjemM2NFRwV2RmYW1V?=
- =?utf-8?B?d0xYUHlrY1F5NkdxT2NCY1FZMGVEYURMYWpjMUo4QjhrdkpxYmdMV0FLaFVO?=
- =?utf-8?B?OC9GM0dXL1grdWNOR2h3M2ZwVlV0dy9tTDI5SXduWVFqYUc1SHlrWVdHL2Np?=
- =?utf-8?B?dUxpcWkxWE03cmlkZmplR3ZYdHA5L2duVGdrZCtJNE5OR2luWjVrbk9XSjky?=
- =?utf-8?B?YldpV2wrRDY1cDFOT016WnpWenJLWXEyTUx5QnJFZ1F4cXpGanJtUzdwRlJH?=
- =?utf-8?B?VWE2YkFuSmNJQ0FiOGtrbmpWNGM5TG9OVkkvc0JSWXBnUlcyWVEwN2lnNWJn?=
- =?utf-8?B?NVpFQzhqYlh6N3NnK1Rsa25Ic2hCaXRWNmFBWFIyWEU1SVVCUmxldW4xTUo2?=
- =?utf-8?B?ZkYrZDBjWDYyaTlReDlKUzNrUDNKcEsvZzd3aXdhZE9GWXplZWhieVZUcW1E?=
- =?utf-8?B?bU9kcGJjVGp0eEpCdmNMbEMvVUtoeTEwTktMWng3YjJwdmdzUTVxTVlOTTFu?=
- =?utf-8?B?R0xMcTZFbTFqaVlTRFhQeWhkWGd6czB4dDcyOWwyeUo2L05UNTkzR3BlNkpL?=
- =?utf-8?B?WTBmNFNpaW1veEVTYVNsYlgvbXYvT1UvUTc1ckc4NE5GSTgxQis3Smg3eEtu?=
- =?utf-8?B?ejlXVVg1SEwyYXVpeFNuMkpBZW1GRVlSaVAweVBsVmZZck5vLy9pMm40NWo0?=
- =?utf-8?B?ak9yUGVIeXVkM0xLNGtzQjBZZllpQ2RYTmJtOVV1U2tHblVsQm03NVFiaFFB?=
- =?utf-8?B?WkFDbWsyY2ZGQ1JrdXJUa1o0c2h6clB0eWJuUzhNY05rcVRlZTRrK3JWRDMr?=
- =?utf-8?B?elpPZnpTNi9JUmZEd21TZGJhWFh5ZGp5UWZVTXdaQk9aNjlqQjlZbXVMRGZJ?=
- =?utf-8?B?VEZOL0ZiSyt6YnpZam92VDNEdmF0M0U4dGJIKzQwazJaUXVVZWM1aTZRNzdI?=
- =?utf-8?B?aEpQSXlaQklzNGE3Njd6Mi95T2VKUnRNSmxrVFVIVHh0Qk1ReW5XZGVYRlJj?=
- =?utf-8?B?YWM2bkllbGZ0c0E3Ti9jeFo5aUVRRy8vWHJHY1pWMUx5b3liWUhJR0hIc1o3?=
- =?utf-8?B?ZEdwWnZtb0wxR2ltaGIzTllCSXUvY3p2dzR1WlJEOVlBeGxFc0s2eU5LSTNJ?=
- =?utf-8?B?YmdYTGdSdm9TeWJrNmNoS2dUUnNlRWdvRC9jemNlNjlyZDhwd2x4M3FTQjUv?=
- =?utf-8?Q?a50oUXWiriox5AQStUOhCk1OY?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8a6b77b2-82e0-44f9-a876-08dcc86fb119
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Aug 2024 21:15:21.9011
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: dQk4Ej28I1weAx7kZza93Ulc0FGfZTaPPfh+f2m/0wC64762D/vT5la70piuHZ9hNO/hcsJSet30MpGBDitU6A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB8971
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 2/6] i3c: mipi-i3c-hci: Read HC_CONTROL_PIO_MODE only
+ after i3c hci v1.1
+To: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: Guruvendra Punugupati <Guruvendra.Punugupati@amd.com>,
+ Krishnamoorthi M <krishnamoorthi.m@amd.com>, linux-i3c@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <20240829091713.736217-1-Shyam-sundar.S-k@amd.com>
+ <20240829091713.736217-3-Shyam-sundar.S-k@amd.com>
+Content-Language: en-US
+From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+In-Reply-To: <20240829091713.736217-3-Shyam-sundar.S-k@amd.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240829_141529_753476_E10EE6B9 
-X-CRM114-Status: GOOD (  16.22  )
+X-CRM114-CacheID: sfid-20240901_231540_174572_23F24EE7 
+X-CRM114-Status: UNSURE (   9.10  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -183,90 +85,25 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-svc_i3c_master_do_daa() {
-    ...
-    for (i = 0; i < dev_nb; i++) {
-        ret = i3c_master_add_i3c_dev_locked(m, addrs[i]);
-        if (ret)
-            goto rpm_out;
-    }
-}
-
-If two devices (A and B) are detected in DAA and address 0xa is assigned to
-device A and 0xb to device B, a failure in i3c_master_add_i3c_dev_locked()
-for device A (addr: 0xa) could prevent device B (addr: 0xb) from being
-registered on the bus. The I3C stack might still consider 0xb a free
-address. If a subsequent Hotjoin occurs, 0xb might be assigned to Device A,
-causing both devices A and B to use the same address 0xb, violating the I3C
-specification.
-
-The return value for i3c_master_add_i3c_dev_locked() should not be checked
-because subsequent steps will scan the entire I3C bus, independent of
-whether i3c_master_add_i3c_dev_locked() returns success.
-
-If device A registration fails, there is still a chance to register device
-B. i3c_master_add_i3c_dev_locked() can reset DAA if a failure occurs while
-retrieving device information.
-
-Cc: stable@kernel.org
-Fixes: 317bacf960a4 ("i3c: master: add enable(disable) hot join in sys entry")
-Reviewed-by: Miquel Raynal <miquel.raynal@bootlin.com>
-Signed-off-by: Frank Li <Frank.Li@nxp.com>
----
-change from v3 to v4
-- add comments about not check return value
-- add miquel's review tag
----
- drivers/i3c/master/svc-i3c-master.c | 27 +++++++++++++++++++++------
- 1 file changed, 21 insertions(+), 6 deletions(-)
-
-diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-index 83b2943074866..a520f5482b592 100644
---- a/drivers/i3c/master/svc-i3c-master.c
-+++ b/drivers/i3c/master/svc-i3c-master.c
-@@ -1039,12 +1039,27 @@ static int svc_i3c_master_do_daa(struct i3c_master_controller *m)
- 	if (ret)
- 		goto rpm_out;
- 
--	/* Register all devices who participated to the core */
--	for (i = 0; i < dev_nb; i++) {
--		ret = i3c_master_add_i3c_dev_locked(m, addrs[i]);
--		if (ret)
--			goto rpm_out;
--	}
-+	/*
-+	 * Register all devices who participated to the core
-+	 *
-+	 * If two devices (A and B) are detected in DAA and address 0xa is assigned to
-+	 * device A and 0xb to device B, a failure in i3c_master_add_i3c_dev_locked()
-+	 * for device A (addr: 0xa) could prevent device B (addr: 0xb) from being
-+	 * registered on the bus. The I3C stack might still consider 0xb a free
-+	 * address. If a subsequent Hotjoin occurs, 0xb might be assigned to Device A,
-+	 * causing both devices A and B to use the same address 0xb, violating the I3C
-+	 * specification.
-+	 *
-+	 * The return value for i3c_master_add_i3c_dev_locked() should not be checked
-+	 * because subsequent steps will scan the entire I3C bus, independent of
-+	 * whether i3c_master_add_i3c_dev_locked() returns success.
-+	 *
-+	 * If device A registration fails, there is still a chance to register device
-+	 * B. i3c_master_add_i3c_dev_locked() can reset DAA if a failure occurs while
-+	 * retrieving device information.
-+	 */
-+	for (i = 0; i < dev_nb; i++)
-+		i3c_master_add_i3c_dev_locked(m, addrs[i]);
- 
- 	/* Configure IBI auto-rules */
- 	ret = svc_i3c_update_ibirules(master);
-
--- 
-2.34.1
-
+On 8/29/24 12:17 PM, Shyam Sundar S K wrote:
+> The HC_CONTROL_PIO_MODE bit was introduced in the HC_CONTROL register
+> starting from version 1.1. Therefore, checking the HC_CONTROL_PIO_MODE bit
+> on hardware that adheres to older specification revisions (i.e., versions
+> earlier than 1.1) is incorrect. To address this, add an additional check
+> to read the HCI version before attempting to read the HC_CONTROL_PIO_MODE
+> status.
+> 
+> Signed-off-by: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
+> ---
+>   drivers/i3c/master/mipi-i3c-hci/core.c | 9 ++++++---
+>   1 file changed, 6 insertions(+), 3 deletions(-)
+> 
+Reviewed-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
 
 -- 
 linux-i3c mailing list
