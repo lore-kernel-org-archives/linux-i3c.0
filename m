@@ -4,146 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D36BCD4F23
-	for <linux-i3c@archiver.kernel.org>; Wed,  4 Sep 2024 19:11:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9786DCD4F51
+	for <linux-i3c@archiver.kernel.org>; Thu,  5 Sep 2024 05:50:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LVvnTSnugIO/Vk3/2wJOYn241QFYUa14buNWpOLDsnE=; b=GhbPyeRMDh4FEL
-	7O1DhO8Ja9cdVh5GsDgiDJQFDgiRFu6Kvvz+m4CLmjG1FLKLnn2N+uOqHflu8Pny55+l9u/iJYAtf
-	3FT/hHvpy3E11mhuQzt1+n9VgSURmZnajYB50EDfSo3a3n4SC75XpRq5lmG0i++22Q8p/vvfZ2zV4
-	K3d191zHrEGgw761OKs0Ulqkat+FAsDoX5R+bnXC/HOB/lhdCDrw7D5vT+OIFtEI6nJd0GXyrudBO
-	7pwxPdKz2C/5/GovafBT+PUzHSIWHVzwI9XKTglyMkUV+LZL5P6FIUHzFBqEtzU6XV6p/IymGXdLF
-	HV46pksFvoEEoZayx1VQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
+	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ED5qY4sdvOlsCSn/r7O+5Tj06Q58oqhOsD1zMcPY2/k=; b=3oPKRbHSROqdLrK6CpnAfTrolT
+	vB+hrvIHJ8KLpflgHkvs126KmtT4X8AC7pTwsemeW3jDDWfRvxwSme58hHJcy//iaxO0WJl53ns/n
+	8+0Ez3Rmsv+4Rr9Z0GJqyA2dSbeGVam9m6Nx/51/bC+LjA6EIkawM/BFXlG+8lRw3e+j99HuhZRtZ
+	XKKnYqfqS6Shruppnhr0IZcl9EoO9f5wIVSNax5KORVhGz1GR4qruBoOmrhoKlX2Px6yk5O0g4szm
+	Vdrgi2za2YwItU7Xc8Jfud93JQUulv0z0PZWY8PvtJ/DfdY1OAmbZLzqlio0A0kFq5mpK4U8J24Cp
+	0nZ1m4Tw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slvPY-00000005lF5-1L8C;
-	Wed, 04 Sep 2024 19:11:24 +0000
-Received: from mail-northeuropeazlp170130004.outbound.protection.outlook.com ([2a01:111:f403:c200::4] helo=DUZPR83CU001.outbound.protection.outlook.com)
+	id 1sm5OK-000000075UW-41pg;
+	Thu, 05 Sep 2024 05:50:49 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1slvMU-00000005kSu-15KV
+	id 1sm5OI-000000075U2-0RiR
 	for linux-i3c@lists.infradead.org;
-	Wed, 04 Sep 2024 19:08:15 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=uORTMBTESn4hcs3ApVqRiZs8sTAm4iU1CzRS0fE6pkx/Adygs7KpVcvBJjANMrp/4IzuTkNboZ6nFzj3MIfxYp3N34uF+Jr+Q73GoIE5XB+xx952lke+oZ/SCZE7e8TpPhPrb7jfERfoNH2eNG9J9QH1wzE6kTuqUuFasXLGnfRjawYdRfo0YUjJsuNZzt9jJnTt0MlmTo2kgGpvHn8haHwg5NqBCOHIWStrUglgNA2y3e6zE6E2h4X27BI6RkpKjKMlkgB/OEFSFkIF89T4so4ndb9fCqHZKfFgzgnT67tqVMi/2NTxoziBFKeopnPpAUb/aDqyvC1U+OLyKq/z1Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=y0pcnbZ6siZSJsk5YmUDdSthBm9tNqjXw/PK70O5sxM=;
- b=hyrQIh0RV8JVdfo3aU7ZgDoPbwJeEZzTEubHndnCQgJNGKiW4Zc8azADqMD02u3AuM68lL8K3ZBINBBqzDc0kLV3ZYpZdUWoqCKw3i+vYCWvzi+7gvYPL8hKcCjW9PnTqI6UvgdX/nPKRcV++wl1mbuc3vP50eC7dhxhCiZTgd2cMKN3e5g9aJN/eQjGFMsMron8+mRG04AMBVxXiObYhwHOL/nXU2neWVWmamGh9flNVwpCVxgHyBI5ALZfnEcTev0D5vO9Evt2/eQagiRugGZJNp3nf3BHpmnx0PCm/WYms9sEfAW7aVhpGjFpIfs0djwuDyzjur7xR4qLw0GxJA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=y0pcnbZ6siZSJsk5YmUDdSthBm9tNqjXw/PK70O5sxM=;
- b=HjHwqogyheYDNhJFrD9m8+ndhAr5ffS4B1+GVOVVTDvLi3jayqAdOon8iw2JBSh7dTPkalTYZtFzbduxnJczjIgsB5lpkPBFw8h99n4ZF1n72PZAmOQj2CSFU/gCTlyKyKOUxY2y3hBdlFrQSZLTi1EmcNam0/j93eNVJTcSbsacOAmR1ZYt78BXgYptu97bHYFlwbVRalgzj3EznfyiT3Q8u9lbC5KXxPkIVX0Zuwdr9uOTcCHAgusb5yajvphJ/OXytfJB7fJgqC4vV7HsBFKo/s4dEnK5xpRx5Emy+4Ojn2KNo/AQbgbfxJZtUlj2O/7Wj7Klb6wtpQuIk5C5nw==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
- by VI2PR04MB10858.eurprd04.prod.outlook.com (2603:10a6:800:27a::9) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7918.26; Wed, 4 Sep
- 2024 19:07:56 +0000
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06%4]) with mapi id 15.20.7918.024; Wed, 4 Sep 2024
- 19:07:56 +0000
-Date: Wed, 4 Sep 2024 15:07:49 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Miquel Raynal <miquel.raynal@bootlin.com>
-Cc: carlos.song@nxp.com, alexandre.belloni@bootlin.com,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	imx@lists.linux.dev, linux-imx@nxp.com
-Subject: Re: [PATCH v3] i3c: master: support to adjust first broadcast
- address speed
-Message-ID: <ZtiwBUDaVgL9Ejr+@lizhi-Precision-Tower-5810>
-References: <20240826050957.1881563-1-carlos.song@nxp.com>
- <20240826101323.746b617c@xps-13>
-Content-Disposition: inline
-In-Reply-To: <20240826101323.746b617c@xps-13>
-X-ClientProxiedBy: BY5PR17CA0054.namprd17.prod.outlook.com
- (2603:10b6:a03:167::31) To PAXPR04MB9642.eurprd04.prod.outlook.com
- (2603:10a6:102:240::14)
+	Thu, 05 Sep 2024 05:50:47 +0000
+Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 484FxEPf020925;
+	Thu, 5 Sep 2024 05:50:35 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	77SH1uvNfWLkio+SufQcVBbFIq8m2g0KthoEkMukAU0=; b=ORluSlYhqChwmtPW
+	9p4a6YMFpOY6UEz0oHZK/6Tfu5C4TDU22ps+eOF3ZwK6Ucco/HCTz/vb/QjA7M3E
+	U46M8YeppE4GbNtE09RdR5XrGeEh+9et9G2yZrdzLvyMwT++TYUJha4cLOPdapQ0
+	ySlFpfLWiX+xKuAxwXvNpYbM8+ngv2OyhYipws717Kp1qt+C7V7a/3XS23eVfJ+E
+	Q5Et7ZnWZ0kiwi88cB0ZIUWvUIljDDzN+Stir3FVMTzVxdAC1wRkwSeimP1M4vY4
+	V56X5T1OP8FmcAfqNFRnUkYN5zA6Dj7FAjp2W0jiTraLR+1He//pJtqTx9Nn0rK9
+	t6RtzA==
+Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41dxy26asb-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 05 Sep 2024 05:50:34 +0000 (GMT)
+Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
+	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4855oYFS002282
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 5 Sep 2024 05:50:34 GMT
+Received: from [10.217.219.207] (10.80.80.8) by nasanex01c.na.qualcomm.com
+ (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 4 Sep 2024
+ 22:50:32 -0700
+Message-ID: <cc94e66f-6fa0-4499-a851-bac90533eeca@quicinc.com>
+Date: Thu, 5 Sep 2024 11:20:29 +0530
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|VI2PR04MB10858:EE_
-X-MS-Office365-Filtering-Correlation-Id: d4a17284-5658-4557-ad46-08dccd14e271
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014|52116014|38350700014;
-X-Microsoft-Antispam-Message-Info: =?iso-8859-1?Q?5/V395DPyH/Mbw64P7w5n4IwqVXND8OB3l7u6o6vI1YtRUJVIaUsfU//88?=
- =?iso-8859-1?Q?CxYAQkxbTcCe02LZkT86TqwSXNvbuy/weyvsuFjamoF8ydSVz8IDiIWomS?=
- =?iso-8859-1?Q?Hp5dNBv8uZcU+0ZCVF3KNS/w/DbOXVYOesp5vCdfVrh54JGrGHPVepoqAF?=
- =?iso-8859-1?Q?4nkDukjfy1hXBGopL4lKEP/WKAHZOsOE5l9V5KtVnpZosAiQYKL2JAA622?=
- =?iso-8859-1?Q?Vrkf/S/jbxGWpaSfPEi4yaq3R9Fe1QH4UG9lCS+jyxQ4TU+RUA3xgIeN28?=
- =?iso-8859-1?Q?V+d09khZR5QRrDBPs8+1uhsxF3dpgrm3fZ/BCArLhKvDHUZnGdVoh/lMP+?=
- =?iso-8859-1?Q?GkTys27mUuFFDoBOFx3JtgB/5PQXjlzXb2vybdxg/LLKIVw5Wti+rLQse2?=
- =?iso-8859-1?Q?gnm0lQfYLO3Z7/vEp4sZMhOInT450fL0mkDwg3OJhMCOdlQkCQosve8bNv?=
- =?iso-8859-1?Q?k1ufXLWG7TsLEujNJrPt0rQppoJVWu8ytsjW7E+TJH8z9E98A/5Fptd6Ew?=
- =?iso-8859-1?Q?LmSNQxgYQRbfeSXq+h1szZ1d7JtslHVvj1b+ic6HWz/O8nBEag1h5pBKB2?=
- =?iso-8859-1?Q?R6kNqbt5tN7StI6QYv+6d4BT8K6ocw1mIVmZG+lQviyT1olpwKMEvB63Ps?=
- =?iso-8859-1?Q?WtSqCxUcyhrY24EIkAKdVsX3vP/1+0n1lFBu+9PxilRO3TEWm98PjO4agg?=
- =?iso-8859-1?Q?fZCFnvflzDS+BUpOkeOs9BN19cOLRqvEA2ovvANsXMeLOJr7SWFBh/0OEq?=
- =?iso-8859-1?Q?x8Z2wCQ2TwMHaqiLJ09sdYM4R0ONdApBiWSXLRCH0Y3TYDOGah85Zq0bpk?=
- =?iso-8859-1?Q?d3plrl31Z6zL4RBlJlekxpRUlUyjN2hmSob6tooyzMOk1q5Cg7yTBwPxHq?=
- =?iso-8859-1?Q?tAHoZE8dfAU76Fw6Ww7w0VPVlCVO668mJjDbvWq9NwonHpKs3+mgm+D+kq?=
- =?iso-8859-1?Q?3XWsQq946JL3tzOR/KdZrratP0+lDjUIGwFe1A9qr8S8UmanuPrgv5Pgsm?=
- =?iso-8859-1?Q?IE7MpjpQ5onAGwzM+3r77VcXHUsTWXWSVbawjUXBPPGrbYvCr4dVVt3ULp?=
- =?iso-8859-1?Q?iqWPtP/LgpzzYBquYQlwnfh2HhoNc9jeEYcykc51EWXBQzLJVEF8a4PysT?=
- =?iso-8859-1?Q?xYFczN/v5YASFVQBMXoWP+DYNgH5ar1VSb6KNYa+dqg/iRhG3Ckyl5TzoS?=
- =?iso-8859-1?Q?84I46PpkGIZ65CYCB74O8V3vUllUrhM4FYZzF+KEGUP3m1ol9t52Ilvceh?=
- =?iso-8859-1?Q?oEPFQH1Pnxj96r68j6B8lghbiQCGAisZCg1eh54ZJySPKa5a9X/3uu8/Mz?=
- =?iso-8859-1?Q?cqeVWenPq8+uzAqPiHLwy0QKgAuQL7bwlzn1ujjhrOYUkxyn9mN2z4jblh?=
- =?iso-8859-1?Q?+19vl1lovb7uYy8sI6ndsx0Dy+iqrWc8NxbG5dsjok3k6i73u89bLFDQyv?=
- =?iso-8859-1?Q?LnvNsCBM34y9bgIo5jeKQ4WXB3k/BkggYkZnQg=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(52116014)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?ecW/xu7SVN7MYGmtScx7TS0nPZ2ZBCHZsSyk+O/UpY353bMSDxtoLGSTW0?=
- =?iso-8859-1?Q?J9G1insxfEWhfKP4cMUnfHnuIKYdCa5xl8NMI6I2HKhXdfHPMpqKGk5aWb?=
- =?iso-8859-1?Q?XY67OkYJ/s9zhb4QQ7LvjfpyU879XCqJqYHZIBDR/G70qNDrD43T5xmqH9?=
- =?iso-8859-1?Q?qMXvIjVbThdEAtWONhLjpDmwoyVAictG8zE4FqgnLE+t2nwhhzGJuWPH9B?=
- =?iso-8859-1?Q?bcuMiwksAgpSe9lMh9kqicFgwDVbU1XPkpYaOsjIUjlpPcWfcgmLA5quM1?=
- =?iso-8859-1?Q?XMJ9w/DTzzx3q/KcyuCq1HePbuy51L42LQucKOMnZvbHLou90THWoce6IV?=
- =?iso-8859-1?Q?Sr6S+zi+qQyqoA9ncSDswgEMp/U8TaflQWrqvExQTQv/SLv7hkprWLXWMg?=
- =?iso-8859-1?Q?jxZpDrNtZwJlooepySp+q1cgdCa5rdIieISBGjDJ2msHAhN1pnaDIOyUCN?=
- =?iso-8859-1?Q?Uufn2+N9yoXUiOIOBWUXZklqI0/KACM83Io9b1SuWa1AT7DQPAFP8d9B/E?=
- =?iso-8859-1?Q?ZIs8bExJhc+LoMD+JnHlv8tGKz9oOjnA+7BqvyT6k0+1T5KLMFtMXiYFw1?=
- =?iso-8859-1?Q?x9GcAn2ke73nWb1VbGRnXCuyO6VuW7LYIBnhoPFJSh2UCbSnNIxXrFtA1f?=
- =?iso-8859-1?Q?nX3aQDH6QUaBqDp59BLKiCK5sDrDaR+Qpaf4o0kYI5Kkfh0fo7KI04sndE?=
- =?iso-8859-1?Q?GJLYFallkrmbjv5b8x5Rp2jvhkWoYfFhBa9J3XD5xGrECjzZ49cXq6wQj4?=
- =?iso-8859-1?Q?Cx5OR4oonPnSi7KxntsAkfwms3aSOyS/3bf69WwT2Fwi/uXqtdMaSznpa+?=
- =?iso-8859-1?Q?ALwMw8YVpbtilXD5dNwDsTnzXNZ0RXfZJAqpfhrQ53tRkg4oJL7jnRgNQc?=
- =?iso-8859-1?Q?vlkz9WPyS/oh4MuQEGWsAPIeUJSfVt6WWLMSmhNKRitOxJ+/AkhoabUJSM?=
- =?iso-8859-1?Q?KkiSbaWd/ITNLIIbun1p5T4NKuKPbsKxsl9Fu5DZIpVaI2yrk5+oO6U4HC?=
- =?iso-8859-1?Q?RmAtmYb/AqayzkoiVJLMSqP6pr6beBcKwpJHpqyzbg935e8iytipQyMMmt?=
- =?iso-8859-1?Q?37IAKfArYtZIaeI8yHscoYGhOlJhY6X1El3F9L0P757CNjq8mb0pnPcZCh?=
- =?iso-8859-1?Q?EhMJ8Q5otG0POZsMHybMK/fqkzowCRo9rPrjkd2VdHhE6wRu9wzL6hP8iN?=
- =?iso-8859-1?Q?+ravbeUUfwvyQuvs8fL7vv9lcB7/xAhgHrE5Wp/JSvPBI+zhLntqF2nq0j?=
- =?iso-8859-1?Q?5tp3KcNewzQdSl9XuJwiSkdTF9uuTjnGCYZd9zo7Kc/AnfEC5qRwEESptk?=
- =?iso-8859-1?Q?WhrOnsGhSjw1D/19tEm1U4ApM0CZFS8yWLEXqA7KXxJDcAs8BG8jxys49/?=
- =?iso-8859-1?Q?lNtAB+8UpEb/4lxvWI437KtajNdTqBy0fsskJhOVJVq/9u/i4rTwKzvRZM?=
- =?iso-8859-1?Q?ror34HnkY0ajbQguLg1Zva+CDIeaf54FbcfKTgdeCEc6A9KLW1nxLA1zk1?=
- =?iso-8859-1?Q?b9f6lP10Cvs7nHpmVGWWPFsL0zhyaeM5wuw1Z2OVo6XI/fT+ua7Zn2Yga+?=
- =?iso-8859-1?Q?2KJv1nMoHGpEmUZVbAtIQ+VP9RVWLgkqRlKeOjkqK44uwdfl0pIO0AG8kJ?=
- =?iso-8859-1?Q?K5Aaeadlx6+1ihuocGqeLx+D8yTQoGPY5i?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d4a17284-5658-4557-ad46-08dccd14e271
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Sep 2024 19:07:56.3866
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: /cja4uWnbkxwHtnyk1+0jL3EnvK2Yugk+hxmfTetyXeylupUXtV+qRxlXj+SJHzrLFIjy+vubQ4r9fQqXIR5Mw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI2PR04MB10858
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v1] i3c/master: cmd_v1: Fix the rule for getting i3c mode
+To: Billy Tsai <billy_tsai@aspeedtech.com>,
+        "alexandre.belloni@bootlin.com"
+	<alexandre.belloni@bootlin.com>,
+        "jarkko.nikula@linux.intel.com"
+	<jarkko.nikula@linux.intel.com>,
+        "linux-i3c@lists.infradead.org"
+	<linux-i3c@lists.infradead.org>,
+        "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>
+References: <20240826033821.175591-1-billy_tsai@aspeedtech.com>
+ <OSQPR06MB7252463A7C81BF18811DB6EC8B8B2@OSQPR06MB7252.apcprd06.prod.outlook.com>
+Content-Language: en-US
+From: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
+In-Reply-To: <OSQPR06MB7252463A7C81BF18811DB6EC8B8B2@OSQPR06MB7252.apcprd06.prod.outlook.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01c.na.qualcomm.com (10.45.79.139)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: -fLAWtVrUT3z_pMbs6UmvaSq9103PQoa
+X-Proofpoint-ORIG-GUID: -fLAWtVrUT3z_pMbs6UmvaSq9103PQoa
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-05_04,2024-09-04_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 adultscore=0
+ impostorscore=0 bulkscore=0 priorityscore=1501 phishscore=0 suspectscore=0
+ lowpriorityscore=0 mlxlogscore=939 spamscore=0 clxscore=1011
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2407110000 definitions=main-2409050041
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240904_120814_324572_3C91C20E 
-X-CRM114-Status: GOOD (  13.16  )
+X-CRM114-CacheID: sfid-20240904_225046_193595_10491883 
+X-CRM114-Status: GOOD (  10.17  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -155,57 +100,43 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, Aug 26, 2024 at 10:13:23AM +0200, Miquel Raynal wrote:
-> Hi Carlos,
->
-> carlos.song@nxp.com wrote on Mon, 26 Aug 2024 13:09:57 +0800:
->
-> > From: Carlos Song <carlos.song@nxp.com>
-> >
 
-carlos:
+Hi Billy,
 
-	I just realize you missed sent out svc implement.
+On 8/26/2024 9:32 AM, Billy Tsai wrote:
+>> Based on the I3C TCRI specification, the rules for determining the I3C
+>> mode are as follows:
+>> I3C SCL rate > 8MHz: use SDR0, with a maximum data rate of 8MHz
+>> I3C SCL rate > 6MHz: use SDR1, with a maximum data rate of 6MHz
+>> I3C SCL rate > 4MHz: use SDR2, with a maximum data rate of 4MHz
+>> I3C SCL rate > 2MHz: use SDR3, with a maximum data rate of 2MHz
+>> Otherwise, use SDR4
+> 
+> Sorry, the description of the commit message is wrong.
+> I will change it to
+> I3C SCL rate > 8MHz: use SDR0, as SDR1 has a maximum data rate of 8MHz
+> I3C SCL rate > 6MHz: use SDR1, as SDR2 has a maximum data rate of 8MHz
+> I3C SCL rate > 4MHz: use SDR2, as SDR3 has a maximum data rate of 8MHz
+> I3C SCL rate > 2MHz: use SDR3, as SDR4 has a maximum data rate of 8MHz
+> I3C SCL rate <= 2MHz: use SDR4
+> and send the v2 patch
+Seems some typo errors, you mentioned all the modes having maximum data 
+rate of 8MHz. "has a maximum data rate of 8MHz"
 
-https://lore.kernel.org/linux-i3c/20240807061306.3143528-2-carlos.song@nxp.=
-com/T/#u
+I3C TCRI Specification (in [MIPI06] Section 7.1.1.1) :
+MODE 	Listed Speed 	Maximum Sustainable Data Rate
+0x0 	I3C SDR0 	12.5 MHz, Standard SDR Speed, fSCL Max
+0x1 	I3C SDR1 	8 MHz
+0x2 	I3C SDR2 	6 MHz
+0x3 	I3C SDR3 	4 MHz
+0x4 	I3C SDR4 	2 MHz
 
-	Suppose both patches should send out together.
-
-Frank
-
-> > According to I3C spec 6.2 Timing Specification, the Open Drain High Per=
-iod
-> > of SCL Clock timing for first broadcast address should be adjusted to 2=
-00ns
-> > at least. I3C device working as i2c device will see the broadcast to cl=
-ose
-> > its Spike Filter then change to work at I3C mode. After that I3C open d=
-rain
-> > SCL high level should be adjusted back.
-> >
-> > Signed-off-by: Carlos Song <carlos.song@nxp.com>
-> > Reviewed-by: Frank Li <Frank.Li@nxp.com>
->
-> Reviewed-by: Miquel Raynal <miquel.raynal@bootlin.com>
->
-> Frank, did you test it with eg. the Silvaco master?
->
-> Thanks,
-> Miqu=E8l
->
-> --
-> linux-i3c mailing list
-> linux-i3c@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-i3c
-
--- =
-
+-- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
