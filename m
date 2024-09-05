@@ -4,89 +4,145 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF643CD5BA2
-	for <linux-i3c@archiver.kernel.org>; Thu,  5 Sep 2024 09:55:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84B68CD5BCB
+	for <linux-i3c@archiver.kernel.org>; Thu,  5 Sep 2024 15:08:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZZ51xXDbsfnvQ5YpIf0UMhhWbjmsglfWUGyMCcYzdHo=; b=NxZ3zFsB+RTWCy
-	sAijX/5IcFeE1oM/mPEwFi8iW+jz4Bljn+DMbNZVVcM2hdoOxAOlUt+87v+T0aMzyo+T0JOunUhSF
-	4d0Xmu6//BgspFKKGcwrZCFKrvax7RXvGWeDs6OYvH8ukB08Oj05t8oEjYzmiCFw7Hp81OL6lAqnw
-	xXbYF0vAzL0EqeC9R0ZOgUMVeZ7Xodc73CQR0/5ONozhp6i+QyqqcnxLs76tCpyvOBZjo1nNo0ag/
-	miV5OjAU0oM0tLqwbe0ZgCMDywpIojfuL5A7GJ9tYfD1vmge57fQ28QX3qlu8aIwx88rqWsexlQa/
-	L/M9tOaybstkcBQuS5hg==;
+	List-Owner; bh=McUcOLIvJ8zRZAn1zCLN3IHQWCHursXaYUkDonEGdko=; b=y0QMh5cIjhUqel
+	YQyZM26NgA7CIJd39IvjApY5YV28iN6DP+s1Mnj3sTZbAe/BW4zXO2gTW4zrTMEbUbvB0JXxwQQMc
+	kfvcd5YMd3zZr9Dvpbu+76zHqJoPCsr+I3hmKQ1FZjSiYg766Z8PWY5BlB6xlYMV5/92Bz86sJSJI
+	LDhzgZpwnj1aAg2Dwd3T/Kuy1D6S6Xazj5otGPtj6mZJ6NReD2+z+hQ/iwMGA9gC36nzK5ahLGL0v
+	RlDdmFSKVOpFEOL96UB8rIA5shny2n4xJeq98kmgZAqF397yM09iQO4AT/x1kYNnJN/+2nkIJs5x6
+	eAviVKGypMez4EIgXdGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sm9DG-00000007rc6-0scB;
-	Thu, 05 Sep 2024 09:55:38 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1smE5b-00000008t2W-0Fwv;
+	Thu, 05 Sep 2024 15:08:03 +0000
+Received: from mail-northeuropeazlp170130004.outbound.protection.outlook.com ([2a01:111:f403:c200::4] helo=DUZPR83CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sm9DD-00000007rbN-0GE5
+	id 1smE5V-00000008t1I-39zR
 	for linux-i3c@lists.infradead.org;
-	Thu, 05 Sep 2024 09:55:36 +0000
-Received: from pps.filterd (m0279862.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 485972us021530;
-	Thu, 5 Sep 2024 09:55:32 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	eBMqXnOczsEWfeTQoQ51IDQfRhAhgM15JSl0gQxMj6A=; b=Nwwwea0W9WbcRxVF
-	2PmCAg0NDpYKxGvQygueg5nVyCwyc4MNbkgfjj9shpK30dun19947UnfHiDuC6S4
-	PHWiy3brVswKKHLeEDMfv+DeMbCNN+TrB3mN0nqY47wpZJXgJjlU6Y+NfGTyLF6i
-	o9MXLMAchYv2Atf+LnKLQzQfu8/oV57DUhdTMiaAL6jkqCqAGPWE8K48RTv0/Ehp
-	DP1dhmVuxEw+0FN1C9byjJbloNK4haOPGd9nNiNolT+FmQ+hMZERDo7IYcZzheNK
-	hWDA+kE6zBOYy0MzhsmpjoedmYMHr5yFzZelBTtPIptXbRUvf3Ewtw4prk5oSpRl
-	SYOUTQ==
-Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 41f6rngm2x-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 05 Sep 2024 09:55:32 +0000 (GMT)
-Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4859tENU025863
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 5 Sep 2024 09:55:14 GMT
-Received: from [10.217.219.207] (10.80.80.8) by nasanex01c.na.qualcomm.com
- (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Thu, 5 Sep 2024
- 02:55:11 -0700
-Message-ID: <3da836dc-d79c-41b9-aa44-06a94b812bbf@quicinc.com>
-Date: Thu, 5 Sep 2024 15:25:09 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
+	Thu, 05 Sep 2024 15:08:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=swj/vqeDO9CDO6Q6eNTcZeaOLqWK7Ub2mctdruvv3SQR+HEuXAUquMgaUZ85ePLquQa1gpJEJxeZNkd+d5uVgsEG5n8GW2Ai2PnEmSC1qhLQ5FWAL8qdFgkPdHs0Egl3/A2pGs7Zn09rf9T06QL8+kwi2mzNKmDgJUUP/5CDI7O4I6eVxgZh+75eeLQqSr3zf23qxNXw5RH0BN91xT990+tg4xwf8npg2wNpWzWNavGv89ngDXZL5PZJED8wLL6Y9b7LonwtLHHfnboEa26lY44WWo2sZso0ltrm12HpE4PjPL4ZamKpe/CgWrJxYYRlpXHe7vthZ4QHmRFy30EDng==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=HLltFxx3nsYekv2O1PUQxkWnaUeQTa7nrwL6wk7a22A=;
+ b=U0GmKIbEm5wRZUPpHIU2bI48uk7jGNrs5131tK5cVLbyCmf0HF8H1BK6aMCBZcWzpFLnekoyPK1Nrry78aCjI0sZarLPtUJc1/qB1FNhZCPOcsPuV+6Q7UabzqJM3yfiVhTGHnu4FC6wB6996BBQ1/4ha1nkjWaPWFopCVsOkOukaRl79gxKZsJd2Z/cmJj/AondT5CrmYw0QbDGDoOWr9fRYb/13OWWGYMRAw78yIU/EMC91oXuFwHZQfx/5Zg9SNaOwza5W7ZqSnXHu4SprBT7HQ/AGx1JgqHOPM5lppV03gDR8U1W/Z6rkywp8QraejyCHF10l2qyJJ1H+vH61w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=HLltFxx3nsYekv2O1PUQxkWnaUeQTa7nrwL6wk7a22A=;
+ b=eECuB1ADmelnPPB5eFB/AAnoGBkKb2zxvWzXiOXCEwufLqn/MhLjWSaHz084AFSNHqkj64jjh3X1zGxOFfiuNmBpFN36Nk+lO8mR1l9O6wlbsrt177RwP7D71USHJ33zMp7ygktFMpIy/rqxlVcoueq2xw6NfjjEdRGOmF4fcfTpfx97cJMK0y6ipc7xx8tk0ugiEU7WGBYrT9OO173TSpJsLGNSJ8MBcxUjrzi5gercqg8rRU1x48z/kk90JUnYlWNozZiVoP8irAZ6How9pBGvbFDRqh7o5SWYvVcL+eGt2r5KWVrhLviZB34SFflKixLyV0QK8UThJ4JG04lAkw==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by DBBPR04MB7628.eurprd04.prod.outlook.com (2603:10a6:10:204::21) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7918.27; Thu, 5 Sep
+ 2024 15:07:51 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06%4]) with mapi id 15.20.7918.024; Thu, 5 Sep 2024
+ 15:07:51 +0000
+Date: Thu, 5 Sep 2024 11:07:45 -0400
+From: Frank Li <Frank.li@nxp.com>
+To: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
+Cc: Ravindra Yashvant Shinde <ravindra.yashvant.shinde@nxp.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	"moderated list:I3C SUBSYSTEM" <linux-i3c@lists.infradead.org>,
+	open list <linux-kernel@vger.kernel.org>, imx@lists.linux.dev
 Subject: Re: [PATCH v2 1/1] i3c: master: Avoid sending DISEC command with old
  device address.
-To: Ravindra Yashvant Shinde <ravindra.yashvant.shinde@nxp.com>,
-        Alexandre
- Belloni <alexandre.belloni@bootlin.com>,
-        "moderated list:I3C SUBSYSTEM"
-	<linux-i3c@lists.infradead.org>,
-        open list <linux-kernel@vger.kernel.org>
-CC: <imx@lists.linux.dev>, <Frank.Li@nxp.com>
+Message-ID: <ZtnJQdu2V2DPmT8R@lizhi-Precision-Tower-5810>
 References: <20240820151917.3904956-1-ravindra.yashvant.shinde@nxp.com>
-Content-Language: en-US
-From: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
-In-Reply-To: <20240820151917.3904956-1-ravindra.yashvant.shinde@nxp.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01c.na.qualcomm.com (10.45.79.139)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: --tq_WtyveLVUmGPAkj8J0FB7csNXAuG
-X-Proofpoint-ORIG-GUID: --tq_WtyveLVUmGPAkj8J0FB7csNXAuG
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
- definitions=2024-09-05_05,2024-09-04_01,2024-09-02_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 adultscore=0
- lowpriorityscore=0 priorityscore=1501 spamscore=0 suspectscore=0
- bulkscore=0 impostorscore=0 mlxscore=0 clxscore=1011 phishscore=0
- mlxlogscore=999 malwarescore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.19.0-2407110000 definitions=main-2409050073
+ <3da836dc-d79c-41b9-aa44-06a94b812bbf@quicinc.com>
+Content-Disposition: inline
+In-Reply-To: <3da836dc-d79c-41b9-aa44-06a94b812bbf@quicinc.com>
+X-ClientProxiedBy: BYAPR07CA0064.namprd07.prod.outlook.com
+ (2603:10b6:a03:60::41) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|DBBPR04MB7628:EE_
+X-MS-Office365-Filtering-Correlation-Id: 8550551b-3aa3-4e5e-5f4e-08dccdbc8310
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|376014|1800799024|366016|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?E31lthL3B5tlmXwQNWzGcSbbhqXVFNfcl+jPFq9DPalgkn+X5ehFc6fGKwQZ?=
+ =?us-ascii?Q?PHOBwlZFDaVxAYrjPA8lYl4FtysB/D0P/ajeFosrriD0RcP9EYg9LLJ+SG+P?=
+ =?us-ascii?Q?pJJSCn1IC59DM0o1vplAzZaY5HzoKGRkzdYYGbs3KmN/amXjc9qTQ5Y6YTDI?=
+ =?us-ascii?Q?hXf77QM2/kMHw2ZK2I9Sre+1SwC/+vc3qZsrfMO5PVcsSpckmc5COnNf6Z8s?=
+ =?us-ascii?Q?1JmlGCX44Rxvvl+WC9BXE0lU3sVCmHhPCrDMZW9Am1qqgruMGLqX7R4Ak6fO?=
+ =?us-ascii?Q?JG991SmYnED9MqrMCfx1Idyj3/muomt3ci66Iz1rTsDxRm9RKcsGFH0G3V7O?=
+ =?us-ascii?Q?sZmvrPbTAzmCCjkH6DkhIWY/Ru4JiOqIh18znhWIWpaaTWcDrsAFAL2JFU9T?=
+ =?us-ascii?Q?5MnpBIw0M2V/o180Pv2qCRAozM+ZM5Hk85CqtWBEvvQ9rHKeoa1ReO5Og5Tj?=
+ =?us-ascii?Q?jNV0ophrpsarP4QBrKf5jP+cuxHNv9uRHeWJtUtBYEtvbXFooV4pcSWxBJUo?=
+ =?us-ascii?Q?8qeuUtqz6Him7sbraOL6RvBqnnGSc1Xoe0+qusuM48pLZXFO4mosQQ/Xw4xJ?=
+ =?us-ascii?Q?QxuGbRL9c3XUkccARqSXFq5vr9BNadBJfZUPXeY/2Gqy/scAeG4K0oZrI3k1?=
+ =?us-ascii?Q?h6bWUOiB0KRtG1PduXnVnLsjBeg8PrjxjjJyMlHhTjtp1PRK/S7FR6Mf7RJP?=
+ =?us-ascii?Q?gTeibtKf33zMNrsehX96kcPQ84HH8B3o/E6/vpQFm0OfKHMrYcXs3/ilGYFK?=
+ =?us-ascii?Q?mknYgKnBXOuMxnow6DnkM2NVvMY/0cje/6NPJSpz07odgbSQ0ahEJ9Nn7MY3?=
+ =?us-ascii?Q?bWBhgRxlD5NSlWEs/pP4sdMzc/EFcW3LkxG47yJe4d8w+Iry3N92FCeDwgQs?=
+ =?us-ascii?Q?NWr+JgRpbmKWpR/kyRsB8c1IHpWIjdgeEqRHSxFOYfYN/IKIFv8WHDXI/tIL?=
+ =?us-ascii?Q?CqZVrCINCA/i3D8PrhFcwTcByASlJd/j5svEacAdlupSJb7a2ecN5xhEQZSF?=
+ =?us-ascii?Q?m5mnDF25Wh7J5BOuOw9zIsapx2hsqL+ZMbJqoRHMxLIIjp9S3hmFUPFCQDEV?=
+ =?us-ascii?Q?dItVdm6skPHm/ivGjSCmzcGDNXkXlF3XznzdXP2eLWHpYq3Lb5Jmm5jGmnJ5?=
+ =?us-ascii?Q?2JS+xa9daFrIzEn2NiSPdzXL5pgM1yp2m8QHG3MZignKP13BxB2NUfbHS6e6?=
+ =?us-ascii?Q?2GvmkQ6I+kAA1CJE1eeFh+6sPyd8D4cq7yatzSbK8Y+wi9O1v+JVtJXmqBUv?=
+ =?us-ascii?Q?/w4S9Bm3ZItKA5y0RJJRKtUybNsqamKLd6ypjs+OjDbC+BVAK/kV2H6Lcu79?=
+ =?us-ascii?Q?x8RvdaG/a+VG2xVdGTO1WbULyhJcA+k/m/E+OpTJZq+cBRS6cu7/9+24c9KK?=
+ =?us-ascii?Q?lpoOrlgj24BmYsczMUK8EIJFv82XBOo+x3DiVBwQy8OklbnmRQ=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(376014)(1800799024)(366016)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?6mK0tIgmHftLAPDoTxMKUkYGInpOmp9BF4EbbUl5/crwg6NFUpjVixV/DeCu?=
+ =?us-ascii?Q?alEy87+qVK37wFEKkPj879XlBue+otnVp9D5mhvYCRT8PmlwYRNIjHIAg4a4?=
+ =?us-ascii?Q?59vWsbLl7UxvlobhlZq42spEVgOXF0jiB0llk62HAia1rxrg/j8zfyy+or5d?=
+ =?us-ascii?Q?KNiV/fZo6rPQcMf0CD02G/HjBmSlKeMByioS/2zjrI5YBKWSeARm3E213Ns+?=
+ =?us-ascii?Q?WWDRg3YD3MaCy1VhwsZIUqqmhBl9F4Ia/aaaF1YoLrXi/Sx8VvhAm2nIXljT?=
+ =?us-ascii?Q?a/3D/q/VC8LKNQFQPxGAnbeyiRH6Mg2QSrb53twoRWF2k2ksEv6KxIwWXTzr?=
+ =?us-ascii?Q?1JC4zAVtQyf4VrF3UGtTJQ68L8xiUg93gKFmAbjJFhVtiqG6VAkoO0QENkI/?=
+ =?us-ascii?Q?8XXNzCk+J8HeBgocBvcO+WhJWLPnq1YI7LNnf7TQRIWniI/UXwlqZCmiJFrS?=
+ =?us-ascii?Q?/azt+NAqIIN/YvnZmFLyOZ/qpUjICqudFQweWDE3dF4umykrvkQqg7LpbVTv?=
+ =?us-ascii?Q?clhB/5EHi1S7tvpGQ96kdNKQdWFeuPw1sTIp24vOYfZfRheonNUVsavmYh0t?=
+ =?us-ascii?Q?kLKYwLfLmMFMV7yPNDnWv3ZqvWu7OHpNPvkADJTXao3hLvw1UfmJmG/LiBJv?=
+ =?us-ascii?Q?9RwL6r1nMuqQGycdMvfK/ntVSIBbMx//fhljudDqthb2be2I4kf77uGnRDas?=
+ =?us-ascii?Q?0rEmArWLpjsW2qeyajWpQvtfNJPd8CLy3Eh6wz83ImOpu4OAtvInbFmZcwHW?=
+ =?us-ascii?Q?NMuUfhPzkaScfx76BVorrPIQ8HqeDDicVzOdQjVazO3MAdnhnVLBM8T2gKtS?=
+ =?us-ascii?Q?6wZsa4Awb+s94K1g1fd+ZW9JMC9wJlGIt5Pbju1HL4+bQksYAnVLoYYSEuiB?=
+ =?us-ascii?Q?fGquVhHNgJWQ1CKWXo7EZC9kw9Wf+0hOQ3urkJZufOjfxX3Xv3LBDm9tAHqe?=
+ =?us-ascii?Q?6hK5stdHAMRA2wibUCemIXVVK94whOVMUVyGGyGaQ7n/oj3LjPqhwzRe7aMt?=
+ =?us-ascii?Q?1xOt+Hym6hsjM/XXyT/YTcpK//LwvbiXpd9zD92kZUWwabBqM5gQBf3R23QC?=
+ =?us-ascii?Q?9PKkeVF89JpZCpolAH3uJr/h3/cJGZiKihwGRzGYIVfyz0YVmWWuZaSl1U4s?=
+ =?us-ascii?Q?pF5gPorN91pxCFjMkJ0rrfFxpqnirb7y9dLloyZ+1KULLXdO6TMcEHgbGxvv?=
+ =?us-ascii?Q?aCOJmkgjIHMtk1S1txwJnJRzzH8X/PFTaKcjokN9Pjx5ZaOAaPtLfDZzJNUG?=
+ =?us-ascii?Q?w/F2OSQTqWOuTtQ5OVuoA1br7wHdUW9cT0vwVeeaMwuuQ+BKYaeud+oZgvE3?=
+ =?us-ascii?Q?hav4tsJa+pZD0kc4e26l0eyhVoOm36Tvf88Lp6Jp/Ti4bO9cghgBPS1gj0xH?=
+ =?us-ascii?Q?ir5Phymb9jJ50tf18mz/EvTn12xTUJ+I/7v7dwM/h6FJH7Ef7i1QOZUd7TAy?=
+ =?us-ascii?Q?SnmEBPMah6VkgQy2T6tU5SIddh1n3PmAG5Nvfhx632eJeYeqAQ12XuOVGDwC?=
+ =?us-ascii?Q?Gbsm5/3xu9MAmQa580IeoadLKch/gVtiT+c9C7X6WEiwvufWJwD6WfJCJrcL?=
+ =?us-ascii?Q?+8IjhoC9LQknm+ZaMNY=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8550551b-3aa3-4e5e-5f4e-08dccdbc8310
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Sep 2024 15:07:51.7371
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: UCtZ5eGFSTpY5zNTNFVAP/n1pXvUHhQGF4nNAaW0g53f3uJiYTGSBBngz9IQ6Ehr0Wd6/TjkZQtXi7h1CI7A+g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR04MB7628
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240905_025535_146593_6AA997F1 
-X-CRM114-Status: GOOD (  25.54  )
+X-CRM114-CacheID: sfid-20240905_080757_821132_AFAFED89 
+X-CRM114-Status: GOOD (  30.93  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,85 +154,94 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Ravindra,
+On Thu, Sep 05, 2024 at 03:25:09PM +0530, Mukesh Kumar Savaliya wrote:
+> Hi Ravindra,
+>
+>
+> On 8/20/2024 8:49 PM, Ravindra Yashvant Shinde wrote:
+> > When a new device hotjoins, a new dynamic address is assigned.
+> > i3c_master_add_i3c_dev_locked() identifies that the device was previously
+> > attached to the bus and locates the olddev.
+> >
+> After  2-3 reads i could understand what exactly you are trying.
+> Could you please keep the complete commit log here ?
+>
+> "
+> The olddev should not receive any commands on the i3c bus as it
+> does not exist and has been assigned a new address. This will
+> result in NACK or timeout. So, update the olddev->ibi->enabled
+> flag to false to avoid DISEC with OldAddr.
+> "
+>
+> Make a complete story here, you don't need function to be added here since
+> description should make it clear to understand.
 
+This one is only partial fix this problem. I merged it into
+https://lore.kernel.org/linux-i3c/20240829-i3c_fix-v4-1-ebcbd5efceba@nxp.com/T/#u
 
-On 8/20/2024 8:49 PM, Ravindra Yashvant Shinde wrote:
-> When a new device hotjoins, a new dynamic address is assigned.
-> i3c_master_add_i3c_dev_locked() identifies that the device was previously
-> attached to the bus and locates the olddev.
-> 
-After  2-3 reads i could understand what exactly you are trying.
-Could you please keep the complete commit log here ?
+This one is full fix.
 
-"
-The olddev should not receive any commands on the i3c bus as it
-does not exist and has been assigned a new address. This will
-result in NACK or timeout. So, update the olddev->ibi->enabled
-flag to false to avoid DISEC with OldAddr.
-"
+Frank
 
-Make a complete story here, you don't need function to be added here 
-since description should make it clear to understand.
-
-> i3c_master_add_i3c_dev_locked()
-> {
->      ...
->      olddev = i3c_master_search_i3c_dev_duplicate(newdev);
->      ...
->      if (olddev) {
->          enable_ibi = true;
->          ...
->      }
->      i3c_dev_free_ibi_locked(olddev);
->      ^^^^^^^^
->      This function internally calls i3c_dev_disable_ibi_locked(addr)
->      function causing to send DISEC command with old Address.
-> 
->      The olddev should not receive any commands on the i3c bus as it
->      does not exist and has been assigned a new address. This will
-Isn't this the same device who raised HOTJOIN and seeking a new dynamic 
-address ? you intend to have no communication with older device address 
-right ?
->      result in NACK or timeout. So, update the olddev->ibi->enabled
->      flag to false to avoid DISEC with OldAddr.
->      ...
-> }
-> 
-> Signed-off-by: Ravindra Yashvant Shinde <ravindra.yashvant.shinde@nxp.com>
-> ---
-> change from v1 to v2
-> - Fixed the author name.
-> - Unconditional set to the false & added some comments.
-> ---
->   drivers/i3c/master.c | 9 ++++++++-
->   1 file changed, 8 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index 7028f03c2c42..0dd8d1c28d58 100644
-> --- a/drivers/i3c/master.c
-> +++ b/drivers/i3c/master.c
-> @@ -2043,7 +2043,14 @@ int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
->   				enable_ibi = true;
->   				i3c_dev_disable_ibi_locked(olddev);
->   			}
-> -
-> +			/*
-> +			 * The olddev should not receive any commands on the
-> +			 * i3c bus as it does not exist and has been assigned
-> +			 * a new address. This will result in NACK or timeout.
-> +			 * So, update the olddev->ibi->enabled flag to false
-> +			 * to avoid DISEC with OldAddr.
-> +			 */
-> +			olddev->ibi->enabled = false;
->   			i3c_dev_free_ibi_locked(olddev);
->   		}
->   		mutex_unlock(&olddev->ibi_lock);
+>
+> > i3c_master_add_i3c_dev_locked()
+> > {
+> >      ...
+> >      olddev = i3c_master_search_i3c_dev_duplicate(newdev);
+> >      ...
+> >      if (olddev) {
+> >          enable_ibi = true;
+> >          ...
+> >      }
+> >      i3c_dev_free_ibi_locked(olddev);
+> >      ^^^^^^^^
+> >      This function internally calls i3c_dev_disable_ibi_locked(addr)
+> >      function causing to send DISEC command with old Address.
+> >
+> >      The olddev should not receive any commands on the i3c bus as it
+> >      does not exist and has been assigned a new address. This will
+> Isn't this the same device who raised HOTJOIN and seeking a new dynamic
+> address ? you intend to have no communication with older device address
+> right ?
+> >      result in NACK or timeout. So, update the olddev->ibi->enabled
+> >      flag to false to avoid DISEC with OldAddr.
+> >      ...
+> > }
+> >
+> > Signed-off-by: Ravindra Yashvant Shinde <ravindra.yashvant.shinde@nxp.com>
+> > ---
+> > change from v1 to v2
+> > - Fixed the author name.
+> > - Unconditional set to the false & added some comments.
+> > ---
+> >   drivers/i3c/master.c | 9 ++++++++-
+> >   1 file changed, 8 insertions(+), 1 deletion(-)
+> >
+> > diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> > index 7028f03c2c42..0dd8d1c28d58 100644
+> > --- a/drivers/i3c/master.c
+> > +++ b/drivers/i3c/master.c
+> > @@ -2043,7 +2043,14 @@ int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
+> >   				enable_ibi = true;
+> >   				i3c_dev_disable_ibi_locked(olddev);
+> >   			}
+> > -
+> > +			/*
+> > +			 * The olddev should not receive any commands on the
+> > +			 * i3c bus as it does not exist and has been assigned
+> > +			 * a new address. This will result in NACK or timeout.
+> > +			 * So, update the olddev->ibi->enabled flag to false
+> > +			 * to avoid DISEC with OldAddr.
+> > +			 */
+> > +			olddev->ibi->enabled = false;
+> >   			i3c_dev_free_ibi_locked(olddev);
+> >   		}
+> >   		mutex_unlock(&olddev->ibi_lock);
 
 -- 
 linux-i3c mailing list
