@@ -4,58 +4,143 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4814CE6FE2F
-	for <linux-i3c@archiver.kernel.org>; Fri,  6 Sep 2024 15:50:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20FE1ECE587
+	for <linux-i3c@archiver.kernel.org>; Mon,  9 Sep 2024 19:58:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rQjm3jQOm/XJl9Mdc3VALpP5S9cBAbAJmfWsx4lKAho=; b=uBL3d+Rnynvbpa
-	IUNUyEN6Lj/oqcrBG3wx6mhJbZzeeQgPNv6d9HJ5U9ro6aIUwdn97yd5XOg9teYsiGs5qr+d1f2U1
-	4IQ/mbYZa2dnvDWve1qS8t+BZno8Z8HIAaUPBXvSt/CGIKND7LBMACM2q41dM49wNr94PBl+nMJIH
-	51PQuAMtUNQFj3t79Orqf4U/XkR4UgzeFcDkkacZGD2zkDRGoVR7dFyE+7nSjtMpTuumHatLuz9A5
-	YH1+EECp4VOU100JwLz17JXPtockqbCD1Mh2gj6wqqOrFA5xr8v24akugfDsXJytOU5AgHOfBDWV2
-	uQ1JbllbMgY95yq+ZzFA==;
+	List-Owner; bh=JwqwS2e/wD2TKqkyGrqI42b9s4y8k0xYEsj/Xw59nP4=; b=r5eBH3Nv0wGneL
+	OZJL3uh85NKKjIAcp2sgipqO1RVZUfixI5U4Q7gmuwpdp0UBMbGhJpbvQdBbUsFgO3aduqNNRAOX0
+	oBGjq8oo0FIAqQsiKBJBH9o/MFRk1js6HDi4DIiCSOTGTPXbuhfZfKduImqfxBlAUJ/Z/Zk9TnUKH
+	9j6h3QX9qM1dowspEXesKn/p8BoI13TMQB4p06OS5wH31NYPO2wLtvdx+Ydgj/BO6slVvVw7wB2bb
+	kH7Ane29g0uyzKTq0WcbosxTHMubQGekJ0uKoZC8KZ7t0tz+NW6n2+ikAWzPUkEjcmOfkNxX8kHzd
+	kPvEthPqT3wNpWAi5WbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1smbEB-0000000CqBW-2My1;
-	Fri, 06 Sep 2024 15:50:27 +0000
-Received: from relay5-d.mail.gandi.net ([2001:4b98:dc4:8::225])
+	id 1snkXK-000000039m3-0ukN;
+	Mon, 09 Sep 2024 19:58:58 +0000
+Received: from mail-db8eur05on2060c.outbound.protection.outlook.com ([2a01:111:f400:7e1a::60c] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1smb2r-0000000Co1o-3Hw9
+	id 1snkXI-000000039lT-0NYk
 	for linux-i3c@lists.infradead.org;
-	Fri, 06 Sep 2024 15:38:48 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 8C8591C0002;
-	Fri,  6 Sep 2024 15:38:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1725637123;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=4phgVOTHCmQ3HBq6bcLfhgvUwM7d3HDKaPMvxrXCk/Q=;
-	b=l1v2xZcSrhrOOhepIqsujTu+JcDkvfDxPR2ZTqv9TLjv6Zu9jlDJ6URgzaKXz7LYBsUkdv
-	UiWik8Mc+TWNn27SEs/p6LTtRv2M+BbONoPgAZhdubWq1BG/j556B6m+PN572HTkM4+gRK
-	FQTff8BZynFBvu9hfpf5hjtzrjCM9WEIISoN81q6e4DsYScRrQb3G/Qq3rxu04MLNUPah3
-	why0z5fepADZvgtXEnZMFWElV3wmz2KFwG7EPNql87bjdYByz/Y8JqMw8UxlyoNQXMxFYt
-	1mSIej2j+hZwtavetQvLgQQkntSqn4obvTxRxVKxJkSfPXtYZCprw/upgkhi1w==
-Date: Fri, 6 Sep 2024 17:38:41 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: jarkko.nikula@linux.intel.com, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Billy Tsai <billy_tsai@aspeedtech.com>
-Subject: Re: [PATCH v1] i3c/master: cmd_v1: Fix the rule for getting i3c mode
-Message-ID: <172563708354.975422.17313525144371866545.b4-ty@bootlin.com>
-References: <20240826033821.175591-1-billy_tsai@aspeedtech.com>
-MIME-Version: 1.0
+	Mon, 09 Sep 2024 19:58:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=tZeRVStikzQPq9ifzZxaAfC6JspIqygp7UaROnjYwx6Y7e9W15Ou1dDYEefAChqUSpHQcl1VVw/jb6QeyYkMTTjGH1JFh7NYjs9ZkZQxd+BhLveCq0KCTh7h2fIU/YO17D/AqciqFVFNmZeVWYX0Jhb20CnDxr1KdSS3/rHEFu4V6omfmKzniCaw37eH8aAcg/0NiHYfNMw6zvXt0jOij1n/+hImNZnyDrKDAd9cloGBMS++L79VXEi4LVVYL6h/eYcsETpxwqxXCSyMZ1w/kQQsyBz1pweEjV3TPfTJLzWhahGC6jPEEaUAW8LV9qaUsW/tFHFcVFXC1JGSr9es9A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ON2yRtmAamrjeP8SDtGS3+NTWDZP7Uc0UHafvhzam3I=;
+ b=ajHt+2xrzo5hAsZzeycnob/EHC8YqvxDtDdQM9Axb1HlSQo1q5i+5cdup2bND4pskb0k+5T/aOwe1+3XrvdxWZZ9jw514mi6KnX453yIK1K6abwMoKtz1YRiUfSLTmCm47gJImXnBa9Rf2L+IeCzQ1IQ3Ga8u+EMzsI9btP74ksUIstE1uB87q7CoGWsaeLBvJ/NV2rMEQcKtErOGOS2NChHD0F4ojs5kl9ZOgKw5mtRMPUgLep+jeWA302MjSE/ZvBwvJ70wgQZiBza5zu13FTl30/wyvfdP++udewvJlwjDdbWJgWECDCqq6Nz6O1AT61gMI+BleWAOOIHGn+zOg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ON2yRtmAamrjeP8SDtGS3+NTWDZP7Uc0UHafvhzam3I=;
+ b=bfv35pUTLOoWZVKNzLIFp1HCnK6oAKJYUnf8kAj/O93jOUVLM4NLEXuPgoNC1ENlURm72ZzRFII9UHIfQFNsCQPWOut3FqmQNX2SRCUwsCpsMifYBiC174sZ91taF6xPXhWJCa1nyUthTaG7e6gb2hb0XBuhpKz+PufSngfM5TbUGJ3s4x7p5P6C4uSIQes7xQzGqoDqN4yQEUgjNRZQyFS0aKfEapIAxuuZ1CEiM6RWDVneG4Dcoztk5f2A6xXqiCUtq+75shwcOAviBu7psajQ5xXrCXqdWuxbnNGbneeOHSG2gRETCWusy2XvcezPlDWGnzDyraXEfx2etUSXhw==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by VI2PR04MB10572.eurprd04.prod.outlook.com (2603:10a6:800:27c::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7939.23; Mon, 9 Sep
+ 2024 19:58:47 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06%4]) with mapi id 15.20.7939.022; Mon, 9 Sep 2024
+ 19:58:47 +0000
+Date: Mon, 9 Sep 2024 15:58:40 -0400
+From: Frank Li <Frank.li@nxp.com>
+To: Carlos Song <carlos.song@nxp.com>
+Cc: alexandre.belloni@bootlin.com, miquel.raynal@bootlin.com,
+	conor.culhane@silvaco.com, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev
+Subject: Re: [PATCH V4 1/2] i3c: master: support to adjust first broadcast
+ address speed
+Message-ID: <Zt9TcLqi34EDlI6b@lizhi-Precision-Tower-5810>
+References: <20240905074557.3810026-1-carlos.song@nxp.com>
 Content-Disposition: inline
-In-Reply-To: <20240826033821.175591-1-billy_tsai@aspeedtech.com>
-X-GND-Sasl: alexandre.belloni@bootlin.com
+In-Reply-To: <20240905074557.3810026-1-carlos.song@nxp.com>
+X-ClientProxiedBy: SJ0PR03CA0176.namprd03.prod.outlook.com
+ (2603:10b6:a03:338::31) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|VI2PR04MB10572:EE_
+X-MS-Office365-Filtering-Correlation-Id: ed4bac09-680e-455a-0a78-08dcd109d114
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014|52116014|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?YIXDlsdm8rTBgbcx5fbB+xJC1vpEVefkBJZSd7R/UjDci2g2QdUmgQ5SGGSi?=
+ =?us-ascii?Q?LNVZRGQxjVGn3VRGXV13Pmpn4HUL+ETnGkArvy4GkjBR5NKLaqu6b5zFwMAP?=
+ =?us-ascii?Q?8nl5wI2qSgwhqDOZmhIciKqkdF7PM3+40W/gzS0PYQULQ7BrnZy/gIq/uEZ9?=
+ =?us-ascii?Q?RFcV0VZ/NiCDD+8ycWmXjzkjRfRTe3lszLrQYNXO7P2XyIUf9/DOEzYOGtA/?=
+ =?us-ascii?Q?ki71fLgQJ8LlApYNjYAHMcsbUUKjL6vKzc32dNg39S+nfzSeFQ750iQeyNiw?=
+ =?us-ascii?Q?dmfGv38IEcp5ARZA4yCUar/izIeqbXv0BwGh/uV/yf1dHJLT8QsBSvFRQtJ7?=
+ =?us-ascii?Q?KgboeZliuzph37wDN63uPh6mtyi9PMgepDkgsImEszaYsn4IbSCOs+8FT8hW?=
+ =?us-ascii?Q?ZDrEGGDVZsF8BcUQdAPaYyBEwkgMI6u0hHe3uZ9kNJScPK59yVgJWC6BkFrR?=
+ =?us-ascii?Q?GoAqeEjPZvMU/HDN0OucbfLM/fuLD8ksZ/t8Gattf6orcpSUTgGNkUiyVfJw?=
+ =?us-ascii?Q?5i7uBYVUO/ktSKsbFikp9DNKr1DSTmo6o1jV4oDzfgY/W3ACD1JktJ/AqN+7?=
+ =?us-ascii?Q?tzxPEEVE/WT7FsMD7fun+uCqK0Lv+GqgKsN46kU2oV6fKtaX/it/vK2QF63u?=
+ =?us-ascii?Q?JVvdSdSQUfeFXstRYWQjolovkoAJF4i83ucRaf8kBpQPIgQ+UiIL3wagxvJL?=
+ =?us-ascii?Q?J26m3Kdoga7JWxZSDl4wa/uefABKAG1Ab9ZPwwbmcfvqkFLzq68m58uGQTWS?=
+ =?us-ascii?Q?ZrMfwLMmsCAgNNmHPlUY2W/jZ+3gr3+KwVz6CsOHfKz17MSbAkkd9whZdWdM?=
+ =?us-ascii?Q?3h0reivXWYP8DVP+MwScEbKTTpiN/3RceSJKivP3JR1SIeqDGGhwNHKcg3CY?=
+ =?us-ascii?Q?o3sXM+AFJxLUIFDn/n8wViLhRibpiR0x7Wl2cUj+ttqOHkrcAY8BBCMBsS/J?=
+ =?us-ascii?Q?r0tmOT8IQRtuxAcq0OGrZvsmFj/n/NRHLql2azFZTagoGfDXIvLD5vzby7/L?=
+ =?us-ascii?Q?hMQhG/+cWviqbe2b8LpPoNGY5aOJbVx/IiNZbI9ijAc4ADYI1XUa0NNofUZB?=
+ =?us-ascii?Q?n05GZq71iJff6s7QT7EFiPV4KZdVcXfsq1rUrwFK0D51QprNtVLEsexk186b?=
+ =?us-ascii?Q?YiqDSrasbrBU7ZHrYYnB6JfzBY4x2qrNwMkuCDzFo8NhyQRY46ZSK+x0XRdw?=
+ =?us-ascii?Q?zp0DsqIxCt0qM+abNAjpX16Xz4DuGthgsF0rYPV03xcmhq0Sylhl06IDLQc4?=
+ =?us-ascii?Q?p/xYvp/Y7qzEl7TPlYleKynDXdLeWGWZzZsifbPr/R0PsoQx+zy46WrQ9FJY?=
+ =?us-ascii?Q?mBc74gRO9yBauAlfLfnEYcH4zBc/uoxNYEs7MPznHN6yQBd1DJqQ6+5rWUew?=
+ =?us-ascii?Q?yqr6U8MNymL9Jr5YxYRuxcz0HBqtufGi47XLFMktWMfFrT7JIA=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(52116014)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?E6gnUrrflPhpuo6xw/JQoLCue0N5Jc3f2Gez7EkWnJ/1ql4LzN8KETJFSkNz?=
+ =?us-ascii?Q?/3nfH509Xfq8q1dGbbGtUo+Lfego3s6Rzl/zEaE5tROapmVlBuKxZ0Dg4Ybh?=
+ =?us-ascii?Q?YPLlt/w6c3qiizXVqdc5Xg+djEaMKH4FnGgGaILStQx+RvZTV0FyFw1EgcAk?=
+ =?us-ascii?Q?BDDzQxETVsbK17lW2rF9V1KFYrnauiFxD25KyE9/cNqJSHRGKtfRDp64GlD3?=
+ =?us-ascii?Q?Wbb2Bm9k0J92XVMoyK4uFaRQoXGK5AHIDCRd/yyrjx06VKhm7svXL8jFd21G?=
+ =?us-ascii?Q?UTUbamhSBuRPaC0lXB21HXVgpiIhu9yNgInZp6ayFUdz2e+olKPkMw50teUS?=
+ =?us-ascii?Q?Y43/HHYfTf2Ph12NHGvDR3nYkM4FzlFTdmP57rfWUrB56BDEoRiA9wav08tk?=
+ =?us-ascii?Q?bsxc5GWJdMd1G+RGufqhB+tMybXQnAzVP12y6FPDhkql1Mg1c2fBMmyEqfla?=
+ =?us-ascii?Q?5nDU/hDi6nhMv0WhRCerJ3Oh5iwvUHTQFe7BRf4OsEnzujg2KtdppsIyYByc?=
+ =?us-ascii?Q?G3ELHAD8uOjC1JyELp3pDmni0P09Zlz7HebWQDWxwUuuQ20jQWi3hEq9cim0?=
+ =?us-ascii?Q?Y72yoFOnn/ZqdN64z+FhAvxNmD9r69HXCyLHhFSZ7UxmGne11312jx98Oig5?=
+ =?us-ascii?Q?0ejFFuKEEK+xMVAnbsYX5p4IkOqdkAYHytnO8K/b8gSjkfXGcjZ8nshL2AZa?=
+ =?us-ascii?Q?J2TCwpZgTN8sXo2Nvbni349FEX3aiusKIXDsngihLF9l/tC7HQ/xasN7Vgej?=
+ =?us-ascii?Q?h71swd4ndH4AWNHOovIS3LlmFF8Hv+IMDDjqYb37jSkc7RMm0ACF3ARKZdx5?=
+ =?us-ascii?Q?WUE9zjiBvQ/6EnNPxuRdeBUHuhipOrwfofUzarVW7Pw+Vvwk0dkh/BDResXq?=
+ =?us-ascii?Q?hL6bZTyFXthvjkQCkEDKhHe1+p5w3UODSKbYeau3EbrcLrhVr85E3NMtvqbH?=
+ =?us-ascii?Q?SGQ+SE8G87re6nNMcI1NRdbGb2J7qA3wmY2u4rJpzPSRoQcosjUpboYgx7qL?=
+ =?us-ascii?Q?QkfVrRNiHbAsMFrt7+UO4lKteYUgzEVuIAAn5r/xpreQAsfHBPvOsTc9zH3L?=
+ =?us-ascii?Q?oK5K43gwUaBAMeN7BBM8QPZJ5LjGDuMF0wQleHzX/rRpM3BbvNEmOHVvz59H?=
+ =?us-ascii?Q?vrkEff9k1SF1sv1alkTTVwF5wOg2FF67Pyv/l3yQXR/lJxh4vNIMcMR76GSF?=
+ =?us-ascii?Q?IzBW8nL6eCH8dtZnfGhvM/AMrL78eHD2lQVxIOL0+M0tK+o06lFhlQcvJ49u?=
+ =?us-ascii?Q?8UYShgZ6w9gDA68sKfEPitymfSD1ULGOQ8gQpyf0J9okX5ckIHYDbVhTOv5s?=
+ =?us-ascii?Q?lUN4JtDrhwzV2ZdUNPFZw4wUZOSqZjNHgc5UYz93QvVkROyY9iIVuTnnn+Re?=
+ =?us-ascii?Q?QrOoHq+FRI/DZ2KgCcNWijS3juuYe7LhF4L4c2XmXqKlty8MEWIDig8tEQjF?=
+ =?us-ascii?Q?DXbAjSyGs2bopcAXpm2d0uReH8XH9dXkrwVIpspyVpOZQzGRWfKQzV1NLLiD?=
+ =?us-ascii?Q?fUP8ygHIJtgTUg1BMnGYsVRzWM0puMFekCQ3z+vxjO0WAPO7qm+gls76nTi1?=
+ =?us-ascii?Q?VLdV8FCRmL7Wb8yZz5Q=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ed4bac09-680e-455a-0a78-08dcd109d114
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Sep 2024 19:58:47.3798
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: nBjALMdnv4xeG7ACdsNo+geqNf605tcyfopMM1A2RU6AbDlqsAUt1IgYzTqVy4eMkTJ6vVBjtDb3PMhfllRecA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI2PR04MB10572
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240906_083846_180179_BBDD755E 
-X-CRM114-Status: UNSURE (   7.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240909_125856_158086_9EC3823C 
+X-CRM114-Status: GOOD (  23.89  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,28 +157,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, 26 Aug 2024 11:38:21 +0800, Billy Tsai wrote:
-> Based on the I3C TCRI specification, the rules for determining the I3C
-> mode are as follows:
-> I3C SCL rate > 8MHz: use SDR0, with a maximum data rate of 8MHz
-> I3C SCL rate > 6MHz: use SDR1, with a maximum data rate of 6MHz
-> I3C SCL rate > 4MHz: use SDR2, with a maximum data rate of 4MHz
-> I3C SCL rate > 2MHz: use SDR3, with a maximum data rate of 2MHz
-> Otherwise, use SDR4
-> 
-> [...]
+On Thu, Sep 05, 2024 at 03:45:56PM +0800, Carlos Song wrote:
+> According to I3C spec 6.2 Timing Specification, the Open Drain High Period
+> of SCL Clock timing for first broadcast address should be adjusted to 200ns
+> at least. I3C device working as i2c device will see the broadcast to close
+> its Spike Filter then change to work at I3C mode. After that I3C open drain
+> SCL high level should be adjusted back.
+>
+> Signed-off-by: Carlos Song <carlos.song@nxp.com>
+> Reviewed-by: Miquel Raynal <miquel.raynal@bootlin.com>
+> Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
-Applied, after fixing the commit log
+Alexandre Belloni:
 
-[1/1] i3c/master: cmd_v1: Fix the rule for getting i3c mode
-      https://git.kernel.org/abelloni/c/061dd21ca712
+	I have not seen these in patch work
+	https://patchwork.kernel.org/project/linux-i3c/list/
 
-Best regards,
+	Any thing wrong. These two patches is critial for some boards.
+Could you please take care it?
 
--- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+best regards
+Frank Li
+
+> ---
+> Change for V4:
+> - No change. Send this patch with svc-i3c-master.c fix patch.
+> Change for V3:
+> - Modify comments from Miquel's suggestion
+> Chnage for V2:
+> - Fix set_speed description from Frank's comment
+> ---
+>  drivers/i3c/master.c       | 12 ++++++++++++
+>  include/linux/i3c/master.h | 16 ++++++++++++++++
+>  2 files changed, 28 insertions(+)
+>
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index 7028f03c2c42..6f3eb710a75d 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -1868,6 +1868,12 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
+>  		goto err_bus_cleanup;
+>  	}
+>
+> +	if (master->ops->set_speed) {
+> +		ret = master->ops->set_speed(master, I3C_OPEN_DRAIN_SLOW_SPEED);
+> +		if (ret)
+> +			goto err_bus_cleanup;
+> +	}
+> +
+>  	/*
+>  	 * Reset all dynamic address that may have been assigned before
+>  	 * (assigned by the bootloader for example).
+> @@ -1876,6 +1882,12 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
+>  	if (ret && ret != I3C_ERROR_M2)
+>  		goto err_bus_cleanup;
+>
+> +	if (master->ops->set_speed) {
+> +		master->ops->set_speed(master, I3C_OPEN_DRAIN_NORMAL_SPEED);
+> +		if (ret)
+> +			goto err_bus_cleanup;
+> +	}
+> +
+>  	/* Disable all slave events before starting DAA. */
+>  	ret = i3c_master_disec_locked(master, I3C_BROADCAST_ADDR,
+>  				      I3C_CCC_EVENT_SIR | I3C_CCC_EVENT_MR |
+> diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
+> index 074f632868d9..2a1ed05d5782 100644
+> --- a/include/linux/i3c/master.h
+> +++ b/include/linux/i3c/master.h
+> @@ -277,6 +277,20 @@ enum i3c_bus_mode {
+>  	I3C_BUS_MODE_MIXED_SLOW,
+>  };
+>
+> +/**
+> + * enum i3c_open_drain_speed - I3C open-drain speed
+> + * @I3C_OPEN_DRAIN_SLOW_SPEED: Slow open-drain speed for sending the first
+> + *				broadcast address. The first broadcast address at this speed
+> + *				will be visible to all devices on the I3C bus. I3C devices
+> + *				working in I2C mode will turn off their spike filter when
+> + *				switching into I3C mode.
+> + * @I3C_OPEN_DRAIN_NORMAL_SPEED: Normal open-drain speed in I3C bus mode.
+> + */
+> +enum i3c_open_drain_speed {
+> +	I3C_OPEN_DRAIN_SLOW_SPEED,
+> +	I3C_OPEN_DRAIN_NORMAL_SPEED,
+> +};
+> +
+>  /**
+>   * enum i3c_addr_slot_status - I3C address slot status
+>   * @I3C_ADDR_SLOT_FREE: address is free
+> @@ -436,6 +450,7 @@ struct i3c_bus {
+>   *		      NULL.
+>   * @enable_hotjoin: enable hot join event detect.
+>   * @disable_hotjoin: disable hot join event detect.
+> + * @set_speed: adjust I3C open drain mode timing.
+>   */
+>  struct i3c_master_controller_ops {
+>  	int (*bus_init)(struct i3c_master_controller *master);
+> @@ -464,6 +479,7 @@ struct i3c_master_controller_ops {
+>  				 struct i3c_ibi_slot *slot);
+>  	int (*enable_hotjoin)(struct i3c_master_controller *master);
+>  	int (*disable_hotjoin)(struct i3c_master_controller *master);
+> +	int (*set_speed)(struct i3c_master_controller *master, enum i3c_open_drain_speed speed);
+>  };
+>
+>  /**
+> --
+> 2.34.1
+>
 
 -- 
 linux-i3c mailing list
