@@ -4,66 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1B14BCF649D
-	for <linux-i3c@archiver.kernel.org>; Mon, 30 Sep 2024 10:03:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8178CCE8340
+	for <linux-i3c@archiver.kernel.org>; Mon, 30 Sep 2024 13:21:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DwRPNeDdWUDTQ1wG7oq94MnoIzceC1dsxV2Tbqo+lyE=; b=W31KOkSGPvmzIj
-	Z4cdVZ0uHfFejaQZ27mQTZTMRhttrJsGzjEDYGuC55l5oKmSOBfBqE9s9/p8eZyUQVJIN3Q/FCBqx
-	aLfBr4+TBA3maW61MQKmgqBhqDhm2nGT9FPjISTWunjynW11vG55pm8OE3QkyCUDxvkSSBJsd95j5
-	bp1ZiHsyqIZvZ0v4hk1J5K5JavWwtx7/751LrmTJz9zwk67Vc9klv2zfJhLTojWjZVrIXhifaqxpu
-	7YVn7nUIb3pHQmJeCRD8dlf0mYgVhHFHCXLzBZx/6YvOyACmk/j09SIXGUOrZO+kp/zEizElTraCT
-	Lt7zqpbIjLVC6akdNVdQ==;
+	List-Owner; bh=zShJPEq3eXxrpQvlFwaATwp8yeP7id8SJ0NNTcrbc6s=; b=hNIPPoA2dmIug+
+	XQ5sDBpBK6Igl/wJzPp1Oqski8J1YsLaoJPI/Oa1m4W5ctijfyThBAcrjyoCNZ4ARNimFNh8MyO9+
+	R4i7eR/7sTf/LeaV2yHC8g+W2KHSG1rmJSy06k0sJyiYDtqeipz/6dYhVIt2bW0PQWNiLfMql/4r6
+	HH6Yjnwcr1dKcAt2ncsIOKgeGrLBAKphKsqMDMx5rPm3bhhpvrGTRTDFVhdgWW1WkvvBR0S2jc41A
+	Hrzmk6GJWpWD/dEL5M2kw93AW/kibwcbKbJftv06MftoxExGZ0J9qdILUIUb2L4K5W7g2GwkUUpZP
+	5s+JbTaB1mfiJtfxl9Qg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1svDFx-0000000GckO-17WU;
-	Mon, 30 Sep 2024 10:03:53 +0000
-Received: from relay4-d.mail.gandi.net ([2001:4b98:dc4:8::224])
+	id 1svGKw-0000000HGhU-3CMk;
+	Mon, 30 Sep 2024 13:21:14 +0000
+Received: from mgamail.intel.com ([198.175.65.10])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1svCnk-0000000GYBG-0KXw
+	id 1svG3D-0000000HC4y-0az9
 	for linux-i3c@lists.infradead.org;
-	Mon, 30 Sep 2024 09:34:46 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id C4E7DE0007;
-	Mon, 30 Sep 2024 09:34:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1727688880;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=T376I2MDrJytTDm4/y8a91oboBCmnAZ5VqjHr2jS9eI=;
-	b=Ydffyoc8eP4yYmGUFFPfMukBflSB14CFQqzVpdFCQVXOhkgFmcNq5KDYhOMWjosOOFYNYY
-	kbb9gKnvQVf01UV4UFGS5mDyVS+0lzu8eoSb8zdchrGyinkVkjVWi9YGjg7MPossiNNybH
-	yPM1XObl+VqC+rlPqMCExq1eTvcylkH+w3ZRiBHmCo3jwxrUxI2f8FbIrfTTbJ62e0c9nh
-	jpK9K+POPRlo2t9/TZg/YrZEwCJGtrmo6UMAiNXqQ8of5MMkvMUaiZvJq/MUnJPoIIckp0
-	VcNid5AG0Pmz7qVfe0Sz63yqFGapO6lxBikxNy2Lu2cvTMGTPa+2jwnl6YIVFw==
-Date: Mon, 30 Sep 2024 11:34:36 +0200
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Frank Li <Frank.li@nxp.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, Boris Brezillon
- <boris.brezillon@collabora.com>, Parshuram Thombare <pthombar@cadence.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Boris Brezillon
- <bbrezillon@kernel.org>, Arnd Bergmann <arnd@arndb.de>, Conor Culhane
- <conor.culhane@silvaco.com>, linux-i3c@lists.infradead.org,
- linux-kernel@vger.kernel.org, imx@lists.linux.dev, Ravindra Yashvant Shinde
- <ravindra.yashvant.shinde@nxp.com>, stable@kernel.org
-Subject: Re: [PATCH v4 00/11] i3c: master: some fix and improvemnt for
- hotjoin
-Message-ID: <20240930113436.318a7c0f@xps-13>
-In-Reply-To: <ZvWTjjuRU26dTyKT@lizhi-Precision-Tower-5810>
-References: <20240829-i3c_fix-v4-0-ebcbd5efceba@nxp.com>
-	<ZvWTjjuRU26dTyKT@lizhi-Precision-Tower-5810>
-Organization: Bootlin
-X-Mailer: Claws Mail 4.2.0 (GTK 3.24.41; x86_64-pc-linux-gnu)
+	Mon, 30 Sep 2024 13:02:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1727701375; x=1759237375;
+  h=message-id:date:mime-version:subject:to:cc:references:
+   from:in-reply-to:content-transfer-encoding;
+  bh=fkxcP//T2bdCrNiiepbSkSNWGrnL8P9uBimRUKy/Y3E=;
+  b=ar1RoV1/gja8HLALFxzoTXr+m2CqNSLz1Qkog0Jw7CZ7SsUlazXAcrrq
+   oOXiYw5loqyPWbsNGfPYdi/lJ10DGda4Rz+50BbNnTjg33Skq49MxusxP
+   tE795oiedAmW8reBx/WJXeoEoqQTteWpUqX5d6QioU21yq2Cieow6fwK2
+   /+v5z/hjzIJo7HBhMDjob1QlahjAy1RxXjy1H+DpQqTp7HdFbeee0UX7u
+   1lbLCkB4zithmpDalJHH/LEaPbQRgcAAIcHTXJhfkEzky1+lPE+3cKPjf
+   QMwJWFoC73TqOApdcPsPurDhADUqqophWu3INC/eCfcLTr8yMISGAM70m
+   A==;
+X-CSE-ConnectionGUID: R1jdy6ebQTq+Cs+UmEbwYA==
+X-CSE-MsgGUID: leTlDE8zQ/e7YziXPCh8bg==
+X-IronPort-AV: E=McAfee;i="6700,10204,11210"; a="44249664"
+X-IronPort-AV: E=Sophos;i="6.11,165,1725346800"; 
+   d="scan'208";a="44249664"
+Received: from orviesa002.jf.intel.com ([10.64.159.142])
+  by orvoesa102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 30 Sep 2024 06:02:49 -0700
+X-CSE-ConnectionGUID: IDGE5YPgQRStRbNatNEhYQ==
+X-CSE-MsgGUID: txLXHwaCSB27TWZKlrI/3g==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.11,165,1725346800"; 
+   d="scan'208";a="104095475"
+Received: from mylly.fi.intel.com (HELO [10.237.72.151]) ([10.237.72.151])
+  by orviesa002.jf.intel.com with ESMTP; 30 Sep 2024 06:02:48 -0700
+Message-ID: <d0de10c7-bd99-4b81-aa11-5039c514eefc@linux.intel.com>
+Date: Mon, 30 Sep 2024 16:02:46 +0300
 MIME-Version: 1.0
-X-GND-Sasl: miquel.raynal@bootlin.com
+User-Agent: Mozilla Thunderbird
+Subject: Re: TODO : i3c/master/mipi-i3c-hci/dma.c
+To: cvam <cvam0000@gmail.com>, alexandre.belloni@bootlin.com
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Shuah Khan <skhan@linuxfoundation.org>
+References: <CADVSkwnC6b3irLx58YRGJayw09AvVUqmN=3_b35vdhJKFpsgog@mail.gmail.com>
+Content-Language: en-US
+From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+In-Reply-To: <CADVSkwnC6b3irLx58YRGJayw09AvVUqmN=3_b35vdhJKFpsgog@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240930_023444_600315_03F69807 
-X-CRM114-Status: GOOD (  17.82  )
+X-CRM114-CacheID: sfid-20240930_060255_268558_DC20B118 
+X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,31 +81,37 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-SGkgRnJhbmssCgpGcmFuay5saUBueHAuY29tIHdyb3RlIG9uIFRodSwgMjYgU2VwIDIwMjQgMTM6
-MDI6MDYgLTA0MDA6Cgo+IE9uIFRodSwgQXVnIDI5LCAyMDI0IGF0IDA1OjEzOjU3UE0gLTA0MDAs
-IEZyYW5rIExpIHdyb3RlOgo+ID4gU2lnbmVkLW9mZi1ieTogRnJhbmsgTGkgPEZyYW5rLkxpQG54
-cC5jb20+Cj4gPiAtLS0gIAo+IAo+IEFsZXg6Cj4gCj4gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcv
-bGludXgtaTNjLzIwMjQwODE5LWkzY19maXgtdjMtMC03ZDY5ZjdiMGEwNWVAbnhwLmNvbS9ULyNt
-MTZmYTliYjg3NWIwYWU5ZDM3YzVmNmU5MWY5MGUzNzU1NTFjNjM2Ngo+IAo+IFRoZXJlIGlzIHNv
-bWUgZGlzY3VzcyBhYm91dCBhc3NpZ2VkIGFkZHJlc3MsIEkgYWxyZWFkeSBleHBsYWluIHRoZSBy
-ZWFzb24KPiBhbmQgcGluZyAzIHRpbWVzLAoKUGluZ2luZyB3aWxsIG5vdCBoZWxwIGFzIGxvbmcg
-YXMgdGhlIGNvZGUgaXMgbm90IGNsZWFyIGFuZCBzaW1wbGlmaWVkLgpJIGhvbmVzdGx5IHRoaW5r
-IHRoZSBQSUQgc2hvdWxkIGJlIHJldHJpZXZlZCBlYXJsaWVyIGluIHRoZSBIQ0kgcGFydAphbmQg
-dGhhdCB3b3VsZCBzb2x2ZSBtb3N0IG9mIHlvdXIgaXNzdWVzLgoKT3RoZXJ3aXNlIGlmIHRoYXQg
-aXMgbm90IHBvc3NpYmxlIEkgc3RpbGwgZmluZCBoYXJkIHRvIHVuZGVyc3RhbmQgdGhlCmJpZyBw
-aWN0dXJlLCB0aGUgY29tbWVudHMgYW5kIHRoZSBjb2RlLiBJJ3ZlIGFscmVhZHkgc3BlbnQgcXVp
-dGUgYSBiaXQKb2YgdGltZSB0cnlpbmcgdG8gaW1wcm92ZSBpdCB3aXRoIHlvdSwgYnV0IHRoZSBs
-b2dpYyBpcyBzdGlsbCBhIGxpdHRsZQpiaXQgdG9vIHNwZWNpZmljIGFuZCBjb21wbGV4IGZyb20g
-bXkgcG9pbnQgb2Ygdmlldy4KCj4gVGhlc2UgcGF0Y2ggYXJlIGFjdHVhbCBmaXhlZCBob3Qgam9p
-biBpc3N1ZXMuCgpJdCBzaG91bGQgbm90IGJlIHRoZSBjYXNlLiBIb3Qtam9pbiBzaG91bGQgd29y
-ayB3aXRob3V0IHRoZSBkZXZpY2VzCmhhdmluZyBhbGwgdGhlIHRpbWUgdGhlIHByZWZlcnJlZCBh
-ZGRyZXNzLiBJZiBob3Qtam9pbiByZWFsbHkgZG9lcwpub3Qgd29yaywgdGhlbiBwbGVhc2Ugc3Bs
-aXQgdGhlIHNlcmllcyB3aXRoIHRoZSAicHJlZmVycmVkIGFkZHJlc3MiCmhhbmRsaW5nIGJlaW5n
-IGRvbmUgYXBhcnQgaW4gYSBzZWNvbmQgc2VyaWVzLgoKVGhhbmtzLApNaXF1w6hsCgotLSAKbGlu
-dXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
+Hi
+
+On 9/28/24 9:39 PM, cvam wrote:
+> Hello Alexandre
+> 
+> This mail is regarding TODO present in the i3c/master/mipi-i3c-hci/dma.c, i
+> would like to work on it, please give some more info what exactly we are
+> referring here.
+> 
+> 
+>                                  dev_err(&hci->master.dev,
+>                                          "response tid=%d when expecting
+> %d\n",
+>                                          tid, xfer->cmd_tid);
+>                                  /* TODO: do something about it? */
+>                          }
+>                          if (xfer->completion)
+>                                  complete(xfer->completion);
+> 
+Well source code has minimum handling for unexpected but uncertain what 
+to do about it. In my opinion "TODO" is a fair comment about it.
+
+I'd leave it as it until somebody sees it on real and then we can debug 
+does it need some steps in HW/SW point of view to recover.
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
