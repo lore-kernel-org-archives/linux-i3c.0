@@ -4,82 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86A30CEFC2A
-	for <linux-i3c@archiver.kernel.org>; Tue,  8 Oct 2024 15:52:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 609D8CEFC2D
+	for <linux-i3c@archiver.kernel.org>; Tue,  8 Oct 2024 15:52:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rP3TUX2jju4cT3vD9BBYPCMW2h6T2LXfj4J9mP0pi9U=; b=rXVcG0nbQTEXs/
-	iFLBFlOPkBcKFh+cFx69iBlf9QKBhy0HmKzCRTW1Zce2I7V8NxpnBsiNSQEnmCYNyD3USfoEMW+Oh
-	rIUWviCMtgTLtLlP83z9YumZXtFGwv5nC/s432LRFCSF1uaib8SJY8MeGsdx8OrWM0C3lJACGNIvJ
-	mfCeKk0sK9mHi7c8RFkmKK6GEEKm3wzpwnMs+64rr4iRpqFSQrCVnLwwiDmoy9UZMGPf1yO+Ifj6t
-	HkicBN8POgnptE5qN4rXQ6DnoeyI0sFBHIRfqDBlAPeQ85DfLoZ1HN3QLya7wFWwmAQADAXO5Z5H0
-	lEcQsp2f1Ce/qH3IlmEA==;
+	List-Owner; bh=bXxLkKJA5wYXKNjIJqDUyI5e4scGGQ8Y8+IcQ4WSYf8=; b=FbR+OyFZlTNzk4
+	J2Wq8Uo5wP8V+x/iaabJJF3BGZBMJ5z4utYI6yOXa4VtkNVef5BAkJmpgTVY1796sFOiE8Ww0gRS0
+	xkbqYfJPeC9WpzK63rGfXkqwyQ99In1ERoJVtTaCfM/9ix8zpO2+uAKonar2G6YIRqHqDdojYVZzL
+	hU+DoivxY4VsSGOE/7Q6G26YVxhPg+ux9Xoh6MTI2n6XxPZhgcOFINhns6/xkWoQrux+Hm1ZbYJOj
+	ofkUS8ZkiNjMIXVH8vkETm8cVQN2zZaSsSKUVVHJ1dbOsy1EZCNblF5WDI0/n4xcJd9/6qXI7/jtg
+	G+mYPP5EKIrGWpvkHMig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1syCW6-00000006Pmy-0bP1;
-	Tue, 08 Oct 2024 15:52:54 +0000
-Received: from mgamail.intel.com ([192.198.163.11])
+	id 1syCW7-00000006PnW-0NzZ;
+	Tue, 08 Oct 2024 15:52:55 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sweoT-0000000Bfqg-40Vb
+	id 1swmzw-0000000DhD6-1mUi
 	for linux-i3c@lists.infradead.org;
-	Fri, 04 Oct 2024 09:41:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1728034890; x=1759570890;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=V3VXJEp3smunlOf3qC4y3ZItA/MIzj6KIM1DVxGWatw=;
-  b=QPVDqLm9mUqCA9msfTcuXWkJnCVGvR5UADxUHfsJMePCotLMiV3byYFp
-   qd9dewUYpk4ZawtUjWbvixC1ThSrBPpB8foZvf0HKjNZmev0fZQdETyQD
-   /TG8mYlpIFPZ6S3WBiSeaSRTNlNgeVaVeiejNqKvCGCMZYSwDp71o9mbE
-   9xQRwo58fBDnRP+N9x+T6akvUmIEgo8OoUHUVqhW/Wt6z6bmtGAihJXEF
-   +/Ns7JC7DBe8aK587G2lVto+msZqDbQdcNeogXIHv1XStthV5fRL7o8aR
-   eFtItMfieX2eIiWXAiXuPKrjDoNsixiyFQZ5HsiK9Bfc+RJVwr479rzYJ
-   Q==;
-X-CSE-ConnectionGUID: F1VtBg0LRSu53zyiw1S07g==
-X-CSE-MsgGUID: sX1Dw76TRyO2l5A6cCXavg==
-X-IronPort-AV: E=McAfee;i="6700,10204,11214"; a="37856260"
-X-IronPort-AV: E=Sophos;i="6.11,177,1725346800"; 
-   d="scan'208";a="37856260"
-Received: from fmviesa007.fm.intel.com ([10.60.135.147])
-  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Oct 2024 02:41:29 -0700
-X-CSE-ConnectionGUID: q4voOJ+aTiG2Pw0SLZnHOw==
-X-CSE-MsgGUID: RiXzvgypTDqB9RLg5rhbkA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.11,177,1725346800"; 
-   d="scan'208";a="74331939"
-Received: from turnipsi.fi.intel.com (HELO kekkonen.fi.intel.com) ([10.237.72.44])
-  by fmviesa007-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Oct 2024 02:41:27 -0700
-Received: from punajuuri.localdomain (punajuuri.localdomain [192.168.240.130])
-	by kekkonen.fi.intel.com (Postfix) with ESMTP id EBFF1120D8D;
-	Fri,  4 Oct 2024 12:41:22 +0300 (EEST)
-Received: from sailus by punajuuri.localdomain with local (Exim 4.96)
-	(envelope-from <sakari.ailus@linux.intel.com>)
-	id 1sweoM-000TZP-34;
-	Fri, 04 Oct 2024 12:41:22 +0300
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Aniket <aniketmaurya@google.com>,
-	Billy Tsai <billy_tsai@aspeedtech.com>,
-	Sakari Ailus <sakari.ailus@linux.intel.com>,
-	Dylan Hung <dylan_hung@aspeedtech.com>
-Cc: linux-i3c@lists.infradead.org
-Subject: [PATCH 18/51] i3c: dw: Switch to __pm_runtime_put_autosuspend()
-Date: Fri,  4 Oct 2024 12:41:22 +0300
-Message-Id: <20241004094122.113657-1-sakari.ailus@linux.intel.com>
-X-Mailer: git-send-email 2.39.5
-In-Reply-To: <20241004094101.113349-1-sakari.ailus@linux.intel.com>
-References: <20241004094101.113349-1-sakari.ailus@linux.intel.com>
+	Fri, 04 Oct 2024 18:25:54 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 9996A5C04CE;
+	Fri,  4 Oct 2024 18:25:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A8F88C4CECE;
+	Fri,  4 Oct 2024 18:25:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1728066351;
+	bh=Zj9rmh2rnOJxYJnL3zci9fXQ6CbXnNVzM2e17ws8fwg=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=eLynnvVIl3ueKBRV/gTmD3f3xlNj7qP1G1/+SW4zcwpjIgbGcwC/CKgMcVs0Kbnip
+	 IIQLQ9RfeA6sAM8cCkGb4fg7GlCS7uOkNFVvVQ0wlfYpAi8rjX5MKYX686X+O1rzvb
+	 OMWP21WJVRYb2tgz5+rkQ3cRERUap+WdoRgfajr4h3u/tPHT4dmxoB5EJfN1h858GK
+	 hryZvEk4Y8jFGwr7JMpe6+byI1lPhlWXlV0AqB0jNd3J+blAcy0WaLz7ma02W3XeK0
+	 EpR2VjqPodSakgvO6zh/tTwSkOvEyDginUSTQHEoFHzqF4132la6r7uX2x/BFOYsFi
+	 Sam2XdXGjQ05A==
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Cc: Kaixin Wang <kxwang23@m.fudan.edu.cn>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Sasha Levin <sashal@kernel.org>,
+	pgaj@cadence.com,
+	linux-i3c@lists.infradead.org
+Subject: [PATCH AUTOSEL 6.6 27/58] i3c: master: cdns: Fix use after free vulnerability in cdns_i3c_master Driver Due to Race Condition
+Date: Fri,  4 Oct 2024 14:24:00 -0400
+Message-ID: <20241004182503.3672477-27-sashal@kernel.org>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20241004182503.3672477-1-sashal@kernel.org>
+References: <20241004182503.3672477-1-sashal@kernel.org>
 MIME-Version: 1.0
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.6.54
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241004_024130_291781_8E311E9D 
-X-CRM114-Status: UNSURE (   8.73  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241004_112552_534244_BC52237F 
+X-CRM114-Status: GOOD (  10.74  )
 X-Mailman-Approved-At: Tue, 08 Oct 2024 08:52:51 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -97,94 +80,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-pm_runtime_put_autosuspend() will soon be changed to include a call to
-pm_runtime_mark_last_busy(). This patch switches the current users to
-__pm_runtime_put_autosuspend() which will continue to have the
-functionality of old pm_runtime_put_autosuspend().
+From: Kaixin Wang <kxwang23@m.fudan.edu.cn>
 
-Signed-off-by: Sakari Ailus <sakari.ailus@linux.intel.com>
+[ Upstream commit 609366e7a06d035990df78f1562291c3bf0d4a12 ]
+
+In the cdns_i3c_master_probe function, &master->hj_work is bound with
+cdns_i3c_master_hj. And cdns_i3c_master_interrupt can call
+cnds_i3c_master_demux_ibis function to start the work.
+
+If we remove the module which will call cdns_i3c_master_remove to
+make cleanup, it will free master->base through i3c_master_unregister
+while the work mentioned above will be used. The sequence of operations
+that may lead to a UAF bug is as follows:
+
+CPU0                                      CPU1
+
+                                     | cdns_i3c_master_hj
+cdns_i3c_master_remove               |
+i3c_master_unregister(&master->base) |
+device_unregister(&master->dev)      |
+device_release                       |
+//free master->base                  |
+                                     | i3c_master_do_daa(&master->base)
+                                     | //use master->base
+
+Fix it by ensuring that the work is canceled before proceeding with
+the cleanup in cdns_i3c_master_remove.
+
+Signed-off-by: Kaixin Wang <kxwang23@m.fudan.edu.cn>
+Link: https://lore.kernel.org/r/20240911153544.848398-1-kxwang23@m.fudan.edu.cn
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/i3c/master/dw-i3c-master.c | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
+ drivers/i3c/master/i3c-master-cdns.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index 8d694672c110..d2731ed66705 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -700,7 +700,7 @@ static int dw_i3c_master_bus_init(struct i3c_master_controller *m)
+diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
+index fa5aaaf446181..d8426847c2837 100644
+--- a/drivers/i3c/master/i3c-master-cdns.c
++++ b/drivers/i3c/master/i3c-master-cdns.c
+@@ -1666,6 +1666,7 @@ static void cdns_i3c_master_remove(struct platform_device *pdev)
+ {
+ 	struct cdns_i3c_master *master = platform_get_drvdata(pdev);
  
- rpm_out:
- 	pm_runtime_mark_last_busy(master->dev);
--	pm_runtime_put_autosuspend(master->dev);
-+	__pm_runtime_put_autosuspend(master->dev);
- 	return ret;
- }
++	cancel_work_sync(&master->hj_work);
+ 	i3c_master_unregister(&master->base);
  
-@@ -817,7 +817,7 @@ static int dw_i3c_master_send_ccc_cmd(struct i3c_master_controller *m,
- 		ret = dw_i3c_ccc_set(master, ccc);
- 
- 	pm_runtime_mark_last_busy(master->dev);
--	pm_runtime_put_autosuspend(master->dev);
-+	__pm_runtime_put_autosuspend(master->dev);
- 	return ret;
- }
- 
-@@ -900,7 +900,7 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
- 
- rpm_out:
- 	pm_runtime_mark_last_busy(master->dev);
--	pm_runtime_put_autosuspend(master->dev);
-+	__pm_runtime_put_autosuspend(master->dev);
- 	return ret;
- }
- 
-@@ -986,7 +986,7 @@ static int dw_i3c_master_priv_xfers(struct i3c_dev_desc *dev,
- 	dw_i3c_master_free_xfer(xfer);
- 
- 	pm_runtime_mark_last_busy(master->dev);
--	pm_runtime_put_autosuspend(master->dev);
-+	__pm_runtime_put_autosuspend(master->dev);
- 	return ret;
- }
- 
-@@ -1136,7 +1136,7 @@ static int dw_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
- 	dw_i3c_master_free_xfer(xfer);
- 
- 	pm_runtime_mark_last_busy(master->dev);
--	pm_runtime_put_autosuspend(master->dev);
-+	__pm_runtime_put_autosuspend(master->dev);
- 	return ret;
- }
- 
-@@ -1304,7 +1304,7 @@ static int dw_i3c_master_disable_hotjoin(struct i3c_master_controller *m)
- 	       master->regs + DEVICE_CTRL);
- 
- 	pm_runtime_mark_last_busy(master->dev);
--	pm_runtime_put_autosuspend(master->dev);
-+	__pm_runtime_put_autosuspend(master->dev);
- 	return 0;
- }
- 
-@@ -1330,7 +1330,7 @@ static int dw_i3c_master_enable_ibi(struct i3c_dev_desc *dev)
- 	if (rc) {
- 		dw_i3c_master_set_sir_enabled(master, dev, data->index, false);
- 		pm_runtime_mark_last_busy(master->dev);
--		pm_runtime_put_autosuspend(master->dev);
-+		__pm_runtime_put_autosuspend(master->dev);
- 	}
- 
- 	return rc;
-@@ -1350,7 +1350,7 @@ static int dw_i3c_master_disable_ibi(struct i3c_dev_desc *dev)
- 	dw_i3c_master_set_sir_enabled(master, dev, data->index, false);
- 
- 	pm_runtime_mark_last_busy(master->dev);
--	pm_runtime_put_autosuspend(master->dev);
-+	__pm_runtime_put_autosuspend(master->dev);
- 	return 0;
- }
- 
+ 	clk_disable_unprepare(master->sysclk);
 -- 
-2.39.5
+2.43.0
 
 
 -- 
