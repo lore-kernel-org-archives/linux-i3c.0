@@ -4,69 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3196CED243
-	for <linux-i3c@archiver.kernel.org>; Mon,  7 Oct 2024 22:09:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4DA66CED248
+	for <linux-i3c@archiver.kernel.org>; Mon,  7 Oct 2024 22:35:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=351HLHd+QRwRqf8+7iY7KA6hRMzhtF21LR86FG3suYQ=; b=pl2aZS+74eDAK9
-	Cf4Ip7FBFJnY+NjZtGeKsY5w1ShukLqELq/i9nUcgJ8A2scziJVd3p4Mv0pJPvbmxFhiMXBC5x//1
-	6J8VS8Q27pzTXq39yttVipGXGv753sH4sYNVqYKMr15MaqqzUas09S9JnmzJQ43++11timuHdrbA9
-	Vjy1HhpMIq5vzYBwv3VrPRLCEzimjLTWkVo44uWiFysfVYpvqTmAsV6+Tqp26H5vcgzZIKRbFJZ95
-	vdtUnTSPVpsKmm2VSCA6ixFiVkFRQ81Kh/jQN2mwtFNq75RSjxrvDGpgFATRfs/3fQKnM9YYpK2VO
-	00+5qURCvzqiJDFGthdQ==;
+	List-Owner; bh=ROmbxv1p7nfjbToeU0Z/Kj7BKvtp105angxVRFBVBrY=; b=NsWvPEys6/9dLl
+	FSCSchSkMqrFWeBLYoiHje5/9M+mJZffK5Svdt6Nu6tZ2tEYPiaT74nAsCmLpnTuwzIK+5YYUf4x6
+	T3Bo6ri3MoOc2OEu7/4bhOhcLa7tKXpuZl0r55k2hVaToLf7pG//yQ4620KGV6qIeG8dn/6TkbWpI
+	0y5lzoNfYyM//GE9yluolZKK43DTnK9PZOp+PxkrZdX9s38Dc/S871crtEZTeXyuE2mq0WkNqJFEY
+	yiOBhW4s7jM0pCHZKLNmLusYnF71OI/jSL43l1SdhM0L7FVpRVeZayafwHzMkjl2AcNoHLu3E2EUp
+	Q9y26ZxZsFmY57NUwhDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxvuc-00000003tLZ-40Fn;
-	Mon, 07 Oct 2024 22:09:06 +0000
-Received: from mail-yb1-xb2c.google.com ([2607:f8b0:4864:20::b2c])
+	id 1sxwKB-00000003vkI-3lNb;
+	Mon, 07 Oct 2024 22:35:31 +0000
+Received: from mail-yb1-xb35.google.com ([2607:f8b0:4864:20::b35])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxvuY-00000003tJI-1gtV
+	id 1sxwK7-00000003vgx-41v3
 	for linux-i3c@lists.infradead.org;
-	Mon, 07 Oct 2024 22:09:05 +0000
-Received: by mail-yb1-xb2c.google.com with SMTP id 3f1490d57ef6-e25d11cc9f0so4024402276.3
-        for <linux-i3c@lists.infradead.org>; Mon, 07 Oct 2024 15:09:01 -0700 (PDT)
+	Mon, 07 Oct 2024 22:35:30 +0000
+Received: by mail-yb1-xb35.google.com with SMTP id 3f1490d57ef6-e25d164854dso4139035276.2
+        for <linux-i3c@lists.infradead.org>; Mon, 07 Oct 2024 15:35:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1728338941; x=1728943741; darn=lists.infradead.org;
+        d=linaro.org; s=google; t=1728340526; x=1728945326; darn=lists.infradead.org;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:from:to:cc:subject:date:message-id:reply-to;
-        bh=CqX9Y0dEmHgiIN61I3/zW08Bfod5n7pFQiGUVIMbBVk=;
-        b=fLMKT9Z3Fu6IUjOxHrwezXne1W4cE5sZ2Bweg6L9eZ4+LHQSAfcrlSlvECvBp50Ckf
-         A6nPsiPQCYEIqgl5Dc7cttDKGgHnUBE4HGeJGZhgH3bNxcDLh7GTuxj0D+wqTJoKQJXW
-         ePBjpqt/3wtvTgFLTBBPutETLPciPzed9nxA2htGx8u6VcC3YsQWBdXWjaBhAKKClNy4
-         /Mwnz4K7lKfH/kPOkd8id09yI0plzYin/lJpYNW5YqPa8CLPjTiF8FsqRDe72/rDM7uH
-         tUCP18mojugYPxMVYlPPMO/fnXrQdHb5luRS84I8TiKoVQAVAnD1Gr3K1OlnXo9zG59r
-         MBXQ==
+        bh=gesjil9Y0RZgbcjmX5qHd/S97rHztDCcedkOm+1cl0k=;
+        b=FXdr9fOc0xcoQusNaOGpQZLfkrM44nloVL/PV8iknAP3Nequ+eFAKlK3DXqXas0iYJ
+         scoBN5ICXkoZpkbXKsbiHN+RD2GgeeQrGWqAR39tsvR12d7Advai750/nfiOIZQwpDXd
+         +45hchc4BWSGGqUv6BJALwfjTjvSO7B3MMFarsbCa3TdIuZ+P7y1WxyCSLi+pRLExWyC
+         YD20zWS93VLyd5XhYNDqBZkpLVuoViZTxzueI19Jh8A5RC1+sjVTVFp2WCzoOapQ1bF+
+         J+6Lpy0ON0rEDvkPPBaTGhKLect2BildQBbqfhQOLzx4PKaMnzzinVUn6Ink5NaBxtFo
+         bIew==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1728338941; x=1728943741;
+        d=1e100.net; s=20230601; t=1728340526; x=1728945326;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=CqX9Y0dEmHgiIN61I3/zW08Bfod5n7pFQiGUVIMbBVk=;
-        b=ZZgpCFg4qurOhOPCOkEbrhKO7e9lu9QUSSzY/VUNqSEjzIseLF/qki/YYv8o5C8Zrc
-         FKltSX/CfL2HKGaPka++ecltRYbL2Yb62sZKmUNZX1Sxcr4ZZ+QolU4rio48mwSMQJMS
-         4R349pEsHMrpJpZeSbU0RKZY71uGCBOxAk0h117xCRnzG7z8RSRZfOA5FumVnNRegTAK
-         ZJsYAcnvqTre/blqaUjc/IqhGC8TfUV0zQE3XUpKj7lOgdIrAcaT04a6tBeTF5rESR+k
-         3hw9aufwbInCSGoR83I10FoKgTvmR+WJifPWcRVdAXBjP9JakwO/+bihe9WUKgey1i2F
-         Piiw==
-X-Forwarded-Encrypted: i=1; AJvYcCUxS0VuQ3hD/c0T7xaXLEWdz8xudiIhx39t9u7w3pIZ/HddmrVdX2c8iIP+9XBx2QV6mAPanWIikJI=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzrcbCkL0FdxlRWIoiHFcjRAYpBKrw+6K9nizJxAGSIsInodAUW
-	MZYAthDr4dzGxLKR8yicKJld5HJtkK/hTqfL+UhVfDuYfBQHzbnyW0E+byDv/G/xdOSJ/mbD60+
-	WXM6w0LOl45GhFwWLZH+Xje6Ow1C35dqdIzsscQ==
-X-Google-Smtp-Source: AGHT+IE2nJVabbXdwibt1H0pVBms5dYTsG8RkBKKAzfdsgMhYsZ8VyWIk7HanuWHiQPQxXFBk2ezA08qlljJFN0QQR4=
-X-Received: by 2002:a05:6902:848:b0:e28:edbd:765f with SMTP id
- 3f1490d57ef6-e28edbd7f75mr206026276.2.1728338940867; Mon, 07 Oct 2024
- 15:09:00 -0700 (PDT)
+        bh=gesjil9Y0RZgbcjmX5qHd/S97rHztDCcedkOm+1cl0k=;
+        b=sk5VI4/IIwN/1xPVpsKjjZXZfup6yi1svddsLKtxG9oxq0bc7FcFucMQp56/55nyMo
+         gRpy2k2CeggIGBEML12sGU9WP79DGGxhgGNAaiRYJP0fOzMVqZXakSRuyAOPwKAlVPFG
+         6K/LGXR3dOJXUuavRiuiat6ELzJILzWFynDVrM9kjxPYha06KToi9NtX2ppvcCFT3J6k
+         iGEV1sqgh2UEUSbIAEFSGtrWI1zBrHJi05NSqJKam2f8zRT8hG56WmGZ76xFP5P7CUt+
+         FhCiV2+eSoZXn9AwEVYIpvcvTIWmRtMOzeQ3eROMcyLfcrJ3LLvwryqdCUviwgysZLj2
+         ETcw==
+X-Forwarded-Encrypted: i=1; AJvYcCXOwIiYUyFvriABZaTCSjKWWyuDaRBr1qKasEBtcq9rxkYSvrhngMzzDzPbiFu3Skuzu7bHQ7Y3ph4=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yx1Te4hOUQ/14+n6YGBAngTOODnXuwJNW2H1CaDsNhd7MRttOr7
+	uwWaXTZkPQxNeo9TE+jBfzeDju2Xn9R6VMmhVl8V+WFG+1F12BZPhrlHBHrtcHvgXhjamP6OLq/
+	dH/etU5s3sUQrpHpm4ypTtKmsVlrE9kk69OFV5Q==
+X-Google-Smtp-Source: AGHT+IGYLLRVc3CeXKReIUVnntYlZ+ULRb29gPUl3UTx4hoqAUGdx6q2aFDzdnacRWqcM/cOYseo4GoEdp7e3a8qLZE=
+X-Received: by 2002:a05:6902:2305:b0:e28:6ec7:4353 with SMTP id
+ 3f1490d57ef6-e2893964043mr10612649276.54.1728340526338; Mon, 07 Oct 2024
+ 15:35:26 -0700 (PDT)
 MIME-Version: 1.0
 References: <20241004094101.113349-1-sakari.ailus@linux.intel.com>
- <CAPDyKFp0N6UJhnHS164Tdf=xkWB0jzq65L9TdvYazeBQ-6WjeQ@mail.gmail.com> <20241007184924.GH14766@pendragon.ideasonboard.com>
-In-Reply-To: <20241007184924.GH14766@pendragon.ideasonboard.com>
+ <CAPDyKFp0N6UJhnHS164Tdf=xkWB0jzq65L9TdvYazeBQ-6WjeQ@mail.gmail.com>
+ <20241007184924.GH14766@pendragon.ideasonboard.com> <CAPDyKFpQVnF7eQv3dup8k-3EijnMjuveCG9sZ=Rpey1Y6MBJEg@mail.gmail.com>
+ <20241007222502.GG30699@pendragon.ideasonboard.com>
+In-Reply-To: <20241007222502.GG30699@pendragon.ideasonboard.com>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Tue, 8 Oct 2024 00:08:24 +0200
-Message-ID: <CAPDyKFpQVnF7eQv3dup8k-3EijnMjuveCG9sZ=Rpey1Y6MBJEg@mail.gmail.com>
+Date: Tue, 8 Oct 2024 00:34:49 +0200
+Message-ID: <CAPDyKFrGNwna6Y2pqSRaBbRYHKRaD2ayqQHLtoqLPOu9Et7qTg@mail.gmail.com>
 Subject: Re: [PATCH 00/51] treewide: Switch to __pm_runtime_put_autosuspend()
 To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 Cc: Sakari Ailus <sakari.ailus@linux.intel.com>, dri-devel@lists.freedesktop.org, 
@@ -90,8 +92,8 @@ Cc: Sakari Ailus <sakari.ailus@linux.intel.com>, dri-devel@lists.freedesktop.org
 	asahi@lists.linux.dev, rafael@kernel.org, 
 	Andy Shevchenko <andy.shevchenko@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241007_150902_538758_B353969D 
-X-CRM114-Status: GOOD (  24.33  )
+X-CRM114-CacheID: sfid-20241007_153528_049788_DED2CE39 
+X-CRM114-Status: GOOD (  36.79  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,62 +110,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, 7 Oct 2024 at 20:49, Laurent Pinchart
+On Tue, 8 Oct 2024 at 00:25, Laurent Pinchart
 <laurent.pinchart@ideasonboard.com> wrote:
 >
 > Hi Ulf,
 >
-> On Fri, Oct 04, 2024 at 04:38:36PM +0200, Ulf Hansson wrote:
-> > On Fri, 4 Oct 2024 at 11:41, Sakari Ailus <sakari.ailus@linux.intel.com> wrote:
+> On Tue, Oct 08, 2024 at 12:08:24AM +0200, Ulf Hansson wrote:
+> > On Mon, 7 Oct 2024 at 20:49, Laurent Pinchart wrote:
+> > > On Fri, Oct 04, 2024 at 04:38:36PM +0200, Ulf Hansson wrote:
+> > > > On Fri, 4 Oct 2024 at 11:41, Sakari Ailus wrote:
+> > > > >
+> > > > > Hello everyone,
+> > > > >
+> > > > > This set will switch the users of pm_runtime_put_autosuspend() to
+> > > > > __pm_runtime_put_autosuspend() while the former will soon be re-purposed
+> > > > > to include a call to pm_runtime_mark_last_busy(). The two are almost
+> > > > > always used together, apart from bugs which are likely common. Going
+> > > > > forward, most new users should be using pm_runtime_put_autosuspend().
+> > > > >
+> > > > > Once this conversion is done and pm_runtime_put_autosuspend() re-purposed,
+> > > > > I'll post another set to merge the calls to __pm_runtime_put_autosuspend()
+> > > > > and pm_runtime_mark_last_busy().
+> > > >
+> > > > That sounds like it could cause a lot of churns.
+> > > >
+> > > > Why not add a new helper function that does the
+> > > > pm_runtime_put_autosuspend() and the pm_runtime_mark_last_busy()
+> > > > things? Then we can start moving users over to this new interface,
+> > > > rather than having this intermediate step?
 > > >
-> > > Hello everyone,
-> > >
-> > > This set will switch the users of pm_runtime_put_autosuspend() to
-> > > __pm_runtime_put_autosuspend() while the former will soon be re-purposed
-> > > to include a call to pm_runtime_mark_last_busy(). The two are almost
-> > > always used together, apart from bugs which are likely common. Going
-> > > forward, most new users should be using pm_runtime_put_autosuspend().
-> > >
-> > > Once this conversion is done and pm_runtime_put_autosuspend() re-purposed,
-> > > I'll post another set to merge the calls to __pm_runtime_put_autosuspend()
-> > > and pm_runtime_mark_last_busy().
+> > > I think the API would be nicer if we used the shortest and simplest
+> > > function names for the most common use cases. Following
+> > > pm_runtime_put_autosuspend() with pm_runtime_mark_last_busy() is that
+> > > most common use case. That's why I like Sakari's approach of repurposing
+> > > pm_runtime_put_autosuspend(), and introducing
+> > > __pm_runtime_put_autosuspend() for the odd cases where
+> > > pm_runtime_mark_last_busy() shouldn't be called.
 > >
-> > That sounds like it could cause a lot of churns.
-> >
-> > Why not add a new helper function that does the
-> > pm_runtime_put_autosuspend() and the pm_runtime_mark_last_busy()
-> > things? Then we can start moving users over to this new interface,
-> > rather than having this intermediate step?
+> > Okay, so the reason for this approach is because we couldn't find a
+> > short and descriptive name that could be used in favor of
+> > pm_runtime_put_autosuspend(). Let me throw some ideas at it and maybe
+> > you like it - or not. :-)
 >
-> I think the API would be nicer if we used the shortest and simplest
-> function names for the most common use cases. Following
-> pm_runtime_put_autosuspend() with pm_runtime_mark_last_busy() is that
-> most common use case. That's why I like Sakari's approach of repurposing
-> pm_runtime_put_autosuspend(), and introducing
-> __pm_runtime_put_autosuspend() for the odd cases where
-> pm_runtime_mark_last_busy() shouldn't be called.
+> I like the idea at least :-)
+>
+> > I don't know what options you guys discussed, but to me the entire
+> > "autosuspend"-suffix isn't really that necessary in my opinion. There
+> > are more ways than calling pm_runtime_put_autosuspend() that triggers
+> > us to use the RPM_AUTO flag for rpm_suspend(). For example, just
+> > calling pm_runtime_put() has the similar effect.
+>
+> To be honest, I'm lost there. pm_runtime_put() calls
+> __pm_runtime_idle(RPM_GET_PUT | RPM_ASYNC), while
+> pm_runtime_put_autosuspend() calls __pm_runtime_suspend(RPM_GET_PUT |
+> RPM_ASYNC | RPM_AUTO).
 
-Okay, so the reason for this approach is because we couldn't find a
-short and descriptive name that could be used in favor of
-pm_runtime_put_autosuspend(). Let me throw some ideas at it and maybe
-you like it - or not. :-)
+__pm_runtime_idle() ends up calling rpm_idle(), which may call
+rpm_suspend() - if it succeeds to idle the device. In that case, it
+tags on the RPM_AUTO flag in the call to rpm_suspend(). Quite similar
+to what is happening when calling pm_runtime_put_autosuspend().
 
-I don't know what options you guys discussed, but to me the entire
-"autosuspend"-suffix isn't really that necessary in my opinion. There
-are more ways than calling pm_runtime_put_autosuspend() that triggers
-us to use the RPM_AUTO flag for rpm_suspend(). For example, just
-calling pm_runtime_put() has the similar effect.
+>
+> >
+> > Moreover, it's similar for pm_runtime_mark_last_busy(), it's called
+> > during rpm_resume() too, for example. So why bother about having
+> > "mark_last_busy" in the new name too.
+> >
+> > That said, my suggestion is simply "pm_runtime_put_suspend".
+>
+> Can we do even better, and make pm_runtime_put() to handle autosuspend
+> automatically when autosuspend is enabled ?
 
-Moreover, it's similar for pm_runtime_mark_last_busy(), it's called
-during rpm_resume() too, for example. So why bother about having
-"mark_last_busy" in the new name too.
+As stated above, this is already the case.
 
-That said, my suggestion is simply "pm_runtime_put_suspend".
-
-If you don't like it, I will certainly not object to your current
-approach, even if I think it leads to unnecessary churns.
-
-[...]
+>
+> > If you don't like it, I will certainly not object to your current
+> > approach, even if I think it leads to unnecessary churns.
+> >
+> > [...]
+> >
+> > Kind regards
+> > Uffe
+>
+> --
+> Regards,
+>
+> Laurent Pinchart
 
 Kind regards
 Uffe
