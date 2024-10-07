@@ -4,152 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 028C3CF8854
-	for <linux-i3c@archiver.kernel.org>; Fri,  4 Oct 2024 18:58:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3196CED243
+	for <linux-i3c@archiver.kernel.org>; Mon,  7 Oct 2024 22:09:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jz86UlLj43jfIpz9E5fBTZ78t1iQkpHFXhAuvdjtI8Q=; b=f3yrsvWvQgZPeP
-	gMsLpp/Jlrt9X15xFGOOl76lfts+bKsIT2opu1OvsXzYbXsjKBuFH1hDLo2gqh2KD872YIInZ6vi2
-	irX9fyoJa9Taa90FVIMQkzJDe4JU5bRXd0zZzPuv+QeMO0wxX2lgYvBfcouNTg5riXZoNT9bxW4ka
-	WsIshvA6Qft5ujRgza4lEqL2od02qdGTxSwj00J4+p3Vr2KGR+ugD37eAfXblAhnDHLcLLVhsgIBB
-	zT3gNj8htoXbJYny30fTJLAoJwgG0C+z9Iq2rHFiV6tYcSd3E8dcr5pfGIVU4oMjNBRHhCbKY3ut+
-	gnGQH+JK5ezLNIYOvBnw==;
+	List-Owner; bh=351HLHd+QRwRqf8+7iY7KA6hRMzhtF21LR86FG3suYQ=; b=pl2aZS+74eDAK9
+	Cf4Ip7FBFJnY+NjZtGeKsY5w1ShukLqELq/i9nUcgJ8A2scziJVd3p4Mv0pJPvbmxFhiMXBC5x//1
+	6J8VS8Q27pzTXq39yttVipGXGv753sH4sYNVqYKMr15MaqqzUas09S9JnmzJQ43++11timuHdrbA9
+	Vjy1HhpMIq5vzYBwv3VrPRLCEzimjLTWkVo44uWiFysfVYpvqTmAsV6+Tqp26H5vcgzZIKRbFJZ95
+	vdtUnTSPVpsKmm2VSCA6ixFiVkFRQ81Kh/jQN2mwtFNq75RSjxrvDGpgFATRfs/3fQKnM9YYpK2VO
+	00+5qURCvzqiJDFGthdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1swnVz-0000000Do0J-0ddS;
-	Fri, 04 Oct 2024 18:58:59 +0000
-Received: from mail-northeuropeazlp170110001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
+	id 1sxvuc-00000003tLZ-40Fn;
+	Mon, 07 Oct 2024 22:09:06 +0000
+Received: from mail-yb1-xb2c.google.com ([2607:f8b0:4864:20::b2c])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1swnVv-0000000DnyK-2qEf
+	id 1sxvuY-00000003tJI-1gtV
 	for linux-i3c@lists.infradead.org;
-	Fri, 04 Oct 2024 18:58:57 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=twBfcxjGN0PQzwlOXFaowC/bKy6DfK9YO3OaoNYDnh2oheulE6dNy+ree7nf3+QC6aUsCKu8NGkuEvS8B5yrSfAQcRID4I8Xt6kp7VFI2GcbazQGLyC/KlE/cePPqS9+zCykUlIw7KA4EWxgXvtAsIzQZZ1rakwIP7JxmsyyiBho63iYZAW0qQEDf+NrTi5sxiMIzz4f1xL0XyVahp32+Su7NXbEkM1nVBhFvrpOx/26L9sPogeescM/naesH4wQJCK58Ax3rVbVQcRv2zIrxFDdQqwF0knmpBCsno43sFkJF6aw9ZtNxo/Jk1FDoBt7V9X+2R+OgTSHZmPRp0RIzQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=etBOJ4DvmRBvUIggEZGeLQ2Dmr73osEeWcOiC4dKV9M=;
- b=GnnKXWq9tkOcD7amdf39ze4S/SvX5TDb83VWOkEQ5QHWxj4nLyZD7hv4bMwbj3dg+JVWCmejqlNThfzb0rl4EMfqED7jWD5AorJxt1RR3/C0xpJ4FauGN870mBao2i9ZLIcEolwEgUSborX9jQ49M+DcPQl/xmtWEosh/H98V0jRA7qB5NLdlPnQnZczLfyK9Yja4iOMhmuWsj6PrCeXQAghL01cE2zdGSJYrfa/9TLKLXAyruyri4D+mNdrGhjtE+K5UONCE0PbpkznvejU8Kk0o9XzIne9jplNv5LpX0Rxsjh0fDUp0tp+9F+GKRUPNRZzsRfxaCRbXAfbmv67UA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=etBOJ4DvmRBvUIggEZGeLQ2Dmr73osEeWcOiC4dKV9M=;
- b=Ds72Kc1cGrZ5U1hPkDrRSTdDN25G1IxGukjJw2nQqXR5cn0cBNsqQkmepr6tZYh4L1G61DxF/fSdKhxoyCERqMqfSxIftCMd3ov4UcvYnYWRoC5XYu50jdzKXoVYg+SJ4qxHoc9ibR638Pv/9dSW2ly27APe3R9euPZPeq01/k2PtFUhMAJzBRKMh0O53K8e7t5Dm8MJ/pnXbIUyJnDPC4TsdF8ZDGMi2Mt8uI95LNtAPwC76Fby3GtEh2W7eDtiqC4uXI5Tq5h5Z2oSB4/Ewg3pXjMJ8qtoxlXtqGGkoYA7sz2GhDRVdv9XaZ/3B4ANlJ+QxsjjkzdPhAGEyf1fVw==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
- by AS8PR04MB8897.eurprd04.prod.outlook.com (2603:10a6:20b:42c::20) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8026.16; Fri, 4 Oct
- 2024 18:58:49 +0000
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06%4]) with mapi id 15.20.8026.016; Fri, 4 Oct 2024
- 18:58:49 +0000
-Date: Fri, 4 Oct 2024 14:58:38 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Miquel Raynal <miquel.raynal@bootlin.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	arnd@arndb.de, bbrezillon@kernel.org, boris.brezillon@collabora.com,
-	conor.culhane@silvaco.com, gregkh@linuxfoundation.org,
-	imx@lists.linux.dev, pthombar@cadence.com,
-	ravindra.yashvant.shinde@nxp.com
-Subject: Re: [PATCH v6 2/3] i3c: master: Extend address status bit to 4 and
- add I3C_ADDR_SLOT_EXT_DESIRED
-Message-ID: <ZwA63q40ZQYAz+Sf@lizhi-Precision-Tower-5810>
-References: <20241003-i3c_dts_assign-v6-0-eae2569c92ca@nxp.com>
- <20241003-i3c_dts_assign-v6-2-eae2569c92ca@nxp.com>
- <20241004092914.42701e56@xps-13>
- <ZwAHziElHUR7ZdKS@lizhi-Precision-Tower-5810>
- <20241004182229.6e08d02c@xps-13>
-Content-Disposition: inline
-In-Reply-To: <20241004182229.6e08d02c@xps-13>
-X-ClientProxiedBy: SJ0PR13CA0086.namprd13.prod.outlook.com
- (2603:10b6:a03:2c4::31) To PAXPR04MB9642.eurprd04.prod.outlook.com
- (2603:10a6:102:240::14)
+	Mon, 07 Oct 2024 22:09:05 +0000
+Received: by mail-yb1-xb2c.google.com with SMTP id 3f1490d57ef6-e25d11cc9f0so4024402276.3
+        for <linux-i3c@lists.infradead.org>; Mon, 07 Oct 2024 15:09:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1728338941; x=1728943741; darn=lists.infradead.org;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=CqX9Y0dEmHgiIN61I3/zW08Bfod5n7pFQiGUVIMbBVk=;
+        b=fLMKT9Z3Fu6IUjOxHrwezXne1W4cE5sZ2Bweg6L9eZ4+LHQSAfcrlSlvECvBp50Ckf
+         A6nPsiPQCYEIqgl5Dc7cttDKGgHnUBE4HGeJGZhgH3bNxcDLh7GTuxj0D+wqTJoKQJXW
+         ePBjpqt/3wtvTgFLTBBPutETLPciPzed9nxA2htGx8u6VcC3YsQWBdXWjaBhAKKClNy4
+         /Mwnz4K7lKfH/kPOkd8id09yI0plzYin/lJpYNW5YqPa8CLPjTiF8FsqRDe72/rDM7uH
+         tUCP18mojugYPxMVYlPPMO/fnXrQdHb5luRS84I8TiKoVQAVAnD1Gr3K1OlnXo9zG59r
+         MBXQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1728338941; x=1728943741;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=CqX9Y0dEmHgiIN61I3/zW08Bfod5n7pFQiGUVIMbBVk=;
+        b=ZZgpCFg4qurOhOPCOkEbrhKO7e9lu9QUSSzY/VUNqSEjzIseLF/qki/YYv8o5C8Zrc
+         FKltSX/CfL2HKGaPka++ecltRYbL2Yb62sZKmUNZX1Sxcr4ZZ+QolU4rio48mwSMQJMS
+         4R349pEsHMrpJpZeSbU0RKZY71uGCBOxAk0h117xCRnzG7z8RSRZfOA5FumVnNRegTAK
+         ZJsYAcnvqTre/blqaUjc/IqhGC8TfUV0zQE3XUpKj7lOgdIrAcaT04a6tBeTF5rESR+k
+         3hw9aufwbInCSGoR83I10FoKgTvmR+WJifPWcRVdAXBjP9JakwO/+bihe9WUKgey1i2F
+         Piiw==
+X-Forwarded-Encrypted: i=1; AJvYcCUxS0VuQ3hD/c0T7xaXLEWdz8xudiIhx39t9u7w3pIZ/HddmrVdX2c8iIP+9XBx2QV6mAPanWIikJI=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzrcbCkL0FdxlRWIoiHFcjRAYpBKrw+6K9nizJxAGSIsInodAUW
+	MZYAthDr4dzGxLKR8yicKJld5HJtkK/hTqfL+UhVfDuYfBQHzbnyW0E+byDv/G/xdOSJ/mbD60+
+	WXM6w0LOl45GhFwWLZH+Xje6Ow1C35dqdIzsscQ==
+X-Google-Smtp-Source: AGHT+IE2nJVabbXdwibt1H0pVBms5dYTsG8RkBKKAzfdsgMhYsZ8VyWIk7HanuWHiQPQxXFBk2ezA08qlljJFN0QQR4=
+X-Received: by 2002:a05:6902:848:b0:e28:edbd:765f with SMTP id
+ 3f1490d57ef6-e28edbd7f75mr206026276.2.1728338940867; Mon, 07 Oct 2024
+ 15:09:00 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|AS8PR04MB8897:EE_
-X-MS-Office365-Filtering-Correlation-Id: 19749690-0202-463a-6ee9-08dce4a694d8
-X-LD-Processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|7416014|376014|366016|1800799024|38350700014;
-X-Microsoft-Antispam-Message-Info: =?iso-8859-1?Q?+X6D2dFJHST4eZFMsrlR6WYZ0aCtfZ6ZerzF/UhuuaEHvSSzesa3VwsJfo?=
- =?iso-8859-1?Q?7rhWqY4C9iWn9bVIo44gwlI9OK0FHJMi152OVsjFHqK/Noqkq2sEroHVkE?=
- =?iso-8859-1?Q?3iM5CSnM1tr2WnsgQiFai5OfA/ZBoxI4ZJBs2g72n/WqFoM8tikP6vgFMi?=
- =?iso-8859-1?Q?+psYIuYAoEGvQD/Uuz9l9QihZUKPIv7BpUW27vPyMwUde+p4OiEVsIB1+G?=
- =?iso-8859-1?Q?zkQhK8pC5Qe49ZEkCzSpCUWvwj6+T/IHCsL2yFzR+QabcsOZlLc2RwE/ud?=
- =?iso-8859-1?Q?We4L7NmRH5+PiKcMaN3IbI1BppfkHKjCAlbgLDSE3/0YPP1L6TdIwyxgdc?=
- =?iso-8859-1?Q?Bq/U5lSMNQi4L8KFE/7O/aODuwfDx/4Tkvz+swQGZ1iMBNoizPqXAw9KfP?=
- =?iso-8859-1?Q?EMPtGuH9BufEB1tO+WUiXBDozK55UWSK1wDBKHp1BkxB830m5OlpVdgZP4?=
- =?iso-8859-1?Q?Rm8FeofDchSdj8VYMKOP9DXKAdlGDNLdLPOcUOlF5L1OpdD1frBvKg4xfV?=
- =?iso-8859-1?Q?iKFOh37fdU6uARuQ7ShL4lWA7NHaHCbsu5QThymLhAsJ0NjWhN6FLPcOpe?=
- =?iso-8859-1?Q?auNdMjx9gOz/0ZBbAPFIIUuF7pq/KvEkcBTAvuSnpp1TFwSyyKKBOq4doN?=
- =?iso-8859-1?Q?PUfRylEbePGnUJQfhVd+McwLb9xlr3AfMxFHoHfWBsQN9PX4EAgCYNSc5v?=
- =?iso-8859-1?Q?2dl2blP/AD1nBcUspCN56zyqc2M8H6zlGSEXlPcaWlnLQzrVzCzcg0QuDB?=
- =?iso-8859-1?Q?mhZDwyZLcFNBiLgCkURYwP7p3y6jNsqCpH82OCPhxxFDSSR6GOsvhD7DgL?=
- =?iso-8859-1?Q?aFzRSc6X8m5l+sUsnzfNcptDHE6oiGgAukOzs73n/SConlqpYexofonQbZ?=
- =?iso-8859-1?Q?nOzXGra9SyFYi/SV/ooySz+JGkCcw0WG5ZAYtZpRx3mzVhr/GmajGSVdqp?=
- =?iso-8859-1?Q?AXgy6aO+q41uxxTsh8Ce+g8jCF77KwsRsVGRxUE0pmtnYdPJio4Thu0tog?=
- =?iso-8859-1?Q?D4citRah0snMVpKl7GC4yzsDPZlW4DRZGg3WeI2UijBwS3epPzcrgsz8cs?=
- =?iso-8859-1?Q?hy6StL4MXzy+oh0bj5ynDV6Z9GcZm+Bb6vvRPtJOxNMGAAZUbKzeqgnnpJ?=
- =?iso-8859-1?Q?6aWoUzlswbteIHB19nhUfXr5lN48Scv9SJC7PDcyjioekfq/+PbV2ytHFF?=
- =?iso-8859-1?Q?dbsBfZ/akTovlgpJUrEQkHMAb94wNX05B5A4X60YfJ4P6rMrd1JkrJ2PiX?=
- =?iso-8859-1?Q?qGCzI/fgMQfxwYYSFufVeJM+kITqKjXRTfXcFs7Ce+YRrpsK6KMTSeUSLP?=
- =?iso-8859-1?Q?IYjN1TLMtWNtJYlZj2XJFwu2cphtcXQw45y/JaBQfLKGbf0CnQLMvYPaRJ?=
- =?iso-8859-1?Q?anZOjS4Z710Dj9t8d6yw+rM9FmpPSJGA=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(7416014)(376014)(366016)(1800799024)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?fyNileJUM8vxdA0EgQk3LZc5Kuao2tZi+0hJ8ExE26TrhmzjWJg//fyOLW?=
- =?iso-8859-1?Q?kJbD9/gMbp72mE150zltdvkLKDB41ZQiQRMBrtazXcq/Wmmw5Fps7vU3hs?=
- =?iso-8859-1?Q?7DvlsKCXXbyKGOixf3M0yN/PLh+4u4SG3L/Z55kNQ8DfVRvbP8+8brfKda?=
- =?iso-8859-1?Q?9e40ybYlkeGSvdmT66URcWwHK2xN4O8wQxnO/I808+L+DYzMwnj/QJ83+J?=
- =?iso-8859-1?Q?6SicCeAEKMPZfgpYDxIfNAZyRS0Dl/fQ4O137RjOFJgg9ceXE7dr8kTBm7?=
- =?iso-8859-1?Q?pJlH8CIqrMixMgcUpH//uscQ5HBs5fSluYOOSiPoCGlNQV+r1uVYOMuxcY?=
- =?iso-8859-1?Q?IxI1G4uCWi84Jfiiwut5BQ3zCk733LCjfJmI3hOXp333qLmy8goWaLysNz?=
- =?iso-8859-1?Q?lCeoCI5qjo6AnNGWpIS+Myl2GoDB1n1mpJAA+Epzed8k+BKJh1k1dzpnQs?=
- =?iso-8859-1?Q?vZ3mzWfJv86tpuaEpss12qWDeJAinKfefnE7GjTO9Ppr9U2mcv/R9q6/ME?=
- =?iso-8859-1?Q?lJo97j5FUY7wjnOzv1zRII7XRi/DJ4k9ekD9anv4kE79KRwJUDmg1eOzKv?=
- =?iso-8859-1?Q?XA/fKzCLFvXx4XNAth9Q3jaACBYqrry3OGdw0F6UuxyHfQ5MDoecPT9HeY?=
- =?iso-8859-1?Q?7AjasCg9hzg2j1/7BPG9KmrvC3L9PIfNYqQ3DMltE190M4WzRFXffv53z1?=
- =?iso-8859-1?Q?M0VT0+u3DCWXeqQb20/d7R7Qc7mgb+zMCWb0hVeBVQ4n/hdZuzcCNLaZlI?=
- =?iso-8859-1?Q?ZNVFX2sH+4x+l5gpABpKhaojhKiBUPapxknA5sITxrNbgeItiMJl8iLoFR?=
- =?iso-8859-1?Q?BUzrbYLyFW0xTE64MrXhht/k4UH0Sl8eIqd5bnJp/7K1CcNJUvzjMFvmi7?=
- =?iso-8859-1?Q?XhcGjw5Q+6JJEgPI2P8dlMsEYRFM+w0U3RvL+JVOqcIoZ1xn8OpcQnWPCj?=
- =?iso-8859-1?Q?jc9gTwGQahGknbSSQBwr8JgEwu8zANUpyL8H1n2ZQ34Od3fUWFAvjQgiZ9?=
- =?iso-8859-1?Q?Uc1qY/WiTQCk/GKyT3vPGeloI2MGm7IvipUkcGfDZn90g9D0vHFoKuttuf?=
- =?iso-8859-1?Q?oxd8wYuY3bvayPBISNhu+V1ZK5yZGZVyx5LMUfFILR7QXPjX/6cRzjLxoC?=
- =?iso-8859-1?Q?HOpnA1bHUQTCYoMYKpqfIV2U7Fz2BwlsD/lg4l8aFo4MlOtMO0CWQtMSmM?=
- =?iso-8859-1?Q?i7NT8nKwqoiSs96v0qvmVV5ajAo6/j/+AVMZisODhuLnuweTy5GczlzFFV?=
- =?iso-8859-1?Q?mGla5ScDiXAC6uMUsRkddpzehWuSAhlI0jmaoJvPkfyBxEI0acssefww/F?=
- =?iso-8859-1?Q?+UqPwSnUX+2Y/iUjUFZcUtB7jKPPz+p63+c7XURypjWSYVUJXnfs4iFbcn?=
- =?iso-8859-1?Q?M0YcNmOn7m6R3gQa2Ok0C3zbK1sK/2BxXsZ9DsTAbiFT74Ezn1ohTK+IVB?=
- =?iso-8859-1?Q?iH1QHOiwEecf299zbrHktCOBvCEyMlKTuqLfdKrsoNAlMKi1OWrhiN1F1J?=
- =?iso-8859-1?Q?ILGh+JvxkqiAqDZsdM/ZCG5jXoC7natCZ3vn+pPD4qiofCL65U4W1RuDEB?=
- =?iso-8859-1?Q?e+6TGNC70faCk3lSw1RJhJTmuWI9YB4ABeUkOMYXGcEQHbx9c9GSVAxV43?=
- =?iso-8859-1?Q?dmbAZpqW5xU8ljfhZfNpHxKp0eso4fdnX9?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 19749690-0202-463a-6ee9-08dce4a694d8
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Oct 2024 18:58:49.5243
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: /H70LbgvTcXYHCO3qjea5aeW8KLjEL2g5zT4W/b3o+JWsqR+IK+ctC+9dLWeB1ySV+6CBhb9PL6d0nvLzv1/9Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8897
+References: <20241004094101.113349-1-sakari.ailus@linux.intel.com>
+ <CAPDyKFp0N6UJhnHS164Tdf=xkWB0jzq65L9TdvYazeBQ-6WjeQ@mail.gmail.com> <20241007184924.GH14766@pendragon.ideasonboard.com>
+In-Reply-To: <20241007184924.GH14766@pendragon.ideasonboard.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Tue, 8 Oct 2024 00:08:24 +0200
+Message-ID: <CAPDyKFpQVnF7eQv3dup8k-3EijnMjuveCG9sZ=Rpey1Y6MBJEg@mail.gmail.com>
+Subject: Re: [PATCH 00/51] treewide: Switch to __pm_runtime_put_autosuspend()
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Cc: Sakari Ailus <sakari.ailus@linux.intel.com>, dri-devel@lists.freedesktop.org, 
+	linux-kernel@vger.kernel.org, linux-bluetooth@vger.kernel.org, 
+	linux-clk@vger.kernel.org, linux-crypto@vger.kernel.org, 
+	dmaengine@vger.kernel.org, linux-gpio@vger.kernel.org, 
+	amd-gfx@lists.freedesktop.org, nouveau@lists.freedesktop.org, 
+	linux-stm32@st-md-mailman.stormreply.com, 
+	linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org, 
+	linux-i3c@lists.infradead.org, linux-iio@vger.kernel.org, 
+	linux-input@vger.kernel.org, patches@opensource.cirrus.com, 
+	iommu@lists.linux.dev, imx@lists.linux.dev, 
+	linux-mediatek@lists.infradead.org, linux-media@vger.kernel.org, 
+	linux-mmc@vger.kernel.org, linux-mtd@lists.infradead.org, 
+	netdev@vger.kernel.org, linux-wireless@vger.kernel.org, 
+	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-pwm@vger.kernel.org, linux-remoteproc@vger.kernel.org, 
+	linux-sound@vger.kernel.org, linux-spi@vger.kernel.org, 
+	linux-staging@lists.linux.dev, linux-usb@vger.kernel.org, 
+	linux-serial@vger.kernel.org, greybus-dev@lists.linaro.org, 
+	asahi@lists.linux.dev, rafael@kernel.org, 
+	Andy Shevchenko <andy.shevchenko@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241004_115855_739591_A0B4E94B 
-X-CRM114-Status: GOOD (  17.83  )
+X-CRM114-CacheID: sfid-20241007_150902_538758_B353969D 
+X-CRM114-Status: GOOD (  24.33  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -161,61 +103,72 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Oct 04, 2024 at 06:22:29PM +0200, Miquel Raynal wrote:
-> Hi Frank,
+On Mon, 7 Oct 2024 at 20:49, Laurent Pinchart
+<laurent.pinchart@ideasonboard.com> wrote:
 >
-> > > > @@ -1918,9 +1959,10 @@ static int i3c_master_bus_init(struct i3c_ma=
-ster_controller *master)
-> > > >  			goto err_rstdaa;
-> > > >  		}
-> > > >
-> > > > -		i3c_bus_set_addr_slot_status(&master->bus,
-> > > > -					     i3cboardinfo->init_dyn_addr,
-> > > > -					     I3C_ADDR_SLOT_I3C_DEV);
-> > > > +		i3c_bus_set_addr_slot_status_mask(&master->bus,
-> > > > +						 i3cboardinfo->init_dyn_addr,
-> > > > +						 I3C_ADDR_SLOT_I3C_DEV | I3C_ADDR_SLOT_EXT_DESIRED,
-> > > > +						 I3C_ADDR_SLOT_EXT_STATUS_MASK);
+> Hi Ulf,
+>
+> On Fri, Oct 04, 2024 at 04:38:36PM +0200, Ulf Hansson wrote:
+> > On Fri, 4 Oct 2024 at 11:41, Sakari Ailus <sakari.ailus@linux.intel.com> wrote:
 > > >
-> > > However I'm not sure I understand the use of the
-> > > set_addr_slot_status_mask() function. Can't we just use the normal
-> > > function and just extend the mask in the fist place?
+> > > Hello everyone,
+> > >
+> > > This set will switch the users of pm_runtime_put_autosuspend() to
+> > > __pm_runtime_put_autosuspend() while the former will soon be re-purposed
+> > > to include a call to pm_runtime_mark_last_busy(). The two are almost
+> > > always used together, apart from bugs which are likely common. Going
+> > > forward, most new users should be using pm_runtime_put_autosuspend().
+> > >
+> > > Once this conversion is done and pm_runtime_put_autosuspend() re-purposed,
+> > > I'll post another set to merge the calls to __pm_runtime_put_autosuspend()
+> > > and pm_runtime_mark_last_busy().
 > >
-> > The major purpose of set_addr_slot_status_mask() is that reduce code
-> > change. There are already address alloc/free by using I3C_ADDR_SLOT_FRE=
-E.
+> > That sounds like it could cause a lot of churns.
 > >
-> > we don't want i3c_bus_set_addr_slot_status() touch bit
-> > I3C_ADDR_SLOT_EXT_DESIRED since it was init at scan dts.
+> > Why not add a new helper function that does the
+> > pm_runtime_put_autosuspend() and the pm_runtime_mark_last_busy()
+> > things? Then we can start moving users over to this new interface,
+> > rather than having this intermediate step?
 >
-> I agree, but in general you will never remove any "desired" slot, so
-> the "set status", besides at init time, should never touch these extra
-> bits?
+> I think the API would be nicer if we used the shortest and simplest
+> function names for the most common use cases. Following
+> pm_runtime_put_autosuspend() with pm_runtime_mark_last_busy() is that
+> most common use case. That's why I like Sakari's approach of repurposing
+> pm_runtime_put_autosuspend(), and introducing
+> __pm_runtime_put_autosuspend() for the odd cases where
+> pm_runtime_mark_last_busy() shouldn't be called.
 
-I am not sure I understand what your means exactly.
+Okay, so the reason for this approach is because we couldn't find a
+short and descriptive name that could be used in favor of
+pm_runtime_put_autosuspend(). Let me throw some ideas at it and maybe
+you like it - or not. :-)
 
-Yes, it is first and only place to set I3C_ADDR_SLOT_EXT_DESIRED.
+I don't know what options you guys discussed, but to me the entire
+"autosuspend"-suffix isn't really that necessary in my opinion. There
+are more ways than calling pm_runtime_put_autosuspend() that triggers
+us to use the RPM_AUTO flag for rpm_suspend(). For example, just
+calling pm_runtime_put() has the similar effect.
 
-Other place's i3c_bus_set_addr_slot_status() will not touch these bits.
+Moreover, it's similar for pm_runtime_mark_last_busy(), it's called
+during rpm_resume() too, for example. So why bother about having
+"mark_last_busy" in the new name too.
 
-Frank
+That said, my suggestion is simply "pm_runtime_put_suspend".
 
->
-> > There are 18 place, using i3c_bus_set_addr_slot_status(), but we only n=
-eed
-> > touch I3C_ADDR_SLOT_EXT_DESIRED bit when scan dts.
-> >
->
-> Thanks,
-> Miqu=E8l
+If you don't like it, I will certainly not object to your current
+approach, even if I think it leads to unnecessary churns.
 
--- =
+[...]
 
+Kind regards
+Uffe
+
+-- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
