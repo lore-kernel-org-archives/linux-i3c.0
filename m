@@ -4,73 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B90A5CEFC2F
-	for <linux-i3c@archiver.kernel.org>; Tue,  8 Oct 2024 15:52:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A731CEFC39
+	for <linux-i3c@archiver.kernel.org>; Tue,  8 Oct 2024 18:29:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RnulZ0bm+HXVzokpNXcA3PCc9sMfihB3iSxpLVlAOIE=; b=jKD8kbO8/olcFe
-	BuQTPecxotuvnGTRhftKiR7gzu3AwgWAUazWBgd2jZb7B7PJ+T4qDIgBQXRgqQX31sHFmGOoxgscM
-	9P1x6o+ge7FdytRKrBf2w0U0P/hZgu3eEhUm4x2WiKQySDRX9uVJGo97WR4hVS9Ynj1jE7uZV7szt
-	LBt0L10Mth3J0l2VB94dUfbdpV/QaT+5Aa/qyojeK0HNfTvxV5jucLzmGMe/n+ZA6X2inXcz8AmCU
-	Lx4QUQH8QCvIExF2LodIU1xsLs+mjfV5TwM7OLZInHH9tNXszTebxyh9pese0CQnQlOnPEMnPW8w0
-	68OYT61H+XCcQqsX8m8Q==;
+	List-Owner; bh=RhA3p9ji09rx4X53IylzzMz4rzqwYBLW3DIpiqqS9sU=; b=IkdwQTOYijzgX4
+	/5RK17TdnnSCu55UqRkv/6kREpUE5dwXsHeStklNh+BTaoQVDa3HmIgvhpkgKuSMI7H8/SNHV61DJ
+	srXsFsKcmt6DcvSqqEJqZe8sL5bLA73BUNouTrhNij/shA/FCAOasgrw9rVDSi6Ye2FJI8tWsNG3Q
+	8eU8159L13XiSbW/iNjovj2sLED/N8j3C0q1Mv/TDF+3Oqp8g5BuPGh3ANSRJKz9URyGr3fXZ47a3
+	Ev1OEtyi9rFR2LC4WZ1ji5A0n4ROYnFN5mLoFZtIpDpiYsyRqSWYthLj892x8CoWumUS/QSvs1o4A
+	7vVRLKpir86Bg0Wf8mBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1syCW7-00000006Pnh-1lnH;
-	Tue, 08 Oct 2024 15:52:55 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1syExu-00000006mxd-0pCI;
+	Tue, 08 Oct 2024 18:29:46 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1sxsnU-00000003XBn-0GGD;
-	Mon, 07 Oct 2024 18:49:34 +0000
-Received: from pendragon.ideasonboard.com (unknown [132.205.230.14])
-	by perceval.ideasonboard.com (Postfix) with ESMTPSA id 9E180792;
-	Mon,  7 Oct 2024 20:47:53 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
-	s=mail; t=1728326874;
-	bh=eBAgU4TmtLHHFe+2PKttKiZlsLqzfPymsgFdfO1tKvw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=YxMqCYuP18UxhrvcDMto2rVlJwCnBlnrLPHGecCn/SWafNHkhjQUd4kQgMOwkuzNG
-	 sbdnKsqH2YkkrIiENlozQeYUWG/mBmxsVxBb/FNJQA9DXq0Xkdo5iWBsyO7xZe5PpT
-	 FnOZcGKSw3+FPkItlf4Kx/1LC+vtH2HoIoYeyVDE=
-Date: Mon, 7 Oct 2024 21:49:24 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Cc: Sakari Ailus <sakari.ailus@linux.intel.com>,
-	dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
-	linux-bluetooth@vger.kernel.org, linux-clk@vger.kernel.org,
-	linux-crypto@vger.kernel.org, dmaengine@vger.kernel.org,
-	linux-gpio@vger.kernel.org, amd-gfx@lists.freedesktop.org,
-	nouveau@lists.freedesktop.org,
-	linux-stm32@st-md-mailman.stormreply.com,
-	linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org,
-	linux-i3c@lists.infradead.org, linux-iio@vger.kernel.org,
-	linux-input@vger.kernel.org, patches@opensource.cirrus.com,
-	iommu@lists.linux.dev, imx@lists.linux.dev,
-	linux-mediatek@lists.infradead.org, linux-media@vger.kernel.org,
-	linux-mmc@vger.kernel.org, linux-mtd@lists.infradead.org,
-	netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org,
-	linux-pwm@vger.kernel.org, linux-remoteproc@vger.kernel.org,
-	linux-sound@vger.kernel.org, linux-spi@vger.kernel.org,
-	linux-staging@lists.linux.dev, linux-usb@vger.kernel.org,
-	linux-serial@vger.kernel.org, greybus-dev@lists.linaro.org,
-	asahi@lists.linux.dev, rafael@kernel.org,
-	Andy Shevchenko <andy.shevchenko@gmail.com>
-Subject: Re: [PATCH 00/51] treewide: Switch to __pm_runtime_put_autosuspend()
-Message-ID: <20241007184924.GH14766@pendragon.ideasonboard.com>
+	id 1syEtQ-00000006mB2-2kG9;
+	Tue, 08 Oct 2024 18:25:10 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 56F845C5B34;
+	Tue,  8 Oct 2024 18:25:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 427B6C4CECE;
+	Tue,  8 Oct 2024 18:25:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1728411907;
+	bh=gbTLwyB5anW/NVNa27O4GYEgcT7Zt8zwGlDOBl4w9X4=;
+	h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+	b=QWv3+c7hgheNar52dT93kuaRJqQGwrTlm+2qt+dJoGyQzAHIgU0jubrC8ThWhyZIZ
+	 RS8ECJijkXPnKWXZt/DHYo4oNlel2cdA7QmeMfgDuBLkCfLLpl6vQcl4DNTcV5EyFH
+	 5h8XYKukhwE21LUBMtMTij4WxRmO6XhWfjQaEwayPWgg9ncS5s6vbgtpgFKR2d4Ze1
+	 U8RaeSIFzvB8vNoypQgBEdP43kZiPZVbc5vt/+kjhif0hCbio5j23Z7Fbcd2MdU+Eu
+	 u4mqS8NwdiP912BRPYfCL4ckK1zD9U7UpC3cflIOLH9kTp0r9qM6ScGNZWHbmYuBvP
+	 5BPH6goJRp7XQ==
+Received: by mail-oo1-f53.google.com with SMTP id 006d021491bc7-5e5d0a80db4so3217625eaf.3;
+        Tue, 08 Oct 2024 11:25:07 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCU2XiXnKj1t73wvrzbcJdfVVoHCfOXVrAutCmntPFSr7BxXIEvb24APBh7R1+UvNZMwVrkNCFGp86mP@lists.infradead.org, AJvYcCUL1oVYCjTIKr+eKtAsHYn70N3ZN7GoMBIB+pXUdJeMTAzP3lSOcPyI/7PHHaUmpmgoNPT/QPyhMvrO@lists.infradead.org, AJvYcCV5ZOKTQbbuhhCg26y2eEkKRxXcxdExHP1vv1OruOsiVeXKKT+2v6AljAdfghZsFdmJ6pREtyVe1ucd45DA0r8=@lists.infradead.org, AJvYcCVajjV2zfQ41/AQjYHuEHuTIsoV5oqTkT2mHke8cId5t69hTCbJ6m0XCXoPzrfFhJlhMMMMFVNC9/F3CRHw58OX@lists.infradead.org, AJvYcCX8ic0M2IRUWsDrSjNgI1g2TfO8S6f/EcgoXRJ2XU+VeItEnvAylLIMMRHtH77vuoXHtbUpUqhqUyec@lists.infradead.org
+X-Gm-Message-State: AOJu0YzyXovsFSMGNvLTaibeugS3DnG87i1MaXYHV7g8rBYIpR0PLhN2
+	vyqdPiOhG3t7oNGXcdPxy17B468j9Ft2IEN4ISYTq4oVF1z7L9UjgOePJoXlxEMoqJbMsx56N2d
+	3xqgCbj0lZ6vUI7zhfGs1ASVFD+Y=
+X-Google-Smtp-Source: AGHT+IE8/UzrmOfg0dgL+a7sFpnmZmTmVZlVfZVXeH9h9sR6Zbx0f+k3/XHDUWx/NQFfJo1odWsZ7gtN5j50xL2u+GA=
+X-Received: by 2002:a05:6820:228e:b0:5e1:d741:6f04 with SMTP id
+ 006d021491bc7-5e7cc079979mr12626737eaf.3.1728411906564; Tue, 08 Oct 2024
+ 11:25:06 -0700 (PDT)
+MIME-Version: 1.0
 References: <20241004094101.113349-1-sakari.ailus@linux.intel.com>
  <CAPDyKFp0N6UJhnHS164Tdf=xkWB0jzq65L9TdvYazeBQ-6WjeQ@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAPDyKFp0N6UJhnHS164Tdf=xkWB0jzq65L9TdvYazeBQ-6WjeQ@mail.gmail.com>
+ <20241007184924.GH14766@pendragon.ideasonboard.com> <CAPDyKFpQVnF7eQv3dup8k-3EijnMjuveCG9sZ=Rpey1Y6MBJEg@mail.gmail.com>
+ <20241007222502.GG30699@pendragon.ideasonboard.com> <CAPDyKFrGNwna6Y2pqSRaBbRYHKRaD2ayqQHLtoqLPOu9Et7qTg@mail.gmail.com>
+In-Reply-To: <CAPDyKFrGNwna6Y2pqSRaBbRYHKRaD2ayqQHLtoqLPOu9Et7qTg@mail.gmail.com>
+From: "Rafael J. Wysocki" <rafael@kernel.org>
+Date: Tue, 8 Oct 2024 20:24:55 +0200
+X-Gmail-Original-Message-ID: <CAJZ5v0jvJyS7D5-wURi2kyWN-rmNa+YqupeQJ000pQRVd9VBcQ@mail.gmail.com>
+Message-ID: <CAJZ5v0jvJyS7D5-wURi2kyWN-rmNa+YqupeQJ000pQRVd9VBcQ@mail.gmail.com>
+Subject: Re: [PATCH 00/51] treewide: Switch to __pm_runtime_put_autosuspend()
+To: Ulf Hansson <ulf.hansson@linaro.org>, 
+	Laurent Pinchart <laurent.pinchart@ideasonboard.com>, 
+	Sakari Ailus <sakari.ailus@linux.intel.com>
+Cc: dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org, 
+	linux-bluetooth@vger.kernel.org, linux-clk@vger.kernel.org, 
+	linux-crypto@vger.kernel.org, dmaengine@vger.kernel.org, 
+	linux-gpio@vger.kernel.org, amd-gfx@lists.freedesktop.org, 
+	nouveau@lists.freedesktop.org, linux-stm32@st-md-mailman.stormreply.com, 
+	linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org, 
+	linux-i3c@lists.infradead.org, linux-iio@vger.kernel.org, 
+	linux-input@vger.kernel.org, patches@opensource.cirrus.com, 
+	iommu@lists.linux.dev, imx@lists.linux.dev, 
+	linux-mediatek@lists.infradead.org, linux-media@vger.kernel.org, 
+	linux-mmc@vger.kernel.org, linux-mtd@lists.infradead.org, 
+	netdev@vger.kernel.org, linux-wireless@vger.kernel.org, 
+	linux-pci@vger.kernel.org, linux-phy@lists.infradead.org, 
+	linux-pwm@vger.kernel.org, linux-remoteproc@vger.kernel.org, 
+	linux-sound@vger.kernel.org, linux-spi@vger.kernel.org, 
+	linux-staging@lists.linux.dev, linux-usb@vger.kernel.org, 
+	linux-serial@vger.kernel.org, greybus-dev@lists.linaro.org, 
+	asahi@lists.linux.dev, Andy Shevchenko <andy.shevchenko@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241007_114932_736196_7C2A0521 
-X-CRM114-Status: GOOD (  20.87  )
-X-Mailman-Approved-At: Tue, 08 Oct 2024 08:52:51 -0700
+X-CRM114-CacheID: sfid-20241008_112508_818533_882C8E59 
+X-CRM114-Status: GOOD (  39.54  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,494 +97,87 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Ulf,
-
-On Fri, Oct 04, 2024 at 04:38:36PM +0200, Ulf Hansson wrote:
-> On Fri, 4 Oct 2024 at 11:41, Sakari Ailus <sakari.ailus@linux.intel.com> wrote:
-> >
-> > Hello everyone,
-> >
-> > This set will switch the users of pm_runtime_put_autosuspend() to
-> > __pm_runtime_put_autosuspend() while the former will soon be re-purposed
-> > to include a call to pm_runtime_mark_last_busy(). The two are almost
-> > always used together, apart from bugs which are likely common. Going
-> > forward, most new users should be using pm_runtime_put_autosuspend().
-> >
-> > Once this conversion is done and pm_runtime_put_autosuspend() re-purposed,
-> > I'll post another set to merge the calls to __pm_runtime_put_autosuspend()
-> > and pm_runtime_mark_last_busy().
-> 
-> That sounds like it could cause a lot of churns.
-> 
-> Why not add a new helper function that does the
-> pm_runtime_put_autosuspend() and the pm_runtime_mark_last_busy()
-> things? Then we can start moving users over to this new interface,
-> rather than having this intermediate step?
-
-I think the API would be nicer if we used the shortest and simplest
-function names for the most common use cases. Following
-pm_runtime_put_autosuspend() with pm_runtime_mark_last_busy() is that
-most common use case. That's why I like Sakari's approach of repurposing
-pm_runtime_put_autosuspend(), and introducing
-__pm_runtime_put_autosuspend() for the odd cases where
-pm_runtime_mark_last_busy() shouldn't be called.
-
-> > The diff in these patches have been generated using the following
-> > Coccinelle script (besides a manual change in
-> > drivers/iio/magnetometer/af8133j.c):
-> >
-> > ----------8<-------------------
-> > @@
-> > expression E1;
-> >
-> > @@
-> >
-> > - pm_runtime_put_autosuspend(E1)
-> > + __pm_runtime_put_autosuspend(E1)
-> > ----------8<-------------------
-> >
-> > These patches are on top of today's linux-next (i.e. next-20241004).
-> >
-> > Sakari Ailus (51):
-> >   accel/ivpu: Switch to __pm_runtime_put_autosuspend()
-> >   bluetooth: Switch to __pm_runtime_put_autosuspend()
-> >   bus: sunxi-rsb: Switch to __pm_runtime_put_autosuspend()
-> >   hwrng: Switch to __pm_runtime_put_autosuspend()
-> >   clk: Switch to __pm_runtime_put_autosuspend()
-> >   crypto: Switch to __pm_runtime_put_autosuspend()
-> >   dmaengine: Switch to __pm_runtime_put_autosuspend()
-> >   gpio: Switch to __pm_runtime_put_autosuspend()
-> >   drm/amd: Switch to __pm_runtime_put_autosuspend()
-> >   drm/nouveau: Switch to __pm_runtime_put_autosuspend()
-> >   drm/radeon: Switch to __pm_runtime_put_autosuspend()
-> >   drm/panfrost: Switch to __pm_runtime_put_autosuspend()
-> >   drivers: drm: Switch to __pm_runtime_put_autosuspend()
-> >   HSI: omap_ssi_port: Switch to __pm_runtime_put_autosuspend()
-> >   stm class: Switch to __pm_runtime_put_autosuspend()
-> >   i2c: Switch to __pm_runtime_put_autosuspend()
-> >   i3c: master: svc: Switch to __pm_runtime_put_autosuspend()
-> >   i3c: dw: Switch to __pm_runtime_put_autosuspend()
-> >   iio: Switch to __pm_runtime_put_autosuspend()
-> >   Input: omap4-keypad: Switch to __pm_runtime_put_autosuspend()
-> >   Input: cs40l50: Switch to __pm_runtime_put_autosuspend()
-> >   iommu/arm-smmu: Switch to __pm_runtime_put_autosuspend()
-> >   irqchip/imx-irqsteer: Switch to __pm_runtime_put_autosuspend()
-> >   mailbox: mtk-cmdq-mailbox: Switch to __pm_runtime_put_autosuspend()
-> >   media: Switch to __pm_runtime_put_autosuspend()
-> >   mfd: Switch to __pm_runtime_put_autosuspend()
-> >   mei: Switch to __pm_runtime_put_autosuspend()
-> >   mmc: Switch to __pm_runtime_put_autosuspend()
-> >   mtd: rawnand: gpmi: Switch to __pm_runtime_put_autosuspend()
-> >   net: Switch to __pm_runtime_put_autosuspend()
-> >   nfc: trf7970a: Switch to __pm_runtime_put_autosuspend()
-> >   PCI/portdrv: Switch to __pm_runtime_put_autosuspend()
-> >   phy: motorola: phy-mapphone-mdm6600: Switch to
-> >     __pm_runtime_put_autosuspend()
-> >   phy: ti: phy-twl4030-usb: Switch to __pm_runtime_put_autosuspend()
-> >   power: Switch to __pm_runtime_put_autosuspend()
-> >   pwm: img: Switch to __pm_runtime_put_autosuspend()
-> >   regulator: stm32-vrefbuf: Switch to __pm_runtime_put_autosuspend()
-> >   remoteproc: omap: Switch to __pm_runtime_put_autosuspend()
-> >   slimbus: Switch to __pm_runtime_put_autosuspend()
-> >   soundwire: Switch to __pm_runtime_put_autosuspend()
-> >   spi: Switch to __pm_runtime_put_autosuspend()
-> >   staging: Switch to __pm_runtime_put_autosuspend()
-> >   thunderbolt: Switch to __pm_runtime_put_autosuspend()
-> >   serial: Switch to __pm_runtime_put_autosuspend()
-> >   usb: Switch to __pm_runtime_put_autosuspend()
-> >   w1: omap-hdq: Switch to __pm_runtime_put_autosuspend()
-> >   staging: greybus: Switch to __pm_runtime_put_autosuspend()
-> >   ALSA: hda: Switch to __pm_runtime_put_autosuspend()
-> >   ASoC: Switch to __pm_runtime_put_autosuspend()
-> >   ALSA: intel_hdmi: Switch to __pm_runtime_put_autosuspend()
-> >   soc: apple: mailbox: Switch to __pm_runtime_put_autosuspend()
-> >
-> >  drivers/accel/ivpu/ivpu_drv.c                 |   2 +-
-> >  drivers/accel/ivpu/ivpu_pm.c                  |   8 +-
-> >  drivers/bluetooth/btmtksdio.c                 |   2 +-
-> >  drivers/bluetooth/hci_bcm.c                   |   6 +-
-> >  drivers/bluetooth/hci_h5.c                    |   4 +-
-> >  drivers/bluetooth/hci_intel.c                 |   6 +-
-> >  drivers/bus/sunxi-rsb.c                       |   4 +-
-> >  drivers/char/hw_random/cctrng.c               |   2 +-
-> >  drivers/char/hw_random/omap3-rom-rng.c        |   2 +-
-> >  drivers/clk/imx/clk-imx8qxp-lpcg.c            |   2 +-
-> >  drivers/clk/imx/clk-scu.c                     |   2 +-
-> >  drivers/clk/qcom/lpassaudiocc-sc7280.c        |   4 +-
-> >  drivers/clk/qcom/lpasscorecc-sc7180.c         |   4 +-
-> >  drivers/crypto/ccree/cc_pm.c                  |   2 +-
-> >  drivers/crypto/hisilicon/qm.c                 |   2 +-
-> >  drivers/crypto/omap-aes-gcm.c                 |   2 +-
-> >  drivers/crypto/omap-aes.c                     |   2 +-
-> >  drivers/crypto/omap-des.c                     |   2 +-
-> >  drivers/crypto/omap-sham.c                    |   2 +-
-> >  drivers/crypto/rockchip/rk3288_crypto_ahash.c |   2 +-
-> >  .../crypto/rockchip/rk3288_crypto_skcipher.c  |   2 +-
-> >  drivers/crypto/stm32/stm32-crc32.c            |   4 +-
-> >  drivers/crypto/stm32/stm32-cryp.c             |   2 +-
-> >  drivers/crypto/stm32/stm32-hash.c             |   2 +-
-> >  drivers/dma/at_xdmac.c                        |  24 +--
-> >  drivers/dma/pl330.c                           |  14 +-
-> >  drivers/dma/qcom/bam_dma.c                    |  10 +-
-> >  drivers/dma/qcom/hidma.c                      |  18 +-
-> >  drivers/dma/qcom/hidma_dbg.c                  |   2 +-
-> >  drivers/dma/qcom/hidma_mgmt.c                 |   4 +-
-> >  drivers/dma/ste_dma40.c                       |  16 +-
-> >  drivers/dma/ti/cppi41.c                       |  10 +-
-> >  drivers/dma/xilinx/zynqmp_dma.c               |   2 +-
-> >  drivers/gpio/gpio-arizona.c                   |  10 +-
-> >  drivers/gpio/gpio-mxc.c                       |   2 +-
-> >  drivers/gpu/drm/amd/amdgpu/amdgpu_acpi.c      |   2 +-
-> >  .../gpu/drm/amd/amdgpu/amdgpu_connectors.c    |  16 +-
-> >  drivers/gpu/drm/amd/amdgpu/amdgpu_debugfs.c   | 120 ++++++------
-> >  drivers/gpu/drm/amd/amdgpu/amdgpu_display.c   |   2 +-
-> >  drivers/gpu/drm/amd/amdgpu/amdgpu_drv.c       |   6 +-
-> >  drivers/gpu/drm/amd/amdgpu/amdgpu_fence.c     |   6 +-
-> >  drivers/gpu/drm/amd/amdgpu/amdgpu_gfx.c       |   4 +-
-> >  drivers/gpu/drm/amd/amdgpu/amdgpu_kms.c       |   4 +-
-> >  drivers/gpu/drm/amd/amdgpu/amdgpu_rap.c       |   4 +-
-> >  drivers/gpu/drm/amd/amdgpu/amdgpu_ras.c       |   2 +-
-> >  .../gpu/drm/amd/amdgpu/amdgpu_securedisplay.c |   4 +-
-> >  drivers/gpu/drm/amd/amdkfd/kfd_process.c      |   4 +-
-> >  .../gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c |   2 +-
-> >  drivers/gpu/drm/amd/pm/amdgpu_pm.c            | 178 +++++++++---------
-> >  .../drm/bridge/analogix/analogix_dp_core.c    |   2 +-
-> >  drivers/gpu/drm/bridge/analogix/anx7625.c     |   4 +-
-> >  drivers/gpu/drm/bridge/parade-ps8640.c        |   4 +-
-> >  drivers/gpu/drm/bridge/ti-sn65dsi86.c         |  14 +-
-> >  drivers/gpu/drm/etnaviv/etnaviv_gpu.c         |  12 +-
-> >  drivers/gpu/drm/exynos/exynos_drm_fimc.c      |   4 +-
-> >  drivers/gpu/drm/exynos/exynos_drm_g2d.c       |   4 +-
-> >  drivers/gpu/drm/exynos/exynos_drm_gsc.c       |   6 +-
-> >  drivers/gpu/drm/exynos/exynos_drm_rotator.c   |   2 +-
-> >  drivers/gpu/drm/exynos/exynos_drm_scaler.c    |   2 +-
-> >  drivers/gpu/drm/i915/intel_runtime_pm.c       |   4 +-
-> >  drivers/gpu/drm/imx/dcss/dcss-crtc.c          |   2 +-
-> >  drivers/gpu/drm/lima/lima_sched.c             |   2 +-
-> >  drivers/gpu/drm/msm/adreno/adreno_device.c    |   2 +-
-> >  drivers/gpu/drm/msm/adreno/adreno_gpu.c       |   2 +-
-> >  drivers/gpu/drm/msm/msm_gpu.c                 |   2 +-
-> >  drivers/gpu/drm/msm/msm_iommu.c               |   4 +-
-> >  drivers/gpu/drm/msm/msm_submitqueue.c         |   2 +-
-> >  drivers/gpu/drm/nouveau/dispnv50/disp.c       |  10 +-
-> >  drivers/gpu/drm/nouveau/nouveau_connector.c   |   4 +-
-> >  drivers/gpu/drm/nouveau/nouveau_debugfs.c     |   8 +-
-> >  drivers/gpu/drm/nouveau/nouveau_display.c     |   4 +-
-> >  drivers/gpu/drm/nouveau/nouveau_drm.c         |  10 +-
-> >  drivers/gpu/drm/nouveau/nouveau_gem.c         |  10 +-
-> >  drivers/gpu/drm/panel/panel-edp.c             |   8 +-
-> >  .../gpu/drm/panel/panel-samsung-atna33xc20.c  |   6 +-
-> >  drivers/gpu/drm/panel/panel-simple.c          |   6 +-
-> >  drivers/gpu/drm/panfrost/panfrost_job.c       |   4 +-
-> >  drivers/gpu/drm/panfrost/panfrost_mmu.c       |   4 +-
-> >  drivers/gpu/drm/panfrost/panfrost_perfcnt.c   |   4 +-
-> >  drivers/gpu/drm/panthor/panthor_device.c      |   2 +-
-> >  drivers/gpu/drm/panthor/panthor_sched.c       |   6 +-
-> >  drivers/gpu/drm/radeon/radeon_acpi.c          |   2 +-
-> >  drivers/gpu/drm/radeon/radeon_connectors.c    |  20 +-
-> >  drivers/gpu/drm/radeon/radeon_display.c       |   6 +-
-> >  drivers/gpu/drm/radeon/radeon_drv.c           |   4 +-
-> >  drivers/gpu/drm/radeon/radeon_fbdev.c         |   4 +-
-> >  drivers/gpu/drm/radeon/radeon_kms.c           |  10 +-
-> >  drivers/gpu/drm/tegra/submit.c                |   2 +-
-> >  drivers/gpu/drm/tidss/tidss_drv.c             |   2 +-
-> >  drivers/gpu/drm/vc4/vc4_v3d.c                 |   2 +-
-> >  drivers/hsi/controllers/omap_ssi_port.c       |  42 ++---
-> >  drivers/hwtracing/stm/core.c                  |   8 +-
-> >  drivers/i2c/busses/i2c-amd-mp2-pci.c          |   2 +-
-> >  drivers/i2c/busses/i2c-amd-mp2.h              |   2 +-
-> >  drivers/i2c/busses/i2c-at91-master.c          |   2 +-
-> >  drivers/i2c/busses/i2c-cadence.c              |   2 +-
-> >  drivers/i2c/busses/i2c-davinci.c              |   4 +-
-> >  drivers/i2c/busses/i2c-designware-master.c    |   2 +-
-> >  drivers/i2c/busses/i2c-designware-pcidrv.c    |   2 +-
-> >  drivers/i2c/busses/i2c-hix5hd2.c              |   2 +-
-> >  drivers/i2c/busses/i2c-i801.c                 |   4 +-
-> >  drivers/i2c/busses/i2c-img-scb.c              |   6 +-
-> >  drivers/i2c/busses/i2c-imx-lpi2c.c            |   6 +-
-> >  drivers/i2c/busses/i2c-imx.c                  |   4 +-
-> >  drivers/i2c/busses/i2c-mv64xxx.c              |   2 +-
-> >  drivers/i2c/busses/i2c-nvidia-gpu.c           |   4 +-
-> >  drivers/i2c/busses/i2c-omap.c                 |   6 +-
-> >  drivers/i2c/busses/i2c-qcom-cci.c             |   2 +-
-> >  drivers/i2c/busses/i2c-qcom-geni.c            |   2 +-
-> >  drivers/i2c/busses/i2c-qup.c                  |   4 +-
-> >  drivers/i2c/busses/i2c-riic.c                 |   4 +-
-> >  drivers/i2c/busses/i2c-rzv2m.c                |   2 +-
-> >  drivers/i2c/busses/i2c-sprd.c                 |   4 +-
-> >  drivers/i2c/busses/i2c-stm32f7.c              |  10 +-
-> >  drivers/i2c/busses/i2c-xiic.c                 |   2 +-
-> >  drivers/i3c/master/dw-i3c-master.c            |  16 +-
-> >  drivers/i3c/master/svc-i3c-master.c           |  16 +-
-> >  drivers/iio/accel/bmc150-accel-core.c         |   2 +-
-> >  drivers/iio/accel/bmi088-accel-core.c         |   6 +-
-> >  drivers/iio/accel/fxls8962af-core.c           |   2 +-
-> >  drivers/iio/accel/kxcjk-1013.c                |   2 +-
-> >  drivers/iio/accel/kxsd9.c                     |   6 +-
-> >  drivers/iio/accel/mma8452.c                   |   2 +-
-> >  drivers/iio/accel/mma9551_core.c              |   2 +-
-> >  drivers/iio/accel/msa311.c                    |  12 +-
-> >  drivers/iio/adc/ab8500-gpadc.c                |   2 +-
-> >  drivers/iio/adc/at91-sama5d2_adc.c            |  20 +-
-> >  drivers/iio/adc/rcar-gyroadc.c                |   2 +-
-> >  drivers/iio/adc/stm32-adc-core.c              |   2 +-
-> >  drivers/iio/adc/stm32-adc.c                   |  12 +-
-> >  drivers/iio/adc/sun4i-gpadc-iio.c             |   4 +-
-> >  drivers/iio/adc/ti-ads1015.c                  |   2 +-
-> >  drivers/iio/adc/ti-ads1100.c                  |   2 +-
-> >  drivers/iio/adc/ti-ads1119.c                  |   4 +-
-> >  drivers/iio/chemical/atlas-sensor.c           |   4 +-
-> >  .../common/hid-sensors/hid-sensor-trigger.c   |   2 +-
-> >  drivers/iio/dac/stm32-dac.c                   |   6 +-
-> >  drivers/iio/gyro/bmg160_core.c                |   2 +-
-> >  drivers/iio/gyro/fxas21002c_core.c            |   2 +-
-> >  drivers/iio/gyro/mpu3050-core.c               |   6 +-
-> >  drivers/iio/gyro/mpu3050-i2c.c                |   2 +-
-> >  .../iio/imu/inv_icm42600/inv_icm42600_accel.c |  10 +-
-> >  .../imu/inv_icm42600/inv_icm42600_buffer.c    |   2 +-
-> >  .../iio/imu/inv_icm42600/inv_icm42600_gyro.c  |  10 +-
-> >  .../iio/imu/inv_icm42600/inv_icm42600_temp.c  |   2 +-
-> >  drivers/iio/imu/inv_mpu6050/inv_mpu_core.c    |  14 +-
-> >  drivers/iio/imu/inv_mpu6050/inv_mpu_trigger.c |   4 +-
-> >  drivers/iio/imu/kmx61.c                       |   2 +-
-> >  drivers/iio/light/apds9306.c                  |   6 +-
-> >  drivers/iio/light/apds9960.c                  |   4 +-
-> >  drivers/iio/light/bh1780.c                    |   2 +-
-> >  drivers/iio/light/gp2ap002.c                  |   4 +-
-> >  drivers/iio/light/isl29028.c                  |   2 +-
-> >  drivers/iio/light/ltrf216a.c                  |   2 +-
-> >  drivers/iio/light/pa12203001.c                |   2 +-
-> >  drivers/iio/light/rpr0521.c                   |   2 +-
-> >  drivers/iio/light/tsl2583.c                   |   2 +-
-> >  drivers/iio/light/tsl2591.c                   |   4 +-
-> >  drivers/iio/light/us5182d.c                   |   2 +-
-> >  drivers/iio/light/vcnl4000.c                  |   2 +-
-> >  drivers/iio/light/vcnl4035.c                  |   2 +-
-> >  drivers/iio/magnetometer/af8133j.c            |   4 +-
-> >  drivers/iio/magnetometer/ak8974.c             |   4 +-
-> >  drivers/iio/magnetometer/ak8975.c             |   2 +-
-> >  drivers/iio/magnetometer/bmc150_magn.c        |   2 +-
-> >  drivers/iio/magnetometer/tmag5273.c           |   4 +-
-> >  drivers/iio/magnetometer/yamaha-yas530.c      |   4 +-
-> >  drivers/iio/pressure/bmp280-core.c            |  10 +-
-> >  drivers/iio/pressure/icp10100.c               |   2 +-
-> >  drivers/iio/pressure/mpl115.c                 |   4 +-
-> >  drivers/iio/pressure/zpa2326.c                |   4 +-
-> >  .../iio/proximity/pulsedlight-lidar-lite-v2.c |   2 +-
-> >  drivers/iio/proximity/srf04.c                 |   2 +-
-> >  drivers/iio/temperature/mlx90614.c            |   4 +-
-> >  drivers/iio/temperature/mlx90632.c            |   4 +-
-> >  drivers/iio/temperature/mlx90635.c            |   4 +-
-> >  drivers/input/keyboard/omap4-keypad.c         |   8 +-
-> >  drivers/input/misc/cs40l50-vibra.c            |   8 +-
-> >  drivers/iommu/arm/arm-smmu/arm-smmu.c         |   2 +-
-> >  drivers/irqchip/irq-imx-irqsteer.c            |   2 +-
-> >  drivers/mailbox/mtk-cmdq-mailbox.c            |  10 +-
-> >  drivers/media/i2c/alvium-csi2.c               |   2 +-
-> >  drivers/media/i2c/ccs/ccs-core.c              |  10 +-
-> >  drivers/media/i2c/dw9719.c                    |   2 +-
-> >  drivers/media/i2c/gc0308.c                    |   6 +-
-> >  drivers/media/i2c/gc2145.c                    |   8 +-
-> >  drivers/media/i2c/imx283.c                    |   6 +-
-> >  drivers/media/i2c/imx290.c                    |   6 +-
-> >  drivers/media/i2c/imx296.c                    |   4 +-
-> >  drivers/media/i2c/imx415.c                    |   4 +-
-> >  drivers/media/i2c/mt9m114.c                   |  12 +-
-> >  drivers/media/i2c/ov2680.c                    |   2 +-
-> >  drivers/media/i2c/ov4689.c                    |   6 +-
-> >  drivers/media/i2c/ov5640.c                    |   8 +-
-> >  drivers/media/i2c/ov5645.c                    |   6 +-
-> >  drivers/media/i2c/ov5693.c                    |   2 +-
-> >  drivers/media/i2c/ov64a40.c                   |   8 +-
-> >  drivers/media/i2c/ov7251.c                    |   2 +-
-> >  drivers/media/i2c/ov8858.c                    |   4 +-
-> >  drivers/media/i2c/thp7312.c                   |   8 +-
-> >  drivers/media/i2c/video-i2c.c                 |   8 +-
-> >  .../media/platform/nvidia/tegra-vde/h264.c    |   4 +-
-> >  drivers/media/platform/qcom/venus/vdec.c      |   4 +-
-> >  drivers/media/platform/qcom/venus/venc.c      |   4 +-
-> >  .../platform/raspberrypi/pisp_be/pisp_be.c    |   4 +-
-> >  .../media/platform/st/sti/delta/delta-v4l2.c  |   4 +-
-> >  drivers/media/platform/st/sti/hva/hva-hw.c    |   8 +-
-> >  .../media/platform/verisilicon/hantro_drv.c   |   2 +-
-> >  drivers/media/rc/gpio-ir-recv.c               |   2 +-
-> >  drivers/mfd/arizona-irq.c                     |   2 +-
-> >  drivers/mfd/cs40l50-core.c                    |   2 +-
-> >  drivers/mfd/cs42l43.c                         |   2 +-
-> >  drivers/misc/mei/client.c                     |  14 +-
-> >  drivers/mmc/core/core.c                       |   4 +-
-> >  drivers/mmc/host/atmel-mci.c                  |   4 +-
-> >  drivers/mmc/host/dw_mmc-rockchip.c            |   2 +-
-> >  drivers/mmc/host/dw_mmc.c                     |   2 +-
-> >  drivers/mmc/host/mmci.c                       |   2 +-
-> >  drivers/mmc/host/omap_hsmmc.c                 |   6 +-
-> >  drivers/mmc/host/sdhci-msm.c                  |   2 +-
-> >  drivers/mmc/host/sdhci-of-at91.c              |   2 +-
-> >  drivers/mmc/host/sdhci-omap.c                 |   4 +-
-> >  drivers/mmc/host/sdhci-pci-core.c             |   2 +-
-> >  drivers/mmc/host/sdhci-pxav3.c                |   6 +-
-> >  drivers/mmc/host/sdhci-sprd.c                 |   2 +-
-> >  drivers/mmc/host/sdhci-xenon.c                |   2 +-
-> >  drivers/mmc/host/sdhci_am654.c                |   2 +-
-> >  drivers/mmc/host/tmio_mmc_core.c              |   2 +-
-> >  drivers/mtd/nand/raw/gpmi-nand/gpmi-nand.c    |  10 +-
-> >  drivers/net/ethernet/cadence/macb_main.c      |  10 +-
-> >  drivers/net/ethernet/freescale/fec_main.c     |  16 +-
-> >  drivers/net/ethernet/renesas/ravb_main.c      |   8 +-
-> >  drivers/net/ethernet/ti/davinci_mdio.c        |  14 +-
-> >  drivers/net/ipa/ipa_interrupt.c               |   2 +-
-> >  drivers/net/ipa/ipa_main.c                    |   2 +-
-> >  drivers/net/ipa/ipa_modem.c                   |   8 +-
-> >  drivers/net/ipa/ipa_smp2p.c                   |   4 +-
-> >  drivers/net/ipa/ipa_uc.c                      |   4 +-
-> >  drivers/net/wireless/ath/wil6210/pm.c         |   2 +-
-> >  drivers/net/wireless/ti/wl18xx/debugfs.c      |   6 +-
-> >  drivers/net/wireless/ti/wlcore/cmd.c          |   2 +-
-> >  drivers/net/wireless/ti/wlcore/debugfs.c      |  22 +--
-> >  drivers/net/wireless/ti/wlcore/main.c         |  72 +++----
-> >  drivers/net/wireless/ti/wlcore/scan.c         |   2 +-
-> >  drivers/net/wireless/ti/wlcore/sysfs.c        |   2 +-
-> >  drivers/net/wireless/ti/wlcore/testmode.c     |   4 +-
-> >  drivers/net/wireless/ti/wlcore/tx.c           |   2 +-
-> >  drivers/net/wireless/ti/wlcore/vendor_cmd.c   |   6 +-
-> >  drivers/net/wwan/qcom_bam_dmux.c              |   4 +-
-> >  drivers/net/wwan/t7xx/t7xx_hif_cldma.c        |   6 +-
-> >  drivers/net/wwan/t7xx/t7xx_hif_dpmaif_rx.c    |   6 +-
-> >  drivers/net/wwan/t7xx/t7xx_hif_dpmaif_tx.c    |   4 +-
-> >  drivers/nfc/trf7970a.c                        |   2 +-
-> >  drivers/pci/pcie/portdrv.c                    |   2 +-
-> >  drivers/phy/motorola/phy-mapphone-mdm6600.c   |   4 +-
-> >  drivers/phy/ti/phy-twl4030-usb.c              |   8 +-
-> >  drivers/power/supply/bq24190_charger.c        |  28 +--
-> >  drivers/power/supply/twl4030_charger.c        |   2 +-
-> >  drivers/pwm/pwm-img.c                         |   4 +-
-> >  drivers/regulator/stm32-vrefbuf.c             |  12 +-
-> >  drivers/remoteproc/omap_remoteproc.c          |   6 +-
-> >  drivers/slimbus/core.c                        |   2 +-
-> >  drivers/slimbus/messaging.c                   |   4 +-
-> >  drivers/soc/apple/mailbox.c                   |   2 +-
-> >  drivers/soundwire/bus.c                       |   2 +-
-> >  drivers/soundwire/cadence_master.c            |   2 +-
-> >  drivers/soundwire/qcom.c                      |   6 +-
-> >  drivers/spi/atmel-quadspi.c                   |  10 +-
-> >  drivers/spi/spi-cadence-quadspi.c             |   4 +-
-> >  drivers/spi/spi-cadence.c                     |   2 +-
-> >  drivers/spi/spi-dw-pci.c                      |   2 +-
-> >  drivers/spi/spi-fsl-espi.c                    |   4 +-
-> >  drivers/spi/spi-fsl-lpspi.c                   |   4 +-
-> >  drivers/spi/spi-imx.c                         |   6 +-
-> >  drivers/spi/spi-mtk-nor.c                     |   2 +-
-> >  drivers/spi/spi-omap2-mcspi.c                 |   6 +-
-> >  drivers/spi/spi-pxa2xx-pci.c                  |   2 +-
-> >  drivers/spi/spi-s3c64xx.c                     |   6 +-
-> >  drivers/spi/spi-sprd.c                        |   2 +-
-> >  drivers/spi/spi-stm32-qspi.c                  |  14 +-
-> >  drivers/spi/spi-stm32.c                       |   4 +-
-> >  drivers/spi/spi-ti-qspi.c                     |   4 +-
-> >  drivers/spi/spi-zynqmp-gqspi.c                |   2 +-
-> >  drivers/spi/spi.c                             |   6 +-
-> >  drivers/staging/greybus/gbphy.h               |   2 +-
-> >  drivers/staging/media/rkvdec/rkvdec.c         |   2 +-
-> >  drivers/thunderbolt/debugfs.c                 |  22 +--
-> >  drivers/thunderbolt/domain.c                  |   4 +-
-> >  drivers/thunderbolt/icm.c                     |  14 +-
-> >  drivers/thunderbolt/nhi.c                     |   2 +-
-> >  drivers/thunderbolt/retimer.c                 |   4 +-
-> >  drivers/thunderbolt/switch.c                  |   6 +-
-> >  drivers/thunderbolt/tb.c                      |  18 +-
-> >  drivers/thunderbolt/usb4_port.c               |   4 +-
-> >  drivers/tty/serial/8250/8250_omap.c           |  18 +-
-> >  drivers/tty/serial/8250/8250_port.c           |   4 +-
-> >  drivers/tty/serial/fsl_lpuart.c               |   2 +-
-> >  drivers/tty/serial/serial_core.c              |   2 +-
-> >  drivers/tty/serial/uartlite.c                 |   4 +-
-> >  drivers/tty/serial/xilinx_uartps.c            |   2 +-
-> >  drivers/usb/cdns3/cdns3-gadget.c              |   2 +-
-> >  drivers/usb/cdns3/cdnsp-gadget.c              |   2 +-
-> >  drivers/usb/chipidea/core.c                   |   2 +-
-> >  drivers/usb/chipidea/otg_fsm.c                |   2 +-
-> >  drivers/usb/dwc3/core.c                       |   2 +-
-> >  drivers/usb/dwc3/dwc3-am62.c                  |   2 +-
-> >  drivers/usb/dwc3/dwc3-imx8mp.c                |   2 +-
-> >  drivers/usb/gadget/udc/cdns2/cdns2-gadget.c   |   2 +-
-> >  drivers/usb/host/xhci-mtk.c                   |   2 +-
-> >  drivers/usb/misc/apple-mfi-fastcharge.c       |   2 +-
-> >  drivers/usb/mtu3/mtu3_plat.c                  |   2 +-
-> >  drivers/usb/musb/musb_core.c                  |  10 +-
-> >  drivers/usb/musb/musb_debugfs.c               |  10 +-
-> >  drivers/usb/musb/musb_dsps.c                  |   2 +-
-> >  drivers/usb/musb/musb_gadget.c                |   8 +-
-> >  drivers/usb/musb/omap2430.c                   |   2 +-
-> >  drivers/w1/masters/omap_hdq.c                 |  10 +-
-> >  include/linux/greybus/bundle.h                |   2 +-
-> >  sound/hda/hdac_device.c                       |   2 +-
-> >  sound/pci/hda/cs35l41_hda.c                   |   8 +-
-> >  sound/pci/hda/cs35l56_hda.c                   |   2 +-
-> >  sound/pci/hda/hda_intel.c                     |   2 +-
-> >  sound/pci/hda/tas2781_hda_i2c.c               |   6 +-
-> >  sound/soc/atmel/mchp-spdifrx.c                |  12 +-
-> >  sound/soc/codecs/arizona-jack.c               |  12 +-
-> >  sound/soc/codecs/arizona.c                    |   2 +-
-> >  sound/soc/codecs/cs35l41.c                    |   4 +-
-> >  sound/soc/codecs/cs35l45.c                    |   2 +-
-> >  sound/soc/codecs/cs35l56-sdw.c                |   4 +-
-> >  sound/soc/codecs/cs35l56-shared.c             |   2 +-
-> >  sound/soc/codecs/cs35l56.c                    |   2 +-
-> >  sound/soc/codecs/cs42l42-sdw.c                |   2 +-
-> >  sound/soc/codecs/cs42l42.c                    |   4 +-
-> >  sound/soc/codecs/cs42l43-jack.c               |  10 +-
-> >  sound/soc/codecs/cs42l43.c                    |   4 +-
-> >  sound/soc/codecs/hda.c                        |   6 +-
-> >  sound/soc/codecs/madera.c                     |   6 +-
-> >  sound/soc/codecs/max98363.c                   |   2 +-
-> >  sound/soc/codecs/max98373-sdw.c               |   2 +-
-> >  sound/soc/codecs/rt1017-sdca-sdw.c            |   2 +-
-> >  sound/soc/codecs/rt1308-sdw.c                 |   2 +-
-> >  sound/soc/codecs/rt1316-sdw.c                 |   2 +-
-> >  sound/soc/codecs/rt1318-sdw.c                 |   2 +-
-> >  sound/soc/codecs/rt1320-sdw.c                 |   2 +-
-> >  sound/soc/codecs/rt5682-sdw.c                 |   2 +-
-> >  sound/soc/codecs/rt700.c                      |   4 +-
-> >  sound/soc/codecs/rt711-sdca.c                 |   4 +-
-> >  sound/soc/codecs/rt711.c                      |   4 +-
-> >  sound/soc/codecs/rt712-sdca-dmic.c            |   2 +-
-> >  sound/soc/codecs/rt712-sdca.c                 |   4 +-
-> >  sound/soc/codecs/rt715-sdca.c                 |   2 +-
-> >  sound/soc/codecs/rt715.c                      |   2 +-
-> >  sound/soc/codecs/rt722-sdca.c                 |   4 +-
-> >  sound/soc/codecs/wcd-mbhc-v2.c                |   4 +-
-> >  sound/soc/codecs/wsa881x.c                    |   2 +-
-> >  sound/soc/codecs/wsa884x.c                    |   2 +-
-> >  sound/soc/intel/atom/sst/sst_pvt.c            |   2 +-
-> >  sound/soc/intel/avs/core.c                    |   2 +-
-> >  sound/soc/intel/avs/debugfs.c                 |   4 +-
-> >  sound/soc/intel/avs/pcm.c                     |   2 +-
-> >  sound/soc/intel/catpt/pcm.c                   |  12 +-
-> >  sound/soc/intel/catpt/sysfs.c                 |   2 +-
-> >  sound/soc/soc-component.c                     |   2 +-
-> >  sound/soc/sof/control.c                       |   2 +-
-> >  sound/soc/sof/debug.c                         |   2 +-
-> >  sound/soc/sof/ipc3-dtrace.c                   |   2 +-
-> >  sound/soc/sof/ipc4-loader.c                   |   2 +-
-> >  sound/soc/sof/pcm.c                           |   2 +-
-> >  sound/soc/sof/sof-client-ipc-flood-test.c     |   2 +-
-> >  .../soc/sof/sof-client-ipc-kernel-injector.c  |   2 +-
-> >  sound/soc/sof/sof-client-ipc-msg-injector.c   |   2 +-
-> >  sound/soc/sof/sof-client-probes.c             |   6 +-
-> >  sound/x86/intel_hdmi_audio.c                  |   6 +-
-> >  373 files changed, 1076 insertions(+), 1076 deletions(-)
-
--- 
-Regards,
-
-Laurent Pinchart
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+T24gVHVlLCBPY3QgOCwgMjAyNCBhdCAxMjozNeKAr0FNIFVsZiBIYW5zc29uIDx1bGYuaGFuc3Nv
+bkBsaW5hcm8ub3JnPiB3cm90ZToKPgo+IE9uIFR1ZSwgOCBPY3QgMjAyNCBhdCAwMDoyNSwgTGF1
+cmVudCBQaW5jaGFydAo+IDxsYXVyZW50LnBpbmNoYXJ0QGlkZWFzb25ib2FyZC5jb20+IHdyb3Rl
+Ogo+ID4KPiA+IEhpIFVsZiwKPiA+Cj4gPiBPbiBUdWUsIE9jdCAwOCwgMjAyNCBhdCAxMjowODoy
+NEFNICswMjAwLCBVbGYgSGFuc3NvbiB3cm90ZToKPiA+ID4gT24gTW9uLCA3IE9jdCAyMDI0IGF0
+IDIwOjQ5LCBMYXVyZW50IFBpbmNoYXJ0IHdyb3RlOgo+ID4gPiA+IE9uIEZyaSwgT2N0IDA0LCAy
+MDI0IGF0IDA0OjM4OjM2UE0gKzAyMDAsIFVsZiBIYW5zc29uIHdyb3RlOgo+ID4gPiA+ID4gT24g
+RnJpLCA0IE9jdCAyMDI0IGF0IDExOjQxLCBTYWthcmkgQWlsdXMgd3JvdGU6Cj4gPiA+ID4gPiA+
+Cj4gPiA+ID4gPiA+IEhlbGxvIGV2ZXJ5b25lLAo+ID4gPiA+ID4gPgo+ID4gPiA+ID4gPiBUaGlz
+IHNldCB3aWxsIHN3aXRjaCB0aGUgdXNlcnMgb2YgcG1fcnVudGltZV9wdXRfYXV0b3N1c3BlbmQo
+KSB0bwo+ID4gPiA+ID4gPiBfX3BtX3J1bnRpbWVfcHV0X2F1dG9zdXNwZW5kKCkgd2hpbGUgdGhl
+IGZvcm1lciB3aWxsIHNvb24gYmUgcmUtcHVycG9zZWQKPiA+ID4gPiA+ID4gdG8gaW5jbHVkZSBh
+IGNhbGwgdG8gcG1fcnVudGltZV9tYXJrX2xhc3RfYnVzeSgpLiBUaGUgdHdvIGFyZSBhbG1vc3QK
+PiA+ID4gPiA+ID4gYWx3YXlzIHVzZWQgdG9nZXRoZXIsIGFwYXJ0IGZyb20gYnVncyB3aGljaCBh
+cmUgbGlrZWx5IGNvbW1vbi4gR29pbmcKPiA+ID4gPiA+ID4gZm9yd2FyZCwgbW9zdCBuZXcgdXNl
+cnMgc2hvdWxkIGJlIHVzaW5nIHBtX3J1bnRpbWVfcHV0X2F1dG9zdXNwZW5kKCkuCj4gPiA+ID4g
+PiA+Cj4gPiA+ID4gPiA+IE9uY2UgdGhpcyBjb252ZXJzaW9uIGlzIGRvbmUgYW5kIHBtX3J1bnRp
+bWVfcHV0X2F1dG9zdXNwZW5kKCkgcmUtcHVycG9zZWQsCj4gPiA+ID4gPiA+IEknbGwgcG9zdCBh
+bm90aGVyIHNldCB0byBtZXJnZSB0aGUgY2FsbHMgdG8gX19wbV9ydW50aW1lX3B1dF9hdXRvc3Vz
+cGVuZCgpCj4gPiA+ID4gPiA+IGFuZCBwbV9ydW50aW1lX21hcmtfbGFzdF9idXN5KCkuCj4gPiA+
+ID4gPgo+ID4gPiA+ID4gVGhhdCBzb3VuZHMgbGlrZSBpdCBjb3VsZCBjYXVzZSBhIGxvdCBvZiBj
+aHVybnMuCj4gPiA+ID4gPgo+ID4gPiA+ID4gV2h5IG5vdCBhZGQgYSBuZXcgaGVscGVyIGZ1bmN0
+aW9uIHRoYXQgZG9lcyB0aGUKPiA+ID4gPiA+IHBtX3J1bnRpbWVfcHV0X2F1dG9zdXNwZW5kKCkg
+YW5kIHRoZSBwbV9ydW50aW1lX21hcmtfbGFzdF9idXN5KCkKPiA+ID4gPiA+IHRoaW5ncz8gVGhl
+biB3ZSBjYW4gc3RhcnQgbW92aW5nIHVzZXJzIG92ZXIgdG8gdGhpcyBuZXcgaW50ZXJmYWNlLAo+
+ID4gPiA+ID4gcmF0aGVyIHRoYW4gaGF2aW5nIHRoaXMgaW50ZXJtZWRpYXRlIHN0ZXA/Cj4gPiA+
+ID4KPiA+ID4gPiBJIHRoaW5rIHRoZSBBUEkgd291bGQgYmUgbmljZXIgaWYgd2UgdXNlZCB0aGUg
+c2hvcnRlc3QgYW5kIHNpbXBsZXN0Cj4gPiA+ID4gZnVuY3Rpb24gbmFtZXMgZm9yIHRoZSBtb3N0
+IGNvbW1vbiB1c2UgY2FzZXMuIEZvbGxvd2luZwo+ID4gPiA+IHBtX3J1bnRpbWVfcHV0X2F1dG9z
+dXNwZW5kKCkgd2l0aCBwbV9ydW50aW1lX21hcmtfbGFzdF9idXN5KCkgaXMgdGhhdAo+ID4gPiA+
+IG1vc3QgY29tbW9uIHVzZSBjYXNlLiBUaGF0J3Mgd2h5IEkgbGlrZSBTYWthcmkncyBhcHByb2Fj
+aCBvZiByZXB1cnBvc2luZwo+ID4gPiA+IHBtX3J1bnRpbWVfcHV0X2F1dG9zdXNwZW5kKCksIGFu
+ZCBpbnRyb2R1Y2luZwo+ID4gPiA+IF9fcG1fcnVudGltZV9wdXRfYXV0b3N1c3BlbmQoKSBmb3Ig
+dGhlIG9kZCBjYXNlcyB3aGVyZQo+ID4gPiA+IHBtX3J1bnRpbWVfbWFya19sYXN0X2J1c3koKSBz
+aG91bGRuJ3QgYmUgY2FsbGVkLgo+ID4gPgo+ID4gPiBPa2F5LCBzbyB0aGUgcmVhc29uIGZvciB0
+aGlzIGFwcHJvYWNoIGlzIGJlY2F1c2Ugd2UgY291bGRuJ3QgZmluZCBhCj4gPiA+IHNob3J0IGFu
+ZCBkZXNjcmlwdGl2ZSBuYW1lIHRoYXQgY291bGQgYmUgdXNlZCBpbiBmYXZvciBvZgo+ID4gPiBw
+bV9ydW50aW1lX3B1dF9hdXRvc3VzcGVuZCgpLiBMZXQgbWUgdGhyb3cgc29tZSBpZGVhcyBhdCBp
+dCBhbmQgbWF5YmUKPiA+ID4geW91IGxpa2UgaXQgLSBvciBub3QuIDotKQo+ID4KPiA+IEkgbGlr
+ZSB0aGUgaWRlYSBhdCBsZWFzdCA6LSkKPiA+Cj4gPiA+IEkgZG9uJ3Qga25vdyB3aGF0IG9wdGlv
+bnMgeW91IGd1eXMgZGlzY3Vzc2VkLCBidXQgdG8gbWUgdGhlIGVudGlyZQo+ID4gPiAiYXV0b3N1
+c3BlbmQiLXN1ZmZpeCBpc24ndCByZWFsbHkgdGhhdCBuZWNlc3NhcnkgaW4gbXkgb3Bpbmlvbi4g
+VGhlcmUKPiA+ID4gYXJlIG1vcmUgd2F5cyB0aGFuIGNhbGxpbmcgcG1fcnVudGltZV9wdXRfYXV0
+b3N1c3BlbmQoKSB0aGF0IHRyaWdnZXJzCj4gPiA+IHVzIHRvIHVzZSB0aGUgUlBNX0FVVE8gZmxh
+ZyBmb3IgcnBtX3N1c3BlbmQoKS4gRm9yIGV4YW1wbGUsIGp1c3QKPiA+ID4gY2FsbGluZyBwbV9y
+dW50aW1lX3B1dCgpIGhhcyB0aGUgc2ltaWxhciBlZmZlY3QuCj4gPgo+ID4gVG8gYmUgaG9uZXN0
+LCBJJ20gbG9zdCB0aGVyZS4gcG1fcnVudGltZV9wdXQoKSBjYWxscwo+ID4gX19wbV9ydW50aW1l
+X2lkbGUoUlBNX0dFVF9QVVQgfCBSUE1fQVNZTkMpLCB3aGlsZQo+ID4gcG1fcnVudGltZV9wdXRf
+YXV0b3N1c3BlbmQoKSBjYWxscyBfX3BtX3J1bnRpbWVfc3VzcGVuZChSUE1fR0VUX1BVVCB8Cj4g
+PiBSUE1fQVNZTkMgfCBSUE1fQVVUTykuCj4KPiBfX3BtX3J1bnRpbWVfaWRsZSgpIGVuZHMgdXAg
+Y2FsbGluZyBycG1faWRsZSgpLCB3aGljaCBtYXkgY2FsbAo+IHJwbV9zdXNwZW5kKCkgLSBpZiBp
+dCBzdWNjZWVkcyB0byBpZGxlIHRoZSBkZXZpY2UuIEluIHRoYXQgY2FzZSwgaXQKPiB0YWdzIG9u
+IHRoZSBSUE1fQVVUTyBmbGFnIGluIHRoZSBjYWxsIHRvIHJwbV9zdXNwZW5kKCkuIFF1aXRlIHNp
+bWlsYXIKPiB0byB3aGF0IGlzIGhhcHBlbmluZyB3aGVuIGNhbGxpbmcgcG1fcnVudGltZV9wdXRf
+YXV0b3N1c3BlbmQoKS4KClJpZ2h0LgoKRm9yIGFsbW9zdCBldmVyeWJvZHksIGV4Y2VwdCBmb3Ig
+YSBzbWFsbCBidW5jaCBvZiBkcml2ZXJzIHRoYXQKYWN0dWFsbHkgaGF2ZSBhIC5ydW50aW1lX2lk
+bGUoKSBjYWxsYmFjaywgcG1fcnVudGltZV9wdXQoKSBpcwpsaXRlcmFsbHkgZXF1aXZhbGVudCB0
+byBwbV9ydW50aW1lX3B1dF9hdXRvc3VzcGVuZCgpLgoKU28gcmVhbGx5IHRoZSBxdWVzdGlvbiBp
+cyB3aHkgYW55b25lIHdobyBkb2Vzbid0IHByb3ZpZGUgYQoucnVudGltZV9pZGxlKCkgY2FsbGJh
+Y2sgYm90aGVycyB3aXRoIHVzaW5nIHRoaXMgc3BlY2lhbApwbV9ydW50aW1lX3B1dF9hdXRvc3Vz
+cGVuZCgpIHRoaW5nLCB3aGljaCByZWFsbHkgbWVhbnMgImRvIGEKcnVudGltZV9wdXQoKSwgYnV0
+IHNraXAgbXkgLnJ1bnRpbWVfaWRsZSgpIGNhbGxiYWNrIi4KCj4gPgo+ID4gPgo+ID4gPiBNb3Jl
+b3ZlciwgaXQncyBzaW1pbGFyIGZvciBwbV9ydW50aW1lX21hcmtfbGFzdF9idXN5KCksIGl0J3Mg
+Y2FsbGVkCj4gPiA+IGR1cmluZyBycG1fcmVzdW1lKCkgdG9vLCBmb3IgZXhhbXBsZS4gU28gd2h5
+IGJvdGhlciBhYm91dCBoYXZpbmcKPiA+ID4gIm1hcmtfbGFzdF9idXN5IiBpbiB0aGUgbmV3IG5h
+bWUgdG9vLgo+ID4gPgo+ID4gPiBUaGF0IHNhaWQsIG15IHN1Z2dlc3Rpb24gaXMgc2ltcGx5ICJw
+bV9ydW50aW1lX3B1dF9zdXNwZW5kIi4KPiA+Cj4gPiBDYW4gd2UgZG8gZXZlbiBiZXR0ZXIsIGFu
+ZCBtYWtlIHBtX3J1bnRpbWVfcHV0KCkgdG8gaGFuZGxlIGF1dG9zdXNwZW5kCj4gPiBhdXRvbWF0
+aWNhbGx5IHdoZW4gYXV0b3N1c3BlbmQgaXMgZW5hYmxlZCA/Cj4KPiBBcyBzdGF0ZWQgYWJvdmUs
+IHRoaXMgaXMgYWxyZWFkeSB0aGUgY2FzZS4KCldoYXQgcmVhbGx5IGlzIG5lZWRlZCBhcHBlYXJz
+IHRvIGJlIGEgY29tYmluYXRpb24gb2YKcG1fcnVudGltZV9tYXJrX2xhc3RfYnVzeSgpIHdpdGgg
+cG1fcnVudGltZV9wdXQoKS4KCkdyYW50ZWQsIHBtX3J1bnRpbWVfcHV0KCkgY291bGQgZG8gdGhl
+IHBtX3J1bnRpbWVfbWFya19sYXN0X2J1c3koKQp0aGluZyBhdXRvbWF0aWNhbGx5IGlmIGF1dG9z
+dXNwZW5kIGlzIGVuYWJsZWQgYW5kIHRoZSBvbmx5IGNvbnNlcXVlbmNlCm9mIGl0IG1pZ2h0IGJl
+IGRlbGF5aW5nIGEgc3VzcGVuZCBvZiB0aGUgZGV2aWNlIHVudGlsIGl0cyBhdXRvc3VzcGVuZAp0
+aW1lciBleHBpcmVzLCB3aGljaCBzaG91bGQgbm90IGJlIGEgcHJvYmxlbSBpbiB0aGUgdmFzdCBt
+YWpvcml0eSBvZgpjYXNlcy4KCi0tIApsaW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4LWkzY0Bs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtaTNjCg==
