@@ -4,128 +4,143 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2A9DD2E01A
-	for <linux-i3c@archiver.kernel.org>; Wed, 23 Oct 2024 05:52:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD730D10374
+	for <linux-i3c@archiver.kernel.org>; Thu, 24 Oct 2024 20:44:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3isLz7MqROlG4SZ0tXp84UgMRiN9qDKdEc15gMvVHq0=; b=Jd/ZM+VqmC8c4u
-	OfOG7Ta+7+UOrjfeYvg3Cu1+lNCBNWZw73ANLpGAc3gYibM7ff/z/lE3rBT3lYno1PBa0iy47EBFd
-	5e4cst3g5sxRKxEfy7ulE6X4b6Jxklqg/UXcz58p/ppRzYNEWhuhQ9HauWfNINmW5LBCCgwT4sv7s
-	442xXMdDuN6FVgONKzjHh/HAJHIVAhDxDS3myr4MA6lKoRRjcjoVRasklP9ggC5abnk8Uzr3nUcOj
-	QQ2BAYor+h8AS+KrLTG9guKBlSL2cKx22FWG3EGkVxzhLVeRw9LccXhOM9SdRs0Fa2GXED02vmPqf
-	2WL5BFJtbW2nLvTrLqjQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=79nPBanY/iUtN3Y1D8ht1uKGQTgyxuWAtcztUHfyAkY=; b=z+6J4R1cslZ0Wg
+	6AlehjA/u9ApCG46zpxUQG5qXs47E0hhOadElVPPrTM+Yq7G8us0GS/99GzgbRMCyz8VAu+Mg4CzV
+	yd2xiXuwvrSe6SjJPOIJl6Bse0j099wMy5fgDmwzXZUrc+YZb1xs0dVMOBIA4OASZeh6rUILqtGfM
+	zjXFxcL8Gv5aYrGLyW2Cn0ycxeLroUgZH7pNykMjnfREOkiXMz+bIxTj7b8xQR8gl+xmMVlxhzq3P
+	1a2RfHcJDXDqRm3YWdB2z6yWgUyER2gxnMvxUwDqBItQc7DW6zE9+GL2W+AGvooBqd6PgoS6Ha5k+
+	ZVcamSG0o45juMkj/UjQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3UIZ-0000000D7DM-1NoH;
-	Wed, 23 Oct 2024 05:52:47 +0000
-Received: from mail-mw2nam12on20601.outbound.protection.outlook.com ([2a01:111:f403:200a::601] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
+	id 1t44ge-00000001lpk-3eIJ;
+	Thu, 24 Oct 2024 20:44:04 +0000
+Received: from mail-vi1eur02on20617.outbound.protection.outlook.com ([2a01:111:f403:2607::617] helo=EUR02-VI1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t3UHu-0000000D704-34Cp
+	id 1t44cB-00000001kd8-3eJr
 	for linux-i3c@lists.infradead.org;
-	Wed, 23 Oct 2024 05:52:08 +0000
+	Thu, 24 Oct 2024 20:39:29 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=W3iokkdk5kbZ/+WoBdc4CGWLAIyKRomj0rVe/98sQBgwJhtwQWEjYa40iAiprvCMfg4TPXWJP6djDgV969nPfsDxJAe9uevnEQQ5Q0IVZs7RhkkCcRJ6LTPIYyAwWCePDk6JOMCfQQU6Zebg9Rscbp3whNFFztcMvJGbwozSnGAI5zTjqTD+Y1m0B3shMKPysi3+0xb6Sj5flClrT0NfNSCtvJjrXnutultpvQe/PzsUyuW3q5ltuBSyKIlEJRWe1GCgFzI9wyNbIAZMBt2r4ebddGLuWLAP2otnH/v4fAHzMs9GTsm1JxmpWjUOaURWq4HhenPesZJJaD/t8BqJWQ==
+ b=AIptEMRhudJzYW1ZSwFGueQhXsvbjj7dHLiE9k+jc9IBlYcyW74LjzJm7N6aGEY55kyq317b5XR2JM+E8GDqg3l6CB1YYUWpXnsyA+AEUeuz990A9h2NbFkSaZR7H80avj/6v1NXxdKyN10QqpwsplFVF5YItydoNgqcf7pl/MkG4E/e1sslKJVOg9zPdfAk4A1SV1mvrCkhwMEAmMTeGn/YrVgvKO/3h19YWdImSXqRMjEpMU0y7tOFLsIhpPSUoPbD2k5NhHqbS29DDsKqTFY4SUinkB+UZPPExxunbu67qotFrIvJ1Xg5mV2RZ2csMlQUD6wJ7ogFp+fs5U7yug==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=qMkF1sZQBYelH7y8Q/FMo+sKp9l4Kok+UrdyQTkkKc8=;
- b=v4l1Mc2oR2tAKUTFTTQtpy52GzcgjtLRY3eoVuhWKg/3PWEzZVSgaxSafLa+s3hQveqeeR3n7YHgwC06WfYEih4AMBVcGgWfBL+gqY7pG9u2AqBO+PXmW1YC7oYrhlVdCLXdvdCI4TborLu08rnXljYlJroZR8memHH+Tpeg9g+LE7wEnaCbbCtSD7qHr+5SivWtoW80prSljK+a400juCFMrlyA+D4lh++iv1FnWvn/0eBy8TOVSZsOV1WevIBCOI3EtOiBDE1Aeehr/KHiFD/tZ1G6fh1frx4eGsbiW6gFztO6jhYZD5FSOlat4LfTEXHyRsCCptHlcKKEHVf1uQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 165.204.84.17) smtp.rcpttodomain=bootlin.com smtp.mailfrom=amd.com;
- dmarc=pass (p=quarantine sp=quarantine pct=100) action=none
- header.from=amd.com; dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
+ bh=/vQPPxTEls1kGr/hulsYN3wM8+QPezxBGdHme/vicOE=;
+ b=aUMdFBfDB17gKGX9YWFZdR46tZNhad+c34aMw3RYzYXamecfZcYYNqRWGCQrEMPqVlDq6iCJnH6Vbj/fQYggKkOcDYSzIsN4T0fWdl/CDr760wkrmvUB5kLlMLc0SAxYSKtoQ+ynoRhOwnKBkGzLtiq79ICgshXcWdkHUN7NPue1GtJFes0aI9EoqKafT7vEG0Tx0RakC/ey8KKmDR/s4WSHm9YNetFkfhiNNkdhzXqc2hdsnHNnCCAbapByDZ1tDqLJPPMoMwU4rfjv760KTSJ7OTkSuV8F3hQmKx6mHYikAMPmwmwB0lI3F057PCWvUQ5IBXiFq/CaAbD0HBxE+A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=qMkF1sZQBYelH7y8Q/FMo+sKp9l4Kok+UrdyQTkkKc8=;
- b=Bm1d+ngX7DA4htau4nSXitf5D5wcKGnKORadttaxXXqys1kLxeWLKURKSavp89rWYPSAldMc6rXmY1cX/HMBObMP35UZJYckAU49l7fYZc36w/4+/S77My9l18qVcsuHDogRR7E6XgvOFAUIu5wUvy2jEj66bFgqWYZf7ODTs0g=
-Received: from DS7P220CA0068.NAMP220.PROD.OUTLOOK.COM (2603:10b6:8:224::23) by
- SJ2PR12MB7822.namprd12.prod.outlook.com (2603:10b6:a03:4ca::12) with
+ bh=/vQPPxTEls1kGr/hulsYN3wM8+QPezxBGdHme/vicOE=;
+ b=A8gwDkUiQmwEWTT+ob0ncjVTJCyw/tO9EwAFOVkvXHZtyQpwo4GIdHRIfhy7t2wE5YplLyMPh4eTADAGgTUdzOi3rjBw5RxqRYKDacPWrboeIJvUmaz7GiZc0CmiNRjOiRIQ+mx81BsC9RwZfGkDpdNisqaZahHmJBpbagKrlLTQN8ACOdwiMJhzlrXkt6M7tB7J3QHQ8tpVt7jSwa8MRRivOXXD7SC3s6U/44fVp5fIdO0yX21ZLSVSzj1gv4EE8oxMuRxzx8gaxDHxihKYWRMRh3dsqhgFoWL5uaHjmTKaRNYaSWYyrIicghyv0E9275hGP86TqTldMmwWYMQJOw==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by PA4PR04MB7517.eurprd04.prod.outlook.com (2603:10a6:102:e0::9) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8069.27; Wed, 23 Oct
- 2024 05:52:01 +0000
-Received: from CY4PEPF0000E9DA.namprd05.prod.outlook.com
- (2603:10b6:8:224:cafe::93) by DS7P220CA0068.outlook.office365.com
- (2603:10b6:8:224::23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8093.16 via Frontend
- Transport; Wed, 23 Oct 2024 05:52:01 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
- smtp.mailfrom=amd.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=amd.com;
-Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
- 165.204.84.17 as permitted sender) receiver=protection.outlook.com;
- client-ip=165.204.84.17; helo=SATLEXMB04.amd.com; pr=C
-Received: from SATLEXMB04.amd.com (165.204.84.17) by
- CY4PEPF0000E9DA.mail.protection.outlook.com (10.167.241.73) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.20.8093.14 via Frontend Transport; Wed, 23 Oct 2024 05:52:00 +0000
-Received: from airavat.amd.com (10.180.168.240) by SATLEXMB04.amd.com
- (10.181.40.145) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.39; Wed, 23 Oct
- 2024 00:51:57 -0500
-From: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Jarkko Nikula
-	<jarkko.nikula@linux.intel.com>
-CC: <Sanket.Goswami@amd.com>, <linux-i3c@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
-Subject: [PATCH v2 5/6] i3c: master: Add support for SETAASA CCC
-Date: Wed, 23 Oct 2024 11:21:17 +0530
-Message-ID: <20241023055118.1400286-6-Shyam-sundar.S-k@amd.com>
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8069.21; Thu, 24 Oct
+ 2024 20:39:16 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06%4]) with mapi id 15.20.8069.024; Thu, 24 Oct 2024
+ 20:39:16 +0000
+From: Frank Li <Frank.Li@nxp.com>
+To: Miquel Raynal <miquel.raynal@bootlin.com>,
+	Conor Culhane <conor.culhane@silvaco.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Clark Wang <xiaoning.wang@nxp.com>,
+	linux-i3c@lists.infradead.org (moderated list:SILVACO I3C DUAL-ROLE MASTER),
+	linux-kernel@vger.kernel.org (open list)
+Cc: imx@lists.linux.dev
+Subject: [PATCH 1/1] i3c: master: svc: Modify enabled_events bit 7:0 to act as IBI enable counter
+Date: Thu, 24 Oct 2024 16:38:55 -0400
+Message-Id: <20241024203855.1584416-1-Frank.Li@nxp.com>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20241023055118.1400286-1-Shyam-sundar.S-k@amd.com>
-References: <20241023055118.1400286-1-Shyam-sundar.S-k@amd.com>
+X-ClientProxiedBy: SJ0PR05CA0149.namprd05.prod.outlook.com
+ (2603:10b6:a03:33d::34) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
 MIME-Version: 1.0
-X-Originating-IP: [10.180.168.240]
-X-ClientProxiedBy: SATLEXMB04.amd.com (10.181.40.145) To SATLEXMB04.amd.com
- (10.181.40.145)
-X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CY4PEPF0000E9DA:EE_|SJ2PR12MB7822:EE_
-X-MS-Office365-Filtering-Correlation-Id: 1cc4cf09-483f-444f-3ec9-08dcf326cfeb
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|PA4PR04MB7517:EE_
+X-MS-Office365-Filtering-Correlation-Id: 2178d541-88bf-46b3-e76b-08dcf46bed36
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|82310400026|1800799024|36860700013;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?uiNh80Chn8Fu+ilDmJdWCiNlUAC3LxXxb1dcjFLsjRgMw2s0gt5fXJAjw9+j?=
- =?us-ascii?Q?GrCG+Nif38PA14d+0TkGZ1TSK//b2iy/VZYKp8858G9bmxDUk9Q8v72TnoMj?=
- =?us-ascii?Q?kM9jLTajIp5xlrUdMKoi6t+L9bPi0DEMZgbikJPI+FIW73f7RPY/9ucK00Qz?=
- =?us-ascii?Q?8R70czDanxGWGocl6yCjqJG5iNv4LY5dey05V4YIZbD2McMKMiYDHrYdOY0L?=
- =?us-ascii?Q?ysyZX0XPaHyc5uHn31oizGXsi+G5sgnaO3/gTLevnvitQEwvdoRo/xXiEQUN?=
- =?us-ascii?Q?ie9vtpMzSuR44XuNd3MVIXF7Ze4/IS+2Mr82B75TT+hkUWRGp+MvVaZluNQ7?=
- =?us-ascii?Q?+TIAWtmQyd+jiLLfxe7uGD5BLYj/KFI0XhF9mmZJFOUFWlBPJUStJ0ChiIyC?=
- =?us-ascii?Q?ixnihF0plUclv3crQHafQ9xO4wLOEYJp2YqcTu5qZIvT7k7mn/R6Ihk0cHLJ?=
- =?us-ascii?Q?MJbbiVAmAbE1gyi/ovQGOjvx6Vw2W6TLdFQGodoFCH6SRMEntk3b6TOaoTrK?=
- =?us-ascii?Q?kD5JXG1vqmCd+RfVudA4/HyCvN37N3r5UMjGECCvF8Jhn8SAncXZ3JLdvB9O?=
- =?us-ascii?Q?MXJSeW0tfoRVaplPCy+/6ROx8BIvC7fM7rzXsQ4uy2D/kzYIoMzcXtydkqnZ?=
- =?us-ascii?Q?Vuyn0vnnAgJ0JXLNA6v5LJvI8WscQZoMnqRiHsT6YvJdh3hfmdoMTyDXOU4D?=
- =?us-ascii?Q?UUY8sjTEpnBrmGahyDw4za1BTzOHN4wXW6LvPI7NBeEn5yJRdk7USHREpCMc?=
- =?us-ascii?Q?5adW/1d1cVuTpl/qeS2qVudiCWhJwI8h//BRExZ6oM6rgNSKpDpqafYdUOiq?=
- =?us-ascii?Q?DdOntsvA9QMX9Vxh0wuvWuzYRNyXvMQl0QYCa+A12WHPCLHGPNF77tTuQ/Nm?=
- =?us-ascii?Q?AlyHdaIOQ08BmpwLGNtEY0O2dcPCeuaHeG1EdrWdk77bQs/iC0UgwA1zNY2w?=
- =?us-ascii?Q?NNWseQzzQeYQFF+g17Abkqbxvxmxm3AWt8X2FbZYOgJSxVVPxPMmbmnD+Nwr?=
- =?us-ascii?Q?fjJv0lZ1oLsdgKNoSGaKr3i4WaaX/eG58wsWbIZuKBM2d7nvNIWwLol2LrgL?=
- =?us-ascii?Q?jbRskkre/S7Cq6tlZB9YzSLUG9VhDTzm7rrY6jFASLKWvWjxYNclLn5/gCTc?=
- =?us-ascii?Q?cj2k4AxIQhXh3WCKRneftNpZ0VqiYZwV7VvaoAZPdO+awtS91W28IRUkVUL1?=
- =?us-ascii?Q?0MLg/7WS52EZMhAx1mltVnCX99rQPAYepZb8VUzv1+xptfEKDOLaOx4PfHVx?=
- =?us-ascii?Q?EdQeauOrgeQk+sn5FXPJFXBYdZtLOIjE90OXE3eBy2ZA8fTbeMP7xr8k9Jqw?=
- =?us-ascii?Q?Gw5Vnhky1/qttLK0QVcnzYCoJizTutMjabnPg466qAkrtWyzsR4tYEk8oq7a?=
- =?us-ascii?Q?0E8iqyQ=3D?=
-X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:SATLEXMB04.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(376014)(82310400026)(1800799024)(36860700013);DIR:OUT;SFP:1101;
-X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Oct 2024 05:52:00.0500
+X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|1800799024|376014|366016|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?BW98c0kcf5kZuv3/jZWiRMSNBtq6sapd/8xLVUATWpF51HvuhKADAhjOR5C+?=
+ =?us-ascii?Q?MdzzNjiEStgS0dfVZdTpwX7vkMh8M6btZso3fUXZeJFWkdNouE6fTrC58hCi?=
+ =?us-ascii?Q?oHiM1K78Tj7iPqFdkfzB71QL+tGRA4pwb0tOB/Kjq1uf2nFrLqQCMMYD69Wg?=
+ =?us-ascii?Q?u4mV9C2+nDwgp6p9NyeQ5atcC/soh8oThXRblHQ8pdQZU89op7FW2GVTrN52?=
+ =?us-ascii?Q?8LX9yETUcM3VkyHZ777qpxdPFo3TzxU1otbDqJtEvUM7ZWjjw5uXQXdd6rFw?=
+ =?us-ascii?Q?/x2va+F70HL7QqDWIz1zHg9oGckfbUiG7uZy9O7tLTcsKpv1zPy7wcZaDf9w?=
+ =?us-ascii?Q?3cn/G7u46l/HrNzjICeAzHaCAsJCtpD2rfP3pkPpPJyS7QwPT8uLbtVLJiDM?=
+ =?us-ascii?Q?5xIuS3jZT+Gcr4VOjppZ3KLm/0t2JKAEexam2/QJMVNfA5w4ypmgRRL/8UGs?=
+ =?us-ascii?Q?+pM3Ha9B/CfqdFk9PtVG1U/fg2j+iYV5zu6HRwuNlRWPidTvzqNEr4aQ7XZN?=
+ =?us-ascii?Q?AFbw9N9YrglTAVgaFzW9C/3UjNovlwZjnyAC2YxYjX35G4JAjD06hMzjbtME?=
+ =?us-ascii?Q?89lTT2gOx/O9r6FpAr3FIcrxcUUeXav2ufO5nZjNbHObyZhIdqkSSgcnA1pA?=
+ =?us-ascii?Q?RmgmJI4S+uKreIGeysG1AwRD4ZTpIzTFGgptmDqZTJ4/FGhWjRfS1DMkA/mS?=
+ =?us-ascii?Q?YhyllmFDisDd4dZ4SISO54UavUXZfGTDvftipECP1/hnLGWiI8enjewvXBt8?=
+ =?us-ascii?Q?EY2L33oOvUehrnr7l+ED0Fsjob1kFExbqbJOKeWRO2FSVnwWUYFkV4HtWKtn?=
+ =?us-ascii?Q?HLtROtU5kcElbGHZbCKMGESMKwhYLZXfBSzBCwDz/BbyBedulNyFrLHRo1cL?=
+ =?us-ascii?Q?9Stj0vRdvIJFfdrNP034bFkhH5TN9MPjeZYNMPFa/oLBAEw9cFi33BGtE34Y?=
+ =?us-ascii?Q?Ebq0A/7a51nSL2n20Nx/fgQXGOh+hL+e2ySzOlXcer/b3QfBM+RMxlwbLsoR?=
+ =?us-ascii?Q?fyQdk9HFxO0wlZPbjfQH91iwxWJK+ouSVpCek4ZxHG31nI6VfIK33b6qJSjM?=
+ =?us-ascii?Q?xDxRi9AQFHER3QJxW4enhQQxkP5rivUa4r7Pu6lEz23KTGMp4WrkPkRhgcCV?=
+ =?us-ascii?Q?mTV2Ds0Vdn1ZeFPKRr0xOK/EMpZ50shC/Ca+3LRRMEHjuJ9haC8hjf8aqvYH?=
+ =?us-ascii?Q?6194C/9kDWzA15C6OmXbEr9HIzC3P0TOcjCGCljittkmI5eeTVR6c/gUabH1?=
+ =?us-ascii?Q?Ptj169ryclLdmhCb3jBJ8g/eC2Oo53GJXiTy1T8fVc0urNRLweCJKc7T59ag?=
+ =?us-ascii?Q?vxLYhDd7imKJfO4/xNSLVPMGPp2MLhXs911jZc/xqku9BKnwC7yHycrNMpJL?=
+ =?us-ascii?Q?IISnxy8=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(1800799024)(376014)(366016)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?vthxoBHl/7wysxzJaXe7OYSJZ7P918Pz6uVfvSicGUEXh0LiEdjnH2VQWOHe?=
+ =?us-ascii?Q?p50yqeN1wZBBcNG1IJAXh6+mF3477Oj6GMHeZAz4MQXZlz+95kJ/A5dnt2u9?=
+ =?us-ascii?Q?7b04k7JVhmq68zyR/cA1kjqJXyhzd8QzmIDblV2VU2Oz2ZflkcfoFYNR74as?=
+ =?us-ascii?Q?Hcs6BYDGvHfZbLCJQ/ND+m90HW9ei/PPjH6JlJFKOjrktZJ3eBh5x6uVvwRM?=
+ =?us-ascii?Q?Z7eYBS88kW00oCW2Lo9HQIDnPXJILeVJFpdZdiHWBe57i4NM6q3akSLZRlkz?=
+ =?us-ascii?Q?UZtJSNJ8PIwx7ODG8wrSrgne/rMHzDSI0w45fp9oJJcn2bqsDuI1zhV39cH/?=
+ =?us-ascii?Q?nFJhqo4eTdyzVOs2zw5nAVrQyobesb4ncL+ADitTGige01q3Zc3QX/HRHJzB?=
+ =?us-ascii?Q?D8EMw638F0pxcqUa7yo3Vsf3SPybqS25cet6ZIFRx6rMiaAZxuCXpLCGefTt?=
+ =?us-ascii?Q?pDuk80Rwl+Ggn5Ur5fhqza8H0nUUgz/EerZNVQTNhHbIifcJQvRt8bhlS/fa?=
+ =?us-ascii?Q?1yUy3RF5hocJCHbcuuPDCpp0hVNSkvQyX19oeupZhtev3FRq7WUtTfX9g+h1?=
+ =?us-ascii?Q?BkdFomLPEshgvoDWL90BWWCaQxJhPmBJj8GZY2kv8f7O8pmjknZz/JNZdX5X?=
+ =?us-ascii?Q?0ScNOcIoStFtFK4vKxXlhG3MbExrzQkYMGOTAINdr89v+dxsKXY0KXdBUY6Y?=
+ =?us-ascii?Q?sJAzEoedpySXqrsJq4fwIuwmxOe0i0k3Rw/nackvAqYDWteDRq7okH0amz/6?=
+ =?us-ascii?Q?qymzu05HzLadGyIBxNBzU6UDRnhoBUiai8LSVZIWeJviOHtYl0gXTC0KNFVy?=
+ =?us-ascii?Q?btGzarCjhZvT+8NjEl/cTdiDuNIIZZM/pxwq+sfHvqXva+osDlfwmCDiO312?=
+ =?us-ascii?Q?Up6YRW0i6m1X/XirhTeyy4o5WXkXo/jIveGMxOZJDIAL+wQMkDgQejbpvRSi?=
+ =?us-ascii?Q?UNUMRqqxIV5nwup3vsFy+7pY/o8qvrfN8vJr0p2efwurhF0tNvwP70caED6l?=
+ =?us-ascii?Q?y5QwncTagNAxwFJpc1PHGDoREZzSWm7U8MALIxKGlpUiraoUzuqrG6OGV7cz?=
+ =?us-ascii?Q?TwFS4ILVkKmSUFrk+nQSh0HkF0Qtui+TvCN84859OETVjeaV+FhYWfRfooRv?=
+ =?us-ascii?Q?/U3N8mA1emb3hQ/Dky6HLQnTZs6CZcctxKMeKsvq2QN0GBBzp/42Wyqnt6kP?=
+ =?us-ascii?Q?jcdi7MW+yTHLsGuw4jNBiMflB2NGM6xHZ/ejXWj1ntBJhAuDq2elkS/zCX04?=
+ =?us-ascii?Q?/uNOMc4F0uh8cT1tE5rhLP7Fg9YHIMdQobDKdCkWgGYK6zysPMpSEnchYCJ0?=
+ =?us-ascii?Q?9EsDHeXP7Sr2zWYZe0UvsAiGr/jlFvHvZ3BAzeFm4IoX5/yTAQKAdFGtGU5W?=
+ =?us-ascii?Q?id1wqwvt+jjSnwaRSbHA52pCxxIm2fUxuAwR0LCAJyX96Ize3JolDN0Pobx6?=
+ =?us-ascii?Q?L/axGfsUHT9ultChyFvmjTHuJWchCu+FnUAIBgmUjfCMxxb6nnO0hink6Rcu?=
+ =?us-ascii?Q?4+HemrVOs1y3ncCa43mGGT3jSZcyVaO9st0Azaeuh0lfeLFpLoBWVs6pzOeT?=
+ =?us-ascii?Q?pp9uRZTsUCy9U6OSfvI/wl5f1QmQ+LoNKx0I4pa6?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2178d541-88bf-46b3-e76b-08dcf46bed36
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Oct 2024 20:39:15.9677
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1cc4cf09-483f-444f-3ec9-08dcf326cfeb
-X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[SATLEXMB04.amd.com]
-X-MS-Exchange-CrossTenant-AuthSource: CY4PEPF0000E9DA.namprd05.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ2PR12MB7822
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: V93Gx/SoT3hBNfrfIqWkkV/kaZl0AQVa+5zflmiInNgX6MDBp5oHs2cu0dOcCnLkvWqOtj62fsTR1CjUQqlzww==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB7517
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241022_225206_835130_B0A2BA44 
-X-CRM114-Status: GOOD (  17.50  )
+X-CRM114-CacheID: sfid-20241024_133927_942852_D42E5E25 
+X-CRM114-Status: GOOD (  11.14  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,128 +157,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-I3C devices like DIMMs over SPD use SETAASA for bus discovery instead of
-SETDASA. Add a new routine for I3C host controller drivers to use. If the
-I3C slave on the bus is an SPD device, skip the regular DAA process.
+Fix issue where disabling IBI on one device disables the entire IBI
+interrupt. Modify bit 7:0 of enabled_events to serve as an IBI enable
+counter, ensuring that the system IBI interrupt is disabled only when all
+I3C devices have IBI disabled.
 
-According to the SPD spec[1], use SETAASA for bus discovery, and avoid
-sending RSTDAA and DISEC, as they are considered illegal. Skip this entire
-process if the slave is SPD-compliant, as indicated by the "jdec_spd" flag
-from the BIOS.
-
-[1] https://www.jedec.org/system/files/docs/JESD300-5B.01.pdf
-(section 2.4 and 2.6.3)
-
-Co-developed-by: Sanket Goswami <Sanket.Goswami@amd.com>
-Signed-off-by: Sanket Goswami <Sanket.Goswami@amd.com>
-Signed-off-by: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
+Cc: stable@kernel.org
+Fixes: 7ff730ca458e ("i3c: master: svc: enable the interrupt in the enable ibi function")
+Signed-off-by: Frank Li <Frank.Li@nxp.com>
 ---
- drivers/i3c/master.c               | 32 +++++++++++++++++++++++++++++-
- drivers/i3c/master/dw-i3c-master.c |  1 +
- include/linux/i3c/ccc.h            |  1 +
- include/linux/i3c/master.h         |  1 +
- 4 files changed, 34 insertions(+), 1 deletion(-)
+ drivers/i3c/master/svc-i3c-master.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index ba6f17cb8aa6..1596efd6d82a 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -1657,6 +1657,21 @@ i3c_master_register_new_i3c_devs(struct i3c_master_controller *master)
- 	}
- }
+diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
+index d1ebfba3739c1..66fe0fc12c897 100644
+--- a/drivers/i3c/master/svc-i3c-master.c
++++ b/drivers/i3c/master/svc-i3c-master.c
+@@ -130,8 +130,8 @@
+ /* This parameter depends on the implementation and may be tuned */
+ #define SVC_I3C_FIFO_SIZE 16
  
-+static int i3c_master_setaasa_locked(struct i3c_master_controller *master)
-+{
-+	struct i3c_ccc_cmd_dest dest;
-+	struct i3c_ccc_cmd cmd;
-+	int ret;
-+
-+	i3c_ccc_cmd_dest_init(&dest, I3C_BROADCAST_ADDR, 0);
-+	i3c_ccc_cmd_init(&cmd, false, I3C_CCC_SETAASA, &dest, 1);
-+
-+	ret = i3c_master_send_ccc_cmd_locked(master, &cmd);
-+	i3c_ccc_cmd_dest_cleanup(&dest);
-+
-+	return ret;
-+}
-+
- static int i3c_master_add_spd_dev(struct i3c_master_controller *master,
- 				  struct i3c_dev_boardinfo *boardinfo)
- {
-@@ -1684,6 +1699,10 @@ static int i3c_master_add_spd_dev(struct i3c_master_controller *master,
- 		i3cdev->info.pid = i3cdev->boardinfo->pid;
- 		i3cdev->info.dyn_addr = i3cdev->boardinfo->init_dyn_addr;
+-#define SVC_I3C_EVENT_IBI	BIT(0)
+-#define SVC_I3C_EVENT_HOTJOIN	BIT(1)
++#define SVC_I3C_EVENT_IBI	GENMASK(7, 0)
++#define SVC_I3C_EVENT_HOTJOIN	BIT(31)
  
-+		ret = i3c_master_setaasa_locked(master);
-+		if (ret)
-+			goto err_free_dev;
-+
- 		i3c_bus_normaluse_lock(&master->bus);
- 		i3c_master_register_new_i3c_devs(master);
- 		i3c_bus_normaluse_unlock(&master->bus);
-@@ -1907,7 +1926,14 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
- 		goto err_bus_cleanup;
+ struct svc_i3c_cmd {
+ 	u8 addr;
+@@ -214,7 +214,7 @@ struct svc_i3c_master {
+ 		spinlock_t lock;
+ 	} ibi;
+ 	struct mutex lock;
+-	int enabled_events;
++	u32 enabled_events;
+ };
+ 
+ /**
+@@ -1532,7 +1532,7 @@ static int svc_i3c_master_enable_ibi(struct i3c_dev_desc *dev)
+ 		return ret;
  	}
  
--	i3c_master_add_spd_dev(master, i3cboardinfo);
-+	/*
-+	 * If the I3C slave on the bus is SPD device, then do not follow the regular
-+	 * DAA process. Also, as per SPD spec SETAASA is required for the bus discovery
-+	 * and sending RSTDAA and DISEC is considered as illegal. So skip the entire process
-+	 * if the jdec_spd flag has been identified from the BIOS.
-+	 */
-+	if (master->jdec_spd)
-+		return i3c_master_add_spd_dev(master, i3cboardinfo);
+-	master->enabled_events |= SVC_I3C_EVENT_IBI;
++	master->enabled_events++;
+ 	svc_i3c_master_enable_interrupts(master, SVC_I3C_MINT_SLVSTART);
  
- 	if (master->ops->set_speed) {
- 		ret = master->ops->set_speed(master, I3C_OPEN_DRAIN_SLOW_SPEED);
-@@ -2311,6 +2337,10 @@ static int i3c_acpi_configure_master(struct i3c_master_controller *master)
- 		return -ENODEV;
- 	}
+ 	return i3c_master_enec_locked(m, dev->info.dyn_addr, I3C_CCC_EVENT_SIR);
+@@ -1544,7 +1544,7 @@ static int svc_i3c_master_disable_ibi(struct i3c_dev_desc *dev)
+ 	struct svc_i3c_master *master = to_svc_i3c_master(m);
+ 	int ret;
  
-+	status = acpi_evaluate_object(master->ahandle, "_STR", NULL, NULL);
-+	if (ACPI_SUCCESS(status))
-+		master->jdec_spd = true;
-+
- 	num_dev = device_get_child_node_count(dev);
- 	if (!num_dev) {
- 		dev_err(&master->dev, "Error: no child node present\n");
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index f683e2a398ad..90a43209e55e 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -282,6 +282,7 @@ static bool dw_i3c_master_supports_ccc_cmd(struct i3c_master_controller *m,
- 	case I3C_CCC_GETSTATUS:
- 	case I3C_CCC_GETMXDS:
- 	case I3C_CCC_GETHDRCAP:
-+	case I3C_CCC_SETAASA:
- 		return true;
- 	default:
- 		return false;
-diff --git a/include/linux/i3c/ccc.h b/include/linux/i3c/ccc.h
-index ad59a4ae60d1..a145d766ab6f 100644
---- a/include/linux/i3c/ccc.h
-+++ b/include/linux/i3c/ccc.h
-@@ -32,6 +32,7 @@
- #define I3C_CCC_DEFSLVS			I3C_CCC_ID(0x8, true)
- #define I3C_CCC_ENTTM			I3C_CCC_ID(0xb, true)
- #define I3C_CCC_ENTHDR(x)		I3C_CCC_ID(0x20 + (x), true)
-+#define I3C_CCC_SETAASA			I3C_CCC_ID(0x29, true)
+-	master->enabled_events &= ~SVC_I3C_EVENT_IBI;
++	master->enabled_events--;
+ 	if (!master->enabled_events)
+ 		svc_i3c_master_disable_interrupts(master);
  
- /* Unicast-only commands */
- #define I3C_CCC_SETDASA			I3C_CCC_ID(0x7, false)
-diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
-index 367faf7c4bf3..cd8390d8b469 100644
---- a/include/linux/i3c/master.h
-+++ b/include/linux/i3c/master.h
-@@ -516,6 +516,7 @@ struct i3c_master_controller {
- 	const struct i3c_master_controller_ops *ops;
- 	unsigned int secondary : 1;
- 	unsigned int init_done : 1;
-+	unsigned int jdec_spd : 1;
- 	unsigned int hotjoin: 1;
- 	struct {
- 		struct list_head i3c;
 -- 
 2.34.1
 
