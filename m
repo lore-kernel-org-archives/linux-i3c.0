@@ -4,65 +4,160 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5FFA9D0C615
-	for <linux-i3c@archiver.kernel.org>; Fri, 25 Oct 2024 14:15:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 467F1D3A66B
+	for <linux-i3c@archiver.kernel.org>; Tue, 29 Oct 2024 15:19:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c42HxkRFJLaxYPqrHQigA1ncrdDwGpgVhqCUpBhUrsc=; b=kek/uQSFIUbrIx
-	Z+ajLwe1mDbPPQZwOOpxVNThfN5lWV6S3p/PPO83twFTODZ6gi3p+LBwFhnmmgZt+6CJZz+igoPqh
-	mNDgGQeCE/LoZqdcMLuG9wRJkt5lQ6psLbEqwCaNOybKTgxzRB1EgOIBcQB1Rz6e90iaQQnMP5l7f
-	HP1F33lkFVp+x0iQcNtenhhRHudqIyxe/wIzdSx4PI41OHEDWD82lwSkJSr4ZvjKPzOgwJiTX2jSJ
-	Jdj6nLAVlnrmp1rloUxLg/m+C9KZLi4HZWTCJz1BVPVh39lm8g8KjMzWLObJ6obzFMjfgBCfiNAb2
-	Aj+jRJwLYmGmA+akFH2Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:Cc:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=dZwCPqRlUHJqKlm1xvjWLkcxQPJzMON9NnJYAFBBNII=; b=UoNdC6T35Bj+1NYLS6+xL77oz5
+	li3+m3NISpjYmg95PFT5CcC3FavBeMcYHQN2dAPhtHI4T3c75oMbjDIwW9h/sQYirzouAw4bo40hR
+	W7z8yLkTCYd8q4G6iVS5f9GAg5TyVfcF0HdSbsmuryTSw2PFDAJrhmlhBxgUE9UX7/vR7cyIlNgsm
+	yj9XgVAL88wLjNomxEn44dgbQyvddoCy3pN3eyouDWa2TmaoFhjJ12A71nk8HmDpRjYZaemOnKeyj
+	1G154hJM5Ia5zAoRfjgRaNXAWcNF++339Nhyihmjm4nmC7X9V53s6/qjhQbKv67QdYBtOmdWGESm2
+	GJb3E0gw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t4L5j-00000003xsp-0DdQ;
-	Fri, 25 Oct 2024 14:15:03 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1t5o0A-0000000EsS5-2GAG;
+	Tue, 29 Oct 2024 15:19:22 +0000
+Received: from mail-sn1nam02on20621.outbound.protection.outlook.com ([2a01:111:f403:2406::621] helo=NAM02-SN1-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t4L1G-00000003wjv-0gT0
+	id 1t5nwl-0000000ErsF-1KB0
 	for linux-i3c@lists.infradead.org;
-	Fri, 25 Oct 2024 14:10:27 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 9B29924000A;
-	Fri, 25 Oct 2024 14:10:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1729865423;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=UNZphZRiAU7HwBE54GXF6AQmf4CgwHYIZ6gfOVxLRws=;
-	b=VHLjaCFAEFG+cxatoXyaUlHYx/dlKo12fKFbWCMcrp4s8PokLQddoLf19eKvZcG1GfpjDD
-	JHkqYksUil83JkRe6MVgJTa35SRjUPk9c463407JhjNbfY8dMhjHujIRT7AdOYWCVZWEJV
-	uKpdRvFtqNHjsiSdZSmYKaN2Xc61fKdDHD8CmqTDENoszI2ZHTe4iXkVw4KlCU9prPeUyS
-	nsWZ3OHPNfHApIv6cbgsD72uwNOxfCWyf0x/MWEHpXa1v/pVLXH/wq3hbVx69ILhanfEHU
-	DPK4I3q/pTlNEFjo4PzYG2eMP7biMBhtTDW8OG/U4VqIs6DX7Sfkze3ORNB2RQ==
-Date: Fri, 25 Oct 2024 16:10:20 +0200
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Frank Li <Frank.li@nxp.com>
-Cc: Conor Culhane <conor.culhane@silvaco.com>, Alexandre Belloni
- <alexandre.belloni@bootlin.com>, Clark Wang <xiaoning.wang@nxp.com>,
- "moderated list:SILVACO I3C DUAL-ROLE MASTER"
- <linux-i3c@lists.infradead.org>, open list <linux-kernel@vger.kernel.org>,
- imx@lists.linux.dev
-Subject: Re: [PATCH 1/1] i3c: master: svc: Modify enabled_events bit 7:0 to
- act as IBI enable counter
-Message-ID: <20241025161020.11765f79@xps-13>
-In-Reply-To: <ZxukksXwyWN2HQ3I@lizhi-Precision-Tower-5810>
-References: <20241024203855.1584416-1-Frank.Li@nxp.com>
-	<20241025095318.4785df2c@xps-13>
-	<ZxukksXwyWN2HQ3I@lizhi-Precision-Tower-5810>
-Organization: Bootlin
-X-Mailer: Claws Mail 4.2.0 (GTK 3.24.41; x86_64-pc-linux-gnu)
+	Tue, 29 Oct 2024 15:15:53 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=ytuXck4F/RDqmxN7uL1Iub0c/AyLa2+c4a6fIszL97TRJF1WkGq5qDluyTvYfuWacu4NZV7pzm/B6JH0SG3CN3P7cDQ/TzylPFyUcXrnfL9jPHV0lg17pZBTlmMipfBfLWxfTXjDwhgOzG16LdhK2kL8ajfJ7PldMFvUOw4OVUDpWEtrvPsHbw5OwwXbf1esoEPOhm/I6EjOco1hzPzOsAP+q4uYyPv/KoX2/Utw1a08lCuG4LpDpngHJ+dHLv/2nX19TOCnsP76Dexct//W7MJQLfiOAYT+z24ftxUWbkD4w7poscQfa2lrDCMJq73KSNjXQj3rRltnNRF+0DE3ng==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=uQJXeJ0SIDHz1F8vCh65Fch+V5XfiyLWLJQIKKPZqXU=;
+ b=WnbWDBVD5+xbjnfFgCsS8jxR+8vMxK4C1bUY6JChjTEk9LrElhYXOU//krddEGIb9UWt0WuVIgdho8Bau/ocACddgZjt4x6lYd+Nsv45S3a6BXYRSPKarVOE399+HAQNosv6Q2lms9ckveOhEKAoc2jzOq4Ntl6SA2EAJ4Z4yzYzbm43zNpeXN9YHynMMYM48NStp+85VngjZax/QaH5Y4ADLuezjVfyn+7aOGGG1kLLIvHI03F7lvUxI3ot8ydB1cTeLVxvh86Jo5Dy82dZAbIChPB03qFGmGVZLQZXwHl+VAGtIvwI0OUtZXQkPpAtsKOHqplErmUbcL7uAyriEA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
+ header.d=amd.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=uQJXeJ0SIDHz1F8vCh65Fch+V5XfiyLWLJQIKKPZqXU=;
+ b=KBv4khiS9nTc8w5tsCDuycd3EqLjQ8EcewlCJTu51p83dg1l237zJK1clPAk07xAUJxqnqvX2kvqkQVM48H4m4/IepLqDZKK8ufckdA5g6ecAy1MfILlVkMRxlKs39v/aUFYAbym1HswzBhMK1fQEsx9nGIFPrpAkLtYnbyQcCQ=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=amd.com;
+Received: from BL1PR12MB5176.namprd12.prod.outlook.com (2603:10b6:208:311::19)
+ by SA1PR12MB9001.namprd12.prod.outlook.com (2603:10b6:806:387::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8093.32; Tue, 29 Oct
+ 2024 15:15:33 +0000
+Received: from BL1PR12MB5176.namprd12.prod.outlook.com
+ ([fe80::ed5b:dd2f:995a:bcf4]) by BL1PR12MB5176.namprd12.prod.outlook.com
+ ([fe80::ed5b:dd2f:995a:bcf4%5]) with mapi id 15.20.8114.015; Tue, 29 Oct 2024
+ 15:15:33 +0000
+Message-ID: <990cdc00-92e2-41fb-bbcb-26f413b97494@amd.com>
+Date: Tue, 29 Oct 2024 20:45:27 +0530
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 0/6] Introduce initial support for the AMD I3C
+ (non-HCI) to DW driver
+Content-Language: en-US
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Jarkko Nikula <jarkko.nikula@linux.intel.com>
+Cc: Sanket.Goswami@amd.com, linux-i3c@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <20241023055118.1400286-1-Shyam-sundar.S-k@amd.com>
+From: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
+In-Reply-To: <20241023055118.1400286-1-Shyam-sundar.S-k@amd.com>
+X-ClientProxiedBy: PN0PR01CA0020.INDPRD01.PROD.OUTLOOK.COM
+ (2603:1096:c01:4e::8) To BL1PR12MB5176.namprd12.prod.outlook.com
+ (2603:10b6:208:311::19)
 MIME-Version: 1.0
-X-GND-Sasl: miquel.raynal@bootlin.com
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BL1PR12MB5176:EE_|SA1PR12MB9001:EE_
+X-MS-Office365-Filtering-Correlation-Id: b58a670d-addf-4bfe-879d-08dcf82c886c
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|376014|366016;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?L2hlSFcyRllsNFpicTdIRkpVYjRWaGttc3NtVHIrWXROUjEzZE10cU8wclhh?=
+ =?utf-8?B?MVRwbzNJcnY0dk9FQ1NGaXZpcWdOWlBDZ3dMcmY1MlZzVFVIS2swTm4xMVo5?=
+ =?utf-8?B?QzdPa1Z3LzRTU3AwZmJNMTZzdGdXUUs0VE1CZTUzQ2dRelAzM0RoQ1JnbEhS?=
+ =?utf-8?B?WlQvSmNna3Y5U2xYd3EzZ29oUXFqV042bFZXQnd1dTk4QnhFdDV0OGh4d3lJ?=
+ =?utf-8?B?MnJJRUZ6STdoclg1QkhQbjVDamtwdlRCOUpzQXdEMGRpZUVNRXhVdmRhRkVt?=
+ =?utf-8?B?OUdWazlxVE5UUnpqNlJPeXlUUlJiUW5KS2kwQ3p0UmhKbUo1N1I0VUJ4M0F4?=
+ =?utf-8?B?Z1VUU2IyWlFkWjRDR3hxZWM3MEhzQ1JtOVJnZUdlT2JOdjlOeUs1Z3paMndG?=
+ =?utf-8?B?NjZqVEYwUGg3bzk1TnZjR2lzaVBXdXZhdE4vbXp4eGE0Q0RYdGZsbUhEUnFi?=
+ =?utf-8?B?V1hFOVg0dmxrODhWdTM5emVnT1pFQTZzdHp6cTJadWEvam9BazJmRHBtVlR6?=
+ =?utf-8?B?dWcyZ3ZGMXE4TlFVS0xPWVBuVjZFUUVqaW1icXZvTTltQllzRFBkdkRpZ2sr?=
+ =?utf-8?B?NHNwUXY5Z201Q2FmQlN4N241ZEY2a1NDM3lDd0RBS1dsL1JkS2Y1MVhVYnRn?=
+ =?utf-8?B?S2wwNnRqemVKMHlJdHJjRjdVbXVWQVdacHJNNHA0ckJkQkdZa01KQzgwbEwr?=
+ =?utf-8?B?OFVXOU5ZQnZ1K1Z4WU1MTVpTTnAyUUliL0l3dzJRblVXd1ZPeForMml0YWNO?=
+ =?utf-8?B?TXBaMVQ3dFRXNUhOMHlEWE1aeTlodGZiRlNGa015RytTSmZsVnFUa2Y2R3Nz?=
+ =?utf-8?B?emdPd3NZNU1JTnJueXFtV3JsVVl2M1JXUzNhNlhDTmF3Qi83VHc0bGdrWXVP?=
+ =?utf-8?B?VktKWUViZEhNd05XQlN0bFNlbStwMy8rZ0ljdDZZVUxVQml6ck94dnlKTzFv?=
+ =?utf-8?B?cXYvaUJna2hxWUFOUXBULzNtVWhTREkrNmo4R05IUEhnTW14ZThPQmkvNUQ2?=
+ =?utf-8?B?ZkxRMEh5QWc1cUFVSHE0Vk9KYkxRRk5WK3JQTlBkbnROcDRlSSttdklLNEpj?=
+ =?utf-8?B?cG12Y2hnQUg5RHFBWTNMRFlQNXowN1hUTXRxcHhXcUpUTWtDMFFMalcvcjdT?=
+ =?utf-8?B?MTNCRXlTbDAzVjlwSlZscXc5N21ielloUFZuMExrTEpjdjVnUzJYd1hJSUVk?=
+ =?utf-8?B?bUNPV2V6L2pnYmdNcE5vNTVtdUZBK3N0OUZpZCtTMS8yK1RzZ1dpVGZSbjQv?=
+ =?utf-8?B?VWUvTWtMRE0xOFgydnlVb1dDV3lOVG5RSUU5SXZ0VnlRc09yV20rbjNzVWhK?=
+ =?utf-8?B?dmc3TklWUUpZUlduVllaOGFmclVjVExaY3BNOGdNenRlcGZ1bzhUWTlpbkpH?=
+ =?utf-8?B?MytnVFpOVGRZNjRTL2VNK0RFMEkvVUpzN0ltNnBwaFJDYSt4NWRRTjlYb05l?=
+ =?utf-8?B?U1U3U0cwcDZ5dWpoS3FRWGhjcDJ5T2ZTallxTjFVSkovNE9Kb2VBUUJSeTFB?=
+ =?utf-8?B?SklXeWR3NlN3WjdxR1l1bFRTaVV1RDBjV0MwOFNsUDhkdXlLbWlTWElCQ3Fa?=
+ =?utf-8?B?TnZRV0ozYlYra3pWUmh1LzVTZkV4VlJhN3Y0QnB5SXJOVjlCaXNKd2N4UUJV?=
+ =?utf-8?B?R0tXdW9aaWNraTFQT1ZTSis3STJaQ2xWVXZtNkxDSEJhUkZKMFdCcXNEdm5O?=
+ =?utf-8?B?Ni95dEJyK29XSVVHbzFVZVN4bm9MZ1JSeElqSThLVmdLb2cybjRTS3lycjBj?=
+ =?utf-8?Q?QXBOEpbCNxmvB2L5zw=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BL1PR12MB5176.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(366016);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?RmxlMUxDZG9xdi9Sb2J4VG9Zb3dPWFcwSGhFUjZBOU5pcDMxZk9oVmwzeGFu?=
+ =?utf-8?B?ZWx6bTNkWEVBQmdoYlM0c3l5OUpEdUZoYjBTdyt0L0dBWmtiYlVtc3Z4NjdN?=
+ =?utf-8?B?ekFlcWx4OEV6LzdMV05mY0VJOG5kVlRLR3FOTHp6c0s2cnhGb0ZabXlEakZI?=
+ =?utf-8?B?Qy83aEJGYjczWlA3Vkdobzc4RUgvb3g5ZXU5OXBEZG9VaDF4NjBzMXd0TFhS?=
+ =?utf-8?B?Z1JZU20vd253MkM1ZGYrQlhqdTM5R1B0NUdPRlVLZEwyL1dOa1QzWlNscFhY?=
+ =?utf-8?B?R0s3RVRxc05acGtDdGl2Q0hqeHlrTEtVNXhYc245UVJqZTU0M3RubHhRMnhN?=
+ =?utf-8?B?Q0hlZUZoOW5hZnNtdDRUcnFVUjA1RjNqeHFDWXhRV1F6Mm56UTdWU3BSbVQ0?=
+ =?utf-8?B?UnJKMEF0aFVycU1oMWZaQi9qdm5YRzV6K2VEN0VFQVhQUldpQ21qeUJBNTJY?=
+ =?utf-8?B?RDFVQkJtV080QU9vTHVIUGZTVW9leVFTakFHNzNCNzFlSzhmVDdRR21MYXp1?=
+ =?utf-8?B?S1lLa2JTeWlCNFpTckJXaE5mSTA3QU0yV3BJbHRPRVdGaGNBMkM0RWM5SGgy?=
+ =?utf-8?B?VnRTVjZGelhZZkIzLzNRbi9mQzJYdDhpNmNISVZOS0d4ZzM2UkVlWUhvdzR2?=
+ =?utf-8?B?aHVyVWZUK2EvSGxZR2dXd2J1aDF4cGUwU2FRYVg5dk1OV1VnY3kvbWNtWXEx?=
+ =?utf-8?B?cXlERENxS1dtTzYzRHYwZklabE9KSjErVXNBc1hyUkRMTlluazBGVXpONERG?=
+ =?utf-8?B?TkNHVGc2TEs2ZnFDU21adEx2R2JHMFJNUEc3a2JFZnBnTzBXZkVsbzEwdksz?=
+ =?utf-8?B?bWFVcG55cEgvRGtubCtBdkhVQTlyM2pIY2Z3dEpDNnNsYjFhS0I4VkF2RWkz?=
+ =?utf-8?B?T0wrYmVFNWI2NjVHQW0wdFk1VVIyVlZoOFZZTEM1cExYR1hqMTZmMnJFTld3?=
+ =?utf-8?B?cHN0amxmVHNMazVVd3JpcGxRSThhSS9sRTRWb2hPeGZqenZwc0lPNWx6NXkw?=
+ =?utf-8?B?R2lTUFBHOHE3WUppenEwcmRvZ1g2TVJtaUsxS1RFWnBEMzNwcFBOM1Y1T1Z3?=
+ =?utf-8?B?NTdtOTVUVDJTZEYvSzVLd0U5VUpsSzd5cjFmUS9lbVdXdVYvUTFUN1RaeG9V?=
+ =?utf-8?B?OFdzK2wzczU4aURlbmdwam5WRXkySmxCNWMraUdnMjNtWmFCdzBXc01NUGZT?=
+ =?utf-8?B?SDl3elY3QmxRdWJaeFlwOGFxOThHOXlxSXF0T1BRYTArWG9aYTNsS3dwaWdz?=
+ =?utf-8?B?SFo1UlZzM0Q4bXJmN0RUYitvVXROdG56N3V6OGhXSGZJUWlvVTBYQm5WZWgv?=
+ =?utf-8?B?WFd0MG1xZFlwQzBHMjNzVnFWbzlmUWx3THF0UmJNNHBFN3BqaEVJdUk3bzZv?=
+ =?utf-8?B?Y3MranVlY3pBMGFuZm9wTFZLTmlGUDF1Si9KS2V4NktKT3hlc1lWcWVxdDc4?=
+ =?utf-8?B?bjZqVVdLeEZtc1Riak1JQ01CVTBmcVNnUlhaSU9ZbVN0endwVXFpWEs1cFJ4?=
+ =?utf-8?B?aHdteXJnNHZkTE9xNmFHT1FNRk9iMkNiVStBbHlmbTkvSTNWV0VSMGFNeHg3?=
+ =?utf-8?B?WCtrZnRnWVNEQ3VYVDluSVQ2ZXc3TjFBejdDYkpPS0NYUmFNekJ6M05mZ2V0?=
+ =?utf-8?B?MHF2V2c1QTdvUGxhUjdQb1RoTkxZa3FkcG9oWFBIaDFiOUJVQ0FsK254NWNs?=
+ =?utf-8?B?WVZrUGJLMFFJOEpnZ2c0QzUvaHpyZXFETXpxYUN6U2pIM1l1RjA3Wk81ZTdn?=
+ =?utf-8?B?N1lHcGJRL0pNc3ZocGEwWWQ2cSs2dEVlMTNJT2VaZVB3RVdGWWZWRDE4cnB1?=
+ =?utf-8?B?LzZrbEgwZmRGTnJMcDBnVXdzMGY2K3RUa2twbHRicDBjRE1VNmpIOHNWc1dL?=
+ =?utf-8?B?V21BZFhIVmxVbzk1dUpIaklIQ1ZXazJhNHB1R2hSRjZvRVJlajNZU2c3bTUz?=
+ =?utf-8?B?RFJNLzh3UEQ0TDR3Smh5bkNIZFlRaU1scGd4L2liL25ZcXByV3hJWDJSQ2g3?=
+ =?utf-8?B?S1A2bVZsT0RNS2J0L2JHV0VQWERVTHVtQ0R6MjhiWnI0Vkt6TEc4ejFpdG5H?=
+ =?utf-8?B?Uk8rQ21Xc1VnZURjTjgyak9uYkRaeG85em9VZUcyQ0JIRGwwb2wwNzZFMXN3?=
+ =?utf-8?Q?0abM8kPUbpA1JcE2Q106gYHwX?=
+X-OriginatorOrg: amd.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b58a670d-addf-4bfe-879d-08dcf82c886c
+X-MS-Exchange-CrossTenant-AuthSource: BL1PR12MB5176.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Oct 2024 15:15:33.4231
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 8kLFzTHOdd/X5pzEl77btVZQIKicTDbFyW2ARG6aEoLtkrMIUOIUYjZNl2G4FCk8DiTkbee4jaMS9y2rM3LsSw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA1PR12MB9001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241025_071026_361454_3500C100 
-X-CRM114-Status: GOOD (  10.42  )
+X-CRM114-CacheID: sfid-20241029_081551_451763_8269F46E 
+X-CRM114-Status: GOOD (  17.91  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,22 +169,62 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-SGkgRnJhbmssCgpGcmFuay5saUBueHAuY29tIHdyb3RlIG9uIEZyaSwgMjUgT2N0IDIwMjQgMTA6
-MDA6NTAgLTA0MDA6Cgo+IE9uIEZyaSwgT2N0IDI1LCAyMDI0IGF0IDA5OjUzOjE4QU0gKzAyMDAs
-IE1pcXVlbCBSYXluYWwgd3JvdGU6Cj4gPiBIaSBGcmFuaywKPiA+Cj4gPiBGcmFuay5MaUBueHAu
-Y29tIHdyb3RlIG9uIFRodSwgMjQgT2N0IDIwMjQgMTY6Mzg6NTUgLTA0MDA6Cj4gPiAgCj4gPiA+
-IEZpeCBpc3N1ZSB3aGVyZSBkaXNhYmxpbmcgSUJJIG9uIG9uZSBkZXZpY2UgZGlzYWJsZXMgdGhl
-IGVudGlyZSBJQkkKPiA+ID4gaW50ZXJydXB0LiBNb2RpZnkgYml0IDc6MCBvZiBlbmFibGVkX2V2
-ZW50cyB0byBzZXJ2ZSBhcyBhbiBJQkkgZW5hYmxlICAKPiA+Cj4gPiBJcyB0aGlzIGJpdGZpZWxk
-IGFyYml0cmFyeT8KPiA+Cj4gPiBJcyB0aGVyZSBhIHJhdGlvbmFsZSBiZWhpbmQgaXQ/ICAKPiAK
-PiBNYXggZGV2aWNlcyBudW1iZXIgdW5kZXIgYSBJM0MgYnVzIGlzIDEyOCBiZWNhdXNlIGR5bmFt
-aWMgYWRkcmVzcyBpcyA3IGJpdC4KPiBTbyA4IGJpdHMgZm9yIGl0IHNob3VsZCBiZSBlbm91Z2gu
-Cj4gCj4gQml0MzEgYXMgaG90am9pbiwgQml0MzAgcmVzZXJ2ZWQgYXMgY29udHJvbCBzd2l0Y2gg
-cmVxdWVzdC4KCk1ha2VzIHNlbnNlLgoKVGhhbmtzLApNaXF1w6hsCgotLSAKbGludXgtaTNjIG1h
-aWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
+Hi Jarkko,
+
+On 10/23/2024 11:21, Shyam Sundar S K wrote:
+> The AMD EPYC platform design has DIMMs connected over the I3C bus, with
+> each DIMM containing three components: SPD, PMIC, and RCD.
+> 
+> To access component-specific information within the DIMMs, such as initial
+> dynamic address, static address, and provisional ID, ACPI support is
+> necessary for the I3C core. This requires adding ACPI binding to the
+> dw-i3c-master driver and retrieving slave information from the AMD ASL.
+> 
+> Currently, the code is closely tied to dt-bindings. This initial set aims
+> to decouple some of these bindings by adding the AMD-specific _HID,
+> enabling the current driver to support ACPI-enabled x86 systems.
+> 
+> In this series, support for following features has been added.
+> - X86/ACPI support to i3c core
+> - Support for SETAASA CCC command
+> - Add routines to plugin a SPD device to the i3c bus
+> - Workaround for AMD hardware
+> - Add dw-i3c-master driver with ACPI bindings
+> 
+> 
+
+Any feedback on this series, please?
+
+Thanks,
+Shyam
+
+> v2:
+> ----
+>  - Address LKP reports issues
+> 
+> Shyam Sundar S K (6):
+>   i3c: dw: Add support for AMDI0015 ACPI ID
+>   i3c: dw: Use IRQF_SHARED flag for dw-i3c-master
+>   i3c: master: Add ACPI support to i3c subsystem
+>   i3c: master: Add a routine to include the I3C SPD device
+>   i3c: master: Add support for SETAASA CCC
+>   i3c: dw: Add quirk to address OD/PP timing issue on AMD platform
+> 
+>  drivers/i3c/internals.h            |   2 +
+>  drivers/i3c/master.c               | 157 ++++++++++++++++++++++++++++-
+>  drivers/i3c/master/dw-i3c-master.c |  44 +++++++-
+>  drivers/i3c/master/dw-i3c-master.h |   1 +
+>  include/linux/i3c/ccc.h            |   1 +
+>  include/linux/i3c/master.h         |   2 +
+>  6 files changed, 205 insertions(+), 2 deletions(-)
+> 
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
