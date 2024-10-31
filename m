@@ -4,63 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5AAE2E6748E
-	for <linux-i3c@archiver.kernel.org>; Thu, 31 Oct 2024 23:01:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE12CE6748E
+	for <linux-i3c@archiver.kernel.org>; Thu, 31 Oct 2024 23:05:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pb16M8UzBsLec7ofaas1xCREFfR5L85L+IB3ga857dQ=; b=GdoyBwLVsADj9U
-	lP5ontmkrt+F4H6yP877O3cOoVY+dJZ5EFvtT8C79cCzgFxzymyU72aCCnYg1XRT/wdsSpPxS76Ha
-	Gn5+et1XH4BzyDvUD7RdMABNyT32H64edwSsOHcjCY0wLYTvocZyd0yr3elK3A4A/vElpiJVzrcRO
-	EOppY9cftcZ18qyA76lxZB9wwKJbS3ieC4XCwl8k2Pci0iHdLPrN5WBgS/5/6SeYVTK2jWJ9ciOgb
-	f33wTRFU72sxpfiRNuv4BFFGstnJM8mD82gXt8jHbEKKtPyIP3bZnUUaPe7OFZdrRqJHM1beelord
-	+rc5J70nZjEVJ+ddjOvA==;
+	List-Owner; bh=/cHBCgeyWg4cHyhCR5hyLuUvcnJSssKbhm9dR8iLlPE=; b=KixttikLpPPP0N
+	6G4lBHzSzIHIeANbfjvhSAwHGyUVpaqSJ9WqH2u/aWIz8eFp4vEY1oA0+d2znMmEtyxlTKlLOxcfw
+	xXFkI0ZTR1BNdaKtt2vUdHebHIboCsSbg2RXxjeBFnqVhgT7k56WfzJ1CxqXieo868eKlTTfALsl3
+	AMSGf52nz8E+z1aJFKfpe/01/k8wsVy/ryMiUUQ65CmIQIXjvuk7HwKVJsVav6hapt2qcrFr29lt5
+	2a8K95ccY5RHm1DRC1upX+Ih4pQvG0htn3VWLH41fctMqpqhfwijFiyT6fXZWEngfKU9TJmZvf4xK
+	fguBkMRniQAv+cV3fc2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6eA1-000000057WY-3JF4;
-	Thu, 31 Oct 2024 23:01:05 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+	id 1t6eE9-000000058CI-1kGW;
+	Thu, 31 Oct 2024 23:05:17 +0000
+Received: from relay3-d.mail.gandi.net ([2001:4b98:dc4:8::223])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6e92-000000057LN-3mvt
+	id 1t6eE6-000000058BJ-1h5S
 	for linux-i3c@lists.infradead.org;
-	Thu, 31 Oct 2024 23:00:02 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 59A0DC0002;
-	Thu, 31 Oct 2024 22:59:58 +0000 (UTC)
+	Thu, 31 Oct 2024 23:05:16 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 6CD3A60005;
+	Thu, 31 Oct 2024 23:05:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1730415599;
+	t=1730415910;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 in-reply-to:in-reply-to:references:references;
-	bh=E5tPbinO6XAzKN7l+PGk9W3OOrQy0kg3Os2oKPhdF8g=;
-	b=Lx6hmWtyfWTSIZzKtpAKMOsfhOEFr+1x2NESEaV5slbt/rBu75yoNlJauf1EpezmaYCB36
-	u4iNXVf5h4mX//1g0h9qmuDBHH5rWQivX+6ZNHmQD6AewqhmqK84UqDxsf036XKfwJIFeF
-	qZd5Lv2H3Z/b9sncUsM1N4pUqcQ1MDuyKQ3KdxGIvsBH0thNkFreoNC6d2NAVcQx4sWOXA
-	VabS2GuEvmHAWWxs37RezuLy9BFXGwvWFH3Uo1gN+l6KUWbMOAOdiRFz3hyYP9W2DrIXbo
-	HWqW+hs/EqYZ2rVuvAF+da+ANpMNW0/qwvkr07rkYSSFGInEFIkRKzQSAftD9w==
-Date: Thu, 31 Oct 2024 23:59:58 +0100
+	bh=+dr+WbouWG08b3ueIX4Ar5hKem1okbqw/Lq5iSFgUBY=;
+	b=KtUlIP/+1X3FlzencxuXhU9kmKLoGem34if3sYm6TSxFs6N6B0tVriuTFhAOXx1scg/8ox
+	hpaleZngpo++WjSkA/PVPyT8i5CDiE4acTYRWghHns3sxde74e7LUeKH7d14urA93suJlo
+	5hGkQGdfGyv6rU6iGLAHOMBPm1yCxmOkP9CxIfD/yQaIN+JUDcSGsxwSuE9gIGKnJmRQlm
+	TYmbu0LeYVbLcD/qLlf78AjWoVVq2j5qduDrIXM0vZCxUhEbTqPldYd5iy0qUG5fwr5onM
+	CVbQOA0AuXGdghwygeUURSKdp03cQlkrlO4I4OJK+6bG9vzYW+DhbmPwulcDug==
+Date: Fri, 1 Nov 2024 00:05:10 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: miquel.raynal@bootlin.com, Frank Li <Frank.Li@nxp.com>
-Cc: Frank.li@nxp.com, arnd@arndb.de, bbrezillon@kernel.org,
-	boris.brezillon@collabora.com, conor.culhane@silvaco.com,
-	gregkh@linuxfoundation.org, imx@lists.linux.dev,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	pthombar@cadence.com, ravindra.yashvant.shinde@nxp.com,
-	stable@kernel.org
-Subject: Re: [PATCH v5 1/1] i3c: master: Fix miss free init_dyn_addr at
- i3c_master_put_i3c_addrs()
-Message-ID: <173041558586.2392356.14874053827219870416.b4-ty@bootlin.com>
-References: <20241001162608.224039-1-Frank.Li@nxp.com>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Miquel Raynal <miquel.raynal@bootlin.com>,
+	Conor Culhane <conor.culhane@silvaco.com>,
+	Clark Wang <xiaoning.wang@nxp.com>,
+	"moderated list:SILVACO I3C DUAL-ROLE MASTER" <linux-i3c@lists.infradead.org>,
+	open list <linux-kernel@vger.kernel.org>, imx@lists.linux.dev
+Subject: Re: [PATCH 1/1] i3c: master: svc: Modify enabled_events bit 7:0 to
+ act as IBI enable counter
+Message-ID: <202410312305108f8c61cf@mail.local>
+References: <20241024203855.1584416-1-Frank.Li@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241001162608.224039-1-Frank.Li@nxp.com>
+In-Reply-To: <20241024203855.1584416-1-Frank.Li@nxp.com>
 X-GND-Sasl: alexandre.belloni@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241031_160001_092767_60FAE9B5 
-X-CRM114-Status: UNSURE (   5.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241031_160514_615154_00CDAA23 
+X-CRM114-Status: GOOD (  16.62  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,22 +75,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, 01 Oct 2024 12:26:08 -0400, Frank Li wrote:
-> if (dev->boardinfo && dev->boardinfo->init_dyn_addr)
->                                       ^^^ here check "init_dyn_addr"
-> 	i3c_bus_set_addr_slot_status(&master->bus, dev->info.dyn_addr, ...)
-> 						             ^^^^
-> 							free "dyn_addr"
-> Fix copy/paste error "dyn_addr" by replacing it with "init_dyn_addr".
+Hello,
+
+On 24/10/2024 16:38:55-0400, Frank Li wrote:
+> Fix issue where disabling IBI on one device disables the entire IBI
+> interrupt. Modify bit 7:0 of enabled_events to serve as an IBI enable
+> counter, ensuring that the system IBI interrupt is disabled only when all
+> I3C devices have IBI disabled.
 > 
-> [...]
+> Cc: stable@kernel.org
+> Fixes: 7ff730ca458e ("i3c: master: svc: enable the interrupt in the enable ibi function")
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
 
-Applied, thanks!
+This doesn't apply on i3c/next after applying your patches, can you
+rebase?
 
-[1/1] i3c: master: Fix miss free init_dyn_addr at i3c_master_put_i3c_addrs()
-      https://git.kernel.org/abelloni/c/3082990592f7
-
-Best regards,
+> ---
+>  drivers/i3c/master/svc-i3c-master.c | 10 +++++-----
+>  1 file changed, 5 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
+> index d1ebfba3739c1..66fe0fc12c897 100644
+> --- a/drivers/i3c/master/svc-i3c-master.c
+> +++ b/drivers/i3c/master/svc-i3c-master.c
+> @@ -130,8 +130,8 @@
+>  /* This parameter depends on the implementation and may be tuned */
+>  #define SVC_I3C_FIFO_SIZE 16
+>  
+> -#define SVC_I3C_EVENT_IBI	BIT(0)
+> -#define SVC_I3C_EVENT_HOTJOIN	BIT(1)
+> +#define SVC_I3C_EVENT_IBI	GENMASK(7, 0)
+> +#define SVC_I3C_EVENT_HOTJOIN	BIT(31)
+>  
+>  struct svc_i3c_cmd {
+>  	u8 addr;
+> @@ -214,7 +214,7 @@ struct svc_i3c_master {
+>  		spinlock_t lock;
+>  	} ibi;
+>  	struct mutex lock;
+> -	int enabled_events;
+> +	u32 enabled_events;
+>  };
+>  
+>  /**
+> @@ -1532,7 +1532,7 @@ static int svc_i3c_master_enable_ibi(struct i3c_dev_desc *dev)
+>  		return ret;
+>  	}
+>  
+> -	master->enabled_events |= SVC_I3C_EVENT_IBI;
+> +	master->enabled_events++;
+>  	svc_i3c_master_enable_interrupts(master, SVC_I3C_MINT_SLVSTART);
+>  
+>  	return i3c_master_enec_locked(m, dev->info.dyn_addr, I3C_CCC_EVENT_SIR);
+> @@ -1544,7 +1544,7 @@ static int svc_i3c_master_disable_ibi(struct i3c_dev_desc *dev)
+>  	struct svc_i3c_master *master = to_svc_i3c_master(m);
+>  	int ret;
+>  
+> -	master->enabled_events &= ~SVC_I3C_EVENT_IBI;
+> +	master->enabled_events--;
+>  	if (!master->enabled_events)
+>  		svc_i3c_master_disable_interrupts(master);
+>  
+> -- 
+> 2.34.1
+> 
 
 -- 
 Alexandre Belloni, co-owner and COO, Bootlin
