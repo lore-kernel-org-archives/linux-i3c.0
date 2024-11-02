@@ -4,144 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E66B5E6F072
-	for <linux-i3c@archiver.kernel.org>; Fri,  1 Nov 2024 16:55:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65C4BE677FC
+	for <linux-i3c@archiver.kernel.org>; Sat,  2 Nov 2024 13:29:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+aeIvG/igvAIu1NYpRechiTUpX7pYhSoUXGdarF/ir0=; b=hsE5jbhxvYWIe7
-	LFQh98+Ae3smKa+0c7gU5pZb/0m4ZZtrAQYh1kj20UVt4CABdRcwf9bsAI9HLOzGw8BIuzcqQgNn9
-	EGc/AYqDipa/HmB67BZA5n/gybPUtSyU6Jp5og+3i4KvPDWQzbtvjKVNoOfU2858pQp5TqfekYQXg
-	mq6BQTBa+srdlN8Uuo6CivUelQ3uhVM47qgrnzqbFXBCDbJb2CKO/GvWwXYlFjqK2VS+sYOiNoFSl
-	vdFVfAk+XVAtemb/ibgppuz7G4MUVIzBX3KQVFOfHzZZ1ec7lgxVMWn1ivV0l5+AniIZ27M+BFnKw
-	A56cThq4wv24TH2TtV5A==;
+	List-Owner; bh=mgitU1Zw/0OIAHxUPh+7oUWKBnVd7qBD5MXOwzYm3gs=; b=ZOPI3UcJa2H6v8
+	3REZoBTiv+nAoMBW4HcpoAF/BaBkKJjXw0kinJ9uzfIYvNgqUEkzIKu+6LRMWGlXudngEnjfLEOmd
+	Wsn0ijDauAyzZ9Ubconxok2UXMxMi3Kt3SrXyeFSwjxo2eA1uiy7yU0Msj55+4b9t0d6lNeXv0GNK
+	WEt6WAS4zHP9ZhIBrdZW8OZWQma96Byp6W2FSrm+S8ZGX3ZB7IuPfhWAbqJj2KinJQ52RVMScOFWJ
+	Dtp32p2f3pl25DJjLgoopqwvZzuOFMOYJg+EZY5p//4hGsRL3Cv1o3amRh+8F85GkijSbD8ed1ane
+	2R+kt1oYLyut2d/0dUwA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6uvk-00000007l7S-3jky;
-	Fri, 01 Nov 2024 16:55:24 +0000
-Received: from mail-vi1eur05on2062e.outbound.protection.outlook.com ([2a01:111:f403:2613::62e] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1t7EBb-00000009mgG-1Wq2;
+	Sat, 02 Nov 2024 13:29:03 +0000
+Received: from relay3-d.mail.gandi.net ([217.70.183.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t6uqy-00000007kWu-3knd
+	id 1t7EBY-00000009mfG-0pVD
 	for linux-i3c@lists.infradead.org;
-	Fri, 01 Nov 2024 16:50:30 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=d1kM7Vj+fyOyC7KY1dgCJuXcrmSP9xyupoEA0/J9Hl/4KfgMlvpElj/uK5xsKiLyGlrDXH45aEsuw5vuK71uwc9ZmSIOUzof8YLOTO9OjBUGNQ3ydfdDC/ANK8Uhe1/D7tHGt5BdTMKSB4/klexI1gPTEfvJz35AivND+S/w8P0WWzhqvsHzk7nMXMxLG+3OAkdq7Qs0PCfyc/I+MZ6DJv/8Pi948bVWTqqr9nU90adFh/Fd8zP4dOLVVNIaFyk5gpDSP2sfRcBKUJW5/4/ti8+R3s0GS9SYYC1EAVeA5VGV2x4EJnB/3Y7NTPWwr9AkmYnTHioUujn3qG7g1i4uIg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=5KBgxRO4NBY42OTzZaW0c4I8dLq1r+LVI+ujJGeJmig=;
- b=X/qYUakqL460XA0FjZL6H4d1vtJPrJLlIo9zHKJK6nLMPIU8S5XFtmZ9G0ApYVuZJC1KNcQoSMVZizVIM2PWewnsTF4xtjK5k6eC/VRFtBnYTnatJo6VWwxHN4TMv5PF9DFgTH2FKO+03rio3TDy4GwHyV9uNclgonKnv6H+d2DlQfy3J+OPRYICmR0TrBaw1v+tgLt3ZTbc0hgBqZE8HFVeTCaRcT2AfZA1gId8KE1vuU7/9rcjgV8Vy9GT6UZcehiBLD2z9F6tTQa2XzubRvMJYoEK6+VwEak/WBnzVUaZOnZjWTsf3iOVwmdJTU+YVZXBlj1jUDc9D5HRLOg2kg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5KBgxRO4NBY42OTzZaW0c4I8dLq1r+LVI+ujJGeJmig=;
- b=cUbBQG63uxyNEnFOrebilpuN5JPuYisppfEjtayip3rAtMRQ7pg7VCJCEjhSNBIHGVOgPHLfocujmYB42FPX5sYZmwl69Pm/iWCEYmeutrG9jAtHhujrkQ57BxgkI2iAm9c+Pwz5m+VxiKAjO5x7oZGMTBUJ0WW8mZcDsIfAiDFv/oIyzX827+dom3W6BwYiT0qc23EEq6JwnWN99C3dQid8dKFB5GyJP+BSXMef72252Sdj6YwATFN3MGRRb3EAGqyEnznTrRUe3oUqKUxYEpwmwqPIYowl9Y2GFLikXbYLXI9UPVORKmHh3QtSgsAClVINYPl3vBQ4lsOaE3xc0Q==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
- by DBBPR04MB7930.eurprd04.prod.outlook.com (2603:10a6:10:1ea::12) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8093.32; Fri, 1 Nov
- 2024 16:50:22 +0000
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06%4]) with mapi id 15.20.8093.027; Fri, 1 Nov 2024
- 16:50:21 +0000
-From: Frank Li <Frank.Li@nxp.com>
-To: alexandre.belloni@bootlin.com
-Cc: Frank.Li@nxp.com,
-	conor.culhane@silvaco.com,
-	imx@lists.linux.dev,
-	linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	miquel.raynal@bootlin.com,
-	xiaoning.wang@nxp.com
-Subject: [PATCH v2 1/1] i3c: master: svc: Modify enabled_events bit 7:0 to act as IBI enable counter
-Date: Fri,  1 Nov 2024 12:50:02 -0400
-Message-Id: <20241101165002.2479794-1-Frank.Li@nxp.com>
-X-Mailer: git-send-email 2.34.1
-X-ClientProxiedBy: SJ0PR03CA0383.namprd03.prod.outlook.com
- (2603:10b6:a03:3a1::28) To PAXPR04MB9642.eurprd04.prod.outlook.com
- (2603:10a6:102:240::14)
+	Sat, 02 Nov 2024 13:29:01 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 6F8FC60002;
+	Sat,  2 Nov 2024 13:28:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1730554134;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:
+	 content-transfer-encoding:content-transfer-encoding;
+	bh=jFPxv4TFcb0xcjLdoJXvXlS5cVkkmSvweU1eSCPIPRc=;
+	b=OXoVX7zVuH1FrYOS7yaAMPQqWy0GHZALHFuzYs98iw/JAYE21Nm9iJUZik7qrQ9RW98eFY
+	yLnolfg8CELUrsxd6siXsawWXElztVfZDR2GNB96hoSv8IExdtzd767eugHl7Gl3kp6H/s
+	gIv/Jln47dYvKZGxhQP2dx+k85FsIw+3prRATLcXmv/+HaHh+tMA9Pipt13HA2aHv1bBzF
+	p2mHYjjTiLmATiDWX++i4vF4CJBWQ6VsBqx2vYpmwESSj4OjIqK+0IWofXZ+mZPLZkW4sN
+	fp+MQd6vLveJQsOiDBjKPJ7KxOxIeIm9wM1m630KGdk+ucOKJt5R3n061JqmQA==
+From: alexandre.belloni@bootlin.com
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] i3c: Document I3C_ADDR_SLOT_EXT_STATUS_MASK
+Date: Sat,  2 Nov 2024 14:28:41 +0100
+Message-ID: <20241102132841.2446176-1-alexandre.belloni@bootlin.com>
+X-Mailer: git-send-email 2.47.0
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|DBBPR04MB7930:EE_
-X-MS-Office365-Filtering-Correlation-Id: 2a7232af-7137-4310-8631-08dcfa95464f
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|52116014|376014|366016|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?uwGUGizq+wC+fNGauxD7AIla2ImpqnRz0KVJlJOKinzbKrZyz3CMb3x+VAsn?=
- =?us-ascii?Q?TgqUPsgZ8/wrJxCB2meMZ/GpTRG5+tNEhoCnAse793vAzIll509hxFLADFvf?=
- =?us-ascii?Q?HcM+3FPv5sF8Y20MNhfKLfLQ2hPdpjzpPdrzUsY4HoEYltv9/SM8dSM+awr2?=
- =?us-ascii?Q?5bYv1GmsBcD4QDtBXYYGglIM/v4ekpUt89SBcRiZ2IbcGe5o7ax/qeF/+dme?=
- =?us-ascii?Q?K0JSiSmNtOh3wYlCHzXeTS+n0A0AVdk5xMPX3ZEN4ANrzLc8WeYUzpnKcWP5?=
- =?us-ascii?Q?sssmcXb2F7RzwUkCMkEvGBEaDjDOqZzNECaAotMrAR5fc55qz03Rr8Gd01+x?=
- =?us-ascii?Q?KrYKWUEKwPOsWQiMeEM3Cist2bPBHHSTFBQB89X5mDNjsktRKRafozzNXKPd?=
- =?us-ascii?Q?hFkgD/IEEmeQDhg8zGos8sqwU9lV1pzWRPQntQI/KjnNBsGYszAE+iWikToW?=
- =?us-ascii?Q?55sie0WNymwf68mUAbQ2gk4YcyWMhHf42EQocS3ohAOFP8KNXRuWptoibk4F?=
- =?us-ascii?Q?o0YyMK+oZg6wszD72sE8fqalRhKeFOr1tXOfbBsO4BJAo5+o4Gh3b/o9raun?=
- =?us-ascii?Q?2xyE1AHd9HtRRX58azLzFmml7o/wq/ASwiDRcduDzV7ESXoATng2XRuhZi+g?=
- =?us-ascii?Q?YOwXb9bh1Hwt4INfB0m801cr+G7exm3UYmKBZrQAng7nLMrYmlicIIRAJmhC?=
- =?us-ascii?Q?0uD8U+izes2BrJf42EZBXXuYoiafWg8khtBrx/SnNnoFj64e5VGwa+A35yzu?=
- =?us-ascii?Q?pkX7rnzDMAclrS6pfjSB+2+gIrwk8rI60tLhjhym7y9AXiupSZVZRG9yhQzC?=
- =?us-ascii?Q?3a9syrAzIORj2pkARCU7JJxo6IDtEbpy/eCR+WdyCcdDzubY6HP3udsDbaij?=
- =?us-ascii?Q?1OYiW8Xl91WLSDhd2jjNhxVFEsQywfL3dLwEb+AOyniQUjjo2KCv2/w175N9?=
- =?us-ascii?Q?9Ae0hCk5m8y5ZUCCAIpmaCNapz79Hj4/0QF/FSVj/LRNId2nRd3VfV6rP0fv?=
- =?us-ascii?Q?YFP+5/Hq7AMph3agRkhGZ2h9lXGNbhjwP6qbQG4Nmg24eznlX4j+Nw//Yn8h?=
- =?us-ascii?Q?peuEaRkOn14dUgQ0vWThQ4WN7cIu3Hzf2lh/nPXECYVnZWnmsMZZZRI5Qzre?=
- =?us-ascii?Q?lVmiDOaqmmglpWxE6gWHqi9Gee1dprFYpEnIfUa1DyFWab+B/cAqdbtl6TD2?=
- =?us-ascii?Q?mwxh8M6Jx0lK6Prmgtuvq2QQILnZ1DKoaZIDvMdfyZKxhrBBcuB5R+Y1c9kY?=
- =?us-ascii?Q?ImcMvqJ6VN0HjrUYz/5twzJOkQyzU94Ln6UThv2Lq0WIvD5sOEhRQ8qnqk5s?=
- =?us-ascii?Q?8QPc/Ggy0QNyQPijl3mI2WYGWCJZOoxosNxGF0I2gmOuT9W2oEYHgZoNpvKz?=
- =?us-ascii?Q?/GIkXM8=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(52116014)(376014)(366016)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?k29K+BAsig55LhlJag4yHjSdFkyujsK0abJhiX9cqYzZD0ggRcrrCGxu13b8?=
- =?us-ascii?Q?BJAu8ih4DoCbADuJI8DaITNmdcgqQDyuWBQgzowxQ6dTtldZQmw1Q/16OC9y?=
- =?us-ascii?Q?2QTEWLg2C4OrvkarAduXMWHfQJhBWZbe+W3IH97IyBxF2g3EDfbPRLyOxcwv?=
- =?us-ascii?Q?FLjc+sGssXpO/a/rn273TiFN0jJ+JfSYrngqCe+S4PEb7Ztv8p9aiznAj0xG?=
- =?us-ascii?Q?LsGtIK3g+5zspzJNuqB/TfsE/taNm3JKGW8H20YZ5Ao7a7YiaDVmNJar4RGS?=
- =?us-ascii?Q?iT9nzAno9rAMMsk/WqzD2dZWWjX4kKhiQKFzc/szY1D7uUMSlM3rlan8Cro4?=
- =?us-ascii?Q?+/3nQiNOGWqc4IMwr/rSvKnLzPLjLqGsQnLvFHJ4dQRe0egCb18eKiV0GMQQ?=
- =?us-ascii?Q?R+WNFMphVd8/pkw7O/xOpU+Qy/7CLxxfj1xH1VoNQuPT3CHTouErIfvpLxIt?=
- =?us-ascii?Q?+zERSVgffZM+obTeMsA/ngMHVb9wtgbEAjjR+qxl/Jb1K9ZYYkQia0hhWi+a?=
- =?us-ascii?Q?dPG0rL5NGg5Gt+wfg2CVo4WfO9qqnkd1/KjkK062UbXtzrnBvry2Xl8Xog69?=
- =?us-ascii?Q?PGIQk/Gw/k61+cUu3psbTARw0l7DYtmDZhD2xNaaZ2USVqPGZQWy+jCynz8P?=
- =?us-ascii?Q?lFVgnop8+N+b5m7m6FSdwfUGWik3JR8v80Td/t4vkL/ziWTwJsirzOXvAdZZ?=
- =?us-ascii?Q?pizdD6VJT4UhIGXrROS8zwgZtX/v8yyQU5sB8uEsivPC+AgkorYzQHUxZ+fp?=
- =?us-ascii?Q?Cow/BEqYvaASIIHlRTjkfz8zIA+04RKh4d0HkrawHwvVkEi43EDnlFqjwH+n?=
- =?us-ascii?Q?sBhLvDujw+tjYIpgE9J5mCGZAoe4RY8LwwUahtWlH14vOoTrqYuAZWPo2DM3?=
- =?us-ascii?Q?iUnvFup9/fUJzTKArst1u0h2jp8T4GWo6MrcRR5FrerxLmh7TfFSs/myEuXv?=
- =?us-ascii?Q?6Mxnt8P+gvAnEhhgN2mPlkJeA2kJ7kG6Kzyi8uVhT4IzhFOaZyssjwS4V6LG?=
- =?us-ascii?Q?xRUI63i5T3LlNxr8acVUnu9+V03mNlnLdZn6qHXS/v9HJpBMyGubfOCoWdCf?=
- =?us-ascii?Q?OpHc2g8l8SOW93q1zFIz5j7EQtFJ+otnruGyyGSox+XBlyQxARzfvhKc13Sw?=
- =?us-ascii?Q?Pqwa4nPZf0YstOw8exTIm3o/P9hSirouu0JMjG/Outb5MlZkk6YA1moaoKF9?=
- =?us-ascii?Q?895jtKclK9Lx56c4wFRmqSYQ3FyF9x1egq3wTFktsCIKkaACJlkz7hzihQad?=
- =?us-ascii?Q?NqL0+QEA88f6744+inTY/sWWyvcUbAm5iUGVRBfcCj6lyST4ny1HS4+4UzXI?=
- =?us-ascii?Q?34x9vBiOnYAZ+wPXpz7uklusOZJrpQRceeRyozGNaXLT7r70BYjc1lqurtUi?=
- =?us-ascii?Q?OZ2l/uBQEXvZr1pGvOHQ46ngVGxnEUHvloeJxHm1+11FW7xxT5wsMkghS4gJ?=
- =?us-ascii?Q?AWeVtELhQQBzaj2u/kNNzsUH1FmgKzrjhtA47b+Zo/TlLIhm/RhwI73WL+7l?=
- =?us-ascii?Q?55ZgNYxSdh7foTkthUt9HFewyr5sIlxcnHoqGKvnmoQtRUeBIWAOzVS0s4kY?=
- =?us-ascii?Q?a0K6uzQO/vvrEZ+uq+I=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2a7232af-7137-4310-8631-08dcfa95464f
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Nov 2024 16:50:21.8255
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: FJEdiCtWIVEeQF4tcDRFpyk/cprw0XJj+YtiSsviHwU9FQycaX8wfnY2EcPFJUQu4+hzVDRsQagmqq9Rv8cu4Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR04MB7930
+X-GND-Sasl: alexandre.belloni@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241101_095028_977804_92F59F37 
-X-CRM114-Status: GOOD (  10.64  )
+X-CRM114-CacheID: sfid-20241102_062900_396501_272DD1D4 
+X-CRM114-Status: UNSURE (   8.29  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -158,67 +70,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Fix issue where disabling IBI on one device disables the entire IBI
-interrupt. Modify bit 7:0 of enabled_events to serve as an IBI enable
-counter, ensuring that the system IBI interrupt is disabled only when all
-I3C devices have IBI disabled.
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 
-Cc: stable@kernel.org
-Fixes: 7ff730ca458e ("i3c: master: svc: enable the interrupt in the enable ibi function")
-Reviewed-by: Miquel Raynal <miquel.raynal@bootlin.com>
-Signed-off-by: Frank Li <Frank.Li@nxp.com>
----
-Change from v1 to v2
-- rebase to i3c/next branch
-- add Reviewed tag of Miquel Raynal
----
- drivers/i3c/master/svc-i3c-master.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+As the mask is part of the enum, document it.
 
-diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-index c53f2b27662f4..c1ee3828e7eec 100644
---- a/drivers/i3c/master/svc-i3c-master.c
-+++ b/drivers/i3c/master/svc-i3c-master.c
-@@ -130,8 +130,8 @@
- #define SVC_I3C_PPBAUD_MAX 15
- #define SVC_I3C_QUICK_I2C_CLK 4170000
- 
--#define SVC_I3C_EVENT_IBI	BIT(0)
--#define SVC_I3C_EVENT_HOTJOIN	BIT(1)
-+#define SVC_I3C_EVENT_IBI	GENMASK(7, 0)
-+#define SVC_I3C_EVENT_HOTJOIN	BIT(31)
- 
- struct svc_i3c_cmd {
- 	u8 addr;
-@@ -214,7 +214,7 @@ struct svc_i3c_master {
- 		spinlock_t lock;
- 	} ibi;
- 	struct mutex lock;
--	int enabled_events;
-+	u32 enabled_events;
- 	u32 mctrl_config;
- };
- 
-@@ -1688,7 +1688,7 @@ static int svc_i3c_master_enable_ibi(struct i3c_dev_desc *dev)
- 		return ret;
- 	}
- 
--	master->enabled_events |= SVC_I3C_EVENT_IBI;
-+	master->enabled_events++;
- 	svc_i3c_master_enable_interrupts(master, SVC_I3C_MINT_SLVSTART);
- 
- 	return i3c_master_enec_locked(m, dev->info.dyn_addr, I3C_CCC_EVENT_SIR);
-@@ -1700,7 +1700,7 @@ static int svc_i3c_master_disable_ibi(struct i3c_dev_desc *dev)
- 	struct svc_i3c_master *master = to_svc_i3c_master(m);
- 	int ret;
- 
--	master->enabled_events &= ~SVC_I3C_EVENT_IBI;
-+	master->enabled_events--;
- 	if (!master->enabled_events)
- 		svc_i3c_master_disable_interrupts(master);
- 
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+---
+ include/linux/i3c/master.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
+index 6e5328c6c6af..12d532b012c5 100644
+--- a/include/linux/i3c/master.h
++++ b/include/linux/i3c/master.h
+@@ -298,6 +298,7 @@ enum i3c_open_drain_speed {
+  * @I3C_ADDR_SLOT_I2C_DEV: address is assigned to an I2C device
+  * @I3C_ADDR_SLOT_I3C_DEV: address is assigned to an I3C device
+  * @I3C_ADDR_SLOT_STATUS_MASK: address slot mask
++ * @I3C_ADDR_SLOT_EXT_STATUS_MASK: address slot mask with extended information
+  * @I3C_ADDR_SLOT_EXT_DESIRED: the bitmask represents addresses that are preferred by some devices,
+  *			       such as the "assigned-address" property in a device tree source.
+  * On an I3C bus, addresses are assigned dynamically, and we need to know which
 -- 
-2.34.1
+2.47.0
 
 
 -- 
