@@ -4,72 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6E105D68BF0
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7FA9D68BF6
 	for <linux-i3c@archiver.kernel.org>; Sat, 16 Nov 2024 21:59:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=tgXmcMILHrNP5DJ3Jxsk4MqIG/zumNWysNKeMka0asU=; b=JjbokuC2g+Tyuo
-	A+ao06JKBMLY1TdpJtln4oyPkm8e1x+J6XBd+CrlLJUsrf4qQdbadCq0QaAS5gZ/heQtxVsuLiSNJ
-	I49CibHUWrsoIMuksXn7sfpmOJf7WxdkxZVcDMLGLctojgu7TsdQqmkXk73iILWtZyk3OafKaOYVx
-	w7XNjWEyurDs6e7V1rjfgGBDxmMb3M+TpJ9G3wkUk1pdtB3xZJLwqM8W4bYNE/z+MA6WxaNpIegbi
-	bDds+uwEFzm3ePE5ffTJFMT27uZsFcsg89v5IQ1223fLP6QWtekqMbsUAWxvz19DYQzLzw84qLi9P
-	yr+L0ytkwc6m4gLogNBg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Dy1TW+xst8peZpbrAHK1J2/aWI+MyRlSuGajAbqCEPs=; b=H9LY2bFsMtFkUE
+	sa19vmbtDKeq9sQwTKkPgFP5F0liSkmIAjMZ/ThqkkaMdFZQVcH/pIGpfohpamO4Wm2PRwRi+PeDM
+	IZ7MWR6EtaJvdJIJ4iCjjoDrOlrkOSvCkfzD5aD8pPkTul9A365bTSZmfHZ8g/AJqqedpyQp7EaWM
+	mROII+X5ELzsZ8XZXOL3kOBJVnR3FZDud18D98T1MOQ4XnjAHlFeCXZR/MGob96E8llQ/pwnq18c/
+	S7wW6Jvr2TdmDkdaaoxUlxw6d+fJVDHT04D8MJ/xg0L+7Yy8ZmO9y7lfd/SrckNApl8N8b23n1Qe6
+	bmwGiKuEFJywjtSWwi0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tCQpf-00000006H0l-0II9;
+	id 1tCQpf-00000006H0t-1W0O;
 	Sat, 16 Nov 2024 21:59:55 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+Received: from mgamail.intel.com ([198.175.65.20])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t92Uy-000000074xB-3f7E;
-	Thu, 07 Nov 2024 13:24:34 +0000
-X-UUID: 9bf486b89d0b11ef9048ed6ed365623b-20241107
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=elFJl+rbTb0Do7/D6G39zaxYl0uHkUAO5Bjqs23Hdr0=;
-	b=TjlUqm7UCCnJODixreuwqyJGIt5LeSd5oqfyxprqLfiZHQrM++/P+5pqjVqYQ3BSxyz/BtlaUNhYk9cjYeWw0wNa8wsnERsE1koYOS+LMKRJUJ24b4fatOi/AmTRk24mDs/XYZ+aKETPb5M2bNs1LPpEGI6KDfmyEXWhrKL3yV4=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.42,REQID:734f7446-8fa5-4b6d-8838-f054f89cd7f1,IP:0,U
-	RL:0,TC:0,Content:-20,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTIO
-	N:release,TS:-20
-X-CID-META: VersionHash:b0fcdc3,CLOUDID:f0a9b606-6ce0-4172-9755-bd2287e50583,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:1,EDM:-3,IP:nil,U
-	RL:11|1,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV:0,LES
-	:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 0,NGT
-X-CID-BAS: 0,NGT,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR,TF_CID_SPAM_ULN
-X-UUID: 9bf486b89d0b11ef9048ed6ed365623b-20241107
-Received: from mtkmbs13n1.mediatek.inc [(172.21.101.193)] by mailgw02.mediatek.com
-	(envelope-from <defa.li@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 338785629; Thu, 07 Nov 2024 06:24:25 -0700
-Received: from mtkmbs11n2.mediatek.inc (172.21.101.187) by
- MTKMBS09N2.mediatek.inc (172.21.101.94) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.26; Thu, 7 Nov 2024 05:24:22 -0800
-Received: from mbjsdccf07.gcn.mediatek.inc (10.15.20.246) by
- mtkmbs11n2.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
- 15.2.1118.26 via Frontend Transport; Thu, 7 Nov 2024 21:24:22 +0800
-From: mtk25126 <defa.li@mediatek.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Matthias Brugger
-	<matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
-	<angelogioacchino.delregno@collabora.com>
-CC: <linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
-	<wsd_upstream@mediatek.com>, <mingchang.jia@mediatek.com>,
-	<yuhan.wei@mediatek.com>, <hao.lin@mediatek.com>, Defa Li
-	<defa.li@mediatek.com>
-Subject: [PATCH v2] i3c: Use i3cdev->desc->info instead of calling i3c_device_get_info() to avoid deadlock
-Date: Thu, 7 Nov 2024 21:25:39 +0800
-Message-ID: <20241107132549.25439-1-defa.li@mediatek.com>
-X-Mailer: git-send-email 2.45.2
+	id 1tBEFl-000000076D0-2rCY
+	for linux-i3c@lists.infradead.org;
+	Wed, 13 Nov 2024 14:21:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1731507714; x=1763043714;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=3DG3pVyaEIXykT94bHXydQtHV5qXoL01zSxkhQQgd14=;
+  b=IBEZ4rEh3clcyIe0UCarNqsZjLpzXiOfnAysSo8OJuG9Ci+X32xESa1d
+   r74Yx2f9gAH/bNI0NZ+k/XfopPrt/8Z6JdtbAg5IH4OCQqiK+kOcH2UbO
+   h2dKBtPswFAoPACAgnL0G4Bse+zzocF2EtM3I+rjAPxhFCIbh4GKqQuoC
+   nQV9UnZtk3VFDvTlND/IsMNQwJfDjauBZjjFiyBwvxR6AcmJfGHXZwV3H
+   VWmeiEbLolimMXmqbMVMVo/8OKUrLWweGkQqaaNLekNn/I79Bhem8ekSE
+   lkzExqHXCR7xjFYgaW32mR3lM4V69afJORkqOrz1aR3f1YfbygNxju0yw
+   A==;
+X-CSE-ConnectionGUID: EObHBsDiQkydqZ47wRejiA==
+X-CSE-MsgGUID: vdyiU2PtRNeIkBNLuu8c6Q==
+X-IronPort-AV: E=McAfee;i="6700,10204,11222"; a="31168887"
+X-IronPort-AV: E=Sophos;i="6.11,199,1725346800"; 
+   d="scan'208";a="31168887"
+Received: from orviesa007.jf.intel.com ([10.64.159.147])
+  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Nov 2024 06:21:51 -0800
+X-CSE-ConnectionGUID: zG5i5Y+xS82ELxp6o8cMUQ==
+X-CSE-MsgGUID: Vth3UAT9QeiHxEQOl1OTXA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.12,151,1728975600"; 
+   d="scan'208";a="88282446"
+Received: from kuha.fi.intel.com ([10.237.72.152])
+  by orviesa007.jf.intel.com with SMTP; 13 Nov 2024 06:21:48 -0800
+Received: by kuha.fi.intel.com (sSMTP sendmail emulation); Wed, 13 Nov 2024 16:21:46 +0200
+Date: Wed, 13 Nov 2024 16:21:46 +0200
+From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+To: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Jarkko Nikula <jarkko.nikula@linux.intel.com>,
+	Sanket.Goswami@amd.com, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org
+Subject: Re: [PATCH v3 2/5] i3c: master: Add ACPI support to i3c subsystem
+Message-ID: <ZzS1-nJMPiCp5jDi@kuha.fi.intel.com>
+References: <20241108073323.523805-1-Shyam-sundar.S-k@amd.com>
+ <20241108073323.523805-3-Shyam-sundar.S-k@amd.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20241108073323.523805-3-Shyam-sundar.S-k@amd.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241107_052432_947962_921547F8 
-X-CRM114-Status: GOOD (  10.98  )
+X-CRM114-CacheID: sfid-20241113_062153_796911_DA1647CA 
+X-CRM114-Status: GOOD (  32.01  )
 X-Mailman-Approved-At: Sat, 16 Nov 2024 13:59:53 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -87,108 +89,151 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Defa Li <defa.li@mediatek.com>
+Hi,
 
-A deadlock may happen since the i3c_master_register() acquires
-&i3cbus->lock twice. See the log below.
-Use i3cdev->desc->info instead of calling i3c_device_info() to
-avoid acquiring the lock twice.
+On Fri, Nov 08, 2024 at 01:03:20PM +0530, Shyam Sundar S K wrote:
+> As of now, the I3C subsystem only has ARM-specific initialization, and
+> there is no corresponding ACPI plumbing present. To address this, ACPI
+> support needs to be added to both the I3C core and DW driver.
+> 
+> Add support to get the ACPI handle from the _HID probed and parse the apci
+> object to retrieve the slave information from BIOS.
+> 
+> Based on the acpi object information propogated via BIOS, build the i3c
+> board information so that the same information can be used across the
+> driver to handle the slave requests.
+> 
+> Co-developed-by: Sanket Goswami <Sanket.Goswami@amd.com>
+> Signed-off-by: Sanket Goswami <Sanket.Goswami@amd.com>
+> Signed-off-by: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
+> ---
+> Cc: linux-acpi@vger.kernel.org
+> 
+>  drivers/i3c/internals.h            |  3 ++
+>  drivers/i3c/master.c               | 84 ++++++++++++++++++++++++++++++
+>  drivers/i3c/master/dw-i3c-master.c |  7 +++
+>  include/linux/i3c/master.h         |  1 +
+>  4 files changed, 95 insertions(+)
+> 
+> diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
+> index 433f6088b7ce..178bc0ebe6b6 100644
+> --- a/drivers/i3c/internals.h
+> +++ b/drivers/i3c/internals.h
+> @@ -10,6 +10,9 @@
+>  
+>  #include <linux/i3c/master.h>
+>  
+> +#define I3C_GET_PID		0x08
+> +#define I3C_GET_ADDR		0x7F
+> +
+>  void i3c_bus_normaluse_lock(struct i3c_bus *bus);
+>  void i3c_bus_normaluse_unlock(struct i3c_bus *bus);
+>  
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index 6f3eb710a75d..0ceef2aa9161 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -2251,6 +2251,84 @@ static int of_i3c_master_add_dev(struct i3c_master_controller *master,
+>  	return ret;
+>  }
+>  
+> +#if IS_ENABLED(CONFIG_ACPI)
+> +static int i3c_acpi_configure_master(struct i3c_master_controller *master)
+> +{
+> +	struct acpi_buffer buf = {ACPI_ALLOCATE_BUFFER, NULL};
+> +	enum i3c_addr_slot_status addrstatus;
+> +	struct i3c_dev_boardinfo *boardinfo;
+> +	struct device *dev = &master->dev;
+> +	struct fwnode_handle *fwnode;
+> +	struct acpi_device *adev;
+> +	u32 slv_addr, num_dev;
+> +	acpi_status status;
+> +	u64 val;
+> +
+> +	status = acpi_evaluate_object_typed(master->ahandle, "_DSD", NULL, &buf, ACPI_TYPE_PACKAGE);
+> +	if (ACPI_FAILURE(status)) {
+> +		dev_err(&master->dev, "Error reading _DSD:%s\n", acpi_format_exception(status));
+> +		return -ENODEV;
+> +	}
 
-v2:
-  - Modified the title and commit message
+Why do you need to do that?
 
-============================================
-WARNING: possible recursive locking detected
-6.11.0-mainline
---------------------------------------------
-init/1 is trying to acquire lock:
-f1ffff80a6a40dc0 (&i3cbus->lock){++++}-{3:3}, at: i3c_bus_normaluse_lock
+> +	num_dev = device_get_child_node_count(dev);
+> +	if (!num_dev) {
+> +		dev_err(&master->dev, "Error: no child node present\n");
+> +		return -EINVAL;
+> +	}
 
-but task is already holding lock:
-f1ffff80a6a40dc0 (&i3cbus->lock){++++}-{3:3}, at: i3c_master_register
+I think Jarkko already pointed out the problem with that. The whole
+check should be dropped.
 
-other info that might help us debug this:
- Possible unsafe locking scenario:
+> +	device_for_each_child_node(dev, fwnode) {
+> +		adev = to_acpi_device_node(fwnode);
+> +		if (!adev)
+> +			return -ENODEV;
+> +
+> +		status = acpi_evaluate_integer(adev->handle, "_ADR", NULL, &val);
+> +		if (ACPI_FAILURE(status)) {
+> +			dev_err(&master->dev, "Error: eval _ADR failed\n");
+> +			return -EINVAL;
+> +		}
 
-       CPU0
-       ----
-  lock(&i3cbus->lock);
-  lock(&i3cbus->lock);
+val = acpi_device_adr(adev);
 
- *** DEADLOCK ***
+> +		slv_addr = val & I3C_GET_ADDR;
+> +
+> +		boardinfo = devm_kzalloc(dev, sizeof(*boardinfo), GFP_KERNEL);
+> +		if (!boardinfo)
+> +			return -ENOMEM;
+> +
+> +		if (slv_addr) {
+> +			if (slv_addr > I3C_MAX_ADDR)
+> +				return -EINVAL;
+> +
+> +			addrstatus = i3c_bus_get_addr_slot_status(&master->bus, slv_addr);
+> +			if (addrstatus != I3C_ADDR_SLOT_FREE)
+> +				return -EINVAL;
+> +		}
+> +
+> +		boardinfo->static_addr = slv_addr;
+> +		if (boardinfo->static_addr > I3C_MAX_ADDR)
+> +			return -EINVAL;
+> +
+> +		addrstatus = i3c_bus_get_addr_slot_status(&master->bus,	boardinfo->static_addr);
+> +		if (addrstatus != I3C_ADDR_SLOT_FREE)
+> +			return -EINVAL;
+> +
+> +		boardinfo->pid = val >> I3C_GET_PID;
+> +		if ((boardinfo->pid & GENMASK_ULL(63, 48)) ||
+> +		    I3C_PID_RND_LOWER_32BITS(boardinfo->pid))
+> +			return -EINVAL;
+> +
+> +		/*
+> +		 * According to the specification, SETDASA is not supported for DIMM slaves
+> +		 * during device discovery. Therefore, BIOS will populate same initial
+> +		 * dynamic address as the static address.
+> +		 */
+> +		boardinfo->init_dyn_addr = boardinfo->static_addr;
+> +		list_add_tail(&boardinfo->node, &master->boardinfo.i3c);
+> +	}
+> +
+> +	return 0;
+> +}
+> +#else
+> +static int i3c_acpi_configure_master(struct i3c_master_controller *master) { return 0; }
+> +#endif
 
- May be due to missing lock nesting notation
+I think this code should be placed into a separate file.
 
-2 locks held by init/1:
- #0: fcffff809b6798f8 (&dev->mutex){....}-{3:3}, at: __driver_attach
- #1: f1ffff80a6a40dc0 (&i3cbus->lock){++++}-{3:3}, at: i3c_master_register
+If the goal is to add ACPI support for code that is written for DT
+only, then I think the first thing to do before that really should be
+to convert the existing code to use the unified device property
+interface, and move all the DT-only parts to a separate file(s).
 
-stack backtrace:
-CPU: 6 UID: 0 PID: 1 Comm: init
-Call trace:
- dump_backtrace+0xfc/0x17c
- show_stack+0x18/0x28
- dump_stack_lvl+0x40/0xc0
- dump_stack+0x18/0x24
- print_deadlock_bug+0x388/0x390
- __lock_acquire+0x18bc/0x32ec
- lock_acquire+0x134/0x2b0
- down_read+0x50/0x19c
- i3c_bus_normaluse_lock+0x14/0x24
- i3c_device_get_info+0x24/0x58
- i3c_device_uevent+0x34/0xa4
- dev_uevent+0x310/0x384
- kobject_uevent_env+0x244/0x414
- kobject_uevent+0x14/0x20
- device_add+0x278/0x460
- device_register+0x20/0x34
- i3c_master_register_new_i3c_devs+0x78/0x154
- i3c_master_register+0x6a0/0x6d4
- mtk_i3c_master_probe+0x3b8/0x4d8
- platform_probe+0xa0/0xe0
- really_probe+0x114/0x454
- __driver_probe_device+0xa0/0x15c
- driver_probe_device+0x3c/0x1ac
- __driver_attach+0xc4/0x1f0
- bus_for_each_dev+0x104/0x160
- driver_attach+0x24/0x34
- bus_add_driver+0x14c/0x294
- driver_register+0x68/0x104
- __platform_driver_register+0x20/0x30
- init_module+0x20/0xfe4
- do_one_initcall+0x184/0x464
- do_init_module+0x58/0x1ec
- load_module+0xefc/0x10c8
- __arm64_sys_finit_module+0x238/0x33c
- invoke_syscall+0x58/0x10c
- el0_svc_common+0xa8/0xdc
- do_el0_svc+0x1c/0x28
- el0_svc+0x50/0xac
- el0t_64_sync_handler+0x70/0xbc
- el0t_64_sync+0x1a8/0x1ac
+thanks,
 
-Signed-off-by: Defa Li <defa.li@mediatek.com>
----
- drivers/i3c/master.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 6f3eb710a75d..bb8a8bf0c4c7 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -282,7 +282,8 @@ static int i3c_device_uevent(const struct device *dev, struct kobj_uevent_env *e
- 	struct i3c_device_info devinfo;
- 	u16 manuf, part, ext;
- 
--	i3c_device_get_info(i3cdev, &devinfo);
-+	if (i3cdev->desc)
-+		devinfo = i3cdev->desc->info;
- 	manuf = I3C_PID_MANUF_ID(devinfo.pid);
- 	part = I3C_PID_PART_ID(devinfo.pid);
- 	ext = I3C_PID_EXTRA_INFO(devinfo.pid);
 -- 
-2.46.0
-
+heikki
 
 -- 
 linux-i3c mailing list
