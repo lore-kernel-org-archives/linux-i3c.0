@@ -4,73 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7171FD41C2A
-	for <linux-i3c@archiver.kernel.org>; Wed, 13 Nov 2024 09:52:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8075CD41C33
+	for <linux-i3c@archiver.kernel.org>; Wed, 13 Nov 2024 11:01:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TiZkHQeVvPkw/8guDjI5i4VDbAn+rYzTRKWDcMSFYz0=; b=ZIq5gxFmST2wjN
-	hPRt9hp+kyFumXdrce3g8riaWQ8ulc4YzAdngCnruGRaTE41UEA1gJfwmxQtx82Ren5saTDSd6I8m
-	exA0ZAoIARkcxfSkiKsQXhbM160HHPv5qIVdu/94tJEE0IgMHseTK/GK54qjeTlvNRpcIy3m7+1wM
-	aEkcaQQzgBIGOmTUDoCYN6Y47h8iD5sUcFvyz/QKGTYWPBz2R9/LN1+O6ioe/jUq67yd6hQyFtR7k
-	B6AVMe/viQzkYaWHZ5pm7C8IkFfrPViI0Wioo+YxiblWUAU6FNcZZHFEj/2i7gYznRkiixjPhoBCH
-	5BdLUDiaHI+RVw7yfrSw==;
+	List-Owner; bh=03IKYORkHLg+g/HuzNqbmOO6cQzGdzFeLTkjfn9iWNE=; b=KB3Wvoi1yMLrRH
+	RgJ7UsVWurlFDrO3wb64kU88GWnmu0nz8dWBogKBv9XYoHb428IJUWRDRkJfAoW+CtY2IAStS6XKM
+	34wczIKStu/T+41RlWFGBfAPGNWTsbGYh7hWPieHgBEgNF4bk5CO7bHjmnqgjkRPC0BYOQf0iclxC
+	AJF9KDfVqxNW7PTqBFZHhkhEUQ6rfjtMG+lwvFF3u0hf/w1dvEFT8HlVBXlfKl4OIgWIDc0yHEU8I
+	9fGU+7ChE/YbsumPhB1Jvs8+RkfMzE0xzibe2T61BU0YVEY/DTv/V8X1XCokYZVFPmzvtocgc8vXl
+	ClSCdkzZMecSu5UgBSMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tBA2e-00000006J92-0WRj;
-	Wed, 13 Nov 2024 09:52:04 +0000
-Received: from mgamail.intel.com ([198.175.65.19])
+	id 1tBB7h-00000006Wlv-2ppB;
+	Wed, 13 Nov 2024 11:01:21 +0000
+Received: from mgamail.intel.com ([192.198.163.17])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tB9td-00000006Gxz-1pJE
+	id 1tBAAT-00000006MIQ-3z1m
 	for linux-i3c@lists.infradead.org;
-	Wed, 13 Nov 2024 09:42:46 +0000
+	Wed, 13 Nov 2024 10:00:29 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1731490965; x=1763026965;
+  t=1731492010; x=1763028010;
   h=message-id:date:mime-version:subject:to:cc:references:
    from:in-reply-to:content-transfer-encoding;
-  bh=CnTg97obo1Lsr06BXYdZdsStwzIsiBw+tlILjkvdR+U=;
-  b=WnYBbn3JREPgm3n7im0EyTp2LuAY4jg3/VlhrYEhxPxvjYuJbUC+86jW
-   gFFuAqv4TLbYRAKsi0e9+y0fTsdKBiLhu5Ig9ipQqDSH4mKgCGGm35skI
-   c5ehiGNdyuFamQsTH15GdgmEY8l8SwTe0rdkWahN52a1N6d1mRkwSYOyi
-   IhT/Dqt+L/Y2o8bc4BQ65BRsmUZpG04o0Hw/bhedrvANlqoSfyXDjqWfo
-   krWBi9R5jSztjHUPL7X3O9/3KM87urRKvyg3wN2V8yL4s35exUqbY50SP
-   tM3svzlcgctdUu3ruxIucNvHawY/TCk0bjdy3AclOWgliLe/3Qxvi2pCU
-   g==;
-X-CSE-ConnectionGUID: h+6iiNUhSm2qfuHR/zxxlw==
-X-CSE-MsgGUID: 2qjp7Bn9QKihuOD6eVlyiA==
-X-IronPort-AV: E=McAfee;i="6700,10204,11222"; a="31229448"
-X-IronPort-AV: E=Sophos;i="6.11,199,1725346800"; 
-   d="scan'208";a="31229448"
-Received: from orviesa003.jf.intel.com ([10.64.159.143])
-  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Nov 2024 01:42:36 -0800
-X-CSE-ConnectionGUID: ZJXmawWEQXSXDgxWFRqoHg==
-X-CSE-MsgGUID: 7sstyEgHRHO20zrSlRz5BA==
+  bh=XTg1A6VERW2vZuQ8bcofRgH6ca1goDGT1y1rIAqX34s=;
+  b=DYf6rix4+bOZT1JaW9exLlJDxx/NLUlxGZRMO8Ak81bdhZ+ggj0wuYgG
+   sK17SK/iq400+ONy2pR06biU9vkfY3g3YmBMHUGoaDbPeigzYJB6A3C0q
+   eLWjabBW4Li5tYs3rSzMHDU7cYycCCO0KX51Cx8H4vdJD6NyhN+SPqERn
+   0yKNZUnSf8kZiSJlPi95w5ujLvuTwvvnnRm8Bqk3pJhOUmBQkYxa7cnE6
+   6lcKVy3ycHIiJfvRPitIykDjxJgE3+Ap9zgIcgu/FAr9eGkzlPC2cmoej
+   6CwDz4ltNN/SttY1f96DI6DTZW1afTAnE+qO4470tG3NtYbQCGp6r60Jj
+   Q==;
+X-CSE-ConnectionGUID: a3bjjF+8RSutTpQBI+axDQ==
+X-CSE-MsgGUID: eh7HXWIyQxKkhsTT0YMiUw==
+X-IronPort-AV: E=McAfee;i="6700,10204,11254"; a="31258419"
+X-IronPort-AV: E=Sophos;i="6.12,150,1728975600"; 
+   d="scan'208";a="31258419"
+Received: from fmviesa003.fm.intel.com ([10.60.135.143])
+  by fmvoesa111.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Nov 2024 02:00:09 -0800
+X-CSE-ConnectionGUID: teOArXzgSayK1TaaOOx2VQ==
+X-CSE-MsgGUID: VSWqnHkRQZuZGE60Q0mmYw==
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.11,199,1725346800"; 
-   d="scan'208";a="92751496"
+X-IronPort-AV: E=Sophos;i="6.12,150,1728975600"; 
+   d="scan'208";a="91867725"
 Received: from mylly.fi.intel.com (HELO [10.237.72.58]) ([10.237.72.58])
-  by orviesa003.jf.intel.com with ESMTP; 13 Nov 2024 01:42:35 -0800
-Message-ID: <1ad5f698-725a-4779-ad5d-936ae8cbab14@linux.intel.com>
-Date: Wed, 13 Nov 2024 11:42:33 +0200
+  by fmviesa003.fm.intel.com with ESMTP; 13 Nov 2024 02:00:07 -0800
+Message-ID: <9a78959a-391b-4a77-a33e-e230fbf2e0c0@linux.intel.com>
+Date: Wed, 13 Nov 2024 12:00:06 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 2/5] i3c: master: Add ACPI support to i3c subsystem
+Subject: Re: [PATCH v3 4/5] i3c: master: Add support for SETAASA CCC
 To: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>
 Cc: Sanket.Goswami@amd.com, linux-i3c@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org
+ linux-kernel@vger.kernel.org
 References: <20241108073323.523805-1-Shyam-sundar.S-k@amd.com>
- <20241108073323.523805-3-Shyam-sundar.S-k@amd.com>
+ <20241108073323.523805-5-Shyam-sundar.S-k@amd.com>
 Content-Language: en-US
 From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-In-Reply-To: <20241108073323.523805-3-Shyam-sundar.S-k@amd.com>
+In-Reply-To: <20241108073323.523805-5-Shyam-sundar.S-k@amd.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241113_014245_569073_A7629F74 
-X-CRM114-Status: GOOD (  19.52  )
+X-CRM114-CacheID: sfid-20241113_020010_067969_03717437 
+X-CRM114-Status: GOOD (  12.25  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,79 +90,42 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 Hi
 
 On 11/8/24 9:33 AM, Shyam Sundar S K wrote:
-> As of now, the I3C subsystem only has ARM-specific initialization, and
-> there is no corresponding ACPI plumbing present. To address this, ACPI
-> support needs to be added to both the I3C core and DW driver.
-> 
-> Add support to get the ACPI handle from the _HID probed and parse the apci
-> object to retrieve the slave information from BIOS.
-> 
-> Based on the acpi object information propogated via BIOS, build the i3c
-> board information so that the same information can be used across the
-> driver to handle the slave requests.
-> 
-> Co-developed-by: Sanket Goswami <Sanket.Goswami@amd.com>
-> Signed-off-by: Sanket Goswami <Sanket.Goswami@amd.com>
-> Signed-off-by: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
-> ---
-> Cc: linux-acpi@vger.kernel.org
-> 
->   drivers/i3c/internals.h            |  3 ++
->   drivers/i3c/master.c               | 84 ++++++++++++++++++++++++++++++
->   drivers/i3c/master/dw-i3c-master.c |  7 +++
->   include/linux/i3c/master.h         |  1 +
->   4 files changed, 95 insertions(+)
-> 
-> diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
-> index 433f6088b7ce..178bc0ebe6b6 100644
-> --- a/drivers/i3c/internals.h
-> +++ b/drivers/i3c/internals.h
-> @@ -10,6 +10,9 @@
+> @@ -1907,7 +1926,14 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
+>   		goto err_bus_cleanup;
+>   	}
 >   
->   #include <linux/i3c/master.h>
+> -	i3c_master_add_spd_dev(master, i3cboardinfo);
+> +	/*
+> +	 * If the I3C slave on the bus is SPD device, then do not follow the regular
+> +	 * DAA process. Also, as per SPD spec SETAASA is required for the bus discovery
+> +	 * and sending RSTDAA and DISEC is considered as illegal. So skip the entire process
+> +	 * if the jdec_spd flag has been identified from the BIOS.
+> +	 */
+> +	if (master->jdec_spd)
+> +		return i3c_master_add_spd_dev(master, i3cboardinfo);
 >   
-> +#define I3C_GET_PID		0x08
-> +#define I3C_GET_ADDR		0x7F
-> +
->   void i3c_bus_normaluse_lock(struct i3c_bus *bus);
->   void i3c_bus_normaluse_unlock(struct i3c_bus *bus);
+This looks wrong the previous patch adds unconditional call to 
+i3c_master_add_spd_dev() and this patch makes it conditional. Can 
+previous patch then cause a regression if applied without this one?
+
+>   	if (master->ops->set_speed) {
+>   		ret = master->ops->set_speed(master, I3C_OPEN_DRAIN_SLOW_SPEED);
+> @@ -2311,6 +2337,10 @@ static int i3c_acpi_configure_master(struct i3c_master_controller *master)
+>   		return -ENODEV;
+>   	}
 >   
-> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index 6f3eb710a75d..0ceef2aa9161 100644
-> --- a/drivers/i3c/master.c
-> +++ b/drivers/i3c/master.c
-> @@ -2251,6 +2251,84 @@ static int of_i3c_master_add_dev(struct i3c_master_controller *master,
->   	return ret;
->   }
->   
-> +#if IS_ENABLED(CONFIG_ACPI)
-> +static int i3c_acpi_configure_master(struct i3c_master_controller *master)
-> +{
-> +	struct acpi_buffer buf = {ACPI_ALLOCATE_BUFFER, NULL};
-> +	enum i3c_addr_slot_status addrstatus;
-> +	struct i3c_dev_boardinfo *boardinfo;
-> +	struct device *dev = &master->dev;
-> +	struct fwnode_handle *fwnode;
-> +	struct acpi_device *adev;
-> +	u32 slv_addr, num_dev;
-> +	acpi_status status;
-> +	u64 val;
+> +	status = acpi_evaluate_object(master->ahandle, "_STR", NULL, NULL);
+> +	if (ACPI_SUCCESS(status))
+> +		master->jdec_spd = true;
 > +
-> +	status = acpi_evaluate_object_typed(master->ahandle, "_DSD", NULL, &buf, ACPI_TYPE_PACKAGE);
-> +	if (ACPI_FAILURE(status)) {
-> +		dev_err(&master->dev, "Error reading _DSD:%s\n", acpi_format_exception(status));
-> +		return -ENODEV;
-> +	}
-> +
-> +	num_dev = device_get_child_node_count(dev);
-> +	if (!num_dev) {
-> +		dev_err(&master->dev, "Error: no child node present\n");
-> +		return -EINVAL;
-> +	}
-> +
-I didn't notice earlier these cause host controller registration to fail 
-and thus regression on platforms where DSDT doesn't have these optional 
-information for the host controller.
+
+I'm still suspicious about this one when existence of _STR for the host 
+controller causes normal bus initialization to be skipped. I.e. like below.
+
+Device (I3C0)
+{
+	_STR ("My I3C Host Controller")
+...
 
 -- 
 linux-i3c mailing list
