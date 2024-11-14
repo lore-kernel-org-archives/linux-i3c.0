@@ -4,74 +4,126 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3E215D65C57
-	for <linux-i3c@archiver.kernel.org>; Thu, 14 Nov 2024 08:01:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE79CD65C7E
+	for <linux-i3c@archiver.kernel.org>; Thu, 14 Nov 2024 11:46:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aAN+eYppxWyuf5Bx1JRTpJHfW5mnRwovceFeX7SfFaE=; b=SMyL630vVGU7cl
-	oip3hDy2+X+KriC0ggNzuvlAB57hqnJPVJHDlHD55jS6yL+CD8XgD2hDw9i/J/35zkTZ/+ylbCBxP
-	yRqGL/hJF6r+ikxMV3Zv8ysHQGoi6QwW3uvGdMAgdCOrGMcKiS4iRg5KxTOZGkfY9XR59SAKi3cCH
-	4u/IK/JRkD6uM2gLjCYGxZBq20IGivbmU+DTnSjPgdiqLEL30DXS3vrUTvUe2itH1NJ3/t79/Plwo
-	GSb/IzL0m/Jy0vDEoIyHYG1AH7RVgZr8/+1rezDiIW52D6D2kmttcE0BiGLt9AdT0Dai+HciXy/t4
-	14wp94W/T2GQwLWh+WaA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bCZ3vjx0N8ZRKPEYFdoP/i15e+ioZsBvOnzmBmd2sH4=; b=H7tmdSpXUjWGdm
+	RCzCZ5xIuxGBz9v8UPmSsKH1Dz7kxP99LYSuxdUt5SJT08rPzXvgwYpP1AdkeiVCDtP//dYJ1G9MA
+	U79/N0IHVytC3Np7I0d3kL/vVq6C6A7yrnf1CYKBHBCWV5Ad2e5vQu5GhkpOvfQlfVLQv7A91Zr/t
+	3GAxeIpNq4U/Jb/VgzRKSlakZVPQwXRIGOB543f3XYEcJx0TsBTwdgrRkKkVeVeoNxNo9mJAPpY3b
+	qHR+YMAreR6ZWJr+EAvI+G5RIRM7+si4TO3M2fm+RPQe5QQLzk/3vLfcg4Pk0jbwqGwmkDS91/zb8
+	I53yjL2bMaYMNf7qYexw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tBUnL-000000099dk-30Q8;
-	Thu, 14 Nov 2024 08:01:39 +0000
-Received: from mgamail.intel.com ([198.175.65.14])
+	id 1tBYIh-00000009mOM-05YO;
+	Thu, 14 Nov 2024 11:46:15 +0000
+Received: from mail-dm3nam02on20614.outbound.protection.outlook.com ([2a01:111:f403:2405::614] helo=NAM02-DM3-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tBUnJ-000000099cy-2YUL
+	id 1tBXd0-00000009eHZ-0Nrv
 	for linux-i3c@lists.infradead.org;
-	Thu, 14 Nov 2024 08:01:38 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1731571297; x=1763107297;
-  h=message-id:date:mime-version:subject:to:cc:references:
-   from:in-reply-to:content-transfer-encoding;
-  bh=Qka/a3kZTQ8Mhjjbyc+iyeYQhIQ3WxkT3FKtU/EMAC0=;
-  b=R7MJA6qUp6tbSsYH+iKgufshdRWXr6LuXS7dKNpswQ6oKfGo/Ctn1gsd
-   h45ebbtAwHYI0qjCOlEettJP95qrdBnMxOJeiuKx7e61RwpIn2XK08MGc
-   1O0GCDgovNnscSRHEGAz56ilhBE4A8iQAzgv7D/Wd+9xDNwdPZpmHKEKn
-   H8L5O17Wra8c9XzPmrIdfeLG9SfkY/YfokkN8D6NZy7nqFwonCO6cTfGX
-   iiVowtW2jto1oXbuIJsD7AgROU9Joevilg6yDH7ageGjua+7meUx5cizv
-   LNmgwq4K8gSycLnnqyImE3kuZeRoLcnPDNbUPl6oOoiZ9bIaqne4Sh1fF
-   w==;
-X-CSE-ConnectionGUID: 5ZjevkpkSuWVTmykz6W4sQ==
-X-CSE-MsgGUID: Cr9HfH9ZTSuTtVYRe2GMoQ==
-X-IronPort-AV: E=McAfee;i="6700,10204,11255"; a="35291041"
-X-IronPort-AV: E=Sophos;i="6.12,153,1728975600"; 
-   d="scan'208";a="35291041"
-Received: from orviesa002.jf.intel.com ([10.64.159.142])
-  by orvoesa106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Nov 2024 00:01:37 -0800
-X-CSE-ConnectionGUID: RSjFbsgUSK2aiPm6Jz9sow==
-X-CSE-MsgGUID: 29njlxtzRhaNQOaN1ECwEg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.12,153,1728975600"; 
-   d="scan'208";a="118942742"
-Received: from unknown (HELO [10.237.72.151]) ([10.237.72.151])
-  by orviesa002.jf.intel.com with ESMTP; 14 Nov 2024 00:01:36 -0800
-Message-ID: <6d3f1fd0-1ead-4a01-bb2d-8482f8c1799f@linux.intel.com>
-Date: Thu, 14 Nov 2024 10:01:35 +0200
+	Thu, 14 Nov 2024 11:03:13 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=BbIwicqUX8wg4VCfk94kXt3odusHBSL+B1dWu682zFrwC8RCEc8ZFpiVShbZPwu6eKyRbwg1ExoAFeDlx+vbMROQsoE5PgPr2doYcjkbf7ZTByCc9UwgIRsOxFFmYZiX9XAySWXWZgC0f+PZ/1HfvbK/tn227SltsXCb3hmIQ0NhoFGbrjQlyjlMISrJXvlbv1cDmRtDRzqXjFgTIc9wODiju4okFmvCKF9HXtTvi6TocMvoiUcXHmfvCHphZf/ngSf5FnbGWpqFpelwhFLc5W8PR/ilCN6T2PhbWHyyN8MxaUhibQZerrzZGnzrCPUeJ/XHFOWsg6K9Kp/xmyZqyg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=auMu2eYSNNaAUTISKxeGLqZFXCpNiDqqrMY2ciR1OLA=;
+ b=NVewVJpGaRDud5SgZA8MCYRPY6XkcfCAIIi8VzNCdJUGnPRTy6ehECQX6BGH9TA5jGSwqyFhH3a79+1tOEcMjTIxgGK0W1foJZwNYshtKW3pijQtQxmSC0O5PJiG4OPNNB1eFyH6htO+SiskOyjTlKIBab9tCr5MGZCYK1X85hGYTEBV2aI76npDxcpVX557k5x9sgp6pP3OzkpKFb6n0uUETbj759IESE/7ydcf2bUqLnGCuxQzJ6GVYMvHx9zM0mb2usBi5u4ba+bOOW2yLNU4VdX4Pe7xsDmebf3g1MopS2u79+jvxVwUVuujNSwiTsIXPvGu1MOKLgt/1sE3Kg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 165.204.84.17) smtp.rcpttodomain=bootlin.com smtp.mailfrom=amd.com;
+ dmarc=pass (p=quarantine sp=quarantine pct=100) action=none
+ header.from=amd.com; dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=auMu2eYSNNaAUTISKxeGLqZFXCpNiDqqrMY2ciR1OLA=;
+ b=o3DuZU9QrHfDeXh85kB8sSNFAZp3RNSxOjTThKAd3Hw4RjQjBIOh/D4WJOqMUrFcEn0qvGsoUcTrCURUpoFF87N3y3p+hj9bUAatTAeCKUMmKbUFt1oQFt5UR1twVxB49oP9vKU9H5fSWK7XX+e7xxxdoPuT73Id0En+gxH0ICk=
+Received: from BN9PR03CA0187.namprd03.prod.outlook.com (2603:10b6:408:f9::12)
+ by SN7PR12MB7178.namprd12.prod.outlook.com (2603:10b6:806:2a6::19) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8137.26; Thu, 14 Nov
+ 2024 11:03:00 +0000
+Received: from BN3PEPF0000B074.namprd04.prod.outlook.com
+ (2603:10b6:408:f9:cafe::f) by BN9PR03CA0187.outlook.office365.com
+ (2603:10b6:408:f9::12) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8158.17 via Frontend
+ Transport; Thu, 14 Nov 2024 11:03:00 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
+ smtp.mailfrom=amd.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=amd.com;
+Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
+ 165.204.84.17 as permitted sender) receiver=protection.outlook.com;
+ client-ip=165.204.84.17; helo=SATLEXMB04.amd.com; pr=C
+Received: from SATLEXMB04.amd.com (165.204.84.17) by
+ BN3PEPF0000B074.mail.protection.outlook.com (10.167.243.119) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.20.8158.14 via Frontend Transport; Thu, 14 Nov 2024 11:03:00 +0000
+Received: from airavat.amd.com (10.180.168.240) by SATLEXMB04.amd.com
+ (10.181.40.145) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.39; Thu, 14 Nov
+ 2024 05:02:57 -0600
+From: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Jarkko Nikula
+	<jarkko.nikula@linux.intel.com>
+CC: <Sanket.Goswami@amd.com>, <linux-i3c@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>, Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
+Subject: [PATCH v2 0/2] Introduce initial support for the AMD I3C (non-HCI) to DW driver
+Date: Thu, 14 Nov 2024 16:32:37 +0530
+Message-ID: <20241114110239.660551-1-Shyam-sundar.S-k@amd.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 5/5] i3c: dw: Add quirk to address OD/PP timing issue
- on AMD platform
-To: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Sanket.Goswami@amd.com, linux-i3c@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20241108073323.523805-1-Shyam-sundar.S-k@amd.com>
- <20241108073323.523805-6-Shyam-sundar.S-k@amd.com>
-Content-Language: en-US
-From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-In-Reply-To: <20241108073323.523805-6-Shyam-sundar.S-k@amd.com>
+X-Originating-IP: [10.180.168.240]
+X-ClientProxiedBy: SATLEXMB03.amd.com (10.181.40.144) To SATLEXMB04.amd.com
+ (10.181.40.145)
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BN3PEPF0000B074:EE_|SN7PR12MB7178:EE_
+X-MS-Office365-Filtering-Correlation-Id: 6eb2c59e-ec6c-4140-460e-08dd049be730
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|36860700013|82310400026|376014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?wvUBh6z9R6OYpDBRjxFS3GPvVPDRCIDVr4fSOCGWPTaAfPY20NITh5h0lnvF?=
+ =?us-ascii?Q?d2OXS7iyWmCXlYFIOLJ0TzfD3jZ/qEBGdqkIjT1J2eb3kIiXTsb7/KwVkjHu?=
+ =?us-ascii?Q?pAfvi1b6lp8sukklwUZRplKHOGdJWqHymuiGpPDdl+R3I7X+U2W9xwAS441H?=
+ =?us-ascii?Q?uCgLtp4Zr5cJ1zsbZRTvbrpVE4xQ5Zl+fYkw4ufLk6s3BxzR5os5imZ/MrMi?=
+ =?us-ascii?Q?88W9zvLBe13rNWdqsVg6zWarb5ekC1UoQ+zcH+T7cSL6f1Sva75HPxteFy2e?=
+ =?us-ascii?Q?82Kgp2DShwlqBmFFQiH6slIu4ODJv0dXTkd6PXtDbAMUWZLp56VRVHypDGRm?=
+ =?us-ascii?Q?tVYIGJNbPONf3UighyQBKFAZRVie5xCBUPQky1/R2z94F46aCa189ouVGNEA?=
+ =?us-ascii?Q?O5lijIsIyhHkvkWn+Og6e/eeeNgAVn5QZ/sM45i3ybSfpU4rI/EhLq+MleTz?=
+ =?us-ascii?Q?UzDan42ugV3q+e5tjPiqrQiygqVBfVpqeIvDCv5eVtyMEyntKWMvU+VPnplz?=
+ =?us-ascii?Q?SCFJXl3siyc2DP3hxUzlJ/K47XNTvwe4F0yP4aN+kCanO9VbTNRaWIk06RNs?=
+ =?us-ascii?Q?V+kUzw5yzXYRefJa9oQYm8Av1iFW2TJk6qUqOUXQKM7BVz3USzv3crs9AbZv?=
+ =?us-ascii?Q?mWRsdpS4udrogLqQwL++shEPfJ1tsdFngBAy58h6HOYui1zckpYC/XDQ5CZe?=
+ =?us-ascii?Q?n6CEo5V0Opbhs2O6PXACAhePyurO+m1zy8Xr65U4vCiiSX1eNMtsRH1O6TiX?=
+ =?us-ascii?Q?C8/utUJAO0asKsz1ApEIg/P0jU5DmC9XXZCauzsJ192BtJ62VbnRiKPtG51h?=
+ =?us-ascii?Q?e0fxvIO9Ydp63/T1TIY9yMJ7iu7sOSWsCpOJ8R4vRDYqRaQu3m8eGUoXGz86?=
+ =?us-ascii?Q?RuRwOZAaKc7wd+YNwTRxNhFANwpdo/oWwY2NlgHjZl5YlYT06sD1iPp45JDX?=
+ =?us-ascii?Q?poWDgMKqSHT7CR4mFLJWYZXjubqbT8QwZQ/syed7cf7AxwSrqVejvZC/kesR?=
+ =?us-ascii?Q?OyGwpBcZ1iKUqt/smcmHA3N6HQUWrK8TCt81QR6xWrAoLXt7t2dRr2dNnGzi?=
+ =?us-ascii?Q?gQzbVQhoRWcKYiHMxXq/LPT1ry877nQaHh8olU77S/yPGhmXCeup/II1dIHH?=
+ =?us-ascii?Q?H2JYPcjo7URrfjD24XsxqoXJsG3NvnzxwAmQu88gZRG720x5HA2hSv94eJG7?=
+ =?us-ascii?Q?8GyOXSedRfDWNtJOUzJxPctUTPa172CuaC1mfV6s0HWSWo6ws8Bc6kez+b01?=
+ =?us-ascii?Q?jnt6Rwqmkq+nYG/iKeaOy1XDaaksnslpMwJpDyoQkNSoY4OUPOAqQ8bd0HId?=
+ =?us-ascii?Q?ODdQLiiA/WWT+AMwmbdYZl58RQgBXt0qZQR5Gc7hnrkNEq/OKX9/WU2fhEtB?=
+ =?us-ascii?Q?kTU2Hkdc25VdIUZHFhTCU0cx318G0RttBsNAC4K7S2e2ZLdLMw=3D=3D?=
+X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:SATLEXMB04.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(1800799024)(36860700013)(82310400026)(376014);DIR:OUT;SFP:1101;
+X-OriginatorOrg: amd.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Nov 2024 11:03:00.0996
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6eb2c59e-ec6c-4140-460e-08dd049be730
+X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[SATLEXMB04.amd.com]
+X-MS-Exchange-CrossTenant-AuthSource: BN3PEPF0000B074.namprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN7PR12MB7178
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241114_000137_725149_17E8DD41 
-X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-CacheID: sfid-20241114_030310_174297_08D6847E 
+X-CRM114-Status: UNSURE (   9.90  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,26 +136,42 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 11/8/24 9:33 AM, Shyam Sundar S K wrote:
-> The AMD Legacy I3C is having a problem with its IP, specifically with the
-> push-pull and open-drain pull-up registers. These registers need to be
-> manually programmed for every CCC submission to align with the duty cycle.
-> Therefore, add a quirk to address this issue.
-> 
-> Co-developed-by: Sanket Goswami <Sanket.Goswami@amd.com>
-> Signed-off-by: Sanket Goswami <Sanket.Goswami@amd.com>
-> Signed-off-by: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
-> ---
->   drivers/i3c/master/dw-i3c-master.c | 29 ++++++++++++++++++++++++++++-
->   drivers/i3c/master/dw-i3c-master.h |  1 +
->   2 files changed, 29 insertions(+), 1 deletion(-)
-> 
-Reviewed-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+In this series, support for following features has been added.
+- Add dw-i3c-master driver with ACPI bindings
+- Workaround for AMD hardware
+
+v4:
+----
+ - Split the series into two
+ - add Jarkko tags
+
+v3:
+----
+ - Address feedback from Jarkko
+ - Drop using SHARED_IRQ flags during interrupt registration
+ - Update commit message to mention about SETAASA
+ - Use bits [6:0] as the static address
+
+v2:
+----
+ - Address LKP reports issues
+
+Shyam Sundar S K (2):
+  i3c: dw: Add support for AMDI0015 ACPI ID
+  i3c: dw: Add quirk to address OD/PP timing issue on AMD platform
+
+ drivers/i3c/master/dw-i3c-master.c | 34 ++++++++++++++++++++++++++++++
+ drivers/i3c/master/dw-i3c-master.h |  1 +
+ 2 files changed, 35 insertions(+)
+
+-- 
+2.34.1
+
 
 -- 
 linux-i3c mailing list
