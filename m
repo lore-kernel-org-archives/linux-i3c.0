@@ -4,75 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7FA9D68BF6
-	for <linux-i3c@archiver.kernel.org>; Sat, 16 Nov 2024 21:59:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1551D49221
+	for <linux-i3c@archiver.kernel.org>; Mon, 18 Nov 2024 13:36:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dy1TW+xst8peZpbrAHK1J2/aWI+MyRlSuGajAbqCEPs=; b=H9LY2bFsMtFkUE
-	sa19vmbtDKeq9sQwTKkPgFP5F0liSkmIAjMZ/ThqkkaMdFZQVcH/pIGpfohpamO4Wm2PRwRi+PeDM
-	IZ7MWR6EtaJvdJIJ4iCjjoDrOlrkOSvCkfzD5aD8pPkTul9A365bTSZmfHZ8g/AJqqedpyQp7EaWM
-	mROII+X5ELzsZ8XZXOL3kOBJVnR3FZDud18D98T1MOQ4XnjAHlFeCXZR/MGob96E8llQ/pwnq18c/
-	S7wW6Jvr2TdmDkdaaoxUlxw6d+fJVDHT04D8MJ/xg0L+7Yy8ZmO9y7lfd/SrckNApl8N8b23n1Qe6
-	bmwGiKuEFJywjtSWwi0A==;
+	List-Owner; bh=ZKnm7z1r2pEKVHt4HERnTisTOwKmvhsbdIVLOY+HSkc=; b=QjUmXIowtnlOr0
+	qJjsvixdRNNPJA5pwCtfRvLI2cSNtpWB0bxJxQ2v4fsZOWJtyHZGXJEkYt75eLby59vsR3NDW9FNq
+	O0TnwOrCkQ+qH08qq9hLurKeuvtxv4GqT3vyZKl0ttlc3VtT35Y+A3w5CT4N+0HLqJNdYoJ8W/Rjp
+	HsFF5n9g6dedj2w2BKvc1mlbNRGmfyyBy7EfpMJhfqc2uJuQLNDYwpuWcHoSR4HKuvw+wKa31wXfV
+	3Dd9Mim5oybYdx9eoChGJ4J1PbSSBPKjw2KcTNOoDiCJndEkVLxY7azhx0cFHQEg3PoYsMICzgyOU
+	Li3T8eGbjL3s0ljD0mLg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tCQpf-00000006H0t-1W0O;
-	Sat, 16 Nov 2024 21:59:55 +0000
-Received: from mgamail.intel.com ([198.175.65.20])
+	id 1tD1vB-00000009bbc-1jdX;
+	Mon, 18 Nov 2024 13:36:05 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tBEFl-000000076D0-2rCY
+	id 1tD1pZ-00000009a7G-3vCE
 	for linux-i3c@lists.infradead.org;
-	Wed, 13 Nov 2024 14:21:54 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1731507714; x=1763043714;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=3DG3pVyaEIXykT94bHXydQtHV5qXoL01zSxkhQQgd14=;
-  b=IBEZ4rEh3clcyIe0UCarNqsZjLpzXiOfnAysSo8OJuG9Ci+X32xESa1d
-   r74Yx2f9gAH/bNI0NZ+k/XfopPrt/8Z6JdtbAg5IH4OCQqiK+kOcH2UbO
-   h2dKBtPswFAoPACAgnL0G4Bse+zzocF2EtM3I+rjAPxhFCIbh4GKqQuoC
-   nQV9UnZtk3VFDvTlND/IsMNQwJfDjauBZjjFiyBwvxR6AcmJfGHXZwV3H
-   VWmeiEbLolimMXmqbMVMVo/8OKUrLWweGkQqaaNLekNn/I79Bhem8ekSE
-   lkzExqHXCR7xjFYgaW32mR3lM4V69afJORkqOrz1aR3f1YfbygNxju0yw
-   A==;
-X-CSE-ConnectionGUID: EObHBsDiQkydqZ47wRejiA==
-X-CSE-MsgGUID: vdyiU2PtRNeIkBNLuu8c6Q==
-X-IronPort-AV: E=McAfee;i="6700,10204,11222"; a="31168887"
-X-IronPort-AV: E=Sophos;i="6.11,199,1725346800"; 
-   d="scan'208";a="31168887"
-Received: from orviesa007.jf.intel.com ([10.64.159.147])
-  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Nov 2024 06:21:51 -0800
-X-CSE-ConnectionGUID: zG5i5Y+xS82ELxp6o8cMUQ==
-X-CSE-MsgGUID: Vth3UAT9QeiHxEQOl1OTXA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.12,151,1728975600"; 
-   d="scan'208";a="88282446"
-Received: from kuha.fi.intel.com ([10.237.72.152])
-  by orviesa007.jf.intel.com with SMTP; 13 Nov 2024 06:21:48 -0800
-Received: by kuha.fi.intel.com (sSMTP sendmail emulation); Wed, 13 Nov 2024 16:21:46 +0200
-Date: Wed, 13 Nov 2024 16:21:46 +0200
-From: Heikki Krogerus <heikki.krogerus@linux.intel.com>
-To: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Jarkko Nikula <jarkko.nikula@linux.intel.com>,
-	Sanket.Goswami@amd.com, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org
-Subject: Re: [PATCH v3 2/5] i3c: master: Add ACPI support to i3c subsystem
-Message-ID: <ZzS1-nJMPiCp5jDi@kuha.fi.intel.com>
-References: <20241108073323.523805-1-Shyam-sundar.S-k@amd.com>
- <20241108073323.523805-3-Shyam-sundar.S-k@amd.com>
+	Mon, 18 Nov 2024 13:30:19 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id D4AB0240010;
+	Mon, 18 Nov 2024 13:30:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1731936613;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=oM6AbZrWm1JjX/mbzJsrlRU8XyzkzGMpUDByIVKqMWI=;
+	b=oF4Tuvl16oOFVzX4Wr6fWjXrEfoFJKqFf7uK1GnG0AMym407hDfX7TReZVldBFUSadXzVU
+	2ZSot3TD1b976mCGt8SQu22SihJTvhoKKbz7WmQTILC0krViD0kEY3RGD5b2GrinENrB5W
+	9d25eIq1R78Tz0uungvhiz7gxC6rbGy167p4M9lDJhMOdXkgtsa0hFEG0HflTwYB1oCP3I
+	PkJuVGYKGVcd8I64yTKs6mSH5DaQX0tPZuNMLrp1PYib+nYgiuwo21jEY8LFz/9qkfNEZX
+	n9ZhtoZLiD2YTLfaTKQFeqP8/WXFPpU/dFcDVnfM0dtUgk7tLPUGmSC1K5sj7w==
+Date: Mon, 18 Nov 2024 14:30:09 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: jarkko.nikula@linux.intel.com, Shyam-sundar.S-k@amd.com,
+	Guruvendra.Punugupati@amd.com, krishnamoorthi.m@amd.com,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Billy Tsai <billy_tsai@aspeedtech.com>
+Subject: Re: [PATCH v1] i3c: mipi-i3c-hci: Support SETDASA CCC
+Message-ID: <173193659469.36588.2524558035357805471.b4-ty@bootlin.com>
+References: <20241113035826.923918-1-billy_tsai@aspeedtech.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241108073323.523805-3-Shyam-sundar.S-k@amd.com>
+In-Reply-To: <20241113035826.923918-1-billy_tsai@aspeedtech.com>
+X-GND-Sasl: alexandre.belloni@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241113_062153_796911_DA1647CA 
-X-CRM114-Status: GOOD (  32.01  )
-X-Mailman-Approved-At: Sat, 16 Nov 2024 13:59:53 -0800
+X-CRM114-CacheID: sfid-20241118_053018_104631_37A0EDA1 
+X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,151 +73,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi,
-
-On Fri, Nov 08, 2024 at 01:03:20PM +0530, Shyam Sundar S K wrote:
-> As of now, the I3C subsystem only has ARM-specific initialization, and
-> there is no corresponding ACPI plumbing present. To address this, ACPI
-> support needs to be added to both the I3C core and DW driver.
+On Wed, 13 Nov 2024 11:58:26 +0800, Billy Tsai wrote:
+> When the I3C subsystem wants to assign a dynamic address using the SETDASA
+> CCC, it needs to attach the I3C device with device info that includes only
+> the static address. In the HCI, if the driver want to send this SETDASA
+> CCC, a DAT entry is required to temporarily fill the device's static
+> address into the dynamic address field. Afterward, the reattach API will
+> be executed to update the DAT with the correct dynamic addrees value.
 > 
-> Add support to get the ACPI handle from the _HID probed and parse the apci
-> object to retrieve the slave information from BIOS.
-> 
-> Based on the acpi object information propogated via BIOS, build the i3c
-> board information so that the same information can be used across the
-> driver to handle the slave requests.
-> 
-> Co-developed-by: Sanket Goswami <Sanket.Goswami@amd.com>
-> Signed-off-by: Sanket Goswami <Sanket.Goswami@amd.com>
-> Signed-off-by: Shyam Sundar S K <Shyam-sundar.S-k@amd.com>
-> ---
-> Cc: linux-acpi@vger.kernel.org
-> 
->  drivers/i3c/internals.h            |  3 ++
->  drivers/i3c/master.c               | 84 ++++++++++++++++++++++++++++++
->  drivers/i3c/master/dw-i3c-master.c |  7 +++
->  include/linux/i3c/master.h         |  1 +
->  4 files changed, 95 insertions(+)
-> 
-> diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
-> index 433f6088b7ce..178bc0ebe6b6 100644
-> --- a/drivers/i3c/internals.h
-> +++ b/drivers/i3c/internals.h
-> @@ -10,6 +10,9 @@
->  
->  #include <linux/i3c/master.h>
->  
-> +#define I3C_GET_PID		0x08
-> +#define I3C_GET_ADDR		0x7F
-> +
->  void i3c_bus_normaluse_lock(struct i3c_bus *bus);
->  void i3c_bus_normaluse_unlock(struct i3c_bus *bus);
->  
-> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index 6f3eb710a75d..0ceef2aa9161 100644
-> --- a/drivers/i3c/master.c
-> +++ b/drivers/i3c/master.c
-> @@ -2251,6 +2251,84 @@ static int of_i3c_master_add_dev(struct i3c_master_controller *master,
->  	return ret;
->  }
->  
-> +#if IS_ENABLED(CONFIG_ACPI)
-> +static int i3c_acpi_configure_master(struct i3c_master_controller *master)
-> +{
-> +	struct acpi_buffer buf = {ACPI_ALLOCATE_BUFFER, NULL};
-> +	enum i3c_addr_slot_status addrstatus;
-> +	struct i3c_dev_boardinfo *boardinfo;
-> +	struct device *dev = &master->dev;
-> +	struct fwnode_handle *fwnode;
-> +	struct acpi_device *adev;
-> +	u32 slv_addr, num_dev;
-> +	acpi_status status;
-> +	u64 val;
-> +
-> +	status = acpi_evaluate_object_typed(master->ahandle, "_DSD", NULL, &buf, ACPI_TYPE_PACKAGE);
-> +	if (ACPI_FAILURE(status)) {
-> +		dev_err(&master->dev, "Error reading _DSD:%s\n", acpi_format_exception(status));
-> +		return -ENODEV;
-> +	}
+> [...]
 
-Why do you need to do that?
+Applied, thanks!
 
-> +	num_dev = device_get_child_node_count(dev);
-> +	if (!num_dev) {
-> +		dev_err(&master->dev, "Error: no child node present\n");
-> +		return -EINVAL;
-> +	}
+[1/1] i3c: mipi-i3c-hci: Support SETDASA CCC
+      https://git.kernel.org/abelloni/c/2b50719dd92f
 
-I think Jarkko already pointed out the problem with that. The whole
-check should be dropped.
-
-> +	device_for_each_child_node(dev, fwnode) {
-> +		adev = to_acpi_device_node(fwnode);
-> +		if (!adev)
-> +			return -ENODEV;
-> +
-> +		status = acpi_evaluate_integer(adev->handle, "_ADR", NULL, &val);
-> +		if (ACPI_FAILURE(status)) {
-> +			dev_err(&master->dev, "Error: eval _ADR failed\n");
-> +			return -EINVAL;
-> +		}
-
-val = acpi_device_adr(adev);
-
-> +		slv_addr = val & I3C_GET_ADDR;
-> +
-> +		boardinfo = devm_kzalloc(dev, sizeof(*boardinfo), GFP_KERNEL);
-> +		if (!boardinfo)
-> +			return -ENOMEM;
-> +
-> +		if (slv_addr) {
-> +			if (slv_addr > I3C_MAX_ADDR)
-> +				return -EINVAL;
-> +
-> +			addrstatus = i3c_bus_get_addr_slot_status(&master->bus, slv_addr);
-> +			if (addrstatus != I3C_ADDR_SLOT_FREE)
-> +				return -EINVAL;
-> +		}
-> +
-> +		boardinfo->static_addr = slv_addr;
-> +		if (boardinfo->static_addr > I3C_MAX_ADDR)
-> +			return -EINVAL;
-> +
-> +		addrstatus = i3c_bus_get_addr_slot_status(&master->bus,	boardinfo->static_addr);
-> +		if (addrstatus != I3C_ADDR_SLOT_FREE)
-> +			return -EINVAL;
-> +
-> +		boardinfo->pid = val >> I3C_GET_PID;
-> +		if ((boardinfo->pid & GENMASK_ULL(63, 48)) ||
-> +		    I3C_PID_RND_LOWER_32BITS(boardinfo->pid))
-> +			return -EINVAL;
-> +
-> +		/*
-> +		 * According to the specification, SETDASA is not supported for DIMM slaves
-> +		 * during device discovery. Therefore, BIOS will populate same initial
-> +		 * dynamic address as the static address.
-> +		 */
-> +		boardinfo->init_dyn_addr = boardinfo->static_addr;
-> +		list_add_tail(&boardinfo->node, &master->boardinfo.i3c);
-> +	}
-> +
-> +	return 0;
-> +}
-> +#else
-> +static int i3c_acpi_configure_master(struct i3c_master_controller *master) { return 0; }
-> +#endif
-
-I think this code should be placed into a separate file.
-
-If the goal is to add ACPI support for code that is written for DT
-only, then I think the first thing to do before that really should be
-to convert the existing code to use the unified device property
-interface, and move all the DT-only parts to a separate file(s).
-
-thanks,
+Best regards,
 
 -- 
-heikki
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-i3c mailing list
