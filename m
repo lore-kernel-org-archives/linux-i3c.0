@@ -4,58 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1551D49221
-	for <linux-i3c@archiver.kernel.org>; Mon, 18 Nov 2024 13:36:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9249CD49221
+	for <linux-i3c@archiver.kernel.org>; Mon, 18 Nov 2024 13:37:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZKnm7z1r2pEKVHt4HERnTisTOwKmvhsbdIVLOY+HSkc=; b=QjUmXIowtnlOr0
-	qJjsvixdRNNPJA5pwCtfRvLI2cSNtpWB0bxJxQ2v4fsZOWJtyHZGXJEkYt75eLby59vsR3NDW9FNq
-	O0TnwOrCkQ+qH08qq9hLurKeuvtxv4GqT3vyZKl0ttlc3VtT35Y+A3w5CT4N+0HLqJNdYoJ8W/Rjp
-	HsFF5n9g6dedj2w2BKvc1mlbNRGmfyyBy7EfpMJhfqc2uJuQLNDYwpuWcHoSR4HKuvw+wKa31wXfV
-	3Dd9Mim5oybYdx9eoChGJ4J1PbSSBPKjw2KcTNOoDiCJndEkVLxY7azhx0cFHQEg3PoYsMICzgyOU
-	Li3T8eGbjL3s0ljD0mLg==;
+	List-Owner; bh=EvVd5E0tfnULgDOB8H4INPHT83NDWLJRtArYa0q1E1Q=; b=bLjCUs9vhZTAz1
+	5b6/Yw3mEpDCEZIzVM79JmUSNAhM66cOBIQyBncj7Ah5OG7igNiPx2+nDLCKrdt1/CCsRZglSTCfi
+	2QQ8E5acohzVk8lR3aFqvJXge3Op64KXhP4yZQW6qRzq0l6Skb4eec9AZCDafNAs2W4wkjTzJqHQV
+	oAbk84CZNvGDtEy60e3gkYlhrxiQajimKT2NxDXsPQgSYt4Eaz65yLNNAM0dKBqH6GhtyyHTIq575
+	dzVvSyNfLs9SNpnZQBmMS617FyhuVWZ/ArY5Wrinago9gbgKPU8r1gLJMzfSrAev/6ik+OswF/a5B
+	CRmwdJfsvr4uRKjVjPgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tD1vB-00000009bbc-1jdX;
-	Mon, 18 Nov 2024 13:36:05 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1tD1w7-00000009c0V-1RW1;
+	Mon, 18 Nov 2024 13:37:03 +0000
+Received: from relay2-d.mail.gandi.net ([217.70.183.194])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tD1pZ-00000009a7G-3vCE
-	for linux-i3c@lists.infradead.org;
-	Mon, 18 Nov 2024 13:30:19 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id D4AB0240010;
-	Mon, 18 Nov 2024 13:30:09 +0000 (UTC)
+	id 1tD1pg-00000009a8q-0t66;
+	Mon, 18 Nov 2024 13:30:25 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 4F6D640008;
+	Mon, 18 Nov 2024 13:30:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1731936613;
+	t=1731936621;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 in-reply-to:in-reply-to:references:references;
-	bh=oM6AbZrWm1JjX/mbzJsrlRU8XyzkzGMpUDByIVKqMWI=;
-	b=oF4Tuvl16oOFVzX4Wr6fWjXrEfoFJKqFf7uK1GnG0AMym407hDfX7TReZVldBFUSadXzVU
-	2ZSot3TD1b976mCGt8SQu22SihJTvhoKKbz7WmQTILC0krViD0kEY3RGD5b2GrinENrB5W
-	9d25eIq1R78Tz0uungvhiz7gxC6rbGy167p4M9lDJhMOdXkgtsa0hFEG0HflTwYB1oCP3I
-	PkJuVGYKGVcd8I64yTKs6mSH5DaQX0tPZuNMLrp1PYib+nYgiuwo21jEY8LFz/9qkfNEZX
-	n9ZhtoZLiD2YTLfaTKQFeqP8/WXFPpU/dFcDVnfM0dtUgk7tLPUGmSC1K5sj7w==
-Date: Mon, 18 Nov 2024 14:30:09 +0100
+	bh=qa9NHhyLL4kxKZmTxJR2l8vXYrk/AJLkfdhe0yrUDHE=;
+	b=pn+XHJxfizpJj+4/n7TDk7Pm8QBR25q0R1sp9RLBQz2n/Zhl9quYOW8cbg/S5UI9ZFCfgr
+	7xrNwznaJcUWbC/l/E7HYYAv/PewQ8i+cXrN+2UV/+XWXvJXwUjbc+Eru2mcRO9br3VaJA
+	yyj++LrQjTBSfO0F5DazhDQA4EaQlDZUoor3lVzkLFWv1xdu3Gts8YNUZQuFmhSQrKi1BC
+	CeWHf3DuwMz36LYqBXC9dAV8BaqJGBl4ygEeydtPhJln4p/ugOQrhFSVgrxQpEKOD1uyMN
+	44LFyn0t4ccXMTxey0TXg9cA1Ch7xOy90oMXxz+9RyNtn8vrrYDHYUoMODIa/w==
+Date: Mon, 18 Nov 2024 14:30:20 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: jarkko.nikula@linux.intel.com, Shyam-sundar.S-k@amd.com,
-	Guruvendra.Punugupati@amd.com, krishnamoorthi.m@amd.com,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Billy Tsai <billy_tsai@aspeedtech.com>
-Subject: Re: [PATCH v1] i3c: mipi-i3c-hci: Support SETDASA CCC
-Message-ID: <173193659469.36588.2524558035357805471.b4-ty@bootlin.com>
-References: <20241113035826.923918-1-billy_tsai@aspeedtech.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>,
+	AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>,
+	mtk25126 <defa.li@mediatek.com>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org, wsd_upstream@mediatek.com,
+	mingchang.jia@mediatek.com, yuhan.wei@mediatek.com,
+	hao.lin@mediatek.com
+Subject: Re: [PATCH v2] i3c: Use i3cdev->desc->info instead of calling
+ i3c_device_get_info() to avoid deadlock
+Message-ID: <173193659471.36588.2292207422310600314.b4-ty@bootlin.com>
+References: <20241107132549.25439-1-defa.li@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241113035826.923918-1-billy_tsai@aspeedtech.com>
+In-Reply-To: <20241107132549.25439-1-defa.li@mediatek.com>
 X-GND-Sasl: alexandre.belloni@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241118_053018_104631_37A0EDA1 
-X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-CacheID: sfid-20241118_053024_382236_0A1BBFB7 
+X-CRM114-Status: UNSURE (   7.65  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -73,20 +77,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, 13 Nov 2024 11:58:26 +0800, Billy Tsai wrote:
-> When the I3C subsystem wants to assign a dynamic address using the SETDASA
-> CCC, it needs to attach the I3C device with device info that includes only
-> the static address. In the HCI, if the driver want to send this SETDASA
-> CCC, a DAT entry is required to temporarily fill the device's static
-> address into the dynamic address field. Afterward, the reattach API will
-> be executed to update the DAT with the correct dynamic addrees value.
+On Thu, 07 Nov 2024 21:25:39 +0800, mtk25126 wrote:
+> A deadlock may happen since the i3c_master_register() acquires
+> &i3cbus->lock twice. See the log below.
+> Use i3cdev->desc->info instead of calling i3c_device_info() to
+> avoid acquiring the lock twice.
+> 
+> v2:
+>   - Modified the title and commit message
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] i3c: mipi-i3c-hci: Support SETDASA CCC
-      https://git.kernel.org/abelloni/c/2b50719dd92f
+[1/1] i3c: Use i3cdev->desc->info instead of calling i3c_device_get_info() to avoid deadlock
+      https://git.kernel.org/abelloni/c/6cf7b65f7029
 
 Best regards,
 
