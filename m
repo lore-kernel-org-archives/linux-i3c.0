@@ -4,30 +4,30 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ABCC5D10DD7
-	for <linux-i3c@archiver.kernel.org>; Mon,  2 Dec 2024 09:05:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 498C8D10DD1
+	for <linux-i3c@archiver.kernel.org>; Mon,  2 Dec 2024 09:05:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qHJ1v70EDBFOoWBQgUt8yvJ4L7Qwj28GcVLmXEf6+w8=; b=yJvulj5Ju6CCI0
-	2zaCJuUea2EGxpA/RDQOU7H8kamlfy/gEIjN+TnZEBlfxCMIrRQ6rUup3TY7c/LhhQZThA3cAl5n7
-	5OjG+Q5aRB7Zse4JXQPi8Dbr/Abe0sHCmYTqE4/+NmFlg09dz0TmAGV2Z+LnqFtztjF9psdsfRHhj
-	UDGWQt77BeHapp9ee2EU2o+ZIJ3I/B+XJ1uzeG1j729KiKggEARzonsNpqwRDcHZqxpBFLz5k+HiR
-	WzznW1mZfxtKpc8t2mi1pVlX2vFwfFZ1QIHcNCcvqo+Tfb/OUYBPmPZLYCJjp+gFu0I/HGQoWyXYx
-	8GAs5MKOMIIfstDcPk9Q==;
+	List-Owner; bh=qHJ1v70EDBFOoWBQgUt8yvJ4L7Qwj28GcVLmXEf6+w8=; b=du7v98GXvma71q
+	IR6XKxBPNLTnPiKcHZn4YrUHaRgKq1DUQAkoaV1ch90OVVy8ND2I1fM7vCptauFprC2Ypleu5I6kw
+	KRF1VA22r0Ms007rRU1VuCrc3qks1oDPhp6eiYTB9kj4cgSrgvo0eN3sRI36HX09TP8/3hjzhaxF8
+	WKeaganCqVAHT4682FShaurxFlq8XVIgFAgmIgMGEaMGKFLMLgEJh/RAuUVXjQn2gRXlKxvaxRGmN
+	LFCIEU/LIyItL0Nd355hLPErkiSom2HdA1/r+SAwFLolKigjRC3bct1l2n+S+MohPZcdgpUFIKekx
+	CfZHlsvJuVZlh1MJS79Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tI2NR-00000005VNq-1ew3;
-	Mon, 02 Dec 2024 09:05:57 +0000
+	id 1tI2NR-00000005VOL-3zSb;
+	Mon, 02 Dec 2024 09:05:58 +0000
 Received: from mailgw.kylinos.cn ([124.126.103.232])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGFRh-0000000CsdA-0E2R
+	id 1tGTVs-0000000ESTY-3ilP
 	for linux-i3c@lists.infradead.org;
-	Wed, 27 Nov 2024 10:38:58 +0000
-X-UUID: c88d85eeacab11efa216b1d71e6e1362-20241127
+	Thu, 28 Nov 2024 01:40:14 +0000
+X-UUID: b171eacaad2911efa216b1d71e6e1362-20241128
 X-CTIC-Tags: HR_CC_AS_FROM, HR_CC_COUNT, HR_CC_DOMAIN_COUNT, HR_CC_NAME, HR_CTE_8B
 	HR_CTT_MISS, HR_DATE_H, HR_DATE_WKD, HR_DATE_ZONE, HR_FROM_DIGIT_LEN
 	HR_FROM_NAME, HR_SJ_DIGIT_LEN, HR_SJ_LANG, HR_SJ_LEN, HR_SJ_LETTER
@@ -36,40 +36,38 @@ X-CTIC-Tags: HR_CC_AS_FROM, HR_CC_COUNT, HR_CC_DOMAIN_COUNT, HR_CC_NAME, HR_CTE_
 	SA_TRUSTED, SA_EXISTED, SN_TRUSTED, SN_EXISTED, SPF_NOPASS
 	DKIM_NOPASS, DMARC_NOPASS, CIE_BAD, CIE_GOOD_SPF, GTI_FG_BS
 	GTI_RG_INFO, GTI_C_BU, AMN_GOOD
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.38,REQID:4c49f6c0-06fd-4933-a697-b0e3d56c6535,IP:0,U
+X-CID-O-RULE: Release_Ham
+X-CID-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.38,REQID:063b4854-f478-4cda-beac-89332920d2e4,IP:0,U
 	RL:0,TC:0,Content:-5,EDM:25,RT:0,SF:-5,FILE:0,BULK:0,RULE:Release_Ham,ACTI
 	ON:release,TS:15
-X-CID-INFO: VERSION:1.1.38,REQID:4c49f6c0-06fd-4933-a697-b0e3d56c6535,IP:0,URL
+X-CID-INFO: VERSION:1.1.38,REQID:063b4854-f478-4cda-beac-89332920d2e4,IP:0,URL
 	:0,TC:0,Content:-5,EDM:25,RT:0,SF:-5,FILE:0,BULK:0,RULE:Release_Ham,ACTION
 	:release,TS:15
-X-CID-META: VersionHash:82c5f88,CLOUDID:cf4ea15cbe626a5561605d49b7c36fee,BulkI
-	D:241127183519U1COWKNK,BulkQuantity:1,Recheck:0,SF:17|19|38|66|102,TC:nil,
-	Content:0,EDM:5,IP:nil,URL:0,File:nil,RT:nil,Bulk:40,QS:nil,BEC:nil,COL:0,
-	OSI:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0
+X-CID-META: VersionHash:82c5f88,CLOUDID:631e21f79124ac8250f6029e86fe1cf3,BulkI
+	D:241127183519U1COWKNK,BulkQuantity:3,Recheck:0,SF:17|19|66|102,TC:nil,Con
+	tent:0,EDM:5,IP:nil,URL:0,File:nil,RT:nil,Bulk:40,QS:nil,BEC:nil,COL:0,OSI
+	:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0
 X-CID-BVR: 0
 X-CID-BAS: 0,_,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR,TF_CID_SPAM_FAS,TF_CID_SPAM_FSD
-X-UUID: c88d85eeacab11efa216b1d71e6e1362-20241127
+X-CID-FACTOR: TF_CID_SPAM_FAS,TF_CID_SPAM_FSD,TF_CID_SPAM_SNR
+X-UUID: b171eacaad2911efa216b1d71e6e1362-20241128
 X-User: xiaopei01@kylinos.cn
 Received: from xiaopei-pc.. [(10.44.16.150)] by mailgw.kylinos.cn
 	(envelope-from <xiaopei01@kylinos.cn>)
 	(Generic MTA with TLSv1.3 TLS_AES_256_GCM_SHA384 256/256)
-	with ESMTP id 994606237; Wed, 27 Nov 2024 18:38:47 +0800
+	with ESMTP id 167417811; Thu, 28 Nov 2024 09:40:05 +0800
 From: Pei Xiao <xiaopei01@kylinos.cn>
-To: alexandre.belloni@bootlin.com,
-	aniketmaurya@google.com,
-	linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org
+To: linux-i3c@lists.infradead.org
 Cc: Pei Xiao <xiaopei01@kylinos.cn>
 Subject: [PATCH] i3c: dw: Fix use-after-free in dw_i3c_master driver due to race condition
-Date: Wed, 27 Nov 2024 18:38:41 +0800
+Date: Thu, 28 Nov 2024 09:39:59 +0800
 Message-ID: <bfc49c9527be5b513e7ceafeba314ca40a5be4bc.1732703537.git.xiaopei01@kylinos.cn>
 X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241127_023857_375376_8BB870A0 
-X-CRM114-Status: UNSURE (   7.94  )
+X-CRM114-CacheID: sfid-20241127_174013_213341_623762FE 
+X-CRM114-Status: UNSURE (   7.64  )
 X-CRM114-Notice: Please train this message.
 X-Mailman-Approved-At: Mon, 02 Dec 2024 01:05:09 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
@@ -87,7 +85,7 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
-Message-ID: <20241127103841.XF2WYpz2PZDGTV8_to89g74fzzrYLZQnXcavxT0maBk@z>
+Message-ID: <20241128013959.yFlTia8TqKC_ohvurr3mWyQEKB6hs-8jIx9923Pmvoc@z>
 
 In dw_i3c_common_probe, &master->hj_work is bound with
 dw_i3c_hj_work. And dw_i3c_master_irq_handler can call
