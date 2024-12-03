@@ -4,72 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 498C8D10DD1
-	for <linux-i3c@archiver.kernel.org>; Mon,  2 Dec 2024 09:05:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0C9FE6C60B
+	for <linux-i3c@archiver.kernel.org>; Tue,  3 Dec 2024 06:50:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qHJ1v70EDBFOoWBQgUt8yvJ4L7Qwj28GcVLmXEf6+w8=; b=du7v98GXvma71q
-	IR6XKxBPNLTnPiKcHZn4YrUHaRgKq1DUQAkoaV1ch90OVVy8ND2I1fM7vCptauFprC2Ypleu5I6kw
-	KRF1VA22r0Ms007rRU1VuCrc3qks1oDPhp6eiYTB9kj4cgSrgvo0eN3sRI36HX09TP8/3hjzhaxF8
-	WKeaganCqVAHT4682FShaurxFlq8XVIgFAgmIgMGEaMGKFLMLgEJh/RAuUVXjQn2gRXlKxvaxRGmN
-	LFCIEU/LIyItL0Nd355hLPErkiSom2HdA1/r+SAwFLolKigjRC3bct1l2n+S+MohPZcdgpUFIKekx
-	CfZHlsvJuVZlh1MJS79Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
+	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=j+TwffGaab1GSUeuiB2U5QahhcGXjucc9qiy4yhEyz4=; b=xlhHkchnA6ZwOShSkpJcYlSSeU
+	jRUi+4z9ZAUsSBGdzn4369Rx3Pp8pTbww657TF565BabRsxS/1JL3Bzo2rSa9elktHAqor81vGpN1
+	xGkZo/ppjFwu/8mjRTDtggJNgPHBBZOMi8S/wizjdPLePBYod13nNbcRCX1sl2AFqUNBWrLZInQks
+	x7sghi9WZu1ulbNwQRHaSaysnJjgMv3gCaj19DgbO6tpTIqwB6tMYn5HbU9bRLLDNrenba50xU0bP
+	MaBujJR/M6mWxOAcUWS8pl4uDvWVMGNc8LQm/uMiWJBnpr/BLtolaRg8DhRComRCdUwZlMGCCLo8F
+	cGZXFPfw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tI2NR-00000005VOL-3zSb;
-	Mon, 02 Dec 2024 09:05:58 +0000
-Received: from mailgw.kylinos.cn ([124.126.103.232])
+	id 1tIMjf-00000008Rnv-1jGO;
+	Tue, 03 Dec 2024 06:50:15 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tGTVs-0000000ESTY-3ilP
+	id 1tIMjc-00000008RnC-2Gwd
 	for linux-i3c@lists.infradead.org;
-	Thu, 28 Nov 2024 01:40:14 +0000
-X-UUID: b171eacaad2911efa216b1d71e6e1362-20241128
-X-CTIC-Tags: HR_CC_AS_FROM, HR_CC_COUNT, HR_CC_DOMAIN_COUNT, HR_CC_NAME, HR_CTE_8B
-	HR_CTT_MISS, HR_DATE_H, HR_DATE_WKD, HR_DATE_ZONE, HR_FROM_DIGIT_LEN
-	HR_FROM_NAME, HR_SJ_DIGIT_LEN, HR_SJ_LANG, HR_SJ_LEN, HR_SJ_LETTER
-	HR_SJ_NOR_SYM, HR_SJ_PHRASE, HR_SJ_PHRASE_LEN, HR_SJ_WS, HR_TO_COUNT
-	HR_TO_DOMAIN_COUNT, HR_TO_NO_NAME, IP_TRUSTED, SRC_TRUSTED, DN_TRUSTED
-	SA_TRUSTED, SA_EXISTED, SN_TRUSTED, SN_EXISTED, SPF_NOPASS
-	DKIM_NOPASS, DMARC_NOPASS, CIE_BAD, CIE_GOOD_SPF, GTI_FG_BS
-	GTI_RG_INFO, GTI_C_BU, AMN_GOOD
-X-CID-O-RULE: Release_Ham
-X-CID-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.38,REQID:063b4854-f478-4cda-beac-89332920d2e4,IP:0,U
-	RL:0,TC:0,Content:-5,EDM:25,RT:0,SF:-5,FILE:0,BULK:0,RULE:Release_Ham,ACTI
-	ON:release,TS:15
-X-CID-INFO: VERSION:1.1.38,REQID:063b4854-f478-4cda-beac-89332920d2e4,IP:0,URL
-	:0,TC:0,Content:-5,EDM:25,RT:0,SF:-5,FILE:0,BULK:0,RULE:Release_Ham,ACTION
-	:release,TS:15
-X-CID-META: VersionHash:82c5f88,CLOUDID:631e21f79124ac8250f6029e86fe1cf3,BulkI
-	D:241127183519U1COWKNK,BulkQuantity:3,Recheck:0,SF:17|19|66|102,TC:nil,Con
-	tent:0,EDM:5,IP:nil,URL:0,File:nil,RT:nil,Bulk:40,QS:nil,BEC:nil,COL:0,OSI
-	:0,OSA:0,AV:0,LES:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0
-X-CID-BVR: 0
-X-CID-BAS: 0,_,0,_
-X-CID-FACTOR: TF_CID_SPAM_FAS,TF_CID_SPAM_FSD,TF_CID_SPAM_SNR
-X-UUID: b171eacaad2911efa216b1d71e6e1362-20241128
-X-User: xiaopei01@kylinos.cn
-Received: from xiaopei-pc.. [(10.44.16.150)] by mailgw.kylinos.cn
-	(envelope-from <xiaopei01@kylinos.cn>)
-	(Generic MTA with TLSv1.3 TLS_AES_256_GCM_SHA384 256/256)
-	with ESMTP id 167417811; Thu, 28 Nov 2024 09:40:05 +0800
-From: Pei Xiao <xiaopei01@kylinos.cn>
-To: linux-i3c@lists.infradead.org
-Cc: Pei Xiao <xiaopei01@kylinos.cn>
-Subject: [PATCH] i3c: dw: Fix use-after-free in dw_i3c_master driver due to race condition
-Date: Thu, 28 Nov 2024 09:39:59 +0800
-Message-ID: <bfc49c9527be5b513e7ceafeba314ca40a5be4bc.1732703537.git.xiaopei01@kylinos.cn>
-X-Mailer: git-send-email 2.34.1
+	Tue, 03 Dec 2024 06:50:13 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B36MurN024050;
+	Tue, 3 Dec 2024 06:50:05 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	vCJPGaWCPWcxLFhJ5O4pmeYSh0I0Y6wdmOQXgvY+B9U=; b=ZI3d1BydwMLjmRC1
+	dilUyx9n7cnhd8fNkjUIIErRuULIHsnpsxtlVQZYnqrBKEyphbZhrFR2ZotZD1g+
+	8Oh9KILAp6c1iOwMUmM3T1Af6Y1ULqaYI0zw8BsHrP3T3estPHmbm/F0dOp+Dbfc
+	Dm8D1RJGMwb/+9jnUyLPK9ejxB+gRx00mW/2flwWx37FtiSasRxvLvSESHMx0rXn
+	yl0/gPpKQE2BKUnG/oRBY/Is7uaWIaaHK7FmDw6L4dy2zjdvshMraCMo31VThDcH
+	HWh72EeYSlwCfOs8gNNocsIP3Kg0ypyqqZlPUxG/8Hi/gGJBUJYbZgx0OYQ0uTmc
+	6dcP0Q==
+Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 439vnyr2a5-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 03 Dec 2024 06:50:04 +0000 (GMT)
+Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
+	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4B36o39w024694
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 3 Dec 2024 06:50:03 GMT
+Received: from [10.217.219.207] (10.80.80.8) by nasanex01c.na.qualcomm.com
+ (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 2 Dec 2024
+ 22:50:02 -0800
+Message-ID: <2cc88393-d051-4626-87b7-1ea6c532ae61@quicinc.com>
+Date: Tue, 3 Dec 2024 12:19:59 +0530
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] i3c: dw: Fix use-after-free in dw_i3c_master driver due
+ to race condition
+To: Pei Xiao <xiaopei01@kylinos.cn>, <linux-i3c@lists.infradead.org>,
+        <frank.li@nxp.com>
+References: <bfc49c9527be5b513e7ceafeba314ca40a5be4bc.1732703537.git.xiaopei01@kylinos.cn>
+Content-Language: en-US
+From: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
+In-Reply-To: <bfc49c9527be5b513e7ceafeba314ca40a5be4bc.1732703537.git.xiaopei01@kylinos.cn>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01c.na.qualcomm.com (10.45.79.139)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: sBdvRWNeT3UK-VWc9RDHOJ0v9COKAQwE
+X-Proofpoint-GUID: sBdvRWNeT3UK-VWc9RDHOJ0v9COKAQwE
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1011 adultscore=0
+ mlxlogscore=910 bulkscore=0 impostorscore=0 mlxscore=0 suspectscore=0
+ spamscore=0 priorityscore=1501 lowpriorityscore=0 phishscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412030056
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241127_174013_213341_623762FE 
-X-CRM114-Status: UNSURE (   7.64  )
-X-CRM114-Notice: Please train this message.
-X-Mailman-Approved-At: Mon, 02 Dec 2024 01:05:09 -0800
+X-CRM114-CacheID: sfid-20241202_225012_720346_C95B70C7 
+X-CRM114-Status: GOOD (  18.86  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,55 +93,57 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
-Message-ID: <20241128013959.yFlTia8TqKC_ohvurr3mWyQEKB6hs-8jIx9923Pmvoc@z>
 
-In dw_i3c_common_probe, &master->hj_work is bound with
-dw_i3c_hj_work. And dw_i3c_master_irq_handler can call
-dw_i3c_master_irq_handle_ibis function to start the work.
 
-If we remove the module which will call dw_i3c_common_remove to
-make cleanup, it will free master->base through i3c_master_unregister
-while the work mentioned above will be used. The sequence of operations
-that may lead to a UAF bug is as follows:
 
-CPU0                                      CPU1
-
-                                     | dw_i3c_hj_work
-dw_i3c_common_remove                 |
-i3c_master_unregister(&master->base) |
-device_unregister(&master->dev)      |
-device_release                       |
-//free master->base                  |
-                                     | i3c_master_do_daa(&master->base)
-                                     | //use master->base
-
-Fix it by ensuring that the work is canceled before proceeding with
-the cleanup in dw_i3c_common_remove.
-
-Fixes: 1dd728f5d4d4 ("i3c: master: Add driver for Synopsys DesignWare IP")
-Signed-off-by: Pei Xiao <xiaopei01@kylinos.cn>
----
- drivers/i3c/master/dw-i3c-master.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index 8d694672c110..dbcd3984f257 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -1624,6 +1624,7 @@ EXPORT_SYMBOL_GPL(dw_i3c_common_probe);
- 
- void dw_i3c_common_remove(struct dw_i3c_master *master)
- {
-+	cancel_work_sync(&master->hj_work);
- 	i3c_master_unregister(&master->base);
- 
- 	pm_runtime_disable(master->dev);
--- 
-2.34.1
+On 11/28/2024 7:29 AM, Pei Xiao wrote:
+> In dw_i3c_common_probe, &master->hj_work is bound with
+> dw_i3c_hj_work. And dw_i3c_master_irq_handler can call
+> dw_i3c_master_irq_handle_ibis function to start the work.
+> 
+> If we remove the module which will call dw_i3c_common_remove to
+> make cleanup, it will free master->base through i3c_master_unregister
+> while the work mentioned above will be used. The sequence of operations
+> that may lead to a UAF bug is as follows:
+> 
+> CPU0                                      CPU1
+> 
+>                                       | dw_i3c_hj_work
+> dw_i3c_common_remove                 |
+> i3c_master_unregister(&master->base) |
+> device_unregister(&master->dev)      |
+> device_release                       |
+> //free master->base                  |
+>                                       | i3c_master_do_daa(&master->base)
+>                                       | //use master->base
+> 
+> Fix it by ensuring that the work is canceled before proceeding with
+> the cleanup in dw_i3c_common_remove.
+> 
+> Fixes: 1dd728f5d4d4 ("i3c: master: Add driver for Synopsys DesignWare IP")
+> Signed-off-by: Pei Xiao <xiaopei01@kylinos.cn>
+> ---
+>   drivers/i3c/master/dw-i3c-master.c | 1 +
+>   1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+> index 8d694672c110..dbcd3984f257 100644
+> --- a/drivers/i3c/master/dw-i3c-master.c
+> +++ b/drivers/i3c/master/dw-i3c-master.c
+> @@ -1624,6 +1624,7 @@ EXPORT_SYMBOL_GPL(dw_i3c_common_probe);
+>   
+>   void dw_i3c_common_remove(struct dw_i3c_master *master)
+>   {
+> +	cancel_work_sync(&master->hj_work);
+You still need to capture return and ensure that the pending work is 
+really completed or no more pending.
+>   	i3c_master_unregister(&master->base);
+>   
+>   	pm_runtime_disable(master->dev);
 
 
 -- 
