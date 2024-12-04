@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14EFEE7716D
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F575E77178
 	for <linux-i3c@archiver.kernel.org>; Thu,  5 Dec 2024 16:44:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,46 +12,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C8Hh/ZxlghNFOdyWr2Qx40F7lfuy19FluYjn0mwGBNY=; b=1CnvqivbUzviIc
-	qrTD896ZKLMN0FsYaqJ5YXmfYs/IDOxCTLTS2v/OhBbiC7I9ZMOSsdsj9qIMcpNT83fPB427zrxbY
-	2WHlaoG2q8jD0HqaNt/ywcFXMOKAV7FZ/r6VmVbwekd9eOMCdrNJaLXpzK2I3exDDlv3uVk9pnW92
-	Sv+kDPeDRyyR71vpah9XscCgSu1MCM1Mj+v5p0QCXOco4OH9h1/dEHhtPJxHB7d3hNMLYWt7znVK7
-	Qu7rI3J3oJOKA3/ACfaMQ4Hev/AWZWSQ0h9dR/8DuK2E+Bb+3tAhqVOyne0R+DN2I7g8rUBKC3/4+
-	CEfkxet5KcImLrZMCoTg==;
+	List-Owner; bh=hmtIZSVskczTKu3Lzwrzno8Nuan/eNr4GPpcKuHviOE=; b=reEhOsucHdo0Sl
+	Q4PpxiuT4R/KvBhh9ic/B1jvwUH7jnA0kvWE19D3inzse52jQf1UXRZpYy2zgWNEb5/kb7VyNBP/Y
+	zbQsdf7rl6GGu9LjAjN1hDG9/UXS0P0Vkyui8+cUEQcCoJyfhFIhXWcV8MbRinpTSIIc/ATwukq1q
+	jz+2DW5yXFwhiRmS2RyA7wMpEQYZo5ACdkDpOpV/BuuD6RaptU041JvKRbaLvbq1Rcs1HsRXhLX6r
+	NGTlexFi9O68Jw5svYmg5uoHUOgGg69+zpeW4oXajuuLe02wRtj8/+hFggAWDo6Zv622slO+kzTkG
+	MbywiWe1Cp/BpJ8zGKIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJExw-0000000GnNJ-3UVG;
-	Thu, 05 Dec 2024 16:44:36 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1tJExx-0000000GnNQ-0Z8s;
+	Thu, 05 Dec 2024 16:44:37 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tIsuV-0000000DIuk-2YG3
-	for linux-i3c@lists.infradead.org;
-	Wed, 04 Dec 2024 17:11:36 +0000
+	id 1tIsum-0000000DIyo-1EtN;
+	Wed, 04 Dec 2024 17:11:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 374D35C5649;
-	Wed,  4 Dec 2024 17:10:52 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 18BD4C4CECD;
-	Wed,  4 Dec 2024 17:11:34 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id CEFB45C68AB;
+	Wed,  4 Dec 2024 17:11:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5235BC4CECD;
+	Wed,  4 Dec 2024 17:11:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733332294;
-	bh=W/y8zXZkHB6ZxAKXAe+UMRSHimjoR/7RwfdqEpMrYMs=;
+	s=k20201202; t=1733332311;
+	bh=V0ggNvFhXCs8YEWP7b7p86drfKFSViHoiqJ0NMGoyRM=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=YJFDG2YkiOjqwWF8hYSlozCkbw57pw18u5JZovElrkrtQ81J5vTCQX7tCrA7YWzoM
-	 kSNIqRLH6dMbpsTBfn/SLd0EMYsbeiaUnzd5u59YQGP2Qc0pa8UFyLk7Fu3m69GCtj
-	 0zL6v2jykiHuKoBG6U3I5tb/sXrqfHBBi60rdGjEBzvHvZyERIGLbuRSWMQ2ZEtQZa
-	 wo1yrjwYVirb08BvGcJF2iC95mv67eFLhMBWt0Y/IoUELfUmFaWVToOsuLn/ww4mps
-	 JVxnpCP2k6kr2pOW+1n64uhKSyDICK75j0xflC9iDwYeAY18DZZssv3CDcvGUXGucW
-	 Ci61SMoXk8w4A==
+	b=Na+3/IBZCsjtF8ed3wTxVCzpW4tVAN44qn+wcggQaF22RZJ2WfhRPpniASDwRELkz
+	 1/jSeXlES1w0yzXaTguLSOZf8hiqr79x8zYAzGBwmzVvL5JPnPK1rd1YfcKi6NLMih
+	 NEuPJhupIQZZHWzT/lVxWfdoS6lLifFMX2D4l9v8YQB9aoo1i0A3s7Yd4WoloNmpM0
+	 mp68/v++656r1voYz3XFVBVgokG9bnBN0bBlPGpms0xobapYMH6Bg2SekZjRArau0Y
+	 mqG0RunbbvtwknJkvZTBNiwgOtroaER+nuodr2AzNIJ02QNtPjEO5Yeq6V3sV0tPT1
+	 4S6MHJHqxIuSg==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Cc: Jarkko Nikula <jarkko.nikula@linux.intel.com>,
+Cc: Defa Li <defa.li@mediatek.com>,
 	Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Sasha Levin <sashal@kernel.org>,
-	linux-i3c@lists.infradead.org
-Subject: [PATCH AUTOSEL 6.12 03/15] i3c: mipi-i3c-hci: Mask ring interrupts before ring stop request
-Date: Wed,  4 Dec 2024 10:59:51 -0500
-Message-ID: <20241204160010.2216008-3-sashal@kernel.org>
+	matthias.bgg@gmail.com,
+	angelogioacchino.delregno@collabora.com,
+	linux-i3c@lists.infradead.org,
+	linux-arm-kernel@lists.infradead.org,
+	linux-mediatek@lists.infradead.org
+Subject: [PATCH AUTOSEL 6.12 12/15] i3c: Use i3cdev->desc->info instead of calling i3c_device_get_info() to avoid deadlock
+Date: Wed,  4 Dec 2024 11:00:00 -0500
+Message-ID: <20241204160010.2216008-12-sashal@kernel.org>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20241204160010.2216008-1-sashal@kernel.org>
 References: <20241204160010.2216008-1-sashal@kernel.org>
@@ -60,8 +63,8 @@ X-stable: review
 X-Patchwork-Hint: Ignore
 X-stable-base: Linux 6.12.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241204_091135_695889_395974C3 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20241204_091152_417880_FBB899FF 
+X-CRM114-Status: GOOD (  11.34  )
 X-Mailman-Approved-At: Thu, 05 Dec 2024 08:44:11 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,42 +82,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+From: Defa Li <defa.li@mediatek.com>
 
-[ Upstream commit 6ca2738174e4ee44edb2ab2d86ce74f015a0cc32 ]
+[ Upstream commit 6cf7b65f7029914dc0cd7db86fac9ee5159008c6 ]
 
-Bus cleanup path in DMA mode may trigger a RING_OP_STAT interrupt when
-the ring is being stopped. Depending on timing between ring stop request
-completion, interrupt handler removal and code execution this may lead
-to a NULL pointer dereference in hci_dma_irq_handler() if it gets to run
-after the io_data pointer is set to NULL in hci_dma_cleanup().
+A deadlock may happen since the i3c_master_register() acquires
+&i3cbus->lock twice. See the log below.
+Use i3cdev->desc->info instead of calling i3c_device_info() to
+avoid acquiring the lock twice.
 
-Prevent this my masking the ring interrupts before ring stop request.
+v2:
+  - Modified the title and commit message
 
-Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-Link: https://lore.kernel.org/r/20240920144432.62370-2-jarkko.nikula@linux.intel.com
+============================================
+WARNING: possible recursive locking detected
+6.11.0-mainline
+--------------------------------------------
+init/1 is trying to acquire lock:
+f1ffff80a6a40dc0 (&i3cbus->lock){++++}-{3:3}, at: i3c_bus_normaluse_lock
+
+but task is already holding lock:
+f1ffff80a6a40dc0 (&i3cbus->lock){++++}-{3:3}, at: i3c_master_register
+
+other info that might help us debug this:
+ Possible unsafe locking scenario:
+
+       CPU0
+       ----
+  lock(&i3cbus->lock);
+  lock(&i3cbus->lock);
+
+ *** DEADLOCK ***
+
+ May be due to missing lock nesting notation
+
+2 locks held by init/1:
+ #0: fcffff809b6798f8 (&dev->mutex){....}-{3:3}, at: __driver_attach
+ #1: f1ffff80a6a40dc0 (&i3cbus->lock){++++}-{3:3}, at: i3c_master_register
+
+stack backtrace:
+CPU: 6 UID: 0 PID: 1 Comm: init
+Call trace:
+ dump_backtrace+0xfc/0x17c
+ show_stack+0x18/0x28
+ dump_stack_lvl+0x40/0xc0
+ dump_stack+0x18/0x24
+ print_deadlock_bug+0x388/0x390
+ __lock_acquire+0x18bc/0x32ec
+ lock_acquire+0x134/0x2b0
+ down_read+0x50/0x19c
+ i3c_bus_normaluse_lock+0x14/0x24
+ i3c_device_get_info+0x24/0x58
+ i3c_device_uevent+0x34/0xa4
+ dev_uevent+0x310/0x384
+ kobject_uevent_env+0x244/0x414
+ kobject_uevent+0x14/0x20
+ device_add+0x278/0x460
+ device_register+0x20/0x34
+ i3c_master_register_new_i3c_devs+0x78/0x154
+ i3c_master_register+0x6a0/0x6d4
+ mtk_i3c_master_probe+0x3b8/0x4d8
+ platform_probe+0xa0/0xe0
+ really_probe+0x114/0x454
+ __driver_probe_device+0xa0/0x15c
+ driver_probe_device+0x3c/0x1ac
+ __driver_attach+0xc4/0x1f0
+ bus_for_each_dev+0x104/0x160
+ driver_attach+0x24/0x34
+ bus_add_driver+0x14c/0x294
+ driver_register+0x68/0x104
+ __platform_driver_register+0x20/0x30
+ init_module+0x20/0xfe4
+ do_one_initcall+0x184/0x464
+ do_init_module+0x58/0x1ec
+ load_module+0xefc/0x10c8
+ __arm64_sys_finit_module+0x238/0x33c
+ invoke_syscall+0x58/0x10c
+ el0_svc_common+0xa8/0xdc
+ do_el0_svc+0x1c/0x28
+ el0_svc+0x50/0xac
+ el0t_64_sync_handler+0x70/0xbc
+ el0t_64_sync+0x1a8/0x1ac
+
+Signed-off-by: Defa Li <defa.li@mediatek.com>
+Link: https://lore.kernel.org/r/20241107132549.25439-1-defa.li@mediatek.com
 Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/i3c/master/mipi-i3c-hci/dma.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/i3c/master.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-index a918e96b21fdd..13adc58400942 100644
---- a/drivers/i3c/master/mipi-i3c-hci/dma.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-@@ -159,10 +159,10 @@ static void hci_dma_cleanup(struct i3c_hci *hci)
- 	for (i = 0; i < rings->total; i++) {
- 		rh = &rings->headers[i];
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 6f3eb710a75d6..bb8a8bf0c4c7c 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -282,7 +282,8 @@ static int i3c_device_uevent(const struct device *dev, struct kobj_uevent_env *e
+ 	struct i3c_device_info devinfo;
+ 	u16 manuf, part, ext;
  
-+		rh_reg_write(INTR_SIGNAL_ENABLE, 0);
- 		rh_reg_write(RING_CONTROL, 0);
- 		rh_reg_write(CR_SETUP, 0);
- 		rh_reg_write(IBI_SETUP, 0);
--		rh_reg_write(INTR_SIGNAL_ENABLE, 0);
- 
- 		if (rh->xfer)
- 			dma_free_coherent(&hci->master.dev,
+-	i3c_device_get_info(i3cdev, &devinfo);
++	if (i3cdev->desc)
++		devinfo = i3cdev->desc->info;
+ 	manuf = I3C_PID_MANUF_ID(devinfo.pid);
+ 	part = I3C_PID_PART_ID(devinfo.pid);
+ 	ext = I3C_PID_EXTRA_INFO(devinfo.pid);
 -- 
 2.43.0
 
