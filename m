@@ -4,74 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E9902E77178
-	for <linux-i3c@archiver.kernel.org>; Thu,  5 Dec 2024 16:44:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70A10E7717D
+	for <linux-i3c@archiver.kernel.org>; Mon,  9 Dec 2024 18:16:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=M60Szr9m3hIkfntYyCG6UaO7etq+t7nx3KkeiznI3Y4=; b=klEFKZ+0tJ/CN6
-	kT2wxFKg5TCqJH0ndNXx8hzfBOkhFNIycjvaBWStozTo8rnPeM96agXik6SjD5AyzDiZtFJsaAPe/
-	kaI7PXYz/nLRGZPWxKb2lOiDV9y8HPg+zlYpEZnYGFmNV0zBio6Rbkb4ZUhO4rk6QkdovpUJFwSoN
-	YLKn8maAFwJooNib6QNmd8Um8TrS2Yr1p1Pc7npIAl6tu7ireDIHX+69cypfS8Yd6Kl2AN4qBNV2z
-	Qsx5HVTEOKfQ6xFKdG/UqjnjeoPdCvcLJjBxjZJJ1WQ7tGma7Xdb+0SKFcSDgFQD3MoHBXE/D1rJ2
-	VLfJLkrdLFK0PGqrfeCg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IdHpy2q+TUbtss0rBEMGe/wwFqVDC9R9xbQxwbcwdmg=; b=zRVM49tdZqJIWo
+	FQxoQ39oRN10YbKiIAGxfalE+hV49pGS0FskQO1YVCNop7bVvIir/G3+NnUPr9I54IY4u5NEsuZKC
+	1pmvC5vbemIBdopMl3QQugEgWl9jRNu8k8MIQ/XpaIHOWhC/USk+S6izm7bSirESy+z2dKJwkQeDj
+	ppPA90RIaTQ8vtiDYfjG9HNSV9nSH/cFGEq5SUl44oDRACjs9sFhCT9u+U0q+DqAUxuJI/ob7CLU4
+	ble+E7lLaO0ThzqLoJrQY+2Zgi3zb9+mFj3+PMwcHLQ45nYhW46jRYHIZaARJBvMq5zN9fR0DgGoJ
+	MsuWooEMi1ogovyBu2NA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJEy0-0000000GnS1-2QA5;
-	Thu, 05 Dec 2024 16:44:40 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1tKiJM-00000008rKB-0q6E;
+	Mon, 09 Dec 2024 18:16:48 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tJBtJ-0000000G931-2HTz;
-	Thu, 05 Dec 2024 13:27:38 +0000
-X-UUID: ae2f808cb30c11ef82ff63e91e7eb18c-20241205
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=FmxWE5EhzoSWDAXa4b5JycP7gjDtMkh2D/HJuqalzuU=;
-	b=jDTYYX2u4z0aMU0NwYRKyqB9TwlaOOBwm366a0BgVxxVWsSYnc2D9QWyHQ0LbmpR+4XnvopMZLq2bSTZO6vKxeV+IoqvAoMcZTukSePeEamMZgck02fclVJ+DVduAbCm4ygaQ9a9JUOzR13fNNkvv1EEMJvoKh75fN4B3ewxyxc=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.45,REQID:9d52b054-1eaa-468a-b3c6-a50854ddf5cd,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:6493067,CLOUDID:78657d3b-e809-4df3-83cd-88f012b9e9ba,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
-	RL:11|1,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV:0,LES
-	:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 0,NGT
-X-CID-BAS: 0,NGT,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR,TF_CID_SPAM_ULN
-X-UUID: ae2f808cb30c11ef82ff63e91e7eb18c-20241205
-Received: from mtkmbs14n2.mediatek.inc [(172.21.101.76)] by mailgw01.mediatek.com
-	(envelope-from <defa.li@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 1935099265; Thu, 05 Dec 2024 06:27:31 -0700
-Received: from mtkmbs13n1.mediatek.inc (172.21.101.193) by
- MTKMBS09N2.mediatek.inc (172.21.101.94) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.26; Thu, 5 Dec 2024 21:27:28 +0800
-Received: from mbjsdccf07.gcn.mediatek.inc (10.15.20.246) by
- mtkmbs13n1.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
- 15.2.1118.26 via Frontend Transport; Thu, 5 Dec 2024 21:27:27 +0800
-From: Defa Li <defa.li@mediatek.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Matthias Brugger
-	<matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
-	<angelogioacchino.delregno@collabora.com>
-CC: <linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
-	<wsd_upstream@mediatek.com>, <mingchang.jia@mediatek.com>,
-	<yuhan.wei@mediatek.com>, <hao.lin@mediatek.com>, Defa Li
-	<defa.li@mediatek.com>
-Subject: [PATCH] i3c: master: Improve initialization of numbered I2C adapters
-Date: Thu, 5 Dec 2024 21:29:02 +0800
-Message-ID: <20241205132934.12110-1-defa.li@mediatek.com>
-X-Mailer: git-send-email 2.45.2
+	id 1tKiJK-00000008rJc-1YnB;
+	Mon, 09 Dec 2024 18:16:47 +0000
+Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B9ATf0g028879;
+	Mon, 9 Dec 2024 18:16:40 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	vnce7T7XEQrPlvinYVL/n1yhtcPoTTfoFaF2vz6MOmA=; b=W8l6J/lnj/iOlWol
+	s07T1SVbHXGzyHmG64Zd4inrJURiK72U72gYXc9e8fpEyVzeEhP4iplkYQOXL3sg
+	8349nMkhNTii7K4sgQOcBAyR5707y91w3cYHgQgwDBtroCs+Z8wF5hcx9i/PPojn
+	wyjuDDjlvD9L1pJhonMoiPXOXgTTJaACfkbOx7MPNSN8ugyZGkdWq0QcXy5VcJcc
+	Utjss5AjiQ5Ke2LUxkwlT52AasRu4i4/uDnoK2b4Td9GgQl2U658wS6UDOgZu+HS
+	6cal1upeuSIBekl9ZRczcJ7IQ64ZsWUwbx1mHfspTUM3R+vkpi6XZVxgE+k4nHIT
+	t+2jbw==
+Received: from nasanppmta05.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 43cfhkdmt6-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 09 Dec 2024 18:16:40 +0000 (GMT)
+Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
+	by NASANPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 4B9IGeCZ022605
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 9 Dec 2024 18:16:40 GMT
+Received: from [10.50.34.16] (10.80.80.8) by nasanex01c.na.qualcomm.com
+ (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 9 Dec 2024
+ 10:16:35 -0800
+Message-ID: <54ac6a4f-5ae0-409f-8401-d6e1326d4358@quicinc.com>
+Date: Mon, 9 Dec 2024 23:46:31 +0530
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] i3c: master: Improve initialization of numbered I2C
+ adapters
+To: Defa Li <defa.li@mediatek.com>,
+        Alexandre Belloni
+	<alexandre.belloni@bootlin.com>,
+        Matthias Brugger <matthias.bgg@gmail.com>,
+        AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
+CC: <linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        <linux-arm-kernel@lists.infradead.org>,
+        <linux-mediatek@lists.infradead.org>, <wsd_upstream@mediatek.com>,
+        <mingchang.jia@mediatek.com>, <yuhan.wei@mediatek.com>,
+        <hao.lin@mediatek.com>
+References: <20241205132934.12110-1-defa.li@mediatek.com>
+Content-Language: en-US
+From: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
+In-Reply-To: <20241205132934.12110-1-defa.li@mediatek.com>
+X-Originating-IP: [10.80.80.8]
+X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+ nasanex01c.na.qualcomm.com (10.45.79.139)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-ORIG-GUID: OSoeq6sK0chCG1sPbMn_4yX6vW5ijtBe
+X-Proofpoint-GUID: OSoeq6sK0chCG1sPbMn_4yX6vW5ijtBe
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-06_09,2024-09-06_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
+ impostorscore=0 mlxlogscore=999 mlxscore=0 adultscore=0 lowpriorityscore=0
+ phishscore=0 clxscore=1011 priorityscore=1501 spamscore=0 bulkscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2411120000 definitions=main-2412090142
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241205_052737_586933_CB8D3BB7 
-X-CRM114-Status: UNSURE (   9.32  )
-X-CRM114-Notice: Please train this message.
-X-Mailman-Approved-At: Thu, 05 Dec 2024 08:44:11 -0800
+X-CRM114-CacheID: sfid-20241209_101646_426959_1BF9F017 
+X-CRM114-Status: GOOD (  17.95  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,50 +100,55 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add logic to initialize I2C adapters with a specific ID if available,
-improving device identification and configuration.
 
-Signed-off-by: Defa Li <defa.li@mediatek.com>
----
- drivers/i3c/master.c | 11 +++++++++--
- 1 file changed, 9 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 42310c9a00c2..a838cdbb897b 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -2486,7 +2486,7 @@ static int i3c_master_i2c_adapter_init(struct i3c_master_controller *master)
- 	struct i2c_adapter *adap = i3c_master_to_i2c_adapter(master);
- 	struct i2c_dev_desc *i2cdev;
- 	struct i2c_dev_boardinfo *i2cboardinfo;
--	int ret;
-+	int ret, id = -ENODEV;
- 
- 	adap->dev.parent = master->dev.parent;
- 	adap->owner = master->dev.parent->driver->owner;
-@@ -2497,7 +2497,14 @@ static int i3c_master_i2c_adapter_init(struct i3c_master_controller *master)
- 	adap->timeout = 1000;
- 	adap->retries = 3;
- 
--	ret = i2c_add_adapter(adap);
-+	if (master->dev.of_node)
-+		id = of_alias_get_id(master->dev.of_node, "i2c");
-+
-+	if (id >= 0) {
-+		adap->nr = id;
-+		ret = i2c_add_numbered_adapter(adap);
-+	} else
-+		ret = i2c_add_adapter(adap);
- 	if (ret)
- 		return ret;
- 
--- 
-2.45.2
+On 12/5/2024 6:59 PM, Defa Li wrote:
+> Add logic to initialize I2C adapters with a specific ID if available,
+> improving device identification and configuration.
+> 
+Could you also provide how exactly to define this into DT to have 
+numbering while registering the adapter ? Kind of sample to which can be 
+defined in DTSI.
+> Signed-off-by: Defa Li <defa.li@mediatek.com>
+> ---
+>   drivers/i3c/master.c | 11 +++++++++--
+>   1 file changed, 9 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index 42310c9a00c2..a838cdbb897b 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -2486,7 +2486,7 @@ static int i3c_master_i2c_adapter_init(struct i3c_master_controller *master)
+>   	struct i2c_adapter *adap = i3c_master_to_i2c_adapter(master);
+>   	struct i2c_dev_desc *i2cdev;
+>   	struct i2c_dev_boardinfo *i2cboardinfo;
+> -	int ret;
+> +	int ret, id = -ENODEV;
+>   
+>   	adap->dev.parent = master->dev.parent;
+>   	adap->owner = master->dev.parent->driver->owner;
+> @@ -2497,7 +2497,14 @@ static int i3c_master_i2c_adapter_init(struct i3c_master_controller *master)
+>   	adap->timeout = 1000;
+>   	adap->retries = 3;
+>   
+> -	ret = i2c_add_adapter(adap);
+> +	if (master->dev.of_node)
+> +		id = of_alias_get_id(master->dev.of_node, "i2c");
+> +
+> +	if (id >= 0) {
+> +		adap->nr = id;
+> +		ret = i2c_add_numbered_adapter(adap);
+> +	} else
+> +		ret = i2c_add_adapter(adap);
+Please provide braces for else too.
+>   	if (ret)
+>   		return ret;
+>   
 
 
 -- 
