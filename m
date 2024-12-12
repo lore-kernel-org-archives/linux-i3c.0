@@ -4,68 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED8A6E77183
-	for <linux-i3c@archiver.kernel.org>; Sun, 15 Dec 2024 21:59:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07BF2E77184
+	for <linux-i3c@archiver.kernel.org>; Sun, 15 Dec 2024 21:59:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8m5VLEZ8AmIcUYisIUFoEBk+r4WgrLcZCrtfNwGPANI=; b=17xC9TIvTuHXNl
-	wz3soN+wM1u8p4qg9KgoHBggTfrBvE9tga0aI5Sl64W34+QhyYnAO+NlwWhynxrt56zaCaTtEwxZm
-	la+xcgGF4DxoboPdlycA3k348oiOF1QcnOhbF8TVE+SAnrC6rOfkY8tJqDsgLYHTv2S7lLiRt/vP5
-	c47pnEZDecRwOiDtm1Jm5n3i73W38a2DnuvMknzdfUhWsjtmmjErmylf2WgwJE4i7GCIX6k9gUr08
-	uB9X1BO9gAHANtihykc2dxK3oOLAgiN2z6IbxVPpyswMxaCNw1DPvsHrP8xCuC+l/5pZTzi6Yh4Si
-	8U/QNM6pin4uQAno7yxg==;
+	List-Owner; bh=WcWgYluInlEPzEhTDtmDcIi8xiksAalTBLABtXyIsCs=; b=cvDz2HFjtznxAH
+	yyiq2ZLcZCUM6HqQBPPodArd+CTC3PmQQOpF4fjZMnTFw/xJax67EQEDA/UwZGsyJfM20mGVKE2px
+	QWqOi1Y49/3imr0R63YpEzqRpgaEtZQ4nvNhNYjtUObJW2RATLk30XIAR4XK7tTjFHL2kfmQZxLE2
+	aiSO3cBgSvfu9WlnexlvCByn/fgu0f6noKlZjev/e7LGxWm6RtaPrmCpDl6sXfo4aBGbfWvTwTw3E
+	3ZwM/CIkTHrXiF/7vxASuZj7Aywmt8Fr2KRHBAiq/tyt99vychxv3diVbImROsddwfb1+2MwNvXRf
+	cYbwEq+ToBDK1SWiOuwA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tMwdk-00000008WjB-1ibV;
+	id 1tMwdk-00000008WjH-3Arh;
 	Sun, 15 Dec 2024 21:59:04 +0000
-Received: from mx0a-0064b401.pphosted.com ([205.220.166.238])
+Received: from mailgw01.mediatek.com ([216.200.240.184])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLInM-0000000EMkx-2t0o
-	for linux-i3c@lists.infradead.org;
-	Wed, 11 Dec 2024 09:14:14 +0000
-Received: from pps.filterd (m0250809.ppops.net [127.0.0.1])
-	by mx0a-0064b401.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4BB6o27e010580;
-	Wed, 11 Dec 2024 01:14:07 -0800
-Received: from ala-exchng02.corp.ad.wrs.com (ala-exchng02.wrs.com [147.11.82.254])
-	by mx0a-0064b401.pphosted.com (PPS) with ESMTPS id 43cwy1v04v-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT);
-	Wed, 11 Dec 2024 01:14:06 -0800 (PST)
-Received: from ALA-EXCHNG02.corp.ad.wrs.com (147.11.82.254) by
- ALA-EXCHNG02.corp.ad.wrs.com (147.11.82.254) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.43; Wed, 11 Dec 2024 01:14:06 -0800
-Received: from pek-lpg-core1.wrs.com (147.11.136.210) by
- ALA-EXCHNG02.corp.ad.wrs.com (147.11.82.254) with Microsoft SMTP Server id
- 15.1.2507.43 via Frontend Transport; Wed, 11 Dec 2024 01:14:04 -0800
-From: <jianqi.ren.cn@windriver.com>
-To: <kxwang23@m.fudan.edu.cn>, <gregkh@linuxfoundation.org>
-CC: <alexandre.belloni@bootlin.com>, <patches@lists.linux.dev>,
-        <pgaj@cadence.com>, <linux-i3c@lists.infradead.org>,
-        <linux-kernel@vger.kernel.org>, <stable@vger.kernel.org>
-Subject: [PATCH 6.1.y] i3c: master: cdns: Fix use after free vulnerability in cdns_i3c_master Driver Due to Race Condition
-Date: Wed, 11 Dec 2024 18:11:57 +0800
-Message-ID: <20241211101157.2070087-1-jianqi.ren.cn@windriver.com>
-X-Mailer: git-send-email 2.25.1
+	id 1tLfIt-0000000HRmr-0C5Z;
+	Thu, 12 Dec 2024 09:16:16 +0000
+X-UUID: b941dadab86911ef82ff63e91e7eb18c-20241212
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
+	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=axvJlHiBR2zkbU+O3koSZ3ET0NsXqwruLo6eqUrj9fI=;
+	b=ZJKwGNvkU/GyPkSeEtYc0qHr7kwaT/OBq/q9QXlJo31dpS1mvRaCNjQK291oPqXtUgKNrvwagzggRdIhPA15TIdQWcb/Lfb7R3IlZ+xPdzygh9D654zjbPZ4rDnkfL+lH8EqEErRQtv+UB0KHOSDppxZFmRs3zjUGopnm5UH/Pg=;
+X-CID-P-RULE: Release_Ham
+X-CID-O-INFO: VERSION:1.1.45,REQID:14056c1b-b5fa-40f4-b406-9b7167ae2524,IP:0,U
+	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
+	release,TS:0
+X-CID-META: VersionHash:6493067,CLOUDID:75616828-d2eb-4de2-b5c9-495d1bc17256,B
+	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
+	RL:11|1,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV:0,LES
+	:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
+X-CID-BVR: 0
+X-CID-BAS: 0,_,0,_
+X-CID-FACTOR: TF_CID_SPAM_SNR,TF_CID_SPAM_ULN
+X-UUID: b941dadab86911ef82ff63e91e7eb18c-20241212
+Received: from mtkmbs10n1.mediatek.inc [(172.21.101.34)] by mailgw01.mediatek.com
+	(envelope-from <defa.li@mediatek.com>)
+	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
+	with ESMTP id 1197075212; Thu, 12 Dec 2024 02:16:09 -0700
+Received: from mtkmbs13n1.mediatek.inc (172.21.101.193) by
+ MTKMBS09N2.mediatek.inc (172.21.101.94) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1118.26; Thu, 12 Dec 2024 17:16:06 +0800
+Received: from mbjsdccf07.gcn.mediatek.inc (10.15.20.246) by
+ mtkmbs13n1.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
+ 15.2.1118.26 via Frontend Transport; Thu, 12 Dec 2024 17:16:05 +0800
+From: Defa Li <defa.li@mediatek.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Matthias Brugger
+	<matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
+	<angelogioacchino.delregno@collabora.com>
+CC: <linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
+	<wsd_upstream@mediatek.com>, <mingchang.jia@mediatek.com>,
+	<yuhan.wei@mediatek.com>, <hao.lin@mediatek.com>, Defa Li
+	<defa.li@mediatek.com>
+Subject: [PATCH v2] i3c: master: Improve initialization of numbered I2C adapters
+Date: Thu, 12 Dec 2024 17:17:53 +0800
+Message-ID: <20241212091818.8591-1-defa.li@mediatek.com>
+X-Mailer: git-send-email 2.45.2
 MIME-Version: 1.0
-X-Proofpoint-ORIG-GUID: nMjlRtkpFBAiLh1Mh-5gslb7EK9EijOR
-X-Authority-Analysis: v=2.4 cv=eePHf6EH c=1 sm=1 tr=0 ts=675957de cx=c_pps a=K4BcnWQioVPsTJd46EJO2w==:117 a=K4BcnWQioVPsTJd46EJO2w==:17 a=RZcAm9yDv7YA:10 a=VwQbUJbxAAAA:8 a=P-IC7800AAAA:8 a=t7CeM3EgAAAA:8 a=7vRtop612t4TABFKEpQA:9 a=d3PnA9EDa4IxuAV0gXij:22
- a=FdTzh2GWekK77mhwV6Dw:22
-X-Proofpoint-GUID: nMjlRtkpFBAiLh1Mh-5gslb7EK9EijOR
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2024-12-11_09,2024-12-10_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 clxscore=1015 impostorscore=0
- lowpriorityscore=0 suspectscore=0 mlxlogscore=880 priorityscore=1501
- spamscore=0 phishscore=0 malwarescore=0 mlxscore=0 adultscore=0
- bulkscore=0 classifier=spam authscore=0 adjust=0 reason=mlx scancount=1
- engine=8.21.0-2411120000 definitions=main-2412110069
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241211_011412_726878_4EDAF5AB 
-X-CRM114-Status: GOOD (  10.78  )
+X-CRM114-CacheID: sfid-20241212_011615_089771_5F6D8BD5 
+X-CRM114-Status: GOOD (  12.46  )
 X-Mailman-Approved-At: Sun, 15 Dec 2024 13:59:03 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -83,55 +87,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Kaixin Wang <kxwang23@m.fudan.edu.cn>
+Add logic to initialize I2C adapters with a specific ID if available,
+improving device identification and configuration.
 
-[ Upstream commit 609366e7a06d035990df78f1562291c3bf0d4a12 ]
+For mixed buses, in addition to the i3c alias, an i2c alias can be added to
+assign a fixed bus number to the i2c adapter.
 
-In the cdns_i3c_master_probe function, &master->hj_work is bound with
-cdns_i3c_master_hj. And cdns_i3c_master_interrupt can call
-cnds_i3c_master_demux_ibis function to start the work.
+This allows an alias node such as:
+    aliases {
+        i2c2 = &mixed_bus_a,
+        i3c2 = &mixed_bus_a,
+        i3c4 = &mixed_bus_b,
+    };
 
-If we remove the module which will call cdns_i3c_master_remove to
-make cleanup, it will free master->base through i3c_master_unregister
-while the work mentioned above will be used. The sequence of operations
-that may lead to a UAF bug is as follows:
+    /* assigned "i3c-2" and "i2c-2" */
+    mixed_bus_a: i3c-master {
+    };
 
-CPU0                                      CPU1
+If there is no i2c alias for a mixed bus, the i2c adapter numbers will
+remain as is and will be assigned starting after the highest fixed bus
+number.
 
-                                     | cdns_i3c_master_hj
-cdns_i3c_master_remove               |
-i3c_master_unregister(&master->base) |
-device_unregister(&master->dev)      |
-device_release                       |
-//free master->base                  |
-                                     | i3c_master_do_daa(&master->base)
-                                     | //use master->base
+    /* assigned "i3c-4" and likely assigned "i2c-3" */
+    mixed_bus_b: i3c-master {
+    };
 
-Fix it by ensuring that the work is canceled before proceeding with
-the cleanup in cdns_i3c_master_remove.
+v2:
+  - Modify commit message and code format issues
 
-Signed-off-by: Kaixin Wang <kxwang23@m.fudan.edu.cn>
-Link: https://lore.kernel.org/r/20240911153544.848398-1-kxwang23@m.fudan.edu.cn
-Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Signed-off-by: Jianqi Ren <jianqi.ren.cn@windriver.com>
+Signed-off-by: Defa Li <defa.li@mediatek.com>
 ---
- drivers/i3c/master/i3c-master-cdns.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/i3c/master.c | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
-index b9cfda6ae9ae..4473c0b1ae2e 100644
---- a/drivers/i3c/master/i3c-master-cdns.c
-+++ b/drivers/i3c/master/i3c-master-cdns.c
-@@ -1668,6 +1668,7 @@ static int cdns_i3c_master_remove(struct platform_device *pdev)
- 	struct cdns_i3c_master *master = platform_get_drvdata(pdev);
- 	int ret;
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 42310c9a00c2..92223e0b6e59 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -2486,7 +2486,7 @@ static int i3c_master_i2c_adapter_init(struct i3c_master_controller *master)
+ 	struct i2c_adapter *adap = i3c_master_to_i2c_adapter(master);
+ 	struct i2c_dev_desc *i2cdev;
+ 	struct i2c_dev_boardinfo *i2cboardinfo;
+-	int ret;
++	int ret, id = -ENODEV;
  
-+	cancel_work_sync(&master->hj_work);
- 	ret = i3c_master_unregister(&master->base);
+ 	adap->dev.parent = master->dev.parent;
+ 	adap->owner = master->dev.parent->driver->owner;
+@@ -2497,7 +2497,15 @@ static int i3c_master_i2c_adapter_init(struct i3c_master_controller *master)
+ 	adap->timeout = 1000;
+ 	adap->retries = 3;
+ 
+-	ret = i2c_add_adapter(adap);
++	if (master->dev.of_node)
++		id = of_alias_get_id(master->dev.of_node, "i2c");
++
++	if (id >= 0) {
++		adap->nr = id;
++		ret = i2c_add_numbered_adapter(adap);
++	} else {
++		ret = i2c_add_adapter(adap);
++	}
  	if (ret)
  		return ret;
+ 
 -- 
-2.25.1
+2.46.0
 
 
 -- 
