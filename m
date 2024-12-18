@@ -4,73 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07BF2E77184
-	for <linux-i3c@archiver.kernel.org>; Sun, 15 Dec 2024 21:59:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BE05E77187
+	for <linux-i3c@archiver.kernel.org>; Wed, 18 Dec 2024 17:57:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:From:To:MIME-Version:Date:Message-ID:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WcWgYluInlEPzEhTDtmDcIi8xiksAalTBLABtXyIsCs=; b=cvDz2HFjtznxAH
-	yyiq2ZLcZCUM6HqQBPPodArd+CTC3PmQQOpF4fjZMnTFw/xJax67EQEDA/UwZGsyJfM20mGVKE2px
-	QWqOi1Y49/3imr0R63YpEzqRpgaEtZQ4nvNhNYjtUObJW2RATLk30XIAR4XK7tTjFHL2kfmQZxLE2
-	aiSO3cBgSvfu9WlnexlvCByn/fgu0f6noKlZjev/e7LGxWm6RtaPrmCpDl6sXfo4aBGbfWvTwTw3E
-	3ZwM/CIkTHrXiF/7vxASuZj7Aywmt8Fr2KRHBAiq/tyt99vychxv3diVbImROsddwfb1+2MwNvXRf
-	cYbwEq+ToBDK1SWiOuwA==;
+	List-Owner; bh=0IE333DDjuC11kcEnkelZjZShIOccqw8g7QEa76jz0M=; b=qG2BPngeIGc+mh
+	qcW89CUT6T31C9GLOOkQQpOQd4zNAL67/RwTSpd1/gE9bQayAvB4azhQw/PVKgjr9mWJ6cnweEjTZ
+	2rq6n04a8WOy7Uy9X57U6voNCU9/nFTIg1yhYwLM8GmxxYMH2Wqt7KLVWwo5z92DTVnj2jMrMJ+Dm
+	hXPo/6LMA68HTKvnba54bDiwT2b4AB/DeFmIbDiSsEqS04DnwrWHpLnFOV/pa6uVZSeM8+W5J81zt
+	4BRryl1pBJLpqt19GYOgGtLFZzO80tjr0rMKbk5SKMVJfdVxA9V094q7RmPrtb8iPgkijuvd6uGEM
+	AgRZjtQhtgLCA9kgUI7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tMwdk-00000008WjH-3Arh;
-	Sun, 15 Dec 2024 21:59:04 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1tNyIJ-0000000HNFX-35df;
+	Wed, 18 Dec 2024 17:57:11 +0000
+Received: from mail-pf1-x42c.google.com ([2607:f8b0:4864:20::42c])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tLfIt-0000000HRmr-0C5Z;
-	Thu, 12 Dec 2024 09:16:16 +0000
-X-UUID: b941dadab86911ef82ff63e91e7eb18c-20241212
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com; s=dk;
-	h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:CC:To:From; bh=axvJlHiBR2zkbU+O3koSZ3ET0NsXqwruLo6eqUrj9fI=;
-	b=ZJKwGNvkU/GyPkSeEtYc0qHr7kwaT/OBq/q9QXlJo31dpS1mvRaCNjQK291oPqXtUgKNrvwagzggRdIhPA15TIdQWcb/Lfb7R3IlZ+xPdzygh9D654zjbPZ4rDnkfL+lH8EqEErRQtv+UB0KHOSDppxZFmRs3zjUGopnm5UH/Pg=;
-X-CID-P-RULE: Release_Ham
-X-CID-O-INFO: VERSION:1.1.45,REQID:14056c1b-b5fa-40f4-b406-9b7167ae2524,IP:0,U
-	RL:0,TC:0,Content:0,EDM:0,RT:0,SF:0,FILE:0,BULK:0,RULE:Release_Ham,ACTION:
-	release,TS:0
-X-CID-META: VersionHash:6493067,CLOUDID:75616828-d2eb-4de2-b5c9-495d1bc17256,B
-	ulkID:nil,BulkQuantity:0,Recheck:0,SF:102,TC:nil,Content:0,EDM:-3,IP:nil,U
-	RL:11|1,File:nil,RT:nil,Bulk:nil,QS:nil,BEC:nil,COL:0,OSI:0,OSA:0,AV:0,LES
-	:1,SPR:NO,DKR:0,DKP:0,BRR:0,BRE:0,ARC:0
-X-CID-BVR: 0
-X-CID-BAS: 0,_,0,_
-X-CID-FACTOR: TF_CID_SPAM_SNR,TF_CID_SPAM_ULN
-X-UUID: b941dadab86911ef82ff63e91e7eb18c-20241212
-Received: from mtkmbs10n1.mediatek.inc [(172.21.101.34)] by mailgw01.mediatek.com
-	(envelope-from <defa.li@mediatek.com>)
-	(musrelay.mediatek.com ESMTP with TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384 256/256)
-	with ESMTP id 1197075212; Thu, 12 Dec 2024 02:16:09 -0700
-Received: from mtkmbs13n1.mediatek.inc (172.21.101.193) by
- MTKMBS09N2.mediatek.inc (172.21.101.94) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1118.26; Thu, 12 Dec 2024 17:16:06 +0800
-Received: from mbjsdccf07.gcn.mediatek.inc (10.15.20.246) by
- mtkmbs13n1.mediatek.inc (172.21.101.73) with Microsoft SMTP Server id
- 15.2.1118.26 via Frontend Transport; Thu, 12 Dec 2024 17:16:05 +0800
-From: Defa Li <defa.li@mediatek.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Matthias Brugger
-	<matthias.bgg@gmail.com>, AngeloGioacchino Del Regno
-	<angelogioacchino.delregno@collabora.com>
-CC: <linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>,
-	<wsd_upstream@mediatek.com>, <mingchang.jia@mediatek.com>,
-	<yuhan.wei@mediatek.com>, <hao.lin@mediatek.com>, Defa Li
-	<defa.li@mediatek.com>
-Subject: [PATCH v2] i3c: master: Improve initialization of numbered I2C adapters
-Date: Thu, 12 Dec 2024 17:17:53 +0800
-Message-ID: <20241212091818.8591-1-defa.li@mediatek.com>
-X-Mailer: git-send-email 2.45.2
+	id 1tNyIH-0000000HNEd-3iz0
+	for linux-i3c@lists.infradead.org;
+	Wed, 18 Dec 2024 17:57:10 +0000
+Received: by mail-pf1-x42c.google.com with SMTP id d2e1a72fcca58-728e3826211so5461380b3a.0
+        for <linux-i3c@lists.infradead.org>; Wed, 18 Dec 2024 09:57:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1734544628; x=1735149428; darn=lists.infradead.org;
+        h=content-transfer-encoding:autocrypt:subject:from:to
+         :content-language:user-agent:mime-version:date:message-id:sender
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=XO33skRYhJ5mNnhYsxpua7cUQKnThc4KxzVDaxzV2sY=;
+        b=QEX7lSSwKhMDn4B39yLArVPJosOW2xqD+zZollpuoQDp7sCZs0NkrlAfGof7/IXTb9
+         T+fgcSqtIu334fHa5zuY5++fD5vtaS1qTbuIlMIMuNQp2IxLVeVfWAZMEKTln0K9xPIs
+         9a2Jmh/LQ/JP28MuhX+qom+sG4kFWAKJADjsP4eSoyHCA9AQxrfEe709LRMJhdj/Lkrp
+         3SUINsTsrg3ACwSQQ7KdageqRUkkWG0MOVu+N29urMKZEEKambXA6LBTvJFQU3Ob+5Bd
+         OFevmTXAEgx7bN67yJ15pW4H4fN0ufLd1JsQNhfNhDYqnRU3E9OYEe/mEV+6bFQY1KLn
+         TrYQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1734544628; x=1735149428;
+        h=content-transfer-encoding:autocrypt:subject:from:to
+         :content-language:user-agent:mime-version:date:message-id:sender
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=XO33skRYhJ5mNnhYsxpua7cUQKnThc4KxzVDaxzV2sY=;
+        b=GX6fJDXawE0e6cuQT0drMtvF8dDMyFhaQaDRuN0Z1aZsaa3FTwL0tcJ2BX44PtL7EE
+         RogcMGOPKfnTeia3MfrTNb06tCmKPRicIOYKbEyDz9cTb5mOrWzbjQZhOqUm2UQ+ttUh
+         Zu/u/8c1yin8BIynbYbLGvNkJPdKtqJuqYYHyU8eky7JDEFF3jXsqHoTnLxwio5YnlTI
+         2SVEM84755icHO/3O4DQgYLPf7d93Dl9uiYHPbI6tEFY5SJ1HFp4/JTdlmmG8t9WMiXP
+         PydhqUdwGmnO/6DHEpXeqY19s4MlqCN8HcCsAMcHf9DnlubNGThmWHur74C+clkcHhYA
+         Yy9Q==
+X-Gm-Message-State: AOJu0YyIIZHErcmJ8QrSmkv+PKHmzawWxHXGNWV0yso9zOvBXU+YSlcq
+	Xwh1Na3hxRdW3ch/2SFmdn8d7qYQZFQCh/cWDTU/GpZdPm7NOK1QgKwiyg==
+X-Gm-Gg: ASbGncsZkTh8jP4XBF+u38K9mPd0BbuFf+S0m3DpFiulKZdxt5RRxIZ5V9dboq0mKhV
+	Hs4khcsPYl0j+G/AXIS7EgyBW32JGb4cI7rAlsf589Ck6hX9MKoDw31qLKBaFoauxCZSZBfV/t6
+	+ZbZ5Z4kVPzaoMFduWKHCciluV2aVze8fuQQINnlTFw0c4NUYNpIlLWGRkEnl3s4ATRNl5oZzh4
+	TAVq4pUwpine4NemL17tHVNh84e4MTwb9equb/bDmcp5RvZ1K0cVxAWMICRx5h6uyVgdKnTANzQ
+	WDitDmcPzwnZxLCELowaEkOdNfygoA==
+X-Google-Smtp-Source: AGHT+IEgDnkA54Exiu77zGvtIF1rRmNwyhqNBHp++ZFiLjgOh1J6kh1i+dV08H6urEkXeYhMWAoe2A==
+X-Received: by 2002:a05:6a00:1787:b0:727:3fd5:b530 with SMTP id d2e1a72fcca58-72a8d24a775mr4772343b3a.15.1734544628502;
+        Wed, 18 Dec 2024 09:57:08 -0800 (PST)
+Received: from ?IPV6:2600:1700:e321:62f0:da43:aeff:fecc:bfd5? ([2600:1700:e321:62f0:da43:aeff:fecc:bfd5])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72918ad7845sm9088254b3a.68.2024.12.18.09.57.07
+        for <linux-i3c@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 18 Dec 2024 09:57:07 -0800 (PST)
+Message-ID: <d7ceb8fd-92fd-431b-85de-a3eae40a1981@roeck-us.net>
+Date: Wed, 18 Dec 2024 09:57:06 -0800
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Content-Language: en-US
+To: linux-i3c@lists.infradead.org
+From: Guenter Roeck <linux@roeck-us.net>
+Subject: DDR5 / SPD5118 connected to I3C bus
+Autocrypt: addr=linux@roeck-us.net; keydata=
+ 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
+ mDW4+i+XlNFUPUYMrIKi9joBhu18ssf5i5Q=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241212_011615_089771_5F6D8BD5 
-X-CRM114-Status: GOOD (  12.46  )
-X-Mailman-Approved-At: Sun, 15 Dec 2024 13:59:03 -0800
+X-CRM114-CacheID: sfid-20241218_095709_934821_730A8C69 
+X-CRM114-Status: UNSURE (   7.40  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,77 +134,22 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add logic to initialize I2C adapters with a specific ID if available,
-improving device identification and configuration.
+Hi all,
 
-For mixed buses, in addition to the i3c alias, an i2c alias can be added to
-assign a fixed bus number to the i2c adapter.
+I have a series of patches which extends sdp5118 support in the Linux kernel
+to I3C. Unfortunately, I don't have access to a system with I3C controller,
+much less the ability to connect DDR5 memory to it.
 
-This allows an alias node such as:
-    aliases {
-        i2c2 = &mixed_bus_a,
-        i3c2 = &mixed_bus_a,
-        i3c4 = &mixed_bus_b,
-    };
+Does anyone on this list happen to have access to such as system and would
+be able and willing to test the patch series ?
 
-    /* assigned "i3c-2" and "i2c-2" */
-    mixed_bus_a: i3c-master {
-    };
-
-If there is no i2c alias for a mixed bus, the i2c adapter numbers will
-remain as is and will be assigned starting after the highest fixed bus
-number.
-
-    /* assigned "i3c-4" and likely assigned "i2c-3" */
-    mixed_bus_b: i3c-master {
-    };
-
-v2:
-  - Modify commit message and code format issues
-
-Signed-off-by: Defa Li <defa.li@mediatek.com>
----
- drivers/i3c/master.c | 12 ++++++++++--
- 1 file changed, 10 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 42310c9a00c2..92223e0b6e59 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -2486,7 +2486,7 @@ static int i3c_master_i2c_adapter_init(struct i3c_master_controller *master)
- 	struct i2c_adapter *adap = i3c_master_to_i2c_adapter(master);
- 	struct i2c_dev_desc *i2cdev;
- 	struct i2c_dev_boardinfo *i2cboardinfo;
--	int ret;
-+	int ret, id = -ENODEV;
- 
- 	adap->dev.parent = master->dev.parent;
- 	adap->owner = master->dev.parent->driver->owner;
-@@ -2497,7 +2497,15 @@ static int i3c_master_i2c_adapter_init(struct i3c_master_controller *master)
- 	adap->timeout = 1000;
- 	adap->retries = 3;
- 
--	ret = i2c_add_adapter(adap);
-+	if (master->dev.of_node)
-+		id = of_alias_get_id(master->dev.of_node, "i2c");
-+
-+	if (id >= 0) {
-+		adap->nr = id;
-+		ret = i2c_add_numbered_adapter(adap);
-+	} else {
-+		ret = i2c_add_adapter(adap);
-+	}
- 	if (ret)
- 		return ret;
- 
--- 
-2.46.0
-
+Thanks,
+Guenter
 
 -- 
 linux-i3c mailing list
