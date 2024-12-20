@@ -4,60 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EAFF0E77188
-	for <linux-i3c@archiver.kernel.org>; Fri, 20 Dec 2024 11:33:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 407AAE7718B
+	for <linux-i3c@archiver.kernel.org>; Fri, 20 Dec 2024 11:33:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1B5LUYo/M1knU5O6qJNVMhmDc2T5QWMIBZ6WTnaA/kE=; b=BhTdXU/Eauy/I8
-	49ujAldc0XxnrQC4rrH0cukY+g47WxU7/kpRmosWF0G0ZLnlvLhNAPhrSO1A3JO85VTXsD9kWvRcw
-	HYWSAyYJyXggdWC1U5PT6N/HnrtgFUQYlKf/nhWSzS4OilyS1aOw5sz9xkbq/lIWlwYWJLX4e4wQB
-	vJSn/nXQyVLUPuPDYwDOFocBBmmULJlb+arKJyMjv/4FJKDMCwe1On3CFAb/z5Ak288FT0p+nzN73
-	+SuBUIqyy4l+GxqIgvjmhl9lLsIxohFyXZRJfqwsYXBbNs1XqZCkYtLMTXG++kij3wNoOImCKbGLd
-	Cu2BRuq6O54XTkT6EBTQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tw5h6rXmBE6DzwemmJ/aKA2rPmnVHj0Tqpck1dEzZMc=; b=PJJX0Af8TOOrRi
+	9u9HMbAdn6npxJWPDeMCfQnynNuN2FtB4f33LrGltwycSd9QWQswVNF/CtPWNgjzp/CU165YtV+pW
+	8bXyn7YpDyJNGwUQf5BO/me3x79D7R//d38xj9yIFmNN1lxiCDJsglCu9jAy4cvTfMuBvCyTP5iB1
+	w9os7Qcw6r1BtOIdEY+Tyj16Jv4Q0U0YhcfxreESctSYL9QUhLpzF3Amc5JBpvXlaUAcyJj5/Jqw6
+	y05efLKOafh2lOZr/n1B2pMNQInMYSQuGo/xnV+3TjlCS24/aCrdlZag/kXgg3yEScyUWjIQS9Z5g
+	ju6zrR3bjsO2gAJ3HEyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tObGF-00000004mvl-2zW2;
-	Fri, 20 Dec 2024 11:33:39 +0000
+	id 1tObGH-00000004mwh-02K0;
+	Fri, 20 Dec 2024 11:33:41 +0000
 Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tObGD-00000004muZ-23jX
+	id 1tObGE-00000004mue-022b
 	for linux-i3c@lists.infradead.org;
-	Fri, 20 Dec 2024 11:33:38 +0000
+	Fri, 20 Dec 2024 11:33:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	sang-engineering.com; h=from:to:cc:subject:date:message-id
-	:mime-version:content-transfer-encoding; s=k1; bh=iDrd0KAldwsOGF
-	ZG14RvkZSAD3d9IP9pPolACARu4Z8=; b=I2vJXMSNopplmpeP5gNHe6J63hrXKl
-	23aq7PLtGJymsHcrWeqxtlHgyTN2YDHz6PD+KyuAqscstZC42lsaW82Ej2hVL4Sk
-	tKzNbxSKAYdh0+I7dybJFcRD/peS0Wn64S998AXwSLpClNiLAp3Pdpl3EflP+3kT
-	iclejiGi4NVgDUYqHSj1jKTTJt3H9/xP+j1dwgL3D27K7vl5AfzWIus/B6J0JlzL
-	9EslcYOL07WKFlk+mMq643HAlqt2H6D7sw80Zyujvs2di54EAKWnAPAJwSSoalbn
-	sHf4+0MYC/GQGjPykTWbMUn4njJwKcg7LK31hR42sCQZJENodi6PmFQw==
-Received: (qmail 990839 invoked from network); 20 Dec 2024 12:33:35 +0100
-Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 20 Dec 2024 12:33:35 +0100
-X-UD-Smtp-Session: l3s3148p1@sClvBLIpquIujnsY
+	:in-reply-to:references:mime-version:content-transfer-encoding;
+	 s=k1; bh=uWx7Khj94+L0maCjBS9mNDc9rvpKoRkC0PwJFVrpB/4=; b=Mk5lMc
+	bBigG6RSFglZ1BJGbzzc1v4XUGxS3lCHnMfYERPbnXJ6Qoq2xaZmAXjDo/m/Ph4r
+	EEi3DUP5uBH6cF1FjK9cslyAx6V4Uu3b9BvDjEHMTakEMF72MmkAjSnJ9QFUTvQO
+	T7UJ+zlyRZZ8E+kLdLQwj2jxEL8TZNM6EEd0AdRYQ6t3xYpa+u+a50zwHmtrNyXA
+	V2lPtbcc9w9k/9nx6tJqcKBlB/63FtLVPkfdMLl3UHqclIZDgvpfeJccCelkuL1/
+	gJiuZ3cU9lv8rZZVJY86eHLXXD8UdchTRVT6xK6Qa6QXxCdPazGKOEUk1DhWoDui
+	o/o2UkWLM9hu2K8w==
+Received: (qmail 990887 invoked from network); 20 Dec 2024 12:33:36 +0100
+Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 20 Dec 2024 12:33:36 +0100
+X-UD-Smtp-Session: l3s3148p1@q194BLIptOIujnsY
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 To: linux-renesas-soc@vger.kernel.org
 Cc: Yury Norov <yury.norov@gmail.com>,
 	linux-i3c@lists.infradead.org,
 	Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Guenter Roeck <linux@roeck-us.net>,
-	Jean Delvare <jdelvare@suse.com>,
-	linux-hwmon@vger.kernel.org,
-	=?UTF-8?q?Przemys=C5=82aw=20Gaj?= <pgaj@cadence.com>
-Subject: [PATCH RFT RESEND 0/5] i3c: introduce and use generic parity helper
-Date: Fri, 20 Dec 2024 12:33:28 +0100
-Message-Id: <20241220113335.17937-1-wsa+renesas@sang-engineering.com>
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Kuan-Wei Chiu <visitorckw@gmail.com>,
+	Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Subject: [PATCH RFT RESEND 1/5] bitops: add generic parity calculation for u8
+Date: Fri, 20 Dec 2024 12:33:29 +0100
+Message-Id: <20241220113335.17937-2-wsa+renesas@sang-engineering.com>
 X-Mailer: git-send-email 2.39.2
+In-Reply-To: <20241220113335.17937-1-wsa+renesas@sang-engineering.com>
+References: <20241220113335.17937-1-wsa+renesas@sang-engineering.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241220_033337_804636_0D4680CD 
-X-CRM114-Status: UNSURE (   9.81  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241220_033338_319664_0615BE6B 
+X-CRM114-Status: GOOD (  14.47  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,48 +75,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-[Resending because I3C list was not added on all patches. Sorry!]
+There are multiple open coded implementations for getting the parity of
+a byte in the kernel, even using different approaches. Take the pretty
+efficient version from SPD5118 driver and make it generally available by
+putting it into the bitops header. As long as there is just one parity
+calculation helper, the creation of a distinct 'parity.h' header was
+discarded. Also, the usage of hweight8() for architectures having a
+popcnt instruction is postponed until a use case within hot paths is
+desired. The motivation for this patch is the frequent use of odd parity
+in the I3C specification and to simplify drivers there.
 
-I am currently working on upstreaming another I3C controller driver. As
-many others, it needs to ensure odd parity for a dynamically assigned
-address. The BSP version of the driver implemented a custom parity
-algorithm. Wondering why we don't have a generic helper for this in the
-kernel, I found that many I3C controller drivers all implement their
-version of handling parity.
+Changes compared to the original SPD5118 version are the addition of
+kernel documentation, switching the return type from bool to int, and
+renaming the argument of the function.
 
-So, I sent out an RFC[1] moving the efficient implementation of the
-SPD5118 driver to a generic location. The series was well received, but
-the path for upstream was not clear. Because I need the implementation
-for my I3C controller driver and I3C is a prominent user of this new
-function, I got the idea of converting the existing I3C drivers and
-resend the series, suggesting this all goes upstream via I3C.
+Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+Tested-by: Guenter Roeck <linux@roeck-us.net>
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+Acked-by: Yury Norov <yury.norov@gmail.com>
+Reviewed-by: Kuan-Wei Chiu <visitorckw@gmail.com>
+Tested-by: Kuan-Wei Chiu <visitorckw@gmail.com>
+---
+ include/linux/bitops.h | 31 +++++++++++++++++++++++++++++++
+ 1 file changed, 31 insertions(+)
 
-Is this acceptable? The non-I3C patches have all the tags they need,
-only the I3C patches would need testing on hardware.
-
-A locally build-tested branch is here:
-
-git://git.kernel.org/pub/scm/linux/kernel/git/wsa/linux.git renesas/i3c/get_parity
-
-Looking forward to comments...
-
-[1] https://lore.kernel.org/all/20241214085833.8695-1-wsa+renesas@sang-engineering.com/
-
-
-Wolfram Sang (5):
-  bitops: add generic parity calculation for u8
-  hwmon: (spd5118) Use generic parity calculation
-  i3c: dw: use get_parity8 helper instead of open coding it
-  i3c: mipi-i3c-hci: use get_parity8 helper instead of open coding it
-  i3c: cdns: use get_parity8 helper instead of open coding it
-
- drivers/hwmon/spd5118.c                  |  8 +-----
- drivers/i3c/master/dw-i3c-master.c       | 14 +++--------
- drivers/i3c/master/i3c-master-cdns.c     |  3 +--
- drivers/i3c/master/mipi-i3c-hci/dat_v1.c | 11 +--------
- include/linux/bitops.h                   | 31 ++++++++++++++++++++++++
- 5 files changed, 37 insertions(+), 30 deletions(-)
-
+diff --git a/include/linux/bitops.h b/include/linux/bitops.h
+index ba35bbf07798..4ed430934ffc 100644
+--- a/include/linux/bitops.h
++++ b/include/linux/bitops.h
+@@ -229,6 +229,37 @@ static inline int get_count_order_long(unsigned long l)
+ 	return (int)fls_long(--l);
+ }
+ 
++/**
++ * get_parity8 - get the parity of an u8 value
++ * @value: the value to be examined
++ *
++ * Determine the parity of the u8 argument.
++ *
++ * Returns:
++ * 0 for even parity, 1 for odd parity
++ *
++ * Note: This function informs you about the current parity. Example to bail
++ * out when parity is odd:
++ *
++ *	if (get_parity8(val) == 1)
++ *		return -EBADMSG;
++ *
++ * If you need to calculate a parity bit, you need to draw the conclusion from
++ * this result yourself. Example to enforce odd parity, parity bit is bit 7:
++ *
++ *	if (get_parity8(val) == 0)
++ *		val |= BIT(7);
++ */
++static inline int get_parity8(u8 val)
++{
++	/*
++	 * One explanation of this algorithm:
++	 * https://funloop.org/codex/problem/parity/README.html
++	 */
++	val ^= val >> 4;
++	return (0x6996 >> (val & 0xf)) & 1;
++}
++
+ /**
+  * __ffs64 - find first set bit in a 64 bit word
+  * @word: The 64 bit word
 -- 
 2.39.2
 
