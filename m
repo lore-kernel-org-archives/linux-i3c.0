@@ -4,59 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F098E7718D
-	for <linux-i3c@archiver.kernel.org>; Fri, 20 Dec 2024 11:33:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95C3FE7718A
+	for <linux-i3c@archiver.kernel.org>; Fri, 20 Dec 2024 11:33:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DpMb0X70At118EpLCzJtJYYog+UBBjXmjtG3olXfJVA=; b=ijFD+UkVGvmUn0
-	cZFc+TTeCJ/zkssfqUE5pizOonxeSPCZ9R39dPaW0Hp9M4OFkt6zVfZu4o2E/c/Is6neK5FOtQKoP
-	s6c2kcTwXJMz1f3NldNPAlyMHlRI9lE+yJOPN171eHPxwFyQpZ8SRLFuELGf8zeR6Ag+GFm9z+A1a
-	0sZIA4kRGRWslBflb0esE0SGcONriIeSDiwF1BOek3p5n+JhbxSM/lQXFW6dimXQXfYgS1/vmC3QX
-	D1/Sb40T5C5sdDG6Gzuag4tRRAH85QdeSi8AJIHBIhUd+CExzE7IkuRWbl6dY7XfUOCy6rFw7PDw2
-	0sT6xEF53aj1ECtgXwcw==;
+	List-Owner; bh=vwYuorfmgiIIGHRYCi0+SEqtiZ94QtRlY6On2mSAlnI=; b=bbzWh0O6M7IJ7V
+	RoaXrdR7ESVNedNAJYN4FGwEpARd/cNhuM80pBRUhNbTcz+0yfK63PgPg/cZ/V1cP7fDN2Huba8LW
+	k5Ij+XfAUvgwOIw1jokizNEjCD3+A15xVZx2hSUcfvJxZnQaGgl47uAagcLybM2pGniQFpdMexDVU
+	AtMLrRuRUxTKLQ4GzGV80vVkVz+2yMlhgv3ZunlbMpgO7VsZXDOvYddYN8Q+k9+7jIOX+3yoqxxem
+	JSNVHR8V6sBF0kWhIhlPsqRP1IzVWsXfH4CSpO4HS0ymuKrJwn4TEcJyssuhocNpGq99tJdjYqfBo
+	aFBJlZ4SX8c3JPxGkCDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tObFg-00000004mmd-4BRn;
-	Fri, 20 Dec 2024 11:33:05 +0000
+	id 1tObFg-00000004mmA-1GuH;
+	Fri, 20 Dec 2024 11:33:04 +0000
 Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tObD5-00000004mBc-381J
+	id 1tObD4-00000004mBH-2SMz
 	for linux-i3c@lists.infradead.org;
-	Fri, 20 Dec 2024 11:30:26 +0000
+	Fri, 20 Dec 2024 11:30:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	sang-engineering.com; h=from:to:cc:subject:date:message-id
 	:in-reply-to:references:mime-version:content-transfer-encoding;
-	 s=k1; bh=rsDE8URaHTqtvoHB8Si3sxcYn73y38+s7yQFTYbHb2I=; b=Rfb4po
-	HgqpyesKVuDDivS2ZFzUzRwZK7+gL8A5R6A6xlwpQ6wO5eid5OpOVKmeuteAdAl3
-	Sg9fLQ+khYWj8Q3wWPByxRFDBN5B3Npg7pAo+KTFkxgjFY5fmJXfXx72bPPVG/Kg
-	T+d8/T4ORf2/PtY+mNYgA2oHQ38RpqjBxrBT03witTgpNw4y2xJRENMuDv5Wky3E
-	spD/IaJAr/j0iLFYkle6O7IVQiJJIFcYL+Etv/YZEhREjqjTEq4ktJ8p3LgphRkJ
-	2WY4UP07xLe/3PG9Dkdx7rTNxaOm6ROoB5wJK80/exqzLJsWfFU4JHXKvW+uOYPh
-	iIO6DsADxkxy5T3g==
-Received: (qmail 989817 invoked from network); 20 Dec 2024 12:30:22 +0100
-Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 20 Dec 2024 12:30:22 +0100
-X-UD-Smtp-Session: l3s3148p1@I5Pi+LEpFp8ujnsY
+	 s=k1; bh=JTVYffu7bObqCnm7BryRbyhmBYXN9UAwW1f5OWePOno=; b=kwlhKM
+	AN3DbBvDjh703OIGKen6f2vvMi0WWJR+pV3xIf5N3tjLc9GN9hrflnww6AKhLtR3
+	tuhnlxFnb0DP2HEe/ikJMnYxuSCZNYnpEZiro5fm1+goDLf7Lqt8xypxv08XWBeD
+	b1XMWwe/3ktGrHppyVnBW+MI0ysPYkJ43l68koEe2dJkHfqzV0d/hO93Rtsa3AaW
+	GSWPE23CNwgiLT/F33nTB4oSTuuWRnr/PEJmFN+ZXjwfixpXwobiOi+RjVEDyGrL
+	voVKiW2CXx1KRcO7AmEzxkqOScfV9Gr/xipmdPj9nQB3PLk7mWknVJQ+j7QzVrA2
+	pKn7FyPtdx3tf85g==
+Received: (qmail 989755 invoked from network); 20 Dec 2024 12:30:20 +0100
+Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 20 Dec 2024 12:30:20 +0100
+X-UD-Smtp-Session: l3s3148p1@NOjP+LEpDJ8ujnsY
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 To: linux-renesas-soc@vger.kernel.org
 Cc: Yury Norov <yury.norov@gmail.com>,
 	Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	=?UTF-8?q?Przemys=C5=82aw=20Gaj?= <pgaj@cadence.com>,
 	Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	linux-i3c@lists.infradead.org
-Subject: [PATCH RFT 5/5] i3c: cdns: use get_parity8 helper instead of open coding it
-Date: Fri, 20 Dec 2024 12:29:59 +0100
-Message-Id: <20241220113000.17537-6-wsa+renesas@sang-engineering.com>
+Subject: [PATCH RFT 3/5] i3c: dw: use get_parity8 helper instead of open coding it
+Date: Fri, 20 Dec 2024 12:29:57 +0100
+Message-Id: <20241220113000.17537-4-wsa+renesas@sang-engineering.com>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20241220113000.17537-1-wsa+renesas@sang-engineering.com>
 References: <20241220113000.17537-1-wsa+renesas@sang-engineering.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241220_033024_058430_A84BF4D8 
-X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-CacheID: sfid-20241220_033023_540560_D538EBD1 
+X-CRM114-Status: UNSURE (   8.56  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,26 +78,49 @@ understand semantics. Make use of it.
 
 Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
 ---
+ drivers/i3c/master/dw-i3c-master.c | 14 +++-----------
+ 1 file changed, 3 insertions(+), 11 deletions(-)
 
-Can't the '& 0x7f' be left out here?
-
- drivers/i3c/master/i3c-master-cdns.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
-
-diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
-index 06c0592487d3..abeef6f70b53 100644
---- a/drivers/i3c/master/i3c-master-cdns.c
-+++ b/drivers/i3c/master/i3c-master-cdns.c
-@@ -889,8 +889,7 @@ static u32 prepare_rr0_dev_address(u32 addr)
- 	ret |= (addr & GENMASK(9, 7)) << 6;
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index d4b80eb8cecd..a6d7fade5007 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -251,14 +251,6 @@ struct dw_i3c_i2c_dev_data {
+ 	struct i3c_generic_ibi_pool *ibi_pool;
+ };
  
- 	/* RR0[0] = ~XOR(addr[6:0]) */
--	if (!(hweight8(addr & 0x7f) & 1))
--		ret |= 1;
-+	ret |= get_parity8(addr & 0x7f) ? 0 : BIT(0);
+-static u8 even_parity(u8 p)
+-{
+-	p ^= p >> 4;
+-	p &= 0xf;
+-
+-	return (0x9669 >> p) & 1;
+-}
+-
+ static bool dw_i3c_master_supports_ccc_cmd(struct i3c_master_controller *m,
+ 					   const struct i3c_ccc_cmd *cmd)
+ {
+@@ -848,7 +840,7 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
+ 	struct dw_i3c_xfer *xfer;
+ 	struct dw_i3c_cmd *cmd;
+ 	u32 olddevs, newdevs;
+-	u8 p, last_addr = 0;
++	u8 last_addr = 0;
+ 	int ret, pos;
  
- 	return ret;
- }
+ 	ret = pm_runtime_resume_and_get(master->dev);
+@@ -873,9 +865,9 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
+ 		}
+ 
+ 		master->devs[pos].addr = ret;
+-		p = even_parity(ret);
+ 		last_addr = ret;
+-		ret |= (p << 7);
++
++		ret |= get_parity8(ret) ? 0 : BIT(7);
+ 
+ 		writel(DEV_ADDR_TABLE_DYNAMIC_ADDR(ret),
+ 		       master->regs +
 -- 
 2.39.2
 
