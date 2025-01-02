@@ -4,70 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8EBC8E77194
-	for <linux-i3c@archiver.kernel.org>; Tue, 31 Dec 2024 11:59:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD1D5E77188
+	for <linux-i3c@archiver.kernel.org>; Thu,  2 Jan 2025 09:28:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XShkgBazBOMOSNGRWhf96TBEl6DnOwcGSrRqdyAnLTI=; b=ZXFSGQwpN1p+r5
-	RjqmE39IMAwQ2fz9mSipag+QUs/qqh8mBBANKeigE5ormtoRJwKihinZEHwkZdZGCT61JfE7tjnaZ
-	xTJrHhOBS6CuyaLRALkesg/leLivvlGYyon3NUawSPeEUoY2RY3xCiY0DMk0EkiC86gFeOscSdoqW
-	afacTnOgD3/Ut9R5Qt/M5b4ep4kTxIt+Rja63fsfr8Gl/4cuAnDkkDH8KiVqMsZbxliL6zKrHbP4F
-	NdR2zsbMefQEnqYRynpTpknbHYtEj05xpB1mVHzN4QnvpJW5py+kxMKRNzxl2BhCMrT0O2cXPhGYj
-	SueS/hosIcpQXACpQbIg==;
+	List-Owner; bh=uNl85FBjna0CmFy928bfLEF7AfEDXTkV5+KMFWjuEzQ=; b=ramtsVydBBcWkN
+	dLj/kiS2ao289qioOFxTHYGKWhpXqXWb7otfR/HkQCOkvnlmuXvvqnCtKuhsGeQtwfDyrBpEWzd5O
+	+URt0NFbwpiT0TSVCepgm4YXjnf7f8IEZusR/5pNQ19OEgBCRFq3RaaadJYAOU3BEL3YS+G2vvYOE
+	+YKcl+hwUE8/gKKbl2wI038cTOBj4x/EgJrMQYlstW0MQCozLEsvYseM9BG/K0DFGVjvX35uC58N1
+	OITm3ExyIo26C2IDyPirXxUuAQQyYnEhYPX5rEJpi6Wxj89czR+4XmgZu0xcbaR0579eIKhorWJOA
+	qA5GmTZNs58Pv5u9S0OA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tSau4-000000078SC-0O5y;
-	Tue, 31 Dec 2024 11:59:16 +0000
-Received: from mgamail.intel.com ([192.198.163.10])
+	id 1tTHVS-0000000A2cX-2fT9;
+	Thu, 02 Jan 2025 09:28:42 +0000
+Received: from mail-vk1-f170.google.com ([209.85.221.170])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tSau1-000000078RF-37gj
+	id 1tTHVP-0000000A2br-2EPy
 	for linux-i3c@lists.infradead.org;
-	Tue, 31 Dec 2024 11:59:14 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1735646354; x=1767182354;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=lSgOXvfupCKg/wqgrQRhbmbwY9oR09m8MYZkt12DE8U=;
-  b=lk6+FyzVC4W90k4PaUPV4L3GI9ANXWWLDx9bwN6kCpq4B64/my8+kj/e
-   0ZNsEKoJCiGU2scmk1PPIrA4lTlh5gUBiOhDxXwQ1im3e9dXXeDEC/Uuz
-   dlUGq9/vbIbr/i3mKXDFr6LuBCyoSjNIHonMBcFtUd5Wm+NTeNoZ2WPD4
-   GNB9g1/crdDlJl+IovT8dJQktCga5r0raHFggg1U8ADbVZDbIiUeQkdze
-   kfp6WeC5g4Qaugxvbwhhsgk9xww8tjkj6aThJw/Pn2xut2e1fppfoXCpr
-   OejM8v8IDk/UkXbJLLvzWDAoIgoO6zMwIzk+ccdQCDt25Gx4G3mAwLG2T
-   g==;
-X-CSE-ConnectionGUID: InUjWZdAQg2uAt/lHiiHPw==
-X-CSE-MsgGUID: GQrlCk39QiCwtFx5k/M52g==
-X-IronPort-AV: E=McAfee;i="6700,10204,11302"; a="47344707"
-X-IronPort-AV: E=Sophos;i="6.12,279,1728975600"; 
-   d="scan'208";a="47344707"
-Received: from orviesa010.jf.intel.com ([10.64.159.150])
-  by fmvoesa104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 31 Dec 2024 03:59:10 -0800
-X-CSE-ConnectionGUID: 6347TWJAQ8KHucbwrt5SSQ==
-X-CSE-MsgGUID: NBANFrdGQ1OZf2YZkuKrEA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.12,224,1728975600"; 
-   d="scan'208";a="100857122"
-Received: from mylly.fi.intel.com (HELO mylly.fi.intel.com.) ([10.237.72.58])
-  by orviesa010.jf.intel.com with ESMTP; 31 Dec 2024 03:59:08 -0800
-From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-To: linux-i3c@lists.infradead.org
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Jarkko Nikula <jarkko.nikula@linux.intel.com>
-Subject: [PATCH 2/2] i3c: mipi-i3c-hci: Add support for MIPI I3C HCI on PCI bus
-Date: Tue, 31 Dec 2024 13:59:04 +0200
-Message-ID: <20241231115904.620052-2-jarkko.nikula@linux.intel.com>
-X-Mailer: git-send-email 2.45.2
-In-Reply-To: <20241231115904.620052-1-jarkko.nikula@linux.intel.com>
-References: <20241231115904.620052-1-jarkko.nikula@linux.intel.com>
+	Thu, 02 Jan 2025 09:28:40 +0000
+Received: by mail-vk1-f170.google.com with SMTP id 71dfb90a1353d-51873e55d27so6275838e0c.1
+        for <linux-i3c@lists.infradead.org>; Thu, 02 Jan 2025 01:28:38 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1735810117; x=1736414917;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=Fy4MplfV+og+W/GGufNnlxz4RMQ0TqsPXU7LAAw3hCo=;
+        b=UxphKIeDFW8zpF05yww36tGPnywZivvnBzi6vhfZ4S6TsXfSfmwqE9S8pJPXaKNGBf
+         bf70iGYdO09JYSwiNks4Lde0wSLvlbd/CZAxb1dL5TEq8in8OcJeRgCMoLpn7+W41Qev
+         rJYyqYL2gv2q9/78uG7aGWmZ8El4C+mMx/WTsoeWXXuc3K501zUEN3wyDOdQW1e/9B72
+         IAWfC++Jz7MOoVndD1MjoI7Wtchl1XRXMuHChz7av6yjWmFjOHcksCm8wSdwlponAo4u
+         fOc56NZg1CSBOzv0mMU/h5IuEsMeqY4DnpsLuyNBNurolWWrKJn3LAaR0T48xuX8KEJ7
+         3wIw==
+X-Gm-Message-State: AOJu0YwSUOBboI2Mlou9wNsPSXdLIrE+7xijA0SadbKZhVSwXefq0+QO
+	Qsjo0SM16KnoM2h6yIrkF4yZglKDsZK0p6CIK5+UENvCVCzm7rd29turKr1T
+X-Gm-Gg: ASbGncuYBQl31U9SuIbPt27FOyLdLgTcpTfN5hOpiHERBMLdTjuK1PQuqdH/9hXSeOY
+	hvkUOYxfkRk8jufY+kTwhO0MpoysO2jDAWSqK4877h365sG4eJoZPTdMR4pJ4I4TLACrMRdfgsc
+	1z24OXT+LyIprwWdpexz2Il1wgqUeVv4RLZEVhIHBUvHccvuYqsPedHOpf3tk3CDGvCTEfYROBZ
+	rf8pfY0gpZJCp0PwZNc9qcdfBVz6iz3/nV1B29hQoQVVgQ9bD5pW4bhJuvjbuUWr7tHJ13tdA/G
+	JNRS11Ng2uA8oXIkapg=
+X-Google-Smtp-Source: AGHT+IELt13uYPhg/aftTEeFuEx9O8ttmH4uxMA1bB045NPcDihMdOWyBICwjbAn6LfOaBIzNVaU5Q==
+X-Received: by 2002:a05:6122:320d:b0:517:e7b7:d04b with SMTP id 71dfb90a1353d-51b64c0534bmr39477038e0c.5.1735810114390;
+        Thu, 02 Jan 2025 01:28:34 -0800 (PST)
+Received: from mail-vs1-f53.google.com (mail-vs1-f53.google.com. [209.85.217.53])
+        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-51b68d0a99esm3026602e0c.48.2025.01.02.01.28.33
+        for <linux-i3c@lists.infradead.org>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 02 Jan 2025 01:28:34 -0800 (PST)
+Received: by mail-vs1-f53.google.com with SMTP id ada2fe7eead31-4aff04f17c7so6992242137.0
+        for <linux-i3c@lists.infradead.org>; Thu, 02 Jan 2025 01:28:33 -0800 (PST)
+X-Received: by 2002:a67:ebd5:0:b0:4b2:bc6b:c73c with SMTP id
+ ada2fe7eead31-4b2bc6bc807mr30504193137.6.1735810113772; Thu, 02 Jan 2025
+ 01:28:33 -0800 (PST)
 MIME-Version: 1.0
+References: <20241229101234.2896-1-wsa+renesas@sang-engineering.com>
+ <20241229101234.2896-6-wsa+renesas@sang-engineering.com> <CAMuHMdWSQvyLwHyci+WVtTj4rGeR-hkjw1ap52=5X29ZzVchSA@mail.gmail.com>
+ <Z3ZWt0Whyppr6GKX@shikoro>
+In-Reply-To: <Z3ZWt0Whyppr6GKX@shikoro>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Thu, 2 Jan 2025 10:28:22 +0100
+X-Gmail-Original-Message-ID: <CAMuHMdWTUwtVFV0o-Hsxp+eTscHHuzOmnBjv7BPoK8moQ7i9Qg@mail.gmail.com>
+Message-ID: <CAMuHMdWTUwtVFV0o-Hsxp+eTscHHuzOmnBjv7BPoK8moQ7i9Qg@mail.gmail.com>
+Subject: Re: [PATCH RFT v2 5/5] i3c: cdns: use get_parity8 helper instead of
+ open coding it
+To: Wolfram Sang <wsa+renesas@sang-engineering.com>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
+	linux-renesas-soc@vger.kernel.org, 
+	Rasmus Villemoes <linux@rasmusvillemoes.dk>, =?UTF-8?Q?Przemys=C5=82aw_Gaj?= <pgaj@cadence.com>, 
+	Alexandre Belloni <alexandre.belloni@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241231_035913_804002_953D5A78 
-X-CRM114-Status: GOOD (  20.35  )
+X-CRM114-CacheID: sfid-20250102_012839_566052_BE839B97 
+X-CRM114-Status: GOOD (  18.29  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,214 +91,29 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add a glue code for the MIPI I3C HCI on PCI bus with Intel Panther Lake
-I3C controller PCI IDs.
-
-MIPI I3C HCI on Intel platforms has additional logic around the MIPI I3C
-HCI core logic. Those together create so called I3C slice on PCI bus.
-Intel specific initialization code does a reset cycle to the I3C slice
-before probing the MIPI I3C HCI part.
-
-Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
----
- drivers/i3c/master/Kconfig                    |  11 ++
- drivers/i3c/master/mipi-i3c-hci/Makefile      |   1 +
- .../master/mipi-i3c-hci/mipi-i3c-hci-pci.c    | 148 ++++++++++++++++++
- 3 files changed, 160 insertions(+)
- create mode 100644 drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-
-diff --git a/drivers/i3c/master/Kconfig b/drivers/i3c/master/Kconfig
-index 90dee3ec5520..77da199c7413 100644
---- a/drivers/i3c/master/Kconfig
-+++ b/drivers/i3c/master/Kconfig
-@@ -57,3 +57,14 @@ config MIPI_I3C_HCI
- 
- 	  This driver can also be built as a module.  If so, the module will be
- 	  called mipi-i3c-hci.
-+
-+config MIPI_I3C_HCI_PCI
-+	tristate "MIPI I3C Host Controller Interface PCI support"
-+	depends on MIPI_I3C_HCI
-+	depends on PCI
-+	help
-+	  Support for MIPI I3C Host Controller Interface compatible hardware
-+	  on the PCI bus.
-+
-+	  This driver can also be built as a module. If so, the module will be
-+	  called mipi-i3c-hci-pci.
-diff --git a/drivers/i3c/master/mipi-i3c-hci/Makefile b/drivers/i3c/master/mipi-i3c-hci/Makefile
-index 1f8cd5c48fde..e3d3ef757035 100644
---- a/drivers/i3c/master/mipi-i3c-hci/Makefile
-+++ b/drivers/i3c/master/mipi-i3c-hci/Makefile
-@@ -5,3 +5,4 @@ mipi-i3c-hci-y				:= core.o ext_caps.o pio.o dma.o \
- 					   cmd_v1.o cmd_v2.o \
- 					   dat_v1.o dct_v1.o \
- 					   hci_quirks.o
-+obj-$(CONFIG_MIPI_I3C_HCI_PCI)		+= mipi-i3c-hci-pci.o
-diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-new file mode 100644
-index 000000000000..c6c3a3ec11ea
---- /dev/null
-+++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-@@ -0,0 +1,148 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * PCI glue code for MIPI I3C HCI driver
-+ *
-+ * Copyright (C) 2024 Intel Corporation
-+ *
-+ * Author: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-+ */
-+#include <linux/acpi.h>
-+#include <linux/idr.h>
-+#include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/pci.h>
-+#include <linux/platform_device.h>
-+
-+struct mipi_i3c_hci_pci_info {
-+	int (*init)(struct pci_dev *pci);
-+};
-+
-+#define INTEL_PRIV_OFFSET		0x2b0
-+#define INTEL_PRIV_SIZE			0x28
-+#define INTEL_PRIV_RESETS		0x04
-+#define INTEL_PRIV_RESETS_RESET		BIT(0)
-+#define INTEL_PRIV_RESETS_RESET_DONE	BIT(1)
-+
-+static DEFINE_IDA(mipi_i3c_hci_pci_ida);
-+
-+static int mipi_i3c_hci_pci_intel_init(struct pci_dev *pci)
-+{
-+	unsigned long timeout;
-+	void __iomem *priv;
-+
-+	priv = devm_ioremap(&pci->dev,
-+			    pci_resource_start(pci, 0) + INTEL_PRIV_OFFSET,
-+			    INTEL_PRIV_SIZE);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	/* Assert reset, wait for completion and release reset */
-+	writel(0, priv + INTEL_PRIV_RESETS);
-+	timeout = jiffies + msecs_to_jiffies(10);
-+	while (!(readl(priv + INTEL_PRIV_RESETS) &
-+		 INTEL_PRIV_RESETS_RESET_DONE)) {
-+		if (time_after(jiffies, timeout))
-+			break;
-+		cpu_relax();
-+	}
-+	writel(INTEL_PRIV_RESETS_RESET, priv + INTEL_PRIV_RESETS);
-+
-+	return 0;
-+}
-+
-+static struct mipi_i3c_hci_pci_info intel_info = {
-+	.init = mipi_i3c_hci_pci_intel_init,
-+};
-+
-+static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
-+				  const struct pci_device_id *id)
-+{
-+	struct mipi_i3c_hci_pci_info *info;
-+	struct platform_device *pdev;
-+	struct resource res[2];
-+	int dev_id, ret;
-+
-+	ret = pcim_enable_device(pci);
-+	if (ret)
-+		return ret;
-+
-+	pci_set_master(pci);
-+
-+	memset(&res, 0, sizeof(res));
-+
-+	res[0].flags = IORESOURCE_MEM;
-+	res[0].start = pci_resource_start(pci, 0);
-+	res[0].end = pci_resource_end(pci, 0);
-+
-+	res[1].flags = IORESOURCE_IRQ;
-+	res[1].start = pci->irq;
-+	res[1].end = pci->irq;
-+
-+	dev_id = ida_alloc(&mipi_i3c_hci_pci_ida, GFP_KERNEL);
-+	if (dev_id < 0)
-+		return dev_id;
-+
-+	pdev = platform_device_alloc("mipi-i3c-hci", dev_id);
-+	if (!pdev)
-+		return -ENOMEM;
-+
-+	pdev->dev.parent = &pci->dev;
-+	device_set_node(&pdev->dev, dev_fwnode(&pci->dev));
-+
-+	ret = platform_device_add_resources(pdev, res, ARRAY_SIZE(res));
-+	if (ret)
-+		goto err;
-+
-+	info = (struct mipi_i3c_hci_pci_info *)id->driver_data;
-+	if (info && info->init) {
-+		ret = info->init(pci);
-+		if (ret)
-+			goto err;
-+	}
-+
-+	ret = platform_device_add(pdev);
-+	if (ret)
-+		goto err;
-+
-+	pci_set_drvdata(pci, pdev);
-+
-+	return 0;
-+
-+err:
-+	platform_device_put(pdev);
-+	ida_free(&mipi_i3c_hci_pci_ida, dev_id);
-+	return ret;
-+}
-+
-+static void mipi_i3c_hci_pci_remove(struct pci_dev *pci)
-+{
-+	struct platform_device *pdev = pci_get_drvdata(pci);
-+	int dev_id = pdev->id;
-+
-+	platform_device_unregister(pdev);
-+	ida_free(&mipi_i3c_hci_pci_ida, dev_id);
-+}
-+
-+static const struct pci_device_id mipi_i3c_hci_pci_devices[] = {
-+	/* Panther Lake-H */
-+	{ PCI_VDEVICE(INTEL, 0xe37c), (kernel_ulong_t)&intel_info},
-+	{ PCI_VDEVICE(INTEL, 0xe36f), (kernel_ulong_t)&intel_info},
-+	/* Panther Lake-P */
-+	{ PCI_VDEVICE(INTEL, 0xe47c), (kernel_ulong_t)&intel_info},
-+	{ PCI_VDEVICE(INTEL, 0xe46f), (kernel_ulong_t)&intel_info},
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(pci, mipi_i3c_hci_pci_devices);
-+
-+static struct pci_driver mipi_i3c_hci_pci_driver = {
-+	.name = "mipi_i3c_hci_pci",
-+	.id_table = mipi_i3c_hci_pci_devices,
-+	.probe = mipi_i3c_hci_pci_probe,
-+	.remove = mipi_i3c_hci_pci_remove,
-+};
-+
-+module_pci_driver(mipi_i3c_hci_pci_driver);
-+
-+MODULE_AUTHOR("Jarkko Nikula <jarkko.nikula@intel.com>");
-+MODULE_LICENSE("GPL");
-+MODULE_DESCRIPTION("MIPI I3C HCI driver on PCI bus");
--- 
-2.45.2
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+SGkgV29sZnJhbSwKCk9uIFRodSwgSmFuIDIsIDIwMjUgYXQgMTA6MDTigK9BTSBXb2xmcmFtIFNh
+bmcKPHdzYStyZW5lc2FzQHNhbmctZW5naW5lZXJpbmcuY29tPiB3cm90ZToKPiA+ID4gICAgICAg
+ICAvKiBSUjBbMF0gPSB+WE9SKGFkZHJbNjowXSkgKi8KPiA+ID4gLSAgICAgICBpZiAoIShod2Vp
+Z2h0OChhZGRyICYgMHg3ZikgJiAxKSkKPiA+ID4gLSAgICAgICAgICAgICAgIHJldCB8PSAxOwo+
+ID4gPiArICAgICAgIHJldCB8PSBwYXJpdHk4KGFkZHIgJiAweDdmKSA/IDAgOiBCSVQoMCk7Cj4g
+Pgo+ID4gUGVyaGFwcyBrZWVwIHRoZSBpZigpLWNvbnN0cnVjdCwgdG8gYmV0dGVyIG1hdGNoIHRo
+ZSBleGFtcGxlIGluIHRoZQo+ID4gZG9jdW1lbnRhdGlvbiBpbiAxLzU/Cj4KPiBDYW4gZG8sIGRv
+bid0IGNhcmUgc3VwZXIgbXVjaC4gSSBjaG9zZSB0aGlzIGNvbnN0cnVjdCBiZWNhdXNlIHRoZSBv
+dGhlcgo+IGRyaXZlcnMgaW4gSTNDIHVzZSB0aGUgYWJvdmUgcGF0dGVybi4gWW91IHN0aWxsIGxp
+a2UgdGhlIGlmKCkgYmV0dGVyPwoKTGV0J3MgYWRkIG1vcmUgYmlrZS1zaGVkZGluZyBpbiAyMDI1
+IDstKQoKVGhlcmUncyBhbHNvIGEgZ2VuZXJhbCBkaXNsaWtlIGZvciB0aGUgdGVybmFyeSBvcGVy
+YXRvciAoQlRXLCBJIGRvCmFncmVlIGl0IGhhcyBpdHMgdXNlcyksIGVzcGVjaWFsbHkgaWYgb25l
+IG9mIHRoZSBwYXRocyBpcyBhIG5vLW9wLApsaWtlIE9SaW5nIHdpdGggemVyby4KCkdye29ldGpl
+LGVldGluZ31zLAoKICAgICAgICAgICAgICAgICAgICAgICAgR2VlcnQKCi0tIApHZWVydCBVeXR0
+ZXJob2V2ZW4gLS0gVGhlcmUncyBsb3RzIG9mIExpbnV4IGJleW9uZCBpYTMyIC0tIGdlZXJ0QGxp
+bnV4LW02OGsub3JnCgpJbiBwZXJzb25hbCBjb252ZXJzYXRpb25zIHdpdGggdGVjaG5pY2FsIHBl
+b3BsZSwgSSBjYWxsIG15c2VsZiBhIGhhY2tlci4gQnV0CndoZW4gSSdtIHRhbGtpbmcgdG8gam91
+cm5hbGlzdHMgSSBqdXN0IHNheSAicHJvZ3JhbW1lciIgb3Igc29tZXRoaW5nIGxpa2UgdGhhdC4K
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSBMaW51cyBUb3J2YWxkcwoKLS0gCmxp
+bnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
