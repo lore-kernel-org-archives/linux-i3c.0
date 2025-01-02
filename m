@@ -4,90 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D1A5E7719C
-	for <linux-i3c@archiver.kernel.org>; Fri, 10 Jan 2025 11:19:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CC8AAC02183
+	for <linux-i3c@archiver.kernel.org>; Fri, 10 Jan 2025 11:19:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CT7rnDXIOOPQCQ5hrUDREhPBuVkWibAS/l9uI6kUJbI=; b=JgCZRV0qxiztlu
-	JAZZZUBWqNs6Mh3C0fxl+jyLGuuJnnk57k2ZDMuHFUvQ9qXNHA4coF8dfV5Fp02D2BCfpu8A3vHCn
-	swACQgxaTgISBp3HyjQzHb+DqOZqGgUTQK/62nd7sbvFGCNREHRP+AKGAwLpD13ZgVCUGgkgtCOjY
-	KDX7S4gKGze53INSKPbz1C+Z32FXLKkzm8scp5L0ncGhm9/HA0xroFUS1UFsPXzopI4Qa4WkY+oRg
-	MOrChPfJvQGJVXCqSSI7NBE7NvJvF4z1n7cmzpVTiLwAkTb4MWDLCo7MxL3RCj+5h/2JYlUoFvUE0
-	9xDRkN/70K/MjjJyJUog==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=EfHl4xp8K6/2Ql8ozhhnY52x7tOHlftbhoFVESM3qPU=; b=jgWBGwj1CK8RfU7gsGQSnvoRCv
+	OApvQKZwazJ1FVDApWQVXuLGgFC2wM8RydJcu9j56TSDnghrNLfoQoI/D7miqSAGeBLQ0eZXNDTbf
+	bKhb1eGP8V42OwImPhh77NZQvKA3xG3YneSUc9VrbSWUoTma9eiodk+FchgDoLRd4z7ptgaE9YVuf
+	CpHY9uDKY8jnNcVO9RZATp+HyrGfD7T5Pst8+rtJExalxi2SWl3plXSoP5/jYfDz81JKiXQMlq2/g
+	6dSL+rnhXo1o9AtaezHNvL5s6a+gf4V991dO9iBKzMbbxoUL3G/QQYtSt4QcsuRPoPAwwzuhDx3x7
+	qnVTMEHw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWD2x-0000000F5Ra-0t6V;
-	Fri, 10 Jan 2025 11:19:23 +0000
-Received: from mail-wr1-x42e.google.com ([2a00:1450:4864:20::42e])
+	id 1tWD2y-0000000F5Sz-2NdL;
+	Fri, 10 Jan 2025 11:19:24 +0000
+Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tRrXn-00000003Kph-0rKz
+	id 1tTH8T-0000000A06J-3kr3
 	for linux-i3c@lists.infradead.org;
-	Sun, 29 Dec 2024 11:33:16 +0000
-Received: by mail-wr1-x42e.google.com with SMTP id ffacd0b85a97d-385e27c75f4so6138393f8f.2
-        for <linux-i3c@lists.infradead.org>; Sun, 29 Dec 2024 03:33:14 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1735471993; x=1736076793; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:subject:cc:to:from:date:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=WkndmCp+jPQ8r/fKjpZebPOCIHraDLC2krpRGXtKOvI=;
-        b=V//0WBnigWAV+8nYnKCMITRD8bsvLMg5TbYd5p1W3QqGicQoX39dl+MXC9lRLWfrWW
-         gDvP5ro8inv3EJNRCvR7nNzBjT8ptpYwovT7GtZJNPFUvIZ7CAUatZxtaeu/lrq+Hme0
-         FlzuUvCBiuu0ZT6mGZv6uEMtVXbpfhEEUZmHRWcXBhHdVfRInX/uQWVJFcLbhAXBT27C
-         srUCev8RSeI88KvuP/rgFZ9Z04/5eqFL1EVbae6kAzoG1gBX0rFNzhhm4wDS6desVmea
-         yU3+OKAw05EBC0NXr+mG11YEGr2vYcoevhdC76ba6mpb53T4e/0ffpZxfDJsCCeofCc9
-         du0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1735471993; x=1736076793;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:subject:cc:to:from:date:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=WkndmCp+jPQ8r/fKjpZebPOCIHraDLC2krpRGXtKOvI=;
-        b=SZ27ss+2kSt50RK2Ik8il6BmqpDbmjyGnBJvewnR+xwgV/D8QQEuvEFjmWhB30neOm
-         bRH02iFybaNGkb2ivlKnaGQWphzPZhT1J7bwUGYHFzQImFuoujf58oLEHTU8wiYQVJjz
-         VVaBOLQAT507e7nugsLjDVebR/y/CncSnbhLQjwL3lfxDmj58KiZfceq+JlG6MHkjNp2
-         vC9JyrNsM0iXrFAxYq8oxODgSdysW+HFGNBptCAq3+53LRo93Y1oMnzMWw6jpyWM+5vk
-         Qf/tWIIZFeZKGSPaaJEAxGyE0w/D2B0f/NQQKZfudIZ63jWWHSGyb3LuVzpi+v45KJZp
-         yC+A==
-X-Forwarded-Encrypted: i=1; AJvYcCX2ELWVs4zvXtWihne+pegraS1siwsUmRX6D8Y3AMSEmCZwDCEzRglZ4COUpXT1ssqNUOIJ0cVW2eE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzQjJv1p3sI4TkbzOMJxp3Bi+grAc22ByxzS7Z9E6ZYxqg2kNTM
-	gJANAyc8bu2hop0zJzL3qUXM1U2JJj8raZ8qepLyqxRHKsEwCJfC
-X-Gm-Gg: ASbGncuxKWGPGHtRV136bim2NkEHk/5/01bowvwrNv08Kw8UvUJSSbZhHtmCvYRO4yc
-	jCu20zeIn9+vIVVaxNmpGfkI5BhUkPvAs595I7BGUFUvZHdAG2t5OGvpmJDfK0Qm5RbyxJ0daU7
-	St1tipd7uKo66eTPr1h6oqB2oUh0kcoND7qdnokOHIxyZsnCyU8AhwfIfUhC7tmguYA2r5QhUi8
-	kYBASfieq2w7uzK/w+czvcCj3nUOVpRou9e6Xg2ZzuPF6sU+ZpxWiCL3wz/xflPOVdm0bTeJgTE
-	fsh+k4a7jN55n6U+5y8KMiQ=
-X-Google-Smtp-Source: AGHT+IFvftzXgl78vEYrm9XPeEnig4E4l73931Fxjl6fUhikR8JH2AY/yECzv08NDXPLb5jTMXlLow==
-X-Received: by 2002:a5d:64eb:0:b0:386:3711:ff8c with SMTP id ffacd0b85a97d-38a221f1fddmr24422470f8f.23.1735471993069;
-        Sun, 29 Dec 2024 03:33:13 -0800 (PST)
-Received: from dsl-u17-10 (82-69-66-36.dsl.in-addr.zen.co.uk. [82.69.66.36])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38a1c89e219sm27517675f8f.84.2024.12.29.03.33.12
-        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
-        Sun, 29 Dec 2024 03:33:12 -0800 (PST)
-Date: Sun, 29 Dec 2024 11:33:11 +0000
-From: David Laight <david.laight.linux@gmail.com>
+	Thu, 02 Jan 2025 09:04:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	sang-engineering.com; h=date:from:to:cc:subject:message-id
+	:references:mime-version:content-type:in-reply-to; s=k1; bh=Gs+2
+	hPH7cd2bDykXunJcpg5uE8woUThZ9MCwPZZn9t0=; b=RMprv/2byYA06/5TJ6P9
+	96Wl8iHffiFp/TG1JP2C8EHmoZFxCaCr4FgK85nw59KiwsjmVlry0nNhPH4hlshe
+	oWCo/BlCUx6ttXpMd78kyW4ZGmqA77f8zK7klVgSSwXK8BjSrLPVIAXMd4KXuJU8
+	UsbcFnxNC1D+B/cGh4PgBhKE6GcQ6yxrVrph+1o5MdRxmbvtvhkN6ctICoEQWeIf
+	kOPDFJiHyZdTPxQVIyl5+skwlx9Oc97RmCWf8q9Oe0qOZhJ5sXjiaH4sDjrZjMe3
+	AmLw3supcVDZMTcLkK/JgDHasAHSjd+nPsbvGETlkmCn0dqlzPyUsnnG56IUjWP0
+	+g==
+Received: (qmail 569827 invoked from network); 2 Jan 2025 10:04:56 +0100
+Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 2 Jan 2025 10:04:56 +0100
+X-UD-Smtp-Session: l3s3148p1@TLO3dLUqBJcujnsY
+Date: Thu, 2 Jan 2025 10:04:55 +0100
+From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 To: Geert Uytterhoeven <geert@linux-m68k.org>
-Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
- linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org, Rasmus Villemoes
- <linux@rasmusvillemoes.dk>, =?UTF-8?B?UHJ6ZW15c8WCYXc=?= Gaj
- <pgaj@cadence.com>, Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org,
+	Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+	=?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>
 Subject: Re: [PATCH RFT v2 5/5] i3c: cdns: use get_parity8 helper instead of
  open coding it
-Message-ID: <20241229113311.3b8f70d6@dsl-u17-10>
-In-Reply-To: <CAMuHMdWSQvyLwHyci+WVtTj4rGeR-hkjw1ap52=5X29ZzVchSA@mail.gmail.com>
+Message-ID: <Z3ZWt0Whyppr6GKX@shikoro>
+Mail-Followup-To: Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	Geert Uytterhoeven <geert@linux-m68k.org>,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org,
+	Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+	=?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>
 References: <20241229101234.2896-1-wsa+renesas@sang-engineering.com>
-	<20241229101234.2896-6-wsa+renesas@sang-engineering.com>
-	<CAMuHMdWSQvyLwHyci+WVtTj4rGeR-hkjw1ap52=5X29ZzVchSA@mail.gmail.com>
-X-Mailer: Claws Mail 3.16.0 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ <20241229101234.2896-6-wsa+renesas@sang-engineering.com>
+ <CAMuHMdWSQvyLwHyci+WVtTj4rGeR-hkjw1ap52=5X29ZzVchSA@mail.gmail.com>
 MIME-Version: 1.0
+In-Reply-To: <CAMuHMdWSQvyLwHyci+WVtTj4rGeR-hkjw1ap52=5X29ZzVchSA@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241229_033315_248949_1B7CF04B 
-X-CRM114-Status: GOOD (  24.77  )
+X-CRM114-CacheID: sfid-20250102_010458_208967_BF29480A 
+X-CRM114-Status: UNSURE (   9.28  )
+X-CRM114-Notice: Please train this message.
 X-Mailman-Approved-At: Fri, 10 Jan 2025 03:19:21 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -100,39 +79,68 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============4724946321262800917=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-T24gU3VuLCAyOSBEZWMgMjAyNCAxMTo0OTo1NSArMDEwMApHZWVydCBVeXR0ZXJob2V2ZW4gPGdl
-ZXJ0QGxpbnV4LW02OGsub3JnPiB3cm90ZToKCj4gSGkgV29sZnJhbSwKPiAKPiBPbiBTdW4sIERl
-YyAyOSwgMjAyNCBhdCAxMToxM+KAr0FNIFdvbGZyYW0gU2FuZwo+IDx3c2ErcmVuZXNhc0BzYW5n
-LWVuZ2luZWVyaW5nLmNvbT4gd3JvdGU6Cj4gPiBUaGUga2VybmVsIGhhcyBub3cgYSBnZW5lcmlj
-IGhlbHBlciBmb3IgZ2V0dGluZyBwYXJpdHkgd2l0aCBlYXNpZXIgdG8KPiA+IHVuZGVyc3RhbmQg
-c2VtYW50aWNzLiBNYWtlIHVzZSBvZiBpdC4KPiA+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBXb2xmcmFt
-IFNhbmcgPHdzYStyZW5lc2FzQHNhbmctZW5naW5lZXJpbmcuY29tPiAgCj4gCj4gVGhhbmtzIGZv
-ciB5b3VyIHBhdGNoIQo+IAo+ID4gLS0tIGEvZHJpdmVycy9pM2MvbWFzdGVyL2kzYy1tYXN0ZXIt
-Y2Rucy5jCj4gPiArKysgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvaTNjLW1hc3Rlci1jZG5zLmMKPiA+
-IEBAIC04ODksOCArODg5LDcgQEAgc3RhdGljIHUzMiBwcmVwYXJlX3JyMF9kZXZfYWRkcmVzcyh1
-MzIgYWRkcikKPiA+ICAgICAgICAgcmV0IHw9IChhZGRyICYgR0VOTUFTSyg5LCA3KSkgPDwgNjsK
-PiA+Cj4gPiAgICAgICAgIC8qIFJSMFswXSA9IH5YT1IoYWRkcls2OjBdKSAqLwo+ID4gLSAgICAg
-ICBpZiAoIShod2VpZ2h0OChhZGRyICYgMHg3ZikgJiAxKSkKPiA+IC0gICAgICAgICAgICAgICBy
-ZXQgfD0gMTsKPiA+ICsgICAgICAgcmV0IHw9IHBhcml0eTgoYWRkciAmIDB4N2YpID8gMCA6IEJJ
-VCgwKTsgIAo+IAo+IFBlcmhhcHMga2VlcCB0aGUgaWYoKS1jb25zdHJ1Y3QsIHRvIGJldHRlciBt
-YXRjaCB0aGUgZXhhbXBsZSBpbiB0aGUKPiBkb2N1bWVudGF0aW9uIGluIDEvNT8KClRoYXQgbGlu
-ZSBpcyBoYXJkIHRvIHJlYWQsIHdpdGggcGFyaXR5OCgpIHJldHVybmluZyAxIGZvciAnb2RkJyBp
-dCBjb3VsZCBiZToKCXJldCB8PSBwYXJpdHk4KGFkZHIgJiAweDdmKSBeIDE7CkJ1dDoKCWlmICgh
-cGFyaXR5OChhZGRyICYgMHg3ZikpCgkJcmV0IHw9IDE7CmlzIHByb2JhYmx5IGVhc2llciB0byBy
-ZWFkLgpCdXQgSSdkIGNoYW5nZSB0aGUgbmFtZSB0byBwYXJpdHk4X29kZCgpIGZvciBjbGFyaXR5
-Lgoob3IgX2V2ZW4gYW5kIHJldHVybiAweDgwIGZvciBldmVuKQoKCURhdmlkCgo+IAo+ID4KPiA+
-ICAgICAgICAgcmV0dXJuIHJldDsKPiA+ICB9ICAKPiAKPiBHcntvZXRqZSxlZXRpbmd9cywKPiAK
-PiAgICAgICAgICAgICAgICAgICAgICAgICBHZWVydAo+IAo+IAo+IC0tCj4gR2VlcnQgVXl0dGVy
-aG9ldmVuIC0tIFRoZXJlJ3MgbG90cyBvZiBMaW51eCBiZXlvbmQgaWEzMiAtLSBnZWVydEBsaW51
-eC1tNjhrLm9yZwo+IAo+IEluIHBlcnNvbmFsIGNvbnZlcnNhdGlvbnMgd2l0aCB0ZWNobmljYWwg
-cGVvcGxlLCBJIGNhbGwgbXlzZWxmIGEgaGFja2VyLiBCdXQKPiB3aGVuIEknbSB0YWxraW5nIHRv
-IGpvdXJuYWxpc3RzIEkganVzdCBzYXkgInByb2dyYW1tZXIiIG9yIHNvbWV0aGluZyBsaWtlIHRo
-YXQuCj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLSBMaW51cyBUb3J2YWxkcwo+
-IAoKCi0tIApsaW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNj
-Cg==
+
+--===============4724946321262800917==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="U50NYcqUFG7jCC2J"
+Content-Disposition: inline
+
+
+--U50NYcqUFG7jCC2J
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+
+> >         /* RR0[0] =3D ~XOR(addr[6:0]) */
+> > -       if (!(hweight8(addr & 0x7f) & 1))
+> > -               ret |=3D 1;
+> > +       ret |=3D parity8(addr & 0x7f) ? 0 : BIT(0);
+>=20
+> Perhaps keep the if()-construct, to better match the example in the
+> documentation in 1/5?
+
+Can do, don't care super much. I chose this construct because the other
+drivers in I3C use the above pattern. You still like the if() better?
+
+
+--U50NYcqUFG7jCC2J
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAmd2VrcACgkQFA3kzBSg
+KbYSfQ/8CfgGrO0RTP7xeBKPxOpWOzkAj6hdyH5myy2b8d9GgHV/vJA2UHBZP0os
+BKcPYVCIhNlae+FVmHVsH4RYesj5TGIHnqN9XBDQWV5GRaFtlSnpiB49qgI0EPcg
+nZABv4xvqaAF3ZuNIcm1AWoY2Uy6diSmfXcfVQ9uXtCLtaak/fXf6MAB0KWedacL
+dTn3paH0hVM+xYTarqVNbkDkKPdPaNzNzA+Vt/63n49A68M2noZ3rTt90FE0Pq7I
+ByCE7l7drWUg53KTIRXHGYp4b1wwqdcNqRHfHyoR6bQaa4gObAg45fmJ2y2U0O2K
+z3gZYEAKkwsqNmUO8sQyUKptt0CHu1rCXrnazdWwQ7/rJgLfPBtvxQQcv+jGn46c
+ZGYsqWiATXGfqPxzQ1NVIckC8Mp/A5KOySK0n3QMiSXNXebK9PNFE029sPWSpqu4
+gVNHzNSLonylc+bHuozdu0jX85rVI1KhSQGC/EGprS21AD+7AbDkPlgUmf1b+dbq
+lboOCox54EX0Ro4MyZCn9zNB8sRdOiC2hbotiXIbCijY1qzRwQruXn7AdTEdaY2h
+Y0T4jIWArdNxCNSFaiVODm9AxvO7BYZMTxD838FVKk4N0PKQDZWngKRlW1NcocSU
+TC8p+Km+Z+8tJ2AWS9BIj4QAn31rqmo9A38dJMZZMOp7tb2eGQo=
+=8Qzu
+-----END PGP SIGNATURE-----
+
+--U50NYcqUFG7jCC2J--
+
+
+--===============4724946321262800917==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
+
+--===============4724946321262800917==--
+
