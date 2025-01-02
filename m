@@ -4,89 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20321C02185
-	for <linux-i3c@archiver.kernel.org>; Fri, 10 Jan 2025 11:19:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1DB59C02184
+	for <linux-i3c@archiver.kernel.org>; Fri, 10 Jan 2025 11:19:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OuOf2V5+KHYbItwU0suFujEN68VQRX1dx+bslau0L0g=; b=ujEjFPymDKar+u
-	3Z4tw6T/+KXx13Wz8VmqskGHViJ55J683A9fFYQi0PjoGALvZ5j1SZSV545jmO7c5B3K+U/1oloLq
-	yMamUl/SaMcF+EKTQdBO03aPIH/YGySIJRR0ol+KygE9Jw4R5rQ74J0ckA41ar+nxd94Rczg3GfDB
-	iknIo85u0aSUhqe5Wmea4TIGJETH5Y6G9jD0tDPcGB86qYHOEovuADtG7R0+XOG2TaM2xo2YotIRs
-	ST7S0s9YzNtcr53kldwxjN9REHCmyQQXcE6zPMMc5NtgJEK4eK1DhYdYLUh9DRcGMU81H3LIQUwP9
-	+DZPpLftT1kuFtwl8JbA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=iKHhz6/xG1NzY8wlhVtU+F+lk1lIGkF+//VyKxT/JzQ=; b=zQ7ErneO275m3C4MuLmvrQM/f9
+	Y8RnUIZRxCkCvmBYNhLqWingsQgxsl8/wyX945WJF713BydO/iUKvrjH7tBCq1dwUsFlvSmtFT+Y3
+	+AUTFOTT49TBU4943d7vuLwUiIib8Q2Ya6+EBDRACvFu7QsSqWWfrvscy6/aQDNMEP19FVfkyshkk
+	9KDPzCnQlXtTC8FbFdaDKOrgCiXBK5JLixBJ70kEGPwwZ43jHLElNNCLXFL7lHOZnYaxm3O1XsoP2
+	dylBJQ2sHKo4KBc3CWINGD6vqdw15TrDJccq5x2RdgNnoH6svsvMobTDOz+iPZA3ucCPlTWEP97qN
+	De2Km/aw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWD2z-0000000F5Um-3TU6;
-	Fri, 10 Jan 2025 11:19:25 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1tWD2y-0000000F5TG-3fIE;
+	Fri, 10 Jan 2025 11:19:24 +0000
+Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTQHp-0000000BCX4-3VUK
+	id 1tTHai-0000000A3Mt-0mn2
 	for linux-i3c@lists.infradead.org;
-	Thu, 02 Jan 2025 18:51:15 +0000
-Received: by mail-wr1-x430.google.com with SMTP id ffacd0b85a97d-385e2880606so8561016f8f.3
-        for <linux-i3c@lists.infradead.org>; Thu, 02 Jan 2025 10:51:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1735843871; x=1736448671; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:subject:cc:to:from:date:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=57a1MiEtbo8S4K088lbZisrAhLcKykomSGmLmki4Hs8=;
-        b=im4VkhjIeI2vAOqOS8ESWvXR4HdfAa9CZDIJ1pY5YoAZObB/Tbf+ZpBQaZ1FBszugs
-         LOkNX7oGrvN3VJknth8IuWICkJqtMInY4aHr55x6QZq/D75XJPfLnbxF1L3CLCYrE5Wq
-         1bZkcej64E1Qgzt0cYqek/n4Xq7pVdM935S0rTsMQfiLF/DMTZy+aHE/EIFzzfuE3/9d
-         LKPDvF0UWZyYRHsri7hHW+RaE+DZ3hjfBU7l4RMY11GuvEhys/ELw8blt0x8IJAGLMbl
-         VYI+yZMdFdOY4/H0jrXmweiuyxR5Pg4fckEPwM9kkJrdHVrjsgUBEPkRAz1qUhvrhC2x
-         SCcw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1735843871; x=1736448671;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:subject:cc:to:from:date:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=57a1MiEtbo8S4K088lbZisrAhLcKykomSGmLmki4Hs8=;
-        b=HZ747aM0H4+i1pPuWXmlhTAnYGrdct0xpKvAoYCZTIjK4yaUtYuMStsNNOlVDQ9qe3
-         jEpUE3gzOvGxODPL46wArftKJMXPl5RLSOLGzMWgebvuuIAxVmZWZhYDgdwsJLOybFEd
-         GlLnkPePseXlB5iHRPmw6YfzI6ovAxTurvbCCsN9I/qslSsZg8g/xG2yWgscR0FnB7HG
-         wPrBdhnrbM9OlvLrlPVZQj9KwXkTnND90TOzzy/Iuuf9XWjrhlsnhdA95hui/FS0+iRs
-         6ryUm9HwEJYXK3W4DOIhMSCFLcysVDQyXO3JI5UIQU6JH8RReJNepqGNHTknnWtyBmSJ
-         rv7Q==
-X-Gm-Message-State: AOJu0YystHr6ZUPrCfTz/nzXFkSuqwtjwVtlAHe7oOw3/tTbPwwQ9RwP
-	14hZOr9fleBc+/yaUjaiLi4LRAYBBtaJT1IAh80SbVxBq5jfijJP
-X-Gm-Gg: ASbGncuZtC+p9FXAaURefWfuoCPdFGb5eoAsXzYZ74qU7C8/DZM0jGiDbeZU3ZBpPrQ
-	j555tJciM8SavBay29iKKtNuxdaAaLb2jDxhGE/mnMaDNyGfrX84wGtkGRQ9YctNp1W+57v9XH3
-	oq1F5Pf57nrqk7utWAHMlC5y23jWfsyEELE4D+bzwwKktcgM4+BP4lYlczL2F1q1UlEU+xHQF4B
-	gs3hbA5PGXyJE1581JYbVNgrciF+UZVAS13Mk8lGilVM2SHqkECijLi2oiW2cGDd3EfsNrTxkme
-	4M/SNh3eHG6LkXZtyM6ON98=
-X-Google-Smtp-Source: AGHT+IE2RkxHp877sm0DcGHXQgRYmP0kbp9aKFcV/65MDXSCqdsC+6SWJDQ8gzU2tDrAYedaFvqTUQ==
-X-Received: by 2002:a5d:47c8:0:b0:386:33e3:853c with SMTP id ffacd0b85a97d-38a221e2394mr38117867f8f.12.1735843871215;
-        Thu, 02 Jan 2025 10:51:11 -0800 (PST)
-Received: from dsl-u17-10 (82-69-66-36.dsl.in-addr.zen.co.uk. [82.69.66.36])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-38a1c8acb17sm38266690f8f.97.2025.01.02.10.51.10
-        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
-        Thu, 02 Jan 2025 10:51:10 -0800 (PST)
-Date: Thu, 2 Jan 2025 18:51:09 +0000
-From: David Laight <david.laight.linux@gmail.com>
-To: Wolfram Sang <wsa+renesas@sang-engineering.com>
+	Thu, 02 Jan 2025 09:34:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	sang-engineering.com; h=date:from:to:cc:subject:message-id
+	:references:mime-version:content-type:in-reply-to; s=k1; bh=/ah5
+	xhm6mtrySf6gsY3Egz2SD7FibMEgTbn2LDw8Un0=; b=laUvLUErUFBxGEnolQny
+	+yeaxgT3or1obE2jkH1yzN0xsDjExJFnXqD2Ci4u9GdxJweIgWR5PGETGDtqchH8
+	J8hYyCw7PVNs/ZF47IwMhY7m+LOKMLCiqbu0pCCEkB5EAuuqgHjJFgGygPwTCpl5
+	ktol4wibhQSmrF0SUO9LaXXHEa3DNqZD0WGVPHLeb5S2o/jmNByeRCACfvRLgLRh
+	fTX107iUZsLyAMzVP27ZuRyIvKPJ8jrA0828Uq98IQAb8iHRjSl3Z2d7BgCbY4Pu
+	i0Oe2WZedX3SOJVnKzLwALW0X8pputgwCQ3H/mGv/al0WIAtPNnFCM1vhfJEGFm/
+	tg==
+Received: (qmail 576982 invoked from network); 2 Jan 2025 10:34:06 +0100
+Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 2 Jan 2025 10:34:06 +0100
+X-UD-Smtp-Session: l3s3148p1@VscJ3bUqrKwujnsY
+Date: Thu, 2 Jan 2025 10:34:05 +0100
+From: Wolfram Sang <wsa+renesas@sang-engineering.com>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
 Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org, Rasmus Villemoes
- <linux@rasmusvillemoes.dk>, Alexandre Belloni
- <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH RFT v2 4/5] i3c: mipi-i3c-hci: use get_parity8 helper
- instead of open coding it
-Message-ID: <20250102185109.0862cae6@dsl-u17-10>
-In-Reply-To: <Z3ZV_D5AIUxFR1Bw@shikoro>
+	linux-renesas-soc@vger.kernel.org,
+	Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+	=?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>
+Subject: Re: [PATCH RFT v2 5/5] i3c: cdns: use get_parity8 helper instead of
+ open coding it
+Message-ID: <Z3ZdjRQa0nF1IYaU@shikoro>
+Mail-Followup-To: Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	Geert Uytterhoeven <geert@linux-m68k.org>,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org,
+	Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+	=?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>
 References: <20241229101234.2896-1-wsa+renesas@sang-engineering.com>
-	<20241229101234.2896-5-wsa+renesas@sang-engineering.com>
-	<20250101121431.05d831c7@dsl-u17-10>
-	<Z3ZV_D5AIUxFR1Bw@shikoro>
-X-Mailer: Claws Mail 3.16.0 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ <20241229101234.2896-6-wsa+renesas@sang-engineering.com>
+ <CAMuHMdWSQvyLwHyci+WVtTj4rGeR-hkjw1ap52=5X29ZzVchSA@mail.gmail.com>
+ <Z3ZWt0Whyppr6GKX@shikoro>
+ <CAMuHMdWTUwtVFV0o-Hsxp+eTscHHuzOmnBjv7BPoK8moQ7i9Qg@mail.gmail.com>
 MIME-Version: 1.0
+In-Reply-To: <CAMuHMdWTUwtVFV0o-Hsxp+eTscHHuzOmnBjv7BPoK8moQ7i9Qg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250102_105113_882248_1E6FCC14 
-X-CRM114-Status: GOOD (  16.61  )
+X-CRM114-CacheID: sfid-20250102_013408_509850_B07DD825 
+X-CRM114-Status: UNSURE (   7.92  )
+X-CRM114-Notice: Please train this message.
 X-Mailman-Approved-At: Fri, 10 Jan 2025 03:19:21 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -99,48 +81,66 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4294262219561423336=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, 2 Jan 2025 10:01:48 +0100
-Wolfram Sang <wsa+renesas@sang-engineering.com> wrote:
 
-> > > @@ -123,7 +114,7 @@ static void hci_dat_v1_set_dynamic_addr(struct i3c_hci *hci,
-> > >  	dat_w0 = dat_w0_read(dat_idx);
-> > >  	dat_w0 &= ~(DAT_0_DYNAMIC_ADDRESS | DAT_0_DYNADDR_PARITY);
-> > >  	dat_w0 |= FIELD_PREP(DAT_0_DYNAMIC_ADDRESS, address) |
-> > > -		  (dynaddr_parity(address) ? DAT_0_DYNADDR_PARITY : 0);
-> > > +		  (parity8(address) ? 0 : DAT_0_DYNADDR_PARITY);  
-> > 
-> > NAK - that isn't the same code at all.  
-> 
-> But the same algorithm? Please elaborate where you think the new code
-> will fail compared to the old one. And frankly, are you aware of
-> different parity calculations? Have you read the link which was in the
-> kdocs of my new function?
-> 
+--===============4294262219561423336==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="dG7YwNWMrpV0uZwn"
+Content-Disposition: inline
 
-The old code is:
-> -static inline bool dynaddr_parity(unsigned int addr)
-> -{
-> -	addr |= 1 << 7;
-> -	addr += addr >> 4;
-> -	addr += addr >> 2;
-> -	addr += addr >> 1;
-> -	return (addr & 1);
-> -}
 
-So:
-1) it always sets 0x80.
-2) it uses addition not exclusive or.
+--dG7YwNWMrpV0uZwn
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-So just not the same definition of 'parity'.
 
-	David
+> Let's add more bike-shedding in 2025 ;-)
+
+Yaaay... :/
+
+> There's also a general dislike for the ternary operator (BTW, I do
+> agree it has its uses), especially if one of the paths is a no-op,
+> like ORing with zero.
+
+Well, let's see what Alexandre's view is on this. I'll switch to that.
+
+
+--dG7YwNWMrpV0uZwn
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAmd2XYoACgkQFA3kzBSg
+KbZuyhAAiV3y/bQnMst/gXIaeHGX4FaSgRuGw0HCqDl/yvD4AcPuD3AmmfOJ3/+J
+bMcnOSoGve2OgFK8vQR//GuXh3qb6EXO2yteIC7veSYnmqWTJAer2T+660zXd0gh
+yedlGhkN5YLIPcPxSS8057lczfBm2rDs1MlbRa0vBwxI9i7rSXH7fDCn+FGA5wve
+SrrSHDol8TmZPw+9xn6Faukgai28dhbwIZ4vRHpgE15VO4y8wUBpNpIF7yqdNWFS
+2iWkXMwGLMThGAsRWrUY3u1HEaf3PDf0RYp0Vj8skWiS7jNFVaB91XDi51nGD9YJ
+NCq1zoIBfyJNJ2JrsDJTcPcez9uSu1++J+NnPh+SbzuZB5rhU8ehXqW/3pIDipQ+
+6sjPcSfaamJbcgl+ED0cnuGohGqSdPoL+vD5FJYnJfNkKcsYP8+1+a6I8QVZ8Bq4
+c+zTDKyog1EsQNJe5cVNaqWTow2EL7kqceZUp1GtSbQJ3uL/RL+D5mXTdUDLvc16
+XduvtGKrioCBPO4OzcuqN/cxEo15dA7UTZEsWSvdd7PlpZo/Uf69VgrW/n1+sjHT
+0tCC5a+gJd+r7THCE+DDkGy1RBQEt7bv8fq+ANvUMCdy1mhYIEZbDsUl7r8s0y0r
+k4ExQbIFIhY2WAAhUwMudQNWsUAq3dDLvXIIoChkv3TqyGvcei0=
+=U6wC
+-----END PGP SIGNATURE-----
+
+--dG7YwNWMrpV0uZwn--
+
+
+--===============4294262219561423336==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
+
+--===============4294262219561423336==--
+
