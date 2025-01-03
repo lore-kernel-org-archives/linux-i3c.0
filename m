@@ -4,75 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0BBF0E77188
-	for <linux-i3c@archiver.kernel.org>; Thu,  2 Jan 2025 14:19:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D242E77198
+	for <linux-i3c@archiver.kernel.org>; Fri,  3 Jan 2025 15:26:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2RWQ/UZXBsVUZiRkBSAeU2GZDyOuve7bVQVbY8yYPRM=; b=blnD1vhrLDU7Yr
-	dCWug/gMpyLA4fQoU/xxj0jYE84BHqDeGJCrkWjtZXU23iH9eSZfXnhZg6oVVxmaQYl65I7IvM5OT
-	VimPoO603L2CE0sKz0vUpPwH40LnWzqXJkExEgA6rh//IJAsT/CTpnQFEXh1ySgMtYygnDRx62bIX
-	xwUsI08bBbkzQv6cc4+V67cXDU/cFQ2tY4uMnBCy8Id9Zn+YnZtHDJ9+AujNF2LZLwPtmZMhbEogZ
-	p1KNyVYCayADINyFBcYY1V5dVNSt7KeGklm8ngI2ETr3yc4pEoRzj57f6Kbh2w24kUKi7fLv9Ju9y
-	9+ga9kOotP6r8AQ8QaEA==;
+	List-Owner; bh=83njIz/pWuqVs2UvRTIFjsbXxPTP5BzIQPz5a+x5BtM=; b=qSNDq5XKimpNSN
+	xXCN+Gw0+FUsbG9sngHk/bTwpjpoZQl/Cks7ntr9Lc3jhZAkaOxGtCtwlLERlHiswq0s59/0cHsbW
+	CqIhMAo+PU5ztxqqx56Ye9uoylONTl6vCCXZsqLE2L9HKnRA2XEgQQd4hEWtK5yguS4vp9AKrkIFQ
+	KxvK9FoQFibVR26JPgKjtmM+9WeZJoMpHTfukYX3HzaT7O50XHc2CngS1zKyI5jow5Xv6E+GNpQyr
+	QPS3/4gqIvWLYxfW1AFNjMAod2HXYfli+ed4sABkstEOz3DtGrg1r6dpeTS2rl195kkuUW7zgFiki
+	UsjjKzaLz8JJY++dscjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTM2r-0000000AaIi-2kxB;
-	Thu, 02 Jan 2025 14:19:29 +0000
-Received: from mgamail.intel.com ([198.175.65.20])
+	id 1tTjZK-0000000DH4y-3ki3;
+	Fri, 03 Jan 2025 15:26:34 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTM2p-0000000AaI8-3ObS
+	id 1tTicD-0000000D6T1-3Qdl
 	for linux-i3c@lists.infradead.org;
-	Thu, 02 Jan 2025 14:19:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1735827568; x=1767363568;
-  h=message-id:date:mime-version:subject:to:cc:references:
-   from:in-reply-to:content-transfer-encoding;
-  bh=rm94Wn4LvKiu88EToTbZs1ptXX/jO3nGcHuSO/KyWDw=;
-  b=i2apnsVyL9FiKs3xYbZ4RApXwQdkST8aljsY40WK1R7ZEETX2JKa/3Ji
-   tWxJdOeb8tDYAkrxpt0Nhe4H5No73hg3aXo3jWniXLqGcwyPNhx4+uttT
-   FOr1XED1f7j6tgEd/Lf/Qh/0Az9+oqrxlCj4GBAWjfasKqYopvJpA983X
-   CUCa8m89jYzXGxUAp0g+MvScfdQm+XtssqL9o0AOtaEkgS1BWEWRGq2jP
-   ZwqjOYv95xBwjx9nOVDcPK4RFpVusJp0YL37RKw98rHS7iBjCBUBFmqT+
-   PNRGuwLvJ9LwXv29YLdY8N9PA+YwPYMiEafhPsYpI4ZdTdmk5AFqDoaZc
-   Q==;
-X-CSE-ConnectionGUID: ouPP+4mHTfaKWbhFs2tedg==
-X-CSE-MsgGUID: 1dVJbOs6TziOhVOjdiDIqw==
-X-IronPort-AV: E=McAfee;i="6700,10204,11302"; a="35765652"
-X-IronPort-AV: E=Sophos;i="6.12,285,1728975600"; 
-   d="scan'208";a="35765652"
-Received: from fmviesa009.fm.intel.com ([10.60.135.149])
-  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 Jan 2025 06:19:13 -0800
-X-CSE-ConnectionGUID: jvEewcFBSQSc47fU8lfD7A==
-X-CSE-MsgGUID: YOazHrQqRHWuwLA3uTw5uA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.12,285,1728975600"; 
-   d="scan'208";a="102018216"
-Received: from mylly.fi.intel.com (HELO [10.237.72.154]) ([10.237.72.154])
-  by fmviesa009.fm.intel.com with ESMTP; 02 Jan 2025 06:19:10 -0800
-Message-ID: <76f97f65-28ad-4d7f-894c-e2d1f241e973@linux.intel.com>
-Date: Thu, 2 Jan 2025 16:19:09 +0200
+	Fri, 03 Jan 2025 14:25:31 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id B25FC5C627A;
+	Fri,  3 Jan 2025 14:24:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5548FC4CECE;
+	Fri,  3 Jan 2025 14:25:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+	s=korg; t=1735914328;
+	bh=9rkDFEkGJMZh9gqmxw60dXjoOQeA4ixOSDAGcEo3bgw=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=Kso0gLsOnKVaCZXGRozJqP9zLznelBJwtMkW0qURcHulbiBFW3jYDy/Gy8SHF57Gy
+	 6F8K4rXBmZXia78C9mG74cJC2xuucC6P+6b88ntInL8wfSMj7F1UoiIDj/1TW3OqfI
+	 +E7XWDjrZehRDdI/upmAXA4ncIlSV4P1uhcC+IFE=
+Date: Fri, 3 Jan 2025 15:25:26 +0100
+From: Greg KH <gregkh@linuxfoundation.org>
+To: jianqi.ren.cn@windriver.com
+Cc: stable@vger.kernel.org, kxwang23@m.fudan.edu.cn,
+	alexandre.belloni@bootlin.com, patches@lists.linux.dev,
+	pgaj@cadence.com, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 6.1.y] i3c: master: cdns: Fix use after free
+ vulnerability in cdns_i3c_master Driver Due to Race Condition
+Message-ID: <2025010340-unearned-snare-fa78@gregkh>
+References: <20250103070420.64714-1-jianqi.ren.cn@windriver.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RFT v2 4/5] i3c: mipi-i3c-hci: use get_parity8 helper
- instead of open coding it
-To: Wolfram Sang <wsa+renesas@sang-engineering.com>,
- linux-i3c@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>
-References: <20241229101234.2896-1-wsa+renesas@sang-engineering.com>
- <20241229101234.2896-5-wsa+renesas@sang-engineering.com>
-Content-Language: en-US
-From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-In-Reply-To: <20241229101234.2896-5-wsa+renesas@sang-engineering.com>
+Content-Disposition: inline
+In-Reply-To: <20250103070420.64714-1-jianqi.ren.cn@windriver.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250102_061927_897787_748F7EDD 
-X-CRM114-Status: GOOD (  10.05  )
+X-CRM114-CacheID: sfid-20250103_062529_896062_606B0233 
+X-CRM114-Status: GOOD (  14.27  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,31 +67,52 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 12/29/24 12:12 PM, Wolfram Sang wrote:
-> The kernel has now a generic helper for getting parity with easier to
-> understand semantics. Make use of it.
+On Fri, Jan 03, 2025 at 03:04:20PM +0800, jianqi.ren.cn@windriver.com wrote:
+> From: Kaixin Wang <kxwang23@m.fudan.edu.cn>
 > 
-> Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
-> ---
-> Changes since v1:
+> [ Upstream commit 609366e7a06d035990df78f1562291c3bf0d4a12 ]
 > 
-> * renamed from 'get_parity8' to 'parity8'
-> * rebased to 6.13-rc4
+> In the cdns_i3c_master_probe function, &master->hj_work is bound with
+> cdns_i3c_master_hj. And cdns_i3c_master_interrupt can call
+> cnds_i3c_master_demux_ibis function to start the work.
 > 
->   drivers/i3c/master/mipi-i3c-hci/dat_v1.c | 11 +----------
->   1 file changed, 1 insertion(+), 10 deletions(-)
+> If we remove the module which will call cdns_i3c_master_remove to
+> make cleanup, it will free master->base through i3c_master_unregister
+> while the work mentioned above will be used. The sequence of operations
+> that may lead to a UAF bug is as follows:
 > 
-Please rename s/get_parity8/parity8/ also in the subject line of patches 
-3-5.
+> CPU0                                      CPU1
+> 
+>                                      | cdns_i3c_master_hj
+> cdns_i3c_master_remove               |
+> i3c_master_unregister(&master->base) |
+> device_unregister(&master->dev)      |
+> device_release                       |
+> //free master->base                  |
+>                                      | i3c_master_do_daa(&master->base)
+>                                      | //use master->base
+> 
+> Fix it by ensuring that the work is canceled before proceeding with
+> the cleanup in cdns_i3c_master_remove.
+> 
+> Signed-off-by: Kaixin Wang <kxwang23@m.fudan.edu.cn>
+> Link: https://lore.kernel.org/r/20240911153544.848398-1-kxwang23@m.fudan.edu.cn
+> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> Signed-off-by: Jianqi Ren <jianqi.ren.cn@windriver.com>
 
-For this patch:
+Wait, why are you all submitting stable patches again?  I thought I
+asked you to change how you all did this AND discuss it with me after
+you came up with a plan on how to move forward.
 
-Tested-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+What happened to all of that?  I'm dropping this, and the other
+submission you sent as nothing seems to have changed :(
+
+greg k-h
 
 -- 
 linux-i3c mailing list
