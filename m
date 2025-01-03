@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7519E7719E
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33766E7719C
 	for <linux-i3c@archiver.kernel.org>; Fri, 10 Jan 2025 11:19:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
@@ -12,62 +12,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6y22x1//k7HXkBhtyozMTdtcofh464CL/GdvHbDullw=; b=O5bqc845np7Y6Myh9trrGtf8HH
-	16TlVh5ZCKIKLKUPZcuEmuq3mWy9UHEWX/vLA0nqwBLdPWN0OvAFhmT1TP1CTiedZX5rtUJ8Ty8hT
-	Qv3B1eLT1/XbxowFVhyvYNFonFM1HlBSKj3wCD+KCFTGmgWDJRiytqvX6uv/DpESlgGe1QMI6uvlK
-	2k7MaZ0cU5o0+N7nZ60IB6xizdF4itvX8ycK8d5wQJuqFvqyOl5aH36ZrCjh0owZVTajeCiQDrVKY
-	B6bZ3cMMlO3EqRshUWgO0m1Ywz+GcH73x6XrnBGQBXjXjWxSJmMeH2PX7J0JB0BUKAkVKqbUjwVxg
-	TMwqerZQ==;
+	bh=CCuegBnSzBildVi9e6C3mxLWBVTqQoaAqBvoEKxDTRc=; b=0UUkOwJgkjQlSbGzCuey5d5b4q
+	F6ihvfHD0vqmM1fp2nENkO5BnnpREB66MWSlJ59lktFqZElpd5i8ireMdtTEowItRKguaGXlu8+DU
+	atA4shtiIFlD7CttqAhJiMvkd/zYImQ7rvIDt+c9jGteItToGpltkzafsmBfgWd15dmSyhC2FA0LX
+	9wWu9N2V/TniY49HZynZucC1ey1pNOVpj8isUdZWI8Irpxzc40yfowm5Af41Smh47W3uIxlaUAC9x
+	yqetB5SBWlB6oYMld/IH6yjvoASiBA29ToYTJVo36/6++piUjX5xeRZ/+R1L8LWf1Kk8Vv3tpsPOb
+	LccvXFqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWD32-0000000F5Yg-23ok;
-	Fri, 10 Jan 2025 11:19:28 +0000
+	id 1tWD31-0000000F5Xm-3YN2;
+	Fri, 10 Jan 2025 11:19:27 +0000
 Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTpyA-0000000E6nF-0M93
+	id 1tTp2Z-0000000E0TB-3seg
 	for linux-i3c@lists.infradead.org;
-	Fri, 03 Jan 2025 22:16:39 +0000
+	Fri, 03 Jan 2025 21:17:10 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	sang-engineering.com; h=date:from:to:cc:subject:message-id
-	:references:mime-version:content-type:in-reply-to; s=k1; bh=fQ36
-	u4RBvl7vsyvt0Jy3P02z22WoejyNRPTjgjmI4A4=; b=dYzPcXUMa3zAaEA+FS07
-	NduiAIrSefPkHSqfxN8ygpiAvmxCsnxRGRNlsJgANdk4dsaBd/800eEYI0yTGypS
-	jDypMdbiCOU1cvTSuya6s1kH4iJp5egSnKSzILEMJBop18q4jhBdzO7GrnJHM5uW
-	q2qrMbDVn4OqDbStWRlMgFBqgmDPOR222vI4taj5n76xt0wJWRnd8aeBlUqeD6eM
-	bazoeMaZtK0ggFyY1VgnqdiEZblrCcLTONzDS1Xj6z47/WbSxXXTrBGVAHLYZDLw
-	/FBtx95aW2Bu8xVnZrf8SUFWcERqyP1H0//Evta20NE/rI909DazUfLoX1xI3MVn
-	2w==
-Received: (qmail 1013832 invoked from network); 3 Jan 2025 23:16:36 +0100
-Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 3 Jan 2025 23:16:36 +0100
-X-UD-Smtp-Session: l3s3148p1@sSPGodQqRp8ujntM
-Date: Fri, 3 Jan 2025 23:16:35 +0100
+	:references:mime-version:content-type:in-reply-to; s=k1; bh=lW9q
+	216v/MpYpcldJp7rmupZIQwjR4e7csFThX//ud4=; b=ZJxcqJ6tjzbqh6Dc8V9G
+	O8kgOEtaxdYpIjK6rdk4J78s5lzivO/BoodISSw4JHHZhdDTwLI7JRXpbaoYpa/e
+	VRMnMGrzO8BN+6/oj+EqInpEXTaaiAfZFLEQIryGfIWu9d5f1fGiXv4npzdx+kxO
+	/AFuLcGWd2rvQ9db0JMdx0C/NFoJFR3GkDz55JBjWLWo/ZjPSmpu3OuSlBcXafnK
+	+de870OwRTrW2dxyz5Ez2JaDDG9BWpND16geNz8K/NIFL6YaPfVORLK/bRdEfGts
+	NsQuZrjsNc79hdLN+zE+jkdWBI/P3cNqZzksaT9nsEO3Iv+RUQGFn1jH0tY3rnAn
+	Lw==
+Received: (qmail 1005039 invoked from network); 3 Jan 2025 22:17:03 +0100
+Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 3 Jan 2025 22:17:03 +0100
+X-UD-Smtp-Session: l3s3148p1@ou7UzNMqSpsujntM
+Date: Fri, 3 Jan 2025 22:17:02 +0100
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: David Laight <david.laight.linux@gmail.com>
 Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
 	linux-renesas-soc@vger.kernel.org,
 	Rasmus Villemoes <linux@rasmusvillemoes.dk>,
-	Guenter Roeck <linux@roeck-us.net>,
-	Jean Delvare <jdelvare@suse.com>, linux-hwmon@vger.kernel.org,
-	=?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>,
-	Yury Norov <yury.norov@gmail.com>
-Subject: Re: [PATCH RFT v2 0/5] i3c: introduce and use generic parity helper
-Message-ID: <Z3hhw_pwFAicsEDi@shikoro>
+	Alexandre Belloni <alexandre.belloni@bootlin.com>
+Subject: Re: [PATCH RFT v2 4/5] i3c: mipi-i3c-hci: use get_parity8 helper
+ instead of open coding it
+Message-ID: <Z3hTzvxp-Hzqnlj0@ninjato>
 Mail-Followup-To: Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	David Laight <david.laight.linux@gmail.com>,
 	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
 	linux-renesas-soc@vger.kernel.org,
 	Rasmus Villemoes <linux@rasmusvillemoes.dk>,
-	Guenter Roeck <linux@roeck-us.net>,
-	Jean Delvare <jdelvare@suse.com>, linux-hwmon@vger.kernel.org,
-	=?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>,
-	Yury Norov <yury.norov@gmail.com>
+	Alexandre Belloni <alexandre.belloni@bootlin.com>
 References: <20241229101234.2896-1-wsa+renesas@sang-engineering.com>
- <20250103221117bb066057@mail.local>
+ <20241229101234.2896-5-wsa+renesas@sang-engineering.com>
+ <20250101121431.05d831c7@dsl-u17-10>
+ <Z3ZV_D5AIUxFR1Bw@shikoro>
+ <20250102185109.0862cae6@dsl-u17-10>
+ <Z3e1tuAR5GsEhYLz@shikoro>
+ <20250103134935.2a341ce0@pumpkin>
 MIME-Version: 1.0
-In-Reply-To: <20250103221117bb066057@mail.local>
+In-Reply-To: <20250103134935.2a341ce0@pumpkin>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250103_141638_408179_35C79220 
-X-CRM114-Status: UNSURE (   6.76  )
+X-CRM114-CacheID: sfid-20250103_131708_892206_9707A282 
+X-CRM114-Status: UNSURE (   9.84  )
 X-CRM114-Notice: Please train this message.
 X-Mailman-Approved-At: Fri, 10 Jan 2025 03:19:21 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
@@ -81,57 +81,68 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1555866746196518609=="
+Content-Type: multipart/mixed; boundary="===============3637283853407030768=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 
---===============1555866746196518609==
+--===============3637283853407030768==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="vWkKxqYQ0LzC93DX"
+	protocol="application/pgp-signature"; boundary="EcPlJkNb456QJKj5"
 Content-Disposition: inline
 
 
---vWkKxqYQ0LzC93DX
+--EcPlJkNb456QJKj5
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
 
-> I'll apply the series once you get some agreement on the function name.
+> > Right, this is why the arguments of the ternary operator above are
+> > exchanged. The old function was basically 'is_odd'.
+>=20
+> Provided the high bit isn't already set - which it may not be.
 
-Thanks!
+Not here. Temporary I3C addresses are in the range 0-0x7f.
 
-As said in that thread, the function name has already been changed in v2
-to the liking of the bitmap.h maintainer (Rasmus) [1]. He has not
-responded to this series yet, though.
+> add: 00010001 =3D> xxxx0010 =3D> xx10 =3D> x1
+> xor: 00010001 =3D> xxxx0000 =3D> 00xx =3D> x0
 
-[1] https://lore.kernel.org/r/CAKwiHFiamZ7FgS3wbyLHo6n6R136LrLVCsih0w+spG55BPxy8g@mail.gmail.com
+This point goes to you :)
+
+> I bet the target isn't checking...
+
+Could be, I can't tell. I don't have this HW.
+
+> So you might be fixing a bug.
+
+Heh, which better argument could one have for a generic implementation.
 
 
---vWkKxqYQ0LzC93DX
+--EcPlJkNb456QJKj5
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAmd4Yb8ACgkQFA3kzBSg
-KbZYjA//elZOLLgLgNAi1ekQ9sJ5IvZL47Vbkvlg8eOFGCNZ4q6JhUt/jZ0bW1Yr
-Oz8+UY8leDLTJPHteFiy84/VDqihax6tge4EoEt87bSHu8UI90BWCGhaVf4ndpsa
-pt6KdKGHIPbOjKdbeDfLKy7oP8UWe5jnFgmMGHr9iLcAYR+T6TW4NtI9jrD1kWCl
-/hr1iIHZFAY10IxLd1HbX3T1RMBH+fLjoYvvStj7mFZMSUcl9ya8uvgrgpyIa9SL
-SGDgCRR1CbQoY0zldNWTP9n5wFX7BMV/R+ITF1P5v3qHIdw0Q3i2L/CtAegNuaIp
-0GZE5wyNn4GjAZuRlGbrqxB5ykEkPUketdkHkjWmk4sRRxuHoPSSNH+z1vHHR+CE
-skyKlP+Z2DvwSosz8jVRnKU5YqymGyRaFPp3WijQlcMTa7D57gYyNXYpuEWAkPya
-x5vakd+6UxlbWFWxxo/0MAzkaSH5Q0tfRGMhx9Cu0CLcSNKt09gVNN60RVMq4udz
-Sbug0DEa53ubXFV+5X1VLI2+KljA/TlHsSDSL2HsyiZcaYhOaN9IbK9y4Ov4vMMZ
-fW8Y4jFMU9tN8r3vsc/l63236r6jY8aTwWJVurTNP8zPxE+jEtqnoVHJIo+nOYZm
-etaHLqqrP82WU/SfmPoOUxe4zV0zb3/238DEcyECUa0Hq1afSp8=
-=XizP
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAmd4U8oACgkQFA3kzBSg
+Kba2VBAAmBhXzsbbdQpWixvV4lFcW6UgXPdolUdoXYNCvH5vxoem89KEyLTQjit0
+HzbKVWbXNb2MpTnBIrukZjB+XV2qacvxYhyXMc9mPx+GyAk/5QnaSvng+n4ycf04
+MYwLQcO2003DJLJff1rOUGCeBVWGWgnNS0bII7h/UZlsuBNBtrJcGUk0qq9zPEqy
+rqyT2bMK4O10T1+B38ZeVqJTXOX5LsJYjluYk5Szbc31qTfaVBavnOYoqlPONsMs
+Ql8TZFeNU6kk8u49yFZej7gQBdGNHhur+eByy7u8emv7XmmA+SIzsvhb72Rc2ut3
++OmB5ZdCsoU8guzZmnoZtX31N5GFA4vHqfqL7edgD4n8fCOYwXze7Z4XJH4jIAmM
+HOX1Em1gC+T3YIC4KnVP8+kMWMm+4K+yK9O/AHWeO8LKwMxet1c02y9lA3kjQMmQ
+LOL6UVuiTuqPPfNBtYMH8Hq27ivh9ZYPGh51bamR9l0F9ntx0fze4qa+4Wy8z1ZU
+0AbB8ldlmKFOuMNUJdQ/+AtE367c/qDRnU81ggpJxOV9dPL8tIzPM4pY1uz9nIEk
+9Q6MywuN8kvl9zj2T6j/PqeGR7Gsv/aSsiE28reNJpRGH4lUeD6TCPCkwCSfr96H
+lvahmkVIRiJ3CNxfGvuu0rtGcReQDnNp8HPeUSYTb0p+Cs8VQcw=
+=sQJU
 -----END PGP SIGNATURE-----
 
---vWkKxqYQ0LzC93DX--
+--EcPlJkNb456QJKj5--
 
 
---===============1555866746196518609==
+--===============3637283853407030768==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -142,5 +153,5 @@ linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
 
---===============1555866746196518609==--
+--===============3637283853407030768==--
 
