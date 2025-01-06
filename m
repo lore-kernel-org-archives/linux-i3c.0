@@ -4,62 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 74E36E77188
-	for <linux-i3c@archiver.kernel.org>; Fri,  3 Jan 2025 22:11:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D372E77188
+	for <linux-i3c@archiver.kernel.org>; Mon,  6 Jan 2025 07:18:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T1dF1hHNXRXpfyDqqw+IaRPWgKaz50Cc33KoaXKTX6g=; b=LuhbM9pEt5z/rM
-	vOztGcL0yQFBe8BxRSxEgGFAzb7BU+q5y3qlKmCsM52rojdWL3ZIXJDwOn653A2WNwjZZnn8DZQps
-	y65/EvSdK5Z/QXjBMf56NOZEZ1blbsRd7h6WGfY2Fvgm9uSr1dHpX0LHV13b0jnes0rJ8aUAqj7Fv
-	IqCNhRUmcz6/e76w+O3hbfa3EhI5idyu1trbHCjVoMq82NvnRxzDbzxocWB91HOQ8/myf2y4tgNfe
-	FjGtsZvLohXmx/hsoRIm2nx3Re580FdUX5r/ACIthKlJ26itHNKBOcPogtQ3MO8YB55RPw2IZ2BpD
-	isEyWKWMiPL9ytrIJNIg==;
+	List-Owner; bh=XxrfS3QhNj6mIpiuFU/Mn8shRQGzlEqBGsQSQRQpk+E=; b=Q9fSJ0hFjS1umj
+	RAz5AyCNXS2wY54ryuzDPAvy5qw36f5jgmPw3sHRY7Tl7feIQUzqCHcF3cDGifado5LSRzyfxDMxY
+	JbWf4RCWUPZVdVhkJew/YxZz3oV1u0RUjEVL0HdReiz9s/il9lr8j2WhG6YjLbV0q2KwEcU1mZMui
+	Kk5xTVhbX/Nwy0V5+DqThvlj5rwV0kHkTc0ASIXZAoXTT7VKhdknH9kaDQ6Ew0WBKRv4AxrHs8OF1
+	Uvp/F8I6Ut+LYxpm8saVlQ+7vA3z9gS3FjN1US0BT7eShYpIaYOTUpeJY/DJtsxh90jowbzUgU7jK
+	ZXVDZFZ/r2YPoqThLsYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTpt8-0000000E6KU-0zBH;
-	Fri, 03 Jan 2025 22:11:26 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1tUhNH-00000000O1N-3KFR;
+	Mon, 06 Jan 2025 07:18:07 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tTpt4-0000000E6Js-1vh7
+	id 1tUhNF-00000000O0T-1u81
 	for linux-i3c@lists.infradead.org;
-	Fri, 03 Jan 2025 22:11:24 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 99E77240003;
-	Fri,  3 Jan 2025 22:11:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1735942278;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=GaSREVRzVYthKaZE68U4n8LRcINBttytqwCKxG8ViTM=;
-	b=m1hFBvpWXs73YbT5FbJt1hzxAPgE8ZVrKXtPs1bBzlFUsqZ+lZHRQX0zKPY6ShSBA33M94
-	nCxVfxjM17TQIfeh8I0ZTsjdcoHWusCnifqQQkD7FNdDq+gY+MI7UPHAy4RuRC1/PLgbXW
-	plqeNMtf/1nHQsr4wWynzN8RNOtlMhJntzpH6OdRLp/V7y+EhqL4meHpiyaT250GDJn3qS
-	m2vRCXxR66jEw3eNN+mVFwAA+dp31daWFqYpfrJo8AC+IvXl5qzZoZ0B7ZMqujNpFwosFg
-	U4LXIYARXZCr4y7LByWSLdz+GbsUUBSwIoBslGph0yVY2dkoV4n1gMMg50iE/w==
-Date: Fri, 3 Jan 2025 23:11:17 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Wolfram Sang <wsa+renesas@sang-engineering.com>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org,
-	Rasmus Villemoes <linux@rasmusvillemoes.dk>,
-	Guenter Roeck <linux@roeck-us.net>,
-	Jean Delvare <jdelvare@suse.com>, linux-hwmon@vger.kernel.org,
-	=?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>,
-	Yury Norov <yury.norov@gmail.com>
-Subject: Re: [PATCH RFT v2 0/5] i3c: introduce and use generic parity helper
-Message-ID: <20250103221117bb066057@mail.local>
-References: <20241229101234.2896-1-wsa+renesas@sang-engineering.com>
+	Mon, 06 Jan 2025 07:18:06 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 63DBBA410A4;
+	Mon,  6 Jan 2025 07:16:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9656AC4CED2;
+	Mon,  6 Jan 2025 07:18:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+	s=korg; t=1736147884;
+	bh=iCVBAmDJGuQ7L0qb4KshnfccErTrJX4g2OYIbINxqeY=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=XCnrcnExF+LX/CgvwTY/2oO3QCdf1kR7os6yKPPp81iJTJg5L7AOSULhMNGlceZhu
+	 b3zajNkCxLACuWHJWKssGxwgMPVu9aqvoazp04JeGzS4E/Gb2m2sim/YFYOnKe++yl
+	 1RdSTcwQuKIKPKwmjbbAgqleVyI8NE1FOJcmoSgM=
+Date: Mon, 6 Jan 2025 08:18:01 +0100
+From: Greg KH <gregkh@linuxfoundation.org>
+To: jianqi.ren.cn@windriver.com
+Cc: stable@vger.kernel.org, kxwang23@m.fudan.edu.cn,
+	alexandre.belloni@bootlin.com, patches@lists.linux.dev,
+	pgaj@cadence.com, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 6.1.y] i3c: master: cdns: Fix use after free
+ vulnerability in cdns_i3c_master Driver Due to Race Condition
+Message-ID: <2025010606-startling-cushy-d79c@gregkh>
+References: <20250106022939.2197708-1-jianqi.ren.cn@windriver.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20241229101234.2896-1-wsa+renesas@sang-engineering.com>
-X-GND-Sasl: alexandre.belloni@bootlin.com
+In-Reply-To: <20250106022939.2197708-1-jianqi.ren.cn@windriver.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250103_141122_764688_07B1F245 
-X-CRM114-Status: GOOD (  22.56  )
+X-CRM114-CacheID: sfid-20250105_231805_566133_493A878D 
+X-CRM114-Status: UNSURE (   6.90  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,69 +73,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 29/12/2024 11:12:28+0100, Wolfram Sang wrote:
-> Changes since v1:
+On Mon, Jan 06, 2025 at 10:29:39AM +0800, jianqi.ren.cn@windriver.com wrote:
+> From: Kaixin Wang <kxwang23@m.fudan.edu.cn>
 > 
-> * renamed from 'get_parity8' to 'parity8'
-> * use XOR instead of OR in the kdoc example (Thanks, Rasmus, for both)
-> * added tag from Guenter (thanks!)
-> * rebased to 6.13-rc4
-> 
-> Old coverletter follows:
-> 
-> I am currently working on upstreaming another I3C controller driver. As
-> many others, it needs to ensure odd parity for a dynamically assigned
-> address. The BSP version of the driver implemented a custom parity
-> algorithm. Wondering why we don't have a generic helper for this in the
-> kernel, I found that many I3C controller drivers all implement their
-> version of handling parity.
-> 
-> So, I sent out an RFC[1] moving the efficient implementation of the
-> SPD5118 driver to a generic location. The series was well received, but
-> the path for upstream was not clear. Because I need the implementation
-> for my I3C controller driver and I3C is a prominent user of this new
-> function, I got the idea of converting the existing I3C drivers and
-> resend the series, suggesting this all goes upstream via I3C.
-> 
-> Is this acceptable? The non-I3C patches have all the tags they need,
-> only the I3C patches would need testing on hardware.
-> 
-> A build-tested (incl. build-bots) branch is here:
-> 
-> git://git.kernel.org/pub/scm/linux/kernel/git/wsa/linux.git renesas/i3c/get_parity
-> 
-> Looking forward to comments...
-> 
-> [1] https://lore.kernel.org/all/20241214085833.8695-1-wsa+renesas@sang-engineering.com/
-> 
+> [ Upstream commit 609366e7a06d035990df78f1562291c3bf0d4a12 ]
 
-I'll apply the series once you get some agreement on the function name.
-I don't care to much but the _odd suggestion seems wise to me.
+Again, sorry, but no, I will not take any more stable backports from
+your company at this point in time.  Please go tell your managers this
+as somehow the previous emails from me seem to have been ignored.
 
-> 
-> 
-> Wolfram Sang (5):
->   bitops: add generic parity calculation for u8
->   hwmon: (spd5118) Use generic parity calculation
->   i3c: dw: use get_parity8 helper instead of open coding it
->   i3c: mipi-i3c-hci: use get_parity8 helper instead of open coding it
->   i3c: cdns: use get_parity8 helper instead of open coding it
-> 
->  drivers/hwmon/spd5118.c                  |  8 +-----
->  drivers/i3c/master/dw-i3c-master.c       | 14 +++--------
->  drivers/i3c/master/i3c-master-cdns.c     |  3 +--
->  drivers/i3c/master/mipi-i3c-hci/dat_v1.c | 11 +--------
->  include/linux/bitops.h                   | 31 ++++++++++++++++++++++++
->  5 files changed, 37 insertions(+), 30 deletions(-)
-> 
-> -- 
-> 2.39.2
-> 
-
--- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+greg k-h
 
 -- 
 linux-i3c mailing list
