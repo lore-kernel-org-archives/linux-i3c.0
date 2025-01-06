@@ -4,62 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2A62E77198
-	for <linux-i3c@archiver.kernel.org>; Mon,  6 Jan 2025 09:27:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A070DE77199
+	for <linux-i3c@archiver.kernel.org>; Mon,  6 Jan 2025 09:27:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mTuP9yWLvgTX7AWXsr3gNvehLx4V/bwQi8Z2u3/J/IM=; b=Qt7w1KJDl2x34v
-	vlt0xb7i+kRs14ckfqVX4yhgr2D0Id7PuQ7MPK2sPl9SieQFBWXqMg+byRN3aK5PPihk/hFXHVplk
-	irFJfZ7HdDdUUiv8cMoiHr5mlRo6etf3wDQ/ScjSg/ePXHUj8c9w+6ijRVmt1t8GtGRxLkPsL9V0Q
-	9Gv0rHRUL59Gonq6NjdxpP0QEXKf+L7+GJpgnH+le13hlLZ3x/yvJGxcN0iprMNohUhqNOYYh+dV6
-	YKqWvCvJXA0pnV9MTcXmTjPmmEsNt9g/mSWk4fL+ms9W4B0o5c6kqpgFoF8hy2FDSSZxb/AbkA0PR
-	dqRFele6OWQxhdZa4kkg==;
+	List-Owner; bh=g8mqbcxqcFrDTstrYk8JZUdQZCm9K7Jzuz6bqWU8L+c=; b=Ms7pnCn+Q9qytg
+	AuJDTaUxFe0rXcfDwZaVOVqPxbkSzOtlPQoqo/euu/b0KdXvN9BxYVibIp+pmuSaWOklGcH9q4AVx
+	AyUOLzZyiBshqYrzwonWEseoxpC3Wmye9/ZHOXKp/aOSqbvP3pYIzOyiPsqxWiKDRlITsHWTukHsj
+	wBQd976mMyUvTCvzeCijoUAjGku78EJ9EnJJkK5ZXLkiGmGEhPPKnzwjwQ+tr4GEJFOneLguXgEUe
+	J+gln+hzojFspoJWzHBk5KbP4WXuLjCLPCGGAnloU1icfbfMo6EH8hoeQnvX6NdYdN0QwzFj3qDb6
+	KfrV1i+hYQtzvLnS+v/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUjOd-00000000gJj-0kkX;
-	Mon, 06 Jan 2025 09:27:39 +0000
+	id 1tUjOe-00000000gKX-1Vr6;
+	Mon, 06 Jan 2025 09:27:40 +0000
 Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tUjOT-00000000gGp-3gm7
+	id 1tUjOU-00000000gH0-0pJG
 	for linux-i3c@lists.infradead.org;
-	Mon, 06 Jan 2025 09:27:32 +0000
+	Mon, 06 Jan 2025 09:27:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	sang-engineering.com; h=from:to:cc:subject:date:message-id
 	:in-reply-to:references:mime-version:content-transfer-encoding;
-	 s=k1; bh=/HzJlxcDzDQ4BvZyB5ZfxXV6i05giy4HK5Wtt3ukFzE=; b=aPPfy3
-	5s/163j8j2uLyoDeGPLC6/Qykt2evG8W7DWBim4j7PNHuTry+M1/V7MtK92YE8vZ
-	IBFDBjkvfrDIRCMfK5BdsdrxAUikwOPTGe216Fd7NEn7SA+eWBIthxc/k7tXdi6y
-	gLDkOpXh+3OTqlCGPqpc85wqIoP2t4mssLk1v4ADAEMihgg6IQcm6d7cAcSs+hli
-	5RLnOcLisX4q/h3BrDcbX9/E+C8LpAvYBgq3ptffVnJLv9gN5wSZFnLTX8RNySYY
-	IhUk3CRQPXSbdInv7GrreMONlnIWBlfLDUlDPQM1BATTV2mzSalkGdSZbuOb5hX9
-	2hxcFp6C/PtNxf+w==
-Received: (qmail 1727803 invoked from network); 6 Jan 2025 10:27:26 +0100
-Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 6 Jan 2025 10:27:26 +0100
-X-UD-Smtp-Session: l3s3148p1@HqGXPAYr2psgAwDPXw20AOMQ2KO98fSH
+	 s=k1; bh=Py0DoMMuciEt40Q+z4uuudYOKUnz5ppwQn4+cYx5ojg=; b=ML7o2o
+	qVJwx3q7djO/yb2b86sLOlJ2pUI46fIRp/mydZLpsbWK7ylHCePmQY13F+DqlbTH
+	S7tEr/+/FUn+dPMSfpfjFSSwfY2dxDa4w93ME+kI9Unm8vNeGQtVKo/Fb4Zj8q1V
+	M7u2cdiij9yKIPezD3rUDStvbYdjowtmu6VXupZVhdqJRsy8YWmvqxhtoUqQ8oXr
+	kZPzgLS+w05Dw9FhtIvnY0ECpDhqE/20Rus0BgflpVKKQfVluptdoIIPZYJpnlcU
+	UfZPnJk2rdycGX/Fpww5BXDB+byjbKQMgT6HL+aRQe3O1lgkRGaruiHltMOUvS8D
+	xta28EwTyR+Wp26Q==
+Received: (qmail 1727908 invoked from network); 6 Jan 2025 10:27:28 +0100
+Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 6 Jan 2025 10:27:28 +0100
+X-UD-Smtp-Session: l3s3148p1@r9avPAYr7JsgAwDPXw20AOMQ2KO98fSH
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 To: linux-i3c@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org,
 	linux-renesas-soc@vger.kernel.org,
 	Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Guenter Roeck <linux@roeck-us.net>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Yury Norov <yury.norov@gmail.com>,
-	Kuan-Wei Chiu <visitorckw@gmail.com>,
-	Rasmus Villemoes <linux@rasmusvillemoes.dk>
-Subject: [PATCH v3 1/5] bitops: add generic parity calculation for u8
-Date: Mon,  6 Jan 2025 10:27:19 +0100
-Message-ID: <20250106092725.22869-2-wsa+renesas@sang-engineering.com>
+	Alexandre Belloni <alexandre.belloni@bootlin.com>
+Subject: [PATCH v3 3/5] i3c: dw: use parity8 helper instead of open coding it
+Date: Mon,  6 Jan 2025 10:27:21 +0100
+Message-ID: <20250106092725.22869-4-wsa+renesas@sang-engineering.com>
 X-Mailer: git-send-email 2.45.2
 In-Reply-To: <20250106092725.22869-1-wsa+renesas@sang-engineering.com>
 References: <20250106092725.22869-1-wsa+renesas@sang-engineering.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250106_012730_797027_EE4F12D5 
-X-CRM114-Status: GOOD (  15.90  )
+X-CRM114-CacheID: sfid-20250106_012730_807174_E8B8A72E 
+X-CRM114-Status: GOOD (  10.04  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,72 +72,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-There are multiple open coded implementations for getting the parity of
-a byte in the kernel, even using different approaches. Take the pretty
-efficient version from SPD5118 driver and make it generally available by
-putting it into the bitops header. As long as there is just one parity
-calculation helper, the creation of a distinct 'parity.h' header was
-discarded. Also, the usage of hweight8() for architectures having a
-popcnt instruction is postponed until a use case within hot paths is
-desired. The motivation for this patch is the frequent use of odd parity
-in the I3C specification and to simplify drivers there.
-
-Changes compared to the original SPD5118 version are the addition of
-kernel documentation, switching the return type from bool to int, and
-renaming the argument of the function.
+The kernel has now a generic helper for getting parity with easier to
+understand semantics. Make use of it.
 
 Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
-Tested-by: Guenter Roeck <linux@roeck-us.net>
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
-Acked-by: Yury Norov <yury.norov@gmail.com>
-Reviewed-by: Kuan-Wei Chiu <visitorckw@gmail.com>
-Tested-by: Kuan-Wei Chiu <visitorckw@gmail.com>
 ---
- include/linux/bitops.h | 31 +++++++++++++++++++++++++++++++
- 1 file changed, 31 insertions(+)
+ drivers/i3c/master/dw-i3c-master.c | 14 +++-----------
+ 1 file changed, 3 insertions(+), 11 deletions(-)
 
-diff --git a/include/linux/bitops.h b/include/linux/bitops.h
-index ba35bbf07798..c1cb53cf2f0f 100644
---- a/include/linux/bitops.h
-+++ b/include/linux/bitops.h
-@@ -229,6 +229,37 @@ static inline int get_count_order_long(unsigned long l)
- 	return (int)fls_long(--l);
- }
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index d4b80eb8cecd..0d4d44458c11 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -251,14 +251,6 @@ struct dw_i3c_i2c_dev_data {
+ 	struct i3c_generic_ibi_pool *ibi_pool;
+ };
  
-+/**
-+ * parity8 - get the parity of an u8 value
-+ * @value: the value to be examined
-+ *
-+ * Determine the parity of the u8 argument.
-+ *
-+ * Returns:
-+ * 0 for even parity, 1 for odd parity
-+ *
-+ * Note: This function informs you about the current parity. Example to bail
-+ * out when parity is odd:
-+ *
-+ *	if (parity8(val) == 1)
-+ *		return -EBADMSG;
-+ *
-+ * If you need to calculate a parity bit, you need to draw the conclusion from
-+ * this result yourself. Example to enforce odd parity, parity bit is bit 7:
-+ *
-+ *	if (parity8(val) == 0)
-+ *		val ^= BIT(7);
-+ */
-+static inline int parity8(u8 val)
-+{
-+	/*
-+	 * One explanation of this algorithm:
-+	 * https://funloop.org/codex/problem/parity/README.html
-+	 */
-+	val ^= val >> 4;
-+	return (0x6996 >> (val & 0xf)) & 1;
-+}
+-static u8 even_parity(u8 p)
+-{
+-	p ^= p >> 4;
+-	p &= 0xf;
+-
+-	return (0x9669 >> p) & 1;
+-}
+-
+ static bool dw_i3c_master_supports_ccc_cmd(struct i3c_master_controller *m,
+ 					   const struct i3c_ccc_cmd *cmd)
+ {
+@@ -848,7 +840,7 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
+ 	struct dw_i3c_xfer *xfer;
+ 	struct dw_i3c_cmd *cmd;
+ 	u32 olddevs, newdevs;
+-	u8 p, last_addr = 0;
++	u8 last_addr = 0;
+ 	int ret, pos;
+ 
+ 	ret = pm_runtime_resume_and_get(master->dev);
+@@ -873,9 +865,9 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
+ 		}
+ 
+ 		master->devs[pos].addr = ret;
+-		p = even_parity(ret);
+ 		last_addr = ret;
+-		ret |= (p << 7);
 +
- /**
-  * __ffs64 - find first set bit in a 64 bit word
-  * @word: The 64 bit word
++		ret |= parity8(ret) ? 0 : BIT(7);
+ 
+ 		writel(DEV_ADDR_TABLE_DYNAMIC_ADDR(ret),
+ 		       master->regs +
 -- 
 2.45.2
 
