@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 741CDE77199
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D29DE77197
 	for <linux-i3c@archiver.kernel.org>; Tue,  7 Jan 2025 09:04:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,50 +12,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g8mqbcxqcFrDTstrYk8JZUdQZCm9K7Jzuz6bqWU8L+c=; b=T7MgxMgbO0/VJc
-	2QaeDLRTVp8sS3WwqR2fXbsTAyPS/WDgxJ7bqPXFU2muZSuZVutcGMLZLfqSnnZtWxfdXrlKpCMY9
-	xRnHIOdTXA3H6skjGXcrWWsSfMeA35WS1kJEGQQXrDpdtpd71Tym9OXPSqRaTZMDVbdOG01188JgR
-	HENsym2qrBBpzxpl/zzs3GcAiLgpuQyrxwxjy3ZSkvRJnajlv7RC5rpynDCkQRTptXV45kckfY7Vc
-	7Bzcxszqd7eBsKemS7aYW1uQLkl2cMQZ+qZZ9DXrU6lPfU3H4T4KuSlhWySqsQ8l4fVryayzvWCOX
-	ITVUnGOLI6ibsRny7+YA==;
+	List-Owner; bh=NKebGb7XyGq/ylEOUSUcUsKdeDVW4xUI5cdXeYUzk7g=; b=2lf5j/38jqYCwn
+	KwjArb5fxE8VhxXpSAOMA+WIMW1JICqJ0/tAmUxRLQ4TsyRkQ3U41eMDbsB0x6rfdu8aamb3YLOUW
+	7DboN5LE+N2K0VF/gDJxlqzxjMdaFY6utnWdOnQQJMBuZLKQQb7g2e293aqCpyHsYMD6T8UP5vJYT
+	vD103SHa4CTAVfViRnJUxzEwdT9Pp1AEWmi0P5HGbrhdaZ3LxVu+OguMTG5ZQOevUc11p6GX0AjMV
+	GqGayQjknlfCYzI7X/0NuNSrKxL1xHCfkV3I7fsUYcV+Y4rmkkk4UwiQxLwQ6vkbNwBA4nUWr4VUI
+	z3wkejR4gb0MrhUmbahQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tV5Vw-0000000428m-0yEp;
-	Tue, 07 Jan 2025 09:04:40 +0000
+	id 1tV5Vv-0000000428e-3x09;
+	Tue, 07 Jan 2025 09:04:39 +0000
 Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tV5Tb-000000041Jp-1bwO
+	id 1tV5Tb-000000041Je-1ce4
 	for linux-i3c@lists.infradead.org;
 	Tue, 07 Jan 2025 09:02:20 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	sang-engineering.com; h=from:to:cc:subject:date:message-id
 	:in-reply-to:references:mime-version:content-transfer-encoding;
-	 s=k1; bh=Py0DoMMuciEt40Q+z4uuudYOKUnz5ppwQn4+cYx5ojg=; b=eyDX3q
-	TAD+n/EOt+u/Mbevq3q8Gsf4GnKSJAJqyKHhz9//jF1GRu+0GsQ7FjIXQc2+ZL7O
-	IZQgyoH0KrmN7meBBEEZxpb8fYhgRQvrZQtM9VK/2YoVG4BE5UITV2BWw1nSYGfq
-	VNoDCUBhQJoIVfTfQiiTr/5HkdKElOIGZ3fOM6xn+A1e9UCQQBsA6Jk3Z6+sg0yH
-	UE8vqVOy/dQD5A4NoP5RnATZAN1H++JHCfUl3aD0GfyF9EMg0DyIi1kkIjmvcbAe
-	WKXCrmW4SRcDOd5siPghYn8PRW835Oc8IghjW0Jh9gF6VWkbGox7e3zaJHpaRiQu
-	/gxlFH3uD5S4KwHQ==
-Received: (qmail 2125336 invoked from network); 7 Jan 2025 10:02:09 +0100
-Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 7 Jan 2025 10:02:09 +0100
-X-UD-Smtp-Session: l3s3148p1@hx36/xkrZpMgAwDPXw20AOMQ2KO98fSH
+	 s=k1; bh=3esdoiFUb3AEevKBNMcpAJ6KfgvtuQ7LV32gNwqiGFg=; b=Jl4M7y
+	TTjNgAoBMM0fzgwlpdNwhWedqnlibkxCCVlKu0nJEY5R3AD80JO7w5+dUI115wKT
+	+OtzoIHK7KtHltOseIEQUj1URJweRklK+880BEyl5Jw2R2wzxL52SH4Un1+I+FIi
+	uKNung5c4LxuzIfRV9YeO+IqFxq04DFCnBkUB8jnHK31+WWg8QGZXMzIuLNYz+hZ
+	aVNaYZwqwI9QNXnesom7OQUZ08anvBX7ccToarXwhUvIClpPG1X0dsnRxsh/dOs1
+	pNVOHuDV/RRFP6oZ+6+jCK9I0W4ozZzZCvX+bkvDurNKZssqCwDQoofoa1XOMaze
+	2TQFceHsD+BR5QqQ==
+Received: (qmail 2125271 invoked from network); 7 Jan 2025 10:02:08 +0100
+Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 7 Jan 2025 10:02:08 +0100
+X-UD-Smtp-Session: l3s3148p1@qa3t/xkrXJMgAwDPXw20AOMQ2KO98fSH
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 To: linux-i3c@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org,
 	linux-renesas-soc@vger.kernel.org,
 	Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: [PATCH v4 3/5] i3c: dw: use parity8 helper instead of open coding it
-Date: Tue,  7 Jan 2025 10:02:01 +0100
-Message-ID: <20250107090204.6593-4-wsa+renesas@sang-engineering.com>
+	Guenter Roeck <linux@roeck-us.net>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Kuan-Wei Chiu <visitorckw@gmail.com>,
+	Jean Delvare <jdelvare@suse.com>,
+	linux-hwmon@vger.kernel.org
+Subject: [PATCH v4 2/5] hwmon: (spd5118) Use generic parity calculation
+Date: Tue,  7 Jan 2025 10:02:00 +0100
+Message-ID: <20250107090204.6593-3-wsa+renesas@sang-engineering.com>
 X-Mailer: git-send-email 2.45.2
 In-Reply-To: <20250107090204.6593-1-wsa+renesas@sang-engineering.com>
 References: <20250107090204.6593-1-wsa+renesas@sang-engineering.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250107_010216_287277_065C3BD4 
-X-CRM114-Status: UNSURE (   9.54  )
+X-CRM114-CacheID: sfid-20250107_010216_289884_AE657B3E 
+X-CRM114-Status: UNSURE (   7.87  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -73,54 +77,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The kernel has now a generic helper for getting parity with easier to
-understand semantics. Make use of it.
+Make use of the new generic helper for calculating the parity.
 
 Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+Tested-by: Guenter Roeck <linux@roeck-us.net>
+Acked-by: Guenter Roeck <linux@roeck-us.net>
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+Reviewed-by: Kuan-Wei Chiu <visitorckw@gmail.com>
 ---
- drivers/i3c/master/dw-i3c-master.c | 14 +++-----------
- 1 file changed, 3 insertions(+), 11 deletions(-)
+ drivers/hwmon/spd5118.c | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
 
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index d4b80eb8cecd..0d4d44458c11 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -251,14 +251,6 @@ struct dw_i3c_i2c_dev_data {
- 	struct i3c_generic_ibi_pool *ibi_pool;
- };
+diff --git a/drivers/hwmon/spd5118.c b/drivers/hwmon/spd5118.c
+index 6cee48a3e5c3..358152868d96 100644
+--- a/drivers/hwmon/spd5118.c
++++ b/drivers/hwmon/spd5118.c
+@@ -291,12 +291,6 @@ static umode_t spd5118_is_visible(const void *_data, enum hwmon_sensor_types typ
+ 	}
+ }
  
--static u8 even_parity(u8 p)
+-static inline bool spd5118_parity8(u8 w)
 -{
--	p ^= p >> 4;
--	p &= 0xf;
--
--	return (0x9669 >> p) & 1;
+-	w ^= w >> 4;
+-	return (0x6996 >> (w & 0xf)) & 1;
 -}
 -
- static bool dw_i3c_master_supports_ccc_cmd(struct i3c_master_controller *m,
- 					   const struct i3c_ccc_cmd *cmd)
+ /*
+  * Bank and vendor id are 8-bit fields with seven data bits and odd parity.
+  * Vendor IDs 0 and 0x7f are invalid.
+@@ -304,7 +298,7 @@ static inline bool spd5118_parity8(u8 w)
+  */
+ static bool spd5118_vendor_valid(u8 bank, u8 id)
  {
-@@ -848,7 +840,7 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
- 	struct dw_i3c_xfer *xfer;
- 	struct dw_i3c_cmd *cmd;
- 	u32 olddevs, newdevs;
--	u8 p, last_addr = 0;
-+	u8 last_addr = 0;
- 	int ret, pos;
+-	if (!spd5118_parity8(bank) || !spd5118_parity8(id))
++	if (parity8(bank) == 0 || parity8(id) == 0)
+ 		return false;
  
- 	ret = pm_runtime_resume_and_get(master->dev);
-@@ -873,9 +865,9 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
- 		}
- 
- 		master->devs[pos].addr = ret;
--		p = even_parity(ret);
- 		last_addr = ret;
--		ret |= (p << 7);
-+
-+		ret |= parity8(ret) ? 0 : BIT(7);
- 
- 		writel(DEV_ADDR_TABLE_DYNAMIC_ADDR(ret),
- 		       master->regs +
+ 	id &= 0x7f;
 -- 
 2.45.2
 
