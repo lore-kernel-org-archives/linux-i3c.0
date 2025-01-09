@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0BDBCE7719D
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C94EC02185
 	for <linux-i3c@archiver.kernel.org>; Fri, 10 Jan 2025 11:19:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
@@ -12,57 +12,58 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=qhSsFu2YhOxQilOCG66Le0SQZVWG1Uifk+UAHSz52oI=; b=ndWMlCF9UObz/U1ng/RRhfNz/E
-	5FFqIE+qJn81GRlNtpvvK0f23jaC+RCXDYGLeqs2SaZsfhB+c2bf/9Ovyf3qHOnomOnBzgAeHAzH+
-	bf7PeIcGWZeJ7/33l8KE0zi9sI5jEWtrCT6Qn5Kvk2X/9PGQsfhzds6ffr0ui/oYUpfKCXlYXx0Bd
-	ZFVs5HZuxgZgh/ubp+djZJzFQEZz8xXb6UO/r3dlvuFirbVpAwQR15BUBUxPCaEuegatLGLWbG4os
-	uGB246Hj+HjZEvH9Q6zPlrODjOONstmHHUdwuPuBEbjAwrUPlZ5BlGsOg3uX/DqYhWkR4iraKlyvP
-	nPNRPq2w==;
+	bh=RnJW7PETAdMA6oc1QR3F19sO6zPBCmevZutMmebaScM=; b=sCMpKkPnQHahoQa0XL7HGU6G1/
+	ig6omyUGZVuYl95nZo4lJdS5ftZDgDD4OCN1gsbmj4kj7A6BwgLW5z/C77EqLdjlJ43MmP1c5ZYxr
+	MHjq5DQWahf1p+ukX6UMsVbo4BI3jnlpuIXDRIhwPARBjbHDKJOVEd7ru8OVZqPzudRBp1b7PGqhV
+	/RNeaHIy+gPM9iG3hXPzrzdPiCVEt8j7OIJ8FDKGN+9OXxvVchQzb5ZikyXHvf94HK/RkUKsBqOdM
+	gDCLzxIK246rqDzFebTTQYA2AJqVvGHb2KfE+K7cLAIfjU0ycsfzA8TLRAmuPDaBJHkqYrV1LvAWB
+	soP1ze4w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWD34-0000000F5ch-3EPF;
-	Fri, 10 Jan 2025 11:19:30 +0000
+	id 1tWD35-0000000F5dL-0cN0;
+	Fri, 10 Jan 2025 11:19:31 +0000
 Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVVbZ-00000008W6A-0rdx
+	id 1tVnCT-0000000B4sW-0cay
 	for linux-i3c@lists.infradead.org;
-	Wed, 08 Jan 2025 12:56:17 +0000
+	Thu, 09 Jan 2025 07:43:31 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	sang-engineering.com; h=date:from:to:cc:subject:message-id
-	:references:mime-version:content-type:in-reply-to; s=k1; bh=8cwn
-	6E6/BQ5Z3XCruuhKDbe6JqWw94aMY9yC8bF2a8E=; b=FeH+qqjeSQDz96p50uqC
-	ErEJXc7+5dItFp0GlYk7+LHgxIOfPBj+dJuaIa2NvdWE2PX7sdOeWhabQ+9XdEXs
-	wZeFvMDXgpSf4rSSvjbV1fwzhgICA9aj4JZuesZtWEojpMudjtCGG4htE505Zeok
-	BD2I1OO0CyuMry6e6DG0l0wDWsH3413ixyhyXu89htITHkARZ8QgQQpQEB0upyoy
-	BI0pyf0d9FibQOw/hz78vs51T89BafipbmenSRol3YnWFSo5Wfk8DHdZUpIekLf9
-	t3SlKNUDKDoQgfvx5XUosjFEyLSMlOA6XNxSyafyKv3qnWRxKWUzrz/pvB/+Vx9M
-	oQ==
-Received: (qmail 2576107 invoked from network); 8 Jan 2025 13:56:06 +0100
-Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 8 Jan 2025 13:56:06 +0100
-X-UD-Smtp-Session: l3s3148p1@/hd7YjErpIgujntM
-Date: Wed, 8 Jan 2025 13:56:05 +0100
+	:references:mime-version:content-type:in-reply-to; s=k1; bh=AujP
+	O41+pvB1tomJV777Px8OTr25nzkE1wIQmICTRJE=; b=BePfcLIn4IrZAAS5tCo/
+	hDYoIDd9VmOD+b08gXsBBL9sWQIggG1+/hDk91d6l9b7XqGFS0Nzw3AO4mByhHKQ
+	Xi0UaZ8WQgrDbNzIPQUYYxvSiUIwZmJeVRQr7fWIzfsvdvcWeiPO2u5j96PSg42D
+	b60JubSJKzkwxgZVh+1ITYU38vu9ePJ4E8LAHvz4zZl4r2kzkBrI55UrWhoKk7QM
+	T4au+2HUpHb9I6H9YQ+FgeydQdP7UM5saiyxqE8JM28O1rZDeT21m5DYaDO3JjDm
+	YUGe0eToaVA6/2bMm5EGhDAicNRW11ttIboIhflqsq+D6Og2OqmTaGUFTOzHc32j
+	tQ==
+Received: (qmail 2820930 invoked from network); 9 Jan 2025 08:43:25 +0100
+Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 9 Jan 2025 08:43:25 +0100
+X-UD-Smtp-Session: l3s3148p1@ucoRIkErIs0gAwDPXw20AOMQ2KO98fSH
+Date: Thu, 9 Jan 2025 08:43:24 +0100
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
-To: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH v4 4/5] i3c: mipi-i3c-hci: use parity8 helper instead of
- open coding it
-Message-ID: <Z3515cBvz3yChGoL@ninjato>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Carlos Song <carlos.song@nxp.com>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
+	"moderated list:I3C SUBSYSTEM" <linux-i3c@lists.infradead.org>,
+	open list <linux-kernel@vger.kernel.org>, imx@lists.linux.dev
+Subject: Re: [PATCH 1/1] i3c: master: Fix missing 'ret' assignment in
+ set_speed()
+Message-ID: <Z39-HEG6AaAFvDk6@shikoro>
 Mail-Followup-To: Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Jarkko Nikula <jarkko.nikula@linux.intel.com>,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>
-References: <20250107090204.6593-1-wsa+renesas@sang-engineering.com>
- <20250107090204.6593-5-wsa+renesas@sang-engineering.com>
- <3117d2d9-260a-4e02-8c22-4e078e01ddd5@linux.intel.com>
+	Frank Li <Frank.Li@nxp.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Carlos Song <carlos.song@nxp.com>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
+	"moderated list:I3C SUBSYSTEM" <linux-i3c@lists.infradead.org>,
+	open list <linux-kernel@vger.kernel.org>, imx@lists.linux.dev
+References: <20250108225533.915334-1-Frank.Li@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <3117d2d9-260a-4e02-8c22-4e078e01ddd5@linux.intel.com>
+In-Reply-To: <20250108225533.915334-1-Frank.Li@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250108_045614_122817_A8B6E1F5 
-X-CRM114-Status: UNSURE (   9.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250108_234330_060283_13871281 
+X-CRM114-Status: GOOD (  11.64  )
 X-Mailman-Approved-At: Fri, 10 Jan 2025 03:19:21 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -75,63 +76,70 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2728806418533813947=="
+Content-Type: multipart/mixed; boundary="===============6401419244262635565=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 
---===============2728806418533813947==
+--===============6401419244262635565==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="r4mfttq9c2W/MPk0"
+	protocol="application/pgp-signature"; boundary="GJgCYyWEeZ2zf4nQ"
 Content-Disposition: inline
 
 
---r4mfttq9c2W/MPk0
+--GJgCYyWEeZ2zf4nQ
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, Jan 08, 2025 at 05:55:33PM -0500, Frank Li wrote:
+> Fix a probe failure in the i3c master driver that occurs when no i3c
+> devices are connected to the bus.
+>=20
+> The issue arises in `i3c_master_bus_init()` where the `ret` value is not
+> updated after calling `master->ops->set_speed()`. If no devices are
+> present, `ret` remains set to `I3C_ERROR_M2`, causing the code to
+> incorrectly proceed to `err_bus_cleanup`.
+>=20
+> Cc: stable@vger.kernel.org
+> Fixes: aef79e189ba2 ("i3c: master: support to adjust first broadcast addr=
+ess speed")
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+
+Precisely.
+
+Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+
+Tested with a Renesas RZ/G3S-SMARC board with some test code added to
+the still under-development controller driver:
+
+Tested-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
 
 
-> Stable rules allow also cherry picking additional patches. To me picking
-> patch 1 and 4 sounds better than an intermediate fix since bug has been here
-> from the beginning. IMHO not so urgent than a regression.
-
-Even then, doesn't that mean that the series needs to be applied
-upstream first before it can go to stable? How to describe the
-dependency commit id otherwise? Either Alexandre adds this when
-applying, or some interested party ;) sends a backport request to
-stable. Or am I missing something?
-
-> Looks like we have been lucky. First dynamic address is 0x9 and previous
-> algorithm gets the same calculated dat_w0 value for at least for the
-> addresses 0x9 and 0xa.
-
-Makes sense. Still not too many I3C devices out there...
-
-
---r4mfttq9c2W/MPk0
+--GJgCYyWEeZ2zf4nQ
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAmd+deIACgkQFA3kzBSg
-Kbam6xAAqV3ZgKWTA4vjFGilGyaNc2uygT4v8V3gvnfv4Omak2REUNovVrVXTIqu
-sBP5M+swh1qCYDK4r+xGfw5X/D6luuddODEhbqyBjxY4qSRe9CILwpC78Yu7AGIX
-OXsvOlc5jBfqMXgXbbsfJeBfI9eKPycVNuP4OnlSsog+1Z1NaPiFDCQrJtWRrqA/
-oDCbPpLgN5juTt92JDQbjnCiLRWGMLj7rUdvN89RHpcVDJw5XRKfsZr8VyGra4Ww
-pl1F3WW4H+n/C3BDSc9Ursb0XLK33ELvsmW7EvEerMO5rzkxCDWh6r1HzkL2QJ+h
-Dhr1+RCGWDevVw5hBLzXsJlGrzrHTzhyE0ZKYxtez4+2oI96lHGoncKoqJxiyBfF
-eAqQRLi6Ymt/3UBWFgruWLy+Jw+oib7rrD+hqXrrGnnJaygGqLQxaqdoMJtiF3rc
-x4n2HV1+UwbMVldjlLj95Om5GrR82Y+IwbWebe4WsXdZHITkgW1RsRL91MjX8Pqo
-FAJSfzlACCxNA1L3TV7iSAWDmwUEMGraj9xfBqDGt4eRCocClTqqimwqZ0Hiz66a
-WaZYL4gJ836CpgGWthl6BDvE+cEQjvDdY93bs9UoZkQ+8g/lIhkQHNjj4TlNTE9i
-BvNnncmFWn21BbtalC+ZXRBbhcITBSa90E0UIkP8U7/5/Sx1VBU=
-=VaP9
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAmd/fhwACgkQFA3kzBSg
+KbakZxAArGY+//Z1bYxaZ81h2Z2Hd4yIU7OPjrtwT+JboeOO3tUXG9nkNWUr8+y5
+JS4vJPJNZJggTvZgz6xwY5IG4UwHxxwPpaDm7dv3SJZ1eu7YuRLzvCpYlNCsRDu3
+ysgtx0u6gTkbrEAQ82m/1XVhIs/TtwGOUpgkgAlP1VIb5U/fT6/FPi/Sd94oPYu0
+QeG5AqsFyXtRVtHgJi1HS0zdBuHdteaXmp6qKhJ+lPEyNnEaBSFFBXrw1qANUqJv
+0USsr7O8XlbINBm7ivQ+JmvWqti1e+eW6FuJFMPbyE37GLSM4CU2KpvBMoTZ4eYf
+uTHoZIuDpK9I57AbC5UQZs9+VJIEjel6H2sHxzCOnTZjrLrHPugyzZzzCqd+PKvK
+l3SYoVmgaXP8NwZal5IvNGpxmXQ94yR/rtbhzGHvIIdRZ6TNJjd6prYcEfducTWV
+NbLxT8393G+OPlbcknUmkI67udrAl7JwQ+/T9uyt7wKUaEZKXOddqeZCXTsogfoo
+ucpue1T0ZWShkcP8C0obanBzEFL8NCo2JvwNg2gveYeYnFkv6STqCMf+VXEh0LKC
+KUuhiQ69UmT6VoLFEYsTJ+Q2xsyzWI5dS6oVYf93KgTzMlbqn+JvhBEbbPYczJnf
+Xn4cGw8hGUQZoeipKWE/qHMqVkLIt+Tm7u4WzdWg2HMZ1D0nsEk=
+=ibUC
 -----END PGP SIGNATURE-----
 
---r4mfttq9c2W/MPk0--
+--GJgCYyWEeZ2zf4nQ--
 
 
---===============2728806418533813947==
+--===============6401419244262635565==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -142,5 +150,5 @@ linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
 
---===============2728806418533813947==--
+--===============6401419244262635565==--
 
