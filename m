@@ -4,67 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C94EC02185
-	for <linux-i3c@archiver.kernel.org>; Fri, 10 Jan 2025 11:19:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6F98E77188
+	for <linux-i3c@archiver.kernel.org>; Sun, 12 Jan 2025 22:54:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=RnJW7PETAdMA6oc1QR3F19sO6zPBCmevZutMmebaScM=; b=sCMpKkPnQHahoQa0XL7HGU6G1/
-	ig6omyUGZVuYl95nZo4lJdS5ftZDgDD4OCN1gsbmj4kj7A6BwgLW5z/C77EqLdjlJ43MmP1c5ZYxr
-	MHjq5DQWahf1p+ukX6UMsVbo4BI3jnlpuIXDRIhwPARBjbHDKJOVEd7ru8OVZqPzudRBp1b7PGqhV
-	/RNeaHIy+gPM9iG3hXPzrzdPiCVEt8j7OIJ8FDKGN+9OXxvVchQzb5ZikyXHvf94HK/RkUKsBqOdM
-	gDCLzxIK246rqDzFebTTQYA2AJqVvGHb2KfE+K7cLAIfjU0ycsfzA8TLRAmuPDaBJHkqYrV1LvAWB
-	soP1ze4w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KrKFsDY3fyxjYgo3bcojn/TWUXlRwQMya9QbZwuqUzI=; b=GJlUmVzE7TySp8
+	SCTFduu0SmP8pg6g/r22TZ/rjTT0gjoGWLctxILag946G4+cX8ia4HsZZwRaxAix5zzMz9Ity2KKM
+	hWjmi0wSiYSDZNG5Rjxl32JP2vQiAxfMjU//f7LeNXQ31c78GKdBqPBFXIK19rTg++rpo3WnFazUJ
+	nBYAbut4JQSZ3XviJWyd5xHnn2fjOS+/aBPsts7r4JbGWhIdf7RLD/jOqtbhKMhxKPxV+nFFQsQx5
+	vep92P3cJJhEgDf0bdGuf+P7h9VjrFQFuKmNoHHj8Z8IkFbpyB2xslRIdiRTcvzF8D/T853ZEz5a9
+	xOULl17t1nCR2EqTW2Eg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tWD35-0000000F5dL-0cN0;
-	Fri, 10 Jan 2025 11:19:31 +0000
-Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
+	id 1tX6qY-00000003Zeb-1e1R;
+	Sun, 12 Jan 2025 22:54:18 +0000
+Received: from relay8-d.mail.gandi.net ([2001:4b98:dc4:8::228])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tVnCT-0000000B4sW-0cay
+	id 1tX6qU-00000003Zdy-3u1O
 	for linux-i3c@lists.infradead.org;
-	Thu, 09 Jan 2025 07:43:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	sang-engineering.com; h=date:from:to:cc:subject:message-id
-	:references:mime-version:content-type:in-reply-to; s=k1; bh=AujP
-	O41+pvB1tomJV777Px8OTr25nzkE1wIQmICTRJE=; b=BePfcLIn4IrZAAS5tCo/
-	hDYoIDd9VmOD+b08gXsBBL9sWQIggG1+/hDk91d6l9b7XqGFS0Nzw3AO4mByhHKQ
-	Xi0UaZ8WQgrDbNzIPQUYYxvSiUIwZmJeVRQr7fWIzfsvdvcWeiPO2u5j96PSg42D
-	b60JubSJKzkwxgZVh+1ITYU38vu9ePJ4E8LAHvz4zZl4r2kzkBrI55UrWhoKk7QM
-	T4au+2HUpHb9I6H9YQ+FgeydQdP7UM5saiyxqE8JM28O1rZDeT21m5DYaDO3JjDm
-	YUGe0eToaVA6/2bMm5EGhDAicNRW11ttIboIhflqsq+D6Og2OqmTaGUFTOzHc32j
-	tQ==
-Received: (qmail 2820930 invoked from network); 9 Jan 2025 08:43:25 +0100
-Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 9 Jan 2025 08:43:25 +0100
-X-UD-Smtp-Session: l3s3148p1@ucoRIkErIs0gAwDPXw20AOMQ2KO98fSH
-Date: Thu, 9 Jan 2025 08:43:24 +0100
-From: Wolfram Sang <wsa+renesas@sang-engineering.com>
-To: Frank Li <Frank.Li@nxp.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Carlos Song <carlos.song@nxp.com>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	"moderated list:I3C SUBSYSTEM" <linux-i3c@lists.infradead.org>,
-	open list <linux-kernel@vger.kernel.org>, imx@lists.linux.dev
-Subject: Re: [PATCH 1/1] i3c: master: Fix missing 'ret' assignment in
- set_speed()
-Message-ID: <Z39-HEG6AaAFvDk6@shikoro>
-Mail-Followup-To: Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Frank Li <Frank.Li@nxp.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Carlos Song <carlos.song@nxp.com>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	"moderated list:I3C SUBSYSTEM" <linux-i3c@lists.infradead.org>,
-	open list <linux-kernel@vger.kernel.org>, imx@lists.linux.dev
-References: <20250108225533.915334-1-Frank.Li@nxp.com>
+	Sun, 12 Jan 2025 22:54:16 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 262D71BF204;
+	Sun, 12 Jan 2025 22:54:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1736722449;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=7999jetr7TTK/iQtMJ+/kbDvvNRKuEQNa3t5KglJsDU=;
+	b=QqndU374soXhDCiGZK+ADo0n+zinWpmuou7O2Bnk2Jff3sOM5dORxMYo7lMN2+3iLtTeRC
+	XIxey5cv8dAGaXZ1G5PXwkUPYFTOx1icvgPuWXUkZ5BdkPnAH8fJ9EY7wR8jOVebve6kWC
+	QRNNkopXDiCjaoRCo7WU7HA9H9oOmnlVFIofw7EAFz/sBTGPOAkvfe8xreOa9V7CkXF1XK
+	TwEXSyVUNvC8P9Vf5Y1faZbW0DS6m7e4G7GRZlTDjBftSCxYaYFacf7OimUENRtjggy9Ld
+	fuJ+oFAZsCist7H0RcZ+to1yBgivWFqrwGdoBBcdGCVXJ7Khtkv0aX+iXsbV4A==
+Date: Sun, 12 Jan 2025 23:54:08 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: linux@treblig.org
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] i3c: Remove unused i3c_device_do_setdasa
+Message-ID: <202501122254082b225acf@mail.local>
+References: <20241221143418.86012-1-linux@treblig.org>
 MIME-Version: 1.0
-In-Reply-To: <20250108225533.915334-1-Frank.Li@nxp.com>
+Content-Disposition: inline
+In-Reply-To: <20241221143418.86012-1-linux@treblig.org>
+X-GND-Sasl: alexandre.belloni@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250108_234330_060283_13871281 
-X-CRM114-Status: GOOD (  11.64  )
-X-Mailman-Approved-At: Fri, 10 Jan 2025 03:19:21 -0800
+X-CRM114-CacheID: sfid-20250112_145415_264964_DA1652C7 
+X-CRM114-Status: GOOD (  18.39  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,79 +65,135 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============6401419244262635565=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+Hello,
 
---===============6401419244262635565==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="GJgCYyWEeZ2zf4nQ"
-Content-Disposition: inline
-
-
---GJgCYyWEeZ2zf4nQ
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, Jan 08, 2025 at 05:55:33PM -0500, Frank Li wrote:
-> Fix a probe failure in the i3c master driver that occurs when no i3c
-> devices are connected to the bus.
->=20
-> The issue arises in `i3c_master_bus_init()` where the `ret` value is not
-> updated after calling `master->ops->set_speed()`. If no devices are
-> present, `ret` remains set to `I3C_ERROR_M2`, causing the code to
-> incorrectly proceed to `err_bus_cleanup`.
->=20
-> Cc: stable@vger.kernel.org
-> Fixes: aef79e189ba2 ("i3c: master: support to adjust first broadcast addr=
-ess speed")
-> Signed-off-by: Frank Li <Frank.Li@nxp.com>
-
-Precisely.
-
-Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
-
-Tested with a Renesas RZ/G3S-SMARC board with some test code added to
-the still under-development controller driver:
-
-Tested-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+On 21/12/2024 14:34:18+0000, linux@treblig.org wrote:
+> From: "Dr. David Alan Gilbert" <linux@treblig.org>
+> 
+> i3c_device_do_setdasa() was added in 2022 as part of
+> commit 672825cd2823 ("i3c: export SETDASA method")
+> 
+> but has been unused.
+> 
+> It calls i3c_dev_setdasa_locked() which is now also unused.
+> 
+> Remove them both.
+> (This is effectively a revert of 672825cd2823).
+> 
 
 
---GJgCYyWEeZ2zf4nQ
-Content-Type: application/pgp-signature; name="signature.asc"
+Yeah, i guess this just means that we didn't see the device driver yet.
+I'm going to keep those function around for now.
 
------BEGIN PGP SIGNATURE-----
+> Signed-off-by: Dr. David Alan Gilbert <linux@treblig.org>
+> ---
+>  drivers/i3c/device.c       | 20 --------------------
+>  drivers/i3c/internals.h    |  1 -
+>  drivers/i3c/master.c       | 19 -------------------
+>  include/linux/i3c/device.h |  2 --
+>  4 files changed, 42 deletions(-)
+> 
+> diff --git a/drivers/i3c/device.c b/drivers/i3c/device.c
+> index e80e48756914..984976f28314 100644
+> --- a/drivers/i3c/device.c
+> +++ b/drivers/i3c/device.c
+> @@ -54,26 +54,6 @@ int i3c_device_do_priv_xfers(struct i3c_device *dev,
+>  }
+>  EXPORT_SYMBOL_GPL(i3c_device_do_priv_xfers);
+>  
+> -/**
+> - * i3c_device_do_setdasa() - do I3C dynamic address assignement with
+> - *                           static address
+> - *
+> - * @dev: device with which the DAA should be done
+> - *
+> - * Return: 0 in case of success, a negative error core otherwise.
+> - */
+> -int i3c_device_do_setdasa(struct i3c_device *dev)
+> -{
+> -	int ret;
+> -
+> -	i3c_bus_normaluse_lock(dev->bus);
+> -	ret = i3c_dev_setdasa_locked(dev->desc);
+> -	i3c_bus_normaluse_unlock(dev->bus);
+> -
+> -	return ret;
+> -}
+> -EXPORT_SYMBOL_GPL(i3c_device_do_setdasa);
+> -
+>  /**
+>   * i3c_device_get_info() - get I3C device information
+>   *
+> diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
+> index 433f6088b7ce..842e1a865877 100644
+> --- a/drivers/i3c/internals.h
+> +++ b/drivers/i3c/internals.h
+> @@ -13,7 +13,6 @@
+>  void i3c_bus_normaluse_lock(struct i3c_bus *bus);
+>  void i3c_bus_normaluse_unlock(struct i3c_bus *bus);
+>  
+> -int i3c_dev_setdasa_locked(struct i3c_dev_desc *dev);
+>  int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
+>  				 struct i3c_priv_xfer *xfers,
+>  				 int nxfers);
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index 42310c9a00c2..000187339400 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -2916,25 +2916,6 @@ void i3c_master_unregister(struct i3c_master_controller *master)
+>  }
+>  EXPORT_SYMBOL_GPL(i3c_master_unregister);
+>  
+> -int i3c_dev_setdasa_locked(struct i3c_dev_desc *dev)
+> -{
+> -	struct i3c_master_controller *master;
+> -
+> -	if (!dev)
+> -		return -ENOENT;
+> -
+> -	master = i3c_dev_get_master(dev);
+> -	if (!master)
+> -		return -EINVAL;
+> -
+> -	if (!dev->boardinfo || !dev->boardinfo->init_dyn_addr ||
+> -		!dev->boardinfo->static_addr)
+> -		return -EINVAL;
+> -
+> -	return i3c_master_setdasa_locked(master, dev->info.static_addr,
+> -						dev->boardinfo->init_dyn_addr);
+> -}
+> -
+>  int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
+>  				 struct i3c_priv_xfer *xfers,
+>  				 int nxfers)
+> diff --git a/include/linux/i3c/device.h b/include/linux/i3c/device.h
+> index 0a8a44ac2f02..f4e924c179d7 100644
+> --- a/include/linux/i3c/device.h
+> +++ b/include/linux/i3c/device.h
+> @@ -301,8 +301,6 @@ int i3c_device_do_priv_xfers(struct i3c_device *dev,
+>  			     struct i3c_priv_xfer *xfers,
+>  			     int nxfers);
+>  
+> -int i3c_device_do_setdasa(struct i3c_device *dev);
+> -
+>  void i3c_device_get_info(const struct i3c_device *dev, struct i3c_device_info *info);
+>  
+>  struct i3c_ibi_payload {
+> -- 
+> 2.47.1
+> 
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAmd/fhwACgkQFA3kzBSg
-KbakZxAArGY+//Z1bYxaZ81h2Z2Hd4yIU7OPjrtwT+JboeOO3tUXG9nkNWUr8+y5
-JS4vJPJNZJggTvZgz6xwY5IG4UwHxxwPpaDm7dv3SJZ1eu7YuRLzvCpYlNCsRDu3
-ysgtx0u6gTkbrEAQ82m/1XVhIs/TtwGOUpgkgAlP1VIb5U/fT6/FPi/Sd94oPYu0
-QeG5AqsFyXtRVtHgJi1HS0zdBuHdteaXmp6qKhJ+lPEyNnEaBSFFBXrw1qANUqJv
-0USsr7O8XlbINBm7ivQ+JmvWqti1e+eW6FuJFMPbyE37GLSM4CU2KpvBMoTZ4eYf
-uTHoZIuDpK9I57AbC5UQZs9+VJIEjel6H2sHxzCOnTZjrLrHPugyzZzzCqd+PKvK
-l3SYoVmgaXP8NwZal5IvNGpxmXQ94yR/rtbhzGHvIIdRZ6TNJjd6prYcEfducTWV
-NbLxT8393G+OPlbcknUmkI67udrAl7JwQ+/T9uyt7wKUaEZKXOddqeZCXTsogfoo
-ucpue1T0ZWShkcP8C0obanBzEFL8NCo2JvwNg2gveYeYnFkv6STqCMf+VXEh0LKC
-KUuhiQ69UmT6VoLFEYsTJ+Q2xsyzWI5dS6oVYf93KgTzMlbqn+JvhBEbbPYczJnf
-Xn4cGw8hGUQZoeipKWE/qHMqVkLIt+Tm7u4WzdWg2HMZ1D0nsEk=
-=ibUC
------END PGP SIGNATURE-----
-
---GJgCYyWEeZ2zf4nQ--
-
-
---===============6401419244262635565==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
-
---===============6401419244262635565==--
-
