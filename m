@@ -4,60 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF9ABC0218D
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1A0CC02193
 	for <linux-i3c@archiver.kernel.org>; Wed, 29 Jan 2025 20:34:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=znpO9kANoWnQh/Bx8JZi6b8HPfAm5DZaDs7Exq9+znY=; b=c2/twtvs2Ehae2
-	U1xRXN6u08Ch+Z3jJF4qHe7CFdylnKjgYpDT+ibRUzqsyo8hQRWGCyJiaFQQogNQ4w3hif7cS87Gj
-	JoSTqnF7MDYpGuP+k7+u67qMlpUYyDefafw9SkEmlKnAUzAz7DYquo5i+bXWv+9sxV7e3JM1GHdoQ
-	YAXjjFaMLKRGMkb2+EFJ3gEQ1xJ/5J5BffoMKLeFOj/aHvhj4CcVEAszGAqNN5NMjQCf+3JDt76wm
-	7DkmZbL5nmCP/3cbZDvOQovciApsku2z7Gt+XMrSz7wnL/LF5R5nDQUzwsQZWKgfAqJRaJSpdpbrz
-	f/L+B8uXql/2cACWB/wA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=vNA8tu6IGR0DipmuEwnCiYZI5oTKNtbX5OK36kpjRfs=; b=DU/vh2Qzly6R0U9jeiXmlrFbuF
+	FrL33YC4FiAD2eUjU5K8PvEN9BxSs4OXWjbtFeg71roUsh2kQ37VrUv/tnl/cl9jeMlGcUUrafURN
+	w1rwF0KO7yGp6IB441EUfa0jdqwN5LJ3oNYZ5XLowmt+MMbJOv1GwFq8j9jyyqm5AgvxVdZkGKBVB
+	cDfz29p4TqZA3bBgFoHa0PrfT6Mcd4fvF2xAzqMNMxzQwBH4MmGPGcAqlNm40NdywY68DwaVdGUVm
+	o9mFonfhtnTNxMeBw4vSVk0KCm9oMhHxo9wCJZ0wFqAd0W4vEnQaDa/fRX6Na2Y9W5xjiroZkkLXF
+	IEqfovDA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdElr-00000007lMh-0xS6;
+	id 1tdElr-00000007lMn-27rb;
 	Wed, 29 Jan 2025 20:34:47 +0000
-Received: from mx.treblig.org ([2a00:1098:5b::1])
+Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tX6u1-00000003Zus-19wW
+	id 1taMa9-00000008tFm-2Qh2
 	for linux-i3c@lists.infradead.org;
-	Sun, 12 Jan 2025 22:57:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=treblig.org
-	; s=bytemarkmx; h=Content-Type:MIME-Version:Message-ID:Subject:From:Date:From
-	:Subject; bh=Dn+nzRwAjy4+MEb2ambf3gZ4KPvzCEVaQV2Es+r7Tes=; b=bvDCJed+rtd+eLWd
-	SJEKpST9puKdabamlyAE3/sqLwqu/thl/SKdeUwHztRCcy2kvQwp1AgoYIUsMam9MdSR1ZkzB87P/
-	H8PFPNmSdfsHJ51uBOMTVEPEiBr31jWUOJ9KSOraj4o3kpmmJ5CKob56nGxsoxLTQYEqw8rma1EsX
-	7E5kySi0Mud/GRkIScuvW2L9gU+bbI97++ceurh6KX+CxAZvrc2BgpUDLqFoNrvIMi4T3C00avj0l
-	piL0tNzCfIN0LZqT5qwHSbWcNWmAmTqADqir2UzI4AoZIVGKvANHMTJnyP/xHBgVoVfUsHveKcgxK
-	6VhJA1OsSiJBvW2KDQ==;
-Received: from dg by mx.treblig.org with local (Exim 4.96)
-	(envelope-from <dg@treblig.org>)
-	id 1tX6tv-009lc9-2O;
-	Sun, 12 Jan 2025 22:57:47 +0000
-Date: Sun, 12 Jan 2025 22:57:47 +0000
-From: "Dr. David Alan Gilbert" <linux@treblig.org>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] i3c: Remove unused i3c_device_do_setdasa
-Message-ID: <Z4RI6xHMMEZXzTMF@gallifrey>
-References: <20241221143418.86012-1-linux@treblig.org>
- <202501122254082b225acf@mail.local>
+	Tue, 21 Jan 2025 22:18:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	sang-engineering.com; h=date:from:to:cc:subject:message-id
+	:references:mime-version:content-type:in-reply-to; s=k1; bh=vF22
+	TcZDK3gDIMGnmR/qxjIwejEAyGibsrd8qdp1Aik=; b=IF8ZHHBLYXWy0iEGQTM2
+	tllDDtLZRFbjoG81kYUKsAk9B3IkV4YHYmXN2mukoFnrOTGnCxxWjZd7Wvo5CJSk
+	glOLeN6Jm7g/JmRtliO11zCYWD5FO+K441M681itQRLaZR2zJNUDWBt0sCS++6Es
+	3lVcnr7GyqfjXNC5EOVROpZwgRMuT7qdB+Y8xbw9H7y1C3p7X05Bdq0MbkcKQ79P
+	k/OKegc8yTMCxlqP2Fg+T00aFyBXD0PcfuiOVLAj9fmk+1GPj+rrXGbWgF6QW8iH
+	7VaYC0DuBne3hm6rKYvD7pP0l2OCBcBDCNirjEwkB506AnUaUb5DqxDpRMPugSmH
+	Zg==
+Received: (qmail 2648197 invoked from network); 21 Jan 2025 23:18:43 +0100
+Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 21 Jan 2025 23:18:43 +0100
+X-UD-Smtp-Session: l3s3148p1@I6OIwj4sOsYujnvm
+Date: Tue, 21 Jan 2025 23:18:43 +0100
+From: Wolfram Sang <wsa+renesas@sang-engineering.com>
+To: Billy Tsai <billy_tsai@aspeedtech.com>
+Cc: alexandre.belloni@bootlin.com, pgaj@cadence.com,
+	miquel.raynal@bootlin.com, conor.culhane@silvaco.com,
+	aniketmaurya@google.com, Shyam-sundar.S-k@amd.com,
+	jarkko.nikula@linux.intel.com, xiaopei01@kylinos.cn,
+	Guruvendra.Punugupati@amd.com, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v1 1/2] i3c: Remove the const qualifier from i2c_msg
+ pointer in i2c_xfers API
+Message-ID: <Z5AdQ9UZWbW_1Dj_@ninjato>
+Mail-Followup-To: Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	Billy Tsai <billy_tsai@aspeedtech.com>,
+	alexandre.belloni@bootlin.com, pgaj@cadence.com,
+	miquel.raynal@bootlin.com, conor.culhane@silvaco.com,
+	aniketmaurya@google.com, Shyam-sundar.S-k@amd.com,
+	jarkko.nikula@linux.intel.com, xiaopei01@kylinos.cn,
+	Guruvendra.Punugupati@amd.com, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+References: <20250121110756.214714-1-billy_tsai@aspeedtech.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <202501122254082b225acf@mail.local>
-X-Chocolate: 70 percent or better cocoa solids preferably
-X-Operating-System: Linux/6.1.0-21-amd64 (x86_64)
-X-Uptime: 22:57:31 up 249 days, 10:11,  1 user,  load average: 0.00, 0.00,
- 0.00
-User-Agent: Mutt/2.2.12 (2023-09-09)
+In-Reply-To: <20250121110756.214714-1-billy_tsai@aspeedtech.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250112_145753_489401_068841B0 
-X-CRM114-Status: GOOD (  22.01  )
+X-CRM114-CacheID: sfid-20250121_141850_487046_89E9E5C8 
+X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-Notice: Please train this message.
 X-Mailman-Approved-At: Wed, 29 Jan 2025 12:34:46 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -70,146 +79,71 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============4998083990959614080=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-* Alexandre Belloni (alexandre.belloni@bootlin.com) wrote:
-> Hello,
-> 
-> On 21/12/2024 14:34:18+0000, linux@treblig.org wrote:
-> > From: "Dr. David Alan Gilbert" <linux@treblig.org>
-> > 
-> > i3c_device_do_setdasa() was added in 2022 as part of
-> > commit 672825cd2823 ("i3c: export SETDASA method")
-> > 
-> > but has been unused.
-> > 
-> > It calls i3c_dev_setdasa_locked() which is now also unused.
-> > 
-> > Remove them both.
-> > (This is effectively a revert of 672825cd2823).
-> > 
-> 
-> 
-> Yeah, i guess this just means that we didn't see the device driver yet.
-> I'm going to keep those function around for now.
 
-OK, thanks for the review.
+--===============4998083990959614080==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="5F1Lnzx5VCOxxxIV"
+Content-Disposition: inline
 
-Dave
 
-> > Signed-off-by: Dr. David Alan Gilbert <linux@treblig.org>
-> > ---
-> >  drivers/i3c/device.c       | 20 --------------------
-> >  drivers/i3c/internals.h    |  1 -
-> >  drivers/i3c/master.c       | 19 -------------------
-> >  include/linux/i3c/device.h |  2 --
-> >  4 files changed, 42 deletions(-)
-> > 
-> > diff --git a/drivers/i3c/device.c b/drivers/i3c/device.c
-> > index e80e48756914..984976f28314 100644
-> > --- a/drivers/i3c/device.c
-> > +++ b/drivers/i3c/device.c
-> > @@ -54,26 +54,6 @@ int i3c_device_do_priv_xfers(struct i3c_device *dev,
-> >  }
-> >  EXPORT_SYMBOL_GPL(i3c_device_do_priv_xfers);
-> >  
-> > -/**
-> > - * i3c_device_do_setdasa() - do I3C dynamic address assignement with
-> > - *                           static address
-> > - *
-> > - * @dev: device with which the DAA should be done
-> > - *
-> > - * Return: 0 in case of success, a negative error core otherwise.
-> > - */
-> > -int i3c_device_do_setdasa(struct i3c_device *dev)
-> > -{
-> > -	int ret;
-> > -
-> > -	i3c_bus_normaluse_lock(dev->bus);
-> > -	ret = i3c_dev_setdasa_locked(dev->desc);
-> > -	i3c_bus_normaluse_unlock(dev->bus);
-> > -
-> > -	return ret;
-> > -}
-> > -EXPORT_SYMBOL_GPL(i3c_device_do_setdasa);
-> > -
-> >  /**
-> >   * i3c_device_get_info() - get I3C device information
-> >   *
-> > diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
-> > index 433f6088b7ce..842e1a865877 100644
-> > --- a/drivers/i3c/internals.h
-> > +++ b/drivers/i3c/internals.h
-> > @@ -13,7 +13,6 @@
-> >  void i3c_bus_normaluse_lock(struct i3c_bus *bus);
-> >  void i3c_bus_normaluse_unlock(struct i3c_bus *bus);
-> >  
-> > -int i3c_dev_setdasa_locked(struct i3c_dev_desc *dev);
-> >  int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
-> >  				 struct i3c_priv_xfer *xfers,
-> >  				 int nxfers);
-> > diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> > index 42310c9a00c2..000187339400 100644
-> > --- a/drivers/i3c/master.c
-> > +++ b/drivers/i3c/master.c
-> > @@ -2916,25 +2916,6 @@ void i3c_master_unregister(struct i3c_master_controller *master)
-> >  }
-> >  EXPORT_SYMBOL_GPL(i3c_master_unregister);
-> >  
-> > -int i3c_dev_setdasa_locked(struct i3c_dev_desc *dev)
-> > -{
-> > -	struct i3c_master_controller *master;
-> > -
-> > -	if (!dev)
-> > -		return -ENOENT;
-> > -
-> > -	master = i3c_dev_get_master(dev);
-> > -	if (!master)
-> > -		return -EINVAL;
-> > -
-> > -	if (!dev->boardinfo || !dev->boardinfo->init_dyn_addr ||
-> > -		!dev->boardinfo->static_addr)
-> > -		return -EINVAL;
-> > -
-> > -	return i3c_master_setdasa_locked(master, dev->info.static_addr,
-> > -						dev->boardinfo->init_dyn_addr);
-> > -}
-> > -
-> >  int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
-> >  				 struct i3c_priv_xfer *xfers,
-> >  				 int nxfers)
-> > diff --git a/include/linux/i3c/device.h b/include/linux/i3c/device.h
-> > index 0a8a44ac2f02..f4e924c179d7 100644
-> > --- a/include/linux/i3c/device.h
-> > +++ b/include/linux/i3c/device.h
-> > @@ -301,8 +301,6 @@ int i3c_device_do_priv_xfers(struct i3c_device *dev,
-> >  			     struct i3c_priv_xfer *xfers,
-> >  			     int nxfers);
-> >  
-> > -int i3c_device_do_setdasa(struct i3c_device *dev);
-> > -
-> >  void i3c_device_get_info(const struct i3c_device *dev, struct i3c_device_info *info);
-> >  
-> >  struct i3c_ibi_payload {
-> > -- 
-> > 2.47.1
-> > 
-> 
-> -- 
-> Alexandre Belloni, co-owner and COO, Bootlin
-> Embedded Linux and Kernel engineering
-> https://bootlin.com
-> 
--- 
- -----Open up your eyes, open up your mind, open up your code -------   
-/ Dr. David Alan Gilbert    |       Running GNU/Linux       | Happy  \ 
-\        dave @ treblig.org |                               | In Hex /
- \ _________________________|_____ http://www.treblig.org   |_______/
+--5F1Lnzx5VCOxxxIV
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, Jan 21, 2025 at 07:07:55PM +0800, Billy Tsai wrote:
+> The change is necessary to enable the use of the
+> `i2c_get_dma_safe_msg_buf()` API, which requires a non-const
+> `struct i2c_msg *` to operate. The `i2c_get_dma_safe_msg_buf()` function
+> ensures safe handling of I2C messages when using DMA, making it essential
+> for scenarios where DMA transfers are involved. By removing the `const`
+> qualifier, this patch allows drivers to prepare and manage DMA-safe
+> buffers directly.
+>=20
+> Signed-off-by: Billy Tsai <billy_tsai@aspeedtech.com>
+
+Makes sense to me:
+
+Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+
+
+--5F1Lnzx5VCOxxxIV
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAmeQHUMACgkQFA3kzBSg
+KbaCVg//Y+R5V62Gbxfxz0ZS264Llbf4olfsib8/cbhlY9NHAQ2mg75Agj5xpL5r
+bLbcGgWTBTfCBnUPCOPRUz4vcEBbpW+oxjGI7cdeMBMyjRkkIJ3tu6gC0fFCUfq9
+uKEMwp+KYEQcNpH+Y8hlq9wwbOth1XkOajp0+AsesBADLGd0BNF4sOk35jYz/a2U
+/gxL2Ys1ePWvUEjsYhYb0Q6GIrnNh9YL5yQLtIv75MzpSX5AJe15QD4sPhCA6O8Z
+rqKLFP2D4YnTRjmInCNF7ej62vk+J3OyuthmlSt/lEoJkmssAOJeE8HNW46ObseQ
+rKxYKnkH/3Z/XKjWFlIIfeonl25uyLTyP0NtL1gDmZwn0XQcIjmGbnJzo2ZRs/mS
+npVaYtGtRcDyaemMXCV0D4ZQDbcwjeAmA2cKz/bgqbLrORfIb5RoZ1VfUPyxB1AU
+qoTbvwG6jwF45Md46fx2IRu52O9ekQzTFrwwDOV2zYua5jnJUNiBaGAYdipPh65V
+7KP9dwFt+MKSij8eQhwUwDe4uTXtc+FozvoD4ZV0VWojiYigABvnRW4Qi/2AtDu/
+dXOv2ks5hYAVwOUWlxpu4KYbkmSYKPFfw9WG1aiiK2xJU38nch/kwScw218f/YSv
+PdgqYCssHR8JmHZNKddc9vvQK/cKsri3fyQV4dQaHZvRTMiJi0M=
+=5Fo1
+-----END PGP SIGNATURE-----
+
+--5F1Lnzx5VCOxxxIV--
+
+
+--===============4998083990959614080==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
+
+--===============4998083990959614080==--
+
