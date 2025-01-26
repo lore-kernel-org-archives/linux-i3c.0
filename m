@@ -4,55 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B6A0C02195
-	for <linux-i3c@archiver.kernel.org>; Wed, 29 Jan 2025 20:34:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F04AC02197
+	for <linux-i3c@archiver.kernel.org>; Wed, 29 Jan 2025 20:34:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dTUHyPTY7dSWfE9iw6+xquh2s2udINpag9NAgc15FuY=; b=vVbbhItRpItwbU
-	XIvarXJxl9JLQgSGjA2DwusPNs0x77sH6lWVJhTU7c7btKtDCUxXpWt3+z0YV/8Lb2iIRu8JFFqrW
-	dPsYuXJ854dIAj+a84RNSfKz+hGr+hC58HxT6VKvzipAUTb/Eheb3b9M+Cg1+EzSDtn/By6U2kOrI
-	sEmS6j4H+duC6JnAF4k+cZq+FZZmf1OfAnvMe/XWuvcQu4UxVef+a+k7LUIoeQq9ayVfEJ58FghcY
-	dU+fi46KvooO6Bh2HTuVOT2DMS9tJQl47AEQWZ8/v0ZNMy69sF0QxKE3HhUcB/hSmNj+SWqXvLO8O
-	rxlerKe0tsydr5FrmnYQ==;
+	List-Owner; bh=0vhEpSfax9Ra8LdelToaIO51Pt0gU8xrvxvJOEA5DH8=; b=4Ur4OyQilPCBnn
+	WoggsFkzbih7Z/d83LR6lW6YNBT5Bi+p2LLA8UN8sFbT3lSTJQ1J+kh+jRJ6ri4gbWLuOKWCl5faD
+	kfI87Q9Ixg/TijtgU7Kp0G8/1ZH5DzpuT6Qxovn59iZ/+fG9cgs2bU7EGhwq5YCZntw2PXHXqLd4g
+	OOjXdpSE40u47Hh5PnA7eHM5wap3qtTwMZaSAeuLEnMLwtYD5e82vYi2Fykw4TmNOL0Wtc6DRI1Hb
+	M01SJirJQX2DcFxi9XrsjDRC7FZvhObIkmIvKUSvgs7c+2qwuxaQFG+KZoHVdbobTl7xnbMOc/5FH
+	tbWMHK1Qdwt3mSSHr3aw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdEls-00000007lNQ-1c5U;
+	id 1tdEls-00000007lNm-3xeL;
 	Wed, 29 Jan 2025 20:34:48 +0000
-Received: from todd.t-8ch.de ([2a01:4f8:c010:41de::1])
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1taWJl-00000009iyh-0G7r
+	id 1tc5ld-00000000IPf-3l8g
 	for linux-i3c@lists.infradead.org;
-	Wed, 22 Jan 2025 08:42:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=weissschuh.net;
-	s=mail; t=1737535347;
-	bh=f9zFFRYixgkzI6kpfxhjvMCO+OLhvzElHyeKP4ha0LQ=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=A3zQmHUb5W+/4NiBRoTMUhu+n+USP1CJB5DPIarG+NqGWM1HYJqr9DPU97h740n3K
-	 li4OXbuZG5vnPh/r9DksXZUcafMKQUjpuX14C9v6tpQ6qSk1dsUV9EC1IeRcPOeDPJ
-	 Cw3MK7IVfin2t8RIpfVKM+XojG3NgSgVtperMzYQ=
-Date: Wed, 22 Jan 2025 09:42:27 +0100
-From: Thomas =?utf-8?Q?Wei=C3=9Fschuh?= <linux@weissschuh.net>
-To: Billy Tsai <billy_tsai@aspeedtech.com>
-Cc: alexandre.belloni@bootlin.com, pgaj@cadence.com, 
-	miquel.raynal@bootlin.com, conor.culhane@silvaco.com, aniketmaurya@google.com, 
-	Shyam-sundar.S-k@amd.com, jarkko.nikula@linux.intel.com, wsa+renesas@sang-engineering.com, 
-	xiaopei01@kylinos.cn, Guruvendra.Punugupati@amd.com, linux-i3c@lists.infradead.org, 
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v1 1/2] i3c: Remove the const qualifier from i2c_msg
- pointer in i2c_xfers API
-Message-ID: <23854752-435e-432e-ba21-caf690c0cecc@t-8ch.de>
-References: <20250121110756.214714-1-billy_tsai@aspeedtech.com>
+	Sun, 26 Jan 2025 16:45:51 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id F2AABA40F21;
+	Sun, 26 Jan 2025 16:44:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CD268C4CED3;
+	Sun, 26 Jan 2025 16:45:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1737909948;
+	bh=MUSbd6MS1V2ZedDRIbqY9pCPcg95FOTVc9b05vkH/zM=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=IshJcf+Og7bSIqBpPMuNafbjFJGksieaM09YVUwpqKxkBiHdIAVnUSTWp8oEHX0+l
+	 dpzZfrH4eh9lyoKA1pGlOCJFSayb67PvSQLTQCooLvujNSi4aBHwqwOY04IrfageaH
+	 971kMZLO1a0fSKbLdH8t2DGSFcDZOb1xC2KJf7jt1qJc9LHDdwm2wq/QsXKAuU+Vao
+	 STe10ANrLX6kMRC/X4ChT0YpRq4G4n/H8GwmWjy9jEfkp4E3AjdH32taY7YdZ0xCOY
+	 6fqfaJDM1Y8ZpbbgbZwNC4KezigDLQS3UbG/ZyhB01AFInCMKKFN+beeEpVDAcUuf/
+	 gaj/6C6uj4d6g==
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Cc: Jarkko Nikula <jarkko.nikula@linux.intel.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Sasha Levin <sashal@kernel.org>,
+	Shyam-sundar.S-k@amd.com,
+	Guruvendra.Punugupati@amd.com,
+	linux-i3c@lists.infradead.org
+Subject: [PATCH AUTOSEL 6.13 8/8] i3c: mipi-i3c-hci: Add support for MIPI I3C HCI on PCI bus
+Date: Sun, 26 Jan 2025 11:45:23 -0500
+Message-Id: <20250126164523.963930-8-sashal@kernel.org>
+X-Mailer: git-send-email 2.39.5
+In-Reply-To: <20250126164523.963930-1-sashal@kernel.org>
+References: <20250126164523.963930-1-sashal@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250121110756.214714-1-billy_tsai@aspeedtech.com>
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.13
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250122_004233_243482_1F6DD87F 
-X-CRM114-Status: UNSURE (   9.41  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250126_084550_063236_4DE9DC44 
+X-CRM114-Status: GOOD (  21.29  )
 X-Mailman-Approved-At: Wed, 29 Jan 2025 12:34:46 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -70,26 +81,214 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 2025-01-21 19:07:55+0800, Billy Tsai wrote:
-> The change is necessary to enable the use of the
-> `i2c_get_dma_safe_msg_buf()` API, which requires a non-const
-> `struct i2c_msg *` to operate. The `i2c_get_dma_safe_msg_buf()` function
-> ensures safe handling of I2C messages when using DMA, making it essential
-> for scenarios where DMA transfers are involved. By removing the `const`
-> qualifier, this patch allows drivers to prepare and manage DMA-safe
-> buffers directly.
+From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
 
-Why not modify i2c_get_dma_safe_msg_buf() to accept
-'const struct i2c_msg' instead?
+[ Upstream commit 30bb1ce71215645fa6a92f4fa8cbb8f58db68f12 ]
 
-> Signed-off-by: Billy Tsai <billy_tsai@aspeedtech.com>
-> ---
->  drivers/i3c/master/dw-i3c-master.c     | 2 +-
->  drivers/i3c/master/i3c-master-cdns.c   | 2 +-
->  drivers/i3c/master/mipi-i3c-hci/core.c | 2 +-
->  drivers/i3c/master/svc-i3c-master.c    | 2 +-
->  include/linux/i3c/master.h             | 2 +-
->  5 files changed, 5 insertions(+), 5 deletions(-)
+Add a glue code for the MIPI I3C HCI on PCI bus with Intel Panther Lake
+I3C controller PCI IDs.
+
+MIPI I3C HCI on Intel platforms has additional logic around the MIPI I3C
+HCI core logic. Those together create so called I3C slice on PCI bus.
+Intel specific initialization code does a reset cycle to the I3C slice
+before probing the MIPI I3C HCI part.
+
+Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+Link: https://lore.kernel.org/r/20241231115904.620052-2-jarkko.nikula@linux.intel.com
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/i3c/master/Kconfig                    |  11 ++
+ drivers/i3c/master/mipi-i3c-hci/Makefile      |   1 +
+ .../master/mipi-i3c-hci/mipi-i3c-hci-pci.c    | 148 ++++++++++++++++++
+ 3 files changed, 160 insertions(+)
+ create mode 100644 drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
+
+diff --git a/drivers/i3c/master/Kconfig b/drivers/i3c/master/Kconfig
+index 90dee3ec55209..77da199c7413e 100644
+--- a/drivers/i3c/master/Kconfig
++++ b/drivers/i3c/master/Kconfig
+@@ -57,3 +57,14 @@ config MIPI_I3C_HCI
+ 
+ 	  This driver can also be built as a module.  If so, the module will be
+ 	  called mipi-i3c-hci.
++
++config MIPI_I3C_HCI_PCI
++	tristate "MIPI I3C Host Controller Interface PCI support"
++	depends on MIPI_I3C_HCI
++	depends on PCI
++	help
++	  Support for MIPI I3C Host Controller Interface compatible hardware
++	  on the PCI bus.
++
++	  This driver can also be built as a module. If so, the module will be
++	  called mipi-i3c-hci-pci.
+diff --git a/drivers/i3c/master/mipi-i3c-hci/Makefile b/drivers/i3c/master/mipi-i3c-hci/Makefile
+index 1f8cd5c48fdef..e3d3ef757035f 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/Makefile
++++ b/drivers/i3c/master/mipi-i3c-hci/Makefile
+@@ -5,3 +5,4 @@ mipi-i3c-hci-y				:= core.o ext_caps.o pio.o dma.o \
+ 					   cmd_v1.o cmd_v2.o \
+ 					   dat_v1.o dct_v1.o \
+ 					   hci_quirks.o
++obj-$(CONFIG_MIPI_I3C_HCI_PCI)		+= mipi-i3c-hci-pci.o
+diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
+new file mode 100644
+index 0000000000000..c6c3a3ec11eae
+--- /dev/null
++++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
+@@ -0,0 +1,148 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * PCI glue code for MIPI I3C HCI driver
++ *
++ * Copyright (C) 2024 Intel Corporation
++ *
++ * Author: Jarkko Nikula <jarkko.nikula@linux.intel.com>
++ */
++#include <linux/acpi.h>
++#include <linux/idr.h>
++#include <linux/kernel.h>
++#include <linux/module.h>
++#include <linux/pci.h>
++#include <linux/platform_device.h>
++
++struct mipi_i3c_hci_pci_info {
++	int (*init)(struct pci_dev *pci);
++};
++
++#define INTEL_PRIV_OFFSET		0x2b0
++#define INTEL_PRIV_SIZE			0x28
++#define INTEL_PRIV_RESETS		0x04
++#define INTEL_PRIV_RESETS_RESET		BIT(0)
++#define INTEL_PRIV_RESETS_RESET_DONE	BIT(1)
++
++static DEFINE_IDA(mipi_i3c_hci_pci_ida);
++
++static int mipi_i3c_hci_pci_intel_init(struct pci_dev *pci)
++{
++	unsigned long timeout;
++	void __iomem *priv;
++
++	priv = devm_ioremap(&pci->dev,
++			    pci_resource_start(pci, 0) + INTEL_PRIV_OFFSET,
++			    INTEL_PRIV_SIZE);
++	if (!priv)
++		return -ENOMEM;
++
++	/* Assert reset, wait for completion and release reset */
++	writel(0, priv + INTEL_PRIV_RESETS);
++	timeout = jiffies + msecs_to_jiffies(10);
++	while (!(readl(priv + INTEL_PRIV_RESETS) &
++		 INTEL_PRIV_RESETS_RESET_DONE)) {
++		if (time_after(jiffies, timeout))
++			break;
++		cpu_relax();
++	}
++	writel(INTEL_PRIV_RESETS_RESET, priv + INTEL_PRIV_RESETS);
++
++	return 0;
++}
++
++static struct mipi_i3c_hci_pci_info intel_info = {
++	.init = mipi_i3c_hci_pci_intel_init,
++};
++
++static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
++				  const struct pci_device_id *id)
++{
++	struct mipi_i3c_hci_pci_info *info;
++	struct platform_device *pdev;
++	struct resource res[2];
++	int dev_id, ret;
++
++	ret = pcim_enable_device(pci);
++	if (ret)
++		return ret;
++
++	pci_set_master(pci);
++
++	memset(&res, 0, sizeof(res));
++
++	res[0].flags = IORESOURCE_MEM;
++	res[0].start = pci_resource_start(pci, 0);
++	res[0].end = pci_resource_end(pci, 0);
++
++	res[1].flags = IORESOURCE_IRQ;
++	res[1].start = pci->irq;
++	res[1].end = pci->irq;
++
++	dev_id = ida_alloc(&mipi_i3c_hci_pci_ida, GFP_KERNEL);
++	if (dev_id < 0)
++		return dev_id;
++
++	pdev = platform_device_alloc("mipi-i3c-hci", dev_id);
++	if (!pdev)
++		return -ENOMEM;
++
++	pdev->dev.parent = &pci->dev;
++	device_set_node(&pdev->dev, dev_fwnode(&pci->dev));
++
++	ret = platform_device_add_resources(pdev, res, ARRAY_SIZE(res));
++	if (ret)
++		goto err;
++
++	info = (struct mipi_i3c_hci_pci_info *)id->driver_data;
++	if (info && info->init) {
++		ret = info->init(pci);
++		if (ret)
++			goto err;
++	}
++
++	ret = platform_device_add(pdev);
++	if (ret)
++		goto err;
++
++	pci_set_drvdata(pci, pdev);
++
++	return 0;
++
++err:
++	platform_device_put(pdev);
++	ida_free(&mipi_i3c_hci_pci_ida, dev_id);
++	return ret;
++}
++
++static void mipi_i3c_hci_pci_remove(struct pci_dev *pci)
++{
++	struct platform_device *pdev = pci_get_drvdata(pci);
++	int dev_id = pdev->id;
++
++	platform_device_unregister(pdev);
++	ida_free(&mipi_i3c_hci_pci_ida, dev_id);
++}
++
++static const struct pci_device_id mipi_i3c_hci_pci_devices[] = {
++	/* Panther Lake-H */
++	{ PCI_VDEVICE(INTEL, 0xe37c), (kernel_ulong_t)&intel_info},
++	{ PCI_VDEVICE(INTEL, 0xe36f), (kernel_ulong_t)&intel_info},
++	/* Panther Lake-P */
++	{ PCI_VDEVICE(INTEL, 0xe47c), (kernel_ulong_t)&intel_info},
++	{ PCI_VDEVICE(INTEL, 0xe46f), (kernel_ulong_t)&intel_info},
++	{ },
++};
++MODULE_DEVICE_TABLE(pci, mipi_i3c_hci_pci_devices);
++
++static struct pci_driver mipi_i3c_hci_pci_driver = {
++	.name = "mipi_i3c_hci_pci",
++	.id_table = mipi_i3c_hci_pci_devices,
++	.probe = mipi_i3c_hci_pci_probe,
++	.remove = mipi_i3c_hci_pci_remove,
++};
++
++module_pci_driver(mipi_i3c_hci_pci_driver);
++
++MODULE_AUTHOR("Jarkko Nikula <jarkko.nikula@intel.com>");
++MODULE_LICENSE("GPL");
++MODULE_DESCRIPTION("MIPI I3C HCI driver on PCI bus");
+-- 
+2.39.5
+
 
 -- 
 linux-i3c mailing list
