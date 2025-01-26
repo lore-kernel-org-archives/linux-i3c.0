@@ -4,71 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57C2AC02194
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE462C02196
 	for <linux-i3c@archiver.kernel.org>; Wed, 29 Jan 2025 20:34:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=p/vdnCnpycYMHE48xgE32hjJ4sbALgd0+pzV+X7ZPoQ=; b=q2Y/dPVOzFE4/wQeIDu4Sz0PmO
-	SQ4ebulCJTC++N+hivn59CkO9X6jM+2xiM8BbyVuC3h/eIyHQhMLUxvto4rvA6qUYbL8PyfO1pBwd
-	7Bv3pEjHEu909IGRWX7+0xX0xiVX7jEyEKbqD0CTsgbVg1QM++8vuXNBTpBMLYT7hVLdnz+S4cgiI
-	V0o0etWgXjmvBmr7ngMLqcnUgJRUhe4kAvDDhn06RSVBLi+j39a+onlkfTFN492vJYypqjPBX07hE
-	EODlme6F7YdKgxQvnl7Vl4WM7rMlU2j8lNyKbzVjOsoRrrsQ9CzWVdJ5+NwJS3pmZrECiOzUEQYwE
-	+Cj03bmA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AXcGVIBeixB+2MNb8RF0yuzySkyG89P6nY7LBIHMk+c=; b=zuwJpwiE0T1JEw
+	lMEtLPlcTKZUUhhTRRFRksebDPIaGtbROcNYcq8NizxP6ZuRR4LGOMlF1XQ6ZAmUCwycfgiylGVm8
+	E3ZqY5lkHfuWPNZIMkhLHG8EWTr1dMa6jUAuGu2LaQt9L+sJ2wAOHFCDUo20wlyCUPo/8+Lm1NU8A
+	BjPuuEICHpfBrAZOV0rVr9b+o/9ALBB1koPhQ1w+fY00y6IrVSzM8zEsZT8K1HpRHXdT/2kfWnFJ4
+	ENjsP3JdbpnlBSVO3nGmvzlCqf++7ZyryKIoTwwFhjn6kCL8Z7+ZM5s+cc13VdIXPzG+NWI/YYYB6
+	HnPTsrQsCyHtcq/dJBbg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tdEls-00000007lNF-0RiW;
+	id 1tdEls-00000007lNb-2ms3;
 	Wed, 29 Jan 2025 20:34:48 +0000
-Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1taV3g-00000009as0-1HIp
+	id 1tc5lU-00000000IKA-2npe
 	for linux-i3c@lists.infradead.org;
-	Wed, 22 Jan 2025 07:21:54 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	sang-engineering.com; h=date:from:to:cc:subject:message-id
-	:references:mime-version:content-type:in-reply-to; s=k1; bh=pgxS
-	Hx2ys9jK8Ypslvhf7Lhumz5BLoPe+309r5ajS6o=; b=WG879ojN90FOF0c5S2E8
-	Cao8Tgp1oLe+2jzNJ9e9xd4vQ2cPr515e7EEzYyogYUHpMvqkmZpGSvkJdxD8sOT
-	gUNKaWiIjCoRrYRs2PaTAT37Tds99My1dOKhd8vGVe5I4WISkfD8BUWlmZjy2BnZ
-	YTdfmYKZ/1wDOElDYHcGluxVeX2q6Fz+ogffKnKJ27A6Zfxm0MZS1MwT0ke9VsLm
-	DNKvKs+VAuv46oZCYM5mFQJl1/ozHZRuO7qjPAfdv2lemMTkHoAWe+15bT55+uPJ
-	D1hMpggp6E+SfAQzVtMQokXdZADEJUYqDvn7vvuBCDSt68WX6cBUPT34Sw6Dp4DF
-	1g==
-Received: (qmail 2764966 invoked from network); 22 Jan 2025 08:21:48 +0100
-Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 22 Jan 2025 08:21:48 +0100
-X-UD-Smtp-Session: l3s3148p1@lFi1WEYsuqcujnvm
-Date: Wed, 22 Jan 2025 08:21:47 +0100
-From: Wolfram Sang <wsa+renesas@sang-engineering.com>
-To: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
-Cc: Billy Tsai <billy_tsai@aspeedtech.com>, alexandre.belloni@bootlin.com,
-	pgaj@cadence.com, miquel.raynal@bootlin.com,
-	conor.culhane@silvaco.com, aniketmaurya@google.com,
-	Shyam-sundar.S-k@amd.com, jarkko.nikula@linux.intel.com,
-	xiaopei01@kylinos.cn, Guruvendra.Punugupati@amd.com,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v1 1/2] i3c: Remove the const qualifier from i2c_msg
- pointer in i2c_xfers API
-Message-ID: <Z5Cci6ixvu5ePdlR@ninjato>
-Mail-Followup-To: Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>,
-	Billy Tsai <billy_tsai@aspeedtech.com>,
-	alexandre.belloni@bootlin.com, pgaj@cadence.com,
-	miquel.raynal@bootlin.com, conor.culhane@silvaco.com,
-	aniketmaurya@google.com, Shyam-sundar.S-k@amd.com,
-	jarkko.nikula@linux.intel.com, xiaopei01@kylinos.cn,
-	Guruvendra.Punugupati@amd.com, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-References: <20250121110756.214714-1-billy_tsai@aspeedtech.com>
- <b91a21ed-c57f-4b71-8232-a3cd7124a549@quicinc.com>
+	Sun, 26 Jan 2025 16:45:41 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 84530A40F28;
+	Sun, 26 Jan 2025 16:43:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8774AC4CED3;
+	Sun, 26 Jan 2025 16:45:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1737909939;
+	bh=9VzH5aG2tjjUbqdni80bhk9ykOGOWpDhEBI+wkaVa0o=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=oUy7svlhu2DTPHgA+uwCt1/9l363VJ6tVcc7+YmCYWxBf14/+liq6gt4DT/RmhPI7
+	 E3+gQGG87g0aTuO7kO1tGS6ai0ATmUBpC8btjOC/NPRfGhv3kvDaGIeypS3ynjxqqp
+	 YUZm0JIpTbsNgwq4LduZcdi6bTKClZZoF0lmRF6YsH7m/ygE2VwXvQ2+M8UpaMEE1R
+	 y49csaL1+d26SxKs3wYhyiDhOQyTIEnYacw0FOL9O2QH56AguVBEFhKV46o8rVw02O
+	 0F+YCJgCZXLOEiWc3+pcUGJGGWbQPgkOflfe4EnpZ/DOBhRfs41h3wMw9vsIIMiA9G
+	 KqnETewadBTNw==
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Cc: Jarkko Nikula <jarkko.nikula@linux.intel.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Sasha Levin <sashal@kernel.org>,
+	linux-i3c@lists.infradead.org
+Subject: [PATCH AUTOSEL 6.13 7/8] i3c: mipi-i3c-hci: Add Intel specific quirk to ring resuming
+Date: Sun, 26 Jan 2025 11:45:22 -0500
+Message-Id: <20250126164523.963930-7-sashal@kernel.org>
+X-Mailer: git-send-email 2.39.5
+In-Reply-To: <20250126164523.963930-1-sashal@kernel.org>
+References: <20250126164523.963930-1-sashal@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <b91a21ed-c57f-4b71-8232-a3cd7124a549@quicinc.com>
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.13
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250121_232153_207999_EE8DDDBC 
-X-CRM114-Status: UNSURE (   8.43  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250126_084540_781595_E87E7BA9 
+X-CRM114-Status: GOOD (  12.62  )
 X-Mailman-Approved-At: Wed, 29 Jan 2025 12:34:46 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -81,68 +74,72 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1701637033419635840=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
 
---===============1701637033419635840==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="WL/IGby9HHcM53NP"
-Content-Disposition: inline
+[ Upstream commit ccdb2e0e3b00d13df90ac7a0524dd855173f1171 ]
 
+MIPI I3C HCI on Intel hardware requires a quirk where ring needs to stop
+and set to run again after resuming the halted controller. This is not
+expected from the MIPI I3C HCI specification and is Intel specific.
 
---WL/IGby9HHcM53NP
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Add this quirk to generic aborted transfer handling and execute it only
+when ring is not in running state after a transfer error and attempted
+controller resume. This is the case on Intel hardware.
 
+It is not fully clear to me what is the ring running state in generic
+hardware in such case. I would expect if ring is not running, then stop
+request is a no-op and run request is either required or does the same
+what controller resume would do.
 
-> what we need is only i2c_xfers->buf to be DMA-safe, not the *i2c_xfers.
-> Right ?
+Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+Link: https://lore.kernel.org/r/20241231115904.620052-1-jarkko.nikula@linux.intel.com
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/i3c/master/mipi-i3c-hci/dma.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
 
-Yes.
+diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
+index e8e56a8d20573..491dfe70b6600 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/dma.c
++++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
+@@ -758,9 +758,26 @@ static bool hci_dma_irq_handler(struct i3c_hci *hci)
+ 			complete(&rh->op_done);
+ 
+ 		if (status & INTR_TRANSFER_ABORT) {
++			u32 ring_status;
++
+ 			dev_notice_ratelimited(&hci->master.dev,
+ 				"ring %d: Transfer Aborted\n", i);
+ 			mipi_i3c_hci_resume(hci);
++			ring_status = rh_reg_read(RING_STATUS);
++			if (!(ring_status & RING_STATUS_RUNNING) &&
++			    status & INTR_TRANSFER_COMPLETION &&
++			    status & INTR_TRANSFER_ERR) {
++				/*
++				 * Ring stop followed by run is an Intel
++				 * specific required quirk after resuming the
++				 * halted controller. Do it only when the ring
++				 * is not in running state after a transfer
++				 * error.
++				 */
++				rh_reg_write(RING_CONTROL, RING_CTRL_ENABLE);
++				rh_reg_write(RING_CONTROL, RING_CTRL_ENABLE |
++							   RING_CTRL_RUN_STOP);
++			}
+ 		}
+ 		if (status & INTR_WARN_INS_STOP_MODE)
+ 			dev_warn_ratelimited(&hci->master.dev,
+-- 
+2.39.5
 
-> Also I guess same change is required for all the vendor drivers. But Not
-> sure if it's feasible with this patch ?
-
-I also wondered if the I3C core should maybe provide this, but then I
-saw that currently only the mipi-hci driver uses DMA and concluded that
-per-driver is better. At least for now.
-
-
---WL/IGby9HHcM53NP
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAmeQnIgACgkQFA3kzBSg
-Kbaifg/7BJfV/+Bivwke0oMwsbIMcBPQcxD0wCNN/0ALq8jU41KIg68JXKdMePN3
-79BALPSCiJKkWKxCkeWH1ODtc2JWkw+wKRBNx4fkyAjaC8P3klM9nRywqLbJ1w6i
-qL3dt4RWxozyb3VV8wpNCEvcSTquZp6B8lON2waEt4J+Z9YfP/QCrZvzHiJtL0Yt
-j8LJJcN0+e42Ia+NjYXbXl0D3CNkzl1Jd77iYZS6hKUfdnnBngR72KYU98lq0ufT
-gtAK3OwOZ3NU6lVLmy6H4kWGtZLacPSdw8T2B9LfQytbL4a27P465AzsJMxFEYB5
-ItqikJN1OFd1WmtJN/DM2tT3vLUil9LItu5stucp6R5tmqxKk+i/buWmYQtlcRSw
-i2hwBMxbdSqTym921FzJ8kn9tX8jfZaJxdI6IN54w6+qdm8ejvTDyD/eKfoLqhXZ
-G4HT2xJtjR3Ebd5X06cTW8ZBSbvlU/w8UBqiby2rRpc83DT+NnfHmPRc6zhvWpQe
-lRpr1lX7MX8Wy3H8sq0dWj7BvE0uhU8OUtQXpHWvmhrW6NHqcKZ+h+e64iz35Y93
-WKHnqYX1yEP6ZW+5zhIrILV58Iwvx68iPnl+MaImJZ34it0MW3YCKGGFw699GmVE
-d5D0M/+l3MdUUU6egJii34qbWdcThw7H+ubozxSo+g6c0RCxYrQ=
-=7O/J
------END PGP SIGNATURE-----
-
---WL/IGby9HHcM53NP--
-
-
---===============1701637033419635840==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
-
---===============1701637033419635840==--
-
