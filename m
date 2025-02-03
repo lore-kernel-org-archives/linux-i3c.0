@@ -4,92 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3319FC02190
-	for <linux-i3c@archiver.kernel.org>; Mon,  3 Feb 2025 05:23:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6C7A6C02195
+	for <linux-i3c@archiver.kernel.org>; Mon,  3 Feb 2025 14:58:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MP704Z19BG8cgTUAXcp8LRI14+hs5UjcKHvo0HLIsgM=; b=rlBmGFcma/1i/e
-	YhRkTPZI6g5ouKIa4cyPI4AtJuKs5YQ6QNMuzmLGaRuPY5uYT4AZUkT6Ob4WxFprx1B4hcpCZq0VQ
-	dEVpv4vDw2+RK9qnE1vHk+fO4P6W5jR3g/kh0QZWRzalwLj0oL2SYhfmsXvjgH5Uc6CF8gIfeQxNi
-	lb3spyiUI9xpRfHT1hXfJybu4V1DZihXEbwpLWMe/nFAaUyOTv42806WsfxNE6ZcbiKfuzDwhgW2I
-	EgNRyVPnSCVuhYmtt3788og3+LHbE0YjlALwzmVyL27qgcWMCq74WuIM6oCXNhLcsP+XLrugE1pY3
-	HFnuMR5Lyf79NeHNk0+Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+QxpoVhqOoX+rKiTypAO8Ic8zn4OCtvMpr8rQYLgI48=; b=ZWL2k+mo3yapyG
+	/fXPhbffYgEd/CrjQPe9H8IVF3j+9Wb9lcNjlKTHKFGEDIH1+2ssRWEIXVUdJEKQBwdyiwVmwk0g3
+	poG+HApkUonpJRJGvCMu2oUDnoiwTRP2lJX8J80EaX4DHdBqJCaDOsL8+g4C9yzVs4kNjwuMWkR8T
+	Df01vP2qhX4TG/igIW6lFNNevuoFmvY5SxcIphizomhyBm7wxFlbBJ1atmZgGEtnbhf/NEHchu4G3
+	Hka1d9GGonrGd22osovfeRtbrRSBUhPQLS9zOjncjAjIbnnAW1Jo41VskGn7ThWFkDyBjLNNZ0c3t
+	bOzd6Z4hBL8y8eAYRGiw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1teovL-0000000EaLH-3tq9;
-	Mon, 03 Feb 2025 05:23:07 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1texu4-0000000FmTr-0Y1M;
+	Mon, 03 Feb 2025 14:58:24 +0000
+Received: from mgamail.intel.com ([192.198.163.16])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1teovJ-0000000EaKu-2Pae
+	id 1texr7-0000000Flqp-1Olm
 	for linux-i3c@lists.infradead.org;
-	Mon, 03 Feb 2025 05:23:06 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 512MKKaG006815;
-	Mon, 3 Feb 2025 05:23:02 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	IltoWlN0FidB/hU4nhAgHeI3oXkmMrby1MF2wWVjzyg=; b=ILvikukAnxakoyE8
-	TlfAZD6q7xdpdrYkX8gZZxomP5UwmShNLfI4ANTfe10nQGWO15WAM51t/rAn7AXb
-	55mXLhlQTBj6hFj95wk425Q7K/Y6Vc1IvNBRKy6jDYmtrA1CZCn/gV57hqqzLLjy
-	HZY4NcETZBrY1oVh8u0DgzugA7RQi+iHEiZUHadjHA7Ke/hLac6DJWdsg+VmbQNi
-	OmQ3XO4kG7vdVD2+XvFLOnNOw66KanKoBS+BKBw4KBkoUFAvQZaGO3/oHD2g6cFb
-	PPX3diePfAPTBphfZoHeY8TU2lmsfB+iVQQ2sMsCqCRbQ6oShDJKtMA/2314UnN3
-	qiMbmw==
-Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 44jd428qa9-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 03 Feb 2025 05:23:01 +0000 (GMT)
-Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 5135N01W006630
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 3 Feb 2025 05:23:00 GMT
-Received: from [10.216.35.42] (10.80.80.8) by nasanex01c.na.qualcomm.com
- (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sun, 2 Feb 2025
- 21:22:57 -0800
-Message-ID: <11695367-f9cb-46be-9f83-b6f6ec5e42f4@quicinc.com>
-Date: Mon, 3 Feb 2025 10:52:53 +0530
+	Mon, 03 Feb 2025 14:55:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1738594521; x=1770130521;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=cwzgOLB6nUlEjfbXRv2WUSyWyLEmV2Ql7jXr14bMdBg=;
+  b=l7Zhnmxt4Ss/7rbnPw4nj3NXfHmoHYCtcApae1o+g4OoguQYvzJ6FNj9
+   FBGB288GQweeqacUMGOadZ9MnZSj6o3wFS8tTvYDegk4wepTzPA6oWOP0
+   ARLsYrqUjmpYGPC9toHxfNY6mOZc/rEVsYh8J/oD1CYsa1JFywhOcyRxO
+   kzuv06tRyv9MHDAaoGSGh65v4Tmoixq2k61FBax4yb42curH08FCmn4wt
+   L9+nBkeaz4j7EenCULomYLlph9+yVzB1TVAM7N+VQnjvoWWWm1TEhr5dU
+   c0LnhTGRtbtaf3/3ywvZ2f1UwfLFByok7YWTw9MrMC6OYbOdILGPild2f
+   w==;
+X-CSE-ConnectionGUID: 4pkng33RQ66NsfBAS6UO/Q==
+X-CSE-MsgGUID: 0i2xBzM4RnafBJ+to9yx0Q==
+X-IronPort-AV: E=McAfee;i="6700,10204,11335"; a="26690750"
+X-IronPort-AV: E=Sophos;i="6.13,256,1732608000"; 
+   d="scan'208";a="26690750"
+Received: from orviesa001.jf.intel.com ([10.64.159.141])
+  by fmvoesa110.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Feb 2025 06:55:20 -0800
+X-CSE-ConnectionGUID: DUNdnsttQjCzXjELif4H4g==
+X-CSE-MsgGUID: ulR+gQpTTki6ab6OhIjLbA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.12,224,1728975600"; 
+   d="scan'208";a="147521037"
+Received: from mylly.fi.intel.com (HELO mylly.fi.intel.com.) ([10.237.72.153])
+  by orviesa001.jf.intel.com with ESMTP; 03 Feb 2025 06:55:19 -0800
+From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+To: linux-i3c@lists.infradead.org
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Jarkko Nikula <jarkko.nikula@linux.intel.com>,
+	"Prabhakaran, Krishna" <krishna.prabhakaran@intel.com>
+Subject: [PATCH] i3c: mipi-i3c-hci: Use physical device pointer with DMA API
+Date: Mon,  3 Feb 2025 16:55:12 +0200
+Message-ID: <20250203145513.141466-1-jarkko.nikula@linux.intel.com>
+X-Mailer: git-send-email 2.47.2
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] i3c: Add basic HDR support
-To: Joshua Yeong <joshua.yeong@starfivetech.com>, Frank Li <Frank.Li@nxp.com>,
-        Alexandre Belloni <alexandre.belloni@bootlin.com>,
-        Miquel Raynal
-	<miquel.raynal@bootlin.com>,
-        Conor Culhane <conor.culhane@silvaco.com>
-CC: "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
-        "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-        "imx@lists.linux.dev" <imx@lists.linux.dev>
-References: <20250129-i3c_ddr-v1-0-028a7a5d4324@nxp.com>
- <20250129-i3c_ddr-v1-1-028a7a5d4324@nxp.com>
- <e09b50b8-dd65-4636-aa35-42efc86bba16@quicinc.com>
- <e28bda63-bd6f-41db-8c24-43f21cccb386@starfivetech.com>
-Content-Language: en-US
-From: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
-In-Reply-To: <e28bda63-bd6f-41db-8c24-43f21cccb386@starfivetech.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
- nasanex01c.na.qualcomm.com (10.45.79.139)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-GUID: Tg07ncqeKrrJuH2sCOkrdRaxTSEz1r_S
-X-Proofpoint-ORIG-GUID: Tg07ncqeKrrJuH2sCOkrdRaxTSEz1r_S
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-02-03_02,2025-01-31_02,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 phishscore=0
- priorityscore=1501 suspectscore=0 mlxlogscore=999 malwarescore=0
- spamscore=0 bulkscore=0 mlxscore=0 lowpriorityscore=0 impostorscore=0
- adultscore=0 clxscore=1011 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.19.0-2501170000 definitions=main-2502030044
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250202_212305_735282_8943A172 
-X-CRM114-Status: GOOD (  23.55  )
+X-CRM114-CacheID: sfid-20250203_065521_383973_A6D84590 
+X-CRM114-Status: GOOD (  16.64  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,168 +78,203 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-SGkgSm9zaHVhLAoKT24gMi8zLzIwMjUgODowMiBBTSwgSm9zaHVhIFllb25nIHdyb3RlOgo+IEhp
-IE11a2VzaCBhbmQgRnJhbmssCj4gCj4gT24gMDItRmViLTIwMjUgMTo1NCBBTSwgTXVrZXNoIEt1
-bWFyIFNhdmFsaXlhIHdyb3RlOgo+PiBIaSBGcmFuaywKPj4KPj4gT24gMS8zMC8yMDI1IDE6MzUg
-QU0sIEZyYW5rIExpIHdyb3RlOgo+Pj4gSTNDIEhEUiByZXF1aXJlcyBlbnRlci9leGl0IHBhdHRl
-cm5zIGR1cmluZyBlYWNoIEkzQyB0cmFuc2Zlci4gQWRkIGEgbmV3Cj4+PiBBUEkgaTNjX2Rldmlj
-ZV9kb19wcml2X3hmZXJzX21vZGUoKS4gVGhlIGV4aXN0aW5nCj4+PiBpM2NfZGV2aWNlX2RvX3By
-aXZfeGZlcnMoKSBub3cgY2FsbHMgaTNjX2RldmljZV9kb19wcml2X3hmZXJzX21vZGUoSTNDX1NE
-UikKPj4+IHRvIG1haW50YWluIGJhY2t3YXJkIGNvbXBhdGliaWxpdHkuCj4+Pgo+Pj4gSW50cm9k
-dWNlIGEgJ2NtZCcgZmllbGQgaW4gJ3N0cnVjdCBpM2NfcHJpdl94ZmVyJywgdXNpbmcgYW4gYW5v
-bnltb3VzIHVuaW9uCj4+PiB3aXRoICdybncnIHNpbmNlIEhEUiBtb2RlIHJlbGllcyBvbiByZWFk
-L3dyaXRlIGNvbW1hbmRzIGluc3RlYWQgb2YgdGhlCj4+PiAncm53JyBiaXQgaW4gdGhlIGFkZHJl
-c3MgYXMgaW4gU0RSIG1vZGUuCj4+Pgo+Pj4gQWRkIGEgcHJpdl94ZmVyc19tb2RlIGNhbGxiYWNr
-IGZvciBJM0MgbWFzdGVyIGRyaXZlcnMuIElmIHByaXZfeGZlcnNfbW9kZQo+Pj4gaXMgbm90IGlt
-cGxlbWVudGVkLCBmYWxsYmFjayB0byBTRFIgbW9kZSB1c2luZyB0aGUgZXhpc3RpbmcgcHJpdl94
-ZmVycwo+Pj4gY2FsbGJhY2suCj4+Pgo+Pj4gU2lnbmVkLW9mZi1ieTogRnJhbmsgTGkgPEZyYW5r
-LkxpQG54cC5jb20+Cj4+PiAtLS0KPj4+IFdoeSBub3QgYWRkIGhkciBtb2RlIGluIHN0cnVjdCBp
-M2NfcHJpdl94ZmVyIGJlY2F1c2UgbW9kZSBjYW4ndCBiZSBtaXhlZCBpbgo+Pj4gb25lIGkzYyB0
-cmFuc2Zlci4gZm9yIGV4YW1wbGUsIGNhbid0IHNlbmQgYSBIRFIgZm9sbG93IG9uZSBTRFIgYmV0
-d2Vlbgo+Pj4gU1RBUlQgYW5kIFNUT1AuCj4+Pgo+PiBJcyBpdCB3aXNlIHRvIGFkZCB0d28gZnVu
-Y3Rpb24gaW5zaWRlIG1haW4gZnVuY2lvbiBhbmQgc2VwYXJhdGUgU0RSIHZzIEhEUiA/IHNvIHdl
-IGRvbid0IG5lZWQgdG8gY2hhbmdlIGN1cnJlbnQgZnVuY3Rpb24gYXJndW1lbnRzLgo+IAo+IEkg
-dGhpbmsgdGhlICdwcml2YXRlIHRyYW5zZmVycycgYXJlIGxpbWl0ZWQgdG8gU0RSIGNvbW11bmlj
-YXRpb25zLAo+IHdvdWxkIGl0IGJlIGJldHRlciBpZiB3ZSBoYXZlIGEgZGlmZmVyZW50IGludGVy
-ZmFjZS9uYW1pbmcgZm9yIGhkciB0cmFuc2ZlcnM/Cj4gCj4+PiBpM2NfcHJpdl94ZmVyIHNob3Vs
-ZCBiZSB0cmVhdCBhcyB3aG9sZSBpM2MgdHJhbnNhY3Rpb25zLiBJZiB1c2VyIHdhbnQgc2VuZAo+
-Pj4gSERSIGZvbGxvdyBTRFIsIHNob3VsZCBiZSBjYWxsIGkzY19kZXZpY2VfZG9fcHJpdl94ZmVy
-c19tb2RlKCkgdHdpY2UsCj4+PiBpbnN0ZWFkIHB1dCBpbnRvIGEgYmlnIGkzY19wcml2X3hmZXJb
-bl0uCj4+PiAtLS0KPj4+ICDCoCBkcml2ZXJzL2kzYy9kZXZpY2UuY8KgwqDCoMKgwqDCoCB8IDE5
-ICsrKysrKysrKysrKystLS0tLS0KPj4+ICDCoCBkcml2ZXJzL2kzYy9pbnRlcm5hbHMuaMKgwqDC
-oCB8wqAgMiArLQo+Pj4gIMKgIGRyaXZlcnMvaTNjL21hc3Rlci5jwqDCoMKgwqDCoMKgIHzCoCA4
-ICsrKysrKystCj4+PiAgwqAgaW5jbHVkZS9saW51eC9pM2MvZGV2aWNlLmggfCAxMiArKysrKysr
-KysrKy0KPj4+ICDCoCBpbmNsdWRlL2xpbnV4L2kzYy9tYXN0ZXIuaCB8wqAgMyArKysKPj4+ICDC
-oCA1IGZpbGVzIGNoYW5nZWQsIDM1IGluc2VydGlvbnMoKyksIDkgZGVsZXRpb25zKC0pCj4+Pgo+
-Pj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaTNjL2RldmljZS5jIGIvZHJpdmVycy9pM2MvZGV2aWNl
-LmMKPj4+IGluZGV4IGU4MGU0ODc1NjkxNDYuLmUzZGIzYTZhOWU0ZjYgMTAwNjQ0Cj4+PiAtLS0g
-YS9kcml2ZXJzL2kzYy9kZXZpY2UuYwo+Pj4gKysrIGIvZHJpdmVycy9pM2MvZGV2aWNlLmMKPj4+
-IEBAIC0xNSwxMiArMTUsMTMgQEAKPj4+ICDCoCAjaW5jbHVkZSAiaW50ZXJuYWxzLmgiCj4+PiAg
-wqAgwqAgLyoqCj4+PiAtICogaTNjX2RldmljZV9kb19wcml2X3hmZXJzKCkgLSBkbyBJM0MgU0RS
-IHByaXZhdGUgdHJhbnNmZXJzIGRpcmVjdGVkIHRvIGEKPj4+IC0gKsKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoCBzcGVjaWZpYyBkZXZpY2UKPj4+ICsgKiBpM2NfZGV2aWNlX2RvX3ByaXZf
-eGZlcnNfbW9kZSgpIC0gZG8gSTNDIFNEUiBwcml2YXRlIHRyYW5zZmVycyBkaXJlY3RlZCB0byBh
-Cj4+PiArICrCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHNwZWNpZmlj
-IGRldmljZQo+Pj4gIMKgwqAgKgo+Pj4gIMKgwqAgKiBAZGV2OiBkZXZpY2Ugd2l0aCB3aGljaCB0
-aGUgdHJhbnNmZXJzIHNob3VsZCBiZSBkb25lCj4+PiAgwqDCoCAqIEB4ZmVyczogYXJyYXkgb2Yg
-dHJhbnNmZXJzCj4+PiAgwqDCoCAqIEBueGZlcnM6IG51bWJlciBvZiB0cmFuc2ZlcnMKPj4+ICsg
-KiBAbW9kZTogdHJhbnNmZXIgbW9kZQo+Pj4gIMKgwqAgKgo+Pj4gIMKgwqAgKiBJbml0aWF0ZSBv
-bmUgb3Igc2V2ZXJhbCBwcml2YXRlIFNEUiB0cmFuc2ZlcnMgd2l0aCBAZGV2Lgo+Pj4gIMKgwqAg
-Kgo+Pj4gQEAgLTMyLDkgKzMzLDkgQEAKPj4+ICDCoMKgICrCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-IGRyaXZlciBuZWVkcyB0byByZXNlbmQgdGhlICd4ZmVycycgc29tZSB0aW1lIGxhdGVyLgo+Pj4g
-IMKgwqAgKsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgU2VlIEkzQyBzcGVjIHZlciAxLjEuMSAwOS1K
-dW4tMjAyMS4gU2VjdGlvbjogNS4xLjIuMi4zLgo+Pj4gIMKgwqAgKi8KPj4+IC1pbnQgaTNjX2Rl
-dmljZV9kb19wcml2X3hmZXJzKHN0cnVjdCBpM2NfZGV2aWNlICpkZXYsCj4+PiAtwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgc3RydWN0IGkzY19wcml2X3hmZXIgKnhmZXJzLAo+Pj4g
-LcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGludCBueGZlcnMpCj4+PiAraW50IGkz
-Y19kZXZpY2VfZG9fcHJpdl94ZmVyc19tb2RlKHN0cnVjdCBpM2NfZGV2aWNlICpkZXYsCj4+PiAr
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBzdHJ1Y3QgaTNjX3ByaXZfeGZlciAq
-eGZlcnMsCj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpbnQgbnhmZXJz
-LCBlbnVtIGkzY19oZHJfbW9kZSBtb2RlKQo+PiB3aHkgY2FuJ3Qgd2UgcGFzcyBtb2RlIGFzIGFu
-b3RoZXIgc3RydWN0dXJlIG1lbWJlciBpbnNpZGUgc3RydWN0IGkzY19wcml2X3hmZXIgPyBBZGRp
-bmcgZnVuY3Rpb24gYWdydW1lbnQgcGFyYW1ldGVyIGltcGFjdHMgZXhpc3RpbmcgZHJpdmVycy4K
-WWVzLCB0aGF0IHdvdWxkIGJlIGZpbmUgdG9vIGFzIHdlIGNhbiBjbGVhcmx5IGRpZmZlcmVudGlh
-dGUgYnkgCmludGVmYWNlL2hvb2sgdXAgbmFtZS4KPj4+ICDCoCB7Cj4+PiAgwqDCoMKgwqDCoCBp
-bnQgcmV0LCBpOwo+Pj4gIMKgIEBAIC00NywxMSArNDgsMTcgQEAgaW50IGkzY19kZXZpY2VfZG9f
-cHJpdl94ZmVycyhzdHJ1Y3QgaTNjX2RldmljZSAqZGV2LAo+Pj4gIMKgwqDCoMKgwqAgfQo+Pj4g
-IMKgIMKgwqDCoMKgwqAgaTNjX2J1c19ub3JtYWx1c2VfbG9jayhkZXYtPmJ1cyk7Cj4+PiAtwqDC
-oMKgIHJldCA9IGkzY19kZXZfZG9fcHJpdl94ZmVyc19sb2NrZWQoZGV2LT5kZXNjLCB4ZmVycywg
-bnhmZXJzKTsKPj4+ICvCoMKgwqAgcmV0ID0gaTNjX2Rldl9kb19wcml2X3hmZXJzX2xvY2tlZChk
-ZXYtPmRlc2MsIHhmZXJzLCBueGZlcnMsIG1vZGUpOwo+Pj4gIMKgwqDCoMKgwqAgaTNjX2J1c19u
-b3JtYWx1c2VfdW5sb2NrKGRldi0+YnVzKTsKPj4+ICDCoCDCoMKgwqDCoMKgIHJldHVybiByZXQ7
-Cj4+PiAgwqAgfQo+Pj4gK0VYUE9SVF9TWU1CT0xfR1BMKGkzY19kZXZpY2VfZG9fcHJpdl94ZmVy
-c19tb2RlKTsKPj4+ICsKPj4+ICtpbnQgaTNjX2RldmljZV9kb19wcml2X3hmZXJzKHN0cnVjdCBp
-M2NfZGV2aWNlICpkZXYsIHN0cnVjdCBpM2NfcHJpdl94ZmVyICp4ZmVycywgaW50IG54ZmVycykK
-Pj4+ICt7Cj4+PiArwqDCoMKgIHJldHVybiBpM2NfZGV2aWNlX2RvX3ByaXZfeGZlcnNfbW9kZShk
-ZXYsIHhmZXJzLCBueGZlcnMsIEkzQ19TRFIpOwo+Pj4gK30KPj4+ICDCoCBFWFBPUlRfU1lNQk9M
-X0dQTChpM2NfZGV2aWNlX2RvX3ByaXZfeGZlcnMpOwo+Pj4gIMKgIMKgIC8qKgo+Pj4gZGlmZiAt
-LWdpdCBhL2RyaXZlcnMvaTNjL2ludGVybmFscy5oIGIvZHJpdmVycy9pM2MvaW50ZXJuYWxzLmgK
-Pj4+IGluZGV4IDQzM2Y2MDg4YjdjZWMuLjU1M2VkYzk4NDZhYzAgMTAwNjQ0Cj4+PiAtLS0gYS9k
-cml2ZXJzL2kzYy9pbnRlcm5hbHMuaAo+Pj4gKysrIGIvZHJpdmVycy9pM2MvaW50ZXJuYWxzLmgK
-Pj4+IEBAIC0xNiw3ICsxNiw3IEBAIHZvaWQgaTNjX2J1c19ub3JtYWx1c2VfdW5sb2NrKHN0cnVj
-dCBpM2NfYnVzICpidXMpOwo+Pj4gIMKgIGludCBpM2NfZGV2X3NldGRhc2FfbG9ja2VkKHN0cnVj
-dCBpM2NfZGV2X2Rlc2MgKmRldik7Cj4+PiAgwqAgaW50IGkzY19kZXZfZG9fcHJpdl94ZmVyc19s
-b2NrZWQoc3RydWN0IGkzY19kZXZfZGVzYyAqZGV2LAo+Pj4gIMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoCBzdHJ1Y3QgaTNjX3ByaXZfeGZlciAqeGZlcnMsCj4+PiAtwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaW50IG54ZmVycyk7Cj4+PiArwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqAgaW50IG54ZmVycywgZW51bSBpM2NfaGRyX21vZGUgbW9kZSk7
-Cj4+PiAgwqAgaW50IGkzY19kZXZfZGlzYWJsZV9pYmlfbG9ja2VkKHN0cnVjdCBpM2NfZGV2X2Rl
-c2MgKmRldik7Cj4+PiAgwqAgaW50IGkzY19kZXZfZW5hYmxlX2liaV9sb2NrZWQoc3RydWN0IGkz
-Y19kZXZfZGVzYyAqZGV2KTsKPj4+ICDCoCBpbnQgaTNjX2Rldl9yZXF1ZXN0X2liaV9sb2NrZWQo
-c3RydWN0IGkzY19kZXZfZGVzYyAqZGV2LAo+Pj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaTNjL21h
-c3Rlci5jIGIvZHJpdmVycy9pM2MvbWFzdGVyLmMKPj4+IGluZGV4IGQ1ZGM0MTgwYWZiY2YuLjY3
-YWFiYTBhMzhkYjIgMTAwNjQ0Cj4+PiAtLS0gYS9kcml2ZXJzL2kzYy9tYXN0ZXIuYwo+Pj4gKysr
-IGIvZHJpdmVycy9pM2MvbWFzdGVyLmMKPj4+IEBAIC0yOTQ1LDcgKzI5NDUsNyBAQCBpbnQgaTNj
-X2Rldl9zZXRkYXNhX2xvY2tlZChzdHJ1Y3QgaTNjX2Rldl9kZXNjICpkZXYpCj4+PiAgwqAgwqAg
-aW50IGkzY19kZXZfZG9fcHJpdl94ZmVyc19sb2NrZWQoc3RydWN0IGkzY19kZXZfZGVzYyAqZGV2
-LAo+Pj4gIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBzdHJ1Y3QgaTNjX3By
-aXZfeGZlciAqeGZlcnMsCj4+PiAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaW50
-IG54ZmVycykKPj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpbnQgbnhmZXJz
-LCBlbnVtIGkzY19oZHJfbW9kZSBtb2RlKQo+Pj4gIMKgIHsKPj4+ICDCoMKgwqDCoMKgIHN0cnVj
-dCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIgKm1hc3RlcjsKPj4+ICDCoCBAQCAtMjk1Niw5ICsyOTU2
-LDE1IEBAIGludCBpM2NfZGV2X2RvX3ByaXZfeGZlcnNfbG9ja2VkKHN0cnVjdCBpM2NfZGV2X2Rl
-c2MgKmRldiwKPj4+ICDCoMKgwqDCoMKgIGlmICghbWFzdGVyIHx8ICF4ZmVycykKPj4+ICDCoMKg
-wqDCoMKgwqDCoMKgwqAgcmV0dXJuIC1FSU5WQUw7Cj4+PiAgwqAgK8KgwqDCoCBpZiAobWFzdGVy
-LT5vcHMtPnByaXZfeGZlcnNfbW9kZSkKPj4+ICvCoMKgwqDCoMKgwqDCoCByZXR1cm4gbWFzdGVy
-LT5vcHMtPnByaXZfeGZlcnNfbW9kZShkZXYsIHhmZXJzLCBueGZlcnMsIG1vZGUpOwo+Pj4gKwo+
-Pj4gIMKgwqDCoMKgwqAgaWYgKCFtYXN0ZXItPm9wcy0+cHJpdl94ZmVycykKPj4+ICDCoMKgwqDC
-oMKgwqDCoMKgwqAgcmV0dXJuIC1FTk9UU1VQUDsKPj4+ICDCoCArwqDCoMKgIGlmIChtb2RlICE9
-IEkzQ19TRFIpCj4+PiArwqDCoMKgwqDCoMKgwqAgcmV0dXJuIC1FSU5WQUw7Cj4+PiArCj4+PiAg
-wqDCoMKgwqDCoCByZXR1cm4gbWFzdGVyLT5vcHMtPnByaXZfeGZlcnMoZGV2LCB4ZmVycywgbnhm
-ZXJzKTsKPj4+ICDCoCB9Cj4+PiAgwqAgZGlmZiAtLWdpdCBhL2luY2x1ZGUvbGludXgvaTNjL2Rl
-dmljZS5oIGIvaW5jbHVkZS9saW51eC9pM2MvZGV2aWNlLmgKPj4+IGluZGV4IGI2NzRmNjRkMDgy
-MmUuLjdjZTcwZDA5NjdlMjcgMTAwNjQ0Cj4+PiAtLS0gYS9pbmNsdWRlL2xpbnV4L2kzYy9kZXZp
-Y2UuaAo+Pj4gKysrIGIvaW5jbHVkZS9saW51eC9pM2MvZGV2aWNlLmgKPj4+IEBAIC00MCwxMSAr
-NDAsMTMgQEAgZW51bSBpM2NfZXJyb3JfY29kZSB7Cj4+PiAgwqAgwqAgLyoqCj4+PiAgwqDCoCAq
-IGVudW0gaTNjX2hkcl9tb2RlIC0gSERSIG1vZGUgaWRzCj4+PiArICogQEkzQ19TRFI6IFNEUiBt
-b2RlIChOT1QgSERSIG1vZGUpCj4+PiAgwqDCoCAqIEBJM0NfSERSX0REUjogRERSIG1vZGUKPj4+
-ICDCoMKgICogQEkzQ19IRFJfVFNQOiBUU1AgbW9kZQo+Pj4gIMKgwqAgKiBASTNDX0hEUl9UU0w6
-IFRTTCBtb2RlCj4+PiAgwqDCoCAqLwo+Pj4gIMKgIGVudW0gaTNjX2hkcl9tb2RlIHsKPj4+ICvC
-oMKgwqAgSTNDX1NEUiwKPj4+ICDCoMKgwqDCoMKgIEkzQ19IRFJfRERSLAo+Pj4gIMKgwqDCoMKg
-wqAgSTNDX0hEUl9UU1AsCj4+PiAgwqDCoMKgwqDCoCBJM0NfSERSX1RTTCwKPj4+IEBAIC01Myw2
-ICs1NSw3IEBAIGVudW0gaTNjX2hkcl9tb2RlIHsKPj4+ICDCoCAvKioKPj4+ICDCoMKgICogc3Ry
-dWN0IGkzY19wcml2X3hmZXIgLSBJM0MgU0RSIHByaXZhdGUgdHJhbnNmZXIKPj4+ICDCoMKgICog
-QHJudzogZW5jb2RlcyB0aGUgdHJhbnNmZXIgZGlyZWN0aW9uLiB0cnVlIGZvciBhIHJlYWQsIGZh
-bHNlIGZvciBhIHdyaXRlCj4+PiArICogQGNtZDogUmVhZC9Xcml0ZSBjb21tYW5kIGluIEhEUiBt
-b2RlLCByZWFkOiAweDgwIC0gMHhmZiwgd3JpdGU6IDB4MDAgLSAweDdmCj4+PiAgwqDCoCAqIEBs
-ZW46IHRyYW5zZmVyIGxlbmd0aCBpbiBieXRlcyBvZiB0aGUgdHJhbnNmZXIKPj4+ICDCoMKgICog
-QGFjdHVhbF9sZW46IGFjdHVhbCBsZW5ndGggaW4gYnl0ZXMgYXJlIHRyYW5zZmVycmVkIGJ5IHRo
-ZSBjb250cm9sbGVyCj4+PiAgwqDCoCAqIEBkYXRhOiBpbnB1dC9vdXRwdXQgYnVmZmVyCj4+PiBA
-QCAtNjEsNyArNjQsMTAgQEAgZW51bSBpM2NfaGRyX21vZGUgewo+Pj4gIMKgwqAgKiBAZXJyOiBJ
-M0MgZXJyb3IgY29kZQo+Pj4gIMKgwqAgKi8KPj4+ICDCoCBzdHJ1Y3QgaTNjX3ByaXZfeGZlciB7
-Cj4+PiAtwqDCoMKgIHU4IHJudzsKPj4+ICvCoMKgwqAgdW5pb24gewo+Pj4gK8KgwqDCoMKgwqDC
-oMKgIHU4IHJudzsKPj4+ICvCoMKgwqDCoMKgwqDCoCB1OCBjbWQ7Cj4+PiArwqDCoMKgIH07Cj4+
-PiAgwqDCoMKgwqDCoCB1MTYgbGVuOwo+Pj4gIMKgwqDCoMKgwqAgdTE2IGFjdHVhbF9sZW47Cj4+
-PiAgwqDCoMKgwqDCoCB1bmlvbiB7Cj4+PiBAQCAtMzAxLDYgKzMwNywxMCBAQCBpbnQgaTNjX2Rl
-dmljZV9kb19wcml2X3hmZXJzKHN0cnVjdCBpM2NfZGV2aWNlICpkZXYsCj4+PiAgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHN0cnVjdCBpM2NfcHJpdl94ZmVyICp4ZmVycywK
-Pj4+ICDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaW50IG54ZmVycyk7Cj4+
-PiAgwqAgK2ludCBpM2NfZGV2aWNlX2RvX3ByaXZfeGZlcnNfbW9kZShzdHJ1Y3QgaTNjX2Rldmlj
-ZSAqZGV2LAo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgc3RydWN0IGkz
-Y19wcml2X3hmZXIgKnhmZXJzLAo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqAgaW50IG54ZmVycywgZW51bSBpM2NfaGRyX21vZGUgbW9kZSk7Cj4+PiArCj4+PiAgwqAgaW50
-IGkzY19kZXZpY2VfZG9fc2V0ZGFzYShzdHJ1Y3QgaTNjX2RldmljZSAqZGV2KTsKPj4+ICDCoCDC
-oCB2b2lkIGkzY19kZXZpY2VfZ2V0X2luZm8oY29uc3Qgc3RydWN0IGkzY19kZXZpY2UgKmRldiwg
-c3RydWN0IGkzY19kZXZpY2VfaW5mbyAqaW5mbyk7Cj4+PiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9s
-aW51eC9pM2MvbWFzdGVyLmggYi9pbmNsdWRlL2xpbnV4L2kzYy9tYXN0ZXIuaAo+Pj4gaW5kZXgg
-MTJkNTMyYjAxMmM1YS4uMzUyYmQ0MTEzOTU2OSAxMDA2NDQKPj4+IC0tLSBhL2luY2x1ZGUvbGlu
-dXgvaTNjL21hc3Rlci5oCj4+PiArKysgYi9pbmNsdWRlL2xpbnV4L2kzYy9tYXN0ZXIuaAo+Pj4g
-QEAgLTQ3Miw2ICs0NzIsOSBAQCBzdHJ1Y3QgaTNjX21hc3Rlcl9jb250cm9sbGVyX29wcyB7Cj4+
-PiAgwqDCoMKgwqDCoCBpbnQgKCpwcml2X3hmZXJzKShzdHJ1Y3QgaTNjX2Rldl9kZXNjICpkZXYs
-Cj4+PiAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHN0cnVjdCBpM2NfcHJpdl94ZmVy
-ICp4ZmVycywKPj4+ICDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaW50IG54ZmVycyk7
-Cj4+PiArwqDCoMKgIGludCAoKnByaXZfeGZlcnNfbW9kZSkoc3RydWN0IGkzY19kZXZfZGVzYyAq
-ZGV2LAo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBzdHJ1Y3QgaTNj
-X3ByaXZfeGZlciAqeGZlcnMsCj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgIGludCBueGZlcnMsIGVudW0gaTNjX2hkcl9tb2RlIG1vZGUpOwo+Pj4gIMKgwqDCoMKgwqAg
-aW50ICgqYXR0YWNoX2kyY19kZXYpKHN0cnVjdCBpMmNfZGV2X2Rlc2MgKmRldik7Cj4+PiAgwqDC
-oMKgwqDCoCB2b2lkICgqZGV0YWNoX2kyY19kZXYpKHN0cnVjdCBpMmNfZGV2X2Rlc2MgKmRldik7
-Cj4+PiAgwqDCoMKgwqDCoCBpbnQgKCppMmNfeGZlcnMpKHN0cnVjdCBpMmNfZGV2X2Rlc2MgKmRl
-diwKPj4+Cj4+Cj4+Cj4gCgoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1pM2MK
+DMA transfer faults on Intel hardware when the IOMMU is enabled and
+driver initialization will fail when attempting to do the first transfer:
+
+	DMAR: DRHD: handling fault status reg 2
+	DMAR: [DMA Read NO_PASID] Request device [00:11.0] fault addr 0x676e3000 [fault reason 0x71] SM: Present bit in first-level paging entry
+	i3c mipi-i3c-hci.0: ring 0: Transfer Aborted
+	mipi-i3c-hci mipi-i3c-hci.0: probe with driver mipi-i3c-hci failed with error -62
+
+Reason for this is that the IOMMU setup is done for the physical devices
+only and not for the virtual I3C Controller device object.
+
+Therefore use the pointer to a physical device object with the DMA API.
+
+Reported-by: Prabhakaran, Krishna <krishna.prabhakaran@intel.com>
+Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+---
+ drivers/i3c/master/mipi-i3c-hci/dma.c | 45 ++++++++++++++++++---------
+ 1 file changed, 31 insertions(+), 14 deletions(-)
+
+diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
+index 491dfe70b660..57c044b5264b 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/dma.c
++++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
+@@ -14,6 +14,7 @@
+ #include <linux/errno.h>
+ #include <linux/i3c/master.h>
+ #include <linux/io.h>
++#include <linux/pci.h>
+ 
+ #include "hci.h"
+ #include "cmd.h"
+@@ -138,6 +139,7 @@ struct hci_rh_data {
+ };
+ 
+ struct hci_rings_data {
++	struct device *sysdev;
+ 	unsigned int total;
+ 	struct hci_rh_data headers[] __counted_by(total);
+ };
+@@ -165,20 +167,20 @@ static void hci_dma_cleanup(struct i3c_hci *hci)
+ 		rh_reg_write(IBI_SETUP, 0);
+ 
+ 		if (rh->xfer)
+-			dma_free_coherent(&hci->master.dev,
++			dma_free_coherent(rings->sysdev,
+ 					  rh->xfer_struct_sz * rh->xfer_entries,
+ 					  rh->xfer, rh->xfer_dma);
+ 		if (rh->resp)
+-			dma_free_coherent(&hci->master.dev,
++			dma_free_coherent(rings->sysdev,
+ 					  rh->resp_struct_sz * rh->xfer_entries,
+ 					  rh->resp, rh->resp_dma);
+ 		kfree(rh->src_xfers);
+ 		if (rh->ibi_status)
+-			dma_free_coherent(&hci->master.dev,
++			dma_free_coherent(rings->sysdev,
+ 					  rh->ibi_status_sz * rh->ibi_status_entries,
+ 					  rh->ibi_status, rh->ibi_status_dma);
+ 		if (rh->ibi_data_dma)
+-			dma_unmap_single(&hci->master.dev, rh->ibi_data_dma,
++			dma_unmap_single(rings->sysdev, rh->ibi_data_dma,
+ 					 rh->ibi_chunk_sz * rh->ibi_chunks_total,
+ 					 DMA_FROM_DEVICE);
+ 		kfree(rh->ibi_data);
+@@ -194,11 +196,23 @@ static int hci_dma_init(struct i3c_hci *hci)
+ {
+ 	struct hci_rings_data *rings;
+ 	struct hci_rh_data *rh;
++	struct device *sysdev;
+ 	u32 regval;
+ 	unsigned int i, nr_rings, xfers_sz, resps_sz;
+ 	unsigned int ibi_status_ring_sz, ibi_data_ring_sz;
+ 	int ret;
+ 
++	/*
++	 * Set pointer to a physical device that does DMA and has IOMMU setup
++	 * done for it in case of enabled IOMMU and use it with the DMA API.
++	 * Here such device is either
++	 * "mipi-i3c-hci" platform device (OF/ACPI enumeration) parent or
++	 * grandparent (PCI enumeration).
++	 */
++	sysdev = hci->master.dev.parent;
++	if (sysdev->parent && dev_is_pci(sysdev->parent))
++		sysdev = sysdev->parent;
++
+ 	regval = rhs_reg_read(CONTROL);
+ 	nr_rings = FIELD_GET(MAX_HEADER_COUNT_CAP, regval);
+ 	dev_info(&hci->master.dev, "%d DMA rings available\n", nr_rings);
+@@ -213,6 +227,7 @@ static int hci_dma_init(struct i3c_hci *hci)
+ 		return -ENOMEM;
+ 	hci->io_data = rings;
+ 	rings->total = nr_rings;
++	rings->sysdev = sysdev;
+ 
+ 	regval = FIELD_PREP(MAX_HEADER_COUNT, rings->total);
+ 	rhs_reg_write(CONTROL, regval);
+@@ -239,9 +254,9 @@ static int hci_dma_init(struct i3c_hci *hci)
+ 		xfers_sz = rh->xfer_struct_sz * rh->xfer_entries;
+ 		resps_sz = rh->resp_struct_sz * rh->xfer_entries;
+ 
+-		rh->xfer = dma_alloc_coherent(&hci->master.dev, xfers_sz,
++		rh->xfer = dma_alloc_coherent(rings->sysdev, xfers_sz,
+ 					      &rh->xfer_dma, GFP_KERNEL);
+-		rh->resp = dma_alloc_coherent(&hci->master.dev, resps_sz,
++		rh->resp = dma_alloc_coherent(rings->sysdev, resps_sz,
+ 					      &rh->resp_dma, GFP_KERNEL);
+ 		rh->src_xfers =
+ 			kmalloc_array(rh->xfer_entries, sizeof(*rh->src_xfers),
+@@ -295,16 +310,16 @@ static int hci_dma_init(struct i3c_hci *hci)
+ 		ibi_data_ring_sz = rh->ibi_chunk_sz * rh->ibi_chunks_total;
+ 
+ 		rh->ibi_status =
+-			dma_alloc_coherent(&hci->master.dev, ibi_status_ring_sz,
++			dma_alloc_coherent(rings->sysdev, ibi_status_ring_sz,
+ 					   &rh->ibi_status_dma, GFP_KERNEL);
+ 		rh->ibi_data = kmalloc(ibi_data_ring_sz, GFP_KERNEL);
+ 		ret = -ENOMEM;
+ 		if (!rh->ibi_status || !rh->ibi_data)
+ 			goto err_out;
+ 		rh->ibi_data_dma =
+-			dma_map_single(&hci->master.dev, rh->ibi_data,
++			dma_map_single(rings->sysdev, rh->ibi_data,
+ 				       ibi_data_ring_sz, DMA_FROM_DEVICE);
+-		if (dma_mapping_error(&hci->master.dev, rh->ibi_data_dma)) {
++		if (dma_mapping_error(rings->sysdev, rh->ibi_data_dma)) {
+ 			rh->ibi_data_dma = 0;
+ 			ret = -ENOMEM;
+ 			goto err_out;
+@@ -342,6 +357,7 @@ static int hci_dma_init(struct i3c_hci *hci)
+ static void hci_dma_unmap_xfer(struct i3c_hci *hci,
+ 			       struct hci_xfer *xfer_list, unsigned int n)
+ {
++	struct hci_rings_data *rings = hci->io_data;
+ 	struct hci_xfer *xfer;
+ 	unsigned int i;
+ 
+@@ -349,7 +365,7 @@ static void hci_dma_unmap_xfer(struct i3c_hci *hci,
+ 		xfer = xfer_list + i;
+ 		if (!xfer->data)
+ 			continue;
+-		dma_unmap_single(&hci->master.dev,
++		dma_unmap_single(rings->sysdev,
+ 				 xfer->data_dma, xfer->data_len,
+ 				 xfer->rnw ? DMA_FROM_DEVICE : DMA_TO_DEVICE);
+ 	}
+@@ -393,13 +409,13 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
+ 		if (xfer->data) {
+ 			buf = xfer->bounce_buf ? xfer->bounce_buf : xfer->data;
+ 			xfer->data_dma =
+-				dma_map_single(&hci->master.dev,
++				dma_map_single(rings->sysdev,
+ 					       buf,
+ 					       xfer->data_len,
+ 					       xfer->rnw ?
+ 						  DMA_FROM_DEVICE :
+ 						  DMA_TO_DEVICE);
+-			if (dma_mapping_error(&hci->master.dev,
++			if (dma_mapping_error(rings->sysdev,
+ 					      xfer->data_dma)) {
+ 				hci_dma_unmap_xfer(hci, xfer_list, i);
+ 				return -ENOMEM;
+@@ -586,6 +602,7 @@ static void hci_dma_recycle_ibi_slot(struct i3c_hci *hci,
+ 
+ static void hci_dma_process_ibi(struct i3c_hci *hci, struct hci_rh_data *rh)
+ {
++	struct hci_rings_data *rings = hci->io_data;
+ 	struct i3c_dev_desc *dev;
+ 	struct i3c_hci_dev_data *dev_data;
+ 	struct hci_dma_dev_ibi_data *dev_ibi;
+@@ -696,7 +713,7 @@ static void hci_dma_process_ibi(struct i3c_hci *hci, struct hci_rh_data *rh)
+ 			* rh->ibi_chunk_sz;
+ 	if (first_part > ibi_size)
+ 		first_part = ibi_size;
+-	dma_sync_single_for_cpu(&hci->master.dev, ring_ibi_data_dma,
++	dma_sync_single_for_cpu(rings->sysdev, ring_ibi_data_dma,
+ 				first_part, DMA_FROM_DEVICE);
+ 	memcpy(slot->data, ring_ibi_data, first_part);
+ 
+@@ -705,7 +722,7 @@ static void hci_dma_process_ibi(struct i3c_hci *hci, struct hci_rh_data *rh)
+ 		/* we wrap back to the start and copy remaining data */
+ 		ring_ibi_data = rh->ibi_data;
+ 		ring_ibi_data_dma = rh->ibi_data_dma;
+-		dma_sync_single_for_cpu(&hci->master.dev, ring_ibi_data_dma,
++		dma_sync_single_for_cpu(rings->sysdev, ring_ibi_data_dma,
+ 					ibi_size - first_part, DMA_FROM_DEVICE);
+ 		memcpy(slot->data + first_part, ring_ibi_data,
+ 		       ibi_size - first_part);
+-- 
+2.47.2
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
