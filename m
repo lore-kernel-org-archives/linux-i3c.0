@@ -4,49 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4856C02198
-	for <linux-i3c@archiver.kernel.org>; Wed, 12 Feb 2025 17:11:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25177C021A4
+	for <linux-i3c@archiver.kernel.org>; Wed, 12 Feb 2025 17:11:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wbVcPJIDvkV8qOr+awiYOB7vYOXt2q/VDuCkFGIXYNI=; b=DyaN3wWkgfl6J1
-	vrWzGIul3C6mexZw9fsk49JHa6vD6G0B/yIcfLoCrqrm7Ze8mWZnAE9lNVcQYue4nTg+uSru+ywAZ
-	RrZNGpmYVagKNWNoBAUdm2vHIMaqYKjL99V5UkhCNgvAkEwxW8/aPnZ+R9XbYvrskl5TOL0ya5u9X
-	8Pm+t59H0XmnttS2oAwJxsrs7Zzys4n7wJ8f8wHafFhmXTenqVDm7ugt6+g4YV+gSeLq10GKJmHiW
-	/HZEJn23UNOc38vHoUEWu+NzPxFT3BmgWofdMPhRI8ntcpCgdcHkrjAoJLsEEDp4L54IKhqwU7SSf
-	c/9dBsJzqwoZqNB0QQ+Q==;
+	List-Owner; bh=3m/f0gahjtgeT29Og9PUKaF/QhWA1F3qNDyFcM8TDoA=; b=oY64eezQZVl3AM
+	n3MfHUjpjaKq4iu/S1kafgisBYS3qNRgqUtyrXAJ5wNBxOOH1nE273JGrmtYhax9C9XpIwkJb2nhd
+	YJ0KpoS1GcUvoKY2k03y9TW13u5aeGlzU/Bm2h+4kLTnXumaQG4wwIzpeVEhwbz87eIBRWKk/jYB1
+	8qqKKiwRqGXHzDa8ppvglKc+XO0iRNfNXgl22V+HFZDZMt4FSouMwYkA2znmoiYoLAAqY3w0arwOs
+	gjJfp2jfIKdrc/kmpX18wBLyE2drl56KnRp02cesO2Q/Bki2buIWUmicpJAn3F16duS7+oRQbmk7V
+	WcfJQOrQQUkZkWIsf72w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tiGGe-00000008FGh-1LJr;
-	Wed, 12 Feb 2025 17:11:20 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1tiGGf-00000008FJn-3ppv;
+	Wed, 12 Feb 2025 17:11:23 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tiFvZ-00000008APT-3rFh
+	id 1tiFza-00000008BS9-0DFT
 	for linux-i3c@lists.infradead.org;
-	Wed, 12 Feb 2025 16:49:35 +0000
+	Wed, 12 Feb 2025 16:53:43 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 95CFDA40D5A;
-	Wed, 12 Feb 2025 16:47:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 63EE0C4CEE4;
-	Wed, 12 Feb 2025 16:49:28 +0000 (UTC)
+	by nyc.source.kernel.org (Postfix) with ESMTP id E99E6A40D3E;
+	Wed, 12 Feb 2025 16:51:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5B51FC4CEDF;
+	Wed, 12 Feb 2025 16:53:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1739378972;
-	bh=oiJ709oCpEPB9kcfZlrUorygYDxTbmj70Ft/9Pu06Z4=;
+	s=k20201202; t=1739379221;
+	bh=mr8GjH+15lBi8VHein+7pK0kYx+HbXlrW0PLl41bbgI=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=QuDu2vOCN8Og5PDN/o0qAWPIh5IehilQX3JPmZt/P8XUJRPwGzvG+wjStZngVMTSl
-	 umJEapzok9F3kB/cWAINOokS19IEqdZ4VAMW+lNASxIi7ZUkpsLkeBLpNfqIHQxwqr
-	 jQOsehRMEzKaQrXoacpV+ZncoACURmd0QTSZp+DIg6Nj+Op885ekt/X8EPckXWixSc
-	 V6p6FdIg12DzZ+hj4JL4SLyMpEwjHjaPwaqKSn+sf6iXvSk/MwbjPY3G7SCekrUnaM
-	 ccYZMeeb0OzvEj7ot1bPk/SWo+j2NO6fbcdgKASSH4bgl0a+Y+aAF78eGlKcDbSufA
-	 jQjkJDPK0NyKA==
-Message-ID: <822d6dca-b2c6-4439-ade5-219620ebc435@kernel.org>
-Date: Wed, 12 Feb 2025 17:49:25 +0100
+	b=iHsSCn8XJSMVzS2R2YduVzicWLVtjzBlcvyemeAYYOK5ilrQ92vm7KYHmjDSgKUVB
+	 FsBw7NG5juZw7q/grxpAJvQDYrkN+qugXz5DzHvaoEdlC/PxEyEJLKRZiWCZSpQz5C
+	 8oejDzd6WHTm5IYKdV3TRQPGthgTZ3HAkZ0gr9DiWP23J4i6X33yE5kz19UWvwR6XI
+	 KDNH4JVmo2ybhup8V3m/9915Bc/LxvOlcG8lRd4Rox2ybvjIQf4w/sx0kKtJjYfPqY
+	 LRMkg1D6iO87JL7blAmgFPzIzOPOUm17LhafOwYmgljLykwFDV423qXJypW7kVDgJO
+	 3baJSHEdDOv3A==
+Message-ID: <76c991dd-f99b-497c-9d68-9e08541be4f0@kernel.org>
+Date: Wed, 12 Feb 2025 17:53:34 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/2] dt-bindings: i3c: Add NXP P3H2x4x i3c-hub support
+Subject: Re: [PATCH 2/2] drivers: i3c: Add driver for NXP P3H2x4x i3c-hub
+ device
 To: Aman Kumar Pandey <aman.kumarpandey@nxp.com>,
  linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
  alexandre.belloni@bootlin.com, krzk+dt@kernel.org, robh@kernel.org,
@@ -54,6 +55,7 @@ To: Aman Kumar Pandey <aman.kumarpandey@nxp.com>,
 Cc: vikash.bansal@nxp.com, priyanka.jain@nxp.com,
  shashank.rebbapragada@nxp.com, Frank.Li@nxp.com
 References: <20250212132227.1348374-1-aman.kumarpandey@nxp.com>
+ <20250212132227.1348374-2-aman.kumarpandey@nxp.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -99,10 +101,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  uZwJCLykjad45hsWcOGk3OcaAGQS6NDlfhM6O9aYNwGL6tGt/6BkRikNOs7VDEa4/HlbaSJo
  7FgndGw1kWmkeL6oQh7wBvYll2buKod4qYntmNKEicoHGU+x91Gcan8mCoqhJkbqrL7+nXG2
  5Q/GS5M9RFWS+nYyJh+c3OcfKqVcZQNANItt7+ULzdNJuhvTRRdC3g9hmCEuNSr+CLMdnRBY fv0=
-In-Reply-To: <20250212132227.1348374-1-aman.kumarpandey@nxp.com>
+In-Reply-To: <20250212132227.1348374-2-aman.kumarpandey@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250212_084934_092919_6B14790C 
-X-CRM114-Status: GOOD (  12.13  )
+X-CRM114-CacheID: sfid-20250212_085342_223420_12E65A0C 
+X-CRM114-Status: GOOD (  10.87  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,34 +122,126 @@ Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 On 12/02/2025 14:22, Aman Kumar Pandey wrote:
-> P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841) is multiport I3C hub
-> device which connects to a host CPU via I3C/I2C/SMBus bus on one
-> side and to multiple peripheral devices on the other side.
-> 
-> Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
-> ---
->  .../bindings/i3c/p3h2x4x_i3c_hub.yaml         | 404 ++++++++++++++++++
->  MAINTAINERS                                   |   7 +
->  2 files changed, 411 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/i3c/p3h2x4x_i3c_hub.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/i3c/p3h2x4x_i3c_hub.yaml b/Documentation/devicetree/bindings/i3c/p3h2x4x_i3c_hub.yaml
-> new file mode 100644
-> index 000000000000..33ea524e5432
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/i3c/p3h2x4x_i3c_hub.yaml
+> +
+> +static void p3h2x4x_of_get_tp_dt_conf(struct device *dev,
+> +					const struct device_node *node)
+> +{
+> +	struct p3h2x4x *priv = dev_get_drvdata(dev);
+> +	struct device_node *dev_node;
+> +	int tp_port;
+> +
+> +	for_each_available_child_of_node(node, dev_node) {
+> +		if (!dev_node->full_name ||
+> +			(sscanf(dev_node->full_name, "target-port@%d", &tp_port) != 1))
 
-Nothing here looks like being even close to existing coding style. Look
-how other files are written, including file naming, blank lines, style
-of properties and entire layout.
+NAK, undocumented ABI. Also weird code, why are you parsing DT structure
+manually? Use proper functions to get the reg.
 
-Your current code is not only unreadable but also incorrect. But due to
-unreadability, I won't waste time to review.
 
-You should have make internal review of all this.
 
->  L:	linux-hwmon@vger.kernel.org
+> +			continue;
+> +
+> +		if (tp_port < P3H2x4x_TP_MAX_COUNT) {
+> +			priv->tp_bus[tp_port].dt_available = true;
+> +			priv->tp_bus[tp_port].of_node = dev_node;
+> +			priv->tp_bus[tp_port].tp_mask = BIT(tp_port);
+> +			priv->tp_bus[tp_port].priv = priv;
+> +			priv->tp_bus[tp_port].tp_port = tp_port;
+> +		}
+> +	}
+> +}
+> +
+> +/* return true when backend node exist */
+> +static bool p3h2x4x_is_backend_node_exist(int port, struct p3h2x4x *priv, u32 addr)
+> +{
+> +	struct smbus_device *backend = NULL;
+> +
+> +	list_for_each_entry(backend,
+> +			&priv->tp_bus[port].tp_device_entry, list) {
+> +		if (backend->addr == addr)
+> +			return true;
+> +	}
+> +	return false;
+> +}
+> +
+> +static int p3h2x4x_read_backend_from_p3h2x4x_dts(struct device_node *i3c_node_target,
+> +					struct p3h2x4x *priv)
+> +{
+> +	struct device_node *i3c_node_tp;
+> +	const char *compatible;
+> +	int tp_port, ret;
+> +	u32 addr_dts;
+> +	struct smbus_device *backend;
+> +
+> +	if (sscanf(i3c_node_target->full_name, "target-port@%d", &tp_port) == 0)
+> +		return -EINVAL;
+> +
+> +	if (tp_port > P3H2x4x_TP_MAX_COUNT)
+> +		return -ERANGE;
+> +
+> +	if (tp_port < 0)
+> +		return -EINVAL;
+> +
+> +	INIT_LIST_HEAD(&priv->tp_bus[tp_port].tp_device_entry);
+> +
+> +	if (priv->settings.tp[tp_port].mode == P3H2x4x_TP_MODE_I3C)
+> +		return 0;
+> +
+> +	for_each_available_child_of_node(i3c_node_target, i3c_node_tp) {
+> +
+> +		ret = of_property_read_u32(i3c_node_tp, "reg", &addr_dts);
+> +		if (ret)
+> +			return ret;
+> +
+> +		if (p3h2x4x_is_backend_node_exist(tp_port, priv, addr_dts))
+> +			continue;
+> +
+> +		ret = of_property_read_string(i3c_node_tp, "compatible", &compatible);
+> +		if (ret)
+> +			return ret;
+> +
+> +		backend = kzalloc(sizeof(*backend), GFP_KERNEL);
+> +		if (!backend)
+> +			return -ENOMEM;
+> +
+> +		backend->addr = addr_dts;
+> +		backend->compatible = compatible;
+> +		backend->tp_device_dt_node = i3c_node_tp;
+> +		backend->client = NULL;
+> +
+> +		list_add(&backend->list,
+> +			&priv->tp_bus[tp_port].tp_device_entry);
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static void p3h2x4x_parse_dt_tp(struct device *dev,
+> +				const struct device_node *i3c_node_hub,
+> +				struct p3h2x4x *priv)
+> +{
+> +	struct device_node *i3c_node_target;
+> +	int ret;
+> +
+> +	for_each_available_child_of_node(i3c_node_hub, i3c_node_target) {
+> +		if (!strcmp(i3c_node_target->name, "target-port")) {
+> +			ret = p3h2x4x_read_backend_from_p3h2x4x_dts(i3c_node_target, priv);
+> +			if (ret)
+> +				dev_err(dev, "DTS entry invalid - error %d", ret);
+> +		}
+> +	}
+> +}
+> +
+> +static int p3h2x4x_get_tp_local_device_dt_setting(struct device *dev,
+> +					const struct device_node *node, u32 id)
+> +{
+> +	u8 i;
+> +	u32 local_dev_count, local_dev;
+> +	struct p3h2x4x *priv = dev_get_drvdata(dev);
+> +
+> +	if (!of_get_property(node, "local_dev", &local_dev_count))
+
+Oh no, read DTS conding style before upstreaming such code.
 
 
 Best regards,
