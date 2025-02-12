@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D67A4C021A8
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F35C2C021A9
 	for <linux-i3c@archiver.kernel.org>; Thu, 13 Feb 2025 07:34:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,66 +12,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nJ/ieP+EckSKMtY92c3OCwPMXagYT7CKCeL09nRBwnk=; b=1p4GA7sgeGAhEX
-	zL6C+XIZ+qOjxca8tknR95MybRTiMHUsoOmrm+hl3dLHMDuOQU1MUpYvvfrkdNVLS0eUG7hJKwYwg
-	9BM3UHGmcJp8y/OELbSWHwYg4QfL1hFiUPSIhhjNEA/DhCiJYMu2yjGCfbIkYSjXsGVH/azEWzBJF
-	N5PR6xSvARXQNqkqTQbgJz4hcU5qTYRZM4CvwydpJn342QA6tJQS+9AAp4qd6cNAE3L5WED8KaxmT
-	ugnOTBmNdbloCWpmgfDe0NxsP9Obe1wR/7HZT+/zXf7d6WJMCfa5SMiQcLYy0wtz3ZLkhxCB5y9O5
-	Pqx84I05lMuBuvuqpaaQ==;
+	List-Owner; bh=qNLBK7PAEWspguGKRlutNN6bZ9KuF5pLjnbfg5VrjdA=; b=oXZuip4Hmd9UXC
+	IGG1KzBC4E1zT7XNjx/Y7wMXAnMiUasV64HWYvdT1wZ2jbf14rb5oyNCGBj00Ua2e3DhIIz6fO0U1
+	UOflte8xoDDYRLrTF3RRZ78XWKf4I2fTXMxvBMhIE9Ou/iZ3fb+MS+jKue2U9uAkJ+DNq98EgoOyz
+	RTpAnXAk4VHtCQ6FqbBz0aEjhmkV442FvJLB+9V1vEagh4EoqjxygYCViDYt6TqHIZ6bybVIGTmwZ
+	bpVaPSwqfuN5Sywd1CgPY1rxOmAX5JeyBWnsAn3AtuxbdvfaPBcAm/2hg7ie+UwBQde9FV5mYrMlk
+	SpLGgDeQpa4RewQwCOEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tiTjo-0000000A6v4-1x5E;
+	id 1tiTjo-0000000A6vD-3Am4;
 	Thu, 13 Feb 2025 07:34:20 +0000
-Received: from mail-gw02.astralinux.ru ([195.16.41.108])
+Received: from inva021.nxp.com ([92.121.34.21])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tgReg-0000000ANct-43Fi
+	id 1tiCiO-00000007Trg-1cdd
 	for linux-i3c@lists.infradead.org;
-	Fri, 07 Feb 2025 16:56:40 +0000
-Received: from gca-msk-a-srv-ksmg02.astralinux.ru (localhost [127.0.0.1])
-	by mail-gw02.astralinux.ru (Postfix) with ESMTP id 2293E1F9BA;
-	Fri,  7 Feb 2025 19:56:36 +0300 (MSK)
-Received: from new-mail.astralinux.ru (gca-yc-ruca-srv-mail04.astralinux.ru [10.177.185.109])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
-	(No client certificate requested)
-	by mail-gw02.astralinux.ru (Postfix) with ESMTPS;
-	Fri,  7 Feb 2025 19:56:35 +0300 (MSK)
-Received: from rbta-msk-lt-156703.astralinux.ru (unknown [10.177.20.117])
-	by new-mail.astralinux.ru (Postfix) with ESMTPA id 4YqKr32PvFzkWxV;
-	Fri,  7 Feb 2025 19:56:35 +0300 (MSK)
-From: Alexey Panov <apanov@astralinux.ru>
-To: stable@vger.kernel.org,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Alexey Panov <apanov@astralinux.ru>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Wed, 12 Feb 2025 13:23:46 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id AFF6020097E;
+	Wed, 12 Feb 2025 14:23:42 +0100 (CET)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com [134.27.226.22])
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A2D502003DD;
+	Wed, 12 Feb 2025 14:23:42 +0100 (CET)
+Received: from lsv15573.swis.ro-buh01.nxp.com (lsv15573.swis.ro-buh01.nxp.com [10.172.0.77])
+	by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 1F60F20395;
+	Wed, 12 Feb 2025 14:23:41 +0100 (CET)
+From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+To: linux-kernel@vger.kernel.org,
 	linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	lvc-project@linuxtesting.org,
-	Kaixin Wang <kxwang23@m.fudan.edu.cn>
-Subject: [PATCH 5.10/5.15] i3c: master: cdns: Fix use after free vulnerability in cdns_i3c_master Driver Due to Race Condition
-Date: Fri,  7 Feb 2025 19:56:01 +0300
-Message-Id: <20250207165601.30094-1-apanov@astralinux.ru>
-X-Mailer: git-send-email 2.30.2
+	alexandre.belloni@bootlin.com,
+	krzk+dt@kernel.org,
+	robh@kernel.org,
+	conor+dt@kernel.org,
+	devicetree@vger.kernel.org
+Cc: vikash.bansal@nxp.com,
+	priyanka.jain@nxp.com,
+	shashank.rebbapragada@nxp.com,
+	Frank.Li@nxp.com,
+	Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+Subject: [PATCH 1/2] dt-bindings: i3c: Add NXP P3H2x4x i3c-hub support
+Date: Wed, 12 Feb 2025 15:22:26 +0200
+Message-Id: <20250212132227.1348374-1-aman.kumarpandey@nxp.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-KSMG-AntiPhishing: NotDetected, bases: 2025/02/07 15:20:00
-X-KSMG-AntiSpam-Auth: dkim=none
-X-KSMG-AntiSpam-Envelope-From: apanov@astralinux.ru
-X-KSMG-AntiSpam-Info: LuaCore: 50 0.3.50 df4aeb250ed63fd3baa80a493fa6caee5dd9e10f, {Tracking_uf_ne_domains}, {Tracking_internal2}, {Tracking_from_domain_doesnt_match_to}, new-mail.astralinux.ru:7.1.1;d41d8cd98f00b204e9800998ecf8427e.com:7.1.1;127.0.0.199:7.1.2;lore.kernel.org:7.1.1;astralinux.ru:7.1.1, FromAlignment: s
-X-KSMG-AntiSpam-Interceptor-Info: scan successful
-X-KSMG-AntiSpam-Lua-Profiles: 190876 [Feb 07 2025]
-X-KSMG-AntiSpam-Method: none
-X-KSMG-AntiSpam-Rate: 0
-X-KSMG-AntiSpam-Status: not_detected
-X-KSMG-AntiSpam-Version: 6.1.1.7
-X-KSMG-AntiVirus: Kaspersky Secure Mail Gateway, version 2.1.0.7854, bases: 2025/02/07 12:24:00 #27143140
-X-KSMG-AntiVirus-Status: NotDetected, skipped
-X-KSMG-LinksScanning: NotDetected, bases: 2025/02/07 15:21:00
-X-KSMG-Message-Action: skipped
-X-KSMG-Rule-ID: 1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250207_085639_173551_77670803 
-X-CRM114-Status: UNSURE (   9.74  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250212_052344_824857_A1C615C9 
+X-CRM114-Status: GOOD (  20.88  )
 X-Mailman-Approved-At: Wed, 12 Feb 2025 23:33:10 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -89,56 +75,448 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Kaixin Wang <kxwang23@m.fudan.edu.cn>
+P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841) is multiport I3C hub
+device which connects to a host CPU via I3C/I2C/SMBus bus on one
+side and to multiple peripheral devices on the other side.
 
-[ Upstream commit 609366e7a06d035990df78f1562291c3bf0d4a12 ]
-
-In the cdns_i3c_master_probe function, &master->hj_work is bound with
-cdns_i3c_master_hj. And cdns_i3c_master_interrupt can call
-cnds_i3c_master_demux_ibis function to start the work.
-
-If we remove the module which will call cdns_i3c_master_remove to
-make cleanup, it will free master->base through i3c_master_unregister
-while the work mentioned above will be used. The sequence of operations
-that may lead to a UAF bug is as follows:
-
-CPU0                                      CPU1
-
-                                     | cdns_i3c_master_hj
-cdns_i3c_master_remove               |
-i3c_master_unregister(&master->base) |
-device_unregister(&master->dev)      |
-device_release                       |
-//free master->base                  |
-                                     | i3c_master_do_daa(&master->base)
-                                     | //use master->base
-
-Fix it by ensuring that the work is canceled before proceeding with
-the cleanup in cdns_i3c_master_remove.
-
-Signed-off-by: Kaixin Wang <kxwang23@m.fudan.edu.cn>
-Link: https://lore.kernel.org/r/20240911153544.848398-1-kxwang23@m.fudan.edu.cn
-Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Signed-off-by: Alexey Panov <apanov@astralinux.ru>
+Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
 ---
-Backport fix for CVE-2024-50061
- drivers/i3c/master/i3c-master-cdns.c | 1 +
- 1 file changed, 1 insertion(+)
+ .../bindings/i3c/p3h2x4x_i3c_hub.yaml         | 404 ++++++++++++++++++
+ MAINTAINERS                                   |   7 +
+ 2 files changed, 411 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/i3c/p3h2x4x_i3c_hub.yaml
 
-diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
-index b9cfda6ae9ae..4473c0b1ae2e 100644
---- a/drivers/i3c/master/i3c-master-cdns.c
-+++ b/drivers/i3c/master/i3c-master-cdns.c
-@@ -1668,6 +1668,7 @@ static int cdns_i3c_master_remove(struct platform_device *pdev)
- 	struct cdns_i3c_master *master = platform_get_drvdata(pdev);
- 	int ret;
+diff --git a/Documentation/devicetree/bindings/i3c/p3h2x4x_i3c_hub.yaml b/Documentation/devicetree/bindings/i3c/p3h2x4x_i3c_hub.yaml
+new file mode 100644
+index 000000000000..33ea524e5432
+--- /dev/null
++++ b/Documentation/devicetree/bindings/i3c/p3h2x4x_i3c_hub.yaml
+@@ -0,0 +1,404 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++# Copyright 2024-2025 NXP
++
++%YAML 1.2
++
++$id: http://devicetree.org/schemas/i3c/p3h2x4x_i3c_hub.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: P3H2X4X I3C HUB
++
++maintainers:
++  - Vikash Bansal <vikash.bansal@nxp.com>
++  - Aman Kumar Pandey <aman.kumarpandey@nxp.com>
++
++description: |
++	P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841) are multiport I3C hub devices
++  that connect to:-
++  1. A host CPU via I3C/I2C/SMBus bus on one side and connect to multiple
++     peripheral devices on the other side.
++  2. Have two Controller Ports which can support either
++     I2C/SMBus or I3C buses and connect to a CPU, BMC or SOC.
++  3. P3H2840/ P3H2841 are 8 port I3C hub devices with eight I3C/I2C Target Port.
++  4. P3H2440/ P3H2441 are 4 port I3C hub devices with four I3C/I2C Target Port.
++     Target ports can be configured as I2C/SMBus, I3C or GPIO and connect to
++     peripherals.
++
++  Device tree node can be used for following configurations:-
++  1. Controller Port can be configured via dt entry to support
++  2. I2C/SMBus mode or I3C buses.
++  3. Enabling voltage compatibility across I3C Controller and
++     Target devices.
++  4. Up to eight target devices and their modes(I3C/I2C/SMbus modes).
++  5. To support MCTP device
++  6. To support In-band interrupts
++
++  Controller Port can be configured via dt entry to support I2C/SMBus mode or
++  I3C buses.
++
++  For I2C devices, use below format:
++      DT node: hub@static_address
++      reg: encodes the static I2C address.
++
++  For I3C devices, use below format:
++      DT node: hub@static_address,PID
++      reg: encodes the static I2C address (0 if the device does not have one), and the
++      Provisioned ID (PID) used to uniquely identify a device on a bus.
++      This PID contains information about the vendor, the part, and an instance ID so
++      that several devices of the same type can be connected on the same bus.
++      assigned-address: represents the dynamic address to be assigned to this device.
++
++allOf:
++  - $ref: i3c.yaml#
++
++properties:
++
++  cp0-ldo-en:
++    enum:
++      - disabled
++      - enabled
++    description: |
++      I3C HUB Controller Port 0 LDO setting for turning on and off. If enabled, the dedicated
++      pin will provide the voltage generated by the on-die LDO. It is an optional property,
++      the configuration remains default if it is not supplied.
++
++  cp1-ldo-en:
++    enum:
++      - disabled
++      - enabled
++
++    description: |
++      I3C HUB Controller Port 0 LDO setting for turning on and off. If enabled, the dedicated
++      pin will provide the voltage generated by the on-die LDO. It is an optional property,
++      the configuration remains default if it is not supplied.
++
++  tp0145-ldo-en:
++    enum:
++      - disabled
++      - enabled
++
++    description: |
++      I3C HUB Target Ports 0/1/4/5 LDO setting for turning on and off. If enabled, the dedicated
++      pin will provide the voltage generated by the on-die LDO. It is an optional property,
++      the configuration remains default if it is not supplied.
++
++  tp2367-ldo-en:
++    enum:
++      - disabled
++      - enabled
++
++    description: |
++      I3C HUB Target Ports 2/3/6/7 LDO setting for turning on and off. If enabled, the dedicated
++      pin will provide the voltage generated by the on-die LDO. It is an optional property,
++      the configuration remains default if it is not supplied.
++
++  cp0-ldo-volt:
++    enum:
++      - 1.0V
++      - 1.1V
++      - 1.2V
++      - 1.8V
++
++    description: |
++      Controller Port 0 voltage level is controlled by the I3C HUB Controller Port 0
++      LDO setting.
++      Since this parameter is optional, the configuration remains default if it is not supplied.
++
++  cp1-ldo-volt:
++    enum:
++      - 1.0V
++      - 1.1V
++      - 1.2V
++      - 1.8V
++
++    description: |
++    Controller Port 1 voltage level is controlled by the I3C HUB Controller Port 1
++    LDO setting.
++    Since this parameter is optional, the configuration remains default if it is not supplied.
++
++  tp0145-ldo-volt:
++    enum:
++      - 1.0V
++      - 1.1V
++      - 1.2V
++      - 1.8V
++
++    description: |
++      Target Port 0/1/4/5 voltage level is controlled by the I3C HUB Target Port 0/1/4/5
++      LDO setting.
++      Since this parameter is optional, the configuration remains default if it is not supplied.
++
++  tp2367-ldo-volt:
++    enum:
++      - 1.0V
++      - 1.1V
++      - 1.2V
++      - 1.8V
++
++    description: |
++      Target Port 2/3/6/7 voltage level is controlled by the I3C HUB Target Port 2/3/6/7
++      LDO setting.
++      Since this parameter is optional, the configuration remains default if it is not supplied.
++
++  tp0145-pullup:
++    enum:
++      - 250R
++      - 500R
++      - 1000R
++      - 2000R
++
++    description: |
++      Target Port 0/1/4/5 pull up setting is controlled by the I3C HUB Target Port 0/1/4/5
++      pull up resistance level.
++      Since this parameter is optional, the configuration remains default if it is not supplied.
++
++  tp2367-pullup:
++    enum:
++      - 250R
++      - 500R
++      - 1000R
++      - 2000R
++
++    description: |
++      Target Port 2/3/6/7 pull up setting is controlled by the I3C HUB Target Port 2/3/6/7
++      pull up resistance level.
++      Since this parameter is optional, the configuration remains default if it is not supplied.
++
++  cp0-io-strength:
++    enum:
++      - 20Ohms
++      - 30Ohms
++      - 40Ohms
++      - 50Ohms
++
++    description: |
++      To regulate the output driver strength at Controller Port 0, use the I3C HUB Controller
++      Port 0 IO strength setting.
++      It is an optional property, the configuration remains default if it is not supplied.
++
++  cp1-io-strength:
++    enum:
++      - 20Ohms
++      - 30Ohms
++      - 40Ohms
++      - 50Ohms
++    description: |
++      To regulate the output driver strength at Controller Port 1, use the I3C HUB Controller
++      Port 1 IO strength setting.
++      It is an optional property, the configuration remains default if it is not supplied.
++
++  tp0145-io-strength:
++    enum:
++      - 20Ohms
++      - 30Ohms
++      - 40Ohms
++      - 50Ohms
++
++    description: |
++      To regulate the output driver strength at Target port 0/1/4/5, use the I3C HUB Target
++      port 0/1/4/5 IO strength setting.
++      It is an optional property, the configuration remains default if it is not supplied.
++
++  tp2367-io-strength:
++    enum:
++      - 20Ohms
++      - 30Ohms
++      - 40Ohms
++      - 50Ohms
++
++    description: |
++      To regulate the output driver strength at Target port 2/3/6/7, use the I3C HUB Target
++      port 2/3/6/7 IO strength setting.
++      It is an optional property, the configuration remains default if it is not supplied.
++
++patternProperties:
++  "@[0-7]$":
++    type: object
++    description: |
++      I3C HUB Target Port child, should be named: target-port@<target-port-id>
++
++    properties:
++      mode:
++        enum:
++          - i3c
++          - smbus
++          - i2c
++          - gpio
++
++        description: |
++          I3C HUB Target Port mode setting to control Target Port functionality.
++          As per now it is oly supporting SMBus, i2c and i3c( i2c mode will work
++          with hub network).
++
++      pullup:
++        enum:
++          - disabled
++          - enabled
++        description: |
++          I3C HUB Target Port pull-up setting to disable/enable Target Port pull-up.
++          It is an optional property, the configuration remains default if it is not supplied.
++
++      ibi_en:
++        enum:
++          - disabled
++          - enabled
++        description: |
++          I3C HUB Target Port IBI setting to disable/enable IBI for Target Port.
++          This property is optional. If not provided, Target Port IBI will disabled.
++
++      local_dev:
++        description: |
++          SMBus Target Agent can discard transactions of downstream device and not generate an IBI to upstream I3C Hub
++          Controller Port. Up to 8 device (addresses) can be configured as local Devices.
++
++          This property is optional. If not provided, local device list will empty.
++
++      always-enable:
++        description: |
++          Add this field to enable hub network(Controller port -> target port).
++
++          This property is optional. If not provided, by default hub network will disabled for respective port.
++
++    patternProperties:
++      "@slave-address,pid$":
++        type: object
++        description: |
++          Adding this node to install the downstream devices.
++
++        properties:
++          compatible:
++            description:
++              Compatible of the I2C/SMBus downstream device.
++
++          reg:
++            description:
++              Downstream device addresses which are connected to target port.
++
++          I3c HUB driver supports standerd i2c/i3c DT entry as it passes DT node to respective driver for
++          downstream device.
++
++additionalProperties: true
++
++examples:
++  - |
++      i3c_hub: hub@70,236153000c2{
++          reg = <0x70 0x236 0x3000c2>;
++          assigned-address = <0x50>;
++          dcr = <0xC2>;
++
++          cp0-ldo-en = "disabled";
++          cp1-ldo-en = "disabled";
++          cp0-ldo-volt = "1.8V";
++          cp1-ldo-volt = "1.8V";
++          tp0145-ldo-en = "disabled";
++          tp2367-ldo-en = "disabled";
++          tp0145-ldo-volt = "1.8V";
++          tp2367-ldo-volt = "1.8V";
++          tp0145-pullup= "1000R";
++          tp2367-pullup = "1000R";
++          tp0145-io-strength = "20Ohms";
++          tp2367-io-strength = "20Ohms";
++          cp0-io-strength = "20Ohms";
++          cp1-io-strength = "20Ohms";
++          target-port@0 {
++            #address-cells = <1>;
++                #size-cells = <0>;
++            mode = "smbus";
++            pullup_en = "enabled";
++            ibi_en = "enabled";
++            local_dev = <0x30>, <0x40>, <0x50>;
++            backend@4c{
++              compatible = "i3c-hub";
++              reg = <0x4c>;
++            };
++            rtc@68 {
++              compatible = "dallas,ds3232";
++              reg = <0x68>;
++              interrupt-parent = <&gpio2>;
++              interrupts = <20 0>;
++              trickle-resistor-ohms = <250>;
++            };
++
++            eeprom@57 {
++              compatible = "atmel,24c32";
++              reg = <0x57>;
++              pagesize = <32>;
++              wp-gpios = <&gpio2 2 0>;
++              num-addresses = <8>;
++            };
++          };
++          target-port@1 {
++            #address-cells = <1>;
++                #size-cells = <0>;
++            mode = "smbus";
++            pullup_en = "enabled";
++            ibi_en = "enabled";
++              local_dev = <0x35>, <0x45>, <0x55>;
++          };
++          target-port@2 {
++            #address-cells = <1>;
++                #size-cells = <0>;
++            mode = "i3c";
++            pullup_en = "enabled";
++            hub-test@4c,25400000000{
++              reg = <0x4c 0x254 0x0000>;
++              assigned-address = <0x50>;
++            };
++          };
++          target-port@3 {
++            #address-cells = <1>;
++                #size-cells = <0>;
++            mode = "i3c";
++            pullup_en = "enabled";
++            always-enable;
++          };
++      };
++
++      i3c_hub: hub@70 {
++          compatible = "nxp,p3h2x4x";
++          reg = <0x70>;
++
++          cp0-ldo-en = "disabled";
++          cp1-ldo-en = "disabled";
++          cp0-ldo-volt = "1.8V";
++          cp1-ldo-volt = "1.8V";
++          tp0145-ldo-en = "disabled";
++          tp2367-ldo-en = "disabled";
++          tp0145-ldo-volt = "1.8V";
++          tp2367-ldo-volt = "1.8V";
++          tp0145-pullup= "1000R";
++          tp2367-pullup = "1000R";
++          tp0145-io-strength = "20Ohms";
++          tp2367-io-strength = "20Ohms";
++          cp0-io-strength = "20Ohms";
++          cp1-io-strength = "20Ohms";
++          target-port@0 {
++            #address-cells = <1>;
++                #size-cells = <0>;
++            mode = "smbus";
++            pullup_en = "enabled";
++            ibi_en = "enabled";
++            local_dev = <0x30>, <0x40>, <0x50>;
++
++            backend@4c{
++              compatible = "test-dvr";
++              reg = <0x4c>;
++            };
++            rtc@68 {
++              compatible = "dallas,ds3232";
++              reg = <0x68>;
++              interrupt-parent = <&gpio2>;
++              interrupts = <20 0>;
++              trickle-resistor-ohms = <250>;
++            };
++
++            eeprom@57 {
++              compatible = "atmel,24c32";
++              reg = <0x57>;
++              pagesize = <32>;
++              wp-gpios = <&gpio2 2 0>;
++              num-addresses = <8>;
++            };
++          };
++	    };
++-  |
+diff --git a/MAINTAINERS b/MAINTAINERS
+index af686e0bb6d7..20aa3e987ac5 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -17167,6 +17167,13 @@ S:	Maintained
+ F:	Documentation/devicetree/bindings/sound/nxp,tfa989x.yaml
+ F:	sound/soc/codecs/tfa989x.c
  
-+	cancel_work_sync(&master->hj_work);
- 	ret = i3c_master_unregister(&master->base);
- 	if (ret)
- 		return ret;
++NXP P3H2X4X I3C-HUB DRIVER
++M:	Vikash Bansal <vikash.bansal@nxp.com>
++M:	Aman Kumar Pandey <aman.kumarpandey@nxp.com>
++L:	linux-kernel@vger.kernel.org
++S:	Maintained
++F:	Documentation/devicetree/bindings/i3c/p3h2x4x_i3c_hub.yaml
++
+ NZXT-KRAKEN2 HARDWARE MONITORING DRIVER
+ M:	Jonas Malaco <jonas@protocubo.io>
+ L:	linux-hwmon@vger.kernel.org
 -- 
-2.30.2
+2.25.1
 
 
 -- 
