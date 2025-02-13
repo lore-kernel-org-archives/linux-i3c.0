@@ -4,72 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F337AC0219D
-	for <linux-i3c@archiver.kernel.org>; Thu, 13 Feb 2025 12:59:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE89DC021A0
+	for <linux-i3c@archiver.kernel.org>; Thu, 13 Feb 2025 18:29:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/A+RMZgrS2pqt5BdvbH/XAloTf9y25iB8+/NgCMRXM8=; b=DGwrEO7NAKxqSE
-	YYUzzm0Dg2yDYJkZoO37ItVKCjXn9HfIhurRZUa5H/gha2VXOypXv7L7fpu678g3lOSWvc60HiQzm
-	5fMEUUSpp+UPv+erICMD4SDP/WQF7KFHfbEeyxgEFS+/swG1XkphAppxnuVOkrC4zMr0/z3SZbkup
-	Q/tDbE2U3jP7o8VSvfKqG18P3mnVDt3UpITH7iyMfFY7QdmkM4xO0GEU9vrHujgMJPYWqP2+Dr+Mr
-	Sq+/TyZ7WqkGDDrvxlKJzPwRew4EA4eTSe4ygBAOc8TD/JbnSr4xS5w9pXyNht4X+Zv0/WRp8v8D0
-	8d1IN+xccKAOAX9NA05w==;
+	List-Owner; bh=SqvYyX1Q+jkIMkt2TTSvTu4bhAlV6lTomdUY2XKwCOM=; b=uTcg9jhuwbSsZh
+	h1l3Piv6kuvn5lnHO0KWoibw7jnwqlQ+zygatZhwu1xM4EBdmqFnNzaiDq1vaduVS0w8ShfB0fZb4
+	jkPiuXuntp6qI4ENcdRkhsxUPFKQkynWJMESnMaQi/vlMu0dMjdSzR+P3dlxZ0G5M9l4zqESGG5jk
+	UtgwoKI+itth6ef0NwL0fuzRyi5hILvQsnYsA+90LJDt9C9yaF2gzyuArgIBO6Zjlow1WoDZEaLKM
+	pOVZxS1By3CdHhQmSRYMJ3kBSy/To/OG9GsselHjoaxqRXNhafP50+WrQlqdfqbeZLYjflTVra9TC
+	CQKZKWhEeN8xJwR6PKfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tiYoA-0000000B4Nw-2oeW;
-	Thu, 13 Feb 2025 12:59:10 +0000
-Received: from mgamail.intel.com ([192.198.163.9])
+	id 1tidxU-0000000CF1E-2SiS;
+	Thu, 13 Feb 2025 18:29:08 +0000
+Received: from mgamail.intel.com ([192.198.163.15])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tiYn8-0000000B4IM-0M2O
+	id 1tidIt-0000000C4WH-3ScB
 	for linux-i3c@lists.infradead.org;
-	Thu, 13 Feb 2025 12:58:07 +0000
+	Thu, 13 Feb 2025 17:47:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1739451486; x=1770987486;
-  h=message-id:date:mime-version:subject:to:cc:references:
-   from:in-reply-to:content-transfer-encoding;
-  bh=zL+FO3kAxJ6Aa9JQBNbr+7WYxSBhWFq/NSF5wyfUgHg=;
-  b=LsPK15MDOHn41Bm6yev1BQ7uKIOpbXo4Cbn1KHX8Zzi11L3pPDXXWRhy
-   lSaFlhHNBy9oKk1xnSw5e5vzkIl2FsVvJ4q1UH/jWWAgsRGx7s6QdJZ1a
-   PxpK9usYvixHzpSWPysCI15snZglFvLxIzp+/kW7duKxT6MvSJFjlrksN
-   gpejJX/pUc4AeJwv/5nhA5eMsBxrS3suuO0oeakwVvOK7bCdBcm3TDvZ2
-   O9X1sgFTbDHOKLUkQn4YZ/qvA8zEhN1RxLCSGYwFIw4jnRxNutp/uvF2t
-   OGDwXnhxFoX9D4hOm/7piKGkKveVBGftyJ7etHmtsswg5FSzEo6FOQjby
+  t=1739468832; x=1771004832;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=0n2xkIX3tn4U74+lds4CI7iyq/SEXk8zBZ4yxyJEmPk=;
+  b=c04prD7u7BKG1UqUunmRYmuRvIfUWd97nAuqg5FYaB97cHrEbQMJexM4
+   +8E4Y/Yh56HeMdSxF25hypu1YgFynD3FaFRRwBp/j2+S0IZwU4ZBnw1/E
+   cRauAKRIjjq10ed6ldt4HbvsZillTom5RCl61tTrUXI2xypM5xbZLwbNZ
+   d71w544k0/be66T/6w8tKunbe0h21IPKJ3YOJmcUQVglyqfhCuuepeLPw
+   FDcVf9nIvxRTIgFuPL03e+gnA/Las5m+FLES8Nv63n8jHx4oDRsWW+Y1P
+   QcnDcWIo25PEWV4iSCCs/dHmrypG73u2uzYKxgDpfBAYcNM+C6MJzNNET
    Q==;
-X-CSE-ConnectionGUID: XQFrGbttTmmtqFtehMqS/w==
-X-CSE-MsgGUID: aTAHbpDiSd67r75F/C80rQ==
-X-IronPort-AV: E=McAfee;i="6700,10204,11344"; a="50797947"
+X-CSE-ConnectionGUID: eb/ahzSHQqODnM4ZItw8PQ==
+X-CSE-MsgGUID: EM8clInyTiyNmKyCjdX6VQ==
+X-IronPort-AV: E=McAfee;i="6700,10204,11344"; a="40340381"
 X-IronPort-AV: E=Sophos;i="6.13,282,1732608000"; 
-   d="scan'208";a="50797947"
-Received: from fmviesa004.fm.intel.com ([10.60.135.144])
-  by fmvoesa103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Feb 2025 04:58:04 -0800
-X-CSE-ConnectionGUID: Av+aCRfuRVGRPTBsk+AhzQ==
-X-CSE-MsgGUID: j8LRjNlySlKAbz3WEx7udg==
+   d="scan'208";a="40340381"
+Received: from fmviesa006.fm.intel.com ([10.60.135.146])
+  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Feb 2025 09:47:10 -0800
+X-CSE-ConnectionGUID: wVN/mQHaSzmrKUghG+YfwA==
+X-CSE-MsgGUID: 08WsRijWQPajU2TskSoknQ==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.13,282,1732608000"; 
-   d="scan'208";a="118226917"
-Received: from mylly.fi.intel.com (HELO [10.237.72.59]) ([10.237.72.59])
-  by fmviesa004.fm.intel.com with ESMTP; 13 Feb 2025 04:58:03 -0800
-Message-ID: <69fc72be-4200-48c9-9396-91e3180524e2@linux.intel.com>
-Date: Thu, 13 Feb 2025 14:58:02 +0200
+   d="scan'208";a="113094129"
+Received: from lkp-server01.sh.intel.com (HELO d63d4d77d921) ([10.239.97.150])
+  by fmviesa006.fm.intel.com with ESMTP; 13 Feb 2025 09:47:07 -0800
+Received: from kbuild by d63d4d77d921 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1tidIm-0018WV-3B;
+	Thu, 13 Feb 2025 17:47:04 +0000
+Date: Fri, 14 Feb 2025 01:46:06 +0800
+From: kernel test robot <lkp@intel.com>
+To: Aman Kumar Pandey <aman.kumarpandey@nxp.com>,
+	linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
+	alexandre.belloni@bootlin.com, krzk+dt@kernel.org, robh@kernel.org,
+	conor+dt@kernel.org, devicetree@vger.kernel.org
+Cc: oe-kbuild-all@lists.linux.dev, vikash.bansal@nxp.com,
+	priyanka.jain@nxp.com, shashank.rebbapragada@nxp.com,
+	Frank.Li@nxp.com, Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+Subject: Re: [PATCH 2/2] drivers: i3c: Add driver for NXP P3H2x4x i3c-hub
+ device
+Message-ID: <202502140107.5TZoA3GU-lkp@intel.com>
+References: <20250212132227.1348374-2-aman.kumarpandey@nxp.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] i3c: mipi-i3c-hci: Use physical device pointer with DMA
- API
-To: linux-i3c@lists.infradead.org
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- "Prabhakaran, Krishna" <krishna.prabhakaran@intel.com>
-References: <20250203145513.141466-1-jarkko.nikula@linux.intel.com>
-Content-Language: en-US
-From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-In-Reply-To: <20250203145513.141466-1-jarkko.nikula@linux.intel.com>
+Content-Disposition: inline
+In-Reply-To: <20250212132227.1348374-2-aman.kumarpandey@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250213_045806_153313_AC4E05A7 
-X-CRM114-Status: GOOD (  14.41  )
+X-CRM114-CacheID: sfid-20250213_094711_878679_721C2220 
+X-CRM114-Status: GOOD (  11.54  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,52 +88,117 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi
+Hi Aman,
 
-On 2/3/25 4:55 PM, Jarkko Nikula wrote:
-> DMA transfer faults on Intel hardware when the IOMMU is enabled and
-> driver initialization will fail when attempting to do the first transfer:
-> 
-> 	DMAR: DRHD: handling fault status reg 2
-> 	DMAR: [DMA Read NO_PASID] Request device [00:11.0] fault addr 0x676e3000 [fault reason 0x71] SM: Present bit in first-level paging entry
-> 	i3c mipi-i3c-hci.0: ring 0: Transfer Aborted
-> 	mipi-i3c-hci mipi-i3c-hci.0: probe with driver mipi-i3c-hci failed with error -62
-> 
-> Reason for this is that the IOMMU setup is done for the physical devices
-> only and not for the virtual I3C Controller device object.
-> 
-> Therefore use the pointer to a physical device object with the DMA API.
-> 
-> Reported-by: Prabhakaran, Krishna <krishna.prabhakaran@intel.com>
-> Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-> ---
->   drivers/i3c/master/mipi-i3c-hci/dma.c | 45 ++++++++++++++++++---------
->   1 file changed, 31 insertions(+), 14 deletions(-)
-> 
-Please don't apply this.
+kernel test robot noticed the following build warnings:
 
-KFENCE started detecting memory corruption from the 
-i3c_hci_free_safe_xfer_buf() when IOMMU is on with this patch. 
-Corruption is not limited to a bounce buffer only but thanks to KFENCE 
-was noticed.
+[auto build test WARNING on robh/for-next]
+[also build test WARNING on linus/master v6.14-rc2 next-20250213]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-Which is obviously much worse than the DMAR fault and driver not loading.
+url:    https://github.com/intel-lab-lkp/linux/commits/Aman-Kumar-Pandey/drivers-i3c-Add-driver-for-NXP-P3H2x4x-i3c-hub-device/20250212-213659
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
+patch link:    https://lore.kernel.org/r/20250212132227.1348374-2-aman.kumarpandey%40nxp.com
+patch subject: [PATCH 2/2] drivers: i3c: Add driver for NXP P3H2x4x i3c-hub device
+config: loongarch-allmodconfig (https://download.01.org/0day-ci/archive/20250214/202502140107.5TZoA3GU-lkp@intel.com/config)
+compiler: loongarch64-linux-gcc (GCC) 14.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250214/202502140107.5TZoA3GU-lkp@intel.com/reproduce)
 
-The corruption happens after the last DMA write address for transfers 
-where size is not multiple of DWORDs corrupting the remaining bytes on 
-it or extending also to a next DWORD depending on buffer alignment and 
-transfer length.
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202502140107.5TZoA3GU-lkp@intel.com/
 
-I'm currently investigating the root cause for this with the experts.
+All warnings (new ones prefixed by >>):
 
-So before this patch it'd need to have a change to the bounce buffer 
-implementation (extend to other use cases and allocate extra DWORDs) and 
-apply this patch only after it.
+   In file included from drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub_i3c.c:7:
+>> drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.h:351:37: warning: 'io_strength_settings' defined but not used [-Wunused-const-variable=]
+     351 | static const struct p3h2x4x_setting io_strength_settings[] = {
+         |                                     ^~~~~~~~~~~~~~~~~~~~
+>> drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.h:345:37: warning: 'tp_pullup_settings' defined but not used [-Wunused-const-variable=]
+     345 | static const struct p3h2x4x_setting tp_pullup_settings[] = {
+         |                                     ^~~~~~~~~~~~~~~~~~
+>> drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.h:337:37: warning: 'tp_mode_settings' defined but not used [-Wunused-const-variable=]
+     337 | static const struct p3h2x4x_setting tp_mode_settings[] = {
+         |                                     ^~~~~~~~~~~~~~~~
+>> drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.h:329:37: warning: 'pullup_settings' defined but not used [-Wunused-const-variable=]
+     329 | static const struct p3h2x4x_setting pullup_settings[] = {
+         |                                     ^~~~~~~~~~~~~~~
+>> drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.h:321:37: warning: 'ldo_volt_settings' defined but not used [-Wunused-const-variable=]
+     321 | static const struct p3h2x4x_setting ldo_volt_settings[] = {
+         |                                     ^~~~~~~~~~~~~~~~~
+>> drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.h:315:37: warning: 'ldo_en_settings' defined but not used [-Wunused-const-variable=]
+     315 | static const struct p3h2x4x_setting ldo_en_settings[] = {
+         |                                     ^~~~~~~~~~~~~~~
+>> drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.h:309:37: warning: 'ibi_en_settings' defined but not used [-Wunused-const-variable=]
+     309 | static const struct p3h2x4x_setting ibi_en_settings[] = {
+         |                                     ^~~~~~~~~~~~~~~
+
+
+vim +/io_strength_settings +351 drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.h
+
+   307	
+   308	/* IBI enable/disable settings */
+ > 309	static const struct p3h2x4x_setting ibi_en_settings[] = {
+   310		{ "disabled",	P3H2x4x_IBI_DISABLED },
+   311		{ "enabled",	P3H2x4x_IBI_ENABLED },
+   312	};
+   313	
+   314	/* LDO enable/disable settings */
+ > 315	static const struct p3h2x4x_setting ldo_en_settings[] = {
+   316		{ "disabled",	P3H2x4x_LDO_DISABLED },
+   317		{ "enabled",	P3H2x4x_LDO_ENABLED },
+   318	};
+   319	
+   320	/* LDO voltage settings */
+ > 321	static const struct p3h2x4x_setting ldo_volt_settings[] = {
+   322		{ "1.0V",	P3H2x4x_LDO_VOLT_1_0V },
+   323		{ "1.1V",	P3H2x4x_LDO_VOLT_1_1V },
+   324		{ "1.2V",	P3H2x4x_LDO_VOLT_1_2V },
+   325		{ "1.8V",	P3H2x4x_LDO_VOLT_1_8V },
+   326	};
+   327	
+   328	/* target port pull-up settings */
+ > 329	static const struct p3h2x4x_setting pullup_settings[] = {
+   330		{ "250R",		P3H2x4x_TP_PULLUP_250R },
+   331		{ "500R",		P3H2x4x_TP_PULLUP_500R },
+   332		{ "1000R",		P3H2x4x_TP_PULLUP_1000R },
+   333		{ "2000R",		P3H2x4x_TP_PULLUP_2000R },
+   334	};
+   335	
+   336	/* target port mode settings */
+ > 337	static const struct p3h2x4x_setting tp_mode_settings[] = {
+   338		{ "i3c",		P3H2x4x_TP_MODE_I3C },
+   339		{ "smbus",		P3H2x4x_TP_MODE_SMBUS },
+   340		{ "gpio",		P3H2x4x_TP_MODE_GPIO },
+   341		{ "i2c",		P3H2x4x_TP_MODE_I2C },
+   342	};
+   343	
+   344	/* pull-up enable/disable settings */
+ > 345	static const struct p3h2x4x_setting tp_pullup_settings[] = {
+   346		{ "disabled",	P3H2x4x_TP_PULLUP_DISABLED },
+   347		{ "enabled",	P3H2x4x_TP_PULLUP_ENABLED },
+   348	};
+   349	
+   350	/*  IO strenght settings */
+ > 351	static const struct p3h2x4x_setting io_strength_settings[] = {
+   352		{ "20Ohms",		P3H2x4x_IO_STRENGTH_20_OHM },
+   353		{ "30Ohms",		P3H2x4x_IO_STRENGTH_30_OHM },
+   354		{ "40Ohms",		P3H2x4x_IO_STRENGTH_40_OHM },
+   355		{ "50Ohms",		P3H2x4x_IO_STRENGTH_50_OHM },
+   356	};
+   357	
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-i3c mailing list
