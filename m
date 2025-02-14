@@ -4,61 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE89DC021A0
-	for <linux-i3c@archiver.kernel.org>; Thu, 13 Feb 2025 18:29:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B893C02198
+	for <linux-i3c@archiver.kernel.org>; Fri, 14 Feb 2025 04:22:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SqvYyX1Q+jkIMkt2TTSvTu4bhAlV6lTomdUY2XKwCOM=; b=uTcg9jhuwbSsZh
-	h1l3Piv6kuvn5lnHO0KWoibw7jnwqlQ+zygatZhwu1xM4EBdmqFnNzaiDq1vaduVS0w8ShfB0fZb4
-	jkPiuXuntp6qI4ENcdRkhsxUPFKQkynWJMESnMaQi/vlMu0dMjdSzR+P3dlxZ0G5M9l4zqESGG5jk
-	UtgwoKI+itth6ef0NwL0fuzRyi5hILvQsnYsA+90LJDt9C9yaF2gzyuArgIBO6Zjlow1WoDZEaLKM
-	pOVZxS1By3CdHhQmSRYMJ3kBSy/To/OG9GsselHjoaxqRXNhafP50+WrQlqdfqbeZLYjflTVra9TC
-	CQKZKWhEeN8xJwR6PKfg==;
+	List-Owner; bh=4rFv25gYH+0QPd60C5XXSfnfRtuTmeRHfG7KMNlDh6E=; b=pq3j85aaOJ35vi
+	vli9MJWFwuUpeVT9prMcy+Fe62YnW+CeBiLsjshcj/E7xOw8YMZrvjfbHGsGCPVXnj7E94JrVQQKI
+	03uiGM4ekSsC/I/aizm1CxkhU8H7cUQ7NWp0qnN5mOdZOncKPFugUJ+jSa6mygZryuMDGWzjUT5ZY
+	a0mUD5bQnVnb/EX51cycsIFgd2zSpIJ9RZEiAeFwprB1nIjywXyzTkfgKaftxSAxOAdWoJglGkQhl
+	jz6+Ky4xl+vw3zUNX4DCwMmfD3ohAaKknLeIr5rB00bleQM2/9L6fZANdaPn4M9J1Fw5bfO66nyjX
+	lVvXhg6g28/m6FIyk3gg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tidxU-0000000CF1E-2SiS;
-	Thu, 13 Feb 2025 18:29:08 +0000
+	id 1tinDW-0000000DaY9-01oC;
+	Fri, 14 Feb 2025 04:22:18 +0000
 Received: from mgamail.intel.com ([192.198.163.15])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tidIt-0000000C4WH-3ScB
+	id 1tinDT-0000000DaXA-48Q0
 	for linux-i3c@lists.infradead.org;
-	Thu, 13 Feb 2025 17:47:13 +0000
+	Fri, 14 Feb 2025 04:22:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1739468832; x=1771004832;
+  t=1739506936; x=1771042936;
   h=date:from:to:cc:subject:message-id:references:
    mime-version:in-reply-to;
-  bh=0n2xkIX3tn4U74+lds4CI7iyq/SEXk8zBZ4yxyJEmPk=;
-  b=c04prD7u7BKG1UqUunmRYmuRvIfUWd97nAuqg5FYaB97cHrEbQMJexM4
-   +8E4Y/Yh56HeMdSxF25hypu1YgFynD3FaFRRwBp/j2+S0IZwU4ZBnw1/E
-   cRauAKRIjjq10ed6ldt4HbvsZillTom5RCl61tTrUXI2xypM5xbZLwbNZ
-   d71w544k0/be66T/6w8tKunbe0h21IPKJ3YOJmcUQVglyqfhCuuepeLPw
-   FDcVf9nIvxRTIgFuPL03e+gnA/Las5m+FLES8Nv63n8jHx4oDRsWW+Y1P
-   QcnDcWIo25PEWV4iSCCs/dHmrypG73u2uzYKxgDpfBAYcNM+C6MJzNNET
+  bh=E6U7r9+XPf5C9PFEIXPbnBypfFSXsnpSwDiuegOJVuw=;
+  b=mVB+xSbERg4bxXHmHGjHQXhKEZO/cWaonRP1K3CUKmR1hE3dpCQdtKAU
+   XErkD7TdMoSblL4i/Nv7DcPTOc8R1Qe/ChQODUNdSXar9dCYOESlsldpj
+   i8NiVV7Ty8N40PkK1aue+LFTNkhPa9GtsI1XnJ/w+FljAnKTTlaAun1rb
+   ydH2tJImeOLtwHbyMWojHFM40mC8MyGY/uJG/1cJegzd98IK6YTYlQuAD
+   Q1mdLBuYOidLXlsfxZKy9ui9UYfqtkyvldGH2Lm6Nr+jnaTnw3lx+gPFh
+   c9TIcBxhAeMSC/rfa+zK7UH0lUOxf5uO+U9I7qi+3tmSnYu1DEEFCHYY6
    Q==;
-X-CSE-ConnectionGUID: eb/ahzSHQqODnM4ZItw8PQ==
-X-CSE-MsgGUID: EM8clInyTiyNmKyCjdX6VQ==
-X-IronPort-AV: E=McAfee;i="6700,10204,11344"; a="40340381"
-X-IronPort-AV: E=Sophos;i="6.13,282,1732608000"; 
-   d="scan'208";a="40340381"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Feb 2025 09:47:10 -0800
-X-CSE-ConnectionGUID: wVN/mQHaSzmrKUghG+YfwA==
-X-CSE-MsgGUID: 08WsRijWQPajU2TskSoknQ==
+X-CSE-ConnectionGUID: 3IMVfz+yTomlb/kl19M45w==
+X-CSE-MsgGUID: d5f1dbcxQsqInLv4/m+DXg==
+X-IronPort-AV: E=McAfee;i="6700,10204,11344"; a="40393032"
+X-IronPort-AV: E=Sophos;i="6.13,284,1732608000"; 
+   d="scan'208";a="40393032"
+Received: from fmviesa001.fm.intel.com ([10.60.135.141])
+  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Feb 2025 20:22:15 -0800
+X-CSE-ConnectionGUID: t+79vm8PSYKAAhX+bpJ3NQ==
+X-CSE-MsgGUID: gq8QhoN5RA+HIfSRQvNY+Q==
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.13,282,1732608000"; 
-   d="scan'208";a="113094129"
+X-IronPort-AV: E=Sophos;i="6.12,224,1728975600"; 
+   d="scan'208";a="144281882"
 Received: from lkp-server01.sh.intel.com (HELO d63d4d77d921) ([10.239.97.150])
-  by fmviesa006.fm.intel.com with ESMTP; 13 Feb 2025 09:47:07 -0800
+  by fmviesa001.fm.intel.com with ESMTP; 13 Feb 2025 20:22:12 -0800
 Received: from kbuild by d63d4d77d921 with local (Exim 4.96)
 	(envelope-from <lkp@intel.com>)
-	id 1tidIm-0018WV-3B;
-	Thu, 13 Feb 2025 17:47:04 +0000
-Date: Fri, 14 Feb 2025 01:46:06 +0800
+	id 1tinDO-00193T-1j;
+	Fri, 14 Feb 2025 04:22:10 +0000
+Date: Fri, 14 Feb 2025 12:21:13 +0800
 From: kernel test robot <lkp@intel.com>
 To: Aman Kumar Pandey <aman.kumarpandey@nxp.com>,
 	linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
@@ -69,14 +69,14 @@ Cc: oe-kbuild-all@lists.linux.dev, vikash.bansal@nxp.com,
 	Frank.Li@nxp.com, Aman Kumar Pandey <aman.kumarpandey@nxp.com>
 Subject: Re: [PATCH 2/2] drivers: i3c: Add driver for NXP P3H2x4x i3c-hub
  device
-Message-ID: <202502140107.5TZoA3GU-lkp@intel.com>
+Message-ID: <202502141155.osJiWAHL-lkp@intel.com>
 References: <20250212132227.1348374-2-aman.kumarpandey@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20250212132227.1348374-2-aman.kumarpandey@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250213_094711_878679_721C2220 
-X-CRM114-Status: GOOD (  11.54  )
+X-CRM114-CacheID: sfid-20250213_202216_067732_2AFAD09B 
+X-CRM114-Status: GOOD (  11.43  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,94 +107,59 @@ url:    https://github.com/intel-lab-lkp/linux/commits/Aman-Kumar-Pandey/drivers
 base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
 patch link:    https://lore.kernel.org/r/20250212132227.1348374-2-aman.kumarpandey%40nxp.com
 patch subject: [PATCH 2/2] drivers: i3c: Add driver for NXP P3H2x4x i3c-hub device
-config: loongarch-allmodconfig (https://download.01.org/0day-ci/archive/20250214/202502140107.5TZoA3GU-lkp@intel.com/config)
-compiler: loongarch64-linux-gcc (GCC) 14.2.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250214/202502140107.5TZoA3GU-lkp@intel.com/reproduce)
+config: i386-randconfig-r111-20250214 (https://download.01.org/0day-ci/archive/20250214/202502141155.osJiWAHL-lkp@intel.com/config)
+compiler: gcc-12 (Debian 12.2.0-14) 12.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250214/202502141155.osJiWAHL-lkp@intel.com/reproduce)
 
 If you fix the issue in a separate patch/commit (i.e. not just a new version of
 the same patch/commit), kindly add following tags
 | Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202502140107.5TZoA3GU-lkp@intel.com/
+| Closes: https://lore.kernel.org/oe-kbuild-all/202502141155.osJiWAHL-lkp@intel.com/
 
-All warnings (new ones prefixed by >>):
+sparse warnings: (new ones prefixed by >>)
+>> drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub_common.c:9:22: sparse: sparse: symbol 'p3h2x4x_ibireq' was not declared. Should it be static?
+>> drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub_common.c:15:22: sparse: sparse: symbol 'p3h2x4x_regmap_config' was not declared. Should it be static?
+>> drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub_common.c:37:26: sparse: sparse: Using plain integer as NULL pointer
+   drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub_common.c: note: in included file (through include/linux/module.h, drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.h):
+   include/linux/list.h:83:21: sparse: sparse: self-comparison always evaluates to true
 
-   In file included from drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub_i3c.c:7:
->> drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.h:351:37: warning: 'io_strength_settings' defined but not used [-Wunused-const-variable=]
-     351 | static const struct p3h2x4x_setting io_strength_settings[] = {
-         |                                     ^~~~~~~~~~~~~~~~~~~~
->> drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.h:345:37: warning: 'tp_pullup_settings' defined but not used [-Wunused-const-variable=]
-     345 | static const struct p3h2x4x_setting tp_pullup_settings[] = {
-         |                                     ^~~~~~~~~~~~~~~~~~
->> drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.h:337:37: warning: 'tp_mode_settings' defined but not used [-Wunused-const-variable=]
-     337 | static const struct p3h2x4x_setting tp_mode_settings[] = {
-         |                                     ^~~~~~~~~~~~~~~~
->> drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.h:329:37: warning: 'pullup_settings' defined but not used [-Wunused-const-variable=]
-     329 | static const struct p3h2x4x_setting pullup_settings[] = {
-         |                                     ^~~~~~~~~~~~~~~
->> drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.h:321:37: warning: 'ldo_volt_settings' defined but not used [-Wunused-const-variable=]
-     321 | static const struct p3h2x4x_setting ldo_volt_settings[] = {
-         |                                     ^~~~~~~~~~~~~~~~~
->> drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.h:315:37: warning: 'ldo_en_settings' defined but not used [-Wunused-const-variable=]
-     315 | static const struct p3h2x4x_setting ldo_en_settings[] = {
-         |                                     ^~~~~~~~~~~~~~~
->> drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.h:309:37: warning: 'ibi_en_settings' defined but not used [-Wunused-const-variable=]
-     309 | static const struct p3h2x4x_setting ibi_en_settings[] = {
-         |                                     ^~~~~~~~~~~~~~~
+vim +/p3h2x4x_ibireq +9 drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub_common.c
 
-
-vim +/io_strength_settings +351 drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.h
-
-   307	
-   308	/* IBI enable/disable settings */
- > 309	static const struct p3h2x4x_setting ibi_en_settings[] = {
-   310		{ "disabled",	P3H2x4x_IBI_DISABLED },
-   311		{ "enabled",	P3H2x4x_IBI_ENABLED },
-   312	};
-   313	
-   314	/* LDO enable/disable settings */
- > 315	static const struct p3h2x4x_setting ldo_en_settings[] = {
-   316		{ "disabled",	P3H2x4x_LDO_DISABLED },
-   317		{ "enabled",	P3H2x4x_LDO_ENABLED },
-   318	};
-   319	
-   320	/* LDO voltage settings */
- > 321	static const struct p3h2x4x_setting ldo_volt_settings[] = {
-   322		{ "1.0V",	P3H2x4x_LDO_VOLT_1_0V },
-   323		{ "1.1V",	P3H2x4x_LDO_VOLT_1_1V },
-   324		{ "1.2V",	P3H2x4x_LDO_VOLT_1_2V },
-   325		{ "1.8V",	P3H2x4x_LDO_VOLT_1_8V },
-   326	};
-   327	
-   328	/* target port pull-up settings */
- > 329	static const struct p3h2x4x_setting pullup_settings[] = {
-   330		{ "250R",		P3H2x4x_TP_PULLUP_250R },
-   331		{ "500R",		P3H2x4x_TP_PULLUP_500R },
-   332		{ "1000R",		P3H2x4x_TP_PULLUP_1000R },
-   333		{ "2000R",		P3H2x4x_TP_PULLUP_2000R },
-   334	};
-   335	
-   336	/* target port mode settings */
- > 337	static const struct p3h2x4x_setting tp_mode_settings[] = {
-   338		{ "i3c",		P3H2x4x_TP_MODE_I3C },
-   339		{ "smbus",		P3H2x4x_TP_MODE_SMBUS },
-   340		{ "gpio",		P3H2x4x_TP_MODE_GPIO },
-   341		{ "i2c",		P3H2x4x_TP_MODE_I2C },
-   342	};
-   343	
-   344	/* pull-up enable/disable settings */
- > 345	static const struct p3h2x4x_setting tp_pullup_settings[] = {
-   346		{ "disabled",	P3H2x4x_TP_PULLUP_DISABLED },
-   347		{ "enabled",	P3H2x4x_TP_PULLUP_ENABLED },
-   348	};
-   349	
-   350	/*  IO strenght settings */
- > 351	static const struct p3h2x4x_setting io_strength_settings[] = {
-   352		{ "20Ohms",		P3H2x4x_IO_STRENGTH_20_OHM },
-   353		{ "30Ohms",		P3H2x4x_IO_STRENGTH_30_OHM },
-   354		{ "40Ohms",		P3H2x4x_IO_STRENGTH_40_OHM },
-   355		{ "50Ohms",		P3H2x4x_IO_STRENGTH_50_OHM },
-   356	};
-   357	
+     8	
+   > 9	struct i3c_ibi_setup p3h2x4x_ibireq = {
+    10			.handler = p3h2x4x_ibi_handler,
+    11			.max_payload_len = P3H2x4x_MAX_PAYLOAD_LEN,
+    12			.num_slots = P3H2x4x_NUM_SLOTS,
+    13	};
+    14	
+  > 15	struct regmap_config p3h2x4x_regmap_config = {
+    16			.reg_bits = P3H2x4x_REG_BITS,
+    17			.val_bits = P3H2x4x_VAL_BITS,
+    18		};
+    19	
+    20	/* p3h2x4x ids (i3c) */
+    21	static const struct i3c_device_id p3h2x4x_i3c_ids[] = {
+    22		I3C_CLASS(I3C_DCR_HUB, NULL),
+    23		{ /* sentinel */ },
+    24	};
+    25	MODULE_DEVICE_TABLE(i3c, p3h2x4x_i3c_ids);
+    26	
+    27	/* p3h2x4x ids (i2c) */
+    28	static const struct i2c_device_id p3h2x4x_i2c_id_table[] = {
+    29		{ "nxp-i3c-hub", P3H2x4x_HUB_ID },
+    30		{ /* sentinel */ },
+    31	};
+    32	MODULE_DEVICE_TABLE(i2c, p3h2x4x_i2c_id_table);
+    33	
+    34	static const struct of_device_id  p3h2x4x_i2c_of_match[] = {
+    35		{
+    36			.compatible = "nxp,p3h2x4x",
+  > 37			.data =  P3H2x4x_HUB_ID,
+    38		},
+    39		{ /* sentinel */ },
+    40	};
+    41	MODULE_DEVICE_TABLE(of, p3h2x4x_i2c_of_match);
+    42	
 
 -- 
 0-DAY CI Kernel Test Service
