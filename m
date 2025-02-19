@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B2A7C021B0
-	for <linux-i3c@archiver.kernel.org>; Wed, 19 Feb 2025 01:11:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6FBDC021AD
+	for <linux-i3c@archiver.kernel.org>; Wed, 19 Feb 2025 01:11:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TF3TaymJY8wa7H+XSYTDalpW/mOUmIfMxEifcyxg0Uk=; b=0OwCgMQS4SDwzB
-	nDTDo5QOoHXD8oihOSWGoVthgMVy57RZl1z3idQghkZYu+2Av3zp+eyT9DS+xsz+CfJwDx421FJcN
-	D4SGNn1rKBDyaOqlwbheh54SyUjRuuinWY9crwRBFSgQBqDwStblP427e4QrgsPQl0SGo23zbILph
-	eEfa/HE37XeLKTI3i9Nv6D7/ahinmmg/HvuRmmebP3cfnVLBS228qUxqtVMFHtpRZSUe71kHSBR4H
-	8rW66RC/Z2Bhj8EAO5sk1tTfjIAOV0IFQf6g8wWW1buvYYoqfHs0VL4Z5FXr8Z/f5dIhv7hwuiPsL
-	jsDQCIw5hACl1R1JkeRw==;
+	List-Owner; bh=8pp6laHrkCansU6LANzYeirPcVKTNoWzjTOLbdX70Bc=; b=Y7cryaE8P5tBAg
+	2s8s1SqUdMYvTitmGhBlg0BxkxLohPQySS8rigmw4v3RaT9HBcYjaOlqca2tF4SP3Z27g9/1H4aU/
+	ux31lIQ4PM6w0sdBZqc0KYNZzOHPFYc8WP4qmQB1XX7BoVH5WAbtS3jfdw1X8rhMF0RR6QboZ/od+
+	DC/5R5z0L1a6tl6fJZW8RM6Hm+LIntKywZeZ67nD0z0ik31dFpMm0m4wVmfwVI16c012fA2vA2ZRO
+	2rd6gFg35kbQkPYeINGUWfw7emUQQfJC5dgB4XW0EtO6G+sNEoCAP7/5kheeTZZX1TgVc7X/HNPLx
+	oVlsJKElWXPqYRDnWk4Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkYcW-0000000AUkF-3qsl;
+	id 1tkYcW-0000000AUk8-2eDj;
 	Wed, 19 Feb 2025 01:11:24 +0000
-Received: from mail-pl1-x62b.google.com ([2607:f8b0:4864:20::62b])
+Received: from mail-pl1-x629.google.com ([2607:f8b0:4864:20::629])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkYbj-0000000AUW1-00M7
+	id 1tkYbf-0000000AUUv-0u0F
 	for linux-i3c@lists.infradead.org;
-	Wed, 19 Feb 2025 01:10:36 +0000
-Received: by mail-pl1-x62b.google.com with SMTP id d9443c01a7336-220ca204d04so84542955ad.0
-        for <linux-i3c@lists.infradead.org>; Tue, 18 Feb 2025 17:10:34 -0800 (PST)
+	Wed, 19 Feb 2025 01:10:32 +0000
+Received: by mail-pl1-x629.google.com with SMTP id d9443c01a7336-22101839807so81842735ad.3
+        for <linux-i3c@lists.infradead.org>; Tue, 18 Feb 2025 17:10:30 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1739927434; x=1740532234; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1739927430; x=1740532230; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=m3mYC7ENmf6rcEpzheezEvM9BfeiOk2Z8ZQkMdJrj/8=;
-        b=L1W9cwCbhXzRu9PIYdVf5CCHhbjjKZivS/TApHPh++/3KMzdwhPnSNJlXY93Lqmgm9
-         8Y/kpviAI8lV5F+WTri+DhW7fBisqZSlyxSN6rM5tYlaLm1rE6P/8FMUT/sbCs9ETHDG
-         3NkaV2I0p3YlyU1eQl04nVv/IKy9pakukgXW/okmq59gzxQ1+NIee7t8Lrxux3hlb/Uu
-         GGc1Qg35tMj4C3guzZWWeeKq2y+6BbLZ2PnMnOabWFbywHE1Jw5VKT0X3+F3/TEqFm/a
-         vRAdJYgop3FV8CNHqJJ4U5p3TNygJNWSchlAayAfSDPKj8toF5damqPmscUPodYv8Z8z
-         JACg==
+        bh=nQfECy+M8cSWsoOJoFSA8ondIMCqsdotHgkIf8xUcO0=;
+        b=d6768fETBRZxruehuzsPFf15eHNyifaWBnN2ipZHUEcFKkSFY7FZQfdO42B75gajWS
+         +fzvA7P7gRAzsNiWzIc9akPnudiUfTwCgxdAhqUiZGpGgQPRBb3XLnArYliCwfgImZ/h
+         p3k5eGt9mlFrLmxj3mUXqx1hBPUWkUlVcbev9l17LIa9ebkooA5TwIIH8EsVc3HY/5gX
+         tkS9GwD4L/yttCGA6k1xBe6ilMciDpfVLA9/Ti8RFybNhC9dWbT0lliy9gprhWCF9zyS
+         r/ycj0H0i0xl0nnY9bnibooYTbgLDpCkhobRTkIcm/T2QIy6Q803RPcuyM0isvidzRIe
+         MBuA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739927434; x=1740532234;
+        d=1e100.net; s=20230601; t=1739927430; x=1740532230;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=m3mYC7ENmf6rcEpzheezEvM9BfeiOk2Z8ZQkMdJrj/8=;
-        b=afLo+8/iYEtywL6JKX0g1K4wKfGH9z3WNQwUIRJd/bF22/eT1mcuBQG6MnB9qdkwgH
-         os2nlC/p0YU5uGbdigcS92wGI6ZgjE3SFjqVKEf9lMDctvI9wpxpYVR6mnhwAo9nPR8e
-         L26mUIUTSRS3HrzbX7d3Eu8YoXebJZhIB0sDddC8CrTXLvSLMIg5/U3Jm/2BRMnkiFzQ
-         xUxwrApOFZj/andJ1BxP7IqErPKtPgRuncivo0WrlqCXmUIRDzpanmgQMTGKDSVxi/t7
-         eRB2ynLARJyFG1fNdhfEMP7DT0BWG6h6y9UxyMP/KSdvatsY4MN1d37+k7Ql4BjvAiTY
-         qkIA==
-X-Forwarded-Encrypted: i=1; AJvYcCVxx67lnVq7AUQDeFd4GU96EsVK/5Swy1gfutUqBjTLSuFsiwsGAOyINn9cWI7CORlJPq4Z0J3TCP8=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxAihQ4XO8oM2TCDyjSy/L5Do4Ln+8j4nbhtCP7EO5Ma/xcQcrH
-	Maz0VCwiD18jZg52xYSVqjZkI0YJLsfGdZ987j35aWo/+lKybjEDVKmCF6g5
-X-Gm-Gg: ASbGnctm0lQPdulomq23d5GtuCmyNTpzSl2sKLZbWKPxOI8XyWZrqD5dWkZehP/7fwK
-	Rm1Fl5u24GusQ2diMWQWLfI6mGIUd7F9oTWkMF1SMxT3QVYvReZeMjPOGanXhBU64z2j0ELlW29
-	C1fokmzMWvDT2Z76i3JOFTUFkAsA4Njv/Mw1pE38dUSUkmP6trixSW+nmXHDRDrSu7BVkPvUhNW
-	Ezlye/IDZE60a5PUPKUUv7qAahejGTry4SBb7M/FayoN5TxCA7ayNLZlU1tz4JrFVXIBJTSY8kS
-	MMkD8SZ29tN+yX1KU/qEnl6hxg==
-X-Google-Smtp-Source: AGHT+IGXfY3WGuhGV/3mSu1e9ym7RxoJ3BskUzPfy/qOHknOlucPS8A+jBmMTZSyoS6Zh/ed/iN22g==
-X-Received: by 2002:a17:902:f550:b0:21f:7077:2aaf with SMTP id d9443c01a7336-221711c2a34mr23963485ad.44.1739927432623;
-        Tue, 18 Feb 2025 17:10:32 -0800 (PST)
+        bh=nQfECy+M8cSWsoOJoFSA8ondIMCqsdotHgkIf8xUcO0=;
+        b=G5NL6pSluT31OXCiPyCWZtdwHIosNT1pf7PMFZO/RSQ5PfLfN1RP2XxKyFJVI+Alfj
+         BSgYTrfx189WKawPujovifJ4yWaCRCmtAqRLPAc0TYAWej5sNOwE2ta6tc/+7QueslNh
+         XtH3enZJ3FM8t9k+YNK00uf/4+Nk2hHe+s6JdpSvCzEwPyqw6xKlRmw7sXhRknvAO0Xq
+         GNjnFcNJxo3i0Cac+hjoMYPkwzgm2Y/URtXEN3pMSqCGryHPkzGFxdq6nbFOUydiXwkR
+         Of5zNBr+UD4fA+ZdKgWRb9T/JWinNX8aKbGJ8pVK2dNLfFD6ZskoXDz5xQ5jMTgT+F5F
+         qwWg==
+X-Forwarded-Encrypted: i=1; AJvYcCUpnIM7i8f3XqAdaI1AOvV9jy4A2TGPP/Lssr2JFQfUUWWxGsHYg3TxZCNGUN+mXapvnjvDBylpe6k=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy44y+zMh2UEE/VWtxFCGb7qZXhFX1hD8bdjBb4K2eoAdqwXF9c
+	4pevuwkZAtl8D7AqZdBGNJ6EHVHf/kHqeEYhFkWeknbLxImHGvHuuz/Ve+04
+X-Gm-Gg: ASbGncuBxu3a+i3P3nshOxFOvvhM/i4BK1qPL5BeddkmIDD8sLm/2hv3cllCDIPasIB
+	f4xqLuy0/fTDsyCt2YdfKhrl4RYKJYWV5pqJSmZrUr+Ih3lmuY0R3Dxb2kXZyKkGWnxIE6YAOiz
+	4jNOxL4jb3sNladcw87FxsQHhSkkjZF8laf3dEoQ9aA8f3400/EseSi1ZiwP/zKKoL7p0ZffiwZ
+	U6MsfCZN+SvEf3Tf1tVIXaJ2LbvY6lmhuoILeB6hVP3bc2zZ+Jkjpl4MattzM10jWmKtIDk/h3g
+	tgezWG4dN+Sz27Tvtz9rd+bqXg==
+X-Google-Smtp-Source: AGHT+IEjPOF9KSTzI2MsQxcir5evnluJM/uTeYqKNUB3AIj9hbsInSCZPHWIGW6siNdjzcinklyF0Q==
+X-Received: by 2002:a17:902:e84a:b0:220:f87d:9d5b with SMTP id d9443c01a7336-22170988bb4mr27863125ad.24.1739927430304;
+        Tue, 18 Feb 2025 17:10:30 -0800 (PST)
 Received: from cs20-buildserver.lan ([2403:c300:dc0a:4fe5:2e0:4cff:fe68:863])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-220d5348f05sm96080315ad.2.2025.02.18.17.10.30
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-220d5348f05sm96080315ad.2.2025.02.18.17.10.28
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 18 Feb 2025 17:10:32 -0800 (PST)
+        Tue, 18 Feb 2025 17:10:30 -0800 (PST)
 From: Stanley Chu <stanley.chuys@gmail.com>
 X-Google-Original-From: Stanley Chu <yschu@nuvoton.com>
 To: frank.li@nxp.com,
@@ -78,16 +78,16 @@ Cc: linux-kernel@vger.kernel.org,
 	tomer.maimon@nuvoton.com,
 	kwliu@nuvoton.com,
 	yschu@nuvoton.com
-Subject: [PATCH v1 3/3] i3c: master: svc: fix npcm845 invalid slvstart event
-Date: Wed, 19 Feb 2025 09:10:19 +0800
-Message-Id: <20250219011019.1600058-4-yschu@nuvoton.com>
+Subject: [PATCH v1 2/3] i3c: master: svc: fix npcm845 FIFO empty issue
+Date: Wed, 19 Feb 2025 09:10:18 +0800
+Message-Id: <20250219011019.1600058-3-yschu@nuvoton.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250219011019.1600058-1-yschu@nuvoton.com>
 References: <20250219011019.1600058-1-yschu@nuvoton.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250218_171035_039212_C46C7C2F 
-X-CRM114-Status: GOOD (  14.23  )
+X-CRM114-CacheID: sfid-20250218_171031_257095_90DC5531 
+X-CRM114-Status: GOOD (  20.43  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,62 +104,157 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-I3C HW may generate an invalid SlvStart event when emitting a STOP.
-If it is a true SlvStart, the MSTATUS state should be SLVREQ.
-Check the MSTATUS state to ignore the false event.
+npcm845 HW issue:
+I3C HW stalls the write transfer if the transmit FIFO becomes empty,
+when new data is written to FIFO, I3C HW resumes the transfer but
+the first transmitted data bit may have the wrong value.
+Workaround:
+Fill the FIFO in advance to prevent FIFO from becoming empty.
 
 Signed-off-by: Stanley Chu <yschu@nuvoton.com>
 ---
- drivers/i3c/master/svc-i3c-master.c | 15 ++++++++++++++-
- 1 file changed, 14 insertions(+), 1 deletion(-)
+ drivers/i3c/master/svc-i3c-master.c | 58 ++++++++++++++++++++++++-----
+ 1 file changed, 49 insertions(+), 9 deletions(-)
 
 diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-index 22cb1f1c1fdc..14cedcb81c52 100644
+index 813839498b2b..22cb1f1c1fdc 100644
 --- a/drivers/i3c/master/svc-i3c-master.c
 +++ b/drivers/i3c/master/svc-i3c-master.c
-@@ -59,6 +59,7 @@
- #define   SVC_I3C_MSTATUS_STATE(x) FIELD_GET(GENMASK(2, 0), (x))
- #define   SVC_I3C_MSTATUS_STATE_DAA(x) (SVC_I3C_MSTATUS_STATE(x) == 5)
- #define   SVC_I3C_MSTATUS_STATE_IDLE(x) (SVC_I3C_MSTATUS_STATE(x) == 0)
-+#define   SVC_I3C_MSTATUS_STATE_SLVREQ(x) (SVC_I3C_MSTATUS_STATE(x) == 1)
- #define   SVC_I3C_MSTATUS_BETWEEN(x) FIELD_GET(BIT(4), (x))
- #define   SVC_I3C_MSTATUS_NACKED(x) FIELD_GET(BIT(5), (x))
- #define   SVC_I3C_MSTATUS_IBITYPE(x) FIELD_GET(GENMASK(7, 6), (x))
-@@ -143,6 +144,12 @@
-  * Fill the FIFO in advance to prevent FIFO from becoming empty.
-  */
- #define SVC_I3C_QUIRK_FIFO_EMPTY	BIT(0)
-+/*
-+ * SVC_I3C_QUIRK_FLASE_SLVSTART:
-+ * I3C HW may generate an invalid SlvStart event when emitting a STOP.
-+ * If it is a true SlvStart, the MSTATUS state should be SLVREQ.
-+ */
-+#define SVC_I3C_QUIRK_FALSE_SLVSTART	BIT(1)
+@@ -102,6 +102,7 @@
+ #define   SVC_I3C_MDATACTRL_TXTRIG_FIFO_NOT_FULL GENMASK(5, 4)
+ #define   SVC_I3C_MDATACTRL_RXTRIG_FIFO_NOT_EMPTY 0
+ #define   SVC_I3C_MDATACTRL_RXCOUNT(x) FIELD_GET(GENMASK(28, 24), (x))
++#define   SVC_I3C_MDATACTRL_TXCOUNT(x) FIELD_GET(GENMASK(20, 16), (x))
+ #define   SVC_I3C_MDATACTRL_TXFULL BIT(30)
+ #define   SVC_I3C_MDATACTRL_RXEMPTY BIT(31)
  
+@@ -133,6 +134,16 @@
+ #define SVC_I3C_EVENT_IBI	GENMASK(7, 0)
+ #define SVC_I3C_EVENT_HOTJOIN	BIT(31)
+ 
++/*
++ * SVC_I3C_QUIRK_FIFO_EMPTY:
++ * I3C HW stalls the write transfer if the transmit FIFO becomes empty,
++ * when new data is written to FIFO, I3C HW resumes the transfer but
++ * the first transmitted data bit may have the wrong value.
++ * Workaround:
++ * Fill the FIFO in advance to prevent FIFO from becoming empty.
++ */
++#define SVC_I3C_QUIRK_FIFO_EMPTY	BIT(0)
++
  struct svc_i3c_cmd {
  	u8 addr;
-@@ -576,6 +583,11 @@ static irqreturn_t svc_i3c_master_irq_handler(int irq, void *dev_id)
- 	/* Clear the interrupt status */
- 	writel(SVC_I3C_MINT_SLVSTART, master->regs + SVC_I3C_MSTATUS);
+ 	bool rnw;
+@@ -216,6 +227,7 @@ struct svc_i3c_master {
+ 	struct mutex lock;
+ 	u32 enabled_events;
+ 	u32 mctrl_config;
++	u32 quirks;
+ };
  
-+	/* Ignore the false event */
-+	if ((master->quirks & SVC_I3C_QUIRK_FIFO_EMPTY) &&
-+	    !SVC_I3C_MSTATUS_STATE_SLVREQ(active))
-+		return IRQ_HANDLED;
+ /**
+@@ -891,6 +903,7 @@ static int svc_i3c_master_do_daa_locked(struct svc_i3c_master *master,
+ 	unsigned int dev_nb = 0, last_addr = 0;
+ 	u32 reg;
+ 	int ret, i;
++	u32 dyn_addr;
+ 
+ 	while (true) {
+ 		/* clean SVC_I3C_MINT_IBIWON w1c bits */
+@@ -931,6 +944,15 @@ static int svc_i3c_master_do_daa_locked(struct svc_i3c_master *master,
+ 		if (SVC_I3C_MSTATUS_RXPEND(reg)) {
+ 			u8 data[6];
+ 
++			/*
++			 * SVC_I3C_QUIRK_FIFO_EMPTY fix:
++			 * The TX FIFO should be ready before the TX transmission is starting.
++			 */
++			dyn_addr = i3c_master_get_free_addr(&master->base, last_addr + 1);
++			if (dyn_addr < 0)
++				return dyn_addr;
++			writel(dyn_addr, master->regs + SVC_I3C_MWDATAB);
 +
- 	svc_i3c_master_disable_interrupts(master);
+ 			/*
+ 			 * We only care about the 48-bit provisioned ID yet to
+ 			 * be sure a device does not nack an address twice.
+@@ -1009,21 +1031,20 @@ static int svc_i3c_master_do_daa_locked(struct svc_i3c_master *master,
+ 		if (ret)
+ 			break;
  
- 	/* Handle the interrupt in a non atomic context */
-@@ -1915,7 +1927,8 @@ static int svc_i3c_master_probe(struct platform_device *pdev)
+-		/* Give the slave device a suitable dynamic address */
+-		ret = i3c_master_get_free_addr(&master->base, last_addr + 1);
+-		if (ret < 0)
+-			break;
+-
+-		addrs[dev_nb] = ret;
++		addrs[dev_nb] = dyn_addr;
+ 		dev_dbg(master->dev, "DAA: device %d assigned to 0x%02x\n",
+ 			dev_nb, addrs[dev_nb]);
+-
+-		writel(addrs[dev_nb], master->regs + SVC_I3C_MWDATAB);
+ 		last_addr = addrs[dev_nb++];
+ 	}
+ 
+ 	/* Need manual issue STOP except for Complete condition */
+ 	svc_i3c_master_emit_stop(master);
++	/*
++	 * Dynamic address is written to FIFO in advance for SVC_I3C_QUIRK_FIFO_EMPTY fix.
++	 * Flush FIFO in the failed case.
++	 */
++	if (ret)
++		svc_i3c_master_flush_fifo(master);
+ 	return ret;
+ }
+ 
+@@ -1210,7 +1231,6 @@ static int svc_i3c_master_xfer(struct svc_i3c_master *master,
+ 	/* clean SVC_I3C_MINT_IBIWON w1c bits */
+ 	writel(SVC_I3C_MINT_IBIWON, master->regs + SVC_I3C_MSTATUS);
+ 
+-
+ 	while (retry--) {
+ 		writel(SVC_I3C_MCTRL_REQUEST_START_ADDR |
+ 		       xfer_type |
+@@ -1220,6 +1240,22 @@ static int svc_i3c_master_xfer(struct svc_i3c_master *master,
+ 		       SVC_I3C_MCTRL_RDTERM(*actual_len),
+ 		       master->regs + SVC_I3C_MCTRL);
+ 
++		if ((master->quirks & SVC_I3C_QUIRK_FIFO_EMPTY) && !rnw && xfer_len) {
++			int i, count, space;
++
++			reg = readl(master->regs + SVC_I3C_MDATACTRL);
++			space = SVC_I3C_FIFO_SIZE - SVC_I3C_MDATACTRL_TXCOUNT(reg);
++			count = xfer_len > space ? space : xfer_len;
++			for (i = 0; i < count; i++) {
++				if (i == xfer_len - 1)
++					writel(out[0], master->regs + SVC_I3C_MWDATABE);
++				else
++					writel(out[0], master->regs + SVC_I3C_MWDATAB);
++				out++;
++			}
++			xfer_len -= count;
++		}
++
+ 		ret = readl_poll_timeout(master->regs + SVC_I3C_MSTATUS, reg,
+ 				 SVC_I3C_MSTATUS_MCTRLDONE(reg), 0, 1000);
+ 		if (ret)
+@@ -1308,6 +1344,7 @@ static int svc_i3c_master_xfer(struct svc_i3c_master *master,
+ emit_stop:
+ 	svc_i3c_master_emit_stop(master);
+ 	svc_i3c_master_clear_merrwarn(master);
++	svc_i3c_master_flush_fifo(master);
+ 
+ 	return ret;
+ }
+@@ -1877,6 +1914,9 @@ static int svc_i3c_master_probe(struct platform_device *pdev)
+ 
  	svc_i3c_master_reset(master);
  
- 	if (device_is_compatible(master->dev, "nuvoton,npcm845-i3c"))
--		master->quirks = SVC_I3C_QUIRK_FIFO_EMPTY;
-+		master->quirks = SVC_I3C_QUIRK_FIFO_EMPTY |
-+				 SVC_I3C_QUIRK_FALSE_SLVSTART;
- 
++	if (device_is_compatible(master->dev, "nuvoton,npcm845-i3c"))
++		master->quirks = SVC_I3C_QUIRK_FIFO_EMPTY;
++
  	/* Register the master */
  	ret = i3c_master_register(&master->base, &pdev->dev,
+ 				  &svc_i3c_master_ops, false);
 -- 
 2.34.1
 
