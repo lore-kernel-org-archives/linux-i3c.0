@@ -4,88 +4,145 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6925CC021AA
-	for <linux-i3c@archiver.kernel.org>; Wed, 19 Feb 2025 20:23:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A933CC021AA
+	for <linux-i3c@archiver.kernel.org>; Wed, 19 Feb 2025 20:44:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6IKmtnzBlYe9e7mXyQ037j8uvm5g/kXZw1CCK42MPn8=; b=jW+d3LDj5cQrubIFgi/WHx5zpE
-	TaCeO0hPMA+nmCFrdqrnErk8sbt93bOeW/sSOW4L1O5C8gWgi51Sb0aDcfR97mUxb5s0hOpnA3Tw4
-	EoS6VKE+WKiGl08Amc26fdFg0cD/g0dIVBRXsmWWVw47Kra5Banf46EymRImGixCOHzREBdbAZfX/
-	/SVIpJo2KM98H6V2kzL8PWE4LcyRje1tw54ST5HsemVqt0g39cM2eczux94rpk+MljUw89DMa2Duh
-	zAWnRJCyLsmaP/LOWqYTSgFJ7nPij7yXDP+9NQH6JxE1COn5BB6016bT0r9EN3VSHliUIespWjrHf
-	E3gW42pg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=u3IrKdPdFecFU9b1SaOoa6TBGROho3f3epUMJCPyQNw=; b=Nf05PnQT46T/2L
+	vO1Xe99AtUZd6eO7FZGTsJd5ZC9ZGFtIltup3q0BQo+0jQrBF33I4Xjl8wOe9Q+XzC5Z/Q5Byg7h6
+	LmrjEVxzpA+G01uXmVNZ1Vcq1aTLaoFTyD7i9Mt+wpkqwPUEXFl/LUX1C8k9AkKoH0Doxtzr/Q6tv
+	icA5qX1psBFmwCeCvj+KD0YfkOyHdXs/1WQTaF+ekLNcfOHPAMaRS1cOsWEPAIh40ESkMNJ+fxulU
+	6uzaMgkHCjiEj+dyt8116wJQX8DhFFBhI3zPb5mMVo8rFNQZ0AWq15dR2tzhoAo6buPdrNmiRKfYB
+	IUWlRSgwitiUPDVGaFqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkqbV-0000000EreT-0mbx;
-	Wed, 19 Feb 2025 20:23:33 +0000
-Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
+	id 1tkqvJ-0000000EyPI-1tG6;
+	Wed, 19 Feb 2025 20:44:01 +0000
+Received: from mail-db5eur02on20610.outbound.protection.outlook.com ([2a01:111:f403:2608::610] helo=EUR02-DB5-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tjxsh-00000004159-2Ovd
+	id 1tkqvH-0000000EyOM-1GQQ
 	for linux-i3c@lists.infradead.org;
-	Mon, 17 Feb 2025 09:57:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	sang-engineering.com; h=date:from:to:cc:subject:message-id
-	:references:mime-version:content-type:in-reply-to; s=k1; bh=3Wl6
-	jNtwrSVCHakEqmjvcU8HEauXByB/TvM8qyD6KDQ=; b=QePWrydqSsp0C4NhNnOO
-	Hi3/WYWY/EKpmM8Ga8FlHmycRxxvNPXVfTAhptI7UOWJIV4dWRAJykVX/5o46FNT
-	hzAjrB3+/d+bfpIvgdd1T9vuN57tTPzv0OvsbgWSySbpQ9RjZniK/h2TOMfCVdsI
-	jXJSuAjl5tD4Jo9SVhKnt+sLy2aPbbAelOreQY/tNj5b8UWvDiHm7kVKIvZ5/+xF
-	sG8VI4BQnlGzKpQiAYQxUkRoX63U3TWz/CRVFPOYjlZIe7/95pjqMlW+tMuhtBrZ
-	tdx0rljl5tSezx/e7dczppIBZkmN0DTQZAkWgrphGobR7uoYWsOIjJ4emdpOPz5R
-	sA==
-Received: (qmail 3242575 invoked from network); 17 Feb 2025 10:57:37 +0100
-Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 17 Feb 2025 10:57:37 +0100
-X-UD-Smtp-Session: l3s3148p1@oi3bjVMuwtkujnvP
-Date: Mon, 17 Feb 2025 10:57:37 +0100
-From: "wsa+renesas@sang-engineering.com" <wsa+renesas@sang-engineering.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Thomas =?utf-8?Q?Wei=C3=9Fschuh?= <linux@weissschuh.net>,
-	Billy Tsai <billy_tsai@aspeedtech.com>,
-	"pgaj@cadence.com" <pgaj@cadence.com>,
-	"miquel.raynal@bootlin.com" <miquel.raynal@bootlin.com>,
-	"conor.culhane@silvaco.com" <conor.culhane@silvaco.com>,
-	"aniketmaurya@google.com" <aniketmaurya@google.com>,
-	"Shyam-sundar.S-k@amd.com" <Shyam-sundar.S-k@amd.com>,
-	"jarkko.nikula@linux.intel.com" <jarkko.nikula@linux.intel.com>,
-	"xiaopei01@kylinos.cn" <xiaopei01@kylinos.cn>,
-	"Guruvendra.Punugupati@amd.com" <Guruvendra.Punugupati@amd.com>,
-	"linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	BMC-SW <BMC-SW@aspeedtech.com>
-Subject: Re: [PATCH v2 1/2] i3c: Remove the const qualifier from i2c_msg
- pointer in i2c_xfers API
-Message-ID: <Z7MIEWbrK9bGUr4d@ninjato>
-Mail-Followup-To: "wsa+renesas@sang-engineering.com" <wsa+renesas@sang-engineering.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Thomas =?utf-8?Q?Wei=C3=9Fschuh?= <linux@weissschuh.net>,
-	Billy Tsai <billy_tsai@aspeedtech.com>,
-	"pgaj@cadence.com" <pgaj@cadence.com>,
-	"miquel.raynal@bootlin.com" <miquel.raynal@bootlin.com>,
-	"conor.culhane@silvaco.com" <conor.culhane@silvaco.com>,
-	"aniketmaurya@google.com" <aniketmaurya@google.com>,
-	"Shyam-sundar.S-k@amd.com" <Shyam-sundar.S-k@amd.com>,
-	"jarkko.nikula@linux.intel.com" <jarkko.nikula@linux.intel.com>,
-	"xiaopei01@kylinos.cn" <xiaopei01@kylinos.cn>,
-	"Guruvendra.Punugupati@amd.com" <Guruvendra.Punugupati@amd.com>,
-	"linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	BMC-SW <BMC-SW@aspeedtech.com>
-References: <20250204091702.4014466-1-billy_tsai@aspeedtech.com>
- <f9f730b6-4620-49dd-9700-ee18f777045f@t-8ch.de>
- <OSQPR06MB725203E31EBAC2B71A7901E48BF42@OSQPR06MB7252.apcprd06.prod.outlook.com>
- <f05fb969-0632-48a6-afcd-c526c8568d4b@t-8ch.de>
- <2025020416561726c9efa0@mail.local>
+	Wed, 19 Feb 2025 20:44:00 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=vzmZlS+XPl9fe7DHcjl1zss3HEYxGoZwO/VTnylJNFCeBaLt1HmtIvljo1wdsKK6q8wxYeNbJyz5gfdDwSC/FXXrGS6rZUeYh2TNlPmbQZy6Y+x0cXlsTyeKCsALB0Kxwst3jtUJ1UaiB1S3qPheK1c6Zxg55GmoZixUZQE93YDllYXyS1IX8BCkqWFP1Z9Ee82U1S6v3mCUqgk9mW/7IO8NHD9zSfFnYrJNlWbCq7xP8ZSlKJUvPHehBo/NANGqwXSvUw2W6VRWfx2wAPYOar9TURAF0nq1RSJVxVAAA0NmUxZCVHgt1plJpDckhlzBS4imlvNp4BqWVUnLThLMLQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=GSk/i0Xqp/94bDVPTEANXv7c6RGsPgR2OoG4EAblRh0=;
+ b=CM9Fvsg3pz54TP2Z0JMxN1RSOXYqWyELGKy8mkNPsONlVBjOVyYtCWqsQAGDWmeTGUS1QU6NUbD9szqM5TC1PwxCSKdXFD0L3ubdiemY9H6p7+Jy30Qk3YSI8Zyv0Fm78ADnNTMH55+dvmt25/4//jXJXVrSYaXALiwxxOixUHN6F/gj5KsSeKEgpAaRf1KWbu98q5gvB4DWITeMgMX5saDo7dIbLANgUJ5qEYOkSWTWwfWH6AowYfJFOr8Dmslhs7PNQQrZVlj2zIntTCqvefilJFTilhuT2BVws5LcpP1wc+RahNcQuIH256NrV0M4i5cTM4k4CTPI1rO/ravjjg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=GSk/i0Xqp/94bDVPTEANXv7c6RGsPgR2OoG4EAblRh0=;
+ b=NOS03UynSKLGFOLWsJNWCY33ASaUxwDTc/jLQcDKm7e+WoQ1EkgBKPOaHVviBZTtr3Y6H22I7Kgh1B8rvTnUBxbZ/aRnl1uvFHi6MIApuLxwu/bbkZ4MnG/cKV8dxSDUVYKIzuCKrAm++UifUs2gu/7tOZdicU5m8hs3wtQxqk38bUWOS/N2jYn8PZl3lt8SxPZCvyg3tKqM52X1CH2RF54bjcK3eW5fxIcoNaFya4lKSmx0cZUgXPR0Gk3d3kWu8HVuSKXQxWddTdUAmy/aYWc5Q7sgRIrE/Xah950pmnjIfW/NK2hKjAYlJu2F4guYzTBCrLxQMGwRT3tFyxbyBg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by PAXPR04MB8301.eurprd04.prod.outlook.com (2603:10a6:102:1c5::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8466.14; Wed, 19 Feb
+ 2025 20:43:56 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06%5]) with mapi id 15.20.8445.017; Wed, 19 Feb 2025
+ 20:43:56 +0000
+Date: Wed, 19 Feb 2025 15:43:49 -0500
+From: Frank Li <Frank.li@nxp.com>
+To: Stanley Chu <stanley.chuys@gmail.com>
+Cc: miquel.raynal@bootlin.com, alexandre.belloni@bootlin.com,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+	tomer.maimon@nuvoton.com, kwliu@nuvoton.com, yschu@nuvoton.com
+Subject: Re: [PATCH v1 1/3] i3c: master: svc: add support for Nuvoton npcm845
+ i3c
+Message-ID: <Z7ZChfx9HzySO1x8@lizhi-Precision-Tower-5810>
+References: <20250219011019.1600058-1-yschu@nuvoton.com>
+ <20250219011019.1600058-2-yschu@nuvoton.com>
+Content-Disposition: inline
+In-Reply-To: <20250219011019.1600058-2-yschu@nuvoton.com>
+X-ClientProxiedBy: SJ0PR05CA0016.namprd05.prod.outlook.com
+ (2603:10b6:a03:33b::21) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
 MIME-Version: 1.0
-In-Reply-To: <2025020416561726c9efa0@mail.local>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|PAXPR04MB8301:EE_
+X-MS-Office365-Filtering-Correlation-Id: 508e6333-60b2-42de-029a-08dd51262102
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|376014|1800799024|52116014|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?Tda3/YGDX13+zQQH/f3X48TBeQmiR8VUmnqEZiSU+oLeYLDt/fqfgKM52I4z?=
+ =?us-ascii?Q?jtQsnJ9nl2frdLJEQaDMbBXbqnt3vVpr0R6IsZLhsyTCcasRGZUbYw/q0wJw?=
+ =?us-ascii?Q?ClxNDA+Xp6trdVSAi6wOIQrSFkhNCKzUzP7PGDVg4vJj4KOVlyqgttA6rJOi?=
+ =?us-ascii?Q?XN5TywGN+xoeyDZMrIxCZ73LRfTFsldcDkoAhPUe7CqIKjf4DB9S46OvAzX0?=
+ =?us-ascii?Q?jK5oCUu5P8CnRk5vReOqWWd29ZcDN8HshhNnOstm2LsvOERwxu6dafVzIR5u?=
+ =?us-ascii?Q?Y6nZGKfKnoTr/WPba9SjHc7ikka0f5HfJpT1haRSxpHOzIOrqFhApMbWuviq?=
+ =?us-ascii?Q?F78hE2zCIyyX1PLFxGqmcBpYlnZofdg8Bnj10Z98+1bOP7v1Yv6YM3Zs5Gru?=
+ =?us-ascii?Q?9f4PQCGkdMlvWbkwVng+g96kHXivXuaP5KFgPo0gXCsZ6Du+PlCdk67UqWjz?=
+ =?us-ascii?Q?kZMdRcHGS+C9xLtdNR/OU98RlQE/IymL4FHtSeq01AkjNeHcnTTgkE3gMQuk?=
+ =?us-ascii?Q?3IWjqXBzBv9TtJkqNV7vm1lAlIzCte1iQwQYNHdtx0MdDWj1qzL3tKF3vSMD?=
+ =?us-ascii?Q?6eDgMC8PFCcpfTTIirUdd5kYntIB1e0LcuzmXvg2ww0zLen0PcUrEZwI4QBp?=
+ =?us-ascii?Q?ZtE0RYBS1iKu0FnfAkEYAGtiKZaYOrytx10Qp1dy10p0tUD0RBTjDgHZ8lTH?=
+ =?us-ascii?Q?8vwARN3POS2Fgee4oiekqGj4H+g/UUKY736MWNfTr3w0nlg8eybtpbj20cr8?=
+ =?us-ascii?Q?4oAz7pxptSN3+mGdhR3vLHwH4UdkyZHRNp4e7kT3TRG+om7gc6YNArTwMA80?=
+ =?us-ascii?Q?iQn3rJuRbv9Gr76ADXNbx+THp1dHzuTi+91yCMYR26qjYypa+xsgZR3+WP5y?=
+ =?us-ascii?Q?GYn0ar1EW6jvUq7CY6Q37NAe37tRu9D1DDeuxcYKXHuiT3bj3mMyORz80XHt?=
+ =?us-ascii?Q?XZD0pbUkw6AhYNvlZ3kDBk6CpN96dNUAGMbv/OWoHdlMec1YECVt+penU5EG?=
+ =?us-ascii?Q?xvuV7w8tuw/JAT/FTlTBDR8cFzCMocO9kGGrIXZmTyJQRnDJiecOnYBu8joj?=
+ =?us-ascii?Q?B+0SXVotejNfamcUqtGBvyh0ZC9yzz7fpvZG87QUoIijBcGWAZgi2OmHo+N9?=
+ =?us-ascii?Q?mb7txG0oFkkGlRo9FcCBlZVX2qgDXjiBtwhclTxPHEj8iQ+odI339CBXRzXA?=
+ =?us-ascii?Q?ASBdOzd6n003gfrUPtYAkXVfz7FU5SjxY6s9f5oc3S5rH27PSeA3UiDSRXmu?=
+ =?us-ascii?Q?mzoAaQoM70EBpOL8IfE2xdtn88lyx3nVBja3pfGPs6eUa9loveDCY7GExNrc?=
+ =?us-ascii?Q?jot9ktVnfZZRC/Buhnhu9vFggEvJPc6lRKg9nxNh5kGxZQvcMOmiTuW4ilDx?=
+ =?us-ascii?Q?IA/Fv08gZ5IWwgDpFVcqFXHCTBsCQRlYCZEBxavvlueuIJDW5oGIlDTlvMXi?=
+ =?us-ascii?Q?GzCdOUCEZhHaBRWO1za9JSMXlj5NwLNl?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(1800799024)(52116014)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?VDJ5Rys3WyHjC77LyT7eSNlIkQ/ETOzOy3Tro40VmCxo0m763rdyCbfOtxQJ?=
+ =?us-ascii?Q?+1HT/bjKH6wy0O/9djBFPF5+YgwUJLiMc6FSi08ww8782wgoDp8RXycUWjMs?=
+ =?us-ascii?Q?ZYJr/qyNwgkFWq1uC5snCdtL47JFkx+j5ew6DY3y8ezhfA0D8Hgnr1YPmFev?=
+ =?us-ascii?Q?dl3w0IwPXOZS09BPmQiSzIClagkW8bta9IOr0u8fozYxWLU5OGeV8T+o6Ih9?=
+ =?us-ascii?Q?wJzgBBqGWLGJjWTrKS1LBwl2/wH+xtoleTLy/OAvUk7E/aoRCDgpFmAIQRv6?=
+ =?us-ascii?Q?wrVYC1JD3icZRGTGIzs6uR+R7ZSzt/aEXItmp2nP0Fy7yosHJKDdPpBiHh/p?=
+ =?us-ascii?Q?mAoxS2WFNT7XkUgzAu5GjjeqIq5gPLkd2IGjgo4DZJGon5i8WfHrF1oF7qDc?=
+ =?us-ascii?Q?Vf2OnmtuXkOWfVPTkZqpqzKrnQomy/0E6+LqVhUuX3m6AY7a3t47Ju/fmt96?=
+ =?us-ascii?Q?3Ro3ALh+O+Eiz4aNvgJIVLJs+HTATF3CYa+y81GuG5Ocg4hRLDjpmhO81gpM?=
+ =?us-ascii?Q?1rPi4T1AlKDgV5bgw37Uz5sXzm++piAqeM40vaK1o20+WRwwuK9NL3ta8piY?=
+ =?us-ascii?Q?YWlzNMh6zp9Bdgx21C4rfLO111KFwK0+dLPbk9rInpRSqGsqjwNIi5utPN53?=
+ =?us-ascii?Q?f7WLKo0YFBgcl4Z2WKvRYhis5Je3xYvfBFrMbtvsdX6rpHJ0Cqv5E7aTpspx?=
+ =?us-ascii?Q?6CsdXS/Mnfd+fZz2HFy1CzYB+3kTFDH4H56QuV/5bxy/ALIAWAkkuyqAAohb?=
+ =?us-ascii?Q?9FDMoBGMTqxUNHr2FOZ+5IL2xsemsw16yV8IOyk0WGWk9JjDOQp70UW9mcZk?=
+ =?us-ascii?Q?vwbKPE1X7R0P7J8Q5XqCVNmkDrVOWiY5MzS66tzEkBygYUUL7fliVP4zW0zg?=
+ =?us-ascii?Q?1oZ+Rqgf8ZiqXgt8qsOas/7jZdRUY6OqndhjR7uEoUUtuPho6pROvbkTBLtZ?=
+ =?us-ascii?Q?VEJfPletpCxgUyYq6l3ZtQOw9hDiQ8xG73P5z21iE5rkIWLzGB2HeAZFZYwI?=
+ =?us-ascii?Q?Zt0GwIk9Emu3AXBxoB9HsFTdIO2SkfNyqL1uO4w2YdDoaa1lWUZ+XoO+YEF+?=
+ =?us-ascii?Q?/MlmpolHXrbPZlOZghrad55Hd+MxAp11U7CMO27MKkKEOWcrYoxj4ko0uzLi?=
+ =?us-ascii?Q?rMiQr+w/iuch2L/ZB+UO7yYghkHX2LWw5HPO2dujIIEBhlGJGRVpA8ddQ1uy?=
+ =?us-ascii?Q?QTdUgTirHmDfaGB5998LBsnZqtunoTPtv2OOKs7kHWal3g7l+Aa598macqw6?=
+ =?us-ascii?Q?DCxAG/U5QbK8d3Hzlgwmsx9ifNNkqtca6NETs7CZWoq1OZsnYowu3tqcylwZ?=
+ =?us-ascii?Q?5H/29vIheloVLBVJ+Sxbf3QbQ9lGuZkopXNSEeY44hkC04AByWr/iiKnNi1y?=
+ =?us-ascii?Q?Nh8H/6UfJIANE7uaAWY0MOLDxplXsgqtlJ3PBf3GGCDqInxD72Scg98WQu5D?=
+ =?us-ascii?Q?R7RMhcMa+NWIs6CXJnVJnTbwsQvMWRbzVVunA5S//IAMIzH9F0ETW1K55BSp?=
+ =?us-ascii?Q?Eu/vtELSfd5ZImQB/EVuZn54BYrupsxvGwvTZoDPOAw1456kOXqZ31pQJymD?=
+ =?us-ascii?Q?lDJFYRHRrIKgd5Y0e9uOXhrB/gzjaF+LAq3vraCF?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 508e6333-60b2-42de-029a-08dd51262102
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Feb 2025 20:43:56.1819
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: /E3IwGRcBRegfnHcwj7ReJ1RTNEjJMZ07MiWWiT6bfJOEVbdr7WXlvMY0mvhDhQZalUX17wdETUEplt/40W45w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8301
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250217_015739_883685_6F4E5D50 
-X-CRM114-Status: UNSURE (   6.16  )
-X-CRM114-Notice: Please train this message.
-X-Mailman-Approved-At: Wed, 19 Feb 2025 12:22:31 -0800
+X-CRM114-CacheID: sfid-20250219_124359_343536_5985B012 
+X-CRM114-Status: GOOD (  15.30  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,61 +154,50 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0398272432250223253=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+On Wed, Feb 19, 2025 at 09:10:17AM +0800, Stanley Chu wrote:
+> Nuvoton npcm845 SoC uses the same Silvico IP but an older version.
+> Add a new comptaible string to distinguish between different
+> hardware versions.
 
---===============0398272432250223253==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="7En295CQNKdStu7i"
-Content-Disposition: inline
+try wrap at 75 chars.
 
+>
+> Signed-off-by: Stanley Chu <yschu@nuvoton.com>
+> ---
+>  drivers/i3c/master/svc-i3c-master.c | 1 +
+>  1 file changed, 1 insertion(+)
+>
+> diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
+> index d6057d8c7dec..813839498b2b 100644
+> --- a/drivers/i3c/master/svc-i3c-master.c
+> +++ b/drivers/i3c/master/svc-i3c-master.c
+> @@ -1960,6 +1960,7 @@ static const struct dev_pm_ops svc_i3c_pm_ops = {
+>
+>  static const struct of_device_id svc_i3c_master_of_match_tbl[] = {
+>  	{ .compatible = "silvaco,i3c-master-v1"},
+> +	{ .compatible = "nuvoton,npcm845-i3c" },
 
---7En295CQNKdStu7i
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Need update binding doc and cc linux-devicetree mail list.
 
+Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
 
-> I guess Wolfram will be the one have the preference, I'm fine using the
-> existing API as-is.
+binding doc change should be first patch.
 
-Happy to take (tested) patches.
+Frank
 
-
---7En295CQNKdStu7i
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAmezCBEACgkQFA3kzBSg
-KbZVyA/+OGxQAvWCnRz6vlu52N3SURN0xynMNAZ+EdTwe0QrjDs4OVk+QQP90P/7
-CkBut5jW38JF0AVuIXeE4Rwv8Vy2pQ1UNgG0hcmZxP/11urMQiQwGfiFBqYCPGuO
-6uqe4nC+HmOb2k2aSLjX75VZ9skr4/illWkVmX52/exrtRWmrgdYnRjotR364ZsC
-xlMQrWfYgDg14yMexjPRZJgputUpK4poeezw/NW+FhAzmqcFsi0U+bmcGaHbLvCE
-QShc4LWX+0BCP9pC3e+GvEBHSp+ek7DH7zqkDVZuDmr+WYEh2eETUEfIY5GZv/Di
-pUdXj0iODrM2Osq6zms29afTy+UQod926LBVHNp3C5wQEHb26ujgP4+Pr9/AegcC
-BOVxAlivZAsOwd0iugQkJveq7bj8eelbwCTxp2Olbf4rm6ab8ZTrUkLzkKU4KBvv
-4s1dPK89IGPCxaLmnfe5JCse3HnTyEy/mMO1OOlOKNnJelGsf5tbeF/SYHEyuPsc
-Tk+2DmOYqfOLi3CaphyQx6tfjnJJYTitk2m8tlfX7FRpvKtbQC9iaOQeencbQ/fc
-SZzgfi3dXOHJ9n2zLSIclXozO6niezvfnSlzUj3twr6XsiMNQ0wCLOE3rqCp+i1/
-M2inE7EYxEJSISfO1Xz7IryARHqn85rvZjCmvh1TOMBDQHPSK9g=
-=c+SX
------END PGP SIGNATURE-----
-
---7En295CQNKdStu7i--
-
-
---===============0398272432250223253==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+>  	{ /* sentinel */ },
+>  };
+>  MODULE_DEVICE_TABLE(of, svc_i3c_master_of_match_tbl);
+> --
+> 2.34.1
+>
 
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
-
---===============0398272432250223253==--
-
