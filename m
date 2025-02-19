@@ -4,81 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5C3BC021AA
-	for <linux-i3c@archiver.kernel.org>; Wed, 19 Feb 2025 04:52:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C1252C021AA
+	for <linux-i3c@archiver.kernel.org>; Wed, 19 Feb 2025 08:50:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TJ1lCifG80wqIRAOYqm9R7wgYhj6c4cF8FPKVXslog0=; b=jguR2uE4QAsavq
-	opykqrwWds+TvLVtnssAgDU1RF7E858qvh/6hzJAPWPCspwKp0iOXCYPsd+VE8Kl+gGBH1U1pZrF2
-	63ZJltYY6pEjdnDPgjg1uoYcmeuy9hXqHqEBj3xqQJaR4HgX7k3Yz8xta2CJpNPeN4E9cMY4EBlZ0
-	7q/EQdZjqyXdYZwZIVYFB0X6QlbqfRtlirL0pXe29H2oWOd0koMkn+KzS59HwCXlNU86CuvqTDza8
-	ZPJxhMozdfZaTztigHniMq7Xf04WHBVhVUFT9NjEJUzfS4fEkbys6BoejMGMw6wwHD9oAoz6MSsLe
-	uZUj5Oj/oOWyKU73Y4lQ==;
+	List-Owner; bh=7o2ICaP+9o7y5JekJ08QbFAotZXNXJSWtsDKa+mV/gM=; b=wzSK0nQ8uqku3P
+	spsFrV1uSQMKTmyZvSNQKGe1DiGeU2yEGUBhfat5clhmvtrg7wVLnwC09YzTQX9up2O4CksbvBHms
+	C6yV25eis2e8XrrKWguXo5Zqv9YkP1MminIDEsxgDxHQeeG4NA4VMmfXRnIcquXGK2FZ4fG2sVJN3
+	8Ah6IRdP6Wh+3N4/7Nhxm+tJt9kIYsY5HxT/2dnRmyv9PhF1AF89KSVPfZmAcFp9VfTCP8WZsyWYH
+	ffCiVoNRSW3BFiazFpuYGdoW9Ewaf3I3cdVpp4+RFvuvWrJwkx8Ni1uErB+svBiUWbf8Vg3J6VUog
+	pexyfvv0YXTAx1f/4mOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkc4f-0000000Argc-1Pd3;
-	Wed, 19 Feb 2025 04:52:41 +0000
-Received: from mgamail.intel.com ([198.175.65.14])
+	id 1tkfn1-0000000BdzV-2FB5;
+	Wed, 19 Feb 2025 08:50:43 +0000
+Received: from relay1-d.mail.gandi.net ([2001:4b98:dc4:8::221])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkc4c-0000000ArgF-2BOC
+	id 1tkfRZ-0000000BWNa-1zs1
 	for linux-i3c@lists.infradead.org;
-	Wed, 19 Feb 2025 04:52:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1739940759; x=1771476759;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=CqJ6DkASQPJEC9ewBqvxq88kqMSk27cnnMTjXeKRPDc=;
-  b=a6kweCduaM3QgGm+C3wlxSZQkAjGgNl8q5vRbjEW5xRDWiKKDNiFn21K
-   y+7KMbcHDwtpiNIYQvmcdqAzo5qElE8eCDf05bm/G934tgmNdLFwPH64v
-   IgrlbOgGYhaY738dDFmf1HjYBvfhHei864XrEiNtqZqju9ldiahZzXKqo
-   9GKrA8SwEaz2uaodRYf5qXPbDnTNSdzQpnsgDfhBlZAkb9Co8zkjLDdIR
-   osMY/Jit+qkVIrSAiBG0Xtb9HDRs1JXEC17BAUT2vTMxVVjPglWDH3EGF
-   j30LbCSMfIaVya5lSpRvYod+kCp2ekLDfmg3wIf73/uquX7Igf63jeIdT
-   Q==;
-X-CSE-ConnectionGUID: 2aN5IAHrQBqbv3iDIi4c0w==
-X-CSE-MsgGUID: AGBN5XkPSf6ZGFORpsT8Gg==
-X-IronPort-AV: E=McAfee;i="6700,10204,11348"; a="44420802"
-X-IronPort-AV: E=Sophos;i="6.13,298,1732608000"; 
-   d="scan'208";a="44420802"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by orvoesa106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 18 Feb 2025 20:52:35 -0800
-X-CSE-ConnectionGUID: /Nas89t0TGGoDTHvDacfhw==
-X-CSE-MsgGUID: d4uI7X/cQ1uJw9H4hbMHuA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.13,298,1732608000"; 
-   d="scan'208";a="114456632"
-Received: from lkp-server02.sh.intel.com (HELO 76cde6cc1f07) ([10.239.97.151])
-  by fmviesa006.fm.intel.com with ESMTP; 18 Feb 2025 20:52:31 -0800
-Received: from kbuild by 76cde6cc1f07 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1tkc4J-0001Fb-11;
-	Wed, 19 Feb 2025 04:52:24 +0000
-Date: Wed, 19 Feb 2025 12:52:02 +0800
-From: kernel test robot <lkp@intel.com>
-To: Aman Kumar Pandey <aman.kumarpandey@nxp.com>,
-	linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
-	alexandre.belloni@bootlin.com, krzk+dt@kernel.org, robh@kernel.org,
-	conor+dt@kernel.org, devicetree@vger.kernel.org
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	vikash.bansal@nxp.com, priyanka.jain@nxp.com,
-	shashank.rebbapragada@nxp.com, Frank.Li@nxp.com,
-	Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-Subject: Re: [PATCH 2/2] drivers: i3c: Add driver for NXP P3H2x4x i3c-hub
- device
-Message-ID: <202502191226.OQpregx1-lkp@intel.com>
-References: <20250212132227.1348374-2-aman.kumarpandey@nxp.com>
+	Wed, 19 Feb 2025 08:28:35 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 0C6A044393;
+	Wed, 19 Feb 2025 08:28:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1739953710;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=exKoqztBJoJJiNjFsPWiUWzpl1Jwkr5h8NxnGYc9qcg=;
+	b=mceIH92eWx935FtkZYGngBr3Sd9Kn6rluybk3eZjvC55G6HLhZNH9QR6uc4wXf+Piy63CZ
+	S3lUchkYCk2CEBNwFpp9eQK8BrUe/xQ1/41KfQJ/rJ2INySRQVdjBBYkz2GQHLezCJqMuW
+	b/rv3kkaFCabaNUwyx1T+kEi0nChQTzn77gDQpBjQw25qbG7bFlU3Qvj3PyV2DNLcG3tu0
+	qNXlgfkc2nG2+Fym8nmG/5A1e1w7G+4W8R3nbSn3b96HbiMRD6LSXSMjfydYUFijsbjMcO
+	xhJjALsbrfj5Tqz/5mVXqrQkjwK2uxtojYzA+g3j8kmSIU/21cxnZvbXXuj8YQ==
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Stanley Chu <stanley.chuys@gmail.com>
+Cc: frank.li@nxp.com,  alexandre.belloni@bootlin.com,
+  linux-i3c@lists.infradead.org,  linux-kernel@vger.kernel.org,
+  tomer.maimon@nuvoton.com,  kwliu@nuvoton.com,  yschu@nuvoton.com
+Subject: Re: [PATCH v1 2/3] i3c: master: svc: fix npcm845 FIFO empty issue
+In-Reply-To: <20250219011019.1600058-3-yschu@nuvoton.com> (Stanley Chu's
+	message of "Wed, 19 Feb 2025 09:10:18 +0800")
+References: <20250219011019.1600058-1-yschu@nuvoton.com>
+	<20250219011019.1600058-3-yschu@nuvoton.com>
+User-Agent: mu4e 1.12.7; emacs 29.4
+Date: Wed, 19 Feb 2025 09:28:28 +0100
+Message-ID: <87wmdmqqxf.fsf@bootlin.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250212132227.1348374-2-aman.kumarpandey@nxp.com>
+X-GND-State: clean
+X-GND-Score: 0
+X-GND-Cause: gggruggvucftvghtrhhoucdtuddrgeefvddrtddtgdeifeejiecutefuodetggdotefrodftvfcurfhrohhfihhlvgemucfitefpfffkpdcuggftfghnshhusghstghrihgsvgenuceurghilhhouhhtmecufedtudenucenucfjughrpefhvfevufgjfhgffffkgggtgfesthhqredttderjeenucfhrhhomhepofhiqhhuvghlucftrgihnhgrlhcuoehmihhquhgvlhdrrhgrhihnrghlsegsohhothhlihhnrdgtohhmqeenucggtffrrghtthgvrhhnpeffgefhjedtfeeigeduudekudejkedtiefhleelueeiueevheekvdeludehiedvfeenucfkphepledtrdekledrudeifedruddvjeenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepihhnvghtpeeltddrkeelrdduieefrdduvdejpdhhvghloheplhhotggrlhhhohhsthdpmhgrihhlfhhrohhmpehmihhquhgvlhdrrhgrhihnrghlsegsohhothhlihhnrdgtohhmpdhnsggprhgtphhtthhopeekpdhrtghpthhtohepshhtrghnlhgvhidrtghhuhihshesghhmrghilhdrtghomhdprhgtphhtthhopehfrhgrnhhkrdhlihesnhigphdrtghomhdprhgtphhtthhopegrlhgvgigrnhgurhgvrdgsvghllhhonhhisegsohhothhlihhnrdgtohhmpdhrtghpthhtoheplhhinhhugidqiheftgeslhhishhtshdrihhnfhhrrgguvggrugdrohhrghdprhgtphhtthhopehlihhnuhigqdhkvghrnhgvlhesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtt
+ hhopehtohhmvghrrdhmrghimhhonhesnhhuvhhothhonhdrtghomhdprhgtphhtthhopehkfihlihhusehnuhhvohhtohhnrdgtohhmpdhrtghpthhtohephihstghhuhesnhhuvhhothhonhdrtghomh
+X-GND-Sasl: miquel.raynal@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250218_205238_629340_FAC41615 
-X-CRM114-Status: UNSURE (   9.73  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250219_002833_665080_74BB0CBB 
+X-CRM114-Status: GOOD (  11.98  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,44 +74,37 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Aman,
-
-kernel test robot noticed the following build errors:
-
-[auto build test ERROR on robh/for-next]
-[also build test ERROR on linus/master v6.14-rc3 next-20250218]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Aman-Kumar-Pandey/drivers-i3c-Add-driver-for-NXP-P3H2x4x-i3c-hub-device/20250212-213659
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
-patch link:    https://lore.kernel.org/r/20250212132227.1348374-2-aman.kumarpandey%40nxp.com
-patch subject: [PATCH 2/2] drivers: i3c: Add driver for NXP P3H2x4x i3c-hub device
-config: i386-randconfig-006-20250219 (https://download.01.org/0day-ci/archive/20250219/202502191226.OQpregx1-lkp@intel.com/config)
-compiler: clang version 19.1.3 (https://github.com/llvm/llvm-project ab51eccf88f5321e7c60591c5546b254b6afab99)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250219/202502191226.OQpregx1-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202502191226.OQpregx1-lkp@intel.com/
-
-All errors (new ones prefixed by >>, old ones prefixed by <<):
-
-WARNING: modpost: missing MODULE_DESCRIPTION() in kernel/bpf/preload/bpf_preload.o
->> ERROR: modpost: "i2c_slave_event" [drivers/i3c/p3h2x4x/p3h2x4x_i3c_hub.ko] undefined!
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+SGVsbG8gU3RhbmxleSwKCk9uIDE5LzAyLzIwMjUgYXQgMDk6MTA6MTggKzA4LCBTdGFubGV5IENo
+dSA8c3RhbmxleS5jaHV5c0BnbWFpbC5jb20+IHdyb3RlOgoKPiBucGNtODQ1IEhXIGlzc3VlOgo+
+IEkzQyBIVyBzdGFsbHMgdGhlIHdyaXRlIHRyYW5zZmVyIGlmIHRoZSB0cmFuc21pdCBGSUZPIGJl
+Y29tZXMgZW1wdHksCj4gd2hlbiBuZXcgZGF0YSBpcyB3cml0dGVuIHRvIEZJRk8sIEkzQyBIVyBy
+ZXN1bWVzIHRoZSB0cmFuc2ZlciBidXQKPiB0aGUgZmlyc3QgdHJhbnNtaXR0ZWQgZGF0YSBiaXQg
+bWF5IGhhdmUgdGhlIHdyb25nIHZhbHVlLgo+IFdvcmthcm91bmQ6Cj4gRmlsbCB0aGUgRklGTyBp
+biBhZHZhbmNlIHRvIHByZXZlbnQgRklGTyBmcm9tIGJlY29taW5nIGVtcHR5Lgo+Cj4gU2lnbmVk
+LW9mZi1ieTogU3RhbmxleSBDaHUgPHlzY2h1QG51dm90b24uY29tPgo+IC0tLQoKLi4uCgo+IEBA
+IC04OTEsNiArOTAzLDcgQEAgc3RhdGljIGludCBzdmNfaTNjX21hc3Rlcl9kb19kYWFfbG9ja2Vk
+KHN0cnVjdCBzdmNfaTNjX21hc3RlciAqbWFzdGVyLAo+ICAJdW5zaWduZWQgaW50IGRldl9uYiA9
+IDAsIGxhc3RfYWRkciA9IDA7Cj4gIAl1MzIgcmVnOwo+ICAJaW50IHJldCwgaTsKPiArCXUzMiBk
+eW5fYWRkcjsKPiAgCj4gIAl3aGlsZSAodHJ1ZSkgewo+ICAJCS8qIGNsZWFuIFNWQ19JM0NfTUlO
+VF9JQklXT04gdzFjIGJpdHMgKi8KPiBAQCAtOTMxLDYgKzk0NCwxNSBAQCBzdGF0aWMgaW50IHN2
+Y19pM2NfbWFzdGVyX2RvX2RhYV9sb2NrZWQoc3RydWN0IHN2Y19pM2NfbWFzdGVyICptYXN0ZXIs
+Cj4gIAkJaWYgKFNWQ19JM0NfTVNUQVRVU19SWFBFTkQocmVnKSkgewo+ICAJCQl1OCBkYXRhWzZd
+Owo+ICAKPiArCQkJLyoKPiArCQkJICogU1ZDX0kzQ19RVUlSS19GSUZPX0VNUFRZIGZpeDoKPiAr
+CQkJICogVGhlIFRYIEZJRk8gc2hvdWxkIGJlIHJlYWR5IGJlZm9yZSB0aGUgVFggdHJhbnNtaXNz
+aW9uIGlzIHN0YXJ0aW5nLgo+ICsJCQkgKi8KPiArCQkJZHluX2FkZHIgPSBpM2NfbWFzdGVyX2dl
+dF9mcmVlX2FkZHIoJm1hc3Rlci0+YmFzZSwgbGFzdF9hZGRyICsgMSk7Cj4gKwkJCWlmIChkeW5f
+YWRkciA8IDApCj4gKwkJCQlyZXR1cm4gZHluX2FkZHI7Cj4gKwkJCXdyaXRlbChkeW5fYWRkciwg
+bWFzdGVyLT5yZWdzICsgU1ZDX0kzQ19NV0RBVEFCKTsKCk1heWJlIEZyYW5rIGNhbiB0ZXN0LCBi
+dXQgaXQgZmVlbHMgbGlrZSB0aGVyZSBhcmUgY2hhbmNlcyBpdCB3aWxsIGJyZWFrCnRoZSBvdGhl
+ciBjb250cm9sbGVyLgoKUGVyaGFwcyB0aGUgb3RoZXIgcXVpcmsgYXBwbGllcyB0byB0aGUgb3Ro
+ZXIgY29udHJvbGxlciB0aG91Z2guCgoKUmVnYXJkaW5nIHlvdXIgc2VyaWVzLCBwYXRjaCAxIGRv
+ZXMgbm90IG1ha2UgbXVjaCBzZW5zZSBhbG9uZSwgYW5kIHlvdQpzaG91bGQgYW55d2F5IHdyaXRl
+IGEgYmluZGluZyBwYXRjaCBmb3IgeW91ciBuZXcgY29tcGF0aWJsZSAoZmlyc3QgaW4KdGhlIHNl
+cmllcykuCgpUaGFua3MsCk1pcXXDqGwKCi0tIApsaW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4
+LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtaTNjCg==
