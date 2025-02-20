@@ -4,70 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 97FA7C021B1
-	for <linux-i3c@archiver.kernel.org>; Thu, 20 Feb 2025 05:43:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6389EC021AD
+	for <linux-i3c@archiver.kernel.org>; Thu, 20 Feb 2025 06:12:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=srT1EI4stHcVt/Wu5HMVL+TczgZyc5b1/yrYh/uNZMQ=; b=l6cL5echWxI2pr
-	pqbuh0u2+wsgIh2PkVsO1uZ+rjCc2R7PUYiXbTqtT9QdYUMb+xmKhHWtg1aZHXGp0vzpTMGpYVYTe
-	aMyXu72RbAQ6o7BHOFrei7K3klMqvt4zOy2A+1JTN1UEyKe6UMHDnzS/moCUSZy2Qm3cNQx2yYryl
-	H9DPHwnBjA1aiON+r5wrXuJ1Ct5VVUex0QhtROromOoPSTFv4J4N+/E1uikYCGIQi7RZLeeTZA3Bp
-	VyGjiqtpGj5ihITcKaSJ1Q6zW9iV6wV5/KoJALgCOmH74dXZWHK8xleFNM6J9nnDorFafbKoPgw4q
-	78biel9g62zOd+QWNNHg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zwYX25NTxe2bFQ6lvtZG7rSWhlXwvwHi4xLPR/lCzNY=; b=qN7oPYN6SCMwMa
+	vo95ICloVDf0rBSFeoATc3ePTeXS5iscynCbq77t2/HpGrsIWDLwimmvfYQI7ryzUr6ShvCQdpAXh
+	xmI7CXIU0Dqw0ScA8edwS/ugvOVqLcnPwd7nbRAlap9MnUmAhvdrMzeEMU4HwbtS+qeI/xy4YM1P2
+	sqIQlx87T3+zwOsY4YXKPHeBrrG4c4lP2ZqqsWq/7r8aCKHBRAhAMBxPZ08DC3XCra83S1Ojb8FYq
+	UEIjuH+eiZJSvInvHasF2lrdRPKafUu+H1h0FbvTw8bgeZVdJcAQzo+Tef/l/aD1rUhTqWy/gwQAT
+	rqLN3Ma6hDocKTu6dLmg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkzLn-0000000GpwT-1Tng;
-	Thu, 20 Feb 2025 05:43:55 +0000
-Received: from mail-pl1-x631.google.com ([2607:f8b0:4864:20::631])
+	id 1tkznd-0000000Gtjp-0PIS;
+	Thu, 20 Feb 2025 06:12:41 +0000
+Received: from mail-pl1-x62b.google.com ([2607:f8b0:4864:20::62b])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkzLl-0000000GpvN-0OF3
+	id 1tkzmD-0000000GtLM-3QmQ
 	for linux-i3c@lists.infradead.org;
-	Thu, 20 Feb 2025 05:43:54 +0000
-Received: by mail-pl1-x631.google.com with SMTP id d9443c01a7336-219f8263ae0so10249655ad.0
-        for <linux-i3c@lists.infradead.org>; Wed, 19 Feb 2025 21:43:53 -0800 (PST)
+	Thu, 20 Feb 2025 06:11:15 +0000
+Received: by mail-pl1-x62b.google.com with SMTP id d9443c01a7336-220c665ef4cso7586775ad.3
+        for <linux-i3c@lists.infradead.org>; Wed, 19 Feb 2025 22:11:13 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1740030232; x=1740635032; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=SEAs/2W8i6unwL/IOH0/meAWRqs6OoDg3QxDG87nlzI=;
-        b=lRSYmwkjC0S6bWkiyrKE1lqJoE3CQJGzgz84YElyfXOtQbwAv2p4G8jytIPvrDFyDt
-         GwxNgfiKm3J8RnG98ju1DIKUPVXqL3WsW9mAoeqO3NHKNQKhhdWmmS0UvD1tXu7pHWBg
-         GYbbFFD7KaPCkD1VwQc2mvZazrATcJRiLADY+gLEKen6bf9M7MeHm9C3y8whomQxmigR
-         EUlb0zFLHVGaO3sJKwf+6cNQDZ8Ab4lG78Ae6nxUxNikaTidy/RgJVyW9fXHk761xgNh
-         WFsSbEX8ILbxyeiTP2JhjwLBt15xR0ETSZIgxkxjUF9xnmn6Sma29LaVxqflreFlw45e
-         peGA==
+        d=gmail.com; s=20230601; t=1740031873; x=1740636673; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=xgZldDq/yO5VWimSLneZAx8qBmg/WC4f9EIjy2qwa9M=;
+        b=cbiW4TibT1wqnkVwibVuZdG9Lpsmx2fa//ilewqd3Ygjjo936QjjtNU+6zk4c34i+H
+         Igxva5mJa8vzDApIUyucHGo9Fm4PTaSxuwjUIR2ZJGlzaaL5/llR8CVKiirRneZYPIV+
+         DjqTf5DZiw+XSP/rfPd4lSK5HGVyUpz9aFmAiTvGC5LPVXW2oNxcTlCyFlGTDAOLAsZJ
+         QWFZAKRjmNOuzICckU2xCZEEVam49p0woZJbnvwhUdM7opIvngm1f4pp1RSABDI92eiq
+         zol92dCY5AgKVItOUtZDZRqC+bXp6rb8dCGTeR45EAdatLpUjd3lQcvkAPkpfxYw8U9t
+         thjA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1740030232; x=1740635032;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=SEAs/2W8i6unwL/IOH0/meAWRqs6OoDg3QxDG87nlzI=;
-        b=wDCkNUn5CSP61u6Z8/cmR2O7ZA+ys4vVFmJetmUZm1+iqX6OukMEOgW4yttHdVTu4B
-         9R1ZXtxOwZvpITZ85Pip33+uWd1Yp4v7cg2SS6rAv/AMN2U+cLlFJ8F7Jyjqt+gjoC5t
-         3kFUQ5xnurQlHFK0MC7otnV+bsbTtOud9SkgPuf6JdP49Qa1p02IPDGjme6unKGVBWSq
-         zJbHwHkmMKdXE4mvcFEaew7w/ALY/8XTh0NQia6ZD7yfCY+zNusgCBllkvQeP/pEujEk
-         RsWxS8YbQXjPNoVMifiNnwUjbF/1R25652o9K5pYugOU9A0/pjsxm1QQfEQXz3hwKPgR
-         21LA==
-X-Forwarded-Encrypted: i=1; AJvYcCVBzo5SyK2QJLS1m5RQxJfDhX2Wd1mFhKj6448EphYq4VJ4bwSeOmtXVZd2RcKBB4RzurahowuJid4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyktkSWjJEyMK1428MUKc5FVLGoZZVGNl87717zdfbm9QEUKKOZ
-	vUpdhwSIwhJV2mTbClo+j1PN4k7ZLuOBkgYsajHYbAH4HCSwgh6s
-X-Gm-Gg: ASbGncti5bHeGlnGnBWxTNuuH+8okOhSGcK/a5serNxQ14ooGQFukdsh1NsAWOBC072
-	EljfB9UMjJkYOyLilRl0CwBUh0VksSkI5BlgYTM4pGYQjHPIxjKGEOPfQMjAvHV/f1CXyerN04O
-	rxNJudeDl/H6IDzK0kKZV2APe6MWlkZ09h3AE6ue0h+USMTg9xiOZGBJLvDq2nKEc6Y7LRBUYvq
-	F5c7aiORmji1um4LKhQThHJfaN7NI3HJZLCDanIwQyY8kUQrno7SvzylQ71fCAfq2fDvKa2uN61
-	bjb28O9qDThxivv+NWvTfLH65Q==
-X-Google-Smtp-Source: AGHT+IGUkXoXo59VQXM/7j5YyIdcs9w/cg9RxyXROlX7CbTDYkiET2l2tQDyhfUyca1cDQgdkp4yXg==
-X-Received: by 2002:a17:902:e887:b0:21f:4c8b:c4de with SMTP id d9443c01a7336-221040bdb96mr284464145ad.42.1740030232395;
-        Wed, 19 Feb 2025 21:43:52 -0800 (PST)
+        d=1e100.net; s=20230601; t=1740031873; x=1740636673;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=xgZldDq/yO5VWimSLneZAx8qBmg/WC4f9EIjy2qwa9M=;
+        b=AfMk97TO0YSnwDvL62dt0tJ7CLLE/OKGyvDp+vnX5+172wcOPr1/Tz2nYaneSwBsis
+         BDd3U0Lk3Mdj6P5YNFn4l2egfuFBB1gLBnhPX9YAjjc/V6Bl9c+gF3EOOGdX8DtUX+IJ
+         qaY7NCt3rwOH6HYmiOFrRwbGAg/rKB8T1C67aZtqzKica703zOK8dWwmueGjdu52opdg
+         QxKRLHBZmYiBJlaZXnv9qw3Aga2VMA7G/6JcclZ2d0vULmEu10a/9Moi19I31DX7TfsS
+         a5xNHcczaWcf9n5v9dhQiX3kyQGSC1Yt41cTwpjihuY/xbn/yLOn+2ZmEZ4eGYvygZq9
+         0jiA==
+X-Forwarded-Encrypted: i=1; AJvYcCXKD17oS7Er0/jMaUhR+E91AFXe6+eJQO25j7mCoenqzXo+5U9zIy0lLJNkppz0a10F+YNIRqRQMMg=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwT0J5jzU8jBx+oD8zMd2apQDPNe5uHxky4v0niPjHeZfAqruS7
+	YSUb+yQgbF18QZmg8UDLdE9Hs9ufbjNX5hVSAyFAUPNCfGjk+lUQ7k/J6w==
+X-Gm-Gg: ASbGnctmsDnlIZsGY5mEsKnwalbYWqAKn+Vrd8cEau2oW2YWaHlvbLBBV/FEw5aOcYG
+	nlw1ebiKHEw7RkVY7LZtlAkdEWOUDsPGTgCVxDrPP78m4vP3iyIJ+f8/xipsosegEr2vGF7NGuJ
+	s9lQ7Vzh8NLsLhMuasVblwnoRG/uFt5svFLKpCwBr7y+/c49LepDXwEWIcvi1eevlc3p9gKDOA3
+	nVhCuQrYdDeAEik432DKvcnhJLC4YFBe05yjS5b8W7ezWN/HokEEEXRQ+BpopHNCjluxKih0xqR
+	0QLHojsZVA28zQZ4+ZTMTqkOoA==
+X-Google-Smtp-Source: AGHT+IGMKCnN108R2DoHpoWY5glP/ASNjPMMLynLcJzPcLDqzL438UYtbPahDYUPbY2rfSfR/ZgzpQ==
+X-Received: by 2002:a05:6a20:d497:b0:1ee:c093:e237 with SMTP id adf61e73a8af0-1eee5c58d62mr2325033637.12.1740031872911;
+        Wed, 19 Feb 2025 22:11:12 -0800 (PST)
 Received: from cs20-buildserver.lan ([2403:c300:dc0a:4fe5:2e0:4cff:fe68:863])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-220d534951fsm114415335ad.25.2025.02.19.21.43.50
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-73271a02648sm8226823b3a.107.2025.02.19.22.11.10
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 19 Feb 2025 21:43:52 -0800 (PST)
+        Wed, 19 Feb 2025 22:11:12 -0800 (PST)
 From: Stanley Chu <stanley.chuys@gmail.com>
 X-Google-Original-From: Stanley Chu <yschu@nuvoton.com>
 To: frank.li@nxp.com,
@@ -79,16 +78,14 @@ Cc: linux-kernel@vger.kernel.org,
 	tomer.maimon@nuvoton.com,
 	kwliu@nuvoton.com,
 	yschu@nuvoton.com
-Subject: [PATCH v2 4/4] i3c: master: svc: Fix npcm845 invalid slvstart event
-Date: Thu, 20 Feb 2025 13:43:30 +0800
-Message-Id: <20250220054330.1711979-5-yschu@nuvoton.com>
+Subject: [PATCH RESEND v2 0/4] Add support for Nuvoton npcm845 i3c controller
+Date: Thu, 20 Feb 2025 14:11:03 +0800
+Message-Id: <20250220061107.1718239-1-yschu@nuvoton.com>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250220054330.1711979-1-yschu@nuvoton.com>
-References: <20250220054330.1711979-1-yschu@nuvoton.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250219_214353_130279_A3FEE41B 
-X-CRM114-Status: GOOD (  11.11  )
+X-CRM114-CacheID: sfid-20250219_221113_872591_DCE12F6E 
+X-CRM114-Status: GOOD (  10.13  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,39 +102,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-I3C HW may generate an invalid SlvStart event when emitting a STOP.
-If it is a true SlvStart, the MSTATUS state should be SLVREQ. Check
-the MSTATUS state to ignore the false event.
+This patchset adds support for the Nuvoton npcm845
+Board Management controller (BMC) SoC family.
 
-Signed-off-by: Stanley Chu <yschu@nuvoton.com>
+The Nuvoton npcm845 uses the same Silvico IP but an older version.
+This patchset adds fixes for the npcm845 specific hardware issues.
+
 ---
- drivers/i3c/master/svc-i3c-master.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+v2:
+ - Add a new compatible string in dt-binding doc.
+ - Add driver data for npcm845 to address the quirks.
+ - Modify svc_i3c_master_write to be reused by SVC_I3C_QUIRK_FIFO_EMPTY fix.
+ - Fix typo of SVC_I3C_QUIRK_FALSE_SLVSTART fix.
+ - Remove the code changes in svc_i3c_master_do_daa_locked, will add it in
+   another patch series for common improvement.
+---
 
-diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-index 2140da3f5187..5861358eb9e5 100644
---- a/drivers/i3c/master/svc-i3c-master.c
-+++ b/drivers/i3c/master/svc-i3c-master.c
-@@ -58,6 +58,7 @@
- #define SVC_I3C_MSTATUS      0x088
- #define   SVC_I3C_MSTATUS_STATE(x) FIELD_GET(GENMASK(2, 0), (x))
- #define   SVC_I3C_MSTATUS_STATE_DAA(x) (SVC_I3C_MSTATUS_STATE(x) == 5)
-+#define   SVC_I3C_MSTATUS_STATE_SLVREQ(x) (SVC_I3C_MSTATUS_STATE(x) == 1)
- #define   SVC_I3C_MSTATUS_STATE_IDLE(x) (SVC_I3C_MSTATUS_STATE(x) == 0)
- #define   SVC_I3C_MSTATUS_BETWEEN(x) FIELD_GET(BIT(4), (x))
- #define   SVC_I3C_MSTATUS_NACKED(x) FIELD_GET(BIT(5), (x))
-@@ -589,6 +590,11 @@ static irqreturn_t svc_i3c_master_irq_handler(int irq, void *dev_id)
- 	/* Clear the interrupt status */
- 	writel(SVC_I3C_MINT_SLVSTART, master->regs + SVC_I3C_MSTATUS);
- 
-+	/* Ignore the false event */
-+	if ((master->quirks & SVC_I3C_QUIRK_FALSE_SLVSTART) &&
-+	    !SVC_I3C_MSTATUS_STATE_SLVREQ(active))
-+		return IRQ_HANDLED;
-+
- 	svc_i3c_master_disable_interrupts(master);
- 
- 	/* Handle the interrupt in a non atomic context */
+Stanley Chu (4):
+  dt-bindings: i3c: silvaco: Add npcm845 compatible string
+  i3c: master: svc: Add support for Nuvoton npcm845 i3c
+  i3c: master: svc: Fix npcm845 FIFO empty issue
+  i3c: master: svc: Fix npcm845 invalid slvstart event
+
+ .../bindings/i3c/silvaco,i3c-master.yaml      |  4 +-
+ drivers/i3c/master/svc-i3c-master.c           | 57 +++++++++++++++++--
+ 2 files changed, 56 insertions(+), 5 deletions(-)
+
 -- 
 2.34.1
 
