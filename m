@@ -4,91 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E8712C021B0
-	for <linux-i3c@archiver.kernel.org>; Thu, 20 Feb 2025 06:12:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 44162C021B0
+	for <linux-i3c@archiver.kernel.org>; Thu, 20 Feb 2025 08:19:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FF0K3FPiybYqB+3Gz9AWl7yE4DrZRtIlp4N+g2PIWfE=; b=tkiuCM+SC9vQVB
-	GDtN+EZcJvfnrOC3lLKG1BgrL2Dy91NVAYzma/iNDO/DQTq3sE7p5AWapX2+yynGj1O7hyd0Np+m+
-	IOCg6VIxmWPOss7TmX9/2TMn67BzhB+ta/RvqWuGCFiNwa9lcMWUa3eYnquy7nehA3K+Wyl9tzpRl
-	C/rX4kDoRR+kIAn9K78Jk7qMPkayp1Nt6LWORpte7i24mqDSnLIxox3aRrU3vT796v5Tqn4T27mt5
-	PEzDiNYoMNJ7h0ajFFyAMEd6WqFXTCL9MJzsnjoPpAcxfXkxLLbYeKp3O9fvdhBmL7agB5V9y0kCs
-	f7K1P8QmAyHHu95Mwthw==;
+	List-Owner; bh=8J1uqr9wjgJ8h4HFM0mTcTPd/eK2USKAiEvHLxdNu3I=; b=WTdiuv8ddGEois
+	HaSS4voMT9gHUMHeB9qR+YWwEwzpw01CzmpowHf3BeDTEKlBW2t6ZjlfbZov1eiBWuuQFUx0f5ozP
+	TFEC6vVagai6bgTw7SbZQXE6ORNyiE4knk0TKddBB9C1IT0zhZxR2vu3qUmvRgd3OkMxegIKthSuR
+	TCdpqLKWuHAPGyfK49z0Lt2f9WEthdGjQ1AY71iTiwKJTAtCaubPD8HUX4YeO/3QFPsN3ZCv+Tddi
+	cIAr0Z2GOQW029iur4ijcGAPmG75W7Cm9m+2go4J389CH8o3zamiWFT4d+Q2gc6zEQI+3LUJ5rayA
+	GNiBWgrqZnNow4Hl8X3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkznd-0000000Gtk2-2x1c;
-	Thu, 20 Feb 2025 06:12:41 +0000
-Received: from mail-pl1-x62b.google.com ([2607:f8b0:4864:20::62b])
+	id 1tl1m8-0000000HKFl-3gla;
+	Thu, 20 Feb 2025 08:19:16 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkzmI-0000000GtNz-2Fr2
+	id 1tl1m5-0000000HKEh-3HP8
 	for linux-i3c@lists.infradead.org;
-	Thu, 20 Feb 2025 06:11:19 +0000
-Received: by mail-pl1-x62b.google.com with SMTP id d9443c01a7336-220e6028214so10329345ad.0
-        for <linux-i3c@lists.infradead.org>; Wed, 19 Feb 2025 22:11:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1740031878; x=1740636678; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=+j78yv7W1SEsENaFWTruZEdfPJNI2RZz4FriJMcOius=;
-        b=X7wfuZnIJNZE4k/8APeNf8LDf0F58VzBXf4JLTw8asbDY0woiFvFJzM85Zg7Zx9oMt
-         ywBL0yfujWpCOvye4MRmCx+ue972Tu2cDYzLUbatNjUgWcgobncH/vsWMFlMjTu48HSF
-         dE+vO8MBi2fZVDU0BObwix+KzkAGz2/r494et4jO89pNIV3P1zTQO33cVyOfu7680XJq
-         fZYotoYJWCrKceZXS9a3cU9cDZdynHdMyFjNSJ7QOdLoKATyBw7E+Fs0y8Mhow505f3z
-         0lZ6IqrLPNb4xix64AGr0az9bamZgrICDMvXKV9HOuqcNg1DsfIOMxq/Sz5yBooxPgck
-         SDoA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1740031878; x=1740636678;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=+j78yv7W1SEsENaFWTruZEdfPJNI2RZz4FriJMcOius=;
-        b=mJaiUgYqsFXJ/6foF/cnqiQW/OhH7AWRMj23u3W1pssGHZwttYftl3XL/JZBTmdW+P
-         zYuFcNmKcOpqnnJVHH2cdPQL95PmMzmbuMfIo3eC9nZFUFqB3bT6gmZ3wRjt8qjdxy94
-         fJSiyqaBN/ysV49KagLTqQf3q8yakvvvMue2i84QiKgBBfNwOqBr7AxXkjKHwjL5DJLR
-         ZzPdzKqMzDeA0u1iLIxFw3jNz6k640QIW4weB89K2v3qP8oUNSwfdHssbRoIZHeMKoVj
-         WzKzV1nMBqHMCJ5qD5bd2GFPvET1S/5bE3AAlYid+aDbkZD0lDHQbSMtmC3tWsZwWuKh
-         RPHg==
-X-Forwarded-Encrypted: i=1; AJvYcCU8JQdqsSLg+bnlraiAWKNMux8tlwlkvWi0+odvu3x6A58WRP2uuj3KYuLlql2ygue+BD6qrY6/eNc=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywcukdwe/e91QJfjC8LkX2L4bt844v3lGPTJL3Jmm0XNgWxTG+4
-	sigmoNl+e/I65c12YPJlkIDhLmJmWMpSQpWY4hbtnaMlNS+uw483
-X-Gm-Gg: ASbGncuioULBhwTnXu3WK4IcSzqonbYkvHxOispak9bVspeyOlpCBkugJmRp9iEQVUY
-	2BVOSAnx+oD2uMyJ2q5RiCb9k/EGvStedETrWJNwntDWR1jjlv3mPfx4dPUhXSMvsNI+QZPlxXH
-	SXVXfXCruQ5gH09wv0rxqViEksA9nYUM+/L9ButWPqSVkFUKQpQVLt34p15dtrkSBOt7EYWhIz2
-	zErq2ufRXPxPE1Rkml3De7ZFRUlhdDApMA58Uo8gA2pupPVwaYTwt7uFJoQgWfKKaZi6pAptcYD
-	4ypzlsBObKimh/upxsJX9NH9Sw==
-X-Google-Smtp-Source: AGHT+IFU3vxY9Ip1+CC3bff8XqxgjtFV+EfaOwsPv0Qbpgrftb/RcnRACrHbtb9fAqxl0J/+zKDiqA==
-X-Received: by 2002:a05:6a20:9148:b0:1ee:e2ac:5159 with SMTP id adf61e73a8af0-1eee5c95932mr2769361637.19.1740031877986;
-        Wed, 19 Feb 2025 22:11:17 -0800 (PST)
-Received: from cs20-buildserver.lan ([2403:c300:dc0a:4fe5:2e0:4cff:fe68:863])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-73271a02648sm8226823b3a.107.2025.02.19.22.11.15
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 19 Feb 2025 22:11:17 -0800 (PST)
-From: Stanley Chu <stanley.chuys@gmail.com>
-X-Google-Original-From: Stanley Chu <yschu@nuvoton.com>
-To: frank.li@nxp.com,
-	miquel.raynal@bootlin.com,
-	alexandre.belloni@bootlin.com,
-	linux-i3c@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	tomer.maimon@nuvoton.com,
-	kwliu@nuvoton.com,
-	yschu@nuvoton.com
-Subject: [PATCH RESEND v2 2/4] i3c: master: svc: Add support for Nuvoton npcm845 i3c
-Date: Thu, 20 Feb 2025 14:11:05 +0800
-Message-Id: <20250220061107.1718239-3-yschu@nuvoton.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250220061107.1718239-1-yschu@nuvoton.com>
-References: <20250220061107.1718239-1-yschu@nuvoton.com>
+	Thu, 20 Feb 2025 08:19:15 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 7B39C5C5D1D;
+	Thu, 20 Feb 2025 08:18:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7C1CAC4CED1;
+	Thu, 20 Feb 2025 08:19:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1740039552;
+	bh=uu1ztxaLB5AdQ0G/FdbvOt1aH/qG3aQ6S8et3xLgKf8=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=Zsvlm7MFNh3d5QF7UF7P/Q+dhSneK+HR5bKqtPMgNO4d5UY8VHLUCMoDP9KQ+FVTl
+	 3TlCBsukROD+zxR1Rv94yq3tQ0wgFkzu1miSWvrvVit5Wb4PD6N+fbsAD3pt4ygEAu
+	 mwf1BTuPutDryzM9FOQN8cPq9/IvVM06NfE4lIoz18dPiEZLo5oOtBupcKM21fh2O5
+	 9mvbEA+FTtgaaDk78jJjg0IGFHqwYi4dxGjtV7VlLX7kTCopNsRBJCzSUjIPP3aCot
+	 kMn/XuWXv1FoDFLhGHGiJ3e5zm0fcRPqleNg9eLbDRj6zDu1eiAXls76qfR6MQXACv
+	 kFxJapt/oiQRw==
+Message-ID: <749d3e3c-8589-4fd8-a472-cf6b225193c8@kernel.org>
+Date: Thu, 20 Feb 2025 09:19:07 +0100
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH RESEND v2 1/4] dt-bindings: i3c: silvaco: Add npcm845
+ compatible string
+To: Stanley Chu <stanley.chuys@gmail.com>, frank.li@nxp.com,
+ miquel.raynal@bootlin.com, alexandre.belloni@bootlin.com,
+ linux-i3c@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ tomer.maimon@nuvoton.com, kwliu@nuvoton.com, yschu@nuvoton.com
+References: <20250220061107.1718239-1-yschu@nuvoton.com>
+ <20250220061107.1718239-2-yschu@nuvoton.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 fv0=
+In-Reply-To: <20250220061107.1718239-2-yschu@nuvoton.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250219_221118_572957_75EBE2D9 
-X-CRM114-Status: GOOD (  14.70  )
+X-CRM114-CacheID: sfid-20250220_001913_909145_0A8D1B39 
+X-CRM114-Status: GOOD (  15.40  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -105,94 +120,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Stanley Chu <yschu@nuvoton.com>
+On 20/02/2025 07:11, Stanley Chu wrote:
+> From: Stanley Chu <yschu@nuvoton.com>
+> 
+> Add a compatible string for Nuvoton BMC NPCM845 i3c controller.
 
-Nuvoton npcm845 SoC uses the same Silvico IP but an older version.
-Add npcm845 specific quirks.
 
-Signed-off-by: Stanley Chu <yschu@nuvoton.com>
----
- drivers/i3c/master/svc-i3c-master.c | 29 +++++++++++++++++++++++++++++
- 1 file changed, 29 insertions(+)
+This we see from the diff. Say something useful, is it compatible with
+other? Why is it in the same binding?
 
-diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-index d6057d8c7dec..c58440061d5a 100644
---- a/drivers/i3c/master/svc-i3c-master.c
-+++ b/drivers/i3c/master/svc-i3c-master.c
-@@ -133,6 +133,22 @@
- #define SVC_I3C_EVENT_IBI	GENMASK(7, 0)
- #define SVC_I3C_EVENT_HOTJOIN	BIT(31)
- 
-+/*
-+ * SVC_I3C_QUIRK_FIFO_EMPTY:
-+ * I3C HW stalls the write transfer if the transmit FIFO becomes empty,
-+ * when new data is written to FIFO, I3C HW resumes the transfer but
-+ * the first transmitted data bit may have the wrong value.
-+ * Workaround:
-+ * Fill the FIFO in advance to prevent FIFO from becoming empty.
-+ */
-+#define SVC_I3C_QUIRK_FIFO_EMPTY	BIT(0)
-+/*
-+ * SVC_I3C_QUIRK_FLASE_SLVSTART:
-+ * I3C HW may generate an invalid SlvStart event when emitting a STOP.
-+ * If it is a true SlvStart, the MSTATUS state should be SLVREQ.
-+ */
-+#define SVC_I3C_QUIRK_FALSE_SLVSTART	BIT(1)
-+
- struct svc_i3c_cmd {
- 	u8 addr;
- 	bool rnw;
-@@ -216,6 +232,7 @@ struct svc_i3c_master {
- 	struct mutex lock;
- 	u32 enabled_events;
- 	u32 mctrl_config;
-+	u32 quirks;
- };
- 
- /**
-@@ -230,6 +247,14 @@ struct svc_i3c_i2c_dev_data {
- 	struct i3c_generic_ibi_pool *ibi_pool;
- };
- 
-+struct svc_i3c_drvdata {
-+	u32 quirks;
-+};
-+
-+const struct svc_i3c_drvdata npcm845_drvdata = {
-+	.quirks = SVC_I3C_QUIRK_FIFO_EMPTY | SVC_I3C_QUIRK_FALSE_SLVSTART,
-+};
-+
- static inline bool is_events_enabled(struct svc_i3c_master *master, u32 mask)
- {
- 	return !!(master->enabled_events & mask);
-@@ -1811,6 +1836,7 @@ static int svc_i3c_master_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
- 	struct svc_i3c_master *master;
-+	const struct svc_i3c_drvdata *data = of_device_get_match_data(dev);
- 	int ret;
- 
- 	master = devm_kzalloc(dev, sizeof(*master), GFP_KERNEL);
-@@ -1868,6 +1894,8 @@ static int svc_i3c_master_probe(struct platform_device *pdev)
- 	}
- 
- 	platform_set_drvdata(pdev, master);
-+	if (data)
-+		master->quirks = data->quirks;
- 
- 	pm_runtime_set_autosuspend_delay(&pdev->dev, SVC_I3C_PM_TIMEOUT_MS);
- 	pm_runtime_use_autosuspend(&pdev->dev);
-@@ -1960,6 +1988,7 @@ static const struct dev_pm_ops svc_i3c_pm_ops = {
- 
- static const struct of_device_id svc_i3c_master_of_match_tbl[] = {
- 	{ .compatible = "silvaco,i3c-master-v1"},
-+	{ .compatible = "nuvoton,npcm845-i3c", .data = &npcm845_drvdata },
- 	{ /* sentinel */ },
- };
- MODULE_DEVICE_TABLE(of, svc_i3c_master_of_match_tbl);
--- 
-2.34.1
+<form letter>
+Please use scripts/get_maintainers.pl to get a list of necessary people
+and lists to CC (and consider --no-git-fallback argument, so you will
+not CC people just because they made one commit years ago). It might
+happen, that command when run on an older kernel, gives you outdated
+entries. Therefore please be sure you base your patches on recent Linux
+kernel.
 
+Tools like b4 or scripts/get_maintainer.pl provide you proper list of
+people, so fix your workflow. Tools might also fail if you work on some
+ancient tree (don't, instead use mainline) or work on fork of kernel
+(don't, instead use mainline). Just use b4 and everything should be
+fine, although remember about `b4 prep --auto-to-cc` if you added new
+patches to the patchset.
+</form letter>
+
+> 
+> Signed-off-by: Stanley Chu <yschu@nuvoton.com>
+> ---
+>  Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
+> index c56ff77677f1..9be4bc4cc482 100644
+> --- a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
+> +++ b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
+> @@ -14,7 +14,9 @@ allOf:
+>  
+>  properties:
+>    compatible:
+> -    const: silvaco,i3c-master-v1
+> +    enum:
+> +      - silvaco,i3c-master-v1
+> +      - nuvoton,npcm845-i3c
+
+Keep alphabetical order.
+
+
+
+Best regards,
+Krzysztof
 
 -- 
 linux-i3c mailing list
