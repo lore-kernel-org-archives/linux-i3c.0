@@ -4,95 +4,148 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CCDF8C021BB
-	for <linux-i3c@archiver.kernel.org>; Mon, 24 Feb 2025 08:59:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1D9EC021A4
+	for <linux-i3c@archiver.kernel.org>; Mon, 24 Feb 2025 16:18:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KNq0m9EVpG5+odzDhXA9KRCpPRFF4nZP1XKRhu3c/gw=; b=g9tyCxnOy1ZH6C
-	UrZSzPaHhsC+aXRdKvQaLBUicJYkffB+vhT2QCKhCKRb4TXpzlUS4gTxeP91q4k1dBmyjmyPLjpmm
-	siTNkhXBeTt1nqTx1NLZeOE3lBZYoAZs6SR1ABTJo/ntZ4DRpbob4nHD7PyOczccD3Yfj7JqZskB0
-	V3/TO5n69gY6oi/QwCRpHBzd4atvf81jp4QStuo+hJKX+kVTeaQAJIw7P2qyHzsSgLzJgpAZnMtLw
-	rXWbwFR9UyPyiVrRjaDST33qpXGS9xGp1KJmjjWLMcmuimd0vlR12DggnWQvp9Baeya78d5Drj0Ux
-	tCD9tYCLykSZ8NZTJfoA==;
+	List-Owner; bh=EeTok8/JbfhzNQKvELSvg7N6ujqp1+3Sn3+5Qs5pkOA=; b=BKThq5UIQv8IN1
+	8n2Hlh9PfvvvJOGqOm2xQxN1lbA/aZH2AEJgpJZldRd+kiCgIjCMy/vADOsqCpZGkAmUcchBNPQr1
+	DfIEoZuoEBjGpnLRZRAr4c3Efkh0EseMvvdbt+yMwOCkdx63Y7MXnzOwBmfyuQ8xynGaGNGyd1fLF
+	10k1dd8SDWos8C95CEuk8H+srcUVO0H+G0aO8xERGpvGikhAhYw+CZUhI0dhr2fKtUemVUx9Kwj+x
+	5qwn30e/1jpCIJRfgXY52SfZThNPRQ7eMV9N24LZZJvmc0k+lwE5ccOStjhkQ4NVw3ur5QaOxL4n4
+	v/LfFPqmIHNk9/nFIXNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmUJP-0000000CnMG-2Qyg;
-	Mon, 24 Feb 2025 08:59:39 +0000
-Received: from mail-pl1-x631.google.com ([2607:f8b0:4864:20::631])
+	id 1tmbAF-0000000EQrn-23yJ;
+	Mon, 24 Feb 2025 16:18:39 +0000
+Received: from mail-am6eur05on2062e.outbound.protection.outlook.com ([2a01:111:f403:2612::62e] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tmU0N-0000000CjUU-2s80
+	id 1tmbAD-0000000EQqt-2rrs
 	for linux-i3c@lists.infradead.org;
-	Mon, 24 Feb 2025 08:40:00 +0000
-Received: by mail-pl1-x631.google.com with SMTP id d9443c01a7336-220c4159f87so54987465ad.0
-        for <linux-i3c@lists.infradead.org>; Mon, 24 Feb 2025 00:39:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1740386399; x=1740991199; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=p6cKbHN4qfM72wdTSv8VPMRBomnhPqBZxZM0i+T4Gyg=;
-        b=Kh/RBwjTG4ZVkOJ0cEap9gPNXr/BFazZnfroERaeiiPDUlDWkhTuDFVptMgwT9I/AE
-         GQWiiv609ffG7T/PkcRlx8G/pM1iZnrMPkAl/DXBXe8XHouWTwZqcHX/KMa6M7Q74KXP
-         EvWWBJTKSg1rHrceb+gbIN9SapscE4GhYp4j6BtkU//GFJDPn0n9iMtvuOG44TEGceMb
-         c29JBiz+gPj84fAUfEfIbYc48cGkXtYHGqMPPatZEYbSKn7Z5DQLOPqOk+Vgn6/EbIo9
-         VVmViXQZ4vVVklsyti5FHp03EKRKzexbjnryr2pqHo88/6lEiG0rdpIQPT5nFAUG5voe
-         4/Lg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1740386399; x=1740991199;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=p6cKbHN4qfM72wdTSv8VPMRBomnhPqBZxZM0i+T4Gyg=;
-        b=w1vPYeXsY1zu62X5rJubajtJUfQjk7gFA5yMYhaTGbY0mYs2CfZorOnTRzP6kzKsWj
-         aOd2o/IJfcF137ilH+fI5iPxD9QXAwlFT56W+pyh+in9Hu+I+PfPvDSWCe1UPojVcwRR
-         sSPZpoqGNY6mwrfsgTxro5gChEFPXcdVGPPGAGiGoVH0BzzvCjdLPdL47lXwvvGPhcD3
-         wDPubBl/fL/58V7CaHs5JGsLQo1leLhPm7p4s9m/udlOqDBakfDG9X2ubjppO3KoHX1P
-         vttozbMkM324W3vvbpz+5uPZRoQEwn4WOUgJ5Xx6z3U70MSn+3d+Zd1XcwMdHBA8IVxt
-         RbmQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWwgwEGUDyFzAszTLB0erpWixM6Bs1/SCbZ+cKR+xDKg2DPPnm3hgckL/O171FjXJa7QVDQwnQHqQ8=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz9dAtKK8/MSpwxIf5x7Lra/PNQzZt4IbF/fKt7puyY1wxk6wve
-	Ou3HUDwhFbITAmjDjb/BC/IYT5xLbZTaB9fmr/0bIPQ3GwL49txX
-X-Gm-Gg: ASbGncsGPuMNDh9Pixlo+KOq4UV2KlwokBGKcYL6sd7NhEToqJYZRnEgVqPNZAehQgs
-	Mwn0CpLDEeAVtFIy5CrHasYRtaP8IXbWlaw/LCcQl78xp5zOgYKWEWRQPFnCN9WPN3KvnQSaQUZ
-	Mz7rIGnoZaAsMyeyZLjAA+c9BEmpLhxhbUHemcUw2XbnLnhqFf7GLvGKgWHWs2XxHZy+3413rGt
-	UnoEw0CBtX5R5XBX4lW89jGKtZpZWaw50ms7lGj8qD+h5DW49Xm3n6C8rW0vLcehTdB8PHqdkZN
-	pQtKFciC4p6zJ4Bb9RL9Bj+oBKDKqTsicLui
-X-Google-Smtp-Source: AGHT+IGdjRXZheSkV3s1DvGyCdmz3tYxghaKg5ParvRKOuHPh2Zz2Irrj+s+VtVp1uXaNHZqFpFNNA==
-X-Received: by 2002:a05:6a21:7011:b0:1ee:dd60:194f with SMTP id adf61e73a8af0-1eef3d66471mr21615752637.26.1740386398761;
-        Mon, 24 Feb 2025 00:39:58 -0800 (PST)
-Received: from cs20-buildserver.lan ([2403:c300:cd02:bc36:2e0:4cff:fe68:863])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7327590ff12sm14634793b3a.115.2025.02.24.00.39.56
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 24 Feb 2025 00:39:58 -0800 (PST)
-From: Stanley Chu <stanley.chuys@gmail.com>
-X-Google-Original-From: Stanley Chu <yschu@nuvoton.com>
-To: frank.li@nxp.com,
-	miquel.raynal@bootlin.com,
-	alexandre.belloni@bootlin.com,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	linux-i3c@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org,
-	devicetree@vger.kernel.org,
-	tomer.maimon@nuvoton.com,
-	kwliu@nuvoton.com,
-	yschu@nuvoton.com
-Subject: [PATCH v4 5/5] i3c: master: svc: Fix npcm845 DAA process corruption
-Date: Mon, 24 Feb 2025 16:39:08 +0800
-Message-Id: <20250224083908.1880383-6-yschu@nuvoton.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250224083908.1880383-1-yschu@nuvoton.com>
+	Mon, 24 Feb 2025 16:18:38 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=ZA/uvYi9LWtYCB1TRWgBhrN1wLC7dWahs/+fkXCX0n6bmCYbVomxwVyBgJQOzicb/68RbqMrIbv4r0RjzfVR97s3L1m+4/ds99kat0buV7islDOns5fyW8AZT/yI5bgLBVny2WdvOZVijdwFihBIUTxzQ7COrQ8kfD9A6i5BXmdX6EzWrgSoFSKe2rZKCBSvP6y+4DsG5Ha2VVfZCmQayt7icNmd2Ng/xICtq8FdWxEQxmGBB/cMIEyFuZesiz4K7MKvZlsnloeW6ugdnjFhzqKZUX+uHd5JejwvTumD11o7Ao7w3pOGYYifqd0d8NmAenWu8O4V7jEl0ohF8SFySg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=xnQXct7G6NUNOpGqiafZ5fmEyQBcYPr/ZaKMVWzEnvA=;
+ b=FEgAPeWbw/xQIvCHC9I3hvPTBSrD+SZYn5PhpcVa0SBDnmyZ6IwNwWAXu0Z4FAY2Yipy41w0AbSg+ph6nAlM6APXtay00g6lxIsVkJ+EstrrfoZ94iwQaDpBXZxzYiK1ZMiTbsBvWbCCbWfVYef9115ABQKnkvpxsUip5cY9QGUEpHUZ4wzmEpa6jUcxPb6o9BwOoJAq/QGRnaQRdxojWqlfTMUbbOX4xk1Fqzp5Mp+1SbFIHBN1jG86pTrVtxKTinzpuKX8wxeTHqaX2JtwA2+tyEbC0ehG2YXaePuE3TpWSOXnmVYEQxDSZMrNxfSPHknDJpEs5PbNVLVApbbDOQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xnQXct7G6NUNOpGqiafZ5fmEyQBcYPr/ZaKMVWzEnvA=;
+ b=Fdqe5tOd7SCab8H5N7atbJHkjinOPZKeNf0+YoXNte9Lfv1HUJ6v8yK3q6DD3+241pvJa11HIEYGFNiEmudpTPj+Gg1QqtQDCxS92EEnGGwssSd/CIctz0gesX/AzBW8AuBXi8oDWRGgAxHq/4LKLhSR3hnHuo71CGyk5DuFQ9b7CrQatVN9xIJ3KRIkMyk9J/WbeHYarJjy/apqxfZz8AqY7oqRnwK8wSOO2q3tAOTSo2LnFbg1ByQCdBWy1RWjGe4/MRnzw0S++ueNXKw1Zzj5sBGvJKEEaBzk+/9V8l8+I9n+TbSgmnpD+RrSXuU0ZgbghLVRnJR4Irx7ZTWIbw==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by VI2PR04MB10788.eurprd04.prod.outlook.com (2603:10a6:800:270::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8466.20; Mon, 24 Feb
+ 2025 16:18:27 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06%5]) with mapi id 15.20.8466.016; Mon, 24 Feb 2025
+ 16:18:27 +0000
+Date: Mon, 24 Feb 2025 11:18:19 -0500
+From: Frank Li <Frank.li@nxp.com>
+To: Stanley Chu <stanley.chuys@gmail.com>
+Cc: miquel.raynal@bootlin.com, alexandre.belloni@bootlin.com,
+	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+	devicetree@vger.kernel.org, tomer.maimon@nuvoton.com,
+	kwliu@nuvoton.com, yschu@nuvoton.com,
+	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Subject: Re: [PATCH v4 1/5] dt-bindings: i3c: silvaco: Add npcm845 compatible
+ string
+Message-ID: <Z7yby6cc/yuaJFmM@lizhi-Precision-Tower-5810>
 References: <20250224083908.1880383-1-yschu@nuvoton.com>
+ <20250224083908.1880383-2-yschu@nuvoton.com>
+Content-Disposition: inline
+In-Reply-To: <20250224083908.1880383-2-yschu@nuvoton.com>
+X-ClientProxiedBy: SJ0PR03CA0281.namprd03.prod.outlook.com
+ (2603:10b6:a03:39e::16) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|VI2PR04MB10788:EE_
+X-MS-Office365-Filtering-Correlation-Id: 988ed4da-2920-4918-a933-08dd54eedec9
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|7416014|52116014|376014|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?NAa2XsDq5IU5/ITCgzxwzsByzKcQ8bixFUIeaMYcPXqiPwrMKU6dkSnpJRp+?=
+ =?us-ascii?Q?GxjzVQFtyweIk0yGLxRSXeJK1zEGyiPQt4IKaRW2gsAOwFUt90zsp1a1SfVB?=
+ =?us-ascii?Q?PrHflSmQtVM9pkbQQPJ5PntK2xVLGTrrv+0TrFO8MHHZd0kIpQJGRSE+/3xj?=
+ =?us-ascii?Q?S7RhE4alRB0+qkU5qHx3yWqJevcdAsKCwXOI0Il67xEdsZECc9sqcF3R8R2M?=
+ =?us-ascii?Q?0Cj98UeEb+trhLpHvxVAkm1BkUAqjgTHxdLRMRPLTYo7IYGY2D2n4w9CYlFv?=
+ =?us-ascii?Q?14Gs7eayNIuxF1Abo3t3KN6DQ5+AVd9iszqTyTdk1f+SQqvTKstI4z34Zpxe?=
+ =?us-ascii?Q?64o8VLF4D4yOxy2JZk0usC4cOHR5juTJmUB9XD/Y6NAmWQ/4iC4YdGNbpjjf?=
+ =?us-ascii?Q?Jfc4qGbJ9yNwJf/WhR12SqlF4+crLfjCFVwsJ5bhXXcUBwcdmgyGk6tGXT5Y?=
+ =?us-ascii?Q?+BE8HPq83FSxggYn4/5Tn6ON0SJGHcg+DpUgJ8Mz00ueVlERujIlMSny4bjY?=
+ =?us-ascii?Q?yyM9+LPhIhd81Lm1hp0aw+ZIx971DOWn9JZZrx8ojedCzHjHNCAMRM4R0yrF?=
+ =?us-ascii?Q?GWtOu3fRe+Ld2JzaQ0Faz8ll2qXiJw3NwsmpcHUuW712YOChrN1tEBhGfKKa?=
+ =?us-ascii?Q?zr0J9RD+Flw1q55PnDuU4QmxNdfnENN2XUtNJ/mC/ohmqnLMAijjgWLY5peK?=
+ =?us-ascii?Q?uATLenXba3eIhlkd/Gn+FMTwjGVNUbToV0idpNtRiqCuBFAmaqE6QMW+G47O?=
+ =?us-ascii?Q?D07xk95GUVwHfu7EDO6DSRm/tzoF5US2AmqXeF4Jlg9UPqoURukKzqskibBH?=
+ =?us-ascii?Q?PaysFYfusCNyfwA7wI2lWGSJGCgk6exrnkYLzwWKX56IaaQbAdFArslRptVr?=
+ =?us-ascii?Q?WB1SnGPFmLmo4KvFCSh+ca4ELAaR1xHLzAjU+0OJjAcfV2ZLps9tmjmj0aev?=
+ =?us-ascii?Q?uDJVdOLpIiai53mcrkuo7y0Ns5FYJ5rpGcV30nWoEd1JqXqf5F8QUTa3CfeH?=
+ =?us-ascii?Q?mr8+dMYieZt8wg0xYEXf4UlNHlGMNQSITqbzisTkiDNDHT5Bz1uG5Cm40oZJ?=
+ =?us-ascii?Q?HiJlkB9mx/1EsIfJvDGuGF1xwTUF1JmfSxc+WfsvorGThUYV/lz3uxkEzCHt?=
+ =?us-ascii?Q?i4ZKcdobZki/A+z5wDq4edkT8CVo/jvM4MF+tHNafrQrt/vy2ruLesudBlb+?=
+ =?us-ascii?Q?x8fxt/QayP53V2pKe7Hc3Q2g4JhSXZuBGGf5u9zE+Vg/6heo6YuYjRnvHMOq?=
+ =?us-ascii?Q?HUvsjobENIuYNsjUtEqLZxqra8TwkVaIgKZWaS8xPx0dtVl6JKPK5EMbd6mP?=
+ =?us-ascii?Q?jot9XMQnwD+g+9ukxmfk1cBeBNHSi6AshKRlifM0R1b93Gmh0gaS6O2oFxkg?=
+ =?us-ascii?Q?0QPv1goWKkeECPWqD1mVKcG96FILh3prIEAdkLVkGoZce2Ze5/ENOU5qYbFT?=
+ =?us-ascii?Q?LZDrkuLDrHWjVJAVcBpNidw8jjdJ5Pjz?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(7416014)(52116014)(376014)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?3CMtyS4/PtVXuQ+1r+/3ZQDEMg5B7dJoh8hJkERV3U/42VJsFrAvIkFZtepU?=
+ =?us-ascii?Q?29D6xiBa8aQcCNmtbvqD3REQp/eoWb/M4WEbwWBQhoL8DljADI2/1XCDKx+9?=
+ =?us-ascii?Q?E96I8yLjq9vbDWAJkJVOoCf5LZMn5yPo0LRU4X3ZRcHzqB2XCWgY3UEu4Ece?=
+ =?us-ascii?Q?riwm0UhhoGRtMazWN5tbMDW+k+MvIgjNIoVDe+vPN9dcmpD1n61zPqq7L3wL?=
+ =?us-ascii?Q?nxeOEyB/4ffT/R5H+U/5kfnKU0jYVOwnPGFJQPqU+G+3mV7x3rgbMudmllkr?=
+ =?us-ascii?Q?cE4xO7+SueJl1hxsbG5lhRSXfTB4Ao6Hun6AsclPwiSnJc2Eo1zgQYZ2ps9/?=
+ =?us-ascii?Q?jsnhw8T9Qtd8c+o7OO97Udrz6DNYyDkHxW+C4moACk9bhurz+uAkbOFtL5oA?=
+ =?us-ascii?Q?KI2NtT6/9zqJ+wfNjc5ECWfzQrXfBhOvLU8c4QlhvAFdmMlg/ENdCDSBzWrv?=
+ =?us-ascii?Q?otrqBn0b3O1iTKzBFwY9KQys5W7axVnLYgd82Tc433VoXpgfPQ6KA6DmQtY7?=
+ =?us-ascii?Q?fUbxUQ2QhuDfqxxeCsA5eNh2YOLEw15tQRxKxLa5OolStxRzpBJIXZ1Xp0H6?=
+ =?us-ascii?Q?f+rEXA/G+KK2+MQB1fMDUTen401038bkXV0IpnhMiblo6IvWqjmz5OifRVWD?=
+ =?us-ascii?Q?ADx3ae1m89Hi4l8Z5W4I5+x5BMqO9LALdkCDlpoIsXKmrZE/NJGHz+W9t2+8?=
+ =?us-ascii?Q?Z5beLv2bvyByxvMXioFcxDpSVi4R2SfgSwTa2Ix7kL/VEEYVMN65GBz3bk33?=
+ =?us-ascii?Q?2S3Qw0byVQCkGTWo3EYrJc/qzngV8EhrNDk9o1g/RFcLyO4/bSStjQfSLP3N?=
+ =?us-ascii?Q?xnEcBM73kGKjcX3PsKXak0hy7f5YqQ3bd9ofGZB6L8DnM3mX3sqRPst+h4Br?=
+ =?us-ascii?Q?mKaRHftZFd9buouzZDtKRIuOZL0wCaX37BKXygzL+Jstp2IYsNdeDBJDKCwl?=
+ =?us-ascii?Q?mDzXW0MdGx5wquuudM9xD48jBpFj9Zevx8C4SsPWEEnO4og5zGiLeG2rXmRI?=
+ =?us-ascii?Q?+sWvi8jxBLuA5dW48uuyK7aBiIu4JDG2pGsWg2DrCSAq91FN5msVfZY5GJ7f?=
+ =?us-ascii?Q?m7lnH67Jb/PDGqemm/xEuEqYwpItkf0zFjoS01PGU0A6gzWzS8zv5Da4IDWJ?=
+ =?us-ascii?Q?dI1ga3ALXWC1D6atU4iEHeLhv8Akx+fxO2ejKXAXFf+DtOn70wEqAQaK5TlY?=
+ =?us-ascii?Q?NCsFSfFRnbgkGRlldBv0uw0hynfyod4YRAAwDIUxyTvsXrayO1nK3Ycv5w+e?=
+ =?us-ascii?Q?/mpyPYPIbSYRH0+YLfAcB4rlB+k5ofghNaH4XGy/h06Qaceu4uAQ202OG3PQ?=
+ =?us-ascii?Q?AfGjc4rdMpWyJ7nedIR3asJlqwgbINSX7RatZF4Cbdjnp0OmvcYN0znOKNqg?=
+ =?us-ascii?Q?mkgvnA0uNx63k70Wju9LlqwF/GKSgv2IccP70y9kITJ7JXQK7Y4v/MtFLatS?=
+ =?us-ascii?Q?aSaaRjF3tH3WGX3kHYq+l2UA2OxKnD7My+h1rmtgjIkxVuACraQ3HQI3YjSl?=
+ =?us-ascii?Q?gT+jjD0RnivFZ26t3bB+2D7p8hmn2CPb4fV6SIDHoCOXLySKBwveYPdO17Mg?=
+ =?us-ascii?Q?vWpD9KBT57VhYWX3rVTjsF3niCE/AxvaPj9K6fBq?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 988ed4da-2920-4918-a933-08dd54eedec9
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Feb 2025 16:18:27.4847
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: cZaAN7Aj90aCbnDsSsRwce+60qedhXoRIRdFAFFvGZnRiIhEucWNYnxRKiTmuGGplFfZYa24qkzbDkzOk5CX2A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI2PR04MB10788
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250224_003959_726158_32BF6EA9 
-X-CRM114-Status: UNSURE (   7.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250224_081837_727359_77CACF58 
+X-CRM114-Status: GOOD (  13.83  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,45 +162,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Stanley Chu <yschu@nuvoton.com>
+On Mon, Feb 24, 2025 at 04:39:04PM +0800, Stanley Chu wrote:
+> From: Stanley Chu <yschu@nuvoton.com>
+>
+> Nuvoton npcm845 SoC uses the same Silvico IP but an older version.
+> Need to add a new compatible string to distinguish between different
+> hardware versions.
+>
+> Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> Signed-off-by: Stanley Chu <yschu@nuvoton.com>
 
-When MCONFIG.SKEW=0 and MCONFIG.ODHPP=0, the ENTDAA transaction gets
-corrupted and results in a no repeated-start condition at the end of
-address assignment.
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
-Workaround: Set MCONFIG.SKEW to 1 before initiating the DAA process.
-After the DAA process is completed, return MCONFIG.SKEW to its previous
-value.
-
-Signed-off-by: Stanley Chu <yschu@nuvoton.com>
----
- drivers/i3c/master/svc-i3c-master.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
-
-diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-index 4eb4b8888725..403d625e999e 100644
---- a/drivers/i3c/master/svc-i3c-master.c
-+++ b/drivers/i3c/master/svc-i3c-master.c
-@@ -1162,7 +1162,16 @@ static int svc_i3c_master_do_daa(struct i3c_master_controller *m)
- 	}
- 
- 	spin_lock_irqsave(&master->xferqueue.lock, flags);
-+
-+	if (svc_has_quirk(master, SVC_I3C_QUIRK_DAA_CORRUPT))
-+		writel(master->mctrl_config | SVC_I3C_MCONFIG_SKEW(1),
-+		       master->regs + SVC_I3C_MCONFIG);
-+
- 	ret = svc_i3c_master_do_daa_locked(master, addrs, &dev_nb);
-+
-+	if (svc_has_quirk(master, SVC_I3C_QUIRK_DAA_CORRUPT))
-+		writel(master->mctrl_config, master->regs + SVC_I3C_MCONFIG);
-+
- 	spin_unlock_irqrestore(&master->xferqueue.lock, flags);
- 
- 	svc_i3c_master_clear_merrwarn(master);
--- 
-2.34.1
-
+> ---
+>  Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
+>
+> diff --git a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
+> index c56ff77677f1..4fbdcdac0aee 100644
+> --- a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
+> +++ b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
+> @@ -14,7 +14,9 @@ allOf:
+>
+>  properties:
+>    compatible:
+> -    const: silvaco,i3c-master-v1
+> +    enum:
+> +      - nuvoton,npcm845-i3c
+> +      - silvaco,i3c-master-v1
+>
+>    reg:
+>      maxItems: 1
+> --
+> 2.34.1
+>
 
 -- 
 linux-i3c mailing list
