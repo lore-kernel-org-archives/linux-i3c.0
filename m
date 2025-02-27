@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 225B7C282C5
-	for <linux-i3c@archiver.kernel.org>; Thu, 27 Feb 2025 19:41:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D31EAC197BF
+	for <linux-i3c@archiver.kernel.org>; Thu, 27 Feb 2025 19:41:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h2ORPX4R0qhqftelhU+cjnGP1bZOOL9hVReDvn5XauY=; b=Z90vycyKOcvvYQ
-	EI8k0laJIpqymNZHjVcgWm5RvqzhI6QNfGao+0V1EW8oJHXL/7A6y7VzOhC6hSgQIJmEhO1c24eop
-	ij9qX/hf1t/cJ6GMx/+tyAyYESkw8wtLOxKWY+9AfRDw1e7L25c/XdGq7z3xbqp4VvT35rR8bN7CT
-	nQiBg12yxh4rRpt7nSW17JrBRe9QOsehoLxlTJvGx4qhNl9TZEM4zwhmM2Qv3uj1mxPdQiDVbiet8
-	Lii2HD/doJPKMe9CkfZtJLStXcniagSty005+eu8bh8JDAoF7yb3PHPooR5z9MhBZhVrmXeqalGWb
-	UzUAfGgfuNd5sLG6R3vw==;
+	List-Owner; bh=0N5VaGNrEcqkvnxQwncvsj55X5/UeizICaddPK/J9kQ=; b=S+Vz1QlLsYG0DA
+	nlt/JPTgb0eMGGnoHut6oaWlNn/p6IXVxY/ysY5jON3mc/FLU3eOPuPnR/dy8IR47oa2MqEY8k8TF
+	ZDKpROqsXN8zZCKhu4BWUAnyGleHsQFoGhOi1v7IyANqiMJCRtYI71RPX68TtJfjUnnOOlQawpZKu
+	4EmDEMZ8nJ3kxk2EmPxtf09cvtwzE/GgFpFqkok9FOCw83iX2raeW7Xr66riO3kbBDy4V1/zM0R0U
+	4b6bLkue5is8BXosLaBRj3pqSGtadpG9MM9n2LReildc6+ZKWQdq0Y8Xj3fr/gmXetNCaxiCkhAoM
+	VrSuuFK6jfSmHdYzx01A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnjkj-00000008aUV-0OB6;
-	Thu, 27 Feb 2025 19:41:01 +0000
-Received: from mail-vi1eur05on2060b.outbound.protection.outlook.com ([2a01:111:f403:2613::60b] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1tnjku-00000008alT-2ChO;
+	Thu, 27 Feb 2025 19:41:12 +0000
+Received: from mail-northeuropeazlp170120003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tnhQ3-00000008BOK-1UbZ
+	id 1tnhbd-00000008CYB-2xds
 	for linux-i3c@lists.infradead.org;
-	Thu, 27 Feb 2025 17:11:36 +0000
+	Thu, 27 Feb 2025 17:23:30 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=JE6e2F976TqWS7FDRVPDpO1bB4L5ktsSsieCiPYrqfOE6dWTPogKLmA2UbrR56Q5XDw9Iw31y0gcHuswdVmKCpbAI4aACp5qtix2T+RcSYQQqbyktW0xTt3GPwMncon0I15QPkmbgpzPSoeu9ruf4i5/udO2bAoSLSusKfYF5RxC69q/hRUyQNQBODwpd/pHHBf5LqQRZC0R0Wl+DdEogLKiXBSbw+Bb2Y0YmsFQiHRuQgBurdOpeMQ8eQoD4SCe7Gwov2uXMiXiYQkou2nxPtcvrmuwqDH5U3xWDJdtSWcPwDMID7X9Ji5pl0adftIPb3nWh4gWwSLFzjsQ9m1dLg==
+ b=rCnk/CHZui9h3QpKqzRBK7JT1yGPVbFTf018GaVfj13piAmiBsNmmG5EBJgndqWjmPw7qfdPQH0BTguCQ86M2IvbsXvRfh+5q0nZHAxrc5OpaO5wZTBgPMvLmF7TE1phyO0QCrnMnEMJSdenRrs437wwQfGH04LDylxytdyhnbs9rsEG6UwbV4y0NFHD+Wx79wgsY/QyBSuE6SYxSbZJJDjGrcYHrX5sDkvppEEzudMvcMa2h41lXquDzmBXtEPDEvgHGGWgachmIbmrLvxeEi2Q9mXgDu96GU/n6u/v12KZrtN0a2vvaYben8oQZZmgx84MBHcDZGcvt/2ultpm6w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=CuOWlL4EMxgz1nQt6/z20SRZ7a2yrMqcJrKeuM/GxF0=;
- b=pU/+AAZdlAm+/jeWAlPXZLMrYWgGOYE1S6Zeok0QFk157RkB4+xMo6EPVjPCkJjrmoIfuzU9pOrjIsW53Vj7+XWfm9B9UJifwNPbwlL4xnOkEHgfFVYT+ynRp9syMlK6Gk9U52COndqiQblaGwk8G32Ka9l/TkkMIB6OwthWGF5mrGf1zej3/Hd7FzLi6NI+9TtfBuRH3QreF2Wub4XNU1sRXh7WW1/gCrLsZBos/vzH+pXT5TXmhUGmCBz3uESVSTNB1S2zBjm3jS9JLuimF9otLlpPiL3hPYsBg131NMI2IU0mHxFrlHXmNCLp3jconjet5SW8yc1an5ZTzZp7zg==
+ bh=k1F7b4fIIsqtco4sxoUbP0aMqKfhWkRRYTPq62AyBQM=;
+ b=HUxXVjpX5XRbkQx1WKkCu92wTGEfVnmgYciS8pMnIV+OSCSJ6KXh1j6IfY0NMKq079xel+i8M/1Ti5AyC67v2lEpZLOZZ5Sl/WZv2R3gtPcAoYNbv+pfxaAuC3V92mh85wK7b+tKGpxZwftFEgSDuV1bfyc/hsehEoX+9+IDzeEpJBLGyg5vSEWg3iZk3qNQUFmneQTNyoZL62e9mNDPZs8cSZZ0mvssebWvodcvYZtyWFautX6qQyd/DYcBWiqdonOmWfT6lqY+2Y+/zMBECY0zgdAmaLiOjXDRX7c1naOs7tMnvEMijkzjLPAp3NxU+j8Rxk55oAcBDsO7fxwKtA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=CuOWlL4EMxgz1nQt6/z20SRZ7a2yrMqcJrKeuM/GxF0=;
- b=hHV785dsMD4oyUPiZtma3m0+sef5IlMAyUQp5GBjl+9Sd7GxYmtRYaHGudFRw1w+cFQMwyFgLRvyBU3HMBVCnCBiPmlKg8edr8L+4y4ZGGWoU+PmJGyag/AzeOZOk5t9b4c0j0xZ20cRF0gJHvvqCwbMgIC8USYNDATL7tICzh74lh56J3/1sE4uRvBp+l2mMOkxCWqNYF60FgiWFUd2IsGGotpMc8hIMeFU2Hiw2TB3tkuaEj43txjy9vXyF7DFIcF5Pvk8lPaJ94ngL0ij3N3KMF5VpiY9hi2mdCG8OOglN6uZBJ39XtxTJOv24UJ0Z7PBLJRQpccIT0UwRONTDQ==
+ bh=k1F7b4fIIsqtco4sxoUbP0aMqKfhWkRRYTPq62AyBQM=;
+ b=G6tpIidiTfnQjjpTqJPI4EyyMP2thZIiPZ/aLlsVL+jcDZodOdh6mhAw5a//TraL2JolALU/9m9Sj6hECFFPXj69d8/YP2469NiFKgCal07EMxZEu6jBmE6IdC3+gh1O6c07jnLUB/3wmG4pRnuF9SeLznGK21jo6elbMSTx+fGq7oxHUa84Jm9WE73yIYjlDLUPb+6+MH1eZu7Xh+wV7GxNpm7K1xPrVAT8Ayb++19H6CWatqvrJ2FO6XpT6ONQHRlDknDlzeB317r4hQo27eFOFvhoV/e57B6q6k6ux+xSxNoTv5aNr1XGNHJRxOPUMRL7nZ6XyuCbVYosx4/9PQ==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
- by DU0PR04MB9442.eurprd04.prod.outlook.com (2603:10a6:10:35a::17) with
+ by PAWPR04MB10055.eurprd04.prod.outlook.com (2603:10a6:102:380::14) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8466.20; Thu, 27 Feb
- 2025 17:11:21 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8489.19; Thu, 27 Feb
+ 2025 17:23:26 +0000
 Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
  ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
  ([fe80::9126:a61e:341d:4b06%5]) with mapi id 15.20.8466.016; Thu, 27 Feb 2025
- 17:11:20 +0000
-Date: Thu, 27 Feb 2025 12:11:13 -0500
+ 17:23:26 +0000
+Date: Thu, 27 Feb 2025 12:23:18 -0500
 From: Frank Li <Frank.li@nxp.com>
 To: Stanley Chu <stanley.chuys@gmail.com>
 Cc: miquel.raynal@bootlin.com, alexandre.belloni@bootlin.com,
@@ -60,91 +60,90 @@ Cc: miquel.raynal@bootlin.com, alexandre.belloni@bootlin.com,
 	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
 	devicetree@vger.kernel.org, tomer.maimon@nuvoton.com,
 	kwliu@nuvoton.com, yschu@nuvoton.com
-Subject: Re: [PATCH v5 2/5] i3c: master: svc: Add support for Nuvoton npcm845
- i3c
-Message-ID: <Z8CcseC8bLefDVG6@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH v5 3/5] i3c: master: svc: Fix npcm845 FIFO empty issue
+Message-ID: <Z8CfhvcoQSKsk3Ev@lizhi-Precision-Tower-5810>
 References: <20250227060131.2206860-1-yschu@nuvoton.com>
- <20250227060131.2206860-3-yschu@nuvoton.com>
+ <20250227060131.2206860-4-yschu@nuvoton.com>
 Content-Disposition: inline
-In-Reply-To: <20250227060131.2206860-3-yschu@nuvoton.com>
-X-ClientProxiedBy: BYAPR02CA0072.namprd02.prod.outlook.com
- (2603:10b6:a03:54::49) To PAXPR04MB9642.eurprd04.prod.outlook.com
+In-Reply-To: <20250227060131.2206860-4-yschu@nuvoton.com>
+X-ClientProxiedBy: BYAPR05CA0081.namprd05.prod.outlook.com
+ (2603:10b6:a03:e0::22) To PAXPR04MB9642.eurprd04.prod.outlook.com
  (2603:10a6:102:240::14)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|DU0PR04MB9442:EE_
-X-MS-Office365-Filtering-Correlation-Id: ec085cbc-8d9e-443b-a152-08dd5751c183
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|PAWPR04MB10055:EE_
+X-MS-Office365-Filtering-Correlation-Id: be99ddc3-bde6-4d15-7747-08dd575371d7
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|52116014|7416014|366016|1800799024|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?Skz6VWmsuTLAYcCHZ2Ke/ch9g/veY/j/KDEHTDma89Q0eT3YdUdTsFFyJnxa?=
- =?us-ascii?Q?5XU3c4y6TDhQQ9oHzBVHxHl6iGIC9bqXER31iY2f8ujIj/i2hS62Fkr5mR+K?=
- =?us-ascii?Q?Ro52gkZrLzFQw7YKUz6dSuI8ielShQ1doixwT9YKD+k67ebZZwYON1yym2Jg?=
- =?us-ascii?Q?6nxngbs903IWqwxGcXzO/yOPZ9pYoj2ODGpHl0x50upWj1P3u5zpb/4lniFy?=
- =?us-ascii?Q?2ICi0EG+x0GicXFNmuXgQDvnPOJiDFKzO8Iyk7av21MxUenoWYSRRuJfHmHR?=
- =?us-ascii?Q?4BCL+Fj64hmltQ1XOtuSbY8D/VKmmW9VtSnTtmU7iRH2Hw+O40wt586XWz9E?=
- =?us-ascii?Q?cZ0A5Hzp+tIQn99Q8OKJ4Ity+mShihXxLwXFzdkFh/X1Wx9awqYmXaolPoe5?=
- =?us-ascii?Q?uCnyCkWudJTVg55bYh37/rmfupD5b3gCMMJv4QuxTNlJ/9YXIBA3A6b1V+l1?=
- =?us-ascii?Q?Bfmp7HwCH7ez/o0vcb1JxMrDs+0lLDXC/oFhFb5Pi0HBgKaFl6SgbgdOa8/W?=
- =?us-ascii?Q?xkA7B2XZhPpPxJ8hIWsEnTnD252r/L+31H/en65s9KvBqQMurcLpaSlvZzSt?=
- =?us-ascii?Q?duQ7Wjc3tslLZBu4EkTRFenau7ryKLJPM6yZFu8jO5YQ1tIegceMZ6JORxeb?=
- =?us-ascii?Q?JsgjjE29w9TfSGKjdeArcEWwA558Sm1wEzHPCPmJOECJKvnMqyzB1y30v9UE?=
- =?us-ascii?Q?HKmaIDCC+Wh/8eMVehKLXngSPuVFMruXWNSDtRyTSZT9j8iNJspNW1fwS7aG?=
- =?us-ascii?Q?RWg+V0vwX6UPSHA9vR+D/M5EWQoezlmCP/SpZ9BbDQIXHrrotzmj4w8wPMQC?=
- =?us-ascii?Q?R0m5oE9VStQAeYU8vknEMGsqIPPR8P2fyKIrV5hpJcuoTjrcxBANqhBj3SNv?=
- =?us-ascii?Q?nBWZuHLUpHDFXjAbCtP0u8hYygMCu07Tb1uYLvbJb1Cynj/8p2E2DjcGGSue?=
- =?us-ascii?Q?qbK57UAoKfkAMhi+ZOw7Ip6FYh4Z7wKja2F4BEMfTksELgn//fypZU4VugCf?=
- =?us-ascii?Q?vgfzgqJimBB4+7FdVWt1r234c0Z/9pqeXirl+baXTEzuWlgwVPdFAaJST0zi?=
- =?us-ascii?Q?BjWdebkC3y8Kh0GQ0rZnhKpyXnMNXGQrW7Dhdlv2qqsADsc/5Xe67GDCZWIE?=
- =?us-ascii?Q?fI+tUGm7LlTzbrhjvgGnPojTnKkZ+aXrVGF9eChdTKuCDtAZJVFmMmUSbQEs?=
- =?us-ascii?Q?iIUqfHGdrDiITXn6V0MpKLlM2smMwqufgQM41Rp2HFaRCm5tl9jwCK+iEvaz?=
- =?us-ascii?Q?vC0Zs6m1LCQVJbu9kLqb4940y6no+yCZWFZ6DNvOLfGoS+kZjdKfs8gtwqNN?=
- =?us-ascii?Q?0egr8DaR0Qmkj7HOM/jfCZ9SxR+EXNp3ZhoWJ6a7MYQ43m6B9NS/pVgHUKds?=
- =?us-ascii?Q?TV+lAajlIhA4Rc6giZW9OocriBXwdJ2H3/Gt/0InYxvBA3FI5aGWfzsiN8P5?=
- =?us-ascii?Q?UxTEq5XSTtB0Y7rdd/Gx8ps+rWmDTKYh?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(52116014)(7416014)(366016)(1800799024)(38350700014);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|7416014|376014|1800799024|366016|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?jCUpJKDJ4hxAAE1bc3B7Xcuh3CQIxkyq0827yyh8wstyNRTndTZOk9mwennb?=
+ =?us-ascii?Q?0FnEcmrsZCHAssLbLPfgcRDy8TugFUKuwoi5uP5i83IlwXcuNKDm28DWMKf4?=
+ =?us-ascii?Q?mxiaLj0th73mzPmOh3+6a2ogFyYkFMXu21Lnpc9TIp6Tn37QjTx3sdN2BPvN?=
+ =?us-ascii?Q?2q/KKYoG6TaDYM5pBB+byzJymJK0wpu8FoNixAAM+VYEX56JSEZcP58rW9mf?=
+ =?us-ascii?Q?tf+GYpoD7pQI1GtcHiryAly0ndmHDPgZRJv/taRA6gSLsC0oCmkk+Vkun4IX?=
+ =?us-ascii?Q?gCHN4RHkLpBISuxYLktRiMlzxcK5BAVZzJXY8d9a6SAlo754E2Xi+W4xNb25?=
+ =?us-ascii?Q?J0F5XUysYiFcl2Au/Wg9NxSsev4hx+aa9GkLCRere9kAW+pJalRD6fmyx82H?=
+ =?us-ascii?Q?csjBM6S66M2glJ4Pi0NDEEfpXiA4/JQoYFVS0GFSTMVzAtzXvO4bu8OfL0N1?=
+ =?us-ascii?Q?C54pH6n5LcIzhcC4lEfRKu0bFj6kUr3Qr0KcAAiAJ8GNnlcNBTCPuV9/OyK5?=
+ =?us-ascii?Q?7aMPgFmWQWq7NJ/aUTKLBzzY0QQg5sbzVjnCQComKvWEhf/vDe9QM/EXo+fB?=
+ =?us-ascii?Q?KHcXF9LiTydzge3ibhkHzCI5Pf1ModmOBV8xyeiXjUd6GjxCoYmG4Pu+vkBQ?=
+ =?us-ascii?Q?h+Y6VhgzicwEj8cYXFkqHJjF+yDke1eDtr6nlvCOiW+SlRdiS9CbamclPAxU?=
+ =?us-ascii?Q?7Io/wgxz9Ds7rCHxD4fkPMMEV3Bc/UmnAUxD91jyVA1/9gIrNFRRA3VmRCiu?=
+ =?us-ascii?Q?HGOwysRAvIXp6QOldNj7tiyfXHRwVdLLyx89u2OYycfWRFDE1SETQe/XBbEC?=
+ =?us-ascii?Q?TNu+ZbIlLwhOM7oy1BZE2bTejHIs9bNFndy4xQqjJ5ZkWnr5fyF8PPXSFAw1?=
+ =?us-ascii?Q?z3Y6OdedzaKuiOApqd04KagaNyME1vanc7xIGy2t3qUKv04sBeHoBh3lcAoc?=
+ =?us-ascii?Q?Y8NQILR/JvrNitadTzpbJrs1l0eIHt4GYOnE7jgfCyxK8ReHUlHzW8roXi5M?=
+ =?us-ascii?Q?aBx5YmEohvaIPDw3Oa1sRcw2B9YFAG4CL/F8/tSwJvUqq/08GIoQcMcvTwSE?=
+ =?us-ascii?Q?fHqWs311C/PpC8Dk0r6FEp9qfYMcYgl5ldyHyxo0B/VVBDw/YSnN/113Jw6O?=
+ =?us-ascii?Q?0Mx/nUoocR0sXixAiJJIIB0BvE1uEfzUsTqiDMnKc4qaepUh0r7Mca/757DP?=
+ =?us-ascii?Q?fcumvJ4busZP3WGJr8shBY2wKTvE7Xfdkx7CxVSzIV8E2VfiesZ73DB1SDqE?=
+ =?us-ascii?Q?0UWWDg3i3o4SeOvr7Q4i3GG8RFdkLqlsT115B2u8Jbc261KAu0wwBnvmPHO5?=
+ =?us-ascii?Q?5PJ69reZl0CRwNyNWdsJIeXf9r6C0VHv8+HF//WRKithHZvKluiiVuwrewwR?=
+ =?us-ascii?Q?WNU0wv4RDwlDnlPMe7M7hbCcxMEQ8S74Z4Z2wInb6sGRTIED69CNWHsMXLb9?=
+ =?us-ascii?Q?PJfW3lHk7srWxba5MHx3nZ9IU6eESlgf?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(7416014)(376014)(1800799024)(366016)(38350700014);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?BQnqdH3+WwEFhzQhfwPjcwKm3W6iS2nIFilZYXcSf/u/Wxj3LJ2LxWrkgC6X?=
- =?us-ascii?Q?aB+7ZxwToG4doMwPP2ij8IIyAbDDtDUGjaITAHugwwdi6fyG9pQK3Ni9Sn5O?=
- =?us-ascii?Q?DTYcYmRuD2Dvxn7TwTL0k82dGAr+wtxT/IIIY8b+N3Ai/JB2AcBljhE7NQAf?=
- =?us-ascii?Q?HDwZZlhJbOO3ALDed7tJnqjmNG2FzqH8TFL9HFWL+CpfRIIPI1CTdhEPlvTh?=
- =?us-ascii?Q?FrUVQE3YyVZqNTWapWMVdB4jAwAFp+zw3bBR2kiKzR+Be7uwMHqk4iUTXVdA?=
- =?us-ascii?Q?LwPv5H+RaUMuPHr2NFFnozRyvZzA7WgyK7ymZS0FF7TYVrhdg1pgzdah3VQ9?=
- =?us-ascii?Q?sH7lCq2NCcIWmTpzvysfzAvO8kHprRMbHhWouzSAO/j9eebqeK4A/epLWj+A?=
- =?us-ascii?Q?7Gw+JOQodjumLDcrQuNCCTJh9pha2EEEY2ZaSPPNqbc/CWLMfGENFJETdx4t?=
- =?us-ascii?Q?TfwFM1CShzV1jNZn5pf2Zi3zvMGhD0/atRKDaKaggseQzGf76+GLb5i/0MZM?=
- =?us-ascii?Q?XQiw7Ftmtiq/QhnHyhan5lsCqt/QDZDLo8mRo7xaZlM98pwnEgmA3S3aE+lA?=
- =?us-ascii?Q?1RwxLEluCkxk4W3t7BhH85KFa6el63FlNcuAJnKW451FCY2kRPG7SpQ/n9Pw?=
- =?us-ascii?Q?uxRRXoPDsQ+6C74yiYYXx0jmBwNYFVj4pbun4oxc40t4zMTXRYaMjQa7iC9+?=
- =?us-ascii?Q?5vsPQWA6lLDOgrOzE5hrbEuLanQg8ofyfQSQu69Huj4YmjUgnY1GIswHtMi6?=
- =?us-ascii?Q?oGTRNScXIVMp1RrOwEAnPt5kEiW5fzf/0eMQyTwEvRbHW7F3Lnj5YzZPkupy?=
- =?us-ascii?Q?3OY5YZaJscdePquyTEAbS1lR6n4LEh9kzMKuZizXx6kAgxXtfvkuSJnFB85s?=
- =?us-ascii?Q?CnBTPEGWcsklBTgnlJg3N4iHdg40kgEraLxbU0KckzFfNLP6iBM5d1CCa+Mx?=
- =?us-ascii?Q?TLuqX7wmXk2V3GjHGjzyU8O4lNBTuQhEYz/fL57wZgzTSZlr4nVVz3w2vgHB?=
- =?us-ascii?Q?dBxeLLnc4r1n6X7LKlbioFyAWgpzgxHMH/dMBne+a8pmXJOQtSjkVKzvR4qm?=
- =?us-ascii?Q?3bPR7b6kOcdti8mdGDR8joRhcOrCRW793ZGyp5s361XegkoXmszyaiq/F3ql?=
- =?us-ascii?Q?Kau77bJ7bLJ5csFZDzVAFDw0A0MRajr2cf6oV4a1ITH67v8MLLko67q94J/4?=
- =?us-ascii?Q?4RQOEvS6rUCklca8SAuppNSC9DkPibjtJVfmzC3E4YhMwsbYbSMCQl0fTjYu?=
- =?us-ascii?Q?BMxT3jIlGQQC8m+9prhGUBaSgDgbJntU+rRJcAmmtI8JbxstVs8TfdBycGBN?=
- =?us-ascii?Q?G8Rp8FtA84iVNiL8KNg1+dxevPuWKF2H2ZeD75aYI0+aS4wYLwA72tkpSNGL?=
- =?us-ascii?Q?NKzkcRXT7tsCbG19QD787l1EkroijSV5zFI7AgBp9wHg2e54OgaCqpjVIrAc?=
- =?us-ascii?Q?L8qLV/6emWcTeEZJQwWPqcLGx4haDAUahRmioJ9bbxhQHB6K95cEylGqvUfG?=
- =?us-ascii?Q?B/jeTkZaZ/YbNUJvrejZTcW5GO/8bVzchW1L/O4VZryTgkRBxBk920xMH4RK?=
- =?us-ascii?Q?oJYu5+hqFlKFj5XCV7+Lk+iGMVCqAnQlLuTUPnv9?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?5O81/KgmDmp9D1kzw2FpBA1Uzv00MmOp3bRgKXyC7QjnJGm40hWgRfwfStz6?=
+ =?us-ascii?Q?PJyt4mal5Iko49NNbdCBdj7atmp8Bq6iPTMlwItm4UWgNfqnN3iSBgVIRXXa?=
+ =?us-ascii?Q?040cxlyLiDMQQ6xDuerriMEcWFZJM0mace1ktfIDsUAoekxvcgfP1F5zW7pn?=
+ =?us-ascii?Q?0yO6tNS3DSxzfYDzwA1xLFhI1tRUSrceqRroJ2de7fnlpw24vSovLwJwrgJC?=
+ =?us-ascii?Q?d4aQs7HOoXkKRo6jESIMdF/R2A7HzESqA2Z4CCz8Wk7otM/WqHBofbT/asL1?=
+ =?us-ascii?Q?RZN1Mz69UNlpPWeaMbE/ZkonEv4PZY3BXLhtibat0SSYg5ZHBldSD72BUKQq?=
+ =?us-ascii?Q?dHQzaZXtPYfcJLmVIhvWj2HcxC3u5bPq+Nm+sPlwO6rhU+1b5C4OcK6kFL9U?=
+ =?us-ascii?Q?5SmIkS8sfvaLhaFZQus4IdYTh46wF/luwj8Vsh1spCSQ/Kpau/8hKv+120vU?=
+ =?us-ascii?Q?0ZdVTtZ9mK8gEXx8uZ9v3wLi7Eyrt/zXpXqlKjyOt/zS3ZgM08aTLi0FllCB?=
+ =?us-ascii?Q?Jm1B/Wl2dDV2i+ZnNbhFB+iup5Xv5g9XgKL78ZxWJ9fjL+Fju4HEp/eq7sfm?=
+ =?us-ascii?Q?hZMr11E8uKDfVvyHFMMuok/B0zISaa6v34iYZwdK6YKPW0etArpABAwfy1Mh?=
+ =?us-ascii?Q?0tmVi1Leq0CibE9zFxIe4KVRVXRX65oTYEdJC4Og9ROUVNvkOLQnt0qyFV3Y?=
+ =?us-ascii?Q?nIpGiyVVKS5JioTi+F0E2JVdrbHQaOb7TunmXEs8jtm0KN8173JYOAusHbc+?=
+ =?us-ascii?Q?3vGhV8N6BCXDk6PaZ7PKd1bNL2/D2AvwlMjJ38Q2HM+k7fT8GbR+4/xOBcFt?=
+ =?us-ascii?Q?6VUzMLSHxrjCdxDoAs8lMfHcMhX76ta3lLByFKIG4niBDCk5s65WvJnj/RVK?=
+ =?us-ascii?Q?gc7MFzfNp16fXj6VYbsx5gqQLfjy6tFyfhNNAau7lYmWtJpgD1qPi0i6IrMZ?=
+ =?us-ascii?Q?WWRhxkru0W3Fu1ZITUVIf+m/wOwP5uEjNZTmQXEUEJhlPTNdTetkSyRpX5yz?=
+ =?us-ascii?Q?JLOq2TO3DxuS8RBM+LGmI9Z/Q6iWZMsBJJ3kjqafF9SGL7A1FV6HQGEg1fQ6?=
+ =?us-ascii?Q?da/+IBz5gDNPxv7WsjLECKR3VPit4IBDSX62ZCYtdEORgrx3mkjGuom6IKVg?=
+ =?us-ascii?Q?gXy5ssoF1ZzH/ldtgfu0Edo5Fo6mrkPci4zmvJO8PV+MLW2OTysyHZSggwQb?=
+ =?us-ascii?Q?Wj1YPH+lMff4PwROch2xSBBLXMxdXqbwFlRP5P3nt5L5zsN77b8iZy2dDfa4?=
+ =?us-ascii?Q?GcigiiYJWg0Ysb76eajaBZoyEze9IvYuqR/u3XfJYEFYF8+uGakyo/ejEJNZ?=
+ =?us-ascii?Q?LOxfBOtI6iB4qX/KZkhyJGALQt/IXg8ehOMryM7S9mYveFT0XgMBGzgIj7fG?=
+ =?us-ascii?Q?bs5cgm6uofHv25wtTu+mgjpw9ofa1ME/QNuOt9S1hXLymUF5/YSFBZ1r7XQT?=
+ =?us-ascii?Q?zC669tCZ6/LyXwVSlrNUkt8TLjm+zgfpHnJ44Xy585/s4qjzkRHzcbLGCYXx?=
+ =?us-ascii?Q?LHJlYb5/JBRsRIwaXjI1wH3sxwP/evdkEYSJmO8QlqZEss9gSXVKRT0HNVk7?=
+ =?us-ascii?Q?wQ31kay7yCXfIpt0wpQ=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ec085cbc-8d9e-443b-a152-08dd5751c183
+X-MS-Exchange-CrossTenant-Network-Message-Id: be99ddc3-bde6-4d15-7747-08dd575371d7
 X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Feb 2025 17:11:20.8097
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Feb 2025 17:23:26.1533
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: Th2s/yUd5GqM1kSGBmK4f/W76igjtZVOc2r1s/tR/MKaaABNYDZkHxdYM8vAm+GuGx3nMugPpqs8E1k1DroWKA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU0PR04MB9442
+X-MS-Exchange-CrossTenant-UserPrincipalName: /QYQ//UOOBg6LzHvBPIE8JIOmqrlhwq43bbHNRjy3LbEjRcAHCytiz8K0Ev7+qxW1vCBHYtIYb5062etcrj88w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAWPR04MB10055
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250227_091131_401678_C874065D 
-X-CRM114-Status: GOOD (  29.80  )
+X-CRM114-CacheID: sfid-20250227_092329_746556_150B737C 
+X-CRM114-Status: GOOD (  28.87  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -161,160 +160,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Feb 27, 2025 at 02:01:28PM +0800, Stanley Chu wrote:
+On Thu, Feb 27, 2025 at 02:01:29PM +0800, Stanley Chu wrote:
 > From: Stanley Chu <yschu@nuvoton.com>
 >
-> Nuvoton npcm845 SoC uses the same Silvico IP but an older version.
-> Add quirks to address the npcm845 specific issues.
->
-> FIFO empty issue:
 > I3C HW stalls the write transfer if the transmit FIFO becomes empty,
-> when new data is written to FIFO, I3C HW resumes the transfer but
-> the first transmitted data bit may have the wrong value.
->
-> Invalid SlvStart event:
-> I3C HW may generate an invalid SlvStart event when emitting a STOP.
->
-> DAA process corruption:
-> When MCONFIG.SKEW=0 and MCONFIG.ODHPP=0, the ENTDAA transaction gets
-> corrupted and results in a no repeated-start condition at the end of
-> address assignment.
+> when new data is written to FIFO, I3C HW resumes the transfer but the
+> first transmitted data bit may have the wrong value.
+> Fill the FIFO in advance to prevent FIFO from becoming empty.
 >
 > Signed-off-by: Stanley Chu <yschu@nuvoton.com>
 > ---
->  drivers/i3c/master/svc-i3c-master.c | 56 ++++++++++++++++++++++++++++-
->  1 file changed, 55 insertions(+), 1 deletion(-)
+>  drivers/i3c/master/svc-i3c-master.c | 52 ++++++++++++++++++++++++-----
+>  1 file changed, 43 insertions(+), 9 deletions(-)
 >
 > diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-> index d6057d8c7dec..9143a079de53 100644
+> index 9143a079de53..a0c6d8053a25 100644
 > --- a/drivers/i3c/master/svc-i3c-master.c
 > +++ b/drivers/i3c/master/svc-i3c-master.c
-> @@ -32,6 +32,7 @@
->  #define   SVC_I3C_MCONFIG_ODBAUD(x) FIELD_PREP(GENMASK(23, 16), (x))
->  #define   SVC_I3C_MCONFIG_ODHPP(x) FIELD_PREP(BIT(24), (x))
->  #define   SVC_I3C_MCONFIG_SKEW(x) FIELD_PREP(GENMASK(27, 25), (x))
-> +#define   SVC_I3C_MCONFIG_SKEW_MASK GENMASK(27, 25)
->  #define   SVC_I3C_MCONFIG_I2CBAUD(x) FIELD_PREP(GENMASK(31, 28), (x))
->
->  #define SVC_I3C_MCTRL        0x084
-> @@ -133,6 +134,32 @@
->  #define SVC_I3C_EVENT_IBI	GENMASK(7, 0)
->  #define SVC_I3C_EVENT_HOTJOIN	BIT(31)
->
-> +/*
-> + * SVC_I3C_QUIRK_FIFO_EMPTY:
-> + * I3C HW stalls the write transfer if the transmit FIFO becomes empty,
-> + * when new data is written to FIFO, I3C HW resumes the transfer but
-> + * the first transmitted data bit may have the wrong value.
-> + * Workaround:
-> + * Fill the FIFO in advance to prevent FIFO from becoming empty.
-> + */
-> +#define SVC_I3C_QUIRK_FIFO_EMPTY	BIT(0)
-> +/*
-> + * SVC_I3C_QUIRK_FLASE_SLVSTART:
-> + * I3C HW may generate an invalid SlvStart event when emitting a STOP.
-> + * If it is a true SlvStart, the MSTATUS state is SLVREQ.
-> + */
-> +#define SVC_I3C_QUIRK_FALSE_SLVSTART	BIT(1)
-> +/*
-> + * SVC_I3C_QUIRK_DAA_CORRUPT:
-> + * When MCONFIG.SKEW=0 and MCONFIG.ODHPP=0, the ENTDAA transaction gets
-> + * corrupted and results in a no repeated-start condition at the end of
-> + * address assignment.
-> + * Workaround:
-> + * Set MCONFIG.SKEW to 1 before initiating the DAA process. After the DAA
-> + * process is completed, return MCONFIG.SKEW to its previous value.
-> + */
-> +#define SVC_I3C_QUIRK_DAA_CORRUPT	BIT(2)
-> +
-
-Generally define QUIRK when it was real used. I suggest his patch just add
-struct svc_i3c_drvdata {
-	u32 quirks.
-}
-And svc_default_drvdata and svc_default_drvdata. commit message said
-
-Add quirks for difference compatible string and pave the road to support
-Nuvoton.
-
-If alex think that define here is good, I am fine for this.
-
-Frank
-
->  struct svc_i3c_cmd {
->  	u8 addr;
->  	bool rnw;
-> @@ -158,6 +185,10 @@ struct svc_i3c_regs_save {
->  	u32 mdynaddr;
->  };
->
-> +struct svc_i3c_drvdata {
-> +	u32 quirks;
-> +};
-> +
->  /**
->   * struct svc_i3c_master - Silvaco I3C Master structure
->   * @base: I3C master controller
-> @@ -183,6 +214,7 @@ struct svc_i3c_regs_save {
->   * @ibi.tbq_slot: To be queued IBI slot
->   * @ibi.lock: IBI lock
->   * @lock: Transfer lock, protect between IBI work thread and callbacks from master
-> + * @drvdata: Driver data
->   * @enabled_events: Bit masks for enable events (IBI, HotJoin).
->   * @mctrl_config: Configuration value in SVC_I3C_MCTRL for setting speed back.
->   */
-> @@ -214,6 +246,7 @@ struct svc_i3c_master {
->  		spinlock_t lock;
->  	} ibi;
->  	struct mutex lock;
-> +	const struct svc_i3c_drvdata *drvdata;
->  	u32 enabled_events;
->  	u32 mctrl_config;
->  };
-> @@ -230,6 +263,25 @@ struct svc_i3c_i2c_dev_data {
->  	struct i3c_generic_ibi_pool *ibi_pool;
->  };
->
-> +const struct svc_i3c_drvdata svc_default_drvdata = {};
-> +const struct svc_i3c_drvdata npcm845_drvdata = {
-> +	.quirks = SVC_I3C_QUIRK_FIFO_EMPTY |
-> +		SVC_I3C_QUIRK_FALSE_SLVSTART |
-> +		SVC_I3C_QUIRK_DAA_CORRUPT,
-> +};
-> +
-> +static inline bool svc_has_quirk(struct svc_i3c_master *master, u32 quirk)
-> +{
-> +	return (master->drvdata->quirks & quirk);
-> +}
-> +
-> +static inline bool svc_has_daa_corrupt(struct svc_i3c_master *master)
-> +{
-> +	return ((master->drvdata->quirks & SVC_I3C_QUIRK_DAA_CORRUPT) &&
-> +		!(master->mctrl_config &
-> +		(SVC_I3C_MCONFIG_SKEW_MASK | SVC_I3C_MCONFIG_ODHPP(1))));
-> +}
-> +
->  static inline bool is_events_enabled(struct svc_i3c_master *master, u32 mask)
+> @@ -114,6 +114,7 @@
+>  #define SVC_I3C_MWDATAHE     0x0BC
+>  #define SVC_I3C_MRDATAB      0x0C0
+>  #define SVC_I3C_MRDATAH      0x0C8
+> +#define SVC_I3C_MWDATAB1     0x0CC
+>  #define SVC_I3C_MWMSG_SDR    0x0D0
+>  #define SVC_I3C_MRMSG_SDR    0x0D4
+>  #define SVC_I3C_MWMSG_DDR    0x0D8
+> @@ -940,7 +941,7 @@ static int svc_i3c_master_do_daa_locked(struct svc_i3c_master *master,
+>  					u8 *addrs, unsigned int *count)
 >  {
->  	return !!(master->enabled_events & mask);
-> @@ -1868,6 +1920,7 @@ static int svc_i3c_master_probe(struct platform_device *pdev)
+>  	u64 prov_id[SVC_I3C_MAX_DEVS] = {}, nacking_prov_id = 0;
+> -	unsigned int dev_nb = 0, last_addr = 0;
+> +	unsigned int dev_nb = 0, last_addr = 0, dyn_addr;
+>  	u32 reg;
+>  	int ret, i;
+>
+> @@ -983,6 +984,25 @@ static int svc_i3c_master_do_daa_locked(struct svc_i3c_master *master,
+>  		if (SVC_I3C_MSTATUS_RXPEND(reg)) {
+>  			u8 data[6];
+>
+> +			/*
+> +			 * One slave sends its ID to request for address assignment,
+> +			 * prefilling the dynamic address can reduce SCL clock stalls
+> +			 * and also fix the SVC_I3C_QUIRK_FIFO_EMPTY quirk.
+> +			 *
+> +			 * Ideally, prefilling before the processDAA command is better.
+> +			 * However, it requires an additional check to write the dyn_addr
+> +			 * at the right time because the driver needs to write the processDAA
+> +			 * command twice for one assignment.
+> +			 * Prefilling here is safe and efficient because the FIFO starts
+> +			 * filling within a few hundred nanoseconds, which is significantly
+> +			 * faster compared to the 64 SCL clock cycles.
+> +			 */
+> +			dyn_addr = i3c_master_get_free_addr(&master->base, last_addr + 1);
+> +			if (dyn_addr < 0)
+> +				return -ENOSPC;
+> +
+> +			writel(dyn_addr, master->regs + SVC_I3C_MWDATAB);
+> +
+>  			/*
+>  			 * We only care about the 48-bit provisioned ID yet to
+>  			 * be sure a device does not nack an address twice.
+> @@ -1061,21 +1081,16 @@ static int svc_i3c_master_do_daa_locked(struct svc_i3c_master *master,
+>  		if (ret)
+>  			break;
+>
+> -		/* Give the slave device a suitable dynamic address */
+> -		ret = i3c_master_get_free_addr(&master->base, last_addr + 1);
+> -		if (ret < 0)
+> -			break;
+> -
+> -		addrs[dev_nb] = ret;
+> +		addrs[dev_nb] = dyn_addr;
+>  		dev_dbg(master->dev, "DAA: device %d assigned to 0x%02x\n",
+>  			dev_nb, addrs[dev_nb]);
+> -
+> -		writel(addrs[dev_nb], master->regs + SVC_I3C_MWDATAB);
+>  		last_addr = addrs[dev_nb++];
 >  	}
 >
->  	platform_set_drvdata(pdev, master);
-> +	master->drvdata = of_device_get_match_data(dev);
+>  	/* Need manual issue STOP except for Complete condition */
+>  	svc_i3c_master_emit_stop(master);
+> +	svc_i3c_master_flush_fifo(master);
+> +
+>  	return ret;
+>  }
 >
->  	pm_runtime_set_autosuspend_delay(&pdev->dev, SVC_I3C_PM_TIMEOUT_MS);
->  	pm_runtime_use_autosuspend(&pdev->dev);
-> @@ -1959,7 +2012,8 @@ static const struct dev_pm_ops svc_i3c_pm_ops = {
->  };
+> @@ -1272,6 +1287,24 @@ static int svc_i3c_master_xfer(struct svc_i3c_master *master,
+>  		       SVC_I3C_MCTRL_RDTERM(*actual_len),
+>  		       master->regs + SVC_I3C_MCTRL);
 >
->  static const struct of_device_id svc_i3c_master_of_match_tbl[] = {
-> -	{ .compatible = "silvaco,i3c-master-v1"},
-> +	{ .compatible = "silvaco,i3c-master-v1", .data = &svc_default_drvdata },
-> +	{ .compatible = "nuvoton,npcm845-i3c", .data = &npcm845_drvdata },
->  	{ /* sentinel */ },
->  };
->  MODULE_DEVICE_TABLE(of, svc_i3c_master_of_match_tbl);
+> +		/*
+> +		 * The entire transaction can consist of multiple write transfers.
+> +		 * Prefilling before EmitStartAddr causes the data to be emitted
+> +		 * immediately, becoming part of the previous transfer.
+> +		 * The only way to work around this hardware issue is to let the
+> +		 * FIFO start filling as soon as possible after EmitStartAddr.
+> +		 */
+> +		if (svc_has_quirk(master, SVC_I3C_QUIRK_FIFO_EMPTY) && !rnw && xfer_len) {
+> +			u32 end = xfer_len > SVC_I3C_FIFO_SIZE ? 0 : BIT(8);
+
+Define BIT(8) as macro
+
+Let me find a time at next week to do simple test for this.
+
+> +			u32 len = min_t(u32, xfer_len, SVC_I3C_FIFO_SIZE);
+> +
+> +			writesb(master->regs + SVC_I3C_MWDATAB1, out, len - 1);
+> +			/* Mark END bit if this is the last byte */
+> +			writel(out[len - 1] | end, master->regs + SVC_I3C_MWDATAB);
+> +			xfer_len -= len;
+> +			out += len;
+> +		}
+> +
+>  		ret = readl_poll_timeout(master->regs + SVC_I3C_MSTATUS, reg,
+>  				 SVC_I3C_MSTATUS_MCTRLDONE(reg), 0, 1000);
+>  		if (ret)
+> @@ -1360,6 +1393,7 @@ static int svc_i3c_master_xfer(struct svc_i3c_master *master,
+>  emit_stop:
+>  	svc_i3c_master_emit_stop(master);
+>  	svc_i3c_master_clear_merrwarn(master);
+> +	svc_i3c_master_flush_fifo(master);
+>
+>  	return ret;
+>  }
 > --
 > 2.34.1
 >
