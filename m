@@ -4,71 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7296C282C1
-	for <linux-i3c@archiver.kernel.org>; Fri, 28 Feb 2025 14:41:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2E25FC282D0
+	for <linux-i3c@archiver.kernel.org>; Fri, 28 Feb 2025 14:41:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r3rn22Ma6AljhSGX5AF7bIa0lYyXbozl94/KFu/9NPM=; b=BaXrD6crwkGQWO
-	9LUwlVjaruJ5Fepoa0X34ReVZfTlWyK/WJoqCSNYnhA2ow+Xpm5MxZEu2JZyFOnqXgmLyEE52/wHc
-	hzzSzFkKg0AbUV5SKy9B6xUMamhSBKDFix3OGRUNcTggL7XSuHB05OMij18l0342kxqGblEiiVezo
-	wFNzvd952lI8xevk7UdzYSyrc52I2AjtQDsU8N/xtqACL+rulN1M++JbWli8jOeEt4/nZ7KKxCP2K
-	xQpY6RMgm+1dWnQeIuxnmUYRws2cgzGHUdjfyTvhjSMHU4PZa1gRGODan7UWIqcVmOg2ubdNM2tvT
-	1nV686Iy6CHjixi712Ig==;
+	List-Owner; bh=vU0qQFsvjNWqvB5wNwN5QVEXAvS/LBHaPTZOGeFazwE=; b=qkEMYt/geBJHrz
+	2r4iZsJgr+uErpn0tP2Y01pFXMi6H0BZxiQN4E7baoac0+FnoE+GtOUjYd5YAAToJ42gpZmPpi8PI
+	Vi+5CkFYW6xCw0wEjp72hP1DuQXPUuss/nUj89rxm/rH1JB1Vq6kcMyKuFXOV7QkWAmEIEfcuct5j
+	ul1Kb0W9yIuXGEpvehzVw9z01AlW4jfekr7erOhy/5j49/8mtAggmdX3y1dDGmXq5wgREB+e7Ynx4
+	Iiq2L+U4WoP3eJsAef/BfQHQ87RlhIT8++HGG+6F46UAn7rTbCxkcxAHTWJqb4BSmjcW0bImhOG0Y
+	e4h30Rd5NpRVqxLosmpQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1to1Xy-0000000BIoS-29Tg;
+	id 1to1Xy-0000000BIox-3twU;
 	Fri, 28 Feb 2025 14:41:02 +0000
 Received: from mgamail.intel.com ([192.198.163.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1to1Bq-0000000BEAO-2MqW
+	id 1to1Br-0000000BEBr-20mw
 	for linux-i3c@lists.infradead.org;
-	Fri, 28 Feb 2025 14:18:11 +0000
+	Fri, 28 Feb 2025 14:18:12 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1740752291; x=1772288291;
+  t=1740752292; x=1772288292;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=egv/OiQTJ5Ecz1Ei26e/0uj7Ad0zFGpITVeF2p2MKbo=;
-  b=DU3bNW+R13qWaL3/TTILR4TSTBazjvQ3J2hIs7WjsOE57GJFUFXvhE6X
-   WH+DGUleaQ23cYiEgrEMwWRemWrihtPYm8xbfYyPH4hqIZpwo7CHa9M9N
-   Z2Ros7TKs5aG071LqXVO4yRoJBVQaXVVeeHLJiSzwPA3npe4u9zTj6HzD
-   I8sgg+P5LRXRUpf3AWmg3s7a3aF9R529ZYOfX6kb8C+PyFZSghq4E89VE
-   ffvGZIvdZkJQ5p9kZstGf+kirUJgll9+oNzpJQfN+qF3Rs9U6U+TxoDGN
-   Aub2KOWFKpph7MXcKn/UDIK49YvuBRvuvnEjLKEDcMuNdrC7IF8BpE/Mj
-   w==;
-X-CSE-ConnectionGUID: 2nNvxmfFTtS2CRZa3jNFFA==
-X-CSE-MsgGUID: zfnxFHK8TuOW1afc9ibH6A==
-X-IronPort-AV: E=McAfee;i="6700,10204,11359"; a="45600744"
+  bh=mRSyF1KOIUKHVltC1mRdOmWwHWh8hNl1+iPCVfciduQ=;
+  b=UgorA0dcH4v/03gFcCWlpTWOkFm+iktr7GoP3Vg24Dw/UeXYDuQ4Jp2z
+   BUZE38oUBjjuczANJydsCKzwN6MijSPa1e8gLunba2gF/r9JCWX1jeGWK
+   oDRJNhZ4KefFZwgPYUHb0G0gsS7jVX5oW00ThxKFPeAAXQ8tNi0pu20oT
+   J/xnBN/sHkwq+Eri6L0Z+xnv11zFJ5Xf0NcYq+ToVRD5pLifuFnG2PO6U
+   7LyCkErZMfdUNNTovQvg1vbx/JN9F3WHyD8x2QJ91Gjt4DO52SLOkbjJy
+   EXQabTM59Z63JIOz4qA2//ERLvd4H8gHXoc/r95pnuD/wVdMb23gY+jTU
+   A==;
+X-CSE-ConnectionGUID: n8xkJByjQdSRoSpUBUJdyg==
+X-CSE-MsgGUID: cTa53uunS2mHVkgE5PMznA==
+X-IronPort-AV: E=McAfee;i="6700,10204,11359"; a="45600751"
 X-IronPort-AV: E=Sophos;i="6.13,322,1732608000"; 
-   d="scan'208";a="45600744"
+   d="scan'208";a="45600751"
 Received: from orviesa001.jf.intel.com ([10.64.159.141])
-  by fmvoesa106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Feb 2025 06:18:10 -0800
-X-CSE-ConnectionGUID: ws+F/uBMSCGM63/d52C8NA==
-X-CSE-MsgGUID: IZJ8qv9tSjyQEKB1hh/UVw==
+  by fmvoesa106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Feb 2025 06:18:11 -0800
+X-CSE-ConnectionGUID: KuTfaGjYTW+dhW3yIwUuxA==
+X-CSE-MsgGUID: bLOqZxVYSvuVj/Yrntphcg==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.12,224,1728975600"; 
-   d="scan'208";a="154517445"
+   d="scan'208";a="154517451"
 Received: from mylly.fi.intel.com (HELO mylly.fi.intel.com.) ([10.237.72.59])
-  by orviesa001.jf.intel.com with ESMTP; 28 Feb 2025 06:18:08 -0800
+  by orviesa001.jf.intel.com with ESMTP; 28 Feb 2025 06:18:10 -0800
 From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
 To: linux-i3c@lists.infradead.org
 Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Frank Li <Frank.Li@nxp.com>,
 	Jarkko Nikula <jarkko.nikula@linux.intel.com>
-Subject: [PATCH 3/4] i3c: mipi-i3c-hci: Change name of INTR_STATUS bit 11
-Date: Fri, 28 Feb 2025 16:18:01 +0200
-Message-ID: <20250228141802.1344453-3-jarkko.nikula@linux.intel.com>
+Subject: [PATCH 4/4] i3c: mipi-i3c-hci: Move unexpected INTR_STATUS print before IO handler
+Date: Fri, 28 Feb 2025 16:18:02 +0200
+Message-ID: <20250228141802.1344453-4-jarkko.nikula@linux.intel.com>
 X-Mailer: git-send-email 2.47.2
 In-Reply-To: <20250228141802.1344453-1-jarkko.nikula@linux.intel.com>
 References: <20250228141802.1344453-1-jarkko.nikula@linux.intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250228_061810_614867_C7921DC9 
-X-CRM114-Status: GOOD (  10.22  )
+X-CRM114-CacheID: sfid-20250228_061811_526764_56219629 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,47 +86,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-INTR_STATUS bit 11 INTR_HC_RESET_CANCEL was probably projected for the
-MIPI I3C HCI specification version 2 but was not ever implemented.
+Move "unexpected INTR_STATUS" error print before calling the IO handler
+as it is more consistent that way. Otherwise it may be confusing if
+generic interrupt related prints are mixed with IO handler prints.
 
-This bit is first time specified in the v1.2 as HC_SEQ_CANCEL_STAT
-"Host Controller Cancelled Transaction Sequence". Update the definition
-and debug print of it accordingly.
-
-While at it, change DBG() print to dev_dbg().
+Since this error print is more indication of missing code rather than
+runtime error downgrade it to dev_warn_once().
 
 Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
 ---
- drivers/i3c/master/mipi-i3c-hci/core.c | 9 +++++----
- 1 file changed, 5 insertions(+), 4 deletions(-)
+ drivers/i3c/master/mipi-i3c-hci/core.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-index e5593b6e897e..84c372740020 100644
+index 84c372740020..5c173249c0ac 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/core.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-@@ -78,7 +78,7 @@
- #define INTR_SIGNAL_ENABLE		0x28
- #define INTR_FORCE			0x2c
- #define INTR_HC_CMD_SEQ_UFLOW_STAT	BIT(12)	/* Cmd Sequence Underflow */
--#define INTR_HC_RESET_CANCEL		BIT(11)	/* HC Cancelled Reset */
-+#define INTR_HC_SEQ_CANCEL		BIT(11)	/* HC Cancelled Transaction Sequence */
- #define INTR_HC_INTERNAL_ERR		BIT(10)	/* HC Internal Error */
+@@ -607,12 +607,13 @@ static irqreturn_t i3c_hci_irq_handler(int irq, void *dev_id)
+ 		val &= ~INTR_HC_INTERNAL_ERR;
+ 	}
  
- #define DAT_SECTION			0x30	/* Device Address Table */
-@@ -597,9 +597,10 @@ static irqreturn_t i3c_hci_irq_handler(int irq, void *dev_id)
++	if (val)
++		dev_warn_once(&hci->master.dev,
++			      "unexpected INTR_STATUS %#x\n", val);
++
+ 	if (hci->io->irq_handler(hci))
  		result = IRQ_HANDLED;
- 	}
  
--	if (val & INTR_HC_RESET_CANCEL) {
--		DBG("cancelled reset");
--		val &= ~INTR_HC_RESET_CANCEL;
-+	if (val & INTR_HC_SEQ_CANCEL) {
-+		dev_dbg(&hci->master.dev,
-+			"Host Controller Cancelled Transaction Sequence\n");
-+		val &= ~INTR_HC_SEQ_CANCEL;
- 	}
- 	if (val & INTR_HC_INTERNAL_ERR) {
- 		dev_err(&hci->master.dev, "Host Controller Internal Error\n");
+-	if (val)
+-		dev_err(&hci->master.dev, "unexpected INTR_STATUS %#x\n", val);
+-
+ 	return result;
+ }
+ 
 -- 
 2.47.2
 
