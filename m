@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10DB4C282D1
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58130C28B24
 	for <linux-i3c@archiver.kernel.org>; Thu,  6 Mar 2025 21:00:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,47 +12,48 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=jS7HShDJNxGouL6f0kINccD7pBFvuMUAoaEj0kTmzUo=; b=vzGpEHu02tInZn
-	CzSyciMFeE3/avRQaqG+fuktklV4ROnxHkoOEM1zrg3RyCcPj62JpBs2He7kMQ4g8CqNfBaJ6Ew2H
-	ujB7VX8wtUGcgal789RacGWxO9T28EdmOE5573v8fun8PNPjpktJVTRjc5bncGmpISRbHvxrTLqW6
-	IfKMiTYJ/GvfIA7gk3naR3VnvrEd84tYx3hNEvL03HzvZm66wAb8u6S0zLeUS6Mp1buaXGzO2lTqf
-	MMdo+zjMcZKbRe3JSIdTRKXRt272GYARkWBwKV093PD0PQYAuC2Ax07jNo9cbbFN4oCj6+moJsBT3
-	V03A0nr6pb439TckG1Gw==;
+	List-Owner; bh=jS7HShDJNxGouL6f0kINccD7pBFvuMUAoaEj0kTmzUo=; b=Ug82ACkYyVZhbV
+	jqpp54rzUhYH01El+u1r6TvG7lwQTrNdjPWHPxaZAn6UUK8qXlcdWaryik82NG/wSIxgBdIeGjbCS
+	joGnI77gQy+YQlN73v8LK2h0/PY3dlqBRxI76RF+PhhJtLD1XjnfThGJGukjPvc/6aXo25urd8Va1
+	gSjNwjRPuHBN77zL9pl1Cyc18OjbCCJkT3oDG28+zWaU/kuv7X3QPEc4XLXx4cvZ1llndqAR6MHd1
+	l7vSbfE0W53NnlU8/Kv8Xe2sjzh95TUhLU0ORp057CLlxY2ayshkKoKFy7ruGfBKX3Wziela+osVX
+	y+8y94+g2s8SoizhYxOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqIKV-0000000CC87-3PQy;
-	Thu, 06 Mar 2025 21:00:31 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1tqIKW-0000000CC8D-0RaL;
+	Thu, 06 Mar 2025 21:00:32 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tq5t2-0000000AEoH-1xyP
+	id 1tq6Cz-0000000AHGf-2NRM
 	for linux-i3c@lists.infradead.org;
-	Thu, 06 Mar 2025 07:43:21 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 95C60200338;
-	Thu,  6 Mar 2025 08:43:12 +0100 (CET)
+	Thu, 06 Mar 2025 08:03:58 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7443C1A1021;
+	Thu,  6 Mar 2025 09:03:52 +0100 (CET)
 Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 5C32F2003EE;
-	Thu,  6 Mar 2025 08:43:12 +0100 (CET)
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3B8D91A1018;
+	Thu,  6 Mar 2025 09:03:52 +0100 (CET)
 Received: from lsv03121.swis.in-blr01.nxp.com (lsv03121.swis.in-blr01.nxp.com [92.120.146.118])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 1F7C31800086;
-	Thu,  6 Mar 2025 15:43:09 +0800 (+08)
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 693181800257;
+	Thu,  6 Mar 2025 16:03:50 +0800 (+08)
 From: Manjunatha Venkatesh <manjunatha.venkatesh@nxp.com>
 To: miquel.raynal@bootlin.com,
 	conor.culhane@silvaco.com,
 	alexandre.belloni@bootlin.com,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Cc: manjunatha.venkatesh@nxp.com,
+Cc: stable@vger.kernel.org,
+	manjunatha.venkatesh@nxp.com,
 	rvmanjumce@gmail.com
 Subject: [PATCH v2] svc-i3c-master: Fix read from unreadable memory at svc_i3c_master_ibi_work()
-Date: Thu,  6 Mar 2025 13:13:03 +0530
-Message-ID: <20250306074303.239081-1-manjunatha.venkatesh@nxp.com>
+Date: Thu,  6 Mar 2025 13:33:45 +0530
+Message-ID: <20250306080345.243957-1-manjunatha.venkatesh@nxp.com>
 X-Mailer: git-send-email 2.46.1
 MIME-Version: 1.0
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250305_234320_662383_C59D2D0C 
-X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-CacheID: sfid-20250306_000357_732793_86032D8E 
+X-CRM114-Status: UNSURE (   8.23  )
 X-CRM114-Notice: Please train this message.
 X-Mailman-Approved-At: Thu, 06 Mar 2025 12:56:28 -0800
 X-BeenThere: linux-i3c@lists.infradead.org
