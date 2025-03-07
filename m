@@ -4,143 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60E02C282D1
-	for <linux-i3c@archiver.kernel.org>; Thu,  6 Mar 2025 21:09:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A41FC282D0
+	for <linux-i3c@archiver.kernel.org>; Fri,  7 Mar 2025 09:14:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zqmIpNFViIYy3XRY0merw870LvCRp69h2aqq+Wfc7Jg=; b=0mUDqYr/vef26H
-	p2aynF+5rJJes+asTbCji6LrzPlI/qFOQh1MkmbceQk5Vh9NsT5bwy/phHaUfhZQ4uCrMwxeoVVod
-	CmH0K8cF15rmO6LnnJhXWUFruPW2T/L/t5GsD04G0CDIRb7Uuk19+sTHBLHW4Kn1gD78sJYXu9v2j
-	nmGaMTiGGR35nmJF8AzSRbbBYr8n57jGFmrua1lAbtXgl1Q11Uo3h+PtKtOsOGjHeuJAcfHMDDHkY
-	OBsx3jCMWwEykfRqv0ZkWuhJbj7AWHyRhjjeuTGdDDzJYaIEQcl7+tIO/VX/4OP3ujO9fl3aYPwic
-	gysvFe4NRDHlrUkwc0kg==;
+	List-Owner; bh=260SiWbuMWgYdMxpO+hC/QY5d00QHr5pwQrWsVvBwtU=; b=Rf9jypYG5GIagw
+	mv8TStKcbK0wplPmh/L0HSI9dmX2GGUMhAqA6yO1vBhLH99yaRLeFWRfS2J8DRTQWhBjQsVUxHI1c
+	K7Pw1uqtCFncwB4ICvlwSMFvewmnWKs0NJuDqwxh71U31NsAgZbjA69+I85HFgpy1DAvW47z+7exn
+	7CYNa7opbIFyBeohN5OzIuR0+TPSgJf6Z0wGjMj90xHYkqH9RzcnebnRAxPFduNEgan37I1GKwvJh
+	o+S6IHUG9urDuYxNaXHO5jDKGQuYraY7VeRIH/6vXCU7NLQmcX/cTILqapboQIkMxliMJE8g8Bhsa
+	AHAexjiKiHHP5JSzaTaQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqISp-0000000CDk8-0bb9;
-	Thu, 06 Mar 2025 21:09:07 +0000
-Received: from mail-db8eur05on20614.outbound.protection.outlook.com ([2a01:111:f403:2614::614] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1tqTmV-0000000DfU7-41yD;
+	Fri, 07 Mar 2025 09:14:11 +0000
+Received: from mgamail.intel.com ([192.198.163.18])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tqISn-0000000CDix-1Bh0
+	id 1tqTmT-0000000DfSl-1i6Z
 	for linux-i3c@lists.infradead.org;
-	Thu, 06 Mar 2025 21:09:06 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=NgzJNUVPLDfEkgi/UkROsJGuondUKDT8NlcBnNMiqnhqojhciIdCW0ac7kUf0eQHeaO1a3/AXN65/uZ4yS5jWuWZI2VmU/cyOcyANXbIxTphevjfoDPMSWD6kTpOlwusciZgFLtlblKe7Z5QWRQPITAGgwTXi7Uo8mtR2ra13pAbw+Vdirhan/EyzejLMDnsZKLQYDD0kNW6RZS6n+S+xShJ0AvZVBqztJMoowoKwdHR+X/+1xWLhwhLQtSNr0bfnFrlIN9yT5hshmlFbXz1jkPWRjqUsyxx3IS8nLltfU+x/gLT3egWszE+cCEUnmk/d1mck85AoPxfKMGKGXUkQQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Nrx23cdlKSS9HXDBS/bZOWRLYPl7VW2H+S6a2ENFqes=;
- b=eIfFDrY0zrj2/W9E6iCvpdXs/54SqKMOrN34OLdgbMqswwHEFO3vQxxmazYZQGZsn20ExLvgqk9O3SjzQN1an2tsw0iC08VpYiDpqAWKETMvv4qkWyitEpG6aSgESvdpXLYfsvnsxHWh/jdpedR+g9sRwwU+SDUbJJwOOGSOp3DXMSOgMj0f67/hKeJcVQ6EkYHVF6OyDnHj8qzeIaA+pMLIfDmtrma+0fwIvG5Jk0dQg9UnNrJeOe9IdAPickr6ZmyuV61rlZOYWM9ARu4HCLXN9QPIdDirUJwbTzuz8NxK8ISEPCHyYuVGh/X8lS579t7RSLQWBkasHUscld8L8w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Nrx23cdlKSS9HXDBS/bZOWRLYPl7VW2H+S6a2ENFqes=;
- b=e3Y/wTrDU5c/T0WEcI8DQrMla8qm0p77JwUJuns2oQnMLFd9Wt05IS8jNcNfOS5bn1OubLedbLTxUWyQsQR3qD1pSqjYnY0xTBa3IhRX0SH/pbUV6RMFSWM9Akn8aK9bCY6MU+csd4CC9t0TQCLBlMDIWgqT7xm9NeVThrT5RcrxiYdHQRuSx154I/r2ErDpcUSw5tYjfpm7GkMN3Fqoc0QcqyMCgUwEom6nThciyuYXi5Y56IUPVI2soZs88jJRFuFSgHWIM1ZyKeXDQx5gqWUyR8PIvKbCl+ao9DT9HuhZKQpcNMYVAqLswTj1OH6LtgNurjei95O/lsMvE5oKOw==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
- by AM8PR04MB7940.eurprd04.prod.outlook.com (2603:10a6:20b:240::19) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8511.19; Thu, 6 Mar
- 2025 21:09:02 +0000
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06%6]) with mapi id 15.20.8511.017; Thu, 6 Mar 2025
- 21:09:01 +0000
-Date: Thu, 6 Mar 2025 16:08:54 -0500
-From: Frank Li <Frank.li@nxp.com>
-To: Manjunatha Venkatesh <manjunatha.venkatesh@nxp.com>
-Cc: miquel.raynal@bootlin.com, conor.culhane@silvaco.com,
-	alexandre.belloni@bootlin.com, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org, rvmanjumce@gmail.com
-Subject: Re: [PATCH v2] svc-i3c-master: Fix read from unreadable memory at
- svc_i3c_master_ibi_work()
-Message-ID: <Z8oO5hTx59niiY1U@lizhi-Precision-Tower-5810>
-References: <20250306074303.239081-1-manjunatha.venkatesh@nxp.com>
-Content-Disposition: inline
-In-Reply-To: <20250306074303.239081-1-manjunatha.venkatesh@nxp.com>
-X-ClientProxiedBy: SJ0PR13CA0175.namprd13.prod.outlook.com
- (2603:10b6:a03:2c7::30) To PAXPR04MB9642.eurprd04.prod.outlook.com
- (2603:10a6:102:240::14)
+	Fri, 07 Mar 2025 09:14:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1741338849; x=1772874849;
+  h=message-id:date:mime-version:subject:to:cc:references:
+   from:in-reply-to:content-transfer-encoding;
+  bh=ieDk5hq7SLhEHdmfnZcCWG6ilsx5GR3sIgQa97SStdI=;
+  b=d7fJqgJUCX7HsTTlY3c7HLzH8XdXLz/AP7MXuR9DRMTvrm0//7DWiuRh
+   m+tQ/0guEf2fh9c/SBPZZL5LBcP2fiLCp7jZDz+bMG53pMygUjc5Zn9XE
+   4cS3v7mnogWNSDbTpHHO8kMBxX1cz0s6+BYDpXKommE9ipBtCEdU0n6Sv
+   SekpONOt8wQxMr7LNP+1pUrwx4TRYvxec66CbagANNz0kQyInzGwJvX5K
+   zzGfJALVy8jf/2LVIfBeGW+8Yc2hXHLq8Z/gR+WcSwz4ABkefknTFrhpP
+   MDu+MUIv3B9pRsqIuRWXCfVDO3Hz3m69Q9m9TYCSmY5i1qEmJMSn7FdiG
+   g==;
+X-CSE-ConnectionGUID: a6c5FecxR4mGrZDFJblPEg==
+X-CSE-MsgGUID: QbYRdU0ITzm+wr/sGSpe8g==
+X-IronPort-AV: E=McAfee;i="6700,10204,11365"; a="41635124"
+X-IronPort-AV: E=Sophos;i="6.14,228,1736841600"; 
+   d="scan'208";a="41635124"
+Received: from fmviesa008.fm.intel.com ([10.60.135.148])
+  by fmvoesa112.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 07 Mar 2025 01:14:08 -0800
+X-CSE-ConnectionGUID: 3+wgSfeqQiytOnF6rnoo0g==
+X-CSE-MsgGUID: TopRaI0CRtGSHYPM8nlKaw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.14,228,1736841600"; 
+   d="scan'208";a="119452714"
+Received: from mylly.fi.intel.com (HELO [10.237.72.59]) ([10.237.72.59])
+  by fmviesa008.fm.intel.com with ESMTP; 07 Mar 2025 01:14:07 -0800
+Message-ID: <6947fe08-f479-4692-a5d7-5b54496e4909@linux.intel.com>
+Date: Fri, 7 Mar 2025 11:14:06 +0200
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|AM8PR04MB7940:EE_
-X-MS-Office365-Filtering-Correlation-Id: df452701-4ab8-46ec-abb2-08dd5cf31e7b
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|1800799024|366016|376014|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?K124wJB6tmaSUvLc4IxSy7nWXfaUSdH3rBX+SBo3yFNc83NWZMmhpo3waMM6?=
- =?us-ascii?Q?xupG+dOPsErQI4WZxF1ph+oQEhrpKe/qbcXhmOUeJW6WZRAbnbHXDKfrqFEf?=
- =?us-ascii?Q?XPMhMLA94wYttKi9qIPETnFfMWWo8X+CwX+P/qwlJuPuAiv76NLnN3fhTY7S?=
- =?us-ascii?Q?raZ9F6u9d4nAi8hfqv6Z6IVEuumDQnrHgBVNl3ph7AQ5rslUZekgTgS6+rkQ?=
- =?us-ascii?Q?OyYTbOO24uFC6pjJAhK76HbTJ8TesGwivLWrUCs5PacVKd0ok/Ykwt2/Ile4?=
- =?us-ascii?Q?XwBqOPHRPgrueTj05Aa857ONau6HQ/iOzH6EosCNez3p3wUYYcxOjHz4H+Rb?=
- =?us-ascii?Q?RB3TRyzzhKUezRofmcAP81TQotrmZVagxck2ruWeO6acAVZaH+STXUSnq5Bt?=
- =?us-ascii?Q?d1cugEpmIpEJ56JMWjwzhGlVsKFnyd5XKj22QZv11LWTqDFeUfeLV1iUiXez?=
- =?us-ascii?Q?tlCl1YA95+8w8t9yPkW1bpZ/sULdOpmH2ysFDX2fzXWfJbaVKgvTsLVSOGLz?=
- =?us-ascii?Q?y+tZP/dlB9Qw6XBGsKBFYf74lRE6vnxe/4JOjJBiifFLG/gswPODWM1xD5aE?=
- =?us-ascii?Q?gokKWZHVQK+wXwi/E7XHhlfXM25v5370e5P6I0Cfg1R69pxDridNzkcmkOoz?=
- =?us-ascii?Q?Dc9zTMuc77sL2bVkakKAvQE32zPwaxQiXiC+6uFMOekZB9ZD9po1AOkhc96h?=
- =?us-ascii?Q?FWeLxLe116oHA707vOKv/JERjW4LieymydH6nMbs5xQRlq6hc5oD1rQScw2J?=
- =?us-ascii?Q?G2ZKRHr6LzmlzxacteuyjHDlIoQemlE9Uo0HzYnMd60+uB/T5VqjeFn2HXul?=
- =?us-ascii?Q?zhM7xg/I2Pug2Mt2w4Y+IunnL/kU6jQxuko/XytLXgD3lmtkaCFAq3OZIGyr?=
- =?us-ascii?Q?sp1y/NbH2x/gXJnraSImOISWNFrbFCO9BfarOXcuCU94HDS8mjaXQ2HAEX25?=
- =?us-ascii?Q?ckbkcgxjo4KC9FkSOdZFCyVG8R2hN2+f5yzDG5NJnmKnVTzYLbRGzpjykY9T?=
- =?us-ascii?Q?STnmW71UAWJAOwMHuMdI46udb701EpAJYhF3g5f4zE+rTnUFpZcJC76lKltN?=
- =?us-ascii?Q?hnLeTGtQGNFFmZaVJR3JL7k+PcLT0te48DokwhPnvhhoTJ0GeI3dRwRhplJh?=
- =?us-ascii?Q?FHTzF2yndeKbe0MCr4orfRQow65gIELqSb5kudQC+hCyl0wXVmwSVKSZF1P9?=
- =?us-ascii?Q?fAw1MAn6zUySrDCmlYofizKR7xIOsRemB3p2DvW32cm5a1sk8gYAqPh0AnIq?=
- =?us-ascii?Q?XDuh7HZReoeZ9X6TE2qcLGDgr9jHaX8mAvHHsab6jxRXCkkXh5fVmarZaDNA?=
- =?us-ascii?Q?NpsHGXyWbVZEy9URroiTkPU3EVsy39UN6q9OLBc8JPDOotsILZ0J5/sOLNhg?=
- =?us-ascii?Q?pbG3M8wfLJtNfvT+6fjRFI/8y7aFZGWPoPFk8/ajlt9frVQJ0g=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(1800799024)(366016)(376014)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?pKuY6QLdGRxxCLHan4bt+Y+LR/+h3Yy9zcGUvhGmh4X3auPtc4RplrRpB1aF?=
- =?us-ascii?Q?i6b1xPN1nYWiR0U/ubGtgz2YYRLnuH8HFejx+MJpcbUN98JMLeJU/OQQSAkp?=
- =?us-ascii?Q?3F94z1u6nsUMA6ei+LhbltSn8flE9HFTRXjPkqkUGcYR/lpupMfgw1v2oMrA?=
- =?us-ascii?Q?2obs3Loif2cQFkJ47k1FqE3MpJnAE3ileujYgV+i5yDFCMlbtdlPWNeoGsCQ?=
- =?us-ascii?Q?i0il98jnlcDLAyYUWSCuzAz0zHEqA2jEzOwSlBOPkSWKUX5Kv9mTHVTTOxCh?=
- =?us-ascii?Q?8/ibBO5/0s7IY/5JGDIEcJGEOd6WCTiEO2RUbpZ+oByeBsaf5Hp6SZmhWpUY?=
- =?us-ascii?Q?NbCQpGmc1Br9Z16mLdpdJ0uG1nIIf94s+GSU5gO/hBOElsthYMYqxTih/gFp?=
- =?us-ascii?Q?Jg/Nlm0iICtCbl9BOSxAFasdVyKWVGtgtjfStZbgTgkW1IuUuD1FPL9GBgYV?=
- =?us-ascii?Q?BnoiHaWgQ63jd9USOxt7KkeYWSFk7pRSNDMLEK226H9+2mp+HTpUmSBYfxWq?=
- =?us-ascii?Q?45kci1e/hcdhSyttVx2WheP1E78T6qZBp1t4K+3xB4qQGZtweqFJmGuJoYQX?=
- =?us-ascii?Q?867nqw1o8hhjw32rCdx/zXbX6CjoRKhSVAZ+oKGCn/3Yj0x4BwJeJS+10H8X?=
- =?us-ascii?Q?kG78WqJANcQbHf9QYDEjwtaexV5WPZ0fH34n9GeyKDJNOUd78ToIU2QMUysQ?=
- =?us-ascii?Q?47FILpIl3gXT7F7R7I9Lb1qtjOTYUKKOm+zDwhNuMQkzIjUf2TMR8xgZvoJD?=
- =?us-ascii?Q?qDavHQEEYlpCmEFN3xr7HaSQjsEOzlkyrCdZ9J6VSwbcNM/3TRCHowVnhskh?=
- =?us-ascii?Q?j9fwYolx1WZAIipW/3/DEoknXW3XNGBXwc+iazEqMg0M0Pl5EkjbUuB3boV+?=
- =?us-ascii?Q?dKW0/x/gDI1qvjSw27HolVOKuNOHeg4TqiVp7/yc1YzCkVWZRHjSit9ZMNsw?=
- =?us-ascii?Q?dAUuX5GQhqRVm2vTYdiFJihjpqf+DmJpMz6NmVPixPEsazy28CgSyP3cx8Y+?=
- =?us-ascii?Q?7nLaFQudobWSPb+YgLIzi+qp63yX5s+1o00jEnBJ5I5rh6ajjB5SSVCdygKk?=
- =?us-ascii?Q?Edc1QQtC6DeqJsPh55DCfzdSTX9JVhk4b658HMdqanhSvIyCBtDSMOqo5edl?=
- =?us-ascii?Q?Ky2kshX23Gycv3GVpNDkTMeilCGPMIGkIJ2/iCgwuunF1mE73pIdVliBIUgD?=
- =?us-ascii?Q?Pbnt6D1AyCnwx6E/Y6m2G7ry8jp//FaJSaqiCwdCUcDasATzBFErYQSLuULz?=
- =?us-ascii?Q?cCoP+9oUCnsIF5Oc/Dm5AK5FE7+VP+2ki2ncUBgqM8NIluUCVbVxpr7PZXto?=
- =?us-ascii?Q?RLdy42KBpSTYYVG8rPeGmHvEp2yRdwdvbp2vPwKOHm7qy4QN8T8LuqC2eIk+?=
- =?us-ascii?Q?9cL8/WHlDgFE6J2HunvwXUFB29t7IY86TqA5MUgvWIXYdn99zhqhIL5HXf+p?=
- =?us-ascii?Q?gEA5nxlxdXXxgfN2DJ+9Ybs2v5VRWt2FdEvWAsoEiSO74J28Yy2J4vyE9L0B?=
- =?us-ascii?Q?gpuGc7BGnr8qpY+MtjLOATWHOpB1qyh8CMP5EHjNwKCaHLzpFU4n3+twdXQU?=
- =?us-ascii?Q?Y0jtpHzV0b/ZC0Mcb4eSIEdrVGS9qySWayVfiToU?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: df452701-4ab8-46ec-abb2-08dd5cf31e7b
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Mar 2025 21:09:01.7708
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: NyZ597HLMsj3Rnz5hMKz2H2iLD1C8c6hCvvhi9U8CLQxAmbiNqf4mtteybeJnMgV3GUvwf0bZZoW0Vuqbw4ylQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM8PR04MB7940
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/4] i3c: mipi-i3c-hci: Allow only relevant INTR_STATUS
+ bit updates
+To: Frank Li <Frank.li@nxp.com>
+Cc: linux-i3c@lists.infradead.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>
+References: <20250228141802.1344453-1-jarkko.nikula@linux.intel.com>
+ <Z8HduKx0dzRAqRev@lizhi-Precision-Tower-5810>
+Content-Language: en-US
+From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+In-Reply-To: <Z8HduKx0dzRAqRev@lizhi-Precision-Tower-5810>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250306_130905_337426_5670D2DB 
-X-CRM114-Status: GOOD (  17.27  )
+X-CRM114-CacheID: sfid-20250307_011409_495019_871ACFEA 
+X-CRM114-Status: GOOD (  21.97  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -152,63 +82,87 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Mar 06, 2025 at 01:13:03PM +0530, Manjunatha Venkatesh wrote:
-> As part of I3C driver probing sequence for particular device instance,
-> While adding to queue it is trying to access ibi variable of dev which is
-> not yet initialized causing "Unable to handle kernel read from unreadable
-> memory" resulting in kernel panic.
->
-> Signed-off-by: Manjunatha Venkatesh <manjunatha.venkatesh@nxp.com>
-> ---
+Hi Frank
 
-You sent it 3 times.
+Sorry the delay, somehow I missed your comments to this patch :-|
 
-Do you try my suggestion at v1?
-https://lore.kernel.org/linux-i3c/Z8m%2FzE9JvyiNq1HG@lizhi-Precision-Tower-5810/T/#t
+On 2/28/25 6:00 PM, Frank Li wrote:
+> On Fri, Feb 28, 2025 at 04:17:59PM +0200, Jarkko Nikula wrote:
+>> Since MIPI I3C HCI specification version v0.8 INTR_STATUS bits 9:0 are
+>> reserved. Version v0.5 has bits 9 and 5:0 in use but not handled by the
+>> current driver code and not needed in DMA transfers.
+>>
+>> PIO transfers with v0.5 would require changes to both
+>> core.c: i3c_hci_irq_handler() and pio.c: hci_pio_irq_handler() though.
+> 
+> If reasonable, why not change core.c and pio.c?
+> 
+I had two reasons for that. The v0.5 compatible IP I use in testing 
+doesn't support PIO transfers and thus didn't want to add code that is 
+not tested.
 
-Before close above discussion, please not sent new version.
+Then I believe perhaps nobody will release HW with this old IP and thus 
+it would be dead code anyway.
 
-Still missied fix tag and cc stable.
+>>
+>> For these reasons don't enable signal updates from INTR_STATUS bits 9:0.
+>>
+>> This change is a no-op for specification versions v0.8 and beyond but
+>> gets rid of "unexpected INTR_STATUS" errors if somebody (read me) wants
+>> to run code on old v0.5 IP version.
+> 
+> I think, simple said
+> "Get rid of "unexpected INTR_STATUS" errors at old v0.5 IP version and
+> no-op for version above v0.8."
+> 
+Makes sense, will change.
 
-Frank
+>>
+>> Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+>> ---
+>>   drivers/i3c/master/mipi-i3c-hci/core.c | 5 +++--
+>>   1 file changed, 3 insertions(+), 2 deletions(-)
+>>
+>> diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+>> index a71226d7ca59..e139d7e4d252 100644
+>> --- a/drivers/i3c/master/mipi-i3c-hci/core.c
+>> +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+>> @@ -699,9 +699,10 @@ static int i3c_hci_init(struct i3c_hci *hci)
+>>   	if (ret)
+>>   		return -ENXIO;
+>>
+>> -	/* Disable all interrupts and allow all signal updates */
+>> +	/* Disable all interrupts */
+>>   	reg_write(INTR_SIGNAL_ENABLE, 0x0);
+>> -	reg_write(INTR_STATUS_ENABLE, 0xffffffff);
+>> +	/* Allow signal updates relevant to IP versions 0.8 and beyond */
+>> +	reg_write(INTR_STATUS_ENABLE, GENMASK(31, 10));
+> 
+> Generally, just enable needed IRQ in driver. Define some BITS for
+> difference type IRQs.
+> 
+I was thinking too these need changes too but decided those are better 
+to do in another patch(es).
 
-> Changes since v1:
->   - Patch tittle updated as per the review feedback
->
->  drivers/i3c/master/svc-i3c-master.c | 7 +++++--
->  1 file changed, 5 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-> index d6057d8c7dec..98c4d2e5cd8d 100644
-> --- a/drivers/i3c/master/svc-i3c-master.c
-> +++ b/drivers/i3c/master/svc-i3c-master.c
-> @@ -534,8 +534,11 @@ static void svc_i3c_master_ibi_work(struct work_struct *work)
->  	switch (ibitype) {
->  	case SVC_I3C_MSTATUS_IBITYPE_IBI:
->  		if (dev) {
-> -			i3c_master_queue_ibi(dev, master->ibi.tbq_slot);
-> -			master->ibi.tbq_slot = NULL;
-> +			data = i3c_dev_get_master_data(dev);
-> +			if (master->ibi.slots[data->ibi]) {
-> +				i3c_master_queue_ibi(dev, master->ibi.tbq_slot);
-> +				master->ibi.tbq_slot = NULL;
-> +			}
->  		}
->  		svc_i3c_master_emit_stop(master);
->  		break;
-> --
-> 2.46.1
->
->
-> --
-> linux-i3c mailing list
-> linux-i3c@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-i3c
+Currently all of these generic interrupt sources are disabled so they 
+won't generate interrupt but their status will be printed when handler 
+is called due to DMA/PIO interrupt. Known bits 10 INTR_HC_INTERNAL_ERR 
+and 11 INTR_HC_SEQ_CANCEL will print their message and unknowns just 
+"unexpected INTR_STATUS" with hex of unhandled status bits.
+
+Bits 12:14 can be defined since v1.2 describes them. I'm open for ideas 
+does it make more sense to allow signal updates only from known sources 
+or keep all bits enabled so that in future IP versions "unexpected 
+INTR_STATUS" can be seen from user reports if something odd happens and 
+driver is not yet handling that.
+
+Another change is should known generic interrupt sources be enabled so 
+handler will be called immediately when that condition occurs.
 
 -- 
 linux-i3c mailing list
