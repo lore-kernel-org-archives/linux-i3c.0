@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 87B31C35FFA
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D3B2C35FF9
 	for <linux-i3c@archiver.kernel.org>; Mon, 17 Mar 2025 09:54:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,44 +12,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A137VV8u0/xhSPANlNOgw4m4Lv1IGuhkx2ZhOYbknp4=; b=0yRE+EQCb/29l9
-	dngv5Enx1TEy9JeoC3B8jl8Q0pTK1Zfaf//lWB/ZpJz/rodRzqAulUpvv/56ZW45M9njkq0xRkIxl
-	Rpu3QjdWIaYfMzsVBjcUGS1dPqFSiYXn+w3ZqDUvzGFJ7wksSECVXr9k0zkla65BSMrkWpEBOk9nG
-	WExqyyAJaXDqKZADtuqEgz3tz9BrfByOyoqhtnr3HqDFmnlSsBjzylqb5CNvuLfslKa4oP6dpUZT2
-	uyl0136gzEgZx1j14nJKOj1h9QbX9gZhrs97aeIIHxnu11zrbbO+4Aneegf2GLa2orBi29RPOwEfO
-	opuMfNNYpjSR+dn+H3CQ==;
+	List-Owner; bh=pCVfgPF2TXWo1FtQJu54mi1VhD2gK3izpUwxEWeF9O8=; b=zpT61KkxZyG7ln
+	BkfK3a1Q2hai1GEG/7ZJtBtUb95hOZEb/NRXFRWKXdU4efCiX+CqxsCUCC+QWMVJNfxZlhGtqTum0
+	GXkYvvH5KgwdbGCni2jWdnqwQjV+FO+HN8y6MMQ3gXa+pcUfFnWD423mKOf7VrE0d9brNv3fivDvL
+	oKLKSCaIa+OJrhImYL9+MAvqnDW7YCjsPBRAaRpzM8c3XGNmITJgjQYmWlzYlyo39AZI5ZjUKDY3k
+	rN/Qsaqc9WkcuB7Uixtr2fp9Td/It9cHIT8LvaTi9gsH5L/qQpQiWsWY4PwKU4aAYpDdI2cC1HNQW
+	290d9d4QK+L3JjCbLpRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tu7Ak-000000020iy-0g1u;
-	Mon, 17 Mar 2025 09:54:14 +0000
-Received: from mail-northeuropeazlp170120003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
+	id 1tu7Aj-000000020ir-3bwW;
+	Mon, 17 Mar 2025 09:54:13 +0000
+Received: from mail-westeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c201::3] helo=AS8PR04CU009.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tsav5-0000000A6J1-0gwk
+	id 1tsajh-0000000A5PA-05bu
 	for linux-i3c@lists.infradead.org;
-	Thu, 13 Mar 2025 05:15:48 +0000
+	Thu, 13 Mar 2025 05:04:02 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=sqFEmyeffeaPLTf8CqB6mubwE8KrB2oO0vc//zc+f7SEKGCcxg/R1c7w4W+7KxC6WioOkRHeMN95nlRIfR6BAxQrLAaB8oFgklpoLFbOPj0x9pcXMrVlMfb5l+ToM1v+B7zP3wV/2mMJhFlDmmA31Q5PWwejIBPY/n8fV98ip+3o4EN8UiK8WuFpCx95jmmMpme4aB0g0M9lD7yiRWYxeB6/1EdhJvq9FW+vvkj0chdrRaiuczyqJLJuV4ck3mLdTvN/d8x7rcD8dnbtgweR8npe76n0wfoFPQwYywMA8aRJ7Www8v2gycEHngcRn1nLkhHBvQnFTbZbQEaK34qzGA==
+ b=thephJuQtFhP2OcUZ2eTXyhcj4ph1zqIN2lmhxtJ8znoS+hQQ+v5LF/Morhr2AZceQAH5KKDG4r294tiUUYLC7fGawgv8W1MwBS2n87IM/Ld0CV18kEhx9CYLCGsB7V8xmJGdaMGhvTJXJp1Rcvv8SLoMeSyoPAABejMQVrouximQ/uLMRthhbY8shm25b9WAoeiu2mEwsjqe9a5z6WdbXTRpn3Qq3nmZ76JQ/XvCVu2dNdt4djcdV2Yp125V5Uo2lt3yJLdCRxTQRSbugr6zVzoe3s9gMza03jwJEnFmK+JeJb+Hv+Z2ZHoCTdEo9cCeBcSUmb42rTnLJEFqYJG9Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=XMwwRTAOhhSg3Gli5C4OgEfNsnF9KmfhA6go8M50MNw=;
- b=ymks1UahLCBCBdmNRWODS5I6ixLpDflkMPxzSDsnlXNpx+2HGxWUIgDvRYQjf1GF+fAKhzHC5/DfO48rxuv972KepPDMtnho4DwfTu6MR2MwXQIPgfFc1qDTi9ZejJ9MXZQFysjJcrZm8uCaD37jF4gr1Jfj7rBscXQYIfdxLAxspShBFRlLrOP1YWsk7J5YVDlceqHBRjFNXiNCYm44QJhYn7GRGHe719nz+JxSoepIT+ZOzBZ7+e58oa3JuRnmZltYk/AYjX4tyztEY+WiLmjaWA09FnprMnh+Zr1hCXGZ80HnpG70VaWRMsIGd9QVmMfQQF6hYAY/EIPmILzFkw==
+ bh=qgXdiMR+H9/I9dXF1YXDsTEMfl5XDowQGVC/WG0F8rs=;
+ b=KlwlusYbvbU5lFPI44f+ZDeiaHRGUhRIugelpjprwphjGIYh3/mQfbxOGq1IGjRSr1cmEAIzIm3c5up3wYRL9gH3jOHMu234fNmuTdSyusOKet4c0vnYpPRG63eunBM5Rn92bfQQ1rpjh7SThgSIH9+iGtgwjZ33MAGBczQsWhXR5SKMnH9jepit8LsgXqWIDna08xsjv33/MNxtaHHi3UtWurFsfs5kd0DGP8l84HkP0RzQrt60iYCcn2uD+BxnZgmjmKEkBOLBTjxdFrUAo1zdkPyktmNztSOVtrSOnU5hasmS0WFOCrUIBG37vOuR07euyXmg01LtpaxAbHaMdw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=XMwwRTAOhhSg3Gli5C4OgEfNsnF9KmfhA6go8M50MNw=;
- b=CEtm3o4XeAAa4jaM/cMbk/XMUilmZBd2jBF4lT0uaPorPcChOicuw3zaSgPyXRvRYPkrmac68aEPLfUzRbvz5M744WqWEWazBze/dFFbYovibcRtPUCd70h00RfxvmThJPde205ncV6WZCOrmRxP76y8pdfycdAnIB9UgKz/3f9kBUpdiOkRPEAfkVGHISr16uYFFSH5DbW/oarom4obIKuO2cA07jMlBIJcXp9yz7/yKoMFE3cnZDDe85jdY3IRzI6nsSWne/Nxc24tC5vifCCkxpA0oGJt9Cic+Ukv7PU5f6rYQ7SVW4qzPtnvTARGOLduGHGgPnss/4zttIYzvw==
+ bh=qgXdiMR+H9/I9dXF1YXDsTEMfl5XDowQGVC/WG0F8rs=;
+ b=jIFZ5cqMKPNRN2aBrFVEl6uHszeR/9P40p/74gt/ExZ64HsoNo8agp+wGnfXHxwie3btxu2mgEUsSz804bR3aHJ/9qEKohyqCm+FsDYD6SMX4vUbDvK3sYBZjkYM1uqDF/o7J4Ekm7RvvHgV11nFRHVt+m8RysLQKU1LQ4TFcr/TIo6vSN89A3bu0IOYVp8sa6QUrI41QEh7By+AfMH/b0BKLNl1+gx21RQzLxuKEECJeirYf7vdAintDj6PcvJj/HJ2Vja5n/aYrnDmkFB5gYpOyDhX61ZsKJ4RXiIF7f/01j/M89Daxcbui67AF9bPdrJ/mjgk22iPW1DqohsV+w==
 Received: from VI1PR04MB10049.eurprd04.prod.outlook.com
- (2603:10a6:800:1db::17) by DB9PR04MB8300.eurprd04.prod.outlook.com
- (2603:10a6:10:243::22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8534.25; Thu, 13 Mar
- 2025 05:15:42 +0000
+ (2603:10a6:800:1db::17) by PAXPR04MB8407.eurprd04.prod.outlook.com
+ (2603:10a6:102:1c7::21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8511.28; Thu, 13 Mar
+ 2025 05:03:55 +0000
 Received: from VI1PR04MB10049.eurprd04.prod.outlook.com
  ([fe80::d09c:4c82:e871:17ee]) by VI1PR04MB10049.eurprd04.prod.outlook.com
  ([fe80::d09c:4c82:e871:17ee%4]) with mapi id 15.20.8511.026; Thu, 13 Mar 2025
- 05:15:42 +0000
+ 05:03:54 +0000
 From: Manjunatha Venkatesh <manjunatha.venkatesh@nxp.com>
 To: Frank Li <frank.li@nxp.com>
 CC: "miquel.raynal@bootlin.com" <miquel.raynal@bootlin.com>,
@@ -57,18 +57,19 @@ CC: "miquel.raynal@bootlin.com" <miquel.raynal@bootlin.com>,
 	"alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
 	"linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
 	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"stable@vger.kernel.org" <stable@vger.kernel.org>, "rvmanjumce@gmail.com"
-	<rvmanjumce@gmail.com>
-Subject: RE: [PATCH v4] svc-i3c-master: Fix read from unreadable memory at
- svc_i3c_master_ibi_work()
-Thread-Topic: [PATCH v4] svc-i3c-master: Fix read from unreadable memory at
- svc_i3c_master_ibi_work()
-Thread-Index: AQHbk1Y4SkbCrYt+yki4ZS7j1qEGurNv0p4AgACyIrA=
-Date: Thu, 13 Mar 2025 05:15:42 +0000
-Message-ID: <VI1PR04MB10049644F3287C378E9CC75EF8FD32@VI1PR04MB10049.eurprd04.prod.outlook.com>
-References: <20250312135356.2318667-1-manjunatha.venkatesh@nxp.com>
- <Z9HSdtD1CkdCpGu9@lizhi-Precision-Tower-5810>
-In-Reply-To: <Z9HSdtD1CkdCpGu9@lizhi-Precision-Tower-5810>
+	"rvmanjumce@gmail.com" <rvmanjumce@gmail.com>
+Subject: RE: [PATCH] driver: svc-i3c-master: Kernel panic issue fixed
+Thread-Topic: [PATCH] driver: svc-i3c-master: Kernel panic issue fixed
+Thread-Index: AQHbhmrgLz9oTBo3ckmGrUVlGQqbF7Nc48qAgAjnVUCAAIGuAIABWKqwgAA17oCACMEXYA==
+Date: Thu, 13 Mar 2025 05:03:54 +0000
+Message-ID: <VI1PR04MB10049C80F0A1990551F97E25C8FD32@VI1PR04MB10049.eurprd04.prod.outlook.com>
+References: <20250224031754.1001101-1-manjunatha.venkatesh@nxp.com>
+ <Z8Ha+T9Vc8Bhz25A@lizhi-Precision-Tower-5810>
+ <VI1PR04MB100498A9CFBB48DF250CC73B98FCA2@VI1PR04MB10049.eurprd04.prod.outlook.com>
+ <Z8m/zE9JvyiNq1HG@lizhi-Precision-Tower-5810>
+ <VI1PR04MB10049E260B10FD83E57B2DCB78FD52@VI1PR04MB10049.eurprd04.prod.outlook.com>
+ <Z8sOKZSjHeeP2mY5@lizhi-Precision-Tower-5810>
+In-Reply-To: <Z8sOKZSjHeeP2mY5@lizhi-Precision-Tower-5810>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -76,81 +77,81 @@ X-MS-TNEF-Correlator:
 authentication-results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: VI1PR04MB10049:EE_|DB9PR04MB8300:EE_
-x-ms-office365-filtering-correlation-id: 640d67a3-5b69-40c7-6290-08dd61ee1a36
+x-ms-traffictypediagnostic: VI1PR04MB10049:EE_|PAXPR04MB8407:EE_
+x-ms-office365-filtering-correlation-id: b035f0a2-8e1e-4288-5065-08dd61ec745e
 x-ms-exchange-senderadcheck: 1
 x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|376014|366016|1800799024|38070700018|7053199007;
-x-microsoft-antispam-message-info: =?us-ascii?Q?ZEVMBDqCNRnd9DpsmgScVksixlRfm0gqb5g3Rxn3/kwyJTR2/o0Io/cy+4H7?=
- =?us-ascii?Q?G+MG7qBRXrRNN2A/MoqkVg1ZoOXPY3pF853s6CU4YeZ0DLEdL1f8ibi08xD0?=
- =?us-ascii?Q?J12vXAmM13/H3TLhdbnoJaBhk77lp+m1z1yFRxRSzVTNx+J21/0okSYroV6G?=
- =?us-ascii?Q?7DbIyCqvdYDz6CC5XixkMwBl8gbmkadtHhB3Vxfqxj1sJ6kNR6nBpsxqKw80?=
- =?us-ascii?Q?G7vRAp7D/T+fNOGU/6N9lTAJy3WBGneA2WCjGZT/LhKLgKSCx5I/JzHxbvJL?=
- =?us-ascii?Q?d7EOGMboYkVWoVeIzDVmce59oIgWA2yR1MGf7ZYh3ppFlj/wRXBKbafXabgN?=
- =?us-ascii?Q?d3Dapfr3kmkQOVg0B7q3nyht0QMwlobiwqg1BNE+9/Fy6K/c39C87yVmeBcp?=
- =?us-ascii?Q?Iq13Zvyw/UVA07Wx8wH8BNdBkU0CZulx6oBk1Rnhw6J+dKHwPQ0L1Uaal/Aw?=
- =?us-ascii?Q?ULgaBzN+RCa/9ErK82zP78di5Ve2KQYWU+PAUZN5f09lSAtbNd26iOW1oq4V?=
- =?us-ascii?Q?VGuE3+tQXDux9DlZb92mXkXOOYOb4YemL19m85kT9h0Q+hoXXNW4x6dklIFI?=
- =?us-ascii?Q?H6LxGo0NRbDE/cMKI2KB9a/gUPbvxFZXoPXHdWGrlcweskj/OIwC4Kd44hVM?=
- =?us-ascii?Q?KlahhOvFLL/KwiusdfTcqNRwmcM/bS+zqTzCdcXcnvp3q5jAlQVKL08PRXMC?=
- =?us-ascii?Q?FcL4QjxKuUCvD8vjpKpIbxSXpUJEjcnH6Y2XIxPHyrF8OznQAMZ1VyFuruFE?=
- =?us-ascii?Q?wHhkR/qtVoNBPt2EZg8gaiN02SxRUhQBs8ZJ+EfdTRyYqAnS5rrdcE3YUKJW?=
- =?us-ascii?Q?mqhUZ/t8DFI+t+wS2guNFdBeb607ZiEzPzED77s74Ht9Gch1LryPXL8hNaAD?=
- =?us-ascii?Q?YlYrqrnynMSuU5xsQBUPsRy7OaFADObllPdYeg3uA46phuaUNrx3VGUBQkK/?=
- =?us-ascii?Q?v8g28GU3JeqvcG6WxwkEmHkOHv7/17Vyr1EMWiN9tVaiptEtWf44DvFj4YXn?=
- =?us-ascii?Q?wn2z+JD/Y/Xyi0T1hLfISnFIzI7o59oIwp+qMo6rxh8T5p1KgZJl9deLq61x?=
- =?us-ascii?Q?L46IcokIgumuenwJtKbgCLAvk4L0pcx1MUBf5OqLiPotqiKPmH59NzPmiS1c?=
- =?us-ascii?Q?+GPtpiezUkviOEzKsmf3JJ7ZW9XENLEJZ0JIUGblKD2OLj6INgLXQBEHadyr?=
- =?us-ascii?Q?GTRQg5LVKWganT4P9K2msv5ij4Zj1MKHHUVeBbbWcNwV0w9yKYcEter5ogTV?=
- =?us-ascii?Q?Zbxnjm8tAyHFOL4CTRq/DasY0Hw7ute70LIxZnDqwqPacx9RPd/b/0w1SGUj?=
- =?us-ascii?Q?caqbGZqIVBm+kaQlrIiAiOkbNbzqLhZantQbd67iMYN4AMm3A841C2AyrLed?=
- =?us-ascii?Q?I4TEGeR18KNbPXby0uK+ijMNjT+xHF6WjRvCS0kMFYcCYee+LPqCaGbcnb58?=
- =?us-ascii?Q?RG5wI1HlRHOmLSIGiOz/+VEKRI+RXysS?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:VI1PR04MB10049.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(1800799024)(38070700018)(7053199007);DIR:OUT;SFP:1101;
+x-microsoft-antispam: BCL:0;ARA:13230040|376014|366016|1800799024|7053199007|38070700018;
+x-microsoft-antispam-message-info: =?us-ascii?Q?3R9BpkFJj6BXHA51IXM54mR817Y4BtD1V1JLZ1bps8+KoNZNIhrOKEGWEDCj?=
+ =?us-ascii?Q?EoT32Q1MneJ46UEc8GX96tcFwRUSkctfOMyV6YOL8+/Md/387SMdIi7Gjl9b?=
+ =?us-ascii?Q?0HIuuj1spbdkOvaE11x5/FF941rKKzNuiNTGlzHCJxyYcyxFzfN6LFFpBiKV?=
+ =?us-ascii?Q?KOP5S/gbwa7xLU1BwAdJ98j3KW3OXZcohLmxu5mxfO8hSHb2McRIbkp/tFRj?=
+ =?us-ascii?Q?KCTWissGAHXaO+0uP2oIM1DIbrFfOSGCWFN9qfxom6DjDHYkdw14U+7DPxMm?=
+ =?us-ascii?Q?bt7VJP4bS12ECggVIInMf4wGZrk40A6gQwOxl82amrzoGhFE08IY8oD8ycGa?=
+ =?us-ascii?Q?tpykMrOZccOqAb1U/E8kTLvwh7wRt5atQTbSgcXxAhGqBfY+JA1VEzRY0VZQ?=
+ =?us-ascii?Q?IM9C6A+cpkKqGH5B3qHjav6HCcknl//wXHz/0Y1LUKga3EeCg9LLI1ER9RiJ?=
+ =?us-ascii?Q?pwvlB1inDqlKR6wm0B0T4wDp7FUWfSnfGAUF/R71T10SttEy3OfVYWsqLF29?=
+ =?us-ascii?Q?A+XjEOtoLVKdVwqxcPCAoYaAQWtbBDZOMAO3DtqRZ/Yk0GNuxm+PFudLWlSU?=
+ =?us-ascii?Q?AS4yH4g/86+GtU0uTYlCb0C8QJceeu4oEA/eudFa9fd4k7hM9AVSsZwgiBqW?=
+ =?us-ascii?Q?kqJKi/+nz+BL1FGahFgEsaX6O3wwKYNKqOEo73Wk/Z0B9Ud/SSvUPKwEBAj6?=
+ =?us-ascii?Q?sx6sRdmqbtj4LzIti9zh1BE/emkogOoVgRy2aUckHy26ZpWU4u5Gnqb782HZ?=
+ =?us-ascii?Q?Y83gIp6+/10Q/gkb50yudxH9gMbyB9pabgyVbtrabOLrxhYdOyVtQmHBjdXP?=
+ =?us-ascii?Q?WouEGa/Z53nKP/ujtmV7NPp/Bbjt9FUH6L55fxr/r7ow8oRU2uHyYiyzc7K1?=
+ =?us-ascii?Q?560awZtIMGbZj8C552Bs1yRARfDfL4SZ2YQZxJ/NxFkEtaOqB/1/W3Baifc/?=
+ =?us-ascii?Q?yIoDnXPsB6hUvfbdngPWY0kv3uLAlBQMTWJFCrEqOkrn5YSF6V5RfHTKmR0A?=
+ =?us-ascii?Q?A6xuIIuujTOmIIQTFymyUbhP5zDCNRE7+hvRiha30lnI+dzSHiAqnnt2T1y0?=
+ =?us-ascii?Q?45d9PVYkqsYAnsEM8+7jO2TZEM9lAChmmrVlHoDgskVyjb3KBDMsQRRnmmsW?=
+ =?us-ascii?Q?oC9xERFGhH4aYoqOMor4Rd5VJNHPADlFFF3ocLORFtTkOLD2GN78IoqcRmEF?=
+ =?us-ascii?Q?NYT5HlTcK0RDxdqv9hjSykpiiY1dss4jelOVp6txOGzk5KQWZL0NkfQjGZTd?=
+ =?us-ascii?Q?OYKcTQpLAe7VIb16jD//RSCEEtv5uUnwolGbu3jCavxsQJSNHlfaUnQZjWJw?=
+ =?us-ascii?Q?wxZKr0z02fuGMls9sFYrm3Gek8/9A7XsNVCafU8aIFdpV7zNoh9K8FbsTTNI?=
+ =?us-ascii?Q?uyNfs1X2KJiF4rpUCDoUjHjNcBnkzMOKnxvylzDBYb3g+1DASjYk1ufaGTO1?=
+ =?us-ascii?Q?PzoHb/VA99COQSAfn935raFmZGqlYOZj?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:VI1PR04MB10049.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(1800799024)(7053199007)(38070700018);DIR:OUT;SFP:1101;
 x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?qT+PyZqhLr1b/Rmbc3t2HJbLj2BZ/BLCURZ4Mlbtm8nCQlbQmrPpPqdzGcVV?=
- =?us-ascii?Q?X3NeI9kMXRz7ocirGTaizkVzOSjwGQD2q++t5gOJmvtLu16NwVlrdC2gFybp?=
- =?us-ascii?Q?TVfO0gKxyMwMvpmHBz+O4HC0AkOsVemkwIl29NfCMZ/+we3lK7PXOXaSpC0A?=
- =?us-ascii?Q?U7mxzb6xJVs3LbgE2pKjnmyEMhpv15vPtFH8hT9g3vF860UQRTBiy7qsAAVE?=
- =?us-ascii?Q?S0NSGdqi4aDjgmpZmhRsmEnd9WqgRo/7AxINtONVBXD+llVBif7VTK7RLVjE?=
- =?us-ascii?Q?mfeY6LO0iLlfZkfeZO/fRH+TAsxIJeQCpQQZOJMAZiYDhjnak7n+R6Fdqz//?=
- =?us-ascii?Q?HU2+2OJ2NT4HYSbKiRKBpzcyPjlMbJBezYu/FblSTbn5UoI+qaVVTm6CXqn4?=
- =?us-ascii?Q?qqTzlh3VW7/y5zxTD6BT92A4dRD4nKTHpSrcTirmKsaQSil5txauI81Ddr06?=
- =?us-ascii?Q?40i6gUy/1m6AoTJQx43uNbWhyHSLGh10FzzC1HMoy6Ko1hdxWdAomzmQ902L?=
- =?us-ascii?Q?GiCiLkDnLfHStpfYiDLG/TJfZiC5uY14INhz0XpqcRttNfIpRkrMHmILYyKK?=
- =?us-ascii?Q?1ORNurMG5vqdAouWnNrWNe4t8pht/B50yqiPIr9yYwhGS3xa99ZYHSGeWxNc?=
- =?us-ascii?Q?nIEkiRmJhQLSL5rpTWTJEb/I81UL9vkHHE8cjNFIBcMQM78Z50rbbmnl4ESm?=
- =?us-ascii?Q?8GQje6yV/R36sgKTR0V7zStUTcG39ZbamnY74Op4FJzWoHSR+OU6EPb6oT30?=
- =?us-ascii?Q?ye/vdcd0FoXKcrRLZzhA/wcfn/omxGYxT77HumgWMZGCdliyDmK53y1St4eE?=
- =?us-ascii?Q?trgBT6behSBrpWRtF1j4tXZIlRyJFkYKSBI50dYdhJnbrdA6au1slQHfewoG?=
- =?us-ascii?Q?jummkyYO2yIYQwXPn1CcSLSu2JM9RGOoIALok0etFdltuGXTkONtGHdzEj4d?=
- =?us-ascii?Q?4V/QzCCg/tCumurxL+lOf3hMHoTH2M80hVpkUP7nnycVdFAWMpy81rRP3CiK?=
- =?us-ascii?Q?FR6RoIqRJnFKv+vDbKQfu3V1CiVoFALbPnFzG4poVTKL4g/suuO4yqtcVmCj?=
- =?us-ascii?Q?LiPqdMS5Gw6Idrq3Q8JJjDWrmZ1S9QkumHxl78H5hPQmN5OhUc+botNP7zy3?=
- =?us-ascii?Q?la6o6bfmknhoKXFsY4AuXR8xTqjbDHErTRinF7ZiB+GvFQ8ejdbi1EcFT/Bo?=
- =?us-ascii?Q?bfxXnEC0WeY0S2azdQLIPFG3Zz1BRDQSCInxRT5v8jLiUjKTJkAmPV4HElNd?=
- =?us-ascii?Q?SWbCLMyBd+mIevQ85VTArKiMISRLNn7oqB2g1AcyR4DGanUNVreWTxa9ca+/?=
- =?us-ascii?Q?klx+uXi6NauvCJylqYbDGsJ2CqOFCl9BpNEBJJIxOwcwadps/yn/1jrZKtIG?=
- =?us-ascii?Q?iTfNz5MYndmgdIKgyIZXGlkO6VCphsPBA3mtW6B5bl/PmAx+IyiaJDX4mtz5?=
- =?us-ascii?Q?wxkB0TbxwcHGZDWepnWDBYrx4rN6Qi6UkXOU8P7A7HU30Scl1gvm39BGpS07?=
- =?us-ascii?Q?Ei6Q5BzRkCSm9VjPyBTw/zLFqSkyqmKxbyYsTH5iHal/jnVlhmDXxq/gB06e?=
- =?us-ascii?Q?8aUSGxn2SxQ9WkhGHpL/M+NP4lxmuO6BPr6jalKfv8FC6CKSNHNPGpPg9JE3?=
- =?us-ascii?Q?Lg=3D=3D?=
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?4qK0aqsJ1QPBhYnzcks36uH5sGfQVUJcFiFPf8bngb8rodq+837xwtYh/8Ys?=
+ =?us-ascii?Q?GlfMjgdVo3Q/ISZFe2va80n/TEbuPrGiNPze8ijNLkI2YeGp8utOR1DmQpiO?=
+ =?us-ascii?Q?qMWeNjMMhBdRz19F4FQ/EniV6D/7iRudvLwZB7BVBddAsr4IORZH9vM6vODA?=
+ =?us-ascii?Q?aGt9vwqblK9jkSWyTzW5S2KIBV3BFj29Jd3JwXgJ/IK6G7MJqW0ytcYag7rE?=
+ =?us-ascii?Q?SpQUbT0Shv6gt6sru83yJtvlWHUu09V3c2awZG4WiIrravhKogZvzVi4tXr9?=
+ =?us-ascii?Q?eX+ZBZXv2taxikKP+ZL+nGeDUD9Qjo97XhlRqo/ZWrljdQM8EroJgD8Ihd+L?=
+ =?us-ascii?Q?Jw1CS6mu92GSFORZ8a8qojFAKT43OR6r9JgasqmsUteKlYlB/329vkfIXxcu?=
+ =?us-ascii?Q?HQnpgMAQjsUWyg2do3Pjt1MV48cHXrR2Gdd8w1PCkyWEUuwtY0QOReXBkLhC?=
+ =?us-ascii?Q?UReIOjyu40cWp066EUQm55ADWPDmwv0gERdprFm9dHaqbfI3Pcf3X3ogmIAN?=
+ =?us-ascii?Q?P/BclV3G/JC6hAkvO0lN0yV11oXUl2h5Im57I8ROtpo1DzDilMsdGHAoFSsm?=
+ =?us-ascii?Q?zV0ejq0lmu+VXBDmIL1730XL/yg0PrXRX08Zre9VfsxmTcX1wiSVOGvGWx+v?=
+ =?us-ascii?Q?CPA/fxZ739EoJjHdXRRdxIL5RLvrpJNu4MbumwVD22RANdxuih2BoWpZ/3Xz?=
+ =?us-ascii?Q?DlKC6VDyRKdv8mx8ufjYchpWtT5h8ZQP+GmRHLqiwJeDx+lzMky4ccOM7bPN?=
+ =?us-ascii?Q?rpf5X4swZIe8PxLD6FiLLJ1BR+bX8VkkZxjcerI4pj6CK/7BBtix+kUKnc1U?=
+ =?us-ascii?Q?s8xtT4EXq46NK/vjgtInbgs/Lu8yuBdcCOKQohLVf8KlJwcEvoTD3lql5fv1?=
+ =?us-ascii?Q?LZ7P2Gn8R97blihG2d3N773+I8MK7FMHfUpZCvhTEVJneHlWpf4t5fhHjRfb?=
+ =?us-ascii?Q?Jf+D6KA/+7sEFGLex6GNH8DU3y1MzPbFBmCNI1UUIFN5Mfiv+PIXwblPLYlc?=
+ =?us-ascii?Q?KnRxzPLbTLe+95qIJ6YZGrPHkSNfpy0ZNuur/a+FMteE8TsXbG1znmMQep7Q?=
+ =?us-ascii?Q?X/1PKwkPwxsC2T5/iLAvMM+tVl4c0AT6vQ0SjwXEMstra7jAf8jngrEu733i?=
+ =?us-ascii?Q?xn/4YNHt6NK0+J/yUaKsbqMg7nxVNOYVp7CB4UL9peh6Zb/fQoddgfG8JH6d?=
+ =?us-ascii?Q?QLSdOH3rFpgGTVDlJH490p8k1NBDj4jIT7ICf0uNw48hAzGkkq1uWv8gywhY?=
+ =?us-ascii?Q?HCPm+IWIT+Vi3kBWN2NrumVGq/MEIaR9WZd6IkSImNn03k1WeK7CYZaVHzh+?=
+ =?us-ascii?Q?CiwMvN01gCRs91rSCLx5jY4YHxMlxx0obFPmLqFH75/hnXaRtatKIs8ohIdc?=
+ =?us-ascii?Q?AuMkr+8isaD8nowB2YK2DASsEf9JnfgDLyFld76oGUVqRjSDcAFwWDNS2cES?=
+ =?us-ascii?Q?QNfp0YdU2poegDqwU1cgMrSeYc7y08d/pxEyJ4P+6P/7paVqiIrmnP2RLJQw?=
+ =?us-ascii?Q?NnGjOAMSXBE1OooH2kw5D8Mnj6mcR+jYd1bLZGv/PCLOeF3LnL/7PYEF4EKz?=
+ =?us-ascii?Q?dLB72upjNEtJ5RHIXzgTaY7ly2DrFD3J5tZNdMyGaWmmwIk8c6gIFrHXyotv?=
+ =?us-ascii?Q?VA=3D=3D?=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
 X-MS-Exchange-CrossTenant-AuthSource: VI1PR04MB10049.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 640d67a3-5b69-40c7-6290-08dd61ee1a36
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Mar 2025 05:15:42.5950
+X-MS-Exchange-CrossTenant-Network-Message-Id: b035f0a2-8e1e-4288-5065-08dd61ec745e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Mar 2025 05:03:54.8935
  (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: T3NTTpjkpNsRyn8IEqC6ElVtdpdgtdXwzcLUdTEacmCLUDc+IggSa3XexOvZPiNAiJI/lp50NBzSdu55hVIx6PioqHFP4ZyqxtsMLMxxlRI=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB8300
+X-MS-Exchange-CrossTenant-userprincipalname: v7zeJxKvgSeqRzzEYTXnA8XtsDDroq0Fx27Q258HEwjJRsSixB++IezJjQogysK7769HfJiOax+wkCI2v/tus4YlQmNI7CTOJocRmVJHK/w=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8407
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250312_221547_209742_C7D7DFC9 
-X-CRM114-Status: GOOD (  30.63  )
+X-CRM114-CacheID: sfid-20250312_220401_267049_1088012E 
+X-CRM114-Status: GOOD (  44.45  )
 X-Mailman-Approved-At: Mon, 17 Mar 2025 02:54:11 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -172,88 +173,185 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 > -----Original Message-----
 > From: Frank Li <frank.li@nxp.com>
-> Sent: Wednesday, March 12, 2025 11:59 PM
+> Sent: Friday, March 7, 2025 8:48 PM
 > To: Manjunatha Venkatesh <manjunatha.venkatesh@nxp.com>
 > Cc: miquel.raynal@bootlin.com; conor.culhane@silvaco.com;
 > alexandre.belloni@bootlin.com; linux-i3c@lists.infradead.org; linux-
-> kernel@vger.kernel.org; stable@vger.kernel.org; rvmanjumce@gmail.com
-> Subject: Re: [PATCH v4] svc-i3c-master: Fix read from unreadable memory at
-> svc_i3c_master_ibi_work()
+> kernel@vger.kernel.org; rvmanjumce@gmail.com
+> Subject: Re: [PATCH] driver: svc-i3c-master: Kernel panic issue fixed
 > 
-> On Wed, Mar 12, 2025 at 07:23:56PM +0530, Manjunatha Venkatesh wrote:
-> > As part of I3C driver probing sequence for particular device instance,
-> > While adding to queue it is trying to access ibi variable of dev which
-> > is not yet initialized causing "Unable to handle kernel read from
-> > unreadable memory" resulting in kernel panic.
+> On Fri, Mar 07, 2025 at 12:34:53PM +0000, Manjunatha Venkatesh wrote:
 > >
-> > Below is the sequence where this issue happened.
-> > 1. During boot up sequence IBI is received at host  from the slave device
-> >    before requesting for IBI, Usually will request IBI by calling
-> >    i3c_device_request_ibi() during probe of slave driver.
-> > 2. Since master code trying to access IBI Variable for the particular
-> >    device instance before actually it initialized by slave driver,
-> >    due to this randomly accessing the address and causing kernel panic.
-> > 3. i3c_device_request_ibi() function invoked by the slave driver where
-> >    dev->ibi = ibi; assigned as part of function call
-> >    i3c_dev_request_ibi_locked().
-> > 4. But when IBI request sent by slave device, master code  trying to access
-> >    this variable before its initialized due to this race condition
-> >    situation kernel panic happened.
 > >
-> > Fixes: dd3c52846d595 ("i3c: master: svc: Add Silvaco I3C master
-> > driver")
-> > Cc: stable@vger.kernel.org
-> > Signed-off-by: Manjunatha Venkatesh <manjunatha.venkatesh@nxp.com>
-> > ---
-> > Changes since v3:
-> >   - Description  updated typo "Fixes:"
-> >
-> >  drivers/i3c/master/svc-i3c-master.c | 7 +++++--
-> >  1 file changed, 5 insertions(+), 2 deletions(-)
-> >
-> > diff --git a/drivers/i3c/master/svc-i3c-master.c
-> > b/drivers/i3c/master/svc-i3c-master.c
-> > index d6057d8c7dec..98c4d2e5cd8d 100644
-> > --- a/drivers/i3c/master/svc-i3c-master.c
-> > +++ b/drivers/i3c/master/svc-i3c-master.c
-> > @@ -534,8 +534,11 @@ static void svc_i3c_master_ibi_work(struct
-> work_struct *work)
-> >  	switch (ibitype) {
-> >  	case SVC_I3C_MSTATUS_IBITYPE_IBI:
-> >  		if (dev) {
-> > -			i3c_master_queue_ibi(dev, master->ibi.tbq_slot);
-> > -			master->ibi.tbq_slot = NULL;
-> > +			data = i3c_dev_get_master_data(dev);
-> > +			if (master->ibi.slots[data->ibi]) {
-> > +				i3c_master_queue_ibi(dev, master-
-> >ibi.tbq_slot);
-> > +				master->ibi.tbq_slot = NULL;
-> > +			}
+> > > -----Original Message-----
+> > > From: Frank Li <frank.li@nxp.com>
+> > > Sent: Thursday, March 6, 2025 9:01 PM
+> > > To: Manjunatha Venkatesh <manjunatha.venkatesh@nxp.com>
+> > > Cc: miquel.raynal@bootlin.com; conor.culhane@silvaco.com;
+> > > alexandre.belloni@bootlin.com; linux-i3c@lists.infradead.org; linux-
+> > > kernel@vger.kernel.org; rvmanjumce@gmail.com
+> > > Subject: Re: [PATCH] driver: svc-i3c-master: Kernel panic issue
+> > > fixed
+> > >
+> > > On Thu, Mar 06, 2025 at 08:31:29AM +0000, Manjunatha Venkatesh
+> wrote:
+> > > > Hi Frank,
+> > > >
+> > > > Please find my inline comments.
+> > > >
+> > > > Regards,
+> > > > Manju
+> > >
+> > > Avoid top post for linux kernel mail list.
+> > >
+> > > >
+> > > > > -----Original Message-----
+> > > > > From: Frank Li <frank.li@nxp.com>
+> > > > > Sent: Friday, February 28, 2025 9:19 PM
+> > > > > To: Manjunatha Venkatesh <manjunatha.venkatesh@nxp.com>
+> > > > > Cc: miquel.raynal@bootlin.com; conor.culhane@silvaco.com;
+> > > > > alexandre.belloni@bootlin.com; linux-i3c@lists.infradead.org;
+> > > > > linux- kernel@vger.kernel.org; rvmanjumce@gmail.com
+> > > > > Subject: Re: [PATCH] driver: svc-i3c-master: Kernel panic issue
+> > > > > fixed
+> > > > >
+> > > > > Subject should be "Fix read from unreadable memory at
+> > > > > svc_i3c_master_ibi_work()"
+> > > > > Or like below pattern:
+> > > > > 	Do ... to fix ...
+> > > > >
+> > > > [Manjunatha Venkatesh] Tittle updated as per the review comment.
+> > > > > On Mon, Feb 24, 2025 at 08:47:54AM +0530, Manjunatha Venkatesh
+> > > wrote:
+> > > > > > I3C Master driver svc-i3c-master
+> > > > >
+> > > > > Needn't this line.
+> > > > >
+> > > > [Manjunatha Venkatesh] Removed this line and submitted the new
+> > > > patch
+> > > > > >
+> > > > > > As part of I3C driver probing sequence for particular device
+> > > > > > instance, While adding to queue it is trying to access ibi
+> > > > > > variable of dev which is not yet initialized causing "Unable
+> > > > > > to handle kernel read from unreadable memory" resulting in kernel
+> panic.
+> > > > >
+> > > > > Can you provide more detail information why/how this happen?
+> > > > > which varible read cause this problem?
+> > > > >
+> > > > [Manjunatha Venkatesh] : Below is the sequence where this issue
+> > > happened.
+> > > > 1. During boot up sequence IBI is received at host  from the slave
+> > > > device
+> > > before requesting for IBI, Usually will request IBI by calling
+> > > i3c_device_request_ibi() during probe of slave driver.
+> > > > 2. Since master code trying to access IBI Variable for the
+> > > > particular device
+> > > instance before actually it initialized by slave driver, due to this
+> > > randomly accessing the address and causing kernel panic.
+> > > > 3. i3c_device_request_ibi() function invoked by the slave driver
+> > > >where dev- ibi = ibi; assigned as part of function call
+> i3c_dev_request_ibi_locked().
+> > > > 4. But when IBI request sent by slave device, master code  trying
+> > > >to access
+> > > this variable before its initialized due to this race condition
+> > > situation kernel panic happened.
+> > >
+> > > Write above reproduce steps to commit message.
+> > >
+> > [Manjunatha Venkatesh] : Next commit will update this description.
+> > > I think it is common problem for i3c framework.
+> > >
+> > > You'd better change i3c_master_queue_ibi()
+> > >
+> > > void i3c_master_queue_ibi(struct i3c_dev_desc *dev, struct
+> > > i3c_ibi_slot *slot) {
+> > > 	if (!slot)
+> > > 		return;
+> > >
+> > >         atomic_inc(&dev->ibi->pending_ibis);
+> > >         queue_work(dev->ibi->wq, &slot->work); }
+> > >
+> > [Manjunatha Venkatesh] : Actual issue we have faced with respect to 'dev-
+> >ibi' variable.
 > 
-> You still not reply previous discussion:
+> How about
+> if (!dev->ibi || !slot) {
+> 	dev_warning("...");
+> 	return;
+> }
 > 
-> https://lore.kernel.org/linux-i3c/Z8sOKZSjHeeP2mY5@lizhi-Precision-Tower-
-> 5810/T/#mfd02d6ddca0a4b57bc823dcbfa7571c564800417
-> 
-[Manjunatha Venkatesh] : In the last mail answered to this question.
+[Manjunatha Venkatesh] : dev->ibi is not initialized to null, might be some random value be there.
+If it initialized to null at the right place then this check can be added.
 
-> This is not issue only at svc driver, which should be common problem for
-> other master controller drivers
-> 
-[Manjunatha Venkatesh] :Yes, you are right.
-One of my project I3C interface is required, where we have used IMX board as reference platform.
-As part of boot sequence we come across this issue and tried to fix that particular controller driver.
-
-What is your conclusion on this? Is it not ok to take patch for SVC alone?
- 
 > Frank
 > 
-> >  		}
-> >  		svc_i3c_master_emit_stop(master);
-> >  		break;
-> > --
-> > 2.46.1
+> > Pointer variable 'slot' is with respect IBI received from slave device context
+> and 'dev->ibi' is with respect to initialization of slave driver these 2 are
+> asynchronous events.
+> > dev->ibi = ibi; is initialized at i3c_dev_request_ibi_locked(), this is invoked as
+> part of slave driver IBI init sequence, this is what we want to check before
+> processing the IBI request from the Slave device.
+> > master->ibi.slots[i] this is where all device ibi instance list are saved, so here
+> our slave driver init IBI stored with respect dev->ibi index.
+> > So adding 'if (!slot)' will not help to resolve this issue.
+> 
+> 
+> Please wrap around at 80 char to read easily.
+> 
+> 
 > >
+> > > Frank
+> > > >
+> > > >
+> > > > > Need fix tags and cc stable.
+> > > > >
+> > > > [Manjunatha Venkatesh] : fix tags and cc stable updated in the
+> > > > commit
+> > > message.
+> > > >
+> > [Manjunatha Venkatesh] : Last commit message missed to update fix tags
+> and cc stable.
+> > Will update that information as part of next commit message.
+> > > > > Frank
+> > > > > >
+> > > > > > Signed-off-by: Manjunatha Venkatesh
+> > > <manjunatha.venkatesh@nxp.com>
+> > > > > > ---
+> > > > > >  drivers/i3c/master/svc-i3c-master.c | 7 +++++--
+> > > > > >  1 file changed, 5 insertions(+), 2 deletions(-)
+> > > > > >
+> > > > > > diff --git a/drivers/i3c/master/svc-i3c-master.c
+> > > > > > b/drivers/i3c/master/svc-i3c-master.c
+> > > > > > index d6057d8c7dec..98c4d2e5cd8d 100644
+> > > > > > --- a/drivers/i3c/master/svc-i3c-master.c
+> > > > > > +++ b/drivers/i3c/master/svc-i3c-master.c
+> > > > > > @@ -534,8 +534,11 @@ static void
+> > > > > > svc_i3c_master_ibi_work(struct
+> > > > > work_struct *work)
+> > > > > >  	switch (ibitype) {
+> > > > > >  	case SVC_I3C_MSTATUS_IBITYPE_IBI:
+> > > > > >  		if (dev) {
+> > > > > > -			i3c_master_queue_ibi(dev, master-
+> >ibi.tbq_slot);
+> > > > > > -			master->ibi.tbq_slot = NULL;
+> > > > > > +			data = i3c_dev_get_master_data(dev);
+> > > > > > +			if (master->ibi.slots[data->ibi]) {
+> > > > > > +				i3c_master_queue_ibi(dev, master-
+> > > > > >ibi.tbq_slot);
+> > > > > > +				master->ibi.tbq_slot = NULL;
+> > > > > > +			}
+> > > > > >  		}
+> > > > > >  		svc_i3c_master_emit_stop(master);
+> > > > > >  		break;
+> > > > > > --
+> > > > > > 2.46.1
+> > > > > >
+> > > > > >
+> > > > > > --
+> > > > > > linux-i3c mailing list
+> > > > > > linux-i3c@lists.infradead.org
+> > > > > > http://lists.infradead.org/mailman/listinfo/linux-i3c
 
 -- 
 linux-i3c mailing list
