@@ -4,67 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F26BDC28B30
-	for <linux-i3c@archiver.kernel.org>; Thu, 20 Mar 2025 22:01:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E46FEC28B30
+	for <linux-i3c@archiver.kernel.org>; Thu, 20 Mar 2025 22:03:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ePdf7LPbE1sMJiEt6117UCkeIypGng4v3ja2/hP6zZs=; b=uu4iaZPoWGUg7v
-	Knc0mYwMrH4PT9n34hB8p1ZMpl2lNUCOZ46Bb9j9jA3z7nTgU+ZQZ+Oj0gunNIdCil2SBkWEmk1h3
-	lGPDVTuS2IgSn6A5QmyXUvGdf3alSpgh0kZU220E1QSAhRjVgC9uhsat7emJGyNnGkvoWld7LMfie
-	jnr3pp8sJRlX4b9XN/v7otjAAdOOBD6/9oKZuiL2MfUmhgc0slhZr8xmhl+9RuvSrmurLc6qRJU91
-	KXE1rVGDVYWIFGlShho1cHhApJN6N39UU/Fkcftf5uvchrIpgdNzPuMj4SiuNu2lfApaas+AUwQ55
-	UoFqtH+9VHAMkDxgzKig==;
+	List-Owner; bh=Jbm3YL6c/VcddVFlRCenykSGfYf1o3Q9TkELGAhQQfo=; b=ALGvl0XTLfGmqt
+	IL/k8fiSOjaiU5GFmilsh6C/6ygal1ciKqCzWgDTreAFUO2j8Q7vRCvnVc3JFA6rvOSepCclK+7qC
+	rvoV4hmj5hf3T6FUtfVs01nUNR/9iXrdxe4ASSptQI+Up44LF6YW8kZOs+wVuJWkeTYDugKxhSvrQ
+	0Kq0QnBWLDKkPUyAl+X6mFsraLrrvu7UeemjUH23Dc3198p/OJiBE5j5S6XnPJj7KyPBpBWv1ntS6
+	lFKc3bpJc1ejljeROFkM9A5/hL2vPjDTMl8JaVmiPsL8Hi/KOZwarv6V8j3sy2xd2NbG4fOX5B5MB
+	A7gTVh9VT9+Unq0HM2Vw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvNxM-0000000DIr1-2wrj;
-	Thu, 20 Mar 2025 22:01:40 +0000
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
+	id 1tvNz6-0000000DJBo-2iwb;
+	Thu, 20 Mar 2025 22:03:28 +0000
+Received: from relay1-d.mail.gandi.net ([2001:4b98:dc4:8::221])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvNxJ-0000000DIqN-1vGi
+	id 1tvNyo-0000000DJAJ-2cSC
 	for linux-i3c@lists.infradead.org;
-	Thu, 20 Mar 2025 22:01:39 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id D3C6420487;
-	Thu, 20 Mar 2025 22:01:31 +0000 (UTC)
+	Thu, 20 Mar 2025 22:03:12 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 96B6D44364;
+	Thu, 20 Mar 2025 22:03:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1742508093;
+	t=1742508187;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=XaCKPJlwcuwqGD/thqS4n6Nbplq365BJsUtRQbhpno8=;
-	b=eoX0mlxdGPblU6qH1a3qTEhGU4jwNb+QkTTYzYytDQWWmCNogODfRMqL+vHZFVT4jK87uW
-	vJUs9/ZXA0OqBUfcNoCaZdeA0GD9Ph7DhZS7k91w3SUn2n4LQsOWeW3b3pDEI/iQuGSpL5
-	5+jYV7TAJSckeks092rjv786izvGIqIT1enOtNsQ3ddxJXyYlnqKftaOjnOCh78dv8Q9GC
-	ic2OufvNArgmAd53jFkM3dr6OksezBOIyXP0VbPI/H5b5vtNCpxentbk+OIEMYYyNgmdX6
-	cZ6rbEfv+IAG3scall1p1wSSPVv/ddKMNmakw7N+64G06hmBOIh+yDrKOyviOw==
-Date: Thu, 20 Mar 2025 23:01:31 +0100
+	bh=q9ANWztryAtzgs9DRNwfWIv3Pg0tyATZHHdZaolpDOY=;
+	b=BGuP+IQyk7BHW5sC3FOEVRzpV0bZKhxuuSXJ3EQgav8x4Vj86p9Iw6osoIrkzejmfEleML
+	c9UcXzN/7Ds8rib6jllcHjvCBSw+UoU5ByU1aYzkxcQ0+R7gaapu7pGFkku3xe3wLBjUJJ
+	3yrwbMpxzrsCXz/q9mepxDs7sTuCMt8f/pcoUI8Iq2j68RnaXFDrdbHNsxGmgQYFE+67YO
+	eP4IfL+c0wBqwdaWeO8N2Emis4FAV7pOfxNrVGpDkbJV3ggwZ3GcDe0eBAR2ua7GDr1vQI
+	FtXUMvOxxGLsCNEQ/SMi6ILGky2/TcE9uMM+8Iu6EZQbPC4gI+UrF1wdR+9QDg==
+Date: Thu, 20 Mar 2025 23:03:05 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Frank Li <Frank.li@nxp.com>
-Cc: Qasim Ijaz <qasdev00@gmail.com>, miquel.raynal@bootlin.com,
-	linux-i3c@lists.infradead.org, imx@lists.linux.dev,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] i3c: master: svc: fix signed/unsigned mismatch in
- dynamic address assignment
-Message-ID: <2025032022013134061aaa@mail.local>
-References: <20250317101516.19157-1-qasdev00@gmail.com>
- <Z9l3waI5EdrWmYC3@lizhi-Precision-Tower-5810>
- <Z9mGK0x8fsWvbTvo@qasdev.system>
- <Z9rEPLAmxrqP61sz@lizhi-Precision-Tower-5810>
+To: Miquel Raynal <miquel.raynal@bootlin.com>, Frank Li <Frank.Li@nxp.com>,
+	Nathan Chancellor <nathan@kernel.org>
+Cc: Stanley Chu <yschu@nuvoton.com>, linux-i3c@lists.infradead.org,
+	imx@lists.linux.dev, llvm@lists.linux.dev, patches@lists.linux.dev
+Subject: Re: [PATCH] i3c: master: svc: Fix implicit fallthrough in
+ svc_i3c_master_ibi_work()
+Message-ID: <174250817539.3598269.2833694260995006704.b4-ty@bootlin.com>
+References: <20250319-i3c-fix-clang-fallthrough-v1-1-d8e02be1ef5c@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <Z9rEPLAmxrqP61sz@lizhi-Precision-Tower-5810>
+In-Reply-To: <20250319-i3c-fix-clang-fallthrough-v1-1-d8e02be1ef5c@kernel.org>
 X-GND-State: clean
 X-GND-Score: -100
-X-GND-Cause: gggruggvucftvghtrhhoucdtuddrgeefvddrtddtgddugeelfeehucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuifetpfffkfdpucggtfgfnhhsuhgsshgtrhhisggvnecuuegrihhlohhuthemuceftddunecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjughrpeffhffvvefukfhfgggtugfgjgesthekredttddtjeenucfhrhhomheptehlvgigrghnughrvgcuuegvlhhlohhnihcuoegrlhgvgigrnhgurhgvrdgsvghllhhonhhisegsohhothhlihhnrdgtohhmqeenucggtffrrghtthgvrhhnpefhgfdvffdviefhtdfgffehleekieffjeetieevtdeuheeivdeujeelffehjeeiveenucffohhmrghinhepkhgvrhhnvghlrdhorhhgpdhinhhfrhgruggvrggurdhorhhgpdgsohhothhlihhnrdgtohhmnecukfhppedvrgdtudemvgdtrgemvdgumeeifeejtdemjeekvgdtmegttdgvkeemvdektdeimeekrggtieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepihhnvghtpedvrgdtudemvgdtrgemvdgumeeifeejtdemjeekvgdtmegttdgvkeemvdektdeimeekrggtiedphhgvlhhopehlohgtrghlhhhoshhtpdhmrghilhhfrhhomheprghlvgigrghnughrvgdrsggvlhhlohhnihessghoohhtlhhinhdrtghomhdpnhgspghrtghpthhtohepiedprhgtphhtthhopefhrhgrnhhkrdhlihesnhigphdrtghomhdprhgtphhtthhopehqrghsuggvvhdttdesghhmrghilhdrt
- ghomhdprhgtphhtthhopehmihhquhgvlhdrrhgrhihnrghlsegsohhothhlihhnrdgtohhmpdhrtghpthhtoheplhhinhhugidqiheftgeslhhishhtshdrihhnfhhrrgguvggrugdrohhrghdprhgtphhtthhopehimhigsehlihhsthhsrdhlihhnuhigrdguvghvpdhrtghpthhtoheplhhinhhugidqkhgvrhhnvghlsehvghgvrhdrkhgvrhhnvghlrdhorhhg
+X-GND-Cause: gggruggvucftvghtrhhoucdtuddrgeefvddrtddtgddugeelfeeiucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuifetpfffkfdpucggtfgfnhhsuhgsshgtrhhisggvnecuuegrihhlohhuthemuceftddunecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjughrpeffhffvvefukfhfgggtuggjsehttdertddttddvnecuhfhrohhmpeetlhgvgigrnhgurhgvuceuvghllhhonhhiuceorghlvgigrghnughrvgdrsggvlhhlohhnihessghoohhtlhhinhdrtghomheqnecuggftrfgrthhtvghrnhepieejfefhffekjeeuheevueevjedvleevjeetudffheeutdffudefjeduffeuvddtnecuffhomhgrihhnpehkvghrnhgvlhdrohhrghdpsghoohhtlhhinhdrtghomhenucfkphepvdgrtddumegvtdgrmedvugemieefjedtmeejkegvtdemtgdtvgekmedvkedtieemkegrtgeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehinhgvthepvdgrtddumegvtdgrmedvugemieefjedtmeejkegvtdemtgdtvgekmedvkedtieemkegrtgeipdhhvghloheplhhotggrlhhhohhsthdpmhgrihhlfhhrohhmpegrlhgvgigrnhgurhgvrdgsvghllhhonhhisegsohhothhlihhnrdgtohhmpdhnsggprhgtphhtthhopeekpdhrtghpthhtohepmhhiqhhuvghlrdhrrgihnhgrlhessghoohhtlhhinhdrtghomhdprhgtphhtthhopefhrhgrnhhkrdfnihesnhigphdrtghomhdprhgtphhtt
+ hhopehnrghthhgrnheskhgvrhhnvghlrdhorhhgpdhrtghpthhtohephihstghhuhesnhhuvhhothhonhdrtghomhdprhgtphhtthhopehlihhnuhigqdhifegtsehlihhsthhsrdhinhhfrhgruggvrggurdhorhhgpdhrtghpthhtohepihhmgieslhhishhtshdrlhhinhhugidruggvvhdprhgtphhtthhopehllhhvmheslhhishhtshdrlhhinhhugidruggvvhdprhgtphhtthhopehprghttghhvghssehlihhsthhsrdhlihhnuhigrdguvghv
 X-GND-Sasl: alexandre.belloni@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250320_150138_113260_E5D8AA8E 
-X-CRM114-Status: GOOD (  33.68  )
+X-CRM114-CacheID: sfid-20250320_150310_812572_1041333B 
+X-CRM114-Status: UNSURE (   5.31  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,71 +73,38 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-T24gMTkvMDMvMjAyNSAwOToxODo1Mi0wNDAwLCBGcmFuayBMaSB3cm90ZToKPiBPbiBUdWUsIE1h
-ciAxOCwgMjAyNSBhdCAwMjo0MTo0N1BNICswMDAwLCBRYXNpbSBJamF6IHdyb3RlOgo+ID4gT24g
-VHVlLCBNYXIgMTgsIDIwMjUgYXQgMDk6NDA6MTdBTSAtMDQwMCwgRnJhbmsgTGkgd3JvdGU6Cj4g
-PiA+IE9uIE1vbiwgTWFyIDE3LCAyMDI1IGF0IDEwOjE1OjE2QU0gKzAwMDAsIFFhc2ltIElqYXog
-d3JvdGU6Cj4gPiA+ID4gc3ZjX2kzY19tYXN0ZXJfZG9fZGFhX2xvY2tlZCgpIGRlY2xhcmVzIGR5
-bl9hZGRyIGFzIGFuIHVuc2lnbmVkIGludAo+ID4gPiA+IGhvd2V2ZXIgaXQgaW5pdGlhbGlzZXMg
-aXQgd2l0aCBpM2NfbWFzdGVyX2dldF9mcmVlX2FkZHIoKSB3aGljaAo+ID4gPiA+IHJldHVybnMg
-YSBzaWduZWQgaW50IHR5cGUgYW5kIHRoZW4gYXR0ZW1wdHMgdG8gY2hlY2sgaWYgZHluX2FkZHIg
-aXMKPiA+ID4gPiBsZXNzIHRoYW4gMC4gVW5zaWduZWQgaW50ZWdlcnMgY2Fubm90IGJlIGxlc3Mg
-dGhhbiAwLCBzbyB0aGUgY2hlY2sKPiA+ID4gPiBpcyBlc3NlbnRpYWxseSByZWR1bmRhbnQuIEZ1
-cnRoZXJtb3JlIGkzY19tYXN0ZXJfZ2V0X2ZyZWVfYWRkcigpCj4gPiA+ID4gY291bGQgcmV0dXJu
-IC1FTk9NRU0gd2hpY2ggYW4gdW5zaWduZWQgaW50IGNhbm5vdCBzdG9yZS4KPiA+ID4gPgo+ID4g
-PiA+IEZpeCB0aGlzIGJ5IGNhcHR1cmluZyB0aGUgcmV0dXJuIHZhbHVlIG9mIGkzY19tYXN0ZXJf
-Z2V0X2ZyZWVfYWRkcigpCj4gPiA+ID4gaW4gYSBzaWduZWQgaW50IOKAmGR5bl9hZGRyX3JldOKA
-mS4gSWYgdGhhdCB2YWx1ZSBpcyBuZWdhdGl2ZSwgcmV0dXJuCj4gPiA+ID4gYW4gZXJyb3IuIE90
-aGVyd2lzZSwgYXNzaWduIGl0IHRvIHRoZSB1bnNpZ25lZCBpbnQg4oCYZHluX2FkZHLigJkgb25j
-ZQo+ID4gPiA+IHdlIGtub3cgaXTigJlzIHZhbGlkLgo+ID4gPiA+Cj4gPiA+ID4gRml4ZXM6IDQw
-MDhhNzRlMGY5YiAoImkzYzogbWFzdGVyOiBzdmM6IEZpeCBucGNtODQ1IEZJRk8gZW1wdHkgaXNz
-dWUiKQo+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IFFhc2ltIElqYXogPHFhc2RldjAwQGdtYWlsLmNv
-bT4KPiA+ID4gPiAtLS0KPiA+ID4KPiA+ID4gVGhhbmsgeW91IGZvciB5b3VyIHBhdGNoLCBidXQg
-c2ltaWxhciBvbmUgd2FzIGFscmVhZHkgYXBwbGllZAo+ID4gPiBodHRwczovL2xvcmUua2VybmVs
-Lm9yZy9saW51eC1pM2MvMTc0MjI1MTU4MjEwLjE1OTM2MTAuMTAwMTg4MTI3ODA3MzE4NDk0MDku
-YjQtdHlAYm9vdGxpbi5jb20vVC8jbTUxMjBlMWMzNjJlN2U1N2Y0Y2FiMTM5YTQ1NDEwZmRlNDIx
-YzJmMzcKPiA+ID4KPiA+Cj4gPiBIaSBGcmFuawo+ID4KPiA+IEkgc2VudCBhIGZpeCBmb3IgdGhp
-cyBpc3N1ZSBvbiB0aGUgOXRoIE1hcmNoLCB3aGljaCBpcyBiZWZvcmUgdGhlIHBhdGNoCj4gPiB5
-b3UgbGlua2VkIHdoaWNoIHdhcyBzZW50IG9uIHRoZSAxMHRoIE1hcmNoLgo+IAo+IFllcywgYnV0
-IHBlcmZlciBvcmlnaW5hbCBvd25lciB0byBmaXggdGhpcyB0eXBlIG1pbm9yIGZpeC4KPiAKClRo
-aXMgaXMgYWJzb2x1dGVseSBub3Qgd2hhdCBJIHNhaWQsIHRoZSBmaXJzdCBvbmUgdGhhdCBpcyBz
-ZW50IGFuZCBpcwphcHBsaWNhYmxlIHNob3VsZCBiZSBhcHBsaWVkLgoKU2VlIGhvdyB5b3UgZGlk
-bid0IGZpeCB0aGlzIHRyaXZpYWwgaXNzdWU6CgpodHRwczovL2xvcmUua2VybmVsLm9yZy9saW51
-eC1pM2MvMjAyNTAzMTktaTNjLWZpeC1jbGFuZy1mYWxsdGhyb3VnaC12MS0xLWQ4ZTAyYmUxZWY1
-Y0BrZXJuZWwub3JnL1QvI3UKCj4gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGludXgtaTNjLzE3
-NDEyOTQ0NDYxNy4xMTYzNjg5LjExOTQyMjc2MDkzNDExNjg3Mzg3LmI0LXR5QGJvb3RsaW4uY29t
-L1QvI3QKPiAKPiBGcmFuawo+ID4KPiA+IFlvdSBjYW4gdmlldyBteSBvcmlnbmFsIHBhdGNoIGhl
-cmU6Cj4gPgo+ID4gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvYWxsLzIwMjUwMzA5MTY0MzE0LjE1
-MDM5LTEtcWFzZGV2MDBAZ21haWwuY29tLwo+ID4KPiA+IFRoYW5rcwo+ID4gUWFzaW0KPiA+ID4g
-RnJhbmsKPiA+ID4gPiAgZHJpdmVycy9pM2MvbWFzdGVyL3N2Yy1pM2MtbWFzdGVyLmMgfCA1ICsr
-Ky0tCj4gPiA+ID4gIDEgZmlsZSBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25z
-KC0pCj4gPiA+ID4KPiA+ID4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9pM2MvbWFzdGVyL3N2Yy1p
-M2MtbWFzdGVyLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvc3ZjLWkzYy1tYXN0ZXIuYwo+ID4gPiA+
-IGluZGV4IGYyMmZiOWU3NTE0Mi4uZWVhMDhmMDBkN2NlIDEwMDY0NAo+ID4gPiA+IC0tLSBhL2Ry
-aXZlcnMvaTNjL21hc3Rlci9zdmMtaTNjLW1hc3Rlci5jCj4gPiA+ID4gKysrIGIvZHJpdmVycy9p
-M2MvbWFzdGVyL3N2Yy1pM2MtbWFzdGVyLmMKPiA+ID4gPiBAQCAtOTk4LDkgKzk5OCwxMCBAQCBz
-dGF0aWMgaW50IHN2Y19pM2NfbWFzdGVyX2RvX2RhYV9sb2NrZWQoc3RydWN0IHN2Y19pM2NfbWFz
-dGVyICptYXN0ZXIsCj4gPiA+ID4gIAkJCSAqIGZpbGxpbmcgd2l0aGluIGEgZmV3IGh1bmRyZWQg
-bmFub3NlY29uZHMsIHdoaWNoIGlzIHNpZ25pZmljYW50bHkKPiA+ID4gPiAgCQkJICogZmFzdGVy
-IGNvbXBhcmVkIHRvIHRoZSA2NCBTQ0wgY2xvY2sgY3ljbGVzLgo+ID4gPiA+ICAJCQkgKi8KPiA+
-ID4gPiAtCQkJZHluX2FkZHIgPSBpM2NfbWFzdGVyX2dldF9mcmVlX2FkZHIoJm1hc3Rlci0+YmFz
-ZSwgbGFzdF9hZGRyICsgMSk7Cj4gPiA+ID4gLQkJCWlmIChkeW5fYWRkciA8IDApCj4gPiA+ID4g
-KwkJCWludCBkeW5fYWRkcl9yZXQgPSBpM2NfbWFzdGVyX2dldF9mcmVlX2FkZHIoJm1hc3Rlci0+
-YmFzZSwgbGFzdF9hZGRyICsgMSk7Cj4gPiA+ID4gKwkJCWlmIChkeW5fYWRkcl9yZXQgPCAwKQo+
-ID4gPiA+ICAJCQkJcmV0dXJuIC1FTk9TUEM7Cj4gPiA+ID4gKwkJCWR5bl9hZGRyID0gZHluX2Fk
-ZHJfcmV0Owo+ID4gPiA+Cj4gPiA+ID4gIAkJCXdyaXRlbChkeW5fYWRkciwgbWFzdGVyLT5yZWdz
-ICsgU1ZDX0kzQ19NV0RBVEFCKTsKPiA+ID4gPgo+ID4gPiA+IC0tCj4gPiA+ID4gMi4zOS41Cj4g
-PiA+ID4KPiA+Cj4gPiAtLQo+ID4gbGludXgtaTNjIG1haWxpbmcgbGlzdAo+ID4gbGludXgtaTNj
-QGxpc3RzLmluZnJhZGVhZC5vcmcKPiA+IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtaTNjCj4gCj4gLS0gCj4gbGludXgtaTNjIG1haWxpbmcgbGlzdAo+
-IGxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MKCi0tIApBbGV4YW5kcmUgQmVsbG9uaSwgY28t
-b3duZXIgYW5kIENPTywgQm9vdGxpbgpFbWJlZGRlZCBMaW51eCBhbmQgS2VybmVsIGVuZ2luZWVy
-aW5nCmh0dHBzOi8vYm9vdGxpbi5jb20KCi0tIApsaW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4
-LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtaTNjCg==
+On Wed, 19 Mar 2025 09:08:01 -0700, Nathan Chancellor wrote:
+> Clang warns (or errors with CONFIG_WERROR=y):
+> 
+>   drivers/i3c/master/svc-i3c-master.c:596:2: error: unannotated fall-through between switch labels [-Werror,-Wimplicit-fallthrough]
+>     596 |         default:
+>         |         ^
+>   drivers/i3c/master/svc-i3c-master.c:596:2: note: insert 'break;' to avoid fall-through
+>     596 |         default:
+>         |         ^
+>         |         break;
+>   1 error generated.
+> 
+> [...]
+
+Applied, thanks!
+
+[1/1] i3c: master: svc: Fix implicit fallthrough in svc_i3c_master_ibi_work()
+      https://git.kernel.org/abelloni/c/e8d2d287e26d
+
+Best regards,
+
+-- 
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
