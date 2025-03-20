@@ -4,69 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86F28C28B30
-	for <linux-i3c@archiver.kernel.org>; Thu, 20 Mar 2025 21:59:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F26BDC28B30
+	for <linux-i3c@archiver.kernel.org>; Thu, 20 Mar 2025 22:01:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=RNrZlw0JcQNoJwNkYWGt6mEa+va/xrF1JLhXuoMQ7e8=; b=CAw6iJw7vCaFFF
-	+2+3wSwoOu1l2dxrarCt0qMuyCY7Xb5ZEbTycr3gkFodowv5i/A2gumqtHQgRezpPAupUvUi91Fjj
-	VfY0CF6kVnAHZ6UJ7j69ollr+Bs6cHAzz+dgtNI1yot2uy5rWIoSexnEZ+MwY9yk3kz1AF2q6guER
-	AoHlqKj8nGCQqK81vIjbMc0TDJ6cAICbishtmcOBybBAIvIV/Bb6oJWRd0mOHQkr0GymekK7tZP+T
-	PU2bjXG3+gcTpB6yB/irsqPfoC4kOGdx0NxKzogd/zDvPxSI0veyYPcjg2fqey5GSV0zX5dxltS5x
-	7RcaHJp4Hbn87hM9WFLg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ePdf7LPbE1sMJiEt6117UCkeIypGng4v3ja2/hP6zZs=; b=uu4iaZPoWGUg7v
+	Knc0mYwMrH4PT9n34hB8p1ZMpl2lNUCOZ46Bb9j9jA3z7nTgU+ZQZ+Oj0gunNIdCil2SBkWEmk1h3
+	lGPDVTuS2IgSn6A5QmyXUvGdf3alSpgh0kZU220E1QSAhRjVgC9uhsat7emJGyNnGkvoWld7LMfie
+	jnr3pp8sJRlX4b9XN/v7otjAAdOOBD6/9oKZuiL2MfUmhgc0slhZr8xmhl+9RuvSrmurLc6qRJU91
+	KXE1rVGDVYWIFGlShho1cHhApJN6N39UU/Fkcftf5uvchrIpgdNzPuMj4SiuNu2lfApaas+AUwQ55
+	UoFqtH+9VHAMkDxgzKig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tvNuv-0000000DIgZ-10q7;
-	Thu, 20 Mar 2025 21:59:09 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1tvNxM-0000000DIr1-2wrj;
+	Thu, 20 Mar 2025 22:01:40 +0000
+Received: from relay3-d.mail.gandi.net ([217.70.183.195])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tuvxl-00000009Uib-07TD
+	id 1tvNxJ-0000000DIqN-1vGi
 	for linux-i3c@lists.infradead.org;
-	Wed, 19 Mar 2025 16:08:13 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id BE9CC68152;
-	Wed, 19 Mar 2025 16:08:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1B063C4CEE8;
-	Wed, 19 Mar 2025 16:08:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1742400491;
-	bh=ZgQibqnYOqFsCMWXhLzNKeBk1b2KjH8VJddDDteh1cI=;
-	h=From:Date:Subject:To:Cc:From;
-	b=V7hn4knWJ6YXhzBccFogxrOttg65IlcaiZtOT4Q332gBSwu6eDswCj8ymLjyfweNN
-	 fZiFjKzpmAVxH+e6/gc1/6cqONePhrRpSmLvQOmUUsMoi81OIyMlDydNzKiRVqyTvm
-	 4kQuPTZXEBPBuLsM8Bhc54P5sh9fPjS40uSVY79YeFC7uARceDqmu/NZrcGWWdfLF3
-	 HYFtZp3zNXQK8z20NnYXrvfXa3F8GpGwNbyuJ0GH/mBjIwCcRdBCGJ3snCWujK3A5I
-	 V0kQvTbNLWv0bSAhaGPOffNqFSD8SYrWr0IM++c+CU7hXlEbPi3uJPAFijRVEqXz8a
-	 rKfo7h8KWvJtw==
-From: Nathan Chancellor <nathan@kernel.org>
-Date: Wed, 19 Mar 2025 09:08:01 -0700
-Subject: [PATCH] i3c: master: svc: Fix implicit fallthrough in
- svc_i3c_master_ibi_work()
+	Thu, 20 Mar 2025 22:01:39 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id D3C6420487;
+	Thu, 20 Mar 2025 22:01:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1742508093;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=XaCKPJlwcuwqGD/thqS4n6Nbplq365BJsUtRQbhpno8=;
+	b=eoX0mlxdGPblU6qH1a3qTEhGU4jwNb+QkTTYzYytDQWWmCNogODfRMqL+vHZFVT4jK87uW
+	vJUs9/ZXA0OqBUfcNoCaZdeA0GD9Ph7DhZS7k91w3SUn2n4LQsOWeW3b3pDEI/iQuGSpL5
+	5+jYV7TAJSckeks092rjv786izvGIqIT1enOtNsQ3ddxJXyYlnqKftaOjnOCh78dv8Q9GC
+	ic2OufvNArgmAd53jFkM3dr6OksezBOIyXP0VbPI/H5b5vtNCpxentbk+OIEMYYyNgmdX6
+	cZ6rbEfv+IAG3scall1p1wSSPVv/ddKMNmakw7N+64G06hmBOIh+yDrKOyviOw==
+Date: Thu, 20 Mar 2025 23:01:31 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Frank Li <Frank.li@nxp.com>
+Cc: Qasim Ijaz <qasdev00@gmail.com>, miquel.raynal@bootlin.com,
+	linux-i3c@lists.infradead.org, imx@lists.linux.dev,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] i3c: master: svc: fix signed/unsigned mismatch in
+ dynamic address assignment
+Message-ID: <2025032022013134061aaa@mail.local>
+References: <20250317101516.19157-1-qasdev00@gmail.com>
+ <Z9l3waI5EdrWmYC3@lizhi-Precision-Tower-5810>
+ <Z9mGK0x8fsWvbTvo@qasdev.system>
+ <Z9rEPLAmxrqP61sz@lizhi-Precision-Tower-5810>
 MIME-Version: 1.0
-Message-Id: <20250319-i3c-fix-clang-fallthrough-v1-1-d8e02be1ef5c@kernel.org>
-X-B4-Tracking: v=1; b=H4sIAODr2mcC/x2MSwqAMAwFryJZG/BDKfUq4kJi2gaKSqsiiHc3u
- BzevHmgcBYuMFQPZL6kyLYqtHUFFOc1MMqiDF3TmaZvHUpP6OVGSrqin1M6Yt7OENF5Q5a8Yes
- c6H/PrOLfHqf3/QCnyO4qawAAAA==
-X-Change-ID: 20250319-i3c-fix-clang-fallthrough-9f5c7cf5e799
-To: Miquel Raynal <miquel.raynal@bootlin.com>, Frank Li <Frank.Li@nxp.com>, 
- Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Stanley Chu <yschu@nuvoton.com>, linux-i3c@lists.infradead.org, 
- imx@lists.linux.dev, llvm@lists.linux.dev, patches@lists.linux.dev, 
- Nathan Chancellor <nathan@kernel.org>
-X-Mailer: b4 0.15-dev
-X-Developer-Signature: v=1; a=openpgp-sha256; l=1618; i=nathan@kernel.org;
- h=from:subject:message-id; bh=ZgQibqnYOqFsCMWXhLzNKeBk1b2KjH8VJddDDteh1cI=;
- b=owGbwMvMwCUmm602sfCA1DTG02pJDOm3Xr/UcwnsnaaTeu/iZ+s1S65X16vqNQasCJwSI2v7Q
- 0+zRSSto5SFQYyLQVZMkaX6sepxQ8M5ZxlvnJoEM4eVCWQIAxenAEwkXZ2RYcLcHRt+pF05Uhb3
- UNAmTM65y+P/XvkosfjtBuLP1J5kzWFkWFD0ccYyqVtTyy5OUOyqdOyV+dJ/lPP+gikK5rHSVw1
- EGQE=
-X-Developer-Key: i=nathan@kernel.org; a=openpgp;
- fpr=2437CB76E544CB6AB3D9DFD399739260CB6CB716
-X-Mailman-Approved-At: Thu, 20 Mar 2025 14:59:08 -0700
+Content-Disposition: inline
+In-Reply-To: <Z9rEPLAmxrqP61sz@lizhi-Precision-Tower-5810>
+X-GND-State: clean
+X-GND-Score: -100
+X-GND-Cause: gggruggvucftvghtrhhoucdtuddrgeefvddrtddtgddugeelfeehucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuifetpfffkfdpucggtfgfnhhsuhgsshgtrhhisggvnecuuegrihhlohhuthemuceftddunecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjughrpeffhffvvefukfhfgggtugfgjgesthekredttddtjeenucfhrhhomheptehlvgigrghnughrvgcuuegvlhhlohhnihcuoegrlhgvgigrnhgurhgvrdgsvghllhhonhhisegsohhothhlihhnrdgtohhmqeenucggtffrrghtthgvrhhnpefhgfdvffdviefhtdfgffehleekieffjeetieevtdeuheeivdeujeelffehjeeiveenucffohhmrghinhepkhgvrhhnvghlrdhorhhgpdhinhhfrhgruggvrggurdhorhhgpdgsohhothhlihhnrdgtohhmnecukfhppedvrgdtudemvgdtrgemvdgumeeifeejtdemjeekvgdtmegttdgvkeemvdektdeimeekrggtieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepihhnvghtpedvrgdtudemvgdtrgemvdgumeeifeejtdemjeekvgdtmegttdgvkeemvdektdeimeekrggtiedphhgvlhhopehlohgtrghlhhhoshhtpdhmrghilhhfrhhomheprghlvgigrghnughrvgdrsggvlhhlohhnihessghoohhtlhhinhdrtghomhdpnhgspghrtghpthhtohepiedprhgtphhtthhopefhrhgrnhhkrdhlihesnhigphdrtghomhdprhgtphhtthhopehqrghsuggvvhdttdesghhmrghilhdrt
+ ghomhdprhgtphhtthhopehmihhquhgvlhdrrhgrhihnrghlsegsohhothhlihhnrdgtohhmpdhrtghpthhtoheplhhinhhugidqiheftgeslhhishhtshdrihhnfhhrrgguvggrugdrohhrghdprhgtphhtthhopehimhigsehlihhsthhsrdhlihhnuhigrdguvghvpdhrtghpthhtoheplhhinhhugidqkhgvrhhnvghlsehvghgvrhdrkhgvrhhnvghlrdhorhhg
+X-GND-Sasl: alexandre.belloni@bootlin.com
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250320_150138_113260_E5D8AA8E 
+X-CRM114-Status: GOOD (  33.68  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,58 +76,71 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Clang warns (or errors with CONFIG_WERROR=y):
-
-  drivers/i3c/master/svc-i3c-master.c:596:2: error: unannotated fall-through between switch labels [-Werror,-Wimplicit-fallthrough]
-    596 |         default:
-        |         ^
-  drivers/i3c/master/svc-i3c-master.c:596:2: note: insert 'break;' to avoid fall-through
-    596 |         default:
-        |         ^
-        |         break;
-  1 error generated.
-
-Clang is a little more pedantic than GCC, which does not warn when
-falling through to a case that is just break or return. Clang's version
-is more in line with the kernel's own stance in deprecated.rst, which
-states that all switch/case blocks must end in either break,
-fallthrough, continue, goto, or return. Add the missing break to silence
-the warning.
-
-Fixes: 0430bf9bc1ac ("i3c: master: svc: Fix missing STOP for master request")
-Signed-off-by: Nathan Chancellor <nathan@kernel.org>
----
- drivers/i3c/master/svc-i3c-master.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-index e0cd3ce28b7f..85e16de208d3 100644
---- a/drivers/i3c/master/svc-i3c-master.c
-+++ b/drivers/i3c/master/svc-i3c-master.c
-@@ -593,6 +593,7 @@ static void svc_i3c_master_ibi_work(struct work_struct *work)
- 		break;
- 	case SVC_I3C_MSTATUS_IBITYPE_MASTER_REQUEST:
- 		svc_i3c_master_emit_stop(master);
-+		break;
- 	default:
- 		break;
- 	}
-
----
-base-commit: 0430bf9bc1ac068c8b8c540eb93e5751872efc51
-change-id: 20250319-i3c-fix-clang-fallthrough-9f5c7cf5e799
-
-Best regards,
--- 
-Nathan Chancellor <nathan@kernel.org>
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+T24gMTkvMDMvMjAyNSAwOToxODo1Mi0wNDAwLCBGcmFuayBMaSB3cm90ZToKPiBPbiBUdWUsIE1h
+ciAxOCwgMjAyNSBhdCAwMjo0MTo0N1BNICswMDAwLCBRYXNpbSBJamF6IHdyb3RlOgo+ID4gT24g
+VHVlLCBNYXIgMTgsIDIwMjUgYXQgMDk6NDA6MTdBTSAtMDQwMCwgRnJhbmsgTGkgd3JvdGU6Cj4g
+PiA+IE9uIE1vbiwgTWFyIDE3LCAyMDI1IGF0IDEwOjE1OjE2QU0gKzAwMDAsIFFhc2ltIElqYXog
+d3JvdGU6Cj4gPiA+ID4gc3ZjX2kzY19tYXN0ZXJfZG9fZGFhX2xvY2tlZCgpIGRlY2xhcmVzIGR5
+bl9hZGRyIGFzIGFuIHVuc2lnbmVkIGludAo+ID4gPiA+IGhvd2V2ZXIgaXQgaW5pdGlhbGlzZXMg
+aXQgd2l0aCBpM2NfbWFzdGVyX2dldF9mcmVlX2FkZHIoKSB3aGljaAo+ID4gPiA+IHJldHVybnMg
+YSBzaWduZWQgaW50IHR5cGUgYW5kIHRoZW4gYXR0ZW1wdHMgdG8gY2hlY2sgaWYgZHluX2FkZHIg
+aXMKPiA+ID4gPiBsZXNzIHRoYW4gMC4gVW5zaWduZWQgaW50ZWdlcnMgY2Fubm90IGJlIGxlc3Mg
+dGhhbiAwLCBzbyB0aGUgY2hlY2sKPiA+ID4gPiBpcyBlc3NlbnRpYWxseSByZWR1bmRhbnQuIEZ1
+cnRoZXJtb3JlIGkzY19tYXN0ZXJfZ2V0X2ZyZWVfYWRkcigpCj4gPiA+ID4gY291bGQgcmV0dXJu
+IC1FTk9NRU0gd2hpY2ggYW4gdW5zaWduZWQgaW50IGNhbm5vdCBzdG9yZS4KPiA+ID4gPgo+ID4g
+PiA+IEZpeCB0aGlzIGJ5IGNhcHR1cmluZyB0aGUgcmV0dXJuIHZhbHVlIG9mIGkzY19tYXN0ZXJf
+Z2V0X2ZyZWVfYWRkcigpCj4gPiA+ID4gaW4gYSBzaWduZWQgaW50IOKAmGR5bl9hZGRyX3JldOKA
+mS4gSWYgdGhhdCB2YWx1ZSBpcyBuZWdhdGl2ZSwgcmV0dXJuCj4gPiA+ID4gYW4gZXJyb3IuIE90
+aGVyd2lzZSwgYXNzaWduIGl0IHRvIHRoZSB1bnNpZ25lZCBpbnQg4oCYZHluX2FkZHLigJkgb25j
+ZQo+ID4gPiA+IHdlIGtub3cgaXTigJlzIHZhbGlkLgo+ID4gPiA+Cj4gPiA+ID4gRml4ZXM6IDQw
+MDhhNzRlMGY5YiAoImkzYzogbWFzdGVyOiBzdmM6IEZpeCBucGNtODQ1IEZJRk8gZW1wdHkgaXNz
+dWUiKQo+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IFFhc2ltIElqYXogPHFhc2RldjAwQGdtYWlsLmNv
+bT4KPiA+ID4gPiAtLS0KPiA+ID4KPiA+ID4gVGhhbmsgeW91IGZvciB5b3VyIHBhdGNoLCBidXQg
+c2ltaWxhciBvbmUgd2FzIGFscmVhZHkgYXBwbGllZAo+ID4gPiBodHRwczovL2xvcmUua2VybmVs
+Lm9yZy9saW51eC1pM2MvMTc0MjI1MTU4MjEwLjE1OTM2MTAuMTAwMTg4MTI3ODA3MzE4NDk0MDku
+YjQtdHlAYm9vdGxpbi5jb20vVC8jbTUxMjBlMWMzNjJlN2U1N2Y0Y2FiMTM5YTQ1NDEwZmRlNDIx
+YzJmMzcKPiA+ID4KPiA+Cj4gPiBIaSBGcmFuawo+ID4KPiA+IEkgc2VudCBhIGZpeCBmb3IgdGhp
+cyBpc3N1ZSBvbiB0aGUgOXRoIE1hcmNoLCB3aGljaCBpcyBiZWZvcmUgdGhlIHBhdGNoCj4gPiB5
+b3UgbGlua2VkIHdoaWNoIHdhcyBzZW50IG9uIHRoZSAxMHRoIE1hcmNoLgo+IAo+IFllcywgYnV0
+IHBlcmZlciBvcmlnaW5hbCBvd25lciB0byBmaXggdGhpcyB0eXBlIG1pbm9yIGZpeC4KPiAKClRo
+aXMgaXMgYWJzb2x1dGVseSBub3Qgd2hhdCBJIHNhaWQsIHRoZSBmaXJzdCBvbmUgdGhhdCBpcyBz
+ZW50IGFuZCBpcwphcHBsaWNhYmxlIHNob3VsZCBiZSBhcHBsaWVkLgoKU2VlIGhvdyB5b3UgZGlk
+bid0IGZpeCB0aGlzIHRyaXZpYWwgaXNzdWU6CgpodHRwczovL2xvcmUua2VybmVsLm9yZy9saW51
+eC1pM2MvMjAyNTAzMTktaTNjLWZpeC1jbGFuZy1mYWxsdGhyb3VnaC12MS0xLWQ4ZTAyYmUxZWY1
+Y0BrZXJuZWwub3JnL1QvI3UKCj4gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGludXgtaTNjLzE3
+NDEyOTQ0NDYxNy4xMTYzNjg5LjExOTQyMjc2MDkzNDExNjg3Mzg3LmI0LXR5QGJvb3RsaW4uY29t
+L1QvI3QKPiAKPiBGcmFuawo+ID4KPiA+IFlvdSBjYW4gdmlldyBteSBvcmlnbmFsIHBhdGNoIGhl
+cmU6Cj4gPgo+ID4gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvYWxsLzIwMjUwMzA5MTY0MzE0LjE1
+MDM5LTEtcWFzZGV2MDBAZ21haWwuY29tLwo+ID4KPiA+IFRoYW5rcwo+ID4gUWFzaW0KPiA+ID4g
+RnJhbmsKPiA+ID4gPiAgZHJpdmVycy9pM2MvbWFzdGVyL3N2Yy1pM2MtbWFzdGVyLmMgfCA1ICsr
+Ky0tCj4gPiA+ID4gIDEgZmlsZSBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25z
+KC0pCj4gPiA+ID4KPiA+ID4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9pM2MvbWFzdGVyL3N2Yy1p
+M2MtbWFzdGVyLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvc3ZjLWkzYy1tYXN0ZXIuYwo+ID4gPiA+
+IGluZGV4IGYyMmZiOWU3NTE0Mi4uZWVhMDhmMDBkN2NlIDEwMDY0NAo+ID4gPiA+IC0tLSBhL2Ry
+aXZlcnMvaTNjL21hc3Rlci9zdmMtaTNjLW1hc3Rlci5jCj4gPiA+ID4gKysrIGIvZHJpdmVycy9p
+M2MvbWFzdGVyL3N2Yy1pM2MtbWFzdGVyLmMKPiA+ID4gPiBAQCAtOTk4LDkgKzk5OCwxMCBAQCBz
+dGF0aWMgaW50IHN2Y19pM2NfbWFzdGVyX2RvX2RhYV9sb2NrZWQoc3RydWN0IHN2Y19pM2NfbWFz
+dGVyICptYXN0ZXIsCj4gPiA+ID4gIAkJCSAqIGZpbGxpbmcgd2l0aGluIGEgZmV3IGh1bmRyZWQg
+bmFub3NlY29uZHMsIHdoaWNoIGlzIHNpZ25pZmljYW50bHkKPiA+ID4gPiAgCQkJICogZmFzdGVy
+IGNvbXBhcmVkIHRvIHRoZSA2NCBTQ0wgY2xvY2sgY3ljbGVzLgo+ID4gPiA+ICAJCQkgKi8KPiA+
+ID4gPiAtCQkJZHluX2FkZHIgPSBpM2NfbWFzdGVyX2dldF9mcmVlX2FkZHIoJm1hc3Rlci0+YmFz
+ZSwgbGFzdF9hZGRyICsgMSk7Cj4gPiA+ID4gLQkJCWlmIChkeW5fYWRkciA8IDApCj4gPiA+ID4g
+KwkJCWludCBkeW5fYWRkcl9yZXQgPSBpM2NfbWFzdGVyX2dldF9mcmVlX2FkZHIoJm1hc3Rlci0+
+YmFzZSwgbGFzdF9hZGRyICsgMSk7Cj4gPiA+ID4gKwkJCWlmIChkeW5fYWRkcl9yZXQgPCAwKQo+
+ID4gPiA+ICAJCQkJcmV0dXJuIC1FTk9TUEM7Cj4gPiA+ID4gKwkJCWR5bl9hZGRyID0gZHluX2Fk
+ZHJfcmV0Owo+ID4gPiA+Cj4gPiA+ID4gIAkJCXdyaXRlbChkeW5fYWRkciwgbWFzdGVyLT5yZWdz
+ICsgU1ZDX0kzQ19NV0RBVEFCKTsKPiA+ID4gPgo+ID4gPiA+IC0tCj4gPiA+ID4gMi4zOS41Cj4g
+PiA+ID4KPiA+Cj4gPiAtLQo+ID4gbGludXgtaTNjIG1haWxpbmcgbGlzdAo+ID4gbGludXgtaTNj
+QGxpc3RzLmluZnJhZGVhZC5vcmcKPiA+IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtaTNjCj4gCj4gLS0gCj4gbGludXgtaTNjIG1haWxpbmcgbGlzdAo+
+IGxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MKCi0tIApBbGV4YW5kcmUgQmVsbG9uaSwgY28t
+b3duZXIgYW5kIENPTywgQm9vdGxpbgpFbWJlZGRlZCBMaW51eCBhbmQgS2VybmVsIGVuZ2luZWVy
+aW5nCmh0dHBzOi8vYm9vdGxpbi5jb20KCi0tIApsaW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4
+LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtaTNjCg==
