@@ -4,93 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96D9EC36008
-	for <linux-i3c@archiver.kernel.org>; Wed, 26 Mar 2025 06:46:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A137C36008
+	for <linux-i3c@archiver.kernel.org>; Wed, 26 Mar 2025 07:15:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9i2V1b+2kJ54QxQIQ1oXLA6PpWf+9bA/gR4fHt0cy7A=; b=MGHgZU5iFZyIWC
-	togu4G1dqb2wIt43EDV+GGu6F8Ew8P6WEg2lteJHaGIQcRklavrnmCBp0QrNTakVS8Ipk3QLaPC/c
-	f5QVtd8+ozfTT5q3vINOMRahnjsXws9OGcA88d7vZEM97uMB9s7Gc07Q8dG/zYnNizsTAY6PT92TN
-	/j1y0LT1vYN/33Jwgjfc8RtjiPOdDO1poZ9Me8tO8iU/2cOAeZI80atbRcbHCRE2+nUxuxJddIFje
-	gXzf6CdwxYhSLLCthKyqvGpw2CWlt2yn8DeENGsjIYJvrnGYE1r89U5rKS8PC/J/GqCEvgTb7X2GR
-	IRfMM9d4k4kLzng2Iw/Q==;
+	List-Owner; bh=aNNNTp+7RLTQZ4P1fYbTZxDRdR9VhC0Evps490CpMR4=; b=JkxObeT2l4sKcS
+	VUHSbBr3tOIyurk8CiX+xydSd/ZGG5Y7zcAGKfnK+qtrZ/oxa0qhEagWACTBk9MG7ehL6T2EVkC92
+	AzjW+/m8ClRuUJUfMF1y6XF+IX4Q1Qh6w1XaGXmrwSNLd+khdeg2XhNoSH6pS9sJmrKTv6wqBMtEl
+	bYPDqpWQb1Ob926msCaNXziue0RxuldS3NGh9khh5OE8WoDMY948VJm9V0cO/KQCnhIQ53TRWY1jv
+	7121YD/xN303yNELhtHL4TyI55tfCLM/qO5W4MYA0Vxae0biLOLlgjHWewcUP1B06ggSTEjxxrCwo
+	H0x4yHFp7bN40eYQEfrA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1txKX8-00000007gdc-0vQF;
-	Wed, 26 Mar 2025 06:46:38 +0000
+	id 1txKzL-00000007kzD-0jtC;
+	Wed, 26 Mar 2025 07:15:47 +0000
 Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1txKVp-00000007gYM-168R
+	id 1txKuX-00000007kYz-3e50
 	for linux-i3c@lists.infradead.org;
-	Wed, 26 Mar 2025 06:45:21 +0000
+	Wed, 26 Mar 2025 07:10:51 +0000
 Received: from pps.filterd (m0279866.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52Q64GBL026608;
-	Wed, 26 Mar 2025 06:45:07 GMT
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 52Q737EG004065;
+	Wed, 26 Mar 2025 07:10:42 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	d//EkLK8NlNhrMxANYCpSXjTkPzJKf9XO3dDZrPjyb4=; b=CYnczo+StkThpktw
-	v/OqgyADRy3nZv1CHyRHSpAeWT5DN9ThhTw5OfNVcY9+k5KOtcC005gShLvx5hqG
-	aUAT9ys0k2q3FhZ0SgF11+j5UaWGkEQz9FcywnPXkQw9a0M+ByZ6nOoTASQ6hAeE
-	ji3Rmw5oCoDqYUunU6l0LUhfHeKKkuDD0ylC241psTlQ7iwJ4VDfT6wPF0eo7j9X
-	ly6cHIG+ftuTVHrBm8Q8xtuIxMut1Or6me6WB2EY3nkZ4AxO+b7UF84pYvpdE/tQ
-	H0acLYQKeywEFr7JL8eY+5sTzouXDfjyH54JyII+5v1vn+XM8aGYaqSUz26B1L8g
-	9dE1Gg==
-Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45kmcybwy4-1
+	Ps4jDZtSQv+h55bH8VjAcS38Zn8hgipwCPWFAZ1jOkc=; b=aFg/fdwEiCJnNI46
+	BgDP9y9pY5BFODLo9zTjmL/FVgAvFjnHJkMgZoThPzZv71KEdzQ3yV+sEnWWO2CO
+	Ti4L+pxa4HUtkf3g/2/cd5WwfdtXFt7Maf+mna2ft45bLGtZ/ta/6Iz18E+AWD7a
+	M+2vCv+MHtwuTXE4n7Vc33SVywjorjRoUoHETFnKbxO701MTGI89xeonxbC6Cpx9
+	6KXSw9BXUEQNqecMlaT39zgTLCDcLjUB2SyCLtRKjS35le5ke/UWzFukfEYyEt0b
+	dDS3Y/CMbFEveY/nNKPCrR0F0rapWi20hboisexb/aNaAnR/Zi72tg5sRYwlJTNb
+	HSTSmQ==
+Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45kmcyc04s-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 26 Mar 2025 06:45:07 +0000 (GMT)
+	Wed, 26 Mar 2025 07:10:41 +0000 (GMT)
 Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52Q6j6U1011352
+	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 52Q7Afmv025620
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 26 Mar 2025 06:45:06 GMT
+	Wed, 26 Mar 2025 07:10:41 GMT
 Received: from [10.217.219.207] (10.80.80.8) by nasanex01c.na.qualcomm.com
  (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 25 Mar
- 2025 23:45:03 -0700
-Message-ID: <8c624cf0-febc-4ab9-8141-2372bfe4d577@quicinc.com>
-Date: Wed, 26 Mar 2025 12:15:00 +0530
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Wed, 26 Mar
+ 2025 00:10:38 -0700
+Message-ID: <fc59e721-3e43-4b81-8c35-75b33e9e6fc9@quicinc.com>
+Date: Wed, 26 Mar 2025 12:40:34 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v5] i3c: Fix read from unreadable memory at
+Subject: Re: [EXT] Re: [PATCH v5] i3c: Fix read from unreadable memory at
  i3c_master_queue_ibi()
-To: Frank Li <Frank.li@nxp.com>,
-        Manjunatha Venkatesh
-	<manjunatha.venkatesh@nxp.com>
-CC: <alexandre.belloni@bootlin.com>, <arnd@arndb.de>,
-        <gregkh@linuxfoundation.org>, <bbrezillon@kernel.org>,
-        <linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        <rvmanjumce@gmail.com>, <stable@vger.kernel.org>
+To: Manjunatha Venkatesh <manjunatha.venkatesh@nxp.com>,
+        Frank Li
+	<frank.li@nxp.com>
+CC: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
+        "arnd@arndb.de" <arnd@arndb.de>,
+        "gregkh@linuxfoundation.org"
+	<gregkh@linuxfoundation.org>,
+        "bbrezillon@kernel.org"
+	<bbrezillon@kernel.org>,
+        "linux-i3c@lists.infradead.org"
+	<linux-i3c@lists.infradead.org>,
+        "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>,
+        "rvmanjumce@gmail.com"
+	<rvmanjumce@gmail.com>,
+        "stable@vger.kernel.org" <stable@vger.kernel.org>
 References: <20250325102332.2435069-1-manjunatha.venkatesh@nxp.com>
  <Z+LA/GASTPMMcVpC@lizhi-Precision-Tower-5810>
+ <8c624cf0-febc-4ab9-8141-2372bfe4d577@quicinc.com>
+ <VI1PR04MB10049E90AC1CB4823F91D1D698FA62@VI1PR04MB10049.eurprd04.prod.outlook.com>
 Content-Language: en-US
 From: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
-In-Reply-To: <Z+LA/GASTPMMcVpC@lizhi-Precision-Tower-5810>
+In-Reply-To: <VI1PR04MB10049E90AC1CB4823F91D1D698FA62@VI1PR04MB10049.eurprd04.prod.outlook.com>
 X-Originating-IP: [10.80.80.8]
 X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
  nasanex01c.na.qualcomm.com (10.45.79.139)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=EZ3IQOmC c=1 sm=1 tr=0 ts=67e3a273 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=VwQbUJbxAAAA:8 a=8AirrxEcAAAA:8 a=v-MiteamF9m1uwOrjlcA:9
- a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=ST-jHhOKWsTCqRlWije3:22
-X-Proofpoint-ORIG-GUID: L2jECwzCxSH8wi0t7I2AstVutKQazjYD
-X-Proofpoint-GUID: L2jECwzCxSH8wi0t7I2AstVutKQazjYD
+X-Authority-Analysis: v=2.4 cv=EZ3IQOmC c=1 sm=1 tr=0 ts=67e3a871 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=Vs1iUdzkB0EA:10 a=UqCG9HQmAAAA:8 a=COk6AnOGAAAA:8 a=8AirrxEcAAAA:8
+ a=P-IC7800AAAA:8 a=ag1SF4gXAAAA:8 a=VwQbUJbxAAAA:8 a=JfrnYn6hAAAA:8 a=pGLkceISAAAA:8 a=hwt3D7lepPnkcdXaZawA:9 a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22 a=ST-jHhOKWsTCqRlWije3:22 a=d3PnA9EDa4IxuAV0gXij:22 a=Yupwre4RP9_Eg_Bd0iYG:22
+ a=1CNFftbPRP8L7MoqJWF3:22
+X-Proofpoint-ORIG-GUID: dbc5crea0z5QoNzLft0YGSSzxQCZVH1P
+X-Proofpoint-GUID: dbc5crea0z5QoNzLft0YGSSzxQCZVH1P
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1093,Hydra:6.0.680,FMLib:17.12.68.34
  definitions=2025-03-25_10,2025-03-26_02,2024-11-22_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
  impostorscore=0 malwarescore=0 priorityscore=1501 mlxlogscore=999
- spamscore=0 lowpriorityscore=0 clxscore=1011 bulkscore=0 phishscore=0
+ spamscore=0 lowpriorityscore=0 clxscore=1015 bulkscore=0 phishscore=0
  adultscore=0 mlxscore=0 classifier=spam authscore=0 authtc=n/a authcc=
  route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2503260039
+ definitions=main-2503260042
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250325_234517_316216_298C761D 
-X-CRM114-Status: GOOD (  27.32  )
+X-CRM114-CacheID: sfid-20250326_001049_919943_4372E870 
+X-CRM114-Status: GOOD (  24.71  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,74 +114,147 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-CgpPbiAzLzI1LzIwMjUgODoxMyBQTSwgRnJhbmsgTGkgd3JvdGU6Cj4gU3ViamVjdCBzaG91bGQg
-YmUKPiAKPiBpM2M6IEFkZCBOVUxMIHBvaW50ZXIgY2hlY2sgaW4gaTNjX21hc3Rlcl9xdWV1ZV9p
-YmkoKQo+IAp5ZXMsIEFsaWduZWQuCj4gT24gVHVlLCBNYXIgMjUsIDIwMjUgYXQgMDM6NTM6MzJQ
-TSArMDUzMCwgTWFuanVuYXRoYSBWZW5rYXRlc2ggd3JvdGU6Cj4+IEFzIHBhcnQgb2YgSTNDIGRy
-aXZlciBwcm9iaW5nIHNlcXVlbmNlIGZvciBwYXJ0aWN1bGFyIGRldmljZSBpbnN0YW5jZSwKPj4g
-V2hpbGUgYWRkaW5nIHRvIHF1ZXVlIGl0IGlzIHRyeWluZyB0byBhY2Nlc3MgaWJpIHZhcmlhYmxl
-IG9mIGRldiB3aGljaCBpcwo+PiBub3QgeWV0IGluaXRpYWxpemVkIGNhdXNpbmcgIlVuYWJsZSB0
-byBoYW5kbGUga2VybmVsIHJlYWQgZnJvbSB1bnJlYWRhYmxlCj4+IG1lbW9yeSIgcmVzdWx0aW5n
-IGluIGtlcm5lbCBwYW5pYy4KPj4KPj4gQmVsb3cgaXMgdGhlIHNlcXVlbmNlIHdoZXJlIHRoaXMg
-aXNzdWUgaGFwcGVuZWQuCj4+IDEuIER1cmluZyBib290IHVwIHNlcXVlbmNlIElCSSBpcyByZWNl
-aXZlZCBhdCBob3N0ICBmcm9tIHRoZSBzbGF2ZSBkZXZpY2UKPj4gICAgIGJlZm9yZSByZXF1ZXN0
-aW5nIGZvciBJQkksIFVzdWFsbHkgd2lsbCByZXF1ZXN0IElCSSBieSBjYWxsaW5nCj4+ICAgICBp
-M2NfZGV2aWNlX3JlcXVlc3RfaWJpKCkgZHVyaW5nIHByb2JlIG9mIHNsYXZlIGRyaXZlci4KPj4g
-Mi4gU2luY2UgbWFzdGVyIGNvZGUgdHJ5aW5nIHRvIGFjY2VzcyBJQkkgVmFyaWFibGUgZm9yIHRo
-ZSBwYXJ0aWN1bGFyCj4+ICAgICBkZXZpY2UgaW5zdGFuY2UgYmVmb3JlIGFjdHVhbGx5IGl0IGlu
-aXRpYWxpemVkIGJ5IHNsYXZlIGRyaXZlciwKPj4gICAgIGR1ZSB0byB0aGlzIHJhbmRvbWx5IGFj
-Y2Vzc2luZyB0aGUgYWRkcmVzcyBhbmQgY2F1c2luZyBrZXJuZWwgcGFuaWMuCj4+IDMuIGkzY19k
-ZXZpY2VfcmVxdWVzdF9pYmkoKSBmdW5jdGlvbiBpbnZva2VkIGJ5IHRoZSBzbGF2ZSBkcml2ZXIg
-d2hlcmUKPj4gICAgIGRldi0+aWJpID0gaWJpOyBhc3NpZ25lZCBhcyBwYXJ0IG9mIGZ1bmN0aW9u
-IGNhbGwKPj4gICAgIGkzY19kZXZfcmVxdWVzdF9pYmlfbG9ja2VkKCkuCj4+IDQuIEJ1dCB3aGVu
-IElCSSByZXF1ZXN0IHNlbnQgYnkgc2xhdmUgZGV2aWNlLCBtYXN0ZXIgY29kZSAgdHJ5aW5nIHRv
-IGFjY2Vzcwo+PiAgICAgdGhpcyB2YXJpYWJsZSBiZWZvcmUgaXRzIGluaXRpYWxpemVkIGR1ZSB0
-byB0aGlzIHJhY2UgY29uZGl0aW9uCj4+ICAgICBzaXR1YXRpb24ga2VybmVsIHBhbmljIGhhcHBl
-bmVkLgo+IAo+IEhvdyBhYm91dCBjb21taXQgbWVzc2FnZSBhczoKPiAKPiBUaGUgSTNDIG1hc3Rl
-ciBkcml2ZXIgbWF5IHJlY2VpdmUgYW4gSUJJIGZyb20gYSB0YXJnZXQgZGV2aWNlIHRoYXQgaGFz
-IG5vdAo+IGJlZW4gcHJvYmVkIHlldC4gSW4gc3VjaCBjYXNlcywgdGhlIG1hc3RlciBjYWxscyBg
-aTNjX21hc3Rlcl9xdWV1ZV9pYmkoKWAKPiB0byBxdWV1ZSBhbiBJQkkgd29yayB0YXNrLCBsZWFk
-aW5nIHRvICJVbmFibGUgdG8gaGFuZGxlIGtlcm5lbCByZWFkIGZyb20KPiB1bnJlYWRhYmxlIG1l
-bW9yeSIgYW5kIHJlc3VsdGluZyBpbiBhIGtlcm5lbCBwYW5pYy4KPiAKPiBUeXBpY2FsIElCSSBo
-YW5kbGluZyBmbG93Ogo+IDEuIFRoZSBJM0MgbWFzdGVyIHNjYW5zIHRhcmdldCBkZXZpY2VzIGFu
-ZCBwcm9iZXMgdGhlaXIgcmVzcGVjdGl2ZSBkcml2ZXJzLgo+IDIuIFRoZSB0YXJnZXQgZGV2aWNl
-IGRyaXZlciBjYWxscyBgaTNjX2RldmljZV9yZXF1ZXN0X2liaSgpYCB0byBlbmFibGUgSUJJCj4g
-ICAgIGFuZCBhc3NpZ25zIGBkZXYtPmliaSA9IGliaWAuCj4gMy4gVGhlIEkzQyBtYXN0ZXIgcmVj
-ZWl2ZXMgYW4gSUJJIGZyb20gdGhlIHRhcmdldCBkZXZpY2UgYW5kIGNhbGxzCj4gICAgIGBpM2Nf
-bWFzdGVyX3F1ZXVlX2liaSgpYCB0byBxdWV1ZSB0aGUgdGFyZ2V0IGRldmljZSBkcml2ZXLigJlz
-IElCSSBoYW5kbGVyCj4gICAgIHRhc2suCj4gCj4gSG93ZXZlciwgc2luY2UgdGFyZ2V0IGRldmlj
-ZSBldmVudHMgYXJlIGFzeW5jaHJvbm91cyB0byB0aGUgSTNDIHByb2JlCj4gc2VxdWVuY2UsIHN0
-ZXAgMyBtYXkgb2NjdXIgYmVmb3JlIHN0ZXAgMiwgY2F1c2luZyBgZGV2LT5pYmlgIHRvIGJlIGBO
-VUxMYCwKPiBsZWFkaW5nIHRvIGEga2VybmVsIHBhbmljLgo+IAo+IEFkZCBhIE5VTEwgcG9pbnRl
-ciBjaGVjayBpbiBgaTNjX21hc3Rlcl9xdWV1ZV9pYmkoKWAgdG8gcHJldmVudCBhY2Nlc3NpbmcK
-PiBhbiB1bmluaXRpYWxpemVkIGBkZXYtPmliaWAsIGVuc3VyaW5nIHN0YWJpbGl0eS4KPiAKPj4K
-Pj4gRml4ZXM6IDNhMzc5YmJjZWEwYWYgKCJpM2M6IEFkZCBjb3JlIEkzQyBpbmZyYXN0cnVjdHVy
-ZSIpCj4+IENjOiBzdGFibGVAdmdlci5rZXJuZWwub3JnCj4+IExpbms6IGh0dHBzOi8vbG9yZS5r
-ZXJuZWwub3JnL2xrbWwvWjlnakdZdWRpWXlsM2JTZUBsaXpoaS1QcmVjaXNpb24tVG93ZXItNTgx
-MC8KPj4gU2lnbmVkLW9mZi1ieTogTWFuanVuYXRoYSBWZW5rYXRlc2ggPG1hbmp1bmF0aGEudmVu
-a2F0ZXNoQG54cC5jb20+Cj4+IC0tLQo+PiBDaGFuZ2VzIHNpbmNlIHY0Ogo+PiAgICAtIEZpeCBh
-ZGRlZCBhdCBnZW5lcmljIHBsYWNlcyBtYXN0ZXIuYyB3aGljaCBpcyBhcHBsaWNhYmxlIGZvciBh
-bGwgcGxhdGZvcm1zCj4+Cj4+ICAgZHJpdmVycy9pM2MvbWFzdGVyLmMgfCAzICsrKwo+PiAgIDEg
-ZmlsZSBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKykKPj4KPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMv
-aTNjL21hc3Rlci5jIGIvZHJpdmVycy9pM2MvbWFzdGVyLmMKPj4gaW5kZXggZDVkYzQxODBhZmJj
-Li5jNjUwMDZhYTA2ODQgMTAwNjQ0Cj4+IC0tLSBhL2RyaXZlcnMvaTNjL21hc3Rlci5jCj4+ICsr
-KyBiL2RyaXZlcnMvaTNjL21hc3Rlci5jCj4+IEBAIC0yNTYxLDYgKzI1NjEsOSBAQCBzdGF0aWMg
-dm9pZCBpM2NfbWFzdGVyX3VucmVnaXN0ZXJfaTNjX2RldnMoc3RydWN0IGkzY19tYXN0ZXJfY29u
-dHJvbGxlciAqbWFzdGVyKQo+PiAgICAqLwo+PiAgIHZvaWQgaTNjX21hc3Rlcl9xdWV1ZV9pYmko
-c3RydWN0IGkzY19kZXZfZGVzYyAqZGV2LCBzdHJ1Y3QgaTNjX2liaV9zbG90ICpzbG90KQo+PiAg
-IHsKPj4gKwlpZiAoIWRldi0+aWJpIHx8ICFzbG90KQo+PiArCQlyZXR1cm47Cj4+ICsKMS4gU2hv
-dWxkbid0IHRoaXMgYmUgYSBMb2dpY2FsIEFORCA/IHdoYXQgaWYgc2xvdCBpcyBub24gTlVMTCBi
-dXQgdGhlIApJQkkgaXMgTlVMTCA/CgoyLiBUaGlzIGJlaW5nIHZvaWQgZnVuY3Rpb24sIGl0IGRv
-ZXNuJ3Qgc2F5IGFueXRoaW5nIHRvIGNhbGxlciBpZiBpdCdzIApzdWNjZXNzZnVsIG9yIGZhaWxl
-ZCA/IFNob3VsZCB3ZSBtYWtlIHRoaXMgbm9uIHZvaWQgZnVuY3Rpb24gPwppZiBub3QsIGkgYW0g
-dGhpbmtpbmcgaXQgbWF5IHJ1biBpbnRvIG11bHRpcGxlIGF0dGVtcHRzLCBubyBsb2cgdG9vLgo+
-PiAgIAlhdG9taWNfaW5jKCZkZXYtPmliaS0+cGVuZGluZ19pYmlzKTsKPj4gICAJcXVldWVfd29y
-ayhkZXYtPmliaS0+d3EsICZzbG90LT53b3JrKTsKPj4gICB9Cj4+IC0tCj4+IDIuNDYuMQo+Pgo+
-IAoKCi0tIApsaW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNj
-Cg==
+
+
+On 3/26/2025 12:28 PM, Manjunatha Venkatesh wrote:
+> 
+> 
+>> -----Original Message-----
+>> From: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
+>> Sent: Wednesday, March 26, 2025 12:15 PM
+>> To: Frank Li <frank.li@nxp.com>; Manjunatha Venkatesh
+>> <manjunatha.venkatesh@nxp.com>
+>> Cc: alexandre.belloni@bootlin.com; arnd@arndb.de;
+>> gregkh@linuxfoundation.org; bbrezillon@kernel.org; linux-
+>> i3c@lists.infradead.org; linux-kernel@vger.kernel.org;
+>> rvmanjumce@gmail.com; stable@vger.kernel.org
+>> Subject: [EXT] Re: [PATCH v5] i3c: Fix read from unreadable memory at
+>> i3c_master_queue_ibi()
+>>
+>> Caution: This is an external email. Please take care when clicking links or
+>> opening attachments. When in doubt, report the message using the 'Report
+>> this email' button
+>>
+>>
+>> On 3/25/2025 8:13 PM, Frank Li wrote:
+>>> Subject should be
+>>>
+>>> i3c: Add NULL pointer check in i3c_master_queue_ibi()
+>>>
+>> yes, Aligned.
+>>> On Tue, Mar 25, 2025 at 03:53:32PM +0530, Manjunatha Venkatesh wrote:
+>>>> As part of I3C driver probing sequence for particular device
+>>>> instance, While adding to queue it is trying to access ibi variable
+>>>> of dev which is not yet initialized causing "Unable to handle kernel
+>>>> read from unreadable memory" resulting in kernel panic.
+>>>>
+>>>> Below is the sequence where this issue happened.
+>>>> 1. During boot up sequence IBI is received at host  from the slave device
+>>>>      before requesting for IBI, Usually will request IBI by calling
+>>>>      i3c_device_request_ibi() during probe of slave driver.
+>>>> 2. Since master code trying to access IBI Variable for the particular
+>>>>      device instance before actually it initialized by slave driver,
+>>>>      due to this randomly accessing the address and causing kernel panic.
+>>>> 3. i3c_device_request_ibi() function invoked by the slave driver where
+>>>>      dev->ibi = ibi; assigned as part of function call
+>>>>      i3c_dev_request_ibi_locked().
+>>>> 4. But when IBI request sent by slave device, master code  trying to access
+>>>>      this variable before its initialized due to this race condition
+>>>>      situation kernel panic happened.
+>>>
+>>> How about commit message as:
+>>>
+>>> The I3C master driver may receive an IBI from a target device that has
+>>> not been probed yet. In such cases, the master calls
+>>> `i3c_master_queue_ibi()` to queue an IBI work task, leading to "Unable
+>>> to handle kernel read from unreadable memory" and resulting in a kernel
+>> panic.
+>>>
+>>> Typical IBI handling flow:
+>>> 1. The I3C master scans target devices and probes their respective drivers.
+>>> 2. The target device driver calls `i3c_device_request_ibi()` to enable IBI
+>>>      and assigns `dev->ibi = ibi`.
+>>> 3. The I3C master receives an IBI from the target device and calls
+>>>      `i3c_master_queue_ibi()` to queue the target device driver's IBI handler
+>>>      task.
+>>>
+>>> However, since target device events are asynchronous to the I3C probe
+>>> sequence, step 3 may occur before step 2, causing `dev->ibi` to be
+>>> `NULL`, leading to a kernel panic.
+>>>
+>>> Add a NULL pointer check in `i3c_master_queue_ibi()` to prevent
+>>> accessing an uninitialized `dev->ibi`, ensuring stability.
+>>>
+>>>>
+>>>> Fixes: 3a379bbcea0af ("i3c: Add core I3C infrastructure")
+>>>> Cc: stable@vger.kernel.org
+>>>> Link:
+>>>> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Flor
+>>>> e.kernel.org%2Flkml%2FZ9gjGYudiYyl3bSe%40lizhi-Precision-Tower-
+>> 5810%2
+>>>>
+>> F&data=05%7C02%7Cmanjunatha.venkatesh%40nxp.com%7Ceda8be8c7abc4
+>> 3b4ab9
+>>>>
+>> 608dd6c31c8e7%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C6387
+>> 856832
+>>>>
+>> 77582903%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYi
+>> OiIwLjAu
+>>>>
+>> MDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%
+>> 7C%7C
+>>>>
+>> &sdata=oyc9Wv%2Fj8HMRFIiIGL9nIw0XvI6FsLK2SvsQJ55H7XI%3D&reserved=
+>> 0
+>>>> Signed-off-by: Manjunatha Venkatesh <manjunatha.venkatesh@nxp.com>
+>>>> ---
+>>>> Changes since v4:
+>>>>     - Fix added at generic places master.c which is applicable for all
+>>>> platforms
+>>>>
+>>>>    drivers/i3c/master.c | 3 +++
+>>>>    1 file changed, 3 insertions(+)
+>>>>
+>>>> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c index
+>>>> d5dc4180afbc..c65006aa0684 100644
+>>>> --- a/drivers/i3c/master.c
+>>>> +++ b/drivers/i3c/master.c
+>>>> @@ -2561,6 +2561,9 @@ static void
+>> i3c_master_unregister_i3c_devs(struct i3c_master_controller *master)
+>>>>     */
+>>>>    void i3c_master_queue_ibi(struct i3c_dev_desc *dev, struct i3c_ibi_slot
+>> *slot)
+>>>>    {
+>>>> +    if (!dev->ibi || !slot)
+>>>> +            return;
+>>>> +
+>> 1. Shouldn't this be a Logical AND ? what if slot is non NULL but the IBI is
+>> NULL ?
+>>
+> [Manjunatha Venkatesh] : I think Logical OR operation is correct,
+>   Since if any one of the variable is NULL need to return before accessing those variables.
+I agree, i was incorrect.
+>> 2. This being void function, it doesn't say anything to caller if it's successful or
+>> failed ? Should we make this non void function ?
+>> if not, i am thinking it may run into multiple attempts, no log too.
+> [Manjunatha Venkatesh] : If required we can add error print log, Others please confirm your opinion on this.
+>>>>       atomic_inc(&dev->ibi->pending_ibis);
+>>>>       queue_work(dev->ibi->wq, &slot->work);
+>>>>    }
+>>>> --
+>>>> 2.46.1
+>>>>
+>>>
+> 
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
