@@ -4,38 +4,38 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37E97C3600B
-	for <linux-i3c@archiver.kernel.org>; Mon, 31 Mar 2025 10:04:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43AD6C36016
+	for <linux-i3c@archiver.kernel.org>; Mon, 31 Mar 2025 10:04:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=gVMGpUUOI/5Wz3RrcHQljfKPH06GJiRgzt+i4T8qY6A=; b=oylxi+NFnMbrmV
-	DqqLoJf/guU0+EpcLPXA8D9ZENcBUOYzs9YVZVAeLz68tLShHh8o0LptoeLzFnjSwRop09KOg33GL
-	+IHONfWJDjA4zm8Qj1N3moKicqSJh21QPW81GAK2aFNAU6g9yvWWqiiO8DH1ybpboS0gqRi+VZLfo
-	PH829dM8rDB1LoMG8YmoKyqajqPsn5uNKn7exscXD5Tm4VJtuBflqHsdcHTWZzBRqdA4ZzZZ02q3P
-	rIjDD1I3slZ0MLOl7TP3dXd0sIj4YBrmoKIdd58BuHRcMLJyJKDe6y7tCKXl27fzk6wH1qWJYD5Wk
-	v2CnwWHLKdlN94BbAdfg==;
+	List-Owner; bh=vV6wIIaxziLktAOX0YpP7tjHphKb7Rs/CKtUTbucf4g=; b=MzYabd6+5ngivA
+	rZEAmzfGDGM1aVWmCB6G1nhjObOodHVIKIopVOUQVG2o3maHjjcn4cHoKdGAfdjYoX7rGGoWI7W4Z
+	/YkrGduJlWcqnI5Pj/4iDPQO5X8inMRVNcBx83V0A1VDssOab7gKtLOgp8Z00E/nUxM8caISXB0Nu
+	N8SvD1ekz7XSMbrsGieZecW24Sc1wh21qoyAnA9ZZ7XDXp9iUg7l3Gd5vKo2IkARkJKRt316L3ctk
+	7eZrEyrnBbssjgg6zXTDpppHW51qK9wxUepUqR3NCNNYVbnfjGOley8rVYP7TMCP3iBly3ft5Qmdh
+	77k6We1l25tadd5veHeA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzC0C-0000000Hb1m-3PMk;
-	Mon, 31 Mar 2025 10:04:20 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
-	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tx1Re-00000005Qa5-01u8
+	id 1tzC0E-0000000Hb2V-086U;
+	Mon, 31 Mar 2025 10:04:22 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
+	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
+	id 1txPuN-00000008SZt-3yci
 	for linux-i3c@lists.infradead.org;
-	Tue, 25 Mar 2025 10:23:43 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3C4531A0D0A;
-	Tue, 25 Mar 2025 11:23:40 +0100 (CET)
+	Wed, 26 Mar 2025 12:31:01 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 613AF2022B6;
+	Wed, 26 Mar 2025 13:30:56 +0100 (CET)
 Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E5D901A0E5F;
-	Tue, 25 Mar 2025 11:23:39 +0100 (CET)
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 21774202163;
+	Wed, 26 Mar 2025 13:30:56 +0100 (CET)
 Received: from lsv03121.swis.in-blr01.nxp.com (lsv03121.swis.in-blr01.nxp.com [92.120.146.118])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 907F81800089;
-	Tue, 25 Mar 2025 18:23:38 +0800 (+08)
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id C472B1800092;
+	Wed, 26 Mar 2025 20:30:54 +0800 (+08)
 From: Manjunatha Venkatesh <manjunatha.venkatesh@nxp.com>
 To: alexandre.belloni@bootlin.com,
 	arnd@arndb.de,
@@ -47,15 +47,16 @@ To: alexandre.belloni@bootlin.com,
 Cc: rvmanjumce@gmail.com,
 	Manjunatha Venkatesh <manjunatha.venkatesh@nxp.com>,
 	stable@vger.kernel.org
-Subject: [PATCH v5] i3c: Fix read from unreadable memory at i3c_master_queue_ibi()
-Date: Tue, 25 Mar 2025 15:53:32 +0530
-Message-ID: <20250325102332.2435069-1-manjunatha.venkatesh@nxp.com>
+Subject: [PATCH v6] i3c: Add NULL pointer check in i3c_master_queue_ibi()
+Date: Wed, 26 Mar 2025 18:00:46 +0530
+Message-ID: <20250326123047.2797946-1-manjunatha.venkatesh@nxp.com>
 X-Mailer: git-send-email 2.46.1
 MIME-Version: 1.0
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250325_032342_176178_50C520B6 
-X-CRM114-Status: GOOD (  11.45  )
+X-CRM114-CacheID: sfid-20250326_053100_117114_13871AAA 
+X-CRM114-Status: UNSURE (   9.79  )
+X-CRM114-Notice: Please train this message.
 X-Mailman-Approved-At: Mon, 31 Mar 2025 02:45:26 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -68,60 +69,42 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-As part of I3C driver probing sequence for particular device instance,
-While adding to queue it is trying to access ibi variable of dev which is
-not yet initialized causing "Unable to handle kernel read from unreadable
-memory" resulting in kernel panic.
-
-Below is the sequence where this issue happened.
-1. During boot up sequence IBI is received at host  from the slave device
-   before requesting for IBI, Usually will request IBI by calling
-   i3c_device_request_ibi() during probe of slave driver.
-2. Since master code trying to access IBI Variable for the particular
-   device instance before actually it initialized by slave driver,
-   due to this randomly accessing the address and causing kernel panic.
-3. i3c_device_request_ibi() function invoked by the slave driver where
-   dev->ibi = ibi; assigned as part of function call
-   i3c_dev_request_ibi_locked().
-4. But when IBI request sent by slave device, master code  trying to access
-   this variable before its initialized due to this race condition
-   situation kernel panic happened.
-
-Fixes: 3a379bbcea0af ("i3c: Add core I3C infrastructure")
-Cc: stable@vger.kernel.org
-Link: https://lore.kernel.org/lkml/Z9gjGYudiYyl3bSe@lizhi-Precision-Tower-5810/
-Signed-off-by: Manjunatha Venkatesh <manjunatha.venkatesh@nxp.com>
----
-Changes since v4:
-  - Fix added at generic places master.c which is applicable for all platforms
-
- drivers/i3c/master.c | 3 +++
- 1 file changed, 3 insertions(+)
-
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index d5dc4180afbc..c65006aa0684 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -2561,6 +2561,9 @@ static void i3c_master_unregister_i3c_devs(struct i3c_master_controller *master)
-  */
- void i3c_master_queue_ibi(struct i3c_dev_desc *dev, struct i3c_ibi_slot *slot)
- {
-+	if (!dev->ibi || !slot)
-+		return;
-+
- 	atomic_inc(&dev->ibi->pending_ibis);
- 	queue_work(dev->ibi->wq, &slot->work);
- }
--- 
-2.46.1
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+VGhlIEkzQyBtYXN0ZXIgZHJpdmVyIG1heSByZWNlaXZlIGFuIElCSSBmcm9tIGEgdGFyZ2V0IGRl
+dmljZSB0aGF0IGhhcyBub3QKYmVlbiBwcm9iZWQgeWV0LiBJbiBzdWNoIGNhc2VzLCB0aGUgbWFz
+dGVyIGNhbGxzIGBpM2NfbWFzdGVyX3F1ZXVlX2liaSgpYAp0byBxdWV1ZSBhbiBJQkkgd29yayB0
+YXNrLCBsZWFkaW5nIHRvICJVbmFibGUgdG8gaGFuZGxlIGtlcm5lbCByZWFkIGZyb20KdW5yZWFk
+YWJsZSBtZW1vcnkiIGFuZCByZXN1bHRpbmcgaW4gYSBrZXJuZWwgcGFuaWMuCgpUeXBpY2FsIElC
+SSBoYW5kbGluZyBmbG93OgoxLiBUaGUgSTNDIG1hc3RlciBzY2FucyB0YXJnZXQgZGV2aWNlcyBh
+bmQgcHJvYmVzIHRoZWlyIHJlc3BlY3RpdmUgZHJpdmVycy4KMi4gVGhlIHRhcmdldCBkZXZpY2Ug
+ZHJpdmVyIGNhbGxzIGBpM2NfZGV2aWNlX3JlcXVlc3RfaWJpKClgIHRvIGVuYWJsZSBJQkkKICAg
+YW5kIGFzc2lnbnMgYGRldi0+aWJpID0gaWJpYC4KMy4gVGhlIEkzQyBtYXN0ZXIgcmVjZWl2ZXMg
+YW4gSUJJIGZyb20gdGhlIHRhcmdldCBkZXZpY2UgYW5kIGNhbGxzCiAgIGBpM2NfbWFzdGVyX3F1
+ZXVlX2liaSgpYCB0byBxdWV1ZSB0aGUgdGFyZ2V0IGRldmljZSBkcml2ZXLigJlzIElCSQogICBo
+YW5kbGVyIHRhc2suCgpIb3dldmVyLCBzaW5jZSB0YXJnZXQgZGV2aWNlIGV2ZW50cyBhcmUgYXN5
+bmNocm9ub3VzIHRvIHRoZSBJM0MgcHJvYmUKc2VxdWVuY2UsIHN0ZXAgMyBtYXkgb2NjdXIgYmVm
+b3JlIHN0ZXAgMiwgY2F1c2luZyBgZGV2LT5pYmlgIHRvIGJlIGBOVUxMYCwKbGVhZGluZyB0byBh
+IGtlcm5lbCBwYW5pYy4KCkFkZCBhIE5VTEwgcG9pbnRlciBjaGVjayBpbiBgaTNjX21hc3Rlcl9x
+dWV1ZV9pYmkoKWAgdG8gcHJldmVudCBhY2Nlc3NpbmcKYW4gdW5pbml0aWFsaXplZCBgZGV2LT5p
+YmlgLCBlbnN1cmluZyBzdGFiaWxpdHkuCgpGaXhlczogM2EzNzliYmNlYTBhZiAoImkzYzogQWRk
+IGNvcmUgSTNDIGluZnJhc3RydWN0dXJlIikKQ2M6IHN0YWJsZUB2Z2VyLmtlcm5lbC5vcmcKTGlu
+azogaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGttbC9aOWdqR1l1ZGlZeWwzYlNlQGxpemhpLVBy
+ZWNpc2lvbi1Ub3dlci01ODEwLwpTaWduZWQtb2ZmLWJ5OiBNYW5qdW5hdGhhIFZlbmthdGVzaCA8
+bWFuanVuYXRoYS52ZW5rYXRlc2hAbnhwLmNvbT4KLS0tCkNoYW5nZXMgc2luY2UgdjU6CiAgLSBV
+cGRhdGVkIHN1YmplY3QgYW5kIGNvbW1pdCBtZXNzYWdlICB3aXRoIHNvbWUgbW9yZSBpbmZvcm1h
+dGlvbi4KCiBkcml2ZXJzL2kzYy9tYXN0ZXIuYyB8IDMgKysrCiAxIGZpbGUgY2hhbmdlZCwgMyBp
+bnNlcnRpb25zKCspCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9pM2MvbWFzdGVyLmMgYi9kcml2ZXJz
+L2kzYy9tYXN0ZXIuYwppbmRleCBkNWRjNDE4MGFmYmMuLmM2NTAwNmFhMDY4NCAxMDA2NDQKLS0t
+IGEvZHJpdmVycy9pM2MvbWFzdGVyLmMKKysrIGIvZHJpdmVycy9pM2MvbWFzdGVyLmMKQEAgLTI1
+NjEsNiArMjU2MSw5IEBAIHN0YXRpYyB2b2lkIGkzY19tYXN0ZXJfdW5yZWdpc3Rlcl9pM2NfZGV2
+cyhzdHJ1Y3QgaTNjX21hc3Rlcl9jb250cm9sbGVyICptYXN0ZXIpCiAgKi8KIHZvaWQgaTNjX21h
+c3Rlcl9xdWV1ZV9pYmkoc3RydWN0IGkzY19kZXZfZGVzYyAqZGV2LCBzdHJ1Y3QgaTNjX2liaV9z
+bG90ICpzbG90KQogeworCWlmICghZGV2LT5pYmkgfHwgIXNsb3QpCisJCXJldHVybjsKKwogCWF0
+b21pY19pbmMoJmRldi0+aWJpLT5wZW5kaW5nX2liaXMpOwogCXF1ZXVlX3dvcmsoZGV2LT5pYmkt
+PndxLCAmc2xvdC0+d29yayk7CiB9Ci0tIAoyLjQ2LjEKCgotLSAKbGludXgtaTNjIG1haWxpbmcg
+bGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
