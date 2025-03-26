@@ -4,94 +4,155 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1317C36017
-	for <linux-i3c@archiver.kernel.org>; Mon, 31 Mar 2025 10:04:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D7D34C36010
+	for <linux-i3c@archiver.kernel.org>; Mon, 31 Mar 2025 10:04:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:Subject:References:Cc:
-	To:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vo8JcozwRLrspP9KHMw8iv9BToFpUABKBtdWyN8jhCE=; b=3GP2/guiDX1h9s
-	k/lzU/CjhvXPlP21glJckQHdH0F0/ygATiTC5cxLZ4nE+lbekR3bYsMRteDoyceuf/v++DHZf2vjs
-	D2E2dPP8Tesc23n/x4VcZf/KEgYwt+nyb1zT1d92qrLVQiSYl8XIcVRYxSgj9GfFzCjn5t1Xq6ev0
-	KRJOA0pvp9n1B5KN+NKjhvg6X8cEf/UWNxLP4AntSDSgAlZzZNEXqekCZyKW8w7ODpNcwLucXA7Jr
-	p5tE9C7qRg7ptk2A3kyWWVEip/7i1IYBm2QCe76FI1bLBABc0owWv2Lys5gmFXIiWWPsrUqhlHPyy
-	LzE1RzhXLhTEZ/qEE/8Q==;
+	List-Owner; bh=bU6DzM51qIAhLRdNnPsbFrW+g3ePmSI3O8jhs4nBzYM=; b=SK1bJB8Zf7ujcj
+	iHqTM5cTOK+cSml0R013t105c4kJCvyF2H7BpfnJ9YigJ3RYVtl4OwQ+AeaDDNiw4zN2557exu0De
+	KX1bAE6o5qp1QU+i8c1m1C1HDQL5pqK0DX+RFbbn6CCwLA1hLsrSp1ichgmTQEOq4/CfSKduznXvX
+	Vytemr7Hj3UtwHNLdAj9KV+YB7uaokM97vaBJ37Po82IXxXMq7izHvJTshJzWme/q2/5fPtaGNdAH
+	hSkyCi5DK3/erVZeW+tQQdZgf8d6csPF+2viVO9FfENfGVc47N9CB/MGA5UKW/6CcSmMDasgyfDuK
+	M3ghUEBDSChLQ7j2lN9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1tzC0E-0000000Hb2x-2WNA;
-	Mon, 31 Mar 2025 10:04:22 +0000
-Received: from mout.web.de ([217.72.192.78])
+	id 1tzC0D-0000000Hb25-2cxa;
+	Mon, 31 Mar 2025 10:04:21 +0000
+Received: from mail-am0eur02on20623.outbound.protection.outlook.com ([2a01:111:f403:2606::623] helo=EUR02-AM0-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1ty9lH-0000000DQBA-3wZl
+	id 1txKj0-00000007icq-3Iw6
 	for linux-i3c@lists.infradead.org;
-	Fri, 28 Mar 2025 13:28:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=web.de;
-	s=s29768273; t=1743168496; x=1743773296; i=markus.elfring@web.de;
-	bh=IpfDNgazgXXBhb3QCNRjJJD4rFulvC5l9bpTYHKG/4I=;
-	h=X-UI-Sender-Class:Message-ID:Date:MIME-Version:To:Cc:References:
-	 Subject:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:
-	 cc:content-transfer-encoding:content-type:date:from:message-id:
-	 mime-version:reply-to:subject:to;
-	b=V+ct6d2aiYPipLyNzTJIGp5xE3blwGV4MJzi71wDjLMjqIfaEpauAS4lUBBc5IKw
-	 PesrvwSg3KCuHnHl8neZQscEK+QbLdvVIAUvuB5OZUf/URsJbSYX1TkJpUMe1FA99
-	 0R6TwfI5+RTbgePAExWvKb0Re2vN8hGvn4fJ76nqPyJGRGVhU4aCwZ469b3bX5mrU
-	 SkgVnvlZKcZVFVcl9DMGo99gU8qW6MVw3CccwZCHB3CxT+EhkvVhSngO8uVstH1qC
-	 vEhRT7Zc9nYWmEGvlCqNwXaYlxyg+AB9AdIY0skgqo/g1GieSj9mdujNl/kM0mDWV
-	 2/tQyNylINfPRKsyIg==
-X-UI-Sender-Class: 814a7b36-bfc1-4dae-8640-3722d8ec6cd6
-Received: from [192.168.178.29] ([94.31.93.33]) by smtp.web.de (mrweb106
- [213.165.67.124]) with ESMTPSA (Nemesis) id 1MeDMb-1tNRlH03Md-00b2Hg; Fri, 28
- Mar 2025 14:28:16 +0100
-Message-ID: <06545fa2-7f82-4154-a882-faddb53df4d9@web.de>
-Date: Fri, 28 Mar 2025 14:28:13 +0100
+	Wed, 26 Mar 2025 06:58:56 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=zS5SFy8GLFDVpGmhupOc7DiR1Yvm59BLiuEXxQLlf0B17XkIa49ArxE7Z2QwY9t/twKNd5flcd+L6eCRe6i4Plcwc+AEPh5zRbHyY8g8943cxICom2/y9pJAs0nftpHechqP6aRXpmGSpxpuCMKoCTkLirXfx078fdDvSJ9imI8YF53ULfvVTyhg1aSwqO3nOWK686Ea+SuAVNPtQrNe7PPPVW3UBZHT4Wc6RiOam0jlqr2knN6tVsVTHKkJYnpUJBtArTuza1cymVTskzNMgNBp0575Wg1whzor82W4mVWVGMZnzQt/4bWBXZmkFh/42tnepltuxiSFVyyue1HNfw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=xqIebak3oYApFrQIoFNS+v3Eyx+wOcSyNpLdEIkR7aU=;
+ b=JMFHm4fLmcmSPiDW2Y4cNYR+qtWFZCUUm7DpAHaDas3zdugTOsgDyw16oeZcMSrQk6ONjdcLhK+lXOERDdQJExKK+a8TblXIUxvvnKmFewNQ1wXwRTKKF8fLHB67PXyM38Ojlr2TIEfhbSGhKlrdY58AdM3jNrMclwsRIPuXBm8H2SsPOPltbTCtp1mhjElDO05F9fOHmvWmKzy7motgYye4KATthCQIg1BOjFcld0vx9Ne0bZTIG0biuHGy3DF8GTwRwieU67YrlmKuzFRnhdglB1U5cempMJNVOsBEjsnQXmhUxIdc0SwOaA1cloHZUDfUAYnEKoTuEnm5Zitgmg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xqIebak3oYApFrQIoFNS+v3Eyx+wOcSyNpLdEIkR7aU=;
+ b=iEYiOf+dya8CCEhBP9BQ3YcujEznsadvpjpKRlT2SLJP4b8c+xJ9iaHE8DI59CEqAZHTM8WqI/69swhFtlDZeZMM7DMoHlmoSIOVbfBmub0AhrDHVU+4xP6olqdO9TG7FyJuuHxyxSIUEJ8gMoR2Znsji+QTm9jAL5fTMN+A+v7/Qe+5aPGz7urIVLTstaXUGqJu495rGkh0QGeICB1PFG5vMK6ORlKZDGxdMfn1M/BKnqDwA4rv+wRe0C1w3rLp2P88cs4hxlLiDlPICU4mwsTask8kTvcpJkhFouqWFd36Q6vIOXdKk7Zo1TLEA8gPczQCeomkUIl5hjviz9hAcA==
+Received: from VI1PR04MB10049.eurprd04.prod.outlook.com
+ (2603:10a6:800:1db::17) by DB9PR04MB8124.eurprd04.prod.outlook.com
+ (2603:10a6:10:246::11) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8534.44; Wed, 26 Mar
+ 2025 06:58:49 +0000
+Received: from VI1PR04MB10049.eurprd04.prod.outlook.com
+ ([fe80::d09c:4c82:e871:17ee]) by VI1PR04MB10049.eurprd04.prod.outlook.com
+ ([fe80::d09c:4c82:e871:17ee%4]) with mapi id 15.20.8534.043; Wed, 26 Mar 2025
+ 06:58:48 +0000
+From: Manjunatha Venkatesh <manjunatha.venkatesh@nxp.com>
+To: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>, Frank Li
+	<frank.li@nxp.com>
+CC: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
+	"arnd@arndb.de" <arnd@arndb.de>, "gregkh@linuxfoundation.org"
+	<gregkh@linuxfoundation.org>, "bbrezillon@kernel.org"
+	<bbrezillon@kernel.org>, "linux-i3c@lists.infradead.org"
+	<linux-i3c@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, "rvmanjumce@gmail.com"
+	<rvmanjumce@gmail.com>, "stable@vger.kernel.org" <stable@vger.kernel.org>
+Subject: RE: [EXT] Re: [PATCH v5] i3c: Fix read from unreadable memory at
+ i3c_master_queue_ibi()
+Thread-Topic: [EXT] Re: [PATCH v5] i3c: Fix read from unreadable memory at
+ i3c_master_queue_ibi()
+Thread-Index: AQHbnW/7PXTpawcfAEm3Y/HvAU7//7OD7ZIAgAEMvgCAAAJv0A==
+Date: Wed, 26 Mar 2025 06:58:48 +0000
+Message-ID: <VI1PR04MB10049E90AC1CB4823F91D1D698FA62@VI1PR04MB10049.eurprd04.prod.outlook.com>
+References: <20250325102332.2435069-1-manjunatha.venkatesh@nxp.com>
+ <Z+LA/GASTPMMcVpC@lizhi-Precision-Tower-5810>
+ <8c624cf0-febc-4ab9-8141-2372bfe4d577@quicinc.com>
+In-Reply-To: <8c624cf0-febc-4ab9-8141-2372bfe4d577@quicinc.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: VI1PR04MB10049:EE_|DB9PR04MB8124:EE_
+x-ms-office365-filtering-correlation-id: 151209a5-202f-44a6-9730-08dd6c33a874
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|376014|366016|38070700018;
+x-microsoft-antispam-message-info: =?us-ascii?Q?ZKOs0Iv7KfHGhYFXVz0XbJ3JTKY/9j3DsL9W7tx+Bo3yw/XI4XfuWiuNX2f4?=
+ =?us-ascii?Q?WRQRK0slUusHDoNOZk2FFg6QwLBmBrWEQaZibg58NxUnu6JGk4YASpXFjRW3?=
+ =?us-ascii?Q?NN4ai8eMvV1+wPbz9U36EcdwD+wWcf8mArVdagoL+KUNdD3jKliJziI6BW7Z?=
+ =?us-ascii?Q?rfqStRDqIAnQBNB1jx2IkxsNtaBwurC/gu+lMUOQT69+PbvNODT92o54kAmo?=
+ =?us-ascii?Q?3LZ5UkJL8RCirV2z1WSvtSwNp4+iZvgKQMx1GbWfOpcu0gl2eI4Gg2VTwdva?=
+ =?us-ascii?Q?MzzNYHeRPA0Era2U7AdCNiG62YerxfOMC7rHlNHSKs0xqCiXym7sIRWGqJ6Y?=
+ =?us-ascii?Q?vgKvzp9z5PaMZV+6TcfiaZIzNyVohRegQrVJpbJA+O7JY5LYWxds94BCsM79?=
+ =?us-ascii?Q?FbgtFWaS2oDEv6gWfRQkZNcVqpkMdjpaz/CtDKz6CHv3LdzKx+xkdAUpQFII?=
+ =?us-ascii?Q?YfuAMEpG228yjfnbrz7cZbDMbS5e3zoQi0akWaoPbTq33Zi+Pf2DyuKoy3Sn?=
+ =?us-ascii?Q?AWpRiyPiI8qMNGg3VEuCkdAwH4+m84FeaT2uhMxj1kvuadRkEHdDPQM0zdBH?=
+ =?us-ascii?Q?9MBVs5Hfc7AC58RL1vNPlnItAZm89989SHXJn3ujCP+NcX6gPoFlF5UJDdOj?=
+ =?us-ascii?Q?/yaMFqdkLd2VZ5jGqmHvvxkEngie7eJDK3vvhLq/SUJBubQtnH1fxj4Ge679?=
+ =?us-ascii?Q?Oa4m0stl1jNIsqqcxdRnDA0UlBLEjuxGsT2AaJLb3fyKLxMKWOTg69kplAF/?=
+ =?us-ascii?Q?Ojxs/fIC2ES5yvmY48KOmzcJ/9+EYZplCa4+cQ2rAGAun8Wn5baK+vsiEgOS?=
+ =?us-ascii?Q?6AHxvDBY/4GQeNLBYApVzN+RYzWElRwDl82WbPZJz/vuTn1uj+BUgKIbQS7B?=
+ =?us-ascii?Q?/5wU5Og7IcSBrSq1UIjIJw/OVyJK0MklawHDU94ixpDrwogljaLwAzK532kD?=
+ =?us-ascii?Q?oD2lkjw9JTiu0Sv2q1gpw+iqOPr/uv0Osq43WWZ9UI9kXZNy9q3hOZc2j6fS?=
+ =?us-ascii?Q?rqVM/oQZWJTBsABlhLKFNDsV+TnUQdenTgTFTYig4aOguHPiyH23+gsWPWSa?=
+ =?us-ascii?Q?eyN0jNA81UFRBU8joFDT7PiwTJ6NwPWK5akyR9S+qA4NeUkzmlOSeQ6/aHdh?=
+ =?us-ascii?Q?40ubaoBvp06w0J3myQtg6Pt1Li0sybirN6M8SJAZho3jvRIgp9lBcmRHhQxP?=
+ =?us-ascii?Q?Zys0MsINBc49woCQG2ST5hd302z2d+6vP8EsHZR8u3kODTu9gc2pr2oLXAlG?=
+ =?us-ascii?Q?sNEQoWbrvyJXDpU7U1/GECF+2iVe/2Bw1QG0AtqabsfGigLWXClyGboF4LDj?=
+ =?us-ascii?Q?FNWf/VhXJyxoBxePUkju2MEPxkyBLR5CzWtOCCPPPp+A/4JHytc2oNLFUmlg?=
+ =?us-ascii?Q?KTxDKC+LiD2b+LHik1/aOfQu7EHyiPWv2tI8R1L7YzcNgKWc1aN720qbqwqp?=
+ =?us-ascii?Q?+Bp8nnm4/yt5TuVVr8d1YkHXw0DGLdxq?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:VI1PR04MB10049.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(366016)(38070700018);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?BWPOk+XRyl3EJuTXQdzRR96A/8+yfQdymQ1yaGHqsnNjiGEqO5g4FmXAeqMP?=
+ =?us-ascii?Q?zrwNmNK8ZY1FEAgKbFr9zxPrGurwP3/mUdv4t+aZ4GOy2j6HIP5C3cKZh9oO?=
+ =?us-ascii?Q?gdSMGj/PKRbxv2MHpwBgsoKXBtWpn/iPGs0TFyhMeWyfaqvlqz+lHtCs8mcZ?=
+ =?us-ascii?Q?FQbwwRff9Rz/pFxB53KvvRqkjJ/92mObsW7L9qxYWdVbVfpzpeoAdpey5nig?=
+ =?us-ascii?Q?/B6VpgauoN0A5oht/0VbtGwmotG/mX5IwEm9H8vcgcNae29lLC8kajT4Rp5q?=
+ =?us-ascii?Q?eZZeMHZKnHuIuu5coacbcIFw8Ee0DhkjeczMs+M3hN1lqfcBXhCBkWCKk9+2?=
+ =?us-ascii?Q?sX7/k55/d22ny5PTAiBi4bHyRzw4REFCMh1gV1YmBnIVfmQSpkzSQ2sUmtU5?=
+ =?us-ascii?Q?g/nrsr8b4WcHwvJbg94Y6TCnfOTwL5nOgTaDSWDD0a+KDS3WSmjsLrTLNG/c?=
+ =?us-ascii?Q?qd3i9pjaYY87hTLBvlttVE5yKOYEpcAeVi6r+lmfbzvllz41RNcFZ7+/u4ZQ?=
+ =?us-ascii?Q?2e7VMZNzqMQtPLwQ82f0rMJ9mm446RQcohdsDXTEsyeQdt3bgPXqxltqIXtl?=
+ =?us-ascii?Q?Jedj0pNq/k5D2sKlfI0MaDFZY/nAaH7uNgApJaKf2YmCncz/EThxjyKFeEdj?=
+ =?us-ascii?Q?9UtA8Ygbx4fAPVXF9L9VAGDwSaFpFyn/477O/qOVcURrq1W31DU5cf8kNr09?=
+ =?us-ascii?Q?tJxdZp8DfUizdiu9O1913gXzt/7remHoMs8XjcMhW3xH33ZoGta+ymkrAUSy?=
+ =?us-ascii?Q?W1SKk9rW8D10hbn6/hXZXWNIXcYvHsDZd/503HucNg82pPeYeAZfz0aQol5j?=
+ =?us-ascii?Q?HwPeFk24YzIodwRsksfBn42khto8rN3epSo0c4CK/OycZS1+40XmNAW81Rzh?=
+ =?us-ascii?Q?LIL/lLwo5E961Ue+opCiCxc0znPPIJUnGsV+YauAiGNskF7lRFdZS3daHG34?=
+ =?us-ascii?Q?OqISz5qlTywj+LRovMRdodr0QUUenaXDefm/5iHuxtyNlfZjt77VdEFlz4Hg?=
+ =?us-ascii?Q?AbLZT0dFe+e6GEpByCTKamSGVhU+DYc5A9qI/WddEIp26QkOpBDuj2cMjJos?=
+ =?us-ascii?Q?EkOgMSYOEGO+6VLU4K1XxVbRQfiAnX5TQQWsCEh3lKK0NGeG9WxkQFV2VdwZ?=
+ =?us-ascii?Q?3wD4A34vvpYnIUPwfhkdL4rBRE8vVScLD+npa/6ufWOdcGJXjywZeZEQHu1W?=
+ =?us-ascii?Q?Kio5B7UhcBzqwj0dRKYA80REqij5enh22DA92gyO5Dt68Eq4etP+qOYVn8mE?=
+ =?us-ascii?Q?5OtWrXyDIvTTR8ySnzUnywU8PU2WX3eZS73PnJUSY8miCHjRbaMmxOYbuoc+?=
+ =?us-ascii?Q?flr/p4JPPDe3P/PV40Mad876OgZg01IcfzQd7l7WsxIn779//dDAwk3Ukp7i?=
+ =?us-ascii?Q?ZD6vhZWSAK77gw+ZXwgnpmI4JH9qSs6dBHO7gVdXMIxUizXAiIeoZWcQ4O7+?=
+ =?us-ascii?Q?hho7UycZwAP9XS+8vV2VviUpjAGkIr6zIE8YBPg1NDTT7ibfGkWbllUebEGK?=
+ =?us-ascii?Q?xs6A6R7v1K4FXblvl5eP12LDMD+sXcPR6izBaiySJz3DCBCOH1yScNDltX2w?=
+ =?us-ascii?Q?egoern+VUh5UVq8AjNV2MLz+w3sdrWY9gkLKbqOPfdOxvzVtVIP6m6gyTDSw?=
+ =?us-ascii?Q?SQ=3D=3D?=
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-To: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>,
- linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-msm@vger.kernel.org
-Cc: LKML <linux-kernel@vger.kernel.org>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Bjorn Andersson <andersson@kernel.org>, Conor Dooley <conor+dt@kernel.org>,
- Jarkko Nikula <jarkko.nikula@linux.intel.com>,
- Konrad Dybcio <konradybcio@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Rob Herring <robh@kernel.org>
-References: <20250326141641.3471906-3-quic_msavaliy@quicinc.com>
-Subject: Re: [PATCH v2 2/3] i3c: master: Add Qualcomm I3C controller driver
-Content-Language: en-GB
-From: Markus Elfring <Markus.Elfring@web.de>
-In-Reply-To: <20250326141641.3471906-3-quic_msavaliy@quicinc.com>
-X-Provags-ID: V03:K1:cT4tjGtvJXvSRL+OUV0lx2UA5LnpeNz7q6/InzNnyiHEeviRrrT
- J5NFpTF815mDYWMO4nPeGSD+QWvucLhYGTqXjab/uxjKLQs+S+00/gVECE65Ll0VkcaBJ13
- 3O69z7LlI/4kiHqQB0J/15AuLEWqpqTotzAjYKo7DSXrGgpATtje3q3pelLnJc74ZIWTwWK
- 5bbY3ik9lh+qlhh2hkwCA==
-UI-OutboundReport: notjunk:1;M01:P0:VOlzgvrPiWw=;l+7eWe+iFzWKRZ3mRi7dimYU2oq
- grhkx9vsw/VEsjtCEXy54VQHpRClnNXV+HsR9CxvgANjp4EF3yKVRZOHULbMauoT8pJnnaooT
- 26PitrDifSc990DwYDszXFag//F4MEJqvQFvQATnpP63nvBnufBWMaJ9lAfeD/W8HqNNa9QFp
- Wv4UUqLu5ospDIjmuWKH1ztIa6nRdFA4aSH77Cfrrea7EFQC4Yfhq99WXoI04ntItmb5LpWwr
- p3XiEo5ga1keYYYM5/g8ystw+oZWrIzac4taLPppQQSZMkXHg1i1a0I7+0ZLUpbrUgJcZLzXO
- 5tR5w7hc6ierey3WTEXDSwEmn4G/LrevpBdHbCPbdq9ZF0BVnaHyjnK5HVXVdUcpW2xigWnaw
- /aWWZ3N9Q8lx1wUhvCcpdlULI+BdHafdtv5DttCKdGPvXn3bSGNpisCZk1eRvXCQTSo9AD3X3
- iJvTzfdgV3N7fU9fpJbvExMIQQKfMqApC+aXhE/u/hI8w9MBvl9UKh7zxk0rfN1mRKrGPD3Ay
- LBOpYj36D536AY0oUl/iVwgBiwI+uCMvO5/rRMbcTcRO6OwAPl0cit1RTyOQTnp7Zxcu38VHX
- 9a2x3tvW6MnCiRVtLm63UNVzza4gPL7tLr1g/JNC1BPO+xNfEW7HV6JttUvUminTVKYw4WT6F
- kM+VnT++9dayUzuzO0zugVmwl02ktS7qWjNhFKFQwfHVh4Z1dDiCK40teZbGA57CREoYXPD0s
- PaswK4GWhPRj2JijkOdxI+cyIDafIfVblEzE2bJMQ4X78MOmp5yKFT/vl0AGp9Bts8kBZENLg
- sN38PcnpJXVZsAGGODKy+sKtRsCd6VPdO7L5GeKe6qUTwsaSNyTux6jZTZpMtxHSHPgwI0dJq
- 1ucUB5aSYQ39vjc7k/LrH8GeHQMdeyoJjGsLFqxrEpAAV6mzM/S0asiXAVjsGdZ2P0zR1y2AZ
- PmYGR6kidtZy+1PlaFWBaG/XZLzz4XwvOqxJukKRxEscdnaRypUufwnfWXeJtOH8vn+t+99C/
- E4YuQq7a93OA3XFC6Sv5MRzbFjLN9jluFbuWR6iYF4bHvQiERfh80Tom2mhKwm9ED8NuBrxvu
- 7oIPpZ7UgcGx8mwYDi6A39hw4JojweAt+HoBteW4kYoHRDIZvoMtzG/d7gMZbZo+f7Kq+BQCH
- wmSjV6WcqsG6r7vSt0ApWNjislltguxytljGvqGFIX7RBLDOk8D3Rg6SEtFkCrGf7NOJnhUPo
- d/kKoneAZ6TfdgqD7vZbRvfgdrWJcIo6AHRt7E5IM802j0a8Ndylp7MNeKh8ERifVzWx5GOTS
- tHV5e2/sh04YF//+YEfFTL/TvC8N51HOE4W+TAcQLQ3VeEMnI2OF2Y37YeqHmPWgFbMLnnti5
- toB+RCOs+2qe5s7SPYCbAuSfxuRtNcZZvsR7b9t5BY6kLbYjfTtw39fGX33e4aN9eB4L34HC/
- FIAzafpxCJg0qAp0Lsa25iy08tYcpQ0T3C0242WpeAmb4Aao4
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: VI1PR04MB10049.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 151209a5-202f-44a6-9730-08dd6c33a874
+X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Mar 2025 06:58:48.1585
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: +jKOX5ngdNCKJV61z+IwcMha0zfm+CzPQH/4OAQdWO+oGDTk5Br3lRD/47m+L0mMm7SpH3xIyYreQYp0m1qXc5J1zkcEZDy6H4yLlRPv8bU=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB8124
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250328_062840_289102_8BB7677F 
-X-CRM114-Status: UNSURE (   4.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250325_235854_829960_AF4D501A 
+X-CRM114-Status: GOOD (  40.82  )
 X-Mailman-Approved-At: Mon, 31 Mar 2025 02:45:26 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -104,15 +165,142 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-4oCmCj4gKysrIGIvZHJpdmVycy9pM2MvbWFzdGVyL3Fjb20taTNjLW1hc3Rlci5jCj4gQEAgLTAs
-MCArMSwxMTA3IEBACuKApgo+ICsvKiBNX0NNRCBPUCBjb2RlcyBmb3IgSTJDL0kzQyAqLwo+ICsj
-ZGVmaW5lIEkzQ19SRUFEX0lCSV9IVyAgICAgICAgICAwCj4gKyNkZWZpbmUgSTJDX1dSSVRFICAg
-ICAgICAgICAgICAgIDEKPiArI2RlZmluZSBJMkNfUkVBRCAgICAgICAgICAgICAgICAgMgrigKYK
-CkNhbiBhbiBlbnVtZXJhdGlvbiBiZWNvbWUgaGVscGZ1bCBoZXJlPwoKUmVnYXJkcywKTWFya3Vz
-CgotLSAKbGludXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
+
+
+> -----Original Message-----
+> From: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
+> Sent: Wednesday, March 26, 2025 12:15 PM
+> To: Frank Li <frank.li@nxp.com>; Manjunatha Venkatesh
+> <manjunatha.venkatesh@nxp.com>
+> Cc: alexandre.belloni@bootlin.com; arnd@arndb.de;
+> gregkh@linuxfoundation.org; bbrezillon@kernel.org; linux-
+> i3c@lists.infradead.org; linux-kernel@vger.kernel.org;
+> rvmanjumce@gmail.com; stable@vger.kernel.org
+> Subject: [EXT] Re: [PATCH v5] i3c: Fix read from unreadable memory at
+> i3c_master_queue_ibi()
+> 
+> Caution: This is an external email. Please take care when clicking links or
+> opening attachments. When in doubt, report the message using the 'Report
+> this email' button
+> 
+> 
+> On 3/25/2025 8:13 PM, Frank Li wrote:
+> > Subject should be
+> >
+> > i3c: Add NULL pointer check in i3c_master_queue_ibi()
+> >
+> yes, Aligned.
+> > On Tue, Mar 25, 2025 at 03:53:32PM +0530, Manjunatha Venkatesh wrote:
+> >> As part of I3C driver probing sequence for particular device
+> >> instance, While adding to queue it is trying to access ibi variable
+> >> of dev which is not yet initialized causing "Unable to handle kernel
+> >> read from unreadable memory" resulting in kernel panic.
+> >>
+> >> Below is the sequence where this issue happened.
+> >> 1. During boot up sequence IBI is received at host  from the slave device
+> >>     before requesting for IBI, Usually will request IBI by calling
+> >>     i3c_device_request_ibi() during probe of slave driver.
+> >> 2. Since master code trying to access IBI Variable for the particular
+> >>     device instance before actually it initialized by slave driver,
+> >>     due to this randomly accessing the address and causing kernel panic.
+> >> 3. i3c_device_request_ibi() function invoked by the slave driver where
+> >>     dev->ibi = ibi; assigned as part of function call
+> >>     i3c_dev_request_ibi_locked().
+> >> 4. But when IBI request sent by slave device, master code  trying to access
+> >>     this variable before its initialized due to this race condition
+> >>     situation kernel panic happened.
+> >
+> > How about commit message as:
+> >
+> > The I3C master driver may receive an IBI from a target device that has
+> > not been probed yet. In such cases, the master calls
+> > `i3c_master_queue_ibi()` to queue an IBI work task, leading to "Unable
+> > to handle kernel read from unreadable memory" and resulting in a kernel
+> panic.
+> >
+> > Typical IBI handling flow:
+> > 1. The I3C master scans target devices and probes their respective drivers.
+> > 2. The target device driver calls `i3c_device_request_ibi()` to enable IBI
+> >     and assigns `dev->ibi = ibi`.
+> > 3. The I3C master receives an IBI from the target device and calls
+> >     `i3c_master_queue_ibi()` to queue the target device driver's IBI handler
+> >     task.
+> >
+> > However, since target device events are asynchronous to the I3C probe
+> > sequence, step 3 may occur before step 2, causing `dev->ibi` to be
+> > `NULL`, leading to a kernel panic.
+> >
+> > Add a NULL pointer check in `i3c_master_queue_ibi()` to prevent
+> > accessing an uninitialized `dev->ibi`, ensuring stability.
+> >
+> >>
+> >> Fixes: 3a379bbcea0af ("i3c: Add core I3C infrastructure")
+> >> Cc: stable@vger.kernel.org
+> >> Link:
+> >> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Flor
+> >> e.kernel.org%2Flkml%2FZ9gjGYudiYyl3bSe%40lizhi-Precision-Tower-
+> 5810%2
+> >>
+> F&data=05%7C02%7Cmanjunatha.venkatesh%40nxp.com%7Ceda8be8c7abc4
+> 3b4ab9
+> >>
+> 608dd6c31c8e7%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C6387
+> 856832
+> >>
+> 77582903%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYi
+> OiIwLjAu
+> >>
+> MDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%
+> 7C%7C
+> >>
+> &sdata=oyc9Wv%2Fj8HMRFIiIGL9nIw0XvI6FsLK2SvsQJ55H7XI%3D&reserved=
+> 0
+> >> Signed-off-by: Manjunatha Venkatesh <manjunatha.venkatesh@nxp.com>
+> >> ---
+> >> Changes since v4:
+> >>    - Fix added at generic places master.c which is applicable for all
+> >> platforms
+> >>
+> >>   drivers/i3c/master.c | 3 +++
+> >>   1 file changed, 3 insertions(+)
+> >>
+> >> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c index
+> >> d5dc4180afbc..c65006aa0684 100644
+> >> --- a/drivers/i3c/master.c
+> >> +++ b/drivers/i3c/master.c
+> >> @@ -2561,6 +2561,9 @@ static void
+> i3c_master_unregister_i3c_devs(struct i3c_master_controller *master)
+> >>    */
+> >>   void i3c_master_queue_ibi(struct i3c_dev_desc *dev, struct i3c_ibi_slot
+> *slot)
+> >>   {
+> >> +    if (!dev->ibi || !slot)
+> >> +            return;
+> >> +
+> 1. Shouldn't this be a Logical AND ? what if slot is non NULL but the IBI is
+> NULL ?
+> 
+[Manjunatha Venkatesh] : I think Logical OR operation is correct,
+ Since if any one of the variable is NULL need to return before accessing those variables.
+> 2. This being void function, it doesn't say anything to caller if it's successful or
+> failed ? Should we make this non void function ?
+> if not, i am thinking it may run into multiple attempts, no log too.
+[Manjunatha Venkatesh] : If required we can add error print log, Others please confirm your opinion on this.  
+> >>      atomic_inc(&dev->ibi->pending_ibis);
+> >>      queue_work(dev->ibi->wq, &slot->work);
+> >>   }
+> >> --
+> >> 2.46.1
+> >>
+> >
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
