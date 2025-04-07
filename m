@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADB55C2D0CD
-	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 09:20:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19471C3ABC9
+	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 09:20:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sbQmnTDOMgyIHX8BawjTxtCT46Qj2Y0Ex30/4egWNCQ=; b=sPl90aeIAagR+a
-	WaRViJP6kHrWDLvGH1XI0W85vehoK0HoLAA5CX9t0auMDjwTW3khspLcjtgohLDjfu3Ku9i7bSghM
-	Q4oBAsHA56CmJ9BC3t/x0uc+lgV7ZbvxWLlRU3A1oLtwp+JFXBZbsPbLsCFCESajZQSrG0GpqpQH/
-	CfWX4XggJ/+4klOkwWTVJbIThYaYUwTkAVOJH9PUHCy+BfC1nzyu3++almIHjTr5GEAeVgJew6vpv
-	2ZtaeWANQHEJs7fdrKAIG3Z9ceaDlkVwd2YLPpmJ719W8Nxrs8Sas992cO5lv4UFTGp+VhM3PiyUo
-	cNz07aaV1NGBnzC/t5xQ==;
+	List-Owner; bh=sbQmnTDOMgyIHX8BawjTxtCT46Qj2Y0Ex30/4egWNCQ=; b=rP4NFJyqOzl4Ct
+	36uGSRlAl5rTTMik9EciUNKD804B8xBtbvXkMAOk6jgAuqwsIKO28praOhYBPrjnwY1CBUGO0Dz1k
+	thQhhdMRv1Rkpr58v0ElJ5zKQK4FsV0ZN6HlZTkOXbHTFrCcBUjs89qEBU3WRU2miGsEMcHErv8XM
+	PtCiL0POoWUUCrpL8iXxJZPdlJmMTQ+8bMdRllsaTEC+gtCadjro3C7MwHOFWIAs8qvo5MBa09AEA
+	gtK6JDtk+ZBwM6az1ugugMFk0ZVl294ijZxqWROk38Zs86Q7ByS7pLgkmeNKzgQHtPhwndHbmCSSL
+	4gJnVl1I3sVyRe0+w9zg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFUlC-000000007z2-1xOH;
+	id 1uFUlC-000000007zC-39rZ;
 	Thu, 15 May 2025 09:20:14 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1qwa-00000001U0f-0wPj
+	id 1u1qxm-00000001UIK-3xf2
 	for linux-i3c@lists.infradead.org;
-	Mon, 07 Apr 2025 18:11:38 +0000
+	Mon, 07 Apr 2025 18:12:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id D792F49C14;
-	Mon,  7 Apr 2025 18:11:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6DF86C4CEDD;
-	Mon,  7 Apr 2025 18:11:34 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id E78E149F74;
+	Mon,  7 Apr 2025 18:12:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7EDDDC4CEDD;
+	Mon,  7 Apr 2025 18:12:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744049495;
+	s=k20201202; t=1744049570;
 	bh=2t8t0F9zeWJL6ngosXiE6XTK7TFO9G0uejD+Xa30WN0=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=C/f751f+6K97vUwzUAzl1v8XnRuu+Zc6H9nXT9uy4S076rItQngMo80xI5gk/UFa7
-	 m6FGmuwJuk3kl9ErVCT79dLTBZ4R2932VMW6Zo7Nd4A/aH3AfPKQ8km7Zo6bzKJ3Av
-	 WjkUMV85WS1o/D77CNzrdVSiugLS9tvRwvAlrsOfoCJS/zLyXz9DA+gO0WjeWcPcGI
-	 yGAz94RgG0MTslBNA23+4wWPfhAEN4kWxB7kFjRPG6GpAQ0KUlcxG67/Xk4OcS5VEI
-	 OMVNz24N9QGcALevUVHAIkXDn33mAdrq+fTyCk5fHCBnhsPa0cdQ8h9WNQAGbgvsJO
-	 Tppb4Xjt1GRTw==
+	b=LludQa5xe6NA9ZDizMkvRzBPNFFs6JcTIG4S7VomaGAABy0yPQ+GIbFT8NoqCoj5R
+	 86beydL4csr8vN6Ab5366M9Am7puetlWz6MXbs4hWP5nQ10GHSmVgLczh4E9BuetbG
+	 fmzvmEe2G617+c4ccDoNAWrOWGq72fSG8CrsvBWEFWxHahA+neRa2MNQBXphTAkrOo
+	 FVo/KzY4QjLHCDe/7QSJyIDXXfZCJVcofGQhaA4H7yD+znEBHV4UB9emPqB7H1KCCp
+	 FQZBLABlbGXp5xzTlgAB6R38BzN3pN+cl66B88sIijF4jJrW2RNR4fRH+g1SrgozRk
+	 hoSHwub30mx3A==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
@@ -52,18 +52,18 @@ Cc: Stanley Chu <yschu@nuvoton.com>,
 	miquel.raynal@bootlin.com,
 	linux-i3c@lists.infradead.org,
 	imx@lists.linux.dev
-Subject: [PATCH AUTOSEL 6.14 16/31] i3c: master: svc: Add support for Nuvoton npcm845 i3c
-Date: Mon,  7 Apr 2025 14:10:32 -0400
-Message-Id: <20250407181054.3177479-16-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.13 13/28] i3c: master: svc: Add support for Nuvoton npcm845 i3c
+Date: Mon,  7 Apr 2025 14:12:03 -0400
+Message-Id: <20250407181224.3180941-13-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
-In-Reply-To: <20250407181054.3177479-1-sashal@kernel.org>
-References: <20250407181054.3177479-1-sashal@kernel.org>
+In-Reply-To: <20250407181224.3180941-1-sashal@kernel.org>
+References: <20250407181224.3180941-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.14.1
+X-stable-base: Linux 6.13.10
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250407_111136_308991_48B14559 
+X-CRM114-CacheID: sfid-20250407_111251_013421_0FFDF26D 
 X-CRM114-Status: GOOD (  12.65  )
 X-Mailman-Approved-At: Thu, 15 May 2025 02:17:27 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
