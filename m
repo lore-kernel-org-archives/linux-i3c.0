@@ -4,83 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6C1DC54795
-	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 09:20:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36A93C2D0CD
+	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 09:20:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XGl5fCZpo9yATOK79/XmEQcyqfp8IQBQmFAeZUg4Jdc=; b=in8fBQmy7B1b9y
-	qoMGyGxaqQccpwTdww4b6L5uNj3Eoh9ckuJl2INR9HXoj0AIZnqC/vFSGkxYXNtItV44HbnnDePxI
-	BzBb38C3czAIUdz5LERo44urGNjwiBYzvnSVgiJJdK2tgD24NqeEBFBlbupBFymqz45UppVkSi8x8
-	pCTtOBLKSSqOxi5iSHIaaZqElpSKl2m03tMrjzcfCU1tmC8uPMBB/fuiQ2aZhuKv3cyrf0pLKXQ9u
-	9X95NmhTe1n1kEoV2RfFiBR7Rjnpdyl/5d0QpYFX5R+G0tah5g+sQSOQzgm5BnYvpz5mRt3/P5hry
-	SUswj8MblfuF/K7OsN8A==;
+	List-Owner; bh=7E8y3RiX/i3yp7L+ptv/nYBoLgIc7FXNRAz86dOYQ/o=; b=Bi/1NqD6P1ZGtf
+	Xsl4bFlQHxqzOxe49YMqzNQJogdUYf2288bRnOvtwwUFHwSEL6mjsDK2/J5ll2x2VOIVY08MA8j6s
+	cfT/XH0vS679JyKYwHgTwzfSAVNrXALkMHinrzfV9lEby1zbM9ZuQVOZ973rDKj9ttCznO2wS5ZvO
+	BcrQR9lBuO8iX4AFQdhghNdTZ2ES5t8HfepQm5ECMDkge68EFADaWDVixzL7O3AUGqe1LoQzeWYqm
+	gjYoF8vnDL2SVc42ecPr4wIYx8WQVLjeXz4N+U1MzrzdVligP9sDnmM7/eKGAm6GcrDWkRpAHwVUH
+	rYOKDVp8RvES5ZokQcBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFUlE-0000000080t-2NLP;
-	Thu, 15 May 2025 09:20:16 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1uFUlF-0000000083A-3wwa;
+	Thu, 15 May 2025 09:20:17 +0000
+Received: from mail-pl1-x633.google.com ([2607:f8b0:4864:20::633])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2Xc8-00000007kQo-0Q5N;
-	Wed, 09 Apr 2025 15:45:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=0vmckaFkj9v1ziFLew45kxKFqGeGwuFVGwp5LAE34T4=; b=SX+laNAtT/VetSLcW986Xih6QA
-	B15VYT34cv6D2Kocgu8HXyik82Fy4TftcT3+siV3M3AJtrTJHvGxFGa73sotPZht5QompEkmdH0KK
-	COODL6as6FhZDXF+/dB/IY1RWGkztjprb/l1LIXzc4L6bmPn+m+t09GjJ+bv5CCVx2SzaeICnCqsk
-	lz7CIJEVYStHWovRCSd9ELMYxFWS9IBUFXUAuhF0To2uXBc8hSgwYW7+9eGOVbevjmGHN/UqLnBOM
-	ojM59ZHtFIQo+bgICaisCBMrCexTX1JKMtv5KInl6wsgwu1aHpWJfn9S00g1ST92ZzxYbhhnPizaM
-	r4nQrM2A==;
-Received: from mail-pj1-x1032.google.com ([2607:f8b0:4864:20::1032])
-	by desiato.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u2Xc4-00000008e6S-2odG;
-	Wed, 09 Apr 2025 15:45:18 +0000
-Received: by mail-pj1-x1032.google.com with SMTP id 98e67ed59e1d1-3054ef26da3so5600087a91.3;
-        Wed, 09 Apr 2025 08:45:15 -0700 (PDT)
+	id 1u2Xci-00000007knR-0lwy;
+	Wed, 09 Apr 2025 15:45:57 +0000
+Received: by mail-pl1-x633.google.com with SMTP id d9443c01a7336-22928d629faso72457285ad.3;
+        Wed, 09 Apr 2025 08:45:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1744213513; x=1744818313; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1744213555; x=1744818355; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=0vmckaFkj9v1ziFLew45kxKFqGeGwuFVGwp5LAE34T4=;
-        b=J6p4oq2Xh+L2/fAUQu4bgG4JPBlzAY2rv+FfHPxYB5tB9orTfVoYE7n4nZ7E22SKlh
-         ctFoagxbNPbGHaICCCF6/OudoUABrdpBrxEusLM+KQSFLqDBvodXiqP//mDExwCgnzQB
-         iQ+6KnyUw+b5xC4uwPxxEDGdlaTWIN7OgmbTHngUXvPqFhiWRR1ZpHpb4wl8uFk3X+8h
-         cA6jYK+HeZ54VJ2+c1H9tovI/0xX4aha0SyF6muBNSY5XI1bPWO17g9GMrxewgKmGm9c
-         wwy+icqgtBtMhoXwodm1aWaRYnZ/dLKaQyKkwtKRx2lQpdGlbCPsWEu658LfHErDJfQS
-         iHSg==
+        bh=3GTX40p8Eu+tWq8rarx+bIs4dwN06BcTyPGidfavgSc=;
+        b=T5VvuOKc369zex5B07LsnHWXjs9ec67IQOXgLf0pyTWko611IViEcMhYZtCa9T7DHN
+         tHrqHIPQpeUcw9pVU6ZH4GSaUoc9vRwwglvosC5tBDhNFinZJVS21WFxNZI2IAFmxOjn
+         9nRadfXF2bmOjn9SSEP8AXn4oreOMmPy9knNbCLTlMU7YzTPY8RwNxYfb5r2pivjowzS
+         5wJwGySidTlaZqTwQ4/TLKIg/unvHVJYdQ23nUK/x/K7C5FL6Yh7rEFtU0aIIdedznRb
+         ak5cQeTnR31CZOCcq5hyz2TTIlXNQ2g7O1p/edM9hnnT2HIY62vvtBWjppAFAKOCuGkg
+         +6ug==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1744213513; x=1744818313;
+        d=1e100.net; s=20230601; t=1744213555; x=1744818355;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=0vmckaFkj9v1ziFLew45kxKFqGeGwuFVGwp5LAE34T4=;
-        b=bhYx6NnLIxT9rI8UHNy2ShgLZwSWgEq0VwrC2uK85jDk8EAeqeR3ka+an7NaWL0ffW
-         ZDfxXbDcLu73sUe2TeDqba8KpOliL4iFu3JWB683gVQWUFPraZUxtgYL5f8R83ezwErv
-         tYl76gnteleaFsOLbjEwNmTw8HqSQ/GkNfGZQr0aoE1+uaxsoiRHzC8w9+SYaQOIjnLi
-         IHlJrRDpCOwDFXc4PRriDudlZSC3bMP5BwZklMK1S1fyo2uzT6XzCaJH57XKFngZKf5R
-         NuuSoOmjFq/jwqJgncukpGuT366/3yu8GkI+0A0Nr6PVutuQ6oR4YSvlzPKJ5VYvm8mS
-         i0xQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUV/6WL97md5BcYbhTbgaRMTWR9SJgazuGor/thEBrcBqc3e74pV05a1M0bS13r3q1GhDOthA7/BINa@lists.infradead.org, AJvYcCVsio0WPXK+/56sB9QUvTy5gtdvJMjH7VVQpCKIjriBrYDNRnwzNRmvvCc/WIELAlElfqTsdf8yHeo=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx1WV3Ee9vMGL0olLaSYoMa49ABJ+GEOZwUPT79Akf3yKFuUxOq
-	/aS/RoscnO3kt1MtJyyV6FlQKqQeultATXbtUFSuKkBjgjg7ICyX
-X-Gm-Gg: ASbGncvK3cfRu8DoIZ0pWPnP7uFAwbmofFLjUxS+LmwPM5Fa70y4Sd3grC4aTF7EUlS
-	mO9JJI90u2EupiCIbwoSz0H1jIzud9LMOkpv7FGJceXUnZ71I+SKRZiVpubknl5lmYqBSbv6p9p
-	vKuOykuQyeLCJT9xDhNJ6INBYVsISZKPjWVLENqh2yV3viG6f2RMVU0j5Cb9xADsl5lpuNVFHu9
-	ei5HcvnnOipRXut7YZQSzZRpldyjjTkULH0BPzJDyMsLDM5KViejC+J+R9MiQoIUT8KwZSqA+8D
-	YimlAZgoZwOqV7ktWK4pa/0ntX0V9Hqd7C2rbyCFI7KF5OQYP7WjCqxsBNNrPuDu6S8O5N4=
-X-Google-Smtp-Source: AGHT+IFGakXWHWi8mPXKxnYyjY+QGe+hrJ1DKxm8mqQTtmCR5lZ2ol4+lqNevSMOwq7LjWocz+r/eA==
-X-Received: by 2002:a17:90a:da88:b0:2f9:c139:b61f with SMTP id 98e67ed59e1d1-306dbbb557amr5410743a91.14.1744213513621;
-        Wed, 09 Apr 2025 08:45:13 -0700 (PDT)
+        bh=3GTX40p8Eu+tWq8rarx+bIs4dwN06BcTyPGidfavgSc=;
+        b=FGGf91tgFRDBnhBkfhhoViPOPeoVYpXhDBd/Cc+OmxT9+luVSAANFFu4p9lFC6dVZa
+         ihabUy9tOjMnmM1nPoYfcRZTJc9BGia4j6Wzs/1wJdYSA8/ukcL37mNoawA4PVBnNRON
+         WDoBBCI6NBKWif0BNLKNKoT5bfJgVZWX3JFcbM3Aq2WDa12pTTTi8/jum9d1Ms8Hbpr7
+         hp1lp5sZ6xXp6BOCkdv0frHWYfpAV8yHW5UIStEufaAHZI7MnW9Y7eMRlJIXDdk254WO
+         ihkyAraSm6eba6D7dNldBIZLz1ZrSaE/HOmd+JtK4uWrN5/qhhCtxK3trMSYaG84QJXR
+         23yg==
+X-Forwarded-Encrypted: i=1; AJvYcCVkhxJy0crLWbjBb0fHgi30C8SctHFAKJX7liTTQVX5eCQUTYOryByhcyN5CrOZOJsBrGFnMl42rP8=@lists.infradead.org, AJvYcCWtN1Q6cTnJOpVOHhnRpy+Exh9z+53tgKyGXxANZaQqV2j649/OuHgOTwRz2bal402d1z6FQCo6lbT/@lists.infradead.org
+X-Gm-Message-State: AOJu0YyDEpvN9Sp7Or392XBz3pvGW4SY/XuWIGw2x8nQ+hLXzgWtbiDg
+	hGN92U1Kg3yAQdQ+Gnd+TCxfrqscabU0XTgjRvpiTwtruGuCQixE
+X-Gm-Gg: ASbGncvJLfSLHzmPMgF4YXj8GLt5AMTzqnr/7wwlL1Xf2IMrkY5SFhaFuCD7XkwzqPM
+	+Hup0aZzb1YHMC2OPscfLy8s9LO1anVdMux+SCeC/tFFRSQFQLT1xHLIr5ZM/rbrlwQh86/4fMl
+	E+CsEVdO92EIWHale+DpSM3IzKJg2ilT2M0TXRIq5zHKrK2Ww/0l9qdfHaQLEGQdfTbq1E0g1uc
+	tGnjO13uCx4JL1/2kR0e6vPUAdYin0Hlhk80p0NxJM2al66ZpLyVI2UgDJrobUmU8Up3E1QQtrI
+	cGwX6zyiwAr8ZwRNEqey8pn5B3Rn54qOo9Z/wFCo2C17zFFiSDA8TVo0M4S422zHrybmALU=
+X-Google-Smtp-Source: AGHT+IG+nlKBY0fzC5EpfikKx++hN068mStMCGrKOPeFQ0KT+ZFhaeW1hEnEku5KKvT2BN4jgM2ClA==
+X-Received: by 2002:a17:90b:2dca:b0:305:2d28:e435 with SMTP id 98e67ed59e1d1-306dbb8e7d2mr5088169a91.7.1744213555184;
+        Wed, 09 Apr 2025 08:45:55 -0700 (PDT)
 Received: from visitorckw-System-Product-Name.. ([140.113.216.168])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-306dd171991sm1952304a91.37.2025.04.09.08.45.04
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-306dd171991sm1952304a91.37.2025.04.09.08.45.45
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 09 Apr 2025 08:45:13 -0700 (PDT)
+        Wed, 09 Apr 2025 08:45:54 -0700 (PDT)
 From: Kuan-Wei Chiu <visitorckw@gmail.com>
 To: tglx@linutronix.de,
 	mingo@redhat.com,
@@ -149,17 +135,16 @@ Cc: hpa@zytor.com,
 	andrew.cooper3@citrix.com,
 	Kuan-Wei Chiu <visitorckw@gmail.com>,
 	Yu-Chun Lin <eleanor15x@gmail.com>
-Subject: [PATCH v4 04/13] media: saa7115: Replace open-coded parity calculation with parity_odd()
-Date: Wed,  9 Apr 2025 23:43:47 +0800
-Message-Id: <20250409154356.423512-5-visitorckw@gmail.com>
+Subject: [PATCH v4 07/13] Input: joystick - Replace open-coded parity calculation with parity_odd()
+Date: Wed,  9 Apr 2025 23:43:50 +0800
+Message-Id: <20250409154356.423512-8-visitorckw@gmail.com>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20250409154356.423512-1-visitorckw@gmail.com>
 References: <20250409154356.423512-1-visitorckw@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250409_164516_815404_86EE7F25 
-X-CRM114-Status: UNSURE (   9.71  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250409_084556_221997_3F8F75CA 
+X-CRM114-Status: GOOD (  12.90  )
 X-Mailman-Approved-At: Thu, 15 May 2025 02:17:28 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -184,46 +169,123 @@ Co-developed-by: Yu-Chun Lin <eleanor15x@gmail.com>
 Signed-off-by: Yu-Chun Lin <eleanor15x@gmail.com>
 Signed-off-by: Kuan-Wei Chiu <visitorckw@gmail.com>
 ---
- drivers/media/i2c/saa7115.c | 12 ++----------
- 1 file changed, 2 insertions(+), 10 deletions(-)
+ drivers/input/joystick/grip_mp.c    | 17 ++---------------
+ drivers/input/joystick/sidewinder.c | 25 +++++--------------------
+ 2 files changed, 7 insertions(+), 35 deletions(-)
 
-diff --git a/drivers/media/i2c/saa7115.c b/drivers/media/i2c/saa7115.c
-index a1c71187e773..a7886269dcfc 100644
---- a/drivers/media/i2c/saa7115.c
-+++ b/drivers/media/i2c/saa7115.c
-@@ -25,6 +25,7 @@
- 
- #include "saa711x_regs.h"
- 
+diff --git a/drivers/input/joystick/grip_mp.c b/drivers/input/joystick/grip_mp.c
+index 5eadb5a3ca37..e7f60a83a89b 100644
+--- a/drivers/input/joystick/grip_mp.c
++++ b/drivers/input/joystick/grip_mp.c
+@@ -18,6 +18,7 @@
+ #include <linux/delay.h>
+ #include <linux/proc_fs.h>
+ #include <linux/jiffies.h>
 +#include <linux/bitops.h>
- #include <linux/kernel.h>
- #include <linux/module.h>
- #include <linux/slab.h>
-@@ -664,15 +665,6 @@ static const unsigned char saa7115_init_misc[] = {
- 	0x00, 0x00
- };
  
--static int saa711x_odd_parity(u8 c)
--{
--	c ^= (c >> 4);
--	c ^= (c >> 2);
--	c ^= (c >> 1);
+ #define DRIVER_DESC	"Gravis Grip Multiport driver"
+ 
+@@ -112,20 +113,6 @@ static const int axis_map[] = { 5, 9, 1, 5, 6, 10, 2, 6, 4, 8, 0, 4, 5, 9, 1, 5
+ 
+ static int register_slot(int i, struct grip_mp *grip);
+ 
+-/*
+- * Returns whether an odd or even number of bits are on in pkt.
+- */
 -
--	return c & 1;
+-static int bit_parity(u32 pkt)
+-{
+-	int x = pkt ^ (pkt >> 16);
+-	x ^= x >> 8;
+-	x ^= x >> 4;
+-	x ^= x >> 2;
+-	x ^= x >> 1;
+-	return x & 1;
 -}
 -
- static int saa711x_decode_vps(u8 *dst, u8 *p)
- {
- 	static const u8 biphase_tbl[] = {
-@@ -1227,7 +1219,7 @@ static int saa711x_decode_vbi_line(struct v4l2_subdev *sd, struct v4l2_decode_vb
- 		vbi->type = V4L2_SLICED_TELETEXT_B;
- 		break;
- 	case 4:
--		if (!saa711x_odd_parity(p[0]) || !saa711x_odd_parity(p[1]))
-+		if (!parity_odd(p[0]) || !parity_odd(p[1]))
- 			return 0;
- 		vbi->type = V4L2_SLICED_CAPTION_525;
- 		break;
+ /*
+  * Poll gameport; return true if all bits set in 'onbits' are on and
+  * all bits set in 'offbits' are off.
+@@ -236,7 +223,7 @@ static int mp_io(struct gameport* gameport, int sendflags, int sendcode, u32 *pa
+ 		pkt = (pkt >> 2) | 0xf0000000;
+ 	}
+ 
+-	if (bit_parity(pkt) == 1)
++	if (parity_odd(pkt))
+ 		return IO_RESET;
+ 
+ 	/* Acknowledge packet receipt */
+diff --git a/drivers/input/joystick/sidewinder.c b/drivers/input/joystick/sidewinder.c
+index 3a5873e5fcb3..fb6f7004a485 100644
+--- a/drivers/input/joystick/sidewinder.c
++++ b/drivers/input/joystick/sidewinder.c
+@@ -7,6 +7,7 @@
+  * Microsoft SideWinder joystick family driver for Linux
+  */
+ 
++#include <linux/bitops.h>
+ #include <linux/delay.h>
+ #include <linux/kernel.h>
+ #include <linux/module.h>
+@@ -240,22 +241,6 @@ static void sw_init_digital(struct gameport *gameport)
+ 	local_irq_restore(flags);
+ }
+ 
+-/*
+- * sw_parity() computes parity of __u64
+- */
+-
+-static int sw_parity(__u64 t)
+-{
+-	int x = t ^ (t >> 32);
+-
+-	x ^= x >> 16;
+-	x ^= x >> 8;
+-	x ^= x >> 4;
+-	x ^= x >> 2;
+-	x ^= x >> 1;
+-	return x & 1;
+-}
+-
+ /*
+  * sw_ccheck() checks synchronization bits and computes checksum of nibbles.
+  */
+@@ -316,7 +301,7 @@ static int sw_parse(unsigned char *buf, struct sw *sw)
+ 
+ 			for (i = 0; i < sw->number; i ++) {
+ 
+-				if (sw_parity(GB(i*15,15)))
++				if (parity_odd(GB(i*15,15)))
+ 					return -1;
+ 
+ 				input_report_abs(sw->dev[i], ABS_X, GB(i*15+3,1) - GB(i*15+2,1));
+@@ -333,7 +318,7 @@ static int sw_parse(unsigned char *buf, struct sw *sw)
+ 		case SW_ID_PP:
+ 		case SW_ID_FFP:
+ 
+-			if (!sw_parity(GB(0,48)) || (hat = GB(42,4)) > 8)
++			if (!parity_odd(GB(0,48)) || (hat = GB(42,4)) > 8)
+ 				return -1;
+ 
+ 			dev = sw->dev[0];
+@@ -354,7 +339,7 @@ static int sw_parse(unsigned char *buf, struct sw *sw)
+ 
+ 		case SW_ID_FSP:
+ 
+-			if (!sw_parity(GB(0,43)) || (hat = GB(28,4)) > 8)
++			if (!parity_odd(GB(0,43)) || (hat = GB(28,4)) > 8)
+ 				return -1;
+ 
+ 			dev = sw->dev[0];
+@@ -379,7 +364,7 @@ static int sw_parse(unsigned char *buf, struct sw *sw)
+ 
+ 		case SW_ID_FFW:
+ 
+-			if (!sw_parity(GB(0,33)))
++			if (!parity_odd(GB(0,33)))
+ 				return -1;
+ 
+ 			dev = sw->dev[0];
 -- 
 2.34.1
 
