@@ -4,68 +4,145 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19471C3ABC9
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89F39C54754
 	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 09:20:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sbQmnTDOMgyIHX8BawjTxtCT46Qj2Y0Ex30/4egWNCQ=; b=rP4NFJyqOzl4Ct
-	36uGSRlAl5rTTMik9EciUNKD804B8xBtbvXkMAOk6jgAuqwsIKO28praOhYBPrjnwY1CBUGO0Dz1k
-	thQhhdMRv1Rkpr58v0ElJ5zKQK4FsV0ZN6HlZTkOXbHTFrCcBUjs89qEBU3WRU2miGsEMcHErv8XM
-	PtCiL0POoWUUCrpL8iXxJZPdlJmMTQ+8bMdRllsaTEC+gtCadjro3C7MwHOFWIAs8qvo5MBa09AEA
-	gtK6JDtk+ZBwM6az1ugugMFk0ZVl294ijZxqWROk38Zs86Q7ByS7pLgkmeNKzgQHtPhwndHbmCSSL
-	4gJnVl1I3sVyRe0+w9zg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/a5YhKf2sDrJLd0M1O5Zjrh2Zx3afdwhTD2hlwMjrxI=; b=Xliu+6QDIuYdte
+	RKsninqnCaFiXXz9NLxej/ZAVZBMErNE/xI9oFXkgTS3tOW9LGiv59JoXFMxWaPvfYgYzB9XFeP7/
+	OH6Mu0dCbvq+m1VTTbokFwB+oZAZqlYOc0E33D4Wmc84tHZO892C5yRsjyj3s2pBru7SDQmw74Vs0
+	jJVcbdcKroGv/nLDm1LuR0/ZUpF36YUXL+soD7V/H8x07++ER9HpUIxqHZkZk7mDKUburMqAtOUzi
+	c1I03KGKaqcJaeeMY9gmDMHHR51aH9tqKk0rouRZs9D0bLjMO1P7YhMZ+xFRsNEp+k/MOpdN8LnrG
+	ld+3S6RoyXHvBWZPv9Xg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFUlC-000000007zC-39rZ;
-	Thu, 15 May 2025 09:20:14 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
-	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1u1qxm-00000001UIK-3xf2
-	for linux-i3c@lists.infradead.org;
-	Mon, 07 Apr 2025 18:12:53 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id E78E149F74;
-	Mon,  7 Apr 2025 18:12:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7EDDDC4CEDD;
-	Mon,  7 Apr 2025 18:12:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1744049570;
-	bh=2t8t0F9zeWJL6ngosXiE6XTK7TFO9G0uejD+Xa30WN0=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=LludQa5xe6NA9ZDizMkvRzBPNFFs6JcTIG4S7VomaGAABy0yPQ+GIbFT8NoqCoj5R
-	 86beydL4csr8vN6Ab5366M9Am7puetlWz6MXbs4hWP5nQ10GHSmVgLczh4E9BuetbG
-	 fmzvmEe2G617+c4ccDoNAWrOWGq72fSG8CrsvBWEFWxHahA+neRa2MNQBXphTAkrOo
-	 FVo/KzY4QjLHCDe/7QSJyIDXXfZCJVcofGQhaA4H7yD+znEBHV4UB9emPqB7H1KCCp
-	 FQZBLABlbGXp5xzTlgAB6R38BzN3pN+cl66B88sIijF4jJrW2RNR4fRH+g1SrgozRk
-	 hoSHwub30mx3A==
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Cc: Stanley Chu <yschu@nuvoton.com>,
-	Frank Li <Frank.Li@nxp.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Sasha Levin <sashal@kernel.org>,
+	id 1uFUlD-000000007zU-1PHy;
+	Thu, 15 May 2025 09:20:15 +0000
+Received: from mail-pj1-x102b.google.com ([2607:f8b0:4864:20::102b])
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1u2XbM-00000007jxc-24vP;
+	Wed, 09 Apr 2025 15:44:33 +0000
+Received: by mail-pj1-x102b.google.com with SMTP id 98e67ed59e1d1-3014678689aso5917240a91.0;
+        Wed, 09 Apr 2025 08:44:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1744213471; x=1744818271; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=MUUuTxOiF/e6pFbiGJ55Vd+VaZOP/yQaXFZJe/XlPzE=;
+        b=MLXtz02Yl34CC2ck/6nWhqDMOuhcz/QPrfoz4fMA1jNDtxxZS/9mmTQEg6qPd/XJFr
+         yIyw+YqaovTj/JygnuGGeRS8le/Oo9GZeQk/dyhpzOSAmiK4dGUwVb6YE79rfaV7rTOy
+         DVaresiODQOJuVdPygKHqmkTTFj731CvNCcJk1QXyXGS+r+b4AiNw0+pTLfNWudW2zVB
+         wrv3Cv3J52skjfzjM7mlI8DEcrUrAuntUgdfN1kob1i3NTA18tA+FgNN9yuDSTAbJefQ
+         /NTkcxt0LBbvigs492mKMlrxtrfUyKS3RPfEPnywqt7v3l7x4bbIYvq/rzl1gNVn+BTS
+         mUGA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744213471; x=1744818271;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=MUUuTxOiF/e6pFbiGJ55Vd+VaZOP/yQaXFZJe/XlPzE=;
+        b=DwcNrICQaz8VqpbcSqYUq2paRybwgyuT3z/T8zDzlzew8g/VgDq4IrsNAu+Jmx/k2a
+         I4d/dGoZpcTNjgdbaVjX7s1eevjhPJyyx1Vuz3EH7TBgehK0F+82f4Wh5JZmQWMP48J2
+         JHhYmL+fu3VOVhT1zKEAmyZIEyH0oJkRzH01InFZOGeSlXtkKMENlXquSMr2KJKXVlj1
+         7GrAZoEYiUEOodKu+s/y75K7/+9eVhaj3W75U93+AwYcXy/O5UqnZ9qstGWSiR5s3SK/
+         3fJIxOFI6gohJYtGwMzh/vsSIGRwrT6ScTPIQyBOVRwVLzDci4vG9boGTY5dgwG9m2+t
+         wsEQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUUMrt9RmBBOhh4PYvETxNqauyu0zX9BwmFHAp5Gwak0gDLDVyhntPLfNiJzMBwkRtjsO5mYVD1K74=@lists.infradead.org, AJvYcCVeklpr/8rzvoBNMvfS5DvKX33mZNZjsSg28U32CgNq8H7F6pc+SL5ul6spjZfok+CTKJ6tFhDPncLb@lists.infradead.org
+X-Gm-Message-State: AOJu0YzfFvZR4nNqZMLTOdSWAN9p5odKjBvp3KSJN8kD0SWlAlGRYQWn
+	QGF63kxVJCGjxGDIeuCzQnFNklx8srN9PAplun6j4wC7T/GDPyqu
+X-Gm-Gg: ASbGnctj/MN3E2V5h34Pdm399w57HdQHCSMgrrW0ka41Q4wDrLiodnkG5xh4ixSwLtE
+	ry2JdVKJJmSVChc4l+vkmhnAfBmeC9YiJRiS5vaSgZekE61GcLNIe3AqLzB5kOQPKJF44Kp2jb3
+	naEJlDoWYBQ0VG0fk5CjKBogexIPZLTLgcgLnWMCImGHZw3U71Y0EbAsPP6pRxjh2VMJqohRB95
+	OUz5L14Qx/vXjOvONGH1h0OZxzZQeeix/Yef02dRiNlz1+OL6T1MXvCOEaSteEXjISXix0zY0uq
+	AUO9QSknaGMTcNeOrKyV39uwYIlte6C6YDA/7dAz8UW746tJn7n5KZZi51adDqIYXBCu7yk=
+X-Google-Smtp-Source: AGHT+IGnoEozOknyoC6We3L6wSu5LW5c8+l3K2S+PrKsnw7nWoi0Lt21fMnvhITP0Puz6RwfcrL34g==
+X-Received: by 2002:a17:90a:d884:b0:2f9:cf97:56ac with SMTP id 98e67ed59e1d1-306dd1719cfmr5116718a91.0.1744213470998;
+        Wed, 09 Apr 2025 08:44:30 -0700 (PDT)
+Received: from visitorckw-System-Product-Name.. ([140.113.216.168])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-306dd171991sm1952304a91.37.2025.04.09.08.44.21
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 09 Apr 2025 08:44:30 -0700 (PDT)
+From: Kuan-Wei Chiu <visitorckw@gmail.com>
+To: tglx@linutronix.de,
+	mingo@redhat.com,
+	bp@alien8.de,
+	dave.hansen@linux.intel.com,
+	x86@kernel.org,
+	jk@ozlabs.org,
+	joel@jms.id.au,
+	eajames@linux.ibm.com,
+	andrzej.hajda@intel.com,
+	neil.armstrong@linaro.org,
+	rfoss@kernel.org,
+	maarten.lankhorst@linux.intel.com,
+	mripard@kernel.org,
+	tzimmermann@suse.de,
+	airlied@gmail.com,
+	simona@ffwll.ch,
+	dmitry.torokhov@gmail.com,
+	mchehab@kernel.org,
+	awalls@md.metrocast.net,
+	hverkuil@xs4all.nl,
 	miquel.raynal@bootlin.com,
+	richard@nod.at,
+	vigneshr@ti.com,
+	louis.peens@corigine.com,
+	andrew+netdev@lunn.ch,
+	davem@davemloft.net,
+	edumazet@google.com,
+	pabeni@redhat.com,
+	parthiban.veerasooran@microchip.com,
+	arend.vanspriel@broadcom.com,
+	johannes@sipsolutions.net,
+	gregkh@linuxfoundation.org,
+	jirislaby@kernel.org,
+	yury.norov@gmail.com,
+	akpm@linux-foundation.org,
+	jdelvare@suse.com,
+	linux@roeck-us.net,
+	alexandre.belloni@bootlin.com,
+	pgaj@cadence.com
+Cc: hpa@zytor.com,
+	alistair@popple.id.au,
+	linux@rasmusvillemoes.dk,
+	Laurent.pinchart@ideasonboard.com,
+	jonas@kwiboo.se,
+	jernej.skrabec@gmail.com,
+	kuba@kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-fsi@lists.ozlabs.org,
+	dri-devel@lists.freedesktop.org,
+	linux-input@vger.kernel.org,
+	linux-media@vger.kernel.org,
+	linux-mtd@lists.infradead.org,
+	oss-drivers@corigine.com,
+	netdev@vger.kernel.org,
+	linux-wireless@vger.kernel.org,
+	brcm80211@lists.linux.dev,
+	brcm80211-dev-list.pdl@broadcom.com,
+	linux-serial@vger.kernel.org,
+	bpf@vger.kernel.org,
+	jserv@ccns.ncku.edu.tw,
+	Frank.Li@nxp.com,
+	linux-hwmon@vger.kernel.org,
 	linux-i3c@lists.infradead.org,
-	imx@lists.linux.dev
-Subject: [PATCH AUTOSEL 6.13 13/28] i3c: master: svc: Add support for Nuvoton npcm845 i3c
-Date: Mon,  7 Apr 2025 14:12:03 -0400
-Message-Id: <20250407181224.3180941-13-sashal@kernel.org>
-X-Mailer: git-send-email 2.39.5
-In-Reply-To: <20250407181224.3180941-1-sashal@kernel.org>
-References: <20250407181224.3180941-1-sashal@kernel.org>
+	david.laight.linux@gmail.com,
+	andrew.cooper3@citrix.com,
+	Kuan-Wei Chiu <visitorckw@gmail.com>,
+	Yu-Chun Lin <eleanor15x@gmail.com>
+Subject: [PATCH v4 00/13] Introduce parity_odd() and refactor redundant parity code
+Date: Wed,  9 Apr 2025 23:43:43 +0800
+Message-Id: <20250409154356.423512-1-visitorckw@gmail.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.13.10
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250407_111251_013421_0FFDF26D 
-X-CRM114-Status: GOOD (  12.65  )
-X-Mailman-Approved-At: Thu, 15 May 2025 02:17:27 -0700
+X-CRM114-CacheID: sfid-20250409_084432_534455_909EF233 
+X-CRM114-Status: GOOD (  13.94  )
+X-Mailman-Approved-At: Thu, 15 May 2025 02:17:28 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,86 +159,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Stanley Chu <yschu@nuvoton.com>
+Several parts of the kernel contain open-coded and redundant
+implementations of parity calculation. This patch series introduces
+a unified helper, parity_odd(), to simplify and standardize these
+cases.
 
-[ Upstream commit 98d87600a04e42282797631aa6b98dd43999e274 ]
+The first patch renames parity8() to parity_odd(), changes its argument
+type from u8 to u64 for broader applicability, and updates its return
+type from int to bool to make its usage and return semantics more
+intuitive-returning true for odd parity and false for even parity. It
+also adds __attribute_const__ to enable compiler optimizations.
 
-Nuvoton npcm845 SoC uses an older IP version, which has specific
-hardware issues that need to be addressed with a different compatible
-string.
+While more efficient implementations may exist, further optimization is
+postponed until a use case in performance-critical paths arises.
 
-Add driver data for different compatible strings to define platform
-specific quirks.
-Add compatible string for npcm845 to define its own driver data.
+Subsequent patches refactor various kernel components to replace
+open-coded parity logic with the new helper, reducing code duplication
+and improving consistency.
 
-Signed-off-by: Stanley Chu <yschu@nuvoton.com>
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
-Link: https://lore.kernel.org/r/20250306075429.2265183-3-yschu@nuvoton.com
-Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
+Co-developed-by: Yu-Chun Lin <eleanor15x@gmail.com>
+Signed-off-by: Yu-Chun Lin <eleanor15x@gmail.com>
+Signed-off-by: Kuan-Wei Chiu <visitorckw@gmail.com>
 ---
- drivers/i3c/master/svc-i3c-master.c | 17 ++++++++++++++++-
- 1 file changed, 16 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-index d6057d8c7dec4..40269b692aa87 100644
---- a/drivers/i3c/master/svc-i3c-master.c
-+++ b/drivers/i3c/master/svc-i3c-master.c
-@@ -158,6 +158,10 @@ struct svc_i3c_regs_save {
- 	u32 mdynaddr;
- };
- 
-+struct svc_i3c_drvdata {
-+	u32 quirks;
-+};
-+
- /**
-  * struct svc_i3c_master - Silvaco I3C Master structure
-  * @base: I3C master controller
-@@ -183,6 +187,7 @@ struct svc_i3c_regs_save {
-  * @ibi.tbq_slot: To be queued IBI slot
-  * @ibi.lock: IBI lock
-  * @lock: Transfer lock, protect between IBI work thread and callbacks from master
-+ * @drvdata: Driver data
-  * @enabled_events: Bit masks for enable events (IBI, HotJoin).
-  * @mctrl_config: Configuration value in SVC_I3C_MCTRL for setting speed back.
-  */
-@@ -214,6 +219,7 @@ struct svc_i3c_master {
- 		spinlock_t lock;
- 	} ibi;
- 	struct mutex lock;
-+	const struct svc_i3c_drvdata *drvdata;
- 	u32 enabled_events;
- 	u32 mctrl_config;
- };
-@@ -1817,6 +1823,10 @@ static int svc_i3c_master_probe(struct platform_device *pdev)
- 	if (!master)
- 		return -ENOMEM;
- 
-+	master->drvdata = of_device_get_match_data(dev);
-+	if (!master->drvdata)
-+		return -EINVAL;
-+
- 	master->regs = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(master->regs))
- 		return PTR_ERR(master->regs);
-@@ -1958,8 +1968,13 @@ static const struct dev_pm_ops svc_i3c_pm_ops = {
- 			   svc_i3c_runtime_resume, NULL)
- };
- 
-+static const struct svc_i3c_drvdata npcm845_drvdata = {};
-+
-+static const struct svc_i3c_drvdata svc_default_drvdata = {};
-+
- static const struct of_device_id svc_i3c_master_of_match_tbl[] = {
--	{ .compatible = "silvaco,i3c-master-v1"},
-+	{ .compatible = "nuvoton,npcm845-i3c", .data = &npcm845_drvdata },
-+	{ .compatible = "silvaco,i3c-master-v1", .data = &svc_default_drvdata },
- 	{ /* sentinel */ },
- };
- MODULE_DEVICE_TABLE(of, svc_i3c_master_of_match_tbl);
+To H. Peter:
+I understand your preference for a parity8/16/32/64() style interface,
+and I agree that such a design would better accommodate potential
+arch-specific implementations. However, I suspect there are very few,
+if any, users who care about the performance of parity calculations
+enough to warrant such optimizations. So my inclination is to defer any
+arch-specific or optimized implementations until we see parity_odd()
+being used in hot paths.
+
+Changes in v4:
+- Rename parity8() to parity_odd().
+- Change the argument type from u8 to u64.
+- Use a single parity_odd() function.
+
+Changes in v3:
+- Avoid using __builtin_parity.
+- Change return type to bool.
+- Drop parity() macro.
+- Change parityXX() << y to !!parityXX() << y.
+
+Changes in v2:
+- Provide fallback functions for __builtin_parity() when the compiler
+  decides not to inline it
+- Use __builtin_parity() when no architecture-specific implementation
+  is available
+- Optimize for constant folding when val is a compile-time constant
+- Add a generic parity() macro
+- Drop the x86 bootflag conversion patch since it has been merged into
+  the tip tree
+
+v3: https://lore.kernel.org/lkml/20250306162541.2633025-1-visitorckw@gmail.com/
+v1: https://lore.kernel.org/lkml/20250223164217.2139331-1-visitorckw@gmail.com/
+v2: https://lore.kernel.org/lkml/20250301142409.2513835-1-visitorckw@gmail.com/
+
+Kuan-Wei Chiu (13):
+  bitops: Change parity8() to parity_odd() with u64 input and bool
+    return type
+  media: media/test_drivers: Replace open-coded parity calculation with
+    parity_odd()
+  media: pci: cx18-av-vbi: Replace open-coded parity calculation with
+    parity_odd()
+  media: saa7115: Replace open-coded parity calculation with
+    parity_odd()
+  serial: max3100: Replace open-coded parity calculation with
+    parity_odd()
+  lib/bch: Replace open-coded parity calculation with parity_odd()
+  Input: joystick - Replace open-coded parity calculation with
+    parity_odd()
+  net: ethernet: oa_tc6: Replace open-coded parity calculation with
+    parity_odd()
+  wifi: brcm80211: Replace open-coded parity calculation with
+    parity_odd()
+  drm/bridge: dw-hdmi: Replace open-coded parity calculation with
+    parity_odd()
+  mtd: ssfdc: Replace open-coded parity calculation with parity_odd()
+  fsi: i2cr: Replace open-coded parity calculation with parity_odd()
+  nfp: bpf: Replace open-coded parity calculation with parity_odd()
+
+ arch/x86/kernel/bootflag.c                    |  4 +--
+ drivers/fsi/fsi-master-i2cr.c                 | 20 +++------------
+ .../drm/bridge/synopsys/dw-hdmi-ahb-audio.c   |  8 ++----
+ drivers/hwmon/spd5118.c                       |  2 +-
+ drivers/i3c/master/dw-i3c-master.c            |  2 +-
+ drivers/i3c/master/i3c-master-cdns.c          |  2 +-
+ drivers/i3c/master/mipi-i3c-hci/dat_v1.c      |  2 +-
+ drivers/input/joystick/grip_mp.c              | 17 ++-----------
+ drivers/input/joystick/sidewinder.c           | 25 ++++---------------
+ drivers/media/i2c/saa7115.c                   | 12 ++-------
+ drivers/media/pci/cx18/cx18-av-vbi.c          | 12 ++-------
+ .../media/test-drivers/vivid/vivid-vbi-gen.c  |  8 ++----
+ drivers/mtd/ssfdc.c                           | 20 +++------------
+ drivers/net/ethernet/netronome/nfp/nfp_asm.c  |  7 +-----
+ drivers/net/ethernet/oa_tc6.c                 | 19 +++-----------
+ .../broadcom/brcm80211/brcmsmac/dma.c         | 18 ++-----------
+ drivers/tty/serial/max3100.c                  |  3 ++-
+ include/linux/bitops.h                        | 19 ++++++++------
+ lib/bch.c                                     | 14 +----------
+ 19 files changed, 49 insertions(+), 165 deletions(-)
+
 -- 
-2.39.5
+2.34.1
 
 
 -- 
