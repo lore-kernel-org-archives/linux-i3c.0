@@ -4,149 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E59A0C2D0CD
-	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 09:20:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DBAB7C54754
+	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 09:20:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3tdK30LZnLarQVHfAyy9unYxd3VqG6q0cPnfoGGXHQA=; b=u7Uzbj+MxwXJz6
-	4oqSc9aD3e9Oia/bzCHyPAJJw27hFe6eeaGaHpIkrHND2mbzYBQpxkPYwNcAyIwEkekY/DNfCOUct
-	95A/6EueCac+7WDmjwpjJs0zxL/we406dYjiyriqVTotgjEyCgZQ9+MwjDY0xLg7rs1bpdBh72NtY
-	k+A/6HjYSKxAEJhhKExr2PDuuVP15EJFNTZpTyIJEOlfIBmuxq3C/8Px3QZiTE8uHOLfHEPDMbFqw
-	xKx3CfVzZ5DKGuXNeGQxaBtq0pGhqyh3pjcmVQl7whOtS599oNFJOwFithzH/HlkVRyI20gGNjls+
-	9dIu+bsa0GAgfT9EBawg==;
+	List-Owner; bh=H+tRRS8YxnE1xx2tGnet2nCqWDrnc6EFDVEleSGrRnw=; b=oL54ZttSD079qP
+	VvpSKpFBb/64eZaGySFdExlWv6Mk/pXnWc/GsbwRQvON97o2cPfwmxjvaOtHN9nCM1dkUV4YVJ4Tj
+	lH//dYFP7/WnzQYx929rI1+YuusqKvLn5xGciU7wvDP6Nzv6Tee97Q436AuYRMuP0cDO7l68f6pBT
+	B7FNNwRvO3lmcKay2TdtSn6KDj3gEgAV5zDjERVbXKWb/P9wR24LQmqBOI9tDhOfxwGC9naYDB5ZL
+	eeAVMWTOzU7v+1MbwORP2FfqIS3H+nMzVp8ZBpQwevHdPscMjN4Ambc6XB0UADcFosmtVj8a20vJi
+	6r3IwOpMiWcqCUU/JCOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFUlK-00000000889-2qG0;
-	Thu, 15 May 2025 09:20:22 +0000
-Received: from mail-pj1-x1033.google.com ([2607:f8b0:4864:20::1033])
+	id 1uFUlL-0000000089i-2kyg;
+	Thu, 15 May 2025 09:20:23 +0000
+Received: from mail-pf1-x42c.google.com ([2607:f8b0:4864:20::42c])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2Xdq-00000007lSZ-3gMT;
-	Wed, 09 Apr 2025 15:47:08 +0000
-Received: by mail-pj1-x1033.google.com with SMTP id 98e67ed59e1d1-301cda78d48so6370447a91.0;
-        Wed, 09 Apr 2025 08:47:06 -0700 (PDT)
+	id 1u2Yq2-00000007ykd-2aCE;
+	Wed, 09 Apr 2025 17:03:47 +0000
+Received: by mail-pf1-x42c.google.com with SMTP id d2e1a72fcca58-7376dd56eccso7717518b3a.0;
+        Wed, 09 Apr 2025 10:03:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1744213626; x=1744818426; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=sCEd/+juUKZOFlQ/4SCoGPbjU2jFBlmcZeDTBbgWCik=;
-        b=E8odrwhozMW7oF1c1Lsogd3geEuwweqst25wmINNY8uFBX2mW83vjDu2TsWXDsR8uC
-         0x8UXHQ6eascEfUjgpu9NpdYjvNSzP/CKxAFp2PUN2j+m9+sdXn6GkZe6sfDSx+Z7Clf
-         mNxGXkJgPv9cnYOUbp6NQrmsegMGqS5JCmrONwCtU+0iJ6/ADHHZiL1YIN7xRr/DQE0t
-         sR4bc317KdT9ziyMyThioz8FGxCdWi+3Itc4FMg3ZDFG7mQNfPIChXe8iv9NwTK1nJbU
-         nuYGZwJ/PHLuglQLXCxfLDPtOxnQjjUP/iSmqeX+XQlldRHxR2ZiiMsAJS7A3LWkkACn
-         ImFw==
+        d=gmail.com; s=20230601; t=1744218226; x=1744823026; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=gduFr9psKq3/rFKzYti1e6w9zW9vBtwhKjWFoDD4Umw=;
+        b=CaCeEW0FEXIDQkxYy0AXzQh2bukfTXK9/7xJ0FreHaB2QoQny2KD0NZP3hBVcniSV4
+         0nSFBI2VeZr27Ur1L1cDSXXSK+Wj+6jjDIQEDvUWtaTOcBjF5JTORRxw0NE0f1VvYCsd
+         sJ4MM7hsMyDJE4dO5nUBLnmF5HFsH2BdZTe8brxDynQQ82CRP4vTIVgKj/MByBNC6ioM
+         Ny4PVg9tIvM6B+L7KQy0OIBCVDE067q7lsQEAA6coZbvpXNxsz2I9C2h961rzQBGaihC
+         2Si2KW6XDcq+vWun/epaXnkgLr5n6W7xb7XtZvcBMzPtTEkSRjhIjrkqTW4RrYqI7i3i
+         dv6g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1744213626; x=1744818426;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=sCEd/+juUKZOFlQ/4SCoGPbjU2jFBlmcZeDTBbgWCik=;
-        b=hfn4w72zDID9XP4BpMbq5NcmQWEPuvU23/fbfcSTjlkI2iY6VPTQJfvexv5l51hDtT
-         SAXt2geWWQZ1/S/kfAqMm5EX/40Jp5SNh+elN4jKWJvcGXse77MXjVtj2f6ljxlWUKKv
-         Cvl9C53vVpaXRrkIw+4DPfpgOZm5iZlMgnhcqUni8IAv2aP24ala5ew+6H3Fb/Nj5bQv
-         lOtcSwXYMu7pk8vzl5li6eTTimlXXyvQFAGL+TukuAAzYK5EmzHQCHTq1xc9izm2v6ml
-         3ykaBbfb+W7306KsWxzmAb61XBF17MSL7iWcPGWSBXeZRydvxhC+Tq+CyqGxtRKvp93G
-         17BQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUDgmM5Nir46cAjQ3RGoBUb6ScJlhjkA595rlq2XkhRoC7zz/DDYVRyLf2oYjCn7C0n1f9JK8/y9yHO@lists.infradead.org, AJvYcCXwJGdaOUimYjpMuO+6Y2wVGW3GPjgF59Q4gLKla16Mcwjvj88m0S+lzMloN8fqoj97LPjnZtnJ0AA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwS9ixSqT6Wlh2ub1KNKJrlbvAkQTOXe3GdL4ouAqCNZPoCsWu3
-	3qBewZw9LVmUs/awH4P8j5kZinebSwvQgLUz8iCG2B5gF6YYQqyz
-X-Gm-Gg: ASbGnctl12MLlSUk1XiW+2j36/Fqf2p1QQcukL9/HEThHQ1DEJZcqEpmgMNLpdt2mfZ
-	K+lF52xDCQyeivYfDGPFBwRB7ZxUKIUVcuiGOcvRfGBkCkkDpNvh7o4sGasdtxykbmbtQdTSH/P
-	yLyITAacvqY+E0cvrAdj1TYzgdXjMidIqL/G53ZYy4T63T0pVGvNbZtoJW1AuGaO6+8fIHAL1zP
-	iP5RPesW6zGAKBQ1oWqgh+TuZSBV45bztsfGTd82j1D4cjpbq/d963Aqgw7dXd79SxWf3mMEzEz
-	THeEprARwDZnE2LzkbzCSAJLwf5AMOlPUGVAh/5+01P/fqzwHKLXEXiMkH2qLsnwFUhsrks=
-X-Google-Smtp-Source: AGHT+IF8SQ2JgM5sFunT9Xi0DOo/QXgkDUpLAzWqHE4Pm6PBSNMIs+CrkMQPqWas8YcuXm51yI9Ehg==
-X-Received: by 2002:a17:90b:58cf:b0:2f9:9ddd:68b9 with SMTP id 98e67ed59e1d1-306dbc0c8abmr4476592a91.26.1744213625892;
-        Wed, 09 Apr 2025 08:47:05 -0700 (PDT)
-Received: from visitorckw-System-Product-Name.. ([140.113.216.168])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-306dd171991sm1952304a91.37.2025.04.09.08.46.56
+        d=1e100.net; s=20230601; t=1744218226; x=1744823026;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=gduFr9psKq3/rFKzYti1e6w9zW9vBtwhKjWFoDD4Umw=;
+        b=BYmuPTSxRH9lMyXLcv/BPGfYAt5TXDyuXugEQVQB9GVui5VNbArEOv/o9ALsgfnMgM
+         YHdnHDMNNv09AqGOadrGam99JyBmxYQ5u1axUMbdgAh+AEaAcKjjo7WBanmHDhh//doS
+         lzyYNxNsObMjx4MPy6g7qpGbncMz1Enq5cx0dLm0jqD7IlzkZYPe4fKjCwSHV3dt1J7/
+         nQzP61wKc77A6HIV6I5JTXPlhoV/urbYdg3bWCRzugavfbhI4bOeSTEkWTb4upnouBJN
+         D8sdLvgGEF/fsXAqAy6tcxDs10sxB9PG1Fw80xEuvUiRJ15Opg8cVgZDhoe9ABin2RqE
+         h0rQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUeMUXvjVQ2OZFgaHYBxESA9dCt1AFC1FbhIlOoJZmUsW6CD1O/kKsgekulHPxN/8CZTZ4mQG+Zl5kT@lists.infradead.org, AJvYcCVYg/nkuTDPcgOBtoTRtiU2TCubO78UETBoloUyf4/rnSNgdWrVq1RmsCVWLtEZteZaBzICNJkhPK8=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxTgc5t+ijX0t5YbI9jTI+w1jeq6EUDhlw4lfDgc/essaEGBqlb
+	DfZgc4Clh/eCSepsUUrB5U+f+JQTKBejBE4Ieajv5NBdpoK7+Ovu
+X-Gm-Gg: ASbGnctrmM5lG/GIAaeQgmKbRcwDqUOmJZgzFyhz3blSUgpLZOLih7qYtmGAHLSCgp1
+	4KeOTZsHjpDxVwepsCV6EQsXqv9u3P580kAVLSkfPxz5Dl9l5Z9Unp8LBip3pdUgO6WkNq27WaV
+	mU3txHl5dqaJTlA9oQTl6iM8XGzX6MAi0N9+qZFSupteTUP8AZE4oitXfH5xxhqwiIAy6uzBSNT
+	5zX+psTGMi279MbRmQmpy4WHrQqCSAsDYVvHePBLhD0Wr18GO+JQMU73lOw2zFvFROoBwTPXX4z
+	OlLWf+zKGyM0tVXP1b6SJPh7gf3s1gplICoEHzq2
+X-Google-Smtp-Source: AGHT+IFo/aQceu0toKb44OYHKBYM0JofkQ3whuz+MJluns/fIT/s5YOPql0qpyNQQjmA8CWqrkcceg==
+X-Received: by 2002:a05:6a00:2408:b0:730:95a6:3761 with SMTP id d2e1a72fcca58-73bae496ce6mr5244634b3a.3.1744218225458;
+        Wed, 09 Apr 2025 10:03:45 -0700 (PDT)
+Received: from localhost ([216.228.127.131])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-73bb1d54d32sm1590079b3a.72.2025.04.09.10.03.44
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 09 Apr 2025 08:47:05 -0700 (PDT)
-From: Kuan-Wei Chiu <visitorckw@gmail.com>
-To: tglx@linutronix.de,
-	mingo@redhat.com,
-	bp@alien8.de,
-	dave.hansen@linux.intel.com,
-	x86@kernel.org,
-	jk@ozlabs.org,
-	joel@jms.id.au,
-	eajames@linux.ibm.com,
-	andrzej.hajda@intel.com,
-	neil.armstrong@linaro.org,
-	rfoss@kernel.org,
-	maarten.lankhorst@linux.intel.com,
-	mripard@kernel.org,
-	tzimmermann@suse.de,
-	airlied@gmail.com,
-	simona@ffwll.ch,
-	dmitry.torokhov@gmail.com,
-	mchehab@kernel.org,
-	awalls@md.metrocast.net,
-	hverkuil@xs4all.nl,
-	miquel.raynal@bootlin.com,
-	richard@nod.at,
-	vigneshr@ti.com,
-	louis.peens@corigine.com,
-	andrew+netdev@lunn.ch,
-	davem@davemloft.net,
-	edumazet@google.com,
-	pabeni@redhat.com,
-	parthiban.veerasooran@microchip.com,
-	arend.vanspriel@broadcom.com,
-	johannes@sipsolutions.net,
-	gregkh@linuxfoundation.org,
-	jirislaby@kernel.org,
-	yury.norov@gmail.com,
-	akpm@linux-foundation.org,
-	jdelvare@suse.com,
-	linux@roeck-us.net,
-	alexandre.belloni@bootlin.com,
-	pgaj@cadence.com
-Cc: hpa@zytor.com,
-	alistair@popple.id.au,
-	linux@rasmusvillemoes.dk,
-	Laurent.pinchart@ideasonboard.com,
-	jonas@kwiboo.se,
-	jernej.skrabec@gmail.com,
-	kuba@kernel.org,
-	linux-kernel@vger.kernel.org,
-	linux-fsi@lists.ozlabs.org,
-	dri-devel@lists.freedesktop.org,
-	linux-input@vger.kernel.org,
-	linux-media@vger.kernel.org,
-	linux-mtd@lists.infradead.org,
-	oss-drivers@corigine.com,
-	netdev@vger.kernel.org,
-	linux-wireless@vger.kernel.org,
-	brcm80211@lists.linux.dev,
-	brcm80211-dev-list.pdl@broadcom.com,
-	linux-serial@vger.kernel.org,
-	bpf@vger.kernel.org,
-	jserv@ccns.ncku.edu.tw,
-	Frank.Li@nxp.com,
-	linux-hwmon@vger.kernel.org,
-	linux-i3c@lists.infradead.org,
-	david.laight.linux@gmail.com,
-	andrew.cooper3@citrix.com,
-	Kuan-Wei Chiu <visitorckw@gmail.com>,
+        Wed, 09 Apr 2025 10:03:44 -0700 (PDT)
+Date: Wed, 9 Apr 2025 13:03:42 -0400
+From: Yury Norov <yury.norov@gmail.com>
+To: Kuan-Wei Chiu <visitorckw@gmail.com>
+Cc: tglx@linutronix.de, mingo@redhat.com, bp@alien8.de,
+	dave.hansen@linux.intel.com, x86@kernel.org, jk@ozlabs.org,
+	joel@jms.id.au, eajames@linux.ibm.com, andrzej.hajda@intel.com,
+	neil.armstrong@linaro.org, rfoss@kernel.org,
+	maarten.lankhorst@linux.intel.com, mripard@kernel.org,
+	tzimmermann@suse.de, airlied@gmail.com, simona@ffwll.ch,
+	dmitry.torokhov@gmail.com, mchehab@kernel.org,
+	awalls@md.metrocast.net, hverkuil@xs4all.nl,
+	miquel.raynal@bootlin.com, richard@nod.at, vigneshr@ti.com,
+	louis.peens@corigine.com, andrew+netdev@lunn.ch,
+	davem@davemloft.net, edumazet@google.com, pabeni@redhat.com,
+	parthiban.veerasooran@microchip.com, arend.vanspriel@broadcom.com,
+	johannes@sipsolutions.net, gregkh@linuxfoundation.org,
+	jirislaby@kernel.org, akpm@linux-foundation.org, jdelvare@suse.com,
+	linux@roeck-us.net, alexandre.belloni@bootlin.com, pgaj@cadence.com,
+	hpa@zytor.com, alistair@popple.id.au, linux@rasmusvillemoes.dk,
+	Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se,
+	jernej.skrabec@gmail.com, kuba@kernel.org,
+	linux-kernel@vger.kernel.org, linux-fsi@lists.ozlabs.org,
+	dri-devel@lists.freedesktop.org, linux-input@vger.kernel.org,
+	linux-media@vger.kernel.org, linux-mtd@lists.infradead.org,
+	oss-drivers@corigine.com, netdev@vger.kernel.org,
+	linux-wireless@vger.kernel.org, brcm80211@lists.linux.dev,
+	brcm80211-dev-list.pdl@broadcom.com, linux-serial@vger.kernel.org,
+	bpf@vger.kernel.org, jserv@ccns.ncku.edu.tw, Frank.Li@nxp.com,
+	linux-hwmon@vger.kernel.org, linux-i3c@lists.infradead.org,
+	david.laight.linux@gmail.com, andrew.cooper3@citrix.com,
 	Yu-Chun Lin <eleanor15x@gmail.com>
-Subject: [PATCH v4 13/13] nfp: bpf: Replace open-coded parity calculation with parity_odd()
-Date: Wed,  9 Apr 2025 23:43:56 +0800
-Message-Id: <20250409154356.423512-14-visitorckw@gmail.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250409154356.423512-1-visitorckw@gmail.com>
+Subject: Re: [PATCH v4 02/13] media: media/test_drivers: Replace open-coded
+ parity calculation with parity_odd()
+Message-ID: <Z_aobrK3t7zdwZRK@yury>
 References: <20250409154356.423512-1-visitorckw@gmail.com>
+ <20250409154356.423512-3-visitorckw@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250409154356.423512-3-visitorckw@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250409_084706_914630_1715F5AA 
-X-CRM114-Status: UNSURE (   9.01  )
-X-CRM114-Notice: Please train this message.
-X-Mailman-Approved-At: Thu, 15 May 2025 02:17:28 -0700
+X-CRM114-CacheID: sfid-20250409_100346_662421_86ECA65B 
+X-CRM114-Status: GOOD (  16.91  )
+X-Mailman-Approved-At: Thu, 15 May 2025 02:17:27 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -163,44 +125,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Refactor parity calculations to use the standard parity_odd() helper.
-This change eliminates redundant implementations.
+On Wed, Apr 09, 2025 at 11:43:45PM +0800, Kuan-Wei Chiu wrote:
+> Refactor parity calculations to use the standard parity_odd() helper.
+> This change eliminates redundant implementations.
+> 
+> Co-developed-by: Yu-Chun Lin <eleanor15x@gmail.com>
+> Signed-off-by: Yu-Chun Lin <eleanor15x@gmail.com>
+> Signed-off-by: Kuan-Wei Chiu <visitorckw@gmail.com>
+> ---
+>  drivers/media/test-drivers/vivid/vivid-vbi-gen.c | 8 ++------
+>  1 file changed, 2 insertions(+), 6 deletions(-)
+> 
+> diff --git a/drivers/media/test-drivers/vivid/vivid-vbi-gen.c b/drivers/media/test-drivers/vivid/vivid-vbi-gen.c
+> index 70a4024d461e..5e1b7b1742e4 100644
+> --- a/drivers/media/test-drivers/vivid/vivid-vbi-gen.c
+> +++ b/drivers/media/test-drivers/vivid/vivid-vbi-gen.c
+> @@ -5,6 +5,7 @@
+>   * Copyright 2014 Cisco Systems, Inc. and/or its affiliates. All rights reserved.
+>   */
+>  
+> +#include <linux/bitops.h>
+>  #include <linux/errno.h>
+>  #include <linux/kernel.h>
+>  #include <linux/ktime.h>
+> @@ -165,12 +166,7 @@ static const u8 vivid_cc_sequence2[30] = {
+>  
+>  static u8 calc_parity(u8 val)
+>  {
+> -	unsigned i;
+> -	unsigned tot = 0;
+> -
+> -	for (i = 0; i < 7; i++)
+> -		tot += (val & (1 << i)) ? 1 : 0;
+> -	return val | ((tot & 1) ? 0 : 0x80);
+> +	return val | (parity_odd(val) ? 0 : 0x80);
 
-Co-developed-by: Yu-Chun Lin <eleanor15x@gmail.com>
-Signed-off-by: Yu-Chun Lin <eleanor15x@gmail.com>
-Signed-off-by: Kuan-Wei Chiu <visitorckw@gmail.com>
----
- drivers/net/ethernet/netronome/nfp/nfp_asm.c | 7 +------
- 1 file changed, 1 insertion(+), 6 deletions(-)
+So, if val == 0 than parity_odd(val) is also 0, and this can be
+simplified just to:
+        return parity(val) ? 0 : 0x80;
+Or I miss something?
 
-diff --git a/drivers/net/ethernet/netronome/nfp/nfp_asm.c b/drivers/net/ethernet/netronome/nfp/nfp_asm.c
-index 154399c5453f..2f8f78abb6f5 100644
---- a/drivers/net/ethernet/netronome/nfp/nfp_asm.c
-+++ b/drivers/net/ethernet/netronome/nfp/nfp_asm.c
-@@ -295,11 +295,6 @@ static const u64 nfp_ustore_ecc_polynomials[NFP_USTORE_ECC_POLY_WORDS] = {
- 	0x0daf69a46910ULL,
- };
- 
--static bool parity(u64 value)
--{
--	return hweight64(value) & 1;
--}
--
- int nfp_ustore_check_valid_no_ecc(u64 insn)
- {
- 	if (insn & ~GENMASK_ULL(NFP_USTORE_OP_BITS, 0))
-@@ -314,7 +309,7 @@ u64 nfp_ustore_calc_ecc_insn(u64 insn)
- 	int i;
- 
- 	for (i = 0; i < NFP_USTORE_ECC_POLY_WORDS; i++)
--		ecc |= parity(nfp_ustore_ecc_polynomials[i] & insn) << i;
-+		ecc |= parity_odd(nfp_ustore_ecc_polynomials[i] & insn) << i;
- 
- 	return insn | (u64)ecc << NFP_USTORE_OP_BITS;
- }
--- 
-2.34.1
-
+>  }
+>  
+>  static void vivid_vbi_gen_set_time_of_day(u8 *packet)
+> -- 
+> 2.34.1
 
 -- 
 linux-i3c mailing list
