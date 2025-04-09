@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E543C54755
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D267C3ABDD
 	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 09:20:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,61 +12,61 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dBaqOCsBBE5kpODEVxkjvrlZtFc6Nlov5EpTLQsTy34=; b=j+5B6eUIafEdZL
-	AG2CENLcU1GW6RwU+wR/ePVuNhxoDSxjM4IhC4kcs+15NDOkfgL5eGlRduzz0vSY7y1/E7hLbV7oW
-	kIXzoj0hYUw8j9P4dl8/NSCjcfIKJbm+WTWMQaFb9P6T/jNELPTTYl4kPyM0fOFHaQ4sl9aOmN4Vu
-	4v0kdkhk03sUwKbAAQyWnpOvOvzB9CO6gQpSOfvp3znlX86soBZb7FI5FaLu2znyhC7lf3v8xWG7T
-	s9Zzt6xN3/7ohmqJe+CNehg33JoQQtbaJ/xrFE1QLR5oIQIC3lxR0ul+nyT9memEk1VA4KdKj3T6A
-	wF7pShVBuG++CY8nqChw==;
+	List-Owner; bh=fRZabE7Sd3QOm7eMd6x1VIeycIsFqnh9RxO/7xnkP8s=; b=ttFWjsPafmdj7k
+	2JnCfRc1bsYEWRLBcYaz+0tUUkO7bfRBXlozZ+mAFAta4E8KFHIt2JGgv2W/FmZxZOiZBkaAU7fGd
+	+Xi65WzcYbM4bQM0kgEoSThYu51xmUuDGMypHZ1L1Q9/3ei+JlDqA6+wM5BIv8pKmzmxhXH1C8LZj
+	AGy3gi7jyhrnBrkt0OfAbCIWdffZ3OcYcKv0CnCtKYPbNrqlOcUfB1IAchpPWc8wJeSWpDgkLZPPm
+	13j1bGtKk/Ot/B5ZHosufcdceBHBQ2tRuuubYULNDc32cQu8TDB9lFWGceGxgP8UqINMBFMN3Mn7t
+	W2LCJGY/G2ALP9uvAezw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFUlL-00000000898-1KSe;
-	Thu, 15 May 2025 09:20:23 +0000
-Received: from mail-pg1-x530.google.com ([2607:f8b0:4864:20::530])
+	id 1uFUlK-0000000088c-48uB;
+	Thu, 15 May 2025 09:20:22 +0000
+Received: from mail-pl1-x62e.google.com ([2607:f8b0:4864:20::62e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2Yli-00000007y21-2TBy;
-	Wed, 09 Apr 2025 16:59:19 +0000
-Received: by mail-pg1-x530.google.com with SMTP id 41be03b00d2f7-af5085f7861so4509520a12.3;
-        Wed, 09 Apr 2025 09:59:18 -0700 (PDT)
+	id 1u2YhD-00000007x6E-1Az8;
+	Wed, 09 Apr 2025 16:54:40 +0000
+Received: by mail-pl1-x62e.google.com with SMTP id d9443c01a7336-2241053582dso91916385ad.1;
+        Wed, 09 Apr 2025 09:54:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1744217957; x=1744822757; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1744217678; x=1744822478; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=UF0piylxy01Y9o78lp9CSclPliCcrf/Gy/Xprs9X0Fc=;
-        b=EdgJe2EKZ88jaUcjULXHM7Plkl+dvTLfy3c1wOMPbo/7pXzqCdW8YaNoFoRXjgxY9J
-         M8YfcjJ6Yedj34B3EeHw9m8fTMVlG9oynZRJ18DAYll7WnxQgPrCOqKEpKZKvAHt8tK5
-         2nG1uk7zEr/hBmw3pSfxKGMRm6mO4iatIdLaMO74SrGSEhVMq71FU5fFT29sBlb7WPTt
-         3GtQi/xVTqrY3F5I628ubBRXpS0vSuZ7ylBXQ9Hzmi/5TBrW+fZGrHnYdP3dDgURgBSE
-         XgFrAO8k+hPOCISen8Fc9StSiDtMVDRWZoD+9NEJ/NtH6+DMuhEYO7OudGptqgi+v/Rv
-         +aow==
+        bh=CKpfWxOAsmcqfHthdu26r7YWnYaeAaQXRASkSMsz97E=;
+        b=fpZGrsFDtwRYC2+16DQCJAlHegkXbmi9BEaBcZTGGqblDbZLph96G9F/VuY0D5tPrm
+         7Yn/JarEvZXzqbs3FmSvJKoanYQ/uo2D33kCdZ3d9YdvEKK2w++kwbIZ7l7qZ1etNcGt
+         oVd355EKUtI9Y5QKz/rXRZ65pPi0K631sHB1AV/FaqQ8sGMt3lYl7BtJ0nowknYUregh
+         65QpOZ8i3tKat27nJMhPmXTvM9l4F1dOIbjWa0Ate9kg5gnDppP1BagDXGrhgekRk01d
+         3Mw4pakxq/v/MVV3XXW4C9BDwCciZHZ5en+0k1xIMSCGNPupjQpAtsgzhI0r0AwjdycY
+         kC7A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1744217957; x=1744822757;
+        d=1e100.net; s=20230601; t=1744217678; x=1744822478;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=UF0piylxy01Y9o78lp9CSclPliCcrf/Gy/Xprs9X0Fc=;
-        b=KuvQv7ZqUNY5HGdBoMGtLGBBmSBlYdQMcg3Qkdm4QeesxosSM3XKY0mtCP/Mvetkf3
-         DhQHI4ViyR+FWFY5efutm0aYelvgbuzvrjCN8BaSkMFmCgPvvTnB1v/23+e5wpUhPEoO
-         4GsX5P7mI2KXMYVJVCN6mzM9c3u2aVa0n8klRvKEpphSr+IsJG7wePQnZt7StSloJFpb
-         ADDSJP62ep7XiasQhuTystQ/saH51zHF9BbNqKjyML+GkLIwgPcfmpKl5/OQeBaRUfV3
-         +hW1XHQwtlNlgVtv/vigSbtBLB7ImiyeukTphDuOa6sMDMWrhoFOzSR7/hyuZrLNx20d
-         JJyA==
-X-Forwarded-Encrypted: i=1; AJvYcCVOVAk0/dcxW1G6Qwx4KpFzOpRPq6OA+aFZLDphe1Gz7E0CtvXYUT0DBQ9fbEfCNNJAdkteVPJAXBin@lists.infradead.org, AJvYcCWpxr2IRyVRhLM9lI5H4cQ9ZG+WZqB3dX+LhOhllNWAS/GfMMg2BqakULc2hWilMa7Dey476ouD8Cc=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwCjdzpJPZP0tccHzqXgLmA+uuCzgXUL6JEUoG/fEncSVVkz6to
-	LGNmktJRxc8Jpciz0EmVd0r6OXVBM8RVulSW6a0melwA8xoGITtU
-X-Gm-Gg: ASbGnctynkvdzVAsKY9+V4vNHAKPVrABrHExdKXDhI7x8zD//yKXokfjYTPTxL0sHtd
-	cq7RcQYPry6ezHPD/zy/ePIT2Pb2w8d0Uh1IGOStvypFppdChi1AZzCgsZ4N53TPh8Z5LeuYyn4
-	vFuOpD+x5IUNRrwtBtm0UkW13XA+PXzJJA68QnWZ3xrbOwpW6VuqDWYvqtQIohqRW2pQKC4M0Sr
-	5TPtIk277CgZvQjCjchh/bdFMsejHDvjldPzZZIIajT9R6X6qWtLY/e41E2yxXIHMuCTdSurJB1
-	nzv+LauMfYTwhl6YU/NtQlmi4LecQhWYEWbTgchZ
-X-Google-Smtp-Source: AGHT+IE+ebVDkjWM2U+vTuxOaEi2gePK7lA6ZcliczZ6QreHuVJL0X/7gkTIx9gAEQ4c3jyrVxUT+Q==
-X-Received: by 2002:a05:6a21:9211:b0:1f5:7710:fd18 with SMTP id adf61e73a8af0-2015aeca12bmr4752416637.17.1744217957454;
-        Wed, 09 Apr 2025 09:59:17 -0700 (PDT)
+        bh=CKpfWxOAsmcqfHthdu26r7YWnYaeAaQXRASkSMsz97E=;
+        b=d2Oo1M4+CFfwNHgJMl0moT09KZDUb+8ZyuwT7Osbv7pGQX1KtAoQFgGHzt2yI2kHDh
+         H968npv9O5ZEq8b9uFStTDLRrcqzBSeLOpY0Ss3qgxYwopbgG090zTcoaE+aPM3EzH6b
+         HhsZbVXCza374t06iX1kBzuau9x79aUMIdBT6YXt4Dv+/oH6HFbZ+LdhO5s6Vvf509Uc
+         lbhmUvoIf5CC+wnymnGjPv069ZRkgQdKxV/JQCZjrAsojXZ9QrIVNNro6b8gVgDorDAL
+         81wySnrbdFnZBtfhehGyf84HgtlDIql2PecsdwS1wtuKdT0hnMIYREhhH+FUkBt1qH3U
+         4Clw==
+X-Forwarded-Encrypted: i=1; AJvYcCWQfcQlvauEpu/ilPkJ4+Qfj6NqnPbcZbLvGxgcFEKA14obxMh8K67M39d4cSvD55QQoQYkNFdnyjn5@lists.infradead.org, AJvYcCXgIh7WMTKmRYICdGCYzzFJ2A5aABV4WPCaqK9v0TG8Zsb+BEj/Wom11XSrofEXOfH8WDnxL6+iL0I=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzdNBuWc0ucacxhpopSBv98SeDzozLzY490G6ien8udswLwSXtA
+	Tk3MkJxjG+6uLYtlnoI7yGihuw+HYFIFxXGiUOm2Xyg9ROm4yiUT
+X-Gm-Gg: ASbGncsVom191QyRLvvc1Cwu8ZIwWYI27S+BElL5u+1VlArQfSRDZK3NCgeRcKPpkQB
+	I2F7DBSxO72IieVsLqgYFyHJt7qyto3d+RPqTzIhBnohYGoNER5vNud8yoRKbtQ2hm+1SPTGyCr
+	B8qinzb7nFk8sTssFQ6/Ov9QiW5/23wwd3WMrZQrGguhHyjDqxpatLyKMqYRaFxumN1EbCWEI/u
+	Nd+vKSRA0rn1FByRXghbUi2i2faCXBD36vA3P48DPU8bYq6JueKClXLeYZYoSrKxQTqDQGxHlNR
+	1uTdedjb2O02yndIz5ZooLSJFxqMqXc5gEXJPOdW
+X-Google-Smtp-Source: AGHT+IFxnZTQiwyLnCcrMyVoc4gjX/wlLeI10NLEVrusIoE84Mu0MqqI5oCBV9CkTcUXaP/nQxUz2g==
+X-Received: by 2002:a17:903:240b:b0:224:1579:5e91 with SMTP id d9443c01a7336-22ac40026bbmr47037845ad.47.1744217677709;
+        Wed, 09 Apr 2025 09:54:37 -0700 (PDT)
 Received: from localhost ([216.228.127.131])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b02a11d298esm1284868a12.34.2025.04.09.09.59.15
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-306df4011dbsm1856612a91.46.2025.04.09.09.54.36
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 09 Apr 2025 09:59:16 -0700 (PDT)
-Date: Wed, 9 Apr 2025 12:59:14 -0400
+        Wed, 09 Apr 2025 09:54:36 -0700 (PDT)
+Date: Wed, 9 Apr 2025 12:54:35 -0400
 From: Yury Norov <yury.norov@gmail.com>
 To: Kuan-Wei Chiu <visitorckw@gmail.com>
 Cc: tglx@linutronix.de, mingo@redhat.com, bp@alien8.de,
@@ -97,17 +97,16 @@ Cc: tglx@linutronix.de, mingo@redhat.com, bp@alien8.de,
 	linux-hwmon@vger.kernel.org, linux-i3c@lists.infradead.org,
 	david.laight.linux@gmail.com, andrew.cooper3@citrix.com,
 	Yu-Chun Lin <eleanor15x@gmail.com>
-Subject: Re: [PATCH v4 01/13] bitops: Change parity8() to parity_odd() with
- u64 input and bool return type
-Message-ID: <Z_anYpZw_E8ehN21@yury>
+Subject: Re: [PATCH v4 00/13] Introduce parity_odd() and refactor redundant
+ parity code
+Message-ID: <Z_amQp3gK5Dm8Qz3@yury>
 References: <20250409154356.423512-1-visitorckw@gmail.com>
- <20250409154356.423512-2-visitorckw@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250409154356.423512-2-visitorckw@gmail.com>
+In-Reply-To: <20250409154356.423512-1-visitorckw@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250409_095918_633411_C1F977D3 
-X-CRM114-Status: GOOD (  27.81  )
+X-CRM114-CacheID: sfid-20250409_095439_321474_07F678A0 
+X-CRM114-Status: GOOD (  30.68  )
 X-Mailman-Approved-At: Thu, 15 May 2025 02:17:27 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -125,165 +124,133 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Apr 09, 2025 at 11:43:44PM +0800, Kuan-Wei Chiu wrote:
-> Redesign the parity8() helper as parity_odd(), changing its input type
-> from u8 to u64 to support broader use cases and its return type from
-> int to bool to clearly reflect the function's binary output. The
-> function now returns true for odd parity and false for even parity,
-> making its behavior more intuitive based on the name.
+On Wed, Apr 09, 2025 at 11:43:43PM +0800, Kuan-Wei Chiu wrote:
+> Several parts of the kernel contain open-coded and redundant
+> implementations of parity calculation. This patch series introduces
+> a unified helper, parity_odd(), to simplify and standardize these
+> cases.
 > 
-> Also mark the function with __attribute_const__ to enable better
-> compiler optimization, as the result depends solely on its input and
-> has no side effects.
-> 
+> The first patch renames parity8() to parity_odd(), changes its argument
+
+Alright, if it's an extension of the area of applicability, it should be
+renamed to just parity(). I already shared a table that summarized the
+drivers authors' view on that, and they clearly prefer not to add the
+suffix - 13 vs 2. The __builtin_parity() doesn't care of suffix as well. 
+
+https://lore.kernel.org/all/Z9GtcNJie8TRKywZ@thinkpad/
+
+Yes, the argument that boolean function should explain itself sounds
+correct, but in this case, comment on top of the function looks enough
+to me.
+
+The existing codebase doesn't care about the suffix as well. If no
+strong preference, let's just pick a short and sweet name?
+
+> type from u8 to u64 for broader applicability, and updates its return
+> type from int to bool to make its usage and return semantics more
+> intuitive-returning true for odd parity and false for even parity. It
+> also adds __attribute_const__ to enable compiler optimizations.
+
+That's correct and nice, but can you support it with a bloat-o-meter's
+before/after and/or asm snippets? I also think it worth to be a separate
+patch, preferably the last patch in the series.
+
 > While more efficient implementations may exist, further optimization is
 > postponed until a use case in performance-critical paths arises.
+> 
+> Subsequent patches refactor various kernel components to replace
+> open-coded parity logic with the new helper, reducing code duplication
+> and improving consistency.
 > 
 > Co-developed-by: Yu-Chun Lin <eleanor15x@gmail.com>
 > Signed-off-by: Yu-Chun Lin <eleanor15x@gmail.com>
 > Signed-off-by: Kuan-Wei Chiu <visitorckw@gmail.com>
 > ---
->  arch/x86/kernel/bootflag.c               |  4 ++--
->  drivers/hwmon/spd5118.c                  |  2 +-
->  drivers/i3c/master/dw-i3c-master.c       |  2 +-
->  drivers/i3c/master/i3c-master-cdns.c     |  2 +-
->  drivers/i3c/master/mipi-i3c-hci/dat_v1.c |  2 +-
->  include/linux/bitops.h                   | 19 ++++++++++++-------
->  6 files changed, 18 insertions(+), 13 deletions(-)
 > 
-> diff --git a/arch/x86/kernel/bootflag.c b/arch/x86/kernel/bootflag.c
-> index 73274d76ce16..86aae4b2bfd5 100644
-> --- a/arch/x86/kernel/bootflag.c
-> +++ b/arch/x86/kernel/bootflag.c
-> @@ -26,7 +26,7 @@ static void __init sbf_write(u8 v)
->  	unsigned long flags;
->  
->  	if (sbf_port != -1) {
-> -		if (!parity8(v))
-> +		if (!parity_odd(v))
->  			v ^= SBF_PARITY;
->  
->  		printk(KERN_INFO "Simple Boot Flag at 0x%x set to 0x%x\n",
-> @@ -57,7 +57,7 @@ static bool __init sbf_value_valid(u8 v)
->  {
->  	if (v & SBF_RESERVED)		/* Reserved bits */
->  		return false;
-> -	if (!parity8(v))
-> +	if (!parity_odd(v))
->  		return false;
->  
->  	return true;
-> diff --git a/drivers/hwmon/spd5118.c b/drivers/hwmon/spd5118.c
-> index 358152868d96..15761f2ca4e9 100644
-> --- a/drivers/hwmon/spd5118.c
-> +++ b/drivers/hwmon/spd5118.c
-> @@ -298,7 +298,7 @@ static umode_t spd5118_is_visible(const void *_data, enum hwmon_sensor_types typ
->   */
->  static bool spd5118_vendor_valid(u8 bank, u8 id)
->  {
-> -	if (parity8(bank) == 0 || parity8(id) == 0)
-> +	if (!parity_odd(bank) || !parity_odd(id))
->  		return false;
->  
->  	id &= 0x7f;
-> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-> index 611c22b72c15..dc61d87fcd94 100644
-> --- a/drivers/i3c/master/dw-i3c-master.c
-> +++ b/drivers/i3c/master/dw-i3c-master.c
-> @@ -867,7 +867,7 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
->  		master->devs[pos].addr = ret;
->  		last_addr = ret;
->  
-> -		ret |= parity8(ret) ? 0 : BIT(7);
-> +		ret |= parity_odd(ret) ? 0 : BIT(7);
->  
->  		writel(DEV_ADDR_TABLE_DYNAMIC_ADDR(ret),
->  		       master->regs +
-> diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
-> index fd3752cea654..df14f978a388 100644
-> --- a/drivers/i3c/master/i3c-master-cdns.c
-> +++ b/drivers/i3c/master/i3c-master-cdns.c
-> @@ -889,7 +889,7 @@ static u32 prepare_rr0_dev_address(u32 addr)
->  	ret |= (addr & GENMASK(9, 7)) << 6;
->  
->  	/* RR0[0] = ~XOR(addr[6:0]) */
-> -	ret |= parity8(addr & 0x7f) ? 0 : BIT(0);
-> +	ret |= parity_odd(addr & 0x7f) ? 0 : BIT(0);
->  
->  	return ret;
->  }
-> diff --git a/drivers/i3c/master/mipi-i3c-hci/dat_v1.c b/drivers/i3c/master/mipi-i3c-hci/dat_v1.c
-> index 85c4916972e4..d692a299607d 100644
-> --- a/drivers/i3c/master/mipi-i3c-hci/dat_v1.c
-> +++ b/drivers/i3c/master/mipi-i3c-hci/dat_v1.c
-> @@ -114,7 +114,7 @@ static void hci_dat_v1_set_dynamic_addr(struct i3c_hci *hci,
->  	dat_w0 = dat_w0_read(dat_idx);
->  	dat_w0 &= ~(DAT_0_DYNAMIC_ADDRESS | DAT_0_DYNADDR_PARITY);
->  	dat_w0 |= FIELD_PREP(DAT_0_DYNAMIC_ADDRESS, address) |
-> -		  (parity8(address) ? 0 : DAT_0_DYNADDR_PARITY);
-> +		  (parity_odd(address) ? 0 : DAT_0_DYNADDR_PARITY);
->  	dat_w0_write(dat_idx, dat_w0);
->  }
->  
-> diff --git a/include/linux/bitops.h b/include/linux/bitops.h
-> index c1cb53cf2f0f..7c4c8afccef1 100644
-> --- a/include/linux/bitops.h
-> +++ b/include/linux/bitops.h
-> @@ -230,35 +230,40 @@ static inline int get_count_order_long(unsigned long l)
->  }
->  
->  /**
-> - * parity8 - get the parity of an u8 value
-> - * @value: the value to be examined
-> + * parity_odd - get the parity of an u64 value
-> + * @val: the value to be examined
->   *
-> - * Determine the parity of the u8 argument.
-> + * Determine the parity of the u64 argument.
->   *
->   * Returns:
-> - * 0 for even parity, 1 for odd parity
-> + * false for even parity, true for odd parity
->   *
->   * Note: This function informs you about the current parity. Example to bail
->   * out when parity is odd:
->   *
-> - *	if (parity8(val) == 1)
-> + *	if (parity_odd(val))
->   *		return -EBADMSG;
->   *
->   * If you need to calculate a parity bit, you need to draw the conclusion from
->   * this result yourself. Example to enforce odd parity, parity bit is bit 7:
->   *
-> - *	if (parity8(val) == 0)
-> + *	if (!parity_odd(val))
->   *		val ^= BIT(7);
->   */
-> -static inline int parity8(u8 val)
-> +#ifndef parity_odd
+> To H. Peter:
+> I understand your preference for a parity8/16/32/64() style interface,
+> and I agree that such a design would better accommodate potential
+> arch-specific implementations. However, I suspect there are very few,
+> if any, users who care about the performance of parity calculations
+> enough to warrant such optimizations. So my inclination is to defer any
+> arch-specific or optimized implementations until we see parity_odd()
+> being used in hot paths.
+> 
+> Changes in v4:
+> - Rename parity8() to parity_odd().
+> - Change the argument type from u8 to u64.
+> - Use a single parity_odd() function.
+> 
+> Changes in v3:
+> - Avoid using __builtin_parity.
+> - Change return type to bool.
+> - Drop parity() macro.
+> - Change parityXX() << y to !!parityXX() << y.
+> 
+> Changes in v2:
+> - Provide fallback functions for __builtin_parity() when the compiler
+>   decides not to inline it
+> - Use __builtin_parity() when no architecture-specific implementation
+>   is available
+> - Optimize for constant folding when val is a compile-time constant
+> - Add a generic parity() macro
+> - Drop the x86 bootflag conversion patch since it has been merged into
+>   the tip tree
+> 
+> v3: https://lore.kernel.org/lkml/20250306162541.2633025-1-visitorckw@gmail.com/
+> v1: https://lore.kernel.org/lkml/20250223164217.2139331-1-visitorckw@gmail.com/
+> v2: https://lore.kernel.org/lkml/20250301142409.2513835-1-visitorckw@gmail.com/
+> 
+> Kuan-Wei Chiu (13):
+>   bitops: Change parity8() to parity_odd() with u64 input and bool
+>     return type
+>   media: media/test_drivers: Replace open-coded parity calculation with
+>     parity_odd()
+>   media: pci: cx18-av-vbi: Replace open-coded parity calculation with
+>     parity_odd()
+>   media: saa7115: Replace open-coded parity calculation with
+>     parity_odd()
+>   serial: max3100: Replace open-coded parity calculation with
+>     parity_odd()
+>   lib/bch: Replace open-coded parity calculation with parity_odd()
+>   Input: joystick - Replace open-coded parity calculation with
+>     parity_odd()
+>   net: ethernet: oa_tc6: Replace open-coded parity calculation with
+>     parity_odd()
+>   wifi: brcm80211: Replace open-coded parity calculation with
+>     parity_odd()
+>   drm/bridge: dw-hdmi: Replace open-coded parity calculation with
+>     parity_odd()
+>   mtd: ssfdc: Replace open-coded parity calculation with parity_odd()
+>   fsi: i2cr: Replace open-coded parity calculation with parity_odd()
+>   nfp: bpf: Replace open-coded parity calculation with parity_odd()
+> 
+>  arch/x86/kernel/bootflag.c                    |  4 +--
+>  drivers/fsi/fsi-master-i2cr.c                 | 20 +++------------
+>  .../drm/bridge/synopsys/dw-hdmi-ahb-audio.c   |  8 ++----
+>  drivers/hwmon/spd5118.c                       |  2 +-
+>  drivers/i3c/master/dw-i3c-master.c            |  2 +-
+>  drivers/i3c/master/i3c-master-cdns.c          |  2 +-
+>  drivers/i3c/master/mipi-i3c-hci/dat_v1.c      |  2 +-
+>  drivers/input/joystick/grip_mp.c              | 17 ++-----------
+>  drivers/input/joystick/sidewinder.c           | 25 ++++---------------
+>  drivers/media/i2c/saa7115.c                   | 12 ++-------
+>  drivers/media/pci/cx18/cx18-av-vbi.c          | 12 ++-------
+>  .../media/test-drivers/vivid/vivid-vbi-gen.c  |  8 ++----
+>  drivers/mtd/ssfdc.c                           | 20 +++------------
+>  drivers/net/ethernet/netronome/nfp/nfp_asm.c  |  7 +-----
+>  drivers/net/ethernet/oa_tc6.c                 | 19 +++-----------
+>  .../broadcom/brcm80211/brcmsmac/dma.c         | 18 ++-----------
+>  drivers/tty/serial/max3100.c                  |  3 ++-
+>  include/linux/bitops.h                        | 19 ++++++++------
+>  lib/bch.c                                     | 14 +----------
+>  19 files changed, 49 insertions(+), 165 deletions(-)
 
-Please don't add this guard. We've got no any arch implementations
-so far, and this is a dead code. Those adding arch code will also
-add the ifdefery.
+OK, now it looks like a nice consolidation and simplification of code
+base. Thanks for the work.
 
-> +static inline __attribute_const__ bool parity_odd(u64 val)
->  {
->  	/*
->  	 * One explanation of this algorithm:
->  	 * https://funloop.org/codex/problem/parity/README.html
->  	 */
-> +	val ^= val >> 32;
-> +	val ^= val >> 16;
-> +	val ^= val >> 8;
->  	val ^= val >> 4;
->  	return (0x6996 >> (val & 0xf)) & 1;
->  }
-> +#endif
->  
->  /**
->   * __ffs64 - find first set bit in a 64 bit word
-> -- 
-> 2.34.1
+Thanks,
+Yury
 
 -- 
 linux-i3c mailing list
