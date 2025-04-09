@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3D267C3ABDD
-	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 09:20:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 69C18C54756
+	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 09:20:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fRZabE7Sd3QOm7eMd6x1VIeycIsFqnh9RxO/7xnkP8s=; b=ttFWjsPafmdj7k
-	2JnCfRc1bsYEWRLBcYaz+0tUUkO7bfRBXlozZ+mAFAta4E8KFHIt2JGgv2W/FmZxZOiZBkaAU7fGd
-	+Xi65WzcYbM4bQM0kgEoSThYu51xmUuDGMypHZ1L1Q9/3ei+JlDqA6+wM5BIv8pKmzmxhXH1C8LZj
-	AGy3gi7jyhrnBrkt0OfAbCIWdffZ3OcYcKv0CnCtKYPbNrqlOcUfB1IAchpPWc8wJeSWpDgkLZPPm
-	13j1bGtKk/Ot/B5ZHosufcdceBHBQ2tRuuubYULNDc32cQu8TDB9lFWGceGxgP8UqINMBFMN3Mn7t
-	W2LCJGY/G2ALP9uvAezw==;
+	List-Owner; bh=M3PY5vLP09GO8W6A+uzgSb+Tzbq8/EEA3ofu6+gV2Os=; b=1NOn8MDR0qqpcS
+	7blRTb0dlcH9xoqD/3QMtDi2FXqHdV/wk27DADqIFxRzt6gco0XDAlBzPoodA7Ies9s/6mPHoSNMO
+	SZLN6eE7ybvpuNbrkJV+lk4MInXEVTp+ygeIkgxTL/yJEivx4ToZ2vJICFgIj6zzWWg05mU8BJK2k
+	c/uoM4A2huE0SKfvGbLBtN7O4cPOb0UiWcsSAsR9zEGByyAnN+ufbEQyQKpmthHxx6eVgrs0Jd32x
+	2nDWLd20H9eVOcAAihzln1kYvfXFOIQdC6Po/lwR9mOTC7pKnIblDHlPhp3MbbNt9CTx+Ai5QLGaw
+	H+ZbR/Ix/VSkK8Q1QkIQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFUlK-0000000088c-48uB;
-	Thu, 15 May 2025 09:20:22 +0000
-Received: from mail-pl1-x62e.google.com ([2607:f8b0:4864:20::62e])
+	id 1uFUlN-000000008B9-0FIO;
+	Thu, 15 May 2025 09:20:25 +0000
+Received: from mail-pg1-x52a.google.com ([2607:f8b0:4864:20::52a])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2YhD-00000007x6E-1Az8;
-	Wed, 09 Apr 2025 16:54:40 +0000
-Received: by mail-pl1-x62e.google.com with SMTP id d9443c01a7336-2241053582dso91916385ad.1;
-        Wed, 09 Apr 2025 09:54:38 -0700 (PDT)
+	id 1u2Z9o-0000000822q-32T6;
+	Wed, 09 Apr 2025 17:24:13 +0000
+Received: by mail-pg1-x52a.google.com with SMTP id 41be03b00d2f7-af5085f7861so4526804a12.3;
+        Wed, 09 Apr 2025 10:24:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1744217678; x=1744822478; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1744219452; x=1744824252; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=CKpfWxOAsmcqfHthdu26r7YWnYaeAaQXRASkSMsz97E=;
-        b=fpZGrsFDtwRYC2+16DQCJAlHegkXbmi9BEaBcZTGGqblDbZLph96G9F/VuY0D5tPrm
-         7Yn/JarEvZXzqbs3FmSvJKoanYQ/uo2D33kCdZ3d9YdvEKK2w++kwbIZ7l7qZ1etNcGt
-         oVd355EKUtI9Y5QKz/rXRZ65pPi0K631sHB1AV/FaqQ8sGMt3lYl7BtJ0nowknYUregh
-         65QpOZ8i3tKat27nJMhPmXTvM9l4F1dOIbjWa0Ate9kg5gnDppP1BagDXGrhgekRk01d
-         3Mw4pakxq/v/MVV3XXW4C9BDwCciZHZ5en+0k1xIMSCGNPupjQpAtsgzhI0r0AwjdycY
-         kC7A==
+        bh=xd6xaUI5nv9NKBM15KV37XOGcT5rm8Sii0IDXetnYDU=;
+        b=YN44tarhvDeYjZ8q6VVrWbqjRXxMQ6MeQ/g0Tw9Mep+3Vgj1LrEIsaFMvO3aIXqUdu
+         9q5OpWUpj+za9Mb5Z38trjIpv6J6bEJo7lz2UeClAc3J6qV3DNX7UXh6ATJ1vwmeYRAh
+         Mmq6mOWG1j4VXF4f+5zmb9YJHZDF4WNMskl+eKroa9mrrbS8aHYLWYFO/lXbiHFBJoWI
+         9RvzcBR84+tn6Y+M7Xm2w37ZaTOUghC+cR8M9Yu3FelMevEeEnk2X3rmB2gXLq4L60Mp
+         14LdMt6XF285slhp/GgHXUr+qJ8Sj1GgJd7+Rq35vUXSBLahACcreFxa5U3GnRShKl/o
+         qd9g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1744217678; x=1744822478;
+        d=1e100.net; s=20230601; t=1744219452; x=1744824252;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=CKpfWxOAsmcqfHthdu26r7YWnYaeAaQXRASkSMsz97E=;
-        b=d2Oo1M4+CFfwNHgJMl0moT09KZDUb+8ZyuwT7Osbv7pGQX1KtAoQFgGHzt2yI2kHDh
-         H968npv9O5ZEq8b9uFStTDLRrcqzBSeLOpY0Ss3qgxYwopbgG090zTcoaE+aPM3EzH6b
-         HhsZbVXCza374t06iX1kBzuau9x79aUMIdBT6YXt4Dv+/oH6HFbZ+LdhO5s6Vvf509Uc
-         lbhmUvoIf5CC+wnymnGjPv069ZRkgQdKxV/JQCZjrAsojXZ9QrIVNNro6b8gVgDorDAL
-         81wySnrbdFnZBtfhehGyf84HgtlDIql2PecsdwS1wtuKdT0hnMIYREhhH+FUkBt1qH3U
-         4Clw==
-X-Forwarded-Encrypted: i=1; AJvYcCWQfcQlvauEpu/ilPkJ4+Qfj6NqnPbcZbLvGxgcFEKA14obxMh8K67M39d4cSvD55QQoQYkNFdnyjn5@lists.infradead.org, AJvYcCXgIh7WMTKmRYICdGCYzzFJ2A5aABV4WPCaqK9v0TG8Zsb+BEj/Wom11XSrofEXOfH8WDnxL6+iL0I=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzdNBuWc0ucacxhpopSBv98SeDzozLzY490G6ien8udswLwSXtA
-	Tk3MkJxjG+6uLYtlnoI7yGihuw+HYFIFxXGiUOm2Xyg9ROm4yiUT
-X-Gm-Gg: ASbGncsVom191QyRLvvc1Cwu8ZIwWYI27S+BElL5u+1VlArQfSRDZK3NCgeRcKPpkQB
-	I2F7DBSxO72IieVsLqgYFyHJt7qyto3d+RPqTzIhBnohYGoNER5vNud8yoRKbtQ2hm+1SPTGyCr
-	B8qinzb7nFk8sTssFQ6/Ov9QiW5/23wwd3WMrZQrGguhHyjDqxpatLyKMqYRaFxumN1EbCWEI/u
-	Nd+vKSRA0rn1FByRXghbUi2i2faCXBD36vA3P48DPU8bYq6JueKClXLeYZYoSrKxQTqDQGxHlNR
-	1uTdedjb2O02yndIz5ZooLSJFxqMqXc5gEXJPOdW
-X-Google-Smtp-Source: AGHT+IFxnZTQiwyLnCcrMyVoc4gjX/wlLeI10NLEVrusIoE84Mu0MqqI5oCBV9CkTcUXaP/nQxUz2g==
-X-Received: by 2002:a17:903:240b:b0:224:1579:5e91 with SMTP id d9443c01a7336-22ac40026bbmr47037845ad.47.1744217677709;
-        Wed, 09 Apr 2025 09:54:37 -0700 (PDT)
+        bh=xd6xaUI5nv9NKBM15KV37XOGcT5rm8Sii0IDXetnYDU=;
+        b=l1wNrHaimLV1yOpKPdKrEzvsoT8QtS6xuciTd1zelaKNd1MmUAWCWEZetm8NIbscY7
+         meLufgRAyVx5s4MgMIS7KSjrmk8E/6/fL5KMIFfWMI/ACGFuyu3H+ekPEnD2p+m2uhzX
+         d1/u6K2elvIGTPPfxNXtmiQ4qFPuFj/M9yz5oY7OWCnEYlkO0kT5J17zBJMcxa4EWHTa
+         2sX/VOvYoNU7GMWyISCUhRNdazNlKYfboIHcgX31N8Ev89bkpNJK2b8F2QoXjT2oSLsn
+         18//mPFIQA/GMI1ErwGZ5wvuQ5ntXX3QfBV9wumObUJrguJA8HwFq5vVk6UzuUCMRSLe
+         KOdQ==
+X-Forwarded-Encrypted: i=1; AJvYcCU0/Bh6MtAhFOnLciAJGJgwHRxeuKfOdoOO9kO2bTEJ2BuhyQM5j/C2Xmy8cP9ypIOzYF9/JkU9+Roz@lists.infradead.org, AJvYcCXiJsFmLVjbsYqgU9rlwNqun1rMmvtkCipPyyn+WLxlG5DcxJS4hUwnSu2PM9I1WKFcBAQf0BhOIK8=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yws0VGCsf68czAvSlR+DstECPEGKL8M7nckdgZs4fSOEoDq0FZ2
+	pL9WU3uqZllxgpoZ334gTV7II1ddRCUlZvcHWV+n81zFTiEq6Z6c
+X-Gm-Gg: ASbGncuCQ8RBjWBdR7oIwT0DhurOnaw7ZLNmFp/P2hu9dfIJetBFH1vPX2OLnvKUZFz
+	bTZHUtHcf1wg+S71vAhhojbVFCNsgVXv6HOJENVPywLwdilk7gKi274LSWX2dujNchorWKGGaSg
+	XdzML9jrRCFkrpVPsCpPa+X6rwn79LE4oAtxWQ3dctaWIJeQEwsiyM7juAwbd1WGD9/ZaDgPk7I
+	BVqcWu6XKQPRDw6c9EQlWHnG+Qhm9ylHL+nZqPB0xHmM8PF62u4SRM7ZjFucZJ/tAhsZOo0jfER
+	v6fxgBBUKwYZfylgcS1gP0XXxb/KCPf4qMMeJF1y
+X-Google-Smtp-Source: AGHT+IELcovaPBJxMo6VlfeeTod3PlQVQYXafQRyaLUWNqmSnypRNDEVNTbdlgjgS5FV2ZA5ueCy6w==
+X-Received: by 2002:a17:90b:6ce:b0:301:1d03:93cd with SMTP id 98e67ed59e1d1-306dd556630mr5093919a91.24.1744219451960;
+        Wed, 09 Apr 2025 10:24:11 -0700 (PDT)
 Received: from localhost ([216.228.127.131])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-306df4011dbsm1856612a91.46.2025.04.09.09.54.36
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-306dd12b4d5sm2098089a91.25.2025.04.09.10.24.10
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 09 Apr 2025 09:54:36 -0700 (PDT)
-Date: Wed, 9 Apr 2025 12:54:35 -0400
+        Wed, 09 Apr 2025 10:24:11 -0700 (PDT)
+Date: Wed, 9 Apr 2025 13:24:08 -0400
 From: Yury Norov <yury.norov@gmail.com>
 To: Kuan-Wei Chiu <visitorckw@gmail.com>
 Cc: tglx@linutronix.de, mingo@redhat.com, bp@alien8.de,
@@ -97,16 +97,17 @@ Cc: tglx@linutronix.de, mingo@redhat.com, bp@alien8.de,
 	linux-hwmon@vger.kernel.org, linux-i3c@lists.infradead.org,
 	david.laight.linux@gmail.com, andrew.cooper3@citrix.com,
 	Yu-Chun Lin <eleanor15x@gmail.com>
-Subject: Re: [PATCH v4 00/13] Introduce parity_odd() and refactor redundant
- parity code
-Message-ID: <Z_amQp3gK5Dm8Qz3@yury>
+Subject: Re: [PATCH v4 05/13] serial: max3100: Replace open-coded parity
+ calculation with parity_odd()
+Message-ID: <Z_atODqZDkff5sjj@yury>
 References: <20250409154356.423512-1-visitorckw@gmail.com>
+ <20250409154356.423512-6-visitorckw@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250409154356.423512-1-visitorckw@gmail.com>
+In-Reply-To: <20250409154356.423512-6-visitorckw@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250409_095439_321474_07F678A0 
-X-CRM114-Status: GOOD (  30.68  )
+X-CRM114-CacheID: sfid-20250409_102412_787015_538785F2 
+X-CRM114-Status: GOOD (  16.19  )
 X-Mailman-Approved-At: Thu, 15 May 2025 02:17:27 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -124,133 +125,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Apr 09, 2025 at 11:43:43PM +0800, Kuan-Wei Chiu wrote:
-> Several parts of the kernel contain open-coded and redundant
-> implementations of parity calculation. This patch series introduces
-> a unified helper, parity_odd(), to simplify and standardize these
-> cases.
-> 
-> The first patch renames parity8() to parity_odd(), changes its argument
-
-Alright, if it's an extension of the area of applicability, it should be
-renamed to just parity(). I already shared a table that summarized the
-drivers authors' view on that, and they clearly prefer not to add the
-suffix - 13 vs 2. The __builtin_parity() doesn't care of suffix as well. 
-
-https://lore.kernel.org/all/Z9GtcNJie8TRKywZ@thinkpad/
-
-Yes, the argument that boolean function should explain itself sounds
-correct, but in this case, comment on top of the function looks enough
-to me.
-
-The existing codebase doesn't care about the suffix as well. If no
-strong preference, let's just pick a short and sweet name?
-
-> type from u8 to u64 for broader applicability, and updates its return
-> type from int to bool to make its usage and return semantics more
-> intuitive-returning true for odd parity and false for even parity. It
-> also adds __attribute_const__ to enable compiler optimizations.
-
-That's correct and nice, but can you support it with a bloat-o-meter's
-before/after and/or asm snippets? I also think it worth to be a separate
-patch, preferably the last patch in the series.
-
-> While more efficient implementations may exist, further optimization is
-> postponed until a use case in performance-critical paths arises.
-> 
-> Subsequent patches refactor various kernel components to replace
-> open-coded parity logic with the new helper, reducing code duplication
-> and improving consistency.
+On Wed, Apr 09, 2025 at 11:43:48PM +0800, Kuan-Wei Chiu wrote:
+> Refactor parity calculations to use the standard parity_odd() helper.
+> This change eliminates redundant implementations.
 > 
 > Co-developed-by: Yu-Chun Lin <eleanor15x@gmail.com>
 > Signed-off-by: Yu-Chun Lin <eleanor15x@gmail.com>
 > Signed-off-by: Kuan-Wei Chiu <visitorckw@gmail.com>
 > ---
+>  drivers/tty/serial/max3100.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
 > 
-> To H. Peter:
-> I understand your preference for a parity8/16/32/64() style interface,
-> and I agree that such a design would better accommodate potential
-> arch-specific implementations. However, I suspect there are very few,
-> if any, users who care about the performance of parity calculations
-> enough to warrant such optimizations. So my inclination is to defer any
-> arch-specific or optimized implementations until we see parity_odd()
-> being used in hot paths.
-> 
-> Changes in v4:
-> - Rename parity8() to parity_odd().
-> - Change the argument type from u8 to u64.
-> - Use a single parity_odd() function.
-> 
-> Changes in v3:
-> - Avoid using __builtin_parity.
-> - Change return type to bool.
-> - Drop parity() macro.
-> - Change parityXX() << y to !!parityXX() << y.
-> 
-> Changes in v2:
-> - Provide fallback functions for __builtin_parity() when the compiler
->   decides not to inline it
-> - Use __builtin_parity() when no architecture-specific implementation
->   is available
-> - Optimize for constant folding when val is a compile-time constant
-> - Add a generic parity() macro
-> - Drop the x86 bootflag conversion patch since it has been merged into
->   the tip tree
-> 
-> v3: https://lore.kernel.org/lkml/20250306162541.2633025-1-visitorckw@gmail.com/
-> v1: https://lore.kernel.org/lkml/20250223164217.2139331-1-visitorckw@gmail.com/
-> v2: https://lore.kernel.org/lkml/20250301142409.2513835-1-visitorckw@gmail.com/
-> 
-> Kuan-Wei Chiu (13):
->   bitops: Change parity8() to parity_odd() with u64 input and bool
->     return type
->   media: media/test_drivers: Replace open-coded parity calculation with
->     parity_odd()
->   media: pci: cx18-av-vbi: Replace open-coded parity calculation with
->     parity_odd()
->   media: saa7115: Replace open-coded parity calculation with
->     parity_odd()
->   serial: max3100: Replace open-coded parity calculation with
->     parity_odd()
->   lib/bch: Replace open-coded parity calculation with parity_odd()
->   Input: joystick - Replace open-coded parity calculation with
->     parity_odd()
->   net: ethernet: oa_tc6: Replace open-coded parity calculation with
->     parity_odd()
->   wifi: brcm80211: Replace open-coded parity calculation with
->     parity_odd()
->   drm/bridge: dw-hdmi: Replace open-coded parity calculation with
->     parity_odd()
->   mtd: ssfdc: Replace open-coded parity calculation with parity_odd()
->   fsi: i2cr: Replace open-coded parity calculation with parity_odd()
->   nfp: bpf: Replace open-coded parity calculation with parity_odd()
-> 
->  arch/x86/kernel/bootflag.c                    |  4 +--
->  drivers/fsi/fsi-master-i2cr.c                 | 20 +++------------
->  .../drm/bridge/synopsys/dw-hdmi-ahb-audio.c   |  8 ++----
->  drivers/hwmon/spd5118.c                       |  2 +-
->  drivers/i3c/master/dw-i3c-master.c            |  2 +-
->  drivers/i3c/master/i3c-master-cdns.c          |  2 +-
->  drivers/i3c/master/mipi-i3c-hci/dat_v1.c      |  2 +-
->  drivers/input/joystick/grip_mp.c              | 17 ++-----------
->  drivers/input/joystick/sidewinder.c           | 25 ++++---------------
->  drivers/media/i2c/saa7115.c                   | 12 ++-------
->  drivers/media/pci/cx18/cx18-av-vbi.c          | 12 ++-------
->  .../media/test-drivers/vivid/vivid-vbi-gen.c  |  8 ++----
->  drivers/mtd/ssfdc.c                           | 20 +++------------
->  drivers/net/ethernet/netronome/nfp/nfp_asm.c  |  7 +-----
->  drivers/net/ethernet/oa_tc6.c                 | 19 +++-----------
->  .../broadcom/brcm80211/brcmsmac/dma.c         | 18 ++-----------
->  drivers/tty/serial/max3100.c                  |  3 ++-
->  include/linux/bitops.h                        | 19 ++++++++------
->  lib/bch.c                                     | 14 +----------
->  19 files changed, 49 insertions(+), 165 deletions(-)
+> diff --git a/drivers/tty/serial/max3100.c b/drivers/tty/serial/max3100.c
+> index f2dd83692b2c..36ed41eef7b1 100644
+> --- a/drivers/tty/serial/max3100.c
+> +++ b/drivers/tty/serial/max3100.c
+> @@ -16,6 +16,7 @@
+>  /* 4 MAX3100s should be enough for everyone */
+>  #define MAX_MAX3100 4
+>  
+> +#include <linux/bitops.h>
+>  #include <linux/container_of.h>
+>  #include <linux/delay.h>
+>  #include <linux/device.h>
+> @@ -133,7 +134,7 @@ static int max3100_do_parity(struct max3100_port *s, u16 c)
+>  	else
+>  		c &= 0xff;
+>  
+> -	parity = parity ^ (hweight8(c) & 1);
+> +	parity = parity ^ parity_odd(c);
 
-OK, now it looks like a nice consolidation and simplification of code
-base. Thanks for the work.
+This can be simplified for more unless I misunderstand something...
 
-Thanks,
-Yury
+From: Yury Norov <yury.norov@gmail.com>
+Date:   Wed Apr 9 13:22:04 2025 -0400
+
+serial: max3100: Replace open-coded parity
+
+diff --git a/drivers/tty/serial/max3100.c b/drivers/tty/serial/max3100.c
+index f2dd83692b2c..07d332b8e87d 100644
+--- a/drivers/tty/serial/max3100.c
++++ b/drivers/tty/serial/max3100.c
+@@ -121,20 +121,12 @@ static DEFINE_MUTEX(max3100s_lock);		   /* race on probe */
+ 
+ static int max3100_do_parity(struct max3100_port *s, u16 c)
+ {
+-	int parity;
+-
+-	if (s->parity & MAX3100_PARITY_ODD)
+-		parity = 1;
+-	else
+-		parity = 0;
+-
+ 	if (s->parity & MAX3100_7BIT)
+ 		c &= 0x7f;
+ 	else
+ 		c &= 0xff;
+ 
+-	parity = parity ^ (hweight8(c) & 1);
+-	return parity;
++	return s->parity & MAX3100_PARITY_ODD ? !parity(c) : parity(c);
+ }
+ 
+ static int max3100_check_parity(struct max3100_port *s, u16 c)
 
 -- 
 linux-i3c mailing list
