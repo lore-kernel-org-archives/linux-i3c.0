@@ -4,88 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26E6AC54754
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E432FC54755
 	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 09:20:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fOzzbRTbEU96m0g/iNs9SgGd4mwY6Pw3YypxTKgsAZ8=; b=f4MKTkU2gQBBst
-	aiF5Mnm3FvAonZHhPirDA75L4Fx+FEFv3hl+ESSfFVKKJd9VCDqqlbx0/IIX+4qpitLN2jfTB6VWe
-	oeP0umSD3rjKD+KEKMWoJrbjyg3Mg54KNIBG0iE7WaDHTexKFz6GVIyA/ILSHzACnghYlENyxbca+
-	3/c3+wPkYUxBOkVk2il9Otldcll9k9a/xAwje9GIygg0WkWpuXo/Ub80REq0ib5KmAWLa1IMeoGkW
-	7Wn8ynxQW5C3xctyz+WeIPrpwZQ5VBgyRpr1EGocGe851ycYcGXgSZGbK6Z5vxSKNnCrzGdd93HsU
-	UU0Ibyzpds2/f8dJpydw==;
+	List-Owner; bh=bx3yhFDdtoMWxi33k/rBICIc7biC6T5JO1P8a9CyAaA=; b=FUlOjFZ8ouH5di
+	dYOk9vqX011M9XUljZZSaJrhEKHBSQAbdCefG0MV3KmkVpUKsCTG9tEapuidyxsRBuHDLh6qEHdD8
+	X9RFmva4F1CYdvTb65CgKdQJOyirDLVEx0mkhk/xZvhHYUDZKbmXIzM6hiPoYb2qaOJgcRy2MgZOQ
+	rsS9bPUULnl9TXjPnV91WJF3iCohihaoy9HRd258TUA1h2lE4DhcQvyOjldQNjBssKkK6/BAh55ua
+	RbZPvC+5DTHoZHhXr5kPKw9Xmgi+nw5UylEHrNKoxAKt64Mk6PbSgIG4hS5xKLpq+i6hLGiMAdPtO
+	rK6GAiHt1kC46GcSl4Hg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFUlW-000000008MT-3glr;
-	Thu, 15 May 2025 09:20:34 +0000
-Received: from [2607:7c80:54:3::138] (helo=mail.zytor.com)
+	id 1uFUlX-000000008Ne-2dJZ;
+	Thu, 15 May 2025 09:20:35 +0000
+Received: from mail-pf1-x42f.google.com ([2607:f8b0:4864:20::42f])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u2hNN-000000090hA-37th;
-	Thu, 10 Apr 2025 02:10:46 +0000
-Received: from [IPV6:2601:646:8081:1f94:9d5:a0c2:3619:62ac] ([IPv6:2601:646:8081:1f94:9d5:a0c2:3619:62ac])
-	(authenticated bits=0)
-	by mail.zytor.com (8.18.1/8.17.1) with ESMTPSA id 53A29YJd3849252
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NO);
-	Wed, 9 Apr 2025 19:09:34 -0700
-DKIM-Filter: OpenDKIM Filter v2.11.0 mail.zytor.com 53A29YJd3849252
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=zytor.com;
-	s=2025032001; t=1744250985;
-	bh=sYPb2HJP4fVpfYUaFUUZ0pgxUHfO2I9/b7H7IqJmj3c=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=oGXzMqPnDihlvH8csOG6X1vYEL5+OkVYip8jhTPp6IM9qVTa+TE2DQN/NL7CCufbI
-	 W70VoP5+eXYAecjlqh+Tn7MRcWyYYPY6ri9KgXYwsAfXP39A5RG5P/1U2MrIrPxIl4
-	 LgNJ7p5qe7PlXd1brGtIHKI9TjgO8NyN/0p80ooXB7kFpxcUb3DSe2qpaXbL6MYH5Y
-	 jkbPJIJLpQn1W597tFm89pO6yOJzSzHl/UbpTIyOav94ZVlYeTk/+v6ZOvSDveTwGk
-	 3WaanUXTgaBtSBGsUrLEl+lM6ukmEGPsrkHUnC15nBvJNz4rVyDO7jHqYWigKmp0ks
-	 M5Uu5VvWQnEFA==
-Message-ID: <e97a83a2-dabd-4dc3-b69a-840ca17d70b5@zytor.com>
-Date: Wed, 9 Apr 2025 19:09:28 -0700
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 00/13] Introduce parity_odd() and refactor redundant
- parity code
-To: Yury Norov <yury.norov@gmail.com>, Kuan-Wei Chiu <visitorckw@gmail.com>
+	id 1u2tV7-0000000AxNs-45WG;
+	Thu, 10 Apr 2025 15:07:35 +0000
+Received: by mail-pf1-x42f.google.com with SMTP id d2e1a72fcca58-739525d4e12so883193b3a.3;
+        Thu, 10 Apr 2025 08:07:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1744297653; x=1744902453; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=3D5EegHjNXWtRqs7oVUZyDcWwG0k9rfQtFHn9dOK4Lo=;
+        b=OS2smRRs4N6oY2G7T+jjX233pyK8J37166ymLgQC3SoT5its8/SYtbkwe3ne1FXjDw
+         XXDp7DffeqHcdIwSfRT1+A+q65hY9Kmd3jJL/NL8MPxTdm6QtXtINEMzmm+qTvuE+NJq
+         3ZJ7s/ckLRHDBla0cJ+1s8QRP7hpHyTmlypWnAvLpKP3UWqQc7ePaJkeWKGu6pVxl/lL
+         YQIEafNlzL/5Gu8nTyEA/ka1HRASNsK6nrc504xl87bWRve2+6s1CwKBJniaDSvVCo0F
+         vBygLSf5zzGXK4vY1sUVbevb0KS1P85oJjDD+nz2jngZt1gZoBG26ni4Mxqq3DHyQOul
+         tbUw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744297653; x=1744902453;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=3D5EegHjNXWtRqs7oVUZyDcWwG0k9rfQtFHn9dOK4Lo=;
+        b=nJcbCFQrK0I5a3t0mqGqFMwB7tnWlmiurFnEk4LlDeefEYfbZB91/Ex7I2Q9QoPNBm
+         k5sJaLwx2Xn5aBXCBh1RqzK58e4a/bRuNU6+HhGwue70Qgk0IPsSC0dFWxkke2cK1Lrc
+         LVPrcs8BcRWP+ho0aIUH2Umz3N50/ZczS7ICpBXGUQ3Iir8Q7xR5vKqT76lPE/8v5DGL
+         JqFe3acUEkSIIkwboK1QAQHY+WiXExkOnE4iUnf22jCcG3ZnBcItX7NuyQwR8AHOU5oS
+         SIQuGPjj3/5iVPQ3W97FzVANGkUVEd+9CXiZUwyRdgqb/LuFh++kzioevpONmxjjl78I
+         IF6Q==
+X-Forwarded-Encrypted: i=1; AJvYcCU3xk3vAMv1HeGYXHRCgN0LOgs/3Rh4N9/sfxqNw7d3a1suDqYxS2TZsuxTzWw/S3SgQEK6VRxKJpM=@lists.infradead.org, AJvYcCWWOW0BCEp+Y3JKKy4RdmEEUhtchwCP7juwVh7YwTLLDdprXcxdWdfmJISihD0ABOaxMCXeMBBPtfIt@lists.infradead.org
+X-Gm-Message-State: AOJu0Yyia9EXT5mbMzOwwYPg+xKJMKPJAX3/gjonyRp++ijEcyztNm6s
+	l1xtkr2Hhb8g7xUpDL1ZfB5Fm6ob9kgrpZ0f+odwzLXXtyln265K
+X-Gm-Gg: ASbGncvNOQTtTzBOLU4Y+J1AztQ31NPKfhUoHoG12NEqEc+LxC13fX8KTgmrJvTuV5L
+	8HNlCqAiEzrQZQKVOGEtxd3n0Zu7rMv6/4ugjMDk9QLDDJb5LzAH30bYSlvQtNuvIrQl5eHmcoh
+	FRKe67uYrD89hP3woauym3e/pGLjUkVGnA7RjooEoiKrTctj0UUp4kvLT/njzgBeT8jVGa//hJp
+	oB6ILfTjrMcjznpVRbkaPiy3qgoP+rxKvcmvZmWTBZtIpb3rCYNDshVPo7P9rOKx64i+Vvzh1QH
+	fqTKd62z4q4yvWNpbIOpGcmOo+zGLnSobxAVw9A6
+X-Google-Smtp-Source: AGHT+IFy1ewRYIQi2QM4ZSLkQhokapTj0gR7Ltj5GpPkDsZlOlyCTjP19Ec1IKFhcZrwo1l74Iw4rg==
+X-Received: by 2002:a05:6a00:240a:b0:736:ab1d:83c4 with SMTP id d2e1a72fcca58-73bbec49f99mr4365817b3a.0.1744297652831;
+        Thu, 10 Apr 2025 08:07:32 -0700 (PDT)
+Received: from localhost ([216.228.127.131])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-73bb1e51f1csm3501019b3a.145.2025.04.10.08.07.31
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 10 Apr 2025 08:07:31 -0700 (PDT)
+Date: Thu, 10 Apr 2025 11:07:29 -0400
+From: Yury Norov <yury.norov@gmail.com>
+To: Kuan-Wei Chiu <visitorckw@gmail.com>
 Cc: tglx@linutronix.de, mingo@redhat.com, bp@alien8.de,
-        dave.hansen@linux.intel.com, x86@kernel.org, jk@ozlabs.org,
-        joel@jms.id.au, eajames@linux.ibm.com, andrzej.hajda@intel.com,
-        neil.armstrong@linaro.org, rfoss@kernel.org,
-        maarten.lankhorst@linux.intel.com, mripard@kernel.org,
-        tzimmermann@suse.de, airlied@gmail.com, simona@ffwll.ch,
-        dmitry.torokhov@gmail.com, mchehab@kernel.org, awalls@md.metrocast.net,
-        hverkuil@xs4all.nl, miquel.raynal@bootlin.com, richard@nod.at,
-        vigneshr@ti.com, louis.peens@corigine.com, andrew+netdev@lunn.ch,
-        davem@davemloft.net, edumazet@google.com, pabeni@redhat.com,
-        parthiban.veerasooran@microchip.com, arend.vanspriel@broadcom.com,
-        johannes@sipsolutions.net, gregkh@linuxfoundation.org,
-        jirislaby@kernel.org, akpm@linux-foundation.org, jdelvare@suse.com,
-        linux@roeck-us.net, alexandre.belloni@bootlin.com, pgaj@cadence.com,
-        alistair@popple.id.au, linux@rasmusvillemoes.dk,
-        Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se,
-        jernej.skrabec@gmail.com, kuba@kernel.org,
-        linux-kernel@vger.kernel.org, linux-fsi@lists.ozlabs.org,
-        dri-devel@lists.freedesktop.org, linux-input@vger.kernel.org,
-        linux-media@vger.kernel.org, linux-mtd@lists.infradead.org,
-        oss-drivers@corigine.com, netdev@vger.kernel.org,
-        linux-wireless@vger.kernel.org, brcm80211@lists.linux.dev,
-        brcm80211-dev-list.pdl@broadcom.com, linux-serial@vger.kernel.org,
-        bpf@vger.kernel.org, jserv@ccns.ncku.edu.tw, Frank.Li@nxp.com,
-        linux-hwmon@vger.kernel.org, linux-i3c@lists.infradead.org,
-        david.laight.linux@gmail.com, andrew.cooper3@citrix.com,
-        Yu-Chun Lin <eleanor15x@gmail.com>
+	dave.hansen@linux.intel.com, x86@kernel.org, jk@ozlabs.org,
+	joel@jms.id.au, eajames@linux.ibm.com, andrzej.hajda@intel.com,
+	neil.armstrong@linaro.org, rfoss@kernel.org,
+	maarten.lankhorst@linux.intel.com, mripard@kernel.org,
+	tzimmermann@suse.de, airlied@gmail.com, simona@ffwll.ch,
+	dmitry.torokhov@gmail.com, mchehab@kernel.org,
+	awalls@md.metrocast.net, hverkuil@xs4all.nl,
+	miquel.raynal@bootlin.com, richard@nod.at, vigneshr@ti.com,
+	louis.peens@corigine.com, andrew+netdev@lunn.ch,
+	davem@davemloft.net, edumazet@google.com, pabeni@redhat.com,
+	parthiban.veerasooran@microchip.com, arend.vanspriel@broadcom.com,
+	johannes@sipsolutions.net, gregkh@linuxfoundation.org,
+	jirislaby@kernel.org, akpm@linux-foundation.org, jdelvare@suse.com,
+	linux@roeck-us.net, alexandre.belloni@bootlin.com, pgaj@cadence.com,
+	hpa@zytor.com, alistair@popple.id.au, linux@rasmusvillemoes.dk,
+	Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se,
+	jernej.skrabec@gmail.com, kuba@kernel.org,
+	linux-kernel@vger.kernel.org, linux-fsi@lists.ozlabs.org,
+	dri-devel@lists.freedesktop.org, linux-input@vger.kernel.org,
+	linux-media@vger.kernel.org, linux-mtd@lists.infradead.org,
+	oss-drivers@corigine.com, netdev@vger.kernel.org,
+	linux-wireless@vger.kernel.org, brcm80211@lists.linux.dev,
+	brcm80211-dev-list.pdl@broadcom.com, linux-serial@vger.kernel.org,
+	bpf@vger.kernel.org, jserv@ccns.ncku.edu.tw, Frank.Li@nxp.com,
+	linux-hwmon@vger.kernel.org, linux-i3c@lists.infradead.org,
+	david.laight.linux@gmail.com, andrew.cooper3@citrix.com,
+	Yu-Chun Lin <eleanor15x@gmail.com>
+Subject: Re: [PATCH v4 02/13] media: media/test_drivers: Replace open-coded
+ parity calculation with parity_odd()
+Message-ID: <Z_fesYbCnSjAo-K4@yury>
 References: <20250409154356.423512-1-visitorckw@gmail.com>
- <Z_amQp3gK5Dm8Qz3@yury> <Z/a5Qh/OeLT8JBS4@visitorckw-System-Product-Name>
- <Z_a9YpE46Xf8581l@yury>
-Content-Language: en-US
-From: "H. Peter Anvin" <hpa@zytor.com>
-In-Reply-To: <Z_a9YpE46Xf8581l@yury>
+ <20250409154356.423512-3-visitorckw@gmail.com>
+ <Z_aobrK3t7zdwZRK@yury>
+ <Z/a7DecDljuLtKeS@visitorckw-System-Product-Name>
+ <Z_a_PzmNnvC2z7se@yury>
+ <Z/bC6cygo0hem5IO@visitorckw-System-Product-Name>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <Z/bC6cygo0hem5IO@visitorckw-System-Product-Name>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250409_191045_812214_4F1D883F 
-X-CRM114-Status: GOOD (  25.93  )
-X-Mailman-Approved-At: Thu, 15 May 2025 02:17:28 -0700
+X-CRM114-CacheID: sfid-20250410_080734_018065_2C7A391F 
+X-CRM114-Status: GOOD (  17.87  )
+X-Mailman-Approved-At: Thu, 15 May 2025 02:17:27 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -97,167 +124,48 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 4/9/25 11:33, Yury Norov wrote:
->>>
->> I don't have a strong preference for the name, but if I had to guess
->> the return value from the function prototype, I would intuitively
->> expect an int to return "0 for even and 1 for odd," and a bool to
->> return "true for even, false for odd." I recall Jiri and Jacob shared
->> similar thoughts, which is why I felt adding _odd could provide better
->> clarity.
+On Thu, Apr 10, 2025 at 02:56:41AM +0800, Kuan-Wei Chiu wrote:
+> On Wed, Apr 09, 2025 at 02:41:03PM -0400, Yury Norov wrote:
+> > On Thu, Apr 10, 2025 at 02:23:09AM +0800, Kuan-Wei Chiu wrote:
+> > > On Wed, Apr 09, 2025 at 01:03:42PM -0400, Yury Norov wrote:
+> > > > On Wed, Apr 09, 2025 at 11:43:45PM +0800, Kuan-Wei Chiu wrote:
+
+> > > > So, if val == 0 than parity_odd(val) is also 0, and this can be
+> > > > simplified just to:
+> > > >         return parity(val) ? 0 : 0x80;
+> > > > Or I miss something?
+> > > >
+> > > If val == 0x01, the return value of calc_parity() will remain 0x01.
+> > > If changed to return parity_odd(val) ? 0 : 0x80;, the return value will
+> > > be changed to 0x00.
+> > 
+> > Sorry, I meant
+> >         return val ? 0 : 0x80;
+> > 
+> > This 'val | (parity_odd(val)' is only false when val == 0, right?
+> > When val != 0, compiler will return true immediately, not even calling
+> > parity().
+> >
+> I'm still confused.
 > 
-> I think they said they are convinced that parity should return 1 for
-> odd because of folding and __builtin_parity() arguments.
+> Maybe you're interpreting the code as:
 > 
-
-And for bool, 0 == false, and 1 == true. In fact, the *definitions* for 
-false and true in C (but not C++) is:
-
-<stdbool.h>:
-typedef _Bool bool;
-#define false	0
-#define true	1
-
-If someone wants to make more clear, it would be better to put "typedef 
-bool bit_t" in a common header, but that personally seems ridiculous to me.
-   >>>> type from u8 to u64 for broader applicability, and updates its 
-return
->>>> type from int to bool to make its usage and return semantics more
->>>> intuitive-returning true for odd parity and false for even parity. It
->>>> also adds __attribute_const__ to enable compiler optimizations.
->>>
->>> That's correct and nice, but can you support it with a bloat-o-meter's
->>> before/after and/or asm snippets? I also think it worth to be a separate
->>> patch, preferably the last patch in the series.
->>>
->> I quickly tested it with the x86 defconfig, and it appears that the
->> generated code doesn't change. I forgot who requested the addition
->> during the review process, but I initially thought it would either
->> improve the generated code or leave it unchanged without significantly
->> increasing the source code size.
+> 	(val | parity(val)) ? 0 : 0x80
 > 
-> That's what I actually expected, but was shy to guess openly. :). It's
-> hard to imagine how compiler may improve code generation in this case...
+> But what we're trying to do is:
 > 
-> This attribute is used when there's an asm block, or some non-trivial
-> function call. In this case, the function is self-consistent and makes
-> no calls. And you see, const annotation raises more questions than
-> solves problems. Let's drop it.
+> 	val | (parity(val) ? 0 : 0x80)
+> 
+> So, for example, if val == 0x06, the return value will be 0x86.
+> Only returning 0 or 0x80 seems wrong to me.
+> Or did I misunderstand something?
 
-Ah yes; one of the quirks about gcc asm is that an asm is implicitly 
-assumed "const" (with no memory operands) or "pure" (with memory 
-operands) unless declared volatile or given an explicit "memory" clobber.
-
-So yes, the compiler can most definitely derive the constness from the 
-form of the function even in the variable case.
-
-I would still like to see __builtin_parity() being used as an 
-architecture opt-in; it can, of course, also be unconditionally used in 
-the constant case.
-
-So in the end one of these two become my preferred implementation, and I 
-really don't think it is very complicated:
-
-#ifndef use_builtin_parity
-#define use_builtin_parity(x) __builtin_constant_p(x)
-#endif
-
-static inline bool parity8(u8 val)
-{
-	if (use_builtin_parity(val))
-		return __builtin_parity(val);
-	val ^= val >> 4;
-	return (0x6996 >> (val & 0xf)) & 1;
-}
-
-static inline bool parity16(u16 val)
-{
-	if (use_builtin_parity(val))
-		return __builtin_parity(val);
-	return parity8(val ^ (val >> 8));
-}
-
-static inline bool parity32(u32 val)
-{
-	if (use_builtin_parity(val))
-		return __builtin_parity(val);
-	return parity16(val ^ (val >> 16));
-}
-
-static inline bool parity64(u64 val)
-{
-	if (use_builtin_parity(val))
-		return __builtin_parityll(val);
-	return parity32(val ^ (val >> 32));
-}
-
-This means that an architecture -- in particular, x86 -- can still ask 
-to use __builtin_parity*() directly. It means that architectures on 
-which __builtin_parity*() produces bad code should either complain to 
-the gcc/clang team and have it fixed, or we can add additional mechanism 
-for them to override the implementation at that time.
-
-The alternative is to stop worrying about overengineering, and just do 
-it once and for all:
-
-#ifndef parity8
-static inline bool parity8(u8 val)
-{
-	val ^= val >> 4;
-	return (0x6996 >> (val & 0xf)) & 1;
-}
-#endif
-
-#ifndef parity16
-static inline bool parity16(u16 val)
-{
-	return parity8(val ^ (val >> 8));
-}
-#endif
-
-#ifndef parity32
-static inline bool parity32(u32 val)
-{
-	return parity16(val ^ (val >> 16));
-}
-#endif
-
-#ifndef parity64
-static inline bool parity64(u64 val)
-{
-	return parity32(val ^ (val >> 32));
-}
-#endif
-
-In either case, instead of packing the cascade into one function, make 
-good use of it.
-
-In the latter case, __builtin_constant_p() isn't necessary as it puts 
-the onus on the architecture to separate out const and non-const cases, 
-if it matters -- which it doesn't if the architecture simply wants to 
-use __builtin_parity:
-
-#define parity8(x)  ((bool) __builtin_parity((u8)(x)))
-#define parity16(x) ((bool) __builtin_parity((u16)(x)))
-#define parity32(x) ((bool) __builtin_parity((u32)(x)))
-#define parity64(x) ((bool) __builtin_parityll((u64)(x)))
-
-As stated before, I don't really see that the parity function itself 
-would be very suitable for a generic helper, but if it were to, then 
-using the "standard" macro construct for it would seem to be the better 
-option.
-
-(And I would be very much in favor of not open-coding the helper 
-everywhere but to macroize it; effectively creating a C++ template 
-equivalent. It is out of scope for this project, though.)
-
-	-hpa
-
+I misread the whole construction. Sorry, you're right. Scratch this.
 
 -- 
 linux-i3c mailing list
