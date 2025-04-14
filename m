@@ -4,56 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57D22C3601E
-	for <linux-i3c@archiver.kernel.org>; Mon, 14 Apr 2025 05:52:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49803C369B2
+	for <linux-i3c@archiver.kernel.org>; Mon, 14 Apr 2025 09:09:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xZLGRbBFRpv8gsZdx7/ET6eWnZZIXVWfoBvY9Gy/Knk=; b=yChx5lIpEYeA2W
-	3n2sMVn9BxRWqy5z/LXSx9gRlK7kd6PQfLCssUVhZVfIJN+c8SsSPeYdqr3oMRU3wvahLh6AG5PtA
-	jClDpgYFvu5aqni4b3n+MJZ5JbpG7hziV2G9Rih8c7jIkKuXsT4rYLrq/qu4ZB3OO0aoi+A+AKaC2
-	SbVpTcaz19urIIM23d3Q5K2moLd/yILqPHFZpLxyiDBocFBTHQFMG752eCU//EhRwkR1lVnG7ApZP
-	YJ9GlRjxrWH0oAT/RM6nNpRSVr9hell15YViKF/WzUBR8llqFYURNYzm2UpADcyx2xfLmpgnl/CIA
-	sLA611Uk3BPF1BQXRH+w==;
+	List-Owner; bh=ZxxWmeZ2FPfa8XXNwq30Fq7JdCymUbLVP48xyW/Mam4=; b=f5m4QObgsrhS1u
+	8M6WtSB9fLAq2Xj4FPKEeeC0xTQZJICWnwHNBADoPKlvgToH/dNN4HsmE3NTfucb9xtSzWQy+VY1G
+	iLYPNJa/DqKpff6xoDpLEF4LvuZApI27juWQy8n6EBzBCxU7ysnwZzmYVAniSToarPslxvszb2hwy
+	esZDYHYa3yoiQDy1cS2n48bwsGOF0NjvpVdLmXScNisszX1Bpo9KA6MnTxoeJXMdpkcLlpZpck1Vd
+	c1DhEEPqSqe0bYni03z9GavrfElTA9VpSi4Ex+8hVQVosJ/StJ8ytIbjTjalavb+TmEznky4hgm2y
+	f12Kmig7hpTyq98G2muQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4Cjv-00000000k1g-45t7;
-	Mon, 14 Apr 2025 05:52:15 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1u4Fob-00000001E8f-0AZ0;
+	Mon, 14 Apr 2025 09:09:17 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4Cjt-00000000k1B-1260
+	id 1u4FZe-00000001BHk-3QwG
 	for linux-i3c@lists.infradead.org;
-	Mon, 14 Apr 2025 05:52:14 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53DLWZgx003451;
-	Mon, 14 Apr 2025 05:52:06 GMT
+	Mon, 14 Apr 2025 08:53:52 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53DM3DvJ003299;
+	Mon, 14 Apr 2025 08:53:43 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
 	cc:content-transfer-encoding:content-type:date:from:in-reply-to
 	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	AIK+KrGNsD7cR0tiZMxs+mjT9s4W1uDmtONyVvhCkZ0=; b=U6KudtpmoXG8DCCH
-	3EB8YR3/E1L4ML0/SOUy5qDRGcbjuK91DPowxFWvxPZiQGiQiFT/b2rAJ/Cd4VoG
-	RIwfVG9UTU338qQ95dy8ok/UpITlP07bw1QA9jFh9XkxpH0EVTG0zRjDjZDzVPDh
-	FpO60GQFCbDZoJIHgMmOD5FLYCGLnA0LsOXcS6SH6D8gnGz9+CwYcxGZE175O0Xi
-	ehBnGzrprMYDRtsvSOvy5r/1r3MVs/fkiOYH2o3VJdDEvxo2XUtnzLqKxUt+d1GF
-	eGRxzXtyHDF9NTIQTATDAcE28KBVfukflGZYVewao1CATCbPi+4vCQesGRscg3b5
-	YWR7PA==
-Received: from nasanppmta01.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45ygd6bf9f-1
+	h8kw8Zz2yjlCjwsKqe3EVIOVhpv/i0ZPxvTSJhOJ6gM=; b=dm3Ww3JDGiEeNXzT
+	UavTc5TP+7uCpq3Rh08My1oEOUEcPcGvx2xhSZS5jSwmd0J7UMScA1qEoRKxTcgc
+	AG+O9BySrccNFU4yO+tihQZFveugoPPLSP637XEAoYXjbDlMGobpUCs4gMA5ab03
+	LzhQjk5SegjSIiDb9nYEaJomQpt6RxEifng6ZbJD4m1AwmbH2GPC8AJtCS/QeOyB
+	nAXDLtzz3SBYft+sWxWHb+yibLoQSMuL66s1GiiT2sQfikxThnpGUVKc612pDAK0
+	+/rmhjqPcAAou7zfkAn9qYjxOcAZwa6x2wZdTFecFjADzIKi4gFcihVIDkb08aY8
+	f2j5yw==
+Received: from nasanppmta03.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45yfs13yfb-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 14 Apr 2025 05:52:06 +0000 (GMT)
+	Mon, 14 Apr 2025 08:53:42 +0000 (GMT)
 Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 53E5q5mA008513
+	by NASANPPMTA03.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 53E8rf4t022184
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 14 Apr 2025 05:52:05 GMT
+	Mon, 14 Apr 2025 08:53:41 GMT
 Received: from [10.217.219.207] (10.80.80.8) by nasanex01c.na.qualcomm.com
  (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Sun, 13 Apr
- 2025 22:52:01 -0700
-Message-ID: <ceace8d0-d8ec-4010-a65f-bec36833c16f@quicinc.com>
-Date: Mon, 14 Apr 2025 11:21:59 +0530
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 14 Apr
+ 2025 01:53:37 -0700
+Message-ID: <bca32a29-23c7-446f-9307-cc36d3f1ee44@quicinc.com>
+Date: Mon, 14 Apr 2025 14:23:34 +0530
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v4 2/3] i3c: master: Add Qualcomm I3C controller driver
@@ -71,26 +71,26 @@ Content-Language: en-US
 From: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
 In-Reply-To: <a1e85e39-4be6-4793-aee4-d990e1e46bdb@oss.qualcomm.com>
 X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
+X-ClientProxiedBy: nasanex01a.na.qualcomm.com (10.52.223.231) To
  nasanex01c.na.qualcomm.com (10.45.79.139)
 X-QCInternal: smtphost
 X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: 9GocnMYW6rNp7pT5SVZvS5o63c07XWvL
-X-Proofpoint-GUID: 9GocnMYW6rNp7pT5SVZvS5o63c07XWvL
-X-Authority-Analysis: v=2.4 cv=ANaQCy7k c=1 sm=1 tr=0 ts=67fca286 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=WHrP3EDNxcdy5OAKBrkA:9 a=QEXdDO2ut3YA:10
+X-Authority-Analysis: v=2.4 cv=P9I6hjAu c=1 sm=1 tr=0 ts=67fccd16 cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=YzkTbWCL-yuCokmV4jMA:9 a=QEXdDO2ut3YA:10
  a=TjNXssC_j7lpFel5tvFf:22
+X-Proofpoint-GUID: Ajq9byrCS7I5TEHE6tHLPbLHO-3k2FOO
+X-Proofpoint-ORIG-GUID: Ajq9byrCS7I5TEHE6tHLPbLHO-3k2FOO
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-04-14_01,2025-04-10_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 mlxscore=0 adultscore=0
- mlxlogscore=999 suspectscore=0 clxscore=1015 lowpriorityscore=0
- phishscore=0 impostorscore=0 spamscore=0 priorityscore=1501 malwarescore=0
- bulkscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2504140040
+ definitions=2025-04-14_02,2025-04-10_01,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ clxscore=1015 bulkscore=0 impostorscore=0 phishscore=0 suspectscore=0
+ mlxscore=0 spamscore=0 malwarescore=0 adultscore=0 priorityscore=1501
+ mlxlogscore=999 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
+ definitions=main-2504140063
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250413_225213_328003_F281FB47 
-X-CRM114-Status: GOOD (  37.29  )
+X-CRM114-CacheID: sfid-20250414_015350_996283_6B79608D 
+X-CRM114-Status: GOOD (  35.66  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,8 +107,8 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Thanks Konrad for detailed review.
-
+Hi Konrad, responding to one comment which is not working as suggested 
+by you.
 
 On 4/12/2025 4:45 AM, Konrad Dybcio wrote:
 > On 4/11/25 1:35 PM, Mukesh Kumar Savaliya wrote:
@@ -134,7 +134,6 @@ On 4/12/2025 4:45 AM, Konrad Dybcio wrote:
 >> +#define SE_I3C_SCL_CYCLE                0x27C
 > 
 > lowercase hex, please
-sure, done.
 > 
 >> +#define SE_GENI_HW_IRQ_EN               0x920
 >> +#define SE_GENI_HW_IRQ_IGNORE_ON_ACTIVE 0x924
@@ -151,7 +150,6 @@ sure, done.
 > 
 > ' ' after "define", '\t' after
 > 
-Done. Also added equal tabs for all other macros too.
 >> +#define SER_CLK_EN		BIT(0)
 >> +
 >> +/* SE_GENI_HW_IRQ_CMD_PARAM_0 field bits */
@@ -202,13 +200,11 @@ Done. Also added equal tabs for all other macros too.
 > 
 > The shift is now unused
 > 
-Yes, Removed.
 >> +
 >> +#define CCC_HDR_CMD_MSK        GENMASK(23, 16)
 >> +#define CCC_HDR_CMD_SHFT       16
 > 
 > And this one *should* be unused, fill in the value with FIELD_PREP instead
-Yes, Done.
 > 
 >> +#define IBI_NACK_TBL_CTRL      BIT(24)
 >> +#define USE_7E                 BIT(25)
@@ -229,12 +225,9 @@ Yes, Done.
 > You can store the values in kHz and do (x * HZ_PER_KHZ) where they're
 > used instead
 > 
-Sure, Done.
-
 >> +#define PACKING_BYTES_PW        4
 > 
 > PW -> "PER_WORD", if that's what it means, please
-Yes, changed to PACKING_BYTES_PER_WORD.
 > 
 >> +#define XFER_TIMEOUT            250
 >> +#define DFS_INDEX_MAX           7
@@ -243,8 +236,6 @@ Yes, changed to PACKING_BYTES_PER_WORD.
 > 
 > This could go to some i3c common header, IIUC it's part of the spec
 > 
-Yes, let me use I2C_ADDR_MASK from i3c/master.h and Used same macro name 
-to maintain I3C context here.
 > [...]
 > 
 >> +static inline struct geni_i3c_dev *to_geni_i3c_master(struct i3c_master_controller
@@ -255,8 +246,6 @@ to maintain I3C context here.
 > 
 > #define instead
 > 
-i see all i3c vendors are using same definitions, so for now can we keep 
-it similar way if it's minor ?
 >> +
 >> +struct geni_i3c_clk_settings {
 >> +	u32 clk_freq_out;
@@ -305,7 +294,6 @@ it similar way if it's minor ?
 > }
 > 
 > etc.
-Sure, changed accordingly.
 > 
 >> +};
 >> +
@@ -323,8 +311,6 @@ Sure, changed accordingly.
 > Or get rid of it, the master registration ensures that there's a bus bound
 > to it, IIUC.
 > 
-Sure, makes sense! Removed it.
-
 >> +		    clk_idx->clk_src_freq == gi3c->clk_src_freq) {
 >> +			gi3c->clk_cfg = clk_idx;
 >> +		}
@@ -338,7 +324,6 @@ Sure, makes sense! Removed it.
 > 
 > IIUC this makes the 100 kHz configuration invalid (index 0)
 > 
-Yes, for i3c, 100KHz is not possible. i2c can work but i3c can't.
 >> +
 >> +	return 0;
 >> +}
@@ -353,7 +338,6 @@ Yes, for i3c, 100KHz is not possible. i2c can work but i3c can't.
 > 
 > Inline this single-use function, please
 > 
-Done
 >> +
 >> +static void clear_new_addr_slot(unsigned long *addrslot, u8 addr)
 >> +{
@@ -365,7 +349,6 @@ Done
 > 
 > And this one
 > 
-Done
 >> +
 >> +static bool is_new_addr_slot_set(unsigned long *addrslot, u8 addr)
 >> +{
@@ -373,15 +356,12 @@ Done
 >> +		return false;
 > 
 > This condition is impossible given the user
-Removed it.
 > 
 >> +
 >> +	return test_bit(addr, addrslot);
 > 
 > Inline this check
 > 
-To have the function name meaning in the action by caller, i am keeping 
-it. But i have inlined this function also. Hope its fine.
 > [...]
 > 
 >> +static void qcom_geni_i3c_conf(struct geni_i3c_dev *gi3c, enum i3c_bus_phase bus_phase)
@@ -401,8 +381,6 @@ it. But i have inlined this function also. Hope its fine.
 > 
 > Shouldn't we throw some sort of error here instead?
 > 
-No, dfs_idx = 0 should be fine too. As default source frequency 19.2MHz 
-can work at index 0.
 > [...]
 > 
 >> +static void geni_i3c_handle_err(struct geni_i3c_dev *gi3c, u32 status)
@@ -416,12 +394,10 @@ can work at index 0.
 > 
 > Whenever there's just a string literal, please just print it directly.
 > 
-Sure, Done for all the places.
 >> +	}
 > 
 > Please separate these with a newline
 > 
-Sure, Done for all the conditions.
 >> +	if (status & M_GP_IRQ_1_EN) {
 >> +		gi3c->err = -ENOTCONN;
 >> +		dev_dbg(gi3c->se.dev, "%s\n", "NACK: slave unresponsive, check power/reset");
@@ -463,8 +439,16 @@ Sure, Done for all the conditions.
 >> +		!gi3c->cur_is_write && gi3c->cur_buf) {
 > 
 > The indentation here is confusing, please align the `(M_RX..` with `m_stat &`
+I have tried to implement this, but always giving me warning as below.
+Tried many ways, but same issue, hence keeping it like this.
+In fact, earlier also i faced same issue hence i wrote it this way.
+
+CHECK: Alignment should match open parenthesis
+#468: FILE: drivers/i3c/master/i3c-qcom-geni.c:405:
++       if ((m_stat & (M_RX_FIFO_WATERMARK_EN | M_RX_FIFO_LAST_EN)) &&
++          !gi3c->cur_is_write && gi3c->cur_buf) {
+
 > 
-Sure, Done.
 >> +		u32 rxcnt = rx_st & RX_FIFO_WC_MSK;
 >> +
 >> +		for (j = 0; j < rxcnt; j++) {
@@ -476,7 +460,6 @@ Sure, Done.
 > 
 > sizeof(val) is 4, please unroll this loop into something more readable
 > 
-Replaced directly with 4.
 >> +				gi3c->cur_buf[gi3c->cur_idx++] = val & 0xff;
 >> +				val >>= 8;
 >> +				p++;
@@ -494,7 +477,6 @@ Replaced directly with 4.
 >> +			while (gi3c->cur_idx < gi3c->cur_len && p < sizeof(val)) {
 > 
 > ditto
-Done
 > 
 >> +				temp = gi3c->cur_buf[gi3c->cur_idx++];
 >> +				val |= temp << (p * 8);
@@ -528,7 +510,6 @@ Done
 > 
 > odd '\t'
 > 
-yes, Aligned.
 >> +		dm_rx_st & RX_RESET_DONE) {
 >> +		complete(&gi3c->done);
 >> +	}
@@ -538,7 +519,6 @@ yes, Aligned.
 > 
 > a '\n' before return is customary
 > 
-Done
 > [...]
 > 
 >> +static int _i3c_geni_execute_command(struct geni_i3c_dev *gi3c, struct geni_i3c_xfer_params *xfer)
@@ -557,9 +537,6 @@ Done
 >> +	if (!is_write) {
 > 
 > Nit: if (is_write) {} .. else {} is more natural> +		dev_dbg(gi3c->se.dev, "I3C cmd:0x%x param:0x%x READ len:%d\n",
-Sure, Reversed with natural and positive check.
-I didn't get about debug log suggestion. Do you want to optimize it to 
-one for both if/else condition ?
 >> +			xfer->m_cmd, xfer->m_param, len);
 >> +		writel_relaxed(len, gi3c->se.base + SE_I3C_RX_TRANS_LEN);
 >> +		geni_se_setup_m_cmd(&gi3c->se, xfer->m_cmd, xfer->m_param);
@@ -568,8 +545,6 @@ one for both if/else condition ?
 >> +			if (ret) {
 > Why would it fail? And why should we fall back silently to FIFO mode then?
 > 
-DMA mapping can fail OR input validation can also fail. So we want to 
-continue with FIFO mode.
 >> +				xfer->mode = GENI_SE_FIFO;
 >> +				geni_se_select_mode(&gi3c->se, xfer->mode);
 >> +			}
@@ -601,7 +576,6 @@ continue with FIFO mode.
 > 
 > Can it not be DMA mode here too?
 > 
-Good find, it's common timeout error. Removed FIFO word.
 > [...]
 > 
 >> +static void geni_i3c_perform_daa(struct geni_i3c_dev *gi3c)
@@ -635,7 +609,6 @@ Good find, it's common timeout error. Removed FIFO word.
 > 
 > FIELD_PREP + GENMASK, please
 > 
-Sure, Done.
 >> +
 >> +		i3c_bus_for_each_i3cdev(&gi3c->ctrlr.bus, i3cdev) {
 >> +			i3c_device_get_info(i3cdev->dev, &info);
@@ -645,7 +618,6 @@ Sure, Done.
 > 
 > addr = info.dyn_addr ?: info.static_addr;
 > 
-Yes, Done.
 >> +					info.static_addr;
 >> +				break;
 >> +			}
@@ -660,7 +632,6 @@ Yes, Done.
 > 
 > nit: while logically the same, last_dyn_addr = addr would make sense here
 > 
-Sure, Done.
 >> +			set_new_addr_slot(gi3c->newaddrslots, addr);
 >> +		}
 >> +
@@ -677,12 +648,6 @@ Sure, Done.
 > 
 > is that the intended result?
 > 
-Yes, thats right.
-It can have either 0xfe OR 0xff.
-
-Mainly for error detection purpose. This parity bit in tx_buf[0] is set 
-correctly based on nos set bits in the Masked addr is odd or even.
-I have simplified it using parity8().
 >> +
 >> +		xfer.m_cmd = I2C_WRITE;
 >> +		xfer.m_param = STOP_STRETCH | BYPASS_ADDR_PHASE | USE_7E;
@@ -713,7 +678,6 @@ I have simplified it using parity8().
 > 
 > bool
 > 
-Sorry, Didn't get it where to keep bool ?
 > Konrad
 
 
