@@ -4,69 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2968C369AB
-	for <linux-i3c@archiver.kernel.org>; Tue, 15 Apr 2025 05:32:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1DD41C369B9
+	for <linux-i3c@archiver.kernel.org>; Tue, 15 Apr 2025 05:32:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hMeXxeIIQG0y873z1UsNXfqOEOfmsXPksyFDYru0DBk=; b=hMQlN+Vqlqjut5
-	/IS1hLiK/FliGGqCRLauE+26OSGHVDnaXvSH5cfrI/GkxnT4mxqGr3pAr3eZtVsiKdXNx9Pw05EIH
-	peufYRAX1hdsDPviI1hcWpHr4s5x1b7sgAFx2s3RXqF3EI1b2jpXaHOTmH1VEERbxdfw5f2HwwB5c
-	Zg84thAKWmDc64ocGeIBSG7tnt9iNmTg6zuIWI0rY8RzsOMFixeM6o5+W1j0fg67VtWG8kQZn83Sq
-	awvWQVhov3O8Cn5+f6Qq3MflOZ1FtpmfON+aXA2Ov3rRXvOS7n2UPlQkCvN75tcC2d3dQNd2MDa/B
-	FL3IeAQyW/29sFOpI/xQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cqT7HdJ0bZ7VzbG7bymB769I29MYnzJoNGgGcgnTm1s=; b=Cr14czOKE0lc8q
+	jiqHaHecGOjB3yQ4wqHLKTmO8SwmvUz1VsgS5JghwCm9eKXrj3Mhn/bK+ZcuLO/QUOOrxLPEYYhMD
+	LVr8N+9Xcj3TBL4CknZ9sGvL/DHUBy4FPHddyvquQidT3UBjnfXmlKc8N+DNi++siEAIBotWQ1KGg
+	Xy/DX5HqazHPKBYcHf6wEKWY8dqmcvayp9H96eevRG6NEIzGa9Rvcix9PQJNhHKG3J9/jjrxO+OlD
+	eZ5kCfB9Ve055jgZF/zYlodrmYdsfUGtvDzhiexN7cD955m5XUF/Z27NPpDv2P5ugvIxmOeOIW6Gt
+	rmhCGByHte3o66QtOILg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4YuB-00000004YuP-1eVw;
+	id 1u4YuB-00000004YuW-2qiD;
 	Tue, 15 Apr 2025 05:32:19 +0000
-Received: from mail-pg1-x532.google.com ([2607:f8b0:4864:20::532])
+Received: from mail-pj1-x1036.google.com ([2607:f8b0:4864:20::1036])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4Ygh-00000004XAx-0bFD
+	id 1u4Ygj-00000004XBO-0JJZ
 	for linux-i3c@lists.infradead.org;
-	Tue, 15 Apr 2025 05:18:24 +0000
-Received: by mail-pg1-x532.google.com with SMTP id 41be03b00d2f7-af55b7d56a1so3866398a12.2
-        for <linux-i3c@lists.infradead.org>; Mon, 14 Apr 2025 22:18:22 -0700 (PDT)
+	Tue, 15 Apr 2025 05:18:26 +0000
+Received: by mail-pj1-x1036.google.com with SMTP id 98e67ed59e1d1-306bf444ba2so4512176a91.1
+        for <linux-i3c@lists.infradead.org>; Mon, 14 Apr 2025 22:18:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1744694302; x=1745299102; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=C/T6ljnq1W6k3TS1domzRVfhnwstk8LxHyrkBWe3u8c=;
-        b=WTYpMXBxUZ24NTc80clOIeTFE95jTEKyDaqkwAirbFOfKuns2e/PErB6Uiib5JGYUs
-         vBffWkMrtCGNvZ55o9xO5+Ge/jVc8h3pfdNnXnoTWndJov1dvACMJigPTAMaOixze5w2
-         4xJEKD4cc1jSs9HYvG5IX0JxUvh/f8qdMGzHd4S+wah4AmTANWeRbR2MvWCfeaLahvBI
-         9Do/Oe9Wk1kFcgIkV55GtSrl4kxUVL6HIbZWNrizwvgkbJvS3O5ApwmTfkDv6Jo/nFt6
-         +YI8nPbmX2sUqgJXwaAjUnu8C4CPsrIGD3g++p02K/4Fn3dhCUZ0KMrPlAnlmpC4Hfbw
-         Z/SA==
+        d=gmail.com; s=20230601; t=1744694304; x=1745299104; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=F7xAbEEI7p+I6WmGNc8jAy6i7DcwaAU5md+L6Ye5HR0=;
+        b=QxTCjiZLswsj8VDpyixDP66mymGOvdFKsecIxa2u7Kgp+dkpfyFPF3dU1FKOa1YVPu
+         0J4/TU24P1giV8dqOo1D2dxpSFSQqEq1bCOBuOMVinX/mWk1RjCrHtFnLR+PdQfiH8lx
+         Avtlg8/o1uJS5Lea2+g8FyKK7h2swmmHLHgJHD5WqVio5WfVzNEbUVIXEANo3HBRPdrd
+         adD3DGOUSDEtuoudmHYiU73U1Z6dNf8nSOK7Ky607Eq8PjBT/vrtw8bcBA5mJNCeXI9R
+         1n2+I7oLIRxaRyCeTKWXAmMT0j4K+78r/0qP1oOgcvIUEQvfln1b9yFRz9w8fmrpiLle
+         nFCA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1744694302; x=1745299102;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=C/T6ljnq1W6k3TS1domzRVfhnwstk8LxHyrkBWe3u8c=;
-        b=vcfbE1YUbasZobO75idOtse35J/IzCKlcUSgHdALJapAC1B1YNwV00Wuj1+T7sLwOW
-         zYVGhuicYoueaO6RItAFpqPGj1mLFGX0ts269VgFj3/k/Kkg+KJBpBDVor8P074l1tGX
-         dQ90TPy4YDjZ+IWsQ+4a4BDRneM0ojzT0i5DOEXELuT4rBKeNNwcIrDwB55Dj8sS6v5d
-         Qif8Z9VGD6K9zs+DpbX0xaHPfqSznhXArg076mkQbUMfGYODppj4AxIZJ1hztzLy+kPx
-         jHnr2RpwEiDS8RUUhshGtWF9JZNEn3MK3NAjDSVt1Jii5gaz8GTTIB1CLcVanxj/kOuA
-         EoLQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUd0lwZISJXAB0F2Is2RvlL0mhGj5PYMWFLjImhgY48ZZK3xSZttTC8kjSlyZ63o9T0Lfkjuvcehuk=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw3VlhR8Qs4sWQrsgI+EvisU7soSpejgC5AKp+V54xyuoggulSz
-	NxhvjkUmVwh2w8TPP3unuLqI4flHvpBCJy8FylybYBOUCaX5dQtlvGlUDg==
-X-Gm-Gg: ASbGncsglYSXrAXmZ7ukC/OAuCY1AXKO5Wh/lZ4pHTRgrqjg7KEvgpzFtOetkmJ/Ba9
-	MS6k+cmhOuUQraByX12wK/hyGOt4GaWsWZNdfTK5ZJ6Cs5UGm8S2tDCbA6nab04H3m1jy1Lzyqg
-	AiDQnQg0XQyZEMLFCSOazb85++naqSP4f3XvNakjz4pQlLzEM1i/pcMGp1HMaFuQ3/No1duBJUi
-	uNgDgSUtz0TOk51nSY/leFWBH2HH2fjA/+xTQ+oLaYpznx+w0N0bCaaFEvnhs0eEoHjg7YjmB4F
-	fltya9jBC3wNgbmTVgwipI9ytpYm+7J1wdJVfLzTZ11Ji17WxLE=
-X-Google-Smtp-Source: AGHT+IEaYOLTsd7CaMh9nHic50JbqGkjQUi9ObnkpZkF92e+TjsGJ/rFZb5vJmb6PdYCeDve7ZWibA==
-X-Received: by 2002:a17:90b:3d45:b0:2ee:6d08:7936 with SMTP id 98e67ed59e1d1-3082367e7c1mr20452309a91.20.1744694301872;
-        Mon, 14 Apr 2025 22:18:21 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1744694304; x=1745299104;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=F7xAbEEI7p+I6WmGNc8jAy6i7DcwaAU5md+L6Ye5HR0=;
+        b=saTymS0DlSGAhCEtcYTtZWSvW6cUzsYe/Y5WzlgEpNn7jQSS0WQkPzWg4b8cRbdt42
+         AI8U5zlvU3j3Thagf3+oEbFtRz2kCnbxcQ6kV3EJOUS97bOZ7UiUZMWtdCPTaacRVgPa
+         v6/fzb/M6RRl061zGBhtEHHFiElNaNp4k44waR2XvVSyfoaUPUt5rbNEwj35JsLEKwGy
+         s1sbZqIVZPbD4RCFOHq7JQy42fQtTWnxXjJyWQYxBefuVFxhEc9JkyKtIOQGoSlZcyf3
+         K77HaGqROEvOcWvsuzbOEq5OCZzxhEYXFEL2hcHyRSq+z6H36aW8xHbHFvsQzAFJ7blR
+         KjZQ==
+X-Forwarded-Encrypted: i=1; AJvYcCX5BxhB0HPSwWZlKHsUEtsm+LHRmCm3z3kha8Escg2kMkUlx3JkxalLW2fDNeTL0radAvv4FEc9Xg0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwHjxbBe79RbCpuFZgbAtsn0rzh7p5zp6D+U2fozr5oVeO5R8+D
+	f8m3GdFnQyhy/pKLivdNubko47vFqJ2xAZ1Ytk9IA0lLfstfbRrs
+X-Gm-Gg: ASbGncsm6zi9ffH+XEysABa7mMDZPV2xs9NDMvEVujyeVng/RGknbjwIF8aODlUlmhc
+	eC+qNg8R+4ZExbf7lzKaaaoU/PoKTPFnHwPdSCyaE/AadR3gWBdiNCkJPmYeNmyynSBHbN35/LT
+	jiah/7cKwb1ytIvOOIFYYWYOFu6H3AbrnI/bQwllGbBW/bOATOLAzd0vsrRDAhLQFH4zZPs+Bqk
+	MWKIPsgdlWXb0xcHYKUafEgTilMg23DnuQlEBHNUY8IxkoLfm7WC8hk93ePWIq1mGoE5M0Ub8Gn
+	bDLH2KHyspTfL4K5wZK6hFNTGf7qr7eiuNbM8wC37bq7rlzRvEw=
+X-Google-Smtp-Source: AGHT+IH7xJOWztV6diobC/t4okiPR8RXZE7KG/DFe4goD1duyxZyyWmFTs7+pxBBFdGZSO4RmQCe6w==
+X-Received: by 2002:a17:90b:57e8:b0:2ee:ab29:1a63 with SMTP id 98e67ed59e1d1-30823624894mr19795024a91.3.1744694303996;
+        Mon, 14 Apr 2025 22:18:23 -0700 (PDT)
 Received: from cs20-buildserver.lan ([2402:7500:400:be8d:2e0:4cff:fe68:863])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-306df4011e6sm12127760a91.44.2025.04.14.22.18.19
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-306df4011e6sm12127760a91.44.2025.04.14.22.18.22
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 14 Apr 2025 22:18:21 -0700 (PDT)
+        Mon, 14 Apr 2025 22:18:23 -0700 (PDT)
 From: Stanley Chu <stanley.chuys@gmail.com>
 X-Google-Original-From: Stanley Chu <yschu@nuvoton.com>
 To: frank.li@nxp.com,
@@ -77,15 +78,16 @@ Cc: linux-kernel@vger.kernel.org,
 	tomer.maimon@nuvoton.com,
 	kwliu@nuvoton.com,
 	yschu@nuvoton.com
-Subject: [PATCH v1 0/2] svc-i3c-master: Reduce IBI transaction time
-Date: Tue, 15 Apr 2025 13:18:06 +0800
-Message-Id: <20250415051808.88091-1-yschu@nuvoton.com>
+Subject: [PATCH v1 1/2] i3c: master: svc: Receive IBI requests in interrupt context
+Date: Tue, 15 Apr 2025 13:18:07 +0800
+Message-Id: <20250415051808.88091-2-yschu@nuvoton.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250415051808.88091-1-yschu@nuvoton.com>
+References: <20250415051808.88091-1-yschu@nuvoton.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250414_221823_177323_00685CCE 
-X-CRM114-Status: UNSURE (   4.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250414_221825_114387_F49D92ED 
+X-CRM114-Status: GOOD (  16.92  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,18 +104,121 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-This patchset reduces the IBI transaction time by the following
-improvements.
-1. Receive the request in interrupt context.
-2. Emit the STOP as soon as possible.
+From: Stanley Chu <yschu@nuvoton.com>
 
-Stanley Chu (2):
-  i3c: master: svc: Receive IBI requests in interrupt context
-  i3c: master: svc: Emit STOP asap in the IBI transaction
+Moving the job from workqueue to ISR for two reasons.
 
- drivers/i3c/master/svc-i3c-master.c | 27 +++++++++++----------------
- 1 file changed, 11 insertions(+), 16 deletions(-)
+1. Improve bus utilization.
+If the requests are postponed to be received in the workqueue thread,
+the SDA line remains low for a long time while the system loading is
+high. During this period, the bus is not available for other targets
+to raise requests.
 
+2. Ensure prompt response to requests.
+For timing-critical requests, the target may encouter a failure or the
+event is missed if the request is not received in time.
+
+IBI request is short, ISR can receive the data quickly and then queue a
+work to handle it in the bottom half.
+
+Signed-off-by: Stanley Chu <yschu@nuvoton.com>
+---
+ drivers/i3c/master/svc-i3c-master.c | 25 ++++++++++---------------
+ 1 file changed, 10 insertions(+), 15 deletions(-)
+
+diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
+index 85e16de208d3..7ceaf3ec45bb 100644
+--- a/drivers/i3c/master/svc-i3c-master.c
++++ b/drivers/i3c/master/svc-i3c-master.c
+@@ -201,7 +201,6 @@ struct svc_i3c_drvdata {
+  * @addrs: Array containing the dynamic addresses of each attached device
+  * @descs: Array of descriptors, one per attached device
+  * @hj_work: Hot-join work
+- * @ibi_work: IBI work
+  * @irq: Main interrupt
+  * @pclk: System clock
+  * @fclk: Fast clock (bus)
+@@ -229,7 +228,6 @@ struct svc_i3c_master {
+ 	u8 addrs[SVC_I3C_MAX_DEVS];
+ 	struct i3c_dev_desc *descs[SVC_I3C_MAX_DEVS];
+ 	struct work_struct hj_work;
+-	struct work_struct ibi_work;
+ 	int irq;
+ 	struct clk *pclk;
+ 	struct clk *fclk;
+@@ -487,9 +485,8 @@ static int svc_i3c_master_handle_ibi_won(struct svc_i3c_master *master, u32 msta
+ 	return ret;
+ }
+ 
+-static void svc_i3c_master_ibi_work(struct work_struct *work)
++static void svc_i3c_master_ibi_isr(struct svc_i3c_master *master)
+ {
+-	struct svc_i3c_master *master = container_of(work, struct svc_i3c_master, ibi_work);
+ 	struct svc_i3c_i2c_dev_data *data;
+ 	unsigned int ibitype, ibiaddr;
+ 	struct i3c_dev_desc *dev;
+@@ -504,7 +501,7 @@ static void svc_i3c_master_ibi_work(struct work_struct *work)
+ 	 * schedule during the whole I3C transaction, otherwise, the I3C bus timeout may happen if
+ 	 * any irq or schedule happen during transaction.
+ 	 */
+-	guard(spinlock_irqsave)(&master->xferqueue.lock);
++	guard(spinlock)(&master->xferqueue.lock);
+ 
+ 	/*
+ 	 * IBIWON may be set before SVC_I3C_MCTRL_REQUEST_AUTO_IBI, causing
+@@ -530,7 +527,7 @@ static void svc_i3c_master_ibi_work(struct work_struct *work)
+ 	if (ret) {
+ 		dev_err(master->dev, "Timeout when polling for IBIWON\n");
+ 		svc_i3c_master_emit_stop(master);
+-		goto reenable_ibis;
++		return;
+ 	}
+ 
+ 	status = readl(master->regs + SVC_I3C_MSTATUS);
+@@ -574,7 +571,7 @@ static void svc_i3c_master_ibi_work(struct work_struct *work)
+ 
+ 		svc_i3c_master_emit_stop(master);
+ 
+-		goto reenable_ibis;
++		return;
+ 	}
+ 
+ 	/* Handle the non critical tasks */
+@@ -597,9 +594,6 @@ static void svc_i3c_master_ibi_work(struct work_struct *work)
+ 	default:
+ 		break;
+ 	}
+-
+-reenable_ibis:
+-	svc_i3c_master_enable_interrupts(master, SVC_I3C_MINT_SLVSTART);
+ }
+ 
+ static irqreturn_t svc_i3c_master_irq_handler(int irq, void *dev_id)
+@@ -618,10 +612,12 @@ static irqreturn_t svc_i3c_master_irq_handler(int irq, void *dev_id)
+ 	    !SVC_I3C_MSTATUS_STATE_SLVREQ(active))
+ 		return IRQ_HANDLED;
+ 
+-	svc_i3c_master_disable_interrupts(master);
+-
+-	/* Handle the interrupt in a non atomic context */
+-	queue_work(master->base.wq, &master->ibi_work);
++	/*
++	 * The SDA line remains low until the request is processed.
++	 * Receive the request in the interrupt context to respond promptly
++	 * and restore the bus to idle state.
++	 */
++	svc_i3c_master_ibi_isr(master);
+ 
+ 	return IRQ_HANDLED;
+ }
+@@ -1947,7 +1943,6 @@ static int svc_i3c_master_probe(struct platform_device *pdev)
+ 		return ret;
+ 
+ 	INIT_WORK(&master->hj_work, svc_i3c_master_hj_work);
+-	INIT_WORK(&master->ibi_work, svc_i3c_master_ibi_work);
+ 	mutex_init(&master->lock);
+ 
+ 	ret = devm_request_irq(dev, master->irq, svc_i3c_master_irq_handler,
 -- 
 2.34.1
 
