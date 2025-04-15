@@ -4,95 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFC37C369B2
-	for <linux-i3c@archiver.kernel.org>; Mon, 14 Apr 2025 10:38:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2968C369AB
+	for <linux-i3c@archiver.kernel.org>; Tue, 15 Apr 2025 05:32:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UydoFlUX6PYMwN7RDGxcCmRU/lskQCSZ0SNTqIEoCYM=; b=kiertPs7TY+ep2
-	/MOhiMOsbLSTGWJ5uzp6ejJy8ErqJtzOT6EdI6FqKL8Q2x7XvChmIoNKKrbVEZxF/vKGuMsc4Mynw
-	LAbW7ghB+4babWGbxLUMcDNjlbdkVp+/0mjUcTdHkveAzcoTLMqX61rAfnmR5x1H72daaT2YUDLMD
-	ITt4IkgqWrKuc2pQ4SzPwsNdz/IXRLfA1d6nFttZoReEiMjKDQ8sPRhr+SHru7cUo84P9U1tdGRYE
-	6nide1qtaW5rzQeDOToRGb2fWZ9j/ooMvikrL6UrDen1gKTDyG6p2wyhqtWmQmfaEMW+mIk97976I
-	81vi11UwrE8Wkc/JXGMA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hMeXxeIIQG0y873z1UsNXfqOEOfmsXPksyFDYru0DBk=; b=hMQlN+Vqlqjut5
+	/IS1hLiK/FliGGqCRLauE+26OSGHVDnaXvSH5cfrI/GkxnT4mxqGr3pAr3eZtVsiKdXNx9Pw05EIH
+	peufYRAX1hdsDPviI1hcWpHr4s5x1b7sgAFx2s3RXqF3EI1b2jpXaHOTmH1VEERbxdfw5f2HwwB5c
+	Zg84thAKWmDc64ocGeIBSG7tnt9iNmTg6zuIWI0rY8RzsOMFixeM6o5+W1j0fg67VtWG8kQZn83Sq
+	awvWQVhov3O8Cn5+f6Qq3MflOZ1FtpmfON+aXA2Ov3rRXvOS7n2UPlQkCvN75tcC2d3dQNd2MDa/B
+	FL3IeAQyW/29sFOpI/xQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4HCq-00000001ZpW-2Qfe;
-	Mon, 14 Apr 2025 10:38:24 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1u4YuB-00000004YuP-1eVw;
+	Tue, 15 Apr 2025 05:32:19 +0000
+Received: from mail-pg1-x532.google.com ([2607:f8b0:4864:20::532])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u4GwM-00000001Uhk-1o5L
+	id 1u4Ygh-00000004XAx-0bFD
 	for linux-i3c@lists.infradead.org;
-	Mon, 14 Apr 2025 10:21:23 +0000
-Received: from pps.filterd (m0279864.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53E99qZP002941;
-	Mon, 14 Apr 2025 10:21:15 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	asXEFEGh2xmSnnabSs+R4EMdR9kS4bNu32eSF31rOxs=; b=TQzfkT61IoZJX//C
-	5uBkqdey1/PbCT9H9CoYozovAUWf2f1tEUnqnM7NZamvspeckfYunWcolZtxYobq
-	H7MAJqzfDFo5QfZbCQvOQZWJMsCrllXV+Eax+eOZgCaqm3udrtQH/P6fFhBmXAIO
-	jxEKa2QNiAxM3MFb/gUiUH5BZUq/m8QkCHUaGVZxf6pR8YruBSHWVUItUMU68FhN
-	UNneS1rSHnWk/ZCumd+fBRBrtehONnQzaEWOsAqdze/W7JqjyURrTj8ywYeDuPVB
-	JuzHKHG5Eg2KJPCUjuXFZyKRcWqgdLeVYUqhgvfjgWDMfcRYaej0jE/5N54d0KXv
-	j9EZ3w==
-Received: from nasanppmta02.qualcomm.com (i-global254.qualcomm.com [199.106.103.254])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 45yhbpm1xe-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 14 Apr 2025 10:21:15 +0000 (GMT)
-Received: from nasanex01c.na.qualcomm.com (nasanex01c.na.qualcomm.com [10.45.79.139])
-	by NASANPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 53EALECa005759
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 14 Apr 2025 10:21:14 GMT
-Received: from [10.217.219.207] (10.80.80.8) by nasanex01c.na.qualcomm.com
- (10.45.79.139) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Mon, 14 Apr
- 2025 03:21:10 -0700
-Message-ID: <c6ea9f41-151a-4b42-beb6-d657672489e8@quicinc.com>
-Date: Mon, 14 Apr 2025 15:51:08 +0530
+	Tue, 15 Apr 2025 05:18:24 +0000
+Received: by mail-pg1-x532.google.com with SMTP id 41be03b00d2f7-af55b7d56a1so3866398a12.2
+        for <linux-i3c@lists.infradead.org>; Mon, 14 Apr 2025 22:18:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1744694302; x=1745299102; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=C/T6ljnq1W6k3TS1domzRVfhnwstk8LxHyrkBWe3u8c=;
+        b=WTYpMXBxUZ24NTc80clOIeTFE95jTEKyDaqkwAirbFOfKuns2e/PErB6Uiib5JGYUs
+         vBffWkMrtCGNvZ55o9xO5+Ge/jVc8h3pfdNnXnoTWndJov1dvACMJigPTAMaOixze5w2
+         4xJEKD4cc1jSs9HYvG5IX0JxUvh/f8qdMGzHd4S+wah4AmTANWeRbR2MvWCfeaLahvBI
+         9Do/Oe9Wk1kFcgIkV55GtSrl4kxUVL6HIbZWNrizwvgkbJvS3O5ApwmTfkDv6Jo/nFt6
+         +YI8nPbmX2sUqgJXwaAjUnu8C4CPsrIGD3g++p02K/4Fn3dhCUZ0KMrPlAnlmpC4Hfbw
+         Z/SA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744694302; x=1745299102;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=C/T6ljnq1W6k3TS1domzRVfhnwstk8LxHyrkBWe3u8c=;
+        b=vcfbE1YUbasZobO75idOtse35J/IzCKlcUSgHdALJapAC1B1YNwV00Wuj1+T7sLwOW
+         zYVGhuicYoueaO6RItAFpqPGj1mLFGX0ts269VgFj3/k/Kkg+KJBpBDVor8P074l1tGX
+         dQ90TPy4YDjZ+IWsQ+4a4BDRneM0ojzT0i5DOEXELuT4rBKeNNwcIrDwB55Dj8sS6v5d
+         Qif8Z9VGD6K9zs+DpbX0xaHPfqSznhXArg076mkQbUMfGYODppj4AxIZJ1hztzLy+kPx
+         jHnr2RpwEiDS8RUUhshGtWF9JZNEn3MK3NAjDSVt1Jii5gaz8GTTIB1CLcVanxj/kOuA
+         EoLQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUd0lwZISJXAB0F2Is2RvlL0mhGj5PYMWFLjImhgY48ZZK3xSZttTC8kjSlyZ63o9T0Lfkjuvcehuk=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw3VlhR8Qs4sWQrsgI+EvisU7soSpejgC5AKp+V54xyuoggulSz
+	NxhvjkUmVwh2w8TPP3unuLqI4flHvpBCJy8FylybYBOUCaX5dQtlvGlUDg==
+X-Gm-Gg: ASbGncsglYSXrAXmZ7ukC/OAuCY1AXKO5Wh/lZ4pHTRgrqjg7KEvgpzFtOetkmJ/Ba9
+	MS6k+cmhOuUQraByX12wK/hyGOt4GaWsWZNdfTK5ZJ6Cs5UGm8S2tDCbA6nab04H3m1jy1Lzyqg
+	AiDQnQg0XQyZEMLFCSOazb85++naqSP4f3XvNakjz4pQlLzEM1i/pcMGp1HMaFuQ3/No1duBJUi
+	uNgDgSUtz0TOk51nSY/leFWBH2HH2fjA/+xTQ+oLaYpznx+w0N0bCaaFEvnhs0eEoHjg7YjmB4F
+	fltya9jBC3wNgbmTVgwipI9ytpYm+7J1wdJVfLzTZ11Ji17WxLE=
+X-Google-Smtp-Source: AGHT+IEaYOLTsd7CaMh9nHic50JbqGkjQUi9ObnkpZkF92e+TjsGJ/rFZb5vJmb6PdYCeDve7ZWibA==
+X-Received: by 2002:a17:90b:3d45:b0:2ee:6d08:7936 with SMTP id 98e67ed59e1d1-3082367e7c1mr20452309a91.20.1744694301872;
+        Mon, 14 Apr 2025 22:18:21 -0700 (PDT)
+Received: from cs20-buildserver.lan ([2402:7500:400:be8d:2e0:4cff:fe68:863])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-306df4011e6sm12127760a91.44.2025.04.14.22.18.19
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 14 Apr 2025 22:18:21 -0700 (PDT)
+From: Stanley Chu <stanley.chuys@gmail.com>
+X-Google-Original-From: Stanley Chu <yschu@nuvoton.com>
+To: frank.li@nxp.com,
+	miquel.raynal@bootlin.com,
+	alexandre.belloni@bootlin.com,
+	linux-i3c@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org,
+	tomer.maimon@nuvoton.com,
+	kwliu@nuvoton.com,
+	yschu@nuvoton.com
+Subject: [PATCH v1 0/2] svc-i3c-master: Reduce IBI transaction time
+Date: Tue, 15 Apr 2025 13:18:06 +0800
+Message-Id: <20250415051808.88091-1-yschu@nuvoton.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 2/3] i3c: master: Add Qualcomm I3C controller driver
-To: Konrad Dybcio <konrad.dybcio@oss.qualcomm.com>,
-        <alexandre.belloni@bootlin.com>, <robh@kernel.org>,
-        <krzk+dt@kernel.org>, <conor+dt@kernel.org>,
-        <jarkko.nikula@linux.intel.com>, <linux-i3c@lists.infradead.org>,
-        <linux-arm-msm@vger.kernel.org>, <devicetree@vger.kernel.org>,
-        <linux-kernel@vger.kernel.org>
-CC: <andersson@kernel.org>, <konradybcio@kernel.org>
-References: <20250411113516.87958-1-quic_msavaliy@quicinc.com>
- <20250411113516.87958-3-quic_msavaliy@quicinc.com>
- <a1e85e39-4be6-4793-aee4-d990e1e46bdb@oss.qualcomm.com>
- <bca32a29-23c7-446f-9307-cc36d3f1ee44@quicinc.com>
- <518663e1-8bed-46b6-95dd-142b98e567b3@oss.qualcomm.com>
-Content-Language: en-US
-From: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
-In-Reply-To: <518663e1-8bed-46b6-95dd-142b98e567b3@oss.qualcomm.com>
-X-Originating-IP: [10.80.80.8]
-X-ClientProxiedBy: nasanex01b.na.qualcomm.com (10.46.141.250) To
- nasanex01c.na.qualcomm.com (10.45.79.139)
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-ORIG-GUID: BZUYe86G6FZb8OqomLIh0u4eRLEh9oHK
-X-Proofpoint-GUID: BZUYe86G6FZb8OqomLIh0u4eRLEh9oHK
-X-Authority-Analysis: v=2.4 cv=I+plRMgg c=1 sm=1 tr=0 ts=67fce19b cx=c_pps a=JYp8KDb2vCoCEuGobkYCKw==:117 a=JYp8KDb2vCoCEuGobkYCKw==:17 a=GEpy-HfZoHoA:10 a=IkcTkHD0fZMA:10 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=erseW_yTxJpY10KdARoA:9 a=3ZKOabzyN94A:10
- a=QEXdDO2ut3YA:10 a=TjNXssC_j7lpFel5tvFf:22
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-04-14_03,2025-04-10_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0 spamscore=0
- phishscore=0 adultscore=0 priorityscore=1501 mlxscore=0 lowpriorityscore=0
- bulkscore=0 mlxlogscore=844 clxscore=1015 impostorscore=0 malwarescore=0
- classifier=spam authscore=0 authtc=n/a authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2504140075
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250414_032122_474047_7ECDD641 
-X-CRM114-Status: GOOD (  12.33  )
+X-CRM114-CacheID: sfid-20250414_221823_177323_00685CCE 
+X-CRM114-Status: UNSURE (   4.97  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,37 +97,28 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-CgpPbiA0LzE0LzIwMjUgMzozOCBQTSwgS29ucmFkIER5YmNpbyB3cm90ZToKPiBPbiA0LzE0LzI1
-IDEwOjUzIEFNLCBNdWtlc2ggS3VtYXIgU2F2YWxpeWEgd3JvdGU6Cj4+IEhpIEtvbnJhZCwgcmVz
-cG9uZGluZyB0byBvbmUgY29tbWVudCB3aGljaCBpcyBub3Qgd29ya2luZyBhcyBzdWdnZXN0ZWQg
-YnkgeW91Lgo+Pgo+PiBPbiA0LzEyLzIwMjUgNDo0NSBBTSwgS29ucmFkIER5YmNpbyB3cm90ZToK
-Pj4+IE9uIDQvMTEvMjUgMTozNSBQTSwgTXVrZXNoIEt1bWFyIFNhdmFsaXlhIHdyb3RlOgo+Pj4+
-IEFkZCBzdXBwb3J0IGZvciB0aGUgUXVhbGNvbW0gSTNDIGNvbnRyb2xsZXIgZHJpdmVyLCB3aGlj
-aCBpbXBsZW1lbnRzCj4+Pj4gSTNDIG1hc3RlciBmdW5jdGlvbmFsaXR5IGFzIGRlZmluZWQgaW4g
-dGhlIE1JUEkgQWxsaWFuY2UgU3BlY2lmaWNhdGlvbgo+Pj4+IGZvciBJM0MsIFZlcnNpb24gMS4w
-Lgo+Pj4+Cj4+Pj4gVGhpcyBkcml2ZXIgc3VwcG9ydHMgbWFzdGVyIHJvbGUgaW4gU0RSIG1vZGUu
-Cj4+Pj4KPj4+PiBVbmxpa2Ugc29tZSBvdGhlciBJM0MgbWFzdGVyIGNvbnRyb2xsZXJzLCB0aGlz
-IGltcGxlbWVudGF0aW9uCj4+Pj4gZG9lcyBub3Qgc3VwcG9ydCBJbi1CYW5kIEludGVycnVwdHMg
-KElCSSkgYW5kIEhvdC1qb2luIHJlcXVlc3RzLgo+Pj4+Cj4+Pj4gU2lnbmVkLW9mZi1ieTogTXVr
-ZXNoIEt1bWFyIFNhdmFsaXlhIDxxdWljX21zYXZhbGl5QHF1aWNpbmMuY29tPgo+Pj4+IC0tLQo+
-IAo+IFsuLi5dCj4gCj4+Pj4gK8KgwqDCoCBpZiAoKG1fc3RhdCAmCj4+Pj4gK8KgwqDCoMKgwqDC
-oMKgIChNX1JYX0ZJRk9fV0FURVJNQVJLX0VOIHwgTV9SWF9GSUZPX0xBU1RfRU4pKSAmJgo+Pj4+
-ICvCoMKgwqDCoMKgwqDCoCAhZ2kzYy0+Y3VyX2lzX3dyaXRlICYmIGdpM2MtPmN1cl9idWYpIHsK
-Pj4+Cj4+PiBUaGUgaW5kZW50YXRpb24gaGVyZSBpcyBjb25mdXNpbmcsIHBsZWFzZSBhbGlnbiB0
-aGUgYChNX1JYLi5gIHdpdGggYG1fc3RhdCAmYAo+PiBJIGhhdmUgdHJpZWQgdG8gaW1wbGVtZW50
-IHRoaXMsIGJ1dCBhbHdheXMgZ2l2aW5nIG1lIHdhcm5pbmcgYXMgYmVsb3cuCj4+IFRyaWVkIG1h
-bnkgd2F5cywgYnV0IHNhbWUgaXNzdWUsIGhlbmNlIGtlZXBpbmcgaXQgbGlrZSB0aGlzLgo+PiBJ
-biBmYWN0LCBlYXJsaWVyIGFsc28gaSBmYWNlZCBzYW1lIGlzc3VlIGhlbmNlIGkgd3JvdGUgaXQg
-dGhpcyB3YXkuCj4+Cj4+IENIRUNLOiBBbGlnbm1lbnQgc2hvdWxkIG1hdGNoIG9wZW4gcGFyZW50
-aGVzaXMKPj4gIzQ2ODogRklMRTogZHJpdmVycy9pM2MvbWFzdGVyL2kzYy1xY29tLWdlbmkuYzo0
-MDU6Cj4+ICvCoMKgwqDCoMKgwqAgaWYgKChtX3N0YXQgJiAoTV9SWF9GSUZPX1dBVEVSTUFSS19F
-TiB8IE1fUlhfRklGT19MQVNUX0VOKSkgJiYKPiAKPiAKPiBNYXliZSBsZXQncyBkZWZpbmUgc29t
-ZXRoaW5nIGxpa2UKPiAKPiBib29sIGh3X3BlbmRpbmdfcmVhZCA9IG1fc3RhdCAmIE1fUlguLi4K
-PiAKU3VyZSwgdGhhdCB3b3VsZCBkby4gV2lsbCB1cGRhdGUgaW4gVjUuCj4gS29ucmFkCgoKLS0g
-CmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
+This patchset reduces the IBI transaction time by the following
+improvements.
+1. Receive the request in interrupt context.
+2. Emit the STOP as soon as possible.
+
+Stanley Chu (2):
+  i3c: master: svc: Receive IBI requests in interrupt context
+  i3c: master: svc: Emit STOP asap in the IBI transaction
+
+ drivers/i3c/master/svc-i3c-master.c | 27 +++++++++++----------------
+ 1 file changed, 11 insertions(+), 16 deletions(-)
+
+-- 
+2.34.1
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
