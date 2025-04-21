@@ -4,95 +4,153 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21447C369D2
-	for <linux-i3c@archiver.kernel.org>; Sun, 20 Apr 2025 08:19:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72EEEC369AB
+	for <linux-i3c@archiver.kernel.org>; Mon, 21 Apr 2025 06:04:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kcvG50fdhCV3FKl+rkK4TC0hRNOv488TrGHzrY/4eoM=; b=v9PXm2PPKmaowW
-	sQf4ZCfwWcB7K9T7yxe0qaNnVxBgQsWzhJUxsR5tTWt9b7N9oqanzu3Iqf1xFqtMq8wgHNx9eTkaU
-	0KKj8v8b3rV9otVsoaMgdXrpzbOmEemZ2yOt1mNbZHitMnbzE5n0LcJYYlpct/MQtYG1/t2pxAGwC
-	yrE7hNooE/2C4wllOgfV9UuV6ih/Pj6FXJtSEKZXxW9pIy2CXxjwfVdNDfMtRuDNZx6E8+2l+aQFk
-	sHop0ilCI08qoOlhTtrt99TycLw7gSLZSEs4tuTWJAZYflL9Lo7H69MuHF/h1B/Iqicjq62ZuQFdn
-	Q8l7q2voffsxha//cf0Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/NH9V2M6rttIo3WSwM/41GzfDIhxjo8b3qZMhk9xtPM=; b=Wx42AaLEcgOIk/
+	ceXW009PJThCs0NQ4A5OFY/sIylL42UaGlrUZmGsvpc5wRldTqXqL5yg6j1g6HEqYYm3IZPpQuzQu
+	IQz6vdntWfvboM7Ti4tBewtu7HGB9dwQ1J9VRxjNX18CSniOCZ43U1VJbqYoaa06B9UNgcyq9+ZkQ
+	tbvlYjuusZJZLUCxTIsmu345qVBbY7nSjSf51RNwf1yQvGsHY5J92dAhOGiYr/2/VE604GiAetRcW
+	8qGYLvC5k0fYbjIPZED0i5XY3e5WMkFCdty9x/AzPNUFjGfCn00YSdClxQuXVGWn4dqAKbQ9Bcp3K
+	q8gJ29xtY0b81fsxN0cQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u6PtG-00000002M4r-3hr9;
-	Sun, 20 Apr 2025 08:19:02 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1u6kGm-00000003fdX-0XJh;
+	Mon, 21 Apr 2025 06:04:40 +0000
+Received: from mail-westeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c201::1] helo=AM0PR83CU005.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u6PtD-00000002M3v-48aM
-	for linux-i3c@lists.infradead.org;
-	Sun, 20 Apr 2025 08:19:01 +0000
-Received: from pps.filterd (m0279868.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 53K7F1IA023478;
-	Sun, 20 Apr 2025 08:18:54 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=c63I/ycZ6NN
-	qzoA9+qUGPU56vP2DlXK6DQqWrFBcBJc=; b=IjTdkn8LsS4Eixx7Uz3hSa9tuV3
-	Ss/nKNRXePutGYSJGEQOz2DGVww1npo8vS21dtuh0JylgXOkNwotFKAsPyNE07x2
-	6wXF0TRxiUBcCkRcl4fnpOwz//vqtR4AZU6AQes/8chdN5OjM6kpKDxyAtmu1cvT
-	9TUn+2JoGij2r8e00hufWgxhc03iqVe3yKswZwGnuf3zILvEiUqABTeoqUMvpcRv
-	kh4fizrpMePOJU7N4wtuNb7HDp/t6ndJ7ctxpeWX1zsn2BBXBBOVavSTUGLn0M/k
-	rLookFSQA/Zig/GQ6HVk2FltfQJLuAo0Fi6oBOzVMQkVHukYc98yRPEofBA==
-Received: from apblrppmta02.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 46435j9phx-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sun, 20 Apr 2025 08:18:53 +0000 (GMT)
-Received: from pps.filterd (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 53K8IoNY012723;
-	Sun, 20 Apr 2025 08:18:50 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 4644wkka6e-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sun, 20 Apr 2025 08:18:50 +0000
-Received: from APBLRPPMTA02.qualcomm.com (APBLRPPMTA02.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 53K8Ioo5012716;
-	Sun, 20 Apr 2025 08:18:50 GMT
-Received: from hu-maiyas-hyd.qualcomm.com (hu-msavaliy-hyd.qualcomm.com [10.213.110.207])
-	by APBLRPPMTA02.qualcomm.com (PPS) with ESMTPS id 53K8IoF4012715
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Sun, 20 Apr 2025 08:18:50 +0000
-Received: by hu-maiyas-hyd.qualcomm.com (Postfix, from userid 429934)
-	id 627482409F; Sun, 20 Apr 2025 13:48:49 +0530 (+0530)
-From: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
-To: alexandre.belloni@bootlin.com, robh@kernel.org, krzk+dt@kernel.org,
-        conor+dt@kernel.org, jarkko.nikula@linux.intel.com,
-        linux-i3c@lists.infradead.org, linux-arm-msm@vger.kernel.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        andersson@kernel.org, konradybcio@kernel.org
-Cc: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
-Subject: [PATCH v5 3/3] MAINTAINERS: Add maintainer for Qualcomm's I3C controller driver
-Date: Sun, 20 Apr 2025 13:45:30 +0530
-Message-Id: <20250420081530.2708238-4-quic_msavaliy@quicinc.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20250420081530.2708238-1-quic_msavaliy@quicinc.com>
-References: <20250420081530.2708238-1-quic_msavaliy@quicinc.com>
+	id 1u6kGj-00000003fbY-2MC2;
+	Mon, 21 Apr 2025 06:04:38 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=I7U6CPS70IyS4wu81BL2l2ILzAwXWCQLynlNBQxlpC6XHG+Sj22lHJy7xnTBKB/rK8M0Fvc8AN55WemeD+OmNTlpgoCc8iux7v30sWnGBP0VEFy6lxiGHzP6iVjEWTwY5NAJIX9hgpsBVJV4P53QNhXEgiYQAN8gWvyoCqKgHVKghXZ/5XzkKiYlQc+hOKHIW6sTEr8d0VRYACl7+bUanUr77FkQYBoZLjueCVoVjf/ratN/mXHt2vMBYv8QDS8qsAgTHX40qLsvpE7u1k6PAHaJNi1+2HZcz0FJIYV24/+IMVpz+Ng1HS9azO7DQKY7yCCeIROzdpGKXTsFiucYzA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=7A6MW1L4uPVhtruRLmGwevU6AMs9Kt79fMk+4GNHCZk=;
+ b=qk+TLjfo26eEi9X6zm7HTaJaVyq6BO648iTqkkuT+rk1weIg1zAp39iVnalOBPTGZYeQVNqNSiJALKbMEOPfsZy4tK0o4dvVGwphByPyGMRxFXLOJ843H/HzMUAmiCuF17D9Wx2d1tn9mEVooz3sXZT4vU3LRcRay6xhQqzsuyE9jeori44Lle/sfOM2D3I4PNbSerjTl8y9IRA+HMMRzwN0EToTBShltj4FfdVRe7DJbpJouGXtG559yNX0H7hrnI7Wy5E9ewovsHFzz5bArsUFKAkVDw+66txiUa0AzkEyGJl8l/RDk7rV3iHOv432IE5Vc6lzYDq30bo3vEd5LQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=7A6MW1L4uPVhtruRLmGwevU6AMs9Kt79fMk+4GNHCZk=;
+ b=B3h7ao14dIbYmPiYhxOLHye2lV7H8qld1rrLUnJ47i0mNAXN+9nRHywxdhbfWWbPVTYDQNd5fLgOrubbhs6x72xp44QVUFacSszX38ikqYxMXm0RwESJ3zmOfi5j8KGR3HwY2mHundZ5G0tL70ILqs12FSsYyxaKrnQYEw/jelTefqJlMHD0ffOfBwVU0JPYBz6Bw8BfYjaF2mpEb7iaLQ2B0NMBwnYdVDJ0RTvQyy8tfZmmjHeOkKcbqbTRgOUUsjSQ08gBiqvnQalK1WM+Cj1qUWws+rIxLMQtxceLe5qfxvZeGGe1IsujyGqf7/BlH+Mp5Yxrkt4bw60c0LPTNw==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from VI2PR04MB11147.eurprd04.prod.outlook.com
+ (2603:10a6:800:293::14) by PA4PR04MB7646.eurprd04.prod.outlook.com
+ (2603:10a6:102:f3::18) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8655.35; Mon, 21 Apr
+ 2025 06:04:27 +0000
+Received: from VI2PR04MB11147.eurprd04.prod.outlook.com
+ ([fe80::75ad:fac7:cfe7:b687]) by VI2PR04MB11147.eurprd04.prod.outlook.com
+ ([fe80::75ad:fac7:cfe7:b687%7]) with mapi id 15.20.8655.031; Mon, 21 Apr 2025
+ 06:04:27 +0000
+From: carlos.song@nxp.com
+To: miquel.raynal@bootlin.com,
+	Frank.Li@nxp.com,
+	alexandre.belloni@bootlin.com,
+	robh@kernel.org,
+	krzk+dt@kernel.org,
+	conor+dt@kernel.org,
+	shawnguo@kernel.org,
+	s.hauer@pengutronix.de,
+	kernel@pengutronix.de,
+	festevam@gmail.com,
+	conor.culhane@silvaco.com
+Cc: linux-i3c@lists.infradead.org,
+	imx@lists.linux.dev,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 0/3] support different numbers of clocks for svc i3c controller
+Date: Mon, 21 Apr 2025 14:15:41 +0800
+Message-Id: <20250421061544.2471379-1-carlos.song@nxp.com>
+X-Mailer: git-send-email 2.34.1
+X-ClientProxiedBy: SG2PR04CA0165.apcprd04.prod.outlook.com (2603:1096:4::27)
+ To VI2PR04MB11147.eurprd04.prod.outlook.com (2603:10a6:800:293::14)
 MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=EOYG00ZC c=1 sm=1 tr=0 ts=6804aded cx=c_pps a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17 a=XR8D0OoHHMoA:10 a=COk6AnOGAAAA:8 a=JfrnYn6hAAAA:8 a=VwQbUJbxAAAA:8 a=P-IC7800AAAA:8 a=8AirrxEcAAAA:8
- a=cn7IUS33xWvMNiiCnpYA:9 a=TjNXssC_j7lpFel5tvFf:22 a=1CNFftbPRP8L7MoqJWF3:22 a=d3PnA9EDa4IxuAV0gXij:22 a=ST-jHhOKWsTCqRlWije3:22
-X-Proofpoint-GUID: 1FYuknE2YSRF4BhiKyrtMjNBsRRMJdAa
-X-Proofpoint-ORIG-GUID: 1FYuknE2YSRF4BhiKyrtMjNBsRRMJdAa
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1095,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2025-04-20_03,2025-04-17_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 suspectscore=0
- mlxlogscore=999 mlxscore=0 clxscore=1015 lowpriorityscore=0 malwarescore=0
- priorityscore=1501 phishscore=0 spamscore=0 adultscore=0 impostorscore=0
- bulkscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
- adjust=0 reason=mlx scancount=1 engine=8.19.0-2502280000
- definitions=main-2504200067
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: VI2PR04MB11147:EE_|PA4PR04MB7646:EE_
+X-MS-Office365-Filtering-Correlation-Id: cbde8348-5af7-4ba5-d32a-08dd809a5f22
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|52116014|7416014|376014|921020|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?VTa3/D9ZeqP2C/Ata7vJUR3NV8st4nuUcn5sJ8f9TPUDFkIfOO4DHO8wiDQ7?=
+ =?us-ascii?Q?oHqB24HXADnoV5vobBG23GLh1TYO3cy6C/9thq9pW1pZjJN57TPbPQCRmBzN?=
+ =?us-ascii?Q?+Ozl212pLCNxohinAsxGmFqdRcCr00BpxBbbjGQ+4mTZgsAJUqKvZP65P7Kl?=
+ =?us-ascii?Q?9DLhdaFbrmIOxgiiEQ+7j93wfvRQV97QSZjZ3kc1Ahf8XCKhmMii1VZLOpiS?=
+ =?us-ascii?Q?gZodfX5k6tmnNh/uqW51yHRmjOsyI3VAyDar3WYYx0oBnRMOcgTwc7Mi4mQk?=
+ =?us-ascii?Q?tEuZvIBPT22exKJasWUg5Jxn0MwfnRZbn/woM8qPj00+r8746n9v4gvF8Cgd?=
+ =?us-ascii?Q?fUQAnlqMHoo4F9JmXt4DGCl8IW3pD30YMHMZ/6ZOn/GQfCZBbMNfjcx7/8Dg?=
+ =?us-ascii?Q?GJRd5VMpKOVustgeCaRuZnjMIvodXLL+ZzLzKrEevL6f6hq+A9NuA2Y4Itkv?=
+ =?us-ascii?Q?wZyIo/dSGp7B60OZkwlYu+DzRsc7nk20h45brjAoFEMBRj7DsnknHHDsaTF6?=
+ =?us-ascii?Q?8lwapjAo/X4jgCm6YWXQTjc8HTy/jBqRYxxQ1W/JeNA6/czs574YE+46RV5v?=
+ =?us-ascii?Q?ANedVBJK4ReVsE2PI/i/kHgnuu2EByQ3Qbd/lKLWv2kYInr4JQpjoI+R3xYx?=
+ =?us-ascii?Q?YfJORuYUHw3O4CME5cfoOsWZkY2wp4PGSeEcA+q6k05DWNu38YJm0DSOFYVs?=
+ =?us-ascii?Q?b9iMPIo1ViVTi7pT/MkYzPb/E4UqdLq2don2OG9w+TEJYQIZFeg7K0G4GP3u?=
+ =?us-ascii?Q?gnmhYGvxhmgwfRRdr0EM9Vk0vTXyz1PnJoFDg3qruc7l5di82HOP+FA7MW3x?=
+ =?us-ascii?Q?51nZs1Fp09Iq/NynmGpMLpQBo/9SQuuVl6ZKGn29ANb5/x8yDrhXjZSI1qQT?=
+ =?us-ascii?Q?YcoSOkhJQIxEC91QQMiMVlI3bl332sgNfnBXLLJ4dUtjTxH0X6TCWb0DX4L3?=
+ =?us-ascii?Q?yR1UIDkgNwBomCLOv0NK/t/E1dgN5+OU1dIB+bRZ40hiXXZvjUBHzact9PXF?=
+ =?us-ascii?Q?G6QVN5OikbMr0XKbagfMM8Cpd0TjNXHaEF0JVKH/RQZVYp3zhrf7xxwIHjSx?=
+ =?us-ascii?Q?34i5s4Ih6A9tRjcO6HaBytBM06TwHNOtc61PcZd444D5CxEmQMLdVL2L5A0B?=
+ =?us-ascii?Q?eHvFnFg+ntfpdoLcriZ4x/IkSpr/f1kxhMwHV311t3xvNc7mQ5odtu3vUaC3?=
+ =?us-ascii?Q?HScyD6ZnjdPJW8cviMLhAYuyUgzF3an6r5qweFtlZsW/GIhCAvhNHhzVDZP9?=
+ =?us-ascii?Q?dDihpWW0mu7Vla1y3E2/tfuLjr6EJAKlfGLV+hQJjR4T0riFVBEKj5x45TJe?=
+ =?us-ascii?Q?tVMbQBaWhZZK2SYjLx9AF/ncmBNXswo0XpDlMvCRiFXEUsGkwMCPMD/CqRN7?=
+ =?us-ascii?Q?qLq1pjij0z2kwSFHG4aT3r01rH1lIkPc8BhhVWBkV7j3LzW//JV8g89UtDHK?=
+ =?us-ascii?Q?PCpDrb9YIhqE6jOSHO8KTwML/YGfDEar6Ho2NgmDXsjNYio+ncCvghWD3lZL?=
+ =?us-ascii?Q?DxEYIG83fAjfqk4=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:VI2PR04MB11147.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(52116014)(7416014)(376014)(921020)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?eV6WBNdqL19B942rDZCKHUTCrhl8Iy9sS48RwTcQwqR8kN0B10K9ecaJeETq?=
+ =?us-ascii?Q?8mg4KERIlSSdAPGEanz3IcYMqmFeiZA9LqMn34HhHRUCsYeUJ0sKa1badGaz?=
+ =?us-ascii?Q?Q5fjDj9VdqgJNkfCO2s1BICsuMRbASqv+w5uuXBB5xNJ90AXeWqfbKSqIgwo?=
+ =?us-ascii?Q?WjnUlVlw4WVx2K8HItRAm1SRoG4WhaNt34eAXwAiMCHJ4znmqgdxP+QUQgDd?=
+ =?us-ascii?Q?ro98HWEVZYbPvkq+vmf2lm2DkqYU87LG3LxQ8oXQN1wsq7EJb4nvuGljm+XE?=
+ =?us-ascii?Q?BmS/OYOZUiKa+bm3+Q1pePdgjDU3w2qiEy1ubeU3pzwkN9OglpFZhY5l2/f/?=
+ =?us-ascii?Q?aF4QcEGv/M3rrFOUDnbCJaqmnnsOGJZl1wlL9MFJJOGAHqN6lYV/Gosz3S9q?=
+ =?us-ascii?Q?/RzSRR2ZrCjuewz/5uPCfKiXO2ZRtkJPCrCv/clCgoKKNwKhLLOUwzrSiS4E?=
+ =?us-ascii?Q?bi6gG8UMX4Gcgex8pxkke8oESEV64sE2N+MSF7OJRxPjJWDiuDGpfpbVmeC5?=
+ =?us-ascii?Q?JhPaK8QM869TUmheluu5VnENt4nIGuP90hjAmbYgyqykizYyO4f8G74sB0eh?=
+ =?us-ascii?Q?n/gVPvJiomjy5T1CMMeH6IF75YDQeObeE8kBY7TyF48QbMop+vWhsLVw8Xl/?=
+ =?us-ascii?Q?aKRCWVWlfod1yEQL/7HbTwczbl4qXn2T8IktP1aCdoeQM4ljvx5a870zh4ev?=
+ =?us-ascii?Q?GdJFRo248EZzdfjJnvjN/V6JwGJ3/8DsiXsKRoTwCcDoM7R0sP82jmm2/Azr?=
+ =?us-ascii?Q?3cZOtnlw42lG1NjvtK99Jj6+m1u36WPIzYzPlTXXwUuXQnDZGBg5FWfpakXR?=
+ =?us-ascii?Q?ORk8rMJ2Afr/9v6uTR9bIQ1Jf2JFSgJNB/x90I6aIsbyThH2Am6muKCSvbWv?=
+ =?us-ascii?Q?5OM6M7UcxDNd4j7U4hx55jPgcu8amzcxqVc1bkTQKWQLQZDyIj7n4WNh5VAb?=
+ =?us-ascii?Q?dhqJaijBQ1WSIvK7P02KglOmjItPpuYjgn9pHVhNenEUDXuR0ZRuFZo7mGfy?=
+ =?us-ascii?Q?6/g3Bx3VmIymJT7UkHvVPH4n8x7IA6bQYLu7YIRtxWzbD1OsXwJxuP3Lh5W8?=
+ =?us-ascii?Q?KQ1ONbs7TAnna2DXLFsp9i7wSYgNTI5b5a1lIcE7+BYh2XXzFZ1+JHgnxwYd?=
+ =?us-ascii?Q?x60WwYwhPpkh8/odujVWY7tejQTi7SqqDZgmGLSxeVl7eFZwuLwdm8vOPP01?=
+ =?us-ascii?Q?fiE/sz6suMpNLzIfK4DIFy7D2/K6PeDOsxRwHAO+aAcSWH187c/ovzhEZttR?=
+ =?us-ascii?Q?GWqKid/B8+CQkDeR6vveU1FjFZoNfTsZKaKg++zRR/bmci2Jsd8fs5rwdCFe?=
+ =?us-ascii?Q?ivPoH08fWaVu+9+kUaJ9FMU/7/JB3A7x06cpYWHlxguEM5zf+si/LkUVzNNL?=
+ =?us-ascii?Q?4U76NuOzT65ZP2oaVevfdUqiPb5chxnQBhXZbs7nPTsnMY+qAmmb8oOfaF7R?=
+ =?us-ascii?Q?uSjV0ipRVS+LXUvT8w5j6KxJVrtL6lPt6+OMFBMMdlflYYbZ8BEIPL5MOPUX?=
+ =?us-ascii?Q?ZVYTBT6EEK4q0P++/5dc0p31vVyXCRYpoG4kneVx6yzTIU1IpoK4hfRMtPQR?=
+ =?us-ascii?Q?RE54vqEuYRZQKcn27sjV2cFL3aJkcHlEP3Dut6MP?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: cbde8348-5af7-4ba5-d32a-08dd809a5f22
+X-MS-Exchange-CrossTenant-AuthSource: VI2PR04MB11147.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Apr 2025 06:04:27.0333
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: VG8/FKOA5fHpiEfDDbRxf/tqNOcDHgkY00nJxbqBH/p9FKCl3BgGB/qArs/aG2n6uOv+gV9SWk0Jo0/TqgVIRA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB7646
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250420_011900_148967_7F59C657 
-X-CRM114-Status: GOOD (  10.54  )
+X-CRM114-CacheID: sfid-20250420_230437_623886_729A6338 
+X-CRM114-Status: UNSURE (   7.92  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,36 +167,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add a new entry for the I3C QCOM GENI driver to the MAINTAINERS file.
-This entry includes the maintainer's name and contact information,
-ensuring proper maintainership and communication for the new driver.
+From: Carlos Song <carlos.song@nxp.com>
 
-Signed-off-by: Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
----
- MAINTAINERS | 8 ++++++++
- 1 file changed, 8 insertions(+)
+I.MX94 and I.MX95 I3C only need two clocks and Legacy I3C needs three clocks.
+So add restrictions for clock and clock-names properties for different Socs.
+In driver, use the clk_bulk API to handle clocks to support different numbers
+of clocks more easily. Make the code cleaner and more flexible.
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index ce2b64f4568d..a8fcca5d234a 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -11254,6 +11254,14 @@ S:	Orphan
- F:	Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
- F:	drivers/i3c/master/dw*
- 
-+I3C DRIVER FOR QUALCOMM GENI CONTROLLER IP
-+M:	Mukesh Kumar Savaliya <quic_msavaliy@quicinc.com>
-+L:	linux-i3c@lists.infradead.org (moderated for non-subscribers)
-+L:	linux-arm-msm@vger.kernel.org
-+S:	Supported
-+F:	Documentation/devicetree/bindings/i3c/qcom,geni-i3c.yaml
-+F:	drivers/i3c/master/i3c-qcom-geni.c
-+
- I3C SUBSYSTEM
- M:	Alexandre Belloni <alexandre.belloni@bootlin.com>
- R:	Frank Li <Frank.Li@nxp.com>
+Carlos Song (3):
+  dt-bindings: i3c: silvaco,i3c-master: add i.MX94 and i.MX95 I3C
+  i3c: master: svc: switch to bulk clk API for flexible clock support
+  arm64: dts: imx95: correct i3c node in imx95
+
+ .../bindings/i3c/silvaco,i3c-master.yaml      | 45 +++++++++--
+ arch/arm64/boot/dts/freescale/imx95.dtsi      | 12 ++-
+ drivers/i3c/master/svc-i3c-master.c           | 74 +++++++------------
+ 3 files changed, 69 insertions(+), 62 deletions(-)
+
 -- 
-2.25.1
+2.34.1
 
 
 -- 
