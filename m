@@ -4,66 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBBC0C369AB
-	for <linux-i3c@archiver.kernel.org>; Mon, 21 Apr 2025 07:24:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E31DEC369AB
+	for <linux-i3c@archiver.kernel.org>; Mon, 21 Apr 2025 07:31:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dUH+EN3jIzj1CyH9rq+jA3npYU9PybO+7Wi/hGTFWIM=; b=XBtwrChEZP3THU
-	wrj60GS04PHSwKR0A4KKBvt4BGDzbHjMsUKWI+PsLW/Dy4ts58Kv++BHsCicQYGDH1S+j1B1+0qaF
-	tcWlvC1Bv6Hye2nIjLVpKp+rmq6Ps64JVV9j6jDL43BtM2KI63lwmq6gTRRl3QdSGB90LkDfiU7+d
-	FJ5kGToL0hqAGY84591uXmznoh45LFuak+9AVRLhvvp/5HyiimhRgQ8kJVBLdvG/6XT0YMDnHKZrE
-	EtzkhVzM6uwRtRzBuKGq5JmZOMoY+w+bLz321v1/CXVtAlUVUD8dJr6pT8s11fG/KM11OIUOHHvwD
-	cMLlmec0gbdI3bSUY+Sw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=m66MnVgIlaj+o/WrTlhDVZWCpfo2GKpYqjK0Mmq0m98=; b=mcBDlDj9Dw1Fs3Dldqj9cy9TXx
+	VgcLEby5wdOv5h3y7RfvC+ec0o0b6SXnGNbYt4ZlbDi2gJyLrMZZjOd6hByR++ILySfh0W2o384bQ
+	U1pV2+wvn65OB8S1oLaT9TaYDivjEO5Zvw5GC4x/MmKzgpZ7DkvHMMIS1w6mwbXQTCw0ln9u7IPn5
+	b3FmfFTkiy2tNz9FOxOld6YVbUIekLRSYxWKkwKi9cc3r8+OMEI8bRGSHNze0BaCtBZJYEfKLEZUK
+	Vc9QdqV3/UGhdL65YOSWy7VCbqYJipwvIp+P/EfoNATQnQKsYie5UGit+dAD6silZonsy2m5xnukb
+	uDj2Ozbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u6lW6-00000003mV7-2Rt3;
-	Mon, 21 Apr 2025 07:24:34 +0000
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
+	id 1u6lca-00000003nbK-2PZS;
+	Mon, 21 Apr 2025 07:31:16 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u6lUD-00000003m3y-0Qkx;
-	Mon, 21 Apr 2025 07:22:39 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 70FD71FCE7;
-	Mon, 21 Apr 2025 07:22:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1745220153;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=pB/HrPehJ8yBSz1jcdQAHt5d+DzA9WDigakwtL+7yQM=;
-	b=BPTWG4046AxS47RS7og1B9IhPUceoJjjieNTQ9pyyODZGK3f1/gv+okj+dogYvAFzkwdvl
-	+M0W6IlJ1Dz/MbxF7uQF+f43IeqgrNNeKjue/wpfk5125IZI/1s11mwxasTW8qe+NX2vY9
-	FoOuJz90Va8h3peogzG1AhpedOoqJDu4QUJAGvWNwbYgdHvwqNQ4+VtpGQFPS0TLZg5Ic1
-	K0Jz9s25srNQ191xM+9UWbq4qgXFEKH1L/tSVng31v67fGi5jz4w/Zn7FH81E05MRNeN5C
-	bqE0As9y5KhVnbufyPqpK7LH8kAl/9hIrW7+KJz0nxnJwF8MmbpQMADBIyuGgQ==
-Date: Mon, 21 Apr 2025 09:22:32 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+	id 1u6lai-00000003nIg-42nP;
+	Mon, 21 Apr 2025 07:29:22 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 2B749A4BB2A;
+	Mon, 21 Apr 2025 07:23:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 85660C4CEE4;
+	Mon, 21 Apr 2025 07:29:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1745220558;
+	bh=AsfbiDjIVGcOHxoZBj404PVsbS0hHdvffd79DyXm0zw=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
+	b=elclvoT+rKeEsXkmzDTwOoBFoMwx4Qu3exhJ6CQWv+/TF9zxKsr77GD6mtPSxypnh
+	 5oXwnoB0khUMMpqQpR0DiazrtlEEzt+CltbSfTptx8pDVkaNInPhkiDh2/XlPH2Uq6
+	 zivbAcrvwhpDGJmMvzZ02LhNFRm+dkJueQqEsJT6JNJ2D80AOa1CpYIFo2iTQOC4T5
+	 Uin3In3zrWFGv5T8gpHu0XhyQHv7KRxq6sRBDIlmUlEav9OO3m0oSWStWNGkdvWihu
+	 TP75G+flspaMDpfgw3gwBUHs69n6E33+LsQDVSuKZAcp91S7et32WKsUePxGDFqwXS
+	 s1s2Ge09dybew==
+Date: Mon, 21 Apr 2025 02:29:16 -0500
+MIME-Version: 1.0
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: krzk+dt@kernel.org, s.hauer@pengutronix.de, festevam@gmail.com, 
+ linux-kernel@vger.kernel.org, Frank.Li@nxp.com, 
+ alexandre.belloni@bootlin.com, linux-i3c@lists.infradead.org, 
+ miquel.raynal@bootlin.com, devicetree@vger.kernel.org, 
+ conor.culhane@silvaco.com, linux-arm-kernel@lists.infradead.org, 
+ shawnguo@kernel.org, kernel@pengutronix.de, imx@lists.linux.dev, 
+ conor+dt@kernel.org
 To: carlos.song@nxp.com
-Cc: miquel.raynal@bootlin.com, Frank.Li@nxp.com, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, shawnguo@kernel.org,
-	s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
-	conor.culhane@silvaco.com, linux-i3c@lists.infradead.org,
-	imx@lists.linux.dev, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 1/3] dt-bindings: i3c: silvaco,i3c-master: add i.MX94 and
- i.MX95 I3C
-Message-ID: <202504210722320ac51194@mail.local>
+In-Reply-To: <20250421061544.2471379-2-carlos.song@nxp.com>
 References: <20250421061544.2471379-1-carlos.song@nxp.com>
  <20250421061544.2471379-2-carlos.song@nxp.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250421061544.2471379-2-carlos.song@nxp.com>
-X-GND-State: clean
-X-GND-Score: 0
-X-GND-Cause: gggruggvucftvghtrhhoucdtuddrgeefvddrtddtgddvgedtvdefucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuifetpfffkfdpucggtfgfnhhsuhgsshgtrhhisggvnecuuegrihhlohhuthemuceftddunecunecujfgurhepfffhvfevuffkfhggtggujgesthdtredttddtvdenucfhrhhomheptehlvgigrghnughrvgcuuegvlhhlohhnihcuoegrlhgvgigrnhgurhgvrdgsvghllhhonhhisegsohhothhlihhnrdgtohhmqeenucggtffrrghtthgvrhhnpeegieduueethefhkeegjeevfefhiedujeeuhffgleejgfejgeekueejuefgheeggfenucffohhmrghinhepsghoohhtlhhinhdrtghomhenucfkphepvdgrtddumegvtdgrmegsieehmegsvdhftdemtgelugdumegtvdhfkeemhegvsggsmeeileekudenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepihhnvghtpedvrgdtudemvgdtrgemsgeiheemsgdvfhdtmegtleguudemtgdvfhekmeehvggssgemieelkedupdhhvghloheplhhotggrlhhhohhsthdpmhgrihhlfhhrohhmpegrlhgvgigrnhgurhgvrdgsvghllhhonhhisegsohhothhlihhnrdgtohhmpdhnsggprhgtphhtthhopeduiedprhgtphhtthhopegtrghrlhhoshdrshhonhhgsehngihprdgtohhmpdhrtghpthhtohepmhhiqhhuvghlrdhrrgihnhgrlhessghoohhtlhhinhdrtghomhdprhgtphhtthhopefhrhgrnhhkrdfnihesnhigphdrtghomhdprhgtphhtt
- hhopehrohgshheskhgvrhhnvghlrdhorhhgpdhrtghpthhtohepkhhriihkodgutheskhgvrhhnvghlrdhorhhgpdhrtghpthhtoheptghonhhorhdoughtsehkvghrnhgvlhdrohhrghdprhgtphhtthhopehshhgrfihnghhuoheskhgvrhhnvghlrdhorhhgpdhrtghpthhtohepshdrhhgruhgvrhesphgvnhhguhhtrhhonhhigidruggv
-X-GND-Sasl: alexandre.belloni@bootlin.com
+Message-Id: <174522055654.901015.12807309511179699830.robh@kernel.org>
+Subject: Re: [PATCH 1/3] dt-bindings: i3c: silvaco,i3c-master: add i.MX94
+ and i.MX95 I3C
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250421_002237_882142_93155CA0 
-X-CRM114-Status: GOOD (  18.07  )
+X-CRM114-CacheID: sfid-20250421_002921_074470_3F1E5B56 
+X-CRM114-Status: GOOD (  11.83  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,7 +78,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 21/04/2025 14:15:42+0800, carlos.song@nxp.com wrote:
+
+On Mon, 21 Apr 2025 14:15:42 +0800, carlos.song@nxp.com wrote:
 > From: Carlos Song <carlos.song@nxp.com>
 > 
 > Add compatible string "nxp,imx94-i3c" and "nxp,imx95-i3c" for the i.MX94
@@ -90,102 +89,37 @@ On 21/04/2025 14:15:42+0800, carlos.song@nxp.com wrote:
 > three clocks. So add restrictions for clock and clock-names properties
 > for different Socs.
 > 
-
-My guess is that the IP still requires 3 clocks but the integration in
-the SoC feeds the same clock to two of them. I'm not sure this change is
-required.
-
 > Signed-off-by: Carlos Song <carlos.song@nxp.com>
 > ---
 >  .../bindings/i3c/silvaco,i3c-master.yaml      | 45 ++++++++++++++++---
 >  1 file changed, 39 insertions(+), 6 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
-> index 4fbdcdac0aee..9255d35e2854 100644
-> --- a/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
-> +++ b/Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml
-> @@ -9,14 +9,17 @@ title: Silvaco I3C master
->  maintainers:
->    - Conor Culhane <conor.culhane@silvaco.com>
->  
-> -allOf:
-> -  - $ref: i3c.yaml#
-> -
->  properties:
->    compatible:
-> -    enum:
-> -      - nuvoton,npcm845-i3c
-> -      - silvaco,i3c-master-v1
-> +    oneOf:
-> +      - enum:
-> +        - nuvoton,npcm845-i3c
-> +        - silvaco,i3c-master-v1
-> +      - items:
-> +        - enum:
-> +            - nxp,imx94-i3c
-> +            - nxp,imx95-i3c
-> +        - const: silvaco,i3c-master-v1
->  
->    reg:
->      maxItems: 1
-> @@ -25,12 +28,14 @@ properties:
->      maxItems: 1
->  
->    clocks:
-> +    minItems: 2
->      items:
->        - description: system clock
->        - description: bus clock
->        - description: other (slower) events clock
->  
->    clock-names:
-> +    minItems: 2
->      items:
->        - const: pclk
->        - const: fast_clk
-> @@ -46,6 +51,34 @@ required:
->    - clock-names
->    - clocks
->  
-> +allOf:
-> +  - $ref: i3c.yaml#
-> +  # Legacy Socs need three clocks
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          const: silvaco,i3c-master-v1
-> +    then:
-> +      properties:
-> +        clocks:
-> +          minItems: 3
-> +        clock-names:
-> +          minItems: 3
-> +  # imx94 and imx95 Soc need two clocks
-> +  - if:
-> +      properties:
-> +        compatible:
-> +          contains:
-> +            enum:
-> +              - nxp,imx94-i3c
-> +              - nxp,imx95-i3c
-> +    then:
-> +      properties:
-> +        clocks:
-> +          maxItems: 2
-> +        clock-names:
-> +          maxItems: 2
-> +
->  unevaluatedProperties: false
->  
->  examples:
-> -- 
-> 2.34.1
-> 
 
--- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+My bot found errors running 'make dt_binding_check' on your patch:
+
+yamllint warnings/errors:
+./Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml:16:9: [warning] wrong indentation: expected 10 but found 8 (indentation)
+./Documentation/devicetree/bindings/i3c/silvaco,i3c-master.yaml:19:9: [warning] wrong indentation: expected 10 but found 8 (indentation)
+
+dtschema/dtc warnings/errors:
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20250421061544.2471379-2-carlos.song@nxp.com
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
+
 
 -- 
 linux-i3c mailing list
