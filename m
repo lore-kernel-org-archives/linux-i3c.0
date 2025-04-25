@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95FEEC3ABDD
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 009D9C5479B
 	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 09:20:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,66 +12,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V+WlTOHnyN0Qx3V6cJEu0ZZOkkM26LkFLtF9uIAM0Pc=; b=TOM1mdUQaYU5Mw
-	A6kP7Xr72OTUOrhADXDaXW13QvXlpuB4LIGYEu7xQ57o7H8XduLttSDp+B8bUmg+5lC8kC5zeTffW
-	IDOYCWAY2FOBoEZJhSQeMfIYuYbai0cZoog84oQJQWmCDAvocL74KsDUjmuiJC0d7BjR5EWa/XB+Q
-	YLmlLiSJmMpV9821KAfJDvXOv5K/OwsElnfnETTmjM9pS3v6hZUd/WedTKLhcYYph+LJ2fMk/CfIY
-	WCNnkrTynbuRCogotIMgOPl9HcDaTKVQhPOewzyqCZ7e3onEFpQzmjpD43sJLZ2XS+1dCl3+zg6cS
-	yNj6ubxOUS+jd8qjRo+g==;
+	List-Owner; bh=F8Igti2GPaM9MPlmzZ98Rk8oirvd13uk9vgJ9olzG0Q=; b=vAZoS0OcRjk8+k
+	txizzGg0p6rmMNKys6Oz5n+N/MrZNRhWeKb/qWksze5ThqpHUAO5MWkQoUuj3/76vJhiKcMw+IpjC
+	PVPIlo2mhdalcwkquRRr5ScSVdaYRHUxb96aGIAaJTp0f3XVnJTWrCw/9kCInmEmW9gVadubzgud3
+	5WBIws4j/iRoLrevbAUcOLe2JrYQ16yQrsqtaR/oxMIGO2oWjvIGdZp1ACEUYvBnZXPz6A/dOcF3u
+	FrC/iYWLBcp9wfSw92jiM22hc+W3ZSz/GgRwY3G47rEcJkDC10r33LBtLZOmOyap0zH8YoddvZAhL
+	RoXOsr3Cxyuq/LiZmywQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFUlc-000000008VC-1JFr;
+	id 1uFUlc-000000008Vx-2vM2;
 	Thu, 15 May 2025 09:20:40 +0000
-Received: from ewsoutbound.kpnmail.nl ([195.121.94.170])
+Received: from ewsoutbound.kpnmail.nl ([195.121.94.167])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u8EWD-0000000GLd9-2shz
+	id 1u8Em6-0000000GPfT-2lry
 	for linux-i3c@lists.infradead.org;
-	Fri, 25 Apr 2025 08:34:47 +0000
-X-KPN-MessageId: 38cf2ff0-21b0-11f0-bc2a-005056ab378f
-Received: from smtp.kpnmail.nl (unknown [10.31.155.40])
+	Fri, 25 Apr 2025 08:51:12 +0000
+X-KPN-MessageId: 93f16712-21b2-11f0-b9a0-005056abbe64
+Received: from smtp.kpnmail.nl (unknown [10.31.155.38])
 	by ewsoutbound.so.kpn.org (Halon) with ESMTPS
-	id 38cf2ff0-21b0-11f0-bc2a-005056ab378f;
-	Fri, 25 Apr 2025 10:35:19 +0200 (CEST)
+	id 93f16712-21b2-11f0-b9a0-005056abbe64;
+	Fri, 25 Apr 2025 10:52:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
 	d=xs4all.nl; s=xs4all01;
 	h=content-type:from:to:subject:mime-version:date:message-id;
-	bh=8/yvxp3z86rFOheLRFHFBHKY1EtIc/D5T7iQnuCrnGI=;
-	b=t27exWrhxfrd/PunXsL+ZON/teXOUj69jJjeYPGfTZDsKbU2UhY6QxA5jZzSC2UfHti+CtC2R3YA1
-	 2IsXKPGHqZyDmXCGVG1ocuiCaZbdz/PbJO+RwQmHPFtqnuQ379ia7IoJ56FXvxR5uyp2HBSvGXU/w1
-	 Z9p2CK+pULqCDhKP67uLZYhiaC3ymBvqV6fhQnTdg/GgMTgy6FvqbFqWiDPwTcQdqha3eAeMvwKqNV
-	 DS29lnDXjD4Qlvsq3awtRnnspWtKmCgoyMZW57lFwVfG6J+bJgoYIoDt5Ndg4YcB2cWAJUJqAqQOPS
-	 /PK7PcEKKutczhZAsCdqyck4dGTG43w==
-X-KPN-MID: 33|RIBl8qxlgmujX1FKwnzX9VyDT0ZAKCskxgm1P0W9jXQ8nZR5BAM8OCvJo8UWjik
- QYKCL9im91mYQLHEnPxtOf00QLEo2aniGRp+aXvEOCRo=
+	bh=ZUUJHctHfNsWNu1EuQFACb2hrUYidSMtniMgESDbRMU=;
+	b=C05ahXwGA4fFgl5pI9IJHaOIC76m8R/+Es89bI5CvWoa6HqeHuMK1mldeMHIPdQDi2kLlgzYGuFDe
+	 D6MuwZeTwD9wDa1XBMVKPiXUdLXcq+GTqnyBHWJmMljRXk48AhzZTUw4w3JcILCX9BZqxzGIjcGt45
+	 rVpMjojPveoEKJh8q2SHsNUin5NrH2hHy2UM/ToU41fRmD9iRhfZFZVHgj6RTwNoFsLryLF3BsJztF
+	 gaTSBezUZK3uueMs3FZ29rF3MDkksrwOCGH4rjzRi2+4egWucO06G46ulnDHCSBicLhtJMzaffZPP7
+	 sV5V8wKP1no2OVYkOrkoy9/F8HuD5EA==
+X-KPN-MID: 33|AF0t4UVO0ldgi6YmnFhYJXqAPxHkuBjosJGcKGQA7S6P7Abi1YftYhe8yCepFKM
+ Um9AVCIhpwBzaPi+MzlrzvCTD1SHpo9+IS4F4rFr5JFU=
 X-KPN-VerifiedSender: Yes
-X-CMASSUN: 33|kGQgDhys4HLyRALAx1+V9H0952u3JpG31JHo29NpY2zKbQx4XFVTCuo4pjiOlhB
- VdHI+mBwEKxtWXkx1o1G1Nw==
+X-CMASSUN: 33|nqQMCrwmB3CHOeiz1JE1vwIQX38ApX4EwzMJX9cEX5ZmT/5GDgIxRdtlrbvDrcJ
+ 3U9+ukECS2iUUeZHN8Kv+nQ==
 X-Originating-IP: 80.60.128.215
 Received: from [192.168.1.10] (80-60-128-215.fixed.kpn.net [80.60.128.215])
 	by smtp.xs4all.nl (Halon) with ESMTPSA
-	id 0336f9f5-21b0-11f0-855b-005056ab7584;
-	Fri, 25 Apr 2025 10:34:36 +0200 (CEST)
-Message-ID: <a00591dd-0698-4cd1-9715-446f973b877b@xs4all.nl>
-Date: Fri, 25 Apr 2025 10:33:49 +0200
+	id 6c670738-21b2-11f0-95a4-005056abf0db;
+	Fri, 25 Apr 2025 10:51:06 +0200 (CEST)
+Message-ID: <7d0096ad-a290-4fbc-8c06-dba49e8db8af@xs4all.nl>
+Date: Fri, 25 Apr 2025 10:51:05 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 02/13] media: media/test_drivers: Replace open-coded
+Subject: Re: [PATCH v4 03/13] media: pci: cx18-av-vbi: Replace open-coded
  parity calculation with parity_odd()
-To: Kuan-Wei Chiu <visitorckw@gmail.com>, tglx@linutronix.de,
- mingo@redhat.com, bp@alien8.de, dave.hansen@linux.intel.com, x86@kernel.org,
- jk@ozlabs.org, joel@jms.id.au, eajames@linux.ibm.com,
- andrzej.hajda@intel.com, neil.armstrong@linaro.org, rfoss@kernel.org,
- maarten.lankhorst@linux.intel.com, mripard@kernel.org, tzimmermann@suse.de,
- airlied@gmail.com, simona@ffwll.ch, dmitry.torokhov@gmail.com,
- mchehab@kernel.org, awalls@md.metrocast.net, hverkuil@xs4all.nl,
- miquel.raynal@bootlin.com, richard@nod.at, vigneshr@ti.com,
- louis.peens@corigine.com, andrew+netdev@lunn.ch, davem@davemloft.net,
- edumazet@google.com, pabeni@redhat.com, parthiban.veerasooran@microchip.com,
- arend.vanspriel@broadcom.com, johannes@sipsolutions.net,
+To: Kuan-Wei Chiu <visitorckw@gmail.com>,
+ Arend van Spriel <arend.vanspriel@broadcom.com>
+Cc: tglx@linutronix.de, mingo@redhat.com, bp@alien8.de,
+ dave.hansen@linux.intel.com, x86@kernel.org, jk@ozlabs.org, joel@jms.id.au,
+ eajames@linux.ibm.com, andrzej.hajda@intel.com, neil.armstrong@linaro.org,
+ rfoss@kernel.org, maarten.lankhorst@linux.intel.com, mripard@kernel.org,
+ tzimmermann@suse.de, airlied@gmail.com, simona@ffwll.ch,
+ dmitry.torokhov@gmail.com, mchehab@kernel.org, awalls@md.metrocast.net,
+ hverkuil@xs4all.nl, miquel.raynal@bootlin.com, richard@nod.at,
+ vigneshr@ti.com, louis.peens@corigine.com, andrew+netdev@lunn.ch,
+ davem@davemloft.net, edumazet@google.com, pabeni@redhat.com,
+ parthiban.veerasooran@microchip.com, johannes@sipsolutions.net,
  gregkh@linuxfoundation.org, jirislaby@kernel.org, yury.norov@gmail.com,
  akpm@linux-foundation.org, jdelvare@suse.com, linux@roeck-us.net,
- alexandre.belloni@bootlin.com, pgaj@cadence.com
-Cc: hpa@zytor.com, alistair@popple.id.au, linux@rasmusvillemoes.dk,
+ alexandre.belloni@bootlin.com, pgaj@cadence.com, hpa@zytor.com,
+ alistair@popple.id.au, linux@rasmusvillemoes.dk,
  Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se,
  jernej.skrabec@gmail.com, kuba@kernel.org, linux-kernel@vger.kernel.org,
  linux-fsi@lists.ozlabs.org, dri-devel@lists.freedesktop.org,
@@ -84,13 +85,15 @@ Cc: hpa@zytor.com, alistair@popple.id.au, linux@rasmusvillemoes.dk,
  linux-i3c@lists.infradead.org, david.laight.linux@gmail.com,
  andrew.cooper3@citrix.com, Yu-Chun Lin <eleanor15x@gmail.com>
 References: <20250409154356.423512-1-visitorckw@gmail.com>
- <20250409154356.423512-3-visitorckw@gmail.com>
+ <20250409154356.423512-4-visitorckw@gmail.com>
+ <25b7888d-f704-493b-a2d7-c5e8fff9cfb4@broadcom.com>
+ <Z/bDnLzcajzIxey3@visitorckw-System-Product-Name>
 Content-Language: en-US, nl
 From: Hans Verkuil <hverkuil@xs4all.nl>
-In-Reply-To: <20250409154356.423512-3-visitorckw@gmail.com>
+In-Reply-To: <Z/bDnLzcajzIxey3@visitorckw-System-Product-Name>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250425_013446_090983_037CC7AF 
-X-CRM114-Status: GOOD (  13.32  )
+X-CRM114-CacheID: sfid-20250425_015110_845875_6FEF29FD 
+X-CRM114-Status: GOOD (  15.30  )
 X-Mailman-Approved-At: Thu, 15 May 2025 02:17:27 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -108,50 +111,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 09/04/2025 17:43, Kuan-Wei Chiu wrote:
-> Refactor parity calculations to use the standard parity_odd() helper.
-> This change eliminates redundant implementations.
-> 
-> Co-developed-by: Yu-Chun Lin <eleanor15x@gmail.com>
-> Signed-off-by: Yu-Chun Lin <eleanor15x@gmail.com>
-> Signed-off-by: Kuan-Wei Chiu <visitorckw@gmail.com>
+On 09/04/2025 20:59, Kuan-Wei Chiu wrote:
+> On Wed, Apr 09, 2025 at 08:43:09PM +0200, Arend van Spriel wrote:
+>> On 4/9/2025 5:43 PM, Kuan-Wei Chiu wrote:
+>>> Refactor parity calculations to use the standard parity_odd() helper.
+>>> This change eliminates redundant implementations.
+>>>
+>>> Co-developed-by: Yu-Chun Lin <eleanor15x@gmail.com>
+>>> Signed-off-by: Yu-Chun Lin <eleanor15x@gmail.com>
+>>> Signed-off-by: Kuan-Wei Chiu <visitorckw@gmail.com>
+>>> ---
+>>>   drivers/media/pci/cx18/cx18-av-vbi.c | 12 ++----------
+>>>   1 file changed, 2 insertions(+), 10 deletions(-)
+>>>
+>>> diff --git a/drivers/media/pci/cx18/cx18-av-vbi.c b/drivers/media/pci/cx18/cx18-av-vbi.c
+>>> index 65281d40c681..15b515b95956 100644
+>>> --- a/drivers/media/pci/cx18/cx18-av-vbi.c
+>>> +++ b/drivers/media/pci/cx18/cx18-av-vbi.c
+>>
+>> [...]
+>>
+>>> @@ -278,7 +270,7 @@ int cx18_av_decode_vbi_line(struct v4l2_subdev *sd,
+>>>   		break;
+>>>   	case 6:
+>>>   		sdid = V4L2_SLICED_CAPTION_525;
+>>> -		err = !odd_parity(p[0]) || !odd_parity(p[1]);
+>>> +		err = !parity_odd(p[0]) || !parity_odd(p[1]);
+>>
+>> No need to call parity_odd() twice here. Instead you could do:
+>>
+>> 		err = !parity_odd(p[0] ^ p[1]);
+
+I prefer the original approach, it is easier to understand. Performance
+is not an issue here, clarity of the code is more important.
+
+So for this patch (i.e. this v4 version):
 
 Reviewed-by: Hans Verkuil <hverkuil@xs4all.nl>
+
+>>
+>> This is orthogonal to the change to parity_odd() though. More specific to
+>> the new parity_odd() you can now do following as parity_odd() argument is
+>> u64:
+>>
+>> 		err = !parity_odd(*(u16 *)p);
+>>
+>>
+> Thanks for the feedback!
+> Would you prefer this change to be part of the parity() conversion
+> patch, or in a separate one?
+
+Just leave it as-is, as mentioned above.
 
 Regards,
 
 	Hans
 
-> ---
->  drivers/media/test-drivers/vivid/vivid-vbi-gen.c | 8 ++------
->  1 file changed, 2 insertions(+), 6 deletions(-)
 > 
-> diff --git a/drivers/media/test-drivers/vivid/vivid-vbi-gen.c b/drivers/media/test-drivers/vivid/vivid-vbi-gen.c
-> index 70a4024d461e..5e1b7b1742e4 100644
-> --- a/drivers/media/test-drivers/vivid/vivid-vbi-gen.c
-> +++ b/drivers/media/test-drivers/vivid/vivid-vbi-gen.c
-> @@ -5,6 +5,7 @@
->   * Copyright 2014 Cisco Systems, Inc. and/or its affiliates. All rights reserved.
->   */
->  
-> +#include <linux/bitops.h>
->  #include <linux/errno.h>
->  #include <linux/kernel.h>
->  #include <linux/ktime.h>
-> @@ -165,12 +166,7 @@ static const u8 vivid_cc_sequence2[30] = {
->  
->  static u8 calc_parity(u8 val)
->  {
-> -	unsigned i;
-> -	unsigned tot = 0;
-> -
-> -	for (i = 0; i < 7; i++)
-> -		tot += (val & (1 << i)) ? 1 : 0;
-> -	return val | ((tot & 1) ? 0 : 0x80);
-> +	return val | (parity_odd(val) ? 0 : 0x80);
->  }
->  
->  static void vivid_vbi_gen_set_time_of_day(u8 *packet)
+> Regards,
+> Kuan-Wei
 
 
 -- 
