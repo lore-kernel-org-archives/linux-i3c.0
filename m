@@ -4,116 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 54500C54755
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7352C3ABC9
 	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 09:20:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kQ56Qp2t4pSaD/mHQCSEAO2KaqbzJTdhqPJiakIYGOs=; b=geRc5d+674yJI6
-	C+6m4JS+5LzEnzesfNeg04EyyG0pP4J86ZWi3MCaKmNorK0t7T4hfD8TLQRD1qODP7amjqxtyAXqV
-	gUvrJjL6jLHZqV1f0h9BSmyYwvh2S6c1zVwYJY1b7q+p+g5nm9FfUgz/e5yGOc+368KuODInyHNP1
-	eXOq2lXqhY3WIYmXZkuXRB682Ym9z7D6EhJNVq+Ac4jw7p02T8tGTggvXM4xVXWqlw40pYSS5Hl6y
-	dyvblS/wXOZQ4MM9CWzK0Uj0hSbXbOqgFC8E3opikbFFJFm2qLDNUl3xd3pZCCuLa5PCBtQK8MEM+
-	INt+MRca47/mUfnktEOw==;
+	List-Owner; bh=PdwCpdhhcdO1kb+htCl6QPEBuNg3i0tr/Dj3Jdkbcy4=; b=mKbfQjDSKzSllt
+	IkIqDaIS1CkRYk/2g8ak7L725VYBJRA1coVzbl25Bywk6gtiv+W2TBLLbLytA9nHDXab9I3cufsIG
+	XBt/HiwA4b/q+s1lNXunkHfK98VwWRIC6DlrHxs6Z2bXs89n/CVIKj5d8hEjX97gUkBhGLrBAHsIP
+	l7jjyr0UnWO3FStjTKYwgaznCFDdrbRMvuYksZmpOul4pIUbqSzUee48YmAA/t1ws+QeA7o+Mfh+C
+	yvpXP/mhnSyahXo202GrKJiLohytOp66M/KdGKO9pvtunJvXf26A0xGfMhVmXO1h4Qp2D8mKIMFAU
+	gPQYrz9QKkjlxiU8ew6w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFUle-000000008Yj-2gwh;
+	id 1uFUlf-000000008ZK-1fTh;
 	Thu, 15 May 2025 09:20:43 +0000
-Received: from mail-pf1-x433.google.com ([2607:f8b0:4864:20::433])
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u8bcQ-00000001nIX-37vI;
-	Sat, 26 Apr 2025 09:14:43 +0000
-Received: by mail-pf1-x433.google.com with SMTP id d2e1a72fcca58-7376e311086so4234342b3a.3;
-        Sat, 26 Apr 2025 02:14:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1745658881; x=1746263681; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=Dpw6EJump0TSOrBYBam8lLy7cnOl6Tzi7s2IdyQv1Eo=;
-        b=cTbsGDxSTLjSsPcQCMhE9goSDIoS/BvDqPZl1LqjMUjlHtz4gMmA4EaLwyJku9dCe5
-         iBzIVlVIXRSofqhDhtNwg3ojm0ELAS4hZLEpQnSiKGWmgKGseieK6+ukvlW3Tx4GZBi0
-         r7fd0NEM11vrzlc7Q24tE22noG15Mn0VohAR7lV0qFjSKris4+rsuU1xeF8hQQEFNZU9
-         R15b7u/AapGmjOm3Z7amLGSzKiSxA0FSyd4roswITRBX1glR1HIl/Fz7HfebowTwiquo
-         ZNwL/GqJKipTvZCeHf1hyUhLR+vP2DPsrcGElPzkaK59kALUXXi8BhxbdxBOSdyrtH5J
-         eQew==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1745658881; x=1746263681;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=Dpw6EJump0TSOrBYBam8lLy7cnOl6Tzi7s2IdyQv1Eo=;
-        b=RJ1qFevwfTIEDWEctjkfp/+e5d0/9PXtx4s3pfzr5kzVnt91mMNJg8BYfblKXNVPzo
-         uyi6XadDyj3soXj2dmApO+HA5ONhEntHY/dUjQFqWJyjf6v2G/NSxWeXbv9lQdaQTIdt
-         k2YLhelrLgyJiJo1juL35aQ1RgoaC9iYHM49DBP/N1yKhF+NlM+ubOEWWfdMrkNxJtlt
-         1rrUadS8VZ+lPl0btUnxHGNDrYtyWcCr6UnI3edZOffKKHTEc7ZmgRlLQmjKmeVYYN5Q
-         gvZEmNCn8VWkB1xVt5iA0EQviVWEKB2PMvuSXOiKcFgQ16s0f8MUGEF2Y5yEFoG1Sqva
-         sT5Q==
-X-Forwarded-Encrypted: i=1; AJvYcCUu4StV44Zhm8pfFyshyXpvLmB7DB5CdDXSUTVoJBruOPPwcAXYekcvfofZVMEIzbLUzvJk6jfpxsg=@lists.infradead.org, AJvYcCVaXhxRpQoEdp2NKz8Un2+tWOMzUPnIsnAAIc4P2GlOZ+M+Bzrw3/IhtalFO27GUUj17bz8pPdIZtj9@lists.infradead.org
-X-Gm-Message-State: AOJu0YyzuoVFI6+dgjFQISQw/UPYRdrBygA3rn8UmmQ/xbAgbUyEbtFV
-	vF4Qp2VWduma8mjz1HPnua0iTFr13529dbg8bHgMU5SWVtT+t4vI
-X-Gm-Gg: ASbGncuya/gQxUO0Sb8ZxtbrUB41kFGBnAMXF6eoHUbiqLOq4laiAhmsxUcc3G4DHKO
-	zkNziLd+FCfAH2/J8X8pLbqLNm7/MWnAIJuOVpZp06V7YFfN6eI8shjkU5Ul0qyJFURF8R8qVfs
-	2yo26ifiFotNlhAu1Bmj+Xy+ocn6tzvmUA3wrVKIlG4P4tQQSkpVyX4bqdWK0FYvMd61HIza00K
-	riqXQ38LUoH+FqpNIgMZwJn0of0fWFVbJ2XEL8p5gqydPHnMjVNAB6NC/JqRujwdDF+D7JGqUI9
-	4T78vEDKSmubS4IxF/uBWJ9E4hVK0NlRVMUxyYvy4QDbPH4up4mSVCRLm/COpnLSFzHW
-X-Google-Smtp-Source: AGHT+IFgnshRXYAm4vLgOrmgYGZWM8t1SObZHkSRdPxsGHvAJ5uKKQ60xC74a/vGxL92untQtleJTA==
-X-Received: by 2002:a05:6a00:1306:b0:736:73ad:365b with SMTP id d2e1a72fcca58-73fd74c23c4mr7475320b3a.14.1745658881199;
-        Sat, 26 Apr 2025 02:14:41 -0700 (PDT)
-Received: from visitorckw-System-Product-Name ([140.113.216.168])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-73e259412b2sm4594535b3a.66.2025.04.26.02.14.31
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 26 Apr 2025 02:14:40 -0700 (PDT)
-Date: Sat, 26 Apr 2025 17:14:29 +0800
-From: Kuan-Wei Chiu <visitorckw@gmail.com>
-To: "H. Peter Anvin" <hpa@zytor.com>, Yury Norov <yury.norov@gmail.com>
-Cc: Yury Norov <yury.norov@gmail.com>, tglx@linutronix.de, mingo@redhat.com,
-	bp@alien8.de, dave.hansen@linux.intel.com, x86@kernel.org,
-	jk@ozlabs.org, joel@jms.id.au, eajames@linux.ibm.com,
-	andrzej.hajda@intel.com, neil.armstrong@linaro.org,
-	rfoss@kernel.org, maarten.lankhorst@linux.intel.com,
-	mripard@kernel.org, tzimmermann@suse.de, airlied@gmail.com,
-	simona@ffwll.ch, dmitry.torokhov@gmail.com, mchehab@kernel.org,
-	awalls@md.metrocast.net, hverkuil@xs4all.nl,
-	miquel.raynal@bootlin.com, richard@nod.at, vigneshr@ti.com,
-	louis.peens@corigine.com, andrew+netdev@lunn.ch,
-	davem@davemloft.net, edumazet@google.com, pabeni@redhat.com,
-	parthiban.veerasooran@microchip.com, arend.vanspriel@broadcom.com,
-	johannes@sipsolutions.net, gregkh@linuxfoundation.org,
-	jirislaby@kernel.org, akpm@linux-foundation.org, jdelvare@suse.com,
-	linux@roeck-us.net, alexandre.belloni@bootlin.com, pgaj@cadence.com,
-	alistair@popple.id.au, linux@rasmusvillemoes.dk,
-	Laurent.pinchart@ideasonboard.com, jonas@kwiboo.se,
-	jernej.skrabec@gmail.com, kuba@kernel.org,
-	linux-kernel@vger.kernel.org, linux-fsi@lists.ozlabs.org,
-	dri-devel@lists.freedesktop.org, linux-input@vger.kernel.org,
-	linux-media@vger.kernel.org, linux-mtd@lists.infradead.org,
-	oss-drivers@corigine.com, netdev@vger.kernel.org,
-	linux-wireless@vger.kernel.org, brcm80211@lists.linux.dev,
-	brcm80211-dev-list.pdl@broadcom.com, linux-serial@vger.kernel.org,
-	bpf@vger.kernel.org, jserv@ccns.ncku.edu.tw, Frank.Li@nxp.com,
-	linux-hwmon@vger.kernel.org, linux-i3c@lists.infradead.org,
-	david.laight.linux@gmail.com, andrew.cooper3@citrix.com,
-	Yu-Chun Lin <eleanor15x@gmail.com>
-Subject: Re: [PATCH v4 00/13] Introduce parity_odd() and refactor redundant
- parity code
-Message-ID: <aAyj9SMvYrN9tXZC@visitorckw-System-Product-Name>
-References: <20250409154356.423512-1-visitorckw@gmail.com>
- <Z_amQp3gK5Dm8Qz3@yury>
- <Z/a5Qh/OeLT8JBS4@visitorckw-System-Product-Name>
- <Z_a9YpE46Xf8581l@yury>
- <e97a83a2-dabd-4dc3-b69a-840ca17d70b5@zytor.com>
- <Z/lEkDwefWvw4ZA3@visitorckw-System-Product-Name>
- <8571fd6f-4e71-4a6d-b2e8-16d9d72fa56e@zytor.com>
+	id 1uC49T-00000008iiM-3fxk
+	for linux-i3c@lists.infradead.org;
+	Mon, 05 May 2025 22:19:09 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 755D5629C6;
+	Mon,  5 May 2025 22:18:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EDFCCC4CEF1;
+	Mon,  5 May 2025 22:19:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1746483546;
+	bh=SVbdHkmnEMzlpLXw6AXLevVh4v92tupfg6nDjZAGnNo=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=r1OJrEj1rAilIPi/iDqiSxU/HwozY+CHD/LRS/sy1rQBfo1JLTIY7hwwikblUurnI
+	 wm1GRYcxn+L78qX5TKgAUxUTm7XJ9bznbIbG0p9esKBbzTzcG4Kiw8u5xJ44898A3I
+	 cyN9Q+TIo5Mpyjo53BHRcHXG/4m8De7swLgC2EDZLZ+clSR9z4rbOFf5ryNr9o+Asp
+	 V10NPffIg0I7dkeMimheRANPHrLJ+eA4IRtWWBXiT2T/PAqqLGA0RhvwmxrrXocDbl
+	 +uTE8tABw+jFutIDBc43Ft7F4FKQ8Jiux4zZJTy2Wi+vD5Quhj0ksoZaj1mLX0LvPd
+	 agsdssnweneAw==
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Cc: Stanley Chu <yschu@nuvoton.com>,
+	Frank Li <Frank.Li@nxp.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Sasha Levin <sashal@kernel.org>,
+	miquel.raynal@bootlin.com,
+	linux-i3c@lists.infradead.org,
+	imx@lists.linux.dev
+Subject: [PATCH AUTOSEL 6.14 108/642] i3c: master: svc: Fix missing STOP for master request
+Date: Mon,  5 May 2025 18:05:24 -0400
+Message-Id: <20250505221419.2672473-108-sashal@kernel.org>
+X-Mailer: git-send-email 2.39.5
+In-Reply-To: <20250505221419.2672473-1-sashal@kernel.org>
+References: <20250505221419.2672473-1-sashal@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8571fd6f-4e71-4a6d-b2e8-16d9d72fa56e@zytor.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250426_021442_804910_F291F88C 
-X-CRM114-Status: GOOD (  19.16  )
-X-Mailman-Approved-At: Thu, 15 May 2025 02:17:28 -0700
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.14.5
+X-Mailman-Approved-At: Thu, 15 May 2025 02:17:27 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,41 +79,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Apr 25, 2025 at 12:33:21PM -0700, H. Peter Anvin wrote:
-> On 4/11/25 09:34, Kuan-Wei Chiu wrote:
-> > > 
-> > > In either case, instead of packing the cascade into one function, make good
-> > > use of it.
-> > > 
-> > > In the latter case, __builtin_constant_p() isn't necessary as it puts the
-> > > onus on the architecture to separate out const and non-const cases, if it
-> > > matters -- which it doesn't if the architecture simply wants to use
-> > > __builtin_parity:
-> > > 
-> > > #define parity8(x)  ((bool) __builtin_parity((u8)(x)))
-> > > #define parity16(x) ((bool) __builtin_parity((u16)(x)))
-> > > #define parity32(x) ((bool) __builtin_parity((u32)(x)))
-> > > #define parity64(x) ((bool) __builtin_parityll((u64)(x)))
-> > > 
-> > > As stated before, I don't really see that the parity function itself would
-> > > be very suitable for a generic helper, but if it were to, then using the
-> > > "standard" macro construct for it would seem to be the better option.
-> > > 
-> > > (And I would be very much in favor of not open-coding the helper everywhere
-> > > but to macroize it; effectively creating a C++ template equivalent. It is
-> > > out of scope for this project, though.)
-> > > 
-> > IIUC, you prefer using the parity8/16/32/64() interface with
-> > __builtin_parity(), regardless of whether there are users on the hot
-> > path?
-> 
-> As a per-architecture opt-in, yes.
-> 
-I'd prefer to see Yury agree first, otherwise there's a high risk of a
-maintainer NAK after the next submission.
+From: Stanley Chu <yschu@nuvoton.com>
 
-Regards,
-Kuan-Wei
+[ Upstream commit 0430bf9bc1ac068c8b8c540eb93e5751872efc51 ]
+
+The controller driver nacked the master request but didn't emit a
+STOP to end the transaction. The driver shall refuse the unsupported
+requests and return the controller state to IDLE by emitting a STOP.
+
+Signed-off-by: Stanley Chu <yschu@nuvoton.com>
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+Link: https://lore.kernel.org/r/20250318053606.3087121-4-yschu@nuvoton.com
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/i3c/master/svc-i3c-master.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
+index 0fc03bb5d0a6e..a18fe62962b0c 100644
+--- a/drivers/i3c/master/svc-i3c-master.c
++++ b/drivers/i3c/master/svc-i3c-master.c
+@@ -551,6 +551,7 @@ static void svc_i3c_master_ibi_work(struct work_struct *work)
+ 			queue_work(master->base.wq, &master->hj_work);
+ 		break;
+ 	case SVC_I3C_MSTATUS_IBITYPE_MASTER_REQUEST:
++		svc_i3c_master_emit_stop(master);
+ 	default:
+ 		break;
+ 	}
+-- 
+2.39.5
+
 
 -- 
 linux-i3c mailing list
