@@ -4,57 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B7352C3ABC9
-	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 09:20:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1825FC54756
+	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 09:20:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PdwCpdhhcdO1kb+htCl6QPEBuNg3i0tr/Dj3Jdkbcy4=; b=mKbfQjDSKzSllt
-	IkIqDaIS1CkRYk/2g8ak7L725VYBJRA1coVzbl25Bywk6gtiv+W2TBLLbLytA9nHDXab9I3cufsIG
-	XBt/HiwA4b/q+s1lNXunkHfK98VwWRIC6DlrHxs6Z2bXs89n/CVIKj5d8hEjX97gUkBhGLrBAHsIP
-	l7jjyr0UnWO3FStjTKYwgaznCFDdrbRMvuYksZmpOul4pIUbqSzUee48YmAA/t1ws+QeA7o+Mfh+C
-	yvpXP/mhnSyahXo202GrKJiLohytOp66M/KdGKO9pvtunJvXf26A0xGfMhVmXO1h4Qp2D8mKIMFAU
-	gPQYrz9QKkjlxiU8ew6w==;
+	List-Owner; bh=LRcI+2T64OjgAMXW9YXz6GDLWUTeNixTwcay0KgWNR0=; b=C6tz+o68mzAuRc
+	+gFXoKxDWrFb+Z4XYjG+8o1Pi6Ah4iLkH4UNnO8GKqIVBJLbnBS0mCWIqzV1hvLV1UOAc+v6721oi
+	OuksIxhPVBx06HWU4xGSnNscp/0Sv9HQbkCoaMGLkE9i0g5aSMaAhkZScqyH0rHmmS7w/5DwMTBeD
+	AHoXPcVcxw5NJTxk4tjkPsdOGVFMQYBIzqxhL00YtHNVlBgtqhzrOsU7Uejo33fOmeqp5iIzlTj2j
+	35TYHuJWVsM/MCS1LVFJkUim6D/B+pow/vpr4wk4N/rrcXWBhIgnbzA7DjWwRZ0dIjiZOYpehXKeZ
+	DjFgXEKhAcC8uAVMPW6g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFUlf-000000008ZK-1fTh;
+	id 1uFUlf-000000008Zw-3UFe;
 	Thu, 15 May 2025 09:20:43 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uC49T-00000008iiM-3fxk
+	id 1uC4JD-00000008lrh-1C7E
 	for linux-i3c@lists.infradead.org;
-	Mon, 05 May 2025 22:19:09 +0000
+	Mon, 05 May 2025 22:29:11 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 755D5629C6;
-	Mon,  5 May 2025 22:18:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EDFCCC4CEF1;
-	Mon,  5 May 2025 22:19:05 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id DF1C2629C0;
+	Mon,  5 May 2025 22:28:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 83508C4CEEF;
+	Mon,  5 May 2025 22:29:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1746483546;
-	bh=SVbdHkmnEMzlpLXw6AXLevVh4v92tupfg6nDjZAGnNo=;
+	s=k20201202; t=1746484150;
+	bh=Qc6sRplHBpINBzNC6KWWgZA7v4kgorJW99xRFGHuJ8M=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=r1OJrEj1rAilIPi/iDqiSxU/HwozY+CHD/LRS/sy1rQBfo1JLTIY7hwwikblUurnI
-	 wm1GRYcxn+L78qX5TKgAUxUTm7XJ9bznbIbG0p9esKBbzTzcG4Kiw8u5xJ44898A3I
-	 cyN9Q+TIo5Mpyjo53BHRcHXG/4m8De7swLgC2EDZLZ+clSR9z4rbOFf5ryNr9o+Asp
-	 V10NPffIg0I7dkeMimheRANPHrLJ+eA4IRtWWBXiT2T/PAqqLGA0RhvwmxrrXocDbl
-	 +uTE8tABw+jFutIDBc43Ft7F4FKQ8Jiux4zZJTy2Wi+vD5Quhj0ksoZaj1mLX0LvPd
-	 agsdssnweneAw==
+	b=JGCSdMrfWcm2KZOf1gNj6FXjfigvCfmR38jiCEKvrlm79hrrLnJCmX5ctbV12nLCd
+	 AF16ZgTxVGDER6XGHM+uHk0J3NmaFEqnsfuqyF720wDGujqyVwcJz+SikPyIBkZEfm
+	 EpC+BLAYx8Rh9fr1N26QILyTUJ3aRkcW7+SE3WK6nJUPnmRwiMGSZ4PCGWUxkzvaKJ
+	 KmrIJwTIP8N/FM2RC4GkSzCc+xxipmQOVcTrqthgZyX5v32l94+A0MFaZat3L6pKAF
+	 aPjcGe4zkS/kiuWeTaXqTQ1nbrn26madsBSVpgpivFswLfdv9mTQuSdsJYlJLMhoEe
+	 qhZvuQ+1/Rw6w==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Cc: Stanley Chu <yschu@nuvoton.com>,
-	Frank Li <Frank.Li@nxp.com>,
+Cc: Frank Li <Frank.Li@nxp.com>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
 	Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Sasha Levin <sashal@kernel.org>,
-	miquel.raynal@bootlin.com,
 	linux-i3c@lists.infradead.org,
 	imx@lists.linux.dev
-Subject: [PATCH AUTOSEL 6.14 108/642] i3c: master: svc: Fix missing STOP for master request
-Date: Mon,  5 May 2025 18:05:24 -0400
-Message-Id: <20250505221419.2672473-108-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 6.14 376/642] i3c: master: svc: Flush FIFO before sending Dynamic Address Assignment(DAA)
+Date: Mon,  5 May 2025 18:09:52 -0400
+Message-Id: <20250505221419.2672473-376-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20250505221419.2672473-1-sashal@kernel.org>
 References: <20250505221419.2672473-1-sashal@kernel.org>
@@ -79,35 +78,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Stanley Chu <yschu@nuvoton.com>
+From: Frank Li <Frank.Li@nxp.com>
 
-[ Upstream commit 0430bf9bc1ac068c8b8c540eb93e5751872efc51 ]
+[ Upstream commit a892ee4cf22a50e1d6988d0464a9a421f3e5db2f ]
 
-The controller driver nacked the master request but didn't emit a
-STOP to end the transaction. The driver shall refuse the unsupported
-requests and return the controller state to IDLE by emitting a STOP.
+Ensure the FIFO is empty before issuing the DAA command to prevent
+incorrect command data from being sent. Align with other data transfers,
+such as svc_i3c_master_start_xfer_locked(), which flushes the FIFO before
+sending a command.
 
-Signed-off-by: Stanley Chu <yschu@nuvoton.com>
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
-Link: https://lore.kernel.org/r/20250318053606.3087121-4-yschu@nuvoton.com
+Signed-off-by: Frank Li <Frank.Li@nxp.com>
+Reviewed-by: Miquel Raynal <miquel.raynal@bootlin.com>
+Link: https://lore.kernel.org/r/20250129162250.3629189-1-Frank.Li@nxp.com
 Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/i3c/master/svc-i3c-master.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/i3c/master/svc-i3c-master.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-index 0fc03bb5d0a6e..a18fe62962b0c 100644
+index a18fe62962b0c..2cf2c567f8931 100644
 --- a/drivers/i3c/master/svc-i3c-master.c
 +++ b/drivers/i3c/master/svc-i3c-master.c
-@@ -551,6 +551,7 @@ static void svc_i3c_master_ibi_work(struct work_struct *work)
- 			queue_work(master->base.wq, &master->hj_work);
- 		break;
- 	case SVC_I3C_MSTATUS_IBITYPE_MASTER_REQUEST:
-+		svc_i3c_master_emit_stop(master);
- 	default:
- 		break;
- 	}
+@@ -899,6 +899,8 @@ static int svc_i3c_master_do_daa_locked(struct svc_i3c_master *master,
+ 	u32 reg;
+ 	int ret, i;
+ 
++	svc_i3c_master_flush_fifo(master);
++
+ 	while (true) {
+ 		/* clean SVC_I3C_MINT_IBIWON w1c bits */
+ 		writel(SVC_I3C_MINT_IBIWON, master->regs + SVC_I3C_MSTATUS);
 -- 
 2.39.5
 
