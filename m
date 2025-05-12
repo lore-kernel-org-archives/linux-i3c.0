@@ -4,80 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75DEFC3ABBC
-	for <linux-i3c@archiver.kernel.org>; Fri,  9 May 2025 13:21:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C7E6C3ABC3
+	for <linux-i3c@archiver.kernel.org>; Mon, 12 May 2025 10:10:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1uCZV1U2AnezodDAJZZYlmRG3ALD765sdEGX6KSWuho=; b=AcXY3tY6NSt4z2
-	XZadrgHxCYatDqMRahhbiqO9hX4wC+k3qk86tZJ539vumCvY7bECVhV1HP5FpdMFUdLfmWs2Qr3kk
-	Jzoduxr+dTEZyAUJYKFQ/3cYyeBesxVIoa8mmq8DOhsNYcrDdT8DYxfdl7qFA7lsz0aeobeYMbtzA
-	wxhXMNVCaz0EFS9S7UljPCsB5UDv+2SDgQrDE3nPeBUoepGq7zQORnuNMitdoAt+MTuPCFBJMRn3u
-	MB5JRgGIYYzEJ8JWWMmI3olHE8fS533e5hGwR7+tQlej+H6VpsUOYydxf57YS8snJ57qQP1kScfQT
-	i30F/VGazOmoclsA1Fkg==;
+	List-Owner; bh=BCdl4OAkK4XopzC0ivLJ4/FEWksjWSX6WJdfbmjDHzw=; b=DlE99NZlL14RoI
+	TH/T2edOZu1nFem8bihTOY+T3i1gongEEPA+lXTUXe+OFcNQSwxzBUpiRsJa518d+njEaVrX1ywod
+	cL6a6viJmulEFnQI8JXQeVs341WVo3t/9nOvyd9+IgQGzhDOyBPzxD4ghgkNYmzw8DWG3BvoUNe+/
+	cBOcxxtxr+eb7bSjBLlWCumbqWnAg/+Jx0AWqOXcuCLLmQlWxXOZMmT4BcopIQYtGCrA0xL84A/we
+	nRp3IP2b5p2OIFFPXnKEOcsavrtzQqJyqchjc07uvOTG1xAa1aUi0pnOHM5hyp9e6+GSxl1dz3b56
+	tMXMf2FpTPjDWqYGWGZw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uDNfa-00000003k04-0OmY;
-	Fri, 09 May 2025 13:21:42 +0000
-Received: from mgamail.intel.com ([192.198.163.10])
+	id 1uEQ7L-0000000945L-4AZz;
+	Mon, 12 May 2025 10:10:39 +0000
+Received: from relay6-d.mail.gandi.net ([2001:4b98:dc4:8::226])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uDMqo-00000003ahd-2Z9D
+	id 1uEPPW-00000008vAg-05k7
 	for linux-i3c@lists.infradead.org;
-	Fri, 09 May 2025 12:29:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1746793754; x=1778329754;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=PzYfM4U0oRLonPlgfQq8pnsotxVOcUZeYx58AFSn078=;
-  b=EuBvdW/dAc20W9ccB6mbJgWUJ2jEnNcQNzcLIDbvmpi3EJzW4dkL8I0A
-   8RFFJqdXh2Vvd2+yaJA7Tao7w4No5FjjGo8BfEbg4Z8QtCTqbhBxTArIT
-   JNtl73MVfXkqHVvKjM2BSkrA9QvdOI0RyjdnXf9VR3EYm41JvCLNoO0K/
-   dtOYRRESZeeIM5SPbEwovT36WVrNQd7nauWMdQJmXcJYcXwd+js1bGcfq
-   CejDbZL0deHBmTLQKUEJ6419WUhNVH9L/3oQb/uYaET0FoiVfohDHfi+D
-   42G4a5EEaMPAqWAbX6VqJEemneOI1Ggn6/6ttGHIbOqISPgzqNUIxm2tt
-   g==;
-X-CSE-ConnectionGUID: /nrxo7I0SsuwvTNobSgPsA==
-X-CSE-MsgGUID: 3zuCp2B6Sl6mWiYZcSeLEw==
-X-IronPort-AV: E=McAfee;i="6700,10204,11427"; a="59963905"
-X-IronPort-AV: E=Sophos;i="6.15,275,1739865600"; 
-   d="scan'208";a="59963905"
-Received: from fmviesa010.fm.intel.com ([10.60.135.150])
-  by fmvoesa104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 May 2025 05:29:13 -0700
-X-CSE-ConnectionGUID: AEAKygE/R5OtNhb1QY27qw==
-X-CSE-MsgGUID: xc5/UoSQQ/Wj9mtgwrwTYg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.15,275,1739865600"; 
-   d="scan'208";a="137101795"
-Received: from lkp-server01.sh.intel.com (HELO 1992f890471c) ([10.239.97.150])
-  by fmviesa010.fm.intel.com with ESMTP; 09 May 2025 05:29:11 -0700
-Received: from kbuild by 1992f890471c with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1uDMqi-000C4B-29;
-	Fri, 09 May 2025 12:29:08 +0000
-Date: Fri, 9 May 2025 20:28:12 +0800
-From: kernel test robot <lkp@intel.com>
-To: Aman Kumar Pandey <aman.kumarpandey@nxp.com>,
-	linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
-	alexandre.belloni@bootlin.com, krzk+dt@kernel.org, robh@kernel.org,
-	conor+dt@kernel.org, devicetree@vger.kernel.org
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	vikash.bansal@nxp.com, priyanka.jain@nxp.com,
-	shashank.rebbapragada@nxp.com, Frank.Li@nxp.com,
-	Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-Subject: Re: [PATCH v2 2/2] drivers: i3c: Add driver for NXP P3H2x4x i3c-hub
- device
-Message-ID: <202505092036.D5saUso4-lkp@intel.com>
-References: <20250508045711.2810207-2-aman.kumarpandey@nxp.com>
+	Mon, 12 May 2025 09:25:23 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id C8ED743284;
+	Mon, 12 May 2025 09:25:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1747041918;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=OLSHO2Ibs2uoIHZrl9Xn5cSfahZ7tkgcZIzEwxzVdy4=;
+	b=oM8oOPXdDFoFnYhlHrGrcIe4CG/Ex8eoF29mMpTzDa4skMFmN0wxKB9InrYu0A2XX5kISl
+	IdqwbEeqroNrcN3vwnXjqC3FdPTwcDeWfszZ2jyK6vuFvi0ySKsjFklBXL3Z85xbIRcaQz
+	9fdOPyuALkEEK0sX81UP0Fr+yWf11p0RM/95lQ8PC0UFTetPReRsHX4vzDdsAheyLjqmrg
+	gYBmJ3H06k6HsW9VAOl6DpBxf0gwr+ub8dvIe2eaWcJHrTY1ni9wpL62lxudV4RTwtaq+n
+	ZL2OmAiMPKplVLAImdwI9QqBS/D3amh9wBr6qJRJSz17oLUQZf4qTXw9flfs5g==
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+  linux-i3c@lists.infradead.org (moderated list:SILVACO I3C DUAL-ROLE
+ MASTER),  imx@lists.linux.dev (open list:SILVACO I3C DUAL-ROLE MASTER),
+  linux-kernel@vger.kernel.org (open list)
+Subject: Re: [PATCH v2 1/1] i3c: master: svc: skip address resend on repeat
+ START
+In-Reply-To: <20250429054234.4013929-1-Frank.Li@nxp.com> (Frank Li's message
+	of "Tue, 29 Apr 2025 01:42:34 -0400")
+References: <20250429054234.4013929-1-Frank.Li@nxp.com>
+User-Agent: mu4e 1.12.7; emacs 29.4
+Date: Mon, 12 May 2025 11:25:16 +0200
+Message-ID: <877c2mmb9f.fsf@bootlin.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250508045711.2810207-2-aman.kumarpandey@nxp.com>
+X-GND-State: clean
+X-GND-Score: -100
+X-GND-Cause: gggruggvucftvghtrhhoucdtuddrgeefvddrtddtgdeftddtkeelucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuifetpfffkfdpucggtfgfnhhsuhgsshgtrhhisggvnecuuegrihhlohhuthemuceftddunecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjughrpefhvfevufgjfhgffffkgggtsehttdertddtredtnecuhfhrohhmpefoihhquhgvlhcutfgrhihnrghluceomhhiqhhuvghlrdhrrgihnhgrlhessghoohhtlhhinhdrtghomheqnecuggftrfgrthhtvghrnhephfelkedvveffleeuhfeigfdvvefhgfejgffghfeiteegteeiudegfedtjeehkeefnecukfhppeeltddrkeelrdduieefrdduvdejnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehinhgvthepledtrdekledrudeifedruddvjedphhgvlhhopehlohgtrghlhhhoshhtpdhmrghilhhfrhhomhepmhhiqhhuvghlrdhrrgihnhgrlhessghoohhtlhhinhdrtghomhdpnhgspghrtghpthhtohephedprhgtphhtthhopefhrhgrnhhkrdfnihesnhigphdrtghomhdprhgtphhtthhopegrlhgvgigrnhgurhgvrdgsvghllhhonhhisegsohhothhlihhnrdgtohhmpdhrtghpthhtoheplhhinhhugidqiheftgeslhhishhtshdrihhnfhhrrgguvggrugdrohhrghdprhgtphhtthhopehimhigsehlihhsthhsrdhlihhnuhigrdguvghvpdhrtghpthhtoheplhhinhhugidqkhgvrhhnvghlsehvghgvrhdrk
+ hgvrhhnvghlrdhorhhg
+X-GND-Sasl: miquel.raynal@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250509_052914_694128_14D72454 
-X-CRM114-Status: GOOD (  11.96  )
+X-CRM114-CacheID: sfid-20250512_022522_204588_0CA8EDEF 
+X-CRM114-Status: UNSURE (   5.47  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,122 +80,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Aman,
+On 29/04/2025 at 01:42:34 -04, Frank Li <Frank.Li@nxp.com> wrote:
 
-kernel test robot noticed the following build errors:
+> According to the I3C specification, address arbitration only happens during
+> the START. Repeated START do not initiate arbitration, and In-Band
+> Interrupts (IBIs) cannot occur at this stage.
+>
+> Resending the address upon a NACK in a repeat START is therefore redundant
+> and unnecessary. Avoid redundant retries, improving efficiency and ensuring
+> protocol compliance.
+>
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> ---
 
-[auto build test ERROR on robh/for-next]
-[also build test ERROR on linus/master v6.15-rc5 next-20250508]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Aman-Kumar-Pandey/drivers-i3c-Add-driver-for-NXP-P3H2x4x-i3c-hub-device/20250508-125929
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
-patch link:    https://lore.kernel.org/r/20250508045711.2810207-2-aman.kumarpandey%40nxp.com
-patch subject: [PATCH v2 2/2] drivers: i3c: Add driver for NXP P3H2x4x i3c-hub device
-config: hexagon-allmodconfig (https://download.01.org/0day-ci/archive/20250509/202505092036.D5saUso4-lkp@intel.com/config)
-compiler: clang version 17.0.6 (https://github.com/llvm/llvm-project 6009708b4367171ccdbf4b5905cb6a803753fe18)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250509/202505092036.D5saUso4-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202505092036.D5saUso4-lkp@intel.com/
-
-All errors (new ones prefixed by >>):
-
->> drivers/i3c/hub/p3h2840_i3c_hub_common.c:125:12: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-     125 |                 value |= P3H2x4x_TP0145_PULLUP_CONF(p3h2x4x_pullup_dt_to_reg
-         |                          ^
-   drivers/i3c/hub/p3h2840_i3c_hub.h:93:3: note: expanded from macro 'P3H2x4x_TP0145_PULLUP_CONF'
-      93 |                 FIELD_PREP(P3H2x4x_TP0145_PULLUP_CONF_MASK, x)
-         |                 ^
-   drivers/i3c/hub/p3h2840_i3c_hub_common.c:131:12: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-     131 |                 value |= P3H2x4x_TP2367_PULLUP_CONF(p3h2x4x_pullup_dt_to_reg
-         |                          ^
-   drivers/i3c/hub/p3h2840_i3c_hub.h:96:3: note: expanded from macro 'P3H2x4x_TP2367_PULLUP_CONF'
-      96 |                 FIELD_PREP(P3H2x4x_TP2367_PULLUP_CONF_MASK, x)
-         |                 ^
-   drivers/i3c/hub/p3h2840_i3c_hub_common.c:168:9: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-     168 |                 val = P3H2x4x_CP0_VCCIO_LDO_VOLTAGE(p3h2x4x_ldo_dt_to_reg
-         |                       ^
-   drivers/i3c/hub/p3h2840_i3c_hub.h:68:3: note: expanded from macro 'P3H2x4x_CP0_VCCIO_LDO_VOLTAGE'
-      68 |                 FIELD_PREP(P3H2x4x_CP0_VCCIO_LDO_VOLTAGE_MASK, x)
-         |                 ^
-   drivers/i3c/hub/p3h2840_i3c_hub_common.c:178:9: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-     178 |                 val = P3H2x4x_CP1_VCCIO_LDO_VOLTAGE(p3h2x4x_ldo_dt_to_reg
-         |                       ^
-   drivers/i3c/hub/p3h2840_i3c_hub.h:71:3: note: expanded from macro 'P3H2x4x_CP1_VCCIO_LDO_VOLTAGE'
-      71 |                 FIELD_PREP(P3H2x4x_CP1_VCCIO_LDO_VOLTAGE_MASK, x)
-         |                 ^
-   drivers/i3c/hub/p3h2840_i3c_hub_common.c:188:9: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-     188 |                 val = P3H2x4x_TP0145_VCCIO_LDO_VOLTAGE(p3h2x4x_ldo_dt_to_reg
-         |                       ^
-   drivers/i3c/hub/p3h2840_i3c_hub.h:74:3: note: expanded from macro 'P3H2x4x_TP0145_VCCIO_LDO_VOLTAGE'
-      74 |                 FIELD_PREP(P3H2x4x_TP0145_VCCIO_LDO_VOLTAGE_MASK, x)
-         |                 ^
-   drivers/i3c/hub/p3h2840_i3c_hub_common.c:198:9: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-     198 |                 val = P3H2x4x_TP2367_VCCIO_LDO_VOLTAGE(p3h2x4x_ldo_dt_to_reg
-         |                       ^
-   drivers/i3c/hub/p3h2840_i3c_hub.h:77:3: note: expanded from macro 'P3H2x4x_TP2367_VCCIO_LDO_VOLTAGE'
-      77 |                 FIELD_PREP(P3H2x4x_TP2367_VCCIO_LDO_VOLTAGE_MASK, x)
-         |                 ^
-   drivers/i3c/hub/p3h2840_i3c_hub_common.c:246:9: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-     246 |                 val = P3H2x4x_CP0_IO_STRENGTH(p3h2x4x_io_strength_dt_to_reg
-         |                       ^
-   drivers/i3c/hub/p3h2840_i3c_hub.h:59:3: note: expanded from macro 'P3H2x4x_CP0_IO_STRENGTH'
-      59 |                 FIELD_PREP(P3H2x4x_CP0_IO_STRENGTH_MASK, x)
-         |                 ^
-   drivers/i3c/hub/p3h2840_i3c_hub_common.c:252:9: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-     252 |                 val = P3H2x4x_CP1_IO_STRENGTH(p3h2x4x_io_strength_dt_to_reg
-         |                       ^
-   drivers/i3c/hub/p3h2840_i3c_hub.h:62:3: note: expanded from macro 'P3H2x4x_CP1_IO_STRENGTH'
-      62 |                 FIELD_PREP(P3H2x4x_CP1_IO_STRENGTH_MASK, x)
-         |                 ^
-   drivers/i3c/hub/p3h2840_i3c_hub_common.c:258:9: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-     258 |                 val = P3H2x4x_TP0145_IO_STRENGTH(p3h2x4x_io_strength_dt_to_reg
-         |                       ^
-   drivers/i3c/hub/p3h2840_i3c_hub.h:53:3: note: expanded from macro 'P3H2x4x_TP0145_IO_STRENGTH'
-      53 |                 FIELD_PREP(P3H2x4x_TP0145_IO_STRENGTH_MASK, x)
-         |                 ^
-   drivers/i3c/hub/p3h2840_i3c_hub_common.c:264:9: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-     264 |                 val = P3H2x4x_TP2367_IO_STRENGTH(p3h2x4x_io_strength_dt_to_reg
-         |                       ^
-   drivers/i3c/hub/p3h2840_i3c_hub.h:56:3: note: expanded from macro 'P3H2x4x_TP2367_IO_STRENGTH'
-      56 |                 FIELD_PREP(P3H2x4x_TP2367_IO_STRENGTH_MASK, x)
-         |                 ^
-   10 errors generated.
-
-
-vim +/FIELD_PREP +125 drivers/i3c/hub/p3h2840_i3c_hub_common.c
-
-   117	
-   118	static int p3h2x4x_configure_pullup(struct device *dev)
-   119	{
-   120		struct p3h2x4x *priv = dev_get_drvdata(dev);
-   121		u8 mask = 0, value = 0;
-   122	
-   123		if (priv->settings.tp0145_pullup != P3H2x4x_TP_PULLUP_NOT_SET) {
-   124			mask |= P3H2x4x_TP0145_PULLUP_CONF_MASK;
- > 125			value |= P3H2x4x_TP0145_PULLUP_CONF(p3h2x4x_pullup_dt_to_reg
-   126							    (priv->settings.tp0145_pullup));
-   127		}
-   128	
-   129		if (priv->settings.tp2367_pullup != P3H2x4x_TP_PULLUP_NOT_SET) {
-   130			mask |= P3H2x4x_TP2367_PULLUP_CONF_MASK;
-   131			value |= P3H2x4x_TP2367_PULLUP_CONF(p3h2x4x_pullup_dt_to_reg
-   132							    (priv->settings.tp2367_pullup));
-   133		}
-   134	
-   135		return regmap_update_bits(priv->regmap, P3H2x4x_LDO_AND_PULLUP_CONF,
-   136					  mask, value);
-   137	}
-   138	
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Reviewed-by: Miquel Raynal <miquel.raynal@bootlin.com>
 
 -- 
 linux-i3c mailing list
