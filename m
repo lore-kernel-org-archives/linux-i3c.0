@@ -4,46 +4,46 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E8AFC3ABDE
-	for <linux-i3c@archiver.kernel.org>; Wed, 14 May 2025 12:20:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E52A4C3ABDF
+	for <linux-i3c@archiver.kernel.org>; Wed, 14 May 2025 12:20:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wclVQdCBZrGPjA6po8hH+pPPfWynT1MtVOtynz6p6kw=; b=L3dApN2FoT94LP
-	U/tb3/5jQ/QIYa3UCg7w1vZQhB+M4u4sVcHm5UatcEXoMVmajVaqq24bBt3wUhXoGm8YaldSpUAgh
-	TYngGDhwMm8WVibJiaqeDUFXp0+2M37Qv1OmKZOzSw/X14FxTzJDybNJyBb8w7JEq7KnYaLkIqHhp
-	ul+1act8vNm7s6/B5vtK/xagMVO7n9CYvtXDEErE0Hwe6haoGLfDDBsdtA+zHZVKzTTyJZ+jvGCYV
-	61GpfW7Ae2Cv74SM6lPsq4k+UpgGTUm07m5qo5vXpK8INpR/7HTJn3X4X3RvALdgNiY2wUbFuo/X3
-	EuKCIslT7aiaNKaJG+AQ==;
+	List-Owner; bh=CiEI+CyCgAHjZpopCAKoiD2JWTf2umMxrY7MeGFzM98=; b=t8Bis5CUWHMnFM
+	g42HJSCxzpESbPiG5XPOLBLOZviJUgSBsTE3hI6ClcsRTwTIYZycyBwOILN2TOEflqvZ9H49tMg7Y
+	CoZqAdfd/xx+DxKPW1zUtRXcyfFdkEs33x6YaZslQylhTt01X9nDCEwhlN4kdWLCiSG/Jk8DhrEij
+	6To8Nj2yLYftYczYNG/ask6rVsFtcN3x9zbv3VJgS5aL7UHjsQ+0n1G1N64DniUVMuF02l43iergS
+	0ViUQQgcI2JnMQ/04x1/1Fz/6TH6RXDqTUiKm40RRPn+mzu8OdFQCPVC+m1xIj5/sKaKyIlW6xrgf
+	lXckJBQgel1N9ELrn0dw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFB5k-0000000F3WB-0Ccm;
-	Wed, 14 May 2025 12:20:08 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1uFB5m-0000000F3ac-25XS;
+	Wed, 14 May 2025 12:20:10 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uF94Y-0000000Ekvm-32M1
+	id 1uF9CO-0000000Elxa-0yV5
 	for linux-i3c@lists.infradead.org;
-	Wed, 14 May 2025 10:10:46 +0000
+	Wed, 14 May 2025 10:18:53 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 256E960008;
-	Wed, 14 May 2025 10:10:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 28AD0C4CEE9;
-	Wed, 14 May 2025 10:10:12 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 1C66D5C660C;
+	Wed, 14 May 2025 10:16:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5C867C4CEE9;
+	Wed, 14 May 2025 10:18:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1747217415;
-	bh=Rnp4YFwxvkQA1GE+Gc5m7dCLgWzNM8KPkmN7EVB1ut8=;
+	s=k20201202; t=1747217931;
+	bh=ozqOihwEm/L/AqRHw/cHmpHz1o2exQrXdOlOljcsmRc=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=K0oxu1o4qKpgt9uIubVnm+1eo4YGAql5YLMbzrswl7JBo8JMQFWTD0nT4HJXDKnXf
-	 BdXkFyKEIGgQrgryALKU7HfyGnnpVP1bPehV24KDVGnS6uFXCfjTb2BtZLtX2nw/GU
-	 VD7W3dwd/nYOiASZOqEU8ShIajVVq4bZfeYZ8lP/MAO/vBhnUPpBl414RlwUzAphNe
-	 a1gVL+3KKN7ojRSN7eItovfMJt1Ho47PFAEsW/s4rp+a4yO6VEyr2VILVzvOuHz0I5
-	 9wefl0gAwYO8x0lBmD+lcq/0rQHcSlO9RS4uPN6YRPfFEJLMDG4FYtpbXPZY8J/AGC
-	 zwRtIdQIrwJPQ==
-Message-ID: <ef92c390-d136-46b4-8219-294c449e4092@kernel.org>
-Date: Wed, 14 May 2025 12:10:11 +0200
+	b=TaGRya/5Uo8oiq90snReL0/kSyCzQUXQhFDH7FNsrg2Xrpiac8AdBvuV1MY0jdeEU
+	 O6AtzwujXA4xr1PWoWkZ5TVn1e6BrhAGf03zLGRJFn4zPPFB1F40XvvBP0MNZylNak
+	 Ec8niYdbhfr+CYnMMKcP0SzS/xT04yU5eXP6ObBHuvBy7NHGOLsIWZFfbcTyWiRrpP
+	 MVlsKrZOcjjrt99nJys21ot0Yt+bqSTR1RQ7CjOI5W8CV/huZ5HFRfTHOafq+AWmO7
+	 bEiVOq9MNhpY3LKP9LaK0m7bXzDchyV/L2ee6a0nsRT0Hh8owU2S0zukRWC6wxvFvd
+	 i7edmsrUiw/yQ==
+Message-ID: <18d6951a-860e-4479-837e-9edc90adeaea@kernel.org>
+Date: Wed, 14 May 2025 12:18:46 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [EXT] Re: [PATCH v2 1/2] dt-bindings: i3c: Add NXP P3H2x4x
@@ -108,6 +108,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
 In-Reply-To: <GVXPR04MB9778335A5DFAB37CC8D011FC9997A@GVXPR04MB9778.eurprd04.prod.outlook.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250514_031852_389430_DF53E359 
+X-CRM114-Status: UNSURE (   5.39  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -125,86 +129,13 @@ Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 On 12/05/2025 13:45, Aman Kumar Pandey wrote:
->>>
->>> Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
->>> Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
->>> ---
->>> V1 -> V2: Cleaned up coding style and addressed review comments
->>> ---
->>>  .../bindings/i3c/p3h2840-i3c-hub.yaml         | 332 ++++++++++++++++++
->>
->> Not much improved. I have doubts that you really looked at other bindings.
->>
->> Filename matching compatible.
->>
->>
-> 
-> Thanks for reviewing the patch.
-> There is no existing entry like this one. It is the first device tree entry for any i3c target device being added to Linux upstream. 
-> For I3C target device, compatible is not required as per i3c.yml. I am adding compatible for backward compatibility with i2c binding ( i3c target device have backward compatibility). 
-> Should I use compatible matching filename in this case ?
-
-Do you have compatible here? Yes, you have, so I do not get what is
-unclear in my comment. Rename the binding to match the compatible, which
-you have here.
-
-
-> 
->>>  MAINTAINERS                                   |   8 +
->>>  2 files changed, 340 insertions(+)
->  
->  
->>> +
->>> +properties:
->>> +  $nodename:
->>> +    pattern: "^hub@[@.*]+,[0-9a-f]+$"
->>
->> Drop
->>
-> 
-> Sorry, did not understand your point. Could you please give some clarification ?
-
-Drop this nodename. Remove it.
-
-> 
->>> +
-> 
->>> +
->>> +  cp0-ldo-enable:
->>> +    type: boolean
->>> +    description:
->>> +      Enables the on-die LDO for controller Port 0.
->>> +
->>> +  cp1-ldo-enable:
->>> +    type: boolean
->>> +    description:
->>> +      Enables the on-die LDO for controller Port 1.
->>> +
->>> +  tp0145-ldo-enable:
->>> +    type: boolean
->>> +    description:
->>> +      Enables the on-die LDO for target ports 0/1/4/5.
->>> +
->>> +  tp2367-ldo-enable:
->>> +    type: boolean
->>> +    description:
->>> +      Enables the on-die LDO for target ports 2/3/6/7.
->>> +
->>
->> NAK for all above properties.
 >>
 > 
 > These are not vender specific properties. all these properties are as per i3c hub specification.
 >  What should I change for above properties ?
 
-
-What do they represent? Regulators? Why would you add custom properties
-for controlling regulators? Why would you enable LDOs for ports which
-have nothing connected? Why would you not enable LDOs for ports which
-have something there? Why these are not properties of the ports?
-
-So many questions.
-
+BTW, if this was I3C spec, then I would also expect all of such
+spec-related-properties to be in shared schema.
 
 Best regards,
 Krzysztof
