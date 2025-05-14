@@ -4,156 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50951C3ABC3
-	for <linux-i3c@archiver.kernel.org>; Wed, 14 May 2025 02:04:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0789DC3ABCC
+	for <linux-i3c@archiver.kernel.org>; Wed, 14 May 2025 12:20:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ynJ1pEqlwx3CSOdeZNTMW6MUwK8Hhzzh3V08qSsJx+0=; b=wYaEP+fVCNKExB
-	Hf3a+mNsBvmqpCTQet1smYIpoMdy12emmjJL+g3jUGAxAJNU7RQdVnXlpgCqrjr0HeAcv3RJH2EnL
-	bUtqHCtO0UmeWfOKES8ax/+fwZnovdH0xEb4842idHpERo5zLhVdw0FSxpwnSpNYgWxwftdU7vXF8
-	p+liCpbwuqlauGTFhy3jU8mcm8OF3i7A5SnQn2ysdkZX8XByhYANnOh+O3G+UgizTBfrnNVK7WLah
-	Wn1vhslmHmhT2BOPcW5ByynBDvlMLEF8DJe+1pvJ6RPwXhPaWoQ/4qkSsSPe9qZlW5Byjb7O/tNhU
-	GWPPsE/r+urMhgsdDhyQ==;
+	List-Owner; bh=izJrtGG5MrHFVDkunnaq7Ce7tmV2vy8BdrKAssfYAMA=; b=L1iKuMvzzNrqDu
+	ta6GybOyYw8xr/K4lutDNZ0/I0yj4wGXyq1mKp5BGQU7ZS4fmFNuVOmq2Okyqhkq93Cmb+NJ3WfsP
+	Cfm+VXe5wjJ8rqNRRQiVZHAQtorWTUI7B9c6Y9itHkN0ITGbvFzvOZ2OIEc3KYp2I0kY5V7nMHkWL
+	UzB9I+FRQbsKZKT/et0mhq3iyCwTBRx6lwtsQMD3x/zYKD71HLm5JYWqf+fS0BhL/nZ44lLc4hmPA
+	pkP1oZfOlJxxGQ5KjLBoHwawX/TWAJ6fBSEt9SFydGG433Bn65gwtrIQHmy8wgt9WDtedTGiXaZ6T
+	JSIwN04BzeLvNevfA7iw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uF1U8-0000000Dsmv-41TR;
-	Wed, 14 May 2025 02:04:40 +0000
-Received: from mail-vi1eur05on2060b.outbound.protection.outlook.com ([2a01:111:f403:2613::60b] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1uFB5j-0000000F3VP-2gCW;
+	Wed, 14 May 2025 12:20:07 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uF1U7-0000000Dsm4-0MtS;
-	Wed, 14 May 2025 02:04:40 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=l00rpWkdU9klu5tOT/6AgkAu1q8jwXnYU3jakKAj4E4EbD4NY4arAuV1mQ8OcsDO5CJmp+YJ5e/VTfb1QfD9tVJz7KGZ9xo50+yxQxAAsYMiQlyfT3RyZl1RqyCivcKlb5AONuHAasgXar4+VxLkF7vNBEchHSxtfPK4lwj0bksmxK3DnskcbYtLYzYagPXI8w4jNXUGwzyG3LDdmLebJidJlYskMeJayABTKIOivyStQzEBUMOIze5pJxYk6XHUoXJnG8PQA8xOt8ptx+ftKzHEo1KK8XcoWOtSbRpp5eCa/ocPnYqZlyG+B72V33OcAqnzd0PIcETR9r/36GU7sA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=eDSfDllUZjBzghwvBeGyRcXT7GI1SrTu2v2BmM8Mmxo=;
- b=ZOTpvY0I7FCJ52m7ei6p0A0Nh9FeakS5Y11+swjeRK2pU+d1T9bowmOEz3nuTJocn4+q9MhiUjAZDZ68kxjnAShKmOyb3hvN9IUnphGgaQ9LA8+1kqEr1/w4IygRO/7cWP7KsTFAX+XoZqzlL8R5iCZNDtUDAmRtyju04+03P+EaNXO1gMF/rk9O2BrLWjE0ZtqBMd0eImuPTv0dUOQXAb26TIp62pPquVqYtmh4N+GFfTJaxnR4jEPd4x/2/DT7LqiXLrYfQzCJTe2PNabPyWqMiYMR/H2RHb+E1pDVn5gVv4zGbGxRRWb48MyGi1e3/T/deCQR6M0nsoAk/Le+xg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=eDSfDllUZjBzghwvBeGyRcXT7GI1SrTu2v2BmM8Mmxo=;
- b=Br6Q/J/UHSNijZUtn7pvxvh51+BJNTwYqE9wvV0bPPu7hrHev/eazY/ektjDX9ianevExTTmZEH3h/GZD6b0OpBTOOZhF4Z5E0OlnPtxPcZpuf/oG2fYun4RDpvvQoHOcZbCShQDkMPszXvJm/DwoZuHdp5wgDmtxcN436EAsHuV2NuLC/T7kIei2fjEWad6sO5jajZtgMvjKapQe3mjYBF27CYDLnyjF9H2SY8wrIFiRY7H5RBYIs7S5XReH917ylpeyQW/2u4xjQkGSBLaIbp3T5Ok9ZXk3yhFBqIdIHuIR6cwQpt2etRhYmuD8kmbHZyR2tCzZWM39pPBrfv1FA==
-Received: from VI2PR04MB11147.eurprd04.prod.outlook.com
- (2603:10a6:800:293::14) by AS5PR04MB9754.eurprd04.prod.outlook.com
- (2603:10a6:20b:654::9) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8722.31; Wed, 14 May
- 2025 02:04:30 +0000
-Received: from VI2PR04MB11147.eurprd04.prod.outlook.com
- ([fe80::75ad:fac7:cfe7:b687]) by VI2PR04MB11147.eurprd04.prod.outlook.com
- ([fe80::75ad:fac7:cfe7:b687%6]) with mapi id 15.20.8722.027; Wed, 14 May 2025
- 02:04:30 +0000
-From: Carlos Song <carlos.song@nxp.com>
-To: Carlos Song <carlos.song@nxp.com>, "miquel.raynal@bootlin.com"
-	<miquel.raynal@bootlin.com>, Frank Li <frank.li@nxp.com>,
-	"alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
-	"robh@kernel.org" <robh@kernel.org>, "krzk+dt@kernel.org"
-	<krzk+dt@kernel.org>, "conor+dt@kernel.org" <conor+dt@kernel.org>,
-	"shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
-	<s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
-	"festevam@gmail.com" <festevam@gmail.com>, "conor.culhane@silvaco.com"
-	<conor.culhane@silvaco.com>
-CC: "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
-	"imx@lists.linux.dev" <imx@lists.linux.dev>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
-	<linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH V4 3/3] arm64: dts: imx95: correct i3c node in imx95
-Thread-Topic: [PATCH V4 3/3] arm64: dts: imx95: correct i3c node in imx95
-Thread-Index: AQHbt011JflTfXfu/0edJCBSHAtQ3LPRem5Q
-Date: Wed, 14 May 2025 02:04:29 +0000
-Message-ID: <VI2PR04MB11147377F1A706A4676D29CFFE891A@VI2PR04MB11147.eurprd04.prod.outlook.com>
-References: <20250427083230.3325700-1-carlos.song@nxp.com>
- <20250427083230.3325700-4-carlos.song@nxp.com>
-In-Reply-To: <20250427083230.3325700-4-carlos.song@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: VI2PR04MB11147:EE_|AS5PR04MB9754:EE_
-x-ms-office365-filtering-correlation-id: c0b5f01f-5655-4a53-7039-08dd928ba98c
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|366016|376014|7416014|1800799024|38070700018|7053199007|921020;
-x-microsoft-antispam-message-info: =?us-ascii?Q?bwc+tRV1vu8hN56V+QYdYjeg3zySREiHMEDNoCwvpVJ2+q+LeOx4ZtGOH9jF?=
- =?us-ascii?Q?y8kdW0R82rgjr1GQtCMcReArUoCUyZ/TB3PNujxC34K8tmKm3KrzCHbE1+xf?=
- =?us-ascii?Q?h9lngPBLF/YdZ8671FNfGCOG5jQgYlAsBUmbqo0jVR5rSt7XZhX5CIkwr91Z?=
- =?us-ascii?Q?Uo62LIr6mY+qsAxdRm+/t4bC9oSgEgECED7b783vuXc4lEIWCmPqyxiHwhey?=
- =?us-ascii?Q?Kext0zw6KL+sce67ZHq5xP/C3OKPsfLc/Q5kGta1LptEqVFSwMtUJqqyunCh?=
- =?us-ascii?Q?BJCcMi9nzf7rFIV3l41wtHgXuS97P1ZXxrPt/JKirOiz5ef/11Q2T9G43W8W?=
- =?us-ascii?Q?etOSPdhIJ0xUKVl1s92CPUjg23Ed8qGCPiAhOhdJYJkFNeX8tOlHr/cFzFjl?=
- =?us-ascii?Q?9RleGQfMUGZ9izOwlsfwcBdAbtPZf2hIgt1FI7WwUNptgJ4a6UAtl485GYnn?=
- =?us-ascii?Q?SO49efjjLlIk5P57ZhQCM5xb9/0Pn6fIezqYzyf/CMyb158SRAVSFe3XdPCi?=
- =?us-ascii?Q?wv0QSokUZKhH0xAyE1vTna67ZVP526L2p4yoT/sCxtcaDnT7NrAicRugUPJk?=
- =?us-ascii?Q?VzEy0hqY062ie4n25Cpn2qDNzJI8woA4wmEz/uVM9Rc7NoZVnSlk+JpzZUpK?=
- =?us-ascii?Q?LtdiRnRH7yb0I9QLVmXkUOUelq+wJKpdOMcEe4TH8bDEQUmB6UMaGEkQV3xT?=
- =?us-ascii?Q?dyGeXcidlVlpbn4Ybu3vT1ggG0Kk782EZ6VY5tsMg2zjtRsU2pU5TQfCDxH5?=
- =?us-ascii?Q?DrDO2Lr0cihFKDSiLnLQXjzEvaMSVujipiINRPDJgxnNfj0N6r7eZT29vyz/?=
- =?us-ascii?Q?w8a21ZF7MiyTDvbGMqyNOgqHZNJijAGgTU7KAJefwBQcigABF//Wlu4zcRFE?=
- =?us-ascii?Q?I3MiwbAY/b7LG2axNP1dWXG0Im74fNVbHGsJAiQZmN7pMwhzqMUS/KZRJFEu?=
- =?us-ascii?Q?uwnQN5zHjp1Hw/0Y0QCnFagvsPONRV3pyowWhbRSLrQRUPSRCI/MT0GQRtGK?=
- =?us-ascii?Q?a+9VPp0OlUE70jVf0g6Sr7oTOg03cv1qIMEtYFik88cKyPDa+ywwgV92BIPP?=
- =?us-ascii?Q?jEjwgWH9Sgu3y7GMyxbeQtqmSXEjoWDhTtCCxhPy6uHb5k781x6afmfBBHCt?=
- =?us-ascii?Q?w2swV3A0vP6nrOfGELfA7WF07MzFVnZgNlLU8Sr7WGN2vXDbP13sKybSmkXc?=
- =?us-ascii?Q?e8w5E6tng0RoOMvVmzro2CherKQIun/jdMyna132jm6zCzZJhFcmg+PUZ9jx?=
- =?us-ascii?Q?0Undb9szuxLYFThu41edNBxZvtkXB5UEajBQ2UFbupsKoYe5fliSu0gNt0et?=
- =?us-ascii?Q?ftp3612P+ph2mC/mb6s/hi8J2/UIa4safy+Wjq5/to8MnhWVtGufkDG39V3a?=
- =?us-ascii?Q?gYscIbxyJ/uOsqpvjP/4i0H4KneXyOEb+hRpObby90JSjjk1Ukkfnu/9OCQJ?=
- =?us-ascii?Q?1tpLv12znOOcJOfAn4IulMQgljXnRTF/F5E3I1wB6xSaLIvC8Vw42MU/hrWX?=
- =?us-ascii?Q?mNfPGXtCxHqaSC4=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:VI2PR04MB11147.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(7416014)(1800799024)(38070700018)(7053199007)(921020);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?ZGWx/BIwzOJLn5TX8TEIP0rdQS2oI9bUlLB2hSdgWQ/WvUF8LDKMKsZAePLz?=
- =?us-ascii?Q?mGIGGQvWKmmGMq28tjU8ud1yDwRW1Oh8JjB3EL8x8ytrhAvjp/DGUmNj9DEZ?=
- =?us-ascii?Q?GdMvHfRkxTiNIstbuzkmtZiRH8V5ILbDlMrx0KcDaG6XjSM3zzj6e1/zkpRg?=
- =?us-ascii?Q?iio+lc9/Fsm8IJUgrODYPPop3nlzUqmYtRLN7mrTnANT/Df5gMWuSB+08Sh8?=
- =?us-ascii?Q?MmDyzgVfvjiBHzmDqNPp5KpgZX50KjXDmDTTlAuh9XCksbwZFSDBTQfEfdWP?=
- =?us-ascii?Q?lSQQPHUMr4APo1QopWCmPS/5Zo+E+Oeon16EvjXVxwDeuK+lz9ORohzjSaOd?=
- =?us-ascii?Q?NrKWO22WtJFXn9P4AOE5eTkBjKXApPlGwAfQ1Pr7IlD6rkvcZIVgISbe19aM?=
- =?us-ascii?Q?YGqhvi2E3fsCuZQxi4x515OblUjuuMLHnCxCq//X/0DPZASz5w0/M6eyOfzk?=
- =?us-ascii?Q?LTvZVeeoRnYj/F2EmG5gAwn1Y+mND31fbPL7F9D5nzKcwgYIh3kokLR5MrGJ?=
- =?us-ascii?Q?TipLSbgUCm/Emb2bmKBhs10HtFeMSoOj3L4UvUsX9OyBIH0vEwsqZdWWwJp4?=
- =?us-ascii?Q?e4NQoSfHnrj1YrhyqhOBpUpem8wvA2IXVp9/8hT93Kgqqpr9hXwaAL3lQG2R?=
- =?us-ascii?Q?NBXuaXJ90SrnPMW9NVec+bHLJnkruyDIm//ifsjTXbBJl3HA8H1/YXiS7Ayf?=
- =?us-ascii?Q?RikoV0mUJTArBvsSv7fiFFWE3+1wgPM1rI78rLptXJ4J/3gxEPr07QPwZThm?=
- =?us-ascii?Q?G8MtIFxid6FZaP1r0iDBs6yAxRbZ1mwez6xKaO4ugQ6R7WqVky4BfT5G9MTP?=
- =?us-ascii?Q?2/HsHEtb0WUlH0k6WLG+BQoOd+0tGN+ezUsuWAn9YNbFjovoz/HErxyogz3K?=
- =?us-ascii?Q?YG7P8KZYaAV5lLDk2cs2PSJAXeRWYoCw0ykBJi4/GzGt4bCDtqh205mOZjaw?=
- =?us-ascii?Q?2qCR7MbeeK3EJW0xGNOI1WBf6N4AP24pox70/jFRXtfWEAu3UbdY1vm2RSrT?=
- =?us-ascii?Q?/e21CFjCp4tk0a8H5oY721ythLod8WTdhEcpoQwCKwSl1JXyi0rZWR+x7fD0?=
- =?us-ascii?Q?OINZi9BArwju5o+ze/v+pZ5RLdXQ4sJFVCfH0mFvc0bz2zoT30OMziiNRK0O?=
- =?us-ascii?Q?KV1nI9l1Lahqn1p7qJQ7BMgEmvEU9fmKW5YHNpSBp8JfLHhpHsw6WA/7/Ton?=
- =?us-ascii?Q?VZYChNqtQpbjeO/Ka384jDKpaYFdyu4tZl7TV9M0MKdy+qUnJfL6pEDE9O05?=
- =?us-ascii?Q?yKfGei4wyJAYVSTyT6H+Oa1DvlmeiMLF1Lp2v9sgmNqbzSi4HgY5OjwW52fh?=
- =?us-ascii?Q?GZ2JfzvytqHKVxyI3rCi/rvOwAGOcYT5JgU/hv/1DJVZQuB8kjY4Cb5PHBqv?=
- =?us-ascii?Q?cyrWXcd4fjVkiVsPhrOx9o5QNfAtdhXNEDimJJaAmbmddH0+tMgWG7Pgearj?=
- =?us-ascii?Q?BShQUJoPhr4bao4l6T/6U6CCoecll52LoMdX57XE3fHUV0W1piUH+dWHs2dN?=
- =?us-ascii?Q?50s+Uy3hARk2Br5pqSHqawhNZ1pjW9MLTnSu+9sFD5W+M1v8HHmtE8FgFjx8?=
- =?us-ascii?Q?B6B5sARRVen5utoWXzBnHPKY6HlhSPN+fp0oXswW?=
+	id 1uF8zH-0000000Ekey-1j2A
+	for linux-i3c@lists.infradead.org;
+	Wed, 14 May 2025 10:05:19 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id CA2A560008;
+	Wed, 14 May 2025 10:05:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B8773C4CEE9;
+	Wed, 14 May 2025 10:05:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1747217118;
+	bh=kITsxbCJWQENOnKhbH75PkR8+Js5zmGnIQSaxyrbZS0=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=bhkJtu/YUchVVSclF2fE1TtYPbybleNNZtHAQ9hQchmLkYcIAALhCsZpL/r//HDdL
+	 QH9dTU3Lrur+qAs3383SfJ+OmbKuskTBOCiqu4dntYhSCaSK712Zynad0WLzS4kxWF
+	 jJulO6hkxCA4YLORUwlug00FJP2KkSZzrlqysKilUPJSKdJq30/s/sbLQXfS3Wn3xw
+	 xAEWMmAsZbdJTuN0fCSmo3gKWdPCBSzEipuD+UlYP3bWCvxpFMAT9k1ebgrtP0ql82
+	 LFkGT8k4E/cxXp+Hwo9iSBes4PacHK2Tqv3hrJJlq6AVYxoZwMrGVvUFQ5u/ng6Fnb
+	 96zGN9qJrFL7w==
+Message-ID: <e4317fef-c4e9-405c-9bcb-4d5447dd8367@kernel.org>
+Date: Wed, 14 May 2025 12:05:14 +0200
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: VI2PR04MB11147.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c0b5f01f-5655-4a53-7039-08dd928ba98c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 14 May 2025 02:04:29.8678
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: ldTaNFSnZfD9s45pXtfoZyL+XSAlmrcwK6rpQD4a8tllyMDBieuIaqxlk+fbDW9KGl54egGvB3bpPOTZRAVBhg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS5PR04MB9754
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250513_190439_153207_8759621B 
-X-CRM114-Status: GOOD (  19.04  )
+User-Agent: Mozilla Thunderbird
+Subject: Re: [EXT] Re: [PATCH v2 2/2] drivers: i3c: Add driver for NXP P3H2x4x
+ i3c-hub device
+To: Aman Kumar Pandey <aman.kumarpandey@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
+ "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
+ "krzk+dt@kernel.org" <krzk+dt@kernel.org>, "robh@kernel.org"
+ <robh@kernel.org>, "conor+dt@kernel.org" <conor+dt@kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>
+Cc: Vikash Bansal <vikash.bansal@nxp.com>,
+ Priyanka Jain <priyanka.jain@nxp.com>,
+ Shashank Rebbapragada <shashank.rebbapragada@nxp.com>,
+ Frank Li <frank.li@nxp.com>
+References: <20250508045711.2810207-1-aman.kumarpandey@nxp.com>
+ <20250508045711.2810207-2-aman.kumarpandey@nxp.com>
+ <b46e3766-75b7-4635-a505-3039e4394f07@kernel.org>
+ <GVXPR04MB9778CD46464F6BEE25D5D0529997A@GVXPR04MB9778.eurprd04.prod.outlook.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <GVXPR04MB9778CD46464F6BEE25D5D0529997A@GVXPR04MB9778.eurprd04.prod.outlook.com>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -170,99 +125,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Ping to avoid missing..
+On 12/05/2025 13:45, Aman Kumar Pandey wrote:
+> 
+>> -----Original Message-----
+>> From: Krzysztof Kozlowski <krzk@kernel.org>
+>> Sent: Thursday, May 8, 2025 11:40 AM
+>> To: Aman Kumar Pandey <aman.kumarpandey@nxp.com>; linux-
+>> kernel@vger.kernel.org; linux-i3c@lists.infradead.org;
+>> alexandre.belloni@bootlin.com; krzk+dt@kernel.org; robh@kernel.org;
+>> conor+dt@kernel.org; devicetree@vger.kernel.org
+>> Cc: Vikash Bansal <vikash.bansal@nxp.com>; Priyanka Jain
+>> <priyanka.jain@nxp.com>; Shashank Rebbapragada
+>> <shashank.rebbapragada@nxp.com>; Frank Li <frank.li@nxp.com>
+>> Subject: [EXT] Re: [PATCH v2 2/2] drivers: i3c: Add driver for NXP P3H2x4x i3c-
+>> hub device
+>>
+>> [Some people who received this message don't often get email from
+>> krzk@kernel.org. Learn why this is important at
+>> https://aka.ms/LearnAboutSenderIdentification ]
+>>
+>> Caution: This is an external email. Please take care when clicking links or
+>> opening attachments. When in doubt, report the message using the 'Report
+>> this email' button
+>>
+>>
+>> On 08/05/2025 06:57, Aman Kumar Pandey wrote:
+>>> +
+>>> +static void p3h2x4x_of_get_tp_dt_conf(struct device *dev,
+>>> +                                   const struct device_node *node) {
+>>> +     struct p3h2x4x *priv = dev_get_drvdata(dev);
+>>> +     struct device_node *dev_node;
+>>> +     u64 tp_port;
+>>> +
+>>> +     for_each_available_child_of_node(node, dev_node) {
+>>> +             if (!dev_node->name || of_node_cmp(dev_node->name,
+>>> + "target-port"))
+>>
+>>
+>> Same NAK as before. You ignored the comment and nothing improved.
+>>
+> 
+> Thanks for reviewing the patch.
+> As per your comment I have used proper function to get reg instead of sscanf. And our driver is not having direct interface with userspace.
 
-> -----Original Message-----
-> From: carlos.song@nxp.com <carlos.song@nxp.com>
-> Sent: Sunday, April 27, 2025 4:33 PM
-> To: miquel.raynal@bootlin.com; Frank Li <frank.li@nxp.com>;
-> alexandre.belloni@bootlin.com; robh@kernel.org; krzk+dt@kernel.org;
-> conor+dt@kernel.org; shawnguo@kernel.org; s.hauer@pengutronix.de;
-> kernel@pengutronix.de; festevam@gmail.com; conor.culhane@silvaco.com
-> Cc: linux-i3c@lists.infradead.org; imx@lists.linux.dev;
-> devicetree@vger.kernel.org; linux-kernel@vger.kernel.org;
-> linux-arm-kernel@lists.infradead.org
-> Subject: [EXT] [PATCH V4 3/3] arm64: dts: imx95: correct i3c node in imx95
-> 
-> Caution: This is an external email. Please take care when clicking links or
-> opening attachments. When in doubt, report the message using the 'Report this
-> email' button
-> 
-> 
-> From: Carlos Song <carlos.song@nxp.com>
-> 
-> I.MX95 I3C only need two clocks so add clock fix. Add "nxp,imx95-i3c"
-> compatible string for all imx95 i3c nodes.
-> 
-> Signed-off-by: Carlos Song <carlos.song@nxp.com>
-> ---
-> Change for V4:
-> - No change
-> Change for V3:
-> - Remove unrelated fix in imx95.dtsi
-> Change for V2:
-> - No change
-> ---
->  arch/arm64/boot/dts/freescale/imx95.dtsi | 10 ++++------
->  1 file changed, 4 insertions(+), 6 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/imx95.dtsi
-> b/arch/arm64/boot/dts/freescale/imx95.dtsi
-> index 59f057ba6fa7..ce0787410f9d 100644
-> --- a/arch/arm64/boot/dts/freescale/imx95.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx95.dtsi
-> @@ -681,15 +681,14 @@ tpm6: pwm@42510000 {
->                         };
-> 
->                         i3c2: i3c@42520000 {
-> -                               compatible = "silvaco,i3c-master-v1";
-> +                               compatible = "nxp,imx95-i3c",
-> "silvaco,i3c-master-v1";
->                                 reg = <0x42520000 0x10000>;
->                                 interrupts = <GIC_SPI 57
-> IRQ_TYPE_LEVEL_HIGH>;
->                                 #address-cells = <3>;
->                                 #size-cells = <0>;
->                                 clocks = <&scmi_clk
-> IMX95_CLK_BUSAON>,
-> -                                        <&scmi_clk
-> IMX95_CLK_I3C2>,
->                                          <&scmi_clk
-> IMX95_CLK_I3C2SLOW>;
-> -                               clock-names = "pclk", "fast_clk",
-> "slow_clk";
-> +                               clock-names = "pclk", "fast_clk";
->                                 status = "disabled";
->                         };
-> 
-> @@ -1266,15 +1265,14 @@ tpm2: pwm@44320000 {
->                         };
-> 
->                         i3c1: i3c@44330000 {
-> -                               compatible = "silvaco,i3c-master-v1";
-> +                               compatible = "nxp,imx95-i3c",
-> "silvaco,i3c-master-v1";
->                                 reg = <0x44330000 0x10000>;
->                                 interrupts = <GIC_SPI 12
-> IRQ_TYPE_LEVEL_HIGH>;
->                                 #address-cells = <3>;
->                                 #size-cells = <0>;
->                                 clocks = <&scmi_clk
-> IMX95_CLK_BUSAON>,
-> -                                        <&scmi_clk
-> IMX95_CLK_I3C1>,
->                                          <&scmi_clk
-> IMX95_CLK_I3C1SLOW>;
-> -                               clock-names = "pclk", "fast_clk",
-> "slow_clk";
-> +                               clock-names = "pclk", "fast_clk";
->                                 status = "disabled";
->                         };
-> 
-> --
-> 2.34.1
-> 
+What was the comment - undocumented ABI.
 
+> What should I change here ?
+
+How did you solve that comment?
+
+
+Best regards,
+Krzysztof
 
 -- 
 linux-i3c mailing list
