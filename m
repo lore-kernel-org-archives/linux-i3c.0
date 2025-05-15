@@ -4,65 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0D18C54755
-	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 09:20:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E9A3C2D0CD
+	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 10:12:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d3KDVxZ576vyKNuWItWxuK9pi+fI7hcHZMrLLn43Dpg=; b=RR2X5QXYXM2m0l
-	Obfcy9MFHaR2j7GQLi5CikwFg9TBaBQgChp6Nn9yH+ihikH2GoYKkM7xYcCCknqyxyHd0SXTEWRH0
-	aqPzV35I3C1UZlXTklUdWpXVL8dXiky9eXEpI2WjXqhlqYZ4FiKfVMFASR9yYVLX8jCzPShx6hJsg
-	8MLSPMtUig0IWdOz0rSTnEgoSbBeDaHILoMFWMUYOcrusFsVLwiFzcbY0uzb1zccY+JM4uKY8qPjr
-	ZIh28WJhPOvApxiDgm6Uo2vMbC2X1vgX4c2D21gwMHvpb8no3gtK7J8PxXaSss81GtFvB07bG9VqF
-	LTsgKnJjp6bPKj4x/DhA==;
+	List-Owner; bh=NwbL6JzgKxSuERW8vCx93sjqqm5Pfv5pm+rCFPZE1ic=; b=ZkkAyy/jmnd4hY
+	HIOcFxtawZLEfo+ZdMNNW5Zsfn5v++FTKSDrPIgkYzaveGzTE8GFUCbAqsZhrgXjBBt3PRdSu48Jh
+	h/uZfQvPUfdsW6a2rlfjTvIqpN5KHd3XCZjiUPiuTdu27Ppt1ZdB4g8tmWzJ0DYFqx1p7Dg/UYRz8
+	cWGxuneFtXVqQ87OCMyvA58e/jFhuTuC9i/mTL7NYNbLwyO7KCQDpQyjTjnypYWvU4swVtTL6a4gz
+	06Rzq+PZiQsxIQtF4Blwjkh6ZYk7GruXm6/TYXaeVYxt3cdUpBQhPYfMQgiDZi5zu1YXWDb29hYN5
+	KBEYieM5RusQxPr3rizg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFUll-000000008hG-0A7h;
-	Thu, 15 May 2025 09:20:49 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1uFVZK-00000000GWM-3iif;
+	Thu, 15 May 2025 10:12:02 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uC50s-00000008zRp-1OMj
+	id 1uFVA5-00000000CyZ-1fV1
 	for linux-i3c@lists.infradead.org;
-	Mon, 05 May 2025 23:14:18 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id DDF02629C8;
-	Mon,  5 May 2025 23:13:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 723C5C4CEED;
-	Mon,  5 May 2025 23:14:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1746486857;
-	bh=0EWvK4TsmZ4hBZAMOT+xfxdc3HMMgFzeks/y6hvpEGE=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=QU/rqBrKUH6KumuPQzsv7iuz6wovWmMAiFAIrM9vfJO1CIXpjvpKGQen3S3pCLBOx
-	 ahhooVH7vfei2Iy+Yh+SHBbLNZLgTU81f4uHZlDenC60L4QorwK1AJcZAslANCuyzG
-	 PDAYHp7/1l0t96xzKGs2oZYxzDjfUAM2FUloThEmCI/t4ItzQ/HQiVE2E5nqV08z/3
-	 5DqKBXBmmwAgqfNTsBtgyLXPzZh/SrKFlBXAE04Dh69qGPHQV9P7w91xEg5mwz4PZS
-	 nCTbiyFfwSUqaHO2n6kllfkuJ/YF0i10LIrVF0sqtYJW88ftVuoodgEQu09KrvAkZ4
-	 /JQwrl/8mFagg==
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Cc: Stanley Chu <yschu@nuvoton.com>,
-	Frank Li <Frank.Li@nxp.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Sasha Levin <sashal@kernel.org>,
-	miquel.raynal@bootlin.com,
-	linux-i3c@lists.infradead.org,
-	imx@lists.linux.dev
-Subject: [PATCH AUTOSEL 5.15 028/153] i3c: master: svc: Fix missing STOP for master request
-Date: Mon,  5 May 2025 19:11:15 -0400
-Message-Id: <20250505231320.2695319-28-sashal@kernel.org>
-X-Mailer: git-send-email 2.39.5
-In-Reply-To: <20250505231320.2695319-1-sashal@kernel.org>
-References: <20250505231320.2695319-1-sashal@kernel.org>
+	Thu, 15 May 2025 09:45:59 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 1641543977;
+	Thu, 15 May 2025 09:45:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
+	t=1747302353;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=QowtIMJkO//Zy72PfaBPBtVZYIcSovqZZ8Yjl8WvlqI=;
+	b=prgxuYol9M+HpNbZ8T9h7wcrCOk+4AS833xJie2xPCP+SZWW00fUQnWJLbUqwppYLN2UjS
+	/gke8paQfwJD07qDtfbYmiVj3ZzxjRHJ9Z/mAiU4v/36LH28DJjWk0zufZ84SW5u7yBhsU
+	c0wrYkShxZtD/++w3jGymBavcZ4Y1ihm33Nei3qPzrY7JP9yO4xYLvpAhRXGM9p4HRmu24
+	epDVijuxwnjydV1KlCF92G+PVD8R3/zZwbUSKo+UowJoHyAKdaTwzbn7gMKLSQu9IvtwvM
+	NKzZLelF1+w13c8uYP0m0b2cdTn1RGuTWUJiMJGJJpiKeO0XfFDZjD1nV72iyw==
+Date: Thu, 15 May 2025 11:45:47 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: linux-i3c@lists.infradead.org,
+	Jarkko Nikula <jarkko.nikula@linux.intel.com>
+Cc: Frank Li <Frank.Li@nxp.com>
+Subject: Re: [PATCH v3 1/5] i3c: mipi-i3c-hci: Allow only relevant
+ INTR_STATUS bit updates
+Message-ID: <174730228204.1307590.17878462961499587911.b4-ty@bootlin.com>
+References: <20250409140401.299251-1-jarkko.nikula@linux.intel.com>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-stable-base: Linux 5.15.181
-X-Mailman-Approved-At: Thu, 15 May 2025 02:17:27 -0700
+Content-Disposition: inline
+In-Reply-To: <20250409140401.299251-1-jarkko.nikula@linux.intel.com>
+X-GND-State: clean
+X-GND-Score: -100
+X-GND-Cause: gggruggvucftvghtrhhoucdtuddrgeefvddrtddtgdeftdelheegucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuifetpfffkfdpucggtfgfnhhsuhgsshgtrhhisggvnecuuegrihhlohhuthemuceftddunecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjughrpeffhffvvefukfhfgggtuggjsehttdertddttddvnecuhfhrohhmpeetlhgvgigrnhgurhgvuceuvghllhhonhhiuceorghlvgigrghnughrvgdrsggvlhhlohhnihessghoohhtlhhinhdrtghomheqnecuggftrfgrthhtvghrnhepieejfefhffekjeeuheevueevjedvleevjeetudffheeutdffudefjeduffeuvddtnecuffhomhgrihhnpehkvghrnhgvlhdrohhrghdpsghoohhtlhhinhdrtghomhenucfkphepvdgrtdgumegvgeekjeemgedugehfmeeftdgvfeemiegtvddumeehrggurgemfhehsgemleefgegvnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehinhgvthepvdgrtdgumegvgeekjeemgedugehfmeeftdgvfeemiegtvddumeehrggurgemfhehsgemleefgegvpdhhvghloheplhhotggrlhhhohhsthdpmhgrihhlfhhrohhmpegrlhgvgigrnhgurhgvrdgsvghllhhonhhisegsohhothhlihhnrdgtohhmpdhnsggprhgtphhtthhopeefpdhrtghpthhtoheplhhinhhugidqiheftgeslhhishhtshdrihhnfhhrrgguvggrugdrohhrghdprhgtphhtthhopehjrghrkhhkohdrnhhikhhulhgrs
+ ehlihhnuhigrdhinhhtvghlrdgtohhmpdhrtghpthhtohephfhrrghnkhdrnfhisehngihprdgtohhm
+X-GND-Sasl: alexandre.belloni@bootlin.com
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250515_024557_732785_57E92BDA 
+X-CRM114-Status: UNSURE (   7.58  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,38 +77,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Stanley Chu <yschu@nuvoton.com>
+On Wed, 09 Apr 2025 17:03:57 +0300, Jarkko Nikula wrote:
+> Since MIPI I3C HCI specification version v0.8 INTR_STATUS bits 9:0 are
+> reserved. Version v0.5 has bits 9 and 5:0 in use but not handled by the
+> current driver code and not needed in DMA transfers.
+> 
+> PIO transfers with v0.5 would require changes to both
+> core.c: i3c_hci_irq_handler() and pio.c: hci_pio_irq_handler() though.
+> 
+> [...]
 
-[ Upstream commit 0430bf9bc1ac068c8b8c540eb93e5751872efc51 ]
+Applied, thanks!
 
-The controller driver nacked the master request but didn't emit a
-STOP to end the transaction. The driver shall refuse the unsupported
-requests and return the controller state to IDLE by emitting a STOP.
+[1/5] i3c: mipi-i3c-hci: Allow only relevant INTR_STATUS bit updates
+      https://git.kernel.org/abelloni/c/eeeec6c5475e
+[2/5] i3c: mipi-i3c-hci: Fix handling status of i3c_hci_irq_handler()
+      https://git.kernel.org/abelloni/c/279c24021b83
+[3/5] i3c: mipi-i3c-hci: Clear INTR_STATUS unconditionally
+      https://git.kernel.org/abelloni/c/a7035a8ee966
+[4/5] i3c: mipi-i3c-hci: Change name of INTR_STATUS bit 11
+      https://git.kernel.org/abelloni/c/7479d2675c50
+[5/5] i3c: mipi-i3c-hci: Move unexpected INTR_STATUS print before IO handler
+      https://git.kernel.org/abelloni/c/bd916806632d
 
-Signed-off-by: Stanley Chu <yschu@nuvoton.com>
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
-Link: https://lore.kernel.org/r/20250318053606.3087121-4-yschu@nuvoton.com
-Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/i3c/master/svc-i3c-master.c | 1 +
- 1 file changed, 1 insertion(+)
+Best regards,
 
-diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-index 368429a34d600..92488ba5b5f2a 100644
---- a/drivers/i3c/master/svc-i3c-master.c
-+++ b/drivers/i3c/master/svc-i3c-master.c
-@@ -437,6 +437,7 @@ static void svc_i3c_master_ibi_work(struct work_struct *work)
- 		queue_work(master->base.wq, &master->hj_work);
- 		break;
- 	case SVC_I3C_MSTATUS_IBITYPE_MASTER_REQUEST:
-+		svc_i3c_master_emit_stop(master);
- 	default:
- 		break;
- 	}
 -- 
-2.39.5
-
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-i3c mailing list
