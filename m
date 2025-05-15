@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94064C3ABC9
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52F33C2D0CD
 	for <linux-i3c@archiver.kernel.org>; Thu, 15 May 2025 10:30:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,55 +12,55 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DQLF05YSkhWYA8qTfk/3q4U/agnq/TksqpIxM3RrycU=; b=N1qasm2uD1dwUZ
-	ha3Vm3RzqzBdChgA6Fg0EylfvAaygPAlW+dt4ejGVdDa33wknhxR2PBiivJ36V2XT69e7Vl1N7Mgm
-	H9tA+k8924jgsLaZR9Ee7Ke76BkZwxYQM7OX8y0DfHDPmZKAK2wUOB1Vxw/iMsdsjmEP+Hc2exZSz
-	vOzwvHmrUo7meTRCWcnCtcktlzwh6qS3s0/+uKyCdaKSjdjOxV7S6DWAX2Jy3b+ySZRi25VLW3y1E
-	+JguYDAPI9f71cJQpohcrh6lnT3RnECwpT2jbox8DXk2jNyZ1z8G8nbTfOTCBppb9O1AfF80jKb8K
-	KxlkhD1AUgBF4B6lgMbQ==;
+	List-Owner; bh=FjrDADUB+wt7SbI6Hxy+lwXZ64smx27NqK6sjy/ehY0=; b=t9v7vlaszy3Bza
+	Fu4nFA7XLKF8MmpybXvNQNm7NeDZPaVDsQw60gEIBaEZdqyaxzi2hjNwfi094ca5AtKNz+erywBNi
+	ZYs0QxJvczb9Obz0/ihb8Jbm6QyPj6x9V0knYTvu26fFgacohtbEemzsDyje3znzJHES4Mw+g980q
+	IAbJ3X9fCJ+RtgWnFlqXQrC0p5irBN8WJJrSHRnBHIGCGv4dXl1lHFJH6laJ3JMgtIsUrvT8IGfnS
+	EvxrzsFe1bv0dGfZZgyoxK7JQNf7SnTUVJqb5GY9kgsZ6xRbFONiC1DezenyD5NIRl6yo0kOP1pBb
+	YnaaVDjNDE5RrBxa1lwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFVrD-00000000IT6-1YDy;
+	id 1uFVrD-00000000ISv-0NiD;
 	Thu, 15 May 2025 10:30:31 +0000
-Received: from relay4-d.mail.gandi.net ([2001:4b98:dc4:8::224])
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uFVKQ-00000000EKZ-3w4Y
+	id 1uFVIC-00000000E3H-3ghx
 	for linux-i3c@lists.infradead.org;
-	Thu, 15 May 2025 09:56:40 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id 69E2A443C1;
-	Thu, 15 May 2025 09:56:36 +0000 (UTC)
+	Thu, 15 May 2025 09:54:22 +0000
+Received: by mail.gandi.net (Postfix) with ESMTPSA id 89B7343B89;
+	Thu, 15 May 2025 09:54:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1747302996;
+	t=1747302858;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 in-reply-to:in-reply-to:references:references;
-	bh=7b7QfGSwTLf0/PzmgHM9kT4FYPZClKyby6GF/Dr6W6Y=;
-	b=pS3O+aXuaUpOl3ut6N2HqUFsPuhA3T2JNmDd+qC4sCm7kJ3vQBPa9z/pyJdBRKiZfx+3XW
-	OKmuO623zxf2XjHRc8W7D9BcKZJsQYrv9PKIJTIAWpBwYTj76mzxVVu7HPNlxf4cjDqkZt
-	YvZ8Wav1oT9jAGGUghkdUMJgYg6sEteqCqcQHr5bu536dQB4u7qmRul+rqwu+oOPvnC6Z9
-	ld82GxTYnnz31IXYLxB0xojg3UP3NrTiujiH097jM5+P4gK4xnuNNuMbbHCD5zl3H/2Qpc
-	1u5vPBTmHJZjFium/XAMSx+yMnv6kWCyKdlUL5Eqa69Eqpmx+eo5QMzdHusx4Q==
-Date: Thu, 15 May 2025 11:56:33 +0200
+	bh=hYPpHlTt26oAx0c/+Xk9ADP4ln/33H08Wnxj8uMpvL8=;
+	b=amE1zNhlCdWVhhOjFuX0co6iiVu31b60ZA4Tg+eAv3tv8Ojy3JoVoeN2SFwb5Y//bFICCh
+	xgm0FcglND+Y8ba6Kp0yFbdiPmDU0l5vOogifDx2ebCFh54RveohfeLlLH05P7nGevP6OC
+	kpzwb1dt0qQ0rBHdKPExvXtJA1KJthFcqQ3qczVt4LoGYCAS/WHPb/D8CQkXwjxVGCJ2aj
+	TVj3OmP2tkHEhOxZqCJ2hu56M6sPVoLOJLo9sTA8VXexnzNdRU2uT0pDAWxUwI+itlra+j
+	OewskXbyYTlbQxPKC1Xs4x6h1gXZ9/dSPMcw6bQHeVQlOe7b451W/TEoz9P7EA==
+Date: Thu, 15 May 2025 11:54:14 +0200
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Miquel Raynal <miquel.raynal@bootlin.com>,
-	linux-i3c@lists.infradead.org, imx@lists.linux.dev,
-	linux-kernel@vger.kernel.org, Frank Li <Frank.Li@nxp.com>
-Cc: imx@lists.linux.dev
-Subject: Re: [PATCH v2 1/1] i3c: master: svc: skip address resend on repeat
- START
-Message-ID: <174730297355.1309338.10386281682864531931.b4-ty@bootlin.com>
-References: <20250429054234.4013929-1-Frank.Li@nxp.com>
+To: frank.li@nxp.com, miquel.raynal@bootlin.com,
+	linux-i3c@lists.infradead.org,
+	Stanley Chu <stanley.chuys@gmail.com>
+Cc: linux-kernel@vger.kernel.org, tomer.maimon@nuvoton.com,
+	kwliu@nuvoton.com, yschu@nuvoton.com
+Subject: Re: [PATCH v1 0/2] svc-i3c-master: Reduce IBI transaction time
+Message-ID: <174730284585.1309105.12276937340014821403.b4-ty@bootlin.com>
+References: <20250415051808.88091-1-yschu@nuvoton.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250429054234.4013929-1-Frank.Li@nxp.com>
+In-Reply-To: <20250415051808.88091-1-yschu@nuvoton.com>
 X-GND-State: clean
-X-GND-Score: -100
-X-GND-Cause: gggruggvucftvghtrhhoucdtuddrgeefvddrtddtgdeftdelheeiucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuifetpfffkfdpucggtfgfnhhsuhgsshgtrhhisggvnecuuegrihhlohhuthemuceftddunecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjughrpeffhffvvefukfhfgggtuggjsehttdertddttddvnecuhfhrohhmpeetlhgvgigrnhgurhgvuceuvghllhhonhhiuceorghlvgigrghnughrvgdrsggvlhhlohhnihessghoohhtlhhinhdrtghomheqnecuggftrfgrthhtvghrnhepieejfefhffekjeeuheevueevjedvleevjeetudffheeutdffudefjeduffeuvddtnecuffhomhgrihhnpehkvghrnhgvlhdrohhrghdpsghoohhtlhhinhdrtghomhenucfkphepvdgrtdgumegvgeekjeemgedugehfmeeftdgvfeemiegtvddumeehrggurgemfhehsgemleefgegvnecuvehluhhsthgvrhfuihiivgepudenucfrrghrrghmpehinhgvthepvdgrtdgumegvgeekjeemgedugehfmeeftdgvfeemiegtvddumeehrggurgemfhehsgemleefgegvpdhhvghloheplhhotggrlhhhohhsthdpmhgrihhlfhhrohhmpegrlhgvgigrnhgurhgvrdgsvghllhhonhhisegsohhothhlihhnrdgtohhmpdhnsggprhgtphhtthhopeehpdhrtghpthhtohepmhhiqhhuvghlrdhrrgihnhgrlhessghoohhtlhhinhdrtghomhdprhgtphhtthhopehlihhnuhigqdhifegtsehlihhsthhsrdhin
- hhfrhgruggvrggurdhorhhgpdhrtghpthhtohepihhmgieslhhishhtshdrlhhinhhugidruggvvhdprhgtphhtthhopehlihhnuhigqdhkvghrnhgvlhesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtthhopefhrhgrnhhkrdfnihesnhigphdrtghomh
+X-GND-Score: 0
+X-GND-Cause: gggruggvucftvghtrhhoucdtuddrgeefvddrtddtgdeftdelheeiucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuifetpfffkfdpucggtfgfnhhsuhgsshgtrhhisggvnecuuegrihhlohhuthemuceftddunecunecujfgurhepfffhvfevuffkfhggtggujgesthdtredttddtvdenucfhrhhomheptehlvgigrghnughrvgcuuegvlhhlohhnihcuoegrlhgvgigrnhgurhgvrdgsvghllhhonhhisegsohhothhlihhnrdgtohhmqeenucggtffrrghtthgvrhhnpeeijeefhfffkeejueehveeuveejvdelveejteduffehuedtffdufeejudffuedvtdenucffohhmrghinhepkhgvrhhnvghlrdhorhhgpdgsohhothhlihhnrdgtohhmnecukfhppedvrgdtugemvgegkeejmeegudegfhemfedtvgefmeeitgdvudemhegruggrmehfhegsmeelfeegvgenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepihhnvghtpedvrgdtugemvgegkeejmeegudegfhemfedtvgefmeeitgdvudemhegruggrmehfhegsmeelfeegvgdphhgvlhhopehlohgtrghlhhhoshhtpdhmrghilhhfrhhomheprghlvgigrghnughrvgdrsggvlhhlohhnihessghoohhtlhhinhdrtghomhdpnhgspghrtghpthhtohepkedprhgtphhtthhopehfrhgrnhhkrdhlihesnhigphdrtghomhdprhgtphhtthhopehmihhquhgvlhdrrhgrhihnrghlsegsohhothhlihhnrdgtohhmpdhrtghpthhtoheplhhinhhugidqiheftgeslhhis
+ hhtshdrihhnfhhrrgguvggrugdrohhrghdprhgtphhtthhopehsthgrnhhlvgihrdgthhhuhihssehgmhgrihhlrdgtohhmpdhrtghpthhtoheplhhinhhugidqkhgvrhhnvghlsehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghpthhtohepthhomhgvrhdrmhgrihhmohhnsehnuhhvohhtohhnrdgtohhmpdhrtghpthhtohepkhiflhhiuhesnhhuvhhothhonhdrtghomhdprhgtphhtthhopeihshgthhhusehnuhhvohhtohhnrdgtohhm
 X-GND-Sasl: alexandre.belloni@bootlin.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250515_025639_123325_BA6BE460 
-X-CRM114-Status: UNSURE (   7.18  )
+X-CRM114-CacheID: sfid-20250515_025421_044116_D836782A 
+X-CRM114-Status: UNSURE (   6.53  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,21 +78,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, 29 Apr 2025 01:42:34 -0400, Frank Li wrote:
-> According to the I3C specification, address arbitration only happens during
-> the START. Repeated START do not initiate arbitration, and In-Band
-> Interrupts (IBIs) cannot occur at this stage.
+On Tue, 15 Apr 2025 13:18:06 +0800, Stanley Chu wrote:
+> This patchset reduces the IBI transaction time by the following
+> improvements.
+> 1. Receive the request in interrupt context.
+> 2. Emit the STOP as soon as possible.
 > 
-> Resending the address upon a NACK in a repeat START is therefore redundant
-> and unnecessary. Avoid redundant retries, improving efficiency and ensuring
-> protocol compliance.
+> Stanley Chu (2):
+>   i3c: master: svc: Receive IBI requests in interrupt context
+>   i3c: master: svc: Emit STOP asap in the IBI transaction
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] i3c: master: svc: skip address resend on repeat START
-      https://git.kernel.org/abelloni/c/12cbd1573448
+[1/2] i3c: master: svc: Receive IBI requests in interrupt context
+      https://git.kernel.org/abelloni/c/8d29fa6d921c
+[2/2] i3c: master: svc: Emit STOP asap in the IBI transaction
+      https://git.kernel.org/abelloni/c/81f2a9af9821
 
 Best regards,
 
