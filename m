@@ -4,62 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18213C5B549
-	for <linux-i3c@archiver.kernel.org>; Sun,  1 Jun 2025 16:05:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6565AC5B543
+	for <linux-i3c@archiver.kernel.org>; Wed,  4 Jun 2025 10:18:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HXip/DOQIcg+JHZP0kZKxxujj14Pz1QtrF6DfnEA09A=; b=Z/A7BAtVKYgvbe
-	vUCrOheR4owldjZd9/NYyZnaORHUEviIM6k6cnEZbGrb2hY54GfhtLFlNTiluFR1cen2HYQdphNk0
-	pEWgJfTvTTE3hq9G8+CwapxId82uAWz4G8a41XpFhJ9mIA1shM+Xb7BELYqn61cSDP3BZoIdnv54f
-	9/9IVW/8bXk6UeDGUq9SzROmTayA95gy+PcaWkV0FPhPvxT1Mp9qXNN3BdNQBtcYVas3uDOAmFl+D
-	ujLZfYhHJYihDAJJoDG3T5Z6W4hvNjL9IjC6TZvWbnirR91X2f9L4CDAkcQXWdGJ6s/ZHxL/2sVk+
-	rRmF6PFv08OinIQCvbBg==;
+	List-Owner; bh=vmplbVs9w6gZedNcoDfAFLw9z7qIND4Hw3hYSIJfX1c=; b=Qp4NMCtqzYSI0y
+	vGZG/vYE8goagqzogRb3l6xJXN/56jtiA1LDh1ORp1VF5Xdb5L+Vr7mhkl3DYyrIzX/obfH4j6nfM
+	2lnWGHKSff8g42zoey8iHsdhsogdSTAe6wXoaoVgbuGnxKRF5pAtZW7wmC/a9BkFp87njHCjqjVza
+	RjCUGkCeh9Iv7VE0/WXcPVESdjXCCpYFFFk5+ZKf7WlWdQj9xzMceLHzRvIIG0GzRLLY+cIBNnt6d
+	BxV/CEXG9EU5KcO6C9/RgVXOgln74WYcp5LcEuJlthb/wwvE5sUuWojXhAhGNsWRogGSv3q0KgUUh
+	1MXV623Dx2fFZPqYnJiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uLlBV-00000005f1z-37gR;
-	Sun, 01 Jun 2025 16:05:17 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1uMlCp-0000000D76k-0gme;
+	Wed, 04 Jun 2025 10:18:47 +0000
+Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uLlBU-00000005f1g-2HNh
+	id 1uMlCl-0000000D73N-2JDS
 	for linux-i3c@lists.infradead.org;
-	Sun, 01 Jun 2025 16:05:16 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 902E7629D6;
-	Sun,  1 Jun 2025 16:05:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 46CFDC4CEE7;
-	Sun,  1 Jun 2025 16:05:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1748793915;
-	bh=lVajFAdCI1KPJxrQZROS4ycsSzNRhfdxSgvxED1eXCk=;
-	h=Subject:From:In-Reply-To:References:Date:To:Cc:From;
-	b=XfZuKzeYuf54dkpSqRh+KfF1HHO46vGMQS3P8nMN5OJbDFu/WOdT9AkyNGpIFoJmb
-	 ZER3r1uK1xYR5i1A/fV5BiksqwIGI3aQvRr9eN7HPLiXSIxEKpwsIgShinXGkuINm7
-	 Rm4rOFJGM5+P/zVbUeNN1b02eCa0tJb1joYAYpV2PQ7hhHhFKiRhDHuvhbUASpm+56
-	 nbcWGMKErUxmQg9TGezETNjhC0lRbzdkKZ3OmMs9kalae9MDAn0n5Mkfac1Fnl5tjz
-	 VMUewi3H1F5aGxVgZuICWQaDesqtzQi0o/TVI4G8s0WGiJPVo1cgUUNnPEHqc9/6G5
-	 mAXxSJkszM9gA==
-Received: from [10.30.226.235] (localhost [IPv6:::1])
-	by aws-us-west-2-korg-oddjob-rhel9-1.codeaurora.org (Postfix) with ESMTP id 70CB5380AA7C;
-	Sun,  1 Jun 2025 16:05:49 +0000 (UTC)
-Subject: Re: [GIT PULL] I3C changes for 6.16
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <20250601092038f33de29e@mail.local>
-References: <20250601092038f33de29e@mail.local>
-X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
-X-PR-Tracked-Message-Id: <20250601092038f33de29e@mail.local>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-6.16
-X-PR-Tracked-Commit-Id: 00286d7d643d3c98e48d9cc3a9f471b37154f462
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: a2604f8d43bf414db54c42ca6ea52803ce1c0b2f
-Message-Id: <174879394805.436212.5089571301362760312.pr-tracker-bot@kernel.org>
-Date: Sun, 01 Jun 2025 16:05:48 +0000
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Linus Torvalds <torvalds@linux-foundation.org>, linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+	Wed, 04 Jun 2025 10:18:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	sang-engineering.com; h=from:to:cc:subject:date:message-id
+	:in-reply-to:references:mime-version:content-transfer-encoding;
+	 s=k1; bh=PmK6FJZV8fqFWrIkB8zm3Vv/1h6dxAyJGyX3WocYk/M=; b=MYbsJC
+	cp/rJHmUsYTQUszX98SjlbAIQcdtQ8hkJxTeYGnTSBwQrh8ekIs+MTIvHuAJaOwD
+	T7IhJ6SxAikNc5iwKOdTkouYBfHdU34Ym6s0ZsaI/uuUoBccInSE2RbnRZbCFkoV
+	QMX2lvnzScJRCTZUnhG/TFqX7hIvtaqggmyKRk38wncSfegFmXvdvvHm339erxZC
+	zdjfKI2jcL8+VHferS0CzMPm7PtuMuGpFq0QH1WdQIGiyP90JSkX/hOxnaFTuOgz
+	SosGmY4Q1d/+5NoaaWgI+NmGWSoMFXLWVemSr+Vb3XZPLudCb90bZTxT7R6EGHdM
+	xz7BWBl5nd0ug5xA==
+Received: (qmail 629194 invoked from network); 4 Jun 2025 12:18:36 +0200
+Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 4 Jun 2025 12:18:36 +0200
+X-UD-Smtp-Session: l3s3148p1@TPXuUbw2kKogAwDPXx36AJSQ3b6GkO36
+From: Wolfram Sang <wsa+renesas@sang-engineering.com>
+To: linux-i3c@lists.infradead.org
+Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>
+Subject: [PATCH 1/4] i3c: dw: use adapter timeout value for I2C transfers
+Date: Wed,  4 Jun 2025 12:18:27 +0200
+Message-ID: <20250604101831.56585-2-wsa+renesas@sang-engineering.com>
+X-Mailer: git-send-email 2.47.2
+In-Reply-To: <20250604101831.56585-1-wsa+renesas@sang-engineering.com>
+References: <20250604101831.56585-1-wsa+renesas@sang-engineering.com>
+MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250604_031844_485169_C4D56AF1 
+X-CRM114-Status: GOOD (  10.03  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,24 +66,36 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The pull request you sent on Sun, 1 Jun 2025 11:20:38 +0200:
+I2C adapters have their own timeout value which can be changed by
+userspace if desired. Use it for I2C transfers. The default is 1Hz, so
+the default behaviour is unchanged.
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-6.16
+Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+---
+ drivers/i3c/master/dw-i3c-master.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/a2604f8d43bf414db54c42ca6ea52803ce1c0b2f
-
-Thank you!
-
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index 611c22b72c15..0c370672a4fc 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -1142,7 +1142,7 @@ static int dw_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
+ 	}
+ 
+ 	dw_i3c_master_enqueue_xfer(master, xfer);
+-	if (!wait_for_completion_timeout(&xfer->comp, XFER_TIMEOUT))
++	if (!wait_for_completion_timeout(&xfer->comp, m->i2c.timeout))
+ 		dw_i3c_master_dequeue_xfer(master, xfer);
+ 
+ 	ret = xfer->ret;
 -- 
-Deet-doot-dot, I am a bot.
-https://korg.docs.kernel.org/prtracker.html
+2.47.2
+
 
 -- 
 linux-i3c mailing list
