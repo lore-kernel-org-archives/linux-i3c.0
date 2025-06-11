@@ -4,69 +4,151 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40F99C71137
-	for <linux-i3c@archiver.kernel.org>; Wed, 11 Jun 2025 16:30:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2BCEC7113E
+	for <linux-i3c@archiver.kernel.org>; Wed, 11 Jun 2025 19:55:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=rARCbHTbM+Alz8Z5TkeYUgGNM+sFzFd4rO0JYncY4xY=; b=lXtyTe7nxwkEzwRH6EQbSa5QUk
-	8wzm71yHW5T1QZ3iAUIms9x1LGr3GnFn3K4TSlVQylB3vpGJa3bGkXne7lq8648pspcLd71Nlx9qR
-	C+4un2FjChQJOHEgnL7V9GFOietQvEt5sSY6IFVHVmWrrwy3VZeeqyPgAnT3ilc9kOJKttYmyLEku
-	hyy0iPA/fUJSITjWEEDMLmHxAXB3/+oy7pCF5nH8m0rkJJ66/Kb9i1P3A+AtZuUvl0+cKe6QN1vND
-	O9fyMmVDq+O/b3LjDlPIZUSHN4oNaVDmYhUgZTI+1rS8zT37gU7i/+nysDyLbshl6BxKsFWlShun8
-	dTuqp2Sg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jJ6/OBqkK9hQwx3dOB4g2ptcCmyihko44I+rASASspo=; b=pdmVXIW1riUJmZ
+	A8tPpm0h/mFapDWPcVJx3qRQ7jB0ecDddgl4/b6HDgQPXbsLxKgxTOrsVjZ09iCVl0+hczufidDHH
+	TFnBZfuLMCDkrR9AwCHTlq/8Kw84SeRP6EYb7sUfOKYpLuo9pQXEInoL1Mn5315ebKSbbRbK5bqsI
+	IkAUx+xaYEK/5+lP1hyETq6kZxEgeiZFNiIijXa9+3Nep/fFUsKkZqaHoqrLASaGFM6thDeO5tl0U
+	cXIj5UQutHmps2KYOF4WAQTK9WYkQ6tryjhhE+FWVdLcVesjQM0K9W1kb6Hqg9CUfrwwlALI9SMv0
+	OFoGSKFI826dHcfX3Vag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPOKx-0000000AcBN-04cm;
-	Wed, 11 Jun 2025 16:30:03 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uPRY0-0000000B3dz-2hIj;
+	Wed, 11 Jun 2025 19:55:44 +0000
+Received: from mail-northeuropeazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c200::5] helo=DUZPR83CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uPLF6-00000009vWp-2akn
+	id 1uPNZA-0000000AQup-0JFz
 	for linux-i3c@lists.infradead.org;
-	Wed, 11 Jun 2025 13:11:49 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5467343E8F;
-	Wed, 11 Jun 2025 13:11:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F02C5C4CEEE;
-	Wed, 11 Jun 2025 13:11:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1749647508;
-	bh=ZWJSub589iDrGZ+60SCcmXF5iQtLYyYprZ6GcJ4AcI4=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=VaJrDBYF4KTGovaBs6YwgoZBUq6BRiwemvL7WXoKQJXgVU+rdBs6RfRoCH2EVQ/WE
-	 xZpKOz775xPF8adjXJpiOics45NO12ytvIAfPoAy2U12mtYBt0vAcrITiyCjfbBLfY
-	 BZEjyN+3u7/vQeZLcTPtavAN00HoP0WE0lVM7zLYOZb+LuDuLpf2EcKCA7HPEBBKrY
-	 SLpTyh+Qvq3zBdLc/yDUgPT50OvEMDz5IpCzxHFmn53VAs1li5fP/VSwsX4E4TS9Lw
-	 QpZ3pAK/j1g0yMpdijXwiVvqOdUzbWEmM+qWFPLMMwwlhUvkcj+rkdPt3TegcOOPrS
-	 GiXazWlEx4+dA==
-Date: Wed, 11 Jun 2025 08:11:46 -0500
-MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: linux-clk@vger.kernel.org, devicetree@vger.kernel.org, 
- Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, linux-hardening@vger.kernel.org, 
- linux-i3c@lists.infradead.org, 
- Alexandre Belloni <alexandre.belloni@bootlin.com>, 
- Philipp Zabel <p.zabel@pengutronix.de>, Kees Cook <kees@kernel.org>, 
- Magnus Damm <magnus.damm@gmail.com>, linux-renesas-soc@vger.kernel.org, 
- "Gustavo A. R. Silva" <gustavoars@kernel.org>, 
- Stephen Boyd <sboyd@kernel.org>, Frank Li <Frank.Li@nxp.com>, 
- Geert Uytterhoeven <geert+renesas@glider.be>, 
- Conor Dooley <conor+dt@kernel.org>, 
- Michael Turquette <mturquette@baylibre.com>
+	Wed, 11 Jun 2025 15:40:41 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=tAy5I9OGHoul3VPev3rhzBP1n2ZEDCqps7QUP/Et6kk2sdue5bhf806txmzClQRZXB7bhPkKRKnfBL3Puad22GSc3TWMfK/6nY1CHHI03683Sod7UtTDoRPZJ3TT2P79VMdTnsTwaHh7SELcxmizeYueO5I7f3Ct7Mw+Qe6V2V+Pm3LMN7KUrE2xkxUnTFl96TZVXN6/6NrXb6I3iCN+Bs+b4NhhnGXEjUHElFh88OP7GMkt0BzBSVe8Cy6MIFUmirJjGZwZ5FmcGafqwk5hGCBZtI9o5ENVHgzAMAUwLgmIrl7b2c2MV+Kq1GO9tfDdgGsF3fp7+bZUWSwm5AVQQQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Zp2fh64Igc5qeDiEk91WimpKw0SVImW+X3QyQV9a+tw=;
+ b=AbNxTrk/Y7rfrOfBf5L/4hp/0OfJfX/FvIOHI9PJdKTjOwP/Oiv2Zx35AjqYQN/Ba2kelgf+EvBDG7jx73L8wKYQt1aodxbe7viLcvTdn+q0iLXVYlzl1FAtiyWJlfzJfZ9UQfu8J+hejH67V68ZeMaj3UKA5bmRG9cTfpI7Fr8qRGk+FF9uthH/30v6piZw3f1sXi+yy4ITY5vM4yYBS6Hl8Mkim27yoFaRYbkr31yhm6sgnL/ozZzB+7Cwfcmz1Ra4nqYjqu2Uann8ct4QTHbgsoJgdsK22GwDfu9lDmJSHj60iZpfWAf0JYV7D11+6OF3RyO3HxNqwRpcUVg0WQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Zp2fh64Igc5qeDiEk91WimpKw0SVImW+X3QyQV9a+tw=;
+ b=kXYgLiYiZ7DG/PsL7JI67z8rp/SyoFd4VmdhOfMMPKqixpAKO6FM9VXpZhrdrQN+oaBM/GwCGsig+wS6YPPZnYxG1FygTbnGBILmal6J9w9DDdUtOr7rwOB21ZhZsUjb5gle2pcEbJxuTIBfoS8FrLYyWd23/G6jCD1ViBXMB1POpHo4HyaisjLqsE4vKQiSq20kruTqwwh/PX0j7VV/Yp6h6+BUx7RQiMoq1JZ7NDTtQdfWFKNnPsN8G7zGAdVZb0g9gmPnSl+3L6/0GXf+Rd06oNmuuWkZlpdst+tsCHNSnsBTdvxN/80M/GBtgYLYK4h7AEU+ygLTaN8x1doXZg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by VI2PR04MB10287.eurprd04.prod.outlook.com (2603:10a6:800:220::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8813.26; Wed, 11 Jun
+ 2025 15:40:36 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06%7]) with mapi id 15.20.8813.024; Wed, 11 Jun 2025
+ 15:40:36 +0000
+Date: Wed, 11 Jun 2025 11:40:29 -0400
+From: Frank Li <Frank.li@nxp.com>
 To: Wolfram Sang <wsa+renesas@sang-engineering.com>
-In-Reply-To: <20250611093934.4208-1-wsa+renesas@sang-engineering.com>
+Cc: linux-renesas-soc@vger.kernel.org,
+	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>, linux-i3c@lists.infradead.org,
+	devicetree@vger.kernel.org
+Subject: Re: [PATCH RFC 3/7] dt-bindings: i3c: renesas,i3c: Add binding for
+ Renesas I3C controller
+Message-ID: <aEmjbY8ifoI5Cs5t@lizhi-Precision-Tower-5810>
 References: <20250611093934.4208-1-wsa+renesas@sang-engineering.com>
-Message-Id: <174964724485.330045.2181706921272138816.robh@kernel.org>
-Subject: Re: [PATCH RFC 0/7] i3c: add driver for the Renesas IP and support
- RZ/G3S+G3E
+ <20250611093934.4208-4-wsa+renesas@sang-engineering.com>
+Content-Disposition: inline
+In-Reply-To: <20250611093934.4208-4-wsa+renesas@sang-engineering.com>
+X-ClientProxiedBy: PH8P223CA0001.NAMP223.PROD.OUTLOOK.COM
+ (2603:10b6:510:2db::32) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|VI2PR04MB10287:EE_
+X-MS-Office365-Filtering-Correlation-Id: 0f16b14f-193f-44c5-504b-08dda8fe4f4e
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|366016|1800799024|52116014|7416014|38350700014|7053199007;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?hz+v+awEmchz+xpccjdnwUOoVw15eX4Q2WOq8kaDolb59UXgFe8PkQZP1nFD?=
+ =?us-ascii?Q?ykUPpAdUq3d0j/dMb3h8wD2/y6MNfX96xfpVMx9VNTSy49myqXfMXwqbMqbX?=
+ =?us-ascii?Q?jCfOpg1Olxb67FjQ+nJBJCHNPW8aAACDn8o/QfMPO8RVyje7FbpjYplVO4dh?=
+ =?us-ascii?Q?/YxrnhEGghYi44b+kio/XsSmRzV8NPzz9qyvUxlSUpMSj5pttVIMwIB2GorI?=
+ =?us-ascii?Q?FFeOG81UfbfNNCOe+36z5YH2BBiDJSJHon4NxmhX59MEpX9CeX5bJ7eX3xeh?=
+ =?us-ascii?Q?F76jIQxhMsnFfiZucJU8Y+OP1/0iVz+ujQAk9QfVZ+rjtBOTo1EZD6jNIjIR?=
+ =?us-ascii?Q?H66U4fpCTcll1LOAEHVlt6YW4QJ6RP+rS5rCxEA3Th7WEla04tXGjfCgbm5y?=
+ =?us-ascii?Q?/T+tWi9CQofv08weJlDToahxjXrg2cuhVk+Psd9IF5XlUcFusMvwtGQpZrQp?=
+ =?us-ascii?Q?TPNabZ5yxTO/9ZAd+d5P9+1mv+Ewttx6licsT1YXKxTCfQgf8o1yTJ26A0I1?=
+ =?us-ascii?Q?hu8UFlqwW4n5zQQCof3Z9eRlALlh1kl5YCa1m470HaeQGFLB5eXiZLNxJ3nO?=
+ =?us-ascii?Q?/C5dWRflkDJfANgnw8agcFVjDyrHrTiKzE7tArtgaNANo9UF83X0TUU7sRvR?=
+ =?us-ascii?Q?elKvehxyP7SlZ969Cm0NXOK/uc1aF8MRH6f0J/inkXhC18cf8qTpQtdeqSRt?=
+ =?us-ascii?Q?nMSo1J2IlHVV5egQkPfo4ySD51jqwh8vpGw8X+fd1HrPFR6hufwRW0U6s4JI?=
+ =?us-ascii?Q?1IM4Vgjx8LiY/XOteeoRHuEYoKgmjLLPBYbBXW25aggHY+WH3N+OerKyOv2i?=
+ =?us-ascii?Q?m+GgeMUsFWiOAFrVy3YsAWnrwI4sDDHFohckiqUV05FaYIsWDLq2IBZ3nvNo?=
+ =?us-ascii?Q?i0QXi3O35QNo0J0gISZGF7ZY+N70I0splb9kfpPjwDDyM8pfcB1OqfcadaW/?=
+ =?us-ascii?Q?oyWslWr/pQquJWCazIFqDCx8ObGnViYR5rYKnrhxuqVLs7l2HiHYD3kpte0S?=
+ =?us-ascii?Q?1woU7A1UraGWpYyve4r0e/aGqeI2P3R6a6Di5DdTI4GyUhNd+JH8/2cc2OWG?=
+ =?us-ascii?Q?uSLUqHZKb9y08GCKHa1YJmmgMQOgrZbH5nwTT6AZLA9s5xVM+u6Yi0mBscU/?=
+ =?us-ascii?Q?gZXlJ7VcBxw1+TVxnkAWaal35c5mQngdhq1rZDwDnhY9q5UxLQpVakoGlF1o?=
+ =?us-ascii?Q?qPPFSrbwxfstLj5USgt6QXHx1wJVv+P6uCmE+Ao29lnFmtMBf7hP/94eGMJW?=
+ =?us-ascii?Q?Rz6wLTfDIX2fALgYZkYiZQj7alwlup5ZSsqMDUuShA7PlkjALCqR/BAYgjri?=
+ =?us-ascii?Q?DFB9Eh7b9XaTSRR+ve9gA9dnzjHInAes/ZQGqgujaxVTHgf0CgK+Vshyp4JC?=
+ =?us-ascii?Q?hy/u6Pvj2wdtluWNgXAlqw9A0Vh4JbrIU7F9WglZnaTTlq3JlMn9V7Hvt5Va?=
+ =?us-ascii?Q?WnmjomQKyykwqdkcr0VfJ/8V8xn07Vc7?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(1800799024)(52116014)(7416014)(38350700014)(7053199007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?UymJtp5eeJQDq2a0Owm9Ml/Eefn+MNlHaDk6BX0qBRJznkOOQWBaDQ5BGLdk?=
+ =?us-ascii?Q?2RImRt4gudp/QDuvDJyUYM1Xab9rQsluI0NEvCIWexMj/LuU9yBEW98z8oCJ?=
+ =?us-ascii?Q?Dmu0oj32w8XklMfxA3RbQDJdfpP5NVuEBBLhpHMPWg9JkhV0568Qs8XMn41i?=
+ =?us-ascii?Q?uKc39ZYkV+UDYy9oAUaLtiVbgNYI2zHbXhBJGlmBxmLPOg+NB4FSZYH07Pkn?=
+ =?us-ascii?Q?89TFYFyHA68gC835bPmhQf8CU4GJrOaluAPV02hF7bQofg5r/mkAJUNzbvwA?=
+ =?us-ascii?Q?as6vDfd4sWnkay2LKtmKhwKe0hCwaQ/BqK22elVC1Q1+93k3O3/4IepoYvh6?=
+ =?us-ascii?Q?M5A9dAAEChdYOzxmKoeiITpoonftTpbeVr6OofbqOXVR3GMTRNbKsCIiaLU2?=
+ =?us-ascii?Q?XcSqyBBB4wJAikxb8zqKFV9kXEdHEvO2X3Zrd92yQPAYMxsq0XC1BmH1+80S?=
+ =?us-ascii?Q?IuT3Vxremct7KmDazs2UWjy5PRJbW/1Qkidrcg3fxMnS7OO44gWZA+ucjEjv?=
+ =?us-ascii?Q?XbXIIBt/yi3+eALSG8Da3mNuk7ZSMSB2162gaPNzOWb8xJxFcAGqtLCRAEo8?=
+ =?us-ascii?Q?F9YvqBhpKXANE/jcIA8iUAmIycLG4ghOzXW7Y1BhJEgcef+3aBD0Xg8O4M+2?=
+ =?us-ascii?Q?EjxQJXNOKZCExGEBUI7qtF7H7ZTzvwirnZkNn5u2K0A9EuTMx/sTI8Iph3Fm?=
+ =?us-ascii?Q?teVOBVsqMKnIh2crdMBZzSAPFEKW/7yQTkIa/iWCRr+X6tDpQv1wdS30AMmo?=
+ =?us-ascii?Q?0GSLjXjJknwNIQwY24EJbKwqAe/Ju0OZbyT+psFToY8U1hYhmlfnAVqNF7Th?=
+ =?us-ascii?Q?8j+iEWZuZdBP9ZOsVa+t5sLRi012mCRYmvjcwtObal++lv5i3tenRJscp6Q7?=
+ =?us-ascii?Q?dfMm0o6caUYrgieyZetRddbwX509htapZB/SQlc/xu3WmyuUkP+Su51OeJip?=
+ =?us-ascii?Q?yg53cxH9ve3ib2pQWiX1m0XK9Ct0xlZQG1Xii+yaru7WqQUnV3xkxVJVhg3S?=
+ =?us-ascii?Q?GzBDssbyzsfks9KuNt60gY+Cj3c3L43jgVPPgjGhAKf9JDSvHJlsccZtU6pt?=
+ =?us-ascii?Q?B1JuW5baArz0IbXYYYO63u57unaFOk8xEn/JA0kfrJOpHD5ba+QU4GJOg8wm?=
+ =?us-ascii?Q?0ORq+BJ/E8nQhGrJJ3xclYNJe7ss1X9cpHguCL7sWxoJ4NGAq6RUT+o42ke9?=
+ =?us-ascii?Q?sQEuwv3wmQ9v9qUj4WnDfaH/iK9EcVQOvrQX7oDB4buXpLuuoJQu0MQuuLzb?=
+ =?us-ascii?Q?8c1mc/WgdFN08nHvW1H96J3+dbAN9SfUvt3BdDzZnsDjWsnWNRh5QxITNkA8?=
+ =?us-ascii?Q?Qe72d0B/kRKRGh0bfuwWCP4i7odFmstr4u0RMLBW9iGa3+b5DOGA1/H2flMw?=
+ =?us-ascii?Q?d6FiDUAzHCAWKu1wcS/FrngCWBBu01lpJ77QhjCoTElPlEI9Vp/ay2auK4tY?=
+ =?us-ascii?Q?QWR119nIYAcPbxEJWQHSWC3B3VcN8zGfou6Pw/+7TcmpC2eDH68TaaGAeSYO?=
+ =?us-ascii?Q?mAAJwVNwyUAzpzb1hR36VfXRNmFJTqr9Wzibid05Xfl6/G9KiKU1apWBBm2r?=
+ =?us-ascii?Q?HEXYKvsdeAy4qYhGVgEeSo3ZO9VJpxeQxrVwx2ig?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0f16b14f-193f-44c5-504b-08dda8fe4f4e
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Jun 2025 15:40:36.3874
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: zKwFEzhBc7io6a+VooTTOI3GhWFZFzvr9pVhTD2Km1Bn+zJKbwQohHGYAJeKpO9l5wGDKzldpaNuHxal81WCwg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI2PR04MB10287
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250611_061148_694701_D3E8A727 
-X-CRM114-Status: GOOD (  34.99  )
+X-CRM114-CacheID: sfid-20250611_084040_257359_15C375C2 
+X-CRM114-Status: GOOD (  19.31  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,120 +165,231 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-
-On Wed, 11 Jun 2025 11:39:24 +0200, Wolfram Sang wrote:
-> Here is finally the first RFC of a driver for the Renesas I3C IP. It was
-> created by merging two versions of it from two different BSPs. Then,
-> improved according to code analyzers, cleaned up with regard to coding
-> style, and then refactored to hopefully match I3C subsystem standards.
-> 
-> It is a basic driver for the I3C IP found in various SoCs like RZ/G3S
-> and G3E. Missing features to be added incrementally are IBI, HotJoin and
-> maybe target support. Other than that, this driver has been tested with
-> I3C pure busses (2 targets) and mixed busses (2 I3C + various I2C
-> targets). DAA and reading/writing to the temperature sensors worked
-> reliably at different speeds. Scoping the bus, the output from the
-> protocol analyzer seems reasonable, too. But hey, I am still new to all
-> this, so I might have overlooked something.
-> 
-> The first patches are needed to enable I3C on the RZ/G3S and G3E boards.
-> Once this series loses RFC status, they will be sent out individually,
-> of course. All is on top of 6.16-rc1. A branch can be found here:
-> 
-> git://git.kernel.org/pub/scm/linux/kernel/git/wsa/linux.git renesas/g3s/i3c
-> 
-> Why is this still RFC?
-> 
-> - On G3E (but not G3S), we get a spurious irq during boot. We are
->   working on it. This is just platform dependent, though, kind of
->   independent of the high level design of the driver. For this, we
->   would love to get comments already. So, we can fix things in parallel
-> 
-> - G3S has 17 irqs, G3E only 16. The way we handle this might need
->   discussion (see patch 3)
-> 
-> - On G3S, clocks are named 'i3c' while on G3E they are named 'i3c0'
->   I don't have all the needed docs for this, but Tommaso can surely
->   figure this out meanwhile
-> 
-> - There are some open questions regarding the driver itself
->   (see patch 4)
-> 
-> Really looking forward to comments! This has been quite a ride. Getting
-> a suitable test setup was a surprisingly big task. If someone knows an
-> off-the-shelf device supporting HotJoin, I am all ears. I couldn't find
-> one.
-> 
-> So much for now here, some patches have more details.
-> 
-> All the best,
-> 
->    Wolfram
-> 
-> 
-> Quynh Nguyen (1):
->   arm64: dts: renesas: r9a08g045: Add I3C node
-> 
-> Tommaso Merciai (3):
->   clk: renesas: r9a09g047: Add I3C0 clocks and resets
->   dt-bindings: i3c: renesas,i3c: Add binding for Renesas I3C controller
->   arm64: dts: renesas: r9a09g047: Add I3C node
-> 
-> Wolfram Sang (3):
->   clk: renesas: r9a08g045: Add I3C clocks, resets and power domain
->   i3c: add driver for Renesas I3C IP
->   WIP: arm64: dts: renesas: rzg3s-smarc-som: Enable I3C
-> 
->  .../devicetree/bindings/i3c/renesas,i3c.yaml  |  186 +++
->  MAINTAINERS                                   |    7 +
->  arch/arm64/boot/dts/renesas/r9a08g045.dtsi    |   35 +
->  arch/arm64/boot/dts/renesas/r9a09g047.dtsi    |   35 +
->  .../boot/dts/renesas/rzg3s-smarc-som.dtsi     |   33 +
->  drivers/clk/renesas/r9a08g045-cpg.c           |    7 +
->  drivers/clk/renesas/r9a09g047-cpg.c           |    8 +
->  drivers/i3c/master/Kconfig                    |   10 +
->  drivers/i3c/master/Makefile                   |    1 +
->  drivers/i3c/master/renesas-i3c.c              | 1441 +++++++++++++++++
->  10 files changed, 1763 insertions(+)
+On Wed, Jun 11, 2025 at 11:39:27AM +0200, Wolfram Sang wrote:
+> From: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+>
+> Available in RZ/G3S and G3E SoCs. The G3S has 17 interrupts, the G3E 16
+> with the "HDR exit" interrupt missing. This interrupt is put to the end
+> of the list, so we can handle the difference using "minItems" instead of
+> defining a separate interrupt list per SoC.
+>
+> Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+> Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+> ---
+>
+> Tommaso also did a version with two interrupt lists and using 'oneOf'. I
+> prefer this version but maybe the other one is preferred upstream?
+>
+>  .../devicetree/bindings/i3c/renesas,i3c.yaml  | 186 ++++++++++++++++++
+>  1 file changed, 186 insertions(+)
 >  create mode 100644 Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
->  create mode 100644 drivers/i3c/master/renesas-i3c.c
-> 
+>
+> diff --git a/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml b/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
+> new file mode 100644
+> index 000000000000..e6e6c57bb56c
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
+> @@ -0,0 +1,186 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/i3c/renesas,i3c.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Renesas I3C Bus Interface
+> +
+> +maintainers:
+> +  - Wolfram Sang <wsa+renesas@sang-engineering.com>
+> +  - Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+> +
+> +properties:
+> +  compatible:
+> +    items:
+> +      - enum:
+> +          - renesas,r9a08g045-i3c # RZ/G3S
+> +          - renesas,r9a09g047-i3c # RZ/G3E
+> +      - const: renesas,i3c
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    items:
+> +      - description: Non-recoverable internal error interrupt
+> +      - description: Normal transfer error interrupt
+> +      - description: Normal transfer abort interrupt
+> +      - description: Normal response status buffer full interrupt
+> +      - description: Normal command buffer empty interrupt
+> +      - description: Normal IBI status buffer full interrupt
+> +      - description: Normal Rx data buffer full interrupt
+> +      - description: Normal Tx data buffer empty interrupt
+> +      - description: Normal receive status buffer full interrupt
+> +      - description: START condition detection interrupt
+> +      - description: STOP condition detection interrupt
+> +      - description: Transmit end interrupt
+> +      - description: NACK detection interrupt
+> +      - description: Arbitration lost interrupt
+> +      - description: Timeout detection interrupt
+> +      - description: Wake-up condition detection interrupt
+> +      - description: HDR Exit Pattern detection interrupt
+> +    minItems: 16
+> +
+> +  interrupt-names:
+> +    items:
+> +      - const: ierr
+> +      - const: terr
+> +      - const: abort
+> +      - const: resp
+> +      - const: cmd
+> +      - const: ibi
+> +      - const: rx
+> +      - const: tx
+> +      - const: rcv
+> +      - const: st
+> +      - const: sp
+> +      - const: tend
+> +      - const: nack
+> +      - const: al
+> +      - const: tmo
+> +      - const: wu
+> +      - const: exit
+> +    minItems: 16
+> +
+> +  clocks:
+> +    oneOf:
+> +      - items:
+> +          - description: APB bus clock
+> +          - description: transfer clock
+> +      - items:
+> +          - description: APB bus clock
+> +          - description: SFRs clock
+> +          - description: transfer clock
+> +
+> +  clock-names:
+> +    oneOf:
+> +      - items:
+> +          - const: pclk
+> +          - const: tclk
+> +      - items:
+> +          - const: pclk
+> +          - const: pclkrw
+> +          - const: tclk
+
+Suggested clock name is, apb, trans, srfs.
+Needn't clk surfix and provide meanful name.
+
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +
+> +  resets:
+> +    items:
+> +      - description: Reset signal
+> +      - description: APB interface reset signal/SCAN reset signal
+> +
+> +  reset-names:
+> +    items:
+> +      - const: presetn
+> +      - const: tresetn
+
+the same here:  per, apb
+
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - interrupt-names
+> +  - clock-names
+> +  - clocks
+> +  - power-domains
+> +  - resets
+> +  - reset-names
+> +
+> +allOf:
+> +  - $ref: i3c.yaml#
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: renesas,r9a08g045-i3c
+> +    then:
+> +      properties:
+> +        clocks:
+> +          maxItems: 2
+> +        clock-names:
+> +          maxItems: 2
+> +        interrupts:
+> +          minItems: 17
+> +        interrupt-names:
+> +          minItems: 17
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: renesas,r9a09g047-i3c
+> +    then:
+> +      properties:
+> +        clocks:
+> +          minItems: 3
+> +        clock-names:
+> +          minItems: 3
+> +        interrupts:
+> +          maxItems: 16
+> +        interrupt-names:
+> +          maxItems: 16
+> +
+> +unevaluatedProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/r9a08g045-cpg.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +
+> +    i3c@1005b000 {
+> +        compatible = "renesas,r9a08g045-i3c", "renesas,i3c";
+> +        reg = <0x1005b000 0x1000>;
+> +        clocks = <&cpg CPG_MOD R9A08G045_I3C_PCLK>,
+> +                 <&cpg CPG_MOD R9A08G045_I3C_TCLK>;
+> +        clock-names = "pclk", "tclk";
+> +        interrupts = <GIC_SPI 289 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <GIC_SPI 290 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <GIC_SPI 293 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <GIC_SPI 294 IRQ_TYPE_EDGE_RISING>,
+> +                     <GIC_SPI 295 IRQ_TYPE_EDGE_RISING>,
+> +                     <GIC_SPI 296 IRQ_TYPE_EDGE_RISING>,
+> +                     <GIC_SPI 297 IRQ_TYPE_EDGE_RISING>,
+> +                     <GIC_SPI 298 IRQ_TYPE_EDGE_RISING>,
+> +                     <GIC_SPI 299 IRQ_TYPE_EDGE_RISING>,
+> +                     <GIC_SPI 304 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <GIC_SPI 305 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <GIC_SPI 307 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <GIC_SPI 308 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <GIC_SPI 309 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <GIC_SPI 310 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <GIC_SPI 311 IRQ_TYPE_LEVEL_HIGH>,
+> +                     <GIC_SPI 306 IRQ_TYPE_LEVEL_HIGH>;
+> +        interrupt-names = "ierr", "terr", "abort", "resp",
+> +                          "cmd", "ibi", "rx", "tx", "rcv",
+> +                          "st", "sp", "tend", "nack",
+> +                          "al", "tmo", "wu", "exit";
+> +        resets = <&cpg R9A08G045_I3C_PRESETN>,
+> +                 <&cpg R9A08G045_I3C_TRESETN>;
+> +        reset-names = "presetn", "tresetn";
+> +        power-domains = <&cpg>;
+> +        #address-cells = <3>;
+> +        #size-cells = <0>;
+
+I prefer put #address-cells and #size-cells after reg
+
+Frank
+> +    };
+> +...
 > --
 > 2.47.2
-> 
-> 
-> 
-
-
-My bot found new DTB warnings on the .dts files added or changed in this
-series.
-
-Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
-are fixed by another series. Ultimately, it is up to the platform
-maintainer whether these warnings are acceptable or not. No need to reply
-unless the platform maintainer has comments.
-
-If you already ran DT checks and didn't see these error(s), then
-make sure dt-schema is up to date:
-
-  pip3 install dtschema --upgrade
-
-
-This patch series was applied (using b4) to base:
- Base: attempting to guess base-commit...
- Base: tags/v6.16-rc1 (exact match)
-
-If this is not the correct base, please add 'base-commit' tag
-(or use b4 which does this automatically)
-
-New warnings running 'make CHECK_DTBS=y for arch/arm64/boot/dts/renesas/' for 20250611093934.4208-1-wsa+renesas@sang-engineering.com:
-
-arch/arm64/boot/dts/renesas/r9a08g045s33-smarc.dtb: /soc/i3c@1005b000/temp@4a: failed to match any schema with compatible: ['adi,adt7411']
-
-
-
-
-
+>
 
 -- 
 linux-i3c mailing list
