@@ -4,153 +4,124 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 973F0C71153
-	for <linux-i3c@archiver.kernel.org>; Fri, 13 Jun 2025 15:46:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF55CC71135
+	for <linux-i3c@archiver.kernel.org>; Mon, 16 Jun 2025 04:16:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OHN/ihmQHSnrdghYJNyVmoOlAyh8HHiohQauog5b8do=; b=bggaHSbcfmfQcI
-	T7mHlAtgd8s6+Ig2s10Ze2geKsf/qvU1lVxJloethnU4bguOLZ+qQdYZvAviVYofSJZB3P0MJTHOg
-	qD4gmLOq7VFC0oGF9TFyrb9LSuU292/Ov0OlzTFf9s6imOgqpZdZUKi7NwtxQ1wEVKyaeD/LG3RLS
-	xr5IaGIpMwnugkUbtId/p2IaX7col9Dm6B2p71/LS8PBjFnooq476GfQZOwvvfb6Zu/tqbG1RIeQS
-	wSkkRRUag3YVEHPJOh8P80zVq8NgjFkCN7ZWZNNCvlGy10/3CfOHddIG0ylN0OQh8RVeUG16lRz6Z
-	GoBwZwW4b5HaxTNZgyVA==;
+	List-Owner; bh=jAVszsapmG3lz9fPHNypPHahen+dhKLLitHU+BLeKlc=; b=t/8HMgFJbZRjsZ
+	Han9gK7wTSQ934qbbAv69hddMTF3QwjLRuM4EtSEa9HPMx7eroAMOOhQq2qYZXGJozuekLr0Vbvq7
+	3rZKgkkfGxn0oXpZlQGzedF1BKM7+ltOtZpRB1bK1791upHYV26DduF435rIyJIFZQNJ5HpgsyVB6
+	llaS/5yafQM0X5IODMyJFIdVcgJY9O0pYQOCIaLtzJSa/M6KJEUjsTwVvewdqOafImZ2JCdU8G62x
+	Av1ydjOGs7gI5owdJ5/nIBHw2NmO8LhI/fo/1JYS6veEMK78/riIHCmTZzLZ+9+FJGM2bFAtCyBzN
+	Nsz2sd71alEszMDqyI6Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ6cB-0000000Gwk3-1Vbo;
-	Fri, 13 Jun 2025 15:46:47 +0000
-Received: from mail-westeuropeazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c201::5] helo=AS8PR03CU001.outbound.protection.outlook.com)
+	id 1uR1Gi-00000003KOS-2WGZ;
+	Mon, 16 Jun 2025 04:16:24 +0000
+Received: from mail-bjschn02on2072e.outbound.protection.partner.outlook.cn ([2406:e500:4440:2::72e] helo=CHN02-BJS-obe.outbound.protection.partner.outlook.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uQ5bZ-0000000GjD0-0Dl7
+	id 1uQzdx-00000003A5f-0R5u
 	for linux-i3c@lists.infradead.org;
-	Fri, 13 Jun 2025 14:42:06 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=HkBX4GfcjhA/4sinxQVeMU7a/xboIsUUFyg6ilC3RWmiJv5285Xk5nulWsHj3+HUxzHdONEdTSoemzutTiMIV8v0XTQ4WtfJxFGGHedLyQNfg4acwepGxQBRhSWNTi3Msa+JWEOs2LEy32XHRB++6X8nFjwq+VRuZRRbZwQd1XlmNJkIvdPx5ywWYY177wDEFdDmubH4mizneNbcUR6lNj2UNf51Fg7wi7n8RtyTsCZg4uSOqmKhnN5h5QVfPwHNxpjQuz797dQhKc7Kis906mtIToXvNAcB9EzZ3uvWs/0wD1NrHPibrwDhwWtDnJmshvRvoK++x9Nv0lkZxt+rAg==
+	Mon, 16 Jun 2025 02:32:19 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=bNLWwsZ3op5bRP0cvF7RuKXTKFYDtbAyo1ip2j5GBV5fWhSCWjB6DgvkK8LTAIeCDIyKIcmF66khVNs+WzVNU8S6d1XjtKWT9Yn8wffVv1qQmXH6QEw8rY01zbQgEPZDwIHTjc2KcaNrV1aAJEc9RqBgQ5XdQs2MPgbFxGP/LUXYQr/Va7Ik+SoK7GsKpgtUaW5xRDa/Wb2RnEymJ1Xlq7r4ik43b8yMWIUiHWNqZAaV0yhOiSi5r+NAvi14Oq+ZxsmqYOSjFouK5hwEHDiw6vq6gnEFxI4/EFFoGhDPgiAUNdojVFCA3ue5jrczO2FcrQpBZQVHcJTOjFWKJdUR8w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
+ s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=EjZ31ySs6kR/Nbv7P1nFAjy4w6rK7Ra+40YPJ15pCiE=;
- b=hibiLdGYSHY6fpWEY0RJ434b75yFCTraSPfcNsdyCNpZCHYnVsgrpqv92ZZdXQwzP8o21Vt/gqz+vI0AdTFB4BjIn5pHM3R2iu9t9yowdvzt/B4yiqWrrNw5DSqcmZFVjxMuU/J+ywXJt5cebDvd5Kgmu02B75u6DC452NluY1SKt77wYUgTZ3xjkL+FQmEt75fLWZQe7xM5sy/cupafc5H4adGPTycytGR1ywNTPlw+6D1FftDdPGa4dcnr6sxvnS2nFqHf7+LwT2iDeOeh/5+tj2uhaSpTBNn0OAUbNik+N05ii07KR8VB7caFJ9GpSpSan2ZX52LKoH+aL/lOzg==
+ bh=V1fDAMVH7WC9dZ5u43YtIjZQAd1Qy6CWETnT/2zNt9s=;
+ b=U1tyqWm0nq3iEKfaUSowcdXKqWATWHMGIhGl/BSacZKcCUjS23w7SvTQebpCN947NY31aKROp/M/DDwwoOuMWoVuTj7sqVvzWIyFtX66IfhDtt8x5aoQVASxwPFn4FzNekNWC3wGNbwboCTwSI3Xkg6s3dzVz8RnPbj0NAhtGgV1rd83/UbsZGEbus7nMMdX5W3VWZxtoRKf4Z9SHwxu9jmA9MAWAhEsJ305C1q7Zb9SQMS4Egv5EAPSL9NFJpBVYxZVwHUVJMminmdFe1jy9ZxNasFZUQN/j9KjZCltOm+Ro1Ph3EerzhXLPcHo9agvP2HX6Hrpq4dg0Vq25AGLxw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EjZ31ySs6kR/Nbv7P1nFAjy4w6rK7Ra+40YPJ15pCiE=;
- b=K2i8K6XcBUNY3E34KIwYhRy9ak/v9v3ogaKv2gxx0Myv1Um7yrBXEIUH9YqdRi62AVfctQHy6UQUQcgkdVp06J0myu+dbck/zNmSKbiNQd2MpLLAZxS4dZ5NkH+vWxNHEZzu4clk2dAMUaFo58C8hCnuYyK1j6CMdFZImGcHorzCrPO2RMPEyXUwiIu7jbc10ITwrOp8wce2mTPS+y1wigYsk7v1FCjdAon/kMq7noOoKCwH0FqlbD2djamzuSiLGfYae+rZ8gkML7lcJ+hkVMKOaiWz9yyIT5lb3p6nxk3TRiUMbpkyowxaIyWFCp9LTAvhUSH4dPT0VhWr26Ks2A==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
- by PA1PR04MB10627.eurprd04.prod.outlook.com (2603:10a6:102:48b::19) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8835.19; Fri, 13 Jun
- 2025 14:41:59 +0000
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06%7]) with mapi id 15.20.8835.018; Fri, 13 Jun 2025
- 14:41:59 +0000
-Date: Fri, 13 Jun 2025 10:41:49 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	linux-renesas-soc@vger.kernel.org,
-	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Kees Cook <kees@kernel.org>,
-	"Gustavo A. R. Silva" <gustavoars@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>, linux-i3c@lists.infradead.org,
-	linux-hardening@vger.kernel.org
-Subject: Re: [PATCH RFC 4/7] i3c: add driver for Renesas I3C IP
-Message-ID: <aEw4rTDn14mn5KLh@lizhi-Precision-Tower-5810>
-References: <20250611093934.4208-1-wsa+renesas@sang-engineering.com>
- <20250611093934.4208-5-wsa+renesas@sang-engineering.com>
- <aEmws+OtHirrUPUo@lizhi-Precision-Tower-5810>
- <aErqY0QWMRdC7Pvg@shikoro>
-Content-Disposition: inline
-In-Reply-To: <aErqY0QWMRdC7Pvg@shikoro>
-X-ClientProxiedBy: PH5P222CA0005.NAMP222.PROD.OUTLOOK.COM
- (2603:10b6:510:34b::16) To PAXPR04MB9642.eurprd04.prod.outlook.com
- (2603:10a6:102:240::14)
+ smtp.mailfrom=starfivetech.com; dmarc=pass action=none
+ header.from=starfivetech.com; dkim=pass header.d=starfivetech.com; arc=none
+Received: from SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c311:20::14) by SH0PR01MB0763.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c311:22::11) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8792.42; Mon, 16 Jun
+ 2025 02:31:59 +0000
+Received: from SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
+ ([fe80::81c4:2724:6a48:a18]) by SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
+ ([fe80::81c4:2724:6a48:a18%7]) with mapi id 15.20.8792.044; Mon, 16 Jun 2025
+ 02:31:59 +0000
+From: Joshua Yeong <joshua.yeong@starfivetech.com>
+To: "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>
+Subject: Re: [PATCH] i3c: ast2600: Generate T-bits to terminate IBI storm
+Thread-Topic: [PATCH] i3c: ast2600: Generate T-bits to terminate IBI storm
+Thread-Index: AQHb2o76ryA94TBY7k+UDIrabhzuH7QFGI2A
+Date: Mon, 16 Jun 2025 02:31:59 +0000
+Message-ID: <535d8707-893e-4e5b-96c6-a59e32b3773e@starfivetech.com>
+References: <20250611040203.487734-1-billy_tsai@aspeedtech.com>
+In-Reply-To: <20250611040203.487734-1-billy_tsai@aspeedtech.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=starfivetech.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SH0PR01MB0841:EE_|SH0PR01MB0763:EE_
+x-ms-office365-filtering-correlation-id: 3af403c0-83ee-4376-bd30-08ddac7df89a
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|41320700013|366016|38070700018;
+x-microsoft-antispam-message-info: sU+qBpw+D3KzfCw212i12/eddiOnnDuhVKCToQ4HtjKzDdCiTW+2n1FG1fbsM9wLIanolyG5iMTv2FJe3q9rsIdUySR+A2ALxcgGRSpW/QlfXXcuhkEKXDUfNxJVJPwqE/iL75zARF6gOvhauShjV9esegDUhRkR4F6mbi/ri4UJ4A+NV4ohHg0bMzilleE/9mAjufLNmxyD08BT+sKVaS1inOMT9LcNt4bh4HyhYbxm7g74aS0/E2RyurszRtEwbCq3H3I+P9y80SpKuBa1j+B1B23l9BsD8x3jmIwg8/oMgXE8Vv64NyfIIjXu9cc+THR9MJLiLl3Ni0jWMFE7SDZqYQW2SeBi4UGw3YnooOl/338k0gHf0vvd+Y43eraE6T+m40txXCIGUc2eiO1MvV/HQePgRizaysHmMMA/QVy0Mm1VGSOiAmjmrogvpw4ah/vueB4HT4/pW3sU6nmToLUaD+oH20WuzQXyADzP3Q0QbQFjblm2UXJ34yOTj7660SkAgprV8YyAzAab5R1MhEVMKed0IyWXWHAfT4ZesdjNCQ3j0uHAlpVzWUUDocUZs9SfMNnkPN7Vy0GGsowg0j9b0lDI8otfM2JKyOvZdu8=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(41320700013)(366016)(38070700018);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?K1c4TzloU25pV2pvLzRDZ291bmlGK01iSnpwMEFCMERhei94ZTVMN3J1Mmpy?=
+ =?utf-8?B?VG9MSXZmRDBWZjFhaE0rM1h2NU02UStmVzZHb2FiOVAwNUZ5YzQ5VjBTdnBo?=
+ =?utf-8?B?NTBsSEZhN3kwMGI4cjlYdXR1QUtHTTdiZlhWdG1abjJNWVZ5VzgvRm1ZL0ZP?=
+ =?utf-8?B?MkFXbW85cmloWjZ5bS9kZXhxMTJhbjhVbytac1RjZHhTd25qMEdxdWdEWlZo?=
+ =?utf-8?B?akpPcnY0eDhuOVRLN2UzNU80N05UNGhBdU03Rng5YmFvWkNyNHpvbHk1T3ls?=
+ =?utf-8?B?YTc5WHBZczFSakZFR210Y1lvQ3BrNXB2NWRsdzdkK05oS05RVWRjMGFudGg3?=
+ =?utf-8?B?RTVicGNsb1pDcU0wdUVKdDBXYzk5T3YyQVNuc1E2Vk5YRitQSEpZWlBNN1lN?=
+ =?utf-8?B?TE9GbkxjU1Z1SkwvU0c3cmR3VG96eERZSTd0dnVnQmszOHdWcFZnZkxSamF3?=
+ =?utf-8?B?Q1l3b3JVTFRCc2h4SVlWY29uazVyaGZLSXBKcWFjOHlOUHZoLytwa3AvS3Fm?=
+ =?utf-8?B?cEg4bnlBK1dRbmxma05DcjQrNTM3dkNzSEk4NHd4K2lHTnI2VjNMSzhNa1Az?=
+ =?utf-8?B?OFZuQkNhaG1ZRVRVeDYvZnJ4NWM0cFdrVnJhUkhKYVNETHRkYUhIZGMxRlAw?=
+ =?utf-8?B?VU9GK0dmcmpidHRBbFhJb0d6STdYQ29OQ0dMVUw3S0ZZUjRBMitzbWJmWkxB?=
+ =?utf-8?B?ei9YWTJ4M0F1dFJRRnFLeC9odlRnZ0pheVgwOUYremJoOTlGS01uQ09FN2Np?=
+ =?utf-8?B?QUJhRDFpNEw1U2FSRWVmTEVzQWFkZm00RXNsRDZqTnhhNld5R0ZVVk8vS2NM?=
+ =?utf-8?B?WmZPVkJ0d3E3OFlBZGM0NjNXN2o2Mk1VUTJzTmJ0Z2NYdk1YOWdLanJXcXFa?=
+ =?utf-8?B?UFhvU21tcjhKSG95eEJRT3dKWENBYWZZRm8zVEVYamRpRVhJUHZnci80eFE4?=
+ =?utf-8?B?bE1EUFFSOXBlRmc4TFdVcGxIVmFTZktaQldlQXZkbmp6R3l6WWdDOHlpNEdq?=
+ =?utf-8?B?Vmd5Y3pwSVRoczN5OTZGaTVFR0xGVytsZjhoRk5QYzR1MEw3OVNFRFU2Qyta?=
+ =?utf-8?B?cDhBUHl4RmdIcFJmUnhBSC90NVhLdE5KcTRoT1Znd0Q1VkQ2RGt5cEZ6MWlv?=
+ =?utf-8?B?Mm5ITWJWWGwvNjNwRmRmUGZJQm5EektOMUl5d0xkcVpBOHV5SW1HNHVtZTdW?=
+ =?utf-8?B?SEQyYUIralkvNU1ZRkFZUkpxeWFQQUxMRWhQZkp3U3V4WUdwYS9nc3dtSmpM?=
+ =?utf-8?B?UkJnZHRkV2lOOFNadEVhSnYyU1hvK2QyU2NmY0tHdWJTM05SRDg5K0licnhG?=
+ =?utf-8?B?VnI1UmZvWklucFk5eGp5enltRmF1UTRORDUraEFWWmV2TGJibWphTktxVVVr?=
+ =?utf-8?B?QTB2eWJxdjlSc3BtMjd4Ris2Q1AweGsrNzl6Sk9iTkpyZ2pTNk92cWdsUnNB?=
+ =?utf-8?B?RVEwQk5pcU1wTk5KT1FoNzdTRXVIbWJvdHZzWFBFcTZzUkhjc0VIV1RIOXY1?=
+ =?utf-8?B?amMvYjRlQmFyK2ZoVjZXUzZ6UzA2cEUrOTFkTWRKY0drTXc1R2QvamJMS3I5?=
+ =?utf-8?B?NWQzQ2lKS0VBMFMzeW9LY211SVg4VnVRc3NKYWdWU1VwRU1RZEpNaUQvVjZO?=
+ =?utf-8?B?NW44V0FXVzM2S01LbjMwQzdZS3BqVXpVekV2VW9iWmdlWDVENTF5SEhpSGJp?=
+ =?utf-8?B?NjN2UEh3WVNSL0ZvWnpUQS9rbG16bHRFVC9Jb3BFSDJJVm9uNjQ0ZDVVeVVN?=
+ =?utf-8?B?NWRVVG9zSENYTGhhRUpEdWRJT0p3b3N3N1JKOTZGOWZHSldEcDJxZlFSQU1Q?=
+ =?utf-8?B?OFNHUllJalBGYWpSUkdDYTZaUEV6T1ZjWFVsa2hhYldhdUY3enE2UEYzNEw3?=
+ =?utf-8?B?bUJuSkw4d2dLNW5GTzVneVJLbUR6WWFCMkJjbTV4ajRNWVJYMjh6S3hYTGp3?=
+ =?utf-8?B?NWF4TmdWRW5JSTFudEQ3K25OTmllMUQ5Z2JxcTZmVVQ2Nkg0azF0b2ZGRXBz?=
+ =?utf-8?B?cWFmSHNvdFJQZ3R3Q2gxNm5MaXJMc0NTd1FJTVYzdmU0b2hWSjV1MWcyVkw3?=
+ =?utf-8?B?L2xFRGJ4WE5RQ1ZmaDhsZEtqZjFCUitrbktCNWx3aVlHN0gyZHlJUDd5NzVT?=
+ =?utf-8?B?VU1Ca3FKRW9yTnM1WmhnV2RoZEU4VUdvLy9QSEM3WGt5aEZTT2tGK0s5akha?=
+ =?utf-8?B?Z0E9PQ==?=
+Content-ID: <66D937A006E2A0498F03014ED5D880E5@CHNPR01.prod.partner.outlook.cn>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|PA1PR04MB10627:EE_
-X-MS-Office365-Filtering-Correlation-Id: 52463c56-a959-4e36-8bb4-08ddaa8873c1
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|7416014|52116014|376014|921020|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?maDSAdpEjVG9mIiCMtn7Uv5tONhGw8Riz0Ysgerm9WXWd9fBoQzSrGyiaai1?=
- =?us-ascii?Q?/bOZnwLAeiks4BeK+DlU/NfRJrwcQIt8joqPg8LM526AzB4wB69W4+BUua88?=
- =?us-ascii?Q?F+vLyy4K8LDrM7UHu+hObuf7p0tOnhghW2r8Kz3kIJ4VXA/Tsm9Udme25pyt?=
- =?us-ascii?Q?0oJMX0yEx33E/d6OMNfcohONRD72PxOYlacbS5jRjL5PNa3iJYGym/6rsmQu?=
- =?us-ascii?Q?2zxMvdB0nxiCEm/Xn/IQhrO13iuPYQ4hE8zoK7eDQ/HV7r/lhqEtVAD7DEOR?=
- =?us-ascii?Q?shSDBUIzmacid3JizviiOpzwg6UrCZBe3UsG0yZf/SHfIMpf9XfWRRrVz0I6?=
- =?us-ascii?Q?eThyTMGcmTj/kfz3k96bhoirZRXFZw8nNKPNn0guN662hN/D7+Me8DYPWmNT?=
- =?us-ascii?Q?2wxKaGdX3DYjMiKjAulssNkqqS7g8m7WL615n2caWx5CmvUJ35hPIme3wlOG?=
- =?us-ascii?Q?1yBLnfLUYZcBKiqvu4xu4oDOfn2HYF8wakmYQcc2MzpX4LLj5yscDmJVy+66?=
- =?us-ascii?Q?5FCd4DjlNpvKyhtfhcPODQWyw4fIlFQO2vu/LVkDOgcxO/35So5WPByPwC/v?=
- =?us-ascii?Q?WgWaP3mC7wsI6HfO7ZIrJz5Cfdv9C26Ov8uRP/jFSE7l9VkshFE85D7Zb/Ln?=
- =?us-ascii?Q?UCvw8aDqbWrgIafqsZF61e6Jsze/ZO38F2B1QC37s8nKIJtv3GTfWCpY7mC0?=
- =?us-ascii?Q?rQyp8VQcc1Go55HzWPg3SXs3wjLvkw6m/s1aJDsCHfH/b8ctJp3XNeotp3aT?=
- =?us-ascii?Q?uQAqxKMD4fLLE9EQ1CRjjBBUaKO+GnYG5gGKdI2+5Fe4dcZmQaIkjxXDBaP8?=
- =?us-ascii?Q?1BCKqRcWhvEqVjgLrPWp0ezTlnqgNUHrCbB66b94ugkDzsMPVDpiLPeLLK66?=
- =?us-ascii?Q?Cx1pdrMNKv/Q2HA0lFNkfk/7qKSkfYPLXsxFOgmJkTbzmKV1xqCOLp2s0wKg?=
- =?us-ascii?Q?xEQf+QNiXwAE9V9S1XKqwcraLjV7+nYpnzI4JAWEna/fNHp85dAp4TFiUorm?=
- =?us-ascii?Q?iar9rSZSfYUcG1grC27fYz1bZxpAAxz81+njmj7ijlGWoOcP8+ZhUdOIsKDZ?=
- =?us-ascii?Q?QHLETADf85Zt5iuz7hG6GUAelbCfT/9kO+6dGC47EGbBoGCsp4LhDEiggosl?=
- =?us-ascii?Q?yLBv7B5ovZmT/BWDVM0c4B9nfrK0mQNH4qC2dD84UZrqug4+3UMc8RNxntdl?=
- =?us-ascii?Q?vVlmkAnb7PNLGADUH4Ar0N3M84DI3gPPew7xzRLrm/NVXFvb01VU8EldFiKR?=
- =?us-ascii?Q?OxvIzzTc5mZvVgxNnkZUa/zuR4ffOoGNNkyW5DLswo/PI8UdoOuDQR+kfj5q?=
- =?us-ascii?Q?mCVBgIGN5aQF4+U4LvKPrH8Fc75+qzZu63RDK3DZRlNpiHl7EGCrgk/9Pdci?=
- =?us-ascii?Q?mAKaGnjDqNXDWLjpkF0aWZXXBvzIxlM3dVTG4KVpPkynxY3y4K1RXZ5XzqBF?=
- =?us-ascii?Q?+VvvsvdugP0Q04JrPpo5odLIaHiNYS9Hw+kCci/GBBPFK7W80VXxzjuzS9dU?=
- =?us-ascii?Q?xJVlEAyd8p1wNEU=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(7416014)(52116014)(376014)(921020)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?0WDaFIqFpfKNqkbpa5Lgzh8WxZEFof+Kr7+o8f8baIAOAqgmE5F0E9vlRBjU?=
- =?us-ascii?Q?IxA6oUJiqHEAkr6XMnrN1+CG9wR2vBYrwdL/8yJXEZ/S2YgDqHy3CVLKmNcX?=
- =?us-ascii?Q?VHnebBJ74jgQiVbM5ays0jQ8Nf6hEnafr32cjJQH2gQj+R6D+JmXyhX8RGsQ?=
- =?us-ascii?Q?OtJPkEajzsY5T50Tl1Atq+2Z5lz9sVJTTeVL+6iPvIjM/Inx+TNl0peOKWsc?=
- =?us-ascii?Q?CdI7vdbH1MGI5+LIDPu14tIIiMPZt7wkP9cmvEaUF5D48phwjH0JD2MAli2g?=
- =?us-ascii?Q?LfQpJToUrQFoclF4w03VeRIx1EOZGAszEe3Gt+tlr91W8jie+QWmhA/02VRg?=
- =?us-ascii?Q?fPZ580hc/VIaeNb7lcL46LWQu7ahuZIbprrZsK9GYJ1PPO0lIpdNSsWiA6oB?=
- =?us-ascii?Q?LVEIRtvMn73VmGbcyzIwf+xlW7xKsvwKc01TBuJvzB7D3Oe/ApM7koC1x7T+?=
- =?us-ascii?Q?v2gUlGB+zmmJxBykXFOc/Dmee9KKPKof2IbIPL+3NV9AqIl/RoE2Ui4FMd3m?=
- =?us-ascii?Q?rSBlt0IBngjUs78SjY9o6r1ta7sPY04ZIQ3cVm1wTFzPjnEyBerJqvgDxCe0?=
- =?us-ascii?Q?JWNJRgwD1EdnEgZ2V6X/Aq42NtbBZRjMw8isaJgvtPnv7weP16A3c0YcQoZ7?=
- =?us-ascii?Q?VPs8LxdeNVpj0cYXDPSpwmmMqhZ/A7/ceM57FVJj6LwO49o6uk1wLJHDA/Ja?=
- =?us-ascii?Q?SpfGjm4JPGseV2MHCQsY6CpbM232RBkHJBFQRYFTwdki8D/0Em4KkKQqnva4?=
- =?us-ascii?Q?Rem56+MjOg1TOdUUJ9oh55WuwsyrQ3UL/ZEu6i3rfljUprtVrMnPJO8p9OwV?=
- =?us-ascii?Q?2Rj76i3WpGgY+lxLlGx/roqT1hqw6ziw9jxbl/Llwthxl24m/QCInfIFz+6Z?=
- =?us-ascii?Q?2OsyZV2X/RRyU8+/oxNtLrAPpsgvQ527uj3lRPx1liUnvkCD3jZjBl3NY7zd?=
- =?us-ascii?Q?SpxJhSKfZ7SBXMA8+GYU37zlHEUu50fkRVpxzoPWpM74IISYRh/LD7iCwxvC?=
- =?us-ascii?Q?8b2grX8X/LtYM7//+V4/w+K8rAiYbgXwALEPiFfHRViXuII09Y0yvq9OymNf?=
- =?us-ascii?Q?HKaZ8SLx+/KtzEHmvwXKOr7a+FYfZ7cf5n6xQ9oUyXKSB0hJW9JpejZLYrZV?=
- =?us-ascii?Q?p4W2SG/Y1VtkVy+NVL7X8HUvHiDfGeRksQmk0UXENxISplSDR/GuzQOAPJpF?=
- =?us-ascii?Q?l1FItbUFGQ/VnPG3fKy+fBOmL/S11Khn9t8Dg16JRlOEVt/IA3QY6WNc9gyX?=
- =?us-ascii?Q?+fTlHvHo85r83WuWLIOb1XQ275Ekrp8QwnxfyUj27AK09aaPz4FHtfaf+Gfc?=
- =?us-ascii?Q?MArG5XeO8eRZrRwhUauDjHlidLjgZxIW41nImFWvVyZGGKicDrRgsq+Z00QX?=
- =?us-ascii?Q?cuGpHWDmWnbMgUCJT5FhKUf6tzmz2Eeig45mntvlb6IqX9hQIazA2bAMqwta?=
- =?us-ascii?Q?9eT16oe/tM1W/UjhRv51QC5/uuU6fhAiEVnN1mI/Ss1mRrtFSIxCAZzC7m+O?=
- =?us-ascii?Q?IZT1rpHlKL1sdnQ4mq4LRxLwOkTPtkx+9M1EfH90XW+PK+BwNFROVzylWbZt?=
- =?us-ascii?Q?+izlVqdZbgzMczyY6FMuKsWTjL/HVi4xGC7kbsiy?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 52463c56-a959-4e36-8bb4-08ddaa8873c1
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-OriginatorOrg: starfivetech.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Jun 2025 14:41:59.2641
+X-MS-Exchange-CrossTenant-AuthSource: SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3af403c0-83ee-4376-bd30-08ddac7df89a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Jun 2025 02:31:59.7751
  (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: HCnvvJeFqjSbdAuoNwrDE9gzKHyaEQC9pDjyD8pVccy55PL0An4J/ncNqf5P5EeBsu5sv3z4PUon438Jt8HI3w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA1PR04MB10627
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 06fe3fa3-1221-43d3-861b-5a4ee687a85c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 748HhOLD35Fq9GGI60Ii1oN9vEQfJjO9CRqCfwXnd1Ec0MTnbPK9lIgLkjDsv05eAAIgcWmH3ZFx6UijNv0afjjsbVyRS7kTg5h5gbm06As=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SH0PR01MB0763
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250613_074205_113828_FCEAC5D6 
-X-CRM114-Status: GOOD (  38.74  )
+X-CRM114-CacheID: sfid-20250615_193217_297139_21E57E57 
+X-CRM114-Status: GOOD (  22.55  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -167,138 +138,188 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jun 12, 2025 at 04:55:31PM +0200, Wolfram Sang wrote:
-> Hi Frank,
->
-> thanks again for the super-fast review.
->
-> > > - RENESAS_I3C_MAX_DEVS is a constant currently. So, we could get rid of
-> > >   the 'maxdevs' variable. I tend to keep it this way in case future
-> > >   controllers may use a different value, then we can change it easily.
-> >
-> > It is similar ADI version. Can you simple descript hardware behavor to show
-> > why need RENESAS_I3C_MAX_DEVS,
->
-> Yes, for example this register has basic status info per target:
->
-> > > +#define DATBAS(x)		(0x224 + 0x8 * (x))
->
-> And there are only 8 of these registers. So, there is a maximum of 8 for
-> this controller. We could hardcode 8. But we could leave the handling as
-> is, just in case a future controller has more or less of these
-> registers.
->
-> > > - For accessing the FIFOs, this driver uses the same code as existing
-> > >   upstream drivers or the recenlty submitted "ADI" driver. There, the
-> > >   question came up, if this could be a helper function?
-> >
-> > Add common header in drivers/i3c/master/core.h implement inline helper
-> > function
->
-> Sure thing. I think I didn't get feedback on my original suggestion so
-> far. If I now know you are positive about it, I will give it a try.
->
-> > #define PRTS                 0x00
-> > #define  PRTS_PRTMD          BIT(0)
-> >
-> > Add extra space help distinguish register and field define.
->
-> Okay.
->
-> >
-> > > +
-> > > +#define BCTL			0x14
-> > > +#define BCTL_HJACKCTL		BIT(8)
-> > > +#define BCTL_ABT		BIT(29)
-> > > +#define BCTL_BUSE		BIT(31)
-> > > +
-> > > +#define MSDVAD			0x18
-> > > +#define MSDVAD_MDYAD(x)		(((x) & 0x3f) << 16)
-> >
-> > Use GEN_MASK
->
-> Sigh, if you think this is more readable, then OK.
->
-> > > +#define STDBR			0x74
-> > > +#define STDBR_SBRLO(cond, x)	((((x) >> (cond)) & 0xff) << 0)
-> > > +#define STDBR_SBRHO(cond, x)	((((x) >> (cond)) & 0xff) << 8)
-> >
-> > FIELD_GET FIELD_PREP
->
-> Ditto.
->
-> > > +static inline void i3c_reg_update(u32 mask, u32 val, void __iomem *reg)
-> > > +{
-> > > +	u32 data = readl(reg);
-> > > +
-> > > +	data &= ~mask;
-> > > +	data |= (val & mask);
-> > > +	writel(data, reg);
-> > > +}
-> >
-> > can you move reg to first argument to align below help function?
->
-> Yup, coccinelle should make that easy.
->
-> > > +out:
-> > > +	kfree(xfer);
-> >
-> > you can __free(kfree) xfer = NULL at declear to avoid this goto branch.
->
-> I'll give it a try...
->
-> > > +		if (!i3c_xfers[i].rnw && i3c_xfers[i].len > 4) {
-> >
-> > Only pre fill fifo when len >4? what happen if only write 1 byte?
->
-> Ehrm, good catch. I will check this in more detail.
->
-> > > +			renesas_i3c_write_to_tx_fifo(i3c, cmd->tx_buf, cmd->len);
-> > > +			if (cmd->len > NTDTBP0_DEPTH * sizeof(u32))
-> > > +				i3c_reg_set_bit(i3c->regs, NTIE, NTIE_TDBEIE0);
-> > > +		}
-> > > +
-> > > +		renesas_i3c_enqueue_xfer(i3c, xfer);
-> > > +		if (!wait_for_completion_timeout(&xfer->comp, XFER_TIMEOUT))
-> > > +			renesas_i3c_dequeue_xfer(i3c, xfer);
-> >
-> > This may common problem, I3C spec have 100us timeout, target side may
-> > timeout when driver wait for irq. So target side treat "repeat start" as
-> > "start" and issue address arbitration.
->
-> There is a specified timeout? I couldn't find one in the specs, can you
-> kindly point me to it? So, the solution is to use 100us as timeout?
->
-> > > +	i3c->addrs[pos] = dev->info.dyn_addr ? : dev->info.static_addr;
-> >
-> > Are there extension of "?" operator in C ? I remember
-> >
-> > dev->info.dyn_addr ? dev->info.dyn_addr : dev->info.static_addr;
->
-> Dunno if it made it into the standard these days, but as a GCC extension
-> it is used in the kernel for ages. I encourage its use in I2C, other
-> maintainers don't like it much. Mileages vary.
+On 11-Jun-2025 12:02 PM, Billy Tsai wrote:
+> Under certain conditions, such as when an IBI interrupt is received and
+> SDA remains high after the address phase, the I3C controller will enter
+> an infinite loop attempting to read data until a T-bit is detected.
+> This commit addresses the issue by generating a fake T-bit to terminate
+> the IBI storm when the received IBI data length exceeds the maximum
+> allowable IBI payload.
+> This issue cannot be resolved using the abort function, as it is
+> ineffective when the I3C FSM is in the Servicing IBI Transfer (0xE) or
+> Clock Extension (0x12) states.
+> 
+> Signed-off-by: Billy Tsai <billy_tsai@aspeedtech.com>
+> ---
+>  drivers/i3c/master/ast2600-i3c-master.c | 60 +++++++++++++++++++++++++
+>  drivers/i3c/master/dw-i3c-master.c      | 14 ++++++
+>  drivers/i3c/master/dw-i3c-master.h      |  9 ++++
+>  3 files changed, 83 insertions(+)
+> 
+> diff --git a/drivers/i3c/master/ast2600-i3c-master.c b/drivers/i3c/master/ast2600-i3c-master.c
+> index e05e83812c71..6ac0122474d0 100644
+> --- a/drivers/i3c/master/ast2600-i3c-master.c
+> +++ b/drivers/i3c/master/ast2600-i3c-master.c
+> @@ -33,11 +33,28 @@
+>  #define AST2600_I3CG_REG1_SA_EN			BIT(15)
+>  #define AST2600_I3CG_REG1_INST_ID_MASK		GENMASK(19, 16)
+>  #define AST2600_I3CG_REG1_INST_ID(x)		(((x) << 16) & AST2600_I3CG_REG1_INST_ID_MASK)
+> +#define AST2600_I3CG_REG1_SCL_SW_MODE_OE	BIT(20)
+> +#define AST2600_I3CG_REG1_SCL_OUT_SW_MODE_VAL	BIT(21)
+> +#define AST2600_I3CG_REG1_SCL_IN_SW_MODE_VAL	BIT(23)
+> +#define AST2600_I3CG_REG1_SDA_SW_MODE_OE	BIT(24)
+> +#define AST2600_I3CG_REG1_SDA_OUT_SW_MODE_VAL	BIT(25)
+> +#define AST2600_I3CG_REG1_SDA_IN_SW_MODE_VAL	BIT(27)
+> +#define AST2600_I3CG_REG1_SCL_IN_SW_MODE_EN	BIT(28)
+> +#define AST2600_I3CG_REG1_SDA_IN_SW_MODE_EN	BIT(29)
+> +#define AST2600_I3CG_REG1_SCL_OUT_SW_MODE_EN	BIT(30)
+> +#define AST2600_I3CG_REG1_SDA_OUT_SW_MODE_EN	BIT(31)
+>  
+>  #define AST2600_DEFAULT_SDA_PULLUP_OHMS		2000
+>  
+>  #define DEV_ADDR_TABLE_IBI_PEC			BIT(11)
+>  
+> +#define IBI_QUEUE_STATUS		0x18
+> +#define PRESENT_STATE			0x54
+> +#define   CM_TFR_STS			GENMASK(13, 8)
+> +#define     CM_TFR_STS_MASTER_SERV_IBI	0xe
+> +#define   SDA_LINE_SIGNAL_LEVEL		BIT(1)
+> +#define   SCL_LINE_SIGNAL_LEVEL		BIT(0)
+> +
+>  struct ast2600_i3c {
+>  	struct dw_i3c_master dw;
+>  	struct regmap *global_regs;
+> @@ -117,9 +134,52 @@ static void ast2600_i3c_set_dat_ibi(struct dw_i3c_master *i3c,
+>  	}
+>  }
+>  
+> +static bool ast2600_i3c_fsm_exit_serv_ibi(struct dw_i3c_master *dw)
+> +{
+> +	u32 state;
+> +
+> +	/*
+> +	 * Clear the IBI queue to enable the hardware to generate SCL and
+> +	 * begin detecting the T-bit low to stop reading IBI data.
+> +	 */
+> +	readl(dw->regs + IBI_QUEUE_STATUS);
+> +	state = FIELD_GET(CM_TFR_STS, readl(dw->regs + PRESENT_STATE));
+> +	if (state == CM_TFR_STS_MASTER_SERV_IBI)
+> +		return false;
+> +
+> +	return true;
+> +}
+> +
+> +static void ast2600_i3c_gen_tbits_in(struct dw_i3c_master *dw)
+> +{
+> +	struct ast2600_i3c *i3c = to_ast2600_i3c(dw);
+> +	bool is_idle;
+> +	int ret;
+> +
+> +	regmap_write_bits(i3c->global_regs, AST2600_I3CG_REG1(i3c->global_idx),
+> +			  AST2600_I3CG_REG1_SDA_IN_SW_MODE_VAL,
+> +			  AST2600_I3CG_REG1_SDA_IN_SW_MODE_VAL);
+> +	regmap_write_bits(i3c->global_regs, AST2600_I3CG_REG1(i3c->global_idx),
+> +			  AST2600_I3CG_REG1_SDA_IN_SW_MODE_EN,
+> +			  AST2600_I3CG_REG1_SDA_IN_SW_MODE_EN);
+> +
+> +	regmap_write_bits(i3c->global_regs, AST2600_I3CG_REG1(i3c->global_idx),
+> +			  AST2600_I3CG_REG1_SDA_IN_SW_MODE_VAL, 0);
+> +	ret = readx_poll_timeout_atomic(ast2600_i3c_fsm_exit_serv_ibi, dw,
+> +					is_idle, is_idle, 0, 2000000);
+> +	regmap_write_bits(i3c->global_regs, AST2600_I3CG_REG1(i3c->global_idx),
+> +			  AST2600_I3CG_REG1_SDA_IN_SW_MODE_EN, 0);
+> +	if (ret)
+> +		dev_err(&dw->base.dev,
+> +			"Failed to exit the I3C fsm from %lx(MASTER_SERV_IBI): %d",
+> +			FIELD_GET(CM_TFR_STS, readl(dw->regs + PRESENT_STATE)),
+> +			ret);
+> +}
+> +
+>  static const struct dw_i3c_platform_ops ast2600_i3c_ops = {
+>  	.init = ast2600_i3c_init,
+>  	.set_dat_ibi = ast2600_i3c_set_dat_ibi,
+> +	.gen_tbits_in = ast2600_i3c_gen_tbits_in,
+>  };
+>  
+>  static int ast2600_i3c_probe(struct platform_device *pdev)
+> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+> index 611c22b72c15..380e6a29c7b8 100644
+> --- a/drivers/i3c/master/dw-i3c-master.c
+> +++ b/drivers/i3c/master/dw-i3c-master.c
+> @@ -158,6 +158,14 @@
+>  #define DATA_BUFFER_STATUS_LEVEL_TX(x)	((x) & GENMASK(7, 0))
+>  
+>  #define PRESENT_STATE			0x54
+> +#define   CM_TFR_ST_STS			GENMASK(21, 16)
+> +#define     CM_TFR_ST_STS_HALT		0x13
+> +#define   CM_TFR_STS			GENMASK(13, 8)
+> +#define     CM_TFR_STS_MASTER_SERV_IBI	0xe
+> +#define     CM_TFR_STS_MASTER_HALT	0xf
+> +#define     CM_TFR_STS_SLAVE_HALT	0x6
+> +#define   SDA_LINE_SIGNAL_LEVEL		BIT(1)
+> +#define   SCL_LINE_SIGNAL_LEVEL		BIT(0)
+>  #define CCC_DEVICE_STATUS		0x58
+>  #define DEVICE_ADDR_TABLE_POINTER	0x5c
+>  #define DEVICE_ADDR_TABLE_DEPTH(x)	(((x) & GENMASK(31, 16)) >> 16)
+> @@ -1393,6 +1401,8 @@ static void dw_i3c_master_handle_ibi_sir(struct dw_i3c_master *master,
+>  	unsigned long flags;
+>  	u8 addr, len;
+>  	int idx;
+> +	bool terminate_ibi = false;
+> +	u32 state;
+>  
+>  	addr = IBI_QUEUE_IBI_ADDR(status);
+>  	len = IBI_QUEUE_STATUS_DATA_LEN(status);
+> @@ -1435,6 +1445,7 @@ static void dw_i3c_master_handle_ibi_sir(struct dw_i3c_master *master,
+>  		dev_dbg_ratelimited(&master->base.dev,
+>  				    "IBI payload len %d greater than max %d\n",
+>  				    len, dev->ibi->max_payload_len);
+> +		terminate_ibi = true;
+>  		goto err_drain;
+>  	}
+>  
+> @@ -1450,6 +1461,9 @@ static void dw_i3c_master_handle_ibi_sir(struct dw_i3c_master *master,
+>  
+>  err_drain:
+>  	dw_i3c_master_drain_ibi_queue(master, len);
+> +	state = FIELD_GET(CM_TFR_STS, readl(master->regs + PRESENT_STATE));
+> +	if (terminate_ibi && state == CM_TFR_STS_MASTER_SERV_IBI)
+> +		master->platform_ops->gen_tbits_in(master);
+>  
+>  	spin_unlock_irqrestore(&master->devs_lock, flags);
+>  }
 
-Okay, that's fine if it was already existed in kernel. I am just curious.
+Would it makes more sense to move `->gen_tbits_in(master);` logic to 
+`if (dev->ibi->max_payload_len < len) ` above instead? 
 
-Frank
+The IBI queue would be properly flush at the end of function and don't need 
+additional `terminate_ibi ` variable. If there were IBI storm, there might be
+IBI coming in right after `dw_i3c_master_drain_ibi_queue` here which will
+trigger another round of interrupt anyway.
 
->
-> > > +		if (ret) {
-> > > +			dev_err(&pdev->dev, "failed to request irq %s\n",
-> > > +				renesas_i3c_irqs[i].desc);
-> > > +			return ret;
-> >
-> > return dev_err_probe()
->
-> OK.
->
-> Thanks and happy hacking,
->
->    Wolfram
->
+Thanks
+Joshua
 
-
+> diff --git a/drivers/i3c/master/dw-i3c-master.h b/drivers/i3c/master/dw-i3c-master.h
+> index c5cb695c16ab..1da485e42e74 100644
+> --- a/drivers/i3c/master/dw-i3c-master.h
+> +++ b/drivers/i3c/master/dw-i3c-master.h
+> @@ -89,6 +89,15 @@ struct dw_i3c_platform_ops {
+>  	 */
+>  	void (*set_dat_ibi)(struct dw_i3c_master *i3c,
+>  			    struct i3c_dev_desc *dev, bool enable, u32 *reg);
+> +	/*
+> +	 * Gerenating the fake t-bit (SDA low) to stop the IBI storm when the received
+> +	 * data length of IBI is larger than the maximum IBI payload.
+> +	 *
+> +	 * When an IBI is received and SDA remains high after the address phase, the i3c
+> +	 * controller may enter an infinite loop while trying to read data until the t-bit
+> +	 * appears
+> +	 */
+> +	void (*gen_tbits_in)(struct dw_i3c_master *i3c);
+>  };
+>  
+>  extern int dw_i3c_common_probe(struct dw_i3c_master *master,
 
 -- 
 linux-i3c mailing list
