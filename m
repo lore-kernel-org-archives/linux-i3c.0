@@ -4,90 +4,118 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85CC1C71157
-	for <linux-i3c@archiver.kernel.org>; Wed, 18 Jun 2025 07:15:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C83A9C7115B
+	for <linux-i3c@archiver.kernel.org>; Wed, 18 Jun 2025 07:17:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D2VmEjdGG5+6nAZBS9BIzKDz1A+j+lAtmYpH7khRack=; b=R6ojswyg9k/AX6
-	98l6P1MIjT2V0Qvup7/pV1iUhghB1WkNXjSk39nHt/S0Wsnd6Z6z7NU7mlCpcWm3QDzwb8ZKdosfe
-	aCBMEHqrF6UVRFj5AAGg79Xa+m++vD/s1aQyFDQE9+ejBrfHC/g2HbngDGdZN5Rddb6zOvZgeJm6M
-	KWKBKqQx8Q0JEBaffi25J2hz8uQv4kWSxPDFx4FxMofZvxmiqp5f2ikEXMlmUQHd72tAj2l/MLdDm
-	vMWspYq8HVobksOAq5RkThW6F+mBzgoEQ6Tzo3BGrEJnc1WRBI535z0CUqecHS6sTeTYMUQR1wRLD
-	iedYZjvEjEGTHLad5mLg==;
+	List-Archive:List-Unsubscribe:List-Id:CC:To:MIME-Version:Message-ID:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=EvDbp9uiTf7pv1ajh8PbQtodJONB5stBOcwIU2tJ4Bg=; b=FppTHmB80VAqTU
+	i655Eu8eEh7OOywcEcAbowjPY/bSkew+aB1gv37NzSebTNG9Yir6qHRc08Bi6wrUfVZpNzBxbl79U
+	1dwNruCn90EIV5GvDDL65Oxcira/Ef0F1DjSHaumjdd9ZrcmimTcvNjYyQPfrolD/mIJ6FZZspGlK
+	7YMs4FldsFn7qcZt5yLrvIipXofCTwxTQwKJyleKjrDjlpHEgxmwsmXekSG3AmIa7SAwBmhFfLiyV
+	BjZnL4hEqQmCelJHIPgaC4jtf3LPXuB8f3pnmyCMNlPVCsjqHIh63XNAoiyPLAKJAA7atUop4n3SQ
+	xqQDhwsJIhYfSaVzMQDg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRn13-00000009GwP-0zGZ;
-	Wed, 18 Jun 2025 07:15:25 +0000
-Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
+	id 1uRn2r-00000009H8v-2Oho;
+	Wed, 18 Jun 2025 07:17:17 +0000
+Received: from mx0a-00128a01.pphosted.com ([148.163.135.77])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRmvu-00000009GWN-35Eb
+	id 1uRn2o-00000009H79-25Fc
 	for linux-i3c@lists.infradead.org;
-	Wed, 18 Jun 2025 07:10:08 +0000
-Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-453398e90e9so36396125e9.1
-        for <linux-i3c@lists.infradead.org>; Wed, 18 Jun 2025 00:10:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1750230605; x=1750835405; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=blHlfMe+5CBJc/TGBy1gRr5vofntcL3F+SvJ+oaL4XI=;
-        b=OVky+f1aggmQj/jbLnovs3uV6nlIlbsn9Weg/wi8LfZhNwebIW9Y5nWPavWjk4ZQJS
-         8V6NybUbooga5BERNrx3RMg8lD4yWh43ZhaPy7IeSOmSjnCVz9UmG8H3S94aza8688Lz
-         Tqx6OwdbEtU1dr+iQrysHZEUla7AbRDMEPl06IBZZejSGeIb21JmwA3kVmapq+KtskXl
-         t7+XYRDmrgvd8oDTOqGw91orhTmiuszU5tMRP0f9FOqKW9QgHozkUqjcYvlRa+T08M6J
-         KqlFcxPo2vKKpdcA8umeI+fGa9KE+L45T33pl7DaKtNehgtNyrHMygUFLTN4TMRv7T7t
-         WWaQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750230605; x=1750835405;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=blHlfMe+5CBJc/TGBy1gRr5vofntcL3F+SvJ+oaL4XI=;
-        b=rwdVl1KY6bLCynCfa57O5AYv+0THE7/ivgwUlbFErpgmD1AMB6vHp5E5gfTlNzwT11
-         ChWmMZV4NmY64d3y4j+NfxfndRDL2EcJM2dgtA5yNAuwiAQw1Hm5Es7sVebWIrnFe7Cf
-         m09DIa+/hUyoY3U27lRsDbDbxxd6a4A7F/IG9a8QdnfWjG/Xs2Zf/QwNpM9b3G+6PVGb
-         lJUay/5MN+PLjprewk6g1n5ur09CZYnh30vKjiT/GOSvrurlGAVGLgI/YVaDMfAB6PYN
-         MEpiyPuuvGDjG5W+QRx337y2JQJSxCbupEj4+DPCGTR5cDKJ7559761HX93V9x9Nnhec
-         4+vQ==
-X-Forwarded-Encrypted: i=1; AJvYcCUbZazT811bj3/fKG3/sEJpIaEHX/rI9Hiw4brpxXlBj+WIwmRuH9TxqomtUt1h9HxjNZ9k/nPP6EE=@lists.infradead.org
-X-Gm-Message-State: AOJu0YypEm05ZZBSUnv03IKr2bFYNg92sNU9Ku2NFuaouCjX2tKkxiaK
-	CIGK93AsiGdTWie6W9Lq2wlxFmp9G0Ir96jm0z6uzMY4DQQleYdXxA9j
-X-Gm-Gg: ASbGncs6QdnabVXJcTmZymSY6NmUUOG7lcLz2EIMRPsM1EVlrBm/iX6mUDMJ2C2lCe5
-	ELtwiImY7hez6Q/TsbrmyWXZRG+wvEiZ79MkJJmyNSPr8OGzeVzcgVIg4QY7PqBoE0H/Bte0/UK
-	XoVoZym1u+VSH1MPydeOh8kyslHZ0ud6kj/5DtIjHoQpYVYFN8E/rcQ9Cu7mZNH/BaaNGyo9ikl
-	GCvRTUxdvfPdX6xSWxUZBP0oehc0RjCbR6q789IBBRLNEtIqPU+IS4XqPERNFmba0UXAqLC/Sh0
-	8wR6c8Gag3aZAilbyztX+iGCOcelGKMgsm8oNzqY7+YuI1QxAyYci92VGIb8uE7S0IVyj0HDZJ1
-	ag7XPPhc=
-X-Google-Smtp-Source: AGHT+IGbwEhIWV4IKMQ3WRcacP8pkDAtcfY/QWEP271EBcrbZmLFg+GQMV3so/GYmhjA/VhLeTRu7g==
-X-Received: by 2002:a05:600c:b95:b0:450:d012:df85 with SMTP id 5b1f17b1804b1-4534b4d8ad2mr103112555e9.18.1750230604970;
-        Wed, 18 Jun 2025 00:10:04 -0700 (PDT)
-Received: from HYB-DlYm71t3hSl.ad.analog.com ([137.71.226.91])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a568b70d77sm16171244f8f.94.2025.06.18.00.10.03
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 18 Jun 2025 00:10:04 -0700 (PDT)
-Date: Wed, 18 Jun 2025 09:10:01 +0200
-From: Jorge Marques <gastmaier@gmail.com>
-To: Conor Dooley <conor@kernel.org>
-Cc: Jorge Marques <jorge.marques@analog.com>, 
-	Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 1/2] dt-bindings: i3c: Add adi-i3c-master
-Message-ID: <qg2l6wfzaquxepeubxgrp2xdbdsfqam3vpzc75sar66jhpc3zn@wi3yk75lebo2>
-References: <20250606-adi-i3c-master-v2-0-e68b9aad2630@analog.com>
- <20250606-adi-i3c-master-v2-1-e68b9aad2630@analog.com>
- <20250606-sliver-freeing-d01268258c25@spud>
- <ildi2pup2zkyv4stuknkrjysex3yzsbrrsrwbgcc4xgvdhwrdd@7qh4y6mutgy2>
- <20250617-pawing-octane-a983fbf7100d@spud>
+	Wed, 18 Jun 2025 07:17:15 +0000
+Received: from pps.filterd (m0167088.ppops.net [127.0.0.1])
+	by mx0a-00128a01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55I5snrQ032110;
+	Wed, 18 Jun 2025 03:17:02 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=analog.com; h=cc
+	:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=DKIM; bh=xpEAYvZLAh3gR76m6/qRao45ed8
+	Isl8God5610JbqLE=; b=qN4wc4XXCXt2sPZQXWoUuQhk1ku7Ht2CNBz1XiZEpol
+	s0RopwDq8hwN/q5jwi91xd1TrvUP4KA9SBxIsUKjzkLZc1Vn7/qlXBwLgpMDjQcu
+	n23S9oEJrn2fXX5q/ilaDKqU7cPadNSwxMVpjIQu48JcaRYQXwnhVOH/51LWlKgG
+	WPpU+lToi5D/zCswBV21ZpqLPerlC3bWJXDMLIugNsNhBzYIUmQPoktCMp+HmiDR
+	PupciDym3byEJZV/ETwjfKDrxKU7f3fAMeXCeMdznaw3MswVm/Yv5Tje2kA3zA8y
+	GUyxmCmfEDWKTD/dZ0Em4pHaw2aHM7fNwlKgy0ilDyg==
+Received: from nwd2mta4.analog.com ([137.71.173.58])
+	by mx0a-00128a01.pphosted.com (PPS) with ESMTPS id 47bfshaeq8-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 18 Jun 2025 03:17:01 -0400 (EDT)
+Received: from ASHBMBX8.ad.analog.com (ASHBMBX8.ad.analog.com [10.64.17.5])
+	by nwd2mta4.analog.com (8.14.7/8.14.7) with ESMTP id 55I7H0Qx037088
+	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Wed, 18 Jun 2025 03:17:00 -0400
+Received: from ASHBCASHYB5.ad.analog.com (10.64.17.133) by
+ ASHBMBX8.ad.analog.com (10.64.17.5) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1748.10; Wed, 18 Jun 2025 03:17:00 -0400
+Received: from ASHBMBX8.ad.analog.com (10.64.17.5) by
+ ASHBCASHYB5.ad.analog.com (10.64.17.133) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1748.10; Wed, 18 Jun 2025 03:17:00 -0400
+Received: from zeus.spd.analog.com (10.66.68.11) by ashbmbx8.ad.analog.com
+ (10.64.17.5) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
+ Transport; Wed, 18 Jun 2025 03:17:00 -0400
+Received: from HYB-DlYm71t3hSl.ad.analog.com (HYB-DlYm71t3hSl.ad.analog.com [10.44.3.56] (may be forged))
+	by zeus.spd.analog.com (8.15.1/8.15.1) with ESMTP id 55I7GkPe027550;
+	Wed, 18 Jun 2025 03:16:48 -0400
+From: Jorge Marques <jorge.marques@analog.com>
+Subject: [PATCH v3 0/2] Add ADI I3C Controller
+Date: Wed, 18 Jun 2025 09:16:42 +0200
+Message-ID: <20250618-adi-i3c-master-v3-0-e66170a6cb95@analog.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250617-pawing-octane-a983fbf7100d@spud>
+X-B4-Tracking: v=1; b=H4sIANpnUmgC/3XMQQ6CMBCF4auQrq0ppdTqynsYF0M7wCRCSUsaD
+ eHuFlYa4/K95PsXFjEQRnYpFhYwUSQ/5lEdCmZ7GDvk5PJmUshaaKE4OOJUWT5AnDFwCXWpjK2
+ NVSeW0RSwpecevN3z7inOPrz2fiq3928qlVxwoYxBIxy0trnCCA/fHa0f2NZK8tPrHy+zR22aM
+ 4CTuhJffl3XNzlo51/tAAAA
+X-Change-ID: 20250604-adi-i3c-master-2a5148c58c47
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+        Frank Li
+	<Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski
+	<krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>
+CC: <linux-i3c@lists.infradead.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <gastmaier@gmail.com>,
+        Jorge Marques
+	<jorge.marques@analog.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1750231006; l=2324;
+ i=jorge.marques@analog.com; s=20250303; h=from:subject:message-id;
+ bh=Ien8JIYHGNL5X9LLCr5Rx52JCUxh6saVyb5rnnTYT6A=;
+ b=VHvCqbVxJVVuKcCIgbiwFLjMYONjHpn2RhKRqQfhpRS9Hl1a8C3RFS0La6yvwPfC3shpefbIx
+ hLANmzJUM6OD3uUiDhqiekhJZZPHMVr1Bj0BcuqvBVJP6rZbzjKUOWL
+X-Developer-Key: i=jorge.marques@analog.com; a=ed25519;
+ pk=NUR1IZZMH0Da3QbJ2tBSznSPVfRpuoWdhBzKGSpAdbg=
+X-ADIRuleOP-NewSCL: Rule Triggered
+X-Proofpoint-ORIG-GUID: G2roF2RkUwpr_wxd-zUKabprrgpFIutW
+X-Authority-Analysis: v=2.4 cv=SKhCVPvH c=1 sm=1 tr=0 ts=685267ed cx=c_pps
+ a=3WNzaoukacrqR9RwcOSAdA==:117 a=3WNzaoukacrqR9RwcOSAdA==:17
+ a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=wI1k2SEZAAAA:8 a=VwQbUJbxAAAA:8
+ a=gAnH3GRIAAAA:8 a=Au82MslZ5VMqyGn2ihwA:9 a=QEXdDO2ut3YA:10
+ a=6HWbV-4b7c7AdzY24d_u:22
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjE4MDA2MiBTYWx0ZWRfX6mL8myALvm0Z
+ Qkgph8kxruPUuvfBZGcj66e7tD/N32/RgpMeyjrCJYdZz3R8Bw2h2pclmELh0cXm/In6COcrTNI
+ oOqbc6Wtk/lBm9++52BcY1mbug+a4uVOkBpCxdp7/mFQMv0MyfjPwY9ARK9iE1irURfn0H1zfLR
+ 4qL7WQ6LsRI2OlfY4zLxrwBCUsK8Dx9gEMcGmq094uIxNPixeooBAmTEN/s1VvBnJpB64Fc8yYa
+ 5zkZtRYmFJZRgSfjlGV+tBY3eXqfbBmGNkUUova8aLuRbs99/1WWLrjwkGTjaKN67/CfRMOOBuq
+ k5LXBRSio9FZkPZn0R4AkMjago5RVMUljdkywUvtRxjGn/8KBl8GjyVi9MtKJQFrShFba4wxie/
+ Ty6w1pZsDpSiOaNvldJlwpQRqDRhTWy7tagwVkWt3A3H7ehnhEGohfk1Mltgw3BA/7tu3/su
+X-Proofpoint-GUID: G2roF2RkUwpr_wxd-zUKabprrgpFIutW
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-06-18_02,2025-06-13_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ impostorscore=0 bulkscore=0 adultscore=0 lowpriorityscore=0 spamscore=0
+ suspectscore=0 mlxscore=0 malwarescore=0 mlxlogscore=999 clxscore=1011
+ phishscore=0 priorityscore=1501 classifier=spam authscore=0 authtc=n/a
+ authcc= route=outbound adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2505280000 definitions=main-2506180062
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250618_001006_772596_0CD1D84F 
-X-CRM114-Status: GOOD (  28.15  )
+X-CRM114-CacheID: sfid-20250618_001714_543630_10312DD6 
+X-CRM114-Status: GOOD (  12.64  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -104,75 +132,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jun 17, 2025 at 04:47:58PM +0100, Conor Dooley wrote:
-> On Tue, Jun 17, 2025 at 04:50:43PM +0200, Jorge Marques wrote:
-> > On Fri, Jun 06, 2025 at 05:08:45PM +0100, Conor Dooley wrote:
-> > > On Fri, Jun 06, 2025 at 03:21:02PM +0200, Jorge Marques wrote:
-> > > > Add bindings doc for ADI I3C Controller IP core, a FPGA synthesizable IP
-> > > > core that implements the MIPI I3C Basic controller specification.
-> > > > 
-> > > > Signed-off-by: Jorge Marques <jorge.marques@analog.com>
-> > > > ---
-> > > >  .../devicetree/bindings/i3c/adi,i3c-master.yaml    | 63 ++++++++++++++++++++++
-> > > >  MAINTAINERS                                        |  5 ++
-> > > >  2 files changed, 68 insertions(+)
-> > > > 
-> > > > diff --git a/Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml b/Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml
-> > > > new file mode 100644
-> > > > index 0000000000000000000000000000000000000000..e7fae394ad8fd4143eb1fffb9591a30a2d6cc6ac
-> > > > --- /dev/null
-> > > > +++ b/Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml
-> > > > @@ -0,0 +1,63 @@
-> > > > +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-> > > > +%YAML 1.2
-> > > > +---
-> > > > +$id: http://devicetree.org/schemas/i3c/adi,i3c-master.yaml#
-> > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > > +
-> > > > +title: Analog Devices I3C Controller
-> > > > +
-> > > > +description: |
-> > > > +  The ADI I3C controller implements a subset of the I3C-basic specification to
-> > > > +  interface I3C and I2C peripherals [1].
-> > > > +
-> > > > +  [1] https://analogdevicesinc.github.io/hdl/library/i3c_controller
-> > > > +
-> > > > +maintainers:
-> > > > +  - Jorge Marques <jorge.marques@analog.com>
-> > > > +
-> > > > +properties:
-> > > > +  compatible:
-> > > > +    const: adi,i3c-master
-> > > 
-> > Hi Conor,
-> > > Seeing this with no versioning info is pretty suspect.
-> > > The adi spi, pwm, axi-dmac etc all have versioning info, please try to
-> > > emulate that.
-> > > 
-> > > Otherwise, I think this is okay.
-> > > 
-> > > Cheers,
-> > > Conor.
-> > > 
-> > The driver checks the IP version via register access, for the other adi
-> > ips, the -x.00.a suffix was never updated. For example, the axi-dmac
-> > current IP version is v4.5.64 while the compatible still is 1.00.a and
-> > there is a mention of v4.3.a in the binding. It is unclear whether
-> > suffixing it with "-1.00.a" would be useful, or if the time comes call
-> > the new "adi,i3c-master-2".
-> > 
-> > Do you still think it is necessary?
-> 
-Hi Conor,
+I3C Controller is subset of the I3C-basic specification to interface
+peripherals through I3C and I2C. The controller RTL is FPGA
+synthesizable and documentation is provided at
+https://analogdevicesinc.github.io/hdl/library/i3c_controller
 
-> I do, yes. In the other cases, if a new version comes out that has some
-> sort of meaningful difference a new compatible can be added. Until then,
-> using the -1.00.a one is okay.
+The main target for the I3C Controller IP is low-cost FPGAs.
+In this version the driver supports IBI (only the MDB), I3C and I2C
+transfers.
 
-Ok, I will add the -1.00.a suffix,
+Signed-off-by: Jorge Marques <jorge.marques@analog.com>
+---
+Changes in v3:
+Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml:
+- Small reworking of the description
+- Add -1.00.a suffix to compatible
+
+adi-i3c-master.c:
+- Misspelling
+- Remove REG_CMD_FIFO_0_LEN_MAX since it is a HDL parameter
+- Use adapter timeout value for I2C transfers, as in
+  https://lore.kernel.org/linux-i3c/aEBd%2FFIKADYr%2F631@lizhi-Precision-Tower-5810/T/#t
+
+- Link to v2: https://lore.kernel.org/r/20250606-adi-i3c-master-v2-0-e68b9aad2630@analog.com
+
+Changes in v2:
+Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml:
+- Move allof
+- Rename clocks to axi, i3c
+
+adi-i3c-master.c:
+- Update license year
+- Rework regmap to use FIELD_GET, FIELD_PREP
+- Reformat regmap to have FIELDS after REG, prefixed by reg name.
+- Add overflow safeguards to cmd, tx fifos
+- Fix macro related macros (mostly erroneous `| ~BITMASK`
+- Use guard macros, remove goto.
+- Simplify daa logic
+- Replace devm_clk_get with devm_clk_get_enabled
+- Solve 64bit->32bit warnings on x86_64 systems by casting to u32
+- Immediate clear irq request flags, then handle it.
+
+- Link to v1: https://lore.kernel.org/r/20250604-adi-i3c-master-v1-0-0488e80dafcb@analog.com
+
+---
+Jorge Marques (2):
+      dt-bindings: i3c: Add adi-i3c-master
+      i3c: master: Add driver for Analog Devices I3C Controller IP
+
+ .../devicetree/bindings/i3c/adi,i3c-master.yaml    |   63 ++
+ MAINTAINERS                                        |    6 +
+ drivers/i3c/master/Kconfig                         |   11 +
+ drivers/i3c/master/Makefile                        |    1 +
+ drivers/i3c/master/adi-i3c-master.c                | 1026 ++++++++++++++++++++
+ 5 files changed, 1107 insertions(+)
+---
+base-commit: 00286d7d643d3c98e48d9cc3a9f471b37154f462
+change-id: 20250604-adi-i3c-master-2a5148c58c47
 
 Best regards,
-Jorge
+-- 
+Jorge Marques <jorge.marques@analog.com>
 
 
 -- 
