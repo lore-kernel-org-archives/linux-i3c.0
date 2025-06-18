@@ -4,159 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1FA5BC7115B
-	for <linux-i3c@archiver.kernel.org>; Wed, 18 Jun 2025 05:03:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85CC1C71157
+	for <linux-i3c@archiver.kernel.org>; Wed, 18 Jun 2025 07:15:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P/Xrut2TpkOisOBuunWAnLH0m13ajV6NWmPZPm7fp5Q=; b=OT3XFvesxRumLS
-	5orXCKNigKOsgIMdHIMSeMiZuqn07kaiXtTTuYGXqIXb83WISgXOnWmmKpqHW5vpLY7zOQ7fmlwFA
-	pRooQmVu3EhxHrjMaDLJKcBjDuwcqXa/TWWgMJ24l18WQ6ETDcjse67UdTBZI5WD13MSIWBoeiIRl
-	jlKj5R7NZYR1BPmwXr6VSxK9/jS9y9Yufdn5ce4S4Dl18vcKKtFa4nblKEfwQDpYQGyeSSSLFRJVs
-	n6qP3HHJBWkFvYCk6jAcmF7ASuQUE/NZL3+J5SF6eMKxyMOZ/y14fU47td/Qkff2/lTZKoNPLHhte
-	wUGnLppSjAn+hvoHHPiw==;
+	List-Owner; bh=D2VmEjdGG5+6nAZBS9BIzKDz1A+j+lAtmYpH7khRack=; b=R6ojswyg9k/AX6
+	98l6P1MIjT2V0Qvup7/pV1iUhghB1WkNXjSk39nHt/S0Wsnd6Z6z7NU7mlCpcWm3QDzwb8ZKdosfe
+	aCBMEHqrF6UVRFj5AAGg79Xa+m++vD/s1aQyFDQE9+ejBrfHC/g2HbngDGdZN5Rddb6zOvZgeJm6M
+	KWKBKqQx8Q0JEBaffi25J2hz8uQv4kWSxPDFx4FxMofZvxmiqp5f2ikEXMlmUQHd72tAj2l/MLdDm
+	vMWspYq8HVobksOAq5RkThW6F+mBzgoEQ6Tzo3BGrEJnc1WRBI535z0CUqecHS6sTeTYMUQR1wRLD
+	iedYZjvEjEGTHLad5mLg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRkxq-000000094Al-3cAn;
-	Wed, 18 Jun 2025 05:03:58 +0000
-Received: from mail-japanwestazlp170120003.outbound.protection.outlook.com ([2a01:111:f403:c406::3] helo=OS8PR02CU002.outbound.protection.outlook.com)
+	id 1uRn13-00000009GwP-0zGZ;
+	Wed, 18 Jun 2025 07:15:25 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRkwl-0000000941p-0kI4
+	id 1uRmvu-00000009GWN-35Eb
 	for linux-i3c@lists.infradead.org;
-	Wed, 18 Jun 2025 05:02:55 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=gz6ocEOswTnUcdYZUj/MLC/SHxg28jK6Uw/IbDkW5jxHK/bC/o/52DSBCwRkMzcKlgsgX5fXwpt69MY906HqbCDSxd0G4QDcDZ6FPIx+UusMu4PAt2deKRHDPVNLKT+Pmj2Hnn7wy9qRr9LGRsdsU6UzK014EEPs9ZDEcTAgBeMk4zCmRe2gIi7GyVCmQ3RfgPHwg3qYUy7osG8kmslqdNQr8y0dtUhZ/ChqSaZ1S/6PVXTeI2tqXdUOCCrmAuE5FecS82O0HrQygzf7i7e0SNhxcrtmcHla7OtDHJG8NT32FdOZEODnqjiMXHATMoqzNaXf+Y1r6IIt8+VJ2+JIqA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=kEeiWszFXSn4b10g4r7b5r+IB9w4nypfwOJon+6O+v8=;
- b=bMJGklhoJ8FTEnK80ju8nPLh8pjLD5widi+VjXsDY27Bn4Y53+IQw7HalcT8C+9as20gZ2vwccuzxOzqoCypW7EkxMuZ7aAp3EhFhtQguXSeMkrT/INOc6D+bjpTaEH9mfmgSFPB0YwgnhrAc3CPdgmsJZE43pk1rB9q98rHU+NQJ6RwUcuheYN8gr/DgO/iSdWoulEQTQn1O1VOa94Ss6OiVjanrovhmJyMgBWYgG7ce5ZLsq7woaBTe6KYv1qmgucbRfY2s60/Hs9mJm6S/mdFsEWlJWMPZhxnIuLKNx4tLpjqbBFvealMCjhwLP6Am06OajXrCLvUzz1j9aXrww==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=aspeedtech.com; dmarc=pass action=none
- header.from=aspeedtech.com; dkim=pass header.d=aspeedtech.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aspeedtech.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=kEeiWszFXSn4b10g4r7b5r+IB9w4nypfwOJon+6O+v8=;
- b=WnJG9gUVV/Ebay9b7c62ADXBRjSRC7y/y2qWBjAiKP4KkSm43JbeeCGnvLglPk5TsuiGz2aY1JiIKQawzmbg3nhCl/0O9BsiaaeaQbmQHmg3atP6FFcFLm/vkRIBVhPUfgdkUWDNqiAQDWE9kNnrHQ6LrBbtgNiglKg6qZoZ9Af8sN/glPbGdXXpEhepq5qoX6/79BPWcDc02xEkeNTqeZi8xz5OY6AYepUS3bFw7HnE95HbM6ftxzINUYWceu5BdcPi8bYtNNN/yYw+rEKw3dXZSi0Di22RI3KWgJyzXQnyU7EN0ptGihRRy9+/VZNzRK1BVSTVbtV+c1mtyY2qqQ==
-Received: from OSQPR06MB7252.apcprd06.prod.outlook.com (2603:1096:604:29c::6)
- by SEZPR06MB6874.apcprd06.prod.outlook.com (2603:1096:101:18d::7) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8835.29; Wed, 18 Jun
- 2025 05:02:30 +0000
-Received: from OSQPR06MB7252.apcprd06.prod.outlook.com
- ([fe80::814e:819a:7d52:7448]) by OSQPR06MB7252.apcprd06.prod.outlook.com
- ([fe80::814e:819a:7d52:7448%4]) with mapi id 15.20.8835.027; Wed, 18 Jun 2025
- 05:02:30 +0000
-From: Billy Tsai <billy_tsai@aspeedtech.com>
-To: Frank Li <Frank.li@nxp.com>
-CC: "jk@codeconstruct.com.au" <jk@codeconstruct.com.au>,
-	"alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
-	"aniketmaurya@google.com" <aniketmaurya@google.com>,
-	"jarkko.nikula@linux.intel.com" <jarkko.nikula@linux.intel.com>,
-	"Shyam-sundar.S-k@amd.com" <Shyam-sundar.S-k@amd.com>,
-	"wsa+renesas@sang-engineering.com" <wsa+renesas@sang-engineering.com>,
-	"linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, BMC-SW
-	<BMC-SW@aspeedtech.com>, "elbadrym@google.com" <elbadrym@google.com>,
-	"romlem@google.com" <romlem@google.com>
-Subject: Re: [PATCH] i3c: ast2600: Generate T-bits to terminate IBI storm
-Thread-Topic: [PATCH] i3c: ast2600: Generate T-bits to terminate IBI storm
-Thread-Index: AQHb2oWZQZZfD7nYeU2zGERd1ayEs7P+MQsAgAoe5Cc=
-Date: Wed, 18 Jun 2025 05:02:29 +0000
-Message-ID: <OSQPR06MB72527A056D135FE021A885208B72A@OSQPR06MB7252.apcprd06.prod.outlook.com>
-References: <20250611040203.487734-1-billy_tsai@aspeedtech.com>
- <aEm3Xr7Oj1wjASUT@lizhi-Precision-Tower-5810>
-In-Reply-To: <aEm3Xr7Oj1wjASUT@lizhi-Precision-Tower-5810>
-Accept-Language: en-US, zh-TW
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-msip_labels: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=aspeedtech.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: OSQPR06MB7252:EE_|SEZPR06MB6874:EE_
-x-ms-office365-filtering-correlation-id: 4c64b060-8516-4ecb-49de-08ddae2553cc
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|366016|7416014|376014|1800799024|38070700018;
-x-microsoft-antispam-message-info: =?Windows-1252?Q?lmIuNZ3NvDWj7z+IEROH8uVhyr/y1V/KAVvTGaajINPvO/zv0qsHgKcU?=
- =?Windows-1252?Q?63qp49bVMj74TWjDd9XSI3/JE9MeeHAdZC5NMBkwdALXDIriF1Zc1XnM?=
- =?Windows-1252?Q?H58FAb7jPYQge1tbvP1iI7YwiXh3C3NXYmzpRt2Y6xCXZhWX3BDxPSLe?=
- =?Windows-1252?Q?xrYg/mnQ1lb6ZCdANJtRNDw/LbyOwlK2pG7Yvse3ZldA3QjRooYib76D?=
- =?Windows-1252?Q?bTzU61QZKuJ29HNPHu4jy9eAnOrpJpi++4/BKdMk5OBCWziBIiAlLS33?=
- =?Windows-1252?Q?quriJXr2yaLDWaDypvsibmgsCCoJzEM6oEj+yTIsTdu+Vx5Juyioy1rN?=
- =?Windows-1252?Q?kii7Nh1U+7+LiIq+KtzqoC4R+qs+0OZVd5WkXG9dbLAoH5NHiE+x2fZ9?=
- =?Windows-1252?Q?OU5MmMV+oJrMQxDONRFve2vc3tj2XcHMr9JYOUWb6tx2RK21ABHvgFPV?=
- =?Windows-1252?Q?dVuotNa3q57ETJq6L2R0CxhaGnpVUzwEj6JWuGChxzUR3LdFT8X8G/7Y?=
- =?Windows-1252?Q?e/s+nkkQ50d3NlIf0Ebq8AgCho6kTjGP0hjUziKSNIyos8OLIobUN5Sh?=
- =?Windows-1252?Q?TeF4h3KHraQ9xURX7poc0k7Bn5OvtaCdxmApQYPo6osHSKvnP8Od464o?=
- =?Windows-1252?Q?RnEJlToOyMRJUGiT2tPvz6zdj+a6GZbgH2LfF9jHPDioqLrIqwzo3+14?=
- =?Windows-1252?Q?xH0LINyj+ZLfD5/y4yruIiWcWVC3/xzznZghrfUBPCxzIIAYyO2WWRg1?=
- =?Windows-1252?Q?lV+4p7LVno2Dh1U2i3opBuYobalFo8Ixv02+Sa/3+/EWiDEMYIfoPoER?=
- =?Windows-1252?Q?fmfX62Oi/sjhgYSqb9SQ7LdedPL6cp4uIXlh9QunbXRCoWzNKyvy+0jI?=
- =?Windows-1252?Q?ve1GtDPlJpZzmSJW4txObzFxDhDtV+MrEvXAuW72fe3zabrxuHbZzcHM?=
- =?Windows-1252?Q?qE/5Yw9QIH9vjDBdP4Zh1ALG03gXvsgzEre63sqnysmelv11cSZP77Qz?=
- =?Windows-1252?Q?w+csb+vODr2RYcvoSuHA+feXTtqqI4oTm9d2o7NJ5yr2Sdb6hxc51gKL?=
- =?Windows-1252?Q?iXkinbMjbgctMX1IzXC54hKBiiHrASiBhoElsUU5TsO/580EMiekUl28?=
- =?Windows-1252?Q?LHvPLR7rn25oqOUbvbX2FTNHAKz1Qrp+hWscnTnq4X8qDDGZCctXfKHO?=
- =?Windows-1252?Q?eeRBKQxQHJD3yg8ayNmusHTwr7YAb9BhJHJjMG3LYDfd6/pd3qk9NYMw?=
- =?Windows-1252?Q?WRNuHgPiYKjr+QnzObBmq2hlorQjl9BBinDV9mO5CTXuoIdoiwT0DVR4?=
- =?Windows-1252?Q?uU2C8oyxJL38yO4wpctk4iJhVgnaNS0XRDvhuUDA2cw/nNhQ26khscJl?=
- =?Windows-1252?Q?po5LXj/ffQpzfp2NDljS9jQE5pjTZZjLKodS2jaiiTk8178AjU0NimHP?=
- =?Windows-1252?Q?zNH2hYo1DiUBF9bYIfRsAU5aYMbe5u6yB6Thn8yyJ6Oa5qmsJLyivXYJ?=
- =?Windows-1252?Q?ce3SUTegJw6twQV0Ib9kP32Xizm2Py0ameraSpUX/fE32qxPXz7otAFR?=
- =?Windows-1252?Q?9RhXi23pi6fqHUM6dXEvhN5mhBAluOXS6PC2cw=3D=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:OSQPR06MB7252.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(7416014)(376014)(1800799024)(38070700018);DIR:OUT;SFP:1102;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?Windows-1252?Q?FUIJSXAYJ8qsxEfR77zG6ZLBqqlvVGeM6510zpTyiCmGfaFZNRTQCCyu?=
- =?Windows-1252?Q?y2CtFWZPuJU4P6SDKjMLgS4pJR3ly+PNLgvp0uoUBqFfg3ayuW7kQpfR?=
- =?Windows-1252?Q?ecvI8N/UNx2QEcHMbX0lOpBASJB1dtTh6oLwipWuYznUm+WWFi01flGY?=
- =?Windows-1252?Q?D6f/hf1gdghjdnBQcVySTa4XYVYQqUxSa6gdUMRa2kFlquPRh+jK+vkd?=
- =?Windows-1252?Q?/41JWzCn6KTuCqi4XZ/Q1zpgrrvD8jAkdyhFlpPJOd0isyGatntCxpuw?=
- =?Windows-1252?Q?EzaaU5g3RN5LH6u0hmDYAlmJXvVwhxUGc8sWU8oVop7T/ahhxuMEbOd4?=
- =?Windows-1252?Q?9jKKYZ+XpUmtYWW1R9tuwyCj/1vn9cHePRaqo9hT8YlEo3GOJKsppAvx?=
- =?Windows-1252?Q?u0Rle6170RBYh2iDmfA/bLEy/xjZvOnN5rqRGZpMk75pIIDaXWRpOy6I?=
- =?Windows-1252?Q?6+Fwo9H4IxQU77WB3i1Lnr3Rtb++tD/uhsuzuPYFVruM36oueGgdBGGo?=
- =?Windows-1252?Q?CWPRfzK9B+6bCcgjPL+YyjOh6hzP3jqFzY6jHC3WC0cZFJnCWkYx3vQ4?=
- =?Windows-1252?Q?gIsE8Go/rbfq1GEJjSDOsDjkATdptCYhbC+C+cL2yut4xjgF8QOnzoeP?=
- =?Windows-1252?Q?RRYKsK3z9Nq+PlFTjnLCtlXt05yfvQtWHfYvTsaGu/FHG6U5UV/BhaOD?=
- =?Windows-1252?Q?H28gsroUSQbOBOun2CQ5ur9r9Pzf5xZ6vZzesEE9gAQj/TeQ7aSiuVIQ?=
- =?Windows-1252?Q?quNiN5MjLYcPg4i4Ily4CWjqzfKwXN2NcS/OSRsojS+cWjSNXphBhIF6?=
- =?Windows-1252?Q?mNspbdmMMuJsk9H+XRZcooCMEmU0uapztS4mBL1V3+OMAkXii3vr4Df+?=
- =?Windows-1252?Q?qnFkLgheEdOEXZdOifGZFzzeXzEJ+5xr49axzrw/1/L4A5iYnF0P3ACo?=
- =?Windows-1252?Q?1UVTuPK9+o2Q5XCzFuQ2uU8N/wymnAftRgYQuQ3BRVPF8Sha99PefQX7?=
- =?Windows-1252?Q?iXoJ2NylYk9yf9di478F5/cZvzqENQBJEAh+g/upjntfCLpqchaeHQ9o?=
- =?Windows-1252?Q?AygUCdztn/Jo1sJRX+Rr7IDpaOLm4stSYwBzsZj4+oDuwQ13jscC2v3u?=
- =?Windows-1252?Q?6b8rgWLYWC1O6dOPxZXw6A52VgNO8YoYbv7sjtrwoRCIReNJ+KAyTlbj?=
- =?Windows-1252?Q?pxzpkyh3eN1pQ0athBUyt7yOqf7myklOT+AWi1jSTZMbkEYv4UKVvgFL?=
- =?Windows-1252?Q?/hnN/W3+LrmOPsli6v+I7X3Bbi25fkjWCdCqgPoN3P0EClu3XIGmYRIE?=
- =?Windows-1252?Q?1Xkl3S4F4YRNxRGHfoDnYwdPM1CrkILYw5TFfnM916DV/4Kb/n47v2WP?=
- =?Windows-1252?Q?AUT7q60dCAVYrK2EXqZH7rXZbLTF4+2V/cmoaiUg9a6Dl2gGCx19NG8d?=
- =?Windows-1252?Q?mv0HmxM+FgJumaas6Wf3HGz1R0SFlCrXMeKAof72oItx3Fi29alS8CrA?=
- =?Windows-1252?Q?F/RgiL2vfmbzaXVkM6vPGehinHL3uFlAArvE5BjjkgOK83owAa/PoOMC?=
- =?Windows-1252?Q?6Aet7MtcH32ZPWfc8eNS2WWTb39g3h4hH5PEY7RICOj6ylHIxoLokPge?=
- =?Windows-1252?Q?PFxz8bUG0CzIGviwA2V8yjCyJ+1U1jT4xto8h3yLREgDULcObPKipofj?=
- =?Windows-1252?Q?0vI8QXmoQEFobI+gdB0Mdpe5bKZFMF4T?=
+	Wed, 18 Jun 2025 07:10:08 +0000
+Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-453398e90e9so36396125e9.1
+        for <linux-i3c@lists.infradead.org>; Wed, 18 Jun 2025 00:10:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1750230605; x=1750835405; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=blHlfMe+5CBJc/TGBy1gRr5vofntcL3F+SvJ+oaL4XI=;
+        b=OVky+f1aggmQj/jbLnovs3uV6nlIlbsn9Weg/wi8LfZhNwebIW9Y5nWPavWjk4ZQJS
+         8V6NybUbooga5BERNrx3RMg8lD4yWh43ZhaPy7IeSOmSjnCVz9UmG8H3S94aza8688Lz
+         Tqx6OwdbEtU1dr+iQrysHZEUla7AbRDMEPl06IBZZejSGeIb21JmwA3kVmapq+KtskXl
+         t7+XYRDmrgvd8oDTOqGw91orhTmiuszU5tMRP0f9FOqKW9QgHozkUqjcYvlRa+T08M6J
+         KqlFcxPo2vKKpdcA8umeI+fGa9KE+L45T33pl7DaKtNehgtNyrHMygUFLTN4TMRv7T7t
+         WWaQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1750230605; x=1750835405;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=blHlfMe+5CBJc/TGBy1gRr5vofntcL3F+SvJ+oaL4XI=;
+        b=rwdVl1KY6bLCynCfa57O5AYv+0THE7/ivgwUlbFErpgmD1AMB6vHp5E5gfTlNzwT11
+         ChWmMZV4NmY64d3y4j+NfxfndRDL2EcJM2dgtA5yNAuwiAQw1Hm5Es7sVebWIrnFe7Cf
+         m09DIa+/hUyoY3U27lRsDbDbxxd6a4A7F/IG9a8QdnfWjG/Xs2Zf/QwNpM9b3G+6PVGb
+         lJUay/5MN+PLjprewk6g1n5ur09CZYnh30vKjiT/GOSvrurlGAVGLgI/YVaDMfAB6PYN
+         MEpiyPuuvGDjG5W+QRx337y2JQJSxCbupEj4+DPCGTR5cDKJ7559761HX93V9x9Nnhec
+         4+vQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUbZazT811bj3/fKG3/sEJpIaEHX/rI9Hiw4brpxXlBj+WIwmRuH9TxqomtUt1h9HxjNZ9k/nPP6EE=@lists.infradead.org
+X-Gm-Message-State: AOJu0YypEm05ZZBSUnv03IKr2bFYNg92sNU9Ku2NFuaouCjX2tKkxiaK
+	CIGK93AsiGdTWie6W9Lq2wlxFmp9G0Ir96jm0z6uzMY4DQQleYdXxA9j
+X-Gm-Gg: ASbGncs6QdnabVXJcTmZymSY6NmUUOG7lcLz2EIMRPsM1EVlrBm/iX6mUDMJ2C2lCe5
+	ELtwiImY7hez6Q/TsbrmyWXZRG+wvEiZ79MkJJmyNSPr8OGzeVzcgVIg4QY7PqBoE0H/Bte0/UK
+	XoVoZym1u+VSH1MPydeOh8kyslHZ0ud6kj/5DtIjHoQpYVYFN8E/rcQ9Cu7mZNH/BaaNGyo9ikl
+	GCvRTUxdvfPdX6xSWxUZBP0oehc0RjCbR6q789IBBRLNEtIqPU+IS4XqPERNFmba0UXAqLC/Sh0
+	8wR6c8Gag3aZAilbyztX+iGCOcelGKMgsm8oNzqY7+YuI1QxAyYci92VGIb8uE7S0IVyj0HDZJ1
+	ag7XPPhc=
+X-Google-Smtp-Source: AGHT+IGbwEhIWV4IKMQ3WRcacP8pkDAtcfY/QWEP271EBcrbZmLFg+GQMV3so/GYmhjA/VhLeTRu7g==
+X-Received: by 2002:a05:600c:b95:b0:450:d012:df85 with SMTP id 5b1f17b1804b1-4534b4d8ad2mr103112555e9.18.1750230604970;
+        Wed, 18 Jun 2025 00:10:04 -0700 (PDT)
+Received: from HYB-DlYm71t3hSl.ad.analog.com ([137.71.226.91])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a568b70d77sm16171244f8f.94.2025.06.18.00.10.03
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 18 Jun 2025 00:10:04 -0700 (PDT)
+Date: Wed, 18 Jun 2025 09:10:01 +0200
+From: Jorge Marques <gastmaier@gmail.com>
+To: Conor Dooley <conor@kernel.org>
+Cc: Jorge Marques <jorge.marques@analog.com>, 
+	Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v2 1/2] dt-bindings: i3c: Add adi-i3c-master
+Message-ID: <qg2l6wfzaquxepeubxgrp2xdbdsfqam3vpzc75sar66jhpc3zn@wi3yk75lebo2>
+References: <20250606-adi-i3c-master-v2-0-e68b9aad2630@analog.com>
+ <20250606-adi-i3c-master-v2-1-e68b9aad2630@analog.com>
+ <20250606-sliver-freeing-d01268258c25@spud>
+ <ildi2pup2zkyv4stuknkrjysex3yzsbrrsrwbgcc4xgvdhwrdd@7qh4y6mutgy2>
+ <20250617-pawing-octane-a983fbf7100d@spud>
 MIME-Version: 1.0
-X-OriginatorOrg: aspeedtech.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: OSQPR06MB7252.apcprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4c64b060-8516-4ecb-49de-08ddae2553cc
-X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Jun 2025 05:02:29.8942
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 43d4aa98-e35b-4575-8939-080e90d5a249
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: H4NZtorlhE7giSySUHOZXabsTSxX/LWzEuGZ/Ub1RAAm/VlWANL8NYBWuengnaQd70RrwdD4Kr5oKM0y9hQ7uycVIuneY5ZOuAsM5Yw9ly8=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEZPR06MB6874
+Content-Disposition: inline
+In-Reply-To: <20250617-pawing-octane-a983fbf7100d@spud>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250617_220253_147139_A18E4134 
-X-CRM114-Status: GOOD (  14.71  )
+X-CRM114-CacheID: sfid-20250618_001006_772596_0CD1D84F 
+X-CRM114-Status: GOOD (  28.15  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -168,73 +99,83 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="windows-1252"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 11, 2025 at 12:02:03PM +0800, Billy Tsai wrote:
-> > Under certain conditions, such as when an IBI interrupt is received and
-> > SDA remains high after the address phase,
+On Tue, Jun 17, 2025 at 04:47:58PM +0100, Conor Dooley wrote:
+> On Tue, Jun 17, 2025 at 04:50:43PM +0200, Jorge Marques wrote:
+> > On Fri, Jun 06, 2025 at 05:08:45PM +0100, Conor Dooley wrote:
+> > > On Fri, Jun 06, 2025 at 03:21:02PM +0200, Jorge Marques wrote:
+> > > > Add bindings doc for ADI I3C Controller IP core, a FPGA synthesizable IP
+> > > > core that implements the MIPI I3C Basic controller specification.
+> > > > 
+> > > > Signed-off-by: Jorge Marques <jorge.marques@analog.com>
+> > > > ---
+> > > >  .../devicetree/bindings/i3c/adi,i3c-master.yaml    | 63 ++++++++++++++++++++++
+> > > >  MAINTAINERS                                        |  5 ++
+> > > >  2 files changed, 68 insertions(+)
+> > > > 
+> > > > diff --git a/Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml b/Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml
+> > > > new file mode 100644
+> > > > index 0000000000000000000000000000000000000000..e7fae394ad8fd4143eb1fffb9591a30a2d6cc6ac
+> > > > --- /dev/null
+> > > > +++ b/Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml
+> > > > @@ -0,0 +1,63 @@
+> > > > +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
+> > > > +%YAML 1.2
+> > > > +---
+> > > > +$id: http://devicetree.org/schemas/i3c/adi,i3c-master.yaml#
+> > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > > +
+> > > > +title: Analog Devices I3C Controller
+> > > > +
+> > > > +description: |
+> > > > +  The ADI I3C controller implements a subset of the I3C-basic specification to
+> > > > +  interface I3C and I2C peripherals [1].
+> > > > +
+> > > > +  [1] https://analogdevicesinc.github.io/hdl/library/i3c_controller
+> > > > +
+> > > > +maintainers:
+> > > > +  - Jorge Marques <jorge.marques@analog.com>
+> > > > +
+> > > > +properties:
+> > > > +  compatible:
+> > > > +    const: adi,i3c-master
+> > > 
+> > Hi Conor,
+> > > Seeing this with no versioning info is pretty suspect.
+> > > The adi spi, pwm, axi-dmac etc all have versioning info, please try to
+> > > emulate that.
+> > > 
+> > > Otherwise, I think this is okay.
+> > > 
+> > > Cheers,
+> > > Conor.
+> > > 
+> > The driver checks the IP version via register access, for the other adi
+> > ips, the -x.00.a suffix was never updated. For example, the axi-dmac
+> > current IP version is v4.5.64 while the compatible still is 1.00.a and
+> > there is a mention of v4.3.a in the binding. It is unclear whether
+> > suffixing it with "-1.00.a" would be useful, or if the time comes call
+> > the new "adi,i3c-master-2".
+> > 
+> > Do you still think it is necessary?
+> 
+Hi Conor,
 
-> Can you descript more clear?
-> =
+> I do, yes. In the other cases, if a new version comes out that has some
+> sort of meaningful difference a new compatible can be added. Until then,
+> using the -1.00.a one is okay.
 
-> Generally IBI happen at below two case
-> 1. SDA pull down by target
-> 2. Address arbitration happen
-> =
+Ok, I will add the -1.00.a suffix,
 
-> Then Host send out ACK,  according to your descrpition, look like host
-> NACK target IBI request.
-
-No, it means that the Host acknowledges the IBI request. If the target devi=
-ce
-then encounters any issue=97for example, if the device shuts down at that
-moment=97the SDA will remain high during the data transfer phase, and the H=
-ost
-will miss the T-bit to terminate the transfer.
-
-> > the I3C controller will enter
-> > an infinite loop attempting to read data until a T-bit is detected.
-
-> BCR/DCR have indicate IBI mandatory data length. You should know how many
-> data need be read according to IBI won's target address. Why relay on T-b=
-it,
-> which just is used for when target have less data than what expected.
-
-IBI relies on the T-bit to terminate the data transfer, and the BCR is only
-used to indicate whether the IBI includes data or not; it does not specify =
-the
-IBI data length. The IBI data length is controlled via the SETMRL/GETMRL
-commands. The specification does not state that the Host must use the IBI d=
-ata
-length to terminate the transfer. However, this behavior can lead to an
-unrecoverable condition in our hardware. Therefore, this patch is necessary=
- to
-recover the hardware from such scenarios.
+Best regards,
+Jorge
 
 
-> > This commit addresses the issue by generating a fake T-bit to terminate
-> > the IBI storm when the received IBI data length exceeds the maximum
-> > allowable IBI payload.
-
-> Add empty line here.
-
-> > This issue cannot be resolved using the abort function, as it is
-> > ineffective when the I3C FSM is in the Servicing IBI Transfer (0xE) or
-> > Clock Extension (0x12) states.
-
-> why ineffective?
-
-The abort function is not effective when the I3C FSM is in either of these
-two states; this is a hardware limitation.
-
-Thanks
-
-Billy Tsai
--- =
-
+-- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
