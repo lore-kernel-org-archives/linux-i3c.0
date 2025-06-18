@@ -4,63 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A688FC7115B
-	for <linux-i3c@archiver.kernel.org>; Wed, 18 Jun 2025 08:42:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7BBF7C7115B
+	for <linux-i3c@archiver.kernel.org>; Wed, 18 Jun 2025 09:23:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Zm3JyFCczm0nBhmVBuZ2VdQiIu8sD+mFRs2ZJw1958Y=; b=OM1KEadueL7cfc9hxX4yFxha7X
-	1eYI2sziD5+yehpLnAPxN2WiLeq8WZTk2WgM0G9mlrAyMygJ37MmUSxkkPSsM8uT3RQ16K2GSdpZo
-	tGl85CV57LyLIzzC1ymdRwfWz7TrNfgTJGkN5tK1wAcFcm8FPcj+uO9T/COqJSSiMh+jABa0moSNk
-	O1nQUJ3ZcOpQj85skSggc8Ws7Co00nFlypeEG+IwUSrT9axg6GV0C90y2XXCmZE+5NXloSeapL7Tb
-	MTl605VpG6NmqNOdIPypeOkVGW1OKK3WmTT4rSStcQn0BmOczkvysQkrHop5+/d+FL+44vrNEGcz6
-	nlh9pUaA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bGuldVLTbJE7tf5QvaQ6fTgHQiC8hODAs4L3cudyAVg=; b=Xw6yoU7tV+WYDS
+	jfakIsjz3LiayzbV9ZDA4TWhC2LfHwQESXMy3EggIcOlfqqt0T8QlW95WDVRVOV90CiKU420zLK/P
+	NYY48E6lgoMAAK3vN1Vk7+1L5k5nvJc9eClF7KOzmpebU6dEpwn+e1a2x5NybmkPAAUi2+DrZZ+kn
+	x94eVMCDM8jHWXUBEdeulniXUh/xHdFRwK8ZxCtC8pLd8mUxEP+rHwSMsTRVztmU+tImYdU7wSkPe
+	TTGDWCVYHzq9I2Fpxb4vMykiH9rArGqJ6PsYUe0r9cC54bbPQG88HpzcJrB4hzCxZpVgfD6AMmAEW
+	8N13CC7Mcli5jbgeBsbg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRoNi-00000009RlN-1pWv;
-	Wed, 18 Jun 2025 08:42:54 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1uRp1A-00000009ZWy-14yx;
+	Wed, 18 Jun 2025 09:23:40 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uRoLZ-00000009RRN-1qq5
+	id 1uRoz0-00000009Z0g-0thL
 	for linux-i3c@lists.infradead.org;
-	Wed, 18 Jun 2025 08:40:42 +0000
+	Wed, 18 Jun 2025 09:21:27 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id BFA774489E;
-	Wed, 18 Jun 2025 08:40:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 585CDC4CEEF;
-	Wed, 18 Jun 2025 08:40:40 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 2BAB85C54B1;
+	Wed, 18 Jun 2025 09:19:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CE6A4C4CEE7;
+	Wed, 18 Jun 2025 09:21:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1750236040;
-	bh=1xFjpqsiK1UQYwyyiXC7mYzP6CcNQH5rmkYvgPQmtGg=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=GVuwr0KjCRZ1NH1xzWexV2R1TcXuvv24Ddgi5wlPOmSPEAaqYSrbsAqZ2laqO95f4
-	 nhmBwJ+74tD8AyWVhNTsTdRXNgD9qu3zaNvrW04HR8UCbycQ5m7X/IHI+Jr579yBo1
-	 ZdyJuwnLP20+a0fw2i9sJCnP5sOnLG3vhnkxXRdMfFy0epeQsXPitLbUBR/0k8B75P
-	 y7L5LDEr+lqHMqMyA/ydsYt7dTWlmXz7+A6FZVwm+WMkp7tZ41cFOFP14owhTIsgjM
-	 lYBM1QlYX5ZTaDrbRDm79b3i24TOJ6KfvrFihAsOnJ16VFYCtyefwLz160Fs77kiiy
-	 KyWb8Eg3xYOeA==
-Date: Wed, 18 Jun 2025 03:40:39 -0500
-MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: Krzysztof Kozlowski <krzk+dt@kernel.org>, gastmaier@gmail.com, 
- linux-kernel@vger.kernel.org, Frank Li <Frank.Li@nxp.com>, 
- linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, 
- Alexandre Belloni <alexandre.belloni@bootlin.com>, 
- Conor Dooley <conor+dt@kernel.org>
+	s=k20201202; t=1750238485;
+	bh=zTcgqaF/0GYo093jxGYoUNjPlooySG9s1mcys1CjAgs=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=oNIDpUmRpDhMC9ZpBZgtGiBHCtsLuJY4/1tDc2RdaP4LB/xjSyo6FujuGhdh5k2pP
+	 320klkimYNBwl1qgomVOldkyRQV8s1SaokJpa9hF5puefEoEAAdpIddnMZ3f3vz8hR
+	 eohaYoY3bpK3ft1qO8ti2fYhOPR/CQRJDU2D+gjcxhp0x2U6wTQcZXRb+PuD3Q4V44
+	 1TpAFxpbkyGyZpwRV1dZEyotbs8T6S5mDqRZR9UKLVkvbz+Du5kUtg7T4+0kG+6/mU
+	 6KDkd/+MwEydodNjkubO4nvvLGV+Zw0rbNC9MvGwAJrq2Cu9kMQzBgA8po9MeXCOGk
+	 vjKxXAFRzDz8Q==
+Date: Wed, 18 Jun 2025 11:21:22 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Jorge Marques <jorge.marques@analog.com>
-In-Reply-To: <20250618-adi-i3c-master-v3-1-e66170a6cb95@analog.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	gastmaier@gmail.com
+Subject: Re: [PATCH v3 1/2] dt-bindings: i3c: Add adi-i3c-master
+Message-ID: <20250618-visionary-hawk-of-success-d4aab8@kuoka>
 References: <20250618-adi-i3c-master-v3-0-e66170a6cb95@analog.com>
  <20250618-adi-i3c-master-v3-1-e66170a6cb95@analog.com>
-Message-Id: <175023603936.750172.15809343122614690485.robh@kernel.org>
-Subject: Re: [PATCH v3 1/2] dt-bindings: i3c: Add adi-i3c-master
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250618-adi-i3c-master-v3-1-e66170a6cb95@analog.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250618_014041_501412_9EC9AEBE 
-X-CRM114-Status: UNSURE (   9.09  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250618_022126_354299_BEDBB782 
+X-CRM114-Status: GOOD (  15.22  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,10 +76,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-
-On Wed, 18 Jun 2025 09:16:43 +0200, Jorge Marques wrote:
+On Wed, Jun 18, 2025 at 09:16:43AM GMT, Jorge Marques wrote:
 > Add bindings doc for ADI I3C Controller IP core, a FPGA synthesizable IP
 > core that implements the MIPI I3C Basic controller specification.
+
+Here you put outcome of previous questions - why such compatible was
+chosen, that hardware is this and that.
+
 > 
 > Signed-off-by: Jorge Marques <jorge.marques@analog.com>
 > ---
@@ -88,30 +90,82 @@ On Wed, 18 Jun 2025 09:16:43 +0200, Jorge Marques wrote:
 >  MAINTAINERS                                        |  5 ++
 >  2 files changed, 68 insertions(+)
 > 
+> diff --git a/Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml b/Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..718733bbb450c34c5d4924050cc6f85d8a80fe4b
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml
 
-My bot found errors running 'make dt_binding_check' on your patch:
+Filename based on the compatible, so adi,i3c-master-1.00.a.yaml
 
-yamllint warnings/errors:
+> @@ -0,0 +1,63 @@
+> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/i3c/adi,i3c-master.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Analog Devices I3C Controller
+> +
+> +description: |
+> +  FPGA-based I3C controller designed to interface with I3C and I2C peripherals,
+> +  implementing a subset of the I3C-basic specification.
+> +
+> +  https://analogdevicesinc.github.io/hdl/library/i3c_controller
+> +
+> +maintainers:
+> +  - Jorge Marques <jorge.marques@analog.com>
+> +
+> +properties:
+> +  compatible:
+> +    const: adi,i3c-master-1.00.a
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    minItems: 1
 
-dtschema/dtc warnings/errors:
-Documentation/devicetree/bindings/i3c/adi,i3c-master.example.dtb: /example-0/i3c@44a00000: failed to match any schema with compatible: ['adi,i3c-master']
+Why?
 
-doc reference errors (make refcheckdocs):
+> +    items:
+> +      - description: The AXI interconnect clock.
+> +      - description: The I3C controller clock.
+> +
+> +  clock-names:
 
-See https://patchwork.ozlabs.org/project/devicetree-bindings/patch/20250618-adi-i3c-master-v3-1-e66170a6cb95@analog.com
+Not synced with clocks.
 
-The base for the series is generally the latest rc1. A different dependency
-should be noted in *this* patch.
+> +    items:
+> +      - const: axi
+> +      - const: i3c
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
+> +  - interrupts
+> +
+> +allOf:
+> +  - $ref: i3c.yaml#
+> +
+> +unevaluatedProperties: false
+> +
+> +examples:
+> +  - |
+> +    i3c@44a00000 {
+> +        compatible = "adi,i3c-master";
+> +        reg = <0x44a00000 0x1000>;
+> +        interrupts = <0 56 4>;
 
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure 'yamllint' is installed and dt-schema is up to
-date:
+Use proper defines.
 
-pip3 install dtschema --upgrade
-
-Please check and re-submit after running the above command yourself. Note
-that DT_SCHEMA_FILES can be set to your schema file to speed up checking
-your schema. However, it must be unset to test all examples with your schema.
+Best regards,
+Krzysztof
 
 
 -- 
