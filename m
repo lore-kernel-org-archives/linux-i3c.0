@@ -4,88 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5EA3C7115A
-	for <linux-i3c@archiver.kernel.org>; Sun, 22 Jun 2025 08:43:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC180C7115C
+	for <linux-i3c@archiver.kernel.org>; Sun, 22 Jun 2025 09:21:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5+GIVUbveLWpjXJlr8HeRU7gmw7t39TKLzCuHxVuaZI=; b=m9iN4Hm529TvZb
-	zqqlQm1TQQUj23cyVdlxKmOlLcWmVb9fI/LYjkwqTkxnbodBWuMaR+V7owqmKOq0F6WfbcW3w7gBV
-	Cg0CsGmDAmgqXnTpzUeIHIQmYySSJlyk8z2oAqKVwmMXBF38v99Ga18K/lwuKfxO8r1CVNuCVCKjr
-	L2d7HzRdPd+7Q+bVw7ekvMTkhEQ7ya/5tXtM/RNPWag3PclUi/shEMIfJJPl/DYWyon0zv/14smuX
-	0kA/glmzyVCsR5cREuCEzfd8q8mrEbNOdRIlW+dVVV2UhbNMupPlxibBj/HychVJ1blSxQQUFE6KC
-	MtQLTWNgVJwqISKU7Q0w==;
+	List-Archive:List-Unsubscribe:List-Id:CC:To:MIME-Version:Message-ID:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LWLTl1dj52iVq/XNORDKbizMZWcbPMSOfG9TOXz9ICM=; b=OLDB6nwwb+T3ZT
+	OyR3pvDkOrjW/RYwCK2q9Lmd0Bp8xa/CFUtZzhxLrPgp6eduHojB4DJHQYxtfbHAEISNPDBLQJ7Pl
+	OqMhbfgc7WwuLHEKH/pkf80ASim7niQ+SPmXiaoO788e+uIhDAw3UzovhwelqUDnWMfsQXG4UBh+R
+	PeU5M/uELBNdPTPGf3Ri6ZmbksXw1NQ+bkSskXheof0UqHn1sK6W6BT672Hi2qbXII1NrBwlL21li
+	t3j3fC1di5oQaDGgIudvR8FiefgXRujmKitBUJ4RX+JohaJTNvxOzRPrKiYmUwCIXkOUqmcXpreMA
+	bYMUlRKGYgwMzLhcp+lQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTGIf-00000000dkE-1KTJ;
-	Sun, 22 Jun 2025 08:43:41 +0000
-Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
+	id 1uTGtD-00000000g4q-2jWM;
+	Sun, 22 Jun 2025 09:21:27 +0000
+Received: from mx0a-00128a01.pphosted.com ([148.163.135.77])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uTGId-00000000djs-1dFb
+	id 1uTGtB-00000000g49-0HMw
 	for linux-i3c@lists.infradead.org;
-	Sun, 22 Jun 2025 08:43:40 +0000
-Received: by mail-wr1-x42d.google.com with SMTP id ffacd0b85a97d-3a6d77b43c9so876767f8f.3
-        for <linux-i3c@lists.infradead.org>; Sun, 22 Jun 2025 01:43:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1750581818; x=1751186618; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=962UG/WjfeGvO1clnj/Kvo3yAvg5LKIDDvZZU4WDKpE=;
-        b=FMUgOz+sBSKrdGXc13hdfJ44tJzAmcBVdommqMAOQHeLmzQmgR1nHRTl4P8Agmu4RG
-         AG1uby0Yaa1bw78rsbAVGNyr03k3ELEmqyQVzvKJNioGL2KlrNwxY3rpThcUuTLCg7yA
-         Sk4W7DyW9u5vjB44GXuH+nGacUn8PPiu3tm/6GSOndpgjvLwB+NQNP0runIx+ePeIis5
-         hT6qiO+5aYut7+ZE713n6ls5fvXa0tZzHTFLpGWrYxWj1hxIZXL5xqugkBmLIlpM7Pgr
-         XYQ7G1wztacNNuuMEYLN3XBJL7c58Kic+LE8QRS0nGCFtPqJbosU5vtDFmLrV0VhwCAD
-         kNmQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750581818; x=1751186618;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=962UG/WjfeGvO1clnj/Kvo3yAvg5LKIDDvZZU4WDKpE=;
-        b=Df7j72ltbfpNrXOea4xV09jgsfsbMdqq6f+8cbG+onGprsf2Zq71GKbDFsXfsBkkFo
-         84rjeg1Z9yceZ6JnjXvRuJon81Da6q4MvUq8QMCR2rQf+SbBSru0hIxcRoBQ0LEk6k3I
-         ojdmI3DtCXPIV0ayz4iAg/MZ7vTgbEHgqVb7VF9gjfp9a5fzI95RpmK9mgUrJpi46FJB
-         zaKMmmSno0iTEvmSCOMfZYsPdYT4d4cH2Xmeksrlk/O/kb4Ek/r6u2btaACdCRs2T2zv
-         aoUMZsKin3ht5tkfDxEZMr6LYbskeK96d0W4Zee9Q8fB9hPlZQFL6+FPylmOSX0YnSrM
-         XwGQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWOQsjeP23ydXtSGnadVr7rKBNts3sm+6Slg2g9HxzEdY5T+gj5U/QvfSIr3rjGJkgfZmHbbAhp9/s=@lists.infradead.org
-X-Gm-Message-State: AOJu0Ywq/aGkc9fYhRlK+vT1wIM4kJugbz/QxFbnW/2XijyfvIofaNcL
-	tBqM4nXinvxHny6Tq6rGiUYxA75MvY3OQJzYoncAwybrAO66TFnqNgtnAja2MseU
-X-Gm-Gg: ASbGncugsr0Q1U1BJdZhB3jFrrgf+dzrvDdDQ0CNybvMFWn2m2fth30kO1bpIFQ25XC
-	yjpmh7geUmcsknjQckn9nceB7H2cFc4TL14KaDrkte07itq8HvhdjEBwPfcI8M3mBqyLbdft06G
-	syGLzpAV0Zf5aiRpG2U44JOov88C+5brxTM3rVK0GGmb0aCDOCn7qRBRlBmE71zalsvpxohvLdD
-	hy2PvYv+FXv5S92uqPY3JCzswb5KIZx4dJ+YITyMQwSSK6UK4jV0y+67+Rw52lay6LlU+cHxipi
-	nKwbUytoDOh0iCca1WZGbWabnhqLQiAA43SbRaeOgCksI/UoW0Wh2poL/MwAPGMR6Ac9JTe+ulb
-	uVtx52RVnhPA=
-X-Google-Smtp-Source: AGHT+IGYvF6Ktr46LKGJGqo5Y7atGzFDJs6HcvtBskYedFf93GhmSAEMG1Hy3kV3R/91xJe9ZSrZUA==
-X-Received: by 2002:a05:6000:26c1:b0:3a4:fbaf:3f99 with SMTP id ffacd0b85a97d-3a6d12dd6e7mr7694500f8f.13.1750581817594;
-        Sun, 22 Jun 2025 01:43:37 -0700 (PDT)
-Received: from HYB-DlYm71t3hSl.ad.analog.com ([2001:a61:12d0:5a01:b4d7:fc8d:4cb4:dd35])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-3a6d145e520sm6388390f8f.20.2025.06.22.01.43.36
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 22 Jun 2025 01:43:37 -0700 (PDT)
-Date: Sun, 22 Jun 2025 10:43:35 +0200
-From: Jorge Marques <gastmaier@gmail.com>
-To: Frank Li <Frank.li@nxp.com>
-Cc: Jorge Marques <jorge.marques@analog.com>, 
-	Alexandre Belloni <alexandre.belloni@bootlin.com>, =?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>, 
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/3] i3c: master: Add inline i3c_master_readsl and
- i3c_master_writesl
-Message-ID: <z6hrfvw3ubkob67k7bvg2qovsxwenh3e76bdtdjgsbnpchniwn@6hxhf3sxynxv>
-References: <20250620-i3c-writesl-readsl-v1-0-e0aa1c014dff@analog.com>
- <20250620-i3c-writesl-readsl-v1-1-e0aa1c014dff@analog.com>
- <aFWrSHg2M1lq8kGt@lizhi-Precision-Tower-5810>
+	Sun, 22 Jun 2025 09:21:26 +0000
+Received: from pps.filterd (m0167089.ppops.net [127.0.0.1])
+	by mx0a-00128a01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55M528BE012266;
+	Sun, 22 Jun 2025 05:21:20 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=analog.com; h=cc
+	:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=DKIM; bh=IzI9E8zeRCOUVGz34LlSmO2mT81
+	aOyrMCdnorg61OSY=; b=Icn1diLx/wdOYQmcUXHfO0YnodWfCSMyYOCUnOJaIeM
+	7aHJ2QOKsT2qckxmmcp4DNuUdH24M28AoTgCtkLEL4CL5SMTEMfZ/4kehm89arER
+	tRLjDO1zQaYiFTFlwKKOe2QMR6Xc1wEXHLNMhuh5GVnyL7ZwDtCHk3nZygmk0tuK
+	KylWv2l38KR30+GDxJPAG3AvbvA0MbH24hKKp6ItFGrJ1Mxh/v98YTOsmxv4uXPl
+	nQvrQiLglnGxNfcyhCgRsxHdGwQovNTP6v2WBNltWjGwBA2cG4V+UF8tAOZekHtb
+	x1mQtdckXxz4vF00GiNClqlLe17PlCuT8Wuicq+WYlQ==
+Received: from nwd2mta3.analog.com ([137.71.173.56])
+	by mx0a-00128a01.pphosted.com (PPS) with ESMTPS id 47dsn7bkpb-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Sun, 22 Jun 2025 05:21:20 -0400 (EDT)
+Received: from ASHBMBX9.ad.analog.com (ASHBMBX9.ad.analog.com [10.64.17.10])
+	by nwd2mta3.analog.com (8.14.7/8.14.7) with ESMTP id 55M9LI9q063063
+	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Sun, 22 Jun 2025 05:21:18 -0400
+Received: from ASHBMBX8.ad.analog.com (10.64.17.5) by ASHBMBX9.ad.analog.com
+ (10.64.17.10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Sun, 22 Jun
+ 2025 05:21:18 -0400
+Received: from zeus.spd.analog.com (10.66.68.11) by ashbmbx8.ad.analog.com
+ (10.64.17.5) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
+ Transport; Sun, 22 Jun 2025 05:21:18 -0400
+Received: from HYB-DlYm71t3hSl.ad.analog.com (HYB-DlYm71t3hSl.ad.analog.com [10.32.14.29])
+	by zeus.spd.analog.com (8.15.1/8.15.1) with ESMTP id 55M9Kvw9002297;
+	Sun, 22 Jun 2025 05:21:01 -0400
+From: Jorge Marques <jorge.marques@analog.com>
+Subject: [PATCH v2 0/3] Add helper methods i3c_writel_fifo() and
+ i3c_readl_fifo()
+Date: Sun, 22 Jun 2025 11:18:57 +0200
+Message-ID: <20250622-i3c-writesl-readsl-v2-0-2afd34ec6306@analog.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aFWrSHg2M1lq8kGt@lizhi-Precision-Tower-5810>
+X-B4-Tracking: v=1; b=H4sIAIHKV2gC/6WNTQrCMBSEr1Le2kh+miCuvIe4iMlL+6A2kpSol
+ NzdtAdw42r4BuabFTImwgznboWEhTLFuYE8dOBGOw/IyDcGyaXmRnJGyrFXogXzxBJa3wLlSRm
+ t+rsxGtrwmTDQe5deb41HyktMn/2jyK39qSuCcYbcWuG46H0IFzvbKQ5HFx+w+Yr401Fr/QJoa
+ 4MY+QAAAA==
+X-Change-ID: 20250620-i3c-writesl-readsl-e2836534b665
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+        Frank Li
+	<Frank.Li@nxp.com>,
+        =?utf-8?q?Przemys=C5=82aw_Gaj?= <pgaj@cadence.com>
+CC: <linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        Jorge
+ Marques <jorge.marques@analog.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1750583937; l=1664;
+ i=jorge.marques@analog.com; s=20250303; h=from:subject:message-id;
+ bh=ZD2dBMnqv7ukXVZ/q4Quk1gmVKu+daZNR2JC5ty+zKY=;
+ b=Jz4FBf6WqiUWhcWD1OhwnUh34Ly7LlDbCBPIMqU09rOK70GkddDhbBR+DNN06KRp37hfrWxb4
+ CPkMAZkudMuBsLkCnJKb8b+C3CRObWnAGs3Tlfv8f4x4sDaAzO1rYP1
+X-Developer-Key: i=jorge.marques@analog.com; a=ed25519;
+ pk=NUR1IZZMH0Da3QbJ2tBSznSPVfRpuoWdhBzKGSpAdbg=
+X-ADIRuleOP-NewSCL: Rule Triggered
+X-Authority-Analysis: v=2.4 cv=GLsIEvNK c=1 sm=1 tr=0 ts=6857cb10 cx=c_pps
+ a=PpDZqlmH/M8setHirZLBMw==:117 a=PpDZqlmH/M8setHirZLBMw==:17
+ a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=VwQbUJbxAAAA:8 a=gAnH3GRIAAAA:8
+ a=QMVJh2PuZ69kPaAn0y8A:9 a=QEXdDO2ut3YA:10
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjIyMDA1NSBTYWx0ZWRfX6y51PVxAHO92
+ W+UqfShEnjRLfq+vEzVqi0QHL/ImB12li6i4Coy4RQrSciM8K7qR5hfH+n8yjwcaT3g7Q1iCKSJ
+ dy0Pr0lemW9IuTqGAD5jcpRcSmiPY3wZWxo/esQs053sbVj0SEgAjZyR8+aAtHB1iuTBB8tMVur
+ uJBIscp/vRDXRBkuOEGjhxvoWI7BI87snkkcFhw2RODCh82ay1Eslnc4KNeObD3aAhF3rVqBOLP
+ fJS9XQz/4jzXaxj65490ODd8o2M776eImj+Ax9lVG5XKsJ1KWXJa8b8IDdTJ/3d4iR4N+0eLB/7
+ qlAIX12lhvP9GXTW6hGBSpfvg75l5d1di5F/aFOEifhSAsixY0PuOw+ZvjKuSvFJm2d/Hy63r0s
+ cdxWlbZqdOQYi9s1g0NxKi0kOM8aGh3tXbC+eV2BBwmtruIlwvEnlpSEIZ3xKvEnU0zBuMwj
+X-Proofpoint-GUID: qYeAfYSnSAjJhuAexrzOA3azL2HTSDmz
+X-Proofpoint-ORIG-GUID: qYeAfYSnSAjJhuAexrzOA3azL2HTSDmz
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-06-22_03,2025-06-20_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ impostorscore=0 mlxscore=0 malwarescore=0 mlxlogscore=635 lowpriorityscore=0
+ priorityscore=1501 phishscore=0 clxscore=1015 bulkscore=0 suspectscore=0
+ adultscore=0 spamscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
+ definitions=main-2506220055
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250622_014339_428669_28FCD317 
-X-CRM114-Status: GOOD (  24.38  )
+X-CRM114-CacheID: sfid-20250622_022125_114289_3E531026 
+X-CRM114-Status: UNSURE (   9.65  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,91 +126,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jun 20, 2025 at 02:41:12PM -0400, Frank Li wrote:
-> On Fri, Jun 20, 2025 at 06:54:59PM +0200, Jorge Marques wrote:
-> > The i3c abstraction excepts u8 buffers, but some controllers have a bus
-> > width of 32-bits and don't support flagging valid bytes, so it is
-> > required to read/write long words and to use memcpy on the remainder of
-> > the number of bytes by 32-bits to not write/read outside the buffer
-> > bounds.
-> >
-> > Signed-off-by: Jorge Marques <jorge.marques@analog.com>
-> > ---
-> >  include/linux/i3c/master.h | 36 ++++++++++++++++++++++++++++++++++++
-> >  1 file changed, 36 insertions(+)
-> >
-> > diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
-> > index c67922ece617d6320c0c7e4838c2e7edda8c19f5..11401f2acb42e4d3a60df33b7c794d8a0360cdc2 100644
-> > --- a/include/linux/i3c/master.h
-> > +++ b/include/linux/i3c/master.h
-> 
-> suggest move to drivers/i3c/internals.h becaue only master drivers use it.
-> 
-Hi Frank,
-Ok, also renaming to i3c_writel_fifo() and i3c_readl_fifo() as well
-reworking the commit messages.
-> > @@ -674,6 +674,42 @@ i3c_master_get_bus(struct i3c_master_controller *master)
-> >  	return &master->bus;
-> >  }
-> >
-> > +/**
-> > + * i3c_master_writesl- Write bytes to long memory region from byte array
-> > + * @addr: Register to write to
-> > + * @bytes: Pointer to the data bytes to write
-> > + * @nbytes: Number of bytes to write
-> > + */
-> > +static inline void i3c_master_writesl(void __iomem *addr, const u8 *bytes,
-> > +				      int nbytes)
-> 
-> const void *bytes
-> 
-Ack.
+The i3c abstraction excepts u8 buffers, but some controllers have a bus
+width of 32-bits and don't support flagging valid bytes, so it is
+required to read/write long words and to use memcpy on the remainder of
+the number of bytes by 32-bits to not write/read outside the buffer
+bounds.
 
-> > +{
-> > +writesl(addr, bytes, nbytes / 4);
-> 
-> fix indention
-> 
-> Frank
-> 
-Ack.
+Add two auxiliary methods to include/linux/i3c/master.h and use in the dw
+and cdns i3c controller drivers. The adi controller driver will also use
+these methods.
+
+Related thread: https://lore.kernel.org/linux-i3c/aFNziEj7j31xy%2FmY@lizhi-Precision-Tower-5810/
+
+Signed-off-by: Jorge Marques <jorge.marques@analog.com>
+---
+Changes in v2:
+- Rename to i3c_readl_fifo() and i3c_writel_fifo()
+- Change type u8 *bytes to void *bytes
+- Move methods to internals.h
+- Reword commit messages to include new names and ().
+- Fixup dw read fifo address (master -> master->reg)
+- Link to v1: https://lore.kernel.org/r/20250620-i3c-writesl-readsl-v1-0-e0aa1c014dff@analog.com
+
+---
+Jorge Marques (3):
+      i3c: master: Add inline i3c_readl_fifo() and i3c_writel_fifo()
+      i3c: master: cdns: Use i3c_master_writesl() and i3c_master_readsl()
+      i3c: master: dw: Use i3c_master_writesl() and i3c_master_readsl()
+
+ drivers/i3c/internals.h              | 37 ++++++++++++++++++++++++++++++++++++
+ drivers/i3c/master/dw-i3c-master.c   | 25 ++++--------------------
+ drivers/i3c/master/i3c-master-cdns.c | 25 +++++-------------------
+ 3 files changed, 46 insertions(+), 41 deletions(-)
+---
+base-commit: 51963783b876a2f493a3eac0ea9eba271cb6809a
+change-id: 20250620-i3c-writesl-readsl-e2836534b665
 
 Best regards,
-Jorge
-> > +	if (nbytes & 3) {
-> > +		u32 tmp = 0;
-> > +
-> > +		memcpy(&tmp, bytes + (nbytes & ~3), nbytes & 3);
-> > +		writel(tmp, addr);
-> > +	}
-> > +}
-> > +
-> > +/**
-> > + * i3c_master_readsl - Read bytes from long memory region to byte array
-> > + * @addr: Register to read from
-> > + * @bytes: Pointer to the buffer to store read bytes
-> > + * @nbytes: Number of bytes to read
-> > + */
-> > +static inline void i3c_master_readsl(const void __iomem *addr, u8 *bytes,
-> > +				     int nbytes)
-> > +{
-> > +readsl(addr, bytes, nbytes / 4);
-> > +	if (nbytes & 3) {
-> > +		u32 tmp;
-> > +
-> > +		tmp = readl(addr);
-> > +		memcpy(bytes + (nbytes & ~3), &tmp, nbytes & 3);
-> > +	}
-> > +}
-> > +
-> >  struct i3c_generic_ibi_pool;
-> >
-> >  struct i3c_generic_ibi_pool *
-> >
-> > --
-> > 2.49.0
-> >
-> >
+-- 
+Jorge Marques <jorge.marques@analog.com>
+
+
 
 -- 
 linux-i3c mailing list
