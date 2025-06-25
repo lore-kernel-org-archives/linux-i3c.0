@@ -4,58 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F962C77B7C
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Jun 2025 17:36:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC081C83000
+	for <linux-i3c@archiver.kernel.org>; Wed, 25 Jun 2025 17:36:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EZKHC+T1Dizug0f3JS8EyOCwctIxHgD2elWR1dYl1jc=; b=YxT+NhsHZnSTbc
-	eB99rcfPUvMKeFl2wpXqH6Yh6gd6ErcXPezLfX5OC1FxV6egdEaCjlPPWorRZiXogG4XSYkauqXk+
-	ygiDg/ktMXlRd61RTJKhZbpi/FCpJiXyI9UALfuMo80ZqeHC+o7LDsl4bJ8rGyWjSPzsGakZ7MO0H
-	Z4r/pbCdIHdymMs8c/hpJk4uSbzn65Se/z/J/kLlFf1ZgmLK0F6XRLVIlpUNRfZjPCl/+dFcrNj2n
-	fnmHRVD9WocAx6JugK6HbkYL9AsEJQjYIn2pf/pmhot56iyIoSUuaGiTXgVxksc3bod5qwUUnTseP
-	zNXB7F1MFOA+NP07rHAA==;
+	List-Owner; bh=XcxghbV9sUoVnaCRTq+K7jhqEUa+XaGaNjj3FJhjEgM=; b=qlKz2irShvaet/
+	o9uSYFAh5sHRc05aj1Ie+X0IkMJhWeA4YSSI3PE6704ALjPoI1kjqfgyur0Qox7CpS128giwz5Fmn
+	xto+gX/7duZgLiUrQWHaopfY1VGmOIfj2vr0Gfko9rizFb4M8dg3l7RFK4spCoc7Nlyle0a2F4dk9
+	S3Q3hVnD/e2P60Kb+d/ln7KqyAYQgwdqnjEro2WiMUlQSjI7ymDDix21J4gtsTBRznQrUzicYq32F
+	VEiDh0cVklcnmvX9YYfTIFPfo05f68cSYi+8A6Y1NXN+WedtqtIFo3keWIqNRQcoV0Y2kTGFDDt8g
+	/S2guVaAlIdwWVr9E4qg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUU3N-00000009TXm-0A3K;
-	Wed, 25 Jun 2025 17:36:57 +0000
+	id 1uUU3O-00000009Tay-1Sso;
+	Wed, 25 Jun 2025 17:36:58 +0000
 Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUPsf-00000008kFp-3gmc
+	id 1uUPsi-00000008kGm-0W6e
 	for linux-i3c@lists.infradead.org;
-	Wed, 25 Jun 2025 13:09:40 +0000
+	Wed, 25 Jun 2025 13:09:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	sang-engineering.com; h=from:to:cc:subject:date:message-id
 	:in-reply-to:references:mime-version:content-transfer-encoding;
-	 s=k1; bh=qlV2pGfL+6NRiVck31qVf+NWQf3K0ijblOepug5UF+A=; b=A+pmqm
-	2zeOr0T/L7iYULFpu41V+YteuRdJubLxdDN/ddrzx+SJ+YS+1WBMLDimNL2M0azs
-	/g5V7wbHToIpuKWBaU9pUCovFJ7dH+mheR80g6QPA2rSRyxiUF+tnvhOyKqfJ689
-	5g14INz5KFH0KSDi0NuZnrXv2HNVz7URCey5GNmSfL2AJeKS75ETiw1YYCLYV33r
-	l1qs9Q+MSsYqCoNJbMASvIe75WWpuR4mQnFmLvagjuyPG8rSC37k2U8I9+5nsNyF
-	p0pBUhjeLVcRhrrewA2KUcTgSzl6zogr7cmdYDf6+bMauk1CcL0XOQJXviwuLIo0
-	g1MqwCR6+l/ErCHw==
-Received: (qmail 659004 invoked from network); 25 Jun 2025 15:09:35 +0200
-Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 25 Jun 2025 15:09:35 +0200
-X-UD-Smtp-Session: l3s3148p1@Wt0MKGU48JttKDAs
+	 s=k1; bh=kzdEHdkkNjMHsIT0DAmMvWAjYn7mpE9WhEzzYUPowOc=; b=SP2w9L
+	cKa3ns4OF8SSIrylYfI4CQOCLS2NuiUsyWMa4FgPekbStn/h9zGbTxi1n/D+dSxa
+	m/eoE0dJHoEstgHPUFdr3VW/YtvJthJzisqQv6ybyNkMWD/jA8rPo1jPkmWKpZWG
+	QEoBfJr8VNFojNmbt+Yq/OcvkGyGflqfQ1cmAwU/O+TgLW4eK+DO6RbWeNmvktkh
+	b7ieynr6TQcA4gr6bWk2ddJJCuwfWg5xWt9v3pbUe1QSXdPSrUey+Gx+ShEiWq2p
+	xu3OVjJws73qx1PjlxAe9WqE8+XoZctG9cTL/R73UIXVBz28IMhjn3Co0SXTi61C
+	NCa50j5+dVr5tf4g==
+Received: (qmail 659045 invoked from network); 25 Jun 2025 15:09:37 +0200
+Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 25 Jun 2025 15:09:37 +0200
+X-UD-Smtp-Session: l3s3148p1@NE0sKGU4WtdtKDAs
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 To: linux-renesas-soc@vger.kernel.org
 Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
 	Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Frank Li <Frank.Li@nxp.com>,
 	linux-i3c@lists.infradead.org
-Subject: [PATCH 1/3] i3c: core: switch to use SUSV4 error codes
-Date: Wed, 25 Jun 2025 15:09:19 +0200
-Message-ID: <20250625130918.14507-6-wsa+renesas@sang-engineering.com>
+Subject: [PATCH 2/3] i3c: dw: switch to use SUSV4 error codes
+Date: Wed, 25 Jun 2025 15:09:20 +0200
+Message-ID: <20250625130918.14507-7-wsa+renesas@sang-engineering.com>
 X-Mailer: git-send-email 2.47.2
 In-Reply-To: <20250625130918.14507-5-wsa+renesas@sang-engineering.com>
 References: <20250625130918.14507-5-wsa+renesas@sang-engineering.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250625_060938_793298_D5F1EA85 
-X-CRM114-Status: GOOD (  12.88  )
+X-CRM114-CacheID: sfid-20250625_060940_449200_D0875EF2 
+X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,100 +81,49 @@ applications.
 
 Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
 ---
- drivers/i3c/master.c | 20 ++++++++++----------
- 1 file changed, 10 insertions(+), 10 deletions(-)
+ drivers/i3c/master/dw-i3c-master.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index e53c69d24873..354fef4a033c 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -837,14 +837,14 @@ static int i3c_master_send_ccc_cmd_locked(struct i3c_master_controller *master,
- 		return -EINVAL;
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index 611c22b72c15..91429d94a866 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -932,7 +932,7 @@ static int dw_i3c_master_priv_xfers(struct i3c_dev_desc *dev,
+ 		return 0;
  
- 	if (!master->ops->send_ccc_cmd)
+ 	if (i3c_nxfers > master->caps.cmdfifodepth)
 -		return -ENOTSUPP;
 +		return -EOPNOTSUPP;
  
- 	if ((cmd->id & I3C_CCC_DIRECT) && (!cmd->dests || !cmd->ndests))
- 		return -EINVAL;
+ 	for (i = 0; i < i3c_nxfers; i++) {
+ 		if (i3c_xfers[i].rnw)
+@@ -943,7 +943,7 @@ static int dw_i3c_master_priv_xfers(struct i3c_dev_desc *dev,
  
- 	if (master->ops->supports_ccc_cmd &&
- 	    !master->ops->supports_ccc_cmd(master, cmd))
+ 	if (ntxwords > master->caps.datafifodepth ||
+ 	    nrxwords > master->caps.datafifodepth)
 -		return -ENOTSUPP;
 +		return -EOPNOTSUPP;
  
- 	ret = master->ops->send_ccc_cmd(master, cmd);
- 	if (ret) {
-@@ -1439,7 +1439,7 @@ static int i3c_master_retrieve_dev_info(struct i3c_dev_desc *dev)
+ 	xfer = dw_i3c_master_alloc_xfer(master, i3c_nxfers);
+ 	if (!xfer)
+@@ -1093,7 +1093,7 @@ static int dw_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
+ 		return 0;
  
- 	if (dev->info.bcr & I3C_BCR_HDR_CAP) {
- 		ret = i3c_master_gethdrcap_locked(master, &dev->info);
--		if (ret && ret != -ENOTSUPP)
-+		if (ret && ret != -EOPNOTSUPP)
- 			return ret;
- 	}
- 
-@@ -2210,7 +2210,7 @@ of_i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
- 	 */
- 	if (boardinfo->base.flags & I2C_CLIENT_TEN) {
- 		dev_err(dev, "I2C device with 10 bit address not supported.");
--		return -ENOTSUPP;
-+		return -EOPNOTSUPP;
- 	}
- 
- 	/* LVR is encoded in reg[2]. */
-@@ -2340,13 +2340,13 @@ static int i3c_master_i2c_adapter_xfer(struct i2c_adapter *adap,
- 		return -EINVAL;
- 
- 	if (!master->ops->i2c_xfers)
+ 	if (i2c_nxfers > master->caps.cmdfifodepth)
 -		return -ENOTSUPP;
 +		return -EOPNOTSUPP;
  
- 	/* Doing transfers to different devices is not supported. */
- 	addr = xfers[0].addr;
- 	for (i = 1; i < nxfers; i++) {
- 		if (addr != xfers[i].addr)
--			return -ENOTSUPP;
-+			return -EOPNOTSUPP;
- 	}
+ 	for (i = 0; i < i2c_nxfers; i++) {
+ 		if (i2c_xfers[i].flags & I2C_M_RD)
+@@ -1104,7 +1104,7 @@ static int dw_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
  
- 	i3c_bus_normaluse_lock(&master->bus);
-@@ -2766,7 +2766,7 @@ static int i3c_master_check_ops(const struct i3c_master_controller_ops *ops)
-  *	    controller)
-  * @ops: the master controller operations
-  * @secondary: true if you are registering a secondary master. Will return
-- *	       -ENOTSUPP if set to true since secondary masters are not yet
-+ *	       -EOPNOTSUPP if set to true since secondary masters are not yet
-  *	       supported
-  *
-  * This function takes care of everything for you:
-@@ -2793,7 +2793,7 @@ int i3c_master_register(struct i3c_master_controller *master,
- 
- 	/* We do not support secondary masters yet. */
- 	if (secondary)
+ 	if (ntxwords > master->caps.datafifodepth ||
+ 	    nrxwords > master->caps.datafifodepth)
 -		return -ENOTSUPP;
 +		return -EOPNOTSUPP;
  
- 	ret = i3c_master_check_ops(ops);
- 	if (ret)
-@@ -2954,7 +2954,7 @@ int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
- 		return -EINVAL;
- 
- 	if (!master->ops->priv_xfers)
--		return -ENOTSUPP;
-+		return -EOPNOTSUPP;
- 
- 	return master->ops->priv_xfers(dev, xfers, nxfers);
- }
-@@ -3004,7 +3004,7 @@ int i3c_dev_request_ibi_locked(struct i3c_dev_desc *dev,
- 	int ret;
- 
- 	if (!master->ops->request_ibi)
--		return -ENOTSUPP;
-+		return -EOPNOTSUPP;
- 
- 	if (dev->ibi)
- 		return -EBUSY;
+ 	xfer = dw_i3c_master_alloc_xfer(master, i2c_nxfers);
+ 	if (!xfer)
 -- 
 2.47.2
 
