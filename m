@@ -4,57 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8BEC7C7EE39
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Jun 2025 17:36:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10B09C7EE3A
+	for <linux-i3c@archiver.kernel.org>; Wed, 25 Jun 2025 17:36:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mxOyXlwJ9AMjf+c0ahmgEMBl5Y9QWOoFwTqQlSfHT4k=; b=eWXGei4Sz8T8co
-	AZQejWrn3CCKRH1dtqNN0yE6v4Tx+Z13LAxmhSqTSrGr/fKvrCBUv8IJh53edlZzFb/cPMefEuRTt
-	CeA/BYGY8CGGgZ1ETUL4+DdI4Uk9QmPLQA7ol+918Rktiaz+uZFO/4jnesjGylEIU+6iFbWou38+b
-	re6QLaPmnZWDHeCHxOmZqmC8F/kiieS6N8ZzhIuOJGYyPlJ85lJVWZZYJ+2Fl+p/iUoufC6CI2p8S
-	1oD7CpuCOJRRy8vOUPMevAfxZ0eoadtcQl/RM7y8ba2AfWFRAmavYtrfTCVl7sDhC2wYX+C/gws2N
-	lA9BLMHs//Ta1DkGruIg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OBqdcrLKePL7WjC1QRESbScDof0aI/wuKXYNz/uVLmE=; b=3ZnKhGk+7fZp3v
+	efEfdLszgzrxsxhG6yXMkTIHDa/ezAbX6Fm+Q7mUws2YggZEI6T+2173zHMGQcdexHns2fsIZZ40B
+	DwgY3XqT7JDPiJ2m1agIMBONq7sCgFu2NfMCTn1K7JIBnCBD5jIuGUV47fYA4a3naM1sC+6a/EMTb
+	cyq8UznmLDCWQCrhGignUl7GABJB2OXCKTgm/4TxrRvtLq52DWb6BDLmBhqEt+VC8HkS/GuF8A+bk
+	daBoWI0A2gPEsgq+2MeiAwxIlAsT2CO1QnQxxHit91jFPXEcs5h8eycIwxJRGxjnCBYg6AsyNLe6E
+	57A3n8sm/eU230R9DMng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUU3N-00000009TZl-3YzN;
-	Wed, 25 Jun 2025 17:36:57 +0000
+	id 1uUU3O-00000009Tbh-33Ye;
+	Wed, 25 Jun 2025 17:36:58 +0000
 Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUPsf-00000008kFi-3gqk
+	id 1uUPsj-00000008kHN-3pvD
 	for linux-i3c@lists.infradead.org;
-	Wed, 25 Jun 2025 13:09:40 +0000
+	Wed, 25 Jun 2025 13:09:43 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	sang-engineering.com; h=from:to:cc:subject:date:message-id
-	:mime-version:content-transfer-encoding; s=k1; bh=k8oYde8jBg12yq
-	AerZtMMzm6u6iRIFfAW8REbLGj/ME=; b=FGTXhiw2xytR0cHSDr+BHcVFJ9nheQ
-	FvT55GqsqAVOjqh4MOWlYyxkrA7CihMZK3ZbX2s1DiWjKzSZHrgqx9ULapg/gHqL
-	+7c4bM1S79jP7NiFsrSsr9RK6wglaUjDvNJgMGXsXvqUazT4XOSedhmZvAQBtFAo
-	294T9ibR02fyW5b5WCywkooeteorc4sbtAw5Edh199PL/oceGodmaTsGNQEiTcDr
-	RJa5V759hAqTJ6wGM/gamlV1vd/6PYQwvL+tMp6O1fBfdDD3Vgupnt+1U27D9mw9
-	trFEYZWMb5e4oPHPfFTuKD4cZsEXa5c7J+2gQ/aipNkLdNHmwcHpIvzA==
-Received: (qmail 658971 invoked from network); 25 Jun 2025 15:09:34 +0200
-Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 25 Jun 2025 15:09:34 +0200
-X-UD-Smtp-Session: l3s3148p1@kTbvJ2U44pttKDAs
+	:in-reply-to:references:mime-version:content-transfer-encoding;
+	 s=k1; bh=dzna/XsontEgN7I82CZjapfkRA2NWPYiVq+jFArEruA=; b=fpTQB+
+	X4pGM+hafE35IbU+g3OLA5cMu4VqMGt55Alkc3ocqgSp4t+sxlAdnswpMRw3jUi7
+	5qslby0Rzb+JzAMZNZynX8uP7BBz99pWSyxqjNm9E77cISE9gJ3biQn3cHrwy5aI
+	CeFmhN3lI8CKWD9IwtRZPVAf3ZWCKWuYyXpYT292YLEXYoOXP2vSNwDqoHdx9wjB
+	jRKHnUzPLjT0lcgaQsEs1REOy9aHHKUrxAeWHtFX4SrV90Lx1L5aeECZ+7DOu0vk
+	yXdyXIm/zqSK7LxdA9HznZoKCSv5n4HsgtCDQYydCxl552PX48o/xbewg9mcpFk5
+	kSckQBeHF0pWQttQ==
+Received: (qmail 659096 invoked from network); 25 Jun 2025 15:09:40 +0200
+Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 25 Jun 2025 15:09:40 +0200
+X-UD-Smtp-Session: l3s3148p1@YTdLKGU4XNdtKDAs
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 To: linux-renesas-soc@vger.kernel.org
 Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	=?UTF-8?q?Przemys=C5=82aw=20Gaj?= <pgaj@cadence.com>,
 	Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Frank Li <Frank.Li@nxp.com>,
-	linux-i3c@lists.infradead.org,
-	=?UTF-8?q?Przemys=C5=82aw=20Gaj?= <pgaj@cadence.com>
-Subject: [PATCH 0/3] i3c: switch to use SUSV4 error codes
-Date: Wed, 25 Jun 2025 15:09:18 +0200
-Message-ID: <20250625130918.14507-5-wsa+renesas@sang-engineering.com>
+	linux-i3c@lists.infradead.org
+Subject: [PATCH 3/3] i3c: cdns: switch to use SUSV4 error codes
+Date: Wed, 25 Jun 2025 15:09:21 +0200
+Message-ID: <20250625130918.14507-8-wsa+renesas@sang-engineering.com>
 X-Mailer: git-send-email 2.47.2
+In-Reply-To: <20250625130918.14507-5-wsa+renesas@sang-engineering.com>
+References: <20250625130918.14507-5-wsa+renesas@sang-engineering.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250625_060938_797789_C28ADB6A 
-X-CRM114-Status: UNSURE (   5.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250625_060942_242066_E3032CCB 
+X-CRM114-Status: GOOD (  10.64  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,22 +79,65 @@ probably will get one. So, let's convert these error codes now, before
 it will be forgotten in the future, and they could slip through to
 applications.
 
-This is based on 6.16-rc3 plus "[PATCH] i3c: don't fail if GETHDRCAP is
-unsupported" which I sent earlier. During its development, the issue
-became apparent. Automatically generated and build tested only.
-
-Looking forward to comments.
-
-Wolfram Sang (3):
-  i3c: core: switch to use SUSV4 error codes
-  i3c: dw: switch to use SUSV4 error codes
-  i3c: cdns: switch to use SUSV4 error codes
-
- drivers/i3c/master.c                 | 20 ++++++++++----------
- drivers/i3c/master/dw-i3c-master.c   |  8 ++++----
+Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+---
  drivers/i3c/master/i3c-master-cdns.c | 12 ++++++------
- 3 files changed, 20 insertions(+), 20 deletions(-)
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
+diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
+index fd3752cea654..e24d93a82e1c 100644
+--- a/drivers/i3c/master/i3c-master-cdns.c
++++ b/drivers/i3c/master/i3c-master-cdns.c
+@@ -742,7 +742,7 @@ static int cdns_i3c_master_priv_xfers(struct i3c_dev_desc *dev,
+ 
+ 	for (i = 0; i < nxfers; i++) {
+ 		if (xfers[i].len > CMD0_FIFO_PL_LEN_MAX)
+-			return -ENOTSUPP;
++			return -EOPNOTSUPP;
+ 	}
+ 
+ 	if (!nxfers)
+@@ -750,7 +750,7 @@ static int cdns_i3c_master_priv_xfers(struct i3c_dev_desc *dev,
+ 
+ 	if (nxfers > master->caps.cmdfifodepth ||
+ 	    nxfers > master->caps.cmdrfifodepth)
+-		return -ENOTSUPP;
++		return -EOPNOTSUPP;
+ 
+ 	/*
+ 	 * First make sure that all transactions (block of transfers separated
+@@ -765,7 +765,7 @@ static int cdns_i3c_master_priv_xfers(struct i3c_dev_desc *dev,
+ 
+ 	if (rxslots > master->caps.rxfifodepth ||
+ 	    txslots > master->caps.txfifodepth)
+-		return -ENOTSUPP;
++		return -EOPNOTSUPP;
+ 
+ 	cdns_xfer = cdns_i3c_master_alloc_xfer(master, nxfers);
+ 	if (!cdns_xfer)
+@@ -822,11 +822,11 @@ static int cdns_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
+ 	int i, ret = 0;
+ 
+ 	if (nxfers > master->caps.cmdfifodepth)
+-		return -ENOTSUPP;
++		return -EOPNOTSUPP;
+ 
+ 	for (i = 0; i < nxfers; i++) {
+ 		if (xfers[i].len > CMD0_FIFO_PL_LEN_MAX)
+-			return -ENOTSUPP;
++			return -EOPNOTSUPP;
+ 
+ 		if (xfers[i].flags & I2C_M_RD)
+ 			nrxwords += DIV_ROUND_UP(xfers[i].len, 4);
+@@ -836,7 +836,7 @@ static int cdns_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
+ 
+ 	if (ntxwords > master->caps.txfifodepth ||
+ 	    nrxwords > master->caps.rxfifodepth)
+-		return -ENOTSUPP;
++		return -EOPNOTSUPP;
+ 
+ 	xfer = cdns_i3c_master_alloc_xfer(master, nxfers);
+ 	if (!xfer)
 -- 
 2.47.2
 
