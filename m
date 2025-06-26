@@ -4,61 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8780AC83F04
-	for <linux-i3c@archiver.kernel.org>; Wed,  2 Jul 2025 22:06:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61BB7C83F0A
+	for <linux-i3c@archiver.kernel.org>; Wed,  2 Jul 2025 22:06:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=dPczyCx+LHjNfFZav+CGNgwC+pzdacv87Ir5dTLywvQ=; b=ZDaCfJ27dudJ5+1kt94tjS6xRf
-	5UB+gWdV4/csFTsN13W6HFC+/N3ThVB5JbdkJATA7WG2Fc8za1Xse3R5vUyrTQlZrhX/2dfdrSsVY
-	uPAZBm5W+y+U8cXCWi1u0NcKjkJPn6dVGIs4WlOdZVuvtNqj6RsySu3saspeQgsoUydP7Wnt6je3B
-	D2c5x0YHVAT4H0/HyB6ui1NgYJ8BDvN7QstxmteQSmJ4qTuj6NyEJigNos738x/KLNGYWiIjxmBlb
-	AjVsw4CuTl06ulAOqvW771Jqhnqr8N1uSnpDSLUVQODZOJiypFAxzkrn6pxywSBsqqC5c9cBaOA2P
-	HMuveZnw==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bihyUtMe+mBL8Lf1XHCGw8IcpBI7Ep8o/FhUORauTxQ=; b=VXfVR+higNO+4O
+	gp3FQixo5LSYUh5hzkXD+kONMhDa3zh8u1OTzFCTX/anx5yaoDfquyZqS2h4CzDQuzjKtegt3M4N3
+	5xCszf6HZg3HJdsYTpZvokRNzrJw8Rmo49vZyAqiVo3k5SqUyvxwwqhFQRWx73fxHPlmTSnQTGSD0
+	Mq0Lqg9sG1yAz8oX6UCV84MezJSdEjw94sguZKCihq4PqG5Y2lHTnrrhV/kD4yIiQKgc7aQyQ4eRX
+	yrAL0zs8veO/zgDeis5K+CDSOuS89ms5OSi/0RhkbT5ppb9vLOGHjT/bWn7WvrhiaAd81RILhecSY
+	FxxkBpolsK3bgXc6KYtg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uX5bS-00000009f5G-13H2;
-	Wed, 02 Jul 2025 22:06:54 +0000
-Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
+	id 1uX5bT-00000009f5V-0gp0;
+	Wed, 02 Jul 2025 22:06:55 +0000
+Received: from mail-pl1-x632.google.com ([2607:f8b0:4864:20::632])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUKWR-00000007oT6-1hIu
+	id 1uUvft-0000000D0tB-2V2W
 	for linux-i3c@lists.infradead.org;
-	Wed, 25 Jun 2025 07:26:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	sang-engineering.com; h=date:from:to:cc:subject:message-id
-	:references:mime-version:content-type:in-reply-to; s=k1; bh=ggHW
-	2tGXUpjDd3Eq6i8DXWy8N5KdCD87GNfxMzC0698=; b=JkQktgIwJEK8ksTB5Tcy
-	+Q6LheG+7zZU1jFD9/0ryhCA9m7m0vLgslEUK3Bqj0Vi2VAg/0Dhvo05LPnU7f6M
-	7UTPfcF8JKolEMectzcauz9oaeAIXLRGxT02fRsXnd6vCt2aGE7gqZfDuWhVmPTY
-	/nAH22ieDjVsZjv4U2Vef3UjdGYgz1GokhJNjmXXu1Du3kltVVpQ5xMS9SKO52EZ
-	X/G+Xu/zm4oW2R7iXJo5ZNfwSXXLq7ca7HOlVzWj2HoMaom6FBJZaLuMVnOQONzt
-	LufIe77/A/CsWxNuCgoUEpZm7sWA03GOAtjyW7mn0Hgv1aTdI+T1If4btK/CC8zS
-	pQ==
-Received: (qmail 547658 invoked from network); 25 Jun 2025 09:26:17 +0200
-Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 25 Jun 2025 09:26:17 +0200
-X-UD-Smtp-Session: l3s3148p1@155GXGA4HrJtKLNf
-Date: Wed, 25 Jun 2025 09:26:16 +0200
-From: Wolfram Sang <wsa+renesas@sang-engineering.com>
-To: Jorge Marques <jorge.marques@analog.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>,
-	=?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 2/3] i3c: master: cdns: Use i3c_writel_fifo() and
- i3c_readl_fifo()
-Message-ID: <aFukmFhJUCeRWLU9@shikoro>
-References: <20250624-i3c-writesl-readsl-v3-0-63ccf0870f01@analog.com>
- <20250624-i3c-writesl-readsl-v3-2-63ccf0870f01@analog.com>
+	Thu, 26 Jun 2025 23:06:34 +0000
+Received: by mail-pl1-x632.google.com with SMTP id d9443c01a7336-235ef62066eso20464585ad.3
+        for <linux-i3c@lists.infradead.org>; Thu, 26 Jun 2025 16:06:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1750979192; x=1751583992; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=qCbQUhLpqfire/SFhHrIydc+K1fZgDEYUK8oj5zp/yg=;
+        b=QKCmQTFXDwUa+4QGzs+Ut//+sqIejg1leE3iZJX7UBcjpSYr2vlL/qa2lp+E/8HP1w
+         CMeOwJDTL4mvkdcXZagU+J5/prxEWEhx39DboD7mBkEOPtZ3ZWRvOKrswbamzwSxT3i5
+         73azUNnCEuYahKeoAzDsa36bvEMGZh5AEe0na1cTr/iMcHYqO6ZMt7OuT0h5V7/tCeQ+
+         cLgZiFwvpve5cwC2dU/LCChHd/RHhIPl2NdULcT2GBKIYR0KnWAjYOS9wjnC+moP1CWG
+         G5AM6ov1CAdxxEogSJCAUQibIibgyF4jlW1xxtohevH2QtJsDj16zTyX2G6KfGbzigyF
+         +Z9Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1750979192; x=1751583992;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=qCbQUhLpqfire/SFhHrIydc+K1fZgDEYUK8oj5zp/yg=;
+        b=c2Lh+RHCL3U61N7v8rO6XjWxZfj0u/aobXyECPIO9h42iYdXs6am9/kdiEJ22Kc9Kb
+         3lIAI/2IIKAxXiNz2pnmJFHzyeZZsiMdJF3fMgZYydUsFrKbfFWjOOKl5t5F6/KE9CHI
+         Wn/2OBub1IFgK39Vkpeu7r5XPlV5F8lItVJUNzmNj3eJV+VxAI+bMhanY2R2Nlh4lg53
+         0SgrHl/gnxrlGynFkCcLzw/ptkG2KgNUWQ3vfpiVQTBUmk2xBdESEs3yvdZqm3KPRaTm
+         6CNP+tcLCZwmO0XamymsQG49WF6WEsilysc6eeeWVSs0Mwm0aw516HzGIN1RlaAdQuLT
+         TutQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWM2XNPGe5xvfsp1uGSUnlz3hKthBgr+8jW32BG/zwlD9++FOx/dpw5TxfcsQR0vsvrQ2ivqMx9fRU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyhqDyXoKBMfEadPFMvwjMUZrj7DMQlqX+3Ga6YbFTSkcSdeX4x
+	ruHKRY/ZilQI0AiqdjZVkLCQ3k7mQ9BmtG03oIvbT2r35LMIyXu0buHK
+X-Gm-Gg: ASbGncs92TBb4mgbvm5wQSZ99Rd1ZqnA2OTUUSbAeswQr6h4WmzIazbreippPgPBLot
+	OGHFz2qAQaYzV+Ib6ihQ/2bXMfwqfBl+Lf/FIQKbQ2gmGkC0kp3jwj4hq7tCMax5DGmXyyR8Bhc
+	gaxXtvzYP3pgaEEDqtevbxJIeHU/SMo+TyFx/mmFsDd5RiXNh2wImmtibGlW2wCnITU8siArIkO
+	pOO0smP8aJ9UhaA9bNIZ7uItERQ9vHtuh/S5JzaGGc7MKPn3dAPtMGd1KjKqkqYSpFRqmLkNEbD
+	Z3f+Z5EsN/zF7evnbVrD9/eUBDmrIcBUqoxQ8fTuDDBoEU/c6PrQcfEKXl9q6X1RzpnHxA==
+X-Google-Smtp-Source: AGHT+IFvUUME0kNtua+RsrlGGMsS1fPf9D1Wos2a8zc3DvBgPZLWnsx4UrNwqvoAWLJTeloLmMk8bQ==
+X-Received: by 2002:a17:903:1745:b0:234:ed31:fcb1 with SMTP id d9443c01a7336-23ac40d8b08mr10899805ad.20.1750979192313;
+        Thu, 26 Jun 2025 16:06:32 -0700 (PDT)
+Received: from [192.168.0.150] ([103.124.138.155])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-23acb3c94a8sm1308385ad.239.2025.06.26.16.06.29
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 26 Jun 2025 16:06:31 -0700 (PDT)
+Message-ID: <3fb32ef5-055d-4885-9233-a07ddcaa5154@gmail.com>
+Date: Fri, 27 Jun 2025 06:06:26 +0700
 MIME-Version: 1.0
-In-Reply-To: <20250624-i3c-writesl-readsl-v3-2-63ccf0870f01@analog.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] i3c: Fix i3c_device_do_priv_xfers() return value list
+To: Frank Li <Frank.li@nxp.com>
+Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux i3c <linux-i3c@lists.infradead.org>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>
+References: <20250626042201.44594-1-bagasdotme@gmail.com>
+ <aF17sD+4F42RL0PL@lizhi-Precision-Tower-5810>
+Content-Language: en-US
+From: Bagas Sanjaya <bagasdotme@gmail.com>
+In-Reply-To: <aF17sD+4F42RL0PL@lizhi-Precision-Tower-5810>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250625_002619_727999_79AA5A03 
-X-CRM114-Status: UNSURE (   7.93  )
+X-CRM114-CacheID: sfid-20250626_160633_638193_BFCF8EBF 
+X-CRM114-Status: UNSURE (   8.89  )
 X-CRM114-Notice: Please train this message.
-X-Mailman-Approved-At: Wed, 02 Jul 2025 15:04:02 -0700
+X-Mailman-Approved-At: Wed, 02 Jul 2025 15:04:03 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,72 +99,39 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8481763522468801555=="
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+On 6/26/25 23:56, Frank Li wrote:
+> On Thu, Jun 26, 2025 at 11:22:01AM +0700, Bagas Sanjaya wrote:
+>> Sphinx reports indentation warning on i3c_device_do_priv_xfers() return
+>> value list:
+>>
+>> Documentation/driver-api/i3c/device-driver-api:9: ./drivers/i3c/device.c:31: ERROR: Unexpected indentation. [docutils]
+>>
+>> Format the list as bullet list to fix the warning.
+>>
+>> Fixes: 0d2596508201 ("i3c: Add comment for -EAGAIN in i3c_device_do_priv_xfers()")
+> 
+> Needn't fixes tag here because it doesn't impact user.
+> 
 
---===============8481763522468801555==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="SeTz2P++3ECJKrVD"
-Content-Disposition: inline
+I found the warning on docs-next tree, though.
 
+> subject:
+> i3c: fix kernel-doc indentation of i3c_device_do_priv_xfers()
+> 
 
---SeTz2P++3ECJKrVD
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Ack for the subject suggestion.
 
+Thanks.
 
->  static void cdns_i3c_master_wr_to_tx_fifo(struct cdns_i3c_master *master,
->  					  const u8 *bytes, int nbytes)
->  {
-> -	writesl(master->regs + TX_FIFO, bytes, nbytes / 4);
-> -	if (nbytes & 3) {
-> -		u32 tmp = 0;
-> -
-> -		memcpy(&tmp, bytes + (nbytes & ~3), nbytes & 3);
-> -		writesl(master->regs + TX_FIFO, &tmp, 1);
-> -	}
-> +	i3c_writel_fifo(master->regs + TX_FIFO, bytes, nbytes);
->  }
-
-What about getting rid of the surrounding function and use the helper
-directly?
-
-
---SeTz2P++3ECJKrVD
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAmhbpJQACgkQFA3kzBSg
-KbaAog//TEjzg+Dg7YzE6khvyli0iHrL/OE/JvSH5WnH+VKEVxqVMjTEETFQYY7S
-CL6IUwveSAit75VPrCNlnUCrOQnqpZ7rTnhHocR415otKxBbfj45yE/DE4FZdnjZ
-pK8oEaXrGvoYqywh7fHakBXhwxpT7oWNVzQW6DxNLkHIthRBVBJwKqZPMN74m6MD
-JBRM5V9wxn1/eoMAH9kMCT8F6KKG7tqbcWDaPsfYlw6Bi7cwyNIVdXQ4IjJTXJLw
-kHqay5CJtwjrpajfjtbF+sagQ75JuV6OBNP2Nsk02O5Tc+vxNlRnllbn3unPFBLr
-ylLrcTlV0m1gsHQ1KGsjXovWHpq0p6bk+iYk8Hdy9900rUg87gegLHkj35DDnXmA
-mNm8PCZqSNJ+tEg1SPTNvDhflnQdyP7ARb1qVGKEyN8pBECX8lm7quxUKB1cL2be
-ewMJDQ8G8ADgHNtq4jzbQS+TkyavGrDt/ndqgMIpZCloIss99PcmIo8O+QAmpXQC
-NuLQRAAk7buatljx93D+gkntY27Ttooyyl0+M1vcIGoFox4CGZQMUNiOEwmU/DGk
-G4eF2DSFFoiTpkaE+QZhg4tN0m5yBkZM+VBPLzNTzTScD24stk4P9tBus/6J13z6
-Vmaf0FnkMdey/JwSei19SbeipZH3K6fJ2fcMChkL2rEr1pCzoOQ=
-=SX2G
------END PGP SIGNATURE-----
-
---SeTz2P++3ECJKrVD--
-
-
---===============8481763522468801555==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+An old man doll... just what I always wanted! - Clara
 
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
-
---===============8481763522468801555==--
-
