@@ -4,50 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1D8CC83039
-	for <linux-i3c@archiver.kernel.org>; Tue,  1 Jul 2025 08:52:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9774AC7EE30
+	for <linux-i3c@archiver.kernel.org>; Tue,  1 Jul 2025 08:53:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lp32S8BXb12CTeuWNx4HFE6pxUPtTu1ruwhQhrOUtl4=; b=TkIDh1Rw1Ljs3V
-	O4p5T53baddzQCcOq9Vh4pCfqw7n2UxhqJet6NyjesWy2rbB6Xq8jopIlo9od5ztbJXhq+wXkRQ5T
-	NeyeDqETeftc8mNBaJOFgHrMCYm5F+ODfmw/wfcvviP9SVV5fh+aHfL3x2Ypac7V/4QQwOs4nVZZb
-	4DnOw3uUSClmE30wKY+FtdFDnOn7rkuOR6S1ChG+Ysh2BEXbPk10+wsFyqvZ2K//WbVCZFlKU6exE
-	M5q3CQ+MZaCERsqBnnBZCB4wZbOLWORUZbTTZJ3ehPdMf+2lYo5pfF4uPCFNLGQsL6tXYBsDg+9YK
-	JL7tT02l895hDusyRIDg==;
+	List-Owner; bh=JfcNJ3uFoKMHe+BfEoC8Eh34xDZ8V5IWs1l3UTSFtrk=; b=QEAC/RZa6blUHV
+	NtFDGlpY7jbv9WdLB6aQN5GCvG46DmEJgYIpwSVaFVwbj6kUoDY3gDdlXTYbN/UXQF5WlgUcvygC7
+	mJiub7TpjP6XwHhRWHyTjdS20BBn5ZI5TXkEv6QFQKLTT2a7O4hAlJVVkeeeWDOJebHuOLS5xO3jl
+	wm2iHZLsl9oskd6g5xHiBjCRAx2TR0njXhf8K2h30p2WEOp9NoQTBF3wtyf7NcPRJsvvmi3eQcjG1
+	zCqHBE7xh031g9fB+e5qwApM1ey41CXL9E+UANIkjwHVcZhKUZ18lobVy0Tg6G1LqCJKjwu9J6y7n
+	NNnw9eD+ZXUFugHFxO0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWWjR-00000004UCG-2a64;
-	Tue, 01 Jul 2025 08:52:49 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1uWWjd-00000004UTN-1FnM;
+	Tue, 01 Jul 2025 08:53:01 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWWQi-00000004QPI-1fAY
+	id 1uWWaj-00000004Rul-3a2f
 	for linux-i3c@lists.infradead.org;
-	Tue, 01 Jul 2025 08:33:28 +0000
+	Tue, 01 Jul 2025 08:43:51 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id CFA4661136;
-	Tue,  1 Jul 2025 08:33:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D052C4CEEB;
-	Tue,  1 Jul 2025 08:33:23 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 556115C6709;
+	Tue,  1 Jul 2025 08:43:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9AF88C4CEEB;
+	Tue,  1 Jul 2025 08:43:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1751358807;
-	bh=p+7U2XjHILtKEpkyEx7gdu8jsq+2qpdmfAyg3OdlsKI=;
+	s=k20201202; t=1751359429;
+	bh=WKKFVHyIx5FGyF/mzkbcJtuBZwMQR088gYLS51RgvbQ=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=WETNdBWg2lUJNGP3bvrNM1wMx7uZsoaP9RwyDCrtSWeQsWoVXIJpdy46SIe3+MuVl
-	 YT8pyZyDr489WxEudPqyqciKWjyBFK9wl9hUm0pd7exNzWDhkoAsGE7rV2cBu05TCL
-	 VY6woqJY4+xW1J6RIXmX8AWg3KB5WKhgSoxwKTL4sLZvx1sFwS6BMDoqUF5d+X05gQ
-	 Gpa6SZdYYJD+saY0hD9uXUclEvjmihcbTPgpByhNyrK1DiGUvLdwGqKfLDiJ7NUUHh
-	 ipaKfFw0MK62ae7cbsH7s9VhWkb8HRcgJQjLdE+Gpjs6HPzLGLn1uPy4IjGTzHLVq1
-	 GeEoZt3U+ehsw==
-Message-ID: <0f77f41d-589f-48da-a013-48f48f1dbbff@kernel.org>
-Date: Tue, 1 Jul 2025 10:33:21 +0200
+	b=Bv3tfL4d4+FCKNqLUUUwnm2WarDGmMoqMZaFdtwFu++KDbu892XV7WXfE7Mf6cFIt
+	 KJ96JQHtIUtusx6KhbOzXgWf6CxFCL2tnAa/EQDujA0JDROaXTKbao1UZUR6K19RQT
+	 dOEjKif5YH37jGnKu9CsO4EVADFIdcA4cPGfXRptBLZjJBN5l1xpMeHHX1zeuVJRh/
+	 fZzOs25FCrCwwBSZhOW48JkuEDQXOMS80k+LrXXprqDeojaoF8vAu4sd61KHchOTsw
+	 mcTriD4URbGgSzI5XreCOHeo7AcMXt/MS+/x4HB6DU5AQUxjc9jhodlMSY2L3+bH2M
+	 tjo+G/PTTQjsw==
+Message-ID: <010c05cf-66dc-4288-ba3f-81f8f4634525@kernel.org>
+Date: Tue, 1 Jul 2025 10:43:41 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 1/3] dt-bindings: i3c: Add support for Qualcomm I3C
- controller
+Subject: Re: [PATCH v6 2/3] i3c: master: Add Qualcomm I3C controller driver
 To: Mukesh Kumar Savaliya <mukesh.savaliya@oss.qualcomm.com>,
  alexandre.belloni@bootlin.com, robh@kernel.org, krzk+dt@kernel.org,
  conor+dt@kernel.org, jarkko.nikula@linux.intel.com,
@@ -56,7 +55,7 @@ To: Mukesh Kumar Savaliya <mukesh.savaliya@oss.qualcomm.com>,
  wsa+renesas@sang-engineering.com, alok.a.tiwari@oracle.com
 Cc: andersson@kernel.org, konradybcio@kernel.org
 References: <20250701071852.2107800-1-mukesh.savaliya@oss.qualcomm.com>
- <20250701071852.2107800-2-mukesh.savaliya@oss.qualcomm.com>
+ <20250701071852.2107800-3-mukesh.savaliya@oss.qualcomm.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -102,7 +101,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20250701071852.2107800-2-mukesh.savaliya@oss.qualcomm.com>
+In-Reply-To: <20250701071852.2107800-3-mukesh.savaliya@oss.qualcomm.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250701_014349_976474_80CC6A71 
+X-CRM114-Status: GOOD (  22.53  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,24 +122,361 @@ Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 On 01/07/2025 09:18, Mukesh Kumar Savaliya wrote:
-> Add device tree bindings for the Qualcomm I3C controller. This includes
-> the necessary documentation and properties required to describe the
-> hardware in the device tree.
-> 
-> Signed-off-by: Mukesh Kumar Savaliya <mukesh.savaliya@oss.qualcomm.com>
-> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
-> ---
->  .../bindings/i3c/qcom,geni-i3c.yaml           | 59 +++++++++++++++++++
->  1 file changed, 59 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/i3c/qcom,geni-i3c.yaml
-> 
+> +#include <linux/bits.h>
+> +#include <linux/clk.h>
+> +#include <linux/err.h>
+> +#include <linux/i3c/master.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/io.h>
 
-It's v6, you really should have started testing your changes by that
-time. :/
+where do you use it?
 
-Nothing in the changelog explains the change made here, so you just
-sneaked something which did not work.
 
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+
+where do you use it?
+
+
+> +#include <linux/of_platform.h>
+
+where do you use it?
+
+> +#include <linux/platform_device.h>
+> +#include <linux/pm_runtime.h>
+> +#include <linux/slab.h>
+> +#include <linux/soc/qcom/geni-se.h>
+> +#include <linux/units.h>
+
+where do you use it?
+
+> +
+> +#define SE_I3C_SCL_HIGH                 0x268
+> +#define SE_I3C_TX_TRANS_LEN             0x26c
+> +#define SE_I3C_RX_TRANS_LEN             0x270
+> +#define SE_I3C_DELAY_COUNTER            0x274
+> +#define SE_I2C_SCL_COUNTERS             0x278
+> +#define SE_I3C_SCL_CYCLE                0x27c
+> +#define SE_GENI_HW_IRQ_EN               0x920
+> +#define SE_GENI_HW_IRQ_IGNORE_ON_ACTIVE 0x924
+> +#define SE_GENI_HW_IRQ_CMD_PARAM_0      0x930
+> +
+> +/* HW I3C IBI interrupt enable */
+> +#define M_IBI_IRQ_EN			BIT(0)
+> +
+> +/* M_IBI_IRQ_IGNORE */
+> +#define M_IBI_IRQ_IGNORE		BIT(0)
+> +
+> +/* SE_GENI_M_CLK_CFG field shifts */
+> +#define	CLK_DIV_VALUE_MASK		GENMASK(23, 4)
+> +#define SER_CLK_EN			BIT(0)
+> +
+> +/* SE_GENI_HW_IRQ_CMD_PARAM_0 field bits */
+> +#define M_IBI_IRQ_PARAM_7E		BIT(0)
+> +#define M_IBI_IRQ_PARAM_STOP_STALL	BIT(1)
+> +
+> +/* SE_I2C_SCL_COUNTERS field shifts */
+> +#define I2C_SCL_HIGH_COUNTER_MASK	GENMASK(29, 20)
+> +#define I2C_SCL_LOW_COUNTER_MASK	GENMASK(19, 10)
+> +#define I2C_SCL_CYCLE_COUNTER_MASK	GENMASK(9, 0)
+> +
+> +#define SE_I3C_ERR  (M_CMD_OVERRUN_EN | M_ILLEGAL_CMD_EN | M_CMD_FAILURE_EN |\
+> +	M_CMD_ABORT_EN | M_GP_IRQ_0_EN | M_GP_IRQ_1_EN | M_GP_IRQ_2_EN | \
+> +	M_GP_IRQ_3_EN | M_GP_IRQ_4_EN)
+> +
+> +/* M_CMD OP codes for I2C/I3C */
+> +#define I3C_READ_IBI_HW          0
+> +#define I2C_WRITE                1
+> +#define I2C_READ                 2
+> +#define I2C_WRITE_READ           3
+> +#define I2C_ADDR_ONLY            4
+> +#define I3C_INBAND_RESET         5
+> +#define I2C_BUS_CLEAR            6
+> +#define I2C_STOP_ON_BUS          7
+> +#define I3C_HDR_DDR_EXIT         8
+> +#define I3C_PRIVATE_WRITE        9
+> +#define I3C_PRIVATE_READ         10
+> +#define I3C_HDR_DDR_WRITE        11
+> +#define I3C_HDR_DDR_READ         12
+> +#define I3C_DIRECT_CCC_ADDR_ONLY 13
+> +#define I3C_BCAST_CCC_ADDR_ONLY  14
+> +#define I3C_READ_IBI             15
+> +#define I3C_BCAST_CCC_WRITE      16
+> +#define I3C_DIRECT_CCC_WRITE     17
+> +#define I3C_DIRECT_CCC_READ      18
+> +
+> +/* M_CMD params for I3C */
+> +#define PRE_CMD_DELAY		BIT(0)
+> +#define TIMESTAMP_BEFORE	BIT(1)
+> +#define STOP_STRETCH		BIT(2)
+> +#define TIMESTAMP_AFTER		BIT(3)
+> +#define POST_COMMAND_DELAY	BIT(4)
+> +#define IGNORE_ADD_NACK		BIT(6)
+> +#define READ_FINISHED_WITH_ACK	BIT(7)
+> +#define CONTINUOUS_MODE_DAA	BIT(8)
+> +
+> +#define SLAVE_ADDR_MASK		GENMASK(15, 9)
+> +
+> +#define CCC_HDR_CMD_MSK		GENMASK(23, 16)
+> +#define IBI_NACK_TBL_CTRL	BIT(24)
+> +#define USE_7E			BIT(25)
+> +#define BYPASS_ADDR_PHASE	BIT(26)
+> +
+> +/* GSI callback error fields - DMA_TX_IRQ_STAT */
+> +#define GP_IRQ0			BIT(5)
+> +#define GP_IRQ1			BIT(6)
+> +#define GP_IRQ2			BIT(7)
+> +#define GP_IRQ3			BIT(8)
+> +#define GP_IRQ4			BIT(9)
+> +#define GP_IRQ5			BIT(10)
+> +#define DM_I3C_CB_ERR		GENMASK(10, 5)
+> +
+> +#define I3C_AUTO_SUSPEND_DELAY	250
+> +#define PACKING_BYTES_PER_WORD	4
+> +#define XFER_TIMEOUT		250
+> +#define DFS_INDEX_MAX		7
+> +
+> +#define I3C_ADDR_MASK		I2C_MAX_ADDR
+> +
+> +enum geni_i3c_err_code {
+> +	RD_TERM,
+> +	NACK,
+> +	CRC_ERR,
+> +	BUS_PROTO,
+> +	NACK_7E,
+> +	NACK_IBI,
+> +	GENI_OVERRUN,
+> +	GENI_ILLEGAL_CMD,
+> +	GENI_ABORT_DONE,
+> +	GENI_TIMEOUT,
+> +};
+> +
+> +enum i3c_bus_phase {
+> +	OPEN_DRAIN_MODE  = 0,
+> +	PUSH_PULL_MODE   = 1
+> +};
+> +
+> +struct geni_i3c_dev {
+> +	struct geni_se se;
+> +	unsigned int tx_wm;
+> +	int irq;
+> +	int err;
+> +	struct i3c_master_controller ctrlr;
+> +	struct completion done;
+> +	/* Protects per device CCC command or transfer from get_mutex_lock()/unlock() wrapper */
+> +	struct mutex lock;
+> +	/* Per device protection between process and IRQ context */
+> +	spinlock_t irq_lock;
+> +	u32 clk_src_freq;
+> +	u8 *cur_buf;
+> +	bool cur_is_write;
+> +	int cur_len;
+> +	int cur_idx;
+> +	DECLARE_BITMAP(newaddrslots, 64);
+> +
+> +	const struct geni_i3c_clk_settings *clk_cfg;
+> +	const struct geni_i3c_clk_settings *clk_od_cfg;
+> +};
+> +
+> +struct geni_i3c_i2c_dev_data {
+> +	u32 ibi_keeping;  /* Plan to save IBI information, keep as dummy for now */
+> +};
+> +
+> +struct geni_i3c_xfer_params {
+> +	enum geni_se_xfer_mode mode;
+> +	u32 m_cmd;
+> +	u32 m_param;
+> +};
+> +
+> +static inline struct geni_i3c_dev *to_geni_i3c_master(struct i3c_master_controller
+> +							*master)
+> +{
+> +	return container_of(master, struct geni_i3c_dev, ctrlr);
+> +}
+> +
+> +struct geni_i3c_clk_settings {
+> +	u32 clk_freq_out;
+> +	u32 clk_src_freq;
+> +	u8  clk_div;
+> +	u8  i2c_t_high_cnt;
+> +	u8  i2c_t_low_cnt;
+> +	u8  i3c_t_high_cnt;
+> +	u8  i3c_t_cycle_cnt;
+> +	u8  i2c_t_cycle_cnt;
+> +};
+> +
+> +/*
+> + * The hardware uses the following formulas to calculate the time periods
+> + * of the SCL clock cycle. The firmware adds a few extra cycles that are not
+> + * included in the formulas below. It has been verified that the resulting
+> + * timings remain within the I2C/I3C specification limits.
+> + *
+> + * I2C SCL high period:
+> + *     i2c_t_high = (i2c_t_high_cnt * clk_div) / source_clock
+> + *
+> + * I2C SCL low period:
+> + *     i2c_t_low = (i2c_t_low_cnt * clk_div) / source_clock
+> + *
+> + * I2C SCL full cycle:
+> + *     i2c_t_cycle = (i2c_t_cycle_cnt * clk_div) / source_clock
+> + *
+> + * I3C SCL high period:
+> + *     i3c_t_high = (i3c_t_high_cnt * clk_div) / source_clock
+> + *
+> + * I3C SCL full cycle:
+> + *     i3c_t_cycle = (i3c_t_cycle_cnt * clk_div) / source_clock
+> + *
+> + * Output clock frequency:
+> + *     clk_freq_out = t / t_cycle
+> + */
+> +static const struct geni_i3c_clk_settings geni_i3c_clk_map[] = {
+> +	{
+> +		.clk_freq_out = 100 * HZ_PER_KHZ,
+> +		.clk_src_freq = 19200 * HZ_PER_KHZ,
+> +		.clk_div = 1,
+> +		.i2c_t_high_cnt = 76,
+> +		.i2c_t_low_cnt = 90,
+> +		.i3c_t_high_cnt = 7,
+> +		.i3c_t_cycle_cnt = 8,
+> +		.i2c_t_cycle_cnt = 192,
+> +	},
+> +	{
+> +		.clk_freq_out = 400 * HZ_PER_KHZ,
+> +		.clk_src_freq = 19200 * HZ_PER_KHZ,
+> +		.clk_div = 1,
+> +		.i2c_t_high_cnt = 12,
+> +		.i2c_t_low_cnt = 24,
+> +		.i3c_t_high_cnt = 7,
+> +		.i3c_t_cycle_cnt = 8,
+> +		.i2c_t_cycle_cnt = 48
+> +	},
+> +	{
+> +		.clk_freq_out = 1000 * HZ_PER_KHZ,
+> +		.clk_src_freq = 19200 * HZ_PER_KHZ,
+> +		.clk_div = 1,
+> +		.i2c_t_high_cnt = 4,
+> +		.i2c_t_low_cnt = 9,
+> +		.i3c_t_high_cnt = 7,
+> +		.i3c_t_cycle_cnt = 0,
+> +		.i2c_t_cycle_cnt = 19
+> +	},
+> +	{
+> +		.clk_freq_out = 12500 * HZ_PER_KHZ,
+> +		.clk_src_freq = 100000 * HZ_PER_KHZ,
+> +		.clk_div = 1,
+> +		.i2c_t_high_cnt = 45,
+> +		.i2c_t_low_cnt = 63,
+> +		.i3c_t_high_cnt = 6,
+> +		.i3c_t_cycle_cnt = 7,
+> +		.i2c_t_cycle_cnt = 110
+> +	}
+> +};
+> +
+> +static int geni_i3c_clk_map_idx(struct geni_i3c_dev *gi3c)
+> +{
+> +	const struct geni_i3c_clk_settings *clk_idx = geni_i3c_clk_map;
+> +	struct i3c_master_controller *m = &gi3c->ctrlr;
+> +	struct i3c_bus *bus = i3c_master_get_bus(m);
+> +	int i;
+> +
+> +	for (i = 0; i < ARRAY_SIZE(geni_i3c_clk_map); i++, clk_idx++) {
+> +		if (clk_idx->clk_freq_out == bus->scl_rate.i3c &&
+> +		    clk_idx->clk_src_freq == gi3c->clk_src_freq)
+> +			gi3c->clk_cfg = clk_idx;
+> +
+> +		if (clk_idx->clk_freq_out == bus->scl_rate.i2c)
+> +			gi3c->clk_od_cfg = clk_idx;
+> +	}
+> +
+> +	if (!gi3c->clk_cfg || !gi3c->clk_od_cfg)
+> +		return -EINVAL;
+> +
+> +	return 0;
+> +}
+> +
+> +static inline void set_new_addr_slot(unsigned long *addrslot, u8 addr)
+
+Why do you mark functions inline? Drop, it's not recommended style.
+
+> +{
+> +	if (addr > I3C_ADDR_MASK)
+> +		return;
+
+This seems redundant. Why are you checking it every time here, but not
+once in the loop where this is executed?
+
+This is confusing - you got incorrect address in the place where this is
+called ("if (new_device) {") but you do not handle incorrect address,
+don't fail, don't unwind, don't handle the error. Instead this part
+silently skips the issue but rest of code will work with that incorrect
+address.
+
+
+
+> +
+> +	set_bit(addr, addrslot);> +}
+> +
+> +static inline void clear_new_addr_slot(unsigned long *addrslot, u8 addr)
+> +{
+> +	if (addr > I3C_ADDR_MASK)
+> +		return;
+
+And is_new_addr_slot_set() does not have the test? And how is this even
+possible, aren't you looping till I3C_ADDR_MASK?
+
+I understand why you wanted some abstractions, but this caused hiding
+actual issues because you do not see big picture.
+> +
+> +	clear_bit(addr, addrslot);
+> +}
+
+
+
+...
+
+
+> +
+> +static const struct i3c_master_controller_ops geni_i3c_master_ops = {
+> +	.bus_init = geni_i3c_master_bus_init,
+> +	.bus_cleanup = NULL,
+> +	.do_daa = geni_i3c_master_do_daa,
+> +	.attach_i3c_dev = geni_i3c_master_attach_i3c_dev,
+> +	.reattach_i3c_dev = NULL,
+> +	.detach_i3c_dev = geni_i3c_master_detach_i3c_dev,
+> +	.attach_i2c_dev = geni_i3c_master_attach_i2c_dev,
+> +	.detach_i2c_dev = geni_i3c_master_detach_i2c_dev,
+> +	.supports_ccc_cmd = geni_i3c_master_supports_ccc_cmd,
+> +	.send_ccc_cmd = geni_i3c_master_send_ccc_cmd,
+> +	.priv_xfers = geni_i3c_master_priv_xfers,
+> +	.i2c_xfers = geni_i3c_master_i2c_xfers,
+> +	.enable_ibi = NULL,
+> +	.disable_ibi = NULL,
+> +	.request_ibi = NULL,
+> +	.free_ibi = NULL,
+> +	.recycle_ibi_slot = NULL,
+> +};
+> +
+> +static int i3c_geni_resources_init(struct geni_i3c_dev *gi3c, struct platform_device *pdev)
+> +{
+> +	int ret;
+> +
+> +	gi3c->se.base = devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(gi3c->se.base))
+> +		return PTR_ERR(gi3c->se.base);
+> +
+> +	gi3c->se.clk = devm_clk_get(&pdev->dev, NULL);
+> +	if (IS_ERR(gi3c->se.clk))
+> +		return dev_err_probe(&pdev->dev, PTR_ERR(gi3c->se.clk),
+> +							"Unable to get serial engine core clock: %pe\n",
+
+Messed alignment.
+
+> +							gi3c->se.clk);
+> +	ret = geni_icc_get(&gi3c->se, NULL);
+> +	if (ret)
+> +		return ret;
+> +
 Best regards,
 Krzysztof
 
