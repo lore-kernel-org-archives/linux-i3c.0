@@ -4,105 +4,158 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB54BC83F03
-	for <linux-i3c@archiver.kernel.org>; Wed,  2 Jul 2025 22:06:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0286DC83F09
+	for <linux-i3c@archiver.kernel.org>; Wed,  2 Jul 2025 22:06:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8af+chfgZSraXCPRe2RtPU1r9gsay/S0+sBrm7ZDzfU=; b=AsABMWi08A3k3v
-	R91pxdiY8KzS5WwUr4gSraiAhZcVwEjpnPTaG3+4BadE+f6KGIF3IAuNTOj9YLT5h2c3aUYAar5ao
-	atf2EQ+lOkxszO03WGjBW/J2H7EA3R7xLGXikVG5vcZWBc1E03FE8kgcXKEXUd01xvTzDRmvak5uO
-	ZsI0LKLtiJl5Wn9FfVwJ3xM7v5ccQU7Rikrvk19ACiOU1NaEIFtn3MpbLROGaQLVC/HI489mpvm+C
-	sFq8X7crDqcDe/0S8QPC2NV2kRKyn8kl+1xupNXaFLjUOI9kBJGXOHXEzeH+37i7PrYm9l2JGcakd
-	uCVlHYMRc6+i6N2DOFBA==;
+	List-Owner; bh=ZgLA+cuqhKSr64JcCBiWCeYLSQGB68PSHMEKxB/QCLk=; b=i71Xy6loIc4qME
+	iMOnXmbSLkTN2r0CsxiZXZFNLaZJTi6i8J9MjJn8ooBZMd705dGeqWfYsjclHFSkZEr6M/kdSD76Y
+	mXIUU3a9e7oiZgVZ/8jayapxfPSSSuS5AJ2zvTkDnC1nuO4+mDsl/6lt8uQcLkrBkkUTIRokbGtLk
+	O+jtiBLB1gVONpx6Js8g6Eb+yOk5cAS4dUEoaP6rki0m7UdKHrLs9HxObRlPeoEpbmijKeEwhC1ZA
+	GzgJvnNfvLZCd2tVpliyQD7/NWvFCwjKWp2+OxjqbTaHRGmfwLC3is/GBKSVSLrb4L24iXNJmQcPo
+	yYbXuHUevLC9iGmTkGdw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uX5bU-00000009f6u-1rZZ;
-	Wed, 02 Jul 2025 22:06:56 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1uX5bW-00000009fAA-2xwN;
+	Wed, 02 Jul 2025 22:06:58 +0000
+Received: from mail-dm6nam12on2070d.outbound.protection.outlook.com ([2a01:111:f403:2417::70d] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWVHD-00000004Fo3-49rQ
-	for linux-i3c@lists.infradead.org;
-	Tue, 01 Jul 2025 07:19:37 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56140YON025373;
-	Tue, 1 Jul 2025 07:19:28 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:in-reply-to:message-id
-	:mime-version:references:subject:to; s=qcppdkim1; bh=hta9i+JJrdo
-	Le8lw4HxCbSPlRmIAsd4gjAVi0SwLNt0=; b=Q2lFkLDuiXYQbWHAcpjsfJWDfwr
-	xgfO0wsP8cfDZAkFSknHfmDtqai5ItipNZqCg2euGtj+dFklAsauzsEwTT+Du9zS
-	lJ23yRGO6byTQe9H4Irr44Dz5w2n84D/HQZr9pwc6PJfPMNG4JhXsbjU2b4sLTtt
-	OYXV9aelQVh/re6rJScgiyX3x+wWcbOgRzNT/p8ScWJVpEtepqfWKa8hRBxAMhnU
-	PkwFkivyD1bnsiIjzXmMgiNy/m+kdPo75BtlJRXGQo0s/UBLOf57vGTVWZo6+roB
-	ud9r/iiOvNYJmTBUFwoGD1mAu9+g0jrb5g7oS62/eMaHQpF6arSnUbUiD1Q==
-Received: from apblrppmta01.qualcomm.com (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 47kd64mss8-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 01 Jul 2025 07:19:27 +0000 (GMT)
-Received: from pps.filterd (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTP id 5617JLoJ029821;
-	Tue, 1 Jul 2025 07:19:24 GMT
-Received: from pps.reinject (localhost [127.0.0.1])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 47j9fktsuw-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 01 Jul 2025 07:19:24 +0000
-Received: from APBLRPPMTA01.qualcomm.com (APBLRPPMTA01.qualcomm.com [127.0.0.1])
-	by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 5617JNpD029869;
-	Tue, 1 Jul 2025 07:19:24 GMT
-Received: from hu-maiyas-hyd.qualcomm.com (hu-msavaliy-hyd.qualcomm.com [10.213.110.207])
-	by APBLRPPMTA01.qualcomm.com (PPS) with ESMTPS id 5617JNCc029852
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Tue, 01 Jul 2025 07:19:23 +0000
-Received: by hu-maiyas-hyd.qualcomm.com (Postfix, from userid 429934)
-	id 13EDC24053; Tue,  1 Jul 2025 12:49:23 +0530 (+0530)
-From: Mukesh Kumar Savaliya <mukesh.savaliya@oss.qualcomm.com>
-To: alexandre.belloni@bootlin.com, robh@kernel.org, krzk+dt@kernel.org,
-        conor+dt@kernel.org, jarkko.nikula@linux.intel.com,
-        linux-i3c@lists.infradead.org, linux-arm-msm@vger.kernel.org,
-        devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-        Frank.Li@nxp.com, wsa+renesas@sang-engineering.com,
-        alok.a.tiwari@oracle.com
-Cc: andersson@kernel.org, konradybcio@kernel.org,
-        Mukesh Kumar Savaliya <mukesh.savaliya@oss.qualcomm.com>
-Subject: [PATCH v6 2/3] i3c: master: Add Qualcomm I3C controller driver
-Date: Tue,  1 Jul 2025 12:48:51 +0530
-Message-Id: <20250701071852.2107800-3-mukesh.savaliya@oss.qualcomm.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20250701071852.2107800-1-mukesh.savaliya@oss.qualcomm.com>
-References: <20250701071852.2107800-1-mukesh.savaliya@oss.qualcomm.com>
+	id 1uWhaF-00000006Zig-1dKi;
+	Tue, 01 Jul 2025 20:28:04 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=VOGWgUvpbxNoRg3czvjEbI00zyvJBxU8DMfZH3R2rFDqfqc12pcit6gTcc60yTNZpVnZuoWj5n4bL5IUCj/RbXdcEWee4H/Hxrk8OaOKcYjtzcDfEUsEssZp5NhyR45MT/lHZP/2frVatBwOQ4WEGbaGvWLa3c6kQzS3GtrpIxYXO+agdmF4WaAtzQsNLoL4Hh7cVOKloflbBAPnhYTW0IbP8QixaRGzdiR7HUhf12GIFKK4fWY/bd42IffrOoau7V/Bjye1du+Bfdb3tzsBzbHt/pfCu77fzNPxx7+xYm+nSzSun0rsEt/CYyFcMj4+liYUAMKo6Fy27UC12esPgA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=vCh3w3rY8JdMlzOwVY1oKEt3qSDu4NfQ8QQCpWbtIUM=;
+ b=mQMOrkxLIKZyWGco3aTQ/uZ9wjR9kqzp22uPazdn+XH35FugrpNCoMPrHiVLTHpZBcFGAi4vfMCL5KYzw/LkEgTOSClr5N8X6C5LIkoK1NTdqSuqDWyAEnHs6yjIBqcx5mNyAQDiUxhManISQXZkKW6/FLVaxGsmazOoKFPUMbXCKay2QmsKc+poxs6+6m7BmEOEAMyGbChyumrEHiCVgEIuTzXCshzG0ZmQNImlbaix4bgjqIEbLA4yJXfW7j14w1dykhMpqcyPKEqorO+n/EaPITg+bClGOg7yu6K2apFacDwflnVY9W6SOFh6n6nFXX8fK3gMWvzWLG3n3jUuEA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=fail (sender ip is
+ 50.233.182.194) smtp.rcpttodomain=amd.com smtp.mailfrom=axiado.com;
+ dmarc=none action=none header.from=axiado.com; dkim=none (message not
+ signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axiado.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vCh3w3rY8JdMlzOwVY1oKEt3qSDu4NfQ8QQCpWbtIUM=;
+ b=eof/T6Wyyk2+Zt5Hj4CqVIG3VNNBJ9Oz/6o7eOQ+nwi6L6yh71bpNxY7tYNlPvRhacoLrkbddhlC7OjQ3FAbywXfySIwEhvUyVSIwja763OZmjwvBSJwbvFcTQkORYZgBFEjBXOaVl4fWntClNUz6Ru0B9EV3B6IX4P65uHXk37xgDxT71rZ5ySisaxPVLn5Wi8XQyYmyPi1SCpJqyPzsjM2qHfHQPH3l+si0sHN5Kic3r5nEJG6T3Yi4qu7aAYJqRmIZ/2ZF8jyJf29oLroGicOGYhIfoRGwA3f13b6pgaPnimAhddhyz5ufUlPYB8RMBwmPqSl91K72rRCk4OtVw==
+Received: from DM6PR14CA0047.namprd14.prod.outlook.com (2603:10b6:5:18f::24)
+ by MN6PR18MB5468.namprd18.prod.outlook.com (2603:10b6:208:472::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8880.29; Tue, 1 Jul
+ 2025 20:27:58 +0000
+Received: from DS2PEPF0000343E.namprd02.prod.outlook.com
+ (2603:10b6:5:18f:cafe::a2) by DM6PR14CA0047.outlook.office365.com
+ (2603:10b6:5:18f::24) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8880.31 via Frontend Transport; Tue,
+ 1 Jul 2025 20:27:57 +0000
+X-MS-Exchange-Authentication-Results: spf=fail (sender IP is 50.233.182.194)
+ smtp.mailfrom=axiado.com; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=axiado.com;
+Received-SPF: Fail (protection.outlook.com: domain of axiado.com does not
+ designate 50.233.182.194 as permitted sender)
+ receiver=protection.outlook.com; client-ip=50.233.182.194; helo=[127.0.1.1];
+Received: from [127.0.1.1] (50.233.182.194) by
+ DS2PEPF0000343E.mail.protection.outlook.com (10.167.18.41) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.8901.15
+ via Frontend Transport; Tue, 1 Jul 2025 20:27:56 +0000
+From: Harshit Shah <hshah@axiado.com>
+Date: Tue, 01 Jul 2025 13:27:32 -0700
+Subject: [PATCH v4 08/10] arm64: dts: axiado: Add initial support for
+ AX3000 SoC and eval board
 MIME-Version: 1.0
-X-QCInternal: smtphost
-X-QCInternal: smtphost
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
-X-Authority-Analysis: v=2.4 cv=Z+PsHGRA c=1 sm=1 tr=0 ts=68638bff cx=c_pps
- a=Ou0eQOY4+eZoSc0qltEV5Q==:117 a=Ou0eQOY4+eZoSc0qltEV5Q==:17
- a=Wb1JkmetP80A:10 a=EUspDBNiAAAA:8 a=DPmnDSXdv8NEt5ZNaxIA:9
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzAxMDA0MCBTYWx0ZWRfXyvt/0YAATN5B
- Af/AqL/XdktxIiGAbPbQ/s9rK7zktDK+j09mnUZxCkYsqAcBpVrTHgBZbuU/XNwWgDBsjtw+4sd
- Q86p+pzpit1GY2maL1c/EHvjdDQXW0Q9gkATFv9NQMx4+LdojbQ2T6KoTZZutKYfy51xjOe4gVp
- wCVzrhngzF3+jEA4bJQulPK3RZ3nnb0CaZJPWxfQ4Gy3stBdexUch8WMj0KHW8lcZPtbGdN1y4U
- oxCHtMfBU+10cNNwgguqrXmILPih/gXKSwScMe1WQ2vRYWmEV55HfNczsQD+ax5m2uKaWVtDifF
- lX7JPSSWyqP3x+wyBA6Z679Y+GRtpQ4C6IZYn+9x3tl6tATV56Hv6d2BUlrDh+SXerJnS4nTLJo
- bOXcB8JxctDIsVk5lfyet2PqWFqpMDoPP+EndhjQKXofCIs+unOCnnDq4nn354namc9pe6yL
-X-Proofpoint-GUID: Qyt5b_K2qvn0IEmR1z8pnxbIj2bjRTJq
-X-Proofpoint-ORIG-GUID: Qyt5b_K2qvn0IEmR1z8pnxbIj2bjRTJq
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.7,FMLib:17.12.80.40
- definitions=2025-07-01_01,2025-06-27_01,2025-03-28_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- phishscore=0 lowpriorityscore=0 clxscore=1011 malwarescore=0 mlxlogscore=999
- spamscore=0 adultscore=0 mlxscore=0 priorityscore=1501 bulkscore=0
- impostorscore=0 suspectscore=0 classifier=spam authscore=0 authtc=n/a authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
- definitions=main-2507010040
+Message-Id: <20250701-axiado-ax3000-soc-and-evaluation-board-support-v4-8-11ba6f62bf86@axiado.com>
+References: <20250701-axiado-ax3000-soc-and-evaluation-board-support-v4-0-11ba6f62bf86@axiado.com>
+In-Reply-To: <20250701-axiado-ax3000-soc-and-evaluation-board-support-v4-0-11ba6f62bf86@axiado.com>
+To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, 
+ Linus Walleij <linus.walleij@linaro.org>, 
+ Bartosz Golaszewski <brgl@bgdev.pl>, Arnd Bergmann <arnd@arndb.de>, 
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>, 
+ Jan Kotas <jank@cadence.com>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Jiri Slaby <jirislaby@kernel.org>, Michal Simek <michal.simek@amd.com>, 
+ =?utf-8?q?Przemys=C5=82aw_Gaj?= <pgaj@cadence.com>, 
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ Frank Li <Frank.Li@nxp.com>, Boris Brezillon <bbrezillon@kernel.org>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-gpio@vger.kernel.org, 
+ soc@lists.linux.dev, Jan Kotas <jank@cadence.com>, 
+ linux-serial@vger.kernel.org, linux-i3c@lists.infradead.org, 
+ Harshit Shah <hshah@axiado.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=18250; i=hshah@axiado.com;
+ h=from:subject:message-id; bh=j/+Qky+fPOazs6K3HBXW5y+0plotmY96K3xa4zO52Uk=;
+ b=owEB7QES/pANAwAKAfFYcxGhMtX7AcsmYgBoZES+iS3RNSiGO95QiQMpliCrxdGU+VjJ/T876
+ g1ba8Jo4HeJAbMEAAEKAB0WIQRO3pC/7SkLS2viWOvxWHMRoTLV+wUCaGREvgAKCRDxWHMRoTLV
+ +yt5C/9xM5tw4tC0FlLWmMgxP0nm8ZSGDzTZE8ac3EUISUGiXbmb4vPE7Y2s2RIgZlFn/BnurpY
+ eyDYq2O1Qo6bgsWG6jvDc7lL+G4bfzAOjMr0sIylURvRUSh2S/PdgaPWJ/sbeIeUShp0U8MXqAB
+ VLbIs4mq8s3aU0GanihWRs08ozrqyplJpHeauQIUhmtc1f/DAhTrMb+mtuYLCOuMo8/QodZOoDX
+ Q5wdHlL4Klvu2xUkecTz34mKMm9INuFTKkAfIdUF7n2StFHepruM8K0schHpz2eiPJwk3xYUwim
+ bv4+a4WB8PlayUvcDKZEZoe32HS7uyZcdX4NCxAkCOCxpM3wSTV1pha3dSfD00PW07/2WLmGmEh
+ EhErHCOmE4nQlTEKuuQmNnywPVYOUHWSJgqFw+uEGBlue44VDXiPP/NtkaJfcIycAxsuY0/qUbD
+ SCRzJSoBj+y2Nuq+kptqDYaHnihqMqTS0/C0W+FxZgn8gLbC/NeVFZtXdgcte/l8uuN7Q=
+X-Developer-Key: i=hshah@axiado.com; a=openpgp;
+ fpr=4EDE90BFED290B4B6BE258EBF1587311A132D5FB
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DS2PEPF0000343E:EE_|MN6PR18MB5468:EE_
+X-MS-Office365-Filtering-Correlation-Id: 136597b2-c018-4bd6-f9e3-08ddb8ddc475
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|1800799024|82310400026|36860700013|376014|921020;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?dHJLNXVPTUVOMEtFUmFsYS9YaHZTOGxyeVgxRDRMdXhsZVNaTGZHZ0Z4bmUz?=
+ =?utf-8?B?dmNqclB4VlRZOTIrZEJQRVFZUDRlNWlTSUJWb3lqa3UrYitKTzBlZlk4V3dG?=
+ =?utf-8?B?dDEzQnJuWTBkK0IyRVArRHMxV2lBWU5EakdCdTNOU2dxcHlidFI0dGZ5UVg4?=
+ =?utf-8?B?RHY4dkRuU0svalVZYzRtTlU1Zm9tNU5qZzN1eXE5NGQ5enlzRDJxdkdLaU5w?=
+ =?utf-8?B?dDI1alFjWlBTVlpFaktKQ0tTV01iVlpJWWs1a0lDNUphanc0VFdCa1hwejdi?=
+ =?utf-8?B?VmlYcmc4RmJZUk9CVXRraThRMEhJZ1E4QktzNnhpc3RqZThGS0tXOXREa3Z1?=
+ =?utf-8?B?TW1wNlFHYUlHWDRtYVJmb1JML2pGbzg5NkZoaXFPYWhpYWVQNkdUdVRZUnhi?=
+ =?utf-8?B?b2xYRytXcGdnSFpFaTZUWlIzeE9iQjhuUU93L3NtcnBBbDNxNXRNNTlOOEFs?=
+ =?utf-8?B?a3hBRHIxNnpPaXJWdWJxOHRseC80dmIvOEtPT2l6UCtpQWRHak9HWnM2N01U?=
+ =?utf-8?B?RXFZUmQyYmRueTFrNjg3YmlWWERtSVRRckk0ajJTdHhNeDFMM2w0ejRWRTRN?=
+ =?utf-8?B?U1J2TVk2M2JZdnB5Sjk4c09CVzluTDlGNC9qRnkyZGRpS3M0cjNHa2ZRV1lx?=
+ =?utf-8?B?UTdoMmNRbnVlN3ZYZVJBQjloQnZDaEh2aHdySHpvT2ZHekhTSXJqMzQ1enkz?=
+ =?utf-8?B?ODJXZzkyRXFjZlkva1VkMTlYdEVEYnZieTI3VCtqTENsVFVOZ0ZFNEpjOC9Q?=
+ =?utf-8?B?TkpDb2NCSXFVYnNrVEt2eWwwOW11NHNweEpnR25kLzdoWXFkQXpXemloVk9X?=
+ =?utf-8?B?Q3ZzRTZCS0wzOCt6YUgyN3VkVURJNlFQalVMWDM4SzUrVkE1QVdYejZGRkww?=
+ =?utf-8?B?dXdraEgrbGs1VzltVnBSaER6ejFGZWxMMlFEK25TK3VIU2hVL3NUL1BpR1Ex?=
+ =?utf-8?B?bkkzMUZJc0dKRzdVWnE4ZC9VVjNQbFNpQ09kRWtVT1IvMzU2c3VaVHA3SVNj?=
+ =?utf-8?B?aG9lME1JekpYSThSUlR5emI3WVlhdGxCcWRkS2hBdTNkM2ozbVJPeE5KbUNC?=
+ =?utf-8?B?Qkk3eit2UzRvcktBdDBJNUVKeUhvRTJoZG9BVlBRUEtpRVgvc05aY05iNjRY?=
+ =?utf-8?B?eHBwWkRzS0xqZ2Z3bjZFSGJIRFEyQWtWTjE1Vlc4U1FQVFB2OVZPdEx1aE1v?=
+ =?utf-8?B?cmpYZnpzeUd6TzgraGRJeDF1Z0daeGxrblF0ZEM5dlFFY0ZoR3Iwclpyd0FY?=
+ =?utf-8?B?dXVKYTZqQ05yTFFSMkZJdmlBaWxNeTB4WjJpeGlIOS9VeHBmVVRrRlhtYU9H?=
+ =?utf-8?B?eW0rejBEaWFUN2NNMEp4RkFReTR2NWNkR29QODQzTXB6djY0Ulg5ZFFHdkhh?=
+ =?utf-8?B?UjZnZFJXMXF6UzIwNEVmTDhIMzlWRVUyZERnTDlrcDdRSTZWL3hlYVRwV1g5?=
+ =?utf-8?B?a3JYYS9oNDkxQmdBdUdTVEkvcWFtVFpyc1BJVFF3Z3BSc1paQzlldEJDOGVk?=
+ =?utf-8?B?bjFNdFFLWjRuRENpSTdta0ZlRzNEN3BGdmVGQ3lDYWlwenhVM3lnQzEwT1E5?=
+ =?utf-8?B?NTg2dG5aUXdsV0R1Q0R2NXZZd1JJOWNLbTE3TjBpalBFaTJDWkxVUVhNSWxP?=
+ =?utf-8?B?KzRzMEMxUm53YzBtYk9JQytSQWtVV1pZK3EybjRyYnRmTXg0K1IrbGMwL1Qv?=
+ =?utf-8?B?U0dBNTZTakpLaHR1dE1hUHVPdEpGbXhuU0hkOVJKMlRYNm54V1laRWp4UzdH?=
+ =?utf-8?B?bEwxODJQV2w4L2FwbzU1a3c4NFJZOTliQjlnM3BHaTBIQ3NuZXRLczRoT0NK?=
+ =?utf-8?B?VnZGRFV4SFRvZDhrYVZlR0VleUVXT1NnRWhRbGpCZjBrak05b0lBaU9wYksy?=
+ =?utf-8?B?b053UEp4WG9FTkRNUlFKZExESVlrZmkyRnpFNytrUlRKK05vdk9aOERyczU2?=
+ =?utf-8?B?USs3b00xL281ZVhBU0FkSkRZYS85TnhCSERkNUV0QTZGS3FoeWVqYmtZeUVq?=
+ =?utf-8?B?eDREYk1LdnlvODNvU3YvZUxVTVgxQ3ZjT1VYYnBIanBjVDN2UTl4R1VwTC93?=
+ =?utf-8?B?SzBlN1dXaEduQ25ZU2Fra09YMHI0bVF3bnNOUT09?=
+X-Forefront-Antispam-Report: CIP:50.233.182.194;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:[127.0.1.1];PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(7416014)(1800799024)(82310400026)(36860700013)(376014)(921020);DIR:OUT;SFP:1102;
+X-OriginatorOrg: axiado.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Jul 2025 20:27:56.7246
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 136597b2-c018-4bd6-f9e3-08ddb8ddc475
+X-MS-Exchange-CrossTenant-Id: ff2db17c-4338-408e-9036-2dee8e3e17d7
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=ff2db17c-4338-408e-9036-2dee8e3e17d7;Ip=[50.233.182.194];Helo=[[127.0.1.1]]
+X-MS-Exchange-CrossTenant-AuthSource: DS2PEPF0000343E.namprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN6PR18MB5468
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250701_001936_184049_61E1341A 
-X-CRM114-Status: GOOD (  28.10  )
+X-CRM114-CacheID: sfid-20250701_132803_488779_DAE5454B 
+X-CRM114-Status: GOOD (  14.19  )
 X-Mailman-Approved-At: Wed, 02 Jul 2025 15:04:03 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -115,1231 +168,319 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add support for the Qualcomm I3C controller driver, which implements
-I3C master functionality as defined in the MIPI Alliance Specification
-for I3C, Version 1.0.
-
-This driver supports master role in SDR mode.
-
-Unlike some other I3C master controllers, this implementation
-does not support In-Band Interrupts (IBI) and Hot-join requests.
-
-Signed-off-by: Mukesh Kumar Savaliya <mukesh.savaliya@oss.qualcomm.com>
----
- drivers/i3c/master/Kconfig         |   12 +
- drivers/i3c/master/Makefile        |    1 +
- drivers/i3c/master/i3c-qcom-geni.c | 1158 ++++++++++++++++++++++++++++
- 3 files changed, 1171 insertions(+)
- create mode 100644 drivers/i3c/master/i3c-qcom-geni.c
-
-diff --git a/drivers/i3c/master/Kconfig b/drivers/i3c/master/Kconfig
-index 7b30db3253af..3e062d4b8f85 100644
---- a/drivers/i3c/master/Kconfig
-+++ b/drivers/i3c/master/Kconfig
-@@ -41,6 +41,18 @@ config SVC_I3C_MASTER
- 	help
- 	  Support for Silvaco I3C Dual-Role Master Controller.
- 
-+config I3C_QCOM_GENI
-+	tristate "Qualcomm Technologies Inc.'s I3C controller driver"
-+	depends on QCOM_GENI_SE
-+	help
-+	  This driver supports QUPV3 GENI based I3C controller in master
-+	  mode on the Qualcomm Technologies Inc.s SoCs. If you say yes to
-+	  this option, support will be included for the built-in I3C interface
-+	  on the Qualcomm Technologies Inc.s SoCs.
-+
-+	  This driver can also be built as a module.  If so, the module
-+	  will be called i3c-qcom-geni.
-+
- config MIPI_I3C_HCI
- 	tristate "MIPI I3C Host Controller Interface driver (EXPERIMENTAL)"
- 	depends on HAS_IOMEM
-diff --git a/drivers/i3c/master/Makefile b/drivers/i3c/master/Makefile
-index 3e97960160bc..0e3ad9d96424 100644
---- a/drivers/i3c/master/Makefile
-+++ b/drivers/i3c/master/Makefile
-@@ -1,5 +1,6 @@
- # SPDX-License-Identifier: GPL-2.0-only
- obj-$(CONFIG_CDNS_I3C_MASTER)		+= i3c-master-cdns.o
-+obj-$(CONFIG_I3C_QCOM_GENI)		+= i3c-qcom-geni.o
- obj-$(CONFIG_DW_I3C_MASTER)		+= dw-i3c-master.o
- obj-$(CONFIG_AST2600_I3C_MASTER)	+= ast2600-i3c-master.o
- obj-$(CONFIG_SVC_I3C_MASTER)		+= svc-i3c-master.o
-diff --git a/drivers/i3c/master/i3c-qcom-geni.c b/drivers/i3c/master/i3c-qcom-geni.c
-new file mode 100644
-index 000000000000..c8bb40cdaaf4
---- /dev/null
-+++ b/drivers/i3c/master/i3c-qcom-geni.c
-@@ -0,0 +1,1158 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
-+ *
-+ * Author: Mukesh Kumar Savaliya <mukesh.savaliya@oss.qualcomm.com>
-+ */
-+
-+#include <linux/bits.h>
-+#include <linux/clk.h>
-+#include <linux/err.h>
-+#include <linux/i3c/master.h>
-+#include <linux/interrupt.h>
-+#include <linux/io.h>
-+#include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/of_platform.h>
-+#include <linux/platform_device.h>
-+#include <linux/pm_runtime.h>
-+#include <linux/slab.h>
-+#include <linux/soc/qcom/geni-se.h>
-+#include <linux/units.h>
-+
-+#define SE_I3C_SCL_HIGH                 0x268
-+#define SE_I3C_TX_TRANS_LEN             0x26c
-+#define SE_I3C_RX_TRANS_LEN             0x270
-+#define SE_I3C_DELAY_COUNTER            0x274
-+#define SE_I2C_SCL_COUNTERS             0x278
-+#define SE_I3C_SCL_CYCLE                0x27c
-+#define SE_GENI_HW_IRQ_EN               0x920
-+#define SE_GENI_HW_IRQ_IGNORE_ON_ACTIVE 0x924
-+#define SE_GENI_HW_IRQ_CMD_PARAM_0      0x930
-+
-+/* HW I3C IBI interrupt enable */
-+#define M_IBI_IRQ_EN			BIT(0)
-+
-+/* M_IBI_IRQ_IGNORE */
-+#define M_IBI_IRQ_IGNORE		BIT(0)
-+
-+/* SE_GENI_M_CLK_CFG field shifts */
-+#define	CLK_DIV_VALUE_MASK		GENMASK(23, 4)
-+#define SER_CLK_EN			BIT(0)
-+
-+/* SE_GENI_HW_IRQ_CMD_PARAM_0 field bits */
-+#define M_IBI_IRQ_PARAM_7E		BIT(0)
-+#define M_IBI_IRQ_PARAM_STOP_STALL	BIT(1)
-+
-+/* SE_I2C_SCL_COUNTERS field shifts */
-+#define I2C_SCL_HIGH_COUNTER_MASK	GENMASK(29, 20)
-+#define I2C_SCL_LOW_COUNTER_MASK	GENMASK(19, 10)
-+#define I2C_SCL_CYCLE_COUNTER_MASK	GENMASK(9, 0)
-+
-+#define SE_I3C_ERR  (M_CMD_OVERRUN_EN | M_ILLEGAL_CMD_EN | M_CMD_FAILURE_EN |\
-+	M_CMD_ABORT_EN | M_GP_IRQ_0_EN | M_GP_IRQ_1_EN | M_GP_IRQ_2_EN | \
-+	M_GP_IRQ_3_EN | M_GP_IRQ_4_EN)
-+
-+/* M_CMD OP codes for I2C/I3C */
-+#define I3C_READ_IBI_HW          0
-+#define I2C_WRITE                1
-+#define I2C_READ                 2
-+#define I2C_WRITE_READ           3
-+#define I2C_ADDR_ONLY            4
-+#define I3C_INBAND_RESET         5
-+#define I2C_BUS_CLEAR            6
-+#define I2C_STOP_ON_BUS          7
-+#define I3C_HDR_DDR_EXIT         8
-+#define I3C_PRIVATE_WRITE        9
-+#define I3C_PRIVATE_READ         10
-+#define I3C_HDR_DDR_WRITE        11
-+#define I3C_HDR_DDR_READ         12
-+#define I3C_DIRECT_CCC_ADDR_ONLY 13
-+#define I3C_BCAST_CCC_ADDR_ONLY  14
-+#define I3C_READ_IBI             15
-+#define I3C_BCAST_CCC_WRITE      16
-+#define I3C_DIRECT_CCC_WRITE     17
-+#define I3C_DIRECT_CCC_READ      18
-+
-+/* M_CMD params for I3C */
-+#define PRE_CMD_DELAY		BIT(0)
-+#define TIMESTAMP_BEFORE	BIT(1)
-+#define STOP_STRETCH		BIT(2)
-+#define TIMESTAMP_AFTER		BIT(3)
-+#define POST_COMMAND_DELAY	BIT(4)
-+#define IGNORE_ADD_NACK		BIT(6)
-+#define READ_FINISHED_WITH_ACK	BIT(7)
-+#define CONTINUOUS_MODE_DAA	BIT(8)
-+
-+#define SLAVE_ADDR_MASK		GENMASK(15, 9)
-+
-+#define CCC_HDR_CMD_MSK		GENMASK(23, 16)
-+#define IBI_NACK_TBL_CTRL	BIT(24)
-+#define USE_7E			BIT(25)
-+#define BYPASS_ADDR_PHASE	BIT(26)
-+
-+/* GSI callback error fields - DMA_TX_IRQ_STAT */
-+#define GP_IRQ0			BIT(5)
-+#define GP_IRQ1			BIT(6)
-+#define GP_IRQ2			BIT(7)
-+#define GP_IRQ3			BIT(8)
-+#define GP_IRQ4			BIT(9)
-+#define GP_IRQ5			BIT(10)
-+#define DM_I3C_CB_ERR		GENMASK(10, 5)
-+
-+#define I3C_AUTO_SUSPEND_DELAY	250
-+#define PACKING_BYTES_PER_WORD	4
-+#define XFER_TIMEOUT		250
-+#define DFS_INDEX_MAX		7
-+
-+#define I3C_ADDR_MASK		I2C_MAX_ADDR
-+
-+enum geni_i3c_err_code {
-+	RD_TERM,
-+	NACK,
-+	CRC_ERR,
-+	BUS_PROTO,
-+	NACK_7E,
-+	NACK_IBI,
-+	GENI_OVERRUN,
-+	GENI_ILLEGAL_CMD,
-+	GENI_ABORT_DONE,
-+	GENI_TIMEOUT,
-+};
-+
-+enum i3c_bus_phase {
-+	OPEN_DRAIN_MODE  = 0,
-+	PUSH_PULL_MODE   = 1
-+};
-+
-+struct geni_i3c_dev {
-+	struct geni_se se;
-+	unsigned int tx_wm;
-+	int irq;
-+	int err;
-+	struct i3c_master_controller ctrlr;
-+	struct completion done;
-+	/* Protects per device CCC command or transfer from get_mutex_lock()/unlock() wrapper */
-+	struct mutex lock;
-+	/* Per device protection between process and IRQ context */
-+	spinlock_t irq_lock;
-+	u32 clk_src_freq;
-+	u8 *cur_buf;
-+	bool cur_is_write;
-+	int cur_len;
-+	int cur_idx;
-+	DECLARE_BITMAP(newaddrslots, 64);
-+
-+	const struct geni_i3c_clk_settings *clk_cfg;
-+	const struct geni_i3c_clk_settings *clk_od_cfg;
-+};
-+
-+struct geni_i3c_i2c_dev_data {
-+	u32 ibi_keeping;  /* Plan to save IBI information, keep as dummy for now */
-+};
-+
-+struct geni_i3c_xfer_params {
-+	enum geni_se_xfer_mode mode;
-+	u32 m_cmd;
-+	u32 m_param;
-+};
-+
-+static inline struct geni_i3c_dev *to_geni_i3c_master(struct i3c_master_controller
-+							*master)
-+{
-+	return container_of(master, struct geni_i3c_dev, ctrlr);
-+}
-+
-+struct geni_i3c_clk_settings {
-+	u32 clk_freq_out;
-+	u32 clk_src_freq;
-+	u8  clk_div;
-+	u8  i2c_t_high_cnt;
-+	u8  i2c_t_low_cnt;
-+	u8  i3c_t_high_cnt;
-+	u8  i3c_t_cycle_cnt;
-+	u8  i2c_t_cycle_cnt;
-+};
-+
-+/*
-+ * The hardware uses the following formulas to calculate the time periods
-+ * of the SCL clock cycle. The firmware adds a few extra cycles that are not
-+ * included in the formulas below. It has been verified that the resulting
-+ * timings remain within the I2C/I3C specification limits.
-+ *
-+ * I2C SCL high period:
-+ *     i2c_t_high = (i2c_t_high_cnt * clk_div) / source_clock
-+ *
-+ * I2C SCL low period:
-+ *     i2c_t_low = (i2c_t_low_cnt * clk_div) / source_clock
-+ *
-+ * I2C SCL full cycle:
-+ *     i2c_t_cycle = (i2c_t_cycle_cnt * clk_div) / source_clock
-+ *
-+ * I3C SCL high period:
-+ *     i3c_t_high = (i3c_t_high_cnt * clk_div) / source_clock
-+ *
-+ * I3C SCL full cycle:
-+ *     i3c_t_cycle = (i3c_t_cycle_cnt * clk_div) / source_clock
-+ *
-+ * Output clock frequency:
-+ *     clk_freq_out = t / t_cycle
-+ */
-+static const struct geni_i3c_clk_settings geni_i3c_clk_map[] = {
-+	{
-+		.clk_freq_out = 100 * HZ_PER_KHZ,
-+		.clk_src_freq = 19200 * HZ_PER_KHZ,
-+		.clk_div = 1,
-+		.i2c_t_high_cnt = 76,
-+		.i2c_t_low_cnt = 90,
-+		.i3c_t_high_cnt = 7,
-+		.i3c_t_cycle_cnt = 8,
-+		.i2c_t_cycle_cnt = 192,
-+	},
-+	{
-+		.clk_freq_out = 400 * HZ_PER_KHZ,
-+		.clk_src_freq = 19200 * HZ_PER_KHZ,
-+		.clk_div = 1,
-+		.i2c_t_high_cnt = 12,
-+		.i2c_t_low_cnt = 24,
-+		.i3c_t_high_cnt = 7,
-+		.i3c_t_cycle_cnt = 8,
-+		.i2c_t_cycle_cnt = 48
-+	},
-+	{
-+		.clk_freq_out = 1000 * HZ_PER_KHZ,
-+		.clk_src_freq = 19200 * HZ_PER_KHZ,
-+		.clk_div = 1,
-+		.i2c_t_high_cnt = 4,
-+		.i2c_t_low_cnt = 9,
-+		.i3c_t_high_cnt = 7,
-+		.i3c_t_cycle_cnt = 0,
-+		.i2c_t_cycle_cnt = 19
-+	},
-+	{
-+		.clk_freq_out = 12500 * HZ_PER_KHZ,
-+		.clk_src_freq = 100000 * HZ_PER_KHZ,
-+		.clk_div = 1,
-+		.i2c_t_high_cnt = 45,
-+		.i2c_t_low_cnt = 63,
-+		.i3c_t_high_cnt = 6,
-+		.i3c_t_cycle_cnt = 7,
-+		.i2c_t_cycle_cnt = 110
-+	}
-+};
-+
-+static int geni_i3c_clk_map_idx(struct geni_i3c_dev *gi3c)
-+{
-+	const struct geni_i3c_clk_settings *clk_idx = geni_i3c_clk_map;
-+	struct i3c_master_controller *m = &gi3c->ctrlr;
-+	struct i3c_bus *bus = i3c_master_get_bus(m);
-+	int i;
-+
-+	for (i = 0; i < ARRAY_SIZE(geni_i3c_clk_map); i++, clk_idx++) {
-+		if (clk_idx->clk_freq_out == bus->scl_rate.i3c &&
-+		    clk_idx->clk_src_freq == gi3c->clk_src_freq)
-+			gi3c->clk_cfg = clk_idx;
-+
-+		if (clk_idx->clk_freq_out == bus->scl_rate.i2c)
-+			gi3c->clk_od_cfg = clk_idx;
-+	}
-+
-+	if (!gi3c->clk_cfg || !gi3c->clk_od_cfg)
-+		return -EINVAL;
-+
-+	return 0;
-+}
-+
-+static inline void set_new_addr_slot(unsigned long *addrslot, u8 addr)
-+{
-+	if (addr > I3C_ADDR_MASK)
-+		return;
-+
-+	set_bit(addr, addrslot);
-+}
-+
-+static inline void clear_new_addr_slot(unsigned long *addrslot, u8 addr)
-+{
-+	if (addr > I3C_ADDR_MASK)
-+		return;
-+
-+	clear_bit(addr, addrslot);
-+}
-+
-+static inline bool is_new_addr_slot_set(unsigned long *addrslot, u8 addr)
-+{
-+	return test_bit(addr, addrslot);
-+}
-+
-+static void qcom_geni_i3c_conf(struct geni_i3c_dev *gi3c, enum i3c_bus_phase bus_phase)
-+{
-+	const struct geni_i3c_clk_settings *clk_idx = gi3c->clk_cfg;
-+	unsigned long freq;
-+	u32 val, dfs_idx;
-+	int ret;
-+
-+	if (bus_phase == OPEN_DRAIN_MODE)
-+		clk_idx = gi3c->clk_od_cfg;
-+
-+	ret = geni_se_clk_freq_match(&gi3c->se, clk_idx->clk_src_freq,
-+				     &dfs_idx, &freq, false);
-+	if (ret)
-+		dfs_idx = 0;
-+
-+	writel_relaxed(dfs_idx, gi3c->se.base + SE_GENI_CLK_SEL);
-+
-+	val = FIELD_PREP(CLK_DIV_VALUE_MASK, clk_idx->clk_div);
-+	val |= SER_CLK_EN;
-+	writel_relaxed(val, gi3c->se.base + GENI_SER_M_CLK_CFG);
-+
-+	val = FIELD_PREP(I2C_SCL_HIGH_COUNTER_MASK, clk_idx->i2c_t_high_cnt);
-+	val |= FIELD_PREP(I2C_SCL_LOW_COUNTER_MASK, clk_idx->i2c_t_low_cnt);
-+	val |= FIELD_PREP(I2C_SCL_CYCLE_COUNTER_MASK, clk_idx->i2c_t_cycle_cnt);
-+	writel_relaxed(val, gi3c->se.base + SE_I2C_SCL_COUNTERS);
-+
-+	writel_relaxed(clk_idx->i3c_t_cycle_cnt, gi3c->se.base + SE_I3C_SCL_CYCLE);
-+	writel_relaxed(clk_idx->i3c_t_high_cnt, gi3c->se.base + SE_I3C_SCL_HIGH);
-+
-+	writel_relaxed(M_IBI_IRQ_IGNORE, gi3c->se.base + SE_GENI_HW_IRQ_IGNORE_ON_ACTIVE);
-+
-+	val = M_IBI_IRQ_PARAM_STOP_STALL | M_IBI_IRQ_PARAM_7E;
-+	writel_relaxed(val, gi3c->se.base + SE_GENI_HW_IRQ_CMD_PARAM_0);
-+
-+	writel_relaxed(M_IBI_IRQ_EN, gi3c->se.base + SE_GENI_HW_IRQ_EN);
-+}
-+
-+static void geni_i3c_handle_err(struct geni_i3c_dev *gi3c, u32 status)
-+{
-+	dev_dbg(gi3c->se.dev, "len:%d, %s\n",
-+		gi3c->cur_len, gi3c->cur_is_write ? "write" : "read");
-+
-+	if (status & M_GP_IRQ_0_EN) {
-+		gi3c->err = -EINVAL;
-+		dev_dbg(gi3c->se.dev, "I3C slave early read termination\n");
-+	}
-+
-+	if (status & M_GP_IRQ_1_EN) {
-+		gi3c->err = -ENOTCONN;
-+		dev_dbg(gi3c->se.dev, "NACK: slave unresponsive, check power/reset\n");
-+	}
-+
-+	if (status & M_GP_IRQ_2_EN) {
-+		gi3c->err = -EINVAL;
-+		dev_dbg(gi3c->se.dev, "CRC or parity error\n");
-+	}
-+
-+	if (status & M_GP_IRQ_3_EN) {
-+		gi3c->err = -EPROTO;
-+		dev_dbg(gi3c->se.dev, "Bus proto Error, noisy/unexpected start/stop\n");
-+	}
-+
-+	if (status & M_GP_IRQ_4_EN) {
-+		gi3c->err = -EBUSY;
-+		dev_dbg(gi3c->se.dev, "NACK on 7E, unexpected protocol error\n");
-+	}
-+
-+	if (status & M_GP_IRQ_5_EN) {
-+		gi3c->err = -EINVAL;
-+		dev_dbg(gi3c->se.dev, "NACK on IBI\n");
-+	}
-+
-+	if (status & M_CMD_OVERRUN_EN) {
-+		gi3c->err = -EIO;
-+		dev_dbg(gi3c->se.dev, "Cmd overrun, check GENI cmd-state machine\n");
-+	}
-+
-+	if (status & M_ILLEGAL_CMD_EN) {
-+		gi3c->err = -EILSEQ;
-+		dev_dbg(gi3c->se.dev, "Illegal cmd, check GENI cmd-state machine\n");
-+	}
-+
-+	if (status & M_CMD_ABORT_EN) {
-+		gi3c->err = -ETIMEDOUT;
-+		dev_dbg(gi3c->se.dev, "Abort after timeout successful\n");
-+	}
-+
-+	if (status & GENI_TIMEOUT) {
-+		gi3c->err = -ETIMEDOUT;
-+		dev_dbg(gi3c->se.dev, "I3C transaction timed out\n");
-+	}
-+}
-+
-+static irqreturn_t geni_i3c_irq(int irq, void *dev)
-+{
-+	u32 m_stat_mask, dm_tx_st, dm_rx_st, m_stat, rx_st, dma;
-+	struct geni_i3c_dev *gi3c = dev;
-+	bool fifo_read_status;
-+	unsigned long flags;
-+	int j;
-+
-+	m_stat = readl_relaxed(gi3c->se.base + SE_GENI_M_IRQ_STATUS);
-+	m_stat_mask = readl_relaxed(gi3c->se.base + SE_GENI_M_IRQ_EN);
-+	rx_st = readl_relaxed(gi3c->se.base + SE_GENI_RX_FIFO_STATUS);
-+	dm_tx_st = readl_relaxed(gi3c->se.base + SE_DMA_TX_IRQ_STAT);
-+	dm_rx_st = readl_relaxed(gi3c->se.base + SE_DMA_RX_IRQ_STAT);
-+	dma = readl_relaxed(gi3c->se.base + SE_GENI_DMA_MODE_EN);
-+
-+	spin_lock_irqsave(&gi3c->irq_lock, flags);
-+
-+	if (m_stat & SE_I3C_ERR || dm_rx_st & DM_I3C_CB_ERR) {
-+		geni_i3c_handle_err(gi3c, m_stat);
-+		/* Disable the TX Watermark interrupt to stop TX */
-+		if (!dma)
-+			writel_relaxed(0, gi3c->se.base + SE_GENI_TX_WATERMARK_REG);
-+		goto irqret;
-+	}
-+
-+	if (dma) {
-+		dev_dbg(gi3c->se.dev, "i3c dma tx:0x%x, dma rx:0x%x\n", dm_tx_st, dm_rx_st);
-+		goto irqret;
-+	}
-+
-+	fifo_read_status = m_stat & (M_RX_FIFO_WATERMARK_EN | M_RX_FIFO_LAST_EN);
-+	if (fifo_read_status && !gi3c->cur_is_write && gi3c->cur_buf) {
-+		u32 rxcnt = rx_st & RX_FIFO_WC_MSK;
-+
-+		for (j = 0; j < rxcnt; j++) {
-+			u32 val;
-+			int p = 0;
-+
-+			val = readl_relaxed(gi3c->se.base + SE_GENI_RX_FIFOn);
-+			while (gi3c->cur_idx < gi3c->cur_len && p < 4) {
-+				gi3c->cur_buf[gi3c->cur_idx++] = val & 0xff;
-+				val >>= 8;
-+				p++;
-+			}
-+			if (gi3c->cur_idx == gi3c->cur_len)
-+				break;
-+		}
-+	} else if (m_stat & M_TX_FIFO_WATERMARK_EN &&
-+		gi3c->cur_is_write && gi3c->cur_buf) {
-+		for (j = 0; j < gi3c->tx_wm; j++) {
-+			u32 temp;
-+			u32 val = 0;
-+			int p = 0;
-+
-+			while (gi3c->cur_idx < gi3c->cur_len && p < 4) {
-+				temp = gi3c->cur_buf[gi3c->cur_idx++];
-+				val |= temp << (p * 8);
-+				p++;
-+			}
-+
-+			writel_relaxed(val, gi3c->se.base + SE_GENI_TX_FIFOn);
-+			if (gi3c->cur_idx == gi3c->cur_len) {
-+				writel_relaxed(0, gi3c->se.base + SE_GENI_TX_WATERMARK_REG);
-+				break;
-+			}
-+		}
-+	}
-+
-+irqret:
-+	if (m_stat)
-+		writel_relaxed(m_stat, gi3c->se.base + SE_GENI_M_IRQ_CLEAR);
-+
-+	if (dma) {
-+		if (dm_tx_st)
-+			writel_relaxed(dm_tx_st, gi3c->se.base + SE_DMA_TX_IRQ_CLR);
-+		if (dm_rx_st)
-+			writel_relaxed(dm_rx_st, gi3c->se.base + SE_DMA_RX_IRQ_CLR);
-+	}
-+
-+	/* if this is err with done-bit not set, handle that through timeout. */
-+	if (m_stat & M_CMD_DONE_EN || m_stat & M_CMD_ABORT_EN) {
-+		writel_relaxed(0, gi3c->se.base + SE_GENI_TX_WATERMARK_REG);
-+		complete(&gi3c->done);
-+	} else if (dm_tx_st & TX_DMA_DONE || dm_rx_st & RX_DMA_DONE || dm_rx_st & RX_RESET_DONE) {
-+		complete(&gi3c->done);
-+	}
-+
-+	spin_unlock_irqrestore(&gi3c->irq_lock, flags);
-+
-+	return IRQ_HANDLED;
-+}
-+
-+static int i3c_geni_runtime_get_mutex_lock(struct geni_i3c_dev *gi3c)
-+	__acquires(&gi3c->lock)
-+{
-+	int ret;
-+
-+	mutex_lock(&gi3c->lock);
-+	reinit_completion(&gi3c->done);
-+	ret = pm_runtime_get_sync(gi3c->se.dev);
-+	if (ret < 0) {
-+		dev_err(gi3c->se.dev, "error turning on SE resources:%d\n", ret);
-+		pm_runtime_put_noidle(gi3c->se.dev);
-+		/* Set device in suspended since resume failed */
-+		pm_runtime_set_suspended(gi3c->se.dev);
-+		mutex_unlock(&gi3c->lock);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static void i3c_geni_runtime_put_mutex_unlock(struct geni_i3c_dev *gi3c)
-+	__releases(&gi3c->lock)
-+{
-+	pm_runtime_mark_last_busy(gi3c->se.dev);
-+	pm_runtime_put_autosuspend(gi3c->se.dev);
-+	mutex_unlock(&gi3c->lock);
-+}
-+
-+static void geni_i3c_abort_xfer(struct geni_i3c_dev *gi3c)
-+{
-+	unsigned long time_remaining;
-+	unsigned long flags;
-+
-+	reinit_completion(&gi3c->done);
-+	spin_lock_irqsave(&gi3c->irq_lock, flags);
-+	geni_i3c_handle_err(gi3c, GENI_TIMEOUT);
-+	geni_se_abort_m_cmd(&gi3c->se);
-+	spin_unlock_irqrestore(&gi3c->irq_lock, flags);
-+	time_remaining = wait_for_completion_timeout(&gi3c->done, XFER_TIMEOUT);
-+	if (!time_remaining)
-+		dev_err(gi3c->se.dev, "Timeout abort_m_cmd\n");
-+}
-+
-+static int _i3c_geni_execute_command(struct geni_i3c_dev *gi3c, struct geni_i3c_xfer_params *xfer)
-+{
-+	bool is_write = gi3c->cur_is_write;
-+	dma_addr_t tx_dma = 0, rx_dma = 0;
-+	unsigned long time_remaining;
-+	u32 len = gi3c->cur_len;
-+	int ret;
-+
-+	geni_se_select_mode(&gi3c->se, xfer->mode);
-+
-+	gi3c->err = 0;
-+	gi3c->cur_idx = 0;
-+
-+	if (is_write) {
-+		dev_dbg(gi3c->se.dev, "I3C cmd:0x%x param:0x%x WRITE len:%d\n",
-+			xfer->m_cmd, xfer->m_param, len);
-+
-+		writel_relaxed(len, gi3c->se.base + SE_I3C_TX_TRANS_LEN);
-+		geni_se_setup_m_cmd(&gi3c->se, xfer->m_cmd, xfer->m_param);
-+
-+		if (xfer->mode == GENI_SE_DMA) {
-+			ret = geni_se_tx_dma_prep(&gi3c->se, gi3c->cur_buf, len, &tx_dma);
-+			if (ret) {
-+				xfer->mode = GENI_SE_FIFO;
-+				geni_se_select_mode(&gi3c->se, xfer->mode);
-+			}
-+		}
-+
-+		if (xfer->mode == GENI_SE_FIFO && len > 0) /* Get FIFO IRQ */
-+			writel_relaxed(1, gi3c->se.base + SE_GENI_TX_WATERMARK_REG);
-+	} else {
-+		dev_dbg(gi3c->se.dev, "I3C cmd:0x%x param:0x%x READ len:%d\n",
-+			xfer->m_cmd, xfer->m_param, len);
-+		writel_relaxed(len, gi3c->se.base + SE_I3C_RX_TRANS_LEN);
-+		geni_se_setup_m_cmd(&gi3c->se, xfer->m_cmd, xfer->m_param);
-+		if (xfer->mode == GENI_SE_DMA) {
-+			ret = geni_se_rx_dma_prep(&gi3c->se, gi3c->cur_buf, len, &rx_dma);
-+			if (ret) {
-+				xfer->mode = GENI_SE_FIFO;
-+				geni_se_select_mode(&gi3c->se, xfer->mode);
-+			}
-+		}
-+	}
-+
-+	time_remaining = wait_for_completion_timeout(&gi3c->done, XFER_TIMEOUT);
-+	if (!time_remaining) {
-+		unsigned long flags;
-+
-+		dev_dbg(gi3c->se.dev, "Timeout completing transfer\n");
-+		spin_lock_irqsave(&gi3c->irq_lock, flags);
-+		geni_i3c_handle_err(gi3c, GENI_TIMEOUT);
-+		gi3c->cur_buf = NULL;
-+		spin_unlock_irqrestore(&gi3c->irq_lock, flags);
-+		geni_i3c_abort_xfer(gi3c);
-+	}
-+
-+	if (xfer->mode == GENI_SE_DMA) {
-+		if (gi3c->err) {
-+			if (is_write)
-+				writel_relaxed(1, gi3c->se.base + SE_DMA_TX_FSM_RST);
-+			else
-+				writel_relaxed(1, gi3c->se.base + SE_DMA_RX_FSM_RST);
-+
-+			time_remaining = wait_for_completion_timeout(&gi3c->done, XFER_TIMEOUT);
-+			dev_dbg(gi3c->se.dev, "Timeout completing DMA transfer\n");
-+		}
-+		geni_se_rx_dma_unprep(&gi3c->se, rx_dma, len);
-+		geni_se_tx_dma_unprep(&gi3c->se, tx_dma, len);
-+	}
-+
-+	ret = gi3c->err;
-+	if (gi3c->err)
-+		dev_err(gi3c->se.dev, "I3C transaction error :%d\n", gi3c->err);
-+
-+	gi3c->cur_buf = NULL;
-+	gi3c->err = 0;
-+
-+	return ret;
-+}
-+
-+static int i3c_geni_execute_read_command(struct geni_i3c_dev *gi3c,
-+					 struct geni_i3c_xfer_params *xfer, u8 *buf, u32 len)
-+{
-+	gi3c->cur_is_write = false;
-+	gi3c->cur_buf = buf;
-+	gi3c->cur_len = len;
-+
-+	return _i3c_geni_execute_command(gi3c, xfer);
-+}
-+
-+static int i3c_geni_execute_write_command(struct geni_i3c_dev *gi3c,
-+					  struct geni_i3c_xfer_params *xfer, u8 *buf, u32 len)
-+{
-+	gi3c->cur_is_write = true;
-+	gi3c->cur_buf = buf;
-+	gi3c->cur_len = len;
-+
-+	return _i3c_geni_execute_command(gi3c, xfer);
-+}
-+
-+static void geni_i3c_perform_daa(struct geni_i3c_dev *gi3c)
-+{
-+	u8 last_dyn_addr = 0;
-+	int ret;
-+
-+	while (1) {
-+		u8 rx_buf[8], tx_buf[8];
-+		struct geni_i3c_xfer_params xfer = { GENI_SE_FIFO };
-+		struct i3c_device_info info = { 0 };
-+		struct i3c_dev_desc *i3cdev;
-+		bool new_device = true;
-+		u64 pid;
-+		u8 bcr, dcr, addr;
-+
-+		xfer.m_cmd = I2C_READ;
-+		xfer.m_param = STOP_STRETCH | CONTINUOUS_MODE_DAA | USE_7E;
-+		ret = i3c_geni_execute_read_command(gi3c, &xfer, rx_buf, 8);
-+		if (ret)
-+			break;
-+
-+		dcr = FIELD_PREP(GENMASK(7, 0), rx_buf[7]);
-+		bcr = FIELD_PREP(GENMASK(7, 0), rx_buf[6]);
-+		pid = FIELD_PREP(GENMASK(47, 40), (u64)rx_buf[0]) |
-+			FIELD_PREP(GENMASK(39, 32), (u64)rx_buf[1]) |
-+			FIELD_PREP(GENMASK(31, 24), (u64)rx_buf[2]) |
-+			FIELD_PREP(GENMASK(23, 16), (u64)rx_buf[3]) |
-+			FIELD_PREP(GENMASK(15, 8), (u64)rx_buf[4]) |
-+			FIELD_PREP(GENMASK(7, 0), (u64)rx_buf[5]);
-+
-+		i3c_bus_for_each_i3cdev(&gi3c->ctrlr.bus, i3cdev) {
-+			i3c_device_get_info(i3cdev->dev, &info);
-+			if (pid == info.pid && dcr == info.dcr && bcr == info.bcr) {
-+				new_device = false;
-+				addr = info.dyn_addr ? : info.static_addr;
-+				break;
-+			}
-+		}
-+
-+		if (new_device) {
-+			ret = i3c_master_get_free_addr(&gi3c->ctrlr, last_dyn_addr + 1);
-+			if (ret < 0)
-+				break;
-+			addr = (u8)ret;
-+			last_dyn_addr = addr;
-+			set_new_addr_slot(gi3c->newaddrslots, addr);
-+		}
-+
-+		/* Set Parity bit at BIT(7) */
-+		tx_buf[0] = (addr & I3C_ADDR_MASK) << 1;
-+		tx_buf[0] |= parity8(addr & I3C_ADDR_MASK);
-+
-+		xfer.m_cmd = I2C_WRITE;
-+		xfer.m_param = STOP_STRETCH | BYPASS_ADDR_PHASE | USE_7E;
-+
-+		ret = i3c_geni_execute_write_command(gi3c, &xfer, tx_buf, 1);
-+		if (ret)
-+			break;
-+	}
-+}
-+
-+static int geni_i3c_master_send_ccc_cmd(struct i3c_master_controller *m,
-+					struct i3c_ccc_cmd *cmd)
-+{
-+	struct geni_i3c_dev *gi3c = to_geni_i3c_master(m);
-+	int i, ret;
-+
-+	if (!(cmd->id & I3C_CCC_DIRECT) && cmd->ndests != 1)
-+		return -EINVAL;
-+
-+	ret = i3c_geni_runtime_get_mutex_lock(gi3c);
-+	if (ret)
-+		return ret;
-+
-+	qcom_geni_i3c_conf(gi3c, OPEN_DRAIN_MODE);
-+	for (i = 0; i < cmd->ndests; i++) {
-+		int stall = (i < (cmd->ndests - 1)) ||
-+			(cmd->id == I3C_CCC_ENTDAA);
-+		struct geni_i3c_xfer_params xfer = { GENI_SE_FIFO };
-+
-+		xfer.m_param  = (stall ? STOP_STRETCH : 0);
-+		xfer.m_param |= FIELD_PREP(CCC_HDR_CMD_MSK, cmd->id);
-+		xfer.m_param |= IBI_NACK_TBL_CTRL;
-+		if (cmd->id & I3C_CCC_DIRECT) {
-+			xfer.m_param |= FIELD_PREP(SLAVE_ADDR_MASK, cmd->dests[i].addr);
-+			if (cmd->rnw) {
-+				if (i == 0)
-+					xfer.m_cmd = I3C_DIRECT_CCC_READ;
-+				else
-+					xfer.m_cmd = I3C_PRIVATE_READ;
-+			} else {
-+				if (i == 0)
-+					xfer.m_cmd =
-+					   (cmd->dests[i].payload.len > 0) ?
-+						I3C_DIRECT_CCC_WRITE :
-+						I3C_DIRECT_CCC_ADDR_ONLY;
-+				else
-+					xfer.m_cmd = I3C_PRIVATE_WRITE;
-+			}
-+		} else {
-+			if (cmd->dests[i].payload.len > 0)
-+				xfer.m_cmd = I3C_BCAST_CCC_WRITE;
-+			else
-+				xfer.m_cmd = I3C_BCAST_CCC_ADDR_ONLY;
-+		}
-+
-+		if (i == 0)
-+			xfer.m_param |= USE_7E;
-+
-+		if (cmd->rnw)
-+			ret = i3c_geni_execute_read_command(gi3c, &xfer,
-+							    cmd->dests[i].payload.data,
-+							    cmd->dests[i].payload.len);
-+		else
-+			ret = i3c_geni_execute_write_command(gi3c, &xfer,
-+							     cmd->dests[i].payload.data,
-+							     cmd->dests[i].payload.len);
-+		if (ret)
-+			break;
-+
-+		if (cmd->id == I3C_CCC_ENTDAA)
-+			geni_i3c_perform_daa(gi3c);
-+	}
-+
-+	i3c_geni_runtime_put_mutex_unlock(gi3c);
-+
-+	return ret;
-+}
-+
-+static int geni_i3c_master_priv_xfers(struct i3c_dev_desc *dev, struct i3c_priv_xfer *xfers,
-+				      int nxfers)
-+{
-+	struct i3c_master_controller *m = i3c_dev_get_master(dev);
-+	struct geni_i3c_dev *gi3c = to_geni_i3c_master(m);
-+	bool use_7e = false;
-+	int i, ret;
-+
-+	ret = i3c_geni_runtime_get_mutex_lock(gi3c);
-+	if (ret)
-+		return ret;
-+
-+	qcom_geni_i3c_conf(gi3c, PUSH_PULL_MODE);
-+
-+	for (i = 0; i < nxfers; i++) {
-+		bool stall = (i < (nxfers - 1));
-+		struct geni_i3c_xfer_params xfer = { GENI_SE_FIFO };
-+
-+		xfer.m_param  = (stall ? STOP_STRETCH : 0);
-+		xfer.m_param |= FIELD_PREP(SLAVE_ADDR_MASK, dev->info.dyn_addr);
-+		xfer.m_param |= (use_7e) ? USE_7E : 0;
-+
-+		/* use_7e = true only for last transfer */
-+		use_7e = (i == nxfers - 1);
-+
-+		if (xfers[i].rnw) {
-+			xfer.m_cmd = I3C_PRIVATE_READ;
-+			ret = i3c_geni_execute_read_command(gi3c, &xfer, (u8 *)xfers[i].data.in,
-+							    xfers[i].len);
-+		} else {
-+			xfer.m_cmd = I3C_PRIVATE_WRITE;
-+			ret = i3c_geni_execute_write_command(gi3c, &xfer, (u8 *)xfers[i].data.out,
-+							     xfers[i].len);
-+		}
-+
-+		if (ret)
-+			break;
-+	}
-+
-+	dev_dbg(gi3c->se.dev, "i3c priv: txn ret:%d\n", ret);
-+	i3c_geni_runtime_put_mutex_unlock(gi3c);
-+
-+	return ret;
-+}
-+
-+static int geni_i3c_master_i2c_xfers(struct i2c_dev_desc *dev, struct i2c_msg *msgs, int num)
-+{
-+	struct i3c_master_controller *m = i2c_dev_get_master(dev);
-+	struct geni_i3c_dev *gi3c = to_geni_i3c_master(m);
-+	int i, ret;
-+
-+	ret = i3c_geni_runtime_get_mutex_lock(gi3c);
-+	if (ret)
-+		return ret;
-+
-+	qcom_geni_i3c_conf(gi3c, PUSH_PULL_MODE);
-+
-+	for (i = 0; i < num; i++) {
-+		struct geni_i3c_xfer_params xfer;
-+
-+		xfer.m_cmd    = (msgs[i].flags & I2C_M_RD) ? I2C_READ : I2C_WRITE;
-+		xfer.m_param  = (i < (num - 1)) ? STOP_STRETCH : 0;
-+		xfer.m_param |= FIELD_PREP(SLAVE_ADDR_MASK, msgs[i].addr);
-+		xfer.mode     = msgs[i].len > 32 ? GENI_SE_DMA : GENI_SE_FIFO;
-+		if (msgs[i].flags & I2C_M_RD)
-+			ret = i3c_geni_execute_read_command(gi3c, &xfer, msgs[i].buf, msgs[i].len);
-+		else
-+			ret = i3c_geni_execute_write_command(gi3c, &xfer, msgs[i].buf, msgs[i].len);
-+		if (ret)
-+			break;
-+	}
-+
-+	dev_dbg(gi3c->se.dev, "i2c: txn ret:%d\n", ret);
-+	i3c_geni_runtime_put_mutex_unlock(gi3c);
-+
-+	return ret;
-+}
-+
-+static int geni_i3c_master_attach_i2c_dev(struct i2c_dev_desc *dev)
-+{
-+	struct geni_i3c_i2c_dev_data *data;
-+
-+	data = kzalloc(sizeof(*data), GFP_KERNEL);
-+	if (!data)
-+		return -ENOMEM;
-+
-+	i2c_dev_set_master_data(dev, data);
-+
-+	return 0;
-+}
-+
-+static void geni_i3c_master_detach_i2c_dev(struct i2c_dev_desc *dev)
-+{
-+	struct geni_i3c_i2c_dev_data *data = i2c_dev_get_master_data(dev);
-+
-+	i2c_dev_set_master_data(dev, NULL);
-+	kfree(data);
-+}
-+
-+static int geni_i3c_master_attach_i3c_dev(struct i3c_dev_desc *dev)
-+{
-+	struct geni_i3c_i2c_dev_data *data;
-+
-+	data = kzalloc(sizeof(*data), GFP_KERNEL);
-+	if (!data)
-+		return -ENOMEM;
-+
-+	i3c_dev_set_master_data(dev, data);
-+
-+	return 0;
-+}
-+
-+static void geni_i3c_master_detach_i3c_dev(struct i3c_dev_desc *dev)
-+{
-+	struct geni_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
-+
-+	i3c_dev_set_master_data(dev, NULL);
-+	kfree(data);
-+}
-+
-+static int geni_i3c_master_do_daa(struct i3c_master_controller *m)
-+{
-+	struct geni_i3c_dev *gi3c = to_geni_i3c_master(m);
-+	u8 addr;
-+	int ret;
-+
-+	ret = i3c_master_entdaa_locked(m);
-+	if (ret && ret != I3C_ERROR_M2)
-+		return ret;
-+
-+	for (addr = 0; addr <= I3C_ADDR_MASK; addr++) {
-+		if (is_new_addr_slot_set(gi3c->newaddrslots, addr)) {
-+			clear_new_addr_slot(gi3c->newaddrslots, addr);
-+			i3c_master_add_i3c_dev_locked(m, addr);
-+		}
-+	}
-+
-+	return 0;
-+}
-+
-+static int geni_i3c_master_bus_init(struct i3c_master_controller *m)
-+{
-+	struct geni_i3c_dev *gi3c = to_geni_i3c_master(m);
-+	struct i3c_bus *bus = i3c_master_get_bus(m);
-+	struct i3c_device_info info = { };
-+	int ret;
-+
-+	/* Get an address for the master. */
-+	ret = i3c_master_get_free_addr(m, 0);
-+	if (ret < 0)
-+		dev_err(gi3c->se.dev, "%s: error No free addr:%d\n", __func__, ret);
-+
-+	info.dyn_addr = ret;
-+	info.dcr = I3C_DCR_GENERIC_DEVICE;
-+	info.bcr = I3C_BCR_I3C_MASTER | I3C_BCR_HDR_CAP;
-+	info.pid = 0;
-+
-+	ret = geni_i3c_clk_map_idx(gi3c);
-+	if (ret) {
-+		dev_err(gi3c->se.dev,
-+			"Invalid clk frequency %d Hz src for %ld Hz bus: %d\n",
-+			gi3c->clk_src_freq, bus->scl_rate.i3c, ret);
-+		return ret; //This was missed in upstream : TBD
-+	}
-+
-+	ret = i3c_geni_runtime_get_mutex_lock(gi3c);
-+	if (ret)
-+		return ret;
-+
-+	qcom_geni_i3c_conf(gi3c, OPEN_DRAIN_MODE);
-+
-+	ret = i3c_master_set_info(&gi3c->ctrlr, &info);
-+	i3c_geni_runtime_put_mutex_unlock(gi3c);
-+
-+	return ret;
-+}
-+
-+static bool geni_i3c_master_supports_ccc_cmd(struct i3c_master_controller *m,
-+					     const struct i3c_ccc_cmd *cmd)
-+{
-+	switch (cmd->id) {
-+	case I3C_CCC_ENEC(true):
-+		fallthrough;
-+	case I3C_CCC_ENEC(false):
-+		fallthrough;
-+	case I3C_CCC_DISEC(true):
-+		fallthrough;
-+	case I3C_CCC_DISEC(false):
-+		fallthrough;
-+	case I3C_CCC_ENTAS(0, true):
-+		fallthrough;
-+	case I3C_CCC_ENTAS(0, false):
-+		fallthrough;
-+	case I3C_CCC_RSTDAA(true):
-+		fallthrough;
-+	case I3C_CCC_RSTDAA(false):
-+		fallthrough;
-+	case I3C_CCC_ENTDAA:
-+		fallthrough;
-+	case I3C_CCC_SETMWL(true):
-+		fallthrough;
-+	case I3C_CCC_SETMWL(false):
-+		fallthrough;
-+	case I3C_CCC_SETMRL(true):
-+		fallthrough;
-+	case I3C_CCC_SETMRL(false):
-+		fallthrough;
-+	case I3C_CCC_DEFSLVS:
-+		fallthrough;
-+	case I3C_CCC_SETDASA:
-+		fallthrough;
-+	case I3C_CCC_SETNEWDA:
-+		fallthrough;
-+	case I3C_CCC_GETMWL:
-+		fallthrough;
-+	case I3C_CCC_GETMRL:
-+		fallthrough;
-+	case I3C_CCC_GETPID:
-+		fallthrough;
-+	case I3C_CCC_GETBCR:
-+		fallthrough;
-+	case I3C_CCC_GETDCR:
-+		fallthrough;
-+	case I3C_CCC_GETSTATUS:
-+		fallthrough;
-+	case I3C_CCC_GETACCMST:
-+		fallthrough;
-+	case I3C_CCC_GETMXDS:
-+		fallthrough;
-+	case I3C_CCC_GETHDRCAP:
-+		return true;
-+
-+	default:
-+		return false;
-+	}
-+}
-+
-+static const struct i3c_master_controller_ops geni_i3c_master_ops = {
-+	.bus_init = geni_i3c_master_bus_init,
-+	.bus_cleanup = NULL,
-+	.do_daa = geni_i3c_master_do_daa,
-+	.attach_i3c_dev = geni_i3c_master_attach_i3c_dev,
-+	.reattach_i3c_dev = NULL,
-+	.detach_i3c_dev = geni_i3c_master_detach_i3c_dev,
-+	.attach_i2c_dev = geni_i3c_master_attach_i2c_dev,
-+	.detach_i2c_dev = geni_i3c_master_detach_i2c_dev,
-+	.supports_ccc_cmd = geni_i3c_master_supports_ccc_cmd,
-+	.send_ccc_cmd = geni_i3c_master_send_ccc_cmd,
-+	.priv_xfers = geni_i3c_master_priv_xfers,
-+	.i2c_xfers = geni_i3c_master_i2c_xfers,
-+	.enable_ibi = NULL,
-+	.disable_ibi = NULL,
-+	.request_ibi = NULL,
-+	.free_ibi = NULL,
-+	.recycle_ibi_slot = NULL,
-+};
-+
-+static int i3c_geni_resources_init(struct geni_i3c_dev *gi3c, struct platform_device *pdev)
-+{
-+	int ret;
-+
-+	gi3c->se.base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(gi3c->se.base))
-+		return PTR_ERR(gi3c->se.base);
-+
-+	gi3c->se.clk = devm_clk_get(&pdev->dev, NULL);
-+	if (IS_ERR(gi3c->se.clk))
-+		return dev_err_probe(&pdev->dev, PTR_ERR(gi3c->se.clk),
-+							"Unable to get serial engine core clock: %pe\n",
-+							gi3c->se.clk);
-+	ret = geni_icc_get(&gi3c->se, NULL);
-+	if (ret)
-+		return ret;
-+
-+	/* Set the bus quota to a reasonable value for register access */
-+	gi3c->se.icc_paths[GENI_TO_CORE].avg_bw = GENI_DEFAULT_BW;
-+	gi3c->se.icc_paths[CPU_TO_GENI].avg_bw = GENI_DEFAULT_BW;
-+	ret = geni_icc_set_bw(&gi3c->se);
-+	if (ret)
-+		return ret;
-+
-+	/* Default source clock (se-clock-frequency) freq is 100Mhz */
-+	gi3c->clk_src_freq = HZ_PER_MHZ * 100;
-+
-+	return 0;
-+}
-+
-+static int geni_i3c_probe(struct platform_device *pdev)
-+{
-+	u32 proto, tx_depth, fifo_disable;
-+	struct geni_i3c_dev *gi3c;
-+	int ret;
-+
-+	gi3c = devm_kzalloc(&pdev->dev, sizeof(*gi3c), GFP_KERNEL);
-+	if (!gi3c)
-+		return -ENOMEM;
-+
-+	gi3c->se.dev = &pdev->dev;
-+	gi3c->se.wrapper = dev_get_drvdata(pdev->dev.parent);
-+
-+	init_completion(&gi3c->done);
-+	mutex_init(&gi3c->lock);
-+	spin_lock_init(&gi3c->irq_lock);
-+	platform_set_drvdata(pdev, gi3c);
-+
-+	ret = i3c_geni_resources_init(gi3c, pdev);
-+	if (ret)
-+		return dev_err_probe(&pdev->dev, ret, "Error Initializing GENI Resources\n");
-+
-+	gi3c->irq = platform_get_irq(pdev, 0);
-+	if (gi3c->irq < 0)
-+		return dev_err_probe(&pdev->dev, gi3c->irq, "Error getting IRQ number for I3C\n");
-+
-+	ret = devm_request_irq(&pdev->dev, gi3c->irq, geni_i3c_irq,
-+			       IRQF_NO_AUTOEN, dev_name(&pdev->dev), gi3c);
-+	if (ret)
-+		return dev_err_probe(&pdev->dev, ret, "Error registering core IRQ\n");
-+
-+	ret = geni_se_resources_on(&gi3c->se);
-+	if (ret)
-+		return dev_err_probe(&pdev->dev, ret, "Error turning resources ON\n");
-+
-+	proto = geni_se_read_proto(&gi3c->se);
-+	if (proto != GENI_SE_I3C) {
-+		geni_se_resources_off(&gi3c->se);
-+		return dev_err_probe(&pdev->dev, -ENXIO, "Invalid proto %d\n", proto);
-+	}
-+
-+	fifo_disable = readl_relaxed(gi3c->se.base + GENI_IF_DISABLE_RO);
-+	if (fifo_disable) {
-+		geni_se_resources_off(&gi3c->se);
-+		return dev_err_probe(&pdev->dev, -ENXIO, "GPI DMA mode not supported\n");
-+	}
-+
-+	tx_depth = geni_se_get_tx_fifo_depth(&gi3c->se);
-+	gi3c->tx_wm = tx_depth - 1;
-+	geni_se_init(&gi3c->se, gi3c->tx_wm, tx_depth);
-+	geni_se_config_packing(&gi3c->se, BITS_PER_BYTE, PACKING_BYTES_PER_WORD, true, true, true);
-+	geni_se_resources_off(&gi3c->se);
-+	dev_dbg(&pdev->dev, "i3c fifo/se-dma mode. fifo depth:%d\n", tx_depth);
-+
-+	pm_runtime_set_suspended(gi3c->se.dev);
-+	pm_runtime_set_autosuspend_delay(gi3c->se.dev, I3C_AUTO_SUSPEND_DELAY);
-+	pm_runtime_use_autosuspend(gi3c->se.dev);
-+	pm_runtime_enable(gi3c->se.dev);
-+
-+	ret = i3c_master_register(&gi3c->ctrlr, &pdev->dev, &geni_i3c_master_ops, false);
-+	if (ret) {
-+		pm_runtime_disable(gi3c->se.dev);
-+		pm_runtime_set_suspended(gi3c->se.dev);
-+		pm_runtime_dont_use_autosuspend(gi3c->se.dev);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static void geni_i3c_remove(struct platform_device *pdev)
-+{
-+	struct geni_i3c_dev *gi3c = platform_get_drvdata(pdev);
-+
-+	i3c_master_unregister(&gi3c->ctrlr);
-+	pm_runtime_disable(gi3c->se.dev);
-+	pm_runtime_set_suspended(gi3c->se.dev);
-+	pm_runtime_dont_use_autosuspend(gi3c->se.dev);
-+}
-+
-+static int geni_i3c_runtime_suspend(struct device *dev)
-+{
-+	struct geni_i3c_dev *gi3c = dev_get_drvdata(dev);
-+
-+	disable_irq(gi3c->irq);
-+	geni_se_resources_off(&gi3c->se);
-+
-+	return 0;
-+}
-+
-+static int geni_i3c_runtime_resume(struct device *dev)
-+{
-+	int ret;
-+	struct geni_i3c_dev *gi3c = dev_get_drvdata(dev);
-+
-+	ret = geni_se_resources_on(&gi3c->se);
-+	if (ret)
-+		return ret;
-+	enable_irq(gi3c->irq);
-+
-+	return 0;
-+}
-+
-+static const struct dev_pm_ops geni_i3c_pm_ops = {
-+	SET_RUNTIME_PM_OPS(geni_i3c_runtime_suspend, geni_i3c_runtime_resume, NULL)
-+};
-+
-+static const struct of_device_id geni_i3c_dt_match[] = {
-+	{ .compatible = "qcom,geni-i3c" },
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(of, geni_i3c_dt_match);
-+
-+static struct platform_driver geni_i3c_master = {
-+	.probe  = geni_i3c_probe,
-+	.remove = geni_i3c_remove,
-+	.driver = {
-+		.name = "geni_i3c",
-+		.pm = &geni_i3c_pm_ops,
-+		.of_match_table = geni_i3c_dt_match,
-+	},
-+};
-+
-+module_platform_driver(geni_i3c_master);
-+
-+MODULE_AUTHOR("Mukesh Kumar Savaliya <mukesh.savaliya@oss.qualcomm.com>");
-+MODULE_DESCRIPTION("Qualcomm I3C Controller Driver for GENI based QUP cores");
-+MODULE_LICENSE("GPL");
--- 
-2.25.1
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+QWRkIGluaXRpYWwgZGV2aWNlIHRyZWUgc3VwcG9ydCBmb3IgdGhlIEFYMzAwMCBTb0MgYW5kIGl0
+cyBldmFsdWF0aW9uCnBsYXRmb3JtLiBUaGUgQVgzMDAwIGlzIGEgbXVsdGktY29yZSBTb0MgZmVh
+dHVyaW5nIDQgQ29ydGV4LUE1MyBjb3JlcywKU2VjdXJlIFZhdWx0LCBBSSBFbmdpbmUgYW5kIEZp
+cmV3YWxsLgoKSXQgYWRkcyBzdXBwb3J0IGZvciBDb3J0ZXgtQTUzIENQVXMsIHRpbWVyLCBVQVJU
+cywgYW5kIEkzQwpjb250cm9sbGVycyBvbiB0aGUgQVgzMDAwIGV2YWx1YXRpb24gYm9hcmQuCgpT
+aWduZWQtb2ZmLWJ5OiBIYXJzaGl0IFNoYWggPGhzaGFoQGF4aWFkby5jb20+Ci0tLQogYXJjaC9h
+cm02NC9ib290L2R0cy9NYWtlZmlsZSAgICAgICAgICAgICAgfCAgIDEgKwogYXJjaC9hcm02NC9i
+b290L2R0cy9heGlhZG8vTWFrZWZpbGUgICAgICAgfCAgIDIgKwogYXJjaC9hcm02NC9ib290L2R0
+cy9heGlhZG8vYXgzMDAwLWV2ay5kdHMgfCAgNzkgKysrKysKIGFyY2gvYXJtNjQvYm9vdC9kdHMv
+YXhpYWRvL2F4MzAwMC5kdHNpICAgIHwgNTIwICsrKysrKysrKysrKysrKysrKysrKysrKysrKysr
+KwogNCBmaWxlcyBjaGFuZ2VkLCA2MDIgaW5zZXJ0aW9ucygrKQoKZGlmZiAtLWdpdCBhL2FyY2gv
+YXJtNjQvYm9vdC9kdHMvTWFrZWZpbGUgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL01ha2VmaWxlCmlu
+ZGV4IDc5YjczYTIxZGRjMjJiMTczMDg1NTRlNTAyZjgyMDczOTI5MzViNDUuLjQ3ZGQ4YTFhNzk2
+MGQxNzllZTI4OTY5YTFkNjc1MGJmYTBkNzNkYTEgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtNjQvYm9v
+dC9kdHMvTWFrZWZpbGUKKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9NYWtlZmlsZQpAQCAtOSw2
+ICs5LDcgQEAgc3ViZGlyLXkgKz0gYW1sb2dpYwogc3ViZGlyLXkgKz0gYXBtCiBzdWJkaXIteSAr
+PSBhcHBsZQogc3ViZGlyLXkgKz0gYXJtCitzdWJkaXIteSArPSBheGlhZG8KIHN1YmRpci15ICs9
+IGJpdG1haW4KIHN1YmRpci15ICs9IGJsYWl6ZQogc3ViZGlyLXkgKz0gYnJvYWRjb20KZGlmZiAt
+LWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvYXhpYWRvL01ha2VmaWxlIGIvYXJjaC9hcm02NC9i
+b290L2R0cy9heGlhZG8vTWFrZWZpbGUKbmV3IGZpbGUgbW9kZSAxMDA2NDQKaW5kZXggMDAwMDAw
+MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMC4uNjY3NmFkMDdkYjYxMjlmOGIzMzNi
+MGZlZmZlZTcwNWQyNzI1MTdjMgotLS0gL2Rldi9udWxsCisrKyBiL2FyY2gvYXJtNjQvYm9vdC9k
+dHMvYXhpYWRvL01ha2VmaWxlCkBAIC0wLDAgKzEsMiBAQAorIyBTUERYLUxpY2Vuc2UtSWRlbnRp
+ZmllcjogR1BMLTIuMAorZHRiLSQoQ09ORklHX0FSQ0hfQVhJQURPKSArPSBheDMwMDAtZXZrLmR0
+YgpkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9ib290L2R0cy9heGlhZG8vYXgzMDAwLWV2ay5kdHMg
+Yi9hcmNoL2FybTY0L2Jvb3QvZHRzL2F4aWFkby9heDMwMDAtZXZrLmR0cwpuZXcgZmlsZSBtb2Rl
+IDEwMDY0NAppbmRleCAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwLi45
+MjEwMWM1YjUzNGJmYWM4YjQ2M2FkYWExYzRmMGQ0MzY3ZDAxZTIxCi0tLSAvZGV2L251bGwKKysr
+IGIvYXJjaC9hcm02NC9ib290L2R0cy9heGlhZG8vYXgzMDAwLWV2ay5kdHMKQEAgLTAsMCArMSw3
+OSBAQAorLy8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjArCisvKgorICogQ29weXJp
+Z2h0IChjKSAyMDIxLTI1IEF4aWFkbyBDb3Jwb3JhdGlvbiAob3IgaXRzIGFmZmlsaWF0ZXMpLiBB
+bGwgcmlnaHRzIHJlc2VydmVkLgorICovCisKKy9kdHMtdjEvOworCisjaW5jbHVkZSAiYXgzMDAw
+LmR0c2kiCisKKy8geworCW1vZGVsID0gIkF4aWFkbyBBWDMwMDAgRVZLIjsKKwljb21wYXRpYmxl
+ID0gImF4aWFkbyxheDMwMDAtZXZrIiwgImF4aWFkbyxheDMwMDAiOworCSNhZGRyZXNzLWNlbGxz
+ID0gPDI+OworCSNzaXplLWNlbGxzID0gPDI+OworCisJYWxpYXNlcyB7CisJCXNlcmlhbDMgPSAm
+dWFydDM7CisJfTsKKworCWNob3NlbiB7CisJCXN0ZG91dC1wYXRoID0gInNlcmlhbDM6MTE1MjAw
+IjsKKwl9OworCisJbWVtb3J5QDAgeworCQlkZXZpY2VfdHlwZSA9ICJtZW1vcnkiOworCQkvKiBD
+b3J0ZXgtQTUzIHdpbGwgdXNlIGZvbGxvd2luZyBtZW1vcnkgbWFwICovCisJCXJlZyA9IDwweDAw
+MDAwMDAwIDB4M2QwMDAwMDAgMHgwMDAwMDAwMCAweDIzMDAwMDAwPiwKKwkJICAgICAgPDB4MDAw
+MDAwMDQgMHgwMDAwMDAwMCAweDAwMDAwMDAwIDB4ODAwMDAwMDA+OworCX07Cit9OworCisvKiBH
+UElPIGJhbmsgMCAtIDcgKi8KKyZncGlvMCB7CisJc3RhdHVzID0gIm9rYXkiOworfTsKKworJmdw
+aW8xIHsKKwlzdGF0dXMgPSAib2theSI7Cit9OworCismZ3BpbzIgeworCXN0YXR1cyA9ICJva2F5
+IjsKK307CisKKyZncGlvMyB7CisJc3RhdHVzID0gIm9rYXkiOworfTsKKworJmdwaW80IHsKKwlz
+dGF0dXMgPSAib2theSI7Cit9OworCismZ3BpbzUgeworCXN0YXR1cyA9ICJva2F5IjsKK307CisK
+KyZncGlvNiB7CisJc3RhdHVzID0gIm9rYXkiOworfTsKKworJmdwaW83IHsKKwlzdGF0dXMgPSAi
+b2theSI7Cit9OworCismdWFydDAgeworCXN0YXR1cyA9ICJva2F5IjsKK307CisKKyZ1YXJ0MSB7
+CisJc3RhdHVzID0gIm9rYXkiOworfTsKKworJnVhcnQyIHsKKwlzdGF0dXMgPSAib2theSI7Cit9
+OworCismdWFydDMgeworCXN0YXR1cyA9ICJva2F5IjsKK307CmRpZmYgLS1naXQgYS9hcmNoL2Fy
+bTY0L2Jvb3QvZHRzL2F4aWFkby9heDMwMDAuZHRzaSBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvYXhp
+YWRvL2F4MzAwMC5kdHNpCm5ldyBmaWxlIG1vZGUgMTAwNjQ0CmluZGV4IDAwMDAwMDAwMDAwMDAw
+MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAuLjc5MmY1MmUwYzdkZDQyY2JjNTRiMGViNDdlMjVi
+MGZiZjFhNzA2YjgKLS0tIC9kZXYvbnVsbAorKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2F4aWFk
+by9heDMwMDAuZHRzaQpAQCAtMCwwICsxLDUyMCBAQAorLy8gU1BEWC1MaWNlbnNlLUlkZW50aWZp
+ZXI6IEdQTC0yLjArCisvKgorICogQ29weXJpZ2h0IChjKSAyMDIxLTI1wqBBeGlhZG8gQ29ycG9y
+YXRpb24gKG9yIGl0cyBhZmZpbGlhdGVzKS4gQWxsIHJpZ2h0cyByZXNlcnZlZC4KKyAqLworCisv
+ZHRzLXYxLzsKKworI2luY2x1ZGUgPGR0LWJpbmRpbmdzL2ludGVycnVwdC1jb250cm9sbGVyL2ly
+cS5oPgorI2luY2x1ZGUgPGR0LWJpbmRpbmdzL2ludGVycnVwdC1jb250cm9sbGVyL2FybS1naWMu
+aD4KKworL21lbXJlc2VydmUvIDB4M2MwMDEzYTAgMHgwMDAwMDAwODsJLyogY3B1LXJlbGVhc2Ut
+YWRkciAqLworLyB7CisJbW9kZWwgPSAiQXhpYWRvIEFYMzAwMCI7CisJaW50ZXJydXB0LXBhcmVu
+dCA9IDwmZ2ljNTAwPjsKKwkjYWRkcmVzcy1jZWxscyA9IDwyPjsKKwkjc2l6ZS1jZWxscyA9IDwy
+PjsKKworCWNwdXMgeworCQkjYWRkcmVzcy1jZWxscyA9IDwyPjsKKwkJI3NpemUtY2VsbHMgPSA8
+MD47CisKKwkJY3B1MDogY3B1QDAgeworCQkJZGV2aWNlX3R5cGUgPSAiY3B1IjsKKwkJCWNvbXBh
+dGlibGUgPSAiYXJtLGNvcnRleC1hNTMiOworCQkJcmVnID0gPDB4MCAweDA+OworCQkJZW5hYmxl
+LW1ldGhvZCA9ICJzcGluLXRhYmxlIjsKKwkJCWNwdS1yZWxlYXNlLWFkZHIgPSA8MHgwIDB4M2Mw
+MDEzYTA+OworCQkJZC1jYWNoZS1zaXplID0gPDB4ODAwMD47CisJCQlkLWNhY2hlLWxpbmUtc2l6
+ZSA9IDw2ND47CisJCQlkLWNhY2hlLXNldHMgPSA8MTI4PjsKKwkJCWktY2FjaGUtc2l6ZSA9IDww
+eDgwMDA+OworCQkJaS1jYWNoZS1saW5lLXNpemUgPSA8NjQ+OworCQkJaS1jYWNoZS1zZXRzID0g
+PDI1Nj47CisJCQluZXh0LWxldmVsLWNhY2hlID0gPCZsMj47CisJCX07CisKKwkJY3B1MTogY3B1
+QDEgeworCQkJZGV2aWNlX3R5cGUgPSAiY3B1IjsKKwkJCWNvbXBhdGlibGUgPSAiYXJtLGNvcnRl
+eC1hNTMiOworCQkJcmVnID0gPDB4MCAweDE+OworCQkJZW5hYmxlLW1ldGhvZCA9ICJzcGluLXRh
+YmxlIjsKKwkJCWNwdS1yZWxlYXNlLWFkZHIgPSA8MHgwIDB4M2MwMDEzYTA+OworCQkJZC1jYWNo
+ZS1zaXplID0gPDB4ODAwMD47CisJCQlkLWNhY2hlLWxpbmUtc2l6ZSA9IDw2ND47CisJCQlkLWNh
+Y2hlLXNldHMgPSA8MTI4PjsKKwkJCWktY2FjaGUtc2l6ZSA9IDwweDgwMDA+OworCQkJaS1jYWNo
+ZS1saW5lLXNpemUgPSA8NjQ+OworCQkJaS1jYWNoZS1zZXRzID0gPDI1Nj47CisJCQluZXh0LWxl
+dmVsLWNhY2hlID0gPCZsMj47CisJCX07CisKKwkJY3B1MjogY3B1QDIgeworCQkJZGV2aWNlX3R5
+cGUgPSAiY3B1IjsKKwkJCWNvbXBhdGlibGUgPSAiYXJtLGNvcnRleC1hNTMiOworCQkJcmVnID0g
+PDB4MCAweDI+OworCQkJZW5hYmxlLW1ldGhvZCA9ICJzcGluLXRhYmxlIjsKKwkJCWNwdS1yZWxl
+YXNlLWFkZHIgPSA8MHgwIDB4M2MwMDEzYTA+OworCQkJZC1jYWNoZS1zaXplID0gPDB4ODAwMD47
+CisJCQlkLWNhY2hlLWxpbmUtc2l6ZSA9IDw2ND47CisJCQlkLWNhY2hlLXNldHMgPSA8MTI4PjsK
+KwkJCWktY2FjaGUtc2l6ZSA9IDwweDgwMDA+OworCQkJaS1jYWNoZS1saW5lLXNpemUgPSA8NjQ+
+OworCQkJaS1jYWNoZS1zZXRzID0gPDI1Nj47CisJCQluZXh0LWxldmVsLWNhY2hlID0gPCZsMj47
+CisJCX07CisKKwkJY3B1MzogY3B1QDMgeworCQkJZGV2aWNlX3R5cGUgPSAiY3B1IjsKKwkJCWNv
+bXBhdGlibGUgPSAiYXJtLGNvcnRleC1hNTMiOworCQkJcmVnID0gPDB4MCAweDM+OworCQkJZW5h
+YmxlLW1ldGhvZCA9ICJzcGluLXRhYmxlIjsKKwkJCWNwdS1yZWxlYXNlLWFkZHIgPSA8MHgwIDB4
+M2MwMDEzYTA+OworCQkJZC1jYWNoZS1zaXplID0gPDB4ODAwMD47CisJCQlkLWNhY2hlLWxpbmUt
+c2l6ZSA9IDw2ND47CisJCQlkLWNhY2hlLXNldHMgPSA8MTI4PjsKKwkJCWktY2FjaGUtc2l6ZSA9
+IDwweDgwMDA+OworCQkJaS1jYWNoZS1saW5lLXNpemUgPSA8NjQ+OworCQkJaS1jYWNoZS1zZXRz
+ID0gPDI1Nj47CisJCQluZXh0LWxldmVsLWNhY2hlID0gPCZsMj47CisJCX07CisKKwkJbDI6IGwy
+LWNhY2hlMCB7CisJCQljb21wYXRpYmxlID0gImNhY2hlIjsKKwkJCWNhY2hlLXNpemUgPSA8MHgx
+MDAwMDA+OworCQkJY2FjaGUtdW5pZmllZDsKKwkJCWNhY2hlLWxpbmUtc2l6ZSA9IDw2ND47CisJ
+CQljYWNoZS1zZXRzID0gPDEwMjQ+OworCQkJY2FjaGUtbGV2ZWwgPSA8Mj47CisJCX07CisJfTsK
+KworCWNsb2NrcyB7CisJCWNsa194aW46IGNsb2NrLTIwMDAwMDAwMCB7CisJCQljb21wYXRpYmxl
+ID0gImZpeGVkLWNsb2NrIjsKKwkJCSNjbG9jay1jZWxscyA9IDwwPjsKKwkJCWNsb2NrLWZyZXF1
+ZW5jeSA9IDwyMDAwMDAwMDA+OworCQkJY2xvY2stb3V0cHV0LW5hbWVzID0gImNsa194aW4iOwor
+CQl9OworCisJCXJlZmNsazogY2xvY2stMTI1MDAwMDAwIHsKKwkJCWNvbXBhdGlibGUgPSAiZml4
+ZWQtY2xvY2siOworCQkJI2Nsb2NrLWNlbGxzID0gPDA+OworCQkJY2xvY2stZnJlcXVlbmN5ID0g
+PDEyNTAwMDAwMD47CisJCX07CisJfTsKKworCXNvYyB7CisJCWNvbXBhdGlibGUgPSAic2ltcGxl
+LWJ1cyI7CisJCXJhbmdlczsKKwkJI2FkZHJlc3MtY2VsbHMgPSA8Mj47CisJCSNzaXplLWNlbGxz
+ID0gPDI+OworCQlpbnRlcnJ1cHQtcGFyZW50ID0gPCZnaWM1MDA+OworCisJCWdpYzUwMDogaW50
+ZXJydXB0LWNvbnRyb2xsZXJAODAzMDAwMDAgeworCQkJY29tcGF0aWJsZSA9ICJhcm0sZ2ljLXYz
+IjsKKwkJCXJlZyA9IDwweDAwIDB4ODAzMDAwMDAgMHgwMCAweDEwMDAwPiwKKwkJCSAgICAgIDww
+eDAwIDB4ODAzODAwMDAgMHgwMCAweDgwMDAwPjsKKwkJCXJhbmdlczsKKwkJCSNpbnRlcnJ1cHQt
+Y2VsbHMgPSA8Mz47CisJCQkjYWRkcmVzcy1jZWxscyA9IDwyPjsKKwkJCSNzaXplLWNlbGxzID0g
+PDI+OworCQkJaW50ZXJydXB0LWNvbnRyb2xsZXI7CisJCQkjcmVkaXN0cmlidXRvci1yZWdpb25z
+ID0gPDE+OworCQkJaW50ZXJydXB0cyA9IDxHSUNfUFBJIDkgSVJRX1RZUEVfTEVWRUxfSElHSD47
+CisJCX07CisKKwkJLyogR1BJTyBDb250cm9sbGVyIGJhbmtzIDAgLSA3ICovCisJCWdwaW8wOiBn
+cGlvLWNvbnRyb2xsZXJAODA1MDAwMDAgeworCQkJY29tcGF0aWJsZSA9ICJheGlhZG8sYXgzMDAw
+LWdwaW8iLCAiY2RucyxncGlvLXIxcDAyIjsKKwkJCXJlZyA9IDwweDAwIDB4ODA1MDAwMDAgMHgw
+MCAweDQwMD47CisJCQljbG9ja3MgPSA8JnJlZmNsaz47CisJCQlpbnRlcnJ1cHQtcGFyZW50ID0g
+PCZnaWM1MDA+OworCQkJaW50ZXJydXB0cyA9IDxHSUNfU1BJIDE4MyBJUlFfVFlQRV9MRVZFTF9I
+SUdIPjsKKwkJCWdwaW8tY29udHJvbGxlcjsKKwkJCSNncGlvLWNlbGxzID0gPDI+OworCQkJaW50
+ZXJydXB0LWNvbnRyb2xsZXI7CisJCQkjaW50ZXJydXB0LWNlbGxzID0gPDI+OworCQkJc3RhdHVz
+ID0gImRpc2FibGVkIjsKKwkJfTsKKworCQlncGlvMTogZ3Bpby1jb250cm9sbGVyQDgwNTgwMDAw
+IHsKKwkJCWNvbXBhdGlibGUgPSAiYXhpYWRvLGF4MzAwMC1ncGlvIiwgImNkbnMsZ3Bpby1yMXAw
+MiI7CisJCQlyZWcgPSA8MHgwMCAweDgwNTgwMDAwIDB4MDAgMHg0MDA+OworCQkJY2xvY2tzID0g
+PCZyZWZjbGs+OworCQkJaW50ZXJydXB0LXBhcmVudCA9IDwmZ2ljNTAwPjsKKwkJCWludGVycnVw
+dHMgPSA8R0lDX1NQSSAxODQgSVJRX1RZUEVfTEVWRUxfSElHSD47CisJCQlncGlvLWNvbnRyb2xs
+ZXI7CisJCQkjZ3Bpby1jZWxscyA9IDwyPjsKKwkJCWludGVycnVwdC1jb250cm9sbGVyOworCQkJ
+I2ludGVycnVwdC1jZWxscyA9IDwyPjsKKwkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7CisJCX07CisK
+KwkJZ3BpbzI6IGdwaW8tY29udHJvbGxlckA4MDYwMDAwMCB7CisJCQljb21wYXRpYmxlID0gImF4
+aWFkbyxheDMwMDAtZ3BpbyIsICJjZG5zLGdwaW8tcjFwMDIiOworCQkJcmVnID0gPDB4MDAgMHg4
+MDYwMDAwMCAweDAwIDB4NDAwPjsKKwkJCWNsb2NrcyA9IDwmcmVmY2xrPjsKKwkJCWludGVycnVw
+dC1wYXJlbnQgPSA8JmdpYzUwMD47CisJCQlpbnRlcnJ1cHRzID0gPEdJQ19TUEkgMTg1IElSUV9U
+WVBFX0xFVkVMX0hJR0g+OworCQkJZ3Bpby1jb250cm9sbGVyOworCQkJI2dwaW8tY2VsbHMgPSA8
+Mj47CisJCQlpbnRlcnJ1cHQtY29udHJvbGxlcjsKKwkJCSNpbnRlcnJ1cHQtY2VsbHMgPSA8Mj47
+CisJCQlzdGF0dXMgPSAiZGlzYWJsZWQiOworCQl9OworCisJCWdwaW8zOiBncGlvLWNvbnRyb2xs
+ZXJAODA2ODAwMDAgeworCQkJY29tcGF0aWJsZSA9ICJheGlhZG8sYXgzMDAwLWdwaW8iLCAiY2Ru
+cyxncGlvLXIxcDAyIjsKKwkJCXJlZyA9IDwweDAwIDB4ODA2ODAwMDAgMHgwMCAweDQwMD47CisJ
+CQljbG9ja3MgPSA8JnJlZmNsaz47CisJCQlpbnRlcnJ1cHQtcGFyZW50ID0gPCZnaWM1MDA+Owor
+CQkJaW50ZXJydXB0cyA9IDxHSUNfU1BJIDE4NiBJUlFfVFlQRV9MRVZFTF9ISUdIPjsKKwkJCWdw
+aW8tY29udHJvbGxlcjsKKwkJCSNncGlvLWNlbGxzID0gPDI+OworCQkJaW50ZXJydXB0LWNvbnRy
+b2xsZXI7CisJCQkjaW50ZXJydXB0LWNlbGxzID0gPDI+OworCQkJc3RhdHVzID0gImRpc2FibGVk
+IjsKKwkJfTsKKworCQlncGlvNDogZ3Bpby1jb250cm9sbGVyQDgwNzAwMDAwIHsKKwkJCWNvbXBh
+dGlibGUgPSAiYXhpYWRvLGF4MzAwMC1ncGlvIiwgImNkbnMsZ3Bpby1yMXAwMiI7CisJCQlyZWcg
+PSA8MHgwMCAweDgwNzAwMDAwIDB4MDAgMHg0MDA+OworCQkJY2xvY2tzID0gPCZyZWZjbGs+Owor
+CQkJaW50ZXJydXB0LXBhcmVudCA9IDwmZ2ljNTAwPjsKKwkJCWludGVycnVwdHMgPSA8R0lDX1NQ
+SSAxODcgSVJRX1RZUEVfTEVWRUxfSElHSD47CisJCQlncGlvLWNvbnRyb2xsZXI7CisJCQkjZ3Bp
+by1jZWxscyA9IDwyPjsKKwkJCWludGVycnVwdC1jb250cm9sbGVyOworCQkJI2ludGVycnVwdC1j
+ZWxscyA9IDwyPjsKKwkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7CisJCX07CisKKwkJZ3BpbzU6IGdw
+aW8tY29udHJvbGxlckA4MDc4MDAwMCB7CisJCQljb21wYXRpYmxlID0gImF4aWFkbyxheDMwMDAt
+Z3BpbyIsICJjZG5zLGdwaW8tcjFwMDIiOworCQkJcmVnID0gPDB4MDAgMHg4MDc4MDAwMCAweDAw
+IDB4NDAwPjsKKwkJCWNsb2NrcyA9IDwmcmVmY2xrPjsKKwkJCWludGVycnVwdC1wYXJlbnQgPSA8
+JmdpYzUwMD47CisJCQlpbnRlcnJ1cHRzID0gPEdJQ19TUEkgMTg4IElSUV9UWVBFX0xFVkVMX0hJ
+R0g+OworCQkJZ3Bpby1jb250cm9sbGVyOworCQkJI2dwaW8tY2VsbHMgPSA8Mj47CisJCQlpbnRl
+cnJ1cHQtY29udHJvbGxlcjsKKwkJCSNpbnRlcnJ1cHQtY2VsbHMgPSA8Mj47CisJCQlzdGF0dXMg
+PSAiZGlzYWJsZWQiOworCQl9OworCisJCWdwaW82OiBncGlvLWNvbnRyb2xsZXJAODA4MDAwMDAg
+eworCQkJY29tcGF0aWJsZSA9ICJheGlhZG8sYXgzMDAwLWdwaW8iLCAiY2RucyxncGlvLXIxcDAy
+IjsKKwkJCXJlZyA9IDwweDAwIDB4ODA4MDAwMDAgMHgwMCAweDQwMD47CisJCQljbG9ja3MgPSA8
+JnJlZmNsaz47CisJCQlpbnRlcnJ1cHQtcGFyZW50ID0gPCZnaWM1MDA+OworCQkJaW50ZXJydXB0
+cyA9IDxHSUNfU1BJIDE4OSBJUlFfVFlQRV9MRVZFTF9ISUdIPjsKKwkJCWdwaW8tY29udHJvbGxl
+cjsKKwkJCSNncGlvLWNlbGxzID0gPDI+OworCQkJaW50ZXJydXB0LWNvbnRyb2xsZXI7CisJCQkj
+aW50ZXJydXB0LWNlbGxzID0gPDI+OworCQkJc3RhdHVzID0gImRpc2FibGVkIjsKKwkJfTsKKwor
+CQlncGlvNzogZ3Bpby1jb250cm9sbGVyQDgwODgwMDAwIHsKKwkJCWNvbXBhdGlibGUgPSAiYXhp
+YWRvLGF4MzAwMC1ncGlvIiwgImNkbnMsZ3Bpby1yMXAwMiI7CisJCQlyZWcgPSA8MHgwMCAweDgw
+ODgwMDAwIDB4MDAgMHg0MDA+OworCQkJY2xvY2tzID0gPCZyZWZjbGs+OworCQkJaW50ZXJydXB0
+LXBhcmVudCA9IDwmZ2ljNTAwPjsKKwkJCWludGVycnVwdHMgPSA8R0lDX1NQSSAxOTAgSVJRX1RZ
+UEVfTEVWRUxfSElHSD47CisJCQlncGlvLWNvbnRyb2xsZXI7CisJCQkjZ3Bpby1jZWxscyA9IDwy
+PjsKKwkJCWludGVycnVwdC1jb250cm9sbGVyOworCQkJI2ludGVycnVwdC1jZWxscyA9IDwyPjsK
+KwkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7CisJCX07CisKKwkJLyogSTNDIENvbnRyb2xsZXIgMCAt
+IDE2ICovCisJCWkzYzA6IGkzY0A4MDUwMDQwMCB7CisJCQljb21wYXRpYmxlID0gImF4aWFkbyxh
+eDMwMDAtaTNjIiwgImNkbnMsaTNjLW1hc3RlciI7CisJCQlyZWcgPSA8MHgwMCAweDgwNTAwNDAw
+IDB4MDAgMHg0MDA+OworCQkJY2xvY2tzID0gPCZyZWZjbGsgJmNsa194aW4+OworCQkJY2xvY2st
+bmFtZXMgPSAicGNsayIsICJzeXNjbGsiOworCQkJaW50ZXJydXB0LXBhcmVudCA9IDwmZ2ljNTAw
+PjsKKwkJCWludGVycnVwdHMgPSA8R0lDX1NQSSA3NiBJUlFfVFlQRV9MRVZFTF9ISUdIPjsKKwkJ
+CWkyYy1zY2wtaHogPSA8MTAwMDAwPjsKKwkJCWkzYy1zY2wtaHogPSA8NDAwMDAwPjsKKwkJCSNh
+ZGRyZXNzLWNlbGxzID0gPDM+OworCQkJI3NpemUtY2VsbHMgPSA8MD47CisJCQlzdGF0dXMgPSAi
+ZGlzYWJsZWQiOworCQl9OworCisJCWkzYzE6IGkzY0A4MDUwMDgwMCB7CisJCQljb21wYXRpYmxl
+ID0gImF4aWFkbyxheDMwMDAtaTNjIiwgImNkbnMsaTNjLW1hc3RlciI7CisJCQlyZWcgPSA8MHgw
+MCAweDgwNTAwODAwIDB4MDAgMHg0MDA+OworCQkJY2xvY2tzID0gPCZyZWZjbGsgJmNsa194aW4+
+OworCQkJY2xvY2stbmFtZXMgPSAicGNsayIsICJzeXNjbGsiOworCQkJaW50ZXJydXB0LXBhcmVu
+dCA9IDwmZ2ljNTAwPjsKKwkJCWludGVycnVwdHMgPSA8R0lDX1NQSSA3NyBJUlFfVFlQRV9MRVZF
+TF9ISUdIPjsKKwkJCWkyYy1zY2wtaHogPSA8MTAwMDAwPjsKKwkJCWkzYy1zY2wtaHogPSA8NDAw
+MDAwPjsKKwkJCSNhZGRyZXNzLWNlbGxzID0gPDM+OworCQkJI3NpemUtY2VsbHMgPSA8MD47CisJ
+CQlzdGF0dXMgPSAiZGlzYWJsZWQiOworCQl9OworCisJCWkzYzI6IGkzY0A4MDU4MDQwMCB7CisJ
+CQljb21wYXRpYmxlID0gImF4aWFkbyxheDMwMDAtaTNjIiwgImNkbnMsaTNjLW1hc3RlciI7CisJ
+CQlyZWcgPSA8MHgwMCAweDgwNTgwNDAwIDB4MDAgMHg0MDA+OworCQkJY2xvY2tzID0gPCZyZWZj
+bGsgJmNsa194aW4+OworCQkJY2xvY2stbmFtZXMgPSAicGNsayIsICJzeXNjbGsiOworCQkJaW50
+ZXJydXB0LXBhcmVudCA9IDwmZ2ljNTAwPjsKKwkJCWludGVycnVwdHMgPSA8R0lDX1NQSSA3OCBJ
+UlFfVFlQRV9MRVZFTF9ISUdIPjsKKwkJCWkyYy1zY2wtaHogPSA8MTAwMDAwPjsKKwkJCWkzYy1z
+Y2wtaHogPSA8NDAwMDAwPjsKKwkJCSNhZGRyZXNzLWNlbGxzID0gPDM+OworCQkJI3NpemUtY2Vs
+bHMgPSA8MD47CisJCQlzdGF0dXMgPSAiZGlzYWJsZWQiOworCQl9OworCisJCWkzYzM6IGkzY0A4
+MDU4MDgwMCB7CisJCQljb21wYXRpYmxlID0gImF4aWFkbyxheDMwMDAtaTNjIiwgImNkbnMsaTNj
+LW1hc3RlciI7CisJCQlyZWcgPSA8MHgwMCAweDgwNTgwODAwIDB4MDAgMHg0MDA+OworCQkJY2xv
+Y2tzID0gPCZyZWZjbGsgJmNsa194aW4+OworCQkJY2xvY2stbmFtZXMgPSAicGNsayIsICJzeXNj
+bGsiOworCQkJaW50ZXJydXB0LXBhcmVudCA9IDwmZ2ljNTAwPjsKKwkJCWludGVycnVwdHMgPSA8
+R0lDX1NQSSA3OSBJUlFfVFlQRV9MRVZFTF9ISUdIPjsKKwkJCWkyYy1zY2wtaHogPSA8MTAwMDAw
+PjsKKwkJCWkzYy1zY2wtaHogPSA8NDAwMDAwPjsKKwkJCSNhZGRyZXNzLWNlbGxzID0gPDM+Owor
+CQkJI3NpemUtY2VsbHMgPSA8MD47CisJCQlzdGF0dXMgPSAiZGlzYWJsZWQiOworCQl9OworCisJ
+CWkzYzQ6IGkzY0A4MDYwMDQwMCB7CisJCQljb21wYXRpYmxlID0gImF4aWFkbyxheDMwMDAtaTNj
+IiwgImNkbnMsaTNjLW1hc3RlciI7CisJCQlyZWcgPSA8MHgwMCAweDgwNjAwNDAwIDB4MDAgMHg0
+MDA+OworCQkJY2xvY2tzID0gPCZyZWZjbGsgJmNsa194aW4+OworCQkJY2xvY2stbmFtZXMgPSAi
+cGNsayIsICJzeXNjbGsiOworCQkJaW50ZXJydXB0LXBhcmVudCA9IDwmZ2ljNTAwPjsKKwkJCWlu
+dGVycnVwdHMgPSA8R0lDX1NQSSA4MCBJUlFfVFlQRV9MRVZFTF9ISUdIPjsKKwkJCWkyYy1zY2wt
+aHogPSA8MTAwMDAwPjsKKwkJCWkzYy1zY2wtaHogPSA8NDAwMDAwPjsKKwkJCSNhZGRyZXNzLWNl
+bGxzID0gPDM+OworCQkJI3NpemUtY2VsbHMgPSA8MD47CisJCQlzdGF0dXMgPSAiZGlzYWJsZWQi
+OworCQl9OworCisJCWkzYzU6IGkzY0A4MDYwMDgwMCB7CisJCQljb21wYXRpYmxlID0gImF4aWFk
+byxheDMwMDAtaTNjIiwgImNkbnMsaTNjLW1hc3RlciI7CisJCQlyZWcgPSA8MHgwMCAweDgwNjAw
+ODAwIDB4MDAgMHg0MDA+OworCQkJY2xvY2tzID0gPCZyZWZjbGsgJmNsa194aW4+OworCQkJY2xv
+Y2stbmFtZXMgPSAicGNsayIsICJzeXNjbGsiOworCQkJaW50ZXJydXB0LXBhcmVudCA9IDwmZ2lj
+NTAwPjsKKwkJCWludGVycnVwdHMgPSA8R0lDX1NQSSA4MSBJUlFfVFlQRV9MRVZFTF9ISUdIPjsK
+KwkJCWkyYy1zY2wtaHogPSA8MTAwMDAwPjsKKwkJCWkzYy1zY2wtaHogPSA8NDAwMDAwPjsKKwkJ
+CSNhZGRyZXNzLWNlbGxzID0gPDM+OworCQkJI3NpemUtY2VsbHMgPSA8MD47CisJCQlzdGF0dXMg
+PSAiZGlzYWJsZWQiOworCQl9OworCisJCWkzYzY6IGkzY0A4MDY4MDQwMCB7CisJCQljb21wYXRp
+YmxlID0gImF4aWFkbyxheDMwMDAtaTNjIiwgImNkbnMsaTNjLW1hc3RlciI7CisJCQlyZWcgPSA8
+MHgwMCAweDgwNjgwNDAwIDB4MDAgMHg0MDA+OworCQkJY2xvY2tzID0gPCZyZWZjbGsgJmNsa194
+aW4+OworCQkJY2xvY2stbmFtZXMgPSAicGNsayIsICJzeXNjbGsiOworCQkJaW50ZXJydXB0LXBh
+cmVudCA9IDwmZ2ljNTAwPjsKKwkJCWludGVycnVwdHMgPSA8R0lDX1NQSSA4MiBJUlFfVFlQRV9M
+RVZFTF9ISUdIPjsKKwkJCWkyYy1zY2wtaHogPSA8MTAwMDAwPjsKKwkJCWkzYy1zY2wtaHogPSA8
+NDAwMDAwPjsKKwkJCSNhZGRyZXNzLWNlbGxzID0gPDM+OworCQkJI3NpemUtY2VsbHMgPSA8MD47
+CisJCQlzdGF0dXMgPSAiZGlzYWJsZWQiOworCQl9OworCisJCWkzYzc6IGkzY0A4MDY4MDgwMCB7
+CisJCQljb21wYXRpYmxlID0gImF4aWFkbyxheDMwMDAtaTNjIiwgImNkbnMsaTNjLW1hc3RlciI7
+CisJCQlyZWcgPSA8MHgwMCAweDgwNjgwODAwIDB4MDAgMHg0MDA+OworCQkJY2xvY2tzID0gPCZy
+ZWZjbGsgJmNsa194aW4+OworCQkJY2xvY2stbmFtZXMgPSAicGNsayIsICJzeXNjbGsiOworCQkJ
+aW50ZXJydXB0LXBhcmVudCA9IDwmZ2ljNTAwPjsKKwkJCWludGVycnVwdHMgPSA8R0lDX1NQSSA4
+MyBJUlFfVFlQRV9MRVZFTF9ISUdIPjsKKwkJCWkyYy1zY2wtaHogPSA8MTAwMDAwPjsKKwkJCWkz
+Yy1zY2wtaHogPSA8NDAwMDAwPjsKKwkJCSNhZGRyZXNzLWNlbGxzID0gPDM+OworCQkJI3NpemUt
+Y2VsbHMgPSA8MD47CisJCQlzdGF0dXMgPSAiZGlzYWJsZWQiOworCQl9OworCisJCWkzYzg6IGkz
+Y0A4MDcwMDQwMCB7CisJCQljb21wYXRpYmxlID0gImF4aWFkbyxheDMwMDAtaTNjIiwgImNkbnMs
+aTNjLW1hc3RlciI7CisJCQlyZWcgPSA8MHgwMCAweDgwNzAwNDAwIDB4MDAgMHg0MDA+OworCQkJ
+Y2xvY2tzID0gPCZyZWZjbGsgJmNsa194aW4+OworCQkJY2xvY2stbmFtZXMgPSAicGNsayIsICJz
+eXNjbGsiOworCQkJaW50ZXJydXB0LXBhcmVudCA9IDwmZ2ljNTAwPjsKKwkJCWludGVycnVwdHMg
+PSA8R0lDX1NQSSA4NCBJUlFfVFlQRV9MRVZFTF9ISUdIPjsKKwkJCWkyYy1zY2wtaHogPSA8MTAw
+MDAwPjsKKwkJCWkzYy1zY2wtaHogPSA8NDAwMDAwPjsKKwkJCSNhZGRyZXNzLWNlbGxzID0gPDM+
+OworCQkJI3NpemUtY2VsbHMgPSA8MD47CisJCQlzdGF0dXMgPSAiZGlzYWJsZWQiOworCQl9Owor
+CisJCWkzYzk6IGkzY0A4MDcwMDgwMCB7CisJCQljb21wYXRpYmxlID0gImF4aWFkbyxheDMwMDAt
+aTNjIiwgImNkbnMsaTNjLW1hc3RlciI7CisJCQlyZWcgPSA8MHgwMCAweDgwNzAwODAwIDB4MDAg
+MHg0MDA+OworCQkJY2xvY2tzID0gPCZyZWZjbGsgJmNsa194aW4+OworCQkJY2xvY2stbmFtZXMg
+PSAicGNsayIsICJzeXNjbGsiOworCQkJaW50ZXJydXB0LXBhcmVudCA9IDwmZ2ljNTAwPjsKKwkJ
+CWludGVycnVwdHMgPSA8R0lDX1NQSSA4NSBJUlFfVFlQRV9MRVZFTF9ISUdIPjsKKwkJCWkyYy1z
+Y2wtaHogPSA8MTAwMDAwPjsKKwkJCWkzYy1zY2wtaHogPSA8NDAwMDAwPjsKKwkJCSNhZGRyZXNz
+LWNlbGxzID0gPDM+OworCQkJI3NpemUtY2VsbHMgPSA8MD47CisJCQlzdGF0dXMgPSAiZGlzYWJs
+ZWQiOworCQl9OworCisJCWkzYzEwOiBpM2NAODA3ODA0MDAgeworCQkJY29tcGF0aWJsZSA9ICJh
+eGlhZG8sYXgzMDAwLWkzYyIsICJjZG5zLGkzYy1tYXN0ZXIiOworCQkJcmVnID0gPDB4MDAgMHg4
+MDc4MDQwMCAweDAwIDB4NDAwPjsKKwkJCWNsb2NrcyA9IDwmcmVmY2xrICZjbGtfeGluPjsKKwkJ
+CWNsb2NrLW5hbWVzID0gInBjbGsiLCAic3lzY2xrIjsKKwkJCWludGVycnVwdC1wYXJlbnQgPSA8
+JmdpYzUwMD47CisJCQlpbnRlcnJ1cHRzID0gPEdJQ19TUEkgODYgSVJRX1RZUEVfTEVWRUxfSElH
+SD47CisJCQlpMmMtc2NsLWh6ID0gPDEwMDAwMD47CisJCQlpM2Mtc2NsLWh6ID0gPDQwMDAwMD47
+CisJCQkjYWRkcmVzcy1jZWxscyA9IDwzPjsKKwkJCSNzaXplLWNlbGxzID0gPDA+OworCQkJc3Rh
+dHVzID0gImRpc2FibGVkIjsKKwkJfTsKKworCQlpM2MxMTogaTNjQDgwNzgwODAwIHsKKwkJCWNv
+bXBhdGlibGUgPSAiYXhpYWRvLGF4MzAwMC1pM2MiLCAiY2RucyxpM2MtbWFzdGVyIjsKKwkJCXJl
+ZyA9IDwweDAwIDB4ODA3ODA4MDAgMHgwMCAweDQwMD47CisJCQljbG9ja3MgPSA8JnJlZmNsayAm
+Y2xrX3hpbj47CisJCQljbG9jay1uYW1lcyA9ICJwY2xrIiwgInN5c2NsayI7CisJCQlpbnRlcnJ1
+cHQtcGFyZW50ID0gPCZnaWM1MDA+OworCQkJaW50ZXJydXB0cyA9IDxHSUNfU1BJIDg3IElSUV9U
+WVBFX0xFVkVMX0hJR0g+OworCQkJaTJjLXNjbC1oeiA9IDwxMDAwMDA+OworCQkJaTNjLXNjbC1o
+eiA9IDw0MDAwMDA+OworCQkJI2FkZHJlc3MtY2VsbHMgPSA8Mz47CisJCQkjc2l6ZS1jZWxscyA9
+IDwwPjsKKwkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7CisJCX07CisKKwkJaTNjMTI6IGkzY0A4MDgw
+MDQwMCB7CisJCQljb21wYXRpYmxlID0gImF4aWFkbyxheDMwMDAtaTNjIiwgImNkbnMsaTNjLW1h
+c3RlciI7CisJCQlyZWcgPSA8MHgwMCAweDgwODAwNDAwIDB4MDAgMHg0MDA+OworCQkJY2xvY2tz
+ID0gPCZyZWZjbGsgJmNsa194aW4+OworCQkJY2xvY2stbmFtZXMgPSAicGNsayIsICJzeXNjbGsi
+OworCQkJaW50ZXJydXB0LXBhcmVudCA9IDwmZ2ljNTAwPjsKKwkJCWludGVycnVwdHMgPSA8R0lD
+X1NQSSA4OCBJUlFfVFlQRV9MRVZFTF9ISUdIPjsKKwkJCWkyYy1zY2wtaHogPSA8MTAwMDAwPjsK
+KwkJCWkzYy1zY2wtaHogPSA8NDAwMDAwPjsKKwkJCSNhZGRyZXNzLWNlbGxzID0gPDM+OworCQkJ
+I3NpemUtY2VsbHMgPSA8MD47CisJCQlzdGF0dXMgPSAiZGlzYWJsZWQiOworCQl9OworCisJCWkz
+YzEzOiBpM2NAODA4MDA4MDAgeworCQkJY29tcGF0aWJsZSA9ICJheGlhZG8sYXgzMDAwLWkzYyIs
+ICJjZG5zLGkzYy1tYXN0ZXIiOworCQkJcmVnID0gPDB4MDAgMHg4MDgwMDgwMCAweDAwIDB4NDAw
+PjsKKwkJCWNsb2NrcyA9IDwmcmVmY2xrICZjbGtfeGluPjsKKwkJCWNsb2NrLW5hbWVzID0gInBj
+bGsiLCAic3lzY2xrIjsKKwkJCWludGVycnVwdC1wYXJlbnQgPSA8JmdpYzUwMD47CisJCQlpbnRl
+cnJ1cHRzID0gPEdJQ19TUEkgODkgSVJRX1RZUEVfTEVWRUxfSElHSD47CisJCQlpMmMtc2NsLWh6
+ID0gPDEwMDAwMD47CisJCQlpM2Mtc2NsLWh6ID0gPDQwMDAwMD47CisJCQkjYWRkcmVzcy1jZWxs
+cyA9IDwzPjsKKwkJCSNzaXplLWNlbGxzID0gPDA+OworCQkJc3RhdHVzID0gImRpc2FibGVkIjsK
+KwkJfTsKKworCQlpM2MxNDogaTNjQDgwODgwNDAwIHsKKwkJCWNvbXBhdGlibGUgPSAiYXhpYWRv
+LGF4MzAwMC1pM2MiLCAiY2RucyxpM2MtbWFzdGVyIjsKKwkJCXJlZyA9IDwweDAwIDB4ODA4ODA0
+MDAgMHgwMCAweDQwMD47CisJCQljbG9ja3MgPSA8JnJlZmNsayAmY2xrX3hpbj47CisJCQljbG9j
+ay1uYW1lcyA9ICJwY2xrIiwgInN5c2NsayI7CisJCQlpbnRlcnJ1cHQtcGFyZW50ID0gPCZnaWM1
+MDA+OworCQkJaW50ZXJydXB0cyA9IDxHSUNfU1BJIDkwIElSUV9UWVBFX0xFVkVMX0hJR0g+Owor
+CQkJaTJjLXNjbC1oeiA9IDwxMDAwMDA+OworCQkJaTNjLXNjbC1oeiA9IDw0MDAwMDA+OworCQkJ
+I2FkZHJlc3MtY2VsbHMgPSA8Mz47CisJCQkjc2l6ZS1jZWxscyA9IDwwPjsKKwkJCXN0YXR1cyA9
+ICJkaXNhYmxlZCI7CisJCX07CisKKwkJaTNjMTU6IGkzY0A4MDg4MDgwMCB7CisJCQljb21wYXRp
+YmxlID0gImF4aWFkbyxheDMwMDAtaTNjIiwgImNkbnMsaTNjLW1hc3RlciI7CisJCQlyZWcgPSA8
+MHgwMCAweDgwODgwODAwIDB4MDAgMHg0MDA+OworCQkJY2xvY2tzID0gPCZyZWZjbGsgJmNsa194
+aW4+OworCQkJY2xvY2stbmFtZXMgPSAicGNsayIsICJzeXNjbGsiOworCQkJaW50ZXJydXB0LXBh
+cmVudCA9IDwmZ2ljNTAwPjsKKwkJCWludGVycnVwdHMgPSA8R0lDX1NQSSA5MSBJUlFfVFlQRV9M
+RVZFTF9ISUdIPjsKKwkJCWkyYy1zY2wtaHogPSA8MTAwMDAwPjsKKwkJCWkzYy1zY2wtaHogPSA8
+NDAwMDAwPjsKKwkJCSNhZGRyZXNzLWNlbGxzID0gPDM+OworCQkJI3NpemUtY2VsbHMgPSA8MD47
+CisJCQlzdGF0dXMgPSAiZGlzYWJsZWQiOworCQl9OworCisJCWkzYzE2OiBpM2NAODA2MjA0MDAg
+eworCQkJY29tcGF0aWJsZSA9ICJheGlhZG8sYXgzMDAwLWkzYyIsICJjZG5zLGkzYy1tYXN0ZXIi
+OworCQkJcmVnID0gPDB4MDAgMHg4MDYyMDQwMCAweDAwIDB4NDAwPjsKKwkJCWNsb2NrcyA9IDwm
+cmVmY2xrICZjbGtfeGluPjsKKwkJCWNsb2NrLW5hbWVzID0gInBjbGsiLCAic3lzY2xrIjsKKwkJ
+CWludGVycnVwdC1wYXJlbnQgPSA8JmdpYzUwMD47CisJCQlpbnRlcnJ1cHRzID0gPEdJQ19TUEkg
+OTIgSVJRX1RZUEVfTEVWRUxfSElHSD47CisJCQlpMmMtc2NsLWh6ID0gPDEwMDAwMD47CisJCQlp
+M2Mtc2NsLWh6ID0gPDQwMDAwMD47CisJCQkjYWRkcmVzcy1jZWxscyA9IDwzPjsKKwkJCSNzaXpl
+LWNlbGxzID0gPDA+OworCQkJc3RhdHVzID0gImRpc2FibGVkIjsKKwkJfTsKKworCQl1YXJ0MDog
+c2VyaWFsQDgwNTIwMDAwIHsKKwkJCWNvbXBhdGlibGUgPSAiYXhpYWRvLGF4MzAwMC11YXJ0Iiwg
+ImNkbnMsdWFydC1yMXAxMiI7CisJCQlyZWcgPSA8MHgwMCAweDgwNTIwMDAwIDB4MDAgMHgxMDA+
+OworCQkJaW50ZXJydXB0LXBhcmVudCA9IDwmZ2ljNTAwPjsKKwkJCWludGVycnVwdHMgPSA8R0lD
+X1NQSSAxMTIgSVJRX1RZUEVfTEVWRUxfSElHSD47CisJCQljbG9jay1uYW1lcyA9ICJ1YXJ0X2Ns
+ayIsICJwY2xrIjsKKwkJCWNsb2NrcyA9IDwmcmVmY2xrICZyZWZjbGs+OworCQkJc3RhdHVzID0g
+ImRpc2FibGVkIjsKKwkJfTsKKworCQl1YXJ0MTogc2VyaWFsQDgwNWEwMDAwIHsKKwkJCWNvbXBh
+dGlibGUgPSAiYXhpYWRvLGF4MzAwMC11YXJ0IiwgImNkbnMsdWFydC1yMXAxMiI7CisJCQlyZWcg
+PSA8MHgwMCAweDgwNUEwMDAwIDB4MDAgMHgxMDA+OworCQkJaW50ZXJydXB0LXBhcmVudCA9IDwm
+Z2ljNTAwPjsKKwkJCWludGVycnVwdHMgPSA8R0lDX1NQSSAxMTMgSVJRX1RZUEVfTEVWRUxfSElH
+SD47CisJCQljbG9jay1uYW1lcyA9ICJ1YXJ0X2NsayIsICJwY2xrIjsKKwkJCWNsb2NrcyA9IDwm
+cmVmY2xrICZyZWZjbGs+OworCQkJc3RhdHVzID0gImRpc2FibGVkIjsKKwkJfTsKKworCQl1YXJ0
+Mjogc2VyaWFsQDgwNjIwMDAwIHsKKwkJCWNvbXBhdGlibGUgPSAiYXhpYWRvLGF4MzAwMC11YXJ0
+IiwgImNkbnMsdWFydC1yMXAxMiI7CisJCQlyZWcgPSA8MHgwMCAweDgwNjIwMDAwIDB4MDAgMHgx
+MDA+OworCQkJaW50ZXJydXB0LXBhcmVudCA9IDwmZ2ljNTAwPjsKKwkJCWludGVycnVwdHMgPSA8
+R0lDX1NQSSAxMTQgSVJRX1RZUEVfTEVWRUxfSElHSD47CisJCQljbG9jay1uYW1lcyA9ICJ1YXJ0
+X2NsayIsICJwY2xrIjsKKwkJCWNsb2NrcyA9IDwmcmVmY2xrICZyZWZjbGs+OworCQkJc3RhdHVz
+ID0gImRpc2FibGVkIjsKKwkJfTsKKworCQl1YXJ0Mzogc2VyaWFsQDgwNTIwODAwIHsKKwkJCWNv
+bXBhdGlibGUgPSAiYXhpYWRvLGF4MzAwMC11YXJ0IiwgImNkbnMsdWFydC1yMXAxMiI7CisJCQly
+ZWcgPSA8MHgwMCAweDgwNTIwODAwIDB4MDAgMHgxMDA+OworCQkJaW50ZXJydXB0LXBhcmVudCA9
+IDwmZ2ljNTAwPjsKKwkJCWludGVycnVwdHMgPSA8R0lDX1NQSSAxNzAgSVJRX1RZUEVfTEVWRUxf
+SElHSD47CisJCQljbG9jay1uYW1lcyA9ICJ1YXJ0X2NsayIsICJwY2xrIjsKKwkJCWNsb2NrcyA9
+IDwmcmVmY2xrICZyZWZjbGs+OworCQkJc3RhdHVzID0gImRpc2FibGVkIjsKKwkJfTsKKwl9Owor
+CisJdGltZXIgeworCQljb21wYXRpYmxlID0gImFybSxhcm12OC10aW1lciI7CisJCWludGVycnVw
+dC1wYXJlbnQgPSA8JmdpYzUwMD47CisJCWludGVycnVwdHMgPSA8R0lDX1BQSSAxMyBJUlFfVFlQ
+RV9MRVZFTF9ISUdIPiwKKwkJCSAgIDxHSUNfUFBJIDE0IElSUV9UWVBFX0xFVkVMX0hJR0g+LAor
+CQkJICAgPEdJQ19QUEkgMTEgSVJRX1RZUEVfTEVWRUxfSElHSD4sCisJCQkgICA8R0lDX1BQSSAx
+MCBJUlFfVFlQRV9MRVZFTF9ISUdIPjsKKwl9OworfTsKCi0tIAoyLjI1LjEKCgotLSAKbGludXgt
+aTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
