@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D43AC83013
-	for <linux-i3c@archiver.kernel.org>; Wed,  2 Jul 2025 06:26:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40337C7EE30
+	for <linux-i3c@archiver.kernel.org>; Wed,  2 Jul 2025 06:28:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xVDNs9BecHywSqJSyfZ5C6wAc0IUhUDNjWHbdhS054E=; b=xXW4TrQpBhzu1c
-	YBRE7rKAsObB2Ikc5/mLcD4K5ZU8fk28DV3EIvwcVvCIucOB/qSD4BXbR4fNJTBXGVFit5XPDodyr
-	BG0ggyUxOZhpZt3JGSJPo1XtjQkUX9vNceKYDFkapyvEC2SSI9cPcozBGOsLqzg23nnZQcrdKaxeu
-	+vf99oMUcCw2J07VSe6c3E6XCtY+xYFjUqCJQqOLAZ+lBnhgRNhIF/ZLViv/1l14dqpsKwsAtm+uP
-	IQiW7YbhKD/RRmFXxI+8JTlk9GOVewjyfO0JOpu3/nMxa6mIrc8hj+QgCu13+4nUhV5itNn78lkBp
-	19wJ/Fi2/NnYC9XirQ5A==;
+	List-Owner; bh=5ay2jSWviBZbxmqmtXkm2lnzB3EtKHi5nI6u5CXiFP4=; b=yOaDsJgBog2WKx
+	HqGKiZYnn4P9Cr9C3DQjYIDodnndTrviXq9WNdFhj2Iop+fxG4AS7QcIJ0g58A3wIR8vNqKi/CAB1
+	rBKNx4LNDQjZyJjHjZ6XvyBP0rMdlXjGn5EgYKf1gC5F6NavnWOdHfeFozgNhsemF7pQVBXreuVNL
+	EdEfRwfCLLjOt9YjDWBIrz2PpFI1z07cjTitBiRIOI5LsNnZILzU+9pGvbNo+IzoyWx+SpQMU06OM
+	H9SDiINMpsUBcsgCv2yyeKDl/UhIJCI68eDasv+O8eGKqP+mmDccUuKipz/Tx4n7DiNEBucjojA8K
+	3S1ruHTNn6rbX2UUyBYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWqv2-00000007Ow2-3utp;
-	Wed, 02 Jul 2025 06:26:08 +0000
+	id 1uWqxM-00000007P9w-05I0;
+	Wed, 02 Jul 2025 06:28:32 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWqpP-00000007O8e-3wsN;
-	Wed, 02 Jul 2025 06:20:21 +0000
+	id 1uWqpp-00000007OCi-2qbk;
+	Wed, 02 Jul 2025 06:20:46 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id A20D045FD0;
-	Wed,  2 Jul 2025 06:20:19 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 30D2BC4CEEE;
-	Wed,  2 Jul 2025 06:20:14 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 634F944E07;
+	Wed,  2 Jul 2025 06:20:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 99CD8C4CEEE;
+	Wed,  2 Jul 2025 06:20:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1751437219;
-	bh=FNS8tHHGDtPXNHJghX/TxVAMGrPJFdEQtCrjNVg3+g8=;
+	s=k20201202; t=1751437245;
+	bh=VLRieSIqs4BjM9SJJCKqQMY/f955o1jMxFMZny9Me74=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=B3J07Gj0IvJKShLOvqcxZA339Um8bbv2dKasivBitmSZ++gYrHhyG5x8bsGeLCXEZ
-	 smXFh7HMC/IIJYWrJ9/DnSYTw3t1mREuoj8v5FX7TlwB9CaS4PQJqQAFWJdOXIFN5/
-	 RKCnus1zDsKFrM2cda614u6OmlDSrWJ0JKJpOPIvh3sLilyuI6rorc3r5SgjBwKhR3
-	 5vKhWxC4sdCeDWjp0LsxCDsDG1TZSq0+CrBZOh13n1mKVrlfiViFXl6BvvqZVYIwkN
-	 j+kP1nMILC3NKh4omMGM9q4beUClj3anEOGotwwPgt29CLqx9HyU5joluKwQiEJY8r
-	 gpu0Z8tJhdFfQ==
-Message-ID: <c03c2251-9bf0-45b6-94d8-1ff3b5d7bcfd@kernel.org>
-Date: Wed, 2 Jul 2025 08:20:12 +0200
+	b=pzZO5UGils/MykmiDQ9C9bAw7mPtwgrdHFiRG4g1BeW3K8vNkikcugoWFXyKzLH6A
+	 tz15e2vYVjq270vvpxEvOwdTeLYob7mCWJj18OXqis82U0ww47IFiK5HC/CH7jqFEx
+	 +c/1I7ywgFTOGKvfYQl4mum8kdfbRAtWeOpJDlzJtTCcaHdneQ3J6aBr33UAowWweT
+	 u+a2Y+M4U/iC9QIXlmhmdV1VXh4ILkbCQgfPCTD4wHI17PPaYURHaFPC39WKYPgZTq
+	 lwSyVd/tC/lur2sE7Qk19/3GlCwhaNb38gmF6Os/WUXaEVrpCzYZZJjUU/91gsIlOu
+	 wP5qHp5QgEGwA==
+Message-ID: <88f3b2f5-17a2-4e59-a920-3d9a52564f14@kernel.org>
+Date: Wed, 2 Jul 2025 08:20:37 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 06/10] dt-bindings: i3c: cdns: add Axiado AX3000 I3C
- controller
+Subject: Re: [PATCH v4 08/10] arm64: dts: axiado: Add initial support for
+ AX3000 SoC and eval board
 To: Harshit Shah <hshah@axiado.com>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
  <conor+dt@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
@@ -62,7 +62,7 @@ Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  soc@lists.linux.dev, linux-serial@vger.kernel.org,
  linux-i3c@lists.infradead.org
 References: <20250701-axiado-ax3000-soc-and-evaluation-board-support-v4-0-11ba6f62bf86@axiado.com>
- <20250701-axiado-ax3000-soc-and-evaluation-board-support-v4-6-11ba6f62bf86@axiado.com>
+ <20250701-axiado-ax3000-soc-and-evaluation-board-support-v4-8-11ba6f62bf86@axiado.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -108,10 +108,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20250701-axiado-ax3000-soc-and-evaluation-board-support-v4-6-11ba6f62bf86@axiado.com>
+In-Reply-To: <20250701-axiado-ax3000-soc-and-evaluation-board-support-v4-8-11ba6f62bf86@axiado.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250701_232020_031841_8129AD01 
-X-CRM114-Status: GOOD (  14.76  )
+X-CRM114-CacheID: sfid-20250701_232045_763018_FEE7E1B0 
+X-CRM114-Status: GOOD (  11.42  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,41 +129,23 @@ Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 On 01/07/2025 22:27, Harshit Shah wrote:
-> Add binding for AX3000 I3C controller. So far, no changes known,
-> so it can fallback to default compatible.
+> Add initial device tree support for the AX3000 SoC and its evaluation
+> platform. The AX3000 is a multi-core SoC featuring 4 Cortex-A53 cores,
+> Secure Vault, AI Engine and Firewall.
+> 
+> It adds support for Cortex-A53 CPUs, timer, UARTs, and I3C
+> controllers on the AX3000 evaluation board.
 > 
 > Signed-off-by: Harshit Shah <hshah@axiado.com>
 > ---
->  Documentation/devicetree/bindings/i3c/cdns,i3c-master.yaml | 8 +++++++-
->  1 file changed, 7 insertions(+), 1 deletion(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/i3c/cdns,i3c-master.yaml b/Documentation/devicetree/bindings/i3c/cdns,i3c-master.yaml
-> index cad6d53d0e2e35ddaaad35215ec93dd182f28319..bd3f31a03376b3351276ae2cd247615ee4eff52f 100644
-> --- a/Documentation/devicetree/bindings/i3c/cdns,i3c-master.yaml
-> +++ b/Documentation/devicetree/bindings/i3c/cdns,i3c-master.yaml
-> @@ -14,7 +14,13 @@ allOf:
->  
->  properties:
->    compatible:
-> -    const: cdns,i3c-master
-> +    oneOf:
-> +      - description: Cadence I3C controller
-> +        const: cdns,i3c-master
-> +      - description: Axiado AX3000 I3C controller
+>  arch/arm64/boot/dts/Makefile              |   1 +
+>  arch/arm64/boot/dts/axiado/Makefile       |   2 +
+>  arch/arm64/boot/dts/axiado/ax3000-evk.dts |  79 +++++
+>  arch/arm64/boot/dts/axiado/ax3000.dtsi    | 520 ++++++++++++++++++++++++++++++
+>  4 files changed, 602 insertions(+)
 
-Same comments, drop descriptions,
 
-> +        items:
-> +          - const: axiado,ax3000-i3c
-
-This should be enum.
-
-> +          - const: cdns,i3c-master
->  
->    reg:
->      maxItems: 1
-> 
-
+Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
 
 Best regards,
 Krzysztof
