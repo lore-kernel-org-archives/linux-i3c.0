@@ -4,62 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A722DC83F0A
-	for <linux-i3c@archiver.kernel.org>; Wed,  2 Jul 2025 22:06:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0FF2BC83F0D
+	for <linux-i3c@archiver.kernel.org>; Wed,  2 Jul 2025 22:07:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UrTiTN4rc8XcFEmRW/gWoHl06pPVZVqLG2mC9cHHJ4Y=; b=QBJwtwQm1RTq70
-	YLy7RG1EYS/5K+sDwcRTVm0ODHVWHpi7aYJUOPu1EM0dWiwr0PU5dj575qs18VaxUzGtnPgoE3tUx
-	PcbP3bsCevo0nTy9FxHtaTdBUZ3NYHKrk8EfKE+O8RwDCL40ciE6oSh7YBhErAerP4VYDTENMXbQs
-	iHrHEeqAK1P+Q3Y7zRqi8MeBaqPqsPT7fYD8NcdQGTC1jfEblxR5Nfcn5EjzZCcHP4jUekOhVnygK
-	p2M8KSfhHRVZbbE9/1WxvLzvosNUsqxHEkbGFcb7hs0DO0vp/Fg4IYI/juM36C1lr+zp4rnU/63iY
-	oKnmf8kfbtVyMGSzhfdQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bR3iHv44TtqUdfOhZ853HxI82XMf1C1Yim9OGQxW/Ss=; b=EAwGVqooxhWR44
+	4v68qGH4uTs2IhlIF8AWoYI85TfUW1p2B6yh5q8P5m2kCwP6maQmQHDIvaUaLqkuEUWcAce+i/1SE
+	gA50wSn1p/sZzVQnSJ8pV1qzmJiQ8z0xh3voCjJM3O0TEpyA9lLS1LUD6nZ8K1WMH4w7qrR4PmadK
+	T7USeT6isujnpTOBJRLKKZstynqOVvdl+O3reWBUCTsd3xiYqmzAZn7Bj2krzzKE6VbJ+bbC3ADw1
+	z0SO5ifpBrseirtbeMgaNquDJbjEYbFuN6I7Va1DwlH95pRopxnkCIKnhjvyQE6tWoKU4czthLLcC
+	itToZo/bilhnzb3G47Bg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uX5bX-00000009fBJ-1bqs;
+	id 1uX5bX-00000009fBd-36cN;
 	Wed, 02 Jul 2025 22:06:59 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+Received: from mail-pl1-x630.google.com ([2607:f8b0:4864:20::630])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWi1g-00000006cgf-3MEM
+	id 1uWohz-00000007AEA-24fa
 	for linux-i3c@lists.infradead.org;
-	Tue, 01 Jul 2025 20:56:25 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 9BA54A533C7;
-	Tue,  1 Jul 2025 20:56:23 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 49DD7C4CEEB;
-	Tue,  1 Jul 2025 20:56:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1751403383;
-	bh=y5wwDYXuc6Vw2z4nsQx8Z6oOr8liqV38GCIpo1HQsuk=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=kbWFsTLKXGAe7ycsuFsAOLYv4wrMjHzmUmFG01DNYp/nlLcmt9NwIr7BEvSl2HEgC
-	 VO65bTmvJdPY3be1brPOWRSF6GfBXTWGPqHKyZaW/zwCUPF3lsBEaaKhEWckMaD8qv
-	 awxor2r1H6LZ+Hbp8Qc3iNk2KFfuuTyXFB2NK7drHSj2AU1U6z+4TNEUSm4xeWVnti
-	 JoaNmme0FQ4yoLnShN25h9yzcS1ymUQhPy/sfgDo4/INQsCHFYmgK/yMaibr2WizS1
-	 5pCwqTXkJ8Pv4qokQH/iuCz/4MwRX1r1qN4VIRo5ZFksgD0NjTSir+PvUKlgq8rpQk
-	 QRFy6MP+oSqRQ==
-Date: Tue, 1 Jul 2025 15:56:20 -0500
-From: Bjorn Andersson <andersson@kernel.org>
-To: Mukesh Kumar Savaliya <mukesh.savaliya@oss.qualcomm.com>
-Cc: alexandre.belloni@bootlin.com, robh@kernel.org, krzk+dt@kernel.org, 
-	conor+dt@kernel.org, jarkko.nikula@linux.intel.com, linux-i3c@lists.infradead.org, 
-	linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	Frank.Li@nxp.com, wsa+renesas@sang-engineering.com, alok.a.tiwari@oracle.com, 
-	konradybcio@kernel.org
-Subject: Re: [PATCH v6 2/3] i3c: master: Add Qualcomm I3C controller driver
-Message-ID: <h4c5oybkuxf2wmja2osm73ntpolx2ap3csskipbuyoks6xtdsi@5ihhj6ztn7mq>
-References: <20250701071852.2107800-1-mukesh.savaliya@oss.qualcomm.com>
- <20250701071852.2107800-3-mukesh.savaliya@oss.qualcomm.com>
+	Wed, 02 Jul 2025 04:04:32 +0000
+Received: by mail-pl1-x630.google.com with SMTP id d9443c01a7336-2366e5e4dbaso61947365ad.1
+        for <linux-i3c@lists.infradead.org>; Tue, 01 Jul 2025 21:04:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1751429070; x=1752033870; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=lEMe5If37CsAL6U9beslG7nLz1tz3xe07ZHEdYWOd40=;
+        b=hPexkbDo2GNUzJcr0jmtfZF8KRWz6psRcTHzOBTCLuvMueqJ4yyhFJIruTGoXXoxwP
+         FCVgeTvOo6W1J9dHKByJ20CXK9MjHQHTNzxtmB8Qu2nu6foy/D3tk2SZzfVA4BnzUL/G
+         hkv3RKhVQlHTjVtrYkI0fGeKJalc/whm4D7jt1PRYbA9PzRqfntGBsrjW/vYY3t1qTsk
+         OgOeAj1RY+wbbQnZ+0g5GDkIP8Q0AhPwKKht6NPCop9AyR4haEYbbNVbjIM+UGD843+e
+         B2J0jn+PQOTmK1YG6OSO/TGj+r3HK0zCZhwf9Dvvgjz7xpJT6qR/zZoEaoaCK0TUEVWb
+         6tyw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1751429070; x=1752033870;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=lEMe5If37CsAL6U9beslG7nLz1tz3xe07ZHEdYWOd40=;
+        b=ND4SM51pL0HIZd18BDlKBnb/Di2lv1kdiciULHguDC9hGmKnioOVRO/h0kAudI8Oy2
+         QocPlMZ9y0hcaG6YfKil0gF56a0zDWjwn5lJnfH/Wcch0VY2wwLXkAuEJp8g5nB6kYBT
+         NRab0aHAuie6cy6gKBeOgLhDMW7oqQXJfnIxWMOeScI8+98M+zl444YT/jP3Ktq0rToR
+         vFicCyHFW8Xx85Jh3FpqJITLqdf80pc9rzQB1E4OhgXEHie1NqS75SczvJztDIaxEIdW
+         izBM5EmLm8JbMYOO6r/5Z2H4Kq1cq04Pn/7MQ0o0nFjh6GmVn14cNsHL7ntT8E19WH2L
+         fsXQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUijsi0uyDkhi2mmt/97wy0ZgMlpo9jqQ1NlMlyeDdWPn7wwcLqV2RN2PmGMII3w7QpwdZ7gXfHgB4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxnyWz1kR/0djr64oX1UOdITFQFHDVneslwM0GYySsLzUwklcei
+	gYsDLnVXaYbbczXJqFToZuu4NxgjTPOu9Sc1P+RQhzPDcy1IKWr2DqIt
+X-Gm-Gg: ASbGncsgveM5JT1bj9dP5ZiWdc73lqbQXT+GtYoS3MPJ+xWhAV7kKph2S8ccoN/fiFX
+	Tc5mQPoVGcD2yMJBH7ljGAa8gzPG5fImYQqluAUN4ORBigC6Ur9u3LohqTQqx+gx6sA4wYQadEB
+	+K1A5oq78/EvXkCDt7Wp+OqzqSA4CjENezB19Y4b0UWWrMKsfezMwwh/kcgus38It89CL1NLXui
+	meUw6jvmi0V/QB9fd5+0W9DLjxjA6MFhJTjf7UhvoQl/R+nwfvqA5oD0MByw7UWXvLdT7v2OYwL
+	yUaKaVpHaukdKALGGggyLCR2FSD3UpZ9WhdPRi0YxP62AhZrJ4jtW35/xD+q7g==
+X-Google-Smtp-Source: AGHT+IFR7xqMX6iwK6ZaKGMWmfFBMbz6Jykr2RrB8cdHL5LHHsjp5yjMMSroHrZcBbvTdOSjx6VJ0A==
+X-Received: by 2002:a17:902:f642:b0:231:fd73:f8e5 with SMTP id d9443c01a7336-23c6e82a382mr15967845ad.24.1751429070049;
+        Tue, 01 Jul 2025 21:04:30 -0700 (PDT)
+Received: from archie.me ([103.124.138.155])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-23acb2e1971sm125738845ad.39.2025.07.01.21.04.29
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 01 Jul 2025 21:04:29 -0700 (PDT)
+Received: by archie.me (Postfix, from userid 1000)
+	id C75C9420A74B; Wed, 02 Jul 2025 11:04:27 +0700 (WIB)
+From: Bagas Sanjaya <bagasdotme@gmail.com>
+To: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+	Linux i3c <linux-i3c@lists.infradead.org>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
+	Bagas Sanjaya <bagasdotme@gmail.com>
+Subject: [PATCH v2] i3c: Fix i3c_device_do_priv_xfers() kernel-doc indentation
+Date: Wed,  2 Jul 2025 11:04:24 +0700
+Message-ID: <20250702040424.18577-1-bagasdotme@gmail.com>
+X-Mailer: git-send-email 2.50.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250701071852.2107800-3-mukesh.savaliya@oss.qualcomm.com>
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1697; i=bagasdotme@gmail.com; h=from:subject; bh=2zaGRg9xjy8jrN3iRp7IaHZQPQgXPbTUx2OAyUH0m7g=; b=owGbwMvMwCX2bWenZ2ig32LG02pJDBkp602LW0s9LK2n73S/dzx8t8COt5ZRct4CuzJNXHIZl EK9rn7uKGVhEONikBVTZJmUyNd0epeRyIX2tY4wc1iZQIYwcHEKwERUTzAyLOo/IeVZ8/qQ7fd+ rXIBmUuLDzEv9YlatZd7A0ObstLZAEaGnoQnhYGHJLfKWb2f9Ol6KEen5tcDASdnrUpjX8Hls/Y /MwA=
+X-Developer-Key: i=bagasdotme@gmail.com; a=openpgp; fpr=701B806FDCA5D3A58FFB8F7D7C276C64A5E44A1D
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250701_135624_972948_9BD65A17 
-X-CRM114-Status: GOOD (  22.49  )
+X-CRM114-CacheID: sfid-20250701_210431_530569_B0B7C33D 
+X-CRM114-Status: GOOD (  11.29  )
 X-Mailman-Approved-At: Wed, 02 Jul 2025 15:04:03 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,145 +103,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 01, 2025 at 12:48:51PM +0530, Mukesh Kumar Savaliya wrote:
-> Add support for the Qualcomm I3C controller driver, which implements
-> I3C master functionality as defined in the MIPI Alliance Specification
-> for I3C, Version 1.0.
-> 
-> This driver supports master role in SDR mode.
-> 
-> Unlike some other I3C master controllers, this implementation
-> does not support In-Band Interrupts (IBI) and Hot-join requests.
+Sphinx reports indentation warning on i3c_device_do_priv_xfers() return
+value list:
 
-I believe the capitalization of the last feature is "Hot-Join"
+Documentation/driver-api/i3c/device-driver-api:9: ./drivers/i3c/device.c:31: ERROR: Unexpected indentation. [docutils]
 
-It's not entirely clear from this sentence if it's the controller or the
-driver that doesn't support these features. Please update to make it
-clear.
+Format the list as bullet list to fix the warning.
 
-[..]
-> diff --git a/drivers/i3c/master/Makefile b/drivers/i3c/master/Makefile
-> index 3e97960160bc..0e3ad9d96424 100644
-> --- a/drivers/i3c/master/Makefile
-> +++ b/drivers/i3c/master/Makefile
-> @@ -1,5 +1,6 @@
->  # SPDX-License-Identifier: GPL-2.0-only
->  obj-$(CONFIG_CDNS_I3C_MASTER)		+= i3c-master-cdns.o
-> +obj-$(CONFIG_I3C_QCOM_GENI)		+= i3c-qcom-geni.o
->  obj-$(CONFIG_DW_I3C_MASTER)		+= dw-i3c-master.o
->  obj-$(CONFIG_AST2600_I3C_MASTER)	+= ast2600-i3c-master.o
->  obj-$(CONFIG_SVC_I3C_MASTER)		+= svc-i3c-master.o
-> diff --git a/drivers/i3c/master/i3c-qcom-geni.c b/drivers/i3c/master/i3c-qcom-geni.c
-[..]
-> +
-> +struct geni_i3c_i2c_dev_data {
-> +	u32 ibi_keeping;  /* Plan to save IBI information, keep as dummy for now */
+Signed-off-by: Bagas Sanjaya <bagasdotme@gmail.com>
+---
+Changes since v1 [1]:
 
-Commit message says that QUP doesn't support IBI, so what is this?
+  * Follow kernel-doc style on return list
+  * Patch subject massage (Frank)
+  * Drop Fixes: tag (Frank)
 
-Also, why "keep as dummy"?
+[1]: https://lore.kernel.org/r/20250626042201.44594-1-bagasdotme@gmail.com/
 
-> +};
-> +
-[..]
-> +static void qcom_geni_i3c_conf(struct geni_i3c_dev *gi3c, enum i3c_bus_phase bus_phase)
-> +{
-> +	const struct geni_i3c_clk_settings *clk_idx = gi3c->clk_cfg;
-> +	unsigned long freq;
-> +	u32 val, dfs_idx;
-> +	int ret;
-> +
-> +	if (bus_phase == OPEN_DRAIN_MODE)
-> +		clk_idx = gi3c->clk_od_cfg;
-> +
-> +	ret = geni_se_clk_freq_match(&gi3c->se, clk_idx->clk_src_freq,
-> +				     &dfs_idx, &freq, false);
-> +	if (ret)
-> +		dfs_idx = 0;
-> +
-> +	writel_relaxed(dfs_idx, gi3c->se.base + SE_GENI_CLK_SEL);
-> +
-> +	val = FIELD_PREP(CLK_DIV_VALUE_MASK, clk_idx->clk_div);
-> +	val |= SER_CLK_EN;
-> +	writel_relaxed(val, gi3c->se.base + GENI_SER_M_CLK_CFG);
-> +
-> +	val = FIELD_PREP(I2C_SCL_HIGH_COUNTER_MASK, clk_idx->i2c_t_high_cnt);
-> +	val |= FIELD_PREP(I2C_SCL_LOW_COUNTER_MASK, clk_idx->i2c_t_low_cnt);
-> +	val |= FIELD_PREP(I2C_SCL_CYCLE_COUNTER_MASK, clk_idx->i2c_t_cycle_cnt);
-> +	writel_relaxed(val, gi3c->se.base + SE_I2C_SCL_COUNTERS);
-> +
-> +	writel_relaxed(clk_idx->i3c_t_cycle_cnt, gi3c->se.base + SE_I3C_SCL_CYCLE);
-> +	writel_relaxed(clk_idx->i3c_t_high_cnt, gi3c->se.base + SE_I3C_SCL_HIGH);
-> +
-> +	writel_relaxed(M_IBI_IRQ_IGNORE, gi3c->se.base + SE_GENI_HW_IRQ_IGNORE_ON_ACTIVE);
-> +
-> +	val = M_IBI_IRQ_PARAM_STOP_STALL | M_IBI_IRQ_PARAM_7E;
-> +	writel_relaxed(val, gi3c->se.base + SE_GENI_HW_IRQ_CMD_PARAM_0);
-> +
-> +	writel_relaxed(M_IBI_IRQ_EN, gi3c->se.base + SE_GENI_HW_IRQ_EN);
+ drivers/i3c/device.c | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
 
-Don't you want a non-relaxed write here, to clarify that the ordering of
-this write and the previous are significant?
+diff --git a/drivers/i3c/device.c b/drivers/i3c/device.c
+index e80e4875691467..2396545763ff85 100644
+--- a/drivers/i3c/device.c
++++ b/drivers/i3c/device.c
+@@ -26,11 +26,12 @@
+  *
+  * This function can sleep and thus cannot be called in atomic context.
+  *
+- * Return: 0 in case of success, a negative error core otherwise.
+- *	   -EAGAIN: controller lost address arbitration. Target
+- *		    (IBI, HJ or controller role request) win the bus. Client
+- *		    driver needs to resend the 'xfers' some time later.
+- *		    See I3C spec ver 1.1.1 09-Jun-2021. Section: 5.1.2.2.3.
++ * Return:
++ * * 0 in case of success, a negative error core otherwise.
++ * * -EAGAIN: controller lost address arbitration. Target (IBI, HJ or
++ *   controller role request) win the bus. Client driver needs to resend the
++ *   'xfers' some time later. See I3C spec ver 1.1.1 09-Jun-2021. Section:
++ *   5.1.2.2.3.
+  */
+ int i3c_device_do_priv_xfers(struct i3c_device *dev,
+ 			     struct i3c_priv_xfer *xfers,
+-- 
+An old man doll... just what I always wanted! - Clara
 
-
-As above, the commit message says the controller doesn't do IBI, so why
-are we enabling IBI interrupts? (Just guessing based on the IRQ names)
-
-> +}
-> +
-[..]
-> +static int geni_i3c_master_attach_i2c_dev(struct i2c_dev_desc *dev)
-> +{
-> +	struct geni_i3c_i2c_dev_data *data;
-> +
-> +	data = kzalloc(sizeof(*data), GFP_KERNEL);
-> +	if (!data)
-> +		return -ENOMEM;
-> +
-> +	i2c_dev_set_master_data(dev, data);
-
-As far as I can tell, the master_data is private to the controller
-driver, and the only thing I can find you do with it to free it again on
-detach.
-
-Am I missing something or can these 4 optional functions be removed?
-
-> +
-> +	return 0;
-> +}
-> +
-> +static void geni_i3c_master_detach_i2c_dev(struct i2c_dev_desc *dev)
-> +{
-> +	struct geni_i3c_i2c_dev_data *data = i2c_dev_get_master_data(dev);
-> +
-> +	i2c_dev_set_master_data(dev, NULL);
-> +	kfree(data);
-> +}
-> +
-> +static int geni_i3c_master_attach_i3c_dev(struct i3c_dev_desc *dev)
-> +{
-> +	struct geni_i3c_i2c_dev_data *data;
-> +
-> +	data = kzalloc(sizeof(*data), GFP_KERNEL);
-> +	if (!data)
-> +		return -ENOMEM;
-> +
-> +	i3c_dev_set_master_data(dev, data);
-> +
-> +	return 0;
-> +}
-> +
-> +static void geni_i3c_master_detach_i3c_dev(struct i3c_dev_desc *dev)
-> +{
-> +	struct geni_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
-> +
-> +	i3c_dev_set_master_data(dev, NULL);
-> +	kfree(data);
-> +}
-> +
-
-Regards,
-Bjorn
 
 -- 
 linux-i3c mailing list
