@@ -4,114 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40337C7EE30
-	for <linux-i3c@archiver.kernel.org>; Wed,  2 Jul 2025 06:28:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA7DDC83F05
+	for <linux-i3c@archiver.kernel.org>; Wed,  2 Jul 2025 12:02:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5ay2jSWviBZbxmqmtXkm2lnzB3EtKHi5nI6u5CXiFP4=; b=yOaDsJgBog2WKx
-	HqGKiZYnn4P9Cr9C3DQjYIDodnndTrviXq9WNdFhj2Iop+fxG4AS7QcIJ0g58A3wIR8vNqKi/CAB1
-	rBKNx4LNDQjZyJjHjZ6XvyBP0rMdlXjGn5EgYKf1gC5F6NavnWOdHfeFozgNhsemF7pQVBXreuVNL
-	EdEfRwfCLLjOt9YjDWBIrz2PpFI1z07cjTitBiRIOI5LsNnZILzU+9pGvbNo+IzoyWx+SpQMU06OM
-	H9SDiINMpsUBcsgCv2yyeKDl/UhIJCI68eDasv+O8eGKqP+mmDccUuKipz/Tx4n7DiNEBucjojA8K
-	3S1ruHTNn6rbX2UUyBYg==;
+	List-Owner; bh=4I+6xRwmnnf6nuFz4kI30zpt/e4+/VRNrL3RPQTaf1Y=; b=zoxSVQMKung8Wi
+	XnAfSXDLO+W8vObYZ++pcK8EcUmwuG4/uxHrLOuQhzjbYsOjMaR+jkXjrvn7RB5TOoMatlP/Lp487
+	RWRj/ShSKFRHfB6NtM+bEYBlVU8jkQqcfizIEhP9gb8OXAJWXxMyWaqpAsdqp9y+DqmaWhKtqT+B8
+	aa5Cch3jWmCOPSoXvDqTup0TKVvV9a72S/nRAsqYYbcD2u0dTE4dLyJK8TU+c+mOssR3S6ovDMJu6
+	8lIDiebek0w7RNuqMCUb4fLhWj9dasdJytllFPnsJLWhnBlyFbUbMgfb4ZYGF+N3ZUcuB1obV0qaN
+	BaEdkRbTXwM7XJ14ExBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWqxM-00000007P9w-05I0;
-	Wed, 02 Jul 2025 06:28:32 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uWwAH-00000008EIo-2G9n;
+	Wed, 02 Jul 2025 12:02:13 +0000
+Received: from mail-ej1-x62e.google.com ([2a00:1450:4864:20::62e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWqpp-00000007OCi-2qbk;
-	Wed, 02 Jul 2025 06:20:46 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 634F944E07;
-	Wed,  2 Jul 2025 06:20:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 99CD8C4CEEE;
-	Wed,  2 Jul 2025 06:20:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1751437245;
-	bh=VLRieSIqs4BjM9SJJCKqQMY/f955o1jMxFMZny9Me74=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=pzZO5UGils/MykmiDQ9C9bAw7mPtwgrdHFiRG4g1BeW3K8vNkikcugoWFXyKzLH6A
-	 tz15e2vYVjq270vvpxEvOwdTeLYob7mCWJj18OXqis82U0ww47IFiK5HC/CH7jqFEx
-	 +c/1I7ywgFTOGKvfYQl4mum8kdfbRAtWeOpJDlzJtTCcaHdneQ3J6aBr33UAowWweT
-	 u+a2Y+M4U/iC9QIXlmhmdV1VXh4ILkbCQgfPCTD4wHI17PPaYURHaFPC39WKYPgZTq
-	 lwSyVd/tC/lur2sE7Qk19/3GlCwhaNb38gmF6Os/WUXaEVrpCzYZZJjUU/91gsIlOu
-	 wP5qHp5QgEGwA==
-Message-ID: <88f3b2f5-17a2-4e59-a920-3d9a52564f14@kernel.org>
-Date: Wed, 2 Jul 2025 08:20:37 +0200
+	id 1uWvAD-000000082Pk-48SH
+	for linux-i3c@lists.infradead.org;
+	Wed, 02 Jul 2025 10:58:07 +0000
+Received: by mail-ej1-x62e.google.com with SMTP id a640c23a62f3a-ae223591067so722387666b.3
+        for <linux-i3c@lists.infradead.org>; Wed, 02 Jul 2025 03:58:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1751453884; x=1752058684; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=4UQDvStLCCqdjbM2QKt6gHnnOIKDEa8/C2rjjg0SswI=;
+        b=d4ccq52wThtyMDNvCkrQoCCNQLGh3uGnmm7aLgwe9jTcpg20z7NqMIi62NpVovzbr7
+         Wh7TqGOYC5GM7wmiBegViqHLzcgL6NZ2Outjbn668qoxGF1VZvPsKff3ZVT4xd/A3VIm
+         3SBJHsOX16W+i7mbrIaRKlRIM5zUu0oM0nZMeJEyFQFHOiGTXSU1zvj/t5p0FXiyww43
+         CEAE46/ETPp825U50OasDftm+dUXpFbqpc8axPbnwl6RL33wwVYjmpAEPZqPxSt/voNK
+         WmJiKFgvHamdFY98mwuVid8Bn7N7pzX3vAFiOr04zcPRP4GFUjb0BwBEd5UQWPp7JjwI
+         ecrw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1751453884; x=1752058684;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=4UQDvStLCCqdjbM2QKt6gHnnOIKDEa8/C2rjjg0SswI=;
+        b=lfKmdKn8mOkPfi6dBlp3IDRi0bMdCKKKcVp2VAUiIrgP8QwNBb9ln2vUxkiYkdcS60
+         OK6lHUI0PMdcMb6Ouku9MCkQyEksmS/1piLIVKQzbJHKYtZT9pmC3Yo1HzUsmZViFV4q
+         QiHRy6pglgmdtvw9v5+9cjxjC0dunXI812RXrKlolVQsmHTT8vHkOUNUQlBM3F21b1dD
+         RZjRhomCrSQgDdqp2I0eDxSUK52T7tB3qznBBXO9wp91SVRpNvNd7vpRTZb6feK+Q7Rb
+         8DIuD4zIGCfURedi6ey8f8lJKXF9kklbfaCEEJUctYyfFw/PpDqmy1eRGTeWB9XDqUhX
+         aChQ==
+X-Forwarded-Encrypted: i=1; AJvYcCWiy1NDTeK6z7yypmJYQuYXliE/XFmg5nWru47Ts3Pzd/9nwY82ZsFBQBTl61O25WxzEhjSFXnsnc0=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxQFsShI8LsvI3K7x6UhPYq0CA4A5JrZ8CQ4rThY5lB7z8PEUEa
+	Ks5YzL5KC2dl4re4IPvu9Tf/AxJWhY5I10Llnll5VxOixiOqD2ua3M+s
+X-Gm-Gg: ASbGnctq1r2pGXY8d+jLLqREhM0V9xRf3ljXi+U0cR9NUFSFsEDbjgDJA3PhTP1EjMy
+	VwrFph4VnAVdERfthvevHo4Yre68DVRISrrC0ZkxnFbBlM+I1iMZ5In8jfR9zvWem1ERxP4JTWI
+	k3t7P5ecYxdil8MA+UP3jR6GVVcsfJJFsiClmTS66T4lAnXW3bsjtgvPLfWI5g3Yww8YHXvLylk
+	uTDNC5c8ZflxjEY+STBfy6oz6n/ErAUvu9WBB2KvUiWNzEgI/9hq3vsKFEfk2l9ltBpU4zapKeH
+	49kShs9Q2vFwFnKIhpqG5jLZ4UVi3j8+CaVdGafIrqx/jxabkaFKOahqbBEpY4r1Hc5+Nwu+ajs
+	qFoNM6vE=
+X-Google-Smtp-Source: AGHT+IEsoB7YBUau4TzIFD9Pd++QxJk8jVRKzBz/JBIA6OBn/guMweMpUf9qL70n0g01Wfz1g1iRgA==
+X-Received: by 2002:a17:907:6095:b0:ae0:a0d0:eca0 with SMTP id a640c23a62f3a-ae3c2c4bf31mr216834366b.14.1751453883569;
+        Wed, 02 Jul 2025 03:58:03 -0700 (PDT)
+Received: from HYB-DlYm71t3hSl.ad.analog.com ([137.71.226.91])
+        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-ae3c7606786sm79736466b.60.2025.07.02.03.58.02
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 02 Jul 2025 03:58:03 -0700 (PDT)
+Date: Wed, 2 Jul 2025 12:58:00 +0200
+From: Jorge Marques <gastmaier@gmail.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Jorge Marques <jorge.marques@analog.com>, 
+	Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v4 1/2] dt-bindings: i3c: Add adi-i3c-master
+Message-ID: <v2ybju75bpjdqxfkell47nlkeyal36ylmnqt2yvpncxnmp2irb@pygx56jsyxkr>
+References: <20250626-adi-i3c-master-v4-0-3846a1f66d5e@analog.com>
+ <20250626-adi-i3c-master-v4-1-3846a1f66d5e@analog.com>
+ <20250627-steadfast-ferret-of-expertise-5c8ff2@krzk-bin>
+ <tl5fckhrivaqfyzwyb2o2a7gykpigwend7z2nduqgbbej3hqbs@vxxtsadhtdmt>
+ <41782ded-908b-46ef-8f75-4d2565476b7c@kernel.org>
+ <cfi6rzhco2ba6pcbk57l7tblimuks5jnpgaly7nbedbrpyhtma@u46if22kurwk>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 08/10] arm64: dts: axiado: Add initial support for
- AX3000 SoC and eval board
-To: Harshit Shah <hshah@axiado.com>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
- Bartosz Golaszewski <brgl@bgdev.pl>, Arnd Bergmann <arnd@arndb.de>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Jan Kotas <jank@cadence.com>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Jiri Slaby <jirislaby@kernel.org>,
- Michal Simek <michal.simek@amd.com>, =?UTF-8?Q?Przemys=C5=82aw_Gaj?=
- <pgaj@cadence.com>, Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Frank Li <Frank.Li@nxp.com>, Boris Brezillon <bbrezillon@kernel.org>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-gpio@vger.kernel.org,
- soc@lists.linux.dev, linux-serial@vger.kernel.org,
- linux-i3c@lists.infradead.org
-References: <20250701-axiado-ax3000-soc-and-evaluation-board-support-v4-0-11ba6f62bf86@axiado.com>
- <20250701-axiado-ax3000-soc-and-evaluation-board-support-v4-8-11ba6f62bf86@axiado.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <20250701-axiado-ax3000-soc-and-evaluation-board-support-v4-8-11ba6f62bf86@axiado.com>
+Content-Disposition: inline
+In-Reply-To: <cfi6rzhco2ba6pcbk57l7tblimuks5jnpgaly7nbedbrpyhtma@u46if22kurwk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250701_232045_763018_FEE7E1B0 
-X-CRM114-Status: GOOD (  11.42  )
+X-CRM114-CacheID: sfid-20250702_035806_031174_F4E28CF6 
+X-CRM114-Status: GOOD (  29.79  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -128,27 +105,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 01/07/2025 22:27, Harshit Shah wrote:
-> Add initial device tree support for the AX3000 SoC and its evaluation
-> platform. The AX3000 is a multi-core SoC featuring 4 Cortex-A53 cores,
-> Secure Vault, AI Engine and Firewall.
+On Fri, Jun 27, 2025 at 06:02:26PM +0200, Jorge Marques wrote:
+> On Fri, Jun 27, 2025 at 04:49:19PM +0200, Krzysztof Kozlowski wrote:
+> > On 27/06/2025 16:38, Jorge Marques wrote:
+> > > On Fri, Jun 27, 2025 at 08:56:55AM +0200, Krzysztof Kozlowski wrote:
+> > >> On Thu, Jun 26, 2025 at 12:07:36PM +0200, Jorge Marques wrote:
+> > >>> Add bindings doc for ADI I3C Controller IP core, a FPGA synthesizable IP
+> > >>> core that implements the MIPI I3C Basic controller specification.
+> > >>
+> > >> How did you resolve my last comment? I don't see any explanation -
+> > >> neither here nor in the binding description. Binding description is
+> > >> actually better place, I think now.
+> > >>
+> > >> Best regards,
+> > >> Krzysztof
+> > >>
+> > > 
+> > > Hi Krzysztof,
+> > > 
+> > > I forgot to condense out discussion on v4.
+> > > What about this binding description:
+> > > 
+> > >   description: |
+> > >     FPGA-based I3C controller designed to interface with I3C and I2C
+> > >     peripherals, implementing a subset of the I3C-basic specification.
+> > >     The IP core is tested on arm, microblaze, and arm64 architectures.
+> > >     It takes one or two clocks, axi and i3c. If only axi is provided,
+> > >     then there is no clock signal to the i3c input clock pin and axi
+> > 
+> > This is obvious from the schema, drop.
+> Ack.
 > 
-> It adds support for Cortex-A53 CPUs, timer, UARTs, and I3C
-> controllers on the AX3000 evaluation board.
+> > 
+> > >     clock drives the whole IP. The compatible is suffixed by 1.00.a
+> > >     foreseeing future controllers by Analog Devices Inc. and breaking
+> > >     changes.
+> > 
+> > I don't understand that. How are you breaking any changes? And how
+> > 1.00.a predicts future? I don't think this reflects previous discussion.
+> > Why you were asked to go with v1.00.a?
+> The -1.00.a suffix came from this discussion:
+>   
+>   https://lore.kernel.org/linux-i3c/ildi2pup2zkyv4stuknkrjysex3yzsbrrsrwbgcc4xgvdhwrdd@7qh4y6mutgy2/
 > 
-> Signed-off-by: Harshit Shah <hshah@axiado.com>
-> ---
->  arch/arm64/boot/dts/Makefile              |   1 +
->  arch/arm64/boot/dts/axiado/Makefile       |   2 +
->  arch/arm64/boot/dts/axiado/ax3000-evk.dts |  79 +++++
->  arch/arm64/boot/dts/axiado/ax3000.dtsi    | 520 ++++++++++++++++++++++++++++++
->  4 files changed, 602 insertions(+)
+> Other adi bindings use this suffix. I personally wouldn't add any suffix
+> unless told otherwise, as I expressed on the thread. Should I drop it?
+> or suffix it with something else?
+> > 
+> > Best regards,
+> > Krzysztof
+> 
+> Best regards,
+> Jorge
 
+Hi Krzysztof and Conor,
 
-Reviewed-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+I went after the reason of the historically -1.00.a suffix and
+discovered that they came into existence due to AMD Xilinx auto
+generation devicetree tool SDTGen
+https://github.com/Xilinx/system-device-tree-xlnx
+that would automatically suffix with the IP version, defaulting to 1.00.a,
+and for a seamless experience, the were copied over to the dt-bindings.
+
+The adi,axi-pwmgen dt-binding went more creative and suffixed with
+-2.00.a, while never enforcing Vivado to yield the devicetree with such
+value (Major version is asserted in the driver through reg access, the
+current core version is v2.1.1)
+
+Testing on my side (AMD Xilinx Vivado 2024.2), it seems Vivado now
+defaults to 1.0, so the previous bindings from the other IPs are not
+accurate anymore, either, (axi-pwmgen auto gens
+`compatible = "xlnx,axi-pwm-gen-1.0";` (`xlnx` instead of `adi`, also)).
+
+For fun, the current Vivado version thinks the devicetree node for the
+i3c master should be as follows:
+
+  i3c_host_interface: i3c_controller_host_interface@44a00000 {
+          compatible = "xlnx,i3c-controller-host-interface-1.0";
+          reg = <0x44a00000 0x10000>;
+          clocks = <&clkc 15>;
+          clock-names = "s_axi_aclk";
+  };
+
+Let me know if we can drop the suffix, or replace with something else.
+The current register defined core version is v0.1.0.
 
 Best regards,
-Krzysztof
+Jorge
 
 -- 
 linux-i3c mailing list
