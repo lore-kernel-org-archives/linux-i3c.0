@@ -4,96 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27B9CC83F17
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA9B1C83F36
 	for <linux-i3c@archiver.kernel.org>; Tue, 15 Jul 2025 07:43:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dC3n7t1QdvcKnggbR4D19qlK1LxtojQ0BIjY2YiPQPQ=; b=NtNzAonqhgWeYA
-	SBtuBIhhUbIRzBZFzvQrWwnfj0h8i3AMPWjvWA+/pODTUlP+7sWz/Q/N1PHdRa0I+ZniA0AwuPwvO
-	SzTvhwSgoxu86rUsjPAyuq2IO9P5YvkVZ9zeiMgewahYe8bgWH21rfWp+IwU5y4PrHPhTq7M/Em2/
-	Qrij9VCKCXDu9Ru34c0RBZFFjQnLuC366dL7SH5osouVg5rsB8FpfEa3PqwBdMRUUKoNOlVu//Hid
-	ncCdiAIP9w6k2TniRt9o5ursABLouS4n7tb9Ir4cJbaRwkehNAO0DA4QJMsRtbm1ffWb+pHxNuCl6
-	jtLEzgo4EtrOWbYHtxdA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=BvcOipENZHdD4CRhFFtk6z5VNovqBbIjlOXDf/BD5Dc=; b=NWUtz9qmsuTIDBeAzDS0gxr+9t
+	v56zUn7msjbtjKwQqlFhKnuMFQwOqdpVXOX4JYZpW/HSh7R1eXO/ln8qHV3fp5MRRaP2jIuxIDYCW
+	tdTOnyML7ffokvz+SQvJa4Ubrgsm0ESf3Hlyeffm0cyXf1Sl9KYFvo5ByZABfCjl5PmeNmYh9LLDb
+	qzavink8xaO4yRZdHYvYHL6KVGa1aFyd6p95KLucBJPNQTOPCg8CqketAYsHAmK2lOhW8GnOOhKqi
+	8vepkJS24VDesakRGP3YKzIRKLBC0RAeeEoKEHlRVJqgya+ncqKuShEJ7TqZ+QXG+7EZlFsypTxp8
+	LTOsVgOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubaJa-00000004Np5-3BEn;
-	Tue, 15 Jul 2025 07:43:02 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1ubaJb-00000004NqC-2DHh;
+	Tue, 15 Jul 2025 07:43:03 +0000
+Received: from mail-pl1-x636.google.com ([2607:f8b0:4864:20::636])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uXbFa-0000000Dd3y-3bdU
-	for linux-i3c@bombadil.infradead.org;
-	Fri, 04 Jul 2025 07:54:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=JUzp2f/EHiEDYLiw6S6LSE0ZZ2Miw2Kjytv8gNLbs20=; b=qOHpx5SJFdQy7LOkwBl6gs9A6N
-	ivpjvZbiJZvJh0fE4BqAHKM1wCqM0ieJ+C24gLwkIAyshZnkaeX6WeA3iCA7fRIAM/DNwoiiSRtGI
-	3SmGrxSez616oj8nsPDSuIxm4e+xflnfb1O29KXqy4EqnULSdmB4Q/hfkB35t5Ss5pPyJYdC6M9Nl
-	wQ3PgTXBEuZb8aqtxlRKWLYc89NXeG3kN421pZOCUy1Dqvb37qbjrAiyFd7v6dp89Tt3OKOvSOutm
-	LbmltqrhOVdaWFosy4DFScFfr9QrzHxXOHBdvMXJnQ3dBZD6w1PPuCxcAWoOmlr8HTE7RZAeGWTDU
-	hrt2D5pQ==;
-Received: from mgamail.intel.com ([198.175.65.9])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uXbFX-00000007pdW-1lNt
+	id 1ubRxN-00000003RF8-0Mvk
 	for linux-i3c@lists.infradead.org;
-	Fri, 04 Jul 2025 07:54:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1751615663; x=1783151663;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=q2znRzlNkp1VX01C6C6SWFWs8cikijZSrtuwfc3vXfo=;
-  b=IkJzONL/4mLoRXhhGhdOV0rzBoGUVKW+uWfMy3xi4bd8ms0GkzgoSBM1
-   mgsoQncyGIA08UuWASIAzj0Paz6mM2FRR15CjSxmmclSqFGIiSt/oNTCq
-   SzlHtTQhD+U/+RydLcxk1TyghxPviPpuqLhcsHyEQfTgV46dL/jjh9GGs
-   uHrgdjq35QAM4WGGQ/gVjNppbX2nAiRCuiZtFJG7A9ci6mMvOCJ5N6R5w
-   5tv7BVXJi5BCSpaoFLWRjOMEsdqPhfqYW1ej61o/LwkRv1Cr8lfxT5xy9
-   kvwLBqFWVSI4NSHLrwEM+Dn48cRV/Ap8Gmrmt0oFOFaLoidcPPw9Q+KPc
-   w==;
-X-CSE-ConnectionGUID: MhieoBSoT2eCNt1H8q+3DQ==
-X-CSE-MsgGUID: STcRzW1JRQ2arETGv1GKvA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11483"; a="76494585"
-X-IronPort-AV: E=Sophos;i="6.16,286,1744095600"; 
-   d="scan'208";a="76494585"
-Received: from orviesa003.jf.intel.com ([10.64.159.143])
-  by orvoesa101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Jul 2025 00:54:22 -0700
-X-CSE-ConnectionGUID: IUennC47Tk2lCs9hia+Stw==
-X-CSE-MsgGUID: DVXgBXKdTmiKM3rSFP38Iw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.16,286,1744095600"; 
-   d="scan'208";a="158924252"
-Received: from jkrzyszt-mobl2.ger.corp.intel.com (HELO svinhufvud.fi.intel.com) ([10.245.244.244])
-  by ORVIESA003-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Jul 2025 00:54:19 -0700
-Received: from svinhufvud.lan (localhost [IPv6:::1])
-	by svinhufvud.fi.intel.com (Postfix) with ESMTP id 90C7344424;
-	Fri,  4 Jul 2025 10:54:17 +0300 (EEST)
-Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Mon, 14 Jul 2025 22:47:34 +0000
+Received: by mail-pl1-x636.google.com with SMTP id d9443c01a7336-23636167afeso43569935ad.3
+        for <linux-i3c@lists.infradead.org>; Mon, 14 Jul 2025 15:47:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1752533252; x=1753138052; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=c9CpT0STFiAFhDC+XiDIJVAH7qMjwEzOnnwaeMJVhJI=;
+        b=CDO6RbSrVwh2BCgTLAb1yI6/n5IoJvxPBfm59Vt004+dW/0pdVOv9c4ernURF3EDz3
+         4PiJmoToUDKgC+zKmiZrsSD3I0rtOHsW+IfHrZnE8QvSNRaV0nXinn2lV6bWlANYV5Ml
+         biHECYXm0dLemm1ze/6mJkwMI/S91AVRUoK0kx8JtpGRSNxNZv7Ir3IqErjlQNvQ+/UL
+         ZNBBhaWtZqw3xK8sD+lQjxyYtq6rWzXX+pxeiddDyTgeeK/WCqb1X+XiIPA32Y8MZ7f+
+         /6ohYbC0MLi2I+3ySkQk4Uy36BHmO+84/U5k4sJdBIh1bqXMTdQktE7PjQtUGuEti071
+         GNdg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1752533252; x=1753138052;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=c9CpT0STFiAFhDC+XiDIJVAH7qMjwEzOnnwaeMJVhJI=;
+        b=mrU84ahCJ/dh1nfGetc7cRvxu+w4uvld6MVcCPyqdqhDiBZtmIAXDjNDs4YleJDyAy
+         Ta6ra1y11wUhHaYFwX+gQqo3HAy3iPc/uZKgLVwMLPvGJAFi4m6RJqU5BJaZ8JzL/1R0
+         FrjJTSUBhAqvv3kFFa4FrQUZHQGJECqyoSAdfCnRLuFy42xMctPQlWNsqPjh3VsV/S56
+         xfMNrtZzixmLiNDzD1j+8B9LNlKU4uDJO8liiz+dsUfaDAz0OUofWivzukxuaMeBFoiC
+         xR8517VsFG3YGVyryWcsPbTZCIoKyjT7qxidjCFWqKAVEbyUwzMkc1G2VkEutzWYDEyv
+         1Bew==
+X-Forwarded-Encrypted: i=1; AJvYcCUzEPyHxVEuSzAfzlvXpanxkp2wnnrY+rpDMsUaMZnIgrDfOv+JbHUq7PgBpVetn6g898MC1YvUloQ=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzU/JkayZ8Dy2hEWGVT3TcErqd0/COWwCleEMzQ3r70Zui8aPAk
+	WuG8QeChXtvqyy7VnUZpit4EPRxKoiz6WKBYbfRiFiuYGajH6a+vVl1kTHbu5w==
+X-Gm-Gg: ASbGnctu2S7+6ikyARmlrpWnPRK4VsdutU64yP2+5uV2SZ8IAb7PPkN/8zFm8ShFrzX
+	6KuCVzBYs8P0o2HrTsYMwlbMY8Bdy+hhz6rjgKk5HWQ1k7Z3qYK7990LXqUvR4XgSCnM6fDV3mM
+	ywyBrKfQh8DPmQorEadIbkRUSqbCnY3tE548YwfM6mnl3msSfMT9y3pGkBp8Saa1yzfPUUItn+n
+	6TkuvGIigFXIo96zL8pDIaIGbyi1ULDwyin9mkEYmrPlnUdh7+qpl3UyN9p9yulTdbzQc2vyWqU
+	VgaOfPVsBdpl9JZDHbSTTSn+yhBEiiFBLZH1Jg9WtZ7N2uDF+8l0MZEjxPOJ0yPV8n6xPArD7Mn
+	+6RZhjWG9CwsW6zR8fMLonQ==
+X-Google-Smtp-Source: AGHT+IF1QFrqAeVptFxp5k5tGy6a7yZnAQZgsCGC+pj4sAAOV0mvgCE75ZzBFg7tGpV7WycgbpuUPA==
+X-Received: by 2002:a17:902:fc4b:b0:234:b735:dca8 with SMTP id d9443c01a7336-23dee1888c5mr228225185ad.6.1752533251308;
+        Mon, 14 Jul 2025 15:47:31 -0700 (PDT)
+Received: from archie.me ([103.124.138.155])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-23de4285ed6sm98304745ad.25.2025.07.14.15.47.29
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 14 Jul 2025 15:47:29 -0700 (PDT)
+Received: by archie.me (Postfix, from userid 1000)
+	id 93B8D4206884; Tue, 15 Jul 2025 05:47:27 +0700 (WIB)
+Date: Tue, 15 Jul 2025 05:47:27 +0700
+From: Bagas Sanjaya <bagasdotme@gmail.com>
+To: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+	Linux i3c <linux-i3c@lists.infradead.org>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Frank Li <Frank.Li@nxp.com>,
-	Aniket <aniketmaurya@google.com>,
-	Jarkko Nikula <jarkko.nikula@linux.intel.com>,
-	Shyam Sundar S K <Shyam-sundar.S-k@amd.com>,
-	Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Sakari Ailus <sakari.ailus@linux.intel.com>,
-	Billy Tsai <billy_tsai@aspeedtech.com>
-Cc: linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH 25/80] i3c: dw: Remove redundant pm_runtime_mark_last_busy() calls
-Date: Fri,  4 Jul 2025 10:54:17 +0300
-Message-Id: <20250704075417.3218742-1-sakari.ailus@linux.intel.com>
-X-Mailer: git-send-email 2.39.5
-In-Reply-To: <20250704075225.3212486-1-sakari.ailus@linux.intel.com>
-References: <20250704075225.3212486-1-sakari.ailus@linux.intel.com>
+	Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH v2] i3c: Fix i3c_device_do_priv_xfers() kernel-doc
+ indentation
+Message-ID: <aHWI_wkGzKShpvhV@archie.me>
+References: <20250702040424.18577-1-bagasdotme@gmail.com>
 MIME-Version: 1.0
+In-Reply-To: <20250702040424.18577-1-bagasdotme@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250704_085423_995740_15DCFABE 
-X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-CacheID: sfid-20250714_154733_126464_34667E60 
+X-CRM114-Status: UNSURE (   9.35  )
 X-CRM114-Notice: Please train this message.
 X-Mailman-Approved-At: Tue, 15 Jul 2025 00:42:50 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
@@ -107,104 +99,57 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2048979760465257466=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-pm_runtime_put_autosuspend(), pm_runtime_put_sync_autosuspend(),
-pm_runtime_autosuspend() and pm_request_autosuspend() now include a call
-to pm_runtime_mark_last_busy(). Remove the now-reduntant explicit call to
-pm_runtime_mark_last_busy().
 
-Signed-off-by: Sakari Ailus <sakari.ailus@linux.intel.com>
----
-The cover letter of the set can be found here
-<URL:https://lore.kernel.org/linux-pm/20250704075225.3212486-1-sakari.ailus@linux.intel.com>.
+--===============2048979760465257466==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="6+xiQCy5g/20dcQa"
+Content-Disposition: inline
 
-In brief, this patch depends on PM runtime patches adding marking the last
-busy timestamp in autosuspend related functions. The patches are here, on
-rc2:
 
-        git://git.kernel.org/pub/scm/linux/kernel/git/rafael/linux-pm.git \
-                pm-runtime-6.17-rc1
+--6+xiQCy5g/20dcQa
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
- drivers/i3c/master/dw-i3c-master.c | 8 --------
- 1 file changed, 8 deletions(-)
+On Wed, Jul 02, 2025 at 11:04:24AM +0700, Bagas Sanjaya wrote:
+> Sphinx reports indentation warning on i3c_device_do_priv_xfers() return
+> value list:
+>=20
+> Documentation/driver-api/i3c/device-driver-api:9: ./drivers/i3c/device.c:=
+31: ERROR: Unexpected indentation. [docutils]
+>=20
+> Format the list as bullet list to fix the warning.
 
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index 611c22b72c15..37bee9c21736 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -699,7 +699,6 @@ static int dw_i3c_master_bus_init(struct i3c_master_controller *m)
- 	dw_i3c_master_enable(master);
- 
- rpm_out:
--	pm_runtime_mark_last_busy(master->dev);
- 	pm_runtime_put_autosuspend(master->dev);
- 	return ret;
- }
-@@ -829,7 +828,6 @@ static int dw_i3c_master_send_ccc_cmd(struct i3c_master_controller *m,
- 	else
- 		ret = dw_i3c_ccc_set(master, ccc);
- 
--	pm_runtime_mark_last_busy(master->dev);
- 	pm_runtime_put_autosuspend(master->dev);
- 	return ret;
- }
-@@ -912,7 +910,6 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
- 	dw_i3c_master_free_xfer(xfer);
- 
- rpm_out:
--	pm_runtime_mark_last_busy(master->dev);
- 	pm_runtime_put_autosuspend(master->dev);
- 	return ret;
- }
-@@ -998,7 +995,6 @@ static int dw_i3c_master_priv_xfers(struct i3c_dev_desc *dev,
- 	ret = xfer->ret;
- 	dw_i3c_master_free_xfer(xfer);
- 
--	pm_runtime_mark_last_busy(master->dev);
- 	pm_runtime_put_autosuspend(master->dev);
- 	return ret;
- }
-@@ -1148,7 +1144,6 @@ static int dw_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
- 	ret = xfer->ret;
- 	dw_i3c_master_free_xfer(xfer);
- 
--	pm_runtime_mark_last_busy(master->dev);
- 	pm_runtime_put_autosuspend(master->dev);
- 	return ret;
- }
-@@ -1316,7 +1311,6 @@ static int dw_i3c_master_disable_hotjoin(struct i3c_master_controller *m)
- 	writel(readl(master->regs + DEVICE_CTRL) | DEV_CTRL_HOT_JOIN_NACK,
- 	       master->regs + DEVICE_CTRL);
- 
--	pm_runtime_mark_last_busy(master->dev);
- 	pm_runtime_put_autosuspend(master->dev);
- 	return 0;
- }
-@@ -1342,7 +1336,6 @@ static int dw_i3c_master_enable_ibi(struct i3c_dev_desc *dev)
- 
- 	if (rc) {
- 		dw_i3c_master_set_sir_enabled(master, dev, data->index, false);
--		pm_runtime_mark_last_busy(master->dev);
- 		pm_runtime_put_autosuspend(master->dev);
- 	}
- 
-@@ -1362,7 +1355,6 @@ static int dw_i3c_master_disable_ibi(struct i3c_dev_desc *dev)
- 
- 	dw_i3c_master_set_sir_enabled(master, dev, data->index, false);
- 
--	pm_runtime_mark_last_busy(master->dev);
- 	pm_runtime_put_autosuspend(master->dev);
- 	return 0;
- }
--- 
-2.39.5
+review ping
 
+--6+xiQCy5g/20dcQa
+Content-Type: application/pgp-signature; name=signature.asc
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQSSYQ6Cy7oyFNCHrUH2uYlJVVFOowUCaHWI+gAKCRD2uYlJVVFO
+o8k4AP9Xw9u3OioKxAPJ0mSNhnv7gvEWEO+gbnUxuu4fqVPnZwD/Sf+pvejdCXGz
+M14IYlW8wQsPimdQae50dn51Zw2omwk=
+=xLk8
+-----END PGP SIGNATURE-----
+
+--6+xiQCy5g/20dcQa--
+
+
+--===============2048979760465257466==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
+
+--===============2048979760465257466==--
+
