@@ -4,65 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A97CC83F27
-	for <linux-i3c@archiver.kernel.org>; Mon, 14 Jul 2025 09:14:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40BF5C83F1A
+	for <linux-i3c@archiver.kernel.org>; Mon, 14 Jul 2025 12:21:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VoKsOA0jde8Dr/ZJDwf/FbfYxJLXSNtJ8qPYLHM9P2k=; b=C+4r6wWVlXt63C
-	2j+ojRq/ocwwgPWak3zfIRPC31+1AWBu0ub1ncfRb4GpKoTYf3sBiNsDIbTNR3rC/H8/PTkE04NUt
-	qGXln550SyyCou6c58Hkv7HcJtO6wFMyEg44IRcRex2Q+C3X9SuhEE3/XiE/YETb6EffNHQjPV/cQ
-	RU0fMSKYYcLOZb1Y7cRe8lVtDi4LptqJiOSNhhWaVbfpoVEBLsZqjFQdLKyD+doQ7HHKOyFz4qLcX
-	N3tc9jdnuFK1wQPbL9ay4AOEsqbrSY1sPh0v8UPRDeM62nym7jpG7gKEpnxOw5owpCo+rqs1aMhYr
-	S9Acrwkvrnuh32Zh2LmA==;
+	List-Owner; bh=x38H62CLVorhztMrcNDyVzBlAXRmF3eeBoKntOdQCvc=; b=oZawBAslQToifO
+	h0BSCfhgTovkv6irl2JVzfgUSJNivNvbe5/xxveQvvpIWDzM24BqBJ8D0Mf3RMKgM6zUvvPm1qLUN
+	ikVAEne0oQRibWPUNQvAdEyHtwxit/+3A4HNb8uuDpul971diJWaJy56lKHsrLhPDLiyQG11k051e
+	YWXx5bH1M/uBNKAQ4HZkNKR8rG47H+CL3+cy1EDc2/pKFY2dhxDWqAZli8QaUtg9EDbLEukLCr2Fi
+	RG8HHeSKjahgS8MEEUeNBdg/i/SWQtgFl9x7fU0AZF+vG/Hj3bBprCiCydfUYPl1p7KTT0kGHZAPk
+	9Q6/ZANhu4DGUdzdy8Ag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubFG3-00000001kAl-3OpQ;
-	Mon, 14 Jul 2025 09:14:00 +0000
-Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
+	id 1ubIBe-000000029E7-04HW;
+	Mon, 14 Jul 2025 12:21:38 +0000
+Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubFEe-00000001jq2-1pm5
+	id 1ubFs2-00000001qCd-01oF
 	for linux-i3c@lists.infradead.org;
-	Mon, 14 Jul 2025 09:12:35 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	sang-engineering.com; h=from:to:cc:subject:date:message-id
-	:in-reply-to:references:mime-version:content-transfer-encoding;
-	 s=k1; bh=esXAB2cOtDMH34luHWCrW4lvEBe9lROlGd1VH1ivoSY=; b=Q5tRa3
-	uzmEj/XnmxMrmUH3Wr9SCyXuQK5AOOE5KVR6aq7AUcD3ttJO/VXEKLXNi7oDmgXB
-	qrksgOY1TvoHx0samKU07UQdbYMz17GumjXCCdYLO//D+dN7DSb5k62t1SLCTZtp
-	qFZIkuQ/Q3MdKHlQbPuY6S+rTs1t/+Awlgul+3KWbQj4jsmgXV6bxnVRhIXLgMn6
-	0OYmNEpsnRroJ3P41bZvbuiYVje3diROusYBrCjoB2nAgJZ53K1SHOlE6c8x+UnK
-	Liy/U1INYfPFjPlgemlXdnSI9l/R2RBqnIuFL8kb6vVYtjIypgMcLd9ic8lgTv87
-	XLey7tTcvLyHXXxQ==
-Received: (qmail 2399915 invoked from network); 14 Jul 2025 11:12:26 +0200
-Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 14 Jul 2025 11:12:26 +0200
-X-UD-Smtp-Session: l3s3148p1@Qj/xDuA58N4gAwDPXxNjAMIr4MhSGEU6
-From: Wolfram Sang <wsa+renesas@sang-engineering.com>
-To: linux-renesas-soc@vger.kernel.org
-Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>,
-	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
-	Kees Cook <kees@kernel.org>,
-	"Gustavo A. R. Silva" <gustavoars@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>,
-	linux-i3c@lists.infradead.org,
-	linux-hardening@vger.kernel.org
-Subject: [PATCH 2/2] i3c: add driver for Renesas I3C controller
-Date: Mon, 14 Jul 2025 11:12:09 +0200
-Message-ID: <20250714091211.20497-3-wsa+renesas@sang-engineering.com>
-X-Mailer: git-send-email 2.47.2
-In-Reply-To: <20250714091211.20497-1-wsa+renesas@sang-engineering.com>
-References: <20250714091211.20497-1-wsa+renesas@sang-engineering.com>
+	Mon, 14 Jul 2025 09:53:15 +0000
+Received: by mail-ed1-x52e.google.com with SMTP id 4fb4d7f45d1cf-60768f080d8so7819711a12.1
+        for <linux-i3c@lists.infradead.org>; Mon, 14 Jul 2025 02:53:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1752486792; x=1753091592; darn=lists.infradead.org;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+        bh=RNGssqJWYojAWdADXLp90CGwUVtfIpXi8sIRAMW1UaI=;
+        b=Jpwvmb3RCaafg2R1O8iFEBs7p6WWIPeh8abrIOlkveYj7ASZKTC/Xhz8s5+9gMDOUN
+         M7IJNMZsbzPa8KNdLaXasTxgwYopjw+AqQxY6OkNWtMWVr/XUPt2UyIoibRTVVqxXZmA
+         TliPBA5be/X+Fmx4Zj/k4Q3eSopYgcADt8Mvgbk6SbGK2GvKZ0LilX3DOZMXt497boOg
+         VZrW8/6i9eBHC1G3WdpVQGk1Ggo4gJQk5/UB0LRk/Lfvr1IT8HSpsuQB4DGKLGClTrWe
+         WbWfgwgM98DYilMJL5U8OSyzw7GaLsbbM5AQeoX43JITAc4/E2YKvPnb9ogCtjx1FXmm
+         uBiw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1752486792; x=1753091592;
+        h=in-reply-to:content-disposition:mime-version:references:message-id
+         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=RNGssqJWYojAWdADXLp90CGwUVtfIpXi8sIRAMW1UaI=;
+        b=JyFEP/wYtaeojbo+SZyKKblMu+PeG6rodLKcuJLXCrZL44HNx7JTnhqFTiD9kmBllY
+         1WZrMFnwY3XkVe6DRV3FSf8QDAFBWcY5/T2Oea1jqnCel00JmtldlmjV3pBQ3hfquyw6
+         Qxup4IxbFHNRJuHNjIlajpVoG4UvRIvZtn/G21NE2W6zkLHBRQVYkIJj+RoMT0qDR8iH
+         h+VzYgVAPtYJEuXGc/BZBuk8OBudSER9zxv4e8zDdtkuuMSufDdBZZYPWFjSsw8brCeU
+         BkzkbQHly/SS7HbAJ+R8IuelG+EhgiI1HFPGmdBx+byPCKmo1nbyYsSyGcwWnzaWuEle
+         eH5w==
+X-Forwarded-Encrypted: i=1; AJvYcCWmtsX0gkiec+u6LXXcCkzoQL58mkHWWgQHPs5FzCkTz3oy5evvUMvYXogA/moL5najAQgHXM3kcik=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy70fdCOohJKFYpZcLmqvNr1pAHZUmpG/23GiXim23ncDwI3iIK
+	ccGmBP7+8seNpPzFmkXLUuXrzNWGsRkbNoph//bBmUJNPmADFif7NotV
+X-Gm-Gg: ASbGncuPWK1YnRuKj2sGnt3p2wbihB4XNL/+1B1kZAdaw7VrRXFqZzFUq+3ueW/4Khr
+	xcfS//7efKBo5cLkc2mUOzzcAuVR2oTCenqFk7RerslmjnmNx1jtaZrx+42iNcLBIXZwdOAZJ8N
+	/AvvLvGev51A9BHLtmrHZBqiN91SxkryKYVBwv81358DCw4W5dFbQUGYHk5YJKCz3t08w9xIcR8
+	IVwzanRAhtgsS2o+NaTdsPt/FWY0AE3APxfCrHfXhHNjgNcNHMsXl+SIVVCdZX8ek8SdwK3ckk4
+	ry8rBLiQqK7BF4JzxPmHpOyFLDncoSmhDiQpHZAQIrjOtfCbxn6QenIGpHPRroW7lcrSP2n3i9t
+	jwaRPtSChaNEnMcEPZyAxtwzljlzaRhveZKVsyQR4Dg==
+X-Google-Smtp-Source: AGHT+IFEDpClpXlaWllZOCERoY3lhQ4yIfuXZ4g3QSxGrrVJ8qXDMwIx0cCzdpXoL8/NvPGkH2XWPg==
+X-Received: by 2002:a05:6402:210f:b0:607:f431:33fb with SMTP id 4fb4d7f45d1cf-611e761054cmr10942567a12.3.1752486791373;
+        Mon, 14 Jul 2025 02:53:11 -0700 (PDT)
+Received: from HYB-DlYm71t3hSl.ad.analog.com ([137.71.226.91])
+        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-611c95232d8sm5823042a12.18.2025.07.14.02.53.09
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 14 Jul 2025 02:53:10 -0700 (PDT)
+Date: Mon, 14 Jul 2025 11:53:07 +0200
+From: Jorge Marques <gastmaier@gmail.com>
+To: Conor Dooley <conor@kernel.org>
+Cc: Krzysztof Kozlowski <krzk@kernel.org>, 
+	Devid Lechner <dlechner@baylibre.com>, Adrian Costina <adrian.costina@analog.com>, 
+	Jorge Marques <jorge.marques@analog.com>, Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v4 1/2] dt-bindings: i3c: Add adi-i3c-master
+Message-ID: <tttx7nc4ribxmt73gu6n4r5rr2velypsublc2dlhdn6ltarthb@mllvjkkr5zn5>
+References: <20250626-adi-i3c-master-v4-0-3846a1f66d5e@analog.com>
+ <20250626-adi-i3c-master-v4-1-3846a1f66d5e@analog.com>
+ <20250627-steadfast-ferret-of-expertise-5c8ff2@krzk-bin>
+ <tl5fckhrivaqfyzwyb2o2a7gykpigwend7z2nduqgbbej3hqbs@vxxtsadhtdmt>
+ <41782ded-908b-46ef-8f75-4d2565476b7c@kernel.org>
+ <cfi6rzhco2ba6pcbk57l7tblimuks5jnpgaly7nbedbrpyhtma@u46if22kurwk>
+ <v2ybju75bpjdqxfkell47nlkeyal36ylmnqt2yvpncxnmp2irb@pygx56jsyxkr>
+ <20250702-armchair-favorite-c734b53444e2@spud>
+ <pbaxwzj3gmjwkqbh32wfcac4zqjyg4sfkgit3hs6v372cxf3wa@kp5qg6m2tqlm>
+ <20250711-eradicate-vendetta-ea6d44737e0c@spud>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250711-eradicate-vendetta-ea6d44737e0c@spud>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250714_021233_042747_E6521121 
-X-CRM114-Status: GOOD (  25.04  )
+X-CRM114-CacheID: sfid-20250714_025314_047419_3ECA040B 
+X-CRM114-Status: GOOD (  64.12  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,1533 +111,169 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-This adds a basic driver for the I3C IP found in various SoCs like
-RZ/G3S and G3E. Missing features to be added incrementally are IBI,
-HotJoin and target support. Other than that, this driver has been tested
-with I3C pure busses (2 targets) and mixed busses (2 I3C + various I2C
-targets). DAA and reading/writing to the temperature sensors worked
-reliably at different speeds.
+On Fri, Jul 11, 2025 at 05:28:57PM +0100, Conor Dooley wrote:
+> On Fri, Jul 11, 2025 at 10:14:45AM +0200, Jorge Marques wrote:
+> > On Wed, Jul 02, 2025 at 12:38:41PM +0100, Conor Dooley wrote:
+> > > On Wed, Jul 02, 2025 at 12:58:00PM +0200, Jorge Marques wrote:
+> > > > On Fri, Jun 27, 2025 at 06:02:26PM +0200, Jorge Marques wrote:
+> > > > > On Fri, Jun 27, 2025 at 04:49:19PM +0200, Krzysztof Kozlowski wrote:
+> > > > > > On 27/06/2025 16:38, Jorge Marques wrote:
+> > > > > > > On Fri, Jun 27, 2025 at 08:56:55AM +0200, Krzysztof Kozlowski wrote:
+> > > > > > >> On Thu, Jun 26, 2025 at 12:07:36PM +0200, Jorge Marques wrote:
+> > > > > > >>> Add bindings doc for ADI I3C Controller IP core, a FPGA synthesizable IP
+> > > > > > >>> core that implements the MIPI I3C Basic controller specification.
+> > > > > > >>
+> > > > > > >> How did you resolve my last comment? I don't see any explanation -
+> > > > > > >> neither here nor in the binding description. Binding description is
+> > > > > > >> actually better place, I think now.
+> > > > > > >>
+> > > > > > >> Best regards,
+> > > > > > >> Krzysztof
+> > > > > > >>
+> > > > > > > 
+> > > > > > > Hi Krzysztof,
+> > > > > > > 
+> > > > > > > I forgot to condense out discussion on v4.
+> > > > > > > What about this binding description:
+> > > > > > > 
+> > > > > > >   description: |
+> > > > > > >     FPGA-based I3C controller designed to interface with I3C and I2C
+> > > > > > >     peripherals, implementing a subset of the I3C-basic specification.
+> > > > > > >     The IP core is tested on arm, microblaze, and arm64 architectures.
+> > > > > > >     It takes one or two clocks, axi and i3c. If only axi is provided,
+> > > > > > >     then there is no clock signal to the i3c input clock pin and axi
+> > > > > > 
+> > > > > > This is obvious from the schema, drop.
+> > > > > Ack.
+> > > > > 
+> > > > > > 
+> > > > > > >     clock drives the whole IP. The compatible is suffixed by 1.00.a
+> > > > > > >     foreseeing future controllers by Analog Devices Inc. and breaking
+> > > > > > >     changes.
+> > > > > > 
+> > > > > > I don't understand that. How are you breaking any changes? And how
+> > > > > > 1.00.a predicts future? I don't think this reflects previous discussion.
+> > > > > > Why you were asked to go with v1.00.a?
+> > > > > The -1.00.a suffix came from this discussion:
+> > > > >   
+> > > > >   https://lore.kernel.org/linux-i3c/ildi2pup2zkyv4stuknkrjysex3yzsbrrsrwbgcc4xgvdhwrdd@7qh4y6mutgy2/
+> > > > > 
+> > > > > Other adi bindings use this suffix. I personally wouldn't add any suffix
+> > > > > unless told otherwise, as I expressed on the thread. Should I drop it?
+> > > > > or suffix it with something else?
+> > > 
+> > > > 
+> > > > I went after the reason of the historically -1.00.a suffix and
+> > > > discovered that they came into existence due to AMD Xilinx auto
+> > > > generation devicetree tool SDTGen
+> > > > https://github.com/Xilinx/system-device-tree-xlnx
+> > > > that would automatically suffix with the IP version, defaulting to 1.00.a,
+> > > > and for a seamless experience, the were copied over to the dt-bindings.
+> > > > 
+> > > > The adi,axi-pwmgen dt-binding went more creative and suffixed with
+> > > > -2.00.a, while never enforcing Vivado to yield the devicetree with such
+> > > > value (Major version is asserted in the driver through reg access, the
+> > > > current core version is v2.1.1)
+> > > > 
+> > > > Testing on my side (AMD Xilinx Vivado 2024.2), it seems Vivado now
+> > > > defaults to 1.0, so the previous bindings from the other IPs are not
+> > > > accurate anymore, either, (axi-pwmgen auto gens
+> > > > `compatible = "xlnx,axi-pwm-gen-1.0";` (`xlnx` instead of `adi`, also)).
+> > > > 
+> > > > For fun, the current Vivado version thinks the devicetree node for the
+> > > > i3c master should be as follows:
+> > > > 
+> > > >   i3c_host_interface: i3c_controller_host_interface@44a00000 {
+> > > >           compatible = "xlnx,i3c-controller-host-interface-1.0";
+> > > >           reg = <0x44a00000 0x10000>;
+> > > >           clocks = <&clkc 15>;
+> > > >           clock-names = "s_axi_aclk";
+> > > >   };
+> > > > 
+> > > > Let me know if we can drop the suffix, or replace with something else.
+> > > > The current register defined core version is v0.1.0.
+> > > 
+> > > Please, as I requested in the original thread, add versioning
+> > > information. I'm clearly not asking you to make up some garbage version
+> > > number, or to add "1.00a" if that's not an accurate version (and never
+> > > did AFAICT). If 0.1.0 is the version of the IP core, I'd like you to use
+> > > that.
+> > > 
+> > > If other ADI IP cores are using crap version numbers that came from
+> > > some Xilinx tooling that don't represent the actual versions of the IPs,
+> > > that's probably something you should mention to your colleagues that
+> > > maintain those bindings.
+> > 
+> > 
+> > My proposal (1) for the Analog Devices Inc. open source IP Cores is to
+> > migrate to semantic versioning.
+> > (1) https://github.com/analogdevicesinc/hdl/pull/1831
+> > 
+> > The dt-binding must end with the major value, with the first supported
+> > version starting at 1. Therefore, the binding will be:
+> > 
+> > * adi,i3c-master-1
+> > 
+> > At driver level, the debug version value is `v%u.%u.%u`, and the driver
+> > shall check the minor version value for handling feature changes. While
+> > the major bump is restricted for breaking changes, which, in some cases,
+> > also generates a new dt-binding.
+> > 
+> > For backwards compatibility, existing ADI IP Cores that prints `v%u.%u.%c`
+> > should print `v%u.%u.%u` instead, but keep their current value (e.g.,
+> > `a`->`97`), until the minor is bumped, when the patch version resets to 0.
+> > 
+> > Rework across register accessed IPs is being handled here:
+> > https://github.com/analogdevicesinc/hdl/pull/1829
+> > There are more than 50 IPs with register access, so I need to be cautious.
+> > 
+> > What is your take on this? Does it resolve the bindings concern?
+> 
+> I think it is a good idea to establish version numbers that actually
+> have a meaning, rather than using something garbage. I think you should
+> probably put the "v" into the number in the compatible - 1.00 or 1.00.a
+> is fairly clearly a version number but "-1" is less clear.
+>
+Hi Conor,
 
-Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
----
+The format that is currently winning my internal discussion is
+`adi,<ip-name>-v<major>`.
+And the next patch will be submitted as `adi,i3c-master-v1`.
 
-Changes since RFC:
-* updated #defines for registers (add extra indentation for bit
-    definitions, use FIELD_* helpers)
-* switched to new I3C FIFO access helpers
-* removed unnecessary second filling of the FIFO before transfer
-* added INCBA handling again, so broadcast address is properly prepended
-    to messages again
-* updated the list of supported CCCs
-* add 'unsupported CCC' error of the internal state machine
-* added renesas_i3c_wait_xfer() helper to ensure proper usage of
-    wait_for_completion_timeout()
-* refactored 'i3c_reg_update' to match other 'i3c_reg*' helper arguments
-* renamed some functions to have the "renesas_" prefix
-* use scope_guard consistently when handling the xferqueue
-* do not activate interrupts we don't handle anymore
-* removed left over code which used rx_isr during DAA. This is not
-    needed anymore
-* handled a race condition between rx_isr and resp_isr by expicitly
-    checking in resp_isr if rx_isr has run already
-* less output in probe()
-* corrected some variable types
+> Also "the binding must end with the major value" is a bit of an odd
+> requirement I think. The sort of situations that may cause different
+> compatibles to be introduced are not likely to be restricted to majors.
 
+sifive-blocks-ip-versioning.txt uses
+"sifive,<ip-name><integer-version-number>", While the xilinx.txt uses
+the last version that uses the same interface. Both implicitly hide away
+features (minor) and fixes (patches). What I am enforcing is that, if
+the interface changes, the major field must be bumped. In most cases,
+everything else is minor matching at the driver level, and if exceptions
+occur, add to the commit message the justification and that's it.
 
- MAINTAINERS                      |    7 +
- drivers/i3c/master/Kconfig       |   10 +
- drivers/i3c/master/Makefile      |    1 +
- drivers/i3c/master/renesas-i3c.c | 1433 ++++++++++++++++++++++++++++++
- 4 files changed, 1451 insertions(+)
- create mode 100644 drivers/i3c/master/renesas-i3c.c
+> That may be something like properties only valid for some versions, or
+> at worst a bug that requires checking the compatible (even if these
+> are much rarer when there's a version register, they're still possible).
+>
+> IDM what number you opt for in the end either, it could well just be the
+> lowest number where the current register offset/format for the version
+> number register exists.
+>
+> It's a bit hypocritical of me to ask this, since I have not yet written
+> one for the Microchip stuff - but I think you should document whatever
+> numbering you end up on, like in xilinx.txt and
+> sifive-blocks-ip-versioning.txt, so that we can point people at it.
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 60bba48f5479..6c841aa52113 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -11462,6 +11462,13 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/i3c/cdns,i3c-master.yaml
- F:	drivers/i3c/master/i3c-master-cdns.c
- 
-+I3C DRIVER FOR RENESAS
-+M:	Wolfram Sang <wsa+renesas@sang-engineering.com>
-+M:	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-+S:	Supported
-+F:	Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
-+F:	drivers/i3c/master/renesas-i3c.c
-+
- I3C DRIVER FOR SYNOPSYS DESIGNWARE
- S:	Orphan
- F:	Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
-diff --git a/drivers/i3c/master/Kconfig b/drivers/i3c/master/Kconfig
-index 7b30db3253af..13df2944f2ec 100644
---- a/drivers/i3c/master/Kconfig
-+++ b/drivers/i3c/master/Kconfig
-@@ -64,3 +64,13 @@ config MIPI_I3C_HCI_PCI
- 
- 	  This driver can also be built as a module. If so, the module will be
- 	  called mipi-i3c-hci-pci.
-+
-+config RENESAS_I3C
-+	tristate "Renesas I3C controller driver"
-+	depends on HAS_IOMEM
-+	depends on ARCH_RENESAS || COMPILE_TEST
-+	help
-+	  Support the Renesas I3C controller as found in some RZ variants.
-+
-+	  This driver can also be built as a module. If so, the module will be
-+	  called renesas-i3c.
-diff --git a/drivers/i3c/master/Makefile b/drivers/i3c/master/Makefile
-index 3e97960160bc..aac74f3e3851 100644
---- a/drivers/i3c/master/Makefile
-+++ b/drivers/i3c/master/Makefile
-@@ -4,3 +4,4 @@ obj-$(CONFIG_DW_I3C_MASTER)		+= dw-i3c-master.o
- obj-$(CONFIG_AST2600_I3C_MASTER)	+= ast2600-i3c-master.o
- obj-$(CONFIG_SVC_I3C_MASTER)		+= svc-i3c-master.o
- obj-$(CONFIG_MIPI_I3C_HCI)		+= mipi-i3c-hci/
-+obj-$(CONFIG_RENESAS_I3C)		+= renesas-i3c.o
-diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
-new file mode 100644
-index 000000000000..2625462144c4
---- /dev/null
-+++ b/drivers/i3c/master/renesas-i3c.c
-@@ -0,0 +1,1433 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Renesas I3C Controller driver
-+ * Copyright (C) 2023-25 Renesas Electronics Corp.
-+ *
-+ * TODO: IBI support, HotJoin support, Target support
-+ */
-+
-+#include <linux/bitfield.h>
-+#include <linux/bitops.h>
-+#include <linux/clk.h>
-+#include <linux/completion.h>
-+#include <linux/err.h>
-+#include <linux/errno.h>
-+#include <linux/i2c.h>
-+#include <linux/i3c/master.h>
-+#include <linux/interrupt.h>
-+#include <linux/ioport.h>
-+#include <linux/iopoll.h>
-+#include <linux/list.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/platform_device.h>
-+#include <linux/reset.h>
-+#include <linux/slab.h>
-+#include "../internals.h"
-+
-+#define PRTS			0x00
-+#define  PRTS_PRTMD		BIT(0)
-+
-+#define BCTL			0x14
-+#define  BCTL_INCBA		BIT(0)
-+#define  BCTL_HJACKCTL		BIT(8)
-+#define  BCTL_ABT		BIT(29)
-+#define  BCTL_BUSE		BIT(31)
-+
-+#define MSDVAD			0x18
-+#define  MSDVAD_MDYAD(x)	FIELD_PREP(GENMASK(21, 16), x)
-+#define  MSDVAD_MDYADV		BIT(31)
-+
-+#define RSTCTL			0x20
-+#define  RSTCTL_RI3CRST		BIT(0)
-+#define  RSTCTL_INTLRST		BIT(16)
-+
-+#define INST			0x30
-+
-+#define IBINCTL			0x58
-+#define  IBINCTL_NRHJCTL	BIT(0)
-+#define  IBINCTL_NRMRCTL	BIT(1)
-+#define  IBINCTL_NRSIRCTL	BIT(3)
-+
-+#define SVCTL			0x64
-+
-+#define REFCKCTL		0x70
-+#define  REFCKCTL_IREFCKS(x)	FIELD_PREP(GENMASK(2, 0), x)
-+
-+#define STDBR			0x74
-+#define  STDBR_SBRLO(cond, x)	FIELD_PREP(GENMASK(7, 0), (x) >> (cond))
-+#define  STDBR_SBRHO(cond, x)	FIELD_PREP(GENMASK(15, 8), (x) >> (cond))
-+#define  STDBR_SBRLP(x)		FIELD_PREP(GENMASK(21, 16), x)
-+#define  STDBR_SBRHP(x)		FIELD_PREP(GENMASK(29, 24), x)
-+#define  STDBR_DSBRPO		BIT(31)
-+
-+#define EXTBR			0x78
-+#define  EXTBR_EBRLO(x)		FIELD_PREP(GENMASK(7, 0), x)
-+#define  EXTBR_EBRHO(x)		FIELD_PREP(GENMASK(15, 8), x)
-+#define  EXTBR_EBRLP(x)		FIELD_PREP(GENMASK(21, 16), x)
-+#define  EXTBR_EBRHP(x)		FIELD_PREP(GENMASK(29, 24), x)
-+
-+#define BFRECDT			0x7c
-+#define  BFRECDT_FRECYC(x)	FIELD_PREP(GENMASK(8, 0), x)
-+
-+#define BAVLCDT			0x80
-+#define  BAVLCDT_AVLCYC(x)	FIELD_PREP(GENMASK(8, 0), x)
-+
-+#define BIDLCDT			0x84
-+#define  BIDLCDT_IDLCYC(x)	FIELD_PREP(GENMASK(17, 0), x)
-+
-+#define ACKCTL			0xa0
-+#define  ACKCTL_ACKT		BIT(1)
-+#define  ACKCTL_ACKTWP		BIT(2)
-+
-+#define SCSTRCTL		0xa4
-+#define  SCSTRCTL_ACKTWE	BIT(0)
-+#define  SCSTRCTL_RWE		BIT(1)
-+
-+#define SCSTLCTL		0xb0
-+
-+#define CNDCTL			0x140
-+#define  CNDCTL_STCND		BIT(0)
-+#define  CNDCTL_SRCND		BIT(1)
-+#define  CNDCTL_SPCND		BIT(2)
-+
-+#define NCMDQP			0x150 /* Normal Command Queue */
-+#define  NCMDQP_CMD_ATTR(x)	FIELD_PREP(GENMASK(2, 0), x)
-+#define  NCMDQP_IMMED_XFER	0x01
-+#define  NCMDQP_ADDR_ASSGN	0x02
-+#define  NCMDQP_TID(x)		FIELD_PREP(GENMASK(6, 3), x)
-+#define  NCMDQP_CMD(x)		FIELD_PREP(GENMASK(14, 7), x)
-+#define  NCMDQP_CP		BIT(15)
-+#define  NCMDQP_DEV_INDEX(x)	FIELD_PREP(GENMASK(20, 16), x)
-+#define  NCMDQP_BYTE_CNT(x)	FIELD_PREP(GENMASK(25, 23), x)
-+#define  NCMDQP_DEV_COUNT(x)	FIELD_PREP(GENMASK(29, 26), x)
-+#define  NCMDQP_MODE(x)		FIELD_PREP(GENMASK(28, 26), x)
-+#define  NCMDQP_RNW(x)		FIELD_PREP(GENMASK(29, 29), x)
-+#define  NCMDQP_ROC		BIT(30)
-+#define  NCMDQP_TOC		BIT(31)
-+#define  NCMDQP_DATA_LENGTH(x)	FIELD_PREP(GENMASK(31, 16), x)
-+
-+#define NRSPQP			0x154 /* Normal Respone Queue */
-+#define  NRSPQP_NO_ERROR			0
-+#define  NRSPQP_ERROR_CRC		1
-+#define  NRSPQP_ERROR_PARITY		2
-+#define  NRSPQP_ERROR_FRAME		3
-+#define  NRSPQP_ERROR_IBA_NACK		4
-+#define  NRSPQP_ERROR_ADDRESS_NACK	5
-+#define  NRSPQP_ERROR_OVER_UNDER_FLOW	6
-+#define  NRSPQP_ERROR_TRANSF_ABORT	8
-+#define  NRSPQP_ERROR_I2C_W_NACK_ERR	9
-+#define  NRSPQP_ERROR_UNSUPPORTED	10
-+#define  NRSPQP_DATA_LEN(x)	FIELD_GET(GENMASK(15, 0), x)
-+#define  NRSPQP_ERR_STATUS(x)	FIELD_GET(GENMASK(31, 28), x)
-+
-+#define NTDTBP0			0x158 /* Normal Transfer Data Buffer */
-+#define  NTDTBP0_DEPTH		16
-+
-+#define NQTHCTL			0x190
-+#define  NQTHCTL_CMDQTH(x)	FIELD_PREP(GENMASK(1, 0), x)
-+#define  NQTHCTL_IBIDSSZ(x)	FIELD_PREP(GENMASK(23, 16), x)
-+
-+#define NTBTHCTL0		0x194
-+
-+#define NRQTHCTL		0x1c0
-+
-+#define BST			0x1d0
-+#define  BST_STCNDDF		BIT(0)
-+#define  BST_SPCNDDF		BIT(1)
-+#define  BST_NACKDF		BIT(4)
-+#define  BST_TENDF		BIT(8)
-+
-+#define BSTE			0x1d4
-+#define  BSTE_STCNDDE		BIT(0)
-+#define  BSTE_SPCNDDE		BIT(1)
-+#define  BSTE_NACKDE		BIT(4)
-+#define  BSTE_TENDE		BIT(8)
-+#define  BSTE_ALE		BIT(16)
-+#define  BSTE_TODE		BIT(20)
-+#define  BSTE_WUCNDDE		BIT(24)
-+#define  BSTE_ALL_FLAG		(BSTE_STCNDDE | BSTE_SPCNDDE |\
-+				BSTE_NACKDE | BSTE_TENDE |\
-+				BSTE_ALE | BSTE_TODE | BSTE_WUCNDDE)
-+
-+#define BIE			0x1d8
-+#define  BIE_STCNDDIE		BIT(0)
-+#define  BIE_SPCNDDIE		BIT(1)
-+#define  BIE_NACKDIE		BIT(4)
-+#define  BIE_TENDIE		BIT(8)
-+
-+#define NTST			0x1e0
-+#define  NTST_TDBEF0		BIT(0)
-+#define  NTST_RDBFF0		BIT(1)
-+#define  NTST_CMDQEF		BIT(3)
-+#define  NTST_RSPQFF		BIT(4)
-+#define  NTST_TABTF		BIT(5)
-+#define  NTST_TEF		BIT(9)
-+
-+#define NTSTE			0x1e4
-+#define  NTSTE_TDBEE0		BIT(0)
-+#define  NTSTE_RDBFE0		BIT(1)
-+#define  NTSTE_IBIQEFE		BIT(2)
-+#define  NTSTE_CMDQEE		BIT(3)
-+#define  NTSTE_RSPQFE		BIT(4)
-+#define  NTSTE_TABTE		BIT(5)
-+#define  NTSTE_TEE		BIT(9)
-+#define  NTSTE_RSQFE		BIT(20)
-+#define  NTSTE_ALL_FLAG		(NTSTE_TDBEE0 | NTSTE_RDBFE0 |\
-+				NTSTE_IBIQEFE | NTSTE_CMDQEE |\
-+				NTSTE_RSPQFE | NTSTE_TABTE |\
-+				NTSTE_TEE | NTSTE_RSQFE)
-+
-+#define NTIE			0x1e8
-+#define  NTIE_TDBEIE0		BIT(0)
-+#define  NTIE_RDBFIE0		BIT(1)
-+#define  NTIE_IBIQEFIE		BIT(2)
-+#define  NTIE_RSPQFIE		BIT(4)
-+#define  NTIE_RSQFIE		BIT(20)
-+
-+#define BCST			0x210
-+#define  BCST_BFREF		BIT(0)
-+
-+#define DATBAS(x)		(0x224 + 0x8 * (x))
-+#define  DATBAS_DVSTAD(x)	FIELD_PREP(GENMASK(6, 0), x)
-+#define  DATBAS_DVDYAD(x)	FIELD_PREP(GENMASK(23, 16), x)
-+
-+#define NDBSTLV0		0x398
-+#define  NDBSTLV0_RDBLV(x)	(((x) >> 8) & 0xff)
-+
-+#define RENESAS_I3C_MAX_DEVS	8
-+#define I2C_INIT_MSG		-1
-+
-+/* Bus condition timing */
-+#define I3C_BUS_THIGH_MIXED_NS	40		/* 40ns */
-+#define I3C_BUS_FREE_TIME_NS	1300		/* 1.3us for Mixed Bus with I2C FM Device*/
-+#define I3C_BUS_AVAL_TIME_NS	1000		/* 1us */
-+#define I3C_BUS_IDLE_TIME_NS	200000		/* 200us */
-+
-+#define XFER_TIMEOUT		(msecs_to_jiffies(1000))
-+
-+enum i3c_internal_state {
-+	I3C_INTERNAL_STATE_DISABLED,
-+	I3C_INTERNAL_STATE_CONTROLLER_IDLE,
-+	I3C_INTERNAL_STATE_CONTROLLER_ENTDAA,
-+	I3C_INTERNAL_STATE_CONTROLLER_SETDASA,
-+	I3C_INTERNAL_STATE_CONTROLLER_WRITE,
-+	I3C_INTERNAL_STATE_CONTROLLER_READ,
-+	I3C_INTERNAL_STATE_CONTROLLER_COMMAND_WRITE,
-+	I3C_INTERNAL_STATE_CONTROLLER_COMMAND_READ,
-+};
-+
-+enum i3c_event {
-+	I3C_COMMAND_ADDRESS_ASSIGNMENT,
-+	I3C_WRITE,
-+	I3C_READ,
-+	I3C_COMMAND_WRITE,
-+	I3C_COMMAND_READ,
-+};
-+
-+struct renesas_i3c_cmd {
-+	u32 cmd0;
-+	u32 len;
-+	const void *tx_buf;
-+	u32 tx_count;
-+	void *rx_buf;
-+	u32 rx_count;
-+	u32 err;
-+	u8 rnw;
-+	/* i2c xfer */
-+	int i2c_bytes_left;
-+	int i2c_is_last;
-+	u8 *i2c_buf;
-+	const struct i2c_msg *msg;
-+};
-+
-+struct renesas_i3c_xfer {
-+	struct list_head node;
-+	struct completion comp;
-+	int ret;
-+	bool is_i2c_xfer;
-+	unsigned int ncmds;
-+	struct renesas_i3c_cmd cmds[] __counted_by(ncmds);
-+};
-+
-+struct renesas_i3c_xferqueue {
-+	struct list_head list;
-+	struct renesas_i3c_xfer *cur;
-+	/* Lock for accessing the xfer queue */
-+	spinlock_t lock;
-+};
-+
-+struct renesas_i3c {
-+	struct i3c_master_controller base;
-+	enum i3c_internal_state internal_state;
-+	u16 maxdevs;
-+	u32 free_pos;
-+	u32 i2c_STDBR;
-+	u32 i3c_STDBR;
-+	u8 addrs[RENESAS_I3C_MAX_DEVS];
-+	struct renesas_i3c_xferqueue xferqueue;
-+	void __iomem *regs;
-+	struct clk *tclk;
-+};
-+
-+struct renesas_i3c_i2c_dev_data {
-+	u8 index;
-+};
-+
-+struct renesas_i3c_irq_desc {
-+	char *name;
-+	irq_handler_t isr;
-+	char *desc;
-+};
-+
-+struct renesas_i3c_config {
-+	unsigned int has_pclkrw:1;
-+};
-+
-+static inline void i3c_reg_update(void __iomem *reg, u32 mask, u32 val)
-+{
-+	u32 data = readl(reg);
-+
-+	data &= ~mask;
-+	data |= (val & mask);
-+	writel(data, reg);
-+}
-+
-+static inline u32 i3c_reg_read(void __iomem *base, u32 reg)
-+{
-+	return readl(base + reg);
-+}
-+
-+static inline void i3c_reg_write(void __iomem *base, u32 reg, u32 val)
-+{
-+	writel(val, base + reg);
-+}
-+
-+static void i3c_reg_set_bit(void __iomem *base, u32 reg, u32 val)
-+{
-+	i3c_reg_update(base + reg, val, val);
-+}
-+
-+static void i3c_reg_clear_bit(void __iomem *base, u32 reg, u32 val)
-+{
-+	i3c_reg_update(base + reg, val, 0);
-+}
-+
-+static void i3c_reg_update_bit(void __iomem *base, u32 reg,
-+			       u32 mask, u32 val)
-+{
-+	i3c_reg_update(base + reg, mask, val);
-+}
-+
-+static inline struct renesas_i3c *
-+to_renesas_i3c(struct i3c_master_controller *master)
-+{
-+	return container_of(master, struct renesas_i3c, base);
-+}
-+
-+static inline u32 datbas_dvdyad_with_parity(u8 addr)
-+{
-+	return DATBAS_DVDYAD(addr | (parity8(addr) ? 0 : BIT(7)));
-+}
-+
-+static int renesas_i3c_get_free_pos(struct renesas_i3c *i3c)
-+{
-+	if (!(i3c->free_pos & GENMASK(i3c->maxdevs - 1, 0)))
-+		return -ENOSPC;
-+
-+	return ffs(i3c->free_pos) - 1;
-+}
-+
-+static int renesas_i3c_get_addr_pos(struct renesas_i3c *i3c, u8 addr)
-+{
-+	int pos;
-+
-+	for (pos = 0; pos < i3c->maxdevs; pos++) {
-+		if (addr == i3c->addrs[pos])
-+			return pos;
-+	}
-+
-+	return -EINVAL;
-+}
-+
-+static struct renesas_i3c_xfer *
-+renesas_i3c_alloc_xfer(struct renesas_i3c *i3c, unsigned int ncmds)
-+{
-+	struct renesas_i3c_xfer *xfer;
-+
-+	xfer = kzalloc(struct_size(xfer, cmds, ncmds), GFP_KERNEL);
-+	if (!xfer)
-+		return NULL;
-+
-+	INIT_LIST_HEAD(&xfer->node);
-+	xfer->ncmds = ncmds;
-+	xfer->ret = -ETIMEDOUT;
-+
-+	return xfer;
-+}
-+
-+static void renesas_i3c_start_xfer_locked(struct renesas_i3c *i3c)
-+{
-+	struct renesas_i3c_xfer *xfer = i3c->xferqueue.cur;
-+	struct renesas_i3c_cmd *cmd;
-+	u32 cmd1;
-+
-+	if (!xfer)
-+		return;
-+
-+	cmd = xfer->cmds;
-+
-+	switch (i3c->internal_state) {
-+	case I3C_INTERNAL_STATE_CONTROLLER_ENTDAA:
-+	case I3C_INTERNAL_STATE_CONTROLLER_SETDASA:
-+		i3c_reg_set_bit(i3c->regs, NTIE, NTIE_RSPQFIE);
-+		i3c_reg_write(i3c->regs, NCMDQP, cmd->cmd0);
-+		i3c_reg_write(i3c->regs, NCMDQP, 0);
-+		break;
-+	case I3C_INTERNAL_STATE_CONTROLLER_WRITE:
-+	case I3C_INTERNAL_STATE_CONTROLLER_COMMAND_WRITE:
-+		i3c_reg_set_bit(i3c->regs, NTIE, NTIE_RSPQFIE);
-+		if (cmd->len <= 4) {
-+			cmd->cmd0 |= NCMDQP_CMD_ATTR(NCMDQP_IMMED_XFER);
-+			cmd->cmd0 |= NCMDQP_BYTE_CNT(cmd->len);
-+			cmd->tx_count = cmd->len;
-+			cmd1 = cmd->len == 0 ? 0 : *(u32 *)cmd->tx_buf;
-+		} else {
-+			cmd1 = NCMDQP_DATA_LENGTH(cmd->len);
-+		}
-+		i3c_reg_write(i3c->regs, NCMDQP, cmd->cmd0);
-+		i3c_reg_write(i3c->regs, NCMDQP, cmd1);
-+		break;
-+	case I3C_INTERNAL_STATE_CONTROLLER_READ:
-+	case I3C_INTERNAL_STATE_CONTROLLER_COMMAND_READ:
-+		i3c_reg_set_bit(i3c->regs, NTIE, NTIE_RDBFIE0);
-+		cmd1 = NCMDQP_DATA_LENGTH(cmd->len);
-+		i3c_reg_write(i3c->regs, NCMDQP, cmd->cmd0);
-+		i3c_reg_write(i3c->regs, NCMDQP, cmd1);
-+		break;
-+	default:
-+		break;
-+	}
-+
-+	/* Clear the command queue empty flag */
-+	i3c_reg_clear_bit(i3c->regs, NTST, NTST_CMDQEF);
-+}
-+
-+static void renesas_i3c_dequeue_xfer_locked(struct renesas_i3c *i3c,
-+					    struct renesas_i3c_xfer *xfer)
-+{
-+	if (i3c->xferqueue.cur == xfer)
-+		i3c->xferqueue.cur = NULL;
-+	else
-+		list_del_init(&xfer->node);
-+}
-+
-+static void renesas_i3c_dequeue_xfer(struct renesas_i3c *i3c, struct renesas_i3c_xfer *xfer)
-+{
-+	scoped_guard(spinlock_irqsave, &i3c->xferqueue.lock)
-+		renesas_i3c_dequeue_xfer_locked(i3c, xfer);
-+}
-+
-+static void renesas_i3c_enqueue_xfer(struct renesas_i3c *i3c, struct renesas_i3c_xfer *xfer)
-+{
-+	reinit_completion(&xfer->comp);
-+	scoped_guard(spinlock_irqsave, &i3c->xferqueue.lock) {
-+		if (i3c->xferqueue.cur) {
-+			list_add_tail(&xfer->node, &i3c->xferqueue.list);
-+		} else {
-+			i3c->xferqueue.cur = xfer;
-+			if (!xfer->is_i2c_xfer)
-+				renesas_i3c_start_xfer_locked(i3c);
-+		}
-+	}
-+}
-+
-+static void renesas_i3c_wait_xfer(struct renesas_i3c *i3c, struct renesas_i3c_xfer *xfer)
-+{
-+	unsigned long time_left;
-+
-+	renesas_i3c_enqueue_xfer(i3c, xfer);
-+
-+	time_left = wait_for_completion_timeout(&xfer->comp, XFER_TIMEOUT);
-+	if (!time_left)
-+		renesas_i3c_dequeue_xfer(i3c, xfer);
-+}
-+
-+static void renesas_i3c_set_prts(struct renesas_i3c *i3c, u32 val)
-+{
-+	/* Required sequence according to tnrza0140ae */
-+	i3c_reg_set_bit(i3c->regs, RSTCTL, RSTCTL_INTLRST);
-+	i3c_reg_write(i3c->regs, PRTS, val);
-+	i3c_reg_clear_bit(i3c->regs, RSTCTL, RSTCTL_INTLRST);
-+}
-+
-+static void renesas_i3c_bus_enable(struct i3c_master_controller *m, bool i3c_mode)
-+{
-+	struct renesas_i3c *i3c = to_renesas_i3c(m);
-+
-+	/* Setup either I3C or I2C protocol */
-+	if (i3c_mode) {
-+		renesas_i3c_set_prts(i3c, 0);
-+		/* Revisit: INCBA handling, especially after I2C transfers */
-+		i3c_reg_set_bit(i3c->regs, BCTL, BCTL_HJACKCTL | BCTL_INCBA);
-+		i3c_reg_set_bit(i3c->regs, MSDVAD, MSDVAD_MDYADV);
-+		i3c_reg_write(i3c->regs, STDBR, i3c->i3c_STDBR);
-+	} else {
-+		renesas_i3c_set_prts(i3c, PRTS_PRTMD);
-+		i3c_reg_write(i3c->regs, STDBR, i3c->i2c_STDBR);
-+	}
-+
-+	/* Enable I3C bus */
-+	i3c_reg_set_bit(i3c->regs, BCTL, BCTL_BUSE);
-+}
-+
-+static int renesas_i3c_reset(struct renesas_i3c *i3c)
-+{
-+	u32 val;
-+
-+	i3c_reg_write(i3c->regs, BCTL, 0);
-+	i3c_reg_set_bit(i3c->regs, RSTCTL, RSTCTL_RI3CRST);
-+
-+	/* Wait for reset completion  */
-+	return readl_relaxed_poll_timeout(i3c->regs + RSTCTL, val,
-+					  !(val & RSTCTL_RI3CRST), 0, 1000);
-+}
-+
-+static int renesas_i3c_bus_init(struct i3c_master_controller *m)
-+{
-+	struct renesas_i3c *i3c = to_renesas_i3c(m);
-+	struct i3c_bus *bus = i3c_master_get_bus(m);
-+	struct i3c_device_info info = {};
-+	struct i2c_timings t;
-+	unsigned long rate;
-+	u32 double_SBR, val;
-+	int cks, pp_high_ticks, pp_low_ticks, i3c_total_ticks;
-+	int od_high_ticks, od_low_ticks, i2c_total_ticks;
-+	int ret;
-+
-+	rate = clk_get_rate(i3c->tclk);
-+	if (!rate)
-+		return -EINVAL;
-+
-+	ret = renesas_i3c_reset(i3c);
-+	if (ret)
-+		return ret;
-+
-+	i2c_total_ticks = DIV_ROUND_UP(rate, bus->scl_rate.i2c);
-+	i3c_total_ticks = DIV_ROUND_UP(rate, bus->scl_rate.i3c);
-+
-+	i2c_parse_fw_timings(&m->dev, &t, true);
-+
-+	for (cks = 0; cks < 7; cks++) {
-+		/* SCL low-period calculation in Open-drain mode */
-+		od_low_ticks = ((i2c_total_ticks * 6) / 10);
-+
-+		/* SCL clock calculation in Push-Pull mode */
-+		if (bus->mode == I3C_BUS_MODE_PURE)
-+			pp_high_ticks = ((i3c_total_ticks * 5) / 10);
-+		else
-+			pp_high_ticks = DIV_ROUND_UP(I3C_BUS_THIGH_MIXED_NS,
-+						     1000000000 / rate);
-+		pp_low_ticks = i3c_total_ticks - pp_high_ticks;
-+
-+		if ((od_low_ticks / 2) <= 0xFF && pp_low_ticks < 0x3F)
-+			break;
-+
-+		i2c_total_ticks /= 2;
-+		i3c_total_ticks /= 2;
-+		rate /= 2;
-+	}
-+
-+	/* SCL clock period calculation in Open-drain mode */
-+	if ((od_low_ticks / 2) > 0xFF || pp_low_ticks > 0x3F) {
-+		dev_err(&m->dev, "invalid speed (i2c-scl = %lu Hz, i3c-scl = %lu Hz). Too slow.\n",
-+			(unsigned long)bus->scl_rate.i2c, (unsigned long)bus->scl_rate.i3c);
-+		ret = -EINVAL;
-+		return ret;
-+	}
-+
-+	/* SCL high-period calculation in Open-drain mode */
-+	od_high_ticks = i2c_total_ticks - od_low_ticks;
-+
-+	/* Standard Bit Rate setting */
-+	double_SBR = od_low_ticks > 0xFF ? 1 : 0;
-+	i3c->i3c_STDBR = (double_SBR ? STDBR_DSBRPO : 0) |
-+			STDBR_SBRLO(double_SBR, od_low_ticks) |
-+			STDBR_SBRHO(double_SBR, od_high_ticks) |
-+			STDBR_SBRLP(pp_low_ticks) |
-+			STDBR_SBRHP(pp_high_ticks);
-+
-+	od_low_ticks -= t.scl_fall_ns / (1000000000 / rate) + 1;
-+	od_high_ticks -= t.scl_rise_ns / (1000000000 / rate) + 1;
-+	i3c->i2c_STDBR = (double_SBR ? STDBR_DSBRPO : 0) |
-+			STDBR_SBRLO(double_SBR, od_low_ticks) |
-+			STDBR_SBRHO(double_SBR, od_high_ticks) |
-+			STDBR_SBRLP(pp_low_ticks) |
-+			STDBR_SBRHP(pp_high_ticks);
-+	i3c_reg_write(i3c->regs, STDBR, i3c->i3c_STDBR);
-+
-+	/* Extended Bit Rate setting */
-+	i3c_reg_write(i3c->regs, EXTBR, EXTBR_EBRLO(od_low_ticks) |
-+					   EXTBR_EBRHO(od_high_ticks) |
-+					   EXTBR_EBRLP(pp_low_ticks) |
-+					   EXTBR_EBRHP(pp_high_ticks));
-+
-+	i3c_reg_write(i3c->regs, REFCKCTL, REFCKCTL_IREFCKS(cks));
-+
-+	/* Disable Slave Mode */
-+	i3c_reg_write(i3c->regs, SVCTL, 0);
-+
-+	/* Initialize Queue/Buffer threshold */
-+	i3c_reg_write(i3c->regs, NQTHCTL, NQTHCTL_IBIDSSZ(6) |
-+					     NQTHCTL_CMDQTH(1));
-+
-+	/* The only supported configuration is two entries*/
-+	i3c_reg_write(i3c->regs, NTBTHCTL0, 0);
-+	/* Interrupt when there is one entry in the queue */
-+	i3c_reg_write(i3c->regs, NRQTHCTL, 0);
-+
-+	/* Enable all Bus/Transfer Status Flags */
-+	i3c_reg_write(i3c->regs, BSTE, BSTE_ALL_FLAG);
-+	i3c_reg_write(i3c->regs, NTSTE, NTSTE_ALL_FLAG);
-+
-+	/* Interrupt enable settings */
-+	i3c_reg_write(i3c->regs, BIE, BIE_NACKDIE | BIE_TENDIE);
-+	i3c_reg_write(i3c->regs, NTIE, 0);
-+
-+	/* Clear Status register */
-+	i3c_reg_write(i3c->regs, NTST, 0);
-+	i3c_reg_write(i3c->regs, INST, 0);
-+	i3c_reg_write(i3c->regs, BST, 0);
-+
-+	/* Hot-Join Acknowlege setting. */
-+	i3c_reg_update_bit(i3c->regs, BCTL, BCTL_HJACKCTL, BCTL_HJACKCTL);
-+
-+	i3c_reg_write(i3c->regs, IBINCTL, IBINCTL_NRHJCTL | IBINCTL_NRMRCTL |
-+					     IBINCTL_NRSIRCTL);
-+
-+	i3c_reg_write(i3c->regs, SCSTLCTL, 0);
-+	i3c_reg_set_bit(i3c->regs, SCSTRCTL, SCSTRCTL_ACKTWE);
-+
-+	/* Bus condition timing */
-+	val = DIV_ROUND_UP(I3C_BUS_FREE_TIME_NS, 1000000000 / rate);
-+	i3c_reg_write(i3c->regs, BFRECDT, BFRECDT_FRECYC(val));
-+
-+	val = DIV_ROUND_UP(I3C_BUS_AVAL_TIME_NS, 1000000000 / rate);
-+	i3c_reg_write(i3c->regs, BAVLCDT, BAVLCDT_AVLCYC(val));
-+
-+	val = DIV_ROUND_UP(I3C_BUS_IDLE_TIME_NS, 1000000000 / rate);
-+	i3c_reg_write(i3c->regs, BIDLCDT, BIDLCDT_IDLCYC(val));
-+
-+	ret = i3c_master_get_free_addr(m, 0);
-+	if (ret < 0)
-+		return ret;
-+
-+	i3c_reg_write(i3c->regs, MSDVAD, MSDVAD_MDYAD(ret) | MSDVAD_MDYADV);
-+
-+	memset(&info, 0, sizeof(info));
-+	info.dyn_addr = ret;
-+	return i3c_master_set_info(&i3c->base, &info);
-+}
-+
-+static void renesas_i3c_bus_cleanup(struct i3c_master_controller *m)
-+{
-+	struct renesas_i3c *i3c = to_renesas_i3c(m);
-+	u32 val;
-+
-+	i3c_reg_write(i3c->regs, BCTL, 0);
-+	i3c_reg_update_bit(i3c->regs, RSTCTL, RSTCTL_RI3CRST, RSTCTL_RI3CRST);
-+	/* Wait for reset completion  */
-+	readl_relaxed_poll_timeout(i3c->regs + RSTCTL, val,
-+				   !(val & RSTCTL_RI3CRST), 0, 1000);
-+}
-+
-+static int renesas_i3c_daa(struct i3c_master_controller *m)
-+{
-+	struct renesas_i3c *i3c = to_renesas_i3c(m);
-+	struct renesas_i3c_xfer *xfer;
-+	struct renesas_i3c_cmd *cmd;
-+	u32 olddevs, newdevs;
-+	u8 last_addr = 0, pos;
-+	int ret;
-+
-+	/* Enable I3C bus. */
-+	renesas_i3c_bus_enable(m, true);
-+
-+	olddevs = ~(i3c->free_pos);
-+	i3c->internal_state = I3C_INTERNAL_STATE_CONTROLLER_ENTDAA;
-+
-+	/* Setting DATBASn registers for target devices. */
-+	for (pos = 0; pos < i3c->maxdevs; pos++) {
-+		if (olddevs & BIT(pos))
-+			continue;
-+
-+		ret = i3c_master_get_free_addr(m, last_addr + 1);
-+		if (ret < 0)
-+			return -ENOSPC;
-+
-+		i3c->addrs[pos] = ret;
-+		last_addr = ret;
-+
-+		i3c_reg_write(i3c->regs, DATBAS(pos), datbas_dvdyad_with_parity(ret));
-+	}
-+
-+	xfer = renesas_i3c_alloc_xfer(i3c, 1);
-+	if (!xfer)
-+		return -ENOMEM;
-+
-+	init_completion(&xfer->comp);
-+	cmd = xfer->cmds;
-+	cmd->rx_count = 0;
-+
-+	ret = renesas_i3c_get_free_pos(i3c);
-+	if (ret < 0)
-+		goto out;
-+
-+	/*
-+	 * Setup the command descriptor to start the ENTDAA command
-+	 * and starting at the selected device index.
-+	 */
-+	cmd->cmd0 = NCMDQP_CMD_ATTR(NCMDQP_ADDR_ASSGN) | NCMDQP_ROC |
-+		    NCMDQP_TID(I3C_COMMAND_ADDRESS_ASSIGNMENT) |
-+		    NCMDQP_CMD(I3C_CCC_ENTDAA) | NCMDQP_DEV_INDEX(ret) |
-+		    NCMDQP_DEV_COUNT(i3c->maxdevs - ret) | NCMDQP_TOC;
-+
-+	renesas_i3c_wait_xfer(i3c, xfer);
-+
-+	newdevs = GENMASK(i3c->maxdevs - cmd->rx_count - 1, 0);
-+	newdevs &= ~olddevs;
-+
-+	for (pos = 0; pos < i3c->maxdevs; pos++) {
-+		if (newdevs & BIT(pos))
-+			i3c_master_add_i3c_dev_locked(m, i3c->addrs[pos]);
-+	}
-+
-+out:
-+	kfree(xfer);
-+	return ret < 0 ? ret : 0;
-+}
-+
-+static bool renesas_i3c_supports_ccc_cmd(struct i3c_master_controller *m,
-+						const struct i3c_ccc_cmd *cmd)
-+{
-+	if (cmd->ndests > 1)
-+		return false;
-+
-+	switch (cmd->id) {
-+	case I3C_CCC_ENEC(true):
-+	case I3C_CCC_ENEC(false):
-+	case I3C_CCC_DISEC(true):
-+	case I3C_CCC_DISEC(false):
-+	case I3C_CCC_ENTAS(0, true):
-+	case I3C_CCC_ENTAS(1, true):
-+	case I3C_CCC_ENTAS(2, true):
-+	case I3C_CCC_ENTAS(3, true):
-+	case I3C_CCC_ENTAS(0, false):
-+	case I3C_CCC_ENTAS(1, false):
-+	case I3C_CCC_ENTAS(2, false):
-+	case I3C_CCC_ENTAS(3, false):
-+	case I3C_CCC_RSTDAA(true):
-+	case I3C_CCC_RSTDAA(false):
-+	case I3C_CCC_ENTDAA:
-+	case I3C_CCC_DEFSLVS:
-+	case I3C_CCC_SETMWL(true):
-+	case I3C_CCC_SETMWL(false):
-+	case I3C_CCC_SETMRL(true):
-+	case I3C_CCC_SETMRL(false):
-+	case I3C_CCC_ENTTM:
-+	case I3C_CCC_SETDASA:
-+	case I3C_CCC_SETNEWDA:
-+	case I3C_CCC_GETMWL:
-+	case I3C_CCC_GETMRL:
-+	case I3C_CCC_GETPID:
-+	case I3C_CCC_GETBCR:
-+	case I3C_CCC_GETDCR:
-+	case I3C_CCC_GETSTATUS:
-+	case I3C_CCC_GETACCMST:
-+	case I3C_CCC_GETMXDS:
-+		return true;
-+	default:
-+		return false;
-+	}
-+}
-+
-+static int renesas_i3c_send_ccc_cmd(struct i3c_master_controller *m,
-+					   struct i3c_ccc_cmd *ccc)
-+{
-+	struct renesas_i3c *i3c = to_renesas_i3c(m);
-+	struct renesas_i3c_xfer *xfer;
-+	struct renesas_i3c_cmd *cmd;
-+	int ret, pos = 0;
-+
-+	if (ccc->id & I3C_CCC_DIRECT) {
-+		pos = renesas_i3c_get_addr_pos(i3c, ccc->dests[0].addr);
-+		if (pos < 0)
-+			return pos;
-+	}
-+
-+	xfer = renesas_i3c_alloc_xfer(i3c, 1);
-+	if (!xfer)
-+		return -ENOMEM;
-+
-+	renesas_i3c_bus_enable(m, true);
-+
-+	init_completion(&xfer->comp);
-+	cmd = xfer->cmds;
-+	cmd->rnw = ccc->rnw;
-+	cmd->cmd0 = 0;
-+
-+	/* Calculate the command descriptor. */
-+	switch (ccc->id) {
-+	case I3C_CCC_SETDASA:
-+		i3c_reg_write(i3c->regs, DATBAS(pos),
-+			DATBAS_DVSTAD(ccc->dests[0].addr) |
-+			DATBAS_DVDYAD(*(u8 *)ccc->dests[0].payload.data >> 1));
-+		cmd->cmd0 = NCMDQP_CMD_ATTR(NCMDQP_ADDR_ASSGN) | NCMDQP_ROC |
-+			NCMDQP_TID(I3C_COMMAND_ADDRESS_ASSIGNMENT) |
-+			NCMDQP_CMD(I3C_CCC_SETDASA) | NCMDQP_DEV_INDEX(pos) |
-+			NCMDQP_DEV_COUNT(0) | NCMDQP_TOC;
-+		i3c->internal_state = I3C_INTERNAL_STATE_CONTROLLER_SETDASA;
-+		break;
-+	default:
-+		/* Calculate the command descriptor. */
-+		cmd->cmd0 = NCMDQP_TID(I3C_COMMAND_WRITE) | NCMDQP_MODE(0) |
-+				NCMDQP_RNW(ccc->rnw) | NCMDQP_CMD(ccc->id) |
-+				NCMDQP_ROC | NCMDQP_TOC | NCMDQP_CP |
-+				NCMDQP_DEV_INDEX(pos);
-+
-+		if (ccc->rnw) {
-+			cmd->rx_buf = ccc->dests[0].payload.data;
-+			cmd->len = ccc->dests[0].payload.len;
-+			cmd->rx_count = 0;
-+			i3c->internal_state = I3C_INTERNAL_STATE_CONTROLLER_COMMAND_READ;
-+		} else {
-+			cmd->tx_buf = ccc->dests[0].payload.data;
-+			cmd->len = ccc->dests[0].payload.len;
-+			cmd->tx_count = 0;
-+			i3c->internal_state = I3C_INTERNAL_STATE_CONTROLLER_COMMAND_WRITE;
-+		}
-+	}
-+
-+	renesas_i3c_wait_xfer(i3c, xfer);
-+
-+	ret = xfer->ret;
-+	if (ret)
-+		ccc->err = I3C_ERROR_M2;
-+
-+	kfree(xfer);
-+
-+	return ret;
-+}
-+
-+static int renesas_i3c_priv_xfers(struct i3c_dev_desc *dev, struct i3c_priv_xfer *i3c_xfers,
-+					 int i3c_nxfers)
-+{
-+	struct i3c_master_controller *m = i3c_dev_get_master(dev);
-+	struct renesas_i3c *i3c = to_renesas_i3c(m);
-+	struct renesas_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
-+	struct renesas_i3c_xfer *xfer;
-+	int i;
-+
-+	/* Enable I3C bus. */
-+	renesas_i3c_bus_enable(m, true);
-+
-+	xfer = renesas_i3c_alloc_xfer(i3c, 1);
-+	if (!xfer)
-+		return -ENOMEM;
-+
-+	init_completion(&xfer->comp);
-+
-+	for (i = 0; i < i3c_nxfers; i++) {
-+		struct renesas_i3c_cmd *cmd = xfer->cmds;
-+
-+		/* Calculate the Transfer Command Descriptor */
-+		cmd->rnw = i3c_xfers[i].rnw;
-+		cmd->cmd0 = NCMDQP_DEV_INDEX(data->index) | NCMDQP_MODE(0) |
-+			    NCMDQP_RNW(cmd->rnw) | NCMDQP_ROC | NCMDQP_TOC;
-+
-+		if (i3c_xfers[i].rnw) {
-+			cmd->rx_count = 0;
-+			cmd->cmd0 |= NCMDQP_TID(I3C_READ);
-+			cmd->rx_buf = i3c_xfers[i].data.in;
-+			cmd->len = i3c_xfers[i].len;
-+			i3c->internal_state = I3C_INTERNAL_STATE_CONTROLLER_READ;
-+		} else {
-+			cmd->tx_count = 0;
-+			cmd->cmd0 |= NCMDQP_TID(I3C_WRITE);
-+			cmd->tx_buf = i3c_xfers[i].data.out;
-+			cmd->len = i3c_xfers[i].len;
-+			i3c->internal_state = I3C_INTERNAL_STATE_CONTROLLER_WRITE;
-+		}
-+
-+		if (!i3c_xfers[i].rnw && i3c_xfers[i].len > 4) {
-+			i3c_writel_fifo(i3c->regs + NTDTBP0, cmd->tx_buf, cmd->len);
-+			if (cmd->len > NTDTBP0_DEPTH * sizeof(u32))
-+				i3c_reg_set_bit(i3c->regs, NTIE, NTIE_TDBEIE0);
-+		}
-+
-+		renesas_i3c_wait_xfer(i3c, xfer);
-+	}
-+
-+	return 0;
-+}
-+
-+static int renesas_i3c_attach_i3c_dev(struct i3c_dev_desc *dev)
-+{
-+	struct i3c_master_controller *m = i3c_dev_get_master(dev);
-+	struct renesas_i3c *i3c = to_renesas_i3c(m);
-+	struct renesas_i3c_i2c_dev_data *data;
-+	int pos;
-+
-+	pos = renesas_i3c_get_free_pos(i3c);
-+	if (pos < 0)
-+		return pos;
-+
-+	data = kzalloc(sizeof(*data), GFP_KERNEL);
-+	if (!data)
-+		return -ENOMEM;
-+
-+	data->index = pos;
-+	i3c->addrs[pos] = dev->info.dyn_addr ? : dev->info.static_addr;
-+	i3c->free_pos &= ~BIT(pos);
-+
-+	i3c_reg_write(i3c->regs, DATBAS(pos), DATBAS_DVSTAD(dev->info.static_addr) |
-+				    datbas_dvdyad_with_parity(i3c->addrs[pos]));
-+	i3c_dev_set_master_data(dev, data);
-+
-+	return 0;
-+}
-+
-+static int renesas_i3c_reattach_i3c_dev(struct i3c_dev_desc *dev,
-+					       u8 old_dyn_addr)
-+{
-+	struct i3c_master_controller *m = i3c_dev_get_master(dev);
-+	struct renesas_i3c *i3c = to_renesas_i3c(m);
-+	struct renesas_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
-+
-+	i3c->addrs[data->index] = dev->info.dyn_addr ? dev->info.dyn_addr :
-+							dev->info.static_addr;
-+
-+	return 0;
-+}
-+
-+static void renesas_i3c_detach_i3c_dev(struct i3c_dev_desc *dev)
-+{
-+	struct renesas_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
-+	struct i3c_master_controller *m = i3c_dev_get_master(dev);
-+	struct renesas_i3c *i3c = to_renesas_i3c(m);
-+
-+	i3c_dev_set_master_data(dev, NULL);
-+	i3c->addrs[data->index] = 0;
-+	i3c->free_pos |= BIT(data->index);
-+	kfree(data);
-+}
-+
-+static int renesas_i3c_i2c_xfers(struct i2c_dev_desc *dev,
-+					struct i2c_msg *i2c_xfers,
-+					int i2c_nxfers)
-+{
-+	struct i3c_master_controller *m = i2c_dev_get_master(dev);
-+	struct renesas_i3c *i3c = to_renesas_i3c(m);
-+	struct renesas_i3c_xfer *xfer;
-+	struct renesas_i3c_cmd *cmd;
-+	u8 start_bit = CNDCTL_STCND;
-+	int ret, i;
-+
-+	if (!i2c_nxfers)
-+		return 0;
-+
-+	renesas_i3c_bus_enable(m, false);
-+
-+	xfer = renesas_i3c_alloc_xfer(i3c, 1);
-+	if (!xfer)
-+		return -ENOMEM;
-+
-+	init_completion(&xfer->comp);
-+	xfer->is_i2c_xfer = true;
-+	cmd = xfer->cmds;
-+
-+	if (!(i3c_reg_read(i3c->regs, BCST) & BCST_BFREF)) {
-+		cmd->err = -EBUSY;
-+		goto out;
-+	}
-+
-+	i3c_reg_write(i3c->regs, BST, 0);
-+
-+	renesas_i3c_enqueue_xfer(i3c, xfer);
-+
-+	for (i = 0; i < i2c_nxfers; i++) {
-+		cmd->i2c_bytes_left = I2C_INIT_MSG;
-+		cmd->i2c_buf = i2c_xfers[i].buf;
-+		cmd->msg = &i2c_xfers[i];
-+		cmd->i2c_is_last = (i == i2c_nxfers - 1);
-+
-+		i3c_reg_set_bit(i3c->regs, BIE, BIE_NACKDIE);
-+		i3c_reg_set_bit(i3c->regs, NTIE, NTIE_TDBEIE0);
-+		i3c_reg_set_bit(i3c->regs, BIE, BIE_STCNDDIE);
-+
-+		/* Issue Start condition */
-+		i3c_reg_set_bit(i3c->regs, CNDCTL, start_bit);
-+
-+		i3c_reg_set_bit(i3c->regs, NTSTE, NTSTE_TDBEE0);
-+
-+		wait_for_completion_timeout(&xfer->comp, m->i2c.timeout);
-+
-+		if (cmd->err)
-+			break;
-+
-+		start_bit = CNDCTL_SRCND;
-+	}
-+out:
-+	renesas_i3c_dequeue_xfer(i3c, xfer);
-+	ret = cmd->err;
-+	kfree(xfer);
-+	return ret ?: 0;
-+}
-+
-+static int renesas_i3c_attach_i2c_dev(struct i2c_dev_desc *dev)
-+{
-+	struct i3c_master_controller *m = i2c_dev_get_master(dev);
-+	struct renesas_i3c *i3c = to_renesas_i3c(m);
-+	struct renesas_i3c_i2c_dev_data *data;
-+	int pos;
-+
-+	pos = renesas_i3c_get_free_pos(i3c);
-+	if (pos < 0)
-+		return pos;
-+
-+	data = kzalloc(sizeof(*data), GFP_KERNEL);
-+	if (!data)
-+		return -ENOMEM;
-+
-+	data->index = pos;
-+	i3c->addrs[pos] = dev->addr;
-+	i3c->free_pos &= ~BIT(pos);
-+	i2c_dev_set_master_data(dev, data);
-+
-+	return 0;
-+}
-+
-+static void renesas_i3c_detach_i2c_dev(struct i2c_dev_desc *dev)
-+{
-+	struct renesas_i3c_i2c_dev_data *data = i2c_dev_get_master_data(dev);
-+	struct i3c_master_controller *m = i2c_dev_get_master(dev);
-+	struct renesas_i3c *i3c = to_renesas_i3c(m);
-+
-+	i2c_dev_set_master_data(dev, NULL);
-+	i3c->addrs[data->index] = 0;
-+	i3c->free_pos |= BIT(data->index);
-+	kfree(data);
-+}
-+
-+static irqreturn_t renesas_i3c_tx_isr(int irq, void *data)
-+{
-+	struct renesas_i3c *i3c = data;
-+	struct renesas_i3c_xfer *xfer;
-+	struct renesas_i3c_cmd *cmd;
-+	u8 val;
-+
-+	scoped_guard(spinlock, &i3c->xferqueue.lock) {
-+		xfer = i3c->xferqueue.cur;
-+		cmd = xfer->cmds;
-+
-+		if (xfer->is_i2c_xfer) {
-+			if (!cmd->i2c_bytes_left)
-+				return IRQ_NONE;
-+
-+			if (cmd->i2c_bytes_left != I2C_INIT_MSG) {
-+				val = *cmd->i2c_buf;
-+				cmd->i2c_buf++;
-+				cmd->i2c_bytes_left--;
-+				i3c_reg_write(i3c->regs, NTDTBP0, val);
-+			}
-+
-+			if (cmd->i2c_bytes_left == 0) {
-+				i3c_reg_clear_bit(i3c->regs, NTIE, NTIE_TDBEIE0);
-+				i3c_reg_set_bit(i3c->regs, BIE, BIE_TENDIE);
-+			}
-+
-+			/* Clear the Transmit Buffer Empty status flag. */
-+			i3c_reg_clear_bit(i3c->regs, NTST, NTST_TDBEF0);
-+		} else {
-+			i3c_writel_fifo(i3c->regs + NTDTBP0, cmd->tx_buf, cmd->len);
-+		}
-+	}
-+
-+	return IRQ_HANDLED;
-+}
-+
-+static irqreturn_t renesas_i3c_resp_isr(int irq, void *data)
-+{
-+	struct renesas_i3c *i3c = data;
-+	struct renesas_i3c_xfer *xfer;
-+	struct renesas_i3c_cmd *cmd;
-+	u32 resp_descriptor = i3c_reg_read(i3c->regs, NRSPQP);
-+	u32 bytes_remaining = 0;
-+	u32 ntst, data_len;
-+	int ret = 0;
-+
-+	scoped_guard(spinlock, &i3c->xferqueue.lock) {
-+		xfer = i3c->xferqueue.cur;
-+		cmd = xfer->cmds;
-+
-+		/* Clear the Respone Queue Full status flag*/
-+		i3c_reg_clear_bit(i3c->regs, NTST, NTST_RSPQFF);
-+
-+		data_len = NRSPQP_DATA_LEN(resp_descriptor);
-+
-+		switch (i3c->internal_state) {
-+		case I3C_INTERNAL_STATE_CONTROLLER_ENTDAA:
-+			cmd->rx_count = data_len;
-+			break;
-+		case I3C_INTERNAL_STATE_CONTROLLER_WRITE:
-+		case I3C_INTERNAL_STATE_CONTROLLER_COMMAND_WRITE:
-+			/* Disable the transmit IRQ if it hasn't been disabled already. */
-+			i3c_reg_clear_bit(i3c->regs, NTIE, NTIE_TDBEIE0);
-+			break;
-+		case I3C_INTERNAL_STATE_CONTROLLER_READ:
-+		case I3C_INTERNAL_STATE_CONTROLLER_COMMAND_READ:
-+			if (NDBSTLV0_RDBLV(i3c_reg_read(i3c->regs, NDBSTLV0)) && !cmd->err)
-+				bytes_remaining = data_len - cmd->rx_count;
-+
-+			i3c_readl_fifo(i3c->regs + NTDTBP0, cmd->rx_buf, bytes_remaining);
-+			i3c_reg_clear_bit(i3c->regs, NTIE, NTIE_RDBFIE0);
-+			break;
-+		default:
-+			break;
-+		}
-+
-+		switch (NRSPQP_ERR_STATUS(resp_descriptor)) {
-+		case NRSPQP_NO_ERROR:
-+			break;
-+		case NRSPQP_ERROR_PARITY:
-+		case NRSPQP_ERROR_IBA_NACK:
-+		case NRSPQP_ERROR_TRANSF_ABORT:
-+		case NRSPQP_ERROR_CRC:
-+		case NRSPQP_ERROR_FRAME:
-+			ret = -EIO;
-+			break;
-+		case NRSPQP_ERROR_OVER_UNDER_FLOW:
-+			ret = -ENOSPC;
-+			break;
-+		case NRSPQP_ERROR_UNSUPPORTED:
-+			ret = -EOPNOTSUPP;
-+			break;
-+		case NRSPQP_ERROR_I2C_W_NACK_ERR:
-+		case NRSPQP_ERROR_ADDRESS_NACK:
-+		default:
-+			ret = -EINVAL;
-+			break;
-+		}
-+
-+		/*
-+		 * If the transfer was aborted, then the abort flag must be cleared
-+		 * before notifying the application that a transfer has completed.
-+		 */
-+		ntst = i3c_reg_read(i3c->regs, NTST);
-+		if (ntst & NTST_TABTF)
-+			i3c_reg_clear_bit(i3c->regs, BCTL, BCTL_ABT);
-+
-+		/* Clear error status flags. */
-+		i3c_reg_clear_bit(i3c->regs, NTST, NTST_TEF | NTST_TABTF);
-+
-+		xfer->ret = ret;
-+		complete(&xfer->comp);
-+
-+		xfer = list_first_entry_or_null(&i3c->xferqueue.list,
-+						struct renesas_i3c_xfer, node);
-+		if (xfer)
-+			list_del_init(&xfer->node);
-+
-+		i3c->xferqueue.cur = xfer;
-+	}
-+
-+	return IRQ_HANDLED;
-+}
-+
-+static irqreturn_t renesas_i3c_tend_isr(int irq, void *data)
-+{
-+	struct renesas_i3c *i3c = data;
-+	struct renesas_i3c_xfer *xfer;
-+	struct renesas_i3c_cmd *cmd;
-+
-+	scoped_guard(spinlock, &i3c->xferqueue.lock) {
-+		xfer = i3c->xferqueue.cur;
-+		cmd = xfer->cmds;
-+
-+		if (xfer->is_i2c_xfer) {
-+			if (i3c_reg_read(i3c->regs, BST) & BST_NACKDF) {
-+				/* We got a NACKIE */
-+				i3c_reg_read(i3c->regs, NTDTBP0); /* dummy read */
-+				i3c_reg_clear_bit(i3c->regs, BST, BST_NACKDF);
-+				cmd->err = -ENXIO;
-+			} else if (cmd->i2c_bytes_left) {
-+				i3c_reg_set_bit(i3c->regs, NTIE, NTIE_TDBEIE0);
-+				return IRQ_NONE;
-+			}
-+
-+			if (cmd->i2c_is_last || cmd->err) {
-+				i3c_reg_clear_bit(i3c->regs, BIE, BIE_TENDIE);
-+				i3c_reg_set_bit(i3c->regs, BIE, BIE_SPCNDDIE);
-+				i3c_reg_set_bit(i3c->regs, CNDCTL, CNDCTL_SPCND);
-+			} else {
-+				/* Transfer is complete, but do not send STOP */
-+				i3c_reg_clear_bit(i3c->regs, NTSTE, NTSTE_TDBEE0);
-+				i3c_reg_clear_bit(i3c->regs, BIE, BIE_TENDIE);
-+				xfer->ret = 0;
-+				complete(&xfer->comp);
-+			}
-+		}
-+
-+		/* Clear the Transmit Buffer Empty status flag. */
-+		i3c_reg_clear_bit(i3c->regs, BST, BST_TENDF);
-+	}
-+
-+	return IRQ_HANDLED;
-+}
-+
-+static irqreturn_t renesas_i3c_rx_isr(int irq, void *data)
-+{
-+	struct renesas_i3c *i3c = data;
-+	struct renesas_i3c_xfer *xfer;
-+	struct renesas_i3c_cmd *cmd;
-+	int read_bytes;
-+
-+	/* If resp_isr already read the data and updated 'xfer', we can just leave */
-+	if (!(i3c_reg_read(i3c->regs, NTIE) & NTIE_RDBFIE0))
-+		return IRQ_NONE;
-+
-+	scoped_guard(spinlock, &i3c->xferqueue.lock) {
-+		xfer = i3c->xferqueue.cur;
-+		cmd = xfer->cmds;
-+
-+		if (xfer->is_i2c_xfer) {
-+			if (!cmd->i2c_bytes_left)
-+				return IRQ_NONE;
-+
-+			if (cmd->i2c_bytes_left == I2C_INIT_MSG) {
-+				cmd->i2c_bytes_left = cmd->msg->len;
-+				i3c_reg_set_bit(i3c->regs, SCSTRCTL, SCSTRCTL_RWE);
-+				i3c_reg_read(i3c->regs, NTDTBP0); /* dummy read */
-+				if (cmd->i2c_bytes_left == 1)
-+					i3c_reg_write(i3c->regs, ACKCTL, ACKCTL_ACKT | ACKCTL_ACKTWP);
-+				return IRQ_HANDLED;
-+			}
-+
-+			if (cmd->i2c_bytes_left == 1) {
-+				/* STOP must come before we set ACKCTL! */
-+				if (cmd->i2c_is_last) {
-+					i3c_reg_set_bit(i3c->regs, BIE, BIE_SPCNDDIE);
-+					i3c_reg_clear_bit(i3c->regs, BST, BST_SPCNDDF);
-+					i3c_reg_set_bit(i3c->regs, CNDCTL, CNDCTL_SPCND);
-+				}
-+				i3c_reg_write(i3c->regs, ACKCTL, ACKCTL_ACKT | ACKCTL_ACKTWP);
-+			} else {
-+				i3c_reg_write(i3c->regs, ACKCTL, ACKCTL_ACKTWP);
-+			}
-+
-+			/* Reading acks the RIE interrupt */
-+			*cmd->i2c_buf = i3c_reg_read(i3c->regs, NTDTBP0);
-+			cmd->i2c_buf++;
-+			cmd->i2c_bytes_left--;
-+		} else {
-+			read_bytes = NDBSTLV0_RDBLV(i3c_reg_read(i3c->regs, NDBSTLV0)) * sizeof(u32);
-+			i3c_readl_fifo(i3c->regs + NTDTBP0, cmd->rx_buf, read_bytes);
-+			cmd->rx_count = read_bytes;
-+		}
-+
-+		/* Clear the Read Buffer Full status flag. */
-+		i3c_reg_clear_bit(i3c->regs, NTST, NTST_RDBFF0);
-+	}
-+
-+	return IRQ_HANDLED;
-+}
-+
-+static irqreturn_t renesas_i3c_stop_isr(int irq, void *data)
-+{
-+	struct renesas_i3c *i3c = data;
-+	struct renesas_i3c_xfer *xfer;
-+
-+	scoped_guard(spinlock, &i3c->xferqueue.lock) {
-+		xfer = i3c->xferqueue.cur;
-+
-+		/* read back registers to confirm writes have fully propagated */
-+		i3c_reg_write(i3c->regs, BST, 0);
-+		i3c_reg_read(i3c->regs, BST);
-+		i3c_reg_write(i3c->regs, BIE, 0);
-+		i3c_reg_clear_bit(i3c->regs, NTST, NTST_TDBEF0 | NTST_RDBFF0);
-+		i3c_reg_clear_bit(i3c->regs, SCSTRCTL, SCSTRCTL_RWE);
-+
-+		xfer->ret = 0;
-+		complete(&xfer->comp);
-+	}
-+
-+	return IRQ_HANDLED;
-+}
-+
-+static irqreturn_t renesas_i3c_start_isr(int irq, void *data)
-+{
-+	struct renesas_i3c *i3c = data;
-+	struct renesas_i3c_xfer *xfer;
-+	struct renesas_i3c_cmd *cmd;
-+	u8 val;
-+
-+	scoped_guard(spinlock, &i3c->xferqueue.lock) {
-+		xfer = i3c->xferqueue.cur;
-+		cmd = xfer->cmds;
-+
-+		if (xfer->is_i2c_xfer) {
-+			if (!cmd->i2c_bytes_left)
-+				return IRQ_NONE;
-+
-+			if (cmd->i2c_bytes_left == I2C_INIT_MSG) {
-+				if (cmd->msg->flags & I2C_M_RD) {
-+					/* On read, switch over to receive interrupt */
-+					i3c_reg_clear_bit(i3c->regs, NTIE, NTIE_TDBEIE0);
-+					i3c_reg_set_bit(i3c->regs, NTIE, NTIE_RDBFIE0);
-+				} else {
-+					/* On write, initialize length */
-+					cmd->i2c_bytes_left = cmd->msg->len;
-+				}
-+
-+				val = i2c_8bit_addr_from_msg(cmd->msg);
-+				i3c_reg_write(i3c->regs, NTDTBP0, val);
-+			}
-+		}
-+
-+		i3c_reg_clear_bit(i3c->regs, BIE, BIE_STCNDDIE);
-+		i3c_reg_clear_bit(i3c->regs, BST, BST_STCNDDF);
-+	}
-+
-+	return IRQ_HANDLED;
-+}
-+
-+static const struct i3c_master_controller_ops renesas_i3c_ops = {
-+	.bus_init = renesas_i3c_bus_init,
-+	.bus_cleanup = renesas_i3c_bus_cleanup,
-+	.attach_i3c_dev = renesas_i3c_attach_i3c_dev,
-+	.reattach_i3c_dev = renesas_i3c_reattach_i3c_dev,
-+	.detach_i3c_dev = renesas_i3c_detach_i3c_dev,
-+	.do_daa = renesas_i3c_daa,
-+	.supports_ccc_cmd = renesas_i3c_supports_ccc_cmd,
-+	.send_ccc_cmd = renesas_i3c_send_ccc_cmd,
-+	.priv_xfers = renesas_i3c_priv_xfers,
-+	.attach_i2c_dev = renesas_i3c_attach_i2c_dev,
-+	.detach_i2c_dev = renesas_i3c_detach_i2c_dev,
-+	.i2c_xfers = renesas_i3c_i2c_xfers,
-+};
-+
-+static struct renesas_i3c_irq_desc renesas_i3c_irqs[] = {
-+	{ .name = "resp", .isr = renesas_i3c_resp_isr, .desc = "i3c-resp" },
-+	{ .name = "rx", .isr = renesas_i3c_rx_isr, .desc = "i3c-rx" },
-+	{ .name = "tx", .isr = renesas_i3c_tx_isr, .desc = "i3c-tx" },
-+	{ .name = "st", .isr = renesas_i3c_start_isr, .desc = "i3c-start" },
-+	{ .name = "sp", .isr = renesas_i3c_stop_isr, .desc = "i3c-stop" },
-+	{ .name = "tend", .isr = renesas_i3c_tend_isr, .desc = "i3c-tend" },
-+	{ .name = "nack", .isr = renesas_i3c_tend_isr, .desc = "i3c-nack" },
-+};
-+
-+static int renesas_i3c_probe(struct platform_device *pdev)
-+{
-+	struct renesas_i3c *i3c;
-+	struct reset_control *reset;
-+	struct clk *clk;
-+	const struct renesas_i3c_config *config = of_device_get_match_data(&pdev->dev);
-+	int ret, i;
-+
-+	if (!config)
-+		return -ENODATA;
-+
-+	i3c = devm_kzalloc(&pdev->dev, sizeof(*i3c), GFP_KERNEL);
-+	if (!i3c)
-+		return -ENOMEM;
-+
-+	i3c->regs = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(i3c->regs))
-+		return PTR_ERR(i3c->regs);
-+
-+	clk = devm_clk_get_enabled(&pdev->dev, "pclk");
-+	if (IS_ERR(clk))
-+		return PTR_ERR(clk);
-+
-+	if (config->has_pclkrw) {
-+		clk = devm_clk_get_enabled(&pdev->dev, "pclkrw");
-+		if (IS_ERR(clk))
-+			return PTR_ERR(clk);
-+	}
-+
-+	i3c->tclk = devm_clk_get_enabled(&pdev->dev, "tclk");
-+	if (IS_ERR(i3c->tclk))
-+		return PTR_ERR(i3c->tclk);
-+
-+	reset = devm_reset_control_get_optional_exclusive_deasserted(&pdev->dev, "tresetn");
-+	if (IS_ERR(reset))
-+		return dev_err_probe(&pdev->dev, PTR_ERR(reset),
-+				     "Error: missing tresetn ctrl\n");
-+
-+	reset = devm_reset_control_get_optional_exclusive_deasserted(&pdev->dev, "presetn");
-+	if (IS_ERR(reset))
-+		return dev_err_probe(&pdev->dev, PTR_ERR(reset),
-+				     "Error: missing presetn ctrl\n");
-+
-+	spin_lock_init(&i3c->xferqueue.lock);
-+	INIT_LIST_HEAD(&i3c->xferqueue.list);
-+
-+	ret = renesas_i3c_reset(i3c);
-+	if (ret)
-+		return ret;
-+
-+	for (i = 0; i < ARRAY_SIZE(renesas_i3c_irqs); i++) {
-+		ret = platform_get_irq_byname(pdev, renesas_i3c_irqs[i].name);
-+		if (ret < 0)
-+			return ret;
-+
-+		ret = devm_request_irq(&pdev->dev, ret, renesas_i3c_irqs[i].isr,
-+				       0, renesas_i3c_irqs[i].desc, i3c);
-+		if (ret)
-+			return ret;
-+	}
-+
-+	platform_set_drvdata(pdev, i3c);
-+
-+	i3c->maxdevs = RENESAS_I3C_MAX_DEVS;
-+	i3c->free_pos = GENMASK(i3c->maxdevs - 1, 0);
-+
-+	return i3c_master_register(&i3c->base, &pdev->dev, &renesas_i3c_ops, false);
-+}
-+
-+static void renesas_i3c_remove(struct platform_device *pdev)
-+{
-+	struct renesas_i3c *i3c = platform_get_drvdata(pdev);
-+
-+	i3c_master_unregister(&i3c->base);
-+}
-+
-+static const struct renesas_i3c_config empty_i3c_config = {
-+};
-+
-+static const struct renesas_i3c_config r9a09g047_i3c_config = {
-+	.has_pclkrw = 1,
-+};
-+
-+static const struct of_device_id renesas_i3c_of_ids[] = {
-+	{ .compatible = "renesas,r9a08g045-i3c", .data = &empty_i3c_config },
-+	{ .compatible = "renesas,r9a09g047-i3c", .data = &r9a09g047_i3c_config },
-+	{ .compatible = "renesas,i3c", .data = &empty_i3c_config },
-+	{ /* sentinel */ },
-+};
-+MODULE_DEVICE_TABLE(of, renesas_i3c_of_ids);
-+
-+static struct platform_driver renesas_i3c = {
-+	.probe = renesas_i3c_probe,
-+	.remove = renesas_i3c_remove,
-+	.driver = {
-+		.name = "renesas-i3c",
-+		.of_match_table = renesas_i3c_of_ids,
-+	},
-+};
-+module_platform_driver(renesas_i3c);
-+
-+MODULE_AUTHOR("Wolfram Sang <wsa+renesas@sang-engineering.com>");
-+MODULE_AUTHOR("Renesas BSP teams");
-+MODULE_DESCRIPTION("Renesas I3C controller driver");
-+MODULE_LICENSE("GPL");
--- 
-2.47.2
-
+Best regards,
+Jorge
+> >
+> > Adding David to the thread, since the axi-spi-engine already moved to
+> > `v%u.%u.%u` format.
+> >
+> > Best regards,
+> > Jorge
+> >
 
 -- 
 linux-i3c mailing list
