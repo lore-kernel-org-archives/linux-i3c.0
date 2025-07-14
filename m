@@ -4,97 +4,143 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40BF5C83F1A
-	for <linux-i3c@archiver.kernel.org>; Mon, 14 Jul 2025 12:21:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33916C83F27
+	for <linux-i3c@archiver.kernel.org>; Mon, 14 Jul 2025 15:08:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x38H62CLVorhztMrcNDyVzBlAXRmF3eeBoKntOdQCvc=; b=oZawBAslQToifO
-	h0BSCfhgTovkv6irl2JVzfgUSJNivNvbe5/xxveQvvpIWDzM24BqBJ8D0Mf3RMKgM6zUvvPm1qLUN
-	ikVAEne0oQRibWPUNQvAdEyHtwxit/+3A4HNb8uuDpul971diJWaJy56lKHsrLhPDLiyQG11k051e
-	YWXx5bH1M/uBNKAQ4HZkNKR8rG47H+CL3+cy1EDc2/pKFY2dhxDWqAZli8QaUtg9EDbLEukLCr2Fi
-	RG8HHeSKjahgS8MEEUeNBdg/i/SWQtgFl9x7fU0AZF+vG/Hj3bBprCiCydfUYPl1p7KTT0kGHZAPk
-	9Q6/ZANhu4DGUdzdy8Ag==;
+	List-Owner; bh=c9fNMWS3Rk+CEMMDAxSakpWGRfl8AYhDwDPTu8oIcWg=; b=p2mFPfgZCba+kp
+	A4usk7cc2s36OydGoYQuS4t2w6X2IKwqgyTvE7UYdtUBy4JcIVUQ7x6gkrrodHrwDde9KgyJ+0gas
+	naazyQPagbKE9lVQ8OG3Y7EElN98BZDzI2paKt9yCROslUXKn3f1lqJvMc2e3QzdwAdQLf+nBRlzZ
+	MVQrF7tS62Vak0ASQN0LhQbV08apc6o/pUEdZZeX9h4cRZ05FLip7IZykF41yUjdstgPu7WpNSP55
+	fWaByFbFL5K/ckGBbqMbM9fRk9PAlFr4XPOSFtCI3K4pjtNJizD2vlRWnOvQnBsvTpEWIBsJLF9ig
+	Nbp8ur440d0e8kclYaoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubIBe-000000029E7-04HW;
-	Mon, 14 Jul 2025 12:21:38 +0000
-Received: from mail-ed1-x52e.google.com ([2a00:1450:4864:20::52e])
+	id 1ubKnB-00000002ZSB-3Cu7;
+	Mon, 14 Jul 2025 15:08:33 +0000
+Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubFs2-00000001qCd-01oF
+	id 1ubJxj-00000002RB9-36M0
 	for linux-i3c@lists.infradead.org;
-	Mon, 14 Jul 2025 09:53:15 +0000
-Received: by mail-ed1-x52e.google.com with SMTP id 4fb4d7f45d1cf-60768f080d8so7819711a12.1
-        for <linux-i3c@lists.infradead.org>; Mon, 14 Jul 2025 02:53:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1752486792; x=1753091592; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=RNGssqJWYojAWdADXLp90CGwUVtfIpXi8sIRAMW1UaI=;
-        b=Jpwvmb3RCaafg2R1O8iFEBs7p6WWIPeh8abrIOlkveYj7ASZKTC/Xhz8s5+9gMDOUN
-         M7IJNMZsbzPa8KNdLaXasTxgwYopjw+AqQxY6OkNWtMWVr/XUPt2UyIoibRTVVqxXZmA
-         TliPBA5be/X+Fmx4Zj/k4Q3eSopYgcADt8Mvgbk6SbGK2GvKZ0LilX3DOZMXt497boOg
-         VZrW8/6i9eBHC1G3WdpVQGk1Ggo4gJQk5/UB0LRk/Lfvr1IT8HSpsuQB4DGKLGClTrWe
-         WbWfgwgM98DYilMJL5U8OSyzw7GaLsbbM5AQeoX43JITAc4/E2YKvPnb9ogCtjx1FXmm
-         uBiw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752486792; x=1753091592;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=RNGssqJWYojAWdADXLp90CGwUVtfIpXi8sIRAMW1UaI=;
-        b=JyFEP/wYtaeojbo+SZyKKblMu+PeG6rodLKcuJLXCrZL44HNx7JTnhqFTiD9kmBllY
-         1WZrMFnwY3XkVe6DRV3FSf8QDAFBWcY5/T2Oea1jqnCel00JmtldlmjV3pBQ3hfquyw6
-         Qxup4IxbFHNRJuHNjIlajpVoG4UvRIvZtn/G21NE2W6zkLHBRQVYkIJj+RoMT0qDR8iH
-         h+VzYgVAPtYJEuXGc/BZBuk8OBudSER9zxv4e8zDdtkuuMSufDdBZZYPWFjSsw8brCeU
-         BkzkbQHly/SS7HbAJ+R8IuelG+EhgiI1HFPGmdBx+byPCKmo1nbyYsSyGcwWnzaWuEle
-         eH5w==
-X-Forwarded-Encrypted: i=1; AJvYcCWmtsX0gkiec+u6LXXcCkzoQL58mkHWWgQHPs5FzCkTz3oy5evvUMvYXogA/moL5najAQgHXM3kcik=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy70fdCOohJKFYpZcLmqvNr1pAHZUmpG/23GiXim23ncDwI3iIK
-	ccGmBP7+8seNpPzFmkXLUuXrzNWGsRkbNoph//bBmUJNPmADFif7NotV
-X-Gm-Gg: ASbGncuPWK1YnRuKj2sGnt3p2wbihB4XNL/+1B1kZAdaw7VrRXFqZzFUq+3ueW/4Khr
-	xcfS//7efKBo5cLkc2mUOzzcAuVR2oTCenqFk7RerslmjnmNx1jtaZrx+42iNcLBIXZwdOAZJ8N
-	/AvvLvGev51A9BHLtmrHZBqiN91SxkryKYVBwv81358DCw4W5dFbQUGYHk5YJKCz3t08w9xIcR8
-	IVwzanRAhtgsS2o+NaTdsPt/FWY0AE3APxfCrHfXhHNjgNcNHMsXl+SIVVCdZX8ek8SdwK3ckk4
-	ry8rBLiQqK7BF4JzxPmHpOyFLDncoSmhDiQpHZAQIrjOtfCbxn6QenIGpHPRroW7lcrSP2n3i9t
-	jwaRPtSChaNEnMcEPZyAxtwzljlzaRhveZKVsyQR4Dg==
-X-Google-Smtp-Source: AGHT+IFEDpClpXlaWllZOCERoY3lhQ4yIfuXZ4g3QSxGrrVJ8qXDMwIx0cCzdpXoL8/NvPGkH2XWPg==
-X-Received: by 2002:a05:6402:210f:b0:607:f431:33fb with SMTP id 4fb4d7f45d1cf-611e761054cmr10942567a12.3.1752486791373;
-        Mon, 14 Jul 2025 02:53:11 -0700 (PDT)
-Received: from HYB-DlYm71t3hSl.ad.analog.com ([137.71.226.91])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-611c95232d8sm5823042a12.18.2025.07.14.02.53.09
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 14 Jul 2025 02:53:10 -0700 (PDT)
-Date: Mon, 14 Jul 2025 11:53:07 +0200
-From: Jorge Marques <gastmaier@gmail.com>
-To: Conor Dooley <conor@kernel.org>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>, 
-	Devid Lechner <dlechner@baylibre.com>, Adrian Costina <adrian.costina@analog.com>, 
-	Jorge Marques <jorge.marques@analog.com>, Alexandre Belloni <alexandre.belloni@bootlin.com>, 
-	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 1/2] dt-bindings: i3c: Add adi-i3c-master
-Message-ID: <tttx7nc4ribxmt73gu6n4r5rr2velypsublc2dlhdn6ltarthb@mllvjkkr5zn5>
-References: <20250626-adi-i3c-master-v4-0-3846a1f66d5e@analog.com>
- <20250626-adi-i3c-master-v4-1-3846a1f66d5e@analog.com>
- <20250627-steadfast-ferret-of-expertise-5c8ff2@krzk-bin>
- <tl5fckhrivaqfyzwyb2o2a7gykpigwend7z2nduqgbbej3hqbs@vxxtsadhtdmt>
- <41782ded-908b-46ef-8f75-4d2565476b7c@kernel.org>
- <cfi6rzhco2ba6pcbk57l7tblimuks5jnpgaly7nbedbrpyhtma@u46if22kurwk>
- <v2ybju75bpjdqxfkell47nlkeyal36ylmnqt2yvpncxnmp2irb@pygx56jsyxkr>
- <20250702-armchair-favorite-c734b53444e2@spud>
- <pbaxwzj3gmjwkqbh32wfcac4zqjyg4sfkgit3hs6v372cxf3wa@kp5qg6m2tqlm>
- <20250711-eradicate-vendetta-ea6d44737e0c@spud>
-MIME-Version: 1.0
+	Mon, 14 Jul 2025 14:15:24 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=uqTYEPZA5l3R9zDoqmzdljgt/L8NTVwVUdl8Cgih8YF1Ag6Z6HhcJDKSrcwhQ7na0nuTx0GbPsOIaBxEoyxHiotrsJDzib5vT/zEae2B8djAlx/PwuyXZXzeUZeKfmDxdl4bxy9si4pSI6LmUyp5ARzKUN7YMGhUSMfZNkk4f24wsPajxZrORd8YKjgWD/zQGHkVk+LcSKjv8L13sM9XIYp8jsAKmy2mGrIJWvUdQH2Swnn+oO45w2NA6dlHyVK8FsecvBV5mlY6Q3ONaKKTksCU+RNRboB60Tzkv9biBj6QIhjnY26ykmkdg4ynwFLWfXe1fvTeGLDL7UUCI8lOEQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=AapsZSL3u9Xx2kZlb+wUXOdn1faFzVX92WCDsWBAIlA=;
+ b=PdjGdjRNR8lhVcHhVdTlKC6bV0dQDvMXAk7GOD+L0lRpqWANnsUVono24pEF9LzSE/WSEEvQsH8+KTk6NxugEOjKLhYjd/2auB3WmJdMjAyOkd6/1MciWra3P13l0tr3IkaapiBssT3x8iB0y6HKTD+GS4SYxkrjXs+R9a/ms1KVPXDcfxw9u7/VQUw3wWw9y/Eh07BPyoQ+dSsCDOUXRxp9GDNWl9+J0INyAvgeCCMIMK9dyEm0qpPPnK5/XsTF3RGOMhPQvAyORdvha/VC6/I6EpcBZHTUeVB5W+DGHMFytfsoUQLV6+NwMw0mU1SdFvC1vhHpcqHmkWpkpmiEiQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=AapsZSL3u9Xx2kZlb+wUXOdn1faFzVX92WCDsWBAIlA=;
+ b=eHzR6jEcC6IjDsiPBhN2NCQcVXRb4NHYEIg0Noib5xeELS2Z2YgQelDL5YMxfdPYjbap4JwgytPygp5GLGm91Jn1vcpYhk4f/UyJb7lWfg80fGBsZCpXD+z/teEqsIL/gjAo/X3Yt0g2k5ZUQe2SMzO9wFp+DY2uQAT18jrlhHkXkL3iimjaryc6pAFbu8nJsmFhji9Kk7/UdbAkbRl72Ej+JAWfgl3Ro1wWpkVZKRrNfsHBb6cdBtpXRYShJCzIqz81tQU/l/tCXbz9TmptZ3EG7KcpIZ+mWETKsT/kf0Yp6dKp9xE1/TQ5JtUkVX6MAM/+B6mXYE3oMo6RuOtvaA==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
+ by PA4PR04MB7645.eurprd04.prod.outlook.com (2603:10a6:102:eb::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8922.32; Mon, 14 Jul
+ 2025 14:15:14 +0000
+Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
+ ([fe80::9126:a61e:341d:4b06%5]) with mapi id 15.20.8922.028; Mon, 14 Jul 2025
+ 14:15:14 +0000
+Date: Mon, 14 Jul 2025 10:15:08 -0400
+From: Frank Li <Frank.li@nxp.com>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+Cc: =?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] i3c: master: cdns: Simplify handling clocks in probe()
+Message-ID: <aHUQ7Ge97/glY+s7@lizhi-Precision-Tower-5810>
+References: <20250713152411.74917-2-krzysztof.kozlowski@linaro.org>
 Content-Disposition: inline
-In-Reply-To: <20250711-eradicate-vendetta-ea6d44737e0c@spud>
+In-Reply-To: <20250713152411.74917-2-krzysztof.kozlowski@linaro.org>
+X-ClientProxiedBy: AM8P191CA0020.EURP191.PROD.OUTLOOK.COM
+ (2603:10a6:20b:21a::25) To PAXPR04MB9642.eurprd04.prod.outlook.com
+ (2603:10a6:102:240::14)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|PA4PR04MB7645:EE_
+X-MS-Office365-Filtering-Correlation-Id: 59a08a2a-1c9e-4aec-1547-08ddc2e0d9c4
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|52116014|376014|19092799006|1800799024|38350700014|7053199007;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?pvadOAPk1MMFxp5g9ccli7B7u+KVBSaGTwjGwGXzQadSxGuRCMpldsZ+iaX2?=
+ =?us-ascii?Q?/reUDCf/Hvzx4Ve+esTD7mSPqSj7o+KswxjcA40lGeBvLiFaTNZRIgRb1Z0f?=
+ =?us-ascii?Q?SGFG5lopft3ZAmY8h73SrmABt0+G/rNhZArfzhK5tSmtSP/qbdbC3RJ1jyMT?=
+ =?us-ascii?Q?866CmqbU1W8+7ztbsy/UDpZqR+T6LaO66sZ9vCmat9QyjIqb2I3OCClP205R?=
+ =?us-ascii?Q?e3ppmn5Ps8JzsbioO/ddpNwvwIc5J1hyg/VZBXpQCuqyko/NVuHnkoOz0FBU?=
+ =?us-ascii?Q?znvJW1S4UBK+5AXaLnQLuH08rnrzawSsgloiWm1ReBWOlO8B/XDj/9foy8jz?=
+ =?us-ascii?Q?2bHiGr9Wp2L76ZvMcKxgcOkBhKoVt5XnftbHV251Oa6KpbYnAxmjs114mCNz?=
+ =?us-ascii?Q?PcJBNhEKVxj3d+ar8MAMqHdK0YNXmNWFd3OIMfKNg3P/qA6ZIwzYK/krarnx?=
+ =?us-ascii?Q?G9oHu/lFNeUtPTl3wVyuEN/2RGc5B2l7uDwdXbtEXJGF2NOjzyKXljevjHSq?=
+ =?us-ascii?Q?m3ojKfVIYILCTVAq2LhbDkJ10oO+LRDNTJUc7KD2FSTSTaCxgK3ekQJFtVBm?=
+ =?us-ascii?Q?PGfM7wAP75U/ftSrAf4p9daEWB+a1UyqG/viU0a44IvyGsl1gaknUU3J0QXG?=
+ =?us-ascii?Q?jT3JtLfL4RdIWeQIdsCf4ERP4oamtTU8DevT+aCTlFmnexGasIam775QVQk+?=
+ =?us-ascii?Q?F+YzkC04y76ZNHqbBR+C9KJ4WcuTvaT5yPHcBQ63KeY774c8XuKOntuuYGHh?=
+ =?us-ascii?Q?k8CahYmAw8SJYrCleEWNOjL/cRS61SBByIb5I5hPx6E0iXw9SGy6rjIK4mth?=
+ =?us-ascii?Q?MShsytK9soxga1xdmMG74QfTkjqxAvkVFN8vuWl/5ptp1cJfknmVeGYhi3op?=
+ =?us-ascii?Q?L5eioP9zipD96+8hP9Cx4uwtMfFZpyP5K7BcRT/0ORv8ScUK4IzmS8BsZj5e?=
+ =?us-ascii?Q?oWo+OZVAEwWoa+bwlPE8K8U28EtpPI01fi5AEkB/ZrFF05oYVjbff0gcSYv4?=
+ =?us-ascii?Q?i0MIT/9p+0SGyZdUx8m+kiWp4bPJyv478FAZpGAIOPag+h9rCN5a9CCeIwfc?=
+ =?us-ascii?Q?9Wn0BQ7vqHBFNibdJPAh1I7Oud3Ze6JsAh5tFoU9refZoeAZ05M1H/fjUGsC?=
+ =?us-ascii?Q?8tVLuHVn1JRKYsA5j6PRdaVVtVtt6KY8t6uBv4QrMSZ5LC622w1NGMtiIRqr?=
+ =?us-ascii?Q?F5WM6IJK9WtPqzT0RD1kcjt4g4+Y5YT5faXIM42zgB63hjre4zPht7raOiHG?=
+ =?us-ascii?Q?Dh6hfRF4JcjSF+kLztZYL9xgVHuTitLMiPLwIzSh0zWnHNCwVbdwQ23vNThN?=
+ =?us-ascii?Q?eOVrzBI37CzZw8Gv4dkOaFL6kuqc59ZHlLQpSILanIgDP35bH8rw7AmySQp3?=
+ =?us-ascii?Q?U5SqAaO8Fu8fjpiV12xSNdNyyW6bagF3RkSRsc387sUUgyTbcwJhxSR6ZrqZ?=
+ =?us-ascii?Q?eaCn0SXMmMb54Q5k/3s6nFzHd4xreJEbVwZRtrYgnf3q+Z4aoXGWOg=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(52116014)(376014)(19092799006)(1800799024)(38350700014)(7053199007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?v7F2EAdRVAiGhiM4rrzQykRA8vJtXCl+xUqB0yximrXff1mbLrWCBjLVVVQL?=
+ =?us-ascii?Q?mWYf+eMlfocK4lLboW5hiSWBOe2w7ueuO8GZsfAq9Y7q4nqbod+dJaCW1nB5?=
+ =?us-ascii?Q?gE+p10K0d4g5wFltgo3SsW+uQuiFcXSybV37YBmS7aF6XgwXM9CP09vJYoty?=
+ =?us-ascii?Q?k0bylwY/niacQeDoq6EaNmYjhzGsSsRDeouQe6+B37+uAcpmLkrbsTWrqUbf?=
+ =?us-ascii?Q?pYAMqDiasrZOQT63scKqK1jG8rxkjhgtW86OWeanZszTFBcBqIIkoIvJrNF9?=
+ =?us-ascii?Q?/G4+j9x9BFSvANCARAsNzW0+zPTpy6BEV9BGSyTBiEMuiFmR/Of74VR8RCz6?=
+ =?us-ascii?Q?1nJ7bTvJCHb6kNgySY5gFJaiVRdSWi0MSGGF4GozrGp+uPpXq4Z/P57KB1N7?=
+ =?us-ascii?Q?8WqTdrNMsiZwi2kBQit8db8KPO7VVzeg7kBYHUI8m8AoHxz9Xxxcbz8DQjy9?=
+ =?us-ascii?Q?bprwbchEm0IC5n4DMidfIHLLmRGlXUcgqu0XH53bM/dRyhMnUs5R+2UTc0vA?=
+ =?us-ascii?Q?bewPkzB5B9/U8hYP8JnVcrxkm28umXyrHrtbv1Haw2RApEGYVIR7gR+Q9zMy?=
+ =?us-ascii?Q?s9Dx2riOeqccB/GlvoVfAFTrYC/VaiIv8gomuLaw/O9MWlsbc9AaTti+mOuu?=
+ =?us-ascii?Q?+U6D/67FVJ2tXocesX0n1Bv8KIvtNbJ0Mng1SVF8Uo5gAqXAkjr+Xz+msZTF?=
+ =?us-ascii?Q?WU6nycWrsIgBeIu+mTjCg6KGrrRiCK0vghPZ9wiDa/eSqrkQjbTwDz31Jf3E?=
+ =?us-ascii?Q?Zn1J8J9DGkVtm7NbzaVcAJUEYNf/+YZnzaz1GbVqxRAgrvFOTeJiH96w1JY9?=
+ =?us-ascii?Q?dGvbVx5HvS/Ea/teXKb9Xx+kKp6KFJV1uG2bQfBcLEpUp0e9cXlmuXhB1JmP?=
+ =?us-ascii?Q?t7jf5h7U80JvK3ZEhtQ5qUgthG8lMuRXj81pgKwjCg8TWtp7TjAjmCdgg7vk?=
+ =?us-ascii?Q?yeCUXDTmJxO6PTSzeOVrmgu52o+NLtOk6+IyBJU/+hdyTW2iJMldKpEhYH94?=
+ =?us-ascii?Q?GXSzEZ09//VmmPbF6W1OuUdHXEdcIX5/9PEPd2dd4h/aw47ivhk8tWbjVVr6?=
+ =?us-ascii?Q?ssefahYPEUmHkBPGS+xNFyRZnTl2zE2py8ttDunzrhOL5r+q1Rfz+PT42i7M?=
+ =?us-ascii?Q?wacQO0RyDtXtLgMMEbr0EYwSwqirQo71Vajx2cZDu0XkKrFpz9PcL11jGEpu?=
+ =?us-ascii?Q?7Mcdd2tYEhbfcdZ0S5FIdwjlKKa1HWKYMQpLkyKmV/EQvVnDJ6sapGP11cF+?=
+ =?us-ascii?Q?v98gjxA3ruqRvh/k+ycd2XjpLiGpw4PkpyJSEbYLj9fCML+JpLCYkhnVX79W?=
+ =?us-ascii?Q?XrEgNHEfTiGe/jrr+wGF1m9ccgAf6AvgfS4t3AfplppHgEh9OBX58kmu9mop?=
+ =?us-ascii?Q?Z/A8oFDvl9j/2rrLDzrUFCugsrJj6Lov3OIMOXCXmguz/qoNHy2wxE4Mj6AN?=
+ =?us-ascii?Q?Az6hc5YYE4zliXv9q0P0RiDIO8JuXV6JVkumLX+PTeoSNWt2tuP06Pf737uE?=
+ =?us-ascii?Q?6g1GX21p5XTjEDTzTKW7IpzRtSizpiYE/UgZiiBXF8jUr3icydUVBiSr9sLE?=
+ =?us-ascii?Q?nelTdvUqcl0ZfppKs90=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 59a08a2a-1c9e-4aec-1547-08ddc2e0d9c4
+X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Jul 2025 14:15:14.0627
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: WKgxzF796cXYNCbskqvpyBlJKw0Cwt/FtPcNOZx5c0pYv9tYHKo+tNhKz/6NleVKNbt3pA+L7LPmA3578ZlYug==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB7645
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250714_025314_047419_3ECA040B 
-X-CRM114-Status: GOOD (  64.12  )
+X-CRM114-CacheID: sfid-20250714_071523_789674_65011035 
+X-CRM114-Status: GOOD (  23.14  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -111,169 +157,135 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jul 11, 2025 at 05:28:57PM +0100, Conor Dooley wrote:
-> On Fri, Jul 11, 2025 at 10:14:45AM +0200, Jorge Marques wrote:
-> > On Wed, Jul 02, 2025 at 12:38:41PM +0100, Conor Dooley wrote:
-> > > On Wed, Jul 02, 2025 at 12:58:00PM +0200, Jorge Marques wrote:
-> > > > On Fri, Jun 27, 2025 at 06:02:26PM +0200, Jorge Marques wrote:
-> > > > > On Fri, Jun 27, 2025 at 04:49:19PM +0200, Krzysztof Kozlowski wrote:
-> > > > > > On 27/06/2025 16:38, Jorge Marques wrote:
-> > > > > > > On Fri, Jun 27, 2025 at 08:56:55AM +0200, Krzysztof Kozlowski wrote:
-> > > > > > >> On Thu, Jun 26, 2025 at 12:07:36PM +0200, Jorge Marques wrote:
-> > > > > > >>> Add bindings doc for ADI I3C Controller IP core, a FPGA synthesizable IP
-> > > > > > >>> core that implements the MIPI I3C Basic controller specification.
-> > > > > > >>
-> > > > > > >> How did you resolve my last comment? I don't see any explanation -
-> > > > > > >> neither here nor in the binding description. Binding description is
-> > > > > > >> actually better place, I think now.
-> > > > > > >>
-> > > > > > >> Best regards,
-> > > > > > >> Krzysztof
-> > > > > > >>
-> > > > > > > 
-> > > > > > > Hi Krzysztof,
-> > > > > > > 
-> > > > > > > I forgot to condense out discussion on v4.
-> > > > > > > What about this binding description:
-> > > > > > > 
-> > > > > > >   description: |
-> > > > > > >     FPGA-based I3C controller designed to interface with I3C and I2C
-> > > > > > >     peripherals, implementing a subset of the I3C-basic specification.
-> > > > > > >     The IP core is tested on arm, microblaze, and arm64 architectures.
-> > > > > > >     It takes one or two clocks, axi and i3c. If only axi is provided,
-> > > > > > >     then there is no clock signal to the i3c input clock pin and axi
-> > > > > > 
-> > > > > > This is obvious from the schema, drop.
-> > > > > Ack.
-> > > > > 
-> > > > > > 
-> > > > > > >     clock drives the whole IP. The compatible is suffixed by 1.00.a
-> > > > > > >     foreseeing future controllers by Analog Devices Inc. and breaking
-> > > > > > >     changes.
-> > > > > > 
-> > > > > > I don't understand that. How are you breaking any changes? And how
-> > > > > > 1.00.a predicts future? I don't think this reflects previous discussion.
-> > > > > > Why you were asked to go with v1.00.a?
-> > > > > The -1.00.a suffix came from this discussion:
-> > > > >   
-> > > > >   https://lore.kernel.org/linux-i3c/ildi2pup2zkyv4stuknkrjysex3yzsbrrsrwbgcc4xgvdhwrdd@7qh4y6mutgy2/
-> > > > > 
-> > > > > Other adi bindings use this suffix. I personally wouldn't add any suffix
-> > > > > unless told otherwise, as I expressed on the thread. Should I drop it?
-> > > > > or suffix it with something else?
-> > > 
-> > > > 
-> > > > I went after the reason of the historically -1.00.a suffix and
-> > > > discovered that they came into existence due to AMD Xilinx auto
-> > > > generation devicetree tool SDTGen
-> > > > https://github.com/Xilinx/system-device-tree-xlnx
-> > > > that would automatically suffix with the IP version, defaulting to 1.00.a,
-> > > > and for a seamless experience, the were copied over to the dt-bindings.
-> > > > 
-> > > > The adi,axi-pwmgen dt-binding went more creative and suffixed with
-> > > > -2.00.a, while never enforcing Vivado to yield the devicetree with such
-> > > > value (Major version is asserted in the driver through reg access, the
-> > > > current core version is v2.1.1)
-> > > > 
-> > > > Testing on my side (AMD Xilinx Vivado 2024.2), it seems Vivado now
-> > > > defaults to 1.0, so the previous bindings from the other IPs are not
-> > > > accurate anymore, either, (axi-pwmgen auto gens
-> > > > `compatible = "xlnx,axi-pwm-gen-1.0";` (`xlnx` instead of `adi`, also)).
-> > > > 
-> > > > For fun, the current Vivado version thinks the devicetree node for the
-> > > > i3c master should be as follows:
-> > > > 
-> > > >   i3c_host_interface: i3c_controller_host_interface@44a00000 {
-> > > >           compatible = "xlnx,i3c-controller-host-interface-1.0";
-> > > >           reg = <0x44a00000 0x10000>;
-> > > >           clocks = <&clkc 15>;
-> > > >           clock-names = "s_axi_aclk";
-> > > >   };
-> > > > 
-> > > > Let me know if we can drop the suffix, or replace with something else.
-> > > > The current register defined core version is v0.1.0.
-> > > 
-> > > Please, as I requested in the original thread, add versioning
-> > > information. I'm clearly not asking you to make up some garbage version
-> > > number, or to add "1.00a" if that's not an accurate version (and never
-> > > did AFAICT). If 0.1.0 is the version of the IP core, I'd like you to use
-> > > that.
-> > > 
-> > > If other ADI IP cores are using crap version numbers that came from
-> > > some Xilinx tooling that don't represent the actual versions of the IPs,
-> > > that's probably something you should mention to your colleagues that
-> > > maintain those bindings.
-> > 
-> > 
-> > My proposal (1) for the Analog Devices Inc. open source IP Cores is to
-> > migrate to semantic versioning.
-> > (1) https://github.com/analogdevicesinc/hdl/pull/1831
-> > 
-> > The dt-binding must end with the major value, with the first supported
-> > version starting at 1. Therefore, the binding will be:
-> > 
-> > * adi,i3c-master-1
-> > 
-> > At driver level, the debug version value is `v%u.%u.%u`, and the driver
-> > shall check the minor version value for handling feature changes. While
-> > the major bump is restricted for breaking changes, which, in some cases,
-> > also generates a new dt-binding.
-> > 
-> > For backwards compatibility, existing ADI IP Cores that prints `v%u.%u.%c`
-> > should print `v%u.%u.%u` instead, but keep their current value (e.g.,
-> > `a`->`97`), until the minor is bumped, when the patch version resets to 0.
-> > 
-> > Rework across register accessed IPs is being handled here:
-> > https://github.com/analogdevicesinc/hdl/pull/1829
-> > There are more than 50 IPs with register access, so I need to be cautious.
-> > 
-> > What is your take on this? Does it resolve the bindings concern?
-> 
-> I think it is a good idea to establish version numbers that actually
-> have a meaning, rather than using something garbage. I think you should
-> probably put the "v" into the number in the compatible - 1.00 or 1.00.a
-> is fairly clearly a version number but "-1" is less clear.
+On Sun, Jul 13, 2025 at 05:24:12PM +0200, Krzysztof Kozlowski wrote:
+> The two clocks, driver is getting, are not being disabled/re-enabled
+> during runtime of the device.  Eliminate one variable in state struct,
+> all error paths and a lot of code from probe() and remove() by using
+> devm_clk_get_enabled().
 >
-Hi Conor,
-
-The format that is currently winning my internal discussion is
-`adi,<ip-name>-v<major>`.
-And the next patch will be submitted as `adi,i3c-master-v1`.
-
-> Also "the binding must end with the major value" is a bit of an odd
-> requirement I think. The sort of situations that may cause different
-> compatibles to be introduced are not likely to be restricted to majors.
-
-sifive-blocks-ip-versioning.txt uses
-"sifive,<ip-name><integer-version-number>", While the xilinx.txt uses
-the last version that uses the same interface. Both implicitly hide away
-features (minor) and fixes (patches). What I am enforcing is that, if
-the interface changes, the major field must be bumped. In most cases,
-everything else is minor matching at the driver level, and if exceptions
-occur, add to the commit message the justification and that's it.
-
-> That may be something like properties only valid for some versions, or
-> at worst a bug that requires checking the compatible (even if these
-> are much rarer when there's a version register, they're still possible).
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+> ---
+>  drivers/i3c/master/i3c-master-cdns.c | 51 +++++++---------------------
+>  1 file changed, 12 insertions(+), 39 deletions(-)
 >
-> IDM what number you opt for in the end either, it could well just be the
-> lowest number where the current register offset/format for the version
-> number register exists.
+> diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
+> index 449e85d7ba87..cc504b58013a 100644
+> --- a/drivers/i3c/master/i3c-master-cdns.c
+> +++ b/drivers/i3c/master/i3c-master-cdns.c
+> @@ -412,7 +412,6 @@ struct cdns_i3c_master {
+>  	} xferqueue;
+>  	void __iomem *regs;
+>  	struct clk *sysclk;
+> -	struct clk *pclk;
+>  	struct cdns_i3c_master_caps caps;
+>  	unsigned long i3c_scl_lim;
+>  	const struct cdns_i3c_data *devdata;
+> @@ -1566,6 +1565,7 @@ MODULE_DEVICE_TABLE(of, cdns_i3c_master_of_ids);
+>  static int cdns_i3c_master_probe(struct platform_device *pdev)
+>  {
+>  	struct cdns_i3c_master *master;
+> +	struct clk *pclk;
+>  	int ret, irq;
+>  	u32 val;
 >
-> It's a bit hypocritical of me to ask this, since I have not yet written
-> one for the Microchip stuff - but I think you should document whatever
-> numbering you end up on, like in xilinx.txt and
-> sifive-blocks-ip-versioning.txt, so that we can point people at it.
+> @@ -1581,11 +1581,11 @@ static int cdns_i3c_master_probe(struct platform_device *pdev)
+>  	if (IS_ERR(master->regs))
+>  		return PTR_ERR(master->regs);
+>
+> -	master->pclk = devm_clk_get(&pdev->dev, "pclk");
+> -	if (IS_ERR(master->pclk))
+> -		return PTR_ERR(master->pclk);
+> +	pclk = devm_clk_get_enabled(&pdev->dev, "pclk");
+> +	if (IS_ERR(pclk))
+> +		return PTR_ERR(pclk);
+>
+> -	master->sysclk = devm_clk_get(&pdev->dev, "sysclk");
+> +	master->sysclk = devm_clk_get_enabled(&pdev->dev, "sysclk");
 
-Best regards,
-Jorge
-> >
-> > Adding David to the thread, since the axi-spi-engine already moved to
-> > `v%u.%u.%u` format.
-> >
-> > Best regards,
-> > Jorge
-> >
+Can you use devm_clk_bulk_get_all_enabled() to simpilfy futher?
+
+Frank
+
+>  	if (IS_ERR(master->sysclk))
+>  		return PTR_ERR(master->sysclk);
+>
+> @@ -1593,18 +1593,8 @@ static int cdns_i3c_master_probe(struct platform_device *pdev)
+>  	if (irq < 0)
+>  		return irq;
+>
+> -	ret = clk_prepare_enable(master->pclk);
+> -	if (ret)
+> -		return ret;
+> -
+> -	ret = clk_prepare_enable(master->sysclk);
+> -	if (ret)
+> -		goto err_disable_pclk;
+> -
+> -	if (readl(master->regs + DEV_ID) != DEV_ID_I3C_MASTER) {
+> -		ret = -EINVAL;
+> -		goto err_disable_sysclk;
+> -	}
+> +	if (readl(master->regs + DEV_ID) != DEV_ID_I3C_MASTER)
+> +		return -EINVAL;
+>
+>  	spin_lock_init(&master->xferqueue.lock);
+>  	INIT_LIST_HEAD(&master->xferqueue.list);
+> @@ -1615,7 +1605,7 @@ static int cdns_i3c_master_probe(struct platform_device *pdev)
+>  	ret = devm_request_irq(&pdev->dev, irq, cdns_i3c_master_interrupt, 0,
+>  			       dev_name(&pdev->dev), master);
+>  	if (ret)
+> -		goto err_disable_sysclk;
+> +		return ret;
+>
+>  	platform_set_drvdata(pdev, master);
+>
+> @@ -1637,29 +1627,15 @@ static int cdns_i3c_master_probe(struct platform_device *pdev)
+>  	master->ibi.slots = devm_kcalloc(&pdev->dev, master->ibi.num_slots,
+>  					 sizeof(*master->ibi.slots),
+>  					 GFP_KERNEL);
+> -	if (!master->ibi.slots) {
+> -		ret = -ENOMEM;
+> -		goto err_disable_sysclk;
+> -	}
+> +	if (!master->ibi.slots)
+> +		return -ENOMEM;
+>
+>  	writel(IBIR_THR(1), master->regs + CMD_IBI_THR_CTRL);
+>  	writel(MST_INT_IBIR_THR, master->regs + MST_IER);
+>  	writel(DEVS_CTRL_DEV_CLR_ALL, master->regs + DEVS_CTRL);
+>
+> -	ret = i3c_master_register(&master->base, &pdev->dev,
+> -				  &cdns_i3c_master_ops, false);
+> -	if (ret)
+> -		goto err_disable_sysclk;
+> -
+> -	return 0;
+> -
+> -err_disable_sysclk:
+> -	clk_disable_unprepare(master->sysclk);
+> -
+> -err_disable_pclk:
+> -	clk_disable_unprepare(master->pclk);
+> -
+> -	return ret;
+> +	return i3c_master_register(&master->base, &pdev->dev,
+> +				   &cdns_i3c_master_ops, false);
+>  }
+>
+>  static void cdns_i3c_master_remove(struct platform_device *pdev)
+> @@ -1668,9 +1644,6 @@ static void cdns_i3c_master_remove(struct platform_device *pdev)
+>
+>  	cancel_work_sync(&master->hj_work);
+>  	i3c_master_unregister(&master->base);
+> -
+> -	clk_disable_unprepare(master->sysclk);
+> -	clk_disable_unprepare(master->pclk);
+>  }
+>
+>  static struct platform_driver cdns_i3c_master = {
+> --
+> 2.43.0
+>
 
 -- 
 linux-i3c mailing list
