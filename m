@@ -4,145 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2EB6FC83F1B
-	for <linux-i3c@archiver.kernel.org>; Mon, 14 Jul 2025 15:41:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C098EC83F17
+	for <linux-i3c@archiver.kernel.org>; Tue, 15 Jul 2025 04:28:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cnwTXDVS1wuU90UzP2Ay0GTKHve1FIYRnmbo4uknGWI=; b=4l4KGtI6JBqX8Z
-	rc/F74fH9y7N+DrmXKx7ioAx36NEihZCsS4bgNlkEuW/rBGivRhMxUavl9pDrp7hCUulRu4HvG1hY
-	CkXH7MoNKmpjTfvlEnzVQ6Xp6+M4EE28o49o0qsmy8C5P11UHjlGaU8CqzjnkIMwUIs6jrlCcODCl
-	jttrVIa15yooiQWrnl9NnJGykRRJ8cor18wsBLQCK1hVTDXb9UEadoN0+qKhMJcFTHyM/WN68/28M
-	2oUTVMp4M5VKrFLyfQ5HMymZy8ULGBICDQM8IZ1JlLwzIZe/K7cbCm9eE4sAwx8fbFR5FR+yUN+HD
-	LYt5D6pErpfHkKqfPHmQ==;
+	List-Owner; bh=tw0fIOcnOUTGwdum02F0+tuVFTCXyQtnRq+Ki8UVpz8=; b=zCDEItnBsxZPoX
+	R0qZ2s+9gpjfSnsJ44i1II9dWnPZjYoFBEezhinC9Qp6t+Wfjb4eHnqb1HT9wzyuScHHmK+iNeYoJ
+	v4hj8re2hO4qfXthb9lnqETbQrHcbR5Yx2IeyGGe6RtCA715rcJRe9O1jhmWhaQPJwLlLnTJ9168A
+	jgc3s9ApmI/AfMUKQG9tOVr5UTA7b5XNXnn8TImDcMiG4rFw7RpnwMmTFMtYhyjlD8GO9aKH0Ipeh
+	EncflVmi7JhAHtLaG8kZZFRff6MNGkqCh3y5uahSwM3iMiIbxflrIUv4k8sTp/s9ORt5fO5Ad81KC
+	B+IuULov283a+KuHt88Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubLJJ-00000002iz7-3uy2;
-	Mon, 14 Jul 2025 15:41:45 +0000
-Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
+	id 1ubXHQ-000000040QE-1pwW;
+	Tue, 15 Jul 2025 04:28:36 +0000
+Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ubKj6-00000002YRh-1qOl
+	id 1ubWax-00000003vfn-1BvI
 	for linux-i3c@lists.infradead.org;
-	Mon, 14 Jul 2025 15:04:21 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=U0Q4aMr2FTlDnWFBgepTZGaf+khEFulhcbEQHe9Nfg6hIitGlUirvBnvd78gwBec/mB0sH5dKYq/bYY20M5lJ+DCqMLtwjWllzxIXggb6iY4XucTavRRwu8jCFZlJ+/jj7mfo/2QlGXXmc9YjaJ3NqeDgysvnzPuTdWES2PQBYGzefDG0j836NyptJ6rbMqIVwMxm3yY8MR2coe0j+nQpJ+0zp1sYGNOCAP3gJSWgBnhFRZHCXiU6AFxMnALRyZ16rcb40wqk1qc0Dm/CGMErCLG/1r2CgN2WFnnoOU6SNCIptZFLZUi31RiBE3U38+BHzNfLztGund/9eSKW7zszA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=x2bhXAOXN3SIsiDA2syisuS7UA0Oi0j1WOg4BmYPqmY=;
- b=SS2Nccocy5PAZcijsjqCeYveGVQyehKNLXmiD6SzRhIBAZ/tOHsTis5w2SgwzUYoxnxrb0BQlkUTiDguiCc9twutsjU9dDFGoYmTbr5d727laNaCFOwKu/tDEqFQ0oP7zJwvZn6O+9UzjsVm7IiW12cgG+cg45flnD3hiRboliH9PSMQo5MQOmT01HTDsloyqClzWSr5DML4A59gPU0x5F26g6Q7U1//OzIVry4h/zefPuw4cF3lXm4Z7fUg85peR+IdC32M1o7M8pBZCPUEi2U5lgdRFlL5RB3coOGjpP3p83HiLDFbFzm5y2dqdjjFtUgTNMtmYNnjPeJEz7Gf3Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=x2bhXAOXN3SIsiDA2syisuS7UA0Oi0j1WOg4BmYPqmY=;
- b=mWYU9Ljy3rU9nlguArL4dkC0RrYbVn1XMoZ3+naG3xKqEdDmHX4BuNnoyG/J+DMHmK9zux8ayAISVAdUaBuSeeWAyHjQMT6HmO+kI+2DNCyELFWtZJd+BnOf7V1AI1YamXcnDITElYYHswx0uotI1Cov5i+ZiXq0qzF9wUPrywS/i06pGx+4FZPnZBAzypcocHdBR/yx4D1/88P5PmMScNtyfJUIrn7VzJhNimRXqq4m7f6NaOJn8KlhOW2OKg7bYHZqIl5o4oVT4NKVNS9sOCFXq/Pg3XijB7BsvRZtaQU5pgjECStoB3BOX0s3JhpwIsTkj9tZ6wJ7S5llFhEQVw==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
- by AM9PR04MB8810.eurprd04.prod.outlook.com (2603:10a6:20b:409::14) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8922.32; Mon, 14 Jul
- 2025 15:04:13 +0000
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06%5]) with mapi id 15.20.8922.028; Mon, 14 Jul 2025
- 15:04:12 +0000
-Date: Mon, 14 Jul 2025 11:04:08 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Cc: =?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>,
+	Tue, 15 Jul 2025 03:44:44 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 90926A4B625;
+	Tue, 15 Jul 2025 03:44:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 17AF3C4CEE3;
+	Tue, 15 Jul 2025 03:44:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1752551082;
+	bh=SFnlblJV2LTPacCzanOSpqW7BNUpkXOMLqiq6h/Tr+E=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=oVstyHr0A/GqQRMJSqyegZGPttVsjfqUJiBDWLK9rvS3UARWL8B+pXBkJLlOLvWlS
+	 Bwcf4FlO6VQc9Gp3dVqyIGJqdJ/intvsZEU4lb/icCbzM9Z2zDExBnOhuS0SKUsf/N
+	 yPgzniuRGuapfxssvWNOXXgPDRbFBK8Qy+6sMSejNbeLA5G+ymprNJ7rDlfMlvtGal
+	 mn1N62Hu3QFdatFBqwjN7EMhZ8xvTuSNWuMExc6zWF+EvYWB2a4YJ0BhpHU/6Yjql3
+	 NfKIiTMGKYRemglEGFAU4S9lQeRQu0lfE+Au17ECShs6Bk5GQBkUKCUsNvE+F0RRxB
+	 xrJfDZgTqmDaA==
+Date: Mon, 14 Jul 2025 22:44:41 -0500
+From: Rob Herring <robh@kernel.org>
+To: Wolfram Sang <wsa+renesas@sang-engineering.com>
+Cc: linux-renesas-soc@vger.kernel.org,
+	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
 	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] i3c: master: cdns: Simplify handling clocks in probe()
-Message-ID: <aHUcaE/3L1Yr+Wzb@lizhi-Precision-Tower-5810>
-References: <20250713152411.74917-2-krzysztof.kozlowski@linaro.org>
- <aHUQ7Ge97/glY+s7@lizhi-Precision-Tower-5810>
- <f9157fbf-09a1-41e5-b5f2-902ca20b870d@linaro.org>
-Content-Disposition: inline
-In-Reply-To: <f9157fbf-09a1-41e5-b5f2-902ca20b870d@linaro.org>
-X-ClientProxiedBy: AM0PR06CA0140.eurprd06.prod.outlook.com
- (2603:10a6:208:ab::45) To PAXPR04MB9642.eurprd04.prod.outlook.com
- (2603:10a6:102:240::14)
+	Frank Li <Frank.Li@nxp.com>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>, linux-i3c@lists.infradead.org,
+	devicetree@vger.kernel.org
+Subject: Re: [PATCH 1/2] dt-bindings: i3c: renesas,i3c: Add binding for
+ Renesas I3C controller
+Message-ID: <20250715034441.GA4186417-robh@kernel.org>
+References: <20250714091211.20497-1-wsa+renesas@sang-engineering.com>
+ <20250714091211.20497-2-wsa+renesas@sang-engineering.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|AM9PR04MB8810:EE_
-X-MS-Office365-Filtering-Correlation-Id: cd8aa3db-8017-451f-6ea3-08ddc2e7b164
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|376014|1800799024|19092799006|52116014|38350700014|7053199007;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?s4j1HhVO2Z2vdbOlnK0sVQUIw8VVQpSv8Qa8atDxn1edz2vssx+B5+i33t8b?=
- =?us-ascii?Q?H8bcaNxGqJtS57c8DhFk6cdgbEhRJkNMlyvXJmYvel7PlwFPM5Ufu7BhYwSS?=
- =?us-ascii?Q?WQdRrOYT9cOV/AJYX0/OPTvxR6j8JrUhOGjcqnM5ZEnNicNrXVWR9KIRYbC7?=
- =?us-ascii?Q?lNCIk1USUJDplSdQD2DEA8r2hlDazM7SblqxJtjG6k8C7ZE6BaMagUBoGH1Y?=
- =?us-ascii?Q?PBobCmNQ2lh657YU4F8DEA9hIPfPliuZwGMvSS/e8i3Ry5u4nC8pD/7TvyPc?=
- =?us-ascii?Q?eQQKYx8ld/K2q/IL8BaMYhwNyfl+cNhhR8Wjnb+r4d/uejjVU21Xj9hq4bVI?=
- =?us-ascii?Q?Ue8kg9XrjEzketUkGF1TMgy4lexq65YQ2wFb+gNSCb64NHNlW4YfPr9Cv90d?=
- =?us-ascii?Q?3umYSJpWW9aZvHNsZwh+Mog0ideysnG8V2ovAmOX0V/Jbax8WdG5QIE7D+Qy?=
- =?us-ascii?Q?6ODBJ23c78vpunBuAuOsup8FDv7SQfcX0hsULhPtAS7UNCJS0NRwd+eXbICH?=
- =?us-ascii?Q?mGpIR7tssVtZyv6EOie6BmimEigYGM31+4RuwjQThagoGdY+37uEQQnobNdj?=
- =?us-ascii?Q?YoI7X44B5ZMA5axqtIQCWz31AG8P7YSOuwy9gRBu2xZCgzP2QzVEdeD9YREw?=
- =?us-ascii?Q?5kBFb1wDGc/H3r6TDR8pwf7ElexdNRf4w7ZdkwUjixD5ATSwKAtC60Wdum0D?=
- =?us-ascii?Q?jOYdCdnAR7lWBeuETvgGRDGdytD6GttSXsARw67WyueHifMtvBh4zP2QcHHP?=
- =?us-ascii?Q?qkwBRfRy03b8qymGrQyCJzpK7/2GcGlvOHZ1yY9YIIY3gXyaIJByaxQtKSe9?=
- =?us-ascii?Q?o7kvxfOEQqkWeR0y2aQnDXUKTbQ7V9sXj35Ukn9bom+CibmQCuTiUEHVKjC0?=
- =?us-ascii?Q?6juOhS/ip2fj6Djab4ENMZmgzd/Qf2+xG3mDfXA48ZIYtxfbfVyAw7DLq2hg?=
- =?us-ascii?Q?PlX164r8Gbjs5yjox3LvTGrOpkwDIrt/6AwxgYptTCcn51DR6fOHMdGezjP2?=
- =?us-ascii?Q?Zoe2Vlh9nZLg6F3gEvAm8vKNy7Fzy4eisvF8pPaWiRkDlif9VGCw5PHQWriT?=
- =?us-ascii?Q?2VIesEJNGDX8YrK3u7A+hqiSue4c6nJI3RyRZmsczq0T1Ri7sOEX5uKTIgyK?=
- =?us-ascii?Q?cdV7BHl1aN98HEqrZ7p8npdSWgAfak7cQ7josQsh7146+ceupqYtmd7gYBmu?=
- =?us-ascii?Q?i+d7Joe9w1hH4OxBJAZAFIAmRgfYZb2at7iSpw1RThy0SAdt+kQ343UvSfPv?=
- =?us-ascii?Q?6vvI8O+tfewlcjlK4bNQOUZx56MpxWCDpd4iHHFt1iUyfJHPo1+UeNVK+cKi?=
- =?us-ascii?Q?yrrzaQ6Fs5CBQ5nVCkHFI3qb8Xl6d+C8Um8XV8KryZwly4MI1/cV2bn+FbVW?=
- =?us-ascii?Q?IwdXzy7aEh3RxnpVuPPxdgeO9SQch7ATxWjO3h/wrm+9k8dfLyJDQI5w2EQy?=
- =?us-ascii?Q?MykbVqrWfnM4/WAWKw/5Xxall2kHvGevAq767qZQ92FfXdif6AI9rQ=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(1800799024)(19092799006)(52116014)(38350700014)(7053199007);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?9/XS4wql8fdghqXajXbGBHngrg+kULLPVNeJYQnXtJ3x4vlzI3tgbiUt7PLg?=
- =?us-ascii?Q?9QF/C9+0AWZSNJF/rtC7jx+NiXpedQvk7B4C1janilVloqrk6JHBZZppNyoc?=
- =?us-ascii?Q?Yrq/A6IUzkAo7MeIljAmYUB3wJQjiJoteOtVftT10fb9t4dvsIe3CjCBzhRP?=
- =?us-ascii?Q?gvgdFI4XbUiM+xjYRpIRc3sMijojffrVtmTXfa5p2yIrZdurNzxObUeIUauV?=
- =?us-ascii?Q?UI0fsHPsBNlF0qnvJcueFSoXCY6V0BVj0F1wID7+Mg8eNhyQab5qmnzHzbLS?=
- =?us-ascii?Q?sLm2+bdksXOtrpfipm0n+opX4iSXZPPupNV5fIbzKw+7sv8ds3xxWYGOFqVy?=
- =?us-ascii?Q?BgDye79/rOrbrp+ZLxDZUE9Lq1EUNTWE9BOnQ66SSHyI+4UXMTcT9Tip00pM?=
- =?us-ascii?Q?fDU7t+/PBpBCIiYq3ye6pQKwaRucCtZCHEmF9GTf2p7EjEJeM7BdnPo8OMfG?=
- =?us-ascii?Q?GIFNcLs74A/DHabKCq9XsI05spGeK79LdvqFeu1X0coiA/H/i7zcXd9OQMNd?=
- =?us-ascii?Q?pLeZD+yZSFnK3vwXhqTnTqDPjnSwIYl3IjrXR8BrGVecl0Q9cgRu2PluHEw2?=
- =?us-ascii?Q?MLtvcmji565WkDEe4HLR0SAIckk/xa5X9Gi5mjyCgLfzIflPzapG7W+dhTuk?=
- =?us-ascii?Q?eZJBWvUjfA4/g7yQeLhrULk7KhdZvuV9t/D+SvyglhrsHzoiPLqybq2cbP0u?=
- =?us-ascii?Q?jolZQMDhlACj3gpprACoHeaV7UeGltB/uEPWczhtDUFEXFc4/Phn03mkxXOo?=
- =?us-ascii?Q?NhdYDNmCcopJ3+OEox01yLXDkxGVqfybN82Z+Qs0J2opwZdNU24kVvQczktE?=
- =?us-ascii?Q?m+0cKAQ5og+v83WctM342DP0ZhcIYwbdGlZukZHbrlEK6bSYTJt+s9Ll7UR1?=
- =?us-ascii?Q?+cctgNTdcMJ2k2OiefXVHTtKRYqYFSrYFt1GVBhxtdm2P/IY0xh2PRgkXgii?=
- =?us-ascii?Q?tdN7U5M6Up7UfxvtlaUdDdpCc2sKWSDUoQTy+K6Zs5RGhouMddkO4vH/GSmM?=
- =?us-ascii?Q?g44vvyOkW+4pQGpMqrXuygpFZ20bWA/0/JxxatJmXZ4lpdFUJ8PGowVK7lnx?=
- =?us-ascii?Q?2jYaM7VHgVweu3U0ydgdMN/RBSlK6XjMHu4iyEAAMuaz2x5IRhFyjcWXiyjZ?=
- =?us-ascii?Q?NZVaX7t3BYB373K8mJ55on7uKtB28QveM6pRKnxG+8ihCucUVcI9a0U2zSZU?=
- =?us-ascii?Q?uJDDzgYoDng9Utm4FMu5Ir6cyNUXefHneG9JkIyYzNSd/2aC8GS7Q33rwYNn?=
- =?us-ascii?Q?aGjc+3bpmVZmegoZKQKvWHrdNKfXnKf+ErnX3h+g0MH8ilcUmgAQad/HBXHc?=
- =?us-ascii?Q?qvCSGnxq+bDl5GcKbOHKpaT5OVuLUp5sEgBmZ4yQ5bycgU4LhydVS0opwtCB?=
- =?us-ascii?Q?PRTVPQnxvn56E73uqQoj3DpOMtzir7F+N5slybPNEYaYPb/2/t0aLewomI83?=
- =?us-ascii?Q?g6Ezg8EANmmWf3Kyfcut2prg1MyMtA5VEiNJgiRl7c3vIdFITeXq4phBmU5X?=
- =?us-ascii?Q?rbI24Y524ilNdJw9QoggHI0kt4M+yt9Obwp1FHXAMNCs4XXH+0u/jZjvj1bg?=
- =?us-ascii?Q?nAzvjgteUb9aiNy5raA=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cd8aa3db-8017-451f-6ea3-08ddc2e7b164
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Jul 2025 15:04:12.8496
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: xH0gt7Fa6K+RKyDJQGmfmN8B6kA1wKKdeCjf0Bh44z4++A1lWXwUPUvF8Wr4gBoNpx97iToBcG/BZZuAQoWgBg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB8810
+Content-Disposition: inline
+In-Reply-To: <20250714091211.20497-2-wsa+renesas@sang-engineering.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250714_080420_480697_66627E51 
-X-CRM114-Status: GOOD (  26.58  )
+X-CRM114-CacheID: sfid-20250714_204443_385273_08929B29 
+X-CRM114-Status: GOOD (  16.27  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -159,77 +81,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jul 14, 2025 at 04:40:53PM +0200, Krzysztof Kozlowski wrote:
-> On 14/07/2025 16:15, Frank Li wrote:
-> > On Sun, Jul 13, 2025 at 05:24:12PM +0200, Krzysztof Kozlowski wrote:
-> >> The two clocks, driver is getting, are not being disabled/re-enabled
-> >> during runtime of the device.  Eliminate one variable in state struct,
-> >> all error paths and a lot of code from probe() and remove() by using
-> >> devm_clk_get_enabled().
-> >>
-> >> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-> >> ---
-> >>  drivers/i3c/master/i3c-master-cdns.c | 51 +++++++---------------------
-> >>  1 file changed, 12 insertions(+), 39 deletions(-)
-> >>
-> >> diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
-> >> index 449e85d7ba87..cc504b58013a 100644
-> >> --- a/drivers/i3c/master/i3c-master-cdns.c
-> >> +++ b/drivers/i3c/master/i3c-master-cdns.c
-> >> @@ -412,7 +412,6 @@ struct cdns_i3c_master {
-> >>  	} xferqueue;
-> >>  	void __iomem *regs;
-> >>  	struct clk *sysclk;
-> >> -	struct clk *pclk;
-> >>  	struct cdns_i3c_master_caps caps;
-> >>  	unsigned long i3c_scl_lim;
-> >>  	const struct cdns_i3c_data *devdata;
-> >> @@ -1566,6 +1565,7 @@ MODULE_DEVICE_TABLE(of, cdns_i3c_master_of_ids);
-> >>  static int cdns_i3c_master_probe(struct platform_device *pdev)
-> >>  {
-> >>  	struct cdns_i3c_master *master;
-> >> +	struct clk *pclk;
-> >>  	int ret, irq;
-> >>  	u32 val;
-> >>
-> >> @@ -1581,11 +1581,11 @@ static int cdns_i3c_master_probe(struct platform_device *pdev)
-> >>  	if (IS_ERR(master->regs))
-> >>  		return PTR_ERR(master->regs);
-> >>
-> >> -	master->pclk = devm_clk_get(&pdev->dev, "pclk");
-> >> -	if (IS_ERR(master->pclk))
-> >> -		return PTR_ERR(master->pclk);
-> >> +	pclk = devm_clk_get_enabled(&pdev->dev, "pclk");
-> >> +	if (IS_ERR(pclk))
-> >> +		return PTR_ERR(pclk);
-> >>
-> >> -	master->sysclk = devm_clk_get(&pdev->dev, "sysclk");
-> >> +	master->sysclk = devm_clk_get_enabled(&pdev->dev, "sysclk");
-> >
-> > Can you use devm_clk_bulk_get_all_enabled() to simpilfy futher?
->
-> Instead of asking redundant question check yourself. On a first glance
-> it cannot, because it won't be simpler - you still need individual
-> clock. But if you find it possible which is not visible on first glance,
-> make a proposal instead of just random drive by comments.
+On Mon, Jul 14, 2025 at 11:12:08AM +0200, Wolfram Sang wrote:
+> From: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+> 
+> Available in R9A08G045 (RZ/G3S), R9A09G047 (RZ/G3E) SoCs.
+> 
+> Signed-off-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+> Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+> ---
+> 
+> Changes since RFC:
+> * resorted the clks, so G3S can only have the first two while G3E needs
+>     needs all three
+> 
+>  .../devicetree/bindings/i3c/renesas,i3c.yaml  | 180 ++++++++++++++++++
+>  1 file changed, 180 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml b/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
+> new file mode 100644
+> index 000000000000..f53a176cad2c
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
+> @@ -0,0 +1,180 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/i3c/renesas,i3c.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Renesas RZ/G3S and RZ/G3E I3C Bus Interface
+> +
+> +maintainers:
+> +  - Wolfram Sang <wsa+renesas@sang-engineering.com>
+> +  - Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+> +
+> +properties:
+> +  compatible:
+> +    items:
+> +      - enum:
+> +          - renesas,r9a08g045-i3c # RZ/G3S
+> +          - renesas,r9a09g047-i3c # RZ/G3E
 
-It is hard to find that sysclk is used at other place only from this patch
-without check source code. I think you are expert. If it is feasible, a
-simple reminder should be enough. If not, simple reply the reason/difficult.
+You already have to have differences between these 2. So how are they 
+the same and compatible with this:
 
-In svc i3c driver, we use devm_clk_bulk_get_all_enabled(). And make code
-simple because it use runtime pm.
+> +      - const: renesas,i3c
 
-In this case, using two dev_clk_get_enabled() is simplest. I think it should
-be similar with svc i3c driver at first glance.
+Even without a difference, this seems like it will be short lived for 
+how many SoC will be compatible with it (though we get to keep it 
+forever). 
 
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
-
-Frank
-
->
-> Best regards,
-> Krzysztof
+Rob
 
 -- 
 linux-i3c mailing list
