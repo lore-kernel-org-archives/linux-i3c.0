@@ -4,58 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A849C83F1B
-	for <linux-i3c@archiver.kernel.org>; Thu, 17 Jul 2025 13:14:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 318FBC83F22
+	for <linux-i3c@archiver.kernel.org>; Thu, 17 Jul 2025 13:34:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pQRsgnxrJ/bJRm4WK6lvqzcmSK3p61OqdbhY+SHyvNU=; b=10KpOEz+SLn5xF
-	p6lLN1HpCpWNyPYHk3TBSLXjkF5ZK5vdHtaAKPa4s4Q7WlBlZbgqAOFEtSO7kDHmn8AP+335B0OSZ
-	Cl9RX33xR1GlBHuGMtoBebDFZfVjmOFnM99MlPH3CSWi10IjZ2erEOR6tvHUwKonDpY/JANlpuJZT
-	su30k2SZ5/8smJtwtW5kSUOYlWquQTdWrw3YlHnEN1yw5utuOt1DyI1H+0enQ+aH2pz0Au32jInFZ
-	e7sV/BDYOjrWHZJ8rS8PjX13z/BxKNf8oEzzNThHI9biFQYaGW7+R5uaXk89ZqWdXAjdNhnKRLg8R
-	hV74K0PiWrBRqEymyS8g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=HqLu9XrCeky3+pv5mGLDPSY2M+YK1qovGZgkx/GQNgg=; b=Q+qGN++hg/3PGi
+	AX3wxvGCl21Xx8xO2rRPgbS/e4aM8CZofuqAn79j+g8eQj/vMlNPTbVHLhozHJ4z7sgvjNIFAcOkT
+	jeLDne0A191wQp/L0Lxhn86SYF67q5v8LUWJQHb1O3X3cagsW+QTFU+2CM3w9cUphfztZSJpw12fE
+	6AY5a55zPj7ct/J5z8ZI625yF9VPdePWjHHRWyXgVQU7OSq1fEt/ByHidGE5ZjW3//c0JyGJq/tkA
+	M/xWfdqc6hMRq6RwzUKYUzDUlCTgvKX2SkSOSyGb6MP9ZvlXLsd7li7rEGLgUZEsBpf0P59VDoyTm
+	U+Ctmx/EfdoMYI1qZ26g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ucORj-0000000AE7s-4Bdg;
-	Thu, 17 Jul 2025 13:14:48 +0000
+	id 1ucOl0-0000000AGsS-3i0c;
+	Thu, 17 Jul 2025 13:34:42 +0000
 Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ucNLt-0000000A41D-1en0
+	id 1ucNfm-0000000A6m4-2ob1
 	for linux-i3c@lists.infradead.org;
-	Thu, 17 Jul 2025 12:04:42 +0000
+	Thu, 17 Jul 2025 12:25:16 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	sang-engineering.com; h=date:from:to:cc:subject:message-id
-	:references:mime-version:content-type:in-reply-to; s=k1; bh=HL0V
-	WTAht8AVy4zqain08zkh4A2mMxT0R9SsJPX1Hl0=; b=MCzVgkqnJqo5893x/yj9
-	FvBv65ra2ykSCN8eTFbvwwt2+himuFy4BGELoaE40P7c35EPyZfOOcVr092JM1DS
-	htX97mIXCei0NertlUBEfObwcUqEOKd4QMAJTtmiExunsgz9SyV7gaWSHB3wIsRs
-	INyTa1LyeVNzdgUkEfgufddWMJStpV7hINVz+bOUSVF5gqt/7ulHeyXfT65Oq8nt
-	XgMoCEFsrFtyTgs+2QzqVdGRUhPNeuxZR37oa3LN0JP6pzfu5Fdg6PNC/z9FFS/y
-	oyBIGq9o3xXqWSDIDciIS/XwEGCVfLJfCnp9ueVL3Z1F/MQJG92heFT2nKSWftT4
-	bQ==
-Received: (qmail 3665366 invoked from network); 17 Jul 2025 14:04:39 +0200
-Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 17 Jul 2025 14:04:39 +0200
-X-UD-Smtp-Session: l3s3148p1@aSlU0B46UpMgAwDPXx+vAAkEB0lWxGP4
-Date: Thu, 17 Jul 2025 14:04:38 +0200
+	sang-engineering.com; h=from:to:cc:subject:date:message-id
+	:mime-version:content-transfer-encoding; s=k1; bh=bNx8gllGSe/xy2
+	vLhCn0cAXNpGel+OqdtdLDQBiWdoQ=; b=EAl0qA9mbot7pso+VTslj4rNQBSt56
+	66eiK2vjlv0+lnmxGqkjxz5RT6YfksGS12ls5HmBACf2IlO7i2YD6zi6qixXSJ7t
+	/JMMvGMjzuFdMNN43pYrPNWnzFajR5o9u2su7oWMatEPIyCHpCX0hy8X2J+8DCYk
+	xXox0gCwEoIBjIV5B0Pps6cIXu3kiFzw1I/+ivaxd75Wto9Lt/eMsQws89o6pDGH
+	f8dtBk+Xza8Gv2MCb/U6k3EV7Vf3VCcOl7uGdLYduE3QPJToTBLm8q8nbvwgLtZ0
+	iZFo9WNPXlnY74dwRs56GJgFPQKFJuDuM7aCZQ3BGcdaUUipo2dz/9JA==
+Received: (qmail 3671446 invoked from network); 17 Jul 2025 14:25:12 +0200
+Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 17 Jul 2025 14:25:12 +0200
+X-UD-Smtp-Session: l3s3148p1@HWbYGR86GMcgAwDPXx+vAAkEB0lWxGP4
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 To: linux-renesas-soc@vger.kernel.org
-Cc: kernel test robot <lkp@intel.com>,
+Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
 	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org
-Subject: Re: [PATCH] i3c: add missing include to internal header
-Message-ID: <aHjm1tjpBk4h3SSp@shikoro>
-References: <20250717120046.9022-2-wsa+renesas@sang-engineering.com>
+	Conor Dooley <conor+dt@kernel.org>,
+	devicetree@vger.kernel.org,
+	Frank Li <Frank.Li@nxp.com>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	"Gustavo A. R. Silva" <gustavoars@kernel.org>,
+	Kees Cook <kees@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	linux-hardening@vger.kernel.org,
+	linux-i3c@lists.infradead.org,
+	Magnus Damm <magnus.damm@gmail.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Rob Herring <robh@kernel.org>,
+	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+Subject: [PATCH v2 0/2] i3c: add support for the Renesas controller
+Date: Thu, 17 Jul 2025 14:24:51 +0200
+Message-ID: <20250717122455.9521-1-wsa+renesas@sang-engineering.com>
+X-Mailer: git-send-email 2.47.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250717120046.9022-2-wsa+renesas@sang-engineering.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250717_050441_707932_7AA4AA90 
-X-CRM114-Status: UNSURE (   8.54  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250717_052514_983221_146A1E29 
+X-CRM114-Status: GOOD (  11.32  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,21 +80,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jul 17, 2025 at 02:00:47PM +0200, Wolfram Sang wrote:
-> LKP found a random config which failed to build because IO accessors
-> were not defined:
-> 
->    In file included from drivers/i3c/master.c:21:
->    drivers/i3c/internals.h: In function 'i3c_writel_fifo':
-> >> drivers/i3c/internals.h:35:9: error: implicit declaration of function 'writesl' [-Werror=implicit-function-declaration]
-> 
-> Add the proper header to where the IO accessors are used.
-> 
-> Reported-by: kernel test robot <lkp@intel.com>
-> Closes: https://lore.kernel.org/oe-kbuild-all/202507150208.BZDzzJ5E-lkp@intel.com/
-> Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+Here is a basic driver for the I3C IP found in various Renesas SoCs like
+RZ/G3S and G3E. Missing features to be added incrementally are IBI,
+HotJoin and maybe target support. Other than that, this driver has been
+tested with I3C pure busses (2 targets) and mixed busses (2 I3C +
+various I2C targets). DAA and reading/writing to the temperature sensors
+worked reliably at different speeds. Scoping the bus, the output from
+the protocol analyzer seems reasonable, too. It was created by merging
+two versions of it from two different BSPs. Then, improved according to
+code analyzers, cleaned up with regard to coding style, and then
+refactored to hopefully match I3C subsystem standards.
 
-Fixes: b7371ff9bdf7 ("i3c: master: Add inline i3c_readl_fifo() and i3c_writel_fifo()")
+Changes since v1 are described in the individual patches. A branch with
+enablement patches for RZ/G3S+G3E can be found here:
+
+git://git.kernel.org/pub/scm/linux/kernel/git/wsa/linux.git renesas/g3s/i3c
+
+Looking forward to comments,
+
+   Wolfram
+
+
+Tommaso Merciai (1):
+  dt-bindings: i3c: renesas,i3c: Add binding for Renesas I3C controller
+
+Wolfram Sang (1):
+  i3c: master: Add basic driver for the Renesas I3C controller
+
+ .../devicetree/bindings/i3c/renesas,i3c.yaml  |  179 +++
+ MAINTAINERS                                   |    7 +
+ drivers/i3c/master/Kconfig                    |   10 +
+ drivers/i3c/master/Makefile                   |    1 +
+ drivers/i3c/master/renesas-i3c.c              | 1425 +++++++++++++++++
+ 5 files changed, 1622 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
+ create mode 100644 drivers/i3c/master/renesas-i3c.c
+
+-- 
+2.47.2
 
 
 -- 
