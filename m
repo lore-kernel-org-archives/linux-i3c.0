@@ -4,152 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C2EFC83F22
-	for <linux-i3c@archiver.kernel.org>; Wed, 16 Jul 2025 16:46:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8C218C83F1B
+	for <linux-i3c@archiver.kernel.org>; Thu, 17 Jul 2025 07:24:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VpcZChvlRchKbvemCpfp7NCCFWWf1UM5eIp698y/uFQ=; b=Wjh9p/0vEOb7+a
-	IX5u1J07Aunj18cfVPts90TeNnLXqrSaCgF0irIeGxP0MaFNjeS7mUA8tG8FmrTzETRq9LH7qJqVh
-	F/ZOUfsJG/VWouR/nB8g24y7Nca68yY+uKcBfqG32cDN2pcvIMFkHuUzdKeNQteXqvCUSI1S3bsge
-	oAL4jU3WpfXD9gSBdt1Gcb9RWfE9oTxDaCdbCNk5r+tkxCO9vZ/+hZw1sORc5VX7G9Z6WrxLft+mn
-	j0Z8ByQ8l7GSsoV23yc0N2dbl9wKHTXbkz/Qu2bOvLefRwKDVeD7K1RNyYgKoNjvzBJCRO8fScH9r
-	2+IXLPdRPLdkos/F3EEA==;
+	List-Archive:List-Unsubscribe:List-Id:CC:To:MIME-Version:Message-ID:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Xx9rVqa7MtJLs+jTfWvxOg7Qow7wwnBCTnYBl8svTKs=; b=HsspaGl40/LKVF
+	+KpRTx87ZWrCiUqerlc4Nqzs+x3QXEdwnNccbKSSECsuS82nTp46jrytHHz42+HGmqTd4g/i/IWgT
+	+2ULawd7o0cyQ3rii/e6uvAUyTF9yB5l5FJ2X0acL/y0RbsDCoidxTIuiOP0HOUxEOpa36Ta/YHIm
+	U9QIp4TuVPOIe/h7YSNey1XyVrADo9FSO9GYnf40tiI1wtRH9+QJYhdw5kpo7wyEJGy7Jpk13Okh4
+	DaY29DrSkTzXK6rWfvTCnwnnTaYayLVtEl2bD+TqU7hxLfhdn9KgiTOojGkfRhUODwnQDCRlIbs63
+	LqHWqbfSzPp0by4GzIjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uc5Gl-00000008DPu-3rCA;
-	Wed, 16 Jul 2025 16:46:11 +0000
-Received: from mail-westeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c201::3] helo=AS8PR04CU009.outbound.protection.outlook.com)
+	id 1ucIz1-00000009Qqa-13uO;
+	Thu, 17 Jul 2025 07:24:47 +0000
+Received: from mx0a-00128a01.pphosted.com ([148.163.135.77])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uc5Gi-00000008DP6-36qj
+	id 1ucIki-00000009O9X-0tXB
 	for linux-i3c@lists.infradead.org;
-	Wed, 16 Jul 2025 16:46:10 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=yyg3FqxvIWWlrYvZkgRJSJIsr9++8VNOqe1VT8TZBSe/GWtj2g+dP66jPbL4AyR7NZweprjffrQf6dbUX0jcDTwM38OdpDsKJulXUmG8Erq0UBADvWa2nJ5Zo4wHU06CzHF5mYw+bwqho1QV3ya1CPq3CQB4saub21rg7suyifw3jNEGo3zlun7XJVqD9u2q/gj1QOW2ED67o9en7gs2Bm9MTCHK+Cl/hY+K3VV7G5Y+S80u/6g2EveoFrojum20Bei8C9j97r3qNAiRoPCe9HWXWKIcB+YSmmYq4rmLZxfDOHWdmZ/A+9sMkjtNnH7NS8IFZ9ANlv0E62FnKPLBHg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=+VC6DfTB9viT3OwqPevZIwJGk3H+IkoO2TJK3dyxJtI=;
- b=jD9JfMEfnezNR/VQSVUo43xh8b+DOFDiJvTMC/l/5CyNQVYgzb2u2BNJDVE+31F8qSIDvRAj+UcmO62yUZTTmmKNgrcbu5mAd4Uo6wYYaAS/FAW0NmxKGp32c2nbHsU4YeEs7igNNpCF2S1gh1m0qQjocGLqbCRy43y/04Eiz7/siWisqA/+MdAymRCg/lbyv4+3X+3mcUN+cBBt6JLzH36na1tuWCzwRj7n8Yhjo/UhOu5xvMPczTLnxsQTebXvG+y0SEPqzzokWnwSC86xgjHdejc3IgB5jGMoU5tn523z8GXuuFviWvD57isMrZfQYFmC/vma2fyBRDW28Rg7Aw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+VC6DfTB9viT3OwqPevZIwJGk3H+IkoO2TJK3dyxJtI=;
- b=f7xZwQPiMhxK2HfSaOkkIdiOx9PD0IZjYrkBKBb82dL3DQl6WMZRqCOHQTEsWKG0JiHznylhUySWElP5rX+3us1JmVrV1KpAlIuoZZKvgsuthxO1VtFOm7NTpC3uPw6pIEnuoieEfqR7aFbhp0H4jWBiu/8JGzYPPWdoXRnYOrdaOqLWbztfioVc/AaNE/0CQTki2RBkbVFcEAecVHO8UAEKJQWvTc+5jw4m50lFzZbvk18LiT9FFqfWCHVJ2UH8yjHRE/buBBrjrGscDTqJoOl5jwOpMWxKNqEQoVvzDf33o0Gz6xKjW0nR4+AAeofdaU3dvsKrT2rUW+vnk0JDXQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
- by DU0PR04MB9636.eurprd04.prod.outlook.com (2603:10a6:10:320::21) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8922.32; Wed, 16 Jul
- 2025 16:45:57 +0000
-Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
- ([fe80::9126:a61e:341d:4b06%5]) with mapi id 15.20.8922.028; Wed, 16 Jul 2025
- 16:45:57 +0000
-Date: Wed, 16 Jul 2025 12:45:50 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Wolfram Sang <wsa+renesas@sang-engineering.com>
-Cc: linux-renesas-soc@vger.kernel.org,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
-	Kees Cook <kees@kernel.org>,
-	"Gustavo A. R. Silva" <gustavoars@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>, linux-i3c@lists.infradead.org,
-	linux-hardening@vger.kernel.org
-Subject: Re: [PATCH 2/2] i3c: add driver for Renesas I3C controller
-Message-ID: <aHfXPkvEZutgWyZ+@lizhi-Precision-Tower-5810>
-References: <20250714091211.20497-1-wsa+renesas@sang-engineering.com>
- <20250714091211.20497-3-wsa+renesas@sang-engineering.com>
- <aHZuAIP5IBoulm+9@lizhi-Precision-Tower-5810>
- <aHeStuQ4ymIlyNE4@shikoro>
-Content-Disposition: inline
-In-Reply-To: <aHeStuQ4ymIlyNE4@shikoro>
-X-ClientProxiedBy: AM0PR02CA0109.eurprd02.prod.outlook.com
- (2603:10a6:20b:28c::6) To PAXPR04MB9642.eurprd04.prod.outlook.com
- (2603:10a6:102:240::14)
+	Thu, 17 Jul 2025 07:10:01 +0000
+Received: from pps.filterd (m0167089.ppops.net [127.0.0.1])
+	by mx0a-00128a01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 56H30kul022877;
+	Thu, 17 Jul 2025 03:09:54 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=analog.com; h=cc
+	:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=DKIM; bh=D2/S8v3aa6hBRNh3w2/IBfsMgN/
+	f2bhDnK4NOoM0qV4=; b=v9YIMMiCDU6i1t+s0WtHKENPYhUd9QwGJmHzoKs8U9c
+	eBj7U3gi2GObRXLvrfiDLOU4JhZUP8wvqnO2frFYt01tMQRWu10NHzEkhTdBo7cn
+	wl8uyrArKwn4Ul6DObbk5+T/8jd3KafpqlADrjGBlOLD6eRZmuRw1SPyonPSSpyu
+	SD5J+tpk6544+A2+ReemRrq8k35k3ONlWwtsj41qfFXBfyheF/9MT1yj1PDXWPmy
+	40a3LPwG/20vxS/QAkpzHbBltOWpadYFzYRCysqboRBcFb8ESmU0lb/A0rBHSGGh
+	O02iHs3DU6v0HtdZpISOJ+mXLh9XnOtPrJfiljTLiDw==
+Received: from nwd2mta3.analog.com ([137.71.173.56])
+	by mx0a-00128a01.pphosted.com (PPS) with ESMTPS id 47xcpmmd5r-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Thu, 17 Jul 2025 03:09:53 -0400 (EDT)
+Received: from ASHBMBX8.ad.analog.com (ASHBMBX8.ad.analog.com [10.64.17.5])
+	by nwd2mta3.analog.com (8.14.7/8.14.7) with ESMTP id 56H79q0u046678
+	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Thu, 17 Jul 2025 03:09:52 -0400
+Received: from ASHBMBX8.ad.analog.com (10.64.17.5) by ASHBMBX8.ad.analog.com
+ (10.64.17.5) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Thu, 17 Jul
+ 2025 03:09:52 -0400
+Received: from zeus.spd.analog.com (10.66.68.11) by ashbmbx8.ad.analog.com
+ (10.64.17.5) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
+ Transport; Thu, 17 Jul 2025 03:09:52 -0400
+Received: from HYB-DlYm71t3hSl.ad.analog.com (HYB-DlYm71t3hSl.ad.analog.com [10.44.3.72])
+	by zeus.spd.analog.com (8.15.1/8.15.1) with ESMTP id 56H79bDN005035;
+	Thu, 17 Jul 2025 03:09:40 -0400
+From: Jorge Marques <jorge.marques@analog.com>
+Subject: [PATCH v6 0/2] Add ADI I3C Controller
+Date: Thu, 17 Jul 2025 09:09:19 +0200
+Message-ID: <20250717-adi-i3c-master-v6-0-6c687ed71bed@analog.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|DU0PR04MB9636:EE_
-X-MS-Office365-Filtering-Correlation-Id: 7594694a-da8c-4fa6-027a-08ddc4883c92
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|366016|1800799024|376014|52116014|19092799006|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?v0XfWV9k9jWRkIjVK4oP1GP1TY7fcbm+blUJPXJI4+ivwKwAIeIhbvlfbHz/?=
- =?us-ascii?Q?lzHlPeMM9vxQK8Q2z+PZnG/yeS7ZsAORsdxzG8DAl8sCutoLZtjxjv4Dd18x?=
- =?us-ascii?Q?lvc1YkmUn5p0ZiRh4B1qWYDflq1fjc10nQnWHNCK/x4CCXet2asGBSHsxPdX?=
- =?us-ascii?Q?qKttUyk+lNSN1fru+mnRcZ0gZ+m8CvovXO9heYZEmcbEUrFOq+6s+/Q6KHtW?=
- =?us-ascii?Q?24Pk30rtqMO40O3/s06zRnxaA+of6vtwQdySOsYZA3nlbgSU4bpa2iaycx3D?=
- =?us-ascii?Q?HgIxW9a/apMeA1+cWBksrQFfIWvv1mSp4r4ytvy1xANShPKw8WxWGlLjcKa3?=
- =?us-ascii?Q?TZdMr7NkXN67Sgb5kaQppbDfX7aonH5OEMFm31TtGcj4B8Wqe7OTAlx8Lh2z?=
- =?us-ascii?Q?lBEzYdbHHtVzesypjFZZOtPYoBRQmlkpaSwV5hvCG/39WzgPhPktiO99cdIA?=
- =?us-ascii?Q?fo4fYkCdOp8GQfTFYKxVq1rLyu1EjOaepSarWHOWfpHsuc7fYGxu31Tg1VK3?=
- =?us-ascii?Q?pOZKsB1muusXYjiZW0+FpriQsc3QbaWR4umaUP6m2Z1xxe4mCuT7aTjC3zQ1?=
- =?us-ascii?Q?xVmtomI31vRDDgX3CGEV4Ewttrw97GUHiC3RH2ykFPKcweTMLl/q3SYbNbEG?=
- =?us-ascii?Q?44Nfq1ypWK71bJ97TuvOJbv7DDaLow4QzcIjULFnlU26Bilq6RlMDkGdrNrk?=
- =?us-ascii?Q?3STOyavHcKSgcslPvjJe+Jgack2aMZQqJirjdbjmyhMOqLAS0txuuokiPTZL?=
- =?us-ascii?Q?5MKe85ZlvKT2B5MXfhG4MRbLshA9k9JV7jp3XdMxeURBy4Aufxz2mHCzDkqR?=
- =?us-ascii?Q?af9cb7I1LjFoq4zuYonttfETsnQmnidr5jdgaoi52UCRCtx0u6lkQAmtZEsJ?=
- =?us-ascii?Q?+IrG995MwM2HVC3fE6PtxXdhGmNDRSD9324UGp+6BxwTGO86c4kJGHnn4cpO?=
- =?us-ascii?Q?h3ofynE7M/Dr4mnc3wOF/op5EL3LCVBrfFB40y16BztdXvUMV6AhRUFtTGd+?=
- =?us-ascii?Q?rCW/OqiXy5yLt9qNF/chTCPdmed4GaE7+KWaRRsTC/ZSGp4oxBmuJ7ZLpF+G?=
- =?us-ascii?Q?Qd+1xCTj8J0jBAn7ENyc2rQR9GKnpf5YbJ2bzHZrRVbyJpfjg7n71uwCLeLg?=
- =?us-ascii?Q?JpbvcUWkImJLYQKeOCQJ1WV3pX1lycDP9X0d3Ujh0TuFX/Ih1kawP4uULlhK?=
- =?us-ascii?Q?C8cc82XexgZfjZU7NcuZ0odbl/rDxIxf2NihrDrHlmsQH8ppbxED2m3o2KH8?=
- =?us-ascii?Q?yUqhJLhLeL3M7dWspLDLIRAutc19tweq5SMFxmB0K8EdiD3ru5eGsZWhfRxJ?=
- =?us-ascii?Q?TxnG6P4U+FAG76HC4QlysjX8s1kcBnZVApJXtUNLf/eqX2adj4smgxczL0ej?=
- =?us-ascii?Q?YMLSaDDa1A98UYEUdQUegTDQHNA/P66j7nN74FhegiTJHLomxhwdvmWwASGq?=
- =?us-ascii?Q?HMzZqxLO+pcm4Z49TA7gZhW1oCA6V0Z3tfr5gbf4e40nH0oXCyRApQ=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(366016)(1800799024)(376014)(52116014)(19092799006)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Z3Xwqr84Qn7GDOzVZSuCFbkKgUYic+gtxR5sgffxcg7gCW9SR7heJJAl7oQc?=
- =?us-ascii?Q?ll3hEZG0Z44+8DVzvEFS21We/6G7aXFJgsLp8OJ5LKEcDWQnoiE82I6ytBwc?=
- =?us-ascii?Q?EPvlcmfz5LxdVMi7guG20qCTXo9fIJbv5Q7bytzmDfOoK+ZceHrzwwVRAOcr?=
- =?us-ascii?Q?3fA6yYJOBov3lMrimIJyXRG9leFcoIqCPrFoAssknsiQ1fRD2pugLBR7ZKdF?=
- =?us-ascii?Q?msK/Qir+6ie0ZzRXqCoxv0CMwKYEIcTy/uiIpdK2yp0ddyoXizttT0VuuTdN?=
- =?us-ascii?Q?4XUOpreYh57wjm1X6Ye1XMqBVvumWwBO/nLhJ7lDUwG1G9q4s3Syq6JcEP6/?=
- =?us-ascii?Q?Qhb8AX/aaJEpnmL+uoO0dJxJAyiPpOhLjeAIrjUg8ttjuOUE1b7OpLMOg5mO?=
- =?us-ascii?Q?MAPdOM3ahWaaUWPJWv252/Q1wH3SaCBosURNZHmQAjYerB8+y3rTR/Jfo5Xj?=
- =?us-ascii?Q?4hhlzAl4y6BTpQkmrW+5r2jzoxdaTZDP37xOwr044pGuAMybSOCma/pA2CUI?=
- =?us-ascii?Q?wrDLWGsluYWq6va3mjI2OiHfIhygQx/hG8bafBtpnZkRW4a8Pod28fcE7F4Y?=
- =?us-ascii?Q?nUekm7QesU0601zWmGxvwivRgqIgftsLShBxg31rfdx+5AoQmAvBfXopOIl/?=
- =?us-ascii?Q?Dux/rIx0vFOFL27y7UVJCz0A6zk9tiWbXq+snLU6uSQEgmMBNsZXZ9MKGHXT?=
- =?us-ascii?Q?B27xl/Qp0pvimpYpDBQXu7B4XYPxUX3JWElJ15sy7ZiU4mvFbn28m0yKB94r?=
- =?us-ascii?Q?AEee/SrIsKHol/qJaQauXlTO+0QqMxh0w9K/fyGkbnuhCELBNu0kq8qKqd37?=
- =?us-ascii?Q?TnnrzUXx5Spfpgn02eQu/zRQqkVUQ+s0bBe5bIeEhEBFM+WCRENgRSLUhgEw?=
- =?us-ascii?Q?t6E/rk94KN43ItT1VhdAmokLI2vESlAEIUrHAx4cH8wCq858gUO1s/NZI6kC?=
- =?us-ascii?Q?Th9Zl0vEErDf5mGzc0f3vvS7MAWD0i0iL/Tu+0AMfSuOn+UD+YUvyTkth4DS?=
- =?us-ascii?Q?c/QMUu9uwp6yjk7K6fKsCWzHeuxanY6osNSj4Zxm59ayO+6BKg6qC842YUHz?=
- =?us-ascii?Q?u+E9N3enx4iZ9Qf3utHaisVW2hGdPKBT+siBOdkVu72ZfF7ihFX+yu6TG71z?=
- =?us-ascii?Q?WErboMM0y9vGdEx9Tc6GAQPPrrFvkm3RheRUGgKLZXHbKuDvSgCCZXXC+fFc?=
- =?us-ascii?Q?bOXJ3zzfitPi0Bms33XTqc1M4kaeAeuzwTrjjBrTnuZM9WklU3hZwSfQ3pi3?=
- =?us-ascii?Q?+7/cgL870VuFZgwykM6kFPA5GIL/6wZK8F/f7DcOtJxZsrsT2RV8TmFJ3IYE?=
- =?us-ascii?Q?oKh6eowULJ28BjpPDu0QDP0aJheeEumvqlNSedlwgcXU8tvEWKQItDWw5xEO?=
- =?us-ascii?Q?/IchhNogvX+rwPDWZebFucqQCWfZ2BpVodKShT3ckBfP0f06DQkCBsAY8TiC?=
- =?us-ascii?Q?afGh+JMgvrqB1GdE52kSzo6C/cnhWTIEq2Eji1xx+GxT4n56zAgRkl6jIkH9?=
- =?us-ascii?Q?AGFahck73b1L1gdAhDIfdNmb2Lj5DUYNmKbrHea+gSeZ5ujC+2gjd66g0XA5?=
- =?us-ascii?Q?2tqacEat544QXPtDkH4ywqP7e1zftYY2eerENQiF?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7594694a-da8c-4fa6-027a-08ddc4883c92
-X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Jul 2025 16:45:57.0134
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: +TVdwUra8tt4+E+OXJVozebEso9iw7oFjSzUQjpBpQC5Q2AIwmCYxMU9mlIuUF4vZMYTijWUqh5pxmR3uRyiZg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU0PR04MB9636
+X-B4-Tracking: v=1; b=H4sIAJ+heGgC/3XR20rEMBAG4FcpuTaSc9NFxPcQLybJdDewbTWpV
+ Vn23U27gsXgVZiQ788wcyEZU8RMDs2FJFxijtNYCnPXEH+C8Yg0hlITwYRmhikKIdIoPR0gz5i
+ oAM2V9dp61ZKCXhP28XMLfH4p9SnmeUpfW/7C19t/oxZOGWXKWrQsQO/dE4xwno73fhrImrWIv
+ TeVF8Wjsa4DCMJIVnm589xWXm7e8JaB8a7TlVc7L+r/VfHSKgO8NyZorLz+9S3XldfFe9spqby
+ D/o+/3oab8O29LGm+TZgMmDNsSzo0Dz+NiS30I62PzjQhhHJswxHQB6nQl9mYXfjjujgHGWkph
+ jgfGs07I1srnW0NiF51EiSCZwgdOhAt985Y1kFp6/oNaAM+a0MCAAA=
+X-Change-ID: 20250604-adi-i3c-master-2a5148c58c47
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+        Frank Li
+	<Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
+        Krzysztof Kozlowski
+	<krzk+dt@kernel.org>,
+        Conor Dooley <conor+dt@kernel.org>
+CC: <linux-i3c@lists.infradead.org>, <devicetree@vger.kernel.org>,
+        <linux-kernel@vger.kernel.org>, <gastmaier@gmail.com>,
+        Jorge Marques
+	<jorge.marques@analog.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1752736178; l=4969;
+ i=jorge.marques@analog.com; s=20250303; h=from:subject:message-id;
+ bh=jHjMV2xBJawe/oOTiIyI28isXyG/lzzb72n9lxfPhPM=;
+ b=fSYCB0zrlpwTGzh8RxIKrBmN8kF/9vksJOKrOiKTgAMK5k0iyELOzSEy+wjnNs+BCBpW1kfej
+ vLTtxpJlHJ3AbUg+Df1ULaKOyOk48+7BGUaQNWCZ82rNkyJ4Bp2hlEJ
+X-Developer-Key: i=jorge.marques@analog.com; a=ed25519;
+ pk=NUR1IZZMH0Da3QbJ2tBSznSPVfRpuoWdhBzKGSpAdbg=
+X-ADIRuleOP-NewSCL: Rule Triggered
+X-Authority-Analysis: v=2.4 cv=Z97sHGRA c=1 sm=1 tr=0 ts=6878a1c1 cx=c_pps
+ a=PpDZqlmH/M8setHirZLBMw==:117 a=PpDZqlmH/M8setHirZLBMw==:17
+ a=IkcTkHD0fZMA:10 a=Wb1JkmetP80A:10 a=wI1k2SEZAAAA:8 a=VwQbUJbxAAAA:8
+ a=gAnH3GRIAAAA:8 a=XCmqdGZo9p5jl8pCkIMA:9 a=QEXdDO2ut3YA:10
+ a=6HWbV-4b7c7AdzY24d_u:22
+X-Proofpoint-ORIG-GUID: PRok4_ADdO77z1XHJsh60-WS0tI1nqEp
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzE3MDA2MCBTYWx0ZWRfXyGubynAT/JKl
+ hOdBD4AZiNCI9X+Wy1dgwxn/GcnwwynNZGaEtajpn18wU7npXPvrNjg79Y40ZNkTJ7uEJnuVFG6
+ KEiLaDwzHW3zoax+LRi2BTb+CemwpufRzzNaVkDYCx23BdhWeNxph5PsP6PqL1j0PDyRKtuAG71
+ obemEAGUoBING2FFxLAgOAMhFob6G1KBpjvOviGUEU/LRJu471yJc3EYW3wrnVujqYw2z46hNYM
+ 3IeJf0Cj2hpucls+g9GTd78mXa+qG4mMqSvlSCJaMJp864bOSke7SWflIoxQEt9/pOeh/105O5A
+ 72XQr23OetRvmx+bqj28idjkA67yikVetS1GMgeFbarBV3l0bboFNy4p9Rsp0eqPWU/aZlZSU8P
+ lR0XBqvDDMwl7JvdfA5fULAhkmaTmCQKQgHttOWrBjqYY/409pGGsr843A4A3+7tylcZOZYD
+X-Proofpoint-GUID: PRok4_ADdO77z1XHJsh60-WS0tI1nqEp
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-07-17_01,2025-07-16_02,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ mlxscore=0 malwarescore=0 phishscore=0 mlxlogscore=999 priorityscore=1501
+ adultscore=0 bulkscore=0 impostorscore=0 clxscore=1015 suspectscore=0
+ spamscore=0 lowpriorityscore=0 classifier=spam authscore=0 authtc=n/a authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
+ definitions=main-2507170060
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250716_094608_947878_CECD67E0 
-X-CRM114-Status: GOOD (  43.85  )
+X-CRM114-CacheID: sfid-20250717_001000_270043_0001B6B3 
+X-CRM114-Status: GOOD (  15.82  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -166,209 +130,127 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 16, 2025 at 01:53:26PM +0200, Wolfram Sang wrote:
-> Hi Frank,
->
-> thank you for the review!
->
-> > Suggest commit message:
-> >
-> > i3c: master: Add basic driver for Renesas RZ/G3S and G3E SoCs
-> >
-> > Add a basic I3C master driver for the I3C controller found in Renesas
-> > RZ/G3S and G3E SoCs. Support I3C pure busses (tested with two targets) and
-> > mixed busses (two I3C devices plus various I2C targets). DAA and
-> > communication with temperature sensors worked reliably at various speeds
-> >
-> > Missing features such as IBI, HotJoin, and target mode will be added
-> > incrementally.
->
-> Ok, I wil use this message. Thanks for providing it.
->
-> > > +F:	drivers/i3c/master/renesas-i3c.c
-> >
-> > Add i3c mail list?
->
-> It is inherited from the I3C subsystem entry.
->
-> > > +#define STDBR			0x74
-> > > +#define  STDBR_SBRLO(cond, x)	FIELD_PREP(GENMASK(7, 0), (x) >> (cond))
-> > > +#define  STDBR_SBRHO(cond, x)	FIELD_PREP(GENMASK(15, 8), (x) >> (cond))
-> >
-> > I think pass down od_low_ticks instead of cond will be easy to understand.
-> >
-> > STDBR_SBRLO(l, x) FIELD_PREP(GENMASK(7, 0), (x) >> ((l) > 0xFF > 1: 0)
->
-> Well, I think the fact that you got it wrong is indicating that it is
-> not so easy to understand :) It should be:
->
-> STDBR_SBRLO(l, x) FIELD_PREP(GENMASK(7, 0), (x) >> ((l) > 0xFF ? 1: 0)
->
-> I also think it won't gain us much. We still need the 'double_SBR'
-> variable to set a specific bit at the same time we use the macro.
-> Unless you want a dedicated macro for STDBR_DSBRPO as well.
->
-> > But still strange,  l > 0xFF, you just shift right just 1 bits.
->
-> Yes.
->
-> > what's happen if l is 0x3ff.
->
-> The driver bails out:
->
-> +	if ((od_low_ticks / 2) > 0xFF || pp_low_ticks > 0x3F) {
-> +		dev_err(&m->dev, "invalid speed (i2c-scl = %lu Hz, i3c-scl = %lu Hz). Too slow.\n",
-> +			(unsigned long)bus->scl_rate.i2c, (unsigned long)bus->scl_rate.i3c);
-> +		ret = -EINVAL;
-> +		return ret;
-> +	}
->
-> Oh, the last two lines can be merged into one...
+I3C Controller is subset of the I3C-basic specification to interface
+peripherals through I3C and I2C. The controller RTL is FPGA
+synthesizable and documentation is provided at
+https://analogdevicesinc.github.io/hdl/library/i3c_controller
 
-Okay, it is not big detail.
+The main target for the I3C Controller IP is low-cost FPGAs.
+In this version the driver supports IBI (only the MDB), I3C and I2C
+transfers.
 
->
-> >
-> > > +#define  STDBR_SBRLP(x)		FIELD_PREP(GENMASK(21, 16), x)
-> > > +#define  STDBR_SBRHP(x)		FIELD_PREP(GENMASK(29, 24), x)
-> > > +#define  STDBR_DSBRPO		BIT(31)
-> > > +
-> > > +#define EXTBR			0x78
-> > > +#define  EXTBR_EBRLO(x)		FIELD_PREP(GENMASK(7, 0), x)
-> > > +#define  EXTBR_EBRHO(x)		FIELD_PREP(GENMASK(15, 8), x)
-> > > +#define  EXTBR_EBRLP(x)		FIELD_PREP(GENMASK(21, 16), x)
-> > > +#define  EXTBR_EBRHP(x)		FIELD_PREP(GENMASK(29, 24), x)
-> >
-> > did this pass check_patch.sh? I remember need (x)
->
-> Yes, it passed.
->
-> > maybe run check_patch.sh --strict
->
-> I used --strict. Does it complain on your side?
->
-> > > +static void i3c_reg_update_bit(void __iomem *base, u32 reg,
-> > > +			       u32 mask, u32 val)
-> > > +{
-> > > +	i3c_reg_update(base + reg, mask, val);
-> > > +}
-> >
-> > It is similor to regmap. If you use mmios' regmap, needn't above help
-> > functions.
->
-> Is this a suggestion or a requirement? I'd like to keep it this way.
->
+Depends on https://lore.kernel.org/linux-i3c/20250622-i3c-writesl-readsl-v2-0-2afd34ec6306@analog.com/T/#t
 
-Mark brown provide similar feedback at the other code review because only
-4 line at probe function needed to avoid duplicate simular function every
-where.
+Signed-off-by: Jorge Marques <jorge.marques@analog.com>
+---
+Changes in v6:
+- Format 0x05C undercase
+- Link to v5: https://lore.kernel.org/r/20250715-adi-i3c-master-v5-0-c89434cbaf5e@analog.com
 
-for example:
+Changes in v5:
+Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml:
+- Use semantic versioning major field for dt-binding compatible, with
+  the format adi,<ip-name>-v<major>
 
-static const struct regmap_config regmap_config = {
-			.reg_bits = 32,
-			.val_bits = 32,
-			.reg_stride = 4,
-		};
+adi-i3c-master.c:
+- Rename MAX_DEVS to ADI_MAX_DEVS
+- Encapsulate REG_CMD_FIFO_0_DEV_ADDR var
+- Reorder struct adi_i3c_i2c_dev_data fields
+- Start addr at 0 instead of 8 at adi_i3c_master_get_rr_slot
+- Minor rework on adi_i3c_master_handle_ibi to most logic out of the
+  lock. Even if length is 0 (BCR[2]=0), the mdb field is extracted and
+  written to the slot buffer. Since the length is 0, the written data
+  doesn't matter.
+  In a future update with additional bytes support (e.g., bits 31-23),
+  len would be incremented and an IBI FIFO would be read.
+- Version check against first stable release, major v1.
+  Driver+RTL features updates affect the minor field, therefore check
+  for major == 1.
+- Link to v4: https://lore.kernel.org/r/20250626-adi-i3c-master-v4-0-3846a1f66d5e@analog.com
 
-imx_pcie->iomuxc_gpr = devm_regmap_init_mmio(dev, off, &regmap_config);
+Changes in v4:
+Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml:
+- Add -1.00.a suffix where missing
+- Extend clocks descriptions
+- Add minItems to clock-names, to match clocks
+- Use header in example
 
-If alex think that is okay, I am fine. I just think not neccesary to
-duplicate such codes in your driver.
+adi-i3c-master.c:
+- Regmap:
+  - Add new controller info registers (dyn_addr, dcr, bcr, pid)
+  - Always decreasing fields
+  - Add line break between registers
+  - Reformat REG_DEV_CHAR_BSCR_IBI to use easier to read FIELD_GET,
+    FIELD_PREP
+- Read controller info from regmap with explanation comment
+- Use linux/fpga/adi-axi-common.h macros
+- Use __counter_by macro on ncmds
+- Use __free macro
+- Use new i3c_writel_fifo and i3c_readl_fifo macros
+- Rename bytes to buf when nbytes is present
+- Use scoped_guard instead of spin_lock, spin_unlock
+- Reformat loops to read fifo status, use while single line alternative
+- Drop adi_i3c_master.max_devs, use MAX_DEVS directly
+- Use devm_clk_bulk_get_all_enabled, dropping clock name match (CHECK_DTB does it)
+- Init spin_lock
+- Init list head
+- Link to v3: https://lore.kernel.org/r/20250618-adi-i3c-master-v3-0-e66170a6cb95@analog.com
 
-Frank
-> ...
->
-> > > +static int renesas_i3c_i2c_xfers(struct i2c_dev_desc *dev,
-> > > +					struct i2c_msg *i2c_xfers,
-> > > +					int i2c_nxfers)
-> > > +{
-> > > +	struct i3c_master_controller *m = i2c_dev_get_master(dev);
-> > > +	struct renesas_i3c *i3c = to_renesas_i3c(m);
-> > > +	struct renesas_i3c_xfer *xfer;
-> > > +	struct renesas_i3c_cmd *cmd;
-> > > +	u8 start_bit = CNDCTL_STCND;
-> > > +	int ret, i;
-> > > +
-> > > +	if (!i2c_nxfers)
-> > > +		return 0;
-> > > +
-> > > +	renesas_i3c_bus_enable(m, false);
-> > > +
-> > > +	xfer = renesas_i3c_alloc_xfer(i3c, 1);
-> > > +	if (!xfer)
-> > > +		return -ENOMEM;
-> > > +
-> > > +	init_completion(&xfer->comp);
-> > > +	xfer->is_i2c_xfer = true;
-> > > +	cmd = xfer->cmds;
-> > > +
-> > > +	if (!(i3c_reg_read(i3c->regs, BCST) & BCST_BFREF)) {
-> > > +		cmd->err = -EBUSY;
-> > > +		goto out;
-> > > +	}
-> > > +
-> > > +	i3c_reg_write(i3c->regs, BST, 0);
-> > > +
-> > > +	renesas_i3c_enqueue_xfer(i3c, xfer);
-> >
-> > You can use refer mutex GUARD define to pair renesas_i3c_enqueue_xfer()
-> > and renesas_i3c_dequeue_xfer().
->
-> Well, looking again, I won't need this. There is no 'goto out' after
-> enqueueing. So, the label is wrongly placed. Might be an argument to
-> remove it...
->
-> >
-> > > +
-> > > +	for (i = 0; i < i2c_nxfers; i++) {
-> > > +		cmd->i2c_bytes_left = I2C_INIT_MSG;
-> > > +		cmd->i2c_buf = i2c_xfers[i].buf;
-> > > +		cmd->msg = &i2c_xfers[i];
-> > > +		cmd->i2c_is_last = (i == i2c_nxfers - 1);
-> > > +
-> > > +		i3c_reg_set_bit(i3c->regs, BIE, BIE_NACKDIE);
-> > > +		i3c_reg_set_bit(i3c->regs, NTIE, NTIE_TDBEIE0);
-> > > +		i3c_reg_set_bit(i3c->regs, BIE, BIE_STCNDDIE);
-> > > +
-> > > +		/* Issue Start condition */
-> > > +		i3c_reg_set_bit(i3c->regs, CNDCTL, start_bit);
-> > > +
-> > > +		i3c_reg_set_bit(i3c->regs, NTSTE, NTSTE_TDBEE0);
-> > > +
-> > > +		wait_for_completion_timeout(&xfer->comp, m->i2c.timeout);
-> > > +
-> > > +		if (cmd->err)
-> > > +			break;
-> > > +
-> > > +		start_bit = CNDCTL_SRCND;
-> > > +	}
-> > > +out:
-> > > +	renesas_i3c_dequeue_xfer(i3c, xfer);
-> > > +	ret = cmd->err;
-> > > +	kfree(xfer);
-> >
-> > struct renesas_i3c_xfer *xfer __free(kfree) = renesas_i3c_alloc_xfer(i3c, 1);
->
-> ... by doing this.
->
-> > > +		/* Clear the Transmit Buffer Empty status flag. */
-> > > +		i3c_reg_clear_bit(i3c->regs, BST, BST_TENDF);
-> >
-> > Are you sure you can clear FIFO empty status? Generally it is read only.
->
-> Yes. The datasheet says so. If you want to double check, page 1715 of
-> the document which link I provided last time.
->
-> Thanks for the input, I will work on this now...
->
->    Wolfram
->
->
-> --
-> linux-i3c mailing list
-> linux-i3c@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-i3c
+Changes in v3:
+Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml:
+- Small reworking of the description
+- Add -1.00.a suffix to compatible
+
+adi-i3c-master.c:
+- Misspelling
+- Remove REG_CMD_FIFO_0_LEN_MAX since it is a HDL parameter
+- Use adapter timeout value for I2C transfers, as in
+  https://lore.kernel.org/linux-i3c/aEBd%2FFIKADYr%2F631@lizhi-Precision-Tower-5810/T/#t
+
+- Link to v2: https://lore.kernel.org/r/20250606-adi-i3c-master-v2-0-e68b9aad2630@analog.com
+
+Changes in v2:
+Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml:
+- Move allof
+- Rename clocks to axi, i3c
+
+adi-i3c-master.c:
+- Update license year
+- Rework regmap to use FIELD_GET, FIELD_PREP
+- Reformat regmap to have FIELDS after REG, prefixed by reg name.
+- Add overflow safeguards to cmd, tx fifos
+- Fix macro related macros (mostly erroneous `| ~BITMASK`
+- Use guard macros, remove goto.
+- Simplify daa logic
+- Replace devm_clk_get with devm_clk_get_enabled
+- Solve 64bit->32bit warnings on x86_64 systems by casting to u32
+- Immediate clear irq request flags, then handle it.
+
+- Link to v1: https://lore.kernel.org/r/20250604-adi-i3c-master-v1-0-0488e80dafcb@analog.com
+
+---
+Jorge Marques (2):
+      dt-bindings: i3c: Add adi-i3c-master
+      i3c: master: Add driver for Analog Devices I3C Controller IP
+
+ .../devicetree/bindings/i3c/adi,i3c-master.yaml    |   67 ++
+ MAINTAINERS                                        |    6 +
+ drivers/i3c/master/Kconfig                         |   11 +
+ drivers/i3c/master/Makefile                        |    1 +
+ drivers/i3c/master/adi-i3c-master.c                | 1019 ++++++++++++++++++++
+ 5 files changed, 1104 insertions(+)
+---
+base-commit: 51963783b876a2f493a3eac0ea9eba271cb6809a
+change-id: 20250604-adi-i3c-master-2a5148c58c47
+prerequisite-message-id: <20250622-i3c-writesl-readsl-v2-0-2afd34ec6306@analog.com>
+prerequisite-patch-id: 5443f14ca82fc08593960fafdb43488cce56f7d9
+prerequisite-patch-id: 647084f5fe09f4887f633b0b02b306912a156672
+prerequisite-patch-id: 6f582bb2ef1aafb66f26c515a19d5efa06ab8968
+
+Best regards,
+-- 
+Jorge Marques <jorge.marques@analog.com>
+
 
 -- 
 linux-i3c mailing list
