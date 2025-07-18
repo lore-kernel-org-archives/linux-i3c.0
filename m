@@ -4,147 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C3E6C83F17
-	for <linux-i3c@archiver.kernel.org>; Fri, 18 Jul 2025 06:17:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91F84C83F1A
+	for <linux-i3c@archiver.kernel.org>; Fri, 18 Jul 2025 11:27:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1tnhslRPGEIvFIpbI8TA+oprpfiZF/FAnwLHnest2d8=; b=CkqdBgUzI8YFDa
-	n2E+i3QpXoG8Z38ixEBbhuULTRmrLma56BkdaZ5ChX7HBd6urGFj7Ey5SeZOJMMvS5xZ/wkdkRBiL
-	dlegmhZpVidmlDZPqcaXfJNLrc7lQA0ANUDM6UdET0VdeB2H7iiuWy5Q/2KW06Jz2tTB3fpGONha+
-	Gmtn/znRx0mWfXMsl3ISbSrGjrLvCBOflMyrTOJAQp826HqJ+sBd3+QC1AIh+Rdr+/uZIk991fr5h
-	k/2HdOpACnADKMEZwWZUlu8XocxEQtd7M+TxbFBmbnFIKU8AVHAEGblN9bZJiSFPe9dRpX8WucYhr
-	AVvFD4AyRmEqtEmUCZGw==;
+	List-Owner; bh=Raxghz0odxP2rn/1QHhxEg96YYY9xqKRiNTJ2j2/jGg=; b=Spv6/CRrdhZdZN
+	ztJGYX2OAQdoWmB3K/MxVXN/XchH68dBf6Y7mZllldvNfxFVz90q3Mq4TTpvBbCOo3XvWIP2UdPJO
+	R51GfmSYPAep/HRhHYCr2HEaeFahii9rgWLWJY3c+utUE9A19j5XKK/7B4xmJJEqQBDXqnTrp/a6s
+	/L31l7Lhedx/xrkVhpNnY1TIi32+FnSDPIm5M2sZ0j/O4ZbPWFI0E6WYnWHjIjXlGLLNtXiqJO9BR
+	2Vo0vScA3T3v0iw1cDIvcIKoYihIfR+pqNvQeo46lPO2lMmnqWlHKkHvIpYvOuInxexXG0hogQ5rh
+	gRU/iJxIzCWU68bxwsLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uceP8-0000000Bl27-3m0m;
-	Fri, 18 Jul 2025 06:17:10 +0000
-Received: from mail-ed1-x529.google.com ([2a00:1450:4864:20::529])
+	id 1ucjFH-0000000CQmE-1UJi;
+	Fri, 18 Jul 2025 11:27:19 +0000
+Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uceMf-0000000BkqZ-3N9H
+	id 1ucido-0000000CLTL-2LLl
 	for linux-i3c@lists.infradead.org;
-	Fri, 18 Jul 2025 06:14:39 +0000
-Received: by mail-ed1-x529.google.com with SMTP id 4fb4d7f45d1cf-606a269d440so336426a12.2
-        for <linux-i3c@lists.infradead.org>; Thu, 17 Jul 2025 23:14:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=linaro.org; s=google; t=1752819276; x=1753424076; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:from:to:cc:subject:date:message-id:reply-to;
-        bh=VWiqtcrm3UpqYWicE+Qr3IVBY26YZu591zaNb17vRzc=;
-        b=RVY3wGt+JXZEQK+yLblS4JowYdpHlcnc1e+XwYjYUBXayz2/4bdC5BbhSSSOvVjETD
-         tWHdHtD2BFPIpAiFp69y1q+e6Hz1BT9Uqt+WOK3bFGb+cCRbxwtDHfIVbXEBhtS5apvO
-         P4tVvYQvw+UqzSfmj5XWbq9BKrNhhP3Q1KvcwxrjtYcOOqdkbefzut+P7n2pz18UzPrp
-         SfaZDAbmlqtYZ+ITMyK4drS33Tp45GPvwN3RpSdzv9Tzt3FHn3O+H/tjzNjZw2vT2SAM
-         /X7jTrgyWzAxEg7LfY1GjqH8mBplOhCCsp/s7SR2twFapv9TjF02zV4aD8znOKdEMnnz
-         jp4Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1752819276; x=1753424076;
-        h=content-transfer-encoding:in-reply-to:autocrypt:content-language
-         :from:references:cc:to:subject:user-agent:mime-version:date
-         :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=VWiqtcrm3UpqYWicE+Qr3IVBY26YZu591zaNb17vRzc=;
-        b=S0nTTxHWyLI2ZQHgg5F3/nSNrH7O7f7Li1wuHw3kh8DGqt6iOXYW3A5oLJ/j70q2Ek
-         aHQAHsS1YJI1dEm9QT19tvXhhs4z/mh2eZrOr8h9oCcHON0NklUGrf6bBKuENnvK82SL
-         ElNY7gCrBNcHu0Lxi+7NsMdT1KcbvuEcgZHl5RulUunwTozB6UulF+8GOA4rkmxc89wp
-         VIaHWnAfrTLWIcEXneMAIAbza6N+d2rey9woRrnz9TsZNdd7oQB+p5dCfHhz/DQ44Hvo
-         eqYquch2YTU8omMBYAhALsIvSy+KPKHAvy/N32GGL68DUqT49yJ+eHFtt6q1xjhVzwvI
-         PArA==
-X-Forwarded-Encrypted: i=1; AJvYcCUMqna31nyqcjlZWuMFW5jqH8JzwWdXkCMYMbqjmuSat3w2k26mKtwgBjKwHJO8I/LBJFO142cgKkA=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx6yftk2QKrWTASHjTU5VJv8rgFi6L8XdyV+0LWlJ7vs4g8PCdu
-	s9i5KJZovoY7yeeQ5lHY3HiAWORSV2Gl0vJAQgmw6uugmMMJk1y0gm5V6XinO3OVuVE=
-X-Gm-Gg: ASbGncu+rAS5IR8nYzSS7CkCIEexB61nF/XrWfwYlRniGxNwMK7P0psyr3x3fpJU0C8
-	AxsXsazrQfrAEeu+klNxDE/ZW+47cdpYzGGNzLbiHgew9q8kzIkqs4zNA82m4/XkO8hj1AxRDXc
-	lIm4/26phKLKFkhVKK0LaebCi989HvsuQmiK8BgBq00H0KtH9685dbRlVSEOQBYAXBrI5N2vnDT
-	2tuU9rd9EVZGi9mBdt60UYiL84jQdeofo/VmdPGLGiM/3liBKOxfMGMTgjPyOffolFNVS5sk2wk
-	ywjWcwhI9T7C4Xf/AeWfKw6OD+ixD6t0G54C1FvMh6b3hwgp8aIMr8aFks0eF8AJuwpUp5+HLrC
-	f6kH6I7EBXxXdlWOh3Y3i8ghjwuBObkfC3r1aHyTT1lbsxOUjR9HN
-X-Google-Smtp-Source: AGHT+IE9LoG3p8nLyIseKLpQcssOqg7w3tMU8M2AmWdPDwMRm5y5MbuuS+ZNv4TcdwiluHmo/FRJ9Q==
-X-Received: by 2002:a05:6402:4019:b0:612:bd30:d320 with SMTP id 4fb4d7f45d1cf-612bd30d674mr1047426a12.6.1752819276028;
-        Thu, 17 Jul 2025 23:14:36 -0700 (PDT)
-Received: from [192.168.1.29] ([178.197.222.89])
-        by smtp.gmail.com with ESMTPSA id 4fb4d7f45d1cf-612c90d671bsm476342a12.73.2025.07.17.23.14.34
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 17 Jul 2025 23:14:35 -0700 (PDT)
-Message-ID: <e461e5ed-f512-4d3b-9903-8092dab7f81d@linaro.org>
-Date: Fri, 18 Jul 2025 08:14:33 +0200
+	Fri, 18 Jul 2025 10:48:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	sang-engineering.com; h=date:from:to:cc:subject:message-id
+	:references:mime-version:content-type:in-reply-to; s=k1; bh=YiG1
+	IShrAJJD2nBW0s3CYWEa3UHJFS+PznTuJurnABk=; b=f1AsJS7b3SR9leX88GTm
+	UayW9XFd8Y3eOa1wFxwyBsYiBZ+WnU1CdhgD4p0ZFf77Z1cvbYQV6RJr7YB9dbw4
+	wNFdaoxYxJ1oyV9Zbw3HHZOT4SUzOK3Vn4Y2ZGZ+WwN6ZCZ1PM0syRQCkmgqlbto
+	p4tABsZnTFd3dZdIQZHWhoRcYNHQXKIAKc9UJEKdtQJKn+zNTNVXwjd69pCdZzmu
+	V2AOSb1lBjoJyrnP39QjPc3YrTphgM4hPdesyU94A0cYIeOL3bMrHge+4rXOU5RL
+	+E2iLf9eASg432JGo1eK2e0P6ie6RnRVdRql1qtqnL09ZIDD1iB0KNKEaOsYh4mQ
+	ew==
+Received: (qmail 4026406 invoked from network); 18 Jul 2025 12:48:32 +0200
+Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 18 Jul 2025 12:48:32 +0200
+X-UD-Smtp-Session: l3s3148p1@IXr33TE6RuAgAwDPXx+vAAkEB0lWxGP4
+Date: Fri, 18 Jul 2025 12:48:31 +0200
+From: Wolfram Sang <wsa+renesas@sang-engineering.com>
+To: Frank Li <Frank.li@nxp.com>
+Cc: linux-renesas-soc@vger.kernel.org,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
+	Kees Cook <kees@kernel.org>,
+	"Gustavo A. R. Silva" <gustavoars@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>, linux-i3c@lists.infradead.org,
+	linux-hardening@vger.kernel.org
+Subject: Re: [PATCH v2 2/2] i3c: master: Add basic driver for the Renesas I3C
+ controller
+Message-ID: <aHomfzV_dJMwFyCN@shikoro>
+References: <20250717122455.9521-1-wsa+renesas@sang-engineering.com>
+ <20250717122455.9521-3-wsa+renesas@sang-engineering.com>
+ <aHlJ8KQzcamyaZA1@lizhi-Precision-Tower-5810>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 00/10] Axiado AX3000 SoC and Evaluation Board Support
-To: Harshit Shah <hshah@axiado.com>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
- Bartosz Golaszewski <brgl@bgdev.pl>, Arnd Bergmann <arnd@arndb.de>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Jan Kotas <jank@cadence.com>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Jiri Slaby <jirislaby@kernel.org>,
- Michal Simek <michal.simek@amd.com>, =?UTF-8?Q?Przemys=C5=82aw_Gaj?=
- <pgaj@cadence.com>, Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Frank Li <Frank.Li@nxp.com>, Boris Brezillon <bbrezillon@kernel.org>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- "soc@lists.linux.dev" <soc@lists.linux.dev>,
- "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
- "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>
-References: <20250703-axiado-ax3000-soc-and-evaluation-board-support-v6-0-cebd810e7e26@axiado.com>
- <b7322d03-2ff9-48a3-bdc6-0e95382ed83f@axiado.com>
-From: Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
-Content-Language: en-US
-Autocrypt: addr=krzysztof.kozlowski@linaro.org; keydata=
- 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
- 2+47PN9NZAOyb771QoVr8A==
-In-Reply-To: <b7322d03-2ff9-48a3-bdc6-0e95382ed83f@axiado.com>
+Content-Disposition: inline
+In-Reply-To: <aHlJ8KQzcamyaZA1@lizhi-Precision-Tower-5810>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250717_231437_851997_0F90B4D1 
-X-CRM114-Status: GOOD (  15.88  )
+X-CRM114-CacheID: sfid-20250718_034837_467791_4C0242D1 
+X-CRM114-Status: GOOD (  19.65  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -156,40 +75,86 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-T24gMTgvMDcvMjAyNSAwMTo0OCwgSGFyc2hpdCBTaGFoIHdyb3RlOgo+IE9uIDcvMy8yMDI1IDEx
-OjIwIEFNLCBIYXJzaGl0IFNoYWggd3JvdGU6Cj4+IENBVVRJT046IFRoaXMgZW1haWwgb3JpZ2lu
-YXRlZCBmcm9tIG91dHNpZGUgb2YgdGhlIG9yZ2FuaXphdGlvbi4gRG8gbm90IGNsaWNrIGxpbmtz
-IG9yIG9wZW4gYXR0YWNobWVudHMgdW5sZXNzIHlvdSByZWNvZ25pemUgdGhlIHNlbmRlciBhbmQg
-a25vdyB0aGUgY29udGVudCBpcyBzYWZlLgo+Pgo+Pgo+PiBUaGlzIHBhdGNoIHNlcmllcyBhZGRz
-IGluaXRpYWwgc3VwcG9ydCBmb3IgdGhlIEF4aWFkbyBBWDMwMDAgU29DIGFuZCBpdHMKPj4gZXZh
-bHVhdGlvbiBib2FyZC4KPj4KPj4gVGhlIEFYMzAwMCBpcyBhIG11bHRpLWNvcmUgc3lzdGVtLW9u
-LWNoaXAgZmVhdHVyaW5nIGZvdXIgQVJNIENvcnRleC1BNTMKPj4gY29yZXMsIHNlY3VyZSB2YXVs
-dCwgaGFyZHdhcmUgZmlyZXdhbGwsIGFuZCBBSSBhY2NlbGVyYXRpb24gZW5naW5lcy4gVGhpcwo+
-PiBpbml0aWFsIHN1cHBvcnQgZW5hYmxlcyBiYXNpYyBicmluZy11cCBvZiB0aGUgU29DIGFuZCBl
-dmFsdWF0aW9uIHBsYXRmb3JtCj4+IHdpdGggQ1BVLCB0aW1lciwgVUFSVCwgYW5kIEkzQyBmdW5j
-dGlvbmFsaXR5Lgo+Pgo+PiBUaGUgc2VyaWVzIGJlZ2lucyBieSBhZGRpbmcgdGhlICJheGlhZG8i
-IHZlbmRvciBwcmVmaXggYW5kIGNvbXBhdGlibGUKPj4gc3RyaW5ncyBmb3IgdGhlIFNvQyBhbmQg
-Ym9hcmQuIEl0IHRoZW4gaW50cm9kdWNlcyB0aGUgZGV2aWNlIHRyZWUgZmlsZXMKPj4gYW5kIG1p
-bmltYWwgQVJDSF9BWElBRE8gcGxhdGZvcm0gc3VwcG9ydCBpbiBhcm02NC4KPj4KPj4gUGF0Y2gg
-YnJlYWtkb3duOgo+PiAgICAtIFBhdGNoIDEgYWRkIHRoZSB2ZW5kb3IgcHJlZml4IGVudHJ5Cj4+
-ICAgIC0gUGF0Y2ggMiBkb2N1bWVudCB0aGUgU29DIGFuZCBib2FyZCBiaW5kaW5ncwo+PiAgICAt
-IFBhdGNoIDMgY29udmVydCBjZG5zLGdwaW8udHh0IHRvIGdwaW8tY2Rucy55YW1sCj4+ICAgIC0g
-UGF0Y2ggNCBhZGQgYmluZGluZyBmb3IgYXgzMDAwIGdwaW8gY29udHJvbGxlcgo+PiAgICAtIFBh
-dGNoIDUgYWRkIGJpbmRpbmcgZm9yIGF4MzAwMCB1YXJ0IGNvbnRyb2xsZXIKPj4gICAgLSBQYXRj
-aCA2IGFkZCBiaW5kaW5nIGZvciBheDMwMDAgaTNjIGNvbnRyb2xsZXIKPj4gICAgLSBQYXRjaCA3
-IGFkZCBBeGlhZG8gU29DIGZhbWlseQo+PiAgICAtIFBhdGNoIDggYWRkIGRldmljZSB0cmVlIGZv
-ciB0aGUgYXgzMDAwICYgYXgzMDAwLWV2awo+PiAgICAtIFBhdGNoIDkgYWRkIEFSQ0hfQVhJQURP
-IGluIGRlZmNvbmZpZwo+PiAgICAtIFBhdGNoIDEwIHVwZGF0ZSBNQUlOVEFJTkVSUyBmaWxlCj4g
-Cj4gSGkgYWxsLAo+IAo+IFRoaXMgcGF0Y2ggc2VyaWVzIHdhcyByZXZpZXdlZCBieSBLcnp5c3p0
-b2YsIGFuZCBJIGFtIHdvbmRlcmluZyBpZiBpdOKAmXMgCj4gcXVldWVkIGZvciB0aGUgbmV4dCBt
-ZXJnZSB3aW5kb3cuIFRoYW5rcyBpbiBhZHZhbmNlIQoKSXQncyBub3QsIHVubGVzcyB5b3UgcmVj
-ZWl2ZWQgY2xlYXIgbm90aWNlIGFib3V0IGl0LiBQbGVhc2UgcmVhZAptYWludGFpbmVyIHNvYyBw
-cm9maWxlIGhvdyB0byBzZW5kIHBhdGNoZXMgZm9yIG1lcmdpbmcuCgpCZXN0IHJlZ2FyZHMsCkty
-enlzenRvZgoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC1pM2MK
+Hi Frank,
+
+> > +#define NDBSTLV0		0x398
+> > +#define  NDBSTLV0_RDBLV(x)	(((x) >> 8) & 0xff)
+> 
+> Can you use FILE_GET()?
+
+You mean FIELD_GET? Probably yes.
+
+> > +#define RENESAS_I3C_MAX_DEVS	8
+> > +#define I2C_INIT_MSG		-1
+> > +
+> > +/* Bus condition timing */
+> > +#define I3C_BUS_THIGH_MIXED_NS	40		/* 40ns */
+> > +#define I3C_BUS_FREE_TIME_NS	1300		/* 1.3us for Mixed Bus with I2C FM Device*/
+> > +#define I3C_BUS_AVAL_TIME_NS	1000		/* 1us */
+> > +#define I3C_BUS_IDLE_TIME_NS	200000		/* 200us */
+> 
+> Do you have document reference to such timeout value?  If it is spec defined
+> timeout, please move to master.h and add ref to spec sections number.
+
+They are all in the specs. Will move them.
+
+> > +#define XFER_TIMEOUT		(msecs_to_jiffies(1000))
+> 
+> Is it engineer choosen timeout or spec defined? add comments to show why
+> choose this timeout value.
+
+Consistency. All current I3C controller drivers use this value. If we
+want to improve it, we should do it in a seperate series for all drivers
+IMO.
+
+> > +	/* Wait for reset completion  */
+> > +	return readl_relaxed_poll_timeout(i3c->regs + RSTCTL, val,
+> > +					  !(val & RSTCTL_RI3CRST), 0, 1000);
+> 
+> All you use customer's readl at other place. here, you should use
+> read_poll_timeout(renesas_i3c_reg_read, ...) to keep consistent. check other
+> place.
+
+I will use regmap_read_poll_timeout().
+
+> > +			pp_high_ticks = DIV_ROUND_UP(I3C_BUS_THIGH_MIXED_NS,
+> > +						     1000000000 / rate);
+> 
+> 100000000 use NSEC_PER_SEC, check other place.
+
+Ack.
+
+> > +	/* Extended Bit Rate setting */
+> > +	renesas_i3c_reg_write(i3c->regs, EXTBR, EXTBR_EBRLO(od_low_ticks) |
+> > +					   EXTBR_EBRHO(od_high_ticks) |
+> > +					   EXTBR_EBRLP(pp_low_ticks) |
+> > +					   EXTBR_EBRHP(pp_high_ticks));
+> 
+> I feel renesas_i3c_reg_write is too long, renesas_write() should be enough.
+
+It is long, but precise. renesas_write() could mean anything. It would
+also be confusing if some functions start with renesas_* only and some
+with renesas_i3c_*. But this is already too much bike-shedding for my
+taste. I will do the extra work and switch to regmap and hope that the
+overhead is not noticable. I hope I can squeeze this in today.
+
+> > +static struct renesas_i3c_irq_desc renesas_i3c_irqs[] = {
+> 
+> const?
+
+Yes.
+
+Kind regards,
+
+   Wolfram
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
