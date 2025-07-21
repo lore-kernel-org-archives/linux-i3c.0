@@ -4,100 +4,124 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0554C83F27
-	for <linux-i3c@archiver.kernel.org>; Tue, 22 Jul 2025 11:14:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6CAAC87FCC
+	for <linux-i3c@archiver.kernel.org>; Tue, 22 Jul 2025 11:14:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H8/yv307xw2RjMPFBQsubomLzOQVurzEsmoRCXzy/JU=; b=jwiUpavPRZ/8nW
-	tQYdXy2coHslN/it2Kt2RnjdASvTRAWu5j/N1guJInsRdOdWqLzivzPNlaBoIO1D0qLbeqwPkCVYY
-	+Og/0hLrKEHqZUMIFMBiTrSbGVbsyFwBk6IqNvAHtMbRHgRLKNFAtY6DTNR0J1xNZnwK521hyMH1s
-	38+sGNaOOczTnPos6M2nzMzC6bInW7hunrTiaWySm+Y0if7Fl5fM4FMLC/ApHaMhsbRMk/nmAsGxT
-	30BY1IvNX3XcLd4q/ojdFBWLsTj7uX+SXFq3i52i4FTn9xC/FTQVC4joRAEDmx0CghNC8poEONt7k
-	If6uKdwXOZA095tYDiiw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:References:In-Reply-To:
+	Message-Id:Cc:To:From:Date:MIME-Version:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=LB6omI5o4UiVPSAagy2bSCcsnlv51iVW8BlqKdkv52M=; b=ddKnlCcjoOssfI1kxqs9HdEwms
+	WxHpGb2cBVIR+sLKzvxiwu0yznXQtcXaALrxRBSq3rNpidYbjFD3nKaaLEb598llfCP+AAqfBCLfG
+	pG2Y+iDCwNXloBi63fiTKc8nzIHtnq7HSUxVXbPnvBJfUJV2CZlNasUut9VYQyP+mo1/jpMXf/RY4
+	gwFvbodP06GM4jaeeGv2k7IYqoUtSUzE6ec02VNfjs+hVXaYvpzUI25m3dAnGJWewHKXuH1NfROCg
+	3pRLF79BZbdW4GKTMfr4k/gdGeRqtAeDON06rvOtdYRuVBuQv5NWyjKQsQU7suFNnJ4kchAY0XliF
+	WFZXYGVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueAx9-00000002FoU-1MDT;
-	Tue, 22 Jul 2025 11:14:35 +0000
-Received: from mail-ua1-x930.google.com ([2607:f8b0:4864:20::930])
+	id 1ueAxA-00000002FpN-24y1;
+	Tue, 22 Jul 2025 11:14:36 +0000
+Received: from fhigh-b6-smtp.messagingengine.com ([202.12.124.157])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udVuU-0000000FS2Z-0Lce
-	for linux-i3c@lists.infradead.org;
-	Sun, 20 Jul 2025 15:25:07 +0000
-Received: by mail-ua1-x930.google.com with SMTP id a1e0cc1a2514c-87ecac3e17cso1917656241.3
-        for <linux-i3c@lists.infradead.org>; Sun, 20 Jul 2025 08:25:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1753025105; x=1753629905; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=rlwld6FdGzx+gNpdq9uPUdbnoNu6WgBQ31n27jU5G6E=;
-        b=WH6Zv8jhPUQZPtXsLKvUkmr23br4K5mdGoa8gh5dbMf7iZSPz/E45OLu98V2F3So2w
-         f7ALniaN8FygB1C/lZWVDS3muFk09Sh3T5lB+d6Lo6PO6HAmEp5z/DnSn8IkDxs0w4PQ
-         4g1ReaGixK5b94lIthn2HzpI6ddFKBcLQkHgii4pbGsnNA8jAx2oMwNpiiSdhiOZDFlV
-         7UvTxWJ3VReMPXgKTbgeD3NVLkiRURjESh1+31EQba27CGeL8vb55pZCaYPNCCp1qytw
-         NXNXzLU+JUSpFmYYPNDnzqxo0FcKCqCT1WRIxgiIFHMVvwLZVFuVI8B4sgogpcNKFxw8
-         y17w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1753025105; x=1753629905;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=rlwld6FdGzx+gNpdq9uPUdbnoNu6WgBQ31n27jU5G6E=;
-        b=hu4nuy2pHpSuEly+Ro59+jsxQWuLiI7zG9vOUJwKmTQvCCmbRip4zUOHRvIWYbMq5e
-         1sE0vcZVtLfY8vha8x1jhpegaxAs5vTFhZm3HeKxsB88NHDMvD+B1/ANj18T+ld+QKqT
-         L/C3i+5gdZPHJY0AmUQJA4Z5nBZKFEDXQebh430O3jJmJXw9gtiTbDbMAKcTc2CkSVaA
-         6ehgwjPjmX4qAY27tQdHvSDNTzxurNRKO8NlirU9sLKlF5TlSU0fKQBwB2K3YFjYGSZK
-         MmxL7OHISfZYEiQ+YQicqsCXa65fNz13Vgo0RiwBJg2oj2yllG5T17tCrFr35nYQJmi6
-         kK/Q==
-X-Forwarded-Encrypted: i=1; AJvYcCWuNPxK4i3EuUkF+MxU4O+PF9O3lgcsgJBeBOxx6ZTGo6LenSmkyA5yrRj1Q3cHWgEoSTXmsxKfIXw=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx0DdyaWf8BegwtJAcOaWqS4j8UJ28mM/Wx4slQ5K0RuRZx/Zjn
-	/LHxnQj674TUa/m+MZVjEZPQ6Uc8B771UT7MmetIwe/T7mIZobMduBky
-X-Gm-Gg: ASbGnctVEbZX1D72YPHGGCgvZyczToK19Q0ugjtCozxgBhxWFhaT5NjYajIDT6vwcev
-	lTLJTEQyXLzSU3enjcNdwXHzkiLcH9+g7+zZge6v/o2hR7QGq1S4pKUt5EGlllBwfir27M4MV2C
-	LCE96Xol2YyyXoUxATkII/Oknjv1vLjoPVTrKERnT/b/aUUtB2YROhtMXB1yoODTGFNZmWhtSJN
-	UT7a/PN4P+/O/rdv0o4S4i2FtKnPCeRkv3XIzFmtZf3bAQ/7DEVGLrpaLhVTYDNiuaZ+mxgcUDN
-	2qB52dBQE3vjqJNgNoVojBVH0SPRdqYey/jP2e/iJysUyYYpmzizDVs4tNdGVmUL3WCkYtKcBMF
-	n2ssDvQxuPAzVSPKfQV/O+V0aqtbQtrFYlc0Mci/BHjvn4Z0tT9rjTbZwgoHnn+/qFNWMh2EKKV
-	NQMyaYaw==
-X-Google-Smtp-Source: AGHT+IG92NRkx8ltYfrcXZ5eevHEHXa70/Jp/PIid1of657KfjI7EX1GOTtiKanjN1S6eknrX4Nt5w==
-X-Received: by 2002:a05:6122:1acc:b0:530:7ab8:49ab with SMTP id 71dfb90a1353d-5373fa6909amr7613401e0c.0.1753025104945;
-        Sun, 20 Jul 2025 08:25:04 -0700 (PDT)
-Received: from 9950X.localdomain (syn-142-197-132-170.res.spectrum.com. [142.197.132.170])
-        by smtp.gmail.com with ESMTPSA id 71dfb90a1353d-53764eedd3bsm2157582e0c.5.2025.07.20.08.25.03
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 20 Jul 2025 08:25:03 -0700 (PDT)
-From: Luis Felipe Hernandez <luis.hernandez093@gmail.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Marc Kleine-Budde <mkl@pengutronix.de>,
-	Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
-Cc: Randy Dunlap <rdunlap@infradead.org>,
-	Pavel Pisa <pisa@cmp.felk.cvut.cz>,
-	Ondrej Ille <ondrej.ille@gmail.com>,
-	Vincent Mailhol <mailhol.vincent@wanadoo.fr>,
-	Frank Li <Frank.Li@nxp.com>,
-	Maxime Ripard <mripard@kernel.org>,
-	Thomas Zimmermann <tzimmermann@suse.de>,
-	David Airlie <airlied@gmail.com>,
-	Simona Vetter <simona@ffwll.ch>,
-	dri-devel@lists.freedesktop.org,
-	linux-i3c@lists.infradead.org,
-	linux-can@vger.kernel.org,
-	linux-kernel@vger.kernel.org,
-	Luis Felipe Hernandez <luis.hernandez093@gmail.com>
-Subject: [PATCH v2 1/1] docs: Fix kernel-doc indentation errors
-Date: Sun, 20 Jul 2025 11:24:01 -0400
-Message-ID: <20250720152401.70720-2-luis.hernandez093@gmail.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20250720152401.70720-1-luis.hernandez093@gmail.com>
-References: <20250720152401.70720-1-luis.hernandez093@gmail.com>
+	id 1udxXN-00000000g62-45cy;
+	Mon, 21 Jul 2025 20:55:07 +0000
+Received: from phl-compute-05.internal (phl-compute-05.phl.internal [10.202.2.45])
+	by mailfhigh.stl.internal (Postfix) with ESMTP id 2AD397A00E7;
+	Mon, 21 Jul 2025 16:55:04 -0400 (EDT)
+Received: from phl-imap-02 ([10.202.2.81])
+  by phl-compute-05.internal (MEProxy); Mon, 21 Jul 2025 16:55:04 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=arndb.de; h=cc
+	:cc:content-transfer-encoding:content-type:content-type:date
+	:date:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:subject:subject:to:to; s=fm2; t=1753131304;
+	 x=1753217704; bh=kaRzPQ9lieFHHIwLmqX8kR4F+qmEQbM085Lcp8h5IR4=; b=
+	izbECgjGjOYONT+DfawXELRem5RC+p3g4m+yzxdMx7JF9hXiB84/nI4OhvDSZdtO
+	K67SCetqIwc+CxI5tqEJJ/QAul1/NEEs528IHHlR9Am4KpHqD+vpV2ROhMJ1HYUs
+	7Fb24cQPTKgXM6uBWOJ7cGrGLOAYjWiKZjJb8TBJeNGdkRTB7s3xL2WrstkyxEkP
+	tbPyBFfRnmEDsv6N6/Gt5C6l3QSVxzTVLLhylCo8uoFIB/3I1Cy4KdDvOYoXDgO7
+	IZtX4pZm4Ly+TB5vWjpilVsIpheYBYV1K23SHBKahc7/vxvOq8Uv9zLK514rKrCL
+	/Oj5UmHHY4f565mRrCaGYw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-transfer-encoding
+	:content-type:content-type:date:date:feedback-id:feedback-id
+	:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:subject:subject:to:to:x-me-proxy
+	:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; t=1753131304; x=
+	1753217704; bh=kaRzPQ9lieFHHIwLmqX8kR4F+qmEQbM085Lcp8h5IR4=; b=A
+	T1QkYdF9LiaqvJ7LUIOCxS9W7GEZPohbXx5M/fW4jhr5ix8fgMOkvzDIetJZtUtF
+	LNcBI08Q76u8MFjOmWAo4xxqNjlPsaHox+jXcPfPSH7hrBBGtcNlymLwTswlNmyi
+	pviJ3n3wLmdZVFCBXOhzW4uF0Fq1i2Md1+GXEe0RLdIsRbhh7Ag30CKumjYGPsB1
+	w7aZkJe1LraPfD/ORDWShXRqhcdYGFQGGoIRnYdzzlT3gOGDiimRiDWCFvV4DYZ+
+	c2x45eZz10CYQVHe982mdsCYNG95v/6RqatRxLFyRh/0SByOI2+LwvGIO+HzoF9G
+	6n2gU6BqVK8CI/o0ffL0Q==
+X-ME-Sender: <xms:Jql-aHKIyCfYIeW_M0SLqZiHsNRmNHKBTmY-xKM0_t5aubMKMojcUg>
+    <xme:Jql-aLKgBggWEAo4mo2J7mdipGiuxgRlqWiMir_hyfYUpwwPZtwF5aP_RZ9wpOac3
+    6zmC1e4BV4aMFCoy4E>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeffedrtdefgdejfedtlecutefuodetggdotefrod
+    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpuffrtefokffrpgfnqfghnecuuegr
+    ihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjug
+    hrpefoggffhffvvefkjghfufgtgfesthejredtredttdenucfhrhhomhepfdetrhhnugcu
+    uegvrhhgmhgrnhhnfdcuoegrrhhnugesrghrnhgusgdruggvqeenucggtffrrghtthgvrh
+    hnpefhtdfhvddtfeehudekteeggffghfejgeegteefgffgvedugeduveelvdekhfdvieen
+    ucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrrhhnug
+    esrghrnhgusgdruggvpdhnsggprhgtphhtthhopedvgedpmhhouggvpehsmhhtphhouhht
+    pdhrtghpthhtohepmhhitghhrghlrdhsihhmvghksegrmhgurdgtohhmpdhrtghpthhtoh
+    eptggrthgrlhhinhdrmhgrrhhinhgrshesrghrmhdrtghomhdprhgtphhtthhopehhshhh
+    rghhsegrgihirgguohdrtghomhdprhgtphhtthhopegsrhhglhessghguggvvhdrphhlpd
+    hrtghpthhtoheprghlvgigrghnughrvgdrsggvlhhlohhnihessghoohhtlhhinhdrtgho
+    mhdprhgtphhtthhopehjrghnkhestggruggvnhgtvgdrtghomhdprhgtphhtthhopehpgh
+    grjhestggruggvnhgtvgdrtghomhdprhgtphhtthhopegssghrvgiiihhllhhonheskhgv
+    rhhnvghlrdhorhhgpdhrtghpthhtoheptghonhhorhdoughtsehkvghrnhgvlhdrohhrgh
+X-ME-Proxy: <xmx:Jql-aBwrL-0xdaQrQZL0o8Nc0gKjsBhI6oTcjY0nqIkfe_N_rFWf8w>
+    <xmx:Jql-aNUzn2DsRN_ZlTBxhGA23zxpzi0cZpDqKbAyyTJ4ngxO7yDhMA>
+    <xmx:Jql-aGplJQRgvoCqx6iRXYicup451d8DFiIRFe5eOcMrv0rhvdW7Bw>
+    <xmx:Jql-aCfHLct0SZGIj7Z2ssqzGVDeGh8eWwmRUUodRAbNXsjiKFFL0A>
+    <xmx:KKl-aObLttYHXdq2zf0U_OcYRqZ3LuK3U9MK8z0RCYqteycLTz1CoJg_>
+Feedback-ID: i56a14606:Fastmail
+Received: by mailuser.phl.internal (Postfix, from userid 501)
+	id 7A042700065; Mon, 21 Jul 2025 16:55:02 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
 MIME-Version: 1.0
+X-ThreadId: T10195641ff6473d7
+Date: Mon, 21 Jul 2025 22:54:41 +0200
+From: "Arnd Bergmann" <arnd@arndb.de>
+To: "Harshit Shah" <hshah@axiado.com>,
+ "Krzysztof Kozlowski" <krzysztof.kozlowski@linaro.org>,
+ "Rob Herring" <robh@kernel.org>, "Krzysztof Kozlowski" <krzk+dt@kernel.org>,
+ "Conor Dooley" <conor+dt@kernel.org>,
+ "Linus Walleij" <linus.walleij@linaro.org>,
+ "Bartosz Golaszewski" <brgl@bgdev.pl>,
+ "Catalin Marinas" <catalin.marinas@arm.com>, "Will Deacon" <will@kernel.org>,
+ "Jan Kotas" <jank@cadence.com>,
+ "Greg Kroah-Hartman" <gregkh@linuxfoundation.org>,
+ "Jiri Slaby" <jirislaby@kernel.org>, "Michal Simek" <michal.simek@amd.com>,
+ =?UTF-8?Q?Przemys=C5=82aw_Gaj?= <pgaj@cadence.com>,
+ "Alexandre Belloni" <alexandre.belloni@bootlin.com>,
+ "Frank Li" <Frank.Li@nxp.com>,
+ "'bbrezillon@kernel.org'" <bbrezillon@kernel.org>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ "soc@lists.linux.dev" <soc@lists.linux.dev>,
+ "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
+ "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>
+Message-Id: <8783e997-8dd3-4321-8f7a-f160b0f8ad17@app.fastmail.com>
+In-Reply-To: <912dd9f9-34d9-4631-82d3-02eed03a52c9@axiado.com>
+References: <20250703-axiado-ax3000-soc-and-evaluation-board-support-v6-0-cebd810e7e26@axiado.com>
+ <b7322d03-2ff9-48a3-bdc6-0e95382ed83f@axiado.com>
+ <e461e5ed-f512-4d3b-9903-8092dab7f81d@linaro.org>
+ <06f00d05-b8ca-41fa-9e5e-9cee3cfcfae1@axiado.com>
+ <7ddb77bf-173a-4117-80ac-d0f32bf067ee@linaro.org>
+ <4f836d88-80a7-402b-9af0-f0d002e2145d@app.fastmail.com>
+ <912dd9f9-34d9-4631-82d3-02eed03a52c9@axiado.com>
+Subject: Re: [PATCH v6 00/10] Axiado AX3000 SoC and Evaluation Board Support
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250720_082506_125098_644EAE7E 
-X-CRM114-Status: GOOD (  14.31  )
+X-CRM114-CacheID: sfid-20250721_135506_396575_9A1CD1C4 
+X-CRM114-Status: UNSURE (   9.09  )
+X-CRM114-Notice: Please train this message.
 X-Mailman-Approved-At: Tue, 22 Jul 2025 04:10:58 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -115,111 +139,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Fix kernel-doc issues that reported Unexpected indentation errors
-durring documentation build (make htmldocs) in CAN, I3C and GPU drivers.
+On Mon, Jul 21, 2025, at 22:43, Harshit Shah wrote:
+> On 7/21/2025 7:31 AM, Arnd Bergmann wrote:
+>>> Separate patches (1) tend to work better for the first contribution
+>>> from a new maintainer, since there is less to know in advance.
+>>>
+> Thank you very much Krzysztof and Arnd.
+>
+> I will submit the patches to soc@kernel.org.
 
-Convert formatting to proper ReST list syntax to resolve warning.
+Please use soc@lists.linux.dev, we are trying to phase
+out the old alias (both work the same right now).
 
-Changes since v1:
-- Convert return value descriptions to proper ReST format
-- Fix code block introduction with :: syntax  
-- Add GPU driver fixes
-- Remove SCSI driver (already fixed)
-
-Link: https://lore.kernel.org/all/20250703023511.82768-1-luis.hernandez093@gmail.com/
-
-Signed-off-by: Luis Felipe Hernandez <luis.hernandez093@gmail.com>
----
- drivers/gpu/drm/drm_gpuvm.c              | 16 ++++++++--------
- drivers/i3c/device.c                     | 13 ++++++++-----
- drivers/net/can/ctucanfd/ctucanfd_base.c | 12 +++++++-----
- 3 files changed, 23 insertions(+), 18 deletions(-)
-
-diff --git a/drivers/gpu/drm/drm_gpuvm.c b/drivers/gpu/drm/drm_gpuvm.c
-index bbc7fecb6f4a..982a3476a988 100644
---- a/drivers/gpu/drm/drm_gpuvm.c
-+++ b/drivers/gpu/drm/drm_gpuvm.c
-@@ -2430,7 +2430,7 @@ static const struct drm_gpuvm_ops lock_ops = {
-  * remapped, and locks+prepares (drm_exec_prepare_object()) objects that
-  * will be newly mapped.
-  *
-- * The expected usage is:
-+ * The expected usage is::
-  *
-  *    vm_bind {
-  *        struct drm_exec exec;
-@@ -2464,14 +2464,14 @@ static const struct drm_gpuvm_ops lock_ops = {
-  * op, because the later altered step will involve the same GEM object(s)
-  * already seen in the earlier locking step.  For example:
-  *
-- * 1) An earlier driver DRIVER_OP_UNMAP op removes the need for a
-- *    DRM_GPUVA_OP_REMAP/UNMAP step.  This is safe because we've already
-- *    locked the GEM object in the earlier DRIVER_OP_UNMAP op.
-+ * * An earlier driver DRIVER_OP_UNMAP op removes the need for a
-+ *   DRM_GPUVA_OP_REMAP/UNMAP step.  This is safe because we've already
-+ *   locked the GEM object in the earlier DRIVER_OP_UNMAP op.
-  *
-- * 2) An earlier DRIVER_OP_MAP op overlaps with a later DRIVER_OP_MAP/UNMAP
-- *    op, introducing a DRM_GPUVA_OP_REMAP/UNMAP that wouldn't have been
-- *    required without the earlier DRIVER_OP_MAP.  This is safe because we've
-- *    already locked the GEM object in the earlier DRIVER_OP_MAP step.
-+ * * An earlier DRIVER_OP_MAP op overlaps with a later DRIVER_OP_MAP/UNMAP
-+ *   op, introducing a DRM_GPUVA_OP_REMAP/UNMAP that wouldn't have been
-+ *   required without the earlier DRIVER_OP_MAP.  This is safe because we've
-+ *   already locked the GEM object in the earlier DRIVER_OP_MAP step.
-  *
-  * Returns: 0 on success or a negative error codec
-  */
-diff --git a/drivers/i3c/device.c b/drivers/i3c/device.c
-index e80e48756914..48b49757a90b 100644
---- a/drivers/i3c/device.c
-+++ b/drivers/i3c/device.c
-@@ -26,11 +26,14 @@
-  *
-  * This function can sleep and thus cannot be called in atomic context.
-  *
-- * Return: 0 in case of success, a negative error core otherwise.
-- *	   -EAGAIN: controller lost address arbitration. Target
-- *		    (IBI, HJ or controller role request) win the bus. Client
-- *		    driver needs to resend the 'xfers' some time later.
-- *		    See I3C spec ver 1.1.1 09-Jun-2021. Section: 5.1.2.2.3.
-+ * Return:
-+ * * 0 in case of success
-+ * * a negative error core otherwise.
-+ * * -EAGAIN: controller lost address arbitration. Target
-+ *   (IBI, HJ or controller role request) win the bus. Client
-+ *   driver needs to resend the 'xfers' some time later.
-+ *   See I3C spec ver 1.1.1 09-Jun-2021. Section: 5.1.2.2.3.
-+ *
-  */
- int i3c_device_do_priv_xfers(struct i3c_device *dev,
- 			     struct i3c_priv_xfer *xfers,
-diff --git a/drivers/net/can/ctucanfd/ctucanfd_base.c b/drivers/net/can/ctucanfd/ctucanfd_base.c
-index bf6398772960..f910422188c3 100644
---- a/drivers/net/can/ctucanfd/ctucanfd_base.c
-+++ b/drivers/net/can/ctucanfd/ctucanfd_base.c
-@@ -506,11 +506,13 @@ static bool ctucan_is_txt_buf_writable(struct ctucan_priv *priv, u8 buf)
-  * @buf:	TXT Buffer index to which frame is inserted (0-based)
-  * @isfdf:	True - CAN FD Frame, False - CAN 2.0 Frame
-  *
-- * Return: True - Frame inserted successfully
-- *	   False - Frame was not inserted due to one of:
-- *			1. TXT Buffer is not writable (it is in wrong state)
-- *			2. Invalid TXT buffer index
-- *			3. Invalid frame length
-+ * Return:
-+ * * True - Frame inserted successfully
-+ * * False - Frame was not inserted due to one of:
-+ *
-+ *   * TXT Buffer is not writable (it is in wrong state)
-+ *   * Invalid TXT buffer index
-+ *   * Invalid frame length
-  */
- static bool ctucan_insert_frame(struct ctucan_priv *priv, const struct canfd_frame *cf, u8 buf,
- 				bool isfdf)
--- 
-2.43.0
-
+    Arnd
 
 -- 
 linux-i3c mailing list
