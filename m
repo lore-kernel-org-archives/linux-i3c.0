@@ -4,123 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B6CAAC87FCC
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2127AC87FC8
 	for <linux-i3c@archiver.kernel.org>; Tue, 22 Jul 2025 11:14:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:References:In-Reply-To:
-	Message-Id:Cc:To:From:Date:MIME-Version:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=LB6omI5o4UiVPSAagy2bSCcsnlv51iVW8BlqKdkv52M=; b=ddKnlCcjoOssfI1kxqs9HdEwms
-	WxHpGb2cBVIR+sLKzvxiwu0yznXQtcXaALrxRBSq3rNpidYbjFD3nKaaLEb598llfCP+AAqfBCLfG
-	pG2Y+iDCwNXloBi63fiTKc8nzIHtnq7HSUxVXbPnvBJfUJV2CZlNasUut9VYQyP+mo1/jpMXf/RY4
-	gwFvbodP06GM4jaeeGv2k7IYqoUtSUzE6ec02VNfjs+hVXaYvpzUI25m3dAnGJWewHKXuH1NfROCg
-	3pRLF79BZbdW4GKTMfr4k/gdGeRqtAeDON06rvOtdYRuVBuQv5NWyjKQsQU7suFNnJ4kchAY0XliF
-	WFZXYGVQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/iAs29Lke+wR9wPTbfVbPWeugNf84pMhxpnr+Y9tM1o=; b=hGtZDC0O+0w4TW
+	2plaucOAlg4sY1QFjR5hGJfJBUp+eayC/dPsXIwSC7gzmbcgS3VAGECg6MUkE1Kt11DiZezSGPehD
+	dOUPxEJHx+yzI9gHNgrZ/VpTDL5uA/Ie5iUM6KEA+c/IMBALNAaLEFmJMLdD2P27fDLfGTeBKp2iv
+	74lPpjeFuxMGrVdWTF8wgFRzIUb2HVA6VipDcLGH8HJgIrEKwoV5mGplKy6O3353eMK+i7A4iKJhl
+	CuGyYSkCewLKzicjh9sRYeM/L1CiNxkHCE2hDPLNHC8hNzLnLfkGtZBEnbkhtVOtr1hjNx8nAqaRI
+	ADo/cC4NlKi3x/Vedgvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueAxA-00000002FpN-24y1;
-	Tue, 22 Jul 2025 11:14:36 +0000
-Received: from fhigh-b6-smtp.messagingengine.com ([202.12.124.157])
+	id 1ueAx9-00000002Fok-3lbK;
+	Tue, 22 Jul 2025 11:14:35 +0000
+Received: from out-72.smtpout.orange.fr ([193.252.22.72] helo=out.smtpout.orange.fr)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1udxXN-00000000g62-45cy;
-	Mon, 21 Jul 2025 20:55:07 +0000
-Received: from phl-compute-05.internal (phl-compute-05.phl.internal [10.202.2.45])
-	by mailfhigh.stl.internal (Postfix) with ESMTP id 2AD397A00E7;
-	Mon, 21 Jul 2025 16:55:04 -0400 (EDT)
-Received: from phl-imap-02 ([10.202.2.81])
-  by phl-compute-05.internal (MEProxy); Mon, 21 Jul 2025 16:55:04 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=arndb.de; h=cc
-	:cc:content-transfer-encoding:content-type:content-type:date
-	:date:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:subject:subject:to:to; s=fm2; t=1753131304;
-	 x=1753217704; bh=kaRzPQ9lieFHHIwLmqX8kR4F+qmEQbM085Lcp8h5IR4=; b=
-	izbECgjGjOYONT+DfawXELRem5RC+p3g4m+yzxdMx7JF9hXiB84/nI4OhvDSZdtO
-	K67SCetqIwc+CxI5tqEJJ/QAul1/NEEs528IHHlR9Am4KpHqD+vpV2ROhMJ1HYUs
-	7Fb24cQPTKgXM6uBWOJ7cGrGLOAYjWiKZjJb8TBJeNGdkRTB7s3xL2WrstkyxEkP
-	tbPyBFfRnmEDsv6N6/Gt5C6l3QSVxzTVLLhylCo8uoFIB/3I1Cy4KdDvOYoXDgO7
-	IZtX4pZm4Ly+TB5vWjpilVsIpheYBYV1K23SHBKahc7/vxvOq8Uv9zLK514rKrCL
-	/Oj5UmHHY4f565mRrCaGYw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding
-	:content-type:content-type:date:date:feedback-id:feedback-id
-	:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:subject:subject:to:to:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; t=1753131304; x=
-	1753217704; bh=kaRzPQ9lieFHHIwLmqX8kR4F+qmEQbM085Lcp8h5IR4=; b=A
-	T1QkYdF9LiaqvJ7LUIOCxS9W7GEZPohbXx5M/fW4jhr5ix8fgMOkvzDIetJZtUtF
-	LNcBI08Q76u8MFjOmWAo4xxqNjlPsaHox+jXcPfPSH7hrBBGtcNlymLwTswlNmyi
-	pviJ3n3wLmdZVFCBXOhzW4uF0Fq1i2Md1+GXEe0RLdIsRbhh7Ag30CKumjYGPsB1
-	w7aZkJe1LraPfD/ORDWShXRqhcdYGFQGGoIRnYdzzlT3gOGDiimRiDWCFvV4DYZ+
-	c2x45eZz10CYQVHe982mdsCYNG95v/6RqatRxLFyRh/0SByOI2+LwvGIO+HzoF9G
-	6n2gU6BqVK8CI/o0ffL0Q==
-X-ME-Sender: <xms:Jql-aHKIyCfYIeW_M0SLqZiHsNRmNHKBTmY-xKM0_t5aubMKMojcUg>
-    <xme:Jql-aLKgBggWEAo4mo2J7mdipGiuxgRlqWiMir_hyfYUpwwPZtwF5aP_RZ9wpOac3
-    6zmC1e4BV4aMFCoy4E>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeffedrtdefgdejfedtlecutefuodetggdotefrod
-    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpuffrtefokffrpgfnqfghnecuuegr
-    ihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjug
-    hrpefoggffhffvvefkjghfufgtgfesthejredtredttdenucfhrhhomhepfdetrhhnugcu
-    uegvrhhgmhgrnhhnfdcuoegrrhhnugesrghrnhgusgdruggvqeenucggtffrrghtthgvrh
-    hnpefhtdfhvddtfeehudekteeggffghfejgeegteefgffgvedugeduveelvdekhfdvieen
-    ucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrrhhnug
-    esrghrnhgusgdruggvpdhnsggprhgtphhtthhopedvgedpmhhouggvpehsmhhtphhouhht
-    pdhrtghpthhtohepmhhitghhrghlrdhsihhmvghksegrmhgurdgtohhmpdhrtghpthhtoh
-    eptggrthgrlhhinhdrmhgrrhhinhgrshesrghrmhdrtghomhdprhgtphhtthhopehhshhh
-    rghhsegrgihirgguohdrtghomhdprhgtphhtthhopegsrhhglhessghguggvvhdrphhlpd
-    hrtghpthhtoheprghlvgigrghnughrvgdrsggvlhhlohhnihessghoohhtlhhinhdrtgho
-    mhdprhgtphhtthhopehjrghnkhestggruggvnhgtvgdrtghomhdprhgtphhtthhopehpgh
-    grjhestggruggvnhgtvgdrtghomhdprhgtphhtthhopegssghrvgiiihhllhhonheskhgv
-    rhhnvghlrdhorhhgpdhrtghpthhtoheptghonhhorhdoughtsehkvghrnhgvlhdrohhrgh
-X-ME-Proxy: <xmx:Jql-aBwrL-0xdaQrQZL0o8Nc0gKjsBhI6oTcjY0nqIkfe_N_rFWf8w>
-    <xmx:Jql-aNUzn2DsRN_ZlTBxhGA23zxpzi0cZpDqKbAyyTJ4ngxO7yDhMA>
-    <xmx:Jql-aGplJQRgvoCqx6iRXYicup451d8DFiIRFe5eOcMrv0rhvdW7Bw>
-    <xmx:Jql-aCfHLct0SZGIj7Z2ssqzGVDeGh8eWwmRUUodRAbNXsjiKFFL0A>
-    <xmx:KKl-aObLttYHXdq2zf0U_OcYRqZ3LuK3U9MK8z0RCYqteycLTz1CoJg_>
-Feedback-ID: i56a14606:Fastmail
-Received: by mailuser.phl.internal (Postfix, from userid 501)
-	id 7A042700065; Mon, 21 Jul 2025 16:55:02 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
+	id 1udlG6-0000000GYFJ-09g2
+	for linux-i3c@lists.infradead.org;
+	Mon, 21 Jul 2025 07:48:27 +0000
+Received: from [172.16.82.72] ([124.33.176.97])
+	by smtp.orange.fr with ESMTPA
+	id dlFuuyWYqLTrpdlFvuXW2h; Mon, 21 Jul 2025 09:48:24 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wanadoo.fr;
+	s=t20230301; t=1753084104;
+	bh=gJRVz/YEJYxqdLyzBaVoa58GpKVWf1l4S/w8WDWxRrI=;
+	h=Message-ID:Date:MIME-Version:Subject:To:From;
+	b=rGZ4Ex8fUiy7IILm6R6Je7lCOpG2jm3/iBBWnBq0npkX0GUJlNlEvI6SEAVWa5Xvt
+	 MvADXtgfypf1wX6WWfrJ5GqudiA6waPsDWuLfm4At9zoEyUqaudBSK6e7Si0YPVNr2
+	 3iqPoi7fovIpv5/4EcE4QJVQPxpuBRX/mGNw+FMUV6d1IJ8BLzKi+1fUUkkq15HfbP
+	 SLmBXJogUoDl76w3LMu8rRhZWnkoNp0oYZ8I23O820g5EGVxcHUnbZFkrft9jC8pay
+	 hs3aO/fsMgFo8joV1Xuhdish8r/UTUu68V8FAH0u7uZGB+nmNM0d2bNZ4tpkkb0PWL
+	 wDECYDekjweXA==
+X-ME-Helo: [172.16.82.72]
+X-ME-Auth: bWFpbGhvbC52aW5jZW50QHdhbmFkb28uZnI=
+X-ME-Date: Mon, 21 Jul 2025 09:48:24 +0200
+X-ME-IP: 124.33.176.97
+Message-ID: <c0cac011-cc07-42f8-bdac-620f3faeebf2@wanadoo.fr>
+Date: Mon, 21 Jul 2025 16:48:13 +0900
 MIME-Version: 1.0
-X-ThreadId: T10195641ff6473d7
-Date: Mon, 21 Jul 2025 22:54:41 +0200
-From: "Arnd Bergmann" <arnd@arndb.de>
-To: "Harshit Shah" <hshah@axiado.com>,
- "Krzysztof Kozlowski" <krzysztof.kozlowski@linaro.org>,
- "Rob Herring" <robh@kernel.org>, "Krzysztof Kozlowski" <krzk+dt@kernel.org>,
- "Conor Dooley" <conor+dt@kernel.org>,
- "Linus Walleij" <linus.walleij@linaro.org>,
- "Bartosz Golaszewski" <brgl@bgdev.pl>,
- "Catalin Marinas" <catalin.marinas@arm.com>, "Will Deacon" <will@kernel.org>,
- "Jan Kotas" <jank@cadence.com>,
- "Greg Kroah-Hartman" <gregkh@linuxfoundation.org>,
- "Jiri Slaby" <jirislaby@kernel.org>, "Michal Simek" <michal.simek@amd.com>,
- =?UTF-8?Q?Przemys=C5=82aw_Gaj?= <pgaj@cadence.com>,
- "Alexandre Belloni" <alexandre.belloni@bootlin.com>,
- "Frank Li" <Frank.Li@nxp.com>,
- "'bbrezillon@kernel.org'" <bbrezillon@kernel.org>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- "soc@lists.linux.dev" <soc@lists.linux.dev>,
- "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
- "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>
-Message-Id: <8783e997-8dd3-4321-8f7a-f160b0f8ad17@app.fastmail.com>
-In-Reply-To: <912dd9f9-34d9-4631-82d3-02eed03a52c9@axiado.com>
-References: <20250703-axiado-ax3000-soc-and-evaluation-board-support-v6-0-cebd810e7e26@axiado.com>
- <b7322d03-2ff9-48a3-bdc6-0e95382ed83f@axiado.com>
- <e461e5ed-f512-4d3b-9903-8092dab7f81d@linaro.org>
- <06f00d05-b8ca-41fa-9e5e-9cee3cfcfae1@axiado.com>
- <7ddb77bf-173a-4117-80ac-d0f32bf067ee@linaro.org>
- <4f836d88-80a7-402b-9af0-f0d002e2145d@app.fastmail.com>
- <912dd9f9-34d9-4631-82d3-02eed03a52c9@axiado.com>
-Subject: Re: [PATCH v6 00/10] Axiado AX3000 SoC and Evaluation Board Support
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v2 1/1] docs: Fix kernel-doc indentation errors
+To: Luis Felipe Hernandez <luis.hernandez093@gmail.com>
+Cc: Randy Dunlap <rdunlap@infradead.org>, Pavel Pisa <pisa@cmp.felk.cvut.cz>,
+ Ondrej Ille <ondrej.ille@gmail.com>, Frank Li <Frank.Li@nxp.com>,
+ Maxime Ripard <mripard@kernel.org>, Thomas Zimmermann <tzimmermann@suse.de>,
+ David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ dri-devel@lists.freedesktop.org, linux-i3c@lists.infradead.org,
+ linux-can@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Marc Kleine-Budde <mkl@pengutronix.de>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
+References: <20250720152401.70720-1-luis.hernandez093@gmail.com>
+ <20250720152401.70720-2-luis.hernandez093@gmail.com>
+Content-Language: en-US
+From: Vincent Mailhol <mailhol.vincent@wanadoo.fr>
+Autocrypt: addr=mailhol.vincent@wanadoo.fr; keydata=
+ xjMEZluomRYJKwYBBAHaRw8BAQdAf+/PnQvy9LCWNSJLbhc+AOUsR2cNVonvxhDk/KcW7FvN
+ LFZpbmNlbnQgTWFpbGhvbCA8bWFpbGhvbC52aW5jZW50QHdhbmFkb28uZnI+wrIEExYKAFoC
+ GwMFCQp/CJcFCwkIBwICIgIGFQoJCAsCBBYCAwECHgcCF4AWIQTtj3AFdOZ/IOV06OKrX+uI
+ bbuZwgUCZx41XhgYaGtwczovL2tleXMub3BlbnBncC5vcmcACgkQq1/riG27mcIYiwEAkgKK
+ BJ+ANKwhTAAvL1XeApQ+2NNNEwFWzipVAGvTRigA+wUeyB3UQwZrwb7jsQuBXxhk3lL45HF5
+ 8+y4bQCUCqYGzjgEZx4y8xIKKwYBBAGXVQEFAQEHQJrbYZzu0JG5w8gxE6EtQe6LmxKMqP6E
+ yR33sA+BR9pLAwEIB8J+BBgWCgAmFiEE7Y9wBXTmfyDldOjiq1/riG27mcIFAmceMvMCGwwF
+ CQPCZwAACgkQq1/riG27mcJU7QEA+LmpFhfQ1aij/L8VzsZwr/S44HCzcz5+jkxnVVQ5LZ4B
+ ANOCpYEY+CYrld5XZvM8h2EntNnzxHHuhjfDOQ3MAkEK
+In-Reply-To: <20250720152401.70720-2-luis.hernandez093@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250721_135506_396575_9A1CD1C4 
-X-CRM114-Status: UNSURE (   9.09  )
+X-CRM114-CacheID: sfid-20250721_004826_210635_90CCAE80 
+X-CRM114-Status: UNSURE (   9.80  )
 X-CRM114-Notice: Please train this message.
 X-Mailman-Approved-At: Tue, 22 Jul 2025 04:10:58 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
@@ -139,19 +95,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jul 21, 2025, at 22:43, Harshit Shah wrote:
-> On 7/21/2025 7:31 AM, Arnd Bergmann wrote:
->>> Separate patches (1) tend to work better for the first contribution
->>> from a new maintainer, since there is less to know in advance.
->>>
-> Thank you very much Krzysztof and Arnd.
->
-> I will submit the patches to soc@kernel.org.
+On 21/07/2025 at 00:24, Luis Felipe Hernandez wrote:
+> Fix kernel-doc issues that reported Unexpected indentation errors
+> durring documentation build (make htmldocs) in CAN, I3C and GPU drivers.
+  ^^^^^^^
+during
 
-Please use soc@lists.linux.dev, we are trying to phase
-out the old alias (both work the same right now).
+> Convert formatting to proper ReST list syntax to resolve warning.
+> 
+> Changes since v1:
+> - Convert return value descriptions to proper ReST format
+> - Fix code block introduction with :: syntax  
+> - Add GPU driver fixes
+> - Remove SCSI driver (already fixed)At
 
-    Arnd
+The change log does not need to appear in the patch main body.
+
+Add a --- cutter after your signature and put the change log after that cutter.
+This way, the change log will automatically be discarded when the patch is picked.
+
+> Link: https://lore.kernel.org/all/20250703023511.82768-1-luis.hernandez093@gmail.com/
+> 
+> Signed-off-by: Luis Felipe Hernandez <luis.hernandez093@gmail.com>
+> ---
+>  drivers/gpu/drm/drm_gpuvm.c              | 16 ++++++++--------
+>  drivers/i3c/device.c                     | 13 ++++++++-----
+>  drivers/net/can/ctucanfd/ctucanfd_base.c | 12 +++++++-----
+
+Can you do one patch per sub-domains and send them separately? The maintainers
+of drivers/i3c/ are not the same as the maintainers of drivers/net/can/. And
+there is no dependencies preventing you to split.
+
+
+Yours sincerely,
+Vincent Mailhol
+
 
 -- 
 linux-i3c mailing list
