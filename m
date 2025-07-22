@@ -4,58 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96614C83F1A
-	for <linux-i3c@archiver.kernel.org>; Tue, 22 Jul 2025 16:19:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7663CC87FC5
+	for <linux-i3c@archiver.kernel.org>; Tue, 22 Jul 2025 16:19:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ULG/Ayd857u/2/LY1vVn10E1pqnv5cBQ+4iZoOhAt6I=; b=3DMx7W7mHhRjs9
-	3XrRCqBHbug+g2Ym18Le6JIT7D3gYH79HeIiH7krOpr40TLXAPKLZ2J9Rgd3kAtCCCPJFtMqF0ev5
-	g91Txrk7t3yPfLBUdpgxqELjZOsghEC83ZiBy1dvkArSSTmli9B/fgy/Ma3nZsQBiT+evvezrFxna
-	Wgc+9Wr4CRZgCr8pyDtW+g1brnmvvCLn6dW0ok+thdruCxgzvj0IgdbnlvZmpNz0r2+FLuzcs6vSl
-	tmhpn4qtvziHLPYcmJMwIRlwUhI/fvrDHt0BWm7KwS2opoc4BmWc1c17U/8ja2kgJLUNPjNNiKdLf
-	oQ+TeL+flYrCrkzguf4A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TvIai/Ze9Iab2gE/ALifkPYcYHixwWRazLK4B3iGZM8=; b=vOdXV4EvlbLhHF
+	MidmURL1fxd5JTfk4EV4aNit6JirtM7IgifO9++bJHMqdIrsO7Bu8yprP942UMR2jlH+jTPq2rVga
+	DvR19uVz+f6oHo9dV95D6hcaFhvoM5Kyb5743kJEdmHDhiWhSYYPQyyXKGJiRRlJOThCkIx7SWCfR
+	e3KOcm4kTFFUwtzZecq5ee+M6rDH5zdO3qQTxyqE7Lvd0ZG1FC1vyQOZoIErdMw5f+BIGw0VD/rFi
+	xzHe9O3gj4+qKGU8/H2BHv+N7ccR67Wflbr3D0ALqpjDxmlW+lK2DfmQVlgW82ZU0R87zPPzi0bA9
+	ZXOecaFH6ai7trl0EU3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueFht-00000002zxG-1YwT;
-	Tue, 22 Jul 2025 16:19:09 +0000
+	id 1ueFhu-00000002zxb-14SW;
+	Tue, 22 Jul 2025 16:19:10 +0000
 Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueF19-00000002t7f-3wdG
+	id 1ueF1D-00000002t7e-06np
 	for linux-i3c@lists.infradead.org;
-	Tue, 22 Jul 2025 15:35:02 +0000
+	Tue, 22 Jul 2025 15:35:04 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	sang-engineering.com; h=from:to:cc:subject:date:message-id
-	:in-reply-to:references:mime-version:content-transfer-encoding;
-	 s=k1; bh=cDl/TzV8jzjaQgaINlzQEa70v82cmXSPmEeYnasBVCc=; b=ZNH2qL
-	AH4NCZrk8Tre6cpjRkI/VlYFxL+41/G24fCH7AiHsSMGATEePjVAlk9bK4oAc1Uu
-	qzHRbsBL1JrcUd2aKZ+ZSfvnLmctk+ryHG2IjXFEVZ39Bu+9EspsYuyp/5vlDufd
-	bGDunYz73ulRL+Sj9xNT3ESQ6vs/RZVfnBJ+n7V/ZQVUhmyLpkn1ZVRhDvXMzeM1
-	3GlDYeIFJkxHrlv+Y5Z+3ntLxKlbbSlhjlvSrgvl/ob2kG6o+k44dNaOsUMeWEfA
-	/+K6Jf14Ci62IlQeehhdcUD2ichcAVeQao9HokEilMYyoJT5OhRXWX64VyA1eoPU
-	8xK7QiuKav/NS/FQ==
-Received: (qmail 1374453 invoked from network); 22 Jul 2025 17:34:55 +0200
-Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 22 Jul 2025 17:34:55 +0200
-X-UD-Smtp-Session: l3s3148p1@eI6LVYY6lKggAwDPXyBWAATEinPyanBm
+	:mime-version:content-transfer-encoding; s=k1; bh=bcvQKzCNCUbLQV
+	4lrtpyW3AYkFKo/MMXJO4kKx57llI=; b=HEZMnfMuxaulrs0tZDli2/ZsFxlRWY
+	gQqjDKDuU0wdL/hZ5/xyRj6YIco7+qijIuJRXAXCKO2hXlC7/WcBYV+uPwJ1oDCb
+	Nx4bguEyQUC+r+M8C7dXOcgO7kVoBc+SpKuVEP9G1B0AMuwaw1gfKu0raxKMsWa7
+	acTYDH46mu1WGLgD68xbqiy63rgar74h6r4KCkepFUFRau7aOVOYn8DZGXvuqIcL
+	zYHDOzUmkAh1HA2ya0qKaHzghF3NnmtW1WSvSnFpIb4020Xp9ihet1btScCfyTJ5
+	/SYSuKOzP/q8MuK2Y+SES1e95tIwdhLyl+Nzd4P00SzLZqp/dUhFvpVQ==
+Received: (qmail 1374377 invoked from network); 22 Jul 2025 17:34:54 +0200
+Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 22 Jul 2025 17:34:54 +0200
+X-UD-Smtp-Session: l3s3148p1@YrF7VYY6iKggAwDPXyBWAATEinPyanBm
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 To: linux-renesas-soc@vger.kernel.org
 Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
 	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Conor Dooley <conor+dt@kernel.org>,
+	devicetree@vger.kernel.org,
 	Frank Li <Frank.Li@nxp.com>,
-	linux-i3c@lists.infradead.org
-Subject: [PATCH v3 1/4] i3c: Harmonize defines representing specification parameters
-Date: Tue, 22 Jul 2025 17:34:39 +0200
-Message-ID: <20250722153445.5003-2-wsa+renesas@sang-engineering.com>
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	"Gustavo A. R. Silva" <gustavoars@kernel.org>,
+	Kees Cook <kees@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	linux-hardening@vger.kernel.org,
+	linux-i3c@lists.infradead.org,
+	Magnus Damm <magnus.damm@gmail.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Rob Herring <robh@kernel.org>,
+	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+Subject: [PATCH v3 0/4] i3c: add support for the Renesas controller
+Date: Tue, 22 Jul 2025 17:34:38 +0200
+Message-ID: <20250722153445.5003-1-wsa+renesas@sang-engineering.com>
 X-Mailer: git-send-email 2.47.2
-In-Reply-To: <20250722153445.5003-1-wsa+renesas@sang-engineering.com>
-References: <20250722153445.5003-1-wsa+renesas@sang-engineering.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250722_083500_848642_FBF16A50 
-X-CRM114-Status: GOOD (  10.96  )
+X-CRM114-CacheID: sfid-20250722_083503_344097_B87F601C 
+X-CRM114-Status: GOOD (  12.83  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,111 +80,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Before adding new parameters, the old ones need to be fixed to follow a
-consistent pattern: I3C_BUS_<PARAM>_<MAX|MIN|TYP>_<UNIT>
+Conceptual change since v2:
+* improve and add more parameters from the spec to master.h
+  (new patches 1+2)
 
-Also the entries are sorted to avoid duplications in the future. All
-changes were scripted to avoid human errors.
+Detailed changes since v2 are described in the individual patches. A
+branch with enablement patches for RZ/G3S+G3E can be found here:
 
-Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
----
-Change since v2:
-* new patch
+git://git.kernel.org/pub/scm/linux/kernel/git/wsa/linux.git renesas/g3s/i3c
 
- drivers/i3c/master.c               | 12 ++++++------
- drivers/i3c/master/dw-i3c-master.c |  4 ++--
- include/linux/i3c/master.h         |  9 +++++----
- 3 files changed, 13 insertions(+), 12 deletions(-)
+Old coverletter:
 
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index ffb734d378e2..6a2594dc29e6 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -728,12 +728,12 @@ static int i3c_bus_set_mode(struct i3c_bus *i3cbus, enum i3c_bus_mode mode,
- 	switch (i3cbus->mode) {
- 	case I3C_BUS_MODE_PURE:
- 		if (!i3cbus->scl_rate.i3c)
--			i3cbus->scl_rate.i3c = I3C_BUS_TYP_I3C_SCL_RATE;
-+			i3cbus->scl_rate.i3c = I3C_BUS_I3C_SCL_TYP_RATE;
- 		break;
- 	case I3C_BUS_MODE_MIXED_FAST:
- 	case I3C_BUS_MODE_MIXED_LIMITED:
- 		if (!i3cbus->scl_rate.i3c)
--			i3cbus->scl_rate.i3c = I3C_BUS_TYP_I3C_SCL_RATE;
-+			i3cbus->scl_rate.i3c = I3C_BUS_I3C_SCL_TYP_RATE;
- 		if (!i3cbus->scl_rate.i2c)
- 			i3cbus->scl_rate.i2c = max_i2c_scl_rate;
- 		break;
-@@ -755,8 +755,8 @@ static int i3c_bus_set_mode(struct i3c_bus *i3cbus, enum i3c_bus_mode mode,
- 	 * I3C/I2C frequency may have been overridden, check that user-provided
- 	 * values are not exceeding max possible frequency.
- 	 */
--	if (i3cbus->scl_rate.i3c > I3C_BUS_MAX_I3C_SCL_RATE ||
--	    i3cbus->scl_rate.i2c > I3C_BUS_I2C_FM_PLUS_SCL_RATE)
-+	if (i3cbus->scl_rate.i3c > I3C_BUS_I3C_SCL_MAX_RATE ||
-+	    i3cbus->scl_rate.i2c > I3C_BUS_I2C_FM_PLUS_SCL_MAX_RATE)
- 		return -EINVAL;
- 
- 	return 0;
-@@ -2786,7 +2786,7 @@ int i3c_master_register(struct i3c_master_controller *master,
- 			const struct i3c_master_controller_ops *ops,
- 			bool secondary)
- {
--	unsigned long i2c_scl_rate = I3C_BUS_I2C_FM_PLUS_SCL_RATE;
-+	unsigned long i2c_scl_rate = I3C_BUS_I2C_FM_PLUS_SCL_MAX_RATE;
- 	struct i3c_bus *i3cbus = i3c_master_get_bus(master);
- 	enum i3c_bus_mode mode = I3C_BUS_MODE_PURE;
- 	struct i2c_dev_boardinfo *i2cbi;
-@@ -2845,7 +2845,7 @@ int i3c_master_register(struct i3c_master_controller *master,
- 		}
- 
- 		if (i2cbi->lvr & I3C_LVR_I2C_FM_MODE)
--			i2c_scl_rate = I3C_BUS_I2C_FM_SCL_RATE;
-+			i2c_scl_rate = I3C_BUS_I2C_FM_SCL_MAX_RATE;
- 	}
- 
- 	ret = i3c_bus_set_mode(i3cbus, mode, i2c_scl_rate);
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index 91429d94a866..dc234efa046d 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -622,14 +622,14 @@ static int dw_i2c_clk_cfg(struct dw_i3c_master *master)
- 	core_period = DIV_ROUND_UP(1000000000, core_rate);
- 
- 	lcnt = DIV_ROUND_UP(I3C_BUS_I2C_FMP_TLOW_MIN_NS, core_period);
--	hcnt = DIV_ROUND_UP(core_rate, I3C_BUS_I2C_FM_PLUS_SCL_RATE) - lcnt;
-+	hcnt = DIV_ROUND_UP(core_rate, I3C_BUS_I2C_FM_PLUS_SCL_MAX_RATE) - lcnt;
- 	scl_timing = SCL_I2C_FMP_TIMING_HCNT(hcnt) |
- 		     SCL_I2C_FMP_TIMING_LCNT(lcnt);
- 	writel(scl_timing, master->regs + SCL_I2C_FMP_TIMING);
- 	master->i2c_fmp_timing = scl_timing;
- 
- 	lcnt = DIV_ROUND_UP(I3C_BUS_I2C_FM_TLOW_MIN_NS, core_period);
--	hcnt = DIV_ROUND_UP(core_rate, I3C_BUS_I2C_FM_SCL_RATE) - lcnt;
-+	hcnt = DIV_ROUND_UP(core_rate, I3C_BUS_I2C_FM_SCL_MAX_RATE) - lcnt;
- 	scl_timing = SCL_I2C_FM_TIMING_HCNT(hcnt) |
- 		     SCL_I2C_FM_TIMING_LCNT(lcnt);
- 	writel(scl_timing, master->regs + SCL_I2C_FM_TIMING);
-diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
-index c67922ece617..7b8e7f22f013 100644
---- a/include/linux/i3c/master.h
-+++ b/include/linux/i3c/master.h
-@@ -249,10 +249,11 @@ struct i3c_device {
-  */
- #define I3C_BUS_MAX_DEVS		11
- 
--#define I3C_BUS_MAX_I3C_SCL_RATE	12900000
--#define I3C_BUS_TYP_I3C_SCL_RATE	12500000
--#define I3C_BUS_I2C_FM_PLUS_SCL_RATE	1000000
--#define I3C_BUS_I2C_FM_SCL_RATE		400000
-+/* These values are from the public spec, chapter "Timing specification" */
-+#define I3C_BUS_I2C_FM_PLUS_SCL_MAX_RATE	1000000
-+#define I3C_BUS_I2C_FM_SCL_MAX_RATE		400000
-+#define I3C_BUS_I3C_SCL_MAX_RATE	12900000
-+#define I3C_BUS_I3C_SCL_TYP_RATE	12500000
- #define I3C_BUS_TLOW_OD_MIN_NS		200
- 
- /**
+Here is a basic driver for the I3C IP found in various Renesas SoCs like
+RZ/G3S and G3E. Missing features to be added incrementally are IBI,
+HotJoin and maybe target support. Other than that, this driver has been
+tested with I3C pure busses (2 targets) and mixed busses (2 I3C +
+various I2C targets). DAA and reading/writing to the temperature sensors
+worked reliably at different speeds. Scoping the bus, the output from
+the protocol analyzer seems reasonable, too. It was created by merging
+two versions of it from two different BSPs. Then, improved according to
+code analyzers, cleaned up with regard to coding style, and then
+refactored to hopefully match I3C subsystem standards.
+
+Looking forward to comments,
+
+   Wolfram
+
+
+Tommaso Merciai (1):
+  dt-bindings: i3c: Add Renesas I3C controller
+
+Wolfram Sang (3):
+  i3c: Harmonize defines representing specification parameters
+  i3c: Add more parameters for controllers to the header
+  i3c: master: Add basic driver for the Renesas I3C controller
+
+ .../devicetree/bindings/i3c/renesas,i3c.yaml  |  179 +++
+ MAINTAINERS                                   |    7 +
+ drivers/i3c/master.c                          |   12 +-
+ drivers/i3c/master/Kconfig                    |   10 +
+ drivers/i3c/master/Makefile                   |    1 +
+ drivers/i3c/master/dw-i3c-master.c            |    4 +-
+ drivers/i3c/master/renesas-i3c.c              | 1404 +++++++++++++++++
+ include/linux/i3c/master.h                    |   16 +-
+ 8 files changed, 1621 insertions(+), 12 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
+ create mode 100644 drivers/i3c/master/renesas-i3c.c
+
 -- 
 2.47.2
 
