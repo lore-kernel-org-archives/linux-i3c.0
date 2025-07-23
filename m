@@ -4,91 +4,155 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3229CC83F1A
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC820C87FC5
 	for <linux-i3c@archiver.kernel.org>; Wed, 23 Jul 2025 22:00:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=js8jgog4ei1+faQSJyJzriJaFm3dpsTQ7HOOy6P2Rpk=; b=30HgrFY+6pb78P
-	bKJqLMLH5T/365VYk+6BLaF3Wum2c6hvnvGdbOcJ6XzL+pE2eb7r79qehXAWyXzEEErwmcXMCbwNX
-	gDK/GeMDcalr9YG/pS21rUS9AQ596Qoc95OCgy7L1GRW+JWhRZRRhkufYqfDfMGkvK/PV5FCmlcx0
-	P7CefWV4OvJxcgZVtRyXXaofB6Mgcn+G0053DQsRgZjo8vLgt3L41eKLoFiZ1rWKqwzen9yZpV56a
-	vvas22cnjhWJAoqMl04eYCY0aKIIHeXc7Csu4D+ac6POlIiWu9l2CK0yJO9+epGSASIbnj0Ko501b
-	Gn9kGkN57OelcQi0D+QA==;
+	List-Owner; bh=SR++dS89S778XDr7CUS/SFlCtqhVpT1ka4Z07bIVS1A=; b=RwAVbSq/GjXts9
+	Rynxv+Sdlss+EIQvlAVddjcY7x+TXl6hrnxYcUqjJgmDO7kB/hOUF45Y6a2GjPiT0vrN9qoNI313j
+	MkkvTJKaP4RzCdoqyKBPiOlHjphL2vrwYUSEbXvlnA5WVTXQSpA4x1UDYRhwqMvK3VuTotkyo5wg/
+	6kVC9C8phXU4GiQMoiK+wQG8ycBcCt9qnhDePoL/1pLdymT4SUfRIypzDGTJdfPz2r0KbkyKUlcMK
+	p8jS2XSmEy/BePQiaVubk4jP2RK9uQQbQmDeyotJL8/6EQNNIMcDEunSQxMps+c6n2F54TvcJLhud
+	6d41dqkmROYcLCoTSb0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uehW9-0000000616H-42Ik;
-	Wed, 23 Jul 2025 22:00:53 +0000
-Received: from mail-pg1-x52b.google.com ([2607:f8b0:4864:20::52b])
+	id 1uehWA-0000000616U-2DuS;
+	Wed, 23 Jul 2025 22:00:54 +0000
+Received: from mail-japanwestazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c406::1] helo=OS0P286CU011.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ueUnX-00000004Mzb-0L0c
+	id 1ueVtb-00000004Whj-0BH8
 	for linux-i3c@lists.infradead.org;
-	Wed, 23 Jul 2025 08:26:00 +0000
-Received: by mail-pg1-x52b.google.com with SMTP id 41be03b00d2f7-b2c4331c50eso5159335a12.3
-        for <linux-i3c@lists.infradead.org>; Wed, 23 Jul 2025 01:25:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=bgdev-pl.20230601.gappssmtp.com; s=20230601; t=1753259158; x=1753863958; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=vLCNSJ4DxVZDJPQ7cVNRDySeLw0NidDKviv2DX8YsFo=;
-        b=DFT1ZCJHMZcPYrQJQzRnqa/m1n+9S/2uoZv3KXxjY1B6ZS6sc5vXurJiiQ+DrQLBKP
-         ajWZgcrnUPHZoa1lkxeTvTdHRfcyRsqyf0+5uXYbMI5UcEP0RVKX6bKyfMCdA6sH3oXl
-         tIwMKpyMyYQ2gvKoozvIO4KfXyv9Rs8q2IVnJWEaKJmdkfmpw7XIfbW+HLgUnrYucx2K
-         Gu9b28N5yfup8su49Wrd+e7TzCCCUkJNdwiNfKDDtk8QMXfy6qTdkg2yAsD4AwG7G2My
-         mlh8UScyDjf+iPQrYwWqWyRG8iYgPz5p1X+5+03Ri1h4UGLRtJkz7oiYoUMeTCIdOEGB
-         G2oA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1753259158; x=1753863958;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=vLCNSJ4DxVZDJPQ7cVNRDySeLw0NidDKviv2DX8YsFo=;
-        b=gK8N8R6td6P6IJOSclmp+TdTB/DQy/2jeDB3Ek/Fpd22iyYAfDbvbbuRihb3uhRVqm
-         jAzqaqzKwG3DRL6J9YbmzribWg/srxfZ5IWGKJspulNOcQg19kCK2KPK26HejMSa5rX+
-         GyNmcbZQuwFjXUxIrQgrUYTz/8zU29opjYGby/g13Zpk3yD2a7cObA+S+OxJQ0qCY7o8
-         8mTIjRU1vb4Z5EIonbimqLanY4D0i+zx9V3ZiDV2q2RAcW1Y/p6zBj2/XesX4FOXZ1AB
-         Up9bYkJQdprCAyTn2Tf9C1J0o/1gQJdQ4S0w2PYArHYEwPO+3MleZLVgBTzaPJZWTnLf
-         nXHw==
-X-Forwarded-Encrypted: i=1; AJvYcCWo3NLRX8EAMq+s4kI8iPZ3oV0TlpTDNfJC+abdzBUeYyf/BhTO+UAodB2eTahLGhH1Tb+TVhRMDRc=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx4BlQR7mmvkF00FTzZ8vixfjfPRDCzP0C7LcqBg/Xuxy8J2HXp
-	uuP6wvZzsCFLy9rPBcPi7PwhQZdetsnk8g+5OJXFh5YDVb0ORn9BSjx7nkojGuOKpvwtdoH4H1I
-	ngBmQWhshvpcikevAMrD5f60cqyUIDFcEoJxwuSkHZw==
-X-Gm-Gg: ASbGncuPlXx1wE4jbx15aTUYSZqzQDeP0leX3NBtVdzvX5NhmYucqfN/XF0p5Q2faMZ
-	ex4lo5n4c4H37MG6zT+FrzrJgxGePe/yILwguRBSoQYs80GdZDFSdHpzYID4t6rhnmOCoRcI3h+
-	YwkndvSqtbRuHjuUaMOVZE4ui6aNAIYS2tS84uhDP+p6WEFMzEfXcK6M1FzIJ2d6aRRdQ2Wiz5n
-	62LxY5OZATJvQPHBpppF+fT6OV+2lKoRwKDGZPI2kA91dxw
-X-Google-Smtp-Source: AGHT+IFzwCafFosCdx131zbcEFY3D64m+7mo0loj5vAsYVkMFUgy5UAHuuRGjg5yAkxctR2cI5zO8+e+kqhHgdsFxCw=
-X-Received: by 2002:a17:90b:53d0:b0:315:aa28:9501 with SMTP id
- 98e67ed59e1d1-31e507dc7b4mr4498294a91.24.1753259157929; Wed, 23 Jul 2025
- 01:25:57 -0700 (PDT)
+	Wed, 23 Jul 2025 09:36:21 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=pOAy61SDLD1PK/yiutXYx78DKUOrtDuZNpPMQxEdQFXiYl82Gx78x2aEzpkE04+3/vHy2qZH4FcIgc85upimnW+46xVgBGb3HD727T7fmAYd1Z5WaqOe6WzCLOS54FeK1eLTqVIUU2zdZb0ymfN3nAqbdUjkXiEVX66cEwnRSsNrsbj+lzgBx7azDhMxT9wlSsxKf4KXHwT2f398Ekp1Uvssg0/wq0rP1M4bznoVLuk5C6tmtriKZCZJFqPUt6SI1zRLbUVuAB9bQDwxNMHj0RWIpTDzgAWKpOwudrmc0gFY9fw77qXWuycDy8pX3H9ItwmqCOiwajNW3afZeKv6Dg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=3teEfn++m0F0JltSCyMofCAj9+JHNbLSHMRP6Na9r6M=;
+ b=yWYI4Vt9vLZGvul0S8vJAGAHiz2Itsgu9EwnA9Kp1GneaXeYN/EciIpse5dlYX8+bRUn24BQFzt3fMSIRqZbTz1SJBaga6ayaET0lw8aWPaUY3XQttJj5O3V+ZQtbvIIL+3HqHW5lTEcm3hDYC0WgJ/kEGwKCtr/SfwGR6CESFh1mxIGPneKxqh7eMpBU3YBBTXx0hpao70MuDmWmHvbatrb1eNTqs207IPnAW5vSy4Yo56TUHUIz6S1GZqY9GrE4jdMWK99vI9LS6ReGm5fz+MFYTgxl4hvqG78iLxjnKtAFlBJPdqfMrDtPQyg9uGAwrrycCE2tYc6jcm9BLqS3w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
+ header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=3teEfn++m0F0JltSCyMofCAj9+JHNbLSHMRP6Na9r6M=;
+ b=EMXMaGGFqBs50rZt9FwXAKQ+9TiHdFsQLHttkvZf7WAxvjzR2xygpczrd8pRdUmBRv0JbVGHrMzCSux4ttqAi/XRpq2IQOYrzcUO2RJjYTeK0E3T1fUlZMvm9Yn6/DeziuD+8mjQEGEPzoM8Xlxebrm/0eKHf2GEffPcJIUx1vA=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=bp.renesas.com;
+Received: from OS3PR01MB6657.jpnprd01.prod.outlook.com (2603:1096:604:10b::10)
+ by TYCPR01MB11418.jpnprd01.prod.outlook.com (2603:1096:400:3b9::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8943.30; Wed, 23 Jul
+ 2025 09:36:02 +0000
+Received: from OS3PR01MB6657.jpnprd01.prod.outlook.com
+ ([fe80::8575:e22a:3c44:76f0]) by OS3PR01MB6657.jpnprd01.prod.outlook.com
+ ([fe80::8575:e22a:3c44:76f0%5]) with mapi id 15.20.8964.019; Wed, 23 Jul 2025
+ 09:35:58 +0000
+Date: Wed, 23 Jul 2025 11:35:44 +0200
+From: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+To: Wolfram Sang <wsa+renesas@sang-engineering.com>
+Cc: linux-renesas-soc@vger.kernel.org,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Conor Dooley <conor+dt@kernel.org>, devicetree@vger.kernel.org,
+	Frank Li <Frank.Li@nxp.com>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	"Gustavo A. R. Silva" <gustavoars@kernel.org>,
+	Kees Cook <kees@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	linux-hardening@vger.kernel.org, linux-i3c@lists.infradead.org,
+	Magnus Damm <magnus.damm@gmail.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v4 0/4] i3c: add support for the Renesas controller
+Message-ID: <aICs8JmAUbxFxizc@tom-desktop>
+References: <20250722190749.6264-1-wsa+renesas@sang-engineering.com>
+Content-Disposition: inline
+In-Reply-To: <20250722190749.6264-1-wsa+renesas@sang-engineering.com>
+X-ClientProxiedBy: FR2P281CA0071.DEUP281.PROD.OUTLOOK.COM
+ (2603:10a6:d10:9a::6) To OS3PR01MB6657.jpnprd01.prod.outlook.com
+ (2603:1096:604:10b::10)
 MIME-Version: 1.0
-References: <20250722-axiado-ax3000-soc-and-evaluation-board-support-v6-0-543979a60ccf@axiado.com>
-In-Reply-To: <20250722-axiado-ax3000-soc-and-evaluation-board-support-v6-0-543979a60ccf@axiado.com>
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-Date: Wed, 23 Jul 2025 10:25:43 +0200
-X-Gm-Features: Ac12FXyLbBDcOzrp8fBxUqR9jIu-gUOTaGAF4LxjwERQBqGacqdoGbliH_T9iv8
-Message-ID: <CAMRc=MdFoAa2omJgL__4mRqX5CYyhZ3VU_Uy-Tf1oPSuZdV93g@mail.gmail.com>
-Subject: Re: [PATCH v6 00/10] Axiado AX3000 SoC and Evaluation Board Support
-To: Harshit Shah <hshah@axiado.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Jiri Slaby <jirislaby@kernel.org>, 
-	Michal Simek <michal.simek@amd.com>, =?UTF-8?Q?Przemys=C5=82aw_Gaj?= <pgaj@cadence.com>, 
-	Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li <Frank.Li@nxp.com>, 
-	Boris Brezillon <bbrezillon@kernel.org>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Linus Walleij <linus.walleij@linaro.org>, Arnd Bergmann <arnd@arndb.de>, 
-	Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>, soc@lists.linux.dev, 
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-gpio@vger.kernel.org, 
-	Jan Kotas <jank@cadence.com>, linux-serial@vger.kernel.org, 
-	linux-i3c@lists.infradead.org, 
-	Krzysztof Kozlowski <krzysztof.kozlowski@linaro.org>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: OS3PR01MB6657:EE_|TYCPR01MB11418:EE_
+X-MS-Office365-Filtering-Correlation-Id: 533a81a9-015e-42d0-20df-08ddc9cc5450
+X-LD-Processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|52116014|7416014|376014|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?Uq87vgV3HHkR3DGmER/1wPAAL9BJf0K00FnV6szRflz/5q1MiZ2k7WW3qLE2?=
+ =?us-ascii?Q?WJavNbVeXt6ROeywupbJRHaut/j1b8eoo1E0F/gtB/z6yLyEF0cwnpaaoi0O?=
+ =?us-ascii?Q?ZgshruOw9LOMcflAFBPrck9N/FZm+Kjb+62Pf/Fi8VYQYXDeJx82aVbbE8Wp?=
+ =?us-ascii?Q?F6r6dmpJkbQ8q4wo4QzUHELfPueN9EO2CnyDakj6sO+wo/OQlZr42xsyAo5a?=
+ =?us-ascii?Q?Z2XcAIXuq/RsBoMcWQqf+v6kFRnbnm3GsQK05cJbjCqNT1MIVIBKeFdNH7jD?=
+ =?us-ascii?Q?2QkKHYAG+O9qj1ObrGmNUgGxQ7ytgQIXP5UUi1f46xeLGLtVFkHw5CM9DA8w?=
+ =?us-ascii?Q?hBycxHhD7y1KNHdRnsZqXrbcMTKjC6W62k0/OSe07X1tInsnBVs8xJaF/JOL?=
+ =?us-ascii?Q?2EF/2NYjOlhT2ETl5GIAFFmoQDAq8iOPcwIbM2e+WehmzYdE/xNrortuwEpV?=
+ =?us-ascii?Q?1Et2Gs9MEXODFWyqG3K7attMeNfFa7EZaEzROAO43QTwBUfKw1XuswerA0Ig?=
+ =?us-ascii?Q?O1WGeSqE1YJwBw1bOJ0vL6/MEEEx0BoQUDuiQfRJCWHJL+dWjiPIZauubZio?=
+ =?us-ascii?Q?L1HSqn3Tcq87Z8CcoRqRNhrvWXBU0ppkVNS+Qea5sDXAhReO6+UBIQVk8lFE?=
+ =?us-ascii?Q?/rk0xrVPrXCkZXlUFssltxWwfEuQ2QQ4h4OZaVRM1rBD5SEKtEE9mnALyIZf?=
+ =?us-ascii?Q?a/qlb2HcmZSWbfYBG2zN95XSj9k1AaFtJhN4+6Fk7FwUOHK7kERvTzFJNieR?=
+ =?us-ascii?Q?ZzWZsIW8+zpHkonb1v/MdYDMdGJDj2i5k1j+9tQLeR25qnXFRSvZ4LrXPlYJ?=
+ =?us-ascii?Q?1y0nqJGjzXnmX0qKbaQgTLVE85le4FACAkvVU2bRTDRGpLDoKd2e+cWkjrzf?=
+ =?us-ascii?Q?v09FZyeWAYZbtg6+QD2NrohvLe9tsXwRCLMo0wShYXgpfLpp49wtM6TA9TOM?=
+ =?us-ascii?Q?DSoxkx62IyxpSiQBkspIxm04bpXbkFmpxJDd7zo9L18C6XY2i06qAgA0NMPN?=
+ =?us-ascii?Q?Mw+4CVdr9OJK3plgTH4dVIuaU/IM5o+S+cChkdFxBqqO9zqToNOss/zQXke+?=
+ =?us-ascii?Q?5FmA13mahhtwTbarMpVV954qXQP97+/hDk54CInrJfKW/q+Lajt4vmbLaE7T?=
+ =?us-ascii?Q?yfp6wCsFDQXXGXpGDujwCW34jb99YTERgwQ7YRHXkhe+JNpSeX0p6hhPjLpY?=
+ =?us-ascii?Q?yCmCblLozfqt5t9Dc7YpvblBLE5T+A+GJOg74SFufVjzx3XGb0qBsree9swD?=
+ =?us-ascii?Q?1cQ8XvBXxUXj7ozfpYQQ4Dm2XXffGI2Hrg3aYygaEHSViATC5G68fSO9aZPj?=
+ =?us-ascii?Q?3AY+LCQcFtTiRp2QVHfA9EriKFCaZZIYCm9Eb5FOYfNqd5/LVLg4Oj4D/Crf?=
+ =?us-ascii?Q?SopzLbDpQuI4BnmFqDjCiljL3hd8QRUiE++IdI5afvQtRSfj8GC6LKkWctCg?=
+ =?us-ascii?Q?KWg2r3EO1vjYo8xC3ip83ALG7EGxv/DqPQ0xbo0X1SHJ2B0LAwQZLw=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:OS3PR01MB6657.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(52116014)(7416014)(376014)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?97UK+JTPO0kRhlG7ngAU97WOpc00AbUh3MK4gsnNVPCPqWNEReXl8As8RJ0n?=
+ =?us-ascii?Q?h2qQJAYFmCbafPXRznfGf03s570d+6ZZxPqpum8jMqcaIf+9Im/jMDTexILE?=
+ =?us-ascii?Q?xwN85C0bgSKPaZm7bu5unosBtlMLkMxhBYAP9nVVj4TSfoGDpWHSQvVUm4LK?=
+ =?us-ascii?Q?2fcvNo+4MF/zA08XogLM/jWU0OCA7KCboMfKcGR0X51SlqgALoblpsDUrgkP?=
+ =?us-ascii?Q?cCtD8j4pq/5hKV5lUKD7yNl4/CrS4c+gtgLQixFpjSySFVYUMeEdHsZf0NdA?=
+ =?us-ascii?Q?XSE8+C+T3DlYm5py2Lihp9jTJaTKlVsDP8mXauqvGxda9pQdbQqTSIV0NoX8?=
+ =?us-ascii?Q?lsEHVXVUWHGhM1yDJXR8AKNmFNvcCkPuNMsYA+XAJS8FA1ipyEqbUVhWsnOJ?=
+ =?us-ascii?Q?Q7g+gTPRCnLEJEf4U6msFypeb2Tw6Uav48m2Su9myGn4LqWD4dGZ8LJ2ZvwO?=
+ =?us-ascii?Q?7e/wKcQ3Ar6bsOrCfw/gmM+bjhXWJF/ynE3mAjS0VuZgt/P3aIK7saUsbTtj?=
+ =?us-ascii?Q?1KfCHZuI4Ahht0LRbk2H/oK4kXMLq/cbw4GFLZDgWcJ0EC3mb8SsdJlcL6a8?=
+ =?us-ascii?Q?y1nQ6/QbiK/90pN7Q8I1bdYyK3nuwTXHNxBl359BQ5h2XzjeSdnHmSiRjpGm?=
+ =?us-ascii?Q?g+xUgRg7ipo31Zbl7/LuFBjQox8JezBaMjHciCvTdVEFBA94Wi3iarla7oT7?=
+ =?us-ascii?Q?ZcEygn+r7tYqy2MCZEWRj6YyxnfUiqWU5INe+AuNpOg7Q5Wr1apA6X+9Lnxo?=
+ =?us-ascii?Q?+wSZ3JNkKBO5q1nQlWxDKide22IfDYMLKT3JjxLp7Gdo/3Vrlbi5apFcd6YC?=
+ =?us-ascii?Q?WuM9wVu12Flbhu4bkTueImQCkyY12tIyYo5Lx8goCG2rUQDvs4M/AC9BqtLb?=
+ =?us-ascii?Q?TUKdsoJzLDy2/0Ew1ERPuLiRl3Hl4ZDkKsnOL61jO1ulWqx6m3BFfDZujqxg?=
+ =?us-ascii?Q?dtaZL1if2ZFbJk47vXdYtfva07oULRPopsE1yScSTc0IfPqpMkm0IXb37VfX?=
+ =?us-ascii?Q?4ltjuz522OlougO2KbGpu8QrFKmiZTiPnOc3RRCi2gxs+0OEGFJ/w3MrSSd/?=
+ =?us-ascii?Q?vQe7IJknTEBOtEQq34G6nilkyU+Lt3+0aWci2BZjKlTYt38yE2hf7EjkcK0l?=
+ =?us-ascii?Q?Kb+uxtTqLCnvZEd/qRX1UTzm4szVXwftYzlwLQdtTVYk7iv8snRsOOTjf78g?=
+ =?us-ascii?Q?qTEbPRhAhak06h3VRqPosVJuBdrAiYW/1Jpwx16CUF98ZxEW9Ggy+WoUl41f?=
+ =?us-ascii?Q?Cv0HbCeetLo3aoQ5wOAOMFe5tvPfye/tAQwCCpBOi/3CiZA/El6nbQAKq3sa?=
+ =?us-ascii?Q?4dXyXmp1syW6kDssftfDy0c3mDJz/mahQ3kXBYAR5kb+DLbEZYfKqM6Tngzo?=
+ =?us-ascii?Q?CKh92RK0pHddNkFi69FEDbTrD/MAE/K1UYlrB/nzvr1t+gfTpufww0fMPZ0B?=
+ =?us-ascii?Q?+8v0GpMoeNAr606dwpN1xdgqFrNouq4Q5ydUzP5PMy50M2gGDk0XrsI92JtW?=
+ =?us-ascii?Q?bwmTX0TELrkUGSEaztxGttMhr7F1xLLOwJLKM6rxcVP3RPKcSA0JMWLgaUx+?=
+ =?us-ascii?Q?ydeuBk2jWfLm0V6p3tRPUcYGDxcl8vyw5o+RUAVfFrPDjVWncC/Hst6GAhfF?=
+ =?us-ascii?Q?4vSuID7ewW4Zmg3ybQ/Kbdw=3D?=
+X-OriginatorOrg: bp.renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 533a81a9-015e-42d0-20df-08ddc9cc5450
+X-MS-Exchange-CrossTenant-AuthSource: OS3PR01MB6657.jpnprd01.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Jul 2025 09:35:58.3620
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 09kctioTp/yPyERU34qBWPHZYq8a3YwDQtppI94dYFMZW6Cqj0ub9RZutLp1GPMmg0mfUPr2VTd2up9wP7yKAH0iy13IaIrW6CDjT/+PeUkTuGbcnCJwPVCmT6tIUZic
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYCPR01MB11418
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250723_012559_186268_19B14780 
-X-CRM114-Status: GOOD (  12.13  )
+X-CRM114-CacheID: sfid-20250723_023619_371478_64D2FDFA 
+X-CRM114-Status: GOOD (  20.84  )
 X-Mailman-Approved-At: Wed, 23 Jul 2025 14:59:09 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -101,24 +165,80 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-T24gVHVlLCBKdWwgMjIsIDIwMjUgYXQgMTA6MTbigK9QTSBIYXJzaGl0IFNoYWggPGhzaGFoQGF4
-aWFkby5jb20+IHdyb3RlOgo+Cj4gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQo+IEhl
-bGxvIFNvQyBtYWludGFpbmVycywKPgo+IFRoaXMgcGF0Y2ggc2VyaWVzIGFkZHMgaW5pdGlhbCBz
-dXBwb3J0IGZvciB0aGUgQXhpYWRvIEFYMzAwMCBTb0MgYW5kIGl0cwo+IGV2YWx1YXRpb24gYm9h
-cmQuCj4KPiBDaGFuZ2UgZnJvbSB2Ngo+IC0gUmFuICJiNCB0cmFpbGVyIC11IiBhbmQgYWRkIHJl
-dmlld2VkIGJ5IEtyenlzenRvZgo+Cj4gQWRkIHNvY0BsaXN0cy5saW51eC5kZXYgaW4gdGhlIHRv
-IGxpc3QgYW5kIHNlbmQgdGhpcyBzZXJpZXMgYWdhaW4gYXMgcGVyCj4gc3VnZ2VzdGlvbiBieSBL
-cnp5c3p0b2YgYW5kIEFybmQuIFRoYW5rIHlvdS4KPgo+IENoZWNrZWQgbG9jYWxseSBhbmQgYWJs
-ZSB0byBhcHBseSB0aGVzZSBwYXRjaHNldCB0byBzb2MgZ2l0Lgo+IChnaXQvc29jL3NvYy5naXQs
-IGZvci1uZXh0LCBjaGVja2VkIGNvbW1pdDogN2RmYmYzMTc2ZDg4NmZmOWEwYzc3ODY5NDJkM2E4
-OTgwOWQwNjQxZSkKPgo+IFNvcnJ5IGZvciBsYXRlIHJlcXVlc3QsIHBsZWFzZSBjb25zaWRlciB0
-aGlzIHNlcmllcyBmb3IgdGhlIDYuMTcuCj4KCkkgY2FuJ3Qgc3BlYWsgZm9yIHRoZSByZXN0IGJ1
-dCBkbyB5b3Ugd2FudCBtZSB0byB0YWtlIHRoZSBHUElPCmR0LWJpbmRpbmdzIHBhdGNoZXMgdGhy
-b3VnaCB0aGUgR1BJTyB0cmVlIGZvciB2Ni4xNyBzZXBhcmF0ZWx5PwoKQmFydG9zegoKLS0gCmxp
-bnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
+Hi Wolfram,
+Thanks for your series!
+
+On Tue, Jul 22, 2025 at 09:07:42PM +0200, Wolfram Sang wrote:
+> Detailed changes since v3 are described in the individual patches. A
+> branch with enablement patches for RZ/G3S+G3E can be found here:
+> 
+> git://git.kernel.org/pub/scm/linux/kernel/git/wsa/linux.git renesas/g3s/i3c
+> 
+> Old coverletter:
+> 
+> Here is a basic driver for the I3C IP found in various Renesas SoCs like
+> RZ/G3S and G3E. Missing features to be added incrementally are IBI,
+> HotJoin and maybe target support. Other than that, this driver has been
+> tested with I3C pure busses (2 targets) and mixed busses (2 I3C +
+> various I2C targets). DAA and reading/writing to the temperature sensors
+> worked reliably at different speeds. Scoping the bus, the output from
+> the protocol analyzer seems reasonable, too. It was created by merging
+> two versions of it from two different BSPs. Then, improved according to
+> code analyzers, cleaned up with regard to coding style, and then
+> refactored to hopefully match I3C subsystem standards.
+> 
+> Looking forward to comments,
+> 
+>    Wolfram
+> 
+> 
+> Tommaso Merciai (1):
+>   dt-bindings: i3c: Add Renesas I3C controller
+> 
+> Wolfram Sang (3):
+>   i3c: Standardize defines for specification parameters
+>   i3c: Add more parameters for controllers to the header
+>   i3c: master: Add basic driver for the Renesas I3C controller
+
+Tested this series on top of [1], using RZ/G3E SMARC EVK board +
+SMARC BREAKOUT board connected to P3T1085UK-ARD, using i3c pure bus and
+I'm able to read the i3c temperature sensor:
+
+root@smarc-rzg3e:~# cat /sys/class/hwmon/*/temp1_input
+25875
+
+For all the series:
+
+Tested-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+
+[1] https://lkml.org/lkml/2025/6/24/581
+
+Thanks & Regards,
+Tommaso
+
+> 
+>  .../devicetree/bindings/i3c/renesas,i3c.yaml  |  179 +++
+>  MAINTAINERS                                   |    7 +
+>  drivers/i3c/master.c                          |   12 +-
+>  drivers/i3c/master/Kconfig                    |   10 +
+>  drivers/i3c/master/Makefile                   |    1 +
+>  drivers/i3c/master/dw-i3c-master.c            |    4 +-
+>  drivers/i3c/master/renesas-i3c.c              | 1404 +++++++++++++++++
+>  include/linux/i3c/master.h                    |   16 +-
+>  8 files changed, 1621 insertions(+), 12 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
+>  create mode 100644 drivers/i3c/master/renesas-i3c.c
+> 
+> -- 
+> 2.47.2
+> 
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
