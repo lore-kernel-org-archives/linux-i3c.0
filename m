@@ -4,65 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AB631C83F26
-	for <linux-i3c@archiver.kernel.org>; Thu, 24 Jul 2025 10:04:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E60E7C83F1A
+	for <linux-i3c@archiver.kernel.org>; Thu, 24 Jul 2025 10:04:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nSkkon7/PMwY7Pa62rIu4aIPAZYBtWTcvFOQDqTSpj4=; b=soYEzPqctPMx3l
-	M2LVrwdY6fTVYBRa/18xnAtcHohuNgvHeC++m/PL5n0EiJuT6E8JiCqQG6kBok8EwH96yfbayhd+n
-	LDcM466t+D0R6X4X4dMzxSO/oBVozxTPh8hgFhLRCUF9Dt4GgKyyYL5PuCjBWdwFveVR9/5oi1Uu4
-	E3Ew+8EED2oEuq89ixM2LvsnMWDP68Ed8YHr9oGmqwk4amr1mBLhuXGs3wNRbkpbcF5uX6gm0VtkE
-	13yvtm1cfvKhDvHZLW1H37DmH8aiqASsKFmgLnyUZ2MAUB/ixK8GXmqgPiFscjBEpy62heCV0YNKA
-	pvnakxmr8L5ra/gBH3LQ==;
+	List-Owner; bh=2eStNXiwzhkjmnYXPPDfpwh7EpVyD1MgNy5LTiVxTm0=; b=ddHxqSWkT0tJ1i
+	tAakhlqkRM7fx6SIMys3NWtPKAKBcPI0a+rN1S9dveVGNaV/BugEe4RwmmzY051FIeHTQbkvySof4
+	mD9/tmAgVAJHo3nx0fkG6t/6CsPtfDZWasGQRNwfr/uY1NH+/imX7XhF0g0VOTxveg70T5k+h17xU
+	QqHoYEu8oY8HoJlK1sANOzo+QkZ9hnE5dN0+A5UzsUZljL/xbnE8C128P5C3eKIF7YnqdKgp7llmr
+	idBLRo5Ta6ragvZcJ6YKd2K+klt+fwvUbgy+vPqBJ2Hy1buwyxEJcoi/94wwjiYokeWSkmnX5wwil
+	A2VkQfb8tSfXIe+lElNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uesnx-000000079jo-1P26;
-	Thu, 24 Jul 2025 10:04:01 +0000
+	id 1uesnz-000000079lK-2ehl;
+	Thu, 24 Jul 2025 10:04:03 +0000
 Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uern1-00000006xkp-0Cra
+	id 1uerxh-00000006zUM-0lEZ
 	for linux-i3c@lists.infradead.org;
-	Thu, 24 Jul 2025 08:59:01 +0000
+	Thu, 24 Jul 2025 09:10:02 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	sang-engineering.com; h=date:from:to:cc:subject:message-id
-	:references:mime-version:content-type:in-reply-to; s=k1; bh=i/NA
-	INETyHfGijHMzvc7a5LD4S6+WhrSyQ8ZvBvYX58=; b=HlGI6+WjAGj0V7Jk81Fv
-	UdXTWYIpk/WZOXjC1082Nf/zZrYcBw0yXmQRykgCLCbXapgQ1a7sDVK7AoTi3cOY
-	SmBQsuG2komJxNHDKsm3Zv2ZBL1Fh3qk4GOfUPse+hq8V7wAKDmGL8jx1k7vxLGY
-	RnUw/+0ZRMiyrRxFzlMuasut+lBY9/dfQWhBHQeqJIJthgFqe67fn6WayVBGMApA
-	XMrCiQ/QWHw1JHMFqb03lKnmt5KUnGygTIIjYoMkf0+FxxK7dDzgnA+WoqgqmF9V
-	LWo6+0513NoVqatwrwvpeUWUdCpJ3N8uqBDzgzNfzWbIwcepnEg48riTeVoe9iRy
-	Pg==
-Received: (qmail 2002639 invoked from network); 24 Jul 2025 10:58:54 +0200
-Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 24 Jul 2025 10:58:54 +0200
-X-UD-Smtp-Session: l3s3148p1@drDwCKk62usgAwDPXyBWAATEinPyanBm
-Date: Thu, 24 Jul 2025 10:58:53 +0200
+	:references:mime-version:content-type:in-reply-to; s=k1; bh=6Lub
+	CPP7Wbmj7qoJKI6x3Jj43GjD7R6ZKtT47pr9Epc=; b=mJuPNYhLvU4rsyz1aRpr
+	HiLSLRSOEsz6cayOnUuic7P/XBFpj5nK74BCvh4EtxxzEu36EkAgat1PRFAwWInY
+	zH0ZhjUSjD4dv6vfl8RW4lPqmnD/g2sQFdnpvK3BJw3ZcV5kLGupRrAvfiuw9CBh
+	RvZgxP0cAPR7ZHAfXwAZ8udIptTXHe6O19AZqqHqzzlo4P0uE6a6nfNbJ3+d5U2P
+	JsozP8Rswosv51Fzmdv02Mb4KD6Dn6HS77QT5BZlGiX4Qq6PiFYp4hyTLne0zflg
+	1ehCP2OumkmIU01G88fgk4q2r1keIuH7YiygEqnuvXO5k+H/YPHhzcYBTjp/ShxY
+	lw==
+Received: (qmail 2006403 invoked from network); 24 Jul 2025 11:09:59 +0200
+Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 24 Jul 2025 11:09:59 +0200
+X-UD-Smtp-Session: l3s3148p1@Dw+PMKk6YoEgAwDPXyBWAATEinPyanBm
+Date: Thu, 24 Jul 2025 11:09:58 +0200
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 To: Frank Li <Frank.li@nxp.com>
 Cc: linux-renesas-soc@vger.kernel.org,
-	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
 	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Kees Cook <kees@kernel.org>,
-	"Gustavo A. R. Silva" <gustavoars@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Magnus Damm <magnus.damm@gmail.com>, linux-i3c@lists.infradead.org,
-	linux-hardening@vger.kernel.org
-Subject: Re: [PATCH RFC 4/7] i3c: add driver for Renesas I3C IP
-Message-ID: <aIH1zUb8tyIlyC3S@shikoro>
-References: <20250611093934.4208-1-wsa+renesas@sang-engineering.com>
- <20250611093934.4208-5-wsa+renesas@sang-engineering.com>
- <aEmws+OtHirrUPUo@lizhi-Precision-Tower-5810>
+	linux-i3c@lists.infradead.org
+Subject: Re: [PATCH v4 2/4] i3c: Add more parameters for controllers to the
+ header
+Message-ID: <aIH4ZmqVcYhOT8xT@shikoro>
+References: <20250722190749.6264-1-wsa+renesas@sang-engineering.com>
+ <20250722190749.6264-3-wsa+renesas@sang-engineering.com>
+ <aIEAk3DF7Ez7NFwK@lizhi-Precision-Tower-5810>
+ <aIEg-qyGhb8B2Rep@shikoro>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <aEmws+OtHirrUPUo@lizhi-Precision-Tower-5810>
+In-Reply-To: <aIEg-qyGhb8B2Rep@shikoro>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250724_015859_957894_2DE80349 
-X-CRM114-Status: GOOD (  11.88  )
+X-CRM114-CacheID: sfid-20250724_021001_507146_D5E2854E 
+X-CRM114-Status: GOOD (  16.20  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,24 +75,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-
-> > +		renesas_i3c_enqueue_xfer(i3c, xfer);
-> > +		if (!wait_for_completion_timeout(&xfer->comp, XFER_TIMEOUT))
-> > +			renesas_i3c_dequeue_xfer(i3c, xfer);
+On Wed, Jul 23, 2025 at 07:50:50PM +0200, Wolfram Sang wrote:
 > 
-> This may common problem, I3C spec have 100us timeout, target side may
-> timeout when driver wait for irq. So target side treat "repeat start" as
-> "start" and issue address arbitration.
+> > > +/* TODO: Document a reason for this value */
+> > 
+> > Todo? Can you finish it?
+> 
+> Yes, but in a seperate patch series where the value is to be changed.
+> 
+> This needs additional testing because I want to update the other I3C
+> controller drivers as well.
 
-Looking more at this issue, I think these are two separate problems.
-Chapter 5.1.2.5 mandates that the controller shall not hold SCL low for
-more than 100us in most situations and by no means longer than 15ms in
-any situation.
+So, I started the research [1] with the conclusion:
 
-Depending on the controller, this may be need to be handled in software.
-Or it may be handled in hardware which could raise an exception and
-release SCL on its own if the timing was violated.
-
+---
 The above completion is for the *whole transfer*, though, including the
 target response time. Like I2C, it is not specified for I3C. At least, I
 couldn't find it and I recall no one at the I3C plugfest could point me
@@ -111,8 +103,13 @@ calculated value.
 
 So, I think the best we can do until we have this investigation is to
 keep drivers consistent with the historically grown value.
+---
 
-Or?
+Based on this, I will send V5 and move XFER_TIMEOUT back into the
+driver. We don't know yet if a subsystem-wide static default value is
+actually the right way.
+
+[1] https://lore.kernel.org/r/aIH1zUb8tyIlyC3S@shikoro
 
 
 -- 
