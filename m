@@ -4,61 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E60E7C83F1A
-	for <linux-i3c@archiver.kernel.org>; Thu, 24 Jul 2025 10:04:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2532C83F1A
+	for <linux-i3c@archiver.kernel.org>; Thu, 24 Jul 2025 10:56:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2eStNXiwzhkjmnYXPPDfpwh7EpVyD1MgNy5LTiVxTm0=; b=ddHxqSWkT0tJ1i
-	tAakhlqkRM7fx6SIMys3NWtPKAKBcPI0a+rN1S9dveVGNaV/BugEe4RwmmzY051FIeHTQbkvySof4
-	mD9/tmAgVAJHo3nx0fkG6t/6CsPtfDZWasGQRNwfr/uY1NH+/imX7XhF0g0VOTxveg70T5k+h17xU
-	QqHoYEu8oY8HoJlK1sANOzo+QkZ9hnE5dN0+A5UzsUZljL/xbnE8C128P5C3eKIF7YnqdKgp7llmr
-	idBLRo5Ta6ragvZcJ6YKd2K+klt+fwvUbgy+vPqBJ2Hy1buwyxEJcoi/94wwjiYokeWSkmnX5wwil
-	A2VkQfb8tSfXIe+lElNQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=EEG8qNoe8Yc690LSGhAvflaYopOYMQn996dCJtkWmBQ=; b=aCmXvS9nCDDmG/
+	iGUPWKrugKj7T6Nuxgj958GIu8rEcpN+zW2LctlW9PQ9bMqA3PhX0i9tIHA59KYlUdBZW7Dz+vjem
+	j8WjHrbYV50nxucSeADFt+xljG9Hfr6UdeVCOEDfd0yoQPgwevG9QJyEI+upSOvNskOfScmAMa9Cp
+	hcvVtEhiwT3RV04clQOhNKx12Pur/5AvqgFWkkEAg2hO5zUWstAnPu/Z+KusZ3cVD3Ujo2NGr5W8w
+	itviTBik4RzgjKkOcDhP30LKab4Ar6g/SfEPAxbRxx/Hoqt1pZxMWIEEDEU1fWSCFVhj4aMcSk+dI
+	ocSM2+BeYEKjprhKSQfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uesnz-000000079lK-2ehl;
-	Thu, 24 Jul 2025 10:04:03 +0000
+	id 1uetct-00000007Gtt-1S3h;
+	Thu, 24 Jul 2025 10:56:39 +0000
 Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uerxh-00000006zUM-0lEZ
+	id 1uesST-0000000750C-40BY
 	for linux-i3c@lists.infradead.org;
-	Thu, 24 Jul 2025 09:10:02 +0000
+	Thu, 24 Jul 2025 09:41:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	sang-engineering.com; h=date:from:to:cc:subject:message-id
-	:references:mime-version:content-type:in-reply-to; s=k1; bh=6Lub
-	CPP7Wbmj7qoJKI6x3Jj43GjD7R6ZKtT47pr9Epc=; b=mJuPNYhLvU4rsyz1aRpr
-	HiLSLRSOEsz6cayOnUuic7P/XBFpj5nK74BCvh4EtxxzEu36EkAgat1PRFAwWInY
-	zH0ZhjUSjD4dv6vfl8RW4lPqmnD/g2sQFdnpvK3BJw3ZcV5kLGupRrAvfiuw9CBh
-	RvZgxP0cAPR7ZHAfXwAZ8udIptTXHe6O19AZqqHqzzlo4P0uE6a6nfNbJ3+d5U2P
-	JsozP8Rswosv51Fzmdv02Mb4KD6Dn6HS77QT5BZlGiX4Qq6PiFYp4hyTLne0zflg
-	1ehCP2OumkmIU01G88fgk4q2r1keIuH7YiygEqnuvXO5k+H/YPHhzcYBTjp/ShxY
-	lw==
-Received: (qmail 2006403 invoked from network); 24 Jul 2025 11:09:59 +0200
-Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 24 Jul 2025 11:09:59 +0200
-X-UD-Smtp-Session: l3s3148p1@Dw+PMKk6YoEgAwDPXyBWAATEinPyanBm
-Date: Thu, 24 Jul 2025 11:09:58 +0200
+	sang-engineering.com; h=from:to:cc:subject:date:message-id
+	:mime-version:content-transfer-encoding; s=k1; bh=pqi6scVX8AxwJ8
+	OR0QjkdOlPSeaMekWpfnI+8ituDOQ=; b=FcFcYXyz+oSuSl7RCQoDG57hHaGUYg
+	OdAFHD2SC8yRPUqKsSs59297kZclfyitAIPFeU5rf1p4VsWpx1lWHahTggUHD0Tt
+	V2W6uBuE2Qbktc3Adpdqm/K+9tD4AZaKQtqN7sURXuYmLFufAmPW9oBStVTZt0oN
+	JjN4BpV5bdyu7O1cMMYVdAwLCpW8wj6rwDWOOHoigabDNWcATGGQaeMo7nLlJEP+
+	yW2auhgP6IJYBXafNU06rwfzEP7ZEJI2SW4UnQiSQeBU28ZEi/tsjvCto6dP7nVC
+	uOvOJ6yOvqHYVowd/JEOS5tHX9opZ8tgbNV6CRyQFxCO/whouXXOpWdw==
+Received: (qmail 2016439 invoked from network); 24 Jul 2025 11:41:47 +0200
+Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 24 Jul 2025 11:41:47 +0200
+X-UD-Smtp-Session: l3s3148p1@I7ZOoqk6tNEgAwDPXyBWAATEinPyanBm
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
-To: Frank Li <Frank.li@nxp.com>
-Cc: linux-renesas-soc@vger.kernel.org,
+To: linux-renesas-soc@vger.kernel.org
+Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
 	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	linux-i3c@lists.infradead.org
-Subject: Re: [PATCH v4 2/4] i3c: Add more parameters for controllers to the
- header
-Message-ID: <aIH4ZmqVcYhOT8xT@shikoro>
-References: <20250722190749.6264-1-wsa+renesas@sang-engineering.com>
- <20250722190749.6264-3-wsa+renesas@sang-engineering.com>
- <aIEAk3DF7Ez7NFwK@lizhi-Precision-Tower-5810>
- <aIEg-qyGhb8B2Rep@shikoro>
+	Conor Dooley <conor+dt@kernel.org>,
+	devicetree@vger.kernel.org,
+	Frank Li <Frank.Li@nxp.com>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	"Gustavo A. R. Silva" <gustavoars@kernel.org>,
+	Kees Cook <kees@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	linux-hardening@vger.kernel.org,
+	linux-i3c@lists.infradead.org,
+	Magnus Damm <magnus.damm@gmail.com>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Rob Herring <robh@kernel.org>,
+	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+Subject: [PATCH v5 0/4] i3c: add support for the Renesas controller
+Date: Thu, 24 Jul 2025 11:41:39 +0200
+Message-ID: <20250724094146.6443-1-wsa+renesas@sang-engineering.com>
+X-Mailer: git-send-email 2.47.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aIEg-qyGhb8B2Rep@shikoro>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250724_021001_507146_D5E2854E 
-X-CRM114-Status: GOOD (  16.20  )
+X-CRM114-CacheID: sfid-20250724_024150_266789_1EFCE108 
+X-CRM114-Status: GOOD (  13.16  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,41 +80,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 23, 2025 at 07:50:50PM +0200, Wolfram Sang wrote:
-> 
-> > > +/* TODO: Document a reason for this value */
-> > 
-> > Todo? Can you finish it?
-> 
-> Yes, but in a seperate patch series where the value is to be changed.
-> 
-> This needs additional testing because I want to update the other I3C
-> controller drivers as well.
+Detailed changes since v4 are described in the individual patches. A
+branch with enablement patches for RZ/G3S+G3E can be found here:
 
-So, I started the research [1] with the conclusion:
+git://git.kernel.org/pub/scm/linux/kernel/git/wsa/linux.git renesas/g3s/i3c
 
----
-The above completion is for the *whole transfer*, though, including the
-target response time. Like I2C, it is not specified for I3C. At least, I
-couldn't find it and I recall no one at the I3C plugfest could point me
-to one as well.
+Old coverletter:
 
-So, this completion timeout is more than just 5.1.2.5. It might make
-sense to investigate a more reasonable value. But I don't think this
-should be imposed on someone submitting a new driver. It is a dedicated
-task. And I am not even sure the result will be a subsystem-wide static
-value. It might be a calculated value. Maybe even a driver-specific
-calculated value.
+Here is a basic driver for the I3C IP found in various Renesas SoCs like
+RZ/G3S and G3E. Missing features to be added incrementally are IBI,
+HotJoin and maybe target support. Other than that, this driver has been
+tested with I3C pure busses (2 targets) and mixed busses (2 I3C +
+various I2C targets). DAA and reading/writing to the temperature sensors
+worked reliably at different speeds. Scoping the bus, the output from
+the protocol analyzer seems reasonable, too. It was created by merging
+two versions of it from two different BSPs. Then, improved according to
+code analyzers, cleaned up with regard to coding style, and then
+refactored to hopefully match I3C subsystem standards.
 
-So, I think the best we can do until we have this investigation is to
-keep drivers consistent with the historically grown value.
----
+Looking forward to comments,
 
-Based on this, I will send V5 and move XFER_TIMEOUT back into the
-driver. We don't know yet if a subsystem-wide static default value is
-actually the right way.
+   Wolfram
 
-[1] https://lore.kernel.org/r/aIH1zUb8tyIlyC3S@shikoro
+
+Tommaso Merciai (1):
+  dt-bindings: i3c: Add Renesas I3C controller
+
+Wolfram Sang (3):
+  i3c: Standardize defines for specification parameters
+  i3c: Add more parameters for controllers to the header
+  i3c: master: Add basic driver for the Renesas I3C controller
+
+ .../devicetree/bindings/i3c/renesas,i3c.yaml  |  179 +++
+ MAINTAINERS                                   |    7 +
+ drivers/i3c/master.c                          |   12 +-
+ drivers/i3c/master/Kconfig                    |   10 +
+ drivers/i3c/master/Makefile                   |    1 +
+ drivers/i3c/master/dw-i3c-master.c            |    4 +-
+ drivers/i3c/master/renesas-i3c.c              | 1404 +++++++++++++++++
+ include/linux/i3c/master.h                    |   13 +-
+ 8 files changed, 1618 insertions(+), 12 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
+ create mode 100644 drivers/i3c/master/renesas-i3c.c
+
+-- 
+2.47.2
 
 
 -- 
