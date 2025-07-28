@@ -4,63 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B605C87FCB
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 679A3C87FC9
 	for <linux-i3c@archiver.kernel.org>; Wed, 30 Jul 2025 23:27:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YleaPNYpyR7Szh6BBRrgcI6CJwItyfi9dQtNCwoGYdQ=; b=2dvYRcx+h7p7JG
-	vcwhRKxd35qEQh8CHtijkQSDaW3PaNjLl9PX8JN8wLo6RBP41Wd1uKHtyEgs8PNj49CcwMEuc5E2s
-	SrkOCS7vXsy6l68fbaqaGd8faJ0AMQu3J2ly2xsxrcoEJuhsG41svUY0Z12bRyXQ0z2F2jlSSx9Mi
-	O8SpjPeM8gDwKOUo5iIUJC9tPEOQksOBUNmhhljErIj2rbGIJzDy79hR4CzXTFS2ZuNtrZKge8Lho
-	FjGeU165ec2bBIbIxjQbuTqhtuD+QErlzCP/Hc2uSaszIqc4dXUWqkwUQJZSJzmIPMmIHwRbko6Qr
-	P5c5o66sFiZcRj6zZZ/Q==;
+	List-Owner; bh=p/C2veTM5qz4T9aQKHYBhtlX6OmD/6FVWgoXmig0tYs=; b=ubAc2g8h3GPSt0
+	IhpUrS6TkFSSPbiYDhB5dRLVVAtPtWTZBYDlJgJpsM9fK+mP3WAymfaelYadZE2c4ozJ1+EjLKf5Z
+	qVxqNj0qh63ez+K1lZftVM3EvZNo+8Z0XszgZtwLQo8ir5n2nBJfTsY1LUkyToSA4u4CB7UGyL5YQ
+	FNjRHk6f39OpNHAbit26ayQP0dVIR299qsrYa2gByAr/VdpifoZfZZeGD7FNC30nm/vGfPNdTrPlM
+	LjFm+ubPx4DQ5NAL/AoBfZfAW6au/Jjt08mynWGxDhwH8aWxk2kncesTO+j1L0eLMDNqHUIXnU6G/
+	X/XzJwmQc+ly62WbSTNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uhGDA-00000002bkg-3JPs;
-	Wed, 30 Jul 2025 23:27:52 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1uhGDB-00000002bkn-0JE4;
+	Wed, 30 Jul 2025 23:27:53 +0000
+Received: from mail-dm6nam12on20601.outbound.protection.outlook.com ([2a01:111:f403:2417::601] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ufENb-00000009QHc-15Hz
+	id 1ugLLW-0000000EGQ6-26D9
 	for linux-i3c@lists.infradead.org;
-	Fri, 25 Jul 2025 09:06:16 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 4A95E5C24C2;
-	Fri, 25 Jul 2025 09:06:14 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 00B7EC4CEE7;
-	Fri, 25 Jul 2025 09:06:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1753434373;
-	bh=aIZGN0x63wAzy9/izY9Hgw3KlM1G2FyR9sBBcONzThw=;
-	h=From:To:Cc:Subject:Date:From;
-	b=D2d9UnIM60QaFebEMj+S6SB8Bh9lHPpnvwc2yIQ1HF8px9t6IPzmzCHM594VjTMbP
-	 2zPdGRtKGwox0jlZXMkitrEjk3eRMy4Qf9sH5OyvP9aewEI197ZDXV8THfOVkHQrwx
-	 +gQmFubtvNmWFDKxnm9IZFjzYm90KpsWwcUbvJ9yqQcnzHs5iff3sH/fpBCsO6IZjV
-	 vlQb/dpoIjaLiV28aqJXZUta74NVGxzsMWdvmTqvsKepmpTc6pEnoWIPF/NZ09Iyv4
-	 XilQ3sNRfBOH2MAmhmtqmyOCqY/V3QmaBzbuuJ91h7t0meQDRIGZJlediKxU/HAYFg
-	 Tl7LzUoEtD5yw==
-From: Arnd Bergmann <arnd@kernel.org>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Guenter Roeck <linux@roeck-us.net>,
-	Boris Brezillon <bbrezillon@kernel.org>,
-	Arnd Bergmann <arnd@arndb.de>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Frank Li <Frank.Li@nxp.com>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH] i3c: fix module_i3c_i2c_driver() with I3C=n
-Date: Fri, 25 Jul 2025 11:06:03 +0200
-Message-Id: <20250725090609.2456262-1-arnd@kernel.org>
-X-Mailer: git-send-email 2.39.5
+	Mon, 28 Jul 2025 10:44:44 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=DsGgef71TsahZHGc1QfbLyPaEQ+JzHQ5sJFcFqZUQOkFGwkL0JVXwh8I6gjGBHVIAkR4nV1tRfwSeLE5HKAE/KCODSx66l3wK9oIWET6hS668bWvri82Ta9+wyKwoPOWNXYoTZDdma2+aJV4tfVI2IkMPKDDj/qDsyBoA7wo6XyJGQaM4PN3PXZvWjZL6nBT24KCbhc4hUnACEXjc3RLijlIL6X7InJkpl0T0FIt4T9GDF3mjAsqUwZHA34NZf5792pVY3K7k6gBjq15VWY2K4IQ9nZuu4MTXtzOzcoiMBsi9+susbKXUePj/2eGJ7JHxgMbkz/D7qzQbtS1hXNcog==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=88rToXQaTltUddtjhUmeMWgFmmOcIOGGZTdcfQuyV/g=;
+ b=UCMkXFOlkC5CTZfN2OnmF91iG69e70oysVmGexWR4ugnnXjZp7ELpDWfbo1VIPwFwrsm3JxTnzRC11iF0TPEp6RvCbuD1O7eZ8gHyedg/EE6ylHJm6zWq0WKeDvVcXXuwlI6XilImOy87y4DRmCrQk/cl4nReUUKEc4oLTAUocDj/mkouUSooDz7Kb5JA9KAUmi0sfb+tj2ZMSks8yFR0MM+pNEI2Vwbf5690CFvDlVKc8s30ufRLYTDCRJBWpGapfGX3D4gXYd8cvqwJOAFMBRuAy7/UMsgB1oaxVJ6nSChMT5td/kb/m3uMMKOx836HNyuxuzyAquJqQRgPLIANQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 165.204.84.17) smtp.rcpttodomain=bootlin.com smtp.mailfrom=amd.com;
+ dmarc=pass (p=quarantine sp=quarantine pct=100) action=none
+ header.from=amd.com; dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=88rToXQaTltUddtjhUmeMWgFmmOcIOGGZTdcfQuyV/g=;
+ b=gfN0i1LGXEGw/43HjVPWnpG3Bt8yOjGXA7OxU2Uz2JpYuj4pHsGpDFfePcQkBjgJHD927OM3K8drt1WXvb10XgqnCXNfo13RnnHiXj7FTYjrBU+43MJld5KlaKPD/JOSs20MjUIE/IlIDMHbFGxonM9YQqg7cMEj0YTjTFEK8NI=
+Received: from SJ0PR13CA0154.namprd13.prod.outlook.com (2603:10b6:a03:2c7::9)
+ by DS0PR12MB7584.namprd12.prod.outlook.com (2603:10b6:8:13b::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8964.26; Mon, 28 Jul
+ 2025 10:44:36 +0000
+Received: from MWH0EPF000971E2.namprd02.prod.outlook.com
+ (2603:10b6:a03:2c7:cafe::65) by SJ0PR13CA0154.outlook.office365.com
+ (2603:10b6:a03:2c7::9) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8989.11 via Frontend Transport; Mon,
+ 28 Jul 2025 10:44:36 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
+ smtp.mailfrom=amd.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=amd.com;
+Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
+ 165.204.84.17 as permitted sender) receiver=protection.outlook.com;
+ client-ip=165.204.84.17; helo=SATLEXMB03.amd.com; pr=C
+Received: from SATLEXMB03.amd.com (165.204.84.17) by
+ MWH0EPF000971E2.mail.protection.outlook.com (10.167.243.69) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.20.8989.10 via Frontend Transport; Mon, 28 Jul 2025 10:44:35 +0000
+Received: from SATLEXMB04.amd.com (10.181.40.145) by SATLEXMB03.amd.com
+ (10.181.40.144) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.39; Mon, 28 Jul
+ 2025 05:44:33 -0500
+Received: from xhdradheys41.xilinx.com (10.180.168.240) by SATLEXMB04.amd.com
+ (10.181.40.145) with Microsoft SMTP Server id 15.1.2507.39 via Frontend
+ Transport; Mon, 28 Jul 2025 05:44:29 -0500
+From: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+To: <git@amd.com>, <alexandre.belloni@bootlin.com>, <Frank.Li@nxp.com>,
+	<wsa+renesas@sang-engineering.com>, <quic_msavaliy@quicinc.com>,
+	<Shyam-sundar.S-k@amd.com>, <xiaopei01@kylinos.cn>,
+	<billy_tsai@aspeedtech.com>, <linux-i3c@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>
+CC: <michal.simek@amd.com>, <radhey.shyam.pandey@amd.com>,
+	<srinivas.goud@amd.com>, <shubhrajyoti.datta@amd.com>,
+	<manion05gk@gmail.com>, Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+Subject: [PATCH] i3c: dw: Add shutdown support to dw_i3c_master driver
+Date: Mon, 28 Jul 2025 16:14:25 +0530
+Message-ID: <20250728104425.3878770-1-manikanta.guntupalli@amd.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
+Received-SPF: None (SATLEXMB03.amd.com: manikanta.guntupalli@amd.com does not
+ designate permitted sender hosts)
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MWH0EPF000971E2:EE_|DS0PR12MB7584:EE_
+X-MS-Office365-Filtering-Correlation-Id: 78cb354b-f655-437d-d466-08ddcdc3be7c
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700013|82310400026|1800799024|376014|921020;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?NmZ9qzuZB1kk+/5VLBbFa5+YHjtUG2t2P3Iuusy+JdZ1Z3mZQOMclfvoEVzA?=
+ =?us-ascii?Q?Rqo6LSttM1NjiwRvaoUAukH2rsnoTAHzcvTVSmbFzM2l5XyrD1mbt2nhP3rB?=
+ =?us-ascii?Q?elAif+kAryFToS1/zbvCW3ruKuK+IUnkK0xbVhB3MYV3DgIO6fGpZjgrxgQf?=
+ =?us-ascii?Q?rCHn/kezfJbZat5jmVF4TGBE5gRxJPM2rQ66PXLSEBzPwoJgt1/XZpAWnwXk?=
+ =?us-ascii?Q?HtwhO61WuW2cmms9QJefQgef/QlqsLgAnmYNRHKH7VJreV+VFJMzO2tCpNDZ?=
+ =?us-ascii?Q?DId5k0W9cLQKNtThtvQjTXS2lGI1H0XxrCL16K/t2zwiAo6Laiy4j+XKk4YH?=
+ =?us-ascii?Q?nOhdruRUCQ/RD0yLDA3O3im38NKMRvwTVKihHJSOKIlfvzOPYlMUpPChTPjE?=
+ =?us-ascii?Q?to5LMNdJvpTYI5HHAlgTprTozQvEid9YyHIXIeE6+nWDcnmZwmPEFjtdq7JW?=
+ =?us-ascii?Q?Z6v0q2cjtsZ2Ng4JfJuencHy3xRsf8N69XsP+I/kAShI49royU5NkpT2+Cz3?=
+ =?us-ascii?Q?5DrgXvHfeZz1nmkX/Pac/ZZ3SfrRkqLD4hvTNuqEab5jvt2muHi2Rbp2NaZo?=
+ =?us-ascii?Q?nwjNGKiuJNX6SZptZwObLkurAocPEXbLIzXKRBDFu4z6qQntElq1JWrx5jbp?=
+ =?us-ascii?Q?TdAiUKSPMP7nPmVk7wUFX2bvH//IC9YzAD+WBYzNQwjH55iyyE2t6K13sUvP?=
+ =?us-ascii?Q?ZhORsxM+Ymbjh1YMnsyHyPLSIblgzx+LjngHT2h7Vu6tfmDqfUeiN8N4jnpH?=
+ =?us-ascii?Q?LdLguKx9lqWVBCTQo7ar2kjgFt9PUwAbqqBKdtmYsAdfn9+Db/uAbe9jYMif?=
+ =?us-ascii?Q?GsxmW5b3NxbtB4+prZ2E9gckd04KJ+HaULo99++gdLI+mI/Ffnxw2MCc/QKu?=
+ =?us-ascii?Q?doIOEmFAIaHflQe4h5bJjkdeDyj/lOE0p5aWQ01Y21rfwOHbhaMBeyjhAJ16?=
+ =?us-ascii?Q?qxefpOxVhHER1RjZ6c0hESFWKeeNpqpxkMt6wsICYTV8FfWmDefilWToQIML?=
+ =?us-ascii?Q?E2oRjWNGgeF+YwYkK99p2OgIxRM4j7IvKxPA7XNoV8kBR5zh0Pu6nkPIpWc7?=
+ =?us-ascii?Q?oMsMGvk0Utwo3A2CT2oCgnmJYxMuKFucUB55bWvLGmjjVLUHdPJ/Sblq+iE6?=
+ =?us-ascii?Q?2nAwZkAvHLlpLP6Jhc1AhYS0e8i6BfxgaS6mP+D8pnqkbI9gzeO3x3NA9XW0?=
+ =?us-ascii?Q?Eej2gLySob1dM7vOn0SGeaKypzK+W+7OlwPi9NGK3/WV8RNHCA4c8Qm8L80g?=
+ =?us-ascii?Q?V4+hR1cEb6b7duA8BcT73fOpK6lFyXSdwbv0+KSCOZ6ip2UbJsT5QJYDJ1T5?=
+ =?us-ascii?Q?TyPP45WmYy9UjPXaoOcJs8ShSh9zoHsdH/BJ5qRmeE2Lkev913tynfSRfG+5?=
+ =?us-ascii?Q?iLHw9dIFTUAyIP/DRcJr609Xwwi+VcJHOIudTmarx02iOT1LMiA1UjHB3q/D?=
+ =?us-ascii?Q?TYWMchB5g17XWP8aB+lXjVAL/tL+QOBvVyyog4/HFOyp7eZEzqz3dq92w3Z8?=
+ =?us-ascii?Q?IVxgdpS6yrzZKn4rZDFLPl1cm4mDpEYK8vWTkj7T5r1+3Oui030B9q1zbg?=
+ =?us-ascii?Q?=3D=3D?=
+X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:SATLEXMB03.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(36860700013)(82310400026)(1800799024)(376014)(921020);DIR:OUT;SFP:1101;
+X-OriginatorOrg: amd.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Jul 2025 10:44:35.3305
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 78cb354b-f655-437d-d466-08ddcdc3be7c
+X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[SATLEXMB03.amd.com]
+X-MS-Exchange-CrossTenant-AuthSource: MWH0EPF000971E2.namprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS0PR12MB7584
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250725_020615_341635_C15C1004 
-X-CRM114-Status: GOOD (  13.77  )
+X-CRM114-CacheID: sfid-20250728_034442_541364_C6DFA960 
+X-CRM114-Status: GOOD (  13.06  )
 X-Mailman-Approved-At: Wed, 30 Jul 2025 16:27:51 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -78,55 +150,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Arnd Bergmann <arnd@arndb.de>
+Add shutdown handler to the Synopsys DesignWare I3C master driver,
+ensuring the device is gracefully disabled during system shutdown.
 
-When CONFIG_I3C is disabled and the i3c_i2c_driver_register() happens
-to not be inlined, any driver calling it still references the i3c_driver
-instance, which then causes a link failure:
+The shutdown handler cancels any pending hot-join work and disables
+interrupts.
 
-x86_64-linux-ld: drivers/hwmon/lm75.o: in function `lm75_i3c_reg_read':
-lm75.c:(.text+0xc61): undefined reference to `i3cdev_to_dev'
-x86_64-linux-ld: lm75.c:(.text+0xd25): undefined reference to `i3c_device_do_priv_xfers'
-x86_64-linux-ld: lm75.c:(.text+0xdd8): undefined reference to `i3c_device_do_priv_xfers'
-
-This issue was part of the original i3c code, but only now caused problems
-when i3c support got added to lm75.
-
-Change the 'inline' annotations in the header to '__always_inline' to
-ensure that the dead-code-elimination pass in the compiler can optimize
-it out as intended.
-
-Fixes: 6071d10413ff ("hwmon: (lm75) add I3C support for P3T1755")
-Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+Signed-off-by: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
 ---
- include/linux/i3c/device.h | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/i3c/master/dw-i3c-master.c | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
 
-diff --git a/include/linux/i3c/device.h b/include/linux/i3c/device.h
-index b674f64d0822..7f136de4b73e 100644
---- a/include/linux/i3c/device.h
-+++ b/include/linux/i3c/device.h
-@@ -245,7 +245,7 @@ void i3c_driver_unregister(struct i3c_driver *drv);
-  *
-  * Return: 0 if both registrations succeeds, a negative error code otherwise.
-  */
--static inline int i3c_i2c_driver_register(struct i3c_driver *i3cdrv,
-+static __always_inline int i3c_i2c_driver_register(struct i3c_driver *i3cdrv,
- 					  struct i2c_driver *i2cdrv)
- {
- 	int ret;
-@@ -270,7 +270,7 @@ static inline int i3c_i2c_driver_register(struct i3c_driver *i3cdrv,
-  * Note that when CONFIG_I3C is not enabled, this function only unregisters the
-  * @i2cdrv.
-  */
--static inline void i3c_i2c_driver_unregister(struct i3c_driver *i3cdrv,
-+static __always_inline void i3c_i2c_driver_unregister(struct i3c_driver *i3cdrv,
- 					     struct i2c_driver *i2cdrv)
- {
- 	if (IS_ENABLED(CONFIG_I3C))
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index ae1992665673..6769def5580a 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -1762,6 +1762,29 @@ static const struct dev_pm_ops dw_i3c_pm_ops = {
+ 	SET_RUNTIME_PM_OPS(dw_i3c_master_runtime_suspend, dw_i3c_master_runtime_resume, NULL)
+ };
+ 
++static void dw_i3c_shutdown(struct platform_device *pdev)
++{
++	struct dw_i3c_master *master = platform_get_drvdata(pdev);
++	int ret;
++
++	ret = pm_runtime_resume_and_get(master->dev);
++	if (ret < 0) {
++		dev_err(master->dev,
++			"<%s> cannot resume i3c bus master, err: %d\n",
++			__func__, ret);
++		return;
++	}
++
++	cancel_work_sync(&master->hj_work);
++
++	/* Disable interrupts */
++	writel((u32)~INTR_ALL, master->regs + INTR_STATUS_EN);
++	writel((u32)~INTR_ALL, master->regs + INTR_SIGNAL_EN);
++
++	pm_runtime_mark_last_busy(master->dev);
++	pm_runtime_put_autosuspend(master->dev);
++}
++
+ static const struct of_device_id dw_i3c_master_of_match[] = {
+ 	{ .compatible = "snps,dw-i3c-master-1.00a", },
+ 	{},
+@@ -1777,6 +1800,7 @@ MODULE_DEVICE_TABLE(acpi, amd_i3c_device_match);
+ static struct platform_driver dw_i3c_driver = {
+ 	.probe = dw_i3c_probe,
+ 	.remove = dw_i3c_remove,
++	.shutdown = dw_i3c_shutdown,
+ 	.driver = {
+ 		.name = "dw-i3c-master",
+ 		.of_match_table = dw_i3c_master_of_match,
 -- 
-2.39.5
+2.34.1
 
 
 -- 
