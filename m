@@ -4,145 +4,144 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36FD8C87FCA
-	for <linux-i3c@archiver.kernel.org>; Fri,  1 Aug 2025 14:43:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4DBBC87FCB
+	for <linux-i3c@archiver.kernel.org>; Fri,  1 Aug 2025 14:57:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1PP5LZ4XW4MAV6ijdd9GnPUTEnDf3vK8UguoW8BxMS0=; b=LTkaVQS8N3KMyz
-	tbR6DNpi1L7DKHVJwFOTz4VMFoZshUgp9t621jXUD6qt6ZpiBILNJsf+tR8eV4GO4GEXEtFM5bVfv
-	kw5o5JWzeUF0TjBOEqQU1luDtuwPbM1yHs8VyL3M1BdRDC6MXZJ+aV9SMVtZuYzdR/+hchfbuTYo4
-	mmJPT1Y7NHGbpY67F+zrlr/9++5lv0zoJW0P+nxzO1XRPhaKQlEQTUNbKS5q8kAp+8TmsYrsipThj
-	GIELfeS7TeZQSi6tlgXIN7x4aU5d80uC1XdUr3tTgq6IjC2XhFwACJpkP+oCpxvOnqn5zjc708skB
-	8RP92IkHdHTiNZ5hM39g==;
+	List-Owner; bh=9zkQdqMuPtY9YMwKbjgV0RnxJZsroAYNTUE18+TpcT4=; b=PuHbDfpPryu9eT
+	0qtkTddVI/ejTd60AkffypqGlbVKCLHLJ0n9/ZBksvH0f3oRl3yetTck3e8Fh5MCrhcmzPKpMO8GQ
+	ElasFlnyDGx4x+G69VC97z3rs2c2fvlT6ltxhAfDHFrAvIO6InHY6NVCQLrH7ou+0WWoa+8IhR5zk
+	ZOmvCfqmK/rtGqcdPWwBRhcmiH2a0B6OwHIZ+ZFm68WuRj50eIbyXOYo3r+W1GPQahr6x5xF7Vyc4
+	kuRhyFYtNOYI1aGl/BOtDVvHbT2seUyNQoi5vlrkUYV1ZjfA/G7rW4PbNsjEUwRFBpRYlmtYCvUNi
+	RLTawDdsjgNvkIbUCAnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uhqyo-00000006GHS-3YZA;
-	Fri, 01 Aug 2025 14:43:30 +0000
-Received: from mail-francecentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20a::7] helo=PA4PR04CU001.outbound.protection.outlook.com)
+	id 1uhrBx-00000006Hph-2rpA;
+	Fri, 01 Aug 2025 14:57:05 +0000
+Received: from mail-westeuropeazlp170130006.outbound.protection.outlook.com ([2a01:111:f403:c201::6] helo=AM0PR02CU008.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uhqxC-00000006G6f-2InL
+	id 1uhrA2-00000006HfX-0STe
 	for linux-i3c@lists.infradead.org;
-	Fri, 01 Aug 2025 14:41:51 +0000
+	Fri, 01 Aug 2025 14:55:07 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=mglYU04DYq43EXJGdHI/cSX0kdQdFo4AosqsUAyA3IbWhuhSn69WDYMq+GGnFQsZLuBvGtbhrp75nyX9a/+q5d8ydrQ+LsQswxgv/m2ID6khY3i31ure/UHN5NPRxNO24JWu0zWHo/yGuzUFavT10Cxm6buNLRafB0Rw+VwAkLS+8A8htbDTCBSYNNyI0z5XpSxvcKUxvdj2s1+J5e1JhD5yEGe5onWPwdai7wRtV9QqqeqpquRnSKh+FanX6RGeTyHDt9IaqtbTUp0ijC4HbQOp2ZFI8g+EO3GfGfEuOTq2DJ5s4ZMJUosyjriNFFk04stIOTd122PzqYovuqXwVA==
+ b=NNCZ8bSGlZg2a5TCHGw5FPYkuZ6q67blf1uqn7rFO5hqcnxDpw4t2MK9/USXFxMt/hnsxh8O7hl+8nJLCinyxZcUVdjXjjhHEKN4/x1zW7ulE6e9yxrDTnL6taZzN57xeSTC20HVKg6blyaoVkDrrQ6pzXOOp8tkeMB7bGoDcfNcOdc0WviFpUTVZb7MXvXfKkftsBeiovRUTvjTmoV27HPFuzlvrmXu3Ewiktf0C6+I5uvs8GZRuVZMW7BxDsn5O2Uvb48ulTJb/Yr8tQJXlSIet4XZCDR0fYjJrBQg1Hqzv6wSlFmtyM8K4Xa+AovciTd+/n1Ybt9Gm9Q6KcmpTg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=DaltO6K22ajdWUSNnCGt05+wvuAtRCClKNA26a0x+Jo=;
- b=oLnh/cQOsdiRrZLBX2aCIGltYKxSmVRp7QDUCMT1Qz37xs1s//E8hfmTieL0UWLQ8dBl0J2OuxOp8iGqCv15HPJ/Y8aDsALnTuxyM58OUn56SjULGl3/yNRExgsVvw8JFOsGpZnRxth7FKdymZeEFRDx/932qZASvWfhDg0aR1t/aM9AYCBCG38JeuvZtDrBjuUvRxrzDPvPmGSwx4S+5w/JmI5iYenjTE17B+U7yCybWnbTVEW2UZZ+vLb6Nxp/McIJxgBWyCUB8RI0Cr6iCWtKKJZpAVF/x2oTRa/a0nglrq+ci02wEW14Q3O0izQV4nG+3MTLBq8X3SBagKG9cg==
+ bh=1MjxOG8UcTXG2FL8EF9ZSmWluTPELWPR8nRjeE2nlFA=;
+ b=lZgiqNRe7rKd+2JJSUQX8m0OILOyXuw5czd4+wJ3BkMzhhGF2y6EXgUm9mTRMvnAPC8kXwDzn4IOGGmGTbFxhz3LQP4yTQ/55VNMLKRDEgI0Ym0Otg1WUJVYnSUpKWwSBuG2QpfqD7oHurH2Kas3uMF+9pRw5BMSrT5VWA8/NRrMch2SDrExkbYMBCXxC7Mb9sqfNli49JQWYsW6yPK+qnA2GC/AKdBDTFI8LJYTgz399p7Q6pid4mbd2336tRLyY6NdHuaDIqYb1lHZfZ+98X7sNfojmAWjqS9z+o5IVnTYsQlAhZC7vUbeurCARJMTbNZJWV2h46IwRJCYXIy4Sg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DaltO6K22ajdWUSNnCGt05+wvuAtRCClKNA26a0x+Jo=;
- b=MSlGHh1zOUFRYLAijhAZvft/DeMunKNOeoYFAuA2m/YfbJk0mg4pQJZZWqu5lneilrD6digY6nHAENd4KkgUw4VzZzFBgDdu3WcmmSJWjkVM2o3M3Hu9RYBmbtQp4KuqoSBlPppgV1VYgAVkDeqkY5BpKYIyZgl6XtY4bvufyCCZml0KqOs4NoXWdoUPJRLofHaeVwaTchwn4Hb6tydN3//9AFWgzfNBoO51tSVplbwEA2vhGz0RZFCkVG9fYIh6ENZ4U5eg35fQfa6h4l8uTgHzXLN0dexOdR+CJ/UaVRega9e7UUCzMZ3d400GJ8iIPI6Oq1AO70bSP/JYO8rS/A==
+ bh=1MjxOG8UcTXG2FL8EF9ZSmWluTPELWPR8nRjeE2nlFA=;
+ b=c87eynJ256kgEAJHPwo/hVYzoo4USm3myOWExgfKzDsvcrfz4Zk2LDPkzrXGa6oRiHiiU2vAhLAf2EzwoOdiomLR1xm6Yg5OW4x1LTDi321kSlABj2dOjf8kq7lE7GTeZGxO0sS04TMntzBRRdGwayBEoVrXW3Gieupr0UT4nTOr8P66OI9Wmw1pVucklsXc+UPvQzrmSAXFDDL5YRj/TeiaCM1GRj0KaKzYbpIajEItKWc5pAofjYnoZVXO7nSikWknt4ecOslS1F/MXqtFHMCARy3i6x2AN90b6p17D5M1mX1nI4rGnbv1QFGcYalq5ARDyoa+KKXh0VdGzLek6Q==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from PAXPR04MB9642.eurprd04.prod.outlook.com (2603:10a6:102:240::14)
- by AM8PR04MB7332.eurprd04.prod.outlook.com (2603:10a6:20b:1db::15) with
+ by AS8PR04MB9093.eurprd04.prod.outlook.com (2603:10a6:20b:444::20) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8989.16; Fri, 1 Aug
- 2025 14:41:42 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8989.14; Fri, 1 Aug
+ 2025 14:54:57 +0000
 Received: from PAXPR04MB9642.eurprd04.prod.outlook.com
  ([fe80::9126:a61e:341d:4b06]) by PAXPR04MB9642.eurprd04.prod.outlook.com
  ([fe80::9126:a61e:341d:4b06%5]) with mapi id 15.20.8989.011; Fri, 1 Aug 2025
- 14:41:42 +0000
-Date: Fri, 1 Aug 2025 10:41:35 -0400
+ 14:54:57 +0000
+Date: Fri, 1 Aug 2025 10:54:52 -0400
 From: Frank Li <Frank.li@nxp.com>
 To: Jarkko Nikula <jarkko.nikula@linux.intel.com>
 Cc: linux-i3c@lists.infradead.org,
 	Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH 2/4] i3c: mipi-i3c-hci: Use core helpers for DMA mapping
- and bounce buffering
-Message-ID: <aIzSH+vCz4ZeEJ0Z@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH 1/4] i3c: master: Add helpers for DMA mapping and bounce
+ buffer handling
+Message-ID: <aIzVPNnrOkPQ3fcd@lizhi-Precision-Tower-5810>
 References: <20250731141420.422525-1-jarkko.nikula@linux.intel.com>
- <20250731141420.422525-2-jarkko.nikula@linux.intel.com>
 Content-Disposition: inline
-In-Reply-To: <20250731141420.422525-2-jarkko.nikula@linux.intel.com>
-X-ClientProxiedBy: PH7PR17CA0064.namprd17.prod.outlook.com
- (2603:10b6:510:325::21) To PAXPR04MB9642.eurprd04.prod.outlook.com
+In-Reply-To: <20250731141420.422525-1-jarkko.nikula@linux.intel.com>
+X-ClientProxiedBy: PH7PR17CA0053.namprd17.prod.outlook.com
+ (2603:10b6:510:325::8) To PAXPR04MB9642.eurprd04.prod.outlook.com
  (2603:10a6:102:240::14)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|AM8PR04MB7332:EE_
-X-MS-Office365-Filtering-Correlation-Id: 837e61a6-c80c-4897-18da-08ddd10987af
+X-MS-TrafficTypeDiagnostic: PAXPR04MB9642:EE_|AS8PR04MB9093:EE_
+X-MS-Office365-Filtering-Correlation-Id: 55307eb6-2572-495d-d305-08ddd10b61f5
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|366016|376014|19092799006|1800799024|38350700014|7053199007;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?v870CpOcO3xkYluUxA2X1HozWofyMvqf5aD8avI51CT0sL79C9urP89TTHCU?=
- =?us-ascii?Q?y7ax+lV2n5YKbpu8AKE8C6jtbpxARVXbtlfgPTfJJfrUM15rhXYdxWwfZYC8?=
- =?us-ascii?Q?6hvjsHqQ3qQ6F9UKghCelOMp2BDd5Coxzc3h0t+PDnQPcFJJu65Umy9NlNZY?=
- =?us-ascii?Q?bYd96XAHXATnfV3zc/BpzJ1V/OL+N+P6QbQHeaay11DwdGdf0cMxLvKdF1Be?=
- =?us-ascii?Q?mGlah+jd0jwUsO5n4eHxfMqMc4djokKNhqfa5cPoanL16WIqwUq5NjKKmtMB?=
- =?us-ascii?Q?Q3wVHOWGBlDEK6tZrnnLkmTPhWXiyeCu3DBRP9KM9LtPIMDlnFOu0fLrv0Gb?=
- =?us-ascii?Q?64voLUot4e1eICXipbp4WYUVAV+EN+yiRMIgLdCrEzz9resp7f60sTXvIJB1?=
- =?us-ascii?Q?JjsKofOnIYaDyyuGuQfmNRbWmpahyp/P2BYNgjWLUmqotTz0ZiwJEphHdPO5?=
- =?us-ascii?Q?UzShfIHtH6lDhT7ax+Fjgf4E41YM0SVwwOzx1rppRepkl1117YOjTyvdva4J?=
- =?us-ascii?Q?uFmHHCLgFksFWZWSNZrq8yvx5WBYLCs4C/wswSOHGTWiagmFffdJm8czaDkU?=
- =?us-ascii?Q?39MXDAYHGqC28uHaSPj0efeh8OknZQ4cj7n2HBOPg25f01jezsMwNbeIMqzA?=
- =?us-ascii?Q?Ojy8HY0uVXUhXZZrHBdkvqJNRprh/prTnEQw3ep2OWREHQZu7sqnMyVcx3+6?=
- =?us-ascii?Q?/Xz6JwAO3kCv/IKOE5ai9Tw2Ro0A1RyT3UPRXdC4wiM1eAhY3Tj000/DDGDV?=
- =?us-ascii?Q?CjCDDRKHqhQ3A/MNEjpk8/FasOes3nul8bvleDKpP5Bh0QqhFuRoCaPmqGri?=
- =?us-ascii?Q?eE76bc6SghECy0vnDRteecIUThsPdl6NwGVWP8pFYHgKv6JUjkTC25X/hsoK?=
- =?us-ascii?Q?FOg/IFTs7JL1UEgxZ1AY17HPki1dUaAEc0KIdgRp+mWeL5cqTEiOW+UCh0b7?=
- =?us-ascii?Q?L/p1nMie/KcFHDDqUSfg8EBwx4QsPJH2rO+Elcgejnn1UroNgaR//VtC9TFZ?=
- =?us-ascii?Q?iBnc+Kj+wrjR37o53olVDfsJ+9b/x1DNOoXvrTmrP+5lKOJSviOqhLwM+Ah1?=
- =?us-ascii?Q?t935UcJ/y4f64hPYK8scEYtZrI4iXv0dke5XM7/lACBxt88N9aqHkhbR6LH0?=
- =?us-ascii?Q?Dmy1we1OPVLS7G7wz+wz0eeXHiOoP/RREFtY1CcoaDScTzQgBnpUEHqn96oT?=
- =?us-ascii?Q?9ccs/8acL5zPdyZRdhl5Ha/2Je6DUGD0zm6MseBLIT2oQtdGhFN5d3KxsyzV?=
- =?us-ascii?Q?e1fuu7s0Zhq1D1024AUr/cVqTcysdkHe0HTzkKRo33I0ZtBY+vBo+4UZfkPu?=
- =?us-ascii?Q?/ZyPRFdUZfNj72W9SvNt9bBHRyxyyu6MRYz4+uGIJftP5S1h97MxannWJroe?=
- =?us-ascii?Q?DySQtulmjs54OFXbb49ccOTYVJewkVqasYEfBYy3Iw8OydLPlr/5lCP/0Z+R?=
- =?us-ascii?Q?zwKCYkksHw+0welHfRtQn5fubSJwDcqtdVRpZ6oag/6ioBu3AZI27oYg0muc?=
- =?us-ascii?Q?gklsztNLLBQ+PZA=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(366016)(376014)(19092799006)(1800799024)(38350700014)(7053199007);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|376014|19092799006|52116014|1800799024|7053199007|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?ql70XOhjpfN6YCCUDAv8/wL9cVa17Fx2eEt7iSgTFwlhcGZjJUiU/hydg9Vv?=
+ =?us-ascii?Q?7uGQRjdbk1Kg/7rHuGyjV+F34bnqWqNclyMFeQwC4r9vTHlCd2S6YHscVOav?=
+ =?us-ascii?Q?xZaocMiozZXrvRg6/akJ2uJS+4P5CJGMATR6LQHRnb+UbdX8BTHe5gGGKbDa?=
+ =?us-ascii?Q?7Tx+d1mL06BFVUzTnD+TLQ1rSu5Ll1kpwrKeF+AEqdGQ370H0p7f+xTI86wT?=
+ =?us-ascii?Q?/yxmkXJ4kzcKnrpcy/tI8B4YjFukT9hGrISSU5pwvKql4MDQy15FNRk9QgFG?=
+ =?us-ascii?Q?9Wpe5yH3kKXbM62GOxpnJCMYL5k5XaMCUBjeSCJv3VrbGM48WbGsJc7Shh1u?=
+ =?us-ascii?Q?AR3nkSUST0FRKCx6UM2EwUmyQY/1ZhwrOc1Wi00tV1U9r1SoCaqr7AOvigin?=
+ =?us-ascii?Q?Kfu7gyT0XM0DYg0X77kiolplxzGYK3jYXCBMFp9zRHYDJDekiP23TjdC7mVJ?=
+ =?us-ascii?Q?d/7XihwyKkZzHeL0exwZ8tvS+1Fkj+dUg+vRiYKIyiwfRiXxQtoTAHgC3ESU?=
+ =?us-ascii?Q?6NQFvEqwYV+3Us6rpk/5ROR7Lf6O4Tt705QzHRYRwTTGZnaCzY8uG+CtiTm3?=
+ =?us-ascii?Q?B2agOzXJKqDrIVTSr/VadYVZKfug2YL+SZi1t6WZo8mMDv0j1IpObjldRpoe?=
+ =?us-ascii?Q?LaA72pShyKjSr1Caqj/yQG2Nr84S+K9xmtWH+hLwalRUC3rxSUR81+Hs1u5f?=
+ =?us-ascii?Q?Nleqgmrpci9DzdDgPwwyLAAPDA/em2qJF/aUW0BLREM17E6Pylnh8CmQQmkH?=
+ =?us-ascii?Q?gdl23ZT8zY9alT59bb3/uZd840rHqUHELOj7QoNy/hspBOetxgaZ5rldH3rZ?=
+ =?us-ascii?Q?cljJbKljLo+8S9LzMeuh0yTbm4AZe1m6K7gpG/1K0H5vBwMDRQntlN9i9/Ck?=
+ =?us-ascii?Q?BMrg+0usSEA6utAhBdj8pFQ4LyEkKPlyCcCH6YYGic+3UPE+FL2YaSDI93Ia?=
+ =?us-ascii?Q?vQ87XUKIZodO6NTQHmM6f1C82Jx//USeatZWTisS/GBY3+aY0FOct97fikfc?=
+ =?us-ascii?Q?H5q5xJKxYPkXzg1087XMXZULlmet/VzHVhjQDakGp/VxmTaOh96D0/zMQsAo?=
+ =?us-ascii?Q?BY5K3WcpQay+wmIbWWXsqhNRQaQMCfUMAedjk5FIQHjGq1gNHhDEEtq4CPkW?=
+ =?us-ascii?Q?chG1cmulweNOUiE/O7gYftNNSuAXzQHEh3nkBa5wh/rLJAv8Ype8lZl6YC50?=
+ =?us-ascii?Q?rcVzUdMnapDNLvPR5Iz4P1ClGUiZAX0tkCn9t74FQBvx+2OdgxjX378/0Rp5?=
+ =?us-ascii?Q?qIKyx3hRoIa2x8vKOSOavIkVNBXOBDrc10zlBVhGuglK8KNGi8S3q5PU2CqV?=
+ =?us-ascii?Q?KGQIf73OgRS3LBVbBzqLGKRLBdvZvIOBwq7SpetYzA3r7DEtZkDpI6jQotTU?=
+ =?us-ascii?Q?l5skzylJWNx/fIiIrLVjrSC/Vau8llSse7A6ASNn5eofMQWHY09hRrC6Z5BD?=
+ =?us-ascii?Q?fhPHR4N2v2Tw89IJEn1sTYb14KTiZE3UcJ8yKMSv4LfWeBeXvdPQzlgtJGXb?=
+ =?us-ascii?Q?3/XolowarNnjfrc=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXPR04MB9642.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(19092799006)(52116014)(1800799024)(7053199007)(38350700014);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?qkPiX4sYJnwUnxSWnep8gMxB88BNy5Zc8QFElxBe8uaAa1Uw5sJ7Xk1Q7VUe?=
- =?us-ascii?Q?unG1PaFFRqDYeLl3aIq/YWbW0cgWQXDuR5uAbr7A6cMpMx5exjv5IFbzzp1g?=
- =?us-ascii?Q?bPhC8nqptx1hL7ivi0RBtt6gJuQ6LvsbVADR90hIqzOMjC/eTt5er9gXkd91?=
- =?us-ascii?Q?R4WTMxkTOrtu28Bg599VablE9nO4M7LfIEeFJ3wqZP9hZ7kdjaG3T1mxdfPF?=
- =?us-ascii?Q?0lbMn/weGkJsRibDfISJmzDJ/6YlWyIB/hVyiQnXc6U93mOFQiJvYxlHAYXa?=
- =?us-ascii?Q?6yl8jpeyCDdIj3pfdquH+4Op1HFYmBph82XFiAYXFOEWfUKItaR5+8PBe5TT?=
- =?us-ascii?Q?zcFoDHSw3mpqBwNFgpu2HdPbaDC0pZALn+71loWRn5e+5s336SNhOPl7pHhP?=
- =?us-ascii?Q?ULcw/ga+5CCzVQBl8qLnREFR6xysr8RyEFnxCcyjll6HK+kA4oB9N1isnoVE?=
- =?us-ascii?Q?5gQkGXYVfKu1ZZbBDmXb1NFVAf1OS7iE2l+CL9jqh/1MaY4ghIjU6sRjiNbK?=
- =?us-ascii?Q?baVsjmzU9klKv9baZUMfzmfnvVyC2icnlim3BOnzCpWptBj1S2mZgu6mPi3x?=
- =?us-ascii?Q?QroC+2OZKJRxMYjyfV7dw9N2U2RR8Z2Izc/VshiR+DgH9ABGBnHBiWVvqCI8?=
- =?us-ascii?Q?OKd1HjswDp5wvSYaYrn9XF8zt0mQJuAgpE77F9yD9tm3vIq4A59H3yQLjaFk?=
- =?us-ascii?Q?Hu1gTGJkE7GseYk6RZc0klxYTKdrAYrXTB78QwXL83oUUmaRT0vKi/yVTh4i?=
- =?us-ascii?Q?0NjRbb6YhWGrEdsZWZU9o4iKaxbmh0U1zFxv4rK9JGAP1+747Yuo4eTmtgBD?=
- =?us-ascii?Q?0QnKdZIL6GPtxgFKGsVIjj8dysii7NwV9dDMpY9fAiFVEDSlN2hNmhL+8BmJ?=
- =?us-ascii?Q?E/mMbIiI/tOrMgtVLzXY/5payE4bAtbD3NRznqS0Hh3kBtq6bpcDREipLWVQ?=
- =?us-ascii?Q?FOftQdogw725hconLkFrLjo41TOECSW+7Bu7e2z682bkb4bpC/AsjMyudpYI?=
- =?us-ascii?Q?Yf4pZIabfkQL4omUW9s8+R4ohwRfyTNHXUn0a3Q42rlHJAuW85729M/z/Taq?=
- =?us-ascii?Q?YS75Kl8QgznHC6YU+HkEE2Izf8kvxyLw7idwYGvGY+3O55zVuF8Bkh/20nrL?=
- =?us-ascii?Q?+qa/PWrrKn0DLtBvuj8xMv5Eg6qU8GRjN8sqA0UQMs8rVXRSSpW4eQlN5bTO?=
- =?us-ascii?Q?lMY35kzphU5P2Ja6SBckxLqlyCTGjeUnXc2/zYNwB29a7Ibz4nbwyFnEf5dC?=
- =?us-ascii?Q?mEGVLAw/u/tLuLLpYVLaNxS+rD6Kk7Txoea0BPKkPpwt98MJmoA0gg6WVmrL?=
- =?us-ascii?Q?ScrnM2WuAwHF2wbbKAI4usfb1e3WumJtbnkSZ8HfmBfLTshg24cbNkHwLZNI?=
- =?us-ascii?Q?ii+s0uVeGUOBxwRGYkRtVJJsPZsy+oNOWLyD4MAsruncSf+nfdpgF5q5MgLW?=
- =?us-ascii?Q?UPx5VJnrCFTx5VKulRDmRldddBTkugkZVhzrYGZov1Nw730xvFDmvkmqokXb?=
- =?us-ascii?Q?PJ2hZ8sRxKtEDvJW5MagE2XpPnlgrrMbcdR3igb5+HL7WUXk3DPG1uoEmcPg?=
- =?us-ascii?Q?PRC8yAJPhU96o2CqUvBkUQffq1xROaget3cRAnKr?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?yhOVc9utsdEOqeMIKDhWZ2KbjIKXUMTxgYkDloT39QO+K6UWpFSO1vlLzbcN?=
+ =?us-ascii?Q?86fptZWby9NiSG3pqmxyDeIKoBvUdHKhZergKhS0B/ak+bNrPbWtHLt83llX?=
+ =?us-ascii?Q?J4dQbZEBAadoDqjUVHi2QIQEVvbtfoGs617uiLgF9MG5L7msM1Mo6zGraO0O?=
+ =?us-ascii?Q?GKm9pD2F/igPoC5jahIK8Md8mijZn47OH3CzEcHUfs3N1A2hfQeqDDBA5RAD?=
+ =?us-ascii?Q?/ON6USUYUlg13DGHC0D/dIvSJQjgbqvvROCzTMVvhB5KiOCFeOd0nVjgu5qh?=
+ =?us-ascii?Q?Ycvx3oYrOGgvJqCEajzlZGlAd7CIVR59cGwCFyzBEmiUIYGEfhQltnvr9voC?=
+ =?us-ascii?Q?Ze6CwXi9pDvVAS3JGjL+uhW24kVQNqtOxIrQnD9aVEKKpOO0qSf3owxMr3fX?=
+ =?us-ascii?Q?2FkzH+ryDYKQzLk+zr/9Zp0J0h0HAh2fElUI1NzmvZEAfuFRlNy2pEF42sUY?=
+ =?us-ascii?Q?aJZaKk1DQk+nZoAsyP/957RValfZubiADdVGDemBYvgQcjxw4fNY1cwJhJot?=
+ =?us-ascii?Q?wNrNtLPFCk9Hy2Z90Aouzli6PgzmfSdVlteZGVZHlp9r8PSc8qt+NcUCikgp?=
+ =?us-ascii?Q?DopTo9wOgg0GTfoQ7yx0eDX7Hh8IQVMwImnbu3gh0ruFttYtPq9VJRQl3xLq?=
+ =?us-ascii?Q?I3xOGaiPnaf4Ns7KDC7NBaE9Eeyar1ZCZW1Ut5YvaMrnsAfie9JiuKa1JyRI?=
+ =?us-ascii?Q?ClHYvpygmhEP2GhhXz23aGyx/+sgB103GBYWoWvapFAJ2JNbnP4OsPrGHXM9?=
+ =?us-ascii?Q?4ldWrPZE5jlYNJi8H98+9dHQLCdxag/uzY7LKxzoMhdMqJtJicH+oeMuROfX?=
+ =?us-ascii?Q?iUF45FECvdG7MOGBVug2Zz3HO3N5pbLxZA5X4ioeMqyQZifzlyg9s7o9R9cV?=
+ =?us-ascii?Q?km8I8VbTvRLCK46RywEhxyVgOG9JT1zWwS/n1ooRUB6LpEmCm8pIZIEuGaoP?=
+ =?us-ascii?Q?Q5X+0L8vlOkfouOLKB7x7GfxMYqIzgs81N1svkpirMyqzVqTH5sCAyuFeIsp?=
+ =?us-ascii?Q?EX9NPJWWoY8qHyhcnSr8iphq4eziTRBZJLitn/EdZQ5jTiIjVuZX/jV/4dP1?=
+ =?us-ascii?Q?4gZkDvPw7SBe7HppE85FVhhZyVsmiQCY1DK6ayKeDqrQL/1tgmWrb7/X5ZnQ?=
+ =?us-ascii?Q?Lc+IYzcSievVmdk0JdJCVxUPvKQDnYKO3uct8hiBdgv+I7VSPKEPUGGNPm8V?=
+ =?us-ascii?Q?hbxgLkhYaKlkdqBRROY8LQRYql8vQX7BGbPXRXQPhylP+vqkKLXysPxrE+gx?=
+ =?us-ascii?Q?ESQo6dtmP8cQXH81WE3518BALu6f4AE3KwHBjPiDiHZ8TVCxzL7qf0I3/4hu?=
+ =?us-ascii?Q?XaWMaxMJcPgsedPXjr9SWVHVnDJC8jZ8OvPNJis5CeAnpBcoEhcZ/E5jN5Zs?=
+ =?us-ascii?Q?XukT4lPtszpnnCLS1t671L6LoqBn7UGg0CgN7V4heAwfIf4CxZ6hy2dTfLPH?=
+ =?us-ascii?Q?k1hvKiTOWzJUiFGeGNoDp8Fxn52kNNcCQ/w4HlFo6UgzygZA4/vr6/Fh6jK1?=
+ =?us-ascii?Q?CTV2Njknh3Q1tkKKf3WbFYHcpzg2wpiqWTwQqdeGZGPNu/xoGuzt1aPIiLQg?=
+ =?us-ascii?Q?GmgL71QD1+iJ+vg8w0QpMZhWcUjdAYqAAffjp9Lj?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 837e61a6-c80c-4897-18da-08ddd10987af
+X-MS-Exchange-CrossTenant-Network-Message-Id: 55307eb6-2572-495d-d305-08ddd10b61f5
 X-MS-Exchange-CrossTenant-AuthSource: PAXPR04MB9642.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Aug 2025 14:41:41.9876
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Aug 2025 14:54:57.6332
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: qy6UHrmWEsfXcg5q7z+VNf2ZyOWyC3Z+aYcAi7NNLtrtqQddZiFTxwN7p0pUjCWYWTt0COo8eu13QAiSMhUY7Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM8PR04MB7332
+X-MS-Exchange-CrossTenant-UserPrincipalName: DEytHhz29d9jTYv9HCQgSNIbS/gGaL4zZDNT5OzCFvLJQzHJ53KUVo/G6Q+dm/U/PZlxTiebR5SsrEF6akAZNQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB9093
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250801_074150_742029_91DFD856 
-X-CRM114-Status: GOOD (  32.94  )
+X-CRM114-CacheID: sfid-20250801_075506_173957_ABE490D5 
+X-CRM114-Status: GOOD (  26.04  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -159,191 +158,174 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jul 31, 2025 at 05:14:18PM +0300, Jarkko Nikula wrote:
-> So far only I3C private and I2C transfers have required a bounce buffer
-> for DMA transfers when buffer is not DMA'able.
->
-> It was observed that when the device DMA is IOMMU mapped and the receive
-> length is not a multiple of DWORDs, the last DWORD is padded with stale
-> data from the RX FIFO, corrupting 1-3 bytes beyond the expected data.
+On Thu, Jul 31, 2025 at 05:14:17PM +0300, Jarkko Nikula wrote:
+> Add helpers for I3C host controller drivers for DMA mapping/unmapping
+> and bounce buffer handling. A bounce buffer is allocated if the buffer
+> is not DMA'able or when the driver requires it for a transfer.
 
-Some I3C controller such as ..., pad with stale data from the RX FIFO if
-the receive length is not align with DWORD (32bit). [when use IOMMU] (I
-suppose it is same behavor without IOMMU, you find it just because IOMMU
-capture this problem).
-
->
-> A similar issue, though less severe, occurs when an I3C target returns
-> less data than requested. In this case, the padding does not exceed the
-> requested number of bytes, assuming the device DMA is not IOMMU mapped.
->
-> Therefore, all I3C private transfer, CCC command payload and I2C
-> transfer receive buffers must be properly sized for the DMA being IOMMU
-> mapped. Even if those buffers are already DMA safe, their size may not
-> be, and I don't have a clear idea how to guarantee this other than
-> using a bounce buffer.
-
-their size may not be WORD aligned. (Actually, it is require cache line
-size aligned.)
-
-remove "I don't ..."
-
->
-> To prepare for the device DMA being IOMMU mapped and to address the
-> above issue, use helpers from I3C core for DMA mapping/unmapping and
-> bounce buffering for all DMA transfers.
->
-> For now, require bounce buffer only when the buffer is in the
-> vmalloc() area to avoid unnecessary copying with CCC commands and
-> DMA-safe I2C transfers.
-
-
-This patch major purpose should be use new common helper function
-i3c_master_dma_map(unmap)_single() to simple mipi-i3c-hci code.
+You'd better move some patch 2's description to this patch, to descriptor
+why need bounce buffer.
 
 >
 > Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
 > ---
->  drivers/i3c/master/mipi-i3c-hci/core.c | 34 --------------------------
->  drivers/i3c/master/mipi-i3c-hci/dma.c  | 27 +++++++++-----------
->  drivers/i3c/master/mipi-i3c-hci/hci.h  |  3 +--
->  3 files changed, 12 insertions(+), 52 deletions(-)
+>  drivers/i3c/master.c       | 74 ++++++++++++++++++++++++++++++++++++++
+>  include/linux/i3c/master.h | 20 +++++++++++
+>  2 files changed, 94 insertions(+)
 >
-> diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-> index 60f1175f1f37..b2977b6ac9f7 100644
-> --- a/drivers/i3c/master/mipi-i3c-hci/core.c
-> +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-> @@ -272,34 +272,6 @@ static int i3c_hci_daa(struct i3c_master_controller *m)
->  	return hci->cmd->perform_daa(hci);
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index 2ef898a8fd80..a1daf18ea707 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -8,6 +8,7 @@
+>  #include <linux/atomic.h>
+>  #include <linux/bug.h>
+>  #include <linux/device.h>
+> +#include <linux/dma-mapping.h>
+>  #include <linux/err.h>
+>  #include <linux/export.h>
+>  #include <linux/kernel.h>
+> @@ -1727,6 +1728,79 @@ int i3c_master_do_daa(struct i3c_master_controller *master)
 >  }
+>  EXPORT_SYMBOL_GPL(i3c_master_do_daa);
 >
-> -static int i3c_hci_alloc_safe_xfer_buf(struct i3c_hci *hci,
-> -				       struct hci_xfer *xfer)
-> -{
-> -	if (hci->io != &mipi_i3c_hci_dma ||
-> -	    xfer->data == NULL || !is_vmalloc_addr(xfer->data))
-> -		return 0;
-> -
-> -	if (xfer->rnw)
-> -		xfer->bounce_buf = kzalloc(xfer->data_len, GFP_KERNEL);
-> -	else
-> -		xfer->bounce_buf = kmemdup(xfer->data,
-> -					   xfer->data_len, GFP_KERNEL);
-> -
-> -	return xfer->bounce_buf == NULL ? -ENOMEM : 0;
-> -}
-> -
-> -static void i3c_hci_free_safe_xfer_buf(struct i3c_hci *hci,
-> -				       struct hci_xfer *xfer)
-> -{
-> -	if (hci->io != &mipi_i3c_hci_dma || xfer->bounce_buf == NULL)
-> -		return;
-> -
-> -	if (xfer->rnw)
-> -		memcpy(xfer->data, xfer->bounce_buf, xfer->data_len);
-> -
-> -	kfree(xfer->bounce_buf);
-> -}
-> -
->  static int i3c_hci_priv_xfers(struct i3c_dev_desc *dev,
->  			      struct i3c_priv_xfer *i3c_xfers,
->  			      int nxfers)
-> @@ -333,9 +305,6 @@ static int i3c_hci_priv_xfers(struct i3c_dev_desc *dev,
->  		}
->  		hci->cmd->prep_i3c_xfer(hci, dev, &xfer[i]);
->  		xfer[i].cmd_desc[0] |= CMD_0_ROC;
-> -		ret = i3c_hci_alloc_safe_xfer_buf(hci, &xfer[i]);
-> -		if (ret)
-> -			goto out;
->  	}
->  	last = i - 1;
->  	xfer[last].cmd_desc[0] |= CMD_0_TOC;
-> @@ -359,9 +328,6 @@ static int i3c_hci_priv_xfers(struct i3c_dev_desc *dev,
->  	}
+> +/**
+> + * i3c_master_dma_map_single() - Map buffer for single DMA transfer
+> + * @dev: device object of a device doing DMA
+> + * @buf: destination/source buffer for DMA
+> + * @len: length of transfer
+> + * @need_bounce: true if buffer is not DMA safe and need a bounce buffer
+
+Is it possible auto check if 'buf' dma-able?
+
+> + * @dir: DMA direction
+> + *
+> + * Map buffer for a DMA transfer and allocate a bounce buffer if required.
+> + *
+> + * Return: I3C DMA transfer descriptor or NULL in case of error.
+> + */
+> +struct i3c_dma *i3c_master_dma_map_single(struct device *dev, void *buf,
+> +	size_t len, bool need_bounce, enum dma_data_direction dir)
+> +{
+> +	struct i3c_dma *dma_xfer;
+> +	void *dma_buf = buf;
+> +
+> +	dma_xfer = kzalloc(sizeof(*dma_xfer), GFP_KERNEL);
+
+If use struct i3c_dma __free(kfree) *dma_xfer = NULL; it simple error handle
+
+> +	if (!dma_xfer)
+> +		return NULL;
+> +
+> +	dma_xfer->buf = buf;
+> +	dma_xfer->dir = dir;
+> +	dma_xfer->len = len;
+> +	if (is_vmalloc_addr(buf))
+> +		need_bounce = true;
+> +
+> +	if (need_bounce) {
+> +		if (dir == DMA_FROM_DEVICE)
+> +			dma_buf = kzalloc(ALIGN(len, cache_line_size()),
+> +						GFP_KERNEL);
+> +		else
+> +			dma_buf = kmemdup(buf, len, GFP_KERNEL);
+> +		if (!dma_buf)
+> +			goto err_alloc;
+> +
+> +		dma_xfer->bounce_buf = dma_buf;
+> +	}
+> +
+> +	dma_xfer->addr = dma_map_single(dev, dma_buf, len, dir);
+
+len should be ALIGN(len, cache_line_size(), otherwise swiotlb will bounce
+again if need_bounce is true
+
+> +	if (dma_mapping_error(dev, dma_xfer->addr))
+> +		goto err_map;
+> +
+> +	return dma_xfer;
+
+return no_free_ptr(dma_xfer) if use __free.
+
+> +err_map:
+> +	kfree(dma_xfer->bounce_buf);
+> +err_alloc:
+> +	kfree(dma_xfer);
+> +	return NULL;
+> +}
+> +EXPORT_SYMBOL_GPL(i3c_master_dma_map_single);
+> +
+> +/**
+> + * i3c_master_dma_unmap_single() - Unmap buffer after DMA
+> + * @dev: device object of a device doing DMA
+> + * @dma_xfer: DMA transfer and mapping descriptor
+> + *
+> + * Unmap buffer and cleanup DMA transfer descriptor.
+> + */
+> +void i3c_master_dma_unmap_single(struct device *dev, struct i3c_dma *dma_xfer)
+> +{
+> +	dma_unmap_single(dev, dma_xfer->addr, dma_xfer->len, dma_xfer->dir);
+> +	if (dma_xfer->bounce_buf) {
+> +		if (dma_xfer->dir == DMA_FROM_DEVICE)
+> +			memcpy(dma_xfer->buf, dma_xfer->bounce_buf,
+> +			       dma_xfer->len);
+> +		kfree(dma_xfer->bounce_buf);
+> +	}
+> +	kfree(dma_xfer);
+> +}
+> +EXPORT_SYMBOL_GPL(i3c_master_dma_unmap_single);
+> +
+>  /**
+>   * i3c_master_set_info() - set master device information
+>   * @master: master used to send frames on the bus
+> diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
+> index 043f5c7ff398..e39350b1038e 100644
+> --- a/include/linux/i3c/master.h
+> +++ b/include/linux/i3c/master.h
+> @@ -558,6 +558,22 @@ struct i3c_master_controller {
+>  #define i3c_bus_for_each_i3cdev(bus, dev)				\
+>  	list_for_each_entry(dev, &(bus)->devs.i3c, common.node)
 >
->  out:
-> -	for (i = 0; i < nxfers; i++)
-> -		i3c_hci_free_safe_xfer_buf(hci, &xfer[i]);
-> -
->  	hci_free_xfer(xfer, nxfers);
->  	return ret;
->  }
-> diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-> index 491dfe70b660..669d026646b4 100644
-> --- a/drivers/i3c/master/mipi-i3c-hci/dma.c
-> +++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-> @@ -349,9 +349,7 @@ static void hci_dma_unmap_xfer(struct i3c_hci *hci,
->  		xfer = xfer_list + i;
->  		if (!xfer->data)
->  			continue;
-> -		dma_unmap_single(&hci->master.dev,
-> -				 xfer->data_dma, xfer->data_len,
-> -				 xfer->rnw ? DMA_FROM_DEVICE : DMA_TO_DEVICE);
-> +		i3c_master_dma_unmap_single(&hci->master.dev, xfer->dma);
->  	}
->  }
+> +/**
+> + * struct i3c_dma - DMA transfer and mapping descriptor
+> + * @buf: destination/source buffer for DMA
+> + * @len: length of transfer
+> + * @addr: mapped DMA address for a Host Controller Driver
+> + * @dir: DMA direction
+> + * @bounce_buf: an allocated bounce buffer if transfer needs it or NULL
+> + */
+> +struct i3c_dma {
+> +	void *buf;
+> +	size_t len;
+
+need dma_map_len to avoid swiotlb bounce again.
+
+> +	dma_addr_t addr;
+> +	enum dma_data_direction dir;
+> +	void *bounce_buf;
+> +};
+> +
+>  int i3c_master_do_i2c_xfers(struct i3c_master_controller *master,
+>  			    const struct i2c_msg *xfers,
+>  			    int nxfers);
+> @@ -575,6 +591,10 @@ int i3c_master_get_free_addr(struct i3c_master_controller *master,
+>  int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
+>  				  u8 addr);
+>  int i3c_master_do_daa(struct i3c_master_controller *master);
+> +struct i3c_dma *i3c_master_dma_map_single(struct device *dev, void *ptr,
+> +					  size_t len, bool dma_safe,
+> +					  enum dma_data_direction dir);
+> +void i3c_master_dma_unmap_single(struct device *dev, struct i3c_dma *dma_xfer);
+
+needn't dev, save it into struct i3c_dma, so we can use cleanup easily
+
+
+#define DEFINE_FREE(i3c_master_dma_unmap_single, struct i3c_dma *, if (_T) i3c_master_dma_map_single(_T))
+
+Frank
 >
-> @@ -362,7 +360,6 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
->  	struct hci_rh_data *rh;
->  	unsigned int i, ring, enqueue_ptr;
->  	u32 op1_val, op2_val;
-> -	void *buf;
->
->  	/* For now we only use ring 0 */
->  	ring = 0;
-> @@ -373,6 +370,8 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
->  	for (i = 0; i < n; i++) {
->  		struct hci_xfer *xfer = xfer_list + i;
->  		u32 *ring_data = rh->xfer + rh->xfer_struct_sz * enqueue_ptr;
-> +		enum dma_data_direction dir = xfer->rnw ? DMA_FROM_DEVICE :
-> +							  DMA_TO_DEVICE;
->
->  		/* store cmd descriptor */
->  		*ring_data++ = xfer->cmd_desc[0];
-> @@ -391,21 +390,17 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
->
->  		/* 2nd and 3rd words of Data Buffer Descriptor Structure */
->  		if (xfer->data) {
-> -			buf = xfer->bounce_buf ? xfer->bounce_buf : xfer->data;
-> -			xfer->data_dma =
-> -				dma_map_single(&hci->master.dev,
-> -					       buf,
-> -					       xfer->data_len,
-> -					       xfer->rnw ?
-> -						  DMA_FROM_DEVICE :
-> -						  DMA_TO_DEVICE);
-> -			if (dma_mapping_error(&hci->master.dev,
-> -					      xfer->data_dma)) {
-> +			xfer->dma = i3c_master_dma_map_single(&hci->master.dev,
-> +							      xfer->data,
-> +							      xfer->data_len,
-> +							      false,
-> +							      dir);
-> +			if (!xfer->dma) {
->  				hci_dma_unmap_xfer(hci, xfer_list, i);
->  				return -ENOMEM;
->  			}
-> -			*ring_data++ = lower_32_bits(xfer->data_dma);
-> -			*ring_data++ = upper_32_bits(xfer->data_dma);
-> +			*ring_data++ = lower_32_bits(xfer->dma->addr);
-> +			*ring_data++ = upper_32_bits(xfer->dma->addr);
->  		} else {
->  			*ring_data++ = 0;
->  			*ring_data++ = 0;
-> diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
-> index 69ea1d10414b..33bc4906df1f 100644
-> --- a/drivers/i3c/master/mipi-i3c-hci/hci.h
-> +++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
-> @@ -94,8 +94,7 @@ struct hci_xfer {
->  		};
->  		struct {
->  			/* DMA specific */
-> -			dma_addr_t data_dma;
-> -			void *bounce_buf;
-> +			struct i3c_dma *dma;
->  			int ring_number;
->  			int ring_entry;
->  		};
+>  int i3c_master_set_info(struct i3c_master_controller *master,
+>  			const struct i3c_device_info *info);
 > --
 > 2.47.2
 >
