@@ -4,84 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09AD5C87FCC
-	for <linux-i3c@archiver.kernel.org>; Thu, 31 Jul 2025 16:13:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DBA2AC87FCA
+	for <linux-i3c@archiver.kernel.org>; Fri,  1 Aug 2025 13:07:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n5J/5zjiinejAZqXMSGnaoWSmNwhj1mz5eBgWFsJXqo=; b=dGv38mv6k04AO4
-	QwPEw35wWQo49vKUiQyAsRGWlMgTOsNXWLwamRaulomVwRD/txzB3L7a42k5OcQpLBlhX/1mlZDYF
-	1N1+5qCAKoFNzDnUO2MLqSc4evCaA2EcLPoeNWoMdosRvL5LEcNkbl7VbvFiWGBq/TalK7Y7UgDzc
-	RBZVM2i/Qi0S0NyVJ6LJLmW1waJ8ES1Qijk8b+LBMQUeevc2tmRVAb0RWVzsztPaX1PBFFmFR1Qs2
-	kFSy1AhHZHGWCLttRmtZ4oSh5lliTZeYJWOURH3SwdTvFfLAYiYpuvDd+DSOHly3N5cBcwYp4tLaC
-	TVZUht40zKCs/eAWOPwQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=f7lCwwVLL8P9uMsLgFyIb81dA+fbvJI+5HE7Fh0h5TM=; b=UDdVdbRdB5RwZU
+	klbgz1EQefVWCkeAMl9KJcBLmSBnRFmAyuR0R56K8DHn4d5vV+0D56tW0hFKbVT2edqVvfPGlklgh
+	b8zBqICAgjK2syX7pnJ8lXc+rZecIKsDlXExuUVJrVPOKFsqLigqHAOMYbeabPLdq+aVuvF0hI9ax
+	QOayxROrcpkh1Fip/OGp3NWPrSF5E2NFHBPzbV0jN2SoWHZVJ92d5ZvVD4Mm+5fUw1K8fWaQa7G/W
+	sWZ9Zek2sFjS1K1/d0nN9vpoM9/bv4mhhq9600uqs0dbTJkR/i5GOoOGc/npYPuxkw9ZNPqUiKtph
+	x3WykeoumppVgUzTZWiA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uhVty-000000043bQ-3KnX;
-	Thu, 31 Jul 2025 16:13:06 +0000
-Received: from mgamail.intel.com ([192.198.163.7])
+	id 1uhpTn-000000063oC-2DBc;
+	Fri, 01 Aug 2025 13:07:23 +0000
+Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uhUBW-00000003oyy-1PM7
+	id 1uhotB-00000005vCv-2qp9
 	for linux-i3c@lists.infradead.org;
-	Thu, 31 Jul 2025 14:23:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1753971786; x=1785507786;
-  h=message-id:date:mime-version:subject:from:to:cc:
-   references:in-reply-to:content-transfer-encoding;
-  bh=xPxM454/hp1gfC1kUgEEN9oNQMNOVKWZ/GukStqrIgM=;
-  b=YNDAsBLzqW/AuIEbRKOtdGc2Z0XY4Pnxa5EoxiccTn/ptzv4+TlWmIHt
-   hkrKaiRa/rCo793wInjLZFfMC9otoo8Od1ooMgUVSbb00+ZTCC9n+uKXo
-   qbQlEnLZ0lVFnzeZPBNwK4Z3wRJ2j07wjrqGIxugF19o9gi8OTSgHg1zk
-   ORD6Unrg0+KNQFU3gUSopJK84YxvLg5Gqs2+9pp07wGrhS7j0Wz5QFvI5
-   Dz/x1grzOnsMKNMK/Rs7VzPtgia+QyrqFAhEiHD5hCH5MWELmh+Tue+t3
-   L0Z3px2oywJ+BZfwnlgeGdiWLOfkD6FZWQ76S6k+nnUBd0C2S1o5flOO0
-   w==;
-X-CSE-ConnectionGUID: 9+pO3soFTO6RFm4CX5gnEg==
-X-CSE-MsgGUID: 8/TVuJ09SgqJQJfj0+iZCg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11508"; a="81749288"
-X-IronPort-AV: E=Sophos;i="6.17,353,1747724400"; 
-   d="scan'208";a="81749288"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 31 Jul 2025 07:23:06 -0700
-X-CSE-ConnectionGUID: paMjqjNjTjGrC1HoGDHcNg==
-X-CSE-MsgGUID: aKXq3eCsT+Wbo+kFOtVhyQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.17,353,1747724400"; 
-   d="scan'208";a="163165122"
-Received: from mylly.fi.intel.com (HELO [10.237.72.151]) ([10.237.72.151])
-  by fmviesa006.fm.intel.com with ESMTP; 31 Jul 2025 07:23:05 -0700
-Message-ID: <dead6d3b-27c0-4805-a51a-dd9747990398@linux.intel.com>
-Date: Thu, 31 Jul 2025 17:23:03 +0300
+	Fri, 01 Aug 2025 12:29:34 +0000
+Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-3b7834f2e72so1345202f8f.2
+        for <linux-i3c@lists.infradead.org>; Fri, 01 Aug 2025 05:29:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=linaro.org; s=google; t=1754051372; x=1754656172; darn=lists.infradead.org;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=N6VxgpJLp61iR3iDezPAb2armq0u2g+EEewZ0TEi/To=;
+        b=NJA42KQEK4Zjxy7gJA9lmaBVwQS93RUeqcW8PIUntf1Oyu4KrrDxb9dQvFb9sBM1hr
+         LJkQHpzoMXqrvOZRg3PiS0Jm+Y71k6WfvZmG8Iz1DjCg7KI4tyeF9hoQDD+1j12EfApt
+         7kMglVX2klVNAbmhaBMeJvOHRmQGYQ6AyRQWokB5Z/9c4a4JYXu1jvkYpylyjpxHwf5T
+         4S5jmUI4WSATjb+/4KEe7GFrDOhp9Bg7b4BdJ98694kBo6gOFEZIT4v+wXx91qjnuy/2
+         J3x/TOLedIki3YjTviHUKX//3goRaKdNn8g5hR92R+cl/1ozAkQtmyfLsFYTWczucBrT
+         Gu4A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1754051372; x=1754656172;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=N6VxgpJLp61iR3iDezPAb2armq0u2g+EEewZ0TEi/To=;
+        b=HFQ11u9FuU/3PzEtgpy8CZMDX3j+V4gDYF5vJk4WgfxMdMFRFdI7Lc09bBRB+znZno
+         raTKkVNWU5VAf8M7gnr6l5caM8reYCy888rK1GcNZePgW0kmwf0yXTg/AO0FOLAz9wcH
+         w/5jrxx5drp9VAOw4NEpl0SHRz9aTJ7GaE1JNOoC00E4r/zQHYvUDoAg54zhTB3otcN0
+         zfd34aTK6mwyMhVDoTdvZFrrRmo70iZ7R7mhTnq+tFwdqkuCrrEbzPvstgUTQMlgCLlY
+         HaG+KSOlDrjss/6sGcAmk+sdvBxXClQ8mjvF6+kYSz2HDPekAsATfqAoWRJ9qbt5ijDX
+         FL4Q==
+X-Gm-Message-State: AOJu0YzsdWUmwGfkKr3XHbZRR51JlP+fONN8jgR0kaCBeYm4LK2Xnrvc
+	a6Ndz9C6XhLz4c+eV9XK2GyTiW6ByMiYHjEe8zLAP6L2FigLgnh/1tp+gjI5qA2rYCk=
+X-Gm-Gg: ASbGnctBNYhMYDCSMk6YQ17qIenwy35jva/UU9zUn+dqCClTvACJPpsDBXXFf4hsY3P
+	b2Cd+ta45SSvKbEM998SfmL7/GTo51nomSRKQq9EtEwxGrJrCg8UfOrhHAFS/k53xfu14BwwkEI
+	UFdd4rcg3zebxw4RyEb6keq+uKJ0OA3JuqKFJeuGCYEiID5X3T5iWqIGdRFOlDtgjJwuiu80D/G
+	INBKSdKSBnvBXFcRMocy7rltSWtta+NjXRZ0mI5PHsIZbZ2Xei+TwK9mT5JA6kOi201knebiEqA
+	sDA8RybDhKNh/5Tldrjx8qT691Iq54Z6u1yaJ1WSvkMsXYqultyDQjB3PuH8VK6K+hT9IqFcVJV
+	L2ABiltyAfWnqQ5toeRBPJpDkjLI=
+X-Google-Smtp-Source: AGHT+IHMmDsPVMYN2fplxGfSRD/XQxk9OU2aOqiA+J4xeB7ynXdImJ99r2DFVm8ie9x2j2QNQDoKMw==
+X-Received: by 2002:a05:6000:4007:b0:3b7:e3c3:fb9f with SMTP id ffacd0b85a97d-3b7e3c4000emr4555678f8f.49.1754051371945;
+        Fri, 01 Aug 2025 05:29:31 -0700 (PDT)
+Received: from localhost ([196.207.164.177])
+        by smtp.gmail.com with UTF8SMTPSA id ffacd0b85a97d-3b79c453ca1sm5807736f8f.48.2025.08.01.05.29.31
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 01 Aug 2025 05:29:31 -0700 (PDT)
+Date: Fri, 1 Aug 2025 15:29:27 +0300
+From: Dan Carpenter <dan.carpenter@linaro.org>
+To: Wolfram Sang <wsa+renesas@sang-engineering.com>
+Cc: linux-i3c@lists.infradead.org
+Subject: [bug report] i3c: master: Add basic driver for the Renesas I3C
+ controller
+Message-ID: <aIyzJ7HOENL1qp1l@stanley.mountain>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/3] i3c: mipi-i3c-hci: Make bounce buffer code generic to
- all DMA transfers
-From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-To: Frank Li <Frank.li@nxp.com>
-Cc: linux-i3c@lists.infradead.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>
-References: <20250604125513.1593109-1-jarkko.nikula@linux.intel.com>
- <aEBfpZ6Fa1DoFVS3@lizhi-Precision-Tower-5810>
- <bc599310-9287-4023-a204-682771574528@linux.intel.com>
- <aEG0DitRE/49aXI5@lizhi-Precision-Tower-5810>
- <37051b2a-0969-4482-91ea-85b1a9c2fc5f@linux.intel.com>
- <aEMDCi7RYbQud7WZ@lizhi-Precision-Tower-5810>
- <367523dc-d91b-4792-ab8c-f8d7e26379cd@linux.intel.com>
- <aEb38qRGQ5AIqy7R@lizhi-Precision-Tower-5810>
- <ebc6a6f1-0c9f-4ea7-8af1-585fce6ad9c6@linux.intel.com>
- <aEhmfNObvH5Dm4+W@lizhi-Precision-Tower-5810>
- <aFGFNdM+F9SUQIgi@lizhi-Precision-Tower-5810>
- <8a3b32df-b687-47be-ae4b-99008d000542@linux.intel.com>
- <9559d18b-43d3-4f74-8b9d-a5f2c32a3f36@linux.intel.com>
-Content-Language: en-US
-In-Reply-To: <9559d18b-43d3-4f74-8b9d-a5f2c32a3f36@linux.intel.com>
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250731_072306_389722_72C38E57 
-X-CRM114-Status: GOOD (  15.14  )
+X-CRM114-CacheID: sfid-20250801_052933_748474_FC4E3B86 
+X-CRM114-Status: UNSURE (   9.15  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,55 +90,92 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Frank
+Hello Wolfram Sang,
 
-On 6/27/25 5:17 PM, Jarkko Nikula wrote:
-> Hi Frank
-> 
-> On 6/19/25 4:37 PM, Jarkko Nikula wrote:
->> Hi
->>
->> On 6/17/25 6:09 PM, Frank Li wrote:
->>>> Thanks, I finially understand the problem you faced. I think other 
->>>> master
->>>> controller face similar issue if they use dma. Let me think more. If 
->>>> alloc
->>>> buffer size is not align to cache line, swtlib will bounce again.
->>>>
->>>> rough idea i3c core layer provide an i3c_(un)map_api to do that.
->>>
-> Unfortunately I run out of time before vacation to have a clean and 
-> tested patchset about your idea but wanted to share work in progress 
-> diff below. Which is not actually a standalone but goes on top of this 
-> patchset.
-> 
-> I have mixed feeling does this yet bring enough value to the I3C core or 
-> does it make sense to wait for another I3C driver using DMA to see 
-> better common needs.
-> 
-> But I'm open for your comments and will continue after vacation :-)
-> 
-I sent an update where above idea was formed as a proper patch and rest 
-of the patches updated accordingly. Diff between the sets below :-)
+Commit d028219a9f14 ("i3c: master: Add basic driver for the Renesas
+I3C controller") from Jul 24, 2025 (linux-next), leads to the
+following (unpublished) Smatch static checker warning:
 
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -1786,7 +1786,7 @@ EXPORT_SYMBOL_GPL(i3c_master_dma_map_single);
-   * @dev: device object of a device doing DMA
-   * @dma_xfer: DMA transfer and mapping descriptor
-   *
-- * Unmap buffer and cleanup DMA transfer descriptor
-+ * Unmap buffer and cleanup DMA transfer descriptor.
-   */
-  void i3c_master_dma_unmap_single(struct device *dev, struct i3c_dma 
-*dma_xfer)
-  {
+	drivers/i3c/master/renesas-i3c.c:682 renesas_i3c_daa()
+	warn: duplicate check 'ret < 0' (previous on line 660)
 
+drivers/i3c/master/renesas-i3c.c
+    622 static int renesas_i3c_daa(struct i3c_master_controller *m)
+    623 {
+    624         struct renesas_i3c *i3c = to_renesas_i3c(m);
+    625         struct renesas_i3c_cmd *cmd;
+    626         u32 olddevs, newdevs;
+    627         u8 last_addr = 0, pos;
+    628         int ret;
+    629 
+    630         struct renesas_i3c_xfer *xfer __free(kfree) = renesas_i3c_alloc_xfer(i3c, 1);
+    631         if (!xfer)
+    632                 return -ENOMEM;
+    633 
+    634         /* Enable I3C bus. */
+    635         renesas_i3c_bus_enable(m, true);
+    636 
+    637         olddevs = ~(i3c->free_pos);
+    638         i3c->internal_state = I3C_INTERNAL_STATE_CONTROLLER_ENTDAA;
+    639 
+    640         /* Setting DATBASn registers for target devices. */
+    641         for (pos = 0; pos < i3c->maxdevs; pos++) {
+    642                 if (olddevs & BIT(pos))
+    643                         continue;
+    644 
+    645                 ret = i3c_master_get_free_addr(m, last_addr + 1);
+    646                 if (ret < 0)
+    647                         return -ENOSPC;
+    648 
+    649                 i3c->addrs[pos] = ret;
+    650                 last_addr = ret;
+    651 
+    652                 renesas_writel(i3c->regs, DATBAS(pos), datbas_dvdyad_with_parity(ret));
+    653         }
+    654 
+    655         init_completion(&xfer->comp);
+    656         cmd = xfer->cmds;
+    657         cmd->rx_count = 0;
+    658 
+    659         ret = renesas_i3c_get_free_pos(i3c);
+    660         if (ret < 0)
+    661                 return ret;
+    662 
+    663         /*
+    664          * Setup the command descriptor to start the ENTDAA command
+    665          * and starting at the selected device index.
+    666          */
+    667         cmd->cmd0 = NCMDQP_CMD_ATTR(NCMDQP_ADDR_ASSGN) | NCMDQP_ROC |
+    668                     NCMDQP_TID(I3C_COMMAND_ADDRESS_ASSIGNMENT) |
+    669                     NCMDQP_CMD(I3C_CCC_ENTDAA) | NCMDQP_DEV_INDEX(ret) |
+    670                     NCMDQP_DEV_COUNT(i3c->maxdevs - ret) | NCMDQP_TOC;
+    671 
+    672         renesas_i3c_wait_xfer(i3c, xfer);
+    673 
+    674         newdevs = GENMASK(i3c->maxdevs - cmd->rx_count - 1, 0);
+    675         newdevs &= ~olddevs;
+    676 
+    677         for (pos = 0; pos < i3c->maxdevs; pos++) {
+    678                 if (newdevs & BIT(pos))
+    679                         i3c_master_add_i3c_dev_locked(m, i3c->addrs[pos]);
+
+Should we add checking for i3c_master_add_i3c_dev_locked()?
+
+    680         }
+    681 
+--> 682         return ret < 0 ? ret : 0;
+
+Otherwise this could just be "return 0;"
+
+    683 }
+
+regards,
+dan carpenter
 
 -- 
 linux-i3c mailing list
