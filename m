@@ -4,57 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AAFA5C87FC9
-	for <linux-i3c@archiver.kernel.org>; Sat,  2 Aug 2025 23:27:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A23CCC87FCA
+	for <linux-i3c@archiver.kernel.org>; Sun,  3 Aug 2025 21:04:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=reFMtR9z16EloWCRRM136zPQjn37L3t1U2pRuxX/ASQ=; b=TMccR/HtT8C/VK
-	GLNlaZ4ch4lQdKBxtq4PQG7QzfKp5Y17b5BS5LS+uueV01vLboE4gfNw3mI1jgipe0gwV9GkoHrXi
-	PRM1gZJol0vnMUHQPEC6lNKHpqQfnbDZGu3Ykxa4uyCMSz9FFP1uGBN4VtwW4Kg/Cqw9vQRdvwdMb
-	2nXAQhpQbi30Ow2uKMZErZIeVy9AGENTS8/i5YZnIVilnYqSH4KTwvZjqsYLtYlhX10sNq8Lht12C
-	MKkKXl2229uj6GtY71et5Brjb6bsjCz4Kw9xpzyYPU9LtAClbGM5UJ4tw2lL9cNqbwjdZKxNZSiut
-	ADgIiI1e/hiLQwwBu2kA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=InqcmbMgCYvO1IE9XtcnvYgczH4tMVBJ0h56yINTO6E=; b=WTAW7NT9Aq+M6w
+	7Kg0jg6FvkKvbIdjbFAN+i9eFCSvu9sXGkicMkWAkEmYbBKH6VXSoIOLmq//7vX3aOVlXrgoChOKN
+	75gEZqVQrN+QkgEIQzuHq61GlcT167zQDg+UWV1xK6BvuwgRGUGbP6M6Tnwfu0xCs037u/W05as8e
+	Y5uubWGqpIWMsx84Beg/KRj2q8pOIPcnzTzDzjukssfYp/bYbXYqxSZR1GN+JCRSSaMvvhElSTX7m
+	prSROcpffeIh2GRDW4N0oePQhyQCmzdbff4hroylnh/joPFfaqVGyG6q56t5Br8zX5dXp7Ck8I92S
+	XqNfAF+T7iZVb5HVhaRQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uiLd2-00000007yha-1HsL;
-	Sat, 02 Aug 2025 23:27:04 +0000
-Received: from relay3-d.mail.gandi.net ([2001:4b98:dc4:8::223])
+	id 1uifsK-000000098KI-19uP;
+	Sun, 03 Aug 2025 21:04:12 +0000
+Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uiLcy-00000007yhF-2pX6
+	id 1uifsH-000000098Jv-3cuP
 	for linux-i3c@lists.infradead.org;
-	Sat, 02 Aug 2025 23:27:03 +0000
-Received: by mail.gandi.net (Postfix) with ESMTPSA id C08331F68D;
-	Sat,  2 Aug 2025 23:26:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=gm1;
-	t=1754177215;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type;
-	bh=jYVXXKBsIzJHgP3r/GynpoEXRvPIuovCsUvYjh/Xw3s=;
-	b=lnRTrcz4xln+EzV6jw7K5cKuy3O4Zx6daw+QWRCkDRzXNKJ/ZYixWcMLRqWlhFvRx8nxoS
-	X5xgkbGEgStW/OL3GoxsYiyNY7+v90GCCh6xii3jJubBbATGKcDPZ89uBVcVGo4Umq/IYd
-	kw2Apub4gWXdon0w5EKenT91CoVJLTK94iaNA1srNM1vqfiF4rn3H8DYcvDSY3g8EQThYW
-	S02om6WlBEjeveC6LXBI2wIRXI2/8Y63tLr5DOcEjGFZdSCKVbm00y3RfdBqaumAqlXW9A
-	znuoPUbK0zqUzvhQA8eyc8DsFbbb4X+Lf+h60kklOLbZ1aRiBB3pBjfip90RHw==
-Date: Sun, 3 Aug 2025 01:26:54 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Linus Torvalds <torvalds@linux-foundation.org>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [GIT PULL] I3C changes for 6.17
-Message-ID: <20250802232654918f2886@mail.local>
+	Sun, 03 Aug 2025 21:04:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	sang-engineering.com; h=date:from:to:cc:subject:message-id
+	:references:mime-version:content-type:in-reply-to; s=k1; bh=D/Dk
+	UWZlHZxpetzl0s5BJ4NhTM6PJP/Zbz/9uvwvr8k=; b=g1L3MtH6tZ3X+Vgx4tZq
+	oGDGFUBeEd2yUlgvKxUxS98fruA/MMXDqmIO8au2XiYNlJzlH5eZ+PIY0lD5lk7T
+	7JF4/3Sx+AJTpF/W5C6uThXz0vKVx62wSExAPzuNh7f/tMH4e15gli3fSzod5CAD
+	cytCjKMMVywx9Ms4CzvgGtOLKinvodA4Gunr4sC8YUlw4GWnUa1xrvLFfo8uxnKG
+	7aDncrhx8cT6Y0miHZl4yRtkTJOxm/P0ts4iFfLNo8FTWLVVlmDdlCc/SfLYxnQG
+	RtIJ6/l+fNwk69CgDlKvDl6gk41akBXZ608+eIQZN+HBjfauplSXez6wCnbPbJOT
+	Og==
+Received: (qmail 1651282 invoked from network); 3 Aug 2025 23:04:07 +0200
+Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 3 Aug 2025 23:04:07 +0200
+X-UD-Smtp-Session: l3s3148p1@war2VHw79tYujntd
+Date: Sun, 3 Aug 2025 23:04:07 +0200
+From: Wolfram Sang <wsa+renesas@sang-engineering.com>
+To: Dan Carpenter <dan.carpenter@linaro.org>
+Cc: linux-i3c@lists.infradead.org
+Subject: Re: [bug report] i3c: master: Add basic driver for the Renesas I3C
+ controller
+Message-ID: <aI_Ox9ORhE7kACaF@shikoro>
+References: <aIyzJ7HOENL1qp1l@stanley.mountain>
 MIME-Version: 1.0
 Content-Disposition: inline
-X-GND-State: clean
-X-GND-Score: -100
-X-GND-Cause: gggruggvucftvghtrhhoucdtuddrgeeffedrtdefgddutdejkeelucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuifetpfffkfdpucggtfgfnhhsuhgsshgtrhhisggvnecuuegrihhlohhuthemuceftddunecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjughrpeffhffvvefukfggtggusehttdertddttddvnecuhfhrohhmpeetlhgvgigrnhgurhgvuceuvghllhhonhhiuceorghlvgigrghnughrvgdrsggvlhhlohhnihessghoohhtlhhinhdrtghomheqnecuggftrfgrthhtvghrnhephfegfefhtdehgffgkedtfeelkedugefgtdeugeegffdvkeefjefhkefhffetvdeknecuffhomhgrihhnpehkvghrnhgvlhdrohhrghdpsghoohhtlhhinhdrtghomhenucfkphepvdgrtddumegvtdgrmedvugemieefjedtmeejkegvtdemtgdtvgekmedvkedtieemkegrtgeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehinhgvthepvdgrtddumegvtdgrmedvugemieefjedtmeejkegvtdemtgdtvgekmedvkedtieemkegrtgeipdhhvghloheplhhotggrlhhhohhsthdpmhgrihhlfhhrohhmpegrlhgvgigrnhgurhgvrdgsvghllhhonhhisegsohhothhlihhnrdgtohhmpdhnsggprhgtphhtthhopeefpdhrtghpthhtohepthhorhhvrghlughssehlihhnuhigqdhfohhunhgurghtihhonhdrohhrghdprhgtphhtthhopehlihhnuhigqdhifegtsehlihhsthhsrdhinhhfr
- hgruggvrggurdhorhhgpdhrtghpthhtoheplhhinhhugidqkhgvrhhnvghlsehvghgvrhdrkhgvrhhnvghlrdhorhhg
-X-GND-Sasl: alexandre.belloni@bootlin.com
+In-Reply-To: <aIyzJ7HOENL1qp1l@stanley.mountain>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250802_162701_385601_1F2834BE 
-X-CRM114-Status: GOOD (  12.80  )
+X-CRM114-CacheID: sfid-20250803_140410_175291_78F8779B 
+X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,101 +71,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hello Linus,
+Hi Dan,
 
-Here is the i3c subsystem pull request for 6.17. Most of the changes are
-preparation for the driver for a new controller and the driver itself.
+thanks for the report. I'd argue it is not a bug, though.
 
-The following changes since commit 19272b37aa4f83ca52bdf9c16d5d81bdd1354494:
+>     677         for (pos = 0; pos < i3c->maxdevs; pos++) {
+>     678                 if (newdevs & BIT(pos))
+>     679                         i3c_master_add_i3c_dev_locked(m, i3c->addrs[pos]);
+> 
+> Should we add checking for i3c_master_add_i3c_dev_locked()?
 
-  Linux 6.16-rc1 (2025-06-08 13:44:43 -0700)
+No, I think we should continue to add the remaining devices even if one
+fails. Other driver do it also like above.
 
-are available in the Git repository at:
+>     680         }
+>     681 
+> --> 682         return ret < 0 ? ret : 0;
+> 
+> Otherwise this could just be "return 0;"
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-6.17
+True that, I will send a patch.
 
-for you to fetch changes up to 3b661ca549b9e5bb11d0bc97ada6110aac3282d2:
+Happy hacking,
 
-  i3c: add missing include to internal header (2025-07-31 02:25:17 +0200)
+   Wolfram
 
-----------------------------------------------------------------
-I3C for 6.17
-
-New driver:
- - Renesas I3C controller
-
-Subsystem:
- - use adapter timeout value for I2C transfers
- - don't fail if GETHDRCAP is unsupported
- - replace ENOTSUPP with SUSV4-compliant EOPNOTSUPP
-
-Drivers:
- - svc: Fix npcm845 FIFO_EMPTY quirk
-
-----------------------------------------------------------------
-Arnd Bergmann (1):
-      i3c: fix module_i3c_i2c_driver() with I3C=n
-
-Bagas Sanjaya (1):
-      i3c: Fix i3c_device_do_priv_xfers() kernel-doc indentation
-
-Jorge Marques (4):
-      i3c: master: Initialize ret in i3c_i2c_notifier_call()
-      i3c: master: Add inline i3c_readl_fifo() and i3c_writel_fifo()
-      i3c: master: cdns: Use i3c_writel_fifo() and i3c_readl_fifo()
-      i3c: master: dw: Use i3c_writel_fifo() and i3c_readl_fifo()
-
-Krzysztof Kozlowski (1):
-      i3c: master: cdns: Simplify handling clocks in probe()
-
-Sakari Ailus (2):
-      i3c: master: svc: Remove redundant pm_runtime_mark_last_busy() calls
-      i3c: dw: Remove redundant pm_runtime_mark_last_busy() calls
-
-Stanley Chu (1):
-      i3c: master: svc: Fix npcm845 FIFO_EMPTY quirk
-
-Tommaso Merciai (1):
-      dt-bindings: i3c: Add Renesas I3C controller
-
-Wolfram Sang (14):
-      i3c: dw: use adapter timeout value for I2C transfers
-      i3c: master: cdns: use adapter timeout value for I2C transfers
-      i3c: mipi-i3c-hci: use adapter timeout value for I2C transfers
-      i3c: master: svc: use adapter timeout value for I2C transfers
-      i3c: add patchwork entry to MAINTAINERS
-      i3c: don't fail if GETHDRCAP is unsupported
-      i3c: master: replace ENOTSUPP with SUSV4-compliant EOPNOTSUPP
-      i3c: dw: replace ENOTSUPP with SUSV4-compliant EOPNOTSUPP
-      i3c: master: cdns: replace ENOTSUPP with SUSV4-compliant EOPNOTSUPP
-      i3c: prefix hexadecimal entries in sysfs
-      i3c: Standardize defines for specification parameters
-      i3c: Add more parameters for controllers to the header
-      i3c: master: Add basic driver for the Renesas I3C controller
-      i3c: add missing include to internal header
-
- .../devicetree/bindings/i3c/renesas,i3c.yaml       |  179 +++
- MAINTAINERS                                        |    8 +
- drivers/i3c/device.c                               |   11 +-
- drivers/i3c/internals.h                            |   38 +
- drivers/i3c/master.c                               |   38 +-
- drivers/i3c/master/Kconfig                         |   10 +
- drivers/i3c/master/Makefile                        |    1 +
- drivers/i3c/master/dw-i3c-master.c                 |   47 +-
- drivers/i3c/master/i3c-master-cdns.c               |   90 +-
- drivers/i3c/master/mipi-i3c-hci/core.c             |    2 +-
- drivers/i3c/master/renesas-i3c.c                   | 1404 ++++++++++++++++++++
- drivers/i3c/master/svc-i3c-master.c                |   30 +-
- include/linux/i3c/device.h                         |    4 +-
- include/linux/i3c/master.h                         |   13 +-
- 14 files changed, 1727 insertions(+), 148 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
- create mode 100644 drivers/i3c/master/renesas-i3c.c
-
--- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
 
 -- 
 linux-i3c mailing list
