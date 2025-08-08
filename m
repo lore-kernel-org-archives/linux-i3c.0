@@ -4,61 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52190CA0EE8
-	for <linux-i3c@archiver.kernel.org>; Sun, 14 Sep 2025 20:31:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BA62ECAC587
+	for <linux-i3c@archiver.kernel.org>; Sun, 14 Sep 2025 20:33:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nWYbrDj1wyOflALkSXoDk5hCXzzNqIVB0DaBievABdA=; b=oVcmiyIpCzn+jL
-	0VugWLYPDy/JeqZlEKQoBsJTsnPFrqEzpkW/vXuGOGXz16dUds8bTMvxq8nnf35sENMswIwvapLPS
-	Mc6doJNJ4uvAWd0sr2IHPzHuoKQSCCf9kk9n21OzcxeEwH4b0XIQFNAAU95/FG5DsNYqmYsuItGyk
-	mNs1IMFCr5x4TGuaJKmnSnOLcn9si1fz500Ebk5JeD6zw9JkQReFMwikNuubYoS66c8/f/RRQ6s33
-	kjXBvDq5K3gNxQhB7mI9AcScOQXB/1YmExrLuq2nQCB7VUM2JULcBwpjAW183jpd/HmlCcYmq1Wrn
-	tVfaXbEseOTmNCo/28Bw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:References:In-Reply-To:
+	Message-Id:Cc:To:From:Date:MIME-Version:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Rg3lBi6mpLDQcLdvlwECzPG6dHwZ9G3gk9QDIePm7YU=; b=3IOERHzm8mTS0Pei6Tb67HJlb9
+	IG6UdRwaPYQs9Mabenzta/gT2RIrqw/U33+ct/8kMR4FQt2VB95yYlXPagrnZIBAlhky2PAEGvIlC
+	u8H39xdt02jjDFkjHEhNgsddeDj28YRicLEW5VXpNcBZXW8yhxi/y+fCA9uGSWZShLf8z/GRWpI/E
+	t8n+7vwiwa/AuSRcVJCAhO+fmQpfKNUEB3wCAIWqN//hsDE4hNWuy6mIclgl1cfVt+ASACZxjZRhh
+	51nQkbeb2bZ3KaOWwqAUMO9vevRXqC9MqfT+LMqTCmFHUo2+iYb1JIhGlEI1sw1RArEMcnETWtqeU
+	aHPEAwuw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uxtNx-000000029ao-0PuM;
-	Sun, 14 Sep 2025 20:31:45 +0000
-Received: from smtpout-04.galae.net ([185.171.202.116])
+	id 1uxtPa-000000029k6-2CbR;
+	Sun, 14 Sep 2025 20:33:26 +0000
+Received: from fhigh-a6-smtp.messagingengine.com ([103.168.172.157])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uxtNu-000000029ZG-1gDD
+	id 1ukL84-00000002eUv-1gUs
 	for linux-i3c@lists.infradead.org;
-	Sun, 14 Sep 2025 20:31:43 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-04.galae.net (Postfix) with ESMTPS id 7B6AEC8EC7C
-	for <linux-i3c@lists.infradead.org>; Sun, 14 Sep 2025 20:31:22 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id B2E066063F;
-	Sun, 14 Sep 2025 20:31:38 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id E15A0102F29EC;
-	Sun, 14 Sep 2025 22:31:37 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1757881898; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=IjeRLBUuN8vZVgNTzEg96X4OLopSNi3AXMraeQOZ5kw=;
-	b=dkUPRVQyXNT8qZWiahiF3atZsNt7JeNK9lnrukbvnVVJ6ZyZYunER1chv4Gupj8DD31HSQ
-	No9Y22xpBPcFi2MOfvWIqTgje/z3q0c8nWTucQtWyng6ZCYAjz+PgyEuoRG8UECFZesVzD
-	Vpn31Gn11cNzgSjApthWGTmIkujJ/KdZDfjqISoddOWAfn3LW21HUrVVhXP+yxHz+EO+Y4
-	fA4pHv3rFm2fOoo+sXkgm5hjSXGCyq8VvXHe06bK1+t9szPGqgsyqIHIckl6R7ymWEEelw
-	ySBv8UVVuwmSAPtxctW9Kkv1jWPvdfr/5dPItpuQTU2bzwL2VnZDnSY4/CqHTA==
-Date: Sun, 14 Sep 2025 22:31:37 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: linux-i3c@lists.infradead.org,
-	Jarkko Nikula <jarkko.nikula@linux.intel.com>
-Cc: Frank Li <Frank.Li@nxp.com>
-Subject: Re: [PATCH v4 0/4] mipi-i3c-hci: Make able to work with IOMMU enabled
-Message-ID: <175788160627.376561.17599151969358473070.b4-ty@bootlin.com>
-References: <20250822105630.2820009-1-jarkko.nikula@linux.intel.com>
+	Fri, 08 Aug 2025 11:19:22 +0000
+Received: from phl-compute-05.internal (phl-compute-05.internal [10.202.2.45])
+	by mailfhigh.phl.internal (Postfix) with ESMTP id 4509214000B9;
+	Fri,  8 Aug 2025 07:19:17 -0400 (EDT)
+Received: from phl-imap-02 ([10.202.2.81])
+  by phl-compute-05.internal (MEProxy); Fri, 08 Aug 2025 07:19:17 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=arndb.de; h=cc
+	:cc:content-transfer-encoding:content-type:content-type:date
+	:date:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:subject:subject:to:to; s=fm2; t=1754651957;
+	 x=1754738357; bh=kXnaAaU+jsKKyacddE7SAVJoi6NjE3zSqJlFeFvTb4k=; b=
+	LNYvvmMBTbBeWybL2Kw3FSzKsPy4pv7dV+0OPrALMLQ5L6iMSA3+lRgwslnixhax
+	g5eKgbkpqRrXO+Zj14F7Mlp8Q/oHT1a74HIQO6LUuowcyoNKYb6KjCj3r/NDO7qT
+	e7lZKYFPFzVoengOrfm2pba3TmMQtu62iJTN/e3i+iA5L5fwK+SafzQPKrV1OacK
+	z0w8NSN7F2x1V1GtVc/nKvslXjbFneYrItx9oH39GrBoE3hfB5fOZb9z4uE30q/4
+	zyFgzoEzkA4pyBRONSkSocWarJeAcd7xAL1WunzeiJuMYGALSq4TpFPtIWBshVED
+	Mv0kXNuSusgbGPxPJGdRoA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-transfer-encoding
+	:content-type:content-type:date:date:feedback-id:feedback-id
+	:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:subject:subject:to:to:x-me-proxy
+	:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=1754651957; x=
+	1754738357; bh=kXnaAaU+jsKKyacddE7SAVJoi6NjE3zSqJlFeFvTb4k=; b=A
+	fRLLUePzBr/jPMssVbEwp0dBTQYQ1tculYdxIbN6YKZ36tPwK09We8z+SB9zrKLU
+	wTRJHVKNG3iH9ZNR0fm2Dk7h+qrd+0eYpPffK6JczCxpXDGu9q2g2xkqG1TrW0/n
+	kw5/P5E5QCp5RpNRuoRsFBB/n/fSa0xpTO+cphBiwMow3oZ35vZ48mszXkiFsC4b
+	2Zxnml0aVz8oA58gcrEbfShtV67vntn7bFkpl6Jv12k7COGJI0nDtjj32TMGWaMF
+	GWVOlSjN4zdCR8jT+pedsZfNL+jv85LCv3b+uvNkVaUtqJsePruRpedtuEESIuX/
+	KJEZG3c8u458aY0Lp6wOA==
+X-ME-Sender: <xms:NN2VaAkTOPtl1Duy_rFCVmo8eWnDDMUMAJEHjslptaCxo0AjRvgptQ>
+    <xme:NN2VaP1MPPpfhGosr1JQYolixELj161s6ssdj41Ld3uM-0ThcYPXaSupNBGZFQfHA
+    bJBXc_9MGuBsDyeDTI>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeffedrtdefgdduvdefieejucetufdoteggodetrf
+    dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
+    rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
+    gurhepofggfffhvfevkfgjfhfutgfgsehtjeertdertddtnecuhfhrohhmpedftehrnhgu
+    uceuvghrghhmrghnnhdfuceorghrnhgusegrrhhnuggsrdguvgeqnecuggftrfgrthhtvg
+    hrnhephfdthfdvtdefhedukeetgefggffhjeeggeetfefggfevudegudevledvkefhvdei
+    necuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomheprghrnh
+    gusegrrhhnuggsrdguvgdpnhgspghrtghpthhtohepuddtpdhmohguvgepshhmthhpohhu
+    thdprhgtphhtthhopehjohhrghgvrdhmrghrqhhuvghssegrnhgrlhhoghdrtghomhdprh
+    gtphhtthhopegrlhgvgigrnhgurhgvrdgsvghllhhonhhisegsohhothhlihhnrdgtohhm
+    pdhrtghpthhtoheplhhkphesihhnthgvlhdrtghomhdprhgtphhtthhopehgvggvrhhtse
+    hlihhnuhigqdhmieekkhdrohhrghdprhgtphhtthhopehlihhnuhigqdhifegtsehlihhs
+    thhsrdhinhhfrhgruggvrggurdhorhhgpdhrtghpthhtohepfhhrrghnkhdrlhhisehngi
+    hprdgtohhmpdhrtghpthhtohepfihsrgdorhgvnhgvshgrshesshgrnhhgqdgvnhhgihhn
+    vggvrhhinhhgrdgtohhmpdhrtghpthhtoheplhhinhhugidqkhgvrhhnvghlsehvghgvrh
+    drkhgvrhhnvghlrdhorhhgpdhrtghpthhtoheplhhinhhugidqrhgvnhgvshgrshdqshho
+    tgesvhhgvghrrdhkvghrnhgvlhdrohhrgh
+X-ME-Proxy: <xmx:NN2VaPfKzLey5jIWnTY5EzywwVvpYHHqb1F_6ar5MG7mOcrkgHoVCw>
+    <xmx:NN2VaN2YjoUMs2-cilwrnn7HNjvsBmddt6wl30xOzVchbWImC9DGkg>
+    <xmx:NN2VaP92roOkzkNrIDCWAj-jtFgv8XnBeuKYthWiHezMZr1uSRem5g>
+    <xmx:NN2VaK7fEHW_m1sP-CL54WPfy6aS3HhRVzEG4ki90w88LkHXPN-9vw>
+    <xmx:Nd2VaOjkbVEo_yK3_kGPZZVhO_tpqTL1y8bh4a51LdkjOzE6SpJmbaef>
+Feedback-ID: i56a14606:Fastmail
+Received: by mailuser.phl.internal (Postfix, from userid 501)
+	id 6D27E700065; Fri,  8 Aug 2025 07:19:16 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250822105630.2820009-1-jarkko.nikula@linux.intel.com>
-X-Last-TLS-Session-Version: TLSv1.3
+X-ThreadId: T0d336f21a661302d
+Date: Fri, 08 Aug 2025 13:18:46 +0200
+From: "Arnd Bergmann" <arnd@arndb.de>
+To: "Geert Uytterhoeven" <geert@linux-m68k.org>,
+ "Alexandre Belloni" <alexandre.belloni@bootlin.com>
+Cc: "Wolfram Sang" <wsa+renesas@sang-engineering.com>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ linux-kernel@vger.kernel.org, "kernel test robot" <lkp@intel.com>,
+ "Frank Li" <Frank.Li@nxp.com>, "Jorge Marques" <jorge.marques@analog.com>,
+ "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
+ sparclinux <sparclinux@vger.kernel.org>
+Message-Id: <b7cf1db6-317a-453b-a605-adec7e126fc6@app.fastmail.com>
+In-Reply-To: <CAMuHMdUwC=TNvvwf0_sgSSYTBGeq8UX5kRFN5kg3mFJ7wVA3kw@mail.gmail.com>
+References: <20250807043456.1624-2-wsa+renesas@sang-engineering.com>
+ <2025080720214218750df5@mail.local>
+ <CAMuHMdUwC=TNvvwf0_sgSSYTBGeq8UX5kRFN5kg3mFJ7wVA3kw@mail.gmail.com>
+Subject: Re: [PATCH] i3c: remove 'const' from FIFO helpers
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250914_133142_634924_0CD2A094 
-X-CRM114-Status: UNSURE (   7.04  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250808_041921_024685_3C1698D2 
+X-CRM114-Status: GOOD (  17.51  )
+X-Mailman-Approved-At: Sun, 14 Sep 2025 13:33:23 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,34 +124,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, 22 Aug 2025 13:56:26 +0300, Jarkko Nikula wrote:
-> Here's the 4th version of common I3C core DMA mapping and bounce buffering
-> handling and making the MIPI I3C HCI able to work with IOMMU enabled.
-> 
-> Changes to the v3:
-> - patch 1/4: Renamed variable "need_bounce" to "force_bounce" and document
->   both true and false argument values.
-> - patch 3/4: Added Reviewed-by tag.
-> 
-> [...]
+On Fri, Aug 8, 2025, at 11:43, Geert Uytterhoeven wrote:
+> On Fri, 8 Aug 2025 at 01:09, Alexandre Belloni <alexandre.belloni@bootlin.com> wrote:
+>> On 07/08/2025 06:31:24+0200, Wolfram Sang wrote:
+>> >
+>> > I still wonder why SPARC discards the const but since nobody seems to be
+>> > commenting on that, I guess the fastest way to get the build error out
+>> > of Linus' tree is to adapt the usage in I3C.
+>>
+>> My plan was to let sparc people handle their mess, there is no reason
+>> const should be discarded.
+>
+> Fully agreed.
+>
+> Note that it is not just the const keyword that is missing from the
+> SPARC implementation, but also the volatile keyword.
 
-Applied, thanks!
+The last time this came up, I actually tried doing a patch to
+remove the 'volatile' keywords from all asm/io.h on all
+architectures, and from all drivers that currently pass it,
+as I don't think it has any effect other than avoid build
+warnings for some prehistoric drivers.
 
-[1/4] i3c: master: Add helpers for DMA mapping and bounce buffer handling
-      https://git.kernel.org/i3c/c/f339a80c9622
-[2/4] i3c: mipi-i3c-hci: Use core helpers for DMA mapping and bounce buffering
-      https://git.kernel.org/i3c/c/ed85e2816399
-[3/4] i3c: mipi-i3c-hci: Use physical device pointer with DMA API
-      https://git.kernel.org/i3c/c/7216d8d38563
-[4/4] i3c: mipi-i3c-hci: Use own DMA bounce buffer management for I2C transfers
-      https://git.kernel.org/i3c/c/f49ffbdcc689
+On a related note, I'm fairly sure the i3c_readl_fifo() function
+is not portable and breaks on most big-endian platforms: The 
+readsl() implementation on big-endian targets usually skips the
+implied byteswap from readl() since it is writing a bytestream,
+but then the final readl() is defined as reading a four-byte
+little-endian word, which tends to require an explicit swap
+on big-endian targets. (there are some exceptions where the
+PCI host bridge adds an extra byteswap, or where the CPU swaps
+everything on 32-bit boundaries, rather than the unit of the
+access).
 
-Best regards,
+I think using 
 
--- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+    readsl(addr, &tmp, 1);
+
+instead of the final readl() should be portable here.
+Same for the writel() of course.
+
+     Arnd
 
 -- 
 linux-i3c mailing list
