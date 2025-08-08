@@ -4,63 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 139C5CA0EE8
-	for <linux-i3c@archiver.kernel.org>; Sun, 14 Sep 2025 20:33:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6531CAC598
+	for <linux-i3c@archiver.kernel.org>; Sun, 14 Sep 2025 20:33:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=jHpOvea/7k6Ljb8VPmUkArJ7WDHDbAClyp60MyWt8B8=; b=ZwqLnkF2cqOOXX
-	WloRqUS+wfMjSOWSCvwjYl3SkJ91NtvA1dmP0K1BpdKd5BUzDsN5hcXT4vPCq3uKUzl5mpjC9Lq56
-	V7weFJgO3wPO5+oJszzvZyaRdkGHs7UZISFnhppiylntxYkSuS9T8MQdVJ069HGmpbGRyqKCOiZ32
-	w0/N4Mgn0r/dJ624f4TmRTj1Y2TGyvYVpY9GbGuMv0rD2QxK+UaFjH9rWDrh/XKJX0NgzMfhR+ajy
-	UDfGpbuEoCO2lXj82sJZQFgh7j586kDo9WBa/AV0lLoOHLcOqxr0LMmKrzo1HG1vQGKgkZ/oKFjqU
-	RKN7ytZLFu1RmxQQlXqQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xqBgrr18+mKHMUhYvscKDozmy9p5um1muHARpKXD0Fw=; b=kc9M3ldFftN3Is
+	gm8fA99zi3v71VF8cwgXg1eIuRTrCJ+Cj7bh9jrHu5XMCYCdhRVKUvNrUDhqyq+gWM/yIirsq5FTD
+	9wQOdLLszFREt6CWRvUkowdGRJQPERH3oNS/VXFe/LP4LUpaYBtBCxmvm2lbPUskTZ8Gni5RRRewp
+	Vn2YTsmWTuR2qwPTQ8rj9FGfMuzPo+emxa3fvpoGyrzkGvXx3r/x+/zQ1vQfb2YnIp3jHC6DQDA5/
+	KW54GXrgdnSJaqFQGZL81tO/lJeiNkIZhwvo3x1G7msuzm3MYxjHifAjsd1vEBqEIMMzla6WfW9Jn
+	tOzf1m6zrZWzmR9IaCNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uxtPa-000000029kC-3Deb;
-	Sun, 14 Sep 2025 20:33:26 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1uxtPc-000000029l7-1Y8C;
+	Sun, 14 Sep 2025 20:33:28 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ukN1W-00000002uOg-491r
+	id 1ukP3l-00000003BKJ-0Rjj
 	for linux-i3c@lists.infradead.org;
-	Fri, 08 Aug 2025 13:20:44 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 0BE64201BE9;
-	Fri,  8 Aug 2025 15:20:39 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com [134.27.226.22])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E8FE7201BE4;
-	Fri,  8 Aug 2025 15:20:38 +0200 (CEST)
-Received: from lsv15573.swis.ro-buh01.nxp.com (lsv15573.swis.ro-buh01.nxp.com [10.172.0.77])
-	by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id CB8AD2035C;
-	Fri,  8 Aug 2025 15:20:37 +0200 (CEST)
-From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-To: linux-kernel@vger.kernel.org,
-	linux-i3c@lists.infradead.org,
-	alexandre.belloni@bootlin.com,
-	krzk+dt@kernel.org,
-	robh@kernel.org,
-	conor+dt@kernel.org,
-	devicetree@vger.kernel.org,
-	broonie@kernel.org,
-	lee@kernel.org
-Cc: vikash.bansal@nxp.com,
-	priyanka.jain@nxp.com,
-	shashank.rebbapragada@nxp.com,
-	Frank.Li@nxp.com,
-	Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-Subject: [PATCH v3 1/2] dt-bindings: i3c: Add NXP P3H2x4x i3c-hub support
-Date: Fri,  8 Aug 2025 16:20:32 +0300
-Message-Id: <20250808132033.3996614-1-aman.kumarpandey@nxp.com>
-X-Mailer: git-send-email 2.25.1
+	Fri, 08 Aug 2025 15:31:10 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id 59F975C695B;
+	Fri,  8 Aug 2025 15:31:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CC29AC4CEED;
+	Fri,  8 Aug 2025 15:31:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1754667068;
+	bh=uvXvdqCtcDLr9TJV+3JSLTg+Qsmj24HevLK5HBH2JNQ=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=YtH5F5g7f2l+hwMXj4nn7vWmfIJf8VJpscmPf33Rl3+Ozb83Bk+RG3oDaZObqvwq7
+	 wEJN+bvWBJ3oC61U3EDC75upXLJ6saOcvrVP29C0qw7hARTQ8Bi531ZpZ/RUygPE2f
+	 FNaoM5uRjCe77hTdmXEv3Xlyx+Cd0UwWS7Oz4jOjad8aT+yhRQAktUhnj+X57q+jL8
+	 lSaJeWs/7WbNmgK2NsACJnzhedlE88ugW5SWR5O5QnuuBDKOD+XG094xpAtqisMWLw
+	 oxPw56Jw/nzR7roxCREfzufutDKMg40QqPDzriVu8CJ5+EBEFE/EZd1H7jf27TjNCv
+	 nyjPiXmHVwDmg==
+From: Sasha Levin <sashal@kernel.org>
+To: patches@lists.linux.dev,
+	stable@vger.kernel.org
+Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	kernel test robot <lkp@intel.com>,
+	Frank Li <Frank.Li@nxp.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Sasha Levin <sashal@kernel.org>,
+	linux-i3c@lists.infradead.org
+Subject: [PATCH AUTOSEL 6.16-5.4] i3c: add missing include to internal header
+Date: Fri,  8 Aug 2025 11:30:46 -0400
+Message-Id: <20250808153054.1250675-6-sashal@kernel.org>
+X-Mailer: git-send-email 2.39.5
+In-Reply-To: <20250808153054.1250675-1-sashal@kernel.org>
+References: <20250808153054.1250675-1-sashal@kernel.org>
 MIME-Version: 1.0
-X-Virus-Scanned: ClamAV using ClamSMTP
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.16
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250808_062043_421914_814D9C5A 
-X-CRM114-Status: GOOD (  19.01  )
-X-Mailman-Approved-At: Sun, 14 Sep 2025 13:33:23 -0700
+X-CRM114-CacheID: sfid-20250808_083109_229184_D481C06D 
+X-CRM114-Status: GOOD (  14.30  )
+X-Mailman-Approved-At: Sun, 14 Sep 2025 13:33:22 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,370 +81,94 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add bindings for the NXP P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841)
-multiport I3C hub family. These devices connect to a host via
-I3C/I2C/SMBus and allow communication with multiple downstream
-peripherals.
+From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 
-Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
+[ Upstream commit 3b661ca549b9e5bb11d0bc97ada6110aac3282d2 ]
 
+LKP found a random config which failed to build because IO accessors
+were not defined:
+
+   In file included from drivers/i3c/master.c:21:
+   drivers/i3c/internals.h: In function 'i3c_writel_fifo':
+>> drivers/i3c/internals.h:35:9: error: implicit declaration of function 'writesl' [-Werror=implicit-function-declaration]
+
+Add the proper header to where the IO accessors are used.
+
+Reported-by: kernel test robot <lkp@intel.com>
+Closes: https://lore.kernel.org/oe-kbuild-all/202507150208.BZDzzJ5E-lkp@intel.com/
+Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+Link: https://lore.kernel.org/r/20250717120046.9022-2-wsa+renesas@sang-engineering.com
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
-V1 -> V2: Cleaned up coding style and addressed review comments
-V2 -> V3: Added mfd device support for i3c hub and regulator.
----
- .../bindings/mfd/nxp,p3h2840-i3c-hub.yaml     | 320 ++++++++++++++++++
- MAINTAINERS                                   |   8 +
- 2 files changed, 328 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/mfd/nxp,p3h2840-i3c-hub.yaml
 
-diff --git a/Documentation/devicetree/bindings/mfd/nxp,p3h2840-i3c-hub.yaml b/Documentation/devicetree/bindings/mfd/nxp,p3h2840-i3c-hub.yaml
-new file mode 100644
-index 000000000000..490595c94627
---- /dev/null
-+++ b/Documentation/devicetree/bindings/mfd/nxp,p3h2840-i3c-hub.yaml
-@@ -0,0 +1,320 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+# Copyright 2025 NXP
-+
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/mfd/nxp,p3h2840-i3c-hub.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: NXP P3H2X4X I3C HUB
-+
-+maintainers:
-+  - Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-+  - Vikash Bansal <vikash.bansal@nxp.com>
-+
-+description: |
-+  P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841) is a family of multiport I3C
-+  hub devices that connect to:-
-+  1. A host CPU via I3C/I2C/SMBus bus on upstream side and connect to multiple
-+     peripheral devices on the downstream  side.
-+  2. Have two Controller Ports which can support either
-+     I2C/SMBus or I3C buses and connect to a CPU, BMC or SOC.
-+  3. P3H2840/ P3H2841 are 8 port I3C hub with eight I3C/I2C Target Port.
-+  4. P3H2440/ P3H2441 are 4 port I3C hub with four I3C/I2C Target Port.
-+     Target ports can be configured as I2C/SMBus, I3C or GPIO and connect to
-+     peripherals.
-+
-+allOf:
-+  - $ref: i3c.yaml#
-+
-+properties:
-+  compatible:
-+   items:
-+     - const: nxp,p3h2840
-+
-+  cp0-ldo-microvolt:
-+    description:
-+      Selects the voltage for controller Port 0, in microvolts.
-+    enum: [1000000, 1100000, 1200000, 1800000]
-+    default: 1000000
-+
-+  cp1-ldo-microvolt:
-+    description:
-+      Selects the voltage for controller Port 1, in microvolts.
-+    enum: [1000000, 1100000, 1200000, 1800000]
-+    default: 1000000
-+
-+  tp0145-ldo-microvolt:
-+    description:
-+      Selects the voltage for target Port 0/1/4/5, in microvolts.
-+    enum: [1000000, 1100000, 1200000, 1800000]
-+    default: 1000000
-+
-+  tp2367-ldo-microvolt:
-+    description:
-+      Selects the voltage for target Port 2/3/6/7, in microvolts.
-+    enum: [1000000, 1100000, 1200000, 1800000]
-+    default: 1000000
-+
-+  tp0145-pullup-ohms:
-+    description:
-+      Selects the pull up resistance for target Port 0/1/4/5, in ohms.
-+    enum: [250, 500, 1000, 2000]
-+    default: 500
-+
-+  tp2367-pullup-ohms:
-+    description:
-+      Selects the pull up resistance for target Port 2/3/6/7, in ohms.
-+    enum: [250, 500, 1000, 2000]
-+    default: 500
-+
-+  cp0-io-strength-ohms:
-+    description:
-+      Selects the IO drive strength for controller Port 0, in ohms.
-+    enum: [20, 30, 40, 50]
-+    default: 20
-+
-+  cp1-io-strength-ohms:
-+    description:
-+      Selects the IO drive strength for controller Port 1, in ohms.
-+    enum: [20, 30, 40, 50]
-+    default: 20
-+
-+  tp0145-io-strength-ohms:
-+    description:
-+      Selects the IO drive strength for target port 0/1/4/5, in ohms.
-+    enum: [20, 30, 40, 50]
-+    default: 20
-+
-+  tp2367-io-strength-ohms:
-+    description:
-+      Selects the IO drive strength for target port 2/3/6/7, in ohms.
-+    enum: [20, 30, 40, 50]
-+    default: 20
-+
-+  cp0-supply:
-+    description: Phandle to voltage regulator providing power to controller port 0.
-+
-+  cp1-supply:
-+    description: Phandle to voltage regulator providing power to controller port 1.
-+
-+  tp0145-supply:
-+    description: Phandle to voltage regulator providing power to target port 0/1/4/5.
-+
-+  tp2367-supply:
-+    description: Phandle to voltage regulator providing power to target port 2/3/6/7.
-+
-+  regulators:
-+    type: object
-+    additionalProperties: false
-+
-+    properties:
-+      cp0:
-+        type: object
-+        $ref: /schemas/regulator/regulator.yaml#
-+        unevaluatedProperties: false
-+
-+      cp1:
-+        type: object
-+        $ref: /schemas/regulator/regulator.yaml#
-+        unevaluatedProperties: false
-+
-+      tp0145:
-+        type: object
-+        $ref: /schemas/regulator/regulator.yaml#
-+        unevaluatedProperties: false
-+
-+      tp2367:
-+        type: object
-+        $ref: /schemas/regulator/regulator.yaml#
-+        unevaluatedProperties: false
-+
-+patternProperties:
-+  "@[0-7]$":
-+    type: object
-+    additionalProperties: false
-+    description:
-+      I3C HUB Target Port child, should be named as target-port@<target-port-id>
-+
-+    properties:
-+      reg:
-+        description:
-+          The I3C HUB Target Port number.
-+        minimum: 0
-+        maximum: 0x07
-+
-+      mode:
-+        enum: [i3c, smbus, i2c, gpio]
-+        description:
-+          I3C HUB Target Port mode setting to control Target Port functionality.
-+          As per now it is only supporting SMBus, i2c and i3c( i2c mode will work
-+          with hub network).
-+
-+      pullup-enable:
-+        type: boolean
-+        description:
-+          Enables the on-die pull-up for Target Port.
-+
-+      ibi-enable:
-+        type: boolean
-+        description:
-+          Enables the IBI for Target Port.
-+
-+      local-dev:
-+        $ref: /schemas/types.yaml#/definitions/uint8-array
-+        description:
-+          SMBus Target Agent can discard transactions of downstream device and not generate an IBI to upstream I3C Hub
-+          Controller Port. Up to 8 device (addresses) can be configured as local Devices.
-+
-+          This property is optional. If not provided, local device list will empty.
-+
-+      hub_bridge_en:
-+        type: boolean
-+        description:
-+          Enables the hub network (Controller port -> target port).
-+
-+    patternProperties:
-+      "@[0-9a-f]+$":
-+        type: object
-+        additionalProperties: false
-+        description: |
-+          I2C child, should be named: <device-type>@<i2c-address>
-+
-+        properties:
-+          compatible:
-+            description:
-+              Compatible of the I2C/SMBus downstream device.
-+
-+          reg:
-+            description: |
-+              I2C address, Downstream device address which are connected to target port.
-+            minimum: 0
-+            maximum: 0x7f
-+
-+        required:
-+          - compatible
-+          - reg
-+
-+      "@[0-9a-f]+,[0-9a-f]+$":
-+        type: object
-+        additionalProperties: false
-+        description: |
-+          I3C child, should be named: <device-type>@<static-i2c-address>,<i3c-pid>
-+
-+        properties:
-+          reg:
-+            items:
-+              - items:
-+                  - description:
-+                      Encodes the static I2C address. Should be 0 if the device does
-+                      not have one (0 is not a valid I2C address).
-+                    minimum: 0
-+                    maximum: 0x7f
-+                  - description: |
-+                      First half of the Provisioned ID (following the PID
-+                      definition provided by the I3C specification).
-+
-+                      Contains the manufacturer ID left-shifted by 1.
-+                  - description: |
-+                      Second half of the Provisioned ID (following the PID
-+                      definition provided by the I3C specification).
-+
-+                      Contains the ORing of the part ID left-shifted by 16,
-+                      the instance ID left-shifted by 12 and extra information.
-+
-+          assigned-address:
-+            $ref: /schemas/types.yaml#/definitions/uint32
-+            minimum: 0x1
-+            maximum: 0xff
-+            description:
-+              Dynamic address to be assigned to this device. In case static address is
-+              present (first cell of the reg property != 0), this address is assigned
-+              through SETDASA. If static address is not present, this address is assigned
-+              through SETNEWDA after assigning a temporary address via ENTDAA.
-+
-+        required:
-+          - reg
-+
-+unevaluatedProperties: false
-+
-+examples:
-+  - |
-+    i3c {
-+        #address-cells = <3>;
-+        #size-cells = <0>;
-+
-+        hub@70,236153000c2 {
-+            reg = <0x70 0x236 0x3000c2>;
-+            #address-cells = <1>;
-+            #size-cells = <0>;
-+            assigned-address = <0x50>;
-+
-+            cp0-ldo-microvolt = <1800000>;
-+            cp1-ldo-microvolt = <1800000>;
-+            tp0145-ldo-microvolt = <1800000>;
-+            tp2367-ldo-microvolt = <1800000>;
-+            tp0145-pullup-ohm = <1000>;
-+            tp2367-pullup-ohm = <1000>;
-+            cp0-io-strength-ohm = <50>;
-+            cp1-io-strength-ohm = <50>;
-+            tp0145-io-strength-ohm = <50>;
-+            tp2367-io-strength-ohm = <50>;
-+            cp0-supply = <&cp0>;
-+            tp0145-supply = <&tp0145>;
-+
-+            regulators {
-+              cp0 {
-+                regulator-name = "cp0";
-+                regulator-min-microvolt = <1000000>;
-+                regulator-max-microvolt = <1800000>;
-+              };
-+
-+              cp1 {
-+                regulator-name = "cp1";
-+                regulator-min-microvolt = <1000000>;
-+                regulator-max-microvolt = <1800000>;
-+              };
-+
-+              tp0145 {
-+                regulator-name = "tp0145";
-+                regulator-min-microvolt = <1000000>;
-+                regulator-max-microvolt = <1800000>;
-+              };
-+
-+              tp2367 {
-+                regulator-name = "tp2367";
-+                regulator-min-microvolt = <1000000>;
-+                regulator-max-microvolt = <1800000>;
-+              };
-+            };
-+
-+            target-port@0 {
-+                reg = <0x0>;
-+                #address-cells = <1>;
-+                #size-cells = <0>;
-+                mode = "smbus";
-+                pullup-enable;
-+
-+                eeprom@57 {
-+                    compatible = "atmel,24c32";
-+                    reg = <0x57>;
-+                    pagesize = <32>;
-+                    wp-gpios = <&gpio2 2 0>;
-+                    num-addresses = <8>;
-+                };
-+            };
-+
-+            target-port@2 {
-+                reg = <0x2>;
-+                #address-cells = <1>;
-+                #size-cells = <0>;
-+                mode = "i3c";
-+                pullup-enable;
-+
-+                sensor@68,39200144004 {
-+                  reg = <0x68 0x392 0x144004>;
-+                  assigned-address = <0xa>;
-+                };
-+            };
-+        };
-+    };
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 4262e8d833c4..b33e90030188 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -15477,6 +15477,14 @@ S:	Maintained
- F:	Documentation/devicetree/bindings/sound/nxp,tfa989x.yaml
- F:	sound/soc/codecs/tfa989x.c
+LLM Generated explanations, may be completely bogus:
+
+**Backport Status: YES**
+
+This commit should be backported to stable kernel trees for the
+following reasons:
+
+1. **Fixes a real build failure**: The commit fixes an actual
+   compilation error where `writesl` function is used without including
+   the proper header (`<linux/io.h>`). This is a concrete build
+   regression that prevents kernel compilation in certain
+   configurations.
+
+2. **Minimal and safe change**: The fix is extremely simple - it only
+   adds a single `#include <linux/io.h>` line to the internals.h header
+   file. This is a one-line change with virtually no risk of introducing
+   regressions.
+
+3. **Detected by kernel test robot**: The issue was found by the Linux
+   Kernel Test Robot (LKP), indicating it affects real-world build
+   configurations that are tested regularly. The error message shows:
+  ```
+  drivers/i3c/internals.h:35:9: error: implicit declaration of function
+  'writesl'
+  ```
+
+4. **Affects core I3C infrastructure**: The internals.h header is
+   included by core I3C files (master.c and device.c), so a build
+   failure here can prevent the entire I3C subsystem from compiling.
+
+5. **Recent regression**: Looking at the git history, the
+   `i3c_writel_fifo()` and `i3c_readl_fifo()` functions were recently
+   added in commit 733b439375b4, and are already being used by I3C
+   controller drivers (dw-i3c-master.c and cdns-i3c-master.c as shown in
+   commits 6e055b1fb2fc and c20d3fa70491). This missing include is a
+   regression that breaks builds after these recent changes.
+
+6. **Clear stable backport criteria**: This meets the stable kernel
+   rules perfectly:
+   - It fixes a real bug (build failure)
+   - It's obviously correct (missing include for used functions)
+   - It's a minimal change (1 line)
+   - No new features or architectural changes
+   - Zero risk of functional regression
+
+The commit is a textbook example of what should be backported to stable
+trees - a simple, obvious fix for a build regression with no side
+effects.
+
+ drivers/i3c/internals.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
+index 433f6088b7ce..ce04aa4f269e 100644
+--- a/drivers/i3c/internals.h
++++ b/drivers/i3c/internals.h
+@@ -9,6 +9,7 @@
+ #define I3C_INTERNALS_H
  
-+NXP P3H2X4X I3C-HUB DRIVER
-+M:	Vikash Bansal <vikash.bansal@nxp.com>
-+M:	Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-+L:	linux-kernel@vger.kernel.org
-+L:	linux-i3c-owner@lists.infradead.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/i3c/p3h2x4x_i3c_hub.yaml
-+
- NZXT-KRAKEN2 HARDWARE MONITORING DRIVER
- M:	Jonas Malaco <jonas@protocubo.io>
- L:	linux-hwmon@vger.kernel.org
+ #include <linux/i3c/master.h>
++#include <linux/io.h>
+ 
+ void i3c_bus_normaluse_lock(struct i3c_bus *bus);
+ void i3c_bus_normaluse_unlock(struct i3c_bus *bus);
 -- 
-2.25.1
+2.39.5
 
 
 -- 
