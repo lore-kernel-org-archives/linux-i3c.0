@@ -4,75 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71FB2CA0EE6
-	for <linux-i3c@archiver.kernel.org>; Tue, 19 Aug 2025 06:27:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 247FCCA0EFC
+	for <linux-i3c@archiver.kernel.org>; Tue, 19 Aug 2025 09:42:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OCDXIHbdgT/JL9q63NZ5iqpCfJgjowRh79XDddlpDBM=; b=jpyVpJYUOykaJN
-	mHBB+YLiyxcJPabOJANcN/4Y1ZO1jtdeG/sem2BugV25uxXoHOibYpzWvO3mx5lNWfQ4yjWqxj/C8
-	EABQToEeUasf8XKfiSWcSKFLP0UJKWXPH3+7EvUkOFIZK3ExD7sC/b86vosJTG50p0A0Bmu1F9enF
-	bC1hK6P+/kdowcwJpMiuBJ+VPmkLjLJjOxsmXE7xWQTzXpcM8ENRPK1F6HFKaGkgCuBuyxdm6RPs5
-	/huF2mbhRgiZifOWbWfTBn1Zlvd4UZKx7hEskIADkat8qsKznM9kgeLULhx6LMgthoVOPSYyuJBNh
-	2xbGfvQWJllfskyspE1w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FQhni/bNaeBbciZdBfOCvaNojSNu6jbfubSRkgjWbyw=; b=BSBSNSyPfUSSlb
+	6vJJV9gCyHoM7QCIzb/NmbSSd4P7jb+TyBTYUtsqHN2buFPLGods3LHjybRYa7BGtxR0GMhIWR3Eq
+	VT2kqEDVIUpJQsoSy3F2+nWiTc7cfuD3foSQfYV4/nIg9p7HIdKVBsK71p3eBZbqD6bqMdoktzBb/
+	+C4LwKIGOSnaQ2APTtg6Zl2EwXBvov4uRdm/c0DKCtAvrw8vrYgYGTVhEABOWJFHjpe3ypRwYrZKt
+	BecRAEMASdMaj0/Zrt5t0pYbscDHJ4rFrm+ozw9uRnCtZ9hjzkEIbJosxtYuj9u9/BPea8+0FKCJA
+	avzwdiiCr52NKUaqd9MA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uoFoL-00000009Wvi-0qJG;
-	Tue, 19 Aug 2025 06:27:09 +0000
-Received: from mgamail.intel.com ([192.198.163.14])
+	id 1uoIqy-0000000A0Ir-3dJf;
+	Tue, 19 Aug 2025 09:42:04 +0000
+Received: from mail-pl1-x629.google.com ([2607:f8b0:4864:20::629])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uoFoJ-00000009Wv4-1011
+	id 1uoIKd-00000009th2-0Mz0
 	for linux-i3c@lists.infradead.org;
-	Tue, 19 Aug 2025 06:27:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1755584827; x=1787120827;
-  h=message-id:date:mime-version:subject:to:cc:references:
-   from:in-reply-to:content-transfer-encoding;
-  bh=xK7ivau+1ivhcjsujlzr0F6Lwsz8B6//Wz8LVwOh5f4=;
-  b=BLxYOq0s6jZCS0dIx40EWONAT82vntWtaGlpypOb26lOR6AF8uyKIs6W
-   /JNwqgdZ0jQkOd1FXWMscgWbuc8NYlo5VhfChxMxt/0549rpYZebrI37O
-   OF7rc+A+Xgb69w0Ev+3onB/bh/s+cHvrgQcMyqdM5KVkSWdoadyG3jXKs
-   2IncArWmhmlQRmqCyMoq+Z9dsK6QOZY2TYxs5DohqY4uO6/p3ZKzNtcNk
-   1LfjiIY3H4Qh4ebgEbC2h4yP7yNqRO2m9rTBCV1nypS+IK5AjdH27UWCi
-   x2KGymqEFOpUih4NFM4FWjto3uy9wgZj1iZ2Jub4yjQC2KpaLX+G+UoiE
-   A==;
-X-CSE-ConnectionGUID: uX+IowiSSkSHwvlsiyXMIQ==
-X-CSE-MsgGUID: bGRGAK88SF+IPIyx1E3HvQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11526"; a="57889628"
-X-IronPort-AV: E=Sophos;i="6.17,300,1747724400"; 
-   d="scan'208";a="57889628"
-Received: from fmviesa005.fm.intel.com ([10.60.135.145])
-  by fmvoesa108.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 18 Aug 2025 23:27:07 -0700
-X-CSE-ConnectionGUID: v8+aOGLgSBKLAt2ZkJP1/Q==
-X-CSE-MsgGUID: PIsrqnH2TO6E8oWmjEN8Ig==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.17,300,1747724400"; 
-   d="scan'208";a="171993916"
-Received: from mylly.fi.intel.com (HELO [10.237.72.51]) ([10.237.72.51])
-  by fmviesa005.fm.intel.com with ESMTP; 18 Aug 2025 23:27:05 -0700
-Message-ID: <30b5a638-a571-4cd6-9779-fc5608cbbeca@linux.intel.com>
-Date: Tue, 19 Aug 2025 09:27:04 +0300
+	Tue, 19 Aug 2025 09:08:40 +0000
+Received: by mail-pl1-x629.google.com with SMTP id d9443c01a7336-24457f3edd4so36093045ad.0
+        for <linux-i3c@lists.infradead.org>; Tue, 19 Aug 2025 02:08:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1755594518; x=1756199318; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=IM574u9BvfLwspshaKYvYoAzraPVyBpTcdO8NtZkO9I=;
+        b=LbpLWqIBvMxvzZZBiua6XmdqcMR1GAZtfErieIGNN8KSeblkV9qZwrDrnfjdMpT4qH
+         oLVO71U/GRPj1VZGj5+68rFCWJeo5dC7G5Tt+V3gS1zq2dt9rIxa6/X+Rstew773H+RT
+         zmjaB6bIj9b3RLLmj6nmy+zBwiKfqYX1q7izmzljc0I52PJxY40JMoZnVZWcjMmZd8iN
+         Z8iPYFjRuZg4NpH6ik8NRZHbRD7m26HdKdquetS43pIVuBzAe+8qjlHWSb6aAeCoM1GB
+         Ayge6+DyG5Othw1ZNGq8CY/pREwi5DllCoMECNmj5JLZ/N5RJ5GRxDAXsT+0VBr1FU7J
+         UhKQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1755594518; x=1756199318;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=IM574u9BvfLwspshaKYvYoAzraPVyBpTcdO8NtZkO9I=;
+        b=nvG3WfxpU+j47H4BM3RcvFr56DeeQ/CfXEHKKX3t8wlb+VFHQ0Iy7qaYE53aOSACB6
+         lRo+Aa8TFGuhFtpL80KkP9Ayf+xlwrY/MuZ2ui/HV/glY4pWBstPilmad6UMb9dHiX9V
+         +yZehY9fD5t/K5b/JUYxU/EW86IxSxcvU8gohfn3dBGsaxObbpyD1FEuxuFCaL0u6EgP
+         Z0xhYezo/iJiWRKESPhaku/NBseIJiuzfUuSpB0ozf0wW7Qsro5oBu+IybAg0jTnpWTV
+         Sqtq8gGhFu37wSH0LH5m+EjyYNi23EEQHXHK72rosjwYHuOgiwc+d+Tlnei6YDgfuOjR
+         CURQ==
+X-Forwarded-Encrypted: i=1; AJvYcCVQG1oy7SDb21liaAAH8SwQyhSKBS3MtxTvdKxBHaYqde1w98L5wDaNPEyGGmftMRPR4x2l+tiSEws=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy1TVthl48OJBFpDMNuc51t+uKUZZu6AR0AJcOu4D65YfXFy8Gk
+	PVP3XejGBJxn9mxJ3nyi81/XJuGArjf4b5S4/jvAX1O82ATzmq7lh+ca
+X-Gm-Gg: ASbGncugOolDyMySkTVinfipl7+phCho/xsGrgr/HIaiCbNiwKpaje4ZL0smTb4zuBL
+	dQLDG7kwMyU+3DIIwmMaJqePXorG4DZlnZcjTzIryFeAfroPUOCvpEJr79wBStrvIoPRFo3EB9j
+	LtzIx5ATBsTlIYEkG7uu1Jt1W1CUw6nYFaBpdH5lAJeb5t+NN1RW5JAIHXPU9Mr9OGmxkD6JhyZ
+	Ka6HbHGf/VGE+SG3I45V1rZZGmxVWkPtx+KMIsN9a795NnDysYjMgNk8s2ZZviHCJ40ZZ9GBK5P
+	jOG1h7yFNn638WN1yR0tMjrdOSkGbTo3IdNDpepKAJCzlTDg5i+nbFQoHYw9B2GAK1Axvpor2Ce
+	6jpFMDrHmZlSV6CbkcVgyNqHKvrcp598k
+X-Google-Smtp-Source: AGHT+IFbouRjVkiLIRAKmdNpxoLTYyac7gzUT26rM+4XmksL6F3pg/OvHMPzXf0ODtZEXmE13gk4kQ==
+X-Received: by 2002:a17:903:291:b0:240:96a:b812 with SMTP id d9443c01a7336-245e04b6fdcmr25057385ad.24.1755594518003;
+        Tue, 19 Aug 2025 02:08:38 -0700 (PDT)
+Received: from cs20-buildserver.lan ([2402:7500:500:7a9f:2e0:4cff:fe68:863])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2446d5536c3sm102693555ad.137.2025.08.19.02.08.36
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 19 Aug 2025 02:08:37 -0700 (PDT)
+From: Stanley Chu <stanley.chuys@gmail.com>
+X-Google-Original-From: Stanley Chu <yschu@nuvoton.com>
+To: frank.li@nxp.com,
+	miquel.raynal@bootlin.com,
+	alexandre.belloni@bootlin.com,
+	linux-i3c@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org,
+	tomer.maimon@nuvoton.com,
+	kwliu@nuvoton.com,
+	yschu@nuvoton.com
+Subject: [PATCH v1] i3c: master: svc: Use manual response for IBI events
+Date: Tue, 19 Aug 2025 17:08:31 +0800
+Message-Id: <20250819090831.3009647-1-yschu@nuvoton.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 3/4] i3c: mipi-i3c-hci: Use physical device pointer
- with DMA API
-To: Frank Li <Frank.li@nxp.com>
-Cc: linux-i3c@lists.infradead.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- "Prabhakaran, Krishna" <krishna.prabhakaran@intel.com>
-References: <20250815141242.2013767-1-jarkko.nikula@linux.intel.com>
- <20250815141242.2013767-4-jarkko.nikula@linux.intel.com>
- <aKNUqY4h9DEAP69o@lizhi-Precision-Tower-5810>
-Content-Language: en-US
-From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-In-Reply-To: <aKNUqY4h9DEAP69o@lizhi-Precision-Tower-5810>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250818_232707_296740_BDCECE60 
-X-CRM114-Status: GOOD (  26.59  )
+X-CRM114-CacheID: sfid-20250819_020839_132040_4936B278 
+X-CRM114-Status: GOOD (  14.22  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,171 +97,73 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 8/18/25 7:28 PM, Frank Li wrote:
-> On Fri, Aug 15, 2025 at 05:12:41PM +0300, Jarkko Nikula wrote:
->> DMA transfer faults on Intel hardware when the IOMMU is enabled and
->> driver initialization will fail when attempting to do the first transfer:
->>
->> 	DMAR: DRHD: handling fault status reg 2
->> 	DMAR: [DMA Read NO_PASID] Request device [00:11.0] fault addr 0x676e3000 [fault reason 0x71] SM: Present bit in first-level paging entry is clear
->>   	i3c mipi-i3c-hci.0: ring 0: Transfer Aborted
->> 	mipi-i3c-hci mipi-i3c-hci.0: probe with driver mipi-i3c-hci failed with error -62
->>
->> Reason for this is that the IOMMU setup is done for the physical devices
->> only and not for the virtual I3C Controller device object.
->>
->> Therefore use the pointer to a physical device object with the DMA API.
->>
->> Due to a data corruption observation when the device DMA is IOMMU
->> mapped, a properly sized receive bounce buffer is required if transfer
->> length is not a multiple of DWORDs.
->>
->> Reported-by: Prabhakaran, Krishna <krishna.prabhakaran@intel.com>
->> Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
->> ---
->>   drivers/i3c/master/mipi-i3c-hci/dma.c | 46 +++++++++++++++++++--------
->>   1 file changed, 33 insertions(+), 13 deletions(-)
->>
->> diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
->> index 295671daae09..8cea91d4d3bf 100644
->> --- a/drivers/i3c/master/mipi-i3c-hci/dma.c
->> +++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
->> @@ -14,6 +14,7 @@
->>   #include <linux/errno.h>
->>   #include <linux/i3c/master.h>
->>   #include <linux/io.h>
->> +#include <linux/pci.h>
->>
->>   #include "hci.h"
->>   #include "cmd.h"
->> @@ -138,6 +139,7 @@ struct hci_rh_data {
->>   };
->>
->>   struct hci_rings_data {
->> +	struct device *sysdev;
->>   	unsigned int total;
->>   	struct hci_rh_data headers[] __counted_by(total);
->>   };
->> @@ -165,20 +167,20 @@ static void hci_dma_cleanup(struct i3c_hci *hci)
->>   		rh_reg_write(IBI_SETUP, 0);
->>
->>   		if (rh->xfer)
->> -			dma_free_coherent(&hci->master.dev,
->> +			dma_free_coherent(rings->sysdev,
->>   					  rh->xfer_struct_sz * rh->xfer_entries,
->>   					  rh->xfer, rh->xfer_dma);
->>   		if (rh->resp)
->> -			dma_free_coherent(&hci->master.dev,
->> +			dma_free_coherent(rings->sysdev,
->>   					  rh->resp_struct_sz * rh->xfer_entries,
->>   					  rh->resp, rh->resp_dma);
->>   		kfree(rh->src_xfers);
->>   		if (rh->ibi_status)
->> -			dma_free_coherent(&hci->master.dev,
->> +			dma_free_coherent(rings->sysdev,
->>   					  rh->ibi_status_sz * rh->ibi_status_entries,
->>   					  rh->ibi_status, rh->ibi_status_dma);
->>   		if (rh->ibi_data_dma)
->> -			dma_unmap_single(&hci->master.dev, rh->ibi_data_dma,
->> +			dma_unmap_single(rings->sysdev, rh->ibi_data_dma,
->>   					 rh->ibi_chunk_sz * rh->ibi_chunks_total,
->>   					 DMA_FROM_DEVICE);
->>   		kfree(rh->ibi_data);
->> @@ -194,11 +196,23 @@ static int hci_dma_init(struct i3c_hci *hci)
->>   {
->>   	struct hci_rings_data *rings;
->>   	struct hci_rh_data *rh;
->> +	struct device *sysdev;
->>   	u32 regval;
->>   	unsigned int i, nr_rings, xfers_sz, resps_sz;
->>   	unsigned int ibi_status_ring_sz, ibi_data_ring_sz;
->>   	int ret;
->>
->> +	/*
->> +	 * Set pointer to a physical device that does DMA and has IOMMU setup
->> +	 * done for it in case of enabled IOMMU and use it with the DMA API.
->> +	 * Here such device is either
->> +	 * "mipi-i3c-hci" platform device (OF/ACPI enumeration) parent or
->> +	 * grandparent (PCI enumeration).
->> +	 */
->> +	sysdev = hci->master.dev.parent;
->> +	if (sysdev->parent && dev_is_pci(sysdev->parent))
->> +		sysdev = sysdev->parent;
->> +
->>   	regval = rhs_reg_read(CONTROL);
->>   	nr_rings = FIELD_GET(MAX_HEADER_COUNT_CAP, regval);
->>   	dev_info(&hci->master.dev, "%d DMA rings available\n", nr_rings);
->> @@ -213,6 +227,7 @@ static int hci_dma_init(struct i3c_hci *hci)
->>   		return -ENOMEM;
->>   	hci->io_data = rings;
->>   	rings->total = nr_rings;
->> +	rings->sysdev = sysdev;
->>
->>   	regval = FIELD_PREP(MAX_HEADER_COUNT, rings->total);
->>   	rhs_reg_write(CONTROL, regval);
->> @@ -239,9 +254,9 @@ static int hci_dma_init(struct i3c_hci *hci)
->>   		xfers_sz = rh->xfer_struct_sz * rh->xfer_entries;
->>   		resps_sz = rh->resp_struct_sz * rh->xfer_entries;
->>
->> -		rh->xfer = dma_alloc_coherent(&hci->master.dev, xfers_sz,
->> +		rh->xfer = dma_alloc_coherent(rings->sysdev, xfers_sz,
->>   					      &rh->xfer_dma, GFP_KERNEL);
->> -		rh->resp = dma_alloc_coherent(&hci->master.dev, resps_sz,
->> +		rh->resp = dma_alloc_coherent(rings->sysdev, resps_sz,
->>   					      &rh->resp_dma, GFP_KERNEL);
->>   		rh->src_xfers =
->>   			kmalloc_array(rh->xfer_entries, sizeof(*rh->src_xfers),
->> @@ -295,16 +310,16 @@ static int hci_dma_init(struct i3c_hci *hci)
->>   		ibi_data_ring_sz = rh->ibi_chunk_sz * rh->ibi_chunks_total;
->>
->>   		rh->ibi_status =
->> -			dma_alloc_coherent(&hci->master.dev, ibi_status_ring_sz,
->> +			dma_alloc_coherent(rings->sysdev, ibi_status_ring_sz,
->>   					   &rh->ibi_status_dma, GFP_KERNEL);
->>   		rh->ibi_data = kmalloc(ibi_data_ring_sz, GFP_KERNEL);
->>   		ret = -ENOMEM;
->>   		if (!rh->ibi_status || !rh->ibi_data)
->>   			goto err_out;
->>   		rh->ibi_data_dma =
->> -			dma_map_single(&hci->master.dev, rh->ibi_data,
->> +			dma_map_single(rings->sysdev, rh->ibi_data,
->>   				       ibi_data_ring_sz, DMA_FROM_DEVICE);
->> -		if (dma_mapping_error(&hci->master.dev, rh->ibi_data_dma)) {
->> +		if (dma_mapping_error(rings->sysdev, rh->ibi_data_dma)) {
->>   			rh->ibi_data_dma = 0;
->>   			ret = -ENOMEM;
->>   			goto err_out;
->> @@ -369,6 +384,7 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
->>   		u32 *ring_data = rh->xfer + rh->xfer_struct_sz * enqueue_ptr;
->>   		enum dma_data_direction dir = xfer->rnw ? DMA_FROM_DEVICE :
->>   							  DMA_TO_DEVICE;
->> +		bool need_bounce;
->>
->>   		/* store cmd descriptor */
->>   		*ring_data++ = xfer->cmd_desc[0];
->> @@ -387,10 +403,13 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
->>
->>   		/* 2nd and 3rd words of Data Buffer Descriptor Structure */
->>   		if (xfer->data) {
->> -			xfer->dma = i3c_master_dma_map_single(&hci->master.dev,
->> +			need_bounce = device_iommu_mapped(rings->sysdev) &&
->> +				      xfer->rnw &&
-> 
-> why only read need bounce? if iommu have not map enough size, still fault
-> for write.
-> 
-> such as you try to map IO space [0xffd,0x1000). when hardware try access
-> 0x1000, iommu will capture this type error. Maybe it is hard to meet
-> allocate io space at close end of page, you have not found this problem.
-> 
-Yes, only read has been problematic so far on our HW when the device is 
-IOMMU mapped and write works fine with or without IOMMU. In my opinnion 
-it's better to have another patch if such issue is seen on some other HW.
+From: Stanley Chu <yschu@nuvoton.com>
+
+Using IBIRESP_AUTO causes the hardware to ACK IBI requests even when the
+target is not in the device list. The svc_i3c_master_nack_ibi() has no
+effect in such case.
+
+AutoIBI has another issue that the controller doesn't quit AutoIBI state
+after an IBIWON polling timeout. The following sequence is the case:
+1. Target pulls SDA low
+2. SLVSTART interrupt triggers the IBI ISR
+3. Target releases SDA
+4. Driver writes AutoIBI request to MCTRL
+5. SDA is high, so AutoIBI process does not start
+6. IBIWON polling times out
+7. Controller state is AutoIBI and doesn't accept EmitStop request
+
+Emitting broadcast address with IBIRESP_MANUAL avoids both issues.
+
+Signed-off-by: Stanley Chu <yschu@nuvoton.com>
+---
+ drivers/i3c/master/svc-i3c-master.c | 16 +++++++++++-----
+ 1 file changed, 11 insertions(+), 5 deletions(-)
+
+diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
+index 701ae165b25b..17644e041b44 100644
+--- a/drivers/i3c/master/svc-i3c-master.c
++++ b/drivers/i3c/master/svc-i3c-master.c
+@@ -517,9 +517,10 @@ static void svc_i3c_master_ibi_isr(struct svc_i3c_master *master)
+ 	 */
+ 	writel(SVC_I3C_MINT_IBIWON, master->regs + SVC_I3C_MSTATUS);
+ 
+-	/* Acknowledge the incoming interrupt with the AUTOIBI mechanism */
+-	writel(SVC_I3C_MCTRL_REQUEST_AUTO_IBI |
+-	       SVC_I3C_MCTRL_IBIRESP_AUTO,
++	/* Emit broadcast address for arbitration */
++	writel(SVC_I3C_MCTRL_REQUEST_START_ADDR |
++	       SVC_I3C_MCTRL_IBIRESP_MANUAL |
++	       SVC_I3C_MCTRL_ADDR(I3C_BROADCAST_ADDR),
+ 	       master->regs + SVC_I3C_MCTRL);
+ 
+ 	/* Wait for IBIWON, should take approximately 100us */
+@@ -539,10 +540,15 @@ static void svc_i3c_master_ibi_isr(struct svc_i3c_master *master)
+ 	switch (ibitype) {
+ 	case SVC_I3C_MSTATUS_IBITYPE_IBI:
+ 		dev = svc_i3c_master_dev_from_addr(master, ibiaddr);
+-		if (!dev || !is_events_enabled(master, SVC_I3C_EVENT_IBI))
++		if (!dev || !is_events_enabled(master, SVC_I3C_EVENT_IBI)) {
+ 			svc_i3c_master_nack_ibi(master);
+-		else
++		} else {
++			if (dev->info.bcr & I3C_BCR_IBI_PAYLOAD)
++				svc_i3c_master_ack_ibi(master, true);
++			else
++				svc_i3c_master_ack_ibi(master, false);
+ 			svc_i3c_master_handle_ibi(master, dev);
++		}
+ 		break;
+ 	case SVC_I3C_MSTATUS_IBITYPE_HOT_JOIN:
+ 		if (is_events_enabled(master, SVC_I3C_EVENT_HOTJOIN))
+-- 
+2.34.1
+
 
 -- 
 linux-i3c mailing list
