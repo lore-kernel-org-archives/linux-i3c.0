@@ -4,72 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD28DCA0EFE
-	for <linux-i3c@archiver.kernel.org>; Wed, 20 Aug 2025 12:00:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90762CA0FE1
+	for <linux-i3c@archiver.kernel.org>; Wed, 20 Aug 2025 12:00:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ff3abkcDnqhXYKIBC/iuBwds0sodky+XHXBSnKN+Ox0=; b=491ZxOFekuQ2Nu
-	PyBu0ItAB4IDoFJIxE1V068UObvzH3+hIcwgrh4H2cJ1Cr4B2r+Xz/DKY+4W78eL79y/VD83xz0iY
-	ddMgZsOVcKVFKnv9Vd3eJw4ry+198vLhajdDZrAAyEiwk42Kz8E/5tVqzfC/2IW3KEtlUni1hpHwg
-	egpfLKx7W/YqWArMYYiEcHJgjLii6YZeV5J3bTq49NUow/ktVm0gvRQ5oZPJkGUs5AbEYGl47M8pG
-	5IQ9/cmUO4pwlTn13TgEbKoqbVfWgIRSkrOSEXoAwQ/6IaoflVaDQhWvi7x4IdlYxbroF+eKIut05
-	QHcC6BbPkBFDwis1ikog==;
+	List-Owner; bh=0+40cIqJR//X7XeSFIqbw0UmvsJK2BYEVcW7GzGoKD8=; b=mf6p5K5fgjkyJe
+	bXiZb/xwl1JWnsPGhgF7LezLDFUMXZIWjh6sz2p7YW9x5eA1Lxb8mI/GQpcuodrdW93e2gXgFcJRO
+	ECaTwRy/dmKE3aAbz+CSix4KOtkQ/EyMuy2xA4+kpjZ1r0FPjf8VecsTmnRTFTaGjy+Hfe8weOnvZ
+	nhzGfotR/ogDQhb1b+rvXNFGoDyNOL1fNd7jSM2v6eUch9MBJ7mnGOnrHZOiNCE2d22L+Mbeeg2C9
+	d1bUyjKGMpRJt+oxyoqGP87IHKz8j2DbUP1/MIRh1TJoUn5y4MaKIJ0Bs9WlgvSIK95DugPgj0wcx
+	VRVnNxoGDHUAakPzOeFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uohUB-0000000DUVq-2YQP;
-	Wed, 20 Aug 2025 12:00:11 +0000
-Received: from mgamail.intel.com ([198.175.65.15])
+	id 1uohUC-0000000DUWL-1J62;
+	Wed, 20 Aug 2025 12:00:12 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uoh5m-0000000DQkh-3PgV
+	id 1uoh5r-0000000DQoh-1jSF
+	for linux-i3c@bombadil.infradead.org;
+	Wed, 20 Aug 2025 11:35:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Type:Content-ID:Content-Description;
+	bh=eMrMSKRf9p0bjQmCMuiZICXpvp2BM/uM69KX/oq8aF8=; b=csMZftEHHYNviUZaVK+ms9aZNz
+	M3jzWQoE8WZgub48VM1SF3e/pnt470JcsbOHZ4JrB3T8KEQYpGZA6cgjhXwyDmGX+NSsGHnvBDMjv
+	2uqiWlwd6ynFEoILK0UHneHEw556xaqvjJakQ7e14nVtT/NDmC+95s0tXOgZKlxX5kBUdOVLRuveL
+	xJqmwNTn317TpsUx4QBc3zFmLWW3RZagOzVptzPtvsd3l2K7UF5mDZh+huOukzw9z7hDOarqSxMtv
+	e97I+sBDj6/N4ThDs5Awr/NC3X3AqAhSEIapqhgpGc0NYq4Fqq1so75tSeNPFlAsHIlqik5yda8LK
+	1rK7Y5lQ==;
+Received: from mgamail.intel.com ([198.175.65.15])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uoh5n-00000000JMZ-44yi
 	for linux-i3c@lists.infradead.org;
-	Wed, 20 Aug 2025 11:35:00 +0000
+	Wed, 20 Aug 2025 11:35:02 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1755689699; x=1787225699;
+  t=1755689701; x=1787225701;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=fudOwyodVoIIhoUDjux5TzDe06wdeNPBWF2ompz0yoo=;
-  b=GIPBPTQUMzABg+KIgAQz2I8hRNRsI7dA0pKN9uh2r5q/7vneqXPFcyrU
-   EzZHyelvqb31phy5BjhfWFnQEZaOMG1uq1XfCaQJb0wguqSTKtraU8vh0
-   1MPVTOZSF6uB7qKfl7PguZXLZS1jVCcZXMfNkAnI6iDydDB8NuR1z0Oe5
-   M29i3YuNOWxrqPvmRoa5x23zPDMpVF3RceWBt+EiEohGD72ck4K6/ril4
-   TWhJHxpz4JbjLUYAdq7uPUl6OZDnIXSz5+hUtzIaR+xFxiYdKpDr6yAD9
-   6Fdyt/AxgxyBTYM76ZVf2Wno6WdxXEXow9OYpTiWE2vh+ubjFNLmiv6BP
-   Q==;
-X-CSE-ConnectionGUID: SCVUiHPrQT2LSKYHUTWoLA==
-X-CSE-MsgGUID: nKnkaORQQm+tF9ArigqSfQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11527"; a="61590991"
+  bh=5o7y82sgmTWMQK169yHshBu9q9H1uOFQfUEYABFmo9c=;
+  b=U7cUGoYCzt6fqm7sE/GtFWYp2MixSbve0MjjHcKimKo/Ks03LOPn0Q3c
+   ov88wK3cnpkUAIJgG+9Oz08UhaLo2kDDviQGEQLPF1le4+JWzCXowy8wy
+   O+tevVc/3G8EyLSpsnK3WOnrHYdb8O85xcGHVtDOGdBzEUQy0sJY+UR4y
+   qMuZu/d64giXt12WipI+IeyQna2Kez8NgtN45qaWzHjLhlePi5Zt54L61
+   Zg4G46Kw0tmog5AFuuZlboKF5a9aA8SCWZ8+fTFFwCk7AQudxPY55QvMz
+   7odjIOcPRdA+qCB650WyjjnqRA/z+17wlse6WRvAgStZDQlGAIXk9GE8G
+   g==;
+X-CSE-ConnectionGUID: VTmoz5UeQ0ab2vUnlWyojA==
+X-CSE-MsgGUID: aM3fz+f+Tm2nDRxqEKiS7Q==
+X-IronPort-AV: E=McAfee;i="6800,10657,11527"; a="61590987"
 X-IronPort-AV: E=Sophos;i="6.17,302,1747724400"; 
-   d="scan'208";a="61590991"
+   d="scan'208";a="61590987"
 Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by orvoesa107.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 20 Aug 2025 04:34:59 -0700
-X-CSE-ConnectionGUID: kvTT6bmcRZGPIswSkjreyg==
-X-CSE-MsgGUID: vyHS7utTT+mLcSCySFN0yQ==
+  by orvoesa107.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 20 Aug 2025 04:34:57 -0700
+X-CSE-ConnectionGUID: 1u05cBdvRrCSgSvB4SoUBg==
+X-CSE-MsgGUID: kf3doRAuTRyfC6kzPGFIMw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.17,302,1747724400"; 
-   d="scan'208";a="168016655"
+   d="scan'208";a="168016648"
 Received: from mylly.fi.intel.com (HELO mylly.fi.intel.com.) ([10.237.72.151])
-  by fmviesa006.fm.intel.com with ESMTP; 20 Aug 2025 04:34:57 -0700
+  by fmviesa006.fm.intel.com with ESMTP; 20 Aug 2025 04:34:55 -0700
 From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
 To: linux-i3c@lists.infradead.org
 Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Frank Li <Frank.Li@nxp.com>,
-	Jarkko Nikula <jarkko.nikula@linux.intel.com>,
-	"Prabhakaran, Krishna" <krishna.prabhakaran@intel.com>
-Subject: [PATCH v3 3/4] i3c: mipi-i3c-hci: Use physical device pointer with DMA API
-Date: Wed, 20 Aug 2025 14:34:46 +0300
-Message-ID: <20250820113447.2502071-4-jarkko.nikula@linux.intel.com>
+	Jarkko Nikula <jarkko.nikula@linux.intel.com>
+Subject: [PATCH v3 2/4] i3c: mipi-i3c-hci: Use core helpers for DMA mapping and bounce buffering
+Date: Wed, 20 Aug 2025 14:34:45 +0300
+Message-ID: <20250820113447.2502071-3-jarkko.nikula@linux.intel.com>
 X-Mailer: git-send-email 2.47.2
 In-Reply-To: <20250820113447.2502071-1-jarkko.nikula@linux.intel.com>
 References: <20250820113447.2502071-1-jarkko.nikula@linux.intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250820_043458_939956_0F8AC095 
-X-CRM114-Status: GOOD (  19.37  )
+X-CRM114-CacheID: sfid-20250820_123500_470297_A3FB0E05 
+X-CRM114-Status: GOOD (  16.59  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,188 +100,173 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-DMA transfer faults on Intel hardware when the IOMMU is enabled and
-driver initialization will fail when attempting to do the first transfer:
+So far only I3C private and I2C transfers have required a bounce buffer
+for DMA transfers when buffer is not DMA'able.
 
-	DMAR: DRHD: handling fault status reg 2
-	DMAR: [DMA Read NO_PASID] Request device [00:11.0] fault addr 0x676e3000 [fault reason 0x71] SM: Present bit in first-level paging entry is clear
- 	i3c mipi-i3c-hci.0: ring 0: Transfer Aborted
-	mipi-i3c-hci mipi-i3c-hci.0: probe with driver mipi-i3c-hci failed with error -62
+It was observed that when the device DMA is IOMMU mapped and the receive
+length is not a multiple of DWORDs (32-bit), the last DWORD is padded
+with stale data from the RX FIFO, corrupting 1-3 bytes beyond the
+expected data.
 
-Reason for this is that the IOMMU setup is done for the physical devices
-only and not for the virtual I3C Controller device object.
+A similar issue, though less severe, occurs when an I3C target returns
+less data than requested. In this case, the padding does not exceed the
+requested number of bytes, assuming the device DMA is not IOMMU mapped.
 
-Therefore use the pointer to a physical device object with the DMA API.
+Therefore, all I3C private transfer, CCC command payload and I2C
+transfer receive buffers must be properly sized for the DMA being IOMMU
+mapped. Even if those buffers are already DMA safe, their size may not
+be DWORD aligned.
 
-Due to a data corruption observation when the device DMA is IOMMU
-mapped, a properly sized receive bounce buffer is required if transfer
-length is not a multiple of DWORDs.
+To prepare for the device DMA being IOMMU mapped and to address the
+above issue, use helpers from I3C core for DMA mapping and bounce
+buffering for all DMA transfers.
 
-Reported-by: Prabhakaran, Krishna <krishna.prabhakaran@intel.com>
+For now, require bounce buffer only when the buffer is in the
+vmalloc() area to avoid unnecessary copying with CCC commands and
+DMA-safe I2C transfers.
+
 Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
 ---
- drivers/i3c/master/mipi-i3c-hci/dma.c | 46 +++++++++++++++++++--------
- 1 file changed, 33 insertions(+), 13 deletions(-)
+ drivers/i3c/master/mipi-i3c-hci/core.c | 34 --------------------------
+ drivers/i3c/master/mipi-i3c-hci/dma.c  | 27 +++++++++-----------
+ drivers/i3c/master/mipi-i3c-hci/hci.h  |  3 +--
+ 3 files changed, 12 insertions(+), 52 deletions(-)
 
+diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+index 60f1175f1f37..b2977b6ac9f7 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/core.c
++++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+@@ -272,34 +272,6 @@ static int i3c_hci_daa(struct i3c_master_controller *m)
+ 	return hci->cmd->perform_daa(hci);
+ }
+ 
+-static int i3c_hci_alloc_safe_xfer_buf(struct i3c_hci *hci,
+-				       struct hci_xfer *xfer)
+-{
+-	if (hci->io != &mipi_i3c_hci_dma ||
+-	    xfer->data == NULL || !is_vmalloc_addr(xfer->data))
+-		return 0;
+-
+-	if (xfer->rnw)
+-		xfer->bounce_buf = kzalloc(xfer->data_len, GFP_KERNEL);
+-	else
+-		xfer->bounce_buf = kmemdup(xfer->data,
+-					   xfer->data_len, GFP_KERNEL);
+-
+-	return xfer->bounce_buf == NULL ? -ENOMEM : 0;
+-}
+-
+-static void i3c_hci_free_safe_xfer_buf(struct i3c_hci *hci,
+-				       struct hci_xfer *xfer)
+-{
+-	if (hci->io != &mipi_i3c_hci_dma || xfer->bounce_buf == NULL)
+-		return;
+-
+-	if (xfer->rnw)
+-		memcpy(xfer->data, xfer->bounce_buf, xfer->data_len);
+-
+-	kfree(xfer->bounce_buf);
+-}
+-
+ static int i3c_hci_priv_xfers(struct i3c_dev_desc *dev,
+ 			      struct i3c_priv_xfer *i3c_xfers,
+ 			      int nxfers)
+@@ -333,9 +305,6 @@ static int i3c_hci_priv_xfers(struct i3c_dev_desc *dev,
+ 		}
+ 		hci->cmd->prep_i3c_xfer(hci, dev, &xfer[i]);
+ 		xfer[i].cmd_desc[0] |= CMD_0_ROC;
+-		ret = i3c_hci_alloc_safe_xfer_buf(hci, &xfer[i]);
+-		if (ret)
+-			goto out;
+ 	}
+ 	last = i - 1;
+ 	xfer[last].cmd_desc[0] |= CMD_0_TOC;
+@@ -359,9 +328,6 @@ static int i3c_hci_priv_xfers(struct i3c_dev_desc *dev,
+ 	}
+ 
+ out:
+-	for (i = 0; i < nxfers; i++)
+-		i3c_hci_free_safe_xfer_buf(hci, &xfer[i]);
+-
+ 	hci_free_xfer(xfer, nxfers);
+ 	return ret;
+ }
 diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-index 351851859f02..09688ada4912 100644
+index 491dfe70b660..351851859f02 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/dma.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-@@ -14,6 +14,7 @@
- #include <linux/errno.h>
- #include <linux/i3c/master.h>
- #include <linux/io.h>
-+#include <linux/pci.h>
+@@ -349,9 +349,7 @@ static void hci_dma_unmap_xfer(struct i3c_hci *hci,
+ 		xfer = xfer_list + i;
+ 		if (!xfer->data)
+ 			continue;
+-		dma_unmap_single(&hci->master.dev,
+-				 xfer->data_dma, xfer->data_len,
+-				 xfer->rnw ? DMA_FROM_DEVICE : DMA_TO_DEVICE);
++		i3c_master_dma_unmap_single(xfer->dma);
+ 	}
+ }
  
- #include "hci.h"
- #include "cmd.h"
-@@ -138,6 +139,7 @@ struct hci_rh_data {
- };
- 
- struct hci_rings_data {
-+	struct device *sysdev;
- 	unsigned int total;
- 	struct hci_rh_data headers[] __counted_by(total);
- };
-@@ -165,20 +167,20 @@ static void hci_dma_cleanup(struct i3c_hci *hci)
- 		rh_reg_write(IBI_SETUP, 0);
- 
- 		if (rh->xfer)
--			dma_free_coherent(&hci->master.dev,
-+			dma_free_coherent(rings->sysdev,
- 					  rh->xfer_struct_sz * rh->xfer_entries,
- 					  rh->xfer, rh->xfer_dma);
- 		if (rh->resp)
--			dma_free_coherent(&hci->master.dev,
-+			dma_free_coherent(rings->sysdev,
- 					  rh->resp_struct_sz * rh->xfer_entries,
- 					  rh->resp, rh->resp_dma);
- 		kfree(rh->src_xfers);
- 		if (rh->ibi_status)
--			dma_free_coherent(&hci->master.dev,
-+			dma_free_coherent(rings->sysdev,
- 					  rh->ibi_status_sz * rh->ibi_status_entries,
- 					  rh->ibi_status, rh->ibi_status_dma);
- 		if (rh->ibi_data_dma)
--			dma_unmap_single(&hci->master.dev, rh->ibi_data_dma,
-+			dma_unmap_single(rings->sysdev, rh->ibi_data_dma,
- 					 rh->ibi_chunk_sz * rh->ibi_chunks_total,
- 					 DMA_FROM_DEVICE);
- 		kfree(rh->ibi_data);
-@@ -194,11 +196,23 @@ static int hci_dma_init(struct i3c_hci *hci)
- {
- 	struct hci_rings_data *rings;
+@@ -362,7 +360,6 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
  	struct hci_rh_data *rh;
-+	struct device *sysdev;
- 	u32 regval;
- 	unsigned int i, nr_rings, xfers_sz, resps_sz;
- 	unsigned int ibi_status_ring_sz, ibi_data_ring_sz;
- 	int ret;
+ 	unsigned int i, ring, enqueue_ptr;
+ 	u32 op1_val, op2_val;
+-	void *buf;
  
-+	/*
-+	 * Set pointer to a physical device that does DMA and has IOMMU setup
-+	 * done for it in case of enabled IOMMU and use it with the DMA API.
-+	 * Here such device is either
-+	 * "mipi-i3c-hci" platform device (OF/ACPI enumeration) parent or
-+	 * grandparent (PCI enumeration).
-+	 */
-+	sysdev = hci->master.dev.parent;
-+	if (sysdev->parent && dev_is_pci(sysdev->parent))
-+		sysdev = sysdev->parent;
-+
- 	regval = rhs_reg_read(CONTROL);
- 	nr_rings = FIELD_GET(MAX_HEADER_COUNT_CAP, regval);
- 	dev_info(&hci->master.dev, "%d DMA rings available\n", nr_rings);
-@@ -213,6 +227,7 @@ static int hci_dma_init(struct i3c_hci *hci)
- 		return -ENOMEM;
- 	hci->io_data = rings;
- 	rings->total = nr_rings;
-+	rings->sysdev = sysdev;
- 
- 	regval = FIELD_PREP(MAX_HEADER_COUNT, rings->total);
- 	rhs_reg_write(CONTROL, regval);
-@@ -239,9 +254,9 @@ static int hci_dma_init(struct i3c_hci *hci)
- 		xfers_sz = rh->xfer_struct_sz * rh->xfer_entries;
- 		resps_sz = rh->resp_struct_sz * rh->xfer_entries;
- 
--		rh->xfer = dma_alloc_coherent(&hci->master.dev, xfers_sz,
-+		rh->xfer = dma_alloc_coherent(rings->sysdev, xfers_sz,
- 					      &rh->xfer_dma, GFP_KERNEL);
--		rh->resp = dma_alloc_coherent(&hci->master.dev, resps_sz,
-+		rh->resp = dma_alloc_coherent(rings->sysdev, resps_sz,
- 					      &rh->resp_dma, GFP_KERNEL);
- 		rh->src_xfers =
- 			kmalloc_array(rh->xfer_entries, sizeof(*rh->src_xfers),
-@@ -295,16 +310,16 @@ static int hci_dma_init(struct i3c_hci *hci)
- 		ibi_data_ring_sz = rh->ibi_chunk_sz * rh->ibi_chunks_total;
- 
- 		rh->ibi_status =
--			dma_alloc_coherent(&hci->master.dev, ibi_status_ring_sz,
-+			dma_alloc_coherent(rings->sysdev, ibi_status_ring_sz,
- 					   &rh->ibi_status_dma, GFP_KERNEL);
- 		rh->ibi_data = kmalloc(ibi_data_ring_sz, GFP_KERNEL);
- 		ret = -ENOMEM;
- 		if (!rh->ibi_status || !rh->ibi_data)
- 			goto err_out;
- 		rh->ibi_data_dma =
--			dma_map_single(&hci->master.dev, rh->ibi_data,
-+			dma_map_single(rings->sysdev, rh->ibi_data,
- 				       ibi_data_ring_sz, DMA_FROM_DEVICE);
--		if (dma_mapping_error(&hci->master.dev, rh->ibi_data_dma)) {
-+		if (dma_mapping_error(rings->sysdev, rh->ibi_data_dma)) {
- 			rh->ibi_data_dma = 0;
- 			ret = -ENOMEM;
- 			goto err_out;
-@@ -372,6 +387,7 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
+ 	/* For now we only use ring 0 */
+ 	ring = 0;
+@@ -373,6 +370,8 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
+ 	for (i = 0; i < n; i++) {
+ 		struct hci_xfer *xfer = xfer_list + i;
  		u32 *ring_data = rh->xfer + rh->xfer_struct_sz * enqueue_ptr;
- 		enum dma_data_direction dir = xfer->rnw ? DMA_FROM_DEVICE :
- 							  DMA_TO_DEVICE;
-+		bool need_bounce;
++		enum dma_data_direction dir = xfer->rnw ? DMA_FROM_DEVICE :
++							  DMA_TO_DEVICE;
  
  		/* store cmd descriptor */
  		*ring_data++ = xfer->cmd_desc[0];
-@@ -390,10 +406,13 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
+@@ -391,21 +390,17 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
  
  		/* 2nd and 3rd words of Data Buffer Descriptor Structure */
  		if (xfer->data) {
--			xfer->dma = i3c_master_dma_map_single(&hci->master.dev,
-+			need_bounce = device_iommu_mapped(rings->sysdev) &&
-+				      xfer->rnw &&
-+				      xfer->data_len != ALIGN(xfer->data_len, 4);
-+			xfer->dma = i3c_master_dma_map_single(rings->sysdev,
- 							      xfer->data,
- 							      xfer->data_len,
--							      false,
-+							      need_bounce,
- 							      dir);
- 			if (!xfer->dma) {
+-			buf = xfer->bounce_buf ? xfer->bounce_buf : xfer->data;
+-			xfer->data_dma =
+-				dma_map_single(&hci->master.dev,
+-					       buf,
+-					       xfer->data_len,
+-					       xfer->rnw ?
+-						  DMA_FROM_DEVICE :
+-						  DMA_TO_DEVICE);
+-			if (dma_mapping_error(&hci->master.dev,
+-					      xfer->data_dma)) {
++			xfer->dma = i3c_master_dma_map_single(&hci->master.dev,
++							      xfer->data,
++							      xfer->data_len,
++							      false,
++							      dir);
++			if (!xfer->dma) {
  				hci_dma_unmap_xfer(hci, xfer_list, i);
-@@ -581,6 +600,7 @@ static void hci_dma_recycle_ibi_slot(struct i3c_hci *hci,
- 
- static void hci_dma_process_ibi(struct i3c_hci *hci, struct hci_rh_data *rh)
- {
-+	struct hci_rings_data *rings = hci->io_data;
- 	struct i3c_dev_desc *dev;
- 	struct i3c_hci_dev_data *dev_data;
- 	struct hci_dma_dev_ibi_data *dev_ibi;
-@@ -691,7 +711,7 @@ static void hci_dma_process_ibi(struct i3c_hci *hci, struct hci_rh_data *rh)
- 			* rh->ibi_chunk_sz;
- 	if (first_part > ibi_size)
- 		first_part = ibi_size;
--	dma_sync_single_for_cpu(&hci->master.dev, ring_ibi_data_dma,
-+	dma_sync_single_for_cpu(rings->sysdev, ring_ibi_data_dma,
- 				first_part, DMA_FROM_DEVICE);
- 	memcpy(slot->data, ring_ibi_data, first_part);
- 
-@@ -700,7 +720,7 @@ static void hci_dma_process_ibi(struct i3c_hci *hci, struct hci_rh_data *rh)
- 		/* we wrap back to the start and copy remaining data */
- 		ring_ibi_data = rh->ibi_data;
- 		ring_ibi_data_dma = rh->ibi_data_dma;
--		dma_sync_single_for_cpu(&hci->master.dev, ring_ibi_data_dma,
-+		dma_sync_single_for_cpu(rings->sysdev, ring_ibi_data_dma,
- 					ibi_size - first_part, DMA_FROM_DEVICE);
- 		memcpy(slot->data + first_part, ring_ibi_data,
- 		       ibi_size - first_part);
+ 				return -ENOMEM;
+ 			}
+-			*ring_data++ = lower_32_bits(xfer->data_dma);
+-			*ring_data++ = upper_32_bits(xfer->data_dma);
++			*ring_data++ = lower_32_bits(xfer->dma->addr);
++			*ring_data++ = upper_32_bits(xfer->dma->addr);
+ 		} else {
+ 			*ring_data++ = 0;
+ 			*ring_data++ = 0;
+diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
+index 69ea1d10414b..33bc4906df1f 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/hci.h
++++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
+@@ -94,8 +94,7 @@ struct hci_xfer {
+ 		};
+ 		struct {
+ 			/* DMA specific */
+-			dma_addr_t data_dma;
+-			void *bounce_buf;
++			struct i3c_dma *dma;
+ 			int ring_number;
+ 			int ring_entry;
+ 		};
 -- 
 2.47.2
 
