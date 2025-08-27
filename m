@@ -4,67 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09DD6CA0FED
-	for <linux-i3c@archiver.kernel.org>; Wed, 27 Aug 2025 15:55:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA27ECA0FFE
+	for <linux-i3c@archiver.kernel.org>; Wed, 27 Aug 2025 17:08:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TRiv8T2Q6B5rMakL0xPFC7BtjSlw1BNDPVyELBQQd3I=; b=L4RFy0Zb7Yig0I
-	QgtQSsDbw8ck0d+xsvNBTwFVijFqEkiBpMmHbOWbpW8Uu/2I6hV/+27tmdI/UjVYNKdpdcLgA3gdv
-	cGNEhnoiKe5OUwfsT9DyuOqm2Kh6LC5TYPDUScdJkvUzfN4ai2OJbEY2MqUaqSE7UqfM3nVfXa/Gc
-	VJJFzSWxDs8zY3UzVMGhKsZ8lwDwio1ewhcfp4Ssx00AxKF2DVRVcZ8H6EDhCcVZYd03SuRjAssaC
-	ty7tH7XO8oZHOyK5gf+sX5U6f9SHts83MSpvr5OvPpIhPAbfBQd+KbDIFq9u93MdYKhp/oKGbFZ9p
-	T8GH7pf9KJRL4i4qb8tA==;
+	List-Archive:List-Unsubscribe:List-Id:CC:To:MIME-Version:Message-ID:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=U5js7wYx2uvP/XcXdcEx7/wmT38MfueVDJONjgg+OtE=; b=JIbSQyXKOEdhhQ
+	Zn3qPMrKJgTeqPDKfrKoOb9TncdbZhfyoZCKGy2AJ+/XiSMyqkJ4t48icAzWUaowN68zMb7bN7kkw
+	PGllaf9SlMvU/4m8XVmGtPckwfAgg8eoBzEME4gLeWNoiTgOD3IUHETU0a3dO4Hf5o07Mfab7MvGV
+	Ol4yRv0AtX+5rra6jek2U1Wzaat3jwPNY7G3g3ui3EaYJu9AEfUH9ky4JmBTt1gXoth+Ld302SQqr
+	v8qvUtVJjczilaf2XxCok7RiXY1VasKotmvBNWUe2WyPhNqBT4q5QcHB40xjAoyxGJ0x6CmML/x2x
+	redVio8Sky2jzX5j/LgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1urIUL-0000000G4kd-2HZZ;
-	Wed, 27 Aug 2025 15:55:05 +0000
-Received: from mx0a-00128a01.pphosted.com ([148.163.135.77] helo=mx0b-00128a01.pphosted.com)
+	id 1urJdS-0000000GGCW-1RJr;
+	Wed, 27 Aug 2025 17:08:34 +0000
+Received: from mx0a-00128a01.pphosted.com ([148.163.135.77])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1urGZa-0000000Fdzm-0Yxn
+	id 1urGZa-0000000Fe0M-3Jot
 	for linux-i3c@lists.infradead.org;
-	Wed, 27 Aug 2025 13:52:23 +0000
-Received: from pps.filterd (m0375855.ppops.net [127.0.0.1])
-	by mx0b-00128a01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57RDE5oE029675;
-	Wed, 27 Aug 2025 09:52:16 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=analog.com; h=cc
-	:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=DKIM; bh=TLxEk
-	krlNSdM2GD+Qgsu39aEeaFNmy2H3B/gtkYE/18=; b=qe+MKsQuqhxsYnOHqTk0q
-	qGuvf2u4ItGAZpTXd69jSdZ2FX46i4FNvg0uDW4vRfQ2SIj4R2d4uiPfYD8way9A
-	3ilxBREK21yBFh+2edeQ1nO2nMKFLCus27HQlnC96MCV77DZmW0iQ5bYwN9hSJoG
-	RCBZUXM3zlG3R8xrJUaLnIU6KrRabJGL0zu/LW6Qmyv1j0v0fdrf3oOT6kQ8OJvN
-	Em0Ww4DoxLvr8jFonFbGnrAT9bqTceqBcaQ646DGHn01syD2ubH1QP3UqTMe1Dvo
-	xfwYQIAiYdb1UXSrDMDdDwfWBIcdzKLv5YykK5bwXp5c/RjxtlUnezURrNvnWPMU
-	g==
-Received: from nwd2mta4.analog.com ([137.71.173.58])
-	by mx0b-00128a01.pphosted.com (PPS) with ESMTPS id 48sq8gkggr-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Wed, 27 Aug 2025 09:52:16 -0400 (EDT)
-Received: from ASHBMBX9.ad.analog.com (ASHBMBX9.ad.analog.com [10.64.17.10])
-	by nwd2mta4.analog.com (8.14.7/8.14.7) with ESMTP id 57RDqFkH058165
-	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Wed, 27 Aug 2025 13:52:24 +0000
+Received: from pps.filterd (m0167088.ppops.net [127.0.0.1])
+	by mx0a-00128a01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 57RDFf3Q003527;
 	Wed, 27 Aug 2025 09:52:15 -0400
-Received: from ASHBMBX9.ad.analog.com (10.64.17.10) by ASHBMBX9.ad.analog.com
- (10.64.17.10) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Wed, 27 Aug
- 2025 09:52:15 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=analog.com; h=cc
+	:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=DKIM; bh=g+5AtPXuvaoz16o655Sf+Dg2fM/
+	il6GJk2/0kUZSvUQ=; b=DnrVLBYf/C+WoM7ls/0XwBXIeThnuQAVDbreZhpFZ1O
+	eLI5MR2QcTPClskuCHeBRSOw2MQFwUW5TdWYwOuKL/DNJNynQWqrCQRl4QlVFsdD
+	wgro9xC8h4B4kTFlx6dSBqslQ/QsDZENht1h9w90l4vgvxfKvKcZIrr+TMYFDjAf
+	BBa3TOOXeVh/u/6PFGUOceKt58Af+EtVK6/JXH/g61woFFY+tvOYlhrVug73gFzO
+	9VG98YDL74gJyS4DVKRSQd4cnVTZlvIll9TizG6dJ6DXu6jcW2+RNNs02DUzRtto
+	ZytDuDaa89uPiCszbmiHMCEXR9++/lfDFlUwQ6tH55g==
+Received: from nwd2mta4.analog.com ([137.71.173.58])
+	by mx0a-00128a01.pphosted.com (PPS) with ESMTPS id 48sqasugtr-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Wed, 27 Aug 2025 09:52:15 -0400 (EDT)
+Received: from ASHBMBX9.ad.analog.com (ASHBMBX9.ad.analog.com [10.64.17.10])
+	by nwd2mta4.analog.com (8.14.7/8.14.7) with ESMTP id 57RDqEjx058159
+	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Wed, 27 Aug 2025 09:52:14 -0400
+Received: from ASHBCASHYB5.ad.analog.com (10.64.17.133) by
+ ASHBMBX9.ad.analog.com (10.64.17.10) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1748.10; Wed, 27 Aug 2025 09:52:13 -0400
+Received: from ASHBMBX9.ad.analog.com (10.64.17.10) by
+ ASHBCASHYB5.ad.analog.com (10.64.17.133) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1748.10; Wed, 27 Aug 2025 09:52:13 -0400
 Received: from zeus.spd.analog.com (10.66.68.11) by ashbmbx9.ad.analog.com
  (10.64.17.10) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
- Transport; Wed, 27 Aug 2025 09:52:15 -0400
+ Transport; Wed, 27 Aug 2025 09:52:13 -0400
 Received: from HYB-DlYm71t3hSl.ad.analog.com (HYB-DlYm71t3hSl.ad.analog.com [10.44.3.69])
-	by zeus.spd.analog.com (8.15.1/8.15.1) with ESMTP id 57RDpw2R006762;
-	Wed, 27 Aug 2025 09:52:09 -0400
+	by zeus.spd.analog.com (8.15.1/8.15.1) with ESMTP id 57RDpw2Q006762;
+	Wed, 27 Aug 2025 09:52:01 -0400
 From: Jorge Marques <jorge.marques@analog.com>
-Date: Wed, 27 Aug 2025 15:51:58 +0200
-Subject: [PATCH v9 1/2] dt-bindings: i3c: Add adi-i3c-master
+Subject: [PATCH v9 0/2] Add ADI I3C Controller
+Date: Wed, 27 Aug 2025 15:51:57 +0200
+Message-ID: <20250827-adi-i3c-master-v9-0-04413925abe1@analog.com>
 MIME-Version: 1.0
-Message-ID: <20250827-adi-i3c-master-v9-1-04413925abe1@analog.com>
-References: <20250827-adi-i3c-master-v9-0-04413925abe1@analog.com>
-In-Reply-To: <20250827-adi-i3c-master-v9-0-04413925abe1@analog.com>
+X-B4-Tracking: v=1; b=H4sIAH0Nr2gC/3XSwU7DMAwG4FeZciYoSRPH5cR7IA5u4m6RWDvaU
+ oGmvjtpQVpRxtGWvt+K8l/FyEPiUTwdrmLgOY2p7/JQPxxEOFF3ZJlinoVRxilQVlJMMlVBnmm
+ ceJCGnLYYHAbrRUaXgdv0uQW+vOb5lMapH762/Fmv23+jZi2VVBaRUUVqQ/NMHb31x8fQn8WaN
+ Zu9h8Kb7BmwqYmigUoVvtp5jYWvNg/aK4LQ1K7wdudNed9mX6EF0i1AdFx4d/Neu8K77APWtrK
+ hofaOh733hYfsIQB6jl43HAvvbx7vvN9n33qjfK0MQF163HlT3sf1/8gHj+ywifaPX37KMfD7R
+ y7Z9NuQZfkGg6YfXIICAAA=
+X-Change-ID: 20250604-adi-i3c-master-2a5148c58c47
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
         Frank Li
 	<Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
@@ -79,40 +87,39 @@ CC: <linux-i3c@lists.infradead.org>, <devicetree@vger.kernel.org>,
         Jorge Marques <jorge.marques@analog.com>,
         Conor Dooley <conor.dooley@microchip.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1756302718; l=3433;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1756302718; l=6044;
  i=jorge.marques@analog.com; s=20250303; h=from:subject:message-id;
- bh=Dujc9e62zVFeI4FhqxBAWrZDgKDoIMeNFu4rfRoQRMM=;
- b=RmzP0nmW1rKml3drHvwuuGbYYS/TnYTFf0eydNSPP8Vl2F67v6J93c80ajpQlH7X7VJV84XBG
- gC5/zoGBZzEDo8txj1l9tzPXZ5oNr28VTY6gGeUgWPVLWk7U5pvdXbd
+ bh=l1b2oYf7bI8/K/LR7wVgwK4gwobnm0eTFGSfXZlVVaA=;
+ b=EdAFgsKLY3kyjPTnMukQCTffhiHI9sfHVdW2nzL0TuSqiOcyySui+6nKMZDUy9VTRFjanGeE2
+ V9PZgq1miJgCs+J+BMXrNU27niLNBUxMi0489C5bXFDly09mXn/icFv
 X-Developer-Key: i=jorge.marques@analog.com; a=ed25519;
  pk=NUR1IZZMH0Da3QbJ2tBSznSPVfRpuoWdhBzKGSpAdbg=
 X-ADIRuleOP-NewSCL: Rule Triggered
-X-Authority-Analysis: v=2.4 cv=XOEwSRhE c=1 sm=1 tr=0 ts=68af0d90 cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODI3MDAwMCBTYWx0ZWRfXwLPdam7KMmnn
+ NVDn44/G9YnjsoV+8fAWnc6YCFn8mLVjoNqKF1E/u++HGF960ancxQnJd5gtqueSEVrmSP9hvD8
+ Kx2t7GSxv9YAnvggZaM3RsR39fVJ7CjWECOQtrEoXnbEFcjOj9LAlqidHUwhvbmGJeuF/oZnD7L
+ kkKKmH3KiLgF56zbTAfeNUcuhrDsKVbO1xeLNopVOQpBUtL6RDxtrQtxMsfBQZCSmggXaqqvHiK
+ B2MOnKDmT13P+jez9Kmm3gwFcPpYdVEaYLlNjxoJr6UJ5oK4zqi4T6nMvKqwd0zBU0hQnZ17UO3
+ Gk3I2vlC8tH7AmHVFelI8Jedi4cKnOYpI36iRkwIzqMkdwRABBAx6ER6jC1/+xahJPwtcbiPlh+
+ ivITeF3/
+X-Authority-Analysis: v=2.4 cv=Z4bsHGRA c=1 sm=1 tr=0 ts=68af0d8f cx=c_pps
  a=3WNzaoukacrqR9RwcOSAdA==:117 a=3WNzaoukacrqR9RwcOSAdA==:17
- a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=gEfo2CItAAAA:8 a=wI1k2SEZAAAA:8
- a=XYAwZIGsAAAA:8 a=gAnH3GRIAAAA:8 a=Br2UW1UjAAAA:8 a=cxqr8dddGolBAesk1vsA:9
- a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10 a=sptkURWiP4Gy88Gu7hUp:22
- a=6HWbV-4b7c7AdzY24d_u:22 a=E8ToXWR_bxluHZ7gmE-Z:22 a=WmXOPjafLNExVIMTj843:22
-X-Proofpoint-ORIG-GUID: eK8ab3mHSeP0TlanF9kWF50icL4c3PYH
-X-Proofpoint-GUID: eK8ab3mHSeP0TlanF9kWF50icL4c3PYH
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwODI2MDIxMiBTYWx0ZWRfX9zgAVSkjyiye
- 9r/WD89/OjuM7uvXr/T+Nm2pg8IZivNdxbDLy2nivzFzlE1wvMI++BDufzCO8/7TnZksH+mGleA
- fio7Ji79EPm9H7Qo4+u5KtY9gld7f4Pse1D7FkrU3egUu1D+xO1qeKUHEOYmuWHt9tgV4QORBlA
- p/Nu3re8nrYSTRzeaB+oPZ2Fqm2CssVZiarWanjp9uPFdl8b4MRL/CsEfGhdIMyUxJ7ltzHOnCS
- xVotrp2FAtBmr7D91+hzlDWZDp2lacbKalBpJF6Wad2x8IEfFCR3STeFIEonSPOKF0RdT8DwbLQ
- 9S17mbuptW+V0cNKbIlyMt5E92DqP7VFsliRBwTSG8dw2415oKTjzSqNx0b6igFwq/9hrLobM1A
- M2MlRI1X
+ a=IkcTkHD0fZMA:10 a=2OwXVqhp2XgA:10 a=wI1k2SEZAAAA:8 a=VwQbUJbxAAAA:8
+ a=gAnH3GRIAAAA:8 a=9gqjl8QYTY5QUUvjqJMA:9 a=QEXdDO2ut3YA:10 a=2-210J_X17oA:10
+ a=6HWbV-4b7c7AdzY24d_u:22
+X-Proofpoint-ORIG-GUID: PT89ZrRHSrNrmXLza5dDXBTKf291dCZC
+X-Proofpoint-GUID: PT89ZrRHSrNrmXLza5dDXBTKf291dCZC
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
  definitions=2025-08-27_03,2025-08-26_01,2025-03-28_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 priorityscore=1501 suspectscore=0 clxscore=1015 phishscore=0
- bulkscore=0 impostorscore=0 spamscore=0 adultscore=0 classifier=typeunknown
- authscore=0 authtc= authcc= route=outbound adjust=0 reason=mlx scancount=1
- engine=8.19.0-2507300000 definitions=main-2508260212
+ phishscore=0 clxscore=1011 malwarescore=0 bulkscore=0 adultscore=0
+ priorityscore=1501 impostorscore=0 spamscore=0 suspectscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2508270000
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250827_065222_188358_442A186A 
-X-CRM114-Status: GOOD (  15.42  )
+X-CRM114-CacheID: sfid-20250827_065222_843060_C7673E54 
+X-CRM114-Status: GOOD (  18.10  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -124,69 +131,159 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-QWRkIGJpbmRpbmdzIGRvYyBmb3IgQURJIEkzQyBDb250cm9sbGVyIElQIGNvcmUsIGEgRlBHQSBz
-eW50aGVzaXphYmxlIElQCmNvcmUgdGhhdCBpbXBsZW1lbnRzIHRoZSBNSVBJIEkzQyBCYXNpYyBj
-b250cm9sbGVyIHNwZWNpZmljYXRpb24uClRoZSBJUCBDb3JlIGlzIHZlcnNpb25lZCBmb2xsb3dp
-bmcgU2VtYW50aWMgVmVyc2lvbmluZyAyLjAuMCBhbmQKQURJJ3Mgb3Blbi1zb3VyY2UgSERMIGd1
-aWRlbGluZXMgZm9yIGRldmljZXRyZWUgYmluZGluZ3MgYW5kIGRyaXZlcnMuCgpSZXZpZXdlZC1i
-eTogQ29ub3IgRG9vbGV5IDxjb25vci5kb29sZXlAbWljcm9jaGlwLmNvbT4KU2lnbmVkLW9mZi1i
-eTogSm9yZ2UgTWFycXVlcyA8am9yZ2UubWFycXVlc0BhbmFsb2cuY29tPgotLS0KIC4uLi9kZXZp
-Y2V0cmVlL2JpbmRpbmdzL2kzYy9hZGksaTNjLW1hc3Rlci55YW1sICAgIHwgNzIgKysrKysrKysr
-KysrKysrKysrKysrKwogTUFJTlRBSU5FUlMgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgfCAgNSArKwogMiBmaWxlcyBjaGFuZ2VkLCA3NyBpbnNlcnRpb25zKCspCgpkaWZm
-IC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2kzYy9hZGksaTNjLW1h
-c3Rlci55YW1sIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2kzYy9hZGksaTNj
-LW1hc3Rlci55YW1sCm5ldyBmaWxlIG1vZGUgMTAwNjQ0CmluZGV4IDAwMDAwMDAwMDAwMDAwMDAw
-MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAuLjI0OTg2NzJkMjY1NDg4ODUyNTEyMGM0NGY0ZmI3NGQ1
-MDU1MzU4OTEKLS0tIC9kZXYvbnVsbAorKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmlu
-ZGluZ3MvaTNjL2FkaSxpM2MtbWFzdGVyLnlhbWwKQEAgLTAsMCArMSw3MiBAQAorIyBTUERYLUxp
-Y2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMC1vbmx5IE9SIEJTRC0yLUNsYXVzZQorJVlBTUwgMS4y
-CistLS0KKyRpZDogaHR0cDovL2RldmljZXRyZWUub3JnL3NjaGVtYXMvaTNjL2FkaSxpM2MtbWFz
-dGVyLnlhbWwjCiskc2NoZW1hOiBodHRwOi8vZGV2aWNldHJlZS5vcmcvbWV0YS1zY2hlbWFzL2Nv
-cmUueWFtbCMKKwordGl0bGU6IEFuYWxvZyBEZXZpY2VzIEkzQyBDb250cm9sbGVyCisKK2Rlc2Ny
-aXB0aW9uOgorICBGUEdBLWJhc2VkIEkzQyBjb250cm9sbGVyIGRlc2lnbmVkIHRvIGludGVyZmFj
-ZSB3aXRoIEkzQyBhbmQgSTJDIHBlcmlwaGVyYWxzLAorICBpbXBsZW1lbnRpbmcgYSBzdWJzZXQg
-b2YgdGhlIEkzQy1iYXNpYyBzcGVjaWZpY2F0aW9uLiBUaGUgSVAgY29yZSBpcyB0ZXN0ZWQKKyAg
-b24gYXJtLCBtaWNyb2JsYXplLCBhbmQgYXJtNjQgYXJjaGl0ZWN0dXJlcy4KKworICBodHRwczov
-L2FuYWxvZ2RldmljZXNpbmMuZ2l0aHViLmlvL2hkbC9saWJyYXJ5L2kzY19jb250cm9sbGVyCisK
-K21haW50YWluZXJzOgorICAtIEpvcmdlIE1hcnF1ZXMgPGpvcmdlLm1hcnF1ZXNAYW5hbG9nLmNv
-bT4KKworcHJvcGVydGllczoKKyAgY29tcGF0aWJsZToKKyAgICBjb25zdDogYWRpLGkzYy1tYXN0
-ZXItdjEKKworICByZWc6CisgICAgbWF4SXRlbXM6IDEKKworICBjbG9ja3M6CisgICAgbWluSXRl
-bXM6IDEKKyAgICBpdGVtczoKKyAgICAgIC0gZGVzY3JpcHRpb246IFRoZSBBWEkgaW50ZXJjb25u
-ZWN0IGNsb2NrLCBkcml2ZXMgdGhlIHJlZ2lzdGVyIG1hcC4KKyAgICAgIC0gZGVzY3JpcHRpb246
-CisgICAgICAgICAgVGhlIHNlY29uZGFyeSBjbG9jaywgZHJpdmVzIHRoZSBpbnRlcm5hbCBsb2dp
-YyBhc3luY2hyb25vdXNseSB0byB0aGUKKyAgICAgICAgICByZWdpc3RlciBtYXAuIFRoZSBwcmVz
-ZW5jZSBvZiB0aGlzIGVudHJ5IHN0YXRlcyB0aGF0IHRoZSBJUCBDb3JlIHdhcworICAgICAgICAg
-IHN5bnRoZXNpemVkIHdpdGggYSBzZWNvbmQgY2xvY2sgaW5wdXQsIGFuZCB0aGUgYWJzZW5jZSBv
-ZiB0aGlzIGVudHJ5CisgICAgICAgICAgaW5kaWNhdGVzIGEgdG9wb2xvZ3kgd2hlcmUgYSBzaW5n
-bGUgY2xvY2sgaW5wdXQgZHJpdmVzIGFsbCB0aGUKKyAgICAgICAgICBpbnRlcm5hbCBsb2dpYy4K
-KworICBjbG9jay1uYW1lczoKKyAgICBtaW5JdGVtczogMQorICAgIGl0ZW1zOgorICAgICAgLSBj
-b25zdDogYXhpCisgICAgICAtIGNvbnN0OiBpM2MKKworICBpbnRlcnJ1cHRzOgorICAgIG1heEl0
-ZW1zOiAxCisKK3JlcXVpcmVkOgorICAtIGNvbXBhdGlibGUKKyAgLSByZWcKKyAgLSBjbG9ja3MK
-KyAgLSBjbG9jay1uYW1lcworICAtIGludGVycnVwdHMKKworYWxsT2Y6CisgIC0gJHJlZjogaTNj
-LnlhbWwjCisKK3VuZXZhbHVhdGVkUHJvcGVydGllczogZmFsc2UKKworZXhhbXBsZXM6CisgIC0g
-fAorICAgICNpbmNsdWRlIDxkdC1iaW5kaW5ncy9pbnRlcnJ1cHQtY29udHJvbGxlci9pcnEuaD4K
-KworICAgIGkzY0A0NGEwMDAwMCB7CisgICAgICAgIGNvbXBhdGlibGUgPSAiYWRpLGkzYy1tYXN0
-ZXItdjEiOworICAgICAgICByZWcgPSA8MHg0NGEwMDAwMCAweDEwMDA+OworICAgICAgICBpbnRl
-cnJ1cHRzID0gPDMgSVJRX1RZUEVfTEVWRUxfSElHSD47CisgICAgICAgIGNsb2NrcyA9IDwmY2xr
-YyAxNT4sIDwmY2xrYyAxNT47CisgICAgICAgIGNsb2NrLW5hbWVzID0gImF4aSIsICJpM2MiOwor
-ICAgICAgICAjYWRkcmVzcy1jZWxscyA9IDwzPjsKKyAgICAgICAgI3NpemUtY2VsbHMgPSA8MD47
-CisKKyAgICAgICAgLyogSTNDIGFuZCBJMkMgZGV2aWNlcyAqLworICAgIH07CmRpZmYgLS1naXQg
-YS9NQUlOVEFJTkVSUyBiL01BSU5UQUlORVJTCmluZGV4IDM1ZWQ4NDk4YWIxZTliOTJiNGJjZTVk
-YjliYjY0MDA0ZDgwZTRiMWEuLmZhYTUwNTM1YjUxNDAzN2RkZjk3MzA5ODc0ZWM2NGFhYzIwMTNj
-YjYgMTAwNjQ0Ci0tLSBhL01BSU5UQUlORVJTCisrKyBiL01BSU5UQUlORVJTCkBAIC0xMTQ1Miw2
-ICsxMTQ1MiwxMSBAQCBTOglNYWludGFpbmVkCiBGOglEb2N1bWVudGF0aW9uL2RldmljZXRyZWUv
-YmluZGluZ3MvaTNjL2FzcGVlZCxhc3QyNjAwLWkzYy55YW1sCiBGOglkcml2ZXJzL2kzYy9tYXN0
-ZXIvYXN0MjYwMC1pM2MtbWFzdGVyLmMKIAorSTNDIERSSVZFUiBGT1IgQU5BTE9HIERFVklDRVMg
-STNDIENPTlRST0xMRVIgSVAKK006CUpvcmdlIE1hcnF1ZXMgPGpvcmdlLm1hcnF1ZXNAYW5hbG9n
-LmNvbT4KK1M6CU1haW50YWluZWQKK0Y6CURvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5n
-cy9pM2MvYWRpLGkzYy1tYXN0ZXIueWFtbAorCiBJM0MgRFJJVkVSIEZPUiBDQURFTkNFIEkzQyBN
-QVNURVIgSVAKIE06CVByemVteXPFgmF3IEdhaiA8cGdhakBjYWRlbmNlLmNvbT4KIFM6CU1haW50
-YWluZWQKCi0tIAoyLjQ5LjAKCgotLSAKbGludXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWkzYwo=
+I3C Controller is subset of the I3C-basic specification to interface
+peripherals through I3C and I2C. The controller RTL is FPGA
+synthesizable and documentation is provided at
+https://analogdevicesinc.github.io/hdl/library/i3c_controller
+
+The main target for the I3C Controller IP is low-cost FPGAs.
+In this version the driver supports IBI (only the MDB), I3C and I2C
+transfers.
+
+The IP Core is versioned following ADI's open source HDL guidelines
+for devicetree bindings and drivers described at
+https://analogdevicesinc.github.io/hdl/user_guide/contributing.html#devicetree-bindings-drivers
+in summary, follows Semantic Versioning 2.0.0, with the dt-binding suffixed
+by -v<major>.
+
+If necessary, the contents of
+https://analogdevicesinc.github.io/hdl/user_guide/contributing.html#devicetree-bindings-drivers
+can be replicated to a file in a different series, similar to AMD Xilinx
+at Documentation/devicetree/bindings/xilinx.txt, but as adi.txt or
+similar.
+
+Signed-off-by: Jorge Marques <jorge.marques@analog.com>
+---
+Changes in v9:
+- Collected trailers manually from v7, since mentioned content in the
+  thread messed b4 capability
+- Link to v8: https://lore.kernel.org/r/20250827-adi-i3c-master-v8-0-0a7c78e58bd4@analog.com
+
+Changes in v8:
+- Remove depends
+  https://lore.kernel.org/linux-i3c/20250622-i3c-writesl-readsl-v2-0-2afd34ec6306@analog.com/T/#t
+  already in v6.17-rc1.
+Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml:
+- Remove pipe from descriptions
+- Link to v7: https://lore.kernel.org/r/20250818-adi-i3c-master-v7-0-f7207902669d@analog.com
+
+Changes in v7:
+- Edit cover linking guidelines to ADI IP Core versioning.
+Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml:
+- Extend second clock description to explain relation to synthesized topology.
+- Link to v6: https://lore.kernel.org/r/20250717-adi-i3c-master-v6-0-6c687ed71bed@analog.com
+
+Changes in v6:
+- Format 0x05C undercase
+- Link to v5: https://lore.kernel.org/r/20250715-adi-i3c-master-v5-0-c89434cbaf5e@analog.com
+
+Changes in v5:
+Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml:
+- Use semantic versioning major field for dt-binding compatible, with
+  the format adi,<ip-name>-v<major>
+
+adi-i3c-master.c:
+- Rename MAX_DEVS to ADI_MAX_DEVS
+- Encapsulate REG_CMD_FIFO_0_DEV_ADDR var
+- Reorder struct adi_i3c_i2c_dev_data fields
+- Start addr at 0 instead of 8 at adi_i3c_master_get_rr_slot
+- Minor rework on adi_i3c_master_handle_ibi to most logic out of the
+  lock. Even if length is 0 (BCR[2]=0), the mdb field is extracted and
+  written to the slot buffer. Since the length is 0, the written data
+  doesn't matter.
+  In a future update with additional bytes support (e.g., bits 31-23),
+  len would be incremented and an IBI FIFO would be read.
+- Version check against first stable release, major v1.
+  Driver+RTL features updates affect the minor field, therefore check
+  for major == 1.
+- Link to v4: https://lore.kernel.org/r/20250626-adi-i3c-master-v4-0-3846a1f66d5e@analog.com
+
+Changes in v4:
+Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml:
+- Add -1.00.a suffix where missing
+- Extend clocks descriptions
+- Add minItems to clock-names, to match clocks
+- Use header in example
+
+adi-i3c-master.c:
+- Regmap:
+  - Add new controller info registers (dyn_addr, dcr, bcr, pid)
+  - Always decreasing fields
+  - Add line break between registers
+  - Reformat REG_DEV_CHAR_BSCR_IBI to use easier to read FIELD_GET,
+    FIELD_PREP
+- Read controller info from regmap with explanation comment
+- Use linux/fpga/adi-axi-common.h macros
+- Use __counter_by macro on ncmds
+- Use __free macro
+- Use new i3c_writel_fifo and i3c_readl_fifo macros
+- Rename bytes to buf when nbytes is present
+- Use scoped_guard instead of spin_lock, spin_unlock
+- Reformat loops to read fifo status, use while single line alternative
+- Drop adi_i3c_master.max_devs, use MAX_DEVS directly
+- Use devm_clk_bulk_get_all_enabled, dropping clock name match (CHECK_DTB does it)
+- Init spin_lock
+- Init list head
+- Link to v3: https://lore.kernel.org/r/20250618-adi-i3c-master-v3-0-e66170a6cb95@analog.com
+
+Changes in v3:
+Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml:
+- Small reworking of the description
+- Add -1.00.a suffix to compatible
+
+adi-i3c-master.c:
+- Misspelling
+- Remove REG_CMD_FIFO_0_LEN_MAX since it is a HDL parameter
+- Use adapter timeout value for I2C transfers, as in
+  https://lore.kernel.org/linux-i3c/aEBd%2FFIKADYr%2F631@lizhi-Precision-Tower-5810/T/#t
+
+- Link to v2: https://lore.kernel.org/r/20250606-adi-i3c-master-v2-0-e68b9aad2630@analog.com
+
+Changes in v2:
+Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml:
+- Move allof
+- Rename clocks to axi, i3c
+
+adi-i3c-master.c:
+- Update license year
+- Rework regmap to use FIELD_GET, FIELD_PREP
+- Reformat regmap to have FIELDS after REG, prefixed by reg name.
+- Add overflow safeguards to cmd, tx fifos
+- Fix macro related macros (mostly erroneous `| ~BITMASK`
+- Use guard macros, remove goto.
+- Simplify daa logic
+- Replace devm_clk_get with devm_clk_get_enabled
+- Solve 64bit->32bit warnings on x86_64 systems by casting to u32
+- Immediate clear irq request flags, then handle it.
+
+- Link to v1: https://lore.kernel.org/r/20250604-adi-i3c-master-v1-0-0488e80dafcb@analog.com
+
+---
+Jorge Marques (2):
+      dt-bindings: i3c: Add adi-i3c-master
+      i3c: master: Add driver for Analog Devices I3C Controller IP
+
+ .../devicetree/bindings/i3c/adi,i3c-master.yaml    |   72 ++
+ MAINTAINERS                                        |    6 +
+ drivers/i3c/master/Kconfig                         |   11 +
+ drivers/i3c/master/Makefile                        |    1 +
+ drivers/i3c/master/adi-i3c-master.c                | 1019 ++++++++++++++++++++
+ 5 files changed, 1109 insertions(+)
+---
+base-commit: e21fcdd9fcc6ef2e2898d51fbc0e6c79427068e6
+change-id: 20250604-adi-i3c-master-2a5148c58c47
+
+Best regards,
+-- 
+Jorge Marques <jorge.marques@analog.com>
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
