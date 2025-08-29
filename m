@@ -4,70 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2C7BFCA0FF6
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DE76CA0EED
 	for <linux-i3c@archiver.kernel.org>; Fri, 29 Aug 2025 01:33:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UblAde28NSC2mMf/3bT7mKfDgR8AlFiIJ0lniICN7Z8=; b=b4mdM/p09QcqH8
-	0KM+do/X5GbjKc3SuoDLPGEKd2BehxodEqhGADxvwh5HmjbqLO+T8xfoyAP9tS8+QDJtZbiB+06GB
-	rOW7XFZegMWWZdxc3x45z/EXwmNbAkIZjVMaJ69Wsn6fHvwMtCOm1ggqjwc/h8Z2XvCf1Mz52ZZUg
-	P9z8xSWlq3Xa43uwZadaDJbPXAJcgLXQ9BdAuRtpav9yw7AHBGq6wzyI4cA+QBKOp0FGEE1E3osfQ
-	84I10aZA0D+3g1c1hkgveosOo8MaPoDwVdzBMQVrEWbGsTxkXGZlZ3Ql4P0GYs3AT9xzA0/uuzg+N
-	y2FyA4z3/L7zY6Bp7Y8g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DpGBb3BOU9tlpI9iWdRPGG3Y2aVIdgp8AxM4PJ4RlSE=; b=IUf3TnCYdsErKB
+	nOL5gof5y3uWVkDSoGTbJOr+0yLlSds/lfZty5w4wJ2bItzrXySsc2RKryhST+rwvczTV42Fl2O8V
+	zYCQXpxUJLj84RlnHxU36HBBo38P5yz1ttI9ibS/n5XCpAf9YHbVIw/Qq5XBVCwkw0k6jli9plfkv
+	pOtPUxNC2kUUtRyC0Rxoi0euWgCCsZDpcEDrz7FkpRMZoPMTdIp0ysCwsr1HocfS0oxhMkAULuLps
+	V7PyrCbOE4JoW3P9F7aiKfZJh/8uWHua5f6zGE6/A7rrwg003NbTniKRGLoEqagAdipPGSRNgbWWI
+	NGX3GNI8Ea3ZNS0E7bdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1urnzQ-000000041br-3XMv;
-	Fri, 29 Aug 2025 01:33:16 +0000
-Received: from mail-pj1-x1031.google.com ([2607:f8b0:4864:20::1031])
+	id 1urnzR-000000041c4-0Zbf;
+	Fri, 29 Aug 2025 01:33:17 +0000
+Received: from mail-pj1-x102e.google.com ([2607:f8b0:4864:20::102e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1urnxE-000000041LZ-0PB7
+	id 1urnxG-000000041M4-1WYi
 	for linux-i3c@lists.infradead.org;
-	Fri, 29 Aug 2025 01:31:01 +0000
-Received: by mail-pj1-x1031.google.com with SMTP id 98e67ed59e1d1-3254e80ba08so1586368a91.1
-        for <linux-i3c@lists.infradead.org>; Thu, 28 Aug 2025 18:30:59 -0700 (PDT)
+	Fri, 29 Aug 2025 01:31:03 +0000
+Received: by mail-pj1-x102e.google.com with SMTP id 98e67ed59e1d1-327ae052173so841413a91.0
+        for <linux-i3c@lists.infradead.org>; Thu, 28 Aug 2025 18:31:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1756431059; x=1757035859; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=5etRR+Xxyc8+k96JgNEfZBUH5eJcJpsRvKz1dcHOpK0=;
-        b=eT4pzIAW8D8elMWEZxDuPrnzIJguRmXyEdSSpQbas/cj4lyQAdyNUVb8fWluJH83Za
-         hxvBMmANa003mtMmHoey7s0jSR7IZJeB8F6MXAnHypfRwQkxLUrvF4eWh1z7NBPapwIL
-         yWLS2UY3vpEcfFqh30Adx2HJqIXKUdqiekTh9n0jacoIBANERbsRsNU6GgUhrsOYW9SQ
-         ENQaL6D0efGngPKiNONyAjiHaOxqEw0J4i3nxpMbdfKbCNIz0KyybUb6Jbc/wrYqg8SJ
-         b0giEPuevKlfJ1n//RKtxBf+NlHjRKZl0aaDn+k6gj1fq2L12+NIsPKLpZVnazyS3A3F
-         Ovcw==
+        d=gmail.com; s=20230601; t=1756431061; x=1757035861; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=JCc+9KPYWnXlW7uF+KcOgI9YRTfMpRpG2O6mgKyAsFA=;
+        b=W2kCJr9gajnFKHwntLs4W2LwIUiRhzLvoBTo1utAvzl7QjpXFENxsj7YjkJsWaIIlF
+         AYkEnJfPinaJF+QxAjeW0pCYoaIxwlHiBLtV1pi+EgRIoIm067uTCesyGjqxdY9V4BFQ
+         sJ0E7hWU+rWnqrHskI1YnfeQKCV79TPoqkZvEIGehy1Gq4RRbP4lBsTXIADOKo7JCFN3
+         cb/0UzdmbCLntcdqeirRlGJDv9MUCgAVPXOn42eAQunQpabkVyN9ROIGxpYFY5zqzgbY
+         Iucq7rVkGmnW33jwV2mQ65ATp0mKIlCaDMm0IfnOWn5KyfoL7meQu2OfVCK/aS63gO+i
+         btRw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1756431059; x=1757035859;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=5etRR+Xxyc8+k96JgNEfZBUH5eJcJpsRvKz1dcHOpK0=;
-        b=VOM2O6RFryOBGCr1XTpmxnJ1nUiDFvVF+RFZbmnLgM8t1MIqxsIYKknS80ih4QkUsx
-         fE/164advUXbrUR+sQqmMW6iU4U2BfRsYhjAavMlkXsE+l2Pf44KX70g3YRm839m1igo
-         hRiwZp+ThUibgq0wdsMFSIFEwKoh7kzEjcUAFAToEMFcEljeaXG6h0U4O0RaATrIc3Qq
-         0YjS/jz3b4y3KMyIKNrc74K9g8ninThFMWrJLLZdoL3seOrTETz3kz9vnU2mT7XaG+US
-         V+aWGXcwuwsMDpFfu1DLeYXXrEiekSFA0qXkwykz8RcpZvMiLi2QYMuTXJaSaMzNnTzA
-         pPYw==
-X-Forwarded-Encrypted: i=1; AJvYcCUuhhu3h+uJNaimnXs1CYAKiEAglR9ohMQEK+Ebm8sf5oflpQJWhROVN8esPj7cAlalKYjMXHfxxC4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzwGHikVEwLhQDx9rOWbXLyaFp4aqmxn30DxXUMuDOcXK0JZot7
-	BdOSFs/CvqjQ30esTF3rTFlYv0BWlwcotaBJa1ENRoYuBPNe5dsN3ZrY
-X-Gm-Gg: ASbGnctcfzCdraerOFKwxYsYRVDdkCr4uhKwk0canJO+SQ6SRBbQqFKTbZyDoILN9+I
-	e+FAqB9vVHvzGMvpi1K4gQM8V/KDhcef2bmTqWO6cvwDbH/NEqLbm+2l1XHfHSL25Y+gkkb8KQD
-	DdaagSNEq60LIgE7xJr2DCge6iQhYz+ndaXlBxByfKm4rk45ERkWMnZ70Bq1I6Tpnds7YJb8eDH
-	1Z4VnjQG2FdCof8mUAQOCaaEPn4LAUFWAXBcte7aEmbpZQZkmZjv2rQ7WDJfoMCvr94jgQJrwPK
-	JG4YzHHwI669oEf49rshlpl+XIc8oQheDtmfzLYBvSvf96KQWpLKiWg5z31XhiCgKSRnZl2v96N
-	PGwltIP2m7sM2b2xeZIIbIR7mGRm57fI8iIKIV1QeW4w=
-X-Google-Smtp-Source: AGHT+IHaUGcnHpI3Tb8ey2qTcE938zK7xyB70jNRuczFvR15ztQtKULyRR4KJVA7JcIhXZpJ+n0yBA==
-X-Received: by 2002:a17:90b:1350:b0:311:ea13:2e70 with SMTP id 98e67ed59e1d1-32515ef813fmr31446558a91.14.1756431059257;
-        Thu, 28 Aug 2025 18:30:59 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1756431061; x=1757035861;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=JCc+9KPYWnXlW7uF+KcOgI9YRTfMpRpG2O6mgKyAsFA=;
+        b=MQo5gOAjfhjTQKe9Ui7Jf9ZP1F+jsOMvXe94HL6HerZQPjTz1fDudyDXtLBqLCUwFJ
+         7FMs6fMuoeAcfiztxhe2yrwHVYPP8MZhFv5tqfrRrQMFuDWyS+RTO644rTyhHqUIG791
+         dMBGI3MO0rfWiu1Nt8TwLdckkZ43zxfDK5coVau2fHoWrrHDjETF3GLdgK1DjgZFi6BS
+         OSoxcZYWDA7btHM9frbvru7fDNFDkefUNFJtCtaZjx/Oq6SekTbnLR7TVwv6uzm17dTm
+         Z6nPhoh+7mo1fG6XBCtpMk/G8y1oYTo8/NbrozEygGYrm0Wb/tnSC4YuFFdJ/YeE2uF2
+         HIVw==
+X-Forwarded-Encrypted: i=1; AJvYcCVVATqVMhS4wOQvcGzUqChWD+CTNAuUsEAjxPbo1FOvkic7nmpNUdUec/VWW0ULb5msKNm6BeCkv34=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwSFvyzlABFI7a7Wtjy/0CJ1jTWHS648n4x8DMujqB1uTv5u07j
+	GjqUjGdX79Fm4gDr99PmaRaEt3HWnJfA3Itb4Rb+JS/0G8+C+/56ayHb
+X-Gm-Gg: ASbGncvifqBfV4f1XjYUMwTTaqRX4vcc22PEK2s3SV5yAMAPMEzDTL8gMVJsqwwsDGD
+	VjN9wO/Ncmxwt97BLKTx/ITmogwz5CLwRrgLlfqvHAWE/iTT5bj+P6ijBkzimEsDZ2Bu/iuW3zL
+	WOkpxVmxDXKPU5pq2v1/UEzZZUAWP7UNobENxarbfRkHOnBlwy5NwIxsuaii1ossSA3kK+b7J7O
+	0X/SZy+wm0bRMwCwBYvsWCoC4ajqRGgkelMMV0n9pdLi3a5JMJ5ze+hjMoaDXA+mRPyCzFCDQZf
+	TS4Ju4cpe9D2bMNLSnJ2aAMAOMWWHEmf+/tAEL/OZHIDuDogew3/5y2lKRZ7JCigKsiDZO38u1K
+	kBq6wxyz+Xg5e/S3tZxpngaGM+vbK0MxAkYXfXPSHDCE=
+X-Google-Smtp-Source: AGHT+IGzfeCPaZZjJB+gqeKg99B8LCs/ZeRT0KWO62kRVGoGTA+idY+/TD5Dbn/d3RbdoRGPeyQ98w==
+X-Received: by 2002:a17:90b:5644:b0:327:70b9:9d68 with SMTP id 98e67ed59e1d1-32770b99e1bmr10491075a91.16.1756431061407;
+        Thu, 28 Aug 2025 18:31:01 -0700 (PDT)
 Received: from cs20-buildserver.lan ([2402:7500:500:7a9f:2e0:4cff:fe68:863])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-327daeec552sm959977a91.27.2025.08.28.18.30.57
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-327daeec552sm959977a91.27.2025.08.28.18.30.59
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 28 Aug 2025 18:30:58 -0700 (PDT)
+        Thu, 28 Aug 2025 18:31:01 -0700 (PDT)
 From: Stanley Chu <stanley.chuys@gmail.com>
 X-Google-Original-From: Stanley Chu <yschu@nuvoton.com>
 To: frank.li@nxp.com,
@@ -78,15 +79,16 @@ Cc: linux-kernel@vger.kernel.org,
 	tomer.maimon@nuvoton.com,
 	kwliu@nuvoton.com,
 	yschu@nuvoton.com
-Subject: [RESEND PATCH v2 0/2] i3c: master: svc: improve IBI handling
-Date: Fri, 29 Aug 2025 09:30:51 +0800
-Message-Id: <20250829013053.3562853-1-yschu@nuvoton.com>
+Subject: [RESEND PATCH v2 1/2] i3c: master: svc: Use manual response for IBI events
+Date: Fri, 29 Aug 2025 09:30:52 +0800
+Message-Id: <20250829013053.3562853-2-yschu@nuvoton.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250829013053.3562853-1-yschu@nuvoton.com>
+References: <20250829013053.3562853-1-yschu@nuvoton.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250828_183100_134381_7A392456 
-X-CRM114-Status: UNSURE (   5.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250828_183102_399578_2E9FB3FB 
+X-CRM114-Status: GOOD (  15.21  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,15 +105,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Improve IBI handling to prevent certain error conditions.
+From: Stanley Chu <yschu@nuvoton.com>
 
-Stanley Chu (2):
-  i3c: master: svc: Use manual response for IBI events
-  i3c: master: svc: Recycle unused IBI slot
+Driver wants to nack the IBI request when the target is not in the
+known address list. In below code, svc_i3c_master_nack_ibi() will
+cause undefined behavior when using AUTOIBI with auto response rule,
+because hw always auto ack the IBI request.
 
- drivers/i3c/master/svc-i3c-master.c | 31 ++++++++++++++++++++++++-----
- 1 file changed, 26 insertions(+), 5 deletions(-)
+    switch (ibitype) {
+    case SVC_I3C_MSTATUS_IBITYPE_IBI:
+            dev = svc_i3c_master_dev_from_addr(master, ibiaddr);
+            if (!dev || !is_events_enabled(master, SVC_I3C_EVENT_IBI))
+                    svc_i3c_master_nack_ibi(master);
+            ...
+            break;
 
+AutoIBI has another issue that the controller doesn't quit AutoIBI state
+after IBIWON polling timeout when there is a SDA glitch(high->low->high).
+1. SDA high->low: raising an interrupt to execute IBI ISR
+2. SDA low->high
+3. Driver writes an AutoIBI request
+4. AutoIBI process does not start because SDA is not low
+5. IBIWON polling times out
+6. Controller reamins in AutoIBI state and doesn't accept EmitStop request
+
+Emitting broadcast address with IBIRESP_MANUAL avoids both issues.
+
+Fixes: dd3c52846d59 ("i3c: master: svc: Add Silvaco I3C master driver")
+Signed-off-by: Stanley Chu <yschu@nuvoton.com>
+---
+Changes since v1:
+ * Specify full fileds in the MCTRL register
+ * Add Fixes tag
+---
+ drivers/i3c/master/svc-i3c-master.c | 30 ++++++++++++++++++++++++-----
+ 1 file changed, 25 insertions(+), 5 deletions(-)
+
+diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
+index 701ae165b25b..8e7b4ab919e3 100644
+--- a/drivers/i3c/master/svc-i3c-master.c
++++ b/drivers/i3c/master/svc-i3c-master.c
+@@ -517,9 +517,24 @@ static void svc_i3c_master_ibi_isr(struct svc_i3c_master *master)
+ 	 */
+ 	writel(SVC_I3C_MINT_IBIWON, master->regs + SVC_I3C_MSTATUS);
+ 
+-	/* Acknowledge the incoming interrupt with the AUTOIBI mechanism */
+-	writel(SVC_I3C_MCTRL_REQUEST_AUTO_IBI |
+-	       SVC_I3C_MCTRL_IBIRESP_AUTO,
++	/*
++	 * Write REQUEST_START_ADDR request to emit broadcast address for arbitration,
++	 * instend of using AUTO_IBI.
++	 *
++	 * Using AutoIBI request may cause controller to remain in AutoIBI state when
++	 * there is a glitch on SDA line (high->low->high).
++	 * 1. SDA high->low, raising an interrupt to execute IBI isr.
++	 * 2. SDA low->high.
++	 * 3. IBI isr writes an AutoIBI request.
++	 * 4. The controller will not start AutoIBI process because SDA is not low.
++	 * 5. IBIWON polling times out.
++	 * 6. Controller reamins in AutoIBI state and doesn't accept EmitStop request.
++	 */
++	writel(SVC_I3C_MCTRL_REQUEST_START_ADDR |
++	       SVC_I3C_MCTRL_TYPE_I3C |
++	       SVC_I3C_MCTRL_IBIRESP_MANUAL |
++	       SVC_I3C_MCTRL_DIR(SVC_I3C_MCTRL_DIR_WRITE) |
++	       SVC_I3C_MCTRL_ADDR(I3C_BROADCAST_ADDR),
+ 	       master->regs + SVC_I3C_MCTRL);
+ 
+ 	/* Wait for IBIWON, should take approximately 100us */
+@@ -539,10 +554,15 @@ static void svc_i3c_master_ibi_isr(struct svc_i3c_master *master)
+ 	switch (ibitype) {
+ 	case SVC_I3C_MSTATUS_IBITYPE_IBI:
+ 		dev = svc_i3c_master_dev_from_addr(master, ibiaddr);
+-		if (!dev || !is_events_enabled(master, SVC_I3C_EVENT_IBI))
++		if (!dev || !is_events_enabled(master, SVC_I3C_EVENT_IBI)) {
+ 			svc_i3c_master_nack_ibi(master);
+-		else
++		} else {
++			if (dev->info.bcr & I3C_BCR_IBI_PAYLOAD)
++				svc_i3c_master_ack_ibi(master, true);
++			else
++				svc_i3c_master_ack_ibi(master, false);
+ 			svc_i3c_master_handle_ibi(master, dev);
++		}
+ 		break;
+ 	case SVC_I3C_MSTATUS_IBITYPE_HOT_JOIN:
+ 		if (is_events_enabled(master, SVC_I3C_EVENT_HOTJOIN))
 -- 
 2.34.1
 
