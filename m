@@ -4,66 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6511CA1017
-	for <linux-i3c@archiver.kernel.org>; Thu,  4 Sep 2025 02:10:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF7C7CAC581
+	for <linux-i3c@archiver.kernel.org>; Thu,  4 Sep 2025 16:24:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zqa314U9ZYQ4hZy5Vy8zHmsocZ8X+BP3WgKo+WmQmNU=; b=4/q0/i/GclTdDz
-	onTKfgL6pUkbSJM7E6fIHnAb7YjgxddBGbJxxYsuz7WhI6u4z+ABVtrRVqwFezCrt1wlPw8R43QsH
-	QzQ72FcqHz6X6EgRutun0RFThvZkxik3SO77bqkKNj6p7sFkugb2U19TsvFqaFk2yjslUloIoIKJq
-	b5dI4gGLVExq8744C9pWvsx0IbF34cYKgY9X0iPQ13p0n4EG6DtKCv5sXE2KOwji8Hkf2uwYRz4Ub
-	u99RwyJMTdySXpbWtK1fdrhG0RwPGXIWjD7GrPe01EoKhNRhv55JGLVJ5NyR9sj6Gtv/clYyF2COd
-	3ztNGHf/MGrA9jlnRuKw==;
+	List-Owner; bh=AuEjgeuvINfgO4zE6Mwp14tV/2X7VWb82TaOhVUgvB4=; b=pjktXA3Yx6XDaE
+	Z/6TKEVDrLnPS723yY8pThtY/HH89I6GfI7Z/D4GJVXpYCNVYp+7rXlF3LXU+mtCqQvVdwA7gUqj/
+	x37LlsnGaqBfKzHcPLxnxBZFn6dEk25nqfL5hcN/LsQFjPGvFbPlpHfebMNL3X+mo0Y3Mo7HDSRM3
+	PJ7Zd4ocbf0Ww6/rmrhaSjEJQD90lCnQp4cRMgK4Bz9YDsbbH9vM1GOc5gOziTTxbcJcTyVYw3sHZ
+	e6Yys6RbbHsgbQh5cdjRhmLaxzU7a4/5kkHUx4JK4k4SnHTbu38CyJy5IbkU4OXs7UqDT5xkSA0gf
+	URVfUsJjf5i5bnabvScA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utzQx-00000008Ezm-2ZMs;
-	Thu, 04 Sep 2025 02:10:43 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1uuClR-0000000CqmQ-2nq6;
+	Thu, 04 Sep 2025 16:24:45 +0000
+Received: from mgamail.intel.com ([198.175.65.13])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utuOK-00000007bGL-3JeY
+	id 1uu94u-0000000BZEo-2KQC
 	for linux-i3c@lists.infradead.org;
-	Wed, 03 Sep 2025 20:47:42 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5A721402D7;
-	Wed,  3 Sep 2025 20:47:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F0F28C4CEE7;
-	Wed,  3 Sep 2025 20:47:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1756932460;
-	bh=fmmefG9viijRhTVNQthic+Hu8WGTQ6x3xU0/JdzSOjA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=hVrMb9ZVNzZejicKw11SwSxH3otxG3KBAreea14rAz36ny2rEHcNl7rGQcic+LFYt
-	 iOuXWzfsOLHxgZMfKi2vN/TMl8agBwyhCXYDdEIwzpIoYk0gCFLvJFMLL4j/ZJkqgw
-	 DKZKPNnv8BjZXgEWcTDudeAqeXUiWRoKVF+CSWkotf+byb0UvtV7G4lBoL5u3e7vLr
-	 njz4cOVmWMlCx94tu086RPh5z1Gs3uZw1V99FJfJ6fLtnOhIVEYVBBTOVzQm1MoY1Z
-	 Z52sAjAau7oW7q3+CTm/6KEfi16kSGFUOpF01dhS93kv1LVqG4OwzT7JV21AhQ+Jju
-	 6TqHkMmey6kqg==
-Date: Wed, 3 Sep 2025 15:47:38 -0500
-From: Rob Herring <robh@kernel.org>
-To: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
-Cc: git@amd.com, michal.simek@amd.com, alexandre.belloni@bootlin.com,
-	Frank.Li@nxp.com, krzk+dt@kernel.org, conor+dt@kernel.org,
-	kees@kernel.org, gustavoars@kernel.org,
+	Thu, 04 Sep 2025 12:28:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1756988917; x=1788524917;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=3kXMsEvtVTGzcyhvJNBolHNZKok6L0CuTxiUsIfG3nk=;
+  b=GYXUn7Venk2Ju6c8kjSzVUrWfDJMyA2mP2PWnuYyhjgt92KNPpui1IDJ
+   OE5KCMZCzGxRDtflY8osrUmOrJVFatX0mfv/b8j1RrEqtoQLe66zLAHrY
+   dodD4K/zoCOYpKNY9xC2wN8+jb9gnN5rffTfTsjgXFF+SpzUGOZN/8s3e
+   EJMx9TjFZSoiPDfdz8BwCg6CLc8wAOLGobouLw9EtisvowG1lz7L5M6fc
+   kWhgZn0TLzp/FJVX9Ok3kOBZhsjYNi9jCzqRoQC9mCGG9fVHjk3cPP4jd
+   AV+JWqwA9BCBoGgMt/ydwQFKkW/x6Shl7zek5Yn3g7f6/R7blev/uEbLq
+   A==;
+X-CSE-ConnectionGUID: Ym45E/ZaTTSYEnDGCuLrcg==
+X-CSE-MsgGUID: hUr/hNGKRy2NlH1HRyLxdQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11542"; a="70420815"
+X-IronPort-AV: E=Sophos;i="6.18,238,1751266800"; 
+   d="scan'208";a="70420815"
+Received: from fmviesa003.fm.intel.com ([10.60.135.143])
+  by orvoesa105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Sep 2025 05:28:36 -0700
+X-CSE-ConnectionGUID: IDJ6lS2mTt2m9S789U3zXQ==
+X-CSE-MsgGUID: nKkv4LIVRSW6f7ykFF5arQ==
+X-ExtLoop1: 1
+Received: from lkp-server02.sh.intel.com (HELO 06ba48ef64e9) ([10.239.97.151])
+  by fmviesa003.fm.intel.com with ESMTP; 04 Sep 2025 05:28:27 -0700
+Received: from kbuild by 06ba48ef64e9 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1uu93x-0005Hz-0p;
+	Thu, 04 Sep 2025 12:27:56 +0000
+Date: Thu, 4 Sep 2025 20:26:32 +0800
+From: kernel test robot <lkp@intel.com>
+To: Manikanta Guntupalli <manikanta.guntupalli@amd.com>, git@amd.com,
+	michal.simek@amd.com, alexandre.belloni@bootlin.com,
+	Frank.Li@nxp.com, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, kees@kernel.org, gustavoars@kernel.org,
 	jarkko.nikula@linux.intel.com, linux-i3c@lists.infradead.org,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-hardening@vger.kernel.org, radhey.shyam.pandey@amd.com,
-	srinivas.goud@amd.com, shubhrajyoti.datta@amd.com,
-	manion05gk@gmail.com
-Subject: Re: [PATCH V3 1/2] dt-bindings: i3c: Add AMD I3C master controller
- support
-Message-ID: <20250903204738.GA2744698-robh@kernel.org>
-References: <20250903095906.3260804-1-manikanta.guntupalli@amd.com>
- <20250903095906.3260804-2-manikanta.guntupalli@amd.com>
+	linux-hardening@vger.kernel.org
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	radhey.shyam.pandey@amd.com, srinivas.goud@amd.com,
+	shubhrajyoti.datta@amd.com, manion05gk@gmail.com,
+	Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+Subject: Re: [PATCH V3 2/2] i3c: master: Add AMD I3C bus controller driver
+Message-ID: <202509042018.CCuFpnkb-lkp@intel.com>
+References: <20250903095906.3260804-3-manikanta.guntupalli@amd.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250903095906.3260804-2-manikanta.guntupalli@amd.com>
+In-Reply-To: <20250903095906.3260804-3-manikanta.guntupalli@amd.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250903_134740_848560_4F6CC6BE 
-X-CRM114-Status: GOOD (  16.97  )
+X-CRM114-CacheID: sfid-20250904_052836_643528_EE743496 
+X-CRM114-Status: GOOD (  11.22  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,58 +94,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Sep 03, 2025 at 03:29:05PM +0530, Manikanta Guntupalli wrote:
-> Add device tree binding documentation for the AMD I3C master controller.
-> 
-> Signed-off-by: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
-> ---
-> Changes for V2:
-> Updated commit subject and description.
-> Moved allOf to after required.
-> Removed xlnx,num-targets property.
-> 
-> Changes for V3:
-> Updated commit description.
-> Corrected the order of properties and removed resets property.
-> Added compatible to required list.
-> Added interrupts to example.
-> ---
->  .../devicetree/bindings/i3c/xlnx,axi-i3c.yaml | 53 +++++++++++++++++++
->  1 file changed, 53 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/i3c/xlnx,axi-i3c.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c.yaml b/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c.yaml
-> new file mode 100644
-> index 000000000000..32f73c31121e
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c.yaml
-> @@ -0,0 +1,53 @@
-> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/i3c/xlnx,axi-i3c.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: AMD I3C master
-> +
-> +maintainers:
-> +  - Manikanta Guntupalli <manikanta.guntupalli@amd.com>
-> +
-> +description:
-> +  The AXI-I3C IP is an I3C Controller with an AXI4-Lite interface, compatible
-> +  with the MIPI I3C Specification v1.1.1. The design includes bidirectional I/O
-> +  buffers that implement open collector drivers for the SDA and SCL signals.
-> +  External pull-up resistors are required to properly hold the bus at a Logic-1
-> +  level when the drivers are released.
-> +
-> +properties:
-> +  compatible:
-> +    const: xlnx,axi-i3c-1.0
+Hi Manikanta,
 
-Where does the version number come from? This must correspond to some 
-h/w documentation or it is useless.
+kernel test robot noticed the following build errors:
 
-Rob
+[auto build test ERROR on robh/for-next]
+[also build test ERROR on linus/master v6.17-rc4 next-20250904]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Manikanta-Guntupalli/dt-bindings-i3c-Add-AMD-I3C-master-controller-support/20250903-220233
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
+patch link:    https://lore.kernel.org/r/20250903095906.3260804-3-manikanta.guntupalli%40amd.com
+patch subject: [PATCH V3 2/2] i3c: master: Add AMD I3C bus controller driver
+config: hexagon-allmodconfig (https://download.01.org/0day-ci/archive/20250904/202509042018.CCuFpnkb-lkp@intel.com/config)
+compiler: clang version 17.0.6 (https://github.com/llvm/llvm-project 6009708b4367171ccdbf4b5905cb6a803753fe18)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250904/202509042018.CCuFpnkb-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202509042018.CCuFpnkb-lkp@intel.com/
+
+All error/warnings (new ones prefixed by >>):
+
+>> drivers/i3c/master/amd-i3c-master.c:182:9: error: call to undeclared function 'FIELD_GET'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+     182 |         return FIELD_GET(XI3C_RESP_CODE_MASK, response_data);
+         |                ^
+   drivers/i3c/master/amd-i3c-master.c:338:29: error: call to undeclared function 'FIELD_GET'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+     338 |         while (cmd->rx_len > 0 && !xi3c_is_resp_available(master)) {
+         |                                    ^
+   drivers/i3c/master/amd-i3c-master.c:102:8: note: expanded from macro 'xi3c_is_resp_available'
+     102 |         ((u8)(FIELD_GET(XI3C_SR_RESP_NOT_EMPTY_MASK,                            \
+         |               ^
+   drivers/i3c/master/amd-i3c-master.c:382:29: error: call to undeclared function 'FIELD_GET'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+     382 |         while (cmd->tx_len > 0 && !xi3c_is_resp_available(master)) {
+         |                                    ^
+   drivers/i3c/master/amd-i3c-master.c:102:8: note: expanded from macro 'xi3c_is_resp_available'
+     102 |         ((u8)(FIELD_GET(XI3C_SR_RESP_NOT_EMPTY_MASK,                            \
+         |               ^
+   drivers/i3c/master/amd-i3c-master.c:592:20: error: call to undeclared function 'FIELD_GET'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+     592 |                 pid_bcr_dcr[i] = FIELD_GET(XI3C_PID_MASK,
+         |                                  ^
+>> drivers/i3c/master/amd-i3c-master.c:592:30: warning: shift count >= width of type [-Wshift-count-overflow]
+     592 |                 pid_bcr_dcr[i] = FIELD_GET(XI3C_PID_MASK,
+         |                                            ^~~~~~~~~~~~~
+   drivers/i3c/master/amd-i3c-master.c:53:26: note: expanded from macro 'XI3C_PID_MASK'
+      53 | #define XI3C_PID_MASK                           GENMASK(63, 16)
+         |                                                 ^~~~~~~~~~~~~~~
+   include/linux/bits.h:51:24: note: expanded from macro 'GENMASK'
+      51 | #define GENMASK(h, l)           GENMASK_TYPE(unsigned long, h, l)
+         |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   include/linux/bits.h:49:20: note: expanded from macro 'GENMASK_TYPE'
+      49 |               type_max(t) >> (BITS_PER_TYPE(t) - 1 - (h)))))
+         |                           ^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   drivers/i3c/master/amd-i3c-master.c:835:6: error: call to undeclared function 'FIELD_GET'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+     835 |         if (xi3c_getrevisionnumber(master) == 0)
+         |             ^
+   drivers/i3c/master/amd-i3c-master.c:90:8: note: expanded from macro 'xi3c_getrevisionnumber'
+      90 |         ((u8)(FIELD_GET(XI3C_REV_NUM_MASK,                                      \
+         |               ^
+   drivers/i3c/master/amd-i3c-master.c:925:15: error: call to undeclared function 'FIELD_GET'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+     925 |         info.pid = ((FIELD_GET(XI3C_PID1_MASK, pid1_bcr_dcr) << 32) |
+         |                      ^
+   drivers/i3c/master/amd-i3c-master.c:925:55: warning: shift count >= width of type [-Wshift-count-overflow]
+     925 |         info.pid = ((FIELD_GET(XI3C_PID1_MASK, pid1_bcr_dcr) << 32) |
+         |                                                              ^  ~~
+   2 warnings and 6 errors generated.
+
+
+vim +/FIELD_GET +182 drivers/i3c/master/amd-i3c-master.c
+
+   164	
+   165	static int xi3c_get_response(struct xi3c_master *master)
+   166	{
+   167		u32 resp_reg, response_data;
+   168		int ret;
+   169	
+   170		ret = readl_poll_timeout(master->membase + XI3C_SR_OFFSET,
+   171					 resp_reg,
+   172					 resp_reg & XI3C_SR_RESP_NOT_EMPTY_MASK,
+   173					 0, XI3C_XFER_TIMEOUT_MS);
+   174		if (ret) {
+   175			dev_err(master->dev, "AXI I3C response timeout\n");
+   176			return ret;
+   177		}
+   178	
+   179		response_data = readl(master->membase + XI3C_RESP_STATUS_FIFO_OFFSET);
+   180	
+   181		/* Return response code */
+ > 182		return FIELD_GET(XI3C_RESP_CODE_MASK, response_data);
+   183	}
+   184	
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-i3c mailing list
