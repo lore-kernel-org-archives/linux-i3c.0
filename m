@@ -4,82 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6CCF7CA1015
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED09ACA1013
 	for <linux-i3c@archiver.kernel.org>; Thu,  4 Sep 2025 16:24:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tuiGULvlNTrtccS9WcvV3+aYPpOWUtjX8qcJzw+VSq4=; b=AbDVzMtNYgjVRX
-	RgwsM3Jj9+AJuosFyQses7cz2uIf2krswGMnuyQ53Vdt0qqcLY/xPWKWkPXFZ/s6qYZghVoMTeTGG
-	yzRjwUPrRk/dE6Z+mV4snQdneD/G7ariafGdxpwPnBerSV2zgQOImKbNR7C8anXGxBpJ6jzRyIShR
-	YIm/YOFFvU8sHDQITNO8TPHIlkjJRPpoigdHC2xWovJJXY5UkHJkEMlu2RS9qr+F6SrhdL8sDd7ix
-	VBeFKLwB32FEfNXgZ5oIxKWYWymRZjoU5XeFzE6LZ+M5cOBfZqMZLa6LIazhADSdN9bi8zZlPhI/K
-	sG0YNzA2UCFKogqlua/g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QKjonikhs4AgkECM9tPmwHHdMjY0wTnUUqReCjWqj4o=; b=IMpapTdt2JwPj/
+	2tQOFMpGHhFPWMnH38PrAmPfozZEE+uqVs41+GMmVto8qJuC155rYpvuWf2mNUcLxLjxqj0P4/LNj
+	92DQYQM4ewnJOfZjGVV0kUYbr4vvI5K0CV5RKADXHPz/I5+phsWuDhxv5NIYCLA0C+XKl2sT/T3th
+	cgyJGBNJ4r2hlI5xp3cmHAm6T37/IXKq91qTeyag0OzjaK6fd+WOyKWgyTF+3WOphuZqFc6mLtq+f
+	pKn6pR3iOLFI2EfPUi/g62coSbSC/jQ/oCw183wxus6VUL6lSqUKgJxI61LR7lbjjhjflDWDRGPOA
+	g+RtQ8rx9jCmfs5Bimyw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuClT-0000000Cqr7-49iQ;
-	Thu, 04 Sep 2025 16:24:47 +0000
-Received: from mgamail.intel.com ([192.198.163.9])
+	id 1uuClU-0000000CqsP-2OMG;
+	Thu, 04 Sep 2025 16:24:48 +0000
+Received: from mgamail.intel.com ([198.175.65.21])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu9ET-0000000BcS8-1WJf
+	id 1uu9IO-0000000BdqJ-0qHO
 	for linux-i3c@lists.infradead.org;
-	Thu, 04 Sep 2025 12:38:30 +0000
+	Thu, 04 Sep 2025 12:42:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1756989509; x=1788525509;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=FBGLD3KXpGnBfJUXJqFViPTZk56264NLPCfYoX+fVpM=;
-  b=IQllowljP42qk8AS32F4Oa1RiLgs7LDy2yWv3YDYvp6NpQB23Tj1ODKJ
-   TiP0bfwOfHAQ6AGZpJctqI4fiWm4uTgH1+uj09/fmdTGUONt+KxCpUCBT
-   pd5RvfFt2cXZsNPm+ePQB9uuGNLVuTZNx3GGIRt4BT6fKJlvm1Bp+sqgA
-   e4C7X+GIG471B/O02G4tRgbjNSIh7C3uL4wzXLE+V9RbYdNz9HYNze5dL
-   7c93yrbiqp9bbjtGGFlEg92BUdGQsD+IvlLa3BQJfsqsm6xxh26dJb/6f
-   8Eml9Fz0ErsOhUgKZQu9AHGKSP0xD8yRQk7/4yr2yxdaSNNuD/t7zFUVx
+  t=1756989752; x=1788525752;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=uBZmlOc+OPtsEtg+cYneZ2W1b3x5tDqmB5bVem4OYes=;
+  b=Bas84GoahJL0JV5WsYmH/+Ax323UAgNaHQPNxBFc/Z24vTE9jA1rOr1J
+   s4PYVO1gnjZYc0Ldmf2b7UMOoUJmae+i3r/3goBhhybq9ntQwY7gfVIfH
+   UvLxy//0cSwN64JxH025M2/tlIRCZcDQMFcY3/JIAUX0aw90xEZeuklo6
+   lVs/aRf01xVPDM9OYiz4BI+ncPTrftpdIjpeBenBSOi0VJjmkyWWsfomo
+   gqSEXmD+WQOv2DFrd5Imm9qQvNrS1gaynh0lnOrtQ/A9EuUurYpv39oQc
+   5UT2lKAlIKuV6rwVLmA8jb/wtU90TjmXQFeQgoX7dc8A+WH8L/scJlt9l
    w==;
-X-CSE-ConnectionGUID: ESmViP6xT1W+gdpOq4nAww==
-X-CSE-MsgGUID: XL5NIVJuRFmDJyzzRmP5fg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11542"; a="70030659"
-X-IronPort-AV: E=Sophos;i="6.18,238,1751266800"; 
-   d="scan'208";a="70030659"
-Received: from orviesa004.jf.intel.com ([10.64.159.144])
-  by fmvoesa103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Sep 2025 05:38:27 -0700
-X-CSE-ConnectionGUID: nO4eeNixTqKJl6ZGSDOJpg==
-X-CSE-MsgGUID: uVrUxsVqSRSnPCJvRO0NNA==
+X-CSE-ConnectionGUID: WGBlOYJHSFippIpOKRU5tQ==
+X-CSE-MsgGUID: wl+/6zsERf+LeIyMIW4N1Q==
+X-IronPort-AV: E=McAfee;i="6800,10657,11531"; a="59246524"
+X-IronPort-AV: E=Sophos;i="6.17,312,1747724400"; 
+   d="scan'208";a="59246524"
+Received: from orviesa007.jf.intel.com ([10.64.159.147])
+  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Sep 2025 05:42:31 -0700
+X-CSE-ConnectionGUID: wmhd7yBKTG2lyNRW5ZBqQA==
+X-CSE-MsgGUID: 5/m0IPpTSsOMXMkl1tQGdA==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.18,238,1751266800"; 
-   d="scan'208";a="176223164"
-Received: from lkp-server02.sh.intel.com (HELO 06ba48ef64e9) ([10.239.97.151])
-  by orviesa004.jf.intel.com with ESMTP; 04 Sep 2025 05:38:22 -0700
-Received: from kbuild by 06ba48ef64e9 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1uu9E1-0005IF-0F;
-	Thu, 04 Sep 2025 12:38:06 +0000
-Date: Thu, 4 Sep 2025 20:37:31 +0800
-From: kernel test robot <lkp@intel.com>
-To: Manikanta Guntupalli <manikanta.guntupalli@amd.com>, git@amd.com,
-	michal.simek@amd.com, alexandre.belloni@bootlin.com,
-	Frank.Li@nxp.com, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, kees@kernel.org, gustavoars@kernel.org,
-	jarkko.nikula@linux.intel.com, linux-i3c@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	linux-hardening@vger.kernel.org
-Cc: oe-kbuild-all@lists.linux.dev, radhey.shyam.pandey@amd.com,
-	srinivas.goud@amd.com, shubhrajyoti.datta@amd.com,
-	manion05gk@gmail.com,
-	Manikanta Guntupalli <manikanta.guntupalli@amd.com>
-Subject: Re: [PATCH V3 2/2] i3c: master: Add AMD I3C bus controller driver
-Message-ID: <202509042006.MI4nEHWs-lkp@intel.com>
-References: <20250903095906.3260804-3-manikanta.guntupalli@amd.com>
+   d="scan'208";a="171770634"
+Received: from mylly.fi.intel.com (HELO mylly.fi.intel.com.) ([10.237.72.151])
+  by orviesa007.jf.intel.com with ESMTP; 04 Sep 2025 05:42:28 -0700
+From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+To: linux-i3c@lists.infradead.org
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>,
+	Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	Boris Brezillon <bbrezillon@kernel.org>,
+	Jarkko Nikula <jarkko.nikula@linux.intel.com>
+Subject: [PATCH] i3c: Fix default I2C adapter timeout value
+Date: Thu,  4 Sep 2025 15:42:26 +0300
+Message-ID: <20250904124226.837639-1-jarkko.nikula@linux.intel.com>
+X-Mailer: git-send-email 2.47.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250903095906.3260804-3-manikanta.guntupalli@amd.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250904_053829_612189_2409E4ED 
-X-CRM114-Status: GOOD (  10.71  )
+X-CRM114-CacheID: sfid-20250904_054232_294191_15B590F0 
+X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,36 +86,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Manikanta,
+Commit 3a379bbcea0a ("i3c: Add core I3C infrastructure") set the default
+adapter timeout for I2C transfers as 1000 (ms). However that parameter
+is defined in jiffies not in milliseconds.
 
-kernel test robot noticed the following build warnings:
+With mipi-i3c-hci driver this wasn't visible until commit c0a90eb55a69
+("i3c: mipi-i3c-hci: use adapter timeout value for I2C transfers").
 
-[auto build test WARNING on robh/for-next]
-[also build test WARNING on linus/master v6.17-rc4 next-20250904]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+Fix this by setting the default timeout as HZ (CONFIG_HZ) not 1000.
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Manikanta-Guntupalli/dt-bindings-i3c-Add-AMD-I3C-master-controller-support/20250903-220233
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
-patch link:    https://lore.kernel.org/r/20250903095906.3260804-3-manikanta.guntupalli%40amd.com
-patch subject: [PATCH V3 2/2] i3c: master: Add AMD I3C bus controller driver
-config: loongarch-allyesconfig (https://download.01.org/0day-ci/archive/20250904/202509042006.MI4nEHWs-lkp@intel.com/config)
-compiler: clang version 22.0.0git (https://github.com/llvm/llvm-project 2e122990391b2ba062e6308a12cfedf7206270ba)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250904/202509042006.MI4nEHWs-lkp@intel.com/reproduce)
+Fixes: 1b84691e7870 ("i3c: dw: use adapter timeout value for I2C transfers")
+Fixes: be27ed672878 ("i3c: master: cdns: use adapter timeout value for I2C transfers")
+Fixes: c0a90eb55a69 ("i3c: mipi-i3c-hci: use adapter timeout value for I2C transfers")
+Fixes: a747e01adad2 ("i3c: master: svc: use adapter timeout value for I2C transfers")
+Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
+Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+---
+ drivers/i3c/master.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202509042006.MI4nEHWs-lkp@intel.com/
-
-All warnings (new ones prefixed by >>):
-
->> Warning: drivers/i3c/master/amd-i3c-master.c:156 struct member 'daa' not described in 'xi3c_master'
-
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 2ef898a8fd80..67a18e437f83 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -2492,7 +2492,7 @@ static int i3c_master_i2c_adapter_init(struct i3c_master_controller *master)
+ 	strscpy(adap->name, dev_name(master->dev.parent), sizeof(adap->name));
+ 
+ 	/* FIXME: Should we allow i3c masters to override these values? */
+-	adap->timeout = 1000;
++	adap->timeout = HZ;
+ 	adap->retries = 3;
+ 
+ 	id = of_alias_get_id(master->dev.of_node, "i2c");
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+2.47.2
+
 
 -- 
 linux-i3c mailing list
