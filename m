@@ -4,138 +4,97 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A9765CAC587
-	for <linux-i3c@archiver.kernel.org>; Sun, 14 Sep 2025 20:33:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EA543CAC59B
+	for <linux-i3c@archiver.kernel.org>; Sun, 14 Sep 2025 20:33:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KAC/o27rTwJGXuOBK4htvuwAiTuaNK2tjKy//EubWIs=; b=tGQpXlPbxCJb3l
-	+ANHCGDL5S6JmysUysNM2ogzEqSV4Bvqve6s0ZBhaQPrNkl8EZ/Uil+hWTdFBlQHcHh2BSI7qZiU0
-	9TKGecRZhwwxq5WtEyGFbF7RNWfAYXuCILRNgI/U3V7+pWgVPN8yiSzPqZWpTlfmEi0Rgfi2Gwj53
-	O2bYcRLalg6/oOeHjnjk47D+n4jp4+fYJ5b0MFm8eOTYVAwZ8LB97X1ofUcJnVsllve9ZxuS4M1b1
-	RhbDXq6QAUAT94lAvc7Wp1VxfK9Ot1Ytgw0u+DTGojOghFhovjJygVEO2/MW1f91CLbbVXfVTt68H
-	S4QMgHws7YuWCKmj0pTQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=XHBuz6T/+zdl6kXcPfPK82xZ4Dp1SZLiSugLcnSoENI=; b=XRgC+d9XdMlPaa
+	Cu/HeTX+bCL1iqk2Hh/8cjzxNdflN9maGo4BhHuK3dw60tqo5AOQrrz8LO+zPivC1zT6ZuBApHit/
+	2Dhxmj5TukXNctTfooHqWuXv4qLiS0/t00GGxV7jtHjELhHwlkixZLqu9KLzC8qFzS6daLw3K1vKh
+	JykybJXHHBPevArEG6X9LAPXEGok68nMAZSnDkPGB9Nxb6w3w+vG5TIDdp+IBS6crh1c7fvdQWNx2
+	cby89rMR60vTyyOJQkQJ7Ux1oARvwcHyTU3SX0p0Vjkagi1DaMYs03GN0xDQs6nXF4jfPv5+SBhd4
+	09sWL1B6VG8VILb5mIkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uxtPf-000000029pL-0o1c;
-	Sun, 14 Sep 2025 20:33:31 +0000
-Received: from mail-sn1nam02on20608.outbound.protection.outlook.com ([2a01:111:f403:2406::608] helo=NAM02-SN1-obe.outbound.protection.outlook.com)
+	id 1uxtPg-000000029rg-2gMg;
+	Sun, 14 Sep 2025 20:33:32 +0000
+Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1utkHC-000000061Z9-3bS3
+	id 1uuCQa-0000000CjPJ-3a1z
 	for linux-i3c@lists.infradead.org;
-	Wed, 03 Sep 2025 09:59:40 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=ttzFEQj87nLmlF3KRmw9tx+/uUdS2b+IFJuYkmPaM3nHRhqou/dQOPLIWCEugYXYAedgYdmK2nAZPNvCD1lhhxyfI202om+NRAZw6w5WIvehOeEIpOb98q8fV312HRehHe3lS3wE1eaXWUZZ01gPCQsk1ZkSQIe/HSNzDXSqAnTAVSpN9Pqmpgop1fCU4IMX3wQyvoNQsXYwazWgUbjS2ZYG5MLVHSgMdX0RC7JQvz4Yh568tynDjSszApcR1TV37ayFbZDWr9ykBP/ydBANIU5pN9caagkEZ+XS9mWLlIROLWacMoVG5KQhg2UH9fq+ylEGfddT+BZ6rxUojdR38A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=30/eO+iSluJxvBAfk+blz++Sd0iNX9DcTlPoC9MhYpc=;
- b=ghnvtnBdIepwB0MhqyRVWFdF2M6TUxW9AhotKE3LPtSou9RYV1/5fXh1nTBTkcQKBDbg/j9etyCp1MUIFH3meSafH8FZPkdnZbEc2jPa5wu0GKRsBOIUbLMmHs5ReYyJLt4X5RbrjxAEd2AA73A536avGLE60+SEnlR3to8stmIrnyh8z8ZU/0a1gpRs8AUbVjHk1lUa3gR+LRUpojJZZgpSFwWaKaAGlQB1hHaXXKkk/SfkaCKqu28TPd2iMBePVjeOmPGVhnqGGyl3BPAUUOsT2vsUqjCHXMlHXlpTF1SRDPlGzPMM2FxVZYWbuEWdDZAqfoL7E78dmw3a6Nm2Eg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 165.204.84.17) smtp.rcpttodomain=gmail.com smtp.mailfrom=amd.com; dmarc=pass
- (p=quarantine sp=quarantine pct=100) action=none header.from=amd.com;
- dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=30/eO+iSluJxvBAfk+blz++Sd0iNX9DcTlPoC9MhYpc=;
- b=vGBQK0/yQ6K4v6V9JVftzJ2mSoxxQRB095IeEbJCsxBK8BjBwreks1tidsWV1pW9bv68aZfX2fdjAZAXNkjfI6Ek5TLEb6NHnrJMTsPkO6v+QgI84XfPm5rNYTElpKNySa2m8l+EbL9342fnyyjCyYW8l9QpcgAKHylG5vtvJ+o=
-Received: from MW4PR04CA0376.namprd04.prod.outlook.com (2603:10b6:303:81::21)
- by PH7PR12MB6636.namprd12.prod.outlook.com (2603:10b6:510:212::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9073.27; Wed, 3 Sep
- 2025 09:59:30 +0000
-Received: from SJ1PEPF00001CDD.namprd05.prod.outlook.com
- (2603:10b6:303:81:cafe::45) by MW4PR04CA0376.outlook.office365.com
- (2603:10b6:303:81::21) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.9073.27 via Frontend Transport; Wed,
- 3 Sep 2025 09:59:29 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
- smtp.mailfrom=amd.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=amd.com;
-Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
- 165.204.84.17 as permitted sender) receiver=protection.outlook.com;
- client-ip=165.204.84.17; helo=SATLEXMB03.amd.com; pr=C
-Received: from SATLEXMB03.amd.com (165.204.84.17) by
- SJ1PEPF00001CDD.mail.protection.outlook.com (10.167.242.5) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.20.9073.11 via Frontend Transport; Wed, 3 Sep 2025 09:59:29 +0000
-Received: from SATLEXMB03.amd.com (10.181.40.144) by SATLEXMB03.amd.com
- (10.181.40.144) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.39; Wed, 3 Sep
- 2025 04:59:25 -0500
-Received: from xhdradheys41.xilinx.com (10.180.168.240) by SATLEXMB03.amd.com
- (10.181.40.144) with Microsoft SMTP Server id 15.1.2507.39 via Frontend
- Transport; Wed, 3 Sep 2025 04:59:21 -0500
-From: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
-To: <git@amd.com>, <michal.simek@amd.com>, <alexandre.belloni@bootlin.com>,
-	<Frank.Li@nxp.com>, <robh@kernel.org>, <krzk+dt@kernel.org>,
-	<conor+dt@kernel.org>, <kees@kernel.org>, <gustavoars@kernel.org>,
-	<jarkko.nikula@linux.intel.com>, <linux-i3c@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-hardening@vger.kernel.org>
-CC: <radhey.shyam.pandey@amd.com>, <srinivas.goud@amd.com>,
-	<shubhrajyoti.datta@amd.com>, <manion05gk@gmail.com>, Manikanta Guntupalli
-	<manikanta.guntupalli@amd.com>
-Subject: [PATCH V3 1/2] dt-bindings: i3c: Add AMD I3C master controller support
-Date: Wed, 3 Sep 2025 15:29:05 +0530
-Message-ID: <20250903095906.3260804-2-manikanta.guntupalli@amd.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20250903095906.3260804-1-manikanta.guntupalli@amd.com>
-References: <20250903095906.3260804-1-manikanta.guntupalli@amd.com>
+	Thu, 04 Sep 2025 16:03:14 +0000
+Received: by mail-wm1-x335.google.com with SMTP id 5b1f17b1804b1-45b7da4101fso4560165e9.3
+        for <linux-i3c@lists.infradead.org>; Thu, 04 Sep 2025 09:03:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1757001791; x=1757606591; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=inlzeL92Q1+R3JzgzpZ5gZz+OI69SWz4CtAKRdZzkcw=;
+        b=NYrttEwMBBhJZfefWmlgfp9bTcNj7cSmZYSW16R8fijPDbQvZBV/dRTWFZjZCm8EY+
+         NppLtXk39oII2I8bcEGZmUT+JbEISm0Nh5f8a191hapHlWNFKAUChr8fcglH5xBWLVPs
+         XS8Cj4ViADCIr0y/m/Y/kuFOFjqZtshfLsFmpjGYVc9Z++TVcOg6GUYj1LEO4CRHfjXH
+         WP3mm8mPGoPOQ38TE/noHyBsP5M/v3iJSOHLH5C5V8lAT4ipYK2iik6cvxwGRg1ThbbD
+         iJGvlcKe83BTpei0T2UEhncFaX/W4bQVfEdynRskwdxMM8Tbl1aWVYkkaohfClvaFsJf
+         Gemw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1757001791; x=1757606591;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=inlzeL92Q1+R3JzgzpZ5gZz+OI69SWz4CtAKRdZzkcw=;
+        b=tKLUemMtbuot/FGah1KWjUqeb8+YCuNBUbOO+YVzFXyKjKuHoH/TKVyFZ2in2gztNA
+         i5UBPi05h8G6srd17reoA4w7zpKr5YzDpSVVbuBuNqhNK/5Ly4VzJGoBWPsIpxBWP66p
+         X/JnF4Dxf15bUwWosIF1j6dW4/nAEDqLSCs1FjO7IbpRBSlqlHPmVOtnc+wh3tEyqDiS
+         ggCisIbiyeQhNUm6ZUhqAL4vjFyrVkL50MS3urIRtr/qAU9G9Jt1MHINmv7PXblzBV1N
+         wxXsY4xSdsOR1gbA4p/OTQrgmILSeufiM7C9WMASpR0v/DlwHS67MeirUiVo8DYMWxjt
+         E0ig==
+X-Gm-Message-State: AOJu0YxxI4V/zLsZhDiOD2n5X56zDUSJp/yLihlKQ73bHukiPc/9+n+p
+	c9cYL+BfdofKkoRvNrmTuVeNeAgyl0klysDSnZGvw9T9mH7OoZB8xvhK
+X-Gm-Gg: ASbGncvZg7hRkgujZLUs9YQMRMnolM96LSxFvWaYYiNHZuOJ5Qo4zbNDmOES12LXMFZ
+	mO6yTL67xet1PVHhSTHPHt+tFraIxzmAR0DkBXclyKSjrUGjhyx5yYyFSivke35hm/0bphJvL21
+	es1vW8uVfQqjAPxJlY0ZqUjs4FYuJAGNBwIlG800iBBOXqwP2KkmVqJECVAJn8D/XxwzBRoWoeL
+	hRmeZAuB0f4LJUnq9Hlda0g4Yvn3MQAEshFgEznsCelKK1rakw9vGOvTy5TH37apwdQ3tVrIdbB
+	Mi/MIlZdUvorAiILahMNQov3J/3FzjN/eqCwb5GqCWSoJYL0se3LkK1yPlxFI9fYE9GeZnDv5SA
+	YMLyO/RNvNOut8b2KJzlqtBcblgpHUQ9SVo997yHLHhCjH8dG58skcdXdVw==
+X-Google-Smtp-Source: AGHT+IFgIVReQPVQhz9k/P9YI/MxpwIZDmDNHMJlsOtsRqB1HD/exOoyXUahixSAJHYLjPaR1ELVcw==
+X-Received: by 2002:a05:600c:4452:b0:455:f187:6203 with SMTP id 5b1f17b1804b1-45b855983cfmr146238965e9.27.1757001790426;
+        Thu, 04 Sep 2025 09:03:10 -0700 (PDT)
+Received: from iku.Home ([2a06:5906:61b:2d00:904e:70c8:edf3:59a4])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-45b98e77231sm117935885e9.12.2025.09.04.09.03.09
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 04 Sep 2025 09:03:09 -0700 (PDT)
+From: Prabhakar <prabhakar.csengg@gmail.com>
+X-Google-Original-From: Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+To: Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Geert Uytterhoeven <geert+renesas@glider.be>,
+	Magnus Damm <magnus.damm@gmail.com>
+Cc: linux-i3c@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org,
+	Prabhakar <prabhakar.csengg@gmail.com>,
+	Biju Das <biju.das.jz@bp.renesas.com>,
+	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
+	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [PATCH] dt-bindings: i3c: renesas,i3c: Add RZ/V2H(P) and RZ/V2N support
+Date: Thu,  4 Sep 2025 17:03:05 +0100
+Message-ID: <20250904160305.247618-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-Mailer: git-send-email 2.51.0
 MIME-Version: 1.0
-Received-SPF: None (SATLEXMB03.amd.com: manikanta.guntupalli@amd.com does not
- designate permitted sender hosts)
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SJ1PEPF00001CDD:EE_|PH7PR12MB6636:EE_
-X-MS-Office365-Filtering-Correlation-Id: ce4dcd4c-002a-43d9-22d2-08ddead092e0
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|1800799024|7416014|36860700013|376014|13003099007|921020;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?vgK9deEU/hCJgzUlRnUHE2rAt+4Rg781arfTr/TQNiNqBDCi4bbY5za2QZu/?=
- =?us-ascii?Q?73r23n2f7zmuD3bxOCVUeuLaQMc1GQAqrpJ2BhoDECKDfvoRxH/++r0/ysLZ?=
- =?us-ascii?Q?jB1ez2gveK5Tc3GhsemvDQ/FNGSkH18jSrEkie3ZKFB46yHfnb03LuhHSsrQ?=
- =?us-ascii?Q?fJuqLwOOE9N7ejgkwKQQJjDxlLJoq9kGFG4kC/VOPPNqzpVUZsYbMPUyqS+a?=
- =?us-ascii?Q?yHhViiB9fxStlfLK1gX+dnx3fzTlx70oNz//7WgPXxWbeYcgfYrsOpSw+1Bd?=
- =?us-ascii?Q?BBLkBSPo4f29C3lHGGtORiTO7stcLynRJP0nmTdeql7/XRZ+qcGfLzajIGip?=
- =?us-ascii?Q?Q7Kd67OPmpr/Z2JJtYxPzRagCvn7bvlac4fsWxVvhJyx+pKtooICmY9jsWTe?=
- =?us-ascii?Q?nTEq/FbnlPVYAl/qm+buV1T+9EMb99WX5JwUTZuszpUUf6TYWF7Fq5z6OUlA?=
- =?us-ascii?Q?k7W6L2vY3ac7QVsydcAIopxo0FpCdDTuDu9KtSqJ6iwrRx3sTofjzRJ/o8H2?=
- =?us-ascii?Q?UlpjIqVDycQRazxNCv7e8IQ6YEzKZ34MUugyLj+TNc5AyKSZAkPFSifjVLfS?=
- =?us-ascii?Q?cf6DJVBMHGlHqowD42Mj9rd7aex/VJG9L4m1bhUaWr4+uGEnxzz6fPTo+Ich?=
- =?us-ascii?Q?soS2uWNpHiBG/MUJy0TgpgTSxSBFLnjIRFFKjfd1n0MeKqTQ3Ffm/p0SNaOI?=
- =?us-ascii?Q?OZehGr3D5j9NT72m65zw2ACQ25eGalWOm4skDo54+R5tx4UNz6mO58oifU7x?=
- =?us-ascii?Q?dqaSRW4AX7zkSgu70cSHxOWrVbUvxiyTlXQDIZq/FSwAZiCDHOs2K4OpJEQY?=
- =?us-ascii?Q?1FXYiQEytn0RUi5YPex0l25kgAXKgwhDOwv1ViF8D7wVQIVYT7KQRRelXA8l?=
- =?us-ascii?Q?IMYycnuk28QcySybr0wHyU8/fMnSD4MbV7xeqJs+T9nmGyjpcXehG2ULg+DD?=
- =?us-ascii?Q?EZxQtpXiLkB0vPNZsFtbNfs7pBlH44pMtBK9/bPW3EkjeX5v91Z5rOkF7WN8?=
- =?us-ascii?Q?hWdPTmi9JiDwVJkFV8SGF1b2ZhPhFnCjCGeUJpe4aBU/0BAIWUD2nV2vt6UI?=
- =?us-ascii?Q?C56mIGPyRR2ubwL+iyW8sxaUnrtf6aaLtTPCJmzfk7e3nSLd0g8kJN8kuv/h?=
- =?us-ascii?Q?br/JjuKhYXboHc0uy3L6hXsIFwas5D7AJ1uZxIOu3lkvN5lBfuL8pFkuIdpb?=
- =?us-ascii?Q?lkst42QN+oQ0TLEC4CcMdOPn67L5cXsL89to0B1iOzDLlirafzxLunpxJvuE?=
- =?us-ascii?Q?92amfKwjvy1VqoRtYFovIp3J0rBo8C6y1VsKIthNuFMqMWli3S8Ez1hqyATc?=
- =?us-ascii?Q?SQagVZnEn7pdYda339UTPk1I99ZKNd/OzUkqycNHU8pDjsYWQ4h5V0Qe/VOm?=
- =?us-ascii?Q?om5Cm7evWbN/h9XsWIZJFqBgw5hiOqo71lSFBpfrzvVUtn1dMsTZMI0L5WNM?=
- =?us-ascii?Q?Vp/OOvf2ib4uuO9o63QAg7ibp/4yA5Y2sXEFnXpWnyuhFifChpjXDUzU4k/I?=
- =?us-ascii?Q?xNdWVqmoIbhjH9E=3D?=
-X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:SATLEXMB03.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(82310400026)(1800799024)(7416014)(36860700013)(376014)(13003099007)(921020);DIR:OUT;SFP:1101;
-X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Sep 2025 09:59:29.3386
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: ce4dcd4c-002a-43d9-22d2-08ddead092e0
-X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[SATLEXMB03.amd.com]
-X-MS-Exchange-CrossTenant-AuthSource: SJ1PEPF00001CDD.namprd05.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH7PR12MB6636
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250903_025938_896891_A0241587 
-X-CRM114-Status: GOOD (  14.48  )
-X-Mailman-Approved-At: Sun, 14 Sep 2025 13:33:22 -0700
+X-CRM114-CacheID: sfid-20250904_090312_892785_09E5AE39 
+X-CRM114-Status: GOOD (  11.55  )
+X-Mailman-Approved-At: Sun, 14 Sep 2025 13:33:23 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -152,86 +111,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add device tree binding documentation for the AMD I3C master controller.
+From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 
-Signed-off-by: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+Add device tree binding support for the I3C Bus Interface on Renesas
+RZ/V2H(P) and RZ/V2N SoCs. The I3C IP on these SoCs is identical to
+that found on the RZ/G3E SoC.
+
+Add new compatible strings "renesas,r9a09g056-i3c" for RZ/V2N and
+"renesas,r9a09g057-i3c" for RZ/V2H(P). Both variants use
+"renesas,r9a09g047-i3c" as a fallback compatible to indicate hardware
+compatibility with the RZ/G3E implementation.
+
+Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 ---
-Changes for V2:
-Updated commit subject and description.
-Moved allOf to after required.
-Removed xlnx,num-targets property.
+ .../devicetree/bindings/i3c/renesas,i3c.yaml     | 16 +++++++++++-----
+ 1 file changed, 11 insertions(+), 5 deletions(-)
 
-Changes for V3:
-Updated commit description.
-Corrected the order of properties and removed resets property.
-Added compatible to required list.
-Added interrupts to example.
----
- .../devicetree/bindings/i3c/xlnx,axi-i3c.yaml | 53 +++++++++++++++++++
- 1 file changed, 53 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/i3c/xlnx,axi-i3c.yaml
-
-diff --git a/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c.yaml b/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c.yaml
-new file mode 100644
-index 000000000000..32f73c31121e
---- /dev/null
-+++ b/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c.yaml
-@@ -0,0 +1,53 @@
-+# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/i3c/xlnx,axi-i3c.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: AMD I3C master
-+
-+maintainers:
-+  - Manikanta Guntupalli <manikanta.guntupalli@amd.com>
-+
-+description:
-+  The AXI-I3C IP is an I3C Controller with an AXI4-Lite interface, compatible
-+  with the MIPI I3C Specification v1.1.1. The design includes bidirectional I/O
-+  buffers that implement open collector drivers for the SDA and SCL signals.
-+  External pull-up resistors are required to properly hold the bus at a Logic-1
-+  level when the drivers are released.
-+
-+properties:
-+  compatible:
-+    const: xlnx,axi-i3c-1.0
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+
-+allOf:
-+  - $ref: i3c.yaml#
-+
-+unevaluatedProperties: false
-+
-+examples:
-+  - |
-+    i3c@80000000 {
-+        compatible = "xlnx,axi-i3c-1.0";
-+        reg = <0x80000000 0x10000>;
-+        clocks = <&zynqmp_clk 71>;
-+        interrupt-parent = <&imux>;
-+        interrupts = <0 89 4>;
-+        #address-cells = <3>;
-+        #size-cells = <0>;
-+    };
-+...
+diff --git a/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml b/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
+index fe2e9633c46f..e41ba3ba4b58 100644
+--- a/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
++++ b/Documentation/devicetree/bindings/i3c/renesas,i3c.yaml
+@@ -4,7 +4,7 @@
+ $id: http://devicetree.org/schemas/i3c/renesas,i3c.yaml#
+ $schema: http://devicetree.org/meta-schemas/core.yaml#
+ 
+-title: Renesas RZ/G3S and RZ/G3E I3C Bus Interface
++title: Renesas RZ/G3S, RZ/G3E, RZ/V2H(P) and RZ/V2N I3C Bus Interface
+ 
+ maintainers:
+   - Wolfram Sang <wsa+renesas@sang-engineering.com>
+@@ -12,10 +12,16 @@ maintainers:
+ 
+ properties:
+   compatible:
+-    items:
+-      - enum:
+-          - renesas,r9a08g045-i3c # RZ/G3S
+-          - renesas,r9a09g047-i3c # RZ/G3E
++    oneOf:
++      - items:
++          - enum:
++              - renesas,r9a08g045-i3c # RZ/G3S
++              - renesas,r9a09g047-i3c # RZ/G3E
++      - items:
++          - enum:
++              - renesas,r9a09g056-i3c # RZ/V2N
++              - renesas,r9a09g057-i3c # RZ/V2H(P)
++          - const: renesas,r9a09g047-i3c
+ 
+   reg:
+     maxItems: 1
 -- 
-2.34.1
+2.51.0
 
 
 -- 
