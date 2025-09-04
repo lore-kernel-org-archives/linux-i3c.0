@@ -4,71 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED09ACA1013
-	for <linux-i3c@archiver.kernel.org>; Thu,  4 Sep 2025 16:24:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB225CA1012
+	for <linux-i3c@archiver.kernel.org>; Thu,  4 Sep 2025 19:51:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QKjonikhs4AgkECM9tPmwHHdMjY0wTnUUqReCjWqj4o=; b=IMpapTdt2JwPj/
-	2tQOFMpGHhFPWMnH38PrAmPfozZEE+uqVs41+GMmVto8qJuC155rYpvuWf2mNUcLxLjxqj0P4/LNj
-	92DQYQM4ewnJOfZjGVV0kUYbr4vvI5K0CV5RKADXHPz/I5+phsWuDhxv5NIYCLA0C+XKl2sT/T3th
-	cgyJGBNJ4r2hlI5xp3cmHAm6T37/IXKq91qTeyag0OzjaK6fd+WOyKWgyTF+3WOphuZqFc6mLtq+f
-	pKn6pR3iOLFI2EfPUi/g62coSbSC/jQ/oCw183wxus6VUL6lSqUKgJxI61LR7lbjjhjflDWDRGPOA
-	g+RtQ8rx9jCmfs5Bimyw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=l2li2sMiJdF2kNuv7mTpjxapV51X2x5Oxuiqn0ESjeE=; b=Igq/31BwEmCca4
+	sz3S8KxeVmzELKS1FEyDpVW44VKFpXion/hPtdvPBLSX3RLNpsyhwLvT8MuVK3BdJHRZ4MutwEqXm
+	LO3xzEgcx3Bi/VOBRr5oHlZ5mUvWWHiHuA6gkMJEFlZyft39imbXDNlNTEEpN6D70QYaUwzkQhmaa
+	5/D3aOB2lx5mxCp8DURF3VYV1t7iM8CtvqM66HiDVP3gYiBMCsrokNsOpyfuXk7jImFIQI1cIH6Sk
+	F3F/sgZ3kASbPsaPBtvA3m0mGK9nxXqeQoZdQC8T7KFfGkH2mEwpAL/yotyVPK2353Mp9x4M2RJwo
+	2+iJnbWnMUeB15QoZWxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uuClU-0000000CqsP-2OMG;
-	Thu, 04 Sep 2025 16:24:48 +0000
-Received: from mgamail.intel.com ([198.175.65.21])
+	id 1uuFzF-0000000E0u5-2T7Y;
+	Thu, 04 Sep 2025 19:51:13 +0000
+Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uu9IO-0000000BdqJ-0qHO
+	id 1uuAm1-0000000C9CT-1tUa
 	for linux-i3c@lists.infradead.org;
-	Thu, 04 Sep 2025 12:42:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1756989752; x=1788525752;
-  h=from:to:cc:subject:date:message-id:mime-version:
-   content-transfer-encoding;
-  bh=uBZmlOc+OPtsEtg+cYneZ2W1b3x5tDqmB5bVem4OYes=;
-  b=Bas84GoahJL0JV5WsYmH/+Ax323UAgNaHQPNxBFc/Z24vTE9jA1rOr1J
-   s4PYVO1gnjZYc0Ldmf2b7UMOoUJmae+i3r/3goBhhybq9ntQwY7gfVIfH
-   UvLxy//0cSwN64JxH025M2/tlIRCZcDQMFcY3/JIAUX0aw90xEZeuklo6
-   lVs/aRf01xVPDM9OYiz4BI+ncPTrftpdIjpeBenBSOi0VJjmkyWWsfomo
-   gqSEXmD+WQOv2DFrd5Imm9qQvNrS1gaynh0lnOrtQ/A9EuUurYpv39oQc
-   5UT2lKAlIKuV6rwVLmA8jb/wtU90TjmXQFeQgoX7dc8A+WH8L/scJlt9l
-   w==;
-X-CSE-ConnectionGUID: WGBlOYJHSFippIpOKRU5tQ==
-X-CSE-MsgGUID: wl+/6zsERf+LeIyMIW4N1Q==
-X-IronPort-AV: E=McAfee;i="6800,10657,11531"; a="59246524"
-X-IronPort-AV: E=Sophos;i="6.17,312,1747724400"; 
-   d="scan'208";a="59246524"
-Received: from orviesa007.jf.intel.com ([10.64.159.147])
-  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Sep 2025 05:42:31 -0700
-X-CSE-ConnectionGUID: wmhd7yBKTG2lyNRW5ZBqQA==
-X-CSE-MsgGUID: 5/m0IPpTSsOMXMkl1tQGdA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.18,238,1751266800"; 
-   d="scan'208";a="171770634"
-Received: from mylly.fi.intel.com (HELO mylly.fi.intel.com.) ([10.237.72.151])
-  by orviesa007.jf.intel.com with ESMTP; 04 Sep 2025 05:42:28 -0700
-From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-To: linux-i3c@lists.infradead.org
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Thu, 04 Sep 2025 14:17:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	sang-engineering.com; h=date:from:to:cc:subject:message-id
+	:references:mime-version:content-type:in-reply-to; s=k1; bh=yHYE
+	vaIPTTwCHTPjL1gxAiFxdA4FfK2o+YCq8QuS6HI=; b=FQbJqjPc/cBVQOPn1Ast
+	23q4asp7xRUIJ47VDeO//oKXR1scFX89IAsvf0tm0UKw5pq75b2GOhjZ4VS8fmYb
+	cGmb6ArDNxk5ZXN32ehLrDexS3P26lX0RJDYafLxRst6rMzAY9n/lWgML7ozCBCB
+	4sBVapxM19GUd56r1AXcj651aL0PU+0TUatfo1zoM58ko0zETTZgKEpJToP7KbfR
+	Y4v9qm6oYcbraAIDsjhCILqOyQ/nKpxvimZGwLg/gf1fo3wro3ew9l72+dU7ueVC
+	xSTgE5CwejSKlIPjrQ/4cBmZJODdHRKh1Aj+MAg74JrzEw1Oy++Q37ZshTbfTQV9
+	FQ==
+Received: (qmail 3695022 invoked from network); 4 Sep 2025 16:17:08 +0200
+Received: by mail.zeus03.de with UTF8SMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 4 Sep 2025 16:17:08 +0200
+X-UD-Smtp-Session: l3s3148p1@+HZYYPo91UdtKPOZ
+Date: Thu, 4 Sep 2025 16:17:07 +0200
+From: Wolfram Sang <wsa+renesas@sang-engineering.com>
+To: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+Cc: linux-i3c@lists.infradead.org,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Frank Li <Frank.Li@nxp.com>,
-	Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Boris Brezillon <bbrezillon@kernel.org>,
-	Jarkko Nikula <jarkko.nikula@linux.intel.com>
-Subject: [PATCH] i3c: Fix default I2C adapter timeout value
-Date: Thu,  4 Sep 2025 15:42:26 +0300
-Message-ID: <20250904124226.837639-1-jarkko.nikula@linux.intel.com>
-X-Mailer: git-send-email 2.47.2
+	Boris Brezillon <bbrezillon@kernel.org>
+Subject: Re: [PATCH] i3c: Fix default I2C adapter timeout value
+Message-ID: <aLmfY3zznNHPvH4q@shikoro>
+References: <20250904124226.837639-1-jarkko.nikula@linux.intel.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20250904124226.837639-1-jarkko.nikula@linux.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250904_054232_294191_15B590F0 
-X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-CacheID: sfid-20250904_071714_374541_BE64C06E 
+X-CRM114-Status: UNSURE (   9.10  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -86,40 +73,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Commit 3a379bbcea0a ("i3c: Add core I3C infrastructure") set the default
-adapter timeout for I2C transfers as 1000 (ms). However that parameter
-is defined in jiffies not in milliseconds.
+On Thu, Sep 04, 2025 at 03:42:26PM +0300, Jarkko Nikula wrote:
+> Commit 3a379bbcea0a ("i3c: Add core I3C infrastructure") set the default
+> adapter timeout for I2C transfers as 1000 (ms). However that parameter
+> is defined in jiffies not in milliseconds.
+> 
+> With mipi-i3c-hci driver this wasn't visible until commit c0a90eb55a69
+> ("i3c: mipi-i3c-hci: use adapter timeout value for I2C transfers").
+> 
+> Fix this by setting the default timeout as HZ (CONFIG_HZ) not 1000.
+> 
+> Fixes: 1b84691e7870 ("i3c: dw: use adapter timeout value for I2C transfers")
+> Fixes: be27ed672878 ("i3c: master: cdns: use adapter timeout value for I2C transfers")
+> Fixes: c0a90eb55a69 ("i3c: mipi-i3c-hci: use adapter timeout value for I2C transfers")
+> Fixes: a747e01adad2 ("i3c: master: svc: use adapter timeout value for I2C transfers")
+> Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
+> Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
 
-With mipi-i3c-hci driver this wasn't visible until commit c0a90eb55a69
-("i3c: mipi-i3c-hci: use adapter timeout value for I2C transfers").
+Fixes: d028219a9f14 ("i3c: master: Add basic driver for the Renesas I3C controller")
+Reviewed-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
 
-Fix this by setting the default timeout as HZ (CONFIG_HZ) not 1000.
-
-Fixes: 1b84691e7870 ("i3c: dw: use adapter timeout value for I2C transfers")
-Fixes: be27ed672878 ("i3c: master: cdns: use adapter timeout value for I2C transfers")
-Fixes: c0a90eb55a69 ("i3c: mipi-i3c-hci: use adapter timeout value for I2C transfers")
-Fixes: a747e01adad2 ("i3c: master: svc: use adapter timeout value for I2C transfers")
-Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
-Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
----
- drivers/i3c/master.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 2ef898a8fd80..67a18e437f83 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -2492,7 +2492,7 @@ static int i3c_master_i2c_adapter_init(struct i3c_master_controller *master)
- 	strscpy(adap->name, dev_name(master->dev.parent), sizeof(adap->name));
- 
- 	/* FIXME: Should we allow i3c masters to override these values? */
--	adap->timeout = 1000;
-+	adap->timeout = HZ;
- 	adap->retries = 3;
- 
- 	id = of_alias_get_id(master->dev.of_node, "i2c");
--- 
-2.47.2
+Thank you!
 
 
 -- 
