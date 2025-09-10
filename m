@@ -4,164 +4,140 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 67098CAC5AC
-	for <linux-i3c@archiver.kernel.org>; Sun, 14 Sep 2025 20:33:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 829FBCAC5AA
+	for <linux-i3c@archiver.kernel.org>; Sun, 14 Sep 2025 20:33:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8DWzRsLV4OwAbhzqV28IfyMEw/ZQikoxJ09dokfY2mw=; b=qVUy9H2TlXHCtL
-	dE3Kh1F4DWy8+7fKBWaLn7x1Ne34P/h1RLIYy6EWXQ0YAOo2q2EM6oa6/QV/0sGBtUzvbwv2tEGs3
-	sQY7EPAzMNCgeCbq29epr9sZxSWCtmL/SDki6Ho9i6ZEXJ5Oh//VUpaIiaKzONtY1JD3rFQcF4HrM
-	o6mEHkcuZXabuHXdaEuw/QvhNoIA3PI5+WNWQZsRQ5NY1opufIr9YyImcI4vzcNEytj8RSlUpps5L
-	9K4FF6Bk6R6qHkEokTIEpCSPa44TwnbRUKFGVmWzOHvfp3vN6SxQ/9AU8duin8h1ogryGCsRGHFkV
-	hNNAryAlAkUFwo+zNvUQ==;
+	List-Owner; bh=mZXe5kTxCDv3wTZ//34o1JnP+x73jK8BsmTPWB1n9uk=; b=DiUabq7MbDj14f
+	diS5ne8dSqCiELZklK1RCV1cRCIYjZy9HRTftFvI0pmYq8eXdiVhOMdCulqAgMS4pXdhpDV5oHnIm
+	G5Kwt5X3OC/tVnKFLXcC6LCav5lECxvJfFDZPF8X+unavNFp0vmVYmRn+6zqXeL7eqYG4hok3sESc
+	BlJCmJL70Yu+Ir/nImmfd53FapQx4VRZg4Rt1OvmLijnI61LqP5Sdh618yo5z5auSuGHDK7W2e8fv
+	NUV1Inul7A6BZ7v/6cfEX7xDRzbQdFLUDwSIE03GdQbf/tEHofa0I08x0C58RP+UzfEMmy80B5AIx
+	ao/8ugAVwpuAaMWHKoyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uxtPo-00000002A6C-097G;
-	Sun, 14 Sep 2025 20:33:40 +0000
-Received: from mail-bn8nam12on20600.outbound.protection.outlook.com ([2a01:111:f403:2418::600] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
+	id 1uxtPm-00000002A24-0gxA;
+	Sun, 14 Sep 2025 20:33:38 +0000
+Received: from mail-dm6nam11on2062c.outbound.protection.outlook.com ([2a01:111:f403:2415::62c] helo=NAM11-DM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1ux1ud-00000008sM6-48fG
+	id 1uwJ2F-0000000DqBF-1bNF
 	for linux-i3c@lists.infradead.org;
-	Fri, 12 Sep 2025 11:25:57 +0000
+	Wed, 10 Sep 2025 11:30:49 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Xc3gwgL+N8IdPbjQGj1IXS2CuAPCMjVZZHAglWKXEFeu8rrJ1cUTSiOZofliQhHpBOe4UQ8t6mv+N9j2sva26XwvgwsLSmxDj63a2IawL7BSvrLBUuV0oOIsgscyVw9D1lR/VqIiNPJroBSA/UUs0UFLM6HiLlNhwP01/mQ6DRaOIiFqjBLpRXHem/LNyqHmmTWdQ1CamhU+D6JluEr7LGHXFf92Hmp3UTuvlt7IKIurYJQZQM0il98U6QsnIBoAKdDTmqMZH+ieL2lZQy8RWdYQwbRSChOeVws5gGGbWjBvarkRKJeR0/n2j+xanG1BJKowKJhhDCVSmw20FK6QXQ==
+ b=Jugp/+iswOsle0Siirm6sT/7Iloe+vEv70LNHCvuWitnpj1FLtIfuD98LDOHKM5A9/IMgtkHCdio2flBSEo381wuccPjW/koksDa9BtFeLmjpnUOzC29UgghJJWrFminAD1tpAvSzNYs32AAlJcbP+BzscNyVIbMNFVfr2FIv7fDjFz5/nobjrtUawdMBVRnPTtxthT92EC0nYzfLyqDC+Cvxq+nugk6f+PwhhXchdtvshKzVygvW2wfpujfA/xnBaAX5PHIBDW4zI/VKh+71OvAIkNxKZYSXqNYks5pNhkefOHsGErel0DjP0i70QLQW5evRlrePVsoUC3gUa0BsQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=kGIZumPD4xA7836xf0FyCYFLg/9TG+TMmaVbds/pyWs=;
- b=yt+nOvS8W5cppI0qLaGesX1b4RNd5vqpqprzQNHy2owUoBi6EgNgxsU658pNVKrJZ+X9vGEq52O8iWiihaqtGC/WgGaLWeYopM9jSInUnAEOwelnv/qzxKWeJtxE0tccz1iB5iRwQu8Kh4TPfgDnXcES2EW9aHniawNAVEyEx8+0AIyo+DnwNxQDm0HpYhFH7u6ZzyEbJwMoqPAiClrLeUV2SLHUESzI1ajqeiDW5U4BXuX23AL/pX+Usu9RKLlc4NCPTB1hTgSFWcS4nR0u3n7lfKssvcquUQ4sF6VuH014lQUj9t2GSNMMNvKNpSDmltmr4DV3CVg//iTGMjW+rg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
- header.d=amd.com; arc=none
+ bh=wzJNH6c+LoIPvZUcEXqgavekjLtXwwi2D3yzeuTB0B4=;
+ b=niSVWAfHbX2tDhzi+IiQXQIy3bdddqkVr/nPhh5NfTeLtZfA/t9WuDr7U/mLWNjzUsx7WUUd6Z/rgwDqYhauzq4jIxe27eh/mkR7fSewPmSSyk5Xb2E9t9BXIpIFE2XXs6DI8r2rb+6aekJtfdqR5lnmGRlEktHVNNVTyLuC1wEAgs14dUnvurCLi9mEL0V97pReqn+GoJkCkKEtNoGZFAUrf6s5dBZroz31fi/M+lSOHXEtUVTnrapzHapmvPcSeCOWc4kp/4Y7vmihPY+c6iN4i9Dit+DGob/GkCzva/aYLsW20E1d91uvdteg9A5wTVgMNLJz5u8En+jxpCz5gw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 165.204.84.17) smtp.rcpttodomain=gmail.com smtp.mailfrom=amd.com; dmarc=pass
+ (p=quarantine sp=quarantine pct=100) action=none header.from=amd.com;
+ dkim=none (message not signed); arc=none (0)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=kGIZumPD4xA7836xf0FyCYFLg/9TG+TMmaVbds/pyWs=;
- b=EA0LxkeQE65twRy29lNbhRA/QV4vc0+DoNw9xW6A9Na65XhJFuVVBV92gkMRp2nASvSVmFsIvXbMbO/wnWkXUGdljMTnwir4W0oWAp0RhyjKR2XP8wiF25OSbzMwD0V9EyVEfsfAk6vkL2neKbAml7YoeCXLU2ySqikqBzF8QAc=
-Received: from DM4PR12MB6109.namprd12.prod.outlook.com (2603:10b6:8:ae::11) by
- CH0PR12MB8463.namprd12.prod.outlook.com (2603:10b6:610:187::20) with
+ bh=wzJNH6c+LoIPvZUcEXqgavekjLtXwwi2D3yzeuTB0B4=;
+ b=d47Yy1hrVp2apSQoFNNdSLD24vT+ZrDg9Dxp4eB6nR1C1+BgxOKnMkfi+kV8onDFA9kyuRoZSpaDsHa21seZkwIJ1nzysAP8FxT4UgxzP7gaflL9LRsrEvm+HmQDZgryJA4Q9iMNSNhhzrWbv9SEDsiJs3n9Rq7TNeDLTFzd0x4=
+Received: from BYAPR04CA0029.namprd04.prod.outlook.com (2603:10b6:a03:40::42)
+ by DS7PR12MB8275.namprd12.prod.outlook.com (2603:10b6:8:ec::19) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9115.18; Fri, 12 Sep
- 2025 11:25:34 +0000
-Received: from DM4PR12MB6109.namprd12.prod.outlook.com
- ([fe80::680c:3105:babe:b7e1]) by DM4PR12MB6109.namprd12.prod.outlook.com
- ([fe80::680c:3105:babe:b7e1%4]) with mapi id 15.20.9094.021; Fri, 12 Sep 2025
- 11:25:34 +0000
-From: "Guntupalli, Manikanta" <manikanta.guntupalli@amd.com>
-To: Frank Li <Frank.li@nxp.com>
-CC: "git (AMD-Xilinx)" <git@amd.com>, "Simek, Michal" <michal.simek@amd.com>,
-	"alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
-	"robh@kernel.org" <robh@kernel.org>, "krzk+dt@kernel.org"
-	<krzk+dt@kernel.org>, "conor+dt@kernel.org" <conor+dt@kernel.org>,
-	"kees@kernel.org" <kees@kernel.org>, "gustavoars@kernel.org"
-	<gustavoars@kernel.org>, "jarkko.nikula@linux.intel.com"
-	<jarkko.nikula@linux.intel.com>, "linux-i3c@lists.infradead.org"
-	<linux-i3c@lists.infradead.org>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "linux-hardening@vger.kernel.org"
-	<linux-hardening@vger.kernel.org>, "Pandey, Radhey Shyam"
-	<radhey.shyam.pandey@amd.com>, "Goud, Srinivas" <srinivas.goud@amd.com>,
-	"Datta, Shubhrajyoti" <shubhrajyoti.datta@amd.com>, "manion05gk@gmail.com"
-	<manion05gk@gmail.com>
-Subject: RE: [PATCH V6 2/2] i3c: master: Add AMD I3C bus controller driver
-Thread-Topic: [PATCH V6 2/2] i3c: master: Add AMD I3C bus controller driver
-Thread-Index: AQHcIkZvn4aTq4cirkSmmfELS1IUxLSMotAAgADGrwCAALgFgIAA6baQgABff+A=
-Date: Fri, 12 Sep 2025 11:25:33 +0000
-Message-ID: <DM4PR12MB61099BA795FD6DA057DD08E58C08A@DM4PR12MB6109.namprd12.prod.outlook.com>
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9094.22; Wed, 10 Sep
+ 2025 11:30:40 +0000
+Received: from SN1PEPF00036F42.namprd05.prod.outlook.com
+ (2603:10b6:a03:40:cafe::ef) by BYAPR04CA0029.outlook.office365.com
+ (2603:10b6:a03:40::42) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9115.15 via Frontend Transport; Wed,
+ 10 Sep 2025 11:30:40 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
+ smtp.mailfrom=amd.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=amd.com;
+Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
+ 165.204.84.17 as permitted sender) receiver=protection.outlook.com;
+ client-ip=165.204.84.17; helo=satlexmb07.amd.com; pr=C
+Received: from satlexmb07.amd.com (165.204.84.17) by
+ SN1PEPF00036F42.mail.protection.outlook.com (10.167.248.26) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9115.13 via Frontend Transport; Wed, 10 Sep 2025 11:30:40 +0000
+Received: from SATLEXMB06.amd.com (10.181.40.147) by satlexmb07.amd.com
+ (10.181.42.216) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.2.2562.17; Wed, 10 Sep
+ 2025 04:30:34 -0700
+Received: from satlexmb08.amd.com (10.181.42.217) by SATLEXMB06.amd.com
+ (10.181.40.147) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.39; Wed, 10 Sep
+ 2025 06:30:32 -0500
+Received: from xhdradheys41.xilinx.com (10.180.168.240) by satlexmb08.amd.com
+ (10.181.42.217) with Microsoft SMTP Server id 15.2.2562.17 via Frontend
+ Transport; Wed, 10 Sep 2025 04:30:26 -0700
+From: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+To: <git@amd.com>, <michal.simek@amd.com>, <alexandre.belloni@bootlin.com>,
+	<Frank.Li@nxp.com>, <robh@kernel.org>, <krzk+dt@kernel.org>,
+	<conor+dt@kernel.org>, <kees@kernel.org>, <gustavoars@kernel.org>,
+	<jarkko.nikula@linux.intel.com>, <linux-i3c@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-hardening@vger.kernel.org>
+CC: <radhey.shyam.pandey@amd.com>, <srinivas.goud@amd.com>,
+	<shubhrajyoti.datta@amd.com>, <manion05gk@gmail.com>, Manikanta Guntupalli
+	<manikanta.guntupalli@amd.com>
+Subject: [PATCH V6 2/2] i3c: master: Add AMD I3C bus controller driver
+Date: Wed, 10 Sep 2025 16:59:54 +0530
+Message-ID: <20250910112954.553353-3-manikanta.guntupalli@amd.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250910112954.553353-1-manikanta.guntupalli@amd.com>
 References: <20250910112954.553353-1-manikanta.guntupalli@amd.com>
- <20250910112954.553353-3-manikanta.guntupalli@amd.com>
- <aMGtdFxlXRanIAuM@lizhi-Precision-Tower-5810>
- <DM4PR12MB6109FB1956E8AC4979DFE85A8C09A@DM4PR12MB6109.namprd12.prod.outlook.com>
- <aMLufaWnrhPxVyxm@lizhi-Precision-Tower-5810>
- <DM4PR12MB61093B9BB9B3EF1D9F6B499E8C08A@DM4PR12MB6109.namprd12.prod.outlook.com>
-In-Reply-To: <DM4PR12MB61093B9BB9B3EF1D9F6B499E8C08A@DM4PR12MB6109.namprd12.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-msip_labels: MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Enabled=True;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_SiteId=3dd8961f-e488-4e60-8e11-a82d994e183d;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_SetDate=2025-09-12T05:42:03.0000000Z;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Name=Open
- Source;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_ContentBits=3;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Method=Privileged
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=amd.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: DM4PR12MB6109:EE_|CH0PR12MB8463:EE_
-x-ms-office365-filtering-correlation-id: aed9f3bd-a960-406c-0837-08ddf1ef16d9
-x-ld-processed: 3dd8961f-e488-4e60-8e11-a82d994e183d,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|366016|376014|7416014|38070700021;
-x-microsoft-antispam-message-info: =?us-ascii?Q?vd2CjiPNMlEQijvAtKfY3URIkUvV9AB9RNW+zBQHV9WKE54mp+Cyd9BPIi9Q?=
- =?us-ascii?Q?k2JuTYYYFYPCQ7K663fkjwc3onQ01FFvxgM5rUHCed2yl9pQPjKO/ySRhgyW?=
- =?us-ascii?Q?fWt21ui+dkADz9ex0YGZELhf3V8NUWmvTUFKbNs+FsRpTQNBic2EMOekrkup?=
- =?us-ascii?Q?gxAmWiDRqw39gWrDkfmLbj06ur3dqsZ9A5YOk7rvlKPiX1gEhjHmy9VU6Bv2?=
- =?us-ascii?Q?vcQtZKuCPdEcwpTb5uwoTjUePkn1ZUIEIZLcRVdaz3dlsIvZE9j4uOPJ7anF?=
- =?us-ascii?Q?+15G+hOruLGPlSQGZ9DMm8wUrRpz0T/4KxeGpDD5/FHND8rJaDFi6zHyNw5O?=
- =?us-ascii?Q?04hFZ+dOBoXRTKAd9mfxcZEY5ZdXwdmxglVPpPA8WPGaEZJva5y7ykL/WhcP?=
- =?us-ascii?Q?PVVEXOd8Qk/wRGrwbTVgMMnSRQyj3okfEaGxgJv0ab4lEFP1uCcUKZthuU6C?=
- =?us-ascii?Q?x5ieFnfSaaD/b3baZ3STjinfJwxcbYBA/2A5+R5+/Vvn8P1D2WON0FbxsrjB?=
- =?us-ascii?Q?wyZMBcY0+RSiMmChnW/G7beTxgIFz751P6ariwOIDyQ1/LCTORFSQ20XmJBB?=
- =?us-ascii?Q?3ukxDzrEF5T1DRhSIzasW1Boz6fbvAVAXFqjxear4sRD0A9RsbtsrY95JAbE?=
- =?us-ascii?Q?KZkgsSKTRJ5p/2YKXXayGsts9rIAQW3njgIjJi5TA2zsS1spiPua2QnGMgAh?=
- =?us-ascii?Q?QVnRYjIkYrT+ftRJrRTM5AdZBkunYcJIqab0yZP8926XsLCnpbHVLr8PoAFV?=
- =?us-ascii?Q?IZgIRZ13u7iH0LzrvJshCwfLNfqBahOOfqb8MoacGc3UTrVzxgyF6UPAFYyv?=
- =?us-ascii?Q?BnFwitOEjxeNVI25Y45IUCajICswTzIytf3jfCTD8Mn7PHSYx/Iaz1PQ6Uc2?=
- =?us-ascii?Q?3IA2Qk8GOV5+QG/u48/aIc/lipbXWPOZg11KmFZt6Jc2RclnxY85e8YLn+PL?=
- =?us-ascii?Q?velfE3SdvETSV/9rs6Rjttb34eT6eiPpRnohQno3wth40H590f2fqHvZzGSd?=
- =?us-ascii?Q?G5EVq3BotcOvsWP7cOYm1O0zOeGoXJTRw0J15GvLukL11oNeIuDy0lFg7pUY?=
- =?us-ascii?Q?PUi+zCcQAb6tYHwc5WBgEbDMDjCk04bOnT0DEfH5xw75GGsmUGJrVvka6mjU?=
- =?us-ascii?Q?XewDGMG/Gz5twASE+hG18glCNsNWks5xP3fG5d/ZKkTTSykkgpt3cMgYJTKO?=
- =?us-ascii?Q?4nX+Z4yVkRe2djYkAZIZBmYdHBiLqM5uIMFCD6CWzJ2demLlJy9edaBaDrCM?=
- =?us-ascii?Q?4h84b9gk1fKMLxkHpZexcxaR9wakAhmPNfdwvMb/yVMjJFUO68uTHLLZewWJ?=
- =?us-ascii?Q?MmwfiRQ5djWpxSVO0g1AwN690N5J+RwSS5CqK+rMpVhrF51f1ayziEjaY/z8?=
- =?us-ascii?Q?2qlwwWT+24KyjF2F8POj9wz8+X3vrGg1iZ9+Ijm9ujT22aiirjkh2w0o3eiB?=
- =?us-ascii?Q?IKP4npAFewI=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DM4PR12MB6109.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(7416014)(38070700021);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?4b+UG21++Lo5Ugt9HSih2vyvZkIcDjnNeLXzdgnTQSg7yIKLtKZmVynfO4X0?=
- =?us-ascii?Q?J4kwoaqqwMBR1G9bhsyso9+Yf9g9b567cmrOz/gOfPxIN79MREFJkMLy1xNS?=
- =?us-ascii?Q?KMH4iSMGwYq/teHDqEAwOcTysnQ0K4gy8OBix9X1Yn1Dlf/BQY3D0kZnAqPx?=
- =?us-ascii?Q?qWAj5j5Fw2tbhPlltQaZi5n2gsTUEcyYdqaICHxEVyDIlepTVbipAUoyWXpp?=
- =?us-ascii?Q?qi9h5V0i9ydHaPAySkQD9k49M8SPeubjsSGqx2CcQqGR5/K9w1vaPciCj2Fk?=
- =?us-ascii?Q?bu25XKOjOxVTVBCv5MzQQKakc75Z4YxkvKDPgJATZsAry3KP2FdY3a3w1sPE?=
- =?us-ascii?Q?j+YnqtZIMsnu1uAiAiSnW3Dz5msm3qwo6dX/YQqqbI9LOkteCbjlzRmtpfvB?=
- =?us-ascii?Q?Ihdslltx+aPFFGG6LTtd3f9NfR4GNUwKF2eoOji+QZbY9Ylqgb/H2WxV1wqo?=
- =?us-ascii?Q?lR2eoyL0clVBgYjBCX+3JRN69qbCwjJzmAcXL/JOfbq/x4UZ005CS6w6zNTf?=
- =?us-ascii?Q?G4XCjkqGTsyIKu2M5bOSzu4DtpYfFfqLqakwnJWl2h30JHtSg/fOMjx0f4gR?=
- =?us-ascii?Q?DiOeiLaePZ+nlTOgZ7OH1M4HWzTbAXqKQHYltelOiq898zHEGOZ4qvLS49SO?=
- =?us-ascii?Q?yw/W70YdClZhN6kXjpoCCcCmeMpQYN1qqdTZgys+XGony/Qg7eXn5FlI5VDx?=
- =?us-ascii?Q?StKLm1GfCBkA6QOTdLLuoQtS+q8J9y8d5F+Jw02MZtBrTcYlSxOTTtfSphMn?=
- =?us-ascii?Q?JBKZaIvgqBovdNu+s/yCxOU9AN+KSa2Z/IAHJZO9L+FRK1Eg/MU/S1m3kw9a?=
- =?us-ascii?Q?DqhMsyWDxcTxv1AXWlB04eEENlZlrfVJUMP7So03tlzjJhAno5swJvsoA3lX?=
- =?us-ascii?Q?Ek4US1ZmP/hbZZQJ06/Acylg5CBkUW3gBKP1N4O1VLOVeFGGK3YU9d7eQxCX?=
- =?us-ascii?Q?hjznOduZW0ObCTKil2frbdLfoDWZ/Gtok+i6h866TfN+EZgNiuFQzWvYipxM?=
- =?us-ascii?Q?gDAmzfJKFeziqNCicmLKTQRvOgwasb29CVlzY8WMedl1NEG4tMnk1Pl6UYxT?=
- =?us-ascii?Q?2sY8CN3rlaX+FqriTa95t1/H2cHgsKtxewSEyhcBDTjgY1hEjTYmShG1vvjL?=
- =?us-ascii?Q?MjlPxeD/MVKYsYLjIay5TO2urS3djnDi0fBwZiUDHAzfb7FoeXIeUFnancL5?=
- =?us-ascii?Q?V4qzyvZrNSrgLgHOkSIsMHVP4BxPlkXj+ej9HZRlytrxa7MpiRuZYQJXB91E?=
- =?us-ascii?Q?ytGK9zs5n6fl6LcUhRMCtgb2UJP4Hdeat7CcnguSQxUU97BT/tMxkHzBdDxe?=
- =?us-ascii?Q?tXVwLjKB+zCnZUG+Ghwi9MHr2F9ePpMyPtmZqWp01r7jW6iMX8daN3GuPiNQ?=
- =?us-ascii?Q?Yg/290BHdxEXQv29OyKG9ZvKXeHJFqNuz4bWVNg3NMVaaNIPuZH7zPJTHmtO?=
- =?us-ascii?Q?wc2OcNH05xHTlqcYL2QiRZDM2ypP9thW99BmNd991GLGRZ6ZkqlF52wFFX9E?=
- =?us-ascii?Q?fGcdPiKqnE0bw3pTtblLe1k/WHrJmVzjNia0NNPiTMcJxQbABk6cXcsM7/ar?=
- =?us-ascii?Q?8lRdTBjLDLjuf/RPNXk=3D?=
 MIME-Version: 1.0
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: SN1PEPF00036F42:EE_|DS7PR12MB8275:EE_
+X-MS-Office365-Filtering-Correlation-Id: c08a4358-f353-475b-330b-08ddf05d7882
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|1800799024|82310400026|36860700013|921020;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?dgb+VJvo3DzDnyPJiUBAijbQo8nTT6jTQldllw+PPo5YN9YGL+Dkml1m0LxQ?=
+ =?us-ascii?Q?mQ5T/3zW6150lFGMjtDrns8FNvKs+SKXpE3kLqvVpMVZ2IMx8217Z5eKeSjj?=
+ =?us-ascii?Q?2MmagZXqT8BhtwCEdFjGLtLqzxkMXeQ7LDVFhtjadaxWyqXK2rpZyWoHf2+J?=
+ =?us-ascii?Q?dJ4U8P+nJpcJYItTvue/fLt+tcXQOtkkUsgzohRTTRQLVLUEnDZnLgUDtk8J?=
+ =?us-ascii?Q?fOCgwmKJZ1L+jA5uMZ49h9HA5cdgEbMi9kblkIeUhvHI3NQElTc9Lx3bJM14?=
+ =?us-ascii?Q?1KIpVVFi4borwhTmlWyHW36HubhHW9FVTMRa5A18vLpg21r22Fkyh8FqygJd?=
+ =?us-ascii?Q?U7jBHdhGyC99rHZlpUp8dv3fmgkAMlBBmOpSwNXGSv43aB7p8TfL/5ENao7Y?=
+ =?us-ascii?Q?MaxbGUOkDy1bpCNuWpBNKViZdR9bCzDecOGMpor7s+oEszSSdUmCwC8/8IO6?=
+ =?us-ascii?Q?BCh/7g6HHLRQ3OAP4nbVEWTNi07HBR7d7emW0Dh/u2ZIh/Z6mDoxUTg617xw?=
+ =?us-ascii?Q?B8Nz0JhtRi8kIe+9eyJqVwLKQPj79CepG6pn3sJA9AK2f2fieDHOlkXkrIZp?=
+ =?us-ascii?Q?qWnleoK/TkWhsA0BtltrM+3qzxhmvp/XO3lbK/89YqB2cYNLYyvdFvWE4ydJ?=
+ =?us-ascii?Q?vRud1PpMw8YyvRGCW7E+ktCl9BIhsnoX+COtkYm9i9kyt1BWuhl+D8u5qAdX?=
+ =?us-ascii?Q?UBozpgDD5DxWNZm3rEj2eUHZ+CHG0Czt1U2GZVs59qWmNYLc5XJOJDNhRIJy?=
+ =?us-ascii?Q?UlL+WBZKTMriReTFEs3l+Od7agCMALqRQuaCoUhhuEZRwL/FXQASzejbHGrN?=
+ =?us-ascii?Q?OEcpXs7Fg8OWTcxwrwMl/WDH9m1GJc6f0i9Mvwa2jvL4a3X+vPSvdxsQ6sfd?=
+ =?us-ascii?Q?zHLN0x/9cBJFwAbd9OfK1CX+mjEFszi/vwuAvah4WGuWsiynjlidwhusbwhg?=
+ =?us-ascii?Q?uWVVjdnMuAg857Uzbi852zhNLerPlZBy7hCW7GfADeNpmJoDS/nnfkLVjS2n?=
+ =?us-ascii?Q?Ky05RimwePLyn9Ne6RORvQjvekBsRT51GDURGdLcmsYnhNbm0qw8B7Ng2N05?=
+ =?us-ascii?Q?E5MIQ21bfnSfBQfXXsa/fBYTpckhgaImUwIwmoMT7MqHbkkpOSo0Zvy1j3qF?=
+ =?us-ascii?Q?SpfKldvGG/R5F+cUc6zu+s0ekUdIEIQMHWtjiZ/l3Jgnhj6M58KMXg0nGVAt?=
+ =?us-ascii?Q?BZPf9a/QysnSUGP6Jn2lu33gUgVmOHh7Z6vRtvS1Bn98oyWBqgK8wwxm9f2y?=
+ =?us-ascii?Q?prh1YPJMTtbLQfkLzmIe3JLEFzCyBfYFwDnRrV30ESudZpIafZiqPrCuaeOJ?=
+ =?us-ascii?Q?jNwSgcAalRuOnTnIRcIqh/SO6CgqtHZL5A1+6tbYDJoSXuoeAtc3wfpW5Ndu?=
+ =?us-ascii?Q?5f7kr7z6g5+shQS7uFSfHMSESOkNQoq04XrSp5zfxnWQf4Il+YQYEdurlsL6?=
+ =?us-ascii?Q?Oxy29GGGbKFNtaLvdTh66NkNc01suSDAaLlbUDoc2TPhoA9FWPMxDXmCn6VQ?=
+ =?us-ascii?Q?2jCfibwC3bt9CDsGubE3YJWsRMqKTzTX16Sf9BrnYSAJucHatqRUvRsRxA?=
+ =?us-ascii?Q?=3D=3D?=
+X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:satlexmb07.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(376014)(7416014)(1800799024)(82310400026)(36860700013)(921020);DIR:OUT;SFP:1101;
 X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: DM4PR12MB6109.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: aed9f3bd-a960-406c-0837-08ddf1ef16d9
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Sep 2025 11:25:33.8954
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Sep 2025 11:30:40.0247
  (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3dd8961f-e488-4e60-8e11-a82d994e183d
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: nDapoCp3b78EvoN7x7pcvqwwQRESRgBB4MPT7HyRgn/RXaT2CD2y53l6FssL5GXkWYYQ8gpeBw5NXSP0zelNcw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH0PR12MB8463
+X-MS-Exchange-CrossTenant-Network-Message-Id: c08a4358-f353-475b-330b-08ddf05d7882
+X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[satlexmb07.amd.com]
+X-MS-Exchange-CrossTenant-AuthSource: SN1PEPF00036F42.namprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS7PR12MB8275
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250912_042556_108023_C3685F10 
-X-CRM114-Status: GOOD (  24.01  )
+X-CRM114-CacheID: sfid-20250910_043047_496733_593DBE09 
+X-CRM114-Status: GOOD (  20.44  )
 X-Mailman-Approved-At: Sun, 14 Sep 2025 13:33:23 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -179,296 +155,1137 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-[Public]
+Add an I3C master driver and maintainers fragment for the AMD I3C bus
+controller.
 
-Hi,
+The driver currently supports the I3C bus operating in SDR i3c mode,
+with features including Dynamic Address Assignment, private data transfers,
+and CCC transfers in both broadcast and direct modes. It also supports
+operation in I2C mode.
 
-> -----Original Message-----
-> From: Guntupalli, Manikanta
-> Sent: Friday, September 12, 2025 11:25 AM
-> To: Frank Li <Frank.li@nxp.com>
-> Cc: git (AMD-Xilinx) <git@amd.com>; Simek, Michal <michal.simek@amd.com>;
-> alexandre.belloni@bootlin.com; robh@kernel.org; krzk+dt@kernel.org;
-> conor+dt@kernel.org; kees@kernel.org; gustavoars@kernel.org;
-> jarkko.nikula@linux.intel.com; linux-i3c@lists.infradead.org;
-> devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-
-> hardening@vger.kernel.org; Pandey, Radhey Shyam
-> <radhey.shyam.pandey@amd.com>; Goud, Srinivas <srinivas.goud@amd.com>;
-> Datta, Shubhrajyoti <shubhrajyoti.datta@amd.com>; manion05gk@gmail.com
-> Subject: RE: [PATCH V6 2/2] i3c: master: Add AMD I3C bus controller driver
->
-> Hi,
->
-> > -----Original Message-----
-> > From: Frank Li <Frank.li@nxp.com>
-> > Sent: Thursday, September 11, 2025 9:15 PM
-> > To: Guntupalli, Manikanta <manikanta.guntupalli@amd.com>
-> > Cc: git (AMD-Xilinx) <git@amd.com>; Simek, Michal
-> > <michal.simek@amd.com>; alexandre.belloni@bootlin.com;
-> > robh@kernel.org; krzk+dt@kernel.org;
-> > conor+dt@kernel.org; kees@kernel.org; gustavoars@kernel.org;
-> > jarkko.nikula@linux.intel.com; linux-i3c@lists.infradead.org;
-> > devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-
-> > hardening@vger.kernel.org; Pandey, Radhey Shyam
-> > <radhey.shyam.pandey@amd.com>; Goud, Srinivas <srinivas.goud@amd.com>;
-> > Datta, Shubhrajyoti <shubhrajyoti.datta@amd.com>; manion05gk@gmail.com
-> > Subject: Re: [PATCH V6 2/2] i3c: master: Add AMD I3C bus controller
-> > driver
-> >
-> > On Thu, Sep 11, 2025 at 06:07:59AM +0000, Guntupalli, Manikanta wrote:
-> > > [Public]
-> > >
-> > > Hi,
-> > >
-> > > > -----Original Message-----
-> > > > From: Frank Li <Frank.li@nxp.com>
-> > > > Sent: Wednesday, September 10, 2025 10:25 PM
-> > > > To: Guntupalli, Manikanta <manikanta.guntupalli@amd.com>
-> > > > Cc: git (AMD-Xilinx) <git@amd.com>; Simek, Michal
-> > > > <michal.simek@amd.com>; alexandre.belloni@bootlin.com;
-> > > > robh@kernel.org; krzk+dt@kernel.org;
-> > > > conor+dt@kernel.org; kees@kernel.org; gustavoars@kernel.org;
-> > > > jarkko.nikula@linux.intel.com; linux-i3c@lists.infradead.org;
-> > > > devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-
-> > > > hardening@vger.kernel.org; Pandey, Radhey Shyam
-> > > > <radhey.shyam.pandey@amd.com>; Goud, Srinivas
-> > > > <srinivas.goud@amd.com>; Datta, Shubhrajyoti
-> > > > <shubhrajyoti.datta@amd.com>; manion05gk@gmail.com
-> > > > Subject: Re: [PATCH V6 2/2] i3c: master: Add AMD I3C bus
-> > > > controller driver
-> > > >
-> > > > On Wed, Sep 10, 2025 at 04:59:54PM +0530, Manikanta Guntupalli wrote:
-> > > > > Add an I3C master driver and maintainers fragment for the AMD
-> > > > > I3C bus controller.
-> > > > >
-> > > > > The driver currently supports the I3C bus operating in SDR i3c
-> > > > > mode, with features including Dynamic Address Assignment,
-> > > > > private data transfers, and CCC transfers in both broadcast and
-> > > > > direct modes. It also supports operation in I2C mode.
-> > > > >
-> > > > > Signed-off-by: Manikanta Guntupalli
-> > > > > <manikanta.guntupalli@amd.com>
-> > > > > ---
-> > > > > Changes for V2:
-> > > > > Updated commit description.
-> > > > > Added mixed mode support with clock configuration.
-> > > > > Converted smaller functions into inline functions.
-> > > > > Used FIELD_GET() in xi3c_get_response().
-> > > > > Updated xi3c_master_rd_from_rx_fifo() to use cmd->rx_buf.
-> > > > > Used parity8() for address parity calculation.
-> > > > > Added guards for locks.
-> > > > > Dropped num_targets and updated xi3c_master_do_daa().
-> > > > > Used __free(kfree) in xi3c_master_send_bdcast_ccc_cmd().
-> > > > > Dropped PM runtime support.
-> > > > > Updated xi3c_master_read() and xi3c_master_write() with
-> > > > > xi3c_is_resp_available() check.
-> > > > > Created separate functions: xi3c_master_init() and xi3c_master_reinit().
-> > > > > Used xi3c_master_init() in bus initialization and
-> > > > > xi3c_master_reinit() in error paths.
-> > > > > Added DAA structure to xi3c_master structure.
-> > > > >
-> > > > > Changes for V3:
-> > > > > Resolved merge conflicts.
-> > > > >
-> > > > > Changes for V4:
-> > > > > Updated timeout macros.
-> > > > > Removed type casting for xi3c_is_resp_available() macro.
-> > > > > Used ioread32() and iowrite32() instead of readl() and writel()
-> > > > > to keep consistency.
-> > > > > Read XI3C_RESET_OFFSET reg before udelay().
-> > > > > Removed xi3c_master_free_xfer() and directly used kfree().
-> > > > > Skipped checking return value of i3c_master_add_i3c_dev_locked().
-> > > > > Used devm_mutex_init() instead of mutex_init().
-> > > > >
-> > > > > Changes for V5:
-> > > > > Used GENMASK_ULL for PID mask as it's 64bit mask.
-> > > > >
-> > > > > Changes for V6:
-> > > > > Removed typecast for xi3c_getrevisionnumber(),
-> > > > > xi3c_wrfifolevel(), and xi3c_rdfifolevel().
-> > > > > Replaced dynamic allocation with a static variable for pid_bcr_dcr.
-> > > > > Fixed sparse warning in do_daa by typecasting the address parity
-> > > > > value to u8.
-> > > > > Fixed sparse warning in xi3c_master_bus_init by typecasting the
-> > > > > pid value to u64 in info.pid calculation.
-> > > > > ---
-> > > > >  MAINTAINERS                         |    7 +
-> > > > >  drivers/i3c/master/Kconfig          |   16 +
-> > > > >  drivers/i3c/master/Makefile         |    1 +
-> > > > >  drivers/i3c/master/amd-i3c-master.c | 1009
-> > > > > +++++++++++++++++++++++++++
-> > > > >  4 files changed, 1033 insertions(+)  create mode 100644
-> > > > > drivers/i3c/master/amd-i3c-master.c
-> > > > >
-> > > > > diff --git a/MAINTAINERS b/MAINTAINERS index
-> > > > > 1af81124bba3..ff603ce5e78d 100644
-> > > > > --- a/MAINTAINERS
-> > > > > +++ b/MAINTAINERS
-> > > > > @@ -11693,6 +11693,13 @@ L: linux-i2c@vger.kernel.org
-> > > > >  S: Maintained
-> > > > >  F: drivers/i2c/i2c-stub.c
-> > > > >
-> > > > > +I3C DRIVER FOR AMD AXI I3C MASTER
-> > > > > +M: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
-> > > > > +R: Michal Simek <michal.simek@amd.com>
-> > > > > +S: Maintained
-> > > > > +F: Documentation/devicetree/bindings/i3c/xlnx,axi-i3c.yaml
-> > > > > +F: drivers/i3c/master/amd-i3c-master.c
-> > > > > +
-> > > > >  I3C DRIVER FOR ASPEED AST2600
-> > > > >  M: Jeremy Kerr <jk@codeconstruct.com.au>
-> > > > >  S: Maintained
-> > > > > diff --git a/drivers/i3c/master/Kconfig
-> > > > > b/drivers/i3c/master/Kconfig index 13df2944f2ec..4b884a678893
-> > > > > 100644
-> > > > > --- a/drivers/i3c/master/Kconfig
-> > > > > +++ b/drivers/i3c/master/Kconfig
-> > > > > @@ -1,4 +1,20 @@
-> > > > >  # SPDX-License-Identifier: GPL-2.0-only
-> > > > > +
-> > > > > +config AMD_I3C_MASTER
-> > > > > +   tristate "AMD I3C Master driver"
-> > > > > +   depends on I3C
-> > > > > +   depends on HAS_IOMEM
-> > > > > +   help
-> > > > > +     Support for AMD I3C Master Controller.
-> > > > > +
-> > > > > +     This driver allows communication with I3C devices using the AMD
-> > > > > +     I3C master, currently supporting Standard Data Rate (SDR) mode.
-> > > > > +     Features include Dynamic Address Assignment, private transfers,
-> > > > > +     and CCC transfers in both broadcast and direct modes.
-> > > > > +
-> > > > > +     This driver can also be built as a module.  If so, the module
-> > > > > +     will be called amd-i3c-master.
-> > > > > +
-> > > > >  config CDNS_I3C_MASTER
-> > > > >     tristate "Cadence I3C master driver"
-> > > > >     depends on HAS_IOMEM
-> > > > > diff --git a/drivers/i3c/master/Makefile
-> > > > > b/drivers/i3c/master/Makefile index aac74f3e3851..109bd48cb159
-> > > > > 100644
-> > > > > --- a/drivers/i3c/master/Makefile
-> > > > > +++ b/drivers/i3c/master/Makefile
-> > > > > @@ -1,4 +1,5 @@
-> > > > >  # SPDX-License-Identifier: GPL-2.0-only
-> > > > > +obj-$(CONFIG_AMD_I3C_MASTER)               += amd-i3c-master.o
-> > > > >  obj-$(CONFIG_CDNS_I3C_MASTER)              += i3c-master-cdns.o
-> > > > >  obj-$(CONFIG_DW_I3C_MASTER)                += dw-i3c-master.o
-> > > > >  obj-$(CONFIG_AST2600_I3C_MASTER)   += ast2600-i3c-master.o
-> > > > > diff --git a/drivers/i3c/master/amd-i3c-master.c
-> > > > > b/drivers/i3c/master/amd-i3c-master.c
-> > > > > new file mode 100644
-> > > > > index 000000000000..cd9d85a0be80
-> > > > > --- /dev/null
-> > > > > +++ b/drivers/i3c/master/amd-i3c-master.c
-> > > > > @@ -0,0 +1,1009 @@
-> > > > > +// SPDX-License-Identifier: GPL-2.0
-> > > > > +/*
-> > > > > + * I3C master driver for the AMD I3C controller.
-> > > > > + *
-> > > > > + * Copyright (C) 2025, Advanced Micro Devices, Inc.
-> > > > > + */
-> > > > > +
-> > > > ...
-> > > > > +
-> > > > > +/* timeout waiting for the controller finish transfers */
-> > > > > +#define XI3C_XFER_TIMEOUT_MS                       10000
-> > > > > +#define XI3C_XFER_TIMEOUT
-> > > >       (msecs_to_jiffies(XI3C_XFER_TIMEOUT_MS))
-> > > >
-> > > > Do I missed your reply? I have not seen
-> > > > https://lore.kernel.org/linux-i3c/aL7+Urm4NB9kwOwQ@lizhi-Precision
-> > > > -T
-> > > > ower-5810/
-> > > >
-> > > > If you need define two macro for it. Need unit
-> > > > XI3C_XFER_TIMEOUT_JIFFIES to avoid confuse.
-> > > Sure, I'll update the macro name to XI3C_XFER_TIMEOUT_JIFFIES to
-> > > avoid
-> > confusion.
-> > > >
-> > > >
-> > > > > +
-> > > > > +#define xi3c_getrevisionnumber(master)                                             \
-> > > > > +   (FIELD_GET(XI3C_REV_NUM_MASK,
-> > > >       \
-> > > > > +              ioread32((master)->membase +
-> > > > > + XI3C_VERSION_OFFSET)))
-> > > > > +
-> > > >
-> > > > ...
-> > > >
-> > > > > +static void xi3c_master_wr_to_tx_fifo(struct xi3c_master *master,
-> > > > > +                                 struct xi3c_cmd *cmd) {
-> > > > > +   u8 *tx_buf = (u8 *)cmd->tx_buf;
-> > > > > +   u32 data = 0;
-> > > > > +   u16 len;
-> > > > > +
-> > > > > +   len = cmd->tx_len;
-> > > > > +   if (len > 0) {
-> > > > > +           len = (len >= XI3C_WORD_LEN) ? XI3C_WORD_LEN : len;
-> > > > > +           memcpy(&data, tx_buf, len);
-> > > > > +           tx_buf += len;
-> > > > > +           cmd->tx_len -= len;
-> > > > > +   }
-> > > > > +   cmd->tx_buf = tx_buf;
-> > > > > +
-> > > > > +   /* Write the 32-bit value to the Tx FIFO */
-> > > > > +   iowrite32be(data, master->membase + XI3C_WR_FIFO_OFFSET); }
-> > > >
-> > > > i3c_writel(readl)_fifo() did similar things, why not use it?
-> > > >
-> > > > Did you miss my review comment or I missed your reply?
-> > > You have missed my earlier reply on this.
-> > > The helpers i3c_writel_fifo() and i3c_readl_fifo() rely on the CPU's
-> > > native endianness, whereas in this case the FIFO should always be
-> > > accessed in
-> > big-endian format.
-> > > Hence, we cannot use the common helpers directly.
-> > >
-> > > For reference, here's my previous reply:
-> > >
-> >
-> https://lore.kernel.org/all/DM4PR12MB6109F6D5D032723C675472448C0FA@DM4
-> > > PR12MB6109.namprd12.prod.outlook.com/
-> >
-> > Sorry, can you improve i3c_writel(readl)_fifo() to support endianness?
-> > I think not only you have this kind problem in future.
-> Sure, will add support for endianness.
-To add support for endianness, we could not find a big-endian counterpart to writesl().
-Please let me know if I missed any existing helper.
-> >
-> > >
-> > > >
-> > > > ...
-> > > > > +
-> > > > > +static const struct of_device_id xi3c_master_of_ids[] = {
-> > > > > +   { .compatible = "xlnx,axi-i3c-1.0" },
-> > > > > +   { },
-> > > > > +};
-> > > > > +
-> > > > > +static struct platform_driver xi3c_master_driver = {
-> > > > > +   .probe = xi3c_master_probe,
-> > > > > +   .remove = xi3c_master_remove,
-> > > > > +   .driver = {
-> > > > > +           .name = "axi-i3c-master",
-> > > > > +           .of_match_table = xi3c_master_of_ids,
-> > > > > +   },
-> > > > > +};
-> > > > > +module_platform_driver(xi3c_master_driver);
-> > > > > +
-> > > > > +MODULE_AUTHOR("Manikanta Guntupalli
-> > > > > +<manikanta.guntupalli@amd.com>"); MODULE_DESCRIPTION("AXI I3C
-> > > > > +master driver");
-> > > > MODULE_LICENSE("GPL");
-> > > > > --
-> > > > > 2.34.1
-> > > > >
-> > >
->
+Signed-off-by: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+---
+Changes for V2:
+Updated commit description.
+Added mixed mode support with clock configuration.
+Converted smaller functions into inline functions.
+Used FIELD_GET() in xi3c_get_response().
+Updated xi3c_master_rd_from_rx_fifo() to use cmd->rx_buf.
+Used parity8() for address parity calculation.
+Added guards for locks.
+Dropped num_targets and updated xi3c_master_do_daa().
+Used __free(kfree) in xi3c_master_send_bdcast_ccc_cmd().
+Dropped PM runtime support.
+Updated xi3c_master_read() and xi3c_master_write() with
+xi3c_is_resp_available() check.
+Created separate functions: xi3c_master_init() and xi3c_master_reinit().
+Used xi3c_master_init() in bus initialization and xi3c_master_reinit()
+in error paths.
+Added DAA structure to xi3c_master structure.
 
-Thanks,
-Manikanta.
+Changes for V3:
+Resolved merge conflicts.
+
+Changes for V4:
+Updated timeout macros.
+Removed type casting for xi3c_is_resp_available() macro.
+Used ioread32() and iowrite32() instead of readl() and writel()
+to keep consistency.
+Read XI3C_RESET_OFFSET reg before udelay().
+Removed xi3c_master_free_xfer() and directly used kfree().
+Skipped checking return value of i3c_master_add_i3c_dev_locked().
+Used devm_mutex_init() instead of mutex_init().
+
+Changes for V5:
+Used GENMASK_ULL for PID mask as it's 64bit mask.
+
+Changes for V6:
+Removed typecast for xi3c_getrevisionnumber(), xi3c_wrfifolevel(),
+and xi3c_rdfifolevel().
+Replaced dynamic allocation with a static variable for pid_bcr_dcr.
+Fixed sparse warning in do_daa by typecasting the address parity value
+to u8.
+Fixed sparse warning in xi3c_master_bus_init by typecasting the pid value
+to u64 in info.pid calculation.
+---
+ MAINTAINERS                         |    7 +
+ drivers/i3c/master/Kconfig          |   16 +
+ drivers/i3c/master/Makefile         |    1 +
+ drivers/i3c/master/amd-i3c-master.c | 1009 +++++++++++++++++++++++++++
+ 4 files changed, 1033 insertions(+)
+ create mode 100644 drivers/i3c/master/amd-i3c-master.c
+
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 1af81124bba3..ff603ce5e78d 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -11693,6 +11693,13 @@ L:	linux-i2c@vger.kernel.org
+ S:	Maintained
+ F:	drivers/i2c/i2c-stub.c
+ 
++I3C DRIVER FOR AMD AXI I3C MASTER
++M:	Manikanta Guntupalli <manikanta.guntupalli@amd.com>
++R:	Michal Simek <michal.simek@amd.com>
++S:	Maintained
++F:	Documentation/devicetree/bindings/i3c/xlnx,axi-i3c.yaml
++F:	drivers/i3c/master/amd-i3c-master.c
++
+ I3C DRIVER FOR ASPEED AST2600
+ M:	Jeremy Kerr <jk@codeconstruct.com.au>
+ S:	Maintained
+diff --git a/drivers/i3c/master/Kconfig b/drivers/i3c/master/Kconfig
+index 13df2944f2ec..4b884a678893 100644
+--- a/drivers/i3c/master/Kconfig
++++ b/drivers/i3c/master/Kconfig
+@@ -1,4 +1,20 @@
+ # SPDX-License-Identifier: GPL-2.0-only
++
++config AMD_I3C_MASTER
++	tristate "AMD I3C Master driver"
++	depends on I3C
++	depends on HAS_IOMEM
++	help
++	  Support for AMD I3C Master Controller.
++
++	  This driver allows communication with I3C devices using the AMD
++	  I3C master, currently supporting Standard Data Rate (SDR) mode.
++	  Features include Dynamic Address Assignment, private transfers,
++	  and CCC transfers in both broadcast and direct modes.
++
++	  This driver can also be built as a module.  If so, the module
++	  will be called amd-i3c-master.
++
+ config CDNS_I3C_MASTER
+ 	tristate "Cadence I3C master driver"
+ 	depends on HAS_IOMEM
+diff --git a/drivers/i3c/master/Makefile b/drivers/i3c/master/Makefile
+index aac74f3e3851..109bd48cb159 100644
+--- a/drivers/i3c/master/Makefile
++++ b/drivers/i3c/master/Makefile
+@@ -1,4 +1,5 @@
+ # SPDX-License-Identifier: GPL-2.0-only
++obj-$(CONFIG_AMD_I3C_MASTER)		+= amd-i3c-master.o
+ obj-$(CONFIG_CDNS_I3C_MASTER)		+= i3c-master-cdns.o
+ obj-$(CONFIG_DW_I3C_MASTER)		+= dw-i3c-master.o
+ obj-$(CONFIG_AST2600_I3C_MASTER)	+= ast2600-i3c-master.o
+diff --git a/drivers/i3c/master/amd-i3c-master.c b/drivers/i3c/master/amd-i3c-master.c
+new file mode 100644
+index 000000000000..cd9d85a0be80
+--- /dev/null
++++ b/drivers/i3c/master/amd-i3c-master.c
+@@ -0,0 +1,1009 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * I3C master driver for the AMD I3C controller.
++ *
++ * Copyright (C) 2025, Advanced Micro Devices, Inc.
++ */
++
++#include <linux/bitfield.h>
++#include <linux/bitops.h>
++#include <linux/clk.h>
++#include <linux/err.h>
++#include <linux/errno.h>
++#include <linux/i3c/master.h>
++#include <linux/interrupt.h>
++#include <linux/io.h>
++#include <linux/iopoll.h>
++#include <linux/ioport.h>
++#include <linux/kernel.h>
++#include <linux/list.h>
++#include <linux/module.h>
++#include <linux/of.h>
++#include <linux/platform_device.h>
++#include <linux/slab.h>
++#include <linux/unaligned.h>
++
++#define XI3C_VERSION_OFFSET			0x00	/* Version Register */
++#define XI3C_RESET_OFFSET			0x04	/* Soft Reset Register */
++#define XI3C_CR_OFFSET				0x08	/* Control Register */
++#define XI3C_ADDRESS_OFFSET			0x0C	/* Target Address Register */
++#define XI3C_SR_OFFSET				0x10	/* Status Register */
++#define XI3C_CMD_FIFO_OFFSET			0x20	/* I3C Command FIFO Register */
++#define XI3C_WR_FIFO_OFFSET			0x24	/* I3C Write Data FIFO Register */
++#define XI3C_RD_FIFO_OFFSET			0x28	/* I3C Read Data FIFO Register */
++#define XI3C_RESP_STATUS_FIFO_OFFSET		0x2C	/* I3C Response status FIFO Register */
++#define XI3C_FIFO_LVL_STATUS_OFFSET		0x30	/* I3C CMD & WR FIFO LVL Register */
++#define XI3C_FIFO_LVL_STATUS_1_OFFSET		0x34	/* I3C RESP & RD FIFO LVL Register */
++#define XI3C_SCL_HIGH_TIME_OFFSET		0x38	/* I3C SCL HIGH Register */
++#define XI3C_SCL_LOW_TIME_OFFSET		0x3C	/* I3C SCL LOW  Register */
++#define XI3C_SDA_HOLD_TIME_OFFSET		0x40	/* I3C SDA HOLD Register */
++#define XI3C_TSU_START_OFFSET			0x48	/* I3C START SETUP Register  */
++#define XI3C_THD_START_OFFSET			0x4C	/* I3C START HOLD Register */
++#define XI3C_TSU_STOP_OFFSET			0x50	/* I3C STOP Setup Register  */
++#define XI3C_OD_SCL_HIGH_TIME_OFFSET		0x54	/* I3C OD SCL HIGH Register */
++#define XI3C_OD_SCL_LOW_TIME_OFFSET		0x58	/* I3C OD SCL LOW  Register */
++#define XI3C_PID0_OFFSET			0x6C	/* LSB 4 bytes of the PID */
++#define XI3C_PID1_BCR_DCR			0x70	/* MSB 2 bytes of the PID, BCR and DCR */
++
++#define XI3C_CR_EN_MASK				BIT(0)	/* Core Enable */
++#define XI3C_CR_RESUME_MASK			BIT(2)	/* Core Resume */
++#define XI3C_SR_RESP_NOT_EMPTY_MASK		BIT(4)	/* Resp Fifo not empty status mask */
++
++#define XI3C_BCR_MASK				GENMASK(23, 16)
++#define XI3C_DCR_MASK				GENMASK(31, 24)
++#define XI3C_PID_MASK				GENMASK_ULL(63, 16)
++#define XI3C_SCL_HIGH_TIME_MASK			GENMASK(17, 0)
++#define XI3C_SCL_LOW_TIME_MASK			GENMASK(17, 0)
++#define XI3C_SDA_HOLD_TIME_MASK			GENMASK(17, 0)
++#define XI3C_TSU_START_MASK			GENMASK(17, 0)
++#define XI3C_THD_START_MASK			GENMASK(17, 0)
++#define XI3C_TSU_STOP_MASK			GENMASK(17, 0)
++#define XI3C_REV_NUM_MASK			GENMASK(15, 8)
++#define XI3C_PID1_MASK				GENMASK(15, 0)
++#define XI3C_WR_FIFO_LEVEL_MASK			GENMASK(15, 0)
++#define XI3C_CMD_LEN_MASK			GENMASK(11, 0)
++#define XI3C_RESP_CODE_MASK			GENMASK(8, 5)
++#define XI3C_ADDR_MASK				GENMASK(6, 0)
++#define XI3C_CMD_TYPE_MASK			GENMASK(3, 0)
++#define XI3C_CMD_TID_MASK			GENMASK(3, 0)
++#define XI3C_FIFOS_RST_MASK			GENMASK(4, 1)
++
++#define XI3C_OD_TLOW_NS				500000
++#define XI3C_OD_THIGH_NS			41000
++#define XI3C_I2C_TCASMIN_NS			600000
++#define XI3C_TCASMIN_NS				260000
++#define XI3C_MAXDATA_LENGTH			4095
++#define XI3C_MAX_DEVS				32
++#define XI3C_DAA_SLAVEINFO_READ_BYTECOUNT	8
++
++#define XI3C_I2C_MODE				0
++#define XI3C_I2C_TID				0
++#define XI3C_SDR_MODE				1
++#define XI3C_SDR_TID				1
++
++#define XI3C_WORD_LEN				4
++
++/* timeout waiting for the controller finish transfers */
++#define XI3C_XFER_TIMEOUT_MS			10000
++#define XI3C_XFER_TIMEOUT			(msecs_to_jiffies(XI3C_XFER_TIMEOUT_MS))
++
++#define xi3c_getrevisionnumber(master)						\
++	(FIELD_GET(XI3C_REV_NUM_MASK,						\
++		   ioread32((master)->membase + XI3C_VERSION_OFFSET)))
++
++#define xi3c_wrfifolevel(master)						\
++	(ioread32((master)->membase + XI3C_FIFO_LVL_STATUS_OFFSET) &		\
++	 XI3C_WR_FIFO_LEVEL_MASK)
++
++#define xi3c_rdfifolevel(master)						\
++	(ioread32((master)->membase + XI3C_FIFO_LVL_STATUS_1_OFFSET) &		\
++	 XI3C_WR_FIFO_LEVEL_MASK)
++
++#define xi3c_is_resp_available(master)						\
++	(FIELD_GET(XI3C_SR_RESP_NOT_EMPTY_MASK,					\
++		   ioread32((master)->membase + XI3C_SR_OFFSET)))
++
++struct xi3c_cmd {
++	void *tx_buf;
++	void *rx_buf;
++	u16 tx_len;
++	u16 rx_len;
++	u8 addr;
++	u8 type;
++	u8 tid;
++	bool rnw;
++	bool is_daa;
++	bool continued;
++};
++
++struct xi3c_xfer {
++	struct list_head node;
++	struct completion comp;
++	int ret;
++	unsigned int ncmds;
++	struct xi3c_cmd cmds[] __counted_by(ncmds);
++};
++
++/**
++ * struct xi3c_master - I3C Master structure
++ * @base: I3C master controller
++ * @dev: Pointer to device structure
++ * @xferqueue: Transfer queue structure
++ * @xferqueue.list: List member
++ * @xferqueue.cur: Current ongoing transfer
++ * @xferqueue.lock: Queue lock
++ * @membase: Memory base of the HW registers
++ * @pclk: Input clock
++ * @lock: Transfer lock
++ * @daa: daa structure
++ * @daa.addrs: Slave addresses array
++ * @daa.index: Slave device index
++ */
++struct xi3c_master {
++	struct i3c_master_controller base;
++	struct device *dev;
++	struct {
++		struct list_head list;
++		struct xi3c_xfer *cur;
++		/* Queue lock */
++		spinlock_t lock;
++	} xferqueue;
++	void __iomem *membase;
++	struct clk *pclk;
++	/* Transfer lock */
++	struct mutex lock;
++	struct {
++		u8 addrs[XI3C_MAX_DEVS];
++		u8 index;
++	} daa;
++};
++
++static inline struct xi3c_master *
++to_xi3c_master(struct i3c_master_controller *master)
++{
++	return container_of(master, struct xi3c_master, base);
++}
++
++static int xi3c_get_response(struct xi3c_master *master)
++{
++	u32 resp_reg, response_data;
++	int ret;
++
++	ret = readl_poll_timeout(master->membase + XI3C_SR_OFFSET,
++				 resp_reg,
++				 resp_reg & XI3C_SR_RESP_NOT_EMPTY_MASK,
++				 0, XI3C_XFER_TIMEOUT_MS);
++	if (ret) {
++		dev_err(master->dev, "AXI I3C response timeout\n");
++		return ret;
++	}
++
++	response_data = ioread32(master->membase + XI3C_RESP_STATUS_FIFO_OFFSET);
++
++	/* Return response code */
++	return FIELD_GET(XI3C_RESP_CODE_MASK, response_data);
++}
++
++static void xi3c_master_wr_to_tx_fifo(struct xi3c_master *master,
++				      struct xi3c_cmd *cmd)
++{
++	u8 *tx_buf = (u8 *)cmd->tx_buf;
++	u32 data = 0;
++	u16 len;
++
++	len = cmd->tx_len;
++	if (len > 0) {
++		len = (len >= XI3C_WORD_LEN) ? XI3C_WORD_LEN : len;
++		memcpy(&data, tx_buf, len);
++		tx_buf += len;
++		cmd->tx_len -= len;
++	}
++	cmd->tx_buf = tx_buf;
++
++	/* Write the 32-bit value to the Tx FIFO */
++	iowrite32be(data, master->membase + XI3C_WR_FIFO_OFFSET);
++}
++
++static void xi3c_master_rd_from_rx_fifo(struct xi3c_master *master,
++					struct xi3c_cmd *cmd)
++{
++	u32 data;
++	u16 len;
++
++	/* Read from Rx FIFO */
++	data = ioread32be(master->membase + XI3C_RD_FIFO_OFFSET);
++
++	/* Data extraction to rx buffer */
++	len = cmd->rx_len;
++	if (len > 0) {
++		len = (len >= XI3C_WORD_LEN) ? XI3C_WORD_LEN : len;
++		memcpy((u8 *)cmd->rx_buf, &data, len);
++		cmd->rx_buf = (u8 *)cmd->rx_buf + len;
++		cmd->rx_len -= len;
++	}
++}
++
++static void xi3c_master_write_to_cmdfifo(struct xi3c_master *master,
++					 struct xi3c_cmd *cmd, u16 len)
++{
++	u32 transfer_cmd = 0;
++	u8 addr;
++
++	addr = ((cmd->addr & XI3C_ADDR_MASK) << 1) | (cmd->rnw & BIT(0));
++
++	transfer_cmd = cmd->type & XI3C_CMD_TYPE_MASK;
++	transfer_cmd |= (u32)(!cmd->continued) << 4;
++	transfer_cmd |= (u32)(addr) << 8;
++	transfer_cmd |= (u32)(cmd->tid & XI3C_CMD_TID_MASK) << 28;
++
++	/*
++	 * For dynamic addressing, an additional 1-byte length must be added
++	 * to the command FIFO to account for the address present in the TX FIFO
++	 */
++	if (cmd->is_daa) {
++		xi3c_master_wr_to_tx_fifo(master, cmd);
++
++		len++;
++		master->daa.index++;
++		cmd->is_daa = false;
++	}
++
++	transfer_cmd |= (u32)(len & XI3C_CMD_LEN_MASK) << 16;
++	iowrite32(transfer_cmd, master->membase + XI3C_CMD_FIFO_OFFSET);
++}
++
++static inline void xi3c_master_enable(struct xi3c_master *master)
++{
++	iowrite32(ioread32(master->membase + XI3C_CR_OFFSET) | XI3C_CR_EN_MASK,
++		  master->membase + XI3C_CR_OFFSET);
++}
++
++static inline void xi3c_master_disable(struct xi3c_master *master)
++{
++	iowrite32(ioread32(master->membase + XI3C_CR_OFFSET) & (~XI3C_CR_EN_MASK),
++		  master->membase + XI3C_CR_OFFSET);
++}
++
++static inline void xi3c_master_resume(struct xi3c_master *master)
++{
++	iowrite32(ioread32(master->membase + XI3C_CR_OFFSET) |
++		  XI3C_CR_RESUME_MASK, master->membase + XI3C_CR_OFFSET);
++}
++
++static void xi3c_master_reset_fifos(struct xi3c_master *master)
++{
++	u32 data;
++
++	/* Reset fifos */
++	data = ioread32(master->membase + XI3C_RESET_OFFSET);
++	data |= XI3C_FIFOS_RST_MASK;
++	iowrite32(data, master->membase + XI3C_RESET_OFFSET);
++	ioread32(master->membase + XI3C_RESET_OFFSET);
++	udelay(10);
++	data &= ~XI3C_FIFOS_RST_MASK;
++	iowrite32(data, master->membase + XI3C_RESET_OFFSET);
++	ioread32(master->membase + XI3C_RESET_OFFSET);
++	udelay(10);
++}
++
++static inline void xi3c_master_init(struct xi3c_master *master)
++{
++	/* Reset fifos */
++	xi3c_master_reset_fifos(master);
++
++	/* Enable controller */
++	xi3c_master_enable(master);
++}
++
++static inline void xi3c_master_reinit(struct xi3c_master *master)
++{
++	/* Reset fifos */
++	xi3c_master_reset_fifos(master);
++
++	/* Resume controller */
++	xi3c_master_resume(master);
++}
++
++static struct xi3c_xfer *
++xi3c_master_alloc_xfer(struct xi3c_master *master, unsigned int ncmds)
++{
++	struct xi3c_xfer *xfer;
++
++	xfer = kzalloc(struct_size(xfer, cmds, ncmds), GFP_KERNEL);
++	if (!xfer)
++		return NULL;
++
++	INIT_LIST_HEAD(&xfer->node);
++	xfer->ncmds = ncmds;
++	xfer->ret = -ETIMEDOUT;
++
++	return xfer;
++}
++
++static int xi3c_master_read(struct xi3c_master *master, struct xi3c_cmd *cmd)
++{
++	unsigned long timeout;
++	u16 rx_data_available;
++	u16 data_index;
++
++	if (!cmd->rx_buf || cmd->rx_len > XI3C_MAXDATA_LENGTH)
++		return -EINVAL;
++
++	/* Fill command fifo */
++	xi3c_master_write_to_cmdfifo(master, cmd, cmd->rx_len);
++
++	timeout = jiffies + XI3C_XFER_TIMEOUT;
++	/* Read data from rx fifo */
++	while (cmd->rx_len > 0 && !xi3c_is_resp_available(master)) {
++		if (time_after(jiffies, timeout)) {
++			dev_err(master->dev, "XI3C read timeout\n");
++			return -EIO;
++		}
++
++		rx_data_available = xi3c_rdfifolevel(master);
++		for (data_index = 0;
++		     data_index < rx_data_available && cmd->rx_len > 0;
++		     data_index++)
++			xi3c_master_rd_from_rx_fifo(master, cmd);
++	}
++
++	/* Read remaining data */
++	rx_data_available = xi3c_rdfifolevel(master);
++	for (data_index = 0;
++	     data_index < rx_data_available && cmd->rx_len > 0;
++	     data_index++)
++		xi3c_master_rd_from_rx_fifo(master, cmd);
++	return 0;
++}
++
++static int xi3c_master_write(struct xi3c_master *master, struct xi3c_cmd *cmd)
++{
++	unsigned long timeout;
++	u16 wrfifo_space;
++	u16 space_index;
++	u16 len;
++
++	len = cmd->tx_len;
++	if (!cmd->tx_buf || cmd->tx_len > XI3C_MAXDATA_LENGTH)
++		return -EINVAL;
++
++	/* Fill Tx fifo */
++	wrfifo_space = xi3c_wrfifolevel(master);
++	for (space_index = 0; space_index < wrfifo_space && cmd->tx_len > 0;
++	     space_index++)
++		xi3c_master_wr_to_tx_fifo(master, cmd);
++
++	/* Write to command fifo */
++	xi3c_master_write_to_cmdfifo(master, cmd, len);
++
++	timeout = jiffies + XI3C_XFER_TIMEOUT;
++	/* Fill if any remaining data to tx fifo */
++	while (cmd->tx_len > 0 && !xi3c_is_resp_available(master)) {
++		if (time_after(jiffies, timeout)) {
++			dev_err(master->dev, "XI3C write timeout\n");
++			return -EIO;
++		}
++
++		wrfifo_space = xi3c_wrfifolevel(master);
++		for (space_index = 0; space_index < wrfifo_space && cmd->tx_len > 0;
++		     space_index++)
++			xi3c_master_wr_to_tx_fifo(master, cmd);
++	}
++	return 0;
++}
++
++static int xi3c_master_xfer(struct xi3c_master *master, struct xi3c_cmd *cmd)
++{
++	int ret;
++
++	if (cmd->rnw)
++		ret = xi3c_master_read(master, cmd);
++	else
++		ret = xi3c_master_write(master, cmd);
++
++	if (ret < 0)
++		goto err_xfer_out;
++
++	ret = xi3c_get_response(master);
++	if (ret)
++		goto err_xfer_out;
++
++	return 0;
++
++err_xfer_out:
++	xi3c_master_reinit(master);
++	return ret;
++}
++
++static void xi3c_master_dequeue_xfer_locked(struct xi3c_master *master,
++					    struct xi3c_xfer *xfer)
++{
++	if (master->xferqueue.cur == xfer)
++		master->xferqueue.cur = NULL;
++	else
++		list_del_init(&xfer->node);
++}
++
++static void xi3c_master_dequeue_xfer(struct xi3c_master *master,
++				     struct xi3c_xfer *xfer)
++{
++	guard(spinlock_irqsave)(&master->xferqueue.lock);
++
++	xi3c_master_dequeue_xfer_locked(master, xfer);
++}
++
++static void xi3c_master_start_xfer_locked(struct xi3c_master *master)
++{
++	struct xi3c_xfer *xfer = master->xferqueue.cur;
++	int ret = 0, i;
++
++	if (!xfer)
++		return;
++
++	for (i = 0; i < xfer->ncmds; i++) {
++		struct xi3c_cmd *cmd = &xfer->cmds[i];
++
++		ret = xi3c_master_xfer(master, cmd);
++		if (ret)
++			break;
++	}
++
++	xfer->ret = ret;
++	complete(&xfer->comp);
++
++	xfer = list_first_entry_or_null(&master->xferqueue.list,
++					struct xi3c_xfer,
++					node);
++	if (xfer)
++		list_del_init(&xfer->node);
++
++	master->xferqueue.cur = xfer;
++	xi3c_master_start_xfer_locked(master);
++}
++
++static inline void xi3c_master_enqueue_xfer(struct xi3c_master *master,
++					    struct xi3c_xfer *xfer)
++{
++	init_completion(&xfer->comp);
++
++	guard(spinlock_irqsave)(&master->xferqueue.lock);
++
++	if (master->xferqueue.cur) {
++		list_add_tail(&xfer->node, &master->xferqueue.list);
++	} else {
++		master->xferqueue.cur = xfer;
++		xi3c_master_start_xfer_locked(master);
++	}
++}
++
++static inline int xi3c_master_common_xfer(struct xi3c_master *master,
++					  struct xi3c_xfer *xfer)
++{
++	int ret, timeout;
++
++	guard(mutex)(&master->lock);
++
++	xi3c_master_enqueue_xfer(master, xfer);
++	timeout = wait_for_completion_timeout(&xfer->comp,
++					      msecs_to_jiffies(XI3C_XFER_TIMEOUT_MS));
++	if (!timeout)
++		ret = -ETIMEDOUT;
++	else
++		ret = xfer->ret;
++
++	if (ret)
++		xi3c_master_dequeue_xfer(master, xfer);
++
++	return ret;
++}
++
++static int xi3c_master_do_daa(struct i3c_master_controller *m)
++{
++	struct xi3c_master *master = to_xi3c_master(m);
++	struct xi3c_cmd *daa_cmd;
++	struct xi3c_xfer *xfer;
++	u8 pid_bufs[XI3C_MAX_DEVS][8];
++	u8 data, last_addr = 0;
++	int addr, ret, i;
++	u8 *pid_buf;
++
++	xfer = xi3c_master_alloc_xfer(master, 1);
++	if (!xfer) {
++		ret = -ENOMEM;
++		goto err_daa_mem;
++	}
++
++	for (i = 0; i < XI3C_MAX_DEVS; i++) {
++		addr = i3c_master_get_free_addr(m, last_addr + 1);
++		if (addr < 0) {
++			ret = -ENOSPC;
++			goto err_daa;
++		}
++		master->daa.addrs[i] = (u8)addr;
++		last_addr = (u8)addr;
++	}
++
++	/* Fill ENTDAA CCC */
++	data = I3C_CCC_ENTDAA;
++	daa_cmd = &xfer->cmds[0];
++	daa_cmd->addr = I3C_BROADCAST_ADDR;
++	daa_cmd->rnw = 0;
++	daa_cmd->tx_buf = &data;
++	daa_cmd->tx_len = 1;
++	daa_cmd->type = XI3C_SDR_MODE;
++	daa_cmd->tid = XI3C_SDR_TID;
++	daa_cmd->continued = true;
++
++	ret = xi3c_master_common_xfer(master, xfer);
++	/* DAA always finishes with CE2_ERROR or NACK_RESP */
++	if (ret && ret != I3C_ERROR_M2) {
++		goto err_daa;
++	} else {
++		if (ret && ret == I3C_ERROR_M2) {
++			ret = 0;
++			goto err_daa;
++		}
++	}
++
++	master->daa.index = 0;
++
++	while (true) {
++		struct xi3c_cmd *cmd = &xfer->cmds[0];
++
++		pid_buf = pid_bufs[master->daa.index];
++		addr = (master->daa.addrs[master->daa.index] << 1) |
++		       (u8)(!parity8(master->daa.addrs[master->daa.index]));
++
++		cmd->tx_buf = (u8 *)&addr;
++		cmd->tx_len = 1;
++		cmd->addr = I3C_BROADCAST_ADDR;
++		cmd->rnw = 1;
++		cmd->rx_buf = pid_buf;
++		cmd->rx_len = XI3C_DAA_SLAVEINFO_READ_BYTECOUNT;
++		cmd->is_daa = true;
++		cmd->type = XI3C_SDR_MODE;
++		cmd->tid = XI3C_SDR_TID;
++		cmd->continued = true;
++
++		ret = xi3c_master_common_xfer(master, xfer);
++
++		/* DAA always finishes with CE2_ERROR or NACK_RESP */
++		if (ret && ret != I3C_ERROR_M2) {
++			goto err_daa;
++		} else {
++			if (ret && ret == I3C_ERROR_M2) {
++				xi3c_master_resume(master);
++				master->daa.index--;
++				ret = 0;
++				break;
++			}
++		}
++	}
++
++	kfree(xfer);
++
++	for (i = 0; i < master->daa.index; i++) {
++		i3c_master_add_i3c_dev_locked(m, master->daa.addrs[i]);
++
++		u64 data = FIELD_GET(XI3C_PID_MASK, get_unaligned_be64(pid_bufs[i]));
++
++		dev_info(master->dev, "Client %d: PID: 0x%llx\n", i, data);
++	}
++
++	return 0;
++
++err_daa:
++	kfree(xfer);
++err_daa_mem:
++	xi3c_master_reinit(master);
++	return ret;
++}
++
++static bool
++xi3c_master_supports_ccc_cmd(struct i3c_master_controller *master,
++			     const struct i3c_ccc_cmd *cmd)
++{
++	if (cmd->ndests > 1)
++		return false;
++
++	switch (cmd->id) {
++	case I3C_CCC_ENEC(true):
++	case I3C_CCC_ENEC(false):
++	case I3C_CCC_DISEC(true):
++	case I3C_CCC_DISEC(false):
++	case I3C_CCC_ENTAS(0, true):
++	case I3C_CCC_ENTAS(0, false):
++	case I3C_CCC_RSTDAA(true):
++	case I3C_CCC_RSTDAA(false):
++	case I3C_CCC_ENTDAA:
++	case I3C_CCC_SETMWL(true):
++	case I3C_CCC_SETMWL(false):
++	case I3C_CCC_SETMRL(true):
++	case I3C_CCC_SETMRL(false):
++	case I3C_CCC_ENTHDR(0):
++	case I3C_CCC_SETDASA:
++	case I3C_CCC_SETNEWDA:
++	case I3C_CCC_GETMWL:
++	case I3C_CCC_GETMRL:
++	case I3C_CCC_GETPID:
++	case I3C_CCC_GETBCR:
++	case I3C_CCC_GETDCR:
++	case I3C_CCC_GETSTATUS:
++	case I3C_CCC_GETMXDS:
++		return true;
++	default:
++		return false;
++	}
++}
++
++static int xi3c_master_send_bdcast_ccc_cmd(struct xi3c_master *master,
++					   struct i3c_ccc_cmd *ccc)
++{
++	u16 xfer_len = ccc->dests[0].payload.len + 1;
++	struct xi3c_xfer *xfer;
++	struct xi3c_cmd *cmd;
++	int ret;
++
++	xfer = xi3c_master_alloc_xfer(master, 1);
++	if (!xfer)
++		return -ENOMEM;
++
++	u8 *buf __free(kfree) = kmalloc(xfer_len, GFP_KERNEL);
++	if (!buf) {
++		kfree(xfer);
++		return -ENOMEM;
++	}
++
++	buf[0] = ccc->id;
++	memcpy(&buf[1], ccc->dests[0].payload.data, ccc->dests[0].payload.len);
++
++	cmd = &xfer->cmds[0];
++	cmd->addr = ccc->dests[0].addr;
++	cmd->rnw = ccc->rnw;
++	cmd->tx_buf = buf;
++	cmd->tx_len = xfer_len;
++	cmd->type = XI3C_SDR_MODE;
++	cmd->tid = XI3C_SDR_TID;
++	cmd->continued = false;
++
++	ret = xi3c_master_common_xfer(master, xfer);
++	kfree(xfer);
++
++	return ret;
++}
++
++static int xi3c_master_send_direct_ccc_cmd(struct xi3c_master *master,
++					   struct i3c_ccc_cmd *ccc)
++{
++	struct xi3c_xfer *xfer;
++	struct xi3c_cmd *cmd;
++	int ret;
++
++	xfer = xi3c_master_alloc_xfer(master, 2);
++	if (!xfer)
++		return -ENOMEM;
++
++	/* Broadcasted message */
++	cmd = &xfer->cmds[0];
++	cmd->addr = I3C_BROADCAST_ADDR;
++	cmd->rnw = 0;
++	cmd->tx_buf = &ccc->id;
++	cmd->tx_len = 1;
++	cmd->type = XI3C_SDR_MODE;
++	cmd->tid = XI3C_SDR_TID;
++	cmd->continued = true;
++
++	/* Directed message */
++	cmd = &xfer->cmds[1];
++	cmd->addr = ccc->dests[0].addr;
++	cmd->rnw = ccc->rnw;
++	if (cmd->rnw) {
++		cmd->rx_buf = ccc->dests[0].payload.data;
++		cmd->rx_len = ccc->dests[0].payload.len;
++	} else {
++		cmd->tx_buf = ccc->dests[0].payload.data;
++		cmd->tx_len = ccc->dests[0].payload.len;
++	}
++	cmd->type = XI3C_SDR_MODE;
++	cmd->tid = XI3C_SDR_TID;
++	cmd->continued = false;
++
++	ret = xi3c_master_common_xfer(master, xfer);
++	kfree(xfer);
++	return ret;
++}
++
++static int xi3c_master_send_ccc_cmd(struct i3c_master_controller *m,
++				    struct i3c_ccc_cmd *cmd)
++{
++	struct xi3c_master *master = to_xi3c_master(m);
++	bool broadcast = cmd->id < 0x80;
++
++	if (broadcast)
++		return xi3c_master_send_bdcast_ccc_cmd(master, cmd);
++
++	return xi3c_master_send_direct_ccc_cmd(master, cmd);
++}
++
++static int xi3c_master_priv_xfers(struct i3c_dev_desc *dev,
++				  struct i3c_priv_xfer *xfers,
++				  int nxfers)
++{
++	struct i3c_master_controller *m = i3c_dev_get_master(dev);
++	struct xi3c_master *master = to_xi3c_master(m);
++	struct xi3c_xfer *xfer;
++	int i, ret;
++
++	if (!nxfers)
++		return 0;
++
++	xfer = xi3c_master_alloc_xfer(master, nxfers);
++	if (!xfer)
++		return -ENOMEM;
++
++	for (i = 0; i < nxfers; i++) {
++		struct xi3c_cmd *cmd = &xfer->cmds[i];
++
++		cmd->addr = dev->info.dyn_addr;
++		cmd->rnw = xfers[i].rnw;
++
++		if (cmd->rnw) {
++			cmd->rx_buf = xfers[i].data.in;
++			cmd->rx_len = xfers[i].len;
++		} else {
++			cmd->tx_buf = (void *)xfers[i].data.out;
++			cmd->tx_len = xfers[i].len;
++		}
++
++		cmd->type = XI3C_SDR_MODE;
++		cmd->tid = XI3C_SDR_TID;
++		cmd->continued = (i + 1) < nxfers;
++	}
++
++	ret = xi3c_master_common_xfer(master, xfer);
++	kfree(xfer);
++	return ret;
++}
++
++static int xi3c_master_i2c_xfers(struct i2c_dev_desc *dev,
++				 struct i2c_msg *xfers,
++				 int nxfers)
++{
++	struct i3c_master_controller *m = i2c_dev_get_master(dev);
++	struct xi3c_master *master = to_xi3c_master(m);
++	struct xi3c_xfer *xfer;
++	int i, ret;
++
++	if (!nxfers)
++		return 0;
++
++	xfer = xi3c_master_alloc_xfer(master, nxfers);
++	if (!xfer)
++		return -ENOMEM;
++
++	for (i = 0; i < nxfers; i++) {
++		struct xi3c_cmd *cmd = &xfer->cmds[i];
++
++		cmd->addr = xfers[i].addr & XI3C_ADDR_MASK;
++		cmd->rnw = xfers[i].flags & I2C_M_RD;
++
++		if (cmd->rnw) {
++			cmd->rx_buf = xfers[i].buf;
++			cmd->rx_len = xfers[i].len;
++		} else {
++			cmd->tx_buf = (void *)xfers[i].buf;
++			cmd->tx_len = xfers[i].len;
++		}
++
++		cmd->type = XI3C_I2C_MODE;
++		cmd->tid = XI3C_I2C_TID;
++		cmd->continued = (i + 1) < nxfers;
++	}
++
++	ret = xi3c_master_common_xfer(master, xfer);
++	kfree(xfer);
++	return ret;
++}
++
++static int xi3c_clk_cfg(struct xi3c_master *master, unsigned long sclhz, u8 mode)
++{
++	unsigned long core_rate, core_periodns;
++	u32 thigh, tlow, thold, odthigh, odtlow, tcasmin, tsustart, tsustop, thdstart;
++
++	core_rate = clk_get_rate(master->pclk);
++	if (!core_rate)
++		return -EINVAL;
++
++	core_periodns = DIV_ROUND_UP(1000000000, core_rate);
++
++	thigh = DIV_ROUND_UP(core_rate, sclhz) >> 1;
++	tlow = thigh;
++
++	/* Hold time : 40% of tlow time */
++	thold = (tlow * 4) / 10;
++
++	/*
++	 * For initial IP (revision number == 0), minimum data hold time is 5.
++	 * For updated IP (revision number > 0), minimum data hold time is 6.
++	 * Updated IP supports achieving high data rate with low reference
++	 * frequency.
++	 */
++	if (xi3c_getrevisionnumber(master) == 0)
++		thold = (thold < 5) ? 5 : thold;
++	else
++		thold = (thold < 6) ? 6 : thold;
++
++	iowrite32((thigh - 2) & XI3C_SCL_HIGH_TIME_MASK,
++		  master->membase + XI3C_SCL_HIGH_TIME_OFFSET);
++	iowrite32((tlow - 2) & XI3C_SCL_LOW_TIME_MASK,
++		  master->membase + XI3C_SCL_LOW_TIME_OFFSET);
++	iowrite32((thold - 2) & XI3C_SDA_HOLD_TIME_MASK,
++		  master->membase + XI3C_SDA_HOLD_TIME_OFFSET);
++
++	if (!mode) {
++		/* I2C */
++		iowrite32((thigh - 2) & XI3C_SCL_HIGH_TIME_MASK,
++			  master->membase + XI3C_OD_SCL_HIGH_TIME_OFFSET);
++		iowrite32((tlow - 2) & XI3C_SCL_LOW_TIME_MASK,
++			  master->membase + XI3C_OD_SCL_LOW_TIME_OFFSET);
++
++		tcasmin = DIV_ROUND_UP(XI3C_I2C_TCASMIN_NS, core_periodns);
++	} else {
++		/* I3C */
++		odtlow = DIV_ROUND_UP(XI3C_OD_TLOW_NS, core_periodns);
++		odthigh = DIV_ROUND_UP(XI3C_OD_THIGH_NS, core_periodns);
++
++		odtlow = (tlow < odtlow) ? odtlow : tlow;
++		odthigh = (thigh > odthigh) ? odthigh : thigh;
++
++		iowrite32((odthigh - 2) & XI3C_SCL_HIGH_TIME_MASK,
++			  master->membase + XI3C_OD_SCL_HIGH_TIME_OFFSET);
++		iowrite32((odtlow - 2) & XI3C_SCL_LOW_TIME_MASK,
++			  master->membase + XI3C_OD_SCL_LOW_TIME_OFFSET);
++
++		tcasmin = DIV_ROUND_UP(XI3C_TCASMIN_NS, core_periodns);
++	}
++
++	thdstart = (thigh > tcasmin) ? thigh : tcasmin;
++	tsustart = (tlow > tcasmin) ? tlow : tcasmin;
++	tsustop = (tlow > tcasmin) ? tlow : tcasmin;
++
++	iowrite32((tsustart - 2) & XI3C_TSU_START_MASK,
++		  master->membase + XI3C_TSU_START_OFFSET);
++	iowrite32((thdstart - 2) & XI3C_THD_START_MASK,
++		  master->membase + XI3C_THD_START_OFFSET);
++	iowrite32((tsustop - 2) & XI3C_TSU_STOP_MASK,
++		  master->membase + XI3C_TSU_STOP_OFFSET);
++
++	return 0;
++}
++
++static int xi3c_master_bus_init(struct i3c_master_controller *m)
++{
++	struct xi3c_master *master = to_xi3c_master(m);
++	struct i3c_bus *bus = i3c_master_get_bus(m);
++	struct i3c_device_info info = { };
++	unsigned long sclhz;
++	u64 pid1_bcr_dcr;
++	u8 mode;
++	int ret;
++
++	switch (bus->mode) {
++	case I3C_BUS_MODE_MIXED_FAST:
++	case I3C_BUS_MODE_MIXED_LIMITED:
++		mode = XI3C_I2C_MODE;
++		sclhz = bus->scl_rate.i2c;
++		break;
++	case I3C_BUS_MODE_PURE:
++		mode = XI3C_SDR_MODE;
++		sclhz = bus->scl_rate.i3c;
++		break;
++	default:
++		return -EINVAL;
++	}
++
++	ret = xi3c_clk_cfg(master, sclhz, mode);
++	if (ret)
++		return ret;
++
++	/* Get an address for the master. */
++	ret = i3c_master_get_free_addr(m, 0);
++	if (ret < 0)
++		return ret;
++
++	info.dyn_addr = (u8)ret;
++
++	/* Write the dynamic address value to the address register. */
++	iowrite32(info.dyn_addr, master->membase + XI3C_ADDRESS_OFFSET);
++
++	/* Read PID, BCR and DCR values, and assign to i3c device info. */
++	pid1_bcr_dcr = ioread32(master->membase + XI3C_PID1_BCR_DCR);
++	info.pid = (((u64)(FIELD_GET(XI3C_PID1_MASK, pid1_bcr_dcr)) << 32) |
++		    ioread32(master->membase + XI3C_PID0_OFFSET));
++	info.bcr = (u8)FIELD_GET(XI3C_BCR_MASK, pid1_bcr_dcr);
++	info.dcr = (u8)FIELD_GET(XI3C_DCR_MASK, pid1_bcr_dcr);
++
++	ret = i3c_master_set_info(&master->base, &info);
++	if (ret)
++		return ret;
++
++	xi3c_master_init(master);
++
++	return ret;
++}
++
++static void xi3c_master_bus_cleanup(struct i3c_master_controller *m)
++{
++	struct xi3c_master *master = to_xi3c_master(m);
++
++	xi3c_master_disable(master);
++}
++
++static const struct i3c_master_controller_ops xi3c_master_ops = {
++	.bus_init = xi3c_master_bus_init,
++	.bus_cleanup = xi3c_master_bus_cleanup,
++	.do_daa = xi3c_master_do_daa,
++	.supports_ccc_cmd = xi3c_master_supports_ccc_cmd,
++	.send_ccc_cmd = xi3c_master_send_ccc_cmd,
++	.priv_xfers = xi3c_master_priv_xfers,
++	.i2c_xfers = xi3c_master_i2c_xfers,
++};
++
++static int xi3c_master_probe(struct platform_device *pdev)
++{
++	struct xi3c_master *master;
++	int ret;
++
++	master = devm_kzalloc(&pdev->dev, sizeof(*master), GFP_KERNEL);
++	if (!master)
++		return -ENOMEM;
++
++	master->membase = devm_platform_ioremap_resource(pdev, 0);
++	if (IS_ERR(master->membase))
++		return PTR_ERR(master->membase);
++
++	master->pclk = devm_clk_get_enabled(&pdev->dev, NULL);
++	if (IS_ERR(master->pclk))
++		return dev_err_probe(&pdev->dev, PTR_ERR(master->pclk),
++				     "Failed to get and enable clock\n");
++
++	master->dev = &pdev->dev;
++
++	ret = devm_mutex_init(master->dev, &master->lock);
++	if (ret)
++		return ret;
++
++	spin_lock_init(&master->xferqueue.lock);
++	INIT_LIST_HEAD(&master->xferqueue.list);
++
++	platform_set_drvdata(pdev, master);
++
++	return i3c_master_register(&master->base, &pdev->dev,
++				   &xi3c_master_ops, false);
++}
++
++static void xi3c_master_remove(struct platform_device *pdev)
++{
++	struct xi3c_master *master = platform_get_drvdata(pdev);
++
++	i3c_master_unregister(&master->base);
++}
++
++static const struct of_device_id xi3c_master_of_ids[] = {
++	{ .compatible = "xlnx,axi-i3c-1.0" },
++	{ },
++};
++
++static struct platform_driver xi3c_master_driver = {
++	.probe = xi3c_master_probe,
++	.remove = xi3c_master_remove,
++	.driver = {
++		.name = "axi-i3c-master",
++		.of_match_table = xi3c_master_of_ids,
++	},
++};
++module_platform_driver(xi3c_master_driver);
++
++MODULE_AUTHOR("Manikanta Guntupalli <manikanta.guntupalli@amd.com>");
++MODULE_DESCRIPTION("AXI I3C master driver");
++MODULE_LICENSE("GPL");
+-- 
+2.34.1
+
 
 -- 
 linux-i3c mailing list
