@@ -4,70 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5EF8CA0FED
-	for <linux-i3c@archiver.kernel.org>; Wed, 10 Sep 2025 01:27:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80CCCCA101F
+	for <linux-i3c@archiver.kernel.org>; Wed, 10 Sep 2025 05:57:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bia7MGBvrs8EeHXx32QjIKyJ0fNEBf65z6vACVvMNeQ=; b=H/l/JiU0HQh1ZU
-	q+r7tso1ju4AvYNxf76JrgBdmzfpYhgM3hjIrxv+xlqSC1BZt+yCFStyK0TxduONauHGvC8Q4BOpl
-	N0zC2h2nt5nrHKg+ZLQVEytC6j/67J1aThb2mHoUClszOij0gbrR7Z6xOxCme9Rspk5vmajxrpohJ
-	xtXPOREgL3N+fGYvQUsaAImapmrIujqtjVw8IEwZ9zQ497+GS9vKdfAUXjD9x7YFHFSwuW895o6HE
-	k/kR6d8G+F8NYajydDR7oF1zcopiCQCShb8Hob3uuPfa56Y6WlQZ9/3Dm4iCQ2FMcBis3+Kx+Jxrw
-	pdvRlHDip7Tdtvykvj8A==;
+	List-Owner; bh=oF9N+U0pT0YgZsJE9gOK766EtAmxZIliHyM7W3KtKvM=; b=dxaNmlV2Wk3aIV
+	dgFgJDzf3R/CONTbabLQyrU58D3UeZuuxFAFoiWGqTKu+PmpFIa26TqkgboUZHXa725vKjrfnZVpB
+	Z1PXgihhW5nkaap3bpwVlHsltq8P/0uDN48d4P3To1ztPV6PF3P0YB6urHqn6XeSvrlyxNun5nJC/
+	xWs8DDyltwBm6CXE/jBp3rkNd4YphIXJVM/E0d32bzEGfrl8EkQKc/5UYqnt8RNk/8nBPrJ8tgWg6
+	hMFCqqexEr7dKNfNzUBQXGHOKYypzSiPMcyd38aUFQHfJR3UC4pxdjGOa29WJ/XMLYGnEWvIKt7B6
+	V2q3+JKCTXu0bVTp9e+w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uw9cG-0000000BOiq-28dc;
-	Wed, 10 Sep 2025 01:27:20 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uwDpu-0000000CEN4-14al;
+	Wed, 10 Sep 2025 05:57:42 +0000
+Received: from mgamail.intel.com ([192.198.163.10])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uw9cD-0000000BOgc-2T10
+	id 1uwDpr-0000000CEMk-3i4D
 	for linux-i3c@lists.infradead.org;
-	Wed, 10 Sep 2025 01:27:19 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 0525D44159;
-	Wed, 10 Sep 2025 01:27:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BECF7C4CEF4;
-	Wed, 10 Sep 2025 01:27:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1757467636;
-	bh=NRt740wDewvEnDlLdECaG6cLn7kaZWZqxGlfu2JNWsw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=P/p4zt+9Uw2DL4OMJy1/XVbuSqelY/71VrvHceoS/1wEaVqHHCD+ZmSjt49rc8Ogc
-	 Kewg8NznvyUjJPrJ6xvSwqS50JKJAqofD0DX6cUVFycs1vLwQ8NFV/2dBDFYHkhcrM
-	 x07qultJGHaugcJLAOgBZOhbFLImWe95uUEG9FSBHJ0vxsDm5YrmunclJtWPvWpMM3
-	 1CBUgAQjH+0vXspTD2O6d2hSAS+tXxnYd5I2Mbe/MrAfwzphOwQSmFAPD+IjLW1LSs
-	 +fXZ6J8Rr4bwJUR4Zd8HHRhh68Ga1Zeo99S9wM9FXCIkeLg5wU00hhJ76sPGfgL9In
-	 Jh5O7DU3QdnHA==
-Date: Tue, 9 Sep 2025 20:27:16 -0500
-From: "Rob Herring (Arm)" <robh@kernel.org>
-To: Prabhakar <prabhakar.csengg@gmail.com>
-Cc: devicetree@vger.kernel.org,
-	Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
-	Geert Uytterhoeven <geert+renesas@glider.be>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	linux-i3c@lists.infradead.org,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Fabrizio Castro <fabrizio.castro.jz@renesas.com>,
-	linux-kernel@vger.kernel.org, Biju Das <biju.das.jz@bp.renesas.com>,
-	Frank Li <Frank.Li@nxp.com>, Conor Dooley <conor+dt@kernel.org>,
-	linux-renesas-soc@vger.kernel.org,
-	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
-	Magnus Damm <magnus.damm@gmail.com>,
-	Wolfram Sang <wsa+renesas@sang-engineering.com>
-Subject: Re: [PATCH v2] dt-bindings: i3c: renesas,i3c: Add RZ/V2H(P) and
- RZ/V2N support
-Message-ID: <175746763548.3566130.10675698517636127630.robh@kernel.org>
-References: <20250908093930.12591-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+	Wed, 10 Sep 2025 05:57:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1757483860; x=1789019860;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=mkYJqjsiORjHJd7c74oXowKFTaD/mx69o2VDb+oyXvU=;
+  b=aNkhEyX3lhqCdR2NfGqi5WxFWLPz/Xj1QGyng78AOss1uK9HsISDMmA6
+   lbty+IIRyRz7W4xfzD0x3bPUxWCzCJwqypnKB3aC716x9GSltPamA8MpD
+   sLTgoFi93/q6gF/N/bpSleeinmbVsUSdrAYxcU+cZ95ucyPr2BQ4WgIv5
+   miO0vBSqBvBXyIakSdTqTcdmjxt4WHi95Z5x5Ty3/QiHjfN9JMuz2IcJx
+   MKmkBCCx51naWIRyggWQHPUKYZAY9g4yO/mpYYXpTC0QFbUQaAPZMHpTG
+   soEyMs745B0NBXT2fX/1oI8J6W2f5Oyp7eafr6j/5LCJ5vKhljt7wdiZj
+   w==;
+X-CSE-ConnectionGUID: qaUVL8lFScy5asgZuVBxDQ==
+X-CSE-MsgGUID: BBcGiLFqRKmqRQdFkKr6rw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11548"; a="71163853"
+X-IronPort-AV: E=Sophos;i="6.18,253,1751266800"; 
+   d="scan'208";a="71163853"
+Received: from orviesa006.jf.intel.com ([10.64.159.146])
+  by fmvoesa104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Sep 2025 22:57:38 -0700
+X-CSE-ConnectionGUID: AHxEKrFcSV6kBnRbvkgHrg==
+X-CSE-MsgGUID: eYmD5IWQT8SCw4aoFXB6oA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.18,253,1751266800"; 
+   d="scan'208";a="172457612"
+Received: from lkp-server01.sh.intel.com (HELO 114d98da2b6c) ([10.239.97.150])
+  by orviesa006.jf.intel.com with ESMTP; 09 Sep 2025 22:57:35 -0700
+Received: from kbuild by 114d98da2b6c with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1uwDpk-0005Zf-1e;
+	Wed, 10 Sep 2025 05:57:32 +0000
+Date: Wed, 10 Sep 2025 13:57:15 +0800
+From: kernel test robot <lkp@intel.com>
+To: Durai Manickam KR <durai.manickamkr@microchip.com>,
+	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, alexandre.belloni@bootlin.com,
+	Frank.Li@nxp.com, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, balamanikandan.gunasundar@microchip.com,
+	nicolas.ferre@microchip.com
+Cc: oe-kbuild-all@lists.linux.dev,
+	Durai Manickam KR <durai.manickamkr@microchip.com>
+Subject: Re: [PATCH 2/4] i3c: master: add Microchip SAMA7D65 I3C HCI master
+ driver
+Message-ID: <202509101550.Bpclx47x-lkp@intel.com>
+References: <20250909111333.170016-3-durai.manickamkr@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250908093930.12591-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <20250909111333.170016-3-durai.manickamkr@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250909_182717_645764_C20A04F0 
-X-CRM114-Status: GOOD (  14.76  )
+X-CRM114-CacheID: sfid-20250909_225739_967281_58282D67 
+X-CRM114-Status: GOOD (  15.40  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,36 +94,205 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+Hi Durai,
 
-On Mon, 08 Sep 2025 10:39:30 +0100, Prabhakar wrote:
-> From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> 
-> Add device tree binding support for the I3C Bus Interface on Renesas
-> RZ/V2H(P) and RZ/V2N SoCs. The I3C IP on these SoCs is identical to
-> that found on the RZ/G3E SoC.
-> 
-> Add new compatible strings "renesas,r9a09g056-i3c" for RZ/V2N and
-> "renesas,r9a09g057-i3c" for RZ/V2H(P). Both variants use
-> "renesas,r9a09g047-i3c" as a fallback compatible to indicate hardware
-> compatibility with the RZ/G3E implementation.
-> 
-> Update the title to be more generic as it now covers multiple SoC
-> families beyond just RZ/G3S and RZ/G3E.
-> 
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> Reviewed-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-> ---
-> v1->v2:
-> - Updated title to be more generic.
-> - Updated commit message to reflect changes.
-> - Added Reviewed-by tag.
-> ---
->  .../devicetree/bindings/i3c/renesas,i3c.yaml     | 16 +++++++++++-----
->  1 file changed, 11 insertions(+), 5 deletions(-)
-> 
+kernel test robot noticed the following build errors:
 
-Acked-by: Rob Herring (Arm) <robh@kernel.org>
+[auto build test ERROR on clk/clk-next]
+[also build test ERROR on robh/for-next linus/master v6.17-rc5 next-20250909]
+[cannot apply to abelloni/rtc-next]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
+url:    https://github.com/intel-lab-lkp/linux/commits/Durai-Manickam-KR/clk-at91-sama7d65-add-peripheral-clock-for-I3C/20250909-192231
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/clk/linux.git clk-next
+patch link:    https://lore.kernel.org/r/20250909111333.170016-3-durai.manickamkr%40microchip.com
+patch subject: [PATCH 2/4] i3c: master: add Microchip SAMA7D65 I3C HCI master driver
+config: arm-allmodconfig (https://download.01.org/0day-ci/archive/20250910/202509101550.Bpclx47x-lkp@intel.com/config)
+compiler: arm-linux-gnueabi-gcc (GCC) 15.1.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250910/202509101550.Bpclx47x-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202509101550.Bpclx47x-lkp@intel.com/
+
+All error/warnings (new ones prefixed by >>):
+
+>> drivers/i3c/master/sama7d65-i3c-hci-master.c:2478:35: error: initialization of 'int (*)(struct i2c_dev_desc *, struct i2c_msg *, int)' from incompatible pointer type 'int (*)(struct i2c_dev_desc *, const struct i2c_msg *, int)' [-Wincompatible-pointer-types]
+    2478 |         .i2c_xfers              = mchp_i3c_hci_i2c_xfers,
+         |                                   ^~~~~~~~~~~~~~~~~~~~~~
+   drivers/i3c/master/sama7d65-i3c-hci-master.c:2478:35: note: (near initialization for 'mchp_i3c_hci_ops.i2c_xfers')
+   drivers/i3c/master/sama7d65-i3c-hci-master.c:2283:12: note: 'mchp_i3c_hci_i2c_xfers' declared here
+    2283 | static int mchp_i3c_hci_i2c_xfers(struct i2c_dev_desc *dev,
+         |            ^~~~~~~~~~~~~~~~~~~~~~
+   drivers/i3c/master/sama7d65-i3c-hci-master.c: In function 'mchp_i3c_hci_init':
+>> drivers/i3c/master/sama7d65-i3c-hci-master.c:2517:30: warning: variable 'mode_selector' set but not used [-Wunused-but-set-variable]
+    2517 |         bool size_in_dwords, mode_selector;
+         |                              ^~~~~~~~~~~~~
+   drivers/i3c/master/sama7d65-i3c-hci-master.c: At top level:
+>> drivers/i3c/master/sama7d65-i3c-hci-master.c:2695:10: error: 'struct platform_driver' has no member named 'remove_new'; did you mean 'remove'?
+    2695 |         .remove_new = mchp_i3c_hci_remove,
+         |          ^~~~~~~~~~
+         |          remove
+
+
+vim +2478 drivers/i3c/master/sama7d65-i3c-hci-master.c
+
+  2471	
+  2472	static const struct i3c_master_controller_ops mchp_i3c_hci_ops = {
+  2473		.bus_init		= mchp_i3c_hci_bus_init,
+  2474		.bus_cleanup		= mchp_i3c_hci_bus_cleanup,
+  2475		.do_daa			= mchp_i3c_hci_daa,
+  2476		.send_ccc_cmd		= mchp_i3c_hci_send_ccc_cmd,
+  2477		.priv_xfers		= mchp_i3c_hci_priv_xfers,
+> 2478		.i2c_xfers		= mchp_i3c_hci_i2c_xfers,
+  2479		.attach_i3c_dev		= mchp_i3c_hci_attach_i3c_dev,
+  2480		.reattach_i3c_dev	= mchp_i3c_hci_reattach_i3c_dev,
+  2481		.detach_i3c_dev		= mchp_i3c_hci_detach_i3c_dev,
+  2482		.attach_i2c_dev		= mchp_i3c_hci_attach_i2c_dev,
+  2483		.detach_i2c_dev		= mchp_i3c_hci_detach_i2c_dev,
+  2484		.request_ibi		= mchp_i3c_hci_request_ibi,
+  2485		.free_ibi		= mchp_i3c_hci_free_ibi,
+  2486		.enable_ibi		= mchp_i3c_hci_enable_ibi,
+  2487		.disable_ibi		= mchp_i3c_hci_disable_ibi,
+  2488		.recycle_ibi_slot	= mchp_i3c_hci_recycle_ibi_slot,
+  2489	};
+  2490	
+  2491	static irqreturn_t mchp_i3c_hci_irq_handler(int irq, void *dev_id)
+  2492	{
+  2493		struct mchp_i3c_hci *hci = dev_id;
+  2494		irqreturn_t result = IRQ_NONE;
+  2495		u32 val;
+  2496	
+  2497		val = reg_read(MCHP_INTR_STATUS);
+  2498		dev_dbg(&hci->master.dev,"INTR_STATUS = %#x", val);
+  2499	
+  2500		if (val & MCHP_INTR_HC_INTERNAL_ERR) {
+  2501			dev_err(&hci->master.dev, "Host Controller Internal Error\n");
+  2502			val &= ~MCHP_INTR_HC_INTERNAL_ERR;
+  2503		}
+  2504			
+  2505		hci->io->irq_handler(hci, 0);
+  2506		
+  2507		if (val)
+  2508			dev_err(&hci->master.dev, "unexpected INTR_STATUS %#x\n", val);
+  2509		else
+  2510			result = IRQ_HANDLED;
+  2511	
+  2512		return result;
+  2513	}
+  2514	
+  2515	static int mchp_i3c_hci_init(struct mchp_i3c_hci *hci)
+  2516	{
+> 2517		bool size_in_dwords, mode_selector;
+  2518		u32 regval, offset;
+  2519		int ret;
+  2520	
+  2521		/* Validate HCI hardware version */
+  2522		regval = reg_read(MCHP_HCI_VERSION);
+  2523		hci->version_major = (regval >> 8) & 0xf;
+  2524		hci->version_minor = (regval >> 4) & 0xf;
+  2525		hci->revision = regval & 0xf;
+  2526		dev_notice(&hci->master.dev, "MIPI I3C HCI v%u.%u r%02u\n",
+  2527			   hci->version_major, hci->version_minor, hci->revision);
+  2528		/* known versions */
+  2529		switch (regval & ~0xf) {
+  2530		case 0x100:	/* version 1.0 */
+  2531		case 0x110:	/* version 1.1 */
+  2532		case 0x200:	/* version 2.0 */
+  2533			break;
+  2534		default:
+  2535			dev_err(&hci->master.dev, "unsupported HCI version\n");
+  2536			return -EPROTONOSUPPORT;
+  2537		}
+  2538	
+  2539		hci->caps = reg_read(MCHP_HC_CAPABILITIES);
+  2540		dev_dbg(&hci->master.dev,"caps = %#x", hci->caps);
+  2541	
+  2542		size_in_dwords = hci->version_major < 1 ||
+  2543				 (hci->version_major == 1 && hci->version_minor < 1);
+  2544	
+  2545		regval = reg_read(MCHP_DAT_SECTION);
+  2546		offset = FIELD_GET(MCHP_DAT_TABLE_OFFSET, regval);
+  2547		hci->DAT_regs = offset ? hci->base_regs + offset : NULL;
+  2548		hci->DAT_entries = FIELD_GET(MCHP_DAT_TABLE_SIZE, regval);
+  2549		hci->DAT_entry_size = 8;
+  2550		if (size_in_dwords)
+  2551			hci->DAT_entries = 4 * hci->DAT_entries / hci->DAT_entry_size;
+  2552		dev_info(&hci->master.dev, "DAT: %u %u-bytes entries at offset %#x\n",
+  2553			 hci->DAT_entries, hci->DAT_entry_size, offset);
+  2554	
+  2555		regval = reg_read(MCHP_DCT_SECTION);
+  2556		offset = FIELD_GET(MCHP_DCT_TABLE_OFFSET, regval);
+  2557		hci->DCT_regs = offset ? hci->base_regs + offset : NULL;
+  2558		hci->DCT_entries = FIELD_GET(MCHP_DCT_TABLE_SIZE, regval);
+  2559		hci->DCT_entry_size = 16;
+  2560		if (size_in_dwords)
+  2561			hci->DCT_entries = 4 * hci->DCT_entries / hci->DCT_entry_size;
+  2562		dev_info(&hci->master.dev, "DCT: %u %u-bytes entries at offset %#x\n",
+  2563			 hci->DCT_entries, hci->DCT_entry_size, offset);
+  2564	
+  2565		regval = reg_read(MCHP_RING_HEADERS_SECTION);
+  2566		offset = FIELD_GET(MCHP_RING_HEADERS_OFFSET, regval);
+  2567		hci->RHS_regs = offset ? hci->base_regs + offset : NULL;
+  2568		dev_info(&hci->master.dev, "Ring Headers at offset %#x\n", offset);
+  2569	
+  2570		regval = reg_read(MCHP_PIO_SECTION);
+  2571		offset = FIELD_GET(MCHP_PIO_REGS_OFFSET, regval);
+  2572		hci->PIO_regs = offset ? hci->base_regs + offset : NULL;
+  2573		dev_info(&hci->master.dev, "PIO section at offset %#x\n", offset);
+  2574	
+  2575		regval = reg_read(MCHP_EXT_CAPS_SECTION);
+  2576		offset = FIELD_GET(MCHP_EXT_CAPS_OFFSET, regval);
+  2577		hci->EXTCAPS_regs = offset ? hci->base_regs + offset : NULL;
+  2578		dev_info(&hci->master.dev, "Extended Caps at offset %#x\n", offset);
+  2579	
+  2580		ret = i3c_hci_parse_ext_caps(hci);
+  2581		if (ret)
+  2582			return ret;
+  2583	
+  2584		/*
+  2585		 * Now let's reset the hardware.
+  2586		 * SOFT_RST must be clear before we write to it.
+  2587		 * Then we must wait until it clears again.
+  2588		 */
+  2589		ret = readx_poll_timeout(reg_read, MCHP_RESET_CONTROL, regval,
+  2590					 !(regval & MCHP_SOFT_RST), 1, 10000);
+  2591		if (ret)
+  2592			return -ENXIO;
+  2593		reg_write(MCHP_RESET_CONTROL, MCHP_SOFT_RST);
+  2594		ret = readx_poll_timeout(reg_read, MCHP_RESET_CONTROL, regval,
+  2595					 !(regval & MCHP_SOFT_RST), 1, 10000);
+  2596		if (ret)
+  2597			return -ENXIO;
+  2598	
+  2599		/* Disable all interrupts and allow all signal updates */
+  2600		reg_write(MCHP_INTR_SIGNAL_ENABLE, 0x0);
+  2601		reg_write(MCHP_INTR_STATUS_ENABLE, 0xffffffff);
+  2602		
+  2603		hci->cmd = &mchp_mipi_i3c_hci_cmd_v1;
+  2604		mode_selector = hci->version_major > 1 ||
+  2605					(hci->version_major == 1 && hci->version_minor > 0);
+  2606	
+  2607		/* Quirk for HCI_QUIRK_PIO_MODE on MICROCHIP platforms */
+  2608		if (hci->quirks & MCHP_HCI_QUIRK_PIO_MODE) {
+  2609				hci->RHS_regs = NULL;
+  2610		}
+  2611	
+  2612		hci->io = &mchp_mipi_i3c_hci_pio;
+  2613		dev_info(&hci->master.dev, "Using PIO\n");
+  2614		
+  2615		microchip_set_od_pp_timing(hci);
+  2616	
+  2617		return 0;
+  2618	}
+  2619	
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-i3c mailing list
