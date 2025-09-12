@@ -4,160 +4,158 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CDD4CAC5A8
-	for <linux-i3c@archiver.kernel.org>; Sun, 14 Sep 2025 20:33:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0E34FCAC5A1
+	for <linux-i3c@archiver.kernel.org>; Sun, 14 Sep 2025 20:33:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T2EFIOU2qesXmyd1GOG48S9BypHO+In/O/64bwAxvBA=; b=ac11Imns+6marS
-	LXlsNcWesHbd18mxi/KdKDbCSGaU/8yVLO8gwO3O4bzFgKmGfa4ypyNEzusL5AfFJaL2Fe05OoKyC
-	r4Gbgs2kQ+1j9LCt4+U2VoojwmQb0J4w6gTromYpb3PPs6PMR7dURWjh9LVtJRVYBcUU6h7FfUvh2
-	2be/8c/U5zLNpeIHoH04l6KDbVLa/fHe8QT2Nxep1DjcqA6FCAOZ4f5115pGMlSJ/Tab5G38TdM3+
-	N7jCEKdM2JxdE7DcsTfqdXipiuXemt06nnZRbD24w0HXJjfJNNsQriPZLCszU9q3qfvDqdG1XPex9
-	TVqvUWV8KRjVosnux+wQ==;
+	List-Owner; bh=WL6OtXD6kpRxUluWwBPZ4EyAXRFg/h/uO3ax9vKDON0=; b=taKoSIpMTPlCY7
+	DvcGGKT5tL1pzNgB3O+VES0iZ7nRKe6+s7pQLD+zu/lQKZJ2P2wXBD+USd/xgZKF9GJur0bry713L
+	5KaVsuPsFP87xafALa8LB3kQ+H8LDrDp47W3tQ/OjUDzmZQQgQceOTiVHF+VvgT+iHBLFyuslNQxU
+	tmouvPzBTvGarflVogvtybfZbdDAb4vhL982z7awFEhP0vn+jIzLlIWS0eQCMmNhCiaeDF2juFKmo
+	AVWrRyWjLJS9HhxSgZd+4mzAA1ZyWubwl583SMbUgpGNyTOlw8Nl5s+0LMaRDuNCh1Fw0Ew1rRqf9
+	CaecuFWHjiYtGUB4XpOw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uxtPl-000000029zz-0k6Y;
-	Sun, 14 Sep 2025 20:33:37 +0000
-Received: from mail-dm6nam12on20608.outbound.protection.outlook.com ([2a01:111:f403:2417::608] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
+	id 1uxtPn-00000002A5Z-32zF;
+	Sun, 14 Sep 2025 20:33:39 +0000
+Received: from mail-dm6nam10on20623.outbound.protection.outlook.com ([2a01:111:f403:2413::623] helo=NAM10-DM6-obe.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvvvS-00000006W4v-2Qnz
+	id 1uwxg9-00000007VQ4-2F3a
 	for linux-i3c@lists.infradead.org;
-	Tue, 09 Sep 2025 10:50:16 +0000
+	Fri, 12 Sep 2025 06:54:43 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=kk3xdtAr63u/3X5fiNFJLcthhoSDBn2FW0Q7YfMvRBUaSl7NUubsBO1/FA9kY16lPTkHcVWj7tW7qWL9t8rolenVD/c1rl8xqj/m4tl2k6/u+JT2gCzvMOm4DGBa2zMrxb8MDm2mAG9G/XYwpZ+EkzCbz5gK5uDK7NNFxWEzGWAc+n0g/owMwqmJl3wVWYj4NYUWef2RLuDWMyLRmR5gDUI31+f/ITWTggNgz1TCi4XWKqe7a34MslfTiqmYYv7J4moLWLC6ULnFteDKel0dY67jldY/4uMHIyhvZXSlicLEK1Y9ivl1Xu6GcgUlIAIWCrJWcEp/Ty/0afjdkVW7eA==
+ b=fQFdQYZDzZfa05nT+EAloSwLFiXUTTRQRfdT2U7kBWVsYZbW6ylT3U0mexwoVK8WwmeY6spQWdw43ghb/xvmxwHugWlPv0xvV1eBQ/7I5TqKelHHKg9DU0siDWcLIpZ+52I9ybJvYRxEOPbhWxe7wC7/p508oL411tYTdyW+XtFyXEzqSFb59z2NlsSw4KGaYJHoZwfN5cEhzDRNcpF+Bln3I4l1OsvxCPjksDmOUNFQhp2BhX75CIqNUCGZCKn4Wp56h7o/Jy7MNSCfEoW3pbsDX2QCj+KN/NzVZx7mjow1D+FhLNygNA/NY6KOpjfQ6ov9Lr8HNonQue7QVDhStA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=nE4GTf6NnJ/P5WXIMpSjGUxeR6ZfY7R09jg1BC8SBsY=;
- b=sgOlaMZmjmNvGRtY7Kael+8UvHQObbxl/DEPciZef8UnC/lty8Bilu/oWSfp6Ft6PbN6w4raLn8930Ef+70ahQ4Uz4g6aXL130W3XrmvPQAc0Z3p+hoZ/o7werS9WYkVpp1K18ZdF0Dpc2vzxgZA2E1N6a7VRJ9uaWQZekKNjR8+bcn7cXWdnEhNDWQT8FhktqPaRf3AyGqXiJ/jQzK6fXojvXHrKLhd0/cjQR7qqr34llmCsoJ3dd3wN+/OupCp4NGkaS7QNnUBGP7zUK8+wChdReWZ6ztnxP+X+e4bhINxQpc8dB0kTJFCEan8GMmwXKtKrUeGMEZYu2P6TwAIXw==
+ bh=l9E6NA3C5SEcB6YsGQyTXNvPuTxKgL9XIG3j21wgRRc=;
+ b=vFBowQ4NS6fs+fXxQePrWaSggdnpn93DMWU1kd4HIKEtTcYR+zZx+s7cqUk/L58HkHdz1QCwYNxzvUglVZ8zgsYkh/8Na/jC4AeMdx3W4loSNd37PKilXxlTdlK/JKPGaxkK/plrtZcRKqP65SLYAbUfp7q0YCqHXKQBK7C1UeVE6ueuJiumcnexJmFNyuKnFFdH4vjWN19Z9Euc+pjrGiENiRwnNJF3mTA/vLI9e7w99+lnXBBGX7fEtCe0cvTZU2hW1JEYkupGfJ2SmHNfI0wVTaFvPhsmIEfswvYiFkN+VpKOnJWfWZ1qqOGMVg51roBg3ZBUyoUzctv7A1aKnw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
  header.d=amd.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nE4GTf6NnJ/P5WXIMpSjGUxeR6ZfY7R09jg1BC8SBsY=;
- b=Qzr0bxKBfUuhH8v/y7h5jojJNV1JohXbQiaCYAgqBU4tFgUqaq59d96N61BMyfCkftgGuZsUMs0JF0xxWr5wNfGrybZC8nxpakGnN3bPsWONR1zu3nwpV4pttQdiL1WFJ2n9JEsv8zc28/24WSCy9S6/Uf7u4Loxek/69NgA8a8=
+ bh=l9E6NA3C5SEcB6YsGQyTXNvPuTxKgL9XIG3j21wgRRc=;
+ b=bR9I9iLf5pB1Sj00uvjG04RWBwZsal/GK5DRDKc5idsyPJupasGHQQ3PIzh66dkoNGw/1j9U8MAUmMSO8MnWtT0T1RGepQxo6yhzZubUBs2RkDT/sSEMvZ2xuFS3rxL7/67GkzSRPA8W95qczfc86Am3PLoomJLlRRtIdOt0Q5A=
 Received: from DM4PR12MB6109.namprd12.prod.outlook.com (2603:10b6:8:ae::11) by
- PH7PR12MB5902.namprd12.prod.outlook.com (2603:10b6:510:1d6::8) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.9094.22; Tue, 9 Sep 2025 10:50:02 +0000
+ SN7PR12MB7372.namprd12.prod.outlook.com (2603:10b6:806:29b::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9094.22; Fri, 12 Sep
+ 2025 06:54:32 +0000
 Received: from DM4PR12MB6109.namprd12.prod.outlook.com
  ([fe80::680c:3105:babe:b7e1]) by DM4PR12MB6109.namprd12.prod.outlook.com
- ([fe80::680c:3105:babe:b7e1%4]) with mapi id 15.20.9094.021; Tue, 9 Sep 2025
- 10:50:02 +0000
+ ([fe80::680c:3105:babe:b7e1%4]) with mapi id 15.20.9094.021; Fri, 12 Sep 2025
+ 06:54:32 +0000
 From: "Guntupalli, Manikanta" <manikanta.guntupalli@amd.com>
-To: Frank Li <Frank.li@nxp.com>
-CC: "git (AMD-Xilinx)" <git@amd.com>, "Simek, Michal" <michal.simek@amd.com>,
-	"alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
-	"robh@kernel.org" <robh@kernel.org>, "krzk+dt@kernel.org"
-	<krzk+dt@kernel.org>, "conor+dt@kernel.org" <conor+dt@kernel.org>,
-	"kees@kernel.org" <kees@kernel.org>, "gustavoars@kernel.org"
-	<gustavoars@kernel.org>, "jarkko.nikula@linux.intel.com"
-	<jarkko.nikula@linux.intel.com>, "linux-i3c@lists.infradead.org"
-	<linux-i3c@lists.infradead.org>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "linux-hardening@vger.kernel.org"
-	<linux-hardening@vger.kernel.org>, "Pandey, Radhey Shyam"
+To: "git (AMD-Xilinx)" <git@amd.com>, "alexandre.belloni@bootlin.com"
+	<alexandre.belloni@bootlin.com>, "Frank.Li@nxp.com" <Frank.Li@nxp.com>,
+	"wsa+renesas@sang-engineering.com" <wsa+renesas@sang-engineering.com>,
+	"quic_msavaliy@quicinc.com" <quic_msavaliy@quicinc.com>, "S-k, Shyam-sundar"
+	<Shyam-sundar.S-k@amd.com>, "xiaopei01@kylinos.cn" <xiaopei01@kylinos.cn>,
+	"billy_tsai@aspeedtech.com" <billy_tsai@aspeedtech.com>,
+	"linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+CC: "Simek, Michal" <michal.simek@amd.com>, "Pandey, Radhey Shyam"
 	<radhey.shyam.pandey@amd.com>, "Goud, Srinivas" <srinivas.goud@amd.com>,
 	"Datta, Shubhrajyoti" <shubhrajyoti.datta@amd.com>, "manion05gk@gmail.com"
 	<manion05gk@gmail.com>
-Subject: RE: [PATCH V5 2/2] i3c: master: Add AMD I3C bus controller driver
-Thread-Topic: [PATCH V5 2/2] i3c: master: Add AMD I3C bus controller driver
-Thread-Index: AQHcILLYmOX0ONeXB06A2TueGw6CyLSJctcAgAD0bfA=
-Date: Tue, 9 Sep 2025 10:50:02 +0000
-Message-ID: <DM4PR12MB6109F6D5D032723C675472448C0FA@DM4PR12MB6109.namprd12.prod.outlook.com>
-References: <20250908112117.205270-1-manikanta.guntupalli@amd.com>
- <20250908112117.205270-3-manikanta.guntupalli@amd.com>
- <aL7+Urm4NB9kwOwQ@lizhi-Precision-Tower-5810>
-In-Reply-To: <aL7+Urm4NB9kwOwQ@lizhi-Precision-Tower-5810>
+Subject: RE: [PATCH V2] i3c: dw: Add shutdown support to dw_i3c_master driver
+Thread-Topic: [PATCH V2] i3c: dw: Add shutdown support to dw_i3c_master driver
+Thread-Index: AQHcAWRgHgzNuWUIgkCsDHVkviqO2LR+JTFAgBE750A=
+Date: Fri, 12 Sep 2025 06:54:32 +0000
+Message-ID: <DM4PR12MB610914E1B473AB7D4840103B8C08A@DM4PR12MB6109.namprd12.prod.outlook.com>
+References: <20250730151207.4113708-1-manikanta.guntupalli@amd.com>
+ <DM4PR12MB610977A84E60005E87C1B45D8C07A@DM4PR12MB6109.namprd12.prod.outlook.com>
+In-Reply-To: <DM4PR12MB610977A84E60005E87C1B45D8C07A@DM4PR12MB6109.namprd12.prod.outlook.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-msip_labels: MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Enabled=True;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_SiteId=3dd8961f-e488-4e60-8e11-a82d994e183d;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_SetDate=2025-09-09T06:39:09.0000000Z;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Name=Open
+msip_labels: MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Enabled=True;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_SiteId=3dd8961f-e488-4e60-8e11-a82d994e183d;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_SetDate=2025-09-01T07:42:56.0000000Z;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Name=Open
  Source;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_ContentBits=3;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Method=Privileged
 authentication-results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=amd.com;
 x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: DM4PR12MB6109:EE_|PH7PR12MB5902:EE_
-x-ms-office365-filtering-correlation-id: 2a1e7abc-c1ff-484b-4ed5-08ddef8ea0f7
+x-ms-traffictypediagnostic: DM4PR12MB6109:EE_|SN7PR12MB7372:EE_
+x-ms-office365-filtering-correlation-id: b7aa52a6-8adf-4735-4c92-08ddf1c93a58
 x-ld-processed: 3dd8961f-e488-4e60-8e11-a82d994e183d,ExtAddr
 x-ms-exchange-senderadcheck: 1
 x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|1800799024|7416014|366016|376014|38070700021;
-x-microsoft-antispam-message-info: =?us-ascii?Q?dn846sZSdgCOtD5tHtKS5BQRv8sCjcaGGr3MtICL6NexW7WeKG5xIul+S5P/?=
- =?us-ascii?Q?On/rg66B+cexf3O1rrXqS7MbIOASdcHgGVAj3s2V1tDwET72g0N/Cb1UOcjZ?=
- =?us-ascii?Q?3mEb00H9V3zBL7KV39M3ik1kWTtEmpQ0REbU93cnEI/uOz51KpJeAm5thwWJ?=
- =?us-ascii?Q?atPK1hkVfG2z5fhr7/hV2uRuLVVPZ2Z4mBTP/uY1XYNlyVuM03iIaVnhpk5f?=
- =?us-ascii?Q?8FhvLCuGog32y3Bf4iM1d9K1rW6zne+R8rE13FpWmwGhnX5KkosV+5c0ik8O?=
- =?us-ascii?Q?jm0/XKkTyp3eSLxdlbx+KgBx06IRvH9kIYKHSwdKtz9dMzJwFefUsVeuoUz/?=
- =?us-ascii?Q?WZlYDvAqhleMbSaiadhot0OROH9YPIZ6MQEy1hivUqGQARE9tQmr5m0YxHgK?=
- =?us-ascii?Q?rxCgtr/wGfwdMkByJrXORMqopsXGsri1Qn+LztVmV6zRUfPoVOouNMQh1Dpz?=
- =?us-ascii?Q?NfzM2xPTOeUUkItx69GDiK8ZZZXTDxwdWU+6APcjDRvHP/kVfoefJXQUPEmB?=
- =?us-ascii?Q?aa1VUnadsiaMDi3qkOfquHgcfGH5TXX0qRbQm/A2AYbuIi2du6luv0+wQsRA?=
- =?us-ascii?Q?MHgLOdNeM1/2HQpPWaV784S4yYIlTtiCSmRxOFaY4/NkpsIaHtAfIruO3Xdz?=
- =?us-ascii?Q?yBo/EwO98pXhew78Cs778yI0kH+ffVkiC9ByeWGvhH/CU3kP0heoPuerbF3a?=
- =?us-ascii?Q?rL6Urjayf8/KdShc8ipa/v2vFzpVzsjBlRuT0vunXcB6udhE5zIeco03WZ/3?=
- =?us-ascii?Q?LqeN2sr2XvXechN3a3XmpCrW3MaqW7gRbfQiRVBSP/R5fc+62rjk0TZ1PdQO?=
- =?us-ascii?Q?v+6S2jshR+xWea24FAIAHgKoshJPemDkGB265Jpu/UeRtYF+8jzsgkw0fZiF?=
- =?us-ascii?Q?zFgoCMInUnytAhzy91wxSvBZ1f86tXev6TotJJH1tJ9Pu1SqU1JjLR8K4ADx?=
- =?us-ascii?Q?At15b1dBlr/pO2tp/lbGa6glJpqdzORS6rYvSUxMp/XO6/NBelnjq4zGXaTU?=
- =?us-ascii?Q?treOiTHXH0OTaiV1Woqzh4l6J3a61Y3wOAmaFELc0oRzsNh5uBaaUIcnzeRf?=
- =?us-ascii?Q?SZ2UrkORMvwPZWMIne3D2GRkm80FsmSoezx1M3LE5zJGOdj5rcWAFG37jEl2?=
- =?us-ascii?Q?9XfTZx28K9QSwaP7mzxHJaVKxty1r9MZTn5bN9AWtA0HOzTAWFcHoqhHN9op?=
- =?us-ascii?Q?/45WAavLelH0ATw9et81/szh5n/sOcC+4kh6TI5PiT1QgcI89ISNAfg+jB+l?=
- =?us-ascii?Q?rNCJ8gx2j2qM19JNNL279JfCThtgEO+ue4xo4zI5NtH8BRcNFUJnHATDYaho?=
- =?us-ascii?Q?wT+tHVeKyI1qUl3nH1sg8OiWPrSQE5xrPVjJp4jmgkXrweecRNtwbMlIffqE?=
- =?us-ascii?Q?S/hcbaxWXHgVebkryXXu6tk3uEFOqDf9kJIlveVrxV22KNtEugSq0hCT0Bur?=
- =?us-ascii?Q?HQLjk595CvzvQoSO27VvX6O0obhWsVJMSSHihWyAgt6WYwKHeGKpig=3D=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DM4PR12MB6109.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(7416014)(366016)(376014)(38070700021);DIR:OUT;SFP:1101;
+x-microsoft-antispam: BCL:0;ARA:13230040|366016|376014|1800799024|38070700021|921020|7053199007;
+x-microsoft-antispam-message-info: =?us-ascii?Q?WQGfeVdjwpGTpBs13TgJn5Hp/z5h1D/9isGWhrVVyKe5WUXV4DAoPzzyAeoB?=
+ =?us-ascii?Q?ty/9M6GN2YDEV7970J3QleVMa91FhnfHkbHStRVhPAJNkwuucRr1ZL+/Iq+Y?=
+ =?us-ascii?Q?Eyo4xVDbFnaGMJaKW162B/oiPeyB2zrRrJhW4fRRAyGwujQ2CG+SYkdMG7KE?=
+ =?us-ascii?Q?NRhc+I49hp94f5k/QBNLr0nhzyg5ox8wgXiqfiGt1cDsmGH5aYg3CnDG574f?=
+ =?us-ascii?Q?y7dXceneC/IWN55fHqxqS5fXsFXOcZJg+K9AehUHVEWG7C9FdYzq5cBC1yi/?=
+ =?us-ascii?Q?wxyZbr41ivLx03PfUM60uTdMusDNBuAHQ1CbYbJ0yfHn82dpxVDiIhrFSuWb?=
+ =?us-ascii?Q?TRk3KNJR04+P4FRQHwzodLVZCR6oYW31IHhii1by2WywuAWpdScqGfJLSkMx?=
+ =?us-ascii?Q?8aC9Mp+heD2NiGoLyUepgd+WUhYqTln8HSkCEVp6vIdom3tPTQhh+dWj30le?=
+ =?us-ascii?Q?p2JWK1nXviZIG2pyO9R8Hu7fu+TEkXPz1/6MwaiotkS0ZvAHpfvr9oZ2g25C?=
+ =?us-ascii?Q?Ma9ZZn1I3YkxT//bERo5hsHtPl6p1vDvGu48Lg90yVeRJxv242Ny1lJr5zdU?=
+ =?us-ascii?Q?39CNDcv19b2MWpDBTfwfZeLZwfygR+doMjb3seT4OkkbOBhNVEvzvWkDqWRe?=
+ =?us-ascii?Q?ObUFb4IGln0s1AJGGWcd0UfRVSIa8l7Hio9r1uBrLLpictbCvlIoaOWGaMZ+?=
+ =?us-ascii?Q?bN/ZyjYUd4ryOg8VaZ3s1ti/h8NKgd6opmj58LXQGEI7j+x0RYEJzH3euHBM?=
+ =?us-ascii?Q?/aLI479CZzmtS2/868M5RH5N89OhlxDNmRS/zjS2Rw74LYNX73YtoC0XpaZ4?=
+ =?us-ascii?Q?fSeoVIRkUYjw1m5VnHob9yHnoQ1vGrTdkNFhCHAnQgMZhoFnT60tDocK9nkm?=
+ =?us-ascii?Q?nqockLcrRBMUbRRFZK3ih8YYWKbEywB4QGJxXKn/DntglEDYDwUocf8Y9U0A?=
+ =?us-ascii?Q?y58cPV5lwDz3cpW/w045wnK+7XfqHDVE3bk1Solw7ez+ysRJoK5cbYeIq5xH?=
+ =?us-ascii?Q?QVvsQiXGwgYe0e85UHA/xZQ3Sd+rIVfErmLv3z9ZSKsklEX4Qr9FVzOABXFB?=
+ =?us-ascii?Q?+qiiy+jTltttl/X1ywV9B9tgRmuSvUyQEK89uX56Bkko75+a0GXgEg+muO/0?=
+ =?us-ascii?Q?CE1IGzJ/wuLHJVyt4VxQSI4Yr65kJ0ynFqH1eCkO9b9ITyZ5lvzwZ1px3Jvl?=
+ =?us-ascii?Q?EcTjYlIFr8rWcwA4uM8+6k2WNpQeSjljqqyFI+OAW1UXajeLi3C8AUzAx3Bk?=
+ =?us-ascii?Q?fA/x+Ac7n6dMzKvJojHwT/W2wrZ58JXQuBPQaZ2UJX0aQ+9dc8jRi56T+FR6?=
+ =?us-ascii?Q?Zfn93E1rcgsuo+2ZiI/MNWDTF08RxplqCgrdCRR6W0b5cP+g0Ed8+0Pj/ERf?=
+ =?us-ascii?Q?cXQenr+L3WPJEaey//tJZ6Q9DGli0zDLcJZvNkyltJTF8Tja+DRA7HKJLnk/?=
+ =?us-ascii?Q?wpHDtPOJRiXq6GC4H2mPKZVRxkDloGZrLsn5ibXqT51nSKqSwSh92PuNbo/K?=
+ =?us-ascii?Q?hTxww2NLEnQ7uFbD3/gCgQXpMXp/ezRYRvHr?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DM4PR12MB6109.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(1800799024)(38070700021)(921020)(7053199007);DIR:OUT;SFP:1101;
 x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?Gs4SFhCwiRBPB3wrPiui4hUUX7QkZqka+B94JtHnmV2ji/UFhDdZeGv9OLgv?=
- =?us-ascii?Q?wfcoUfETSmJJYSFrF1KrTrnL7CMyNNbkPTfRnPhfL2VH0gsE/SfjQvRZWG0Z?=
- =?us-ascii?Q?vChu0NZ9YxAw4flxPuPIEuzejmusOkG3aL3hnLhGVnM9eMo/lwzl5RefEX07?=
- =?us-ascii?Q?HLJUxfglIHihV+5b+Y11TWBQUDh7EkRRcWlp+6RtURaqCH0VfWDh+9w3VOOb?=
- =?us-ascii?Q?b85OlK0qC2UFhy2280csjTNxBKbLuUv7e8o/7vNPYyhE36mI7QWlG8qNSXSl?=
- =?us-ascii?Q?jeZVv4VKxojztXEAoDpc+WlUdDpS+vdXQKh0gVcqdGt2LTnI9+PMALgeEyuu?=
- =?us-ascii?Q?Sj/AJDUkcnxLB3wuqJbqz9dmCmqhRdkJBIZoZXzkM4d5JT5qdfT+lFtYGiDq?=
- =?us-ascii?Q?qG33K63R7VNllsWs/KJ//fb6zUBOaxGO0Np+pBQDSplEsQRNCix1BrzwiXcu?=
- =?us-ascii?Q?vBqTrOBsiMwaNU6FWWi0BmDOLBOPuQEVqlGy4cg15wJBIuCStr3BG3TwW08W?=
- =?us-ascii?Q?Jxdti/9YhFsu2+ePLoOsDxPN7GWrDt2YwsRpWF5Fdiv7UAzjrxq8lRqNMB4f?=
- =?us-ascii?Q?nUDOmaaM1ssiBIkkdeI/hkZOnl/Dc4FqKIAR6H1AjflNWUZUeOPJDO8WxZrM?=
- =?us-ascii?Q?jqZ5QZIHGYEogjOWeuCRCMA77MSEHrKx1i5jKouHWjoUPd5URANPm/fSm8w/?=
- =?us-ascii?Q?lq1iIiOFJVV9edDjxN1MkkvGdM1TgQFx6dckgiA7HbzEgNyZHfHw5KaXunRB?=
- =?us-ascii?Q?+eJr1i/KbtOAd8iI1PrmojYMa4FTSVP5e7sM81nUq7tCUocW4IPVPHHs6IW2?=
- =?us-ascii?Q?SJv8mRRL/AuSfz6YyKWKjOuqlWAS944kM54nOBqQmissbtZIpSklPxKd6oRt?=
- =?us-ascii?Q?Z2HfP7Q2ljGQND8T0RqFADsXLm3DzPlGV+CzmxcL2XELtcGNYVJpWY9jXvhE?=
- =?us-ascii?Q?Id5q7LGnUHVtlvKIwE8XYSu7DMK8BFZbkdW6yiX3MJPdw8IL+OVkBj8nCouo?=
- =?us-ascii?Q?KmmlBpS8m1ddCnTbvw9wXApCaAKPgMDy8q2uuplvMzORBgjvEVcddhRGRBtb?=
- =?us-ascii?Q?3K9I2FdUTwsYbCKmpHhjrOn/XF16gZi8xgOo+ZqT3J3R1uR4MaxovLCl+Rn9?=
- =?us-ascii?Q?USu7zNxRJXQoOW6NP9pP04wufRh0NTN/KfAxhg33QF0lkku/1tflU6rjZW4j?=
- =?us-ascii?Q?uqiRtpjUy+vgLar9iSYmgawVjMKrZQDPNVY3HFQQKlkaQjtbmUedEME8w3Gf?=
- =?us-ascii?Q?kqXJ5K9gX/Qd6p4zSzEAL79dudZZBHkHBJeoBt7Q0FKQq4duQqs0P5Qln5Mi?=
- =?us-ascii?Q?k1aES9kuMZAjz2ytblTc+M/4m+Sig1ZFwmYOPM9vQPoSD8FtNdzd5b2Ccp7L?=
- =?us-ascii?Q?KkEznB4H2P3gVSw2HsF7ohQgpFv1TzBDYBx2yit8NJ52s4bM9+Ys6EFZa/5S?=
- =?us-ascii?Q?XdRGdZOS5igNhvsSLKCH5cbW0RnsiwCYrwo770Iezqbctj1UVzT6iqv8/6cN?=
- =?us-ascii?Q?GtZTh5wr7MLq+4xRas/2+84rLQgApTi4CSOJc/WqjIEIkizxCn2wVfXFIgYq?=
- =?us-ascii?Q?FQShYPMuqPAHwnrDIiA=3D?=
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?6yv4vs5skElyh4bgklWVODsxm9SyT5HukBLWdmiGn4AYZfCMoVUL3qG+s3ql?=
+ =?us-ascii?Q?GJ92lJJE60k044igsFbOorGLnkC9IQ0pCMsLAsCXfjrrkJ44V/NZOkjWButn?=
+ =?us-ascii?Q?V67wCl7ekPe7Axpv7tIlsI4EmBqoVIXoqaLpV6InhENfd738DQUVhjTSO7XW?=
+ =?us-ascii?Q?GoZP1zjXwtRskzzp+AySGe8FDQr1EKK0O5chaFc9thP3YBWjGQisSwnzrWV8?=
+ =?us-ascii?Q?ccvEPlCxCxq0wRpGqzZg3dw3TOMZcgyK4sN9DqXpFad6ymHcgiYz3xJdo5QI?=
+ =?us-ascii?Q?+TN46KIRvqgri8VsrkuL3JyMMn+HMjRzyHl45fWrPF8u2pjrm/zMaa1lS9dL?=
+ =?us-ascii?Q?FoIXWpvfu9imqhZ01m4lUQ7mMGSJpev/d2ImMa2c0Ev1mVr+yRIXlIi0/bx0?=
+ =?us-ascii?Q?lu0SvNjl8PgvAWqEjzZjjHHxvSFjHm1Zy34DcatRpL+pXu1yeCXZrW8lJDbr?=
+ =?us-ascii?Q?TyTcbn2+pPHQnnAQitxhofoB7MTOW3cApNm7MRgVlJLAwTSObVk9gANw6F9p?=
+ =?us-ascii?Q?L9gbGLN0XYBiMBkIUSYumOhUkLtiZWPuoSTY5yiSihVL/JRRlpjMR1TcRpqN?=
+ =?us-ascii?Q?1OZF7/tYgCs6Vs4K0pZPBqKvYmbxtuVyB1nR2GNj+6QFNB0l07MhG9fu26iE?=
+ =?us-ascii?Q?S9AYzH8eXfWSXOkQ4Fik0cJNvzD1P4RpvyRGnHbmAJ/cbHm4zR7ktNSmpgva?=
+ =?us-ascii?Q?fVXb9z0+MRFkBJFMcWemEOov8U6jctN5C65iQxUpJ62vnsfX3N09j2HVEMvZ?=
+ =?us-ascii?Q?wSw5nPSsh2CmIDJyLM+RWd7ZYCFD5fEdMrDhVlGmT0JoTXU+EMwynVEwJNkM?=
+ =?us-ascii?Q?8E3R2fJTm5rWV9ZO6WUDUAmn4coaHdhArEQ9LyIC+sb4E7Mc6OLmaPYKbowZ?=
+ =?us-ascii?Q?uspCiT7rYqh9SZzivVqef/wk+0Yk4nncJbY3xFEWF+9oHgWDJdol3SZ2W6Gg?=
+ =?us-ascii?Q?1xy2g9tMXGUSJg37oDI9PjC46j8mL0FfrZYTOFjLEzN4/bePAmUKs9V+kX/A?=
+ =?us-ascii?Q?+QnrER80QACfuTRNC2oq9d4ZfFMAp2+RGLxSl2axeuywPMQMnG2TzZ4nNCas?=
+ =?us-ascii?Q?f1gY5floWNpVviSbeBc3TXKDxDWAr50GjCwskXhj5h2v6Z3l9qv5oRsKNwH8?=
+ =?us-ascii?Q?8YUoYpSQ9uLZc83LMBQb+acZ3oG5OnMSYwcO+bxSCIfJNO6cR56I3KARE7J/?=
+ =?us-ascii?Q?DTBkaBuUUX6qgrk5OCHolLoJoe2VT1TsTYytQLYaaFyOERBah7WBmPiDXGc5?=
+ =?us-ascii?Q?XhRPoYQBaCltN92nbzuau9mOqUX4cCmQdNj+sj6xq7RqNgHbgFBh58Wesyty?=
+ =?us-ascii?Q?ra7iHFXHHOi/DlIfSTrUydv/w8WtMsWb4MVUHZcKZDUabRb6c06UzzDJCuWE?=
+ =?us-ascii?Q?8gsdIkPkz4VvnFKraa6eKrUtJAvCvzSQnb3Yg+CyTCklOA9qdn2FWBxxH7YQ?=
+ =?us-ascii?Q?e6JFzoGbLOd30+yiDYc8i+ka2wFcDA6C7qmBTLAdoWodSNhyS4a8SxDZNjZE?=
+ =?us-ascii?Q?FgXlE1QRpCmjdwrMoafuix45CY5PxDTxjNSRFWP/RzCyhJ/qR/6hHCDTy7Vb?=
+ =?us-ascii?Q?YzWd5yBoTVxjchlCAjM=3D?=
 MIME-Version: 1.0
 X-OriginatorOrg: amd.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
 X-MS-Exchange-CrossTenant-AuthSource: DM4PR12MB6109.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2a1e7abc-c1ff-484b-4ed5-08ddef8ea0f7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Sep 2025 10:50:02.1221
+X-MS-Exchange-CrossTenant-Network-Message-Id: b7aa52a6-8adf-4735-4c92-08ddf1c93a58
+X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Sep 2025 06:54:32.5989
  (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 3dd8961f-e488-4e60-8e11-a82d994e183d
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 3XWi//d9Ey0Dy2ZzInkSck6oqev7danD5laJh0/VJ6OTVCfN/DZ4RQCcIS7M5edLeYVraP6LWTaqzwkPKe6Rjw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH7PR12MB5902
+X-MS-Exchange-CrossTenant-userprincipalname: +ig171NY0wuKTuFSOvAmx0ikYE/+FeY5r6VctxoXz7zmm48yFOq/SMKT1KHcTMnxp6386nKNerQvWJcgYtXCJw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN7PR12MB7372
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250909_035014_692518_BD4CFB0C 
-X-CRM114-Status: GOOD (  32.04  )
+X-CRM114-CacheID: sfid-20250911_235441_631039_0B1C4373 
+X-CRM114-Status: GOOD (  23.94  )
 X-Mailman-Approved-At: Sun, 14 Sep 2025 13:33:23 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -177,362 +175,102 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 [Public]
 
-Hi,
+Ping!
 
 > -----Original Message-----
-> From: Frank Li <Frank.li@nxp.com>
-> Sent: Monday, September 8, 2025 9:34 PM
-> To: Guntupalli, Manikanta <manikanta.guntupalli@amd.com>
-> Cc: git (AMD-Xilinx) <git@amd.com>; Simek, Michal <michal.simek@amd.com>;
-> alexandre.belloni@bootlin.com; robh@kernel.org; krzk+dt@kernel.org;
-> conor+dt@kernel.org; kees@kernel.org; gustavoars@kernel.org;
-> jarkko.nikula@linux.intel.com; linux-i3c@lists.infradead.org;
-> devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-
-> hardening@vger.kernel.org; Pandey, Radhey Shyam
+> From: Guntupalli, Manikanta
+> Sent: Monday, September 1, 2025 1:18 PM
+> To: Manikanta Guntupalli <manikanta.guntupalli@amd.com>; git (AMD-Xilinx)
+> <git@amd.com>; alexandre.belloni@bootlin.com; Frank.Li@nxp.com;
+> wsa+renesas@sang-engineering.com; quic_msavaliy@quicinc.com; S-k, Shyam-
+> sundar <Shyam-sundar.S-k@amd.com>; xiaopei01@kylinos.cn;
+> billy_tsai@aspeedtech.com; linux-i3c@lists.infradead.org; linux-
+> kernel@vger.kernel.org
+> Cc: Simek, Michal <michal.simek@amd.com>; Pandey, Radhey Shyam
 > <radhey.shyam.pandey@amd.com>; Goud, Srinivas <srinivas.goud@amd.com>;
 > Datta, Shubhrajyoti <shubhrajyoti.datta@amd.com>; manion05gk@gmail.com
-> Subject: Re: [PATCH V5 2/2] i3c: master: Add AMD I3C bus controller driver
+> Subject: RE: [PATCH V2] i3c: dw: Add shutdown support to dw_i3c_master driver
 >
-> On Mon, Sep 08, 2025 at 04:51:17PM +0530, Manikanta Guntupalli wrote:
-> > Add an I3C master driver and maintainers fragment for the AMD I3C bus
-> > controller.
+> Ping!
+>
+> > -----Original Message-----
+> > From: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+> > Sent: Wednesday, July 30, 2025 8:42 PM
+> > To: git (AMD-Xilinx) <git@amd.com>; alexandre.belloni@bootlin.com;
+> > Frank.Li@nxp.com; wsa+renesas@sang-engineering.com;
+> > quic_msavaliy@quicinc.com; S-k, Shyam-sundar
+> > <Shyam-sundar.S-k@amd.com>; xiaopei01@kylinos.cn;
+> > billy_tsai@aspeedtech.com; linux-i3c@lists.infradead.org;
+> > linux-kernel@vger.kernel.org
+> > Cc: Simek, Michal <michal.simek@amd.com>; Pandey, Radhey Shyam
+> > <radhey.shyam.pandey@amd.com>; Goud, Srinivas <srinivas.goud@amd.com>;
+> > Datta, Shubhrajyoti <shubhrajyoti.datta@amd.com>;
+> > manion05gk@gmail.com; Guntupalli, Manikanta
+> > <manikanta.guntupalli@amd.com>
+> > Subject: [PATCH V2] i3c: dw: Add shutdown support to dw_i3c_master
+> > driver
 > >
-> > The driver currently supports the I3C bus operating in SDR i3c mode,
-> > with features including Dynamic Address Assignment, private data
-> > transfers, and CCC transfers in both broadcast and direct modes. It
-> > also supports operation in I2C mode.
+> > Add shutdown handler to the Synopsys DesignWare I3C master driver,
+> > ensuring the device is gracefully disabled during system shutdown.
+> >
+> > The shutdown handler cancels any pending hot-join work and disables interrupts.
 > >
 > > Signed-off-by: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
 > > ---
 > > Changes for V2:
-> > Updated commit description.
-> > Added mixed mode support with clock configuration.
-> > Converted smaller functions into inline functions.
-> > Used FIELD_GET() in xi3c_get_response().
-> > Updated xi3c_master_rd_from_rx_fifo() to use cmd->rx_buf.
-> > Used parity8() for address parity calculation.
-> > Added guards for locks.
-> > Dropped num_targets and updated xi3c_master_do_daa().
-> > Used __free(kfree) in xi3c_master_send_bdcast_ccc_cmd().
-> > Dropped PM runtime support.
-> > Updated xi3c_master_read() and xi3c_master_write() with
-> > xi3c_is_resp_available() check.
-> > Created separate functions: xi3c_master_init() and xi3c_master_reinit().
-> > Used xi3c_master_init() in bus initialization and xi3c_master_reinit()
-> > in error paths.
-> > Added DAA structure to xi3c_master structure.
-> >
-> > Changes for V3:
-> > Resolved merge conflicts.
-> >
-> > Changes for V4:
-> > Updated timeout macros.
-> > Removed type casting for xi3c_is_resp_available() macro.
-> > Used ioread32() and iowrite32() instead of readl() and writel() to
-> > keep consistency.
-> > Read XI3C_RESET_OFFSET reg before udelay().
-> > Removed xi3c_master_free_xfer() and directly used kfree().
-> > Skipped checking return value of i3c_master_add_i3c_dev_locked().
-> > Used devm_mutex_init() instead of mutex_init().
-> >
-> > Changes for V5:
-> > Used GENMASK_ULL for PID mask as it's 64bit mask.
+> > Removed pm_runtime_mark_last_busy() call from the shutdown handler, as
+> > it is being removed in the following commit.
+> > https://lore.kernel.org/linux-pm/20250704075225.3212486-1-
+> > sakari.ailus@linux.intel.com/
 > > ---
-> >  MAINTAINERS                         |    7 +
-> >  drivers/i3c/master/Kconfig          |   16 +
-> >  drivers/i3c/master/Makefile         |    1 +
-> >  drivers/i3c/master/amd-i3c-master.c | 1014
-> > +++++++++++++++++++++++++++
-> >  4 files changed, 1038 insertions(+)
-> >  create mode 100644 drivers/i3c/master/amd-i3c-master.c
+> >  drivers/i3c/master/dw-i3c-master.c | 23 +++++++++++++++++++++++
+> >  1 file changed, 23 insertions(+)
 > >
-> > diff --git a/MAINTAINERS b/MAINTAINERS index
-> > 1af81124bba3..ff603ce5e78d 100644
-> > --- a/MAINTAINERS
-> > +++ b/MAINTAINERS
-> > @@ -11693,6 +11693,13 @@ L: linux-i2c@vger.kernel.org
-> >  S: Maintained
-> >  F: drivers/i2c/i2c-stub.c
+> > diff --git a/drivers/i3c/master/dw-i3c-master.c
+> > b/drivers/i3c/master/dw-i3c-master.c
+> > index ae1992665673..2d16b7d74743 100644
+> > --- a/drivers/i3c/master/dw-i3c-master.c
+> > +++ b/drivers/i3c/master/dw-i3c-master.c
+> > @@ -1762,6 +1762,28 @@ static const struct dev_pm_ops dw_i3c_pm_ops = {
+> >     SET_RUNTIME_PM_OPS(dw_i3c_master_runtime_suspend,
+> > dw_i3c_master_runtime_resume, NULL)  };
 > >
-> > +I3C DRIVER FOR AMD AXI I3C MASTER
-> > +M: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
-> > +R: Michal Simek <michal.simek@amd.com>
-> > +S: Maintained
-> > +F: Documentation/devicetree/bindings/i3c/xlnx,axi-i3c.yaml
-> > +F: drivers/i3c/master/amd-i3c-master.c
-> > +
-> >  I3C DRIVER FOR ASPEED AST2600
-> >  M: Jeremy Kerr <jk@codeconstruct.com.au>
-> >  S: Maintained
-> > diff --git a/drivers/i3c/master/Kconfig b/drivers/i3c/master/Kconfig
-> > index 13df2944f2ec..4b884a678893 100644
-> > --- a/drivers/i3c/master/Kconfig
-> > +++ b/drivers/i3c/master/Kconfig
-> > @@ -1,4 +1,20 @@
-> >  # SPDX-License-Identifier: GPL-2.0-only
-> > +
-> > +config AMD_I3C_MASTER
-> > +   tristate "AMD I3C Master driver"
-> > +   depends on I3C
-> > +   depends on HAS_IOMEM
-> > +   help
-> > +     Support for AMD I3C Master Controller.
-> > +
-> > +     This driver allows communication with I3C devices using the AMD
-> > +     I3C master, currently supporting Standard Data Rate (SDR) mode.
-> > +     Features include Dynamic Address Assignment, private transfers,
-> > +     and CCC transfers in both broadcast and direct modes.
-> > +
-> > +     This driver can also be built as a module.  If so, the module
-> > +     will be called amd-i3c-master.
-> > +
-> >  config CDNS_I3C_MASTER
-> >     tristate "Cadence I3C master driver"
-> >     depends on HAS_IOMEM
-> > diff --git a/drivers/i3c/master/Makefile b/drivers/i3c/master/Makefile
-> > index aac74f3e3851..109bd48cb159 100644
-> > --- a/drivers/i3c/master/Makefile
-> > +++ b/drivers/i3c/master/Makefile
-> > @@ -1,4 +1,5 @@
-> >  # SPDX-License-Identifier: GPL-2.0-only
-> > +obj-$(CONFIG_AMD_I3C_MASTER)               += amd-i3c-master.o
-> >  obj-$(CONFIG_CDNS_I3C_MASTER)              += i3c-master-cdns.o
-> >  obj-$(CONFIG_DW_I3C_MASTER)                += dw-i3c-master.o
-> >  obj-$(CONFIG_AST2600_I3C_MASTER)   += ast2600-i3c-master.o
-> > diff --git a/drivers/i3c/master/amd-i3c-master.c
-> > b/drivers/i3c/master/amd-i3c-master.c
-> > new file mode 100644
-> > index 000000000000..fb768680df45
-> > --- /dev/null
-> > +++ b/drivers/i3c/master/amd-i3c-master.c
-> ...
-> > +/* timeout waiting for the controller finish transfers */
-> > +#define XI3C_XFER_TIMEOUT_MS                       10000
-> > +#define XI3C_XFER_TIMEOUT
->       (msecs_to_jiffies(XI3C_XFER_TIMEOUT_MS))
->
-> XI3C_XFER_TIMEOUT is not used.
-XI3C_XFER_TIMEOUT is used in xi3c_master_read() and xi3c_master_write().
-Please check.
->
-> > +
-> > +#define xi3c_getrevisionnumber(master)                                             \
-> > +   ((u8)(FIELD_GET(XI3C_REV_NUM_MASK,                                      \
-> > +                   ioread32((master)->membase + XI3C_VERSION_OFFSET))))
-> > +
-> > +#define xi3c_wrfifolevel(master)                                           \
-> > +   ((u16)(ioread32((master)->membase + XI3C_FIFO_LVL_STATUS_OFFSET)
-> &     \
-> > +          XI3C_WR_FIFO_LEVEL_MASK))
-> > +
-> > +#define xi3c_rdfifolevel(master)                                           \
-> > +   ((u16)(ioread32((master)->membase +
-> XI3C_FIFO_LVL_STATUS_1_OFFSET) &      \
-> > +          XI3C_WR_FIFO_LEVEL_MASK))
->
-> Are you sure that these force type convert is neccesary?
-We will fix.
->
-> > +
-> > +#define xi3c_is_resp_available(master)                                             \
-> > +   (FIELD_GET(XI3C_SR_RESP_NOT_EMPTY_MASK,
->               \
-> > +              ioread32((master)->membase + XI3C_SR_OFFSET)))
-> > +
-> > +struct xi3c_cmd {
-> > +   void *tx_buf;
-> > +   void *rx_buf;
-> > +   u16 tx_len;
-> > +   u16 rx_len;
-> > +   u8 addr;
-> > +   u8 type;
-> > +   u8 tid;
-> > +   bool rnw;
-> > +   bool is_daa;
-> > +   bool continued;
-> > +};
-> > +
-> > +struct xi3c_xfer {
-> > +   struct list_head node;
-> > +   struct completion comp;
+> > +static void dw_i3c_shutdown(struct platform_device *pdev) {
+> > +   struct dw_i3c_master *master = platform_get_drvdata(pdev);
 > > +   int ret;
-> > +   unsigned int ncmds;
-> > +   struct xi3c_cmd cmds[] __counted_by(ncmds); };
 > > +
-> ...
-> > +
-> > +static int xi3c_master_write(struct xi3c_master *master, struct
-> > +xi3c_cmd *cmd) {
-> > +   unsigned long timeout;
-> > +   u16 wrfifo_space;
-> > +   u16 space_index;
-> > +   u16 len;
-> > +
-> > +   len = cmd->tx_len;
-> > +   if (!cmd->tx_buf || cmd->tx_len > XI3C_MAXDATA_LENGTH)
-> > +           return -EINVAL;
-> > +
-> > +   /* Fill Tx fifo */
-> > +   wrfifo_space = xi3c_wrfifolevel(master);
-> > +   for (space_index = 0; space_index < wrfifo_space && cmd->tx_len > 0;
-> > +        space_index++)
-> > +           xi3c_master_wr_to_tx_fifo(master, cmd);
->
-> Does common helper function i3c_writel_fifo() help this? look like logic is similar.
-No. The functions i3c_writel_fifo() and i3c_readl_fifo() operate using the CPU's native endianness.
-In this case, the FIFO should always be accessed in big-endian format.
-Therefore, we cannot use these common helpers directly.
->
-> > +
-> > +   /* Write to command fifo */
-> > +   xi3c_master_write_to_cmdfifo(master, cmd, len);
-> > +
-> > +   timeout = jiffies + XI3C_XFER_TIMEOUT;
-> > +   /* Fill if any remaining data to tx fifo */
-> > +   while (cmd->tx_len > 0 && !xi3c_is_resp_available(master)) {
-> > +           if (time_after(jiffies, timeout)) {
-> > +                   dev_err(master->dev, "XI3C write timeout\n");
-> > +                   return -EIO;
-> > +           }
-> > +
-> > +           wrfifo_space = xi3c_wrfifolevel(master);
-> > +           for (space_index = 0; space_index < wrfifo_space && cmd->tx_len >
-> 0;
-> > +                space_index++)
-> > +                   xi3c_master_wr_to_tx_fifo(master, cmd);
+> > +   ret = pm_runtime_resume_and_get(master->dev);
+> > +   if (ret < 0) {
+> > +           dev_err(master->dev,
+> > +                   "<%s> cannot resume i3c bus master, err: %d\n",
+> > +                   __func__, ret);
+> > +           return;
 > > +   }
-> > +   return 0;
+> > +
+> > +   cancel_work_sync(&master->hj_work);
+> > +
+> > +   /* Disable interrupts */
+> > +   writel((u32)~INTR_ALL, master->regs + INTR_STATUS_EN);
+> > +   writel((u32)~INTR_ALL, master->regs + INTR_SIGNAL_EN);
+> > +
+> > +   pm_runtime_put_autosuspend(master->dev);
 > > +}
 > > +
-> ...
-> > +
-> > +static int xi3c_master_do_daa(struct i3c_master_controller *m) {
-> > +   struct xi3c_master *master = to_xi3c_master(m);
-> > +   struct xi3c_cmd *daa_cmd;
-> > +   struct xi3c_xfer *xfer;
-> > +   u8 pid_bufs[XI3C_MAX_DEVS][8];
-> > +   u8 data, last_addr = 0;
-> > +   int addr, ret, i;
-> > +   u8 *pid_buf;
-> > +
-> > +   u64 *pid_bcr_dcr __free(kfree) = kcalloc(XI3C_MAX_DEVS, sizeof(u64),
-> > +                                            GFP_KERNEL);
-> > +   if (!pid_bcr_dcr)
-> > +           return -ENOMEM;
-> > +
-> > +   xfer = xi3c_master_alloc_xfer(master, 1);
-> > +   if (!xfer) {
-> > +           ret = -ENOMEM;
-> > +           goto err_daa_mem;
-> > +   }
-> > +
-> > +   for (i = 0; i < XI3C_MAX_DEVS; i++) {
-> > +           addr = i3c_master_get_free_addr(m, last_addr + 1);
-> > +           if (addr < 0) {
-> > +                   ret = -ENOSPC;
-> > +                   goto err_daa;
-> > +           }
-> > +           master->daa.addrs[i] = (u8)addr;
-> > +           last_addr = (u8)addr;
-> > +   }
-> > +
-> > +   /* Fill ENTDAA CCC */
-> > +   data = I3C_CCC_ENTDAA;
-> > +   daa_cmd = &xfer->cmds[0];
-> > +   daa_cmd->addr = I3C_BROADCAST_ADDR;
-> > +   daa_cmd->rnw = 0;
-> > +   daa_cmd->tx_buf = &data;
-> > +   daa_cmd->tx_len = 1;
-> > +   daa_cmd->type = XI3C_SDR_MODE;
-> > +   daa_cmd->tid = XI3C_SDR_TID;
-> > +   daa_cmd->continued = true;
-> > +
-> > +   ret = xi3c_master_common_xfer(master, xfer);
-> > +   /* DAA always finishes with CE2_ERROR or NACK_RESP */
-> > +   if (ret && ret != I3C_ERROR_M2) {
-> > +           goto err_daa;
-> > +   } else {
-> > +           if (ret && ret == I3C_ERROR_M2) {
-> > +                   ret = 0;
-> > +                   goto err_daa;
-> > +           }
-> > +   }
-> > +
-> > +   master->daa.index = 0;
-> > +
-> > +   while (true) {
-> > +           struct xi3c_cmd *cmd = &xfer->cmds[0];
-> > +
-> > +           pid_buf = pid_bufs[master->daa.index];
-> > +           addr = (master->daa.addrs[master->daa.index] << 1) |
-> > +                  (!parity8(master->daa.addrs[master->daa.index]));
-> > +
-> > +           cmd->tx_buf = (u8 *)&addr;
-> > +           cmd->tx_len = 1;
-> > +           cmd->addr = I3C_BROADCAST_ADDR;
-> > +           cmd->rnw = 1;
-> > +           cmd->rx_buf = pid_buf;
-> > +           cmd->rx_len = XI3C_DAA_SLAVEINFO_READ_BYTECOUNT;
-> > +           cmd->is_daa = true;
-> > +           cmd->type = XI3C_SDR_MODE;
-> > +           cmd->tid = XI3C_SDR_TID;
-> > +           cmd->continued = true;
-> > +
-> > +           ret = xi3c_master_common_xfer(master, xfer);
-> > +
-> > +           /* DAA always finishes with CE2_ERROR or NACK_RESP */
-> > +           if (ret && ret != I3C_ERROR_M2) {
-> > +                   goto err_daa;
-> > +           } else {
-> > +                   if (ret && ret == I3C_ERROR_M2) {
-> > +                           xi3c_master_resume(master);
-> > +                           master->daa.index--;
-> > +                           ret = 0;
-> > +                           break;
-> > +                   }
-> > +           }
-> > +   }
-> > +
-> > +   kfree(xfer);
-> > +
-> > +   for (i = 0; i < master->daa.index; i++) {
-> > +           i3c_master_add_i3c_dev_locked(m, master->daa.addrs[i]);
-> > +
-> > +           pid_bcr_dcr[i] = FIELD_GET(XI3C_PID_MASK,
-> > +                                      get_unaligned_be64(pid_bufs[i]));
->
-> you only use pid_bcr_dcr here, needn't dymatic alloc at all.
->
->               u64 data = FIELD_GET(XI3C_PID_MASK,
-> get_unaligned_be64(pid_bufs[i]));
->               dev_info(master->dev, "Client %d: PID: 0x%llx\n", i, data);
-We will fix.
->
-> Frank
->
-> > +           dev_info(master->dev, "Client %d: PID: 0x%llx\n", i, pid_bcr_dcr[i]);
-> > +   }
-> > +
-> > +   return 0;
-> > +
-> > +err_daa:
-> > +   kfree(xfer);
-> > +err_daa_mem:
-> > +   xi3c_master_reinit(master);
-> > +   return ret;
-> > +}
-> > +
-> ...
-> > +};
-> > +module_platform_driver(xi3c_master_driver);
-> > +
-> > +MODULE_AUTHOR("Manikanta Guntupalli <manikanta.guntupalli@amd.com>");
-> > +MODULE_DESCRIPTION("AXI I3C master driver");
-> MODULE_LICENSE("GPL");
+> >  static const struct of_device_id dw_i3c_master_of_match[] = {
+> >     { .compatible = "snps,dw-i3c-master-1.00a", },
+> >     {},
+> > @@ -1777,6 +1799,7 @@ MODULE_DEVICE_TABLE(acpi,
+> amd_i3c_device_match);
+> > static struct platform_driver dw_i3c_driver = {
+> >     .probe = dw_i3c_probe,
+> >     .remove = dw_i3c_remove,
+> > +   .shutdown = dw_i3c_shutdown,
+> >     .driver = {
+> >             .name = "dw-i3c-master",
+> >             .of_match_table = dw_i3c_master_of_match,
 > > --
 > > 2.34.1
-> >
-
+>
 
 Thanks,
 Manikanta.
