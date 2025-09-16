@@ -4,75 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E49ECAC58E
-	for <linux-i3c@archiver.kernel.org>; Mon, 15 Sep 2025 08:18:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4251CAC599
+	for <linux-i3c@archiver.kernel.org>; Tue, 16 Sep 2025 09:13:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=etC26OazxL6mFU99E/qvNXIb7YTZR8xse5j4Eveuo4w=; b=ECqFRnoTib8uFM
-	j+/yseRbUBvynM6HkPI7F0QFwHsz4DQfcUFFPnEbIBVXbkxw9Xnab8M7Eaeynk7uLm58Hsg99etGq
-	3AulTPQkpGIPzPJSIIjMJ+1r1RTSSmaagdNK7+PEdX/vo1zx2M14nTj+17nXu+5a8HyYtZapEb4jN
-	UsXHCyQ39Dgfvyky7GB2VZGzNSu8KUWHvQATMQZedGoAKkiGCQ2kZSMlpPl88cK7sLfn0V90dnTSk
-	u7izK57q/4zWkVGsKRrJgaEdOYgIwJTRGkBn1fp67tOvyG5xkTunU+Gg+HHcZ0JYsIO3IAdE+qmkl
-	yyVap/QRaxRPVw1yuD1A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fNkK3rXMHONjRvfcn3rPlxu7qTN2eXpqnwPDYcUH4Gc=; b=b4Z7anU/BcLydR
+	4V63OFnFITKr+CqyLaSMtKOMuhUBsEC7ykYjqkqbxXMT+WM6vjKd7LFlE6GoiSOSiw9HiMzGnT378
+	BhIYDRGuEiG3PxEqBu6X72QUxhZsmFfRXAescWkJqfQGtjPiWj7SUddrh/y/O/4v9XzxMLroROnp8
+	hxdXZp7758GzU2NoW7OszxNs7Z5Q2z9QGK32ZfUNDajhQEyUaMZBjt8Sgdh+/jeHO5gYDtALNtWv9
+	Ye7R2/vJ4n3+S82l1ed1MdPbu3Go97uMUHaFpyYQRZyZsAWm/kKCI3LH1NKGCeW9DZp5FawT7Zxzi
+	ztJXsADsT9gqsF2D6Apg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uy4QJ-00000003AtS-0eCu;
-	Mon, 15 Sep 2025 08:18:55 +0000
-Received: from mgamail.intel.com ([192.198.163.17])
+	id 1uyRkK-00000007KUn-2NNZ;
+	Tue, 16 Sep 2025 09:13:08 +0000
+Received: from smtpout-02.galae.net ([185.246.84.56])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uy4QG-00000003At2-0yov
+	id 1uyRkH-00000007KSg-1XMv
 	for linux-i3c@lists.infradead.org;
-	Mon, 15 Sep 2025 08:18:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1757924332; x=1789460332;
-  h=message-id:date:mime-version:subject:to:cc:references:
-   from:in-reply-to:content-transfer-encoding;
-  bh=JCz/qwC+LFyTg6OKAbhE0X7lOnKrN9MaXnhfK/7HxHc=;
-  b=bIiW2xkBHe9U0XSOeU0V9HHonxGfTwusn0TcBpNOYyBiH7TeYLZ75qkS
-   D680BrEr/kf5sCniCKcIhb6Pv7Rq8EJ+VbQfpXQ5idptYypPEvFsjSLJx
-   Eble6hvaiRKRUWoYeaPgFT6GGfcgOIInCSYryhnc5TcWL6DXjw50uj2+L
-   iqic/F992goQgXmh/BIZU39ZmYYoMNsPxAY1FewBHMrbT+SuZ/MM2jgy8
-   ZoIGU3bAdkMY5+gqokfh4L0XzvJDIDiNAkM/Nsr+ssEkMbXKc5dXCUxJg
-   5YPVMXluJyXhLDwJnXSk/6vkHzvO8GUi/FECMwO/hjpKQNU8v41UZ9K5h
-   g==;
-X-CSE-ConnectionGUID: QxmeBkbDShuFJvsjTEI3Fw==
-X-CSE-MsgGUID: pB419ue+RfCeXqAudjVCQQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11553"; a="60106971"
-X-IronPort-AV: E=Sophos;i="6.18,265,1751266800"; 
-   d="scan'208";a="60106971"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by fmvoesa111.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 Sep 2025 01:18:52 -0700
-X-CSE-ConnectionGUID: 0FOqTqY3S7+gZbI7iKmcJw==
-X-CSE-MsgGUID: uLBXLBMlSSOtBq+WfyVv7Q==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.18,265,1751266800"; 
-   d="scan'208";a="174486612"
-Received: from mylly.fi.intel.com (HELO [10.237.72.52]) ([10.237.72.52])
-  by fmviesa006.fm.intel.com with ESMTP; 15 Sep 2025 01:18:51 -0700
-Message-ID: <4f34a946-b343-41ab-a77e-9912b6d3efdd@linux.intel.com>
-Date: Mon, 15 Sep 2025 11:18:49 +0300
+	Tue, 16 Sep 2025 09:13:07 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-02.galae.net (Postfix) with ESMTPS id 153451A0614;
+	Tue, 16 Sep 2025 09:13:01 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id D86716061E;
+	Tue, 16 Sep 2025 09:13:00 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 576C5102F16A1;
+	Tue, 16 Sep 2025 11:12:58 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1758013980; h=from:subject:date:message-id:to:cc:mime-version:
+	 content-transfer-encoding; bh=0Dah1yQtnf/tnnK+SFWBAA57wMzVPD3ViO+H3LJ6Y8k=;
+	b=HBQ4MuCHNOLPpzeT4qCb6GruhWtHmXBCqli/r9EAPdJtMsE410vum1MKQWOFFbuVwCcEDu
+	770ZAx9fffv0/nohWBSAg8EEJzBUbJgdIC5q4bkBxseEUeORi3i/04mzFklWJ7Tf88Ag+K
+	QGgGFtVci70Irk85Bi1m4yd+aBHS2BatyYTTmR1E6KzKm6+6haXsFhQICyzr5UR2ns2FMD
+	S0oBZJJhe5ikEMku+cw/ee/dhSKwwTKJXd9Lk7iEQzQiAfi+mtyVzFBkyGwgrfE1tOXHHV
+	wLzOA8l8gWCrktBTtURKLYiBLq27TGVmbdFrr6Gj3VNgyLe7z10bjrQDcOrwuA==
+From: alexandre.belloni@bootlin.com
+To: Jorge Marques <jorge.marques@analog.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>
+Cc: linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] i3c: master: adi: fix header location
+Date: Tue, 16 Sep 2025 11:12:51 +0200
+Message-ID: <20250916091252.39265-1-alexandre.belloni@bootlin.com>
+X-Mailer: git-send-email 2.51.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 5/5] i3c: mipi-i3c-hci: Convert remaining DBG() prints to
- dev_dbg()
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Frank Li <Frank.li@nxp.com>, linux-i3c@lists.infradead.org
-References: <20250827103009.243771-1-jarkko.nikula@linux.intel.com>
- <20250827103009.243771-6-jarkko.nikula@linux.intel.com>
- <aMQuxQ2Rk8ILUl5i@lizhi-Precision-Tower-5810>
- <b5cd2d90-9b51-4760-9b2f-3505a6b02f73@linux.intel.com>
- <20250915081455ad63f5d9@mail.local>
-Content-Language: en-US
-From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-In-Reply-To: <20250915081455ad63f5d9@mail.local>
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250915_011852_285736_9CA81C70 
-X-CRM114-Status: GOOD (  11.70  )
+X-CRM114-CacheID: sfid-20250916_021305_547110_999BC9B4 
+X-CRM114-Status: UNSURE (   8.92  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,55 +70,36 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 9/15/25 11:14 AM, Alexandre Belloni wrote:
-> On 15/09/2025 11:06:54+0300, Jarkko Nikula wrote:
->> On 9/12/25 5:31 PM, Frank Li wrote:
->>> On Wed, Aug 27, 2025 at 01:30:09PM +0300, Jarkko Nikula wrote:
->>>> Get rid of local DBG() macro and convert remaining debug prints to
->>>> dev_dbg() which can be controlled without code recompile when kernel is
->>>> built with dynamic debug support.
->>>>
->>>> Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
->>>> ---
->>>>    drivers/i3c/master/mipi-i3c-hci/cmd_v1.c   |  9 ++-
->>>>    drivers/i3c/master/mipi-i3c-hci/cmd_v2.c   |  7 ++-
->>>>    drivers/i3c/master/mipi-i3c-hci/core.c     | 16 +++---
->>>>    drivers/i3c/master/mipi-i3c-hci/dma.c      | 15 +++--
->>>>    drivers/i3c/master/mipi-i3c-hci/ext_caps.c | 11 ++--
->>>>    drivers/i3c/master/mipi-i3c-hci/hci.h      |  3 -
->>>>    drivers/i3c/master/mipi-i3c-hci/pio.c      | 66 +++++++++++++---------
->>>>    7 files changed, 72 insertions(+), 55 deletions(-)
->>> ...
->>>> -#define DBG(x, ...) pr_devel("%s: " x "\n", __func__, ##__VA_ARGS__)
->>>> -
->>>>    /* 32-bit word aware bit and mask macros */
->>>>    #define W0_MASK(h, l)  GENMASK((h) - 0,  (l) - 0)
->>>>    #define W1_MASK(h, l)  GENMASK((h) - 32, (l) - 32)
->>>> diff --git a/drivers/i3c/master/mipi-i3c-hci/pio.c b/drivers/i3c/master/mipi-i3c-hci/pio.c
->>>> index cde883137bc7..01e7d2833301 100644
->>>> --- a/drivers/i3c/master/mipi-i3c-hci/pio.c
->>>> +++ b/drivers/i3c/master/mipi-i3c-hci/pio.c
->>>> @@ -213,7 +213,7 @@ static void hci_pio_cleanup(struct i3c_hci *hci)
->>>>    	pio_reg_write(INTR_SIGNAL_ENABLE, 0x0);
->>>>
->>>>    	if (pio) {
->>>> -		DBG("status = %#x/%#x",
->>>> +		dev_dbg(&hci->master.dev, "status = %#x/%#x",
->>>>    		    pio_reg_read(INTR_STATUS), pio_reg_read(INTR_SIGNAL_ENABLE));
->>>
->>> fix pio_reg_read() align to (
->>>
->> Ah, this slipped my eyes. I can send a follow up patch giving kudos to you
->> since this patch was now applied or leave it as it.
-> 
-> I fixed it while applying.
-> 
-Thanks!
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+
+The adi-axi-common header has been moved to the upper directory.
+
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+---
+ drivers/i3c/master/adi-i3c-master.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/i3c/master/adi-i3c-master.c b/drivers/i3c/master/adi-i3c-master.c
+index 162f9eed39aa..18597ba1f1c3 100644
+--- a/drivers/i3c/master/adi-i3c-master.c
++++ b/drivers/i3c/master/adi-i3c-master.c
+@@ -10,7 +10,7 @@
+ #include <linux/clk.h>
+ #include <linux/err.h>
+ #include <linux/errno.h>
+-#include <linux/fpga/adi-axi-common.h>
++#include <linux/adi-axi-common.h>
+ #include <linux/i3c/master.h>
+ #include <linux/interrupt.h>
+ #include <linux/io.h>
+-- 
+2.51.0
+
 
 -- 
 linux-i3c mailing list
