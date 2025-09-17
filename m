@@ -4,165 +4,95 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2750CAC597
-	for <linux-i3c@archiver.kernel.org>; Thu, 18 Sep 2025 10:18:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B4F1CAC5A9
+	for <linux-i3c@archiver.kernel.org>; Thu, 18 Sep 2025 10:18:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eG8C59RVdmhq+UbQ7Voj65eT+Z9yvLKhVhGiQhNzjPU=; b=HJ73H74w3dcrcb
-	CYmVV3ER+nR0qDH33zbjDLDD/OcbuMtcq4hmGXXHsrTP8moDuwXHK1mSF30fHGRSFRobrtKnRQYZS
-	cFbxJeZCCjd5dnJnyO0Ssy0FNuCoa88Fg79663OQ88O+n+cvzz3PNLCYbqGCcSCnYQC3H7J3bz+yl
-	14vSdONr7TFX+BHnx9dkiCpsSvSlPfYjpXesawC7lCtevfmeEDyhuVYq73HPj5YmfVzHKL522GE53
-	AKA8Uf0EobJ4OpMec/87HduyfCN35lM446nDr6nmNcBtU58K9T99maJ/vbSygc/E2uAVlW96nn8lp
-	WuYUlGE2Ua0B/vofPktw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NavwEAGbOdya2TqpGBsrpf1Jp0RIf4FnJE+EmG+Q5V8=; b=Zt0ZNKUvxa2SNV
+	ROzleWYfiCW8QXMUtBPNqujTGASuK5+I8uybwRR4Ckixyrook6onkbC7xYFhH1w3xjCg8xdf3lHKC
+	X3V03zMzqKfbqvz7d4jC7y6W4qk3Um1e1H4Rj7Qo3FVMXuGDAPQlAbBMdzc936UeopjApzn+9syZl
+	5g406mqWih90uMszRXxnRMQqkZG4UokZk6BCVvDIve+vgX8jooJ3OQKgJ8LFMhEpPea9zWcdwLe3r
+	LahLxwPQ1ebIEpHpeny5RM0JSgcwwNeTCKhuE4BIE+TEFDYSj/7qPUxeyB5zuJpyhkhCmt400B1Ru
+	I1L7V2THOWgM8UAxWy9g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uzBiX-0000000H15z-2KQ2;
-	Thu, 18 Sep 2025 10:18:21 +0000
-Received: from mail-southcentralusazlp170130001.outbound.protection.outlook.com ([2a01:111:f403:c10c::1] helo=SA9PR02CU001.outbound.protection.outlook.com)
+	id 1uzBiY-0000000H16K-0YMI;
+	Thu, 18 Sep 2025 10:18:22 +0000
+Received: from mail-pg1-x52f.google.com ([2607:f8b0:4864:20::52f])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uyPJn-00000006voo-1Hyp
+	id 1uz0GX-0000000F8Ip-1hFV
 	for linux-i3c@lists.infradead.org;
-	Tue, 16 Sep 2025 06:37:37 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=RKKtpHK2VVlHnpSG3OilmabLmr0JuXibatDh081kRSm1i6Om1H7/IMnHhKxr2aWciwYNnL+M8Vt4kehB358vxW4FXRy1WNBWDpFllpQuv4DWorBPsufspEbTm1027XPIvHec42aM+5K062jMi1XUG0Q0cEJXeh+fAsGa6O/qJw68M+h5/ZXnmeEzTqLCHajvMmlIwTNJqlsLkO3V4Q3DAlDOeWElMFLh5eSU0XU/nOuuPVoaEnoQGveL/6YtIswjHIb5hijsr02wbcx+E224rnC941042tx4qjPSTk9C8zYGB+2/wr10P3RDyyK2pUVk8olxFOpu45VppHqZ+E4n7A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=mWPs40D8/nc6ZYMTzVYGjThnRrRZLMTWgFwZ3Xzu470=;
- b=CyucJ8XdjP9TT2gncOPQ03PmFc9N/PB3K3d/8JfL59K25OjpAVvHNCpYCht2fKEomLM2mcQOq2A6j1SGSuExXUJRgFqLa7ThnJ0/t6zGcjR+Wb1rbv7zn1tZOt2pOPTETYOEc4PzLB4TEU5nfA06+ljeNo4SG/W90mPu9rUnA4oLYkqZrIQw7FdrjYd4PZwJtyblEVH/YoqR0pCs7Nz3qsEajX9G4XCeT7raQnVjPKjk9xTAJKckxkPuBLvaM0U/zyhmlVIwg6PKAMwvijoTD/HUX8turMDdK/rfZrJagIbAMQ1N7kMwcIpvgZJVrtzLUVe7Lcvc1uB2N24DmbAvTg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
- header.d=amd.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mWPs40D8/nc6ZYMTzVYGjThnRrRZLMTWgFwZ3Xzu470=;
- b=NYvaKLwLxjBYqzGTw/uBMj/vSSyUtdVs8ZBkmViNu1Rs+3VrbtymuX82MV8QAXl7j7VxJIECI2vMy4ul1gJrvqTD+iSFCrC+dNx09riddniTYK9UZeDJBNtmEn3LrsnG9I++7EOZ11sOsg9/zruuazgufWRQ2uVVsZze7wnMLhc=
-Received: from DM4PR12MB6109.namprd12.prod.outlook.com (2603:10b6:8:ae::11) by
- CH3PR12MB8533.namprd12.prod.outlook.com (2603:10b6:610:159::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9115.22; Tue, 16 Sep
- 2025 06:37:08 +0000
-Received: from DM4PR12MB6109.namprd12.prod.outlook.com
- ([fe80::680c:3105:babe:b7e1]) by DM4PR12MB6109.namprd12.prod.outlook.com
- ([fe80::680c:3105:babe:b7e1%4]) with mapi id 15.20.9115.018; Tue, 16 Sep 2025
- 06:37:08 +0000
-From: "Guntupalli, Manikanta" <manikanta.guntupalli@amd.com>
-To: Frank Li <Frank.li@nxp.com>
-CC: "git (AMD-Xilinx)" <git@amd.com>, "Simek, Michal" <michal.simek@amd.com>,
-	"alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
-	"robh@kernel.org" <robh@kernel.org>, "krzk+dt@kernel.org"
-	<krzk+dt@kernel.org>, "conor+dt@kernel.org" <conor+dt@kernel.org>,
-	"kees@kernel.org" <kees@kernel.org>, "gustavoars@kernel.org"
-	<gustavoars@kernel.org>, "jarkko.nikula@linux.intel.com"
-	<jarkko.nikula@linux.intel.com>, "linux-i3c@lists.infradead.org"
-	<linux-i3c@lists.infradead.org>, "devicetree@vger.kernel.org"
-	<devicetree@vger.kernel.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "linux-hardening@vger.kernel.org"
-	<linux-hardening@vger.kernel.org>, "Pandey, Radhey Shyam"
-	<radhey.shyam.pandey@amd.com>, "Goud, Srinivas" <srinivas.goud@amd.com>,
-	"Datta, Shubhrajyoti" <shubhrajyoti.datta@amd.com>, "manion05gk@gmail.com"
-	<manion05gk@gmail.com>
-Subject: RE: [PATCH V6 2/2] i3c: master: Add AMD I3C bus controller driver
-Thread-Topic: [PATCH V6 2/2] i3c: master: Add AMD I3C bus controller driver
-Thread-Index: AQHcIkZvn4aTq4cirkSmmfELS1IUxLSMotAAgADGrwCAALgFgIAA6baQgABff+CABfhCYA==
-Date: Tue, 16 Sep 2025 06:37:08 +0000
-Message-ID: <DM4PR12MB6109842EA1FFBD183C57AA8E8C14A@DM4PR12MB6109.namprd12.prod.outlook.com>
-References: <20250910112954.553353-1-manikanta.guntupalli@amd.com>
- <20250910112954.553353-3-manikanta.guntupalli@amd.com>
- <aMGtdFxlXRanIAuM@lizhi-Precision-Tower-5810>
- <DM4PR12MB6109FB1956E8AC4979DFE85A8C09A@DM4PR12MB6109.namprd12.prod.outlook.com>
- <aMLufaWnrhPxVyxm@lizhi-Precision-Tower-5810>
- <DM4PR12MB61093B9BB9B3EF1D9F6B499E8C08A@DM4PR12MB6109.namprd12.prod.outlook.com>
- <DM4PR12MB61099BA795FD6DA057DD08E58C08A@DM4PR12MB6109.namprd12.prod.outlook.com>
-In-Reply-To: <DM4PR12MB61099BA795FD6DA057DD08E58C08A@DM4PR12MB6109.namprd12.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-msip_labels: MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Enabled=True;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_SiteId=3dd8961f-e488-4e60-8e11-a82d994e183d;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_SetDate=2025-09-12T05:42:03.0000000Z;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Name=Open
- Source;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_ContentBits=3;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Method=Privileged
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=amd.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: DM4PR12MB6109:EE_|CH3PR12MB8533:EE_
-x-ms-office365-filtering-correlation-id: 709d9046-bd8b-4514-3f62-08ddf4eb7599
-x-ld-processed: 3dd8961f-e488-4e60-8e11-a82d994e183d,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|376014|7416014|366016|1800799024|38070700021;
-x-microsoft-antispam-message-info: =?us-ascii?Q?+Xt8S/8vGo5Tc1OdcWIYHfXFajXBLv4T3cABKQVk2bt8X0QH8Y7XveLun7Nl?=
- =?us-ascii?Q?9Vy9webLiJH0vuGAe9q/t1XQ/vwt9G2u1kUvYMJkQ/rkwBMYdBuaQfDNPXSy?=
- =?us-ascii?Q?8grTZZkM+sZywM+jWHSn3g+8AgvpAhDXJoaTRpMvbgMgcyTBgJYxvNZLMZBY?=
- =?us-ascii?Q?dObsHg/YPgH161sbrUQWOiR4VPGcgmXqa92FLdU8+P7REeVZ381Qn7HlhgS+?=
- =?us-ascii?Q?aNzeDWzNBOkgZhhRscmkT6lxSl1nXy7F1/yXxumoUDVXwSphU4jF8SKYqeIO?=
- =?us-ascii?Q?w+GZhVj6xjBugRBqG/rdottDcGUl7Cq8kShE8qx4LlW+o8aUISk1lLCE3i66?=
- =?us-ascii?Q?lYdEuY5wR9jGYQkyZFxXZP9ipIH3f760ybwJu0nAva/E3dl6Ofx5GpR3KbRN?=
- =?us-ascii?Q?rL9bCuQvlrUksPpxVVEhCFVwW8ODSrZHcsg2dYYRqLKCGeZbCKRnrka2d/d6?=
- =?us-ascii?Q?jRj3bXRBY/s2PU8nPN7l0Hb+GHNCPvcr2v9tVrd9eY8jZI78EaZPovxv+ljH?=
- =?us-ascii?Q?9P1peEx9/maHq/TeJlvbkuk1iOqmIXJQQHx2PEJEtT/DRrjwwXjeePQIf41P?=
- =?us-ascii?Q?8NTrX0cUwo/fRpCF2sZ+zvhae3f9hAWnh0a7EQnA4sCAYpnOBen6J8GMmJ45?=
- =?us-ascii?Q?kqI+Sm5kI3c5ThIfqb0kI4TmOSxiuUlPMyO1+CLhdTLfr9zykiDM7jUwPdlc?=
- =?us-ascii?Q?T33QBSUnM0DKZvoaS9LZ2vXYoRRiyYfv7/G4G9xbBBU6KHj3TqaMHBiPRdQu?=
- =?us-ascii?Q?kxcZMy8L1cMx4huwH87PSmck5HXDM/EqgBFegDsSZanCoWP8TH3Mi8AWjs1K?=
- =?us-ascii?Q?SLt9hifBlVzcYlKgMe2PnEzHSV2WXxRYQz1MChKjd/6DZD5JF7+U1aaKQ9tx?=
- =?us-ascii?Q?sVL4XvNUJW0r4T1bSZB4G2UwLCwvQlF3ZRIZQyWQZALFY+ktDnf6mR/ZU0XO?=
- =?us-ascii?Q?8WAC8PrtMlOwBnp1fGnmb737NrB6Ci2H+70zAtm6JCW0bJEw8E5BfMi/Nn3y?=
- =?us-ascii?Q?1itsUUo/w+XT2oB+n68OcCeL3bCgc4j7S9KgenHpXggj+Ajs4xMcLdtsV2if?=
- =?us-ascii?Q?oTSbi+nRZcc0CF8Bec7+sRi2PXOgkJkNtxTl/rph3Au1HeYPk/cfvWe2/jBn?=
- =?us-ascii?Q?rRFqGH44cN7P0yx0MnIs6eE3dHAg2fOZC3M7/T3PHCbuTTMkUdKroMm/8Xyg?=
- =?us-ascii?Q?IV9zxIVLoxaTeXRwJvKsBEPU/aL577OIHvlLQkTaYCtZBZwSq7TjJBPCxuKk?=
- =?us-ascii?Q?62ZfbU0dh3TzzpV+o0RTTPFgqQAkH3sxfvh8PQYPA/TfXjzkIaNgsGM4DXDZ?=
- =?us-ascii?Q?mGB+GDmnNmJb+CvXTI40/hfWIkGnsXY4nG86WvEJGLDdWIjiP2ObumEsELiP?=
- =?us-ascii?Q?6Zx4hfmFm3Jl1f7s+1r0JCZ/4NPELcx4qhFeMHQ8MxkVznwAmnEo1OR6dYmx?=
- =?us-ascii?Q?W4XXgFqNP5U=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DM4PR12MB6109.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(366016)(1800799024)(38070700021);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?TRLAmoRm676uJniV/wQ5sU07evEW6a3KD2oP3meTCDctBE4wAZxJXafF4oMf?=
- =?us-ascii?Q?lE0y8xQMNJ+NfMGjtv/fTprFB+8CbwOoDSG+XE82dhAs0d6WW9hBME9eOLka?=
- =?us-ascii?Q?mB8rsWSf9ypoXS5Y1RntS9qGxaIrfRU1qQUnOvNHI92e6wNyrkCqP4oWrv8f?=
- =?us-ascii?Q?86rFejObczv1GAAE3T4REVxTRTU/4XZCVn+5Vt6KDhTRiJA7DkeMBXsKzaUH?=
- =?us-ascii?Q?QWHO6d9vRIodqrerDiwk1MpDFLxz99ABrfBc7l0y/GNDCMcUZo+F7goGZAJE?=
- =?us-ascii?Q?srBw08/3SBzCrQm4sMVUbjI6p2yoi/GRIZdYLlq9TU8+PkNAoDOTdiSzWM2e?=
- =?us-ascii?Q?oqUFEncW6ti9Jj9rR9xj0NXHFIvL1RLRnBmABhD/1w9waeUsKduM+kIbdBaX?=
- =?us-ascii?Q?RVZ4nob6rAsH904d1Zxp2ILsoHCyx7OcN0zTECanCcXdz1D7n9DS5VibHbJq?=
- =?us-ascii?Q?bSfAU5eI7FHrZXpjVWvHygVkn1oTu+Okr61G55bDwUs7RxQYJo/E1xTLGGX/?=
- =?us-ascii?Q?9ZSnj0eVsH59n/3iG3gUOOgjJ9Qv9WQaGTGMwIpWPlOdu5juX/MvY+gBsTIU?=
- =?us-ascii?Q?kLDgEut5cddwLk1EpkUBDOZKQDDlBT/Ym47PA6lXg2ToZOC5i7IRUTAqhfor?=
- =?us-ascii?Q?vd6oEXhnaJVW0qzWoFfXlDQuosMkBlPM7tEiHP7IpRuUumdAHthDnq7gGDMm?=
- =?us-ascii?Q?aGxRRmAd5piXNQDrF1048NYC9cObCaCGeEOEsJNz2lfQzb1KpbwB06DfS2Mw?=
- =?us-ascii?Q?buC9BbZqO6rdyCpRP+0Fxihi/JgbGzCj2icjTocVs6PJwk+GdcqwytzfNhBy?=
- =?us-ascii?Q?TLta3tibVjjx1p8rGkhI+j0Yu4jIZL6WqIYXHGKZuhgpO+cP4QkMyU5+6ylB?=
- =?us-ascii?Q?ICSU+bXVtEt/SktJX5IQPNdyosscQfa6EDmJ78cFoWkAh4iXWaJLgDlIQoAc?=
- =?us-ascii?Q?tw8jfXGRYZmTGhg93GH/mYff1pDMrEByRa3d1xKj25nJnYfxqhAK2Mh2UzzV?=
- =?us-ascii?Q?ezhRuB/iloF6vGSGYbN44ik2wTCcS9rmvEUdzQMZzc9mVe2Eb9QhjE/KXmBF?=
- =?us-ascii?Q?b1WODhTtLg/llgOUGnW3Sc26sS3O/Etdm9hg12b1mspYQsoUKSPnbRtzY4jU?=
- =?us-ascii?Q?uIDPE0LCMmIRdvSgwyFJSYxmGJHneJ7gAmvr4Vwyn58G2mtG48rEAfZaJlIU?=
- =?us-ascii?Q?kEaqnohxn/l8Agz0pOPYq20/FT0f3whWV/EUIg56y8hRFz1OiIa2pY1WhaDK?=
- =?us-ascii?Q?zZaROC2QmxXZKXlREVHdl7aPF1Z2z1m+Tk1XwXfHqRJK0Wv4Vl3bHZ8+6ZLP?=
- =?us-ascii?Q?wB0Hle3ep0/7Jv8/o7GBAH/mZ35AsdZNGgNzWooPoBpPUfVDw+tTb23FI/k2?=
- =?us-ascii?Q?IxCTh+FV35M6TGNTaquVFbvlrgayIcn7gG/s2PDarzOxkAJoeMqpaXk4iJen?=
- =?us-ascii?Q?mhGl4zcBKGCYbjQpOvEhay66JmFIGiIdcefzBHARkNsBGwzXsUl+L8f7/ZjB?=
- =?us-ascii?Q?qAaCWkDruEJWrNkiNQQgnACkw+s4eDlgvsoQ69fLt6s6Q5ecmIZ7J5wgOW+V?=
- =?us-ascii?Q?SNlsAIY27dO2CCyBBe8=3D?=
+	Wed, 17 Sep 2025 22:04:44 +0000
+Received: by mail-pg1-x52f.google.com with SMTP id 41be03b00d2f7-b54c707374fso157034a12.1
+        for <linux-i3c@lists.infradead.org>; Wed, 17 Sep 2025 15:04:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1758146680; x=1758751480; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=rKTYL9qZHCY6SX54g1CxCOHWNQkO0Dz6dIIx5JhUyuo=;
+        b=fB0mX218uFlJvkCiOdBy6QZUKk1rXSASLERVuf2C1S7tZlD4RJstpxhd+zGFNzcs3J
+         WAs4QrcyFCM+RPuFg+X/sddPNa7mJQbYcbTBd7yt0RGmp6ffsq0ER5vbAufsp6kg6ISG
+         KdAmvw+ypl208DdlOTCSHd3GNE6K6nc3/HO13yfihK+f6pHz9MLZNtSwsJaXEgxVRGou
+         ucr7W05H99+N0ilh2CvK2yZthlmdx4cNz4zS4jKVhAhC5B/YaNTHniDg6s2+ltXKzuOK
+         WZWc7bP1DWJX0622S/bG0UK0xsmVoLnh3i8HbPSM8oM3NkLfDc8z0/LU53EUXtFN/GDK
+         D/6g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1758146680; x=1758751480;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=rKTYL9qZHCY6SX54g1CxCOHWNQkO0Dz6dIIx5JhUyuo=;
+        b=tJBOye/9FMwxDoTHpkI6tCOpXx6Hv8uDasTUMFAb3VZzxCGWyL5LlFqYp3m83bnV5y
+         SsxLqOOc3OpIA76yhp0NGefnOcf0W28kOID1BXR13EaN+OFTDm/MRxEuJS//Ir+5uXlZ
+         SETqP+RPT40z/QTRkTBsRScNc4qK22rT+sBpriDRVt4a8AFmbS8IPkrHE97k418lPx1d
+         gxnVy0jUrC7hhpLCq5v8IUZp7kJQBAbEGYlgHAOuxnXRy+FV7JKGTGwAnRmthdI8cfRV
+         AngT5X9DvLWgkOvi3XjJODOms1ehiwyLk+yiMCREXKd219CPxKXvdSTTkRuU52nwOprs
+         58vQ==
+X-Forwarded-Encrypted: i=1; AJvYcCV5t4vQiuMzv9Fdw+PsadFKKRwxF5iP5VyWY7l2s807h/+X/ezKeMYViqIXLmFs8TP+xQDRf4/c9vY=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwEWpX7VC+WFdJ6lsJnZAqmoOiLTL5kfQwW2Jh6LB4Mr4eIFWWt
+	chB1X4mwMEnBsYEq/1AtDxAt7qbcv39IIB0NaLYtqfMwB9+UuGtqDVs=
+X-Gm-Gg: ASbGncum9Pd39UPKPyaPnOtykA8pfFmAXKK5ku71IL5TDvt1bT9idptKp8IUDK+v9XB
+	obSAVBAqTXqNwGZ/jKEYReMPBAmehfSiC9N64TjTtFFpiT+K+WAe0kHlQPnZHu0gDrMC3bh1pKJ
+	U1Jjsph0I5SuAc/YwVlUpu+HuxBHj2erqOnY05PPo8EjUYU3+uYLb6cnnH8hkwCYdWPSxxv9ewl
+	PGuMF66Zdz4LR/DaHHE7WHOgxOjnwJeIDjIWEUvki6kBnvwWHfh/ciNWfz509u0bx8YYbq1eYFR
+	hE++8B+BDoKoTevXKPP09nnhsow7dZ/qP8DBcJLdk4mYEs/YplCespC3UwVMYKaXstpCWYZqbX3
+	8Krnxuak0qgabV3SbpOFLi3eqwnFKrMKLMqEoUKvrTOKjkC+R0ZDvDqmLnKQdefzjDePCe5tRFx
+	qI6GQ=
+X-Google-Smtp-Source: AGHT+IGDFPDGX4rb+kiQg3X4yL7z83rrDxrOSR5UfT6oA70G3VDh5bLbnnVZBylxLLb/1kX5EJEZLg==
+X-Received: by 2002:a17:903:283:b0:267:f121:6a88 with SMTP id d9443c01a7336-268138fe811mr54249485ad.42.1758146679810;
+        Wed, 17 Sep 2025 15:04:39 -0700 (PDT)
+Received: from Ubuntuv2.domain.name ([122.172.86.226])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2698016bf96sm5505275ad.38.2025.09.17.15.04.35
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 17 Sep 2025 15:04:39 -0700 (PDT)
+From: Marneni PoornaChandu <poornachandumarneni@gmail.com>
+X-Google-Original-From: Marneni PoornaChandu <Poornachandumarneni@gmail.com>
+To: corbet@lwn.net
+Cc: linux-doc@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	alexandre.belloni@bootlin.com,
+	corey@minyard.net,
+	sakari.ailus@linux.intel.com,
+	mchehab@kernel.org,
+	linux-i3c@lists.infradead.org,
+	openipmi-developer@lists.sourceforge.net,
+	linux-media@vger.kernel.org,
+	linux-kbuild@vger.kernel.org,
+	linux-kernel-mentees@lists.linux.dev,
+	skhan@linuxfoundation.org,
+	Marneni PoornaChandu <Poornachandumarneni@gmail.com>
+Subject: [PATCH] docs: driver-api: fix spelling of "buses".
+Date: Thu, 18 Sep 2025 06:04:30 +0800
+Message-Id: <20250917220430.5815-1-Poornachandumarneni@gmail.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: DM4PR12MB6109.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 709d9046-bd8b-4514-3f62-08ddf4eb7599
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Sep 2025 06:37:08.3591
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3dd8961f-e488-4e60-8e11-a82d994e183d
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: KUBoYLgvPSwq9sEVZJoSwwMTJJrVWod5d9mJgmQW+Aep5kq0JSwNzLeldQgWTQwkh3KQL3zdpMuA9BxsrfKqQw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH3PR12MB8533
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250915_233735_415088_2FAE61ED 
-X-CRM114-Status: GOOD (  20.05  )
+X-CRM114-CacheID: sfid-20250917_150441_462880_9932F232 
+X-CRM114-Status: GOOD (  25.37  )
 X-Mailman-Approved-At: Thu, 18 Sep 2025 03:18:20 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -180,331 +110,263 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-[Public]
+Replace incorrect plural form "busses" with "buses" in
+multiple documentation files under "Documentation/driver-api".
 
-Hi,
+Signed-off-by: Marneni PoornaChandu <Poornachandumarneni@gmail.com>
+---
+ Documentation/driver-api/device-io.rst             | 4 ++--
+ Documentation/driver-api/driver-model/overview.rst | 2 +-
+ Documentation/driver-api/driver-model/platform.rst | 2 +-
+ Documentation/driver-api/eisa.rst                  | 6 +++---
+ Documentation/driver-api/i3c/protocol.rst          | 4 ++--
+ Documentation/driver-api/ipmi.rst                  | 4 ++--
+ Documentation/driver-api/media/tx-rx.rst           | 4 ++--
+ Documentation/driver-api/nvdimm/nvdimm.rst         | 2 +-
+ Documentation/driver-api/pm/devices.rst            | 4 ++--
+ Documentation/driver-api/scsi.rst                  | 4 ++--
+ Documentation/driver-api/spi.rst                   | 2 +-
+ Documentation/driver-api/usb/hotplug.rst           | 2 +-
+ Documentation/driver-api/usb/usb.rst               | 4 ++--
+ 13 files changed, 22 insertions(+), 22 deletions(-)
 
-> -----Original Message-----
-> From: Guntupalli, Manikanta
-> Sent: Friday, September 12, 2025 4:56 PM
-> To: 'Frank Li' <Frank.li@nxp.com>
-> Cc: git (AMD-Xilinx) <git@amd.com>; Simek, Michal <michal.simek@amd.com>;
-> 'alexandre.belloni@bootlin.com' <alexandre.belloni@bootlin.com>;
-> 'robh@kernel.org' <robh@kernel.org>; 'krzk+dt@kernel.org' <krzk+dt@kernel.org>;
-> 'conor+dt@kernel.org' <conor+dt@kernel.org>; 'kees@kernel.org'
-> <kees@kernel.org>; 'gustavoars@kernel.org' <gustavoars@kernel.org>;
-> 'jarkko.nikula@linux.intel.com' <jarkko.nikula@linux.intel.com>; 'linux-
-> i3c@lists.infradead.org' <linux-i3c@lists.infradead.org>;
-> 'devicetree@vger.kernel.org' <devicetree@vger.kernel.org>; 'linux-
-> kernel@vger.kernel.org' <linux-kernel@vger.kernel.org>; 'linux-
-> hardening@vger.kernel.org' <linux-hardening@vger.kernel.org>; Pandey, Radhey
-> Shyam <radhey.shyam.pandey@amd.com>; Goud, Srinivas
-> <srinivas.goud@amd.com>; Datta, Shubhrajyoti <shubhrajyoti.datta@amd.com>;
-> 'manion05gk@gmail.com' <manion05gk@gmail.com>
-> Subject: RE: [PATCH V6 2/2] i3c: master: Add AMD I3C bus controller driver
->
-> Hi,
->
-> > -----Original Message-----
-> > From: Guntupalli, Manikanta
-> > Sent: Friday, September 12, 2025 11:25 AM
-> > To: Frank Li <Frank.li@nxp.com>
-> > Cc: git (AMD-Xilinx) <git@amd.com>; Simek, Michal
-> > <michal.simek@amd.com>; alexandre.belloni@bootlin.com;
-> > robh@kernel.org; krzk+dt@kernel.org;
-> > conor+dt@kernel.org; kees@kernel.org; gustavoars@kernel.org;
-> > jarkko.nikula@linux.intel.com; linux-i3c@lists.infradead.org;
-> > devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-
-> > hardening@vger.kernel.org; Pandey, Radhey Shyam
-> > <radhey.shyam.pandey@amd.com>; Goud, Srinivas <srinivas.goud@amd.com>;
-> > Datta, Shubhrajyoti <shubhrajyoti.datta@amd.com>; manion05gk@gmail.com
-> > Subject: RE: [PATCH V6 2/2] i3c: master: Add AMD I3C bus controller
-> > driver
-> >
-> > Hi,
-> >
-> > > -----Original Message-----
-> > > From: Frank Li <Frank.li@nxp.com>
-> > > Sent: Thursday, September 11, 2025 9:15 PM
-> > > To: Guntupalli, Manikanta <manikanta.guntupalli@amd.com>
-> > > Cc: git (AMD-Xilinx) <git@amd.com>; Simek, Michal
-> > > <michal.simek@amd.com>; alexandre.belloni@bootlin.com;
-> > > robh@kernel.org; krzk+dt@kernel.org;
-> > > conor+dt@kernel.org; kees@kernel.org; gustavoars@kernel.org;
-> > > jarkko.nikula@linux.intel.com; linux-i3c@lists.infradead.org;
-> > > devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-
-> > > hardening@vger.kernel.org; Pandey, Radhey Shyam
-> > > <radhey.shyam.pandey@amd.com>; Goud, Srinivas
-> > > <srinivas.goud@amd.com>; Datta, Shubhrajyoti
-> > > <shubhrajyoti.datta@amd.com>; manion05gk@gmail.com
-> > > Subject: Re: [PATCH V6 2/2] i3c: master: Add AMD I3C bus controller
-> > > driver
-> > >
-> > > On Thu, Sep 11, 2025 at 06:07:59AM +0000, Guntupalli, Manikanta wrote:
-> > > > [Public]
-> > > >
-> > > > Hi,
-> > > >
-> > > > > -----Original Message-----
-> > > > > From: Frank Li <Frank.li@nxp.com>
-> > > > > Sent: Wednesday, September 10, 2025 10:25 PM
-> > > > > To: Guntupalli, Manikanta <manikanta.guntupalli@amd.com>
-> > > > > Cc: git (AMD-Xilinx) <git@amd.com>; Simek, Michal
-> > > > > <michal.simek@amd.com>; alexandre.belloni@bootlin.com;
-> > > > > robh@kernel.org; krzk+dt@kernel.org;
-> > > > > conor+dt@kernel.org; kees@kernel.org; gustavoars@kernel.org;
-> > > > > jarkko.nikula@linux.intel.com; linux-i3c@lists.infradead.org;
-> > > > > devicetree@vger.kernel.org; linux-kernel@vger.kernel.org; linux-
-> > > > > hardening@vger.kernel.org; Pandey, Radhey Shyam
-> > > > > <radhey.shyam.pandey@amd.com>; Goud, Srinivas
-> > > > > <srinivas.goud@amd.com>; Datta, Shubhrajyoti
-> > > > > <shubhrajyoti.datta@amd.com>; manion05gk@gmail.com
-> > > > > Subject: Re: [PATCH V6 2/2] i3c: master: Add AMD I3C bus
-> > > > > controller driver
-> > > > >
-> > > > > On Wed, Sep 10, 2025 at 04:59:54PM +0530, Manikanta Guntupalli wrote:
-> > > > > > Add an I3C master driver and maintainers fragment for the AMD
-> > > > > > I3C bus controller.
-> > > > > >
-> > > > > > The driver currently supports the I3C bus operating in SDR i3c
-> > > > > > mode, with features including Dynamic Address Assignment,
-> > > > > > private data transfers, and CCC transfers in both broadcast
-> > > > > > and direct modes. It also supports operation in I2C mode.
-> > > > > >
-> > > > > > Signed-off-by: Manikanta Guntupalli
-> > > > > > <manikanta.guntupalli@amd.com>
-> > > > > > ---
-> > > > > > Changes for V2:
-> > > > > > Updated commit description.
-> > > > > > Added mixed mode support with clock configuration.
-> > > > > > Converted smaller functions into inline functions.
-> > > > > > Used FIELD_GET() in xi3c_get_response().
-> > > > > > Updated xi3c_master_rd_from_rx_fifo() to use cmd->rx_buf.
-> > > > > > Used parity8() for address parity calculation.
-> > > > > > Added guards for locks.
-> > > > > > Dropped num_targets and updated xi3c_master_do_daa().
-> > > > > > Used __free(kfree) in xi3c_master_send_bdcast_ccc_cmd().
-> > > > > > Dropped PM runtime support.
-> > > > > > Updated xi3c_master_read() and xi3c_master_write() with
-> > > > > > xi3c_is_resp_available() check.
-> > > > > > Created separate functions: xi3c_master_init() and xi3c_master_reinit().
-> > > > > > Used xi3c_master_init() in bus initialization and
-> > > > > > xi3c_master_reinit() in error paths.
-> > > > > > Added DAA structure to xi3c_master structure.
-> > > > > >
-> > > > > > Changes for V3:
-> > > > > > Resolved merge conflicts.
-> > > > > >
-> > > > > > Changes for V4:
-> > > > > > Updated timeout macros.
-> > > > > > Removed type casting for xi3c_is_resp_available() macro.
-> > > > > > Used ioread32() and iowrite32() instead of readl() and
-> > > > > > writel() to keep consistency.
-> > > > > > Read XI3C_RESET_OFFSET reg before udelay().
-> > > > > > Removed xi3c_master_free_xfer() and directly used kfree().
-> > > > > > Skipped checking return value of i3c_master_add_i3c_dev_locked().
-> > > > > > Used devm_mutex_init() instead of mutex_init().
-> > > > > >
-> > > > > > Changes for V5:
-> > > > > > Used GENMASK_ULL for PID mask as it's 64bit mask.
-> > > > > >
-> > > > > > Changes for V6:
-> > > > > > Removed typecast for xi3c_getrevisionnumber(),
-> > > > > > xi3c_wrfifolevel(), and xi3c_rdfifolevel().
-> > > > > > Replaced dynamic allocation with a static variable for pid_bcr_dcr.
-> > > > > > Fixed sparse warning in do_daa by typecasting the address
-> > > > > > parity value to u8.
-> > > > > > Fixed sparse warning in xi3c_master_bus_init by typecasting
-> > > > > > the pid value to u64 in info.pid calculation.
-> > > > > > ---
-> > > > > >  MAINTAINERS                         |    7 +
-> > > > > >  drivers/i3c/master/Kconfig          |   16 +
-> > > > > >  drivers/i3c/master/Makefile         |    1 +
-> > > > > >  drivers/i3c/master/amd-i3c-master.c | 1009
-> > > > > > +++++++++++++++++++++++++++
-> > > > > >  4 files changed, 1033 insertions(+)  create mode 100644
-> > > > > > drivers/i3c/master/amd-i3c-master.c
-> > > > > >
-> > > > > > diff --git a/MAINTAINERS b/MAINTAINERS index
-> > > > > > 1af81124bba3..ff603ce5e78d 100644
-> > > > > > --- a/MAINTAINERS
-> > > > > > +++ b/MAINTAINERS
-> > > > > > @@ -11693,6 +11693,13 @@ L: linux-i2c@vger.kernel.org
-> > > > > >  S: Maintained
-> > > > > >  F: drivers/i2c/i2c-stub.c
-> > > > > >
-> > > > > > +I3C DRIVER FOR AMD AXI I3C MASTER
-> > > > > > +M: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
-> > > > > > +R: Michal Simek <michal.simek@amd.com>
-> > > > > > +S: Maintained
-> > > > > > +F: Documentation/devicetree/bindings/i3c/xlnx,axi-i3c.yaml
-> > > > > > +F: drivers/i3c/master/amd-i3c-master.c
-> > > > > > +
-> > > > > >  I3C DRIVER FOR ASPEED AST2600
-> > > > > >  M: Jeremy Kerr <jk@codeconstruct.com.au>
-> > > > > >  S: Maintained
-> > > > > > diff --git a/drivers/i3c/master/Kconfig
-> > > > > > b/drivers/i3c/master/Kconfig index 13df2944f2ec..4b884a678893
-> > > > > > 100644
-> > > > > > --- a/drivers/i3c/master/Kconfig
-> > > > > > +++ b/drivers/i3c/master/Kconfig
-> > > > > > @@ -1,4 +1,20 @@
-> > > > > >  # SPDX-License-Identifier: GPL-2.0-only
-> > > > > > +
-> > > > > > +config AMD_I3C_MASTER
-> > > > > > +   tristate "AMD I3C Master driver"
-> > > > > > +   depends on I3C
-> > > > > > +   depends on HAS_IOMEM
-> > > > > > +   help
-> > > > > > +     Support for AMD I3C Master Controller.
-> > > > > > +
-> > > > > > +     This driver allows communication with I3C devices using the AMD
-> > > > > > +     I3C master, currently supporting Standard Data Rate (SDR) mode.
-> > > > > > +     Features include Dynamic Address Assignment, private transfers,
-> > > > > > +     and CCC transfers in both broadcast and direct modes.
-> > > > > > +
-> > > > > > +     This driver can also be built as a module.  If so, the module
-> > > > > > +     will be called amd-i3c-master.
-> > > > > > +
-> > > > > >  config CDNS_I3C_MASTER
-> > > > > >     tristate "Cadence I3C master driver"
-> > > > > >     depends on HAS_IOMEM
-> > > > > > diff --git a/drivers/i3c/master/Makefile
-> > > > > > b/drivers/i3c/master/Makefile index aac74f3e3851..109bd48cb159
-> > > > > > 100644
-> > > > > > --- a/drivers/i3c/master/Makefile
-> > > > > > +++ b/drivers/i3c/master/Makefile
-> > > > > > @@ -1,4 +1,5 @@
-> > > > > >  # SPDX-License-Identifier: GPL-2.0-only
-> > > > > > +obj-$(CONFIG_AMD_I3C_MASTER)               += amd-i3c-master.o
-> > > > > >  obj-$(CONFIG_CDNS_I3C_MASTER)              += i3c-master-cdns.o
-> > > > > >  obj-$(CONFIG_DW_I3C_MASTER)                += dw-i3c-master.o
-> > > > > >  obj-$(CONFIG_AST2600_I3C_MASTER)   += ast2600-i3c-master.o
-> > > > > > diff --git a/drivers/i3c/master/amd-i3c-master.c
-> > > > > > b/drivers/i3c/master/amd-i3c-master.c
-> > > > > > new file mode 100644
-> > > > > > index 000000000000..cd9d85a0be80
-> > > > > > --- /dev/null
-> > > > > > +++ b/drivers/i3c/master/amd-i3c-master.c
-> > > > > > @@ -0,0 +1,1009 @@
-> > > > > > +// SPDX-License-Identifier: GPL-2.0
-> > > > > > +/*
-> > > > > > + * I3C master driver for the AMD I3C controller.
-> > > > > > + *
-> > > > > > + * Copyright (C) 2025, Advanced Micro Devices, Inc.
-> > > > > > + */
-> > > > > > +
-> > > > > ...
-> > > > > > +
-> > > > > > +/* timeout waiting for the controller finish transfers */
-> > > > > > +#define XI3C_XFER_TIMEOUT_MS                       10000
-> > > > > > +#define XI3C_XFER_TIMEOUT
-> > > > >       (msecs_to_jiffies(XI3C_XFER_TIMEOUT_MS))
-> > > > >
-> > > > > Do I missed your reply? I have not seen
-> > > > > https://lore.kernel.org/linux-i3c/aL7+Urm4NB9kwOwQ@lizhi-Precisi
-> > > > > on
-> > > > > -T
-> > > > > ower-5810/
-> > > > >
-> > > > > If you need define two macro for it. Need unit
-> > > > > XI3C_XFER_TIMEOUT_JIFFIES to avoid confuse.
-> > > > Sure, I'll update the macro name to XI3C_XFER_TIMEOUT_JIFFIES to
-> > > > avoid
-> > > confusion.
-> > > > >
-> > > > >
-> > > > > > +
-> > > > > > +#define xi3c_getrevisionnumber(master)                                             \
-> > > > > > +   (FIELD_GET(XI3C_REV_NUM_MASK,
-> > > > >       \
-> > > > > > +              ioread32((master)->membase +
-> > > > > > + XI3C_VERSION_OFFSET)))
-> > > > > > +
-> > > > >
-> > > > > ...
-> > > > >
-> > > > > > +static void xi3c_master_wr_to_tx_fifo(struct xi3c_master *master,
-> > > > > > +                                 struct xi3c_cmd *cmd) {
-> > > > > > +   u8 *tx_buf = (u8 *)cmd->tx_buf;
-> > > > > > +   u32 data = 0;
-> > > > > > +   u16 len;
-> > > > > > +
-> > > > > > +   len = cmd->tx_len;
-> > > > > > +   if (len > 0) {
-> > > > > > +           len = (len >= XI3C_WORD_LEN) ? XI3C_WORD_LEN : len;
-> > > > > > +           memcpy(&data, tx_buf, len);
-> > > > > > +           tx_buf += len;
-> > > > > > +           cmd->tx_len -= len;
-> > > > > > +   }
-> > > > > > +   cmd->tx_buf = tx_buf;
-> > > > > > +
-> > > > > > +   /* Write the 32-bit value to the Tx FIFO */
-> > > > > > +   iowrite32be(data, master->membase + XI3C_WR_FIFO_OFFSET);
-> > > > > > + }
-> > > > >
-> > > > > i3c_writel(readl)_fifo() did similar things, why not use it?
-> > > > >
-> > > > > Did you miss my review comment or I missed your reply?
-> > > > You have missed my earlier reply on this.
-> > > > The helpers i3c_writel_fifo() and i3c_readl_fifo() rely on the
-> > > > CPU's native endianness, whereas in this case the FIFO should
-> > > > always be accessed in
-> > > big-endian format.
-> > > > Hence, we cannot use the common helpers directly.
-> > > >
-> > > > For reference, here's my previous reply:
-> > > >
-> > >
-> >
-> https://lore.kernel.org/all/DM4PR12MB6109F6D5D032723C675472448C0FA@DM4
-> > > > PR12MB6109.namprd12.prod.outlook.com/
-> > >
-> > > Sorry, can you improve i3c_writel(readl)_fifo() to support endianness?
-> > > I think not only you have this kind problem in future.
-> > Sure, will add support for endianness.
-> To add support for endianness, we could not find a big-endian counterpart to
-> writesl().
-> Please let me know if I missed any existing helper.
-Endianness support for i3c_writel_fifo() and i3c_readl_fifo() would
-require writesl_be() and readsl_be(), which are not currently available.
-Implementing them introduces additional dependencies, so we suggest
-handling endianness support in a follow-up patch series instead.
-Please advise.
+diff --git a/Documentation/driver-api/device-io.rst b/Documentation/driver-api/device-io.rst
+index 5c7e8194bef9..d1aaa961cac4 100644
+--- a/Documentation/driver-api/device-io.rst
++++ b/Documentation/driver-api/device-io.rst
+@@ -16,7 +16,7 @@ Bus-Independent Device Accesses
+ Introduction
+ ============
+ 
+-Linux provides an API which abstracts performing IO across all busses
++Linux provides an API which abstracts performing IO across all buses
+ and devices, allowing device drivers to be written independently of bus
+ type.
+ 
+@@ -71,7 +71,7 @@ can be compiler optimised, you can use __readb() and friends to
+ indicate the relaxed ordering. Use this with care.
+ 
+ While the basic functions are defined to be synchronous with respect to
+-each other and ordered with respect to each other the busses the devices
++each other and ordered with respect to each other the buses the devices
+ sit on may themselves have asynchronicity. In particular many authors
+ are burned by the fact that PCI bus writes are posted asynchronously. A
+ driver author must issue a read from the same device to ensure that
+diff --git a/Documentation/driver-api/driver-model/overview.rst b/Documentation/driver-api/driver-model/overview.rst
+index e98d0ab4a9b6..b3f447bf9f07 100644
+--- a/Documentation/driver-api/driver-model/overview.rst
++++ b/Documentation/driver-api/driver-model/overview.rst
+@@ -22,7 +22,7 @@ uniformity across the different bus types.
+ 
+ The current driver model provides a common, uniform data model for describing
+ a bus and the devices that can appear under the bus. The unified bus
+-model includes a set of common attributes which all busses carry, and a set
++model includes a set of common attributes which all buses carry, and a set
+ of common callbacks, such as device discovery during bus probing, bus
+ shutdown, bus power management, etc.
+ 
+diff --git a/Documentation/driver-api/driver-model/platform.rst b/Documentation/driver-api/driver-model/platform.rst
+index 7beb8a9648c5..cf5ff48d3115 100644
+--- a/Documentation/driver-api/driver-model/platform.rst
++++ b/Documentation/driver-api/driver-model/platform.rst
+@@ -4,7 +4,7 @@ Platform Devices and Drivers
+ 
+ See <linux/platform_device.h> for the driver model interface to the
+ platform bus:  platform_device, and platform_driver.  This pseudo-bus
+-is used to connect devices on busses with minimal infrastructure,
++is used to connect devices on buses with minimal infrastructure,
+ like those used to integrate peripherals on many system-on-chip
+ processors, or some "legacy" PC interconnects; as opposed to large
+ formally specified ones like PCI or USB.
+diff --git a/Documentation/driver-api/eisa.rst b/Documentation/driver-api/eisa.rst
+index b33ebe1ec9ed..3563e5f7e98d 100644
+--- a/Documentation/driver-api/eisa.rst
++++ b/Documentation/driver-api/eisa.rst
+@@ -8,9 +8,9 @@ This document groups random notes about porting EISA drivers to the
+ new EISA/sysfs API.
+ 
+ Starting from version 2.5.59, the EISA bus is almost given the same
+-status as other much more mainstream busses such as PCI or USB. This
++status as other much more mainstream buses such as PCI or USB. This
+ has been possible through sysfs, which defines a nice enough set of
+-abstractions to manage busses, devices and drivers.
++abstractions to manage buses, devices and drivers.
+ 
+ Although the new API is quite simple to use, converting existing
+ drivers to the new infrastructure is not an easy task (mostly because
+@@ -205,7 +205,7 @@ Random notes
+ Converting an EISA driver to the new API mostly involves *deleting*
+ code (since probing is now in the core EISA code). Unfortunately, most
+ drivers share their probing routine between ISA, and EISA. Special
+-care must be taken when ripping out the EISA code, so other busses
++care must be taken when ripping out the EISA code, so other buses
+ won't suffer from these surgical strikes...
+ 
+ You *must not* expect any EISA device to be detected when returning
+diff --git a/Documentation/driver-api/i3c/protocol.rst b/Documentation/driver-api/i3c/protocol.rst
+index 23a0b93c62b1..fe338f8085db 100644
+--- a/Documentation/driver-api/i3c/protocol.rst
++++ b/Documentation/driver-api/i3c/protocol.rst
+@@ -165,8 +165,8 @@ The first thing attached to an HDR command is the HDR mode. There are currently
+ for more details):
+ 
+ * HDR-DDR: Double Data Rate mode
+-* HDR-TSP: Ternary Symbol Pure. Only usable on busses with no I2C devices
+-* HDR-TSL: Ternary Symbol Legacy. Usable on busses with I2C devices
++* HDR-TSP: Ternary Symbol Pure. Only usable on buses with no I2C devices
++* HDR-TSL: Ternary Symbol Legacy. Usable on buses with I2C devices
+ 
+ When sending an HDR command, the whole bus has to enter HDR mode, which is done
+ using a broadcast CCC command.
+diff --git a/Documentation/driver-api/ipmi.rst b/Documentation/driver-api/ipmi.rst
+index 2cc6c898ab90..f52ab2df2569 100644
+--- a/Documentation/driver-api/ipmi.rst
++++ b/Documentation/driver-api/ipmi.rst
+@@ -617,12 +617,12 @@ Note that the address you give here is the I2C address, not the IPMI
+ address.  So if you want your MC address to be 0x60, you put 0x30
+ here.  See the I2C driver info for more details.
+ 
+-Command bridging to other IPMB busses through this interface does not
++Command bridging to other IPMB buses through this interface does not
+ work.  The receive message queue is not implemented, by design.  There
+ is only one receive message queue on a BMC, and that is meant for the
+ host drivers, not something on the IPMB bus.
+ 
+-A BMC may have multiple IPMB busses, which bus your device sits on
++A BMC may have multiple IPMB buses, which bus your device sits on
+ depends on how the system is wired.  You can fetch the channels with
+ "ipmitool channel info <n>" where <n> is the channel, with the
+ channels being 0-7 and try the IPMB channels.
+diff --git a/Documentation/driver-api/media/tx-rx.rst b/Documentation/driver-api/media/tx-rx.rst
+index 0b8c9cde8ee4..22e1b13ecde9 100644
+--- a/Documentation/driver-api/media/tx-rx.rst
++++ b/Documentation/driver-api/media/tx-rx.rst
+@@ -12,7 +12,7 @@ CSI-2 receiver in an SoC.
+ Bus types
+ ---------
+ 
+-The following busses are the most common. This section discusses these two only.
++The following buses are the most common. This section discusses these two only.
+ 
+ MIPI CSI-2
+ ^^^^^^^^^^
+@@ -36,7 +36,7 @@ Transmitter drivers
+ 
+ Transmitter drivers generally need to provide the receiver drivers with the
+ configuration of the transmitter. What is required depends on the type of the
+-bus. These are common for both busses.
++bus. These are common for both buses.
+ 
+ Media bus pixel code
+ ^^^^^^^^^^^^^^^^^^^^
+diff --git a/Documentation/driver-api/nvdimm/nvdimm.rst b/Documentation/driver-api/nvdimm/nvdimm.rst
+index c205efa4d45b..959ba1cc0263 100644
+--- a/Documentation/driver-api/nvdimm/nvdimm.rst
++++ b/Documentation/driver-api/nvdimm/nvdimm.rst
+@@ -230,7 +230,7 @@ LIBNVDIMM/LIBNDCTL: Bus
+ A bus has a 1:1 relationship with an NFIT.  The current expectation for
+ ACPI based systems is that there is only ever one platform-global NFIT.
+ That said, it is trivial to register multiple NFITs, the specification
+-does not preclude it.  The infrastructure supports multiple busses and
++does not preclude it.  The infrastructure supports multiple buses and
+ we use this capability to test multiple NFIT configurations in the unit
+ test.
+ 
+diff --git a/Documentation/driver-api/pm/devices.rst b/Documentation/driver-api/pm/devices.rst
+index 8d86d5da4023..36d5c9c9fd11 100644
+--- a/Documentation/driver-api/pm/devices.rst
++++ b/Documentation/driver-api/pm/devices.rst
+@@ -255,7 +255,7 @@ get registered:  a child can never be registered, probed or resumed before
+ its parent; and can't be removed or suspended after that parent.
+ 
+ The policy is that the device hierarchy should match hardware bus topology.
+-[Or at least the control bus, for devices which use multiple busses.]
++[Or at least the control bus, for devices which use multiple buses.]
+ In particular, this means that a device registration may fail if the parent of
+ the device is suspending (i.e. has been chosen by the PM core as the next
+ device to suspend) or has already suspended, as well as after all of the other
+@@ -493,7 +493,7 @@ states, like S3).
+ 
+ Drivers must also be prepared to notice that the device has been removed
+ while the system was powered down, whenever that's physically possible.
+-PCMCIA, MMC, USB, Firewire, SCSI, and even IDE are common examples of busses
++PCMCIA, MMC, USB, Firewire, SCSI, and even IDE are common examples of buses
+ where common Linux platforms will see such removal.  Details of how drivers
+ will notice and handle such removals are currently bus-specific, and often
+ involve a separate thread.
+diff --git a/Documentation/driver-api/scsi.rst b/Documentation/driver-api/scsi.rst
+index bf2be96cc2d6..8bbdfb018c53 100644
+--- a/Documentation/driver-api/scsi.rst
++++ b/Documentation/driver-api/scsi.rst
+@@ -18,7 +18,7 @@ optical drives, test equipment, and medical devices) to a host computer.
+ 
+ Although the old parallel (fast/wide/ultra) SCSI bus has largely fallen
+ out of use, the SCSI command set is more widely used than ever to
+-communicate with devices over a number of different busses.
++communicate with devices over a number of different buses.
+ 
+ The `SCSI protocol <https://www.t10.org/scsi-3.htm>`__ is a big-endian
+ peer-to-peer packet based protocol. SCSI commands are 6, 10, 12, or 16
+@@ -286,7 +286,7 @@ Parallel SCSI (SPI) transport class
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ The file drivers/scsi/scsi_transport_spi.c defines transport
+-attributes for traditional (fast/wide/ultra) SCSI busses.
++attributes for traditional (fast/wide/ultra) SCSI buses.
+ 
+ .. kernel-doc:: drivers/scsi/scsi_transport_spi.c
+    :export:
+diff --git a/Documentation/driver-api/spi.rst b/Documentation/driver-api/spi.rst
+index f28887045049..74eca6735042 100644
+--- a/Documentation/driver-api/spi.rst
++++ b/Documentation/driver-api/spi.rst
+@@ -13,7 +13,7 @@ additional chipselect line is usually active-low (nCS); four signals are
+ normally used for each peripheral, plus sometimes an interrupt.
+ 
+ The SPI bus facilities listed here provide a generalized interface to
+-declare SPI busses and devices, manage them according to the standard
++declare SPI buses and devices, manage them according to the standard
+ Linux driver model, and perform input/output operations. At this time,
+ only "master" side interfaces are supported, where Linux talks to SPI
+ peripherals and does not implement such a peripheral itself. (Interfaces
+diff --git a/Documentation/driver-api/usb/hotplug.rst b/Documentation/driver-api/usb/hotplug.rst
+index c1e13107c50e..12260f704a01 100644
+--- a/Documentation/driver-api/usb/hotplug.rst
++++ b/Documentation/driver-api/usb/hotplug.rst
+@@ -5,7 +5,7 @@ Linux Hotplugging
+ =================
+ 
+ 
+-In hotpluggable busses like USB (and Cardbus PCI), end-users plug devices
++In hotpluggable buses like USB (and Cardbus PCI), end-users plug devices
+ into the bus with power on.  In most cases, users expect the devices to become
+ immediately usable.  That means the system must do many things, including:
+ 
+diff --git a/Documentation/driver-api/usb/usb.rst b/Documentation/driver-api/usb/usb.rst
+index 976fb4221062..7f2f41e80c1c 100644
+--- a/Documentation/driver-api/usb/usb.rst
++++ b/Documentation/driver-api/usb/usb.rst
+@@ -13,7 +13,7 @@ structure, with the host as the root (the system's master), hubs as
+ interior nodes, and peripherals as leaves (and slaves). Modern PCs
+ support several such trees of USB devices, usually
+ a few USB 3.0 (5 GBit/s) or USB 3.1 (10 GBit/s) and some legacy
+-USB 2.0 (480 MBit/s) busses just in case.
++USB 2.0 (480 MBit/s) buses just in case.
+ 
+ That master/slave asymmetry was designed-in for a number of reasons, one
+ being ease of use. It is not physically possible to mistake upstream and
+@@ -42,7 +42,7 @@ two. One is intended for *general-purpose* drivers (exposed through
+ driver frameworks), and the other is for drivers that are *part of the
+ core*. Such core drivers include the *hub* driver (which manages trees
+ of USB devices) and several different kinds of *host controller
+-drivers*, which control individual busses.
++drivers*, which control individual buses.
+ 
+ The device model seen by USB drivers is relatively complex.
+ 
+-- 
+2.34.1
 
-> > > >
-> > > > >
-> > > > > ...
-> > > > > > +
-> > > > > > +static const struct of_device_id xi3c_master_of_ids[] = {
-> > > > > > +   { .compatible = "xlnx,axi-i3c-1.0" },
-> > > > > > +   { },
-> > > > > > +};
-> > > > > > +
-> > > > > > +static struct platform_driver xi3c_master_driver = {
-> > > > > > +   .probe = xi3c_master_probe,
-> > > > > > +   .remove = xi3c_master_remove,
-> > > > > > +   .driver = {
-> > > > > > +           .name = "axi-i3c-master",
-> > > > > > +           .of_match_table = xi3c_master_of_ids,
-> > > > > > +   },
-> > > > > > +};
-> > > > > > +module_platform_driver(xi3c_master_driver);
-> > > > > > +
-> > > > > > +MODULE_AUTHOR("Manikanta Guntupalli
-> > > > > > +<manikanta.guntupalli@amd.com>"); MODULE_DESCRIPTION("AXI
-> I3C
-> > > > > > +master driver");
-> > > > > MODULE_LICENSE("GPL");
-> > > > > > --
-> > > > > > 2.34.1
-> > > > > >
-> > > >
-> >
->
-
-Thanks,
-Manikanta.
 
 -- 
 linux-i3c mailing list
