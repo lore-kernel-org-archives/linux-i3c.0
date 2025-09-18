@@ -4,57 +4,146 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 018D1CAC59A
-	for <linux-i3c@archiver.kernel.org>; Thu, 18 Sep 2025 14:50:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 144D2CA1013
+	for <linux-i3c@archiver.kernel.org>; Thu, 18 Sep 2025 15:44:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
-	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=W76jujQrWV7UCx10skmOXftsWmZtKgVvjAoSdx+es3k=; b=UJr09MMPmoWEcyFAsMLl3T2Byh
-	CbD4ujpLcnT9FnE78WxBUjx7OGzBr1uqDg0dFCEKFD12HSS7pelH+Yv4kmBx0hcwNueBXSl3hVtXy
-	VI4v4jDEqMggGoM3Voz0QiHcVYIpLppvKBXxHOnX43LmmdKt/Nc3fAd+gfcz2xJBdiZ7D+m9peoNi
-	ojwZAyBQmTeH1QyT1GQiJnkfC8XH/fewwMp0FxJsjOVAapNZKoWjsIW6t59X8Er15MCQxsRRmk8lE
-	JJjFHNYjJOkvgICS5LW0uEITeKyy29cqm/qpEe8YGj1TbfOlpoDTYQCqtQroy0KpbNm+Id8i1TZs5
-	ddzeCfEg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sdMr6q2t39sEWutHcynJuboY8ECRPZFmEFqJctiw+yk=; b=OnZmCceQtj5pLU
+	B7ByCQih8/JzJtwnV5B1LqwbX7FqA393tTfX8c4OhwU95no0rIyq2q7xyBja7PAVZplUmIo51h8Dl
+	kXTHgsrpwAAmS/kkTD6TnVOQDZGLK05sAuLk48uImi39vv+rskpADeTvn4GdaQQdA4Nrs/NX2b9pj
+	wpDGl3Sked5i/Zl77OS38PKuDKlNlnUSZzI0nAwl+iuJKKYn/HfSS6idEkTI4mhxY/RzHQ8LL9OH8
+	HaGbCK4uHel7zsDz9e5UEvb/H1JfXbMIji7auh+xNZV5zLuKqugfVxeIkPFBSvPucl5DZFZ4c6plm
+	ey3Zj9kNIePWEs5DVibw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uzFxj-00000000CxP-2kWk;
-	Thu, 18 Sep 2025 14:50:19 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1uzGo7-00000000T0D-3Vwd;
+	Thu, 18 Sep 2025 15:44:27 +0000
+Received: from mail-norwayeastazon11013012.outbound.protection.outlook.com ([40.107.159.12] helo=OSPPR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uzFxj-00000000Cwr-01AG
+	id 1uzGo6-00000000SyS-1kKx
 	for linux-i3c@lists.infradead.org;
-	Thu, 18 Sep 2025 14:50:19 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 13B45601BC;
-	Thu, 18 Sep 2025 14:50:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9BE42C4CEEB;
-	Thu, 18 Sep 2025 14:50:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1758207017;
-	bh=dFFUTKsb5HmnpUVQ50VCJETlKPYAb86qPFm7HVjesZM=;
-	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
-	b=knajWF5j1gTQ1MVKy8Gzhy257IxELviuKIwoockJVZbRYuzCOEdkHbpwCfEVytJvV
-	 2InH+G5SioxlDQfSa7qqJadKvOtOApdmWqwff/Wj0TYA2OCUtDLZe9zOSlTbTHl+ou
-	 YOKZi6cyOhZFOJsC7kanejGBQ5xJNg4Z5ZQ+bLtBKwRJ2ykWUUyHaU5r3njiFNhpLE
-	 6Yx0/sCxMTo0bO7iqkzG8Z5P04ppv2lq/JSKQFn+QjSepki2frcL7lqJnszqLkEA4Z
-	 T9I3NPNlXKpQfna1pxUw6uazMYgamdsuka2h3J7IbO4wfI29M2+hHNt32NJ4+DRYPc
-	 /gWXGw4RLakPw==
-Date: Thu, 18 Sep 2025 09:50:16 -0500
-MIME-Version: 1.0
-From: "Rob Herring (Arm)" <robh@kernel.org>
-Cc: linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org, 
- krzk+dt@kernel.org, alexandre.belloni@bootlin.com, 
- devicetree@vger.kernel.org, balamanikandan.gunasundar@microchip.com, 
- conor+dt@kernel.org, Frank.Li@nxp.com, nicolas.ferre@microchip.com
+	Thu, 18 Sep 2025 15:44:27 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=vwAbrywTziSXaGT2k/JFke3K8ZXo6q8aV+L23nT+BAApIt4J97miVsywYdpFJ8izWf01Sb2gWpFb3ekfIqPZqMhLhZNXEyejfidogqeEQQlep0T0faSvCu5jTCcuQfhmxRK3mLiTvWCb3sFdRHTQLPCIqHh9Zb7Vr15I0OQtpnXxdzY7T4SkmiR+YOVh1PwJlLFDbyt51J3LGNSJRETGBBw2k4iCbNybmoJiMPwdASwg3A8yD4vLpM07cC9eLmAaVuoviqhd2/LoDRkrLihAEDn8A+8EwdPX1HpfgMGkXfwJJseicLnmBRBbEK2QXHv+nnkWVzgibaMw8z7CXWbEuQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=L9zlmJ7RLkLWzUxes4B0Erhs6WA9RJyvBUelnTG6j9A=;
+ b=q5srtrfpizC0wp5e/572yfWqY7AmRVClP8DhxBIYa4oc8XLVKOYLEP51iysbi+CjA6N4Ts3N5Zx1EMs+fnFqxIUkzJCbBy/cpaZO3hlyYHRTptTqFb8xnCEp49gjSvz2ZPgXUyGMI9B52rJPlq5vVoxxl7LO6F40YEu8H+YDOv0E2UCXuxKjg35v5WNzJR+NWDJTPUwk065ZRe+eaWw7FhBCLIFKs0f9d3CKUE5mQe4WVfR3y6xspSXBNTbe0iTZ5ldCYRsUOtUzE7QZKchPOAbwOivMHsywqf6GNxDt44f76dWXomkUwXtkyaAmojqCml9xn30OEEIs09RlZPKAdg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=L9zlmJ7RLkLWzUxes4B0Erhs6WA9RJyvBUelnTG6j9A=;
+ b=d0JIEnv//8b0xoMRyECZKiZEZbm9nRTSLKy6iYeSoM3Z2vXcwPusMHvdTzghA2XWn3WTsDzjTjfiQ9vXSlyDQNK39AfXIYttf6esB3OA11mTMuIaBlj28PtwyQ7FP+cvrznpEwgHxbAZ0+2BzgxsC6K8myf0QS35WvMO9N36XfuMt/cTrywg4/sOQR2TXnjE9e89eTTsC0lwBPGJ3b23JJe1jCbcztTiFc+UkZxVmUA0PeIlT+6Jc4Fx0g20LLK94zZseHgLoA3L0C3aRKqSLFElBsaS6WP/M/7re7awgtvCbB7QoJtq1i56gI1px5erkeO4LnO0UdQ5oqczQC/4Cw==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AS4PR04MB9621.eurprd04.prod.outlook.com (2603:10a6:20b:4ff::22)
+ by DB8PR04MB7001.eurprd04.prod.outlook.com (2603:10a6:10:11f::19) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9137.14; Thu, 18 Sep
+ 2025 15:44:14 +0000
+Received: from AS4PR04MB9621.eurprd04.prod.outlook.com
+ ([fe80::a84d:82bf:a9ff:171e]) by AS4PR04MB9621.eurprd04.prod.outlook.com
+ ([fe80::a84d:82bf:a9ff:171e%4]) with mapi id 15.20.9137.012; Thu, 18 Sep 2025
+ 15:44:14 +0000
+Date: Thu, 18 Sep 2025 11:44:06 -0400
+From: Frank Li <Frank.li@nxp.com>
 To: Durai Manickam KR <durai.manickamkr@microchip.com>
-In-Reply-To: <20250918095429.232710-1-durai.manickamkr@microchip.com>
+Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, alexandre.belloni@bootlin.com,
+	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
+	balamanikandan.gunasundar@microchip.com,
+	nicolas.ferre@microchip.com
+Subject: Re: [PATCH 4/4] ARM: dts: microchip: add I3C controller
+Message-ID: <aMwoxsACdicpAFup@lizhi-Precision-Tower-5810>
 References: <20250918095429.232710-1-durai.manickamkr@microchip.com>
-Message-Id: <175820686358.1653800.8373809331040324947.robh@kernel.org>
-Subject: Re: [PATCH 0/4] Add microchip sama7d65 SoC I3C support
+ <20250918095429.232710-5-durai.manickamkr@microchip.com>
+Content-Disposition: inline
+In-Reply-To: <20250918095429.232710-5-durai.manickamkr@microchip.com>
+X-ClientProxiedBy: SJ2PR07CA0004.namprd07.prod.outlook.com
+ (2603:10b6:a03:505::10) To AS4PR04MB9621.eurprd04.prod.outlook.com
+ (2603:10a6:20b:4ff::22)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AS4PR04MB9621:EE_|DB8PR04MB7001:EE_
+X-MS-Office365-Filtering-Correlation-Id: 14a4543a-4e32-424b-1d6c-08ddf6ca383d
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|19092799006|366016|7416014|376014|52116014|38350700014|7053199007;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?7m3E31UTp0X8GdeCWeFcVBOQbvcsOoCOCoR8gaLR04YQub9TJbEnjDwjFLYX?=
+ =?us-ascii?Q?DcdacyqHrNNrcKypkCQxtagQC0kXTV7xKo19KZIJ5IaqFoD9hul+yVvf0GNn?=
+ =?us-ascii?Q?t2rWzWOjTPBXZMAN6OybHWftGtiTY390kQaVSYobdN4NjAXCetNJh0cX6LNF?=
+ =?us-ascii?Q?w8p48vEuAM+lZNnJQxw4/+GuMJ9hna7ZFd3juOSJYCPJ/OxEeALsD2p5i7m8?=
+ =?us-ascii?Q?ys9eV60AOn39UwL4PM9UdXnpkGYX6QYFntXqGzLB9A8JLqZJb3Fefct53jCO?=
+ =?us-ascii?Q?IV8mnUzb+0EUhF9Q8WWLkIP1dSPhIP1MDiOXqxB2L1viB3pqvMMtsnxOzl3L?=
+ =?us-ascii?Q?fbwoS97c9E+kKjbFcUUPQPbNcV+1O/3I9dI3/7A3A02qPvA0A+3WfgHi8Ph7?=
+ =?us-ascii?Q?UgLxPg2cV/vq1mGhYRS2of+0zaqNYUW7tTePyQWXcrBAizr+Alh1vn3ar5vb?=
+ =?us-ascii?Q?xoBjAClkMi+RTgsLwoxXJKB7l27QceAhSV6pU0NWsKT1subD6PlPebvqtzjm?=
+ =?us-ascii?Q?5yuZaMey4fzLU48QHWdx3KuOIW8X/Ao0AfsMnWziyTpujl2bfh+GHIFoNbZ2?=
+ =?us-ascii?Q?54LL/C6V+CPCVgGfMUmhVL67ta3lIYELQVDOWPNPZqfHDGE/GXqhOz1wQyEO?=
+ =?us-ascii?Q?zCP07y3IkVi/jXlHTggR8Zoh7snlzeWJwHJA7vRK70MEYIzXEySJMnrBqLJA?=
+ =?us-ascii?Q?OalAQIGAfgZXGXCCFq71zxPcML8njqrYzLF2CTbjY4ZgKEfmOC/pORzt3nQ0?=
+ =?us-ascii?Q?H22swBcP+FYYY2U6g//jldcurRURZ/bEHUAChl0tJh3YF7iX32VU1pjewrX4?=
+ =?us-ascii?Q?TUlLJch0TRbeCLDaAc0SyDMbXdhmyB/AiYmrvF5Bq1+n61Q5YbdflZzGjNYc?=
+ =?us-ascii?Q?+FHE8na1j0ELW/+xqZQwLzVTLtnduJLejLzMEecuEiJVcBCHlooQqWNUkfPB?=
+ =?us-ascii?Q?43EBShJHPyGutSMsTlqpV2RMwOzcOTs7ovhpb2odfvkz9ALk9l7ffqiyzT9b?=
+ =?us-ascii?Q?LNIKO96HvyJR7/KJtH+gcxijkLuPC2n91sgwUtJbh6H+H0HC7GHVOdDsH7O+?=
+ =?us-ascii?Q?dqTso9EmF108mO58ckWuWW1w+1z0IAvCEGxjKsGjRTRUNANPXdCWP3T+Go9i?=
+ =?us-ascii?Q?pbCyCQtzsiJAe8k/omAtmV4YKR5rrBbu/qcetE5w7Xzx+usbxfddM86XpI0h?=
+ =?us-ascii?Q?YGWdjyyjfM9hmdFEezp5sPhqMNOcXIn6DwHYjepWo3VCsR2ngpbV4MtARsxr?=
+ =?us-ascii?Q?QG01w9Gh70qOzhHW0nT8+qTNa7gtQSaL2x+dn38dKCMWa09JYWanc8r+tDU/?=
+ =?us-ascii?Q?+xa4GiBEY8Mrmnjyxvz5cnOO060TZJm5OU4osy5DtE3YKIfjeS3LrUjqbfSD?=
+ =?us-ascii?Q?cDr1ZZJlu9DsgeA5L3KbRv80jlXbYcCZJEhvRjH3FRtgVWnqxSZztExejlKV?=
+ =?us-ascii?Q?Vs3wT2dhREh8KLNKcnJNr8dl2wofY3cA2VFH1RhOIXqJ6E4RjFhByw=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS4PR04MB9621.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(19092799006)(366016)(7416014)(376014)(52116014)(38350700014)(7053199007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?9XFEmS09B+VtER35c+vFnJD9IrqUdux1CJe990HrCNzIBCud85vCEx1aECur?=
+ =?us-ascii?Q?n3ETUZdaduo15x+4aYxr9nHVSNfHJDS6xz3UFNVg6+aewZheEIESle+oSj65?=
+ =?us-ascii?Q?q/NgjdE2G1ML37BCpylaCOsRryceCuo4M9A1OIMyOjUukFntaKqE3iOb6DZ5?=
+ =?us-ascii?Q?5NUU4GxJkGTIeRL6MBidOv+8V0wSPLsiQ+uffGhj+lMXsOGjacSxvAsg89jp?=
+ =?us-ascii?Q?k2zIdOMBF6rANzAtmqd16NR/4y14/7XIDsH/EKKTTz/Vjj15KAmg8uFrl4sW?=
+ =?us-ascii?Q?Ho37cHQzMaHeY4SuMfS+umXjh4T4Ccytos5uTkYrQD/rwWFk8wAfNzUS4sdw?=
+ =?us-ascii?Q?UKBB5xXaxcQUNNJNQSw0ZG8+AsoFiSkhvrYDqOOcgTDQBioGrrbGPdozGVp7?=
+ =?us-ascii?Q?FDPNIZjwB4sL9CutB9MSNcHkOY37w8VMw5QAD2AfwTQ9Bf71n1+A4XqqmYyQ?=
+ =?us-ascii?Q?9lVNnNS8rsYhOxu8xtB/iP7OiWJe81siEeMPO+1g72f7I1jsp2t/3l8nZ2Km?=
+ =?us-ascii?Q?oVWN5vYqxgO+/O+QUrtfDB1YFatFOPAP5FysqkrDMinRc/Y39V4ceKTbm95I?=
+ =?us-ascii?Q?lXvFypQ3m9z3AmV7bV7inSw5bxszQ8AJ2ToCkjcSrvhK+9ESzeJW0iEmpdQD?=
+ =?us-ascii?Q?OCX+JQL+R6vnvhTH0N248FJKK+8JBQKE/eN6BqKeoHHzG4OlJSdCAN1KEMhp?=
+ =?us-ascii?Q?sYtzUaFiAtwZgXjs+0V/ZGOIF0Q3qJ/r1sUrbLMXcsvHlcQJdIqeMHiKwhBh?=
+ =?us-ascii?Q?Xguvi2X9BVrCU5RnXhIjPG7taNk0zqHtlwo0pSvfTroP0Woco8m6eQJ9K62o?=
+ =?us-ascii?Q?PXIz40ebR3TaaFY9DeycbyqHdA02UzWJZIOQ5eqwX+40R2E0ot3/9N02FWPq?=
+ =?us-ascii?Q?gUWcEJiHTs9Q93jv8+GLG/36l6JUQ909/LS3NS6te0UriANunhAfLECE9Egf?=
+ =?us-ascii?Q?dy4eOhO27n93kg0mHx+bQtM9W+eyvOYTC6ayuLwsy50lPn07utYfGSPQ2OL1?=
+ =?us-ascii?Q?eKeP3nfJ5fGzHb8vensbVyq7Au0nFNoW8GADIV2JkeGZbD48DffGmcwPoEOx?=
+ =?us-ascii?Q?7YxOJQ5EabINo1+aUraecYflVhkTI9pkgc2GJy8SNKW5Lq4iHPZ+wZK+eEBa?=
+ =?us-ascii?Q?KZfmMTiTTfuifWVRbilMaYbGDoDVfZy1W6KyrGfCwGr4On1HL81r3+aUHAPN?=
+ =?us-ascii?Q?r9/O1dgJBlmy1bR0sMwy1U/Wvd3VNGJXifgQ2S7Ac0SbtVVsrxQYwcOgYZWH?=
+ =?us-ascii?Q?r+f7nIuQiGbyvXUdCNt2wg22VHQU3FAvvqGecnzKPAjh2vGJj6rdHIlVUNXm?=
+ =?us-ascii?Q?rixwc6jsUu8GbkWgEhWaijcHtvSr+N/wr5k/Nzf+BQzqwntnyr+0aDf5oSFj?=
+ =?us-ascii?Q?kPTfGGO5fQ0oOlaeOhd0a7Oqb0LpgI3eIyEEL2SGPMKUdUbIRDBvUI8l1NxH?=
+ =?us-ascii?Q?8fkuvsAaXL1nf7uyiC0mm4h1uq2inPXj3ymJ46pF+9lEvizvL0cAapftRpi0?=
+ =?us-ascii?Q?2N6+oMj4q4Eeuk7PslKOdBLDeaNlg5ZCAq12Ne3J5oXh9+VQayBryAVHb8wi?=
+ =?us-ascii?Q?wmy066DiiMwO3/zFxqkygYLq7+goZJ+CdWmpSf8M?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 14a4543a-4e32-424b-1d6c-08ddf6ca383d
+X-MS-Exchange-CrossTenant-AuthSource: AS4PR04MB9621.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Sep 2025 15:44:14.6024
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: JOO7oBPOAR39Z+qJWQzg9YpqL+yoqTOaXp4D7VEqeiw9STetjpPeHvQQfCxDmnWMpciSlPDf7mUn4Rb4M4h8Vg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR04MB7001
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250918_084426_494141_51CAA53F 
+X-CRM114-Status: GOOD (  13.03  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,74 +160,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+On Thu, Sep 18, 2025 at 03:24:29PM +0530, Durai Manickam KR wrote:
+> Add I3C controller for sama7d65 SoC.
+>
+> Signed-off-by: Durai Manickam KR <durai.manickamkr@microchip.com>
+> ---
+>  arch/arm/boot/dts/microchip/sama7d65.dtsi | 12 ++++++++++++
+>  1 file changed, 12 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/microchip/sama7d65.dtsi b/arch/arm/boot/dts/microchip/sama7d65.dtsi
+> index c191acc2c89f..3a5da27f7d83 100644
+> --- a/arch/arm/boot/dts/microchip/sama7d65.dtsi
+> +++ b/arch/arm/boot/dts/microchip/sama7d65.dtsi
+> @@ -721,5 +721,17 @@ gic: interrupt-controller@e8c11000 {
+>  			#address-cells = <0>;
+>  			interrupt-controller;
+>  		};
+> +
+> +		i3c: i3c@e9000000 {
+> +			compatible = "mchp,sama7d65-i3c-hci";
 
-On Thu, 18 Sep 2025 15:24:25 +0530, Durai Manickam KR wrote:
-> Add support for microchip sama7d65 SoC I3C master only IP which is based on
-> mipi-i3c-hci from synopsys implementing version 1.0 specification. The platform
-> specific changes are integrated in the existing mipi-i3c-hci driver by introducing
-> a quirk and SoC specific config option.
-> 
-> I3C in master mode supports up to 12.5MHz, SDR mode data transfer in
-> mixed bus mode (I2C and I3C target devices on same i3c bus).
-> 
-> Testing done:
-> With this patch we are able to fully configure the lsm6dso I3C slave
-> device. Unlike I2C, I hope there is no linux utility to check the
-> various transactions supported in the host controller. These features
-> will be tested later probably with I3C analyser KIT.
-> 
-> Durai Manickam KR (4):
->   clk: at91: sama7d65: add peripheral clock for I3C
->   i3c: mipi-i3c-hci: add microchip sama7d65 SoC
->   ARM: configs: at91: sama7: add sama7d65 i3c-hci
->   ARM: dts: microchip: add I3C controller
-> 
->  arch/arm/boot/dts/microchip/sama7d65.dtsi     | 12 ++++++
->  arch/arm/configs/sama7_defconfig              |  2 +
->  drivers/clk/at91/sama7d65.c                   |  5 ++-
->  drivers/i3c/master/mipi-i3c-hci/Makefile      |  3 +-
->  drivers/i3c/master/mipi-i3c-hci/core.c        | 28 ++++++++++++
->  drivers/i3c/master/mipi-i3c-hci/hci.h         | 12 ++++++
->  .../i3c/master/mipi-i3c-hci/hci_quirks_mchp.c | 43 +++++++++++++++++++
->  7 files changed, 102 insertions(+), 3 deletions(-)
->  create mode 100644 drivers/i3c/master/mipi-i3c-hci/hci_quirks_mchp.c
-> 
+Need update binding doc for "mchp,sama7d65-i3c-hci"
+
+Frank
+
+> +			reg = <0xe9000000 0x300>;
+> +			interrupts = <GIC_SPI 105 IRQ_TYPE_LEVEL_HIGH>;
+> +			clocks = <&pmc PMC_TYPE_PERIPHERAL 105>, <&pmc PMC_TYPE_GCK 105>;
+> +			clock-names = "pclk", "gclk";
+> +			assigned-clocks = <&pmc PMC_TYPE_GCK 105>;
+> +			assigned-clock-parents = <&pmc PMC_TYPE_CORE PMC_ETHPLL>;
+> +			assigned-clock-rates = <125000000>;
+> +			status = "disabled";
+> +		};
+>  	};
+>  };
 > --
 > 2.34.1
-> 
-> 
-> 
-
-
-My bot found new DTB warnings on the .dts files added or changed in this
-series.
-
-Some warnings may be from an existing SoC .dtsi. Or perhaps the warnings
-are fixed by another series. Ultimately, it is up to the platform
-maintainer whether these warnings are acceptable or not. No need to reply
-unless the platform maintainer has comments.
-
-If you already ran DT checks and didn't see these error(s), then
-make sure dt-schema is up to date:
-
-  pip3 install dtschema --upgrade
-
-
-This patch series was applied (using b4) to base:
- Base: attempting to guess base-commit...
- Base: tags/v6.17-rc1-3-g0b9dcd02ea93 (exact match)
-
-If this is not the correct base, please add 'base-commit' tag
-(or use b4 which does this automatically)
-
-New warnings running 'make CHECK_DTBS=y for arch/arm/boot/dts/microchip/' for 20250918095429.232710-1-durai.manickamkr@microchip.com:
-
-arch/arm/boot/dts/microchip/at91-sama7d65_curiosity.dtb: /soc/i3c@e9000000: failed to match any schema with compatible: ['mchp,sama7d65-i3c-hci']
-
-
-
-
-
+>
 
 -- 
 linux-i3c mailing list
