@@ -4,53 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6CDE3CAC59F
-	for <linux-i3c@archiver.kernel.org>; Thu, 18 Sep 2025 00:07:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEBF2CAC59A
+	for <linux-i3c@archiver.kernel.org>; Thu, 18 Sep 2025 00:10:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jfKeemYYZbS2z9ag3mWJ3Ufpr36+CpzjOEst+jHtPPo=; b=R5G6dISvQpt0SF
-	BqyBy1gtX8GF4cArIE+BKE4h5yfBTZAuH0Q0xg4rQ4pgQ65RU4/KZQzO3MlhUYqjW/lQnPAXmwHfX
-	7ChEX7PuNuKK70M46jGTzEc7PRjBoq7DBqapPpxQFCUHmj36JlAhC9cXixxtdn3w+qvYF87YkhAWT
-	8nlxWU+qgjMBNXz+slH7w68ZBsbL5bNXc5nPXMUIv43zZAVG+1RAO3nVi3hGUhLfZVS4VSl/wYESJ
-	o5SxG2oKi6ucOYtbnGYmPYSkrWgIZa6tLi0EqZNyqu9rqms20WPz/g6qkhiqb+gLP1NJA9/zHDIuw
-	fExj6oHu9YaT/ZP6Gtvw==;
+	List-Owner; bh=XD6LJu3I4YlGGhDiYqQZ2Ya2cfjaPUh0/txf9KfLKJY=; b=TcKdHJbcrY5ogG
+	GpuuzSBNsHJ6NcFbAaFbE/U0VvpfEWDeV8bDqmrey8XwYh12o1G7oygNgQydhIdkteQkFcmxc1R7Z
+	e72cr5w4Qydk/WB+5zaiDyRVFekBuu+AgD/4IOKuQnVPGG0Q0xgnw4hrlV/gussR7CboE3z9AZGJZ
+	pVgfqmBad7Rm0WwwUi+fBSLPa/ttg4Wz6cz22AuoN27nMUvRKt65SOjMtdlzolDsMFxv23Qj7B9Fb
+	nbzcdkxhci1wcKjo36pS2HWhPuHIdBmgcJqBYU/KQMSV/npNs3PCSuBDnht8C6LhhGeR4vqQ78em3
+	GWh0qC0mZz0hJgEomEqg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uz2B5-0000000Fi2L-0HuX;
-	Thu, 18 Sep 2025 00:07:11 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1uz2Dv-0000000Fiio-2CBl;
+	Thu, 18 Sep 2025 00:10:07 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uz2B2-0000000Fi0Q-0Fri
+	id 1uz2Du-0000000Fiig-1den
 	for linux-i3c@lists.infradead.org;
-	Thu, 18 Sep 2025 00:07:09 +0000
+	Thu, 18 Sep 2025 00:10:06 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6E19E43EE9;
-	Thu, 18 Sep 2025 00:07:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 744E8C4CEE7;
-	Thu, 18 Sep 2025 00:07:06 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 93A3460008;
+	Thu, 18 Sep 2025 00:10:05 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 74D0FC4CEFA;
+	Thu, 18 Sep 2025 00:10:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1758154027;
-	bh=n/OFHT+PW/jgSkzBQi+OmOlzt3yDQfqxVyCtI2Lqn1c=;
+	s=k20201202; t=1758154205;
+	bh=tu+1LZs/Q0yeJUBK12tOkiDeCOyXpd87XN3FYPFKpM0=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=FvQHZCLKEBgKDP0AZ1m8ArHxdTZe4B2hdgPvaZ86NEFPv2Ycv5M20e61Vw9afqyzr
-	 FKBeWm+XnKQeJlOTpFMMKJ7OY1ZjnemKhQm1KNRwlcDjVieHRa1dB35Zu/VLpmDa18
-	 Y+obptwdNYlxovf2NpuOXhHkxEMTec5AxqfAUYsEWYLSFoOqD4+xqJbJ+vDSSbyMWb
-	 4kkG67i7JnX9fFSkNGHa2rDodyNRxKQFThhrXaETlUDBaPkQGfdlVX1zXKs796UfB6
-	 svStZhCAzFKms9vZwKS3r4AXbvfNj5Te9IXaoHfkiWUgbiUbfTEQBva8iLz8tPpbsm
-	 zuzta+sNKDbUQ==
-Message-ID: <1ccf1d42-77dd-4579-b52a-f47ba8284c36@kernel.org>
-Date: Thu, 18 Sep 2025 09:07:05 +0900
+	b=VhlxOjjN0wT4ZK+reI3Zni9MiTVBR6KosjAvkG6FS/9ihpzvgL1rNyodCfNoLYXtZ
+	 yJVDJEOwys2Zl84Hm4/4ikfFVH0wBqNppP5lNAOokJm8kJiuyhpX9rrX/SAgO0y/5f
+	 eqcVR/M8XcccGPFHfz+ragZxnuRldT6CYEEEAO+lY1dH2LNfbZpg+W/WHmxHVv//rt
+	 e8+LvTzgWAL/hB2vXTsO/3yV5F/NuCmdTVZr+XlBiWsYl8gOUqLbO5ekIuqTyvQVZD
+	 kmRkqOiwXStKCBX0Q6IWdsCXZtN/Vt0CJdyiIhkiumfpzWrT1Mif15JrffN6liQT2w
+	 HZWrWGpGFX+Ig==
+Message-ID: <bdfaa495-2cfd-4453-ada9-109d184a47ed@kernel.org>
+Date: Thu, 18 Sep 2025 09:10:03 +0900
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/2] dt-bindings: i3c: Add i3c-hub support.
+Subject: Re: [PATCH v2 2/2] i3c: Add driver for i3c-hub device
 To: Steven Niu <steven.niu.uj@renesas.com>, alexandre.belloni@bootlin.com
 Cc: zbigniew.lukwinski@linux.intel.com, linux-i3c@lists.infradead.org
 References: <20240217131412.4145506-1-steven.niu.uj@renesas.com>
  <20250917142055.2806576-1-steven.niu.uj@renesas.com>
+ <20250917142055.2806576-2-steven.niu.uj@renesas.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -96,11 +97,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20250917142055.2806576-1-steven.niu.uj@renesas.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250917_170708_150833_F2C9EE7E 
-X-CRM114-Status: UNSURE (   9.86  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <20250917142055.2806576-2-steven.niu.uj@renesas.com>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,43 +115,30 @@ Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 On 17/09/2025 23:20, Steven Niu wrote:
-> Add device tree binding documentation for the i3c hub devices which follows
-> the Intel I3C hub specification.
-> 
-> Signed-off-by: Steven Niu <steven.niu.uj@renesas.com>
-> 
-> ---
-> Changes for V2:
-> - Group the device device characteristics into groups:
->   - control-port
->   - target-group-x
->   - target-port-x
+> +
+> +static struct device_node *i3c_hub_get_dt_hub_node(struct i3c_hub *hub)
+> +{
+> +	struct device_node *node = hub->i3cdev->dev.parent->of_node;
+> +	struct device_node *matched_node = NULL;
+> +	int max_ids_matched;
+> +	struct device_node *hub_node, *from;
+> +	int node_ids_matched;
+> +	u8 dcr;
+> +	u32 id_csel, id_cp1, id_tpx;
+> +	int ret;
+> +
+> +	max_ids_matched = 0;
+> +
+> +	hub_node = NULL;
+> +	from = node;
+> +	while (1) {
+> +		hub_node = of_find_node_by_name(from, "hub");
 
-I don't see you implementing the feedback.
 
-NAK.
+Which part of previous NAK was not clear?
 
-Also, never tested.
-
-<form letter>
-Please use scripts/get_maintainers.pl to get a list of necessary people
-and lists to CC. It might happen, that command when run on an older
-kernel, gives you outdated entries. Therefore please be sure you base
-your patches on recent Linux kernel.
-
-Tools like b4 or scripts/get_maintainer.pl provide you proper list of
-people, so fix your workflow. Tools might also fail if you work on some
-ancient tree (don't, instead use mainline) or work on fork of kernel
-(don't, instead use mainline). Just use b4 and everything should be
-fine, although remember about `b4 prep --auto-to-cc` if you added new
-patches to the patchset.
-
-You missed at least devicetree list (maybe more), so this won't be
-tested by automated tooling. Performing review on untested code might be
-a waste of time.
-
-Please kindly resend and include all necessary To/Cc entries.
-</form letter>
+You ignored also review on patch #1, so now I question myself whether we
+should even bother looking here.
 
 
 Best regards,
