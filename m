@@ -4,144 +4,144 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75417CAC592
-	for <linux-i3c@archiver.kernel.org>; Mon, 22 Sep 2025 11:43:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 072A4CAC5A7
+	for <linux-i3c@archiver.kernel.org>; Mon, 22 Sep 2025 11:47:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=liajIfdaSfPud8J7TanE2fq3xDHhCHK1VQLOZrMw75Y=; b=Xj/Tb0dU3r1R+f
-	n4SEFbW13Sx5MzxrXh+lio6z6AHyVpG9r2Gdl74tgZX8FInYEi5iwiwEtaQebMepq/OwqDaH3ntCA
-	PwMH8UHTxrTl+Vj+5eMS3BD1v96mbU268PSTngJMBfiPiVvgMy91u8nqWjZQwhSLq+3kmKRvTMffy
-	5AAX7/oUm0uT60BnVCPrVZWDqNxwzD3DHAf/Q8iraBXioTFKPWQGROInwpH0fK3TyJx4FX/Xb/Pf/
-	kssa71/KOE4Y1ZFrfHavJUmzt9ramQPx22IRM1KZobvBBsefcBoJcBb8pcvDYDbqtt1pCuvhUSqkn
-	WkRizrxGhYdVSls7Zuyw==;
+	List-Owner; bh=fjA9SW7WNcHorVoXqnj7cexlF/veA76EbZ6gI0yJro8=; b=O0u0iia+oxb1Oo
+	6FIvLRM7x/bTBTUhEmL67ktg3qPLQ+UYGRQHNtx4/B7OeK/THiQRoODn4UTFBKmmnQTmgvsoDTWe7
+	fFn+zmdpjFXEmPIiOMgOHaAyr1Caq2vvvc3rGiwXvawmuRbIxLDeR8I4VnOOG7ZDpiuV4jFli1/0p
+	N+bI6gp8XGssH9pYwkFA1d/AAGPGlmIVGE9jXVpKiZwRrFnm+wRgg0nKNGijlfOpVEEJ6q2Ys/OiA
+	PIErbEk6BMCKDhV0xwxkTZjogyEnxQ1ZrPqlXuz/GbVGfUgPs87gCPQO+2VAN9voYiJMNIdq6tA6y
+	E7TlbmNxpSAMw58zum8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v0exR-0000000AFWA-0sQV;
-	Mon, 22 Sep 2025 11:43:49 +0000
-Received: from mail-westcentralusazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c112::7] helo=CY3PR05CU001.outbound.protection.outlook.com)
+	id 1v0f0j-0000000AFj9-3Jdt;
+	Mon, 22 Sep 2025 11:47:13 +0000
+Received: from mail-eastusazlp170120007.outbound.protection.outlook.com ([2a01:111:f403:c101::7] helo=BL0PR03CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v0exO-0000000AFVT-0yVn
+	id 1v0f0h-0000000AFin-1ynl
 	for linux-i3c@lists.infradead.org;
-	Mon, 22 Sep 2025 11:43:47 +0000
+	Mon, 22 Sep 2025 11:47:12 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=UTPH4Za4zKjisrRNgI4ooa3XOh0eHkyrAulx5bdFZKZmNMpsAvv8mVRl3r08uXWSACEBXQO9IkDkAjLIig/BocEl19fbJOZaz09+k0Z19VWfwYYZJQKA8CCaoPyHsk6uBA+MP+o3Mdv3rRuDu7ff2sG96rvfyfd1SohOpvnyKn5qdencpyqeCCY6xk1nsqI9ykoLy9uYkGl67vsbkHLjzDIcTmBVJcRISvH8LZqJjVvtzm2NFecODGKX1FVJHdKXnBdrXEKpM3pOz+m5z2tl4J168vSrE+EHzHUdZnZ8/fF4WgiXX0MN7gJ/7/WffTkUv1sLql0vPHTC0jL63mokyQ==
+ b=Sic+YGIYGc5D1zX2kRS57672qkGvSkxf5xg6jQJEEzTE64sIE0V7X0Xw/0vekOhCj67KDpLo3vr00kyZSd5KhvxX2kCxMoWnd6Ykb/IoJ3efuyfFCq7rKBs2c0Zd+KGicZ4722m4T79aHKigssg36vC5TiPzKEXH3w2M/LKy0MBcTCRmDesbsIMKB/DR86lvgqJfCH9Gby+/9id7mlmo4JRd/uI6IaGp3ToEL0WL5me56RmEpbBDTQBgK1qK53+Mh13MMx5EUqwIX8qEmbFySgurQHqtTNneAoSsGVrePDKJO7QC+vtEwaI+WNpYEVHUD3zZokhEyiJgj+L8V24EiQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=ycN+pvsDHQT/+1tZ1Vhpt+CNhIaqpnxXbCLicU5qQp0=;
- b=tlxeVoQ2gHCO3K8s7EAiKZWTphkddh6Sl61AnXBrX9IbQ3ogfPa0bK9HWkTPlxLr5cVpRK3yqJYrx/+zmzPgCQbSwRHpqt70Hti89BGrBMBGW3BjMBEgHCwLKMROEe1R/nNI7lgTq3uHa/KcZkiPs581BivfY5mhX7LvmkyP5fzZD0Kw/7uliuLbjSAfrQeVsossK7FGrszT1eelS3v/Xf6YkbVI7rW53iEkiiTHYf02xoEirXVQ+tjiuAhxdkDd8O3fa+sWQlqH/KTQHuWhQFRbtRDeRh4znHp/JfLbpBgQZDnKkbzmG5loekf27g10vhXrS58IU4zzLiCagafUrg==
+ bh=E2P+KwauFmeZfJ+OOUcd0ayDFtvnF2Bm24h5PB/z1CI=;
+ b=cY3rYSYSOnl7lACBKLAcIQAlp8IfM9W8nGoWkaVgzFoKgZuJw9DwjG/tGaQiuIR0h/pt1PZHke1qB3Pan/vY3CP+k/iA0nbLXvMSQBGdt/eeKl9H8A10CUTbzCWG8Y/a+Rq5M3ZJBD5xUslGEEw0mP6QUuvcxXHsqlh7BDFVdYZVhBt7dCiDaAaBWXSj63T8FBdZ5+lSoSF1Hnl60MjQfAhdJb468/9KIwLlZcy6wACE/l2pHrokqkmx5RtY9nqR/ars6a33DOK3qObRP1UN48tc0b3pq7MF1S4atFqcw9Ss3f3XuGJ0JDG3DuEl5toO2JTbzMliwVAvAtn/Yhejyg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=axiado.com; dmarc=pass action=none header.from=axiado.com;
  dkim=pass header.d=axiado.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axiado.com;
  s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ycN+pvsDHQT/+1tZ1Vhpt+CNhIaqpnxXbCLicU5qQp0=;
- b=mVsV7PbyewCAYkLcmxicsqRo9o8fXLTUDnzSzbzStqAuwpR+eq32wJspHXe3UijrEYORNS+hpGSTJllfH5wgfxg0NjGvWi/GL6z7DZG/VOXQ1eIIpul0fBqVFhhOVphE4FhSZAufgtpE2x8xbOh6JHLgxOTsL+DmoPtwiJ6DchDA3iSgd8RlkMDxEhrM5W/M8t5qd5oEdLO4oELpoqJiNSjZnuMxMyLy+BqrMDP+v2qr8l3PGNjmhQfraMs0GKqGPrNVGAdsLN1awCvkrTS4mF4fAzqlAcpqaQffIq9XQHS19MboqTK73Zend2/V8i0yo84xz4T8cZcVW7l5NdXIrA==
+ bh=E2P+KwauFmeZfJ+OOUcd0ayDFtvnF2Bm24h5PB/z1CI=;
+ b=MuQ9l9j+0wTY8Zmar2BUfh8Es1prnyBdqTzqaVuRdHdVQSSepArXCyuEbGviene5vXwWIOWz4oLf4MSQa8DvYNr3Ai3Jew7pAHzXiEBsfpfBKE7AtooqLKkNCjiifKc7tU2JBdLW453sY5lUu3RIB6WaY8nL0a0P9Y/Uxmhv0GaUZuyE0GgB3ne7RZOTRipJDyiWM2JNMCzFNnzrBtLlXnzrxw3FPFp88XnUH1YQCUn0q7V7sNup6SA7b0QsHgFAuT8mgodPHJx/+qRgcA/K8l6ozwgCBqucaVwWBXuLnrg60TutrnvWZaA+6E2Mky6bGutCLHCy576ZhY65LJDsNw==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=axiado.com;
 Received: from DS4PPF71D32B30E.namprd18.prod.outlook.com
  (2603:10b6:f:fc00::aa2) by LV3PR18MB5567.namprd18.prod.outlook.com
  (2603:10b6:408:1a2::12) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9137.19; Mon, 22 Sep
- 2025 11:43:41 +0000
+ 2025 11:47:02 +0000
 Received: from DS4PPF71D32B30E.namprd18.prod.outlook.com
  ([fe80::7c46:661:da37:dc33]) by DS4PPF71D32B30E.namprd18.prod.outlook.com
  ([fe80::7c46:661:da37:dc33%7]) with mapi id 15.20.9115.020; Mon, 22 Sep 2025
- 11:43:41 +0000
-Date: Mon, 22 Sep 2025 13:43:36 +0200
+ 11:47:02 +0000
+Date: Mon, 22 Sep 2025 13:46:58 +0200
 From: Boris Staletic <bstaletic@axiado.com>
 To: Frank Li <Frank.li@nxp.com>
 Cc: "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>
 Subject: Re: i3c: scanning for i2c client devices on the network
-Message-ID: <aNE2aAxJzo2edoRm@axiado.com>
+Message-ID: <aNE3MkhlABIHQ-J7@axiado.com>
 References: <DS4PPF71D32B30E58BEEB807E76DA5FF106DC0EA@DS4PPF71D32B30E.namprd18.prod.outlook.com>
  <aMmZnG/sbErB4Ly4@lizhi-Precision-Tower-5810>
  <aMwT9S92IpIOT_Gq@axiado.com>
 Content-Disposition: inline
 In-Reply-To: <aMwT9S92IpIOT_Gq@axiado.com>
-X-ClientProxiedBy: FR3P281CA0148.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:95::7) To DS4PPF71D32B30E.namprd18.prod.outlook.com
+X-ClientProxiedBy: FR4P281CA0388.DEUP281.PROD.OUTLOOK.COM
+ (2603:10a6:d10:f7::17) To DS4PPF71D32B30E.namprd18.prod.outlook.com
  (2603:10b6:f:fc00::aa2)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: DS4PPF71D32B30E:EE_|LV3PR18MB5567:EE_
-X-MS-Office365-Filtering-Correlation-Id: 51da2eed-0849-41a1-7541-08ddf9cd46ba
+X-MS-Office365-Filtering-Correlation-Id: cd179ee1-5a12-4c89-d39b-08ddf9cdbee6
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?FkRzF6thHiIsNxZO2ndoYGPXtJYkyecmYiCXmaakg4YLgdxJ9GYCXgfNfvX6?=
- =?us-ascii?Q?BabXAZTNEqmrLZc7anGCdNGo3HpY1ZBcpsQVgOUb7Cx/rxLii3q285n0ac9M?=
- =?us-ascii?Q?v0QZUGo/awBCUJoYeste4yfDl0sxapCPNXzvJmQPcPCUTdhYTWJ3u1tKREUR?=
- =?us-ascii?Q?4MumVu+BBHdWzy1RbW7fUhvC93/1DqD7g+SAlBVluaThba0oPLXWj6PuqiBd?=
- =?us-ascii?Q?EwyWTnC4Uvxf40lsLFHSo2Rs6FIqAu/5gmfqJ8DwNJCGVevNP6GFg/nZhhC6?=
- =?us-ascii?Q?kbghtseaPad4e3J29lrngiE3WCdrIgFUT3wOO3VnciiD2+qfFDXL22PhfoBP?=
- =?us-ascii?Q?0BNJh1N4w/Vayg8f2V5bQwe/xT7Xv6QvZSI/+rv546GAP3DagOnj5hQ/RyfI?=
- =?us-ascii?Q?YD3+a87RdzD5YLOPtYoIfOrUYlejYM9+KfP6FTpRaiA81WbFAVIdGdZ2uGNI?=
- =?us-ascii?Q?02usQmivsm33eIS3/SVu2UeB9KN4waXOg6Cx7jbhWElcD5jErg5Xr1UwdNl4?=
- =?us-ascii?Q?WXxDM54nVNc6W+TZL4WHhYTt1PB1G8oPVZTIqQA8P/uMEqIbmBJ5ebtZzfMV?=
- =?us-ascii?Q?jjbM0hc8ilsdElZZnpdpRaTvDikQ9QNS9myADgtXbW0st091ktNmNgdgPkCO?=
- =?us-ascii?Q?sXYPFG2l68vTDOC5PZ/ku5EU3wVP7g1TYfQXU02sLfoqutZ4Btdc56/ogq+M?=
- =?us-ascii?Q?qlXWaXmLxba7j/+LyWHoB5uttDCx+ANF6CAx1fLxnSgFqDON/SCyVi9BsO6s?=
- =?us-ascii?Q?sDewdNk1gFUABFFFpdqAgpYYxWyRKuPbVsTZkkdbjwPGKVzwh2wC9Pk+l2rx?=
- =?us-ascii?Q?2JjCpjMyyG0Z/eUwW6QWsXS6yKrQeex1YxiBv/1Z4MPbduInhDdpAtp0gahA?=
- =?us-ascii?Q?WFaSTL3iVXXbSpXmYve+PLTxB4/jm/IEM/TBVJyzyQlISHKq+Ctz6s5bncx7?=
- =?us-ascii?Q?IKHvTh7UC/4hn8vKBbHUSlmFdsdMSBO7dfapZ/4/8//uOvxiCeh2OFnMkqYZ?=
- =?us-ascii?Q?lzgPlVyr/7eBZxhCWTTH+GjTXwoOA3+WVwT9vLk1TAtWl+4dTdMNPZBa+Sro?=
- =?us-ascii?Q?BEnUNt1gwUJ1RyfS1XLI+SQiTNoPuj5cBiS8Loh3TbfD0gkIkvrPELStufUa?=
- =?us-ascii?Q?fwweQucD8ZUXwFEsic8YKQOYheUBN2flmJZWagm+Fgztbb/EiVBECjQF6v9J?=
- =?us-ascii?Q?JdmfrExlwrIa9K1OLkDAyStxWokJHdmdVB1YdzvaXDtMS3CgI5vzDYuMGLZW?=
- =?us-ascii?Q?TlZ6klpJhOjtFTDi9eidkCTRD5+D8Con0ur0iZN2Y+NzatEELn+10xvPiRZM?=
- =?us-ascii?Q?S0x4uS1AqQEVMEQY6vkJL/sZIeeR2WYae+d5REphIE3It+Zk0POhJgnPrak+?=
- =?us-ascii?Q?TcLCoiWAqIYPMOWnecYU/RPyaBQMax71kpvgpQsuzEW1oUY/BiU4vvrp/I0c?=
- =?us-ascii?Q?6nCRpGdi7fk=3D?=
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?ENGNd/hwJxoh0woDstdNoOjlC+bX8iBiieREV+GubYn3+ljdJ8YdE0V9Y88l?=
+ =?us-ascii?Q?1YOiYff0eo5IuquL4WrQGpZhTkKpqmR39KnI+xC27XcbRC+/AQLwdNAldpnj?=
+ =?us-ascii?Q?e2j89Fla+40Gn6Gn6bmKYryjOH80KhgQt23h+RLfgJ5do4888FWkRVY7iXOs?=
+ =?us-ascii?Q?4kmczMsQIonFhctvk7Mu24h6BSm3z6rcowCRyu6R5e61TxDR8Q9vZslmgnNF?=
+ =?us-ascii?Q?Yo25VdZ7GqGDKP/ro6Qx1bB2p/ur5g214vae6WcpbqvNY1yJUxypDQYKtJRz?=
+ =?us-ascii?Q?dlTuZOyGkiH3oDi9RdU3mym2Pbn49P8jeNYopP9J785r9IxvvqRtEO/AMffQ?=
+ =?us-ascii?Q?UqwoxksOsPbwZNV6VWaGIqujQpGfy2pXopFHuyAEA4U+w8RsTJBXxd8Gv173?=
+ =?us-ascii?Q?nyUb9jJ6d9mGv85NS1mHJUSd7OoQmdhe+gKbhjTGSveev/MvofaYqaIZqvuE?=
+ =?us-ascii?Q?o/XayTiB4AidBnMAXpaYe/XQW4A2ijr4YGICUSNx8FYePWtWTc3MSztQ0+4+?=
+ =?us-ascii?Q?tDO1aW4mGL3WMTbVTguTE7fxujQmKUFqvWAKLWKg/d1Mb6y7MwzyVMiPZ0w9?=
+ =?us-ascii?Q?YMBCnuu07GnJo7j+a8jCJ/3f0Yn5q/G+STA7UoLsFPLNaG8kXcuR1WgvNv/2?=
+ =?us-ascii?Q?S3RGO9tZmc/shwPJ0HvlJFLQStXUxfLaE7lkQhQ8RTVvwwk4hjwgJgeylYNU?=
+ =?us-ascii?Q?e/9biDZe5l0ACWSCX0Ttizza5CUm7b3sU7+jFqVq5pv0pvUMaRETant7QrV5?=
+ =?us-ascii?Q?EytbLGkEQ3JBWQ602eerZrMZuUNET6mzk0jT3Q7aNSM6cJ+SDEWy4jOvS3aP?=
+ =?us-ascii?Q?O0F5qMKNICrzh1iVSvykVzgF8+8c6KZ4K0N9/vjtvVtKlW+3JS+nSFKTyxeJ?=
+ =?us-ascii?Q?/Mc2JyjmuAjr8nou93d7HtFM5UGTKJgCdG+cgx6heF+jmL7IWeBzSHZKCriM?=
+ =?us-ascii?Q?TSir2DOv93B4koetaqtAL2A6IT2l5YoawSrQ58qzOWivpiziFXpZQNKqLHmd?=
+ =?us-ascii?Q?JmxIQvjdbOueJZvWVJCzihyb3wx5U6hnlfO9aEw2MlrNxLnwS4pld1KUpVp0?=
+ =?us-ascii?Q?Jw0pafaQkFRY0jst/BJB2W7cyY/FqzGeiXLAOz8RVSA2g917OmgJNx1PLcWV?=
+ =?us-ascii?Q?zrjx6tMB45zc99iwqTaInEoVwdvnw0WIfzENCEO4jAQaF1RQ1gvI2AIH36St?=
+ =?us-ascii?Q?ZdcTUIFu0DzvGxE8TcDqeHeXPOJQ5HSm2W2rwvQ0nR6DFqbuFcIXqnlGXYko?=
+ =?us-ascii?Q?pqdZ7YdeJEKv7xLFaplHAzGQ/zMQU4/ig6sFthR9gslTqmbAWxiLpg8PiyaV?=
+ =?us-ascii?Q?B/S6DB4cN89R3lneeE6gJKVkn+SLc5Y7vwUe9O0gv6rVI3sLOnBYxbjOicoP?=
+ =?us-ascii?Q?m0sflt9+wSd8m1xP3u7CVWYMosLiXe+mV2ZVx0Swrmulu1be46yhtWSOZrJm?=
+ =?us-ascii?Q?9RIId/hcQBo=3D?=
 X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DS4PPF71D32B30E.namprd18.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014);DIR:OUT;SFP:1102;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?zLwWZIlyT/sGg/ZgMJAyOQX6hs5bLj8sNchTyIP+i2r51blmQJVT/gd57U8m?=
- =?us-ascii?Q?vxWHe7LekOoSysHWoOQJqnbMwGtHrY99o0IVihQUoguBr2vWsAgjrVaMK3s4?=
- =?us-ascii?Q?m+Klfw4yNa0ZATt5l7qOoJhf9CpZ8+dkSLdjn7kgVDD9eG03wEI9GVU5xtT2?=
- =?us-ascii?Q?gxKTXBiO5wgWMnr3+keSs4vds0f+w60oGdxBi9eva0+sDCawhfAmhGUrDayw?=
- =?us-ascii?Q?Ae6QFaG1OBUYGgL/XJ+EujVhxPBCbN4Ej2KvLnboXxZzc5u4TsNbB/OChpBn?=
- =?us-ascii?Q?Z/Rz0D/fTEkXl8ztMHPI3E3kBBkiXAwh2o6E5AQsXEA0nexX4MxBzdyvXd0A?=
- =?us-ascii?Q?jFhlrlVibCCdMpV/rpzcJrCECEDBT9ygzxdonqvL4aeoHOEA/xW9VO1EncUg?=
- =?us-ascii?Q?tw3b/v8MHKTvX/zd2w0WuEwSTaM41y/lqu7SpaS/yiDgstChp0kLwCX2T+13?=
- =?us-ascii?Q?pgvxCeIHwiwIWCivYANw6ricNIAV1lzyOTGrof6sKIHLtyX7jxpSfEuym10/?=
- =?us-ascii?Q?37DKOPn39/5KoCYjv0qMBVWDHuLQmMpXVnf8MPxa9i5j9bvVym1wo2ldr7TV?=
- =?us-ascii?Q?6Z8gxVmipZmmc1DGJUgcq/WsWmz0O1C5R2EW3F8+LqdrFQehJhV03/mJ9BMf?=
- =?us-ascii?Q?ta9Jf4IEkkD/Min6J+tDL8/oAatXy6C4ywIbECWCJlGq0Vufi+Y0dxANcRX0?=
- =?us-ascii?Q?+XMuE3xGt/GlSWj9dySSTQx5p1IK1GTnhnFCkBF68NcV4GiHomEJZ6+85WVf?=
- =?us-ascii?Q?E8jiMHznhMidvorLYzz/YX5EQ/iqUn2mD2pqCX5ouIvD9XizcB+IY1WIb/ey?=
- =?us-ascii?Q?qftyWJLnIQgLLDqmfHqh9+fiddc5nR2O3B9bcUlCjLgCeT7nXSdB1rKkZy1h?=
- =?us-ascii?Q?Zfn07uujb2wvrvvlTvSE1tK3GNJQtGlPxrlnIZwpjIYk2n+K+wUZ7EEj2Me0?=
- =?us-ascii?Q?kvAzHyBnBkIPPhXgc3Air4JslTKz7G2ZteGEb4U48vMw8mXK64lEDd/PwVOT?=
- =?us-ascii?Q?o+hXFoCkdC8RtzKXQRzUsefbxebQSmhQhVqMVycPE5YOSSG+6ntfzzKN+sF5?=
- =?us-ascii?Q?ImfeORZdn38Cbc/Ar0e9Bp1BBGJKQC096Ar+SpFzjuLvjY/T8AbL6PTI5bvx?=
- =?us-ascii?Q?MReBoTynVShXAIhHD6yyShKIb74xdz/dbZk4NhLYB2XUe7LfhGVunL/fa1hv?=
- =?us-ascii?Q?vfj3ytjkLWwNCe0QBpQOgtKkXPQPTYDy/Dtb/AdUY8kJOq9ARAbT+ipBukFN?=
- =?us-ascii?Q?gfZv59dw5t+X8Pr2Cu0luntP5XeB7aTQxYxlpNZNfl0zqHKGXgj7jVykAzZW?=
- =?us-ascii?Q?encHlo6rH7tOl1mwXf56MXXh/hzUImVnhQc+fdo1IDF/5fst5akXquU7GpC1?=
- =?us-ascii?Q?ZCNNb4ezyEqwITwb84pyr6t4nCWD7Yrc7zsAJSl8zq6W0aQS5eNC3gusvTv8?=
- =?us-ascii?Q?eApL14jn+YHB50Jf6z4DiYLKN+YCGMN4LviaYs4tKp/RzMNJOMn9dEJFiZay?=
- =?us-ascii?Q?l3aDSctvC65CKkMt7qAn25J/lpUWN6wL7taiDeHatoq73bDA/V9uuoniiD0Z?=
- =?us-ascii?Q?TVAMMmHCpBoNCEa+HnkqMio23qpSVfH2/0AoPLmT?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?3GXIjh8nHik2ukel0RfQ0o/5OQ4LUiVcy40GGI9jLDB5KobjNKrIyCpKgG0E?=
+ =?us-ascii?Q?P+0Fc4QrFRxtKrB/DVyKRvjyYoc9SFQ8v7uKRefpE5vPVcbOObEOBpVa+bdR?=
+ =?us-ascii?Q?sfpciAKIjkYFWNv5uNniVRId46OVKV8AQ8eploBbyw8RlO8DH5GYhVun1pul?=
+ =?us-ascii?Q?btQ8+oUBcit7OM1TemNWhxoduohH3i6W0VHoIJT8oiwwzHloqv8Q7d1o9tM4?=
+ =?us-ascii?Q?3IPxvAAiRKtjG7C94RUHfJ9N3l5MhCOMk7eBZWNO4PiuMaqTkdMXpXGtyaWJ?=
+ =?us-ascii?Q?5HVLn6+hWSK+O6qbiN7b3EQDfcOEvwWEHDb4zkQ6Y4FRqRxw0EQVncOXdRNQ?=
+ =?us-ascii?Q?rHdpHOc5Im1z7RUZofbFxKt1A4wHTK4s9HF0A0dR6/peT8rWwYQw7lzFJq5O?=
+ =?us-ascii?Q?mI723zDAGQMD4A2oeNKaOkFuwC8aRzSXu8rTLAY7bzuTRdaO0o++6FgEhDgb?=
+ =?us-ascii?Q?WLHqratJvOEn83roqzi7FnALrTaAOkpDdMw53S0WKx6yGeO0+2cczvnC5C8U?=
+ =?us-ascii?Q?8SHZPSshB4UyL4vkH2dEwF533a7E3If6kSuPw1StxYHLsCrqJlY2AbEQud5b?=
+ =?us-ascii?Q?q9rl7P/gFq7DoK+4WRtAPhCCebjXquLixXNo2tfhPp2v+NKMtGm7O0D6uGxR?=
+ =?us-ascii?Q?6tnOElvjJjem58C6/b+hZiOegQp9/KrIADCE2ruqrJDUGW/p+MnR9ASrOmpl?=
+ =?us-ascii?Q?84MMWzIQv78LGOtSCQM2tROPHK1bsDlz4skSsf0PlnNP9/pz3pf1vt/R01Oh?=
+ =?us-ascii?Q?UjeHZDiyIiER+NYDVXiRda0nHe/cLa9AtQyiB51hmR5+Qccn2cPdM1Is2rwn?=
+ =?us-ascii?Q?uvSvbMka/wRs8QUmYXOGubEqvxxugMlY2mJR3xZSkbv4UOnF7i+UXIA6TEHA?=
+ =?us-ascii?Q?NzfpoVKcrTgXBOnhWeAkDhPkuFepQl0KO93qYW07iXSrcKqxVlToabaK1r0W?=
+ =?us-ascii?Q?lN41lBHdmB6l/UkAj4pXmGD89lgQURXlOzzarbmUncaL24hkA6DBAI+O6cFT?=
+ =?us-ascii?Q?Qx2vSFVQzvXesBdaoV0gHaQJXJ820L+N6WwG+5s22wOTxp1/hMGb0qpbPy0Q?=
+ =?us-ascii?Q?WJNvqgmKgB3RDod3FituPHYqqZhvr3JQGqmtRQLq4euiqzQw87yi3dqhmVgp?=
+ =?us-ascii?Q?lpLEYRBD+6hufL/49ql79HBFRWH16aCT9xV6sav/EPGKvJU6hc2DMDS9lM6o?=
+ =?us-ascii?Q?jtGej89MDvnmaAJVAeTiCQkHhZ+moc6q/bn97BQOWzX4ayT7Jbg29pPwCKVy?=
+ =?us-ascii?Q?zQ/1AmBQHHYIzLjgPxvupp0pCtGgA2Fdy+K/Pc2609QPJw9yVgSYGaTi26Lq?=
+ =?us-ascii?Q?Cf+45rZFGxuYbtxMnCK9f2J3KRDHbrzmHIwoPlJj8DhVDlo8U7Og6NLeS7zf?=
+ =?us-ascii?Q?bnN96HrXxvBgPoeW0rbcvqs7MSS89A+wmaMHNNrmuol4K7HaNj98yY1CfNcU?=
+ =?us-ascii?Q?kheyXja82ggT6jI9ammQFKpCgxY8PAeA+qgGRdwkWem1LSSwKZs6OJrPea5R?=
+ =?us-ascii?Q?+42odLm04V0dwdMr5Jk8JzxMf0PtZ4OUp0VkMoHL/JM5PVlL0gFkCLAYTgd0?=
+ =?us-ascii?Q?i9HggI6WQ5NLYvzlXvgt/WCXNZ7Vhzfg+k8f0dv6?=
 X-OriginatorOrg: axiado.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 51da2eed-0849-41a1-7541-08ddf9cd46ba
+X-MS-Exchange-CrossTenant-Network-Message-Id: cd179ee1-5a12-4c89-d39b-08ddf9cdbee6
 X-MS-Exchange-CrossTenant-AuthSource: DS4PPF71D32B30E.namprd18.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Sep 2025 11:43:40.9080
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Sep 2025 11:47:02.5012
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: ff2db17c-4338-408e-9036-2dee8e3e17d7
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: DFbAo9at5PWHusrvMpUl0Xpr0L5L98F5L9OeNfL8NqlnXSTlifKgjzRUu5lKzLh8c+NQi2Lthg6tdF2+XN1cUw==
+X-MS-Exchange-CrossTenant-UserPrincipalName: qmhRjaUO7kHQlhYrENhvNvk0r4JapbC0WK9WuQbm+I+FzVw2IiuUfNPH9kmk75RiAnlkcgiI9/ePszpdh73Drg==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: LV3PR18MB5567
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250922_044346_367120_F63B09E5 
-X-CRM114-Status: GOOD (  43.65  )
+X-CRM114-CacheID: sfid-20250922_044711_513503_397E57AF 
+X-CRM114-Status: GOOD (  28.14  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -189,179 +189,46 @@ On Thu, Sep 18, 2025 at 04:15:17PM +0200, Boris Staletic wrote:
 > Are you referring here to i2c_new_scanned_device? If so, that also, in
 > my testing, couldn't detect any devices without modificatioins.
 > The failure to scan happens because:
-> 
-> - i2c_new_scanned_device calls i2c_default_probe, which calls
->   i2c_smbus_xfer.
-> - that eventually gets to i3c_master_i2c_adapter_xfer, which looks up
->   existing devices by calling i3c_master_find_i2c_dev_by_addr.
-> - i3c_master_find_i2c_dev_by_addr returns NULL
-> - i3c_master_i2c_adapter_xfer then returns -ENOENT, ven before trying to
->   communicate over the wire.
-> 
-> I am probably missing something, because, as far as I can tell, neither
-> i2c_detect, nor i2c_new_scanned_device can currently be used with an I3C
-> master.
-> 
-> Would you mind elaborating more on the suggested approach?
-> 
 
-Replying here to post the diff of what I have tried (and attempted to
-explain the opening email). Hopefully it will make it clearer what
-is our need and (more so) what my attempted solution does.
+Once again, here's a patch of what I have attempted to do, but this has
+seen less testing.
+I have removed the quotes below the patch for brevity.
 
--------------------------------------------------------------
+-----------------------------------------------------------------------
+ drivers/i3c/master.c | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
 
-This change allows I3C master drivers to trigger I2C slave detection
-by i2c slave drivers, leveraging the existing i2c_detect mechanism.
----
- drivers/i2c/busses/Makefile     |  1 +
- drivers/i2c/busses/i2c-axiado.c | 53 +++++++++++++++++++++++++++++++++
- drivers/i2c/i2c-core-base.c     | 12 +++++++-
- drivers/i3c/master.c            |  1 +
- 4 files changed, 66 insertions(+), 1 deletion(-)
- create mode 100644 drivers/i2c/busses/i2c-axiado.c
-
-diff --git a/drivers/i2c/busses/Makefile b/drivers/i2c/busses/Makefile
-index 04db855fdfd6..7b51df1433c4 100644
---- a/drivers/i2c/busses/Makefile
-+++ b/drivers/i2c/busses/Makefile
-@@ -42,6 +42,7 @@ obj-$(CONFIG_I2C_AT91)		+= i2c-at91.o
- i2c-at91-y			:= i2c-at91-core.o i2c-at91-master.o
- i2c-at91-$(CONFIG_I2C_AT91_SLAVE_EXPERIMENTAL)	+= i2c-at91-slave.o
- obj-$(CONFIG_I2C_AU1550)	+= i2c-au1550.o
-+obj-y				+= i2c-axiado.o
- obj-$(CONFIG_I2C_AXXIA)		+= i2c-axxia.o
- obj-$(CONFIG_I2C_BCM2835)	+= i2c-bcm2835.o
- obj-$(CONFIG_I2C_BCM_IPROC)	+= i2c-bcm-iproc.o
-diff --git a/drivers/i2c/busses/i2c-axiado.c b/drivers/i2c/busses/i2c-axiado.c
-new file mode 100644
-index 000000000000..d5006e250a3d
---- /dev/null
-+++ b/drivers/i2c/busses/i2c-axiado.c
-@@ -0,0 +1,53 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+/*
-+ * I2C bus driver for the Cadence I2C controller.
-+ *
-+ * Copyright (C) 2009 - 2014 Xilinx, Inc.
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/delay.h>
-+#include <linux/i2c.h>
-+#include <linux/interrupt.h>
-+#include <linux/io.h>
-+#include <linux/iopoll.h>
-+#include <linux/module.h>
-+#include <linux/platform_device.h>
-+#include <linux/of.h>
-+#include <linux/pm_runtime.h>
-+#include <linux/pinctrl/consumer.h>
-+#include <linux/reset.h>
-+
-+static const unsigned short normal_i2c[] = { 0x48, 0x49, 0x50, 0x51, 0x52, 0x53, I2C_CLIENT_END };
-+
-+static int ax_i2c_detect(struct i2c_client *client, struct i2c_board_info *info)
-+{
-+	int byte = i2c_smbus_read_byte_data(client, 0);
-+	if(byte < 0)
-+		return -ENODEV;
-+	strscpy(info->type, "axiado-client", I2C_NAME_SIZE);
-+	return 0;
-+}
-+
-+static const struct of_device_id ax_i2c_of_match[] = {
-+	{ .compatible = "axiado,ax300",},
-+	{ /* end of table */ }
-+};
-+MODULE_DEVICE_TABLE(of, ax_i2c_of_match);
-+
-+
-+static struct i2c_driver ax_i2c_drv = {
-+	.driver = {
-+		.name  = "axiado",
-+		.of_match_table = ax_i2c_of_match,
-+	},
-+	.detect = ax_i2c_detect,
-+	.address_list = normal_i2c,
-+	.class = I2C_CLASS_HWMON
-+};
-+
-+module_i2c_driver(ax_i2c_drv);
-+
-+MODULE_AUTHOR("Boris Staletic axiado-2532@axiado.com");
-+MODULE_DESCRIPTION("Axiado I2C bus driver");
-+MODULE_LICENSE("GPL");
-diff --git a/drivers/i2c/i2c-core-base.c b/drivers/i2c/i2c-core-base.c
-index ecca8c006b02..231c43cf657d 100644
---- a/drivers/i2c/i2c-core-base.c
-+++ b/drivers/i2c/i2c-core-base.c
-@@ -2467,13 +2467,22 @@ static int i2c_detect_address(struct i2c_client *temp_client,
- 		return 0;
-
- 	/* Make sure there is something at this address */
--	if (!i2c_default_probe(adapter, addr))
-+	temp_client->dev.bus = &i2c_bus_type;
-+	temp_client->dev.type = &i2c_client_type;
-+	temp_client->dev.parent = &temp_client->adapter->dev;
-+	dev_set_name(&temp_client->dev, "i2c-temp-client");
-+	int err3 = device_register(&temp_client->dev);
-+	int err2 = i2c_default_probe(adapter, addr);
-+	if (!err2) {
-+		device_unregister(&temp_client->dev);
- 		return 0;
-+	}
-
- 	/* Finally call the custom detection function */
- 	memset(&info, 0, sizeof(struct i2c_board_info));
- 	info.addr = addr;
- 	err = driver->detect(temp_client, &info);
-+	device_unregister(&temp_client->dev);
- 	if (err) {
- 		/* -ENODEV is returned if the detection fails. We catch it
- 		   here as this isn't an error. */
-@@ -2542,6 +2551,7 @@ static int i2c_detect(struct i2c_adapter *adapter, struct i2c_driver *driver)
- 		dev_dbg(&adapter->dev,
- 			"found normal entry for adapter %d, addr 0x%02x\n",
- 			i2c_adapter_id(adapter), address_list[i]);
-+		memset(&temp_client->dev, 0, sizeof(temp_client->dev));
- 		temp_client->addr = address_list[i];
- 		err = i2c_detect_address(temp_client, driver);
- 		if (unlikely(err))
 diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 2ef898a8fd80..5fabba14de20 100644
+index 2ef898a8fd80..de9dbf6c518e 100644
 --- a/drivers/i3c/master.c
 +++ b/drivers/i3c/master.c
-@@ -2494,6 +2494,7 @@ static int i3c_master_i2c_adapter_init(struct i3c_master_controller *master)
- 	/* FIXME: Should we allow i3c masters to override these values? */
- 	adap->timeout = 1000;
- 	adap->retries = 3;
-+	adap->class = 1;
+@@ -2849,6 +2849,26 @@ int i3c_master_register(struct i3c_master_controller *master,
+ 			i2c_scl_rate = I3C_BUS_I2C_FM_SCL_MAX_RATE;
+ 	}
 
- 	id = of_alias_get_id(master->dev.of_node, "i2c");
- 	if (id >= 0) {
-> Thanks in advance,
-> Boris Staletic
-> 
-> > 
-> > Address 7E, REPEAT START, scan's address. ACK/NACK STOP.
-> > 
-> > Check ACK/NACK. But you don't know if it is i3c device or i2c device by this
-> > way.
-> > 
-> > send 7E to avoid IBI during you send out address.
-> > 
-> > Fank
-> > 
-> > > The most iffy part of this approach is the need for such a dummy driver, just so the I3C master knows that "something exists".
-> > > I'd welcome any sort of feedback.
-> > >
-> > > Thanks,
-> > > Boris Staletic
-> > > --
-> > > linux-i3c mailing list
-> > > linux-i3c@lists.infradead.org
-> > > http://lists.infradead.org/mailman/listinfo/linux-i3c
++	unsigned short addr_list[] = { 0x48, 0x49, 0x50, 0x51, 0x52, 0x53, I2C_CLIENT_END };
++	struct i2c_client *temp_client = kzalloc(sizeof(*temp_client), GFP_KERNEL);
++	for(int i = 0; addr_list[i] != I2C_CLIENT_END; i++) {
++		unsigned short one_address[] = { addr_list[i], I2C_CLIENT_END };
++		struct i2c_board_info info;
++		memset(&info, 0, sizeof(info));
++		info.addr = addr_list[i];
++
++		memset(&temp_client->dev, 0, sizeof(info));
++		temp_client->dev.bus = &i2c_bus_type;
++		temp_client->dev.type = &i2c_client_type;
++		temp_client->dev.parent = &temp_client->adapter->dev;
++		dev_set_name(&temp_client->dev, "i2c-temp-client");
++		int err = device_register(&temp_client->dev);
++		if(err)
++			continue;
++		i2c_new_scanned_device(&master->i2c, &info, one_address, NULL);
++		i2c_unregister_device(temp_client);
++	}
++
+ 	ret = i3c_bus_set_mode(i3cbus, mode, i2c_scl_rate);
+ 	if (ret)
+ 		goto err_put_dev;
 
 -- 
 linux-i3c mailing list
