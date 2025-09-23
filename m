@@ -4,155 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41E7ACAC5AC
-	for <linux-i3c@archiver.kernel.org>; Tue, 23 Sep 2025 18:45:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7AE8CAC5AC
+	for <linux-i3c@archiver.kernel.org>; Tue, 23 Sep 2025 18:46:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fh69TuegOToH1LZkXyGt0j0fR1LoO7quQTO5nSfU4C4=; b=ciyiWSmtq59eKP
-	iXIXoA0RNiVEdgDltWJz/46gz92ItEaHJMl+T6C3A9vUuYuZDuGF1VWAtWDasal6GhksTGZO/ZiFm
-	qzc6lHVhl2BEcSRAAmKFFdzOSWLJPJ6/Akh2K5E0fMzQBpst4EGSnPkIBLrqUpNhv9/cAXhwflwuV
-	zIx+tvLnBt/NlovifZ2yqqqmu46J5YQU70txM1CrBpNGaSCThQnh+BZADtVAaT8Y3d0pJwTsdP+ce
-	NYPEOUU2oqNOHdcTE6MHAdpCtaNuvUvfOVIvHd8t02H/V/cJpmyWaSXIvE1Z7yW1Vnc13e9drr9v7
-	JM4R7DSo2Js2eCgRALOA==;
+	List-Owner; bh=ukN6aOsRDQ7Nwzy0tkIYKvT5hNjZu2CTNncxzRTnj2E=; b=q1QWOdVB5cxTfF
+	0EeAGUaDyZBxBFf7Xc29HZwUIrw9uj2DaZslzXFTidiFk5Ev4EkRVt5rK088MmYaoxnwXn5SItC+F
+	O3sTBCRuryI3/ACn5IF8EqtT3FmOAOA7Pkj0A35qPI0YrVM0BNKEJTIO07+GqprO+t0s+o1jjkUIx
+	k6//rD7552DCoDK31UCg+CsKu3oRvwL2hXJ15fIVYwolcc/GHI51jA+zQ7sWI1QJj7zjGRKH9HC3z
+	3Ja1EMt8YtrSn3TaYfQxTMtl2L9E3eHOBH93xt/oUcHmuptuepa7oIkRKhrx9FkNaFBkvbO58Kjng
+	Ks0hcl2R54ypGLgmmsKQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v181F-0000000EZCl-05mO;
-	Tue, 23 Sep 2025 18:45:41 +0000
-Received: from mail-westeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c201::1] helo=AM0PR83CU005.outbound.protection.outlook.com)
+	id 1v182R-0000000EZL2-1YSX;
+	Tue, 23 Sep 2025 18:46:55 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v181C-0000000EZBx-2zUU
+	id 1v182O-0000000EZKe-1ImC
 	for linux-i3c@lists.infradead.org;
-	Tue, 23 Sep 2025 18:45:39 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=rWk0V9Z1lobUzmsoMqP1df1vEyKYbrfGy9YDLIjZA2QmNGPfdC8OcXHnznlog78C9RSETGGcnEr4qoF7uwLxndOeApHwENYHVt4sQkmqqW78cKOP5ARoud68edk0QwZOEW8+illICe+U8jAMlk66Ef2oJgWkN+1/k9C5rtDTP51GI/XDOVwqOQ7nU7zDL9rX3CqgFiANNrNw2Ch2xz9a6HFfJyskOyeftPm1sTCJxq4qLMopTTclWlFaGkOTrYsZ3DBROhzwGQ67npE76rVvPIZus689KpgAuYjQOfNmkfbOrgyIITnX4qhMsSZqgmHjn1lylJsl1CT/2C9rBgQYdg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=PqlHJ3v3Os2vyYC/PGpLXoER4boSJjiQN8+QEkGsIKY=;
- b=SCefBx/8tgpCrPbK59auJpcX0VXZocewYl6I54sKDN3bQvr8LdCBjx66UEBKZFzaJjgaskWrawo0AJhwRUwQaXvVLGgjR+rmdKScvDSEZoIN/QR+69cbB1Lq3e5rbFfbZMKQxkFJo6KNXEakr6dL7W7OJNaCAZ8vqa/KcTHXVx1FxvSvMfqdhjOAxFEuHk2rlXuzP9sXZ7PepPc6K8ESlcoaNDu6EU+tDzGu9HazpfoyxM0VQYEo52ay9u1jsv3BAad0z3oBamaF1yxByZv7u0lZIEj760IDckjzifhhr1FKG862fsCMNkfDCDalZfPYmJiTveFNGC0qBY60WPT6RQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PqlHJ3v3Os2vyYC/PGpLXoER4boSJjiQN8+QEkGsIKY=;
- b=AAOgpE+CdTLUf86eBGhYUOnn7VOMaJOOJWUZjpMK9KPQ9nC3MFHSzzXtKQAqVF0f+ixU8JnHZAuTUuqivMhUylVPybX8OxGk0ut3PD3VyW1va3tT1wZjBXGD76hve79l8crOqWEfQMCqOWu6H7mdm8gUF7DYdCRbM9S19Dn6g/jYdSKi/LpUi1XbmVjey9+K/+tLCZSm58/w9252XLorUg+rKvOeozLOJY4hkrDfVJVxQJU9eQxutuWQm+n0wQB6HyHJhChCuM5Ul+nUpfWLC2aemASZIytxAdI/WsxVu89bg5TqD+I6RmpIz1eD69FTdUvvdOl+CrIyzuAlFXtpOA==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AS4PR04MB9621.eurprd04.prod.outlook.com (2603:10a6:20b:4ff::22)
- by PA1PR04MB10769.eurprd04.prod.outlook.com (2603:10a6:102:488::20) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9160.9; Tue, 23 Sep
- 2025 18:45:31 +0000
-Received: from AS4PR04MB9621.eurprd04.prod.outlook.com
- ([fe80::a84d:82bf:a9ff:171e]) by AS4PR04MB9621.eurprd04.prod.outlook.com
- ([fe80::a84d:82bf:a9ff:171e%4]) with mapi id 15.20.9160.008; Tue, 23 Sep 2025
- 18:45:31 +0000
-Date: Tue, 23 Sep 2025 14:45:19 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
-Cc: git@amd.com, michal.simek@amd.com, alexandre.belloni@bootlin.com,
-	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
-	pgaj@cadence.com, wsa+renesas@sang-engineering.com,
-	tommaso.merciai.xr@bp.renesas.com, arnd@arndb.de,
-	quic_msavaliy@quicinc.com, Shyam-sundar.S-k@amd.com,
-	sakari.ailus@linux.intel.com, billy_tsai@aspeedtech.com,
-	kees@kernel.org, gustavoars@kernel.org,
-	jarkko.nikula@linux.intel.com, jorge.marques@analog.com,
-	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arch@vger.kernel.org,
-	linux-hardening@vger.kernel.org, radhey.shyam.pandey@amd.com,
-	srinivas.goud@amd.com, shubhrajyoti.datta@amd.com,
-	manion05gk@gmail.com
-Subject: Re: [PATCH V7 3/4] i3c: master: Add endianness support for
- i3c_readl_fifo() and i3c_writel_fifo()
-Message-ID: <aNLqv/yjhwu3/ai0@lizhi-Precision-Tower-5810>
-References: <20250923154551.2112388-1-manikanta.guntupalli@amd.com>
- <20250923154551.2112388-4-manikanta.guntupalli@amd.com>
-Content-Disposition: inline
-In-Reply-To: <20250923154551.2112388-4-manikanta.guntupalli@amd.com>
-X-ClientProxiedBy: SJ0PR13CA0113.namprd13.prod.outlook.com
- (2603:10b6:a03:2c5::28) To AS4PR04MB9621.eurprd04.prod.outlook.com
- (2603:10a6:20b:4ff::22)
+	Tue, 23 Sep 2025 18:46:54 +0000
+Received: from pps.filterd (m0279870.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 58NEhUP2014953
+	for <linux-i3c@lists.infradead.org>; Tue, 23 Sep 2025 18:46:51 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	qtQw/V4XpWdaaHnPQf7zCiqtInba45x5FdbZXPH6rbE=; b=CyyJCOQ1gPfBFrrG
+	P8hmrBYTgD5lS07STFi/PQYW8JYs0ZGixpVfZtr1F0EvprgWU9v2difrGy+ykRHP
+	sYsNg7nWkvNgZNlSdz9s9/2LqIEo76nLhGVIQAHksFfEVPA944KhGxEJh+aZf9Az
+	JOK7ZrI+v7bWJcsS4346vjQLYy8nJt2Ok5zDJCkaKFBqjipOqIUiUh7vuuYThlZo
+	hczzUscVWqfJ4fHqxb5scZOcIWQckUUemvrehiLn3/K+8RaN2e9IH3olo2D3Tkwt
+	oypbuvG1rEy6J2AgZi4YL8DZ+7mTacjRNuHGy21Fst2eyXTclQowxflWY3faKnyF
+	9wLhLw==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 49b3kk5n5a-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+	for <linux-i3c@lists.infradead.org>; Tue, 23 Sep 2025 18:46:50 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-269939bfccbso75038675ad.1
+        for <linux-i3c@lists.infradead.org>; Tue, 23 Sep 2025 11:46:50 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1758653209; x=1759258009;
+        h=content-transfer-encoding:in-reply-to:from:content-language
+         :references:cc:to:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=qtQw/V4XpWdaaHnPQf7zCiqtInba45x5FdbZXPH6rbE=;
+        b=ZcT1evYVa41GAwtu5ihocgGkdZOGCxiGQsCmxM++Dpbt9/lEs3axYnrw9TXXgqVQbN
+         5RBVL7g1aStM0a89+184nKICi/LjmsiadIdPt2bdpRB6NzXP47RNy0ArkhNAURC8Pa1h
+         kSwef5pC/9Zi8iN8233EjVASll3BLBXiel1/5feFcpoNs+8Ljo0MqoWKNfWQ1K3e8kp6
+         dNtA++Z/vBFP6So33TIlMYAyS1+FxpQM4ANf9XZGgFXR7zUwuLz0/L1uxgOhGT1doQ3J
+         2aNJXb/a6ioTADTaOwBq+MQZPQ6ASF8ee1NdjFY8OvUzkDBpaENMwBUDkgFbf0Vq1feP
+         nnzA==
+X-Gm-Message-State: AOJu0YyymLb0IMEBv0JBIkpC+Clmq2AmHYGvfw3OF/whFVWa3s0E5VaJ
+	FhXSDM7WxyJYZikj9YX390bnYsOAsfj8HxAdjdYa2hU1neW1HqM6By3LuvWkOpdH0dh/uQzIpPO
+	F9Fpt7ZAbDFfIuGx+yCtyP/Ukkka2YROkoykeQkcap3UdGWSEner1qs+oIXAbS41ZoFdemJvH1K
+	7K
+X-Gm-Gg: ASbGncuSyYDpxyHWAATd7hBQMHRF8+aqDrLReo8iSqr8ZnZL3BhcNZvxhHP+y+dTzky
+	HiOhFRugIhr/7woEYndHGSulkDiSJztiGMPtsGqPCHgzRar8w7FQAg8CPHuivt6mPkURHH+3HaZ
+	mfE436NYfBiYWxM1Ba68vh8hmjOiAAslRcma6jyUujRwEjbA17ew5EicYN0PRAiaZ5fOjt+/ZBh
+	8qvjyC+SLoSKhc2aWScHbgHcB2Jjf0ufBhmKIWGupwc8tZ0UYausUcdmzgZP3raRKHiMqk/wFDM
+	8QPxZRoYZesYJIR5mw89/p5GRS+QJbk40IJ0XHTvEdB01ZZ8A9tXKxhivOVook6L/pFHeI9Jhls
+	=
+X-Received: by 2002:a17:902:e88d:b0:24e:3cf2:2453 with SMTP id d9443c01a7336-27cc817bfbdmr43805375ad.61.1758653209256;
+        Tue, 23 Sep 2025 11:46:49 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHy1SkDJOZA3CAKwuSsCfToDwgbbK7v05cIFKC7xdzDXHYsuhMJBqP+fFm99qAULjSJHLnW4A==
+X-Received: by 2002:a17:902:e88d:b0:24e:3cf2:2453 with SMTP id d9443c01a7336-27cc817bfbdmr43805105ad.61.1758653208724;
+        Tue, 23 Sep 2025 11:46:48 -0700 (PDT)
+Received: from [192.168.1.4] ([106.222.230.147])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-26980336511sm169112735ad.124.2025.09.23.11.46.47
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 23 Sep 2025 11:46:48 -0700 (PDT)
+Message-ID: <6b8271ea-282f-4900-a5ab-622c4eb85dbd@oss.qualcomm.com>
+Date: Wed, 24 Sep 2025 00:16:45 +0530
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AS4PR04MB9621:EE_|PA1PR04MB10769:EE_
-X-MS-Office365-Filtering-Correlation-Id: 2fe6a1c7-2037-4201-cc6e-08ddfad15f50
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|7416014|52116014|376014|1800799024|366016|38350700014|7053199007;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?bOyfRWpDCUmDjPdKVgJXniYFKeoS/WXE7cqvuR1WGT3/ZqKou8mJOn2AyPRe?=
- =?us-ascii?Q?4SllOr4OTC1AgihavTw6VXMu6zOp+MAgm+8vEWq3xtvg9v74Y8v+yanktJX/?=
- =?us-ascii?Q?VLGHLWSR0JD4cSgBhlmXcevVrUdvRfTGooJI23fOBLCYUNrw7iYYdOsYtrBH?=
- =?us-ascii?Q?y+9R3SDS1W2arwIzfHGtTqiKKwZ3R9JlMaBRXLqVMis4BhpW/7a411ii9Lj7?=
- =?us-ascii?Q?5yDyZyh5NSpwzKPXUMlqzEtktXwSNu9YGlaLGVSMyeDpuxUPXN9o2XI1VyrJ?=
- =?us-ascii?Q?E6PemOY4NJRnJISEwr9OFW6AkmEvlaVBr2iMI6Oa1Tp+vw2jA4WQoKkWBNkv?=
- =?us-ascii?Q?YMslvRqNrmDlfhW73bd8afAGiYDIhCYGAq85vDx3c3IGJwyuj95vIGILjzk6?=
- =?us-ascii?Q?MbUsGHii1wD7vCwJGGpcvIKvzXdOQHcxLiv2FyOBzMD/oRaQxBYHp2/QWKSB?=
- =?us-ascii?Q?1OrYwj178ssrFgo6GOaXmdJxVdaA8BPS2Br2sIbKq3cRnRvmOBsoVMdgjMv6?=
- =?us-ascii?Q?PkmRjEv0S+qIrAMRa1DzUGdRPrWeBjcd/fIJX4SYya/QKTMDWN0+xETpgFwn?=
- =?us-ascii?Q?n9lfW9FBt2T8I/YgRXRi3Tda8leuo5lQj/BNG4k/6npPf4tI+8rF4Edy12Rh?=
- =?us-ascii?Q?/jHV5VmXwwVEgpd3AXtCy3uJqoancCGlKu72LwsEsA4iSOgiW89cU/kp1aTw?=
- =?us-ascii?Q?5qQ6RAG1dXMjUJhMt9Bq1kG5xLjWUJaNyktVp3vBfUb2TdxECAhruVkJxMjI?=
- =?us-ascii?Q?/JX6ypvsyyfzrkDT++aSfaxoZzG+iKi87NcbNuMfXpQvIPLUYSGpuObVXNQS?=
- =?us-ascii?Q?g54K35JfYpdKF1Cw+SP8qH5PyTsHJZsO8tTnQvLCSdfrRVnEdm2Sig9SwYvD?=
- =?us-ascii?Q?U+w7DwV+7T+tZb3wiVDPU0aKvpdrDIDulPfSN4j6rktdaKrOxm4ZYV5d5RZU?=
- =?us-ascii?Q?IdZsCpK8KZwSi6LWXtXwtgzDaa8/M+GMr1zWCVETSrXVJAXojtZs5jQU0qfh?=
- =?us-ascii?Q?/8QDKTOEt7PxRD87HGLHWh8QfOFd4HMbLT9+bstU5Iyw9Z1yC5CSFKNdVn1N?=
- =?us-ascii?Q?VX+bDHb1IhcGrkhf+nnTM8MlYvNKthnX4Baj6i3jyyOGReZD4POi3CnKUD9n?=
- =?us-ascii?Q?i7Wa/TsjwE9dVfxIzA7lHsZR8VLgK1LevvlPv9ZJ1EzKXyfINtLzynE2xY4v?=
- =?us-ascii?Q?d/pT30YfCgtUVTLdyr7fMUAE4TJg09E8rJr0A6f1B9/M2u+Xy21zj3/p3Wqs?=
- =?us-ascii?Q?3nwg02jOhf0k9HsQrZCWygmTnDHpeLNUSndgeVctV0y1X0Wbo7wW04pR/qK3?=
- =?us-ascii?Q?D1JM5nkXJ5Ta1GgXYNpvuf2+Jgv1hzpcCgwocYukhWOMzWq3nWk2ztjSDfKx?=
- =?us-ascii?Q?eqs74W3ulvBm/Zov1lf82NC0N70dbKaeiydE8QihKTxaZUgCQyjXSzfSDis6?=
- =?us-ascii?Q?6ajhA+8WAfK8DdJUoLlsMLLABt+VKRrGY+WOrBHCYp/3oTEUq6PM5g=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS4PR04MB9621.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(7416014)(52116014)(376014)(1800799024)(366016)(38350700014)(7053199007);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?2xH85hSmUwmeBoptsoiAyOUmDCpL2kKUICKyi3vDqvAB1mh2PDnwLndJtT1Y?=
- =?us-ascii?Q?qDD33beFiYsO1o8PqZmvh0wxIUcOkDO9Kxi1QE6kL9vQLGhP9Z+e8L4J+nRx?=
- =?us-ascii?Q?PfgFV3Y82w1dwGSi/rjZ4eFQbEPbXtKFwCdY5blanOlp9C4AvuLioU7WYbYd?=
- =?us-ascii?Q?P4o5SxB0acFVYDzLSj5TVOiCwTxv6OETS4DnSvZfPl310xFCumCSDcdJlvMB?=
- =?us-ascii?Q?uva74shudCDUE5tbihLOo9NsKSCd0CudtwI72smqxP/mDNErVREkOIUCo00b?=
- =?us-ascii?Q?2lRYeOP6SCRYiFfG0IwHMUQnptOZVwW8FWChp/uBmsCdPXew85c8+s+0B01Q?=
- =?us-ascii?Q?mxWpOy46ETxBItICO61lYQ6NABKutGRlBQP3YbQdx6EVnBJddcSg+JJ6Aclo?=
- =?us-ascii?Q?7/q/T0P2zdDzCwXU3HYQVK++g/C0uhlczyQiXLi1hugmqQ5tqJUELUeRks4G?=
- =?us-ascii?Q?OXCCractJowwDndco7iUJCCsk+k3AFR0UPZaXukrqz1f49dBU+nDAY1cV5G5?=
- =?us-ascii?Q?jq9JCGvtxhwFx3b8127XNHt4VA6RnqK5cl/8Wl3DEnmeUbVcEdjDTLy0i/p7?=
- =?us-ascii?Q?ciLTTl7V+IlFASI2Jd9oN7orXfn6+Bnit+jMIkQSt0BVvbXVZuCZct+ZtxWl?=
- =?us-ascii?Q?2qPZtrnohpisqQJwMGJSqjE+Dv/QU5qauL7jSi9k84k38LWGqdHw16htnQxI?=
- =?us-ascii?Q?6wert2PQGJQn/ozgmt/KTZmI0OmCQZO/YCDykhrWVeEGzJhhL7jc1vYoteug?=
- =?us-ascii?Q?cn87rngEVAOUS86482LqVC7Z1sxDbIrcYIShbeh+Fhwgq6PR87SxKzw89UYA?=
- =?us-ascii?Q?S+iu39VwO+lpCcF7YXJgNJp6gJ0UhBfTue2Pd3r0z83EwJLEPDHYRQ7cxCRv?=
- =?us-ascii?Q?Sg/jdT2gyHqUHUw/FcZs1V0vA4lim+TxtTqrFw5cxR2Sbw90u77scau8FDNo?=
- =?us-ascii?Q?iZrmxB5lOtH/C2egltSrZZRGa+snPnqBixDwBShutbWNv80QREh9NnZqMeAG?=
- =?us-ascii?Q?U+/1zxBMNL7egF/bUCesxW+4mxXhlVcWHWCU8HWk3JuMLHQRViJKNwWQ9p4l?=
- =?us-ascii?Q?QJiix6AoB0AFaxketWwfN1UIVCe3OwWyQDJMI1Dc7l/1RSKBrWTKR0CMREDx?=
- =?us-ascii?Q?uPIXn1XBzOORaRRBr/5tm2rIOsJPjVPeiPkUKplpQV+/Qni+Hzlv3mehjgti?=
- =?us-ascii?Q?iVL9VMt+pwPICqhxAfYrj3hkOGl9b9sg16MxUpdnNDVEopfR87VoUqRikjmp?=
- =?us-ascii?Q?lsbBVBvj934TZSJ4FECcg7xi8/flffWw4+g2UqQezlkniIWoFGlt3UVR3dQJ?=
- =?us-ascii?Q?Ym7lW4+E3U1N0PuMLNX5I67i9LZe1ALs0kF6duqp4h1OecnKKP0aysCo8v3q?=
- =?us-ascii?Q?MynWNOBl8yummbENvjXQsl46wK3Ntg1Npu/PkwPOKjcYv+/i8cJNL5eWvH5W?=
- =?us-ascii?Q?gD1LxCG8XWbbfrfcEqYSV9/3zVE295GTm6Zbpjt5TGBax+/bbQIqgusIB7GI?=
- =?us-ascii?Q?LQ9wQRsOrMi/z2DEBTEdyizPCSxot8qtTH7Nf6nep1pDorN5wxmrGk5i1UOT?=
- =?us-ascii?Q?EA9vBJ7SZTJ4t1TotbnR14v8WCRilo8LZevDvbwP?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2fe6a1c7-2037-4201-cc6e-08ddfad15f50
-X-MS-Exchange-CrossTenant-AuthSource: AS4PR04MB9621.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Sep 2025 18:45:31.2878
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: Le98MGW3l9Pu6mjo/XSH9mPfDsG6VUJCEU7oh1aeSaUkDJgYm8yL/54sMsk2x+hf1lGp3fdSPpQDpWgxNMGe1A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA1PR04MB10769
+User-Agent: Mozilla Thunderbird
+Subject: Re: i3c: scanning for i2c client devices on the network
+To: Boris Staletic <bstaletic@axiado.com>, Frank Li <Frank.li@nxp.com>
+Cc: "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>
+References: <DS4PPF71D32B30E58BEEB807E76DA5FF106DC0EA@DS4PPF71D32B30E.namprd18.prod.outlook.com>
+ <aMmZnG/sbErB4Ly4@lizhi-Precision-Tower-5810> <aMwT9S92IpIOT_Gq@axiado.com>
+ <aNE2aAxJzo2edoRm@axiado.com>
+Content-Language: en-US
+From: Mukesh Savaliya <mukesh.savaliya@oss.qualcomm.com>
+In-Reply-To: <aNE2aAxJzo2edoRm@axiado.com>
+X-Proofpoint-GUID: jRmBJRl7MmDnW_VoLoFbifgGXRazUALH
+X-Proofpoint-ORIG-GUID: jRmBJRl7MmDnW_VoLoFbifgGXRazUALH
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwOTIyMDA4OSBTYWx0ZWRfX6zcTnqJeErdP
+ 2aLK/Oux28jiadW1qopien3LJ3IN2kwcdWGMYdZq9XMxG6951yb5A58kK3B3lgB9wKwcBIhj71T
+ K+PY62eO5+xr8u0Ob6QegmkRemY/s7AWpdOuH0Or7JQa1+D1L/U94jMgawQTWMCSMMz/Lx8xIlv
+ 0A7vvxt2RqHghkxxh0HZOHSJu6o2N9b2U4dbLtMdPPGxXgwhbvgtNGsqg7lAoRlMlE8qj7RdxvR
+ RV7nJP+e8RwIKzvzGYkDfqSPlQNX5DONwzTPSilg3Rr4+HnBtZtI/1dTSLuyVBqUW1Ac/UKFzEi
+ DjYTfO9r5TFbj9IQaTkpzDajeTV/N8zEYaXleYYQ8NcgvlRKg57eG5Gq5j5S3PCWbXYWCLXn1Vt
+ EsKT4XPR
+X-Authority-Analysis: v=2.4 cv=BabY0qt2 c=1 sm=1 tr=0 ts=68d2eb1a cx=c_pps
+ a=IZJwPbhc+fLeJZngyXXI0A==:117 a=XYGdmzshwu/twMpVUZZNOg==:17
+ a=IkcTkHD0fZMA:10 a=yJojWOMRYYMA:10 a=JfrnYn6hAAAA:8 a=440cDlBIAAAA:8
+ a=lVt5sBClby9g6MavzOgA:9 a=QEXdDO2ut3YA:10 a=uG9DUKGECoFWVXl0Dc02:22
+ a=1CNFftbPRP8L7MoqJWF3:22 a=d9D1X1bx8dWolqnE4HNT:22
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1117,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-09-23_04,2025-09-22_05,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ suspectscore=0 clxscore=1015 phishscore=0 bulkscore=0 priorityscore=1501
+ adultscore=0 malwarescore=0 spamscore=0 impostorscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.19.0-2507300000 definitions=main-2509220089
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250923_114538_908002_8CD1C695 
-X-CRM114-Status: GOOD (  22.61  )
+X-CRM114-CacheID: sfid-20250923_114652_477911_574F3DD0 
+X-CRM114-Status: GOOD (  44.41  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -164,214 +126,237 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 23, 2025 at 09:15:50PM +0530, Manikanta Guntupalli wrote:
-> Add endianness handling to the FIFO access helpers i3c_readl_fifo() and
-> i3c_writel_fifo(). This ensures correct data transfers on platforms where
-> the FIFO registers are expected to be accessed in either big-endian or
-> little-endian format.
->
-> Update the Synopsys, Cadence, and Renesas I3C master controller drivers to
-> pass the appropriate endianness argument to these helpers.
->
-> Signed-off-by: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
-> ---
+Hi Boris, Frank,
 
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
+On 9/22/2025 5:13 PM, Boris Staletic wrote:
+> On Thu, Sep 18, 2025 at 04:15:17PM +0200, Boris Staletic wrote:
+>> On Tue, Sep 16, 2025 at 01:08:44PM -0400, Frank Li wrote:
+>>> On Wed, Sep 10, 2025 at 02:01:33PM +0000, Boris Staletic wrote:
+>>>> Hello,
+>>>>
+>>>> We have an I3C bus where the user may ultimately attach an I2C slave with an arbitrary address, with the idea
+>>>> of using i2c-utils to communicate with the I2C slave from userland.
+>>>>
+>>>> With the current kernel, I2C slaves need to be known statically and thus i2cdetect fails to detect any slaves.
+>>>> All communication attempts get rejected early, because i3c_master_find_i2c_dev_by_addr returns NULL and then i3c_master_i2c_adapter_xfer exits with ENOENT.
+>>>> I3c_master_find_i2c_dev_by_addr returns NULL because bus->devs.i2c ends up being empty.
+>>>>
 
-> Changes since V7:
-> This patch introduced in V7.
+Checked both .master_xfer() function registered for pure i2c controller 
+and for i3c controller.
+
+I2C controller provides full implementation of .master_xfer() function 
+from vendor driver, whereas for i3c controller, framework  first 
+validates if any i2c devices with the passed address is already 
+registered or not ?
+
+To suggest at i3c_master_i2c_adapter_xfer() - what's wrong if 
+i3c_master_find_i2c_dev_by_addr() returns NULL ? can we not continue 
+instead of returning -ENOENT ? If slave is not present, than we get NACK 
+else continue to perform  master->ops->i2c_xfers() ?
+
+This is just my thought, I may be wrong. Please point me if i am missing 
+any fundamental from I3C specs.
+
+>>>> Since the I2C drivers have i2c_detect and i3c_master_controller has its own i2c_adater, I looked into what needs to be done for networks
+>>>> with I3C masters to use the existing i2c_detect mechanism. That lead me to the following list of changes:
+>>>>
+>>>> - i3c_master_controllr's i2c_adapter needs to have its class member set.
+>>>> - In i2c_detect_address, temp_client->dev needs to be populated and registered before the call to i2c_default_probe.
+>>>>    - Otherwise the attempt to probe gets rejected early, for the same reason described above (i3c_master_find_i2c_dev_by_addr returning NULL).
+>>>>
+>>>> That much was enough to get i2c_detect to work with an I3C master.
+>>>> To complete the use case I also needed a registered i2c_driver that implements a simple i2c_driver.detect function.
+>>>> In my test, the detect function simply checked whether i2c_smbus_read_byte_data(client, 0) returns a non-error value.
+>>>>
+>>>> Could anyone comment whether this is the right approach for implementing I2C slave detection with an I3C master?
+>>>
+>>> Generally, it is the same as I2C. just send out address, and check if target
+>>> ACK/NACK this address.
+>>
+>> Are you referring here to i2c_new_scanned_device? If so, that also, in
+>> my testing, couldn't detect any devices without modificatioins.
+>> The failure to scan happens because:
+>>
+>> - i2c_new_scanned_device calls i2c_default_probe, which calls
+>>    i2c_smbus_xfer.
+>> - that eventually gets to i3c_master_i2c_adapter_xfer, which looks up
+>>    existing devices by calling i3c_master_find_i2c_dev_by_addr.
+>> - i3c_master_find_i2c_dev_by_addr returns NULL
+>> - i3c_master_i2c_adapter_xfer then returns -ENOENT, ven before trying to
+>>    communicate over the wire.
+>>
+>> I am probably missing something, because, as far as I can tell, neither
+>> i2c_detect, nor i2c_new_scanned_device can currently be used with an I3C
+>> master.
+>>
+>> Would you mind elaborating more on the suggested approach?
+>>
+> 
+> Replying here to post the diff of what I have tried (and attempted to
+> explain the opening email). Hopefully it will make it clearer what
+> is our need and (more so) what my attempted solution does.
+> 
+> -------------------------------------------------------------
+> 
+> This change allows I3C master drivers to trigger I2C slave detection
+> by i2c slave drivers, leveraging the existing i2c_detect mechanism.
 > ---
->  drivers/i3c/internals.h              | 35 +++++++++++++++++++++++-----
->  drivers/i3c/master/dw-i3c-master.c   |  9 ++++---
->  drivers/i3c/master/i3c-master-cdns.c |  9 ++++---
->  drivers/i3c/master/renesas-i3c.c     | 12 ++++++----
->  4 files changed, 49 insertions(+), 16 deletions(-)
->
-> diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
-> index 0d857cc68cc5..399bbf006dcd 100644
-> --- a/drivers/i3c/internals.h
-> +++ b/drivers/i3c/internals.h
-> @@ -24,21 +24,35 @@ int i3c_dev_request_ibi_locked(struct i3c_dev_desc *dev,
->  			       const struct i3c_ibi_setup *req);
->  void i3c_dev_free_ibi_locked(struct i3c_dev_desc *dev);
->
-> +enum i3c_fifo_endian {
-> +	I3C_FIFO_LITTLE_ENDIAN,
-> +	I3C_FIFO_BIG_ENDIAN,
+>   drivers/i2c/busses/Makefile     |  1 +
+>   drivers/i2c/busses/i2c-axiado.c | 53 +++++++++++++++++++++++++++++++++
+>   drivers/i2c/i2c-core-base.c     | 12 +++++++-
+>   drivers/i3c/master.c            |  1 +
+>   4 files changed, 66 insertions(+), 1 deletion(-)
+>   create mode 100644 drivers/i2c/busses/i2c-axiado.c
+> 
+> diff --git a/drivers/i2c/busses/Makefile b/drivers/i2c/busses/Makefile
+> index 04db855fdfd6..7b51df1433c4 100644
+> --- a/drivers/i2c/busses/Makefile
+> +++ b/drivers/i2c/busses/Makefile
+> @@ -42,6 +42,7 @@ obj-$(CONFIG_I2C_AT91)		+= i2c-at91.o
+>   i2c-at91-y			:= i2c-at91-core.o i2c-at91-master.o
+>   i2c-at91-$(CONFIG_I2C_AT91_SLAVE_EXPERIMENTAL)	+= i2c-at91-slave.o
+>   obj-$(CONFIG_I2C_AU1550)	+= i2c-au1550.o
+> +obj-y				+= i2c-axiado.o
+>   obj-$(CONFIG_I2C_AXXIA)		+= i2c-axxia.o
+>   obj-$(CONFIG_I2C_BCM2835)	+= i2c-bcm2835.o
+>   obj-$(CONFIG_I2C_BCM_IPROC)	+= i2c-bcm-iproc.o
+> diff --git a/drivers/i2c/busses/i2c-axiado.c b/drivers/i2c/busses/i2c-axiado.c
+> new file mode 100644
+> index 000000000000..d5006e250a3d
+> --- /dev/null
+> +++ b/drivers/i2c/busses/i2c-axiado.c
+> @@ -0,0 +1,53 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later
+> +/*
+> + * I2C bus driver for the Cadence I2C controller.
+> + *
+> + * Copyright (C) 2009 - 2014 Xilinx, Inc.
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/delay.h>
+> +#include <linux/i2c.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/io.h>
+> +#include <linux/iopoll.h>
+> +#include <linux/module.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/of.h>
+> +#include <linux/pm_runtime.h>
+> +#include <linux/pinctrl/consumer.h>
+> +#include <linux/reset.h>
+> +
+> +static const unsigned short normal_i2c[] = { 0x48, 0x49, 0x50, 0x51, 0x52, 0x53, I2C_CLIENT_END };
+> +
+> +static int ax_i2c_detect(struct i2c_client *client, struct i2c_board_info *info)
+> +{
+> +	int byte = i2c_smbus_read_byte_data(client, 0);
+> +	if(byte < 0)
+> +		return -ENODEV;
+> +	strscpy(info->type, "axiado-client", I2C_NAME_SIZE);
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id ax_i2c_of_match[] = {
+> +	{ .compatible = "axiado,ax300",},
+> +	{ /* end of table */ }
+> +};
+> +MODULE_DEVICE_TABLE(of, ax_i2c_of_match);
+> +
+> +
+> +static struct i2c_driver ax_i2c_drv = {
+> +	.driver = {
+> +		.name  = "axiado",
+> +		.of_match_table = ax_i2c_of_match,
+> +	},
+> +	.detect = ax_i2c_detect,
+> +	.address_list = normal_i2c,
+> +	.class = I2C_CLASS_HWMON
 > +};
 > +
->  /**
->   * i3c_writel_fifo - Write data buffer to 32bit FIFO
->   * @addr: FIFO Address to write to
->   * @buf: Pointer to the data bytes to write
->   * @nbytes: Number of bytes to write
-> + * @endian: Endianness of FIFO write
->   */
->  static inline void i3c_writel_fifo(void __iomem *addr, const void *buf,
-> -				   int nbytes)
-> +				   int nbytes, enum i3c_fifo_endian endian)
->  {
-> -	writesl(addr, buf, nbytes / 4);
-> +	if (endian)
-> +		writesl_be(addr, buf, nbytes / 4);
-> +	else
-> +		writesl(addr, buf, nbytes / 4);
+> +module_i2c_driver(ax_i2c_drv);
 > +
->  	if (nbytes & 3) {
->  		u32 tmp = 0;
->
->  		memcpy(&tmp, buf + (nbytes & ~3), nbytes & 3);
-> -		writel(tmp, addr);
-> +
-> +		if (endian)
-> +			writel_be(tmp, addr);
-> +		else
-> +			writel(tmp, addr);
->  	}
->  }
->
-> @@ -47,15 +61,24 @@ static inline void i3c_writel_fifo(void __iomem *addr, const void *buf,
->   * @addr: FIFO Address to read from
->   * @buf: Pointer to the buffer to store read bytes
->   * @nbytes: Number of bytes to read
-> + * @endian: Endianness of FIFO read
->   */
->  static inline void i3c_readl_fifo(const void __iomem *addr, void *buf,
-> -				  int nbytes)
-> +				  int nbytes, enum i3c_fifo_endian endian)
->  {
-> -	readsl(addr, buf, nbytes / 4);
-> +	if (endian)
-> +		readsl_be(addr, buf, nbytes / 4);
-> +	else
-> +		readsl(addr, buf, nbytes / 4);
-> +
->  	if (nbytes & 3) {
->  		u32 tmp;
->
-> -		tmp = readl(addr);
-> +		if (endian)
-> +			tmp = readl_be(addr);
-> +		else
-> +			tmp = readl(addr);
-> +
->  		memcpy(buf + (nbytes & ~3), &tmp, nbytes & 3);
->  	}
->  }
-> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-> index 974122b2d20e..5d723ac041c2 100644
-> --- a/drivers/i3c/master/dw-i3c-master.c
-> +++ b/drivers/i3c/master/dw-i3c-master.c
-> @@ -337,19 +337,22 @@ static int dw_i3c_master_get_free_pos(struct dw_i3c_master *master)
->  static void dw_i3c_master_wr_tx_fifo(struct dw_i3c_master *master,
->  				     const u8 *bytes, int nbytes)
->  {
-> -	i3c_writel_fifo(master->regs + RX_TX_DATA_PORT, bytes, nbytes);
-> +	i3c_writel_fifo(master->regs + RX_TX_DATA_PORT, bytes, nbytes,
-> +			I3C_FIFO_LITTLE_ENDIAN);
->  }
->
->  static void dw_i3c_master_read_rx_fifo(struct dw_i3c_master *master,
->  				       u8 *bytes, int nbytes)
->  {
-> -	i3c_readl_fifo(master->regs + RX_TX_DATA_PORT, bytes, nbytes);
-> +	i3c_readl_fifo(master->regs + RX_TX_DATA_PORT, bytes, nbytes,
-> +		       I3C_FIFO_LITTLE_ENDIAN);
->  }
->
->  static void dw_i3c_master_read_ibi_fifo(struct dw_i3c_master *master,
->  					u8 *bytes, int nbytes)
->  {
-> -	i3c_readl_fifo(master->regs + IBI_QUEUE_STATUS, bytes, nbytes);
-> +	i3c_readl_fifo(master->regs + IBI_QUEUE_STATUS, bytes, nbytes,
-> +		       I3C_FIFO_LITTLE_ENDIAN);
->  }
->
->  static struct dw_i3c_xfer *
-> diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
-> index 97b151564d3d..de3b5e894b4b 100644
-> --- a/drivers/i3c/master/i3c-master-cdns.c
-> +++ b/drivers/i3c/master/i3c-master-cdns.c
-> @@ -428,13 +428,15 @@ to_cdns_i3c_master(struct i3c_master_controller *master)
->  static void cdns_i3c_master_wr_to_tx_fifo(struct cdns_i3c_master *master,
->  					  const u8 *bytes, int nbytes)
->  {
-> -	i3c_writel_fifo(master->regs + TX_FIFO, bytes, nbytes);
-> +	i3c_writel_fifo(master->regs + TX_FIFO, bytes, nbytes,
-> +			I3C_FIFO_LITTLE_ENDIAN);
->  }
->
->  static void cdns_i3c_master_rd_from_rx_fifo(struct cdns_i3c_master *master,
->  					    u8 *bytes, int nbytes)
->  {
-> -	i3c_readl_fifo(master->regs + RX_FIFO, bytes, nbytes);
-> +	i3c_readl_fifo(master->regs + RX_FIFO, bytes, nbytes,
-> +		       I3C_FIFO_LITTLE_ENDIAN);
->  }
->
->  static bool cdns_i3c_master_supports_ccc_cmd(struct i3c_master_controller *m,
-> @@ -1319,7 +1321,8 @@ static void cdns_i3c_master_handle_ibi(struct cdns_i3c_master *master,
->  	buf = slot->data;
->
->  	nbytes = IBIR_XFER_BYTES(ibir);
-> -	i3c_readl_fifo(master->regs + IBI_DATA_FIFO, buf, nbytes);
-> +	i3c_readl_fifo(master->regs + IBI_DATA_FIFO, buf, nbytes,
-> +		       I3C_FIFO_LITTLE_ENDIAN);
->
->  	slot->len = min_t(unsigned int, IBIR_XFER_BYTES(ibir),
->  			  dev->ibi->max_payload_len);
-> diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
-> index 174d3dc5d276..5610cf71740e 100644
-> --- a/drivers/i3c/master/renesas-i3c.c
-> +++ b/drivers/i3c/master/renesas-i3c.c
-> @@ -835,7 +835,8 @@ static int renesas_i3c_priv_xfers(struct i3c_dev_desc *dev, struct i3c_priv_xfer
->  		}
->
->  		if (!i3c_xfers[i].rnw && i3c_xfers[i].len > 4) {
-> -			i3c_writel_fifo(i3c->regs + NTDTBP0, cmd->tx_buf, cmd->len);
-> +			i3c_writel_fifo(i3c->regs + NTDTBP0, cmd->tx_buf, cmd->len,
-> +					I3C_FIFO_LITTLE_ENDIAN);
->  			if (cmd->len > NTDTBP0_DEPTH * sizeof(u32))
->  				renesas_set_bit(i3c->regs, NTIE, NTIE_TDBEIE0);
->  		}
-> @@ -1021,7 +1022,8 @@ static irqreturn_t renesas_i3c_tx_isr(int irq, void *data)
->  			/* Clear the Transmit Buffer Empty status flag. */
->  			renesas_clear_bit(i3c->regs, NTST, NTST_TDBEF0);
->  		} else {
-> -			i3c_writel_fifo(i3c->regs + NTDTBP0, cmd->tx_buf, cmd->len);
-> +			i3c_writel_fifo(i3c->regs + NTDTBP0, cmd->tx_buf, cmd->len,
-> +					I3C_FIFO_LITTLE_ENDIAN);
->  		}
->  	}
->
-> @@ -1061,7 +1063,8 @@ static irqreturn_t renesas_i3c_resp_isr(int irq, void *data)
->  			if (NDBSTLV0_RDBLV(renesas_readl(i3c->regs, NDBSTLV0)) && !cmd->err)
->  				bytes_remaining = data_len - cmd->rx_count;
->
-> -			i3c_readl_fifo(i3c->regs + NTDTBP0, cmd->rx_buf, bytes_remaining);
-> +			i3c_readl_fifo(i3c->regs + NTDTBP0, cmd->rx_buf, bytes_remaining,
-> +				       I3C_FIFO_LITTLE_ENDIAN);
->  			renesas_clear_bit(i3c->regs, NTIE, NTIE_RDBFIE0);
->  			break;
->  		default:
-> @@ -1203,7 +1206,8 @@ static irqreturn_t renesas_i3c_rx_isr(int irq, void *data)
->  			cmd->i2c_bytes_left--;
->  		} else {
->  			read_bytes = NDBSTLV0_RDBLV(renesas_readl(i3c->regs, NDBSTLV0)) * sizeof(u32);
-> -			i3c_readl_fifo(i3c->regs + NTDTBP0, cmd->rx_buf, read_bytes);
-> +			i3c_readl_fifo(i3c->regs + NTDTBP0, cmd->rx_buf, read_bytes,
-> +				       I3C_FIFO_LITTLE_ENDIAN);
->  			cmd->rx_count = read_bytes;
->  		}
->
-> --
-> 2.34.1
->
+> +MODULE_AUTHOR("Boris Staletic axiado-2532@axiado.com");
+> +MODULE_DESCRIPTION("Axiado I2C bus driver");
+> +MODULE_LICENSE("GPL");
+> diff --git a/drivers/i2c/i2c-core-base.c b/drivers/i2c/i2c-core-base.c
+> index ecca8c006b02..231c43cf657d 100644
+> --- a/drivers/i2c/i2c-core-base.c
+> +++ b/drivers/i2c/i2c-core-base.c
+> @@ -2467,13 +2467,22 @@ static int i2c_detect_address(struct i2c_client *temp_client,
+>   		return 0;
+> 
+>   	/* Make sure there is something at this address */
+> -	if (!i2c_default_probe(adapter, addr))
+> +	temp_client->dev.bus = &i2c_bus_type;
+> +	temp_client->dev.type = &i2c_client_type;
+> +	temp_client->dev.parent = &temp_client->adapter->dev;
+> +	dev_set_name(&temp_client->dev, "i2c-temp-client");
+> +	int err3 = device_register(&temp_client->dev);
+> +	int err2 = i2c_default_probe(adapter, addr);
+> +	if (!err2) {
+> +		device_unregister(&temp_client->dev);
+>   		return 0;
+> +	}
+> 
+>   	/* Finally call the custom detection function */
+>   	memset(&info, 0, sizeof(struct i2c_board_info));
+>   	info.addr = addr;
+>   	err = driver->detect(temp_client, &info);
+> +	device_unregister(&temp_client->dev);
+>   	if (err) {
+>   		/* -ENODEV is returned if the detection fails. We catch it
+>   		   here as this isn't an error. */
+> @@ -2542,6 +2551,7 @@ static int i2c_detect(struct i2c_adapter *adapter, struct i2c_driver *driver)
+>   		dev_dbg(&adapter->dev,
+>   			"found normal entry for adapter %d, addr 0x%02x\n",
+>   			i2c_adapter_id(adapter), address_list[i]);
+> +		memset(&temp_client->dev, 0, sizeof(temp_client->dev));
+>   		temp_client->addr = address_list[i];
+>   		err = i2c_detect_address(temp_client, driver);
+>   		if (unlikely(err))
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index 2ef898a8fd80..5fabba14de20 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -2494,6 +2494,7 @@ static int i3c_master_i2c_adapter_init(struct i3c_master_controller *master)
+>   	/* FIXME: Should we allow i3c masters to override these values? */
+>   	adap->timeout = 1000;
+>   	adap->retries = 3;
+> +	adap->class = 1;
+> 
+>   	id = of_alias_get_id(master->dev.of_node, "i2c");
+>   	if (id >= 0) {
+>> Thanks in advance,
+>> Boris Staletic
+>>
+>>>
+>>> Address 7E, REPEAT START, scan's address. ACK/NACK STOP.
+>>>
+>>> Check ACK/NACK. But you don't know if it is i3c device or i2c device by this
+>>> way.
+>>>
+>>> send 7E to avoid IBI during you send out address.
+>>>
+>>> Fank
+>>>
+>>>> The most iffy part of this approach is the need for such a dummy driver, just so the I3C master knows that "something exists".
+>>>> I'd welcome any sort of feedback.
+>>>>
+>>>> Thanks,
+>>>> Boris Staletic
+>>>> --
+>>>> linux-i3c mailing list
+>>>> linux-i3c@lists.infradead.org
+>>>> http://lists.infradead.org/mailman/listinfo/linux-i3c
+> 
+
 
 -- 
 linux-i3c mailing list
