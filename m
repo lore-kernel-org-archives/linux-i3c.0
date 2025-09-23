@@ -4,144 +4,139 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 072A4CAC5A7
-	for <linux-i3c@archiver.kernel.org>; Mon, 22 Sep 2025 11:47:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8AF1CCAC5AC
+	for <linux-i3c@archiver.kernel.org>; Tue, 23 Sep 2025 15:46:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fjA9SW7WNcHorVoXqnj7cexlF/veA76EbZ6gI0yJro8=; b=O0u0iia+oxb1Oo
-	6FIvLRM7x/bTBTUhEmL67ktg3qPLQ+UYGRQHNtx4/B7OeK/THiQRoODn4UTFBKmmnQTmgvsoDTWe7
-	fFn+zmdpjFXEmPIiOMgOHaAyr1Caq2vvvc3rGiwXvawmuRbIxLDeR8I4VnOOG7ZDpiuV4jFli1/0p
-	N+bI6gp8XGssH9pYwkFA1d/AAGPGlmIVGE9jXVpKiZwRrFnm+wRgg0nKNGijlfOpVEEJ6q2Ys/OiA
-	PIErbEk6BMCKDhV0xwxkTZjogyEnxQ1ZrPqlXuz/GbVGfUgPs87gCPQO+2VAN9voYiJMNIdq6tA6y
-	E7TlbmNxpSAMw58zum8Q==;
+	List-Owner; bh=OOCFsjJfhbhr/rI2hmTgTx4U7xBZe/byMtzOBaQuqLc=; b=eZQ3o2YY24S9Ne
+	wQoOjuyVyo22Uy4qgV7AkEailXzK6JOobcYDl2pXEzyUfFDOVq70fsiJcpbvjgNDTOf/522xO+6Ft
+	u/fKIMX5hZxVkkGBUgsYSxfn+A4Oag73M/nlCbIgxBZjb7/llQpk62PyDAreZkLVlNlGO0unWqdqe
+	UpigMyV65rQxEVa+NNnluOCe0ywV79C0uyGhpk0hgSrHYWEFkijdIwNqXv3bf3yVskILsYK4E5JHR
+	PebhJyRkUJ+TPMuLi8qOs1uVdrZne8Updj0fOdcREYCVgmyhlDD7lsjBAs4enH4bbFTBcJoH5hU0v
+	HYSESaRMPYrg2d3Sps3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v0f0j-0000000AFj9-3Jdt;
-	Mon, 22 Sep 2025 11:47:13 +0000
-Received: from mail-eastusazlp170120007.outbound.protection.outlook.com ([2a01:111:f403:c101::7] helo=BL0PR03CU003.outbound.protection.outlook.com)
+	id 1v15Dr-0000000E7w1-0qOU;
+	Tue, 23 Sep 2025 15:46:31 +0000
+Received: from mail-eastus2azlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c110::3] helo=BN8PR05CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v0f0h-0000000AFin-1ynl
+	id 1v15Dn-0000000E7us-2xNq
 	for linux-i3c@lists.infradead.org;
-	Mon, 22 Sep 2025 11:47:12 +0000
+	Tue, 23 Sep 2025 15:46:29 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Sic+YGIYGc5D1zX2kRS57672qkGvSkxf5xg6jQJEEzTE64sIE0V7X0Xw/0vekOhCj67KDpLo3vr00kyZSd5KhvxX2kCxMoWnd6Ykb/IoJ3efuyfFCq7rKBs2c0Zd+KGicZ4722m4T79aHKigssg36vC5TiPzKEXH3w2M/LKy0MBcTCRmDesbsIMKB/DR86lvgqJfCH9Gby+/9id7mlmo4JRd/uI6IaGp3ToEL0WL5me56RmEpbBDTQBgK1qK53+Mh13MMx5EUqwIX8qEmbFySgurQHqtTNneAoSsGVrePDKJO7QC+vtEwaI+WNpYEVHUD3zZokhEyiJgj+L8V24EiQ==
+ b=PxgvssG0lixNZ1h4EWOvtEaFeyGXJbhxUzFi/qXP5njK93QDVC9KDxDnJ4TdQ9ovggvXRsvZOvjH/u6mS/IQ7XhRl2lYOhGW50wMLK1DkhwyGza/TodoMIqFoCRDj2+s6J7o1i1t17Ws25K0TkSrTWPL16JFXHG/qnmvbuWbeo7+VWiA7VhrF8kFfyzKZulWo6QcFziE6LMQhbyZE/aC5PLa5A43PxR1jJ0XCz1Bn+URciuunjn2o+M/KW/mdZBcqhSaWI6IG6Vpv9hGJtPfDcWqQc20zIZpa2tMtTUpcB8VCvF+S0TGW5yFtoaNcPPPZEFQ2tnIH+Q+Ak29OG0Pyw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=E2P+KwauFmeZfJ+OOUcd0ayDFtvnF2Bm24h5PB/z1CI=;
- b=cY3rYSYSOnl7lACBKLAcIQAlp8IfM9W8nGoWkaVgzFoKgZuJw9DwjG/tGaQiuIR0h/pt1PZHke1qB3Pan/vY3CP+k/iA0nbLXvMSQBGdt/eeKl9H8A10CUTbzCWG8Y/a+Rq5M3ZJBD5xUslGEEw0mP6QUuvcxXHsqlh7BDFVdYZVhBt7dCiDaAaBWXSj63T8FBdZ5+lSoSF1Hnl60MjQfAhdJb468/9KIwLlZcy6wACE/l2pHrokqkmx5RtY9nqR/ars6a33DOK3qObRP1UN48tc0b3pq7MF1S4atFqcw9Ss3f3XuGJ0JDG3DuEl5toO2JTbzMliwVAvAtn/Yhejyg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=axiado.com; dmarc=pass action=none header.from=axiado.com;
- dkim=pass header.d=axiado.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axiado.com;
- s=selector1;
+ bh=YRhuU8P6a7o0uhH4BOdZaAKP1Vw6TSt4skkMrXvX/nY=;
+ b=fViOYnlvZcftO372Fvebqo0bIdfQLEiFdcUfrGGAF4ym9cJNC5wxnzKpfY3Qdaq8VOkuPQB0K4zxwhTv7lvt4sAZv6BZQWTzNNBtZmP0alLMjZ4IcaR3H9mX7VPdsAVEp6aEQ+7DyV3q+3OIb3C6GiE3qYCcR96GnE8jJuKkJJj6B037NZrwIZjYQYnc7CY3+Y3qq4A/OovFfA71d5UoQOQJ8UH4KHZ2VJqBgw4ug5AhGkrs1ACUVp+G6neO4lhI0L5X0Kgl9f+s9j34/2myKC0gd7wVxb/e5m82BsDPvaRPqYksqluNZE86WDebIgm2v8jNauB6xbeSLdABah8s2Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 165.204.84.17) smtp.rcpttodomain=gmail.com smtp.mailfrom=amd.com; dmarc=pass
+ (p=quarantine sp=quarantine pct=100) action=none header.from=amd.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=E2P+KwauFmeZfJ+OOUcd0ayDFtvnF2Bm24h5PB/z1CI=;
- b=MuQ9l9j+0wTY8Zmar2BUfh8Es1prnyBdqTzqaVuRdHdVQSSepArXCyuEbGviene5vXwWIOWz4oLf4MSQa8DvYNr3Ai3Jew7pAHzXiEBsfpfBKE7AtooqLKkNCjiifKc7tU2JBdLW453sY5lUu3RIB6WaY8nL0a0P9Y/Uxmhv0GaUZuyE0GgB3ne7RZOTRipJDyiWM2JNMCzFNnzrBtLlXnzrxw3FPFp88XnUH1YQCUn0q7V7sNup6SA7b0QsHgFAuT8mgodPHJx/+qRgcA/K8l6ozwgCBqucaVwWBXuLnrg60TutrnvWZaA+6E2Mky6bGutCLHCy576ZhY65LJDsNw==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=axiado.com;
-Received: from DS4PPF71D32B30E.namprd18.prod.outlook.com
- (2603:10b6:f:fc00::aa2) by LV3PR18MB5567.namprd18.prod.outlook.com
- (2603:10b6:408:1a2::12) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9137.19; Mon, 22 Sep
- 2025 11:47:02 +0000
-Received: from DS4PPF71D32B30E.namprd18.prod.outlook.com
- ([fe80::7c46:661:da37:dc33]) by DS4PPF71D32B30E.namprd18.prod.outlook.com
- ([fe80::7c46:661:da37:dc33%7]) with mapi id 15.20.9115.020; Mon, 22 Sep 2025
- 11:47:02 +0000
-Date: Mon, 22 Sep 2025 13:46:58 +0200
-From: Boris Staletic <bstaletic@axiado.com>
-To: Frank Li <Frank.li@nxp.com>
-Cc: "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>
-Subject: Re: i3c: scanning for i2c client devices on the network
-Message-ID: <aNE3MkhlABIHQ-J7@axiado.com>
-References: <DS4PPF71D32B30E58BEEB807E76DA5FF106DC0EA@DS4PPF71D32B30E.namprd18.prod.outlook.com>
- <aMmZnG/sbErB4Ly4@lizhi-Precision-Tower-5810>
- <aMwT9S92IpIOT_Gq@axiado.com>
-Content-Disposition: inline
-In-Reply-To: <aMwT9S92IpIOT_Gq@axiado.com>
-X-ClientProxiedBy: FR4P281CA0388.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:f7::17) To DS4PPF71D32B30E.namprd18.prod.outlook.com
- (2603:10b6:f:fc00::aa2)
+ bh=YRhuU8P6a7o0uhH4BOdZaAKP1Vw6TSt4skkMrXvX/nY=;
+ b=hzJN+WEqkWCIcxADiuQfo9d3MAm47ETwxKupchqiTQ1AcGpzaOcXkuGG1eu+l8WuddmkdhYcPzNC3XMRWJ/Le+IembIBl3idWEbXZQ4rrVYACTViKKtUgeCz76IUss2eOga+eqiK4A+XUPRupkdcRKlj/2UT3ZM+KvG73Hlo90g=
+Received: from BN0PR04CA0111.namprd04.prod.outlook.com (2603:10b6:408:ec::26)
+ by DM4PR12MB9069.namprd12.prod.outlook.com (2603:10b6:8:b8::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9137.14; Tue, 23 Sep
+ 2025 15:46:21 +0000
+Received: from BL6PEPF00022572.namprd02.prod.outlook.com
+ (2603:10b6:408:ec:cafe::97) by BN0PR04CA0111.outlook.office365.com
+ (2603:10b6:408:ec::26) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9137.21 via Frontend Transport; Tue,
+ 23 Sep 2025 15:46:20 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
+ smtp.mailfrom=amd.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=amd.com;
+Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
+ 165.204.84.17 as permitted sender) receiver=protection.outlook.com;
+ client-ip=165.204.84.17; helo=satlexmb07.amd.com; pr=C
+Received: from satlexmb07.amd.com (165.204.84.17) by
+ BL6PEPF00022572.mail.protection.outlook.com (10.167.249.40) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9137.12 via Frontend Transport; Tue, 23 Sep 2025 15:46:20 +0000
+Received: from satlexmb07.amd.com (10.181.42.216) by satlexmb07.amd.com
+ (10.181.42.216) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.17; Tue, 23 Sep
+ 2025 08:46:18 -0700
+Received: from xhdradheys41.xilinx.com (10.180.168.240) by satlexmb07.amd.com
+ (10.181.42.216) with Microsoft SMTP Server id 15.2.2562.17 via Frontend
+ Transport; Tue, 23 Sep 2025 08:46:11 -0700
+From: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+To: <git@amd.com>, <michal.simek@amd.com>, <alexandre.belloni@bootlin.com>,
+	<Frank.Li@nxp.com>, <robh@kernel.org>, <krzk+dt@kernel.org>,
+	<conor+dt@kernel.org>, <pgaj@cadence.com>,
+	<wsa+renesas@sang-engineering.com>, <tommaso.merciai.xr@bp.renesas.com>,
+	<arnd@arndb.de>, <quic_msavaliy@quicinc.com>, <Shyam-sundar.S-k@amd.com>,
+	<sakari.ailus@linux.intel.com>, <billy_tsai@aspeedtech.com>,
+	<kees@kernel.org>, <gustavoars@kernel.org>, <jarkko.nikula@linux.intel.com>,
+	<jorge.marques@analog.com>, <linux-i3c@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-arch@vger.kernel.org>, <linux-hardening@vger.kernel.org>
+CC: <radhey.shyam.pandey@amd.com>, <srinivas.goud@amd.com>,
+	<shubhrajyoti.datta@amd.com>, <manion05gk@gmail.com>, Manikanta Guntupalli
+	<manikanta.guntupalli@amd.com>
+Subject: [PATCH V7 1/4] dt-bindings: i3c: Add AMD I3C master controller support
+Date: Tue, 23 Sep 2025 21:15:48 +0530
+Message-ID: <20250923154551.2112388-2-manikanta.guntupalli@amd.com>
+X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250923154551.2112388-1-manikanta.guntupalli@amd.com>
+References: <20250923154551.2112388-1-manikanta.guntupalli@amd.com>
 MIME-Version: 1.0
+X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DS4PPF71D32B30E:EE_|LV3PR18MB5567:EE_
-X-MS-Office365-Filtering-Correlation-Id: cd179ee1-5a12-4c89-d39b-08ddf9cdbee6
+X-MS-TrafficTypeDiagnostic: BL6PEPF00022572:EE_|DM4PR12MB9069:EE_
+X-MS-Office365-Filtering-Correlation-Id: 2aeaf330-dc58-4641-b1d6-08ddfab85797
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?ENGNd/hwJxoh0woDstdNoOjlC+bX8iBiieREV+GubYn3+ljdJ8YdE0V9Y88l?=
- =?us-ascii?Q?1YOiYff0eo5IuquL4WrQGpZhTkKpqmR39KnI+xC27XcbRC+/AQLwdNAldpnj?=
- =?us-ascii?Q?e2j89Fla+40Gn6Gn6bmKYryjOH80KhgQt23h+RLfgJ5do4888FWkRVY7iXOs?=
- =?us-ascii?Q?4kmczMsQIonFhctvk7Mu24h6BSm3z6rcowCRyu6R5e61TxDR8Q9vZslmgnNF?=
- =?us-ascii?Q?Yo25VdZ7GqGDKP/ro6Qx1bB2p/ur5g214vae6WcpbqvNY1yJUxypDQYKtJRz?=
- =?us-ascii?Q?dlTuZOyGkiH3oDi9RdU3mym2Pbn49P8jeNYopP9J785r9IxvvqRtEO/AMffQ?=
- =?us-ascii?Q?UqwoxksOsPbwZNV6VWaGIqujQpGfy2pXopFHuyAEA4U+w8RsTJBXxd8Gv173?=
- =?us-ascii?Q?nyUb9jJ6d9mGv85NS1mHJUSd7OoQmdhe+gKbhjTGSveev/MvofaYqaIZqvuE?=
- =?us-ascii?Q?o/XayTiB4AidBnMAXpaYe/XQW4A2ijr4YGICUSNx8FYePWtWTc3MSztQ0+4+?=
- =?us-ascii?Q?tDO1aW4mGL3WMTbVTguTE7fxujQmKUFqvWAKLWKg/d1Mb6y7MwzyVMiPZ0w9?=
- =?us-ascii?Q?YMBCnuu07GnJo7j+a8jCJ/3f0Yn5q/G+STA7UoLsFPLNaG8kXcuR1WgvNv/2?=
- =?us-ascii?Q?S3RGO9tZmc/shwPJ0HvlJFLQStXUxfLaE7lkQhQ8RTVvwwk4hjwgJgeylYNU?=
- =?us-ascii?Q?e/9biDZe5l0ACWSCX0Ttizza5CUm7b3sU7+jFqVq5pv0pvUMaRETant7QrV5?=
- =?us-ascii?Q?EytbLGkEQ3JBWQ602eerZrMZuUNET6mzk0jT3Q7aNSM6cJ+SDEWy4jOvS3aP?=
- =?us-ascii?Q?O0F5qMKNICrzh1iVSvykVzgF8+8c6KZ4K0N9/vjtvVtKlW+3JS+nSFKTyxeJ?=
- =?us-ascii?Q?/Mc2JyjmuAjr8nou93d7HtFM5UGTKJgCdG+cgx6heF+jmL7IWeBzSHZKCriM?=
- =?us-ascii?Q?TSir2DOv93B4koetaqtAL2A6IT2l5YoawSrQ58qzOWivpiziFXpZQNKqLHmd?=
- =?us-ascii?Q?JmxIQvjdbOueJZvWVJCzihyb3wx5U6hnlfO9aEw2MlrNxLnwS4pld1KUpVp0?=
- =?us-ascii?Q?Jw0pafaQkFRY0jst/BJB2W7cyY/FqzGeiXLAOz8RVSA2g917OmgJNx1PLcWV?=
- =?us-ascii?Q?zrjx6tMB45zc99iwqTaInEoVwdvnw0WIfzENCEO4jAQaF1RQ1gvI2AIH36St?=
- =?us-ascii?Q?ZdcTUIFu0DzvGxE8TcDqeHeXPOJQ5HSm2W2rwvQ0nR6DFqbuFcIXqnlGXYko?=
- =?us-ascii?Q?pqdZ7YdeJEKv7xLFaplHAzGQ/zMQU4/ig6sFthR9gslTqmbAWxiLpg8PiyaV?=
- =?us-ascii?Q?B/S6DB4cN89R3lneeE6gJKVkn+SLc5Y7vwUe9O0gv6rVI3sLOnBYxbjOicoP?=
- =?us-ascii?Q?m0sflt9+wSd8m1xP3u7CVWYMosLiXe+mV2ZVx0Swrmulu1be46yhtWSOZrJm?=
- =?us-ascii?Q?9RIId/hcQBo=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DS4PPF71D32B30E.namprd18.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014);DIR:OUT;SFP:1102;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?3GXIjh8nHik2ukel0RfQ0o/5OQ4LUiVcy40GGI9jLDB5KobjNKrIyCpKgG0E?=
- =?us-ascii?Q?P+0Fc4QrFRxtKrB/DVyKRvjyYoc9SFQ8v7uKRefpE5vPVcbOObEOBpVa+bdR?=
- =?us-ascii?Q?sfpciAKIjkYFWNv5uNniVRId46OVKV8AQ8eploBbyw8RlO8DH5GYhVun1pul?=
- =?us-ascii?Q?btQ8+oUBcit7OM1TemNWhxoduohH3i6W0VHoIJT8oiwwzHloqv8Q7d1o9tM4?=
- =?us-ascii?Q?3IPxvAAiRKtjG7C94RUHfJ9N3l5MhCOMk7eBZWNO4PiuMaqTkdMXpXGtyaWJ?=
- =?us-ascii?Q?5HVLn6+hWSK+O6qbiN7b3EQDfcOEvwWEHDb4zkQ6Y4FRqRxw0EQVncOXdRNQ?=
- =?us-ascii?Q?rHdpHOc5Im1z7RUZofbFxKt1A4wHTK4s9HF0A0dR6/peT8rWwYQw7lzFJq5O?=
- =?us-ascii?Q?mI723zDAGQMD4A2oeNKaOkFuwC8aRzSXu8rTLAY7bzuTRdaO0o++6FgEhDgb?=
- =?us-ascii?Q?WLHqratJvOEn83roqzi7FnALrTaAOkpDdMw53S0WKx6yGeO0+2cczvnC5C8U?=
- =?us-ascii?Q?8SHZPSshB4UyL4vkH2dEwF533a7E3If6kSuPw1StxYHLsCrqJlY2AbEQud5b?=
- =?us-ascii?Q?q9rl7P/gFq7DoK+4WRtAPhCCebjXquLixXNo2tfhPp2v+NKMtGm7O0D6uGxR?=
- =?us-ascii?Q?6tnOElvjJjem58C6/b+hZiOegQp9/KrIADCE2ruqrJDUGW/p+MnR9ASrOmpl?=
- =?us-ascii?Q?84MMWzIQv78LGOtSCQM2tROPHK1bsDlz4skSsf0PlnNP9/pz3pf1vt/R01Oh?=
- =?us-ascii?Q?UjeHZDiyIiER+NYDVXiRda0nHe/cLa9AtQyiB51hmR5+Qccn2cPdM1Is2rwn?=
- =?us-ascii?Q?uvSvbMka/wRs8QUmYXOGubEqvxxugMlY2mJR3xZSkbv4UOnF7i+UXIA6TEHA?=
- =?us-ascii?Q?NzfpoVKcrTgXBOnhWeAkDhPkuFepQl0KO93qYW07iXSrcKqxVlToabaK1r0W?=
- =?us-ascii?Q?lN41lBHdmB6l/UkAj4pXmGD89lgQURXlOzzarbmUncaL24hkA6DBAI+O6cFT?=
- =?us-ascii?Q?Qx2vSFVQzvXesBdaoV0gHaQJXJ820L+N6WwG+5s22wOTxp1/hMGb0qpbPy0Q?=
- =?us-ascii?Q?WJNvqgmKgB3RDod3FituPHYqqZhvr3JQGqmtRQLq4euiqzQw87yi3dqhmVgp?=
- =?us-ascii?Q?lpLEYRBD+6hufL/49ql79HBFRWH16aCT9xV6sav/EPGKvJU6hc2DMDS9lM6o?=
- =?us-ascii?Q?jtGej89MDvnmaAJVAeTiCQkHhZ+moc6q/bn97BQOWzX4ayT7Jbg29pPwCKVy?=
- =?us-ascii?Q?zQ/1AmBQHHYIzLjgPxvupp0pCtGgA2Fdy+K/Pc2609QPJw9yVgSYGaTi26Lq?=
- =?us-ascii?Q?Cf+45rZFGxuYbtxMnCK9f2J3KRDHbrzmHIwoPlJj8DhVDlo8U7Og6NLeS7zf?=
- =?us-ascii?Q?bnN96HrXxvBgPoeW0rbcvqs7MSS89A+wmaMHNNrmuol4K7HaNj98yY1CfNcU?=
- =?us-ascii?Q?kheyXja82ggT6jI9ammQFKpCgxY8PAeA+qgGRdwkWem1LSSwKZs6OJrPea5R?=
- =?us-ascii?Q?+42odLm04V0dwdMr5Jk8JzxMf0PtZ4OUp0VkMoHL/JM5PVlL0gFkCLAYTgd0?=
- =?us-ascii?Q?i9HggI6WQ5NLYvzlXvgt/WCXNZ7Vhzfg+k8f0dv6?=
-X-OriginatorOrg: axiado.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cd179ee1-5a12-4c89-d39b-08ddf9cdbee6
-X-MS-Exchange-CrossTenant-AuthSource: DS4PPF71D32B30E.namprd18.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Sep 2025 11:47:02.5012
+X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|82310400026|376014|1800799024|36860700013|921020;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?OFYaUHvmLRFWDY9kQJfABMeu5bVIgWnmHyeIrUB/69IMPagutgesvQgjyrCe?=
+ =?us-ascii?Q?VPgT2J4rWP9a3CPLcvGwz+g8WkE6KVb7Ex49WJnUPdBDlYBFmRo2GDtsyQJx?=
+ =?us-ascii?Q?es/yGsUBMq37V9m9i0ze0ZTsbZoZOk7wals9qs2eFUzRIICfvntM43Q4qzhb?=
+ =?us-ascii?Q?hb48kWRmkotVG88f2kczmfOrdvVsvkIxdd4+PmoWaKu5vlrx70BFtDCHKpwO?=
+ =?us-ascii?Q?RgxQx15+WBRD8BC6OY75INAlewyQZuMJcv3OAR3CcsAwAOlEhsMFnKBplLoK?=
+ =?us-ascii?Q?ph0aYtMHb4yZmbnJb7Jzq7vUgOX/qn2p5/GmBzAof9TaMVcdiZyx8GaSqhtj?=
+ =?us-ascii?Q?7f0iodfTapS7HcaRCDRZoYdu0mQ3BBtHT51p3r1hz0Y0YaDw1lvGN+lHsINK?=
+ =?us-ascii?Q?26TPg45uvRwQArRI4BIsa97O/+WnMvyfu4D5iEjcMcbBBlhjgayyd/A/9IX8?=
+ =?us-ascii?Q?VcvTFrTTwGB24MZNlYwP/6QCmZ/Q2cp6XlIq13kGJRjeDbmb+7vh3nNYoPja?=
+ =?us-ascii?Q?lJkPTgi6uSt9cqJyTV9A0QL6c287nlFoffpT7ZVCdFyRnqqpMRZP/oHp96wt?=
+ =?us-ascii?Q?Yxw9XNWExswTvBzeZ54wrkZl1ZcnJ/l8ztn+jr0XpNg6A6lkHZEzf436jayV?=
+ =?us-ascii?Q?ZsjLkOALwZMvl27jOvq7r6sUuZAt6GLjnnwMHozRE8zo6qISnyhJ4bLm1TNT?=
+ =?us-ascii?Q?E450qGjJOF4Re/R5pe0nfuQ475RbQnHXN3fArm4N+fyxqYr6RVEMwgscwgto?=
+ =?us-ascii?Q?KgT18GddSxNiGjjS8TrV9iEJiWPnu1rLKvlgiEn42p/cGFWKqJJa2l1WU+ed?=
+ =?us-ascii?Q?Qa3UT40Fi4CotCgksHA5UW8g4yki/HEvwSQjvtRjYUGPhuBVuhrmpItEFgIW?=
+ =?us-ascii?Q?YC0tH4Jwi+OAtJCq42f66wvr8xZ3FdtJ8a4X1Zt1nV0A6wrv7eXr/JG6ixkU?=
+ =?us-ascii?Q?ivo1QR2st5JXfxT+qjejwyiVPmc16UZoxJmtePuj1hX8RWrg+JuUgu8yEV/u?=
+ =?us-ascii?Q?rLhQg6Tzum1VJZkBWwCBd02MrIcaAyh9f86dhk46kDuPnad3vsTF1SX0PQVd?=
+ =?us-ascii?Q?h1dCcAqQjaf/Jdbb59JSdaKvJ9q5qSFOfzwdPg4/ZDZvfaBeeSe1Ffbg+80w?=
+ =?us-ascii?Q?2cDhcaZu/t4S10/HoU16yVnh7tQ5am7mn9qZ5XiyQfZRA2UzXcIko3eleQIQ?=
+ =?us-ascii?Q?T26/++bYurnn+a+3l+AAY6Z31Y6ptxJgD8anw/bfcfV0mtyn+J5FIQ+C570E?=
+ =?us-ascii?Q?dmUm0E5Hy/Lqg5pyITu+2VnLQwWJB9SXmojkAw4IJ3OKm9+V8Cz8Gs65/mno?=
+ =?us-ascii?Q?0s1NhSkqNvJmIJ2KUOseYLm04Lcgt3gS5OG70owLwjKmWHnGyLO9Mi/JKI5R?=
+ =?us-ascii?Q?dSJp69Jv5Wlkxlo8c+mmR5JI7Kkh1b6fT4HDwV3riKDVjQ+cTOSrCKD04XNK?=
+ =?us-ascii?Q?bf1B0qFn16WEv1g5PL/EJyAntVFaYsd1w9INszb1jp+3f5U8R9pjGpTUrxvz?=
+ =?us-ascii?Q?H05ZqBdceO6xBx8=3D?=
+X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:satlexmb07.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(7416014)(82310400026)(376014)(1800799024)(36860700013)(921020);DIR:OUT;SFP:1101;
+X-OriginatorOrg: amd.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Sep 2025 15:46:20.6521
  (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: ff2db17c-4338-408e-9036-2dee8e3e17d7
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: qmhRjaUO7kHQlhYrENhvNvk0r4JapbC0WK9WuQbm+I+FzVw2IiuUfNPH9kmk75RiAnlkcgiI9/ePszpdh73Drg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: LV3PR18MB5567
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2aeaf330-dc58-4641-b1d6-08ddfab85797
+X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[satlexmb07.amd.com]
+X-MS-Exchange-CrossTenant-AuthSource: BL6PEPF00022572.namprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM4PR12MB9069
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250922_044711_513503_397E57AF 
-X-CRM114-Status: GOOD (  28.14  )
+X-CRM114-CacheID: sfid-20250923_084627_749643_0E309558 
+X-CRM114-Status: GOOD (  14.61  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -158,77 +153,104 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Sep 18, 2025 at 04:15:17PM +0200, Boris Staletic wrote:
-> On Tue, Sep 16, 2025 at 01:08:44PM -0400, Frank Li wrote:
-> > On Wed, Sep 10, 2025 at 02:01:33PM +0000, Boris Staletic wrote:
-> > > Hello,
-> > >
-> > > We have an I3C bus where the user may ultimately attach an I2C slave with an arbitrary address, with the idea
-> > > of using i2c-utils to communicate with the I2C slave from userland.
-> > >
-> > > With the current kernel, I2C slaves need to be known statically and thus i2cdetect fails to detect any slaves.
-> > > All communication attempts get rejected early, because i3c_master_find_i2c_dev_by_addr returns NULL and then i3c_master_i2c_adapter_xfer exits with ENOENT.
-> > > I3c_master_find_i2c_dev_by_addr returns NULL because bus->devs.i2c ends up being empty.
-> > >
-> > > Since the I2C drivers have i2c_detect and i3c_master_controller has its own i2c_adater, I looked into what needs to be done for networks
-> > > with I3C masters to use the existing i2c_detect mechanism. That lead me to the following list of changes:
-> > >
-> > > - i3c_master_controllr's i2c_adapter needs to have its class member set.
-> > > - In i2c_detect_address, temp_client->dev needs to be populated and registered before the call to i2c_default_probe.
-> > >   - Otherwise the attempt to probe gets rejected early, for the same reason described above (i3c_master_find_i2c_dev_by_addr returning NULL).
-> > >
-> > > That much was enough to get i2c_detect to work with an I3C master.
-> > > To complete the use case I also needed a registered i2c_driver that implements a simple i2c_driver.detect function.
-> > > In my test, the detect function simply checked whether i2c_smbus_read_byte_data(client, 0) returns a non-error value.
-> > >
-> > > Could anyone comment whether this is the right approach for implementing I2C slave detection with an I3C master?
-> > 
-> > Generally, it is the same as I2C. just send out address, and check if target
-> > ACK/NACK this address.
-> 
-> Are you referring here to i2c_new_scanned_device? If so, that also, in
-> my testing, couldn't detect any devices without modificatioins.
-> The failure to scan happens because:
+Add device tree binding documentation for the AMD I3C master
+controller version 1.0.
 
-Once again, here's a patch of what I have attempted to do, but this has
-seen less testing.
-I have removed the quotes below the patch for brevity.
+Signed-off-by: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+---
+Changes for V2:
+Updated commit subject and description.
+Moved allOf to after required.
+Removed xlnx,num-targets property.
 
------------------------------------------------------------------------
- drivers/i3c/master.c | 20 ++++++++++++++++++++
- 1 file changed, 20 insertions(+)
+Changes for V3:
+Updated commit description.
+Corrected the order of properties and removed resets property.
+Added compatible to required list.
+Added interrupts to example.
 
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 2ef898a8fd80..de9dbf6c518e 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -2849,6 +2849,26 @@ int i3c_master_register(struct i3c_master_controller *master,
- 			i2c_scl_rate = I3C_BUS_I2C_FM_SCL_MAX_RATE;
- 	}
+Changes for V4:
+Added h/w documentation details.
 
-+	unsigned short addr_list[] = { 0x48, 0x49, 0x50, 0x51, 0x52, 0x53, I2C_CLIENT_END };
-+	struct i2c_client *temp_client = kzalloc(sizeof(*temp_client), GFP_KERNEL);
-+	for(int i = 0; addr_list[i] != I2C_CLIENT_END; i++) {
-+		unsigned short one_address[] = { addr_list[i], I2C_CLIENT_END };
-+		struct i2c_board_info info;
-+		memset(&info, 0, sizeof(info));
-+		info.addr = addr_list[i];
+Changes for V5:
+Renamed the xlnx,axi-i3c.yaml file into xlnx,axi-i3c-1.0.yaml.
+
+Changes for V6:
+Corrected the file name for $id in yaml to fix the dtschema warning.
+
+Changes for V7:
+Added i3c controller version details to commit description.
+Added Reviewed-by tag.
+---
+ .../bindings/i3c/xlnx,axi-i3c-1.0.yaml        | 55 +++++++++++++++++++
+ 1 file changed, 55 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml
+
+diff --git a/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml b/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml
+new file mode 100644
+index 000000000000..17c63807dbcf
+--- /dev/null
++++ b/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml
+@@ -0,0 +1,55 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/i3c/xlnx,axi-i3c-1.0.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+		memset(&temp_client->dev, 0, sizeof(info));
-+		temp_client->dev.bus = &i2c_bus_type;
-+		temp_client->dev.type = &i2c_client_type;
-+		temp_client->dev.parent = &temp_client->adapter->dev;
-+		dev_set_name(&temp_client->dev, "i2c-temp-client");
-+		int err = device_register(&temp_client->dev);
-+		if(err)
-+			continue;
-+		i2c_new_scanned_device(&master->i2c, &info, one_address, NULL);
-+		i2c_unregister_device(temp_client);
-+	}
++title: AMD I3C master
 +
- 	ret = i3c_bus_set_mode(i3cbus, mode, i2c_scl_rate);
- 	if (ret)
- 		goto err_put_dev;
++maintainers:
++  - Manikanta Guntupalli <manikanta.guntupalli@amd.com>
++
++description:
++  The AXI-I3C IP is an I3C Controller with an AXI4-Lite interface, compatible
++  with the MIPI I3C Specification v1.1.1. The design includes bidirectional I/O
++  buffers that implement open collector drivers for the SDA and SCL signals.
++  External pull-up resistors are required to properly hold the bus at a Logic-1
++  level when the drivers are released.
++
++  For more details, please see https://docs.amd.com/r/en-US/pg439-axi-i3c
++
++properties:
++  compatible:
++    const: xlnx,axi-i3c-1.0
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - clocks
++
++allOf:
++  - $ref: i3c.yaml#
++
++unevaluatedProperties: false
++
++examples:
++  - |
++    i3c@80000000 {
++        compatible = "xlnx,axi-i3c-1.0";
++        reg = <0x80000000 0x10000>;
++        clocks = <&zynqmp_clk 71>;
++        interrupt-parent = <&imux>;
++        interrupts = <0 89 4>;
++        #address-cells = <3>;
++        #size-cells = <0>;
++    };
++...
+-- 
+2.34.1
+
 
 -- 
 linux-i3c mailing list
