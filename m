@@ -4,108 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4765BCAC5AE
-	for <linux-i3c@archiver.kernel.org>; Wed, 24 Sep 2025 20:19:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3BFBDCAC5B0
+	for <linux-i3c@archiver.kernel.org>; Wed, 24 Sep 2025 20:35:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:References:In-Reply-To:
-	Message-Id:Cc:To:From:Date:MIME-Version:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=W1MXKlZQcL3CAfdSb8MQnQbbI0KTUt1q7UeGaYQgUOA=; b=tiuIFRZPfmMQiVfdjIFCvH/7K3
-	RXzkwcH2Vf8O69lu/a+7d5M8ZHiVFjZPcjZNOnCTARG8+qmurZRrDPX0YhB1LzT6mwp8rppnGVMtv
-	M0213ENzpJYVkyvSivqRqMGgHLyksJOBRU269P2TNArLk/C/DGdGL1VR5V6NzxOTzywQK3MkbfD/E
-	q+vDKpWInMWvyOGWNCdgA2KUWXhfSGbZHTXShpsNcBRMPcgc4vAdO1WDid46XX2nSuUA7vFl7UEjO
-	9aRmBdYdpAStZwh7B3/L0ywUBptHqM4tcwHr4yFNVKH4fCur6vLfB/c2CuID2+EL/s7rlA5J3Cf35
-	ZmcpcuAA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XI2g0v20glpUsy/kbC2ev63zvts93b+U2+6mZW326TM=; b=sN+fyTyl6plCPX
+	5SZ/3aeXVFaoaf/quh2GtCeoNmGwNeJTVSiDsguHvy2o4cFGMS3B8P2IWpMMqZGfr6JBGj1mGBPP6
+	z2/tj0MFMMOOnXEoiIoPDjrenbuZwfWrjyg4JDQ8SHFO+5Qy2+5YmBMq8Sqj+QeSZLT2rSknzAKB4
+	R0f2kEwTzJWHUxp6Xdpe+WvH57TzdqM4eoJkSbXg4wrndT345Fx+uPdALzh0bzcYwEMNOYccOOYw1
+	8nDVO2pisKsYJ3wHGZZpfuUd+I3JFmFPvah2PdiiKOpPBXu3K/Gk/tu0NO/tZlFPUGOG+PGbuUo4s
+	mPugM5X8JPOnyHXXINfg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1Vy1-00000003PNR-0CNG;
-	Wed, 24 Sep 2025 20:19:57 +0000
-Received: from fout-a4-smtp.messagingengine.com ([103.168.172.147])
+	id 1v1WD5-00000003XxH-3vrS;
+	Wed, 24 Sep 2025 20:35:31 +0000
+Received: from mgamail.intel.com ([192.198.163.14])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1Vxx-00000003PMr-42o3
+	id 1v1WD3-00000003Xvf-29uJ
 	for linux-i3c@lists.infradead.org;
-	Wed, 24 Sep 2025 20:19:55 +0000
-Received: from phl-compute-05.internal (phl-compute-05.internal [10.202.2.45])
-	by mailfout.phl.internal (Postfix) with ESMTP id 3FF64EC01A7;
-	Wed, 24 Sep 2025 16:19:52 -0400 (EDT)
-Received: from phl-imap-02 ([10.202.2.81])
-  by phl-compute-05.internal (MEProxy); Wed, 24 Sep 2025 16:19:52 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=arndb.de; h=cc
-	:cc:content-transfer-encoding:content-type:content-type:date
-	:date:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:subject:subject:to:to; s=fm1; t=1758745192;
-	 x=1758831592; bh=m8FTw+V0SHUIhk9QAZOvCPg7GbCZfkE73XxcAK3HRvw=; b=
-	cpocQpIwrcUOSlbCkz3Q6P4cmFbBy9OnxrQXVU8fZy+1ag0e1MIMW43vie+IR1Zv
-	znhl3qHeXeGy9K5o4xFNx+W6JZvpXyB5Su/WlnBir9I/aOsqEtdXlki2BbXuF1Mp
-	YgkZeJtwNEJ4rGl71vQCCNbz0IDYedx0gePQ+tU/xw0VKki7KGkVZeVogtZQkWeX
-	lQIDxdRg7ubzrjcNgGGFk0GvV6CIUv+nkoJPz+8zF85nj7plDqpHiOK/x1EUpOL4
-	GlqbwC91kFEHHw4gn5dNtWRHxAcV152fZR0RE7Psv48OqB6vZZvZu2G38E4faaDJ
-	H24r4DweenAGf38wDvMNrw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding
-	:content-type:content-type:date:date:feedback-id:feedback-id
-	:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:subject:subject:to:to:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=1758745192; x=
-	1758831592; bh=m8FTw+V0SHUIhk9QAZOvCPg7GbCZfkE73XxcAK3HRvw=; b=n
-	XUXa+IalwlRDv8bv0wOI4v/Fgwz2XA+iow02LdhRhbDR+nWa6bo4P9gT60eCu1Fz
-	bVZLSaLxouQ4//NuH+PgQQbnXSvKHA1yzjPKLIUqYqv4zIyxUEdEWYSbmNKpj8pB
-	zBALQJw0MDV3WM4QuOZAD4MEVbfq8IR4jki0OnNisMEx59iTm5jDCOqiR9KAkmMs
-	ZbHYLoIO52RQsn/WZr9QMnzhL6cylW/QZ409E0WjM7D/eg5ZbsH3tVGDd0I9bpZ4
-	lr2Mx87wtyXelnpFaXZOYfYn9mm7iq5WU2yiXoXZDMpAV1o3wd0qATu83U9ZogHZ
-	CG4IBhzs4vhiWz57Edhlg==
-X-ME-Sender: <xms:Z1LUaHgVnEyQdPi9R-0v9y9rP8Pjv_a0NpPhW9AfA6BXPqh_pG7zrQ>
-    <xme:Z1LUaO3H7Y-fL1iXX_Hm2TfZ0O7R3Py-xVFv3J67JfwQz2MH3zE3SKQxH46UkW_Gk
-    fPbFz-pGwwKueH1MLfYLDGTBTYXgJWucMfdJPUUZwsS5aBllpIAlU4>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeffedrtdeggdeigeehhecutefuodetggdotefrod
-    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpuffrtefokffrpgfnqfghnecuuegr
-    ihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjug
-    hrpefoggffhffvvefkjghfufgtgfesthejredtredttdenucfhrhhomhepfdetrhhnugcu
-    uegvrhhgmhgrnhhnfdcuoegrrhhnugesrghrnhgusgdruggvqeenucggtffrrghtthgvrh
-    hnpefhtdfhvddtfeehudekteeggffghfejgeegteefgffgvedugeduveelvdekhfdvieen
-    ucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrrhhnug
-    esrghrnhgusgdruggvpdhnsggprhgtphhtthhopeelpdhmohguvgepshhmthhpohhuthdp
-    rhgtphhtthhopehmrghnihhkrghnthgrrdhguhhnthhuphgrlhhlihesrghmugdrtghomh
-    dprhgtphhtthhopehjohhrghgvrdhmrghrqhhuvghssegrnhgrlhhoghdrtghomhdprhgt
-    phhtthhopegrlhgvgigrnhgurhgvrdgsvghllhhonhhisegsohhothhlihhnrdgtohhmpd
-    hrtghpthhtohepghgrshhtmhgrihgvrhesghhmrghilhdrtghomhdprhgtphhtthhopegr
-    rhhnugeskhgvrhhnvghlrdhorhhgpdhrtghpthhtoheplhhinhhugidqiheftgeslhhish
-    htshdrihhnfhhrrgguvggrugdrohhrghdprhgtphhtthhopehfrhgrnhhkrdhlihesnhig
-    phdrtghomhdprhgtphhtthhopeifshgrodhrvghnvghsrghssehsrghnghdqvghnghhinh
-    gvvghrihhnghdrtghomhdprhgtphhtthhopehlihhnuhigqdhkvghrnhgvlhesvhhgvghr
-    rdhkvghrnhgvlhdrohhrgh
-X-ME-Proxy: <xmx:Z1LUaAxNFHMOREkqCmAiqLK0kVFUXn7NEDSl03-6lt2zPVP7A1luNw>
-    <xmx:Z1LUaEtMj706rlCTvQJXFZfdVdVaCHO1KvcxBy6q3QecJC05INzl7A>
-    <xmx:Z1LUaDDauZxDXUOkgzFsdGu2IXAnv2kUn_c4HJenpYX9mVvlpqxGyQ>
-    <xmx:Z1LUaGHtNPGtn62llmgvJ099ab7pgUzs4YhNbfXSdrVrvOi0vFFfag>
-    <xmx:aFLUaFfT1aUE0B7TavoJicZNHn_2752eUGLhE1ShqnCFQeIe_os41zoN>
-Feedback-ID: i56a14606:Fastmail
-Received: by mailuser.phl.internal (Postfix, from userid 501)
-	id 88C5E700065; Wed, 24 Sep 2025 16:19:51 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
+	Wed, 24 Sep 2025 20:35:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1758746130; x=1790282130;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=yIIG1XirvNHRjmi8n5doZRkSjBLwdxxinyVL08mmVww=;
+  b=cImYsZAxVyHhV/PeuE6AmvED8MkGu5EMy0N6jSJPah5jAwgSsbLfnUdO
+   ERkl5GdkZL7adenQAlozkjP+IHZUdG60MJpmL/0Oax4utRsaH9x12egNn
+   c0y5RwVjiewbxb5lw6agnABe4iqpoS0pl1zAzqhkEj7A8uE/Ht38kvibm
+   l2QqnmVXbPVaZg+7fS58rmoGW0aCWRWboJgOXWVz8l12e6/B0XzUo7VNJ
+   Krx2DRWGsYjTEAzAol84rqN1Aj73uwUYNw7/Mn9sgSq+e+WKKT2NXPQtv
+   T0GCaijmbgcVncTUbvGI4GLAuQEEJi5D71D7hnClXPtu8cre3810M/g4R
+   Q==;
+X-CSE-ConnectionGUID: ZqjHwmH9Q+qSuTAg927KiA==
+X-CSE-MsgGUID: SDT4341VSXuVojZebMCuIA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11563"; a="61107247"
+X-IronPort-AV: E=Sophos;i="6.18,291,1751266800"; 
+   d="scan'208";a="61107247"
+Received: from orviesa004.jf.intel.com ([10.64.159.144])
+  by fmvoesa108.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 24 Sep 2025 13:35:29 -0700
+X-CSE-ConnectionGUID: fGvhU9vnSUqnQqd/QW8Okg==
+X-CSE-MsgGUID: kGVSi16kQa6u+aYiLlNf8A==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.18,291,1751266800"; 
+   d="scan'208";a="181405897"
+Received: from lkp-server02.sh.intel.com (HELO 84c55410ccf6) ([10.239.97.151])
+  by orviesa004.jf.intel.com with ESMTP; 24 Sep 2025 13:35:22 -0700
+Received: from kbuild by 84c55410ccf6 with local (Exim 4.96)
+	(envelope-from <lkp@intel.com>)
+	id 1v1WCt-0004Xt-1P;
+	Wed, 24 Sep 2025 20:35:19 +0000
+Date: Thu, 25 Sep 2025 04:34:31 +0800
+From: kernel test robot <lkp@intel.com>
+To: Manikanta Guntupalli <manikanta.guntupalli@amd.com>, git@amd.com,
+	michal.simek@amd.com, alexandre.belloni@bootlin.com,
+	Frank.Li@nxp.com, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, pgaj@cadence.com,
+	wsa+renesas@sang-engineering.com, tommaso.merciai.xr@bp.renesas.com,
+	arnd@arndb.de, quic_msavaliy@quicinc.com, Shyam-sundar.S-k@amd.com,
+	sakari.ailus@linux.intel.com, billy_tsai@aspeedtech.com,
+	kees@kernel.org, gustavoars@kernel.org,
+	jarkko.nikula@linux.intel.com, jorge.marques@analog.com,
+	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-arch@vger.kernel.org,
+	linux-hardening@vger.kernel.org
+Cc: oe-kbuild-all@lists.linux.dev, radhey.shyam.pandey@amd.com,
+	srinivas.goud@amd.com, shubhrajyoti.datta@amd.com,
+	manion05gk@gmail.com,
+	Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+Subject: Re: [PATCH V7 2/4] asm-generic/io.h: Add big-endian MMIO accessors
+Message-ID: <202509250413.sOTeU37m-lkp@intel.com>
+References: <20250923154551.2112388-3-manikanta.guntupalli@amd.com>
 MIME-Version: 1.0
-X-ThreadId: AywbbuUSWNC3
-Date: Wed, 24 Sep 2025 22:19:31 +0200
-From: "Arnd Bergmann" <arnd@arndb.de>
-To: "Jorge Marques" <gastmaier@gmail.com>, "Arnd Bergmann" <arnd@kernel.org>
-Cc: "Alexandre Belloni" <alexandre.belloni@bootlin.com>,
- "Wolfram Sang" <wsa+renesas@sang-engineering.com>,
- "Jorge Marques" <jorge.marques@analog.com>, "Frank Li" <Frank.Li@nxp.com>,
- "Manikanta Guntupalli" <manikanta.guntupalli@amd.com>,
- "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
- linux-kernel@vger.kernel.org
-Message-Id: <d86da0ed-8293-4356-bc73-98492d08ee8c@app.fastmail.com>
-In-Reply-To: <ikwkapgsfntog67hwi2aapdadlq2wy7oydjz6i75gbhgxxd6fc@3e3lxh7xkgy6>
-References: <20250924150303.3601429-1-arnd@kernel.org>
- <ikwkapgsfntog67hwi2aapdadlq2wy7oydjz6i75gbhgxxd6fc@3e3lxh7xkgy6>
-Subject: Re: [PATCH] i3c: fix big-endian FIFO transfers
+Content-Disposition: inline
+In-Reply-To: <20250923154551.2112388-3-manikanta.guntupalli@amd.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250924_131954_332373_B75D53FA 
-X-CRM114-Status: UNSURE (   8.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250924_133529_565081_3D4A53C3 
+X-CRM114-Status: GOOD (  12.32  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,18 +101,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Sep 24, 2025, at 19:01, Jorge Marques wrote:
-> On Wed, Sep 24, 2025 at 05:02:53PM +0200, Arnd Bergmann wrote:
-> Can you fix, as Nuno pointed, to:
->
->    		writesl(addr, &tmp, 1);
->
-> as in the original drivers, and adding this information to the cover for
-> further clarification.
+Hi Manikanta,
 
-Sent v2 now with those two changes.
+kernel test robot noticed the following build warnings:
 
-      Arnd
+[auto build test WARNING on robh/for-next]
+[also build test WARNING on linus/master arnd-asm-generic/master v6.17-rc7 next-20250924]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
+
+url:    https://github.com/intel-lab-lkp/linux/commits/Manikanta-Guntupalli/dt-bindings-i3c-Add-AMD-I3C-master-controller-support/20250923-234944
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
+patch link:    https://lore.kernel.org/r/20250923154551.2112388-3-manikanta.guntupalli%40amd.com
+patch subject: [PATCH V7 2/4] asm-generic/io.h: Add big-endian MMIO accessors
+config: sparc-allnoconfig (https://download.01.org/0day-ci/archive/20250925/202509250413.sOTeU37m-lkp@intel.com/config)
+compiler: sparc-linux-gcc (GCC) 15.1.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250925/202509250413.sOTeU37m-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202509250413.sOTeU37m-lkp@intel.com/
+
+All warnings (new ones prefixed by >>):
+
+   In file included from include/linux/io.h:12,
+                    from include/linux/irq.h:20,
+                    from include/asm-generic/hardirq.h:17,
+                    from arch/sparc/include/asm/hardirq_32.h:11,
+                    from arch/sparc/include/asm/hardirq.h:7,
+                    from include/linux/hardirq.h:11,
+                    from include/linux/interrupt.h:11,
+                    from include/linux/trace_recursion.h:5,
+                    from include/linux/ftrace.h:10,
+                    from include/linux/perf_event.h:43,
+                    from arch/sparc/mm/fault_32.c:22:
+>> arch/sparc/include/asm/io.h:16:9: warning: 'readw_be' redefined
+      16 | #define readw_be(__addr)        __raw_readw(__addr)
+         |         ^~~~~~~~
+   In file included from arch/sparc/include/asm/io_32.h:21,
+                    from arch/sparc/include/asm/io.h:7:
+   include/asm-generic/io.h:304:9: note: this is the location of the previous definition
+     304 | #define readw_be readw_be
+         |         ^~~~~~~~
+>> arch/sparc/include/asm/io.h:17:9: warning: 'readl_be' redefined
+      17 | #define readl_be(__addr)        __raw_readl(__addr)
+         |         ^~~~~~~~
+   include/asm-generic/io.h:319:9: note: this is the location of the previous definition
+     319 | #define readl_be readl_be
+         |         ^~~~~~~~
+>> arch/sparc/include/asm/io.h:19:9: warning: 'writel_be' redefined
+      19 | #define writel_be(__w, __addr)  __raw_writel(__w, __addr)
+         |         ^~~~~~~~~
+   include/asm-generic/io.h:363:9: note: this is the location of the previous definition
+     363 | #define writel_be writel_be
+         |         ^~~~~~~~~
+>> arch/sparc/include/asm/io.h:20:9: warning: 'writew_be' redefined
+      20 | #define writew_be(__l, __addr)  __raw_writew(__l, __addr)
+         |         ^~~~~~~~~
+   include/asm-generic/io.h:351:9: note: this is the location of the previous definition
+     351 | #define writew_be writew_be
+         |         ^~~~~~~~~
+--
+   In file included from include/linux/io.h:12,
+                    from include/linux/irq.h:20,
+                    from include/asm-generic/hardirq.h:17,
+                    from arch/sparc/include/asm/hardirq_32.h:11,
+                    from arch/sparc/include/asm/hardirq.h:7,
+                    from include/linux/hardirq.h:11,
+                    from include/linux/highmem.h:12,
+                    from include/linux/pagemap.h:11,
+                    from arch/sparc/mm/srmmu.c:15:
+>> arch/sparc/include/asm/io.h:16:9: warning: 'readw_be' redefined
+      16 | #define readw_be(__addr)        __raw_readw(__addr)
+         |         ^~~~~~~~
+   In file included from arch/sparc/include/asm/io_32.h:21,
+                    from arch/sparc/include/asm/io.h:7:
+   include/asm-generic/io.h:304:9: note: this is the location of the previous definition
+     304 | #define readw_be readw_be
+         |         ^~~~~~~~
+>> arch/sparc/include/asm/io.h:17:9: warning: 'readl_be' redefined
+      17 | #define readl_be(__addr)        __raw_readl(__addr)
+         |         ^~~~~~~~
+   include/asm-generic/io.h:319:9: note: this is the location of the previous definition
+     319 | #define readl_be readl_be
+         |         ^~~~~~~~
+>> arch/sparc/include/asm/io.h:19:9: warning: 'writel_be' redefined
+      19 | #define writel_be(__w, __addr)  __raw_writel(__w, __addr)
+         |         ^~~~~~~~~
+   include/asm-generic/io.h:363:9: note: this is the location of the previous definition
+     363 | #define writel_be writel_be
+         |         ^~~~~~~~~
+>> arch/sparc/include/asm/io.h:20:9: warning: 'writew_be' redefined
+      20 | #define writew_be(__l, __addr)  __raw_writew(__l, __addr)
+         |         ^~~~~~~~~
+   include/asm-generic/io.h:351:9: note: this is the location of the previous definition
+     351 | #define writew_be writew_be
+         |         ^~~~~~~~~
+   arch/sparc/mm/srmmu.c: In function 'poke_hypersparc':
+   arch/sparc/mm/srmmu.c:1074:32: warning: variable 'clear' set but not used [-Wunused-but-set-variable]
+    1074 |         volatile unsigned long clear;
+         |                                ^~~~~
+
+
+vim +/readw_be +16 arch/sparc/include/asm/io.h
+
+21dccddf45aae2 Jan Andersson 2011-05-10   9  
+21dccddf45aae2 Jan Andersson 2011-05-10  10  /*
+21dccddf45aae2 Jan Andersson 2011-05-10  11   * Defines used for both SPARC32 and SPARC64
+21dccddf45aae2 Jan Andersson 2011-05-10  12   */
+21dccddf45aae2 Jan Andersson 2011-05-10  13  
+21dccddf45aae2 Jan Andersson 2011-05-10  14  /* Big endian versions of memory read/write routines */
+21dccddf45aae2 Jan Andersson 2011-05-10  15  #define readb_be(__addr)	__raw_readb(__addr)
+21dccddf45aae2 Jan Andersson 2011-05-10 @16  #define readw_be(__addr)	__raw_readw(__addr)
+21dccddf45aae2 Jan Andersson 2011-05-10 @17  #define readl_be(__addr)	__raw_readl(__addr)
+21dccddf45aae2 Jan Andersson 2011-05-10  18  #define writeb_be(__b, __addr)	__raw_writeb(__b, __addr)
+21dccddf45aae2 Jan Andersson 2011-05-10 @19  #define writel_be(__w, __addr)	__raw_writel(__w, __addr)
+21dccddf45aae2 Jan Andersson 2011-05-10 @20  #define writew_be(__l, __addr)	__raw_writew(__l, __addr)
+21dccddf45aae2 Jan Andersson 2011-05-10  21  
+
+-- 
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-i3c mailing list
