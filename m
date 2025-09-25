@@ -4,162 +4,168 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E552FCAC5A5
-	for <linux-i3c@archiver.kernel.org>; Thu, 25 Sep 2025 04:02:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2FBB7CAC5A5
+	for <linux-i3c@archiver.kernel.org>; Thu, 25 Sep 2025 05:43:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ls74a0UI5NJDKhTRMfJPl1GecOnAk0OLEwRUaZtrbFY=; b=rOfBYWXWbJO3Ux
-	GrIWNEEB/8ptq2CbPyVXNC0dy4vZuW8gxccrmDhkOrgGoe1xIPwFUrc+wQx66R7Mo2/tXMKSKPIZv
-	x0uX0MIXD3tSboUzVXCiOn8KoSuRSeY0Aro/y7KZCqz5fuN4ZNXRXXgzgvOTO7hh4N2Fv8XWF/ZXy
-	tnUGAXSnlH4N8y9+AOsOcfeXfvo2c4TFrzEcsvVlDab767qiLiiTr8MNTV1HkEPoaLQSezvB6dsO5
-	11GAiBuOaU140yInpzgcHCfVPKKQp7rhoq4z+h+cAAiLYeka57uaoze6otvmEYwsQTptm00HZ5FaT
-	G2JcJVT32SJMh6ACrFnA==;
+	List-Owner; bh=AaSdZkyL+AvTyBXSaf5hmS27ogv3Mnx1zUcEqhHKhgk=; b=qOM+VzclMLlhpK
+	Q/OdXViAmUV3mYheDCyo2GtlF7vMdd2sdDnAd2JEHCvl/AhIvZSSDT6bM0QPQpK/WielVkZmxxoDR
+	G4QTAL6yUCh4Gw+gZYWJtu1nGIVTDstXZsdAndKXKui3DOb1V8fwDFTzvYcuJKB9Z/OM8hiTDBjtZ
+	VvfQeZjUwZX4mWGQzPfo7wW7CCsj3LRGKw5hbpwZWJbSyRDcl0ThHIHgNuD8A0A956mkidGK/AzdS
+	KoiOdNEkloJhBRvUvV2EyfgrbKwPCp6cRzK86jVdYxlp3/p8Oxi2TjoGkqGDEvwOv0ocRazGZO4X/
+	KC/+4Ya7f4GDjp49VQxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1dBg-00000005S1q-2qll;
-	Thu, 25 Sep 2025 04:02:32 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1v1el8-00000005yT5-3qvY;
+	Thu, 25 Sep 2025 05:43:14 +0000
+Received: from mail-westus3azlp170120001.outbound.protection.outlook.com ([2a01:111:f403:c107::1] helo=PH8PR06CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1dBf-00000005S1W-2Ggw
-	for linux-i3c@bombadil.infradead.org;
-	Thu, 25 Sep 2025 04:02:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=MIME-Version:In-Reply-To:Content-Type:
-	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=lWKMSMi2C7SwB3cLSFeRDU4G0mtyR/n/EI1UbQStJm0=; b=KImScadHWaseJN6yl7kh338opN
-	rNlIhQu7kCjvtFiW62SBdneEInULnywG/A9a69smbeVkm+noCy1ehz2Td6X8hb1HxZs7040Xr0mWW
-	3gtdrBs2nZ9tudu9R8E7xti/EZeT+3mb72IUKBOtgYcVNegzJ47rWYlPc0LB6RxhqLbt2S662g1hC
-	xVeEQQ5kHXSvze89G6UJ22OK1KK1blCiNORDaaxrhoYKHLmH+4hcauiLGd1JfwuqIGKhNeiehX+sn
-	GK1vFeKl68yWo9UAaPb/yjCmQw7dBZU0zogrpRsYD8fqxA2QoSHs0HO6N2T28LU6s+HjtJML4Xkl2
-	CB+qAcqg==;
-Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1dBC-00000008uV4-0bpM
+	id 1v1el5-00000005yPx-31K1
 	for linux-i3c@lists.infradead.org;
-	Thu, 25 Sep 2025 04:02:29 +0000
+	Thu, 25 Sep 2025 05:43:13 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=HzLbxL/SNvXCIgAmA82DPPXgS7SvNl2Xntf0DdZ4HuSN3TpeEK+oJJyWtE7LwC9a/+e/yUaCh6G5kFgi2n1X36zzEtBFFH555MMJKeZmKVfBUQk0nENBYb/38Bf9iFaYsHHnngKQ8bJppz9pRsLsv+oZ6IAQjYN1yr4Dz7AJ/+CYlw+MEXSlxmIhdmwvxnf9+3gISkgv61QRffS0UjjbjjSvls+6AIoEiqj9FkhLvdj6+ScadeLRqDp7JsJzn9eG+16mT7arz0TDK0qGjQByfnpi8OWnAr5OTemKs0oIlzNQLnrJwSFrVRnV4l+VEwaM9e5wc74cR5rbuHFQnlsQYQ==
+ b=xdI0QZ7gdTE0xU+RlXx9bmtSyM80aFfDO9mu3FrsxNgACj5sdd6+FOZz08X1Sf+M3BdKSOE4MLa/ajpW3UYuzqLRWRTS3tjQ9r/7+CR4rguzFhoQ/Q1b0grYlLpbwcdTzjC7jPYGPDJZBCu+rmdFxFPlhCOrKJSJjJvD1tphRArPx1kMshCtbJuqlG/FyV+DoyxZnuDzE1dRfmlB/H8n7p8sQw2BugMtmZGQPKoTyEuzSfZ5qJa5Q2C4fQKU++KwR40/0N5598sgp6uUZ7Zm8kaJ/A1s/JpsM3ErXKgZjg8+bKT30Kv7bCqMUkTxRyQcrnVdSxPBKIP2Ok9koA9nvQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=lWKMSMi2C7SwB3cLSFeRDU4G0mtyR/n/EI1UbQStJm0=;
- b=GuUo3gidNyiBdHIgmvPApb9iqnY631rFWAIgounqE/YiYV7YvlNnYoVdOZvFQnSTFUcDF5qMbf1MDsF9+dm+BbsG/qm6MtCBsIJ1P9dhn4UHn2gtpSnh9wSvDtpnv2iwIJTg4ZgwUvJYWAeP72EgBbj9UIZoTowwR424/kYF9o1nZ+JRbyI+Qy4aMgE/iwkrc8ZF33B285ft9QRZtkzIz0RfPflRAymF/dY8lC2R46q8U4zNr0zFRrMqcIhZShpWDGZcgh9mFLCTEpA3Pl802qaeYGe7mJik3wItJf3di0rbNpFw0V0oIaSgCykauNNTAwcIvJe0Fgk9DnpmuuYQDw==
+ bh=CUFz7TNQ8kG6bDUPTuq1QVcFLi0WmwN7p9Dcl/+N+kc=;
+ b=lVJTJu222dlpI1vavTB6KkTivJR1BBjgGodDpO8qm9BtbGZeYfnYqlJOmS9+vfzykoSUZ/jAjXlLnTSo1Y9rJHXvv99Q1yyyQKmozPa0Eoygu5al+xfLczsOE5I3ljTkzTYkZdTJcKAE15ypZObnL9F8vq9L+rQNZ8QFpMNi8hP7G2ipkfi2/BKfza+PeRoEzAe29lJXB8pNE04eWXxDai6BP7hevN29vgCICWtrYEqQa8r8UrNnGrYDC3w6K5rrKIwTSvnSsdtMOtopUM4bqZyjXIa3Hf13lqFg4uFt4/up13jTcOELVutv4ZiGU7I9b01ZuR1P8VJTuSvEkrDkIw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
+ header.d=amd.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=lWKMSMi2C7SwB3cLSFeRDU4G0mtyR/n/EI1UbQStJm0=;
- b=T3vtPJdiN7wusZb39LPC7+uXosKbivDVorc9bd5p1aHbtiW19iH1HxN9bUwkr6u4mv3eqLDEp5nWXkEvb8jnt/JM/y9NzBkkRSvc6Dm/7n+KVswVxk8Wt9Z5wN6aJAIAaETU5q4y5kdIucJLZRRDeIsM0msEYRiurdH3oPFbb8Fg9EuM/wIbn8zWc2tfSGXxaHWPxJJfDCeaVzpedSAdgNz/U2YysHfaZFa7aj6FKV7mVNt7NYDlZzeFUCN2Qkf2nUGUJH1U5y/xDi2xJFvZnUgVDaWLwhtmUeOQrzuy+h5mtKkQTh7E+lOoneLYJ0HfbAyEScKpBtdSFCw9uzG2dA==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AS4PR04MB9621.eurprd04.prod.outlook.com (2603:10a6:20b:4ff::22)
- by AM8PR04MB7267.eurprd04.prod.outlook.com (2603:10a6:20b:1df::8) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9160.10; Thu, 25 Sep
- 2025 04:01:50 +0000
-Received: from AS4PR04MB9621.eurprd04.prod.outlook.com
- ([fe80::a84d:82bf:a9ff:171e]) by AS4PR04MB9621.eurprd04.prod.outlook.com
- ([fe80::a84d:82bf:a9ff:171e%4]) with mapi id 15.20.9160.008; Thu, 25 Sep 2025
- 04:01:50 +0000
-Date: Thu, 25 Sep 2025 00:01:44 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: alexandre.belloni@bootlin.com
-Cc: Jorge Marques <jorge.marques@analog.com>,
-	kernel test robot <lkp@intel.com>, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] i3c: master: adi: fix number of bytes written to fifo
-Message-ID: <aNS+qF9+DkTHrt8r@lizhi-Precision-Tower-5810>
-References: <20250924195600.122142-1-alexandre.belloni@bootlin.com>
-Content-Disposition: inline
-In-Reply-To: <20250924195600.122142-1-alexandre.belloni@bootlin.com>
-X-ClientProxiedBy: PH0PR07CA0007.namprd07.prod.outlook.com
- (2603:10b6:510:5::12) To AS4PR04MB9621.eurprd04.prod.outlook.com
- (2603:10a6:20b:4ff::22)
+ bh=CUFz7TNQ8kG6bDUPTuq1QVcFLi0WmwN7p9Dcl/+N+kc=;
+ b=Ugxqnn0SDNmKNyi3SIiG9FQ6uO9pi5B+2gQZLU9gs1VBR7hk8agyZDa/i/wSdVIjH2dtg+tuHyrVhr9R55VMbjMwYGnjqV4XVvoCU1s2g9P0szOhQH6OeiGRmEq/Sgh2FC//QAt7GwZUTeE3Abpdfs6V38zlTsM4gSJUB5OGT5E=
+Received: from DM4PR12MB6109.namprd12.prod.outlook.com (2603:10b6:8:ae::11) by
+ DM4PR12MB7742.namprd12.prod.outlook.com (2603:10b6:8:102::18) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9160.9; Thu, 25 Sep 2025 05:42:57 +0000
+Received: from DM4PR12MB6109.namprd12.prod.outlook.com
+ ([fe80::680c:3105:babe:b7e1]) by DM4PR12MB6109.namprd12.prod.outlook.com
+ ([fe80::680c:3105:babe:b7e1%4]) with mapi id 15.20.9160.008; Thu, 25 Sep 2025
+ 05:42:56 +0000
+From: "Guntupalli, Manikanta" <manikanta.guntupalli@amd.com>
+To: Frank Li <Frank.li@nxp.com>
+CC: "git (AMD-Xilinx)" <git@amd.com>, "Simek, Michal" <michal.simek@amd.com>,
+	"alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
+	"robh@kernel.org" <robh@kernel.org>, "krzk+dt@kernel.org"
+	<krzk+dt@kernel.org>, "conor+dt@kernel.org" <conor+dt@kernel.org>,
+	"pgaj@cadence.com" <pgaj@cadence.com>, "wsa+renesas@sang-engineering.com"
+	<wsa+renesas@sang-engineering.com>, "tommaso.merciai.xr@bp.renesas.com"
+	<tommaso.merciai.xr@bp.renesas.com>, "arnd@arndb.de" <arnd@arndb.de>,
+	"quic_msavaliy@quicinc.com" <quic_msavaliy@quicinc.com>, "S-k, Shyam-sundar"
+	<Shyam-sundar.S-k@amd.com>, "sakari.ailus@linux.intel.com"
+	<sakari.ailus@linux.intel.com>, "billy_tsai@aspeedtech.com"
+	<billy_tsai@aspeedtech.com>, "kees@kernel.org" <kees@kernel.org>,
+	"gustavoars@kernel.org" <gustavoars@kernel.org>,
+	"jarkko.nikula@linux.intel.com" <jarkko.nikula@linux.intel.com>,
+	"jorge.marques@analog.com" <jorge.marques@analog.com>,
+	"linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+	"linux-hardening@vger.kernel.org" <linux-hardening@vger.kernel.org>, "Pandey,
+ Radhey Shyam" <radhey.shyam.pandey@amd.com>, "Goud, Srinivas"
+	<srinivas.goud@amd.com>, "Datta, Shubhrajyoti" <shubhrajyoti.datta@amd.com>,
+	"manion05gk@gmail.com" <manion05gk@gmail.com>
+Subject: RE: [PATCH V7 4/4] i3c: master: Add AMD I3C bus controller driver
+Thread-Topic: [PATCH V7 4/4] i3c: master: Add AMD I3C bus controller driver
+Thread-Index: AQHcLKFjBOnK6QMfOUewlLpgWcqzB7ShJZUAgAFsR5A=
+Date: Thu, 25 Sep 2025 05:42:56 +0000
+Message-ID: <DM4PR12MB61094D778B7B981ACA7CC4248C1FA@DM4PR12MB6109.namprd12.prod.outlook.com>
+References: <20250923154551.2112388-1-manikanta.guntupalli@amd.com>
+ <20250923154551.2112388-5-manikanta.guntupalli@amd.com>
+ <aNLzfnN0QGF0qT7e@lizhi-Precision-Tower-5810>
+In-Reply-To: <aNLzfnN0QGF0qT7e@lizhi-Precision-Tower-5810>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+msip_labels: MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Enabled=True;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_SiteId=3dd8961f-e488-4e60-8e11-a82d994e183d;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_SetDate=2025-09-24T17:07:10.0000000Z;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Name=Open
+ Source;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_ContentBits=3;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Method=Privileged
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=amd.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: DM4PR12MB6109:EE_|DM4PR12MB7742:EE_
+x-ms-office365-filtering-correlation-id: cca972a5-7a3f-4ecb-482b-08ddfbf66124
+x-ld-processed: 3dd8961f-e488-4e60-8e11-a82d994e183d,ExtAddr
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|376014|7416014|366016|1800799024|38070700021;
+x-microsoft-antispam-message-info: =?us-ascii?Q?F2m6RIJyjk6NDWH4J6tc/yG9ZderklEwgMWf8U6KQpCdG4JhjmPfKHTLXoUQ?=
+ =?us-ascii?Q?Em9eFSyU9Z3o36doC3xjbqglhkW6vCGzaHuEQL6CSxgZTFs1hBrMV6+7tqNn?=
+ =?us-ascii?Q?8CFCrkH0DQ8+DppNBjxW1qC1GLwgqoJtJIa/nJxJcB2OiKzeeBC1vidQw5ty?=
+ =?us-ascii?Q?AWadzvlz3CqLIitbdVw+UkEilDD8SsS4rYELAPNxywLSnG3ma93jyhTp/Xyo?=
+ =?us-ascii?Q?cneQF74cUutvk8i7JRqMDdRaDv29ScD3Da+giyAMEdUR5gOxI/JUDBB4rL/L?=
+ =?us-ascii?Q?FNuX4QhiuU2pQNpQEnAhVKNS/G87p323WRe/G6DpRRcfuewfqrMn5OdSVE9K?=
+ =?us-ascii?Q?vbNRLjzrLai7PYorwkUABZq2u2CDV9GqEaHrWYTZ6Ufcb9R97Vc0ALbcSyhz?=
+ =?us-ascii?Q?dPagozwZlzj0+lfkqObIz4nrZJtRVPnUEx8H20kWP7s33ctsf6TRHvokuvE3?=
+ =?us-ascii?Q?lf52EmJI54PHEi6cG9d/Bdl4QKCZMZ/wFuuAt20tzZ94RBQ3NJdMNq3GkfuG?=
+ =?us-ascii?Q?vc3lDKMoNP4SuSQR/odktr7oZCTBWeHumJUs4mE+xAfufSXsdG27mwcu8vHk?=
+ =?us-ascii?Q?4XbfTcI5qgPdFChAxg1FgLRQqY/3ZIWNMPF7k9qDVFNNgpvc7cQFiGI6v1By?=
+ =?us-ascii?Q?fpkE9vn8xfOx9JH1eYCJZyjPkvozd3EMPciH/c24UzO8HJcajzI8xGSuIvpQ?=
+ =?us-ascii?Q?T+kElhgTZC/hGgM0sBiQhz2lF1rruM+FGXhyuq1F2RCE9VfnodWttwjzA+Ht?=
+ =?us-ascii?Q?NaUc9sk4abNiDeTK8mxXCt/g9HWoBMG89SwkuGJawFCbAOhNfNp6YiqiiJMh?=
+ =?us-ascii?Q?a37H/iXVY9dbFMxTQRomsLT1DVFQ7xARg7+a6sYimfkxE58z/6dEHQLESJqU?=
+ =?us-ascii?Q?glSAG3bTbEnEcHM2jFd/ejXGzwM534HwBDMmzDw5bjTjIlYUWWRk+aQft5NM?=
+ =?us-ascii?Q?GARwy2o1xiLPcT9Reqfks1x3BRk7RVakmcXMoLGIdeIKMYefXKZfMnBM9RFv?=
+ =?us-ascii?Q?1ag7eMK1IFb4TQaPrnH8RL6HnS61AMn0DWRXy0X4RfEBRQlX4KybdjOZLP2x?=
+ =?us-ascii?Q?hYB+cDmadU3itMf9rUPUvSkCeOqK43QyMPt8SD4PauYkzTCXPriucjYBZsep?=
+ =?us-ascii?Q?B/8Eox2t3CPHUQ4jXi9a/jZDhhSCJDyfIAF9MhBxMO/BzqdX+utFJae1KBmp?=
+ =?us-ascii?Q?D617M/zhyDkcu6UylRJzNaWhndVA4qEz88/Jw+s6I5VBkjcU+7EvZ3Q2jpk4?=
+ =?us-ascii?Q?XYSr6SIjcN1twvoT/fjBQse2bB1em57GWpZkbeeFvZBXWnAdDiL89eGjYxoW?=
+ =?us-ascii?Q?OBrKo7uhRLH6IzJVrgdqG0g1LbdOScK1CFoYlJrMNlQvqca6r35ZpGI0FGLQ?=
+ =?us-ascii?Q?cA2dSZBajvmyJcUkSJ5T5JvNx3hAotoKwEHXAanGLDnw71JynKRqkcHRTEIs?=
+ =?us-ascii?Q?H8Ttr/GZPyh4gOVzlRVs0Jcw2MGiZBJXFqw+8jxUzROuqm5hR7tsTg=3D=3D?=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DM4PR12MB6109.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(366016)(1800799024)(38070700021);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?yTkQkVne/xgIzsJM9TJ/oqXPki6nwsAgAFrP+TKuixkCX9bG6V0NFkcsVTWe?=
+ =?us-ascii?Q?9KctkBJukc4w86O17b52EltQBRpNFV05jR4k9WLPwbvL+Jf4ie+L1hsRMpaT?=
+ =?us-ascii?Q?SVccyXlPyzEzvUGio0KkiLSckyUDjT2ok83MNQMcoarh06QisL51KIPeNFRG?=
+ =?us-ascii?Q?Dk2vJldFI+lRRj/RMWIRJM4KbuuHUCEXeMFHaKZm4VuW5UpcT9LndSzZfq6G?=
+ =?us-ascii?Q?2PezDU6dZEOPlRcw7mOxaZ2a8hLy/LPgM/txdgKczVvugtC1FljhXeNEw2PI?=
+ =?us-ascii?Q?XIL7cXgciUtZCJYq4TvW/aC7p/oSGQaWlybkBcNlEtWhFB5mLFlTLY6o2wQm?=
+ =?us-ascii?Q?THVFyk5jbH3Z2qCJ+djPlEgwy+5qvmktA48uKS3wuGI/Vr7uRJNjj+AG4s+M?=
+ =?us-ascii?Q?fddBx6uq405D3y77/P0iNBtz1ZngZtIyVZtUDJCaMOTUoRX8j2VEDObiKwbw?=
+ =?us-ascii?Q?RfoFhRFLt4vouju4geTEAg077HInKctKDyy9owJUINd5sPTSodPftTjChT8m?=
+ =?us-ascii?Q?zfezc+jyLMqrWngD5O+Wj9hB85JxSVabcRZbhujCaPhyKGfu8nGtmvLrz9wa?=
+ =?us-ascii?Q?b6uDzSXlnEUsh4LUXeNhqKCOEebkoIVrewIW7MlUcnRVKTz9BuWiL1hrCo3N?=
+ =?us-ascii?Q?a0S6wKgg6/ySKLLuGVCD0xo7ze7hYQyBX2mxOR+hIp6fSvUpSGzXN/kckAMF?=
+ =?us-ascii?Q?XrB86uSccU/htcKLVxZpCkzYcM2sjfb0apFHIL/Z+c2OFUX6y/Y99nl8n3fe?=
+ =?us-ascii?Q?b2vhEGkCVU6H15be/np+OxEToemsHwM2XwNKHOLtTJnnvABoTmqnYMef+sYO?=
+ =?us-ascii?Q?R9XwjFgvJte982ozdayZvqnkWMKdSErmwUqL+y/WA58EcmakiRL5oh0ojRUm?=
+ =?us-ascii?Q?909S7bnV/x9NjSFQMIi2kHArz9haSxujhfjtCyzL3jmv7PEQFbm6wKsHS45y?=
+ =?us-ascii?Q?25ma21aWLZjsQufFY7gXD3kna5378afJdYbi0lrn1y+LDQ/xpwN89hTs73Dn?=
+ =?us-ascii?Q?SLi55V5ojVzaV3tX6Jcw49BWo4P4p6E8RLzhtAdsZE2/zmelch4EtQuX4OYA?=
+ =?us-ascii?Q?7Um5GNg5jtdQSeYhiNTeAbsWa3K80/5x3ahXsB4lnPTsEvhheM1RshDBEq17?=
+ =?us-ascii?Q?/TG12H8wxuOJ/jj7GYLjyMCYrHOjC+Bi3B1xiLE9Hnem/p5HZ+3cmEADLGg4?=
+ =?us-ascii?Q?H3uXQHCkUx13U1VeO4X+Ej6iojFJcrTF8bsAMk2eQ1K97St4a0s859nWRZVE?=
+ =?us-ascii?Q?89TQaZS5PjC8o+Be5mAfB/6dd75nPxsSpp5XRCRVM/6EdgN9zdoOFBsyAKDs?=
+ =?us-ascii?Q?yvGvrCYXTK9/vOmE+vUBciu+EeooDBIGaYH7O8xJuYiu4QGiS7Dxo5PfYLq6?=
+ =?us-ascii?Q?3qI5erFFKbY8+mkSicF9+2iOnLtgEYNS0rsibhbInUNrBMcpseNk4t1nYlQg?=
+ =?us-ascii?Q?FgMqm8TFdqt8GEEpnUH9/TnDlPgjlK9P2HeEAtKMTANO8hCl5cs5xVYhzRWO?=
+ =?us-ascii?Q?j/md5fV9a7VG9gGABC2Y4kyHMpHOl7BpXGdR5n8R/9iPzJSQ/sLITR0h+X3R?=
+ =?us-ascii?Q?G0du7jxXEuhES9aAAwA=3D?=
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AS4PR04MB9621:EE_|AM8PR04MB7267:EE_
-X-MS-Office365-Filtering-Correlation-Id: 45107c2b-69f7-4e33-8375-08ddfbe84125
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|1800799024|52116014|366016|19092799006|38350700014|7053199007;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?vgM8qaHVX8QSxdtzttqNmPZjGQSfNtMVwImsoZVi869brENCohohDeEMe/B1?=
- =?us-ascii?Q?Ykqn9IqIRxwFznsBc75aaZx5x7cFXcBTTqIo7Bqd29+riFlPszPn/CWSdtnE?=
- =?us-ascii?Q?9dr4TDzX4G8qbhfzSOZv/XIfr7ij3V43GLVI7jsnqtZ6GjkhpcD78NG934CP?=
- =?us-ascii?Q?8Eu95UEdFwn2MLXwH9nttaBcivQGrbBzBLgeDjQnj6ahoZcS8FTFUsmcNeNW?=
- =?us-ascii?Q?GUriW+c5SQTPDogWVtj7tanNSaE02xPH3Fo3OwLQSDYWugq2/Eu57fKV/dBy?=
- =?us-ascii?Q?aE7ZD2kWgDAEMknEAMErsD2Jx8dM0q7v4lAIcBfgdEQCkY5ROJ/Q6LAuklj3?=
- =?us-ascii?Q?OGym4+FXMGlBymct4fWnnvlexiS1YoOKkpGu6KVEHYvZhXDglLs4MdLx3Hlt?=
- =?us-ascii?Q?N4+SULmFPntvPPIQkGwnvgzEZeRUqtUxQHb/8AqtzOp3QRXXQXkygXnUMZKA?=
- =?us-ascii?Q?/Epn2cBMWjwVzjvloEty1LSKF/H3mwh2t0iYPZQu/lKs5Cg29kJvoUrRiNka?=
- =?us-ascii?Q?E4qtzQnxWH5fI2gWRF1RKqFbxD7PCHKemepDHNd1OLSLwhMXiPfDEnxUt853?=
- =?us-ascii?Q?wgRnWH5fJA5r6eKoT9kNsY2EZcXt+QmwfqonX+g2cl76yrqJP98W+hMWkOnD?=
- =?us-ascii?Q?969QMUg+zLdMLl6rYnC/oi+qBOdJoLrfDqvysv23kyZcLBa32mZ+RSEEyn6O?=
- =?us-ascii?Q?t1n0BrhJVe/PQpZlyTi0XsQsQXVmMnvO6HLNtG3wUQ2V5utQfN0eW5ToUG1H?=
- =?us-ascii?Q?Wa6m6L9QOj/5J+mByPKnGwNdHt/ykdqQsVo5Wf8HumyhkYmWqJk5ZjlUhxYs?=
- =?us-ascii?Q?c6KMaGOINN2GYqSG45Lz9BBr0gtcZSexPokYlz6W9E0ycAeYjPeL36XUgCjS?=
- =?us-ascii?Q?QKBwNa5ca1OE91Z4qYSfkV+OGXb1O2jqRAVkFnfKQ6xLeC+BkWkKxF2ZrMgd?=
- =?us-ascii?Q?H/O9Ek1T4kkTV0mpO6FsU1upi7CLovUl3HGXY2hyzhHTvf2Scw9V3d//Q+Ps?=
- =?us-ascii?Q?OpMXPTjb/uEU4dkuFh1UdBvO76fbQs9mF/fQuUkrO3QGX4Ba1c4DIxetOkgo?=
- =?us-ascii?Q?Fcd6+/7ke1ctIvmAYiX2OxFD633iEUpaTitunN7ThJBO3/nQFqz3W2WLFAs9?=
- =?us-ascii?Q?jfqerctvvhDLWqNXmPknOrVukp+R+BxuUSSOuqrmSpJCGtQ8NvNZaEcRw9+v?=
- =?us-ascii?Q?XXcGWydglzX0vx+fNgh/dSyxxL+tP3uRQYRgwfjqt0kUtWdCZ3Q/OzAuMThD?=
- =?us-ascii?Q?yQA8nF3SGQ4QagWu3O5r159quc3nAoFr9efNhnae+8qdW89Ms8G28p0oxj4A?=
- =?us-ascii?Q?rzv3k1CBRlytkQpFmpfet9DzAIL0h3gVH9Q26FF066W9JN+PQLFoY33hkxef?=
- =?us-ascii?Q?uUyWYKVgm5U38wvtpE5Db1x5yD/xtHvWTlXgUvj6t45P2pDaFlMu0V/Y/iXH?=
- =?us-ascii?Q?tnX4GQAClcPm1w2pTGUEyEdVkjoz3g5XCbY3ddUAInvT81u8UUNh5209tZxN?=
- =?us-ascii?Q?oke4e6oyEDjdxmErBtdmVdlVzLKPF4d4Ikdk/FzMWKQtQTZhPswe9EzBJGDF?=
- =?us-ascii?Q?B+cNoFIuGroxLYCTNKSt1iku+6SAYU6WkcLRYT/nU2qhhKFJAAkPlNuHHlgf?=
- =?us-ascii?Q?hIwIp4coEF4eCiP2PJnCTEiCY6sUQnsc5l39V5dCHRtTFpCraRCDoXsu335T?=
- =?us-ascii?Q?WRQ1C45vG9JFbVkQS1i3CAooL0OdU3Maus+KG2uVLYXjXigS?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS4PR04MB9621.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(52116014)(366016)(19092799006)(38350700014)(7053199007);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?LZHdjOKdAR2rb+3l2YZCIxVopz4pkpSJNFitdzDiu1V2Nuymdr5A5temx3z/?=
- =?us-ascii?Q?pck6F6iFOYM0MJ/QO/ha1riN+GL/Hku8GERpyReIw/OASEbqFl4fZjlfr99J?=
- =?us-ascii?Q?41shGOs4Yxwt5XomJ2z0uuB8ARuMYcQs5fzxdAupkbzWSr8ajVL4bL4hl+uP?=
- =?us-ascii?Q?GSrL3lrD5oeaC2PP+L1wW+LD12Ov3g76OnUcM/SnJeKaDmgyDoVMrOmUGmdQ?=
- =?us-ascii?Q?JhgGsoivcgQ20Z4WR0q23nFEdaUVsACkU4fC7ft+VTRLrxtCYxPkUpY8S5hj?=
- =?us-ascii?Q?xbe4D1dm+5A+vCaudXXYToS8fMvnP0CulGcTi3LRJ+ZkjiZ/c/qjrqVhdkGO?=
- =?us-ascii?Q?RjR+hGHeUhqMwDaOy1RywSkb8GZRe835iSd9GJllsYRXDCVgsDnt6IQzJV30?=
- =?us-ascii?Q?aujXqmiSP8ys1mCpc2rnmvV4hazFMidS3J8auF6XmtL52oK+AlGNuyFqNR2E?=
- =?us-ascii?Q?FbCxZEUf4r9nJEwDPO60SwY+4ZHl+dXCvFkplnT5s/2tgUMe+YY+QWbeIoWS?=
- =?us-ascii?Q?J3O504/ARA6ii7t6Vy2jmXlRrlc3AkZdLMfzcfv0Szf5SEEKrgbSsxomNjR8?=
- =?us-ascii?Q?QvxS3WQ+e0ytSyEO33Z+8A6mkfRn/Oh5cEs111LycV3hbjQOM4AY1MmkWFU0?=
- =?us-ascii?Q?bnWquXBh4JtUZgStrKHMucmdWUmjRSeQLjpyVdcb14yOaFTAgfXD/hgQgzGx?=
- =?us-ascii?Q?01A3JglIHC6WxX/TGjh7VsBqSUxW6usuwHEkgmllflGBvGzC9oGnVY5qmj/P?=
- =?us-ascii?Q?BdDK9H7WVcjlNIeJpIPMpirupWaltJaQaHTNdOfGHyUelk5T8HwZkxJDZouW?=
- =?us-ascii?Q?yjKdtL7kRL7QP/JmjMQ0JB2JPm85zn48xLwBMOdStGmbvCWd1Ntq50Uu9ig2?=
- =?us-ascii?Q?+VOoSNXtAmPxj81c5WWh8Dwxs1CCABHrAR7Q9KU0WhhzzGgFdWp1VjqGi8FW?=
- =?us-ascii?Q?wKMsFMAQTVP1rV+TT7V3Db8sSAxjJqZH+OfBKxIVJJEBCeWogcqrol7z1FQP?=
- =?us-ascii?Q?/j9fXmMcH1Zh+v68nzOg9Ptiami9zJ7m8PcILSzAuSJelkN0V1KyIQ4rN7xK?=
- =?us-ascii?Q?W7EATCGzE0KNxrHmP3BRoyWeVaM9mPpUGx1d/pM8xvKyjfWcmtNwMvLf5khF?=
- =?us-ascii?Q?zUKad0rS/r8dfNe/ogV1hfWPQrkK4ZI4jathqs9e40zGYTZj80uTsemfKMQp?=
- =?us-ascii?Q?OG7ZdNSQ3KzCx7RrpT2qssaSrWSeM8pEeFLAa11opY7XZ8gyx3tUPQ6akW+U?=
- =?us-ascii?Q?fML/9uu2tjm0BkXid2EmbC/hFxsmpS1QSApoGRXYJdCb4QkuT76R+N5ucW5p?=
- =?us-ascii?Q?Cs2nERh3sDet5d1Tnt5YusIdPyYtLbRc2/sl8GMKNGV+vhEVDh+J2yZ2BUGL?=
- =?us-ascii?Q?FgiblxppJrJXp8H338r3RamENkW8orwwf24fudkffAXhSgwP0MH8c3kMtIoR?=
- =?us-ascii?Q?6MmRxo4orhGO1MiOD29LubO/eiqsAIyqSbb+/m7KWp2IP0dZF78LgrUPbD9b?=
- =?us-ascii?Q?vvX/4f4GnYcocBmoRw71fjKTQE01mFqoNrKw2cNmFAQgEBM6rzkKmmYBOJq+?=
- =?us-ascii?Q?LJ9Iy8He/WFz9328E78sbfeRr7IHTKLXxPV8gss9?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 45107c2b-69f7-4e33-8375-08ddfbe84125
-X-MS-Exchange-CrossTenant-AuthSource: AS4PR04MB9621.eurprd04.prod.outlook.com
+X-OriginatorOrg: amd.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Sep 2025 04:01:50.2442
+X-MS-Exchange-CrossTenant-AuthSource: DM4PR12MB6109.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: cca972a5-7a3f-4ecb-482b-08ddfbf66124
+X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Sep 2025 05:42:56.6491
  (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: JV7aGo7AOCQFnpkij3wTlF7rb5lrGa5Y4RQMU0z/YXUMim1nW1+XQ7dHNaCOIOSu0RjQu+R11VVW9N2ZTU5DtA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM8PR04MB7267
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: UvSKIO2CLZdImEcL4b10zgds05l5A4n0qY+6QI+jtoMH4f9tQQMk3IUPRneV/nVmR7vuT+aMRROs/jQuwfe2hw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM4PR12MB7742
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250925_050210_085356_D88CBB9C 
-X-CRM114-Status: GOOD (  16.34  )
+X-CRM114-CacheID: sfid-20250924_224311_808015_EAD7D94A 
+X-CRM114-Status: GOOD (  27.62  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -176,39 +182,367 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Sep 24, 2025 at 09:56:00PM +0200, alexandre.belloni@bootlin.com wrote:
-> From: Alexandre Belloni <alexandre.belloni@bootlin.com>
->
-> adi_i3c_master_wr_to_tx_fifo computes the maximum number of bytes that can be
-> sent to the fifo but never makes use of it, actually limit the number of bytes
-> sent.
->
-> Reported-by: kernel test robot <lkp@intel.com>
-> Closes: https://lore.kernel.org/oe-kbuild-all/202509190505.fKGvEJRa-lkp@intel.com/
-> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> ---
+[Public]
 
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
+Hi,
 
->  drivers/i3c/master/adi-i3c-master.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+> -----Original Message-----
+> From: Frank Li <Frank.li@nxp.com>
+> Sent: Wednesday, September 24, 2025 12:53 AM
+> To: Guntupalli, Manikanta <manikanta.guntupalli@amd.com>
+> Cc: git (AMD-Xilinx) <git@amd.com>; Simek, Michal <michal.simek@amd.com>;
+> alexandre.belloni@bootlin.com; robh@kernel.org; krzk+dt@kernel.org;
+> conor+dt@kernel.org; pgaj@cadence.com; wsa+renesas@sang-engineering.com;
+> tommaso.merciai.xr@bp.renesas.com; arnd@arndb.de;
+> quic_msavaliy@quicinc.com; S-k, Shyam-sundar <Shyam-sundar.S-k@amd.com>;
+> sakari.ailus@linux.intel.com; billy_tsai@aspeedtech.com; kees@kernel.org;
+> gustavoars@kernel.org; jarkko.nikula@linux.intel.com; jorge.marques@analog.com;
+> linux-i3c@lists.infradead.org; devicetree@vger.kernel.org; linux-
+> kernel@vger.kernel.org; linux-arch@vger.kernel.org; linux-
+> hardening@vger.kernel.org; Pandey, Radhey Shyam
+> <radhey.shyam.pandey@amd.com>; Goud, Srinivas <srinivas.goud@amd.com>;
+> Datta, Shubhrajyoti <shubhrajyoti.datta@amd.com>; manion05gk@gmail.com
+> Subject: Re: [PATCH V7 4/4] i3c: master: Add AMD I3C bus controller driver
 >
-> diff --git a/drivers/i3c/master/adi-i3c-master.c b/drivers/i3c/master/adi-i3c-master.c
-> index 18597ba1f1c3..82ac0b3d057a 100644
-> --- a/drivers/i3c/master/adi-i3c-master.c
-> +++ b/drivers/i3c/master/adi-i3c-master.c
-> @@ -135,7 +135,7 @@ static void adi_i3c_master_wr_to_tx_fifo(struct adi_i3c_master *master,
+> On Tue, Sep 23, 2025 at 09:15:51PM +0530, Manikanta Guntupalli wrote:
+> > Add an I3C master driver and maintainers fragment for the AMD I3C bus
+> > controller.
+> >
+> > The driver currently supports the I3C bus operating in SDR i3c mode,
+> > with features including Dynamic Address Assignment, private data
+> > transfers, and CCC transfers in both broadcast and direct modes. It
+> > also supports operation in I2C mode.
+> >
+> > Signed-off-by: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+> > ---
+> > Changes for V2:
+> > Updated commit description.
+> > Added mixed mode support with clock configuration.
+> > Converted smaller functions into inline functions.
+> > Used FIELD_GET() in xi3c_get_response().
+> > Updated xi3c_master_rd_from_rx_fifo() to use cmd->rx_buf.
+> > Used parity8() for address parity calculation.
+> > Added guards for locks.
+> > Dropped num_targets and updated xi3c_master_do_daa().
+> > Used __free(kfree) in xi3c_master_send_bdcast_ccc_cmd().
+> > Dropped PM runtime support.
+> > Updated xi3c_master_read() and xi3c_master_write() with
+> > xi3c_is_resp_available() check.
+> > Created separate functions: xi3c_master_init() and xi3c_master_reinit().
+> > Used xi3c_master_init() in bus initialization and xi3c_master_reinit()
+> > in error paths.
+> > Added DAA structure to xi3c_master structure.
+> >
+> > Changes for V3:
+> > Resolved merge conflicts.
+> >
+> > Changes for V4:
+> > Updated timeout macros.
+> > Removed type casting for xi3c_is_resp_available() macro.
+> > Used ioread32() and iowrite32() instead of readl() and writel() to
+> > keep consistency.
+> > Read XI3C_RESET_OFFSET reg before udelay().
+> > Removed xi3c_master_free_xfer() and directly used kfree().
+> > Skipped checking return value of i3c_master_add_i3c_dev_locked().
+> > Used devm_mutex_init() instead of mutex_init().
+> >
+> > Changes for V5:
+> > Used GENMASK_ULL for PID mask as it's 64bit mask.
+> >
+> > Changes for V6:
+> > Removed typecast for xi3c_getrevisionnumber(), xi3c_wrfifolevel(), and
+> > xi3c_rdfifolevel().
+> > Replaced dynamic allocation with a static variable for pid_bcr_dcr.
+> > Fixed sparse warning in do_daa by typecasting the address parity value
+> > to u8.
+> > Fixed sparse warning in xi3c_master_bus_init by typecasting the pid
+> > value to u64 in info.pid calculation.
+> >
+> > Changes for V7:
+> > Updated timeout macro name.
+> > Updated xi3c_master_wr_to_tx_fifo() and xi3c_master_rd_from_rx_fifo()
+> > to use i3c_writel_fifo() and i3c_readl_fifo().
+> > ---
+> >  MAINTAINERS                         |    7 +
+> >  drivers/i3c/master/Kconfig          |   16 +
+> >  drivers/i3c/master/Makefile         |    1 +
+> >  drivers/i3c/master/amd-i3c-master.c | 1012
+> > +++++++++++++++++++++++++++
+> >  4 files changed, 1036 insertions(+)
+> >  create mode 100644 drivers/i3c/master/amd-i3c-master.c
+> >
+> > diff --git a/MAINTAINERS b/MAINTAINERS index
+> > 8886d66bd824..fe88efb41f5b 100644
+> > --- a/MAINTAINERS
+> > +++ b/MAINTAINERS
+> > @@ -11782,6 +11782,13 @@ L: linux-i2c@vger.kernel.org
+> >  S: Maintained
+> >  F: drivers/i2c/i2c-stub.c
+> >
+> > +I3C DRIVER FOR AMD AXI I3C MASTER
+> > +M: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+> > +R: Michal Simek <michal.simek@amd.com>
+> > +S: Maintained
+> > +F: Documentation/devicetree/bindings/i3c/xlnx,axi-i3c.yaml
+> > +F: drivers/i3c/master/amd-i3c-master.c
+> > +
+> >  I3C DRIVER FOR ASPEED AST2600
+> >  M: Jeremy Kerr <jk@codeconstruct.com.au>
+> >  S: Maintained
+> > diff --git a/drivers/i3c/master/Kconfig b/drivers/i3c/master/Kconfig
+> > index 13df2944f2ec..4b884a678893 100644
+> > --- a/drivers/i3c/master/Kconfig
+> > +++ b/drivers/i3c/master/Kconfig
+> > @@ -1,4 +1,20 @@
+> >  # SPDX-License-Identifier: GPL-2.0-only
+> > +
+> > +config AMD_I3C_MASTER
+> > +   tristate "AMD I3C Master driver"
+> > +   depends on I3C
+> > +   depends on HAS_IOMEM
+> > +   help
+> > +     Support for AMD I3C Master Controller.
+> > +
+> > +     This driver allows communication with I3C devices using the AMD
+> > +     I3C master, currently supporting Standard Data Rate (SDR) mode.
+> > +     Features include Dynamic Address Assignment, private transfers,
+> > +     and CCC transfers in both broadcast and direct modes.
+> > +
+> > +     This driver can also be built as a module.  If so, the module
+> > +     will be called amd-i3c-master.
+> > +
+> >  config CDNS_I3C_MASTER
+> >     tristate "Cadence I3C master driver"
+> >     depends on HAS_IOMEM
+> > diff --git a/drivers/i3c/master/Makefile b/drivers/i3c/master/Makefile
+> > index aac74f3e3851..109bd48cb159 100644
+> > --- a/drivers/i3c/master/Makefile
+> > +++ b/drivers/i3c/master/Makefile
+> > @@ -1,4 +1,5 @@
+> >  # SPDX-License-Identifier: GPL-2.0-only
+> > +obj-$(CONFIG_AMD_I3C_MASTER)               += amd-i3c-master.o
+> >  obj-$(CONFIG_CDNS_I3C_MASTER)              += i3c-master-cdns.o
+> >  obj-$(CONFIG_DW_I3C_MASTER)                += dw-i3c-master.o
+> >  obj-$(CONFIG_AST2600_I3C_MASTER)   += ast2600-i3c-master.o
+> > diff --git a/drivers/i3c/master/amd-i3c-master.c
+> > b/drivers/i3c/master/amd-i3c-master.c
+> > new file mode 100644
+> > index 000000000000..c89f7de85635
+> > --- /dev/null
+> > +++ b/drivers/i3c/master/amd-i3c-master.c
+> > @@ -0,0 +1,1012 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +/*
+> > + * I3C master driver for the AMD I3C controller.
+> > + *
+> > + * Copyright (C) 2025, Advanced Micro Devices, Inc.
+> > + */
+> > +
 >
->  	n = readl(master->regs + REG_SDO_FIFO_ROOM);
->  	m = min(n, nbytes);
-> -	i3c_writel_fifo(master->regs + REG_SDO_FIFO, buf, nbytes);
-> +	i3c_writel_fifo(master->regs + REG_SDO_FIFO, buf, m);
->  }
+> ...
 >
->  static void adi_i3c_master_rd_from_rx_fifo(struct adi_i3c_master *master,
-> --
-> 2.51.0
+> > +
+> > +static inline int xi3c_master_common_xfer(struct xi3c_master *master,
+> > +                                     struct xi3c_xfer *xfer)
+> > +{
+> > +   int ret, timeout;
+> > +
+> > +   guard(mutex)(&master->lock);
+> > +
+> > +   xi3c_master_enqueue_xfer(master, xfer);
+> > +   timeout = wait_for_completion_timeout(&xfer->comp,
+> > +                                         XI3C_XFER_TIMEOUT_JIFFIES);
 >
+> Recent patch use time_left instead of timeout.
+We will update.
+>
+> > +   if (!timeout)
+> > +           ret = -ETIMEDOUT;
+> > +   else
+> > +           ret = xfer->ret;
+> > +
+> > +   if (ret)
+> > +           xi3c_master_dequeue_xfer(master, xfer);
+> > +
+> > +   return ret;
+> > +}
+> > +
+> > +static int xi3c_master_do_daa(struct i3c_master_controller *m) {
+> > +   struct xi3c_master *master = to_xi3c_master(m);
+> > +   struct xi3c_cmd *daa_cmd;
+> > +   struct xi3c_xfer *xfer;
+>
+> struct xi3c_xfer __free(kfree) *xfer;
+> will simple err path.
+We will fix.
+>
+> > +   u8 pid_bufs[XI3C_MAX_DEVS][8];
+> > +   u8 data, last_addr = 0;
+> > +   int addr, ret, i;
+> > +   u8 *pid_buf;
+>
+> try keep reverise christmas tree order
+We will fix.
+> > +
+> > +   xfer = xi3c_master_alloc_xfer(master, 1);
+>
+> only 1 xfer, needn't alloc from heap. Just use stack varible should be enough.
+xi3c_master_alloc_xfer() handles both memory allocation and structure initialization. If we replace it with a stack variable in this case, we would need to duplicate the initialization logic in several places. Using the helper keeps the code consistent and avoids repetition.
+>
+> > +   if (!xfer) {
+> > +           ret = -ENOMEM;
+> > +           goto err_daa_mem;
+> > +   }
+> > +
+> > +   for (i = 0; i < XI3C_MAX_DEVS; i++) {
+> > +           addr = i3c_master_get_free_addr(m, last_addr + 1);
+> > +           if (addr < 0) {
+> > +                   ret = -ENOSPC;
+> > +                   goto err_daa;
+> > +           }
+> > +           master->daa.addrs[i] = (u8)addr;
+> > +           last_addr = (u8)addr;
+> > +   }
+> > +
+> > +   /* Fill ENTDAA CCC */
+> > +   data = I3C_CCC_ENTDAA;
+> > +   daa_cmd = &xfer->cmds[0];
+> > +   daa_cmd->addr = I3C_BROADCAST_ADDR;
+> > +   daa_cmd->rnw = 0;
+> > +   daa_cmd->tx_buf = &data;
+> > +   daa_cmd->tx_len = 1;
+> > +   daa_cmd->type = XI3C_SDR_MODE;
+> > +   daa_cmd->tid = XI3C_SDR_TID;
+> > +   daa_cmd->continued = true;
+> > +
+> > +   ret = xi3c_master_common_xfer(master, xfer);
+> > +   /* DAA always finishes with CE2_ERROR or NACK_RESP */
+> > +   if (ret && ret != I3C_ERROR_M2) {
+> > +           goto err_daa;
+> > +   } else {
+> > +           if (ret && ret == I3C_ERROR_M2) {
+> > +                   ret = 0;
+> > +                   goto err_daa;
+> > +           }
+> > +   }
+> > +
+> > +   master->daa.index = 0;
+> > +
+> > +   while (true) {
+> > +           struct xi3c_cmd *cmd = &xfer->cmds[0];
+> > +
+> > +           pid_buf = pid_bufs[master->daa.index];
+> > +           addr = (master->daa.addrs[master->daa.index] << 1) |
+> > +                  (u8)(!parity8(master->daa.addrs[master->daa.index]));
+> > +
+> > +           cmd->tx_buf = (u8 *)&addr;
+> > +           cmd->tx_len = 1;
+> > +           cmd->addr = I3C_BROADCAST_ADDR;
+> > +           cmd->rnw = 1;
+> > +           cmd->rx_buf = pid_buf;
+> > +           cmd->rx_len = XI3C_DAA_SLAVEINFO_READ_BYTECOUNT;
+> > +           cmd->is_daa = true;
+> > +           cmd->type = XI3C_SDR_MODE;
+> > +           cmd->tid = XI3C_SDR_TID;
+> > +           cmd->continued = true;
+> > +
+> > +           ret = xi3c_master_common_xfer(master, xfer);
+> > +
+> > +           /* DAA always finishes with CE2_ERROR or NACK_RESP */
+> > +           if (ret && ret != I3C_ERROR_M2) {
+> > +                   goto err_daa;
+> > +           } else {
+> > +                   if (ret && ret == I3C_ERROR_M2) {
+> > +                           xi3c_master_resume(master);
+> > +                           master->daa.index--;
+> > +                           ret = 0;
+> > +                           break;
+> > +                   }
+> > +           }
+> > +   }
+> > +
+> > +   kfree(xfer);
+> > +
+> > +   for (i = 0; i < master->daa.index; i++) {
+> > +           i3c_master_add_i3c_dev_locked(m, master->daa.addrs[i]);
+> > +
+> > +           u64 data = FIELD_GET(XI3C_PID_MASK,
+> > +get_unaligned_be64(pid_bufs[i]));
+> > +
+> > +           dev_info(master->dev, "Client %d: PID: 0x%llx\n", i, data);
+> > +   }
+> > +
+> > +   return 0;
+> > +
+> > +err_daa:
+> > +   kfree(xfer);
+> > +err_daa_mem:
+> > +   xi3c_master_reinit(master);
+> > +   return ret;
+> > +}
+> > +
+>
+> > +static int xi3c_master_send_bdcast_ccc_cmd(struct xi3c_master *master,
+> > +                                      struct i3c_ccc_cmd *ccc)
+> > +{
+> > +   u16 xfer_len = ccc->dests[0].payload.len + 1;
+> > +   struct xi3c_xfer *xfer;
+> > +   struct xi3c_cmd *cmd;
+> > +   int ret;
+> > +
+> > +   xfer = xi3c_master_alloc_xfer(master, 1);
+> > +   if (!xfer)
+> > +           return -ENOMEM;
+>
+> the same here. use struct xi3c_xfer xfer should be more simple.
+Same reasoning as mentioned above - xi3c_master_alloc_xfer() handles both allocation and initialization, avoiding code duplication.
+
+> > +
+> > +   u8 *buf __free(kfree) = kmalloc(xfer_len, GFP_KERNEL);
+> > +   if (!buf) {
+> > +           kfree(xfer);
+> > +           return -ENOMEM;
+> > +   }
+> > +
+> > +   buf[0] = ccc->id;
+> > +   memcpy(&buf[1], ccc->dests[0].payload.data,
+> > +ccc->dests[0].payload.len);
+> > +
+> > +   cmd = &xfer->cmds[0];
+> > +   cmd->addr = ccc->dests[0].addr;
+> > +   cmd->rnw = ccc->rnw;
+> > +   cmd->tx_buf = buf;
+> > +   cmd->tx_len = xfer_len;
+> > +   cmd->type = XI3C_SDR_MODE;
+> > +   cmd->tid = XI3C_SDR_TID;
+> > +   cmd->continued = false;
+> > +
+> > +   ret = xi3c_master_common_xfer(master, xfer);
+> > +   kfree(xfer);
+> > +
+> > +   return ret;
+> > +}
+> > +
+> ...
+> > +static struct platform_driver xi3c_master_driver = {
+> > +   .probe = xi3c_master_probe,
+> > +   .remove = xi3c_master_remove,
+> > +   .driver = {
+> > +           .name = "axi-i3c-master",
+> > +           .of_match_table = xi3c_master_of_ids,
+> > +   },
+> > +};
+> > +module_platform_driver(xi3c_master_driver);
+> > +
+> > +MODULE_AUTHOR("Manikanta Guntupalli <manikanta.guntupalli@amd.com>");
+> > +MODULE_DESCRIPTION("AXI I3C master driver");
+> MODULE_LICENSE("GPL");
+> > --
+> > 2.34.1
+> >
+
+Thanks,
+Manikanta.
 
 -- 
 linux-i3c mailing list
