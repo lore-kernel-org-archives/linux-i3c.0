@@ -4,86 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2AE27CAC5A5
-	for <linux-i3c@archiver.kernel.org>; Thu, 25 Sep 2025 07:16:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4FDD0CAC5AA
+	for <linux-i3c@archiver.kernel.org>; Thu, 25 Sep 2025 07:21:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZN7W7qWFkt1e2K4eYep2EcSpo2ugXHTGMFuqBTLhfRQ=; b=nQRXsRk1aV9S7r
-	s3TumI1ViJ/sKlwemikoJfow6+DdEnZth9nwibvmVV8UjbkTl1hHHiKi9ZkJQHWJclN6WlI/HTcvp
-	dHg5rVkCsLDbUFylMJI/8YGMKFaCBVb5pIrbaiOuYlmF59u5Xfyw6I5C1Cc23le9Z8ofm6QunE31I
-	qSA+pk4b1FNTTIlHRjO5uJPjdvq2pj550ziWXDSSOW1I0IdB/gSMvT+Dl1Z5K775MzSrC9d4yAoA+
-	Gf47N4R1RzTV6YB+KHORPGxm3dG/0cgs8UjHMfpBFyzHSCqTCyKB6qH7WSaXvolhsZn4Gjn2IAbZm
-	qNtrCGXNG91zvaHJn6Hw==;
+	List-Owner; bh=B3glGkmzYGxDL58XNwjwGODBGeHoatTK20GFSgeUT80=; b=FpWVZeOSvS1u38
+	70l2wcVdp5D0dR1bSh/ncWrhfqz6Chxa6eknJSsTA5m11OaMaL/L4iKrlIAPkCgDjq/+I5PSm4jn1
+	zHMx/jeEwZPVryomcj2aitYHt4StaR8puyvstC0Hhh/0u1JJ2pG0SqAw1chdPK5au7yahJDOffaPt
+	Ue0saDpXglCCCW2mwHxWYUZS1vJiEQ7/T6e1MexANSFKQ5w8gUGbaluUCiImX8uVYi5yIEuh+H4jq
+	JlBiQjoncHo6t7Ef8lCICuxJgzaYxtS/x7PWqEKoCsfvcwRNsoKLdZrGFJ7vqMTAZ4L64UU/Jg5zG
+	icPauJd49zp46gsDn2sQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1gDX-00000006d00-3s9h;
-	Thu, 25 Sep 2025 07:16:39 +0000
-Received: from mail-wr1-x42f.google.com ([2a00:1450:4864:20::42f])
+	id 1v1gHm-00000006fF7-0LKE;
+	Thu, 25 Sep 2025 07:21:02 +0000
+Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1gDV-00000006cyj-0mO8
+	id 1v1gHj-00000006fEX-2gwo
 	for linux-i3c@lists.infradead.org;
-	Thu, 25 Sep 2025 07:16:38 +0000
-Received: by mail-wr1-x42f.google.com with SMTP id ffacd0b85a97d-4060b4b1200so700678f8f.3
-        for <linux-i3c@lists.infradead.org>; Thu, 25 Sep 2025 00:16:36 -0700 (PDT)
+	Thu, 25 Sep 2025 07:21:00 +0000
+Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-46e37d10f3eso503935e9.0
+        for <linux-i3c@lists.infradead.org>; Thu, 25 Sep 2025 00:20:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1758784595; x=1759389395; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1758784858; x=1759389658; darn=lists.infradead.org;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=8Up56yeXe5seXQKdJy3u5l5LSHA9K6cXydBHqXSkVjA=;
-        b=j5LduhjVdfRB3/1v62wjrpu5j1tdTSDALEMEDDqOd5cqMOGcKBSMDGG+hc3V2TAblk
-         jmQPulfyH43VzU17RpumttHJokOPA12g9AzTauVNG2d+1O/0LTbYvtVt8ZzMJavaKfcH
-         AEJTqholGzQByNFhhCnI42Fx2j0gfewTOKQ7RuLlftUafPC6fqr7wPSXhNlaj+aUtDRh
-         zY5/ysflhkZ/9mwR6XYzCC8OlCf7OfnvZwdcXN5Pw4Di6qsIPwrPXyFDN6Xd8XmrTO5U
-         tlCrgLHoaS5IfQxDUqH3rp6SqVAo3ZeUFkh5xMViXkeGTOPyUS/jwAYQMml6Fa7p4u90
-         2v7w==
+        bh=5GK9C8KtH9+DmOnUEwg3Z7jsK5ZGy4qBPWOBOcMNRJw=;
+        b=VJQ8TUDp0KuFTyRihizS5jYQRf24XYrryKEo530ebOrOqTElH1zAGijA/EmNHTMJfb
+         ILCMvUXv9VxbKZ2ql5nRe8HDNFN8DEJW8RnKY3oxZAuCf+BEMYJf1ztSYtKOfsnJY61H
+         ft0XqA/0k8c8WcT64RIiAatPPX+C98JD9daiii8zGzEvOcuF2T+fHsVnIeb2C41EgtD7
+         w4AhxFMedvyVVzt692VlI/bVc2VemB3kV3K8zS/9KFUfK8KSYsxjkMQX//gf+nXeDW4G
+         7DU5xoXxJ1rzSaQlxEcNJCjjsRMDps5GQ4kQiGOelgglFtm3pfkbRsdGvGT72aN1vz6v
+         Iq9Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1758784595; x=1759389395;
+        d=1e100.net; s=20230601; t=1758784858; x=1759389658;
         h=in-reply-to:content-disposition:mime-version:references:message-id
          :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=8Up56yeXe5seXQKdJy3u5l5LSHA9K6cXydBHqXSkVjA=;
-        b=R8v14stWuK9HiQxQOu2RMZtlUT4onYnrgrrBUlWlmtNB5FxTATz6B2zjnypzbezYAR
-         g6DNLTQf/NzFVujklG7Ry6KZBmXfHKBYaTaNkRACbI6rvtmvlTNmzzQ00t+9+XdDvBOA
-         kXIugX4KBMddn27hgFXzj+HAC6K3esmNXNySHlECVa1dDKj402d4XLN7VqlJHzi7QQKF
-         xuERg3dsT6XbQiDqdiK33va+oE3DMjEeWqaXBHAKZBL9dtH4gjtaaWBmLgznt7OqqLsn
-         egKLjxnDC3YX4O5nkLDziMNsV4ejkCcsqaGS8yw9MJMZBV+u/ba8cgfDdaSEvHmmjXbq
-         FbaQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWFCdOH49q/iYf0R9dZU2qQETtwjj/iw5O682iJMHXANNiTF6Ty4xtOCJL6PSZwHMMmBCxqAWoDHXc=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw+9CK3FeF9WTw3A7Iyi1vjNtzCv+JD5PoM5O069Ju2xJVhmicc
-	WFCxVOPAfN/Y4S0vrYQBaOlUW8800jDgJHbuOhVzrjLWQSapNawo4yxY
-X-Gm-Gg: ASbGncu0aA7Dw8rERSMKARk2hR06Asv3FVVLOCy8mC09rEmH8t0Du78JmiReGxVEjdN
-	6aldk1r25esh7eTz5AkDOnLdqedwKfp/x6uV4OLfAbaY71+SbZOu1ieALxuG5f/+agqOCTTCdt8
-	rIoo5747P66NTFp31mcFxQIVcFX+rN746Dey8M7UqRMl6I5K2E7OFC/eBdA63uWjuS5pM7AAS7V
-	7uJKkZrc3IQAWYQlM2XAOzWHyxYn/X2lbcx1Fx1CMl+jhSrC9/Ab8xgcQShLzvPI5LMz06txnhM
-	xZxKxj4+v6pi5M+Kj5p7bx1+DBu36u3in/PHeztlRGDWi0qoQsvMBkeA3OZT/lQubxELj3n2KWh
-	S0dq4Lh8wmC+2OH6/ECZSshOdhFvgFi7iSfiiHo6C7xA=
-X-Google-Smtp-Source: AGHT+IEHcboXnBOyHaAZASOT1VSfKPdv8Bjhgsa8EFn5kSV5CqA5cEeATY+PMl/LCbvVXM/l2xI09g==
-X-Received: by 2002:a05:6000:4382:b0:3d5:d5ea:38d5 with SMTP id ffacd0b85a97d-40e47925a6bmr2769248f8f.25.1758784594858;
-        Thu, 25 Sep 2025 00:16:34 -0700 (PDT)
+        bh=5GK9C8KtH9+DmOnUEwg3Z7jsK5ZGy4qBPWOBOcMNRJw=;
+        b=Lo1dyUfOsOfyIYH5hg0e/rWnqaahAqfo5BXAqhVx68/oI7HOQbxZ+BCoacwMmqOyG7
+         tiWSZapBnjltpGynYGNxA2XWx7n8+hDAAfe2J+OeAQZSYMgZ18gMQAIW/cvvUeRX6ZQa
+         ljAIEA5Mq0g9wOJ3tzyQMTPfL2ifUnvjq1gakj8EDvH/11ZlytZsdSjgqt5fvlDlus8n
+         Wz53eV8HnZuPGceXiE8yK2hP6kal6sUeZRHRDAjeBhl2g3jtG16dvAZcxavMJPdoCKjZ
+         MjKRoRvh5NoqI5VVKA3kRJlfMa+mBaN/UsICutOn/ZTWijAjgfRdL2UbOGPUWXQ+Qrs+
+         gNIw==
+X-Forwarded-Encrypted: i=1; AJvYcCWln0BQLq4tt7MEXvnYzNj/AXYMJnsa/pN4phDagXqWTWO46oj/LSh/P5BzIz/9AtwpDDiQFtwXBjU=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz3sulsXB0BjU4sNr0xdVZbKzJOlhZpx0v3fvLplNYib6lKHHTr
+	u5qbkxVx0QSQV8Wys/JE2q8MHao95Pq3hojshCpXuvoMJCC3btXFZ3q5
+X-Gm-Gg: ASbGncv6tXgEt6GH0bi0IUhrkQXSP79Z2ttiQq9Id01GQuK5FGUoOKpjRBbu65rDBCS
+	PxKvaxLpvPCu+JtCZN04rLU+HleS8OF/8ORWAaGQJPRFSx4wtruaKWx41aO83AqEnF14tdx6HpC
+	RRsH57LmWIIvjOSajDTIRstOEnmbYBvzza/qpEeK3hP7nIvZXxj10r3zOzz4320u3CG0YT+sBny
+	PIRkkE4Wxk4I46Chlqp2sykKT49GCpKvYOJc2ctaX4js48D820Z0l4BF261Z6c11P73t7Fz1HoS
+	g1Tc3XJJebzvJXP4PZT/AvpSY9eQgfhrNDjfh8irsVWrGjQ+4JlkgSiIj17hLdxb7nJRXI97T+E
+	qm/hcwxTtQS8iKpaNej01OOFF2wEQY/lWI7PGVrbcqkA=
+X-Google-Smtp-Source: AGHT+IGZPO/i3EVx1oz0F6ZoZjaPP23o7cGrNgiXJrqYKEIkHenYM007xkUk74i7Lp80iQ9soiKOCA==
+X-Received: by 2002:a05:6000:3102:b0:3ee:3dce:f672 with SMTP id ffacd0b85a97d-40e492fdc2emr1826364f8f.4.1758784857530;
+        Thu, 25 Sep 2025 00:20:57 -0700 (PDT)
 Received: from HYB-DlYm71t3hSl.ad.analog.com ([137.71.226.91])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-40fc5602f15sm1667407f8f.39.2025.09.25.00.16.33
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-46e32c10823sm12335125e9.3.2025.09.25.00.20.56
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 25 Sep 2025 00:16:34 -0700 (PDT)
-Date: Thu, 25 Sep 2025 09:16:32 +0200
+        Thu, 25 Sep 2025 00:20:57 -0700 (PDT)
+Date: Thu, 25 Sep 2025 09:20:55 +0200
 From: Jorge Marques <gastmaier@gmail.com>
-To: Arnd Bergmann <arnd@kernel.org>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
-	Jorge Marques <jorge.marques@analog.com>, Wolfram Sang <wsa+renesas@sang-engineering.com>, 
-	Frank Li <Frank.Li@nxp.com>, Arnd Bergmann <arnd@arndb.de>, 
-	Manikanta Guntupalli <manikanta.guntupalli@amd.com>, linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] [v2] i3c: fix big-endian FIFO transfers
-Message-ID: <2wtpklapw5ogsevuvk2l4ngvw7hymer2y4cc454h47u2d7tq44@4mknmpk5yzil>
-References: <20250924201837.3691486-1-arnd@kernel.org>
+To: alexandre.belloni@bootlin.com
+Cc: Jorge Marques <jorge.marques@analog.com>, Frank Li <Frank.Li@nxp.com>, 
+	kernel test robot <lkp@intel.com>, linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] i3c: master: adi: fix number of bytes written to fifo
+Message-ID: <5cwo5whsjmyruxmx4kl4opy6qylzzyoodeyqubgpxnlzcgd3ik@2n3gbz5dqtdk>
+References: <20250924195600.122142-1-alexandre.belloni@bootlin.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20250924201837.3691486-1-arnd@kernel.org>
+In-Reply-To: <20250924195600.122142-1-alexandre.belloni@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250925_001637_239671_83032874 
-X-CRM114-Status: GOOD (  28.40  )
+X-CRM114-CacheID: sfid-20250925_002059_684201_78997190 
+X-CRM114-Status: GOOD (  16.74  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -100,76 +98,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Sep 24, 2025 at 10:18:33PM +0200, Arnd Bergmann wrote:
-> From: Arnd Bergmann <arnd@arndb.de>
+On Wed, Sep 24, 2025 at 09:56:00PM +0200, alexandre.belloni@bootlin.com wrote:
+> From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 > 
-> Short MMIO transfers that are not a multiple of four bytes in size need
-> a special case for the final bytes, however the existing implementation
-> is not endian-safe and introduces an incorrect byteswap on big-endian
-> kernels.
+> adi_i3c_master_wr_to_tx_fifo computes the maximum number of bytes that can be
+> sent to the fifo but never makes use of it, actually limit the number of bytes
+> sent.
 > 
-> This usually does not cause problems because most systems are
-> little-endian and most transfers are multiple of four bytes long, but
-> still needs to be fixed to avoid the extra byteswap.
-> 
-> Change the special case for both i3c_writel_fifo() and i3c_readl_fifo()
-> to use non-byteswapping writesl() and readsl() with a single element
-> instead of the byteswapping writel()/readl() that are meant for individual
-> MMIO registers. As data is copied between a FIFO and a memory buffer,
-> the writesl()/readsl() loops are typically based on __raw_readl()/
-> __raw_writel(), resulting in the order of bytes in the FIFO to match
-> the order in the buffer, regardless of the CPU endianess.
-> 
-> The earlier versions in the dw-i3c and i3c-master-cdns had a correct
-> implementation, but the generic version that was recently added broke it.
-> 
-> Fixes: 733b439375b4 ("i3c: master: Add inline i3c_readl_fifo() and i3c_writel_fifo()")
-> Cc: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> Reported-by: kernel test robot <lkp@intel.com>
+> Closes: https://lore.kernel.org/oe-kbuild-all/202509190505.fKGvEJRa-lkp@intel.com/
+> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 > ---
-> This was a recent regression, the version in 6.16 still works,
-> but 6.17-rc is broken.
+>  drivers/i3c/master/adi-i3c-master.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> v2 changes:
->  - add code comments
->  - write correct data buffer
-> ---
->  drivers/i3c/internals.h | 12 ++++++++++--
->  1 file changed, 10 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
-> index 0d857cc68cc5..79ceaa5f5afd 100644
-> --- a/drivers/i3c/internals.h
-> +++ b/drivers/i3c/internals.h
-> @@ -38,7 +38,11 @@ static inline void i3c_writel_fifo(void __iomem *addr, const void *buf,
->  		u32 tmp = 0;
+> diff --git a/drivers/i3c/master/adi-i3c-master.c b/drivers/i3c/master/adi-i3c-master.c
+> index 18597ba1f1c3..82ac0b3d057a 100644
+> --- a/drivers/i3c/master/adi-i3c-master.c
+> +++ b/drivers/i3c/master/adi-i3c-master.c
+> @@ -135,7 +135,7 @@ static void adi_i3c_master_wr_to_tx_fifo(struct adi_i3c_master *master,
 >  
->  		memcpy(&tmp, buf + (nbytes & ~3), nbytes & 3);
-> -		writel(tmp, addr);
-> +		/*
-> +		 * writesl() instead of writel() to keep FIFO
-> +		 * byteorder on big-endian targets
-> +		 */
-> +		writesl(addr, &tmp, 1);
->  	}
->  }
->  
-> @@ -55,7 +59,11 @@ static inline void i3c_readl_fifo(const void __iomem *addr, void *buf,
->  	if (nbytes & 3) {
->  		u32 tmp;
->  
-> -		tmp = readl(addr);
-> +		/*
-> +		 * readsl() instead of readl() to keep FIFO
-> +		 * byteorder on big-endian targets
-> +		 */
-> +		readsl(addr, &tmp, 1);
->  		memcpy(buf + (nbytes & ~3), &tmp, nbytes & 3);
->  	}
+>  	n = readl(master->regs + REG_SDO_FIFO_ROOM);
+>  	m = min(n, nbytes);
+> -	i3c_writel_fifo(master->regs + REG_SDO_FIFO, buf, nbytes);
+> +	i3c_writel_fifo(master->regs + REG_SDO_FIFO, buf, m);
 >  }
 Reviewed-by: Jorge Marques <jorge.marques@analog.com>
+>  
+>  static void adi_i3c_master_rd_from_rx_fifo(struct adi_i3c_master *master,
 > -- 
-> 2.39.5
+> 2.51.0
 > 
 
 -- 
