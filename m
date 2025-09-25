@@ -4,76 +4,147 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EB69CAC5A7
-	for <linux-i3c@archiver.kernel.org>; Thu, 25 Sep 2025 13:23:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65F12CAC5B1
+	for <linux-i3c@archiver.kernel.org>; Thu, 25 Sep 2025 15:09:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=goQLzhnOE3l20ZJ2wpi3lazxbMnRKa12BnMoNYiP8ts=; b=h2xYTMArOZhPwa
-	A6QGSso+VKcg5hKgCxG6qwpoTttJ1qTDi+RDuqCvaFnBCwrOWfbhmhA1qQpbL368uyWZeWYWP5bby
-	uvI7lsK3ovtRpyUvjxJLmU3fgE8/qGaln+yotDnEKe1HyhG/EjcPbFMbZdMOYsbyHK1IULT7xHsk5
-	0+2CwTM+aseqsqfXMKnpSSzoq5cc/m7kIPLsUsw879n75zs5OPzSxubHfCWzS6VmfFd6e5F+L9vAr
-	kDU8MNKhwD8EyCHp9bNNTQ2/SIF9vwYx9SiZu5S2toSwm1bspZFMzRMYiedc70sbVRi8i0qrYWe8H
-	PzGWe8aCdtrVA4kgT2Uw==;
+	List-Owner; bh=Y01X0TWF75ueXFK1khFDp7Rw64ASmtO+ju+wqHiJJ7c=; b=Q/yvvCM8aj3lwK
+	mJC+LQHHUVxcPiGXpStTK3/h9X3VyYLaWK5/sd1z35PxLlF7iS81ss0HmOtjB0Tl7EskQCZeh19rL
+	y+fUHGj+SguTxsroL1W83ef+3KVbe9D5xaAce2v5rIXoPx8MN1Ck7/cX7JBW7TzPLkdsEW7fg6U7g
+	QoLOvtV7dogVTV5GJw6dJg+7Pk6TU7gApYOf3DnoIKUR0X2JPdZnc2k8ssNuwDFnJm+qN2Rczx5LS
+	bB58TO+8l7J1HOAHt/3wG++xIdn11znlG1FnM2+fRSCJiTqFh1ASfreWeeSXr4CfV3Jh62T+zsuNy
+	ASc5ygBQ+6qYtftFhGjg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1lwN-00000009NXy-0Jnt;
-	Thu, 25 Sep 2025 13:23:19 +0000
-Received: from mgamail.intel.com ([198.175.65.20])
+	id 1v1nbC-0000000ASIb-0KNO;
+	Thu, 25 Sep 2025 15:09:34 +0000
+Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v1lwJ-00000009NWG-433W
+	id 1v1nb9-0000000ASF0-2r6a
 	for linux-i3c@lists.infradead.org;
-	Thu, 25 Sep 2025 13:23:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1758806596; x=1790342596;
-  h=message-id:date:mime-version:subject:to:cc:references:
-   from:in-reply-to:content-transfer-encoding;
-  bh=4iWz/voiEz7siZfjIqLm43TubG/Oii1lMo/evkOfHWI=;
-  b=hoAelVshcs6bND/KzxNRL0X7/iwOVtC4eE9R7rUpAzGrJ4R+CBwIG3h/
-   oMBgNGrkSfFf+0TFNzoQ9hUMq/VF36shrPGXwa3GN3FVnkBWX8cgHmRC0
-   30kGLc2O5AcXeLFpboP4V55ClLHZa7D50DPkp2qUTPDWKOv6V/qjb1Ka4
-   8i/9NHBb7ka8r3mdI6+lml0LhVIcmaCNCROUoOVwxNKYLgYyOthzPPIL9
-   vuUo/17X/2I+Je5/a42CtOekVOS82Jsyi4N4dHD6CpfMzeP5FldAbWG/Y
-   ICBrPQK3DIckHD4sSgHwyWjdLWSvPAKlJxah2J3Lyn4JVVWWLXbVcjXF2
-   w==;
-X-CSE-ConnectionGUID: 8a1m8H4pT5mKzNbFxH/Nkg==
-X-CSE-MsgGUID: iG8PYIvdQ0eDPQ6GQmQjRg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11563"; a="60822894"
-X-IronPort-AV: E=Sophos;i="6.18,292,1751266800"; 
-   d="scan'208";a="60822894"
-Received: from orviesa007.jf.intel.com ([10.64.159.147])
-  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 25 Sep 2025 06:23:15 -0700
-X-CSE-ConnectionGUID: 61lDqMiaSL6gENqN3DozbA==
-X-CSE-MsgGUID: k8SaqhLvQp6Ar1H+hx1rFA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.18,292,1751266800"; 
-   d="scan'208";a="177169144"
-Received: from mylly.fi.intel.com (HELO [10.237.72.50]) ([10.237.72.50])
-  by orviesa007.jf.intel.com with ESMTP; 25 Sep 2025 06:23:12 -0700
-Message-ID: <9708c09f-5cd7-4197-b245-04d92f6b1400@linux.intel.com>
-Date: Thu, 25 Sep 2025 16:23:10 +0300
+	Thu, 25 Sep 2025 15:09:33 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=fnV/NtYPtbI33EySymJ7BgU/07FfH2YEvdQ8/CadS3D4sc3PW3ZjqsUY6mn0IHd4ZBay4OxwM6yFRCSAjXchI6uM79rMR3nB4ChrPa7kwzL1BvzaysYXxylq8fqR5KJafmVALtlKgXlCkC0AXBZxFdqYv7n3eHkorQlSXU+Cj80L0W7mWzE36gopMMkqab1LjDCdP0CNd8jKatp0jABQcuPGazL88qpURtJ5kk3swyI2Gxz2kmeQM/aWzT6TXtR9QxKRhQYWfuWsjwbwr+83RD7VoXLwlIevYmhE4EZlpg8P46+ZT8OeJlBsrqbkj2/L/0NfAhJQAwDBzNqkh8bJBQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Ev1lXm3m2yPNyJ0OeV+t3cBFvKHbi9NO+bJ5DDFKmkE=;
+ b=Ma0n6IR6YEN7Ur3a8dkLXlca9gBlN5J/We17vD6+D6tu5jYT7DX8sA1v0p7roKRvBncEqwwISotl0rNtAgIvtCxpAZq2eUnVPO3XJSj76Qz/pOh3pzmojeWuBWsDh9WgyHVzr8nvysmsO2itC/sdyjo9P/fJMciMa9r+ZellG3Z5ezrKjasH8nW1/uM6X+5mFNh7usWOt1xUFIY3TiDR4J8B2AmD+a/CXcDtf61n1C43s0CrWDvIEIxgGLX/dxU2YHjqApXeV//F5DfqsEqjt/9AI8uTfZa8pR9BRHneOBAJT0+KEbDW1BWGcoE/uebzkNepgMrlO0FRyRdkS085yQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ev1lXm3m2yPNyJ0OeV+t3cBFvKHbi9NO+bJ5DDFKmkE=;
+ b=DvX5h/BxYyi619jbytSC8+kzD32f0J6cbtTERgt3gzBmgYM4B7YlsfGG6UAows/NNolOZKNzO0uyM9tWiOt4f/gocTBSIrSoNdPkwHOsUYnBmtA7F8BOcpKqE+obLXAMtB7zs4qQvjVzSM12EacuhXb+fBeohc6WcQ7tRmG2w72fOpdw+eaQkWvtTJh0fK2XJs614oarOgvJO+syGIUsSsCPWyRv8QWXE8m5ucrPuNK7g4NaBfBOrmKMDajBkrX09/uUCMX+kX8umLvN8FxQf8Uqf8+HJ6IQZiiBR2uEK+/72WgEVop/XEyNUhIwZpoTIvM9slpXs+RX+3SYvUJ6CA==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXSPRMB0053.eurprd04.prod.outlook.com (2603:10a6:102:23f::21)
+ by GVXPR04MB11543.eurprd04.prod.outlook.com (2603:10a6:150:2c1::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9160.10; Thu, 25 Sep
+ 2025 15:09:27 +0000
+Received: from PAXSPRMB0053.eurprd04.prod.outlook.com
+ ([fe80::504f:2a06:4579:5f15]) by PAXSPRMB0053.eurprd04.prod.outlook.com
+ ([fe80::504f:2a06:4579:5f15%6]) with mapi id 15.20.9160.008; Thu, 25 Sep 2025
+ 15:09:27 +0000
+Date: Thu, 25 Sep 2025 11:09:17 -0400
+From: Frank Li <Frank.li@nxp.com>
+To: Arnd Bergmann <arnd@kernel.org>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Jorge Marques <jorge.marques@analog.com>,
+	Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	Arnd Bergmann <arnd@arndb.de>,
+	Manikanta Guntupalli <manikanta.guntupalli@amd.com>,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] [v2] i3c: fix big-endian FIFO transfers
+Message-ID: <aNVbHeky1X58EYT1@lizhi-Precision-Tower-5810>
+References: <20250924201837.3691486-1-arnd@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20250924201837.3691486-1-arnd@kernel.org>
+X-ClientProxiedBy: BY3PR04CA0025.namprd04.prod.outlook.com
+ (2603:10b6:a03:217::30) To PAXSPRMB0053.eurprd04.prod.outlook.com
+ (2603:10a6:102:23f::21)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 2/4] i3c: mipi-i3c-hci: add microchip sama7d65 SoC
-To: Frank Li <Frank.li@nxp.com>,
- Durai Manickam KR <durai.manickamkr@microchip.com>
-Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, alexandre.belloni@bootlin.com,
- robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
- balamanikandan.gunasundar@microchip.com, nicolas.ferre@microchip.com
-References: <20250918095429.232710-1-durai.manickamkr@microchip.com>
- <20250918095429.232710-3-durai.manickamkr@microchip.com>
- <aMwy9MQOf3pG4Fvw@lizhi-Precision-Tower-5810>
-Content-Language: en-US
-From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-In-Reply-To: <aMwy9MQOf3pG4Fvw@lizhi-Precision-Tower-5810>
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXSPRMB0053:EE_|GVXPR04MB11543:EE_
+X-MS-Office365-Filtering-Correlation-Id: 6055316e-e8d2-4b26-83eb-08ddfc4584c1
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|52116014|19092799006|376014|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?2HXmgjow2YpjWtORNTGuJDiY4+Mg/nX4KejDuwO+Dm7FKH3kKmg8uCZva6gW?=
+ =?us-ascii?Q?7/2g0rrvAubZdzVdP/XvNhqS8/amnrPqlFJ2cweGiujWk/57gGZgrSWK7mDP?=
+ =?us-ascii?Q?3l8IgxF7bL9nLlg4gGdhWJdeNtfGD7waPwI2PSMPKvDQIXbZRwxtpqFWvpZN?=
+ =?us-ascii?Q?9GJWzFVEzphGArHgeWKeYrXDjWUpjj7kLP2EGiuq2vsOHd6nUydcqxD01hdT?=
+ =?us-ascii?Q?ritZdX/RMEPLotjn+eWVpno1/6w4NAc3XlZB9G+IRUbCyWo2MCqB5aEO1v/N?=
+ =?us-ascii?Q?asuYKyUX/IbPqEnmouQpyZNihM12hX/ONaKP8N0kEDY/fWnd3C2h0jEwims1?=
+ =?us-ascii?Q?Wm3tY+0eo5T7GQ6EI1ngppNTUVMjzthhwcDLJS1r9yUBJy71JU64V9iUV5X6?=
+ =?us-ascii?Q?FcHUt2XxjW7m9mnoE3Rl0DoyDOvrPK6Hop5PqIJjOoJceLsxRhHCvh33D5nJ?=
+ =?us-ascii?Q?k2dAemq13se6kJVDbfOiHvClzM/9vfQJKYKHJj5ewpXj3L+2AI1O7Lx9+HXr?=
+ =?us-ascii?Q?73lLQdWUK6osIOA9lhpQ7/7Z/NOFKgy3nLt5xhWvbtuWeIuLBTSCYOeD6HID?=
+ =?us-ascii?Q?FVHdFRTZv8UptfsomQMo3O3Ri42jVUrwTWfa4IbgEzRnUw5Qfp857FI3C3hu?=
+ =?us-ascii?Q?v7H88RI+hm4PG1tog2raB6n0FsxxTF5M3kAL3ii2Ue196DCL3L39ghY+9ruc?=
+ =?us-ascii?Q?KvxaxMBFKPoFoUJlEdoJ71g0YDqKz9xVVucpuTacb8zNT2mpCu2mgOGhtCii?=
+ =?us-ascii?Q?+ARxaauyB83PN3Ekb7toUGUy+Z4ekRTMVz9/W3nx89eZzTcI114wweSaSJtP?=
+ =?us-ascii?Q?ODUmjGUi5sOhAEF1tsPXrWRP5H0mZH7WO/SVab1SmiRNka7nu2FOzpX16/3K?=
+ =?us-ascii?Q?7+SG62GdWjRHsSFIYlnrMU0atRM8VhxdSuNI1Yv348FGOgTglF5FTgeoelRL?=
+ =?us-ascii?Q?u0jQb3zrstShoxxYm+f4HdtWrw5tcr8UQF/8zt5niE89172IQyUIQObbsM4y?=
+ =?us-ascii?Q?rRYkmygxBz+gIeJpWlMdUrNNdpED7CIbQkhkiU8FqSKl1tXKqcsPBfuOdySX?=
+ =?us-ascii?Q?BK52J4XDby2VMkB1Z7+7Fm0uWNBDkXza3V8qep6OebNfBwzqSZFOKs56u1nI?=
+ =?us-ascii?Q?e17KA6DE5ODi9LuwRQ64RT/DuWxYryqDSrhSXUKRR3uguOC8HM2JWG3+8DB0?=
+ =?us-ascii?Q?Kl3vgyK5Vwzea6i8P1eARllcmmCFboBGoRvHr1NjImvKfFxecUfU5gj/TUH3?=
+ =?us-ascii?Q?xQlG8yIX8fTaP+yXsaKDeMQQABS4tw0gyiTAu1NCtGZ+p1j+Hte6LwwXdqfA?=
+ =?us-ascii?Q?C4DPflmbjHagFPw5E1eih0CByrACNIvqoCYvt32Ke716Qwsy61pL4XXQZzjT?=
+ =?us-ascii?Q?/gR4op3ZTUPJo3uKkJSxiQPOFsR7EElbFNw6DwkzwhvF6pW2BzmIGYYJN20b?=
+ =?us-ascii?Q?PwWpdwr3XXH4X4ID3ccN0aaI4idhoRTfxF7v80ns68fZM5C+1eTboRm7fQvy?=
+ =?us-ascii?Q?lT8fBI1JVsGjgAc=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXSPRMB0053.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(52116014)(19092799006)(376014)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?v8aNrdst8qC5V16rH4i+avggQYtl5YvqMy/cY3FYwHhnkxYFkn5nH4MC55og?=
+ =?us-ascii?Q?A0xZpcxcDgemIhYpZRTnCibrJVmN3NsoT88eZG2D+RjPEgQn9XSR7Kw8e9Da?=
+ =?us-ascii?Q?P4Bb+/qJkfF/11NCk3J7hs4ZHE+CWiv44gjeOkdlE9vYyzwTxTo/h7SND0yA?=
+ =?us-ascii?Q?PMSHKfN1rL7LJp2TWHy/ZMHcgvkHrKoMhBaU1S1k28KhIMbkQLL/9+GG39OA?=
+ =?us-ascii?Q?Jd/fyEWECFVIdoJqWW0Ru2ni+7s8Xw5SKdMmEkfgAFrw/S65mKEd32RleQRm?=
+ =?us-ascii?Q?lUZ7SAIpfW4SwYvjtgDLcZSGTF9lmhs6XXf8iXqkqKUta55xHa7xgaDTRt+h?=
+ =?us-ascii?Q?NhBv/ZE39FVQ9V20H+78gfoAtYOCvzeYpsCRRWZnMEZfcyPHyZUuebZlxafe?=
+ =?us-ascii?Q?C8gZ4RJXzah7Ks+q0K6G1LvQSMG7HBgrVklGT0mQhjNqzJqi9Wc8o7TrmH3B?=
+ =?us-ascii?Q?YA+rOUuloVqcPQJpzDYCDvmeZqMBQe505G+tceMPX9Fsg6oApsXPvCVIS/45?=
+ =?us-ascii?Q?UAQXaiQ9lUMf3AoA/D/XPjiYqfiAPr/MFsijO2VXCCa7neJd0w7NLhX51u59?=
+ =?us-ascii?Q?8iZ0g64cW+L4CkzFPmQvM6GOkq3rzC5lnE7chiBhKYzkQT4p4yTp+wHzKD4W?=
+ =?us-ascii?Q?ch20FH2yNrH4766ixSl1FP/jSi1u9wKrjGkQ/scffaGuGX/t8Nd3zbHjHyE9?=
+ =?us-ascii?Q?7m/iDImd0icrvuJ7NjtdcpUE7XyBvDgAeDo5JfxXWai/B+Db6IA76hCrHGo9?=
+ =?us-ascii?Q?IvTmxkq/p6wFpvnNdLsy67JZxKyu39V9UXCYjl46i+EifF+Knp3TC53AhU74?=
+ =?us-ascii?Q?kF4bPD95BRB4lfPQMBmsl6qD9Dj+qdDAhUAKG+WCC7WWnF3vH8YpntgN3imE?=
+ =?us-ascii?Q?lIp40DyLJo7tjJvmVxvtGWavtQ0fw5DWcVqaWYt0N5C9fkfKxa1chONCbrpf?=
+ =?us-ascii?Q?6WHELJVw5diw2OvUJQyxDB+JWHTnvnEHd/3NSz8In0RN61Vhlu5ffbiabb20?=
+ =?us-ascii?Q?kJSULZd+/rMKTJ9cKrnbrkQYLDqT5IjvayUG1RtziL8+71T4lwN40J7nLVlf?=
+ =?us-ascii?Q?Vf0POGWYJ+ICWmnv71Ps24U/QQz3xAqrzxTD1YDigay3ufoonkep88grIelP?=
+ =?us-ascii?Q?/qAAkNfVWyGdwB7zk/17I0Nfw9j+is64uaqOaPHukqswJI5Me8F9p6/0OG6M?=
+ =?us-ascii?Q?XQa5p/rOs4TVUWn3Z0lnYB52cuJFrSV1caf9mmX4sSVYlRQ9X/TBGPLGAaSJ?=
+ =?us-ascii?Q?p7Iv2VO/g+vE2CXKF6to+HH/2HPbHwWcE8q9QGt51bv1RQdzFi80s/1c9EGl?=
+ =?us-ascii?Q?C7wS0kpOIhB9fEORIktcrJf4ZdEEMI1mWukWuQiO2SaqGPOBjUAal5QFFbOZ?=
+ =?us-ascii?Q?KiP+9LC7rBtcpbDobco98GTfmLkgw61fa4dp7+J+CCvihOggocJ7os/3UH12?=
+ =?us-ascii?Q?QljrvuVeF41MDUu4apn4Tw8zl8uf+c1bRK4x6rDJYeQ5bkG8zmSrfCkJ5e8o?=
+ =?us-ascii?Q?VcFvVoA2eN56EmhgoYzkzet7gTNMazeV0ous3E+O63O2T9Imiy+vP6QD81Bi?=
+ =?us-ascii?Q?rtycSdSW4TE95MLbCzodQPDcc7/ZtMcG5SoRSE6g?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6055316e-e8d2-4b26-83eb-08ddfc4584c1
+X-MS-Exchange-CrossTenant-AuthSource: PAXSPRMB0053.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Sep 2025 15:09:26.9385
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 5Zc41RHRJ4E173IxEGYmMZP/a4a/kQJFa7Q8V+Sv7s7S+57Fk2p8m0QHOBkP7II0JAuqI+B3YH5VuvAONGdvUQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXPR04MB11543
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250925_062316_073678_F7302147 
-X-CRM114-Status: GOOD (  15.38  )
+X-CRM114-CacheID: sfid-20250925_080931_742635_20ED1E60 
+X-CRM114-Status: GOOD (  30.63  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,82 +156,108 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi
+On Wed, Sep 24, 2025 at 10:18:33PM +0200, Arnd Bergmann wrote:
+> From: Arnd Bergmann <arnd@arndb.de>
+>
+> Short MMIO transfers that are not a multiple of four bytes in size need
+> a special case for the final bytes, however the existing implementation
+> is not endian-safe and introduces an incorrect byteswap on big-endian
+> kernels.
+>
+> This usually does not cause problems because most systems are
+> little-endian and most transfers are multiple of four bytes long, but
+> still needs to be fixed to avoid the extra byteswap.
+>
+> Change the special case for both i3c_writel_fifo() and i3c_readl_fifo()
+> to use non-byteswapping writesl() and readsl() with a single element
+> instead of the byteswapping writel()/readl() that are meant for individual
+> MMIO registers. As data is copied between a FIFO and a memory buffer,
+> the writesl()/readsl() loops are typically based on __raw_readl()/
+> __raw_writel(), resulting in the order of bytes in the FIFO to match
+> the order in the buffer, regardless of the CPU endianess.
+>
+> The earlier versions in the dw-i3c and i3c-master-cdns had a correct
+> implementation, but the generic version that was recently added broke it.
+>
+> Fixes: 733b439375b4 ("i3c: master: Add inline i3c_readl_fifo() and i3c_writel_fifo()")
+> Cc: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> ---
+> This was a recent regression, the version in 6.16 still works,
+> but 6.17-rc is broken.
+>
+> v2 changes:
+>  - add code comments
+>  - write correct data buffer
+> ---
+>  drivers/i3c/internals.h | 12 ++++++++++--
+>  1 file changed, 10 insertions(+), 2 deletions(-)
+>
+> diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
+> index 0d857cc68cc5..79ceaa5f5afd 100644
+> --- a/drivers/i3c/internals.h
+> +++ b/drivers/i3c/internals.h
+> @@ -38,7 +38,11 @@ static inline void i3c_writel_fifo(void __iomem *addr, const void *buf,
+>  		u32 tmp = 0;
+>
+>  		memcpy(&tmp, buf + (nbytes & ~3), nbytes & 3);
+> -		writel(tmp, addr);
+> +		/*
+> +		 * writesl() instead of writel() to keep FIFO
+> +		 * byteorder on big-endian targets
+> +		 */
 
-On 9/18/25 7:27 PM, Frank Li wrote:
-> On Thu, Sep 18, 2025 at 03:24:27PM +0530, Durai Manickam KR wrote:
->> Add support for microchip sama7d65 SoC I3C HCI master only IP.
->> Features tested and supported :
->>             Standard CCC commands.
->>             I3C SDR mode private transfers in PIO mode.
->>             I2C transfers in PIO mode.
->>             Pure bus mode and mixed bus mode.
->>
->> Signed-off-by: Durai Manickam KR <durai.manickamkr@microchip.com>
->> ---
->>   drivers/i3c/master/mipi-i3c-hci/Makefile      |  3 +-
->>   drivers/i3c/master/mipi-i3c-hci/core.c        | 28 ++++++++++++
->>   drivers/i3c/master/mipi-i3c-hci/hci.h         | 12 ++++++
->>   .../i3c/master/mipi-i3c-hci/hci_quirks_mchp.c | 43 +++++++++++++++++++
->>   4 files changed, 85 insertions(+), 1 deletion(-)
->>   create mode 100644 drivers/i3c/master/mipi-i3c-hci/hci_quirks_mchp.c
->>
->> diff --git a/drivers/i3c/master/mipi-i3c-hci/Makefile b/drivers/i3c/master/mipi-i3c-hci/Makefile
->> index e3d3ef757035..f463afc4566a 100644
->> --- a/drivers/i3c/master/mipi-i3c-hci/Makefile
->> +++ b/drivers/i3c/master/mipi-i3c-hci/Makefile
->> @@ -4,5 +4,6 @@ obj-$(CONFIG_MIPI_I3C_HCI)		+= mipi-i3c-hci.o
->>   mipi-i3c-hci-y				:= core.o ext_caps.o pio.o dma.o \
->>   					   cmd_v1.o cmd_v2.o \
->>   					   dat_v1.o dct_v1.o \
->> -					   hci_quirks.o
->> +					   hci_quirks.o \
->> +					   hci_quirks_mchp.o
->>   obj-$(CONFIG_MIPI_I3C_HCI_PCI)		+= mipi-i3c-hci-pci.o
->> diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
->> index 60f1175f1f37..cb0673d62c03 100644
->> --- a/drivers/i3c/master/mipi-i3c-hci/core.c
->> +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
->> @@ -8,6 +8,7 @@
->>    */
->>
->>   #include <linux/bitfield.h>
->> +#include <linux/clk.h>
->>   #include <linux/device.h>
->>   #include <linux/errno.h>
->>   #include <linux/i3c/master.h>
->> @@ -651,6 +652,9 @@ static int i3c_hci_init(struct i3c_hci *hci)
->>   	hci->DAT_regs = offset ? hci->base_regs + offset : NULL;
->>   	hci->DAT_entries = FIELD_GET(DAT_TABLE_SIZE, regval);
->>   	hci->DAT_entry_size = FIELD_GET(DAT_ENTRY_SIZE, regval) ? 0 : 8;
->> +	/* Microchip SAMA7D65 SoC doesnot support DAT entry size bits in the DAT section offset register */
->> +	if (hci->quirks & MCHP_HCI_QUIRK_SAMA7D65)
->> +		hci->DAT_entry_size = 8;
-> 
-> #define MCHP_HCI_QUIRK_FIX_DATA_ENTRY_SIZE_8
-> 
-> 	if (hci->quirks & MCHP_HCI_QUIRK_FIX_DATA_ENTRY_SIZE_8)
-> 		hci->DAT_entry_size = 8;
-> 	else
-> 		hci->DAT_entry_size = FIELD_GET(DAT_ENTRY_SIZE, regval) ? 0 : 8;
-> 
-> in case other vendor have similar problem.
-> 
-Are DAT_entry_size and DCT_entry_size quirks even needed? Does your HW 
-read nonzero values and you need the quirk?
+endian look like how CPU decode byte order to MSB to LSB.
+targets FIFO define look like
 
->> +	/* Microchip SAMA7d65 SoC supports only PIO mode */
->> +	if (hci->quirks & MCHP_HCI_QUIRK_PIO_MODE)
->> +		hci->RHS_regs = NULL;
->> +
+BIT 31..24   23..16     15..8     7..0
+    B3        B2         B1       B0
 
-Please use existing HCI_QUIRK_PIO_MODE quirk and then you don't need 
-this added code.
+regardless CPU is big endian or little endian system, data in memory should
+be
+
+0x000 B0
+0x004 B1
+0x008 B2
+0x00c B3
+
+I think your sentence in commit message is better
+
+/* writesl() instead of writel() to keep FIFO byte orderer to match the order
+in the buffer regardless of the CPU endianess.
+*/
+
+Frank
+> +		writesl(addr, &tmp, 1);
+>  	}
+>  }
+>
+> @@ -55,7 +59,11 @@ static inline void i3c_readl_fifo(const void __iomem *addr, void *buf,
+>  	if (nbytes & 3) {
+>  		u32 tmp;
+>
+> -		tmp = readl(addr);
+> +		/*
+> +		 * readsl() instead of readl() to keep FIFO
+> +		 * byteorder on big-endian targets
+> +		 */
+> +		readsl(addr, &tmp, 1);
+>  		memcpy(buf + (nbytes & ~3), &tmp, nbytes & 3);
+>  	}
+>  }
+> --
+> 2.39.5
+>
+>
+> --
+> linux-i3c mailing list
+> linux-i3c@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-i3c
 
 -- 
 linux-i3c mailing list
