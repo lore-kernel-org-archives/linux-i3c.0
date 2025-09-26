@@ -4,152 +4,142 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 021B2CAC5AE
-	for <linux-i3c@archiver.kernel.org>; Fri, 26 Sep 2025 10:38:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E6C51CAC5AE
+	for <linux-i3c@archiver.kernel.org>; Fri, 26 Sep 2025 10:54:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EhWjznzwjB+XbUDeDo2exEvNqVk95+h+Ov3FVLuwMyQ=; b=MpCnZbiOvIHP+a
-	gj92tfzdYI/DSrrD+jVNKj3xr7k0cwLkmIlX6rNYZ2w59JfXK/wITMAxiussqeAVXJs03WZ8i87pq
-	O/N3aYpQ1AiwkcVB7G6onAjqf9Jtgh8LaCDFbjMWkb1fKWt5zBrq78PyyY+PYGWnExFiMZTQK+H2M
-	qmg7BtHixEt+s8GEAHc6emX7kJl4zi99ee0qjPGb4XP21G35AGZHnAXXU65ByD6r/2SDMKgi6xFjZ
-	MhtBQM/Sfi9LCUtu1iK0qZ9iezpfAqTTjn500ZmIopryt3gyAieFcczT6NvV/o6KBPFQ0MFR2CdZI
-	U6jbX1NJSmmsexUxNz2A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=b/xs3c1ymP77N6u8ubRibZgzifzy/Xj+k3lc2q1Khgk=; b=I/yIvKTkUgdxoT
+	JrlKvW0/wNv0dBrpTqKYLLezqIRPQZPF2PZFd1vYlOg2T7OQZ9eHem2W+0IvevnhWkv8s/PrChCEd
+	BW5g5HEanYZJLqCu3pRjesMvRF5B6jTXwZdlOu7jsY++MZz7qj3Pug8Fa93qAJ9ahVv3qoxeEPq0j
+	4+xPWSIs4C8I2YNwqil8feAjBIp2kdFMKlu9+WlvqfCkiivUxDz1wARS5swuvlfCgYLMpOzW437ZK
+	mC+FVs0LJuTt2XrX+ehc9oLkHq9GaSNTzqN5vzfA/nSA8AP/C+unEG9L/EBy3CeFUg8duErcaxDGY
+	I6aUc/W11MJ3V+y6DUxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v25qE-00000000TOh-3Dq9;
-	Fri, 26 Sep 2025 10:38:18 +0000
-Received: from mail-eastus2azlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c110::1] helo=BN1PR04CU002.outbound.protection.outlook.com)
+	id 1v265e-00000000ZH1-2T4C;
+	Fri, 26 Sep 2025 10:54:14 +0000
+Received: from mail-westus2azlp170120002.outbound.protection.outlook.com ([2a01:111:f403:c007::2] helo=MW6PR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v25qC-00000000TMT-26pI
+	id 1v265c-00000000ZFo-1Zzu
 	for linux-i3c@lists.infradead.org;
-	Fri, 26 Sep 2025 10:38:18 +0000
+	Fri, 26 Sep 2025 10:54:13 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=X0K7yKs9iqQlY5GqUyn81E8uGGZ1smTiwzhRd0SHFPLq+3aa06BIyca61jHyuyQaarRS3XhiMBo7A7NdAZAEbSsucYAvcRCwVTmsec3mJSRj3Vbkb1IqD1LSD/zQwypOmtdTVdm6pyfAY3QYZGv+9qJID5rNHpWpcR1S5ViwJjO8srQ648bgmxNTULivfkp+flwCrxy1O36Smd7+eFEJ/Ah/5yhjPaQGmWI4U53qAbhof63MismEbd5MJgZsSQfxOIi0g+wBTToG1VaDeha/WO8Ap8VlvY2JjYYyqPY/54WfQHhnM+qPezWuj8gv/zk1kP067Md1o3QcsmoctpELaQ==
+ b=zTQQF1oUQv6ZXgs0CMRR2dNqKOz/ak6mR7L0gFAH1dZcHvVHBsJJgcQFNjBsOY4k2pLjUMhZaPfv/LpYtepE+abbokdLWF2G7cX6sI+QkggkbhyD0lu2dhCCzPSHUqndNR1o4kHNd58ie0W8Zrgw0QkmoAyMxNJvDoa2Laye5WdxEywZE0EVTktdjh4+Zn9RVw/pGze6ZK1WxbGTBBn77W++r+2BO8ck2BqKX+HNAadY97az4ukOy/wDCkVmxIGP/igCt/fESifMnxetrBI5LA6mFjXtFuRyjfj9bjCr1LYYIRy+eNzLfLkOOtMfDaoefQXbvWyBdYgySmwSweortA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=rguveA0dIzyRH9l8noG2C6IaFADBZYBIu+ahxDWlz3U=;
- b=ujWUkrg2Cywk59VbgrUUXvgtlmCWdQvnKqe4dUvX+evpfpCQSMcopY42XWHzMRSZviCnCDVlwGszM0g3bm7FAm0eZQw8keP0xFThp3pFPLw0IxIRhwyTS/sBEEBeCcMUKZX8xUfMOjdsypbneaDeXL+J0M7gp1DLcXTzjFS/TWFrXGWq1Pg2vB21E3AjlqCrOz56wAWBXB73oGNo1jxKjlvnkqmq4gSzEzmtavGUqXDd2WBgvGFce8kaMvzHXiLXOWriiHpiLePlaRUcU+X9QXrn4y864zR78IMXNGAUkXm5tzS9BvR9fqgFksudr07GH2VNYSuFn9TdV4Kroo0nag==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
- header.d=amd.com; arc=none
+ bh=zB/JLEY7FhV/HzUVezktFI5uFReN2t55b3G0YKOavaA=;
+ b=Jl/65xQK8N3aa9G+3hoPbTihQFkWC87xL8v63tcTps+OZHoDCNTNe7TPAZSEW9/bcY0llElVk67C8kZ2uKY4i3fgIhfrEZTFD6KsoppcY3cArPBHqg9ASL7pjqPc4fx/zrYJfejZFcNafsjf3WeQSSqHRMNEAcEyk2gWe1JjYagoqEKaR3J2u9gZ/e6NXLAJmGvaeBBmxIJAUMGxH8AEDM5ZxdUeb8f7oTa6mmL68iJfK+252FvvT+/5pC3J1dWFrQ9C6Wb4To5HUJEgWMEaWmS8lyTIVitOVVAO5UTb9i3mEQK1bpzw8VmRgYTDfBZ9ch+fhGFt+qyTU72xl8bplg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 165.204.84.17) smtp.rcpttodomain=gmail.com smtp.mailfrom=amd.com; dmarc=pass
+ (p=quarantine sp=quarantine pct=100) action=none header.from=amd.com;
+ dkim=none (message not signed); arc=none (0)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=rguveA0dIzyRH9l8noG2C6IaFADBZYBIu+ahxDWlz3U=;
- b=Gc2BAQfzk4B2VjJ11hbJ8qb7ogESqiIKoRTvrRbnvz4uP16VkLCTyqOFP/JDeVe9G5PIofU1Sa1q7s+oieLnHjAab/OG1+Q3JFj+sWnr3hksr4eAvfdNy9vsUersqIEIPH/gaM9/86uw0kg/XBbzoeG0Cr/dAIzdsQaHShKvdFY=
-Received: from DM4PR12MB6109.namprd12.prod.outlook.com (2603:10b6:8:ae::11) by
- PH7PR12MB9204.namprd12.prod.outlook.com (2603:10b6:510:2e7::14) with
+ bh=zB/JLEY7FhV/HzUVezktFI5uFReN2t55b3G0YKOavaA=;
+ b=twSWmNHtFIcWf5k9/9O1MXRXinHYDtujWRXYTKoViABcl5jJfnKZ1xIm1I9vrD68/h1x//eE3QiYdU+1jG6twKcqLfFmo9f7IsruskOHHfl3D8lznirDg3rgOnDXluLVamO58OCRagGJVInTVvWXLy/PP+t/IKoeGSf5EyYa1XM=
+Received: from BLAPR03CA0005.namprd03.prod.outlook.com (2603:10b6:208:32b::10)
+ by CYXPR12MB9442.namprd12.prod.outlook.com (2603:10b6:930:e3::22) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9160.13; Fri, 26 Sep
- 2025 10:38:09 +0000
-Received: from DM4PR12MB6109.namprd12.prod.outlook.com
- ([fe80::680c:3105:babe:b7e1]) by DM4PR12MB6109.namprd12.prod.outlook.com
- ([fe80::680c:3105:babe:b7e1%4]) with mapi id 15.20.9160.011; Fri, 26 Sep 2025
- 10:38:08 +0000
-From: "Guntupalli, Manikanta" <manikanta.guntupalli@amd.com>
-To: Frank Li <Frank.li@nxp.com>, Arnd Bergmann <arnd@kernel.org>
-CC: Alexandre Belloni <alexandre.belloni@bootlin.com>, Jorge Marques
-	<jorge.marques@analog.com>, Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Arnd Bergmann <arnd@arndb.de>, "linux-i3c@lists.infradead.org"
-	<linux-i3c@lists.infradead.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, "git (AMD-Xilinx)" <git@amd.com>, "Simek,
- Michal" <michal.simek@amd.com>
-Subject: RE: [PATCH] [v2] i3c: fix big-endian FIFO transfers
-Thread-Topic: [PATCH] [v2] i3c: fix big-endian FIFO transfers
-Thread-Index: AQHcLZBu2lcu7eR7HUOLh6RNKtQOPbSkAZiAgAFFwZA=
-Date: Fri, 26 Sep 2025 10:38:08 +0000
-Message-ID: <DM4PR12MB6109D513FD8E43B76D501ACC8C1EA@DM4PR12MB6109.namprd12.prod.outlook.com>
-References: <20250924201837.3691486-1-arnd@kernel.org>
- <aNVbHeky1X58EYT1@lizhi-Precision-Tower-5810>
-In-Reply-To: <aNVbHeky1X58EYT1@lizhi-Precision-Tower-5810>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-msip_labels: MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Enabled=True;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_SiteId=3dd8961f-e488-4e60-8e11-a82d994e183d;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_SetDate=2025-09-26T10:35:19.0000000Z;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Name=Open
- Source;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_ContentBits=3;MSIP_Label_f265efc6-e181-49d6-80f4-fae95cf838a0_Method=Privileged
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=amd.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: DM4PR12MB6109:EE_|PH7PR12MB9204:EE_
-x-ms-office365-filtering-correlation-id: cc8b9c5a-32df-429e-2e93-08ddfce8c8ce
-x-ld-processed: 3dd8961f-e488-4e60-8e11-a82d994e183d,ExtAddr
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|376014|366016|1800799024|38070700021;
-x-microsoft-antispam-message-info: =?us-ascii?Q?CHXb7GdSLQi67Mjrn32aaVzEl0atI+lkqgZ6kdWdHAEoCV/NfiOTdn7ltI6L?=
- =?us-ascii?Q?SnBP2GfknlApKh+kbMT9E1cuwJZNtD7wie3Bls5+qWWPdrqbCrpbHQCSp0jq?=
- =?us-ascii?Q?mTiF/9Kq9yzAYqyVHor05xcwoo0eGKDG9owdZ50XwO20pQusmqg0eTHtYHIW?=
- =?us-ascii?Q?EE/7pQ8BYJ4y3DdH6I+DMtxMsLaDYaEqGsyrHdwKk7awxNlP5iZoqhkOfSTr?=
- =?us-ascii?Q?Sa2zFLydrAVdF0zdd6VpdoChb7SBFMRSFjBbKop40mcHLdH8OAPVPGPWleR4?=
- =?us-ascii?Q?c8EZoOX+1ENQ1dakwJRt0svoStp33R0Imp1WB+zcp3P2VYUkgYpJsNltNH4y?=
- =?us-ascii?Q?IVTt22xy1rsyv3eDWPNysZsQ85CeQG8Uwtb/xobcYob6pTjU/J3BTFqGrAyL?=
- =?us-ascii?Q?/EOOqMJLLW2v47htX/isxfNwEzNPcRaaH0Yk5XhpXe8Viv2J/tzRRP6Ir1ev?=
- =?us-ascii?Q?nojPyiAUXFWJYAnbAIo0RemUuFjOElqP01Xak15KIUAcTILR/K8XfWUKMPnm?=
- =?us-ascii?Q?d803jn5DSPeybasxU3kv6FbqoRdSjnY+l0669MvsJ4J0JKPvsrwVMSeVII5O?=
- =?us-ascii?Q?WYFAthIkUb97muMBXpTBCI34pwxp+a/6Pb2xdlaznXiRmhA2u0HHnOmSDHte?=
- =?us-ascii?Q?mmVhEF3oZz9oPoSVfI6pFQKAlNORsbuXzdEc6wD4yNsXKzO+mAFk6XR5ZBX2?=
- =?us-ascii?Q?/EGlHQAMql7JnGXCUqs26IJivgQseDXGH78WNcfsOscAJWX2m9NR7/91bRVz?=
- =?us-ascii?Q?b8Jv4eyiwP6Vx1ziwUqo+VyIT3YYEaVpS9qmUDs1n0tustu0Isc3YqOjmkXd?=
- =?us-ascii?Q?uCYpph1cEtFOITEX2HnIOtquAdUUANrukbq1aLkmPMa3eQYAbD9mt8DKmo0z?=
- =?us-ascii?Q?Nx7X3YI1m1Iamu7tgorOCJwpspj3pffduH1h3hk8NVPowKFzCf9c+Um0PPef?=
- =?us-ascii?Q?JBGjHtxEOEqwOFZL90tuJTtD3o8sJbI1ZZmKzAOvIlOPQeRt+CWtcaOSm/W+?=
- =?us-ascii?Q?MP8tjGtwPC7zeuCokQvUNWumTwE1p1SfUjM6oQPNgyi1Xnh0qA8YQgIu4d4n?=
- =?us-ascii?Q?pMaFyrmPMRY0H/h/YHnyPVS6lBgy2nKm+mBdzPJMeHrHta51otAKFuMxtFJJ?=
- =?us-ascii?Q?f829fBdrUNacw7eql8RN5Yrr8Ns7FHKW+TVUZiu34aTkQJ3VfI8SG7gmFosv?=
- =?us-ascii?Q?NomJTn5F7Xv8d44vh49lraDjJiFVyboksfKdCdMyUGolKVUcKVatKGsGmUz8?=
- =?us-ascii?Q?SO44RELOVtbVqg5ntbucibFZfAlQPnOmHikghiBpocD7yrN+GQzdA2djmXhE?=
- =?us-ascii?Q?IQlLW6PjrQEqUfSpL2X3qtJuC/CxUXSFuPtuYNKp5HJTAOoiD8SGdDpgLSgi?=
- =?us-ascii?Q?sFLgr9bk3GKcsSQpdwjISk4IaFoaa1Yebyy4kykmUc4uJMIVn/j8p00OikSp?=
- =?us-ascii?Q?sGtIGhqnCFG/6o/U22E+88huxiEtGhM7Sv7GKi83VDIhBIxh92Hpww=3D=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DM4PR12MB6109.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(1800799024)(38070700021);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?+aBrGoS12OKTt/E/HBYzk8djmJ0w1X973rsRBpqEwwImwfHt/1x9sCZIQgW/?=
- =?us-ascii?Q?pkqxF1/kn4CcOIlNoEFH4v/Oi6tYT3xKPNm5pLtZOEK3KMG9Q2/TX92QnYWB?=
- =?us-ascii?Q?kqQEaEbqa4ffdMiOVipDKkR73HWXrDMauJe2mcVl9czFzhJXXIh8S/GFTs/X?=
- =?us-ascii?Q?y3BsehVMVPJWop3vacqg2XwP9K2hC1SAToL0y/8kbHfkxDCrFJsu2SCVRFbZ?=
- =?us-ascii?Q?Z09ZnHfFubpx9TcvHJReBolwdgP32mIEygZkSQEF5HNDL6GakcDAMQU3XjHP?=
- =?us-ascii?Q?SiFkTN0pG1Ohg281PK4NqCU2LRssYw5apzCMwOLp4p0w2Zna1Em12ElWoGDA?=
- =?us-ascii?Q?p8Sp1m1/w1ZphoGmOwpPsjxI6xK0Awk3pi9YK+KPJ3TRuk4p217ovTnMgYfs?=
- =?us-ascii?Q?LpkUzHOGpNqYF5BU643ZuyTMQioFI+/PBkm0R2t1D+AteEQRjLutMpubO2QG?=
- =?us-ascii?Q?rdtbLoU2LO4c3qtZp1OA8wpXVccpdo0MbIN/L4Jzd30MxCp7d1AV5U4+nXUV?=
- =?us-ascii?Q?RNADLtM0B+cxS4aLrjzq4JJEDE2qdkc9d0rDnurtlhrgPHKksRFQiaAQpW6u?=
- =?us-ascii?Q?N+yk1lq2Ck7b5sonIIonLI5PGiN5OUyaNkzMaFqBeVTJoxvnqeU4ESnzNupj?=
- =?us-ascii?Q?DwWxWhARXxJ9ntBaC/YBdVFP6xN777XNoyzg+25nOqWaSoF6x1ZlAmzvAQDp?=
- =?us-ascii?Q?OneMnPDOSKtzr8jmxEjMgNFVRNGFlknaQ2wsxFBX0XVA+2WvzBhVueiRJQuv?=
- =?us-ascii?Q?JIG4NFGcIVdV0X8b+K7hK0Bixo8XOtCDSMilS43xWaQcrSlkqmJtlRE4NKTN?=
- =?us-ascii?Q?mmhyor9BT8vaMCdUAMiwAGKsDuC0hnTmRIX2oY402IOaxfdwPNVX8lLp1beP?=
- =?us-ascii?Q?oFk7KWucj9P3On+dB6bwIpsobnuJGpLx4p7k6WzVs58f1CSJ4lI5KCOagu0b?=
- =?us-ascii?Q?NJATyKY1E6IcAMkhce8+UfOHRyOzipjJeA07yyjRSeSpg1w6H1+O/KNSXvcs?=
- =?us-ascii?Q?U2ptpsGZHE91SmZzESToWNZLDuwdQUl8bkDGBtDJFxv6sD+vc6Qo4T+3dAH+?=
- =?us-ascii?Q?M8gjIq/3AD/Ltbth9h/vbbuOJJ4aVVY9bGaTN1ZizaPVJ+FfvzDzE14qfbmD?=
- =?us-ascii?Q?FpgeMxTQWs4RNdgPyADTh7WRNKm14P9C0ZDYEY0LiFNlHX+Sz8wEArgc4auF?=
- =?us-ascii?Q?J5D6wMOCGI0AzA275yJp1bh1HPFPxYBGor3Yp64mW3xGbVAdITSMZ8Az3/L/?=
- =?us-ascii?Q?qYOpMXtV2SIWl28XFeUQLesG4E+00HJCm5r6G23CnITKJFdJBSkeV8tYmmDZ?=
- =?us-ascii?Q?tzMuqNM+kZ8L4E/5FYSh7gJuypJO5VHEaEwMj6z1ORPaEBcG4oi6SjZXdeam?=
- =?us-ascii?Q?gWnu+CXXj1SQZk6mv/6o3/xHZ5RFf2H047xpJTw3sspTHMYxDPB+yQVo1c/w?=
- =?us-ascii?Q?0C1ejrHkiI+fAE4iZm4N05ikyKAvjMzUCMEL8ctX42Y0Gj6AdVjs1++2tlOi?=
- =?us-ascii?Q?vDqM/Ki36VqJUWDDoh9eSGdMNoDeNMCgY/hCE196ZCr5gZPOQ1x3EN1p0hF4?=
- =?us-ascii?Q?yL4P62/cY61H2j5NqwM=3D?=
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9137.19; Fri, 26 Sep
+ 2025 10:54:01 +0000
+Received: from BL02EPF0002992C.namprd02.prod.outlook.com
+ (2603:10b6:208:32b:cafe::4) by BLAPR03CA0005.outlook.office365.com
+ (2603:10b6:208:32b::10) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9137.21 via Frontend Transport; Fri,
+ 26 Sep 2025 10:54:00 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
+ smtp.mailfrom=amd.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=amd.com;
+Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
+ 165.204.84.17 as permitted sender) receiver=protection.outlook.com;
+ client-ip=165.204.84.17; helo=satlexmb08.amd.com; pr=C
+Received: from satlexmb08.amd.com (165.204.84.17) by
+ BL02EPF0002992C.mail.protection.outlook.com (10.167.249.57) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9160.9 via Frontend Transport; Fri, 26 Sep 2025 10:54:00 +0000
+Received: from SATLEXMB06.amd.com (10.181.40.147) by satlexmb08.amd.com
+ (10.181.42.217) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.2.2562.17; Fri, 26 Sep
+ 2025 03:54:00 -0700
+Received: from satlexmb08.amd.com (10.181.42.217) by SATLEXMB06.amd.com
+ (10.181.40.147) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.39; Fri, 26 Sep
+ 2025 05:53:59 -0500
+Received: from xhdradheys41.xilinx.com (10.180.168.240) by satlexmb08.amd.com
+ (10.181.42.217) with Microsoft SMTP Server id 15.2.2562.17 via Frontend
+ Transport; Fri, 26 Sep 2025 03:53:52 -0700
+From: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+To: <git@amd.com>, <michal.simek@amd.com>, <alexandre.belloni@bootlin.com>,
+	<Frank.Li@nxp.com>, <robh@kernel.org>, <krzk+dt@kernel.org>,
+	<conor+dt@kernel.org>, <pgaj@cadence.com>,
+	<wsa+renesas@sang-engineering.com>, <tommaso.merciai.xr@bp.renesas.com>,
+	<arnd@arndb.de>, <quic_msavaliy@quicinc.com>, <Shyam-sundar.S-k@amd.com>,
+	<sakari.ailus@linux.intel.com>, <billy_tsai@aspeedtech.com>,
+	<kees@kernel.org>, <gustavoars@kernel.org>, <jarkko.nikula@linux.intel.com>,
+	<jorge.marques@analog.com>, <linux-i3c@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-arch@vger.kernel.org>, <linux-hardening@vger.kernel.org>
+CC: <radhey.shyam.pandey@amd.com>, <srinivas.goud@amd.com>,
+	<shubhrajyoti.datta@amd.com>, <manion05gk@gmail.com>, Manikanta Guntupalli
+	<manikanta.guntupalli@amd.com>
+Subject: [PATCH V8 0/5] Add AMD I3C master controller driver and bindings
+Date: Fri, 26 Sep 2025 16:23:44 +0530
+Message-ID: <20250926105349.2932952-1-manikanta.guntupalli@amd.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BL02EPF0002992C:EE_|CYXPR12MB9442:EE_
+X-MS-Office365-Filtering-Correlation-Id: 3e0fe7c8-f94f-4087-4ad5-08ddfceb0026
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700013|376014|7416014|82310400026|1800799024|921020;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?LUUtWI1M+a3ASycHtIyDeEUaYn0mI09/1+8YEOymTMwTopi1cmaXByx8OXCH?=
+ =?us-ascii?Q?mbb93CNDIUhpoZaJEHQOry05xC5ZZFM0QH25InVvPRn0+ypN4Y2ApJ/XQNk9?=
+ =?us-ascii?Q?7jqQXbUkZXVJDK4j3172GyHgNOwXugstL3Mo7l7emiZ9zfPzOrsus2+BYTj0?=
+ =?us-ascii?Q?/5cUsXJIqv5ZT4j7pXeDKqUK5hVbo+rfIIEgke+KzpLceCk7Nee8qUAxQe/P?=
+ =?us-ascii?Q?ZemVTXBLXRKI5vyHYrfEix89JCrWgjHkwnp/5ABaPThfRHbdpIoN8xyQPWVe?=
+ =?us-ascii?Q?xGUBdZO4zzkFBjgpcM68F7bYGa9uidQUGyZGYi1DVEXeP5nc7elhX7T56SF5?=
+ =?us-ascii?Q?hFAxKmRFHzKNlKG6LJpGQL3/RAP0OqYVHT6QSVwsknGflOHmi7C2faTaGwP2?=
+ =?us-ascii?Q?rR/2Bv9OMjL7iONgmKKxoFy4C9C++9EFQB8WbC6mNYiLo3RqXHL3A9vNOK6u?=
+ =?us-ascii?Q?++7zbUJ/01LLq7qpMD4V7yUWTpbxYvQu6NmVqDFheqt+QlqTM9xtFBvJrgXY?=
+ =?us-ascii?Q?zOy4IWT86GoNElgVB7skH4ZjD6VyTVKWrXBretEZteH1SiOYMNNpa6PnSLlC?=
+ =?us-ascii?Q?4rKrzNsF4LoFj2abZ9qT1MtkQZxH5QyMkBA86OGTMtl6Bvd/SnKCtZVNQGc9?=
+ =?us-ascii?Q?Y3WhpqEO/C/vkV9inHSLi22M3B/OjxTsTTgwLiCIzes/T/53cJFcPPyUrl75?=
+ =?us-ascii?Q?3Ie0MIw3eCJEIRac8Zm3tL0GNSrGwSlh3zj03+Z7wMb+RGjU5ZujzNnT7IZ9?=
+ =?us-ascii?Q?SUty1EA/WCQRxI7AeT5hXmODo9l9yFAZE1XJN+/mYAj/WSNSv5AeAgL8jQOC?=
+ =?us-ascii?Q?5cGNKX6x/wAYTWeaigSVF3y8cwDV3h8t112T0A9rhyjsAiigjZlqgk/M9M7Z?=
+ =?us-ascii?Q?ARpAsmNqg25xh70A/tuIYgZfpiGhLVrDicVhdX8c037jzUFMibgWhUMhXVos?=
+ =?us-ascii?Q?nbqQ7iz/AN4kdASUY3YM9hOuycTSIWbgFnKmizPZl40GUqPcu4i7r32rpiX7?=
+ =?us-ascii?Q?e8EXYDputAaDpLGS5yTVp1J7gfSNKLa3VjkifFJmRVNStxWDF/VwbxuIHicH?=
+ =?us-ascii?Q?hpLFW/XfaiXP2lO5FYwz4FuwJwAfsIbCmgzz3GIrROB5VyGbrjJwWYvJEanF?=
+ =?us-ascii?Q?bMlGTYkPJlFnzGZZ9dFhGI3+yJLoF5TL9HY2JRAVPZpxYboNPe5n9tNtZ+KS?=
+ =?us-ascii?Q?7mqrJjy1+OPtTySnScFePfphUOwp1XpJfWz4kUANxEjPqPtIZIcXbGal4DZU?=
+ =?us-ascii?Q?JiCPOZSUiedDC5iELmrLb5SaeHFC6QhkPI8MKugdeHg1/mX6LyuUwl5w5+2H?=
+ =?us-ascii?Q?fHDycx0LJfv4Cc5aq4rqNRCjoA6tcdbezWrrs3oB4GsEy5cYHkeIWJZR89tw?=
+ =?us-ascii?Q?WCkwHCr+hC64JON8op+uy53kikEFa/kpIPKL+ohmDM5hNaYV0pZKHwBj+Od/?=
+ =?us-ascii?Q?vu0IYlKubgaeOA9cKItZ8Yvefz+GZwe8smdHXKcwUwEREn7YQRTNJfYnrBlD?=
+ =?us-ascii?Q?T1/EhbGnQN6ZSD9wRYSb5Jhbmr/zGDDca712tH00/FCZW63W/8qitCLCinPN?=
+ =?us-ascii?Q?mQBGsL4IjlHXMKPw2bblNasEuEwQyyiZwHti9lPJ?=
+X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:satlexmb08.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(36860700013)(376014)(7416014)(82310400026)(1800799024)(921020);DIR:OUT;SFP:1101;
 X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: DM4PR12MB6109.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cc8b9c5a-32df-429e-2e93-08ddfce8c8ce
-X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Sep 2025 10:38:08.7487
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Sep 2025 10:54:00.6078
  (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3dd8961f-e488-4e60-8e11-a82d994e183d
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: /CixHdhSrU5J6txXl9+CHJEW0VZs3orz6m2qb+yVLpr5EHyVSQAHH/1PJOl5PIdskQ5FbTa095NjttMUG+XuzA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH7PR12MB9204
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3e0fe7c8-f94f-4087-4ad5-08ddfceb0026
+X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[satlexmb08.amd.com]
+X-MS-Exchange-CrossTenant-AuthSource: BL02EPF0002992C.namprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CYXPR12MB9442
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250926_033816_696216_BE876378 
-X-CRM114-Status: GOOD (  37.17  )
+X-CRM114-CacheID: sfid-20250926_035412_418929_CBB9E43A 
+X-CRM114-Status: GOOD (  15.05  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -166,125 +156,109 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-[Public]
+This patch series introduces support for the AMD I3C master controller,
+including the device tree binding and driver implementation.
 
-Hi,
+In addition, the series adds big-endian MMIO accessors and extends
+i3c_readl_fifo() and i3c_writel_fifo() helpers with endianness support.
+---
+Changes for V2:
+Updated commit subject and description.
+Moved allOf to after required.
+Removed xlnx,num-targets property.
+Added mixed mode support with clock configuration.
+Converted smaller functions into inline functions.
+Used FIELD_GET() in xi3c_get_response().
+Updated xi3c_master_rd_from_rx_fifo() to use cmd->rx_buf.
+Used parity8() for address parity calculation.
+Added guards for locks.
+Dropped num_targets and updated xi3c_master_do_daa().
+Used __free(kfree) in xi3c_master_send_bdcast_ccc_cmd().
+Dropped PM runtime support.
+Updated xi3c_master_read() and xi3c_master_write() with
+xi3c_is_resp_available() check.
+Created separate functions: xi3c_master_init() and xi3c_master_reinit().
+Used xi3c_master_init() in bus initialization and xi3c_master_reinit()
+in error paths.
+Added DAA structure to xi3c_master structure.
 
-> -----Original Message-----
-> From: Frank Li <Frank.li@nxp.com>
-> Sent: Thursday, September 25, 2025 8:39 PM
-> To: Arnd Bergmann <arnd@kernel.org>
-> Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>; Jorge Marques
-> <jorge.marques@analog.com>; Wolfram Sang <wsa+renesas@sang-
-> engineering.com>; Arnd Bergmann <arnd@arndb.de>; Guntupalli, Manikanta
-> <manikanta.guntupalli@amd.com>; linux-i3c@lists.infradead.org; linux-
-> kernel@vger.kernel.org
-> Subject: Re: [PATCH] [v2] i3c: fix big-endian FIFO transfers
->
-> On Wed, Sep 24, 2025 at 10:18:33PM +0200, Arnd Bergmann wrote:
-> > From: Arnd Bergmann <arnd@arndb.de>
-> >
-> > Short MMIO transfers that are not a multiple of four bytes in size
-> > need a special case for the final bytes, however the existing
-> > implementation is not endian-safe and introduces an incorrect byteswap
-> > on big-endian kernels.
-> >
-> > This usually does not cause problems because most systems are
-> > little-endian and most transfers are multiple of four bytes long, but
-> > still needs to be fixed to avoid the extra byteswap.
-> >
-> > Change the special case for both i3c_writel_fifo() and
-> > i3c_readl_fifo() to use non-byteswapping writesl() and readsl() with a
-> > single element instead of the byteswapping writel()/readl() that are
-> > meant for individual MMIO registers. As data is copied between a FIFO
-> > and a memory buffer, the writesl()/readsl() loops are typically based
-> > on __raw_readl()/ __raw_writel(), resulting in the order of bytes in
-> > the FIFO to match the order in the buffer, regardless of the CPU endianess.
-> >
-> > The earlier versions in the dw-i3c and i3c-master-cdns had a correct
-> > implementation, but the generic version that was recently added broke it.
-> >
-> > Fixes: 733b439375b4 ("i3c: master: Add inline i3c_readl_fifo() and
-> > i3c_writel_fifo()")
-> > Cc: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
-> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> > ---
-> > This was a recent regression, the version in 6.16 still works, but
-> > 6.17-rc is broken.
-> >
-> > v2 changes:
-> >  - add code comments
-> >  - write correct data buffer
-> > ---
-> >  drivers/i3c/internals.h | 12 ++++++++++--
-> >  1 file changed, 10 insertions(+), 2 deletions(-)
-> >
-> > diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h index
-> > 0d857cc68cc5..79ceaa5f5afd 100644
-> > --- a/drivers/i3c/internals.h
-> > +++ b/drivers/i3c/internals.h
-> > @@ -38,7 +38,11 @@ static inline void i3c_writel_fifo(void __iomem *addr, const
-> void *buf,
-> >             u32 tmp = 0;
-> >
-> >             memcpy(&tmp, buf + (nbytes & ~3), nbytes & 3);
-> > -           writel(tmp, addr);
-> > +           /*
-> > +            * writesl() instead of writel() to keep FIFO
-> > +            * byteorder on big-endian targets
-> > +            */
->
-> endian look like how CPU decode byte order to MSB to LSB.
-> targets FIFO define look like
->
-> BIT 31..24   23..16     15..8     7..0
->     B3        B2         B1       B0
->
-> regardless CPU is big endian or little endian system, data in memory should be
->
-> 0x000 B0
-> 0x004 B1
-> 0x008 B2
-> 0x00c B3
->
-> I think your sentence in commit message is better
->
-> /* writesl() instead of writel() to keep FIFO byte orderer to match the order in the
-> buffer regardless of the CPU endianess.
-> */
->
-> Frank
-> > +           writesl(addr, &tmp, 1);
-> >     }
-> >  }
-> >
-> > @@ -55,7 +59,11 @@ static inline void i3c_readl_fifo(const void __iomem *addr,
-> void *buf,
-> >     if (nbytes & 3) {
-> >             u32 tmp;
-> >
-> > -           tmp = readl(addr);
-> > +           /*
-> > +            * readsl() instead of readl() to keep FIFO
-> > +            * byteorder on big-endian targets
-> > +            */
-> > +           readsl(addr, &tmp, 1);
-> >             memcpy(buf + (nbytes & ~3), &tmp, nbytes & 3);
-> >     }
-> >  }
-> > --
-> > 2.39.5
-> >
-> >
-> > --
-> > linux-i3c mailing list
-> > linux-i3c@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-i3c
+Changes for V3:
+Updated commit description.
+Corrected the order of properties and removed resets property.
+Added compatible to required list.
+Added interrupts to example.
+Resolved merge conflicts.
 
-We will include this patch as part of "[PATCH V8 0/5] Add AMD I3C master controller driver and bindings", since the patch series depends on it.
+Changes for V4:
+Added h/w documentation details.
+Updated timeout macros.
+Removed type casting for xi3c_is_resp_available() macro.
+Used ioread32() and iowrite32() instead of readl() and writel()
+to keep consistency.
+Read XI3C_RESET_OFFSET reg before udelay().
+Removed xi3c_master_free_xfer() and directly used kfree().
+Skipped checking return value of i3c_master_add_i3c_dev_locked().
+Used devm_mutex_init() instead of mutex_init().
 
-Thanks,
-Manikanta.
+Changes for V5:
+Renamed the xlnx,axi-i3c.yaml file into xlnx,axi-i3c-1.0.yaml.
+Used GENMASK_ULL for PID mask as it's 64bit mask.
+
+Changes for V6:
+Corrected the $id in the YAML file to match the filename and fix
+the dtschema warning.
+Removed typecast for xi3c_getrevisionnumber(), xi3c_wrfifolevel(),
+and xi3c_rdfifolevel().
+Replaced dynamic allocation with a static variable for pid_bcr_dcr.
+Fixed sparse warning in do_daa by typecasting the address parity value
+to u8.
+Fixed sparse warning in xi3c_master_bus_init by typecasting the pid value
+to u64 in info.pid calculation.
+
+Changes for V7:
+Added i3c controller version details to commit description.
+Added Reviewed-by tag to binding patch [1/4].
+Added big-endian MMIO accessors [2/4].
+Added endianness support for i3c_readl_fifo() and i3c_writel_fifo() [3/4].
+Updated timeout macro name.
+Updated xi3c_master_wr_to_tx_fifo() and xi3c_master_rd_from_rx_fifo()
+to use i3c_writel_fifo() and i3c_readl_fifo().
+
+Changes for V8:
+Included dependent patch "i3c: fix big-endian FIFO transfers"
+to this series as [3/5].
+Resolved conflicts with "i3c: fix big-endian FIFO transfers".
+Updated description.
+Used time_left instead of timeout.
+Used __free(kfree) for xfer to simplify err path in multiple places.
+
+Arnd Bergmann (1):
+  i3c: fix big-endian FIFO transfers
+
+Manikanta Guntupalli (4):
+  dt-bindings: i3c: Add AMD I3C master controller support
+  asm-generic/io.h: Add big-endian MMIO accessors
+  i3c: master: Add endianness support for i3c_readl_fifo() and
+    i3c_writel_fifo()
+  i3c: master: Add AMD I3C bus controller driver
+
+ .../bindings/i3c/xlnx,axi-i3c-1.0.yaml        |   55 +
+ MAINTAINERS                                   |    7 +
+ drivers/i3c/internals.h                       |   45 +-
+ drivers/i3c/master/Kconfig                    |   16 +
+ drivers/i3c/master/Makefile                   |    1 +
+ drivers/i3c/master/amd-i3c-master.c           | 1002 +++++++++++++++++
+ drivers/i3c/master/dw-i3c-master.c            |    9 +-
+ drivers/i3c/master/i3c-master-cdns.c          |    9 +-
+ drivers/i3c/master/renesas-i3c.c              |   12 +-
+ include/asm-generic/io.h                      |  202 ++++
+ 10 files changed, 1342 insertions(+), 16 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml
+ create mode 100644 drivers/i3c/master/amd-i3c-master.c
+
+-- 
+2.34.1
+
 
 -- 
 linux-i3c mailing list
