@@ -4,87 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9B550CAC5B9
-	for <linux-i3c@archiver.kernel.org>; Sat, 27 Sep 2025 06:12:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2485CAC5B0
+	for <linux-i3c@archiver.kernel.org>; Sat, 27 Sep 2025 18:59:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6rvRaSakL4hNe9iTgErsZxdRG9DdSqx36yARaOnpd48=; b=TV0huEAE+bJhgp
-	a7UdGxFD6+s/GMBqvReS0nU4JUnDM57UyC7bMDo2HEOBPb8XE3CQZLFyDvnOnUZrr1n2Vj2ripok9
-	jfimDysOOVefm+zuHQ1Pe1dz5rDbVdptDQm9R3n7iPpqbvvyin+8An8VI1fmTZEKQwlc8cegCPboi
-	+/9QRu7ibtNIxDB6kKWfaioMOUMG7KJmKJqghbAu9bZBtCDN76adXw0FNl36VuzUeH7hKWOGqmLrH
-	89PZMWhHw97IrWk5Pb1THDlSQZo21heXrcZS8IJDatsI38jjuHUIoiAbRrSTDMt/ZXub9eIAuHG8E
-	3n36lf8UeA6QCbcnJByw==;
+	List-Owner; bh=XO4uncuhmOt19wb2UE65AQksv2n5rfsqUiziShpnHu4=; b=Tq+b4Gdwta9AAW
+	ZRZtkz/KqyvbU9l5n2K2KABtUJdQfmXfoYj13ayexq20rESgJ99mUf49TKWhNOwXjuWjO3U7Ag1zh
+	9Pw54Kks7ALRHaiPO9Fjpf4LiKqxAJzqPYZ5Hr5Swa/E0qdihumtmhx/xpWf0rCw5rx4fgfOoCJdV
+	Y10EymYPxqpGo9qSE7gTSyULDISHcGkOoX/w9wyxodbJOIRaK3xQFsttEiM0p1+8d3HLiJCvR64Ym
+	WKcCZMyG2Na52NqeA5qszJWAEbyahaEMQgOTrdLOBTnA/IG9n27vJ37fsaPyHVIgRmv8MYtBmX7qf
+	JTjXJYj8lgPzWez/28ZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v2OAq-00000007ZEt-0Fpd;
-	Sat, 27 Sep 2025 06:12:48 +0000
-Received: from mgamail.intel.com ([192.198.163.14])
+	id 1v2a8X-0000000BqCv-1aaG;
+	Sat, 27 Sep 2025 18:59:13 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v2OAl-00000007ZAj-1fPQ
+	id 1v2a8U-0000000BqBH-3jdp
 	for linux-i3c@lists.infradead.org;
-	Sat, 27 Sep 2025 06:12:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1758953563; x=1790489563;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=jDGdeYRSR6G+nLEbsl+K8rRUHVY0iapVzO1DkGOIYOU=;
-  b=HsZtXxi060fjcGH1XOO+5DlPYS2GrncgKkMXOAYwPLVCyGaM3dQt3r16
-   HTw0jKdGPhxeT9bPgOAbuqWzb4IguvllDNchCtjku3RLus7IBoZmamQq0
-   yN/xcDmIBwDvfT2sPFvTpkxZ7aLa1YpEtJrF7o7HLlEl9OFViZZQs6LFe
-   QrW0oUvEC/1jInHUimi0yubeMv/USqr/hNGRGHRYlCe7QWLj8TAMEtMsq
-   iIBOL8cPCnEXKbu6zFWF8hkUqG/LnC+31ZpaURxhKAPaIPkNus5FzkQh8
-   r99Gf2TnD5JWU8mcjuKkHo3GYa25HZZFChaOhukkhKKwZZEkHYZWKSsFO
-   Q==;
-X-CSE-ConnectionGUID: JXLAxvW+TdKRW3xV28WH1Q==
-X-CSE-MsgGUID: iQntp4mzQCuTBji8h05cCg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11565"; a="61326431"
-X-IronPort-AV: E=Sophos;i="6.18,296,1751266800"; 
-   d="scan'208";a="61326431"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by fmvoesa108.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 26 Sep 2025 23:12:35 -0700
-X-CSE-ConnectionGUID: rc5yUXXeTD+tNAqKdvR8/w==
-X-CSE-MsgGUID: dOX0QDuTTaiySpgWbb5dPw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.18,296,1751266800"; 
-   d="scan'208";a="177715622"
-Received: from lkp-server02.sh.intel.com (HELO 84c55410ccf6) ([10.239.97.151])
-  by fmviesa006.fm.intel.com with ESMTP; 26 Sep 2025 23:12:28 -0700
-Received: from kbuild by 84c55410ccf6 with local (Exim 4.96)
-	(envelope-from <lkp@intel.com>)
-	id 1v2OAU-0006pX-0c;
-	Sat, 27 Sep 2025 06:12:26 +0000
-Date: Sat, 27 Sep 2025 14:12:21 +0800
-From: kernel test robot <lkp@intel.com>
-To: Manikanta Guntupalli <manikanta.guntupalli@amd.com>, git@amd.com,
-	michal.simek@amd.com, alexandre.belloni@bootlin.com,
-	Frank.Li@nxp.com, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, pgaj@cadence.com,
-	wsa+renesas@sang-engineering.com, tommaso.merciai.xr@bp.renesas.com,
-	arnd@arndb.de, quic_msavaliy@quicinc.com, Shyam-sundar.S-k@amd.com,
-	sakari.ailus@linux.intel.com, billy_tsai@aspeedtech.com,
-	kees@kernel.org, gustavoars@kernel.org,
-	jarkko.nikula@linux.intel.com, jorge.marques@analog.com,
-	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arch@vger.kernel.org,
-	linux-hardening@vger.kernel.org
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	radhey.shyam.pandey@amd.com, srinivas.goud@amd.com,
-	shubhrajyoti.datta@amd.com, manion05gk@gmail.com,
-	Manikanta Guntupalli <manikanta.guntupalli@amd.com>
-Subject: Re: [PATCH V8 2/5] asm-generic/io.h: Add big-endian MMIO accessors
-Message-ID: <202509271308.NHfa8qUq-lkp@intel.com>
-References: <20250926105349.2932952-3-manikanta.guntupalli@amd.com>
+	Sat, 27 Sep 2025 18:59:12 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 8ECDC449D5;
+	Sat, 27 Sep 2025 18:59:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3D3E6C4CEE7;
+	Sat, 27 Sep 2025 18:59:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1758999548;
+	bh=1OSBLp+ttR8asbRvrYHxL+vC8NOwayV1Z9SDsTwxsds=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+	b=n1Qugc1n/7qqhn6TamTuS738XeJlrTckf1cUScCmq7GIX27zuh5Euk8VTTbhSiRFd
+	 n46Avvw0lBz/09SA/+gNV30ChokxznBIE+ASVU4nci40ODmvYphyY1fax9ptgAU6NU
+	 Wcoq/GwG6QUUNYE9bXFzd3d0qM1O1bsfnhf0NpJ8V8/TQLNvGzGcMtYFGiC5mF5wDg
+	 arZ+IbA+8zNJo5CM0RqcyKpFKnu+qTg3+1wFOZAPnpp9da8a1j1ndTDN5VimErMxhe
+	 +vXQ5B2JWNbKuDx16YHkXFMXOH1K9YNTvndQG4SypuY9JaDeqp8W1WWNYk0WLEZOa+
+	 FdEeReYeLdeSQ==
+Date: Sat, 27 Sep 2025 19:58:59 +0100
+From: Jonathan Cameron <jic23@kernel.org>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, Miquel Raynal
+ <miquel.raynal@bootlin.com>, David Lechner <dlechner@baylibre.com>, Nuno
+ =?UTF-8?B?U8Oh?= <nuno.sa@analog.com>, Andy Shevchenko <andy@kernel.org>,
+ linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+ imx@lists.linux.dev, linux-iio@vger.kernel.org, Carlos Song
+ <carlos.song@nxp.com>
+Subject: Re: [PATCH v2 4/4] iio: magnetometer: Add mmc5633 sensor
+Message-ID: <20250927195859.28a6069e@jic23-huawei>
+In-Reply-To: <20250924-i3c_ddr-v2-4-682a0eb32572@nxp.com>
+References: <20250924-i3c_ddr-v2-0-682a0eb32572@nxp.com>
+	<20250924-i3c_ddr-v2-4-682a0eb32572@nxp.com>
+X-Mailer: Claws Mail 4.3.1 (GTK 3.24.50; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20250926105349.2932952-3-manikanta.guntupalli@amd.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250926_231243_530154_D8BE22AB 
-X-CRM114-Status: GOOD (  12.91  )
+X-CRM114-CacheID: sfid-20250927_115910_986323_51FF1708 
+X-CRM114-Status: GOOD (  36.95  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,212 +77,345 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Manikanta,
+On Wed, 24 Sep 2025 10:30:05 -0400
+Frank Li <Frank.Li@nxp.com> wrote:
 
-kernel test robot noticed the following build warnings:
+> Add mmc5633 sensor basic support.
+> - Support read 20 bits X/Y/Z magnetic.
+> - Support I3C HDR mode to send start measurememt command.
+> - Support I3C HDR mode to read all sensors data by one command.
+> 
+> Co-developed-by: Carlos Song <carlos.song@nxp.com>
+> Signed-off-by: Carlos Song <carlos.song@nxp.com>
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> ---
+> change in v2
+> - new patch
+> ---
+HI Frank,
 
-[auto build test WARNING on robh/for-next]
-[also build test WARNING on arnd-asm-generic/master linus/master v6.17-rc7 next-20250926]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+Some minor comments inline,
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Manikanta-Guntupalli/dt-bindings-i3c-Add-AMD-I3C-master-controller-support/20250926-190033
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
-patch link:    https://lore.kernel.org/r/20250926105349.2932952-3-manikanta.guntupalli%40amd.com
-patch subject: [PATCH V8 2/5] asm-generic/io.h: Add big-endian MMIO accessors
-config: sparc64-defconfig (https://download.01.org/0day-ci/archive/20250927/202509271308.NHfa8qUq-lkp@intel.com/config)
-compiler: clang version 20.1.8 (https://github.com/llvm/llvm-project 87f0227cb60147a26a1eeb4fb06e3b505e9c7261)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250927/202509271308.NHfa8qUq-lkp@intel.com/reproduce)
+Thanks,
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202509271308.NHfa8qUq-lkp@intel.com/
+Jonathan
 
-All warnings (new ones prefixed by >>):
+>  drivers/iio/magnetometer/Kconfig   |  12 +
+>  drivers/iio/magnetometer/Makefile  |   1 +
+>  drivers/iio/magnetometer/mmc5633.c | 543 +++++++++++++++++++++++++++++++++++++
+>  3 files changed, 556 insertions(+)
+> 
+> diff --git a/drivers/iio/magnetometer/Kconfig b/drivers/iio/magnetometer/Kconfig
+> index 81b812a29044e2b0b9ff84889c21aa3ebc20be35..cfb74a4a083630678a1db1132a14264de451a31a 100644
+> --- a/drivers/iio/magnetometer/Kconfig
+> +++ b/drivers/iio/magnetometer/Kconfig
 
-   include/uapi/linux/swab.h:19:12: note: expanded from macro '___constant_swab32'
-      19 |         (((__u32)(x) & (__u32)0x000000ffUL) << 24) |            \
-         |                   ^
-   In file included from arch/sparc/vdso/vdso32/vclock_gettime.c:22:
-   In file included from arch/sparc/vdso/vdso32/../vclock_gettime.c:18:
-   In file included from arch/sparc/include/asm/io.h:7:
-   In file included from arch/sparc/include/asm/io_32.h:21:
-   include/asm-generic/io.h:787:61: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     787 |         val = __le32_to_cpu((__le32 __force)__raw_readl(PCI_IOBASE + addr));
-         |                                                         ~~~~~~~~~~ ^
-   include/uapi/linux/byteorder/big_endian.h:35:59: note: expanded from macro '__le32_to_cpu'
-      35 | #define __le32_to_cpu(x) __swab32((__force __u32)(__le32)(x))
-         |                                                           ^
-   include/uapi/linux/swab.h:119:21: note: expanded from macro '__swab32'
-     119 |         ___constant_swab32(x) :                 \
-         |                            ^
-   include/uapi/linux/swab.h:20:12: note: expanded from macro '___constant_swab32'
-      20 |         (((__u32)(x) & (__u32)0x0000ff00UL) <<  8) |            \
-         |                   ^
-   In file included from arch/sparc/vdso/vdso32/vclock_gettime.c:22:
-   In file included from arch/sparc/vdso/vdso32/../vclock_gettime.c:18:
-   In file included from arch/sparc/include/asm/io.h:7:
-   In file included from arch/sparc/include/asm/io_32.h:21:
-   include/asm-generic/io.h:787:61: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     787 |         val = __le32_to_cpu((__le32 __force)__raw_readl(PCI_IOBASE + addr));
-         |                                                         ~~~~~~~~~~ ^
-   include/uapi/linux/byteorder/big_endian.h:35:59: note: expanded from macro '__le32_to_cpu'
-      35 | #define __le32_to_cpu(x) __swab32((__force __u32)(__le32)(x))
-         |                                                           ^
-   include/uapi/linux/swab.h:119:21: note: expanded from macro '__swab32'
-     119 |         ___constant_swab32(x) :                 \
-         |                            ^
-   include/uapi/linux/swab.h:21:12: note: expanded from macro '___constant_swab32'
-      21 |         (((__u32)(x) & (__u32)0x00ff0000UL) >>  8) |            \
-         |                   ^
-   In file included from arch/sparc/vdso/vdso32/vclock_gettime.c:22:
-   In file included from arch/sparc/vdso/vdso32/../vclock_gettime.c:18:
-   In file included from arch/sparc/include/asm/io.h:7:
-   In file included from arch/sparc/include/asm/io_32.h:21:
-   include/asm-generic/io.h:787:61: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     787 |         val = __le32_to_cpu((__le32 __force)__raw_readl(PCI_IOBASE + addr));
-         |                                                         ~~~~~~~~~~ ^
-   include/uapi/linux/byteorder/big_endian.h:35:59: note: expanded from macro '__le32_to_cpu'
-      35 | #define __le32_to_cpu(x) __swab32((__force __u32)(__le32)(x))
-         |                                                           ^
-   include/uapi/linux/swab.h:119:21: note: expanded from macro '__swab32'
-     119 |         ___constant_swab32(x) :                 \
-         |                            ^
-   include/uapi/linux/swab.h:22:12: note: expanded from macro '___constant_swab32'
-      22 |         (((__u32)(x) & (__u32)0xff000000UL) >> 24)))
-         |                   ^
-   In file included from arch/sparc/vdso/vdso32/vclock_gettime.c:22:
-   In file included from arch/sparc/vdso/vdso32/../vclock_gettime.c:18:
-   In file included from arch/sparc/include/asm/io.h:7:
-   In file included from arch/sparc/include/asm/io_32.h:21:
-   include/asm-generic/io.h:787:61: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     787 |         val = __le32_to_cpu((__le32 __force)__raw_readl(PCI_IOBASE + addr));
-         |                                                         ~~~~~~~~~~ ^
-   include/uapi/linux/byteorder/big_endian.h:35:59: note: expanded from macro '__le32_to_cpu'
-      35 | #define __le32_to_cpu(x) __swab32((__force __u32)(__le32)(x))
-         |                                                           ^
-   include/uapi/linux/swab.h:120:12: note: expanded from macro '__swab32'
-     120 |         __fswab32(x))
-         |                   ^
-   In file included from arch/sparc/vdso/vdso32/vclock_gettime.c:22:
-   In file included from arch/sparc/vdso/vdso32/../vclock_gettime.c:18:
-   In file included from arch/sparc/include/asm/io.h:7:
-   In file included from arch/sparc/include/asm/io_32.h:21:
-   include/asm-generic/io.h:803:33: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     803 |         __raw_writeb(value, PCI_IOBASE + addr);
-         |                             ~~~~~~~~~~ ^
-   include/asm-generic/io.h:818:59: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     818 |         __raw_writew((u16 __force)cpu_to_le16(value), PCI_IOBASE + addr);
-         |                                                       ~~~~~~~~~~ ^
-   include/asm-generic/io.h:833:59: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     833 |         __raw_writel((u32 __force)cpu_to_le32(value), PCI_IOBASE + addr);
-         |                                                       ~~~~~~~~~~ ^
-   include/asm-generic/io.h:926:20: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     926 |         readsb(PCI_IOBASE + addr, buffer, count);
-         |                ~~~~~~~~~~ ^
-   include/asm-generic/io.h:939:20: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     939 |         readsw(PCI_IOBASE + addr, buffer, count);
-         |                ~~~~~~~~~~ ^
-   include/asm-generic/io.h:952:20: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     952 |         readsl(PCI_IOBASE + addr, buffer, count);
-         |                ~~~~~~~~~~ ^
-   include/asm-generic/io.h:966:21: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     966 |         writesb(PCI_IOBASE + addr, buffer, count);
-         |                 ~~~~~~~~~~ ^
-   include/asm-generic/io.h:980:21: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     980 |         writesw(PCI_IOBASE + addr, buffer, count);
-         |                 ~~~~~~~~~~ ^
-   include/asm-generic/io.h:994:21: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-     994 |         writesl(PCI_IOBASE + addr, buffer, count);
-         |                 ~~~~~~~~~~ ^
-   include/asm-generic/io.h:1377:55: warning: performing pointer arithmetic on a null pointer has undefined behavior [-Wnull-pointer-arithmetic]
-    1377 |         return (port > MMIO_UPPER_LIMIT) ? NULL : PCI_IOBASE + port;
-         |                                                   ~~~~~~~~~~ ^
-   In file included from arch/sparc/vdso/vdso32/vclock_gettime.c:22:
-   In file included from arch/sparc/vdso/vdso32/../vclock_gettime.c:18:
->> arch/sparc/include/asm/io.h:16:9: warning: 'readw_be' macro redefined [-Wmacro-redefined]
-      16 | #define readw_be(__addr)        __raw_readw(__addr)
-         |         ^
-   include/asm-generic/io.h:304:9: note: previous definition is here
-     304 | #define readw_be readw_be
-         |         ^
-   In file included from arch/sparc/vdso/vdso32/vclock_gettime.c:22:
-   In file included from arch/sparc/vdso/vdso32/../vclock_gettime.c:18:
->> arch/sparc/include/asm/io.h:17:9: warning: 'readl_be' macro redefined [-Wmacro-redefined]
-      17 | #define readl_be(__addr)        __raw_readl(__addr)
-         |         ^
-   include/asm-generic/io.h:319:9: note: previous definition is here
-     319 | #define readl_be readl_be
-         |         ^
-   In file included from arch/sparc/vdso/vdso32/vclock_gettime.c:22:
-   In file included from arch/sparc/vdso/vdso32/../vclock_gettime.c:18:
->> arch/sparc/include/asm/io.h:19:9: warning: 'writel_be' macro redefined [-Wmacro-redefined]
-      19 | #define writel_be(__w, __addr)  __raw_writel(__w, __addr)
-         |         ^
-   include/asm-generic/io.h:363:9: note: previous definition is here
-     363 | #define writel_be writel_be
-         |         ^
-   In file included from arch/sparc/vdso/vdso32/vclock_gettime.c:22:
-   In file included from arch/sparc/vdso/vdso32/../vclock_gettime.c:18:
->> arch/sparc/include/asm/io.h:20:9: warning: 'writew_be' macro redefined [-Wmacro-redefined]
-      20 | #define writew_be(__l, __addr)  __raw_writew(__l, __addr)
-         |         ^
-   include/asm-generic/io.h:351:9: note: previous definition is here
-     351 | #define writew_be writew_be
-         |         ^
-   In file included from arch/sparc/vdso/vdso32/vclock_gettime.c:22:
-   arch/sparc/vdso/vdso32/../vclock_gettime.c:274:1: warning: no previous prototype for function '__vdso_clock_gettime' [-Wmissing-prototypes]
-     274 | __vdso_clock_gettime(clockid_t clock, struct __kernel_old_timespec *ts)
-         | ^
-   arch/sparc/vdso/vdso32/../vclock_gettime.c:273:9: note: declare 'static' if the function is not intended to be used outside of this translation unit
-     273 | notrace int
-         |         ^
-         |         static 
-   arch/sparc/vdso/vdso32/../vclock_gettime.c:302:1: warning: no previous prototype for function '__vdso_clock_gettime_stick' [-Wmissing-prototypes]
-     302 | __vdso_clock_gettime_stick(clockid_t clock, struct __kernel_old_timespec *ts)
-         | ^
-   arch/sparc/vdso/vdso32/../vclock_gettime.c:301:9: note: declare 'static' if the function is not intended to be used outside of this translation unit
-     301 | notrace int
-         |         ^
-         |         static 
-   arch/sparc/vdso/vdso32/../vclock_gettime.c:327:1: warning: no previous prototype for function '__vdso_gettimeofday' [-Wmissing-prototypes]
-     327 | __vdso_gettimeofday(struct __kernel_old_timeval *tv, struct timezone *tz)
-         | ^
-   arch/sparc/vdso/vdso32/../vclock_gettime.c:326:9: note: declare 'static' if the function is not intended to be used outside of this translation unit
-     326 | notrace int
-         |         ^
-         |         static 
-   arch/sparc/vdso/vdso32/../vclock_gettime.c:363:1: warning: no previous prototype for function '__vdso_gettimeofday_stick' [-Wmissing-prototypes]
-     363 | __vdso_gettimeofday_stick(struct __kernel_old_timeval *tv, struct timezone *tz)
-         | ^
-   arch/sparc/vdso/vdso32/../vclock_gettime.c:362:9: note: declare 'static' if the function is not intended to be used outside of this translation unit
-     362 | notrace int
-         |         ^
-         |         static 
-   29 warnings generated.
+> diff --git a/drivers/iio/magnetometer/mmc5633.c b/drivers/iio/magnetometer/mmc5633.c
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..b1a6973ea175634bbc2247ff84488ea5393eba0e
+> --- /dev/null
+> +++ b/drivers/iio/magnetometer/mmc5633.c
+> @@ -0,0 +1,543 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * MMC5633 - MEMSIC 3-axis Magnetic Sensor
+> + *
+> + * Copyright (c) 2015, Intel Corporation.
+> + * Copyright (c) 2025, NXP
+> + *
+> + * IIO driver for MMC5633, base on mmc35240.c
+> + *
+Trivial but this blank line doesn't add anything, so drop it.
+
+> + */
+
+> +static const struct {
+> +	int val;
+> +	int val2;
+> +} mmc5633_samp_freq[] = { {1, 200000},
+> +			  {2, 0},
+> +			  {3, 500000},
+> +			  {6, 600000},
+> +			};
+
+Generally prefer { 1, 20000 } 
+style for IIO and here I'd format this as:
+
+static const struct {
+	int val;
+	int val2;
+} mmc5633_samp_freq[] = {
+	{ 1, 200000 },
+	{ 2, 0 },
+	{ 3, 500000 },
+	{ 6, 600000 },
+};
+
+> +
+> +static IIO_CONST_ATTR_SAMP_FREQ_AVAIL("1.2 2.0 3.5 6.6");
+
+> +
+> +static struct attribute *mmc5633_attributes[] = {
+> +	&iio_const_attr_sampling_frequency_available.dev_attr.attr,
+Please use the read_avail() callback and the associated masks.
+
+That makes it available for in kernel users and generally is preferred
+for new drivers.  One day I'll get rid of the defines you are using here
+but it will take a while yet!
+
+> +	NULL
+> +};
+> +
+> +static const struct attribute_group mmc5633_attribute_group = {
+> +	.attrs = mmc5633_attributes,
+> +};
+
+> +
+> +static int mmc5633_hw_set(struct mmc5633_data *data, bool set)
+> +{
+> +	u8 coil_bit;
+> +
+> +	if (set)
+> +		coil_bit = MMC5633_CTRL0_SET;
+> +	else
+> +		coil_bit = MMC5633_CTRL0_RESET;
+> +
+> +	return regmap_write(data->regmap, MMC5633_REG_CTRL0, coil_bit);
+
+This helper doesn't provide all that much value. Maybe just
+call the regmap_write() inline and let the value written make
+it obvious which is set and reset?
+
+> +}
+> +
+> +static int mmc5633_init(struct mmc5633_data *data)
+> +{
+> +	unsigned int reg_id, ret;
+> +
+> +	ret = regmap_read(data->regmap, MMC5633_REG_ID, &reg_id);
+> +	if (ret < 0)
+> +		return dev_err_probe(data->dev, ret,
+> +				     "Error reading product id\n");
+> +
+> +	/*
+> +	 * make sure we restore sensor characteristics, by doing
+
+Make
+
+> +	 * a SET/RESET sequence, the axis polarity being naturally
+> +	 * aligned after RESET
+
+RESET.
+
+> +	 */
+> +	ret = mmc5633_hw_set(data, true);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	usleep_range(MMC5633_WAIT_SET_RESET, MMC5633_WAIT_SET_RESET + 1);
+> +
+> +	ret = mmc5633_hw_set(data, false);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	/* set default sampling frequency */
+> +	ret = regmap_update_bits(data->regmap, MMC5633_REG_CTRL1,
+> +				 MMC5633_CTRL1_BW_MASK,
+> +				 FIELD_PREP(MMC5633_CTRL1_BW_MASK, 0));
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	return 0;
+
+	return regmap_upate_bits()
+
+Given regmap always returns negative for errors of 0 for success it
+would be better to check if (ret) which then makes this sort of final
+call look more obviously correct.
 
 
-vim +/readw_be +16 arch/sparc/include/asm/io.h
+> +}
+> +
+> +static int mmc5633_take_measurement(struct mmc5633_data *data)
+> +{
+> +	unsigned int reg_status;
+> +	int ret;
+> +
+> +	ret = regmap_write(data->regmap, MMC5633_REG_CTRL0, MMC5633_CTRL0_MEAS_M);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	ret = regmap_read_poll_timeout(data->regmap, MMC5633_REG_STATUS1, reg_status,
+> +				       reg_status & MMC5633_STATUS1_MEAS_M_DONE_BIT,
+> +				       10000, 10000 * 100);
+> +
+Drop the blank line here to keep the error check associated with the call
+> +	if (ret) {
+> +		dev_err(data->dev, "data not ready\n");
+> +		return -EIO;
+Why not return ret
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int mmc5633_read_measurement(struct mmc5633_data *data, void *buf, size_t sz)
+> +{
+> +	__le16 data_word;
+> +	__le16 status;
+Might as well combine on one line.
 
-21dccddf45aae2 Jan Andersson 2011-05-10   9  
-21dccddf45aae2 Jan Andersson 2011-05-10  10  /*
-21dccddf45aae2 Jan Andersson 2011-05-10  11   * Defines used for both SPARC32 and SPARC64
-21dccddf45aae2 Jan Andersson 2011-05-10  12   */
-21dccddf45aae2 Jan Andersson 2011-05-10  13  
-21dccddf45aae2 Jan Andersson 2011-05-10  14  /* Big endian versions of memory read/write routines */
-21dccddf45aae2 Jan Andersson 2011-05-10  15  #define readb_be(__addr)	__raw_readb(__addr)
-21dccddf45aae2 Jan Andersson 2011-05-10 @16  #define readw_be(__addr)	__raw_readw(__addr)
-21dccddf45aae2 Jan Andersson 2011-05-10 @17  #define readl_be(__addr)	__raw_readl(__addr)
-21dccddf45aae2 Jan Andersson 2011-05-10  18  #define writeb_be(__b, __addr)	__raw_writeb(__b, __addr)
-21dccddf45aae2 Jan Andersson 2011-05-10 @19  #define writel_be(__w, __addr)	__raw_writel(__w, __addr)
-21dccddf45aae2 Jan Andersson 2011-05-10 @20  #define writew_be(__l, __addr)	__raw_writew(__l, __addr)
-21dccddf45aae2 Jan Andersson 2011-05-10  21  
+> +	int ret, val;
+> +
+> +	if (data->i3cdev &&
+> +	    (i3c_device_get_supported_xfer_mode(data->i3cdev) & BIT(I3C_HDR_DDR))) {
 
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+I'd factor this lot out as a helper function to improve readability a little.
+
+> +		struct i3c_xfer xfers_wr_cmd[] = {
+> +			{
+> +				.cmd = 0x3b,
+> +				.len = 2,
+> +				.data.out = &data_word,
+> +			}
+> +		};
+> +
+> +		struct i3c_xfer xfers_rd_sta_cmd[] = {
+> +			{
+> +				.cmd = 0x23 | BIT(7), /* RDSTA CMD */
+> +				.len = 2,
+> +				.data.in = &status,
+> +			},
+> +		};
+> +
+> +		struct i3c_xfer xfers_rd_data_cmd[] = {
+> +			{
+> +				.cmd = 0x22 | BIT(7), /* RDLONG CMD */
+> +				.len = sz,
+> +				.data.in = buf,
+> +			},
+> +		};
+> +
+> +		data_word = cpu_to_le16(MMC5633_HDR_CTRL0_MEAS_M << 8);
+
+if you are shifting it by 8 bits and it's an 16 bit value, feels like it's actually not
+and it's a pair of bytes. Perhaps just set the relevant byte in a u8 [2] would be clearer?
+If this is how it's described on the datasheet I guess I don't mind that much.
+
+> +
+> +		ret = i3c_device_do_xfers(data->i3cdev, xfers_wr_cmd, 1, I3C_HDR_DDR);
+> +		if (ret < 0)
+> +			return ret;
+> +
+> +		ret = read_poll_timeout(i3c_device_do_xfers, val,
+> +					val ||
+> +					(le16_to_cpu(status) & MMC5633_STATUS1_MEAS_M_DONE_BIT),
+> +					10000, 10000 * 100, 0,
+> +					data->i3cdev, xfers_rd_sta_cmd, 1, I3C_HDR_DDR);
+> +
+> +		if (ret || val) {
+> +			dev_err(data->dev, "data not ready\n");
+> +			return -EIO;
+Nice to return ret if it is set.  
+
+> +		}
+> +
+> +		return i3c_device_do_xfers(data->i3cdev, xfers_rd_data_cmd, 1, I3C_HDR_DDR);
+> +	}
+> +
+> +	/* Fallback to use SDR/I2C mode */
+> +	ret = mmc5633_take_measurement(data);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	return regmap_bulk_read(data->regmap, MMC5633_REG_XOUT_L, buf, sz);
+> +}
+> +
+> +static int mmc5633_get_raw(struct mmc5633_data *data, int index, unsigned char *buf, int *val)
+> +{
+> +	/*
+> +	 * X[19..12] X[11..4] Y[19..12] Y[11..4] Z[19..12] Z[11..4] X[3..0] Y[3..0] Z[3..0]
+> +	 */
+> +	*val = buf[2 * index];
+> +	*val <<= 8;
+> +
+> +	*val |= buf[2 * index + 1];
+> +	*val <<= 8;
+
+First bit could be a get_unaligned_be16() << 8 or something like that.
+
+> +
+> +	*val |= buf[index + 6];
+> +
+> +	*val >>= 4;
+> +
+> +	return 0;
+> +}
+> +
+> +#define MMC5633_ALL_SIZE (3 * 3 + 1) /* each channel have 3 byte and TEMP */
+> +
+> +static int mmc5633_read_raw(struct iio_dev *indio_dev,
+> +			    struct iio_chan_spec const *chan, int *val,
+> +			    int *val2, long mask)
+> +{
+> +	struct mmc5633_data *data = iio_priv(indio_dev);
+> +	char buf[MMC5633_ALL_SIZE];
+> +	unsigned int reg;
+> +	int ret, i;
+> +
+> +	switch (mask) {
+> +	case IIO_CHAN_INFO_RAW:
+> +		scoped_guard(mutex, &data->mutex) {
+> +			ret = mmc5633_read_measurement(data, buf, MMC5633_ALL_SIZE);
+> +			if (ret < 0)
+> +				return ret;
+> +		}
+> +
+> +		ret = mmc5633_get_raw(data, chan->address, buf, val);
+> +		if (ret < 0)
+> +			return ret;
+> +		return IIO_VAL_INT;
+> +	case IIO_CHAN_INFO_SCALE:
+> +		*val = 0;
+> +		*val2 = 62500;
+> +		return IIO_VAL_INT_PLUS_NANO;
+> +	case IIO_CHAN_INFO_SAMP_FREQ:
+> +		scoped_guard(mutex, &data->mutex) {
+> +			ret = regmap_read(data->regmap, MMC5633_REG_CTRL1, &reg);
+> +			if (ret < 0)
+> +				return ret;
+> +		}
+> +
+> +		i = FIELD_GET(MMC5633_CTRL1_BW_MASK, reg);
+> +		if (i < 0 || i >= ARRAY_SIZE(mmc5633_samp_freq))
+
+How does a FIELD_GET() give a negative?
+
+> +			return -EINVAL;
+> +
+> +		*val = mmc5633_samp_freq[i].val;
+> +		*val2 = mmc5633_samp_freq[i].val2;
+> +		return IIO_VAL_INT_PLUS_MICRO;
+> +	default:
+> +		return -EINVAL;
+> +	}
+> +}
+
+>
+> +static const struct of_device_id mmc5633_of_match[] = {
+> +	{ .compatible = "memsic,mmc5633", },
+> +	{ }
+> +};
+> +MODULE_DEVICE_TABLE(of, mmc5633_of_match);
+> +
+> +static const struct i2c_device_id mmc5633_i2c_id[] = {
+> +	{ "mmc5633" },
+> +	{}
+be consistent. I'd prefer
+	{ }
+
+> +};
+> +MODULE_DEVICE_TABLE(i2c, mmc5633_i2c_id);
 
 -- 
 linux-i3c mailing list
