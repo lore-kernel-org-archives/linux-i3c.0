@@ -4,174 +4,124 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C519ACCA476
-	for <linux-i3c@archiver.kernel.org>; Tue, 30 Sep 2025 19:35:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DD58ECAC5BB
+	for <linux-i3c@archiver.kernel.org>; Wed,  1 Oct 2025 08:19:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Cc:To:In-Reply-To:
-	References:Message-Id:Subject:Date:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=f3nfRfmOcNSksed2eGIlP0YkBjTLYWYp0KLswL5gr1w=; b=e5r6iZnW9jAWxdrUMdmN9uMZTD
-	gpXqtNmXxV8nAqqfWsQjyr2Y3xkJN03hsAhay1z3zDHytpEIYQ+8hBS4YqziaejBjCETuwYCAwY55
-	RxGteidTQ0oWCR6ARHs3I+H88Pr0kBjV2ObMJr8k5OIzcwH8F45dR4KIfHKqUPa0VYbIAX8Ves0EP
-	Ny5oKiyZpnxmBMR6OuCYGH/lkrKaDSGy/wPiM7ubwpV4bPgjRz4BBRi9xNuARkxgu+Eyb2AJkJIhZ
-	4C+gfecPI6mL+ry7aRpRmF0JHFlzhbI7vO0oQFK6R8PSur10Ls00yKJs7M8tfRROF7T1+qhBuCJpG
-	VZE9xGEQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rlDkIpdWTwbyMvlGlu/BihRWOZFKhn4Gnkqxl/6JDxU=; b=deSVoLpgGNNuXt
+	RAsuukXzfrHzngmwcU6+kG/8GBoTh7yNrNtbbr1WDnTni63Xb+ajy+qlBgGnA9MxK+p8qL8TLjfzs
+	9hLBldVqyMW43hnd41rKDchw6M/KmvCWcjl/MaTEsEdg7dJuZzGYwWm4ZJfCtRXW499L7e2Wj60u5
+	JAJGQyxGtO4tNMoyOyPBnW3QdBOCF352oYEnd2oV5E1X81vVpvzSSQLuAEeNcbvULpHQ+UyVOsLQu
+	+r1bWHq7+haY6F/lCbDcIatHZcOOf1b4b0DAvkrhbCA+t0+rTT9Vm6U3Ao87lqto/7gWRENQwHnR/
+	DJZwIJqQ9r8n0qA+9BuA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v3g7w-000000065Jy-2EtK;
-	Tue, 30 Sep 2025 19:35:08 +0000
-Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
+	id 1v3s3v-00000006zyB-23H3;
+	Wed, 01 Oct 2025 08:19:47 +0000
+Received: from mail-sh0chn02on2121.outbound.protection.partner.outlook.cn ([139.219.146.121] helo=CHN02-SH0-obe.outbound.protection.partner.outlook.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v3g7u-000000065Bx-2UlM
+	id 1v3s3r-00000006zxY-3Hp2
 	for linux-i3c@lists.infradead.org;
-	Tue, 30 Sep 2025 19:35:07 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=npmVgNooacXV3Wsm83O9ApqJmvP+HSXTLFCYcyMcQGIxgimI/GugZy/N9JhN40lK7/ZOKZtYT9zk/TCHf8YIVPqQzcc6tcb64V6new/ad2HmgnlFqBHiZB/nG9qKr1ZQTz+fqx0V1Rcacb7GGvX7NpNvoRK7XUGIQ0UlfW4OK9M/lk51gktfP/dD7kwt8V5LFzajI9AB3UtqkVaF6v5tPIJSI1NL0lVCjrFxg6OUFHBMmGruAaycs9uU3lsjwSOWipBsf/AtKE01+Ba3CZxg3TKIBOo2OqSPjSWOtBYzbU7Zs0aaRPLl7tdKe5Hrk4saSHy/qP9vVNxmk0EEs1lw5A==
+	Wed, 01 Oct 2025 08:19:46 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=fqAQeHMnpTRpvmYRvXmyt19mf6SCZaXYc6IpKbQI9aCP0GtSgRBW2vmFZxrf9gf2t6yEHFk7j3ZCSXoizzYKaNyRNu1SX/moEEEZP0Ob+lI2N/x2eG3olVg4qz6ygUZMtfBfoEXTVbRUjPSxFpErtFT1UR+ziTrAr8AXRU67nVzBTAOMa73YLwObfSOwES6t6x9DL+q7dJ4Uj9iqwbRBwTi6smFRPseMs4UH97Uhi+C74SmlIf88Ag3Odt8NmxXrtOoTWhIM994WxZEO9mlVCqieQx5ua9tJskW8kxReXmcIYqDaYAWjLFHzPYEuMXHJAQFuv/9jM8BD8T6+CcaY9A==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
+ s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=gpA9MtyptaQHebzrERfthTTLFp5kiKRMtCIVCtOYGqU=;
- b=jrPCUv2kvCm9dUNTrxVmfr5hJfiBspySaCR0ypuR9JgNvPktr5RwnukkrwBx1YUEXjBIbMTqUMxeEJuYlw5t7x2D+0ocuULywVyHladOlNgirT4u1G9xzqMokt7vDHa+KkZhIhhowvmBjKkXID3FEynTaMv7S+yVKhxBtHEJ984w/aZhteTXNbmgLo+MhgtnfkGiSiCW4DT+2CEzxtgD9cpG0Tgx4C13VcO0KqqSQMQBjzp3rtsOFETFJPmZQtOGBeJPmKtdL/lWKG1gimlt1Tp2nbISnhflUp1vTwSpoFQdDEMwsarp7zGoE2g9/78wccASTsvu0RTtShjt/k5DjA==
+ bh=wKzpqoQQPfThr4PkCY2WiRehng2lKWEcJLMmejN23qg=;
+ b=N83kKDnKNQGQ71zLSmmypXDEg53rK/tAtAfVpwnxVi9ovJU7m2BuIN4sJCqi31JLYWRlu+1AhRfw8FrNRSo9pUhYbDbkLct6HYz/B9hkgrC7LlVxJBQfyZuf2T/CqU6ai6a1QyneLVTE3L5PVzXsl6wtBeSxToS3MjXOtqUNIBl0v0SOxzhT2F5/GvC+NO61E4tcVRGsz0QkDqOv+uathpG7E/J7dZg1yMdcXRP37So8diu9fZguimOP3Bvge8hJ3PQxv2OqmhEBGan2WCZB48omcggJKM6KrEOiNEBtEKBFp59VU1Vosx90ZgzicJMbj12LYnZARRxn2eKM5ebpGQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=gpA9MtyptaQHebzrERfthTTLFp5kiKRMtCIVCtOYGqU=;
- b=KWOlNABi05NvpkzY/extYnqzyHpNeVsxGZF5njpjges5TEQhVF76o/oWWAQdqkqegY6XodlXHZhjBn3INj8V7DvyfUW4tXIuVjgUVZ88sHKmMAO/nI7BBmR3ufcVpsijYbHAaktz9jD5p3ksdhuhPVIoMhQdeX2OJe38MFi4G/zryZ0N0vYX3Xbo6a5kdbqa460gMqkziJPhjfZSDkWLG6eFH+aMS3HDKdapbVvwCR7jlg5odj4OCSCjN5sqtQEfTNFbKrBRwQyxmrUD9cmTElR3dO6yEKWCMKpb+3NSUpGnK+tQ2SJbZwzLo9Jnt6+j1j/ZPg+aIiF3TtB1bjDKYA==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXSPRMB0053.eurprd04.prod.outlook.com (2603:10a6:102:23f::21)
- by VI0PR04MB10926.eurprd04.prod.outlook.com (2603:10a6:800:259::6) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9160.17; Tue, 30 Sep
- 2025 19:35:04 +0000
-Received: from PAXSPRMB0053.eurprd04.prod.outlook.com
- ([fe80::504f:2a06:4579:5f15]) by PAXSPRMB0053.eurprd04.prod.outlook.com
- ([fe80::504f:2a06:4579:5f15%6]) with mapi id 15.20.9160.015; Tue, 30 Sep 2025
- 19:35:04 +0000
-From: Frank Li <Frank.Li@nxp.com>
-Date: Tue, 30 Sep 2025 15:34:24 -0400
-Subject: [PATCH v3 5/5] iio: magnetometer: Add mmc5633 sensor
-Message-Id: <20250930-i3c_ddr-v3-5-b627dc2ef172@nxp.com>
+ smtp.mailfrom=starfivetech.com; dmarc=pass action=none
+ header.from=starfivetech.com; dkim=pass header.d=starfivetech.com; arc=none
+Received: from SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c311:20::14) by SH0PR01MB0825.CHNPR01.prod.partner.outlook.cn
+ (2406:e500:c311:23::14) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9160.11; Wed, 1 Oct
+ 2025 08:18:57 +0000
+Received: from SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
+ ([fe80::81c4:2724:6a48:a18]) by SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
+ ([fe80::81c4:2724:6a48:a18%7]) with mapi id 15.20.9031.026; Wed, 1 Oct 2025
+ 08:18:57 +0000
+From: Joshua Yeong <joshua.yeong@starfivetech.com>
+To: Frank Li <Frank.Li@nxp.com>, Alexandre Belloni
+	<alexandre.belloni@bootlin.com>, Miquel Raynal <miquel.raynal@bootlin.com>,
+	Jonathan Cameron <jic23@kernel.org>, David Lechner <dlechner@baylibre.com>,
+	=?iso-8859-1?Q?Nuno_S=E1?= <nuno.sa@analog.com>, Andy Shevchenko
+	<andy@kernel.org>
+CC: "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+	"imx@lists.linux.dev" <imx@lists.linux.dev>, "linux-iio@vger.kernel.org"
+	<linux-iio@vger.kernel.org>
+Subject: RE: [PATCH v3 1/5] i3c: Add HDR API support
+Thread-Topic: [PATCH v3 1/5] i3c: Add HDR API support
+Thread-Index: AQHcMkFad+bcsjOpI0mL4TUGrQOFO7Ss8wLA
+Date: Wed, 1 Oct 2025 08:18:57 +0000
+Message-ID: <SH0PR01MB084193AC3C4B8D961F228818F9E62@SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn>
 References: <20250930-i3c_ddr-v3-0-b627dc2ef172@nxp.com>
-In-Reply-To: <20250930-i3c_ddr-v3-0-b627dc2ef172@nxp.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
- Miquel Raynal <miquel.raynal@bootlin.com>, 
- Jonathan Cameron <jic23@kernel.org>, David Lechner <dlechner@baylibre.com>, 
- =?utf-8?q?Nuno_S=C3=A1?= <nuno.sa@analog.com>, 
- Andy Shevchenko <andy@kernel.org>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
- imx@lists.linux.dev, linux-iio@vger.kernel.org, Frank Li <Frank.Li@nxp.com>, 
- Carlos Song <carlos.song@nxp.com>
-X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1759260882; l=16252;
- i=Frank.Li@nxp.com; s=20240130; h=from:subject:message-id;
- bh=Z1yPclN8G3i4bVnNcm3/plSbgbwcdNiwoY/Ff/0uItQ=;
- b=Sj0Uy/FSfRxWckXoiLQjBie5lNMtKe25E03gyx+FGyV9DvQ169n47RmDICvh1fSm61scFtIel
- 4fDwtWZMobEC6MRMiKRLbbATYcAwiTfHIa+92hnNfp17Bgi8WF1k/9l
-X-Developer-Key: i=Frank.Li@nxp.com; a=ed25519;
- pk=I0L1sDUfPxpAkRvPKy7MdauTuSENRq+DnA+G4qcS94Q=
-X-ClientProxiedBy: BY1P220CA0023.NAMP220.PROD.OUTLOOK.COM
- (2603:10b6:a03:5c3::11) To PAXSPRMB0053.eurprd04.prod.outlook.com
- (2603:10a6:102:23f::21)
+ <20250930-i3c_ddr-v3-1-b627dc2ef172@nxp.com>
+In-Reply-To: <20250930-i3c_ddr-v3-1-b627dc2ef172@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=starfivetech.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SH0PR01MB0841:EE_|SH0PR01MB0825:EE_
+x-ms-office365-filtering-correlation-id: 61f30d47-99ed-47a2-f03b-08de00c32b26
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;ARA:13230040|7416014|1800799024|366016|41320700013|38070700021;
+x-microsoft-antispam-message-info: ZI0qzWkbzDvQxs1/UMNgnCY6be5LZYAh+wP197WsvXJSZsI+CvvhwH4rbV1eTPg54V9SaY9H/bTL/Krax3wBhZaChklKMsdcP4i8Dczm7ZATOeAnS3lB5GU/XiZiEP7hclXjFUAxZJTWXPHwRAydS3kbdqqI1VrVzI8GE/hcBfuW/paTU1PA4iZ3DdlZSnNeLJ++fQCShncNd55Sdrgtq2URodksIsRC38UXQGww3oBDuwqPQYzS90TZk4IRVomplQdzsPE1WiIoq1mXXL9Vjf+7vHkbnqbiT48VOrun88SXUJSdPwz1VAG5ghYV7H46OwTg/wyLY5H1V/eN9cgZ0aavaFLKQurcPKIdYB41tnOjkhPlj+5Wlxwz82darenz4sdWYrEhYORyzPPp6pEiyMB+kwrfHbmcxECO42JFThuRAbDjU5dlsspU09j55o6EheMF7JKzB8nI3T5jJpUxjnWu6k1lo/T2CfWOkpCwexLrLm6P4PgffNNzAuX60BxrLcVn+aRnaQJxDI9pec2a3hwD20lqzcLREoZnE/q4Km0ZAuIs7mkcf/rVm5MIR+2o8PFtwXub8F1+GxOVRJNtm1jECU6956qY7S/Tc/ayTNM=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn;PTR:;CAT:NONE;SFS:(13230040)(7416014)(1800799024)(366016)(41320700013)(38070700021);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?iso-8859-1?Q?4rY+wOMbDY1eXfkr/3W2u9bybf0ExytTK1l4Hw1uho/mL01zXYJ2SU2KB0?=
+ =?iso-8859-1?Q?PX8PjhyZQ+kdcJ9mJk7HxVIzbAPAqQVHRWc/Zy+pGZbIfu0tgNkdQzafKs?=
+ =?iso-8859-1?Q?9rJ9O9skAFl+HZiqb/SYF9ekVbGb0buDdC+V9EwofU/ud9xMpd3o6BiTTQ?=
+ =?iso-8859-1?Q?FNnhH+gg0tx1ncWhY41T+GiElDyVS4evt/GDXpEFGIq28QABuqq0fZv/TE?=
+ =?iso-8859-1?Q?KKoBBIz3jGLMcZc5EF9F632WSR1zGUxqAlC2NW+wDgVdNChodVhs6ywO8v?=
+ =?iso-8859-1?Q?LYtrdiVTx1HtNEAWfwR2MXsF6T30qWrIsNWhLO1E0Si+UJbaKb0wf29EJA?=
+ =?iso-8859-1?Q?zrCbnLIkmUQyX72IoDaS3qGFw3nYpaFl3tQqp85ogaGMlcIVqbnozOoYo0?=
+ =?iso-8859-1?Q?OCCKsWtaCGzVQdduINQRVIRFWN+Cvq5TEM/a9B7KhSq1Pyk0rihUDJ6F+5?=
+ =?iso-8859-1?Q?+/CvmKZmSbcQM32cQ3B9eLqVBYUwqdLjEawMZG6LXWOoFGLSWj/jZobR21?=
+ =?iso-8859-1?Q?KMI1u0JMZ49QR5up/OSYy8NZqBryPdDo6w7p38Ji2VUjWyj6+sqeTkk5Yz?=
+ =?iso-8859-1?Q?MM4UPKYxfOtT/u3t79rfMFjpU8WO/p/A/B24fXEbrD3odOBjq27OI3a6lM?=
+ =?iso-8859-1?Q?BQzT5u5oiTEVBvg9eOHZw5BP0wh9jT7IEpPUbfI2jp4XwbiXAFaBhaszrV?=
+ =?iso-8859-1?Q?aNF0KEvBM/r6//5mLBrhKglzIgB6PfVu2z16nHqV296t/deJFRwrSi+ILy?=
+ =?iso-8859-1?Q?+EOvlkMcPaTHQrCntO6OfRThHmuP58ZcsbzxGbRNbQU8aX9Aprtt/ededD?=
+ =?iso-8859-1?Q?9eyG0l6PvHnUA8HQFctVVbUkna/eX0lTdubKuBRkLnarsvDTE11kcCj5vc?=
+ =?iso-8859-1?Q?gTAfZ84XxitNvNlAfbaa6v14ba1cqwYAZZ+tbJmXCrSJaWtOZH7Bu+pFCK?=
+ =?iso-8859-1?Q?7AF4X8xgFwlehfAdX33RT694MRh77TU5FqI1PNqfl9TZp9z9BmIZSiHc6b?=
+ =?iso-8859-1?Q?JHpv94EsLNCFvocrMRv6zXhWYWjhZ6KLYRp85MWAePrBFOh18ZULhFb5Kv?=
+ =?iso-8859-1?Q?e6Jw0hPLQfzuDyBNysl0gih24XRV4gjvrWogDAQLLg4+ZX9BUPBlI37IEE?=
+ =?iso-8859-1?Q?bfHXWUfIvDJebkl8hpGZAuTwI1TrGKltv3mbVMWJsPCMligyIg0nZiLg7x?=
+ =?iso-8859-1?Q?mojEvpyH1kIh5SVIiIWydG2FmqIBlP5wfqBECdKNqEZIT0nRIntStpXsf5?=
+ =?iso-8859-1?Q?OhqgqAmOFkT0W//cVMYTiC32nh5MxVIhxoXomihcbsHzS4BCgLNXQm4Ife?=
+ =?iso-8859-1?Q?Yttaazvc814/2srTGpLfFzDWJCCqX/KZtHFFbTynh+ZIxkxpkHfSHFS4om?=
+ =?iso-8859-1?Q?EMYw4QzqpqP6C7KvnJPrcIDAbXk3dURT99mah8kJzQ2zc7xtdtcZ8rLSCl?=
+ =?iso-8859-1?Q?sXpyZBT6yEmEa6fgbsURnO7uGY2jajx3o+/8fwfxmM38HN+SOnhp4vKYP8?=
+ =?iso-8859-1?Q?cNI6p4cae9ixI04jGFP9bgixHaaZbkyxtR+Px4mYaRERddPMZo4R9048Ar?=
+ =?iso-8859-1?Q?QWsgrB65bed7XwAkRL9NzHL8f+btn8e28TQi8HRWmxQXf/lTpKUsJPEt9Y?=
+ =?iso-8859-1?Q?9aqMXi13+oXdr/uzpeUSDhUeszMg9qEXAGB2Tl/1nDCsaAIXOItAUXtg?=
+ =?iso-8859-1?Q?=3D=3D?=
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXSPRMB0053:EE_|VI0PR04MB10926:EE_
-X-MS-Office365-Filtering-Correlation-Id: 32c1f40a-4640-4110-4939-08de0058737c
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|376014|52116014|19092799006|1800799024|366016|38350700014;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?SHNkT0ZkeFphRVZpM3Y2TEIxd2tSTllNdzNyaytMcENjS1dzMDlCeWtRM2Ir?=
- =?utf-8?B?RWphUVRYS1FQaEdUZEMzZWo4aHg3VVVVbGxJUitkS3dyRmVCa05WUkFzYkg2?=
- =?utf-8?B?SkRHNGwzbE82bUtvVGdITkt3R3ZJaHpQdzg3WElFSTR2Nmwxc1JyVjFZOFFq?=
- =?utf-8?B?c09xOUV2SStNYkZmdkt4M0pTTWY1RWdTZzd4bG9WNWpYMFpXWDFQSCtxQXFK?=
- =?utf-8?B?RUlSWkpRenJnVVJsY3cvT29zK1dEZGVVK09JL3NIWVBqT1VNY3ZidVlDUXYw?=
- =?utf-8?B?NEd3Y1JjVzV2Y09FSXFjTXRzZUp0SEFEM3FIWUhlcy8vMVFtV2Q3MkNPbzZ4?=
- =?utf-8?B?UFVOTy8xZENjQnpyZ1JVdGR3bkcyQUFtRHN1c0VmSDNyUGVpeUY5N0VFaHda?=
- =?utf-8?B?M28yVVdpVlIxYnBWd0xGTXJwWUwxOFZNQ3FPWGpXR1lQZGRjTUIwcW4vMXNE?=
- =?utf-8?B?Q2cxUVpBZjZ0MXpHOFR0TzhVUm9yOFdsMDNrK0F4T0NsUytaRnFaM1JKc3lN?=
- =?utf-8?B?SmRZZks5aUU4STRVc1RhYkpoeUNHL2pKTWRqcGJiRFNBKy9xMnJlc2crSVZp?=
- =?utf-8?B?b05EV2pWKzdOR3U1RnJRc05HVENyUm44dUo2VUtsK3RjclJROHNPMUVDSWla?=
- =?utf-8?B?RThTbVYrU0doVVUrUFVyMC90S2ZvTVJuZjc4LzZyZEVQdjh3N0sxblgzdUNL?=
- =?utf-8?B?RmwwTGt0eitZcUIvRVl6cXZIQk5hUDJQZ2tCM2VKMnBkU0RpZ25lbmlGR3Nw?=
- =?utf-8?B?SkdXZ2g5ZjBVbXJaMUh1NGxEOUpaS0hxV1kzQkJJOUtSekZ0YUJHVGRaNFEy?=
- =?utf-8?B?alo1cEFvVHZhZDJtZEk3ZGJQbHRQZlIvdjJrcTJEOURKR1hmNDBrdkJlV05N?=
- =?utf-8?B?Vmp5SGZmWGlvN3NBV2R4YlVablBVdmE2dnRSbzhBZGN1NjZMTjVCaUxDR3Fp?=
- =?utf-8?B?ZmJ1bmlxSGFkUmZ3dWJXZkRHS0VEUUFybERMd1JNbStFSXhpenczcDlLNEZD?=
- =?utf-8?B?dDc0UXo0S1Fqejl1YzZyelBCTHNkckVkRmcxTjNPdTI4Ly9ETEhUNzg3OTRL?=
- =?utf-8?B?blc5OHFhbitIWVRQZDVHM211S2Q2c2JxcWgzcU1Dd1hoQWxIaEFoT3Y1NFFW?=
- =?utf-8?B?RUMyQllCWkVGeVRicjFveElrems5UVgvbk1TdUptZ3FTRldlREZZSExkUjZz?=
- =?utf-8?B?eGdPQWlnalRCTWEzRWgzeFlnMkd4ZS9zU21vMjJ6T05YNUx4aUI5VzlPUE9n?=
- =?utf-8?B?N2ExcHAzZlhabzA2NGZwdGtoUTMyVUd1aHVCdkVxSjVsU2R6U2Q2cU5oKytq?=
- =?utf-8?B?Rm0vT0VUTFZtMmY0MnZCZnRpMm44amJzV2xDdnovQ2dTM3QxT3VxNk1ueVZL?=
- =?utf-8?B?QiszcGYrSU9CRmRUMlh2eGVLeTFIT1F0enZCWGFOb0tWQUQxTHJQSEpDN2lI?=
- =?utf-8?B?MERPM3I5Tmd2dUJLc0RKQnl5N1lkWHpnZ1E5WWNvN2VKbXZ2cDQ2YjV0OEFP?=
- =?utf-8?B?ZlZUcjF2K0FrTU5pQVkwTG95Ukh0TjlXUmE0KzVaR05pK05FZ0FiSWRIVHlq?=
- =?utf-8?B?dzFmQmJsU0FRcDBIZ3Vaa1JaMmxlMEJUZXVjenZleDRlZGFzZjEvTEFQU0JJ?=
- =?utf-8?B?bHlPV0NXbHdJOGJTRHplZVV4b05pbTBvWjNjSW5Tejl4eVRPdWZJa2hrRm9H?=
- =?utf-8?B?TEF6TXlUclZ4K2x6UzJrQi9ydmRWeC9MUExNZmVQWll6REFKWEhhV3AvSTk0?=
- =?utf-8?B?NS91bU1VYitsQUYySHNSTEV1VHlwekt5dmlDY0hRL0ppT2J0ZUtQNDNoV2dQ?=
- =?utf-8?B?eDBDNUhCQXBYK05Tc3VNdmRqeEQzVGNQNnNQUTBlQ0dZY1ArcEhGaGRkczRI?=
- =?utf-8?B?NHRUbzM3TDRjSmhCamlJcnp5TXF1bEdKT3RiN0NwNXUrM1BuUFM0UTBVczBS?=
- =?utf-8?B?dkZmaXVvekMwZWlBRVlhSkRYRW11MkZjWjFsSS91VnhiU3NETWJMM2dVRGNB?=
- =?utf-8?B?ZVF2TWpOc2VtT3JsaXV3VUVid3lKUG03cEhrUjlZVWYzdmlXelNvQ1ErNmsv?=
- =?utf-8?Q?hz8A8h?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXSPRMB0053.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(52116014)(19092799006)(1800799024)(366016)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?Zy9SNGpjYU1zQjl5OTlaalg0UmFNTmU2djRvM0pIYmUvM3dGenRrd0JoaFRw?=
- =?utf-8?B?ZXYzb2pCOEJ4dGw1K3ZLSkx4bWlKbU9Gb3BtN09QVkZLTHBDME5SN3RVeFRv?=
- =?utf-8?B?Smpaek9FaG80VS95MDNRTlAvaG4vVVByZ2dlUzRCNmgwRnY4anQrSldpWUgy?=
- =?utf-8?B?KzZGWHhQaDRST0VCVStDdnRVa29kYUt1OFoycC9aRDF5RFlOZ2dpN2ZlNmdU?=
- =?utf-8?B?dTlRdHVNU1FoQnh5LzlianpBeTN6eWtlOXZmZm1hRG9FUEhxTCt6ZDRNU1JT?=
- =?utf-8?B?Z0FCV0lVSGgyOVNDbXkyRzRxVDd5bnZRQkMvbnFGbFJ1d2dWb25WQ0Z6M1hQ?=
- =?utf-8?B?WjFsSzdIckFuTzRFbTZvamdIc0wrRUFPa3lZaFNmOFRaZXZsRytoWlRVbzVa?=
- =?utf-8?B?Y3QyT3NlTXZYL3NKajJvMmFUV3luL0JLWmdYRVFlU0o5R0FKcjlOYzVmbklN?=
- =?utf-8?B?RTcyZWFLMWFXZDBobWpyVkk2Wk5qV2UvVzVaelZLUEhncExla0lMMFZDQVNt?=
- =?utf-8?B?VEYwZVhUeS93dytHNTlsR1dXeG1LYjV1VGMwQTM4YlZ3VDBCVTRLZlRaaXhS?=
- =?utf-8?B?V2tHUU4rOHdkdGs5ME43elE3NjdBd3hDVHZLSzY2WHVvaFo2RVBVdnhZU0VT?=
- =?utf-8?B?SnN6YjVjbE1uVWloVDl0L3owWEsya2t0K1FhWDZrbGY1SlBSNnlCd09pd2xJ?=
- =?utf-8?B?bThxRldNZ1YwQUd2QWtNK1ZlRXhldEdwY2drc3g0dDRycUd1b1hpS2xqV1pa?=
- =?utf-8?B?TDJ4RTdGdktOaE9TbmNIQ2hPcUQ4WVhBaGFOTXY2b3IrbGYrRmdMbUYxT090?=
- =?utf-8?B?cEt1a0RnOWtVSjlIUVR1Y1Fta2VBVUhpOWIzTzBYQkZUNTNEbUoxS3l4bW9I?=
- =?utf-8?B?czRXdFFtcG0vdlVUNlU4WkhwYS8yazhzeEY1YmpyNXE4ZGJUS2tKbHpVcjBr?=
- =?utf-8?B?Nm1JNFp4ZTBHM3hPazhpMDVKRGJ0OTBnRmRlRE40QmN3eVBpU0xzbVRpaXdz?=
- =?utf-8?B?cUREcGg5ZnNNaGo1cnVDNGdLS3ppUmt1WEtkRGY3bjV4SHVPNnY1Y3NHU0ZK?=
- =?utf-8?B?OW9VNU5qN3NDMzl0MmF2T2hvdGE4dk83VC9GcmFxb3NlbTUxQWNFOFFFeHdj?=
- =?utf-8?B?MnhSd1JjL2h4eXN3Y012TVNCOEZaTUZ5YmtERzNNeEdMOUQzL1F6ODlqYlFX?=
- =?utf-8?B?cWFCM3BTTzZBYTRwYytHMDAyTm9NRlVjblJtMFkwRUcrbHhmWHd2M0VzZ0Q1?=
- =?utf-8?B?SEZiS2VzUEpvRTlhbGN2QW5UaElMZnBXQUFTY3J4QnRoMVhZaGZYUEJkcmQw?=
- =?utf-8?B?MGNmdG8vR2hrS3QyVHlxbmpCcjNrZTdkbHBsYkRvbnVaMDIwRFkxc2IrcnpP?=
- =?utf-8?B?RHliU0h4cnQ5RllxTXFtY2NLb0VDZ1hwSnBYZzZORTU2L1Q3eGR2YU9ZOU12?=
- =?utf-8?B?b0FvWFpiQmJGa2J5R3RkYVZjL1A2N3JmTWhiNVVlOFdSR0xzbmNLeXFmMGx4?=
- =?utf-8?B?QzNDcUQrQkdpcjI1bnJxZC9BTkszeVVkQnJvYlQ4dTA5ZktIdGdsRS9GMXpS?=
- =?utf-8?B?c3ZMVWhYczM2QTVEM01mbk90NDZBekJxQXllUlowR05NQUNxTFEwLzFiT0U5?=
- =?utf-8?B?cHNwYlJvUHdFRlIvR2lVS0ZjNVBDK05KS09MMmwvV2taQkZ0SldoM3YvMWln?=
- =?utf-8?B?cDV1WlRMS0lSdHZSaEdkbGlNVHpWOGE1OFVCU0hhdGVNbUF6dTNsUlc3RzVH?=
- =?utf-8?B?WmQ4bWtrS1lxcC9ucTFKVUdqTVNvZ2VlOXpwaGZXb0dRemtJc2xzZkFwbjlT?=
- =?utf-8?B?aDBTRlcwOTc1aTFkQktjT1lneTl2RWhraGJMZ1pBUzRscXpMOWhXS3FvanNH?=
- =?utf-8?B?THc2Q0ljQmpmL1NIcnF1NVRpV1JLSHlMYVpRcEluYkh6OVZtaktCVlNFd2pa?=
- =?utf-8?B?cGdVTVFWblU2S01pWkg3QkVIQWtQSDlGNU1SaVp2K21ENjBKWHN3ekd0QnFC?=
- =?utf-8?B?Znc1eE9BSUR6a3BCTnI0elZUVnJpaG94aklXSXNoV2dOR0JneU41NlJQREdN?=
- =?utf-8?B?Vk1SSkc0bmI0LzFsVWhlYkMrRFFJNzFtOGppZWdmY2h5blFVOTY5Zlo1SWFP?=
- =?utf-8?Q?AoK8=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 32c1f40a-4640-4110-4939-08de0058737c
-X-MS-Exchange-CrossTenant-AuthSource: PAXSPRMB0053.eurprd04.prod.outlook.com
+X-OriginatorOrg: starfivetech.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Sep 2025 19:35:04.1126
+X-MS-Exchange-CrossTenant-AuthSource: SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
+X-MS-Exchange-CrossTenant-Network-Message-Id: 61f30d47-99ed-47a2-f03b-08de00c32b26
+X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Oct 2025 08:18:57.5471
  (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: gbEoO/trsDM0B3HwCOqsEqSEefpBi1RjCCyF01dRCXuadn0zoXMC6GV6F42QmowLQ2IVHQ9+NhYLv8mcM6XEIQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI0PR04MB10926
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 06fe3fa3-1221-43d3-861b-5a4ee687a85c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: eMBTeV5qmdMcfjcy+JHjpfM+UmxJEM8sf+X6WzX7a+dCzAn08aY6qb1asNJ5tAjk3rsBloFz08JHHgqHHJesH/cKdHCqEoowYV+faqbDfsw=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SH0PR01MB0825
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250930_123506_658876_96BB578D 
-X-CRM114-Status: GOOD (  18.05  )
+X-CRM114-CacheID: sfid-20251001_011943_978855_AFB213DD 
+X-CRM114-Status: GOOD (  29.07  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -188,611 +138,290 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add mmc5633 sensor basic support.
-- Support read 20 bits X/Y/Z magnetic.
-- Support I3C HDR mode to send start measurememt command.
-- Support I3C HDR mode to read all sensors data by one command.
+On Wednesday, October 1, 2025 3:34 AM, Frank Li <Frank.Li@nxp.com> wrote:
+> Rename struct i3c_priv_xfer to struct i3c_xfer, since private xfer in the I3C spec refers only to SDR transfers. Ref: i3c spec ver1.2, section 3, Technical Overview.
+>
+> i3c_xfer will be used for both SDR and HDR.
+>
+> Add i3c_device_do_xfers() with an HDR mode argument, while keeping
+> i3c_device_do_priv_xfers() as a wrapper that calls i3c_device_do_xfers() with I3C_SDR for backward compatibility.
+>
+> Introduce a 'cmd' field in struct i3c_xfer as an anonymous union with 'rnw', since HDR mode uses read/write commands instead of the SDR address bit.
+>
+> Add .i3c_xfers() callback for master controllers. If not implemented, fall back to SDR with .priv_xfers(). The .priv_xfers() API can be removed once all controllers switch to .i3c_xfers().
+>
+> Add 'mode_mask' bitmask to advertise controller capability.
+>
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> ---
+> Why not add hdr mode in struct i3c_priv_xfer because mode can't be mixed in one i3c transfer. for example, can't send a HDR follow one SDR between START and STOP.
+>
+> i3c_priv_xfer should be treat as whole i3c transactions. If user want send HDR follow SDR, should be call i3c_device_do_priv_xfers_mode() twice, instead put into a big i3c_priv_xfer[n].
+>
+> change in v3
+> - Add Depreciated comment for priv_xfers.
+>
+> change in v2
+> - don't use 'priv_' since it is refer to sdr mode transfer in spec.
+> - add 'mode_mask' indicate controller's capibility.
+> - add helper function to check master's supported transfer mode.
+> ---
+>  drivers/i3c/device.c       | 27 ++++++++++++++++++++-------
+>  drivers/i3c/internals.h    |  6 +++---
+>  drivers/i3c/master.c       | 22 ++++++++++++++++++----
+>  include/linux/i3c/device.h | 28 ++++++++++++++++++++++------  include/linux/i3c/master.h |  6 ++++++
+>  5 files changed, 69 insertions(+), 20 deletions(-)
+>
+> diff --git a/drivers/i3c/device.c b/drivers/i3c/device.c index 2396545763ff853097d9f0173787e087f7a6e688..00706b47758bc164178a5578a018b36c5c433f5f 100644
+> --- a/drivers/i3c/device.c
+> +++ b/drivers/i3c/device.c
+> @@ -15,12 +15,12 @@
+>  #include "internals.h"
+>
+>  /**
+> - * i3c_device_do_priv_xfers() - do I3C SDR private transfers directed to a
+> - *				specific device
+> + * i3c_device_do_xfers() - do I3C transfers directed to a specific 
+> + device
+>   *
+>   * @dev: device with which the transfers should be done
+>   * @xfers: array of transfers
+>   * @nxfers: number of transfers
+> + * @mode: transfer mode
+>   *
+>   * Initiate one or several private SDR transfers with @dev.
+>   *
+> @@ -33,9 +33,8 @@
+>   *   'xfers' some time later. See I3C spec ver 1.1.1 09-Jun-2021. Section:
+>   *   5.1.2.2.3.
+>   */
+> -int i3c_device_do_priv_xfers(struct i3c_device *dev,
+> -			     struct i3c_priv_xfer *xfers,
+> -			     int nxfers)
+> +int i3c_device_do_xfers(struct i3c_device *dev, struct i3c_priv_xfer *xfers,
+> +			int nxfers, enum i3c_hdr_mode mode)
+>  {
+>  	int ret, i;
+>
+> @@ -48,12 +47,12 @@ int i3c_device_do_priv_xfers(struct i3c_device *dev,
+>  	}
+>
+>  	i3c_bus_normaluse_lock(dev->bus);
+> -	ret = i3c_dev_do_priv_xfers_locked(dev->desc, xfers, nxfers);
+> +	ret = i3c_dev_do_xfers_locked(dev->desc, xfers, nxfers, mode);
+>  	i3c_bus_normaluse_unlock(dev->bus);
+>
+>  	return ret;
+>  }
+> -EXPORT_SYMBOL_GPL(i3c_device_do_priv_xfers);
+> +EXPORT_SYMBOL_GPL(i3c_device_do_xfers);
+>
+>  /**
+>   * i3c_device_do_setdasa() - do I3C dynamic address assignement with @@ -260,6 +259,20 @@ i3c_device_match_id(struct i3c_device *i3cdev,  }  EXPORT_SYMBOL_GPL(i3c_device_match_id);
+>
+> +/**
+> + * i3c_device_get_supported_xfer_mode - Returns the supported transfer mode by
+> + *					connected master controller.
+> + * @dev: I3C device
+> + *
+> + * Return: a bit mask, which supported transfer mode, bit position is defined at
+> + *	   enum i3c_hdr_mode
+> + */
+> +u32 i3c_device_get_supported_xfer_mode(struct i3c_device *dev) {
+> +	return i3c_dev_get_master(dev->desc)->mode_mask;
+> +}
+> +EXPORT_SYMBOL_GPL(i3c_device_get_supported_xfer_mode);
+> +
+>  /**
+>   * i3c_driver_register_with_owner() - register an I3C device driver
+>   *
+> diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h index 0d857cc68cc5d473db733b12ffcec0c1c28d9def..2adba9136f3d147b82c58bd9b491d6d1bc6bfdf7 100644
+> --- a/drivers/i3c/internals.h
+> +++ b/drivers/i3c/internals.h
+> @@ -15,9 +15,9 @@ void i3c_bus_normaluse_lock(struct i3c_bus *bus);  void i3c_bus_normaluse_unlock(struct i3c_bus *bus);
+>
+>  int i3c_dev_setdasa_locked(struct i3c_dev_desc *dev); -int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
+> -				 struct i3c_priv_xfer *xfers,
+> -				 int nxfers);
+> +int i3c_dev_do_xfers_locked(struct i3c_dev_desc *dev,
+> +			    struct i3c_xfer *xfers,
+> +			    int nxfers, enum i3c_hdr_mode mode);
+>  int i3c_dev_disable_ibi_locked(struct i3c_dev_desc *dev);  int i3c_dev_enable_ibi_locked(struct i3c_dev_desc *dev);  int i3c_dev_request_ibi_locked(struct i3c_dev_desc *dev, diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c index 2ef898a8fd8065032b68c97c52dcb12e771525a4..1ba21fd737a31386704e47afb3026c4fc8fc7305 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -2749,10 +2749,13 @@ EXPORT_SYMBOL_GPL(i3c_generic_ibi_recycle_slot);
+>
+>  static int i3c_master_check_ops(const struct i3c_master_controller_ops *ops)  {
+> -	if (!ops || !ops->bus_init || !ops->priv_xfers ||
+> +	if (!ops || !ops->bus_init ||
+>  	    !ops->send_ccc_cmd || !ops->do_daa || !ops->i2c_xfers)
+>  		return -EINVAL;
+>
+> +	if (!ops->priv_xfers && !ops->i3c_xfers)
+> +		return -EINVAL;
+> +
+>  	if (ops->request_ibi &&
+>  	    (!ops->enable_ibi || !ops->disable_ibi || !ops->free_ibi ||
+>  	     !ops->recycle_ibi_slot))
+> @@ -2808,6 +2811,9 @@ int i3c_master_register(struct i3c_master_controller *master,
+>  	master->dev.release = i3c_masterdev_release;
+>  	master->ops = ops;
+>  	master->secondary = secondary;
+> +	/* Spec require must support SDR mode */
+> +	master->mode_mask |= BIT(I3C_SDR);
+> +
+>  	INIT_LIST_HEAD(&master->boardinfo.i2c);
+>  	INIT_LIST_HEAD(&master->boardinfo.i3c);
+>
+> @@ -2942,9 +2948,8 @@ int i3c_dev_setdasa_locked(struct i3c_dev_desc *dev)
+>  						dev->boardinfo->init_dyn_addr);
+>  }
+>
+> -int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
+> -				 struct i3c_priv_xfer *xfers,
+> -				 int nxfers)
+> +int i3c_dev_do_xfers_locked(struct i3c_dev_desc *dev, struct i3c_xfer *xfers,
+> +			    int nxfers, enum i3c_hdr_mode mode)
+>  {
+>  	struct i3c_master_controller *master;
+>
+> @@ -2955,9 +2960,18 @@ int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
+>  	if (!master || !xfers)
+>  		return -EINVAL;
+>
+> +	if (!(master->mode_mask & BIT(mode)))
+> +		return -EOPNOTSUPP;
+> +
+> +	if (master->ops->i3c_xfers)
+> +		return master->ops->i3c_xfers(dev, xfers, nxfers, mode);
+> +
+>  	if (!master->ops->priv_xfers)
+>  		return -EOPNOTSUPP;
+>
+> +	if (mode != I3C_SDR)
+> +		return -EINVAL;
+> +
+>  	return master->ops->priv_xfers(dev, xfers, nxfers);  }
+>
+> diff --git a/include/linux/i3c/device.h b/include/linux/i3c/device.h index 7f136de4b73ef839fb4a1837a87b1aebbddbfe93..be7d9e4c98e09ec29357d19dc73d1f050d7bde1e 100644
+> --- a/include/linux/i3c/device.h
+> +++ b/include/linux/i3c/device.h
+> @@ -40,19 +40,22 @@ enum i3c_error_code {
+>
+>  /**
+>   * enum i3c_hdr_mode - HDR mode ids
+> + * @I3C_SDR: SDR mode (NOT HDR mode)
+>   * @I3C_HDR_DDR: DDR mode
+>   * @I3C_HDR_TSP: TSP mode
+>   * @I3C_HDR_TSL: TSL mode
+>   */
+>  enum i3c_hdr_mode {
+> +	I3C_SDR,
+>  	I3C_HDR_DDR,
+>  	I3C_HDR_TSP,
+>  	I3C_HDR_TSL,
+>  };
 
-Co-developed-by: Carlos Song <carlos.song@nxp.com>
-Signed-off-by: Carlos Song <carlos.song@nxp.com>
-Signed-off-by: Frank Li <Frank.Li@nxp.com>
----
-Change in v3
-- remove mmc5633_hw_set
-- make -> Make
-- change indention for mmc5633_samp_freq
-- use u8 arrary to handle dword data
-- get_unaligned_be16() to get raw data
-- add helper function to check if i3c support hdr
-- use read_avail() callback
+Hi Frank,
 
-change in v2
-- new patch
----
- drivers/iio/magnetometer/Kconfig   |  12 +
- drivers/iio/magnetometer/Makefile  |   1 +
- drivers/iio/magnetometer/mmc5633.c | 534 +++++++++++++++++++++++++++++++++++++
- 3 files changed, 547 insertions(+)
-
-diff --git a/drivers/iio/magnetometer/Kconfig b/drivers/iio/magnetometer/Kconfig
-index 81b812a29044e2b0b9ff84889c21aa3ebc20be35..cfb74a4a083630678a1db1132a14264de451a31a 100644
---- a/drivers/iio/magnetometer/Kconfig
-+++ b/drivers/iio/magnetometer/Kconfig
-@@ -139,6 +139,18 @@ config MMC35240
- 	  To compile this driver as a module, choose M here: the module
- 	  will be called mmc35240.
+Perhaps hdr_mode here no longer be meaningful if SDR were to mix in.
+This would more like xfer_mode?
  
-+config MMC5633
-+	tristate "MEMSIC MMC5633 3-axis magnetic sensor"
-+	select REGMAP_I2C
-+	select REGMAP_I3C
-+	depends on I2C || I3C
-+	help
-+	  Say yes here to build support for the MEMSIC MMC5633 3-axis
-+	  magnetic sensor.
-+
-+	  To compile this driver as a module, choose M here: the module
-+	  will be called mmc5633
-+
- config IIO_ST_MAGN_3AXIS
- 	tristate "STMicroelectronics magnetometers 3-Axis Driver"
- 	depends on (I2C || SPI_MASTER) && SYSFS
-diff --git a/drivers/iio/magnetometer/Makefile b/drivers/iio/magnetometer/Makefile
-index dfe970fcacb8664b293af84893f7d3e3e8d7bf7e..5bd227f8c1204bdd8b8a43da180833eedca1457b 100644
---- a/drivers/iio/magnetometer/Makefile
-+++ b/drivers/iio/magnetometer/Makefile
-@@ -15,6 +15,7 @@ obj-$(CONFIG_BMC150_MAGN_SPI) += bmc150_magn_spi.o
- obj-$(CONFIG_MAG3110)	+= mag3110.o
- obj-$(CONFIG_HID_SENSOR_MAGNETOMETER_3D) += hid-sensor-magn-3d.o
- obj-$(CONFIG_MMC35240)	+= mmc35240.o
-+obj-$(CONFIG_MMC5633)	+= mmc5633.o
- 
- obj-$(CONFIG_IIO_ST_MAGN_3AXIS) += st_magn.o
- st_magn-y := st_magn_core.o
-diff --git a/drivers/iio/magnetometer/mmc5633.c b/drivers/iio/magnetometer/mmc5633.c
-new file mode 100644
-index 0000000000000000000000000000000000000000..bcd79ab6053d50026961f7cf9da296c30c720399
---- /dev/null
-+++ b/drivers/iio/magnetometer/mmc5633.c
-@@ -0,0 +1,534 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/*
-+ * MMC5633 - MEMSIC 3-axis Magnetic Sensor
-+ *
-+ * Copyright (c) 2015, Intel Corporation.
-+ * Copyright (c) 2025, NXP
-+ *
-+ * IIO driver for MMC5633, base on mmc35240.c
-+ */
-+
-+#include <linux/delay.h>
-+#include <linux/i2c.h>
-+#include <linux/i3c/device.h>
-+#include <linux/iio/iio.h>
-+#include <linux/iio/sysfs.h>
-+#include <linux/init.h>
-+#include <linux/iopoll.h>
-+#include <linux/module.h>
-+#include <linux/mod_devicetable.h>
-+#include <linux/pm.h>
-+#include <linux/regmap.h>
-+#include <linux/unaligned.h>
-+
-+#define MMC5633_REG_XOUT_L	0x00
-+#define MMC5633_REG_XOUT_H	0x01
-+#define MMC5633_REG_YOUT_L	0x02
-+#define MMC5633_REG_YOUT_H	0x03
-+#define MMC5633_REG_ZOUT_L	0x04
-+#define MMC5633_REG_ZOUT_H	0x05
-+#define MMC5633_REG_XOUT_2	0x06
-+#define MMC5633_REG_YOUT_2	0x07
-+#define MMC5633_REG_ZOUT_2	0x08
-+
-+#define MMC5633_REG_STATUS1	0x18
-+#define MMC5633_REG_STATUS0	0x19
-+#define MMC5633_REG_CTRL0	0x1b
-+#define MMC5633_REG_CTRL1	0x1c
-+#define MMC5633_REG_CTRL2	0x1d
-+
-+#define MMC5633_REG_ID		0x39
-+
-+#define MMC5633_STATUS1_MEAS_M_DONE_BIT	BIT(6)
-+
-+#define MMC5633_CTRL0_CMM_FREQ_EN	BIT(7)
-+#define MMC5633_CTRL0_AUTO_ST_EN	BIT(6)
-+#define MMC5633_CTRL0_AUTO_SR_EN	BIT(5)
-+#define MMC5633_CTRL0_RESET		BIT(4)
-+#define MMC5633_CTRL0_SET		BIT(3)
-+#define MMC5633_CTRL0_MEAS_T		BIT(1)
-+#define MMC5633_CTRL0_MEAS_M		BIT(0)
-+
-+#define MMC5633_CTRL1_BW0_BIT		BIT(0)
-+#define MMC5633_CTRL1_BW1_BIT		BIT(1)
-+
-+#define MMC5633_CTRL1_BW_MASK		(MMC5633_CTRL1_BW0_BIT | \
-+					 MMC5633_CTRL1_BW1_BIT)
-+
-+#define MMC5633_WAIT_CHARGE_PUMP	50000	/* us */
-+#define MMC5633_WAIT_SET_RESET		1000	/* us */
-+
-+#define MMC5633_HDR_CTRL0_MEAS_M	0x01
-+#define MMC5633_HDR_CTRL0_MEAS_T	0x03
-+#define MMC5633_HDR_CTRL0_SET		0X05
-+#define MMC5633_HDR_CTRL0_RESET		0x07
-+
-+enum mmc5633_axis {
-+	AXIS_X,
-+	AXIS_Y,
-+	AXIS_Z,
-+};
-+
-+struct mmc5633_data {
-+	struct device *dev;
-+	struct i3c_device *i3cdev;
-+	struct mutex mutex; /* protect to finish one whole measurement */
-+	struct regmap *regmap;
-+};
-+
-+static const struct {
-+	int val;
-+	int val2;
-+} mmc5633_samp_freq[] = {
-+	{1, 200000},
-+	{2, 0},
-+	{3, 500000},
-+	{6, 600000},
-+};
-+
-+#define MMC5633_CHANNEL(_axis) { \
-+	.type = IIO_MAGN, \
-+	.modified = 1, \
-+	.channel2 = IIO_MOD_ ## _axis, \
-+	.address = AXIS_ ## _axis, \
-+	.info_mask_separate = BIT(IIO_CHAN_INFO_RAW), \
-+	.info_mask_shared_by_type = BIT(IIO_CHAN_INFO_SAMP_FREQ) | \
-+				    BIT(IIO_CHAN_INFO_SCALE), \
-+}
-+
-+static const struct iio_chan_spec mmc5633_channels[] = {
-+	MMC5633_CHANNEL(X),
-+	MMC5633_CHANNEL(Y),
-+	MMC5633_CHANNEL(Z),
-+};
-+
-+static int mmc5633_get_samp_freq_index(struct mmc5633_data *data,
-+				       int val, int val2)
-+{
-+	int i;
-+
-+	for (i = 0; i < ARRAY_SIZE(mmc5633_samp_freq); i++)
-+		if (mmc5633_samp_freq[i].val == val &&
-+		    mmc5633_samp_freq[i].val2 == val2)
-+			return i;
-+	return -EINVAL;
-+}
-+
-+static int mmc5633_init(struct mmc5633_data *data)
-+{
-+	unsigned int reg_id, ret;
-+
-+	ret = regmap_read(data->regmap, MMC5633_REG_ID, &reg_id);
-+	if (ret < 0)
-+		return dev_err_probe(data->dev, ret,
-+				     "Error reading product id\n");
-+
-+	/*
-+	 * Make sure we restore sensor characteristics, by doing
-+	 * a SET/RESET sequence, the axis polarity being naturally
-+	 * aligned after RESET.
-+	 */
-+	ret = regmap_write(data->regmap, MMC5633_REG_CTRL0, MMC5633_CTRL0_SET);
-+	if (ret < 0)
-+		return ret;
-+
-+	usleep_range(MMC5633_WAIT_SET_RESET, MMC5633_WAIT_SET_RESET + 1);
-+
-+	ret = regmap_write(data->regmap, MMC5633_REG_CTRL0, MMC5633_CTRL0_RESET);
-+	if (ret < 0)
-+		return ret;
-+
-+	/* set default sampling frequency */
-+	return regmap_update_bits(data->regmap, MMC5633_REG_CTRL1,
-+				  MMC5633_CTRL1_BW_MASK,
-+				  FIELD_PREP(MMC5633_CTRL1_BW_MASK, 0));
-+}
-+
-+static int mmc5633_take_measurement(struct mmc5633_data *data)
-+{
-+	unsigned int reg_status;
-+	int ret;
-+
-+	ret = regmap_write(data->regmap, MMC5633_REG_CTRL0, MMC5633_CTRL0_MEAS_M);
-+	if (ret < 0)
-+		return ret;
-+
-+	ret = regmap_read_poll_timeout(data->regmap, MMC5633_REG_STATUS1, reg_status,
-+				       reg_status & MMC5633_STATUS1_MEAS_M_DONE_BIT,
-+				       10000, 10000 * 100);
-+	if (ret) {
-+		dev_err(data->dev, "data not ready\n");
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static bool mmc5633_is_support_hdr(struct mmc5633_data *data)
-+{
-+	if (!data->i3cdev)
-+		return false;
-+
-+	return !!(i3c_device_get_supported_xfer_mode(data->i3cdev) & BIT(I3C_HDR_DDR));
-+}
-+
-+static int mmc5633_read_measurement(struct mmc5633_data *data, void *buf, size_t sz)
-+{
-+	u8 data_cmd[2], status[2];
-+	int ret, val;
-+
-+	if (mmc5633_is_support_hdr(data)) {
-+		struct i3c_xfer xfers_wr_cmd[] = {
-+			{
-+				.cmd = 0x3b,
-+				.len = 2,
-+				.data.out = data_cmd,
-+			}
-+		};
-+
-+		struct i3c_xfer xfers_rd_sta_cmd[] = {
-+			{
-+				.cmd = 0x23 | BIT(7), /* RDSTA CMD */
-+				.len = 2,
-+				.data.in = status,
-+			},
-+		};
-+
-+		struct i3c_xfer xfers_rd_data_cmd[] = {
-+			{
-+				.cmd = 0x22 | BIT(7), /* RDLONG CMD */
-+				.len = sz,
-+				.data.in = buf,
-+			},
-+		};
-+
-+		data_cmd[0] = 0;
-+		data_cmd[1] = MMC5633_HDR_CTRL0_MEAS_M;
-+
-+		ret = i3c_device_do_xfers(data->i3cdev, xfers_wr_cmd, 1, I3C_HDR_DDR);
-+		if (ret < 0)
-+			return ret;
-+
-+		ret = read_poll_timeout(i3c_device_do_xfers, val,
-+					val ||
-+					status[0] & MMC5633_STATUS1_MEAS_M_DONE_BIT,
-+					10000, 10000 * 100, 0,
-+					data->i3cdev, xfers_rd_sta_cmd, 1, I3C_HDR_DDR);
-+
-+		if (ret || val) {
-+			dev_err(data->dev, "data not ready\n");
-+			return ret ? ret : -EIO;
-+		}
-+
-+		return i3c_device_do_xfers(data->i3cdev, xfers_rd_data_cmd, 1, I3C_HDR_DDR);
-+	}
-+
-+	/* Fallback to use SDR/I2C mode */
-+	ret = mmc5633_take_measurement(data);
-+	if (ret < 0)
-+		return ret;
-+
-+	return regmap_bulk_read(data->regmap, MMC5633_REG_XOUT_L, buf, sz);
-+}
-+
-+static int mmc5633_get_raw(struct mmc5633_data *data, int index, unsigned char *buf, int *val)
-+{
-+	/*
-+	 * X[19..12] X[11..4] Y[19..12] Y[11..4] Z[19..12] Z[11..4] X[3..0] Y[3..0] Z[3..0]
-+	 */
-+	*val = get_unaligned_be16(buf + 2 * index) << 4;
-+	*val |= buf[index + 6] >> 4;
-+
-+	return 0;
-+}
-+
-+#define MMC5633_ALL_SIZE (3 * 3 + 1) /* each channel have 3 byte and TEMP */
-+
-+static int mmc5633_read_raw(struct iio_dev *indio_dev,
-+			    struct iio_chan_spec const *chan, int *val,
-+			    int *val2, long mask)
-+{
-+	struct mmc5633_data *data = iio_priv(indio_dev);
-+	char buf[MMC5633_ALL_SIZE];
-+	unsigned int reg;
-+	int ret, i;
-+
-+	switch (mask) {
-+	case IIO_CHAN_INFO_RAW:
-+		scoped_guard(mutex, &data->mutex) {
-+			ret = mmc5633_read_measurement(data, buf, MMC5633_ALL_SIZE);
-+			if (ret < 0)
-+				return ret;
-+		}
-+
-+		ret = mmc5633_get_raw(data, chan->address, buf, val);
-+		if (ret < 0)
-+			return ret;
-+		return IIO_VAL_INT;
-+	case IIO_CHAN_INFO_SCALE:
-+		*val = 0;
-+		*val2 = 62500;
-+		return IIO_VAL_INT_PLUS_NANO;
-+	case IIO_CHAN_INFO_SAMP_FREQ:
-+		scoped_guard(mutex, &data->mutex) {
-+			ret = regmap_read(data->regmap, MMC5633_REG_CTRL1, &reg);
-+			if (ret < 0)
-+				return ret;
-+		}
-+
-+		i = FIELD_GET(MMC5633_CTRL1_BW_MASK, reg);
-+		if (i >= ARRAY_SIZE(mmc5633_samp_freq))
-+			return -EINVAL;
-+
-+		*val = mmc5633_samp_freq[i].val;
-+		*val2 = mmc5633_samp_freq[i].val2;
-+		return IIO_VAL_INT_PLUS_MICRO;
-+	default:
-+		return -EINVAL;
-+	}
-+}
-+
-+static int mmc5633_write_raw(struct iio_dev *indio_dev,
-+			     struct iio_chan_spec const *chan, int val,
-+			     int val2, long mask)
-+{
-+	struct mmc5633_data *data = iio_priv(indio_dev);
-+	int i, ret;
-+
-+	switch (mask) {
-+	case IIO_CHAN_INFO_SAMP_FREQ:
-+		i = mmc5633_get_samp_freq_index(data, val, val2);
-+		if (i < 0)
-+			return -EINVAL;
-+
-+		scoped_guard(mutex, &data->mutex) {
-+			ret = regmap_update_bits(data->regmap, MMC5633_REG_CTRL1,
-+						 MMC5633_CTRL1_BW_MASK,
-+						 FIELD_PREP(MMC5633_CTRL1_BW_MASK, i));
-+			if (ret)
-+				return ret;
-+		};
-+		return ret;
-+	default:
-+		return -EINVAL;
-+	}
-+}
-+
-+static int mmc5633_read_avail(struct iio_dev *indio_dev,
-+			      struct iio_chan_spec const *chan,
-+			      const int **vals,
-+			      int *type,
-+			      int *length,
-+			      long mask)
-+{
-+	switch (mask) {
-+	case IIO_CHAN_INFO_SAMP_FREQ:
-+		*vals = (const int *)mmc5633_samp_freq;
-+		*length = ARRAY_SIZE(mmc5633_samp_freq) * 2;
-+		*type = IIO_VAL_INT_PLUS_MICRO;
-+		return IIO_AVAIL_LIST;
-+	default:
-+		return -EINVAL;
-+	}
-+}
-+
-+static const struct iio_info mmc5633_info = {
-+	.read_raw	= mmc5633_read_raw,
-+	.write_raw	= mmc5633_write_raw,
-+	.read_avail	= mmc5633_read_avail,
-+};
-+
-+static bool mmc5633_is_writeable_reg(struct device *dev, unsigned int reg)
-+{
-+	switch (reg) {
-+	case MMC5633_REG_CTRL0:
-+	case MMC5633_REG_CTRL1:
-+		return true;
-+	default:
-+		return false;
-+	}
-+}
-+
-+static bool mmc5633_is_readable_reg(struct device *dev, unsigned int reg)
-+{
-+	switch (reg) {
-+	case MMC5633_REG_XOUT_L:
-+	case MMC5633_REG_XOUT_H:
-+	case MMC5633_REG_YOUT_L:
-+	case MMC5633_REG_YOUT_H:
-+	case MMC5633_REG_ZOUT_L:
-+	case MMC5633_REG_ZOUT_H:
-+	case MMC5633_REG_XOUT_2:
-+	case MMC5633_REG_YOUT_2:
-+	case MMC5633_REG_ZOUT_2:
-+	case MMC5633_REG_STATUS1:
-+	case MMC5633_REG_ID:
-+		return true;
-+	default:
-+		return false;
-+	}
-+}
-+
-+static bool mmc5633_is_volatile_reg(struct device *dev, unsigned int reg)
-+{
-+	switch (reg) {
-+	case MMC5633_REG_CTRL0:
-+	case MMC5633_REG_CTRL1:
-+		return false;
-+	default:
-+		return true;
-+	}
-+}
-+
-+static const struct reg_default mmc5633_reg_defaults[] = {
-+	{ MMC5633_REG_CTRL0,  0x00 },
-+	{ MMC5633_REG_CTRL1,  0x00 },
-+};
-+
-+static const struct regmap_config mmc5633_regmap_config = {
-+	.name = "mmc5633_regmap",
-+
-+	.reg_bits = 8,
-+	.val_bits = 8,
-+
-+	.max_register = MMC5633_REG_ID,
-+	.cache_type = REGCACHE_FLAT,
-+
-+	.writeable_reg = mmc5633_is_writeable_reg,
-+	.readable_reg = mmc5633_is_readable_reg,
-+	.volatile_reg = mmc5633_is_volatile_reg,
-+
-+	.reg_defaults = mmc5633_reg_defaults,
-+	.num_reg_defaults = ARRAY_SIZE(mmc5633_reg_defaults),
-+};
-+
-+static int mmc5633_common_probe(struct device *dev, struct regmap *regmap,
-+				char *name, struct i3c_device *i3cdev)
-+{
-+	struct mmc5633_data *data;
-+	struct iio_dev *indio_dev;
-+	int ret;
-+
-+	indio_dev = devm_iio_device_alloc(dev, sizeof(*data));
-+	if (!indio_dev)
-+		return -ENOMEM;
-+
-+	dev_set_drvdata(dev, indio_dev);
-+
-+	data = iio_priv(indio_dev);
-+
-+	data->regmap = regmap;
-+	data->i3cdev = i3cdev;
-+	data->dev = dev;
-+
-+	ret = devm_mutex_init(dev, &data->mutex);
-+	if (ret)
-+		return ret;
-+
-+	indio_dev->info = &mmc5633_info;
-+	indio_dev->name = name;
-+	indio_dev->channels = mmc5633_channels;
-+	indio_dev->num_channels = ARRAY_SIZE(mmc5633_channels);
-+	indio_dev->modes = INDIO_DIRECT_MODE;
-+
-+	ret = mmc5633_init(data);
-+	if (ret < 0)
-+		return dev_err_probe(dev, ret, "mmc5633 chip init failed\n");
-+
-+	return devm_iio_device_register(dev, indio_dev);
-+}
-+
-+static int mmc5633_suspend(struct device *dev)
-+{
-+	struct mmc5633_data *data = iio_priv(dev_get_drvdata(dev));
-+
-+	regcache_cache_only(data->regmap, true);
-+
-+	return 0;
-+}
-+
-+static int mmc5633_resume(struct device *dev)
-+{
-+	struct mmc5633_data *data = iio_priv(dev_get_drvdata(dev));
-+	int ret;
-+
-+	regcache_mark_dirty(data->regmap);
-+	ret = regcache_sync_region(data->regmap, MMC5633_REG_CTRL0,
-+				   MMC5633_REG_CTRL1);
-+	if (ret < 0)
-+		dev_err(dev, "Failed to restore control registers\n");
-+
-+	regcache_cache_only(data->regmap, false);
-+
-+	return 0;
-+}
-+
-+static int mmc5633_i2c_probe(struct i2c_client *client)
-+{
-+	struct device *dev = &client->dev;
-+	struct regmap *regmap;
-+
-+	regmap = devm_regmap_init_i2c(client, &mmc5633_regmap_config);
-+	if (IS_ERR(regmap))
-+		return dev_err_probe(dev, PTR_ERR(regmap), "regmap init failed");
-+
-+	return mmc5633_common_probe(dev, regmap, client->name, NULL);
-+}
-+
-+static DEFINE_SIMPLE_DEV_PM_OPS(mmc5633_pm_ops, mmc5633_suspend,
-+				mmc5633_resume);
-+
-+static const struct of_device_id mmc5633_of_match[] = {
-+	{ .compatible = "memsic,mmc5633", },
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(of, mmc5633_of_match);
-+
-+static const struct i2c_device_id mmc5633_i2c_id[] = {
-+	{ "mmc5633" },
-+	{}
-+};
-+MODULE_DEVICE_TABLE(i2c, mmc5633_i2c_id);
-+
-+static struct i2c_driver mmc5633_i2c_driver = {
-+	.driver = {
-+		.name = "mmc5633_i2c",
-+		.of_match_table = mmc5633_of_match,
-+		.pm = pm_sleep_ptr(&mmc5633_pm_ops),
-+	},
-+	.probe	  = mmc5633_i2c_probe,
-+	.id_table       = mmc5633_i2c_id,
-+};
-+
-+static const struct i3c_device_id mmc5633_i3c_ids[] = {
-+	I3C_DEVICE(0x0251, 0x0000, NULL),
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(i3c, mmc5633_i3c_ids);
-+
-+static int mmc5633_i3c_probe(struct i3c_device *i3cdev)
-+{
-+	struct device *dev = i3cdev_to_dev(i3cdev);
-+	struct regmap *regmap;
-+
-+	regmap = devm_regmap_init_i3c(i3cdev, &mmc5633_regmap_config);
-+	if (IS_ERR(regmap))
-+		return dev_err_probe(dev, PTR_ERR(regmap),
-+				     "Failed to register i3c regmap\n");
-+
-+	return mmc5633_common_probe(dev, regmap, "mmc5633_i3c", i3cdev);
-+}
-+
-+static struct i3c_driver mmc5633_i3c_driver = {
-+	.driver = {
-+		.name = "mmc5633_i3c",
-+	},
-+	.probe = mmc5633_i3c_probe,
-+	.id_table = mmc5633_i3c_ids,
-+};
-+
-+module_i3c_i2c_driver(mmc5633_i3c_driver, &mmc5633_i2c_driver)
-+
-+MODULE_AUTHOR("Frank Li <Frank.li@nxp.com>");
-+MODULE_DESCRIPTION("MEMSIC MMC5633 magnetic sensor driver");
-+MODULE_LICENSE("GPL");
-
--- 
-2.34.1
-
+>
+>  /**
+> - * struct i3c_priv_xfer - I3C SDR private transfer
+> + * struct i3c_xfer - I3C data transfer
+>   * @rnw: encodes the transfer direction. true for a read, false for a write
+> + * @cmd: Read/Write command in HDR mode, read: 0x80 - 0xff, write: 0x00 
+> + - 0x7f
+>   * @len: transfer length in bytes of the transfer
+>   * @actual_len: actual length in bytes are transferred by the controller
+>   * @data: input/output buffer
+> @@ -60,8 +63,11 @@ enum i3c_hdr_mode {
+>   * @data.out: output buffer. Must point to a DMA-able buffer
+>   * @err: I3C error code
+>   */
+> -struct i3c_priv_xfer {
+> -	u8 rnw;
+> +struct i3c_xfer {
+> +	union {
+> +		u8 rnw;
+> +		u8 cmd;
+> +	};
+>  	u16 len;
+>  	u16 actual_len;
+>  	union {
+> @@ -71,6 +77,9 @@ struct i3c_priv_xfer {
+>  	enum i3c_error_code err;
+>  };
+>
+> +/* keep back compatible */
+> +#define i3c_priv_xfer i3c_xfer
+> +
+>  /**
+>   * enum i3c_dcr - I3C DCR values
+>   * @I3C_DCR_GENERIC_DEVICE: generic I3C device @@ -297,9 +306,15 @@ static __always_inline void i3c_i2c_driver_unregister(struct i3c_driver *i3cdrv,
+>  		      i3c_i2c_driver_unregister,	\
+>  		      __i2cdrv)
+>
+> -int i3c_device_do_priv_xfers(struct i3c_device *dev,
+> -			     struct i3c_priv_xfer *xfers,
+> -			     int nxfers);
+> +int i3c_device_do_xfers(struct i3c_device *dev, struct i3c_xfer *xfers,
+> +			int nxfers, enum i3c_hdr_mode mode);
+> +
+> +static inline int i3c_device_do_priv_xfers(struct i3c_device *dev,
+> +					   struct i3c_priv_xfer *xfers,
+> +					   int nxfers)
+> +{
+> +	return i3c_device_do_xfers(dev, xfers, nxfers, I3C_SDR); }
+>
+>  int i3c_device_do_setdasa(struct i3c_device *dev);
+>
+> @@ -341,5 +356,6 @@ int i3c_device_request_ibi(struct i3c_device *dev,  void i3c_device_free_ibi(struct i3c_device *dev);  int i3c_device_enable_ibi(struct i3c_device *dev);  int i3c_device_disable_ibi(struct i3c_device *dev);
+> +u32 i3c_device_get_supported_xfer_mode(struct i3c_device *dev);
+>
+>  #endif /* I3C_DEV_H */
+> diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h index 043f5c7ff398ff631f1eea6acfc54a2e871016d8..de180511dc65e260885099913141eef8d0768f5e 100644
+> --- a/include/linux/i3c/master.h
+> +++ b/include/linux/i3c/master.h
+> @@ -474,9 +474,13 @@ struct i3c_master_controller_ops {
+>  				 const struct i3c_ccc_cmd *cmd);
+>  	int (*send_ccc_cmd)(struct i3c_master_controller *master,
+>  			    struct i3c_ccc_cmd *cmd);
+> +	/* Depreciated, please use i3c_xfers() */
+>  	int (*priv_xfers)(struct i3c_dev_desc *dev,
+>  			  struct i3c_priv_xfer *xfers,
+>  			  int nxfers);
+> +	int (*i3c_xfers)(struct i3c_dev_desc *dev,
+> +			 struct i3c_priv_xfer *xfers,
+> +			 int nxfers, enum i3c_hdr_mode mode);
+>  	int (*attach_i2c_dev)(struct i2c_dev_desc *dev);
+>  	void (*detach_i2c_dev)(struct i2c_dev_desc *dev);
+>  	int (*i2c_xfers)(struct i2c_dev_desc *dev, @@ -505,6 +509,7 @@ struct i3c_master_controller_ops {
+>   * @secondary: true if the master is a secondary master
+>   * @init_done: true when the bus initialization is done
+>   * @hotjoin: true if the master support hotjoin
+> + * @mode_mask: bit mask for supported transfer mode
+>   * @boardinfo.i3c: list of I3C  boardinfo objects
+>   * @boardinfo.i2c: list of I2C boardinfo objects
+>   * @boardinfo: board-level information attached to devices connected on the bus @@ -528,6 +533,7 @@ struct i3c_master_controller {
+>  	unsigned int secondary : 1;
+>  	unsigned int init_done : 1;
+>  	unsigned int hotjoin: 1;
+> +	unsigned int mode_mask;
+>  	struct {
+>  		struct list_head i3c;
+>  		struct list_head i2c;
+>
+> --
+> 2.34.1
+>
+>
+> -- 
+> linux-i3c mailing list
+> linux-i3c@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-i3c
 
 -- 
 linux-i3c mailing list
