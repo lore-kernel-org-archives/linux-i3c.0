@@ -4,124 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3508CCA470
-	for <linux-i3c@archiver.kernel.org>; Wed,  1 Oct 2025 09:08:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 02CBACCA470
+	for <linux-i3c@archiver.kernel.org>; Wed,  1 Oct 2025 21:40:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GohS9Ht1VMP3CDa4OcgwixctNZDnMyYpj1wDUG1BncY=; b=HFFoWiikOilkJV
-	oA2aysVFW6ai+cebZ443WD6rkKhBsta6DDwTLTk6JDMtUrT9BFdAQ8Rn8LcEqNiu8DDaXc8Y7tpY9
-	LP/7qzE4+2d/gXirto+tWPP+yQtFPGfZgSUyJphBPiIK44R0ortjtFj92ynUqjJCRJW/eiNK54GyU
-	+qZvO48BtyC4V/KELU88jd0HWEOA7JW91ebUuCMHCPfvlHfuLaFmmccZOJbMRlbSb0g2PmczFppuJ
-	EVgWs2R3VTRAoGfp9M5Wq1kJbTPsS3sQ4gGjZmAB9VP+1qqoLJICru7qmYSdWl2JqP3PBscd9TARP
-	GUVD+EL2dXUCCO8QRddQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
+	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=le0dyZ2DdjJGBk+u0eZc/LdDU7Hmbli9n3HKGvrEG9Y=; b=s+pKgjBRgeZGj7
+	zm55fYV7pX0JoMCYmzJZfFi+UC88CAsK65YtXaqNudMsjKfNI/NK9epntgZo9RBgW590Lh0cHWv1g
+	C2KyG4o7Mf6DOPHUwKq6pgtelsPf31BY2898d40/gzk4tvL9RB7dU0pf3UZXKJWgqvlCuWqUOHYsm
+	c3KUhkKVhLRA5ZVfufptNHfXZKWpceFCGv00XySCa+B/1CYG6eC3mqLdXc9VK7y/dBmiRkQTtDgZK
+	weN07dSxIho3n2WL4wqSSoqKk9MSBOq7jvJkERTKSru+zgsoWQaflFUVPGND8dHDMMtAB3XKSjzLn
+	474KSurP6YwDZ3O2zzWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v3sor-000000077Gm-2qXU;
-	Wed, 01 Oct 2025 09:08:17 +0000
-Received: from mail-bjschn02on2072a.outbound.protection.partner.outlook.cn ([2406:e500:4440:2::72a] helo=CHN02-BJS-obe.outbound.protection.partner.outlook.cn)
+	id 1v44YM-000000094qq-3Egl;
+	Wed, 01 Oct 2025 21:40:02 +0000
+Received: from smtpout-02.galae.net ([185.246.84.56])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v3son-000000077E8-1RH1
+	id 1v44YJ-000000094pE-0Ej3
 	for linux-i3c@lists.infradead.org;
-	Wed, 01 Oct 2025 09:08:15 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=koYOvsfRcwc2gG14YRq2Qtgl9ot9sbX1r5PRLGFreHdD/bE0ujdKQYomghdc83MPQw2n0WvI74qf4e7YcZRirZCIjtmFtkFN9XIvyowlYgeasPH2C13A5/mkHo15Z6IG/hmjvf6LMSvCvI/5loi/Rhj6bGc6vWdpxxMqw3LW4qddm1ztZA6/HRAEjbzKriGhPRBSG7h37BL3XivRGcv1vCfsI0zFvz7hxrZDmT+QB7M/exdKc40kGjQ6t1rBf/9kF/8WjpP8bA/HKXfcIKEW9Ifq52GJQFBi25/v5MDwU5Rui2kieLb65sP04UHC0SC1CnpZy8iWYX1C27mATx4W5Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=k8+VGfV+0tBNmQI1pjGWbH5t82OIPpFZhSwv008w+UQ=;
- b=NA0PSmOtqrg0EsIi7X9s01gYuRRd0jfuOwNbCDbboN/hKntWXXVdYVWzIzL9Tr55WGFFOnzCIweoJnFK276OK0ztriUQpp0f5kIxQxvSb7RDLbbmeLoqtPUCuGRgV1VQfaii4NBfanPBOCHmtAQawOHXuncztYRO37tnyN2+fSjJXMazBZxjoA9rlCbNlLNjUJr5j2srsl32IgBeI1phZIr0E+BUsugm2p/YDv4Gh/Hses+2LhufSeBlEY4Eyg6Fadkm5jus9dIeLi2CyP7sGc+RVQUxtHUsVLl6bHW6yCT37zz595W7sKjeueDxakSEMIOVlyJslPi3u1jV3a3a8g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=starfivetech.com; dmarc=pass action=none
- header.from=starfivetech.com; dkim=pass header.d=starfivetech.com; arc=none
-Received: from SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
- (2406:e500:c311:20::14) by SH0PR01MB0572.CHNPR01.prod.partner.outlook.cn
- (2406:e500:c311:6::23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9160.18; Wed, 1 Oct
- 2025 09:07:49 +0000
-Received: from SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
- ([fe80::81c4:2724:6a48:a18]) by SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
- ([fe80::81c4:2724:6a48:a18%7]) with mapi id 15.20.9031.026; Wed, 1 Oct 2025
- 09:07:49 +0000
-From: Joshua Yeong <joshua.yeong@starfivetech.com>
-To: Frank Li <Frank.Li@nxp.com>, Alexandre Belloni
-	<alexandre.belloni@bootlin.com>, Miquel Raynal <miquel.raynal@bootlin.com>,
-	Jonathan Cameron <jic23@kernel.org>, David Lechner <dlechner@baylibre.com>,
-	=?iso-8859-1?Q?Nuno_S=E1?= <nuno.sa@analog.com>, Andy Shevchenko
-	<andy@kernel.org>
-CC: "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"imx@lists.linux.dev" <imx@lists.linux.dev>, "linux-iio@vger.kernel.org"
-	<linux-iio@vger.kernel.org>
-Subject: RE: [PATCH v3 1/5] i3c: Add HDR API support
-Thread-Topic: [PATCH v3 1/5] i3c: Add HDR API support
-Thread-Index: AQHcMkFad+bcsjOpI0mL4TUGrQOFO7StAElQ
-Date: Wed, 1 Oct 2025 09:07:49 +0000
-Message-ID: <SH0PR01MB08416A34379DDE9F7762415BF9E62@SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn>
-References: <20250930-i3c_ddr-v3-0-b627dc2ef172@nxp.com>
- <20250930-i3c_ddr-v3-1-b627dc2ef172@nxp.com>
-In-Reply-To: <20250930-i3c_ddr-v3-1-b627dc2ef172@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=starfivetech.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: SH0PR01MB0841:EE_|SH0PR01MB0572:EE_
-x-ms-office365-filtering-correlation-id: e15bf85a-0cb9-485a-7c47-08de00c9fec7
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;ARA:13230040|7416014|366016|41320700013|1800799024|38070700021;
-x-microsoft-antispam-message-info: /U4w7UEJ+cdfXQsiQ/x7F5+jBorr2IOdF17BpFLU3UA/Qq9fuxMNvQPTuY1uFVV8D2EriFrUG3tAutLFd2WkfPM4UVEF1B5tT1jiP5rZScSn/9dgD0MckeN7gULOKQL5e1Hfhiz5Z2g08hzShR3M8eNlqa0l01YRE4ay6c5leYhso6f1e2MseF93gCzSTDJxO0Fkn/UeR7TDxb5n4JFaL7nKeIqWm9K4act3tk2onZA8tj5cVsODJ1kktfspQH49/DfODRc8qO1ye/TLsYwd1HP9pYzd9WVt/dIVK9uyX/aYgdhYxmXDJDcnLyBEXYUvTWjnlTWJqREBWdiFfsWqkxWaxtauCzIv2qbIPd1qFXz+J66fbe9ZpPLPzCMQksoBxJ5sSX80XRIULZn2bMYUn4ZIasUm2VYmIS2ozsLnze1OUNFCqTc5rnMzN/NW6Zr+vaZcUQS9DaOWBgBpl6xNeAptObLDPXNhf1hY2TaEdo00oTtTOzdP/DPW9ZntayR3mvRNt/8cWnxnSjLPy5k58Yatg5Ex9aDtKp9O3tU5Ctu95I5vKTdp+vHcTfi6TojBAcpCGYlcVGKPllrGsvKTsisBSbmmIWM1SlwLywfRX1s=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn;PTR:;CAT:NONE;SFS:(13230040)(7416014)(366016)(41320700013)(1800799024)(38070700021);DIR:OUT;SFP:1102;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?iso-8859-1?Q?jnOZhRQFlUgn8DN0al5A3nDHPT62WsQoUKkYdmBfwmrNWDbwrH5yrER7nb?=
- =?iso-8859-1?Q?aZ6qhxsghQLrkgu+U9Z1I5yNNYh5j+wV+ermn0vnRhOQjpHXuMOgF702FX?=
- =?iso-8859-1?Q?GxFss5Fy5Wi7HNUqeWHpLSl0cW6rc5eTSM1avLAz0ruXgItG7x/llT/1/a?=
- =?iso-8859-1?Q?ELkV+TsHrQJd9ij4f3FAIMLxNkYnSS6ye84o+fA+myECzGXT1d9t4Yh8cY?=
- =?iso-8859-1?Q?IQnALNAnxCFDC0W11FfYqynhuJRqmu9ttVv2Tb/zeF9O/kaP0CQLbf4dKt?=
- =?iso-8859-1?Q?kzGzQL4ejFn1vxeH5kxqQHCR0pd2lTc27XqB61NtuaTAoCwmFPIePszJdi?=
- =?iso-8859-1?Q?OjGFqTLlKrSROUNTNW16zudZ27AIlmZlW1vWa+bUFWFQo0cNy6yDMj1RTC?=
- =?iso-8859-1?Q?9lS/N+pplWfd1dVv17zslHuJAZ3fWo5mSRiCvws50wNa3nBTy1pspO0Eg6?=
- =?iso-8859-1?Q?xIEGUxj1TmNMMk6M4fe0rgI+ShmPXQPEjHgUqkJ9C012FNesjxBOCwW0F1?=
- =?iso-8859-1?Q?Zk/+5YNleQGtvWF3DR8vqA1yVj8RILWueCv0vHDK5AgOG5Fs1x9KBPM7Qg?=
- =?iso-8859-1?Q?+WaosbWrUXmxmejMiE6bIH5srAph0UwTNpi/3iJ7SXmUrcnMqKCKtScJ5s?=
- =?iso-8859-1?Q?vDE4/rOj/uM+rqAMIRWlk8htkBht+kbr61sRwdJMfxhga3ADbJvJGPYQ15?=
- =?iso-8859-1?Q?Gi+KrUqs//3zRx0PhG8K3kLIe88Ai8LR3eEDWzVdkLGfen1oVx7BmZUyBW?=
- =?iso-8859-1?Q?KGzR/Uy3IaSibt7m2HKRz/quYYHPbOP10kc4D8VmDcYhNSe0cpRzXpg+h4?=
- =?iso-8859-1?Q?6yNN+ZgAFt5uPGRLokitvyDuT4rRkYkNLGNhJjN/QHcEep0YXGaEWm8xhJ?=
- =?iso-8859-1?Q?f1OHg68iUtfyZgWkn17/rDA9/C8APGBrMnBQqIub7AQJLv27OztsismXt5?=
- =?iso-8859-1?Q?1gcujn9N8Q+TxPFDFw8eD0BpUu/rrTULTNsykyEvjpSS6OPWD3BR8xr+07?=
- =?iso-8859-1?Q?F1e+qdfNDVfDZIMNjGERpclrbUzyAXVUJmUzDnLZIraBi6yO1NVE5x2cqi?=
- =?iso-8859-1?Q?VQCFUy1yxU/ZrrnpCx0yobzArEojXkDjM3ca6jPeVloPNhEaJTToT6mrrg?=
- =?iso-8859-1?Q?UK0AsWR34B02S/flKBshkRp3V4JeBwX0mVL4d0kThmgb7fA9bJY0Z89IQu?=
- =?iso-8859-1?Q?Z7myQ+xbFsUN4HnwwwwzLl3fuAe3s+9caE/I08lNDujtQxi9HUqVUfDs9n?=
- =?iso-8859-1?Q?JAMWoYyuPFwsqNly45dYaylkH1I8pTyZm6bw8EaL3Gp3OnLrtKabzkRok7?=
- =?iso-8859-1?Q?fGPwlEmhPsR4XUSBvQg/PNBIXxOj8Jqkkg7fp3ZiwB4Frd1uF90CldH4CA?=
- =?iso-8859-1?Q?TuDwbLTIHr+ZxPfAgqkXzBMhUmVaYyhVejI8L6qUCcZwYaofx2NHL+YCRj?=
- =?iso-8859-1?Q?x/lQ+PVHnL6ZZjg/mAZ/f8k/0u+CTxYTMaFSlnleBUr630fo6RoRZXbpXv?=
- =?iso-8859-1?Q?PT7fGVRjBnqjI86EtA+Qzr3Fy4EXCa3x27mXHSXMo//lbASjCsQsYYPWdf?=
- =?iso-8859-1?Q?odgpHXQ+rxyZ5ndAgzMF1XyN0jDI+wOCiI87bETmr+xGuR1gWpC38PLFp1?=
- =?iso-8859-1?Q?UVjybUaOiFgH5xQ/e3vuVnD0GulTUxjAFVjlWxJpStRRZ0U3RjQ4tB5g?=
- =?iso-8859-1?Q?=3D=3D?=
+	Wed, 01 Oct 2025 21:40:01 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-02.galae.net (Postfix) with ESMTPS id 3BDFE1A0FFA;
+	Wed,  1 Oct 2025 21:39:53 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 0A2C0606BF;
+	Wed,  1 Oct 2025 21:39:53 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 76BD4102F1A54;
+	Wed,  1 Oct 2025 23:39:50 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1759354792; h=from:subject:date:message-id:to:cc:mime-version:content-type;
+	bh=lHs+a0zQYhMAuhiPsL2CDQSj6H2mO9Qd4Q2C0SoNsNI=;
+	b=F5KevJI2w/SNO1BFa7n1/Auh1UDMXyo/T7Iz5z93/FZv0pRMQ+Z/tlks9NObnirfbo72nZ
+	9ZtKYPSyvFOS66uZRUMwRSdT2Gaw0VH5UJ1ktuimYs2Tj/lgYuyWUdXsHsuZrBkE+w9BMk
+	AjQQMufjuOHiM2WFNBy/cAUH2swB55s9N6f1GfNoEoV8YIKzM3dWVUmQYqhfM9xEGdz9FD
+	dsp6feXx5Q1eRFbwjZpfLzWnDOeje3CkVF1eAKFmLJQEQp7x42UOvzBji4KuJTk4nQ/SZZ
+	HWGROzAXzzYEuyavF5EKu/NoZMmcXFYGkuNk4SqCpSA8mdYbXUJYxIYpG1YEcg==
+Date: Wed, 1 Oct 2025 23:39:49 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Linus Torvalds <torvalds@linux-foundation.org>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [GIT PULL] I3C changes for 6.18
+Message-ID: <2025100121394906389990@mail.local>
 MIME-Version: 1.0
-X-OriginatorOrg: starfivetech.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn
-X-MS-Exchange-CrossTenant-Network-Message-Id: e15bf85a-0cb9-485a-7c47-08de00c9fec7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Oct 2025 09:07:49.5489
- (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 06fe3fa3-1221-43d3-861b-5a4ee687a85c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: f7taZZGtFWN3IOQn6xV6T6LTwj1lkYdcJM/USSR2XjRZuIFLZObNTWMmoH8jLz0lCj4bOp8CbmH/dls5L/E4W4jZHk47U12Yzzroj9jpq/E=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SH0PR01MB0572
+Content-Disposition: inline
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251001_020813_562694_EA20A034 
-X-CRM114-Status: GOOD (  29.50  )
+X-CRM114-CacheID: sfid-20251001_143959_582981_3A7054E6 
+X-CRM114-Status: GOOD (  11.52  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,290 +71,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wednesday, October 1, 2025 3:34 AM, Frank Li wrote:
+Hello Linus,
 
-> Rename struct i3c_priv_xfer to struct i3c_xfer, since private xfer in the I3C spec refers only to SDR transfers. Ref: i3c spec ver1.2, section 3, Technical Overview.
->
-> i3c_xfer will be used for both SDR and HDR.
->
-> Add i3c_device_do_xfers() with an HDR mode argument, while keeping
-> i3c_device_do_priv_xfers() as a wrapper that calls i3c_device_do_xfers() with I3C_SDR for backward compatibility.
->
-> Introduce a 'cmd' field in struct i3c_xfer as an anonymous union with 'rnw', since HDR mode uses read/write commands instead of the SDR address bit.
->
-> Add .i3c_xfers() callback for master controllers. If not implemented, fall back to SDR with .priv_xfers(). The .priv_xfers() API can be removed once all controllers switch to .i3c_xfers().
->
-> Add 'mode_mask' bitmask to advertise controller capability.
->
-> Signed-off-by: Frank Li <Frank.Li@nxp.com>
-> ---
-> Why not add hdr mode in struct i3c_priv_xfer because mode can't be mixed in one i3c transfer. for example, can't send a HDR follow one SDR between START and STOP.
->
-> i3c_priv_xfer should be treat as whole i3c transactions. If user want send HDR follow SDR, should be call i3c_device_do_priv_xfers_mode() twice, instead put into a big i3c_priv_xfer[n].
->
-> change in v3
-> - Add Depreciated comment for priv_xfers.
->
-> change in v2
-> - don't use 'priv_' since it is refer to sdr mode transfer in spec.
-> - add 'mode_mask' indicate controller's capibility.
-> - add helper function to check master's supported transfer mode.
-> ---
->  drivers/i3c/device.c       | 27 ++++++++++++++++++++-------
->  drivers/i3c/internals.h    |  6 +++---
->  drivers/i3c/master.c       | 22 ++++++++++++++++++----
->  include/linux/i3c/device.h | 28 ++++++++++++++++++++++------  include/linux/i3c/master.h |  6 ++++++
->  5 files changed, 69 insertions(+), 20 deletions(-)
->
-> diff --git a/drivers/i3c/device.c b/drivers/i3c/device.c index 2396545763ff853097d9f0173787e087f7a6e688..00706b47758bc164178a5578a018b36c5c433f5f 100644
-> --- a/drivers/i3c/device.c
-> +++ b/drivers/i3c/device.c
-> @@ -15,12 +15,12 @@
->  #include "internals.h"
->
->  /**
-> - * i3c_device_do_priv_xfers() - do I3C SDR private transfers directed to a
-> - *				specific device
-> + * i3c_device_do_xfers() - do I3C transfers directed to a specific 
-> + device
->   *
->   * @dev: device with which the transfers should be done
->   * @xfers: array of transfers
->   * @nxfers: number of transfers
-> + * @mode: transfer mode
->   *
->   * Initiate one or several private SDR transfers with @dev.
->   *
-> @@ -33,9 +33,8 @@
->   *   'xfers' some time later. See I3C spec ver 1.1.1 09-Jun-2021. Section:
->   *   5.1.2.2.3.
->   */
-> -int i3c_device_do_priv_xfers(struct i3c_device *dev,
-> -			     struct i3c_priv_xfer *xfers,
-> -			     int nxfers)
-> +int i3c_device_do_xfers(struct i3c_device *dev, struct i3c_priv_xfer *xfers,
-> +			int nxfers, enum i3c_hdr_mode mode)
->  {
->  	int ret, i;
->
-> @@ -48,12 +47,12 @@ int i3c_device_do_priv_xfers(struct i3c_device *dev,
->  	}
->
->  	i3c_bus_normaluse_lock(dev->bus);
-> -	ret = i3c_dev_do_priv_xfers_locked(dev->desc, xfers, nxfers);
-> +	ret = i3c_dev_do_xfers_locked(dev->desc, xfers, nxfers, mode);
->  	i3c_bus_normaluse_unlock(dev->bus);
->
->  	return ret;
->  }
-> -EXPORT_SYMBOL_GPL(i3c_device_do_priv_xfers);
-> +EXPORT_SYMBOL_GPL(i3c_device_do_xfers);
->
->  /**
->   * i3c_device_do_setdasa() - do I3C dynamic address assignement with @@ -260,6 +259,20 @@ i3c_device_match_id(struct i3c_device *i3cdev,  }  EXPORT_SYMBOL_GPL(i3c_device_match_id);
->
-> +/**
-> + * i3c_device_get_supported_xfer_mode - Returns the supported transfer mode by
-> + *					connected master controller.
-> + * @dev: I3C device
-> + *
-> + * Return: a bit mask, which supported transfer mode, bit position is defined at
-> + *	   enum i3c_hdr_mode
-> + */
-> +u32 i3c_device_get_supported_xfer_mode(struct i3c_device *dev) {
-> +	return i3c_dev_get_master(dev->desc)->mode_mask;
-> +}
-> +EXPORT_SYMBOL_GPL(i3c_device_get_supported_xfer_mode);
-> +
->  /**
->   * i3c_driver_register_with_owner() - register an I3C device driver
->   *
-> diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h index 0d857cc68cc5d473db733b12ffcec0c1c28d9def..2adba9136f3d147b82c58bd9b491d6d1bc6bfdf7 100644
-> --- a/drivers/i3c/internals.h
-> +++ b/drivers/i3c/internals.h
-> @@ -15,9 +15,9 @@ void i3c_bus_normaluse_lock(struct i3c_bus *bus);  void i3c_bus_normaluse_unlock(struct i3c_bus *bus);
->
->  int i3c_dev_setdasa_locked(struct i3c_dev_desc *dev); -int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
-> -				 struct i3c_priv_xfer *xfers,
-> -				 int nxfers);
-> +int i3c_dev_do_xfers_locked(struct i3c_dev_desc *dev,
-> +			    struct i3c_xfer *xfers,
-> +			    int nxfers, enum i3c_hdr_mode mode);
->  int i3c_dev_disable_ibi_locked(struct i3c_dev_desc *dev);  int i3c_dev_enable_ibi_locked(struct i3c_dev_desc *dev);  int i3c_dev_request_ibi_locked(struct i3c_dev_desc *dev, diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c index 2ef898a8fd8065032b68c97c52dcb12e771525a4..1ba21fd737a31386704e47afb3026c4fc8fc7305 100644
-> --- a/drivers/i3c/master.c
-> +++ b/drivers/i3c/master.c
-> @@ -2749,10 +2749,13 @@ EXPORT_SYMBOL_GPL(i3c_generic_ibi_recycle_slot);
->
->  static int i3c_master_check_ops(const struct i3c_master_controller_ops *ops)  {
-> -	if (!ops || !ops->bus_init || !ops->priv_xfers ||
-> +	if (!ops || !ops->bus_init ||
->  	    !ops->send_ccc_cmd || !ops->do_daa || !ops->i2c_xfers)
->  		return -EINVAL;
->
-> +	if (!ops->priv_xfers && !ops->i3c_xfers)
-> +		return -EINVAL;
-> +
->  	if (ops->request_ibi &&
->  	    (!ops->enable_ibi || !ops->disable_ibi || !ops->free_ibi ||
->  	     !ops->recycle_ibi_slot))
-> @@ -2808,6 +2811,9 @@ int i3c_master_register(struct i3c_master_controller *master,
->  	master->dev.release = i3c_masterdev_release;
->  	master->ops = ops;
->  	master->secondary = secondary;
-> +	/* Spec require must support SDR mode */
-> +	master->mode_mask |= BIT(I3C_SDR);
-> +
->  	INIT_LIST_HEAD(&master->boardinfo.i2c);
->  	INIT_LIST_HEAD(&master->boardinfo.i3c);
->
-> @@ -2942,9 +2948,8 @@ int i3c_dev_setdasa_locked(struct i3c_dev_desc *dev)
->  						dev->boardinfo->init_dyn_addr);
->  }
->
-> -int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
-> -				 struct i3c_priv_xfer *xfers,
-> -				 int nxfers)
-> +int i3c_dev_do_xfers_locked(struct i3c_dev_desc *dev, struct i3c_xfer *xfers,
-> +			    int nxfers, enum i3c_hdr_mode mode)
->  {
->  	struct i3c_master_controller *master;
->
-> @@ -2955,9 +2960,18 @@ int i3c_dev_do_priv_xfers_locked(struct i3c_dev_desc *dev,
->  	if (!master || !xfers)
->  		return -EINVAL;
->
-> +	if (!(master->mode_mask & BIT(mode)))
-> +		return -EOPNOTSUPP;
+Here is the i3c subsystem pull request for 6.18. Another controller
+driver has been added this cycle. We also have many improvements for the
+mipi-i3c-hci driver.
 
-We might actually not need to have a separate field for mode_mask here.
-dev->info.hdr_cap should already contains information whether particular HDR is supported.
-We should check both controller and device support HDR before triggering any command.
+The following changes since commit 8f5ae30d69d7543eee0d70083daf4de8fe15d585:
 
-> +
-> +	if (master->ops->i3c_xfers)
-> +		return master->ops->i3c_xfers(dev, xfers, nxfers, mode);
-> +
->  	if (!master->ops->priv_xfers)
->  		return -EOPNOTSUPP;
->
-> +	if (mode != I3C_SDR)
-> +		return -EINVAL;
-> +
->  	return master->ops->priv_xfers(dev, xfers, nxfers);  }
->
-> diff --git a/include/linux/i3c/device.h b/include/linux/i3c/device.h index 7f136de4b73ef839fb4a1837a87b1aebbddbfe93..be7d9e4c98e09ec29357d19dc73d1f050d7bde1e 100644
-> --- a/include/linux/i3c/device.h
-> +++ b/include/linux/i3c/device.h
-> @@ -40,19 +40,22 @@ enum i3c_error_code {
->
->  /**
->   * enum i3c_hdr_mode - HDR mode ids
-> + * @I3C_SDR: SDR mode (NOT HDR mode)
->   * @I3C_HDR_DDR: DDR mode
->   * @I3C_HDR_TSP: TSP mode
->   * @I3C_HDR_TSL: TSL mode
->   */
->  enum i3c_hdr_mode {
-> +	I3C_SDR,
->  	I3C_HDR_DDR,
->  	I3C_HDR_TSP,
->  	I3C_HDR_TSL,
->  };
->
->  /**
-> - * struct i3c_priv_xfer - I3C SDR private transfer
-> + * struct i3c_xfer - I3C data transfer
->   * @rnw: encodes the transfer direction. true for a read, false for a write
-> + * @cmd: Read/Write command in HDR mode, read: 0x80 - 0xff, write: 0x00 
-> + - 0x7f
->   * @len: transfer length in bytes of the transfer
->   * @actual_len: actual length in bytes are transferred by the controller
->   * @data: input/output buffer
-> @@ -60,8 +63,11 @@ enum i3c_hdr_mode {
->   * @data.out: output buffer. Must point to a DMA-able buffer
->   * @err: I3C error code
->   */
-> -struct i3c_priv_xfer {
-> -	u8 rnw;
-> +struct i3c_xfer {
-> +	union {
-> +		u8 rnw;
-> +		u8 cmd;
-> +	};
->  	u16 len;
->  	u16 actual_len;
->  	union {
-> @@ -71,6 +77,9 @@ struct i3c_priv_xfer {
->  	enum i3c_error_code err;
->  };
->
-> +/* keep back compatible */
-> +#define i3c_priv_xfer i3c_xfer
-> +
->  /**
->   * enum i3c_dcr - I3C DCR values
->   * @I3C_DCR_GENERIC_DEVICE: generic I3C device @@ -297,9 +306,15 @@ static __always_inline void i3c_i2c_driver_unregister(struct i3c_driver *i3cdrv,
->  		      i3c_i2c_driver_unregister,	\
->  		      __i2cdrv)
->
-> -int i3c_device_do_priv_xfers(struct i3c_device *dev,
-> -			     struct i3c_priv_xfer *xfers,
-> -			     int nxfers);
-> +int i3c_device_do_xfers(struct i3c_device *dev, struct i3c_xfer *xfers,
-> +			int nxfers, enum i3c_hdr_mode mode);
-> +
-> +static inline int i3c_device_do_priv_xfers(struct i3c_device *dev,
-> +					   struct i3c_priv_xfer *xfers,
-> +					   int nxfers)
-> +{
-> +	return i3c_device_do_xfers(dev, xfers, nxfers, I3C_SDR); }
->
->  int i3c_device_do_setdasa(struct i3c_device *dev);
->
-> @@ -341,5 +356,6 @@ int i3c_device_request_ibi(struct i3c_device *dev,  void i3c_device_free_ibi(struct i3c_device *dev);  int i3c_device_enable_ibi(struct i3c_device *dev);  int i3c_device_disable_ibi(struct i3c_device *dev);
-> +u32 i3c_device_get_supported_xfer_mode(struct i3c_device *dev);
->
->  #endif /* I3C_DEV_H */
-> diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h index 043f5c7ff398ff631f1eea6acfc54a2e871016d8..de180511dc65e260885099913141eef8d0768f5e 100644
-> --- a/include/linux/i3c/master.h
-> +++ b/include/linux/i3c/master.h
-> @@ -474,9 +474,13 @@ struct i3c_master_controller_ops {
->  				 const struct i3c_ccc_cmd *cmd);
->  	int (*send_ccc_cmd)(struct i3c_master_controller *master,
->  			    struct i3c_ccc_cmd *cmd);
-> +	/* Depreciated, please use i3c_xfers() */
->  	int (*priv_xfers)(struct i3c_dev_desc *dev,
->  			  struct i3c_priv_xfer *xfers,
->  			  int nxfers);
-> +	int (*i3c_xfers)(struct i3c_dev_desc *dev,
-> +			 struct i3c_priv_xfer *xfers,
-> +			 int nxfers, enum i3c_hdr_mode mode);
->  	int (*attach_i2c_dev)(struct i2c_dev_desc *dev);
->  	void (*detach_i2c_dev)(struct i2c_dev_desc *dev);
->  	int (*i2c_xfers)(struct i2c_dev_desc *dev, @@ -505,6 +509,7 @@ struct i3c_master_controller_ops {
->   * @secondary: true if the master is a secondary master
->   * @init_done: true when the bus initialization is done
->   * @hotjoin: true if the master support hotjoin
-> + * @mode_mask: bit mask for supported transfer mode
->   * @boardinfo.i3c: list of I3C  boardinfo objects
->   * @boardinfo.i2c: list of I2C boardinfo objects
->   * @boardinfo: board-level information attached to devices connected on the bus @@ -528,6 +533,7 @@ struct i3c_master_controller {
->  	unsigned int secondary : 1;
->  	unsigned int init_done : 1;
->  	unsigned int hotjoin: 1;
-> +	unsigned int mode_mask;
->  	struct {
->  		struct list_head i3c;
->  		struct list_head i2c;
->
-> --
-> 2.34.1
->
->
-> -- 
-> linux-i3c mailing list
-> linux-i3c@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-i3c
+  Linux 6.17-rc1 (2025-08-10 19:41:16 +0300)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-6.18
+
+for you to fetch changes up to d6ddd9beb1a5c32acb9b80f5c2cd8b17f41371d1:
+
+  i3c: fix big-endian FIFO transfers (2025-09-29 00:17:22 +0200)
+
+----------------------------------------------------------------
+I3C for 6.18
+
+New driver:
+ - Analog Devices I3C Controller
+
+Subsystem:
+ - fix big-endian FIFO transfers
+ - fix default I2C adapter timeout value
+
+Drivers:
+ - dw: shutdown support
+ - mipi-i3c-hci: Intel Wildcat Lake-U support, IOMMU support
+ - renesas: RZ/V2H(P) and RZ/V2N support
+
+----------------------------------------------------------------
+Alexandre Belloni (2):
+      i3c: master: adi: fix header location
+      i3c: master: adi: fix number of bytes written to fifo
+
+Arnd Bergmann (1):
+      i3c: fix big-endian FIFO transfers
+
+Jarkko Nikula (11):
+      i3c: mipi-i3c-hci-pci: Add support for Intel Wildcat Lake-U I3C
+      i3c: master: Add helpers for DMA mapping and bounce buffer handling
+      i3c: mipi-i3c-hci: Use core helpers for DMA mapping and bounce buffering
+      i3c: mipi-i3c-hci: Use physical device pointer with DMA API
+      i3c: mipi-i3c-hci: Use own DMA bounce buffer management for I2C transfers
+      i3c: mipi-i3c-hci: Change interrupt status prints to dev_dbg()
+      i3c: mipi-i3c-hci: Remove nonexistent ring interrupt
+      i3c: mipi-i3c-hci: Uniform ring number printouts
+      i3c: mipi-i3c-hci: Remove function enter DBG() printouts
+      i3c: mipi-i3c-hci: Convert remaining DBG() prints to dev_dbg()
+      i3c: Fix default I2C adapter timeout value
+
+Jorge Marques (2):
+      dt-bindings: i3c: Add adi-i3c-master
+      i3c: master: Add driver for Analog Devices I3C Controller IP
+
+Lad Prabhakar (1):
+      dt-bindings: i3c: renesas,i3c: Add RZ/V2H(P) and RZ/V2N support
+
+Manikanta Guntupalli (1):
+      i3c: dw: Add shutdown support to dw_i3c_master driver
+
+Stanley Chu (2):
+      i3c: master: svc: Use manual response for IBI events
+      i3c: master: svc: Recycle unused IBI slot
+
+Wolfram Sang (2):
+      i3c: renesas: Simplify return statement in 'renesas_i3c_daa'
+      i3c: Remove superfluous FIXME
+
+ .../devicetree/bindings/i3c/adi,i3c-master.yaml    |   72 ++
+ .../devicetree/bindings/i3c/renesas,i3c.yaml       |   16 +-
+ MAINTAINERS                                        |    6 +
+ drivers/i3c/internals.h                            |   12 +-
+ drivers/i3c/master.c                               |   78 +-
+ drivers/i3c/master/Kconfig                         |   11 +
+ drivers/i3c/master/Makefile                        |    1 +
+ drivers/i3c/master/adi-i3c-master.c                | 1019 ++++++++++++++++++++
+ drivers/i3c/master/dw-i3c-master.c                 |   23 +
+ drivers/i3c/master/mipi-i3c-hci/cmd_v1.c           |    9 +-
+ drivers/i3c/master/mipi-i3c-hci/cmd_v2.c           |    7 +-
+ drivers/i3c/master/mipi-i3c-hci/core.c             |   74 +-
+ drivers/i3c/master/mipi-i3c-hci/dma.c              |   96 +-
+ drivers/i3c/master/mipi-i3c-hci/ext_caps.c         |   11 +-
+ drivers/i3c/master/mipi-i3c-hci/hci.h              |    6 +-
+ drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c |    3 +
+ drivers/i3c/master/mipi-i3c-hci/pio.c              |   75 +-
+ drivers/i3c/master/renesas-i3c.c                   |    2 +-
+ drivers/i3c/master/svc-i3c-master.c                |   31 +-
+ include/linux/i3c/master.h                         |   26 +
+ 20 files changed, 1410 insertions(+), 168 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/i3c/adi,i3c-master.yaml
+ create mode 100644 drivers/i3c/master/adi-i3c-master.c
+
+-- 
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-i3c mailing list
