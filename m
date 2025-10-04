@@ -4,62 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF7E8CCA470
-	for <linux-i3c@archiver.kernel.org>; Wed,  1 Oct 2025 23:00:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43CD4CAC5B0
+	for <linux-i3c@archiver.kernel.org>; Sat,  4 Oct 2025 13:55:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PI5MEFfHyjWWhAS0mT+Er3WwOf9GF6K1yO/ZqWLxtvo=; b=f/Rfuw0nH4P3p4
-	p+4xs8ULIXF3+m5YSD6/tFq17oalwPcBnstahdGKQYoWvp229EB3NwqUhFXmu3gUowKNGm3KfF9MZ
-	VTqNKBRKSEgWl6W3toqlQZnamOqREttWZaYfPcFQlr8aiABJpnHhrVASn/zs1tYFwNvCpZzJ4+kd6
-	AF/pfTR9u9u349IgVYqrxgLDidFP8HSfYQOnkno0sdC4kx5W6VByj+CWYtJSH+KNZ9XjF9VKfm1IW
-	z9CHM8MMGaHBGUfzUCBvIPRN5mv4KuOTgBhzs9pjy9Psn2qxl7t7PuBIxyKE1NxVQ1rqN4yqjOGb9
-	/KCy/Qj+hUfm7pwr9tlg==;
+	List-Owner; bh=C0d865h0B9t2vQj6qxuSR/5rEbvNo1oqmQfBdKIyWNI=; b=TDm55fHO+RAJhg
+	XH/l56E2VIjoVT20hhqNx7/uS0XuB0haPKqzcTCnMvrRA/fJZIACGg/bfK02zH4CbiR3Vj/XzRcY6
+	Oy/HEvIKvYO6LIBUnOmbr/pPgnkPR+TPOLqK74ps6OEqUReojS9m04mk0xgxKsE/x0HtA99tvzO6t
+	CQYGxAbAQG8Fjt39+DVC2cmNymuMiGmpU8v0n3E66LBRd33yS7B27pXDBevSA0O+NkNYyp/WyFR4r
+	QsOCdIrURLcYY4SG4Ex0plIWkRXdGhJN097V5qMrtY6gkcm+3SSsFwjZnrYFwsBAkJq8ILaLv2k3l
+	ikj0YYthGXCzzjVckJ5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v45oC-00000009D8V-1mj3;
-	Wed, 01 Oct 2025 23:00:28 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1v52jb-0000000DlHV-3p7h;
+	Sat, 04 Oct 2025 13:55:39 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v45oB-00000009D8N-07ck
+	id 1v52ja-0000000DlH7-0bz9
 	for linux-i3c@lists.infradead.org;
-	Wed, 01 Oct 2025 23:00:27 +0000
+	Sat, 04 Oct 2025 13:55:39 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 5F9D261F8C;
-	Wed,  1 Oct 2025 23:00:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 10A0DC4CEF1;
-	Wed,  1 Oct 2025 23:00:26 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 2BCA441967;
+	Sat,  4 Oct 2025 13:55:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C9A9FC4CEF1;
+	Sat,  4 Oct 2025 13:55:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1759359626;
-	bh=i90knxaXnEPVb578K729UTeo7FrmYq8EJoHVfsHfHic=;
-	h=Subject:From:In-Reply-To:References:Date:To:Cc:From;
-	b=Owm3cWIClHgdwvrB82cq+yXkS9rIZ3yyAt2ojJ8F2qAXFRfNgialTwQsATbga7i7C
-	 XKLxIZFbjBdOAo4udsKu+uf1Yk6FuB8ZPIq0XocQVFVsiCkCaxrCf2maf0uI64Y7QM
-	 kM21O5AB16DDodJGZkdgufQrPemc//1+7c5EjN2Bcfy9hC7S5IqtfoExLfKkxEoojm
-	 r/bM72J0di4XL6yeQVVfZS1gUA6fRGY0vyTU8Njgpc4NzHlQYxCDELLr+Tj56lAwr6
-	 xzqiFUB3nJBLJ1YEZ9kXgXdJfAs5bdxuD8jLVKiVnWRmr+SRbGGEgIynHfivWv5wvw
-	 vBlWmJHu9kXwA==
-Received: from [10.30.226.235] (localhost [IPv6:::1])
-	by aws-us-west-2-korg-oddjob-rhel9-1.codeaurora.org (Postfix) with ESMTP id ADF2939EF947;
-	Wed,  1 Oct 2025 23:00:19 +0000 (UTC)
-Subject: Re: [GIT PULL] I3C changes for 6.18
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <2025100121394906389990@mail.local>
-References: <2025100121394906389990@mail.local>
-X-PR-Tracked-List-Id: <linux-i3c.lists.infradead.org>
-X-PR-Tracked-Message-Id: <2025100121394906389990@mail.local>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-6.18
-X-PR-Tracked-Commit-Id: d6ddd9beb1a5c32acb9b80f5c2cd8b17f41371d1
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: 080ffb4bec4d49cdedca11810395f8cad812471e
-Message-Id: <175935961826.2651312.93069349055499467.pr-tracker-bot@kernel.org>
-Date: Wed, 01 Oct 2025 23:00:18 +0000
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Linus Torvalds <torvalds@linux-foundation.org>, linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+	s=k20201202; t=1759586136;
+	bh=0lcJTwiDz+X5ZWqWVnKnnPVH3k879M0u6FIgY+6M3nw=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+	b=Vr5RXBGBKmPAjhB2fOd2nyGLYarow+Idh9wjEA37mP0o2UpHkIuD/ypI08FerBVoR
+	 cX9jDWEGOG3iaEO332NXJVnXFCDgNtBTgKVboOocWHeKj7qizouAMlZQolWRwHU8iC
+	 qqdnPtst5BJFgHeOri2OBlea6A/wppilobDxW0dzBzkc+gNvKFFhRda6/T7jWctj74
+	 xBZBDIwocMaEJg0l0MjX4InMY6UXzTcTZb+OnFYsTfiPNl762SQTM/Wl8pMzmf6bdm
+	 AOR31iktVqLX6sgv+joA0wKw7Su2086vp70U8qm6Iiw/RDjAzXSzo8L4KdG6/BdeGe
+	 gbIl4DD5U56wA==
+Date: Sat, 4 Oct 2025 14:55:26 +0100
+From: Jonathan Cameron <jic23@kernel.org>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, Miquel Raynal
+ <miquel.raynal@bootlin.com>, David Lechner <dlechner@baylibre.com>, Nuno
+ =?UTF-8?B?U8Oh?= <nuno.sa@analog.com>, Andy Shevchenko <andy@kernel.org>,
+ linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+ imx@lists.linux.dev, linux-iio@vger.kernel.org, Carlos Song
+ <carlos.song@nxp.com>
+Subject: Re: [PATCH v3 5/5] iio: magnetometer: Add mmc5633 sensor
+Message-ID: <20251004145526.13224aaf@jic23-huawei>
+In-Reply-To: <20250930-i3c_ddr-v3-5-b627dc2ef172@nxp.com>
+References: <20250930-i3c_ddr-v3-0-b627dc2ef172@nxp.com>
+	<20250930-i3c_ddr-v3-5-b627dc2ef172@nxp.com>
+X-Mailer: Claws Mail 4.3.1 (GTK 3.24.51; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251004_065538_235644_FBE503DB 
+X-CRM114-Status: GOOD (  24.87  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,24 +72,184 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The pull request you sent on Wed, 1 Oct 2025 23:39:49 +0200:
+On Tue, 30 Sep 2025 15:34:24 -0400
+Frank Li <Frank.Li@nxp.com> wrote:
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-6.18
+> Add mmc5633 sensor basic support.
+> - Support read 20 bits X/Y/Z magnetic.
+> - Support I3C HDR mode to send start measurememt command.
+> - Support I3C HDR mode to read all sensors data by one command.
+> 
+> Co-developed-by: Carlos Song <carlos.song@nxp.com>
+> Signed-off-by: Carlos Song <carlos.song@nxp.com>
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/080ffb4bec4d49cdedca11810395f8cad812471e
+Hi Frank,
 
-Thank you!
+A few more minor things inline.
 
--- 
-Deet-doot-dot, I am a bot.
-https://korg.docs.kernel.org/prtracker.html
+Thanks,
+
+Jonathan
+
+> ---
+> Change in v3
+> - remove mmc5633_hw_set
+> - make -> Make
+> - change indention for mmc5633_samp_freq
+> - use u8 arrary to handle dword data
+> - get_unaligned_be16() to get raw data
+> - add helper function to check if i3c support hdr
+> - use read_avail() callback
+> 
+> change in v2
+> - new patch
+
+> diff --git a/drivers/iio/magnetometer/mmc5633.c b/drivers/iio/magnetometer/mmc5633.c
+> new file mode 100644
+> index 0000000000000000000000000000000000000000..bcd79ab6053d50026961f7cf9da296c30c720399
+> --- /dev/null
+> +++ b/drivers/iio/magnetometer/mmc5633.c
+> @@ -0,0 +1,534 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * MMC5633 - MEMSIC 3-axis Magnetic Sensor
+> + *
+> + * Copyright (c) 2015, Intel Corporation.
+> + * Copyright (c) 2025, NXP
+> + *
+> + * IIO driver for MMC5633, base on mmc35240.c
+> + */
+> +
+> +#include <linux/delay.h>
+> +#include <linux/i2c.h>
+> +#include <linux/i3c/device.h>
+> +#include <linux/iio/iio.h>
+> +#include <linux/iio/sysfs.h>
+> +#include <linux/init.h>
+> +#include <linux/iopoll.h>
+> +#include <linux/module.h>
+> +#include <linux/mod_devicetable.h>
+> +#include <linux/pm.h>
+> +#include <linux/regmap.h>
+> +#include <linux/unaligned.h>
+> +
+> +#define MMC5633_REG_XOUT_L	0x00
+> +#define MMC5633_REG_XOUT_H	0x01
+> +#define MMC5633_REG_YOUT_L	0x02
+> +#define MMC5633_REG_YOUT_H	0x03
+> +#define MMC5633_REG_ZOUT_L	0x04
+> +#define MMC5633_REG_ZOUT_H	0x05
+> +#define MMC5633_REG_XOUT_2	0x06
+> +#define MMC5633_REG_YOUT_2	0x07
+> +#define MMC5633_REG_ZOUT_2	0x08
+> +
+> +#define MMC5633_REG_STATUS1	0x18
+> +#define MMC5633_REG_STATUS0	0x19
+> +#define MMC5633_REG_CTRL0	0x1b
+> +#define MMC5633_REG_CTRL1	0x1c
+> +#define MMC5633_REG_CTRL2	0x1d
+> +
+> +#define MMC5633_REG_ID		0x39
+> +
+> +#define MMC5633_STATUS1_MEAS_M_DONE_BIT	BIT(6)
+> +
+> +#define MMC5633_CTRL0_CMM_FREQ_EN	BIT(7)
+> +#define MMC5633_CTRL0_AUTO_ST_EN	BIT(6)
+> +#define MMC5633_CTRL0_AUTO_SR_EN	BIT(5)
+> +#define MMC5633_CTRL0_RESET		BIT(4)
+> +#define MMC5633_CTRL0_SET		BIT(3)
+> +#define MMC5633_CTRL0_MEAS_T		BIT(1)
+> +#define MMC5633_CTRL0_MEAS_M		BIT(0)
+> +
+> +#define MMC5633_CTRL1_BW0_BIT		BIT(0)
+> +#define MMC5633_CTRL1_BW1_BIT		BIT(1)
+
+Drop these and
+
+> +
+> +#define MMC5633_CTRL1_BW_MASK		(MMC5633_CTRL1_BW0_BIT | \
+> +					 MMC5633_CTRL1_BW1_BIT)
+
+use GENMASK(1, 0) here
+
+> +
+> +#define MMC5633_WAIT_CHARGE_PUMP	50000	/* us */
+
+Name them so the unit is in the define and then you don't need
+the comment + we can see the unit where they are used.
+*PUMP_USECS for example
+
+> +#define MMC5633_WAIT_SET_RESET		1000	/* us */
+> +
+> +#define MMC5633_HDR_CTRL0_MEAS_M	0x01
+> +#define MMC5633_HDR_CTRL0_MEAS_T	0x03
+> +#define MMC5633_HDR_CTRL0_SET		0X05
+> +#define MMC5633_HDR_CTRL0_RESET		0x07
+> +
+
+> +static const struct {
+> +	int val;
+> +	int val2;
+> +} mmc5633_samp_freq[] = {
+> +	{1, 200000},
+> +	{2, 0},
+> +	{3, 500000},
+> +	{6, 600000},
+
+My preference for style in IIO is
+	{ 1, 200000 },
+	{ 2, 0 },
+etc.
+
+> +};
+
+
+> +static bool mmc5633_is_support_hdr(struct mmc5633_data *data)
+> +{
+> +	if (!data->i3cdev)
+> +		return false;
+> +
+> +	return !!(i3c_device_get_supported_xfer_mode(data->i3cdev) & BIT(I3C_HDR_DDR));
+The !! isn't needed given assigning an integer to the bool will have same effect.
+> +}
+
+
+
+> +static const struct of_device_id mmc5633_of_match[] = {
+> +	{ .compatible = "memsic,mmc5633", },
+> +	{ }
+> +};
+> +MODULE_DEVICE_TABLE(of, mmc5633_of_match);
+> +
+> +static const struct i2c_device_id mmc5633_i2c_id[] = {
+> +	{ "mmc5633" },
+> +	{}
+	{ }
+Both for consistency and because I'm more broadly trying to standardize
+on that formatting for IIO.
+
+> +};
+> +MODULE_DEVICE_TABLE(i2c, mmc5633_i2c_id);
+> +
+> +static struct i2c_driver mmc5633_i2c_driver = {
+> +	.driver = {
+> +		.name = "mmc5633_i2c",
+> +		.of_match_table = mmc5633_of_match,
+> +		.pm = pm_sleep_ptr(&mmc5633_pm_ops),
+> +	},
+> +	.probe	  = mmc5633_i2c_probe,
+> +	.id_table       = mmc5633_i2c_id,
+
+Mixture of tabs and spacing here.   I'd just use a single space
+before the = and don't try to align them.
+
+> +};
 
 -- 
 linux-i3c mailing list
