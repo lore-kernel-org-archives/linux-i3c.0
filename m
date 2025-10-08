@@ -4,60 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D5C53CCD199
-	for <linux-i3c@archiver.kernel.org>; Thu, 16 Oct 2025 15:11:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C07D3CCD195
+	for <linux-i3c@archiver.kernel.org>; Fri, 17 Oct 2025 18:47:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZV+BdLsTJ29tD1C8VmpkajagrX+m3qaigrNvgygfQ8w=; b=qiO2iLA205qys3
-	EzXOEXkQ5H8H8OtZhr3nIdy5r0VFUC1zOPvv82EPaPMmQy9HnvP1cjNi4ZX1Oyf8M3IJIQDtRn/JW
-	FUqW5DKvQBhnuNFmleHkeqxq9yGrYt6EXT+hViq6fXSqbWVKnpiSQKKxujAO3lzUM5toJ0o/gv83t
-	C30NZsfrbmVVvISGC8DhaK/JuwEMOwxuQnKRUETpk86jIlU3QHKR5UIKqW/934ZoQwor1cNWz/M9o
-	C87KlzhBx5n/vLl7gVvV5zfBrqrxqDR0+1b/Y9ufbEdLRKGYvD+OnzWpck3psCbxb3HFjIL3jXUKm
-	uP0hvJsYazQn2zLvrLeQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=niUEJMVsdg6OZzUyGT8x7ii69q1pNISYJ91fGnc+Gn8=; b=F49XgK+JZJlEy93eZHxvWZgy4V
+	bnVCzJKhQA+2iHE4wdxMX8BFPEQTQ1kBEUjyhgesnepAW2B898WMgVTqzNz2UuPy9an5MmdnnXj2E
+	k9P5tlQrD5j65cixPdfAx8KP4D/J9n53ewO82THtp4wgQxNQGL9cbJOxonIm3FoO96I+HoT3bv3J1
+	Odb7rsDJVP+pRRZV/vJYdVvwDtn3HatXoHbZj35tXXJpDq9aYuhkRpckyOqrHIWI+cc/XWMYvBCoo
+	VQkh0vOOjKvioFFSLEKvL3JQhyvQCtJBaP9f9TKN4XGzG6Q1aCujXmsASVFdDx+vID6XsqC5FzGz4
+	KbUwzlZg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9Pdb-000000058ix-2X1S;
-	Thu, 16 Oct 2025 15:11:31 +0000
+	id 1v9pUU-00000008hsS-1Rgq;
+	Fri, 17 Oct 2025 18:47:50 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v9PdZ-000000058iC-18Hn
+	id 1v6acS-00000004cEm-3OXn
 	for linux-i3c@lists.infradead.org;
-	Thu, 16 Oct 2025 15:11:30 +0000
+	Wed, 08 Oct 2025 20:18:41 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id E4471441D7;
-	Thu, 16 Oct 2025 15:11:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6D8CAC4CEF1;
-	Thu, 16 Oct 2025 15:11:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
-	s=korg; t=1760627488;
-	bh=vBLUTjIvPSHDCeoOugC1wlQNqMQ/LTwY9D4e8ev8Trs=;
+	by sea.source.kernel.org (Postfix) with ESMTP id 69ECC48B72;
+	Wed,  8 Oct 2025 20:18:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 51887C4CEE7;
+	Wed,  8 Oct 2025 20:18:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1759954719;
+	bh=NPfFVoW/LsVVuz6xy4asuQtfUdYNXIh1K0Bl95lxHK0=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=VEu6WyfSQGEPJWcUV8eMno+zO0EtJ2yevlYQWmOcwpBOvs7kbvO4D2jtC1WB4Jh9s
-	 zNPmP5Z1hmUcQfTGOnwiRpz5DXTUJQsQu3Hy9ODi+ryl9tixYOBT5OD0+qz23qIcHf
-	 ur04tVPckGgdPIkqM9BI6lUhMXsDarUQFA9eMyEA=
-Date: Thu, 16 Oct 2025 17:11:26 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Markus Elfring <Markus.Elfring@web.de>
-Cc: Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Arnd Bergmann <arnd@arndb.de>,
-	Boris Brezillon <bbrezillon@kernel.org>, imx@lists.linux.dev,
-	LKML <linux-kernel@vger.kernel.org>,
-	kernel-janitors@vger.kernel.org, Shuhao Fu <sfual@cse.ust.hk>
-Subject: Re: [PATCH v3] i3c: fix refcount inconsistency in i3c_master_register
-Message-ID: <2025101616-marital-reflected-a030@gregkh>
-References: <20251016143814.2551256-1-Frank.Li@nxp.com>
- <8b9e079f-c119-4dc9-a489-9cfc8e322c27@web.de>
+	b=eWEuV7Nd5F7lsXWr/UkCGuvskUUzW9C9N2qKdcElDqx/deuTzBTWJueKZCqT5MWC/
+	 kE9/oj3IagxHP2hfMgU4vzc/Njx/JocASOAc5uKkczRX+NIlOw6Mqyp/fQefLpzg8G
+	 wdZ0PE/DJ3aqz4hxPAy53TqIx2L5wSKfK5n3GRFbuiq6XWwlUvSyo5gBcH5hYoqXPG
+	 MjuNTh9Zt8dK2y/pJsA6K5jRLX+DyJVYc+XBwb5npwxFnU6Tg5tJW+37C8v8Bly8tm
+	 xAGkxk47sVjIiMklhP2bNpjIUHz4ummV0re5RGFKkE0hpc6l4oMmX042tikLqLgpwE
+	 JgOoQ+b6LPL7g==
+Date: Wed, 8 Oct 2025 21:18:34 +0100
+From: Conor Dooley <conor@kernel.org>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
+	Jonathan Cameron <jic23@kernel.org>,
+	David Lechner <dlechner@baylibre.com>,
+	Nuno =?iso-8859-1?Q?S=E1?= <nuno.sa@analog.com>,
+	Andy Shevchenko <andy@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+	linux-iio@vger.kernel.org, joshua.yeong@starfivetech.com,
+	devicetree@vger.kernel.org
+Subject: Re: [PATCH v5 4/5] dt-bindings: trivial-devices: add MEMSIC 3-axis
+ magnetometer
+Message-ID: <20251008-subtitle-estranged-b35dfcd2d3a7@spud>
+References: <20251007-i3c_ddr-v5-0-444184f7725e@nxp.com>
+ <20251007-i3c_ddr-v5-4-444184f7725e@nxp.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8b9e079f-c119-4dc9-a489-9cfc8e322c27@web.de>
+In-Reply-To: <20251007-i3c_ddr-v5-4-444184f7725e@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251016_081129_327197_885A3623 
-X-CRM114-Status: GOOD (  12.23  )
+X-CRM114-CacheID: sfid-20251008_131840_867483_191CFEF6 
+X-CRM114-Status: GOOD (  12.92  )
+X-Mailman-Approved-At: Fri, 17 Oct 2025 11:47:48 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,31 +78,88 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============4500902240216394841=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBPY3QgMTYsIDIwMjUgYXQgMDU6MDc6MzhQTSArMDIwMCwgTWFya3VzIEVsZnJpbmcg
-d3JvdGU6Cj4gPiBJbiBgaTNjX21hc3Rlcl9yZWdpc3RlcmAsIGEgcG9zc2libGUgcmVmY291bnQg
-aW5jb25zaXN0ZW5jeSBoYXMgYmVlbgo+ID4gaWRlbnRpZmllZCwgY2F1c2luZyBwb3NzaWJsZSBy
-ZXNvdXJjZSBsZWFrLgo+IOKApgo+IAo+ICogQ2FuIGl0IGJlIHByZWZlcnJlZCB0byByZWZlciB0
-byB0aGUgdGVybSDigJxyZWZlcmVuY2UgY291bnTigJ0/Cj4gCj4gKiBXb3VsZCBpdCBiZSBoZWxw
-ZnVsIHRvIGFwcGVuZCBwYXJlbnRoZXNlcyB0byBmdW5jdGlvbiBuYW1lcyBhdCBtb3JlIHBsYWNl
-cz8KPiAKPiAKPiBSZWdhcmRzLAo+IE1hcmt1cwoKCkhpLAoKVGhpcyBpcyB0aGUgc2VtaS1mcmll
-bmRseSBwYXRjaC1ib3Qgb2YgR3JlZyBLcm9haC1IYXJ0bWFuLgoKTWFya3VzLCB5b3Ugc2VlbSB0
-byBoYXZlIHNlbnQgYSBub25zZW5zaWNhbCBvciBvdGhlcndpc2UgcG9pbnRsZXNzCnJldmlldyBj
-b21tZW50IHRvIGEgcGF0Y2ggc3VibWlzc2lvbiBvbiBhIExpbnV4IGtlcm5lbCBkZXZlbG9wZXIg
-bWFpbGluZwpsaXN0LiAgSSBzdHJvbmdseSBzdWdnZXN0IHRoYXQgeW91IG5vdCBkbyB0aGlzIGFu
-eW1vcmUuICBQbGVhc2UgZG8gbm90CmJvdGhlciBkZXZlbG9wZXJzIHdobyBhcmUgYWN0aXZlbHkg
-d29ya2luZyB0byBwcm9kdWNlIHBhdGNoZXMgYW5kCmZlYXR1cmVzIHdpdGggY29tbWVudHMgdGhh
-dCwgaW4gdGhlIGVuZCwgYXJlIGEgd2FzdGUgb2YgdGltZS4KClBhdGNoIHN1Ym1pdHRlciwgcGxl
-YXNlIGlnbm9yZSBNYXJrdXMncyBzdWdnZXN0aW9uOyB5b3UgZG8gbm90IG5lZWQgdG8KZm9sbG93
-IGl0IGF0IGFsbC4gIFRoZSBwZXJzb24vYm90L0FJIHRoYXQgc2VudCBpdCBpcyBiZWluZyBpZ25v
-cmVkIGJ5CmFsbW9zdCBhbGwgTGludXgga2VybmVsIG1haW50YWluZXJzIGZvciBoYXZpbmcgYSBw
-ZXJzaXN0ZW50IHBhdHRlcm4gb2YKYmVoYXZpb3Igb2YgcHJvZHVjaW5nIGRpc3RyYWN0aW5nIGFu
-ZCBwb2ludGxlc3MgY29tbWVudGFyeSwgYW5kCmluYWJpbGl0eSB0byBhZGFwdCB0byBmZWVkYmFj
-ay4gIFBsZWFzZSBmZWVsIGZyZWUgdG8gYWxzbyBpZ25vcmUgZW1haWxzCmZyb20gdGhlbS4KCnRo
-YW5rcywKCmdyZWcgay1oJ3MgcGF0Y2ggZW1haWwgYm90CgotLSAKbGludXgtaTNjIG1haWxpbmcg
-bGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
+
+--===============4500902240216394841==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="sqGdDHF1UKLk1vs2"
+Content-Disposition: inline
+
+
+--sqGdDHF1UKLk1vs2
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, Oct 07, 2025 at 04:06:16PM -0400, Frank Li wrote:
+> Add compatible string 'memsic,mmc5603' and 'memsic,mmc5633' for
+> MEMSIC 3-axis magnetometer.
+>=20
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
+--
+pw-bot: handled-elsewhere
+
+> ---
+> Changes in v4
+> - add memsic,mmc5603
+>=20
+> Changes from v1 .. v3
+> - None
+> ---
+>  Documentation/devicetree/bindings/trivial-devices.yaml | 4 ++++
+>  1 file changed, 4 insertions(+)
+>=20
+> diff --git a/Documentation/devicetree/bindings/trivial-devices.yaml b/Doc=
+umentation/devicetree/bindings/trivial-devices.yaml
+> index 7609acaa752d5c1c89a26bb007fa38357dee1a28..72786eebfbd63beffd2a09fc2=
+0c7aedbe9e96a8e 100644
+> --- a/Documentation/devicetree/bindings/trivial-devices.yaml
+> +++ b/Documentation/devicetree/bindings/trivial-devices.yaml
+> @@ -225,6 +225,10 @@ properties:
+>            - meas,tsys01
+>              # MEMSIC magnetometer
+>            - memsic,mmc35240
+> +            # MEMSIC 3-axis magnetometer
+> +          - memsic,mmc5603
+> +            # MEMSIC 3-axis magnetometer (Support I3C HDR)
+> +          - memsic,mmc5633
+>              # MEMSIC 3-axis accelerometer
+>            - memsic,mxc4005
+>              # MEMSIC 2-axis 8-bit digital accelerometer
+>=20
+> --=20
+> 2.34.1
+>=20
+
+--sqGdDHF1UKLk1vs2
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaObHGQAKCRB4tDGHoIJi
+0kYFAQDlJRBo3V6un4TdXGebaBOYpaei0g/okMdZdefOo2s6WAEA7JKupNoV9yYg
+TZOT/iUlzA563LqVO58o6aXWJEQGyQk=
+=vzKo
+-----END PGP SIGNATURE-----
+
+--sqGdDHF1UKLk1vs2--
+
+
+--===============4500902240216394841==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
+
+--===============4500902240216394841==--
+
