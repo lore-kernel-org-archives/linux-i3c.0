@@ -4,59 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12E09CCD185
-	for <linux-i3c@archiver.kernel.org>; Mon, 13 Oct 2025 19:44:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 287A0CCD185
+	for <linux-i3c@archiver.kernel.org>; Mon, 13 Oct 2025 19:55:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=peZn7JRMnM9iX+xUMOp8Cpbah80iIvooEDG4oI7XlpQ=; b=NhCeWeetHW1YoH
-	I4c5Q/9ePApO6E+W99C/lpUrbKMXXHrVJ0yPX3KMsASilDzTOGzFDNPPJjR3c3zj+RCD54+SmiOnp
-	mQDbj/86s5iQ6SL3QxQ0fDUNSUiTrXT0D0oKZaQVbml7Y/axt2Sj8/FuSCzkufvlS3a1THA237Tbm
-	Pbs/KFDp6EaRgSn1Bf1vKYcIJZNGuWEAmKkfCZsrJ79DzfinGQk+v/9f6zeuM1rYnKRgFA3QQudpE
-	eosWVZA7MNiFrdjQGx+EYyuTs3XxERVinVCNf9rgD4ZBGc39aE3MmkUNQu4HqFFw/n4653O1Flj/+
-	3UWARZ6S+E7w3RKB+Lzw==;
+	List-Owner; bh=vvHtz6eIJAuTK2GbT2XLUds8MeD3Qgg5v4O41rwnSTg=; b=aZbmPH08zWylz7
+	a0gyRfFdYZOOOKkh3+t0EDEyJzmLJsDsNjakMD+zqCXLJhcEQKH09kaHizPyMHtbg6psse9pmaFPU
+	55u3ub5mT/oMRUYNuVMceGNHKRpRylfZn1+N/E91Ju0C1E7pMRgB8htiYPd5cgoRUqRvanvbUCRAq
+	DET6ca+4G61sdEDnauhiou9RbnGSleWTBkDR4+ySJLMUHnnODltGPfWRpOenM04XeImyUhdoL/J2P
+	pQoVYNyd7tonNUApd/HLTyKMu9BzkG3+D+CXyPDZxSvrmu3vyBl2qJqioLiH+bNzUUFIU7XwYYWC7
+	wpi3jX0j4Xe26u5AaPLQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8OTP-0000000EJZZ-3OkE;
-	Mon, 13 Oct 2025 19:44:47 +0000
-Received: from mail-norwayeastazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20f::7] helo=OSPPR02CU001.outbound.protection.outlook.com)
+	id 1v8OdX-0000000EKIm-3cet;
+	Mon, 13 Oct 2025 19:55:15 +0000
+Received: from smtpout-04.galae.net ([185.171.202.116])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v8OTN-0000000EJZA-1EXo
+	id 1v8OdT-0000000EKIM-3zkn
 	for linux-i3c@lists.infradead.org;
-	Mon, 13 Oct 2025 19:44:46 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=QGW01dBl8tmlrzvWWhQv5b4O4WSOo3BUnr9mcQ6biKFMIsLo8tUOpDVzT46tnRoGaqiTN2X/9Zu+iT73kLFGCk1mFE2UVfN06c8QaKLceOKDpQcI++sgIEbOJG7bAhtLJDlKAPrTNQ9fJxrpyYD/u3mxZhYrO8Hl8XnPhdr9C75uX/a4l67Nz8+ohdjUpa9oxqq2aL46JY+Fp30Sp1Ot1AfTLDmr7c9hh/44FTB4Y4ThWgjxFjSvDFR8UDFYzf+aIbr7CwcFIVZ1Shsjg9vxXqP3e4oKH6IFQynJEe+g/dZb3XgyvbwDjFJavVEOUoIXBAzR+FK7SLyPRHvEWYhJJg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=HoXbTrVND36dY9HjFOBUseUx4yyZdjyVaUpQhu304aA=;
- b=k6rMjqB7reP0cyTc9G1/r4tTytLYOzST5GASVTokPqseibEvnYzFjjV4MjPh46+ibXCMreVTtR0iC8cCcHtovFK6+S58AgXCKbsX3RVyTO+9DSQBtPNLPbyGX6zXjeFXnReS24677xyuKz2iO6e1zmmKjUFK3jEs84OGynyUsrAEoBu66PmCl6ss4pRAr+XuHongOo1RyuDJrCmoFj3s87P2b9+U3xVSVWYLm2umcWvHAyLNqXUWGp9yhbYX8mjOxzOPdKQHu83X82iAFj2n2lmLP4pciGokMOKkpnDuZJgIjCG8cgKhmFGE0oNb6OJGeK2cOxkhclY27UvBUY5vQQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HoXbTrVND36dY9HjFOBUseUx4yyZdjyVaUpQhu304aA=;
- b=WD+1W5E6sOIDEvzMWZvQ+Tdvmddn451XIoSudl30B/LvNfP3FiB07da0vhaUkL1hh3YnCZPVeCFoOeYjEqRUtcegytFs77jKj4sFMZbKUCusPF34+yFtowFjZwuJgcmfTsXKQkZj0YS4HaRXqCmR0XVrkqKuuRXinuVK36iEz2bQIpjlmkdWI8k+tvMJSFKvgrw6ldMW8zmPw4YiJ5alWzLh7IFE1esrWJXR124HVoR40uC2PnIjF5dHMPf3UQbHNovRZ0ZvaW5DKf7zohJiiZurz8SPliHBR5/VLjPsgdWDUfP7yfBg4EFk3L062egTMeYXnQwyZ+WFOqKpS2hnyA==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AS4PR04MB9621.eurprd04.prod.outlook.com (2603:10a6:20b:4ff::22)
- by VI0PR04MB10096.eurprd04.prod.outlook.com (2603:10a6:800:24c::20) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9203.12; Mon, 13 Oct
- 2025 19:44:38 +0000
-Received: from AS4PR04MB9621.eurprd04.prod.outlook.com
- ([fe80::a84d:82bf:a9ff:171e]) by AS4PR04MB9621.eurprd04.prod.outlook.com
- ([fe80::a84d:82bf:a9ff:171e%4]) with mapi id 15.20.9203.009; Mon, 13 Oct 2025
- 19:44:38 +0000
-Date: Mon, 13 Oct 2025 15:44:30 -0400
-From: Frank Li <Frank.li@nxp.com>
+	Mon, 13 Oct 2025 19:55:14 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-04.galae.net (Postfix) with ESMTPS id 60C4FC093B5;
+	Mon, 13 Oct 2025 19:54:47 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 45DA66067B;
+	Mon, 13 Oct 2025 19:55:06 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 10BD9102F227A;
+	Mon, 13 Oct 2025 21:54:55 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1760385305; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=ueA4Mw4ZvAdPduByR8LCFz7NV7MIajA8VN4BjDi+iYc=;
+	b=tSMPaCM3u/5AMWi6C2uaGeO7nteYc8EWKCbf8Atx+55xMokblB8D7uyqQUIN5UN0VCyf8M
+	92rSu2RHAMygLwiTzDHbfNr6o39la14ofppeSKWml+FP2LeSBi+tMVaA9t21CfewwODbPY
+	O2iuzUWMZ9m3sdCASDH/6F85ruQDAszHZA2BlFfDdR01oDoTOGJcZVTzMKsl+PR7xrtB/u
+	kCvU5b6eyw7dGzYrzu/ZYfz+585J2Rmp3YyycCPmvrqpkvXzI4JJICjnHtrTPDlVVxjYUD
+	8Lnbu5vdBtJDAqrcnk19G+o0IESLUGkvny+JXMAEGdeZnfZ8WdPwOeSuFhLf8w==
+Date: Mon, 13 Oct 2025 21:54:55 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 To: Jonathan Cameron <jic23@kernel.org>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
+Cc: Frank Li <Frank.Li@nxp.com>, Miquel Raynal <miquel.raynal@bootlin.com>,
 	David Lechner <dlechner@baylibre.com>,
 	Nuno =?iso-8859-1?Q?S=E1?= <nuno.sa@analog.com>,
 	Andy Shevchenko <andy@kernel.org>, Rob Herring <robh@kernel.org>,
@@ -66,91 +56,17 @@ Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	linux-iio@vger.kernel.org, joshua.yeong@starfivetech.com,
 	devicetree@vger.kernel.org, Carlos Song <carlos.song@nxp.com>,
 	Adrian Fluturel <fluturel.adrian@gmail.com>
-Subject: Re: [PATCH v5 5/5] iio: magnetometer: Add mmc5633 sensor
-Message-ID: <aO1WnvWaTDhU9PNo@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH v5 0/5] i3c: Add basic HDR mode support
+Message-ID: <2025101319545551cfb399@mail.local>
 References: <20251007-i3c_ddr-v5-0-444184f7725e@nxp.com>
- <20251007-i3c_ddr-v5-5-444184f7725e@nxp.com>
- <20251012180119.312191fd@jic23-huawei>
-Content-Disposition: inline
-In-Reply-To: <20251012180119.312191fd@jic23-huawei>
-X-ClientProxiedBy: PH7PR10CA0022.namprd10.prod.outlook.com
- (2603:10b6:510:23d::6) To AS4PR04MB9621.eurprd04.prod.outlook.com
- (2603:10a6:20b:4ff::22)
+ <20251012180327.5d94dda2@jic23-huawei>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AS4PR04MB9621:EE_|VI0PR04MB10096:EE_
-X-MS-Office365-Filtering-Correlation-Id: 7c41be08-ca5d-48af-5b73-08de0a90f1ab
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|52116014|376014|7416014|366016|1800799024|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?lUl3tEnvTNDARvTWFuI5Vr6eEGowjr/7l3Ud3AEWSyDYkrgZk0A3FbdTHL+E?=
- =?us-ascii?Q?aSfn8mTBNO4yaX6tSRaO6Oyl75Ug5t1xnVnHWOjb+9If5p6UyfBrKhbOQkDi?=
- =?us-ascii?Q?IZ6v0EYqvJQaD60ndeqSqzgqLTHmRHiUBcBQgQsHKFwFDN+l3bMBflbU2F8q?=
- =?us-ascii?Q?8lnerEMMNdAvBT7CWk7izXn433rJn/gsxaCloTkeP1Kuf8PUg10cPaNPtJqu?=
- =?us-ascii?Q?OBiZr9/BZ++0VzV4EZAfYXQDIr9E5klMue8UV9hIQ1eQ5+wUZTowAUiAR8MI?=
- =?us-ascii?Q?WTjvx+03nUuzO887w6gULfCZfDoNHAotwpVQMMovMGaNXVGPqoHLatS26KAz?=
- =?us-ascii?Q?twDFyqqRz1e9epo7DKZ1+pPCIrrLjnQMLqCMzzDDVRazMdFAoanbi0iSW+aT?=
- =?us-ascii?Q?GGfZkvslxXKoO7OgJ3ECjLKgLD95wsIuKo1Ma3JOMiBlSIjTf5wFCVz+9V4v?=
- =?us-ascii?Q?ZOYbylCaSGdoxWqDCead6m/Im/e0sDPkofPKxoIRboXxQHNnIINhmWzXgyB+?=
- =?us-ascii?Q?z4YnoXDIXNVG+yCF4D55WmgT4Kqw4WESw9oG06M5oSS8RpJckVgfRlWmDNrn?=
- =?us-ascii?Q?NkdhPkRVL5bzFVoHOIvxpnWlfuR6qdyOqq84T2SfhIgYoiSu2Y0ln9n1hF2/?=
- =?us-ascii?Q?MUYzmyV8LkhMaq6GUpTDd8Pcq0gc0BZYl3+i+bavaDyVyPgIxFSjgNT2Z/Rk?=
- =?us-ascii?Q?K1rYSrNTFoP1WRpmcGOOzNNZnln/JjaR2tKW7+tD38hNRsk+UJi9NXIOXl6j?=
- =?us-ascii?Q?YfxnXzYwkih4CX4K4UWyzj51LMy3NAhk24UB+p34PkYp/NNs0b/LlSG28U+b?=
- =?us-ascii?Q?XlSu+vwyG4lmCzOeEXkSIJQFKpi4ugw9tncz4PJ+fYZVml+uFxIUGT54/RFr?=
- =?us-ascii?Q?mspBnCD7MCcpgN21qoUfsOY1VuhNn3XoY5KNpaNU1wpG8AjQAy1bDtNtaqNh?=
- =?us-ascii?Q?U+DOu/vapMBF3Smq09TAKxRZdDW2e74AnytUY41wz1AERs2FN1NkQrK57YA/?=
- =?us-ascii?Q?FqbbD7F8iWO+TU4VCg+G0sVi2ydH3qvuxhzoUsB64wH/j74SyLhtDhpHjBSm?=
- =?us-ascii?Q?g/4h3U4OwKABnd+9D0RblJtVcLTXuPt+Ii4dAGGANEHmRgE6jDYe1CYJa+s6?=
- =?us-ascii?Q?L9Q4BAO6uDdivi3sKyZLvyLSamlPbxiPiq9YOHbdEiM34rmTjftTzOhV2fHN?=
- =?us-ascii?Q?ZrdrAqswv38jD8SMhMLDAOKr3n00wdJ3ntIvBq6sDmjnk/rS3MPNbJNMzjJs?=
- =?us-ascii?Q?y2gjwnZtXi8ppKLcIXjyFPR1RVi47SsKgUx6RWVI3jZJIvxbIYyewtEawLHT?=
- =?us-ascii?Q?/5WYJ+AovcCiMbkGcIcROqw6l4hhzVlg9p8dyKaP16Ax22tPfi1+8C9r/voL?=
- =?us-ascii?Q?xAlu2LfSryfcgA7pTLFJF3EK0Vg6YINd/wwbhP71zFZPVMGz2faG5z0PddFS?=
- =?us-ascii?Q?I/r/k1f4BMTAumQSd1NODjAs9FqP8mFqxbe1ASn3wPEC+5Bu7Q5xSg=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS4PR04MB9621.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(52116014)(376014)(7416014)(366016)(1800799024)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?gAHJ9I4jMK69h8kYL5E0OsUAH+rLCDld9tL6NZyja9gdQwU8mJFera0qfS66?=
- =?us-ascii?Q?76mFVqErLJOGyvU8Cnjugs4ZACzIII6QExjMaKK3t/T/MfwoTS20EN9nZheM?=
- =?us-ascii?Q?hrExm/6PgYGGR74k1JK2hFFQcZJiPyEi4w/gKgG7d5NjOTuQ5De8vxMprnXq?=
- =?us-ascii?Q?8W6NkHDTXDDsd6YQC3jpvTc/DaptNgtqzlHwQoHldRp67AA8r/L+Islv6Zs8?=
- =?us-ascii?Q?mOvFeKbdzwDpmomXjx4tm8lsglA/0POlQ52wN7R7FHSjuqXryADN0WWsQpbr?=
- =?us-ascii?Q?oMW+8az7kdOZ/BE8tI4YZDuJXU6lwTUarimeiS8EeDE9+043ajxx8pSmILg8?=
- =?us-ascii?Q?rJr9g7U5fBIdL9xt0hvu0N3C1405ZICB2j4RIGvSR+9vYsvMDI7L+bEt87q8?=
- =?us-ascii?Q?4figWYD4Qccn1Wy1aOaTdmHqpOAtUkuEyAMQEx5to5hIdTwA3bbnI73QqKAQ?=
- =?us-ascii?Q?y9Yldg9Si5cdQCAhcixIuTPqLOW2lnJeNU0h9PcU11gWqzMBkIVSOsJy1mYj?=
- =?us-ascii?Q?xBrwsw3eKAoYeoYe+6pU0/+Zso1Aig49E3i9nR9X1PtSU9CRQchMFbAeABDV?=
- =?us-ascii?Q?8BfVDTusNR/ruMLIpxrzkw2cb9Aor1IdhWS523WXu0vbsKMO1E8q4XeJIpdW?=
- =?us-ascii?Q?UBc1jnwKWBzVa33iTj/YN/GAyhej+IvyeAwxU6FyKmFZO2VsJsIqAkBecorJ?=
- =?us-ascii?Q?K7D8/mCP0xLHfgtMZlrddc8FB4BISHh8aTAdBBqcIeC6DTb5R9x+/LMU3Ssn?=
- =?us-ascii?Q?TdMsFdGmdR0ZIENZkV0hBgNXZJEVvoJmOSG63Y3fwf7QkzjK3nRwzw6H43mG?=
- =?us-ascii?Q?wBERFF5++qDy9VCJ/c435xLFo7KzkxWTC9wUvO/e9Zx8sYC34ev3DhlNX7+T?=
- =?us-ascii?Q?B4jn6eYVJrhQDwH+oUg1a6DNPLvkSxaIb15I5ISadUXvkkzkAaxEw1CGBRtB?=
- =?us-ascii?Q?njCgyyFCVFosGLnMNqXG/E0HVyyU0PVoyPpgV9P3CmEfxeqR8dBX2nmhekEc?=
- =?us-ascii?Q?rfJEUXAT2cxZe+gc4SYAMXJ8yJJdDihIMlypeMf3h4WSuOnPLapmhGdUtZBm?=
- =?us-ascii?Q?njgrgW8pmXN6hKfTQjKIBSwFBzpdP5UVUqm2FhY9EzaQAvWwwKeCtrAL/b9f?=
- =?us-ascii?Q?oPO8nGC8kER3jRxjrARf+d++WFp0r2AO6B72l7HXPNe+wfskFgbazROJcFJc?=
- =?us-ascii?Q?Hhhn0vFzQasBY5Rw3IfIVh9KYe153wXcsnyNJ/rE8jdErT3Xbt2SgvTZu4cv?=
- =?us-ascii?Q?XrHNFSsMyNiLIdhJd+OeGhja3+ZTXKXVrNFTynWEB+fmscV9GeTRZV/KXEj2?=
- =?us-ascii?Q?oBCUgv5LnPV679cFxWXMXpxDaSC++AyqpodJHaKhuGrqCwWUIc2e4Dgf7tas?=
- =?us-ascii?Q?a1pm70xMZdz3amuK7Ne+w39qt67JnOom8pwTpxLaq07gBMfOIrjGY1FIJ7ZG?=
- =?us-ascii?Q?6L1uKFvVhun7eLQSjQaYcnuYDdnvmZtQ+hQs1z79gbMCf4Nbo59fIan3prTV?=
- =?us-ascii?Q?nDIrtTTxYz6Eme9DeBz7HRpFyzvo0qx5gP4/R4G40HQzH1fbFZtohx9HrHX2?=
- =?us-ascii?Q?M7OKhM0+BShqTpPi/zHB4IbV3g3Hl2d/lkJWwhfz?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7c41be08-ca5d-48af-5b73-08de0a90f1ab
-X-MS-Exchange-CrossTenant-AuthSource: AS4PR04MB9621.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Oct 2025 19:44:38.1434
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: qTT3N9/2YH67wVcSoQT3OKiYni0Dfi9ZcRxGjekbjdXeNdnRvEUj+u9N800FjeHUGLYVlPVUF7i4/u3h2/UPeg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI0PR04MB10096
+Content-Disposition: inline
+In-Reply-To: <20251012180327.5d94dda2@jic23-huawei>
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251013_124445_358145_BCA3E6B2 
-X-CRM114-Status: GOOD (  37.50  )
+X-CRM114-CacheID: sfid-20251013_125512_530486_2131C503 
+X-CRM114-Status: GOOD (  15.42  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -167,148 +83,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Sun, Oct 12, 2025 at 06:01:19PM +0100, Jonathan Cameron wrote:
-> On Tue, 07 Oct 2025 16:06:17 -0400
+On 12/10/2025 18:03:27+0100, Jonathan Cameron wrote:
+> On Tue, 07 Oct 2025 16:06:12 -0400
 > Frank Li <Frank.Li@nxp.com> wrote:
->
-> > Add mmc5633 sensor basic support.
-> > - Support read 20 bits X/Y/Z magnetic.
-> > - Support I3C HDR mode to send start measurememt command.
-> > - Support I3C HDR mode to read all sensors data by one command.
-> >
-> > Co-developed-by: Carlos Song <carlos.song@nxp.com>
-> > Signed-off-by: Carlos Song <carlos.song@nxp.com>
-> > Co-developed-by: Adrian Fluturel <fluturel.adrian@gmail.com>
-> > Signed-off-by: Adrian Fluturel <fluturel.adrian@gmail.com>
+> 
+> > Add basic HDR mode support, only support private transfer, not support
+> > CCC command.
+> > 
+> > Update i3c framework API to allow pass down mode and extend driver callback
+> > function.
+> > 
+> > Implement HDR transfer in svc i3c master driver.
+> > 
+> > Simplifed HDR flow is (ref i3c spec line 5514) Figure 129
+> > 
+> > <--              SDR            ---> | <--- HDR
+> > START 0x7E RnW(0) ACK CCC(ENTHDR0) T   HDR-CMD(00-7f write, 80--ff read)
+> > 
+> >                                     ----> |  
+> > HDR-DATA HDR-CRC HDR-RESTART .... HDR-EXIT
+> > 
+> > Note: HDR-CMD is 16bit data, which included 7bit slave address and 8bit
+> > read/write command.
+> > 
+> > svc hardware can auto issue SDR part.
+> > 
 > > Signed-off-by: Frank Li <Frank.Li@nxp.com>
->
-> Until now I missed the ACPI IDs that look to be almost certainly invalid.
-> See below.
->
->
-> > ---
-> > Change in V4
-> > - use { 1, 2000 }
-> > - Add _US for timeout
-> > - Use GEN_MASK for MMC5633_CTRL1_BW_MASK
-> > - Use { } for terminator.
-> > - remove !!
-> > - fix mix tab and space
-> > - add mmc5603 (merge https://lore.kernel.org/all/20251003000731.22927-1-fluturel.adrian@gmail.com/)
-> > - add tempature measure support
-> >
-> > Change in v3
-> > - remove mmc5633_hw_set
-> > - make -> Make
-> > - change indention for mmc5633_samp_freq
-> > - use u8 arrary to handle dword data
-> > - get_unaligned_be16() to get raw data
-> > - add helper function to check if i3c support hdr
-> > - use read_avail() callback
-> >
-> > change in v2
-> > - new patch
->
-> > diff --git a/drivers/iio/magnetometer/mmc5633.c b/drivers/iio/magnetometer/mmc5633.c
-> > new file mode 100644
-> > index 0000000000000000000000000000000000000000..9b04cba6dbf633b7e0d136629a5aebffd072a68d
-> > --- /dev/null
-> > +++ b/drivers/iio/magnetometer/mmc5633.c
->
->
-> > +static int mmc5633_write_raw(struct iio_dev *indio_dev,
-> > +			     struct iio_chan_spec const *chan, int val,
-> > +			     int val2, long mask)
-> > +{
-> > +	struct mmc5633_data *data = iio_priv(indio_dev);
-> > +	int i, ret;
-> > +
-> > +	switch (mask) {
-> > +	case IIO_CHAN_INFO_SAMP_FREQ:
-> > +		i = mmc5633_get_samp_freq_index(data, val, val2);
-> > +		if (i < 0)
-> > +			return -EINVAL;
-> > +
-> > +		scoped_guard(mutex, &data->mutex) {
-> > +			ret = regmap_update_bits(data->regmap, MMC5633_REG_CTRL1,
-> > +						 MMC5633_CTRL1_BW_MASK,
-> > +						 FIELD_PREP(MMC5633_CTRL1_BW_MASK, i));
-> > +			if (ret)
-> > +				return ret;
-> > +		};
-> > +		return ret;
->
-> Trivial but to get here it must be 0 so make that apparent via
-> 		return 0;
-> Then everyone can see the 'good' exit really easily.
->
-> > +	default:
-> > +		return -EINVAL;
-> > +	}
-> > +}
->
-> > +static const struct i2c_device_id mmc5633_i2c_id[] = {
-> > +	{ "mmc5603" },
-> > +	{ "mmc5633" },
-> > +	{ }
-> > +};
-> > +MODULE_DEVICE_TABLE(i2c, mmc5633_i2c_id);
-> > +
-> > +static const struct acpi_device_id mmc5633_acpi_match[] = {
->
-> Guess I missed these in previous versions. Sorry about that!
->
-> Where do these come from?
+> 
+> Whilst there will probably have to be a v6 for the ACPI ID issue in patch 5,
+> I'd like to ask the question of how are we planning to merge this?
+> 
+> Maybe an immutable branch either in IIO or I3C trees that the other one picks up?
+> 
+> It's a new driver so could gamble on taking the IIO driver the I3C tree but even
+> then I'd like a topic / immutable branch in case any IIO wide refactors or similar
+> hit this cycle.
+> 
 
-Copy from drivers/iio/magnetometer/mmc35240.c
+I can definitively provide an immutable branch once this goes in or if
+you are more comfortable with this, I guess there is no urgency and we
+could apply this over two cycles, first the I3C part and then you can
+take the driver.
 
->
-> MMC is not a registered PNP ID according to
-> https://uefi.org/PNP_ID_List?pnp_search=mmc
->
-> So are these in the wild? If they are provide the DSDT snippet
-> and a reference for where.  Also add a comment after the ID to provide
-> one device on which it is used.
->
-> ACPI IDs can take two valid forms. (1)   A 4 letter prefix that is
-> a registered ACPI ID.  e.g. HISI is the HiSilicon one I use for
-> the day job. And 4 digits that must be unique.  Typically each company
-> has a tracker for this and a process to get one assigned.
-> (2) A 3 letter PNP ID.  Similar otherwise.  Memsic has neither
-> unless issued very recently.
->
-> So if these turn up on a device that uses ACPI either the manufacturer
-> of that should get MEMSIC to follow process to get an ID or use their
-> own.  It's common to find random sensors with IDs from device manufacturers
-> for this reason.  Here NXP could use their own ID for example.
-> They have a registered PNP ID which is the obvious NXP.  To do that
-> though you need to make sure you get a unique ID.
 
-I can remove acpi part. Add it when someone really use it. I don't use this
-now.
-
-Frank
->
->
->
-> > +	{ "MMC5603", 0 },
-> > +	{ "mmc5633", 0 },
-> > +	{ }
-> > +};
-> > +MODULE_DEVICE_TABLE(acpi, mmc5633_acpi_match);
-> > +
-> > +static struct i2c_driver mmc5633_i2c_driver = {
-> > +	.driver = {
-> > +		.name = "mmc5633_i2c",
-> > +		.of_match_table = mmc5633_of_match,
-> > +		.acpi_match_table = mmc5633_acpi_match,
-> > +		.pm = pm_sleep_ptr(&mmc5633_pm_ops),
-> > +	},
-> > +	.probe = mmc5633_i2c_probe,
-> > +	.id_table =  mmc5633_i2c_id,
->
-> Really trivial but there is a extra space after the =
->
+-- 
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-i3c mailing list
