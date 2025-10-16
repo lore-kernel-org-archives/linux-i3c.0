@@ -4,70 +4,146 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D62ECCD194
-	for <linux-i3c@archiver.kernel.org>; Wed, 15 Oct 2025 15:43:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2E6F9CCD185
+	for <linux-i3c@archiver.kernel.org>; Thu, 16 Oct 2025 02:05:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:Subject:References:Cc:
-	To:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZEUZz7tl8M1vtGF6CwixceepknvLpyOgM5pIBAmZZeo=; b=u7GmzTN482xGN5
-	hShWxum1F95R0a2c9UQ4G9Wcd2zjY0Y3cefjNpdF69JSrDxS1IncWwGPwbLKqtMFpJvK4UdRv2s7+
-	SMtLBLxwCiDkzoJEXWip7QXerIx45VsDG8VAif4zmVaKantzm0E6NgFdUfp8NOOLgCcJEVwKmcInF
-	XbavaMOsYEF3Znq03WGu3Uqx5At232RtRI7Z3k0VxTR4yqEfVg/Z+hmzfOzJCfUyUqmJLNXizFfrI
-	6pYSECHtbAdSQsUoxbbvgx8F48awHjSs3vN0Wj1c8lZgydgp7jPhWHw9xEfGw9hJ/pYnQZhiwhE0u
-	FmOFpr8fmzaBEWymzvFw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ixT+6OfW9+qhm0z/jZ81wTuBWHc+d2WMQ7CdGx4ERrw=; b=C5l+B/wMbP69z8
+	nEV4R+Qj/T97QNHJHrDnvAX662ttEK5HiWvM48BjRJ63BwWLkWlY4REzTEaLdzFRWrg+jg4emDpWd
+	ElKj7xSmv+A0Ks3d7UlOiKDPIyAe7uP8LgQxZ3ICp0POd7WfdZL6dIE9LpwXpxRf62GJ98BYaKHQf
+	weV8M7XIrAB+O98/PksCZJzMyspNyQNJ1LwJLyCOxXQzyVHXd5D3IUHuwdLi0vjzQ70jW4pn0PrNc
+	ll1aUY7BEZxuuS/meeyYpFP7Lxht7BGP4ACV1kIXBhddlGPo9pVHYYIOOMLlZU+YweDqjYtoDFTS2
+	fr+xGQu21fq8aoEsqjWQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v93ex-0000000293R-3iee;
-	Wed, 15 Oct 2025 15:43:27 +0000
-Received: from mout.web.de ([212.227.15.3])
+	id 1v9DNK-00000003FUK-3xbh;
+	Thu, 16 Oct 2025 02:05:54 +0000
+Received: from mail-westcentralusazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c112::7] helo=CY3PR05CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v93ev-0000000292k-3URE
+	id 1v9DNI-00000003FTA-3UdS
 	for linux-i3c@lists.infradead.org;
-	Wed, 15 Oct 2025 15:43:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=web.de;
-	s=s29768273; t=1760542982; x=1761147782; i=markus.elfring@web.de;
-	bh=QZDoFK1NTUD8QdgGwQHs+Dk1cuLqUd4RxSwfnfLWmMw=;
-	h=X-UI-Sender-Class:Message-ID:Date:MIME-Version:To:Cc:References:
-	 Subject:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:
-	 cc:content-transfer-encoding:content-type:date:from:message-id:
-	 mime-version:reply-to:subject:to;
-	b=aWUO9EWijy/42Cluu+MwUSm9X4UeasL3OpWLgrCZGZbS/ZSkaM+NwoV1WR491fOV
-	 WuFAhFN0VN4H3NwN6W+ImnZ2vnMt8yESs/NTF9TfxLESOLX3KCSB6+wp595nw750Y
-	 yLQlHjtlRX+d7TIp6ZvU3xlpag8bFhj1mYbCCsjdmi0IoyZlZh7A4b2sGm7/YOfdD
-	 FJ8Pwif9nV8AjgTlGNy8BGFXlohh224hTYQj3xMbXg5FzB4zRtC+dnxthwiz6GEGG
-	 8XwxHdSyIIQMpJWOk+tt2zBThhbhfib7GBjSlxq39xQRBZ+ifd/tp9Z1Wz/hRrX7y
-	 Tobq4txcMUe/+YJU2w==
-X-UI-Sender-Class: 814a7b36-bfc1-4dae-8640-3722d8ec6cd6
-Received: from [192.168.178.29] ([94.31.69.181]) by smtp.web.de (mrweb005
- [213.165.67.108]) with ESMTPSA (Nemesis) id 1MsJP4-1uFJhk1CyQ-00tz9C; Wed, 15
- Oct 2025 17:43:02 +0200
-Message-ID: <af3b4b18-ab6d-4d6c-8a1f-1c90c8744ec9@web.de>
-Date: Wed, 15 Oct 2025 17:43:00 +0200
+	Thu, 16 Oct 2025 02:05:54 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=HP3hbWKtuvh+nZLBqrrz4NHsXsxxrz0rsyYqad7yW7BDg3moP4rlPTqaoaxan/QST4RluMl24qv7uxvEmC96jfgK7qNDkgnDtFEJ+pOYIr5+ZtBegBahD+Kf1XLKqRL+RW2BZjMWf85qYk1d89HJDaspcL2qEvp46I99OmWrtIbALOPn9Tcr1JVcToVz2W6gRTY6V5mMR2qS90it84pG+3CeAShN5V9ZVccVKkcQ+nPO6UHeOZEczv+zjc6/r9HA+JEbmwINZQzo/6x6Brgasio+W6IbxQnHB/plVqOvoRB1PIk+OQpRViEdBpePPOiqlL8ENI36mAPgyMYskIbx3A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Sa02HbsIOLvpDN0rKfQJ/hYcNkb7vjPakyvpWY/39Qg=;
+ b=aCdf9F/a+0Ul9nFQV5ndaY8uE8o8XHd0DKNRGvPyC/DX3kXqGbf2muj1GYlUVidhgKv9YKjkQcGq7jAXhGheRGZqcBKmGSxFoNVXDAt2al7a185IwpFFcKQpm8kCqrHUrGm6biZFn+2EbnrBYkWY2DuJglXgBTYBCRjxw2Yw3z2Y2JwqRAjWKqFjqX/FrudQ8chE5Mxfre4fpwudJ484SB3UG+LIPzbX7sSP10ODOEq2gpUtib+/i1HU1ky3ykPSF9LdtHmvQudLKCL0f+MJdfa2LlMupWLPxDcN6okKVAkWLrM7UJWjXFkYv+t2rfSg6lE1r20T4jcCgCXGbJdPfg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=altera.com; dmarc=pass action=none header.from=altera.com;
+ dkim=pass header.d=altera.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=altera.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Sa02HbsIOLvpDN0rKfQJ/hYcNkb7vjPakyvpWY/39Qg=;
+ b=NpQypUnYOGKXMAlyzz8EiXv/1K/86Ob87b5lrchYs5v7SHuAWD+OT2BtMweu1TpDYINWTJ5RnKiHEWdiK2FfOzHJamZzsQNFzWVD4792TDZM8BIqGUVdxgF+j6S1t8khE3xNJc6N6+TwnjtOXzFWAbbpS6rq91g8upqt+0cidK1Suyh9ebnODeForYelR2ZGl2afs6yRG8oNR5mV6ARAxqNsOW1CEz/TTw00IHJ3Mlkdmwvxx3vtaOWmOzGTOqbI4jbNo1O+HA7z8r59++46uoSJyowkE+M/Xs3qMETHvrCzWCkdMTRJRB4JtcaHU+v66faxCEFPt14VMo4A3rdXvA==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=altera.com;
+Received: from DM8PR03MB6230.namprd03.prod.outlook.com (2603:10b6:8:3c::13) by
+ CH5PR03MB7982.namprd03.prod.outlook.com (2603:10b6:610:214::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9228.12; Thu, 16 Oct
+ 2025 02:05:39 +0000
+Received: from DM8PR03MB6230.namprd03.prod.outlook.com
+ ([fe80::abad:9d80:7a13:9542]) by DM8PR03MB6230.namprd03.prod.outlook.com
+ ([fe80::abad:9d80:7a13:9542%3]) with mapi id 15.20.9228.010; Thu, 16 Oct 2025
+ 02:05:39 +0000
+From: adrianhoyin.ng@altera.com
+To: dinguyen@kernel.org,
+	alexandre.belloni@bootlin.com,
+	Frank.Li@nxp.com,
+	linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Cc: adrianhoyin.ng@altera.com
+Subject: [RFC PATCH] i3c: dw: add option to disable runtime PM for DesignWare I3C controller
+Date: Thu, 16 Oct 2025 10:03:39 +0800
+Message-ID: <22286d459959f2a153ac59d7da46794c0f495c77.1760579799.git.adrianhoyin.ng@altera.com>
+X-Mailer: git-send-email 2.49.GIT
+X-ClientProxiedBy: KL1PR01CA0040.apcprd01.prod.exchangelabs.com
+ (2603:1096:820:1::28) To DM8PR03MB6230.namprd03.prod.outlook.com
+ (2603:10b6:8:3c::13)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-To: Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
- imx@lists.linux.dev, Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: LKML <linux-kernel@vger.kernel.org>, kernel-janitors@vger.kernel.org,
- Shuhao Fu <sfual@cse.ust.hk>
-References: <20251014162824.2324333-1-Frank.Li@nxp.com>
-Subject: Re: [PATCH v2 1/1] i3c: fix refcount inconsistency in
- i3c_master_register
-Content-Language: en-GB, de-DE
-From: Markus Elfring <Markus.Elfring@web.de>
-In-Reply-To: <20251014162824.2324333-1-Frank.Li@nxp.com>
-X-Provags-ID: V03:K1:W/RRhwjCgbZGkqjRQr/xmgwiTQgevNASJJKBC+jVROEgrTsW+y3
- ZoC/iy05ZPskZcKMW25GuENnIVGdR1oHpUpJITiOpYR7XBDkPiJF/Y02Cs1aOi14t0fgnsR
- G4XpzDCnYo0RtfBSN0fOqc/S3bQdQDZsQwJEP7zWB9D5Y/MHIb5O/SurIsCnasKse6nzl6F
- 5WZ632me1kj0Ozv+rwJGw==
-UI-OutboundReport: notjunk:1;M01:P0:xUAWHNbcVUM=;tuaagL1GYLq0zCf5qkGgVtMgtiY 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
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DM8PR03MB6230:EE_|CH5PR03MB7982:EE_
+X-MS-Office365-Filtering-Correlation-Id: 2c71ae00-f024-4086-b8c4-08de0c5880c8
+X-MS-Exchange-AtpMessageProperties: SA
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?RlyyoK+qG3dzm1FP7Rsfj8UjwaKTLohPiH/dPU7ZUHtiziTFeXyXoxvfXXio?=
+ =?us-ascii?Q?hWY/BWY2n1dhDySms7JLgv6mi0ZzJ2xBaPUYBKK5o/+YfW5lld50WedBVFWF?=
+ =?us-ascii?Q?Xj/gnSrYVc2H5KBCnx4j1mc44w6HM7gX+Hg9QFaA4QQfKj6hG6xVAakws0LE?=
+ =?us-ascii?Q?vbzOFFL8/ffZffSj2wUQAZHGod8eYp6Yoax26AUynQPq/E9R96mMSKayzXZY?=
+ =?us-ascii?Q?9ypAzrPOWzfbgNQYfzhd+FAY93EejCZ8vO+A3c2Y6pCNQjU3J/o0iNS7NX4X?=
+ =?us-ascii?Q?ssj9AiTotClLxy5+qGZgaUE8x7U7HpHUl8RwyM9WOnvbSyEafrT3bT63RLeA?=
+ =?us-ascii?Q?iXwUubkA0YKBUVCHUuP2Avo/ynXH7rwXhVRihJwfWUzwMg3kb4Z4yIFMIGn3?=
+ =?us-ascii?Q?vkcQ5d4SaSy21bilit6j1igfBUUmPVAn7GIa+d5s7Hinwx90pC1bYwbUD2ZG?=
+ =?us-ascii?Q?AfYiN4LPDxOh3aWr7RK7HdXK43MDuXWWNrfoCHhzSlFNc200PfKv1hDkJD7S?=
+ =?us-ascii?Q?JM7XU6qGe/0mXrpggNqZ2RFEfoWaFlZk7ZqnXgqLHIzNtBXHG3HHlWg8EG7f?=
+ =?us-ascii?Q?FjaofynSLEz+xMIDN1e0bfRrAPwCHiXMKD4n+3XDWSpeBYXbYH/zbVu/7Hy5?=
+ =?us-ascii?Q?FUZ8PYn2oZ7oW6JKfYkNyk3NmOCGlCfx6i/QotKNdC9cIr9WKYVPftsu4iu2?=
+ =?us-ascii?Q?37z4KsRTaR4KGHH7Xc4ey8064hWBi3MZrozsf5Cr61Y1RyyuWmC0qTCSqkEy?=
+ =?us-ascii?Q?68k3BduAhUjLJ9owHj18gghYvgOow1EeWslwICIPdg82e78Q/B8RD+Z+NJA+?=
+ =?us-ascii?Q?Z1hkhJOXdkfXr2htr0hyVxRwemELGhOEj2GUY7EvBacqOCfQi/R79GKNDe/m?=
+ =?us-ascii?Q?2D4KKyMVk5h1p3g0zBVJ3gABbfCKFMNIY8GHV+yGY0h7I1g4RXr2+ZQhkSLT?=
+ =?us-ascii?Q?lxLlcmj4TQQwDf0RZuCLWhiA1gztjaOSr+zOqBMWhMp8z3j1HSTbEdBZVXXF?=
+ =?us-ascii?Q?X87ykI0XW5UpquOix/65mm5Y1OIk19u0u5O4tOJDai+UXqAJLE/fpSjZd2WJ?=
+ =?us-ascii?Q?iMVtmVZC3SMMBLvKPovxmb5lU4Zl5O+Xmp4ooq6oTivSPuL0pgBKee/EAO+1?=
+ =?us-ascii?Q?+CJ1FNgSxyipF6TspnT0x4RcToj81TBuqhwAEwRPtK9P8QQnm0oYME7foqOT?=
+ =?us-ascii?Q?0Df/ZbVeB8wCdZ0veCAY3PmXo7fkDj/lUGus5sFNWrmoFHN6PSIAI6+9Bvq8?=
+ =?us-ascii?Q?dI83meJNGD2zFQf+qGYZ7XjBayG17iDy/WcuE8zuD1shWgLr39Gs2K82TFlk?=
+ =?us-ascii?Q?3voLVY7qf0M2lejiYwZq+VrhtZNCuogoOga5GthReKZzCoWtKDMCgfyyLXrG?=
+ =?us-ascii?Q?FcKQieBbtLzuqSgN9WayUAm1xnwxJOzAflUPCAGXpSpIO7Z6lR8uzSJ//bMb?=
+ =?us-ascii?Q?F282XX0L13jCGCMAX0uCsQVQioUU7qRP?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DM8PR03MB6230.namprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?+kZFHXpkY07b82VRcGSKq0iCDjWEK0Du1jj3ZUmZ5r28vN2bIdjQQseaq/XJ?=
+ =?us-ascii?Q?tPhXaCfwvJBdztyCPUMxjkbo4NOABWkKAt8lUgN0ssOXLVYG4+X/2L7LFaOb?=
+ =?us-ascii?Q?oQKBzDwhqh7tW0j1UAGbxrTKwhBHu2ftWVsVv1qHYMMdbDgstVVqf9dyvxiF?=
+ =?us-ascii?Q?tWoYQMSHbUHuWlMGAwCGFP0K9Cl+8t2dWRnR4h1o4+VtymD4Rf+LNMoesBJr?=
+ =?us-ascii?Q?5GUPobGx66gfkdzc5ym1clnvf6wemvYnb2WyJXvTav9+EfUQug+mpfmvUehy?=
+ =?us-ascii?Q?qTWqVLlfvlvUBmieJLYMSvIHinN9wQeW4wqlMNpSMiqNlT6Xtzj27EWkHVb8?=
+ =?us-ascii?Q?JW5xUyKTDpRfMIQMruceFw26OY4GCJ4zxEplTJ3+8K8RHANPuqvsV5ljgMFN?=
+ =?us-ascii?Q?2II4aJ6Nb0zbZ5ypBJCY3f1Ewav8GV+KWTvBofWgHuOykYu2NXqnC1yr9sr4?=
+ =?us-ascii?Q?OSSbVCY+sKMHXUQzcXL1kXdtciLD12iJg9CBWHw2q/+GNQeU6R8iK9clnumh?=
+ =?us-ascii?Q?2VXCLpSKocijfQyQds4GJG/eGqTxqVjxOKzabpgzauT/ZVLCPCWOpOgatuIr?=
+ =?us-ascii?Q?GxVXfZSpFYTG9MI4bsFurhA6tiH5Vs70gep+8GvnrurdRY3e5OaXN5e+GKYw?=
+ =?us-ascii?Q?KAJojM8mzvRqNFrtxNGsv9o63CqAKkGPfedpj47pi3mrGbraD+Bxkg0qSlUh?=
+ =?us-ascii?Q?nIeKJ5Ikab5iwja1TxVO3BxUX3X4k2fDr8Tv6+1LymvAruxQVS6I97O5w8bZ?=
+ =?us-ascii?Q?VgkrAFAb6i4mE5Vu6TNEttgS78UIR5NWj+RieMgMJ5kT+o0orh7ZGEUWgYNj?=
+ =?us-ascii?Q?sR8pFDDMiMNdUswRy7vuWE3NriVsFFZbAoPhjOn8BlG+m+z4pdYeTuLFkRQw?=
+ =?us-ascii?Q?jV247AsyDE9urxVsBVo+7ja6ZXg1HlyXIyJagy4A3NT7AbEhKGA3eD8JzWvp?=
+ =?us-ascii?Q?R7aueVpxMQwfDBxyYi6l22LQ3x/McgLFBXd4u7T7gtNBxAIe8Q58ljCTGCEG?=
+ =?us-ascii?Q?PkYtZmJDbpAw9UqgcggIWsL2FDfUH3K5JdYgKsvWhNo2SBpjPlx3u3ybynGr?=
+ =?us-ascii?Q?PZ3s9xMMkaIk8JZYMFF6Zp2hIgGTCoBvOij5gsOg0zSkl/fLWHvjtrnmKD13?=
+ =?us-ascii?Q?uGHhVFmigbjIhhzSymFmrRyg5WZDrVN1LdBO0RQkw54DPemGf49DmpsBOUUc?=
+ =?us-ascii?Q?/8Nzck2DNTYCOhmKkdGM+qJdbUqskBrKH4CxDArIfV8ocWOC6ohE/HJN0kE8?=
+ =?us-ascii?Q?FdNvpEbN7lL9AviOKWew65GofZvLcup1mC0kIm7HopeBsWRnkaz5ZB7s1ozo?=
+ =?us-ascii?Q?HdLyXv3C/s3Gf3qiV9SArVkfZnnwv+fW25Y/I45olcS/psoxH0pgBTeaUIE0?=
+ =?us-ascii?Q?eyb9MmUvPB7P44NyJb5FOWq3EZLJowTmoaQy2x4Kc4g3mySmlyGm5RTtPRqB?=
+ =?us-ascii?Q?KlbOBXYPaIp/WNGSexBFj7h+EWJtTDZ6jj/HqzpVxf8QMquXCod6knGaz7KP?=
+ =?us-ascii?Q?/KiXgc8kuFp3jlEW94lZKbvG5sLWe+rZZS4GqYAA6byg51MeVda2k72m20cM?=
+ =?us-ascii?Q?f6HXIzvsSAiFEHzsZE4yZArLlZSB4YFlaD3umOPYM13oBb71XAOyOFw0ql1W?=
+ =?us-ascii?Q?lA=3D=3D?=
+X-OriginatorOrg: altera.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2c71ae00-f024-4086-b8c4-08de0c5880c8
+X-MS-Exchange-CrossTenant-AuthSource: DM8PR03MB6230.namprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Oct 2025 02:05:39.4082
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: fbd72e03-d4a5-4110-adce-614d51f2077a
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: VEnGStAnyAX+///8UTEZXKKgWBdtzfH0icVpPbSzN0QVM2BQFbIVVlULStRZlzn/xBYT41TuBDRwC+dlGyJnj8ry10mB4yukVSKilSdUNoE=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH5PR03MB7982
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251015_084326_165724_899FB100 
-X-CRM114-Status: UNSURE (   3.18  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251015_190553_030841_77A98933 
+X-CRM114-Status: GOOD (  19.23  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,14 +155,415 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-PiBJbiBgaTNjX21hc3Rlcl9yZWdpc3RlcmAsIGEgcG9zc2libGUgcmVmY291bnQgaW5jb25zaXN0
-ZW5jeSBoYXMgYmVlbgo+IGlkZW50aWZpZWQsIGNhdXNpbmcgcG9zc2libGUgcmVzb3VyY2UgbGVh
-ay4K4oCmCgpIb3cgZG8geW91IHRoaW5rIGFib3V0IHRvIGFkZCBhbnkgdGFncyAobGlrZSDigJxG
-aXhlc+KAnSBhbmQg4oCcQ2PigJ0pIGFjY29yZGluZ2x5PwoKUmVnYXJkcywKTWFya3VzCgotLSAK
-bGludXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
+From: Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>
+
+Add a new Kconfig option, DW_I3C_DISABLE_RUNTIME_PM, that allows
+disabling all runtime power management (PM) operations for the
+Synopsys DesignWare I3C controller. When this option is selected,
+the driver skips all runtime PM calls such as pm_runtime_enable(),
+pm_runtime_get(), and pm_runtime_put(), keeping the controller
+permanently active.
+
+This change addresses a reliability issue observed on some systems
+where the controller enters a suspended state while a slave device
+issues an In-Band Interrupt (IBI). Because the suspended controller
+no longer drives the SCL line, the IBI transfer cannot complete,
+causing the SDA line to remain stuck low and leaving the bus in a
+hung state. Disabling runtime PM prevents the controller from
+entering this suspended state, ensuring that clock signals remain
+active and IBI transactions complete successfully.
+
+A new quirk flag (DW_I3C_DISABLE_RUNTIME_PM_QUIRK) is introduced to
+control this behavior dynamically at probe time, and the option is
+propagated through the device match data.
+
+Signed-off-by: Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>
+---
+ drivers/i3c/master/Kconfig         |  23 ++++
+ drivers/i3c/master/dw-i3c-master.c | 176 +++++++++++++++++------------
+ 2 files changed, 129 insertions(+), 70 deletions(-)
+
+diff --git a/drivers/i3c/master/Kconfig b/drivers/i3c/master/Kconfig
+index 82cf330778d5..d6159ec94c85 100644
+--- a/drivers/i3c/master/Kconfig
++++ b/drivers/i3c/master/Kconfig
+@@ -31,6 +31,29 @@ config DW_I3C_MASTER
+ 	  This driver can also be built as a module.  If so, the module
+ 	  will be called dw-i3c-master.
+ 
++config DW_I3C_DISABLE_RUNTIME_PM
++	bool "Disable runtime PM support for DesignWare I3C controller"
++	depends on DW_I3C_MASTER
++	default n
++	help
++	  If selected, disables all runtime power management (PM)
++	  operations for the Synopsys DesignWare I3C controller.
++
++	  When enabled, the driver skips all runtime PM calls such as
++	  pm_runtime_enable(), pm_runtime_get(), and pm_runtime_put(),
++	  keeping the controller permanently active during operation.
++
++	  This option is useful on systems where runtime PM causes bus
++	  reliability issues. In particular, if the controller is placed
++	  into a suspended state while a slave device attempts to issue an
++	  In-Band Interrupt (IBI), the controller may stop driving the
++	  SCL line, preventing the IBI from completing. This condition can
++	  result in the SDA line remaining stuck low, leaving the bus in a
++	  hung state until a full hardware reset is performed. Disabling
++	  runtime PM prevents the controller from entering this suspended
++	  state, ensuring that clock signals remain active for IBI
++	  handling.
++
+ config AST2600_I3C_MASTER
+ 	tristate "ASPEED AST2600 I3C master driver"
+ 	depends on DW_I3C_MASTER
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index 9ceedf09c3b6..4f4ef4672255 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -227,7 +227,8 @@
+ #define AMD_I3C_PP_TIMING          0x8001A
+ 
+ /* List of quirks */
+-#define AMD_I3C_OD_PP_TIMING		BIT(1)
++#define AMD_I3C_OD_PP_TIMING			BIT(1)
++#define DW_I3C_DISABLE_RUNTIME_PM_QUIRK	BIT(2)
+ 
+ struct dw_i3c_cmd {
+ 	u32 cmd_lo;
+@@ -635,12 +636,14 @@ static int dw_i3c_master_bus_init(struct i3c_master_controller *m)
+ 	struct i3c_device_info info = { };
+ 	int ret;
+ 
+-	ret = pm_runtime_resume_and_get(master->dev);
+-	if (ret < 0) {
+-		dev_err(master->dev,
+-			"<%s> cannot resume i3c bus master, err: %d\n",
+-			__func__, ret);
+-		return ret;
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
++		ret = pm_runtime_resume_and_get(master->dev);
++		if (ret < 0) {
++			dev_err(master->dev,
++				"<%s> cannot resume i3c bus master, err: %d\n",
++				__func__, ret);
++			return ret;
++		}
+ 	}
+ 
+ 	ret = master->platform_ops->init(master);
+@@ -682,7 +685,8 @@ static int dw_i3c_master_bus_init(struct i3c_master_controller *m)
+ 	dw_i3c_master_enable(master);
+ 
+ rpm_out:
+-	pm_runtime_put_autosuspend(master->dev);
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
++		pm_runtime_put_autosuspend(master->dev);
+ 	return ret;
+ }
+ 
+@@ -798,12 +802,14 @@ static int dw_i3c_master_send_ccc_cmd(struct i3c_master_controller *m,
+ 		writel(master->i3c_od_timing, master->regs + SCL_I3C_OD_TIMING);
+ 	}
+ 
+-	ret = pm_runtime_resume_and_get(master->dev);
+-	if (ret < 0) {
+-		dev_err(master->dev,
+-			"<%s> cannot resume i3c bus master, err: %d\n",
+-			__func__, ret);
+-		return ret;
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
++		ret = pm_runtime_resume_and_get(master->dev);
++		if (ret < 0) {
++			dev_err(master->dev,
++				"<%s> cannot resume i3c bus master, err: %d\n",
++				__func__, ret);
++			return ret;
++		}
+ 	}
+ 
+ 	if (ccc->rnw)
+@@ -811,7 +817,8 @@ static int dw_i3c_master_send_ccc_cmd(struct i3c_master_controller *m,
+ 	else
+ 		ret = dw_i3c_ccc_set(master, ccc);
+ 
+-	pm_runtime_put_autosuspend(master->dev);
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
++		pm_runtime_put_autosuspend(master->dev);
+ 	return ret;
+ }
+ 
+@@ -824,12 +831,14 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
+ 	u8 last_addr = 0;
+ 	int ret, pos;
+ 
+-	ret = pm_runtime_resume_and_get(master->dev);
+-	if (ret < 0) {
+-		dev_err(master->dev,
+-			"<%s> cannot resume i3c bus master, err: %d\n",
+-			__func__, ret);
+-		return ret;
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
++		ret = pm_runtime_resume_and_get(master->dev);
++		if (ret < 0) {
++			dev_err(master->dev,
++				"<%s> cannot resume i3c bus master, err: %d\n",
++				__func__, ret);
++			return ret;
++		}
+ 	}
+ 
+ 	olddevs = ~(master->free_pos);
+@@ -893,7 +902,8 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
+ 	dw_i3c_master_free_xfer(xfer);
+ 
+ rpm_out:
+-	pm_runtime_put_autosuspend(master->dev);
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
++		pm_runtime_put_autosuspend(master->dev);
+ 	return ret;
+ }
+ 
+@@ -929,12 +939,14 @@ static int dw_i3c_master_priv_xfers(struct i3c_dev_desc *dev,
+ 	if (!xfer)
+ 		return -ENOMEM;
+ 
+-	ret = pm_runtime_resume_and_get(master->dev);
+-	if (ret < 0) {
+-		dev_err(master->dev,
+-			"<%s> cannot resume i3c bus master, err: %d\n",
+-			__func__, ret);
+-		return ret;
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
++		ret = pm_runtime_resume_and_get(master->dev);
++		if (ret < 0) {
++			dev_err(master->dev,
++				"<%s> cannot resume i3c bus master, err: %d\n",
++				__func__, ret);
++			return ret;
++		}
+ 	}
+ 
+ 	for (i = 0; i < i3c_nxfers; i++) {
+@@ -978,7 +990,8 @@ static int dw_i3c_master_priv_xfers(struct i3c_dev_desc *dev,
+ 	ret = xfer->ret;
+ 	dw_i3c_master_free_xfer(xfer);
+ 
+-	pm_runtime_put_autosuspend(master->dev);
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
++		pm_runtime_put_autosuspend(master->dev);
+ 	return ret;
+ }
+ 
+@@ -1089,12 +1102,14 @@ static int dw_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
+ 	if (!xfer)
+ 		return -ENOMEM;
+ 
+-	ret = pm_runtime_resume_and_get(master->dev);
+-	if (ret < 0) {
+-		dev_err(master->dev,
+-			"<%s> cannot resume i3c bus master, err: %d\n",
+-			__func__, ret);
+-		return ret;
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
++		ret = pm_runtime_resume_and_get(master->dev);
++		if (ret < 0) {
++			dev_err(master->dev,
++				"<%s> cannot resume i3c bus master, err: %d\n",
++				__func__, ret);
++			return ret;
++		}
+ 	}
+ 
+ 	for (i = 0; i < i2c_nxfers; i++) {
+@@ -1127,7 +1142,8 @@ static int dw_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
+ 	ret = xfer->ret;
+ 	dw_i3c_master_free_xfer(xfer);
+ 
+-	pm_runtime_put_autosuspend(master->dev);
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
++		pm_runtime_put_autosuspend(master->dev);
+ 	return ret;
+ }
+ 
+@@ -1272,12 +1288,14 @@ static int dw_i3c_master_enable_hotjoin(struct i3c_master_controller *m)
+ 	struct dw_i3c_master *master = to_dw_i3c_master(m);
+ 	int ret;
+ 
+-	ret = pm_runtime_resume_and_get(master->dev);
+-	if (ret < 0) {
+-		dev_err(master->dev,
+-			"<%s> cannot resume i3c bus master, err: %d\n",
+-			__func__, ret);
+-		return ret;
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
++		ret = pm_runtime_resume_and_get(master->dev);
++		if (ret < 0) {
++			dev_err(master->dev,
++				"<%s> cannot resume i3c bus master, err: %d\n",
++				__func__, ret);
++			return ret;
++		}
+ 	}
+ 
+ 	dw_i3c_master_enable_sir_signal(master, true);
+@@ -1294,7 +1312,8 @@ static int dw_i3c_master_disable_hotjoin(struct i3c_master_controller *m)
+ 	writel(readl(master->regs + DEVICE_CTRL) | DEV_CTRL_HOT_JOIN_NACK,
+ 	       master->regs + DEVICE_CTRL);
+ 
+-	pm_runtime_put_autosuspend(master->dev);
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
++		pm_runtime_put_autosuspend(master->dev);
+ 	return 0;
+ }
+ 
+@@ -1305,12 +1324,14 @@ static int dw_i3c_master_enable_ibi(struct i3c_dev_desc *dev)
+ 	struct dw_i3c_master *master = to_dw_i3c_master(m);
+ 	int rc;
+ 
+-	rc = pm_runtime_resume_and_get(master->dev);
+-	if (rc < 0) {
+-		dev_err(master->dev,
+-			"<%s> cannot resume i3c bus master, err: %d\n",
+-			__func__, rc);
+-		return rc;
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
++		rc = pm_runtime_resume_and_get(master->dev);
++		if (rc < 0) {
++			dev_err(master->dev,
++				"<%s> cannot resume i3c bus master, err: %d\n",
++				__func__, rc);
++			return rc;
++		}
+ 	}
+ 
+ 	dw_i3c_master_set_sir_enabled(master, dev, data->index, true);
+@@ -1319,7 +1340,8 @@ static int dw_i3c_master_enable_ibi(struct i3c_dev_desc *dev)
+ 
+ 	if (rc) {
+ 		dw_i3c_master_set_sir_enabled(master, dev, data->index, false);
+-		pm_runtime_put_autosuspend(master->dev);
++		if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
++			pm_runtime_put_autosuspend(master->dev);
+ 	}
+ 
+ 	return rc;
+@@ -1338,7 +1360,8 @@ static int dw_i3c_master_disable_ibi(struct i3c_dev_desc *dev)
+ 
+ 	dw_i3c_master_set_sir_enabled(master, dev, data->index, false);
+ 
+-	pm_runtime_put_autosuspend(master->dev);
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
++		pm_runtime_put_autosuspend(master->dev);
+ 	return 0;
+ }
+ 
+@@ -1573,11 +1596,6 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+ 
+ 	platform_set_drvdata(pdev, master);
+ 
+-	pm_runtime_set_autosuspend_delay(&pdev->dev, RPM_AUTOSUSPEND_TIMEOUT);
+-	pm_runtime_use_autosuspend(&pdev->dev);
+-	pm_runtime_set_active(&pdev->dev);
+-	pm_runtime_enable(&pdev->dev);
+-
+ 	/* Information regarding the FIFOs/QUEUEs depth */
+ 	ret = readl(master->regs + QUEUE_STATUS_LEVEL);
+ 	master->caps.cmdfifodepth = QUEUE_STATUS_LEVEL_CMD(ret);
+@@ -1592,6 +1610,13 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+ 
+ 	master->quirks = (unsigned long)device_get_match_data(&pdev->dev);
+ 
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
++		pm_runtime_set_autosuspend_delay(&pdev->dev, RPM_AUTOSUSPEND_TIMEOUT);
++		pm_runtime_use_autosuspend(&pdev->dev);
++		pm_runtime_set_active(&pdev->dev);
++		pm_runtime_enable(&pdev->dev);
++	}
++
+ 	INIT_WORK(&master->hj_work, dw_i3c_hj_work);
+ 	ret = i3c_master_register(&master->base, &pdev->dev,
+ 				  &dw_mipi_i3c_ops, false);
+@@ -1601,9 +1626,11 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+ 	return 0;
+ 
+ err_disable_pm:
+-	pm_runtime_disable(&pdev->dev);
+-	pm_runtime_set_suspended(&pdev->dev);
+-	pm_runtime_dont_use_autosuspend(&pdev->dev);
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
++		pm_runtime_disable(&pdev->dev);
++		pm_runtime_set_suspended(&pdev->dev);
++		pm_runtime_dont_use_autosuspend(&pdev->dev);
++	}
+ 
+ err_assert_rst:
+ 	reset_control_assert(master->core_rst);
+@@ -1617,9 +1644,11 @@ void dw_i3c_common_remove(struct dw_i3c_master *master)
+ 	cancel_work_sync(&master->hj_work);
+ 	i3c_master_unregister(&master->base);
+ 
+-	pm_runtime_disable(master->dev);
+-	pm_runtime_set_suspended(master->dev);
+-	pm_runtime_dont_use_autosuspend(master->dev);
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
++		pm_runtime_disable(master->dev);
++		pm_runtime_set_suspended(master->dev);
++		pm_runtime_dont_use_autosuspend(master->dev);
++	}
+ }
+ EXPORT_SYMBOL_GPL(dw_i3c_common_remove);
+ 
+@@ -1742,12 +1771,14 @@ static void dw_i3c_shutdown(struct platform_device *pdev)
+ 	struct dw_i3c_master *master = platform_get_drvdata(pdev);
+ 	int ret;
+ 
+-	ret = pm_runtime_resume_and_get(master->dev);
+-	if (ret < 0) {
+-		dev_err(master->dev,
+-			"<%s> cannot resume i3c bus master, err: %d\n",
+-			__func__, ret);
+-		return;
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
++		ret = pm_runtime_resume_and_get(master->dev);
++		if (ret < 0) {
++			dev_err(master->dev,
++				"<%s> cannot resume i3c bus master, err: %d\n",
++				__func__, ret);
++			return;
++		}
+ 	}
+ 
+ 	cancel_work_sync(&master->hj_work);
+@@ -1756,11 +1787,16 @@ static void dw_i3c_shutdown(struct platform_device *pdev)
+ 	writel((u32)~INTR_ALL, master->regs + INTR_STATUS_EN);
+ 	writel((u32)~INTR_ALL, master->regs + INTR_SIGNAL_EN);
+ 
+-	pm_runtime_put_autosuspend(master->dev);
++	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
++		pm_runtime_put_autosuspend(master->dev);
+ }
+ 
+ static const struct of_device_id dw_i3c_master_of_match[] = {
+-	{ .compatible = "snps,dw-i3c-master-1.00a", },
++	{ .compatible = "snps,dw-i3c-master-1.00a",
++#ifdef CONFIG_DW_I3C_DISABLE_RUNTIME_PM
++	  .data = (void *)DW_I3C_DISABLE_RUNTIME_PM_QUIRK,
++#endif
++	},
+ 	{},
+ };
+ MODULE_DEVICE_TABLE(of, dw_i3c_master_of_match);
+-- 
+2.49.GIT
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
