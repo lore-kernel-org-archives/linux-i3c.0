@@ -4,145 +4,86 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2AC8CCD1A5
-	for <linux-i3c@archiver.kernel.org>; Mon, 20 Oct 2025 20:23:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C702FCCD1BC
+	for <linux-i3c@archiver.kernel.org>; Thu, 23 Oct 2025 08:23:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uBxgWCvdNbWrjtzzIPF5yp/BpfE8JmdaRqnAB+fg+RA=; b=bLHZPS2bVdKPmO
-	XYsq36I+sOYyb5dHBGA6XJDiDlkO/gFO0SGrvtphd8tWhJTPi1VzUUkRF/PsAfoOdidh9+DGFho2l
-	QxJZoJUzSFixWDq1JtD5+dmg8P1AtqkpyrhZJNxKHKt3JyyIVersAVD83PY699dpqiHxBMf1sdUFE
-	bckaaFbMfoNiwA50r2TsppflHMV5CEDvdIyfiIRN1X7lm6PSt8WTs7vdyElKXbjjnKJe2QjSkeDUz
-	NRiV4CFtDr08cpVCg9YxYnUVHgSQRpRCVsYN7+z+NGxqQ5KgrTLZb5khjlRj0UWp4VbVk0BNk3nrC
-	jywHRsoV1WF3w9WyxN3Q==;
+	List-Owner; bh=QUUwxPO50Ci9DI3ixlg+T50tVfi/j4KamhTN2VRuG44=; b=GObFck3bOuhWLg
+	fzrEj46WItzHdfjf0yh8YQAwyPIgnAhitU3EwTax/2v16uHD9zWmO5ih9JB91g093jJjV0AwXIVcD
+	4TrfaHrM7OOjDoYtypHXJVrRvas8HZrUDS+2CzYZDN2ic3TQZqqino7CZ2eh0GEydGicTg9LVAn1R
+	3Ee2jNalPkYDpCXBDY6oPydLI865SX53HkuuL3gtplP5jRwZ3rHRmJD7rMmidtjchC8HX8v50he1s
+	V71b/ER5Fcc+eUXorue+eZGkwVa405ayI8FKixYSu5RHWowjnPF/OZ2ISvubxJPxu0xYDAeKEKGJ6
+	4bxPrMajUkTDhEmKrnKQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vAwPc-0000000EtLo-250m;
-	Mon, 20 Oct 2025 20:23:24 +0000
-Received: from mail-francesouthazon11011061.outbound.protection.outlook.com ([40.107.130.61] helo=MRWPR03CU001.outbound.protection.outlook.com)
+	id 1vBqbv-00000005X7k-2Hsz;
+	Thu, 23 Oct 2025 08:23:51 +0000
+Received: from mgamail.intel.com ([198.175.65.20])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vAwPZ-0000000EtI5-2QeP
+	id 1vBqbt-00000005X6S-2Epl
 	for linux-i3c@lists.infradead.org;
-	Mon, 20 Oct 2025 20:23:22 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=aFOgeF7Gvx1664Q5bNi+0bIlCCjLqDy+z23wdPdto4GvT0HG/KWCxY5YhzWGRJe56c7aGrjMGEW9kK8PDKLDxlBww9IYeYApnK1hZUjltpZRGM21/gu5tFTjbL3FKS/T9W8q+uveDqHlUGsAYyfEFXXA8PQv8quB5c6i+7n8jMEU5D3F5UJmf8Y9gPOMN+UZsYMQe648R4hREM6acQ6rqP5xW80LJ3dlFZ77YtXiRZnJNKQUFVGvp9ZfTwYyzQr9F92UCbdyVfSrtMv1NtkBkTwMwgvOoHeDqNyHeB38gBe9d22ixfqFZWL88uZ0jbH0NsKmKq5GbHPVXKuvTeranw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=UEz2zKn1ysygIQpXZBMMc9NM7d8rUtZKAdd1knScAgI=;
- b=EwLnzgGOmU9ssu5jMCTPWXAW0Wanh727g0cB+wkV0DIiXUsBgHePQs+ylfGyXXdobJ+C91pe8IZMl6/pji0d1t3xZUIXv8ktQF+jmWQ7K4c9NwPfpZjjnRrC9M37JiPYr8nqD0smm+F+Rb8qDjYfGD4dPVM06ohJBchm6BGZhfQxuqwW4cOQ1jAtF8IsjqEWZWj6bg7qxnuvUR1ajKXXq3xiwd4/vHpD7bgLvjX6qjtrz8eZFd0yo2j3NTMeBVe6NfhQHi/TcP/HfykLw1mleAyaSNjrRzENyfDyqhqy6KMf4pGMIj54ovNIhGSHnqcvJSz7TM8S4OT+H5Hc0G6MSA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=UEz2zKn1ysygIQpXZBMMc9NM7d8rUtZKAdd1knScAgI=;
- b=oQBqZ9LjpLe1f+XH+8ynUn1ERT4F/N3wlJqbxkm/YBNY+1R7F32SlYWUyft/VMe8Ix5fn91sVUMDJb2nJ2vAr81vngbZS99vw0KFqcpoH0Egc5I+engLjV0YQH/EdoPkUr7XrbA9BkfcehuI7VticPfTIl1Z+Y1+9nUqHlXjy4xyF02R2oAeBSPZU1Mj++/xl1xttmQrkK1WimZn4LvNehCwJvO1WdFLwTfXQOu/A7ZC90BGQpU2IwtujpeDKwIlFzLpq1jS3ZTLeoSO59qRcWfRUkzPGGT986v6m+tC0AwPikM5qraqJSMm0j8yijpnXVxC0sYaqgy5g16B/BWSuA==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from DB9PR04MB9626.eurprd04.prod.outlook.com (2603:10a6:10:309::18)
- by VE1PR04MB7391.eurprd04.prod.outlook.com (2603:10a6:800:1b3::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9203.10; Mon, 20 Oct
- 2025 20:23:02 +0000
-Received: from DB9PR04MB9626.eurprd04.prod.outlook.com
- ([fe80::55ef:fa41:b021:b5dd]) by DB9PR04MB9626.eurprd04.prod.outlook.com
- ([fe80::55ef:fa41:b021:b5dd%4]) with mapi id 15.20.9228.015; Mon, 20 Oct 2025
- 20:23:02 +0000
-Date: Mon, 20 Oct 2025 16:22:55 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Stanley Chu <stanley.chuys@gmail.com>
-Cc: miquel.raynal@bootlin.com, alexandre.belloni@bootlin.com,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	tomer.maimon@nuvoton.com, kwliu@nuvoton.com, yschu@nuvoton.com
-Subject: Re: [PATCH v1 1/1] i3c: master: svc: Prevent incomplete IBI
- transaction
-Message-ID: <aPaaH1ADwU25Q4TD@lizhi-Precision-Tower-5810>
-References: <20251020094020.632545-1-yschu@nuvoton.com>
-Content-Disposition: inline
-In-Reply-To: <20251020094020.632545-1-yschu@nuvoton.com>
-X-ClientProxiedBy: PH7P223CA0018.NAMP223.PROD.OUTLOOK.COM
- (2603:10b6:510:338::35) To AS4PR04MB9621.eurprd04.prod.outlook.com
- (2603:10a6:20b:4ff::22)
+	Thu, 23 Oct 2025 08:23:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1761207830; x=1792743830;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=ptxKv8x6ylevA5yI5wa4vryf/6lVRy0gbUbnxJJtU2c=;
+  b=LvpC2I5YY4gLkf3arGgIbHMRJrxxVVW10ay3TbtX9bISIGYvcFjsCuQu
+   YVSXBpeRGIzM3e3ZFnylqJpn8J/Z5fkERSIpOLBREg5SUqAO+A0CIK0Ce
+   QtCvTLdwwrHFIl6rqY83+MRQZMEwPUJgFcOliYOx5OV9hG6ICshtRR6Ap
+   xIxWeaxoMqbK+OFypfrXB+Rg5y2zihr7EJIFWqhKqGn9qAAqCuzW9hzra
+   o2RWZDYwmCu9mVldk4+aRsLGMgpy+WoIO+tdABDbotKEUo0syAsheeppO
+   ldEI5SLsb1pSAIp18TSsbYDUJly/M1RcWnaQIFwoIZKZtww86osG+lRB2
+   Q==;
+X-CSE-ConnectionGUID: tuD7JO/aRuGPipuRuVh69A==
+X-CSE-MsgGUID: 2i+qrJvERWGpURumDgQIhg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11586"; a="63074678"
+X-IronPort-AV: E=Sophos;i="6.19,249,1754982000"; 
+   d="scan'208";a="63074678"
+Received: from orviesa006.jf.intel.com ([10.64.159.146])
+  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Oct 2025 01:23:46 -0700
+X-CSE-ConnectionGUID: xewb7CYnSHm2QYHap8wVgA==
+X-CSE-MsgGUID: lpfHCmtBSPKbcNs6POSKHw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.19,249,1754982000"; 
+   d="scan'208";a="183270380"
+Received: from pgcooper-mobl3.ger.corp.intel.com (HELO ashevche-desk.local) ([10.245.244.163])
+  by orviesa006-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Oct 2025 01:23:42 -0700
+Received: from andy by ashevche-desk.local with local (Exim 4.98.2)
+	(envelope-from <andriy.shevchenko@intel.com>)
+	id 1vBqbj-00000001tXy-1owL;
+	Thu, 23 Oct 2025 11:23:39 +0300
+Date: Thu, 23 Oct 2025 11:23:39 +0300
+From: Andy Shevchenko <andriy.shevchenko@intel.com>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
+	Jonathan Cameron <jic23@kernel.org>,
+	David Lechner <dlechner@baylibre.com>,
+	Nuno =?iso-8859-1?Q?S=E1?= <nuno.sa@analog.com>,
+	Andy Shevchenko <andy@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+	linux-iio@vger.kernel.org, joshua.yeong@starfivetech.com,
+	devicetree@vger.kernel.org
+Subject: Re: [PATCH v6 1/5] i3c: Add HDR API support
+Message-ID: <aPnmCwwZVZ5egqkP@smile.fi.intel.com>
+References: <20251014-i3c_ddr-v6-0-3afe49773107@nxp.com>
+ <20251014-i3c_ddr-v6-1-3afe49773107@nxp.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DB9PR04MB9626:EE_|VE1PR04MB7391:EE_
-X-MS-Office365-Filtering-Correlation-Id: 959bfea6-fc98-45cc-9b3b-08de10167806
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|52116014|376014|1800799024|19092799006|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?2II2vAFWzb+83SfoBpcbBCbeaY5McnaQnA4cRDqwncYth+yjn90oowIGdBjW?=
- =?us-ascii?Q?aJpaS5LnECE0kwiSPlsvHvpcrI19T6qrVBTobyhIVEH8sAPYsYiUixix41v0?=
- =?us-ascii?Q?mN7qSspR4Gzfs6fpvNl4JUavX8PkKcXp2UtaKcOIfNO2UidtgCMyX7V1zsfn?=
- =?us-ascii?Q?Wg+eWNlNVup5B/oy8prTjDJrTzNyiu57uZNP/fczRgXW/K+1bJreAzyE134T?=
- =?us-ascii?Q?VopTPAumi1b+BDdOzwIMVNLNzgL5vqxZSNAG4eiDF0tzE5Lrb+VAXSO1CSsa?=
- =?us-ascii?Q?IhbGA0iTmNNEmbf4eiHmCqVS2aPuDkphZnv6nl1rY67bFUh4Dbh2uumn5GUX?=
- =?us-ascii?Q?jxotf+dtZfZTLPhVTRLkSgkUv2sPPeYERuLvEk8rOQZRq8sh24i/LKKMUmqM?=
- =?us-ascii?Q?sMX/aPI+g2rCj4eMq18ujY9w0hGLaEOBbYlf3+idaLaqTyuIeA+ZKj4US7dE?=
- =?us-ascii?Q?x3h/NtRDUfWCz2ex8uWTeIEVZqFmOy9lDQjsnXeOnrR7TmfFumhyj4jIl5ca?=
- =?us-ascii?Q?jQ098uY/JEmpV7K9jGc1uLl6bPcQPMjpjlMv8+Xy2Ee4IXlQXnAUGQuiWUK5?=
- =?us-ascii?Q?KCm8qVK2nRYeQFiY0M/b7IedewZkiqnJ3iyN0wjj3UxzrLRk2HsdMGqmMDE8?=
- =?us-ascii?Q?D4Fo7IJI+D0r5aXaXnS3GgoDqub4QSuU0H2hjkUfPO9vMDX7p7HEZ2spy6MN?=
- =?us-ascii?Q?pK0Yd+fai+yb6pANh2gXngmdDyeYXCRXN4IUw3VtTxiJO9kNB32LjITfBB+u?=
- =?us-ascii?Q?T6IUIX6HZ/svR0JTC3YdDueSc0awEVVXOZ3CWMxHX8xkvws795l5djfxfeVG?=
- =?us-ascii?Q?xgFdrM8T1EHJwPlJ6eHXlplEPRpcTmZQC2g+ZyzleB/Rd8afGAcIi26zwVbD?=
- =?us-ascii?Q?1XHrGYjbYQ/5IgrVMMIQ1v6h6+nuJfAucL7JcUIo4kfNb3erFF6NeeUwDX/u?=
- =?us-ascii?Q?CeutqcXfAV+Lf/6FkGHUT3NYBALbnNTVacNVPBof7HUPnDJ1p2IytCZDiTR0?=
- =?us-ascii?Q?yNiF30ysHVbBBBbpn2KiKKrbNwPMI4Gs0zK6t2QyVN8j5Yh8FBeo7Q77uy9a?=
- =?us-ascii?Q?pWKK2xKiE0KB2AKPIPgtyuGG6+hljV6Bc1f+2xepk9o7rZK0EOHcd2J08CiP?=
- =?us-ascii?Q?bZaR25U457P5+Q8a3v/w5S3DTN4Z8BEJNUB2ZfzbTPXmKvxCy5Dipbf8AgXo?=
- =?us-ascii?Q?99HAMHECOKZUUJZnkrw/e97UI8aUMkXbVTHAUBOGVTI0OP6s0gsRT33x/ggS?=
- =?us-ascii?Q?6xMFEKIsbdGo63C1qUEdjAHTPtj/AMLxsiGX2hzi14gZuQAHAZ/N/p13yE33?=
- =?us-ascii?Q?ZTfRhf26hSIBNzizVBZsWjlFvS0ee6ppNgr3yIWnYH34jZHnz1EJs7YQDNjO?=
- =?us-ascii?Q?UJWZdL6uNU32EC6p3+m9PlomZY/jLx52l5VNaEDusIPvfW4voYc4l9NYn/y6?=
- =?us-ascii?Q?fQ3ItXnN0+rJIChNZZuUyM8FhC53/j+CR60bA+dEGNKhDU8vG2Y9dhIwLsuD?=
- =?us-ascii?Q?7jLjAGUskdrAphj2gpyHolUI41e2YaIOBoPU?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR04MB9626.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(52116014)(376014)(1800799024)(19092799006)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?ETt9gCkMDDcSx6TbA/vpODQN+/qmodawM+/aKJBrPWt/4lFmDzi8LEbQK7v+?=
- =?us-ascii?Q?LeEoWLaKbZKE+AfEIFZgc7qjs/nMRGsW+GE9+CQrOZqrfJqdoeeylmt/IRaH?=
- =?us-ascii?Q?0GlOvMSfTi9qZVJHiujebmE79CYbEaW8nOPFU/FIzHtc2dywa1/I460EaUqt?=
- =?us-ascii?Q?7OWYfKJ3izKxxr5X39bzKAEiWTg+7sY+lsuCILRiIpdJK5MNlw4p7P6U8iBx?=
- =?us-ascii?Q?xypLsEdE/rqM58h/OS8wlwkxlzxZSy6G+i2y5tA3ALAE54JHU42aCa8KWeaO?=
- =?us-ascii?Q?EhZW6E/OUlnLd4Z+fb63yf/Epb7iWZDPxwt0wwe4oFRR47DYozO1SqzBV/RQ?=
- =?us-ascii?Q?hkjbtHBepCsDj5A4tG/Szg6h2PzBgKQfuY4NmcWT4OhTM3byJiMUJTd89xZq?=
- =?us-ascii?Q?juOIMh9edkF8/XFrbSDjmezAdSI3OwLcX5Qf0KYgVV7PQfdXiL8BHf9R4zrQ?=
- =?us-ascii?Q?Yg19hQV+yrSQxAi2EqlUBLjBPGFOSvgfEwvpYYjwOsEdgEEEFzHox/z80JdW?=
- =?us-ascii?Q?/DIxzRJk0opYHrysCckz1I+ISqz8Mkr7HkxsiV6Hr6Wlq1PaYIsJF4w2O1SU?=
- =?us-ascii?Q?0vhMmKuuQ830/Ofy8cJFHt15a9P42f9bRM7yXYZ9kbsSV4W7PpcvNIFr0msu?=
- =?us-ascii?Q?0Q/A9jFyRTwMl3Kn+Ihxd++ACgIk73TTkfLeD7R5o8QnZmf1Kb2Tcq0wUnZ1?=
- =?us-ascii?Q?7rCBCMwi4HuexBC2ikuI+KTYjEwhtj9HANlYfyS89d79tfptH5o8mHb9wj/w?=
- =?us-ascii?Q?WqPWiW8htnq9A2PbdZgk+XaSmYQeJrkqTkLSeGkEmtI3ggCBBLf+u97IfpRe?=
- =?us-ascii?Q?5nNXBmhbp1Uy9FPVQ0iKR8gnL0c2UM9NupxpMlCzlxdK/0qj1OAshJGFEMcm?=
- =?us-ascii?Q?1/BGIuphyU2UXfQAlP9SuDOBi/DJWtKcEqPRwXogYKdTC7BBdSsx4E/01XYr?=
- =?us-ascii?Q?TIfxhO5yu3ljB0TlV9YK2STetE+LU7mHRyq8X4G0mQl9da1T3uoMInHzLU3n?=
- =?us-ascii?Q?GS3CKRuRUQOmPTr2KPB53Wbu9q3lFlJAsz7dz5p/ry50lyVHQTjtkkZz77EP?=
- =?us-ascii?Q?u8loKb0T/eNUQsYp8EWSlpadnUM9Wn2jsftiXrmrgRDCTCeMmpvZysGNEePt?=
- =?us-ascii?Q?YzziOBbAsJQtITVe3wH1I6mdqVMO/JwCKmwtKqIS6KMKDgX37f9oXbA7KwBt?=
- =?us-ascii?Q?1hLZAU4nj/y3ChUyl/d9o4yYUdFGKFGxLAUISA4jlA/eUOH3O0D+ykcA8yZO?=
- =?us-ascii?Q?4ss09xstbQpHBgsVJcm/QeuFQL1mfQJQpQqRPKKy3PhrEUcY3ebkrNLx55tT?=
- =?us-ascii?Q?UqUGFZ9AxPwNOUIKbgzkDVixoLDkdmrZZr5s/MficDJeBxu7zMNmzQsxeMpe?=
- =?us-ascii?Q?r//X0+oArPqHo3GwcQsklnLlWEaxymH1RJt92yVAQCx6vaKhXsHYp7fIypB4?=
- =?us-ascii?Q?MJMulA7O7DQi6BWb4HT62XS1Jkz9F80MEwtUhiuH5+y1K1NGLiwycIlIstIa?=
- =?us-ascii?Q?RbcsHtmRD7jdlpfQZBMGHZuHhxB3pfpRezPqTJ9H8kohs0XH4u1RX6fhEAMM?=
- =?us-ascii?Q?x45eg7EJ2PJb2Zr0QBguUBnTe95wwx0bXI/ESw2T?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 959bfea6-fc98-45cc-9b3b-08de10167806
-X-MS-Exchange-CrossTenant-AuthSource: AS4PR04MB9621.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Oct 2025 20:23:02.6132
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: xWNBLFeSOgCM0Pp/DAtJ2IufM0ZkRQqtSZrj+xup0T2tZ8GpheyUZ5r8FlX6OA4RHG/MJZ/T6SR/pTyCkuogRw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB7391
+Content-Disposition: inline
+In-Reply-To: <20251014-i3c_ddr-v6-1-3afe49773107@nxp.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
+ krs, Bertel Jungin Aukio 5, 02600 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251020_132321_625732_C9B33FD8 
-X-CRM114-Status: GOOD (  20.16  )
+X-CRM114-CacheID: sfid-20251023_012349_626424_9F37F39D 
+X-CRM114-Status: GOOD (  20.33  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -159,75 +100,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 20, 2025 at 05:40:20PM +0800, Stanley Chu wrote:
-> From: Stanley Chu <yschu@nuvoton.com>
->
-> If no free IBI slot is available, svc_i3c_master_handle_ibi returns
-> immediately. This causes the STOP condition to be missed because the
-> EmitStop request is sent when the transfer is not complete. To resolve
-> this, svc_i3c_master_handle_ibi must wait for the transfer to complete
-> before returning.
->
-> Fixes: dd3c52846d59 ("i3c: master: svc: Add Silvaco I3C master driver")
-> Signed-off-by: Stanley Chu <yschu@nuvoton.com>
-> ---
->  drivers/i3c/master/svc-i3c-master.c | 24 +++++++++++++++---------
->  1 file changed, 15 insertions(+), 9 deletions(-)
->
-> diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-> index 9641e66a4e5f..9cf9fb586e92 100644
-> --- a/drivers/i3c/master/svc-i3c-master.c
-> +++ b/drivers/i3c/master/svc-i3c-master.c
-> @@ -406,21 +406,27 @@ static int svc_i3c_master_handle_ibi(struct svc_i3c_master *master,
->  	int ret, val;
->  	u8 *buf;
->
-> -	slot = i3c_generic_ibi_get_free_slot(data->ibi_pool);
-> -	if (!slot)
-> -		return -ENOSPC;
-> -
-> -	slot->len = 0;
-> -	buf = slot->data;
-> -
-> +	/*
-> +	 * Wait for transfer to complete before returning. Otherwise, the EmitStop
-> +	 * request might be sent when the transfer is not complete.
-> +	 */
->  	ret = readl_relaxed_poll_timeout(master->regs + SVC_I3C_MSTATUS, val,
-> -						SVC_I3C_MSTATUS_COMPLETE(val), 0, 1000);
-> +					 SVC_I3C_MSTATUS_COMPLETE(val), 0, 1000);
+On Tue, Oct 14, 2025 at 12:40:00PM -0400, Frank Li wrote:
+> Rename struct i3c_priv_xfer to struct i3c_xfer, since private xfer in the
+> I3C spec refers only to SDR transfers. Ref: i3c spec ver1.2, section 3,
+> Technical Overview.
+> 
+> i3c_xfer will be used for both SDR and HDR.
+> 
+> Rename enum i3c_hdr_mode to i3c_xfer_mode. Previous definition need match
+> CCC GET_CAP1 bit position. Use 31 as SDR transfer mode.
+> 
+> Add i3c_device_do_xfers() with an xfer mode argument, while keeping
+> i3c_device_do_priv_xfers() as a wrapper that calls i3c_device_do_xfers()
+> with I3C_SDR for backward compatibility.
+> 
+> Introduce a 'cmd' field in struct i3c_xfer as an anonymous union with
+> 'rnw', since HDR mode uses read/write commands instead of the SDR address
+> bit.
+> 
+> Add .i3c_xfers() callback for master controllers. If not implemented, fall
+> back to SDR with .priv_xfers(). The .priv_xfers() API can be removed once
+> all controllers switch to .i3c_xfers().
+> 
+> Add 'mode_mask' bitmask to advertise controller capability.
 
-This is code style change. Don't touch this line at fixes patch.
+...
 
-Frank
+>  static int i3c_master_check_ops(const struct i3c_master_controller_ops *ops)
+>  {
+> -	if (!ops || !ops->bus_init || !ops->priv_xfers ||
+> +	if (!ops || !ops->bus_init ||
+>  	    !ops->send_ccc_cmd || !ops->do_daa || !ops->i2c_xfers)
+>  		return -EINVAL;
+>  
+> +	if (!ops->priv_xfers && !ops->i3c_xfers)
+> +		return -EINVAL;
 
->  	if (ret) {
->  		dev_err(master->dev, "Timeout when polling for COMPLETE\n");
-> -		i3c_generic_ibi_recycle_slot(data->ibi_pool, slot);
->  		return ret;
->  	}
->
-> +	slot = i3c_generic_ibi_get_free_slot(data->ibi_pool);
-> +	if (!slot) {
-> +		dev_dbg(master->dev, "No free ibi slot, drop the data\n");
-> +		writel(SVC_I3C_MDATACTRL_FLUSHRB, master->regs + SVC_I3C_MDATACTRL);
-> +		return -ENOSPC;
-> +	}
-> +
-> +	slot->len = 0;
-> +	buf = slot->data;
-> +
->  	while (SVC_I3C_MSTATUS_RXPEND(readl(master->regs + SVC_I3C_MSTATUS))  &&
->  	       slot->len < SVC_I3C_FIFO_SIZE) {
->  		mdatactrl = readl(master->regs + SVC_I3C_MDATACTRL);
-> --
-> 2.34.1
->
->
-> --
-> linux-i3c mailing list
-> linux-i3c@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-i3c
+I would find the logically coupled proto-based xfers:
+
+	if (!ops->i2c_xfers && !ops->i3c_xfers)
+		return -EINVAL;
+
+
+>  	if (ops->request_ibi &&
+>  	    (!ops->enable_ibi || !ops->disable_ibi || !ops->free_ibi ||
+>  	     !ops->recycle_ibi_slot))
+
+>  }
+
+...
+
+> -enum i3c_hdr_mode {
+> +enum i3c_xfer_mode {
+> +	/* The below 3 value (I3C_HDR*) must match GETCAP1 Byte bit position */
+>  	I3C_HDR_DDR,
+>  	I3C_HDR_TSP,
+>  	I3C_HDR_TSL,
+> +	/* Use for default SDR transfer mode */
+> +	I3C_SDR = 0x31,
+
+Why has this a specific value, while the rest have not? If it's HW mandated,
+the all of them has to be assigned properly to avoid potential bugs.
+
+>  };
+
+...
+
+>  /**
+> - * struct i3c_priv_xfer - I3C SDR private transfer
+> + * struct i3c_xfer - I3C data transfer
+>   * @rnw: encodes the transfer direction. true for a read, false for a write
+> + * @cmd: Read/Write command in HDR mode, read: 0x80 - 0xff, write: 0x00 - 0x7f
+>   * @len: transfer length in bytes of the transfer
+>   * @actual_len: actual length in bytes are transferred by the controller
+>   * @data: input/output buffer
+
+>   * @data.out: output buffer. Must point to a DMA-able buffer
+>   * @err: I3C error code
+>   */
+> -struct i3c_priv_xfer {
+> -	u8 rnw;
+> +struct i3c_xfer {
+> +	union {
+> +		u8 rnw;
+> +		u8 cmd;
+> +	};
+
+What field is used to distinguish the union member in current use?
+In another word, union must be accompanied with a selector.
+
+>  	u16 len;
+>  	u16 actual_len;
+>  	union {
+
+>  	enum i3c_error_code err;
+>  };
+
+...
+
+> +/* keep back compatible */
+> +#define i3c_priv_xfer i3c_xfer
+
+How many of the current users do this? Can't we just rename treewide?
+
+-- 
+With Best Regards,
+Andy Shevchenko
+
+
 
 -- 
 linux-i3c mailing list
