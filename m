@@ -4,57 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D485CCCD1BE
-	for <linux-i3c@archiver.kernel.org>; Thu, 23 Oct 2025 15:24:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 088CBCCD193
+	for <linux-i3c@archiver.kernel.org>; Thu, 23 Oct 2025 18:23:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mxvg67QLCGTTs//3lAt91Xf42YHwhsuMPmqxI+jicNc=; b=0c67EqVt7heYeq
-	nDTzWs+uNgOhbsQo0qRzJ/ITLfHevD7HvVtLHTLK4txNjf0UCZmXLxfH/Fv+4eM/1JO5U+jFLGM4n
-	LgwWy6WW/VgWUe0UdFn+XxbEj10LzWjYLZNayaP8Za650zPirglP1bB4HgMwrEMPFXVnlOGgtjaYt
-	EIE33VBL4CavUjPXAiu8YPQ+DRdcotN/QsB3So+z/gADEZ/NmlBnUUtj+7MklM0WhhDJerdHK78s8
-	nx/c/MMo4y/NuHjWXVzbvArDJLf7tMz3Uh3625ADuYotjvp3ksh1veNa5dYFp9mLyeds5jKyM+aOb
-	JhsHZn87xaPvaj5Ri9jg==;
+	List-Owner; bh=+N7TnrgBIuaFyc3TluXq9g7yHGKaxQ3IfFSNEPEXUEE=; b=i8sTyKLs24G/Ok
+	6nOyMawk8b2uIpzzD5yuHgIh3fYneKrg9BMQE4L3tx3i0E7RbHwme/vFWfN1sRmM9ZGTKp9tDfwy4
+	URCzrTUsBurbN7PbN1Yjfljg4s7KS1nfHhkFsynHQc7De7ca7nZlylYBgaL94YOFbGsC7eCk6CR39
+	+3VOr/1S/I1G+TU6Vo/Ycg4j3BORQY48Gp3t16/qLLDXF8m++fpFm/V//XRI0GKsCZJW7UCbEKjxV
+	myKm+6yOSBjnIF8CNwAgfuGesiETs7kFZwCsNSOnmPlfX/dssNg8yddNEZ8VtT7GaDd5ARiAfupQD
+	IpF2djvWaCN9V47czkbQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vBxAo-00000006kgG-2cdV;
-	Thu, 23 Oct 2025 15:24:18 +0000
-Received: from mail-westeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c201::3] helo=AS8PR04CU009.outbound.protection.outlook.com)
+	id 1vBzxx-00000007DRW-3HER;
+	Thu, 23 Oct 2025 18:23:13 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vBxAm-00000006kfp-28UG
+	id 1vBzxv-00000007DQo-2Zim
+	for linux-i3c@bombadil.infradead.org;
+	Thu, 23 Oct 2025 18:23:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=lrUjqQk+rkHCgURnnP5tUbaJp/xRdrDjG4NvLCYEJ28=; b=Pm9f+jrIC34F/AY8ABVfaavDeE
+	+7SMSEu5wIG8pQnhqdzRVkRDUrMcb7yf0B/E+rHIUtFunMp/YU04B2vsY4DyH5uQ9Akf6Z4ID49j+
+	oM1u36s4Z4oZmjNcNUSGk0N9nvMpfVJjErCDg/Q7wRIuCgZDCjqzfkPou8eegtjFUG4TDEnelgjoa
+	GfSk6CTdxorK250Fg5k+jpJP+p90WVUClW3SoAkmdhioQ9tmyOMMBeUK02PcHAO5Ti8kKGo0Vtjtn
+	8sODInNk9E/MhORjRtN25dZynDeJmbQDaaA5Tded2l//ZNHZpWhyR6Gdzpau0x/fCnj2EwrRWSifM
+	fZOU9Fyw==;
+Received: from mgamail.intel.com ([198.175.65.14])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vBz6D-00000001bDI-2QzN
 	for linux-i3c@lists.infradead.org;
-	Thu, 23 Oct 2025 15:24:17 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=A6NLVlknzWLpLhJXZgq5Qxo/KzpXIRoP6CS9+2EeM+N9+DjGKxPJxqsnCUY8l4Iscwnvq+W4L7maMPMTFT61shPcZdwjYdqkIhDDz8dtf3JeLwpjtZZn3gC3RNDSVMz+7g0l9gzpCah9FSrcju0zZusaF3RFEp4c7GosprdAyzQTtdmFHO8/y6FdRuI3Xxe0zjnQuJLxIW1G2uRnemJPFN/wKSsZdX9F/H4Zdnx85CwY4R7Bz5uwpgErKx3ByRJ6T6mlQyC0RHki6Q7+JjoT9JdFSEpWjmV74DunicCEyZSrxsly4c5imViNhERBguPqysqPSq6P47lxOavu/h35ag==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=0RvplgLTVQwLO+ybBb/UwLPWobthGYKmc6idramY17w=;
- b=Brs/O6f2BlvE5wTw6PFq9lJ+3805q7b9RKl0bVBPm+TgHkzgX7tlGACNie+JgS4BvTpEQ148kOZMPgiY1kuoxybM45tWGaK8ZgVTQCRTLBgwHVyMCOiigG/iWpglVaZxPmtuORVDxMOupFk9zt7MUiwFsM4/cMLYiMB4pbApWAlqBZyrKSYjh9ss61op8DknVmYMw4LwFst6EgwmADd3dKYboo5ZuT/LbizK/KPJHWqYbvRWdGzVNkpCXm6fgBwnBkarL6vEPKSB1V6B7GUdvrADeKA/3B/4Ovym8a9L2z+6Nf593C7GEpSQ6S72oqQogVLq50aJnLOVVJDmKoYPYg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0RvplgLTVQwLO+ybBb/UwLPWobthGYKmc6idramY17w=;
- b=fSz8Wz0IKQhdokwLjDnPKa1VNTPOVa6CkE6WfPOywT2QTObkCq87pYzmwaToV5nxjszb/1GSe3oXZJHjP6VTfjh7wwWMKmZRx3KZLqNhDfORY5xOfH2Qi7zORLq6i+4ols+t0hsjyhmo/lOjikAWVV7tg7X6Y6KlayDU407m+M5f1osGk7/Uiph4AJa7u5L06srFB8vwrM2WCcUZIuJ4bwR/5vekSooPAfNaS7zknlnsGP50bQXtVlBXoUHhUtjc9VvBeoM5wG2zMXo+VOdgQZhl4Y0YZumaSfED9V/QCx145T7FcRLDC5GJzNCscVBGJCcf+Qu58CEo/yIF55dQaQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXSPRMB0053.eurprd04.prod.outlook.com (2603:10a6:102:23f::21)
- by AS5PR04MB10018.eurprd04.prod.outlook.com (2603:10a6:20b:67e::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9253.13; Thu, 23 Oct
- 2025 15:24:12 +0000
-Received: from PAXSPRMB0053.eurprd04.prod.outlook.com
- ([fe80::504f:2a06:4579:5f15]) by PAXSPRMB0053.eurprd04.prod.outlook.com
- ([fe80::504f:2a06:4579:5f15%6]) with mapi id 15.20.9253.011; Thu, 23 Oct 2025
- 15:24:12 +0000
-Date: Thu, 23 Oct 2025 11:24:02 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Andy Shevchenko <andriy.shevchenko@intel.com>
+	Thu, 23 Oct 2025 17:27:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1761243788; x=1792779788;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:content-transfer-encoding:in-reply-to;
+  bh=itQoCTiDT763lfYHDtRGD+y331SN21ssLHWuGm9/rgU=;
+  b=aaeoDXu8ajIKdVzCzdPYAqcZ7MWfVeiBMf838AekInB+TQfBts2C/tMs
+   FVHnRrswnGDnf/WAowRU+94JJMAPQH9C8vIHljck40MX3EpfIPHea7k3P
+   w4xV0qgHEB8xKfHzt1IAJPjg2kdnfmk4NeRJNA84nQTcoQWVeKZp9Y4DW
+   Ab/KehzWiZuMNUBUSpJasnYVFBPzSFHc2Zs3O9QKaVzaM8tiGgTTLkxTA
+   wspbpFAQva/h7sR2nExBRS2d1QyVEHFlYqhhUswM9xx2OXOAD8c7UTeIF
+   tLdL91/tP6976QY27L6C6t3VGIB7922B05hPs/u7+7mShoQ7G78Xt4wm9
+   A==;
+X-CSE-ConnectionGUID: IHScR4XDTtme5SzYly5iqw==
+X-CSE-MsgGUID: eX8o/uibSLWT9BHpR4JTpQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11531"; a="67261786"
+X-IronPort-AV: E=Sophos;i="6.17,312,1747724400"; 
+   d="scan'208";a="67261786"
+Received: from fmviesa001.fm.intel.com ([10.60.135.141])
+  by orvoesa106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Oct 2025 11:23:03 -0700
+X-CSE-ConnectionGUID: VBJQp3rZR4+EoB5RQ/iw6g==
+X-CSE-MsgGUID: QeJwaJXPR9CLCG111xrtAg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.19,250,1754982000"; 
+   d="scan'208";a="215149141"
+Received: from pgcooper-mobl3.ger.corp.intel.com (HELO ashevche-desk.local) ([10.245.244.163])
+  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Oct 2025 11:22:59 -0700
+Received: from andy by ashevche-desk.local with local (Exim 4.98.2)
+	(envelope-from <andriy.shevchenko@intel.com>)
+	id 1vBzxg-000000020pu-0Ekg;
+	Thu, 23 Oct 2025 21:22:56 +0300
+Date: Thu, 23 Oct 2025 21:22:55 +0300
+From: Andy Shevchenko <andriy.shevchenko@intel.com>
+To: Frank Li <Frank.li@nxp.com>
 Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Miquel Raynal <miquel.raynal@bootlin.com>,
 	Jonathan Cameron <jic23@kernel.org>,
@@ -65,93 +86,21 @@ Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Conor Dooley <conor+dt@kernel.org>, linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
 	linux-iio@vger.kernel.org, joshua.yeong@starfivetech.com,
-	devicetree@vger.kernel.org, Carlos Song <carlos.song@nxp.com>
-Subject: Re: [PATCH v6 3/5] i3c: master: svc: Add basic HDR mode support
-Message-ID: <aPpIkqjeWsi7xAAn@lizhi-Precision-Tower-5810>
+	devicetree@vger.kernel.org
+Subject: Re: [PATCH v6 1/5] i3c: Add HDR API support
+Message-ID: <aPpyf1xPmU_koEXH@smile.fi.intel.com>
 References: <20251014-i3c_ddr-v6-0-3afe49773107@nxp.com>
- <20251014-i3c_ddr-v6-3-3afe49773107@nxp.com>
- <aPnngQdwEqHgPc7R@smile.fi.intel.com>
-Content-Disposition: inline
-In-Reply-To: <aPnngQdwEqHgPc7R@smile.fi.intel.com>
-X-ClientProxiedBy: BYAPR03CA0026.namprd03.prod.outlook.com
- (2603:10b6:a02:a8::39) To PAXSPRMB0053.eurprd04.prod.outlook.com
- (2603:10a6:102:23f::21)
+ <20251014-i3c_ddr-v6-1-3afe49773107@nxp.com>
+ <aPnmCwwZVZ5egqkP@smile.fi.intel.com>
+ <aPpHTej/vKfiN68k@lizhi-Precision-Tower-5810>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXSPRMB0053:EE_|AS5PR04MB10018:EE_
-X-MS-Office365-Filtering-Correlation-Id: 4f28c195-cb31-4991-32c9-08de124837ec
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|52116014|366016|1800799024|19092799006|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?eqNR3EbJrPnaSTp8kmKU3xMFxy1ZHYiKDgOPgiPC9Vhj5se8sE9wlBYTeFR5?=
- =?us-ascii?Q?OevbNu1rX1K4GGc///2tdVTyJg0/lCZopwtRtBbdQq5IVkehgLFaEXNA1skb?=
- =?us-ascii?Q?ERUq+nFTJutqI+9UWm57MkZRtpIkZfyS1wjP967/v3SuzQrmvbaIw9PtKJvJ?=
- =?us-ascii?Q?isTfyWNzXTMK8qPIqXPtP0bwKgAxHDMi8HWtr578ImtnBuoUjJ9T0X17bDcz?=
- =?us-ascii?Q?/gdlDKkuGPvBO7y2nPzwVm7R/7rOQFrLJcyQCbuEi5IBOyJDVPvRtTaFuajD?=
- =?us-ascii?Q?FNj92w3X3ECCOpmZ1NXDNE9H4Rfi1JUyu9GFaE/kaNda+DegH0iCFwGrNas8?=
- =?us-ascii?Q?+LM1IpB44eDzSgsaPiJtiZMI131FsVdIOlGwKFDeJynSs62YkgR8mCZMHRRB?=
- =?us-ascii?Q?I+dUW6sV8Nit3knbsUlMfwCv4zrpuqLk3hUXwR6t5DFXFiVCFSqNPDkte2kK?=
- =?us-ascii?Q?E/E0zRy/lUPHtyBtR8DSnG70uwsXRmf9VWxRzMGDQe6dmDfJAyWPHsQSWxIT?=
- =?us-ascii?Q?8arpUHBtG0kT5jfBgOXPjNUfc1TeZCCWVKT/FIT7YA0zqzJYz/3SR5EHeoXj?=
- =?us-ascii?Q?A80vcr0lOUxRO7nuSqeeDmhK4RFvlXuNTj6T/03/mEU9Y2ocY/jpz9lCpLDj?=
- =?us-ascii?Q?UjqbwCFliMU3Mkx3cxHPKZnsIyd00ybOMcy31vhFLmZrtIaNQYo6+YConqbv?=
- =?us-ascii?Q?zty/v//Q/UAaIwLzyBLAuz7xEPG0DW6+ngO2n2sP2eXQ+HAEvDS7D/1eIlGm?=
- =?us-ascii?Q?b4DXx0tmS7G+Pdb1ZxP7QhsQxskRpY+k6xyrAEo4imwKV0xlJHor8LhzYAKm?=
- =?us-ascii?Q?/GIfzC4GSDvGFMe9XAweWZkwWYd7zAN7vXu9xaPcYTpX3WPwC5sSw8IGH3hF?=
- =?us-ascii?Q?517LLqY6o0zDJuHVXTQozJ8XBkILIJ4TaVPM02WIajtD54WhGkZng+qhQ6pU?=
- =?us-ascii?Q?/nBHmVT0EzHjsNoqPGPXEiTc35i7ctJ9ERw/pgGVOrlXR3ja7ASg/VaBrpJN?=
- =?us-ascii?Q?APy04MM28o5FzAkI38VeNGtRxACvEf2zA6TM1IWlb7J+EDfd+wAcOdYD+aob?=
- =?us-ascii?Q?aQm7AkDnEF0NpAi0LikQOup4Inpi4cquWLIJ8zIGHLyT18VxSgV++D3uGVqJ?=
- =?us-ascii?Q?xZXzOUOWKYUWkpJTA1reMJ2DHdsDAyThmlMo0xiW0qS+tf/+T9OAU2DDW/yC?=
- =?us-ascii?Q?KnqHFMDafsOUZyVM7gAe6okXq2GbtC3aH1Ho426IC+AkY2HRiJqTo7XP5CwI?=
- =?us-ascii?Q?HwNCzU2l1SNPFVzDQw8/N0txVrAoHnFC/WIcoLSfsGOgsqfaS59TMDitpHk7?=
- =?us-ascii?Q?iW/yZklu08byc0ACKuLt/1XENDo22G8S3tr+1RurFEJYIqIQrWjXbtx5wfAt?=
- =?us-ascii?Q?QoyzJ71283XKaAv/NIfbT0S8fejH2MgAKjJ9b9gs2mfRo9tWEafs9TnD108P?=
- =?us-ascii?Q?RSsP+lc1bpLkDmpKRh3dNg2Xk3V5ht3H9ewaa4KawazTE3cr/r8vYS3N6ZVB?=
- =?us-ascii?Q?XTA/ynu6SeQUI1NLZHl5ibOP6Wg/61zcPmzv?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXSPRMB0053.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(52116014)(366016)(1800799024)(19092799006)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?R6GYEpuwj8MKYcOB0rBHICh0Xh7EJIA1N3rJVqGPXHUDeNuO6j8M5ecVv0nX?=
- =?us-ascii?Q?cinmCbDUYOtDBFp8//Nhs2ghTJGt1dgSONgNYL4wK/dWpjy7d8nPHYGcKj3E?=
- =?us-ascii?Q?YIlMquheTXYTLx39NrBS4GOyx7cu3xe/IF6UNTw3Y4HAIlKBKCMCiQg6VObJ?=
- =?us-ascii?Q?4HPGVfXWX2WCgg5QaFsQESATOP6T7wFzOGtdY5RVpi3RcY3nPRZIjxbuQCJu?=
- =?us-ascii?Q?kAVLDXSTCm3wZkZKmUgf1Z9+WbcbUXQj7G4qeozcW5rkLP5fgzEVBAhXEYS9?=
- =?us-ascii?Q?y6m3hYVf7uC1mfUx3HHf8ZZKX6GX6FJ1EkXK3bqLMECNDr4BsxD28Z633tMB?=
- =?us-ascii?Q?SXQy3/Y3t6xg7JTB0e+3qmhTCjUHHJmgI3Ch3h4DONAmeFKakeuRe0jzErQO?=
- =?us-ascii?Q?uG/Y4sjr4p2MQknSAvXYifnD4NwAdau6ayRu2Iw3o206QeTQQvwHxxwMv6/j?=
- =?us-ascii?Q?/LIcGNK8c/p51/C4D88Uiybylj/Jw0IAIPkt3eZxlKPmn/x2phyeB1R8/AG5?=
- =?us-ascii?Q?09fdWlzyzdGWKbzTEieJmNjGVgTA3xaDghqzmX3wSdYGk4JVjVPWxPeXVXJO?=
- =?us-ascii?Q?PBUIr0z2zJYMq8zwOa+NyGVT4z/0G/KX8stXwIyUV4HHsBNahsCiNqySiaqg?=
- =?us-ascii?Q?shlX/JUNr3NrX6KM+isrzTuMKrvFgbsXWEFj/3SkLBZOPYMgiAh5WAC2e/jN?=
- =?us-ascii?Q?B+eeVYz+nhaJMgyy4Bld9Og7+YOQ0CGja4o/nSBeKRr9pRQwXjrDAXJKXJ3e?=
- =?us-ascii?Q?ZIjrNalRy2h+wWMEGoO3UXOKUfg/JnY0ETacGlggW10z3WRdskdlVLdEafeH?=
- =?us-ascii?Q?GaMjzcYcM2qcZRctH3bQm02m3Sm1pGcotw1NWOVSD2bPJyJkRYMoyJdc0ut0?=
- =?us-ascii?Q?G3weBZALTWxn9w7ULWpKlFNRAJ5aC0AdPiUVdNZMNlvWM/3IVW+gNk70ybK6?=
- =?us-ascii?Q?95A7Wq56pUsWDJAH15VA1udq+wxXej0fb8jCtxMD+0w27AhsDGfAAz/w6lFS?=
- =?us-ascii?Q?n/ifV+R57DudMfwmeMDWvmgBZG5A1TZ2oVmwyMAraVov72wHWwU6elPBRZdu?=
- =?us-ascii?Q?uAt9+R0Tnj/alcgnt0KjKPcvzzMG88gCr/dhu9cOrqq2sraQazDgYhNBhJqm?=
- =?us-ascii?Q?e0qaEptq2wa7171BBdf8Or4Umd9i333YM7my6r0+tbxMqT77K7Hh7komtJrL?=
- =?us-ascii?Q?ywGi3Jt8YzHNFUDnu8KbC0FEOJ5UpkHtSYEKC+zVINIEehNDozeFarAS6G3U?=
- =?us-ascii?Q?fCpQPxRgXP8J3R0k10VkZlZjzaI5hfsTfES6Pz3Ye45d6oDccUmm3hHoM57f?=
- =?us-ascii?Q?6xHnJz01/L44T4TRZXPn6zjvChdxWq0dc73HOSYH5pOOrUfVNl0hFv9kaPGp?=
- =?us-ascii?Q?Xfai8GZVlwGoKOd23gcqjwAUqU37LOAOCJnynBriqEnaHbSdNlQJE04sP7Qu?=
- =?us-ascii?Q?bBSxHzXo1SGkqomBgGR89R3MOSHmUPGehDu0JAzWtB3HO2lawEx691POpDaC?=
- =?us-ascii?Q?Rj2CRdg5Wcn9Y4gkT7j98JFuCckCFlp7cklVILFgP+OhWGiS21/ZQ3FhS0ZG?=
- =?us-ascii?Q?Lm7vGSlExrmrC6+/TJc1cI0PTOr6h12z2BkGDDCr?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4f28c195-cb31-4991-32c9-08de124837ec
-X-MS-Exchange-CrossTenant-AuthSource: PAXSPRMB0053.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Oct 2025 15:24:11.9844
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: /qui4IJBLk8kNZlAADwIvKNA0th+3VAyEVzL5D/5YLBkXBj6DLxd0nSnsTxO1CLIZQGP3cpRcX0Yn7y5eoYYWg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS5PR04MB10018
+Content-Disposition: inline
+In-Reply-To: <aPpHTej/vKfiN68k@lizhi-Precision-Tower-5810>
+Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
+ krs, Bertel Jungin Aukio 5, 02600 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251023_082416_552244_8DC412F2 
-X-CRM114-Status: GOOD (  20.57  )
+X-CRM114-CacheID: sfid-20251023_182742_064458_01388168 
+X-CRM114-Status: GOOD (  35.19  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -163,78 +112,213 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Oct 23, 2025 at 11:29:53AM +0300, Andy Shevchenko wrote:
-> On Tue, Oct 14, 2025 at 12:40:02PM -0400, Frank Li wrote:
-> > Add basic HDR mode support for the svs I3C master driver.
+On Thu, Oct 23, 2025 at 11:18:37AM -0400, Frank Li wrote:
+> On Thu, Oct 23, 2025 at 11:23:39AM +0300, Andy Shevchenko wrote:
+> > On Tue, Oct 14, 2025 at 12:40:00PM -0400, Frank Li wrote:
+
+...
+
+> > >  static int i3c_master_check_ops(const struct i3c_master_controller_o=
+ps *ops)
+> > >  {
+> > > -	if (!ops || !ops->bus_init || !ops->priv_xfers ||
+> > > +	if (!ops || !ops->bus_init ||
+> > >  	    !ops->send_ccc_cmd || !ops->do_daa || !ops->i2c_xfers)
+> > >  		return -EINVAL;
+> > >
+> > > +	if (!ops->priv_xfers && !ops->i3c_xfers)
+> > > +		return -EINVAL;
 > >
-> > Only support for private transfers and does not support sending CCC
-> > commands in HDR mode.
+> > I would find the logically coupled proto-based xfers:
 > >
-> > Key differences:
-> > - HDR uses commands (0x00-0x7F for write, 0x80-0xFF for read) to
-> > distinguish transfer direction.
-> > - HDR read/write commands must be written to FIFO before issuing the I3C
-> > address command. The hardware automatically sends the standard CCC command
-> > to enter HDR mode.
-> > - HDR exit pattern must be sent instead of send a stop after transfer
-> > completion.
-> > - Read/write data size must be an even number.
->
-> ...
->
-> > +static void svc_i3c_master_emit_force_exit(struct svc_i3c_master *master)
-> > +{
-> > +	u32 reg = 0;
->
-> Useless.
->
-> > +	writel(SVC_I3C_MCTRL_REQUEST_FORCE_EXIT, master->regs + SVC_I3C_MCTRL);
-> > +	readl_poll_timeout(master->regs + SVC_I3C_MSTATUS, reg,
-> > +			   SVC_I3C_MSTATUS_MCTRLDONE(reg), 0, 1000);
->
-> No error checks? Why is it okay?
-> Why is the first parameter 0 while it's not an _atomic() call?
->
-> > +	udelay(1);
->
-> No explanations given. Also is it really need to be atomic? If not, use
-> fsleep() and it will choose the best suitable API under the hood.
+> > 	if (!ops->i2c_xfers && !ops->i3c_xfers)
+> > 		return -EINVAL;
+> =
 
-It is in atomic context. I will add comments.
+> Not exactly, priv_xfers is old API, which supported now. I plan remove it
+> after remove all from i3c master controller driver after this patch merge=
+d.
+> =
 
-Frank
+> i2c_xfers: must be no NULL
+> =
 
->
-> >  }
->
-> ...
->
-> > +	if (xfer_type == SVC_I3C_MCTRL_TYPE_DDR) {
-> > +		/* DDR command need prefill into FIFO */
-> > +		writel(rnw_cmd, master->regs + SVC_I3C_MWDATAB);
-> > +		if (!rnw) {
-> > +			/* write data also need prefill into FIFO */
-> > +			ret = svc_i3c_master_write(master, out, xfer_len);
-> > +		if (ret)
-> > +			goto emit_stop;
-> > +		}
->
-> The indentation here is a mess.
->
-> > +	}
->
-> --
-> With Best Regards,
-> Andy Shevchenko
->
->
+> priv_xfers and i3c_xfers, one of both should be no NULL.
+> =
 
--- 
+> i2c_xfer is NULL, should be return -EINVAL, but you logic may success if
+> i3c_xfers is not NULL.
+
+You are right. I misread && as ||. Can you add a summary of the above in the
+comment above the conditionals or kernel-doc of this function (if present)?
+
+> > >  	if (ops->request_ibi &&
+> > >  	    (!ops->enable_ibi || !ops->disable_ibi || !ops->free_ibi ||
+> > >  	     !ops->recycle_ibi_slot))
+> >
+> > >  }
+
+...
+
+> > > -enum i3c_hdr_mode {
+> > > +enum i3c_xfer_mode {
+> > > +	/* The below 3 value (I3C_HDR*) must match GETCAP1 Byte bit positio=
+n */
+> > >  	I3C_HDR_DDR,
+> > >  	I3C_HDR_TSP,
+> > >  	I3C_HDR_TSL,
+> > > +	/* Use for default SDR transfer mode */
+> > > +	I3C_SDR =3D 0x31,
+> >
+> > Why has this a specific value, while the rest have not? If it's HW mand=
+ated,
+> > the all of them has to be assigned properly to avoid potential bugs.
+> >
+> > >  };
+
+Are you agree on this or disagree or...?
+If you agree, don't leave the unneeded context in the reply.
+Otherwise, please express your objections.
+
+...
+
+> > >  /**
+> > > - * struct i3c_priv_xfer - I3C SDR private transfer
+> > > + * struct i3c_xfer - I3C data transfer
+> > >   * @rnw: encodes the transfer direction. true for a read, false for =
+a write
+> > > + * @cmd: Read/Write command in HDR mode, read: 0x80 - 0xff, write: 0=
+x00 - 0x7f
+> > >   * @len: transfer length in bytes of the transfer
+> > >   * @actual_len: actual length in bytes are transferred by the contro=
+ller
+> > >   * @data: input/output buffer
+> >
+> > >   * @data.out: output buffer. Must point to a DMA-able buffer
+> > >   * @err: I3C error code
+> > >   */
+> > > -struct i3c_priv_xfer {
+> > > -	u8 rnw;
+> > > +struct i3c_xfer {
+> > > +	union {
+> > > +		u8 rnw;
+> > > +		u8 cmd;
+> > > +	};
+> >
+> > What field is used to distinguish the union member in current use?
+> > In another word, union must be accompanied with a selector.
+> =
+
+> This struct use only for i3c_device_do_xfers(), which pass i3c_xfer_mode
+> informaiton. argument 'mode' will distrigiush rnw/cmd.
+
+Then why that mode field is not present here?
+
+> i3c_xfer[] array don't allow switch transfer mode during whole i3c
+> transcation. So doesn't put mode in here.
+
+I presume that this is the answer to my above Q? If so, I think this
+dislayering is not okay, because the struct effectively lost the crucial pi=
+ece
+of information (for example, if you need to trace the contents of it, the m=
+ode
+also needs to be provided again, and so on). I think the data type must have
+this mode field as well (as long as union is in use).
+
+> > >  	u16 len;
+> > >  	u16 actual_len;
+> > >  	union {
+> >
+> > >  	enum i3c_error_code err;
+> > >  };
+
+...
+
+> > > +/* keep back compatible */
+> > > +#define i3c_priv_xfer i3c_xfer
+> >
+> > How many of the current users do this? Can't we just rename treewide?
+> =
+
+> git grep -r priv_xfer drivers/
+
+`git grep -lw ...` is a better approach :-)
+
+> drivers/base/regmap/regmap-i3c.c:       struct i3c_priv_xfer xfers[] =3D {
+> drivers/base/regmap/regmap-i3c.c:       return i3c_device_do_priv_xfers(i=
+3c, xfers, 1);
+> drivers/base/regmap/regmap-i3c.c:       struct i3c_priv_xfer xfers[2];
+> drivers/base/regmap/regmap-i3c.c:       return i3c_device_do_priv_xfers(i=
+3c, xfers, 2);
+> drivers/hwmon/lm75.c:   struct i3c_priv_xfer xfers[] =3D {
+> drivers/hwmon/lm75.c:   ret =3D i3c_device_do_priv_xfers(i3cdev, xfers, 2=
+);
+> drivers/hwmon/lm75.c:   struct i3c_priv_xfer xfers[] =3D {
+> drivers/hwmon/lm75.c:   return i3c_device_do_priv_xfers(i3cdev, xfers, 1);
+> drivers/i3c/device.c:int i3c_device_do_xfers(struct i3c_device *dev, stru=
+ct i3c_priv_xfer *xfers,
+> drivers/i3c/master.c:   if (!ops->priv_xfers && !ops->i3c_xfers)
+> drivers/i3c/master.c:   if (!master->ops->priv_xfers)
+> drivers/i3c/master.c:   return master->ops->priv_xfers(dev, xfers, nxfers=
+);
+> drivers/i3c/master/dw-i3c-master.c:static int dw_i3c_master_priv_xfers(st=
+ruct i3c_dev_desc *dev,
+> drivers/i3c/master/dw-i3c-master.c:                                 struc=
+t i3c_priv_xfer *i3c_xfers,
+> drivers/i3c/master/dw-i3c-master.c:     .priv_xfers =3D dw_i3c_master_pri=
+v_xfers,
+> drivers/i3c/master/i3c-master-cdns.c:static int cdns_i3c_master_priv_xfer=
+s(struct i3c_dev_desc *dev,
+> drivers/i3c/master/i3c-master-cdns.c:                                 str=
+uct i3c_priv_xfer *xfers,
+> drivers/i3c/master/i3c-master-cdns.c:   .priv_xfers =3D cdns_i3c_master_p=
+riv_xfers,
+> drivers/i3c/master/mipi-i3c-hci/core.c:static int i3c_hci_priv_xfers(stru=
+ct i3c_dev_desc *dev,
+> drivers/i3c/master/mipi-i3c-hci/core.c:                       struct i3c_=
+priv_xfer *i3c_xfers,
+> drivers/i3c/master/mipi-i3c-hci/core.c: .priv_xfers             =3D i3c_h=
+ci_priv_xfers,
+> drivers/i3c/master/renesas-i3c.c:static int renesas_i3c_priv_xfers(struct=
+ i3c_dev_desc *dev, struct i3c_priv_xfer *i3c_xfers,
+> drivers/i3c/master/renesas-i3c.c:       .priv_xfers =3D renesas_i3c_priv_=
+xfers,
+> drivers/i3c/master/svc-i3c-master.c:    struct i3c_priv_xfer *xfer;
+> drivers/i3c/master/svc-i3c-master.c:     * at svc_i3c_master_priv_xfers().
+> drivers/i3c/master/svc-i3c-master.c:static int svc_i3c_master_i3c_xfers(s=
+truct i3c_dev_desc *dev, struct i3c_priv_xfer *xfers,
+> drivers/net/mctp/mctp-i3c.c:    struct i3c_priv_xfer xfer =3D { .rnw =3D =
+1, .len =3D mi->mrl };
+> drivers/net/mctp/mctp-i3c.c:    rc =3D i3c_device_do_priv_xfers(mi->i3c, =
+&xfer, 1);
+> drivers/net/mctp/mctp-i3c.c:    struct i3c_priv_xfer xfer =3D { .rnw =3D =
+false };
+> drivers/net/mctp/mctp-i3c.c:    rc =3D i3c_device_do_priv_xfers(mi->i3c, =
+&xfer, 1);
+> =
+
+> After this patch merged, I can clean up it at difference subsytem. After
+> all cleanup done, we can safely remove this define.
+
+I counted 9. I think it's not a big deal to convert all of them at once wit=
+hout
+leaving an intermediate state. But this is a call for the I=B3C subsystem m=
+aintainer.
+
+-- =
+
+With Best Regards,
+Andy Shevchenko
+
+
+
+-- =
+
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
