@@ -4,57 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE95DCCF9E3
-	for <linux-i3c@archiver.kernel.org>; Fri, 24 Oct 2025 14:03:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A139FCCF9E0
+	for <linux-i3c@archiver.kernel.org>; Fri, 24 Oct 2025 16:03:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KdAN6URikph1exoXbT349sZfRSglJbZZB8/OAxrPDW8=; b=1oRwNwu91wvk3p
-	vJ0c8BoefJvFlUILQiyBKtvErrTeBHx2DOKt9ZaC++Otr+T1h7HJtN0yMTp4dAil4+LEHuSS3oei4
-	TZQn/9gja9WQ9ZQ02nRH7EEmHlFYZ2xl2klCeJjYJEQ3/FcwVRQ88kEr0eiQNp7rELVQ4eU0+EkN/
-	KWOf/2IjEUCj8qej9xIBl2TkFoVrqvyFDeavj2S97uMpfVWmuV72ihSGHdSQffcKoYpGbCp/42/FR
-	PP2cd0EKjY9AB4JtqdMoc26n9LnXOgeexsfruDTNX3mrOKQXZecPmisJ0qVEn+UF3FK8URDml8ceA
-	k9DkPejlBVAU1QiEy60g==;
+	List-Owner; bh=GVIS61k0EcsK9E9j3beawQlt0kkd4y33OEsCqSe6UfQ=; b=haVHs21RzJLCP5
+	JvS6IRQ/mt98Sd5pGx7Y5Q7BUGcafbzt19TmnpMcWS7PwCr/9TObMkVEj3ran7BrAgTuOcjzo0/cc
+	lL1VT0AUmftQMvpWMZ5+tMzeOwA7uUwGiBOnMKk3eVRvTdt+FQ4gymRgX9DScM5TlMoYhh6HsBGvI
+	cnJFvtzhlhxkrR3yOn/TONgvNAhDbtiR6cJAxbSacMb2yPfEH7k9IXc9FB8fKJ3mKUi/ujrJzYfCo
+	VhbboGDV6Lii7q6cbne4yfER4rywn6Ip/IPKQ4JG+ELv8bygw9vDvJo8LqRnusXYHr6gTn+8In1DU
+	4yEQF7QCoBCxtCpbkgZQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCIOI-00000009btD-0DfP;
-	Fri, 24 Oct 2025 14:03:38 +0000
-Received: from mail-northeuropeazon11012021.outbound.protection.outlook.com ([52.101.66.21] helo=DUZPR83CU001.outbound.protection.outlook.com)
+	id 1vCKGe-00000009tbT-1kIs;
+	Fri, 24 Oct 2025 16:03:52 +0000
+Received: from mgamail.intel.com ([198.175.65.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCIOF-00000009bsH-1ZNt
+	id 1vCKGb-00000009taQ-1KrU
 	for linux-i3c@lists.infradead.org;
-	Fri, 24 Oct 2025 14:03:36 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=VPslb19Tzg8O0jGCyw1lf6o7X/pI38Qp/twOaQfL00lHxQDpG49hpbDrJwm6wNsn87psZFoAFaNTDP92rqrpzr+HAZcgiojOgoxlG3K5LOwrl6zHRE0bRIzgfu8+Uqoj7StAA1P1CTQ3TtC8ftYBINR9Y/g1TOn5JqeRzKVnGV4gpn2uGlYFFI0m7bQfzO+ewCVPgS3/hgXxx/rhavn/vR8VqMboEU7Mut9Jta7NrRx+rXyhzV3+ulDiBmzTQfefc+3tDdFWrdqrvO2FwAzpYBhGr1VQ7vJFYkVyTzkOmeb2nMvygYnCVw9k3RX0Y8MpiihfXuYOcxSYPYKwSfg4kw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=hMEzb4rF5XLDLUEsM9tO8uf7Uxr5zWqTwCYoQXUsuUs=;
- b=Dq4MpnhR9Bnw6wnq3AcMSGFBdTzOu0sd0sVXNfAmoahxpU7yuNl/Pl//sCNrFliKZ1YIKLkR+Ragn73J3lkduFHYbKWmG9XgVIYgcOcGkpBn2JQdRerMeZ2uQ+FrNeL6DMw9jKciJQ0tByTwwk6UpAQ6OmGpREsanEnOOJWaEsrIRFtpbuzMuSmDZpz7NrmrWICDfsMWzfGPa1qqd1YnNYcjycZJTpN0zcvuApIpd4EmEZ6PD6PI/A7R/yCXyWSAXxEtJ458KKyO0fRCcvsfcbam6ZOXK2eICK283PJI8EiQ7xROLp8VP8Jap6zUkhcQm6ylUvHEoeG58QgOQrjIWg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hMEzb4rF5XLDLUEsM9tO8uf7Uxr5zWqTwCYoQXUsuUs=;
- b=nczI1X6z7EoNwnRfhIno+e6zyu5bPjc2ulWmtgw8c3bcAe5MozkzXugTt7258fLol8u4+nMtQxfGmUfAbk/ssSTe9HGoerI6+yWCCabX04qDqPcx7OwWHKCLgVHh/obzlYrdowclP2bsSrr1A/oXEWeFspeGQ56AecgT9El6uAkbEsB4t1sOj6G34/qhnxFe28ZMnX1M+vkHsP4L1Dqnm9L8HQwXiw6fplf7ZiK9bT/iKLNdIxiBCJUDEZmZ/sea8AolZWYjf4dEtbzWMLHEivOu57T2QPoBWSIqB3FYKDP2CiIasqwYPNj9VUaBXDUqNA7aKGLpxOrb1JJTstsufQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from DB9PR04MB9626.eurprd04.prod.outlook.com (2603:10a6:10:309::18)
- by GV1PR04MB10428.eurprd04.prod.outlook.com (2603:10a6:150:1d4::19) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9253.13; Fri, 24 Oct
- 2025 14:03:28 +0000
-Received: from DB9PR04MB9626.eurprd04.prod.outlook.com
- ([fe80::55ef:fa41:b021:b5dd]) by DB9PR04MB9626.eurprd04.prod.outlook.com
- ([fe80::55ef:fa41:b021:b5dd%4]) with mapi id 15.20.9253.011; Fri, 24 Oct 2025
- 14:03:28 +0000
-Date: Fri, 24 Oct 2025 10:03:22 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Andy Shevchenko <andriy.shevchenko@intel.com>
+	Fri, 24 Oct 2025 16:03:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1761321830; x=1792857830;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:content-transfer-encoding:in-reply-to;
+  bh=4rQ06hcRDPh06TcIr4Hhsm2kdiwKuNYxumRXFNrUjJA=;
+  b=E8LewufVOxQ5HbMhl4pPzsvceo8qzmYX8Zw0jI61OYSmJYCHZ/kQduSA
+   SnjYLzl0Ahru1o6ZAzTWcobcGe5Qe9d7SDFRVLvmMg9uCTYw8fQK5QSCh
+   nilq95pjqPgfPYHCN2Bjz7ozsi+Xt0PV7qeO/OBIIoTrfq1LT9/sFrVvb
+   ENVWn244n+WWYnIhlUUKarnp8lUtzixF8fhFBhlm0VyKA5YFmDK7rpVD7
+   0OMD20wEnLsF5HW3GdRRk23e8S0lJYLebnWGHc2+77+tMwQ+L80hge7EF
+   RTaTeMAwsJ7xs41devNKfcmj3Dt8NgfWXVYWxpt7sHvNaiti52koYOcTW
+   Q==;
+X-CSE-ConnectionGUID: F96njwrtSMeE1bbb6Imvjg==
+X-CSE-MsgGUID: lA90CEurQhuzEpdQZ2rs9w==
+X-IronPort-AV: E=McAfee;i="6800,10657,11586"; a="74949800"
+X-IronPort-AV: E=Sophos;i="6.19,252,1754982000"; 
+   d="scan'208";a="74949800"
+Received: from orviesa002.jf.intel.com ([10.64.159.142])
+  by orvoesa104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 24 Oct 2025 09:03:49 -0700
+X-CSE-ConnectionGUID: oM1QeLgRR2izo7nsOkSYWQ==
+X-CSE-MsgGUID: nRGZyRpfSYK4S0x3HQThpw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.19,252,1754982000"; 
+   d="scan'208";a="215117928"
+Received: from pgcooper-mobl3.ger.corp.intel.com (HELO ashevche-desk.local) ([10.245.245.147])
+  by orviesa002-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 24 Oct 2025 09:03:45 -0700
+Received: from andy by ashevche-desk.local with local (Exim 4.98.2)
+	(envelope-from <andriy.shevchenko@intel.com>)
+	id 1vCKGT-00000002Cpo-42le;
+	Fri, 24 Oct 2025 19:03:41 +0300
+Date: Fri, 24 Oct 2025 19:03:41 +0300
+From: Andy Shevchenko <andriy.shevchenko@intel.com>
+To: Frank Li <Frank.li@nxp.com>
 Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Miquel Raynal <miquel.raynal@bootlin.com>,
 	Jonathan Cameron <jic23@kernel.org>,
@@ -67,7 +73,7 @@ Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	linux-iio@vger.kernel.org, joshua.yeong@starfivetech.com,
 	devicetree@vger.kernel.org
 Subject: Re: [PATCH v6 1/5] i3c: Add HDR API support
-Message-ID: <aPuHKs3u344zoI2+@lizhi-Precision-Tower-5810>
+Message-ID: <aPujXUO2h5zHy2fj@smile.fi.intel.com>
 References: <20251014-i3c_ddr-v6-0-3afe49773107@nxp.com>
  <20251014-i3c_ddr-v6-1-3afe49773107@nxp.com>
  <aPnmCwwZVZ5egqkP@smile.fi.intel.com>
@@ -75,89 +81,15 @@ References: <20251014-i3c_ddr-v6-0-3afe49773107@nxp.com>
  <aPpyf1xPmU_koEXH@smile.fi.intel.com>
  <aPq/6/+63sHuq/qy@lizhi-Precision-Tower-5810>
  <aPsZB44qXR77jNHF@smile.fi.intel.com>
-Content-Disposition: inline
-In-Reply-To: <aPsZB44qXR77jNHF@smile.fi.intel.com>
-X-ClientProxiedBy: CH2PR15CA0013.namprd15.prod.outlook.com
- (2603:10b6:610:51::23) To DB9PR04MB9626.eurprd04.prod.outlook.com
- (2603:10a6:10:309::18)
+ <aPuHKs3u344zoI2+@lizhi-Precision-Tower-5810>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DB9PR04MB9626:EE_|GV1PR04MB10428:EE_
-X-MS-Office365-Filtering-Correlation-Id: 5a9d885c-a089-4da5-5f6c-08de13061b4e
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|19092799006|376014|7416014|52116014|38350700014;
-X-Microsoft-Antispam-Message-Info: =?iso-8859-1?Q?w9hDbfoPAghGu+9r0fugAFSHKoU8HQ8/Dvs2g2A/CeOZ80uPX8/hG1w3sY?=
- =?iso-8859-1?Q?cAE99NMMOyISnCDKwqfoWawYBJ+WJbaVQXOBgp69Zye8pKyReSBl4dzXOL?=
- =?iso-8859-1?Q?oXSg8uZCMY2Kxw70thyPktcVv/N6QCRrk8pcNAFBc4T2q1AfedxGSYPsxn?=
- =?iso-8859-1?Q?urxef9d2/q30ZGgSHSLIYoiv/25EHhcXC0kazSpBWCIvwyAX1EmEM/iDYo?=
- =?iso-8859-1?Q?FdHMOsevaGbr7vYqDN+8wUzFQw/0o7fFDnf0mS1HAI2dGO7JikWAIVnCpP?=
- =?iso-8859-1?Q?s3CDZkZfnIDRQm+kAsZEsSdSSjDSawQW8LAc7HPVrXiuT65RUTfIOpNW9E?=
- =?iso-8859-1?Q?OhNniav4ER1aAt9tygVFkmOvQpCi/hidR4PS9jjsSfniF9Unz4kdSORgJ+?=
- =?iso-8859-1?Q?ljmI/CGcsGZJjJ27IG8e6YA+4XWo4dMZXqxZLUpCjAKNfpt70sv6TM/9pZ?=
- =?iso-8859-1?Q?y8Wt1CB2Dd4iL4GtwYdSd6PaH5oDdgP32wIMLSfQ6H9XN/RbM10bGjsAUV?=
- =?iso-8859-1?Q?PE0/ukqofPaCft17uyyNZsaDOmYn1kPLoJkf6atGnFZAm/GP9VOPDly/76?=
- =?iso-8859-1?Q?2TIdhIz9zE78X6PgeTINVVTO/fk8oSP00WzQUOzxVAc+PdO1+dujA+Tl1C?=
- =?iso-8859-1?Q?smEYnmT9dYfU3vo8yY88381/goNpPlNTRLHQw4sMoe63uZYcPhpYFVL8rd?=
- =?iso-8859-1?Q?zz/zOrzVqK5tl8UBUShnY0Ou8bfCA7wuK98smI5qdgEwTU7IK/MF7fUQIP?=
- =?iso-8859-1?Q?ic+S0thkDAGqxc0sfmh5P8H/iLJsSuXmWV/nI0R77XvXUHnCGIV7S8U/oL?=
- =?iso-8859-1?Q?pZf2IPnZb5oaEfEomWmJIXXRD4iHFVh/E7uziNXu3g2zpaNr9EPf4aCs/N?=
- =?iso-8859-1?Q?bymSSHBbNILTwMjBrFzk+K9pXddPn1B0YdV9qCJW7eZpSUBjX6HcGnHiN3?=
- =?iso-8859-1?Q?BzQKkMVYe601FRClQmb4iMBNyHoPy9UqwkWGHLfgT6H2BO2hCQ4fKjpM4L?=
- =?iso-8859-1?Q?6V64j7aMSwQQwfmx1m+gNIXG+3KfyUrwfPqf3DR05Y/fTILHOf8jxV5sBO?=
- =?iso-8859-1?Q?VXR30KTTvNpj/BzcQ42Qwq2qtTMR4tBhv9vwhuMxhR6O97DpCl/se/F/sZ?=
- =?iso-8859-1?Q?AcM8U9dslJb1N1YM3ZKke2dtuqS2tyZE/s4iryE0wnXwSX5xfl4PElsvID?=
- =?iso-8859-1?Q?IRziWI2vAFWWIIOtlI2lHzo+F8DoXFUY5YaK5MhSHFdUGxQw2udXw/F8Kp?=
- =?iso-8859-1?Q?SmC7/A1PgzTF3z7VAnsHK3qQMCY23eD3yjemZ1uhVIPsCa27/fDAxGr+aM?=
- =?iso-8859-1?Q?Q6EIgkb6RQ9K01CrRXTc7ywmP1tnVnqcjEHxkjBEsUc/lwd1JX2AtuqBpo?=
- =?iso-8859-1?Q?zyAQoivS2y8gJz0nVvnfzP+sTsZCLzlEOautxFfe9xkzOEfMJGCtA3yGub?=
- =?iso-8859-1?Q?s/ys4gKIwmMVwR3qVFukFupHD7Ztt0P1ypqddv+GL7qDuGhQ6fDjkAeihe?=
- =?iso-8859-1?Q?XzheLC8RZo3fJaY6b/d8ANBJN52CtFivUpczVESnM385QXno8jJkY65DiT?=
- =?iso-8859-1?Q?HO0e3U7QEACSRw679b17S2exsKUS?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR04MB9626.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(19092799006)(376014)(7416014)(52116014)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?6anVn7WTTGjpK1slIU8m6Yzj6aLT4lNqKJGGJfKTocTV8My0WaeqNp4/VO?=
- =?iso-8859-1?Q?jo5O1BrQTiXNGeCHycU2FXGs5lYnHQa4agH4SQfqTCuaomdRAobYO9PFak?=
- =?iso-8859-1?Q?mCJPQ/rCCgh7PESYYa2VNbJ97im349Xgt2kMMsn2HM0K78w+Ql6kGaIPt1?=
- =?iso-8859-1?Q?l2Xf0yQLH8sNKg6j9pLcZo8MaItRCI34DGR/zYGKtkm98dEVZbwGazOrue?=
- =?iso-8859-1?Q?UGw/m3VdQH7Z1598+MfHizl2n1B5+AkuDZ8nvFZf4wjpYqF6x2Zs6DE5nh?=
- =?iso-8859-1?Q?McKg8FS23uPigmvPLg3l5fPZcfFRiMZw+xH9YPs1yNiswNBonx1xXmhF8X?=
- =?iso-8859-1?Q?H7AgqZK1yNRiDbMCcr6f3ymst2CPhIJSRA/e6quTNZZNFhptvuxQ0ti9wD?=
- =?iso-8859-1?Q?iCDlkvXryDBFaKYWvNRo/UwqMNQGFIZh/vkGojOExCr1F8oriYAn32DqyB?=
- =?iso-8859-1?Q?qfQ7X/JzNrhE/XlnYKeGJg1mwOIhUax2ELWzaZTQmktOaodnPHUxbLObwh?=
- =?iso-8859-1?Q?BWTOoptF+cHCuu7IxIzDlNLwl+zabwPx5R8Pr+LzpJayJpPxDlbNMRf4Js?=
- =?iso-8859-1?Q?TrJLU2rZFI2rItukucpGZ5WfsZFVXc4YXIsS2mLj6z2HSj0xsZRboWN126?=
- =?iso-8859-1?Q?hp8Bif4YujAKaRTOj2GXn8HLTUggPHqi+br8mpJsTo8FpwynVtj0KcCNhi?=
- =?iso-8859-1?Q?u5CLsUf8WdBGCVNGK+O5JLpBM2UNGaig/Ve6C7HGe23QQy6by6wNKEGY1D?=
- =?iso-8859-1?Q?jDfcFGR7t8Ac2By0yQBYqwLvYoKh64ysHIjK4LwST1xOMbbzPjTPlmmrN4?=
- =?iso-8859-1?Q?UOU01IFcBRQ82p1necege/aXpgHURnhHh5ZtuGCwOyRRXWgwi7Y3BWJ19K?=
- =?iso-8859-1?Q?k7mh0NW4KzDLSDXsve5tard3wjQ2uSIXoNlRtlyHW1sEiXLPTPYdCY81Fl?=
- =?iso-8859-1?Q?9lO03f5UOFIfx9QXE46kjz/XbPLTBFcS7oRbRbCZLH6hiOTxowDiMws4AS?=
- =?iso-8859-1?Q?q6uShrHQQnATYZxNNXE8ogTXkIq8n4tGdFtKo8fxXRDgAqbsiKg08RPvGp?=
- =?iso-8859-1?Q?RPWn3Il31yseVXIKbf1KFieLLeblGIzRLVPgFmsl+Zd+wr8e9EoTySKdyH?=
- =?iso-8859-1?Q?zF/cA5P4Bu1P5H7ZzuO+bRnohJaHmfy9RgrQSvXPJhbDfJskJ4hsxFoqDA?=
- =?iso-8859-1?Q?c+hIHVgBlcaKADw8a6cPTwU2NB1X2JPuXm2HQFxoTAuyyOZnjLVrv9Lby6?=
- =?iso-8859-1?Q?rwJNu5E/etquyzEyhVafzFtVwBav03tc3GTrAcaXFkzzFJfCKz+T6N2Fh6?=
- =?iso-8859-1?Q?CJyi4IjofBLxu+EJnQJicqXGi9m08QrtH7jzkryMqK/FitGn5nL8wTV1iZ?=
- =?iso-8859-1?Q?+ALZBMzWc92ZrZ3Z1q4LUS54SV73/Uh+UQMX14sAXmoKGi0RQ/V9FtfDQE?=
- =?iso-8859-1?Q?OKzWuuZ1r5n8rCMPY89ynFi3G9ttnymJSp32H5Jgt8/NpWVJVcCe1fN3NV?=
- =?iso-8859-1?Q?FGScDRlgG0/gccG//bdrtQNLMZ789mFzj1SreqGoZJpEqKsQ3ztwXBIi7/?=
- =?iso-8859-1?Q?OlXhzSgOe2pS/LTSQCiBvXAd0mUfP25lSylXAN6YuIsTwZwZm/u/Z4VxKJ?=
- =?iso-8859-1?Q?+bNoAYYjLVeyYElyMErdmT4ecpu7VF7b+n?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5a9d885c-a089-4da5-5f6c-08de13061b4e
-X-MS-Exchange-CrossTenant-AuthSource: DB9PR04MB9626.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Oct 2025 14:03:28.4140
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: aSGocn53+avgsHuW6Gx9oiniA9P5vrrrAQpoQrK+VhSAdKm5ScUbwvO9TmXh08KVYcKsUJo6bp/WMw6AOangxA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR04MB10428
+Content-Disposition: inline
+In-Reply-To: <aPuHKs3u344zoI2+@lizhi-Precision-Tower-5810>
+Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
+ krs, Bertel Jungin Aukio 5, 02600 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251024_070335_417649_51CC9D45 
-X-CRM114-Status: GOOD (  23.07  )
+X-CRM114-CacheID: sfid-20251024_090349_423101_AB56758C 
+X-CRM114-Status: GOOD (  23.65  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -174,115 +106,121 @@ Content-Transfer-Encoding: quoted-printable
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Oct 24, 2025 at 09:13:27AM +0300, Andy Shevchenko wrote:
-> On Thu, Oct 23, 2025 at 07:53:15PM -0400, Frank Li wrote:
-> > On Thu, Oct 23, 2025 at 09:22:55PM +0300, Andy Shevchenko wrote:
-> > > On Thu, Oct 23, 2025 at 11:18:37AM -0400, Frank Li wrote:
-> > > > On Thu, Oct 23, 2025 at 11:23:39AM +0300, Andy Shevchenko wrote:
-> > > > > On Tue, Oct 14, 2025 at 12:40:00PM -0400, Frank Li wrote:
->
-> ...
->
-> > > > > > +/* keep back compatible */
-> > > > > > +#define i3c_priv_xfer i3c_xfer
+On Fri, Oct 24, 2025 at 10:03:22AM -0400, Frank Li wrote:
+> On Fri, Oct 24, 2025 at 09:13:27AM +0300, Andy Shevchenko wrote:
+> > On Thu, Oct 23, 2025 at 07:53:15PM -0400, Frank Li wrote:
+> > > On Thu, Oct 23, 2025 at 09:22:55PM +0300, Andy Shevchenko wrote:
+> > > > On Thu, Oct 23, 2025 at 11:18:37AM -0400, Frank Li wrote:
+> > > > > On Thu, Oct 23, 2025 at 11:23:39AM +0300, Andy Shevchenko wrote:
+> > > > > > On Tue, Oct 14, 2025 at 12:40:00PM -0400, Frank Li wrote:
+
+...
+
+> > > > > > > +/* keep back compatible */
+> > > > > > > +#define i3c_priv_xfer i3c_xfer
+> > > > > >
+> > > > > > How many of the current users do this? Can't we just rename tre=
+ewide?
 > > > > >
-> > > > > How many of the current users do this? Can't we just rename treew=
-ide?
+> > > > > git grep -r priv_xfer drivers/
 > > > >
-> > > > git grep -r priv_xfer drivers/
-> > >
-> > > `git grep -lw ...` is a better approach :-)
-> > >
-> > > > drivers/base/regmap/regmap-i3c.c:       struct i3c_priv_xfer xfers[=
-] =3D {
-> > > > drivers/base/regmap/regmap-i3c.c:       return i3c_device_do_priv_x=
-fers(i3c, xfers, 1);
-> > > > drivers/base/regmap/regmap-i3c.c:       struct i3c_priv_xfer xfers[=
-2];
-> > > > drivers/base/regmap/regmap-i3c.c:       return i3c_device_do_priv_x=
-fers(i3c, xfers, 2);
-> > > > drivers/hwmon/lm75.c:   struct i3c_priv_xfer xfers[] =3D {
-> > > > drivers/hwmon/lm75.c:   ret =3D i3c_device_do_priv_xfers(i3cdev, xf=
-ers, 2);
-> > > > drivers/hwmon/lm75.c:   struct i3c_priv_xfer xfers[] =3D {
-> > > > drivers/hwmon/lm75.c:   return i3c_device_do_priv_xfers(i3cdev, xfe=
-rs, 1);
-> > > > drivers/i3c/device.c:int i3c_device_do_xfers(struct i3c_device *dev=
-, struct i3c_priv_xfer *xfers,
-> > > > drivers/i3c/master.c:   if (!ops->priv_xfers && !ops->i3c_xfers)
-> > > > drivers/i3c/master.c:   if (!master->ops->priv_xfers)
-> > > > drivers/i3c/master.c:   return master->ops->priv_xfers(dev, xfers, =
-nxfers);
-> > > > drivers/i3c/master/dw-i3c-master.c:static int dw_i3c_master_priv_xf=
-ers(struct i3c_dev_desc *dev,
-> > > > drivers/i3c/master/dw-i3c-master.c:                                =
- struct i3c_priv_xfer *i3c_xfers,
-> > > > drivers/i3c/master/dw-i3c-master.c:     .priv_xfers =3D dw_i3c_mast=
-er_priv_xfers,
-> > > > drivers/i3c/master/i3c-master-cdns.c:static int cdns_i3c_master_pri=
-v_xfers(struct i3c_dev_desc *dev,
-> > > > drivers/i3c/master/i3c-master-cdns.c:                              =
-   struct i3c_priv_xfer *xfers,
-> > > > drivers/i3c/master/i3c-master-cdns.c:   .priv_xfers =3D cdns_i3c_ma=
+> > > > `git grep -lw ...` is a better approach :-)
+> > > >
+> > > > > drivers/base/regmap/regmap-i3c.c:       struct i3c_priv_xfer xfer=
+s[] =3D {
+> > > > > drivers/base/regmap/regmap-i3c.c:       return i3c_device_do_priv=
+_xfers(i3c, xfers, 1);
+> > > > > drivers/base/regmap/regmap-i3c.c:       struct i3c_priv_xfer xfer=
+s[2];
+> > > > > drivers/base/regmap/regmap-i3c.c:       return i3c_device_do_priv=
+_xfers(i3c, xfers, 2);
+> > > > > drivers/hwmon/lm75.c:   struct i3c_priv_xfer xfers[] =3D {
+> > > > > drivers/hwmon/lm75.c:   ret =3D i3c_device_do_priv_xfers(i3cdev, =
+xfers, 2);
+> > > > > drivers/hwmon/lm75.c:   struct i3c_priv_xfer xfers[] =3D {
+> > > > > drivers/hwmon/lm75.c:   return i3c_device_do_priv_xfers(i3cdev, x=
+fers, 1);
+> > > > > drivers/i3c/device.c:int i3c_device_do_xfers(struct i3c_device *d=
+ev, struct i3c_priv_xfer *xfers,
+> > > > > drivers/i3c/master.c:   if (!ops->priv_xfers && !ops->i3c_xfers)
+> > > > > drivers/i3c/master.c:   if (!master->ops->priv_xfers)
+> > > > > drivers/i3c/master.c:   return master->ops->priv_xfers(dev, xfers=
+, nxfers);
+> > > > > drivers/i3c/master/dw-i3c-master.c:static int dw_i3c_master_priv_=
+xfers(struct i3c_dev_desc *dev,
+> > > > > drivers/i3c/master/dw-i3c-master.c:                              =
+   struct i3c_priv_xfer *i3c_xfers,
+> > > > > drivers/i3c/master/dw-i3c-master.c:     .priv_xfers =3D dw_i3c_ma=
 ster_priv_xfers,
-> > > > drivers/i3c/master/mipi-i3c-hci/core.c:static int i3c_hci_priv_xfer=
-s(struct i3c_dev_desc *dev,
-> > > > drivers/i3c/master/mipi-i3c-hci/core.c:                       struc=
-t i3c_priv_xfer *i3c_xfers,
-> > > > drivers/i3c/master/mipi-i3c-hci/core.c: .priv_xfers             =3D=
- i3c_hci_priv_xfers,
-> > > > drivers/i3c/master/renesas-i3c.c:static int renesas_i3c_priv_xfers(=
-struct i3c_dev_desc *dev, struct i3c_priv_xfer *i3c_xfers,
-> > > > drivers/i3c/master/renesas-i3c.c:       .priv_xfers =3D renesas_i3c=
-_priv_xfers,
-> > > > drivers/i3c/master/svc-i3c-master.c:    struct i3c_priv_xfer *xfer;
-> > > > drivers/i3c/master/svc-i3c-master.c:     * at svc_i3c_master_priv_x=
-fers().
-> > > > drivers/i3c/master/svc-i3c-master.c:static int svc_i3c_master_i3c_x=
-fers(struct i3c_dev_desc *dev, struct i3c_priv_xfer *xfers,
-> > > > drivers/net/mctp/mctp-i3c.c:    struct i3c_priv_xfer xfer =3D { .rn=
-w =3D 1, .len =3D mi->mrl };
-> > > > drivers/net/mctp/mctp-i3c.c:    rc =3D i3c_device_do_priv_xfers(mi-=
->i3c, &xfer, 1);
-> > > > drivers/net/mctp/mctp-i3c.c:    struct i3c_priv_xfer xfer =3D { .rn=
-w =3D false };
-> > > > drivers/net/mctp/mctp-i3c.c:    rc =3D i3c_device_do_priv_xfers(mi-=
->i3c, &xfer, 1);
+> > > > > drivers/i3c/master/i3c-master-cdns.c:static int cdns_i3c_master_p=
+riv_xfers(struct i3c_dev_desc *dev,
+> > > > > drivers/i3c/master/i3c-master-cdns.c:                            =
+     struct i3c_priv_xfer *xfers,
+> > > > > drivers/i3c/master/i3c-master-cdns.c:   .priv_xfers =3D cdns_i3c_=
+master_priv_xfers,
+> > > > > drivers/i3c/master/mipi-i3c-hci/core.c:static int i3c_hci_priv_xf=
+ers(struct i3c_dev_desc *dev,
+> > > > > drivers/i3c/master/mipi-i3c-hci/core.c:                       str=
+uct i3c_priv_xfer *i3c_xfers,
+> > > > > drivers/i3c/master/mipi-i3c-hci/core.c: .priv_xfers             =
+=3D i3c_hci_priv_xfers,
+> > > > > drivers/i3c/master/renesas-i3c.c:static int renesas_i3c_priv_xfer=
+s(struct i3c_dev_desc *dev, struct i3c_priv_xfer *i3c_xfers,
+> > > > > drivers/i3c/master/renesas-i3c.c:       .priv_xfers =3D renesas_i=
+3c_priv_xfers,
+> > > > > drivers/i3c/master/svc-i3c-master.c:    struct i3c_priv_xfer *xfe=
+r;
+> > > > > drivers/i3c/master/svc-i3c-master.c:     * at svc_i3c_master_priv=
+_xfers().
+> > > > > drivers/i3c/master/svc-i3c-master.c:static int svc_i3c_master_i3c=
+_xfers(struct i3c_dev_desc *dev, struct i3c_priv_xfer *xfers,
+> > > > > drivers/net/mctp/mctp-i3c.c:    struct i3c_priv_xfer xfer =3D { .=
+rnw =3D 1, .len =3D mi->mrl };
+> > > > > drivers/net/mctp/mctp-i3c.c:    rc =3D i3c_device_do_priv_xfers(m=
+i->i3c, &xfer, 1);
+> > > > > drivers/net/mctp/mctp-i3c.c:    struct i3c_priv_xfer xfer =3D { .=
+rnw =3D false };
+> > > > > drivers/net/mctp/mctp-i3c.c:    rc =3D i3c_device_do_priv_xfers(m=
+i->i3c, &xfer, 1);
+> > > > >
+> > > > > After this patch merged, I can clean up it at difference subsytem=
+. After
+> > > > > all cleanup done, we can safely remove this define.
 > > > >
-> > > > After this patch merged, I can clean up it at difference subsytem. =
-After
-> > > > all cleanup done, we can safely remove this define.
+> > > > I counted 9. I think it's not a big deal to convert all of them at =
+once without
+> > > > leaving an intermediate state. But this is a call for the I=B3C sub=
+system maintaiiner.
 > > >
-> > > I counted 9. I think it's not a big deal to convert all of them at on=
-ce without
-> > > leaving an intermediate state. But this is a call for the I=B3C subsy=
-stem maintaiiner.
+> > > There also are other cleanup works. The key point is that everyone ag=
+ree my
+> > > HDR solution. Cleanup these is not big deal. I am not sure how to avo=
+id
+> > > build broken at difference subsystem.
+> > >
+> > > After this patch merge, cleanup will be easier and safer.
 > >
-> > There also are other cleanup works. The key point is that everyone agre=
-e my
-> > HDR solution. Cleanup these is not big deal. I am not sure how to avoid
-> > build broken at difference subsystem.
-> >
-> > After this patch merge, cleanup will be easier and safer.
->
-> Then leave that renaming to the cleanup series. No need to use a define, =
-just
-> use the old function name.
+> > Then leave that renaming to the cleanup series. No need to use a define=
+, just
+> > use the old function name.
+> =
 
-Using old function name for HDR will be very strange and conflict with
-spec's name convention.
+> Using old function name for HDR will be very strange and conflict with
+> spec's name convention.
+> =
 
-The term 'private' transfer in i3c spec is specific for SDR transfer. It
-is neccessary steps to complete whole naming switches.
+> The term 'private' transfer in i3c spec is specific for SDR transfer. It
+> is neccessary steps to complete whole naming switches.
 
-Frank
+Right, but this out of scope OR a prerequisite to this series. My point that
+these two shouldn't be mixed and one left half-baked.
 
->
-> --
-> With Best Regards,
-> Andy Shevchenko
->
->
+-- =
+
+With Best Regards,
+Andy Shevchenko
+
+
 
 -- =
 
