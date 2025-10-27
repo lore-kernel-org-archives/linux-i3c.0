@@ -4,89 +4,183 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CF3DCCF9E0
-	for <linux-i3c@archiver.kernel.org>; Mon, 27 Oct 2025 03:47:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 950F0CCF9E5
+	for <linux-i3c@archiver.kernel.org>; Mon, 27 Oct 2025 20:08:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Cc:To:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=K17s9QNdIVJqoeqnNYlrkqlWlTtaEHOsMQTQn5xvGkQ=; b=fF+n5ZB4Lh0TJh
-	aLv4jhHl0s9uGTmEl856zoUoDI/MMmmX8ec8ojDhywDiykuifbn7xUMQVY6vExbJQb11JIY0sA28v
-	rxli2MKJ8KrvzldEQsKuFDDmKyvF5Z+Pkrv+hfJhl3XQcrpWegIQq3t9YSwZqGGYkRY6smMC9AoSn
-	jIHTCjAG6CE2xtifmuAh0WumrMPPCxUPV/DlLw5vmhe9VaTqn0BHgKQrk4PqoxVC573W9Lh8NfRaS
-	GK9DZAZxyC+l1S4JZITRuoT9PjlmxQjZhpgqKhEu42QurTV12tDgyckZLsRSDgbcp0g6kQFzTHh4e
-	xBOS2GNTAJM6ZPepI+Sg==;
+	List-Owner; bh=37TmbeXnxObK/rKhhsKIlU9PDgpbFyFlOoIqTu0TPxs=; b=pl0FYrvdYRgCp5
+	Ydjv3XeX1EiVKEPkmicYxoDNKQ2+9vdyQHjoH1O+GV57oVWabjAqqBRfpOB8dunulMkpERld0EXmZ
+	FuXKZOE62E3I7rwri38hmowJMhFRGtSsP7OiSPMwoIYPJtznV1/iGGxesKFhF5Xy09ZdlcnjRfeCX
+	UJC4jzT3wOapd5PTZAdsDPFVyk0RCNPkQwBR94o3cexUyOftpuoshcIroKLKq35tWuyZ8I6sovwSA
+	zL7ziV8nQ1uoO1IwCPLKzF3/BM8ML4NynWPHPEgc5fgX2hSn7tHzx23CwfbtN6aEvOXHaEftkTV59
+	TdpGuwbznNl0aF6VE8PQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDECb-0000000D4Tm-0Ky1;
-	Mon, 27 Oct 2025 03:47:25 +0000
-Received: from mail-pg1-x52f.google.com ([2607:f8b0:4864:20::52f])
+	id 1vDTWR-0000000EiEW-1NjD;
+	Mon, 27 Oct 2025 20:08:55 +0000
+Received: from mail-northeuropeazon11011039.outbound.protection.outlook.com ([52.101.65.39] helo=DU2PR03CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDECY-0000000D4TI-1a5R
+	id 1vDTWO-0000000EiDw-2koe
 	for linux-i3c@lists.infradead.org;
-	Mon, 27 Oct 2025 03:47:23 +0000
-Received: by mail-pg1-x52f.google.com with SMTP id 41be03b00d2f7-b6ce696c18bso3831116a12.1
-        for <linux-i3c@lists.infradead.org>; Sun, 26 Oct 2025 20:47:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1761536841; x=1762141641; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=CxQovh9eMpHejPQRZH3kbXNMIwm3B/L8EVHuJgLjyZA=;
-        b=QbxRhaMY0hA3TzKTLHU+1iej5q0AlYtjS0W0fLtjgsM1fMMy0Pz8OELwaV4UsAupmv
-         ocPOvQ2f/m8Uymxc4oyddRMgNtNSHh3kDR5dKDDp3cCk2g1w6XPHf3xJWIepirA6E0Gx
-         a3Wl6cFaPTzhxQuoRu3i3wVgFZRBeiwMlClKs8or3JYSzIFSyXvcc73uJF6P479M4pP7
-         HaOg2OXACuCFfx372qKncC3A2DO5/5pUEgJo/0aJsTxnAh/O/APae/TBC+BzZkTXfZW1
-         Dxp3hYifuks0cbTA/jBAmdZsERPE8k2oOOkeARGlWhN3+6OHKBYUd2ko7GHRqRawDpmc
-         rNRA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1761536841; x=1762141641;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=CxQovh9eMpHejPQRZH3kbXNMIwm3B/L8EVHuJgLjyZA=;
-        b=bShyo+8/9r5zZMaJC86ETesg7FIYJPpkwYPQ8VZC0Nn9yORHQVrYN5Qc6F2wI7sXKi
-         sTxUpe428bBcS+jaMjRXoCnci3GyckvKFfxbQA9woZMXJJ/lC0Zv/9wOk4UlwfdOFlFz
-         huJzE8xBkVG+PaNgI0CsIITlfQbqLRB+YIGdHR4W5eVs4bpgB5CzcKOINHksysQGTzMw
-         EbAY3D0enE2R+4Bxnzly5PRR3qIK86Duuw499scQLyr6n4wD/v5v/yShwHbFUjjQBDF+
-         01WtYWQ1jkkNzu/rIJGOopsgrEW9pICfG0+rGlKzX2qZcCLiweix1/X4Z363Kxs6X9rs
-         buWA==
-X-Forwarded-Encrypted: i=1; AJvYcCVv34uGXvMu/DKW5+6lNzN0wViPRNFfLtUkRtbv4CpcbR1z+Z0qgEJqEXRBJmEQ8/id2YSIqPSCBko=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzhLvJtGnktS/mSMC0UullOJxr3Y4lZjwEhe/LSoMiC5L8y1lfL
-	8Az5dXys//eJqxWiRT9g5utvgiGh5XjnrJs2tvNWF/GmIHBDTa+cbMlV
-X-Gm-Gg: ASbGncvvxVK2SYF0YXHE/M0Y8yLynVpnLQu+TzoAPGMf0yvdIIdR5bMGWgTKCtzURFl
-	0MTO3Qg53of4qrCGdxDaHYanMlgyLzHjfxTjylrpt6x7gZf325QXQ97K+Bk+NtwTUZZVPL5qmwR
-	ScmdkP9EVT+KfaKOQ00G8xCUfLIeKFOsHZD/wcJ0rSruikygd0LfmHiTp5lx284X4E5Dw/XaOKk
-	tTKQGxkhR+dA6YDquCQ/8GYR5jPIayf5xCKzYzZGHEPRmE8FSgHQTE8HQeH7NCFmBpTRM9G3XN2
-	nBHfsQIvJA//FCU1W0+Ktabnt0aqXe/NH7ACqQJBYrY79brWmMsxbdQjMxnTlcA63Ij+i5OLlkk
-	r1hS2z6jdXUVu/tqnIpkfA5Ay2T4JbfGzwPzbjF5Zs5lkVoVUbkKEjiU0I8si66ffVBdeVT4ge6
-	Z9ms74onWdy6WuMFHHdiXR
-X-Google-Smtp-Source: AGHT+IG7mgnceqMZanZPDI1w2t5pzxRJNT+htUoM4mb2kcMgZdM1p1lZkOwKbk4NvSUfMv8tqi2X9Q==
-X-Received: by 2002:a17:902:f68c:b0:25c:d4b6:f119 with SMTP id d9443c01a7336-290c9c89ce1mr477448905ad.12.1761536841341;
-        Sun, 26 Oct 2025 20:47:21 -0700 (PDT)
-Received: from cs20-buildserver.. ([2402:7500:402:b3a0:5492:7724:1128:1af1])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b71268bdd50sm5997929a12.0.2025.10.26.20.47.19
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 26 Oct 2025 20:47:21 -0700 (PDT)
-From: Stanley Chu <stanley.chuys@gmail.com>
-X-Google-Original-From: Stanley Chu <yschu@nuvoton.com>
-To: frank.li@nxp.com,
-	miquel.raynal@bootlin.com,
-	alexandre.belloni@bootlin.com,
-	linux-i3c@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org,
-	tomer.maimon@nuvoton.com,
-	kwliu@nuvoton.com,
-	yschu@nuvoton.com
-Subject: [PATCH v2 1/1] i3c: master: svc: Prevent incomplete IBI transaction
-Date: Mon, 27 Oct 2025 11:47:15 +0800
-Message-Id: <20251027034715.708243-1-yschu@nuvoton.com>
-X-Mailer: git-send-email 2.34.1
+	Mon, 27 Oct 2025 20:08:53 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=IamXaun8cSq7SblOR9pgk69X6cid1BovaCT9lr4NMmSXXSLEQ5DexCUXnfc7i0y41XnS41sMiCNhMllLIWPioQLJpsI+LdgFiaG6+E7g02l6qx5OY1ESS6m/LGX5SMxSOPD5VXr3+iGprii7jaQACdxERp82NnkeVc1tYvhEq79cfHTEw/yJ1cDsO6KZWVGEd14HwsS1YIegheHL3MZyha+WkGSMRYWPIz/bhes6UlYS4/ev7UqyhzvPGlyUfGywpf1RRc0la9VHSUvbqio2/dbT016ZSJCb266dSe1aUtfREmYtG+AdWkVBxXHSu/vNYgEcATRYgmN26bAKr2yDCg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=FBb9IKIuG5wSCggm3AHV/gmtTSCtzJ2jX6+iRDUCPrk=;
+ b=ZIqjlWtP9W/lOVZ1XQ4tELpl7gIaXPdg+t83sYgFRKXiUYa0MbAPKMoHgWFbGxDF4SNNN95TNrGYbcroF+SdqKzSicPfojpkoypegQGFZtLZ/03pFi2CaWRDR7VUitfFVVLejqA6xqmEh3YBReXQkJTmxCCJIs8kBw1TlbTU9FH5YBtdqJcRF1lqBMfcUrD15Da2gJGmKV29CVgIAotWNDRhuzQuCWCxnuotKyT/xg2dgOLqrLHZMpgVagPhCmm55wGE46i9CdYxggnWHmcXNsFb8Wq9ttTGWLDDz1/tPgbYnXONS3zxDNnrdANIyyuDnsMGBobJBYBfbQ4DVAMZmA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FBb9IKIuG5wSCggm3AHV/gmtTSCtzJ2jX6+iRDUCPrk=;
+ b=g255Wozyv0h+I8S/3m9meM3dqUET2TtcwWyhn0n4SjmexhwZrSFm3wcJjNrrBPTNGLv3OG+XU8nhQUAp4dZW3jwyBJuYhXOTf+ldgXCIvrCFDshX1rISakm8kNEe4bhgkC3o1GEFO1vFL+WgL0pXOobO1BkfQ+pdwCmRwTCw6bATWdOON6OrM4RMRkXj5wgoMg1x1t7mVW3nY+EPSHBmKRuJj5gRe6wZYOx2sDfy3AASm0qphQP+hZgO992UVugQa8rDTb5JLRzsmdCRYNFaoDkwPjCn1JCo8KiWjBFhEB2a2ppReTIHWXC+iP3/3KBgtP4zbTLkawYysVUY4JkyVQ==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from AS4PR04MB9621.eurprd04.prod.outlook.com (2603:10a6:20b:4ff::22)
+ by VI0PR04MB11919.eurprd04.prod.outlook.com (2603:10a6:800:306::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9253.12; Mon, 27 Oct
+ 2025 20:08:46 +0000
+Received: from AS4PR04MB9621.eurprd04.prod.outlook.com
+ ([fe80::a84d:82bf:a9ff:171e]) by AS4PR04MB9621.eurprd04.prod.outlook.com
+ ([fe80::a84d:82bf:a9ff:171e%4]) with mapi id 15.20.9253.017; Mon, 27 Oct 2025
+ 20:08:46 +0000
+From: Frank Li <Frank.Li@nxp.com>
+Subject: [PATCH v7 0/5] i3c: Add basic HDR mode support
+Date: Mon, 27 Oct 2025 16:08:28 -0400
+Message-Id: <20251027-i3c_ddr-v7-0-866a0ff7fc46@nxp.com>
+X-B4-Tracking: v=1; b=H4sIAD3R/2gC/3XPwU7DMAwG4FeZciYodpw63Yn3QAiljctyoJ1SV
+ A1NfXeyCZEWxPG3/P2Wr2qWnGRWx8NVZVnSnKaxBH44qP4UxjfRKZas0KAzgK1Otn+NMesOHHn
+ fGpDOq7J9zjKky73p+aXkU5o/pvx5L17gNv3bsYA22qAPHFwki/Q0Xs6P/fSubg0LVtUiVYVFN
+ R6Dkc6iY9wru1HWVGWL6hrk2KMM8FvRjwJjuCoqyoZBQpk7ZrdX7h/liiIi8DQwo5O9ajYKNn8
+ 137eoZbZguKp1Xb8AdwL67qoBAAA=
+X-Change-ID: 20250129-i3c_ddr-b15488901eb8
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ Miquel Raynal <miquel.raynal@bootlin.com>, 
+ Jonathan Cameron <jic23@kernel.org>, David Lechner <dlechner@baylibre.com>, 
+ =?utf-8?q?Nuno_S=C3=A1?= <nuno.sa@analog.com>, 
+ Andy Shevchenko <andy@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ imx@lists.linux.dev, linux-iio@vger.kernel.org, 
+ joshua.yeong@starfivetech.com, devicetree@vger.kernel.org, 
+ Frank Li <Frank.Li@nxp.com>, Carlos Song <carlos.song@nxp.com>, 
+ Conor Dooley <conor.dooley@microchip.com>, 
+ Adrian Fluturel <fluturel.adrian@gmail.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1761595722; l=2955;
+ i=Frank.Li@nxp.com; s=20240130; h=from:subject:message-id;
+ bh=c4686o//XQ93ZDWO2+x94jsAlumh9S/pQjyXq5pgFxM=;
+ b=n2p798ddk4ySQKPN9Pknc703JAYFif6sEe7vg9HvdN0GkZms9sBDJJw1Tmf5fZC9/d0uyZ+iq
+ h5wwA0JV1NICSB5G8yZrgW4xTyuWPPKyxxjxolybAh7ptRoEUtUym9g
+X-Developer-Key: i=Frank.Li@nxp.com; a=ed25519;
+ pk=I0L1sDUfPxpAkRvPKy7MdauTuSENRq+DnA+G4qcS94Q=
+X-ClientProxiedBy: PH1PEPF00013303.namprd07.prod.outlook.com
+ (2603:10b6:518:1::12) To AS4PR04MB9621.eurprd04.prod.outlook.com
+ (2603:10a6:20b:4ff::22)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AS4PR04MB9621:EE_|VI0PR04MB11919:EE_
+X-MS-Office365-Filtering-Correlation-Id: 2902e1c1-0b11-452f-6774-08de1594a2c1
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|376014|52116014|7416014|366016|1800799024|38350700014;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?TGhNTktmcVpiaHBTVFpWU0dtenllKzNEVVdRQW1idjlxTWJob1g1enpOTm9w?=
+ =?utf-8?B?bERBWldFRDhzKzhzUjJiTTNYRCt2SEFKRFlwNm54L2FaeWJuSUdPTktZRmVE?=
+ =?utf-8?B?bTlqemFJQTRGOXBaRlBGdmxsRUtrNmFWYnhWSXpEazNEcEQwUlVUbDlrYmxJ?=
+ =?utf-8?B?WVRCTGtPcEZNUGZUdExaUzVKZERXMDNGcnlWZDBMWGdvTWkrRkZBS09UTWU1?=
+ =?utf-8?B?UnMrd2g4ZGJ4cm5XSyt4R0RxVVpWY3JnRStzaW03dXVQZnZBSlhnL3psdXpi?=
+ =?utf-8?B?TURyVkdWZ0Z3VzU1OGs5V2pCaEF1S2hRaW5ZdHZiSmk3UllpaWJLTjhpSEhV?=
+ =?utf-8?B?VlN4K3k2OXRGUTJMUSsyL0JVSzdUdWM4RXRKNm9wWnAxYkRFb3pONkZKbVJR?=
+ =?utf-8?B?RHpUQTEvWFNzZENpZVZuWVVYZTNBUkQyUS8rK3hoekMvQUFNOW5XQUhjcGZS?=
+ =?utf-8?B?d2NmeUNuK3hDdW55OG8wckViRUJBMlAvVStGbGUybC9ZY1VObEtJRDBxVElR?=
+ =?utf-8?B?cjFXbk5VeC9DSkFHRm9SZFNvL0RZQmx1TjRqcjlyUERaV0NWbG51SllBQ3BT?=
+ =?utf-8?B?MUNUaGg4QXlyekxlUnhuQnBYQ2NSNnlUanF3MVBOVVpnd3RjQVZmSlJpb2Zj?=
+ =?utf-8?B?WUY2RGJCTW9GamFWQUNyckE3M200YWp4UHFFcm9PZm9jVGU3a1M2SUJrNEtn?=
+ =?utf-8?B?RFc0em81dGx2dWtVdldsUmJEK3kwMTZZRmNGYmNsYlFpZEZwSVBjVTZ4RW8y?=
+ =?utf-8?B?Qk9sRDBHK2lvMnJWcGVEOXI5V2ZLdDZqNjJSdFZVaG00V045QTlZL2ZQNUFX?=
+ =?utf-8?B?dU1UV3dxMkZMZ0tTWSt4Z3p5YmI5dEdCTWhlMWFVRythQWhkRm1mVXBTTlR2?=
+ =?utf-8?B?L29uVk1tYVI3WUp1Q0g2QU1uWE9mT1pJN0FUSWFHbVZYam0zQkpRekZjQ1FB?=
+ =?utf-8?B?TnhMdjhtbmlDQ3VoZ0QrL0tSQVdseHN0S0h3R09od2dxUFkwTWZhRkdFaVNK?=
+ =?utf-8?B?dTA2L1JSOE5IL3BEQzBZTUx0WWJOb1lyWFhsay8rbm1RU3hMcU1kZWplRVlN?=
+ =?utf-8?B?blNHRndFYy9vQTRzYkpmSTRxZ0twdEFlVzRycWVHS2R0N2IzTGxLTEZRWVFm?=
+ =?utf-8?B?UzhYeXg0cVdwaW42WkE4MGpRdzJGSXh1Y3ROcWVLMUthYTNGbGFJb0hhNEVV?=
+ =?utf-8?B?ZnNEMldESWV0b3Y4LzJtRzlLaU0xVjVMZDN2Y3lHM2xOOWQwQThCWXRRUUhH?=
+ =?utf-8?B?Y0IxaW5UWFVSWCs2TG14dlFtekRCNkt2WjJja3FtYjRVWUtqVi9uU2syeDZk?=
+ =?utf-8?B?SlpGMTBmTHp5dFBmTnp3RmZ0R2ZxMXdEdVZLN3g0N2hiTVN6R2xYVGh4SmEw?=
+ =?utf-8?B?YjM5ZHNJUU0rV1NrMGxNdzM0S1JyL2JBakxiWVZNN0kvMDUvVENQNDFZTk1D?=
+ =?utf-8?B?SnRRVHY2Wk44SmxTTEJHSHUrMmpCd1htcEpIbW1ZQkREbURGanpxUnBCVDZl?=
+ =?utf-8?B?M0tiSHRZZEtVZjlON3dHR1ZDNC9paEN1WkZxc3Mva0hKUFZSeEhCOEZXQ0RU?=
+ =?utf-8?B?Zm1xNnBGY1ZMMWxMTy9jbGtxN0wrYnNhWDVnS1p5WlJuNWhHeStuMjRSbzJm?=
+ =?utf-8?B?MDdsbW1IR3lRcFVNN3FxNmVCalVabUd0MmxQblI1cGsvZ0p3UkQza2VVaW96?=
+ =?utf-8?B?UE1UZDNkMDVsL1lFRGY4MWxHeUM1WUlYckxoS2xzNFYyZ29ybEZUU1gvUzFW?=
+ =?utf-8?B?dlJ5WmNsSTFnNXFSa1llSVB3c0RqYk1qNG02UFliQ2FmTFQycktLZnJTdHVF?=
+ =?utf-8?B?SkNGZ2NvY0JjS1U0K2tJZ2E0NU1zeElRVlBDellUdkJLUXZoVWR6Ym9nMnd4?=
+ =?utf-8?B?UUg2TldXaG9Ib2VJVHRUSmc0OEMyenZXK2dVWGFTMmFHSDZMZjBVVUxoSFJD?=
+ =?utf-8?B?T3UrOVZocGxtWklWNGZuQ2NqSkdwV2plQUR0eFBNRkdzQ0QzSWV1K0ZBbk1G?=
+ =?utf-8?B?MzhqQ0hYWGNkQ084MDlZTkpUdU1WK0tmZVl0WFlQRjJoZG1sWkJtOWMzTXVR?=
+ =?utf-8?Q?EM+J+5?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS4PR04MB9621.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(376014)(52116014)(7416014)(366016)(1800799024)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?RllKblJ3cDVPNDNNREdiaC92cjZLaUYvMjFiTXp0V2E2N0VVVFBuM05aWEl6?=
+ =?utf-8?B?K0pZeUZ5TWF5Z1Rhb0NSdTdrT0lKTjhvOVNrY1RoWEY4bm5wbEhvQmRtNGxo?=
+ =?utf-8?B?emZlY1hGVEN1N0pTS2NrOEE2d05CMjM0OXQ1WE53bTlNZm1KcU1IQTBjb3RX?=
+ =?utf-8?B?NCtYQVJBcEZDa1lBQXlUcGpqR1ZhV05QS1FqNVpTZnBNU3QvNmV2MXEvNCs4?=
+ =?utf-8?B?aGZiZ2t4SWZtOXZrYUhJaVhBMEdXSlphMlFmNy9pRDYxUE1qa2M2QUk0akp6?=
+ =?utf-8?B?R005RmYyelFyR2NBN3p3VGhyTStHQUNVMDRzMllXN0FiZVhKVmM3R1Z4VUd2?=
+ =?utf-8?B?SWpBNE1JSlJ5Q0lnalhSVWxQcitQaXBCNXpuSTV0MTFOUUFaQUxtWCtEZVRp?=
+ =?utf-8?B?UXZkNms0eWlIcVpwWFBhU01GWHArRWZVeSs1TGVkak55SlQzdDFIaTlCU2ly?=
+ =?utf-8?B?TzNNY2g2MEhDNjdOeVBRd0w3NXg0b2FjaVVIK25rWStENkxTSnpWMnN1ZWhW?=
+ =?utf-8?B?aDc5MVE1UU5EVlRrRGkyL3I0NEh1UmRIRFkxR0cyUjBibWlwY2VXWWRWRm8z?=
+ =?utf-8?B?VmhCQ0x2ZFpUc2lDMFkwb1AxR0pCczhNdGdYZFV4NjVrODkvU1RxWWRQR1pG?=
+ =?utf-8?B?TE1TYlNma0VnLzZLekpnenFXMGRJYkNVcGd6TmwzOFdCSEFpVlJJV2dsVytw?=
+ =?utf-8?B?RjYxQ3l4NWFjaWZpNVZ4OXUwSFBWTlZTc2J5K2ZqWnJndXQremQ3VWxpRzBH?=
+ =?utf-8?B?YUV2K1NaMzJqMU1vOEROS3pPZmtqdml5Q1ZtUk85L3JjbTBqZjdyNGFwbnps?=
+ =?utf-8?B?cUtlNjNPS0MvV3hNeWFmdWs2Um9HWXFMSWdrcGhUeTZPQkM3eUYvYUtQVXRI?=
+ =?utf-8?B?N1hRcndtUDluNHVkelRyYnZNSUZ2QmIrOENESkJETXI5L0U5d0VMY2dpQmpi?=
+ =?utf-8?B?U2lxaDNFU3pXQnNGT29aZlQ1T1lQWGtMUFFJdk5BWkI4V2VMYUQ4U3FNRDgx?=
+ =?utf-8?B?cGtva0xvZG4xVTVwR1Y4UEhEK3NhUnRGcG9xZjc1MXRITWZxTWlqd2dYelJm?=
+ =?utf-8?B?ZzErallERlk4dWl6bEh2R1BpUkNoVU02Ui8vakpveGZFZGwrL0t1RnBUWGw4?=
+ =?utf-8?B?eEd0TW9jUVBxMzRkUTJPK1I2cCs3QzhhcWQ0UWIweENXbTlvcktYUDVlbXg1?=
+ =?utf-8?B?YkNod2lwcVJyOUduZ3oxcHY0RGhkVE1YZWlIclByVEhLZWtDc296S3B1aG9M?=
+ =?utf-8?B?ekp3THpsRUZoT3lpNzd0V2pmSTJpcm9ZUkZvRzRiVk1OU2J4blA3b1F3MTJp?=
+ =?utf-8?B?ZHJzWDNyeTJyY1N2Ymh0S0hDVWhRclVwanZYaUp0L0M5NHIxbFNhSXVNbkdW?=
+ =?utf-8?B?ZUZQYW1aSVFVRnZ4dUpKdkJLdlFESFVlTWtxdEh0c0laWkxKTm95cG0wME9k?=
+ =?utf-8?B?cDhHRldZWUt6RG9mVndVMUc4SWRxNDdHdkR1RjdvNjNIQ1c0cFBEdkJOaTRF?=
+ =?utf-8?B?MnJsam03WjhGekxwNDhDYW5nWGpIN0FVQ3VlUXJpV0hyTGFZOUlxaVhvTzVy?=
+ =?utf-8?B?a2hJL0d5TDJmM3R0bnBwQUQ4eGdzdjlBZFZrT0lVeHpEREd2blNac0JHTTM5?=
+ =?utf-8?B?ZTB4OTBYS3hjMGQ2a0d5YVlmYmlVSC9zLyt4bGRMM0lSVlV4aUtXdk5GSE1X?=
+ =?utf-8?B?djdBcFVwKzR0bG41aGlFTC85THJLdFNHNEVRTlJvRnBwaExsRUN5bFlVOWYw?=
+ =?utf-8?B?dC95V2FMM3MvQjhlb00yZkJEMlU0dVArcllBSlRHWXN4ZHY3TEhVMS9UWTUv?=
+ =?utf-8?B?a3VwNXhWcm9VSTNJQms3N3p6VkNYWnozMFdMeEZ0TTZOYjNIZlR3THRiZ3RB?=
+ =?utf-8?B?M3IybGMwZVU1T2piaERCdDJkNWRGNFZrdUJxNXFaekYzb0JQNWFHQWFJUlIw?=
+ =?utf-8?B?RXc0alJyTERhVEQzY05FOHp4RVF5dDF1dnlMRWVpM05aUDM0akh5US9xQmJM?=
+ =?utf-8?B?ZS9oMTNJU1VNUFVtZXR2UnJvMHNIbUV3TGIyQi8ya0hrbzlpbkw1ZnduQmwz?=
+ =?utf-8?B?Z3haS0p4RTE4V1ZrNEQvNnZIZHB3Zld0d0Nvd3AvSFAxa1VvSGJxejVVajI4?=
+ =?utf-8?Q?s21k=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2902e1c1-0b11-452f-6774-08de1594a2c1
+X-MS-Exchange-CrossTenant-AuthSource: AS4PR04MB9621.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Oct 2025 20:08:46.4886
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: MJzWfOznRQxt/pa3Z3XFa35d6UNYhmNR4lAlOsAXVyr+ghkusrE5ffkhSjwcWXIbANjpdLzNQfGVij4re0uIJQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI0PR04MB11919
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251026_204722_419557_DBEB9CB2 
-X-CRM114-Status: GOOD (  11.27  )
+X-CRM114-CacheID: sfid-20251027_130852_705229_D0326BB7 
+X-CRM114-Status: UNSURE (   8.90  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,65 +197,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Stanley Chu <yschu@nuvoton.com>
+Add basic HDR mode support, only support private transfer, not support
+CCC command.
 
-If no free IBI slot is available, svc_i3c_master_handle_ibi returns
-immediately. This causes the STOP condition to be missed because the
-EmitStop request is sent when the transfer is not complete. To resolve
-this, svc_i3c_master_handle_ibi must wait for the transfer to complete
-before returning.
+Update i3c framework API to allow pass down mode and extend driver callback
+function.
 
-Fixes: dd3c52846d59 ("i3c: master: svc: Add Silvaco I3C master driver")
-Signed-off-by: Stanley Chu <yschu@nuvoton.com>
+Implement HDR transfer in svc i3c master driver.
+
+Simplifed HDR flow is (ref i3c spec line 5514) Figure 129
+
+<--              SDR            ---> | <--- HDR
+START 0x7E RnW(0) ACK CCC(ENTHDR0) T   HDR-CMD(00-7f write, 80--ff read)
+
+                                    ----> |
+HDR-DATA HDR-CRC HDR-RESTART .... HDR-EXIT
+
+Note: HDR-CMD is 16bit data, which included 7bit slave address and 8bit
+read/write command.
+
+svc hardware can auto issue SDR part.
+
+Signed-off-by: Frank Li <Frank.Li@nxp.com>
 ---
-Changes since v1:
- * do not touch coding style change
----
- drivers/i3c/master/svc-i3c-master.c | 22 ++++++++++++++--------
- 1 file changed, 14 insertions(+), 8 deletions(-)
+Changes in v7:
+- add explicit define for I3C_HDR_*
+- add missed include files.
+- detail see each patches' change log
+- CONFIG_DEBUG_ATOMIC_SLEEP=y
+- Link to v6: https://lore.kernel.org/r/20251014-i3c_ddr-v6-0-3afe49773107@nxp.com
 
-diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-index 9641e66a4e5f..e70a64f2a32f 100644
---- a/drivers/i3c/master/svc-i3c-master.c
-+++ b/drivers/i3c/master/svc-i3c-master.c
-@@ -406,21 +406,27 @@ static int svc_i3c_master_handle_ibi(struct svc_i3c_master *master,
- 	int ret, val;
- 	u8 *buf;
- 
--	slot = i3c_generic_ibi_get_free_slot(data->ibi_pool);
--	if (!slot)
--		return -ENOSPC;
--
--	slot->len = 0;
--	buf = slot->data;
--
-+	/*
-+	 * Wait for transfer to complete before returning. Otherwise, the EmitStop
-+	 * request might be sent when the transfer is not complete.
-+	 */
- 	ret = readl_relaxed_poll_timeout(master->regs + SVC_I3C_MSTATUS, val,
- 						SVC_I3C_MSTATUS_COMPLETE(val), 0, 1000);
- 	if (ret) {
- 		dev_err(master->dev, "Timeout when polling for COMPLETE\n");
--		i3c_generic_ibi_recycle_slot(data->ibi_pool, slot);
- 		return ret;
- 	}
- 
-+	slot = i3c_generic_ibi_get_free_slot(data->ibi_pool);
-+	if (!slot) {
-+		dev_dbg(master->dev, "No free ibi slot, drop the data\n");
-+		writel(SVC_I3C_MDATACTRL_FLUSHRB, master->regs + SVC_I3C_MDATACTRL);
-+		return -ENOSPC;
-+	}
-+
-+	slot->len = 0;
-+	buf = slot->data;
-+
- 	while (SVC_I3C_MSTATUS_RXPEND(readl(master->regs + SVC_I3C_MSTATUS))  &&
- 	       slot->len < SVC_I3C_FIFO_SIZE) {
- 		mdatactrl = readl(master->regs + SVC_I3C_MDATACTRL);
--- 
-2.34.1
+Changes in v6:
+- remove acpi part
+- collect Conor Dooley ack tags
+- Link to v5: https://lore.kernel.org/r/20251007-i3c_ddr-v5-0-444184f7725e@nxp.com
+
+Changes in v5:
+- Just realized missed CC mail list devicetree@vger.kernel.org and resend
+- Link to v4: https://lore.kernel.org/r/20251007-i3c_ddr-v4-0-3afea5105775@nxp.com
+
+Changes in v4:
+- use master's hdr_cap to check HDR cap.
+- add mmc5603 support.
+- Link to v3: https://lore.kernel.org/r/20250930-i3c_ddr-v3-0-b627dc2ef172@nxp.com
+
+Changes in v3:
+- Add new patch for change rnw to union for svc.
+- Detial changes see each patch's change log.
+- Link to v2: https://lore.kernel.org/r/20250924-i3c_ddr-v2-0-682a0eb32572@nxp.com
+
+Changes in v2:
+- Add sensor driver, which use HDR mode read/write data.
+- change priv_xfer to i3c_xfer.
+- Link to v1: https://lore.kernel.org/r/20250129-i3c_ddr-v1-0-028a7a5d4324@nxp.com
+
+---
+Frank Li (5):
+      i3c: Add HDR API support
+      i3c: master: svc: Replace bool rnw with union for HDR support
+      i3c: master: svc: Add basic HDR mode support
+      dt-bindings: trivial-devices: add MEMSIC 3-axis magnetometer
+      iio: magnetometer: Add mmc5633 sensor
+
+ .../devicetree/bindings/trivial-devices.yaml       |   4 +
+ drivers/i3c/device.c                               |  27 +-
+ drivers/i3c/internals.h                            |   6 +-
+ drivers/i3c/master.c                               |  20 +-
+ drivers/i3c/master/svc-i3c-master.c                | 115 +++-
+ drivers/iio/magnetometer/Kconfig                   |  12 +
+ drivers/iio/magnetometer/Makefile                  |   1 +
+ drivers/iio/magnetometer/mmc5633.c                 | 588 +++++++++++++++++++++
+ include/linux/i3c/device.h                         |  40 +-
+ include/linux/i3c/master.h                         |   4 +
+ 10 files changed, 775 insertions(+), 42 deletions(-)
+---
+base-commit: df05ef50ada6a8e2fe758adf1b8fa35eea801b2d
+change-id: 20250129-i3c_ddr-b15488901eb8
+
+Best regards,
+--
+Frank Li <Frank.Li@nxp.com>
 
 
 -- 
