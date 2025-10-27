@@ -4,79 +4,89 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20E81CCD1BF
-	for <linux-i3c@archiver.kernel.org>; Fri, 24 Oct 2025 21:12:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5CF3DCCF9E0
+	for <linux-i3c@archiver.kernel.org>; Mon, 27 Oct 2025 03:47:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EaSVTpwS3+w0/4TwauJYeRb7XDFPtPAZbRHxmjDhCy0=; b=z1paoE6NA2MJEU
-	0LskXcAxVa/P/aXLdItC23iItdOWseK6cXIzYB7l8n0zrSUBVfv/IiMxQWcbJ8uf3CrjuKm+1nHP6
-	TEomZ35jM1e3htYx1Yodxf5bgdMw2QGfVIWXJTBr3qEx8uGLdbwecg0JD4LREI+7cwyckGzczdKIy
-	RQAcd/TwkjMUDAJjQCniYaRavWq+fTWObHVe1dK+D5WJ5RfhBusmIV6vzkFV0deFByY6zgYZ/JSPG
-	uWrAK7DIGUZRB10DQ5E4La9/JyojjQ2XNoWIwyLUOoLJYwF8at21a7FKIDqJMe98NJZH2Q7lIZzRG
-	19qSfW2NFN98ZoZBv+/w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=K17s9QNdIVJqoeqnNYlrkqlWlTtaEHOsMQTQn5xvGkQ=; b=fF+n5ZB4Lh0TJh
+	aLv4jhHl0s9uGTmEl856zoUoDI/MMmmX8ec8ojDhywDiykuifbn7xUMQVY6vExbJQb11JIY0sA28v
+	rxli2MKJ8KrvzldEQsKuFDDmKyvF5Z+Pkrv+hfJhl3XQcrpWegIQq3t9YSwZqGGYkRY6smMC9AoSn
+	jIHTCjAG6CE2xtifmuAh0WumrMPPCxUPV/DlLw5vmhe9VaTqn0BHgKQrk4PqoxVC573W9Lh8NfRaS
+	GK9DZAZxyC+l1S4JZITRuoT9PjlmxQjZhpgqKhEu42QurTV12tDgyckZLsRSDgbcp0g6kQFzTHh4e
+	xBOS2GNTAJM6ZPepI+Sg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCP5H-0000000AWu8-2PpS;
-	Fri, 24 Oct 2025 21:12:27 +0000
-Received: from smtpout-03.galae.net ([185.246.85.4])
+	id 1vDECb-0000000D4Tm-0Ky1;
+	Mon, 27 Oct 2025 03:47:25 +0000
+Received: from mail-pg1-x52f.google.com ([2607:f8b0:4864:20::52f])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCP5D-0000000AWt6-02DW
+	id 1vDECY-0000000D4TI-1a5R
 	for linux-i3c@lists.infradead.org;
-	Fri, 24 Oct 2025 21:12:25 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-03.galae.net (Postfix) with ESMTPS id CBC5C4E412F7;
-	Fri, 24 Oct 2025 21:12:17 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 7A4CD60703;
-	Fri, 24 Oct 2025 21:12:17 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id D37E7102F22B5;
-	Fri, 24 Oct 2025 23:12:05 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1761340335; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=f1MDeUalmO2MBuHBwgqnu8xSGd9CwkEHdnrfQWRAgQ8=;
-	b=OZVY0rw1nmczW237v6np6WNDFGQ6eR2zd3znpqkEWDafR9sNuuOUqwUVUhzR+5csGyUMqu
-	ij3T6l9saudJiYUTmnsvl2Xi5nlZq3J0kyPd8Tql/Ns82Z9NGh90a4Lm+MlCnCxLryVh8S
-	KBrrsGTu+0hpPp8k7pi1WG/zaRKG0oV5q3tjdi8KXdZ2QnaTa26nokWcHF+Ue5dLwX5yMF
-	kIiunQ8OqPITEpQBqZaocyh3urX8kuNaPawctzTyBc18pfcZsr0EFHb1YzbfrQU9d6ZM1L
-	cPBxprhTwc75j+aoy6sLKLnLsQZpfGsGAAh9hj0K8ziOSun3hTEywQcPLKJ2PQ==
-Date: Fri, 24 Oct 2025 23:12:05 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Frank Li <Frank.li@nxp.com>
-Cc: Andy Shevchenko <andriy.shevchenko@intel.com>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	Jonathan Cameron <jic23@kernel.org>,
-	David Lechner <dlechner@baylibre.com>,
-	Nuno =?iso-8859-1?Q?S=E1?= <nuno.sa@analog.com>,
-	Andy Shevchenko <andy@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
-	linux-iio@vger.kernel.org, joshua.yeong@starfivetech.com,
-	devicetree@vger.kernel.org
-Subject: Re: [PATCH v6 1/5] i3c: Add HDR API support
-Message-ID: <20251024211205055af5b3@mail.local>
-References: <20251014-i3c_ddr-v6-0-3afe49773107@nxp.com>
- <20251014-i3c_ddr-v6-1-3afe49773107@nxp.com>
- <aPnmCwwZVZ5egqkP@smile.fi.intel.com>
- <aPpHTej/vKfiN68k@lizhi-Precision-Tower-5810>
- <aPpyf1xPmU_koEXH@smile.fi.intel.com>
- <aPq/6/+63sHuq/qy@lizhi-Precision-Tower-5810>
- <aPsZB44qXR77jNHF@smile.fi.intel.com>
- <aPuHKs3u344zoI2+@lizhi-Precision-Tower-5810>
- <aPujXUO2h5zHy2fj@smile.fi.intel.com>
- <aPupaHEZM20Q8aJu@lizhi-Precision-Tower-5810>
+	Mon, 27 Oct 2025 03:47:23 +0000
+Received: by mail-pg1-x52f.google.com with SMTP id 41be03b00d2f7-b6ce696c18bso3831116a12.1
+        for <linux-i3c@lists.infradead.org>; Sun, 26 Oct 2025 20:47:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1761536841; x=1762141641; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=CxQovh9eMpHejPQRZH3kbXNMIwm3B/L8EVHuJgLjyZA=;
+        b=QbxRhaMY0hA3TzKTLHU+1iej5q0AlYtjS0W0fLtjgsM1fMMy0Pz8OELwaV4UsAupmv
+         ocPOvQ2f/m8Uymxc4oyddRMgNtNSHh3kDR5dKDDp3cCk2g1w6XPHf3xJWIepirA6E0Gx
+         a3Wl6cFaPTzhxQuoRu3i3wVgFZRBeiwMlClKs8or3JYSzIFSyXvcc73uJF6P479M4pP7
+         HaOg2OXACuCFfx372qKncC3A2DO5/5pUEgJo/0aJsTxnAh/O/APae/TBC+BzZkTXfZW1
+         Dxp3hYifuks0cbTA/jBAmdZsERPE8k2oOOkeARGlWhN3+6OHKBYUd2ko7GHRqRawDpmc
+         rNRA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1761536841; x=1762141641;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=CxQovh9eMpHejPQRZH3kbXNMIwm3B/L8EVHuJgLjyZA=;
+        b=bShyo+8/9r5zZMaJC86ETesg7FIYJPpkwYPQ8VZC0Nn9yORHQVrYN5Qc6F2wI7sXKi
+         sTxUpe428bBcS+jaMjRXoCnci3GyckvKFfxbQA9woZMXJJ/lC0Zv/9wOk4UlwfdOFlFz
+         huJzE8xBkVG+PaNgI0CsIITlfQbqLRB+YIGdHR4W5eVs4bpgB5CzcKOINHksysQGTzMw
+         EbAY3D0enE2R+4Bxnzly5PRR3qIK86Duuw499scQLyr6n4wD/v5v/yShwHbFUjjQBDF+
+         01WtYWQ1jkkNzu/rIJGOopsgrEW9pICfG0+rGlKzX2qZcCLiweix1/X4Z363Kxs6X9rs
+         buWA==
+X-Forwarded-Encrypted: i=1; AJvYcCVv34uGXvMu/DKW5+6lNzN0wViPRNFfLtUkRtbv4CpcbR1z+Z0qgEJqEXRBJmEQ8/id2YSIqPSCBko=@lists.infradead.org
+X-Gm-Message-State: AOJu0YzhLvJtGnktS/mSMC0UullOJxr3Y4lZjwEhe/LSoMiC5L8y1lfL
+	8Az5dXys//eJqxWiRT9g5utvgiGh5XjnrJs2tvNWF/GmIHBDTa+cbMlV
+X-Gm-Gg: ASbGncvvxVK2SYF0YXHE/M0Y8yLynVpnLQu+TzoAPGMf0yvdIIdR5bMGWgTKCtzURFl
+	0MTO3Qg53of4qrCGdxDaHYanMlgyLzHjfxTjylrpt6x7gZf325QXQ97K+Bk+NtwTUZZVPL5qmwR
+	ScmdkP9EVT+KfaKOQ00G8xCUfLIeKFOsHZD/wcJ0rSruikygd0LfmHiTp5lx284X4E5Dw/XaOKk
+	tTKQGxkhR+dA6YDquCQ/8GYR5jPIayf5xCKzYzZGHEPRmE8FSgHQTE8HQeH7NCFmBpTRM9G3XN2
+	nBHfsQIvJA//FCU1W0+Ktabnt0aqXe/NH7ACqQJBYrY79brWmMsxbdQjMxnTlcA63Ij+i5OLlkk
+	r1hS2z6jdXUVu/tqnIpkfA5Ay2T4JbfGzwPzbjF5Zs5lkVoVUbkKEjiU0I8si66ffVBdeVT4ge6
+	Z9ms74onWdy6WuMFHHdiXR
+X-Google-Smtp-Source: AGHT+IG7mgnceqMZanZPDI1w2t5pzxRJNT+htUoM4mb2kcMgZdM1p1lZkOwKbk4NvSUfMv8tqi2X9Q==
+X-Received: by 2002:a17:902:f68c:b0:25c:d4b6:f119 with SMTP id d9443c01a7336-290c9c89ce1mr477448905ad.12.1761536841341;
+        Sun, 26 Oct 2025 20:47:21 -0700 (PDT)
+Received: from cs20-buildserver.. ([2402:7500:402:b3a0:5492:7724:1128:1af1])
+        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-b71268bdd50sm5997929a12.0.2025.10.26.20.47.19
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 26 Oct 2025 20:47:21 -0700 (PDT)
+From: Stanley Chu <stanley.chuys@gmail.com>
+X-Google-Original-From: Stanley Chu <yschu@nuvoton.com>
+To: frank.li@nxp.com,
+	miquel.raynal@bootlin.com,
+	alexandre.belloni@bootlin.com,
+	linux-i3c@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org,
+	tomer.maimon@nuvoton.com,
+	kwliu@nuvoton.com,
+	yschu@nuvoton.com
+Subject: [PATCH v2 1/1] i3c: master: svc: Prevent incomplete IBI transaction
+Date: Mon, 27 Oct 2025 11:47:15 +0800
+Message-Id: <20251027034715.708243-1-yschu@nuvoton.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aPupaHEZM20Q8aJu@lizhi-Precision-Tower-5810>
-X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251024_141223_684640_97370704 
-X-CRM114-Status: GOOD (  29.91  )
+X-CRM114-CacheID: sfid-20251026_204722_419557_DBEB9CB2 
+X-CRM114-Status: GOOD (  11.27  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,148 +98,73 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 24/10/2025 12:29:28-0400, Frank Li wrote:
-> On Fri, Oct 24, 2025 at 07:03:41PM +0300, Andy Shevchenko wrote:
-> > On Fri, Oct 24, 2025 at 10:03:22AM -0400, Frank Li wrote:
-> > > On Fri, Oct 24, 2025 at 09:13:27AM +0300, Andy Shevchenko wrote:
-> > > > On Thu, Oct 23, 2025 at 07:53:15PM -0400, Frank Li wrote:
-> > > > > On Thu, Oct 23, 2025 at 09:22:55PM +0300, Andy Shevchenko wrote:
-> > > > > > On Thu, Oct 23, 2025 at 11:18:37AM -0400, Frank Li wrote:
-> > > > > > > On Thu, Oct 23, 2025 at 11:23:39AM +0300, Andy Shevchenko wro=
-te:
-> > > > > > > > On Tue, Oct 14, 2025 at 12:40:00PM -0400, Frank Li wrote:
-> >
-> > ...
-> >
-> > > > > > > > > +/* keep back compatible */
-> > > > > > > > > +#define i3c_priv_xfer i3c_xfer
-> > > > > > > >
-> > > > > > > > How many of the current users do this? Can't we just rename=
- treewide?
-> > > > > > >
-> > > > > > > git grep -r priv_xfer drivers/
-> > > > > >
-> > > > > > `git grep -lw ...` is a better approach :-)
-> > > > > >
-> > > > > > > drivers/base/regmap/regmap-i3c.c:       struct i3c_priv_xfer =
-xfers[] =3D {
-> > > > > > > drivers/base/regmap/regmap-i3c.c:       return i3c_device_do_=
-priv_xfers(i3c, xfers, 1);
-> > > > > > > drivers/base/regmap/regmap-i3c.c:       struct i3c_priv_xfer =
-xfers[2];
-> > > > > > > drivers/base/regmap/regmap-i3c.c:       return i3c_device_do_=
-priv_xfers(i3c, xfers, 2);
-> > > > > > > drivers/hwmon/lm75.c:   struct i3c_priv_xfer xfers[] =3D {
-> > > > > > > drivers/hwmon/lm75.c:   ret =3D i3c_device_do_priv_xfers(i3cd=
-ev, xfers, 2);
-> > > > > > > drivers/hwmon/lm75.c:   struct i3c_priv_xfer xfers[] =3D {
-> > > > > > > drivers/hwmon/lm75.c:   return i3c_device_do_priv_xfers(i3cde=
-v, xfers, 1);
-> > > > > > > drivers/i3c/device.c:int i3c_device_do_xfers(struct i3c_devic=
-e *dev, struct i3c_priv_xfer *xfers,
-> > > > > > > drivers/i3c/master.c:   if (!ops->priv_xfers && !ops->i3c_xfe=
-rs)
-> > > > > > > drivers/i3c/master.c:   if (!master->ops->priv_xfers)
-> > > > > > > drivers/i3c/master.c:   return master->ops->priv_xfers(dev, x=
-fers, nxfers);
-> > > > > > > drivers/i3c/master/dw-i3c-master.c:static int dw_i3c_master_p=
-riv_xfers(struct i3c_dev_desc *dev,
-> > > > > > > drivers/i3c/master/dw-i3c-master.c:                          =
-       struct i3c_priv_xfer *i3c_xfers,
-> > > > > > > drivers/i3c/master/dw-i3c-master.c:     .priv_xfers =3D dw_i3=
-c_master_priv_xfers,
-> > > > > > > drivers/i3c/master/i3c-master-cdns.c:static int cdns_i3c_mast=
-er_priv_xfers(struct i3c_dev_desc *dev,
-> > > > > > > drivers/i3c/master/i3c-master-cdns.c:                        =
-         struct i3c_priv_xfer *xfers,
-> > > > > > > drivers/i3c/master/i3c-master-cdns.c:   .priv_xfers =3D cdns_=
-i3c_master_priv_xfers,
-> > > > > > > drivers/i3c/master/mipi-i3c-hci/core.c:static int i3c_hci_pri=
-v_xfers(struct i3c_dev_desc *dev,
-> > > > > > > drivers/i3c/master/mipi-i3c-hci/core.c:                      =
- struct i3c_priv_xfer *i3c_xfers,
-> > > > > > > drivers/i3c/master/mipi-i3c-hci/core.c: .priv_xfers          =
-   =3D i3c_hci_priv_xfers,
-> > > > > > > drivers/i3c/master/renesas-i3c.c:static int renesas_i3c_priv_=
-xfers(struct i3c_dev_desc *dev, struct i3c_priv_xfer *i3c_xfers,
-> > > > > > > drivers/i3c/master/renesas-i3c.c:       .priv_xfers =3D renes=
-as_i3c_priv_xfers,
-> > > > > > > drivers/i3c/master/svc-i3c-master.c:    struct i3c_priv_xfer =
-*xfer;
-> > > > > > > drivers/i3c/master/svc-i3c-master.c:     * at svc_i3c_master_=
-priv_xfers().
-> > > > > > > drivers/i3c/master/svc-i3c-master.c:static int svc_i3c_master=
-_i3c_xfers(struct i3c_dev_desc *dev, struct i3c_priv_xfer *xfers,
-> > > > > > > drivers/net/mctp/mctp-i3c.c:    struct i3c_priv_xfer xfer =3D=
- { .rnw =3D 1, .len =3D mi->mrl };
-> > > > > > > drivers/net/mctp/mctp-i3c.c:    rc =3D i3c_device_do_priv_xfe=
-rs(mi->i3c, &xfer, 1);
-> > > > > > > drivers/net/mctp/mctp-i3c.c:    struct i3c_priv_xfer xfer =3D=
- { .rnw =3D false };
-> > > > > > > drivers/net/mctp/mctp-i3c.c:    rc =3D i3c_device_do_priv_xfe=
-rs(mi->i3c, &xfer, 1);
-> > > > > > >
-> > > > > > > After this patch merged, I can clean up it at difference subs=
-ytem. After
-> > > > > > > all cleanup done, we can safely remove this define.
-> > > > > >
-> > > > > > I counted 9. I think it's not a big deal to convert all of them=
- at once without
-> > > > > > leaving an intermediate state. But this is a call for the I=B3C=
- subsystem maintaiiner.
-> > > > >
-> > > > > There also are other cleanup works. The key point is that everyon=
-e agree my
-> > > > > HDR solution. Cleanup these is not big deal. I am not sure how to=
- avoid
-> > > > > build broken at difference subsystem.
-> > > > >
-> > > > > After this patch merge, cleanup will be easier and safer.
-> > > >
-> > > > Then leave that renaming to the cleanup series. No need to use a de=
-fine, just
-> > > > use the old function name.
-> > >
-> > > Using old function name for HDR will be very strange and conflict with
-> > > spec's name convention.
-> > >
-> > > The term 'private' transfer in i3c spec is specific for SDR transfer.=
- It
-> > > is neccessary steps to complete whole naming switches.
-> >
-> > Right, but this out of scope OR a prerequisite to this series. My point=
- that
-> > these two shouldn't be mixed and one left half-baked.
-> =
+From: Stanley Chu <yschu@nuvoton.com>
 
-> It doesn't make sense that the new iio driver still use old interface, th=
-en
-> replace new one later.
-> =
+If no free IBI slot is available, svc_i3c_master_handle_ibi returns
+immediately. This causes the STOP condition to be missed because the
+EmitStop request is sent when the transfer is not complete. To resolve
+this, svc_i3c_master_handle_ibi must wait for the transfer to complete
+before returning.
 
-> Is it okay I create new patch serial, which switch to new interface, but
-> it's depend on this one. Let each maintainers decide how/when merge it?
-> =
+Fixes: dd3c52846d59 ("i3c: master: svc: Add Silvaco I3C master driver")
+Signed-off-by: Stanley Chu <yschu@nuvoton.com>
+---
+Changes since v1:
+ * do not touch coding style change
+---
+ drivers/i3c/master/svc-i3c-master.c | 22 ++++++++++++++--------
+ 1 file changed, 14 insertions(+), 8 deletions(-)
+
+diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
+index 9641e66a4e5f..e70a64f2a32f 100644
+--- a/drivers/i3c/master/svc-i3c-master.c
++++ b/drivers/i3c/master/svc-i3c-master.c
+@@ -406,21 +406,27 @@ static int svc_i3c_master_handle_ibi(struct svc_i3c_master *master,
+ 	int ret, val;
+ 	u8 *buf;
+ 
+-	slot = i3c_generic_ibi_get_free_slot(data->ibi_pool);
+-	if (!slot)
+-		return -ENOSPC;
+-
+-	slot->len = 0;
+-	buf = slot->data;
+-
++	/*
++	 * Wait for transfer to complete before returning. Otherwise, the EmitStop
++	 * request might be sent when the transfer is not complete.
++	 */
+ 	ret = readl_relaxed_poll_timeout(master->regs + SVC_I3C_MSTATUS, val,
+ 						SVC_I3C_MSTATUS_COMPLETE(val), 0, 1000);
+ 	if (ret) {
+ 		dev_err(master->dev, "Timeout when polling for COMPLETE\n");
+-		i3c_generic_ibi_recycle_slot(data->ibi_pool, slot);
+ 		return ret;
+ 	}
+ 
++	slot = i3c_generic_ibi_get_free_slot(data->ibi_pool);
++	if (!slot) {
++		dev_dbg(master->dev, "No free ibi slot, drop the data\n");
++		writel(SVC_I3C_MDATACTRL_FLUSHRB, master->regs + SVC_I3C_MDATACTRL);
++		return -ENOSPC;
++	}
++
++	slot->len = 0;
++	buf = slot->data;
++
+ 	while (SVC_I3C_MSTATUS_RXPEND(readl(master->regs + SVC_I3C_MSTATUS))  &&
+ 	       slot->len < SVC_I3C_FIFO_SIZE) {
+ 		mdatactrl = readl(master->regs + SVC_I3C_MDATACTRL);
+-- 
+2.34.1
 
 
-I'm fine with the define as I believe you are going to send the series
-switching to the new name quickly enough.
-I'll provide an immutable branch so the various subsystem maintainers
-can apply that on their own.
-
--- =
-
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
--- =
-
+-- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
