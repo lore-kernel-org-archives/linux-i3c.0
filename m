@@ -4,178 +4,176 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01DD1CCF9EE
-	for <linux-i3c@archiver.kernel.org>; Mon, 27 Oct 2025 20:09:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFACCCCF9E5
+	for <linux-i3c@archiver.kernel.org>; Mon, 27 Oct 2025 20:58:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Cc:To:In-Reply-To:
-	References:Message-Id:Subject:Date:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=SNzJ7pzbUoXBeitOZz0iVJu8QzdhD18DY2nfDe/16jU=; b=1vDJ8H+E8TwSgTcq94BPOmbkQG
-	W2XcBRE7BPkYsc9ySIypP+NomexphY3pFZytcn4Y4F7l5r9OSOnJwF+kVKxhOXTTAIeyf26HPOsae
-	Kln20E6TVTkPUdXDs0ubbM45tikEILUkTaKVnpxnyePzzBa4Q7QqUqD1A1gIt354vhpOHVesE2c6W
-	PfL+w2PPZO+WvQwZdu1Ty4EZo+vUkjKS/mm/CXSeUarZgXvXbxzuD2jaGAMTbziCREAER4cXmAnH3
-	sjR/gPHdpVBY64DoNUUojMByjc2ZXSaY2LUOaCPJnLf11m2HHKdLTaOGMS200o2Ow3STaiBwMV2IK
-	TEZ/U0TQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Cc:To:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zJpLYnrVeKgFMqN6+m8Q6OG3OIzTR+ilOqCrowcVYYo=; b=w1fY00pAwH4R1v
+	m1of/5FBWAzDY+Jh2pF14b6frifE4DGRirYC9QwPEfoO3kFIyHtqTIq+qcLz7fpt+Pjz1LzxxGEd4
+	jZ7Q8lpO0QrFqiSlNEw06ys2K09H4M9qp9GYMhKUoS5oYSys5+VCh9WX33FUxt6r0+pKhvzK72CW5
+	Jigg4Mrg3fHtBW2GlSk9qkc9wpp6oRl8FvyXUdqdeLWw3cliP6te6TCHaWn8axLwQHjVenbiizVy3
+	5ZXBxqLCY1sWQqK2fogYfebJG9pI29eauR7zMc88oIjpMlWy5DBanlJoY01Xb29Aplr6WlA7zsD8G
+	GRnhJhPUFuVyjlZvlpsQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDTWg-0000000EiKI-2Vk4;
-	Mon, 27 Oct 2025 20:09:10 +0000
-Received: from mail-swedencentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c202::7] helo=GVXPR05CU001.outbound.protection.outlook.com)
+	id 1vDUI0-0000000ElJi-312d;
+	Mon, 27 Oct 2025 20:58:04 +0000
+Received: from mail-northeuropeazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c200::5] helo=DUZPR83CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDTWd-0000000EiHZ-12WJ
+	id 1vDUHy-0000000ElIi-2qs1
 	for linux-i3c@lists.infradead.org;
-	Mon, 27 Oct 2025 20:09:08 +0000
+	Mon, 27 Oct 2025 20:58:03 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=YkXZXI1tjQTU3W2TVcl4w7ar6IrzWyxmyNDJrL0wiz5x+u6PFeu9Y0X1cQjwh0cMo4Widi5F/GTm6TtvJ+lDxNMHvnhcJqZWEC/DEMHRyKMsNY4VkVUH57cOoRyMe90/vJssJ3BFDxGlOlgXV/yfiGgD1kKw02R/pVAGLYM+unDaTgLfYeJj2ki7wg0oFJEc7Gh1HYBQCfv2suGX83gydQlzNrO9+kYGIhJWcZRiEA0AvihXqFTTq5lcxOzEUZyDOMrQgwIilu16o/P85DueG0MCMXzTOE8tc4h7xn5CDdm5pzG05pbulC16DMEK97LOAiFaL0iulOVXlaALxyUMZg==
+ b=OHn1gFzEy0phlRDBDtmolLtT+/84inDhwehQRcom/UZggGPiUZ6xANnX46cw2lJtEXtuSUtmQoTP+rUgKGXHCuXOeRF5JuuWR/oFQEaw7Ry4SmCDwzba+N3Zvgg9SaZ0weiUnDeTM2dF0j7R82xb0PgP55gPkJIe/xemEuCuS5YevQCr5G8VB786m4A2hlhTtRHTnZN7e3u6qoaNoweZL59nuFsuvu5r1ChJgoovTe8reZ3fBKv2Xlw9Z7mZT9tu3wCwpxTKxfEyZE3vQcFJ4BCJCdyRNzbsR95VR+2TGnY9Jwx5ba0FGYd/1Cuo8Zw/ThHZdTbE+Egm6/ad4n7JdA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=DcscuMED5rYImIkNErwswgsCNJqWvJZ4j6X0DuqFZw8=;
- b=xA4cVygdlM1ICJ4BI1W9PaAMI7qp62kdJ9chsvsLnaLP9DVtkYi2AQkMILwANRT305Z9Iv8F308cZSSQ/x9izW/WaKlgYvR8cFS7TdBYXWi898oYell9Z6vjkS4/3ju7tnfzX0PGpROq4QTXJ/ZjtVna5jJ23QQhfoOqmoAloNNOWdEonL0804NS/hHnE31SWqXIlhQ8HqaWEv3ZfihsE7Zr2pPr7vgngzkqxBkstE+XJma6x6Fpwrnwsx4Jc7NR/nCh7RaX2Set/MmDgXErkWYJyB/4LN3XujfOvC1Nj50nBlp/bL9Ai/E8B1S0JbpmIPdYTV+CsAz/sjP3B53DKA==
+ bh=jV4SXzCOeC8q/6Q9KuSfeiJaDDvphWBkKxT+EvYN1mk=;
+ b=YkbI1bBBlRq47ZQnCilPorCPzzdP8zq8by0l4gkz0QkuTAtPcefz4EKFNcHteL4qkgwFqeVEeLVjdtkdB/MPPCdhoaueWt8VHAMktFug/sGhtkET2cBFRKMYa67paoyjbcBoLtotTbsnPvlrQONKblb58t2slTa2GhzHemaZDLtqaDiE7kOfVUyEXTdbpfn8k0p9JhmDXZby738POXiaYDZ5rATSlg7b1je5QV4+sfdEt99WLMITCyuBpHZljrQt24GnKuQLHJxNiQoQarnOAllUXTvjidIRInVDbzoi3Gkdj6J9txgmKNQPXULGFjkven/zFB0fS+da2I056l0lig==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DcscuMED5rYImIkNErwswgsCNJqWvJZ4j6X0DuqFZw8=;
- b=UC33+IFIdqXMB/pyKuvcigsuuZfywcZze7dMyvQEaCwEAhfkTPtFK3EJehR+Q/SMQUteYsGJQP2ynheObOkOpqIu3djOqNd24AFH5+/fOujtYorN3d5gIMfs0SVSPuE2s/TUz8ZsZhbuQcJ5hJUDiLvUsv+8tSKTD4Mbu1fH1TVIy73VBkONTIKz+QaOQCzLlN4yAbtBgT38XATUtxf6oGTXGqZ80wD69UxuP+/bz6CwAobDxfwd+/LZjNsotDnlo1Y7/zHgzjIHxAC9mg8MLSl1knW5AjCKivbvrxMxnePF/5X5W/mgwR1IvMSpJDQur2PIVp6MP5cEjpPhfC+N0g==
+ bh=jV4SXzCOeC8q/6Q9KuSfeiJaDDvphWBkKxT+EvYN1mk=;
+ b=kMRm9vRQz8cZYGMcDEmsDJnouISYG2v6tdIfrCTG7SSkelNH0SlMhOYo4UiZADhoGXpUzRclHuOhD0L9fUmdlIP5QBjlKuX5jPqrq02GJIqHou55jovjq8AMktqJIDfJCpz2sE+sERwT1/TbpQLv60QoM5fptJWHtdprMnwitmgsWjdc5k8Gph625J2dqsQUJigkajByw/+vS01o8EX4621NBxMB8ScTBokWaw74weSIasi+3fy9rAgeDpoMTDrFvXcg9BRgoIf6BpPS8wO5x6vA0r0zF7Jfe2GV8S4gtPEDCdiUYvVP45Vz6Hyde99hOupx75blkFk3e0dBN/lclw==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from AS4PR04MB9621.eurprd04.prod.outlook.com (2603:10a6:20b:4ff::22)
- by VI0PR04MB11919.eurprd04.prod.outlook.com (2603:10a6:800:306::12) with
+ by AS8PR04MB8577.eurprd04.prod.outlook.com (2603:10a6:20b:424::10) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9253.12; Mon, 27 Oct
- 2025 20:09:04 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9253.18; Mon, 27 Oct
+ 2025 20:57:56 +0000
 Received: from AS4PR04MB9621.eurprd04.prod.outlook.com
  ([fe80::a84d:82bf:a9ff:171e]) by AS4PR04MB9621.eurprd04.prod.outlook.com
  ([fe80::a84d:82bf:a9ff:171e%4]) with mapi id 15.20.9253.017; Mon, 27 Oct 2025
- 20:09:04 +0000
+ 20:57:56 +0000
 From: Frank Li <Frank.Li@nxp.com>
-Date: Mon, 27 Oct 2025 16:08:33 -0400
-Subject: [PATCH v7 5/5] iio: magnetometer: Add mmc5633 sensor
-Message-Id: <20251027-i3c_ddr-v7-5-866a0ff7fc46@nxp.com>
-References: <20251027-i3c_ddr-v7-0-866a0ff7fc46@nxp.com>
-In-Reply-To: <20251027-i3c_ddr-v7-0-866a0ff7fc46@nxp.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
- Miquel Raynal <miquel.raynal@bootlin.com>, 
- Jonathan Cameron <jic23@kernel.org>, David Lechner <dlechner@baylibre.com>, 
- =?utf-8?q?Nuno_S=C3=A1?= <nuno.sa@analog.com>, 
- Andy Shevchenko <andy@kernel.org>, Rob Herring <robh@kernel.org>, 
- Krzysztof Kozlowski <krzk+dt@kernel.org>, 
- Conor Dooley <conor+dt@kernel.org>
+Subject: [PATCH 0/2] i3c: master: switch to use new callback .i3c_xfers()
+ from .priv_xfers()
+Date: Mon, 27 Oct 2025 16:57:38 -0400
+Message-Id: <20251027-i3c_xfer_cleanup_master-v1-0-e9bfcb083a38@nxp.com>
+X-B4-Tracking: v=1; b=H4sIAMPc/2gC/x3MQQqAIBBA0avErBPSCKGrRIhMYw2UxVghRHdPW
+ r7F/w8kEqYEffWA0M2J91ig6wpw8XEmxVMxmMZ0ujFWcYsuBxKHK/l4HW7z6SRRGGznrTYTWoR
+ SH0KB838exvf9AHIsjSNpAAAA
+X-Change-ID: 20251027-i3c_xfer_cleanup_master-cf75a712dc7c
+To: Jorge Marques <jorge.marques@analog.com>, 
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ =?utf-8?q?Przemys=C5=82aw_Gaj?= <pgaj@cadence.com>, 
+ Wolfram Sang <wsa+renesas@sang-engineering.com>, 
+ Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
 Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
- imx@lists.linux.dev, linux-iio@vger.kernel.org, 
- joshua.yeong@starfivetech.com, devicetree@vger.kernel.org, 
- Frank Li <Frank.Li@nxp.com>, Carlos Song <carlos.song@nxp.com>, 
- Adrian Fluturel <fluturel.adrian@gmail.com>
+ Frank Li <Frank.Li@nxp.com>
 X-Mailer: b4 0.14.2
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1761595722; l=18712;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1761598674; l=1037;
  i=Frank.Li@nxp.com; s=20240130; h=from:subject:message-id;
- bh=MXdfcOlomcKxNyAr9MXZ8gD5rAqp/+jFkqESujXramw=;
- b=ggr2HQ/e6W2o68zR3YgiXlm7vkO/NfYIoAPnanW3mz7vbCBv5Yq24Q+SnMf61q9zjx22CgBRt
- vAj3Nm2R9uaCtkllyawABvayVqh77uGfUpRBGVoTnSLzBKpt8ZebUmg
+ bh=PB4FZTrzGLubS42myhJ/f7pyiLt6OmsEMzPqlD2fNjI=;
+ b=MP3wLZFSsaI51AFpcXGntvl56kMXcKeAFarJIuiCALNREdKyzSyrwbU8BqCzWjn56QJ2tCroq
+ fV/kD/d9D6gCv0SVi2VbW9U0OvkjVS2yayAiDtXbyaycD2qG/ydYlfc
 X-Developer-Key: i=Frank.Li@nxp.com; a=ed25519;
  pk=I0L1sDUfPxpAkRvPKy7MdauTuSENRq+DnA+G4qcS94Q=
-X-ClientProxiedBy: PH1PEPF00013303.namprd07.prod.outlook.com
- (2603:10b6:518:1::12) To AS4PR04MB9621.eurprd04.prod.outlook.com
+X-ClientProxiedBy: PH0P220CA0001.NAMP220.PROD.OUTLOOK.COM
+ (2603:10b6:510:d3::6) To AS4PR04MB9621.eurprd04.prod.outlook.com
  (2603:10a6:20b:4ff::22)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AS4PR04MB9621:EE_|VI0PR04MB11919:EE_
-X-MS-Office365-Filtering-Correlation-Id: a98af173-2c6c-4cfd-8345-08de1594adb9
+X-MS-TrafficTypeDiagnostic: AS4PR04MB9621:EE_|AS8PR04MB8577:EE_
+X-MS-Office365-Filtering-Correlation-Id: d68b8491-ba0e-4318-e6f3-08de159b810c
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|376014|52116014|7416014|366016|1800799024|38350700014;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?YU1ZMW5mRWNqNWE1NlZlRFNGSnhmam9UbDYzMVhQSTBOeFZzVWhOeEIzQURH?=
- =?utf-8?B?RHB1WllpMG1uczRMemJFeFN5QXVLbTN4cVVDbnZmL3JJSVZwcG0ycy9EdjQ1?=
- =?utf-8?B?RWxockp0aDh5M2RCL1Bmb1RZMUtjMTdPa2Q4aFl6SkV6c0w1a0p4ODROU2g5?=
- =?utf-8?B?L2MwTGtQUVpZWENMYkY5ajUzQnd1MjRuUzVyNVBzc29XeWRlWDV1cm9kVjJF?=
- =?utf-8?B?alN1cEdXY3BCVGpMa0wwS2xEYVBwYitJV1duWmxQUSthbzZoMFhwVHhmOGsr?=
- =?utf-8?B?WmRzalc5Qmt6SGNrcXRLcWwzdWFpYllleG1WSzNtTjdKdUpPYVNMRElJY3ZX?=
- =?utf-8?B?Z0tpdEJkelFzdzVqU3QwUFc3ZVJOZXU1RVM0KzZUMFJSRkR3Q2lTN2gvSUwr?=
- =?utf-8?B?dDBONnpyUnkyVXV0ZHlZOUdQU2RtaE1vNHBjaldhWCtuQ1R0dDJIS1hxNnBa?=
- =?utf-8?B?bjVoUTJzT2czeG03cS9CdkxHOVNVVDUwUk4vWW1jVHBuVzV2TEVyQjBpQU84?=
- =?utf-8?B?SEVUM2wyeG4zd1IyNnJJOTVwWTlXZmlLYkJ0RzF4aXVmd1BDbXdCcklpb1pz?=
- =?utf-8?B?STNMQkp3THhiSE5udG1kODMyUnBybUdYakJTWlVRMDVkMHlkRWRENjR4VkFp?=
- =?utf-8?B?eWdoVjRPT1N4TE5OTUE5ejMyNWVQNFQySURJK3NpWWJneWhSQXE0RFEyZmNC?=
- =?utf-8?B?S0Z2cU14Ymx6a1BTbjhKWEZWSW1BZnlJSVBOcWN4Nk40VXdqOU1CL0NJVUdi?=
- =?utf-8?B?Ui9ndlBVWE5pbTRXRlhZZjJENDdGaEt4UXVVMXlHK3VOMFhtR0g3MlJYVWdK?=
- =?utf-8?B?YVlWeGJNNHJLUWUwNm1sejhISFhPalNXNTZkUlVNVzlxTzNhSTZMbWprVG1w?=
- =?utf-8?B?Y0piRGpST1AwMVM3Yldjano4Z0NldkVOcHZGdmdxRWd4MWRCcXFVMjhNKzcy?=
- =?utf-8?B?M1hmMG4yNmFWenVjWjQwSU0vaExxSlJma2xNMjBvdGdPQnhnZ2I1dkpCNWs5?=
- =?utf-8?B?c1RSRGU4dEhSM05XOUgrMThMNmxGVlhEUUkxQkUrQ00wcnpCMGNJQzBBNDNW?=
- =?utf-8?B?ZVBBRlZ3cGNpeVNlUHprNnRUaHhKWXZnTmsxeHpBZmFGY0tpNWoyQVQ0aUVv?=
- =?utf-8?B?dnpadVlzbXJHM3BuNkhoYTJjWTJoa0RRYmhZaUFQVW5wTUdacXczN3Y1cTZs?=
- =?utf-8?B?SzFROXpDT2wyM2w4czJKRzZMUk5EZThreFk4ZFl6Q2xCT0lTNkgrUWJ1Z0RY?=
- =?utf-8?B?N05VUmhYb0JnUWtrQjdCVDBqa2ZZZ2R5ZFJHbUtNcFNsLzVEbFBacFg5dHRs?=
- =?utf-8?B?UWFqVUdaVEJOY21lWHcybVc1ZmhpM1UxSHdseStwMFBIdUkrNGNYUGVnS0JS?=
- =?utf-8?B?VGtPYW9RVDc1S1dOdDRXaCtLQlcvMFNPNjR3SCs3RHJETkgzM2hmcDVwTGtJ?=
- =?utf-8?B?N0I4TCtpd0RRWWZCZUVwNzRwUWZiVWluQkFoZHIxa0JFYXUrcHF3Vkt6WnFU?=
- =?utf-8?B?TDBUb3JLRWtxblczMHpvcS9uREdwV21vR2NBUnJwOTljbFBMWkl2UWs4bUR0?=
- =?utf-8?B?bmVCY1dId1BxcVMrUDR1VC92MU9qWFovN1QycEpZbFJicnZyNjlub2JLL3Va?=
- =?utf-8?B?WCt3VmVyZzBEZ0oxM1ZFeDV5ZFFxZE1FTnY1cG5XOVV1eDJhUXJlcG44V0pl?=
- =?utf-8?B?d0JTQmYvdllEMnkwY1htR2pPd3lLNXk0d1c5M3lvYkRudzUrVVdVVW1KSURm?=
- =?utf-8?B?alZGUlVDU1RyRlZVODQ1aFhYWE9rWlhmYWFNdGNrSGtJamZjTnFlbVdBTEV3?=
- =?utf-8?B?RHoxbHByUW94UW5VQ01NM2hKWkppaGxnK3NVN2NnRHJuajFzRnRFZE5lU3c0?=
- =?utf-8?B?Unc2dnQ0MFZsNFM2dzB4elRvU01hMHYreGdWT2M0VTB2U0tNWlhmQm05Wmpm?=
- =?utf-8?B?NjE3THR1cXNZNG05SW9kNTBlWTJBMjZMNjRzU01XMHhIRFQ2KytQcUsrb3dp?=
- =?utf-8?B?RWQzTFlka2hCQ2dMRVdUbERVdHBTdWlld1UvYm1Zcm5BWkNjSkp0WnhiajJO?=
- =?utf-8?Q?Yvs4HN?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS4PR04MB9621.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(376014)(52116014)(7416014)(366016)(1800799024)(38350700014);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|52116014|19092799006|376014|1800799024|38350700014;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?dlBDUCtPYUUzUEtpU1FrRW9VeGsvY0s3eGxoU3diWEdHekFCYU0zMnBsUkYv?=
+ =?utf-8?B?ZnBuT3RTNmRyc25SbjRyaEpDZjBlWE1ZTnE0aEg1MTRZQTA1L3JKd2MwaHNI?=
+ =?utf-8?B?UEdBOGpxOVNFZHFyQ1NvQmFLcEFmZ2xMbzY1YXVmMVRMS2N5S0JjTjVLNU9P?=
+ =?utf-8?B?L1gzRDdQdjlxRXVpYmpuOFUwc0N3T2pZQ0VBYlhiMzNIb1pqanhHQk5uYzNm?=
+ =?utf-8?B?RnBYR3QrTmRpYXRxRWdiZmZEZWM5NkpxMnduUEtzZ09zTzFhclBTUEhtNVhP?=
+ =?utf-8?B?RG5HaXZrQm1XRnpWajE0N0JmK2d2dUNDZlJGYm1INDY1QzV2b1NKcmhZSzlR?=
+ =?utf-8?B?am83MHJhdFBza1pKTFpRZSswMjhBQXo1WGJuREY5TkVWbTZrZUduVkpRcFdq?=
+ =?utf-8?B?emlvWTc3NEQ4Q2orZm95Y1pRQmV3WjcyVmJiZ05UZkw2QTQydFZPa3NrYjhN?=
+ =?utf-8?B?OFloSzZvRytJTHU4MkkyNWt0QS95aUVmNG03bWtMRnlVcXprb2dDdFdyaG16?=
+ =?utf-8?B?SzFuK2ZRTmZROVk2R1NqR0k0YVpNQUlxM29ERnZDN1NWM0FKbytxWmFVWjBD?=
+ =?utf-8?B?QTM0V0xHS3RRQUxtWm10Q1plSWkvVFpCQ081dk9iNG9LWGNLekZrQ3d5cUJX?=
+ =?utf-8?B?a2RHWXVuZmdvdmw0aDZoNHprYS84aWEwK0VjaTQ4ZWRTaGhDMHppeHZUd1VD?=
+ =?utf-8?B?QXFBdHg1UTFVWE1iRXZvd3lnclVuS1lKYXY3dTBueS85TWJvU1ovVFNsdjl1?=
+ =?utf-8?B?NThSQmNCSTRZenl2TTA4OGx4QWtsMCtwOG83U1k4NWh3MG04VnRVcVVRcDBs?=
+ =?utf-8?B?WkxXQ3ZUN1pGbVdVM3Q4V3FWc0VuVG5tMitwVTM1ZHlOTzk4Y0I3WGN3NlFl?=
+ =?utf-8?B?WkdVRHg0Q1VBVnZSZFVhekpPUmxKRGZLWHBDVDU0R2RCOEc0QmllelRzMDNy?=
+ =?utf-8?B?UXNUcGF1SXhaWlFScDBxdmNMb3dWV2M4QjQ0OEdTemZjcTQ1dEVkNDhjTFY1?=
+ =?utf-8?B?L1p4Uk4rUlhhbk9VYUFRRDFlRHNmQzlJaGdVVEJiRkFKZDlkS1VXN0xvVWo3?=
+ =?utf-8?B?M0J4VmJZQzk4SE1vS1NkeGdwbFp5YW1TSWdmRS9UWVJnZkxpR3dweDk1cndH?=
+ =?utf-8?B?WGdMcm1HM1piREs3Y0F0UkRyTnBRWGw3V203MnVIS0x3bVNNV29hcGxTclZ0?=
+ =?utf-8?B?dnlXWTBTUDZiaVRPdlFBVHMvbXdqalZxRVM0ZjJpWFV5WVRtWWVqd2lVMHFy?=
+ =?utf-8?B?M3hyWlp3VW5uaDE2WVVydGNVaUFheUtuWTRzbEsxWnFJU01HY1cyalVmVllh?=
+ =?utf-8?B?d08wZ3NuR2greGdvQkRndGFBNDR2NUQ1RW1RMGNzSCtmM2dMTzd2OFowcGdU?=
+ =?utf-8?B?MVM3S3FwUkhuQy9wTHB2VTAzUm1MVFc1UEx2Qy94Nm1nSitpMkNhS0doNWp2?=
+ =?utf-8?B?QTRuM2RMUnJ6cHNSYytkMU1NN3gwZnREelVwRit2TEFXdktuNGZ0elk5YU96?=
+ =?utf-8?B?M3ZJY2VJcTZwbWZadm1kQUIxcThDSDJ0b3NnZUk5d01va2Z5VnhMVnRST052?=
+ =?utf-8?B?aFo1TFRJT2h5M1dzQkZZam11Z0xER2dSMEpFV0FtM2JQZjNlQU56YmJzS0tN?=
+ =?utf-8?B?NGtTZDlvSExNMHBmZHFnd1p6VGlIQ0FxWHM3NHdkdU5rRXUxbFVhZitmM0Ni?=
+ =?utf-8?B?THZXaEZST0R6N3dKbGJIQnI1Rnd1QkN3NzhZRDNMRU0vNzRZS0o4TG5RaUxV?=
+ =?utf-8?B?b3FrN1Bpbm5HZ2ovdEZtWmxJY2JxNVlaYjZzVXJ5NnpRYjl2b0R2Y2EzNTRY?=
+ =?utf-8?B?OURrRUpZK2N1RGFjZkRYMFh6V0lOajFwM1NrR1pOTzlDS0NGWVgyOExDYTMw?=
+ =?utf-8?B?SEFtZ2s2TmFSTXVJTHlrZTN5cHBXSWw5OU53UTNjazV4NXBpTStQZi9wKzdw?=
+ =?utf-8?B?N2RRR040Vk9BUHhuMEQ4QmdpYVlscmM5b0EvQ1N4S2RjQytCbHA1RmdMYkNs?=
+ =?utf-8?B?dGZPY1hQQXNkZjdLOTR4dWNidVhTMkRXdEc4c2ZRSnc1ZERHWlMwc3VOOTJI?=
+ =?utf-8?Q?Xm2Q2F?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS4PR04MB9621.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(52116014)(19092799006)(376014)(1800799024)(38350700014);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?bTlwcndMNXpINzBYUlJGOXg2S3A3UHBEdG8ySnhzbjMreHFibHJldlhoMjJJ?=
- =?utf-8?B?NkZFUmRMbm16TTZyQXNhVWJGUFptSnFKeGtMMjJ2U1NkUFNvTVZ5VTg4anVG?=
- =?utf-8?B?SlFrcEt0OGcxT3Urb2Z4eDJYa3ZYUWVuOUc4bTQxU0FtRVREbzRqSFE2dzF0?=
- =?utf-8?B?a29qRjc0VCtoUGZjbUYyMCtsM29lVEVwbXJBREVleFJyRHZrVjh1UzhmU3dH?=
- =?utf-8?B?bnJjMEFwbEV4Y3RtR1lPaE1Jclo1T0ZQbkQ3VCtFeWFnY0tIRHBUMFUrWjJR?=
- =?utf-8?B?VkhtbnBrdTB6S0IxSVI3QXdRY1ZnWFVVazZxb050TlIvM3pONUl4cFV2TU5T?=
- =?utf-8?B?dzQ1K1d3TlBOUXA5RzdLbEljUmVpbmNSbmtNMjVPcUdoMEx0ODFzelkzdW9Q?=
- =?utf-8?B?OGM5aDFWVWVqNlpOTXhPRytobzAwRWFvTklacE80WENta3ZhcVJDWmFtNWdJ?=
- =?utf-8?B?WS8rUVFXU0UrSUE3R2VNaE5CUGY2aTdTM2diaFBuSjJtS05OdndXaGwzelFF?=
- =?utf-8?B?aFNkeVFBVVlOc1JYdmJLejNnQkZMZXY0aDlxREtnUWRuQjNOdXM0bzdJR3FB?=
- =?utf-8?B?bEgyQXE3Y3VWV1NzTUFzTjArYzJmdG1pNjJBcHpEZ2pmdXd1UVVKLzMwamcv?=
- =?utf-8?B?dFpka3RrdkMrc3VnQ0pwOGlMZzZUMVZuQk5HdkxTQUNGd2tHd3NPeFBjOG84?=
- =?utf-8?B?ZXErK2hIMkVPNDN3UGF3Qy9KTlJjODd6L1diWGQ5UTdxb1RMZElQOHN0T1B3?=
- =?utf-8?B?YzlpbC9LUHpQOG5OUDFFeVdKR0pTL2dxVjMwc2xrZ0czeVdTSEdDSWdVcnVa?=
- =?utf-8?B?Yzc4T3NPRmMyT3o3RmZxL016KzVwME1zeVNidWRKdjNsdEo4d1lmWG1vR0NQ?=
- =?utf-8?B?SU9qbXN2dTROb2U1T1lWeGtkOXlLQm15RlZsMmZVbkdxbVQxOXdnVjZ2VG1U?=
- =?utf-8?B?YTMwWC9UYU9mL0RsRWc5VTlGS1AwaDhBY3p2OHFTa29ic3o0a3IwOW91am11?=
- =?utf-8?B?ZEJKQkhWelNyKzF1Mmc0Z2M5MjNhZFFHLzVjZXhPSzlyRVFXemJHWHd3bjdF?=
- =?utf-8?B?eXZKU253dTF6ZVorRFduQWFsNE4vQyttOGNNMUQzR0dzZ0pwNjVDUzNZNmxx?=
- =?utf-8?B?aUxrTGhvNWg0aXM3aUE1TVBQMXZvZnh6bmNONHVxUVRNeUcvc1Zva3hZcmFk?=
- =?utf-8?B?OFg3MmNGVHdZdW9BeFd3YjdVK3k0ZnhSSGpiVXFCZ01LcmhPU2ZsL1U5UmtF?=
- =?utf-8?B?OXNYTFFmTlJqdlNSNUhZekQ5eitWNWs4ZWdKWUo3ZTM1bWhuZ0VsNXBFZm9R?=
- =?utf-8?B?UnEreS8wYlZ3TzRrVjkrdDkva2NhSVd2UTFxWmhTRHBZc2ltYUdnc2tjUjRi?=
- =?utf-8?B?TzBJNERnZURWY1hHRjBKajFlRkRVZWRwRXRwd2lNSURSRjdNaEowd2l4TjAy?=
- =?utf-8?B?TXJERUxJV2lSV1BxZmRDNWFyWlZPSHpTdlBQdlMrcXkzRENtYkNVejJxV0Jw?=
- =?utf-8?B?SGoyMjkzUHpkSlBvR1VpUXc0OTVTQjl0am5LbGtFMGdzeXlCNnhKbGNxUm4r?=
- =?utf-8?B?RmRRQ3kwRUROTkloNDlTU2ZMWHliQkhUK1ZuUUd2eUpRRHcvOTJGN1NTd3RP?=
- =?utf-8?B?YkNuUFFSOENKNlhlWjRaQ3VrQWdPZUNYOWpxeTRMa0dsdG1BYXVCSlovUWFa?=
- =?utf-8?B?ZW0xazZldlJlK3JRTzdpZ2NxTUZoNEJhQllvUUMwWGdSdW9rNTZpY0VLSVZj?=
- =?utf-8?B?L0tVckM5cWJ6RTA4RGdwQ083QStvZkZucFR5MVZ3ZmRudWNoeHJhVitEZG5j?=
- =?utf-8?B?VkJ6UldCcnE3L0Q4emV1dUl2S3lWOXFRVVlTN0dXdVYyaEVVeUZnVS9sU0FE?=
- =?utf-8?B?ZEc5SzNHMndnMzg0d2pFQ3dCRlNoYk1oZHR1aUs4cGFLU1p4Tkl3RU8xTVJ5?=
- =?utf-8?B?Q0NRb0FvSTY0bWJzZ0JjT2g5eGpxMEdtNEdNVU1KTXdxREk5Q0RNRkNtZFVl?=
- =?utf-8?B?ZHpuWnhENTlNcFBwdkRBcTVKNkVnOGdiSTQyYXBvRHFDNTNzL3RnSUk3Z2NG?=
- =?utf-8?B?T2pHR1VoRmc2U3hTYUJpMjhvRHkvWTBqQ3lJK0RjV0Y2KzFnUkhHNHBuWFdz?=
- =?utf-8?Q?OzTc=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?ZjQrUVZ1dVFzN0RWc3FabkJjeGN0bHptUG95emRrSlZqUmdxNjk2RmVBVHhZ?=
+ =?utf-8?B?RWhXZ0hPckowdUxQOU5BVFdFS00zTmNGL1ZMOXIrdzVHMytpamM0R0NqNTlU?=
+ =?utf-8?B?Rm1aTVppSnZoUDlJL3pSbGY4T0pHUTljVlFoRmI0WnNKc1FNY21tZnVNUzlp?=
+ =?utf-8?B?QzFNeGxQQi9Md1pqblRvaWgwYS92QWQrNnRON1krc2ltQjJ5U3dQM3dWcmhx?=
+ =?utf-8?B?VXMyWkVLSGZqSWpGeEhrclZJQ1Y0aTBRYXJiYTZPZWpKd29MUjlsZlJyakpJ?=
+ =?utf-8?B?N1RhWTVLSFBwY05DM1Y1UElIZnJIWkFmNjd1MjNlY3pZcDFxUDlsRldTT2Nw?=
+ =?utf-8?B?cndrNTR0RUdFb0pMUVN6azRSZm1GaFRHRnZkdzJnMCtTL3Z1S0w1dlQ1Q1Ev?=
+ =?utf-8?B?YXcxajJFSnNNVVExNHpHR2RNS0tic2l1S1lrdWFMb3ladW5jZ1BOLzhaeVZ2?=
+ =?utf-8?B?VFZvMG9qeEZMNVpZTWF3QS95T0E1MWVINGRPdm5qSy9oNTRnOXBad29BeURy?=
+ =?utf-8?B?QWdsdTdUK1NJRjY1UWNXT3JsVW1vQmkzY1BhMDZzR3VxYkdPR1FScnE1Z1B0?=
+ =?utf-8?B?QmMrcDBKWnd0MHJzU0FXRElFTnpsU3dIMEdyQUJsZHNhN2dqTDZiWWtrdUlz?=
+ =?utf-8?B?ZHJEYVNiYVJUSVFydWRlUnBxbGdiSWtDcmlqb0pEOGJHUzUremNGOGQzSnkw?=
+ =?utf-8?B?eWQrc0xKTnR2VGZFekszRldIK1doUnZ4K0lKcnJ0cllDc3U1NDA0Skhzd0dZ?=
+ =?utf-8?B?b0x6cjNMQWVUTEg0d3hTUFVjVXBlNjFiditUZHNrelhxKzl1cnVWczRDbTdB?=
+ =?utf-8?B?a3czMEh3QngyUW45OXQ5NTdZRzlOMmxCQmRFNy9maEFXSWVTSUNLdHA2OHI3?=
+ =?utf-8?B?aTdVbC9KTW9tSCtDcE9EUDJjeFRJQ3QvQnlObWtEbEdnY0xZYXdZdnozQlNz?=
+ =?utf-8?B?bGpzckc3N0pLWkp5bE9uK0JLZUN1NEpNK1IxVi96VGZkZmluY2VtM3R0KzF6?=
+ =?utf-8?B?dFQ4cVYxRzlTdkV6V1NmMXgySEE1Q0NOTUpBUFI3ZjVETStmRzlCUDUyWDE4?=
+ =?utf-8?B?cjhhZSt6R3FsYUtvZ0tYV3lxaUFhZTByZDFMQ3pzUXd5aDVZRURDVFhjYzBn?=
+ =?utf-8?B?MjRpSlN0WU1zREk3MnNHVzZOV1pEdDQ2RW5UQ0N0cVQwcUR5eXNHbkcrOTV3?=
+ =?utf-8?B?Z0d4TUhkWENaL0k5b3FCNGxiTS92TXl4MUU3TUNIZmh4cmZacUpTMkVtNU1O?=
+ =?utf-8?B?ajMyUGs1Y3JHZE9FT3F1MWxsUk9oY1lMcE9RM3lYak1HMVVBUng4WXVDWkZ3?=
+ =?utf-8?B?bmdKUCtlM2tNd1ZzeFA3RFlEcWRtU3V1Z0l1VkpnbElqMnljeUpJZUlCRGhq?=
+ =?utf-8?B?VGxLWVd0V2lxdCtaRldqQTBoNGladVNDZFNZRTdlMXVrSzAzRGhYVnFidkdy?=
+ =?utf-8?B?eHRxSzFPV0tBbGRNOFp2Ky9PLzBDUEdjbDJsVnRUUzUrdkEzYjR3VkxRV3d5?=
+ =?utf-8?B?REVHVkJXOGRBUVRQS0VtL0VRUlF4OWxROVF4SjhGS1c1dmdXSlF0VmlDT2kz?=
+ =?utf-8?B?Q3BvMXdZM3F5U0cydld3ak1LdzR0RExTZ1ZlcXNxVUM5M0N5Y2ZwQkNqSmdL?=
+ =?utf-8?B?TEJUVmQ0SGtONHN6RXlNZHhLVUkvQ1p1ZXJ3TVF2cDlsSGlSOTJVM2hrUDl3?=
+ =?utf-8?B?TmRYc2ZSK0EzRU5jcDc4R3lBNnBPbm9oWEZXdzFKOHNQdmxJbFc1RDBwdmxZ?=
+ =?utf-8?B?bU85eHc3d0FXUy9kS1lzSmhkUHlBNW5EbmJaY09lS2p3ZTBoZHBiNnovT1JD?=
+ =?utf-8?B?dm11S1BuQTNnczhRdEFaVTdaZkpzWk1XVjNrU0RhTzBtVmNhWGdDdGgwb3JN?=
+ =?utf-8?B?WEJ5d3N6RjZEK2xKQmRnc1g4eS9ibHErTHMwYktVQmJ4TWpVYWoyc3ZTRm5x?=
+ =?utf-8?B?RS9mWW9jcWtFWFNGMkZ4VUE2djBiZncvZzh0cm5Ub1ZRc2JjQkJNU1ZFYWZx?=
+ =?utf-8?B?c3dHcUJpeTQyTXNrd2x4MTlmSlA2S0RzNXZOdWFqTm5pU25uaDh1Vm5KaGxq?=
+ =?utf-8?B?dS9YUldJTHZHZGM1Z0dLOTlkRWg4elFmbmE3dXRibTB3V3NFUnBtUXZaaFpP?=
+ =?utf-8?Q?xA7bW60LjHY7sZY29u422vTtB?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a98af173-2c6c-4cfd-8345-08de1594adb9
+X-MS-Exchange-CrossTenant-Network-Message-Id: d68b8491-ba0e-4318-e6f3-08de159b810c
 X-MS-Exchange-CrossTenant-AuthSource: AS4PR04MB9621.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Oct 2025 20:09:04.8812
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Oct 2025 20:57:56.4475
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: uKco7/gPCzIyB08zEOM4+0u4uToRPfExoC6EAkMjTonqKrzFnFFAGVLnK6fNT9q6ZhhYOGuB27LuQG/v5IrKCA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI0PR04MB11919
+X-MS-Exchange-CrossTenant-UserPrincipalName: EzrMlOpz4S/E7xb9Gix7ebbZwhwddirGCqITgYx7CkMxv7zY7VygQAfPcnAL80tCXmWmYaq81R21CD6zIgBg0A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8577
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251027_130907_467754_0FD6653E 
-X-CRM114-Status: GOOD (  15.44  )
+X-CRM114-CacheID: sfid-20251027_135802_765369_7FB72F47 
+X-CRM114-Status: UNSURE (   5.80  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -192,686 +190,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add mmc5633 sensor basic support.
-- Support read 20 bits X/Y/Z magnetic.
-- Support I3C HDR mode to send start measurememt command.
-- Support I3C HDR mode to read all sensors data by one command.
+switch all controller driver use new callback .i3c_xfers() from
+.priv_xfers() and remove .priv_xfers() in framework.
 
-Co-developed-by: Carlos Song <carlos.song@nxp.com>
-Signed-off-by: Carlos Song <carlos.song@nxp.com>
-Co-developed-by: Adrian Fluturel <fluturel.adrian@gmail.com>
-Signed-off-by: Adrian Fluturel <fluturel.adrian@gmail.com>
+This serise is base on
+https://lore.kernel.org/linux-i3c/20251027-i3c_ddr-v7-0-866a0ff7fc46@nxp.com/T/#t
+
 Signed-off-by: Frank Li <Frank.Li@nxp.com>
 ---
-Change in v7
-- add missed *.h file
-- remove reduntant empty line
-- add comments about delay 1us after SET
-- use USEC_PER_MSEC for timeout value
+Frank Li (2):
+      i3c: master: switch to use new callback .i3c_xfers() from .priv_xfers()
+      i3c: master: cleanup callback .priv_xfers()
 
-Change in v6:
-- remove acpi part
-- return 0 for success path at mmc5633_write_raw
-
-Change in V4
-- use { 1, 2000 }
-- Add _US for timeout
-- Use GEN_MASK for MMC5633_CTRL1_BW_MASK
-- Use { } for terminator.
-- remove !!
-- fix mix tab and space
-- add mmc5603 (merge https://lore.kernel.org/all/20251003000731.22927-1-fluturel.adrian@gmail.com/)
-- add tempature measure support
-
-Change in v3
-- remove mmc5633_hw_set
-- make -> Make
-- change indention for mmc5633_samp_freq
-- use u8 arrary to handle dword data
-- get_unaligned_be16() to get raw data
-- add helper function to check if i3c support hdr
-- use read_avail() callback
-
-change in v2
-- new patch
+ drivers/i3c/master.c                   | 17 ++---------------
+ drivers/i3c/master/adi-i3c-master.c    |  8 ++++----
+ drivers/i3c/master/dw-i3c-master.c     |  8 ++++----
+ drivers/i3c/master/i3c-master-cdns.c   |  8 ++++----
+ drivers/i3c/master/mipi-i3c-hci/core.c |  8 ++++----
+ drivers/i3c/master/renesas-i3c.c       |  6 +++---
+ include/linux/i3c/master.h             |  6 ------
+ 7 files changed, 21 insertions(+), 40 deletions(-)
 ---
- drivers/iio/magnetometer/Kconfig   |  12 +
- drivers/iio/magnetometer/Makefile  |   1 +
- drivers/iio/magnetometer/mmc5633.c | 588 +++++++++++++++++++++++++++++++++++++
- 3 files changed, 601 insertions(+)
+base-commit: f22e2617a331cf4800d6468cf0455db05a74c9a4
+change-id: 20251027-i3c_xfer_cleanup_master-cf75a712dc7c
 
-diff --git a/drivers/iio/magnetometer/Kconfig b/drivers/iio/magnetometer/Kconfig
-index 81b812a29044e2b0b9ff84889c21aa3ebc20be35..cfb74a4a083630678a1db1132a14264de451a31a 100644
---- a/drivers/iio/magnetometer/Kconfig
-+++ b/drivers/iio/magnetometer/Kconfig
-@@ -139,6 +139,18 @@ config MMC35240
- 	  To compile this driver as a module, choose M here: the module
- 	  will be called mmc35240.
- 
-+config MMC5633
-+	tristate "MEMSIC MMC5633 3-axis magnetic sensor"
-+	select REGMAP_I2C
-+	select REGMAP_I3C
-+	depends on I2C || I3C
-+	help
-+	  Say yes here to build support for the MEMSIC MMC5633 3-axis
-+	  magnetic sensor.
-+
-+	  To compile this driver as a module, choose M here: the module
-+	  will be called mmc5633
-+
- config IIO_ST_MAGN_3AXIS
- 	tristate "STMicroelectronics magnetometers 3-Axis Driver"
- 	depends on (I2C || SPI_MASTER) && SYSFS
-diff --git a/drivers/iio/magnetometer/Makefile b/drivers/iio/magnetometer/Makefile
-index dfe970fcacb8664b293af84893f7d3e3e8d7bf7e..5bd227f8c1204bdd8b8a43da180833eedca1457b 100644
---- a/drivers/iio/magnetometer/Makefile
-+++ b/drivers/iio/magnetometer/Makefile
-@@ -15,6 +15,7 @@ obj-$(CONFIG_BMC150_MAGN_SPI) += bmc150_magn_spi.o
- obj-$(CONFIG_MAG3110)	+= mag3110.o
- obj-$(CONFIG_HID_SENSOR_MAGNETOMETER_3D) += hid-sensor-magn-3d.o
- obj-$(CONFIG_MMC35240)	+= mmc35240.o
-+obj-$(CONFIG_MMC5633)	+= mmc5633.o
- 
- obj-$(CONFIG_IIO_ST_MAGN_3AXIS) += st_magn.o
- st_magn-y := st_magn_core.o
-diff --git a/drivers/iio/magnetometer/mmc5633.c b/drivers/iio/magnetometer/mmc5633.c
-new file mode 100644
-index 0000000000000000000000000000000000000000..3e29324f0720a2b8268ccd63409483a60e48802b
---- /dev/null
-+++ b/drivers/iio/magnetometer/mmc5633.c
-@@ -0,0 +1,588 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/*
-+ * MMC5633 - MEMSIC 3-axis Magnetic Sensor
-+ *
-+ * Copyright (c) 2015, Intel Corporation.
-+ * Copyright (c) 2025, NXP
-+ *
-+ * IIO driver for MMC5633, base on mmc35240.c
-+ */
-+
-+#include <linux/array_size.h>
-+#include <linux/bitfield.h>
-+#include <linux/bits.h>
-+#include <linux/cleanup.h>
-+#include <linux/delay.h>
-+#include <linux/device.h>
-+#include <linux/dev_printk.h>
-+#include <linux/err.h>
-+#include <linux/errno.h>
-+#include <linux/i2c.h>
-+#include <linux/i3c/device.h>
-+#include <linux/iio/iio.h>
-+#include <linux/iio/sysfs.h>
-+#include <linux/init.h>
-+#include <linux/iopoll.h>
-+#include <linux/module.h>
-+#include <linux/mod_devicetable.h>
-+#include <linux/mutex.h>
-+#include <linux/pm.h>
-+#include <linux/regmap.h>
-+#include <linux/types.h>
-+#include <linux/unaligned.h>
-+
-+#define MMC5633_REG_XOUT_L	0x00
-+#define MMC5633_REG_XOUT_H	0x01
-+#define MMC5633_REG_YOUT_L	0x02
-+#define MMC5633_REG_YOUT_H	0x03
-+#define MMC5633_REG_ZOUT_L	0x04
-+#define MMC5633_REG_ZOUT_H	0x05
-+#define MMC5633_REG_XOUT_2	0x06
-+#define MMC5633_REG_YOUT_2	0x07
-+#define MMC5633_REG_ZOUT_2	0x08
-+#define MMC5633_REG_TOUT	0x09
-+
-+#define MMC5633_REG_STATUS1	0x18
-+#define MMC5633_REG_STATUS0	0x19
-+#define MMC5633_REG_CTRL0	0x1b
-+#define MMC5633_REG_CTRL1	0x1c
-+#define MMC5633_REG_CTRL2	0x1d
-+
-+#define MMC5633_REG_ID		0x39
-+
-+#define MMC5633_STATUS1_MEAS_T_DONE_BIT	BIT(7)
-+#define MMC5633_STATUS1_MEAS_M_DONE_BIT	BIT(6)
-+
-+#define MMC5633_CTRL0_CMM_FREQ_EN	BIT(7)
-+#define MMC5633_CTRL0_AUTO_ST_EN	BIT(6)
-+#define MMC5633_CTRL0_AUTO_SR_EN	BIT(5)
-+#define MMC5633_CTRL0_RESET		BIT(4)
-+#define MMC5633_CTRL0_SET		BIT(3)
-+#define MMC5633_CTRL0_MEAS_T		BIT(1)
-+#define MMC5633_CTRL0_MEAS_M		BIT(0)
-+
-+#define MMC5633_CTRL1_BW_MASK		GENMASK(1, 0)
-+
-+#define MMC5633_WAIT_SET_RESET_US	(1 * USEC_PER_MSEC)
-+
-+#define MMC5633_HDR_CTRL0_MEAS_M	0x01
-+#define MMC5633_HDR_CTRL0_MEAS_T	0x03
-+#define MMC5633_HDR_CTRL0_SET		0x05
-+#define MMC5633_HDR_CTRL0_RESET		0x07
-+
-+enum mmc5633_axis {
-+	MMC5633_AXIS_X,
-+	MMC5633_AXIS_Y,
-+	MMC5633_AXIS_Z,
-+	MMC5633_TEMPERATURE,
-+};
-+
-+struct mmc5633_data {
-+	struct device *dev;
-+	struct i3c_device *i3cdev;
-+	struct mutex mutex; /* protect to finish one whole measurement */
-+	struct regmap *regmap;
-+};
-+
-+static const struct {
-+	int val;
-+	int val2;
-+} mmc5633_samp_freq[] = {
-+	{ 1, 200000 },
-+	{ 2, 0 },
-+	{ 3, 500000 },
-+	{ 6, 600000 },
-+};
-+
-+#define MMC5633_CHANNEL(_axis) { \
-+	.type = IIO_MAGN, \
-+	.modified = 1, \
-+	.channel2 = IIO_MOD_ ## _axis, \
-+	.address = MMC5633_AXIS_ ## _axis, \
-+	.info_mask_separate = BIT(IIO_CHAN_INFO_RAW), \
-+	.info_mask_shared_by_type = BIT(IIO_CHAN_INFO_SAMP_FREQ) | \
-+				    BIT(IIO_CHAN_INFO_SCALE), \
-+}
-+
-+static const struct iio_chan_spec mmc5633_channels[] = {
-+	MMC5633_CHANNEL(X),
-+	MMC5633_CHANNEL(Y),
-+	MMC5633_CHANNEL(Z),
-+	{
-+		.type = IIO_TEMP,
-+		.info_mask_separate = BIT(IIO_CHAN_INFO_RAW) |
-+				      BIT(IIO_CHAN_INFO_SCALE) |
-+				      BIT(IIO_CHAN_INFO_OFFSET),
-+		.address = MMC5633_TEMPERATURE,
-+	},
-+};
-+
-+static int mmc5633_get_samp_freq_index(struct mmc5633_data *data,
-+				       int val, int val2)
-+{
-+	u32 i;
-+
-+	for (i = 0; i < ARRAY_SIZE(mmc5633_samp_freq); i++)
-+		if (mmc5633_samp_freq[i].val == val &&
-+		    mmc5633_samp_freq[i].val2 == val2)
-+			return i;
-+	return -EINVAL;
-+}
-+
-+static int mmc5633_init(struct mmc5633_data *data)
-+{
-+	unsigned int reg_id;
-+	int ret;
-+
-+	ret = regmap_read(data->regmap, MMC5633_REG_ID, &reg_id);
-+	if (ret < 0)
-+		return dev_err_probe(data->dev, ret,
-+				     "Error reading product id\n");
-+
-+	/*
-+	 * Make sure we restore sensor characteristics, by doing
-+	 * a SET/RESET sequence, the axis polarity being naturally
-+	 * aligned after RESET.
-+	 */
-+	ret = regmap_write(data->regmap, MMC5633_REG_CTRL0, MMC5633_CTRL0_SET);
-+	if (ret < 0)
-+		return ret;
-+
-+	/*
-+	 * Minimum time interval between SET or RESET to other operations is
-+	 * 1ms according to Operating Timing Diagram in datasheet.
-+	 */
-+	fsleep(MMC5633_WAIT_SET_RESET_US);
-+
-+	ret = regmap_write(data->regmap, MMC5633_REG_CTRL0, MMC5633_CTRL0_RESET);
-+	if (ret < 0)
-+		return ret;
-+
-+	/* set default sampling frequency */
-+	return regmap_update_bits(data->regmap, MMC5633_REG_CTRL1,
-+				  MMC5633_CTRL1_BW_MASK,
-+				  FIELD_PREP(MMC5633_CTRL1_BW_MASK, 0));
-+}
-+
-+static int mmc5633_take_measurement(struct mmc5633_data *data, int address)
-+{
-+	unsigned int reg_status;
-+	int ret;
-+	int val;
-+
-+	val = (address == MMC5633_TEMPERATURE) ? MMC5633_CTRL0_MEAS_T : MMC5633_CTRL0_MEAS_M;
-+	ret = regmap_write(data->regmap, MMC5633_REG_CTRL0, val);
-+	if (ret < 0)
-+		return ret;
-+
-+	val = (address == MMC5633_TEMPERATURE) ?
-+	      MMC5633_STATUS1_MEAS_T_DONE_BIT : MMC5633_STATUS1_MEAS_M_DONE_BIT;
-+	ret = regmap_read_poll_timeout(data->regmap, MMC5633_REG_STATUS1, reg_status,
-+				       reg_status & val,
-+				       10 * USEC_PER_MSEC,
-+				       100 * 10 * USEC_PER_MSEC);
-+	if (ret) {
-+		dev_err(data->dev, "data not ready\n");
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static bool mmc5633_is_support_hdr(struct mmc5633_data *data)
-+{
-+	if (!data->i3cdev)
-+		return false;
-+
-+	return i3c_device_get_supported_xfer_mode(data->i3cdev) & BIT(I3C_HDR_DDR);
-+}
-+
-+static int mmc5633_read_measurement(struct mmc5633_data *data, int address, void *buf, size_t sz)
-+{
-+	u8 data_cmd[2], status[2];
-+	int ret, val, ready;
-+
-+	if (mmc5633_is_support_hdr(data)) {
-+		struct i3c_xfer xfers_wr_cmd[] = {
-+			{
-+				.cmd = 0x3b,
-+				.len = 2,
-+				.data.out = data_cmd,
-+			}
-+		};
-+		struct i3c_xfer xfers_rd_sta_cmd[] = {
-+			{
-+				.cmd = 0x23 | BIT(7), /* RDSTA CMD */
-+				.len = 2,
-+				.data.in = status,
-+			},
-+		};
-+		struct i3c_xfer xfers_rd_data_cmd[] = {
-+			{
-+				.cmd = 0x22 | BIT(7), /* RDLONG CMD */
-+				.len = sz,
-+				.data.in = buf,
-+			},
-+		};
-+
-+		data_cmd[0] = 0;
-+		data_cmd[1] = (address == MMC5633_TEMPERATURE) ?
-+			      MMC5633_HDR_CTRL0_MEAS_T : MMC5633_HDR_CTRL0_MEAS_M;
-+
-+		ret = i3c_device_do_xfers(data->i3cdev, xfers_wr_cmd, 1, I3C_HDR_DDR);
-+		if (ret < 0)
-+			return ret;
-+
-+		ready = (address == MMC5633_TEMPERATURE) ?
-+			MMC5633_STATUS1_MEAS_T_DONE_BIT : MMC5633_STATUS1_MEAS_M_DONE_BIT;
-+		ret = read_poll_timeout(i3c_device_do_xfers, val,
-+					val ||
-+					status[0] & ready,
-+					10 * USEC_PER_MSEC,
-+					100 * 10 * USEC_PER_MSEC, 0,
-+					data->i3cdev, xfers_rd_sta_cmd, 1, I3C_HDR_DDR);
-+		if (ret) {
-+			dev_err(data->dev, "data not ready\n");
-+			return ret;
-+		}
-+		if (val) {
-+			dev_err(data->dev, "i3c transfer error\n");
-+			return val;
-+		}
-+		return i3c_device_do_xfers(data->i3cdev, xfers_rd_data_cmd, 1, I3C_HDR_DDR);
-+	}
-+
-+	/* Fallback to use SDR/I2C mode */
-+	ret = mmc5633_take_measurement(data, address);
-+	if (ret < 0)
-+		return ret;
-+
-+	if (address == MMC5633_TEMPERATURE)
-+		/*
-+		 * Put tempeature to last byte of buff to align HDR case.
-+		 * I3C will early terminate data read if previous data is not
-+		 * available.
-+		 */
-+		return regmap_bulk_read(data->regmap, MMC5633_REG_TOUT, buf + sz - 1, 1);
-+
-+	return regmap_bulk_read(data->regmap, MMC5633_REG_XOUT_L, buf, sz);
-+}
-+
-+/* X,Y,Z 3 channels, each channel has 3 byte and TEMP */
-+#define MMC5633_ALL_SIZE (3 * 3 + 1)
-+
-+static int mmc5633_get_raw(struct mmc5633_data *data, int index, unsigned char *buf, int *val)
-+{
-+	if (index == MMC5633_TEMPERATURE) {
-+		*val = buf[MMC5633_ALL_SIZE - 1];
-+		return 0;
-+	}
-+	/*
-+	 * X[19..12] X[11..4] Y[19..12] Y[11..4] Z[19..12] Z[11..4] X[3..0] Y[3..0] Z[3..0]
-+	 */
-+	*val = get_unaligned_be16(buf + 2 * index) << 4;
-+	*val |= buf[index + 6] >> 4;
-+
-+	return 0;
-+}
-+
-+static int mmc5633_read_raw(struct iio_dev *indio_dev,
-+			    struct iio_chan_spec const *chan, int *val,
-+			    int *val2, long mask)
-+{
-+	struct mmc5633_data *data = iio_priv(indio_dev);
-+	char buf[MMC5633_ALL_SIZE];
-+	unsigned int reg, i;
-+	int ret;
-+
-+	switch (mask) {
-+	case IIO_CHAN_INFO_RAW:
-+		scoped_guard(mutex, &data->mutex) {
-+			ret = mmc5633_read_measurement(data, chan->address, buf, MMC5633_ALL_SIZE);
-+			if (ret < 0)
-+				return ret;
-+		}
-+
-+		ret = mmc5633_get_raw(data, chan->address, buf, val);
-+		if (ret < 0)
-+			return ret;
-+		return IIO_VAL_INT;
-+	case IIO_CHAN_INFO_SCALE:
-+		if (chan->type == IIO_MAGN) {
-+			*val = 0;
-+			*val2 = 62500;
-+		} else {
-+			*val = 0;
-+			*val2 = 800000000; /* 0.8C */
-+		}
-+		return IIO_VAL_INT_PLUS_NANO;
-+	case IIO_CHAN_INFO_OFFSET:
-+		if (chan->type == IIO_TEMP) {
-+			*val = -75;
-+			return IIO_VAL_INT;
-+		}
-+		return -EINVAL;
-+	case IIO_CHAN_INFO_SAMP_FREQ:
-+		scoped_guard(mutex, &data->mutex) {
-+			ret = regmap_read(data->regmap, MMC5633_REG_CTRL1, &reg);
-+			if (ret < 0)
-+				return ret;
-+		}
-+
-+		i = FIELD_GET(MMC5633_CTRL1_BW_MASK, reg);
-+		if (i >= ARRAY_SIZE(mmc5633_samp_freq))
-+			return -EINVAL;
-+
-+		*val = mmc5633_samp_freq[i].val;
-+		*val2 = mmc5633_samp_freq[i].val2;
-+		return IIO_VAL_INT_PLUS_MICRO;
-+	default:
-+		return -EINVAL;
-+	}
-+}
-+
-+static int mmc5633_write_raw(struct iio_dev *indio_dev,
-+			     struct iio_chan_spec const *chan, int val,
-+			     int val2, long mask)
-+{
-+	struct mmc5633_data *data = iio_priv(indio_dev);
-+	int i, ret;
-+
-+	switch (mask) {
-+	case IIO_CHAN_INFO_SAMP_FREQ:
-+		i = mmc5633_get_samp_freq_index(data, val, val2);
-+		if (i < 0)
-+			return -EINVAL;
-+
-+		scoped_guard(mutex, &data->mutex) {
-+			ret = regmap_update_bits(data->regmap, MMC5633_REG_CTRL1,
-+						 MMC5633_CTRL1_BW_MASK,
-+						 FIELD_PREP(MMC5633_CTRL1_BW_MASK, i));
-+			if (ret)
-+				return ret;
-+		};
-+		return 0;
-+	default:
-+		return -EINVAL;
-+	}
-+}
-+
-+static int mmc5633_read_avail(struct iio_dev *indio_dev,
-+			      struct iio_chan_spec const *chan,
-+			      const int **vals,
-+			      int *type,
-+			      int *length,
-+			      long mask)
-+{
-+	switch (mask) {
-+	case IIO_CHAN_INFO_SAMP_FREQ:
-+		*vals = (const int *)mmc5633_samp_freq;
-+		*length = ARRAY_SIZE(mmc5633_samp_freq) * 2;
-+		*type = IIO_VAL_INT_PLUS_MICRO;
-+		return IIO_AVAIL_LIST;
-+	default:
-+		return -EINVAL;
-+	}
-+}
-+
-+static const struct iio_info mmc5633_info = {
-+	.read_raw	= mmc5633_read_raw,
-+	.write_raw	= mmc5633_write_raw,
-+	.read_avail	= mmc5633_read_avail,
-+};
-+
-+static bool mmc5633_is_writeable_reg(struct device *dev, unsigned int reg)
-+{
-+	switch (reg) {
-+	case MMC5633_REG_CTRL0:
-+	case MMC5633_REG_CTRL1:
-+		return true;
-+	default:
-+		return false;
-+	}
-+}
-+
-+static bool mmc5633_is_readable_reg(struct device *dev, unsigned int reg)
-+{
-+	switch (reg) {
-+	case MMC5633_REG_XOUT_L:
-+	case MMC5633_REG_XOUT_H:
-+	case MMC5633_REG_YOUT_L:
-+	case MMC5633_REG_YOUT_H:
-+	case MMC5633_REG_ZOUT_L:
-+	case MMC5633_REG_ZOUT_H:
-+	case MMC5633_REG_XOUT_2:
-+	case MMC5633_REG_YOUT_2:
-+	case MMC5633_REG_ZOUT_2:
-+	case MMC5633_REG_TOUT:
-+	case MMC5633_REG_STATUS1:
-+	case MMC5633_REG_ID:
-+		return true;
-+	default:
-+		return false;
-+	}
-+}
-+
-+static bool mmc5633_is_volatile_reg(struct device *dev, unsigned int reg)
-+{
-+	switch (reg) {
-+	case MMC5633_REG_CTRL0:
-+	case MMC5633_REG_CTRL1:
-+		return false;
-+	default:
-+		return true;
-+	}
-+}
-+
-+static const struct reg_default mmc5633_reg_defaults[] = {
-+	{ MMC5633_REG_CTRL0,  0x00 },
-+	{ MMC5633_REG_CTRL1,  0x00 },
-+};
-+
-+static const struct regmap_config mmc5633_regmap_config = {
-+	.name = "mmc5633_regmap",
-+
-+	.reg_bits = 8,
-+	.val_bits = 8,
-+
-+	.max_register = MMC5633_REG_ID,
-+	.cache_type = REGCACHE_MAPLE,
-+
-+	.writeable_reg = mmc5633_is_writeable_reg,
-+	.readable_reg = mmc5633_is_readable_reg,
-+	.volatile_reg = mmc5633_is_volatile_reg,
-+
-+	.reg_defaults = mmc5633_reg_defaults,
-+	.num_reg_defaults = ARRAY_SIZE(mmc5633_reg_defaults),
-+};
-+
-+static int mmc5633_common_probe(struct device *dev, struct regmap *regmap,
-+				char *name, struct i3c_device *i3cdev)
-+{
-+	struct mmc5633_data *data;
-+	struct iio_dev *indio_dev;
-+	int ret;
-+
-+	indio_dev = devm_iio_device_alloc(dev, sizeof(*data));
-+	if (!indio_dev)
-+		return -ENOMEM;
-+
-+	dev_set_drvdata(dev, indio_dev);
-+
-+	data = iio_priv(indio_dev);
-+
-+	data->regmap = regmap;
-+	data->i3cdev = i3cdev;
-+	data->dev = dev;
-+
-+	ret = devm_mutex_init(dev, &data->mutex);
-+	if (ret)
-+		return ret;
-+
-+	indio_dev->info = &mmc5633_info;
-+	indio_dev->name = name;
-+	indio_dev->channels = mmc5633_channels;
-+	indio_dev->num_channels = ARRAY_SIZE(mmc5633_channels);
-+	indio_dev->modes = INDIO_DIRECT_MODE;
-+
-+	ret = mmc5633_init(data);
-+	if (ret < 0)
-+		return dev_err_probe(dev, ret, "mmc5633 chip init failed\n");
-+
-+	return devm_iio_device_register(dev, indio_dev);
-+}
-+
-+static int mmc5633_suspend(struct device *dev)
-+{
-+	struct mmc5633_data *data = iio_priv(dev_get_drvdata(dev));
-+
-+	regcache_cache_only(data->regmap, true);
-+
-+	return 0;
-+}
-+
-+static int mmc5633_resume(struct device *dev)
-+{
-+	struct mmc5633_data *data = iio_priv(dev_get_drvdata(dev));
-+	int ret;
-+
-+	regcache_mark_dirty(data->regmap);
-+	ret = regcache_sync_region(data->regmap, MMC5633_REG_CTRL0,
-+				   MMC5633_REG_CTRL1);
-+	if (ret < 0)
-+		dev_err(dev, "Failed to restore control registers\n");
-+
-+	regcache_cache_only(data->regmap, false);
-+
-+	return 0;
-+}
-+
-+static int mmc5633_i2c_probe(struct i2c_client *client)
-+{
-+	struct device *dev = &client->dev;
-+	struct regmap *regmap;
-+
-+	regmap = devm_regmap_init_i2c(client, &mmc5633_regmap_config);
-+	if (IS_ERR(regmap))
-+		return dev_err_probe(dev, PTR_ERR(regmap), "regmap init failed");
-+
-+	return mmc5633_common_probe(dev, regmap, client->name, NULL);
-+}
-+
-+static DEFINE_SIMPLE_DEV_PM_OPS(mmc5633_pm_ops, mmc5633_suspend, mmc5633_resume);
-+
-+static const struct of_device_id mmc5633_of_match[] = {
-+	{ .compatible = "memsic,mmc5603" },
-+	{ .compatible = "memsic,mmc5633" },
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(of, mmc5633_of_match);
-+
-+static const struct i2c_device_id mmc5633_i2c_id[] = {
-+	{ "mmc5603" },
-+	{ "mmc5633" },
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(i2c, mmc5633_i2c_id);
-+
-+static struct i2c_driver mmc5633_i2c_driver = {
-+	.driver = {
-+		.name = "mmc5633_i2c",
-+		.of_match_table = mmc5633_of_match,
-+		.pm = pm_sleep_ptr(&mmc5633_pm_ops),
-+	},
-+	.probe = mmc5633_i2c_probe,
-+	.id_table =  mmc5633_i2c_id,
-+};
-+
-+static const struct i3c_device_id mmc5633_i3c_ids[] = {
-+	I3C_DEVICE(0x0251, 0x0000, NULL),
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(i3c, mmc5633_i3c_ids);
-+
-+static int mmc5633_i3c_probe(struct i3c_device *i3cdev)
-+{
-+	struct device *dev = i3cdev_to_dev(i3cdev);
-+	struct regmap *regmap;
-+
-+	regmap = devm_regmap_init_i3c(i3cdev, &mmc5633_regmap_config);
-+	if (IS_ERR(regmap))
-+		return dev_err_probe(dev, PTR_ERR(regmap),
-+				     "Failed to register i3c regmap\n");
-+
-+	return mmc5633_common_probe(dev, regmap, "mmc5633_i3c", i3cdev);
-+}
-+
-+static struct i3c_driver mmc5633_i3c_driver = {
-+	.driver = {
-+		.name = "mmc5633_i3c",
-+	},
-+	.probe = mmc5633_i3c_probe,
-+	.id_table = mmc5633_i3c_ids,
-+};
-+module_i3c_i2c_driver(mmc5633_i3c_driver, &mmc5633_i2c_driver)
-+
-+MODULE_AUTHOR("Frank Li <Frank.li@nxp.com>");
-+MODULE_DESCRIPTION("MEMSIC MMC5633 magnetic sensor driver");
-+MODULE_LICENSE("GPL");
-
--- 
-2.34.1
+Best regards,
+--
+Frank Li <Frank.Li@nxp.com>
 
 
 -- 
