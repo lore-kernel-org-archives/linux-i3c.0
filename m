@@ -4,87 +4,183 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65748CCD1BF
-	for <linux-i3c@archiver.kernel.org>; Tue, 28 Oct 2025 10:51:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DE402CCF9E0
+	for <linux-i3c@archiver.kernel.org>; Tue, 28 Oct 2025 14:49:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VtSGpw8KMHNvVb2iVOtnu8v3M6lxVUK7Nj3E6mXDVVk=; b=eX7SRsdORQTfwu
-	84ebo0R4pafYVpI8G0vk81rdUJsNniWt5HAKUDNjSEi8GlcptQFOxWz6M+UIP/zz2AQe6gyY+JQXr
-	88vT7SLCsobq83R94b9kL/Aot8IeWveu/Kwe3MwNpVu59G10551D+hVjW3QlnypXOQVnW4JScGL2v
-	S0R/8H0fMNrDqzPnuLmjKkUToAlJKfDm0/Y0ETaLC67gCjzRBW2GrLI4Pse29W8+GaUZOREXH7mxf
-	M4RR2pyg0K9hqpAejCYJM8G6J2MPyRf2b+srbp0tQAs3GjZ+o+YEHrCb62LP99VRxTtCzYopz30b5
-	S04OWZlKw2soqyp3fyLQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Cc:To:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ORU0n4QBjlIzx22JzS91xZwF/aXTt9i1dNDN2TmsKos=; b=xTFqgmPddzAmXk
+	BbBHl7gIasb3CmE9gq28kkyCbRHoqgDsYHYkG1Vzf+ngx3oDKHLWepLFTJUZbG92lWXTtg7AeZBjv
+	xaurWgtYWv/IDkbGRQ0h8UYgYLL2pkXCy+UOOc/hd2QPqFSLNiHtu/oBGQohkI1CmUOgDCD34DstG
+	/N8uyeE4tjU0HRg7bPgqCalRbmFy4jWLmeV5SqclKHb5TlgsMny1/CDbXmwg6XBs5ka0zecmu+4dl
+	ljFAMNHCLprHZck9gqBIN04n9vD5PDzx/jqYUBbAjw8iIoN0qiKC6tjNLF/99Bksi6wy6u5edyj/G
+	BxLNYiQcGoiQZcFtSG5w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDhIA-0000000FnSf-0g9h;
-	Tue, 28 Oct 2025 10:51:06 +0000
-Received: from mgamail.intel.com ([192.198.163.15])
+	id 1vDl0l-0000000G72f-2hDZ;
+	Tue, 28 Oct 2025 14:49:23 +0000
+Received: from mail-swedencentralazon11013038.outbound.protection.outlook.com ([52.101.83.38] helo=GVXPR05CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDhI7-0000000FnSI-3Y49
+	id 1vDl0j-0000000G717-1YOk
 	for linux-i3c@lists.infradead.org;
-	Tue, 28 Oct 2025 10:51:05 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1761648664; x=1793184664;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=DDhNlvzKMkJquFS7Dfuj4GY/hVUlxRX3nTDoyxMG6wI=;
-  b=LkzWR2f5Wl5mBWb9NarhQwmn3BtefpC8Dfb6Bv50++U7TsFk5yClxl2x
-   c/9/APQi8GVNUR251ZybV4DY+9ezXJ0gbjKtPdXhnKbgX914/SM5HejWt
-   oLReQmiEO+1NqpR/mZrirxhFQ+TOjnRO7B3ZonaoWY1EQSUTjaPYqI5dp
-   IzFkUqi31lUoMUYeSvhnvWRPXf+7He46AwYDAHLvnkgpClFEp+VdqAMoE
-   rG4OFTPxYMWRXXPQGLAuttMQQcphodKQPvfpWSdOnaJLy7eYIH5R3Zp4Q
-   4nGGMVYR15N0ntqKvvmx7MGPkCqVPYETLBm6z0B/zWSDfPs0pM9yVewF2
-   A==;
-X-CSE-ConnectionGUID: w8Uwn16TQ72pyO9PVsB/Bw==
-X-CSE-MsgGUID: p7qqiv5fQOyk7nFyGrsozg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11586"; a="63839743"
-X-IronPort-AV: E=Sophos;i="6.19,261,1754982000"; 
-   d="scan'208";a="63839743"
-Received: from fmviesa005.fm.intel.com ([10.60.135.145])
-  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Oct 2025 03:51:02 -0700
-X-CSE-ConnectionGUID: 7/vD61a0RPifdfZOkT98bw==
-X-CSE-MsgGUID: UCWqVhH5SYe9HCyiQ1fGRg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.19,261,1754982000"; 
-   d="scan'208";a="189670343"
-Received: from dalessan-mobl3.ger.corp.intel.com (HELO ashevche-desk.local) ([10.245.244.136])
-  by fmviesa005-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Oct 2025 03:50:59 -0700
-Received: from andy by ashevche-desk.local with local (Exim 4.98.2)
-	(envelope-from <andriy.shevchenko@intel.com>)
-	id 1vDhHz-00000003Hq9-3vuo;
-	Tue, 28 Oct 2025 12:50:55 +0200
-Date: Tue, 28 Oct 2025 12:50:55 +0200
-From: Andy Shevchenko <andriy.shevchenko@intel.com>
-To: Frank Li <Frank.Li@nxp.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	Jonathan Cameron <jic23@kernel.org>,
-	David Lechner <dlechner@baylibre.com>,
-	Nuno =?iso-8859-1?Q?S=E1?= <nuno.sa@analog.com>,
-	Andy Shevchenko <andy@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
-	linux-iio@vger.kernel.org, joshua.yeong@starfivetech.com,
-	devicetree@vger.kernel.org, Carlos Song <carlos.song@nxp.com>,
-	Adrian Fluturel <fluturel.adrian@gmail.com>
-Subject: Re: [PATCH v7 5/5] iio: magnetometer: Add mmc5633 sensor
-Message-ID: <aQCgD3iVOXoNr7uY@smile.fi.intel.com>
-References: <20251027-i3c_ddr-v7-0-866a0ff7fc46@nxp.com>
- <20251027-i3c_ddr-v7-5-866a0ff7fc46@nxp.com>
+	Tue, 28 Oct 2025 14:49:22 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=yP7w5H86aBmjbXKd3WeKj9nOAhInyifyGaziMWTHsKCAEfoo50W0FbiS1s29bgFTNGe1F6mR1K38c1UpnweXO7TgoUwsFg11v6QkbapWTFisYTlkk81TaiIYigVGJSOouDZu5FhAPQ9fHYZTNuhVwF8YJ2AUUUSIJCX+G3fUUw8jqu5jTc+nWXjy4dAaqGzQF4858g5Xl3HMpw9kQ3FkYPcdHrJvSEinksVUI5irsIyyFgXB6Qbx1quU/j/j4yNBtePBs50Oyj1bX6IQWobhgh9mSRDT3D65XHeCzaWEmUL17w7aiFB70oBo4OAO9T+LsO/gWEDjwObvtwUinNvmmA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=RHmB4RTtCBTP8Y0inLuKbzAQakhAJu7hXLKC9eMHD2k=;
+ b=vxd8yuQHkRo+gvj8avC+Gdr1c7JYV35Pk+N4OBWEYOk5qGxH0kuzBK8wXHLlSI+uJBmEKUyIav5R3ok8qk+wLUYrAjJ9JzjyEyduxZ8gRwqdwVI/oZcEDqthECrhYLStLTV9MbPLt6CYDpkqP4Bl/uVgeg+NHJKK6WJ4muk9ToqPrP35GduEb1OYIQ3x4fdDcjmgv0f5fncwDJvUMtCqo+QwS90scuITpw2lF6v/W2KH4YnMumbsks6ZUxWCRdtj2R55gmDVgrAN2IHs4Bl0hfHfS4FDyX+MtncFYduOAdrnodiABCAcl90Q8jKWYR0B2kYUVkBotoO+X4raUqX+9w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=RHmB4RTtCBTP8Y0inLuKbzAQakhAJu7hXLKC9eMHD2k=;
+ b=Bp2SWn42JTHSnQa/yWRiI8mFhvjcims+qxEnFcfWyD8SNOXhPEp7l6O4YjOLQBS7X+EPYM2E1x2DxjExcCmtDt54aym+I9VwVG0ETKMpC7G8scxXVxxiVUqjHfz8OMYmyE/6x1pG0+9BJEbIwOO8NQIzpObQ0CDF9K/RPmqTISq5BAnI12Mowan5uw9gIrzFWpkEbStDu0Fa/Kt6zaUG7oCq54JVdv+Jat3Qhi5kVL9zVLP27zZF7EOMZUzdegrgtbT7OnSODfwyCjowHaILZxXh8C1lyXzkdZH5kqYHAIqHGXDR2yHk0s0sZUREXFk15JlZQldwWkfcz9PZE+/wxg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXSPRMB0053.eurprd04.prod.outlook.com (2603:10a6:102:23f::21)
+ by VI0PR04MB10613.eurprd04.prod.outlook.com (2603:10a6:800:25f::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9253.18; Tue, 28 Oct
+ 2025 14:49:15 +0000
+Received: from PAXSPRMB0053.eurprd04.prod.outlook.com
+ ([fe80::504f:2a06:4579:5f15]) by PAXSPRMB0053.eurprd04.prod.outlook.com
+ ([fe80::504f:2a06:4579:5f15%6]) with mapi id 15.20.9275.011; Tue, 28 Oct 2025
+ 14:49:14 +0000
+From: Frank Li <Frank.Li@nxp.com>
+Subject: [PATCH v8 0/6] i3c: Add basic HDR mode support
+Date: Tue, 28 Oct 2025 10:48:56 -0400
+Message-Id: <20251028-i3c_ddr-v8-0-795ded2db8c2@nxp.com>
+X-B4-Tracking: v=1; b=H4sIANjXAGkC/3XPwU7DMAwG4FeZcibIdpw43Yn3QAilbcJyoJ1SV
+ A1NfXeyCdEWxPG3/P2Wr2qKJcdJHQ9XVeKcpzwONfiHg+pOYXiLOvc1KwKygNTobLrXvi+6Rcv
+ eN4Cx9apun0tM+XJven6p+ZSnj7F83otnvE3/dsyoQQP5IMH2bIifhsv5sRvf1a1hplU1xKuiq
+ pynALE1ZIX2ymyUgVWZqlpH0ncUE/5W/KMQQFbFVZmQYqhzK2L3yv6jbFXMjJ6TCNm4V26jcPO
+ X+77FjYhBkL2SjaLNLanKOxcgJUkdu1Uty/IFIn8ZzeABAAA=
+X-Change-ID: 20250129-i3c_ddr-b15488901eb8
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ Miquel Raynal <miquel.raynal@bootlin.com>, 
+ Jonathan Cameron <jic23@kernel.org>, David Lechner <dlechner@baylibre.com>, 
+ =?utf-8?q?Nuno_S=C3=A1?= <nuno.sa@analog.com>, 
+ Andy Shevchenko <andy@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ imx@lists.linux.dev, linux-iio@vger.kernel.org, 
+ joshua.yeong@starfivetech.com, devicetree@vger.kernel.org, 
+ Frank Li <Frank.Li@nxp.com>, Carlos Song <carlos.song@nxp.com>, 
+ Conor Dooley <conor.dooley@microchip.com>, 
+ Adrian Fluturel <fluturel.adrian@gmail.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1761662950; l=3184;
+ i=Frank.Li@nxp.com; s=20240130; h=from:subject:message-id;
+ bh=kiz0h+IRhU06rrcguAPPO80fRH4/7xIavJfYa+bi+Qk=;
+ b=PovGy5QT52AXrd9bOp3YS6FWfnPjaZ3OhWlbqrrZVw5REP+m8Q1OWMs5pYb4PzmUlD4e7qN71
+ uI/giBZjImjAm+DxcAxvCoTEbj3gL9Cs0jLIPFI+evzFNM/SWnynX+M
+X-Developer-Key: i=Frank.Li@nxp.com; a=ed25519;
+ pk=I0L1sDUfPxpAkRvPKy7MdauTuSENRq+DnA+G4qcS94Q=
+X-ClientProxiedBy: BYAPR02CA0040.namprd02.prod.outlook.com
+ (2603:10b6:a03:54::17) To PAXSPRMB0053.eurprd04.prod.outlook.com
+ (2603:10a6:102:23f::21)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251027-i3c_ddr-v7-5-866a0ff7fc46@nxp.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
- krs, Bertel Jungin Aukio 5, 02600 Espoo
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXSPRMB0053:EE_|VI0PR04MB10613:EE_
+X-MS-Office365-Filtering-Correlation-Id: 046c463e-55fa-481a-0264-08de163129f9
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|19092799006|7416014|52116014|376014|38350700014;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?ZzZKU2NKZWwvREVWYjRlYkp3WjBNTER5b3QwUng3bW15TEtjaVhVU2F2Q0Jh?=
+ =?utf-8?B?OW94V3p1UnR3MXFUYjBXQVBRVTRnT0c3UEp0aytTYXR4OE1wVFNwV3JJQmZY?=
+ =?utf-8?B?RDNlUlR6N1J6a2FUV1hEZnlPV2RXdGgyTkttU1VNbHBsNHc0dEtXU2dSQmk3?=
+ =?utf-8?B?S2pCdHV4ZmVvN01WazMyRXRrNG9pU0plL0lpRHpPNm5ZV1p6VTEwRmlJMjN2?=
+ =?utf-8?B?WktWT1ZKa3lwRnI0RWFmSnBxeFJVMmNRY0VzSGgxbE1HSk5JTVdQQ0hKbjhk?=
+ =?utf-8?B?anIxb0VZa1pXbUFiUEc3VFFaMis0N2gyQkVaQUJtNUZXd1pIaUpySjRBSU1F?=
+ =?utf-8?B?MktWQ1l3b3QzY2c4NFRvYm8vc2dQZFF6TVloVlpjaUhPblBXVlZqWnYydmd4?=
+ =?utf-8?B?Z0NsczFZR0dlWmJkWTEyS3M5bE5JWjEyMU53WER1V2ZGbFRxYW1pelg1VHVr?=
+ =?utf-8?B?MEtnckYwbkVZcDU2akxESUNhT2d1cmNvak1wQWNDbHZJM0lGeHF6T1pmUmx6?=
+ =?utf-8?B?NnlLd29aSHpNWFp0WVlyZXJURVhXWkJIWkkrUi9oRFZZVTBKclg1UWRWaDBv?=
+ =?utf-8?B?RXN3ZkJqU3dQM1ozMFdWMUVkS3oxQTFVd0RBS2dkZk9PUllwdTZlRi9sd3VC?=
+ =?utf-8?B?NHFlcVB6Y1FBWm5UWkhTVkRTL2J1d3M3SVFoU09UWEtqVzBXa2J0NlR5VDIx?=
+ =?utf-8?B?YkNXR3Z1aEZPOThZNlJsb0ovMXFCNmVDcFExVDBQQlZFWWFHRkMrQ3prWk1W?=
+ =?utf-8?B?SHlvZExNb0ZjNnd6NUM2T24xa2xuUWhZRVA5cjJNQ3R6QXNoc2RqZUFkTlVy?=
+ =?utf-8?B?VjdVVjJINmpnV01Nd2drQzFrdDJBM1J6T2FZaHhvSGVxYVVDeTBVUWQ0Z0ti?=
+ =?utf-8?B?cFh2MkxwZ3JNRHVpREc3aVJzcXU2Z2d2dmZBamN2dy9SMzEyeWhQWjR3ZmtN?=
+ =?utf-8?B?UkJiSVVmbDN5NklsWWVnVUNWOG5jRzBrYzB6Q3NTd2pQYXZUemJaTjNHZXp2?=
+ =?utf-8?B?OVpUcXd1TXROUFVXd0xDclNQaWdmazF2ampidjFYaUlmU0RFYmhzWXphSEt2?=
+ =?utf-8?B?bEsrdUtvQktGRWlrMHA3WnpGSzAvZmNOWXJtT2F4c1RYMS9VM0EveVRqZGZh?=
+ =?utf-8?B?WXV4aWhzb3RDSHFTQkdEM1BpT3UzRnZqTGFMT2hQMUZtb3Q1aHRIa0JkUDVT?=
+ =?utf-8?B?YUpkbDdRcjVCVkpjbzJ3MkhHVlZYNHUrMWU5c3VnbUlaZm9QV0JwajhoeWhK?=
+ =?utf-8?B?YUdKL0RZS29rS0VBUjR3cy9XeHE3cUlCOGFqYjFCeWdlWnpMc1crcUpVTCtX?=
+ =?utf-8?B?b1lhVTM5Visxc0ZaNW1ISkFXVEhMdDJSYkhNOVd0UUVlcys4TVdKbWt4aE5o?=
+ =?utf-8?B?NjlqWWhWZ09FZ2oyK3RNTVVnL0ZocTM3K3dYYUt3cFdNRGtOcTlGZUYrNHpD?=
+ =?utf-8?B?YW9UVzZKSktRS0l2Wk4rSmxmeHJHK2dHRUtGa3FqekNKUyt2c1BQZHhhNVF4?=
+ =?utf-8?B?bUJORHhwZzJqZThJcWRpL3VxTFd6dktidmtwaUlZdmRUczZ2cWNvZENIWERp?=
+ =?utf-8?B?K2N0c1pscldSUmRLR01kaW0ybk9PUW16THY2c1ZXM3IvQkxQbkFMc1lDOWNZ?=
+ =?utf-8?B?TGhZVHFjeEZvMnBPd1VMZlo3WHB3WFc1NTJzNi9NRnlXSHJyaFlUSGZVajh4?=
+ =?utf-8?B?VjNTRWFkcExxa0RSZTVza3ZFaVpZMXcxalhjSjNWWG1DWnZkTFFTTnpUREVm?=
+ =?utf-8?B?S2p2MWE4RkxXU0kwR1RDc0FPcDZmYWNEdWJ2US8ybU5vWmJaTGJNYXV0T3NS?=
+ =?utf-8?B?TVdvcjVnekhzV1hFZW0waTFEd0pOaDNLTFVoQTF4SEVTREV6YlY3MWhCUFd2?=
+ =?utf-8?B?bjl1M1FpV1pVa3hsVFZiSGhFUVdJZExzb3pjV3hsNHI0UWhOWnRHK1J2UHdJ?=
+ =?utf-8?B?UlgvVXJ3TEZFNFdqRmIyTm8yR1ExN1c3RHdyQWJyTGhoeVlyT0Q2YUprUGlH?=
+ =?utf-8?B?T3E4clpmU2lCUFQwb2hHb0dJZ0xLaVE1QUhadTBlUTBhdHFqM3NWSnVLMU52?=
+ =?utf-8?Q?lrlaVv?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXSPRMB0053.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(19092799006)(7416014)(52116014)(376014)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?SitqWVVUUFZJTVptQWR4YVphMEtDYnh0RWpSZWNmU2FscDZZRFpEaUxiWThH?=
+ =?utf-8?B?VkdLWmlGdjlHMWVsQ1JDZkQrQmpacmdjU0g5a3N3bkZBV0pIaEtwQ2Fta0xr?=
+ =?utf-8?B?NWFrTDlvSHN2SmlHbGNVdHFRYVZnajJwT2tmL3grNjgzZ3FidUl5azNQQ1E5?=
+ =?utf-8?B?dkFyRDllZlU3SE9VdGZkZlUvOURraVh5TkJOSGEvQkJvT3BBSTNheVZSL2k4?=
+ =?utf-8?B?TVdiU0E5NU42U1d6Wm1zcldQZ3ZMTm9EZi9uYlRLc1NQTDZvQk5EaU1mYTIv?=
+ =?utf-8?B?UCtKdWdoTm9vNkNMMFNWWHU1WFNRMXhTZmg0ZlBzOFNGVm5acm5LK1kxQjdQ?=
+ =?utf-8?B?eXJSNEc1a1ZBbFJqRFpmdmhBK0VXbndRS3ZtV0c5L1JuRTdudW5VWmZGT0p2?=
+ =?utf-8?B?V3lwL25uWndRWUZLRE1NWmRNSGJCMDUwbFFrTkRpRVUyU1lPdWhGZTZWQmVj?=
+ =?utf-8?B?MXhLVUEyQ2dHNXJjYlZKb1hUeEF3ZDNYMC9PdmxJdTUxRUdFLzVtM1BOUVNl?=
+ =?utf-8?B?MG5iTU05RzVVZTBXUmpPQWVxZ1BMVnRpdzJNS1U3SHB2b3FHV3NFS1hRdTZB?=
+ =?utf-8?B?Skp3ZGhJeGd2eDR3dUlOUWhlRmkyajhRRWRHTmt2QjJJR21kc3BrcUthWVlW?=
+ =?utf-8?B?bmwvYUlNSEd2R3RxK2c5dkhWcVBnNzdBVTh4SEtqcDdhQzNYNTZza29yeDVV?=
+ =?utf-8?B?djc0V2xaM1dNL1V0WVdwcVdNci9wMmFnNzFXWkF5TjZ5aThMd1ZDVWwzMnlM?=
+ =?utf-8?B?allJZjRZWTNiUUx1Z09FSDZRUnBZRWpKT0pzVUZkWGExc0RDaGxIVkhKYmdu?=
+ =?utf-8?B?aUVOSmJTV2dKUjJab2tDN2VBcTJVdWFpVG9Na3REdXFUVUl3VGdkOFNML2R3?=
+ =?utf-8?B?eUxvTkZ1K2d0NFFyUXFNU0thREdIS3crRWduQStKSW42TXFza0xkbkExS2Z4?=
+ =?utf-8?B?Vkw0Zm02MkFmcEwyNXBESXpzR1pSRHQ5RkxleXRJWHF6T0JLSWFhOWVmR2dx?=
+ =?utf-8?B?MXdTZEE2Zk84czZ0QU94MVhzUThqYjVvWVpLR2x0MmpJM2o5M3JXN0JSWkJW?=
+ =?utf-8?B?emVySXhwSmEyOEJQc0s4RDZrUm1QRUw5VXpDYlhxdmJ0akw3aU96czRqWGs0?=
+ =?utf-8?B?dURNOHEyZGpEdjhHNjhFb2xKakNiUFRiQjFTQlFUTG5aSHNwN2dHY1BMcFJZ?=
+ =?utf-8?B?bUl4RHdvd0ZNTXpMTkRBam9hUldhTDI5aWVid2trRDh6Wmpkc3ZqZ0ZFUDV4?=
+ =?utf-8?B?K2Njdy9ETHY3b0c4SHpHN0lFUkNwR2R2dHVFdzFtNmV0NVFaQzNMYm9EVGxB?=
+ =?utf-8?B?ay92UlhvaGE5RnBGWUpnUmZ3bU5FRmhIck5MTTRQT1ZmS0ZudS82NzFBcmsr?=
+ =?utf-8?B?S0RpUitvL0hsWCs5Q2FPejllTEVqeDNtdkVpUnNBSGUyMTF6WnBvY0lHOGNt?=
+ =?utf-8?B?UHFiUG80MEpObysreitZclRnMmhKWVZDbXNoOVBnT2ErUFdBMWJnV09mZ1dv?=
+ =?utf-8?B?ekhOWXVTRGVqOEZROGxGWG1lU0Y3OElXbm5wSDZCQ2FDNDltR3pyRU5ZQlNP?=
+ =?utf-8?B?Z0dTZ251Ri9xdkJKd29pY1lHNXZkNE5qTzVVbWRiVFpDS3B1SUoxSU9ZMmhn?=
+ =?utf-8?B?VGswaktNOG9Yb0dsSmZuQlAxclcrMndHS2N3T1dUTUFoeGYrOTA0MEJQNEdz?=
+ =?utf-8?B?MzdUcVZjbjIzSVZoL1BUNUlSQm1FYjBvRGZjSkc3TzNBQWV3RDZLTm1CZFFl?=
+ =?utf-8?B?OUUzOU9PNVFyM0V0RENsblR2TUpUVUJNbVBZM1dlVml0dGFHT1lKc2ZXbyto?=
+ =?utf-8?B?V0ltQWtSOFBZWnZkOE9md0pSczEySWxvVEJ6bEwvR1FNanRzZ3Y5SVV4L2R5?=
+ =?utf-8?B?Tm9YR2QvZGdxdkU1bHE5dGRWWUgwSnBjODJMNlZMU2t2L25TYVFNSTNuSzRT?=
+ =?utf-8?B?WDV5NjJXTDF1dHNlV1JKRUFrRFV6bUJZWEpyRjU4VGJNcWpycHRxMHRNZnpQ?=
+ =?utf-8?B?SVVEaXBlL2o1cStLQ3hSSzcybGhyTWtVTnNhS0VYZ2dZeks1cm9oc0pvS1Zm?=
+ =?utf-8?B?dHlWV0YxRFZLUHpKWDZRa1lqeVVrNnpFQ0l6clQ1YkVyMHZxNmoyL1U4cHcw?=
+ =?utf-8?Q?MKqKAoThqqkc6AszI4FJGR+g1?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 046c463e-55fa-481a-0264-08de163129f9
+X-MS-Exchange-CrossTenant-AuthSource: PAXSPRMB0053.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Oct 2025 14:49:14.8043
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: FtcP/jLisGzfyWMwHdCKIaUjPwJcsjxJzopYVsa03BrEHDTgkrOZfnlt8ofwtg/He218KJpdnOxjFE6xY8sLSg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI0PR04MB10613
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251028_035103_901143_CACAADAF 
-X-CRM114-Status: GOOD (  28.19  )
+X-CRM114-CacheID: sfid-20251028_074921_444605_03429C58 
+X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,316 +197,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, Oct 27, 2025 at 04:08:33PM -0400, Frank Li wrote:
-> Add mmc5633 sensor basic support.
-> - Support read 20 bits X/Y/Z magnetic.
-> - Support I3C HDR mode to send start measurememt command.
-> - Support I3C HDR mode to read all sensors data by one command.
+Add basic HDR mode support, only support private transfer, not support
+CCC command.
 
-...
+Update i3c framework API to allow pass down mode and extend driver callback
+function.
 
-+ time.h // for time constants
+Implement HDR transfer in svc i3c master driver.
 
-...
+Simplifed HDR flow is (ref i3c spec line 5514) Figure 129
 
-> +struct mmc5633_data {
-> +	struct device *dev;
-> +	struct i3c_device *i3cdev;
-> +	struct mutex mutex; /* protect to finish one whole measurement */
-> +	struct regmap *regmap;
+<--              SDR            ---> | <--- HDR
+START 0x7E RnW(0) ACK CCC(ENTHDR0) T   HDR-CMD(00-7f write, 80--ff read)
 
-regmap has struct device, i3c_device presumable also, and here is struct
-device. Don't we have some overhead?
+                                    ----> |
+HDR-DATA HDR-CRC HDR-RESTART .... HDR-EXIT
 
-> +};
+Note: HDR-CMD is 16bit data, which included 7bit slave address and 8bit
+read/write command.
 
-...
+svc hardware can auto issue SDR part.
 
-> +static const struct {
-> +	int val;
-> +	int val2;
+Signed-off-by: Frank Li <Frank.Li@nxp.com>
+---
+Changes in v8:
+- Add cleanup patch replace framework's i3c_priv_xfer with i3c_xfer
+- Link to v7: https://lore.kernel.org/r/20251027-i3c_ddr-v7-0-866a0ff7fc46@nxp.com
 
-No need. Just
+Changes in v7:
+- add explicit define for I3C_HDR_*
+- add missed include files.
+- detail see each patches' change log
+- CONFIG_DEBUG_ATOMIC_SLEEP=y
+- Link to v6: https://lore.kernel.org/r/20251014-i3c_ddr-v6-0-3afe49773107@nxp.com
 
-> +} mmc5633_samp_freq[] = {
+Changes in v6:
+- remove acpi part
+- collect Conor Dooley ack tags
+- Link to v5: https://lore.kernel.org/r/20251007-i3c_ddr-v5-0-444184f7725e@nxp.com
 
-static const int mmc5633_samp_freq[][2] = {
+Changes in v5:
+- Just realized missed CC mail list devicetree@vger.kernel.org and resend
+- Link to v4: https://lore.kernel.org/r/20251007-i3c_ddr-v4-0-3afea5105775@nxp.com
 
-> +	{ 1, 200000 },
-> +	{ 2, 0 },
-> +	{ 3, 500000 },
-> +	{ 6, 600000 },
-> +};
+Changes in v4:
+- use master's hdr_cap to check HDR cap.
+- add mmc5603 support.
+- Link to v3: https://lore.kernel.org/r/20250930-i3c_ddr-v3-0-b627dc2ef172@nxp.com
 
-...
+Changes in v3:
+- Add new patch for change rnw to union for svc.
+- Detial changes see each patch's change log.
+- Link to v2: https://lore.kernel.org/r/20250924-i3c_ddr-v2-0-682a0eb32572@nxp.com
 
-> +static int mmc5633_get_samp_freq_index(struct mmc5633_data *data,
-> +				       int val, int val2)
-> +{
-> +	u32 i;
+Changes in v2:
+- Add sensor driver, which use HDR mode read/write data.
+- change priv_xfer to i3c_xfer.
+- Link to v1: https://lore.kernel.org/r/20250129-i3c_ddr-v1-0-028a7a5d4324@nxp.com
 
-unsigned int is enough. uXX rather would suggest we use it as a such, but here
-you compare with size_t and return an int.
+---
+Frank Li (6):
+      i3c: Add HDR API support
+      i3c: Switch to use new i3c_xfer from i3c_priv_xfer
+      i3c: master: svc: Replace bool rnw with union for HDR support
+      i3c: master: svc: Add basic HDR mode support
+      dt-bindings: trivial-devices: add MEMSIC 3-axis magnetometer
+      iio: magnetometer: Add mmc5633 sensor
 
-> +
-> +	for (i = 0; i < ARRAY_SIZE(mmc5633_samp_freq); i++)
-> +		if (mmc5633_samp_freq[i].val == val &&
-> +		    mmc5633_samp_freq[i].val2 == val2)
-> +			return i;
-> +	return -EINVAL;
-> +}
+ .../devicetree/bindings/trivial-devices.yaml       |   4 +
+ drivers/i3c/device.c                               |  27 +-
+ drivers/i3c/internals.h                            |   6 +-
+ drivers/i3c/master.c                               |  20 +-
+ drivers/i3c/master/svc-i3c-master.c                | 115 +++-
+ drivers/iio/magnetometer/Kconfig                   |  12 +
+ drivers/iio/magnetometer/Makefile                  |   1 +
+ drivers/iio/magnetometer/mmc5633.c                 | 588 +++++++++++++++++++++
+ include/linux/i3c/device.h                         |  42 +-
+ include/linux/i3c/master.h                         |   4 +
+ 10 files changed, 776 insertions(+), 43 deletions(-)
+---
+base-commit: df05ef50ada6a8e2fe758adf1b8fa35eea801b2d
+change-id: 20250129-i3c_ddr-b15488901eb8
 
-...
-
-> +static int mmc5633_init(struct mmc5633_data *data)
-> +{
-> +	unsigned int reg_id;
-> +	int ret;
-> +
-> +	ret = regmap_read(data->regmap, MMC5633_REG_ID, &reg_id);
-> +	if (ret < 0)
-
-These ' < 0' have an explanation? Or do we expect regmap_*() return positive
-numbers here? If the latter, it would be a least problem here.
-
-> +		return dev_err_probe(data->dev, ret,
-> +				     "Error reading product id\n");
-> +
-> +	/*
-> +	 * Make sure we restore sensor characteristics, by doing
-> +	 * a SET/RESET sequence, the axis polarity being naturally
-> +	 * aligned after RESET.
-> +	 */
-> +	ret = regmap_write(data->regmap, MMC5633_REG_CTRL0, MMC5633_CTRL0_SET);
-> +	if (ret < 0)
-> +		return ret;
-
-Ditto and so on...
-
-> +	/*
-> +	 * Minimum time interval between SET or RESET to other operations is
-> +	 * 1ms according to Operating Timing Diagram in datasheet.
-> +	 */
-> +	fsleep(MMC5633_WAIT_SET_RESET_US);
-> +
-> +	ret = regmap_write(data->regmap, MMC5633_REG_CTRL0, MMC5633_CTRL0_RESET);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	/* set default sampling frequency */
-> +	return regmap_update_bits(data->regmap, MMC5633_REG_CTRL1,
-> +				  MMC5633_CTRL1_BW_MASK,
-> +				  FIELD_PREP(MMC5633_CTRL1_BW_MASK, 0));
-> +}
-
-...
-
-> +static int mmc5633_read_measurement(struct mmc5633_data *data, int address, void *buf, size_t sz)
-> +{
-> +	u8 data_cmd[2], status[2];
-> +	int ret, val, ready;
-> +
-> +	if (mmc5633_is_support_hdr(data)) {
-> +		struct i3c_xfer xfers_wr_cmd[] = {
-> +			{
-> +				.cmd = 0x3b,
-> +				.len = 2,
-> +				.data.out = data_cmd,
-> +			}
-> +		};
-> +		struct i3c_xfer xfers_rd_sta_cmd[] = {
-> +			{
-> +				.cmd = 0x23 | BIT(7), /* RDSTA CMD */
-> +				.len = 2,
-> +				.data.in = status,
-> +			},
-> +		};
-> +		struct i3c_xfer xfers_rd_data_cmd[] = {
-> +			{
-> +				.cmd = 0x22 | BIT(7), /* RDLONG CMD */
-> +				.len = sz,
-> +				.data.in = buf,
-> +			},
-> +		};
-> +
-> +		data_cmd[0] = 0;
-> +		data_cmd[1] = (address == MMC5633_TEMPERATURE) ?
-> +			      MMC5633_HDR_CTRL0_MEAS_T : MMC5633_HDR_CTRL0_MEAS_M;
-> +
-> +		ret = i3c_device_do_xfers(data->i3cdev, xfers_wr_cmd, 1, I3C_HDR_DDR);
-
-1 --> ARRAY_SIZE(), but TBH I do not see the point them to be an array to begin
-with. Any elaboration on the data type choice?
-
-> +		if (ret < 0)
-> +			return ret;
-> +
-> +		ready = (address == MMC5633_TEMPERATURE) ?
-> +			MMC5633_STATUS1_MEAS_T_DONE_BIT : MMC5633_STATUS1_MEAS_M_DONE_BIT;
-> +		ret = read_poll_timeout(i3c_device_do_xfers, val,
-> +					val ||
-> +					status[0] & ready,
-> +					10 * USEC_PER_MSEC,
-> +					100 * 10 * USEC_PER_MSEC, 0,
-> +					data->i3cdev, xfers_rd_sta_cmd, 1, I3C_HDR_DDR);
-> +		if (ret) {
-> +			dev_err(data->dev, "data not ready\n");
-> +			return ret;
-> +		}
-> +		if (val) {
-> +			dev_err(data->dev, "i3c transfer error\n");
-> +			return val;
-> +		}
-> +		return i3c_device_do_xfers(data->i3cdev, xfers_rd_data_cmd, 1, I3C_HDR_DDR);
-> +	}
-> +
-> +	/* Fallback to use SDR/I2C mode */
-> +	ret = mmc5633_take_measurement(data, address);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	if (address == MMC5633_TEMPERATURE)
-> +		/*
-> +		 * Put tempeature to last byte of buff to align HDR case.
-> +		 * I3C will early terminate data read if previous data is not
-> +		 * available.
-> +		 */
-> +		return regmap_bulk_read(data->regmap, MMC5633_REG_TOUT, buf + sz - 1, 1);
-> +
-> +	return regmap_bulk_read(data->regmap, MMC5633_REG_XOUT_L, buf, sz);
-> +}
-
-...
-
-> +static int mmc5633_write_raw(struct iio_dev *indio_dev,
-> +			     struct iio_chan_spec const *chan, int val,
-> +			     int val2, long mask)
-> +{
-> +	struct mmc5633_data *data = iio_priv(indio_dev);
-> +	int i, ret;
-> +
-> +	switch (mask) {
-> +	case IIO_CHAN_INFO_SAMP_FREQ:
-> +		i = mmc5633_get_samp_freq_index(data, val, val2);
-> +		if (i < 0)
-> +			return -EINVAL;
-
-Hmm... Can't that return already an error and we just pass it to the caller?
-
-> +		scoped_guard(mutex, &data->mutex) {
-> +			ret = regmap_update_bits(data->regmap, MMC5633_REG_CTRL1,
-> +						 MMC5633_CTRL1_BW_MASK,
-> +						 FIELD_PREP(MMC5633_CTRL1_BW_MASK, i));
-> +			if (ret)
-> +				return ret;
-> +		};
-> +		return 0;
-
-I didn't get why scoped_guard() is used when simple guard()() will do in
-shorter all this.
-
-		guard(mutex)(&data->mutex);
-
-		return regmap_update_bits(data->regmap, MMC5633_REG_CTRL1,
-					  MMC5633_CTRL1_BW_MASK,
-					  FIELD_PREP(MMC5633_CTRL1_BW_MASK, i));
-
-With that you may drop 'int i' part and use ret in the above.
-
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +}
-
-...
-
-> +static int mmc5633_common_probe(struct device *dev, struct regmap *regmap,
-> +				char *name, struct i3c_device *i3cdev)
-> +{
-> +	struct mmc5633_data *data;
-> +	struct iio_dev *indio_dev;
-> +	int ret;
-> +
-> +	indio_dev = devm_iio_device_alloc(dev, sizeof(*data));
-> +	if (!indio_dev)
-> +		return -ENOMEM;
-
-> +	dev_set_drvdata(dev, indio_dev);
-
-If you use regmap stored device this won't be needed. See below.
-
-> +	data = iio_priv(indio_dev);
-> +
-> +	data->regmap = regmap;
-> +	data->i3cdev = i3cdev;
-> +	data->dev = dev;
-> +
-> +	ret = devm_mutex_init(dev, &data->mutex);
-> +	if (ret)
-> +		return ret;
-> +
-> +	indio_dev->info = &mmc5633_info;
-> +	indio_dev->name = name;
-> +	indio_dev->channels = mmc5633_channels;
-> +	indio_dev->num_channels = ARRAY_SIZE(mmc5633_channels);
-> +	indio_dev->modes = INDIO_DIRECT_MODE;
-> +
-> +	ret = mmc5633_init(data);
-> +	if (ret < 0)
-> +		return dev_err_probe(dev, ret, "mmc5633 chip init failed\n");
-> +
-> +	return devm_iio_device_register(dev, indio_dev);
-> +}
-> +
-> +static int mmc5633_suspend(struct device *dev)
-> +{
-> +	struct mmc5633_data *data = iio_priv(dev_get_drvdata(dev));
-
-Than regmap will be derived directly from a device.
-
-> +	regcache_cache_only(data->regmap, true);
-> +
-> +	return 0;
-> +}
-> +
-> +static int mmc5633_resume(struct device *dev)
-> +{
-
-Ditto.
-
-> +	struct mmc5633_data *data = iio_priv(dev_get_drvdata(dev));
-> +	int ret;
-> +
-> +	regcache_mark_dirty(data->regmap);
-> +	ret = regcache_sync_region(data->regmap, MMC5633_REG_CTRL0,
-> +				   MMC5633_REG_CTRL1);
-> +	if (ret < 0)
-> +		dev_err(dev, "Failed to restore control registers\n");
-> +
-> +	regcache_cache_only(data->regmap, false);
-> +
-> +	return 0;
-> +}
-
-...
-
-> +	return mmc5633_common_probe(dev, regmap, client->name, NULL);
-
-dev can be derived from regmap.
-
-...
-
-
-> +	return mmc5633_common_probe(dev, regmap, "mmc5633_i3c", i3cdev);
-
-Ditto.
-
-struct i3c_device doesn't have a name, does it?
-
--- 
-With Best Regards,
-Andy Shevchenko
-
+Best regards,
+--
+Frank Li <Frank.Li@nxp.com>
 
 
 -- 
