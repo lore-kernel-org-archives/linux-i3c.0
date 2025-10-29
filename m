@@ -4,61 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 634F2CCF9F0
-	for <linux-i3c@archiver.kernel.org>; Wed, 29 Oct 2025 08:07:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3B4CCCF9F0
+	for <linux-i3c@archiver.kernel.org>; Wed, 29 Oct 2025 15:55:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4tbEWVTZZBfP35DiThyK+0fYYjXCFBbAEt0U41snbtw=; b=r0NNs53JzIT+JC
-	MmeHr5dmG7X+DSzBIhEF29A6B8FQX7L5y6sDtFA6fXbh24j8yvqlTwct3hKaIOBAatiX9xz0B72MG
-	u2hiQdEBknVaQPY8i0SVHZEg7ADLZovDsp8A4ph17NQJXKiaxC47I0eLO9nqaWHHAQV/tAAmi0p35
-	6cIERVOjFhUlY6NaeP/21uNwVm3nLtkbeV4jEVYJoBKDfhNA0il4VlfBBXRAf1JwZY5O12I7FucIZ
-	17T4Ykzy8PB61khR9s6vxZCqqBepFVRB3kR0gRoVv47wJmw3fJ3S1q/PeOAJSTMSeXnxdnhl2wqYj
-	1t9sipCU9Egiju9LHpRA==;
+	List-Owner; bh=f8zTHSLZ/VPflTi4f78x5ho9E/1RP14ZVEvcZ4LcAkc=; b=HbzghJGQzEkwUi
+	UzSQllxf0zEFu8lMgAIUIR/pDWJco5pAbdTmsyqzs+z6xJZWwgN/rbzWFcvPkrQDZ2pa0Uy/a9poO
+	TFMa2hbmC2KMnt1u8PA9wtL+vCKhB8XXz0XN1yv/brreyE3af+1HA5ywOFRpf6IqCY4/EzelfkHCs
+	2htwpXooUQY4CO+LFWzRolyF0pItTKUuFuZbO97M1DGXKfad1MXO4hq3kQgALNQQ72XmOiol+P/IX
+	VKY5axfBHQF/gpbm8Cyacq6k7HZe6HB4T1uVrpNSlANr2pqNTZ60JqHywpwdgMYtKM5CQjWG66cer
+	uIbA05HT6XJ7qT1HAgVg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vE1DL-00000000DRg-0Cqg;
-	Wed, 29 Oct 2025 08:07:27 +0000
-Received: from mgamail.intel.com ([198.175.65.20])
+	id 1vE8Vt-00000001sul-2inv;
+	Wed, 29 Oct 2025 15:55:05 +0000
+Received: from mail-northeuropeazon11012004.outbound.protection.outlook.com ([52.101.66.4] helo=DUZPR83CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vE1DI-00000000DPn-3KFV
+	id 1vE8Vr-00000001su1-0X1J
 	for linux-i3c@lists.infradead.org;
-	Wed, 29 Oct 2025 08:07:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1761725244; x=1793261244;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=28lsY/xP5QLqKPIvrhKvHJ0CklqT6R1GJ9nsZJRxcNw=;
-  b=OFFjwBU4/a/8r/3fU+/bwXVJK6BIkMijH7fgSWHJSTJvR1Vyw3/rF9u9
-   wKAbauBbPuasoUbaOkttk6TE5oLWnyXS29Ib80p6S9imnlXYf7mOt5f7v
-   rbgG+fdCvR8ReecJZcJgg+BquvNo3XmoToCILuyL1GuT4U0pO2aoTqPnS
-   F/6SmFEELguOK0X/2xjPcEeA4yfOeI+tqgd7A3+ucdR8giPmZJd2JcVC1
-   5vvANpuBjVoTA73ZVpW3LY8mpUlMWy8gl71J4sdB196qYtpXLmA1pEQLW
-   tv2HFBhJ1mLJP4LA76agrBnmshRnJs49Wv7aBnRsO2XRV2hUpFWfuqaas
-   Q==;
-X-CSE-ConnectionGUID: qX0rvLyaQAuwtviErCsWKA==
-X-CSE-MsgGUID: KYgQy6ZvRlm6heC3zfZ5Kg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11586"; a="63539920"
-X-IronPort-AV: E=Sophos;i="6.19,263,1754982000"; 
-   d="scan'208";a="63539920"
-Received: from fmviesa003.fm.intel.com ([10.60.135.143])
-  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 29 Oct 2025 01:07:24 -0700
-X-CSE-ConnectionGUID: LIDXKcu/RGm3nxaG4wzKIg==
-X-CSE-MsgGUID: tiwr6C3HS+Wk4w+q89cWBg==
-X-ExtLoop1: 1
-Received: from mjarzebo-mobl1.ger.corp.intel.com (HELO ashevche-desk.local) ([10.245.244.248])
-  by fmviesa003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 29 Oct 2025 01:07:20 -0700
-Received: from andy by ashevche-desk.local with local (Exim 4.98.2)
-	(envelope-from <andriy.shevchenko@intel.com>)
-	id 1vE1DA-00000003Y70-4Bfj;
-	Wed, 29 Oct 2025 10:07:17 +0200
-Date: Wed, 29 Oct 2025 10:07:16 +0200
-From: Andy Shevchenko <andriy.shevchenko@intel.com>
-To: Frank Li <Frank.li@nxp.com>
+	Wed, 29 Oct 2025 15:55:04 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=RE2xnnDlhdcELc+xypq92I2P6Ntvr0WF0yxtRb0/n2sl/Pn7hDuldaN+wiI2NAqESdfQUsKKtHmy13piXMjuO4hLnOObsAo3KJVWj2n+HdVZSAE6S0DpMcVqZLn/yIpw4JXG1s/kltyp6PVZJuyr7RY/p6kMTm02ADyQoibtEwnG2Qz8dQhFHqhrFsD9vIBsHO3yayhmM82/PnHRAbyE2IcI7TCq6kP2ienMwzw4/WOPazq4n1YmnRP2+G8Y9sSt6s/8e29iRo1RonDEoIqY6KqpnRJ9MMR+d/T6Qh/gpopnQHIuakDTCAuhR/eKLyGQAb/S+CInh7+VBLDF8bYf9A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=NLfG+9KrWtX0fjw5WBw21ZV6lBJChUzyO7XtILFosM8=;
+ b=aeCmtRFAy1Qo57ybHA7KAhk39R6wfEjHNqGfKU2EX4U884IOCmHfHJvDhT8bfHEwWXgxyFlOVbtRnRXwDZk5ERTmgTnfykUUi33LGVLlDwca7JwGVym2vQOnohFVwpFnL9LoFEbASVy59gVowUzdvoBHfrak8my+noQcdKd4rATGGdWMA/QS8Oi+dU1vvZDP8razow9RetZH65H1HFWAq61yn6Dz/sAxMJgF59PML62dJrEWIaDLZtDFbQxpU6JTqcHaQYxVmD5Q+9wjEdnNkV8Pm7agi6nnxxxvZzcliBs8AhjsOsmaHvI6YKwcrk1lgaOL72pt0cIIya34anftFg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=NLfG+9KrWtX0fjw5WBw21ZV6lBJChUzyO7XtILFosM8=;
+ b=h3cNv8MD/g0LJBYrbl5C27sNVYdmuYjWLh/6MGO+DLv+hsBUkMI24Zbu/aBVdeSwmfio51/qxtJDWFIQOLLmxT5Z4vhyjqiIRs3xZk5vaF6p/tteMg9jOCg3qVZFSazoIr4ay8wuHyHZSf4Si39UCOK+nq7y5KSA+Gr18YWWyukk5ud1Y7hqXaLN0n52fwMWcFiL+Vlft53bPCF0ewFLZ3iNTgGK2GCDVs2KYbVowvueRZ028tcxI02i3VykvqM0n5JtnHGuO/OdUCQEgaixU73X1VdHKwokk5hrM160Ne8o3VFE5UmqvckisbrspTlS8gjbXXcn9SLW1YQ2waoDig==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PAXSPRMB0053.eurprd04.prod.outlook.com (2603:10a6:102:23f::21)
+ by DU2PR04MB9195.eurprd04.prod.outlook.com (2603:10a6:10:2fa::22) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9275.13; Wed, 29 Oct
+ 2025 15:54:49 +0000
+Received: from PAXSPRMB0053.eurprd04.prod.outlook.com
+ ([fe80::504f:2a06:4579:5f15]) by PAXSPRMB0053.eurprd04.prod.outlook.com
+ ([fe80::504f:2a06:4579:5f15%6]) with mapi id 15.20.9275.011; Wed, 29 Oct 2025
+ 15:54:49 +0000
+Date: Wed, 29 Oct 2025 11:54:39 -0400
+From: Frank Li <Frank.li@nxp.com>
+To: Andy Shevchenko <andriy.shevchenko@intel.com>
 Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Miquel Raynal <miquel.raynal@bootlin.com>,
 	Jonathan Cameron <jic23@kernel.org>,
@@ -72,19 +68,91 @@ Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	devicetree@vger.kernel.org, Carlos Song <carlos.song@nxp.com>,
 	Adrian Fluturel <fluturel.adrian@gmail.com>
 Subject: Re: [PATCH v7 5/5] iio: magnetometer: Add mmc5633 sensor
-Message-ID: <aQHLNIKK4EknyWEr@smile.fi.intel.com>
+Message-ID: <aQI4v1lVcagBWY3i@lizhi-Precision-Tower-5810>
 References: <20251027-i3c_ddr-v7-0-866a0ff7fc46@nxp.com>
  <20251027-i3c_ddr-v7-5-866a0ff7fc46@nxp.com>
  <aQCgD3iVOXoNr7uY@smile.fi.intel.com>
- <aQDhv/r0l0oOjb9t@lizhi-Precision-Tower-5810>
-MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <aQDhv/r0l0oOjb9t@lizhi-Precision-Tower-5810>
-Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
- krs, Bertel Jungin Aukio 5, 02600 Espoo
+In-Reply-To: <aQCgD3iVOXoNr7uY@smile.fi.intel.com>
+X-ClientProxiedBy: PH0PR07CA0117.namprd07.prod.outlook.com
+ (2603:10b6:510:4::32) To PAXSPRMB0053.eurprd04.prod.outlook.com
+ (2603:10a6:102:23f::21)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PAXSPRMB0053:EE_|DU2PR04MB9195:EE_
+X-MS-Office365-Filtering-Correlation-Id: 2dbab5de-db43-451f-ff8b-08de17037dac
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|52116014|19092799006|376014|7416014|366016|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?RcQTqWTpVd5CAQze0lRsuF2S4cLz/y0kB6ZDLEzOB+rGuxKxIL2DMxd6xTi7?=
+ =?us-ascii?Q?GYMmXA5K1gGdkB3zdnKPNdmsSiiDv43dheyEqJrpbR1Nlk7etu39VQfAS43n?=
+ =?us-ascii?Q?zaKB+OZupX7t5ekmGSl4lY+GrfOCqSiD5LM2gs2P88PtxDk1fVHSWvb/PMVX?=
+ =?us-ascii?Q?2AS18JRL/JOcTfUxtllu1cSVK4VK9DY6dnEq+MOmhByJcsuE1xQHePELo3Fy?=
+ =?us-ascii?Q?k8lpzDY3mOmRnsROkNCSN4MdbtuoZHhvHLVkfTRTsVUQOY+E4QlOv/Y5HT37?=
+ =?us-ascii?Q?GUVVgcJS5BMVqBQGW/oTKIdYroZXNUFRiJ2wgNdVwe9rnZ494TcVG55DO/S0?=
+ =?us-ascii?Q?uTHHjEK+rWDvbRe/prclbuSCrUAOnEZXWQK4sYXlheCkdZ6eYDBwwYD7sIc/?=
+ =?us-ascii?Q?iNLv4Tv0660olxViOfsaVBlyXAGoyCOl9IfrIWsqj7KyH0FUeHspwrnVYktT?=
+ =?us-ascii?Q?7EgyRs4fyaoFkwttj3k05SGqrSrs+Z0NEfCNsxU9WLjxOT5DsYDwR6RAFYFn?=
+ =?us-ascii?Q?ZGwzoiaxE7dn5JH20XSgQnex7KuxCPciFwBdeSWkF+kBsmIcbxeFUqvN/hyG?=
+ =?us-ascii?Q?0u8KRC5reeL45KY24ZggZUg2hYqEQNqyJG7TTJY/46h4S0xe1Y7cx7/vDPvd?=
+ =?us-ascii?Q?oGg5zRSC/iy0nDciW04fVAIK4PScsm7qpu8es5vdXuWqkMUWnbMe0jgQorcb?=
+ =?us-ascii?Q?4losYLcfRxTlgZsBNlSWE8r9a6L/LbbP3aGMsXLrhQvltzFT1hztZXO4vnR/?=
+ =?us-ascii?Q?PIk/CW6Hvw1Xb47iWSBywVnKXQFDI4e9W5ND4ZJQqVMNx1LWI5C6XYDZi3n3?=
+ =?us-ascii?Q?LFEMOvUjrajR+FawpSSukcMXiFFkJUSiUt1/TOPxGpQFRC7OQtlxhWtBwGaJ?=
+ =?us-ascii?Q?+KOaYoo+9pPmVuQaG/2cymVIANwESNI78OewUh6Ct9olW8/Xs38rIuSrzQLc?=
+ =?us-ascii?Q?Xk8WTrcIFK1YNYpkOJTfW7pjKmNwS3ptuStLHDBPFf0LGDI2M1uTASRXnIY5?=
+ =?us-ascii?Q?yBixVUXFY6bErTwQE87hx2AgIdj40EkCYQotIwY5OF87gc8yOOhF7fZ01y3r?=
+ =?us-ascii?Q?DMpA74d7GDETyrgdlOx78Sw9K3IbKU2rUH/5Ezlp9bqgMZFJ8iPE/kQYnvqg?=
+ =?us-ascii?Q?cJ2KXPqJf8/RElEcbE0X2GSnz+7WWhshHxK9Om9rPRcSDPvxvAoZsFRc1lAz?=
+ =?us-ascii?Q?p37sxRZDiTg+/d42hbQ07M0r9XOfNWoBcUlyJtfGmG/jaNZHM0UTKgTRDh2T?=
+ =?us-ascii?Q?3N6MujEttPit277aKY0NOA++WAIEqoYsyCyrUzF0GQWZp1JPRwOZA33HEkNo?=
+ =?us-ascii?Q?2uhcOTCSvnmQvuNPRObm33HxdBI8N2URLBpFZCsM1j2/ccDcXb/j3A48VimW?=
+ =?us-ascii?Q?gwrO+yIFMHUcnhtxdM/xRQYQV3K1/WBTxt+svGRPLkfhiglKNfmnLuPFZrFc?=
+ =?us-ascii?Q?HmGCVw0xYnJir28lfeK2rzRffiL/UT6fWXJW2PzzCj4T8mgB/WnVllNQ4+aK?=
+ =?us-ascii?Q?R+A+Qc02ggOjtlvATft3D4YWTQG1i0lUi+GF?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXSPRMB0053.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(52116014)(19092799006)(376014)(7416014)(366016)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?7OzvmhMveovcczK/f/9ZlQTNkFtGV/bGGHKzFOA9mNQ7C9JTgSMl/C0hpKkc?=
+ =?us-ascii?Q?M4sHAgmvj75vM0LlllgKZeQNjisR8qUZrhHjDpIbhv1kHEKfrV4fZ7UyluZs?=
+ =?us-ascii?Q?rZQjwmUMqV0hYvfmNHe7adfCYMzB8niEry/s13QQu/TQ68JvUZvhEdTyEgiE?=
+ =?us-ascii?Q?dF37W+38H8RQuUkLns0oytCIxpunoZNdFwl3EZXntCAtW+8xiUFKcEQSNz1v?=
+ =?us-ascii?Q?spDWgGrn8Ci/e92NW9+NJKbxRrpWTCPjYfHOgAhtLi1S5aCmQFL4AuT0+Y1b?=
+ =?us-ascii?Q?rjo3neWmgc0rAycX6jjjCxQDvlpw6T0mDVDIzzT47IJ2DB5gluGnpZy1nNFY?=
+ =?us-ascii?Q?12/6JzfXjHRYowJWpo8d5M8XKJ0UsIagOINSAkyHj3IAF72QMa018WBBA336?=
+ =?us-ascii?Q?bas5NHjgfLJk5j7axv7+UJWwO1ZFVz3SL9PnuJx/eO5oPHRmoAsBzDGyHWcl?=
+ =?us-ascii?Q?tUzhdoI6JbtQmdIF0z1hDRae5fIKdwVRUsaxFtuVW3iUhmtgxN8UCo3gYPJN?=
+ =?us-ascii?Q?0wSPvr3OeIVHXJLA7X+kHlbqYODos8AcAnmvM1+5d60IVC4gPCaJzNRp6Qzx?=
+ =?us-ascii?Q?7qnhjlo1mPRqr5j0IWx9lyTpL7hU7EJP2WSUQ+VgYLWpXMlFyHMROR3jB39/?=
+ =?us-ascii?Q?psTMrEI/BC9BNN9QbnUL1mcFuFjtSp533hqcKlyLcebfvC5d8ZRItRhpWau8?=
+ =?us-ascii?Q?KfRI0f46ThekXYFUBBxdEqWecl3gResU/xRAJRo1ACpcKDaapPEcJQwOkXUk?=
+ =?us-ascii?Q?fgseJZw/rRlbIli17dExexgSVdfBzd8hMxkvSybyvc1Uz3E0qjm1zqe+ZmrN?=
+ =?us-ascii?Q?y5eSVybQ0hwDnygOpq+UWke3p0tjW/NzjwVy98vxEdUQjpYNcBHCVhadgmnZ?=
+ =?us-ascii?Q?kZ0C+sQ7kCTJfdFPR1ZqoaxS7JsVpfqc39sKxY1FJs8TPgvuP3zbnLVGPlUP?=
+ =?us-ascii?Q?32ZU+03hzs58RgdvxVZ3QjwRs2b76CqvjyQnD1BBNCfovT7uGGmG8I2bsREp?=
+ =?us-ascii?Q?dOdLucX/k5qti+PeK90a7q/U/OAtZgWEYbfsvt3qGrXZfXvfOayg56m/H9PM?=
+ =?us-ascii?Q?n3xEs/NX8Z+N3vuCQAMfvHl6LY1mib0J6O8O1WWQuEGUsrQsl9aFXL7HU55b?=
+ =?us-ascii?Q?f6ccsACDK4gEud9i3m6GCv4SjQqvpEotOZVvnhlTmIQNu7lrshLBHZp6rr1E?=
+ =?us-ascii?Q?muml8BwhHyz3f3V9uFIShYwbTRStn2Yrg14vE4YRjU2zcmeLe5OydeOtFDo6?=
+ =?us-ascii?Q?e0rdY/cuPtExPj+OZHfk9DXb7AmcUALTvCvKuKnBHR65gGn6UdxgoZV4l+J2?=
+ =?us-ascii?Q?Qc2fv9B8w+2DRWe/+wyrFBCEzHbRwRIUV70oeHR0wWFAPph0ySLlQNlUe7EL?=
+ =?us-ascii?Q?OzM3eAsCvjG6jzUg8s6jGpODafcSmM4Y71KakjMghjc5AdxssXlxjRHlFXUF?=
+ =?us-ascii?Q?Qs6/sie2hBXRXRbFkY6fLqUJMKMawYR9Z+CG4/pjxhluYetAEJ/ahGErMB0M?=
+ =?us-ascii?Q?7O84CjF2R0DFdQ5f3zY2uoJBfzrYRpJYX0vDkII62Dqn7i1R/3S602qqzsXp?=
+ =?us-ascii?Q?ElXajJ0KIlpCRgZrues1eS7R1+PqksFnvnKbjcSU?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2dbab5de-db43-451f-ff8b-08de17037dac
+X-MS-Exchange-CrossTenant-AuthSource: PAXSPRMB0053.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Oct 2025 15:54:49.5528
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: toDX48Gr9lmEwkzQUhi8JrTnjYGmC7rR2RZp78IMW4k0ED3XaXL9J1XAwy+gNbxPb9tCMcPOUBLaSviuPbhUxQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU2PR04MB9195
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251029_010724_901314_D3F8D78B 
-X-CRM114-Status: GOOD (  20.11  )
+X-CRM114-CacheID: sfid-20251029_085503_230828_7DDE7A53 
+X-CRM114-Status: GOOD (  15.15  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -101,73 +169,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Oct 28, 2025 at 11:31:11AM -0400, Frank Li wrote:
-> On Tue, Oct 28, 2025 at 12:50:55PM +0200, Andy Shevchenko wrote:
-> > On Mon, Oct 27, 2025 at 04:08:33PM -0400, Frank Li wrote:
+On Tue, Oct 28, 2025 at 12:50:55PM +0200, Andy Shevchenko wrote:
+> On Mon, Oct 27, 2025 at 04:08:33PM -0400, Frank Li wrote:
 
-...
+After update patch, I met some problem, so reply at prevous your email.
 
-> > + time.h // for time constants
+> > +	struct device *dev;
+> > +	struct i3c_device *i3cdev;
+> > +	struct mutex mutex; /* protect to finish one whole measurement */
+> > +	struct regmap *regmap;
+>
+> regmap has struct device, i3c_device presumable also, and here is struct
+> device. Don't we have some overhead?
 
-First of all, please, please remove the context you are agree with
-(non-replying to).
+*dev already removed. i3cdev is kept as my reply at yesterday.
 
-...
+>
+> > +static const struct {
+> > +   int val;
+> > +   int val2;
+>
+> No need. Just
+>
+> > +} mmc5633_samp_freq[] = {
 
-> > > +struct mmc5633_data {
-> > > +	struct device *dev;
-> > > +	struct i3c_device *i3cdev;
-> > > +	struct mutex mutex; /* protect to finish one whole measurement */
-> > > +	struct regmap *regmap;
-> >
-> > regmap has struct device, i3c_device presumable also, and here is struct
-> > device. Don't we have some overhead?
-> 
-> i3cdev is used for check it is i2c host or i3c host. If device connect to
-> i2c host, i3cdev will be NULL.
-> 
-> Only if connect to i3c host, driver can use i3c transfer api. The HDR
-> command is quite difference with SDR or I2C, which hard to wrap into regmap.
-> 
-> Anyway we need varible to indicate i3c or i2c. struct i3c_device *i3cdev
-> will be simple and needn't force convert struct device in regmap.
+There are some place will like
 
-This answers only to part of my question. Okay, let's leave it there, why do we
-need an explicit struct device then?
+        if (mmc5633_samp_freq[i][0] == val &&
+                mmc5633_samp_freq[i][1] == val2)
 
-> > > +};
+previous
+        if (mmc5633_samp_freq[i].val == val &&
+                mmc5633_samp_freq[i].val2 == val2)
 
-...
+Previous version seem have better readablity. But it is not big deal, if
+you like, I change to [0][1].
 
-> > > +static int mmc5633_suspend(struct device *dev)
-> > > +{
-> > > +	struct mmc5633_data *data = iio_priv(dev_get_drvdata(dev));
-> >
-> > Than regmap will be derived directly from a device.
-> 
-> I have not got your idea. Can you point me a example?
+>
+> struct i3c_device doesn't have a name, does it?
 
-dev_get_regmap()
+It has name, but it is hexnumber (VID+PID), like 0-4a20000f000.
+So use friend/readable name here.
 
-> > > +	regcache_cache_only(data->regmap, true);
-> > > +
-> > > +	return 0;
-> > > +}
+Frank
 
-...
-
-> > > +	return mmc5633_common_probe(dev, regmap, "mmc5633_i3c", i3cdev);
-> >
-> > struct i3c_device doesn't have a name, does it?
-
-No answer?
-
-
--- 
-With Best Regards,
-Andy Shevchenko
-
-
+>
+> --
+> With Best Regards,
+> Andy Shevchenko
+>
+>
 
 -- 
 linux-i3c mailing list
