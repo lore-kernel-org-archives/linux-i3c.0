@@ -4,61 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64372CCF9E3
-	for <linux-i3c@archiver.kernel.org>; Thu, 30 Oct 2025 23:43:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93414CCF9F0
+	for <linux-i3c@archiver.kernel.org>; Thu, 30 Oct 2025 23:44:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k3mx/KtQS7zXz5M96Re+LMm6msXonWzpssh/yZdHnys=; b=Fm/oZsyD4DmBJx
-	9U+H8R4gW91804U+ep+xnhaGo1bOyZa9vpFYPyc6IYwaDZQAvS14BanbqiTOY/GV908xGv5a37L/B
-	WBtAO9aZRWTeI54AcCEF4qJK6ALHvnLXyjLMByEEigrSYILA9iWwlc8HlyrCPK6/1zxzIB1QrGD7E
-	tpBsljGuzElpnFif4L/mFNx2z+E7ecwwZ7bDPZ4o4wLpAFMtWnUL0jv7LAeYV2zM0092L3oRgTq+0
-	O/Rhr7XLNJO/CUVkF5skQWe0o4zvYlKh4pcJ8cOX0rLQZDBp8iJcDfF8/a6W1K5JiewLzuVsCkLT2
-	nbnk0f2FJMjdu7YggbqQ==;
+	List-Owner; bh=mdcG09kfz+s3CYAyH6kvybGbtsd3VO0p7BxEAQ/kji8=; b=E75rHo93VoNUrl
+	5l9HsO2XpZA0U6Z4lR9hO0g6EGFHC62XgFm11ugNHTTgf2i7nCnSB7b7JUhLb+/oKJZhiEEAU3rK7
+	qUVxD6jNLwSRJQLw9KbIEndiISNeIHDmbOSB9MJe/Pg0kECe2IKPI9iV3MTzI3jmIDHyojZoHTwDV
+	udTJQII8woLgqFtSf4SGuooD4/u8oQ0X+bDNteY1w0N1Fsds7eSZGzK1HgAwIiTk+R4FMj8htOw4h
+	YCl57WO8URLoyEWOwS+zTuU0HV+981zUVvDEQcgm8nmkZn1ZIt7SmzzZOwfUqFpKf6rWFtqK6832o
+	S+yhdg6qhzDZoSpIKTNw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEcJ4-000000059cX-05Fp;
-	Thu, 30 Oct 2025 23:43:50 +0000
-Received: from smtpout-03.galae.net ([185.246.85.4])
+	id 1vEcJF-000000059e5-1KVa;
+	Thu, 30 Oct 2025 23:44:01 +0000
+Received: from smtpout-02.galae.net ([185.246.84.56])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEcIz-000000059bw-1YZg
+	id 1vEcJC-000000059dJ-2hfR
 	for linux-i3c@lists.infradead.org;
-	Thu, 30 Oct 2025 23:43:48 +0000
+	Thu, 30 Oct 2025 23:44:00 +0000
 Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-03.galae.net (Postfix) with ESMTPS id BB0FB4E41406;
-	Thu, 30 Oct 2025 23:43:41 +0000 (UTC)
+	by smtpout-02.galae.net (Postfix) with ESMTPS id 692F01A1787;
+	Thu, 30 Oct 2025 23:43:56 +0000 (UTC)
 Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 7EADA60331;
-	Thu, 30 Oct 2025 23:43:41 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 1D03E1180CD93;
-	Fri, 31 Oct 2025 00:43:39 +0100 (CET)
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 3720560331;
+	Thu, 30 Oct 2025 23:43:56 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 77C5D1180CD97;
+	Fri, 31 Oct 2025 00:43:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1761867820; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=7xAYHK3it1+6qqe3o8nqRfZAVs8VSB3PxQiuuoM7amY=;
-	b=ITROjdTedUGq3gJUgqHH6S0De7ydtsZ4r1VhlIH2qPzMWkz+vHFO/TkJ1hgie+Y3k4uvJr
-	egoxyNdfMqIJMS45n19uCAmp6HYhx1UfvwwDw7nZYv0EqyBN/WNFZ3cylATjTr61Ck5Eq1
-	sS6ADz5V3dSAMa0LHiC9Wm2MIOgYgtW4erM0xIWJ2ngsCPoiLtJcY0pzSBVR9lFVjNQkIL
-	rCTIl1nr+DGa2Ex5fbTIsGL45Xq9IxrsnljtPWTD5qEQvqSgrjdn9Wa9oZIFga4Ocm5DYz
-	q82r9jeZSKEth6Anxh4Y1hcIG2rB/T+3RveGCpyXLiQmuHYNSTpgTFECo8H3yg==
-Date: Fri, 31 Oct 2025 00:43:38 +0100
+	t=1761867835; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=qvxEnhZb6oDPTVmo+kM1osfS4tfXtLekEB3w4t8Vy7o=;
+	b=ZJXolIxN8r/swzcYwB9QjHmVjIjk5u1keTmpiV/nlGeVAMyxYnoxwl8M7SAnfqdlbV/wiu
+	MYv0oHdYuq+S55XaMBPQS7OsgBEQ3oOo30HMBz7pxLnq0gGsqUWrkuNt2DwBOFio+NzN/9
+	1HOJo/ifDgmMAGjK51Fq+b2fHEoWWKxBE7vnno9hCVjKOeoj5QGKcNusg+dVK3KTDVu/PP
+	T36qtEDUgOR392RICvI7tXwJiml1HqWzVzWOWqdSDxpMjBgIRdOHfYUTayLkplqIPu+1pA
+	du2urNzAeAEADzpvYeMN0xHHLKbj8j9GdtsLBF1eL7v3JGIkn5/3a1F94i1NnQ==
+Date: Fri, 31 Oct 2025 00:43:53 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Frank Li <Frank.Li@nxp.com>
-Cc: imx@lists.linux.dev
-Subject: Re: [PATCH v3 1/1] i3c: fix refcount inconsistency in
- i3c_master_register
-Message-ID: <176186765078.475593.5246237578344242065.b4-ty@bootlin.com>
-References: <20251016143814.2551256-1-Frank.Li@nxp.com>
+To: frank.li@nxp.com, miquel.raynal@bootlin.com,
+	linux-i3c@lists.infradead.org,
+	Stanley Chu <stanley.chuys@gmail.com>
+Cc: linux-kernel@vger.kernel.org, tomer.maimon@nuvoton.com,
+	kwliu@nuvoton.com, yschu@nuvoton.com
+Subject: Re: [PATCH v2 1/1] i3c: master: svc: Prevent incomplete IBI
+ transaction
+Message-ID: <176186765080.475593.4340016806079643013.b4-ty@bootlin.com>
+References: <20251027034715.708243-1-yschu@nuvoton.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251016143814.2551256-1-Frank.Li@nxp.com>
+In-Reply-To: <20251027034715.708243-1-yschu@nuvoton.com>
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251030_164346_142015_78030838 
-X-CRM114-Status: UNSURE (   6.18  )
+X-CRM114-CacheID: sfid-20251030_164358_979310_2229E6D2 
+X-CRM114-Status: UNSURE (   7.08  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,20 +78,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, 16 Oct 2025 10:38:13 -0400, Frank Li wrote:
-> In `i3c_master_register`, a possible refcount inconsistency has been
-> identified, causing possible resource leak.
+On Mon, 27 Oct 2025 11:47:15 +0800, Stanley Chu wrote:
+> If no free IBI slot is available, svc_i3c_master_handle_ibi returns
+> immediately. This causes the STOP condition to be missed because the
+> EmitStop request is sent when the transfer is not complete. To resolve
+> this, svc_i3c_master_handle_ibi must wait for the transfer to complete
+> before returning.
 > 
-> Function `of_node_get` increases the refcount of `parent->of_node`. If
-> function `i3c_bus_init` fails, the function returns immediately without
-> a corresponding decrease, resulting in an inconsistent refcounter.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] i3c: fix refcount inconsistency in i3c_master_register
-      https://git.kernel.org/abelloni/c/9d4f219807d5
+[1/1] i3c: master: svc: Prevent incomplete IBI transaction
+      https://git.kernel.org/abelloni/c/3a36273e5a07
 
 Best regards,
 
