@@ -4,147 +4,147 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A07ACCFA02
-	for <linux-i3c@archiver.kernel.org>; Fri, 31 Oct 2025 18:43:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C82ECCF9F8
+	for <linux-i3c@archiver.kernel.org>; Fri, 31 Oct 2025 18:45:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P2Dc2BwyJ5PQuafHD3jgT0LqptYHvHtuh1mhBrHurTE=; b=QIZF1gmqq1kk3s
-	6B4yuUY8ET1ULahitGOXG9uf05seBybDTIqjlxK9trGsYCIPGNdWfeLHCljb0QVd2CDa4BbprVTtG
-	hINXA44p9wdotr5VC0g6ZMscLcNDale2thofgeMr/jY80OGa6+Dm6iFpt8/Ng5uHeYLOygh2A/hl7
-	VHImCe1k+boWfvA4wNvyzQcBkWqsXXt9umuasfPlXG451mP7F7+RkXFOIOCDT53xOEy0NCYZvSs+1
-	YM2xfGWOfstVqbPDtPiuG9kOIMrBjjqnG7F2Cl1WMdDoQGhqZGdMV+B+24BWiogls97CqcN/g1AhW
-	opbeiPogxBZSG06568jg==;
+	List-Owner; bh=gul7gDmLWv3HKISwBIYrcLTxgSCGR1Iziyf+e2GDYII=; b=h3FBevlyawpVnY
+	3lDUnUn8tKIQ6lKVeBR5sj4y8EdDMCcoYlecbUKXLrt6tyDCWr3hal/nDJruBii++2IFpudblVGbo
+	VWXn2DYFxnH2lVI9E4W1J5xOitcvhqAOywGSzK4wvizgDQdf6sQegtOU9PchNRCOiLrCYUx+pkCdz
+	JIzjsCBUbGByef+Xn29odRsH3KqLy+QX/jcg9+XO6nWuXTn+LSDQpwUNL/ilJgsMwD8WreUWQ82bH
+	eee2XjIOR7x4drLPSS+K6Au+3EsyrTzRfgwccwIK9BLpDsRTq1smBJ7gGxCtRwmIm58oslv/sADNM
+	hZQWdPP11aVsxvSQroSA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEu5l-00000006dsY-0TWX;
-	Fri, 31 Oct 2025 18:43:17 +0000
-Received: from mail-norwayeastazon11013018.outbound.protection.outlook.com ([40.107.159.18] helo=OSPPR02CU001.outbound.protection.outlook.com)
+	id 1vEu7c-00000006dwf-3IDL;
+	Fri, 31 Oct 2025 18:45:12 +0000
+Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEu5i-00000006ds7-3Gsv
+	id 1vEu7a-00000006dwC-2jXv
 	for linux-i3c@lists.infradead.org;
-	Fri, 31 Oct 2025 18:43:16 +0000
+	Fri, 31 Oct 2025 18:45:11 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=bzGNAW9+LxkOcAw8H1ukSNtBUnym/hOQWUdyeGqfSQlcysp97eNOa70mJgd+SkUsgqnhwBx5esGlPvZfOl8GQe3vz5jNXmZlJlWqzd85DZVXGKWyz7ye9A0LUm8ogfgVVzide5FmD/kS7QWcLrl7y0Yfn5W8AL30p7ldcpzhRz6qkHPSxn3E+8tlbPE0M0c1FFDJkp076nAG12ZXOMyKtG3KgtylanMvMZhMYWilCzmkmADImp3QpJdDCcUTeNRLn6+nBiI++wEFsV3s7OF+sWOC9lSVIA26STkrij71jdMr+lGJp9o7HRI7lBkDtfviROAZWVHxYwj/hlnr2Z1zIA==
+ b=cU+1GVoWbHSXf0CCSfjGHhUFBrLEueWIYhMdZexO9xp/S5X5fPiQMPCg1hGh/7jcZJQPJgMFcG1Y1gH9ZfAnCIPbQnOIBdCr10mM9QkzS5qgnN1lNEIc/E5N+Sh4QqRq67LFHcxOgmkuF7Iltkl+ytRHBKOpFi2nA49Mi2+5TAbrFyTwUvTPZiwZjOQk1vIeyZ/nHSqoPbY+Kvsgbc9iqdy8/J8Dn4FIoHonAIRJliq0hX1tcpEOkw+Y4x6XmIYatHhq84cfRu5jKQlJnlXPA6imLeRhF1cLd/+pS7Mgj8rLsFpDbIjnwqPbto90J7midX+K3z/M5OB3KyJg1tA5pg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=aJVA0tFOWo1twwf8oW722DzvHGaNdN3cw/VeaSzPzXU=;
- b=Q/I7GS0JWnQcYZr0ROJNxDMqO1kiMZ9tEE1lmHRTejQ5UaCx5V3u6y2t6EZr26YuImGn+1g+7tLtCvFNndWUpDagzx7R7+9tzglJIAXzEKeUHVZOKi7eg02n+EtWP8G1iObwgyq7CEY+cz0NkFAeLdC3Day3U58osmUHY7pL59i9ACQaWdpjf3WWHhNeO7VEJQFqNJ7CAxqOcYdPPZuVLdw13HXmoQU/eav++d2d8D2Scby+k3SaglCCLomkN7CiN8bUvEtZ4lmLVJOTGtJmEVQHm6bd8jo4WlCu0aBsDw4FKfO88CYYjhO2pQQO6uY+l25oO8Rv16YHGgLVa/XcvQ==
+ bh=t2UN7D5fHbBXn5HyWgsqdvCESwAE9VVmnSElMDz2F5w=;
+ b=RrI3KR7/2LovAnQLBUhk5PSMl+vkFLRViMAhMpyUWvPHPqodyeUuJl8GYcI5kYrmz+G6ajhBdMAJV8V4v80l6iSZ7Vguquqf+DXoGUNxq4e4lwm4qtNhy3tMU7jj7HhR5gqj6+UNjUthATUF+UOXz3VDIgL3SAmXKh4xNTuesLteyuWZZd8GpmuE4qUGGsXSt/OWoCPNaxXxM0AosTa8UuxDr5yfuVfLMoyOa0SeKBXmrgNst60fg4nSZ7rPogaLZNB0iesPKniC+dBv1eJNE+m7SHMRdev/myXSZREHLWTk/9Em5TvNRRe94fWNJcrevPJucHca+fNobg+GmZ74WQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=aJVA0tFOWo1twwf8oW722DzvHGaNdN3cw/VeaSzPzXU=;
- b=VZsIVdp4Hmaz1IGgvHc+c6OzSMRNnRWVnrlMZSWfQIzcv/ZrpU2r8Ysv1I7jLlW8KhJa/eiBNpp9UjATonXuymoJ47+i7nWUfspopDNX+fVIb32igUEHchEInlmsIXwmmHEx63AcVRkBVkh5u/5djZ7lGZEpnrlp577/tPyRsmYaFEcYWwd9L7ktdfEu82+DueVOYXNoKuLW6OGFhi0+u5QdZ6AhlD2EmHWNVJX2gwI2D7m3i/89ciy4U+wMcNn95/iRPx2yq9pc9di4mGfzPAWgpqwaBBOItziCiT07PCEWDoQ386n7hYGRSHc3bebs6WvYnk8gyAifO+jvtPo3yw==
+ bh=t2UN7D5fHbBXn5HyWgsqdvCESwAE9VVmnSElMDz2F5w=;
+ b=huY7BBw95P4Tw5vdHzC9z7JeJrkEe9mqBi5tLpKh2naqsOvb7VClK4WPpNSZqkmS15Vteo1WuvSCpBj5q5TwJZr7xBOR+cBOrZOUFQeO1OERdaQwlZrVnk6ddBUNhck08M32Sda6KjTUvx0vGzAU9ag7SaxD1T49QqFgVYIeLGLNSNesrJzoGr0bn/+DLRZF4q2Aq8SDwNX+JZUZ3+GDBBEvEIVdqngCOPYuHue065FEX7yb/ybsERh51CP0ocojWlRihuH72n79fuuKd0W4okguPIMXvSSXe8K48cYzZww5DMDHqRouLAOJSpr9RGYkFTzEYRbeY2PXBZhF4JMjaA==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from DB9PR04MB9626.eurprd04.prod.outlook.com (2603:10a6:10:309::18)
  by GV1PR04MB9216.eurprd04.prod.outlook.com (2603:10a6:150:2b::18) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9275.15; Fri, 31 Oct
- 2025 18:43:08 +0000
+ 2025 18:45:06 +0000
 Received: from DB9PR04MB9626.eurprd04.prod.outlook.com
  ([fe80::55ef:fa41:b021:b5dd]) by DB9PR04MB9626.eurprd04.prod.outlook.com
  ([fe80::55ef:fa41:b021:b5dd%4]) with mapi id 15.20.9275.013; Fri, 31 Oct 2025
- 18:43:08 +0000
-Date: Fri, 31 Oct 2025 14:43:01 -0400
+ 18:45:05 +0000
+Date: Fri, 31 Oct 2025 14:44:57 -0400
 From: Frank Li <Frank.li@nxp.com>
 To: adrianhoyin.ng@altera.com
 Cc: alexandre.belloni@bootlin.com, wsa+renesas@sang-engineering.com,
 	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
 	dinguyen@kernel.org, linux-i3c@lists.infradead.org,
 	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 3/3] i3c: dw: Add runtime PM disable quirk for Altera
- Agilex5
-Message-ID: <aQUDNTWE1d+fgFbG@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH v3 2/3] arm64: dts: intel: agilex5: Add Altera compatible
+ for I3C controllers
+Message-ID: <aQUDqTBciwz49A//@lizhi-Precision-Tower-5810>
 References: <cover.1761901158.git.adrianhoyin.ng@altera.com>
- <81ec74bab4ed1e843709ad95acfe2757b737abb4.1761901158.git.adrianhoyin.ng@altera.com>
+ <f1a8b8265fc2b0fc7d89023f91a74bf048639751.1761901158.git.adrianhoyin.ng@altera.com>
 Content-Disposition: inline
-In-Reply-To: <81ec74bab4ed1e843709ad95acfe2757b737abb4.1761901158.git.adrianhoyin.ng@altera.com>
-X-ClientProxiedBy: PH8P221CA0037.NAMP221.PROD.OUTLOOK.COM
- (2603:10b6:510:346::8) To PAXSPRMB0053.eurprd04.prod.outlook.com
- (2603:10a6:102:23f::21)
+In-Reply-To: <f1a8b8265fc2b0fc7d89023f91a74bf048639751.1761901158.git.adrianhoyin.ng@altera.com>
+X-ClientProxiedBy: PH8PR22CA0002.namprd22.prod.outlook.com
+ (2603:10b6:510:2d1::26) To DB9PR04MB9626.eurprd04.prod.outlook.com
+ (2603:10a6:10:309::18)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: DB9PR04MB9626:EE_|GV1PR04MB9216:EE_
-X-MS-Office365-Filtering-Correlation-Id: 559ee4ca-4b1e-4561-c611-08de18ad55b9
+X-MS-Office365-Filtering-Correlation-Id: 94b4ec81-9b87-449e-a463-08de18ad9be9
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|52116014|376014|7416014|366016|1800799024|38350700014|7053199007;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?burhSGYITM8v+RsR1rRf0+Vv47pQ5FQ952vQkKHo1aID/eLwfWYYL0+n8WYQ?=
- =?us-ascii?Q?53Otyd2dYXIGOgRoh7G9XCz2E19vg8S0kHnie9EUwQUsrrZkHto72ZazeKst?=
- =?us-ascii?Q?uSzxk/pq7ZX64uLGa5BBRWRBFb0RtiBMEf4XC5t+5KKvuJfvNMGHnhiIhpIT?=
- =?us-ascii?Q?PgEVl0wMCFH8J3ReDb04gwO5RZyAk42P6p0aEu37/glIXazy2DiSXCap9Mi0?=
- =?us-ascii?Q?xS189UZhojb5i5lyMXm1aO63AsayichuXniYQ+/duSjM4E61iXP7AGuS2tFq?=
- =?us-ascii?Q?XqVdnbssPJ7fo23HFLvL5NM6pm3c0M8P/AWhyGGNx8wmhdFz7y8u89ZScZhe?=
- =?us-ascii?Q?0+JTj9a46ZRqSHR5RzsEfiLE8N1VDnclTL9JHuXnniPmJM9mMO1i4dm0l1GJ?=
- =?us-ascii?Q?qcvhhTxC1VPugzm7ijbKZlOn9eP104vS6YtLUI4gd/XLQypulbKbW/Mh3NEC?=
- =?us-ascii?Q?ZM7E6imRfPpnZuODiGWfWFakn7Oj1rI+gSc1dHvOW6aKsSOb2TGzkPT/DYNo?=
- =?us-ascii?Q?WWAGdwD6uSU0MVTg0xamMVaYcyJTzhoMxOo/ZwCFajUdUm64Hh4WNaHSbkVK?=
- =?us-ascii?Q?b6QTZeZFWj1Z+A1tkTDuQIr4Sg2ntyv9pDgpg8HMSEAV59lBuDfq3AMTtWOt?=
- =?us-ascii?Q?PH7WXqaCqSzTb46y5RrZ/uLSTDlWeF0ohAhyv1d+nPSs9Tn3xwy20jNanGEc?=
- =?us-ascii?Q?B9zS3HmRplh/TGGAaahej2NQQ0w2FrS7ON9cBt+6M4N9HUGMg9rVyAv3MJkH?=
- =?us-ascii?Q?WvpYiXR9HCfJ52q2VJnf4zIDhAOBtDG1jaPGIhJ1yMCUGEcqwn0n0vRw1Tc9?=
- =?us-ascii?Q?MllEzKC34tDCM20QuC28oaU/bBn/6T3h5QleziT/AyC1USLPCcvL9Qe4Lj7X?=
- =?us-ascii?Q?qDwfhC6qo1TmKYhtwwAuBMbJWDyJIN6ln7x4y5sIdhvzV9tfIrzA3BAAiTW1?=
- =?us-ascii?Q?vE/gLdct5Z3uLfOBOP75HWPf0b709EJ7z0bYr6eCMwhtnYwKCBUrFKiN7n0Q?=
- =?us-ascii?Q?+1EHLBQeWeUot7dz2RIUiAs8+wtyYRfg/qB4Ip9fTNcEJbiE75z9MXtrYX9C?=
- =?us-ascii?Q?Ln15VpPnfwFpxEjLArcwSygda65HVPXWqto82xTOHWmSSG8mx0RVbGsBGNJC?=
- =?us-ascii?Q?Hps5VJQkrsAkdMhw88rdWxjVCLL8d4rs65jp4bQXhVljRcf8PHgHswSrIqCE?=
- =?us-ascii?Q?QW/RgGVAiHjSgI85+BjpleAc8tDx4ap57Mc32RBgXvdvNAgkCNVvtxMzVNGn?=
- =?us-ascii?Q?SI0aMNass41ChLLxpaQOEoM8XvIf/NSbOzMO9F5BSf7L20S3Ng4P/x6etpXN?=
- =?us-ascii?Q?Sis6t/NkR+ZLC6wfz7qM6UMqYXtuIPQB2fcjX3dJXVakWU3Wj5BuVCYQqPsj?=
- =?us-ascii?Q?OUluY02jAfK/qyM1sH1JUS+88NBLii/C/IYWEQLazeeLRKXUKnAfoU1ott9B?=
- =?us-ascii?Q?JnFpIKHHalau/6TfRTzII8CKHAAZ3dU6twb2mXe4jvf2MuQVnhzv4NqqQqhC?=
- =?us-ascii?Q?iLG0f922rDVFHOGrX72u1+0RyoKTZ2TI7Std?=
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?+XPN99nRUEUXgJX4WO2+Uf/5L+Cd0pilaFdnhmVg/RpbdgB3KBS8eYUrRRYh?=
+ =?us-ascii?Q?f4U6vWHsMjf4Byhlmv+TyavoF0VuQkG3HAIox4GDSE/SqzAzYEa1QF3YFRe+?=
+ =?us-ascii?Q?/CRJ7ubObHnPuWTwNHXv/TopjB6cznlL6toI9mST+0SH8eMIf7b155s5a8Ib?=
+ =?us-ascii?Q?sszxipTVskuyUfBjbFM12kPIfAa0jWGMrRJID7I7+mhukQd7uU9j9W/JTzD8?=
+ =?us-ascii?Q?pNZiNVf5plNq3y9uhxzFJOJ07JBvr9QVYzeTwZy22vwwtrZn4Tg3jvPpXKrm?=
+ =?us-ascii?Q?j/sulC1ZYpfBdcd5bAx0dtwCdcd5xhAEn8DhFthZQt407RtshLH9epKUgCmX?=
+ =?us-ascii?Q?/Oud7xRi5J4C7K2cf+uUjhRAi2A93NymNBrxD268jv3jwKWFbbmClojx5saD?=
+ =?us-ascii?Q?3g3nc2IZAi5w+qCBefXJL5v23lBuiT9IWqIiOCDUvlc81UEy318DxRJWHF8i?=
+ =?us-ascii?Q?5a0Ogp1nkSBBQM25d8QGOlq0lcuhwiibqskso7819qESFdvow+E6H/xyPn/J?=
+ =?us-ascii?Q?ujp5iNcMN8yTNt/EcclDqqDym0P5g8GkmaOdKmw64Ro/9S/DQsgFXZpCSDYY?=
+ =?us-ascii?Q?mKJ2C4KqA960+wryUnNRV3dFPPjTlHeXa72vFpAMpGW4ra9udfcxm3IQzfIm?=
+ =?us-ascii?Q?Llvca+boDHnGsvn+PajUPfazNXSASqhYei/3L0cE2xJRjO/mJKtO79FP2T03?=
+ =?us-ascii?Q?dUHy+/sJRmDAKlEnNwuZOn+Bh94D3BkELybuCcWBaE8aejZ1i80o+tTQmc/E?=
+ =?us-ascii?Q?jbf54a7BI3zNQ5m9cpKcdpC5YRaPFf11XoLzwh3wp25hCvd9/eYWLDnEDHoy?=
+ =?us-ascii?Q?sfA8aEOatbKEGP79z5l+MH0HP8MXnPX94cWTH/O4oCf92wifWuftlH4HJ9E9?=
+ =?us-ascii?Q?oUg7sPaySGuhWAmF3bjFnJxrAc/tqx3oI0aKK0vgtjpm+dXrMXlSFB4QaRrH?=
+ =?us-ascii?Q?u2cDOYtEJI8/QWheji3X0daB9BzElY6sxSxSwYVGd2ZMXGhcGHanZRCSGopz?=
+ =?us-ascii?Q?TTvOs0Y8f+OqA9asclq6VWs63MfBCc71JUGrLyhNC7JOH9CYXPSSKF34b/yi?=
+ =?us-ascii?Q?dqECha0rpcYI362xdtGmegeqtQzH/0MJa4xZDNxDy6LPa7SgSY+7nyGSTHGm?=
+ =?us-ascii?Q?8PPwFG7yF1IsCYsfXWYeZkOrp+JG5R8SRUWpsiTNTSTgspf8P7IoqbNJ0UBS?=
+ =?us-ascii?Q?T1LC5jtLcKds9Op7DMoHMpzEm6Iau4ByzKKc7/BMpvmzrLnCDlx6tsUAh4dh?=
+ =?us-ascii?Q?n5lJcEtrNSoZVY5AO+N8TqvjYt7iQrvPt8/P18EWyUkhRqPbW3+OYpxn9bsX?=
+ =?us-ascii?Q?eyMK1xrQuptxFOs8QUy2PwNYGSlddT1C6iPARsC/cYGF4fNxV95E4Hu0C8qt?=
+ =?us-ascii?Q?egcOr5GhOHODtRIf/Lasr630H1HFnBjzn4pjV+DxVdRSxHrr+JSpozBhzHZx?=
+ =?us-ascii?Q?+SAejAldyzHed0dtTX+NcRRnrIwsqUptz1cZJuUPMBEUWQkfawNeqQxN+JAy?=
+ =?us-ascii?Q?/M4NbNRmHoB2+/0hJ74E6L0mlFwiGmfofGUR?=
 X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR04MB9626.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(52116014)(376014)(7416014)(366016)(1800799024)(38350700014)(7053199007);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?DZEsZvLIVQYUaoAOfQup9BHIFDc6NnZiPjiUuHaYMw115oLHHRx3OKVoiTga?=
- =?us-ascii?Q?nxUnIQx3SPX/sCra0lTrMlMPOGi7PFTpK1nhQQ0QXUFp+C6ztxehGms46fHB?=
- =?us-ascii?Q?v9WnuGuYPx7Qed5mHbKQ8F0j7sKyR3YjjyqJf7Zg1PFtJSVUwTRJNRBztKgH?=
- =?us-ascii?Q?z637qm05SXggtJEtB22FNdVq1jFSMpZND0yhWN4VGNhYvPq7qPVUFldITx4B?=
- =?us-ascii?Q?wCsJcK6nG8juvXhx1tjd03QKaSz7k6W/2Lui4H1k3NfXik05jhn8FgpDAwLe?=
- =?us-ascii?Q?sSzvV7DbCo66Wpxu4rpFp4ube3XdkD5FABsnl8ELfCWbVlR34TOZnyGNtZSz?=
- =?us-ascii?Q?b/j9U6+3bkMOY9UVhp5xtRXpXUaz9d93OFqK7KQlclQSj3ihjzLq6DJYvW/R?=
- =?us-ascii?Q?lkEVZE81okkL9IWxRJ/NgZN6OJu7+2SNs2q+rBXivYpnwB9cdj88BJhQNs7X?=
- =?us-ascii?Q?UJ1Ifup3WtCtVm1TBvapkJ1+3KAL1KfX5/mEh40M5Go+HIOmLGj7Kb2fM4S7?=
- =?us-ascii?Q?4+xIIMMruuMqcxQrs1ljw5vXSHLEpzbrAn3WrvS/bRGsv9MaJMeLbRxH0HlP?=
- =?us-ascii?Q?X/InEVN1wtb5X9R6xe7B0qHevNPFTjtCFaPGu2aGhSWcB9HmbMYCUZdJBXls?=
- =?us-ascii?Q?wLzudJZb8FFFxjqXo6bAeRvq1lGsWPHkMllwiLSpsZYKWAUTcMDS09VaGF2a?=
- =?us-ascii?Q?xOETIT/690O/H/itdzie7qBsg/+vl8lrLQwDEiaEfvvwxsvMsG5esgxlhV19?=
- =?us-ascii?Q?OvavPWAuala/nm7aYEVd5W6B8RgP0WdPrqjxAacbnMuDanjulTMBu/BXRDDi?=
- =?us-ascii?Q?ovl4CSt5qXdhIYW3IFMKXWVbvzcL3trBuRa7PdcY+sfvTnk0+vivTbWGxvvz?=
- =?us-ascii?Q?rNkSzLZNckS5cjK97OWIIrrmYpENyE8YgdMJhmrdXZ1/jx3wxRERoArqBTUa?=
- =?us-ascii?Q?RnAAg70FgoQrxxYvRlkpp25Gx7tDFoqpvwhkgXv+A8ULkWrjORVtAfNA23LP?=
- =?us-ascii?Q?zrUq5ADzISMruTfiGJPLxsEEaMBiqca4YU6cwYlYOW1YcJFj1AGhu4/2kNbb?=
- =?us-ascii?Q?Gv0P8H/iB8EL4rZyQy8nU6VHzQBdS3XUrlfSf6/sy+6ZMkDiOWwNcly9mZdk?=
- =?us-ascii?Q?GoRDAomwmdMXNxlc6gtukqP3km/jLfSEw2DWSjlaxX7dYRYHyGhrcMRqMHMd?=
- =?us-ascii?Q?5SUJdqXU53AkZgO2YcLRqWvxuYzA5epCewa1ZQrc4C478KdcTvDxXp9t0Zp8?=
- =?us-ascii?Q?qIo805HaV5Q/jfoVzpm6owDhRUHDeTPmL+OGZyS+1Z83YGnFAUSlh/eMBwnL?=
- =?us-ascii?Q?e5dkRbfrYsq2ggsfNQbvhVHKaslBxijxATiDoduEH/+ZpyTl45CkAJpjhHh4?=
- =?us-ascii?Q?QiGQEJDJi7U0YcsSTcsxEthMHLaUtjI66Xnm4vC7Qd0Vn7ACmmoMpfTl9tqp?=
- =?us-ascii?Q?cbgxzhpKQs/SBODIeeAccgVphwC5V1sJGqCCPnnH5pNZs9Go3rzyQwz14yiZ?=
- =?us-ascii?Q?820I+nW7SvhKJi2PFDKAdLza36kV1kb+7gyC8+wU3wKsPS6+8ENOcBNZbBk/?=
- =?us-ascii?Q?cw+nW0qsAhaWPLJ4O5swjBizifKX0j6OsMWmRk7r?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?h7IyylTISbvAZ32v4M5pMPZAAWoXa8sI+fpm12fmwROpd5FRz9py4w6qkKgb?=
+ =?us-ascii?Q?dNaW7S1u3iNwP89OVZV+DLLAHfOr64aeHyqYy+nYQxyZuKRRxROyW+eUr/ut?=
+ =?us-ascii?Q?KvM3Lv0x40xZQt7Ieo6fkI2qf+7y81K3jqcV89KHke/of0bCfazUhb5zfqCm?=
+ =?us-ascii?Q?9hUo5T7h0s79wk4tExFlKBMcVskbxDKeUejBVJBxhDn0O23d9NXURSf6ao+U?=
+ =?us-ascii?Q?hzIQYAmiNiysfY8i79V0jdw3ZvCzciayU3+B+CQQAqN/bb6ay998zQyLRU4Z?=
+ =?us-ascii?Q?JbeDiaOqWLwVyRQLcIcRpxlo2ZqBTUvKQZ953tQUUXfNdHlXgQpnmK0j0j7d?=
+ =?us-ascii?Q?ZGQ/va3NnBN1N6AfW6mL+1xMV/jvUaQ8J7u+X3s465GkqOeqN7iOghBo0Mp2?=
+ =?us-ascii?Q?zhibmTPFzcJO+vcxcF2MwrjFcrCCm1UHmkfXWTXtBkcNNgryFbYWjtbu2Zhq?=
+ =?us-ascii?Q?0ELHmyhObBNw5LPE90+usH+DSdesW+69No2TV1ZB5ndgJxTjG/VyL8j/HN5C?=
+ =?us-ascii?Q?MfMgF6LHTlgdlSqoBTG+SGbKOWbx0tIDwSmcmjpg4UToLNyfBYEZKTD9/qgw?=
+ =?us-ascii?Q?4yhUsZhC70OcTA9QptNCrnL18GOt0/K62MSMUrJ8NDJeW1Itp/2D8zhiWrNy?=
+ =?us-ascii?Q?EOHsr+jbcMFl2biZTs63Ao5JiTqmmuwkz6a/ij74C7nG0R3cP/7KEp1E4l8p?=
+ =?us-ascii?Q?rtWsGpKUNnUFTOOCfG2V11MOQmfPGTPL6w6uGc7Z7rfb0Nv0E2ZqXQtMtWAf?=
+ =?us-ascii?Q?iye4958++q7lswMSw1gAnp7laL1B26F1SlWrdyEVYk/rc2PQdwXONABN/a6+?=
+ =?us-ascii?Q?hoAoNLDa1358HS/8NnspDBvKN1Tbqdvm+6oqxjctB2FX3kprwkhXnX7zzqaj?=
+ =?us-ascii?Q?4uQJSkojXjZomS19apEH9NxTwWX+eNr55NJ3VI/9mwlD/GHPF+COoC/UN5a1?=
+ =?us-ascii?Q?sGAXNciiIQgS4LgMzw+8PtCRfVtNkbOXBmOLh4DcuLus4WkS3m3R6aZztkq8?=
+ =?us-ascii?Q?7vbGQoYhK4G5cOxjBfA6sqcICyeeQ1MsPJEUFYaEuiw2JNEY7ZjnnUYVuBGm?=
+ =?us-ascii?Q?J4MBLO8+dlF5khD5glvNQr4Ir8SXcc7vYGFgegOui8OAu2zbrG+c6E/TyJ2J?=
+ =?us-ascii?Q?ZZE6fb/psw07TUAalcvGJGFVhiXDWgoJwItCYkRagh/FUPI6+ovOokatHTc1?=
+ =?us-ascii?Q?Cnh6IvDR966fSod/p8PYLsP8NIIkK/t0tsFcvrmlflct7vh1lVHRF4ktu7rZ?=
+ =?us-ascii?Q?UfW7qv5GQUmvJXOUk+U3MP45i/7okoy5FLU1gUt5QCRBpdH3zDM+WrIsLPeI?=
+ =?us-ascii?Q?6Pd5vMFWwHawqdw5RNxjvX+3ZfC5eyipqhc8m8a8N20uHS5bmDcJD5Crr6BG?=
+ =?us-ascii?Q?sDCm5HIWkOm/l6yHOEkAoLdFW0sdPngHGlgGPNV3JV+ojBopt7QWVEWKeK/t?=
+ =?us-ascii?Q?GfJWIZloQ1dsAwYsoyiStHozCtqZ5vh0Al4FGuhNm+2xtDCOfxyX9liiBvao?=
+ =?us-ascii?Q?brnb63YxsOYFRQOKfPsehK9V1eIhvRbQcAq7xrOcQQgXPG8cKdULiSS8NiBu?=
+ =?us-ascii?Q?AkxTogPD2tGL2THcor1TQxdGbgyWYIXbV/VYojN2?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 559ee4ca-4b1e-4561-c611-08de18ad55b9
-X-MS-Exchange-CrossTenant-AuthSource: PAXSPRMB0053.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 94b4ec81-9b87-449e-a463-08de18ad9be9
+X-MS-Exchange-CrossTenant-AuthSource: DB9PR04MB9626.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 31 Oct 2025 18:43:08.6357
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 31 Oct 2025 18:45:05.9201
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: WOsSGWvMNnC5kzXY8FUymK14D18wOpazGZsPU1cDadbW+ya19zbd3K2+hu0onVl8s+NTDbzVitlKJFEuyOD3ZQ==
+X-MS-Exchange-CrossTenant-UserPrincipalName: jl+EmNaYzHLMGpv99VOampLu7678YzUyFabHFHhiEa2yJQfoIOcb2mlM5qrTXCtqYSvINVAFVHLoAdHG5WVNXw==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR04MB9216
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251031_114315_465753_BEF43B65 
-X-CRM114-Status: GOOD (  26.17  )
+X-CRM114-CacheID: sfid-20251031_114510_741090_E10BD947 
+X-CRM114-Status: GOOD (  15.94  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -161,386 +161,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Oct 31, 2025 at 05:05:58PM +0800, adrianhoyin.ng@altera.com wrote:
+On Fri, Oct 31, 2025 at 05:05:57PM +0800, adrianhoyin.ng@altera.com wrote:
 > From: Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>
 >
-> Add support for disabling runtime power management (PM) in the
-> Synopsys DesignWare I3C master driver through a new quirk flag,
-> DW_I3C_DISABLE_RUNTIME_PM_QUIRK. When this quirk is active,
-> the driver skips all runtime PM operations (e.g. pm_runtime_enable(),
-> pm_runtime_get(), and pm_runtime_put()), keeping the controller
-> continuously powered.
->
-> This change addresses a reliability issue observed on Altera Agilex5
-> where the i3c bus enters a hung state when a slave device tries to send
-> an IBI while the controller is in a suspended state which happens after
-> the DAA procedures. Once suspended, the controller no longer drives the
-> SCL line, causing the SDA line to remain low and leaving the I3C bus in
-> a hung state when a slave device tries to send an IBI. Disabling runtime
-> PM ensures the controller remains active, allowing IBI transactions to
-> complete correctly.
->
-> A new compatible string, "altr,agilex5-dw-i3c-master", is added to
-> represent the SoC-specific variant of the DesignWare I3C controller,
-> which requires runtime PM to remain disabled.
+> Add the "altr,agilex5-dw-i3c-master" compatible string to the
+> I3C controller nodes on the Agilex5 SoCFPGA platform.
+
+Suppose this should be enough. the below context is common sense.
+
+> This allows
+> the platform to use the generic Synopsys DW I3C master driver while
+> enabling platform-specific quirks or configurations associated with
+> Altera SoCFPGA devices.
 >
 > Signed-off-by: Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>
 > ---
->  drivers/i3c/master/dw-i3c-master.c | 171 +++++++++++++++++------------
->  1 file changed, 103 insertions(+), 68 deletions(-)
+>  arch/arm64/boot/dts/intel/socfpga_agilex5.dtsi | 6 ++++--
+>  1 file changed, 4 insertions(+), 2 deletions(-)
 >
-> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-> index 9ceedf09c3b6..97da2b17b5aa 100644
-> --- a/drivers/i3c/master/dw-i3c-master.c
-> +++ b/drivers/i3c/master/dw-i3c-master.c
-> @@ -228,6 +228,7 @@
+> diff --git a/arch/arm64/boot/dts/intel/socfpga_agilex5.dtsi b/arch/arm64/boot/dts/intel/socfpga_agilex5.dtsi
+> index 04e99cd7e74b..c494b3bbb5e9 100644
+> --- a/arch/arm64/boot/dts/intel/socfpga_agilex5.dtsi
+> +++ b/arch/arm64/boot/dts/intel/socfpga_agilex5.dtsi
+> @@ -203,7 +203,8 @@ i2c4: i2c@10c02c00 {
+>  		};
 >
->  /* List of quirks */
->  #define AMD_I3C_OD_PP_TIMING		BIT(1)
-> +#define DW_I3C_DISABLE_RUNTIME_PM_QUIRK	BIT(2)
->
->  struct dw_i3c_cmd {
->  	u32 cmd_lo;
-> @@ -635,12 +636,14 @@ static int dw_i3c_master_bus_init(struct i3c_master_controller *m)
->  	struct i3c_device_info info = { };
->  	int ret;
->
-> -	ret = pm_runtime_resume_and_get(master->dev);
-> -	if (ret < 0) {
-> -		dev_err(master->dev,
-> -			"<%s> cannot resume i3c bus master, err: %d\n",
-> -			__func__, ret);
-> -		return ret;
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
-> +		ret = pm_runtime_resume_and_get(master->dev);
-> +		if (ret < 0) {
-> +			dev_err(master->dev,
-> +				"<%s> cannot resume i3c bus master, err: %d\n",
-> +				__func__, ret);
-> +			return ret;
-> +		}
->  	}
->
->  	ret = master->platform_ops->init(master);
-> @@ -682,7 +685,8 @@ static int dw_i3c_master_bus_init(struct i3c_master_controller *m)
->  	dw_i3c_master_enable(master);
->
->  rpm_out:
-> -	pm_runtime_put_autosuspend(master->dev);
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
-> +		pm_runtime_put_autosuspend(master->dev);
->  	return ret;
->  }
->
-> @@ -798,12 +802,14 @@ static int dw_i3c_master_send_ccc_cmd(struct i3c_master_controller *m,
->  		writel(master->i3c_od_timing, master->regs + SCL_I3C_OD_TIMING);
->  	}
->
-> -	ret = pm_runtime_resume_and_get(master->dev);
-> -	if (ret < 0) {
-> -		dev_err(master->dev,
-> -			"<%s> cannot resume i3c bus master, err: %d\n",
-> -			__func__, ret);
-> -		return ret;
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
-> +		ret = pm_runtime_resume_and_get(master->dev);
-> +		if (ret < 0) {
-> +			dev_err(master->dev,
-> +				"<%s> cannot resume i3c bus master, err: %d\n",
-> +				__func__, ret);
-> +			return ret;
-> +		}
->  	}
->
->  	if (ccc->rnw)
-> @@ -811,7 +817,8 @@ static int dw_i3c_master_send_ccc_cmd(struct i3c_master_controller *m,
->  	else
->  		ret = dw_i3c_ccc_set(master, ccc);
->
-> -	pm_runtime_put_autosuspend(master->dev);
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
-> +		pm_runtime_put_autosuspend(master->dev);
->  	return ret;
->  }
->
-> @@ -824,12 +831,14 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
->  	u8 last_addr = 0;
->  	int ret, pos;
->
-> -	ret = pm_runtime_resume_and_get(master->dev);
-> -	if (ret < 0) {
-> -		dev_err(master->dev,
-> -			"<%s> cannot resume i3c bus master, err: %d\n",
-> -			__func__, ret);
-> -		return ret;
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
-> +		ret = pm_runtime_resume_and_get(master->dev);
-> +		if (ret < 0) {
-> +			dev_err(master->dev,
-> +				"<%s> cannot resume i3c bus master, err: %d\n",
-> +				__func__, ret);
-> +			return ret;
-> +		}
->  	}
->
->  	olddevs = ~(master->free_pos);
-> @@ -893,7 +902,8 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
->  	dw_i3c_master_free_xfer(xfer);
->
->  rpm_out:
-> -	pm_runtime_put_autosuspend(master->dev);
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
-> +		pm_runtime_put_autosuspend(master->dev);
->  	return ret;
->  }
->
-> @@ -929,12 +939,14 @@ static int dw_i3c_master_priv_xfers(struct i3c_dev_desc *dev,
->  	if (!xfer)
->  		return -ENOMEM;
->
-> -	ret = pm_runtime_resume_and_get(master->dev);
-> -	if (ret < 0) {
-> -		dev_err(master->dev,
-> -			"<%s> cannot resume i3c bus master, err: %d\n",
-> -			__func__, ret);
-> -		return ret;
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
-> +		ret = pm_runtime_resume_and_get(master->dev);
-> +		if (ret < 0) {
-> +			dev_err(master->dev,
-> +				"<%s> cannot resume i3c bus master, err: %d\n",
-> +				__func__, ret);
-> +			return ret;
-> +		}
->  	}
->
->  	for (i = 0; i < i3c_nxfers; i++) {
-> @@ -978,7 +990,8 @@ static int dw_i3c_master_priv_xfers(struct i3c_dev_desc *dev,
->  	ret = xfer->ret;
->  	dw_i3c_master_free_xfer(xfer);
->
-> -	pm_runtime_put_autosuspend(master->dev);
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
-> +		pm_runtime_put_autosuspend(master->dev);
->  	return ret;
->  }
->
-> @@ -1089,12 +1102,14 @@ static int dw_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
->  	if (!xfer)
->  		return -ENOMEM;
->
-> -	ret = pm_runtime_resume_and_get(master->dev);
-> -	if (ret < 0) {
-> -		dev_err(master->dev,
-> -			"<%s> cannot resume i3c bus master, err: %d\n",
-> -			__func__, ret);
-> -		return ret;
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
-> +		ret = pm_runtime_resume_and_get(master->dev);
-> +		if (ret < 0) {
-> +			dev_err(master->dev,
-> +				"<%s> cannot resume i3c bus master, err: %d\n",
-> +				__func__, ret);
-> +			return ret;
-> +		}
->  	}
->
->  	for (i = 0; i < i2c_nxfers; i++) {
-> @@ -1127,7 +1142,8 @@ static int dw_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
->  	ret = xfer->ret;
->  	dw_i3c_master_free_xfer(xfer);
->
-> -	pm_runtime_put_autosuspend(master->dev);
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
-> +		pm_runtime_put_autosuspend(master->dev);
->  	return ret;
->  }
->
-> @@ -1272,12 +1288,14 @@ static int dw_i3c_master_enable_hotjoin(struct i3c_master_controller *m)
->  	struct dw_i3c_master *master = to_dw_i3c_master(m);
->  	int ret;
->
-> -	ret = pm_runtime_resume_and_get(master->dev);
-> -	if (ret < 0) {
-> -		dev_err(master->dev,
-> -			"<%s> cannot resume i3c bus master, err: %d\n",
-> -			__func__, ret);
-> -		return ret;
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
-> +		ret = pm_runtime_resume_and_get(master->dev);
-> +		if (ret < 0) {
-> +			dev_err(master->dev,
-> +				"<%s> cannot resume i3c bus master, err: %d\n",
-> +				__func__, ret);
-> +			return ret;
-> +		}
->  	}
->
->  	dw_i3c_master_enable_sir_signal(master, true);
-> @@ -1294,7 +1312,8 @@ static int dw_i3c_master_disable_hotjoin(struct i3c_master_controller *m)
->  	writel(readl(master->regs + DEVICE_CTRL) | DEV_CTRL_HOT_JOIN_NACK,
->  	       master->regs + DEVICE_CTRL);
->
-> -	pm_runtime_put_autosuspend(master->dev);
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
-> +		pm_runtime_put_autosuspend(master->dev);
->  	return 0;
->  }
->
-> @@ -1305,12 +1324,14 @@ static int dw_i3c_master_enable_ibi(struct i3c_dev_desc *dev)
->  	struct dw_i3c_master *master = to_dw_i3c_master(m);
->  	int rc;
->
-> -	rc = pm_runtime_resume_and_get(master->dev);
-> -	if (rc < 0) {
-> -		dev_err(master->dev,
-> -			"<%s> cannot resume i3c bus master, err: %d\n",
-> -			__func__, rc);
-> -		return rc;
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
-> +		rc = pm_runtime_resume_and_get(master->dev);
-> +		if (rc < 0) {
-> +			dev_err(master->dev,
-> +				"<%s> cannot resume i3c bus master, err: %d\n",
-> +				__func__, rc);
-> +			return rc;
-> +		}
->  	}
->
->  	dw_i3c_master_set_sir_enabled(master, dev, data->index, true);
-> @@ -1319,7 +1340,8 @@ static int dw_i3c_master_enable_ibi(struct i3c_dev_desc *dev)
->
->  	if (rc) {
->  		dw_i3c_master_set_sir_enabled(master, dev, data->index, false);
-> -		pm_runtime_put_autosuspend(master->dev);
-> +		if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
-> +			pm_runtime_put_autosuspend(master->dev);
->  	}
->
->  	return rc;
-> @@ -1338,7 +1360,8 @@ static int dw_i3c_master_disable_ibi(struct i3c_dev_desc *dev)
->
->  	dw_i3c_master_set_sir_enabled(master, dev, data->index, false);
->
-> -	pm_runtime_put_autosuspend(master->dev);
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
-> +		pm_runtime_put_autosuspend(master->dev);
->  	return 0;
->  }
->
-> @@ -1573,11 +1596,6 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
->
->  	platform_set_drvdata(pdev, master);
->
-> -	pm_runtime_set_autosuspend_delay(&pdev->dev, RPM_AUTOSUSPEND_TIMEOUT);
-> -	pm_runtime_use_autosuspend(&pdev->dev);
-> -	pm_runtime_set_active(&pdev->dev);
-> -	pm_runtime_enable(&pdev->dev);
-> -
->  	/* Information regarding the FIFOs/QUEUEs depth */
->  	ret = readl(master->regs + QUEUE_STATUS_LEVEL);
->  	master->caps.cmdfifodepth = QUEUE_STATUS_LEVEL_CMD(ret);
-> @@ -1592,6 +1610,13 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
->
->  	master->quirks = (unsigned long)device_get_match_data(&pdev->dev);
->
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
-> +		pm_runtime_set_autosuspend_delay(&pdev->dev, RPM_AUTOSUSPEND_TIMEOUT);
-> +		pm_runtime_use_autosuspend(&pdev->dev);
-> +		pm_runtime_set_active(&pdev->dev);
-> +		pm_runtime_enable(&pdev->dev);
-> +	}
-> +
+>  		i3c0: i3c@10da0000 {
+> -			compatible = "snps,dw-i3c-master-1.00a";
+> +			compatible = "altr,agilex5-dw-i3c-master",
+> +						"snps,dw-i3c-master-1.00a";
 
-I think you just need increase runtime pm refer counter should be enough.
-
-if (master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)
-	pm_runtime_get_noresume(dev);
-
-So all runtime_pm function will no be called because ref counter always
-bigger than 0.
+Need align to previous line
 
 Frank
 
->  	INIT_WORK(&master->hj_work, dw_i3c_hj_work);
->  	ret = i3c_master_register(&master->base, &pdev->dev,
->  				  &dw_mipi_i3c_ops, false);
-> @@ -1601,9 +1626,11 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
->  	return 0;
+>  			reg = <0x10da0000 0x1000>;
+>  			#address-cells = <3>;
+>  			#size-cells = <0>;
+> @@ -213,7 +214,8 @@ i3c0: i3c@10da0000 {
+>  		};
 >
->  err_disable_pm:
-> -	pm_runtime_disable(&pdev->dev);
-> -	pm_runtime_set_suspended(&pdev->dev);
-> -	pm_runtime_dont_use_autosuspend(&pdev->dev);
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
-> +		pm_runtime_disable(&pdev->dev);
-> +		pm_runtime_set_suspended(&pdev->dev);
-> +		pm_runtime_dont_use_autosuspend(&pdev->dev);
-> +	}
->
->  err_assert_rst:
->  	reset_control_assert(master->core_rst);
-> @@ -1617,9 +1644,11 @@ void dw_i3c_common_remove(struct dw_i3c_master *master)
->  	cancel_work_sync(&master->hj_work);
->  	i3c_master_unregister(&master->base);
->
-> -	pm_runtime_disable(master->dev);
-> -	pm_runtime_set_suspended(master->dev);
-> -	pm_runtime_dont_use_autosuspend(master->dev);
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
-> +		pm_runtime_disable(master->dev);
-> +		pm_runtime_set_suspended(master->dev);
-> +		pm_runtime_dont_use_autosuspend(master->dev);
-> +	}
->  }
->  EXPORT_SYMBOL_GPL(dw_i3c_common_remove);
->
-> @@ -1742,12 +1771,14 @@ static void dw_i3c_shutdown(struct platform_device *pdev)
->  	struct dw_i3c_master *master = platform_get_drvdata(pdev);
->  	int ret;
->
-> -	ret = pm_runtime_resume_and_get(master->dev);
-> -	if (ret < 0) {
-> -		dev_err(master->dev,
-> -			"<%s> cannot resume i3c bus master, err: %d\n",
-> -			__func__, ret);
-> -		return;
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)) {
-> +		ret = pm_runtime_resume_and_get(master->dev);
-> +		if (ret < 0) {
-> +			dev_err(master->dev,
-> +				"<%s> cannot resume i3c bus master, err: %d\n",
-> +				__func__, ret);
-> +			return;
-> +		}
->  	}
->
->  	cancel_work_sync(&master->hj_work);
-> @@ -1756,11 +1787,15 @@ static void dw_i3c_shutdown(struct platform_device *pdev)
->  	writel((u32)~INTR_ALL, master->regs + INTR_STATUS_EN);
->  	writel((u32)~INTR_ALL, master->regs + INTR_SIGNAL_EN);
->
-> -	pm_runtime_put_autosuspend(master->dev);
-> +	if (!(master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK))
-> +		pm_runtime_put_autosuspend(master->dev);
->  }
->
->  static const struct of_device_id dw_i3c_master_of_match[] = {
->  	{ .compatible = "snps,dw-i3c-master-1.00a", },
-> +	{ .compatible = "altr,agilex5-dw-i3c-master",
-> +	  .data = (void *)DW_I3C_DISABLE_RUNTIME_PM_QUIRK,
-> +	},
->  	{},
->  };
->  MODULE_DEVICE_TABLE(of, dw_i3c_master_of_match);
+>  		i3c1: i3c@10da1000 {
+> -			compatible = "snps,dw-i3c-master-1.00a";
+> +			compatible = "altr,agilex5-dw-i3c-master",
+> +						"snps,dw-i3c-master-1.00a";
+>  			reg = <0x10da1000 0x1000>;
+>  			#address-cells = <3>;
+>  			#size-cells = <0>;
 > --
 > 2.49.GIT
 >
->
-> --
-> linux-i3c mailing list
-> linux-i3c@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-i3c
 
 -- 
 linux-i3c mailing list
