@@ -4,147 +4,66 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C82ECCF9F8
-	for <linux-i3c@archiver.kernel.org>; Fri, 31 Oct 2025 18:45:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8684CCFA02
+	for <linux-i3c@archiver.kernel.org>; Sat,  1 Nov 2025 16:25:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gul7gDmLWv3HKISwBIYrcLTxgSCGR1Iziyf+e2GDYII=; b=h3FBevlyawpVnY
-	3lDUnUn8tKIQ6lKVeBR5sj4y8EdDMCcoYlecbUKXLrt6tyDCWr3hal/nDJruBii++2IFpudblVGbo
-	VWXn2DYFxnH2lVI9E4W1J5xOitcvhqAOywGSzK4wvizgDQdf6sQegtOU9PchNRCOiLrCYUx+pkCdz
-	JIzjsCBUbGByef+Xn29odRsH3KqLy+QX/jcg9+XO6nWuXTn+LSDQpwUNL/ilJgsMwD8WreUWQ82bH
-	eee2XjIOR7x4drLPSS+K6Au+3EsyrTzRfgwccwIK9BLpDsRTq1smBJ7gGxCtRwmIm58oslv/sADNM
-	hZQWdPP11aVsxvSQroSA==;
+	List-Owner; bh=xzkDty3NEb9usZuwwgd6X97QO376sGlo4tOtov2uS1Y=; b=DSUzjEiFsfLpgM
+	Gh0zW4hrcBVTl+yAdEnAla18tT4fQvcgWaeaCouKJchypp7NhzPj1YK0IQXtC7iIbZNHrxmJ5Pxd/
+	zXszbY8C1u+jst2PRizlUorHmUNXGn7wPZe+cL/cGOTRIbfdWXgSZqA8wt/SjRnZ6uO4NPqA5Eq8a
+	aOMb5GfX6146wZC+LJdiUMRA2uTYU8klFRr4Kd0jhrN902M6UodaTud3DlLU7FCvWBtthw1YoCcDk
+	vpePlwqP8bzGlHGaX+q7yT/n9rr4keImQFcyJHAIPdXNepy7be+UQ3bHJls4Kh+lBkoxwor/Wkwr0
+	D8kf5wACiMj7689fdfUg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEu7c-00000006dwf-3IDL;
-	Fri, 31 Oct 2025 18:45:12 +0000
-Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
+	id 1vFEQ7-00000007vhK-1ryg;
+	Sat, 01 Nov 2025 16:25:39 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vEu7a-00000006dwC-2jXv
+	id 1vFEQ4-00000007vgv-30U3
 	for linux-i3c@lists.infradead.org;
-	Fri, 31 Oct 2025 18:45:11 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=cU+1GVoWbHSXf0CCSfjGHhUFBrLEueWIYhMdZexO9xp/S5X5fPiQMPCg1hGh/7jcZJQPJgMFcG1Y1gH9ZfAnCIPbQnOIBdCr10mM9QkzS5qgnN1lNEIc/E5N+Sh4QqRq67LFHcxOgmkuF7Iltkl+ytRHBKOpFi2nA49Mi2+5TAbrFyTwUvTPZiwZjOQk1vIeyZ/nHSqoPbY+Kvsgbc9iqdy8/J8Dn4FIoHonAIRJliq0hX1tcpEOkw+Y4x6XmIYatHhq84cfRu5jKQlJnlXPA6imLeRhF1cLd/+pS7Mgj8rLsFpDbIjnwqPbto90J7midX+K3z/M5OB3KyJg1tA5pg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=t2UN7D5fHbBXn5HyWgsqdvCESwAE9VVmnSElMDz2F5w=;
- b=RrI3KR7/2LovAnQLBUhk5PSMl+vkFLRViMAhMpyUWvPHPqodyeUuJl8GYcI5kYrmz+G6ajhBdMAJV8V4v80l6iSZ7Vguquqf+DXoGUNxq4e4lwm4qtNhy3tMU7jj7HhR5gqj6+UNjUthATUF+UOXz3VDIgL3SAmXKh4xNTuesLteyuWZZd8GpmuE4qUGGsXSt/OWoCPNaxXxM0AosTa8UuxDr5yfuVfLMoyOa0SeKBXmrgNst60fg4nSZ7rPogaLZNB0iesPKniC+dBv1eJNE+m7SHMRdev/myXSZREHLWTk/9Em5TvNRRe94fWNJcrevPJucHca+fNobg+GmZ74WQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=t2UN7D5fHbBXn5HyWgsqdvCESwAE9VVmnSElMDz2F5w=;
- b=huY7BBw95P4Tw5vdHzC9z7JeJrkEe9mqBi5tLpKh2naqsOvb7VClK4WPpNSZqkmS15Vteo1WuvSCpBj5q5TwJZr7xBOR+cBOrZOUFQeO1OERdaQwlZrVnk6ddBUNhck08M32Sda6KjTUvx0vGzAU9ag7SaxD1T49QqFgVYIeLGLNSNesrJzoGr0bn/+DLRZF4q2Aq8SDwNX+JZUZ3+GDBBEvEIVdqngCOPYuHue065FEX7yb/ybsERh51CP0ocojWlRihuH72n79fuuKd0W4okguPIMXvSSXe8K48cYzZww5DMDHqRouLAOJSpr9RGYkFTzEYRbeY2PXBZhF4JMjaA==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from DB9PR04MB9626.eurprd04.prod.outlook.com (2603:10a6:10:309::18)
- by GV1PR04MB9216.eurprd04.prod.outlook.com (2603:10a6:150:2b::18) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9275.15; Fri, 31 Oct
- 2025 18:45:06 +0000
-Received: from DB9PR04MB9626.eurprd04.prod.outlook.com
- ([fe80::55ef:fa41:b021:b5dd]) by DB9PR04MB9626.eurprd04.prod.outlook.com
- ([fe80::55ef:fa41:b021:b5dd%4]) with mapi id 15.20.9275.013; Fri, 31 Oct 2025
- 18:45:05 +0000
-Date: Fri, 31 Oct 2025 14:44:57 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: adrianhoyin.ng@altera.com
-Cc: alexandre.belloni@bootlin.com, wsa+renesas@sang-engineering.com,
-	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
-	dinguyen@kernel.org, linux-i3c@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 2/3] arm64: dts: intel: agilex5: Add Altera compatible
- for I3C controllers
-Message-ID: <aQUDqTBciwz49A//@lizhi-Precision-Tower-5810>
-References: <cover.1761901158.git.adrianhoyin.ng@altera.com>
- <f1a8b8265fc2b0fc7d89023f91a74bf048639751.1761901158.git.adrianhoyin.ng@altera.com>
-Content-Disposition: inline
-In-Reply-To: <f1a8b8265fc2b0fc7d89023f91a74bf048639751.1761901158.git.adrianhoyin.ng@altera.com>
-X-ClientProxiedBy: PH8PR22CA0002.namprd22.prod.outlook.com
- (2603:10b6:510:2d1::26) To DB9PR04MB9626.eurprd04.prod.outlook.com
- (2603:10a6:10:309::18)
+	Sat, 01 Nov 2025 16:25:38 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 971944043E;
+	Sat,  1 Nov 2025 16:25:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BC7BBC4CEF1;
+	Sat,  1 Nov 2025 16:25:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1762014335;
+	bh=SRbrrNLlJ5lCbs8a/4PWMzoJ6nWZ1XkxIIFLmPdvMh4=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+	b=ND0y+nybUBovBHJJGQhF0YDfxfAQZWjjCD6xEBXDM+C2f+k06RTyJrp54kXqb+6yZ
+	 2toHnjxWY10D7gZKaO63DhrOcx3VSiZsYMbAI8RlSO6hSJrN0gsJl07GlrRTExg5Mm
+	 fzBBu15ZEew41apW9f7pH5kzZL7iObKgrvwJ/0bfyV/CARe+rKha1pHvEBltcZ/ANf
+	 7sWljTmDpl4gcDF+kYoA0ziyG4euiz0gY/CWUYU93eWJTEsYdrQy0P55tv4NqXpRlX
+	 439sQAld8HajfvUaez574QXfnUKEHq2I3evrRUGYoxGa0igT7fQU/pCFBH0rI/KLf6
+	 AmZpG7/srIDMw==
+Date: Sat, 1 Nov 2025 16:25:25 +0000
+From: Jonathan Cameron <jic23@kernel.org>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, Miquel Raynal
+ <miquel.raynal@bootlin.com>, David Lechner <dlechner@baylibre.com>, Nuno
+ =?UTF-8?B?U8Oh?= <nuno.sa@analog.com>, Andy Shevchenko <andy@kernel.org>,
+ Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, linux-i3c@lists.infradead.org,
+ linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+ linux-iio@vger.kernel.org, joshua.yeong@starfivetech.com,
+ devicetree@vger.kernel.org, linux@roeck-us.net, Carlos Song
+ <carlos.song@nxp.com>, Conor Dooley <conor.dooley@microchip.com>, Adrian
+ Fluturel <fluturel.adrian@gmail.com>
+Subject: Re: [PATCH v9 0/6] i3c: Add basic HDR mode support
+Message-ID: <20251101162525.44c9862b@jic23-huawei>
+In-Reply-To: <20251031-i3c_ddr-v9-0-f1e523ebaf78@nxp.com>
+References: <20251031-i3c_ddr-v9-0-f1e523ebaf78@nxp.com>
+X-Mailer: Claws Mail 4.3.1 (GTK 3.24.51; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DB9PR04MB9626:EE_|GV1PR04MB9216:EE_
-X-MS-Office365-Filtering-Correlation-Id: 94b4ec81-9b87-449e-a463-08de18ad9be9
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|52116014|376014|7416014|366016|1800799024|38350700014|7053199007;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?+XPN99nRUEUXgJX4WO2+Uf/5L+Cd0pilaFdnhmVg/RpbdgB3KBS8eYUrRRYh?=
- =?us-ascii?Q?f4U6vWHsMjf4Byhlmv+TyavoF0VuQkG3HAIox4GDSE/SqzAzYEa1QF3YFRe+?=
- =?us-ascii?Q?/CRJ7ubObHnPuWTwNHXv/TopjB6cznlL6toI9mST+0SH8eMIf7b155s5a8Ib?=
- =?us-ascii?Q?sszxipTVskuyUfBjbFM12kPIfAa0jWGMrRJID7I7+mhukQd7uU9j9W/JTzD8?=
- =?us-ascii?Q?pNZiNVf5plNq3y9uhxzFJOJ07JBvr9QVYzeTwZy22vwwtrZn4Tg3jvPpXKrm?=
- =?us-ascii?Q?j/sulC1ZYpfBdcd5bAx0dtwCdcd5xhAEn8DhFthZQt407RtshLH9epKUgCmX?=
- =?us-ascii?Q?/Oud7xRi5J4C7K2cf+uUjhRAi2A93NymNBrxD268jv3jwKWFbbmClojx5saD?=
- =?us-ascii?Q?3g3nc2IZAi5w+qCBefXJL5v23lBuiT9IWqIiOCDUvlc81UEy318DxRJWHF8i?=
- =?us-ascii?Q?5a0Ogp1nkSBBQM25d8QGOlq0lcuhwiibqskso7819qESFdvow+E6H/xyPn/J?=
- =?us-ascii?Q?ujp5iNcMN8yTNt/EcclDqqDym0P5g8GkmaOdKmw64Ro/9S/DQsgFXZpCSDYY?=
- =?us-ascii?Q?mKJ2C4KqA960+wryUnNRV3dFPPjTlHeXa72vFpAMpGW4ra9udfcxm3IQzfIm?=
- =?us-ascii?Q?Llvca+boDHnGsvn+PajUPfazNXSASqhYei/3L0cE2xJRjO/mJKtO79FP2T03?=
- =?us-ascii?Q?dUHy+/sJRmDAKlEnNwuZOn+Bh94D3BkELybuCcWBaE8aejZ1i80o+tTQmc/E?=
- =?us-ascii?Q?jbf54a7BI3zNQ5m9cpKcdpC5YRaPFf11XoLzwh3wp25hCvd9/eYWLDnEDHoy?=
- =?us-ascii?Q?sfA8aEOatbKEGP79z5l+MH0HP8MXnPX94cWTH/O4oCf92wifWuftlH4HJ9E9?=
- =?us-ascii?Q?oUg7sPaySGuhWAmF3bjFnJxrAc/tqx3oI0aKK0vgtjpm+dXrMXlSFB4QaRrH?=
- =?us-ascii?Q?u2cDOYtEJI8/QWheji3X0daB9BzElY6sxSxSwYVGd2ZMXGhcGHanZRCSGopz?=
- =?us-ascii?Q?TTvOs0Y8f+OqA9asclq6VWs63MfBCc71JUGrLyhNC7JOH9CYXPSSKF34b/yi?=
- =?us-ascii?Q?dqECha0rpcYI362xdtGmegeqtQzH/0MJa4xZDNxDy6LPa7SgSY+7nyGSTHGm?=
- =?us-ascii?Q?8PPwFG7yF1IsCYsfXWYeZkOrp+JG5R8SRUWpsiTNTSTgspf8P7IoqbNJ0UBS?=
- =?us-ascii?Q?T1LC5jtLcKds9Op7DMoHMpzEm6Iau4ByzKKc7/BMpvmzrLnCDlx6tsUAh4dh?=
- =?us-ascii?Q?n5lJcEtrNSoZVY5AO+N8TqvjYt7iQrvPt8/P18EWyUkhRqPbW3+OYpxn9bsX?=
- =?us-ascii?Q?eyMK1xrQuptxFOs8QUy2PwNYGSlddT1C6iPARsC/cYGF4fNxV95E4Hu0C8qt?=
- =?us-ascii?Q?egcOr5GhOHODtRIf/Lasr630H1HFnBjzn4pjV+DxVdRSxHrr+JSpozBhzHZx?=
- =?us-ascii?Q?+SAejAldyzHed0dtTX+NcRRnrIwsqUptz1cZJuUPMBEUWQkfawNeqQxN+JAy?=
- =?us-ascii?Q?/M4NbNRmHoB2+/0hJ74E6L0mlFwiGmfofGUR?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DB9PR04MB9626.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(52116014)(376014)(7416014)(366016)(1800799024)(38350700014)(7053199007);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?h7IyylTISbvAZ32v4M5pMPZAAWoXa8sI+fpm12fmwROpd5FRz9py4w6qkKgb?=
- =?us-ascii?Q?dNaW7S1u3iNwP89OVZV+DLLAHfOr64aeHyqYy+nYQxyZuKRRxROyW+eUr/ut?=
- =?us-ascii?Q?KvM3Lv0x40xZQt7Ieo6fkI2qf+7y81K3jqcV89KHke/of0bCfazUhb5zfqCm?=
- =?us-ascii?Q?9hUo5T7h0s79wk4tExFlKBMcVskbxDKeUejBVJBxhDn0O23d9NXURSf6ao+U?=
- =?us-ascii?Q?hzIQYAmiNiysfY8i79V0jdw3ZvCzciayU3+B+CQQAqN/bb6ay998zQyLRU4Z?=
- =?us-ascii?Q?JbeDiaOqWLwVyRQLcIcRpxlo2ZqBTUvKQZ953tQUUXfNdHlXgQpnmK0j0j7d?=
- =?us-ascii?Q?ZGQ/va3NnBN1N6AfW6mL+1xMV/jvUaQ8J7u+X3s465GkqOeqN7iOghBo0Mp2?=
- =?us-ascii?Q?zhibmTPFzcJO+vcxcF2MwrjFcrCCm1UHmkfXWTXtBkcNNgryFbYWjtbu2Zhq?=
- =?us-ascii?Q?0ELHmyhObBNw5LPE90+usH+DSdesW+69No2TV1ZB5ndgJxTjG/VyL8j/HN5C?=
- =?us-ascii?Q?MfMgF6LHTlgdlSqoBTG+SGbKOWbx0tIDwSmcmjpg4UToLNyfBYEZKTD9/qgw?=
- =?us-ascii?Q?4yhUsZhC70OcTA9QptNCrnL18GOt0/K62MSMUrJ8NDJeW1Itp/2D8zhiWrNy?=
- =?us-ascii?Q?EOHsr+jbcMFl2biZTs63Ao5JiTqmmuwkz6a/ij74C7nG0R3cP/7KEp1E4l8p?=
- =?us-ascii?Q?rtWsGpKUNnUFTOOCfG2V11MOQmfPGTPL6w6uGc7Z7rfb0Nv0E2ZqXQtMtWAf?=
- =?us-ascii?Q?iye4958++q7lswMSw1gAnp7laL1B26F1SlWrdyEVYk/rc2PQdwXONABN/a6+?=
- =?us-ascii?Q?hoAoNLDa1358HS/8NnspDBvKN1Tbqdvm+6oqxjctB2FX3kprwkhXnX7zzqaj?=
- =?us-ascii?Q?4uQJSkojXjZomS19apEH9NxTwWX+eNr55NJ3VI/9mwlD/GHPF+COoC/UN5a1?=
- =?us-ascii?Q?sGAXNciiIQgS4LgMzw+8PtCRfVtNkbOXBmOLh4DcuLus4WkS3m3R6aZztkq8?=
- =?us-ascii?Q?7vbGQoYhK4G5cOxjBfA6sqcICyeeQ1MsPJEUFYaEuiw2JNEY7ZjnnUYVuBGm?=
- =?us-ascii?Q?J4MBLO8+dlF5khD5glvNQr4Ir8SXcc7vYGFgegOui8OAu2zbrG+c6E/TyJ2J?=
- =?us-ascii?Q?ZZE6fb/psw07TUAalcvGJGFVhiXDWgoJwItCYkRagh/FUPI6+ovOokatHTc1?=
- =?us-ascii?Q?Cnh6IvDR966fSod/p8PYLsP8NIIkK/t0tsFcvrmlflct7vh1lVHRF4ktu7rZ?=
- =?us-ascii?Q?UfW7qv5GQUmvJXOUk+U3MP45i/7okoy5FLU1gUt5QCRBpdH3zDM+WrIsLPeI?=
- =?us-ascii?Q?6Pd5vMFWwHawqdw5RNxjvX+3ZfC5eyipqhc8m8a8N20uHS5bmDcJD5Crr6BG?=
- =?us-ascii?Q?sDCm5HIWkOm/l6yHOEkAoLdFW0sdPngHGlgGPNV3JV+ojBopt7QWVEWKeK/t?=
- =?us-ascii?Q?GfJWIZloQ1dsAwYsoyiStHozCtqZ5vh0Al4FGuhNm+2xtDCOfxyX9liiBvao?=
- =?us-ascii?Q?brnb63YxsOYFRQOKfPsehK9V1eIhvRbQcAq7xrOcQQgXPG8cKdULiSS8NiBu?=
- =?us-ascii?Q?AkxTogPD2tGL2THcor1TQxdGbgyWYIXbV/VYojN2?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 94b4ec81-9b87-449e-a463-08de18ad9be9
-X-MS-Exchange-CrossTenant-AuthSource: DB9PR04MB9626.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 31 Oct 2025 18:45:05.9201
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: jl+EmNaYzHLMGpv99VOampLu7678YzUyFabHFHhiEa2yJQfoIOcb2mlM5qrTXCtqYSvINVAFVHLoAdHG5WVNXw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR04MB9216
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251031_114510_741090_E10BD947 
-X-CRM114-Status: GOOD (  15.94  )
+X-CRM114-CacheID: sfid-20251101_092536_802553_D8F48931 
+X-CRM114-Status: GOOD (  17.96  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -161,56 +80,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Oct 31, 2025 at 05:05:57PM +0800, adrianhoyin.ng@altera.com wrote:
-> From: Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>
->
-> Add the "altr,agilex5-dw-i3c-master" compatible string to the
-> I3C controller nodes on the Agilex5 SoCFPGA platform.
+On Fri, 31 Oct 2025 12:39:12 -0400
+Frank Li <Frank.Li@nxp.com> wrote:
 
-Suppose this should be enough. the below context is common sense.
+> Add basic HDR mode support, only support private transfer, not support
+> CCC command.
+> 
+> Update i3c framework API to allow pass down mode and extend driver callback
+> function.
+> 
+> Implement HDR transfer in svc i3c master driver.
+> 
+> Simplifed HDR flow is (ref i3c spec line 5514) Figure 129
+> 
+> <--              SDR            ---> | <--- HDR
+> START 0x7E RnW(0) ACK CCC(ENTHDR0) T   HDR-CMD(00-7f write, 80--ff read)
+> 
+>                                     ----> |  
+> HDR-DATA HDR-CRC HDR-RESTART .... HDR-EXIT
+> 
+> Note: HDR-CMD is 16bit data, which included 7bit slave address and 8bit
+> read/write command.
+> 
+> svc hardware can auto issue SDR part.
+> 
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
 
-> This allows
-> the platform to use the generic Synopsys DW I3C master driver while
-> enabling platform-specific quirks or configurations associated with
-> Altera SoCFPGA devices.
->
-> Signed-off-by: Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>
+Hi. Assuming everyone is happy with this version, the next question is how
+we expect to merge this. I think someone (either myself or Alexandre most likely)
+probably needs to spin an immutable branch with the i3c parts in it.
+
+Then we can merge that into both trees and I can apply the driver on top.
+
+Jonathan
+
 > ---
->  arch/arm64/boot/dts/intel/socfpga_agilex5.dtsi | 6 ++++--
->  1 file changed, 4 insertions(+), 2 deletions(-)
->
-> diff --git a/arch/arm64/boot/dts/intel/socfpga_agilex5.dtsi b/arch/arm64/boot/dts/intel/socfpga_agilex5.dtsi
-> index 04e99cd7e74b..c494b3bbb5e9 100644
-> --- a/arch/arm64/boot/dts/intel/socfpga_agilex5.dtsi
-> +++ b/arch/arm64/boot/dts/intel/socfpga_agilex5.dtsi
-> @@ -203,7 +203,8 @@ i2c4: i2c@10c02c00 {
->  		};
->
->  		i3c0: i3c@10da0000 {
-> -			compatible = "snps,dw-i3c-master-1.00a";
-> +			compatible = "altr,agilex5-dw-i3c-master",
-> +						"snps,dw-i3c-master-1.00a";
-
-Need align to previous line
-
-Frank
-
->  			reg = <0x10da0000 0x1000>;
->  			#address-cells = <3>;
->  			#size-cells = <0>;
-> @@ -213,7 +214,8 @@ i3c0: i3c@10da0000 {
->  		};
->
->  		i3c1: i3c@10da1000 {
-> -			compatible = "snps,dw-i3c-master-1.00a";
-> +			compatible = "altr,agilex5-dw-i3c-master",
-> +						"snps,dw-i3c-master-1.00a";
->  			reg = <0x10da1000 0x1000>;
->  			#address-cells = <3>;
->  			#size-cells = <0>;
+> Changes in v9:
+> - remove reducated check for ops->priv_xfer.
+> - improve mmc5633 (see patch's change log for detail)
+> - Link to v8: https://lore.kernel.org/r/20251028-i3c_ddr-v8-0-795ded2db8c2@nxp.com
+> 
+> Changes in v8:
+> - Add cleanup patch replace framework's i3c_priv_xfer with i3c_xfer
+> - Link to v7: https://lore.kernel.org/r/20251027-i3c_ddr-v7-0-866a0ff7fc46@nxp.com
+> 
+> Changes in v7:
+> - add explicit define for I3C_HDR_*
+> - add missed include files.
+> - detail see each patches' change log
+> - CONFIG_DEBUG_ATOMIC_SLEEP=y
+> - Link to v6: https://lore.kernel.org/r/20251014-i3c_ddr-v6-0-3afe49773107@nxp.com
+> 
+> Changes in v6:
+> - remove acpi part
+> - collect Conor Dooley ack tags
+> - Link to v5: https://lore.kernel.org/r/20251007-i3c_ddr-v5-0-444184f7725e@nxp.com
+> 
+> Changes in v5:
+> - Just realized missed CC mail list devicetree@vger.kernel.org and resend
+> - Link to v4: https://lore.kernel.org/r/20251007-i3c_ddr-v4-0-3afea5105775@nxp.com
+> 
+> Changes in v4:
+> - use master's hdr_cap to check HDR cap.
+> - add mmc5603 support.
+> - Link to v3: https://lore.kernel.org/r/20250930-i3c_ddr-v3-0-b627dc2ef172@nxp.com
+> 
+> Changes in v3:
+> - Add new patch for change rnw to union for svc.
+> - Detial changes see each patch's change log.
+> - Link to v2: https://lore.kernel.org/r/20250924-i3c_ddr-v2-0-682a0eb32572@nxp.com
+> 
+> Changes in v2:
+> - Add sensor driver, which use HDR mode read/write data.
+> - change priv_xfer to i3c_xfer.
+> - Link to v1: https://lore.kernel.org/r/20250129-i3c_ddr-v1-0-028a7a5d4324@nxp.com
+> 
+> ---
+> Frank Li (6):
+>       i3c: Add HDR API support
+>       i3c: Switch to use new i3c_xfer from i3c_priv_xfer
+>       i3c: master: svc: Replace bool rnw with union for HDR support
+>       i3c: master: svc: Add basic HDR mode support
+>       dt-bindings: trivial-devices: add MEMSIC 3-axis magnetometer
+>       iio: magnetometer: Add mmc5633 sensor
+> 
+>  .../devicetree/bindings/trivial-devices.yaml       |   4 +
+>  drivers/i3c/device.c                               |  27 +-
+>  drivers/i3c/internals.h                            |   6 +-
+>  drivers/i3c/master.c                               |  19 +-
+>  drivers/i3c/master/svc-i3c-master.c                | 115 +++-
+>  drivers/iio/magnetometer/Kconfig                   |  12 +
+>  drivers/iio/magnetometer/Makefile                  |   1 +
+>  drivers/iio/magnetometer/mmc5633.c                 | 598 +++++++++++++++++++++
+>  include/linux/i3c/device.h                         |  42 +-
+>  include/linux/i3c/master.h                         |   4 +
+>  10 files changed, 784 insertions(+), 44 deletions(-)
+> ---
+> base-commit: df05ef50ada6a8e2fe758adf1b8fa35eea801b2d
+> change-id: 20250129-i3c_ddr-b15488901eb8
+> 
+> Best regards,
 > --
-> 2.49.GIT
->
+> Frank Li <Frank.Li@nxp.com>
+> 
+
 
 -- 
 linux-i3c mailing list
