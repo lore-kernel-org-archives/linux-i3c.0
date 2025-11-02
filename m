@@ -4,66 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C8684CCFA02
-	for <linux-i3c@archiver.kernel.org>; Sat,  1 Nov 2025 16:25:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38CCBCCFA02
+	for <linux-i3c@archiver.kernel.org>; Sun,  2 Nov 2025 10:20:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xzkDty3NEb9usZuwwgd6X97QO376sGlo4tOtov2uS1Y=; b=DSUzjEiFsfLpgM
-	Gh0zW4hrcBVTl+yAdEnAla18tT4fQvcgWaeaCouKJchypp7NhzPj1YK0IQXtC7iIbZNHrxmJ5Pxd/
-	zXszbY8C1u+jst2PRizlUorHmUNXGn7wPZe+cL/cGOTRIbfdWXgSZqA8wt/SjRnZ6uO4NPqA5Eq8a
-	aOMb5GfX6146wZC+LJdiUMRA2uTYU8klFRr4Kd0jhrN902M6UodaTud3DlLU7FCvWBtthw1YoCcDk
-	vpePlwqP8bzGlHGaX+q7yT/n9rr4keImQFcyJHAIPdXNepy7be+UQ3bHJls4Kh+lBkoxwor/Wkwr0
-	D8kf5wACiMj7689fdfUg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=N4Z07vV42VV0jbZLxBdTP8IAcnE4UogXV6YGv5sESSQ=; b=2anuJe3x6XQkWB
+	IwFemK6nsS3p1DWV8T4ZHKgHXuVICP/95aNfOAxSvV/+oS1pufSkDSXnGt+V2XAkz6SyoVCrt8m9p
+	c45S0H+1xAlKsC0ObFL7Vc4rWR3WE0EUUmqqH+7kBFxTnAiqZs/Rr3RCYfK1WmL47/Q/5u3p5pFxn
+	+GUeA0vq1LLV/vK38JEZDtEVaWlIglkovXPfMlTk9QT+of3wh5Q9kpeAfWT3RDWWd174Ai8orn+AG
+	73G76zA0Zsbwhfn//UjZaBwwnzuop8NZZ0p9PL1DxClpw3OXxs8stqj2yRYrKW60aqs2/QWDr2kJl
+	qBkwO8YUPDb7nIF3oEhQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFEQ7-00000007vhK-1ryg;
-	Sat, 01 Nov 2025 16:25:39 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vFVCD-00000008SrR-1uoz;
+	Sun, 02 Nov 2025 10:20:25 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFEQ4-00000007vgv-30U3
+	id 1vFVCC-00000008SrK-0eEi
 	for linux-i3c@lists.infradead.org;
-	Sat, 01 Nov 2025 16:25:38 +0000
+	Sun, 02 Nov 2025 10:20:24 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 971944043E;
-	Sat,  1 Nov 2025 16:25:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BC7BBC4CEF1;
-	Sat,  1 Nov 2025 16:25:29 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 07E2460055;
+	Sun,  2 Nov 2025 10:20:22 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 91418C4CEF7;
+	Sun,  2 Nov 2025 10:20:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1762014335;
-	bh=SRbrrNLlJ5lCbs8a/4PWMzoJ6nWZ1XkxIIFLmPdvMh4=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=ND0y+nybUBovBHJJGQhF0YDfxfAQZWjjCD6xEBXDM+C2f+k06RTyJrp54kXqb+6yZ
-	 2toHnjxWY10D7gZKaO63DhrOcx3VSiZsYMbAI8RlSO6hSJrN0gsJl07GlrRTExg5Mm
-	 fzBBu15ZEew41apW9f7pH5kzZL7iObKgrvwJ/0bfyV/CARe+rKha1pHvEBltcZ/ANf
-	 7sWljTmDpl4gcDF+kYoA0ziyG4euiz0gY/CWUYU93eWJTEsYdrQy0P55tv4NqXpRlX
-	 439sQAld8HajfvUaez574QXfnUKEHq2I3evrRUGYoxGa0igT7fQU/pCFBH0rI/KLf6
-	 AmZpG7/srIDMw==
-Date: Sat, 1 Nov 2025 16:25:25 +0000
-From: Jonathan Cameron <jic23@kernel.org>
-To: Frank Li <Frank.Li@nxp.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, Miquel Raynal
- <miquel.raynal@bootlin.com>, David Lechner <dlechner@baylibre.com>, Nuno
- =?UTF-8?B?U8Oh?= <nuno.sa@analog.com>, Andy Shevchenko <andy@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, linux-i3c@lists.infradead.org,
- linux-kernel@vger.kernel.org, imx@lists.linux.dev,
- linux-iio@vger.kernel.org, joshua.yeong@starfivetech.com,
- devicetree@vger.kernel.org, linux@roeck-us.net, Carlos Song
- <carlos.song@nxp.com>, Conor Dooley <conor.dooley@microchip.com>, Adrian
- Fluturel <fluturel.adrian@gmail.com>
-Subject: Re: [PATCH v9 0/6] i3c: Add basic HDR mode support
-Message-ID: <20251101162525.44c9862b@jic23-huawei>
-In-Reply-To: <20251031-i3c_ddr-v9-0-f1e523ebaf78@nxp.com>
-References: <20251031-i3c_ddr-v9-0-f1e523ebaf78@nxp.com>
-X-Mailer: Claws Mail 4.3.1 (GTK 3.24.51; x86_64-pc-linux-gnu)
+	s=k20201202; t=1762078821;
+	bh=uMx1a1jzdRa9DPHduAtpXTqZk23q5LRqreUcRszHpT4=;
+	h=From:To:Cc:Subject:Date:From;
+	b=lL3/YZrYCN9s1ZsczQRekScth3/rnBPBjLr6fle2j8tAtaH3d9AHtQgGj1xBfl9Zf
+	 9mDg8w1ZXFk4mLZv9WdYsqlTXfxNOYG/LsB7JhqYQOqJuoBRp6m0YQc62mpcNX2FT0
+	 JGTXwFMBnw9JMxem1KQEoaYyQJDZaL6GT8dBMZjnQ+CamQy6pYdH4tZ1cUvMKKqE/p
+	 l9dJFPp57E2sgky5U2QaKhmte/pharKwqN4rjGTuW0uGVLXpHmqVi9ry/W4bosTI6j
+	 1du1Ei//Xtrccj73q7H1Vs2Qc+gWnqohyZq3sw+wiyaUgbVoVtSfL8ePc+S/hb6fgO
+	 rLDnjEN7Of7OA==
+From: Jisheng Zhang <jszhang@kernel.org>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>
+Cc: linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] i3c: dw: Add apb reset support
+Date: Sun,  2 Nov 2025 18:02:37 +0800
+Message-ID: <20251102100237.9451-1-jszhang@kernel.org>
+X-Mailer: git-send-email 2.50.0
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251101_092536_802553_D8F48931 
-X-CRM114-Status: GOOD (  17.96  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,109 +68,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, 31 Oct 2025 12:39:12 -0400
-Frank Li <Frank.Li@nxp.com> wrote:
+Add support of apb reset which is to reset the APB interface.
 
-> Add basic HDR mode support, only support private transfer, not support
-> CCC command.
-> 
-> Update i3c framework API to allow pass down mode and extend driver callback
-> function.
-> 
-> Implement HDR transfer in svc i3c master driver.
-> 
-> Simplifed HDR flow is (ref i3c spec line 5514) Figure 129
-> 
-> <--              SDR            ---> | <--- HDR
-> START 0x7E RnW(0) ACK CCC(ENTHDR0) T   HDR-CMD(00-7f write, 80--ff read)
-> 
->                                     ----> |  
-> HDR-DATA HDR-CRC HDR-RESTART .... HDR-EXIT
-> 
-> Note: HDR-CMD is 16bit data, which included 7bit slave address and 8bit
-> read/write command.
-> 
-> svc hardware can auto issue SDR part.
-> 
-> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
+---
+ drivers/i3c/master/dw-i3c-master.c | 9 +++++++++
+ drivers/i3c/master/dw-i3c-master.h | 1 +
+ 2 files changed, 10 insertions(+)
 
-Hi. Assuming everyone is happy with this version, the next question is how
-we expect to merge this. I think someone (either myself or Alexandre most likely)
-probably needs to spin an immutable branch with the i3c parts in it.
-
-Then we can merge that into both trees and I can apply the driver on top.
-
-Jonathan
-
-> ---
-> Changes in v9:
-> - remove reducated check for ops->priv_xfer.
-> - improve mmc5633 (see patch's change log for detail)
-> - Link to v8: https://lore.kernel.org/r/20251028-i3c_ddr-v8-0-795ded2db8c2@nxp.com
-> 
-> Changes in v8:
-> - Add cleanup patch replace framework's i3c_priv_xfer with i3c_xfer
-> - Link to v7: https://lore.kernel.org/r/20251027-i3c_ddr-v7-0-866a0ff7fc46@nxp.com
-> 
-> Changes in v7:
-> - add explicit define for I3C_HDR_*
-> - add missed include files.
-> - detail see each patches' change log
-> - CONFIG_DEBUG_ATOMIC_SLEEP=y
-> - Link to v6: https://lore.kernel.org/r/20251014-i3c_ddr-v6-0-3afe49773107@nxp.com
-> 
-> Changes in v6:
-> - remove acpi part
-> - collect Conor Dooley ack tags
-> - Link to v5: https://lore.kernel.org/r/20251007-i3c_ddr-v5-0-444184f7725e@nxp.com
-> 
-> Changes in v5:
-> - Just realized missed CC mail list devicetree@vger.kernel.org and resend
-> - Link to v4: https://lore.kernel.org/r/20251007-i3c_ddr-v4-0-3afea5105775@nxp.com
-> 
-> Changes in v4:
-> - use master's hdr_cap to check HDR cap.
-> - add mmc5603 support.
-> - Link to v3: https://lore.kernel.org/r/20250930-i3c_ddr-v3-0-b627dc2ef172@nxp.com
-> 
-> Changes in v3:
-> - Add new patch for change rnw to union for svc.
-> - Detial changes see each patch's change log.
-> - Link to v2: https://lore.kernel.org/r/20250924-i3c_ddr-v2-0-682a0eb32572@nxp.com
-> 
-> Changes in v2:
-> - Add sensor driver, which use HDR mode read/write data.
-> - change priv_xfer to i3c_xfer.
-> - Link to v1: https://lore.kernel.org/r/20250129-i3c_ddr-v1-0-028a7a5d4324@nxp.com
-> 
-> ---
-> Frank Li (6):
->       i3c: Add HDR API support
->       i3c: Switch to use new i3c_xfer from i3c_priv_xfer
->       i3c: master: svc: Replace bool rnw with union for HDR support
->       i3c: master: svc: Add basic HDR mode support
->       dt-bindings: trivial-devices: add MEMSIC 3-axis magnetometer
->       iio: magnetometer: Add mmc5633 sensor
-> 
->  .../devicetree/bindings/trivial-devices.yaml       |   4 +
->  drivers/i3c/device.c                               |  27 +-
->  drivers/i3c/internals.h                            |   6 +-
->  drivers/i3c/master.c                               |  19 +-
->  drivers/i3c/master/svc-i3c-master.c                | 115 +++-
->  drivers/iio/magnetometer/Kconfig                   |  12 +
->  drivers/iio/magnetometer/Makefile                  |   1 +
->  drivers/iio/magnetometer/mmc5633.c                 | 598 +++++++++++++++++++++
->  include/linux/i3c/device.h                         |  42 +-
->  include/linux/i3c/master.h                         |   4 +
->  10 files changed, 784 insertions(+), 44 deletions(-)
-> ---
-> base-commit: df05ef50ada6a8e2fe758adf1b8fa35eea801b2d
-> change-id: 20250129-i3c_ddr-b15488901eb8
-> 
-> Best regards,
-> --
-> Frank Li <Frank.Li@nxp.com>
-> 
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index 9ceedf09c3b6..ca2863d2b2b7 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -1558,7 +1558,13 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+ 	if (IS_ERR(master->core_rst))
+ 		return PTR_ERR(master->core_rst);
+ 
++	master->apb_rst = devm_reset_control_get_optional_exclusive(&pdev->dev,
++								    "apb_rst");
++	if (IS_ERR(master->apb_rst))
++		return PTR_ERR(master->apb_rst);
++
+ 	reset_control_deassert(master->core_rst);
++	reset_control_deassert(master->apb_rst);
+ 
+ 	spin_lock_init(&master->xferqueue.lock);
+ 	INIT_LIST_HEAD(&master->xferqueue.list);
+@@ -1607,6 +1613,7 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+ 
+ err_assert_rst:
+ 	reset_control_assert(master->core_rst);
++	reset_control_assert(master->apb_rst);
+ 
+ 	return ret;
+ }
+@@ -1711,6 +1718,7 @@ static int __maybe_unused dw_i3c_master_runtime_suspend(struct device *dev)
+ 	dw_i3c_master_disable(master);
+ 
+ 	reset_control_assert(master->core_rst);
++	reset_control_assert(master->apb_rst);
+ 	dw_i3c_master_disable_clks(master);
+ 	pinctrl_pm_select_sleep_state(dev);
+ 	return 0;
+@@ -1723,6 +1731,7 @@ static int __maybe_unused dw_i3c_master_runtime_resume(struct device *dev)
+ 	pinctrl_pm_select_default_state(dev);
+ 	dw_i3c_master_enable_clks(master);
+ 	reset_control_deassert(master->core_rst);
++	reset_control_deassert(master->apb_rst);
+ 
+ 	dw_i3c_master_set_intr_regs(master);
+ 	dw_i3c_master_restore_timing_regs(master);
+diff --git a/drivers/i3c/master/dw-i3c-master.h b/drivers/i3c/master/dw-i3c-master.h
+index c5cb695c16ab..a4ba60043288 100644
+--- a/drivers/i3c/master/dw-i3c-master.h
++++ b/drivers/i3c/master/dw-i3c-master.h
+@@ -37,6 +37,7 @@ struct dw_i3c_master {
+ 	struct dw_i3c_master_caps caps;
+ 	void __iomem *regs;
+ 	struct reset_control *core_rst;
++	struct reset_control *apb_rst;
+ 	struct clk *core_clk;
+ 	struct clk *pclk;
+ 	char version[5];
+-- 
+2.51.0
 
 
 -- 
