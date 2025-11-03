@@ -4,54 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38CCBCCFA02
-	for <linux-i3c@archiver.kernel.org>; Sun,  2 Nov 2025 10:20:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57BB2CCF9FE
+	for <linux-i3c@archiver.kernel.org>; Mon,  3 Nov 2025 08:03:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=N4Z07vV42VV0jbZLxBdTP8IAcnE4UogXV6YGv5sESSQ=; b=2anuJe3x6XQkWB
-	IwFemK6nsS3p1DWV8T4ZHKgHXuVICP/95aNfOAxSvV/+oS1pufSkDSXnGt+V2XAkz6SyoVCrt8m9p
-	c45S0H+1xAlKsC0ObFL7Vc4rWR3WE0EUUmqqH+7kBFxTnAiqZs/Rr3RCYfK1WmL47/Q/5u3p5pFxn
-	+GUeA0vq1LLV/vK38JEZDtEVaWlIglkovXPfMlTk9QT+of3wh5Q9kpeAfWT3RDWWd174Ai8orn+AG
-	73G76zA0Zsbwhfn//UjZaBwwnzuop8NZZ0p9PL1DxClpw3OXxs8stqj2yRYrKW60aqs2/QWDr2kJl
-	qBkwO8YUPDb7nIF3oEhQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dddRLuCd8KZVnatmxkKLCsaozYsefcsl7Z8ew5edjhU=; b=32OKSjC9w5jidZ
+	7keWG0YzU71yb9BgpSRtI1lyA6ObDLCxSZxtyeWhLQxAqLqUbnp5cEScwA3+jekdgLGUoK8YbnXp3
+	ZWha021hddQhBRtYJwdLR3UsqSdbZIuBFfW7cJ0n6VV9u9xP54vx5z6LRFrcLt9OcI5QA4yFL5SdF
+	iUEg9QwhyxE1dYCu9yOtIXw9bGnZuyxTc9iV5otctTt1c3dGzAH8wpOI3+Lyn1+dI6remLlq5rZQf
+	6iT/ZZ3Y6XcXGsB6eKgmhkbQlEYGaPcN9qrBHEcavLV1EppxhaTpC7WotzLJum4hjwmdQW17WpsPJ
+	IFagv4Pl6rUdA1UlUjog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFVCD-00000008SrR-1uoz;
-	Sun, 02 Nov 2025 10:20:25 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vFpXf-00000009PId-0PAP;
+	Mon, 03 Nov 2025 08:03:55 +0000
+Received: from mgamail.intel.com ([198.175.65.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vFVCC-00000008SrK-0eEi
+	id 1vFpXc-00000009PHk-1kC2
 	for linux-i3c@lists.infradead.org;
-	Sun, 02 Nov 2025 10:20:24 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 07E2460055;
-	Sun,  2 Nov 2025 10:20:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 91418C4CEF7;
-	Sun,  2 Nov 2025 10:20:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1762078821;
-	bh=uMx1a1jzdRa9DPHduAtpXTqZk23q5LRqreUcRszHpT4=;
-	h=From:To:Cc:Subject:Date:From;
-	b=lL3/YZrYCN9s1ZsczQRekScth3/rnBPBjLr6fle2j8tAtaH3d9AHtQgGj1xBfl9Zf
-	 9mDg8w1ZXFk4mLZv9WdYsqlTXfxNOYG/LsB7JhqYQOqJuoBRp6m0YQc62mpcNX2FT0
-	 JGTXwFMBnw9JMxem1KQEoaYyQJDZaL6GT8dBMZjnQ+CamQy6pYdH4tZ1cUvMKKqE/p
-	 l9dJFPp57E2sgky5U2QaKhmte/pharKwqN4rjGTuW0uGVLXpHmqVi9ry/W4bosTI6j
-	 1du1Ei//Xtrccj73q7H1Vs2Qc+gWnqohyZq3sw+wiyaUgbVoVtSfL8ePc+S/hb6fgO
-	 rLDnjEN7Of7OA==
-From: Jisheng Zhang <jszhang@kernel.org>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>
-Cc: linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH] i3c: dw: Add apb reset support
-Date: Sun,  2 Nov 2025 18:02:37 +0800
-Message-ID: <20251102100237.9451-1-jszhang@kernel.org>
-X-Mailer: git-send-email 2.50.0
+	Mon, 03 Nov 2025 08:03:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1762157032; x=1793693032;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=5pXyRXIxVt0Iau8mWou9oXadjFJmaZdgpbKlkoLVbSU=;
+  b=DLzwhkf6JVtn5aygnbhHB9zYbfO9dnSoPkNSp1SpCq4UGOTRGGCPwhGH
+   U2ux0/j0ZbeBeaOv3AdzrxHACPQP65Vwsxq+CZhR6l0QkHoHTzicNrhXR
+   shg3KEjxQ6cuSwt8em6lMjP9nt1sbLhx3SchVWNi0m3no/95/y5zsAqey
+   bn6O2BFEt0KWmd5ugh7mpZWFy9zWlyh0nifVBezZfupI0/VURnXo5z1S8
+   Ok+YdKx8t9xue71f8yLwPfjTVBHP5+EydkDgOodmgCd0oDrx6LrASTTvK
+   riiEeWGsS6MDPj/Qrm4/CTpeAJfQQEyIkRP/KktXa1+yldfeoi9CjZGl9
+   A==;
+X-CSE-ConnectionGUID: RNK2AMMuQsemBTUi8XYWEQ==
+X-CSE-MsgGUID: e+W7vTh3Q2G+6EKQUZrIEA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11601"; a="64114199"
+X-IronPort-AV: E=Sophos;i="6.19,275,1754982000"; 
+   d="scan'208";a="64114199"
+Received: from orviesa006.jf.intel.com ([10.64.159.146])
+  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Nov 2025 00:03:51 -0800
+X-CSE-ConnectionGUID: W2KynLE4QPibqsxiZlCTFg==
+X-CSE-MsgGUID: x44oWC41SpWrm2y4Xsghpg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.19,275,1754982000"; 
+   d="scan'208";a="186042022"
+Received: from smoehrl-linux.amr.corp.intel.com (HELO ashevche-desk.local) ([10.124.220.216])
+  by orviesa006-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Nov 2025 00:03:47 -0800
+Received: from andy by ashevche-desk.local with local (Exim 4.98.2)
+	(envelope-from <andriy.shevchenko@intel.com>)
+	id 1vFpXQ-000000055GF-3PTd;
+	Mon, 03 Nov 2025 10:03:40 +0200
+Date: Mon, 3 Nov 2025 10:03:39 +0200
+From: Andy Shevchenko <andriy.shevchenko@intel.com>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
+	Jonathan Cameron <jic23@kernel.org>,
+	David Lechner <dlechner@baylibre.com>,
+	Nuno =?iso-8859-1?Q?S=E1?= <nuno.sa@analog.com>,
+	Andy Shevchenko <andy@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+	linux-iio@vger.kernel.org, joshua.yeong@starfivetech.com,
+	devicetree@vger.kernel.org, linux@roeck-us.net,
+	Carlos Song <carlos.song@nxp.com>
+Subject: Re: [PATCH v9 4/6] i3c: master: svc: Add basic HDR mode support
+Message-ID: <aQhh2zZVxh1oVuJz@smile.fi.intel.com>
+References: <20251031-i3c_ddr-v9-0-f1e523ebaf78@nxp.com>
+ <20251031-i3c_ddr-v9-4-f1e523ebaf78@nxp.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20251031-i3c_ddr-v9-4-f1e523ebaf78@nxp.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
+ krs, Bertel Jungin Aukio 5, 02600 Espoo
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251103_000352_496084_20F38F3C 
+X-CRM114-Status: GOOD (  19.03  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -68,70 +101,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add support of apb reset which is to reset the APB interface.
+On Fri, Oct 31, 2025 at 12:39:16PM -0400, Frank Li wrote:
+> Add basic HDR mode support for the svs I3C master driver.
+> 
+> Only support for private transfers and does not support sending CCC
+> commands in HDR mode.
+> 
+> Key differences:
+> - HDR uses commands (0x00-0x7F for write, 0x80-0xFF for read) to
+> distinguish transfer direction.
+> - HDR read/write commands must be written to FIFO before issuing the I3C
+> address command. The hardware automatically sends the standard CCC command
+> to enter HDR mode.
+> - HDR exit pattern must be sent instead of send a stop after transfer
+> completion.
+> - Read/write data size must be an even number.
 
-Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
----
- drivers/i3c/master/dw-i3c-master.c | 9 +++++++++
- drivers/i3c/master/dw-i3c-master.h | 1 +
- 2 files changed, 10 insertions(+)
+...
 
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index 9ceedf09c3b6..ca2863d2b2b7 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -1558,7 +1558,13 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
- 	if (IS_ERR(master->core_rst))
- 		return PTR_ERR(master->core_rst);
- 
-+	master->apb_rst = devm_reset_control_get_optional_exclusive(&pdev->dev,
-+								    "apb_rst");
-+	if (IS_ERR(master->apb_rst))
-+		return PTR_ERR(master->apb_rst);
-+
- 	reset_control_deassert(master->core_rst);
-+	reset_control_deassert(master->apb_rst);
- 
- 	spin_lock_init(&master->xferqueue.lock);
- 	INIT_LIST_HEAD(&master->xferqueue.list);
-@@ -1607,6 +1613,7 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
- 
- err_assert_rst:
- 	reset_control_assert(master->core_rst);
-+	reset_control_assert(master->apb_rst);
- 
- 	return ret;
- }
-@@ -1711,6 +1718,7 @@ static int __maybe_unused dw_i3c_master_runtime_suspend(struct device *dev)
- 	dw_i3c_master_disable(master);
- 
- 	reset_control_assert(master->core_rst);
-+	reset_control_assert(master->apb_rst);
- 	dw_i3c_master_disable_clks(master);
- 	pinctrl_pm_select_sleep_state(dev);
- 	return 0;
-@@ -1723,6 +1731,7 @@ static int __maybe_unused dw_i3c_master_runtime_resume(struct device *dev)
- 	pinctrl_pm_select_default_state(dev);
- 	dw_i3c_master_enable_clks(master);
- 	reset_control_deassert(master->core_rst);
-+	reset_control_deassert(master->apb_rst);
- 
- 	dw_i3c_master_set_intr_regs(master);
- 	dw_i3c_master_restore_timing_regs(master);
-diff --git a/drivers/i3c/master/dw-i3c-master.h b/drivers/i3c/master/dw-i3c-master.h
-index c5cb695c16ab..a4ba60043288 100644
---- a/drivers/i3c/master/dw-i3c-master.h
-+++ b/drivers/i3c/master/dw-i3c-master.h
-@@ -37,6 +37,7 @@ struct dw_i3c_master {
- 	struct dw_i3c_master_caps caps;
- 	void __iomem *regs;
- 	struct reset_control *core_rst;
-+	struct reset_control *apb_rst;
- 	struct clk *core_clk;
- 	struct clk *pclk;
- 	char version[5];
+>  static bool svc_cmd_is_read(u32 rnw_cmd, u32 type)
+>  {
+> -	return rnw_cmd;
+> +	return (type == SVC_I3C_MCTRL_TYPE_DDR) ? !!(rnw_cmd & 0x80) : rnw_cmd;
+
+This seems confusing. Either !! is redundant (which is actually the case) or
+I don't know what the idea behind this.
+
+> +}
+
+...
+
+> +static void svc_i3c_master_emit_force_exit(struct svc_i3c_master *master)
+> +{
+> +	u32 reg;
+> +
+> +	writel(SVC_I3C_MCTRL_REQUEST_FORCE_EXIT, master->regs + SVC_I3C_MCTRL);
+> +
+> +	/*
+> +	 * Not need check error here because it is never happen at hardware. IP
+
+If you move 'IP' to the next line it will be better to read.
+
+> +	 * just wait for few fclk cycle to complete DDR exit pattern. Even
+> +	 * though fclk stop, timeout happen here, the whole data actually
+> +	 * already finish transfer. The next command will be timeout because
+> +	 * wrong hardware state.
+> +	 */
+> +	readl_poll_timeout_atomic(master->regs + SVC_I3C_MSTATUS, reg,
+> +				  SVC_I3C_MSTATUS_MCTRLDONE(reg), 0, 1000);
+> +
+> +	/*
+> +	 * This delay is necessary after the emission of a stop, otherwise eg.
+> +	 * repeating IBIs do not get detected. There is a note in the manual
+> +	 * about it, stating that the stop condition might not be settled
+> +	 * correctly if a start condition follows too rapidly.
+> +	 */
+> +	udelay(1);
+>  }
+
 -- 
-2.51.0
+With Best Regards,
+Andy Shevchenko
+
 
 
 -- 
