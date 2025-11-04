@@ -4,153 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A0CBCCFA00
-	for <linux-i3c@archiver.kernel.org>; Tue,  4 Nov 2025 08:53:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4B7D4CCF9E3
+	for <linux-i3c@archiver.kernel.org>; Tue,  4 Nov 2025 09:03:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zgzdktRN/dBCdOYEm5r+PW89Tly2ZXWZa9hGpktswTs=; b=IHe2+wAns84bxZ
-	PCg8Y34cOCCv1WGv03utsWnpcr3VcwqFRmR5VeTuJHxsbBy1J/xUSLHLgPWUqZrVaXp7QcsIq4ktd
-	DIsc9ZPWcvGrSMG5FS3XUmORUB+M+CA4x7SwNPCciyX30+MR9rwIvQ2qv+SBp2qIbqN+4ggxO0pme
-	YjVVHcQLv/uQHctyO/A1yirQdcn+jDy9K4C47LWfQpfVlPjQMb7zPxgEMF2UPIK+M0z8ZqCG8e6Yw
-	xOPOxX6zaaUQaJ9OlxPlpx/lLE272/d65VW36AFtXGZrqrAhGmXfrZOga/lEH6TGX3w0QlFzO4bLt
-	ssVRbi/QBMoYbaPQt5tQ==;
+	List-Owner; bh=hReIU0zRB+SH2spDVVnBp2ZsaEHhA1yycyoSTNUI5sg=; b=F2tZLw7ICQ0/+6
+	lDI8b6LjVQJoPb/LPoLJuPzKfHc2nSrA7bTXLmJGeUZ412vNbmHT2c4+P5ma+7rQtdemnfPEHFS7i
+	dW7C8rOHQJc18sjR6V/AFOg84AxWMBvmpccRkT7bB4SkteGgrO8rE+GjUr5YXBrIs8OC/pwHG9Nuc
+	iUYMynbVNEUSgQ3U/zzH4gjdftCyDwFFwG0SpgQKUJjapwQCA0tnYKIGhXn/WbPq3uu8v6LvluRfK
+	5mtA5qPKerlSqFo3alffD629T7iS9Ts2pzfJS3jJDeWCcUjfihCHVpIRCMI+hBLrQdBpcsKbFo5gh
+	vyjmk2If6KJWo58wcyaA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGCnZ-0000000BTQp-0Wbo;
-	Tue, 04 Nov 2025 08:53:53 +0000
-Received: from mail-westcentralusazon11013039.outbound.protection.outlook.com ([40.93.201.39] helo=CY3PR05CU001.outbound.protection.outlook.com)
+	id 1vGCwP-0000000BUwd-0E1B;
+	Tue, 04 Nov 2025 09:03:01 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGCnW-0000000BTPy-0Ep6
+	id 1vGCwM-0000000BUvY-0aK9
 	for linux-i3c@lists.infradead.org;
-	Tue, 04 Nov 2025 08:53:51 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=WUpEzdXXUUkuc9bSBc8BMIQVHDmmTVqyPWf74QeIlIMSFvnwURRUUSHOlqRm6Cbjy0J2DiX+MSd4nTqFuRBj/Pl5zhkdbXjJG6nxNerIfYjszz0WStqG2MBlpRObyLcWAycEGdVMALnizSG4AdxTffKWbFwNKZ6bnwqdFAJg4OUgxgVuYZ4t0GkazMqLEI6UKVAsCMfBd64XsuGMdVAU6SEZjn1zLMny4ZdT2O3WVUNTANL19/VUYCB+AZh5vUb9bpy4zaBdetJhm0G9VRcbtS1vrHXNUUd0afKRoLsxOL8cSfWdguvCKl2QTDY9tRQmseyxTS8uqM99FzfJK+/JWA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=es1x9w82UiH3pPjPmTe2t6cV5XswLwV0YfJPLt8Se/g=;
- b=PeGNkopKTF13M3nJhh+mlhZJx24z65FGfSg72E3LJxtpiqID67NV0ZuycK4pdVztmXzcWxbk32sI0Y7TAyGe9eqYEtrNXmpYYqRk+F4wDgbV2k/F+RYgKppg+0k9nq3leEBZppTjjlc8E4jQp8Mr0qK8Gj4eNi6XVCjyaNMqTjXQktnOLZQ74BHRwUHHxgo9RAW4WTPGVKtTRNccnZR+im7PkZHskZclOK3EYeaXy1wl/tMiCWO2beMzNSIbZ/7Qpbm8+mxifyBHtwpcu9kofA7s6M8YSKjS/YlseZsdUTdCIZ99MLlYIGVOKxxgnfZh90pZQp63c6eDXVMFzY7MTw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=altera.com; dmarc=pass action=none header.from=altera.com;
- dkim=pass header.d=altera.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=altera.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=es1x9w82UiH3pPjPmTe2t6cV5XswLwV0YfJPLt8Se/g=;
- b=Cxw6isrPeU0ooJsfckt+p8pponFL7ghNS2QVRe8m5YZIo7FrUP9VeqruXLDUnxJd8ecV6NPUrc6Eln5seN3K5ys1jMBZbprbZCr7uYJvvBOJhJCpOKar6a0oUHmcy1ekY6Ec+M532xORb8a65yUkwEA4cm0ukhHYd7D+rXbC2Odwms3wAJEBf24UhfGa/CJcVIMX9N+pYU+JGFRkLyBStCBzIg26bkl101moeOTeXuiWXUfzR+LCDDkjC4eY056ySlZYkcS7LXhnlYIYUo64jUqxOmJjM43FbxIh7nCf+pYV7phqZoCesEOEW9K7IKMmIpRQaaSEsjHy1eNTm390IQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=altera.com;
-Received: from DM8PR03MB6230.namprd03.prod.outlook.com (2603:10b6:8:3c::13) by
- DM6PR03MB5164.namprd03.prod.outlook.com (2603:10b6:5:247::9) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.9275.16; Tue, 4 Nov 2025 08:53:45 +0000
-Received: from DM8PR03MB6230.namprd03.prod.outlook.com
- ([fe80::abad:9d80:7a13:9542]) by DM8PR03MB6230.namprd03.prod.outlook.com
- ([fe80::abad:9d80:7a13:9542%3]) with mapi id 15.20.9275.013; Tue, 4 Nov 2025
- 08:53:45 +0000
-From: adrianhoyin.ng@altera.com
-To: alexandre.belloni@bootlin.com,
-	Frank.Li@nxp.com,
-	wsa+renesas@sang-engineering.com,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	dinguyen@kernel.org,
-	linux-i3c@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Cc: adrianhoyin.ng@altera.com
-Subject: [PATCH 4/4] i3c: dw: Preserve DAT entry bits when restoring addresses
-Date: Tue,  4 Nov 2025 16:51:11 +0800
-Message-ID: <92deba7e5a210fdb7d525aa898210c2a6b7b405c.1762245890.git.adrianhoyin.ng@altera.com>
-X-Mailer: git-send-email 2.49.GIT
-In-Reply-To: <cover.1762245890.git.adrianhoyin.ng@altera.com>
-References: <cover.1762245890.git.adrianhoyin.ng@altera.com>
-X-ClientProxiedBy: KUZPR03CA0028.apcprd03.prod.outlook.com
- (2603:1096:d10:24::8) To DM8PR03MB6230.namprd03.prod.outlook.com
- (2603:10b6:8:3c::13)
+	Tue, 04 Nov 2025 09:02:59 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id D443043E9B;
+	Tue,  4 Nov 2025 09:02:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3DD84C4CEF8;
+	Tue,  4 Nov 2025 09:02:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1762246977;
+	bh=53Mc+ibSoFToGMkfZP2uwXEi9OqWETP+e71l+jDdWUw=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=CulIV939gkzyzFiPHxofOW1bPcLtp00z0QADfNDB4vtUBllfts1IgvSwodljMtWPj
+	 mAeBmggy2DJuztXJslIWnRRkZXjm21icVn0+yIW6LCPBb/IOHibS9YamaEZxM66Qkw
+	 mR+nwUHBR862SVrA8LDeg5N2hNMGkqp8HGOdewXdmi/GBuf2qM6xbIjIEgIUgZUiUH
+	 mIfzwXRBWuJ/PQcTtUrRQuy8r18xif3jnCKNI8gV/Vk7xzlXN7uVnNL/2SW4vQrcgR
+	 TghvdlA0Yv28rfFH73XQkDB3nxFsL58sePOcTVuvmiursvPVvpg1oZpSkn463iRmsQ
+	 p+MHBu8+kYhIQ==
+Message-ID: <b11f90b0-cc1c-4372-b71a-30d34fe0be8c@kernel.org>
+Date: Tue, 4 Nov 2025 10:02:53 +0100
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DM8PR03MB6230:EE_|DM6PR03MB5164:EE_
-X-MS-Office365-Filtering-Correlation-Id: 3fc7ccf8-e2a5-404f-ab8e-08de1b7fa965
-X-MS-Exchange-AtpMessageProperties: SA
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|376014|7416014|1800799024|921020;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?yd0nHYbUDOhGsfRBwBwYJqnLg8tr+AqtGzmUyXwfqfhVppa4mlvOzvUu4HHh?=
- =?us-ascii?Q?FVltBBqUaTxH2I2fzseNUKLN0I+QgLT6P1DBSMnv3g4zPgPm+40L88sU2Fel?=
- =?us-ascii?Q?r1G1gyNNSVzaQ0uLmFDFBxKvVShFI8Xp2rcKg3FIZNKvdEzEshRPj58gRx7z?=
- =?us-ascii?Q?dWwYVLRGzYi6GrrJgtp3Xwos7Fh4yIsaKp5IBAFpcx5fbb0hJO3/Wd4CD1y2?=
- =?us-ascii?Q?UPRvIrbqBj0Xc9C07df/jeEIJBuJjTc6/szzRO2x2ZyjeuWQRNt9wtz86Yf1?=
- =?us-ascii?Q?BBnIyhU+2ZSoDIV5tckKQXIJXdj+3Yd40Pe6ozzUOm1fNxBuinYapkrjH3Iv?=
- =?us-ascii?Q?LMKEDNZTH4VNBgS2mxSFU6lPA26/gNQTa0eGWk7c1gPmALfxqh9AWSm0JEXU?=
- =?us-ascii?Q?4McFts2re714r36TN8nDQQqx96EOciDn11rSkUFW8BJNZkzXz22oUkyg5bAb?=
- =?us-ascii?Q?UWILxbTykvJISxj7/9dMMSCyvB/9FVsOw1sBkZQFjCW0jvaCln2be3IcYqqK?=
- =?us-ascii?Q?lmNHHRL3snz7SCpXy7p+masbr6P0Go4cuX4bL0tv/m/op+d+3twBwO0d4dmL?=
- =?us-ascii?Q?NRIqXyAkbhyh7821wzp9ThBt0iQlEFGKbfzidYHPTNjISmsM4Xk11dVOv4QZ?=
- =?us-ascii?Q?iTyyVnT1hljBjsRB9s97zTTI+d4CQKD+Y/i0/Qf6NjlwGeiuOZ/7We85wh2R?=
- =?us-ascii?Q?FO4xNkCVs5s3D0zE/71LedTgdN6qx+qkBxQPBOvyEZDslHRt1ZKJPqL52/Lh?=
- =?us-ascii?Q?HylYlEi8dFrPYAuux6F95IHayp/NZctldJlqbyvHu4koSQFYVt7ACPXaseTa?=
- =?us-ascii?Q?6tKpcKRwcKwNiDpbyby3KAx8ZyRW+IdlEvYWeIkE8Y3K5vnUwZGQ8415CjbL?=
- =?us-ascii?Q?UUuXBkloGabYsd61eygFZPDS0ECAsIRbbCDYLBCQw3HY32gkXQYS7MPnbQ3t?=
- =?us-ascii?Q?44v1rrkrKN/tY/3DQ2+g5JHfeunbAEbp+r9PkBGljvrMX+OSF7VAlPqeUVX9?=
- =?us-ascii?Q?f0mPxI9QYfv/QzapmJmuvbGPKfDyAHbsR5HceLpcCC9Y+ktxum82j7H77446?=
- =?us-ascii?Q?FEsen87AptvAw5hwn34FyHHflBGbiHk6GfFX6owlKtfjllPIxCV97CL3AJ3l?=
- =?us-ascii?Q?Q9Oy2yrc4U3IgNiYD11WdJ09e3A2JvBZYPDKY8lSaZl9ZW2H3a6dj75H/CJi?=
- =?us-ascii?Q?X/XZH5g8skAr566lhQPGL/3O2nQ07HPVENxi1pmiMT8U1pY38UItNcGk1yRd?=
- =?us-ascii?Q?fB7Rv9XxxdYmf5B4sdbP7Vb8iEm8Til2ZXAyv+yVouhRx2xEFf26MXmZGjBa?=
- =?us-ascii?Q?Yh2a4QUsqGn6DLChSlokAfi+hEnZSFjQKFTSGsYO6o93s+lr7VfTiBhxVzuo?=
- =?us-ascii?Q?JmBqDVNy/sGPCwIc366klY7tRE2B1lfOleXWwYudKqRDcjPEQs+4SKcaaoio?=
- =?us-ascii?Q?ZoeUf1yZ4q3UuFVmIqEaK8WMsJ027ILbmFgLG3WpPa0Mn5peNpR086B9x/8x?=
- =?us-ascii?Q?IVqqnqfFDPx/heM=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DM8PR03MB6230.namprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(7416014)(1800799024)(921020);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?E+ro/BkZ1h9AegfaaawveGaZdG/LnQ3C5fht9zisCwIN/4ri+XvpCD5+5GXX?=
- =?us-ascii?Q?+xuQAPDMr2IlZGccAksHvcRzVLJ8MJFiNvqaa3pUb9EohFDi1aOnEEv/79dW?=
- =?us-ascii?Q?dXOrNUJHtUmEFpsGoNvOOuL0ngF0MhHZngntyXX8a5tiUxmxvB7klOKGtqIz?=
- =?us-ascii?Q?JIx1prEBtk7IWtpylSxEFOAjGe37jGWXY7jLn80JhDaUGbuuYZHfynplMWCi?=
- =?us-ascii?Q?yrJ5D+aXxWUCAGEjfWvyngOs9BF+wQIacnfhf83/0YzAcZuZr4O+foSmWqNL?=
- =?us-ascii?Q?C2jFW/57vLCw0lCUwvslKxqqkwI24wIO5wklwmr4O4t140km/1bTL1F9/Him?=
- =?us-ascii?Q?4FCXzF+dVlkGpRAvxN04J7ywe1M0dmKTE/8HsnwWhenls5jxoRSxZdH8qhmH?=
- =?us-ascii?Q?0J1TsikGw1InjtOSlF5X/6rQ8XZ1yCvM6yxByqvAs7Sz5Q6IaOl37h3nOCjx?=
- =?us-ascii?Q?2zFZfAvBvM9zuoBNjAbEVuHnTrAm4hKd2hQv/w79KJDIsnU3n0d35+t26CmJ?=
- =?us-ascii?Q?/wuhuN8SJmYJ8CLG9KKKhEKGpqerS8vQ4K+VolV314fOMUrxzjUVFdnJ5Y4S?=
- =?us-ascii?Q?CtGlhJLea4lJbvT6xbqj+KE4sHB83JwvfKFWYv+K8Nceb/SuE/cuQBHEx2FS?=
- =?us-ascii?Q?W1g75tBuT4brur9VaEKXXt1umJIHEc4IxBimoMcFVSgG/h5BCBPDnmfFFh35?=
- =?us-ascii?Q?15jj47nL4ot3ed12lFvlAP50bHoI1sA3YJ3dLQP/TvDc7Qsox6M1Yk9HIAcU?=
- =?us-ascii?Q?G7+qstEowAT3/L65cM5WTX5G0yRoPFkH4jlKkvWKCOrn26HC9PPVdJIt4oaB?=
- =?us-ascii?Q?FJ6g74HUOVokjSCqPAYpIIFAG9z7rGRerkVhKNDBiK3BHb/DOYjBvuZUa0Qz?=
- =?us-ascii?Q?FJm7RRlmt7hyIId0mvC/yfRzKyMrtPfCefZL4GMPHmrcF3En3aaZIyBbkL/u?=
- =?us-ascii?Q?GPn+mlPHseXi2JQU03ExPPKUgKI8vJeaL8u9r6PNGQ1EtUHPWMnYz9qY06BU?=
- =?us-ascii?Q?8bqNNt1IZR0DYbUivmzYWe0c4xE7d19CcC8rccNancR+g7l9MV6+rWu3yOLe?=
- =?us-ascii?Q?fH9szfowP1+bGex+EsMlcX4YU5L4noq8Z4KB01qo3/s6gUNIkcqHEqeD3Uvx?=
- =?us-ascii?Q?8gZo3FBzikvsvIBMJSnacMjL3abf0eKJ35ZtFtHB/pPm1Vf23UEegGeisOuD?=
- =?us-ascii?Q?byozz+ANhOBwIHhfcFUc739TTxO4DBIMGnRUOzr8SAqqdChQ3xZ714nhc357?=
- =?us-ascii?Q?vfqsmaf9tOqqd3zgHlQjSfJHOp68Ng7tqS/G1rDRvGvUcaQBqBN/Png92JqO?=
- =?us-ascii?Q?oaBMawpKy7CrwXP6rcvtPnNCyKw3r35qpixNemV3kTpZs8bfDQyCoYpkZy8T?=
- =?us-ascii?Q?quOzejWGLGw4Veu1eo/svpCMrLmI0pYCc7X86AUXuLQAx9ZYB9aY4jmlbhyY?=
- =?us-ascii?Q?Lwb9IeNAzLeD66LEm40dzzM+7Eirn3sG+D84Knb6Uyag/4H7ML3XWGOYNC4j?=
- =?us-ascii?Q?gusGHVRY9Fhgqk/PHPP7PIIDT7Bv2KidQ7p2nczNAlx6QNJa/vz2EB8z7CNR?=
- =?us-ascii?Q?VB8fEwyKpVFUHoDwblDnuqw5ZaasoqeE+2OCBjWilQNesYfjR+jG3iMXSVx3?=
- =?us-ascii?Q?GQ=3D=3D?=
-X-OriginatorOrg: altera.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3fc7ccf8-e2a5-404f-ab8e-08de1b7fa965
-X-MS-Exchange-CrossTenant-AuthSource: DM8PR03MB6230.namprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Nov 2025 08:53:45.3093
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: fbd72e03-d4a5-4110-adce-614d51f2077a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: t9CVM3b9o6mCb5btMOj0OcvAMouI4QyG0khqNVjCvDuAMdbVpuH5jogsSPsOW6obK65o3zKaI6+2hhSs+FyykQsvSorSBQItYyQCUYUUU0E=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR03MB5164
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 1/4] dt-bindings: i3c: Add snps,dev-nack-retry-cnt
+ property to Synopsys I3C master
+To: adrianhoyin.ng@altera.com, alexandre.belloni@bootlin.com,
+ Frank.Li@nxp.com, wsa+renesas@sang-engineering.com, robh@kernel.org,
+ krzk+dt@kernel.org, conor+dt@kernel.org, dinguyen@kernel.org,
+ linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <cover.1762245890.git.adrianhoyin.ng@altera.com>
+ <9c16c22f67858e24fe7c3a7184537cb5c2c1a85c.1762245890.git.adrianhoyin.ng@altera.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <9c16c22f67858e24fe7c3a7184537cb5c2c1a85c.1762245890.git.adrianhoyin.ng@altera.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251104_005350_099840_424F984D 
-X-CRM114-Status: UNSURE (   8.37  )
+X-CRM114-CacheID: sfid-20251104_010258_224393_C2D7EDCB 
+X-CRM114-Status: UNSURE (   7.96  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -168,40 +121,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>
+On 04/11/2025 09:51, adrianhoyin.ng@altera.com wrote:
+> From: Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>
+> 
+> Add a new optional property 'snps,dev-nack-retry-cnt' to the Synopsys
+> DesignWare I3C master device tree binding. This property allows
+> configuration of the Device NACK Retry count, which determines how many
+> times the controller retries a transaction when a slave device responds
+> with NACK.
+> 
+> Valid values range from 0 to 3, with a default of 0
 
-Update dw_i3c_master_restore_addrs() to preserve existing bits in each
-Device Address Table (DAT) entry when restoring addresses. This prevents
-overwriting configuration bits during PM runtime resumes.
+Don't explain us the binding. We can read the source code. You miss
+rationale what hardware aspect you are solving, why we should accept this.
 
-Signed-off-by: Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>
----
- drivers/i3c/master/dw-i3c-master.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+> 
+> Signed-off-by: Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>
 
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index 12ee4c4afedf..0a9f10677360 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -1688,11 +1688,13 @@ static void dw_i3c_master_restore_addrs(struct dw_i3c_master *master)
- 		if (master->free_pos & BIT(pos))
- 			continue;
- 
-+		reg_val = readl(master->regs + DEV_ADDR_TABLE_LOC(master->datstartaddr, pos));
-+
- 		if (master->devs[pos].is_i2c_addr)
--			reg_val = DEV_ADDR_TABLE_LEGACY_I2C_DEV |
-+			reg_val |= DEV_ADDR_TABLE_LEGACY_I2C_DEV |
- 			       DEV_ADDR_TABLE_STATIC_ADDR(master->devs[pos].addr);
- 		else
--			reg_val = DEV_ADDR_TABLE_DYNAMIC_ADDR(master->devs[pos].addr);
-+			reg_val |= DEV_ADDR_TABLE_DYNAMIC_ADDR(master->devs[pos].addr);
- 
- 		writel(reg_val, master->regs + DEV_ADDR_TABLE_LOC(master->datstartaddr, pos));
- 	}
--- 
-2.49.GIT
+No, because:
+1. Not a board property,
+2. Most likely deducible from the compatible,
 
+
+Best regards,
+Krzysztof
 
 -- 
 linux-i3c mailing list
