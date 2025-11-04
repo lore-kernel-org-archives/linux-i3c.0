@@ -4,147 +4,88 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4BC6CCF9E3
-	for <linux-i3c@archiver.kernel.org>; Tue,  4 Nov 2025 16:56:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6D61CCF9E3
+	for <linux-i3c@archiver.kernel.org>; Tue,  4 Nov 2025 17:07:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UL3uDnY/E6ZksniwHYZHC4Obpyk40/R6l2TbuYkZVoI=; b=BItCc5m0jMD/6S
-	zcCOJhpwZ1b8KeMGv1bj5ixrXiiNmb09KP8j2euX5prfk4I+KriO/5PC0ovUe/Bie0irmo32bBLgm
-	1XDglq1ChPUA4MG/GaOWD7TH2vFiyZvNHGpFCP483AQyQa3BqYwcVCXGQcSg/3QFEQFkhUiMu1Okt
-	DnhxhNPpWi7+RVH3wZujMaFOmKam2mNKg3i41xrEgwqCY7p/LBo7ay4DzufivHkbRWpYEgrLCnBsv
-	q5pZddxp2rbEGZouKD3VFlAVlb283ySg9snqnwvNB56H9K7DJ8WvwUt8HmoAo5SZ3Dv9i6dyY21us
-	EssyxZjIlBcVF1lzkt+Q==;
+	List-Owner; bh=afGFT6gAWPcylcYXp3yd4IlVGtaHFG7J0mEk1LQtrSU=; b=hUtp5sB7a1SC4B
+	Zbp4PFx5I/lRgSwF9U9gxG4q1Scgr0cueLl7/XPH+PwBsLeppW9k/mqGHuOTl+XwMW8r4ZEblb8oX
+	Yv5EFO7VmWGilyy3gI46LR7DP9aDiA32qOAcAaZ9al3n+/0cravfktz2T11aX/CuglHfdZCbQM1EG
+	OZiw/NiQnv59Gj9KdpPrqC8evzXqFlMJR97XvqvqYLvWHttfGYE3/UGkgfoq44NyGIqDAMHRs2UqZ
+	94lxJDlvVxAz9qU7iBXKmQTOUzFqZg1SrcELHNIfzMreyvpGnBRktTDmHAGjuZhdPqli1UxQladIR
+	htkWW1Og38rEOTqx/5bw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGKL0-0000000CEWm-2c2R;
-	Tue, 04 Nov 2025 16:56:54 +0000
-Received: from mail-swedencentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c202::7] helo=GVXPR05CU001.outbound.protection.outlook.com)
+	id 1vGKVN-0000000CFRT-1lco;
+	Tue, 04 Nov 2025 17:07:37 +0000
+Received: from mgamail.intel.com ([192.198.163.16])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vGKKx-0000000CEWH-0hbp
+	id 1vGKVJ-0000000CFQw-2WaF
 	for linux-i3c@lists.infradead.org;
-	Tue, 04 Nov 2025 16:56:52 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=jWlrJl1tgF9oDQFgO5Sq+JxwOp3Mji6z4xu6V4Yj4QyFRtNv15OZ3HqmXjmKV4ZzEbNBLkIoDvAXAA+xJErXtlO236hosQzlRLo8pkQ7dhwsA2WwvfK3JjjS0fd3XuYpzU8ebjlqBCgVliZNzW3e2XsF25M6YAL2kfLqKg6WrTTK6enE/xlOH0PjoJA/S6ae702DUa6OC0HgwCSipOGlukXt0GNd090nB7TkQ/N8hzwxazGWgY9NsNSu9ibYqhL9yU1z30f01Ok4T8d7aANvq00lmZ00LK0g7SAGCk5/1rVFdXKM3+bYgvDnD09ijcygw+Nq4ACnyBzAvA+SUlUL4Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=57WWz5SjlvNCwVzjvHZK51P97K4LcVGbsvVLPzQ9D9k=;
- b=x9mMMxWiDraLeNDWKKd7E5P6hZe8euxK847li8qN5Tf/KrKYsvhWOubNUeSND3t8p0cz1ScqQjV/CSbGezCs92HbW3/eD58oBfk3ln8sSkkLjJOagcfHBAk4VIuNjWcz05u4r+eHnSsg6bfwCQdSrKOWtFauHeqWLk7Dx5JDX5Zsete6HtG/Y6s2T/5RwcC2/7SIimHYiVIvhJtfugP/l2qUIKNVA9V6NS0irID5eFiDISA45zO7K0vb/ZasOzxd7uWZjDB36XUawSm8PIkymr6RCB4q38QjExDeVTTc/L3kkgE776xmWaRYu0k2cTijvgO65zscfUVr2LDwVY3wJQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=57WWz5SjlvNCwVzjvHZK51P97K4LcVGbsvVLPzQ9D9k=;
- b=l+AxJxYHZMpHZOGqklQTYVvnZpOGTSAsnTD4j+7iJO9K7yXsMpYTYHJC4nDCn17wcUnDoEuoHsTmyZRf21gFLy9yZF040EjjyH4cqV/Hh5UTdIUFDt+UuMdt5g73q49Y7ItvY1OdwvkpITAlJ016S5yo5yTovO2ocUIEJ5E89aRgXtwpT9JWtNrip7fU1s7EmWwgca2Q2G9AhTo8Q8PsGhI+sWoYnIgewOYES2nGCA7rWx54aYVLOm48jErRikQz2G8jeoahUIBxEA+AFLLLs6TSg5bYAWslxmywWNjLrz3wZNfZ3SFqKXh82h5cWYFc2XXSj2Xs70vkSFEAcwIEHQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PAXSPRMB0053.eurprd04.prod.outlook.com (2603:10a6:102:23f::21)
- by PA1PR04MB11059.eurprd04.prod.outlook.com (2603:10a6:102:485::10) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9275.16; Tue, 4 Nov
- 2025 16:56:44 +0000
-Received: from PAXSPRMB0053.eurprd04.prod.outlook.com
- ([fe80::504f:2a06:4579:5f15]) by PAXSPRMB0053.eurprd04.prod.outlook.com
- ([fe80::504f:2a06:4579:5f15%6]) with mapi id 15.20.9298.006; Tue, 4 Nov 2025
- 16:56:44 +0000
-Date: Tue, 4 Nov 2025 11:56:37 -0500
-From: Frank Li <Frank.li@nxp.com>
-To: adrianhoyin.ng@altera.com
-Cc: alexandre.belloni@bootlin.com, wsa+renesas@sang-engineering.com,
-	robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org,
-	dinguyen@kernel.org, linux-i3c@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v5 3/3] i3c: dw: Disable runtime PM on Agilex5 to avoid
- bus hang on IBI
-Message-ID: <aQowRfxaH3bdqPXP@lizhi-Precision-Tower-5810>
-References: <cover.1762237922.git.adrianhoyin.ng@altera.com>
- <482d540722a98c2809d8275445aaa544b565bf85.1762237922.git.adrianhoyin.ng@altera.com>
-Content-Disposition: inline
-In-Reply-To: <482d540722a98c2809d8275445aaa544b565bf85.1762237922.git.adrianhoyin.ng@altera.com>
-X-ClientProxiedBy: PH8PR07CA0041.namprd07.prod.outlook.com
- (2603:10b6:510:2cf::29) To PAXSPRMB0053.eurprd04.prod.outlook.com
- (2603:10a6:102:23f::21)
+	Tue, 04 Nov 2025 17:07:35 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1762276053; x=1793812053;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=tjZDy+bbfTRIT7A33Ys+suJnpcHjHb0ey6JSW0sBkh4=;
+  b=OfgtDVt/xaf1jiIMmQgyu/PTCRFqojlbhJC95fsb6MD5KEZEa85RbQMX
+   6GgrQTFivneSeuBFlPaGUzS5AbEZZ5Md0gp4d6xG6czAtJMEB4CCEZkV1
+   gtwM3mYMqC67cD7R6yUHoPTx+x/KktBIYsoJgf/VFfvYYZfmw6S910cwP
+   VWeBZWRRUJpAcNmhcGV6WOyYSm6heUw7x7BhWo5GSaRm/hIHoSeY02cDW
+   zv3NJaQxf8esJjY8gIpvJMjO/jZYnPUEXGdWZOwlUAtK+KAVZVfPpepEa
+   5uRkM1LVt/rg+w1e6a1ZgUP1ShQayPH31hrKbzpW0AR+53NhF57Qy7EiZ
+   w==;
+X-CSE-ConnectionGUID: 8jbXwEZ7RAOpo+MdDx/lBw==
+X-CSE-MsgGUID: qMFvnw8dTV62z+YhT09jCw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11603"; a="51948542"
+X-IronPort-AV: E=Sophos;i="6.19,279,1754982000"; 
+   d="scan'208";a="51948542"
+Received: from fmviesa002.fm.intel.com ([10.60.135.142])
+  by fmvoesa110.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Nov 2025 09:07:31 -0800
+X-CSE-ConnectionGUID: h07Mzje5RYuXU8oKHsBsng==
+X-CSE-MsgGUID: Kaqmb30wTj+M6epZeJiUpA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.19,279,1754982000"; 
+   d="scan'208";a="210708461"
+Received: from pgcooper-mobl3.ger.corp.intel.com (HELO ashevche-desk.local) ([10.245.245.146])
+  by fmviesa002-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Nov 2025 09:07:28 -0800
+Received: from andy by ashevche-desk.local with local (Exim 4.98.2)
+	(envelope-from <andriy.shevchenko@intel.com>)
+	id 1vGKVA-00000005WPE-32wY;
+	Tue, 04 Nov 2025 19:07:24 +0200
+Date: Tue, 4 Nov 2025 19:07:24 +0200
+From: Andy Shevchenko <andriy.shevchenko@intel.com>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
+	Jonathan Cameron <jic23@kernel.org>,
+	David Lechner <dlechner@baylibre.com>,
+	Nuno =?iso-8859-1?Q?S=E1?= <nuno.sa@analog.com>,
+	Andy Shevchenko <andy@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+	linux-iio@vger.kernel.org, joshua.yeong@starfivetech.com,
+	devicetree@vger.kernel.org, linux@roeck-us.net,
+	Carlos Song <carlos.song@nxp.com>,
+	Adrian Fluturel <fluturel.adrian@gmail.com>
+Subject: Re: [PATCH v10 6/6] iio: magnetometer: Add mmc5633 sensor
+Message-ID: <aQoyzHrQB-egSPqR@smile.fi.intel.com>
+References: <20251104-i3c_ddr-v10-0-e3e4cbc17034@nxp.com>
+ <20251104-i3c_ddr-v10-6-e3e4cbc17034@nxp.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PAXSPRMB0053:EE_|PA1PR04MB11059:EE_
-X-MS-Office365-Filtering-Correlation-Id: 9477573e-8c3b-41ee-cb58-08de1bc3222f
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|19092799006|376014|52116014|7416014|1800799024|7053199007|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?Wl97AC7I3FsNn6uVxUBm26NcU+eaVu8rGN5Ac3IbKrSd0eVKi7kyytu6MbdE?=
- =?us-ascii?Q?rfvRNPU5CvkS7VLNMHgnvVbckFIac20XHOFLk+gRMuD7n1i06HjmSjcSV2Vw?=
- =?us-ascii?Q?4kJiU0F7mzWbpFV2ZWdwKs6SbMfyk7T2K5Nvmt11zScuyV8tefktyRz9BpZa?=
- =?us-ascii?Q?Et3o8aoFSH4YMkOLjOz25AOZ7OkH9dzfaeDWVjgmlO1u2zlQygBrnT3gg2TD?=
- =?us-ascii?Q?P5TEgPI1Bg0Ksc5rQbQVPtDdHPAKeEERc+UGGUs49Kp1kQl8prUYXlZfl/a8?=
- =?us-ascii?Q?y+kVbG/nJvqQ35Q9ILVDuQ5hw5qBUvS1u417TD2tAHzzSyfGwyc9t/L4WCfB?=
- =?us-ascii?Q?Bq3jL7hEMP4CUCWCPjC4FQ/rfeogm9kX0nonGqwvvdLiBjA8LmY8Wcz+mzGM?=
- =?us-ascii?Q?DITcNh4++aRSJa3b9q/o3JwMz+58F2GWooFrav9h3b+hyneAinhnjo13CuOT?=
- =?us-ascii?Q?Y0GkQDjIBFNbzTph4JYtPuWg7XTSHop7oJRp9viN1fw8ahiABby7uw3/OIw3?=
- =?us-ascii?Q?DaFR2YY+Qv95IsZ28+c2JhcNmFiL7MkytXR1qE02QrZAijdc+ezPLoCMrok7?=
- =?us-ascii?Q?mLLc0cTrPusUvoSWj2WPqTzZjX4Saxuy7wCIZi1drBi5/aQFS1gaQ/ui482u?=
- =?us-ascii?Q?ovI5DGKnPMvCwN8l2AwrLXuBCw1pk27oQUCmr5WLCmymuEXTLkuh/67xgnrH?=
- =?us-ascii?Q?8Bige6aswJZ+7nJfD8DdiYx1SArSjm7kW3xbA2JsFyPaRsBbmdk3WGEPov2e?=
- =?us-ascii?Q?jPpOeO8hujtcBRqsymW7foiYozco1jkx8319x+mq0f/twOlaZCoARPdifXFp?=
- =?us-ascii?Q?zhHonk2OCbBr6DwB8d1WuCXChCIwwAemHcJYtpNCUK6umxi+6dIieZj1gFM4?=
- =?us-ascii?Q?huoUcRjKltLhnnIHCb8kJvYUEf2TYPnj/Bh31jQIKd/Hp1UdBYuA9bLQTT1D?=
- =?us-ascii?Q?ZUD/XRo/rpyEy/1zW+fn6unZKFCXCvYu8JiSLllSTyI97K/DccA3FRR0C7TX?=
- =?us-ascii?Q?wlw2lo9spjI6dHefnqVOHsAQFiWBWbllznGAxjCNQcq4bqWM9zpH0GpRQ6Ke?=
- =?us-ascii?Q?dJOaoe1dwvm054ySyWhGIEPLhqdunAZb/3z9HiPiDMc/9w//+ztdNsskgWFP?=
- =?us-ascii?Q?2iTw/YDDXnfROBkm1ZqfYK9HML9koHYfgXBhgBZGD6Zd3uC/btU3FOwbCDJr?=
- =?us-ascii?Q?Uovgech+4F5npngi00vhAxlA3EiyPAjG9/LErlVHsPHyFPTg7NAQjnI36PPK?=
- =?us-ascii?Q?hRQs7W1WOFq80KFTORSbK4drJYml7uwNaDQkfQSkFHjiXbilCGwqoykCksh7?=
- =?us-ascii?Q?58ixtbX03afTpyKFgfYuHDM3NPc3h27RD5s/u4q4c9EUM/uYjxEBNlKK+nTO?=
- =?us-ascii?Q?yCi0+PWcC1gX92SrBY49ukOo4W48RYpHCAcaw7Y1O3+QKcM5XO5/QuzF7H+N?=
- =?us-ascii?Q?c1OiSYMiotbwSaPhmE7tUtdYKPCpFCh8jsjmV1f+5T9wkx76ny9ORTtuvbfl?=
- =?us-ascii?Q?1OfoavbR3XgsUtZuy9Q7ehudiZQQuRPfHe1/?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXSPRMB0053.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(19092799006)(376014)(52116014)(7416014)(1800799024)(7053199007)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?88bzoHcFeSKmq2iAU8OTnM9YtTE8WpuzLnwzTqMTW64FZ45ikr2oa2s0D2kl?=
- =?us-ascii?Q?WEVZCfNjWvKOybT9MKACo/wq7WhOQqCk+Q0Mabpej39+7kRRSQofG7C5sSfJ?=
- =?us-ascii?Q?UgKvvzybwjlPB9YIe1sq3LPIFBGVGCK7Y3NB1ciWDv+IxI1u66hFb40t/ufw?=
- =?us-ascii?Q?NsO1CiLARr1zShfmF7Oi41xPUIaVfsdk1Uc/lcxL24RAqFKDruMSc31/nsw5?=
- =?us-ascii?Q?oUtaALiAyVAxx8WbdWrKWVFe3cQmShaz9b8Au5FLSFXHF/qa2Ht0BapmNHcI?=
- =?us-ascii?Q?XbQB1Leu0oqB9I+VupQWhua18My3r3ZvtrTzrZD2LVk+7obGaxYAtDJwzQbf?=
- =?us-ascii?Q?Vc4NioQNyAm4Ylfr3ybnJ8Sf4Yss5wIIrvwcagNa4wCQsSc/zQl5CiZLwLXM?=
- =?us-ascii?Q?tSi8s0PkoX3JlJROvqhgZ/7cBEYAwdLbH3yBNjN5jo8CPAZOPyenpSLTzFGE?=
- =?us-ascii?Q?DCeU7ScVaLD0U2ybjzcpDSDkJeeoFMrAht6AWyyGj6TUUhDvHjvkWxGYmWIE?=
- =?us-ascii?Q?VEx/B4GQXJS8TB0KYbsDCshrdHCl/yIpN8XyXuNLx+3O2/ai1MuuVzahrtSd?=
- =?us-ascii?Q?EniPvX4zLap4jvK/2P92+93cbancfcZTxbDoiLt08E9i+BwtPmkXyltgXWB8?=
- =?us-ascii?Q?zWNy4fEqCFUzrw5tnRAJ9AwCg9bH7JQgxo3DLId4pDDWTCIY3vIoYT8W4nIb?=
- =?us-ascii?Q?WWkNAvkiDE4EmZ09sjFssixGwVUvWmdddw0K/O7mOS6SvNOrIy/QP4BN6itf?=
- =?us-ascii?Q?L6/soHsnHfaGj0BiAhjK72+/ECehhlW8ImiPS71cnShM9toJzMmBZJajNlNb?=
- =?us-ascii?Q?WVb7WKy/RMHcbi6l66DwHB9/Rrec57RJi0e6JD85ggHuwXrJMgChP8nIsa03?=
- =?us-ascii?Q?FLI/WZi5ASBATa8qmr/lJE0ZwmLFmkzA2tA+0pr7vmO7s6PR/yTgNP/qb+aa?=
- =?us-ascii?Q?zHGv1AisaMiqtDUvbpO1aT7iLwMN3JUzPnbpzl5ZRQhEjOb0Gi1A7obIA1ef?=
- =?us-ascii?Q?tVTZDtgSG5euQIZmmmuhSbxz6A4SuLMDOwR8UY10DynsZ+e/pFR8E5nwiCl+?=
- =?us-ascii?Q?M0OsIMeF/kakeGi5BIaw3K6fvu0gDPKLvs/cEHqteSENc+oJCa8hgw36rz0c?=
- =?us-ascii?Q?lWQ1NxAunJ4dJDb3luBVd6Z9x/j7eTFT0jBFt3NWpLeYeols5eRszeiVrZPR?=
- =?us-ascii?Q?vdVC6WAKNkIWbMSQDoNzoWOSCemnj3b9uhESuyh6WPrj4KaKYqx8dWevZ5eP?=
- =?us-ascii?Q?e/atw7v142FmNepV3a2vk8KaXERwQb1d3EsUM7z3EpfNHZjoXXV+lQ+Mjqrl?=
- =?us-ascii?Q?xusCvLY/usbg5BiOPBLQzEUhnZkBo2khorVszzwivDahqlDB1SAekK4dClVR?=
- =?us-ascii?Q?oq4xeY/KzYDwE7sNoSc1SBldYa2Msbej5FYtKWeDjvqKM6Joiv1gZZbTIpRN?=
- =?us-ascii?Q?hQZlWm84qo+M3KRrYRr3BtxKp7HAPS6/ITiXi2jrAGaxTtquEanb2kGhSuZR?=
- =?us-ascii?Q?pjVe4lA7/xgZKOVY3JBX1pDf5+wFWwiqBJg0chWei8sg29K6l9LrwKzk50q5?=
- =?us-ascii?Q?5xhvFeRC62yEfgsYSb8=3D?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9477573e-8c3b-41ee-cb58-08de1bc3222f
-X-MS-Exchange-CrossTenant-AuthSource: PAXSPRMB0053.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Nov 2025 16:56:44.0497
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: AtfLZ5hWGJpiFx1D2388kfOgDR0faqj5aF62qhQXIHXoqF6uc3nqOAiKmCxMbTWrdfXncwvI04LAGkcPxQyxxg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA1PR04MB11059
+Content-Disposition: inline
+In-Reply-To: <20251104-i3c_ddr-v10-6-e3e4cbc17034@nxp.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
+ krs, Bertel Jungin Aukio 5, 02600 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251104_085651_232127_D27AF48B 
-X-CRM114-Status: GOOD (  25.76  )
+X-CRM114-CacheID: sfid-20251104_090733_786139_BE138D1E 
+X-CRM114-Status: GOOD (  19.68  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -161,112 +102,172 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Nov 04, 2025 at 03:29:08PM +0800, adrianhoyin.ng@altera.com wrote:
-> From: Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>
->
-> When running compliance tests on the Altera Agilex5 SoCFPGA platform,
-> the I3C bus can hang when a slave issues an IBI after the DAA process
-> completes. The DesignWare I3C master enters runtime suspend once DAA
-> finishes and stops driving SCL, preventing the IBI transfer from
-> completing and leaving SDA stuck low.
->
-> Add a new compatible string, "altr,agilex5-dw-i3c-master" and apply a quirk
-> that keep runtime PM always active on this platform by calling
-> pm_runtime_get_noresume() during probe.
->
-> Prevent bus hangs triggered by IBIs on Agilex5 while maintaining keep the
-> same behavior on other platforms.
->
-> Signed-off-by: Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>
+On Tue, Nov 04, 2025 at 10:46:44AM -0500, Frank Li wrote:
+> Add mmc5633 sensor basic support.
+> - Support read 20 bits X/Y/Z magnetic.
+> - Support I3C HDR mode to send start measurememt command.
+> - Support I3C HDR mode to read all sensors data by one command.
 
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
+Reviewed-by: Andy Shevchenko <andriy.shevchenko@intel.com>
+with some nit-picks below.
 
- ---
->  drivers/i3c/master/dw-i3c-master.c | 31 +++++++++++++++++++++++++++++-
->  1 file changed, 30 insertions(+), 1 deletion(-)
->
-> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-> index 9ceedf09c3b6..276592a8222e 100644
-> --- a/drivers/i3c/master/dw-i3c-master.c
-> +++ b/drivers/i3c/master/dw-i3c-master.c
-> @@ -228,6 +228,7 @@
->
->  /* List of quirks */
->  #define AMD_I3C_OD_PP_TIMING		BIT(1)
-> +#define DW_I3C_DISABLE_RUNTIME_PM_QUIRK	BIT(2)
->
->  struct dw_i3c_cmd {
->  	u32 cmd_lo;
-> @@ -252,6 +253,10 @@ struct dw_i3c_i2c_dev_data {
->  	struct i3c_generic_ibi_pool *ibi_pool;
->  };
->
-> +struct dw_i3c_drvdata {
-> +	u32 flags;
-> +};
+...
+
+> +static int mmc5633_take_measurement(struct mmc5633_data *data, int address)
+> +{
+> +	unsigned int reg_status;
+> +	int ret;
+
+> +	int val;
+
+regmap API uses unsigned int for value field.
+
+> +	val = (address == MMC5633_TEMPERATURE) ? MMC5633_CTRL0_MEAS_T : MMC5633_CTRL0_MEAS_M;
+> +	ret = regmap_write(data->regmap, MMC5633_REG_CTRL0, val);
+> +	if (ret < 0)
+> +		return ret;
 > +
->  static bool dw_i3c_master_supports_ccc_cmd(struct i3c_master_controller *m,
->  					   const struct i3c_ccc_cmd *cmd)
->  {
-> @@ -1535,6 +1540,8 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
->  			struct platform_device *pdev)
->  {
->  	int ret, irq;
-> +	const struct dw_i3c_drvdata *drvdata;
-> +	unsigned long quirks = 0;
->
->  	if (!master->platform_ops)
->  		master->platform_ops = &dw_i3c_platform_ops_default;
-> @@ -1590,7 +1597,18 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
->  	master->maxdevs = ret >> 16;
->  	master->free_pos = GENMASK(master->maxdevs - 1, 0);
->
-> -	master->quirks = (unsigned long)device_get_match_data(&pdev->dev);
-> +	if (has_acpi_companion(&pdev->dev)) {
-> +		quirks = (unsigned long)device_get_match_data(&pdev->dev);
-> +	} else if (pdev->dev.of_node) {
-> +		drvdata = device_get_match_data(&pdev->dev);
-> +		if (drvdata)
-> +			quirks = drvdata->flags;
+> +	val = (address == MMC5633_TEMPERATURE) ?
+> +	      MMC5633_STATUS1_MEAS_T_DONE_BIT : MMC5633_STATUS1_MEAS_M_DONE_BIT;
+> +	ret = regmap_read_poll_timeout(data->regmap, MMC5633_REG_STATUS1, reg_status,
+> +				       reg_status & val,
+> +				       10 * USEC_PER_MSEC,
+> +				       100 * 10 * USEC_PER_MSEC);
+> +	if (ret) {
+> +		dev_err(regmap_get_device(data->regmap), "data not ready\n");
+> +		return ret;
 > +	}
-> +	master->quirks = quirks;
 > +
-> +	/* Keep controller enabled by preventing runtime suspend */
-> +	if (master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)
-> +		pm_runtime_get_noresume(&pdev->dev);
->
->  	INIT_WORK(&master->hj_work, dw_i3c_hj_work);
->  	ret = i3c_master_register(&master->base, &pdev->dev,
-> @@ -1617,6 +1635,10 @@ void dw_i3c_common_remove(struct dw_i3c_master *master)
->  	cancel_work_sync(&master->hj_work);
->  	i3c_master_unregister(&master->base);
->
-> +	/* Balance pm_runtime_get_noresume() from probe() */
-> +	if (master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)
-> +		pm_runtime_put_noidle(master->dev);
+> +	return 0;
+> +}
+
+...
+
+> +static int mmc5633_read_measurement(struct mmc5633_data *data, int address, void *buf, size_t sz)
+> +{
+> +	struct device *dev = regmap_get_device(data->regmap);
+> +	u8 data_cmd[2], status[2];
+> +	int ret, val, ready;
+
+Ditto.
+
+> +	if (mmc5633_is_support_hdr(data)) {
+> +		struct i3c_xfer xfers_wr_cmd[] = {
+> +			{
+> +				.cmd = 0x3b,
+> +				.len = 2,
+> +				.data.out = data_cmd,
+> +			}
+> +		};
+> +		struct i3c_xfer xfers_rd_sta_cmd[] = {
+> +			{
+> +				.cmd = 0x23 | BIT(7), /* RDSTA CMD */
+> +				.len = 2,
+> +				.data.in = status,
+> +			},
+> +		};
+> +		struct i3c_xfer xfers_rd_data_cmd[] = {
+> +			{
+> +				.cmd = 0x22 | BIT(7), /* RDLONG CMD */
+> +				.len = sz,
+> +				.data.in = buf,
+> +			},
+> +		};
+
+Still do not see a justification for an array to use, but as I said I leave it
+to Jonathan to decide.
+
+> +		data_cmd[0] = 0;
+> +		data_cmd[1] = (address == MMC5633_TEMPERATURE) ?
+> +			      MMC5633_HDR_CTRL0_MEAS_T : MMC5633_HDR_CTRL0_MEAS_M;
 > +
->  	pm_runtime_disable(master->dev);
->  	pm_runtime_set_suspended(master->dev);
->  	pm_runtime_dont_use_autosuspend(master->dev);
-> @@ -1759,8 +1781,15 @@ static void dw_i3c_shutdown(struct platform_device *pdev)
->  	pm_runtime_put_autosuspend(master->dev);
->  }
->
-> +static const struct dw_i3c_drvdata altr_agilex5_drvdata = {
-> +	.flags = DW_I3C_DISABLE_RUNTIME_PM_QUIRK,
-> +};
+> +		ret = i3c_device_do_xfers(data->i3cdev, xfers_wr_cmd,
+> +					  ARRAY_SIZE(xfers_wr_cmd), I3C_HDR_DDR);
+> +		if (ret < 0)
+> +			return ret;
 > +
->  static const struct of_device_id dw_i3c_master_of_match[] = {
->  	{ .compatible = "snps,dw-i3c-master-1.00a", },
-> +	{ .compatible = "altr,agilex5-dw-i3c-master",
-> +	  .data = &altr_agilex5_drvdata,
-> +	},
->  	{},
->  };
->  MODULE_DEVICE_TABLE(of, dw_i3c_master_of_match);
-> --
-> 2.49.GIT
->
+> +		ready = (address == MMC5633_TEMPERATURE) ?
+> +			MMC5633_STATUS1_MEAS_T_DONE_BIT : MMC5633_STATUS1_MEAS_M_DONE_BIT;
+> +		ret = read_poll_timeout(i3c_device_do_xfers, val,
+
+> +					val ||
+> +					status[0] & ready,
+
+One line and probably you want to add parentheses for better understanding, not
+everybody remembers the operator precedence by heart.
+
+> +					10 * USEC_PER_MSEC,
+> +					100 * 10 * USEC_PER_MSEC, 0,
+> +					data->i3cdev, xfers_rd_sta_cmd,
+> +					ARRAY_SIZE(xfers_rd_sta_cmd), I3C_HDR_DDR);
+> +		if (ret) {
+> +			dev_err(dev, "data not ready\n");
+> +			return ret;
+> +		}
+> +		if (val) {
+> +			dev_err(dev, "i3c transfer error\n");
+> +			return val;
+> +		}
+> +		return i3c_device_do_xfers(data->i3cdev, xfers_rd_data_cmd,
+> +					   ARRAY_SIZE(xfers_rd_data_cmd), I3C_HDR_DDR);
+> +	}
+> +
+> +	/* Fallback to use SDR/I2C mode */
+> +	ret = mmc5633_take_measurement(data, address);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	if (address == MMC5633_TEMPERATURE)
+> +		/*
+> +		 * Put tempeature to last byte of buff to align HDR case.
+> +		 * I3C will early terminate data read if previous data is not
+> +		 * available.
+> +		 */
+> +		return regmap_bulk_read(data->regmap, MMC5633_REG_TOUT, buf + sz - 1, 1);
+> +
+> +	return regmap_bulk_read(data->regmap, MMC5633_REG_XOUT0, buf, sz);
+> +}
+
+...
+
+> +static int mmc5633_read_avail(struct iio_dev *indio_dev,
+> +			      struct iio_chan_spec const *chan,
+> +			      const int **vals,
+> +			      int *type,
+> +			      int *length,
+> +			      long mask)
+
+Other functions use different style, I believe it can occupy less LoCs.
+
+...
+
+> +static int mmc5633_i3c_probe(struct i3c_device *i3cdev)
+> +{
+> +	struct device *dev = i3cdev_to_dev(i3cdev);
+> +	struct regmap *regmap;
+> +	char *name;
+
+> +	name = devm_kasprintf(dev, GFP_KERNEL, "mmc5633(%s)", dev_name(dev));
+
+I agree on idea behind this, but I think () can be problematic for some shell
+scripts, I would go with the simple mmc5633_%s or similar.
+
+> +	if (!name)
+> +		return -ENOMEM;
+> +
+> +	regmap = devm_regmap_init_i3c(i3cdev, &mmc5633_regmap_config);
+> +	if (IS_ERR(regmap))
+> +		return dev_err_probe(dev, PTR_ERR(regmap),
+> +				     "Failed to register i3c regmap\n");
+> +
+> +	return mmc5633_common_probe(regmap, name, i3cdev);
+> +}
+
+-- 
+With Best Regards,
+Andy Shevchenko
+
+
 
 -- 
 linux-i3c mailing list
