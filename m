@@ -4,62 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22A36CCFA13
-	for <linux-i3c@archiver.kernel.org>; Thu,  6 Nov 2025 22:11:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93189CCFA05
+	for <linux-i3c@archiver.kernel.org>; Fri,  7 Nov 2025 06:08:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ioI7T11NViqGUABjJbIJj90On5d5E59wQ4AmiHyMfnA=; b=JWaOLBVsNFFPev
-	SgQEsVote7NHXsGk1g5AeOUq8zc5V7Q7Ca8CmT4ITE+KURTkEIAuOk/sf3ruNz2HsbffyfzE0VCsi
-	pEuSo5Kpia5K2KLdWWzVq4OjqkZKYEOlNBGyhhH+aYzwLKyPP7NW/zPirL4bCCW5rNPiyj2nfmQsW
-	HJQHSNQSLuun/az5xkzePCKAd9QuN+HA7ynKVPpQy5G4KkvMOYgAZwcVA9HfkVRpvvB3nUvuHN3Oo
-	QrofBsWXLZHHnJMR2JJ9jXsu/HaobK95M4jtbnt+joBvSEpzMUKWz9SReWgGPBr0p/8eEfkbwCxTT
-	2oJ4szZKDCABFG5xp4mQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KsWtVXEsgpKfOxr+6POJqbd0gWOSIWxL+k5NpN/U3VU=; b=xmg5JDahibBnFJ
+	TWDoQb3Iys3RPmvm48mvVOh4QlNz49qLiW5U1SBSFTijVJIZJVO19qhqpcSiqh0U1royQUsRCf46u
+	so5GMLPvpE2uQB/1jW0jNgzLnQKi98DmPvotLEd8Ic9voSRAsp5XM7Mf9PwPc07EbvsAyYBP6t6AO
+	Zj7c9AWrOFknZb0dAermwGibW6/sfn8btNCGAnV9Z48kSvY+mSvfqbLvnoCrr3CJRIUuOSEUTjgWJ
+	QWlE/Kr1WrcrszFlVVDUtMMVU303o25PEOaBhwLIZFJZppXpbGf4Tmy7yFv4Cx/Vu92y4TZRTqz8y
+	xZX3rb2L4aIsVNyK9D9g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vH8C7-0000000GIVH-3AR5;
-	Thu, 06 Nov 2025 22:11:03 +0000
-Received: from smtpout-02.galae.net ([185.246.84.56])
+	id 1vHFdn-0000000GihZ-1GlR;
+	Fri, 07 Nov 2025 06:08:07 +0000
+Received: from mgamail.intel.com ([192.198.163.9])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vH8C1-0000000GIUi-1VMe
+	id 1vHFdl-0000000GihD-0cv4
 	for linux-i3c@lists.infradead.org;
-	Thu, 06 Nov 2025 22:11:01 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-02.galae.net (Postfix) with ESMTPS id 0113B1A1901;
-	Thu,  6 Nov 2025 22:10:51 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id BC48D606EE;
-	Thu,  6 Nov 2025 22:10:51 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id CF70C1185174E;
-	Thu,  6 Nov 2025 23:10:48 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1762467051; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=okGwbLaxnS8zbdut10ECdw0yQyNum6PGNoZZb6TW6os=;
-	b=LNWyeaodd4SCncG0c7HUkCFjEY3ShkHP92Yed/PJEFu+IMwo3GZnS4/MbLLPDRI1xRLvFH
-	u6J9aZXrhU+RYmafKfh4eJpUst3lAg+2t6xEwq2qbNf7++SODCIqndlvxbwizqnY7yVXgB
-	w8P8Vin1tu/Gb2war5hSPjE1N5yhyEzpK3zpHznDlX0BGLMxN4FmIYX475KgMFY4C6mhcw
-	gwz86O9fM2r1c3s2b9e4HKcoiQGO7DOo07mTsFXWf461JFWtSem9IowGIVaDJgyovBfh1S
-	o4mF7zd0AcTd4Wxg9kPWryNUxAotUJctduOrj/KqzdDa2UV90i0X+d8jckqJhw==
-Date: Thu, 6 Nov 2025 23:10:48 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: adrianhoyin.ng@altera.com
-Cc: Frank.Li@nxp.com, wsa+renesas@sang-engineering.com, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org, dinguyen@kernel.org,
-	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 0/4] i3c: dw: Add support for Device NACK Retry count
-Message-ID: <20251106221048367d654a@mail.local>
-References: <cover.1762245890.git.adrianhoyin.ng@altera.com>
+	Fri, 07 Nov 2025 06:08:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1762495685; x=1794031685;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=TY8Yb/P7qJYVOv8w1FjGEwyX1y5nB3Fxsc8oS5hbiCI=;
+  b=IIq91L4vR6+yyY90VXudMHcX4LL/TbujdGSAM8OlygalHQ8vMAMF6Gao
+   WyIKgzPNHFGL6DM0wMIGPjuLn70vOXd6sqBu/7M9fdIfX56wHafZLx94H
+   slTI8djycwIaCooZn7ON+/imopLIFOEoMBTnF7c4D90ZYwiM0/nuVvOza
+   fYyqCF9vL/xB4f1bFXMEFpfyPlfPb/twS2yRuBk2qdyvcF4y8SpjqV4/+
+   i9PrEBGGVSJ+OduMmr/0SyHdyXyiFE23FEjE6yiN0VoO7LCmWei2S6Qbb
+   9FP/cvc8AXouNBs9Bd/HkfSPCpnNftVlFc1rhi5aYcOg/1xy7tinrtqBk
+   Q==;
+X-CSE-ConnectionGUID: 3NQ2lY02TH6UgQWut60acw==
+X-CSE-MsgGUID: h2SYzu2+QMC1QGrkBds4Dg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11605"; a="75334310"
+X-IronPort-AV: E=Sophos;i="6.19,286,1754982000"; 
+   d="scan'208";a="75334310"
+Received: from orviesa004.jf.intel.com ([10.64.159.144])
+  by fmvoesa103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Nov 2025 22:08:03 -0800
+X-CSE-ConnectionGUID: G5TclZiUQrGz1Wa2UwdrXQ==
+X-CSE-MsgGUID: sUwFCSxvR1OJaI27uH5+fg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.19,286,1754982000"; 
+   d="scan'208";a="192321013"
+Received: from fpallare-mobl4.ger.corp.intel.com (HELO localhost.localdomain) ([10.245.245.19])
+  by orviesa004-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Nov 2025 22:08:01 -0800
+From: Adrian Hunter <adrian.hunter@intel.com>
+To: alexandre.belloni@bootlin.com
+Cc: Frank.Li@nxp.com,
+	linux-i3c@lists.infradead.org
+Subject: [PATCH V2] i3c: mipi-i3c-hci-pci: Add support for Intel Nova Lake-S I3C
+Date: Fri,  7 Nov 2025 08:07:50 +0200
+Message-ID: <20251107060750.7995-1-adrian.hunter@intel.com>
+X-Mailer: git-send-email 2.48.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cover.1762245890.git.adrianhoyin.ng@altera.com>
-X-Last-TLS-Session-Version: TLSv1.3
+Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251106_141057_886300_6F7190C7 
-X-CRM114-Status: GOOD (  18.17  )
+X-CRM114-CacheID: sfid-20251106_220805_248286_22495A34 
+X-CRM114-Status: UNSURE (   8.10  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,55 +84,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 04/11/2025 16:51:07+0800, adrianhoyin.ng@altera.com wrote:
-> From: Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>
-> 
-> This series adds support for configuring the Device NACK Retry count
-> in the Synopsys DesignWare I3C master controller and enables the
-> corresponding property in the Altera Agilex5 device tree.
-> 
-> Some I3C slave devices may temporarily NACK transactions when they are
-> busy or not ready to respond. To enhance bus reliability, the DesignWare
-> I3C controller supports a programmable retry mechanism that automatically
-> reissues NACKed transactions. This series introduces the
-> snps,dev-nack-retry-cnt device tree property to configure this retry
-> count. The value is written into the Device Address Table (DAT) entry for
-> each I3C device, enabling fine-grained control of retry behavior.
-> 
+From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
 
-As Frank explained, this needs to be a per device sysfs file because
-this is definitively policy and not HW related. This file should only be
-visible when the bus supports retrying.
+Add I3C controller PCI IDs for Intel Nova Lake-S.
 
-Don't forget to add documentation in ABI/testing/sysfs-bus-i3c
+Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+---
 
-> This series also fixes an issue where existing DAT entries could be
-> overwritten when the driver restores device addresses. Update
-> dw_i3c_master_restore_addrs to preserve existing bits in each
-> DAT entry when restoring addresses.
-> 
-> Adrian Ng Ho Yin (4):
->   dt-bindings: i3c: Add snps,dev-nack-retry-cnt property to Synopsys I3C
->     master
->   arm64: dts: intel: agilex5: Add snps,dev-nack-retry-cnt property for
->     I3C controllers
->   i3c: dw: Add support for Device NACK Retry count
->   i3c: dw: Preserve DAT entry bits when restoring addresses
-> 
->  .../bindings/i3c/snps,dw-i3c-master.yaml      |  8 ++++
->  .../arm64/boot/dts/intel/socfpga_agilex5.dtsi |  2 +
->  drivers/i3c/master/dw-i3c-master.c            | 40 ++++++++++++++++++-
->  drivers/i3c/master/dw-i3c-master.h            |  1 +
->  4 files changed, 49 insertions(+), 2 deletions(-)
-> 
-> -- 
-> 2.49.GIT
-> 
 
+Changes in V2:
+	Added Frank's Rev'd-by
+	Tweaked commit message 'on' -> 'for'
+
+
+ drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
+index 08e6cbdf89ce..dd4484eff2f0 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
++++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
+@@ -133,6 +133,9 @@ static const struct pci_device_id mipi_i3c_hci_pci_devices[] = {
+ 	/* Panther Lake-P */
+ 	{ PCI_VDEVICE(INTEL, 0xe47c), (kernel_ulong_t)&intel_info},
+ 	{ PCI_VDEVICE(INTEL, 0xe46f), (kernel_ulong_t)&intel_info},
++	/* Nova Lake-S */
++	{ PCI_VDEVICE(INTEL, 0x6e2c), (kernel_ulong_t)&intel_info},
++	{ PCI_VDEVICE(INTEL, 0x6e2d), (kernel_ulong_t)&intel_info},
+ 	{ },
+ };
+ MODULE_DEVICE_TABLE(pci, mipi_i3c_hci_pci_devices);
 -- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+2.48.1
+
 
 -- 
 linux-i3c mailing list
