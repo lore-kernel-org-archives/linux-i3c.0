@@ -4,70 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 93189CCFA05
-	for <linux-i3c@archiver.kernel.org>; Fri,  7 Nov 2025 06:08:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3121BCCF9E3
+	for <linux-i3c@archiver.kernel.org>; Fri,  7 Nov 2025 13:30:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KsWtVXEsgpKfOxr+6POJqbd0gWOSIWxL+k5NpN/U3VU=; b=xmg5JDahibBnFJ
-	TWDoQb3Iys3RPmvm48mvVOh4QlNz49qLiW5U1SBSFTijVJIZJVO19qhqpcSiqh0U1royQUsRCf46u
-	so5GMLPvpE2uQB/1jW0jNgzLnQKi98DmPvotLEd8Ic9voSRAsp5XM7Mf9PwPc07EbvsAyYBP6t6AO
-	Zj7c9AWrOFknZb0dAermwGibW6/sfn8btNCGAnV9Z48kSvY+mSvfqbLvnoCrr3CJRIUuOSEUTjgWJ
-	QWlE/Kr1WrcrszFlVVDUtMMVU303o25PEOaBhwLIZFJZppXpbGf4Tmy7yFv4Cx/Vu92y4TZRTqz8y
-	xZX3rb2L4aIsVNyK9D9g==;
+	List-Owner; bh=Cg/2jzHhtxg8jmCS7T6nd+sjXwP+KUkDysaS7lEnxb4=; b=EyutQ+IMwevPTl
+	NqI+NWCw5SMpLE3zPoAqD8lQX+Nqc3uCPB8oCLh9PyNBLDUBTQeqRZuvCyfxSeBZTOHbT0u7pwUdv
+	oZtsEjTgrzXMQ6tTn5i8AZqgG8zPa+7AmjDEKeRzChN/CptUmwtDM/EbJAtcyaOSmbW2yNXTo6aUp
+	u7ET6gzP0O9fK1/5WX+FJ0n46sf6AGWtQ6mGj1+ndHFmgOeWoAfK9ncNUAAKVtrGmnDDIWkJAEfdd
+	ARuRJooGFCiVYkVJmTj/WvCEc83Iu7Dpx6l5wrw+ToMesJPPcZ2yolCU0cn99s3D/ewx0ShyRQD25
+	qN0hNWshVNGaxHvwnvtw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vHFdn-0000000GihZ-1GlR;
-	Fri, 07 Nov 2025 06:08:07 +0000
-Received: from mgamail.intel.com ([192.198.163.9])
+	id 1vHMXS-0000000HPFm-3shH;
+	Fri, 07 Nov 2025 13:30:02 +0000
+Received: from mail-wr1-x42b.google.com ([2a00:1450:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vHFdl-0000000GihD-0cv4
+	id 1vHMXQ-0000000HPEY-3Mx6
 	for linux-i3c@lists.infradead.org;
-	Fri, 07 Nov 2025 06:08:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1762495685; x=1794031685;
-  h=from:to:cc:subject:date:message-id:mime-version:
-   content-transfer-encoding;
-  bh=TY8Yb/P7qJYVOv8w1FjGEwyX1y5nB3Fxsc8oS5hbiCI=;
-  b=IIq91L4vR6+yyY90VXudMHcX4LL/TbujdGSAM8OlygalHQ8vMAMF6Gao
-   WyIKgzPNHFGL6DM0wMIGPjuLn70vOXd6sqBu/7M9fdIfX56wHafZLx94H
-   slTI8djycwIaCooZn7ON+/imopLIFOEoMBTnF7c4D90ZYwiM0/nuVvOza
-   fYyqCF9vL/xB4f1bFXMEFpfyPlfPb/twS2yRuBk2qdyvcF4y8SpjqV4/+
-   i9PrEBGGVSJ+OduMmr/0SyHdyXyiFE23FEjE6yiN0VoO7LCmWei2S6Qbb
-   9FP/cvc8AXouNBs9Bd/HkfSPCpnNftVlFc1rhi5aYcOg/1xy7tinrtqBk
-   Q==;
-X-CSE-ConnectionGUID: 3NQ2lY02TH6UgQWut60acw==
-X-CSE-MsgGUID: h2SYzu2+QMC1QGrkBds4Dg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11605"; a="75334310"
-X-IronPort-AV: E=Sophos;i="6.19,286,1754982000"; 
-   d="scan'208";a="75334310"
-Received: from orviesa004.jf.intel.com ([10.64.159.144])
-  by fmvoesa103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Nov 2025 22:08:03 -0800
-X-CSE-ConnectionGUID: G5TclZiUQrGz1Wa2UwdrXQ==
-X-CSE-MsgGUID: sUwFCSxvR1OJaI27uH5+fg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.19,286,1754982000"; 
-   d="scan'208";a="192321013"
-Received: from fpallare-mobl4.ger.corp.intel.com (HELO localhost.localdomain) ([10.245.245.19])
-  by orviesa004-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Nov 2025 22:08:01 -0800
-From: Adrian Hunter <adrian.hunter@intel.com>
-To: alexandre.belloni@bootlin.com
-Cc: Frank.Li@nxp.com,
+	Fri, 07 Nov 2025 13:30:02 +0000
+Received: by mail-wr1-x42b.google.com with SMTP id ffacd0b85a97d-3f99ac9acc4so468248f8f.3
+        for <linux-i3c@lists.infradead.org>; Fri, 07 Nov 2025 05:30:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=suse.com; s=google; t=1762522199; x=1763126999; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=Z9uKcl/f9ZChp5UYMtJdyOFq+FU1Dyf96Ve7s2R428o=;
+        b=HoCPfOQV5I5P/n7QL/70nFgCc/nJSns9UrxMhgObZcyoTnKmbZC7f5biZBQZKAMb7u
+         0S4wGoCusMmm/0Jfc6wA4E/XrTWuuemnhE6XU77Zsn6Pi1uoS0unEtlq7KXFG/IEcBK/
+         HIe+zvTXvPDiVMmJY5PdrsxSBCzvnLKgthFsgS7zPADDs+nO0f3kuM85Ds0wG9zhjY3z
+         ngbkX4qOLb9X6b4FLEXl631MtRVVbFRWw8EWc+emkiGeT5OqWZpsJAKDZeKizT6SZyuE
+         TowGvwgevNJnJOpoQGtNRvp7+9qvbACcrx7NzX6my0wFuF3YbvOkeYyoruRv4qqTk68m
+         5iUg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1762522199; x=1763126999;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=Z9uKcl/f9ZChp5UYMtJdyOFq+FU1Dyf96Ve7s2R428o=;
+        b=azgdLe/XbE4OQ0oM3+Zj37Mb1idtSDGllyfJK9Vr2x8XzQ3+FTqZHe6xODfNO5EPpj
+         RMvQkkZinM6SwXe8XzZkW1rJ+Hev3F6q7J9y/vBGXWcaWDz/yhVJMosWUup4bZwQTkKt
+         83kXbDtyz+7xSPYDiOHHlfdHAawBGSPGYu3a/1mtninH42mRTbgUe4J7rj20UbHTEDRo
+         JnjJ84/OFeYzAKZMxh7g4Wa1xO8ONqiVWSlw7QIDhW2NpjH6ZvMgBERishER1k8wslzD
+         gO/Camy8gqQOmkhep4d7LA5JmkW8ozvpkfHCZY77ok2bBZNbEhpFE6yYsawRmGf6w/Xg
+         Co0g==
+X-Forwarded-Encrypted: i=1; AJvYcCVjfRSrwFGItO7eXZyHwnyaerLtZP7rVpV46eI/L4QEaGLQNzjoJf8P0WHOtLhfW0uSKLT+IJm8Toc=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxCnIJprmo8JhISsfZ+YXQ/nVMMS0M0sRer1x4JlITLaAMgOh9q
+	enzcLaThFwBcXCtZIlCxGBXb2K5QU2Dd7aoaudYqRq3YCTeYOahD4cKPrEdpDvJ/kEQ=
+X-Gm-Gg: ASbGncsDVo3d925WWBQj1DO+NIAOzL4Wuu3ipgzBkC29QGBiXdULmgCeHRyMtif3d7J
+	oDdp45dn8ZPCZ0a0aKYiUKq0n6V1ZS25Z6apf+ruAC2/WZfApGLiaMyDyllmsTiaGUkwKCweJQm
+	j4MEkscskdIfYLXy6xnUXGp/hG0i3N/612K39bSht64WC24aOtYXoiZIOJKmXNm6odJuHVY8dtT
+	lJaeFBIwvXfV6b/U5MPRbGwe4cNla6AtnermYvj13ufZvj2uth2tOfh3r5jM4YMtHRrg8FGbmpE
+	ZBqes2RFzzq/kaxOxsDlsyTi1jSSIdErnuiBUJsN8lsyoBg5dKMt/53lia9JCEUUf3f3Ajl1Q/S
+	VD/x7ESo86idBZBDwSiotyvnOJzfNHC1tObgCP+KAjMJ5+iH9yY1hbwa7/sY7XvFX9/LsMWBe32
+	Nk/69ZnX3iyEPwegsrWMMCgBR/
+X-Google-Smtp-Source: AGHT+IG1zulGwSQbhYh/38/sTDo6Jn/J1fjvMhHK5mO3mv4/FtwtJPlGpH+oi0kLDn5Jv03MwMReRw==
+X-Received: by 2002:a05:6000:4010:b0:429:c8f6:5873 with SMTP id ffacd0b85a97d-42ae58d0151mr2665587f8f.22.1762522198627;
+        Fri, 07 Nov 2025 05:29:58 -0800 (PST)
+Received: from localhost.localdomain ([2a00:6d43:105:c401:e307:1a37:2e76:ce91])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-42abe63e07asm5310756f8f.17.2025.11.07.05.29.57
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 07 Nov 2025 05:29:58 -0800 (PST)
+From: Marco Crivellari <marco.crivellari@suse.com>
+To: linux-kernel@vger.kernel.org,
 	linux-i3c@lists.infradead.org
-Subject: [PATCH V2] i3c: mipi-i3c-hci-pci: Add support for Intel Nova Lake-S I3C
-Date: Fri,  7 Nov 2025 08:07:50 +0200
-Message-ID: <20251107060750.7995-1-adrian.hunter@intel.com>
-X-Mailer: git-send-email 2.48.1
+Cc: Tejun Heo <tj@kernel.org>,
+	Lai Jiangshan <jiangshanlai@gmail.com>,
+	Frederic Weisbecker <frederic@kernel.org>,
+	Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
+	Marco Crivellari <marco.crivellari@suse.com>,
+	Michal Hocko <mhocko@suse.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>
+Subject: [PATCH] i3c: master: add WQ_PERCPU to alloc_workqueue users
+Date: Fri,  7 Nov 2025 14:29:49 +0100
+Message-ID: <20251107132949.184944-1-marco.crivellari@suse.com>
+X-Mailer: git-send-email 2.51.1
 MIME-Version: 1.0
-Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251106_220805_248286_22495A34 
-X-CRM114-Status: UNSURE (   8.10  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251107_053000_860266_24A8015F 
+X-CRM114-Status: GOOD (  14.57  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,48 +99,46 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-
-Add I3C controller PCI IDs for Intel Nova Lake-S.
-
-Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
----
-
-
-Changes in V2:
-	Added Frank's Rev'd-by
-	Tweaked commit message 'on' -> 'for'
-
-
- drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c | 3 +++
- 1 file changed, 3 insertions(+)
-
-diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-index 08e6cbdf89ce..dd4484eff2f0 100644
---- a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-@@ -133,6 +133,9 @@ static const struct pci_device_id mipi_i3c_hci_pci_devices[] = {
- 	/* Panther Lake-P */
- 	{ PCI_VDEVICE(INTEL, 0xe47c), (kernel_ulong_t)&intel_info},
- 	{ PCI_VDEVICE(INTEL, 0xe46f), (kernel_ulong_t)&intel_info},
-+	/* Nova Lake-S */
-+	{ PCI_VDEVICE(INTEL, 0x6e2c), (kernel_ulong_t)&intel_info},
-+	{ PCI_VDEVICE(INTEL, 0x6e2d), (kernel_ulong_t)&intel_info},
- 	{ },
- };
- MODULE_DEVICE_TABLE(pci, mipi_i3c_hci_pci_devices);
--- 
-2.48.1
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+Q3VycmVudGx5IGlmIGEgdXNlciBlbnF1ZXVlcyBhIHdvcmsgaXRlbSB1c2luZyBzY2hlZHVsZV9k
+ZWxheWVkX3dvcmsoKSB0aGUKdXNlZCB3cSBpcyAic3lzdGVtX3dxIiAocGVyLWNwdSB3cSkgd2hp
+bGUgcXVldWVfZGVsYXllZF93b3JrKCkgdXNlCldPUktfQ1BVX1VOQk9VTkQgKHVzZWQgd2hlbiBh
+IGNwdSBpcyBub3Qgc3BlY2lmaWVkKS4gVGhlIHNhbWUgYXBwbGllcyB0bwpzY2hlZHVsZV93b3Jr
+KCkgdGhhdCBpcyB1c2luZyBzeXN0ZW1fd3EgYW5kIHF1ZXVlX3dvcmsoKSwgdGhhdCBtYWtlcyB1
+c2UKYWdhaW4gb2YgV09SS19DUFVfVU5CT1VORC4KVGhpcyBsYWNrIG9mIGNvbnNpc3RlbmN5IGNh
+bm5vdCBiZSBhZGRyZXNzZWQgd2l0aG91dCByZWZhY3RvcmluZyB0aGUgQVBJLgoKYWxsb2Nfd29y
+a3F1ZXVlKCkgdHJlYXRzIGFsbCBxdWV1ZXMgYXMgcGVyLUNQVSBieSBkZWZhdWx0LCB3aGlsZSB1
+bmJvdW5kCndvcmtxdWV1ZXMgbXVzdCBvcHQtaW4gdmlhIFdRX1VOQk9VTkQuCgpUaGlzIGRlZmF1
+bHQgaXMgc3Vib3B0aW1hbDogbW9zdCB3b3JrbG9hZHMgYmVuZWZpdCBmcm9tIHVuYm91bmQgcXVl
+dWVzLAphbGxvd2luZyB0aGUgc2NoZWR1bGVyIHRvIHBsYWNlIHdvcmtlciB0aHJlYWRzIHdoZXJl
+IHRoZXnigJlyZSBuZWVkZWQgYW5kCnJlZHVjaW5nIG5vaXNlIHdoZW4gQ1BVcyBhcmUgaXNvbGF0
+ZWQuCgpUaGlzIGNvbnRpbnVlcyB0aGUgZWZmb3J0IHRvIHJlZmFjdG9yIHdvcmtxdWV1ZSBBUElz
+LCB3aGljaCBiZWdhbiB3aXRoCnRoZSBpbnRyb2R1Y3Rpb24gb2YgbmV3IHdvcmtxdWV1ZXMgYW5k
+IGEgbmV3IGFsbG9jX3dvcmtxdWV1ZSBmbGFnIGluOgoKY29tbWl0IDEyOGVhOWY2Y2NmYiAoIndv
+cmtxdWV1ZTogQWRkIHN5c3RlbV9wZXJjcHVfd3EgYW5kIHN5c3RlbV9kZmxfd3EiKQpjb21taXQg
+OTMwYzJlYTU2NmFmICgid29ya3F1ZXVlOiBBZGQgbmV3IFdRX1BFUkNQVSBmbGFnIikKClRoaXMg
+Y2hhbmdlIGFkZHMgYSBuZXcgV1FfUEVSQ1BVIGZsYWcgdG8gZXhwbGljaXRseSByZXF1ZXN0CmFs
+bG9jX3dvcmtxdWV1ZSgpIHRvIGJlIHBlci1jcHUgd2hlbiBXUV9VTkJPVU5EIGhhcyBub3QgYmVl
+biBzcGVjaWZpZWQuCgpXaXRoIHRoZSBpbnRyb2R1Y3Rpb24gb2YgdGhlIFdRX1BFUkNQVSBmbGFn
+IChlcXVpdmFsZW50IHRvICFXUV9VTkJPVU5EKSwKYW55IGFsbG9jX3dvcmtxdWV1ZSgpIGNhbGxl
+ciB0aGF0IGRvZXNu4oCZdCBleHBsaWNpdGx5IHNwZWNpZnkgV1FfVU5CT1VORAptdXN0IG5vdyB1
+c2UgV1FfUEVSQ1BVLgoKT25jZSBtaWdyYXRpb24gaXMgY29tcGxldGUsIFdRX1VOQk9VTkQgY2Fu
+IGJlIHJlbW92ZWQgYW5kIHVuYm91bmQgd2lsbApiZWNvbWUgdGhlIGltcGxpY2l0IGRlZmF1bHQu
+CgpTdWdnZXN0ZWQtYnk6IFRlanVuIEhlbyA8dGpAa2VybmVsLm9yZz4KU2lnbmVkLW9mZi1ieTog
+TWFyY28gQ3JpdmVsbGFyaSA8bWFyY28uY3JpdmVsbGFyaUBzdXNlLmNvbT4KLS0tCiBkcml2ZXJz
+L2kzYy9tYXN0ZXIuYyB8IDIgKy0KIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBk
+ZWxldGlvbigtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvaTNjL21hc3Rlci5jIGIvZHJpdmVycy9p
+M2MvbWFzdGVyLmMKaW5kZXggZDk0NmRiNzVkZjcwLi41MTliOThjMzdhYzcgMTAwNjQ0Ci0tLSBh
+L2RyaXZlcnMvaTNjL21hc3Rlci5jCisrKyBiL2RyaXZlcnMvaTNjL21hc3Rlci5jCkBAIC0yOTI1
+LDcgKzI5MjUsNyBAQCBpbnQgaTNjX21hc3Rlcl9yZWdpc3RlcihzdHJ1Y3QgaTNjX21hc3Rlcl9j
+b250cm9sbGVyICptYXN0ZXIsCiAJaWYgKHJldCkKIAkJZ290byBlcnJfcHV0X2RldjsKIAotCW1h
+c3Rlci0+d3EgPSBhbGxvY193b3JrcXVldWUoIiVzIiwgMCwgMCwgZGV2X25hbWUocGFyZW50KSk7
+CisJbWFzdGVyLT53cSA9IGFsbG9jX3dvcmtxdWV1ZSgiJXMiLCBXUV9QRVJDUFUsIDAsIGRldl9u
+YW1lKHBhcmVudCkpOwogCWlmICghbWFzdGVyLT53cSkgewogCQlyZXQgPSAtRU5PTUVNOwogCQln
+b3RvIGVycl9wdXRfZGV2OwotLSAKMi41MS4xCgoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QK
+bGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcv
+bWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
