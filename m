@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7025CE8D6F
-	for <linux-i3c@archiver.kernel.org>; Fri, 14 Nov 2025 18:14:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08F51CE8D71
+	for <linux-i3c@archiver.kernel.org>; Fri, 14 Nov 2025 18:14:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WLwZi/asBqfNjxTMD7vyxrXfd7DaCZs6m8HEoh9nwVw=; b=WIqpvtN1XnI1cN
-	bPPhyMxBlzH/KuOc3H3PCgLmX/e7in2Z1VG8T/GPo9nLPv15NNyNpOC6nMbupyJbVMgM3NM6rCgx1
-	geGmhTPhqBkBtJJytL/sIGPLSuX3Wsz6rTRQ0jtdQZCAgpfnkphYYrbbuK3eOdXSa/PsxD2tzgOd8
-	+ZiDKxqaYgbHXgWAlYv6/VxA/xLi6V5YTnx2866ENz9u8q/F1Mmz2mihKqar4bw/EthgsBxEliUKQ
-	045EX6+9gFET38ncFa5OAQmdY1gO+2lc8VsuMXvVp7arSV+fu0FwYUMdO5vnVG6KV0OA1URf4kGIi
-	0yC6lR9iWO4ErXXiO2sw==;
+	List-Owner; bh=K0VmISkQCqDsTDuxU9pHz8gwl2IhZLew7CysC/m/pxw=; b=MXrv0iddS8si5V
+	SEG702xJB74R818+SrLScVvUPItoKV55gWR3zBPOb4zRe28YvbHbvnoEcP8upLQFJl0429XK6gbVs
+	PEMFLbNweqN6VI/TPOl0ht2nxEJNRBbBNCmi8GWZrls/ZK+C1NC6udtDOlv2AwhhhBs0X21hPaP3z
+	p1uawxILNsC/g4V/gOmkA8KPuUdtyndCRoj+ob7lOhFU5qr8M1syTIMqKV+/relLMN4/krH/e551A
+	VWh84FyL0pSh/Az1zkObjRfBu+8aPXnAHziXOgp78aoDximcnEV3xzaKD1nJkbN0di7Ceh2DF+oYn
+	JTGbRrYlJvxIdNbHG6Xg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJyJa-0000000CwVz-0T9H;
-	Fri, 14 Nov 2025 18:14:30 +0000
+	id 1vJyJc-0000000CwXx-2wsC;
+	Fri, 14 Nov 2025 18:14:32 +0000
 Received: from mgamail.intel.com ([198.175.65.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJyJX-0000000CwUD-3nYG
+	id 1vJyJZ-0000000CwUD-3CXw
 	for linux-i3c@lists.infradead.org;
-	Fri, 14 Nov 2025 18:14:29 +0000
+	Fri, 14 Nov 2025 18:14:31 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1763144068; x=1794680068;
+  t=1763144070; x=1794680070;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=k3Aay5AsxKwe+qGgdvgXRd59WdijaW0NK+MJVOGT6P8=;
-  b=WYJchIBhzQS9Hrz/xsJkgR7xkaUumjTCOFhMP+cayojgDrvFqLhVTqZC
-   YB/GlMA4JOd3yfm48GS/5nTh/B9DAdowTLIeqlgbRGfMs3tdzQ/V0ai1/
-   WYBZOxQVx8JxqmIjRb5VvkW/TdXjEqS0dDymytNfyikbOwY8WkXVHG9iW
-   Acn2zJoAs0ZPC94lOnvMmsDOPCHBtzKX+0FWWiMS6AkZN6kg8qAezxLet
-   y1kuMZoownJQjUmmWofzOCJlTEiVqr+ffsETcojnnq0XBSnicg6T3pLWs
-   5hY4lPGDoTQSoAOv69+cVYfjV+qx5eCOUg/DOaaP1qad4oXlMYhoy4sI2
-   A==;
-X-CSE-ConnectionGUID: gym2kF9FSIKrS9sHFIiLeQ==
-X-CSE-MsgGUID: lEJpIiL5TK2dhdsf7aQhkg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11613"; a="65129403"
+  bh=dDdz5L7qX2GogJ3XVc6qWc0VqBoYwy8ZIjqy9j2pvHI=;
+  b=KLPqimlT9DfirRUZBmNpzGYc3cF7clupFoXMVW9oUXsFR9MQ/FSQ8CzG
+   ERkjXRfyKVgSnIeChb1f/6Ld2LgAS4F86MRcnRfKUQvhotZiJ119SG4Dm
+   AQ3K1bLGf7gIskhgX4kEqzgWNM+tNlXQXvY0rZigP+tStn8G3KpnLDMyn
+   9LAoYFZS+r0gxvz9sLkKHlzrMSNFyRuWtIA4OoQSHo+S6VpIMC/AB8utv
+   y74EGSfHE4H/XtS/2rPq46r7k/yJo8NyHZuLV5oWRQfBSN4IeieMy9PSE
+   HIP5Ch5epUe9xt2z3hT3v/g0bc8SWI/i0kmQ/QzRmfYl5efHvSAGivLSn
+   g==;
+X-CSE-ConnectionGUID: 0YjNFkDrSjGCILmF4id1QQ==
+X-CSE-MsgGUID: Qd6OG9BlSgeN1z+tJ8traw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11613"; a="65129415"
 X-IronPort-AV: E=Sophos;i="6.19,305,1754982000"; 
-   d="scan'208";a="65129403"
+   d="scan'208";a="65129415"
 Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Nov 2025 10:14:22 -0800
-X-CSE-ConnectionGUID: KX5updcXTx+bMxNQC8a8MA==
-X-CSE-MsgGUID: DQEH0bg4STWimz5cL8PVPA==
+  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Nov 2025 10:14:24 -0800
+X-CSE-ConnectionGUID: V1etypkTQoGMX5Rrbjd+5g==
+X-CSE-MsgGUID: KV9yaFFcTLWOCqa6CMEcgw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.19,305,1754982000"; 
-   d="scan'208";a="189668997"
+   d="scan'208";a="189669006"
 Received: from rvuia-mobl.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.245.231])
-  by fmviesa006-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Nov 2025 10:14:20 -0800
+  by fmviesa006-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Nov 2025 10:14:22 -0800
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org
-Subject: [PATCH V2 08/13] i3c: mipi-i3c-hci-pci: Allocate a structure for mipi_i3c_hci_pci device information
-Date: Fri, 14 Nov 2025 20:13:51 +0200
-Message-ID: <20251114181356.66515-9-adrian.hunter@intel.com>
+Subject: [PATCH V2 09/13] i3c: mipi-i3c-hci-pci: Change callback parameter
+Date: Fri, 14 Nov 2025 20:13:52 +0200
+Message-ID: <20251114181356.66515-10-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20251114181356.66515-1-adrian.hunter@intel.com>
 References: <20251114181356.66515-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251114_101428_039160_C2B9D9D6 
-X-CRM114-Status: GOOD (  12.91  )
+X-CRM114-CacheID: sfid-20251114_101430_477602_12D77E8B 
+X-CRM114-Status: GOOD (  12.58  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,103 +85,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Allocate a structure for mipi_i3c_hci_pci device information, in
-preparation for additional changes that need to store mipi_i3c_hci_pci
-device-specific information.
+Change ->init() callback parameter from a pointer to the PCI device to a
+pointer to the locally defined mipi_i3c_hci_pci_info device information.
+This is in preparation for consistency when adding more callbacks that will
+need struct mipi_i3c_hci_pci_info.
 
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
 ---
 
 
 Changes in V2:
 
-	Add Frank's Rev'd-by
+	Re-based
 
 
- .../master/mipi-i3c-hci/mipi-i3c-hci-pci.c    | 29 ++++++++++++-------
- 1 file changed, 19 insertions(+), 10 deletions(-)
+ drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
 
 diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-index b9794212b2fb..8936e50eddf7 100644
+index 8936e50eddf7..7bfb9fe337b6 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-@@ -14,6 +14,10 @@
- #include <linux/pci.h>
+@@ -15,11 +15,12 @@
  #include <linux/platform_device.h>
  
-+struct mipi_i3c_hci_pci {
-+	struct platform_device *pdev;
-+};
-+
- struct mipi_i3c_hci_pci_info {
- 	int (*init)(struct pci_dev *pci);
+ struct mipi_i3c_hci_pci {
++	struct pci_dev *pci;
+ 	struct platform_device *pdev;
  };
-@@ -68,10 +72,14 @@ static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
- 				  const struct pci_device_id *id)
- {
- 	const struct mipi_i3c_hci_pci_info *info;
--	struct platform_device *pdev;
-+	struct mipi_i3c_hci_pci *hci;
- 	struct resource res[2];
- 	int dev_id, ret;
  
-+	hci = devm_kzalloc(&pci->dev, sizeof(*hci), GFP_KERNEL);
-+	if (!hci)
-+		return -ENOMEM;
+ struct mipi_i3c_hci_pci_info {
+-	int (*init)(struct pci_dev *pci);
++	int (*init)(struct mipi_i3c_hci_pci *hci);
+ };
+ 
+ static DEFINE_IDA(mipi_i3c_hci_pci_ida);
+@@ -50,14 +51,14 @@ static void __iomem *intel_priv(struct pci_dev *pci)
+ 	return devm_ioremap(&pci->dev, base + INTEL_PRIV_OFFSET, INTEL_PRIV_SIZE);
+ }
+ 
+-static int intel_i3c_init(struct pci_dev *pci)
++static int intel_i3c_init(struct mipi_i3c_hci_pci *hci)
+ {
+-	void __iomem *priv = intel_priv(pci);
++	void __iomem *priv = intel_priv(hci->pci);
+ 
+ 	if (!priv)
+ 		return -ENOMEM;
+ 
+-	dma_set_mask_and_coherent(&pci->dev, DMA_BIT_MASK(64));
++	dma_set_mask_and_coherent(&hci->pci->dev, DMA_BIT_MASK(64));
+ 
+ 	intel_reset(priv);
+ 
+@@ -80,6 +81,8 @@ static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
+ 	if (!hci)
+ 		return -ENOMEM;
+ 
++	hci->pci = pci;
 +
  	ret = pcim_enable_device(pci);
  	if (ret)
  		return ret;
-@@ -92,14 +100,14 @@ static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
- 	if (dev_id < 0)
- 		return dev_id;
+@@ -113,7 +116,7 @@ static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
  
--	pdev = platform_device_alloc("mipi-i3c-hci", dev_id);
--	if (!pdev)
-+	hci->pdev = platform_device_alloc("mipi-i3c-hci", dev_id);
-+	if (!hci->pdev)
- 		return -ENOMEM;
- 
--	pdev->dev.parent = &pci->dev;
--	device_set_node(&pdev->dev, dev_fwnode(&pci->dev));
-+	hci->pdev->dev.parent = &pci->dev;
-+	device_set_node(&hci->pdev->dev, dev_fwnode(&pci->dev));
- 
--	ret = platform_device_add_resources(pdev, res, ARRAY_SIZE(res));
-+	ret = platform_device_add_resources(hci->pdev, res, ARRAY_SIZE(res));
- 	if (ret)
- 		goto err;
- 
-@@ -110,23 +118,24 @@ static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
+ 	info = (const struct mipi_i3c_hci_pci_info *)id->driver_data;
+ 	if (info && info->init) {
+-		ret = info->init(pci);
++		ret = info->init(hci);
+ 		if (ret)
  			goto err;
  	}
- 
--	ret = platform_device_add(pdev);
-+	ret = platform_device_add(hci->pdev);
- 	if (ret)
- 		goto err;
- 
--	pci_set_drvdata(pci, pdev);
-+	pci_set_drvdata(pci, hci);
- 
- 	return 0;
- 
- err:
--	platform_device_put(pdev);
-+	platform_device_put(hci->pdev);
- 	ida_free(&mipi_i3c_hci_pci_ida, dev_id);
- 	return ret;
- }
- 
- static void mipi_i3c_hci_pci_remove(struct pci_dev *pci)
- {
--	struct platform_device *pdev = pci_get_drvdata(pci);
-+	struct mipi_i3c_hci_pci *hci = pci_get_drvdata(pci);
-+	struct platform_device *pdev = hci->pdev;
- 	int dev_id = pdev->id;
- 
- 	platform_device_unregister(pdev);
 -- 
 2.51.0
 
