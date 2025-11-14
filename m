@@ -4,69 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A929CE8D6F
-	for <linux-i3c@archiver.kernel.org>; Fri, 14 Nov 2025 18:14:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D1292CE8D70
+	for <linux-i3c@archiver.kernel.org>; Fri, 14 Nov 2025 18:14:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=72Kz0qPkh98htpq7LHrTP9ne3APJ/9U3N96KJBrWYGo=; b=jtqVA6Ou9zp3Xt
-	/0kLytm9TLb6eoTcsQneeQF+gJOA6v5qM8vwxRhJHJHcvAomdJFlk9D9xVwejcPkUckVgtkH0d5Y7
-	591LA4B8PykIuhPfzv7MMYRckX+5DREWFwCco/JNkQQ53WOpxFCcqwo7IReS2djBbAIKCAKOB5G4w
-	155uB/mEo8c+pZ5gB6VJeyxib/1VOf+5OmDnbnlyb+utRGPD826doHIumutt9jL5xmY/UqZ50QjBh
-	tYQgsiJ3/CXevWAiwlffiBzwYkVgGw4Vh6nrLLXHOPzUMJz32JidB7QdIY43sBMJJmM8Fud+tf0Au
-	AsjJu0DovruJKAfsuA/w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/2Lahq4I4393mDBPaDgyT2GzAW+KBCWrJlnKu62el4I=; b=CKuZQkRLJflhnu
+	28Cmh1m7UQHpepHcpytwQ9xd/nfivHY3fzI9kSFo+EQAV58Pzz1iOV2OTPKM4YorfD9gfF9mK77k8
+	OapSXojHaK6NHy4Iso8doQ+SyuA7DV0HCMbq4ZSjpCJrMabp6mZqDPHSrBAFG4Lgr7PcFSlYI6YB2
+	fI6ZTCwuq0KH3gDu3C04wffPMFJpADihr6jx8maCIo8XuqCfsmGvU+dJRljbv7mO9DExKQcbgB4Ss
+	ueUuPXeBe/cBWDPS9Ycd243cvAJ+/4z/BQV0VpI+dOaZJLXPmLtbMhOF+Ut/5UWV29WkidU9Aas66
+	EmNfWdmUwlA5jDl21Q9Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJyJO-0000000CwNs-0QE3;
-	Fri, 14 Nov 2025 18:14:18 +0000
+	id 1vJyJR-0000000CwQ6-2aWi;
+	Fri, 14 Nov 2025 18:14:21 +0000
 Received: from mgamail.intel.com ([198.175.65.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJyJJ-0000000CwLW-3KZn
+	id 1vJyJO-0000000CwON-2Xno
 	for linux-i3c@lists.infradead.org;
-	Fri, 14 Nov 2025 18:14:16 +0000
+	Fri, 14 Nov 2025 18:14:19 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1763144054; x=1794680054;
-  h=from:to:cc:subject:date:message-id:mime-version:
-   content-transfer-encoding;
-  bh=DpuT3rasMlx7cP9kKPF8sEquZIdGONr1K7d0ZJ/c9Fs=;
-  b=g1hAnEmaCFB/gDu3waCfKp025/epUVrpqmIze/Fx/cafSbzqIvVapWum
-   mupwd/gakBXjKXbkdaARapKhdCKFchNDq4m7cnyady19wI57EIia+wW1c
-   GnRZw8fPO6meMDYIVnZJTFVO4jkauiTVI8cJPs/OoDw5nSl7uhfugmbBH
-   mhPx72xssc1YWzfRAErbfHwX3WEwiJHBg/v2YpH6T140fbfpcypS8jFhd
-   2oUfH4KI+Oki3PAa2fHZy/CJ/LaLHLHStcG8EtrF5vZvnbZQ08FuEeqvS
-   Qvn3gLXIZBxTh9FLfOqKVjWSej03HZgEA10wmIGo6MRI27osXlrNO1Ei7
-   g==;
-X-CSE-ConnectionGUID: hnaTg7HtRSW6b2ak6AX4vg==
-X-CSE-MsgGUID: 2uZyjlD+QziHUqZezcJd6A==
-X-IronPort-AV: E=McAfee;i="6800,10657,11613"; a="65129272"
+  t=1763144059; x=1794680059;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=kWSQs+wvMMDeV631hD3UaM2Er+Hmp0ZBC9kEI3sSifA=;
+  b=CNtfAEBIJFKDiFjJDrwBbhIkNZkj8nyrCJDx7tjX/Q+8LVq8PpTpAmYN
+   GBszuOuY5qE40CJWiLiq0F0x4/RrpAm6so17iZxuKI4pCt+lc93PY0Hwl
+   rhanKuVwZPNicMmWhKQhL8I+igdGvrlgU0IdmTTMEn0nZGyEfAktPS2Pb
+   SQltODiUPooKtqxShcJQMgVtp8pmTYKqsH891WBNXoRGsdqAsiyF3WUM3
+   TULHRKcH+BnCLg3GrcpZFLqN7tdD4UeteoG1Avgp2fcid4njLb0IrFF9G
+   Kl96RLf829Xfv2kj8w/Aqx07kJWu0CCtig24VNP84XnTSn43d3XF1B8pV
+   w==;
+X-CSE-ConnectionGUID: VQTtqAZWR+2FoZKu68Heaw==
+X-CSE-MsgGUID: y3ZsupPZRdKdXR1GGyJdkg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11613"; a="65129340"
 X-IronPort-AV: E=Sophos;i="6.19,305,1754982000"; 
-   d="scan'208";a="65129272"
+   d="scan'208";a="65129340"
 Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Nov 2025 10:14:10 -0800
-X-CSE-ConnectionGUID: qKTkZLfGQRyYHr1u2k7iyg==
-X-CSE-MsgGUID: kF9gluX0RgO3whqtD12FGg==
+  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Nov 2025 10:14:14 -0800
+X-CSE-ConnectionGUID: 3Z+JZgnCQvqHjD8zcT8p9g==
+X-CSE-MsgGUID: C/XgEW0vRJyvykdIUjRH2Q==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.19,305,1754982000"; 
-   d="scan'208";a="189668953"
+   d="scan'208";a="189668972"
 Received: from rvuia-mobl.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.245.231])
-  by fmviesa006-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Nov 2025 10:14:08 -0800
+  by fmviesa006-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Nov 2025 10:14:13 -0800
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org
-Subject: [PATCH V2 00/13] i3c: mipi-i3c-hci-pci: Add LTR support for Intel controllers
-Date: Fri, 14 Nov 2025 20:13:43 +0200
-Message-ID: <20251114181356.66515-1-adrian.hunter@intel.com>
+Subject: [PATCH V2 03/13] i3c: mipi-i3c-hci-pci: Rename some Intel-related identifiers
+Date: Fri, 14 Nov 2025 20:13:46 +0200
+Message-ID: <20251114181356.66515-4-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
+In-Reply-To: <20251114181356.66515-1-adrian.hunter@intel.com>
+References: <20251114181356.66515-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251114_101413_907386_602B88C9 
-X-CRM114-Status: UNSURE (   7.81  )
+X-CRM114-CacheID: sfid-20251114_101418_712253_66755612 
+X-CRM114-Status: UNSURE (   9.34  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,59 +86,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi
+Rename some Intel-related identifiers to ensure Intel-related identifiers
+begin "intel_" or INTEL_, and for brevity removing purposeless "PRIV" in
+preparation to add more register definitions.
 
-Here are V2 patches primarily to add support for Latency Tolerance
-Reporting (LTR) for Intel controllers.  Most patches are small tidy-ups or
-preparation for the main change.
+Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
+---
 
 
 Changes in V2:
-      i3c: mipi-i3c-hci-pci: Set 64-bit DMA mask for Intel controllers
-	No need to check error from dma_set_mask_and_coherent() with a
-	64-bit mask
 
-      i3c: mipi-i3c-hci-pci: Rename some Intel-related identifiers
 	Rename 'intel_init' to 'intel_i3c_init'
 	More explanation in commit message
 
-      i3c: mipi-i3c-hci-pci: Use readl_poll_timeout()
-	Change 10000 to (10 * USEC_PER_MSEC)
 
-      i3c: mipi-i3c-hci-pci: Constify driver data
-	Add Frank's Rev'd-by
+ .../i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
 
-      i3c: mipi-i3c-hci-pci: Factor out intel_reset()
-	Move location of intel_reset() to get a prettier diff
+diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
+index 3d854cee05df..d434e2962740 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
++++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
+@@ -21,11 +21,11 @@ static DEFINE_IDA(mipi_i3c_hci_pci_ida);
+ 
+ #define INTEL_PRIV_OFFSET		0x2b0
+ #define INTEL_PRIV_SIZE			0x28
+-#define INTEL_PRIV_RESETS		0x04
+-#define INTEL_PRIV_RESETS_RESET		BIT(0)
+-#define INTEL_PRIV_RESETS_RESET_DONE	BIT(1)
++#define INTEL_RESETS			0x04
++#define INTEL_RESETS_RESET		BIT(0)
++#define INTEL_RESETS_RESET_DONE		BIT(1)
+ 
+-static int mipi_i3c_hci_pci_intel_init(struct pci_dev *pci)
++static int intel_i3c_init(struct pci_dev *pci)
+ {
+ 	unsigned long timeout;
+ 	void __iomem *priv;
+@@ -39,21 +39,21 @@ static int mipi_i3c_hci_pci_intel_init(struct pci_dev *pci)
+ 	dma_set_mask_and_coherent(&pci->dev, DMA_BIT_MASK(64));
+ 
+ 	/* Assert reset, wait for completion and release reset */
+-	writel(0, priv + INTEL_PRIV_RESETS);
++	writel(0, priv + INTEL_RESETS);
+ 	timeout = jiffies + msecs_to_jiffies(10);
+-	while (!(readl(priv + INTEL_PRIV_RESETS) &
+-		 INTEL_PRIV_RESETS_RESET_DONE)) {
++	while (!(readl(priv + INTEL_RESETS) &
++		 INTEL_RESETS_RESET_DONE)) {
+ 		if (time_after(jiffies, timeout))
+ 			break;
+ 		cpu_relax();
+ 	}
+-	writel(INTEL_PRIV_RESETS_RESET, priv + INTEL_PRIV_RESETS);
++	writel(INTEL_RESETS_RESET, priv + INTEL_RESETS);
+ 
+ 	return 0;
+ }
+ 
+ static struct mipi_i3c_hci_pci_info intel_info = {
+-	.init = mipi_i3c_hci_pci_intel_init,
++	.init = intel_i3c_init,
+ };
+ 
+ static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
+-- 
+2.51.0
 
-      i3c: mipi-i3c-hci-pci: Allocate a structure for mipi_i3c_hci_pci device information
-	Add Frank's Rev'd-by
-
-      i3c: mipi-i3c-hci-pci: Add LTR support for Intel controllers
-	Make use of FIELD_PREP()
-	Improve handling of values that exceed the maximum
-
-Adrian Hunter (13):
-      i3c: mipi-i3c-hci-pci: Set 64-bit DMA mask for Intel controllers
-      i3c: mipi-i3c-hci-pci: Move all Intel-related definitions together
-      i3c: mipi-i3c-hci-pci: Rename some Intel-related identifiers
-      i3c: mipi-i3c-hci-pci: Use readl_poll_timeout()
-      i3c: mipi-i3c-hci-pci: Constify driver data
-      i3c: mipi-i3c-hci-pci: Factor out private registers ioremapping
-      i3c: mipi-i3c-hci-pci: Factor out intel_reset()
-      i3c: mipi-i3c-hci-pci: Allocate a structure for mipi_i3c_hci_pci device information
-      i3c: mipi-i3c-hci-pci: Change callback parameter
-      i3c: mipi-i3c-hci-pci: Add exit callback
-      i3c: mipi-i3c-hci-pci: Allocate a structure for Intel controller information
-      i3c: mipi-i3c-hci-pci: Add LTR support for Intel controllers
-      i3c: mipi-i3c-hci-pci: Set d3cold_delay to 0 for Intel controllers
-
- drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c | 238 +++++++++++++++++----
- 1 file changed, 200 insertions(+), 38 deletions(-)
-
-
-Regards
-Adrian
 
 -- 
 linux-i3c mailing list
