@@ -4,64 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C92D3CE8D60
-	for <linux-i3c@archiver.kernel.org>; Fri, 14 Nov 2025 17:21:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CF816CE8D70
+	for <linux-i3c@archiver.kernel.org>; Fri, 14 Nov 2025 18:14:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sjKxBvd0vmiJigyErHj+C375Iiy7PQg4BgjuvRdFuSA=; b=kA/prOtXcOSQLi
-	34G4Z8fdFVTAoTEC+yjXxplaH/lhp/sR97g7NaBguyPK1ju6C3xQuSyAvPhqr/rnXF+velNrDzOqI
-	puIKlq377jGBrgkUe+dAREYLTa+EkmVCllOUGQCu6FP/2Gq0RVK4fEKHzdkkuVDDZLdI2r32KF5Ki
-	zRVgC6NAkv5h58Zy3zBvqAsrntw+KOi3Vl9SlehO8NeUqIqvcAsJK7vmDH1ZrzE5xd1kKIgUPNo8H
-	1CAPb+Y1vKDyenz8gm+CTyvvkRqTnfGzBAxH+d0gSjLEF0YbUqZk34PM4dRVC/k3SSZyNvehDXtwV
-	aBU9laIsvcOI9+REI5qA==;
+	List-Owner; bh=6ylctrRKZEZv+HlUab8p9GsOfQUyAgriNaYYuEW9E5U=; b=EkBrwDU91k6KVl
+	qZzESfviSAg3S3S3xoksEv24V7/eUsMU+OCuwkkAw0RiRgOzRVlrYmi9A9yHEdjOyawUWTrOWoPza
+	//tyXGlmdSjQng7ZjUk65WZZed0UB+GGMmYcVlXtpMjNOlx7qNDjwYGpec9v0SEyF7Ni+yLsejHs1
+	Xvrli2O/7R+Ftey+0W9jAQUryZZGXoYsTrUCHCxPjI1uuFX9vQ/FFy29loKTg3eTJrh1RBc2vH/BY
+	WtExHczP/blo1hBSHfs2BkZ2LKoRT0d6uiEMW29XxADY8n8x3dEsN028cf75i7t0QnutN/OENkF6G
+	PAiljgah0Jle6llfHCxA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJxTz-0000000CpR5-2S7W;
-	Fri, 14 Nov 2025 17:21:12 +0000
-Received: from smtpout-02.galae.net ([185.246.84.56])
+	id 1vJyJM-0000000CwNL-2Zam;
+	Fri, 14 Nov 2025 18:14:16 +0000
+Received: from mgamail.intel.com ([198.175.65.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vJxTs-0000000CpQP-1cCP
+	id 1vJyJJ-0000000CwM3-3PIW
 	for linux-i3c@lists.infradead.org;
-	Fri, 14 Nov 2025 17:21:09 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-02.galae.net (Postfix) with ESMTPS id 71F241A1AAB;
-	Fri, 14 Nov 2025 17:21:00 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 3817D6060E;
-	Fri, 14 Nov 2025 17:21:00 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 9818410371C23;
-	Fri, 14 Nov 2025 18:20:58 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1763140859; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=YBIOibJH0wXbFI7hpD4CJ/NOLofxhQo6+ElJdA/NnKw=;
-	b=NLFAkv39+gsgRKr0YKRSHvJn9qU76qltBj3G7W3J28EoN7dImpxpUImX0YpfiHIE8MRyws
-	awQX2K9SWIVAS1IBIa5h5toUeavFNlVPVvmE+9Xx3JKjPLOFhynkJGjaMF2bMTxKLE5wId
-	aDFizfJm2Jc/xV4wjtgmLdPV4aO+nODXzg3sP9I4rGOvbJZeLhQCEhIPHiBoprBQ3Lq+uM
-	f+6n/SfTgKM6VFUBU749dSDV8zYbdh5QB91ygzOXR3tpSfQ7f0h65RLHxoK24/Or4jN0ev
-	ka2NoJ3UnhXk8fOadkGp0APj05s4OkO8uZ7A0C/3wUzjYZgbdbg3zO7NAzN3lg==
-Date: Fri, 14 Nov 2025 18:20:58 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Frank Li <Frank.li@nxp.com>
-Cc: Adrian Hunter <adrian.hunter@intel.com>, linux-i3c@lists.infradead.org
-Subject: Re: [PATCH 04/13] i3c: mipi-i3c-hci-pci: Use readl_poll_timeout()
-Message-ID: <202511141720583d31a5e7@mail.local>
-References: <20251112100339.51726-1-adrian.hunter@intel.com>
- <20251112100339.51726-5-adrian.hunter@intel.com>
- <aRSu/cH5/m1TtZil@lizhi-Precision-Tower-5810>
- <20251114160205b95bb565@mail.local>
- <aRdcOH3vXPkxWScy@lizhi-Precision-Tower-5810>
+	Fri, 14 Nov 2025 18:14:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1763144054; x=1794680054;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=pRXl8MCApycwMCQBP20He+EkkqORlx8Jz1oLL84sRjg=;
+  b=ikufxH1AsLGBLbyTX1KNTt5KWbnIoHJhx9G3WkMrKuGxsoJkYzRd1NKL
+   Axe/PRWgDFQBKska55kGVj4uraRWLb/+Pqiy4WqFFsUJdgaEK1T296gHh
+   jjPwYl4YQuV76STsWEtaE4MsFFw0rSO40DME5+7kFDOIwu++hqiYe8RVl
+   GU9n8opYrEawtlB/yxaJuviYvtdHFvrT5zCuvFDhGCJ9Q/h0oqmConXVq
+   S5zM952du+pR0tIbiWSCx06T4mThj3fW3eUgZ6dOJeQbPfN2cJNx00BpJ
+   +DYvbONkqw9e3KMaqhw+FctC/gFXD1S92s1PC49xtw0w1twYyVHd5idDj
+   A==;
+X-CSE-ConnectionGUID: nm3QJEhSSeOH5Oj+QPVkvw==
+X-CSE-MsgGUID: 24pzmqjWQ4SoC3L65sVsRg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11613"; a="65129281"
+X-IronPort-AV: E=Sophos;i="6.19,305,1754982000"; 
+   d="scan'208";a="65129281"
+Received: from fmviesa006.fm.intel.com ([10.60.135.146])
+  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Nov 2025 10:14:11 -0800
+X-CSE-ConnectionGUID: RxAoEBp4SR+sKQcAfwURSw==
+X-CSE-MsgGUID: Jyi9rZI7QYiQsxvk1NQfMw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.19,305,1754982000"; 
+   d="scan'208";a="189668957"
+Received: from rvuia-mobl.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.245.231])
+  by fmviesa006-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Nov 2025 10:14:10 -0800
+From: Adrian Hunter <adrian.hunter@intel.com>
+To: alexandre.belloni@bootlin.com
+Cc: Frank.Li@nxp.com,
+	linux-i3c@lists.infradead.org
+Subject: [PATCH V2 01/13] i3c: mipi-i3c-hci-pci: Set 64-bit DMA mask for Intel controllers
+Date: Fri, 14 Nov 2025 20:13:44 +0200
+Message-ID: <20251114181356.66515-2-adrian.hunter@intel.com>
+X-Mailer: git-send-email 2.51.0
+In-Reply-To: <20251114181356.66515-1-adrian.hunter@intel.com>
+References: <20251114181356.66515-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aRdcOH3vXPkxWScy@lizhi-Precision-Tower-5810>
-X-Last-TLS-Session-Version: TLSv1.3
+Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251114_092104_580233_0346EBBE 
-X-CRM114-Status: GOOD (  26.05  )
+X-CRM114-CacheID: sfid-20251114_101413_907023_0992739C 
+X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,124 +81,46 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 14/11/2025 11:43:36-0500, Frank Li wrote:
-> On Fri, Nov 14, 2025 at 05:02:05PM +0100, Alexandre Belloni wrote:
-> > On 12/11/2025 10:59:57-0500, Frank Li wrote:
-> > > On Wed, Nov 12, 2025 at 12:03:30PM +0200, Adrian Hunter wrote:
-> > > > Use readl_poll_timeout() instead of open-coding the polling loop.
-> > >
-> > > nice
-> > > >
-> > > > Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
-> > > > ---
-> > > >  drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c | 14 ++++++----=
-----
-> > > >  1 file changed, 6 insertions(+), 8 deletions(-)
-> > > >
-> > > > diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/d=
-rivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-> > > > index c74cc511a344..c15e0556a691 100644
-> > > > --- a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-> > > > +++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-> > > > @@ -8,6 +8,7 @@
-> > > >   */
-> > > >  #include <linux/acpi.h>
-> > > >  #include <linux/idr.h>
-> > > > +#include <linux/iopoll.h>
-> > > >  #include <linux/kernel.h>
-> > > >  #include <linux/module.h>
-> > > >  #include <linux/pci.h>
-> > > > @@ -24,11 +25,12 @@ static DEFINE_IDA(mipi_i3c_hci_pci_ida);
-> > > >  #define INTEL_RESETS			0x04
-> > > >  #define INTEL_RESETS_RESET		BIT(0)
-> > > >  #define INTEL_RESETS_RESET_DONE		BIT(1)
-> > > > +#define INTEL_RESETS_TIMEOUT_US		10000
-> > >
-> > > 10 * USEC_PER_MSEC
-> >
-> > This is super hard nitpicking, I guess everyone knows 10000=B5s is 10ms
-> =
+All Intel controllers support 64-bit DMA.  Set the DMA mask accordingly.
 
-> It is from
-> https://lore.kernel.org/all/aPnrc-Z5WVJorGr7@smile.fi.intel.com/
-> =
+This is needed only if there is no IOMMU configured, which is not
+recommended, but possible.
+
+Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
+---
 
 
-Well, Andy is super nitpicky. I guess 10000 has US just before so there
-won't be any confusion on the actual unit
+Changes in V2:
 
-In your patch, I wouldn't change it for MMC5633_WAIT_SET_RESET_US but I
-agree the call to regmap_read_poll_timeout needs to be clearer.
+	No need to check error from dma_set_mask_and_coherent() with a
+	64-bit mask
 
-> Generally, I only provide such nit at early version.
-> =
+ drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-> I think benefit is avoid miss count 0. Maybe C23, 10'000, especially when
-> number is big.
-> =
+diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
+index dd4484eff2f0..3cd15ca7d391 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
++++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
+@@ -36,6 +36,8 @@ static int mipi_i3c_hci_pci_intel_init(struct pci_dev *pci)
+ 	if (!priv)
+ 		return -ENOMEM;
+ 
++	dma_set_mask_and_coherent(&pci->dev, DMA_BIT_MASK(64));
++
+ 	/* Assert reset, wait for completion and release reset */
+ 	writel(0, priv + INTEL_PRIV_RESETS);
+ 	timeout = jiffies + msecs_to_jiffies(10);
+-- 
+2.51.0
 
-> Frank
-> >
-> > >
-> > > Frank
-> > > >
-> > > >  static int intel_init(struct pci_dev *pci)
-> > > >  {
-> > > > -	unsigned long timeout;
-> > > >  	void __iomem *priv;
-> > > > +	u32 reg;
-> > > >  	int ret;
-> > > >
-> > > >  	priv =3D devm_ioremap(&pci->dev,
-> > > > @@ -43,13 +45,9 @@ static int intel_init(struct pci_dev *pci)
-> > > >
-> > > >  	/* Assert reset, wait for completion and release reset */
-> > > >  	writel(0, priv + INTEL_RESETS);
-> > > > -	timeout =3D jiffies + msecs_to_jiffies(10);
-> > > > -	while (!(readl(priv + INTEL_RESETS) &
-> > > > -		 INTEL_RESETS_RESET_DONE)) {
-> > > > -		if (time_after(jiffies, timeout))
-> > > > -			break;
-> > > > -		cpu_relax();
-> > > > -	}
-> > > > +	readl_poll_timeout(priv + INTEL_RESETS, reg,
-> > > > +			   reg & INTEL_RESETS_RESET_DONE, 0,
-> > > > +			   INTEL_RESETS_TIMEOUT_US);
-> > > >  	writel(INTEL_RESETS_RESET, priv + INTEL_RESETS);
-> > > >
-> > > >  	return 0;
-> > > > --
-> > > > 2.51.0
-> > > >
-> > > >
-> > > > --
-> > > > linux-i3c mailing list
-> > > > linux-i3c@lists.infradead.org
-> > > > http://lists.infradead.org/mailman/listinfo/linux-i3c
-> >
-> > --
-> > Alexandre Belloni, co-owner and COO, Bootlin
-> > Embedded Linux and Kernel engineering
-> > https://bootlin.com
-> >
-> > --
-> > linux-i3c mailing list
-> > linux-i3c@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-i3c
 
--- =
-
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
--- =
-
+-- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
