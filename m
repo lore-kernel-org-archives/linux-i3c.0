@@ -4,71 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD2D8D116EA
-	for <linux-i3c@archiver.kernel.org>; Fri, 28 Nov 2025 06:41:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D42BCFD376
+	for <linux-i3c@archiver.kernel.org>; Fri, 28 Nov 2025 06:41:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IP/+a1mlgumlQQ3vm1/jgo32Lb1mNEMjURvL4qaPUnU=; b=kQglfCJ22wCe2T
-	JeSyzE6WinFkkS55Geh16/kSFfM/kMyGDWmG1CpLR6ChiKJr3ubgeFpqBsNYAf7Ay2+u5O7DQyibE
-	pjOBB3Y5pMgPdST8cl/Kk/2MkFUO2tgJbhOt8Zn173aNSnpRQaO4oOqXIfe1/WlVSC0aOVUpp38dp
-	MhcE2oHByZdQdSoKQSKlIxC4cwNAW8BEftl5pj08MVchg9Oy+5C1pK9qsZOHAQLxmreJzwoYFpNOk
-	0tjRtdZIKh8aOuJfIlpZrzSgiN2/PGpEFwhtvnDIad+unUEOsAOB9UuAPOqZXT+UA1qFZS/hJGWlS
-	h0OxmnyyAo2U+ft0TijQ==;
+	List-Owner; bh=Ar1Oe/z/tgxuMBWUlP5y9XN7ymcA+ooUY6e1hRdlSwY=; b=HrwNn0aUWImL7R
+	Sj3sxYIfazuB1J30opTE877ZQkSKFs+naO/TwR5C7XSvsXkaYRBhQxeQyHJ87rDRzkKuhUhloDi84
+	rlIdQwLxx0sRL6+uMtPH672uoEZ8zZve9JuWsGAEEbisove0dlCClJc+P8vzdYParmPtasIWAPjwn
+	mHvIhZlz2SQKJGbGJKDE1HGcKCVWQIKe+98r5cMX2Q5dxM8CF4KwoWtLi0cUH87JYMc4ee7+1NnjE
+	vMq5r6BYqcekFC1XR9AyVVinWAOTDR/qiG+/VEHELfJDzksz4UzsUFSNLRdFbxx0TwJnScEivfJnG
+	DgjWnjis9jWN3EgjjOOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOsAK-000000003aB-2SPT;
-	Fri, 28 Nov 2025 06:41:12 +0000
+	id 1vOsAM-000000003c2-3h64;
+	Fri, 28 Nov 2025 06:41:14 +0000
 Received: from mgamail.intel.com ([198.175.65.20])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vOsAG-000000003X2-1BW5
+	id 1vOsAH-000000003XD-3RZT
 	for linux-i3c@lists.infradead.org;
-	Fri, 28 Nov 2025 06:41:11 +0000
+	Fri, 28 Nov 2025 06:41:12 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1764312068; x=1795848068;
+  t=1764312070; x=1795848070;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=SwNZYg5sUe0Jais1pb6bqJ1FM6/amujzdiVSrCVTU8Q=;
-  b=PH5+yyNRGg9ugLTerxowp8elWR0QNtV1UmRpRD2ZlFL2q18EICTnVzbD
-   BnQzyuhMWICKSFMt42ag/Mv7Ry08phcK70EIMWTtcXh+l496cm9dxMmov
-   IPgA/ayZ2peTox/XqzuFj7nD0g9qyv1PJ1d73schZSG4ZOsZh466502jJ
-   k0LXT/5Lhoh2E/KZBpdYD5pN7flGUsekohNR82OKimpBCFz+RF4YlMfue
-   3pBD8QkJcD00sjezoSSmUYRQbZIzmOCPFJ72IvlQ0GAw4AFFm7Dn0DtMv
-   hjK+UNsmAZGWYyAppYFGWc/m4OfY65hA5NR4tFMGiMOYtOyNbdkf7FpV3
-   Q==;
-X-CSE-ConnectionGUID: u/XIsufASMeAPG/8w1X2Hw==
-X-CSE-MsgGUID: Nok9y0wBSROBJFZaWhUe8A==
-X-IronPort-AV: E=McAfee;i="6800,10657,11626"; a="66059965"
+  bh=qFsVgnMKEsuDe9JN+8tc4vWjNbF9DNZEkgrXN03e2sU=;
+  b=fKesb8sDpeZRTEIyTS9sRU/KsN4oZ9bBtiZRPidC3uSVu7ye9A4Pq/ED
+   dqvxSRnqDuq770fKlyDs2zcPOOqMWu82jZLrvivYDbvfI/3NXzQrQnGCq
+   FB34yuhtTy/S5SxjQp+S92t5LZU2ROMY/aG0ViwS1FP7g+Y0u2NC5S4cV
+   dpqjAMF6EQnFswVcU9DabAjqV4F59xHZQZhe5y9QLAOTAUtKv0e4b1hJ2
+   SPM4P3xdlPNcEJjMpUNOje20Y6UjIHw0RhXsikJ7Ec6CqQZ/meyDi6qKY
+   maA7fphy+xs8wcBKwJCKf/YG1JbtkovBoltyidYGYE8FmG7OoP9/B6Ffu
+   A==;
+X-CSE-ConnectionGUID: QGLbIxP1S1eBeXNClcxdLQ==
+X-CSE-MsgGUID: WEfQrPlySJiSptYFWK8jZg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11626"; a="66059968"
 X-IronPort-AV: E=Sophos;i="6.20,232,1758610800"; 
-   d="scan'208";a="66059965"
+   d="scan'208";a="66059968"
 Received: from fmviesa004.fm.intel.com ([10.60.135.144])
-  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 27 Nov 2025 22:41:08 -0800
-X-CSE-ConnectionGUID: lN7UySHyRvmke3Ly7T0InA==
-X-CSE-MsgGUID: yD/eonO6STGoLLSk4PlroQ==
+  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 27 Nov 2025 22:41:09 -0800
+X-CSE-ConnectionGUID: 4e/Pa4KCRW+vGzANRJVkHg==
+X-CSE-MsgGUID: 67ki5su7SUOqtD4VIG6qEg==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.20,232,1758610800"; 
-   d="scan'208";a="198348119"
+   d="scan'208";a="198348130"
 Received: from fpallare-mobl4.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.244.155])
-  by fmviesa004-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 27 Nov 2025 22:41:06 -0800
+  by fmviesa004-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 27 Nov 2025 22:41:08 -0800
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org
-Subject: [PATCH V5 11/12] i3c: mipi-i3c-hci-pci: Add LTR support for Intel controllers
-Date: Fri, 28 Nov 2025 08:40:37 +0200
-Message-ID: <20251128064038.55158-12-adrian.hunter@intel.com>
+Subject: [PATCH V5 12/12] i3c: mipi-i3c-hci-pci: Set d3cold_delay to 0 for Intel controllers
+Date: Fri, 28 Nov 2025 08:40:38 +0200
+Message-ID: <20251128064038.55158-13-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20251128064038.55158-1-adrian.hunter@intel.com>
 References: <20251128064038.55158-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251127_224109_785357_5EA41888 
-X-CRM114-Status: GOOD (  16.07  )
+X-CRM114-CacheID: sfid-20251127_224109_980204_FD7093AD 
+X-CRM114-Status: UNSURE (   7.11  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,201 +86,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add support for Latency Tolerance Reporting (LTR) for Intel controllers.
-
-Implement PM ->set_latency_tolerance() callback to set LTR register values.
-Also expose LTR register values via debugfs.
+Set d3cold_delay to 0 for Intel controllers because a delay is not needed.
 
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 Reviewed-by: Frank Li <Frank.Li@nxp.com>
 ---
 
 
-Changes in V5:
+Changes in V4 and V5:
 
-	Add Frank's Rev'd-by
-	Rename intel_exit to intel_i3c_exit to match intel_i3c_init
-
-Changes in V4:
-
-	Drop intel_actualize_debugfs_root() that created 'intel-i3c'
-	debugfs directory.
+	None
 
 Changes in V3:
 
-	Squash previous patch into this one
+	Add Frank's Rev'd-by
 
 Changes in V2:
 
-	Make use of FIELD_PREP()
-	Improve handling of values that exceed the maximum
+	Re-based
 
 
- .../master/mipi-i3c-hci/mipi-i3c-hci-pci.c    | 113 +++++++++++++++++-
- 1 file changed, 112 insertions(+), 1 deletion(-)
+ drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-index 7a91efbd3e54..25c129a856d6 100644
+index 25c129a856d6..dc8ede0f8ad8 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-@@ -7,17 +7,21 @@
-  * Author: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-  */
- #include <linux/acpi.h>
-+#include <linux/bitfield.h>
-+#include <linux/debugfs.h>
- #include <linux/idr.h>
- #include <linux/iopoll.h>
- #include <linux/kernel.h>
- #include <linux/module.h>
- #include <linux/pci.h>
- #include <linux/platform_device.h>
-+#include <linux/pm_qos.h>
- 
- struct mipi_i3c_hci_pci {
- 	struct pci_dev *pci;
- 	struct platform_device *pdev;
- 	const struct mipi_i3c_hci_pci_info *info;
-+	void *private;
- };
- 
- struct mipi_i3c_hci_pci_info {
-@@ -34,6 +38,99 @@ static DEFINE_IDA(mipi_i3c_hci_pci_ida);
- #define INTEL_RESETS_RESET_DONE		BIT(1)
- #define INTEL_RESETS_TIMEOUT_US		(10 * USEC_PER_MSEC)
- 
-+#define INTEL_ACTIVELTR			0x0c
-+#define INTEL_IDLELTR			0x10
-+
-+#define INTEL_LTR_REQ			BIT(15)
-+#define INTEL_LTR_SCALE_MASK		GENMASK(11, 10)
-+#define INTEL_LTR_SCALE_1US		FIELD_PREP(INTEL_LTR_SCALE_MASK, 2)
-+#define INTEL_LTR_SCALE_32US		FIELD_PREP(INTEL_LTR_SCALE_MASK, 3)
-+#define INTEL_LTR_VALUE_MASK		GENMASK(9, 0)
-+
-+struct intel_host {
-+	void __iomem	*priv;
-+	u32		active_ltr;
-+	u32		idle_ltr;
-+	struct dentry	*debugfs_root;
-+};
-+
-+static void intel_cache_ltr(struct intel_host *host)
-+{
-+	host->active_ltr = readl(host->priv + INTEL_ACTIVELTR);
-+	host->idle_ltr = readl(host->priv + INTEL_IDLELTR);
-+}
-+
-+static void intel_ltr_set(struct device *dev, s32 val)
-+{
-+	struct mipi_i3c_hci_pci *hci = dev_get_drvdata(dev);
-+	struct intel_host *host = hci->private;
-+	u32 ltr;
-+
-+	/*
-+	 * Program latency tolerance (LTR) accordingly what has been asked
-+	 * by the PM QoS layer or disable it in case we were passed
-+	 * negative value or PM_QOS_LATENCY_ANY.
-+	 */
-+	ltr = readl(host->priv + INTEL_ACTIVELTR);
-+
-+	if (val == PM_QOS_LATENCY_ANY || val < 0) {
-+		ltr &= ~INTEL_LTR_REQ;
-+	} else {
-+		ltr |= INTEL_LTR_REQ;
-+		ltr &= ~INTEL_LTR_SCALE_MASK;
-+		ltr &= ~INTEL_LTR_VALUE_MASK;
-+
-+		if (val > INTEL_LTR_VALUE_MASK) {
-+			val >>= 5;
-+			if (val > INTEL_LTR_VALUE_MASK)
-+				val = INTEL_LTR_VALUE_MASK;
-+			ltr |= INTEL_LTR_SCALE_32US | val;
-+		} else {
-+			ltr |= INTEL_LTR_SCALE_1US | val;
-+		}
-+	}
-+
-+	if (ltr == host->active_ltr)
-+		return;
-+
-+	writel(ltr, host->priv + INTEL_ACTIVELTR);
-+	writel(ltr, host->priv + INTEL_IDLELTR);
-+
-+	/* Cache the values into intel_host structure */
-+	intel_cache_ltr(host);
-+}
-+
-+static void intel_ltr_expose(struct device *dev)
-+{
-+	dev->power.set_latency_tolerance = intel_ltr_set;
-+	dev_pm_qos_expose_latency_tolerance(dev);
-+}
-+
-+static void intel_ltr_hide(struct device *dev)
-+{
-+	dev_pm_qos_hide_latency_tolerance(dev);
-+	dev->power.set_latency_tolerance = NULL;
-+}
-+
-+static void intel_add_debugfs(struct mipi_i3c_hci_pci *hci)
-+{
-+	struct dentry *dir = debugfs_create_dir(dev_name(&hci->pci->dev), NULL);
-+	struct intel_host *host = hci->private;
-+
-+	intel_cache_ltr(host);
-+
-+	host->debugfs_root = dir;
-+	debugfs_create_x32("active_ltr", 0444, dir, &host->active_ltr);
-+	debugfs_create_x32("idle_ltr", 0444, dir, &host->idle_ltr);
-+}
-+
-+static void intel_remove_debugfs(struct mipi_i3c_hci_pci *hci)
-+{
-+	struct intel_host *host = hci->private;
-+
-+	debugfs_remove_recursive(host->debugfs_root);
-+}
-+
- static void intel_reset(void __iomem *priv)
- {
- 	u32 reg;
-@@ -55,20 +152,34 @@ static void __iomem *intel_priv(struct pci_dev *pci)
- 
- static int intel_i3c_init(struct mipi_i3c_hci_pci *hci)
- {
-+	struct intel_host *host = devm_kzalloc(&hci->pci->dev, sizeof(*host), GFP_KERNEL);
- 	void __iomem *priv = intel_priv(hci->pci);
- 
--	if (!priv)
-+	if (!host || !priv)
- 		return -ENOMEM;
+@@ -160,6 +160,8 @@ static int intel_i3c_init(struct mipi_i3c_hci_pci *hci)
  
  	dma_set_mask_and_coherent(&hci->pci->dev, DMA_BIT_MASK(64));
  
-+	hci->private = host;
-+	host->priv = priv;
++	hci->pci->d3cold_delay = 0;
 +
- 	intel_reset(priv);
+ 	hci->private = host;
+ 	host->priv = priv;
  
-+	intel_ltr_expose(&hci->pci->dev);
-+	intel_add_debugfs(hci);
-+
- 	return 0;
- }
- 
-+static void intel_i3c_exit(struct mipi_i3c_hci_pci *hci)
-+{
-+	intel_remove_debugfs(hci);
-+	intel_ltr_hide(&hci->pci->dev);
-+}
-+
- static const struct mipi_i3c_hci_pci_info intel_info = {
- 	.init = intel_i3c_init,
-+	.exit = intel_i3c_exit,
- };
- 
- static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
 -- 
 2.51.0
 
