@@ -4,61 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04588D116EA
-	for <linux-i3c@archiver.kernel.org>; Fri, 28 Nov 2025 23:28:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2F70D116EA
+	for <linux-i3c@archiver.kernel.org>; Fri, 28 Nov 2025 23:33:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wh7Sxggm11NALKJoKtgWQ6f+pxOWaYOUl+LxathEkO4=; b=NB7Dfde2t4mGjz
-	NJWKtfB+8MrPUf5Zs1C7CZ+Nb5niuYg76esPh0Gl3xKl0rqGvEBwyc90mvCerI8SLJe6K7sBolOvY
-	ZR1Wu0l1hCtzHn6Q7E9upGuD6RDq/tntkD6J9svZWsDupznKFFbvxUhP+PlQUCFXgKVWeQVbrHkEf
-	lLrl1lWLdQGYWUWU2TTHeiuTVMLpzRBULGI2/Hyh5VVkKlcgoI3QwDYQObSsBD+AFZz4U2Zx3gDZk
-	/3c9W/0DaAkJ0QM+tkyu2btHYYc380udGVPrOPRCZSauhAAmME3E+XWhIyuUwalvwtcyufnDhbYyE
-	w7BGS4v2zM/x3Wgwuc4g==;
+	List-Owner; bh=NU1Oy1RoU3AXXmcqbcxMaVIOp/R3JR3mVFyMi4ffzTo=; b=WqWqYmS5ApipQn
+	lCRNlFqF1DXzO3y+nnZe0njsLocDh0lwsv9SmjI8q66BMelf3N/dGSaAQxLsrNaYRDl8E8ANjt4J5
+	lUI1Pac/++XlLG5uGv/aOQ4JDDrF+0YDG5nF822nqRkjIi77uJvpsZ36pSjTR1G9Dkj5sZ4S1+6f9
+	NuHxEFc01iAXXnjLg4AgtYaVQKB6A41phNErWkxMSLTe/rfh5CEKfBRuiLQrciK+6U6i688p7syH3
+	K1dce1K0ijPp6Lzysd7gm6YLcckTtfql0+f4Z1Q6gW2N+wQ5PnlE6SooX3ff8mIgJkgfGGgCRgpRz
+	Rg51uCAs0SRo3tR8nlsQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vP7sg-000000013CR-39N5;
-	Fri, 28 Nov 2025 23:28:02 +0000
+	id 1vP7xa-000000013Q3-1lfI;
+	Fri, 28 Nov 2025 23:33:06 +0000
 Received: from smtpout-04.galae.net ([185.171.202.116])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vP7sd-000000013By-1xEL
+	id 1vP7xW-000000013Pc-3V4W
 	for linux-i3c@lists.infradead.org;
-	Fri, 28 Nov 2025 23:28:01 +0000
+	Fri, 28 Nov 2025 23:33:04 +0000
 Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-04.galae.net (Postfix) with ESMTPS id 4948EC15D6B;
-	Fri, 28 Nov 2025 23:27:34 +0000 (UTC)
+	by smtpout-04.galae.net (Postfix) with ESMTPS id 2BBE1C15D6B;
+	Fri, 28 Nov 2025 23:32:37 +0000 (UTC)
 Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 2D62560706;
-	Fri, 28 Nov 2025 23:27:57 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id D950D10B025F8;
-	Sat, 29 Nov 2025 00:27:54 +0100 (CET)
+	by smtpout-01.galae.net (Postfix) with ESMTPS id EEBFD60706;
+	Fri, 28 Nov 2025 23:32:59 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 2328B10B02605;
+	Sat, 29 Nov 2025 00:32:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1764372476; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=A76xFU324aR9yxe3hIEbvTdh3qQS7JiP/5wjrwFoSDw=;
-	b=IG1j91GnXapobKbp8v4fDsLldOnzS/mGchKx2MjLePMCy1Y/WAO1WTUVCqNSlJVXTQ+5QL
-	4GCE5esDTBT76HRKqGDHXok2AUotoQQmNjzI8qKJToYk+9hg8UX/4N4rQ1NEhIsXjsxjxE
-	p43LgGhvRoqHRYFB610HQRr2iZbz6eHKBRRvkbTCtbuwoAc4ewTppk0lHV9BVgewmgeIPY
-	MuWia1k637Ks104D5a1tfpjpiAHqP0ia0fJ4IyHFnWEsixmE4HkzLVlhgLHNn/3VG8Gf0u
-	Ovb0vnS+NFod2bXJRCDf9jdTAuNpK1K1olk043O0TwgX1r+pQ7HEL2gpzjKMDg==
-Date: Sat, 29 Nov 2025 00:27:54 +0100
+	t=1764372779; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=nrQIrhb9ptS2yZiTYqRpOC07Bin7QfwRXZbB/yCEBEo=;
+	b=h9ECBGoYOwczR8o2kvxMcysDKoQLnnFPn74mUCE5fSI7tOqreWqu1g4DdcdMpUmP3BIsZr
+	ls8zlqGkDun6VJvSO+CP0KQDer+QUXPRNQb7/8V3HDFmxUlHS4uChMEZ/PVIh6kQ4woLTp
+	cU4iliX/fvI+tA+TkMulNs4/OzViDBbEFcrmPcm7YRvAr13C5842cVbWfOTXl7AP8d12Pj
+	nNJ4HZWGPamZ+5DrIprYd9yKeGpL99GVP/d1JRLhak25I+TBHBSe1x6A4HVCXr5eDY6b9y
+	viY/O82R9DpU3/jCyh5nXKMczqct+CEqddq10L8Hc4CLUfkjWiL89ud2YF7wFw==
+Date: Sat, 29 Nov 2025 00:32:57 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Frank Li <Frank.Li@nxp.com>, Jorge Marques <jorge.marques@analog.com>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	gastmaier@gmail.com
-Subject: Re: [PATCH] i3c: master: Remove i3c_device_free_ibi from
- i3c_device_remove
-Message-ID: <176437242363.884558.12871962485756677254.b4-ty@bootlin.com>
-References: <20251112-ibi-unsafe-v1-1-d8454db22613@analog.com>
+To: linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
+	Marco Crivellari <marco.crivellari@suse.com>
+Cc: Tejun Heo <tj@kernel.org>, Lai Jiangshan <jiangshanlai@gmail.com>,
+	Frederic Weisbecker <frederic@kernel.org>,
+	Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
+	Michal Hocko <mhocko@suse.com>, Frank Li <Frank.Li@nxp.com>
+Subject: Re: [PATCH] i3c: master: add WQ_PERCPU to alloc_workqueue users
+Message-ID: <176437267658.886424.4325635802365787848.b4-ty@bootlin.com>
+References: <20251107132949.184944-1-marco.crivellari@suse.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251112-ibi-unsafe-v1-1-d8454db22613@analog.com>
+In-Reply-To: <20251107132949.184944-1-marco.crivellari@suse.com>
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251128_152759_660681_33637B0F 
-X-CRM114-Status: UNSURE (   8.88  )
+X-CRM114-CacheID: sfid-20251128_153303_061047_2349CA43 
+X-CRM114-Status: UNSURE (   8.51  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,21 +78,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, 12 Nov 2025 22:30:00 +0100, Jorge Marques wrote:
-> i3c_device_disable_ibi should be called before i3c_device_free_ibi,
-> however, a driver using devm actions cannot yield the call before the
-> bus_type.remove(), requiring to use a .remove method that is usually
-> discouraged for drivers that uses resources already manage. Since the
-> only consumer mctp-i3c.c of this method calls both
-> i3c_device_disable_ibi then i3c_device_free_ibi, remove the call from
-> the i3c_device_remove (bus_type.remove()).
+On Fri, 07 Nov 2025 14:29:49 +0100, Marco Crivellari wrote:
+> Currently if a user enqueues a work item using schedule_delayed_work() the
+> used wq is "system_wq" (per-cpu wq) while queue_delayed_work() use
+> WORK_CPU_UNBOUND (used when a cpu is not specified). The same applies to
+> schedule_work() that is using system_wq and queue_work(), that makes use
+> again of WORK_CPU_UNBOUND.
+> This lack of consistency cannot be addressed without refactoring the API.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] i3c: master: Remove i3c_device_free_ibi from i3c_device_remove
-      https://git.kernel.org/abelloni/c/5b9481a41571
+[1/1] i3c: master: add WQ_PERCPU to alloc_workqueue users
+      https://git.kernel.org/abelloni/c/de53ad6ca49e
 
 Best regards,
 
