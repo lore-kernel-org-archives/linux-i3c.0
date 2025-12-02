@@ -4,71 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 80D7AD1171B
-	for <linux-i3c@archiver.kernel.org>; Tue,  2 Dec 2025 17:07:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CBD80D1171A
+	for <linux-i3c@archiver.kernel.org>; Tue,  2 Dec 2025 17:07:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t+Hc8cNSNrPcK1ZpmjTwN9Qnp46hadFlWXzCvrYxYrE=; b=kxURf83ObUUjhZ
-	d3+fWxabulEF/x5/4OIkY0U2POV0lkDDh1QG+HUVd7aODG/2TFPk1nYMK86s3301XZJFe54xTZBq5
-	i+4tiK8rBvEzjpyo7u+/mEKLmuQfc38ItDXprnkzMkHJiGL3iLsBudWuiW12ZVoBrNqHi6FnyjZpB
-	IWE0i9N2qbFziQBrebBk7Hvdd7vrS4ApcAC+hMUHBGQy/8AWJ2pe0fGp+Up6f3KueXGTtDGqZyYVa
-	2NpiGp50PsVzHGLEWPnUY4qModMTiIU6PJ6FXHqQTMgxHi1ijLFtOdtFvUXBBaCdkJ99omXnjk5LI
-	wiLkIDGd0Wc6vsjrwGbQ==;
+	List-Owner; bh=bk6RedaTNga2FQ6J2pvr7Om3T1Ui2Q29UCxPNkx0N1o=; b=Uc3KkTdAhnf9hX
+	nxIP8hWA5xPdWhd2IbXEmEfB6dXGz3gc58jhudd5eZF9dRCmLa1hctu//sTsYdt21T6vAEkaRZvuH
+	UjTmeZWWwbqB11dEPEMobiwA77kJsFI51DRrkF4Pggy3W5PPkXRmQvb9J14+Qj3K+BAbq9upivXM/
+	j/RzYlKBSJtMH79RGl5mNiFrvpFRp8y70c7R8W5EQwvKwCWvE1e2pySr+8icg3EoOFPO/aZZfqhdg
+	UNukZSGqKpjU87AUiUYFIlcJ8OieKHK7tOX1EQp4rDKocYn0tQsivIZJDuT+TEyNzK9SkzC97hi+J
+	/aIdHOEDUDmEjs0vJNFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vQTqJ-00000005eef-19eY;
-	Tue, 02 Dec 2025 17:07:11 +0000
+	id 1vQTqd-00000005egw-2Mjg;
+	Tue, 02 Dec 2025 17:07:31 +0000
 Received: from smtpout-03.galae.net ([185.246.85.4])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vQTqF-00000005eeI-3Yia
+	id 1vQTqZ-00000005egJ-1Nfo
 	for linux-i3c@lists.infradead.org;
-	Tue, 02 Dec 2025 17:07:09 +0000
+	Tue, 02 Dec 2025 17:07:28 +0000
 Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-03.galae.net (Postfix) with ESMTPS id 1803B4E419E0;
-	Tue,  2 Dec 2025 17:07:06 +0000 (UTC)
+	by smtpout-03.galae.net (Postfix) with ESMTPS id DF36B4E419E0;
+	Tue,  2 Dec 2025 17:07:25 +0000 (UTC)
 Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id D17E1606D6;
-	Tue,  2 Dec 2025 17:07:05 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 93B7411919D70;
-	Tue,  2 Dec 2025 18:07:00 +0100 (CET)
+	by smtpout-01.galae.net (Postfix) with ESMTPS id B305C606D6;
+	Tue,  2 Dec 2025 17:07:25 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 8A2B111919DE1;
+	Tue,  2 Dec 2025 18:07:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1764695224; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=mUNwn26nhwJCke2bRYWKHCmVtw4daBaVjxTywqqyjAE=;
-	b=wGL+W5WArWvIH0qjuEPIh7lBBWL0xGThHbRSi8PlsOy1Fx9wh5KAPX7185UE9UnXeyatVI
-	tB02U6b2VRqZNRD6aIQCYlklOBO5ZI55m9ZlerXwmVyOwCObRjeQg5bUggCVmRVIqRYaIK
-	M7z6qgos1oxmkfCkXyK6M6F8+qEBTi74dxHfOyRPLGICON1olLjtd+3ZTISudDfzAuiciq
-	HuTdr5NPWMtOpuZ7u9W+w0J/Dn2AIoDlXK53Oml0tt9OvjWgjgYpAZjOvsZ7Nc9uvSoumT
-	D602TJrR84hTK8vXtJDgrNLviL+Duo9/sSlpGXwX3njvC4ZRxyGsAfRcoFqisg==
-Date: Tue, 2 Dec 2025 18:06:59 +0100
+	t=1764695244; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=6Er31q3t3D9gDuRWCtmdgM2TNfpxlbVnIHYGvg/Vq/c=;
+	b=Mvju4zv1UyTlkJNTxNx8wDVLUVXLZ/EeOiQS6vKcvKy1up6MPthK6/BtaBYRFYjqwJop/9
+	/wryL3GpnX3d0tJe+cIYz3QY6J+bLto6sLBrP7OVqXkJtEmZbgr5xWS/Dy+jtf8JRYg6/v
+	p+SjOOIC1rUNgLb4ONS2ZFhKjp+f9sNOOVj1d4icJzeAdxcWOf+Doquvbw+Ons7pfWppHi
+	On9a7deMVX5QKmeRd6Ed44STYFYYdk9OB+tneBwtQTIulfQfTZgwRgj+BF4djdk4cKUl9n
+	TV2r8coBIPzA9qRKq70l+CrTOHPAE0V7pFUnn5LgxAtN28mRCMX0XrpxD8HjyQ==
+Date: Tue, 2 Dec 2025 18:07:19 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Guenter Roeck <linux@roeck-us.net>,
-	Jeremy Kerr <jk@codeconstruct.com.au>,
-	Matt Johnston <matt@codeconstruct.com.au>,
-	Andrew Lunn <andrew+netdev@lunn.ch>,
-	"David S. Miller" <davem@davemloft.net>,
-	Eric Dumazet <edumazet@google.com>,
-	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
-	Mark Brown <broonie@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	"Rafael J. Wysocki" <rafael@kernel.org>,
-	Danilo Krummrich <dakr@kernel.org>, Frank Li <Frank.Li@nxp.com>
-Cc: linux-hwmon@vger.kernel.org, linux-kernel@vger.kernel.org,
-	netdev@vger.kernel.org, linux-i3c@lists.infradead.org
-Subject: Re: [PATCH 0/4] i3c: switch to use switch to use i3c_xfer from
- i3c_priv_xfer
-Message-ID: <176469517228.2676946.6008057547804596817.b4-ty@bootlin.com>
-References: <20251028-lm75-v1-0-9bf88989c49c@nxp.com>
+To: Miquel Raynal <miquel.raynal@bootlin.com>,
+	Jonathan Cameron <jic23@kernel.org>,
+	David Lechner <dlechner@baylibre.com>,
+	Nuno =?iso-8859-1?Q?S=E1?= <nuno.sa@analog.com>,
+	Andy Shevchenko <andy@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Frank Li <Frank.Li@nxp.com>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+	imx@lists.linux.dev, linux-iio@vger.kernel.org,
+	joshua.yeong@starfivetech.com, devicetree@vger.kernel.org,
+	linux@roeck-us.net, Carlos Song <carlos.song@nxp.com>,
+	Conor Dooley <conor.dooley@microchip.com>,
+	Adrian Fluturel <fluturel.adrian@gmail.com>,
+	Andy Shevchenko <andriy.shevchenko@intel.com>
+Subject: Re: (subset) [PATCH v11 0/6] i3c: Add basic HDR mode support
+Message-ID: <176469517224.2676946.11188643090832836705.b4-ty@bootlin.com>
+References: <20251106-i3c_ddr-v11-0-33a6a66ed095@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251028-lm75-v1-0-9bf88989c49c@nxp.com>
+In-Reply-To: <20251106-i3c_ddr-v11-0-33a6a66ed095@nxp.com>
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251202_090708_044110_C985E4A5 
-X-CRM114-Status: GOOD (  10.02  )
+X-CRM114-CacheID: sfid-20251202_090727_498039_076AF8BD 
+X-CRM114-Status: UNSURE (   6.68  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,26 +86,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, 28 Oct 2025 10:57:51 -0400, Frank Li wrote:
-> This depend on the serise
-> https://lore.kernel.org/linux-i3c/20251028-i3c_ddr-v8-0-795ded2db8c2@nxp.com/T/#t
+On Thu, 06 Nov 2025 12:35:59 -0500, Frank Li wrote:
+> Add basic HDR mode support, only support private transfer, not support
+> CCC command.
 > 
-> Convert all existed i3c consumer to new API.
+> Update i3c framework API to allow pass down mode and extend driver callback
+> function.
 > 
-> The below patch need be applied after other patch applied to avoid build
-> break.
->   i3c: drop i3c_priv_xfer and i3c_device_do_priv_xfers()
+> Implement HDR transfer in svc i3c master driver.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/4] hwmon: (lm75): switch to use i3c_xfer from i3c_priv_xfer
-      https://git.kernel.org/abelloni/c/1f08a91cec5f
-[2/4] net: mctp i3c: switch to use i3c_xfer from i3c_priv_xfer
-      https://git.kernel.org/abelloni/c/57c4011d3637
-[3/4] regmap: i3c: switch to use i3c_xfer from i3c_priv_xfer
-      https://git.kernel.org/abelloni/c/79c3ae7ada05
+[1/6] i3c: Add HDR API support
+      https://git.kernel.org/abelloni/c/256a21743d91
+[2/6] i3c: Switch to use new i3c_xfer from i3c_priv_xfer
+      https://git.kernel.org/abelloni/c/9280b6ebbf08
+[3/6] i3c: master: svc: Replace bool rnw with union for HDR support
+      https://git.kernel.org/abelloni/c/108420fe2100
+[4/6] i3c: master: svc: Add basic HDR mode support
+      https://git.kernel.org/abelloni/c/4e7263b87ca3
 
 Best regards,
 
