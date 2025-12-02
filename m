@@ -4,76 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE5E1D1267F
-	for <linux-i3c@archiver.kernel.org>; Tue,  2 Dec 2025 22:50:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 08615D12688
+	for <linux-i3c@archiver.kernel.org>; Tue,  2 Dec 2025 23:15:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ulDFvNeYdEn1q5nCpyJVHjB1intESsaJcoEH5hYAp+g=; b=BeZ9wkHjWGPvlp
-	WNB5bAWdrBYRtFv1NAngyLYh1HxeEdLisJY1HeTdIrJNZBuPrlblC/bZgWkDmPTaGAFmAuFtTJ8bO
-	wU2nn4noBK2YK+JCM9LdZ8I4g7e0J5BFxmbUjA5vUuFqEudbis2k3waCf9Z5auxwLp31JhSVyPXZ1
-	KSUVffq5+xKqTdNNEqhntzx+YYs1Syh8vDwpOT3K41qKC5dRdylhEM5/ayzdYM2CFskWcLEKVaFz1
-	NUL0tYTwxHKdBa5WZePhvUpYheEKHt3mL8nWZj0sPYOUEb6Al9ubr8FwavIrrFKsCJIUlR1Xwx4PU
-	GCmCtp+PPiaouN/6RZgA==;
+	List-Owner; bh=fsY0T0os064Xx1N3TfG3bnWG2SgRvRoNq0/nYFlquRY=; b=fSraGHEx97i3FH
+	tVZTL/t8egz+mX2ExSX8j+XApdRdwCDH7gc6oJ9I1yVTpw1IkdQAQaheN8iyhupub3CMw5mv6FSmf
+	fPaSHOUSChjrLWtT28uWo+DGgvEa8Z2ZHto3Q47y2IDbGrfVelIGzG9WijcBc/++Dfe/CG/xCHEO2
+	6db6cmW9hOcro6pfMu/6Hhi+zHu9xFK53vj+zecqAT/nICy0BPWB4T3Wj4hjLmb3P/37An8lyVLIM
+	9zPxeGdtHVXK+HvYQS0fOLMDHfMsjYDrWILVQ8kvENXzGqPu9iLB+TW29H14wI/opfabEgawMzMVG
+	E1BGcqvZbWYcWZuIgE5Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vQZCD-00000005uh0-21Hs;
-	Tue, 02 Dec 2025 22:50:09 +0000
-Received: from mgamail.intel.com ([198.175.65.20])
+	id 1vQZax-00000005vhW-1PzM;
+	Tue, 02 Dec 2025 23:15:43 +0000
+Received: from smtpout-04.galae.net ([185.171.202.116])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vQZCB-00000005uge-012m
+	id 1vQZat-00000005vh1-1phL
 	for linux-i3c@lists.infradead.org;
-	Tue, 02 Dec 2025 22:50:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1764715807; x=1796251807;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=G4oPXrPI8PwJJLVy+NJqGPdaksfb/5A6sgtJVTFuEAo=;
-  b=lHhdr5Y47PnUaglF5O28ND0CO9nmfWqFlq6feCImA1oL5HsvbnVHLRVy
-   KIyXAf982ukE3NNKznUpNFtVBnCEGyKgW0XiNJsDiQJ+PdYN1FOFQpPfC
-   AjTWL3Vh83LYJRL92bgYAJ469pOebzVnaCCzkB3r8VynBno+S54RFLxh4
-   RcfSAcABbqYbNDc49b71f9oZzdTcDaya0RS1tlilsxuRvmlHuVB8cz3Lf
-   QKqn6xpE4QEiV/RnvlP0UTtJnRuiOlHRUfkuHeM08VaeczH7Y/IjpG8kg
-   lCkQXETxPofAN0aGz6wRuV7Jc7Y16t346GGGH/ETAeU/hJVrMq/07YUBO
-   Q==;
-X-CSE-ConnectionGUID: Tl8ExeiRT/SEMYOCnNXOVg==
-X-CSE-MsgGUID: U037c6l5RRGRY1RPHi2Q7g==
-X-IronPort-AV: E=McAfee;i="6800,10657,11631"; a="66420975"
-X-IronPort-AV: E=Sophos;i="6.20,244,1758610800"; 
-   d="scan'208";a="66420975"
-Received: from orviesa001.jf.intel.com ([10.64.159.141])
-  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 Dec 2025 14:49:59 -0800
-X-CSE-ConnectionGUID: rVvzLVFqTCKrPMQzuuHqwA==
-X-CSE-MsgGUID: hjzNXh/LSAqGS7RjtkXM2A==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.20,244,1758610800"; 
-   d="scan'208";a="231840756"
-Received: from lkp-server01.sh.intel.com (HELO 4664bbef4914) ([10.239.97.150])
-  by orviesa001.jf.intel.com with ESMTP; 02 Dec 2025 14:49:55 -0800
-Received: from kbuild by 4664bbef4914 with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1vQZBw-00000000AHF-2htP;
-	Tue, 02 Dec 2025 22:49:52 +0000
-Date: Wed, 3 Dec 2025 06:49:29 +0800
-From: kernel test robot <lkp@intel.com>
-To: adrianhoyin.ng@altera.com, alexandre.belloni@bootlin.com,
-	Frank.Li@nxp.com, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Cc: oe-kbuild-all@lists.linux.dev, adrianhoyin.ng@altera.com
-Subject: Re: [PATCH v5 4/5] i3c: dw: use FIELD_PREP for device address table
- macros
-Message-ID: <202512030652.72UiYSSA-lkp@intel.com>
-References: <4c4791c018d61beb9ff85ca68c5bf48940d2398e.1764663888.git.adrianhoyin.ng@altera.com>
+	Tue, 02 Dec 2025 23:15:42 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-04.galae.net (Postfix) with ESMTPS id A7AF0C15D7E;
+	Tue,  2 Dec 2025 23:15:12 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id C7F71606D6;
+	Tue,  2 Dec 2025 23:15:35 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 0C669103C8BE6;
+	Wed,  3 Dec 2025 00:15:26 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1764717334; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=QVCEtMPxUMzXVw1tyOYFZnZkE2dG16ZIPwRsI86PDIw=;
+	b=g2ETMRDd1PtRSkP2sPHrCCQihw5ErXT3zmAqujO2QXqemb5zcQzwwqP0OB1XOI6Ev1Pi9b
+	t+Du3clnlXw0scsQsz7HylEf7VfZAk7Do79jbMfpt14tYXKRVspzWZYiOX+e/ayF9ff8NZ
+	8ctyciOlNEJCjygCVEoFhzAcMkR60Lnr9+WaqTSp3LUXBZxk3P5gkq1ndW0W7UIKACZbSB
+	THM/j0KyWTTsemu5E8P4AUCLZNhr+8eTUrS+o3bLjmXMVwa0Eo1deR3wIeRhUT1qCOrgiR
+	767CUqLtnWn6lm2mq/ZRDtEntUIhsjQ3vk08dDq4lcV0t2PgK5rieR9whGBO0Q==
+Date: Wed, 3 Dec 2025 00:15:26 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Frank Li <Frank.Li@nxp.com>
+Cc: Guenter Roeck <linux@roeck-us.net>,
+	Jeremy Kerr <jk@codeconstruct.com.au>,
+	Matt Johnston <matt@codeconstruct.com.au>,
+	Andrew Lunn <andrew+netdev@lunn.ch>,
+	"David S. Miller" <davem@davemloft.net>,
+	Eric Dumazet <edumazet@google.com>,
+	Jakub Kicinski <kuba@kernel.org>, Paolo Abeni <pabeni@redhat.com>,
+	Mark Brown <broonie@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	"Rafael J. Wysocki" <rafael@kernel.org>,
+	Danilo Krummrich <dakr@kernel.org>, linux-hwmon@vger.kernel.org,
+	linux-kernel@vger.kernel.org, netdev@vger.kernel.org,
+	linux-i3c@lists.infradead.org
+Subject: Re: [PATCH 4/4] i3c: drop i3c_priv_xfer and
+ i3c_device_do_priv_xfers()
+Message-ID: <2025120223152613f1586a@mail.local>
+References: <20251028-lm75-v1-0-9bf88989c49c@nxp.com>
+ <20251028-lm75-v1-4-9bf88989c49c@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <4c4791c018d61beb9ff85ca68c5bf48940d2398e.1764663888.git.adrianhoyin.ng@altera.com>
+In-Reply-To: <20251028-lm75-v1-4-9bf88989c49c@nxp.com>
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251202_145007_153081_10055EA8 
-X-CRM114-Status: GOOD (  10.46  )
+X-CRM114-CacheID: sfid-20251202_151540_499794_291704CD 
+X-CRM114-Status: GOOD (  19.74  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,59 +87,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi,
+Hello Frank,
 
-kernel test robot noticed the following build errors:
+You'll have to rebase this patch.
 
-[auto build test ERROR on i3c/i3c/next]
-[also build test ERROR on linus/master v6.18 next-20251202]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/adrianhoyin-ng-altera-com/i3c-add-sysfs-entry-for-Device-NACK-Retry-count/20251202-163150
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git i3c/next
-patch link:    https://lore.kernel.org/r/4c4791c018d61beb9ff85ca68c5bf48940d2398e.1764663888.git.adrianhoyin.ng%40altera.com
-patch subject: [PATCH v5 4/5] i3c: dw: use FIELD_PREP for device address table macros
-config: powerpc64-randconfig-r073-20251203 (https://download.01.org/0day-ci/archive/20251203/202512030652.72UiYSSA-lkp@intel.com/config)
-compiler: powerpc64-linux-gcc (GCC) 8.5.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20251203/202512030652.72UiYSSA-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202512030652.72UiYSSA-lkp@intel.com/
-
-All errors (new ones prefixed by >>):
-
-   drivers/i3c/master/dw-i3c-master.c: In function 'dw_i3c_master_daa':
->> drivers/i3c/master/dw-i3c-master.c:214:40: error: implicit declaration of function 'FIELD_PREP' [-Werror=implicit-function-declaration]
-    #define DEV_ADDR_TABLE_DYNAMIC_ADDR(x) FIELD_PREP(DEV_ADDR_TABLE_DYNAMIC_MASK, x)
-                                           ^~~~~~~~~~
-   drivers/i3c/master/dw-i3c-master.c:862:10: note: in expansion of macro 'DEV_ADDR_TABLE_DYNAMIC_ADDR'
-      writel(DEV_ADDR_TABLE_DYNAMIC_ADDR(ret),
-             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-   cc1: some warnings being treated as errors
-
-
-vim +/FIELD_PREP +214 drivers/i3c/master/dw-i3c-master.c
-
-   206	
-   207	#define DW_I3C_DEV_NACK_RETRY_CNT_MAX	0x3
-   208	#define DEV_ADDR_TABLE_DYNAMIC_MASK		GENMASK(23, 16)
-   209	#define DEV_ADDR_TABLE_STATIC_MASK		GENMASK(6, 0)
-   210	#define DEV_ADDR_TABLE_IBI_MDB		BIT(12)
-   211	#define DEV_ADDR_TABLE_SIR_REJECT	BIT(13)
-   212	#define DEV_ADDR_TABLE_DEV_NACK_RETRY_CNT(x)	(((x) << 29) & GENMASK(30, 29))
-   213	#define DEV_ADDR_TABLE_LEGACY_I2C_DEV	BIT(31)
- > 214	#define DEV_ADDR_TABLE_DYNAMIC_ADDR(x) FIELD_PREP(DEV_ADDR_TABLE_DYNAMIC_MASK, x)
-   215	#define DEV_ADDR_TABLE_STATIC_ADDR(x) FIELD_PREP(DEV_ADDR_TABLE_STATIC_MASK, x)
-   216	#define DEV_ADDR_TABLE_LOC(start, idx)	((start) + ((idx) << 2))
-   217	
+On 28/10/2025 10:57:55-0400, Frank Li wrote:
+> Drop i3c_priv_xfer and i3c_device_do_priv_xfers() after all driver switch
+> to use new API.
+> 
+> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> ---
+> This patch need be applied after all other patches applied.
+> ---
+>  include/linux/i3c/device.h | 12 +-----------
+>  1 file changed, 1 insertion(+), 11 deletions(-)
+> 
+> diff --git a/include/linux/i3c/device.h b/include/linux/i3c/device.h
+> index ae0662d9d77eb3fa0c976de1803e9c2ff9547451..47e6c95d87f9494d48c5b0463544916f26923501 100644
+> --- a/include/linux/i3c/device.h
+> +++ b/include/linux/i3c/device.h
+> @@ -25,7 +25,7 @@
+>   * @I3C_ERROR_M2: M2 error
+>   *
+>   * These are the standard error codes as defined by the I3C specification.
+> - * When -EIO is returned by the i3c_device_do_priv_xfers() or
+> + * When -EIO is returned by the i3c_device_do_i3c_xfers() or
+>   * i3c_device_send_hdr_cmds() one can check the error code in
+>   * &struct_i3c_xfer.err or &struct i3c_hdr_cmd.err to get a better idea of
+>   * what went wrong.
+> @@ -79,9 +79,6 @@ struct i3c_xfer {
+>  	enum i3c_error_code err;
+>  };
+>  
+> -/* keep back compatible */
+> -#define i3c_priv_xfer i3c_xfer
+> -
+>  /**
+>   * enum i3c_dcr - I3C DCR values
+>   * @I3C_DCR_GENERIC_DEVICE: generic I3C device
+> @@ -311,13 +308,6 @@ static __always_inline void i3c_i2c_driver_unregister(struct i3c_driver *i3cdrv,
+>  int i3c_device_do_xfers(struct i3c_device *dev, struct i3c_xfer *xfers,
+>  			int nxfers, enum i3c_xfer_mode mode);
+>  
+> -static inline int i3c_device_do_priv_xfers(struct i3c_device *dev,
+> -					   struct i3c_xfer *xfers,
+> -					   int nxfers)
+> -{
+> -	return i3c_device_do_xfers(dev, xfers, nxfers, I3C_SDR);
+> -}
+> -
+>  int i3c_device_do_setdasa(struct i3c_device *dev);
+>  
+>  void i3c_device_get_info(const struct i3c_device *dev, struct i3c_device_info *info);
+> 
+> -- 
+> 2.34.1
+> 
 
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-i3c mailing list
