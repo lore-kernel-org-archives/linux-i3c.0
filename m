@@ -4,148 +4,145 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B45EED3B7DD
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96CFFD3ABEF
 	for <linux-i3c@archiver.kernel.org>; Mon,  8 Dec 2025 07:14:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8eG2kAB1g05PZOL1oRbG8U6jbgH8k5k42XY4k93Xa7s=; b=XEgt6mhELxIEhm
-	5ohVAGsiLZh6FSkH6yN6BTR2+nXWqoJgDmiMsqQRi1uaN08a2Rp04c00F/CeaXvS7lO8Xk2685NgZ
-	H9DSkb0WTgYNgoKT+90uezrdKberHcg97LS4E3PisDJ65ssdS4qZWJbQM+Pa551/8xUcU2JLOxaqm
-	T1LIj4tbzc8z4s/fC28EeaYmr9BD0D9fgtD7MyFGVgyQHgZROoNwS02v2ZyTtwdKnPEDmBScwqeHq
-	W2mXDBmRyJC5Ewbsi8dMTNonOryeN67zYXm5gBJu2BMIAuITP7PCIZqbjNckgjgQZhXG08iQejue0
-	6RU4WmUkix1WohGp7i+w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=x5ex6Z9/dHwBmLJaKsCA1wG89cmI3l7Gq9rITdvtXuk=; b=ufl6dJn5ct1RQF
+	wYl8se9+rZ6WeQ4SZe/DsdCb7rJVSgcn3lCPnOUrYA3HWSwAacROxnXy+56FinFJ7dECCjafh/qm9
+	Q8UBePLnIVV76Xw3RG6P5o7HftP2jXClYlvMcNkR2FTrfMrGNxRkaOxCAPSZyOBMiZ1wVq7FQWVwB
+	jxP27bxmImAtjVIe1dnjWbCpUSls/F4XQ8Gz+/aMgSI2A5JpXl2Ch8X64JHsxYPLOSWSC/302xj4u
+	HpmmfJUOxLNYWfclJzAj2SyLR8MqNXCEch9eN4MfWYwTlH2CdmDYoWHXW7O3RK0Gyr0ik5mLjLs4+
+	AaxgNZb50LtjQ9OHihhw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vSVRa-0000000CjeK-1yvE;
+	id 1vSVRa-0000000CjeE-0wgY;
 	Mon, 08 Dec 2025 07:14:02 +0000
 Received: from mail-westcentralusazon11010030.outbound.protection.outlook.com ([40.93.198.30] helo=CY7PR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vSVRY-0000000Cjcm-2TmQ
+	id 1vSVRX-0000000Cjcm-0QvT
 	for linux-i3c@lists.infradead.org;
-	Mon, 08 Dec 2025 07:14:01 +0000
+	Mon, 08 Dec 2025 07:14:00 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=TNO52/0lIWDEpetkMlmtlz7PwF94VwllBHZpWmG/5MEX5nrR0Cix7+4XiVmElThAVnTmHctGVkob0l54eRSRFca0CzVDC/brV780CKYixlm9wshy2o3RPHGT1yQ3MH7IGjgomDgmJKXliTiDeTHqbjEH+GWR+HmHQDEX+B3m2hftHknYGwCA1d/dKa9oNF9HLWwF87sgX8pKDtDou2BWeysyeIcY2FtnUSPAnEg546rrUgUYxbyOLeJYcj6CO72iFxbiozMijFEg2uuxRfXoSK6cRgbdE4xV1O4pI9uAFvav46wPFbo5E/HtANxvgYzZzDqgUm+8DXFxGDem7Tc7fg==
+ b=l5jl9aegAUUa+YJpTEbkPcfcq7A2W4DZ2rHuwUOukkEEKT54oGYMYRkrkBjEDYI6jl+7PREGSjskojllg/ZYUL24+ps/vow/YrIb8O7/XXFXhY9cu5qgjM6YcglCVjOr6VFUyS/K1jZ58m+F8w8qgc3LvGCXDKSIC1ZIZUZl8WYgy2VABnwqS06LRu82iXsydqahPQfmhAuuhQEBh8dOICvBdt7IIPkFvtKBkvnCUg15z46EG8tWWbA1owt/Vocnoo+dhV5MdJJ2zfqX0TfEEyJK7LOZCMTO4JhfM4qoM7/aDHXXmflWAjBnNCklCH+HaUI1iwn3lDrnqPRdRPJVUA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=xaEm0zOzBn21jy0g8I48vBFSxKXMaKvwGSbcmsiaP+4=;
- b=Gj+2Nw0Cojwd7fcT5v4dev5OzVAi/bIMR0WvuJCVGkLKzhkiv5unXP9Ym2lA2IlFYdi06Ch0NTqOPIt8kYHFVcFKrKUTQDu//KUhIvYYsYeIsMxQCi48j7k4zyCzxgVXm4YKUUIhIewAvfI5FZPKrygaktN3/H7t5RIPPSxPPUVBGt+VsJHV3gQKDGUXyhHXwl1NHBRaJNKowIa7Rwe40cIHuKzEKv+0k5acBn7ML6EritCPILtjm0DtKkSSH6CPbpVkGSgKFN94e/0R85anveYnmZzuv4lH0foIKJ+TZuaYf6LiZQatX0J9tii70hmccS5O2sgNT23Zi1jC5CfjGw==
+ bh=TxwhyhjpwlrZSXp+t7+11/myxJE0f4fOrQA7wReXWpE=;
+ b=B0CQGZfqhslM1djVZUHV7lXdAcbvrFbMt+wDawZjMTalw3aEyLog+WTtGsECHzIz7mPEyLE3ZpGRHuZtpZxOOS6oeSTbVChthDVATgWDhqxOn1T/VwD/P7kFllBVWQEJF1XOGs3iaMth4LHxZAQI2JCLqfvqKipE0EHYSbLxxwCbAzZcpGmwLp002lxEGWpKj3lJKLcmA53FFs97/YhVFRPek2vipZJnggaStsItQY/F0gkD0E4g9Kp3aAtb6tP3x0pGVCJy+7y7UzrAK3kQpSkq7GqLrtoKK6t2dEr7kml6LE9dnzqJxeOArrT8VwBbXYfipL9A1Be6O8icXtedIw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=altera.com; dmarc=pass action=none header.from=altera.com;
  dkim=pass header.d=altera.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=altera.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=xaEm0zOzBn21jy0g8I48vBFSxKXMaKvwGSbcmsiaP+4=;
- b=r6Wn2xTWYTd64ypIQziikuq/GHj6iFjQ3xiMojXYZu8tHUT826ZgC5qZD/z3uGJng9xUUaUqHc6JmHSRZEC8Y/eY4hfyLKQ74CEbDuR96qMJsZ3kjo/5q6QoCxHHVUATaGYi3IpcnrSzDFsKFg8TQSE7noHRvIHJnZGsDfH86CdrB75eGItKpRpUPGrr0PtHztjephhjxLPfjepiQBjhVMHKrQOlSg/libPooMqpGLjT9ZAXZQZb2w6lONrCAWx+9rxFHXvNmQdw6wsCrDDKOH/fYowTcgzkxs6Nc7G57vElDr1xnSkA6B5MkhvKwea9+UR5nQCuiRdyWQBDE/o9jg==
+ bh=TxwhyhjpwlrZSXp+t7+11/myxJE0f4fOrQA7wReXWpE=;
+ b=nKwS9Ryjw9vPaygSyDoh6yuXi0zzkRtm3E4Fie50UIFx5c524iGjXruuoif7y5qVy4UyIsdy6SnUnLh7mLD3Mba0zZLoAEk15yFqVYw42SEYAi6TGQyRCZMUHLA71kSlyhyEdMUEne4XGjT/AExNo98Cns+hMNxnElwjyEHm5FgrgBYA5I51RZXIhDY9Yv4vDcY1AH0XTxXZd0vez8kvHSReg6arqjVMN7oBZn5gCUoFmBLVgl6rHWM9ng7lJFjVE0ICPDWW1hEMmWEcNcB9NqGLty06Ym5iU1+RXlHYYW1CviVqn4dcqe+9+tHOlsNG3uV+gGrvJav9UlhxzwI/jA==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=altera.com;
 Received: from DM8PR03MB6230.namprd03.prod.outlook.com (2603:10b6:8:3c::13) by
  SJ2PR03MB7475.namprd03.prod.outlook.com (2603:10b6:a03:55b::21) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9388.14; Mon, 8 Dec
- 2025 07:13:54 +0000
+ 2025 07:13:52 +0000
 Received: from DM8PR03MB6230.namprd03.prod.outlook.com
  ([fe80::abad:9d80:7a13:9542]) by DM8PR03MB6230.namprd03.prod.outlook.com
  ([fe80::abad:9d80:7a13:9542%3]) with mapi id 15.20.9388.013; Mon, 8 Dec 2025
- 07:13:54 +0000
+ 07:13:52 +0000
 From: adrianhoyin.ng@altera.com
 To: alexandre.belloni@bootlin.com,
 	Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
 Cc: adrianhoyin.ng@altera.com
-Subject: [PATCH v7 1/5] i3c: add sysfs entry for Device NACK Retry count
-Date: Mon,  8 Dec 2025 15:11:16 +0800
-Message-ID: <35bb0a3cae4664dc423ef57a1ef3ebcb378bce00.1765177110.git.adrianhoyin.ng@altera.com>
+Subject: [PATCH v7 0/5] i3c: dw-i3c: Enable support for dw-i3c controller NACK retry sysfs and DAT restore fix
+Date: Mon,  8 Dec 2025 15:11:15 +0800
+Message-ID: <cover.1765177110.git.adrianhoyin.ng@altera.com>
 X-Mailer: git-send-email 2.49.GIT
-In-Reply-To: <cover.1765177110.git.adrianhoyin.ng@altera.com>
-References: <cover.1765177110.git.adrianhoyin.ng@altera.com>
 X-ClientProxiedBy: KU0P306CA0060.MYSP306.PROD.OUTLOOK.COM
  (2603:1096:d10:23::7) To DM8PR03MB6230.namprd03.prod.outlook.com
  (2603:10b6:8:3c::13)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: DM8PR03MB6230:EE_|SJ2PR03MB7475:EE_
-X-MS-Office365-Filtering-Correlation-Id: a13d9f50-f807-47a2-83da-08de362958a6
+X-MS-Office365-Filtering-Correlation-Id: ebbb6277-a486-4840-ac67-08de3629572b
 X-MS-Exchange-AtpMessageProperties: SA
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?FSVByePrutGurq5nW6uqhByQn0ibOn1ZF0v0sgyVjpWBoEhZT23X7LRlX5Pf?=
- =?us-ascii?Q?BkSraUhkMeu85HI42X/hzvIWxwhBikzabNt+VhThGAWTEpI3pSOK8wHB7bvP?=
- =?us-ascii?Q?uC0YccvCtaIndbQsZ0AUzDaq1sp78ef1K24oIdIjg6pEYXIQ8gx5gzDbea4Q?=
- =?us-ascii?Q?RoxoQIw3q2iJjvy9IvNnIROyM3ucPYD8DJpxjFtoyPH0Db+DMh8r86fjjoCY?=
- =?us-ascii?Q?1oHTHrPCxtOxRkSFDIVrlIl6V85DRcPDOi+WeVpAMfjY3SRRbmue2rMr3Z+c?=
- =?us-ascii?Q?D64hhYx6JxcRCVl4HbYbKO9UH85B3thDm/4uQUhbV2MVQReSH//Hm4u0pse2?=
- =?us-ascii?Q?l/L5z+MNDanCYxEAaa+4NW+fwyY/i7nfJsVPQTZ43SAoTOZjuV+KaZA2W2tO?=
- =?us-ascii?Q?vVD9hoy81/Y5/IIs5veer/nqZOP95oQDaXCju/nsoXcqqBDo+l5MzDShBE67?=
- =?us-ascii?Q?sczy33wtW9Hta+WrwEVc2pglyccHmDd3jCpIk1tlfgx9q1SoTjxkIZPj1lBI?=
- =?us-ascii?Q?wiQbpq8ta7YMwD5NWFEEEpmkdxWx0DFWQpKC86Eb7IExKZ4CeLk9uxIvo2GO?=
- =?us-ascii?Q?B3WuPY6cX5lyLA6XZm3W8Dnog3I0PmGU+IsT2Igmt040IKzx2Yg8hjwITeL5?=
- =?us-ascii?Q?oY67B/NNDr0P6L3qWufX+xi6d0DMIJ2pLmLlQSXlXkFtXxvtCbH9m4kS1Wnj?=
- =?us-ascii?Q?egV/JY9XPzAREfYj0sJL2CjTHAtlKD33ubG/2KbB74RDZ9ja/qrK944KKBLk?=
- =?us-ascii?Q?ErwuaF7K3ygwxsiriqHjyGguRjWFx1u2m5jE4W4DJlmmmTuCUypdXwivYM8+?=
- =?us-ascii?Q?YzruC6uy6PoXRfpBl6lwDFh/f4BtaURW6pccT9I16VtuUNxKf5V4dcj+EPS7?=
- =?us-ascii?Q?J31FUukkntdJ4Hn52S90QLvRvKhFfejNiMw+mJFxBUWK9eLt3veN+1zNJOw3?=
- =?us-ascii?Q?KGr23Qz8IW1VHaC8XjW1XJRgrwvlmTv7gk51chLPt4Q8YfYmqhgpev/nqaAJ?=
- =?us-ascii?Q?A3UtJ4TI3+n5dfaS8k2DGsfo3sXKnQlRmdwLow1ir3EIgiMWZx0BW5xjM0X+?=
- =?us-ascii?Q?s1Qh7GBey+SNgZm/jjf+RIHZV+XxX0U3LDAr24UvDWplwZOggf2uReMf20pY?=
- =?us-ascii?Q?9NZ/B1DIhE0vaGR6dsySAAd5Cp5JECXwy4tUI9SgDI4U39tJ9D2KZ0yN/ZNl?=
- =?us-ascii?Q?uTMAhxHJjQLquacmkEgmph7JHZ8hMb2U+a1KM+gRm91wxQoUytPyE5/9ffHR?=
- =?us-ascii?Q?6YAuAKV/YLgRm4hnAOf5pBoiVeObrJMkv1kmNPuEjTHRgep0rHgyx4O8wWaZ?=
- =?us-ascii?Q?CDeF8WGMLKhQz47S+Pp1Jx3SuF0uwaPD+4sTEJ1Heoe9bHgW6iLVMUHp7sJH?=
- =?us-ascii?Q?GLLlVXVVWqdBMQVsm5U1/IowBvNvqxxyu4ZGHbDPmkkxLYu9+TritwO+JaZX?=
- =?us-ascii?Q?IbrgbKPIUZvC0JMZRCPm1sp+TZM3EFaX?=
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?P+5FEZJdqaYQpB6l+q64el486IgoNDImSobgBVzRJ8pMVsuw/mlWQEvOGKhn?=
+ =?us-ascii?Q?EsNXaJ8VEftSy0aM0Duoa23c69iWzbSytBvMcjmcMT2hP7WOSFEYez0Jd3v/?=
+ =?us-ascii?Q?tVESMGp0p2xo4OIn/w4JF6+Ekw/chcKY0Y6jj5y2zWVgeaXA/8p7c3Bl5kip?=
+ =?us-ascii?Q?Ylu9OiF8F1cry1fRUJrTFZ9nluwfmQSGjgdJVgDNRmPeH3Cc707roBRoqTm6?=
+ =?us-ascii?Q?BZuJ1RGLy2IQHbnXLWccPq3CXknGB+BBH/zmWmYJLqCdEanZIoN6cixfJOQB?=
+ =?us-ascii?Q?brIEY2SumqV8NncIVnVMgT3G27ydhTsoEFfnO//F/Dg46c1AP+MK+ffpRqrc?=
+ =?us-ascii?Q?e3RmPb8BOOPRaaC7+SQEWYmRdKqREWhbOT7SINFAOS0sThdg5VfbZvmSNPnx?=
+ =?us-ascii?Q?jD6tYL9y+WB5IgkVwIVB2SyF8KpIf/M1KZh7zrXQVz8LWgpNHLdrpp/O/ntd?=
+ =?us-ascii?Q?mHrmqJEZHLR2saxkr+5eRaI0HOJxuyjFhTL7yGYGewJ9Lu4/TczwVBgcDml/?=
+ =?us-ascii?Q?FOpGUyjBduIXUTB+LubK5a2zOMp4+y2X7D2YUu8E5abpdqLoYDMQ3FRgHSr7?=
+ =?us-ascii?Q?JjAQOl1jC0N6kEr2mpjJUBsI8utOvZ1020U1xIpBrBH/XvxcPYDu2bPkNrZy?=
+ =?us-ascii?Q?PKVVxNG/U3WsdKnODQCV7pbX+wqunmvqNxJOWc+cjwnhm/kSdYp2y+c7h9ym?=
+ =?us-ascii?Q?B5V89xcZGZwb1gAwHVjvcQ2qZIOg/9iawnBcxucWvl9HZEeEDYxjtNEzRc+u?=
+ =?us-ascii?Q?ccdUQjNSPqs8dhlRCDe8VxmjLrhZRmYP/TNxGw9ctxqZRMm1vTaa3galRz0Q?=
+ =?us-ascii?Q?jhwxEfEOy9pkyvV5Pk7FizV6vXMXJtH4g9mv/boKQNFctYVWF++S84zyO/PD?=
+ =?us-ascii?Q?TKX1FS+sQcHbINvUu0uByLhoaoHPGbEFCUf4En6xyMOHHFtaKbdxKt12OZWb?=
+ =?us-ascii?Q?hnpE61CSm9B6y3zu3xGVYpkbERKeqMJAXxsbfTiyPHoJ69128dv86Ho+Bjsu?=
+ =?us-ascii?Q?4J8EmSqtkqWERmNX737rtlYF7ledbBUgGUFpD+x9kmj8sWDDUYnmRQqy19RI?=
+ =?us-ascii?Q?quvLdxHuyQDeCyrGPNzVlIbIOceqmtzMs3Iu4LQ2AbFPag48xzOxMcTGqwNB?=
+ =?us-ascii?Q?yT+L/QdNNCD2XvB6UAai6I5X9zBDR2qxwsv7p/NJmTstomkSDqPkroUOP/z/?=
+ =?us-ascii?Q?vjN3FmZirPk9yCt/9iwFulbky6ZtEJ4q4gmtMSEy2mbeQ7gG2DDTpQbrU+yK?=
+ =?us-ascii?Q?95Fma0V6D7aTfE+i9EkJbXixkXENbbjCw22EMeS8W1LdNzG0WDnwv0b1vgGV?=
+ =?us-ascii?Q?Qe21LTvDr7SfqjxcE9iglbRccTx1fd0Scegemexu3BVO7CP/Pfhk6zutf9lj?=
+ =?us-ascii?Q?Vyc6Qpdd3kVZujMVkJGcgA0zY+ZytALv047BllgamUWgbn/NdZm5WvHUwFaM?=
+ =?us-ascii?Q?0AUm8xh+2oXiz0P9OMAx3mWJBMYj/gjLD+oThgh864H9FLNCsz5tYA=3D=3D?=
 X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DM8PR03MB6230.namprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?slOJnTynSRsHPdbI48Zr1J6QXXfs17EmPkXydsmZR5mnpChT+vve+MJaUq0f?=
- =?us-ascii?Q?FexuNjruS2HVmz/WPEk+XZAM26KRwHcCWfu/AZYG+6e5uqRKFLPv/u3ZExN9?=
- =?us-ascii?Q?FHXp2MBiCfLEruUI2e3ssFbk51vb4ksmNTPZ5AjCHTllM0MQ0l/6mbkdtkI/?=
- =?us-ascii?Q?200i980Az+Qd6F2cawKe5K2dkdrnZN1/ZkLOO6GJGrTp9dFtWPjfHb1VRdPR?=
- =?us-ascii?Q?72olChHYJRc0u9b8xCQtLxG76zvk6/q4pfsq3sh1twgw4C7QuMD6p8AKloiP?=
- =?us-ascii?Q?XhS+85cTRP6fidun5ofn2x20vN5SEAKG1V5aRHmQo1qnZHuASkO0EyiPNDIc?=
- =?us-ascii?Q?GeuNi1veZLggV9vm7TYXuHcqx/AH/frrhsw3FWoUlrOtvas4c/A/grjCn+N1?=
- =?us-ascii?Q?KRBtUFs1qwjJCT++PxQKkSqLMEKxGFKfs1XwG575+6A0DRbFfYYCq/f5Mdh9?=
- =?us-ascii?Q?uiqk2ATFPeioBNitFNmM4XqyUDtH12o7RygermuowquY1Fuia6OfM58V5VYR?=
- =?us-ascii?Q?dwuGgwFP5vYRMYIb9UZbOwGOEc5BinOw45woJBDh/IWzvSfuQxD6swuEkrDF?=
- =?us-ascii?Q?cVZhtVH4UPWQ9vlz2WCTz4OnBEAnP27N/i6nbsf2X6gJmzJp9PXTC8E0BMyF?=
- =?us-ascii?Q?VJaVWW1BURQt68iZie8fALKcLgx+zQvjifRazsnvppJ/MVGJOvjQtSE/HAD2?=
- =?us-ascii?Q?9XMWYkRxHYeoEyGd9NCN/0G/zhnUbdTrLPDUkvvjD6Aq1yHZEpfmA2aBwBZV?=
- =?us-ascii?Q?cQlFkh5Dcs7FiZBtpMkN9pJSxi4dcOrRrCmfABgjgEI20g5zKsuTMTqg8DVd?=
- =?us-ascii?Q?dsjRDYOkF9aRq/fGj21oR936lqF3NiVtPyKBvmz+r+jiWYQdht2J4eDLJIIo?=
- =?us-ascii?Q?xSvGOX/7OQInHdx+h5JvtRmL70q9LHHfzxwOr3gRx+3p0SP2xSYaDBxWAWmc?=
- =?us-ascii?Q?W+frU20YQ1/6SMebxVMIiMGye8359zy2wduwf6TBvTUE9GjsKohkspNmxUhb?=
- =?us-ascii?Q?VNySHj5WWLLBY50dPe14/H2IwRyk91L2jZB5qroY2vaAY1SNFONUahXjq5Ka?=
- =?us-ascii?Q?SdAjRywdZa23+i8iUtuhzE0GQA6tAeT8Mf7UjOrrXXpHKvmqXxBeSuiKekfH?=
- =?us-ascii?Q?ldB88zLd7eZeYzeqFp+t3er8rNkEx9q5C18h1psj4ZxHNv3xkvZwRO6GiD2A?=
- =?us-ascii?Q?+d7tId/MQ0mR+V7GeKEwrSSsA7azsgAAItNN3juZuJ1VoMPps/pTGr9cFSfe?=
- =?us-ascii?Q?GJKVCAOMW7HUiRZGm2LbyTg8/viInic02yq/WcYivtY9x6nJ/OgoXn4aEZI8?=
- =?us-ascii?Q?xUk3cz1kWcPIfylK2DBGcb2LeNhtVFVpzc4Palh0HITkG5WjXXCtJ3ASF6Lh?=
- =?us-ascii?Q?IBtVEUft/jLs7ZixWvZgc1naXqmJiK5i9CatDpb2JKY4oiIMc88DUIu7/fxH?=
- =?us-ascii?Q?mpuscHvNva03P4eT2BPBS8fs618uhWrf3DIsCEZqZhbupBLrhtit2cH6oLLG?=
- =?us-ascii?Q?RQvneQbbbn0vmWqDZKh3H4b1JovnUWQyG5HVyvexS9B4vJbeM4EI1D0lS8H+?=
- =?us-ascii?Q?hxVP8s72dq96fRwcxaTtbICE9dDcLulZ6lxPCecbqc3qCIKIg5ncnZN+oA9I?=
- =?us-ascii?Q?FQ=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Fw4/5bGg7IehS40bly1euhGOaQUBRP4fEpgHeSRcnDd0U3UJICRfiCafyj1a?=
+ =?us-ascii?Q?3+1c83MCWSZigpGnTYMOFek2qGUs0RPqbAStubEENHSjU4cgv2Rn77yQr4zW?=
+ =?us-ascii?Q?vJVFUWdGyxfwb4uN+mwJCZuLeFgFR3DNJbCqyUnMbSitA7kBBqd2Pjt9Ik61?=
+ =?us-ascii?Q?RZuBQUGH3VxQRVy1Cd97sF0//32tGQMgYWOC33kX2Y/hwTdiGfZeQp7/y7IX?=
+ =?us-ascii?Q?5e5xtNauEOFjNgBPQ0xgKt9uO41yL97wA1mCjGXIJfzCoCHdjj9VofhT6qy2?=
+ =?us-ascii?Q?wAZWY4eOpxjF2mobUQ2ffwHYAQWvP/3C54dSQYhBFNWW5nWgBtlfoqrUdV8W?=
+ =?us-ascii?Q?nqq26a+69hS1hQ7eQnjmfTKyU49s4uCI1rA4H1qqKfICQRHvsTvK2Fl9S40u?=
+ =?us-ascii?Q?vJoNpGxrg19ITuZXbV9NxzcsjNbcWh5Rkbl+45HIV5AEdFNf4R7tFat3HQ4j?=
+ =?us-ascii?Q?rFDzPkb1ixOlbttscH7w7HZI/puibu4xXhiwdmX1dYqDCxtrtvUyvHsvmNU8?=
+ =?us-ascii?Q?wGVpc8vRpvQwh6iyDrXWvsX/Jc9loJ3dWS1umViH6aTWK7ylqV0uLEIc5IIV?=
+ =?us-ascii?Q?afzeMCQe2NDBt3An+Nwv6Alm3rgolQbgwcWvaXearr5sa2upDtzUWtjZEi5n?=
+ =?us-ascii?Q?ef405CdOdoIyfY6EqanYqCWiHfvhfFrySQo/TYzAIJocBWd92wUpv7AZo8ME?=
+ =?us-ascii?Q?EL/LCXygWPFbdEf2RUvOBKcWr+3YqoKBiUAqhnmOsZ0xzYG0B2Wg0BbHBF7g?=
+ =?us-ascii?Q?c2Ne9RNskkzAo4FeL8OzpIdAwarQgdUGM4oL6jfVxzMivPr5gi1mKVHLYxaQ?=
+ =?us-ascii?Q?jA/0TQ16V9QXspqP7Cjcq1XDJLxn1YAj0HU93mqNwTz3R9ESdgPOXFANkA59?=
+ =?us-ascii?Q?M+XMY+Me3Lv3qeCEkgPZqPcVt6IhBvHRuzvC2DQJfzirDcK4sHYSGqM9q+/u?=
+ =?us-ascii?Q?bs+2S6aMB3S/w7Y7AVd/+V0x0fMd2pHSh5TAF70dLGevkGcKrms7rhthQp3u?=
+ =?us-ascii?Q?FUOz5aoO79WUUqnODonzwg708mcSa5rPqCAGrd4PXjVfxJEghFK7aoUbLzXj?=
+ =?us-ascii?Q?XmBjrZkxbTrZLWJPMIPblJAeSWwtZGRkqFbrmWc3MdtdmFKKeHJUBkIrZobG?=
+ =?us-ascii?Q?WSjBMJv2HSrfQWrI6mdS6TlichY4/JssZi3vR/o2wETbr5MqtAUbtNKKvkB1?=
+ =?us-ascii?Q?yC8/fW8iRidAtjarVNE4+SNwshhV/v+UNpZYo84UuGmBk4rrxjmOtJyaAHq3?=
+ =?us-ascii?Q?vhme7s+XI3ioc7aC2E2pLDHjEdNpGW1R+7TYHGC9qihsJyRtpYOSqUtDtjGm?=
+ =?us-ascii?Q?9/x21iTFFjS3MYgZTMk7VSVxj8U4lDGFdTeMsZIrh8Au+NsFJ1PKxIHXFYPJ?=
+ =?us-ascii?Q?XX/KTNsF8hdQiV6rwOl0MzVpiHKsVhvqsfjfuQOQl+t7wIiUdEU0Gjce/y+Q?=
+ =?us-ascii?Q?Xbb27DV4oMwrvO7TWiAow9frOZ8rBCRGHAChVuZSlPv2vF9D4NLM9xjvFG6l?=
+ =?us-ascii?Q?mL0BawXvK6iSl87D5dqvp0AngSqQoRFsFn+MkSN8DC3ewOeOB1ROqNGGkJeu?=
+ =?us-ascii?Q?3nldCGHI8s8msk4kSq/M7WLUdS5Xn4aGAqHRE1VTxPrrRGsAb1KdsGDzHqcw?=
+ =?us-ascii?Q?3Q=3D=3D?=
 X-OriginatorOrg: altera.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a13d9f50-f807-47a2-83da-08de362958a6
+X-MS-Exchange-CrossTenant-Network-Message-Id: ebbb6277-a486-4840-ac67-08de3629572b
 X-MS-Exchange-CrossTenant-AuthSource: DM8PR03MB6230.namprd03.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Dec 2025 07:13:54.7077
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Dec 2025 07:13:52.0251
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: fbd72e03-d4a5-4110-adce-614d51f2077a
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 22XhEqljYrQ5e/D1maya9hC97pj1pdB2S9TPcwB3wxPiIzm6Tv4Euf7nOyiP1ucbwCrVNfWdnjryH/CtQQYFJQkKC7RrLK8SnNUStB4xt70=
+X-MS-Exchange-CrossTenant-UserPrincipalName: uZSsVIv5t6/0+BPztoYhtIWKKbz2sjJ1inr3/rRcHxIcCYFfe3+v3YJuxWKH6V+rujX6xr20NdoilU3OlIfobKlqznxsDXh8yzLHuLIKGvg=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ2PR03MB7475
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251207_231400_626759_B1E35C42 
-X-CRM114-Status: UNSURE (   7.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251207_231359_162505_392C4A0E 
+X-CRM114-Status: GOOD (  11.37  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -164,36 +161,94 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 From: Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>
 
-Document sysfs attribute dev_nack_retry_cnt that controls the number of
-automatic retries performed by the I3C controller when a target device
-returns a NACK
+This patch series adds a controller-wide sysfs attribute
+dev_nack_retry_count for the DesignWare I3C controller, allowing runtime
+control of the automatic retry mechanism when a device NACKs. Some I3C
+slave devices may temporarily be busy and unable to respond immediately;
+automatic retries improve robustness in such cases. Writes are clamped to
+the hardware maximum of 3, and the value is applied to all active DAT
+entries.
 
-Signed-off-by: Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
+The series also fixes dw_i3c_master_restore_addrs() to preserve existing
+DAT entry bits, preventing overwrites during runtime PM resume.
 ---
- Documentation/ABI/testing/sysfs-bus-i3c | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+changelog:
+v6->v7
+* Update dev_nack_retry_show to remove redundant i3cbus variable.
+* Refactor dev_nack_retry_store to store dev_nack_retry val only if
+  set_dev_nack_retry does not return error.
+* Update set_dev_nack_retry in master and dw-i3c-master to take
+  additional param which is the dev_nack_retry_cnt.
 
-diff --git a/Documentation/ABI/testing/sysfs-bus-i3c b/Documentation/ABI/testing/sysfs-bus-i3c
-index c812ab180ff4..0b8a0c223f4a 100644
---- a/Documentation/ABI/testing/sysfs-bus-i3c
-+++ b/Documentation/ABI/testing/sysfs-bus-i3c
-@@ -161,3 +161,15 @@ Contact:	linux-i3c@vger.kernel.org
- Description:
- 		These directories are just symbolic links to
- 		/sys/bus/i3c/devices/i3c-<bus-id>/<bus-id>-<device-pid>.
-+
-+What:		/sys/bus/i3c/devices/i3c-<bus-id>/<bus-id>-<device-pid>/dev_nack_retry_count
-+KernelVersion:  6.18
-+Contact:	linux-i3c@vger.kernel.org
-+Description:
-+		Expose the dev_nak_retry_count which controls the number of
-+		automatic retries that will be performed by the controller when
-+		the target device returns a NACK response. A value of 0 disables
-+		the automatic retries. A max value of 3 can be configured. Exist
-+		only when I3C constroller supports this retry on nack feature.
-+
-+		Valid values: 0-3
+v6 patch link:
+https://lore.kernel.org/all/cover.1764746266.git.adrianhoyin.ng@altera.com/
+
+v5->v6
+* Use dev_to_i3cmaster to get i3cmaster insteasd of direct assignment.
+* Remove redundant set_dev_nack_retry callback function check.
+* Update kernel doc for set_dev_nack_retry.
+* Add macro for dev nack retry mask.
+
+v5 patch link:
+https://lore.kernel.org/all/cover.1764663888.git.adrianhoyin.ng@altera.com/
+
+v4->v5
+* Revert changes that made bus_maintenance_lock and
+  bus_maintenance_unlock helpers public.
+* Move dev_nack_retry sysfs attribute to master.c; create it only if
+  the master implements the dev_nack_retry callback.
+* Add dev_nack_retry field to i3c_master_controller; updates are applied
+  under bus maintenance lock.
+* Add optional ops to configure dev_nack_retry in the DAT entry in
+  dw-i3c-master.
+
+v4 patch link:
+https://lore.kernel.org/all/cover.1764571045.git.adrianhoyin.ng@altera.com/
+
+v3->v4
+* Make bus_maintenance_lock and bus_maintenance_unlock helpers public.
+* Replace taking spinlock during DAT update with bus_maintenance_lock.
+* Add macro for static and dynamic addr for device addr table.
+* Replace GENMASK calls with the appropriate macros when updating addr
+  table.
+
+v3 patch link:
+https://lore.kernel.org/all/cover.1763747151.git.adrianhoyin.ng@altera.com/
+
+v2->v3
+* Update commit message for better clarity
+* Update function name to maintain consistency.
+* Update store function to return error when retry value exceeds hw limit.
+* Add lock to protect DAT to avoid concurrent during transfers.
+* Clear the address field in the DAT entry before setting new values to
+  ensure correct dynamic/static address configuration
+
+v2 patch link:
+https://lore.kernel.org/all/cover.1763703573.git.adrianhoyin.ng@altera.com/
+
+v1->v2
+* Drop dev_nack_retry_cnt binding and device tree changes.
+* Update commit message for better clarity.
+* Update to use controller wide sysfs attribute that configures
+  dev_nack_retry_cnt during runtime.
+
+v1 patch link:
+https://lore.kernel.org/all/cover.1762245890.git.adrianhoyin.ng@altera.com/
+---
+
+Adrian Ng Ho Yin (5):
+  i3c: add sysfs entry for Device NACK Retry count
+  i3c: add sysfs attribute for device NACK retry
+  i3c: dw: Add support for Device NACK Retry configuration
+  i3c: dw: use FIELD_PREP for device address table macros
+  i3c: dw: Preserve DAT entry bits when restoring addresses
+
+ Documentation/ABI/testing/sysfs-bus-i3c | 12 +++++
+ drivers/i3c/master.c                    | 38 ++++++++++++++++
+ drivers/i3c/master/dw-i3c-master.c      | 59 ++++++++++++++++++++++---
+ include/linux/i3c/master.h              |  6 +++
+ 4 files changed, 109 insertions(+), 6 deletions(-)
+
 -- 
 2.49.GIT
 
