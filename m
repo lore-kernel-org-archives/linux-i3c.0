@@ -4,101 +4,143 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72803D1CDC6
-	for <linux-i3c@archiver.kernel.org>; Tue,  9 Dec 2025 15:36:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1FAD4D3B980
+	for <linux-i3c@archiver.kernel.org>; Tue,  9 Dec 2025 16:22:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:CC:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5+wL8tOUFUjHsa6iEamtqxPS2AOTAzVxtj2/c/MAws8=; b=HNxirtOaqeHs6h
-	Gyfb8PGy3cKy0EKUPRrAr2YWHANMWr7bpaLzASIdp4Ffn2dFE7ngL+AL+eFmQx0C/svaT0WxFTPzn
-	IJFUv1SOSUcUk+mbyqPXZk8jMC7vlFI5GLDqyZUU8yD2qA0rcOj73E8XjZDExHTGeJZ+q28tD7huz
-	tEMy26VLzOyhGOA7TMly4m2JXKdDPrBgDaLRE0tCCDujd9GyKikobKW7iPHxKKoynHwZLOEgpW404
-	5zK1ZcfiIKuABKggvmHOkVHCmQ45jIzy/5icrpWyfr/mEkL5TUFt3ixYNXBHMGpMQjunMocdSM6O7
-	zu+Ftk1EK3qz0PI6MzXg==;
+	List-Owner; bh=9c2Y0Nsv3mEhl0JY+n3ngzm804xY1ZUzaEH+Nmg/IaE=; b=jF25omYJjDDbZA
+	zSqgDlvmZQH4gdsk54Pc3oS9WYjHokN4TQJh+Yo0VlIziJPdvGal7dVC6PTrh+/K0bgdUvzrY9p3P
+	3e04PW97RECPfqEYpG3sEYKbUdji7y+PpWXo/T9Vhm/I3dstFI3SzzvBTL0tIYdQa8DWun9B3mgoz
+	MSbDleY1cRDSUzXbik8AJ8wNvIY1H0swiV8a8xVddYIH1BZLypp1hFEJbB05kVN8M/bLjSjDY53lW
+	VRcGsKoAL3oHJX7YkS769XplQ30wJVhPrV1LdTfQzO4D9Dqm4fn2Cde44tVeulJ7xJ1I3uDJwLxVF
+	FklYLqAiFeIEz0Pv8MYg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vSzlY-0000000ESb1-0mSg;
-	Tue, 09 Dec 2025 15:36:40 +0000
-Received: from 1.mo508.mail-out.ovh.net ([5.135.90.176])
+	id 1vT0TW-0000000EVtB-3gIw;
+	Tue, 09 Dec 2025 16:22:06 +0000
+Received: from mail-northeuropeazon11010027.outbound.protection.outlook.com ([52.101.84.27] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vSzlV-0000000ESaf-0ruT
+	id 1vT0TT-0000000EVsL-3MiA
 	for linux-i3c@lists.infradead.org;
-	Tue, 09 Dec 2025 15:36:39 +0000
-Received: from DAGFR10EX1.OVH.local (unknown [10.110.54.119])
-	by mo508.mail-out.ovh.net (Postfix) with ESMTPS id 4dQjcw0M4mz7tGX;
-	Tue,  9 Dec 2025 15:36:32 +0000 (UTC)
-Received: from [10.15.124.206] (109.190.254.33) by DAGFR10EX1.OVH.local
- (172.16.2.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.2.2562.29; Tue, 9 Dec
- 2025 16:36:31 +0100
-Message-ID: <c7e29aeb-c258-45e6-af78-9a81ee8de327@ovhcloud.com>
-Date: Tue, 9 Dec 2025 16:36:30 +0100
+	Tue, 09 Dec 2025 16:22:05 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=cOCwdgcT2x1qHyMtFR91068e/zOaPJOa6FPye8N4rSQMOZAeIfDB3YvN8QH1IfrKTA6LNDQXnGYhd0vfu0vxgkt8QLkQn1GEBBJ13jucd1/e15N7x6UsjgnRazidpk2euJjX3yum+675ZRPKLcOfJjHs7ovoIJ2InKeQ7fqhKVH/PzDusn/wYtpGhK409KEYXOgVcckq8OMAYZrRLYwFScMoqblpbc0HFzIpipgPNDZ6HaWkF9yUvXNhsYcSn8rIRCBVG7OS5aNCcyPhHOgozTH9T2rbpm9vsPnABpahghlxrePTapOaMJ6dKzCsMzrGSGOYDZlv/GJ/m/4B2sg4og==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Y4dGnd7o26DsHSfPNjDs+kr6Tg1WwVL7ypzz7MY6If0=;
+ b=HwLZqaeqeT6USLISQ1jmkPifeJn+NohH/Lg4WRXn3349hdsRBCnmLisuahCIQ3lu6vwA7qPOrml+YjxQdYeAuNjjNfGa5VOx9/ojDTxJe23J7fGYDTXv8zEZvDtnkC17XjvymSOJVKOd7L4XRYCOXzSNo4eRwBCSsvQLTXV02F6AsxL6D3Xhjmc+ubqhEGdL31YrwP0tR43DrsQfx5xHBJPeO7goj9r7/0uLBi+t/njgt/TXbSFBq9MFgx+h8gFJpJ00yJvuFq7SDlsz7jqcvJofK+I7J9BBs7shlsHty+1jAQ9NxIEQDbZWc1AOkExOV75BmKkmcBP68k+Tf2xBmA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Y4dGnd7o26DsHSfPNjDs+kr6Tg1WwVL7ypzz7MY6If0=;
+ b=D677dFoHZlcv7S+U0Rxn4VTOw2HanZZTuliI0guMeD1GmuowTqYOvDwpJJiyInafUMzkB4tEH2kasOXOe9Bu2tJEMZmYMwSGnMkCYrzFMnQW5i0ltT5UBZicmN97P5hSMqCr+IlITwHb+XlhhWmudCbQ2Tw6bNHRa77tNYFZiR0bpwr3zEJgzg5f6dGK/cJf6XC5MeV8wYuOPN9aGgIbZ9HWMd5uKHixkuxuxIw99UoYtyTW300ne0/VnlTE/MxDH3yLKuT4hKlwcxvaSWrrx2rt/lTnK610PAWp68AOXg8gb3rgqT70ilfCITHBGf6IyEVLaA5bPJW+fopgkeS/6Q==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from DU2PR04MB8951.eurprd04.prod.outlook.com (2603:10a6:10:2e2::22)
+ by DB9PR04MB9626.eurprd04.prod.outlook.com (2603:10a6:10:309::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9388.14; Tue, 9 Dec
+ 2025 16:21:59 +0000
+Received: from DU2PR04MB8951.eurprd04.prod.outlook.com
+ ([fe80::753c:468d:266:196]) by DU2PR04MB8951.eurprd04.prod.outlook.com
+ ([fe80::753c:468d:266:196%4]) with mapi id 15.20.9388.013; Tue, 9 Dec 2025
+ 16:21:59 +0000
+Date: Tue, 9 Dec 2025 11:21:52 -0500
+From: Frank Li <Frank.li@nxp.com>
+To: Adrian Hunter <adrian.hunter@intel.com>
+Cc: alexandre.belloni@bootlin.com, linux-i3c@lists.infradead.org
+Subject: Re: [PATCH 1/7] i3c: mipi-i3c-hci: Remove duplicate blank lines
+Message-ID: <aThMoGmjufQ5OtzU@lizhi-Precision-Tower-5810>
+References: <20251209115104.124156-1-adrian.hunter@intel.com>
+ <20251209115104.124156-2-adrian.hunter@intel.com>
+Content-Disposition: inline
+In-Reply-To: <20251209115104.124156-2-adrian.hunter@intel.com>
+X-ClientProxiedBy: BYAPR06CA0015.namprd06.prod.outlook.com
+ (2603:10b6:a03:d4::28) To DU2PR04MB8951.eurprd04.prod.outlook.com
+ (2603:10a6:10:2e2::22)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: Error while loading dw-i3c-master: UBSAN: shift-out-of-bounds in
- drivers/i3c/master/dw-i3c-master.c:885:12
-To: <alexandre.belloni@bootlin.com>
-CC: <linux-i3c@lists.infradead.org>
-References: <66f5e4db-ac20-4bec-a437-af86aad1f56e@ovhcloud.com>
- <202512082058408ee92ee8@mail.local>
- <b9b568e8-8e21-49ac-b3dd-ab750fc329aa@ovhcloud.com>
- <202512091248543fcf4c83@mail.local>
-Content-Language: en-US
-From: Louis Sautier <louis.sautier@ovhcloud.com>
-Autocrypt: addr=louis.sautier@ovhcloud.com; keydata=
- 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
- RsE2POMT+tiu+v1zM9499+7oCyCEtQ==
-In-Reply-To: <202512091248543fcf4c83@mail.local>
-X-Originating-IP: [109.190.254.33]
-X-ClientProxiedBy: CAS2.OVH.local (172.16.1.2) To DAGFR10EX1.OVH.local
- (172.16.2.30)
-X-OVH-CORPLIMIT-SKIP: true
-X-Ovh-Tracer-Id: 4755801207220269691
-X-VR-SPAMSTATE: OK
-X-VR-SPAMSCORE: 0
-X-VR-SPAMCAUSE: dmFkZTF+SYv9/uCP674gvcl9791ESlmzPmYgcH+X3GPab4z0blzmiMliK9aCj4bNokCoB/O5hsHoRlTF9Y2MzAViytOOM8hVtJgmvpOe7/nTH/WZ9d9KKpgmyrBPsyHIDPvft9U90+w4ncSK1vhoSDWA3vwZBE7aRbr3kgfkdt+kyOfFxyuhSuJ7mx8Xf4U+8v47Z0rV/LBiKni5shNycDXTrYGFEpKLtE/QhALBpFDiYDxZ2TYRmA8snM8vZTGvXUck9aTLLl2/GzqDduSBFC+iWLB/WodnmBlCBApRwIY5SBBbkebU3NIcPdly82yhBZXiWv+lsWGTZ3+Pf0xeZrzcGhyjpvs6YIOOz6OYwxrh/77ZiHWhvPjIJAm6RAWGMIrv4n8XdgLV0iTaoOKbiWty/3PvV8ixkNrpeiN9fbukTGKh68PNaiei2sOjnDhruRLUyxSXqRDT6jTdxQob5YDRyNfDiQMCHWjp0IfvL3VbXc8ZySlMYMe/mRdOnnLt7MoPu3Z7qKEQkh+f3rDtrlXApnx7hMEW3t+cKGrapfK7xM1RqfzjcVizd1yas8QfAVollOgSZ5kNZ14aZTVcJrt57BmR+244J6f6LWgrjSw09kfCluz1A/NsgNHnYHWpXddxEOoLAn5jSYCBrpNBfKawZKHEbdsxCG7s3dEc5zRFoor3Cg
-DKIM-Signature: a=rsa-sha256; bh=g2pvhjg/zKrxQ1lv8jEpb9h/yIRAd0cA270CPGr9YvU=;
- c=relaxed/relaxed; d=ovhcloud.com; h=From; s=mailout; t=1765294592; v=1;
- b=Eg9NktPEHJ5S1iVv0cyDYT0ZVxh2m3ZZN1bl/8p4uWD6UrNXlIy/qFaSNadpmE5GuwBvUGsc
- CBu8xzJ34Jk5/Z9Py/+qbH3PE2CeHnYKeir6LkTr3AHPQd7j1WpwdE0wRuDz0+RPqZNThA4xjNP
- fHRsJxxJclLbQDHazh5ZD7jM=
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|DB9PR04MB9626:EE_
+X-MS-Office365-Filtering-Correlation-Id: 5ae6cf99-561f-4f9d-58c3-08de373f13cd
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|19092799006|366016|52116014|1800799024|7053199007|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?p8Js+n9ngAuezM5HgNEivPC5V/BBQA2s3cd1JeMsUXsHj8uBVpvZFd9A6FmK?=
+ =?us-ascii?Q?Rv4Fg7QNXmIER/jhGk3xKJGIFepleDKS1U9ktnnoR6JtWmSWZbR2/MdieVCP?=
+ =?us-ascii?Q?HQu7bnV/GFVSbixSCIDwRkSxz65zCwcj/GBu16x6tWX/6GGToJE2wwU3+xjf?=
+ =?us-ascii?Q?tdNw2vigJNrJbn1ulSaQHvZdPuKKi8Er4PyhXmVoFU3zydkucb9k1AnvDGfk?=
+ =?us-ascii?Q?LVK1FeElgZ4mc6BwqGwUS/ZYtqbW7d9xkTx9bope68RGbaErYFZ8hMxQ9o7X?=
+ =?us-ascii?Q?wzWHQLRPOa5ZmYMbQX3dqQ7gL2znKsbs3FumbpyiDttbqfXzFpm+qxzAZJyQ?=
+ =?us-ascii?Q?HWNaWKMLCSxLx4iE2JrYW5WND3Zit4w/b3VWbzfHSfT1PD8C8uh06L1R0vLL?=
+ =?us-ascii?Q?EWnq0kGuR9hKQB8RFhudqKRV8V1kd3C8AHfOIglellcWiCf6yHh8Ztfeh95B?=
+ =?us-ascii?Q?6qZhy9neTOAMIDas3vATgA/PhEXJkG624zlrMUSkMchrqHPMHKuJUGuyRA8P?=
+ =?us-ascii?Q?Mu/sLQkpsvU0qi2uAtjV2bgMhJkwnBPv80E7GOY9horAcmNU90coawF1gEce?=
+ =?us-ascii?Q?vZio4f9JmasZQ3nz/XUjpdZcK7lYvc/fWYqEfRdf7cLhRK7vSJQLD31dEtes?=
+ =?us-ascii?Q?w1H5BR36Qw4Tluwz1PBFBtrhRaDSGh9mX5FXT1d4SEqMgxXuTywy+x8ocK54?=
+ =?us-ascii?Q?QzKK4eLqhhGs/Pbq5gVQ76JuC1vVId5cXjzr9GhUN/wRAhFfDChfHzIefGR0?=
+ =?us-ascii?Q?6aI7I2HR72Qa/vPPTwhgMqggsuRB3tcTo+NjmJoSoH5LG7szn0+7FPFJCU5O?=
+ =?us-ascii?Q?Jaeknerqg0idytMuonO75F7+HrpUTWAdYTZIzVgwjy+XO/Tf5WXnVPD/lOO5?=
+ =?us-ascii?Q?8KHEPGcjzKvPk3Kz5ORGfQsQjmr87IcEPy/Qywd6Wis23nc+TrkihEr6Gq66?=
+ =?us-ascii?Q?dmbkM9fdSvilgEYpQaJk01lMsOTvEbncx/Vf7thNVE5IPSzgnO0Jx0zLKnKC?=
+ =?us-ascii?Q?Zf3Iweqx5A+TP089H3tOTSAIUdvA2z7in0lr2lBhCFe9/cuoYss30H6zMWuz?=
+ =?us-ascii?Q?QsQVEEhv4/6AoxnIXE8i998BzrC1f7aGThXoNo+OjLeW7NbphSAPbn/lUVrB?=
+ =?us-ascii?Q?MdeyFgGxppmJNwkmoJFWKg/SRo1CNEsYATi7BigiTLBY/pHfSEIrDP3Yes1q?=
+ =?us-ascii?Q?WyAW2EEP1lcb6cMRfgUYL+96vjJtbSpAtiY5Wh5JNu0vF9sM+u+TTg5P1Esd?=
+ =?us-ascii?Q?hkMMkJKT7MGa0lczxLsft8P5Qa0F2z1SNmWzs7Q6PkJsRY4Qxl1U19lqexhd?=
+ =?us-ascii?Q?6aV7En9KHMiGkNg7smMG6A2UsEXGpADQ8+j7pM6mEnMw1mc6OXVYUwaD8N6D?=
+ =?us-ascii?Q?Jd+DZPz7gwTYOz6sdIZ1G2qHqmZqhGmUDWrrfwdEHG7bduQ6hqMS5MysKmEA?=
+ =?us-ascii?Q?zH3xaWi9CNVzc1FpTqHbrtsCqZwTsv6bonv/VJy4u6djm02gadxhpQPI7NAC?=
+ =?us-ascii?Q?U0FcOKP1ges6NtOkJ0NImyX6cOFj7l4ztAX3?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(19092799006)(366016)(52116014)(1800799024)(7053199007)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?8qeVktndpSI1EuavG5/At+90GrxBMyWyQNXWe8ceNhvsqJPZ4T4hor1BZ2xh?=
+ =?us-ascii?Q?VbCE6HP8MXCtRYdmfbMjIPkRR9O/0z7DQC9KdDoGyGLFL3qHJLx8KFoQyvNc?=
+ =?us-ascii?Q?qMbM4XiEo0JQGdw9bdvGSLwYM2VToTV/50ZQYOcmmk/BauaPXp5/mbcebr28?=
+ =?us-ascii?Q?k1uOVFd/3yIC2oLbSi219fWtvLAVU5UcSj7wuhe5hKM8BQTR8o64Cq4GdztG?=
+ =?us-ascii?Q?ERwEwVpFTbY+hFSqjMq7KyO53Zv7oe1gMuT62mYSMjFQEnDi8QK388/NQlVZ?=
+ =?us-ascii?Q?Y4k11dSrGWaBKQf2Ogtnvw3MmgjW5fWZd65YqvW5RlfdughDTJ4JdA13kSuP?=
+ =?us-ascii?Q?5v7pajjGQV10m1YbDWrC3v3kMmDMDg2axeueZ3FJ8vYPzYeMS3RPzT8l+exN?=
+ =?us-ascii?Q?hhztmr/vycNCKjiLusyLGYZVzOm1Sm0ilxvTXAbYrvxDlIdS/59xuSGVsi01?=
+ =?us-ascii?Q?96FHhchug/8hHiIk+VyzUEDSNDnwcNBXfa9hjY1Pl5Ov4MYSMFNQMhflK5qV?=
+ =?us-ascii?Q?xfui8Vbn1nBGzCbV71EB10dpOkJEiXAGcyyD2mR5Sm07yt0o397l86nVrGXz?=
+ =?us-ascii?Q?m9dEJi3Imhb9KDhN6nnJ8e3egHqr4IH6odizkEJaogU8Nk4GDR5AgXH69uk1?=
+ =?us-ascii?Q?2thbkIhc//ZXptENDWtBFDIWyHz33we5YLagr4DkQP21EFStGItqbX/J7ecf?=
+ =?us-ascii?Q?cTSyq+jy8urbYpHTG4N3RP3alP7DmOFdMek2YEb+ewNE20wegs3BiXfzYJ4K?=
+ =?us-ascii?Q?nCFAW2lJalDfw1Hgw5DSZZfXH9izlimHrP0N0hmtd1XAJ5WzX5A329dG/dkk?=
+ =?us-ascii?Q?8wpCEKmXVCTQhvnBWfR0LscCF0iapgkn+5j+BPK91+earFLwQvEMaOLVLsPW?=
+ =?us-ascii?Q?xA92eqqqOSkWuJypE029/DFaH//1x8JgJXQ1ab9ABQ6uJuAdOej9w/KyoOTA?=
+ =?us-ascii?Q?GDIGjWUwKP/l6G748V2OepVdaslz2wpyXrvn+4JgEAD0eZGtxHces83HFlRs?=
+ =?us-ascii?Q?xqzRZsXcb/C7BOJ8muG4ekPjNFfMtaK6TxHsGnaNumzjmbcaFZRgKaGzunhQ?=
+ =?us-ascii?Q?wbrW2A35vo6ONIx1p/vJYvX7n0VjuvxLrAZbn9Q0hckZtmlUCAEFB1EzpN5i?=
+ =?us-ascii?Q?DIG01mJDUgWCpRs5QAUNYyDJt6hU19WuBbDfDaP86jjhM7X/3vXPPg2RPiE8?=
+ =?us-ascii?Q?5qASf/GJ20N5oI3FHAVTP/xSGoG/otaad8n4shO45XLfZSQHjrgEch4VNtTt?=
+ =?us-ascii?Q?sZUJ27oRVyZ3ZSueGHP2L72iaKhJtMA+T7IWGf8eqcapkSGOEZOil3BQCsP2?=
+ =?us-ascii?Q?0lE+EV9xHAQfuWvQyO86F7ZFc84iSdrUDE99Px8aBys3vYnWwS/d+wH6xKu+?=
+ =?us-ascii?Q?NNEDTa+6JdcAW4pazRbzuZbs8enHVbUGFNwTct+F2CqaJe9/8PjU+Mu5ZO5t?=
+ =?us-ascii?Q?tlnzHkt8HmvBQmM7BoFnUy4+YoK0GoIF1ezls5Kwk7kzNKFDnQF2sS3LdxOk?=
+ =?us-ascii?Q?pr4FGoisFs4TBB4qNQf1Q9v1EWLjFe1XGfzFuyF4hnsyubGrp+cRWUdl+ZGx?=
+ =?us-ascii?Q?o13HDVM7LH0h2F2GGBsxn6E2/K3bRc6upVNG0L6z?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5ae6cf99-561f-4f9d-58c3-08de373f13cd
+X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8951.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Dec 2025 16:21:58.9429
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 9jnh1htXSlhIv2NhhNryAA2q4iKzJOYF6SLDjG32FrhkL9RM5wIJjuY/WUIy16uebYeXp+/EE47nwggQlIWTCA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB9626
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251209_073637_708474_7226246C 
-X-CRM114-Status: GOOD (  15.37  )
+X-CRM114-CacheID: sfid-20251209_082204_015487_95711490 
+X-CRM114-Status: GOOD (  19.84  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,94 +152,210 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-T24gMTIvOS8yNSAxMzo0OCwgQWxleGFuZHJlIEJlbGxvbmkgd3JvdGU6Cj4KPiBPbiAwOS8xMi8y
-MDI1IDEyOjM3OjEyKzAxMDAsIExvdWlzIFNhdXRpZXIgd3JvdGU6Cj4+IE9uIDEyLzgvMjUgMjE6
-NTgsIEFsZXhhbmRyZSBCZWxsb25pIHdyb3RlOgo+Pj4gSGVsbG8gTG91aXMsCj4+Pgo+Pj4gT24g
-MDIvMTIvMjAyNSAyMToxNzozMSswMTAwLCBMb3VpcyBTYXV0aWVyIHdyb3RlOgo+Pj4+IEhlbGxv
-LAo+Pj4+Cj4+Pj4gSSdtIHJ1bm5pbmcgaW50byBhIGJ1ZyB3aGVuIGxvYWRpbmcgdGhlIGR3LWkz
-Yy1tYXN0ZXIgbW9kdWxlIG9uIGtlcm5lbCA2LjE4Cj4+Pj4gb24gb25lIHNwZWNpZmljIHNlcnZl
-ci4gSSBzdXNwZWN0IGl0IGhhcyB0byBkbyB3aXRoIHRoZSBsYXJnZSBudW1iZXIgb2YKPj4+PiBD
-UFVzwqBvbiB0aGUgbWFjaGluZcKgKDc2OCB0aHJlYWRzLCBmcm9tIDIgQU1EIEVQWUMgOTk2NSBw
-cm9jZXNzb3JzKSBidXQgSSBhbQo+Pj4+IG5vdCBzdXJlLgo+Pj4+Cj4+Pj4gVGhlIHN5c3RlbSBp
-cyBvbiBVYnVudHUgMjUuMTAgYW5kIGEgNi4xOCBrZXJuZWwgd2l0aCBodHRwczovL2dpc3QuZ2l0
-aHVidXNlcmNvbnRlbnQuY29tL3NicmF6L2E2ZjM3ZmFmYmNmOTM1NGJiZTRlYWNlOWU5ZWI0OGNi
-L3Jhdy8xMTVkYTU5NGRjOWQ3ZWE5OWIwNjc1NDg0NzU3MWU2ZmQ3NmQ5ZGE1L2NvbmZpZwo+Pj4+
-IChiYXNpY2FsbHkgVWJ1bnR1J3MpLgo+Pj4gSnVzdCB0byBiZSBzdXJlLCBkb2VzIHRoaXMgYWxz
-byBoYXBwZW4gd2l0aCB2Ni4xNz8KPj4+Cj4+PiBUaGUgb25seSBjaGFuZ2UgaXMgdGhlIHNodXRk
-b3duIGhhbmRsaW5nIHNvIEkgd291bGQgZ3Vlc3MgeWVzLgo+Pj4KPj4gSGVsbG8sCj4+Cj4+IEl0
-IGRvZXMgaGFwcGVuIHdpdGggNi4xNy4gSSBpbml0aWFsbHkgZGlzY292ZXJlZCB0aGlzIHdoaWxl
-IHJ1bm5pbmcgVWJ1bnR1Cj4+IDI1LjEwJ3Mgc3RvY2sga2VybmVsICg2LjE3LjApLgo+Pgo+Pj4g
-V2hhdCBpcyB0aGUgYmVoYXZpb3Igd2hlbiB5b3UgYnVpbGQgdGhlIGR3LWkzYy1tYXN0ZXIgYXMg
-YSBzdGF0aWMgZHJpdmVyPwo+PiBJJ2xsIHRyeSBDT05GSUdfRFdfSTNDX01BU1RFUj15IGFuZCBy
-ZXBvcnQgYmFjay4KPj4KPj4gU29tZW9uZSBhbHNvIHN1Z2dlc3RlZCAodGhleSBkaWRuJ3QgcmVw
-bHkgdG8gdGhlIGxpc3QgdGhvdWdoKSB0aGF0IEkgYWRkIGEKPj4gcHJpbnRrIHRvIHNlZSB3aGF0
-IHRoZSB2YWx1ZSBvZiBtYXhkZXZzIGlzLiBJJ2xsIHByb3ZpZGUgdGhlIGxvZyBhcyBzb29uIGFz
-Cj4+IEkgaGF2ZSByZWJ1aWx0IHdpdGg6Cj4+Cj4+IC0tLSBsaW51eC02LjE4Lm9yaWcvZHJpdmVy
-cy9pM2MvbWFzdGVyL2R3LWkzYy1tYXN0ZXIuYwkyMDI1LTExLTMwIDIyOjQyOjEwLjAwMDAwMDAw
-MCArMDAwMAo+PiArKysgbGludXgtNi4xOC9kcml2ZXJzL2kzYy9tYXN0ZXIvZHctaTNjLW1hc3Rl
-ci5jCTIwMjUtMTItMDggMTg6MTc6MzMuMTUxNTY3MjI1ICswMDAwCj4+IEBAIC0xNTg4LDYgKzE1
-ODgsNyBAQAo+PiAgIAlyZXQgPSByZWFkbChtYXN0ZXItPnJlZ3MgKyBERVZJQ0VfQUREUl9UQUJM
-RV9QT0lOVEVSKTsKPj4gICAJbWFzdGVyLT5kYXRzdGFydGFkZHIgPSByZXQ7Cj4+ICAgCW1hc3Rl
-ci0+bWF4ZGV2cyA9IHJldCA+PiAxNjsKPj4gKwlwcmludGsoIm1heGRldnM6ICVkXG4iLCAgbWFz
-dGVyLT5tYXhkZXZzKTsKPj4gICAJbWFzdGVyLT5mcmVlX3BvcyA9IEdFTk1BU0sobWFzdGVyLT5t
-YXhkZXZzIC0gMSwgMCk7Cj4+ICAgCW1hc3Rlci0+cXVpcmtzID0gKHVuc2lnbmVkIGxvbmcpZGV2
-aWNlX2dldF9tYXRjaF9kYXRhKCZwZGV2LT5kZXYpOwo+Pgo+IFllcywgdGhhdCB3YXMgZ29pbmcg
-dG8gYmUgbXkgc3VnZ2VzdGlvbi4KPgpJIGhhdmVuJ3QgdHJpZWQgd2l0aCB0aGUgZHJpdmVyIGJ1
-aWx0LWluIHlldC4gVGhpcyBpcyB3aGF0IHRoZSBwcmludGsgc2hvd3M6CmR3LWkzYy1tYXN0ZXIg
-QU1ESTAwMTU6MDA6IHByb2JlIHdpdGggZHJpdmVyIGR3LWkzYy1tYXN0ZXIgZmFpbGVkIHdpdGgg
-CmVycm9yIC0xMTAKbWF4ZGV2czogNjU1MzUKZHctaTNjLW1hc3RlciBBTURJMDAxNTowMTogcHJv
-YmUgd2l0aCBkcml2ZXIgZHctaTNjLW1hc3RlciBmYWlsZWQgd2l0aCAKZXJyb3IgLTExMAptYXhk
-ZXZzOiAxMQotLS0tLS0tLS0tLS1bIGN1dCBoZXJlIF0tLS0tLS0tLS0tLS0KVUJTQU46IHNoaWZ0
-LW91dC1vZi1ib3VuZHMgaW4gZHJpdmVycy9pM2MvbWFzdGVyL2R3LWkzYy1tYXN0ZXIuYzo4ODU6
-MTIKc2hpZnQgZXhwb25lbnQgNjQgaXMgdG9vIGxhcmdlIGZvciA2NC1iaXQgdHlwZSAnbG9uZyB1
-bnNpZ25lZCBpbnQnCkNQVTogMCBVSUQ6IDAgUElEOiA3MzYzIENvbW06ICh1ZGV2LXdvcmtlcikg
-Tm90IHRhaW50ZWQgNi4xOC4wICMxIApQUkVFTVBUKHZvbHVudGFyeSkKSGFyZHdhcmUgbmFtZTog
-R2lnYSBDb21wdXRpbmcgTVo3My1MTTItMDAwL01aNzMtTE0yLTAwMCwgQklPUyBSMjNfRjQzIAox
-MS8yOC8yMDI1CkNhbGwgVHJhY2U6CiDCoDxUQVNLPgogwqBkdW1wX3N0YWNrX2x2bCsweDVmLzB4
-OTAKIMKgZHVtcF9zdGFjaysweDEwLzB4MTgKIMKgdWJzYW5fZXBpbG9ndWUrMHg5LzB4MzkKIMKg
-X191YnNhbl9oYW5kbGVfc2hpZnRfb3V0X29mX2JvdW5kcy5jb2xkKzB4ZGQvMHgxYzkKIMKgZHdf
-aTNjX21hc3Rlcl9kYWEuY29sZCsweDFhLzB4OTAgW2R3X2kzY19tYXN0ZXJdCiDCoGkzY19tYXN0
-ZXJfZG9fZGFhKzB4MzAvMHg5MCBbaTNjXQogwqBpM2NfbWFzdGVyX3JlZ2lzdGVyKzB4NjE2LzB4
-YTgwIFtpM2NdCiDCoGR3X2kzY19jb21tb25fcHJvYmUrMHgyOTgvMHgyZDAgW2R3X2kzY19tYXN0
-ZXJdCiDCoGR3X2kzY19wcm9iZSsweDMwLzB4NTAgW2R3X2kzY19tYXN0ZXJdCiDCoHBsYXRmb3Jt
-X3Byb2JlKzB4NDIvMHhjMAogwqA/IGRyaXZlcl9zeXNmc19hZGQrMHg2My8weGQwCiDCoHJlYWxs
-eV9wcm9iZSsweGY5LzB4MzcwCiDCoD8gcG1fcnVudGltZV9iYXJyaWVyKzB4NTYvMHhhMAogwqBf
-X2RyaXZlcl9wcm9iZV9kZXZpY2UrMHg4Yi8weDE2MAogwqBkcml2ZXJfcHJvYmVfZGV2aWNlKzB4
-MjQvMHhkMAogwqA/IF9fcGZ4X19fZHJpdmVyX2F0dGFjaCsweDEwLzB4MTAKIMKgX19kcml2ZXJf
-YXR0YWNoKzB4ZWYvMHgyMjAKIMKgPyBfX3BmeF9kd19pM2NfZHJpdmVyX2luaXQrMHgxMC8weDEw
-IFtkd19pM2NfbWFzdGVyXQogwqBidXNfZm9yX2VhY2hfZGV2KzB4OGEvMHhlMAogwqBkcml2ZXJf
-YXR0YWNoKzB4MWUvMHgzMAogwqBidXNfYWRkX2RyaXZlcisweDEzZS8weDIzMAogwqA/IF9fcGZ4
-X2R3X2kzY19kcml2ZXJfaW5pdCsweDEwLzB4MTAgW2R3X2kzY19tYXN0ZXJdCiDCoGRyaXZlcl9y
-ZWdpc3RlcisweDc1LzB4ZjAKIMKgX19wbGF0Zm9ybV9kcml2ZXJfcmVnaXN0ZXIrMHgxZS8weDMw
-CiDCoGR3X2kzY19kcml2ZXJfaW5pdCsweDFjLzB4ZmYwIFtkd19pM2NfbWFzdGVyXQogwqBkb19v
-bmVfaW5pdGNhbGwrMHg1OS8weDMzMAogwqBkb19pbml0X21vZHVsZSsweDhiLzB4MjkwCiDCoGxv
-YWRfbW9kdWxlKzB4MWYyZi8weDIzMjAKIMKgaW5pdF9tb2R1bGVfZnJvbV9maWxlKzB4OWIvMHgx
-MDAKIMKgPyBpbml0X21vZHVsZV9mcm9tX2ZpbGUrMHg5Yi8weDEwMAogwqBpZGVtcG90ZW50X2lu
-aXRfbW9kdWxlKzB4MTBlLzB4MzAwCiDCoF9feDY0X3N5c19maW5pdF9tb2R1bGUrMHg3My8weGYw
-CiDCoD8gX19zZWN1cmVfY29tcHV0aW5nKzB4ODQvMHhlMAogwqB4NjRfc3lzX2NhbGwrMHgxZjA0
-LzB4MjM1MAogwqBkb19zeXNjYWxsXzY0KzB4ODIvMHhjODAKIMKgPyB2ZnNfcmVhZCsweDE3OS8w
-eDNhMAogwqA/IHZmc19yZWFkKzB4MTc5LzB4M2EwCiDCoD8gX19yc2VxX2hhbmRsZV9ub3RpZnlf
-cmVzdW1lKzB4YTIvMHg0ZTAKIMKgPyBleGl0X3RvX3VzZXJfbW9kZV9sb29wKzB4ZTYvMHgxOTAK
-IMKgPyBkb19zeXNjYWxsXzY0KzB4MjVjLzB4YzgwCiDCoD8gaXJxZW50cnlfZXhpdCsweDQzLzB4
-NTAKIMKgPyBleGNfcGFnZV9mYXVsdCsweDkwLzB4MWIwCiDCoGVudHJ5X1NZU0NBTExfNjRfYWZ0
-ZXJfaHdmcmFtZSsweDc2LzB4N2UKUklQOiAwMDMzOjB4NzBjOGJmMTM0OGNkCkNvZGU6IGZmIGMz
-IDY2IDJlIDBmIDFmIDg0IDAwIDAwIDAwIDAwIDAwIDkwIGYzIDBmIDFlIGZhIDQ4IDg5IGY4IDQ4
-IDg5IApmNyA0OCA4OSBkNiA0OCA4OSBjYSA0ZCA4OSBjMiA0ZCA4OSBjOCA0YyA4YiA0YyAyNCAw
-OCAwZiAwNSA8NDg+IDNkIDAxIApmMCBmZiBmZiA3MyAwMSBjMyA0OCA4YiAwZCAxMyBmNSAwZiAw
-MCBmNyBkOCA2NCA4OSAwMSA0OApSU1A6IDAwMmI6MDAwMDdmZmQ4ZDBlNGNmOCBFRkxBR1M6IDAw
-MDAwMjQ2IE9SSUdfUkFYOiAwMDAwMDAwMDAwMDAwMTM5ClJBWDogZmZmZmZmZmZmZmZmZmZkYSBS
-Qlg6IDAwMDA1OWM5ODdiZjE1YzAgUkNYOiAwMDAwNzBjOGJmMTM0OGNkClJEWDogMDAwMDAwMDAw
-MDAwMDAwMCBSU0k6IDAwMDA3MGM4YmU3NGIzMzYgUkRJOiAwMDAwMDAwMDAwMDAwMDY1ClJCUDog
-MDAwMDdmZmQ4ZDBlNGQ5MCBSMDg6IDAwMDAwMDAwMDAwMDAwMDAgUjA5OiAwMDAwNTljOTg3YmMx
-MDcwClIxMDogMDAwMDAwMDAwMDAwMDAwMCBSMTE6IDAwMDAwMDAwMDAwMDAyNDYgUjEyOiAwMDAw
-NzBjOGJlNzRiMzM2ClIxMzogMDAwMDAwMDAwMDAyMDAwMCBSMTQ6IDAwMDA1OWM5ODdiZThjZDAg
-UjE1OiAwMDAwNTljOTg3YmIxNDQwCiDCoDwvVEFTSz4KLS0tWyBlbmQgdHJhY2UgXS0tLQptYXhk
-ZXZzOiAxMQpkdy1pM2MtbWFzdGVyIEFNREkwMDE1OjAzOiBwcm9iZSB3aXRoIGRyaXZlciBkdy1p
-M2MtbWFzdGVyIGZhaWxlZCB3aXRoIAplcnJvciAtMTEwCgoKLS0gCmxpbnV4LWkzYyBtYWlsaW5n
-IGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
+On Tue, Dec 09, 2025 at 01:50:58PM +0200, Adrian Hunter wrote:
+> Remove duplicate blank lines from mipi-i3c-hci code.
+>
+> Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
+> ---
+
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+
+>  drivers/i3c/master/mipi-i3c-hci/cmd_v1.c   | 2 --
+>  drivers/i3c/master/mipi-i3c-hci/cmd_v2.c   | 2 --
+>  drivers/i3c/master/mipi-i3c-hci/core.c     | 2 --
+>  drivers/i3c/master/mipi-i3c-hci/dat_v1.c   | 1 -
+>  drivers/i3c/master/mipi-i3c-hci/dma.c      | 2 --
+>  drivers/i3c/master/mipi-i3c-hci/ext_caps.c | 1 -
+>  drivers/i3c/master/mipi-i3c-hci/ext_caps.h | 1 -
+>  drivers/i3c/master/mipi-i3c-hci/hci.h      | 5 -----
+>  drivers/i3c/master/mipi-i3c-hci/pio.c      | 1 -
+>  9 files changed, 17 deletions(-)
+>
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c b/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
+> index eb8a3ae2990d..fe260461e7e6 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
+> +++ b/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
+> @@ -15,7 +15,6 @@
+>  #include "dat.h"
+>  #include "dct.h"
+>
+> -
+>  /*
+>   * Address Assignment Command
+>   */
+> @@ -100,7 +99,6 @@
+>  #define CMD_M0_VENDOR_INFO_PRESENT		   W0_BIT_( 7)
+>  #define CMD_M0_TID(v)			FIELD_PREP(W0_MASK( 6,  3), v)
+>
+> -
+>  /* Data Transfer Speed and Mode */
+>  enum hci_cmd_mode {
+>  	MODE_I3C_SDR0		= 0x0,
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/cmd_v2.c b/drivers/i3c/master/mipi-i3c-hci/cmd_v2.c
+> index efb4326a25b7..3729e6419581 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/cmd_v2.c
+> +++ b/drivers/i3c/master/mipi-i3c-hci/cmd_v2.c
+> @@ -16,7 +16,6 @@
+>  #include "cmd.h"
+>  #include "xfer_mode_rate.h"
+>
+> -
+>  /*
+>   * Unified Data Transfer Command
+>   */
+> @@ -62,7 +61,6 @@
+>  #define CMD_A0_ASSIGN_ADDRESS(v)	FIELD_PREP(W0_MASK( 14,   8), v)
+>  #define CMD_A0_TID(v)			FIELD_PREP(W0_MASK(  6,   3), v)
+>
+> -
+>  static unsigned int get_i3c_rate_idx(struct i3c_hci *hci)
+>  {
+>  	struct i3c_bus *bus = i3c_master_get_bus(&hci->master);
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+> index 607d77ab0e54..211321f73e02 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/core.c
+> +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+> @@ -21,7 +21,6 @@
+>  #include "cmd.h"
+>  #include "dat.h"
+>
+> -
+>  /*
+>   * Host Controller Capabilities and Operation Registers
+>   */
+> @@ -109,7 +108,6 @@
+>  #define DEV_CTX_BASE_LO			0x60
+>  #define DEV_CTX_BASE_HI			0x64
+>
+> -
+>  static inline struct i3c_hci *to_i3c_hci(struct i3c_master_controller *m)
+>  {
+>  	return container_of(m, struct i3c_hci, master);
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/dat_v1.c b/drivers/i3c/master/mipi-i3c-hci/dat_v1.c
+> index 85c4916972e4..cc5d2deb23ab 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/dat_v1.c
+> +++ b/drivers/i3c/master/mipi-i3c-hci/dat_v1.c
+> @@ -15,7 +15,6 @@
+>  #include "hci.h"
+>  #include "dat.h"
+>
+> -
+>  /*
+>   * Device Address Table Structure
+>   */
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
+> index c401a9425cdc..f20db2899989 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/dma.c
+> +++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
+> @@ -20,7 +20,6 @@
+>  #include "cmd.h"
+>  #include "ibi.h"
+>
+> -
+>  /*
+>   * Software Parameter Values (somewhat arb itrary for now).
+>   * Some of them could be determined at run time eventually.
+> @@ -124,7 +123,6 @@
+>  #define DATA_BUF_IOC			BIT(30)	/* Interrupt on Completion */
+>  #define DATA_BUF_BLOCK_SIZE		GENMASK(15, 0)
+>
+> -
+>  struct hci_rh_data {
+>  	void __iomem *regs;
+>  	void *xfer, *resp, *ibi_status, *ibi_data;
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/ext_caps.c b/drivers/i3c/master/mipi-i3c-hci/ext_caps.c
+> index 7714f00ea9cc..40939af0b0e3 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/ext_caps.c
+> +++ b/drivers/i3c/master/mipi-i3c-hci/ext_caps.c
+> @@ -16,7 +16,6 @@
+>  #include "ext_caps.h"
+>  #include "xfer_mode_rate.h"
+>
+> -
+>  /* Extended Capability Header */
+>  #define CAP_HEADER_LENGTH		GENMASK(23, 8)
+>  #define CAP_HEADER_ID			GENMASK(7, 0)
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/ext_caps.h b/drivers/i3c/master/mipi-i3c-hci/ext_caps.h
+> index 9df17822fdb4..b15e629951f0 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/ext_caps.h
+> +++ b/drivers/i3c/master/mipi-i3c-hci/ext_caps.h
+> @@ -13,7 +13,6 @@
+>  /* MIPI vendor IDs */
+>  #define MIPI_VENDOR_NXP			0x11b
+>
+> -
+>  int i3c_hci_parse_ext_caps(struct i3c_hci *hci);
+>
+>  #endif
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
+> index 249ccb13c909..3f88b67bc5cc 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/hci.h
+> +++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
+> @@ -62,7 +62,6 @@ struct i3c_hci {
+>  	void *vendor_data;
+>  };
+>
+> -
+>  /*
+>   * Structure to represent a master initiated transfer.
+>   * The rnw, data and data_len fields must be initialized before calling any
+> @@ -108,7 +107,6 @@ static inline void hci_free_xfer(struct hci_xfer *xfer, unsigned int n)
+>  	kfree(xfer);
+>  }
+>
+> -
+>  /* This abstracts PIO vs DMA operations */
+>  struct hci_io_ops {
+>  	bool (*irq_handler)(struct i3c_hci *hci);
+> @@ -126,21 +124,18 @@ struct hci_io_ops {
+>  extern const struct hci_io_ops mipi_i3c_hci_pio;
+>  extern const struct hci_io_ops mipi_i3c_hci_dma;
+>
+> -
+>  /* Our per device master private data */
+>  struct i3c_hci_dev_data {
+>  	int dat_idx;
+>  	void *ibi_data;
+>  };
+>
+> -
+>  /* list of quirks */
+>  #define HCI_QUIRK_RAW_CCC	BIT(1)	/* CCC framing must be explicit */
+>  #define HCI_QUIRK_PIO_MODE	BIT(2)  /* Set PIO mode for AMD platforms */
+>  #define HCI_QUIRK_OD_PP_TIMING		BIT(3)  /* Set OD and PP timings for AMD platforms */
+>  #define HCI_QUIRK_RESP_BUF_THLD		BIT(4)  /* Set resp buf thld to 0 for AMD platforms */
+>
+> -
+>  /* global functions */
+>  void mipi_i3c_hci_resume(struct i3c_hci *hci);
+>  void mipi_i3c_hci_pio_reset(struct i3c_hci *hci);
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/pio.c b/drivers/i3c/master/mipi-i3c-hci/pio.c
+> index 710faa46a00f..142f3f79415b 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/pio.c
+> +++ b/drivers/i3c/master/mipi-i3c-hci/pio.c
+> @@ -15,7 +15,6 @@
+>  #include "cmd.h"
+>  #include "ibi.h"
+>
+> -
+>  /*
+>   * PIO Access Area
+>   */
+> --
+> 2.51.0
+>
+>
+> --
+> linux-i3c mailing list
+> linux-i3c@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-i3c
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
