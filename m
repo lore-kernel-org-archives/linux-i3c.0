@@ -4,144 +4,148 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C92BCD3B98A
-	for <linux-i3c@archiver.kernel.org>; Tue,  9 Dec 2025 17:10:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE6F4D3B98A
+	for <linux-i3c@archiver.kernel.org>; Tue,  9 Dec 2025 17:25:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qn20SJ/PPPy7bsh+P0is1QGYYTQCRBYG2X9YVy6KWo4=; b=eW94AGN1LHpKCB
-	R36W5Tlzvq80Lf9pgWxaS9qoR96G58fQ92LEUuMWLcoNImcOkwQ99lMb58hnr//5wwuAeQP1ORpBI
-	VuvQs1qJYFKcKWKztsVXmaHPthd1w+T4GYGV1BNWGMDOUZuoxeDNUTA3qUxxzI2I7BT5863udBogx
-	H+9g/cH0KMIr9KX+K5W9Z5PF4zCFWlJY1IjuqeHtiyy3hvNtD6e93brBZ+XdRtkO5bTR4UCqB+ql4
-	qCaRUpICzXWRf8ifgy+Pkg+3BFoNPxMzSmdVtwrK055whSa0id+73nLJAagHqFc+3nW2Rp0laof47
-	TLPfldd3v1y803NUauJQ==;
+	List-Owner; bh=VF3PwAkZ2wZSpRocEadJzAr2z/FkldXkVyaJfUUID/s=; b=DxEe3kP4BerLLR
+	o5Gvgb5jQxPg73QDUiOzq6yQf90UmY8Jcw3x88i+t+DvJ7VeZFdy9aP6JpX9V/bAzoyg0tkudYbWi
+	WvQYurHaW81W5bNsn/Ih4DYvfuUI3QStnn0rpi0RFrNqqaTKdStHr6w3wXO3y2ArwQO8JOLRUo4Ql
+	gRfcVKNE3OjjvD46RM0U3V1/fLWH8Jw5OCmfI+dDGjeCwb6IIV3xgxxIbYW8jfm7Gtgxuz85ha7jt
+	x+hU5RtoJb0ZzhKgqGeGInHKPAJnhbMfgDfUWq9F3hLbge1tQHc4A6tK9NikeAPahT5ZkO35fLStw
+	6eY9yV/9mMKs66diznUg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vT1El-0000000EZxS-2Kfh;
-	Tue, 09 Dec 2025 17:10:55 +0000
-Received: from mail-northeuropeazon11011009.outbound.protection.outlook.com ([52.101.65.9] helo=DU2PR03CU002.outbound.protection.outlook.com)
+	id 1vT1SY-0000000EajE-1lEk;
+	Tue, 09 Dec 2025 17:25:10 +0000
+Received: from mail-westeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c201::1] helo=AM0PR83CU005.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vT1Ei-0000000EZwp-41nl
+	id 1vT1SV-0000000Eaim-1ROF
 	for linux-i3c@lists.infradead.org;
-	Tue, 09 Dec 2025 17:10:54 +0000
+	Tue, 09 Dec 2025 17:25:09 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=SebdkckA5u9QxEN37C7yW7zkq3Fkztt3mh1/3WOecx3vaMMgGAIABYjf78P6pHA9291hR85cMs1+RP5V3l6wq/WsYIDMSBKp69DI4hq03AZ8zmwzL8PgIeO3e+YWfzAYpNPgCnPsUbMhQXvZLiPp7RgJMnvDPp0y4TXtFIcT/ckvADDRFYdzWgPMNEqO3Ibe/v+B6j4PHwzhNlcHBuDHzHQhvmMoeivmTCde9QQvlNajGVw76rXGIcrZYnDctzM5Sxdp9tWOAFCbkBRwXDbI9S2IY9tXZnstJoiH612D42VFxWCrZrqo5VF3NVEXI8OjTQDGnz1Ex7B/nQeWLrAYug==
+ b=Lc398UsloMDyLXpvF9R2xofNAZKMAyeS9Ov+E+HLQ9995Qbftjtmblm17sSGSu35JgwORX3Owc1EHGwsBa/CZLfvT2DxWcVAxaiVLth49TFC+xaV8WEGLQ2pAv7a7kbdDePR//nuAE2fAfjuP3lKe0hS450nhhunEJfA49qu2SN8C0KFmEnGfXluaVw0j9em+1SPm7EDlrHdemxjyrYSltGFQbuS2nkxUZUbjA9lkPwg6BofEw6EWxIYIjHe5WvZkl0XWRmhN60L0lVhktLwqjYLiSJICk4U0UZg+xU/VBmPnXlhNQFyD2n87FwGtAoxZmKS2DglDC8nBZ4gSkQ4/w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=HtjCVS5IfIGbVX4SSRi+d6nIrpumJFGScfJFenUBGHA=;
- b=GdaLM/y95fQecvZohRliog52kHTBTGOEAnZ1mNFCDhOzMf5pa+7P9EhATIbIYnZRdffS9C9UFIwdSrklD9dt9BSKXidcMZjgWYUrPblqJV6wj5DC3HcuYLwReCob0fr2kmp/BROJRoN4JjjRjLYhlanVPhD0hnoE60/WS4yJy+vgnJjTkOmuzq5oBrUrYVdghWIKrlLLBygO+PrVNxYt3B7PI1bLneVrLups/odZ/v4Rg4L2Vh9fAgc+8uZwXAOEtnWwL0z/V8EqIvM7GeS5w4fu/50ObazE+Fpx8rklprbiVAvN8pPTk2IL7h2vuwzHoHjam5O/5oOKre+T7wvrdg==
+ bh=V56u2rAvHsZu+GoZ3PnQb95MdxOciR9n7mnHtbW6mxA=;
+ b=gZkv1Vq4SBArqMvEQGeuMR9ygROh5E3QCNtR3dtnAh7Q0SUfW5gDS7FMTGf+bmKVId5AYIVO6l82a8M9rQj9SCPfW0F7m9drmYsGLMrX4nekCjIHvmJIJAKLsx5l+Can0c5lEC9ix0EUYcVdvo1DtsAH0GkCiMCIo95oSQDyAG5ufqS6ibo0vfH7D9MueyKjBptWSUGk1MBvAVCxjYsP1KSnEZ92PthdVW5n5todp19hhGqVrkhrnkVFFTPS2Lww/0fmKEaTvReoVVlXm1C0ZMejRDC7w68iIp+sdHH/wPbcFIMuOgjJUXhWikYaqcDJhqvn1cj5mjMD/7ugEBoH8w==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HtjCVS5IfIGbVX4SSRi+d6nIrpumJFGScfJFenUBGHA=;
- b=ap+UEWpZVq2TTXPr59BS0cvxr1ySCWnxZ1a0YuzMzVTalXvYVa2YMJJaP+DKGM2k9DMyZocNXYvlmFAyT5XctI1jO9PJl2/rS6SXjBQC3KZS+60Orh3MpahdnbNFub+yjOQkKberMuelR1vGapkOTLhkkFb3OHLJM6KxN0gwHrKnphEOmsFpF5SLoDbD5UhbRBv/aiTV6ycvn8AMPeT/jMPNCIiyh+HOsvhSDA7Ijb8ubX7+565oS14lYbzoT3pWOwk+b4bBmLrZlL8ywUhhPSXB/zw7jM9+kTAyTP2uq1cnOnDWfD+kdqIRoXPfckKOcs5KB5ifs0omd68qIpDpTg==
+ bh=V56u2rAvHsZu+GoZ3PnQb95MdxOciR9n7mnHtbW6mxA=;
+ b=fMM1nnaAAuHp+FyjctZOhGOx781VEKCG/AjQECqVv6VfE/Apuc5qAw35r/V0R6R6poL/2tlyJRLcCmJVgUQxLMTt4xeqkdtjDYdSbi+PMBV2ZxhpIl8iLtb+8NqY/w3Y95LNbYZImm67kLKBxTztmprG/tOnPMrRgj3BpPfbxONBx2X4txhL43GHVfmrhyzvbtBkaytPUyaeXOC6mK6X663+kuV43lBYGYVI85i9vh65gCXrLj5LbKcaz9y2WCRkwf24AuB3etXoGPvwJ4MsmLv+5qPf70H+ZjJ58VGZ3gkikpkzcu2Y5BVizOL4zuBSXjvD+pQrpusxIWx5Fbgd5A==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from DU2PR04MB8951.eurprd04.prod.outlook.com (2603:10a6:10:2e2::22)
- by AM9PR04MB8666.eurprd04.prod.outlook.com (2603:10a6:20b:43d::21) with
+ by DUZPR04MB9945.eurprd04.prod.outlook.com (2603:10a6:10:4d8::12) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9412.6; Tue, 9 Dec
- 2025 17:10:48 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9412.7; Tue, 9 Dec
+ 2025 17:25:02 +0000
 Received: from DU2PR04MB8951.eurprd04.prod.outlook.com
  ([fe80::753c:468d:266:196]) by DU2PR04MB8951.eurprd04.prod.outlook.com
  ([fe80::753c:468d:266:196%4]) with mapi id 15.20.9388.013; Tue, 9 Dec 2025
- 17:10:48 +0000
-Date: Tue, 9 Dec 2025 12:10:43 -0500
+ 17:25:02 +0000
+Date: Tue, 9 Dec 2025 12:24:56 -0500
 From: Frank Li <Frank.li@nxp.com>
-To: Adrian Hunter <adrian.hunter@intel.com>
+To: Louis Sautier <louis.sautier@ovhcloud.com>
 Cc: alexandre.belloni@bootlin.com, linux-i3c@lists.infradead.org
-Subject: Re: [PATCH 6/7] i3c: mipi-i3c-hci-pci: Add support for Multi-Bus
- Instances
-Message-ID: <aThYEy/L2Ou8tDeF@lizhi-Precision-Tower-5810>
-References: <20251209115104.124156-1-adrian.hunter@intel.com>
- <20251209115104.124156-7-adrian.hunter@intel.com>
+Subject: Re: Error while loading dw-i3c-master: UBSAN: shift-out-of-bounds in
+ drivers/i3c/master/dw-i3c-master.c:885:12
+Message-ID: <aThbaFalAXblN56U@lizhi-Precision-Tower-5810>
+References: <66f5e4db-ac20-4bec-a437-af86aad1f56e@ovhcloud.com>
+ <202512082058408ee92ee8@mail.local>
+ <b9b568e8-8e21-49ac-b3dd-ab750fc329aa@ovhcloud.com>
+ <202512091248543fcf4c83@mail.local>
+ <c7e29aeb-c258-45e6-af78-9a81ee8de327@ovhcloud.com>
 Content-Disposition: inline
-In-Reply-To: <20251209115104.124156-7-adrian.hunter@intel.com>
-X-ClientProxiedBy: SA1P222CA0126.NAMP222.PROD.OUTLOOK.COM
- (2603:10b6:806:3c5::15) To DU2PR04MB8951.eurprd04.prod.outlook.com
+In-Reply-To: <c7e29aeb-c258-45e6-af78-9a81ee8de327@ovhcloud.com>
+X-ClientProxiedBy: SJ0PR13CA0070.namprd13.prod.outlook.com
+ (2603:10b6:a03:2c4::15) To DU2PR04MB8951.eurprd04.prod.outlook.com
  (2603:10a6:10:2e2::22)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|AM9PR04MB8666:EE_
-X-MS-Office365-Filtering-Correlation-Id: 31be5b54-401a-4b76-7c18-08de3745e5de
+X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|DUZPR04MB9945:EE_
+X-MS-Office365-Filtering-Correlation-Id: e6ed1337-cc98-43ee-7e74-08de3747e2fb
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|52116014|376014|1800799024|366016|38350700014|7053199007;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?5vf7ZJNXpb/+eyskfTBJpcQg7ky+NSW/wrmGLACaG8P58iI6T3WPemhoVvRH?=
- =?us-ascii?Q?QIpdP6cp0/hc9k5hpRfp6Mz25uJi/lj5T26l+twKF7toZhWmqiqqKsdqeLGC?=
- =?us-ascii?Q?BdNi5ZggLF3mv5tk82pBUMDhG7SCqeNbWDl1EvMSHjoUtDSJaAnamLYYePIN?=
- =?us-ascii?Q?xcgR7pLnlYI2HHWWAfV6zAAJK48q3mUSbGpgqEkwJU7gaxNOb5WbH2yhn423?=
- =?us-ascii?Q?RLn27PJ20AYmEaD+3E0QbCsz5Wh/LdCvP1N0hNVhIztoLwN+34ziHVLQqWRC?=
- =?us-ascii?Q?eyJtDs4Um7VKcTgsUz+Zb2AH22mX4O6iHyTtbV4sgmi1DRp16MM/rdyFy4cJ?=
- =?us-ascii?Q?s7Pg7u7URII2oKQGqZyeJCRpACUEeeEEVxUk3SOvkgOQjOVjdGk3fkCSk5nV?=
- =?us-ascii?Q?9S4fSVezMjguEGt5BsZBctlePJN3Q9LXHDUXpS/U5/iiHyJLd1ZoKeeuTob/?=
- =?us-ascii?Q?dRtDNRRHl43a5DytuRGL5lmdozG5L99defBWbGyQWGrFN43JmS/BFX4A780Y?=
- =?us-ascii?Q?M7OEffEmgxKqgif5O/4Tqxt5yfUCmyvgztYmG079GfiqRnrjjz5diM6Uk+4l?=
- =?us-ascii?Q?Of51FNNahRwuZ+nxLRAru1qxGnOfjCekfhcv0L8Xc8b9U7alg3Pp3wQTefL+?=
- =?us-ascii?Q?5ue/0km85ACKF2lqQ5zGDlwQ1vVPIRIeQz2nyoSgTzEF5yKlVilV5h5nuWGX?=
- =?us-ascii?Q?O/VHU9s8Q6fblOXGpPyWNc4vb/s4SQvsLbTyEIRRVSAcgw/zLs44OLwO+u10?=
- =?us-ascii?Q?Tw/ZiqYejc6P5XRj95lp6wrW4E4gXSQbw7c2naGplarnz+Qn6JVzOlWqNoCG?=
- =?us-ascii?Q?2nzN0mtddkA8Sp+lRsM/bHMjHDgttsB6AiWCseS/Xy/0dB+IDQTEX0CWa+Iz?=
- =?us-ascii?Q?hW0lTJl0H2AuVDtXZ10k7j7KUZf4IB7bH5/lkmGH9NW3CZeJStFAGVzGKssw?=
- =?us-ascii?Q?HFM7GO5BOOdl+eBCwFcsTczTef4cyAOsMjYwWu+z3FTg2ObdaYHdBnR0bNCW?=
- =?us-ascii?Q?UkT8RbXPFwQRDwkcLKAnD3kJIEaGNzmeokExehs9nudiguAXyuDtT1hfBh+b?=
- =?us-ascii?Q?86qo2Kq6p4H0dwCT40j1PBjLlADfPPOe8i09X5886o8kwZDkECOS8rs3J0dW?=
- =?us-ascii?Q?SJWGuRPjmCRllmSOQY93mYcFeXkO4lM5rta6wnCZ1LbbrvTXGlX2msTFRMsO?=
- =?us-ascii?Q?NKPPT4yJ8MA5DQWT9MGLO3NkWxp34uWmDrkhxqnuivWn0BrYPUgEFOnLBvAu?=
- =?us-ascii?Q?/+v6rSpUu5LY0fCRErZ7KJ3ed/egPc3d0vyUWmWX7l0RIIUfnasHfwsWP0hI?=
- =?us-ascii?Q?ICDlhk449oNjPAOLcFKqhIZBqgp1JyGtH3aDiJkCQspxbuMeBrxeV5Dtq7pX?=
- =?us-ascii?Q?i2G1v8EFHUO1NR41F8q446pkwGmSH03iT8+DlqZYXeV0xSwUV5ExFempVT96?=
- =?us-ascii?Q?OnBDdBzaXzfZMHkRPTSuTU55Jis7tSw4jI6fKgf+8cKQbQmb/2lLOaamwM+Y?=
- =?us-ascii?Q?3sO7tEJI3XWRRUKT4sqInmpMfvIUg5/qwYjo?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(52116014)(376014)(1800799024)(366016)(38350700014)(7053199007);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|376014|366016|19092799006|1800799024|38350700014;
+X-Microsoft-Antispam-Message-Info: =?iso-8859-1?Q?PnUY5dIGPpgS3i2M7XiljJK+TMZ40rPMMsKZGRHhlaEFwIr2NTTY02JQH9?=
+ =?iso-8859-1?Q?a50fXK79pjEIUZkS6QS0QENJ9QoUAV6BsUFm4XTGorr/GxyS9VKeEvdEqf?=
+ =?iso-8859-1?Q?oHiLMtCZG6Qt8mzQBqDTcGgAnE3pfA3N75lzUULm/OowxTs93LXWDbvaI6?=
+ =?iso-8859-1?Q?AyosV4vCL+hrZ4tO+iUYC/fM7w11qlvYHbvyvw8Qb2VyBjb4HGkjhnZgDv?=
+ =?iso-8859-1?Q?BkQwFj2NzKAuVwJFQTtZTt0UwvCnLtUNSETAVhrFGS0lPWzHAVDbzn54KM?=
+ =?iso-8859-1?Q?B9G96oeFL2FiRrT6Vgolbwik115uA/ScWNhjKzZSKlrLYBZces7WSIOsoI?=
+ =?iso-8859-1?Q?xuoaLRsSp/KMnjSoKLJIUMcBnsukptAZBnlkQtw5sF8GoFt94g3da4IQ77?=
+ =?iso-8859-1?Q?NYRrBWMXeHiJBh/aU/Bz/Yf/6XSPnkmdphfaWeqTcnvYyqDPYJM7czL2SK?=
+ =?iso-8859-1?Q?OvVX+xn7p5UKoxK3G4txP8NRW3LlLOhFjwxoKD1xbbv/yhTd/WPaTQQiTz?=
+ =?iso-8859-1?Q?oA7rmLagr30Z9iU0WK0pSAK+9SJUnp42N0omPajVI+AeHFyOPoYFS/EYZp?=
+ =?iso-8859-1?Q?N4ZW/wl5jLYNtOoavlZ6wYN6Xuu7Qwf1AYDG7UNTQmFFccddFFF38NVTHb?=
+ =?iso-8859-1?Q?nQMFBjS1/yi2o1AF/4mwY+8H58hCGQD/A6RXoAVrcQRCaEOGNwOQRycqfY?=
+ =?iso-8859-1?Q?/klRTHqiWzrRLab0aj7/X5VXHGdWLCdakk/iNHJiJcOoRLALNBNrvBO4bZ?=
+ =?iso-8859-1?Q?IC3iiMAGL/vqn8KgFWXkr5u5vWdTy0RjbUR1OFRS+Sbh2VXQJh5Ni8MYcd?=
+ =?iso-8859-1?Q?+yJO57n1jwnEytoBhF/BhYhw0GkM4f9ZHh6/hqyDDQN4ltlUuUPuo+f5H/?=
+ =?iso-8859-1?Q?4CR449pXmeEALMlnL6d5RPEQihLv+WZc8ocCgCjiuCpJCQpA9yMQlFqHr2?=
+ =?iso-8859-1?Q?9ZAxBWFeGnV5sNQY8OB+3BdGr1lDruwtmtMHDXgOszYkdu94U22EiWQ9qE?=
+ =?iso-8859-1?Q?UdLPAJ9pq6rcsHrQFH0OQDNMfaCXEWcc7My2XUOZbuzFmr4sW7J5eZd2d1?=
+ =?iso-8859-1?Q?mWLeENy0Cl+eWZB76dd/BBLIBRbeysrUW3seVKY5uj7XzLFQwVx3sbHXNG?=
+ =?iso-8859-1?Q?x8OrD+9qQpoYgmLXo3rDZxM0AioweJsZSIBy3xT1oWKTTSxsRtmUHfF3wO?=
+ =?iso-8859-1?Q?+3PXcToJAJQdqSZnPGzAvnLimVYcQfzBp7vzESCwnymtx9hJWUqUIEmjjV?=
+ =?iso-8859-1?Q?B/ykgyEoz2ylnWiZWnTF+zqPBh4yq1cqWghbYjU7/ak+4/91IzHCcjpNU3?=
+ =?iso-8859-1?Q?XLmjaAP1JqtWX/4KzALVwdbJoyYd0rGgPagykgZ4gjlwLwUBfJ0XyYiS7O?=
+ =?iso-8859-1?Q?A4T/uoScJUYDQIE1jW+WyqMs/nVogGgzCSf7DwVD0mKsaRLuwCuNuktuy4?=
+ =?iso-8859-1?Q?U5QL4KJMK+s3IDa9Xl+yl/Wxoa4bA4TCVvEfzI2jB066G2LbbxutLaOr1P?=
+ =?iso-8859-1?Q?fKLE6Vmz3pCjeS4rlCYd6+zd0H95Pt5Wg5w5XBFdNONA=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(376014)(366016)(19092799006)(1800799024)(38350700014);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?S4c2U7zqNJsPz1qVzN8M6Qi6wcrC8MEt2ANcBN5La3hlGANSerAP9mzSs95/?=
- =?us-ascii?Q?iAEVRWIGr5dvQhr0hfqFjbZLd6mi1/QmyCerxGp9cC7PxdKvvGf9pJHndVvG?=
- =?us-ascii?Q?JI4BlzuC9U+ptqo5khNzfD900jMda57VQ0R+vBg6SyoHPCcFdUpcvoLW1enG?=
- =?us-ascii?Q?jpxaebLfA6kNEfnvhczLgzrTsQLyLdY3EfAhdvdzITcw2vKMg3v1AkAdTDXc?=
- =?us-ascii?Q?rwcaI+t3kp6eRmo72wJTVs3GMSKgWBooht8SwKSvOvqkeg98Wot+USTEoH/7?=
- =?us-ascii?Q?67cIGZ/G56V+fRwnDG4KgPuWHDKVUMNv93BoSTFIOf3mpPxNYYiiMw3+KB9D?=
- =?us-ascii?Q?d8DTDReoJvwmO48C3c9YARYZUaRjPUAqlzvxm2W8508tJ/sDcb+j4CoquKwN?=
- =?us-ascii?Q?0v+GTZ7rYp2tnnlSbsvZlOHniJpUZ5g0hr5x1fSTv8xtGm9apO2zk/jq6n8r?=
- =?us-ascii?Q?mpENSV7/syl1NiQOOnKEHfDPoJLXdzBHhklgAE6NMiNaGBqqHFHWqKgjrBkW?=
- =?us-ascii?Q?VczWYgY5Oa/WvqWyDwGdqL5Q2OYP9ZOL23PK30CVM1qyN8kiND+ON7S5xIS2?=
- =?us-ascii?Q?kQOMNZZjYPTgx+gmkqGOqTKQfUSmEHpqyGf2TEdsOiEmZ9XUxr2bxcox9mNK?=
- =?us-ascii?Q?Qp9MMc2Dr68xKRES1lyltJiNI5+v2k0kBwxbRSzH9qxzKtiLn4e1zm/yMq85?=
- =?us-ascii?Q?5KPvu5Jn6wzD65nT5dK5ludspIayO/wxIkn45PaPYEsdSFUkt1Am/dz1+zG7?=
- =?us-ascii?Q?lwegZxC+ejaSJuDEcc8/aJnaWZwozxwj8g51kVkQkt1vq38U45lf1tYg7J+b?=
- =?us-ascii?Q?h3+AxyPd8sxbSUlUJTIV+IkDKCqbpTTmjyamNU3jFfeW1pF51lDDWX1zjHil?=
- =?us-ascii?Q?vcgCg4cfsd71cYVOfMkGBXZsamihfcOfgYXW6aBUvnEQ8gZC+T3xMacXfcXW?=
- =?us-ascii?Q?KRoc+erIn5E6GVgW/OSGJ2uNqnSf6NGf6fJmCDcXtHQ+mqYZFK5sLDSjTGFO?=
- =?us-ascii?Q?aW8ZEM9Dq3brPNxVwYaugAW7Ee1BV9gQM+VyXcYBXur/HUj3m4n/RXT2u13y?=
- =?us-ascii?Q?elZ9zRXPw/v7NuQpRsWOe2kAgpk5WiIuWiHrDyJrXABigQroOB20bxuiANt4?=
- =?us-ascii?Q?4U3fj/kUncmPLy8Hj8ksiUazs5r4QpVgmm5/aWjVjJoU/5bQeAnHTiCC6tja?=
- =?us-ascii?Q?lhzk3JHFRnkOwC/8KQs2Ad0bOROh0WKmBludKlWBYrzAAUim9EuV/BMSoMbG?=
- =?us-ascii?Q?nww3sx2g1JrvD61kGbw1N1UwEsabutCBciRY7pjB0WVHh1YcXK8hobhLuqFC?=
- =?us-ascii?Q?onKcDMc/emm75vD+5tLAXdH1TDlhodb2DsLEHkDD+ImOc6IOUxUtJiXFalYA?=
- =?us-ascii?Q?V9Yzu3e2QRVAgNmF5bME1T+glF1Phv+6VQ7YaeZwpYD1enpBvpr/c9FTotD7?=
- =?us-ascii?Q?Q44zFRxXFL6SI8WfX8CmXggUiV6D/fqOlcstuQNwCWgqrI2Cf2sVBM0W3wj+?=
- =?us-ascii?Q?ZCm+Fgy7LFE8LXEwVsaWmUXQyj71WGEXh0xg6jopBZxYjExuwUiAxKt/IVYz?=
- =?us-ascii?Q?PfGGM3MfrNPXB7/rYlU=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?NBrcP/V8pVs6EaYRqLiKXVoSyJEJs0JR+EH1U1/9QfGQc6TT+ipUZAP7ls?=
+ =?iso-8859-1?Q?xj33jYpfpGyZMQSHoDokYejPyJqbSgxKr5euMqeTNtHEHiyMEMfozpP6mk?=
+ =?iso-8859-1?Q?kXY1tJ5BrGcjEu3RbfV3HyebeSUa7hHXJtX6lDqwmtMjGJ095nJv0WcFy3?=
+ =?iso-8859-1?Q?7vZTmgRjKBVNaKMQvbHqvxGFCbA6ffGW/0ECPBWWddPZhwrhq6AlFqm+TJ?=
+ =?iso-8859-1?Q?+eZZuqeabWPY1kapM0+C2wjTJ/tYrUaNO1DgPt0gLM0WR0cTJkdGZUZIml?=
+ =?iso-8859-1?Q?RqPLpfWEHse+h6AWhMSm2KDtIgEsJYGzScfOzfHVX9le+trA6lFy73feEU?=
+ =?iso-8859-1?Q?c64kyRpHdLelZSkscQdLMvJUuDKCNDsIirfqWiQTDYTpEbxvs30C3gI/ai?=
+ =?iso-8859-1?Q?oH+4RS9KX2gxy8AynFtl12vHLw+rY1THXrYWWm3bbUQ1tcsR6js1mHGzBo?=
+ =?iso-8859-1?Q?oqEROGSuPsZqz4I5B8BOCbR99zZG5YJcfNtA/5WLA+AYt7uQ390oqLaRVe?=
+ =?iso-8859-1?Q?OOvyjqSbUDi4JraedtmetahPcO/p7oCHBXkUeHgQMu8+xgzcCq+qZo+3j3?=
+ =?iso-8859-1?Q?ZDlHtCmx9hbPMWtucriLacV89e9Qc9dTpwE77XaFr8xS03+qR+sd15qtnH?=
+ =?iso-8859-1?Q?aEeAb+1X5bcpVC7e3/MDzgtYGCi+rlx8z/jZWqzX9zRQlDv9+VdPB+JDEW?=
+ =?iso-8859-1?Q?77C3QW32gIIaGjvnlH16dxOpEy3jl8hKxqmB+ZB+N1mxOw1qDlrRXNoYEg?=
+ =?iso-8859-1?Q?aEl1lkbyqCs5gYkFREp94wq5G53DwtxfgnH63kiTbrdkGyGdQE4j/7CesK?=
+ =?iso-8859-1?Q?Agsyst61pTuN0g/1A/luXNIKy92Gbc4zwM0jXOelf3skYawVXr6QJUDZjY?=
+ =?iso-8859-1?Q?56+IexDDC7kaACD9M06wEAsxk/ZpmKV8z9xw1GTVtb674XjJMBVR06zBbJ?=
+ =?iso-8859-1?Q?RPy5Yq9rMmRHTievnneY1tAdc+bqiA3FJOPQoZRBZT/PFbeSuUgP5VqUao?=
+ =?iso-8859-1?Q?cDgCyCcLvPOJCe+9JJuuBhHRRUV+CVgfwAfHtYsvcOs7aXzY2dMssgurWx?=
+ =?iso-8859-1?Q?SDq+GnfFlh07nq80NzVAnoC/ds87VGH2anUJ6vr0PnCFCH/9PZTWq0S56G?=
+ =?iso-8859-1?Q?me9G/RietdEQs1p3lDB0f8caA5sbNoZ8gS4zWx/oxGOCgsLx7dvm1QjEeB?=
+ =?iso-8859-1?Q?L2zBCO5csDSH9RRp1u2O1ZNxx7qcIlk9aD/xzPxcPEEQcH4/3nj3I7/H86?=
+ =?iso-8859-1?Q?b7Eo2bpAkm6qr4CXAeG+7531qjJw+SJ/vzN35LZM+YMxDRaxrQVKWQyz4U?=
+ =?iso-8859-1?Q?fAiIu9Mi4obpqq1Gsbqe6Ka7Wspcwar+1UxoihKvf5gM+KBV555mhZ6DjO?=
+ =?iso-8859-1?Q?TkdnOs1GqcyUvp7K6VZVX1S4bmEgWzbPAepYr1I7YkI7wGf9R22oiqTrpx?=
+ =?iso-8859-1?Q?3xABCbQXRVOpKyHVUbbJ9ogkOwiDEKWlMCQoH4SQ3jeT8RVZ9iLkXmGNvH?=
+ =?iso-8859-1?Q?Y+jtaxLjATo8Yqiehr0VP6B5C7KTq0MuKt4sTEPQ8zS7oEeC7HpFxpqIkl?=
+ =?iso-8859-1?Q?RSn1u21urawgkmDYC2DTZRnZQY80TVHjW8Dq94ttj0G2DdwdSWfIFTPXXX?=
+ =?iso-8859-1?Q?KfczB1LviuMAI=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 31be5b54-401a-4b76-7c18-08de3745e5de
+X-MS-Exchange-CrossTenant-Network-Message-Id: e6ed1337-cc98-43ee-7e74-08de3747e2fb
 X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8951.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Dec 2025 17:10:48.4174
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Dec 2025 17:25:02.6942
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: a+jG7bsQcNImliPzokq1rRT9J/HbWHE6B5R3u2X5mDJGMLaqQpasG6aGsC/GkzRDr/YQGB4iMs6AaFn+4lXwEQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB8666
+X-MS-Exchange-CrossTenant-UserPrincipalName: HeQQmCNzYUMGFF5tkZELOen0l3lGJ9r4n3fK4jCPQ0lm5GtS61f8WsEReU49tYMvSMWNnnXj54m7pu11MQVB2Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DUZPR04MB9945
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251209_091053_176587_8ED6E16D 
-X-CRM114-Status: GOOD (  31.84  )
+X-CRM114-CacheID: sfid-20251209_092507_847574_A757933C 
+X-CRM114-Status: GOOD (  30.42  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -153,370 +157,156 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Dec 09, 2025 at 01:51:03PM +0200, Adrian Hunter wrote:
-> A MIPI I3C Host Controller with the Multi-Bus Instance capability supports
-> multiple I3C Buses (up to 15), with one instance of the HCI Register Set
-> and one instance of I3C Bus Controller Logic for each I3C Bus, in a single
-> hardware function (e.g. PCIe B/D/F).
->
-> Convert to a Multifunction driver and create an MFD cell for each instance.
-> Create a separate platform device for each instance.  Use platform_data to
-> pass the instance's register set start address.
->
-> MIPI I3C specification defines an Extended Capability to hold the offset
-> of each instance register set.  However parsing to find that information is
-> relatively complicated compared with just including it in the driver data.
-> Do that for now.
->
-> Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
-> ---
->  drivers/i3c/master/Kconfig                    |   1 +
->  .../master/mipi-i3c-hci/mipi-i3c-hci-pci.c    | 180 +++++++++++++-----
->  2 files changed, 131 insertions(+), 50 deletions(-)
->
-> diff --git a/drivers/i3c/master/Kconfig b/drivers/i3c/master/Kconfig
-> index 82cf330778d5..2609f2b18e0a 100644
-> --- a/drivers/i3c/master/Kconfig
-> +++ b/drivers/i3c/master/Kconfig
-> @@ -69,6 +69,7 @@ config MIPI_I3C_HCI_PCI
->  	tristate "MIPI I3C Host Controller Interface PCI support"
->  	depends on MIPI_I3C_HCI
->  	depends on PCI
-> +	select MFD_CORE
->  	help
->  	  Support for MIPI I3C Host Controller Interface compatible hardware
->  	  on the PCI bus.
-> diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-> index ccaec5d3d248..145f9adadf75 100644
-> --- a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-> +++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-> @@ -12,27 +12,43 @@
->  #include <linux/idr.h>
->  #include <linux/iopoll.h>
->  #include <linux/kernel.h>
-> +#include <linux/mfd/core.h>
->  #include <linux/module.h>
->  #include <linux/pci.h>
-> +#include <linux/platform_data/mipi-i3c-hci.h>
->  #include <linux/platform_device.h>
->  #include <linux/pm_qos.h>
->
-> +/*
-> + * There can up to 15 instances, but implementations have at most 2 at this
-> + * time.
-> + */
-> +#define INST_MAX 2
-> +
-> +struct mipi_i3c_hci_pci_instance {
-> +	int dev_id;
-> +	u32 offset;
-> +};
-> +
->  struct mipi_i3c_hci_pci {
->  	struct pci_dev *pci;
-> -	struct platform_device *pdev;
-> +	void __iomem *base;
->  	const struct mipi_i3c_hci_pci_info *info;
-> +	struct mipi_i3c_hci_pci_instance instances[INST_MAX];
->  	void *private;
->  };
->
->  struct mipi_i3c_hci_pci_info {
-> +	struct mipi_i3c_hci_platform_data pdata;
->  	int (*init)(struct mipi_i3c_hci_pci *hci);
->  	void (*exit)(struct mipi_i3c_hci_pci *hci);
-> +	u32 instance_offset[INST_MAX - 1]; /* Excludes instance at offset 0 */
+On Tue, Dec 09, 2025 at 04:36:30PM +0100, Louis Sautier wrote:
+> On 12/9/25 13:48, Alexandre Belloni wrote:
+> >
+> > On 09/12/2025 12:37:12+0100, Louis Sautier wrote:
+> > > On 12/8/25 21:58, Alexandre Belloni wrote:
+> > > > Hello Louis,
+> > > >
+> > > > On 02/12/2025 21:17:31+0100, Louis Sautier wrote:
+> > > > > Hello,
+> > > > >
+> > > > > I'm running into a bug when loading the dw-i3c-master module on k=
+ernel 6.18
+> > > > > on one specific server. I suspect it has to do with the large num=
+ber of
+> > > > > CPUs=A0on the machine=A0(768 threads, from 2 AMD EPYC 9965 proces=
+sors) but I am
+> > > > > not sure.
+> > > > >
+> > > > > The system is on Ubuntu 25.10 and a 6.18 kernel with https://gist=
+.githubusercontent.com/sbraz/a6f37fafbcf9354bbe4eace9e9eb48cb/raw/115da594d=
+c9d7ea99b06754847571e6fd76d9da5/config
+> > > > > (basically Ubuntu's).
+> > > > Just to be sure, does this also happen with v6.17?
+> > > >
+> > > > The only change is the shutdown handling so I would guess yes.
+> > > >
+> > > Hello,
+> > >
+> > > It does happen with 6.17. I initially discovered this while running U=
+buntu
+> > > 25.10's stock kernel (6.17.0).
+> > >
+> > > > What is the behavior when you build the dw-i3c-master as a static d=
+river?
+> > > I'll try CONFIG_DW_I3C_MASTER=3Dy and report back.
+> > >
+> > > Someone also suggested (they didn't reply to the list though) that I =
+add a
+> > > printk to see what the value of maxdevs is. I'll provide the log as s=
+oon as
+> > > I have rebuilt with:
+> > >
+> > > --- linux-6.18.orig/drivers/i3c/master/dw-i3c-master.c	2025-11-30 22:=
+42:10.000000000 +0000
+> > > +++ linux-6.18/drivers/i3c/master/dw-i3c-master.c	2025-12-08 18:17:33=
+.151567225 +0000
+> > > @@ -1588,6 +1588,7 @@
+> > >   	ret =3D readl(master->regs + DEVICE_ADDR_TABLE_POINTER);
+> > >   	master->datstartaddr =3D ret;
+> > >   	master->maxdevs =3D ret >> 16;
+> > > +	printk("maxdevs: %d\n",  master->maxdevs);
+> > >   	master->free_pos =3D GENMASK(master->maxdevs - 1, 0);
+> > >   	master->quirks =3D (unsigned long)device_get_match_data(&pdev->dev=
+);
+> > >
+> > Yes, that was going to be my suggestion.
+> >
+> I haven't tried with the driver built-in yet. This is what the printk sho=
+ws:
+> dw-i3c-master AMDI0015:00: probe with driver dw-i3c-master failed with er=
+ror
+> -110
+> maxdevs: 65535
 
-what difference with mipi_i3c_hci_pci_instance: offset?
+Maybe ret is bigger 0x8000_0000, and ret is sign int. so >>16 because -1.
 
-> +	int instance_count;
->  };
->
->  static DEFINE_IDA(mipi_i3c_hci_pci_ida);
->
->  #define INTEL_PRIV_OFFSET		0x2b0
-> -#define INTEL_PRIV_SIZE			0x28
->  #define INTEL_RESETS			0x04
->  #define INTEL_RESETS_RESET		BIT(0)
->  #define INTEL_RESETS_RESET_DONE		BIT(1)
-> @@ -143,19 +159,12 @@ static void intel_reset(void __iomem *priv)
->  	writel(INTEL_RESETS_RESET, priv + INTEL_RESETS);
->  }
->
-> -static void __iomem *intel_priv(struct pci_dev *pci)
-> -{
-> -	resource_size_t base = pci_resource_start(pci, 0);
-> -
-> -	return devm_ioremap(&pci->dev, base + INTEL_PRIV_OFFSET, INTEL_PRIV_SIZE);
-> -}
-> -
->  static int intel_i3c_init(struct mipi_i3c_hci_pci *hci)
->  {
->  	struct intel_host *host = devm_kzalloc(&hci->pci->dev, sizeof(*host), GFP_KERNEL);
-> -	void __iomem *priv = intel_priv(hci->pci);
-> +	void __iomem *priv = hci->base + INTEL_PRIV_OFFSET;
+unsigned int val =3D readl(master->regs + DEVICE_ADDR_TABLE_POINTER);
 
-Does need lock if mult instance to access this MMIO space? Especial enable
-disable irq, which generally use read modify write pattern.
-
->
-> -	if (!host || !priv)
-> +	if (!host)
->  		return -ENOMEM;
->
->  	dma_set_mask_and_coherent(&hci->pci->dev, DMA_BIT_MASK(64));
-> @@ -187,12 +196,106 @@ static const struct mipi_i3c_hci_pci_info intel_info = {
->  static const struct mipi_i3c_hci_pci_info dflt_info = {
->  };
->
-> +static void mipi_i3c_hci_pci_init_ids(struct mipi_i3c_hci_pci *hci)
-> +{
-> +	/* 0 is a valid id, so set unallocated ids to -1 */
-> +	for (int i = 0; i < INST_MAX; i++)
-> +		hci->instances[i].dev_id = -1;
-> +}
-> +
-> +static void mipi_i3c_hci_pci_free_ids(struct mipi_i3c_hci_pci *hci)
-> +{
-> +	/* ida_free() ignores negative ids */
-> +	for (int i = 0; i < INST_MAX; i++)
-> +		ida_free(&mipi_i3c_hci_pci_ida, hci->instances[i].dev_id);
-> +
-> +	mipi_i3c_hci_pci_init_ids(hci);
-> +}
-> +
-> +static int mipi_i3c_hci_pci_alloc_ids(struct mipi_i3c_hci_pci *hci, int nr)
-> +{
-> +	int dev_id;
-> +
-> +	mipi_i3c_hci_pci_init_ids(hci);
-> +
-> +	for (int i = 0; i < nr; i++) {
-> +		dev_id = ida_alloc(&mipi_i3c_hci_pci_ida, GFP_KERNEL);
-> +		if (dev_id < 0)
-> +			goto err_free_ids;
-> +		hci->instances[i].dev_id = dev_id;
-> +	}
-> +
-> +	return 0;
-> +
-> +err_free_ids:
-> +	mipi_i3c_hci_pci_free_ids(hci);
-> +	return -ENOMEM;
-> +}
-
-Feel like above logic have some complex, add nr in mipi_i3c_hci_pci.
-INST_MAX can be 15.
-
-mipi_i3c_hci_pci_free_ids(hci)
-{
-	for (int i = 0; i < hci->nr; i++)
-		ida_free(&mipi_i3c_hci_pci_ida, hci->instances[i].dev_id);
-}
-
-mipi_i3c_hci_pci_alloc_ids(hci, nr)
-{
-	for (int i = 0; i < nr; i++) {
-		dev_id = ida_alloc(&mipi_i3c_hci_pci_ida, GFP_KERNEL);
-		if (dev_id) < 0)
-			goto err_free_ids;
-
-		hci->nr = i;
-	}
-
-	return 0;
-
-err_free_ids:
-	mipi_i3c_hci_pci_free_ids(hci)
-	return --ENOMEM;
-}
-
-> +
-> +struct mipi_i3c_hci_pci_cell_data {
-> +	struct mipi_i3c_hci_platform_data pdata;
-> +	struct resource res;
-> +};
-> +
-> +static void mipi_i3c_hci_pci_setup_cell(struct mipi_i3c_hci_pci *hci, int idx,
-> +					struct mipi_i3c_hci_pci_cell_data *data,
-> +					struct mfd_cell *cell)
-> +{
-> +	u32 offset = idx ? hci->info->instance_offset[idx - 1] : 0;
-
-When idx is 1, copy from instance_offset[0] ?
-
-when idx is 0, offset is 0, so hci->instances[0].offset = offset;
-so hci->instances[0].offset is 0.
-
-then hci->instances[1].offset will be 0?
-
-> +
-> +	hci->instances[idx].offset = offset;
-> +
-> +	data->pdata = hci->info->pdata;
-> +	data->pdata.base_regs = hci->base + offset;
-> +
-> +	data->res = DEFINE_RES_IRQ(0);
-> +
-> +	cell->name = "mipi-i3c-hci";
-> +	cell->id = hci->instances[idx].dev_id;
-> +	cell->platform_data = &data->pdata;
-> +	cell->pdata_size = sizeof(data->pdata);
-> +	cell->num_resources = 1;
-> +	cell->resources = &data->res;
-> +}
-> +
-> +static int mipi_i3c_hci_pci_add_instances(struct mipi_i3c_hci_pci *hci)
-> +{
-> +	int instance_count = hci->info->instance_count + 1; /* Include instance at offset 0 */
-> +	struct mipi_i3c_hci_pci_cell_data *data __free(kfree);
-
-now prefer assign value when declear, see cleanup.h
-
-	struct mipi_i3c_hci_pci_cell_data *data __free(kfree) =
-		kcalloc(instance_count, sizeof(*data), GFP_KERNEL);
-
-> +	struct mfd_cell *cells __free(kfree);
-> +	int irq;
-> +	int ret;
-> +
-> +	cells = kcalloc(instance_count, sizeof(*cells), GFP_KERNEL);
-> +	data = kcalloc(instance_count, sizeof(*data), GFP_KERNEL);
-> +	if (!cells || !data)
-> +		return -ENOMEM;
-> +
-> +	ret = mipi_i3c_hci_pci_alloc_ids(hci, instance_count);
-> +	if (ret)
-> +		return ret;
-> +
-> +	for (int i = 0; i < instance_count; i++)
-> +		mipi_i3c_hci_pci_setup_cell(hci, i, data + i, cells + i);
-> +
-> +	irq = pci_irq_vector(hci->pci, 0);
-> +
-> +	ret = mfd_add_devices(&hci->pci->dev, 0, cells, instance_count, NULL, irq, NULL);
-> +	if (ret)
-> +		goto err_free_ids;
-> +
-> +	return 0;
-> +
-> +err_free_ids:
-> +	mipi_i3c_hci_pci_free_ids(hci);
-> +	return ret;
-> +}
-> +
->  static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
->  				  const struct pci_device_id *id)
->  {
->  	struct mipi_i3c_hci_pci *hci;
-> -	struct resource res[2];
-> -	int dev_id, ret;
-> +	int ret;
->
->  	hci = devm_kzalloc(&pci->dev, sizeof(*hci), GFP_KERNEL);
->  	if (!hci)
-> @@ -204,68 +307,45 @@ static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
->  	if (ret)
->  		return ret;
->
-> -	pci_set_master(pci);
-> -
-> -	memset(&res, 0, sizeof(res));
-> -
-> -	res[0].flags = IORESOURCE_MEM;
-> -	res[0].start = pci_resource_start(pci, 0);
-> -	res[0].end = pci_resource_end(pci, 0);
-> -
-> -	res[1].flags = IORESOURCE_IRQ;
-> -	res[1].start = pci->irq;
-> -	res[1].end = pci->irq;
-> +	ret = pci_alloc_irq_vectors(pci, 1, 1, PCI_IRQ_ALL_TYPES);
-> +	if (ret < 0)
-> +		return ret;
->
-> -	dev_id = ida_alloc(&mipi_i3c_hci_pci_ida, GFP_KERNEL);
-> -	if (dev_id < 0)
-> -		return dev_id;
-> +	pci_set_master(pci);
->
-> -	hci->pdev = platform_device_alloc("mipi-i3c-hci", dev_id);
-> -	if (!hci->pdev)
-> -		return -ENOMEM;
-> +	hci->base = pcim_iomap_region(pci, 0, pci_name(pci));
-> +	if (IS_ERR(hci->base))
-> +		return PTR_ERR(hci->base);
->
-> -	hci->pdev->dev.parent = &pci->dev;
-> -	device_set_node(&hci->pdev->dev, dev_fwnode(&pci->dev));
-> +	hci->info = (const struct mipi_i3c_hci_pci_info *)id->driver_data ?: &dflt_info;
->
-> -	ret = platform_device_add_resources(hci->pdev, res, ARRAY_SIZE(res));
-> +	ret = hci->info->init ? hci->info->init(hci) : 0;
->  	if (ret)
-> -		goto err;
-> +		return ret;
->
-> -	hci->info = (const struct mipi_i3c_hci_pci_info *)id->driver_data ?: &dflt_info;
-> -	if (hci->info->init) {
-> -		ret = hci->info->init(hci);
-> -		if (ret)
-> -			goto err;
-> -	}
-> +	pci_set_drvdata(pci, hci);
->
-> -	ret = platform_device_add(hci->pdev);
-> +	ret = mipi_i3c_hci_pci_add_instances(hci);
->  	if (ret)
->  		goto err_exit;
->
-> -	pci_set_drvdata(pci, hci);
-> -
-
-Is it simple if
-
-	for (int i = 0; i < nr; i++)
-		platform_device_register_data(hci->pdev, data, ..., i);
-
-Generally, mfd is used for difference kind devices. Do you know any exiting
-code use for create multi instance?
+master->maxdevs =3D val >> 16;
 
 Frank
 
-
->  	return 0;
->
->  err_exit:
->  	if (hci->info->exit)
->  		hci->info->exit(hci);
-> -err:
-> -	platform_device_put(hci->pdev);
-> -	ida_free(&mipi_i3c_hci_pci_ida, dev_id);
->  	return ret;
->  }
->
->  static void mipi_i3c_hci_pci_remove(struct pci_dev *pci)
->  {
->  	struct mipi_i3c_hci_pci *hci = pci_get_drvdata(pci);
-> -	struct platform_device *pdev = hci->pdev;
-> -	int dev_id = pdev->id;
->
->  	if (hci->info->exit)
->  		hci->info->exit(hci);
->
-> -	platform_device_unregister(pdev);
-> -	ida_free(&mipi_i3c_hci_pci_ida, dev_id);
-> +	mfd_remove_devices(&pci->dev);
-> +	mipi_i3c_hci_pci_free_ids(hci);
->  }
->
->  static const struct pci_device_id mipi_i3c_hci_pci_devices[] = {
-> --
-> 2.51.0
+> dw-i3c-master AMDI0015:01: probe with driver dw-i3c-master failed with er=
+ror
+> -110
+> maxdevs: 11
+> ------------[ cut here ]------------
+> UBSAN: shift-out-of-bounds in drivers/i3c/master/dw-i3c-master.c:885:12
+> shift exponent 64 is too large for 64-bit type 'long unsigned int'
+> CPU: 0 UID: 0 PID: 7363 Comm: (udev-worker) Not tainted 6.18.0 #1
+> PREEMPT(voluntary)
+> Hardware name: Giga Computing MZ73-LM2-000/MZ73-LM2-000, BIOS R23_F43
+> 11/28/2025
+> Call Trace:
+> =A0<TASK>
+> =A0dump_stack_lvl+0x5f/0x90
+> =A0dump_stack+0x10/0x18
+> =A0ubsan_epilogue+0x9/0x39
+> =A0__ubsan_handle_shift_out_of_bounds.cold+0xdd/0x1c9
+> =A0dw_i3c_master_daa.cold+0x1a/0x90 [dw_i3c_master]
+> =A0i3c_master_do_daa+0x30/0x90 [i3c]
+> =A0i3c_master_register+0x616/0xa80 [i3c]
+> =A0dw_i3c_common_probe+0x298/0x2d0 [dw_i3c_master]
+> =A0dw_i3c_probe+0x30/0x50 [dw_i3c_master]
+> =A0platform_probe+0x42/0xc0
+> =A0? driver_sysfs_add+0x63/0xd0
+> =A0really_probe+0xf9/0x370
+> =A0? pm_runtime_barrier+0x56/0xa0
+> =A0__driver_probe_device+0x8b/0x160
+> =A0driver_probe_device+0x24/0xd0
+> =A0? __pfx___driver_attach+0x10/0x10
+> =A0__driver_attach+0xef/0x220
+> =A0? __pfx_dw_i3c_driver_init+0x10/0x10 [dw_i3c_master]
+> =A0bus_for_each_dev+0x8a/0xe0
+> =A0driver_attach+0x1e/0x30
+> =A0bus_add_driver+0x13e/0x230
+> =A0? __pfx_dw_i3c_driver_init+0x10/0x10 [dw_i3c_master]
+> =A0driver_register+0x75/0xf0
+> =A0__platform_driver_register+0x1e/0x30
+> =A0dw_i3c_driver_init+0x1c/0xff0 [dw_i3c_master]
+> =A0do_one_initcall+0x59/0x330
+> =A0do_init_module+0x8b/0x290
+> =A0load_module+0x1f2f/0x2320
+> =A0init_module_from_file+0x9b/0x100
+> =A0? init_module_from_file+0x9b/0x100
+> =A0idempotent_init_module+0x10e/0x300
+> =A0__x64_sys_finit_module+0x73/0xf0
+> =A0? __secure_computing+0x84/0xe0
+> =A0x64_sys_call+0x1f04/0x2350
+> =A0do_syscall_64+0x82/0xc80
+> =A0? vfs_read+0x179/0x3a0
+> =A0? vfs_read+0x179/0x3a0
+> =A0? __rseq_handle_notify_resume+0xa2/0x4e0
+> =A0? exit_to_user_mode_loop+0xe6/0x190
+> =A0? do_syscall_64+0x25c/0xc80
+> =A0? irqentry_exit+0x43/0x50
+> =A0? exc_page_fault+0x90/0x1b0
+> =A0entry_SYSCALL_64_after_hwframe+0x76/0x7e
+> RIP: 0033:0x70c8bf1348cd
+> Code: ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa 48 89 f8 48 89 f7
+> 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff=
+ ff
+> 73 01 c3 48 8b 0d 13 f5 0f 00 f7 d8 64 89 01 48
+> RSP: 002b:00007ffd8d0e4cf8 EFLAGS: 00000246 ORIG_RAX: 0000000000000139
+> RAX: ffffffffffffffda RBX: 000059c987bf15c0 RCX: 000070c8bf1348cd
+> RDX: 0000000000000000 RSI: 000070c8be74b336 RDI: 0000000000000065
+> RBP: 00007ffd8d0e4d90 R08: 0000000000000000 R09: 000059c987bc1070
+> R10: 0000000000000000 R11: 0000000000000246 R12: 000070c8be74b336
+> R13: 0000000000020000 R14: 000059c987be8cd0 R15: 000059c987bb1440
+> =A0</TASK>
+> ---[ end trace ]---
+> maxdevs: 11
+> dw-i3c-master AMDI0015:03: probe with driver dw-i3c-master failed with er=
+ror
+> -110
 >
 >
 > --
@@ -524,7 +314,8 @@ Frank
 > linux-i3c@lists.infradead.org
 > http://lists.infradead.org/mailman/listinfo/linux-i3c
 
--- 
+-- =
+
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
