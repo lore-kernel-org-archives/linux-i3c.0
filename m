@@ -4,72 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5CC5D3B7EA
-	for <linux-i3c@archiver.kernel.org>; Tue,  9 Dec 2025 11:51:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32F27D1CDC6
+	for <linux-i3c@archiver.kernel.org>; Tue,  9 Dec 2025 12:49:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zTALkhuAjrpSwIpq2FlH5NLIdROAx7RFkPQLEvP0QY8=; b=Ke0SKgeh5mmc7S
-	mJCCaLJO9uSljnJHK1kjGjZ3OdQXK8EX/Qa9SOF6+3YjfEZvdHKfECc5IMBdwDWG8EtWrRu+IgvF6
-	8JriPkH11DKnQ58TXniiHLCd3hWW7ndTxe/2oA0mBY/FGb2kbMmLWhWs/FN2nNUqRoNtC80fXgbPy
-	zfnmgLL5W8HNLel4EdbDuf2p760yfP9JegzJHxLifZMF/qzAhRopFFTBZxy9F2WxhR///xim/4Zfq
-	cE6Tz38z1IAcAk3tauA8joGj79RcGDN2/GcdrnIhvUM61osayC/+ZR4cMjdbt/Z3ptp2PHKL5S7pj
-	w0fwxBBxBKQOHrITCZqQ==;
+	List-Owner; bh=WOkI3uv57DReWNwQ314zSq64yY63XE+yvivHrquHRQI=; b=Yl9OXxmlywR/Wx
+	EC+/olfhAK88WheUpr54g5tuGJeEphrpkx2sLOWQ/9N47/LyPQcoHUT+ACYqLnOpXosQCpjEkB568
+	IyPJdtvPBixomrnPzjuGakBgaOcE9WU/wtliMGRtVwNe/6MUkAsCMXYaqbhhz0LxpAMiiaKkTduUm
+	/smNf8UkPDFz1Rj2R19E8rL1QzkRBJyCCdHWDSqCQSXq1myx39tCvM3eoHtDxEUr+NCiKSBgaNUgs
+	nj1j4L4YJvqwlH9Iv6f/Q9JOmVUhsBJ0mCrrBiCIhvlNQRvCpSylLSGAeifRag93xbN2XHH8KJibH
+	mX545IVZHXYdr5KMJjRw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vSwFc-0000000EDPy-2b9t;
-	Tue, 09 Dec 2025 11:51:28 +0000
-Received: from mgamail.intel.com ([192.198.163.14])
+	id 1vSx9M-0000000EH8S-3yJJ;
+	Tue, 09 Dec 2025 12:49:04 +0000
+Received: from smtpout-04.galae.net ([185.171.202.116])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vSwFZ-0000000EDK7-26ZE
+	id 1vSx9J-0000000EH7c-01wO
 	for linux-i3c@lists.infradead.org;
-	Tue, 09 Dec 2025 11:51:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1765281085; x=1796817085;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=QdLOhEpGrtNIES+tLBfo12a3Y7tmblp4klLkaceOToM=;
-  b=WaEjuSUa10MKVCFdoedPdQp1its9U0Qidux5XS94M+g0O7V0S0VqBD8y
-   3BdR+HYCfrXakMbsC6jS99Rv20jpX7paiP7lxkVb7Mc+YsWtEf6X2z67a
-   AtCuGthTob5KGR8AfIGDmHalTrI5acVlqVh+cxvX40r0fLTW58s+sOgo1
-   2nWccUjKFEYI+Jv16C9u7KmOhMldvjfvT6Qcb+dm1Ep6JknnD8eql9Aek
-   Dg0lDQjr1djbz8itNmzlxq2yuYvvaloZazgH9vKRRYW3C8dcVPlJMipNI
-   FWU06bcQnzQ8soIIsu9CTFG5xaD6Jht3dd5A1c/XzOFgB+3IdUJyJA28d
-   A==;
-X-CSE-ConnectionGUID: tg78+KyuRUCfHH4CaV9RhA==
-X-CSE-MsgGUID: YHJzJHE0RJKfP07SK1NNDg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11636"; a="67271187"
-X-IronPort-AV: E=Sophos;i="6.20,261,1758610800"; 
-   d="scan'208";a="67271187"
-Received: from fmviesa005.fm.intel.com ([10.60.135.145])
-  by fmvoesa108.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Dec 2025 03:51:25 -0800
-X-CSE-ConnectionGUID: HyjtIkaVQVOIVz4NGwvQKQ==
-X-CSE-MsgGUID: h4TKScwdQNG3e7IX9PA6Ow==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.20,261,1758610800"; 
-   d="scan'208";a="200644444"
-Received: from sschumil-mobl2.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.245.132])
-  by fmviesa005-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Dec 2025 03:51:24 -0800
-From: Adrian Hunter <adrian.hunter@intel.com>
-To: alexandre.belloni@bootlin.com
-Cc: Frank.Li@nxp.com,
-	linux-i3c@lists.infradead.org
-Subject: [PATCH 7/7] i3c: mipi-i3c-hci-pci: Define Multi-Bus Instances for Intel controllers
-Date: Tue,  9 Dec 2025 13:51:04 +0200
-Message-ID: <20251209115104.124156-8-adrian.hunter@intel.com>
-X-Mailer: git-send-email 2.51.0
-In-Reply-To: <20251209115104.124156-1-adrian.hunter@intel.com>
-References: <20251209115104.124156-1-adrian.hunter@intel.com>
+	Tue, 09 Dec 2025 12:49:03 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-04.galae.net (Postfix) with ESMTPS id 393A5C180D8
+	for <linux-i3c@lists.infradead.org>; Tue,  9 Dec 2025 12:48:32 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id EBE06606E2;
+	Tue,  9 Dec 2025 12:48:55 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id B1428119304DA;
+	Tue,  9 Dec 2025 13:48:54 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1765284535; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 content-transfer-encoding:in-reply-to:references;
+	bh=QnQMRmoOU+OL5dkdYEbV/v1tD233RbHPSjZ9Wla0k+8=;
+	b=0/nerZEqgRVED1oJ3XYAhYVbgwERRcSrRWooCt2/RJITXQjGPzQn6wKafZxQJZ60TYh2aV
+	ux/KBCSB/WtfwhCwT0hjvB85yMkywY3mTOrzs+ZBxBy4D3v7NK7yWuV91sW6jySW6Nogpe
+	T/ajJlK+SQ01wN/l5r6rMqbf5e77i/ia4ZG+y+mDCOiNPyMqBeGoEfTuyAPSyhGCN6P+0B
+	8l3axTNiKSgAVNBs6k9Lam4dNUAzj0OkICNT1Ws92qNKwgy+s03renwxwOB5EW6kDk0vFV
+	G5S4tdpfBweivFhXiONw6iytsND3HH543FK7Q+o3CCuMBkLRXb7jnq504w3YNA==
+Date: Tue, 9 Dec 2025 13:48:54 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Louis Sautier <louis.sautier@ovhcloud.com>
+Cc: linux-i3c@lists.infradead.org
+Subject: Re: Error while loading dw-i3c-master: UBSAN: shift-out-of-bounds in
+ drivers/i3c/master/dw-i3c-master.c:885:12
+Message-ID: <202512091248543fcf4c83@mail.local>
+References: <66f5e4db-ac20-4bec-a437-af86aad1f56e@ovhcloud.com>
+ <202512082058408ee92ee8@mail.local>
+ <b9b568e8-8e21-49ac-b3dd-ab750fc329aa@ovhcloud.com>
 MIME-Version: 1.0
-Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
+Content-Disposition: inline
+In-Reply-To: <b9b568e8-8e21-49ac-b3dd-ab750fc329aa@ovhcloud.com>
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251209_035125_610880_9CD57173 
-X-CRM114-Status: UNSURE (   8.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20251209_044901_395412_6DABBB95 
+X-CRM114-Status: GOOD (  20.67  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,64 +72,83 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Define Multi-Bus Instances at offset 0x400 for some Intel controllers.
-
-Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
----
- .../i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c  | 17 ++++++++++++-----
- 1 file changed, 12 insertions(+), 5 deletions(-)
-
-diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-index 145f9adadf75..d62c7b6bcc58 100644
---- a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-@@ -193,6 +193,13 @@ static const struct mipi_i3c_hci_pci_info intel_info = {
- 	.exit = intel_i3c_exit,
- };
- 
-+static const struct mipi_i3c_hci_pci_info intel_mi_info = {
-+	.init = intel_i3c_init,
-+	.exit = intel_i3c_exit,
-+	.instance_offset = {0x400},
-+	.instance_count = 1,
-+};
-+
- static const struct mipi_i3c_hci_pci_info dflt_info = {
- };
- 
-@@ -350,17 +357,17 @@ static void mipi_i3c_hci_pci_remove(struct pci_dev *pci)
- 
- static const struct pci_device_id mipi_i3c_hci_pci_devices[] = {
- 	/* Wildcat Lake-U */
--	{ PCI_VDEVICE(INTEL, 0x4d7c), (kernel_ulong_t)&intel_info},
-+	{ PCI_VDEVICE(INTEL, 0x4d7c), (kernel_ulong_t)&intel_mi_info},
- 	{ PCI_VDEVICE(INTEL, 0x4d6f), (kernel_ulong_t)&intel_info},
- 	/* Panther Lake-H */
--	{ PCI_VDEVICE(INTEL, 0xe37c), (kernel_ulong_t)&intel_info},
-+	{ PCI_VDEVICE(INTEL, 0xe37c), (kernel_ulong_t)&intel_mi_info},
- 	{ PCI_VDEVICE(INTEL, 0xe36f), (kernel_ulong_t)&intel_info},
- 	/* Panther Lake-P */
--	{ PCI_VDEVICE(INTEL, 0xe47c), (kernel_ulong_t)&intel_info},
-+	{ PCI_VDEVICE(INTEL, 0xe47c), (kernel_ulong_t)&intel_mi_info},
- 	{ PCI_VDEVICE(INTEL, 0xe46f), (kernel_ulong_t)&intel_info},
- 	/* Nova Lake-S */
--	{ PCI_VDEVICE(INTEL, 0x6e2c), (kernel_ulong_t)&intel_info},
--	{ PCI_VDEVICE(INTEL, 0x6e2d), (kernel_ulong_t)&intel_info},
-+	{ PCI_VDEVICE(INTEL, 0x6e2c), (kernel_ulong_t)&intel_mi_info},
-+	{ PCI_VDEVICE(INTEL, 0x6e2d), (kernel_ulong_t)&intel_mi_info},
- 	{ },
- };
- MODULE_DEVICE_TABLE(pci, mipi_i3c_hci_pci_devices);
--- 
-2.51.0
 
 
--- 
+On 09/12/2025 12:37:12+0100, Louis Sautier wrote:
+> On 12/8/25 21:58, Alexandre Belloni wrote:
+> > Hello Louis,
+> > =
+
+> > On 02/12/2025 21:17:31+0100, Louis Sautier wrote:
+> > > Hello,
+> > > =
+
+> > > I'm running into a bug when loading the dw-i3c-master module on kerne=
+l 6.18
+> > > on one specific server. I suspect it has to do with the large number =
+of
+> > > CPUs=A0on the machine=A0(768 threads, from 2 AMD EPYC 9965 processors=
+) but I am
+> > > not sure.
+> > > =
+
+> > > The system is on Ubuntu 25.10 and a 6.18 kernel with https://gist.git=
+hubusercontent.com/sbraz/a6f37fafbcf9354bbe4eace9e9eb48cb/raw/115da594dc9d7=
+ea99b06754847571e6fd76d9da5/config
+> > > (basically Ubuntu's).
+> > Just to be sure, does this also happen with v6.17?
+> > =
+
+> > The only change is the shutdown handling so I would guess yes.
+> > =
+
+> Hello,
+> =
+
+> It does happen with 6.17. I initially discovered this while running Ubuntu
+> 25.10's stock kernel (6.17.0).
+> =
+
+> > What is the behavior when you build the dw-i3c-master as a static drive=
+r?
+> I'll try CONFIG_DW_I3C_MASTER=3Dy and report back.
+> =
+
+> Someone also suggested (they didn't reply to the list though) that I add a
+> printk to see what the value of maxdevs is. I'll provide the log as soon =
+as
+> I have rebuilt with:
+> =
+
+> --- linux-6.18.orig/drivers/i3c/master/dw-i3c-master.c	2025-11-30 22:42:1=
+0.000000000 +0000
+> +++ linux-6.18/drivers/i3c/master/dw-i3c-master.c	2025-12-08 18:17:33.151=
+567225 +0000
+> @@ -1588,6 +1588,7 @@
+>  	ret =3D readl(master->regs + DEVICE_ADDR_TABLE_POINTER);
+>  	master->datstartaddr =3D ret;
+>  	master->maxdevs =3D ret >> 16;
+> +	printk("maxdevs: %d\n",  master->maxdevs);
+>  	master->free_pos =3D GENMASK(master->maxdevs - 1, 0);
+>  	master->quirks =3D (unsigned long)device_get_match_data(&pdev->dev);
+> =
+
+
+Yes, that was going to be my suggestion.
+
+-- =
+
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+-- =
+
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
