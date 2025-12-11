@@ -4,143 +4,143 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3CB79D41D64
-	for <linux-i3c@archiver.kernel.org>; Thu, 11 Dec 2025 16:01:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A729ED41D65
+	for <linux-i3c@archiver.kernel.org>; Thu, 11 Dec 2025 16:18:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WpdPiGDoxVXn/XoKW3Xcvy8StygSFYEZp2kYAUhoku0=; b=EAKAk5V+pyRZ+f
-	zmAQ+ytW4kUXvflNi2HWlep1O7K5RaROl+8hVtNJDsOCBfDiskBNh7Xu5xVo4wn68w1wkfDeMiZ+s
-	zKp82hc3elFzxtxwRz9OFz0plfk16KvFk9UZx7Nr/Q41JEbq4c1NhZp09MiIc1TQzpPIr+tI2Yb5+
-	7/pPJtJ3zfy1NLfoGdnm8DqcVNdUsp/Jfuddu5EZ8GKPzYErAS1VKo+PejbawJ5CecvyFYcmPgOxr
-	TzLE0/i6EZWMVv8+tWW/wZDB88rV7sN9q4QDtfttk/MThQ9MZKIiVHYw7r57kzs/YuzNQAvnk8GLT
-	SYArO/1JAjpB3Iaw+JTw==;
+	List-Owner; bh=hxNG4qinISo7UiqK6ug+QlkD+p+p/pG7ITBOKFBFNBs=; b=Im/xNZ76HhZhsJ
+	NiUAgAYdFGhnVFq5P1Ywdb+eOyHILicZesjQWlkldpjYW20B96sLB/nFparxYC2fQIOa+ZIiMGp0V
+	0WqZrp/JPolMRi99EWFl39DhkBrlbkU9oujhpOXPcvV3JVWjpWVkyBP92Q0VNuZDrSEVk3EOcWKti
+	Gj9kwgeVNLyCBlgJ7GTwFpPD/5mUDbJfL9yCVYCJoagwXmLyVAOCHfVpXCGmZIfNaMu5DDQfGiiha
+	2nOfXkBVUBngIgPcQNZemL/CmcbFr5J23J8ZgGVMXyBx5zSWsyQEjHtUT7IGyQtUHYK5ZtQpnAlhK
+	PI6qDyfJj91Px3BLVWAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vTj6N-0000000Go4M-3mED;
-	Thu, 11 Dec 2025 16:01:11 +0000
-Received: from mail-northeuropeazon11012004.outbound.protection.outlook.com ([52.101.66.4] helo=DUZPR83CU001.outbound.protection.outlook.com)
+	id 1vTjMx-0000000Gp9c-1SRF;
+	Thu, 11 Dec 2025 16:18:19 +0000
+Received: from mail-westeuropeazon11011046.outbound.protection.outlook.com ([52.101.70.46] helo=AS8PR04CU009.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vTj6G-0000000Go3h-3YT2
+	id 1vTjMu-0000000Gp95-1BLT
 	for linux-i3c@lists.infradead.org;
-	Thu, 11 Dec 2025 16:01:10 +0000
+	Thu, 11 Dec 2025 16:18:17 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Q4q/FwsP9X0rKIObqGo+767TSK73Y6XSRvjyYvxxzZoifMqMjctKuImeykG+afarxOA6inCz9W9uFeY+elGOhKQYQb8SVR2/6IAYtpbv9Aikur79S7JiM5epUY6o24DdBwBemgp7ts7hlI8eBcuhMJo5mEaHTVE5icSIoNib2CB/cE9CdtMXr7q/Tkp9wQMg9JlJMIoq/QIQpBxEhnETM4FgxKcu43CLVzmjPYQE0maueDjqK5zcnSze2v9AWruV/vfxEKUuFRHq/8STNoy0Kf7XCdK7u/ZLOEsSh6Mmw84A7Rg+BjyhpIY9XqX1RDWNwI/iCe5PBizGU53gYh+uxw==
+ b=aImJ0ratcME6L2thB7va8t39oeCUqajj/oUAHMrtmsGILml32+nN1QQnupTBHU/gqdLYvpkWCBYBGcUI/CmKVJc//qtQoA1AdYArx+oG2IsyjOWsCasTP1U0kNJ/i318m1WA8atJjdPY87EvNP9Mk8cKUxm37hXYDReAR64Rih+bLxnpe4SPSY6ewdxzK+j8yJGcyjh2AM5FXX2z4txmt0qHMYotR6/dwsKM/+f8X7cIX6wLfjo/t8W7rL/yxgyhzif672OKYtH3XyAyaNdhXk0gBT6iUtk8gPWr4EuBk318UKWYKa4gypUChORG1GcfCDzzOoz4FhwK+1YSkaFewg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=9MYAjAHlm5C/5JKhpmmxQW/0nsVVu7KoUaO4xJBt4O0=;
- b=jGXz9OZe4Zi/HAbDNChFbrkr9rhKd7bWPfHD/Ov3kMQFLqTjFPjAY5WBSgcX8tHtdnJZRdqVN2Pc9rSpLFnR/dZOYvueGubcLx8otPXid79+3J2ltayGBYvBx/QW2j9SpHm3oZFefKg83IjytmbRjiK26X++6sjeD6jos9iNvSEkVY0k0OSQxycHtADh+iacLoEPM7TeikArg7XQLLcEUdSlrlGlrDPqEitOR4idqPdqOGGMHY3BgZuodMEeOuVM1Nh4kirSu9foIzfp1LZlKPUdzSDuJzRtTw4gWXjB5s7L3/t1KubZPj52KbgLY0aXkU8rUinsnPjJBVffestvEA==
+ bh=4xD6fgr1Yz2DDW+uPjeA2veF8af0bppHJHOk08bgPUw=;
+ b=IMZaM6QExIYUSOh2+a2XqNSl6oDk/eFpgZtUFUITedDpA1J0UImJ6fM53nj+DhOr2nYrRVYahrkFiDRoHAQg2AcYcwyvhVRRT4dCmwclQtmjfrfpvcnEn7pi5oe2XJojFwxOZ8Kqa2OzxIr1NMnMhg0hr681HHrTZBT9Kkk4fHfOE/IaBHtIxgoCc+oL6nBikngTl6I/9v8ltCFv4CJ7di+B+fsPi6D/zHAsm48+V81TbcXcZ5nlTlqalXQYgdJFsRiQgg/ZTCMqmWUcs/ehO2ONfjvgO88jpPaPylRphFG4NIq11XCcA3kJU0IWgxJ/hsw3cM7WsEpiauz/VwLAPg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=9MYAjAHlm5C/5JKhpmmxQW/0nsVVu7KoUaO4xJBt4O0=;
- b=hyyjtGxg0Bz9xWZ+3me063q19T4m/TWeWOpSoqJoZBNi9kMZ5Xz/HMi+3NgUijWKnuFmdwqBOzxN4rkR8I6epsn/59oyTFLZTJGgmOCcsaMRrtPUrwKCfyx6RT5vswqwzV/rVfD+02g62yNsIGm1qEJ27+i0yoO41w48wtHDiDS6yVUyRUSpmp1CnYCGSwoYB7ExogK9OSV656rCG3oA3wuFr53tNV2xpESfIQzzEWSELnQD/eapee5F4R6Q/9n7E3/W1EWL1rk6aEKOpOjK0IRpkN/mhZao2aqb58A2vV102Q94PV8TLIrtJQLqZ6RUtNi/HTDxrfsXpeO8PoghHQ==
+ bh=4xD6fgr1Yz2DDW+uPjeA2veF8af0bppHJHOk08bgPUw=;
+ b=hErWI1O1Xu0r6v43RbkyfVW2WvHfGPRrK0CeExAl0AtwK1o7krXsPTsIkAHH4Keq987/FkQwHIR577fh/gt4hB8/u8MUiio1Vje6uAnvhkWRruI8FGCqJQxNfo580Y3qSef8LuZ93jG1ULBTJlZ8qapRT6rwLlYMTgiulzOhfLiE4Kw8vbzPFdvHoMaTwYiVVYLvuW7UogpahCeiwVQQxX7YbkIr94tjS5TqZtuPgkWpZtXU5we9sD2xSVC2yt0ePJnwqzSsKWD1MQKUrGpWkPFM93+ucXDQSe4E2qIRr4FPIWPcnpnlzR5IZGdSmrmEMu50diF1RVTzlIUxv0hCzA==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from DU2PR04MB8951.eurprd04.prod.outlook.com (2603:10a6:10:2e2::22)
- by GVXPR04MB10302.eurprd04.prod.outlook.com (2603:10a6:150:1e7::20) with
+ by PAXPR04MB8317.eurprd04.prod.outlook.com (2603:10a6:102:1ce::7) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9412.9; Thu, 11 Dec
- 2025 16:00:58 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9412.6; Thu, 11 Dec
+ 2025 16:18:11 +0000
 Received: from DU2PR04MB8951.eurprd04.prod.outlook.com
  ([fe80::753c:468d:266:196]) by DU2PR04MB8951.eurprd04.prod.outlook.com
  ([fe80::753c:468d:266:196%4]) with mapi id 15.20.9412.005; Thu, 11 Dec 2025
- 16:00:58 +0000
-Date: Thu, 11 Dec 2025 11:00:52 -0500
+ 16:18:11 +0000
+Date: Thu, 11 Dec 2025 11:18:05 -0500
 From: Frank Li <Frank.li@nxp.com>
 To: Adrian Hunter <adrian.hunter@intel.com>
 Cc: alexandre.belloni@bootlin.com, linux-i3c@lists.infradead.org
-Subject: Re: [PATCH V2 07/10] i3c: mipi-i3c-hci-pci: Use parent MMIO mapping
-Message-ID: <aTrqtJpZif4+segg@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH V2 08/10] i3c: mipi-i3c-hci-pci: Convert to MFD driver
+Message-ID: <aTruvSnXN4KNAXWp@lizhi-Precision-Tower-5810>
 References: <20251211134809.75872-1-adrian.hunter@intel.com>
- <20251211134809.75872-8-adrian.hunter@intel.com>
+ <20251211134809.75872-9-adrian.hunter@intel.com>
 Content-Disposition: inline
-In-Reply-To: <20251211134809.75872-8-adrian.hunter@intel.com>
-X-ClientProxiedBy: PH0PR07CA0098.namprd07.prod.outlook.com
- (2603:10b6:510:4::13) To DU2PR04MB8951.eurprd04.prod.outlook.com
+In-Reply-To: <20251211134809.75872-9-adrian.hunter@intel.com>
+X-ClientProxiedBy: PH8PR15CA0017.namprd15.prod.outlook.com
+ (2603:10b6:510:2d2::7) To DU2PR04MB8951.eurprd04.prod.outlook.com
  (2603:10a6:10:2e2::22)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|GVXPR04MB10302:EE_
-X-MS-Office365-Filtering-Correlation-Id: 76d203f7-bf27-4a7b-b380-08de38ce793e
+X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|PAXPR04MB8317:EE_
+X-MS-Office365-Filtering-Correlation-Id: 8a149021-6e48-47c0-afc9-08de38d0e122
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|52116014|376014|366016|1800799024|7053199007|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?4wTfoB6n67WH5dD70XeSh3DsuubqVxY04B0rxNe0oF7BbNS9Ku030wxN2wYp?=
- =?us-ascii?Q?qX/+LwskF4WIG3cUbzM+fiyO7McsqG3YXBO/iC8iKXSxbpIQYh5xYNq3t/fz?=
- =?us-ascii?Q?ZXI+kmG0Y8slT/BiKjs+O6RbZCRQxGLnsGFbpTpASiJ3Rev5r7FT3G8Dly7c?=
- =?us-ascii?Q?Jpvt4Hs/pdmgybn4+AyfF7+IFzmoYIlz+zIa4winSMxtSevBTjS1zJnQXTtG?=
- =?us-ascii?Q?627VDMa2mGkvA+nVxwyvTHsUmksTTe1NVh/w/pHwizu+PjO8TTYSwRs7ZZUy?=
- =?us-ascii?Q?vAWN/SU5pi+go9izHyYVhO+2SQMWSTnA85A8yH8ZuWFbQTjElG1ZgHBVVEEm?=
- =?us-ascii?Q?S8w2MN6YArIr+rUJUDyDd+FLDktzGxoopa2qF4oPkH10X3KLoh37+UA4RmBk?=
- =?us-ascii?Q?ddkEulnZUpnRxxUL8HrjHR0R812mXfJYCrAe4nzJaVeJdcPqh573BDRNTgZb?=
- =?us-ascii?Q?PO+TYoJA9I11knijfLgxfYOiglAlHXXhRFKJnReOKDB35C6Qd5dxbaPVGBNH?=
- =?us-ascii?Q?lSQnLsWcDvawiUdEDChPDybgdVZ9uNSxocUIYdWLhJN3I8DGFJYIpdYVlJlO?=
- =?us-ascii?Q?Ix9eIx+YvmPSs1M+335fTib12BkGw7crs3L/f85xRWGqipjmZW32wd8BmQ5J?=
- =?us-ascii?Q?NHwkPr+AKhBN6KP9Q2qdbPfdX2UeN9R0ca7durPUX+Pv2YA5LP2ZKtbaM0aa?=
- =?us-ascii?Q?zoHwSXOKoozLgd8RZDszoH0mY+PxiMHwICYviXz35IEaLFllj9t3MjKY/D7W?=
- =?us-ascii?Q?pmFd27XL68dHdnzyE3pPKqTgF+v/MMvcYI/3L5Bhq4zpzSLsP+e7x8TfCYeA?=
- =?us-ascii?Q?4I+bdOtI//VkNqdPHiY2Uonuki6V7lLiP0ZsGBCmKbm+v0MMtlKjKnqGtDS8?=
- =?us-ascii?Q?h1urbEQ4wWFgjISHT1ZVrQiCVFgblaVBx+SnjSMRajWnWzVvubWnRQS5TDRE?=
- =?us-ascii?Q?C1Ai8xBUSIT+Any1rLc/nmy5weyaW3tRYRa02w4eWp7R+bB5/UL44wD4z117?=
- =?us-ascii?Q?qbk4nhOedOc/KS+cjvF3wx22yRiJyXeG3cMdLY84qFxpxWKQQGMgjxwHlqLF?=
- =?us-ascii?Q?8oKwLWFCq+Mcc9Qi1JF6hcBi9bvGmQ5xj8RQc1H1VmVVN5sh4RwxYUYW2dGD?=
- =?us-ascii?Q?B53IB0ejGmM73w+nMFsqktF5Y6gdm3csep8IYEJjByvLEHbpr+kTvaGoL0kc?=
- =?us-ascii?Q?TmFuP+I19a4YPM/VukyhXXn64VhZJmHFBq4BP2lwjsJzrva7p9t53gfel81D?=
- =?us-ascii?Q?SOqYM9oMg4aE0n1Ms8l/MToKtaKIDTXqSlkAzfzM+66AKM376/Tfaj9T6jp+?=
- =?us-ascii?Q?E3Gp7g8lXZ7O3CRSAhXX2hMbK34T1mLGGG8YUjTiAJZRV/2iCpIzvZdJ+TFo?=
- =?us-ascii?Q?byhRW8k38hw/WKpqonVwBcPPi7ZXYqe9Ub+/FmH9GvcB2cq8SAz5NXkcLdpe?=
- =?us-ascii?Q?WBH0RNWplL6EFWvB8Z9wT8TEXOrcIKHVMFsbzmGV6lPKGZ2u7oUxkHmwfnc+?=
- =?us-ascii?Q?fr27szIKV1QamLt0jRhy3W7+1DZuT8VBsuRJ?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(52116014)(376014)(366016)(1800799024)(7053199007)(38350700014);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|1800799024|366016|376014|52116014|38350700014|7053199007;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?Rft2T8Y32ID0DxyNmSzm+C/9WhcLK/s/OQrrReXmw07dN/8D/I3PXAQcP3n0?=
+ =?us-ascii?Q?TrhW/tnLnIegeEaFnYaWwLTCPRh7sAMR3CSPLy95u3Z5PRa3TFCk/UWFHHP3?=
+ =?us-ascii?Q?9Blpm7XyqZ8Za3LP+i5TbFxpmJXii88c4yq7ZMtzIbqcCzDoYyauKTlvlI0A?=
+ =?us-ascii?Q?QI0egVjS6RqWLvS27aDyHZ7KAzXFXmlYvk5gTUHzBbKGkkB/LV1Wb5hchB12?=
+ =?us-ascii?Q?Wckac/2UzMdiR2+MRDkzg7cN2tYeMLbZMlyHYcCPplNuq5TzHgeuFS9acLzc?=
+ =?us-ascii?Q?CTDRsczaEthfIgGLpCWYPR2S/KxYETHeiQz4KIPlWw55MPxV3IZnBC+/xCjY?=
+ =?us-ascii?Q?lXboF2x2OSTQC0EW9uPiHA0tDeQRA/Irlg/uEFej/ut9W6dBJGqDG3wZMrwS?=
+ =?us-ascii?Q?0esr6AvbuJCni3r7rI4pfwn9zTHOLGgIZ4/DCkNwWixSSqbOFbIt8ebxgM7A?=
+ =?us-ascii?Q?T8CvW5FJhLeR56STs/oo4K0PrZGYhFD6jet0qPNPtCJ+Vq6MLAiX0k8GcRpi?=
+ =?us-ascii?Q?+O9DuOn18amyR6RMz/cdPtNq7LwvE+KgpxLwZocpg9+mP6Qgopq3sIWxFu4U?=
+ =?us-ascii?Q?Nh/P5y6ZY6+9w6Q/CWHHtCAyYn4A18aLc4kKv2dz9xT4DPd1yveybpBrjA/N?=
+ =?us-ascii?Q?s2JRQhOp2215Xk8y+hAKZfSIuJUHkPigqLQB0AwUwy8cvUbVSJVOVyQCxEwd?=
+ =?us-ascii?Q?1finc6grdqoXWTEzSSMI64zGlnHIq76ijn+R2ovIUWNQJ47/0spNwpExahfG?=
+ =?us-ascii?Q?Euqco8APsdJqmmXQGpc9toaVrj96wdSKIe1mQ2Ph0MQwuI3xaAFGT6ueveE2?=
+ =?us-ascii?Q?lIHKTgAslLLyQnM3RbcxIiXMJNOy3gnyKYwIBZRm4pHnKz7zTrGOriF7s9QS?=
+ =?us-ascii?Q?7Ok3uyFGpHSF7OLw0y6ZRX1pZ9B19SbqCAdE91zR/5wROqhmQdPWjTFLciqH?=
+ =?us-ascii?Q?AJF64tQ2JcLmpcxDD3KC/LgeKkfH+C4jZqBhZ6hs85QKPfpHr3lbCg/lfNLj?=
+ =?us-ascii?Q?Tc8Nc1aJzxAgJTZeVQ7dfetu2DH8bT2LzLIFG3ERysrqKXrSVeG9tdcOcJCr?=
+ =?us-ascii?Q?AEbC/5Nx682IHY4rzT4Zxru/OI40mbmvHYeMKAffhJuMQPWOzoNr/QHz6+8M?=
+ =?us-ascii?Q?+8jtLdy6igB3ZWxrOTpzPGVAZeEOcXk6iDTmBsRldw1owo6+SFs17g6JTeKu?=
+ =?us-ascii?Q?n+lTxbpPX2v/8+HRw/wxTG4iJcL8ng+4xmSGQ6yRVLrZoS/3Ipr/rxU2R5/7?=
+ =?us-ascii?Q?Bfv4YwZA7FNRE1ay7eDPGD5iUrmZc+dZTR+AH7jQrBIGyCM7uR5uUHm2zWsB?=
+ =?us-ascii?Q?V5iDJ1JkbZswsANlTuFgeXD+itgYZ4ultmxbDuhibtEbg59rAy/+DNpqgmEL?=
+ =?us-ascii?Q?PyBolDwKvcVLGvY0Lh1G4Jlb9TK1oms+IxRY3XjuxnUg4xk73LZfM+HFMDmU?=
+ =?us-ascii?Q?C9Nu9LXsEqe6Lei/2qoG5Xnh4ttrVYibO5XqTUyn70Xh/uOlLbidsOtQGvXU?=
+ =?us-ascii?Q?J2edDUuAfJVcy8TzZLULYSu9kZ5I9qAXi0of?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(1800799024)(366016)(376014)(52116014)(38350700014)(7053199007);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?F9ovKS/nfgyeC30IQCJBCqGhlxBMdfTE1ciImosZJTWpvQvXCWbfAx0Birbu?=
- =?us-ascii?Q?cEChiKBH4PP43pugRe1rcVa7oiBnJZyoMb1U6c3ANAvd24oetXWfiwOZSKRe?=
- =?us-ascii?Q?UVNIBLb3r2WziyiuJHu4z9aJbAvq1lOd21cfutT4vWTRfICAuyTOknlbMtbX?=
- =?us-ascii?Q?6AxEBbavCQeW5TIqpCK0id0YJ22RwF+qkrvE+LRwbG8+gLsSif8tt8ArvpJ1?=
- =?us-ascii?Q?ElCLq22lq8s+m3UJ031tCUewOOAKjCGsMm8zySapwERIEx9fGWfhYAOQ+U1+?=
- =?us-ascii?Q?q7yOmlmg5Kyo7rHQ18Z/Iv3CUHwxLJCQkqFT8BxDMv2uHBX46ngT1PUOJbr0?=
- =?us-ascii?Q?aNNBzppOkPAIp+ygALQRiDvp+YciUYLjZ4bxcc4/Whs3j04MR9lverjrIvZQ?=
- =?us-ascii?Q?2QmOK2am0Zd/Uhry0XXWyxJE1jOPNjWE9fijMoVmvLNO3wighyukazLX64QE?=
- =?us-ascii?Q?+5sgVrXLkwYSXXdDI4TNWDygMll23z33FF0+wCL13G9uglrylR+yYmp1RlrH?=
- =?us-ascii?Q?saO7xUm9fnAI+tFRSDn42loLaPFUa95arbEPgMYhWS79FFtFEDqxCIl6WupD?=
- =?us-ascii?Q?aAMbNfmRsuV+JfdgOBA+7+7Xe7tBVhvyEF6cNYb40TnNaPixcfa/FIDIx7IK?=
- =?us-ascii?Q?D2xTVz5d3C9JYj+hwNEjklHpEf8pY/yYu6Q3vcCaV8bBnq5eiT5E3RSNz7Ct?=
- =?us-ascii?Q?kJHXZUEWsMJwsQKjR/sWOazeaG//6nlkWTt+R2QD8ToZiJ+QzltKUiXvmSBn?=
- =?us-ascii?Q?0dEc07SsyLl8JhAnt4YWxuBiseNL+G0CDmO+sx1YXPeeRVSOrazxAaz1WhNN?=
- =?us-ascii?Q?jZH6bI/HvnlFczPHJ2nVfDhkU5felnhKq1gCzMqVWokeXYN+7q/Q9DSI+bUS?=
- =?us-ascii?Q?urMFg7T3SGp5DM4ybqHkMIrbrcZYTyhFGA8tXnzJuUCGeqGM2shaNF7xNuJU?=
- =?us-ascii?Q?cSQqnqI5YIKcx+KcuRsXMCxvOxGn7KUEWjrsyHPRkNcFGnS+u3+Lsf7OVo+W?=
- =?us-ascii?Q?Gjx8SkxkXDM1oTYo89IZCTExxZSdQ/dIMHXW1mQdChRgjUQgZiJhq5tEC60o?=
- =?us-ascii?Q?TyL6ZC9+8yrBY8FBxvx8vqOk2+KuaKObRrrMESq58XqT5GJ3cF6Nh26imnz1?=
- =?us-ascii?Q?XWtdUW4qOBQ0Hd7GZ9+rVb+7gBrTOwn3qxe8o+CGDZ64t5AC6Y3UtgSk3z4M?=
- =?us-ascii?Q?S4i2yTxvh3MV96HGm9vbwAzjtBlLIrX16hDthydWdVQTctDjonDakfVJ+JAe?=
- =?us-ascii?Q?Y1FNjlOmvAJXCuSfMFNQ43ext3r262dHvVK2cduk4Z6qRYfuwNc2uI45B6pL?=
- =?us-ascii?Q?rYYymNBC2HfobRAivf24xZuKyAwnxm1b/dG9eXNvJhkheJSvZquq49gAjaqM?=
- =?us-ascii?Q?ScrZ/hiCK+lWvsi/vWQygo9HsjAYQuPO+ewXYLgfVc8c9ytQDciGRylyREcR?=
- =?us-ascii?Q?q+J6AC/MYaqpX21wA9lBq9qpWnyDCuszHdJl52Vx3JoId4pcg306IeIaoNCU?=
- =?us-ascii?Q?m5f5859hlpnbB149J9u0gBk8l7SxW0EL6qK9+1bPeEir7aHXUyJbkZftdKEQ?=
- =?us-ascii?Q?dzYH9I7R+paR4HHruak=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?i8+lWUqvgq5tAoH5N/ZzeSNndzgnt5faNypxl84/VZN6fvPGd4+rzWInDK4N?=
+ =?us-ascii?Q?PAk5HSLUpv1hjHrbvuNZEoVzSb9uJKJkH7O63WHmq5kESDwp1sJsXgP8XIse?=
+ =?us-ascii?Q?wei+cCo39Ku9yyZye0CBIiKu2HgZdFkNooOWb1cjGl7q3OTDL4mG+C3ZT65u?=
+ =?us-ascii?Q?zXtRf5vjmNxybs04LyEfG4UIGVMTff9prC0V5wSUDf/uxrvuk/hC83yYUdbu?=
+ =?us-ascii?Q?k18xJLH620KhYgeHvDOBxhRXjlPqBFxB17cOwgR9MnPoWBGSicA279Qy1Jus?=
+ =?us-ascii?Q?KS9DaXXJjfpm30OmauIhL8NZE8Z2PugdUbS+03NRXmWGYvexqM6aEeb9z9Ta?=
+ =?us-ascii?Q?lEczRbtf152PMAGu8S/8pMnUdNm2ff9n86gh2z8vsM5QXKh4A/9rRqSqGVpl?=
+ =?us-ascii?Q?zHoI+wQz9KFwJ5o1VjFJI2Ep41aVDbcp3sjktMy14n5GxUrmQW3rBz8bKFk9?=
+ =?us-ascii?Q?s0FwmyYPlKKbPDtN08/dsW+VmKwxZyivAKwtezVY4w0aRbyuh5LEWXCHf0sz?=
+ =?us-ascii?Q?7BQFPutdXlnRjJLlO/BB0DYA/iEkumTMGN5CMGXcQiQhDJ8FxwfF9hP73REB?=
+ =?us-ascii?Q?hfzUi95vN6QR2FGO+vO3J2PPRzD2Bjx1DZmyrCpI4j9vksjwc1xo4cjcQWQq?=
+ =?us-ascii?Q?iusCnFas4YXl4thqQ8Y3kth2YGxy9vpGQZp5IGjra6NFFjKJNe3vB5h9aAHc?=
+ =?us-ascii?Q?fv+pxoxWbaC+1lQEXM+qo3yaj03yTmBKXnr4GWu1ihxmMLHTk9t/uiYRkFdR?=
+ =?us-ascii?Q?1Q3YlG1vesa5v7AjVqwzVJhye5SBFN2XHa1HtSST4iAiaW19Mt98+dL8BuAS?=
+ =?us-ascii?Q?/9SHL4flQzOXMRZdXgRIIFo7Pd50lv2yfOtu3juNXIGKcSUkCwGWc5jgYYVo?=
+ =?us-ascii?Q?lUVnSAo3aa3+9hK3TZq0Iny0JnktOHyAYhJxHCwE7ZYvsYqY2mQGAt/SPilS?=
+ =?us-ascii?Q?obxh4W1s+pR8cSz2ly1IO5r8tffEviAcVSZHsGUmMz0XPISsA/Oqnj2GYFMR?=
+ =?us-ascii?Q?rmzcubUgQng6qXNbetsL6vduq+58fo0AbxHddg+POYxbkQU2xHtpVRD9ZBrQ?=
+ =?us-ascii?Q?ok0vJYJ0DK9E1R1f2nVHgPmroBbw/Q7CtHzpjO2KP0fOxWSPow1Gm+PNuqdi?=
+ =?us-ascii?Q?hDsclzLR1Ibf9k3j25+eV9mAVzH/3qsZg+R5avpidh1txIS5BqvzxG4aRudq?=
+ =?us-ascii?Q?PbxjgyD/gtMrvHliFl8GH/zYBUzbrl/DKpbXT/T1hb3b+3W04tvrJLlf3AoF?=
+ =?us-ascii?Q?CW0uA7R76+lHaRBQPgXjlt+81daJYTrc5bicrkilwgbknw9w781LUPsoi4Cs?=
+ =?us-ascii?Q?2T73OiBfTIVMhyFGObJqt8vE6tI5XZzqEn2xabLWamNw3nNULW/qbdHoqJV+?=
+ =?us-ascii?Q?OQM1yYn1RxqR+dWDVVAAscc6B8BuYqAqz+Fp3ZKGGnhlFnBdkn3t8966NjUi?=
+ =?us-ascii?Q?bmOfocvLH/rzCr7swWpPH1UghZHmtDrl0uBBQ9sj7ajNUz8XIve5623e8/jl?=
+ =?us-ascii?Q?KgLQxJrWU8I6jB+h9UxRGDsQofonP/EsZH+FHFlG+0pDfbGZbUivMWkbLfaM?=
+ =?us-ascii?Q?jsVwsNPw4aRuOfBdoKtYVjjIsLWunaPiGJRj3o2O?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 76d203f7-bf27-4a7b-b380-08de38ce793e
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8a149021-6e48-47c0-afc9-08de38d0e122
 X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8951.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Dec 2025 16:00:58.2682
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Dec 2025 16:18:11.6301
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: UFOcjdSm+zSLFNAwUmYvsWYtp3cAofYyE5BRsbd9wAaxi51+YrisaM+yPCHT72ALXxJ2C+BMpOVvUlsaursl9Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXPR04MB10302
+X-MS-Exchange-CrossTenant-UserPrincipalName: PKqdGVa5/g15MX2BTOndric1IAtBAsC+aXIUKGw7SfT1pX3Wbz2M+Dl30oCaA6giCRpEVbzr6KDc7Vs5LGkPug==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8317
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251211_080104_890461_DA710CD6 
-X-CRM114-Status: GOOD (  21.23  )
+X-CRM114-CacheID: sfid-20251211_081816_326670_91F20FEC 
+X-CRM114-Status: GOOD (  26.01  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -157,15 +157,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Dec 11, 2025 at 03:48:06PM +0200, Adrian Hunter wrote:
-> Prepare for Multi-Bus instance support.  Pass base_regs to child device.
+On Thu, Dec 11, 2025 at 03:48:07PM +0200, Adrian Hunter wrote:
+> Prepare for Multi-Bus instance support.  Convert to MFD driver but still
+> support only 1 instance.
 >
 > Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 > ---
 
-subjest: Pass base regs as platform data to i3c core device
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
-Frank
 >
 >
 > Changes in V2:
@@ -173,111 +173,179 @@ Frank
 > 	Multi-Bus Instances"
 >
 >
->  .../master/mipi-i3c-hci/mipi-i3c-hci-pci.c    | 39 ++++++++++---------
->  1 file changed, 20 insertions(+), 19 deletions(-)
+>  drivers/i3c/master/Kconfig                    |   1 +
+>  .../master/mipi-i3c-hci/mipi-i3c-hci-pci.c    | 100 ++++++++++--------
+>  2 files changed, 58 insertions(+), 43 deletions(-)
 >
+> diff --git a/drivers/i3c/master/Kconfig b/drivers/i3c/master/Kconfig
+> index 82cf330778d5..2609f2b18e0a 100644
+> --- a/drivers/i3c/master/Kconfig
+> +++ b/drivers/i3c/master/Kconfig
+> @@ -69,6 +69,7 @@ config MIPI_I3C_HCI_PCI
+>  	tristate "MIPI I3C Host Controller Interface PCI support"
+>  	depends on MIPI_I3C_HCI
+>  	depends on PCI
+> +	select MFD_CORE
+>  	help
+>  	  Support for MIPI I3C Host Controller Interface compatible hardware
+>  	  on the PCI bus.
 > diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-> index 0fd3587671e1..0180d99a37e4 100644
+> index 0180d99a37e4..68088967942b 100644
 > --- a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
 > +++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-> @@ -14,12 +14,14 @@
+> @@ -12,6 +12,7 @@
+>  #include <linux/idr.h>
+>  #include <linux/iopoll.h>
 >  #include <linux/kernel.h>
+> +#include <linux/mfd/core.h>
 >  #include <linux/module.h>
 >  #include <linux/pci.h>
-> +#include <linux/platform_data/mipi-i3c-hci.h>
->  #include <linux/platform_device.h>
->  #include <linux/pm_qos.h>
+>  #include <linux/platform_data/mipi-i3c-hci.h>
+> @@ -20,8 +21,8 @@
 >
 >  struct mipi_i3c_hci_pci {
 >  	struct pci_dev *pci;
->  	struct platform_device *pdev;
-> +	void __iomem *base;
+> -	struct platform_device *pdev;
+>  	void __iomem *base;
+> +	int dev_id;
 >  	const struct mipi_i3c_hci_pci_info *info;
 >  	void *private;
 >  };
-> @@ -32,7 +34,6 @@ struct mipi_i3c_hci_pci_info {
->  static DEFINE_IDA(mipi_i3c_hci_pci_ida);
+> @@ -178,13 +179,59 @@ static const struct mipi_i3c_hci_pci_info intel_info = {
+>  	.exit = intel_i3c_exit,
+>  };
 >
->  #define INTEL_PRIV_OFFSET		0x2b0
-> -#define INTEL_PRIV_SIZE			0x28
->  #define INTEL_RESETS			0x04
->  #define INTEL_RESETS_RESET		BIT(0)
->  #define INTEL_RESETS_RESET_DONE		BIT(1)
-> @@ -143,19 +144,12 @@ static void intel_reset(void __iomem *priv)
->  	writel(INTEL_RESETS_RESET, priv + INTEL_RESETS);
->  }
->
-> -static void __iomem *intel_priv(struct pci_dev *pci)
-> -{
-> -	resource_size_t base = pci_resource_start(pci, 0);
-> -
-> -	return devm_ioremap(&pci->dev, base + INTEL_PRIV_OFFSET, INTEL_PRIV_SIZE);
-> -}
-> -
->  static int intel_i3c_init(struct mipi_i3c_hci_pci *hci)
->  {
->  	struct intel_host *host = devm_kzalloc(&hci->pci->dev, sizeof(*host), GFP_KERNEL);
-> -	void __iomem *priv = intel_priv(hci->pci);
-> +	void __iomem *priv = hci->base + INTEL_PRIV_OFFSET;
->
-> -	if (!host || !priv)
-> +	if (!host)
->  		return -ENOMEM;
->
->  	dma_set_mask_and_coherent(&hci->pci->dev, DMA_BIT_MASK(64));
-> @@ -187,8 +181,9 @@ static const struct mipi_i3c_hci_pci_info intel_info = {
+> +struct mipi_i3c_hci_pci_cell_data {
+> +	struct mipi_i3c_hci_platform_data pdata;
+> +	struct resource res;
+> +};
+> +
+> +static void mipi_i3c_hci_pci_setup_cell(struct mipi_i3c_hci_pci *hci,
+> +					struct mipi_i3c_hci_pci_cell_data *data,
+> +					struct mfd_cell *cell)
+> +{
+> +	data->pdata.base_regs = hci->base;
+> +
+> +	data->res = DEFINE_RES_IRQ(0);
+> +
+> +	cell->name = "mipi-i3c-hci";
+> +	cell->id = hci->dev_id;
+> +	cell->platform_data = &data->pdata;
+> +	cell->pdata_size = sizeof(data->pdata);
+> +	cell->num_resources = 1;
+> +	cell->resources = &data->res;
+> +}
+> +
+> +static int mipi_i3c_hci_pci_add_instances(struct mipi_i3c_hci_pci *hci)
+> +{
+> +	struct mipi_i3c_hci_pci_cell_data *data __free(kfree) = kzalloc(sizeof(*data), GFP_KERNEL);
+> +	struct mfd_cell *cells __free(kfree) = kzalloc(sizeof(*cells), GFP_KERNEL);
+> +	int irq = pci_irq_vector(hci->pci, 0);
+> +	int ret;
+> +
+> +	if (!cells || !data)
+> +		return -ENOMEM;
+> +
+> +	hci->dev_id = ida_alloc(&mipi_i3c_hci_pci_ida, GFP_KERNEL);
+> +	if (hci->dev_id < 0)
+> +		return hci->dev_id;
+> +
+> +	mipi_i3c_hci_pci_setup_cell(hci, data, cells);
+> +
+> +	ret = mfd_add_devices(&hci->pci->dev, 0, cells, 1, NULL, irq, NULL);
+> +	if (ret)
+> +		goto err_free_ids;
+> +
+> +	return 0;
+> +
+> +err_free_ids:
+> +	ida_free(&mipi_i3c_hci_pci_ida, hci->dev_id);
+> +	return ret;
+> +}
+> +
 >  static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
 >  				  const struct pci_device_id *id)
 >  {
-> +	struct mipi_i3c_hci_platform_data pdata = {};
+> -	struct mipi_i3c_hci_platform_data pdata = {};
 >  	struct mipi_i3c_hci_pci *hci;
-> -	struct resource res[2];
-> +	struct resource res;
->  	int dev_id, ret;
+> -	struct resource res;
+> -	int dev_id, ret;
+> +	int ret;
 >
 >  	hci = devm_kzalloc(&pci->dev, sizeof(*hci), GFP_KERNEL);
-> @@ -203,19 +198,19 @@ static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
->
->  	pci_set_master(pci);
->
-> +	hci->base = pcim_iomap_region(pci, 0, pci_name(pci));
-> +	if (IS_ERR(hci->base))
-> +		return PTR_ERR(hci->base);
-> +
->  	ret = pci_alloc_irq_vectors(pci, 1, 1, PCI_IRQ_ALL_TYPES);
+>  	if (!hci)
+> @@ -206,41 +253,13 @@ static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
 >  	if (ret < 0)
 >  		return ret;
 >
->  	memset(&res, 0, sizeof(res));
->
-> -	res[0].flags = IORESOURCE_MEM;
-> -	res[0].start = pci_resource_start(pci, 0);
-> -	res[0].end = pci_resource_end(pci, 0);
+> -	memset(&res, 0, sizeof(res));
 > -
-> -	res[1].flags = IORESOURCE_IRQ;
-> -	res[1].start = pci_irq_vector(hci->pci, 0);
-> -	res[1].end = res[1].start;
-> +	res.flags = IORESOURCE_IRQ;
-> +	res.start = pci_irq_vector(hci->pci, 0);
-> +	res.end = res.start;
+> -	res.flags = IORESOURCE_IRQ;
+> -	res.start = pci_irq_vector(hci->pci, 0);
+> -	res.end = res.start;
+> -
+> -	dev_id = ida_alloc(&mipi_i3c_hci_pci_ida, GFP_KERNEL);
+> -	if (dev_id < 0)
+> -		return dev_id;
+> -
+> -	hci->pdev = platform_device_alloc("mipi-i3c-hci", dev_id);
+> -	if (!hci->pdev)
+> -		return -ENOMEM;
+> -
+> -	hci->pdev->dev.parent = &pci->dev;
+> -	device_set_node(&hci->pdev->dev, dev_fwnode(&pci->dev));
+> -
+> -	ret = platform_device_add_resources(hci->pdev, &res, 1);
+> -	if (ret)
+> -		goto err;
+> -
+> -	pdata.base_regs = hci->base;
+> +	hci->info = (const struct mipi_i3c_hci_pci_info *)id->driver_data;
 >
->  	dev_id = ida_alloc(&mipi_i3c_hci_pci_ida, GFP_KERNEL);
->  	if (dev_id < 0)
-> @@ -228,7 +223,13 @@ static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
->  	hci->pdev->dev.parent = &pci->dev;
->  	device_set_node(&hci->pdev->dev, dev_fwnode(&pci->dev));
->
-> -	ret = platform_device_add_resources(hci->pdev, res, ARRAY_SIZE(res));
-> +	ret = platform_device_add_resources(hci->pdev, &res, 1);
-> +	if (ret)
-> +		goto err;
-> +
-> +	pdata.base_regs = hci->base;
-> +
-> +	ret = platform_device_add_data(hci->pdev, &pdata, sizeof(pdata));
+> -	ret = platform_device_add_data(hci->pdev, &pdata, sizeof(pdata));
+> +	ret = hci->info->init ? hci->info->init(hci) : 0;
 >  	if (ret)
->  		goto err;
+> -		goto err;
+> -
+> -	hci->info = (const struct mipi_i3c_hci_pci_info *)id->driver_data;
+> -	if (hci->info->init) {
+> -		ret = hci->info->init(hci);
+> -		if (ret)
+> -			goto err;
+> -	}
+> +		return ret;
 >
+> -	ret = platform_device_add(hci->pdev);
+> +	ret = mipi_i3c_hci_pci_add_instances(hci);
+>  	if (ret)
+>  		goto err_exit;
+>
+> @@ -251,23 +270,18 @@ static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
+>  err_exit:
+>  	if (hci->info->exit)
+>  		hci->info->exit(hci);
+> -err:
+> -	platform_device_put(hci->pdev);
+> -	ida_free(&mipi_i3c_hci_pci_ida, dev_id);
+>  	return ret;
+>  }
+>
+>  static void mipi_i3c_hci_pci_remove(struct pci_dev *pci)
+>  {
+>  	struct mipi_i3c_hci_pci *hci = pci_get_drvdata(pci);
+> -	struct platform_device *pdev = hci->pdev;
+> -	int dev_id = pdev->id;
+>
+>  	if (hci->info->exit)
+>  		hci->info->exit(hci);
+>
+> -	platform_device_unregister(pdev);
+> -	ida_free(&mipi_i3c_hci_pci_ida, dev_id);
+> +	mfd_remove_devices(&pci->dev);
+> +	ida_free(&mipi_i3c_hci_pci_ida, hci->dev_id);
+>  }
+>
+>  static const struct pci_device_id mipi_i3c_hci_pci_devices[] = {
 > --
 > 2.51.0
 >
