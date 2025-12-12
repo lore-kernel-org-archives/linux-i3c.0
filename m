@@ -4,57 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9FBD4D59F51
-	for <linux-i3c@archiver.kernel.org>; Fri, 12 Dec 2025 23:06:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F2FB8D59F58
+	for <linux-i3c@archiver.kernel.org>; Fri, 12 Dec 2025 23:07:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1M2XyJM0d7qCWMSbPlJXzr7CVW5K6YT1g6xcFwoM5kg=; b=ffCoN8RVjCeeRl
-	LG6ECSjOlU+SDLIUs3WLOpeaFIhqdoUHrOle8OqjxPWX8T6ExHVNEZoEZBtCDBiAxgPsDxmDgjl3n
-	WpV6SB6SSKpe5SuQEQL1ahWFQvZxq5VxNVuiSiEtwgdj4OPb5DIXmalxg3dlWCkPBGy5D9qFFK2H2
-	EjTBcDOyP7tp+JAvVE3drQ+uORCSZDMNGs3gRkzerCgMKteAky75XiFVfbtsFfgFhd6ra9cBlMPIG
-	Dyrlld3RSJTSHd1PmPwFOPJBqTsYDj2zffp2tws9xJSLCZv0Anml+lhzZ9NOpKsy+cpMXRLdBCnrA
-	ANbMjICNUf7BdLhtZsYA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sHhRXiTW92EtP1JyeQUw8hcA3WOT2gEkqlpCdauzNOg=; b=2qOB58UWXxalzI
+	FIwCYEz0DHpbIxelMQeM0ZprMlt1R3wQ0xxQxamySpfKCZHkXkwercP/j6pWWganVNLAvEqkVcL2y
+	37oScAGnSSMhe/DSgtIRFdpNJ9g2HRMDAgNpT0u8XVj3euBIsvYaGu4R0DS6bl8F3+bghescC7o2u
+	ggqc3/9L7cro1t6k30eDc6aeE9Xpvvj/YgemPwwpOBa21W1eXYFmAWN8vveff2CfhQuUbDgIAs53T
+	YuMZmEQ/dOfbkJ9MH3rk7kQXrAtutFiKuIvoOCR9hvyvwvSd3pbPzfRzenuZpNriIApleMa3dAmJT
+	rSPwOyYHWQOtLwicOAyg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vUCDd-00000001CVS-1Y2B;
-	Fri, 12 Dec 2025 23:06:37 +0000
-Received: from smtpout-02.galae.net ([185.246.84.56])
+	id 1vUCEL-00000001CbL-2q1J;
+	Fri, 12 Dec 2025 23:07:21 +0000
+Received: from smtpout-03.galae.net ([185.246.85.4])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vUCDa-00000001CUd-1YvZ
+	id 1vUCEG-00000001Cah-3O5D
 	for linux-i3c@lists.infradead.org;
-	Fri, 12 Dec 2025 23:06:36 +0000
+	Fri, 12 Dec 2025 23:07:20 +0000
 Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-02.galae.net (Postfix) with ESMTPS id EB2EF1A2149;
-	Fri, 12 Dec 2025 23:06:30 +0000 (UTC)
+	by smtpout-03.galae.net (Postfix) with ESMTPS id 64DEF4E41BBE;
+	Fri, 12 Dec 2025 23:07:14 +0000 (UTC)
 Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id ACAF2606DF;
-	Fri, 12 Dec 2025 23:06:30 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 2D7C2103C8D89;
-	Sat, 13 Dec 2025 00:06:28 +0100 (CET)
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 3A1B7606DF;
+	Fri, 12 Dec 2025 23:07:14 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id DFE98103C8D89;
+	Sat, 13 Dec 2025 00:07:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1765580790; h=from:subject:date:message-id:to:cc:mime-version:content-type;
-	bh=Qhm2EJ0O9NO+flteD9ko907BfVypYh2PObEgLRGyCHI=;
-	b=vGxHQqgTYPquoPdqxybZVAC8YMwdBf+gIhAS0MKL0qU9BlA7UfsrpN7yJ7+RSG6VX+ulZ9
-	p73InNtuTS7CKio1Mspy7Y116SSGPiZFz/B9lKNhLd5IVKbdDWrsXP8Eo1G+VUPGjML+Dd
-	fg3fLjfYwYzAp/ibnD5KC2xyvuWrdnZdtKSplwyIl7Qa9eWxxqeFFIW0uapBF6CJhdY2VV
-	e9ZuMLUFCp3AxulaHbKeqyIcGZfuOzvcb6VwoQb22utbde5ysmy23gWUxAnPD04yf9CUX2
-	RJjJI/QsNG+H/k0FLdK4TXh9WMOvZJMigPuAnrIQwTrpe8eoFDto4SLdPTze3A==
-Date: Sat, 13 Dec 2025 00:06:28 +0100
+	t=1765580833; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=bDaKGEZ61DFeAm9Oy1D6NKbVJaadd6WZ6QJ+ePPrDDU=;
+	b=uCVRl62AiA2Qu5JGY41QyIdn78FVvzT2EFzV1+We54jbRKoE8hXrnmNZY835xFO+4prQ0P
+	YVT2LtXxGcGMlmQjuTgM6JwqcwdrAMH0RIQCcrrywH/drfnQgb6A4bqwFhrYyLcOb38fk6
+	Gu0Fg1l14P1f0e1nrdGwFvxXA627KtljC9MuRaAQgYqXiq3u6cRx8zRGvv51kbWb4Pk3w7
+	kTM3no4smjZBDpliygVB7WAihrnPRoT224QM5v36vE5VBPS8xmQ63S8vW6utPvw4ZFsiF+
+	iCM1AoWtky8NpUQK47FDDr2Ujccyw0eup99nmW/t7o8vMX3GEeDrvSmrAKuHjA==
+Date: Sat, 13 Dec 2025 00:07:09 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Linus Torvalds <torvalds@linux-foundation.org>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [GIT PULL] I3C changes for 6.19 #2
-Message-ID: <20251212230628a6dfdd16@mail.local>
+To: Jorge Marques <jorge.marques@analog.com>,
+	=?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>,
+	Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
+	Frank Li <Frank.Li@nxp.com>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+	imx@lists.linux.dev
+Subject: Re: [PATCH v2 0/2] i3c: master: switch to use new callback
+ .i3c_xfers() from .priv_xfers()
+Message-ID: <176558079620.1405691.18176288166178254349.b4-ty@bootlin.com>
+References: <20251203-i3c_xfer_cleanup_master-v2-0-7dd94d04ee2d@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
+In-Reply-To: <20251203-i3c_xfer_cleanup_master-v2-0-7dd94d04ee2d@nxp.com>
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251212_150634_545570_A9813465 
-X-CRM114-Status: UNSURE (   8.38  )
+X-CRM114-CacheID: sfid-20251212_150716_973965_6D4F1379 
+X-CRM114-Status: UNSURE (   6.86  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -72,49 +80,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hello Linus,
+On Wed, 03 Dec 2025 15:45:49 -0500, Frank Li wrote:
+> switch all controller driver use new callback .i3c_xfers() from
+> .priv_xfers() and remove .priv_xfers() in framework.
+> 
+> This serise is base on
+> https://lore.kernel.org/linux-i3c/20251027-i3c_ddr-v7-0-866a0ff7fc46@nxp.com/T/#t
+> 
+> 
+> [...]
 
-Here is a second pull request for the i3c subsystem. We are removing an
-API and having this sooner rather than later will help ensuring no one
-introduces a new driver using it. I've also added patches removing the
-"__free(...) = NULL" pattern because I'm sure we won't avoid people
-sending those following the mailing list discussion...
+Applied, thanks!
 
-The following changes since commit 79c3ae7ada0548d5097bdb65dde5d24a7d660fae:
+[1/2] i3c: master: switch to use new callback .i3c_xfers() from .priv_xfers()
+      https://git.kernel.org/abelloni/c/eaa0870387f9
+[2/2] i3c: master: cleanup callback .priv_xfers()
+      https://git.kernel.org/abelloni/c/41b80d43d9a0
 
-  regmap: i3c: switch to use i3c_xfer from i3c_priv_xfer (2025-12-02 17:33:02 +0100)
+I4ve tweked the doc change in this one.
 
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-6.19-2
-
-for you to fetch changes up to 136209e6bd981e60db6c0e78f2919ff2f92312d4:
-
-  i3c: adi: Fix confusing cleanup.h syntax (2025-12-12 23:59:39 +0100)
-
-----------------------------------------------------------------
-I3C for 6.19 #2
-
-Subsystem:
- - remove .priv_xfers
-
-----------------------------------------------------------------
-Frank Li (2):
-      i3c: master: switch to use new callback .i3c_xfers() from .priv_xfers()
-      i3c: master: cleanup callback .priv_xfers()
-
-Krzysztof Kozlowski (2):
-      i3c: master: Fix confusing cleanup.h syntax
-      i3c: adi: Fix confusing cleanup.h syntax
-
- drivers/i3c/master.c                   | 17 +++--------------
- drivers/i3c/master/adi-i3c-master.c    | 18 ++++++++----------
- drivers/i3c/master/dw-i3c-master.c     |  8 ++++----
- drivers/i3c/master/i3c-master-cdns.c   |  8 ++++----
- drivers/i3c/master/mipi-i3c-hci/core.c |  8 ++++----
- drivers/i3c/master/renesas-i3c.c       |  6 +++---
- include/linux/i3c/master.h             | 12 ++----------
- 7 files changed, 28 insertions(+), 49 deletions(-)
+Best regards,
 
 -- 
 Alexandre Belloni, co-owner and COO, Bootlin
