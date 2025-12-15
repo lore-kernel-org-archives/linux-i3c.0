@@ -4,153 +4,186 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39910D5B84D
-	for <linux-i3c@archiver.kernel.org>; Mon, 15 Dec 2025 16:25:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BCDE4D5B84D
+	for <linux-i3c@archiver.kernel.org>; Mon, 15 Dec 2025 16:51:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DVoDcBZkrOOoi5vDqHXuC6sfQBmFlAy+00w59noCD4k=; b=OdbKf4ea98HF00
-	s3Bz1Wd8CT01EIlNSXP0yqiz2bgOo9swjSaTOx9W8KTiVwxLx45HCOcuy+MUx+2eqHkWZeGpr9ny0
-	7INDnibYJfelSeOxWMCdrQJBWr7OvXj/At7M5rN1Nk8DpLm9pG0ooFU/EdLJTsQ0fKQemVWcT+Esh
-	LZO6kCHnYz2j6NhrJvTaQI3bKo64wlBkaY+3789uADSImWzBGDQ6trxncV++9LoVYincJvmwFFExB
-	7j4uU6J3b+va+zEhD5uFSFRjtRJyI3qWqsRKQRgArwii5urWp8m27+j0RJThjmQWRvuw+pun31Jwr
-	itoIpLJJ8Kw6DL4REWNg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Cc:To:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=H+Io+/U3vGz+GTWvU6w5o7jgOOx70mgWYkxVOhWe8Hg=; b=ijaZK2EX5u5x+m
+	/p75+Jsy8S9UJ4k/+nuBipD2KM4sMqO7XPxHA1JapqZqfIoRSvU0q2W/1cZVN55JfTPEJ1EheQiCV
+	eQePGX2BmqhgWf+uQkHQ0ub5ctxvFykqaCtd2IiIw7NDGa4js4A9l80gbd30KnJ9yGT1mt/IVyNaZ
+	+oRs3JMxNbpqRrF5LVS/+YZ6mh9uKYxupFfgNSXXL3XVkVuOVTkDOP0E0auYkD8MEPvEL5JBK43i4
+	5a48oBppfRqBO2ZB+ki4GLHhOBNoYKTFKWAIaWzfGPd/gSGjonMI2v8A35vFGCphmfKyVRFrvb0+x
+	Mlv6Wc8tZZFMKJJClFTA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vVBOC-00000003yzs-1Rti;
-	Mon, 15 Dec 2025 16:25:36 +0000
-Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
+	id 1vVBnN-000000041Uc-1gGC;
+	Mon, 15 Dec 2025 16:51:37 +0000
+Received: from mail-northeuropeazon11010067.outbound.protection.outlook.com ([52.101.84.67] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vVBO8-00000003yzU-38nz
+	id 1vVBnK-000000041U4-2v9C
 	for linux-i3c@lists.infradead.org;
-	Mon, 15 Dec 2025 16:25:34 +0000
+	Mon, 15 Dec 2025 16:51:36 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=NXP3rRRllSSpsPd7nNlfOMdlxuJ9mxYiZNrfpnvmPbcmbkA4vf1n/Rzs9eRB9bMaFyODuUl7jby6Jf6edrWP7CY1LPPiArGM3nxYOseMD/9JcCQgMMJU9/N0DkOxoiJ4OwbmsvMTUvTw8MM4DY+9yqou9fQCEpFQDJv8XcWJpmtf3Sjkk5TDejyaDyys5x32J9Wy6t3bNDbDE7RMnT8EcgiTsNGV/eB2k51JfeRceEAlaSF50GU49yQGud8di579CAFhhqc6ucsvmohYk/w8qt73fjwEakTegDOjjWiHKbhIuvwsPjykOlwLMPVAojKvg+eLVNRfgOntT/WwsZ9Mxw==
+ b=kXwpo0YbLmS0XPYjwMxHsg+tI4wH1st53yXLm9nWhQNMhNm+8zmmzG/fcnIrreG4YgZTeCg9Xp4hGgVkHVvkF5QsX8tnI+SH3pcrt2NLS46c6qRAP1niBKvLXDqtWi4p3zfiyTFLa/LOJc2SfmCiEILYUGaqQOXO8HFHCHPViPYwRluHmwYPjZRAItIhog7UaSbdQsJbXPNyyAYbMpcmS0RJUgcBPqoQPKeNZnJYQ8vRLGq9IAPntCB+IfCJwX3a0J8ZRcpm5hI+Xxhme6ta6wKHj7ZbkExu4V62NFqIGAewdPIM++zEYodQME654i9jZTVoYon/y+r5sDg8Onq1SQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=s3YaSHHztlt0Fv6Nf9Xi4x8nXnWqnJtmo/Q5s1ja2Vc=;
- b=CN6Rw+XGnE7yYhXO0UGNpYkfZuuOPXrPzikZM8JdYOpo+d7rTjVaiLg3t8CGo+ASDV7Wctf2fmDeIfbX/OMj4ae66b8LE84f1BNE0kihK7ErNnqDgw45uZLybf41qadzw3XprdrqmCY15lgha/QC6MzSs7ycvqTanY8cqyQ1BXexf0erif2WVf9nHkFDAe9SE7CSLMQ7FWNujto5iSvR+QxVeJkEfJMRw8MGintZ5dtIoVpGUuDu8UbHAfx4JEHnZyeMILVIJuBt9nwaJZZapwsFaIW6RxBfoomFWuPUeFa5CZ7AK6mIna/tV+McGBJZp2cBFo2UcfblZ2wysG2B+w==
+ bh=OM+r3Od/leHPIt9S9y7YAbP7UAT1s4TjRAvuqqmG4Cg=;
+ b=Apk3xGdmjqcxUvDH1wsxr+fwRfTmzUom6hULh6h6Nn++4DcR3/kLgb/zA1YD9iWg21U1jS1sKe2UBngAftJ1Vn0dCBlG6IrKhW3tRCl8KRbwDpW8iGNtuYdNbMWH1mtSPXF6ahkxzmsTeoRkGij2RDbPC/hr4B0PnntZBSiPux1avID1HZfxinGkyWTwhcHM84OeIxWqDWTnIZzX+cWgFaKBnnW4H5Xexq5A8Hj7ak3QMd1wLDEr2/kb61fb27kryfDy6g6mvIkdurQTdVLfoC9btFo97tVefB/zhbLi+elFacYfui5ET0ORJIa8kT4tZBHUV5ryy2N6kxGgZhbrOA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=s3YaSHHztlt0Fv6Nf9Xi4x8nXnWqnJtmo/Q5s1ja2Vc=;
- b=PcsceS6QHUuWqqtN1GPSZD9bFzeAl0fWy/Tug4BC8BTsdg0uBwofgeDvfd+ooEbQyRyKPt/AxloLCLcMl9W+90CAaVHr3y3znjE0u46rKG2aEabM5ZVX89tGbexydoZjVJTdfpovfjPmpqgerKE9Oet65HV9sY6hTQ2v8G6mskfgK3B+4xZLZLazg69dhCLQwzlOv8e9my7WIr+n2EKK0gS/LRlhOhyGXA96LXTSngD9cve2DK9ESLMryTTa3NwSCwiGs8bfpOrKn2HfZ1Vsr0Er6ix8pGaeB35HRMRUmzFyfWYDHSHlUS9dDS7IwNpsHU2XG0T9ieS7he4LqVgOwg==
+ bh=OM+r3Od/leHPIt9S9y7YAbP7UAT1s4TjRAvuqqmG4Cg=;
+ b=bR91H+xtxRTk8rgAF1PIlm6FPWAAPNT98ej+N3vMp3om9jUuEUrtDqk5BZ3RZB5wYqpj10cijy8CZcJl3hja2LCG4diVoHbwYtxyuTk6HkSCQZ1OZKtLAi2eMOHITSUV1Vs/XxtjOfs6A7v7RXp8LNprbTEP70SKVkxyoRZAHxOA5j4p3a6+vtb9MDjg/fKk7GSq5BCynEMQfjyMEXshRsRVJRKVjHDP2Gnpjs5a3PsFzjkBbuBRdiU/yTMejSjd1l0dBwIfSnDj2WZ+0O6mTZrTXK5MV1DsJoRwzJ94Sty9fFgQx6KQ1D/L9fYuVdUN8l04XrKZ0rtie8cT0UdZMA==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from DU2PR04MB8951.eurprd04.prod.outlook.com (2603:10a6:10:2e2::22)
- by DB9PR04MB8155.eurprd04.prod.outlook.com (2603:10a6:10:24d::23) with
+ by DBBPR04MB7913.eurprd04.prod.outlook.com (2603:10a6:10:1ee::7) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9412.13; Mon, 15 Dec
- 2025 16:25:28 +0000
+ 2025 16:51:29 +0000
 Received: from DU2PR04MB8951.eurprd04.prod.outlook.com
  ([fe80::753c:468d:266:196]) by DU2PR04MB8951.eurprd04.prod.outlook.com
  ([fe80::753c:468d:266:196%4]) with mapi id 15.20.9412.011; Mon, 15 Dec 2025
- 16:25:27 +0000
-Date: Mon, 15 Dec 2025 11:25:22 -0500
-From: Frank Li <Frank.li@nxp.com>
-To: Louis Sautier <louis.sautier@ovhcloud.com>
-Cc: alexandre.belloni@bootlin.com, linux-i3c@lists.infradead.org
-Subject: Re: Error while loading dw-i3c-master: UBSAN: shift-out-of-bounds in
- drivers/i3c/master/dw-i3c-master.c:885:12
-Message-ID: <aUA2cr9M2iGxN+rQ@lizhi-Precision-Tower-5810>
-References: <202512082058408ee92ee8@mail.local>
- <b9b568e8-8e21-49ac-b3dd-ab750fc329aa@ovhcloud.com>
- <202512091248543fcf4c83@mail.local>
- <c7e29aeb-c258-45e6-af78-9a81ee8de327@ovhcloud.com>
- <aThbaFalAXblN56U@lizhi-Precision-Tower-5810>
- <55935d9e-a647-4cd0-86a0-915c4aebc302@ovhcloud.com>
- <aTmPs3yviUjr2lXR@lizhi-Precision-Tower-5810>
- <d087f1c8-12be-4456-ac7c-978a82771ab8@ovhcloud.com>
- <aTr21PvJUH3+Cwqp@lizhi-Precision-Tower-5810>
- <365eca18-446c-4cb2-a3e7-1f07136137f3@ovhcloud.com>
-Content-Disposition: inline
-In-Reply-To: <365eca18-446c-4cb2-a3e7-1f07136137f3@ovhcloud.com>
-X-ClientProxiedBy: PH8PR07CA0014.namprd07.prod.outlook.com
- (2603:10b6:510:2cd::25) To DU2PR04MB8951.eurprd04.prod.outlook.com
+ 16:51:28 +0000
+From: Frank Li <Frank.Li@nxp.com>
+Subject: [PATCH v12 0/2] i3c: Add basic HDR mode support (sensor part).
+Date: Mon, 15 Dec 2025 11:51:09 -0500
+Message-Id: <20251215-i3c_ddr-v12-0-1ae31225b4d9@nxp.com>
+X-B4-Tracking: v=1; b=H4sIAH08QGkC/3XSzU7DMAwA4FeZcqbIdn6ccOI9EEJp4rAeWKcWV
+ UPT3p1sQjQd4mgrny3bOatZpkFm9bQ7q0mWYR7GQw2QHnYq7ePhXboh14QiIAtIoRt0est56nq
+ 0xvsAKL1X9fVxkjKcbqVeXmu8H+bPcfq6VV7wmv1bY8EOOiAfOdpsNJnnw+n4mMYPda2w0KoCm
+ VVRVc5TBOk1Waat0o3SsCpdVe+IcyIpeK/Mr0IAXpWpSsciseYts90q+4+yVRlj0JvCTFa2yjU
+ Km7ncTy8TmDUCbxU3ippeXJV3LkIpXJJxW+Vb5Vflq+Jgs2TKvU932wiN0riqUFVBsaSlj4X9V
+ iGsDKEZDOuVO9FiUp+QQd/dGbF1rnHX/6F1dNE5yRCa7V8ul28CdoEQvQIAAA==
+X-Change-ID: 20250129-i3c_ddr-b15488901eb8
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ Miquel Raynal <miquel.raynal@bootlin.com>, 
+ Jonathan Cameron <jic23@kernel.org>, David Lechner <dlechner@baylibre.com>, 
+ =?utf-8?q?Nuno_S=C3=A1?= <nuno.sa@analog.com>, 
+ Andy Shevchenko <andy@kernel.org>, Rob Herring <robh@kernel.org>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ imx@lists.linux.dev, linux-iio@vger.kernel.org, 
+ joshua.yeong@starfivetech.com, devicetree@vger.kernel.org, 
+ linux@roeck-us.net, Frank Li <Frank.Li@nxp.com>, 
+ Conor Dooley <conor.dooley@microchip.com>, 
+ Carlos Song <carlos.song@nxp.com>, 
+ Adrian Fluturel <fluturel.adrian@gmail.com>, 
+ Andy Shevchenko <andriy.shevchenko@intel.com>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1765817484; l=3469;
+ i=Frank.Li@nxp.com; s=20240130; h=from:subject:message-id;
+ bh=4HRVS5+STWD2ufFspkYYAuS93c//5Mm7gbSMM3b9qqM=;
+ b=17oazU6wz/zzMgJsERpZyqq4z+KfiWJ+HeY72psZBy4AFTAWMf9xKPOhzQQbpdqDZS5/C9v1Y
+ ZBbTgxUNIPICtFNEUy4EvYTHbs9ix+MuZC8zOvt4HbowTiCv+zV5ewe
+X-Developer-Key: i=Frank.Li@nxp.com; a=ed25519;
+ pk=I0L1sDUfPxpAkRvPKy7MdauTuSENRq+DnA+G4qcS94Q=
+X-ClientProxiedBy: SJ0P220CA0017.NAMP220.PROD.OUTLOOK.COM
+ (2603:10b6:a03:41b::27) To DU2PR04MB8951.eurprd04.prod.outlook.com
  (2603:10a6:10:2e2::22)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|DB9PR04MB8155:EE_
-X-MS-Office365-Filtering-Correlation-Id: b15edd25-9454-4ccc-373d-08de3bf68ed7
+X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|DBBPR04MB7913:EE_
+X-MS-Office365-Filtering-Correlation-Id: 06966abe-796d-43ab-eac7-08de3bfa3130
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|366016|1800799024|52116014|376014|38350700014|13003099007;
-X-Microsoft-Antispam-Message-Info: =?iso-8859-1?Q?b3VMQInfPwmgbp7+drxDkf57iS6wDA2GligXdnzUylYLLoMowwJNSbE8Vx?=
- =?iso-8859-1?Q?Kvrv5AR/z4ZpSvyxVb/q6l5qj1LNIKUqAquG8caN4IU/QbVjdDLUabIA90?=
- =?iso-8859-1?Q?OsyyQWwRj/sFjMl6wypCliCi5LbShFPEdvqI3hSK1GgZnyhK+rGRBEZMlK?=
- =?iso-8859-1?Q?pMraFzSByRYhWdodAwKCNXjEt7UdyhFjHxBjLRGxXyQWM24pFauSO1fufB?=
- =?iso-8859-1?Q?L4mlWB3gzI13+AA4fzUXB0vnO44+BWdbJMHMCUFxNNAaCjIwAziV9LRCHD?=
- =?iso-8859-1?Q?Yb3a+s3NezW9sDGvmYX/KHow8wBNlSlxR60fIOdyz+Kt5XqLUFfMDzFGEe?=
- =?iso-8859-1?Q?P1jh/3xGQyoF34jFnycGtTGcR89WkdyIEyhNh61lYfs50Y+24ntWPhqkZw?=
- =?iso-8859-1?Q?erYq3INnWqXScGXJI6WmgvK0FJF/WfpGN3mEI/T6tinjcdGPmFDruAztX3?=
- =?iso-8859-1?Q?Myj7LzAv7RF0aE0IsyFtU1RjVLGtDlWj8AHazvOW09p5tTEuWZwm5OQRYM?=
- =?iso-8859-1?Q?nT0jAAwIyBSnfmMc07NA5tMOvV5G9b50bPukj/ffQvGCloKwMGgmkvA2wz?=
- =?iso-8859-1?Q?jvW68Qnm3Vn3TplTNcJHTakfgPiQ1/vumd503oazy2HtWf4/jqc328yeaz?=
- =?iso-8859-1?Q?xvKH2UyQEQcZWlVJhkuskJsWemTKHv8LaNxO55r3mlHby8tpdl6iaMNTNQ?=
- =?iso-8859-1?Q?zpH9EfDoSfDkmSjkyV3vkbW2MNbDtWoZegbA5rkrnnEwEqBetYr4KLrSXD?=
- =?iso-8859-1?Q?enTxoxw8zEGJqRVy5FbqWy4bK6UayIkm0YQn7B1fwAVxiuX16cawUKs2eu?=
- =?iso-8859-1?Q?BDPQH2af9FC55twmH/J9x+GDSlshhRdJvIVVUFX7R/QdIsKzL3WeJYoLup?=
- =?iso-8859-1?Q?pcCrhyIEhNflSD9rEtj2/ytOgDS+m68M36D0tJI6tAd03gkLo6HFobm/zF?=
- =?iso-8859-1?Q?v1etz7Zz8nTYN/IAb7drwpXgt/93e+X8xPqL4uAmAucJ389KvPDNkudzvv?=
- =?iso-8859-1?Q?bni1hRhe1vCN0U3tdiGCjd5N5Xv1e0ap8Qisc7TDVO9Rpr980VDCpXh27U?=
- =?iso-8859-1?Q?3y7QV3mmWdPqTW5krWxPFYqXfxxDpBL72Lv9/t4iEw3q1r+GzBd51SKvAP?=
- =?iso-8859-1?Q?vlRL1mZ9xAxNnqj9z0KepW/5fkyCpnkeJEE41x5xdx9uQEdUf3VlOiIHer?=
- =?iso-8859-1?Q?FLVjU1lJHV6XnQjMlkA3fz4CpTV3aH7BgFh7+liPPDdu+o0U5IMs6fAJv5?=
- =?iso-8859-1?Q?+Qoo6Aun4P86vTQB6KkTtpvySILNyEtjK1WuxmzTjg0dC/7GDUabh3/79p?=
- =?iso-8859-1?Q?feQl4sJv3VbPdK2GisID+ESzD/f3mwrNhz46DUIlxcqvRXbG+VJP4rXt9/?=
- =?iso-8859-1?Q?z7W6MC0yKHGqDHmk3ip4ZN5Jefn2wA9862NRx/NBol7oRf1SyfmEq75c/P?=
- =?iso-8859-1?Q?DQTGwmkY0YTGNNemPSiPxOku7lR4ii4YCLI+mj3hGOKXGD42i8y2NOQwtT?=
- =?iso-8859-1?Q?S6S+rompfIBdN+9C7pjj1F9DBV+wZCtJwPyarREF7/Qg=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(366016)(1800799024)(52116014)(376014)(38350700014)(13003099007);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|52116014|19092799006|7416014|366016|376014|38350700014;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?NXQzeTdpRjIrWWhveGNvUm51aGxEL01HSmxQSi9aNldQNGJoemlxaDI2eXF4?=
+ =?utf-8?B?NUN2QTVXc0hyaUc1RmdXSGoxUVcwM0E4bW1CUzFNcUNxY053L2xRNlpaTklj?=
+ =?utf-8?B?SUdQaDUxTmVFR21Xc1diNXZCeEdCY1o1MytuanN3VDF5NHgySVgvQkh3b0ZV?=
+ =?utf-8?B?ZE1ER3U1N1M1NVBnVHl5TWlqL1FNNWdBcUFRUEl4R2pyL3ZmMTRCYnVZYTZ0?=
+ =?utf-8?B?dG1KQ2pzL1JiY3JvbnJpSFdSTGhaWnhwMlB6Rm9FdUJpQzRQcDNzaGNHSjkr?=
+ =?utf-8?B?TmtzNzF6ZWE5WG5BY2ljNy9xcEdETXQ1Z293V1d1NlZZaFpaRUdmRWVrZTk1?=
+ =?utf-8?B?cWFlM2w2U1lTQTFCRjlZTU5tOFM0Tm5ML3RDVFZTTDBQM1ZkK1cvc3FWQ254?=
+ =?utf-8?B?SXNHWlIvVjRoYmFWL3MzUjE5b2xDUGxYRFo5TGNLUU5XVXZLSFA0THFsdVF0?=
+ =?utf-8?B?bXQ0dHRaMFQ1M3djQS9CWlkyNWFPcHhqRmdvWFR0bHJKTGdxcktDdHlOWUVY?=
+ =?utf-8?B?dXIycHB1YVdraGxadmlqaUtuRmN2NTBYOE42dHJvU0tBMnIyVGFrYXNRdGxN?=
+ =?utf-8?B?WGlKWE5TZ2x4YjYwdW1wSStiWGxBYU9FU3lhTGhhK1VhamU1WWxGQWVxZjhx?=
+ =?utf-8?B?bmZGa0pla2M3cUEyOVM4NWRaWDNoajNaWFd5UGFiUEtJLzEzcmlnU0dBeFY1?=
+ =?utf-8?B?U2lvY3E3dTMrT3Q4SkdoYzdUbU5QTmJuN1BOMnI3eEFXL0xjRVMrNStQK0Ex?=
+ =?utf-8?B?MVNzUnpsR29RRGZVd094eWJrMXFrRCtiZy9Md1B4dGFGcmJreW1VWFJUcE4z?=
+ =?utf-8?B?dXk2VFp4bkdRY0xwdWVBNlhKSEtZc2ZVRE84NWJhR3p1SEZnMFltMzRzdnR5?=
+ =?utf-8?B?aHQvOFlJWXd4OGcrM0RUNDBUYzhXV0JjZ09YSmYremFST0YvRTltQmYxTDZE?=
+ =?utf-8?B?TVczRHdnQzlwc3lGOTgxRERtR0F4RmszeHlNN0JENVh5UUxwWkQzTEsrVFdX?=
+ =?utf-8?B?czBTTDdVVjhZY0dWVHdVQ3N2RGNwOSttMjJIRUxlVWludXIyM3lPd3NRNFZm?=
+ =?utf-8?B?Rk1jN3FPbWl2Ums5cGRtZXZJVVhtNWFaSXVTYm10Ynl0cDNQRm00azJ5MUxW?=
+ =?utf-8?B?Ny9HeFVXbzhpSENmZlJlTnJkTC9Tdis4UVJ6aFRiWnhtRGtFaUFTNW56NGpK?=
+ =?utf-8?B?SDRaUVhSTWxLZ216QnYzTDQ0eWswbm4zTjhlQWwyTnlzOTNCbjQxMTIzMnFY?=
+ =?utf-8?B?MmpZaG01dHdCNy9aL2tUS2oyNlliWVRVZzQ2Y2ord0g0bWQrZU9TMjkrS2cv?=
+ =?utf-8?B?bWl6eFVRZjQyelpSQUd1QWRkRzZqZXlFRHVvUU9uK2w0M0FLKzlDZWR4MEts?=
+ =?utf-8?B?MUxMTkpXRkZDV0V1Rml3TS8wU2d1VHRISXJGQmV3dFJ6cG9vVlNNSWJHSFhs?=
+ =?utf-8?B?dkthVENtMzhKMDhWN1VkbnV5UkZyY24yZUYzZi9TZDJjL1VrWnlhTDFHOVp6?=
+ =?utf-8?B?L3UzUTFGaFdRa25qVjE2bm1ROTZvQnFQQ0s4UGowZ1lWTU12bnoxMUk3R3RQ?=
+ =?utf-8?B?ZVBMZ0xoZkRVdG5qeUs0d1JMY1B6ZjZybTJhVEt1M1p3OGNDUnJSV3ZFMDNo?=
+ =?utf-8?B?S0x2eVBlZEUvVkl5NlI3RTBJNDNQeEYyWU9jZW13SVpNb1BpSUUxMnhaWWNE?=
+ =?utf-8?B?VGNKcTVZSkdNMkFXRFV0d28xWHVUN0dkM0hUdUtRK1VhdTZzU3JTUFdMWllT?=
+ =?utf-8?B?OWtzcXFaaTByTllQTStzcklQZTFJSFJDOWpVNTE5TmVFODJGMTIwZTRONG5E?=
+ =?utf-8?B?bCtCK2d1bWJEL1VpZDZrSHpZTUlxaitMYy9LRXpmdm9vVWZZTVJKTVlFUE5O?=
+ =?utf-8?B?a21iZWE0cFZxeU9qYlNaK3h5Y2tSNENubS8rdWNCNDFRTTJtWUw2ejVsVVBQ?=
+ =?utf-8?B?ZEJNYWk1NW9YRTA1V1dScGtaRG45M1EwWmxXVUdDT09OMnQwWk14UVgwQ3cv?=
+ =?utf-8?B?a0NVZ1ozdTdnUi8wNUs2ZWIvbEluOXRtWnZUNUxnMnJ0bmo5THVBZWNvb0JI?=
+ =?utf-8?Q?zk5wb2?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(52116014)(19092799006)(7416014)(366016)(376014)(38350700014);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?RwsrYlDIp9Tf8WlxHDDk1yacHPpEOHOaaR3nnhJxFdkmfeaIJ7Fq/3j0Q1?=
- =?iso-8859-1?Q?3nUmo4CsXJt4X5Fd+xLYRayixhIlI+TDfB+DAL5c+rWyRqrAQdZeyybbJ7?=
- =?iso-8859-1?Q?mhiVEU7lRVPCQ/1uv5gufEQKTyb6L+tQSxBdf908Nl4/5fbA6s14GagTmS?=
- =?iso-8859-1?Q?NIhawPWgg39TGJ76qaAu/H1SeufMC06WiWimXnE/wNtRnCMX0U6v83XzjE?=
- =?iso-8859-1?Q?WMZxiM3tVdf/usGIhVreXzWob+kCEXvPXJakTGzXKgrmzzthBACcEOQdDG?=
- =?iso-8859-1?Q?TFwnwCbUWxfd7XbL6FcAEVMlMv4TghwVxZ/4oNROR5wVolQPo4n9C5oGbj?=
- =?iso-8859-1?Q?VTXKrtthT3hPkm3kvz6ZbGmji1wX/30sqBIvIJbOCRVIsviy0Olg5GpDoV?=
- =?iso-8859-1?Q?LSzYpoCb3QaChnS+O42kps9ixQ3FGIR/fsbeNYq+nEIlCkf6osj3onduDZ?=
- =?iso-8859-1?Q?DBAPfel704CoxW5HZZV5pxxwn4UVjWYWutRxeIqfltInnFHDOk3GHM6U15?=
- =?iso-8859-1?Q?4Rd4jQBjJRBPhWxLRsjY24mI7/Tzlmj/0xHlXHmYnbDZ8yul2QH58PW757?=
- =?iso-8859-1?Q?kSZmPIDwXx5KGHT29z731nww81var3SfCT+jkTS3dxiuAemMYwKuQqZBkB?=
- =?iso-8859-1?Q?RTXb/8WZfUFdF4dnlKPAvWKEl5JYRy9BTK7+k2mDiPcoSswgIzIi2/Rf+X?=
- =?iso-8859-1?Q?shDBTPj9TqCqYkcuUy+43XKO/Pn8IhLo9huUPt1iR2x9VwR4t02wIeUNSA?=
- =?iso-8859-1?Q?lF8A7riaUEfJK7cMt05jQ/CYVcYtmpj3YysTDkOr4HQLHXwNSn0jRNtHhP?=
- =?iso-8859-1?Q?HiFVjU+umZ9w+G0vwBY5RDZbqgS5lXWEv7GCFWA2p2qMcNcwxsZDVPaTji?=
- =?iso-8859-1?Q?R/BkHPsofR/W1VrAZOdDkaW5cdLMzQsrdgqflsdPdHyVaVsKaWmPTXsp+S?=
- =?iso-8859-1?Q?83rtspjmCR8tNRv24RSEgtuQktzcQlx7/tR2KkqiuWoRNHc1mq98V8hzEb?=
- =?iso-8859-1?Q?+OVzAVJVQSFp5A/g3jgD0F7R3XlSAIK8g0krbNCnCSiMpxIsWcmAvtTR/5?=
- =?iso-8859-1?Q?Tgwa79xhrLRXHhxi7FIcrBxRzC6UESj7s6lTl6hnSYW7ye/I0b5y/ySjcR?=
- =?iso-8859-1?Q?WCgxmMXFkSttnA9lmAfbQ9h75m0D0MeRvErcGq/yc/ppptzU1z5IcUQSlt?=
- =?iso-8859-1?Q?dCnIe1zuUnsEVVy/xFe04nD8df+IRSOSdfihaKp9X7hfXGOSL/YajOiH7L?=
- =?iso-8859-1?Q?T6M1eKaQk8tFOBVt5IjznWjW8S3EShJL9e24pzQ24NqwzV5HElrq4+Kw2x?=
- =?iso-8859-1?Q?4Hqilf+C8XjeR19H1ZNAg9p8pnWMQu4RSnUsOBlwRh9sNFyzU+3TL5GkQR?=
- =?iso-8859-1?Q?zEkq36/VmbV3WUTUs8+4bWj14yLIJ9I7CBd3k2+PLcZZrlV1OMvD0Xry2b?=
- =?iso-8859-1?Q?LUxEvu+m9pas8SalAiho6wqpIHjMSavZEB+ZWhw9raju/hi6n3pGBLhQlp?=
- =?iso-8859-1?Q?5Xa+rqT/1tZmdxe3TMpb6M3dyg9wDG8izglgzXhFNyvaWdiA9nXNq3ueOs?=
- =?iso-8859-1?Q?yiC/Q03Zvqv1WQsG69XP9nMD1FUXQo7WYzRQx3MA7fB4xyiqhpIL1itgFq?=
- =?iso-8859-1?Q?C8zwhJo+hLecI=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?WlpjRU9PSnNsa2d5TzdudWhMVkdod2lkalRrTlNyVSs0WDRWaXRhRGJiMFIx?=
+ =?utf-8?B?YXJkMjhIaExJMkE5YURLYy9XU0txbkdSVVdnUzgxaGlreElybGJGL0gzckN1?=
+ =?utf-8?B?eWMvNHZyNTA3Mk9UZTNsWjhjUUVHUTEvblhQeTJ6SnJRVUZ5UFJIRVZOYVI3?=
+ =?utf-8?B?Z1BQbjVaUnJGeDhwSG9GNzY3SlhsajNRY1NIVzR3WW5vZ2NaeHE4UjRvUFdH?=
+ =?utf-8?B?K3Y2RS96UkhUenRlaThFZHQzNEFaditMdlNWRU1SZEpUbTJKL1VEdXpOU0U1?=
+ =?utf-8?B?V3lLbHlZNEJYVFpMbVNOREtrT1BxYjZJUTAycldHRjlVdUhSbyt1Zm15SDRm?=
+ =?utf-8?B?YVVIY0tZZVNtcVY1SUpBU0t1LzRUcUhkZFZFdE9sbCtxMjYwMWpBTDQ2OXBh?=
+ =?utf-8?B?NWNSNy85SEdudE5QcXBCdUtLMTNRTmkrY1VxZXZLck4xZHN1Tlo4UE41K1Nl?=
+ =?utf-8?B?YndyZ3ZvMUZtWXQvWXRWaElkQlFGZUNWaGIzV3R2OEd0ZnU0WkRER3JkMlpq?=
+ =?utf-8?B?YWt0a1ErZVBmYVlaRFUycHVOeXk5R3gzclFjS2xpTnR3RmlUVGczZmlrZmE5?=
+ =?utf-8?B?cHZPS3M0ZGltTHZvdFZHTkFJTzY2M1NwTVVDVk9sZ0U3TnczNUt2aU85Q3Nv?=
+ =?utf-8?B?OGhldDVxZkJNVFo3WEo1blc3b3BXSzdwNWdjUGdHaDZ6c2tEVnZUdDJ2UCt4?=
+ =?utf-8?B?OTI3eTZQRVlhdTd0dE52VVczazBOcDNEVjIwdWg3SlppUmtVTTB6dzROdDlq?=
+ =?utf-8?B?RXhDYnRvYm5OWEpPY0VaRHdJZWlrV3M0bTRaZFdLWkVjMTR6TGEzNFk0ZVhx?=
+ =?utf-8?B?YUx4TUlpSjZJNnRFa25rN1VBUktzTkNXZXdtWXNjaXltandyS0Q1QldJbTg2?=
+ =?utf-8?B?ajVFRXlOdHp6TVFGWnNFOFRYa1lFMlh3K21LUlYyN1hLMXFlY3F5eVpOaVNw?=
+ =?utf-8?B?NzhjSWluY2NPTFdIakhTbTIxbG92RDA3R1p2a2U4NFJWeTJGeElyc0VsNnd2?=
+ =?utf-8?B?N1pNeVljZDlqZTRLKzlxMSt5ZEZ1WTBxcTBoR3hLY0NjQzd2Q05aa29nRjA4?=
+ =?utf-8?B?N0dWaEl5Wm9qdmxVYncwdDdlRmx0MzVhbnFxOW9lVVdHdkJSRFB5WVMxY3NV?=
+ =?utf-8?B?SlkwZ0NBRkNMNEtINUEzUTJ6RWlWem5mWEhWaGpuSGIzM29NbmlNb05xV1Qx?=
+ =?utf-8?B?cGt2Snp0VWFWMjBldmRNbXZNTG51Q2xtOEtLSzB0cTFkMFA5TkVxRVZIbnhr?=
+ =?utf-8?B?cVk4cnpibnhwQUFHWWplSXhrU29vdjFHYWJCZTlNa1ZFeVIvRU42eVExYzRM?=
+ =?utf-8?B?d1YrLzRmMlliYlAvQ2xLVzEvVjFURHErVUk4Y2VQM0NHcVVZVWE5SWt3N0lG?=
+ =?utf-8?B?TTFwUTlPS1pJUXRQTlBNYTJ6OXBFc3JvdzV0VG5BcU92RmpxR1RSaUlFSTRz?=
+ =?utf-8?B?ZzlETVphNG9ZWTkyNDdhL3FsUThKdzlQYWNMTW5MKzNHaFFPV2JMRjMzcG9x?=
+ =?utf-8?B?dmtaV3VCckRKVXdiUkxnVGQ1cHdTMmE3clVGeUdsZW5zcnN6eG1PL2ptMWRI?=
+ =?utf-8?B?NDk2UGM3aC8ybk9lV1BhMERaUVhmdHgremcwM0d2OWJQWmRnb3RpRzROT0Q0?=
+ =?utf-8?B?S0VzSDlIc0ZVbXVXZEE4LzczZDNKdmFWcC9QVVZNaXQ1L092OTJpajI1UzQ4?=
+ =?utf-8?B?MVhEVnpWWi92b0VwTTVFYlMzOWVycUpOcWRPdVQ0M3RIOFJtN0ZQZDVHQmZY?=
+ =?utf-8?B?TVUyMDRydEh3dTVrOUF3bjBRNlpuZ24zeC8wZG1oSnlJUjFndDdZbTVHQjRP?=
+ =?utf-8?B?SkRGSjZHSGVjNUpYbWJtd21Ld1NjUCtvZU9Oak9CSUxRUGVwc3RFbVBGNGto?=
+ =?utf-8?B?WXc5RXdqaW8rRkJjeUJyRGdFL2FvdEJVN2ZRaEpXL2w1TkZXeDFsU2pmN2ky?=
+ =?utf-8?B?am5KMzdyUnl3WFNiaUVnNDhvYUdxR3RIL253VFJQM2ZkMU50Mm1IMzhSWlpN?=
+ =?utf-8?B?TjJZUzFQdWhnR293SWMxVEVrbFd0d2F1SHp3WFR5N0NsTUI2Zm9kbEljOUox?=
+ =?utf-8?B?d3VoNkY2SFI1MS9qQ3ZpWHkwbmtGNkFSU3lvUDNVQVp4UkxDalFnVjhmdHRW?=
+ =?utf-8?Q?nGnBjCmxt8566LQLkwFtvwLnK?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b15edd25-9454-4ccc-373d-08de3bf68ed7
+X-MS-Exchange-CrossTenant-Network-Message-Id: 06966abe-796d-43ab-eac7-08de3bfa3130
 X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8951.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Dec 2025 16:25:27.9456
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Dec 2025 16:51:28.8829
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: yGBuYpe9Ao9sWDUJ5HGiC7UmGj09W4AZh5Q/+B/8FKpGtn9fs7bdR2k/owO9FtUEz0QjVGnoJPz/DC2lSTtJfg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB8155
+X-MS-Exchange-CrossTenant-UserPrincipalName: QSUmaru2dREpJQMXClmIPzQD7SwlglZQWSR/9GClE0VVNHwQlC9ta8vunATq2touzXG1bAfCOa+jvROhdeV+ZA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR04MB7913
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251215_082533_054683_A724F08F 
-X-CRM114-Status: GOOD (  40.04  )
+X-CRM114-CacheID: sfid-20251215_085134_906317_28E5B5E5 
+X-CRM114-Status: UNSURE (   7.92  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -162,255 +195,113 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Dec 12, 2025 at 08:44:41PM +0100, Louis Sautier wrote:
-> On 12/11/25 17:52, Frank Li wrote:
-> > On Wed, Dec 10, 2025 at 08:50:24PM +0100, Louis Sautier wrote:
-> > > On 12/10/25 16:20, Frank Li wrote:
-> > > > On Tue, Dec 09, 2025 at 08:52:46PM +0100, Louis Sautier wrote:
-> > > > > On 12/9/25 18:24, Frank Li wrote:
-> > > > > > On Tue, Dec 09, 2025 at 04:36:30PM +0100, Louis Sautier wrote:
-> > > > > > > On 12/9/25 13:48, Alexandre Belloni wrote:
-> > > > > > > > On 09/12/2025 12:37:12+0100, Louis Sautier wrote:
-> > > > > > > > > On 12/8/25 21:58, Alexandre Belloni wrote:
-> > > > > > > > > > Hello Louis,
-> > > > > > > > > >
-> > > > > > > > > > On 02/12/2025 21:17:31+0100, Louis Sautier wrote:
-> > > > > > > > > > > Hello,
-> > > > > > > > > > >
-> > > > > > > > > > > I'm running into a bug when loading the dw-i3c-master=
- module on kernel 6.18
-> > > > > > > > > > > on one specific server. I suspect it has to do with t=
-he large number of
-> > > > > > > > > > > CPUs=A0on the machine=A0(768 threads, from 2 AMD EPYC=
- 9965 processors) but I am
-> > > > > > > > > > > not sure.
-> > > > > > > > > > >
-> > > > > > > > > > > The system is on Ubuntu 25.10 and a 6.18 kernel with =
-https://gist.githubusercontent.com/sbraz/a6f37fafbcf9354bbe4eace9e9eb48cb/r=
-aw/115da594dc9d7ea99b06754847571e6fd76d9da5/config
-> > > > > > > > > > > (basically Ubuntu's).
-> > > > > > > > > > Just to be sure, does this also happen with v6.17?
-> > > > > > > > > >
-> > > > > > > > > > The only change is the shutdown handling so I would gue=
-ss yes.
-> > > > > > > > > >
-> > > > > > > > > Hello,
-> > > > > > > > >
-> > > > > > > > > It does happen with 6.17. I initially discovered this whi=
-le running Ubuntu
-> > > > > > > > > 25.10's stock kernel (6.17.0).
-> > > > > > > > >
-> > > > > > > > > > What is the behavior when you build the dw-i3c-master a=
-s a static driver?
-> > > > > > > > > I'll try CONFIG_DW_I3C_MASTER=3Dy and report back.
-> > > > > > > > >
-> > > > > > > > > Someone also suggested (they didn't reply to the list tho=
-ugh) that I add a
-> > > > > > > > > printk to see what the value of maxdevs is. I'll provide =
-the log as soon as
-> > > > > > > > > I have rebuilt with:
-> > > > > > > > >
-> > > > > > > > > --- linux-6.18.orig/drivers/i3c/master/dw-i3c-master.c	20=
-25-11-30 22:42:10.000000000 +0000
-> > > > > > > > > +++ linux-6.18/drivers/i3c/master/dw-i3c-master.c	2025-12=
--08 18:17:33.151567225 +0000
-> > > > > > > > > @@ -1588,6 +1588,7 @@
-> > > > > > > > >      	ret =3D readl(master->regs + DEVICE_ADDR_TABLE_POIN=
-TER);
-> > > > > > > > >      	master->datstartaddr =3D ret;
-> > > > > > > > >      	master->maxdevs =3D ret >> 16;
-> > > > > > > > > +	printk("maxdevs: %d\n",  master->maxdevs);
-> > > > > > > > >      	master->free_pos =3D GENMASK(master->maxdevs - 1, 0=
-);
-> > > > > > > > >      	master->quirks =3D (unsigned long)device_get_match_=
-data(&pdev->dev);
-> > > > > > > > >
-> > > > > > > > Yes, that was going to be my suggestion.
-> > > > > > > >
-> > > > > > > I haven't tried with the driver built-in yet. This is what th=
-e printk shows:
-> > > > > > > dw-i3c-master AMDI0015:00: probe with driver dw-i3c-master fa=
-iled with error
-> > > > > > > -110
-> > > > > > > maxdevs: 65535
-> > > > > > Maybe ret is bigger 0x8000_0000, and ret is sign int. so >>16 b=
-ecause -1.
-> > > > > >
-> > > > > > unsigned int val =3D readl(master->regs + DEVICE_ADDR_TABLE_POI=
-NTER);
-> > > > > >
-> > > > > > master->maxdevs =3D val >> 16;
-> > > > > >
-> > > > > > Frank
-> > > > > I tried this and CONFIG_DW_I3C_MASTER=3Dy:
-> > > > >
-> > > > > --- linux-6.18.orig/drivers/i3c/master/dw-i3c-master.c 2025-11-30
-> > > > > 22:42:10.000000000 +0000
-> > > > > +++ linux-6.18/drivers/i3c/master/dw-i3c-master.c=A0 =A0 =A0 =A02=
-025-12-09
-> > > > > 19:21:52.735366616 +0000
-> > > > > @@ -1585,9 +1585,10 @@
-> > > > >   =A0 =A0 =A0 =A0 ret =3D readl(master->regs + DATA_BUFFER_STATUS=
-_LEVEL);
-> > > > >   =A0 =A0 =A0 =A0 master->caps.datafifodepth =3D DATA_BUFFER_STAT=
-US_LEVEL_TX(ret);
-> > > > >
-> > > > > -=A0 =A0 =A0 =A0ret =3D readl(master->regs + DEVICE_ADDR_TABLE_PO=
-INTER);
-> > > > > -=A0 =A0 =A0 =A0master->datstartaddr =3D ret;
-> > > > > -=A0 =A0 =A0 =A0master->maxdevs =3D ret >> 16;
-> > > > > +=A0 =A0 =A0 =A0unsigned int val =3D readl(master->regs + DEVICE_=
-ADDR_TABLE_POINTER);
-> > > > > +=A0 =A0 =A0 =A0master->datstartaddr =3D val;
-> > > > > +=A0 =A0 =A0 =A0master->maxdevs =3D val >> 16;
-> > > > > +=A0 =A0 =A0 =A0printk("maxdevs (unsigned): %d\n",=A0 master->max=
-devs);
-> > > > >   =A0 =A0 =A0 =A0 master->free_pos =3D GENMASK(master->maxdevs - =
-1, 0);
-> > > > >
-> > > > >   =A0 =A0 =A0 =A0 master->quirks =3D (unsigned long)device_get_ma=
-tch_data(&pdev->dev);
-> > > > >
-> > > > > And I get this log, so no change, really. I assume there's only o=
-ne
-> > > > > "maxdevs" log because there is only one attempt to load the built=
--in driver?
-> > > > It may have dependence missed at drivers. such as clock. when built=
--in,
-> > > > this driver probe first before clock ready.
-> > > >
-> > > > If build as module, other driver help enable this clock. So it can =
-get
-> > > > correct value.
-> > > >
-> > > > Frank
-> > > My bad, I checked yesterday's entire log again and actually, there ar=
-e still
-> > > 4 maxdevs printk logs:
-> > >
-> > > Built-in driver:
-> > >
-> > > # journalctl -b -2 --grep "maxdevs|UBSAN" -o short-monotonic
-> > > [=A0 =A023.162996] ns31482903 kernel: maxdevs (unsigned): 65535
-> > Look this instance miss config some resource, like clks. So clock have
-> > not enable, all register return 0xFFFFFFFF.
-> >
-> > Frank
->
-> Can you help me understand why this happens and how to fix this? Could th=
-is
-> be a hardware problem?
->
-> Should I open a downstream Ubuntu bug report, would that be helpful?
+I3C part already merged into v6.19-rc1. Just repost sensor part.
 
-It may help, or report bug to hardware vendor. Or look for recently
-contributor who may provide help.
+Add basic HDR mode support, only support private transfer, not support
+CCC command.
 
-git log drivers/i3c/master/dw-i3c-master.c
+Update i3c framework API to allow pass down mode and extend driver callback
+function.
+
+Implement HDR transfer in svc i3c master driver.
+
+Simplifed HDR flow is (ref i3c spec line 5514) Figure 129
+
+<--              SDR            ---> | <--- HDR
+START 0x7E RnW(0) ACK CCC(ENTHDR0) T   HDR-CMD(00-7f write, 80--ff read)
+
+                                    ----> |
+HDR-DATA HDR-CRC HDR-RESTART .... HDR-EXIT
+
+Note: HDR-CMD is 16bit data, which included 7bit slave address and 8bit
+read/write command.
+
+svc hardware can auto issue SDR part.
+
+Signed-off-by: Frank Li <Frank.Li@nxp.com>
+---
+Changes in v12:
+- rebase to v6.19-rc1
+- repost for sensor part.
+- Link to v11: https://lore.kernel.org/r/20251106-i3c_ddr-v11-0-33a6a66ed095@nxp.com
+
+Changes in v11:
+- Add Andy Shevchenko's reviewed-by tags
+- fix some nits at mmc5633, see patch's change log for detail.
+- Link to v10: https://lore.kernel.org/r/20251104-i3c_ddr-v10-0-e3e4cbc17034@nxp.com
+
+Changes in v10:
+- remove !! at svc patch
+- align datasheet register name in mmc5633
+- remove reduntant regmap_attach_dev()
+- see patch's change log for detail
+- Link to v9: https://lore.kernel.org/r/20251031-i3c_ddr-v9-0-f1e523ebaf78@nxp.com
+
+Changes in v9:
+- remove reducated check for ops->priv_xfer.
+- improve mmc5633 (see patch's change log for detail)
+- Link to v8: https://lore.kernel.org/r/20251028-i3c_ddr-v8-0-795ded2db8c2@nxp.com
+
+Changes in v8:
+- Add cleanup patch replace framework's i3c_priv_xfer with i3c_xfer
+- Link to v7: https://lore.kernel.org/r/20251027-i3c_ddr-v7-0-866a0ff7fc46@nxp.com
+
+Changes in v7:
+- add explicit define for I3C_HDR_*
+- add missed include files.
+- detail see each patches' change log
+- CONFIG_DEBUG_ATOMIC_SLEEP=y
+- Link to v6: https://lore.kernel.org/r/20251014-i3c_ddr-v6-0-3afe49773107@nxp.com
+
+Changes in v6:
+- remove acpi part
+- collect Conor Dooley ack tags
+- Link to v5: https://lore.kernel.org/r/20251007-i3c_ddr-v5-0-444184f7725e@nxp.com
+
+Changes in v5:
+- Just realized missed CC mail list devicetree@vger.kernel.org and resend
+- Link to v4: https://lore.kernel.org/r/20251007-i3c_ddr-v4-0-3afea5105775@nxp.com
+
+Changes in v4:
+- use master's hdr_cap to check HDR cap.
+- add mmc5603 support.
+- Link to v3: https://lore.kernel.org/r/20250930-i3c_ddr-v3-0-b627dc2ef172@nxp.com
+
+Changes in v3:
+- Add new patch for change rnw to union for svc.
+- Detial changes see each patch's change log.
+- Link to v2: https://lore.kernel.org/r/20250924-i3c_ddr-v2-0-682a0eb32572@nxp.com
+
+Changes in v2:
+- Add sensor driver, which use HDR mode read/write data.
+- change priv_xfer to i3c_xfer.
+- Link to v1: https://lore.kernel.org/r/20250129-i3c_ddr-v1-0-028a7a5d4324@nxp.com
+
+---
+Frank Li (2):
+      dt-bindings: trivial-devices: add MEMSIC 3-axis magnetometer
+      iio: magnetometer: Add mmc5633 sensor
+
+ .../devicetree/bindings/trivial-devices.yaml       |   4 +
+ drivers/iio/magnetometer/Kconfig                   |  12 +
+ drivers/iio/magnetometer/Makefile                  |   1 +
+ drivers/iio/magnetometer/mmc5633.c                 | 585 +++++++++++++++++++++
+ 4 files changed, 602 insertions(+)
+---
+base-commit: 8f0b4cce4481fb22653697cced8d0d04027cb1e8
+change-id: 20250129-i3c_ddr-b15488901eb8
+
+Best regards,
+--
+Frank Li <Frank.Li@nxp.com>
 
 
-Frank
-
->
-> >
-> > > [=A0 =A023.163008] ns31482903 kernel: UBSAN: shift-out-of-bounds in
-> > > drivers/i3c/master/dw-i3c-master.c:1592:21
-> > > [=A0 =A023.166508] ns31482903 kernel: maxdevs (unsigned): 65535
-> > > [=A0 =A023.166568] ns31482903 kernel: maxdevs (unsigned): 11
-> > > [=A0 =A023.166576] ns31482903 kernel: UBSAN: shift-out-of-bounds in
-> > > drivers/i3c/master/dw-i3c-master.c:885:12
-> > > [=A0 =A023.166748] ns31482903 kernel: maxdevs (unsigned): 11
-> > >
-> > >
-> > > I rebuilt with CONFIG_DW_I3C_MASTER=3Dm and I get the same logs altho=
-ugh the
-> > > timing differs a little:
-> > >
-> > > # journalctl -b -1 --grep "maxdevs|UBSAN" -o short-monotonic
-> > > [=A0 =A014.507929] ns31482903 kernel: maxdevs (unsigned): 65535
-> > > [=A0 =A014.507957] ns31482903 kernel: UBSAN: shift-out-of-bounds in
-> > > drivers/i3c/master/dw-i3c-master.c:1592:21
-> > > [=A0 =A016.683035] ns31482903 kernel: maxdevs (unsigned): 65535
-> > > [=A0 =A018.872323] ns31482903 kernel: maxdevs (unsigned): 11
-> > > [=A0 =A018.872362] ns31482903 kernel: UBSAN: shift-out-of-bounds in
-> > > drivers/i3c/master/dw-i3c-master.c:885:12
-> > > [=A0 =A018.882020] ns31482903 kernel: maxdevs (unsigned): 11
-> > >
-> > > Did I miss something with the unsigned patch?
-> > > > > maxdevs (unsigned): 65535
-> > > > > ------------[ cut here ]------------
-> > > > > UBSAN: shift-out-of-bounds in drivers/i3c/master/dw-i3c-master.c:=
-1592:21
-> > > > > usb 1-1: new high-speed USB device number 2 using xhci_hcd
-> > > > > shift exponent 18446744073709486145 is too large for 64-bit type =
-'long
-> > > > > unsigned int'
-> > > > > CPU: 0 UID: 0 PID: 1 Comm: swapper/0 Not tainted 6.18.0 #4
-> > > > > PREEMPT(voluntary)
-> > > > > Hardware name: Giga Computing MZ73-LM2-000/MZ73-LM2-000, BIOS R23=
-_F43
-> > > > > 11/28/2025
-> > > > > Call Trace:
-> > > > >   =A0<TASK>
-> > > > >   =A0dump_stack_lvl+0x5f/0x90
-> > > > >   =A0dump_stack+0x10/0x18
-> > > > >   =A0ubsan_epilogue+0x9/0x39
-> > > > >   =A0__ubsan_handle_shift_out_of_bounds.cold+0xdd/0x1c9
-> > > > >   =A0dw_i3c_common_probe.cold+0x16/0x1b
-> > > > >   =A0dw_i3c_probe+0x30/0x50
-> > > > >   =A0platform_probe+0x42/0xc0
-> > > > >   =A0? driver_sysfs_add+0x63/0xd0
-> > > > >   =A0really_probe+0xf9/0x370
-> > > > >   =A0? pm_runtime_barrier+0x56/0xa0
-> > > > >   =A0__driver_probe_device+0x8b/0x160
-> > > > >   =A0driver_probe_device+0x24/0xd0
-> > > > >   =A0? __pfx___driver_attach+0x10/0x10
-> > > > >   =A0__driver_attach+0xef/0x220
-> > > > >   =A0? __pfx_dw_i3c_driver_init+0x10/0x10
-> > > > >   =A0bus_for_each_dev+0x8a/0xe0
-> > > > >   =A0driver_attach+0x1e/0x30
-> > > > >   =A0bus_add_driver+0x13e/0x230
-> > > > >   =A0? __pfx_dw_i3c_driver_init+0x10/0x10
-> > > > >   =A0driver_register+0x75/0xf0
-> > > > >   =A0__platform_driver_register+0x1e/0x30
-> > > > >   =A0dw_i3c_driver_init+0x17/0x30
-> > > > >   =A0do_one_initcall+0x59/0x330
-> > > > >   =A0kernel_init_freeable+0x2bd/0x340
-> > > > >   =A0? __pfx_kernel_init+0x10/0x10
-> > > > >   =A0kernel_init+0x1b/0x160
-> > > > >   =A0? __pfx_kernel_init+0x10/0x10
-> > > > >   =A0ret_from_fork+0x202/0x230
-> > > > >   =A0? __pfx_kernel_init+0x10/0x10
-> > > > >   =A0ret_from_fork_asm+0x1a/0x30
-> > > > >   =A0</TASK>
-> > > > > ---[ end trace ]---
-> > > > >
-> > > > >
-> > > > > --
-> > > > > linux-i3c mailing list
-> > > > > linux-i3c@lists.infradead.org
-> > > > > http://lists.infradead.org/mailman/listinfo/linux-i3c
-> > >
-> > >
-> > > --
-> > > linux-i3c mailing list
-> > > linux-i3c@lists.infradead.org
-> > > http://lists.infradead.org/mailman/listinfo/linux-i3c
->
->
->
-> --
-> linux-i3c mailing list
-> linux-i3c@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-i3c
-
--- =
-
+-- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
