@@ -4,144 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E89DD5B868
-	for <linux-i3c@archiver.kernel.org>; Mon, 15 Dec 2025 20:09:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DBBBAD609D2
+	for <linux-i3c@archiver.kernel.org>; Tue, 16 Dec 2025 16:56:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vxeUkD1ifGUT7WUQT7dg0pSnwZzyPefXLpUMj0z0vd4=; b=bDBZL3qxYcJBw2
-	qO0XLJKkoA04bjBtd3tZnTpuYy4VbN3KOuSjVcWTvt48RLjpk9rTEkNb6Pepmg9iiZ6hgUBWH2muS
-	jeexa56zmxNWw1Rt794SC0sEyCRT/kJuj23f3fkSESdowNgaHMRhQOUVtLvCMKMg9JATBLAzsKxST
-	j2afx1dQb4ir8Uht4h1k6MGtlsA5SAsQFPMTOR9RXsj6s7LnVY+BFBi0qPXZ6atdc43gFqd+Sm+8s
-	JTspTfgFcg6TCgS64y4v62+oMCwFs8TzFcW1Za1ZCrQZ2e4O16sLWyEqeNqfaXKwZ+SptaBYdzpDV
-	q9PLl5Mv0Oo9OApsNkLg==;
+	List-Owner; bh=4yZnV0qFNWVjz1F2Bv6ueUDs+YwnkEU3deQxHOZraik=; b=pOh5/YPu5+a6hR
+	OwSK7ePgbjtMlrXGSCBWpTbmLvjCaiZKEYWoJHYdjZFbH4IIq7cftax8cWAAzzd5E0uBG4aDZTIpE
+	krP0O9eGiQO7aeDkotXbXXBkSPpbI/blsay6wnUfObXbUbT21WsT1xKGTza3Owh5SmlfI6gPoMaQt
+	0taDBwXoVmcuqU3BYXOZb+U0ge5InsRHSMb3SxaUR64uAV7+mCrMF6C26p4DSdGaWaMGBRG+3IAgF
+	6ha2Nzpjee1uPM0Sr9uoWENKbml9XEgx2DBuDqeTYBvTBnxRSOYOajkclK+Zw54n1gHpMuBGd7aEq
+	O7GWNgrU3p2FQtAQKbqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vVEsc-00000004DEw-09Z1;
-	Mon, 15 Dec 2025 20:09:14 +0000
-Received: from mail-northeuropeazon11012055.outbound.protection.outlook.com ([52.101.66.55] helo=DUZPR83CU001.outbound.protection.outlook.com)
+	id 1vVYM7-00000005ZLM-2BDI;
+	Tue, 16 Dec 2025 16:56:59 +0000
+Received: from mgamail.intel.com ([192.198.163.11])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vVEsZ-00000004DEZ-0DjG
+	id 1vVYM2-00000005ZJq-3MD0
 	for linux-i3c@lists.infradead.org;
-	Mon, 15 Dec 2025 20:09:12 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=v1Ed9PWVx5QgDLRptm4DrZrYLi2QRx6PXkQsLJg2J2Ypr4A1wx0RhCY7bNOss2J/M6vyyhoIGDdq1LJ2A0VR/iEWNcVPCKZ/4E6JV/OxyATEGHXuWpPUQsnUHVJFt59tmz/XIgHZ3s96VBoxPgXoHbGWHI/BYayjXgNBy8yCYy4Iu90CHUf+nYC+CuUrH6gRuT0GNo81PvmiwiHsmuPRiHIZ5Sw65Yey/V6SapqqkWY76Q/+gePpJzf2DNbE6CVNTkrrYm8rRvsGccZnYIhcTyp3s0D+JeJfbNSVFeEAJGK6+KFu2MzgPyn5XByF1VKuNvMODYoVlQLVT23vVecHOQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=91UDpuJJb7TUqvHulAXDAxGkl4UHSKc3a96fBx/cMOM=;
- b=hYkxBYl6KGX8paEiNamQULTS5dEmieHCuw0y8xwNaDkV9zH5K9yVbl0uwFbHpD9L28UgVNIiewfmlZ49/1DZPkmwHUDbsbWWNZ9D15ZFcTYjWf7TD8Tykg7sBLpSvv76PdYClpfzbYeat8kI+lS6PA4oUtbvRRxSOFkJi9xrQvo/8ppU56KeXLpBTlcDpCWRCocjb776e8EQ/MJwDRpP1JYLlyds5ps6hx4bg6R9elazAHbOh84EahpMZxqGeP8GnmLrn7BBr05uGCpZyz5fwW0ZYShrj+wN8Mx+pZqexSeYWMpM1hbKaVv/f9JCm2ZeGhtfqjtIMkg+jsscxHv6VA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=91UDpuJJb7TUqvHulAXDAxGkl4UHSKc3a96fBx/cMOM=;
- b=jNuNMjGFxul5WDPtsAEZ3FXBKCPreniyc2raOusQDy+q8Ncl/0W0S/ZRpyCXnNkQWgiI2c1ylUBmRwRXM5Z833Sr6oYT6G3aWR0WCdXft6jsUFfVz9QKwJ+7PbzmsY6klABNGxEQ9PR/mTApJVp2KLA46iWNCdqpnQLkTjnq0/v6UDJx/EJQLwCeL788lrIcHtE1mY0qVTf4ktBDoDc15u84jzEsLYkSuIBiD5pFxx/1VKPfB+PV3LWX09dCjTRY9hfWBEJGrZD+kR/8fSTZE2tmuSbRop3upeMVGCSKQ9UFHKyM8/02tPAg5tZkgc5R0VR2A1DbzvnZXnf0x/eCMw==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from DU2PR04MB8951.eurprd04.prod.outlook.com (2603:10a6:10:2e2::22)
- by DB8PR04MB6857.eurprd04.prod.outlook.com (2603:10a6:10:114::21) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9412.13; Mon, 15 Dec
- 2025 20:09:06 +0000
-Received: from DU2PR04MB8951.eurprd04.prod.outlook.com
- ([fe80::753c:468d:266:196]) by DU2PR04MB8951.eurprd04.prod.outlook.com
- ([fe80::753c:468d:266:196%4]) with mapi id 15.20.9412.011; Mon, 15 Dec 2025
- 20:09:06 +0000
-From: Frank Li <Frank.Li@nxp.com>
-To: Miquel Raynal <miquel.raynal@bootlin.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	linux-i3c@lists.infradead.org (moderated list:SILVACO I3C DUAL-ROLE MASTER),
-	imx@lists.linux.dev (open list:SILVACO I3C DUAL-ROLE MASTER),
-	linux-kernel@vger.kernel.org (open list)
-Cc: imx@lists.linux.dev
-Subject: [PATCH 1/1] i3c: master: svc: Initialize 'dev' to NULL in svc_i3c_master_ibi_isr()
-Date: Mon, 15 Dec 2025 15:08:51 -0500
-Message-Id: <20251215200852.3079073-1-Frank.Li@nxp.com>
-X-Mailer: git-send-email 2.34.1
-X-ClientProxiedBy: PH7PR13CA0020.namprd13.prod.outlook.com
- (2603:10b6:510:174::27) To DU2PR04MB8951.eurprd04.prod.outlook.com
- (2603:10a6:10:2e2::22)
+	Tue, 16 Dec 2025 16:56:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1765904215; x=1797440215;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=Za7kWnIJIsbHhhVJpB+3dqT8exC2uEwE06rfZoYeN3c=;
+  b=KyDKCLau5Rb1f32qwtpCUzHFdGhisGc9Y/1EWQO5o8Cq6wW7q7WYtDC8
+   EP/s+M79/SvZJDmV421OV9ID9C3HhIlbFHsQ7OvtYWSjJQkT5ngSNhBcc
+   5BrXSjVWCEqEjSnyRAz7SO3UKMYf3wNv6s1Ua5AHXxLXknOMcayXV6mhs
+   HSNPJGuG+ihGbiNP/GRYI8D6oTfV6VKwf5yk3mQXWqbrF/7dgZpKd6KST
+   6DqYXG7Jyzt2/yBeG95bJyE9nagHsI4fe9fpi+i55K5ZM0sATsq6E+8KT
+   u7VJskxApjnkm4KxFzo/CPEvi0mbjOQSnFfzVinTSDu06u8Aq0lS9/sxM
+   g==;
+X-CSE-ConnectionGUID: 0Vct8Jy7RryVOZ2sOIoGaQ==
+X-CSE-MsgGUID: DHQSX9QjSvu8+ny6Cp001g==
+X-IronPort-AV: E=McAfee;i="6800,10657,11644"; a="78466713"
+X-IronPort-AV: E=Sophos;i="6.21,153,1763452800"; 
+   d="scan'208";a="78466713"
+Received: from orviesa009.jf.intel.com ([10.64.159.149])
+  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Dec 2025 08:56:52 -0800
+X-CSE-ConnectionGUID: 9xgzLY9HTBijyE6Cl65B/Q==
+X-CSE-MsgGUID: 6be29gTTQgaOMgE8ffiMfA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.21,153,1763452800"; 
+   d="scan'208";a="197817574"
+Received: from rvuia-mobl.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.244.195])
+  by orviesa009-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Dec 2025 08:56:51 -0800
+From: Adrian Hunter <adrian.hunter@intel.com>
+To: alexandre.belloni@bootlin.com
+Cc: Frank.Li@nxp.com,
+	linux-i3c@lists.infradead.org
+Subject: [PATCH V3 00/11] i3c: mipi-i3c-hci-pci: Define Multi-Bus Instances for Intel controllers
+Date: Tue, 16 Dec 2025 18:56:31 +0200
+Message-ID: <20251216165642.164583-1-adrian.hunter@intel.com>
+X-Mailer: git-send-email 2.51.0
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|DB8PR04MB6857:EE_
-X-MS-Office365-Filtering-Correlation-Id: d0587f8f-fa41-4b40-7da7-08de3c15ccea
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|376014|366016|19092799006|1800799024|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?ZT36ru6mUOB+MG/eIiDoe5rpYAE0qFHefqkRxv267bA5IhrWeXXqomM1qoWG?=
- =?us-ascii?Q?a9rEfVOdUvZ7YvW5YkWoKAi3dj6vuwGfdJLnCjnoJy4SNbkYBiP9xmLHjibU?=
- =?us-ascii?Q?a9kdRKF74N894JeDg6SG0JjXRuL+o7KWOsTtEGYu/kIAL4A3FwBxppmzXlXf?=
- =?us-ascii?Q?4fDAdjQaX0jhzvWDkik+sAJylc45oiHPGbLiKwEQnYbh6oCqOtqKZid5iqA2?=
- =?us-ascii?Q?XxTrwfMNK+we4o40kK+aUmkrixW4e0ftt8wz1UTHfPyJjVniD70mOUU4fzca?=
- =?us-ascii?Q?yC550S7x98qZ6oM3QbXU6GqfKSVn26BWx4PwfRErgRAJ6wjnRdDmXr5Liu5J?=
- =?us-ascii?Q?2c8T+J3neodCl24LDiGq8G3dOYW1iG0pELp6GI6t00to0dEeNknQv2Rgjbmn?=
- =?us-ascii?Q?BCE2uzZ47zhldImtkFLKjMnHT7Qv886o666lpTWmpIQA09+ctgYE5ubE9RzM?=
- =?us-ascii?Q?9hSNyc1rSJmbFVxLkWmpQGieIdUPdA7ZwPimIIBHmWSxyeHCQ3OG1ZPq4MGK?=
- =?us-ascii?Q?e5QWVjooOtj9vFxRDk2qbxJuEuWTXVQsczMyAibWWNGJOd3OnYD2/MYqn7OP?=
- =?us-ascii?Q?OaNGEZykd1u6A1FemGmL59PRXTa3Cwp9zKzAsYvxX9pIY0YuQGptLPgjlCuk?=
- =?us-ascii?Q?J9v8Kw00nZ6FzciMOSzdraiCgLsfihPT4aXzImrn7346LwXm0YwF3u9ZfzES?=
- =?us-ascii?Q?sKaR9YLdpawOkleVgcHAx9U8SC8wEw6j//ZxyAjPH3s/dyyEywqtpWu0rPpG?=
- =?us-ascii?Q?+HzwN3nGPAIzF2T1tMX3FZuiw0K9hnkw/kDv9FAGv3ev4jgr+ObwmBsPeIAu?=
- =?us-ascii?Q?jin/WrTt9qYpPPcAG1KUFqkp4W3Lmlk+QiTJyCWdEVBVV/XhIalPdSOk+JQR?=
- =?us-ascii?Q?r3ViSTiYAykymk1u0W30abmzJGJiFZjE02aW5Y542hI/BO8SwyAm9OJNHTUb?=
- =?us-ascii?Q?32RIzHBvG1+8PHr9/vABcVzg/gyXPW3H++1hwDxFbwH/cMxnwP32PDwvClc8?=
- =?us-ascii?Q?1kWP7aytLZq/5mjVTumxks/sH+zzqonecx2PnUedpLsETjqpD5XeeynauS9W?=
- =?us-ascii?Q?h3uIIQzcFf88LBcTsYmnb8BdPZFIVai2AumH0mFGxti8OHYHvw1Fcx9YHpJP?=
- =?us-ascii?Q?nL1psNh/+XAmsMa4obZvdFQF2iFJP5x6L9VGgc9q6/vT6da4ugC8g56RnIp3?=
- =?us-ascii?Q?Wk0hrTNT3tXtX9gzAghXAynicAKzu6BVzDLoQvY3geYC/aakqXple1m8fEZY?=
- =?us-ascii?Q?tgri7dTLehrmPTk1oeTfl4OnLmFzIEbrBgTTHYMbgfs/f7kcvwO/xCLBjrg2?=
- =?us-ascii?Q?Rg6uiFsbKymuGjj28AqiCY1CLsM7JOmpei6pY2yDqf9L+2GY8cYdbBD+L5bj?=
- =?us-ascii?Q?Yx5uslGGwT/Qqv04PfJCNgISx9PD5vrylH/yJLHAbsToDaFkvfuOP3HFvtub?=
- =?us-ascii?Q?V+fC0fHTyZnKuWNAmxaX5lxlF87+11PQRXGY72jHFoOI/3ul115sDzNNu6Rv?=
- =?us-ascii?Q?FLAc/qSz1COx3BAM17tcjhbacfWlc7iuP/Kn?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(376014)(366016)(19092799006)(1800799024)(38350700014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?NUHFNulMvih9fZ4iix2psF5OhJtXQ3UFcWfMSCGep0u8yRfKW3UzvFGedTnS?=
- =?us-ascii?Q?4c1KEzwnetm4uE3aed+vBoQzjtfOtKyqeRfHnjw+4kXMcU757ugMpcUW1frg?=
- =?us-ascii?Q?HN1ZHMzuyVKcZSGcYGwKW7dNpFW2UaHOQPLZo53/nXGyFi4liv8kk3J2+9M2?=
- =?us-ascii?Q?3/BXq+HqmBIIw8draJfodvangx0rpaDsGv4B0XSZ5o7rFPzOPxvjpdlGRRjX?=
- =?us-ascii?Q?EoSHB5puGFqI7X/mm3HUlp+l1EM45au1suszQ9ILeo6DPsYrMynq4Tpiuez5?=
- =?us-ascii?Q?ce+drChJJ+hvVWLrfJ9IMKp/UgS8W19DyXFZiycQw0HguffyR4x+6AmTWjuV?=
- =?us-ascii?Q?AwmDIfJIyID/+OYRYs07tDEllbTXvZfEvPEUN4VxvcGASADroKtksq5bdZZp?=
- =?us-ascii?Q?4B0HJdxJj3euOqLi0gcWFMsXnBeJ2QwPqolZdHrH01EZOyK4ef1xAOKAwXRG?=
- =?us-ascii?Q?W+a2KDR7frPuievimbjBb2rc/yXeGzOdPTwvp2heFDVjNYZnfWh5q9ZWU3oO?=
- =?us-ascii?Q?8yaigzmKvaZqD3BpIn0DOw2CFRtk5rzCSyEIRAFHz/Q1NibZ8QXcrZhnt4TG?=
- =?us-ascii?Q?QS0Q8hIhNqHyTx67mG9gFACjMcUSBLwX43TpmhYSDn77MudiWIV/dqpvCrUb?=
- =?us-ascii?Q?m5YervjpwdckqKiLD5CFLfCwvdEPO2oSvnB9kHdfpl5SMj3xu9+Kx8MOxsFe?=
- =?us-ascii?Q?41dZ1eOpOR576iuTLY9/9FY1fPKwEReIYOdO12xOm5ATYjdWoC29AwuOud7u?=
- =?us-ascii?Q?hi+74rd4d8gU/S+XX1+gOciR/Hr/jfvFVHLc/Rw+R38odMcJJwd8M1Qlbc/r?=
- =?us-ascii?Q?JnyEIehTPLcpvgsrdCoYGPesfScSQlMko5y0A2PSceS3Qjyh+qbm32tTVLqQ?=
- =?us-ascii?Q?mXDXlZ4pW8gFXG45LV+uMe4cS0ijRCk01XTPbnf8SpSluklvH7jPsayT3xxc?=
- =?us-ascii?Q?5wrxkg2Pt5eVN0UBKULRjxEKB3tDVbhkEw3QoXiStL4rMgwlo0cWV2PKY02n?=
- =?us-ascii?Q?Ul44ZD+gdmY27pBGnfKLOulyhMMm5r4PMazD1QASpodvnVSNN42969cHcobk?=
- =?us-ascii?Q?d3nYq/FjJnFomiUpdP8YrwExVs7N2H7ffiZxdG/wpcLZ4uDOs3SMYVbptHZQ?=
- =?us-ascii?Q?+RsvE+UfhbQ1OCj+dkE/3vpHuBwtZb5naOWcgMB1Y/9M8JBP1kPpPJPXIrVp?=
- =?us-ascii?Q?FORVPTIEIUPDpMcQ6qzgnRcU9wEsaFbnxUQ/1TQkmGRMdRbiESz2WeSkYIoK?=
- =?us-ascii?Q?4HhZKo9ZuCYD+WLzHOOvb5P47nPPXP92B06m99FZnon7iMQmY9zltzsNwf0j?=
- =?us-ascii?Q?Y6QPf9Xlhopc0J7cNNT/ZMWEHNCAg+Y2BVB58pRe+yaQ19/FMOzO1NJ61Qpn?=
- =?us-ascii?Q?S4qxcBKvuh0Ii9xxbcO7qzMEdzmgMyUJfHwUSBgeLNjbYbjpC+P+uBxVi4Wp?=
- =?us-ascii?Q?nlGkPw05oEpDERb6FC0H9PLt2cs6f5OpMSBNk7fllq4FduTv/KX2venrU0Oo?=
- =?us-ascii?Q?o0eGLeOydug42yDBAju6Yk7/jjMg55jjB8GlPagyJHhAesQYA4DJWDIbJm19?=
- =?us-ascii?Q?NnD9ZYG4pZABEGCPpnnAq5jue6um/MVxRnCq+eCx?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d0587f8f-fa41-4b40-7da7-08de3c15ccea
-X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8951.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Dec 2025 20:09:06.5701
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 4Q78f/wOSLLSSgh2iR+qij/jKdB9YkS9OZluOh/l6Wk+rLcW5QClo/vpH8BoaOQX0s8VKxkd593e0CzQu7NYzA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR04MB6857
+Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251215_120911_103659_A0D04B87 
-X-CRM114-Status: GOOD (  12.34  )
+X-CRM114-CacheID: sfid-20251216_085654_847402_302D4F0F 
+X-CRM114-Status: UNSURE (   8.84  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -158,42 +84,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Initialize the 'dev' pointer to NULL in svc_i3c_master_ibi_isr() and add
-a NULL check in the error path.
+Hi
 
-Reported-by: kernel test robot <lkp@intel.com>
-Closes: https://lore.kernel.org/r/202512131016.YCKIsDXM-lkp@intel.com/
-Signed-off-by: Frank Li <Frank.Li@nxp.com>
----
- drivers/i3c/master/svc-i3c-master.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-index a62f22ff8b576..857504d36e186 100644
---- a/drivers/i3c/master/svc-i3c-master.c
-+++ b/drivers/i3c/master/svc-i3c-master.c
-@@ -533,8 +533,8 @@ static int svc_i3c_master_handle_ibi_won(struct svc_i3c_master *master, u32 msta
- static void svc_i3c_master_ibi_isr(struct svc_i3c_master *master)
- {
- 	struct svc_i3c_i2c_dev_data *data;
-+	struct i3c_dev_desc *dev = NULL;
- 	unsigned int ibitype, ibiaddr;
--	struct i3c_dev_desc *dev;
- 	u32 status, val;
- 	int ret;
- 
-@@ -627,7 +627,7 @@ static void svc_i3c_master_ibi_isr(struct svc_i3c_master *master)
- 	 * for the slave to interrupt again.
- 	 */
- 	if (svc_i3c_master_error(master)) {
--		if (master->ibi.tbq_slot) {
-+		if (master->ibi.tbq_slot && dev) {
- 			data = i3c_dev_get_master_data(dev);
- 			i3c_generic_ibi_recycle_slot(data->ibi_pool,
- 						     master->ibi.tbq_slot);
--- 
-2.34.1
+Changes in V3:
 
+  A notable change in V3 is the introduction of patch 6 "Assign unique
+  device names and IDs for Intel LPSS I3C" which does away with dynamic
+  devid allocaion.
+
+    i3c: mipi-i3c-hci: Quieten initialization messages
+	Minor white space tweaks to fix alignment
+
+    i3c: mipi-i3c-hci-pci: Enable MSI support
+	Enhance commit message
+
+    i3c: mipi-i3c-hci-pci: Assign unique device names and IDs for Intel LPSS I3C
+	New patch
+
+    i3c: mipi-i3c-hci: Allow for Multi-Bus Instances
+	Enhance commit message
+
+    i3c: mipi-i3c-hci-pci: Pass base regs as platform data to i3c core device
+	Enhance commit message
+
+    i3c: mipi-i3c-hci-pci: Convert to MFD driver
+	Add Frank's Rev'd-by
+	Adjust for doing away with dynamic devid allocation
+
+    i3c: mipi-i3c-hci-pci: Add support for Multi-Bus Instances
+	Make hci a parameter of mipi_i3c_hci_pci_alloc()
+	Adjust for doing away with dynamic devid allocation
+	Enhance commit message
+
+    i3c: mipi-i3c-hci-pci: Define Multi-Bus instances for supported controllers
+	Adjust for doing away with dynamic devid allocation
+
+Changes in V2:
+	Add Frank's Rev'd-by for patches 1 - 3
+	Drop default driver data
+	New patches split from "i3c: mipi-i3c-hci-pci: Add support for
+	Multi-Bus Instances"
+	Conversion to MFD split into separate patch
+	Simplify ID allocation / free
+	Correct use of __free()
+	Also define instance 0 in driver_data
+
+
+Add support for MIPI I3C Host Controllers with the Multi-Bus Instance
+capability.  These controllers can host multiple I3C buses (up to 15)
+within a single hardware function (e.g., PCIe B/D/F), providing one
+indepedent HCI register set and corresponding I3C bus controller logic
+per bus.
+
+Add support for that to mipi-i3c-hci-pci and mipi-i3c-hci and define
+Multi-Bus Instances for Intel controllers.
+
+There are also some tidy-up patches to start with.
+
+
+Adrian Hunter (11):
+      i3c: mipi-i3c-hci: Remove duplicate blank lines
+      i3c: mipi-i3c-hci: Stop reading Extended Capabilities if capability ID is 0
+      i3c: mipi-i3c-hci: Quieten initialization messages
+      i3c: mipi-i3c-hci-pci: Do not repeatedly check for NULL driver_data
+      i3c: mipi-i3c-hci-pci: Enable MSI support
+      i3c: mipi-i3c-hci-pci: Assign unique device names and IDs for Intel LPSS I3C
+      i3c: mipi-i3c-hci: Allow for Multi-Bus Instances
+      i3c: mipi-i3c-hci-pci: Pass base regs as platform data to i3c core device
+      i3c: mipi-i3c-hci-pci: Convert to MFD driver
+      i3c: mipi-i3c-hci-pci: Add support for Multi-Bus Instances
+      i3c: mipi-i3c-hci-pci: Define Multi-Bus instances for supported controllers
+
+ drivers/i3c/master/Kconfig                         |   1 +
+ drivers/i3c/master/mipi-i3c-hci/cmd_v1.c           |   2 -
+ drivers/i3c/master/mipi-i3c-hci/cmd_v2.c           |   2 -
+ drivers/i3c/master/mipi-i3c-hci/core.c             |  48 +++++--
+ drivers/i3c/master/mipi-i3c-hci/dat_v1.c           |   1 -
+ drivers/i3c/master/mipi-i3c-hci/dma.c              |   6 +-
+ drivers/i3c/master/mipi-i3c-hci/ext_caps.c         |  58 ++++----
+ drivers/i3c/master/mipi-i3c-hci/ext_caps.h         |   1 -
+ drivers/i3c/master/mipi-i3c-hci/hci.h              |   5 -
+ drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c | 160 +++++++++++++--------
+ drivers/i3c/master/mipi-i3c-hci/pio.c              |  17 ++-
+ include/linux/platform_data/mipi-i3c-hci.h         |  15 ++
+ 12 files changed, 185 insertions(+), 131 deletions(-)
+ create mode 100644 include/linux/platform_data/mipi-i3c-hci.h
+
+
+Regards
+Adrian
 
 -- 
 linux-i3c mailing list
