@@ -4,71 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6370CD78783
-	for <linux-i3c@archiver.kernel.org>; Fri, 19 Dec 2025 14:45:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7BC44D78785
+	for <linux-i3c@archiver.kernel.org>; Fri, 19 Dec 2025 14:45:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VQCy7HnPs/ZZt+JvV20I5vr7Zca8inS3AO85kllItvY=; b=iCYwnzmidZjHAT
-	FYyY0PR8/atg6aKDnYq0kaRDkEerzXo0FORYkIEh+ko9uRNWcJiyxgm/1lBknMN5dymxIO4YWYo9E
-	CHgYAiYIKyt5T2qC219LehXVbi56tk2FBdwfNnBvwbJi+C/s3+xn/GOMA00y8KdB52Bk5zOEJXrt0
-	lCWhw1jkp40NKNLKY52NVWGWgyPfF3cZOutFu96P+UOetDh7NgQ+iW37LmMAZwWLw1V1hM8ttjLaZ
-	YUw7NKG4xuY4kRB5VhRSCSfX3OtOemESZjkajfkeriD330ZchIn00jA3XQMMn1uQoE/2ga86gV/aE
-	AKYda3Ee3kaHIx05Vf9Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5AQYm57nFGaHWtBlPgqV0dxek9kX76miGIvu46mu7OE=; b=N3PwVqRFZ0ZmUu
+	7IMbL9V9lGPiFuO0ICRoks7a6rRsppMzILuGChT/LrgZOPl1OLaT6XnwYPaZwF8mEIPnexdrWpZ0P
+	l2aW5Dn2LFE3iGBZhdN8ApmYWI+1570Jj4AUci1Vx2C83PBsKICLkvu2yXzRo8NwTpywQi15WFFLe
+	z9mWFwqzmdLKTIr2dyfZsqgAj9PoONSvV6klPSvfVbV9dNZ1eeXneWV9odjFIz6pOG5viJc2UpHE5
+	le/bLW9GUPARhsVJmjzEXVsrBfzJE0DhFSUcN8VusjyERqqoCDaAP0n6MELGWyS1WWYP9FKTDYG9J
+	S38+J0+5rIXEWwJ+wIfQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWbjs-0000000ARN4-4ACw;
-	Fri, 19 Dec 2025 14:45:52 +0000
+	id 1vWbju-0000000ARNa-12ni;
+	Fri, 19 Dec 2025 14:45:54 +0000
 Received: from mgamail.intel.com ([192.198.163.7])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWbjq-0000000ARLM-0Lqg
+	id 1vWbjr-0000000ARM7-2s5B
 	for linux-i3c@lists.infradead.org;
 	Fri, 19 Dec 2025 14:45:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1766155550; x=1797691550;
-  h=from:to:cc:subject:date:message-id:mime-version:
-   content-transfer-encoding;
-  bh=g7rMcMKDuPUlvq4LSmi3wxrDIEAbHs/pCYjwXGSc9yk=;
-  b=KlxuiOICddt9YqfNTxFH7LJCNoz0jTdC5ha0Al80bfXmfQxG605IGfIS
-   AQjUBgqdoBcFS+xEaY8fIlECrxjMVcBAMaoRU/1oA1p+F3/YkS3UrK4VU
-   Tkxhhgny0nkgrEWpQRBNRX5R3QB8hhomElVdCYqY5rXoyJhqm4Sdk4RQB
-   05yY4SCmAHbzUbDJgWOauhY645tcVECzNpJIgeVd+SBGDtde1IBctGsJi
-   nKwnf0Z7zWIVqaUO3aYSU0yx9eBaZnL4rYpwPXQeBgOclbniS0gEzjZxH
-   mUFfaN3qOISBy7L4gSn0q6SZ32IZwEym49s/nX4XDHn+4EdFcTzPnV3y2
-   A==;
-X-CSE-ConnectionGUID: VVkIyOcmRfCj6gsyYAq0bg==
-X-CSE-MsgGUID: ErvDpIEYT3ek22+NDw0Gww==
-X-IronPort-AV: E=McAfee;i="6800,10657,11646"; a="93588886"
+  t=1766155552; x=1797691552;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=uxxuW4hVW36KHL2iiDQ7NRQbp1j4IDusxrcNYYo9quY=;
+  b=A+FwHKNX1DZExZlMXCK8urtPBuVIec1EoUQDWxFA+HnLEormG0S8Rfh2
+   8BgMgF8FkSCO+QeNf63PQBSKOC95KhtLWlpnrzehCo0OCxn4QUMiGG9M+
+   QJKHJRFj+JeBJqCJscZ+MLXf+x3nOy8BXmggC8WtsPwm5BJEvrkTYGRcn
+   aPY1m0k/M2sMZHSqZxluYFcsjQJ5DapAzceiqRZgim7Of5WVsCEkchFog
+   XuU1ia0aeHxHR/ohHbObLaN2sl9SHdaUsieywq8WrIofsgXh7A6M79ECV
+   g62p5m5gcprIp2EbUMh4Hve3q5ohDBhuPV02nOAWP14D5lDB23wDwp8Pa
+   w==;
+X-CSE-ConnectionGUID: dDc3MFjnRMmeXgCv2H/lDA==
+X-CSE-MsgGUID: B7ls3sUgTZScM36AsHgh4A==
+X-IronPort-AV: E=McAfee;i="6800,10657,11646"; a="93588897"
 X-IronPort-AV: E=Sophos;i="6.21,161,1763452800"; 
-   d="scan'208";a="93588886"
+   d="scan'208";a="93588897"
 Received: from orviesa002.jf.intel.com ([10.64.159.142])
-  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Dec 2025 06:45:49 -0800
-X-CSE-ConnectionGUID: kvtcUQiWQVC3wr8r+jE8oA==
-X-CSE-MsgGUID: MJQYula+QMaoU1/mxOQaog==
+  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Dec 2025 06:45:51 -0800
+X-CSE-ConnectionGUID: o/zeBjecRNWfkT6R1y3lSw==
+X-CSE-MsgGUID: LMgjTNtoQh+BNMxOWmqIPg==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.21,161,1763452800"; 
-   d="scan'208";a="229563903"
+   d="scan'208";a="229563919"
 Received: from smoticic-mobl1.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.244.200])
-  by orviesa002-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Dec 2025 06:45:47 -0800
+  by orviesa002-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Dec 2025 06:45:49 -0800
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	Wolfram Sang <wsa+renesas@sang-engineering.com>,
 	Aniket <aniketmaurya@google.com>,
 	linux-i3c@lists.infradead.org
-Subject: [PATCH 00/17] i3c: mipi-i3c-hci-pci: Add Runtime PM support
-Date: Fri, 19 Dec 2025 16:45:17 +0200
-Message-ID: <20251219144534.84391-1-adrian.hunter@intel.com>
+Subject: [PATCH 01/17] i3c: mipi-i3c-hci: Reset RING_OPERATION1 fields during init
+Date: Fri, 19 Dec 2025 16:45:18 +0200
+Message-ID: <20251219144534.84391-2-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
+In-Reply-To: <20251219144534.84391-1-adrian.hunter@intel.com>
+References: <20251219144534.84391-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251219_064550_164465_B3C254C3 
-X-CRM114-Status: UNSURE (   9.90  )
+X-CRM114-CacheID: sfid-20251219_064551_753890_7E2E0381 
+X-CRM114-Status: UNSURE (   8.36  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -86,58 +88,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi
+The MIPI I3C HCI specification does not define reset values for
+RING_OPERATION1 fields, and some controllers (e.g., Intel) do not clear
+them during a software reset.  Ensure the ring pointers are explicitly
+set to zero during bus initialization to avoid inconsistent state.
 
-This patch set adds Runtime PM support to mipi-i3c-hci and
-mipi-i3c-hci-pci.
+Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
+---
+ drivers/i3c/master/mipi-i3c-hci/dma.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-Notably, the master core is enhanced to optionally support
-doing the RPM gets/puts needed to ensure a device is runtime
-resumed for all bus operations.  That alleviates mipi-i3c-hci
-from having to do it, and if the approach is accepted, would
-allow other master drivers to drop their RPM gets/puts.
+diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
+index 0f6bbe184e85..5515ed740ca4 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/dma.c
++++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
+@@ -340,6 +340,14 @@ static int hci_dma_init(struct i3c_hci *hci)
+ 		rh_reg_write(INTR_SIGNAL_ENABLE, regval);
+ 
+ ring_ready:
++		/*
++		 * The MIPI I3C HCI specification does not document reset values for
++		 * RING_OPERATION1 fields and some controllers (e.g. Intel controllers)
++		 * do not reset the values, so ensure the ring pointers are set to zero
++		 * here.
++		 */
++		rh_reg_write(RING_OPERATION1, 0);
++
+ 		rh_reg_write(RING_CONTROL, RING_CTRL_ENABLE |
+ 					   RING_CTRL_RUN_STOP);
+ 	}
+-- 
+2.51.0
 
-There are a number of small patches making various improvements
-for things hit during development.  Plus a bunch of patches
-preparing for the main changes which are covered in the last 3
-patches.
-
-
-Adrian Hunter (17):
-      i3c: mipi-i3c-hci: Reset RING_OPERATION1 fields during init
-      i3c: mipi-i3c-hci: Ensure proper bus clean-up
-      i3c: master: Update hot-join flag only on success
-      i3c: master: Replace WARN_ON() with dev_err() in i3c_dev_free_ibi_locked()
-      i3c: mipi-i3c-hci: Switch DAT bitmap allocation to devm_bitmap_zalloc()
-      i3c: mipi-i3c-hci: Switch PIO data allocation to devm_kzalloc()
-      i3c: mipi-i3c-hci: Manage DMA deallocation via devres action
-      i3c: mipi-i3c-hci: Cache DAT in memory for Runtime PM restore
-      i3c: mipi-i3c-hci: Introduce helper to restore DAT
-      i3c: mipi-i3c-hci: Extract ring initialization from hci_dma_init()
-      i3c: mipi-i3c-hci: Add DMA suspend and resume support
-      i3c: mipi-i3c-hci: Refactor PIO register initialization
-      i3c: mipi-i3c-hci: Add PIO suspend and resume support
-      i3c: mipi-i3c-hci: Factor out software reset into helper
-      i3c: master: Introduce optional Runtime PM support
-      i3c: mipi-i3c-hci: Add optional Runtime PM support
-      i3c: mipi-i3c-hci-pci: Add Runtime PM support
-
- drivers/i3c/device.c                               |  46 +++++-
- drivers/i3c/internals.h                            |   4 +
- drivers/i3c/master.c                               | 101 +++++++++++-
- drivers/i3c/master/mipi-i3c-hci/core.c             | 171 +++++++++++++++++---
- drivers/i3c/master/mipi-i3c-hci/dat.h              |   2 +-
- drivers/i3c/master/mipi-i3c-hci/dat_v1.c           |  45 ++++--
- drivers/i3c/master/mipi-i3c-hci/dma.c              | 179 +++++++++++++++------
- drivers/i3c/master/mipi-i3c-hci/hci.h              |  11 ++
- drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c |  17 ++
- drivers/i3c/master/mipi-i3c-hci/pio.c              |  63 +++++---
- include/linux/i3c/master.h                         |   4 +
- 11 files changed, 530 insertions(+), 113 deletions(-)
-
-
-Regards
-Adrian
 
 -- 
 linux-i3c mailing list
