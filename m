@@ -4,73 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2EDAD78785
-	for <linux-i3c@archiver.kernel.org>; Fri, 19 Dec 2025 14:46:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07C07D78783
+	for <linux-i3c@archiver.kernel.org>; Fri, 19 Dec 2025 14:46:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lm4fEjn3GGEnoWSsJksW9QIqy3yGWeh/5MfJ15DhD2g=; b=iywvo6RN0oaMw4
-	3/fux2RWZlQt0PEEK3NIICkHtKdhQS/pO0pw/+rYn3aO7pxNLfjm6Av4yAHj8j/Nb4u+fijkgYDM4
-	OuYhxMg3okc3hgaLgLxtjsSKS78Hks/MjzKTeMr7fspNwVTNMZn9AF57RWWI2ugzrUKbiIlqYdNhJ
-	leyOV9tcxxvM/tAd/G2j5ClY9Z3DZcKKZm728G1eNFXpDT6PfoXgnSA1xsk7u4jBfFL9FoknOJZYs
-	yfOdRTWwV62VVzZQyXIlBuek44hHsGzqIjCdLXpbX3P6qz8qxMixeVpJjYo4cf0AESxQK5Q5xxdYu
-	07k+N3uDddb3CEw0lxsA==;
+	List-Owner; bh=Iqy8+in5YcOBOf2nsL/LatL8pojHIYOp76BSLkKKMOc=; b=c/DXNC8BuVOzF/
+	f4nzoIPpoRfq9FotA2GfxznDKBm6QgsyYBLlil9oECq3W2bmD05xTQBm4yUsENOwqt33wT7vSWtuv
+	Gfbafwi0iQHupf+vlJasTAK6ABG3f55XLGHFuQ0GqxsmLEUtThhKxq6QfX6JdKfaK8pfCy/JJEKgO
+	RSvO3JpyW5g7srKknpQjy9NjF6Tdt9qIk6zKqaPpb85zjtYQT6zYiQBZMsVXqPCZLl+AKfyrOJhgk
+	GauY1sgcWno9F3n8Y5wm5fIQQrOFp6+sfnJEqEvqhJm5LgUMGyZQ11Yv8ySWHJFO/foA6kx34/ejF
+	jN4HkxSHqOMkrRo8JgNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWbk4-0000000ARSy-2Es5;
+	id 1vWbk4-0000000ARTN-3IEL;
 	Fri, 19 Dec 2025 14:46:04 +0000
 Received: from mgamail.intel.com ([192.198.163.7])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWbk0-0000000ARND-06Wu
+	id 1vWbk2-0000000ARND-0fgZ
 	for linux-i3c@lists.infradead.org;
-	Fri, 19 Dec 2025 14:46:01 +0000
+	Fri, 19 Dec 2025 14:46:03 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1766155560; x=1797691560;
+  t=1766155562; x=1797691562;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=fbxtcse9t7Fhv7Q2zIiLb+fqA46FdKYyQ71PxVl8SqA=;
-  b=TxXb20Q9OIVW2UKCauWHrNNglY4ycvK7vDAwq10Q8c+TPkG5kh7VrE6D
-   bd8lmc8pvv1Ee1QXl5VAYKwWI4xezBPaeriP/xUhIF9czb5bGhJlqJGZv
-   LgJ0HwObjVlkaNUvV6apbptWk/6DaxeQevwSgTSsy8AQomgAcniqoA1K7
-   dDS5yTddCGpDu3+5jzTWthtBSGAzdlseoI7XQcFgrMxYaR2uS2WrJD3qj
-   fIhuN75KPCn2sfRKc7SZqRfl/2PajS4HdmZTi6qOYGcO2LXD1L3VSrBq9
-   zcluuwv+dM1tqvE0VErTY/+oDsIeRSV7pl2KS96mR/hfMKLVkEIRG1LSM
-   A==;
-X-CSE-ConnectionGUID: AAUGR4c8SyOhAG8liVFEDg==
-X-CSE-MsgGUID: Gv7/0CqqSGKMd9hJPS4xMA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11646"; a="93588934"
+  bh=EJE9DBxZzUUaKolnXXbb1fbGPRUMkLpo2MYyOClexeU=;
+  b=FQ1FTEYhBHgRKFtJ6F4aPJKO00tlpRFM8hJRaiMQhHJaIcc5eqOQ399Q
+   uQh0NZhkhIld8SPVD+5dbGOj/xfGrz2NrAc1zexAxz5tMF44ldBzLdp0u
+   cC97enM26Y2ni+z2G+8n1QAcFsCbe19I87aSXbFXcm45u0XH2y72rxUuc
+   5OxdcfGQ8dcFcKkhmPCQrokAraiFq7HUqNjIjH6JxFgMVO47ueKafleyv
+   V9j1y2AHUgIZt5t0vbtdog88brYxdKmwV/ngvH8xLOZVcs4g73u9lBGNx
+   62jQ5XITPWf9qbYWBS7+lPlrsEgy4qb6wgYGZLszkdo5Er+cbxxoUPOen
+   g==;
+X-CSE-ConnectionGUID: juueunb0SdqEmfMEs53sCQ==
+X-CSE-MsgGUID: tlqO8qe9Qme6/t9da4A1Gg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11646"; a="93588939"
 X-IronPort-AV: E=Sophos;i="6.21,161,1763452800"; 
-   d="scan'208";a="93588934"
+   d="scan'208";a="93588939"
 Received: from orviesa002.jf.intel.com ([10.64.159.142])
-  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Dec 2025 06:46:00 -0800
-X-CSE-ConnectionGUID: SiT1MU+CQJe5alD9kHiATA==
-X-CSE-MsgGUID: Jxj/AqVoR/Gtx/bRyfGRRQ==
+  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Dec 2025 06:46:02 -0800
+X-CSE-ConnectionGUID: J6BWB0ZgSe67osrzgd0uPA==
+X-CSE-MsgGUID: 4e7/niIwQRmI6EK94Ck1Ag==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.21,161,1763452800"; 
-   d="scan'208";a="229563965"
+   d="scan'208";a="229563979"
 Received: from smoticic-mobl1.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.244.200])
-  by orviesa002-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Dec 2025 06:45:57 -0800
+  by orviesa002-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 19 Dec 2025 06:46:00 -0800
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	Wolfram Sang <wsa+renesas@sang-engineering.com>,
 	Aniket <aniketmaurya@google.com>,
 	linux-i3c@lists.infradead.org
-Subject: [PATCH 05/17] i3c: mipi-i3c-hci: Switch DAT bitmap allocation to devm_bitmap_zalloc()
-Date: Fri, 19 Dec 2025 16:45:22 +0200
-Message-ID: <20251219144534.84391-6-adrian.hunter@intel.com>
+Subject: [PATCH 06/17] i3c: mipi-i3c-hci: Switch PIO data allocation to devm_kzalloc()
+Date: Fri, 19 Dec 2025 16:45:23 +0200
+Message-ID: <20251219144534.84391-7-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20251219144534.84391-1-adrian.hunter@intel.com>
 References: <20251219144534.84391-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251219_064600_076938_474F020D 
-X-CRM114-Status: GOOD (  11.86  )
+X-CRM114-CacheID: sfid-20251219_064602_213184_635AB30A 
+X-CRM114-Status: UNSURE (   8.12  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,79 +88,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The driver already uses managed resources, so convert the Device Address
-Table (DAT) bitmap allocation to use devm_bitmap_zalloc().  Remove the
-manual cleanup routine.
+The driver already uses managed resources, so convert the PIO data
+structure allocation to use devm_zalloc().  Remove the manual kfree().
 
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 ---
- drivers/i3c/master/mipi-i3c-hci/core.c   |  2 --
- drivers/i3c/master/mipi-i3c-hci/dat.h    |  1 -
- drivers/i3c/master/mipi-i3c-hci/dat_v1.c | 11 +++--------
- 3 files changed, 3 insertions(+), 11 deletions(-)
+ drivers/i3c/master/mipi-i3c-hci/pio.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-index 0d3ec674878d..c4b249fde764 100644
---- a/drivers/i3c/master/mipi-i3c-hci/core.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-@@ -185,8 +185,6 @@ static void i3c_hci_bus_cleanup(struct i3c_master_controller *m)
+diff --git a/drivers/i3c/master/mipi-i3c-hci/pio.c b/drivers/i3c/master/mipi-i3c-hci/pio.c
+index 90dca56fc0c5..3d633abf6099 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/pio.c
++++ b/drivers/i3c/master/mipi-i3c-hci/pio.c
+@@ -140,7 +140,7 @@ static int hci_pio_init(struct i3c_hci *hci)
+ 	struct hci_pio_data *pio;
+ 	u32 val, size_val, rx_thresh, tx_thresh, ibi_val;
  
- 	i3c_hci_bus_disable(hci);
- 	hci->io->cleanup(hci);
--	if (hci->cmd == &mipi_i3c_hci_cmd_v1)
--		mipi_i3c_hci_dat_v1.cleanup(hci);
- }
+-	pio = kzalloc(sizeof(*pio), GFP_KERNEL);
++	pio = devm_kzalloc(hci->master.dev.parent, sizeof(*pio), GFP_KERNEL);
+ 	if (!pio)
+ 		return -ENOMEM;
  
- void mipi_i3c_hci_resume(struct i3c_hci *hci)
-diff --git a/drivers/i3c/master/mipi-i3c-hci/dat.h b/drivers/i3c/master/mipi-i3c-hci/dat.h
-index 1f0f345c3daf..5277c65fc601 100644
---- a/drivers/i3c/master/mipi-i3c-hci/dat.h
-+++ b/drivers/i3c/master/mipi-i3c-hci/dat.h
-@@ -17,7 +17,6 @@
- 
- struct hci_dat_ops {
- 	int (*init)(struct i3c_hci *hci);
--	void (*cleanup)(struct i3c_hci *hci);
- 	int (*alloc_entry)(struct i3c_hci *hci);
- 	void (*free_entry)(struct i3c_hci *hci, unsigned int dat_idx);
- 	void (*set_dynamic_addr)(struct i3c_hci *hci, unsigned int dat_idx, u8 addr);
-diff --git a/drivers/i3c/master/mipi-i3c-hci/dat_v1.c b/drivers/i3c/master/mipi-i3c-hci/dat_v1.c
-index cc5d2deb23ab..c60ef5d77ca3 100644
---- a/drivers/i3c/master/mipi-i3c-hci/dat_v1.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/dat_v1.c
-@@ -55,8 +55,10 @@ static int hci_dat_v1_init(struct i3c_hci *hci)
+@@ -220,8 +220,6 @@ static void hci_pio_cleanup(struct i3c_hci *hci)
+ 		BUG_ON(pio->curr_rx);
+ 		BUG_ON(pio->curr_tx);
+ 		BUG_ON(pio->curr_resp);
+-		kfree(pio);
+-		hci->io_data = NULL;
  	}
- 
- 	if (!hci->DAT_data) {
-+		struct device *dev = hci->master.dev.parent;
-+
- 		/* use a bitmap for faster free slot search */
--		hci->DAT_data = bitmap_zalloc(hci->DAT_entries, GFP_KERNEL);
-+		hci->DAT_data = devm_bitmap_zalloc(dev, hci->DAT_entries, GFP_KERNEL);
- 		if (!hci->DAT_data)
- 			return -ENOMEM;
- 
-@@ -70,12 +72,6 @@ static int hci_dat_v1_init(struct i3c_hci *hci)
- 	return 0;
  }
  
--static void hci_dat_v1_cleanup(struct i3c_hci *hci)
--{
--	bitmap_free(hci->DAT_data);
--	hci->DAT_data = NULL;
--}
--
- static int hci_dat_v1_alloc_entry(struct i3c_hci *hci)
- {
- 	unsigned int dat_idx;
-@@ -170,7 +166,6 @@ static int hci_dat_v1_get_index(struct i3c_hci *hci, u8 dev_addr)
- 
- const struct hci_dat_ops mipi_i3c_hci_dat_v1 = {
- 	.init			= hci_dat_v1_init,
--	.cleanup		= hci_dat_v1_cleanup,
- 	.alloc_entry		= hci_dat_v1_alloc_entry,
- 	.free_entry		= hci_dat_v1_free_entry,
- 	.set_dynamic_addr	= hci_dat_v1_set_dynamic_addr,
 -- 
 2.51.0
 
