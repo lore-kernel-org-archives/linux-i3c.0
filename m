@@ -4,148 +4,147 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFFEDD7879F
-	for <linux-i3c@archiver.kernel.org>; Fri, 19 Dec 2025 17:08:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5899CD78770
+	for <linux-i3c@archiver.kernel.org>; Fri, 19 Dec 2025 17:17:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+d4kWPCGswcdn6R3/XSvRf0De3kcEyJy6ER0A1cwGPM=; b=DYxnNWBYOv04UF
-	7j1cLBCQ2faWiYZh6M4KOPcG4u7Yk6lbUXCDWR2mfW72MXwgl/fjOnsCvp6+dXL7SQTgD95CMfYtz
-	4FLgQGpri8ixeH4aMHjAT4hsK1hkMD6z7bIg8g5r2ujvopBVRHo6oWKHDxOvmWbWGvQjOfD9pKOK1
-	V8ljwaGkV3ZBmApH7Ke3atkbDKi8o8dfWob9kGSn7WsyjlL89ZyyIfdqgkS6AGisC0B1GQErys+mG
-	DxoHCLI9wN43GB713IymzPUzpi6zC9es91QgFWhfcBTRma9ggOu8zdPZlJDU+iL5BeE4BNQyfWtuu
-	RNWCx+Szt1F9t/S8WO1w==;
+	List-Owner; bh=X3yJ51yywq55lb4fs0L788NkiMAmzJHRh4HTKzZlhgY=; b=gc/IOQuuixLibU
+	IrCt2iN6ezafl0f4aZnWfo0zdXGOSkJU6x9s839934b9XFsM4N3HVedOFqLB6Z0fhnc5lO+57HHPo
+	nmGQYUv8g3m6qy5FaF0bO6/Ohn/OtjZdLVFBJeJZJo25BpbauHayXBwDA0gcGsJFd/fVhTRBGF5q0
+	QhUPvWP0J4g2yla+Usxvr6xK4gfqZb258lBbZJyjHXgsbeHY++29QkaNTJ2vyTqdFwBTSL6t7VHIA
+	a9zaTcBi3Tk+IyNMu4kU2EKohfYBL3trPWSv0PnvhXKIAhAVi9k3tdFt4JDpmdnUBjRW78RO/TWiA
+	RZyKfulC0ApdDo4WDqrw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWdy0-0000000AgnD-2ULh;
-	Fri, 19 Dec 2025 17:08:36 +0000
-Received: from mail-francesouthazon11011026.outbound.protection.outlook.com ([40.107.130.26] helo=MRWPR03CU001.outbound.protection.outlook.com)
+	id 1vWe6C-0000000AhZU-0Nvn;
+	Fri, 19 Dec 2025 17:17:04 +0000
+Received: from mail-norwayeastazon11013014.outbound.protection.outlook.com ([40.107.159.14] helo=OSPPR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vWdxx-0000000Agmi-3glZ
+	id 1vWe69-0000000AhYP-2Txk
 	for linux-i3c@lists.infradead.org;
-	Fri, 19 Dec 2025 17:08:35 +0000
+	Fri, 19 Dec 2025 17:17:02 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=PmiFtEgAHIsYGqrIzukn50j844GCux1sIT3mjFPAN3KoJD8O4DGbvqI88l64Die2sA6vtg6lYohX8KfnzUQxwWhB6w9IJOuLQf03//DmFsGfpf45XfwXTL0xu5PVnaRhPdXMvZj6iDZXTVxPNSQSda/Q+A8emb4SfzxxDcBOnzBdiRrytBf8q0NgjDBhGoeCWn9SeMyZc/CAEhwVlhjMrWDIhZ1vrXvfD0rZC0Qjnd7IRCm/dF4gK+Nh3hsyKPsKnz+wxQ2fp8SqnCjWoe4NoQ7DTWl3obJ6j25yC7j1/ZRMw8zMO9SWgs01o5UIQZ6wtmAFKk4PdEv2gEVtQMQIFw==
+ b=tG3L70BYr2YvBdw7BV1PjsqP74fo9SM0F2AacpzywXPr6mrJKX5ixpBLhDrjfJvgdlf3VDP+opqZY08gG+OK/8DvG5sTa2O/Qb8d8G2Ys2ke/1KxU/2iklYoJiJ+pyUjitQoW1ylDzQmSSu9mIs/Mi0sbhuXJnkkhKzENSym0D9W/LXej7dn54az3pomN0rQZmOznJWwVuk6tq0H78PFWFY4IofT1VD2na3Aei7oOtOJbRvUXjCNxRP8UdLi8KC/mCv/3pwZLReb8j1BMxDboPpipZ7NP0l3yjeFrt+Gcr35qS+ALfsgWpazSmWciIvukgTXylsEtht0111L5mqxWQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=vEiQ9tGUEbK4cRNBzzoB0Q9qj0EeKa60iXkCPYhCyiE=;
- b=M+ia89z313YC8duDSH3MCiUp4mVu1HBZvd5y1duF2aUcRpDV0cekrjmCdMNPxb5jCUkso3CW9jsY4zI66ruaWsNlyD4PMfFt9MuHRnIwJl1PkvqvrJKSWE3bUeZ4Yx0M6lTbQNEFmSbU24ik13RbjVHV3yJy++1gj96a4piHRejfbcOsTtkXEHCKw94DTTnRDigDO/wx4HWAhu0Mr8Rb6WCgo252dwlLANth4hdVPd70Hzi6vOmhiCq+1Xusi8QuoFdqhSuikgvE62sGrrJg9ysxPh2ckg6VeZb/uFEH/2XCMWvC4guX57YEki0dfiF68kQNPrqhvfhB4ipHwyYeKg==
+ bh=ITfgWZWqCTAbbNuMQVu1VQ0vc4gXmuH9y5+GP3AKdJU=;
+ b=E2L3f6XUnhhfFocH3Lgu8KUQtalLQhSswoJsY2p906lCWEWmO+KbIri1awePHKDVybe1g6nrptx8e2ucjh4k4B3DW1ctyH8W+uwBMYNrDi1yqi8V1We9Qw7eOtisK7thaC+V8Sbq+9W0wpyXTOVdokpQYh4BiOua6PPeMWpgMyiLzGJCgxhiQB+7B/TbVKugl9P4FaiJ5ThPBT9hN0Z08rcIe/haRHKSCuXPGz3bQwcBlal6H0af2O/l/dtLTi89oNnskEV3f8zjxCdTPzQEjiThf3vtynqNMV4zKzF9XgjH7fzuVgwD+lvUaO9gPj6qSv3EBWPv6jfHCZ7+kUQMlg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=vEiQ9tGUEbK4cRNBzzoB0Q9qj0EeKa60iXkCPYhCyiE=;
- b=K4aoRBJRlY1qdjjNZR8ikCx/HbiMzPyliIVoo3JzmQz+paw7eG8eEcZrj09XHWEctczF7+HfFRBMJHw80QBcdOWfMYb+iOVJUVMHOw/QP+pzeQHLnR8w6alY7zCbUbknhugk+bKoAav+Go9dGyz5eGNaF1bF+nSsKXVZFeky8NpVEBIR3fAfP9BnKi0T7N4gt3uCDg2ZlberANaSrbKYA8qb7/ziMULU7lc8Bt17vDmDSILrDaAGxwmsQCXPCKoFJvsfCmBJG/rbk2VnGuyhj/HODYcN+kJYm3g7OaUth+HlcQcFlxRKhGdqiiYYKUQ5ZPyXWb+xv4nUx1hBs3QHhA==
+ bh=ITfgWZWqCTAbbNuMQVu1VQ0vc4gXmuH9y5+GP3AKdJU=;
+ b=JWv+BsVPfztMg2XTcgI2N8vCldxiFjlLOCmSw74Wywv2UwLYcwHKDHnWOvDLXsz9RFIX6TYmOnhdysC3C2ETkebS4FdjfWM41Y7GwhvE3Dcjhvo69BRV9S7tKgINH4L4sHkfEHGhMdR5Gf3CnPYpS78fJL442Dd0syikcV2Xa3ArzOTA2WYldmpgnR3P6Mpl+EKzXBHpJHin2VeMdUgFanBKV6jsATa2I9b5CbpR3v13qpxqbnmbf7X75/jJOQaGuw0Wey0gTDUUsH2D2wPms3BXDtW8/R6efS30riMgF5FswD0a6z0iqi6UqoNLXPyuwSYM/Rcg3knPsMd6y5Ljow==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from DU2PR04MB8951.eurprd04.prod.outlook.com (2603:10a6:10:2e2::22)
- by DB8PR04MB7162.eurprd04.prod.outlook.com (2603:10a6:10:12c::13) with
+ by AS5PR04MB11346.eurprd04.prod.outlook.com (2603:10a6:20b:6c1::21) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9434.7; Fri, 19 Dec
- 2025 17:08:28 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9434.8; Fri, 19 Dec
+ 2025 17:16:56 +0000
 Received: from DU2PR04MB8951.eurprd04.prod.outlook.com
  ([fe80::753c:468d:266:196]) by DU2PR04MB8951.eurprd04.prod.outlook.com
  ([fe80::753c:468d:266:196%4]) with mapi id 15.20.9434.001; Fri, 19 Dec 2025
- 17:08:28 +0000
-Date: Fri, 19 Dec 2025 12:08:22 -0500
+ 17:16:56 +0000
+Date: Fri, 19 Dec 2025 12:16:49 -0500
 From: Frank Li <Frank.li@nxp.com>
 To: Adrian Hunter <adrian.hunter@intel.com>
 Cc: alexandre.belloni@bootlin.com,
 	Wolfram Sang <wsa+renesas@sang-engineering.com>,
 	Aniket <aniketmaurya@google.com>, linux-i3c@lists.infradead.org
-Subject: Re: [PATCH 15/17] i3c: master: Introduce optional Runtime PM support
-Message-ID: <aUWGhscb+6ZYRhzx@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH 16/17] i3c: mipi-i3c-hci: Add optional Runtime PM support
+Message-ID: <aUWIgXzrni0o4rWS@lizhi-Precision-Tower-5810>
 References: <20251219144534.84391-1-adrian.hunter@intel.com>
- <20251219144534.84391-16-adrian.hunter@intel.com>
+ <20251219144534.84391-17-adrian.hunter@intel.com>
 Content-Disposition: inline
-In-Reply-To: <20251219144534.84391-16-adrian.hunter@intel.com>
-X-ClientProxiedBy: BYAPR08CA0001.namprd08.prod.outlook.com
- (2603:10b6:a03:100::14) To DU2PR04MB8951.eurprd04.prod.outlook.com
+In-Reply-To: <20251219144534.84391-17-adrian.hunter@intel.com>
+X-ClientProxiedBy: SJ0PR13CA0234.namprd13.prod.outlook.com
+ (2603:10b6:a03:2c1::29) To DU2PR04MB8951.eurprd04.prod.outlook.com
  (2603:10a6:10:2e2::22)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|DB8PR04MB7162:EE_
-X-MS-Office365-Filtering-Correlation-Id: c406cd16-e62c-4394-2560-08de3f213ad1
+X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|AS5PR04MB11346:EE_
+X-MS-Office365-Filtering-Correlation-Id: 1a465b47-bdc7-45b0-0bb0-08de3f226973
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|52116014|366016|1800799024|19092799006|38350700014|7053199007;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?NPtGeQcQPGodokQzuBqwC/DKJvY6qUB+RyAD9mzLVg0S1gluKTug/FXtDGan?=
- =?us-ascii?Q?77dbp9CSwoRwe0lOT6vTVvOR6KtmhkqVetWfTKQcERR/io3dn5vl4GYAIJMI?=
- =?us-ascii?Q?EGAiblSbd1eMpeYYm30xWDP8v2wmcVc8aO/XBHe6lnrCrO1A0bBFkfRFp8ad?=
- =?us-ascii?Q?KZdcVhy0yPn7xj4/o56Vzgsv7ls/nauAMorqFb8y+3FN6d/YgbRMOidLhgWG?=
- =?us-ascii?Q?wFU8wTeVSeB63rdDYW+kUs2GV8QTevbLtkb8m6TfhDT4RkNp7Dn+HmRRJ/cP?=
- =?us-ascii?Q?DFj/J0Eze5pE6NYbey+KkcwTsgpEi+Ok9ZIa74ExXZhM/+w8C/0+h+NoXqpD?=
- =?us-ascii?Q?MQGjj9SEYlU2aDS3Eqil/czNVX8XEHALpLmwyTwfaHX9h1HmugUHFrmAMGHp?=
- =?us-ascii?Q?RZ4tvZsleBGru+SY811ltlziif2K71v0Rki1AmOFCCvBkdkIFkUFag6Gj+5b?=
- =?us-ascii?Q?kZPgaIXyIj7jUyiJHIraujaWi/RMdGO/XaqdqVMiPKQKivRxbr/PXGjmP4oh?=
- =?us-ascii?Q?9nEWd6tXOajkAKcJtXlW3X5tjVCYIlIVeAgTBf0Wmb97CRvLA+MCxM6FluC/?=
- =?us-ascii?Q?ztA5rHviM+JQHZamcy+oNCTA+sKY2gPRoNTG6Ty7GD7h4qVvg7JvCEbQuMRT?=
- =?us-ascii?Q?PYfhc0Df2rlGyhGoPZXv89ARXDMo/1+C+RDotxtJ2SBbFrnlQsp4gBfgk7db?=
- =?us-ascii?Q?HY3ZNcvPG7O5iEXp+COPQp3nR2ZBqxSzOSQbERJ0iuxMhbWIflQcbIX2wCwY?=
- =?us-ascii?Q?zCfZ72prDFaIRV6TU9M9AvH8FXVcPCjFngotG6gioOxw7k/fBJ+otsmfbOo8?=
- =?us-ascii?Q?U1wsvOYuwjGAkmhP4ZuA4CvsfKZ92TzA8Cj91nY4GGAJVjR0AhlPk/bOax6Q?=
- =?us-ascii?Q?Xxb6VSBSYjfss3xz+oIPww2Y+ic9+K1yx5fPXbnndlOpJPMmQreNI2uuLMwU?=
- =?us-ascii?Q?MAS8tCiK1SfO/zppBu1p79PXgODSw4LPhY4mxBYPBS5wPOAxW5dW0A3Tp8xW?=
- =?us-ascii?Q?aCBX/ssk79IZaP1BQsao8RY8nl5WrphUUk+Gaof6H8ETh2x+Wjgwdpqre7r0?=
- =?us-ascii?Q?UXQiae/x66wM0GCKm2KkoJ9eF4kdE7BvjpPwUo3mJxiKNUAwWuV3bDwx+8lp?=
- =?us-ascii?Q?sskVvk7kJCTEB1oqwL3ywnZsLJqSihlXk0X9qLJRXPOGz1ksfVCOZIVarD6V?=
- =?us-ascii?Q?8Wx1hvNcMAkGGKFfmX4potJ+tJw84OKfVZ3CFSUxweDYj1oKHQ77EFzKWFzm?=
- =?us-ascii?Q?g6zdOgZvwKSAiYHV1WM0n5YGGkTCQhhmR0A6defj8JCnrbgm1R9VZ1QwfdaD?=
- =?us-ascii?Q?NyIErbypy50Bl874CUXwqaMMbgKAOpXH7oImSRR/YhZx6w6npb4rm/YMyUah?=
- =?us-ascii?Q?yQXcIfdlBJAmhGRKpw4i5mU9fDTcWRDr87DEslWSFsGc9ZolkxBR7Txz4VSs?=
- =?us-ascii?Q?0UA63h+qCGzGmIL+OuDj/kgAMMArOzmMmPjM5A+tgOhb/iQzbV+TZfet2b5t?=
- =?us-ascii?Q?CIK0K9KTXPHXl8EWyx1zGDUFsqh8NknbXwZN?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(52116014)(366016)(1800799024)(19092799006)(38350700014)(7053199007);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|52116014|19092799006|376014|1800799024|38350700014|7053199007;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?xeThFZvUzOx54AUEFQElkleSLAy0HszGVzReIT+PCPEVg9L6JCKQWvav+fhJ?=
+ =?us-ascii?Q?rSiIVFXQPRK2bivNcY+lp1ITtQjXIhUoCPwu+ZEnvtvSC+wK03zV4J0EmXcK?=
+ =?us-ascii?Q?IJJU+wnPL6zijsZIIRrTRW2JTzd97+FVopSJHnWpB1DpP2aAizsSICdukuf0?=
+ =?us-ascii?Q?YN25sLDo1xnol8bf1qfc0qfsBMZ7PJnOcA2B+t2VTPDkwidOFShLwO/M4MAE?=
+ =?us-ascii?Q?/LMzGlmyzD8ZlOotUFDVyDamRDHjLmI9LjFH5vcNPFbm9+KH86xZgGvzlm7i?=
+ =?us-ascii?Q?EmxUpBA96CCl6xpDmHZpsDiliKMbR30U7kziY1+ltqSNkpa6HrsTfMU1eBY6?=
+ =?us-ascii?Q?e8WUNOFzZFEFXqTPrgwykAvp2nCYj8yPHmiGzfOwThZkN7x9WD02IL+W02Wl?=
+ =?us-ascii?Q?z6Uym8n0atAyc04RqQvY4+ASJnLGQrNsQwTLfwMMETBn+uV2fY6czxvWK9tF?=
+ =?us-ascii?Q?h/yTPvHmWD0DDhc//D9FbFHJQ2mWxlo2BqQHoNL0bNClBz56jv2/h9uTNN3+?=
+ =?us-ascii?Q?1tDqg4407gAg7IqVcKd2AgcIC/+9H2y+wf60Mxe4A7rEpTG8nNVUZUb1TfZU?=
+ =?us-ascii?Q?zU5ufKG8b5Zc3jn3JW9DHlLfVwZXKzqHl12Je0Y7klDwivyTRtW7jyfCFbcy?=
+ =?us-ascii?Q?EFTIzX9Y5gGW5CidRntN58LWouVzOxBNngDnLyDpwrIAdxDm15Z1ckGbhzSC?=
+ =?us-ascii?Q?EPWPJc4H2TI478pynBfRZnhDjneE9E3QjmnI8x3uDJ/HOPcSeSERiB1/2Ji2?=
+ =?us-ascii?Q?9GLC0jvXJguzeH8cnWapoA+fww/yZPByYKuhNmgjqlDSbqMqRlfF/wbZhxKI?=
+ =?us-ascii?Q?5tljPWjrv2xtzeizEIDTw47GIiZ4cpBG/rGp16msUhUHektwk0Qdt7hJu3sv?=
+ =?us-ascii?Q?0wwwUne5lKyt3VQIUIpKXq0L8GpLD5Z00Weg0Rro540f49REg2w9YrBUuA3I?=
+ =?us-ascii?Q?BYVLXgBN69VzLu8tWlI5mDfnI/BvAtl7wQawrkpfsqw7pGOzQeANODo/9kIj?=
+ =?us-ascii?Q?EmrFFvwtcv8Vt7ICvAqCE1KoVwgBgNJgmZUx3GBL9MUpAmHpQz5Onw2QS3TZ?=
+ =?us-ascii?Q?CSsER/KMCoP8jqkc0XGsF3aHvFpq+GnSyMow1I+MAsOAq0MavV1YKzMZZ82B?=
+ =?us-ascii?Q?6DzLdd/efhVxKoOagwpANoULn2DOSYrKK7YtmevLJu9hKwJZgn+n5QekIYTP?=
+ =?us-ascii?Q?gRqv2HdL4hJKmeoNTpEOI6uO0r/3Ez8bH+DbgA9OzPD67Hj4oOPjJYXIU1rX?=
+ =?us-ascii?Q?9Wn/tfwreDX9/leFasr8/FzacvGX1el1DhAxbvb0gG2DH/CgWWs7Zv80+uJ2?=
+ =?us-ascii?Q?NgBk2q0xHl1WQrZqH+z8O96cMQa2a9xdLPsxEkbpc4Kcmzgomkgu2/LZju6m?=
+ =?us-ascii?Q?HJR4kEcovmjTt3Z+rYnXLjYZoeIGAVG4bXsS9ISJ+avdEklJ7KE2JPjDLioa?=
+ =?us-ascii?Q?6ZIB8CVpRXP2q/GL6sTk2lMNLlwHu2HBXxUh/cXLRujowU2uPFJbGYAJpKeL?=
+ =?us-ascii?Q?E8mJi2nx56QFHhntpm5AJSE6QCxQiddj4h2D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(52116014)(19092799006)(376014)(1800799024)(38350700014)(7053199007);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?F6NB2shRK53CqnwwxhR4tNDGqHfBeaiHa4hX1R1n/+IsyKV71miL7KMiY8XZ?=
- =?us-ascii?Q?U23xAPIkz3IzK1MeDd1v/q15N6tgBPwudnfcbPSkI6cuQn6qRG2H54iFEh1X?=
- =?us-ascii?Q?wabEjrSMxbpKiI0YX5267splInV28MacEc5huGNUAVsMnvPdB3nlLVz4x7OF?=
- =?us-ascii?Q?32EbQK69JZb0MSsQxZUne+0i5N1w2jvYzPN21gDLfGtGec+d5AZqkrldjWGN?=
- =?us-ascii?Q?xZOcVbvvXzyDRAYsGvL+m72uU3fCjQqShptm7oFjM8078Dda5LrDX2CS0Z4f?=
- =?us-ascii?Q?LrApW9jNRdzt27CCPr+f0ENEJ21UXzKt8g1QweHN8yDymmL2GH00eKEBPaE3?=
- =?us-ascii?Q?0Rb4Ef/nZhEvAyTp5w4yiiIPlf2LhlUXlCnaeuw5ee8V9UyBZmUKKUeUQCBz?=
- =?us-ascii?Q?xIZCbRNj+f5IN6TwHpLX0XSI29Ry0p6/OwgWl9LffH1JRSG/issknloAoVDb?=
- =?us-ascii?Q?lIbI88tBqqKwfNd1T/WWzJn9ts3432WebxaGIEaAwzyGTJA9r7gq7Zu+Vwww?=
- =?us-ascii?Q?iuhQm9PVBRSP7pXl5YEEtvuWZNHyVbHIxrgdEX1t8jcU3RMUXv56HR8u/Y/0?=
- =?us-ascii?Q?z54V2/sB7jJzar2ldLpCyh08/DFKOThYXXjod+QIdQpUwc/SPi11qVLYpTV/?=
- =?us-ascii?Q?GdowZF+0bFaFn5915hEeZBoJa9dBAEw41HXczNPvPZb7++PkM9wbrO0MMTXZ?=
- =?us-ascii?Q?eTU2VLKJAl7LHRB5VpsCJ0i3pWCJUR56thpWY1+tOgH9zjKt/D1KPMTOenba?=
- =?us-ascii?Q?CSLJxuzbwWeoKXhibdPESmQHGE5oYnq/QFBLL38AwWyvLemDwSZwGCO36CBa?=
- =?us-ascii?Q?9a6agZCo7vchnkYy9QTeOYfkAJnHt70xm+9vJVhCK1srGlqn50PU23sP1Nom?=
- =?us-ascii?Q?TR8U4OUDUn9jJCyeYxoBwAN88fDTWbQMazo1FepmEtERqG0/AAKBNMkce0Fp?=
- =?us-ascii?Q?qJ7+9Dv7U+pKd6wR4kQRAvae0TGZzNhw468CGcbvin5OuEBG4OEUs8l2aiWZ?=
- =?us-ascii?Q?rHHBBDjTKh1VGz5VeDlGBBykmIqwgRbwvWVMYxgUKjP89LjUjCDBvkfYKzuG?=
- =?us-ascii?Q?hE4rkAXZlhxd31itq+WSrjjw7JukKKNt/Lu6aeAHw9SIrxJMjeV+/kTwjo0m?=
- =?us-ascii?Q?GTg9PAEMtmru8aQrz1E+mrEC8OMeE0lDiAlgoFyry0tsaEh1DBnB97RAqo0d?=
- =?us-ascii?Q?UWCr4p8g/QahflRnIaTFNNGQb0UAfQiKuJrPq936YWr6Kk6EuIfhHl1pNg/y?=
- =?us-ascii?Q?KIcx8DfwQZtycM3LzfNp2VaCi37mOgT2fK6FXaX4O+ToTnBjKxKPZXKsjdQ9?=
- =?us-ascii?Q?t+OlzNLEaEcxfjvEmXyu3DTbWaaiWB4EesOjq0AtcgO45iT2nxgCQlYR2gVE?=
- =?us-ascii?Q?T8rAel5ZojkZf/gRMiC3EXT0ptn5VwIqNIj0Gkg2z9K8/fQ42RUImgj3JvG5?=
- =?us-ascii?Q?bc+lzj29y4LZn8QW2B696GQQJTWzuMJZCJFoEcqn1bN4BsRo4jpImVjmrpVZ?=
- =?us-ascii?Q?VzmjuWh7JxAFBlFZqsUzmjnxxumSv2Lj1LzPRndrpKlHkJvZBfWOTW8RpyyX?=
- =?us-ascii?Q?+Gp0Okw1nYXSh1C7kOGGxCShkmBFtSSj1eES8KeO322nHx3h3SIznkwAetQC?=
- =?us-ascii?Q?igfD7ph8O8PvmH10lOjhr1/m/liIto7an0/drLIZEgEdlQukWxlsJmQqJD+t?=
- =?us-ascii?Q?wnK+8Psx6A9h1cYWVCfE6RwSl6f0OwhFyVyIwdaJCYHZ+PTuut6sC9om8LTG?=
- =?us-ascii?Q?6jnwVJnt3A=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?LEIzWlf/9g8vItA+OsTuYbHRa75p7xFoFi2POcJGypNIb/vS5+HeNqHjsuuU?=
+ =?us-ascii?Q?x9sKyD7xwARX+H2X8h/QS61tPpTtLUhqzm2QmsNeuNs3eNmC4ZKljJS2PaYg?=
+ =?us-ascii?Q?RUL0UxCD1BWu9w/Bh5jWdTriGmynVjydfEb9ciH1uiHy5/u0PRkfAQImAQz3?=
+ =?us-ascii?Q?WLAih7w3IU4ofoSLxaUD0V5WqREiDhp2XoMMByAoUfUMjtHkG/pOx2tNvDF6?=
+ =?us-ascii?Q?thn7MHDctTb8MkESLcILU+wM8s9Dh7HBFgMwdqIU0+5SMpJ7UPDqzJTCj7Fs?=
+ =?us-ascii?Q?KgDppSGMEhSBmeFLxyN1S+5dBNChxM1mC87xG26me/GVGaHK3tUwzSnYloMD?=
+ =?us-ascii?Q?asnGO8kihiKFMfGf9KhHEUZ2Zi943ynSiFrT86z45rLys08e2paJo4gkQ90d?=
+ =?us-ascii?Q?B+FsOIjFIz4vL/nW2I228gMcz7G8JgGYBT+BjMbgNafECgKrh5PtkJkIvMCP?=
+ =?us-ascii?Q?CBQlKGpM91bRSlpnCOkMBnj10Wb1f2NW414xrTva/1TdBbo3BA7z1OAvGQiv?=
+ =?us-ascii?Q?sevbvfQfXGmmDbOY96duPC/m7OlGkxAar8tFv0Yi2K5VvjI0p1Mo+NZ8avrV?=
+ =?us-ascii?Q?uEEeRPKIF9U+Ugb+k93e1wA8Hf6o2My4c6NVEYKqkZuZ3gDknYGj/NxsSPNY?=
+ =?us-ascii?Q?PN7z1kROLYb4dpfhlg/0hGtbfS57i3wds71tq99ItBS184MIUuIgO6hKi71E?=
+ =?us-ascii?Q?kGBjeaheOeLKplGelThGRhI8eCGjOUV82En5yjxVcHF1ki+9T+JIHr3WWAuv?=
+ =?us-ascii?Q?nDeeLjR7gVrGF/794+WFEta5FrmsTCZoX2+NfOThEuuU0XRPZp0fqPrYC3o6?=
+ =?us-ascii?Q?9ZnncsvIBzvCqrczTndvkmTdSzK7zCVl31GAsFLfFb5LeUBZnuyiC3iAuJIF?=
+ =?us-ascii?Q?ftwmDcfAAOoWkPXnNItXsNFWzTgRsdxz0PMfAwLRmBL6QpVpdLQ1s8I0x5fH?=
+ =?us-ascii?Q?g9x3wOI9eCeHZFdvMH4dOT4HZ7p2SWKS3v4JyUGOmQZ0ldMfywXgQPWmRMVx?=
+ =?us-ascii?Q?darxxmr7J+WJDdfBbjG2c5GlNCSmoc5ma+AutxWJlBp1Oo4yh7uFdeL6NeAJ?=
+ =?us-ascii?Q?z7Btv6a59q7uo6ldCLeSd6LXXPVr84cWAAEC06Aq2JznoLeiswg3WffnK4fR?=
+ =?us-ascii?Q?LA1W1E3mT/c9n9eMJiPeO8JqDirKf5PUbJ9k8/h/fpqnAc5NVQDrTryTwg2o?=
+ =?us-ascii?Q?k35QxFx8yjBM3CICSCzk06C0/zR/DhztNe6SZNw4qigcOj4xCZDQaEjH8TY6?=
+ =?us-ascii?Q?mM+lMePuRxBw62H4E83Iljaru9u0df+uOpU7tUOZd9RhYXvR9gFELgkZFUSk?=
+ =?us-ascii?Q?CGU4HBL36D+Tq8kCHJndx/RONlNAa24b2qAit/jTXbXe3heASqBJ+f1EU8M8?=
+ =?us-ascii?Q?AH4aF1oz3gS2j/zDjhsFa/CADV2JQVCyLxFm2QTg0iCxkzVX9Ze0+oNdRtpr?=
+ =?us-ascii?Q?bNgs9WigXfuMWDxp5/Y/zU5Tf40g4ILBflA8mANydKkTxm+LiVa2mDEFBO0a?=
+ =?us-ascii?Q?nQEXp0u5IVBTQ5KhqhDflOSHxxL99GVSUqyFD5qVufOtWucmhv/hf+vN4wZA?=
+ =?us-ascii?Q?RYftY/g9PztoKk4jIxTSatfiQQ274WXaeINyWKw6N6h7X9EcQh4CCjYz+CzP?=
+ =?us-ascii?Q?FT5GV/TfexD71AAyZrQdo8XAR65BgJdSGez0oIfaicdklYvRcEQO5peHO6FB?=
+ =?us-ascii?Q?IqOA35AsH9N+vb51mMrHrhz3rOmTblkLNCOynjEu43T7dYQW?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c406cd16-e62c-4394-2560-08de3f213ad1
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1a465b47-bdc7-45b0-0bb0-08de3f226973
 X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8951.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Dec 2025 17:08:28.8190
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Dec 2025 17:16:56.5387
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: PqrKOt69POri1Xy5tHnIoGLrUzrBi8sD4PhAheIvyL/Xx/S48ca8AEst04AisZzvnpL+AFEuAFAei4wTMXr79g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR04MB7162
+X-MS-Exchange-CrossTenant-UserPrincipalName: 6XEOl42hXsfibnFHhX11uwEr0pF8APXvfA439mqzEjwI9VjsU/L8vneK+5NLpHbm9pwJBJfKxuzgX8/67503pA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS5PR04MB11346
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251219_090834_085078_8E6080D3 
-X-CRM114-Status: GOOD (  25.45  )
+X-CRM114-CacheID: sfid-20251219_091701_636482_F016AF6C 
+X-CRM114-Status: GOOD (  32.30  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -162,273 +161,225 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Dec 19, 2025 at 04:45:32PM +0200, Adrian Hunter wrote:
-> Master drivers currently manage Runtime PM individually, but all require
-> runtime resume for bus operations.  This can be centralized in common code.
+On Fri, Dec 19, 2025 at 04:45:33PM +0200, Adrian Hunter wrote:
+> Implement optional Runtime PM support for the MIPI I3C HCI driver.
+> Introduce runtime suspend and resume callbacks to manage bus state and
+> restore hardware configuration after resume.  Optionally enable autosuspend
+> with a default delay of 1 second, and add helper functions to control
+> Runtime PM during probe and remove.
 >
-> Add optional Runtime PM support to ensure the parent device is runtime
-> resumed before bus operations and auto-suspended afterward.
->
-> Notably, do not call ->bus_cleanup() if runtime resume fails.  Master
-> drivers that opt-in to core runtime PM support must take that into account.
->
-> Also provide an option to allow IBIs and hot-joins while runtime suspended.
+> Read quirks from i3c_hci_driver_ids[] and set new quirk
+> HCI_QUIRK_RPM_ALLOWED for intel-lpss-i3c devices to enable runtime PM for
+> them.
 >
 > Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 > ---
->  drivers/i3c/device.c       | 46 +++++++++++++++++--
->  drivers/i3c/internals.h    |  4 ++
->  drivers/i3c/master.c       | 93 +++++++++++++++++++++++++++++++++++---
->  include/linux/i3c/master.h |  4 ++
->  4 files changed, 138 insertions(+), 9 deletions(-)
+>  drivers/i3c/master/mipi-i3c-hci/core.c | 96 +++++++++++++++++++++++++-
+>  drivers/i3c/master/mipi-i3c-hci/hci.h  |  2 +
+>  2 files changed, 96 insertions(+), 2 deletions(-)
 >
-> diff --git a/drivers/i3c/device.c b/drivers/i3c/device.c
-> index 8a156f5ad692..101eaa77de68 100644
-> --- a/drivers/i3c/device.c
-> +++ b/drivers/i3c/device.c
-> @@ -46,10 +46,16 @@ int i3c_device_do_xfers(struct i3c_device *dev, struct i3c_xfer *xfers,
->  			return -EINVAL;
->  	}
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+> index 3b0609cb7da7..9a8d34ae4a66 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/core.c
+> +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+> @@ -16,6 +16,7 @@
+>  #include <linux/module.h>
+>  #include <linux/platform_data/mipi-i3c-hci.h>
+>  #include <linux/platform_device.h>
+> +#include <linux/pm_runtime.h>
 >
-> +	ret = i3c_bus_rpm_get(dev->bus);
-
-Is it i3c_bus_rpm_get(dev)?  dev->bus is parent of dev. in case i3c
-periphal need enable clock or other run time pm enable call back?
-
+>  #include "hci.h"
+>  #include "ext_caps.h"
+> @@ -176,6 +177,7 @@ void i3c_hci_sync_irq_inactive(struct i3c_hci *hci)
+>  	int irq = platform_get_irq(pdev, 0);
+>
+>  	reg_write(INTR_SIGNAL_ENABLE, 0x0);
+> +	hci->irq_inactive = true;
+>  	synchronize_irq(irq);
+>  }
+>
+> @@ -558,6 +560,14 @@ static irqreturn_t i3c_hci_irq_handler(int irq, void *dev_id)
+>  	irqreturn_t result = IRQ_NONE;
+>  	u32 val;
+>
+> +	/*
+> +	 * The IRQ can be shared, so the handler may be called when the IRQ is
+> +	 * due to a different device. That could happen when runtime suspended,
+> +	 * so exit immediately if IRQs are not expected for this device.
+> +	 */
+> +	if (hci->irq_inactive)
+> +		return IRQ_NONE;
+> +
+>  	val = reg_read(INTR_STATUS);
+>  	reg_write(INTR_STATUS, val);
+>  	dev_dbg(&hci->master.dev, "INTR_STATUS %#x", val);
+> @@ -613,6 +623,70 @@ static int i3c_hci_software_reset(struct i3c_hci *hci)
+>  	return 0;
+>  }
+>
+> +static int i3c_hci_runtime_suspend(struct device *dev)
+> +{
+> +	struct i3c_hci *hci = dev_get_drvdata(dev);
+> +	int ret;
+> +
+> +	ret = i3c_hci_bus_disable(hci);
 > +	if (ret)
 > +		return ret;
 > +
->  	i3c_bus_normaluse_lock(dev->bus);
->  	ret = i3c_dev_do_xfers_locked(dev->desc, xfers, nxfers, mode);
->  	i3c_bus_normaluse_unlock(dev->bus);
->
-> +	i3c_bus_rpm_put(dev->bus);
+> +	hci->io->suspend(hci);
 > +
->  	return ret;
->  }
-...
->
-> +static int __must_check i3c_master_rpm_get(struct i3c_master_controller *master)
-> +{
-> +	int ret = master->rpm_allowed ? pm_runtime_resume_and_get(master->dev.parent) : 0;
-
-I think rpm_allowed is not necessary. If don't allow rpm,  i3c bus driver
-should disable runtime_pm.
-
-I remember pm_runtime_resume_and_get() do nothing if runtime_pm disabled
-(need double check).
-
-Frank
-
-> +
-> +	if (ret < 0) {
-> +		dev_err(master->dev.parent, "runtime resume failed, error %d\n", ret);
-> +		return ret;
-> +	}
 > +	return 0;
 > +}
 > +
-> +static void i3c_master_rpm_put(struct i3c_master_controller *master)
+> +static int i3c_hci_runtime_resume(struct device *dev)
 > +{
-> +	if (master->rpm_allowed)
-> +		pm_runtime_put_autosuspend(master->dev.parent);
-> +}
+> +	struct i3c_hci *hci = dev_get_drvdata(dev);
+> +	int ret;
 > +
-> +int i3c_bus_rpm_get(struct i3c_bus *bus)
-> +{
-> +	return i3c_master_rpm_get(i3c_bus_to_i3c_master(bus));
-> +}
-> +
-> +void i3c_bus_rpm_put(struct i3c_bus *bus)
-> +{
-> +	i3c_master_rpm_put(i3c_bus_to_i3c_master(bus));
-> +}
-> +
-> +bool i3c_bus_rpm_ibi_allowed(struct i3c_bus *bus)
-> +{
-> +	return i3c_bus_to_i3c_master(bus)->rpm_ibi_allowed;
-> +}
-> +
->  static const struct device_type i3c_device_type;
->
->  static struct i3c_bus *dev_to_i3cbus(struct device *dev)
-> @@ -611,6 +643,12 @@ static int i3c_set_hotjoin(struct i3c_master_controller *master, bool enable)
->  	if (!master->ops->enable_hotjoin || !master->ops->disable_hotjoin)
->  		return -EINVAL;
->
-> +	if (enable || master->rpm_ibi_allowed) {
-> +		ret = i3c_master_rpm_get(master);
-> +		if (ret)
-> +			return ret;
-> +	}
-> +
->  	i3c_bus_normaluse_lock(&master->bus);
->
->  	if (enable)
-> @@ -623,6 +661,9 @@ static int i3c_set_hotjoin(struct i3c_master_controller *master, bool enable)
->
->  	i3c_bus_normaluse_unlock(&master->bus);
->
-> +	if ((enable && ret) || (!enable && !ret) || master->rpm_ibi_allowed)
-> +		i3c_master_rpm_put(master);
-> +
->  	return ret;
->  }
->
-> @@ -1712,18 +1753,23 @@ int i3c_master_do_daa(struct i3c_master_controller *master)
->  {
->  	int ret;
->
-> +	ret = i3c_master_rpm_get(master);
+> +	ret = i3c_hci_software_reset(hci);
 > +	if (ret)
-> +		return ret;
+> +		return -EIO;
 > +
->  	i3c_bus_maintenance_lock(&master->bus);
->  	ret = master->ops->do_daa(master);
->  	i3c_bus_maintenance_unlock(&master->bus);
+> +	reg_write(INTR_SIGNAL_ENABLE, 0x0);
+> +	reg_write(INTR_STATUS_ENABLE, GENMASK(31, 10));
+> +
+> +	reg_clear(HC_CONTROL, HC_CONTROL_PIO_MODE);
+> +
+> +	reg_write(MASTER_DEVICE_ADDR,
+> +		  MASTER_DYNAMIC_ADDR(hci->master.this->info.dyn_addr) |
+> +		  MASTER_DYNAMIC_ADDR_VALID);
+> +
+
+Is it possible move these register write to one of help function?
+
+> +	mipi_i3c_hci_dat_v1.restore(hci);
+> +
+> +	hci->irq_inactive = false;
+> +
+> +	hci->io->resume(hci);
+> +
+> +	reg_set(HC_CONTROL, HC_CONTROL_BUS_ENABLE);
+> +
+> +	return 0;
+> +}
+> +
+> +#define DEFAULT_AUTOSUSPEND_DELAY_MS 1000
+> +
+> +static void i3c_hci_rpm_enable(struct device *dev)
+> +{
+> +	struct i3c_hci *hci = dev_get_drvdata(dev);
+> +
+> +	pm_runtime_set_autosuspend_delay(dev, DEFAULT_AUTOSUSPEND_DELAY_MS);
+> +	pm_runtime_use_autosuspend(dev);
+> +	pm_runtime_set_active(dev);
+> +	pm_runtime_enable(dev);
+
+use devm_pm_runtime_enable() can simple some code
+
+> +
+> +	hci->master.rpm_allowed = true;
+> +}
+> +
+> +static void i3c_hci_rpm_disable(struct device *dev)
+> +{
+> +	pm_runtime_disable(dev);
+> +	pm_runtime_set_suspended(dev);
+> +	pm_runtime_dont_use_autosuspend(dev);
+> +}
+> +
+>  static int i3c_hci_init(struct i3c_hci *hci)
+>  {
+>  	bool size_in_dwords, mode_selector;
+> @@ -806,6 +880,8 @@ static int i3c_hci_probe(struct platform_device *pdev)
+>  	hci->master.dev.init_name = dev_name(&pdev->dev);
 >
+>  	hci->quirks = (unsigned long)device_get_match_data(&pdev->dev);
+> +	if (!hci->quirks && platform_get_device_id(pdev))
+> +		hci->quirks = platform_get_device_id(pdev)->driver_data;
+>
+>  	ret = i3c_hci_init(hci);
+>  	if (ret)
+> @@ -817,12 +893,20 @@ static int i3c_hci_probe(struct platform_device *pdev)
+>  	if (ret)
+>  		return ret;
+>
+> +	if (hci->quirks & HCI_QUIRK_RPM_ALLOWED)
+> +		i3c_hci_rpm_enable(&pdev->dev);
+> +
+>  	ret = i3c_master_register(&hci->master, &pdev->dev,
+>  				  &i3c_hci_ops, false);
 >  	if (ret)
 > -		return ret;
-> +		goto out;
+> +		goto err_rpm_disable;
 >
->  	i3c_bus_normaluse_lock(&master->bus);
->  	i3c_master_register_new_i3c_devs(master);
->  	i3c_bus_normaluse_unlock(&master->bus);
-> -
-> -	return 0;
-> +out:
-> +	i3c_master_rpm_put(master);
+>  	return 0;
+> +
+> +err_rpm_disable:
+> +	if (hci->quirks & HCI_QUIRK_RPM_ALLOWED)
+> +		i3c_hci_rpm_disable(&pdev->dev);
 > +	return ret;
 >  }
->  EXPORT_SYMBOL_GPL(i3c_master_do_daa);
 >
-> @@ -2065,8 +2111,17 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
+>  static void i3c_hci_remove(struct platform_device *pdev)
+> @@ -830,6 +914,9 @@ static void i3c_hci_remove(struct platform_device *pdev)
+>  	struct i3c_hci *hci = platform_get_drvdata(pdev);
 >
->  static void i3c_master_bus_cleanup(struct i3c_master_controller *master)
->  {
-> -	if (master->ops->bus_cleanup)
-> -		master->ops->bus_cleanup(master);
-> +	if (master->ops->bus_cleanup) {
-> +		int ret = i3c_master_rpm_get(master);
+>  	i3c_master_unregister(&hci->master);
 > +
-> +		if (ret) {
-> +			dev_err(&master->dev,
-> +				"runtime resume error: master bus_cleanup() not done\n");
-> +		} else {
-> +			master->ops->bus_cleanup(master);
-> +			i3c_master_rpm_put(master);
-> +		}
-> +	}
->
->  	i3c_master_detach_free_devs(master);
->  }
-> @@ -2421,6 +2476,10 @@ static int i3c_master_i2c_adapter_xfer(struct i2c_adapter *adap,
->  			return -EOPNOTSUPP;
->  	}
->
-> +	ret = i3c_master_rpm_get(master);
-> +	if (ret)
-> +		return ret;
-> +
->  	i3c_bus_normaluse_lock(&master->bus);
->  	dev = i3c_master_find_i2c_dev_by_addr(master, addr);
->  	if (!dev)
-> @@ -2429,6 +2488,8 @@ static int i3c_master_i2c_adapter_xfer(struct i2c_adapter *adap,
->  		ret = master->ops->i2c_xfers(dev, xfers, nxfers);
->  	i3c_bus_normaluse_unlock(&master->bus);
->
-> +	i3c_master_rpm_put(master);
-> +
->  	return ret ? ret : nxfers;
+> +	if (hci->quirks & HCI_QUIRK_RPM_ALLOWED)
+> +		i3c_hci_rpm_disable(&pdev->dev);
 >  }
 >
-> @@ -2531,6 +2592,10 @@ static int i3c_i2c_notifier_call(struct notifier_block *nb, unsigned long action
+>  static const __maybe_unused struct of_device_id i3c_hci_of_match[] = {
+> @@ -845,11 +932,15 @@ static const struct acpi_device_id i3c_hci_acpi_match[] = {
+>  MODULE_DEVICE_TABLE(acpi, i3c_hci_acpi_match);
 >
->  	master = i2c_adapter_to_i3c_master(adap);
+>  static const struct platform_device_id i3c_hci_driver_ids[] = {
+> -	{ .name = "intel-lpss-i3c" },
+> +	{ .name = "intel-lpss-i3c", HCI_QUIRK_RPM_ALLOWED },
+>  	{ /* sentinel */ }
+>  };
+>  MODULE_DEVICE_TABLE(platform, i3c_hci_driver_ids);
 >
-> +	ret = i3c_master_rpm_get(master);
-> +	if (ret)
-> +		return ret;
+> +static const struct dev_pm_ops i3c_hci_pm_ops = {
+> +	SET_RUNTIME_PM_OPS(i3c_hci_runtime_suspend, i3c_hci_runtime_resume, NULL)
+
+new macro RUNTIME_PM_OPS
+
+Frank
+> +};
 > +
->  	i3c_bus_maintenance_lock(&master->bus);
->  	switch (action) {
->  	case BUS_NOTIFY_ADD_DEVICE:
-> @@ -2544,6 +2609,8 @@ static int i3c_i2c_notifier_call(struct notifier_block *nb, unsigned long action
->  	}
->  	i3c_bus_maintenance_unlock(&master->bus);
+>  static struct platform_driver i3c_hci_driver = {
+>  	.probe = i3c_hci_probe,
+>  	.remove = i3c_hci_remove,
+> @@ -858,6 +949,7 @@ static struct platform_driver i3c_hci_driver = {
+>  		.name = "mipi-i3c-hci",
+>  		.of_match_table = of_match_ptr(i3c_hci_of_match),
+>  		.acpi_match_table = i3c_hci_acpi_match,
+> +		.pm = pm_ptr(&i3c_hci_pm_ops),
+>  	},
+>  };
+>  module_platform_driver(i3c_hci_driver);
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
+> index 38f927685d3b..6339adf4b67a 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/hci.h
+> +++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
+> @@ -51,6 +51,7 @@ struct i3c_hci {
+>  	void *io_data;
+>  	const struct hci_cmd_ops *cmd;
+>  	atomic_t next_cmd_tid;
+> +	bool irq_inactive;
+>  	u32 caps;
+>  	unsigned int quirks;
+>  	unsigned int DAT_entries;
+> @@ -143,6 +144,7 @@ struct i3c_hci_dev_data {
+>  #define HCI_QUIRK_PIO_MODE	BIT(2)  /* Set PIO mode for AMD platforms */
+>  #define HCI_QUIRK_OD_PP_TIMING		BIT(3)  /* Set OD and PP timings for AMD platforms */
+>  #define HCI_QUIRK_RESP_BUF_THLD		BIT(4)  /* Set resp buf thld to 0 for AMD platforms */
+> +#define HCI_QUIRK_RPM_ALLOWED		BIT(5)  /* Runtime PM allowed */
 >
-> +	i3c_master_rpm_put(master);
-> +
->  	return ret;
->  }
->
-> @@ -2881,6 +2948,10 @@ int i3c_master_register(struct i3c_master_controller *master,
->  	INIT_LIST_HEAD(&master->boardinfo.i2c);
->  	INIT_LIST_HEAD(&master->boardinfo.i3c);
->
-> +	ret = i3c_master_rpm_get(master);
-> +	if (ret)
-> +		return ret;
-> +
->  	device_initialize(&master->dev);
->  	dev_set_name(&master->dev, "i3c-%d", i3cbus->id);
->
-> @@ -2960,6 +3031,8 @@ int i3c_master_register(struct i3c_master_controller *master,
->  	i3c_master_register_new_i3c_devs(master);
->  	i3c_bus_normaluse_unlock(&master->bus);
->
-> +	i3c_master_rpm_put(master);
-> +
->  	return 0;
->
->  err_del_dev:
-> @@ -2969,6 +3042,7 @@ int i3c_master_register(struct i3c_master_controller *master,
->  	i3c_master_bus_cleanup(master);
->
->  err_put_dev:
-> +	i3c_master_rpm_put(master);
->  	put_device(&master->dev);
->
->  	return ret;
-> @@ -3114,8 +3188,15 @@ void i3c_dev_free_ibi_locked(struct i3c_dev_desc *dev)
->  		return;
->
->  	if (dev->ibi->enabled) {
-> +		int ret;
-> +
->  		dev_err(&master->dev, "Freeing IBI that is still enabled\n");
-> -		if (i3c_dev_disable_ibi_locked(dev))
-> +		ret = i3c_master_rpm_get(master);
-> +		if (!ret) {
-> +			ret = i3c_dev_disable_ibi_locked(dev);
-> +			i3c_master_rpm_put(master);
-> +		}
-> +		if (ret)
->  			dev_err(&master->dev, "Failed to disable IBI before freeing\n");
->  	}
->
-> diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
-> index 6225ad28f210..c1ec597f655c 100644
-> --- a/include/linux/i3c/master.h
-> +++ b/include/linux/i3c/master.h
-> @@ -504,6 +504,8 @@ struct i3c_master_controller_ops {
->   * @secondary: true if the master is a secondary master
->   * @init_done: true when the bus initialization is done
->   * @hotjoin: true if the master support hotjoin
-> + * @rpm_allowed: true if Runtime PM allowed
-> + * @rpm_ibi_allowed: true if IBI and Hot-Join allowed while runtime suspended
->   * @boardinfo.i3c: list of I3C  boardinfo objects
->   * @boardinfo.i2c: list of I2C boardinfo objects
->   * @boardinfo: board-level information attached to devices connected on the bus
-> @@ -527,6 +529,8 @@ struct i3c_master_controller {
->  	unsigned int secondary : 1;
->  	unsigned int init_done : 1;
->  	unsigned int hotjoin: 1;
-> +	unsigned int rpm_allowed: 1;
-> +	unsigned int rpm_ibi_allowed: 1;
->  	struct {
->  		struct list_head i3c;
->  		struct list_head i2c;
+>  /* global functions */
+>  void mipi_i3c_hci_resume(struct i3c_hci *hci);
 > --
 > 2.51.0
 >
