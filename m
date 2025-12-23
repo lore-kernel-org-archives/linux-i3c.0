@@ -4,67 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE6C8E67482
-	for <linux-i3c@archiver.kernel.org>; Sun, 21 Dec 2025 19:13:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F13B6E6F078
+	for <linux-i3c@archiver.kernel.org>; Tue, 23 Dec 2025 09:31:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dd4LPCyjnqqy8GpV2FMQ2gXvyB6IuaSm68sGbCMkOdM=; b=KCfcVuFK8JKvHp
-	i2tTWCDs6//H4MCHgBD4FbCcujEVuBVKN3vAp8xWRHwvLgMa74x8OIYnDRmIhEH0L33iVO6lHH02/
-	J5vu8TS2HoW4+W9mopSXz3bTtC8Fbrvz+7xgZsyQXpJ2iSURXWB72aCud7bk/cCjaFbCR2JIeqq7p
-	PypjX3UTu0k0MkpJhtCmhekP+ojAi3XK41mGUkuiEVJslhLD3AwZHqneOj8p1WtB7n9hTCg+xClbv
-	hG4lr0YHrGcU6516Yz8vSUwv5Sc4SOyGsoXMc2GiLeknPhdLOHnOsird/x0fbwFeSlTSyzj5Mgkvj
-	gp2K3BvRejNBS+27jQjg==;
+	List-Owner; bh=pvZ6teUOVd2CKNgQuZ6t5yT+DeiduZeW7Rt+aR/E834=; b=4tfSGHCmdOBi+t
+	hFf1/J1NXaoqaQOTBaZ3G46Ard8m40ByB6lobdUWeaGbIWAk4XgXdCyVannIWno8FCwq9g95bp9h0
+	sdNHZYkMldBSqDESkXZn0JN6UQdmGJ/MNmXv4HMJ2qEfhS8hYDah7utTU8iM2wSrX/yAEklm7fxkM
+	C2H6TCzXZjXl8gl7JzGxA3oM3KA+CGKurobahh05Rv6v8MlD08mPsXVL31/6NUhQOAZ7a15HbOZNn
+	L6rUfr9zgmZkVrSbMjDgclwR8fK5qJ8O2Yfy0sth+yiP2RsRP81QMpIjQgQTaO2Z1lwp9CZ3FaDLk
+	A+0x2PPKujN7+eY/O7NQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vXOrz-0000000Cfr6-44cD;
-	Sun, 21 Dec 2025 19:13:32 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vXykE-0000000ElCr-2yYA;
+	Tue, 23 Dec 2025 09:31:54 +0000
+Received: from frasgout.his.huawei.com ([185.176.79.56])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vXOrx-0000000Cfqc-1yPb
+	id 1vXykB-0000000ElCV-1wwh
 	for linux-i3c@lists.infradead.org;
-	Sun, 21 Dec 2025 19:13:30 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 7EB494183E;
-	Sun, 21 Dec 2025 19:13:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 26950C4CEFB;
-	Sun, 21 Dec 2025 19:13:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1766344408;
-	bh=oIyM+6Y/011fii1rlhhpcPat9VA188HJLa4bJW7bpaQ=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=M+0w4dWyUPFr18KdNyX7huN2SDMOTn5wqJmZQN6yZX0H5DPHDNpyy5m/Srh9yv5Ip
-	 pEtiO8wUc5LMR38Vr1ery0zlFRCfLjqAS9qJaY1p3euMfcBEARi0ZMKVudIZWkosTN
-	 v8YJZvd6U4lWyBIpM9CAC73TnpzOQEirudR3jddJLgd5r4/ocE9sDopg5pKtkSKv6p
-	 5+1P885HSu2oOzhzSldDXAK2GvzOl3dnJZondxxVk29X5H9f40VdNhk+02yYqkcpef
-	 b1nfArXEtvQEz82LsegykuYfKb2BxPw5/rR96fKaLt4+uKH3X2/MBE/Pls34fnor4l
-	 gDAghbmIfzGag==
-Date: Sun, 21 Dec 2025 19:13:16 +0000
-From: Jonathan Cameron <jic23@kernel.org>
-To: Frank Li <Frank.Li@nxp.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, Miquel Raynal
- <miquel.raynal@bootlin.com>, David Lechner <dlechner@baylibre.com>, Nuno
- =?UTF-8?B?U8Oh?= <nuno.sa@analog.com>, Andy Shevchenko <andy@kernel.org>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, linux-i3c@lists.infradead.org,
- linux-kernel@vger.kernel.org, imx@lists.linux.dev,
- linux-iio@vger.kernel.org, joshua.yeong@starfivetech.com,
- devicetree@vger.kernel.org, linux@roeck-us.net, Carlos Song
- <carlos.song@nxp.com>, Adrian Fluturel <fluturel.adrian@gmail.com>, Andy
- Shevchenko <andriy.shevchenko@intel.com>
-Subject: Re: [PATCH v12 2/2] iio: magnetometer: Add mmc5633 sensor
-Message-ID: <20251221191316.7c3aa128@jic23-huawei>
-In-Reply-To: <20251215-i3c_ddr-v12-2-1ae31225b4d9@nxp.com>
-References: <20251215-i3c_ddr-v12-0-1ae31225b4d9@nxp.com>
-	<20251215-i3c_ddr-v12-2-1ae31225b4d9@nxp.com>
-X-Mailer: Claws Mail 4.3.1 (GTK 3.24.51; x86_64-pc-linux-gnu)
+	Tue, 23 Dec 2025 09:31:53 +0000
+Received: from mail.maildlp.com (unknown [172.18.224.83])
+	by frasgout.his.huawei.com (SkyGuard) with ESMTPS id 4db8rp02dpzJ46bZ;
+	Tue, 23 Dec 2025 17:31:06 +0800 (CST)
+Received: from dubpeml100005.china.huawei.com (unknown [7.214.146.113])
+	by mail.maildlp.com (Postfix) with ESMTPS id E2FC64056E;
+	Tue, 23 Dec 2025 17:31:44 +0800 (CST)
+Received: from localhost (10.203.177.15) by dubpeml100005.china.huawei.com
+ (7.214.146.113) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.36; Tue, 23 Dec
+ 2025 09:31:44 +0000
+Date: Tue, 23 Dec 2025 09:31:42 +0000
+From: Jonathan Cameron <jonathan.cameron@huawei.com>
+To: kernel test robot <lkp@intel.com>
+CC: Frank Li <Frank.Li@nxp.com>, <oe-kbuild-all@lists.linux.dev>, "Carlos
+ Song" <carlos.song@nxp.com>, Adrian Fluturel <fluturel.adrian@gmail.com>,
+	Andy Shevchenko <andriy.shevchenko@intel.com>, Alexandre Belloni
+	<alexandre.belloni@bootlin.com>, <linux-i3c@lists.infradead.org>,
+	<linux-iio@vger.kernel.org>
+Subject: Re: [jic23-iio:testing 47/49] drivers/base/regmap/regmap-i3c.c:41:
+ undefined reference to `i3c_device_do_xfers'
+Message-ID: <20251223093142.00007880@huawei.com>
+In-Reply-To: <20251223093037.00003f7a@huawei.com>
+References: <202512230418.nu3V6Yua-lkp@intel.com>
+	<20251223093037.00003f7a@huawei.com>
+X-Mailer: Claws Mail 4.3.0 (GTK 3.24.42; x86_64-w64-mingw32)
 MIME-Version: 1.0
+X-Originating-IP: [10.203.177.15]
+X-ClientProxiedBy: lhrpeml100011.china.huawei.com (7.191.174.247) To
+ dubpeml100005.china.huawei.com (7.214.146.113)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251221_111329_553155_42FA3BB7 
-X-CRM114-Status: GOOD (  16.46  )
+X-CRM114-CacheID: sfid-20251223_013151_847001_1FE99E53 
+X-CRM114-Status: GOOD (  13.56  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,77 +75,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, 15 Dec 2025 11:51:11 -0500
-Frank Li <Frank.Li@nxp.com> wrote:
+On Tue, 23 Dec 2025 09:30:37 +0000
+Jonathan Cameron <jonathan.cameron@huawei.com> wrote:
 
-> Add mmc5633 sensor basic support.
-> - Support read 20 bits X/Y/Z magnetic.
-> - Support I3C HDR mode to send start measurememt command.
-> - Support I3C HDR mode to read all sensors data by one command.
+> On Tue, 23 Dec 2025 04:17:12 +0800
+> kernel test robot <lkp@intel.com> wrote:
 > 
-> Co-developed-by: Carlos Song <carlos.song@nxp.com>
-> Signed-off-by: Carlos Song <carlos.song@nxp.com>
-> Co-developed-by: Adrian Fluturel <fluturel.adrian@gmail.com>
-> Signed-off-by: Adrian Fluturel <fluturel.adrian@gmail.com>
-> Reviewed-by: Andy Shevchenko <andriy.shevchenko@intel.com>
-> Signed-off-by: Frank Li <Frank.Li@nxp.com>
+> > tree:   https://git.kernel.org/pub/scm/linux/kernel/git/jic23/iio.git testing
+> > head:   4e44c635ba8c281f74001d47e20bbcb7f516530c
+> > commit: 6e5f6bf2e3f036e6d7466d2a3322445729ea3356 [47/49] iio: magnetometer: Add mmc5633 sensor
+> > config: sparc64-randconfig-001-20251223 (https://download.01.org/0day-ci/archive/20251223/202512230418.nu3V6Yua-lkp@intel.com/config)
+> > compiler: sparc64-linux-gcc (GCC) 8.5.0
+> > reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20251223/202512230418.nu3V6Yua-lkp@intel.com/reproduce)
+> > 
+> > If you fix the issue in a separate patch/commit (i.e. not just a new version of
+> > the same patch/commit), kindly add following tags
+> > | Reported-by: kernel test robot <lkp@intel.com>
+> > | Closes: https://lore.kernel.org/oe-kbuild-all/202512230418.nu3V6Yua-lkp@intel.com/
+> > 
+> > All errors (new ones prefixed by >>):
+> > 
+> >    sparc64-linux-ld: drivers/base/regmap/regmap-i3c.o: in function `regmap_i3c_read':  
+> > >> drivers/base/regmap/regmap-i3c.c:41: undefined reference to `i3c_device_do_xfers'    
+> >    sparc64-linux-ld: drivers/base/regmap/regmap-i3c.o: in function `regmap_i3c_write':
+> >    drivers/base/regmap/regmap-i3c.c:22: undefined reference to `i3c_device_do_xfers'
+> >    sparc64-linux-ld: drivers/iio/magnetometer/mmc5633.o: in function `mmc5633_is_support_hdr':  
+> > >> drivers/iio/magnetometer/mmc5633.c:193: undefined reference to `i3c_device_get_supported_xfer_mode'    
+> >    sparc64-linux-ld: drivers/iio/magnetometer/mmc5633.o: in function `mmc5633_read_measurement':  
+> > >> drivers/iio/magnetometer/mmc5633.c:230: undefined reference to `i3c_device_do_xfers'
+> > >> sparc64-linux-ld: drivers/iio/magnetometer/mmc5633.c:237: undefined reference to `i3c_device_do_xfers'    
+> >    sparc64-linux-ld: drivers/iio/magnetometer/mmc5633.c:251: undefined reference to `i3c_device_do_xfers'  
+> > >> sparc64-linux-ld: drivers/iio/magnetometer/mmc5633.c:230: undefined reference to `i3c_device_do_xfers'    
+> 
+> Seems like we need a stub.
 
-drivers/iio/magnetometer/mmc5633.c:87:5: warning: symbol 'mmc5633_samp_freq' was not declared. Should it be static?
-(I fixed up)
++CC the lists to broaden awareness.
 
-With that and the trivial stuff below tidied up whilst applying, applied to the togreg
-branch of iio.git. I'll initially push out as testing however to let the
-bots take a first look before I annoy linux-next 
+> 
+> Jonathan
+> 
+> 
+> > 
+> > Kconfig warnings: (for reference only)
+> >    WARNING: unmet direct dependencies detected for CAN_DEV
+> >    Depends on [n]: NETDEVICES [=n] && CAN [=y]
+> >    Selected by [y]:
+> >    - CAN [=y] && NET [=y]
+> >    WARNING: unmet direct dependencies detected for REGMAP_I3C
+> >    Depends on [n]: I3C [=n]
+> >    Selected by [y]:
+> >    - MMC5633 [=y] && IIO [=y] && (I2C [=y] || I3C [=n])
+> > 
+> > 
+> > vim +41 drivers/base/regmap/regmap-i3c.c
+> > 
+> > 6445500b43129b Vitor Soares   2019-06-06  24  
+> > 6445500b43129b Vitor Soares   2019-06-06  25  static int regmap_i3c_read(void *context,
+> > 6445500b43129b Vitor Soares   2019-06-06  26  			   const void *reg, size_t reg_size,
+> > 6445500b43129b Vitor Soares   2019-06-06  27  			   void *val, size_t val_size)
+> > 6445500b43129b Vitor Soares   2019-06-06  28  {
+> > 6445500b43129b Vitor Soares   2019-06-06  29  	struct device *dev = context;
+> > 6445500b43129b Vitor Soares   2019-06-06  30  	struct i3c_device *i3c = dev_to_i3cdev(dev);
+> > 79c3ae7ada0548 Frank Li       2025-10-28  31  	struct i3c_xfer xfers[2];
+> > 6445500b43129b Vitor Soares   2019-06-06  32  
+> > 6445500b43129b Vitor Soares   2019-06-06  33  	xfers[0].rnw = false;
+> > 6445500b43129b Vitor Soares   2019-06-06  34  	xfers[0].len = reg_size;
+> > 6445500b43129b Vitor Soares   2019-06-06  35  	xfers[0].data.out = reg;
+> > 6445500b43129b Vitor Soares   2019-06-06  36  
+> > 6445500b43129b Vitor Soares   2019-06-06  37  	xfers[1].rnw = true;
+> > 6445500b43129b Vitor Soares   2019-06-06  38  	xfers[1].len = val_size;
+> > 6445500b43129b Vitor Soares   2019-06-06  39  	xfers[1].data.in = val;
+> > 6445500b43129b Vitor Soares   2019-06-06  40  
+> > c2f2b01b74be8b Linus Torvalds 2025-12-08 @41  	return i3c_device_do_xfers(i3c, xfers, ARRAY_SIZE(xfers), I3C_SDR);
+> > 6445500b43129b Vitor Soares   2019-06-06  42  }
+> > 6445500b43129b Vitor Soares   2019-06-06  43  
+> > 
+> > :::::: The code at line 41 was first introduced by commit
+> > :::::: c2f2b01b74be8b40a2173372bcd770723f87e7b2 Merge tag 'i3c/for-6.19' of git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux
+> > 
+> > :::::: TO: Linus Torvalds <torvalds@linux-foundation.org>
+> > :::::: CC: Linus Torvalds <torvalds@linux-foundation.org>
+> >   
+> 
 
-Jonathan
-
-
-> diff --git a/drivers/iio/magnetometer/mmc5633.c b/drivers/iio/magnetometer/mmc5633.c
-> new file mode 100644
-> index 0000000000000000000000000000000000000000..7b20ff3b063b026ab2ae0170fd8c021973428dea
-> --- /dev/null
-> +++ b/drivers/iio/magnetometer/mmc5633.c
-
-> +static int mmc5633_write_raw(struct iio_dev *indio_dev,
-> +			     struct iio_chan_spec const *chan, int val,
-> +			     int val2, long mask)
-> +{
-> +	struct mmc5633_data *data = iio_priv(indio_dev);
-> +	int ret;
-> +
-> +	switch (mask) {
-> +	case IIO_CHAN_INFO_SAMP_FREQ:
-
-This is the missing scope thing from the bot report.  {}
-needed in a switch to define scope for local variables like the one guard()
-is using under the hood.
-
-> +		ret = mmc5633_get_samp_freq_index(data, val, val2);
-> +		if (ret < 0)
-> +			return ret;
-> +
-> +		guard(mutex)(&data->mutex);
-> +
-> +		return regmap_update_bits(data->regmap, MMC5633_REG_CTRL1,
-> +					  MMC5633_CTRL1_BW_MASK,
-> +					  FIELD_PREP(MMC5633_CTRL1_BW_MASK, ret));
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +}
-
-> +
-> +static struct i2c_driver mmc5633_i2c_driver = {
-> +	.driver = {
-> +		.name = "mmc5633_i2c",
-> +		.of_match_table = mmc5633_of_match,
-> +		.pm = pm_sleep_ptr(&mmc5633_pm_ops),
-> +	},
-> +	.probe = mmc5633_i2c_probe,
-> +	.id_table =  mmc5633_i2c_id,
-Bonus space after =
-
-> +};
 
 -- 
 linux-i3c mailing list
