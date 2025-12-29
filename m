@@ -4,138 +4,160 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA27AE75452
-	for <linux-i3c@archiver.kernel.org>; Wed, 24 Dec 2025 12:46:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 406BFE8FDBE
+	for <linux-i3c@archiver.kernel.org>; Mon, 29 Dec 2025 15:14:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=d2bKZr0IcJDQ0f1YhMyJLplgYcfHlYy7aUABIOf7CJA=; b=uXQtmqCjdSV2KN
-	b5dt8k/OMOHJdS/yhSiwxJu8RUhjELjauSMlHcstfvi2nhxeyZRrYqRCezHSXuWtV5jDtekwUT+Sv
-	4sDm3x4SyjxFuvGuk4ikBMw/65ShfhVtMra/FHMsImXWVciGKIiaCerRlw3Zsx0DDHbADAMVYv6MU
-	BhQn9cjO7RzZIsxlq3jdo0+nTnnyyXQqTYxsNV1WNsCjnxYRcbkKuvKY5a4ZiyhmBkrrEboJeDhj5
-	m0DJT/a7mDeCou7OFhhO/2rEV+65q7RIsqSKqKa0RpohZC4nsrPQUbIAXxdpLyckwiAz98KfEJdog
-	eixdrVAupWGC8EMvVlCQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=81Eg+ur7Zgu3+e+rCRGJERDYoFPvmJQFvVOXV2HjXic=; b=RFH0JvTwsxs2p4
+	JjElN51eGeXsqU+tyf4uwsEpmSxLAFzSr6tXqQ9dunrLMG+9ewwFDFEO6DDzmEe14J/rpWCP1lTAa
+	A+1wCfxYzQrhA4uVcogQWlvIhFt9ewhA9L+wA9HELnLEztLLwOKZinnDUO0C62x2XzJkFGloaWDe7
+	QtRQZXmuAHiboYxSluKxefJAegkUarbhFK1DTO1+yQ3NgKgfs8l6skt6AcC0AIF0jGi1W9KDw9ydm
+	Ie7Xv9CiRgPfcsbdgv8KxD2eGBndNWNvoXwm0sPuNuCIJqKMuyx6HXHFPLyZ4987n8xWIaHw1qlXV
+	hgSgUmjqTI/wqCtcEs3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vYOG0-0000000GoWl-2H7k;
-	Wed, 24 Dec 2025 12:46:24 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1vaExH-00000003pY4-41wY;
+	Mon, 29 Dec 2025 15:14:43 +0000
+Received: from mail-westeuropeazon11010012.outbound.protection.outlook.com ([52.101.69.12] helo=AM0PR83CU005.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vYOFY-0000000GoS6-2GQz
+	id 1vaExD-00000003pXf-3F7W
 	for linux-i3c@lists.infradead.org;
-	Wed, 24 Dec 2025 12:46:20 +0000
-Received: from pps.filterd (m0279873.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 5BO8O2Wa721269
-	for <linux-i3c@lists.infradead.org>; Wed, 24 Dec 2025 12:45:55 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:date:from:message-id:mime-version
-	:subject:to; s=qcppdkim1; bh=bPcxatoAZw++IloVzGj2swJqf8DFr+0rXvj
-	SMJZwA84=; b=IQdA8UCM0/BoqFzM5DFZNce9x6gKy2lzreob8VasX3fEa0vhA3f
-	v+ldpRFdbpYNK90Gal/LGmFHx2Zs+UprL+pN3WNo30xGk51wIwqzPF36QbPkfCsl
-	3Tod5u0KA1e4Gs29T8MtoP7241/cF1d9CvutZLWCo//pMJKprz26YL/g5x+7ZWHJ
-	M4RcUvsmPbQ10D/FzqmxgbSvzGnQB53+VSElyYtnREeB79JNL81itLc3d7Yk2/iu
-	rMRcfDVD9FyzDvYumlbGTBS4Nfdu+geMa95HKPAgniQWZ3wyPGsf1L5YJgdtzG1k
-	yCnlyWBn+fA8AhhokmmmJRqhsdHZqxGanSA==
-Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com [209.85.160.198])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4b81mta7xs-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-i3c@lists.infradead.org>; Wed, 24 Dec 2025 12:45:55 +0000 (GMT)
-Received: by mail-qt1-f198.google.com with SMTP id d75a77b69052e-4ed6ff3de05so164072231cf.3
-        for <linux-i3c@lists.infradead.org>; Wed, 24 Dec 2025 04:45:55 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1766580355; x=1767185155; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=bPcxatoAZw++IloVzGj2swJqf8DFr+0rXvjSMJZwA84=;
-        b=GtENZR2RH+BnwuGrM+lsU0AObfnd9ttIPSjztSX6/RdssAy7v42eyciCh5fxYAqeeA
-         AL18F6dWi2x7zgo5/pD5YXdUlLw26n2Oer/HRU9FoX+Irq3n9ZSX0wVafqNM05BsFvQZ
-         D11xpa6AO7smCXRaMN/RLIWz2PYUAIGlJZJtMN/jhQRf5y9vmPT2OwEhtQa047RFAGfe
-         qacSd3oFqcKi2Ca5nv7cfekH25ElgjS9IQneDPr4W2571U1Je2GqaXXPwGXGzmE2GuzC
-         JPbnRczbhiF5tmzryOT1wL4v5lveJYwEw/DZSkbWfBvLsdmF3eXfYZXehvJ11aXm9pEp
-         LTmA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1766580355; x=1767185155;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=bPcxatoAZw++IloVzGj2swJqf8DFr+0rXvjSMJZwA84=;
-        b=plia6fTWqxtC3SVaOVZq3yUwR4ud9U4GSZKgO4qUftyab0+oIzQIVOTm5cY4B9Z9ro
-         lb9uLRQ17aii0NEKzx544QoWedNaht4I8iZposRkFch0DrtFO5t434qn7zzMxvpo5Z9z
-         bAowN/CCMXq8gfgqztfML4uQUM/QrWba97Hb/prORSbKLgWDbI/M4wJdUEXeTI31WYdo
-         vzi7FMTiE7qXhghwHV6NHnFRTBC2g+xqJk0faDJA0QiF+puPMyNROWfjImFV6pOgHQre
-         vC6XsuJ7oMgmDa4V5ieccOCicQ71pCWIT6q2k5fCxDp3qDxXeG3LK2pt97xYJhacVcok
-         oKUQ==
-X-Forwarded-Encrypted: i=1; AJvYcCViE9a0CXoJEEM2DEC8SY9h63ArHO0HEL3ytOs4sxN+xwRPEuXHksatl0326Y4LHqYlHh4JOPywmQo=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwfofKzqSf8hje5ZKTc1NNsfvfmuUMQ38guJKiF3bwni5tYe5ks
-	HrU+XIG4TxQaZt2vTgG9RfFNdgsPiJwUSglI6yzZ+62nZfY9OYzKoCkh1bRcbBgyQi9iuEHAxsO
-	OjsvAVBMvPRuBpvGeffGumhMG91xsPyPv/s/BLRa/5wzgQ7uox3ATZtFP3DAR+pyoXCfF
-X-Gm-Gg: AY/fxX7lq+gNQi5FpB8BUUom6XJUwPJhQ8UxLpmUeb/XcyUnoI2iPsuJfX+iArQP6ZA
-	QLbJCBakReL6D/8UJOm5NLbTTciDZ3RcNq9rq2kt3IVvXEWcyvLdxKl4RCtMZ6eRLpOJk8rpHvI
-	dDFb9AUBV2DACT7hyPNOB9gw8VRhu2FEK/z3U3c69WopUx+ho4OuOwE6n9UTtUlk1UmCeIX3sBr
-	Ui4HCPuS8t5d95hLD6C3bjaSbY7aaqXRuo0ZIMdGYKxMTtf7KQYGk7YBIfG2vqb+dI/K92NwhCn
-	oKd5sPl9GPn4uzAM4Al6VfSkVcRJwZog2t43U7pLoUxT4PDEEA7Lrlm+A3QW1rWf6d3z208LzWZ
-	MURAATBvPxQCmbETkn4Eeh+owVmaEIbhE8zfGjg7DwQ558+uqYPwdMJ5D1Tj31HJxX4V1UQ==
-X-Received: by 2002:ac8:6f0c:0:b0:4ed:8ab:e7aa with SMTP id d75a77b69052e-4f4abccf14emr235217301cf.11.1766580355068;
-        Wed, 24 Dec 2025 04:45:55 -0800 (PST)
-X-Google-Smtp-Source: AGHT+IH7yOlTdf8MpQJjQAjqHTsNBm4TzN+nR4k//Z5WJ7iizZ689861gq4tjy0D6sUmZksMIoFBWw==
-X-Received: by 2002:ac8:6f0c:0:b0:4ed:8ab:e7aa with SMTP id d75a77b69052e-4f4abccf14emr235217111cf.11.1766580354730;
-        Wed, 24 Dec 2025 04:45:54 -0800 (PST)
-Received: from quoll.home (83.5.187.232.ipv4.supernova.orange.pl. [83.5.187.232])
-        by smtp.gmail.com with ESMTPSA id a640c23a62f3a-b8037a614b7sm1774751066b.1.2025.12.24.04.45.53
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 24 Dec 2025 04:45:54 -0800 (PST)
-From: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-        Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
-        linux-kernel@vger.kernel.org
-Cc: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
-Subject: [PATCH] i3c: master: Simplify with scoped for each OF child loop
-Date: Wed, 24 Dec 2025 13:45:52 +0100
-Message-ID: <20251224124551.208778-2-krzysztof.kozlowski@oss.qualcomm.com>
-X-Mailer: git-send-email 2.51.0
+	Mon, 29 Dec 2025 15:14:42 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=wmONT/e0nM5X146S+NPWGXuLeQOAR4chOXX1et8K7Z2cZfyvacyMh6QQOhb7NgVk03/hAXEdFs+q6sLxzcuVD9/QjSeE3WY8iAPKBqDr7gDtKMoO6CPU/TfCGMHXMVI/qXFO0zS6laF6YfCJ6RFaqysl7QT7zZ4N3vBBWpipJKr6s+OTdAG/ODs9XKcVr0Cw/PnE71RlkNEWmkP2FKU1SbQ1NGlQ1X2+jjPHp/T9JdqTOIxpgtNlMr4ivdxZ3T1FTlvhK7NQVwft3/pQcOCxuMPGNPLjS9FPDP5rKKXi1WnIdDCV4CHTA2ZGVAQs3exoR+5R5+NV/y1Dd/7FnhSTJA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=cnZiUZsVcJt//uM9NS50fyS6bR00QF8W3BeMaFyMPWM=;
+ b=jq/tXqp94H8rvnlovb8JITEH5rnvk60jWkgQ7eGE7RINqDH2xMOqSA6DN+2BxfDRdW4ppOZX5OTUB5S4DNxkzRtDjcjlF6C1f52B4BQj/kLyJ1JTOtiKjyJAHN2gHNTovdF4omTqbPBFuQLftoOz/CvyngOAkFWi5wJ8MSN15mhCQdU06LzuxziU6y2zuvBdObCyZP3fC5sNhToVZ5cApWYwbMY/y3eXSmlPXLFWVUImuFyTnQ6X5GFgfZGPTsODhKfrEnly9LMv31W8WNNeFIJyXmoZb0JoHyyUJY6bUbyxNkFXTJyBmrpj487JPXCZ3KKdk0USWS3Zp0j4RvKSbA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=cnZiUZsVcJt//uM9NS50fyS6bR00QF8W3BeMaFyMPWM=;
+ b=IeQDypXTN4CAh/Zo+9qQvxn1R1lzwBu5rQW7N3ukPfD/RrNOxkiSBSZQgibQuyMwDpTjymaMFN4dMAPLxZHcsyrWlhHD2A7l2P3ypEcwoa+Qbgw1+PCZy9KeaBsHV0Drzd84e+WB+B9epF6Ij7gyg9fWgtEBxkfiH86H+D5jQRndteMfkvfMwMs9T+ZRzkh7Q3mZTQzfJxnx1iDAi7vomwL2Q0wRkgbA+KekxNoF2bioSVfCJpvkkdt0EJTKRCA8MUo0qNIcQLiMcaNEfheHBa3L5SvqBBE/a+q1ZcYO/lzgYy9YW9eGWxiOCcvKqKTB03c/a6gVdtoD+k1RgLgn7w==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from DU2PR04MB8951.eurprd04.prod.outlook.com (2603:10a6:10:2e2::22)
+ by GV2PR04MB11165.eurprd04.prod.outlook.com (2603:10a6:150:27c::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9456.14; Mon, 29 Dec
+ 2025 15:14:34 +0000
+Received: from DU2PR04MB8951.eurprd04.prod.outlook.com
+ ([fe80::753c:468d:266:196]) by DU2PR04MB8951.eurprd04.prod.outlook.com
+ ([fe80::753c:468d:266:196%4]) with mapi id 15.20.9456.013; Mon, 29 Dec 2025
+ 15:14:34 +0000
+Date: Mon, 29 Dec 2025 10:14:23 -0500
+From: Frank Li <Frank.li@nxp.com>
+To: Jonathan Cameron <jic23@kernel.org>
+Cc: kernel test robot <lkp@intel.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
+	David Lechner <dlechner@baylibre.com>,
+	Nuno =?iso-8859-1?Q?S=E1?= <nuno.sa@analog.com>,
+	Andy Shevchenko <andy@kernel.org>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, llvm@lists.linux.dev,
+	oe-kbuild-all@lists.linux.dev, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
+	linux-iio@vger.kernel.org, joshua.yeong@starfivetech.com,
+	devicetree@vger.kernel.org, linux@roeck-us.net,
+	Carlos Song <carlos.song@nxp.com>,
+	Adrian Fluturel <fluturel.adrian@gmail.com>
+Subject: Re: [PATCH v12 2/2] iio: magnetometer: Add mmc5633 sensor
+Message-ID: <aVKaz7XglkFbxMOr@lizhi-Precision-Tower-5810>
+References: <20251215-i3c_ddr-v12-2-1ae31225b4d9@nxp.com>
+ <202512202141.aAwyC19D-lkp@intel.com>
+ <20251221190742.4162108b@jic23-huawei>
+Content-Disposition: inline
+In-Reply-To: <20251221190742.4162108b@jic23-huawei>
+X-ClientProxiedBy: SJ0PR03CA0295.namprd03.prod.outlook.com
+ (2603:10b6:a03:39e::30) To DU2PR04MB8951.eurprd04.prod.outlook.com
+ (2603:10a6:10:2e2::22)
 MIME-Version: 1.0
-X-Developer-Signature: v=1; a=openpgp-sha256; l=955; i=krzysztof.kozlowski@oss.qualcomm.com;
- h=from:subject; bh=R+MFBNnRAfkrKmubnq2FvKWq5ojqYfYRaFKt3bk5fiA=;
- b=owEBbQKS/ZANAwAKAcE3ZuaGi4PXAcsmYgBpS+B/4DcTGySl5qCTw36l/8PTn0meYH9Az0QDL
- gRSAm5oESyJAjMEAAEKAB0WIQTd0mIoPREbIztuuKjBN2bmhouD1wUCaUvgfwAKCRDBN2bmhouD
- 10z9D/9eXEVwyHI5I1Vs8fadRhhJTKpi5diERLvFO+C0YUFggXfKcrmaZ5QEVLamQq3HsKAk0ls
- CpUhXf3HWFwGp05sgQIlmj247CSEWC/bNG1Cbrz7P2WYchPcQ4/5VcxPU0fOz1wA1JpbMLBb6Oi
- o9b/wsuLhd36JeGFbOEfBoQ7YwtzhaA11R8kk+Wg2y26U3d6eDEXjs/Fn78+HNGjdyI8GhKKVz8
- PvSB5i3jWjMRpPt264NqK6vdrVtLVtym3aWquQLKYO9HD2FY/9PrxjYLn5zGYEr2VrYyxkae2fA
- +69Uv0DcEGZhYGzLYTgeNvqwF4BJQE74rp61YMws/+rHzeLhB1kX8QOhEXuRQrWowvgYj1OAh6q
- IcouRWyevU6N02BdS/ZPkMbz/e7jgZ7eUiyWv6/mjMYLVLqOCa0nyPHXC174z5a4dZt266pR816
- Oe0vhbIXUWneH728nn4E82ZBErTBT5kyT28r9TzDBsTro58/AUWFbEM9Uy9tw2gBj51iL1jk3iE
- HpiSKZF81wtQE4+p+eN+MFKYfmhDcUHb4YqvkrBOHyPSNjp41FjoZhY+eTbwVQonZ5BrwluoB8g
- ZD7FWtwZdyE52ULCeErmNiqS5QJCF8s6P1T4r/0a4glEkvYe8FsOGIWw9CUKTJCCQS3mmnyQV9G 8wvGsdSTSX9eehg==
-X-Developer-Key: i=krzysztof.kozlowski@oss.qualcomm.com; a=openpgp; fpr=9BD07E0E0C51F8D59677B7541B93437D3B41629B
-X-Authority-Analysis: v=2.4 cv=e/ILiKp/ c=1 sm=1 tr=0 ts=694be083 cx=c_pps
- a=mPf7EqFMSY9/WdsSgAYMbA==:117 a=urQ9wjG1USoGuMoDBEOPbA==:17
- a=wP3pNCr1ah4A:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=EUspDBNiAAAA:8 a=h8-D3lXrgsvIcsImSe8A:9 a=dawVfQjAaf238kedN5IG:22
-X-Proofpoint-GUID: 5SrFaajc5MF_xh3gaAdTdSaDhO30l2Y9
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjI0MDExMCBTYWx0ZWRfX6BHaTV9A7bdZ
- UafHD48VXNpXYWmE7kBnU5sFkPSgSr2PktZCMNnMm1ON+BeHFN6U3K1yDzrRY0pXpZgwnQPIIeP
- TwvmWRfA+IypZDcxgQy5yyEwJYV6gNb2yfPVnYaz4+SU6B+BXvzRzrtS4X/xOJOxZWrLouNFb7W
- YUJvcjbEsvTZW2dEk81jasFycrLU21XUNVns2p5X+qGEby0bJqHQUaEzOdwfvMu/CarXYWZZ6bb
- FssN4v7ZhPo7U88cj8ZaLp57EsnHCDv3sxd1muS2gqys5+skSM5ePiqPu0Nv4lp5FZMBEKGuVrY
- uqbKGDOWb5Shze6iH8yrWiu0AMMRpFFcVmC3lW1GS9TOiAi4kO7d04VuEABe70Y/h4EQ0Z7lsH3
- 2B8H+VDkJvi8azO/2elx9iINZ4tsQj9KGLzvsM6mHugZi0dH1FCAxAcX5bVgVzGM+NBDIKGCsSd
- 9Er6k9UEsKqlUe+SXCA==
-X-Proofpoint-ORIG-GUID: 5SrFaajc5MF_xh3gaAdTdSaDhO30l2Y9
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2025-12-24_03,2025-12-22_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 clxscore=1015 phishscore=0 adultscore=0 suspectscore=0
- spamscore=0 lowpriorityscore=0 malwarescore=0 impostorscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2512120000 definitions=main-2512240110
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|GV2PR04MB11165:EE_
+X-MS-Office365-Filtering-Correlation-Id: 3503b287-1d2e-4b36-27c4-08de46ecf934
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|52116014|19092799006|366016|1800799024|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?a3j0zckOUdFp7AkcPkE8ws/6XywjVkrj44GBSmscrgI3Mm0CXigp9gjM8VG7?=
+ =?us-ascii?Q?hBE8oOgV68H89a7bEkZuMYwvcvNXqFMQzjixAXEcuPnGPdCAjgOb+B7Aqhon?=
+ =?us-ascii?Q?/LRBdZV8qFGVwu88Tp1oXPjgPC6ybp6YomRRaoWe5d+9CND2W28aonhCXL80?=
+ =?us-ascii?Q?bER63Hr+S6ay2y0K+5GMORjBIOwhaE+uqxQKkF4VRuGbBClsMTUc5Eg7ZBea?=
+ =?us-ascii?Q?khVhQCvsBcZtoen/MEaHvZTysAd+cThM6mQjOo5Jol47WkUeWlsAAKeEeOuK?=
+ =?us-ascii?Q?71glSzj1JxwOJ/ebCEMcP4AdTBFLAvvLaMfPFAB9nsd2qmFi1BWCvAR+PHJS?=
+ =?us-ascii?Q?VBZVgfHxISGm2EUfml6FVQFMB1Wl7ROhpF+s2oABAkLf/3ZzltwP3pSHoxdt?=
+ =?us-ascii?Q?o+cyVog6/V0jfbG3RG+CxyH36COSWhiBf06cBn8Kun/mjEd6/QNBZeIKfu/Z?=
+ =?us-ascii?Q?38X9/LMI9qs0Eujpqr92sj+TPBWcfqboh09DEj/qnlF3ZnvxPhtTrBZY5zYH?=
+ =?us-ascii?Q?aDpaExcvyzqKEF9oO99e7zMozHJ09viiZl5yqdf8v5A+aNhMmxxBuIUjUvPS?=
+ =?us-ascii?Q?nMT/6OtZ8ggvC/lfMhOx1x2xMMDFgGQZGULExnO2OdrRc6iF1lQdW7MO5Vsl?=
+ =?us-ascii?Q?sx/e36aJYE2+8pfymcmx+M2JbvKF6XXeiBHzWsFTNgzWJRHPH0vAC99ohE4j?=
+ =?us-ascii?Q?D6JQZVc5DKqyIUhlOCt5Ko/jQTGsOx205T6tocKHudWKLRjnIM1QqEMvSQms?=
+ =?us-ascii?Q?6c8no8WOEr7IXFqmjSxjiuXvedGYdh+c1WE8WKzZ1bbEKZiGQ1JXSMCIzaFG?=
+ =?us-ascii?Q?lVP4lmahFejo7253q2DArXNHRDIt7g8UOCdE7/WEeNkJQBH5v7bBIaWCLItI?=
+ =?us-ascii?Q?nc19IkHnggB5l1ZIuehUff/geCb/C5+Zeh9+4lNBVVVzfW7R3KdVuqkD0ODF?=
+ =?us-ascii?Q?Tv1895mJTcJlISHlCALLeOc8NGkuJWS5hhY9PRGQaV/SWSC4c82MATz6xWf/?=
+ =?us-ascii?Q?NQkDq2Y0HCF4FkEx+BFo/9h+8tUb4XYviyTOrdyqZS8ecZQlaf8qaiJXAxuu?=
+ =?us-ascii?Q?rpbtMRAYtJt3F2Ie4f0zKh7PbEKvU+DHhmUjIc79RHl3StIHPTes/dSFvGZc?=
+ =?us-ascii?Q?GpUkbHaTAQvG6YZyhZ0TogizKjAJi64RRsrNq8CRdcq/HN4np8JRkdkmqCsS?=
+ =?us-ascii?Q?QmWEEBbyi1guVXwE8gc9nrV+3qKlr6N/6XR5dwMjcoSxcQYZtfEvuDP4Mu33?=
+ =?us-ascii?Q?ltoZ0i3zC2H1WS6bNA4oUGQ0zFvZ8+KAjVASiejmckDFjo/HqyDbCsLooF5O?=
+ =?us-ascii?Q?v6KDjyk2aK7cc37q5mt21c/Fln906cgvOMPodnIjn2ND+SC7qEklR9RFapf7?=
+ =?us-ascii?Q?25U42PwDCOCHOSNl3k3J6QH3O1LJS1EYwAWPS2PTPb1pwB09pz/mzsP0PGp0?=
+ =?us-ascii?Q?arQyUZKPJjDPjkM77uktqfYt0aQ5W9w3IZqkWvDus1FNlgCpxgA94tUoRwF3?=
+ =?us-ascii?Q?V24Oo0TAWiL8xXDsLy/8UtrhYxLo/xOUlAGJ2x0B1w1LWXwpAzuuvmxdVQ?=
+ =?us-ascii?Q?=3D=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(52116014)(19092799006)(366016)(1800799024)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?6qMQTBOePAspKwii1of9V/9TSY9pQxBPwgwLWFamMe6t5U0TTlmjW5TUTZKJ?=
+ =?us-ascii?Q?D5b2bM2uMBQc099GKkdmMf/wBMsHFzv2BpHYmOAEy1Tl829JUNGuRjF7JIMQ?=
+ =?us-ascii?Q?a0UKxkf8HFIb+4Z6OXpR1WVbb6Fz2+Lftmyt8kD1lchGYmDwkK2tkwct2Lbv?=
+ =?us-ascii?Q?iKlQmvXSe+yHPnz0pzQod9kreI2Qyqu+Pg7TJp5vHuf9pEAHnowbzwxlPyyc?=
+ =?us-ascii?Q?kGxnkkb30kvjPCegYwvfigkD95Z+YIZYIbmpGt87LzVW2hSch5gDHwm/ZsU6?=
+ =?us-ascii?Q?TGyLu0LcgYKIB9uT9uXWnMhsHRssGca4BgjgWKHSSyNvIE7AaY7LI9+c7FzJ?=
+ =?us-ascii?Q?vZ8HlZTdMTpzELmVGEpJXwlsjvoT1fzb50p7dwB57lbzjEqfdKij+R/zzGq2?=
+ =?us-ascii?Q?Ky+oIyxH3dZfkGTB60DNNzg06AXsA2l+TVHS1aDr3hh2ToZaHLEb6xatNuOP?=
+ =?us-ascii?Q?Lpz+z3S9GF12pOIEUYYBC3beLE5nm5H5sbEMD4WMBNTI95/6xP7tTpYxjgXs?=
+ =?us-ascii?Q?KWOCoNbFFOTSoe+hRwL29m2WReRNlVXzzSPEOknQjf3xVhR4XYQDFuEt0n/c?=
+ =?us-ascii?Q?5lE/LUOyGbH2L8kkBOo/7QA6EiuWB9prqFmTQyQtxYHP00/0GxQvh8fi7yWt?=
+ =?us-ascii?Q?9jYezkbhABx2vT9DN1nJiU7GTSWrFW9FCESXJrl0ry8gqBno4HTfYXfohxWM?=
+ =?us-ascii?Q?VYK0iHCeVENxxZ3IV0Zy0HopRBjT0v89b6aOgI4AqtIFCCrMg8e/klHVTYOH?=
+ =?us-ascii?Q?4Cxah+I8IOnNW5NtmKY5Z/i0+sfHwhwXeLbbEdJBmXEaHcwWjWbSbhF5kzpu?=
+ =?us-ascii?Q?Kan1uQjMCKJVe5BMLpo5nuCN1QGMQJbcFDaWwxA71zFiyoIUUqDimxPMxSGv?=
+ =?us-ascii?Q?/0YDdskj73fiQLpKYNmm83fpd/XgkplhkfI7v1oMzXIAtXOempVzsRwtzsXT?=
+ =?us-ascii?Q?WTB6BPXBj6C6EPcMIJowkbStlCPslr+3PxQSTN7UADkmCjF2ua5qov6/3auw?=
+ =?us-ascii?Q?yzPgELNtOID4Vh5ay7UVdihlsZ/jysJsuJ1OHHqIolJNowwZH+dAfTAmprQD?=
+ =?us-ascii?Q?6uD/sDmv5mSERzYLyoB/J9BwDTFW5LH4knvqmdbtA0bVPp0GuqsERkEz50YP?=
+ =?us-ascii?Q?kPJyOAfGWrrh7xcHTZqLdX51sWIycSGzX+8Rt3XmkzK6mWeO/oRnZCrQ9bu0?=
+ =?us-ascii?Q?96rju09Wa4Wy7mE1cxZvUUTv8Y9ClisJtBte0mjLwpPjv2nhaai83lejd1pY?=
+ =?us-ascii?Q?dlMkNFy6F7uzbxArSY6PbFirG6ML1pOZWBnpmvNM/3bLqYR6eEwKuvIZ/kjL?=
+ =?us-ascii?Q?txBXi8sWg/HQli9sUF9a2KxJ9Cr4Nsb79Jbq7Dvc9P3OqCE83NwRYzuvO/Ep?=
+ =?us-ascii?Q?JsG9YDt08KFqTGcPnPHkAuW2571MkIrls4D3X0fJlzvvQ0DQOHzGOEcg5TYr?=
+ =?us-ascii?Q?a4Nd4sp2pzNpW6qvw9LegZTV813GxZrY6gdP2R7QyTzLdFMPEie2n9WLMDzR?=
+ =?us-ascii?Q?KP3/Fv4OZNrwk3lyKrvsjzoYutRudCQKFKVf5L79S5nIbye9CP/p1ngIXvWR?=
+ =?us-ascii?Q?zQnYCjPSMQo+z1ZMd1gB2Z8awdeOscz/OrKd2Ghge2L0fTPnWSPnOvkIQLFY?=
+ =?us-ascii?Q?SajmoJaaa0EiaU313gltF5bMj705ni3FuINloabnCC05OIfynOwY6PAMSnsk?=
+ =?us-ascii?Q?o0jihuYGcMxgUdq/eP4Pip/8a/l0ua1yv/USkNZnS9zdbCUt?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3503b287-1d2e-4b36-27c4-08de46ecf934
+X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8951.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Dec 2025 15:14:34.1437
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: eoOZNJFbN9yEXI3gHr7L2FGS8OfsbhUdBHOUbswQevTh3yhgXt1B5mNYlMOEYU2u/dVVJ0DNexcmf4nMUb24ZA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV2PR04MB11165
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251224_044556_756767_2DCD869B 
-X-CRM114-Status: GOOD (  13.18  )
+X-CRM114-CacheID: sfid-20251229_071441_469146_F20F1AB9 
+X-CRM114-Status: GOOD (  19.48  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -152,43 +174,97 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Use scoped for-each loop when iterating over device nodes to make code a
-bit simpler.
+On Sun, Dec 21, 2025 at 07:07:42PM +0000, Jonathan Cameron wrote:
+> On Sat, 20 Dec 2025 22:34:47 +0800
+> kernel test robot <lkp@intel.com> wrote:
+>
+> > Hi Frank,
+> >
+> > kernel test robot noticed the following build errors:
+> >
+> > [auto build test ERROR on 8f0b4cce4481fb22653697cced8d0d04027cb1e8]
+> >
+> > url:    https://github.com/intel-lab-lkp/linux/commits/Frank-Li/dt-bindings-trivial-devices-add-MEMSIC-3-axis-magnetometer/20251216-010451
+> > base:   8f0b4cce4481fb22653697cced8d0d04027cb1e8
+> > patch link:    https://lore.kernel.org/r/20251215-i3c_ddr-v12-2-1ae31225b4d9%40nxp.com
+> > patch subject: [PATCH v12 2/2] iio: magnetometer: Add mmc5633 sensor
+> > config: arm64-allmodconfig (https://download.01.org/0day-ci/archive/20251220/202512202141.aAwyC19D-lkp@intel.com/config)
+> > compiler: clang version 19.1.7 (https://github.com/llvm/llvm-project cd708029e0b2869e80abe31ddb175f7c35361f90)
+> > reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20251220/202512202141.aAwyC19D-lkp@intel.com/reproduce)
+> >
+> > If you fix the issue in a separate patch/commit (i.e. not just a new version of
+> > the same patch/commit), kindly add following tags
+> > | Reported-by: kernel test robot <lkp@intel.com>
+> > | Closes: https://lore.kernel.org/oe-kbuild-all/202512202141.aAwyC19D-lkp@intel.com/
+> >
+> > All errors (new ones prefixed by >>):
+> >
+> > >> drivers/iio/magnetometer/mmc5633.c:362:2: error: cannot jump from switch statement to this case label
+> >      362 |         default:
+> >          |         ^
+> >    drivers/iio/magnetometer/mmc5633.c:357:3: note: jump bypasses initialization of variable with __attribute__((cleanup))
+> >      357 |                 guard(mutex)(&data->mutex);
+> >          |                 ^
+> >    include/linux/cleanup.h:414:15: note: expanded from macro 'guard'
+> >      414 |         CLASS(_name, __UNIQUE_ID(guard))
+> >          |                      ^
+> >    include/linux/compiler.h:168:2: note: expanded from macro '__UNIQUE_ID'
+> >      168 |         __PASTE(__UNIQUE_ID_,                                   \
+> >          |         ^
+> >    include/linux/compiler_types.h:16:23: note: expanded from macro '__PASTE'
+> >       16 | #define __PASTE(a, b) ___PASTE(a, b)
+> >          |                       ^
+> >    include/linux/compiler_types.h:15:24: note: expanded from macro '___PASTE'
+> >       15 | #define ___PASTE(a, b) a##b
+> >          |                        ^
+> >    <scratch space>:9:1: note: expanded from here
+> >        9 | __UNIQUE_ID_guard_966
+> >          | ^
+> >    1 error generated.
+> >
+> >
+> > vim +362 drivers/iio/magnetometer/mmc5633.c
+> >
+> >    343
+> >    344	static int mmc5633_write_raw(struct iio_dev *indio_dev,
+> >    345				     struct iio_chan_spec const *chan, int val,
+> >    346				     int val2, long mask)
+> >    347	{
+> >    348		struct mmc5633_data *data = iio_priv(indio_dev);
+> >    349		int ret;
+> >    350
+> >    351		switch (mask) {
+> >    352		case IIO_CHAN_INFO_SAMP_FREQ:
+> {
+> >    353			ret = mmc5633_get_samp_freq_index(data, val, val2);
+> >    354			if (ret < 0)
+> >    355				return ret;
+> >    356
+> >    357			guard(mutex)(&data->mutex);
+> >    358
+> >    359			return regmap_update_bits(data->regmap, MMC5633_REG_CTRL1,
+> >    360						  MMC5633_CTRL1_BW_MASK,
+> >    361						  FIELD_PREP(MMC5633_CTRL1_BW_MASK, ret));
+> }
+> Needed to add scope for the guard to apply to.
+> If this is all that comes up I'll fix it whilst applying.
 
-Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
----
- drivers/i3c/master.c | 7 ++-----
- 1 file changed, 2 insertions(+), 5 deletions(-)
+Yes, thank you for your fix. If need respin patch, let me know.
 
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 7f606c871648..b789ac390937 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -2370,19 +2370,16 @@ static int of_populate_i3c_bus(struct i3c_master_controller *master)
- {
- 	struct device *dev = &master->dev;
- 	struct device_node *i3cbus_np = dev->of_node;
--	struct device_node *node;
- 	int ret;
- 	u32 val;
- 
- 	if (!i3cbus_np)
- 		return 0;
- 
--	for_each_available_child_of_node(i3cbus_np, node) {
-+	for_each_available_child_of_node_scoped(i3cbus_np, node) {
- 		ret = of_i3c_master_add_dev(master, node);
--		if (ret) {
--			of_node_put(node);
-+		if (ret)
- 			return ret;
--		}
- 	}
- 
- 	/*
--- 
-2.51.0
+Frank
 
+>
+> thanks,
+>
+> Jonathan
+>
+> >  > 362		default:
+> >    363			return -EINVAL;
+> >    364		}
+> >    365	}
+> >    366
+> >
+>
 
 -- 
 linux-i3c mailing list
