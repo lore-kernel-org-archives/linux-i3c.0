@@ -4,160 +4,145 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 406BFE8FDBE
-	for <linux-i3c@archiver.kernel.org>; Mon, 29 Dec 2025 15:14:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18903E9273A
+	for <linux-i3c@archiver.kernel.org>; Mon, 29 Dec 2025 15:35:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=81Eg+ur7Zgu3+e+rCRGJERDYoFPvmJQFvVOXV2HjXic=; b=RFH0JvTwsxs2p4
-	JjElN51eGeXsqU+tyf4uwsEpmSxLAFzSr6tXqQ9dunrLMG+9ewwFDFEO6DDzmEe14J/rpWCP1lTAa
-	A+1wCfxYzQrhA4uVcogQWlvIhFt9ewhA9L+wA9HELnLEztLLwOKZinnDUO0C62x2XzJkFGloaWDe7
-	QtRQZXmuAHiboYxSluKxefJAegkUarbhFK1DTO1+yQ3NgKgfs8l6skt6AcC0AIF0jGi1W9KDw9ydm
-	Ie7Xv9CiRgPfcsbdgv8KxD2eGBndNWNvoXwm0sPuNuCIJqKMuyx6HXHFPLyZ4987n8xWIaHw1qlXV
-	hgSgUmjqTI/wqCtcEs3g==;
+	List-Owner; bh=PoOYINxFNUco/yyeRAKFjlfvkoXWfp+m+o4ok4Z/wjQ=; b=akZlxWd424MPn8
+	NVDabpNfr0/jiRjuhuzULJQJMvjTlhL0nr/w3TNTeEPArb+VxHWnwy4XamGcvkA5tgMfj/x18FvSi
+	yi43N30wMvB/g8/mo3XPOVozMD5obqPK23Xyq1TsuteV+85F2YrDajhhGGYVcbPdZEod+oX/wNOsY
+	iMUfmxP9YEIKe7QrcXw/BY/e7T4Kjy1z3tSAVPX5FfZ5m6Voe9AI8qLEqwnoUKWKyM3TiWfFSFSG/
+	2hDSbl/Jo7G13MfcoMyau3RLosw2hws7I+gyUa3/hYRdQPmjabsHhTGckO7QAlcFb3Ifs43ch5yYx
+	PbvkvcYgv48iYe7hTKkQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vaExH-00000003pY4-41wY;
-	Mon, 29 Dec 2025 15:14:43 +0000
-Received: from mail-westeuropeazon11010012.outbound.protection.outlook.com ([52.101.69.12] helo=AM0PR83CU005.outbound.protection.outlook.com)
+	id 1vaFHT-00000003qQi-3Boj;
+	Mon, 29 Dec 2025 15:35:35 +0000
+Received: from mail-northeuropeazon11012046.outbound.protection.outlook.com ([52.101.66.46] helo=DUZPR83CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vaExD-00000003pXf-3F7W
+	id 1vaFHQ-00000003qPs-26NS
 	for linux-i3c@lists.infradead.org;
-	Mon, 29 Dec 2025 15:14:42 +0000
+	Mon, 29 Dec 2025 15:35:33 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=wmONT/e0nM5X146S+NPWGXuLeQOAR4chOXX1et8K7Z2cZfyvacyMh6QQOhb7NgVk03/hAXEdFs+q6sLxzcuVD9/QjSeE3WY8iAPKBqDr7gDtKMoO6CPU/TfCGMHXMVI/qXFO0zS6laF6YfCJ6RFaqysl7QT7zZ4N3vBBWpipJKr6s+OTdAG/ODs9XKcVr0Cw/PnE71RlkNEWmkP2FKU1SbQ1NGlQ1X2+jjPHp/T9JdqTOIxpgtNlMr4ivdxZ3T1FTlvhK7NQVwft3/pQcOCxuMPGNPLjS9FPDP5rKKXi1WnIdDCV4CHTA2ZGVAQs3exoR+5R5+NV/y1Dd/7FnhSTJA==
+ b=J8gXDkDO4iRrNgWx/Eg+vGjIM6ybTpi3BTUuI/0S1ZaVhw0YoZcKSRP2Vc1eJiPtvbldjC5esur4zqKy2iWisbeDIlOlsWEn57VscxENxkOKbVmSifFRG+XqBTYku8NBMZVFsOIhgN+XEtVL8lty1/1qanb9cI/G2bK9qGaqlksfrDRIQ2xUT5xoldSYwDQVwZZKWnoTmhF7gCXNt2XG3bfG3aB9LLZpw6dhiLf6HojdmsLmJh04fZeM7HdlUUlmH1bm9DuK21HiTQDbHshqJEXYPeoWg23bZYX+TSLNM1/nioQ0Mz6kLbk3pesTCmodv3t4XPxwOGr5c8RTM/y6/Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=cnZiUZsVcJt//uM9NS50fyS6bR00QF8W3BeMaFyMPWM=;
- b=jq/tXqp94H8rvnlovb8JITEH5rnvk60jWkgQ7eGE7RINqDH2xMOqSA6DN+2BxfDRdW4ppOZX5OTUB5S4DNxkzRtDjcjlF6C1f52B4BQj/kLyJ1JTOtiKjyJAHN2gHNTovdF4omTqbPBFuQLftoOz/CvyngOAkFWi5wJ8MSN15mhCQdU06LzuxziU6y2zuvBdObCyZP3fC5sNhToVZ5cApWYwbMY/y3eXSmlPXLFWVUImuFyTnQ6X5GFgfZGPTsODhKfrEnly9LMv31W8WNNeFIJyXmoZb0JoHyyUJY6bUbyxNkFXTJyBmrpj487JPXCZ3KKdk0USWS3Zp0j4RvKSbA==
+ bh=QXl6FYUkL0r87CNppO8NuRu+Ss9goGKzIu/Ac3RDSBI=;
+ b=caCq4zmq1sVoUiLiZzi68lb2ftL9/04XVKM9e7GMsFNryJsw47SYaVUojE+cRwZUfBLsyahoTUtQD92XNqooPb77WtZbOZExgrg+gfMw4TnoArfFC03+NIKlO2O3Vz4J79sR0+7fblx85FxTVC3Dm8A++n9u4jXknWjWjmP6wWiPjcs3s9nyHA2j7B77Gb1944rPLqAbOx1DiwkIaF4I5FQD08nnG7l+nwO3matMOEDyBWxvbh7HrcgALCBJ44xBiUTd6rdAdKitw8NdrRsyiUUrxfifxEBOxllyv6bOJND9Zv/BCLRJSKSKcw7FPaV4WWW6euizP1Y5f9vjpNklbg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=cnZiUZsVcJt//uM9NS50fyS6bR00QF8W3BeMaFyMPWM=;
- b=IeQDypXTN4CAh/Zo+9qQvxn1R1lzwBu5rQW7N3ukPfD/RrNOxkiSBSZQgibQuyMwDpTjymaMFN4dMAPLxZHcsyrWlhHD2A7l2P3ypEcwoa+Qbgw1+PCZy9KeaBsHV0Drzd84e+WB+B9epF6Ij7gyg9fWgtEBxkfiH86H+D5jQRndteMfkvfMwMs9T+ZRzkh7Q3mZTQzfJxnx1iDAi7vomwL2Q0wRkgbA+KekxNoF2bioSVfCJpvkkdt0EJTKRCA8MUo0qNIcQLiMcaNEfheHBa3L5SvqBBE/a+q1ZcYO/lzgYy9YW9eGWxiOCcvKqKTB03c/a6gVdtoD+k1RgLgn7w==
+ bh=QXl6FYUkL0r87CNppO8NuRu+Ss9goGKzIu/Ac3RDSBI=;
+ b=F8p9X02Ax8luwaUzksnAWVElLhczQArvKU0tGI7iVICL9PkFhHPUpHZac9cVox0UwFRSO0yucTLeAcflmah8htSvkfr/+LHHMJ979iKj1Zpq4d3efQPxHNlFXdTR7lx81melodsxtwXoR0cBkvcVCx4EIiCAiDf6WywiPCJ9zz392eUTF/LF0yt3Q7rsYDV7Ja5E+023xFwF7GIv9jyZHx3GwD4MtWLtBBI0AAViPNT/tgsWxnA6ru5XohxLEaTCz8BeXdym6KJr1DOhkvpygr6PTLPt7WXlbaXJlNki4zVcec8GW7rj/uUDMyEOuUnczo19kIAFQd5IRNu7ZVikuQ==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from DU2PR04MB8951.eurprd04.prod.outlook.com (2603:10a6:10:2e2::22)
- by GV2PR04MB11165.eurprd04.prod.outlook.com (2603:10a6:150:27c::10) with
+ by PAXPR04MB8973.eurprd04.prod.outlook.com (2603:10a6:102:20c::8) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9456.14; Mon, 29 Dec
- 2025 15:14:34 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9456.13; Mon, 29 Dec
+ 2025 15:35:28 +0000
 Received: from DU2PR04MB8951.eurprd04.prod.outlook.com
  ([fe80::753c:468d:266:196]) by DU2PR04MB8951.eurprd04.prod.outlook.com
  ([fe80::753c:468d:266:196%4]) with mapi id 15.20.9456.013; Mon, 29 Dec 2025
- 15:14:34 +0000
-Date: Mon, 29 Dec 2025 10:14:23 -0500
+ 15:35:28 +0000
+Date: Mon, 29 Dec 2025 10:35:22 -0500
 From: Frank Li <Frank.li@nxp.com>
-To: Jonathan Cameron <jic23@kernel.org>
-Cc: kernel test robot <lkp@intel.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	David Lechner <dlechner@baylibre.com>,
-	Nuno =?iso-8859-1?Q?S=E1?= <nuno.sa@analog.com>,
-	Andy Shevchenko <andy@kernel.org>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, llvm@lists.linux.dev,
-	oe-kbuild-all@lists.linux.dev, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org, imx@lists.linux.dev,
-	linux-iio@vger.kernel.org, joshua.yeong@starfivetech.com,
-	devicetree@vger.kernel.org, linux@roeck-us.net,
-	Carlos Song <carlos.song@nxp.com>,
-	Adrian Fluturel <fluturel.adrian@gmail.com>
-Subject: Re: [PATCH v12 2/2] iio: magnetometer: Add mmc5633 sensor
-Message-ID: <aVKaz7XglkFbxMOr@lizhi-Precision-Tower-5810>
-References: <20251215-i3c_ddr-v12-2-1ae31225b4d9@nxp.com>
- <202512202141.aAwyC19D-lkp@intel.com>
- <20251221190742.4162108b@jic23-huawei>
+To: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] i3c: master: Simplify with scoped for each OF child loop
+Message-ID: <aVKfuq2mzalZJp7d@lizhi-Precision-Tower-5810>
+References: <20251224124551.208778-2-krzysztof.kozlowski@oss.qualcomm.com>
 Content-Disposition: inline
-In-Reply-To: <20251221190742.4162108b@jic23-huawei>
-X-ClientProxiedBy: SJ0PR03CA0295.namprd03.prod.outlook.com
- (2603:10b6:a03:39e::30) To DU2PR04MB8951.eurprd04.prod.outlook.com
+In-Reply-To: <20251224124551.208778-2-krzysztof.kozlowski@oss.qualcomm.com>
+X-ClientProxiedBy: PH8P220CA0034.NAMP220.PROD.OUTLOOK.COM
+ (2603:10b6:510:348::17) To DU2PR04MB8951.eurprd04.prod.outlook.com
  (2603:10a6:10:2e2::22)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|GV2PR04MB11165:EE_
-X-MS-Office365-Filtering-Correlation-Id: 3503b287-1d2e-4b36-27c4-08de46ecf934
+X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|PAXPR04MB8973:EE_
+X-MS-Office365-Filtering-Correlation-Id: b97069e1-4dd3-4065-6c91-08de46efe4af
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|52116014|19092799006|366016|1800799024|38350700014;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?a3j0zckOUdFp7AkcPkE8ws/6XywjVkrj44GBSmscrgI3Mm0CXigp9gjM8VG7?=
- =?us-ascii?Q?hBE8oOgV68H89a7bEkZuMYwvcvNXqFMQzjixAXEcuPnGPdCAjgOb+B7Aqhon?=
- =?us-ascii?Q?/LRBdZV8qFGVwu88Tp1oXPjgPC6ybp6YomRRaoWe5d+9CND2W28aonhCXL80?=
- =?us-ascii?Q?bER63Hr+S6ay2y0K+5GMORjBIOwhaE+uqxQKkF4VRuGbBClsMTUc5Eg7ZBea?=
- =?us-ascii?Q?khVhQCvsBcZtoen/MEaHvZTysAd+cThM6mQjOo5Jol47WkUeWlsAAKeEeOuK?=
- =?us-ascii?Q?71glSzj1JxwOJ/ebCEMcP4AdTBFLAvvLaMfPFAB9nsd2qmFi1BWCvAR+PHJS?=
- =?us-ascii?Q?VBZVgfHxISGm2EUfml6FVQFMB1Wl7ROhpF+s2oABAkLf/3ZzltwP3pSHoxdt?=
- =?us-ascii?Q?o+cyVog6/V0jfbG3RG+CxyH36COSWhiBf06cBn8Kun/mjEd6/QNBZeIKfu/Z?=
- =?us-ascii?Q?38X9/LMI9qs0Eujpqr92sj+TPBWcfqboh09DEj/qnlF3ZnvxPhtTrBZY5zYH?=
- =?us-ascii?Q?aDpaExcvyzqKEF9oO99e7zMozHJ09viiZl5yqdf8v5A+aNhMmxxBuIUjUvPS?=
- =?us-ascii?Q?nMT/6OtZ8ggvC/lfMhOx1x2xMMDFgGQZGULExnO2OdrRc6iF1lQdW7MO5Vsl?=
- =?us-ascii?Q?sx/e36aJYE2+8pfymcmx+M2JbvKF6XXeiBHzWsFTNgzWJRHPH0vAC99ohE4j?=
- =?us-ascii?Q?D6JQZVc5DKqyIUhlOCt5Ko/jQTGsOx205T6tocKHudWKLRjnIM1QqEMvSQms?=
- =?us-ascii?Q?6c8no8WOEr7IXFqmjSxjiuXvedGYdh+c1WE8WKzZ1bbEKZiGQ1JXSMCIzaFG?=
- =?us-ascii?Q?lVP4lmahFejo7253q2DArXNHRDIt7g8UOCdE7/WEeNkJQBH5v7bBIaWCLItI?=
- =?us-ascii?Q?nc19IkHnggB5l1ZIuehUff/geCb/C5+Zeh9+4lNBVVVzfW7R3KdVuqkD0ODF?=
- =?us-ascii?Q?Tv1895mJTcJlISHlCALLeOc8NGkuJWS5hhY9PRGQaV/SWSC4c82MATz6xWf/?=
- =?us-ascii?Q?NQkDq2Y0HCF4FkEx+BFo/9h+8tUb4XYviyTOrdyqZS8ecZQlaf8qaiJXAxuu?=
- =?us-ascii?Q?rpbtMRAYtJt3F2Ie4f0zKh7PbEKvU+DHhmUjIc79RHl3StIHPTes/dSFvGZc?=
- =?us-ascii?Q?GpUkbHaTAQvG6YZyhZ0TogizKjAJi64RRsrNq8CRdcq/HN4np8JRkdkmqCsS?=
- =?us-ascii?Q?QmWEEBbyi1guVXwE8gc9nrV+3qKlr6N/6XR5dwMjcoSxcQYZtfEvuDP4Mu33?=
- =?us-ascii?Q?ltoZ0i3zC2H1WS6bNA4oUGQ0zFvZ8+KAjVASiejmckDFjo/HqyDbCsLooF5O?=
- =?us-ascii?Q?v6KDjyk2aK7cc37q5mt21c/Fln906cgvOMPodnIjn2ND+SC7qEklR9RFapf7?=
- =?us-ascii?Q?25U42PwDCOCHOSNl3k3J6QH3O1LJS1EYwAWPS2PTPb1pwB09pz/mzsP0PGp0?=
- =?us-ascii?Q?arQyUZKPJjDPjkM77uktqfYt0aQ5W9w3IZqkWvDus1FNlgCpxgA94tUoRwF3?=
- =?us-ascii?Q?V24Oo0TAWiL8xXDsLy/8UtrhYxLo/xOUlAGJ2x0B1w1LWXwpAzuuvmxdVQ?=
- =?us-ascii?Q?=3D=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(52116014)(19092799006)(366016)(1800799024)(38350700014);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|376014|366016|19092799006|1800799024|7053199007|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?JriWSCpxGDD/kEh+gHZt3gumxdDQL2uTk7XqUzlAhBhzwGz5eDoQD0OmOnSb?=
+ =?us-ascii?Q?yY3aexhOF1Nnz3KNdtS1sfTShOQ8/vpaQEuVoZBPT05Pxc7DsR7vCNiSPcem?=
+ =?us-ascii?Q?R9ZbhVjLpQWhzWXE1D6f64edijvnQzon7kTum4CuoKvZ2gueRjxP9raXZB8G?=
+ =?us-ascii?Q?lIaGb5QkN0aA6L85hOk4WPfeJ+DiII154ZepeC9xo3S6miVMHHvFqrrmy7gM?=
+ =?us-ascii?Q?jwicsdg6BETqvRLohaVxlOsmLVamhyY4zfxfzhqe2w2Q/CWLjQ58b1J5IW93?=
+ =?us-ascii?Q?TsnxP6g0CxzffQmgdiVar4iLH8AqTc3LUUq65mIqNVK52KqDz80WKYsypGKA?=
+ =?us-ascii?Q?TpLOTYUzKTLupE3xn4eKaM3m5hIHQW1czCcVJcYdq3/3ydx8faqONp1HZ10g?=
+ =?us-ascii?Q?VhUkKX+b+vTGJ3zkriu9R+LYyyYssLJZJYUm+/aZEvS+Cs2pAjQqsgE+TiS1?=
+ =?us-ascii?Q?1gzEVtkdI8HhynbokasfsylafhOUso945UjHX48FGRUSrRy1BrPFIQ03Z83o?=
+ =?us-ascii?Q?RyJZjkh5XQhtBW9jEDQ03H+leU5AHQU/7novlUMaEEkTIe4u0CT0ZHbeauVj?=
+ =?us-ascii?Q?yqkgytxG2xQI4FosCA6/smltFV91tWhZM/ibjK7nxR6WuTagYeP5BgtpdZ/H?=
+ =?us-ascii?Q?q1F4QosZDNXYcfYE2ChxW+Mujk0IJguVrfvDb1KQQ64OcaGtQNrOANfT6ih7?=
+ =?us-ascii?Q?WSawp82sHvgfMm8KvWcGhdzA2SmbVaNAd3D/6Qn+9PwMiEZSiZa5q9qcYIpg?=
+ =?us-ascii?Q?PrIj/JqV5fPfV3rtFtMlqr10lwVPdW0KIhy3s/ows0JCM/0nT1STUsaVIe31?=
+ =?us-ascii?Q?FTOT9gkLOyrYcQudhO/zNGrSg6DMMx1T/9jVYwF/J76fecxoDMZZC45rsCKD?=
+ =?us-ascii?Q?I9EhLaNv/gUD+fqPhxpyzhbCgiS6tBDcgqwqEORLi3zkO2aiZqZEaMqpTr4r?=
+ =?us-ascii?Q?J31odoyqU3mFiO7hS6YNGuIhFCbUaQRuH2Kux2i7GwFko6gI1g1tIe+7mNVU?=
+ =?us-ascii?Q?Rzzgb1Al4/Uo2XO6eUQKHB5dRcGTgZKmW2X/zf+2bsoRJpqJUTDBswRlZNvB?=
+ =?us-ascii?Q?uz4YsZswtrXycWt98Huu8+fubtkog0Pa1poEdbGP967ZDZic40hSSJKLLgBc?=
+ =?us-ascii?Q?q9a4VSF0qlVyQcX1p+lXLydpJ9VlnVAgHrqjN+q798mvf5HwtYcufYbWw+oz?=
+ =?us-ascii?Q?e311y4J4tULYG0xRJmCY9RAoE5m7oISPwWhf/0KYzvDzTxJmnw3OJTBd+w2f?=
+ =?us-ascii?Q?dWF2jEl1lztnZYU8uDG76lWKbXXupywGBhDQb8mo/tfVZyHmiIuz+zdT++1y?=
+ =?us-ascii?Q?Buvaj1MhgW/LKV/oEHavECjc8ONb5aYu3a/wTgRaeFISGs4TtiiCF1mOdJCh?=
+ =?us-ascii?Q?ONZJTkOahxeu5BLXBrLMFZ5v8xTUsox1pP49IQm+Qiq6mlSZudX4/4+noAgT?=
+ =?us-ascii?Q?66lb8LoJjwV7F9Orc/kknDvjlpFatkxGhBMvBV+DUBZ3gYIaWGbvTcOP6ABD?=
+ =?us-ascii?Q?3RAJJVq63RBbSCXIoFc9cXdauYLBNTGxdHLC?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(376014)(366016)(19092799006)(1800799024)(7053199007)(38350700014);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?6qMQTBOePAspKwii1of9V/9TSY9pQxBPwgwLWFamMe6t5U0TTlmjW5TUTZKJ?=
- =?us-ascii?Q?D5b2bM2uMBQc099GKkdmMf/wBMsHFzv2BpHYmOAEy1Tl829JUNGuRjF7JIMQ?=
- =?us-ascii?Q?a0UKxkf8HFIb+4Z6OXpR1WVbb6Fz2+Lftmyt8kD1lchGYmDwkK2tkwct2Lbv?=
- =?us-ascii?Q?iKlQmvXSe+yHPnz0pzQod9kreI2Qyqu+Pg7TJp5vHuf9pEAHnowbzwxlPyyc?=
- =?us-ascii?Q?kGxnkkb30kvjPCegYwvfigkD95Z+YIZYIbmpGt87LzVW2hSch5gDHwm/ZsU6?=
- =?us-ascii?Q?TGyLu0LcgYKIB9uT9uXWnMhsHRssGca4BgjgWKHSSyNvIE7AaY7LI9+c7FzJ?=
- =?us-ascii?Q?vZ8HlZTdMTpzELmVGEpJXwlsjvoT1fzb50p7dwB57lbzjEqfdKij+R/zzGq2?=
- =?us-ascii?Q?Ky+oIyxH3dZfkGTB60DNNzg06AXsA2l+TVHS1aDr3hh2ToZaHLEb6xatNuOP?=
- =?us-ascii?Q?Lpz+z3S9GF12pOIEUYYBC3beLE5nm5H5sbEMD4WMBNTI95/6xP7tTpYxjgXs?=
- =?us-ascii?Q?KWOCoNbFFOTSoe+hRwL29m2WReRNlVXzzSPEOknQjf3xVhR4XYQDFuEt0n/c?=
- =?us-ascii?Q?5lE/LUOyGbH2L8kkBOo/7QA6EiuWB9prqFmTQyQtxYHP00/0GxQvh8fi7yWt?=
- =?us-ascii?Q?9jYezkbhABx2vT9DN1nJiU7GTSWrFW9FCESXJrl0ry8gqBno4HTfYXfohxWM?=
- =?us-ascii?Q?VYK0iHCeVENxxZ3IV0Zy0HopRBjT0v89b6aOgI4AqtIFCCrMg8e/klHVTYOH?=
- =?us-ascii?Q?4Cxah+I8IOnNW5NtmKY5Z/i0+sfHwhwXeLbbEdJBmXEaHcwWjWbSbhF5kzpu?=
- =?us-ascii?Q?Kan1uQjMCKJVe5BMLpo5nuCN1QGMQJbcFDaWwxA71zFiyoIUUqDimxPMxSGv?=
- =?us-ascii?Q?/0YDdskj73fiQLpKYNmm83fpd/XgkplhkfI7v1oMzXIAtXOempVzsRwtzsXT?=
- =?us-ascii?Q?WTB6BPXBj6C6EPcMIJowkbStlCPslr+3PxQSTN7UADkmCjF2ua5qov6/3auw?=
- =?us-ascii?Q?yzPgELNtOID4Vh5ay7UVdihlsZ/jysJsuJ1OHHqIolJNowwZH+dAfTAmprQD?=
- =?us-ascii?Q?6uD/sDmv5mSERzYLyoB/J9BwDTFW5LH4knvqmdbtA0bVPp0GuqsERkEz50YP?=
- =?us-ascii?Q?kPJyOAfGWrrh7xcHTZqLdX51sWIycSGzX+8Rt3XmkzK6mWeO/oRnZCrQ9bu0?=
- =?us-ascii?Q?96rju09Wa4Wy7mE1cxZvUUTv8Y9ClisJtBte0mjLwpPjv2nhaai83lejd1pY?=
- =?us-ascii?Q?dlMkNFy6F7uzbxArSY6PbFirG6ML1pOZWBnpmvNM/3bLqYR6eEwKuvIZ/kjL?=
- =?us-ascii?Q?txBXi8sWg/HQli9sUF9a2KxJ9Cr4Nsb79Jbq7Dvc9P3OqCE83NwRYzuvO/Ep?=
- =?us-ascii?Q?JsG9YDt08KFqTGcPnPHkAuW2571MkIrls4D3X0fJlzvvQ0DQOHzGOEcg5TYr?=
- =?us-ascii?Q?a4Nd4sp2pzNpW6qvw9LegZTV813GxZrY6gdP2R7QyTzLdFMPEie2n9WLMDzR?=
- =?us-ascii?Q?KP3/Fv4OZNrwk3lyKrvsjzoYutRudCQKFKVf5L79S5nIbye9CP/p1ngIXvWR?=
- =?us-ascii?Q?zQnYCjPSMQo+z1ZMd1gB2Z8awdeOscz/OrKd2Ghge2L0fTPnWSPnOvkIQLFY?=
- =?us-ascii?Q?SajmoJaaa0EiaU313gltF5bMj705ni3FuINloabnCC05OIfynOwY6PAMSnsk?=
- =?us-ascii?Q?o0jihuYGcMxgUdq/eP4Pip/8a/l0ua1yv/USkNZnS9zdbCUt?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?BbBrPIMrgNfjM9RGeu/yQySxlnxwvZwKmXGhhhiBxlkLp3XudRfBUCq5k3OU?=
+ =?us-ascii?Q?u4k/Qw+w7VzlM9YM5VA5jD8Hjuru86UN4lXmz50860lNIQu8SQr9qThGE8d9?=
+ =?us-ascii?Q?brMX8abKOMpyYQ7BxjHi/C3ymD7Lo0/AD/XRvO/5IMbE/f7yBIv07dG4l5I2?=
+ =?us-ascii?Q?Q0Wlsowr9NtF8ars/fw7zRy9HTxloFmgQtaXQoNBzEof9nVcBjR92ahtYEVe?=
+ =?us-ascii?Q?Zd+gT1e9UzF4eMNd4+FZvK5OWRURfwv50xPMMtXnMi9euiUmRd+n/W02phBM?=
+ =?us-ascii?Q?Ab+OUGqwU+Av6N32+2nqAw3hMrAIShhpHUGUyj/tMdjeAmtp2TB8Pnumog/D?=
+ =?us-ascii?Q?Ej3GDFU4N+WV+MX7EKARM7fgi/nBEolezq2xPmylbLJcNWJwoiC+O7gI7f+w?=
+ =?us-ascii?Q?XQzJ6Cvlsq1vFQkJGxVf5My7s/jm9dZ17C1j2GTZcYvAqeP5EWYl8Jo2oao3?=
+ =?us-ascii?Q?Wmrh4QHv/PK9SHBcvnMCuaoqaQvpqRClqurdw0QmoBunRNtKkYQdfHz2sccw?=
+ =?us-ascii?Q?q/ZabZ4OuKNrmELyt+fwyOhgIxRjJnEYy31LVytdJ0UVQ9XvW49I5M5DfBhO?=
+ =?us-ascii?Q?HZIzDQBi0y0NgvrEYKXQG1R0IMot0Nb1NTY0nx6gvzebbdn7mCZDR10/docM?=
+ =?us-ascii?Q?z6EaqzwSqbckslKPWK8otwn68pH6Re91cBP7pKvq9Mcoz7n5knlKtQxDKzuc?=
+ =?us-ascii?Q?wqqZe1h4QFKBpcfahjszalBybBEnymdfLOMhnpVICMgH54MG4X7e3j/ELxY2?=
+ =?us-ascii?Q?JFjPC97CUCfAgDsciDQNWyyvIqSriTE7WxwGumCuiRP/cIHMJ7Ovq5+fPCho?=
+ =?us-ascii?Q?sn5hVzZ9u3wFqiB4xZsEsbug63c2yx2Y61+j0et0qayu3PFCMpdbY3ufvOE9?=
+ =?us-ascii?Q?/51zww03xJaUMl365bzZtbfymf1j64c3WeGmJUCJhpWGARa+HcOGaWUmOS6N?=
+ =?us-ascii?Q?nLNi5EDZ/KcDTErqBAGE1TDuKmgQquixrB50Zoq+PsvTduKCxjH6b2w2ZaM1?=
+ =?us-ascii?Q?jGlck+qSZ3LivKAGIXONksrofx5M93eSM4BTnAkX/mPvojobBL2W5+755y8r?=
+ =?us-ascii?Q?7VojZteOu7VilCqLbra0PpRyI22JSOx8GAXQNdZZpXvHZMyVYvt7/Ke+5beM?=
+ =?us-ascii?Q?0NPfz/b6aBHbX37fadJhIdDNxMcfEPQCyskW2XjQ4enu5N41HKAAWNKKlBUi?=
+ =?us-ascii?Q?hnvs/ePq71CKoQaHuklw8cR5eQ85zxest09cf1G3912jiBJ/7emPZH+zX15Q?=
+ =?us-ascii?Q?wucnkocrzgvgXsazdl4uDFIU5lG5I6ReYTjeDiZSGQMbAR5nhNyUzB70S1zg?=
+ =?us-ascii?Q?0F0xdij3bsY6DUX00k4vVKgjHaOPpI7AvRMgTVyVqrfTNsY8BEqVuHCXN+BS?=
+ =?us-ascii?Q?2FMj+lWLD1Wy/6L1g+/crOYbxT9Ll4OjFxjh7LDgnQBGRaE7XCR6cmNRXyB2?=
+ =?us-ascii?Q?D0ltMvFIrJ/VOmzjgBSQFbpsxKpUtrVOkLnRsqWUNRRJx2Fhq2dTtFsN+H/K?=
+ =?us-ascii?Q?bfwHOlqrms3y+fvOVWoLht3vkN3XO65H50dP4KckKF8HA1D8KD0IQqXya2LW?=
+ =?us-ascii?Q?GO0PoTWQYNJ63cZBo85NSa1d2apYIqZcF3pjSAbwNfHecGe7iYX8z188m9ep?=
+ =?us-ascii?Q?KImL3AM4I/o8eK3+qVeuZNp4GiiqOJgMlwgeE6dKF7iG3xNGideM/UcQGo84?=
+ =?us-ascii?Q?VDOZi+9ZkPKh5i2VbLED9ytAccI8uhWcKlhLTER4d6YRZjOL?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3503b287-1d2e-4b36-27c4-08de46ecf934
+X-MS-Exchange-CrossTenant-Network-Message-Id: b97069e1-4dd3-4065-6c91-08de46efe4af
 X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8951.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Dec 2025 15:14:34.1437
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Dec 2025 15:35:28.2538
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: eoOZNJFbN9yEXI3gHr7L2FGS8OfsbhUdBHOUbswQevTh3yhgXt1B5mNYlMOEYU2u/dVVJ0DNexcmf4nMUb24ZA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV2PR04MB11165
+X-MS-Exchange-CrossTenant-UserPrincipalName: SZNZSPIRX4KSp1585BkRo22Pu+ny47Ih0g80AAZB8J3c+1tKflyuKF23Z0dn8hBgaxRNC18lSYqnwL2Wuhq+qw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8973
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251229_071441_469146_F20F1AB9 
-X-CRM114-Status: GOOD (  19.48  )
+X-CRM114-CacheID: sfid-20251229_073532_547311_6C9E2689 
+X-CRM114-Status: GOOD (  16.27  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -174,96 +159,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Sun, Dec 21, 2025 at 07:07:42PM +0000, Jonathan Cameron wrote:
-> On Sat, 20 Dec 2025 22:34:47 +0800
-> kernel test robot <lkp@intel.com> wrote:
+On Wed, Dec 24, 2025 at 01:45:52PM +0100, Krzysztof Kozlowski wrote:
+> Use scoped for-each loop when iterating over device nodes to make code a
+> bit simpler.
 >
-> > Hi Frank,
-> >
-> > kernel test robot noticed the following build errors:
-> >
-> > [auto build test ERROR on 8f0b4cce4481fb22653697cced8d0d04027cb1e8]
-> >
-> > url:    https://github.com/intel-lab-lkp/linux/commits/Frank-Li/dt-bindings-trivial-devices-add-MEMSIC-3-axis-magnetometer/20251216-010451
-> > base:   8f0b4cce4481fb22653697cced8d0d04027cb1e8
-> > patch link:    https://lore.kernel.org/r/20251215-i3c_ddr-v12-2-1ae31225b4d9%40nxp.com
-> > patch subject: [PATCH v12 2/2] iio: magnetometer: Add mmc5633 sensor
-> > config: arm64-allmodconfig (https://download.01.org/0day-ci/archive/20251220/202512202141.aAwyC19D-lkp@intel.com/config)
-> > compiler: clang version 19.1.7 (https://github.com/llvm/llvm-project cd708029e0b2869e80abe31ddb175f7c35361f90)
-> > reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20251220/202512202141.aAwyC19D-lkp@intel.com/reproduce)
-> >
-> > If you fix the issue in a separate patch/commit (i.e. not just a new version of
-> > the same patch/commit), kindly add following tags
-> > | Reported-by: kernel test robot <lkp@intel.com>
-> > | Closes: https://lore.kernel.org/oe-kbuild-all/202512202141.aAwyC19D-lkp@intel.com/
-> >
-> > All errors (new ones prefixed by >>):
-> >
-> > >> drivers/iio/magnetometer/mmc5633.c:362:2: error: cannot jump from switch statement to this case label
-> >      362 |         default:
-> >          |         ^
-> >    drivers/iio/magnetometer/mmc5633.c:357:3: note: jump bypasses initialization of variable with __attribute__((cleanup))
-> >      357 |                 guard(mutex)(&data->mutex);
-> >          |                 ^
-> >    include/linux/cleanup.h:414:15: note: expanded from macro 'guard'
-> >      414 |         CLASS(_name, __UNIQUE_ID(guard))
-> >          |                      ^
-> >    include/linux/compiler.h:168:2: note: expanded from macro '__UNIQUE_ID'
-> >      168 |         __PASTE(__UNIQUE_ID_,                                   \
-> >          |         ^
-> >    include/linux/compiler_types.h:16:23: note: expanded from macro '__PASTE'
-> >       16 | #define __PASTE(a, b) ___PASTE(a, b)
-> >          |                       ^
-> >    include/linux/compiler_types.h:15:24: note: expanded from macro '___PASTE'
-> >       15 | #define ___PASTE(a, b) a##b
-> >          |                        ^
-> >    <scratch space>:9:1: note: expanded from here
-> >        9 | __UNIQUE_ID_guard_966
-> >          | ^
-> >    1 error generated.
-> >
-> >
-> > vim +362 drivers/iio/magnetometer/mmc5633.c
-> >
-> >    343
-> >    344	static int mmc5633_write_raw(struct iio_dev *indio_dev,
-> >    345				     struct iio_chan_spec const *chan, int val,
-> >    346				     int val2, long mask)
-> >    347	{
-> >    348		struct mmc5633_data *data = iio_priv(indio_dev);
-> >    349		int ret;
-> >    350
-> >    351		switch (mask) {
-> >    352		case IIO_CHAN_INFO_SAMP_FREQ:
-> {
-> >    353			ret = mmc5633_get_samp_freq_index(data, val, val2);
-> >    354			if (ret < 0)
-> >    355				return ret;
-> >    356
-> >    357			guard(mutex)(&data->mutex);
-> >    358
-> >    359			return regmap_update_bits(data->regmap, MMC5633_REG_CTRL1,
-> >    360						  MMC5633_CTRL1_BW_MASK,
-> >    361						  FIELD_PREP(MMC5633_CTRL1_BW_MASK, ret));
-> }
-> Needed to add scope for the guard to apply to.
-> If this is all that comes up I'll fix it whilst applying.
+> Signed-off-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
+> ---
 
-Yes, thank you for your fix. If need respin patch, let me know.
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
-Frank
-
+>  drivers/i3c/master.c | 7 ++-----
+>  1 file changed, 2 insertions(+), 5 deletions(-)
 >
-> thanks,
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index 7f606c871648..b789ac390937 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -2370,19 +2370,16 @@ static int of_populate_i3c_bus(struct i3c_master_controller *master)
+>  {
+>  	struct device *dev = &master->dev;
+>  	struct device_node *i3cbus_np = dev->of_node;
+> -	struct device_node *node;
+>  	int ret;
+>  	u32 val;
 >
-> Jonathan
+>  	if (!i3cbus_np)
+>  		return 0;
 >
-> >  > 362		default:
-> >    363			return -EINVAL;
-> >    364		}
-> >    365	}
-> >    366
-> >
+> -	for_each_available_child_of_node(i3cbus_np, node) {
+> +	for_each_available_child_of_node_scoped(i3cbus_np, node) {
+>  		ret = of_i3c_master_add_dev(master, node);
+> -		if (ret) {
+> -			of_node_put(node);
+> +		if (ret)
+>  			return ret;
+> -		}
+>  	}
+>
+>  	/*
+> --
+> 2.51.0
 >
 
 -- 
