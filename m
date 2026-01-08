@@ -4,73 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2A5F6CF6C15
-	for <linux-i3c@archiver.kernel.org>; Thu,  8 Jan 2026 08:06:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 64582D148BE
+	for <linux-i3c@archiver.kernel.org>; Thu,  8 Jan 2026 08:06:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v19erA7e7ypxwM59dimHWEC60wsN0PzrgqqcVQ+XZDA=; b=DiD6vPuDFvJy/y
-	1reJ0wnhlrzpq6X8R5y8wntxGTCK1c94f25eOhoaRSTJyEY0Xltt9fIiQC255XqMLCrtnflaqKxC4
-	dkS4diiZcYL5i/z5f0BRV7DGkgSx3PoXDJqyoprnu4vgk/qhVOmfWQKsmYY4g/xi9sT3KyVPKwE8q
-	SGLZqR6PuoG2m4CCBWIhCjPy/zL/mxyaAG0Kx1TfZVk6/L0nuSLHq2qymxEYEOduUrIx6Zd0spj2s
-	QunzUYNKwENkylcfhekVwJoxUOUxGYmX0x67Arqufp9VNdKF8hmcG6LhWLUW8WKUw0m2P99Pa73fz
-	Vd19L3+vD3D56fmamcfw==;
+	List-Owner; bh=8dxeVxdxQOikKHz1Td/vg3yGITO5g4i2lAmikcP4Cms=; b=Fd2VeFv8EjSSpo
+	iBenoGo49b5JpBwNGPiz8/qgiMS8mgVoz8jsn1RcIvEpGGXVitLqivnrPuwC1szWHxW3+j+Sjv/Cf
+	OkyKhy41eV2r/8ETCoadPs19j2lKXf9e0I6Pu4mzoMJoqsxlgsivcJFffKHGbecKRmtKhX5cZ3QFS
+	U59/tv0lyeBP+gt8SCAcyaS7qJ2FmkRRkmqTjwOxPa0395UDXDRHF5CaMxeTOenwmrCXFsoQI2aRd
+	S1wC32HYGDw48pz+KExlwS4CJh61Taq8kfalAZgz4D5rR/Jg6HSY6sokaOhnBOKHwS8K2ZdizOxwr
+	FjWGCQ74IxWIzBBlsn/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vdl2T-0000000GDGq-3p3a;
-	Thu, 08 Jan 2026 08:06:37 +0000
+	id 1vdl2V-0000000GDHW-0ddk;
+	Thu, 08 Jan 2026 08:06:39 +0000
 Received: from mgamail.intel.com ([192.198.163.16])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vdl2R-0000000GDDX-2Rzq
+	id 1vdl2T-0000000GDGR-1GUP
 	for linux-i3c@lists.infradead.org;
-	Thu, 08 Jan 2026 08:06:36 +0000
+	Thu, 08 Jan 2026 08:06:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1767859596; x=1799395596;
+  t=1767859597; x=1799395597;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=1NnKCjAKprTJ0iGJr9Pbw7ULcPpYTkOWfkGf6OSZAOA=;
-  b=SgaN/FYcP4kQs8aYpkA1I6pEVdmww/ab67pJKkEIGueoDe+MFVGsQu2u
-   cVwPjtdvSURUyhwhxox9GNckDtTKVMrAf1HW8bMIZPKpJd9qZUOTNc0uk
-   WYQoQdbTltpmZ020Ii4YwPnaYReyUlAjPwPcF4Hs7dAkOpfPizPm3gssP
-   DcfRbqG7FNuEHoIj1sIjhNzPLfWuXtX4APbnOdsfeYKgVyDmvl3RhdUx8
-   h1Gu+dDpVIsUHesd7NFhqRxyaZheEdmJI/S2mCBT18tYSDNB+vpLzOyZM
-   OGMKbWhObbQCqDYTRHM8rTg0mY0c610VDcq4reeSG9d0cE/zvwXOMdUYt
-   g==;
-X-CSE-ConnectionGUID: Y6Tqo61uTnaRobLhTkSQjA==
-X-CSE-MsgGUID: yuIjkc5xRGGVzhtf19CbHQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11664"; a="56792322"
+  bh=cdqj8MUhIVy50DetlqHws6c4EdjaFuwyLG7plxic+S0=;
+  b=Hu+9cB3uqM5p4lgM2h/7Ai/Oi/T6sqVPVYt4tyA8+m4rjJx7t5wz8MnR
+   eCeoWX5h/knSKXZcig4PZZ07oEYSgOEJsEBL88TF09SOZTNbPvh/3e6e+
+   ju0pszGk4nZ36QoL6ljSTiPCCWiaQhcNHcZvoqAipDFBq0hEiI3tzQR0f
+   iSrudfgXkif/8T2NYHnJvGiW2scOBBoAcGXpDpUAekKXcjExVPuXPZaDy
+   v9y022dH9zwD/hQJF+opGP1pUELSpGoueqmuuaYx1b0MdmFuahsC49/KY
+   pGJa+YfGtZsHpovCGZoncKITDvpbePLTJc6l1rDRQBsq2CHsak67rrw2X
+   w==;
+X-CSE-ConnectionGUID: U6bkg9/yT+eiae7+4kKlPQ==
+X-CSE-MsgGUID: SjRbKhivQMSBNMBWB3Y5aQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11664"; a="56792328"
 X-IronPort-AV: E=Sophos;i="6.21,210,1763452800"; 
-   d="scan'208";a="56792322"
+   d="scan'208";a="56792328"
 Received: from fmviesa008.fm.intel.com ([10.60.135.148])
-  by fmvoesa110.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Jan 2026 00:06:35 -0800
-X-CSE-ConnectionGUID: Ox74SrBNSdGFxX9wMSIEoQ==
-X-CSE-MsgGUID: B0s0e0o1TZawA1aS1vAq9A==
+  by fmvoesa110.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Jan 2026 00:06:37 -0800
+X-CSE-ConnectionGUID: AaH2SqrySrmnzxvPn4lEHQ==
+X-CSE-MsgGUID: meXnc0pjQuSYbJaGnDseJw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.21,210,1763452800"; 
-   d="scan'208";a="203413610"
+   d="scan'208";a="203413613"
 Received: from abityuts-desk.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.245.195])
-  by fmviesa008-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Jan 2026 00:06:33 -0800
+  by fmviesa008-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Jan 2026 00:06:35 -0800
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	Wolfram Sang <wsa+renesas@sang-engineering.com>,
 	Aniket <aniketmaurya@google.com>,
 	linux-i3c@lists.infradead.org
-Subject: [PATCH V2 12/20] i3c: mipi-i3c-hci: Refactor PIO register initialization
-Date: Thu,  8 Jan 2026 10:05:50 +0200
-Message-ID: <20260108080558.21767-13-adrian.hunter@intel.com>
+Subject: [PATCH V2 13/20] i3c: mipi-i3c-hci: Add PIO suspend and resume support
+Date: Thu,  8 Jan 2026 10:05:51 +0200
+Message-ID: <20260108080558.21767-14-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260108080558.21767-1-adrian.hunter@intel.com>
 References: <20260108080558.21767-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260108_000635_640999_0B34E117 
-X-CRM114-Status: GOOD (  10.16  )
+X-CRM114-CacheID: sfid-20260108_000637_420000_6A33D050 
+X-CRM114-Status: UNSURE (   7.48  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,10 +88,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Move the PIO register setup logic out of hci_pio_init() into a new
-helper, __hci_pio_init().  This refactoring prepares for Runtime PM
-support by allowing PIO registers to be reinitialized independently
-after resume.
+Introduce helper functions to suspend and resume PIO operations.  These
+are required to prepare for upcoming Runtime PM support, ensuring that
+PIO state is properly managed during power transitions.
 
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 Reviewed-by: Frank Li <Frank.Li@nxp.com>
@@ -102,76 +102,39 @@ Changes in V2:
 	Add Frank's Rev'd-by
 
 
- drivers/i3c/master/mipi-i3c-hci/pio.c | 45 +++++++++++++++++----------
- 1 file changed, 28 insertions(+), 17 deletions(-)
+ drivers/i3c/master/mipi-i3c-hci/pio.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
 diff --git a/drivers/i3c/master/mipi-i3c-hci/pio.c b/drivers/i3c/master/mipi-i3c-hci/pio.c
-index 3d633abf6099..52d9f01d9ca9 100644
+index 52d9f01d9ca9..8e868e81acda 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/pio.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/pio.c
-@@ -135,27 +135,14 @@ struct hci_pio_data {
- 	u32 enabled_irqs;
- };
- 
--static int hci_pio_init(struct i3c_hci *hci)
-+static void __hci_pio_init(struct i3c_hci *hci, u32 *size_val_ptr)
- {
--	struct hci_pio_data *pio;
- 	u32 val, size_val, rx_thresh, tx_thresh, ibi_val;
--
--	pio = devm_kzalloc(hci->master.dev.parent, sizeof(*pio), GFP_KERNEL);
--	if (!pio)
--		return -ENOMEM;
--
--	hci->io_data = pio;
--	spin_lock_init(&pio->lock);
-+	struct hci_pio_data *pio = hci->io_data;
- 
- 	size_val = pio_reg_read(QUEUE_SIZE);
--	dev_dbg(&hci->master.dev, "CMD/RESP FIFO = %ld entries\n",
--		FIELD_GET(CR_QUEUE_SIZE, size_val));
--	dev_dbg(&hci->master.dev, "IBI FIFO = %ld bytes\n",
--		4 * FIELD_GET(IBI_STATUS_SIZE, size_val));
--	dev_dbg(&hci->master.dev, "RX data FIFO = %d bytes\n",
--		4 * (2 << FIELD_GET(RX_DATA_BUFFER_SIZE, size_val)));
--	dev_dbg(&hci->master.dev, "TX data FIFO = %d bytes\n",
--		4 * (2 << FIELD_GET(TX_DATA_BUFFER_SIZE, size_val)));
-+	if (size_val_ptr)
-+		*size_val_ptr = size_val;
- 
- 	/*
- 	 * Let's initialize data thresholds to half of the actual FIFO size.
-@@ -201,6 +188,30 @@ static int hci_pio_init(struct i3c_hci *hci)
- 
- 	/* Always accept error interrupts (will be activated on first xfer) */
+@@ -190,6 +190,18 @@ static void __hci_pio_init(struct i3c_hci *hci, u32 *size_val_ptr)
  	pio->enabled_irqs = STAT_ALL_ERRORS;
+ }
+ 
++static void hci_pio_suspend(struct i3c_hci *hci)
++{
++	pio_reg_write(INTR_SIGNAL_ENABLE, 0);
++
++	i3c_hci_sync_irq_inactive(hci);
 +}
 +
-+static int hci_pio_init(struct i3c_hci *hci)
++static void hci_pio_resume(struct i3c_hci *hci)
 +{
-+	struct hci_pio_data *pio;
-+	u32 size_val;
++	__hci_pio_init(hci, NULL);
++}
 +
-+	pio = devm_kzalloc(hci->master.dev.parent, sizeof(*pio), GFP_KERNEL);
-+	if (!pio)
-+		return -ENOMEM;
-+
-+	hci->io_data = pio;
-+	spin_lock_init(&pio->lock);
-+
-+	__hci_pio_init(hci, &size_val);
-+
-+	dev_dbg(&hci->master.dev, "CMD/RESP FIFO = %ld entries\n",
-+		FIELD_GET(CR_QUEUE_SIZE, size_val));
-+	dev_dbg(&hci->master.dev, "IBI FIFO = %ld bytes\n",
-+		4 * FIELD_GET(IBI_STATUS_SIZE, size_val));
-+	dev_dbg(&hci->master.dev, "RX data FIFO = %d bytes\n",
-+		4 * (2 << FIELD_GET(RX_DATA_BUFFER_SIZE, size_val)));
-+	dev_dbg(&hci->master.dev, "TX data FIFO = %d bytes\n",
-+		4 * (2 << FIELD_GET(TX_DATA_BUFFER_SIZE, size_val)));
- 
- 	return 0;
- }
+ static int hci_pio_init(struct i3c_hci *hci)
+ {
+ 	struct hci_pio_data *pio;
+@@ -1059,4 +1071,6 @@ const struct hci_io_ops mipi_i3c_hci_pio = {
+ 	.request_ibi		= hci_pio_request_ibi,
+ 	.free_ibi		= hci_pio_free_ibi,
+ 	.recycle_ibi_slot	= hci_pio_recycle_ibi_slot,
++	.suspend		= hci_pio_suspend,
++	.resume			= hci_pio_resume,
+ };
 -- 
 2.51.0
 
