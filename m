@@ -4,73 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A3E3D29DE4
-	for <linux-i3c@archiver.kernel.org>; Tue, 13 Jan 2026 07:28:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EB2DD0C85F
+	for <linux-i3c@archiver.kernel.org>; Tue, 13 Jan 2026 11:45:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sHTMphT4FvemRZ5DlAXDy1y9m0n5gwTgBlb1MVnz18w=; b=xp5rS/Tg6Hj/zf
-	6s7iOqKf/hCNdP+V2gnQwTK+TWiqhe38s9Og7MJ2G3kTxpWOI9RyM5qYjU19f30NOqxL/z7gQ2juH
-	eOFOtGnVzygzQvhQAkHKGcbPBd+H0GpeKeIKUUtzg577qY0X/hwHXvKuYuekdGKD5QfxSehLFoxmU
-	b751Ydx+ipcOhcwtd7An9FRDuCOs5RcR9ZfROA0PfAlnFJWcaqnK6NOMzYDsWRFOgAAfyJSiGOah+
-	jqwUUNkdKPVBKjTmmbK56OYoTnOqwBcGR68YplRKDIIhHOvA/ARLQscuILFBJ9632n0OFmOeby82M
-	YVmauQIh9MvBSNvT8nAA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=UYKeR3DLAUtAxiTz99W6KZmSjJ6+ZyvblZRGULM5a/I=; b=q64Ki2N1bM5dxT
+	9sC4Z36I4TF4Uy6mwalvqbdOrSB22mkbNnDsHo+ScsOXY9uHPQEPrlmqOiH/g2+d221oQd1Bx7wdA
+	SlqiDkJDZE6MbT4gE9D7OQUIx9rqgLAxsKAikudRnFx+ExsLHEz//wwmfkG0YqJbJrSPmNpgBoyEF
+	RpYrGeNkrJB7C479Z0JKrBnxuZ4Z9kSU9TMQ54Lm9pFKClPm19W02G49u5/+rIVWQKWu1iqJJArDC
+	+hHeLXY3qe9GJ6Q8v38eHL5BKN4MGuRR3wpDXLtVKAs6cyLX/IwCIQatyMiUp+RaQ9oP673NTNl1R
+	4f8jJe9XRVGwry6JMl8w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfYov-00000006enw-3KCB;
-	Tue, 13 Jan 2026 07:28:05 +0000
-Received: from mgamail.intel.com ([198.175.65.18])
+	id 1vfcqH-000000072Dt-3JUF;
+	Tue, 13 Jan 2026 11:45:45 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfYot-00000006ean-0XSu
+	id 1vfcqF-000000072CJ-0J8v
 	for linux-i3c@lists.infradead.org;
-	Tue, 13 Jan 2026 07:28:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1768289284; x=1799825284;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=Z+YW09ZjFn1pqcsdphXi5rOE1NUElKadq6wPv8NnfQg=;
-  b=a1jBcbxvIz/fXOr2iWkPDK5UaZ1RuOt2uz7Xj9nlZIds3cifTiDFFpKX
-   H+SAQUEaVVQLpBUwT9xok2vyz1I5FCWPcBqrDuz6F5VylTTGt0WAv6GEX
-   uTIqcXeEzVa0a/XrrfpcJyBQs25TNcjNqkzBmTPqQNyliHmJw1PtRkM1c
-   0kzMTUhtez9KOHiwT7EuzpI5mpOBQ++ggTYk+rWDVacsjuO/G89Sjxep1
-   StHamwl6GT8ZopZ/qUUOzk6NEKQULg326yNcXiOAnxE/GiADmlhDjzUrW
-   8txnMfiPWc4lqvhI++u340VKQdtliS0UcTDQVBa6dmFXXGvvm6eMdkt4D
-   g==;
-X-CSE-ConnectionGUID: bCsfemwORmCsvEc86yxJQA==
-X-CSE-MsgGUID: Qk8yUqETQtaDZg1v3T6gDA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11669"; a="69625554"
-X-IronPort-AV: E=Sophos;i="6.21,222,1763452800"; 
-   d="scan'208";a="69625554"
-Received: from orviesa002.jf.intel.com ([10.64.159.142])
-  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Jan 2026 23:28:04 -0800
-X-CSE-ConnectionGUID: /2tHe4FESMa0QwJrGc//EA==
-X-CSE-MsgGUID: NloBbujCS5CX5NN9F0TIqA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.21,222,1763452800"; 
-   d="scan'208";a="235021417"
-Received: from amilburn-desk.amilburn-desk (HELO ahunter6-desk) ([10.245.245.167])
-  by orviesa002-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Jan 2026 23:28:02 -0800
-From: Adrian Hunter <adrian.hunter@intel.com>
-To: alexandre.belloni@bootlin.com
-Cc: Frank.Li@nxp.com,
-	Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Aniket <aniketmaurya@google.com>,
-	linux-i3c@lists.infradead.org
-Subject: [PATCH V3 21/21] i3c: mipi-i3c-hci-pci: Add Runtime PM support
-Date: Tue, 13 Jan 2026 09:27:02 +0200
-Message-ID: <20260113072702.16268-22-adrian.hunter@intel.com>
-X-Mailer: git-send-email 2.51.0
-In-Reply-To: <20260113072702.16268-1-adrian.hunter@intel.com>
-References: <20260113072702.16268-1-adrian.hunter@intel.com>
+	Tue, 13 Jan 2026 11:45:44 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3B3211A1503;
+	Tue, 13 Jan 2026 12:45:39 +0100 (CET)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com [134.27.226.22])
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2D9AC1A14EE;
+	Tue, 13 Jan 2026 12:45:39 +0100 (CET)
+Received: from lsv15573.swis.ro-buh01.nxp.com (lsv15573.swis.ro-buh01.nxp.com [10.172.0.77])
+	by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 2A9EE202F3;
+	Tue, 13 Jan 2026 12:45:37 +0100 (CET)
+From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+To: linux-kernel@vger.kernel.org,
+	linux-i3c@lists.infradead.org,
+	alexandre.belloni@bootlin.com,
+	krzk+dt@kernel.org,
+	robh@kernel.org,
+	conor+dt@kernel.org,
+	devicetree@vger.kernel.org,
+	broonie@kernel.org,
+	lee@kernel.org,
+	Frank.Li@nxp.com,
+	lgirdwood@gmail.com
+Cc: vikash.bansal@nxp.com,
+	priyanka.jain@nxp.com,
+	shashank.rebbapragada@nxp.com,
+	Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+Subject: [PATCH v4 1/5] i3c: master: Expose the APIs to support I3C hub
+Date: Tue, 13 Jan 2026 13:45:25 +0200
+Message-Id: <20260113114529.1692213-1-aman.kumarpandey@nxp.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260112_232803_207421_A97DA09A 
-X-CRM114-Status: GOOD (  10.36  )
+X-CRM114-CacheID: sfid-20260113_034543_370896_4ED841C9 
+X-CRM114-Status: GOOD (  21.03  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,77 +77,193 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Enable Runtime PM for the mipi_i3c_hci_pci driver. Introduce helpers to
-allow and forbid Runtime PM during probe and remove, using pm_runtime APIs.
+Expose i3c_master_send_ccc_cmd(), i3c_master_supports_ccc_cmd(),
+i3c_master_reattach_i3c_dev(), i3c_master_direct_attach_i3c_dev(),
+and i3c_master_direct_detach_i3c_dev() to support I3C hub.
 
-Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
+Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+
 ---
+Changes in v4:
+ - Updated I3C master to handle hub support
+---
+---
+ drivers/i3c/master.c       | 123 ++++++++++++++++++++++++++++++++++++-
+ include/linux/i3c/master.h |  11 ++++
+ 2 files changed, 132 insertions(+), 2 deletions(-)
 
-
-Changes in V3:
-
-	Add Frank's Rev'd-by
-
-Changes in V2:
-
-	None
-
-
- .../i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c  | 17 +++++++++++++++++
- 1 file changed, 17 insertions(+)
-
-diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-index 458f871a2e61..1b38771667e5 100644
---- a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-@@ -18,6 +18,7 @@
- #include <linux/platform_data/mipi-i3c-hci.h>
- #include <linux/platform_device.h>
- #include <linux/pm_qos.h>
-+#include <linux/pm_runtime.h>
- 
- /*
-  * There can up to 15 instances, but implementations have at most 2 at this
-@@ -208,6 +209,18 @@ static const struct mipi_i3c_hci_pci_info intel_si_2_info = {
- 	.instance_count = 1,
- };
- 
-+static void mipi_i3c_hci_pci_rpm_allow(struct device *dev)
-+{
-+	pm_runtime_put(dev);
-+	pm_runtime_allow(dev);
-+}
-+
-+static void mipi_i3c_hci_pci_rpm_forbid(struct device *dev)
-+{
-+	pm_runtime_forbid(dev);
-+	pm_runtime_get_sync(dev);
-+}
-+
- struct mipi_i3c_hci_pci_cell_data {
- 	struct mipi_i3c_hci_platform_data pdata;
- 	struct resource res;
-@@ -285,6 +298,8 @@ static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
- 
- 	pci_set_drvdata(pci, hci);
- 
-+	mipi_i3c_hci_pci_rpm_allow(&pci->dev);
-+
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 7f606c871648..c92152ff795f 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -1544,8 +1544,76 @@ static int i3c_master_attach_i3c_dev(struct i3c_master_controller *master,
  	return 0;
- 
- err_exit:
-@@ -300,6 +315,8 @@ static void mipi_i3c_hci_pci_remove(struct pci_dev *pci)
- 	if (hci->info->exit)
- 		hci->info->exit(hci);
- 
-+	mipi_i3c_hci_pci_rpm_forbid(&pci->dev);
-+
- 	mfd_remove_devices(&pci->dev);
  }
  
+-static int i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
+-				       u8 old_dyn_addr)
++/**
++ * i3c_master_direct_attach_i3c_dev() - attach an I3C device to a master
++ * @master: I3C master controller to attach the device to
++ * @dev: I3C device descriptor representing the device
++ *
++ * This function attaches an I3C device to its master controller once the
++ * device has a valid address on the bus. Devices without
++ * an assigned address are ignored. The master device itself is never
++ * attached through this bus.
++ *
++ * Return: 0 on success, or a negative error code if the attach operation
++ *         fails in the master controller driver.
++ */
++int i3c_master_direct_attach_i3c_dev(struct i3c_master_controller *master,
++				     struct i3c_dev_desc *dev)
++{
++	int ret = 0;
++
++	/*
++	 * We don't attach devices to the controller until they are
++	 * addressable on the bus.
++	 */
++
++	if (!dev->info.static_addr && !dev->info.dyn_addr)
++		return 0;
++
++	/* Do not attach the master device itself. */
++	if (master->this != dev && master->ops->attach_i3c_dev)
++		ret = master->ops->attach_i3c_dev(dev);
++
++	return ret;
++}
++EXPORT_SYMBOL_GPL(i3c_master_direct_attach_i3c_dev);
++
++/**
++ * i3c_master_direct_detach_i3c_dev - Detach an I3C device from its master
++ * @dev: I3C device descriptor to be detached
++ *
++ * This function detaches an I3C device from its master controller.
++ * It ensures that the master itself is not detached. If the device is not
++ * the master and the master controller provides a detach operation,
++ * the detach callback is invoked to perform the actual removal.
++ */
++void i3c_master_direct_detach_i3c_dev(struct i3c_dev_desc *dev)
++{
++	struct i3c_master_controller *master = i3c_dev_get_master(dev);
++
++	/* Do not detach the master device itself. */
++	if (master->this != dev && master->ops->detach_i3c_dev)
++		master->ops->detach_i3c_dev(dev);
++}
++EXPORT_SYMBOL_GPL(i3c_master_direct_detach_i3c_dev);
++
++/**
++ * i3c_master_reattach_i3c_dev() - reattach an I3C device with a new address
++ * @dev: I3C device descriptor to reattach
++ * @old_dyn_addr: previous dynamic address of the device
++ *
++ * This function reattaches an existing I3C device to the bus when its dynamic
++ * address has changed. It updates the bus address slot status accordingly:
++ * - Marks the new dynamic address as occupied by an I3C device.
++ * - Frees the old dynamic address slot if applicable.
++ *
++ * This function must be called with the bus lock held in write mode.
++ *
++ * Return: 0 on success, or a negative error code if reattachment fails
++ *         (e.g. -EBUSY if the new address slot is not free).
++ */
++int i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
++				u8 old_dyn_addr)
+ {
+ 	struct i3c_master_controller *master = i3c_dev_get_master(dev);
+ 	int ret;
+@@ -1569,6 +1637,7 @@ static int i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
+ 
+ 	return 0;
+ }
++EXPORT_SYMBOL_GPL(i3c_master_reattach_i3c_dev);
+ 
+ static void i3c_master_detach_i3c_dev(struct i3c_dev_desc *dev)
+ {
+@@ -1692,6 +1761,56 @@ i3c_master_register_new_i3c_devs(struct i3c_master_controller *master)
+ 	}
+ }
+ 
++/**
++ * i3c_master_supports_ccc_cmd() - check CCC command support
++ * @master: I3C master controller
++ * @cmd: CCC command to verify
++ *
++ * This function verifies whether the given I3C master controller supports
++ * the specified Common Command Code (CCC).
++ *
++ * Return: 0 if the CCC command is supported and executed successfully,
++ *         -EINVAL if arguments are invalid,
++ *         -EOPNOTSUPP if the master does not support CCC commands,
++ *         or another negative error code from the master's operation.
++ */
++int i3c_master_supports_ccc_cmd(struct i3c_master_controller *master,
++				const struct i3c_ccc_cmd *cmd)
++{
++	if (!cmd || !master)
++		return -EINVAL;
++
++	if (!master->ops->supports_ccc_cmd)
++		return -EOPNOTSUPP;
++
++	return master->ops->supports_ccc_cmd(master, cmd);
++}
++EXPORT_SYMBOL_GPL(i3c_master_supports_ccc_cmd);
++
++/**
++ * i3c_master_send_ccc_cmd() - send a CCC command
++ * @master: I3C master controller issuing the command
++ * @cmd: CCC command to be sent
++ *
++ * This function sends a Common Command Code (CCC) command to devices on the
++ * I3C bus. It acquires the bus maintenance lock, executes the command, and
++ * then releases the lock to ensure safe access to the bus.
++ *
++ * Return: 0 on success, or a negative error code on failure.
++ */
++int i3c_master_send_ccc_cmd(struct i3c_master_controller *master,
++			    struct i3c_ccc_cmd *cmd)
++{
++	int ret;
++
++	i3c_bus_maintenance_lock(&master->bus);
++	ret = i3c_master_send_ccc_cmd_locked(master, cmd);
++	i3c_bus_maintenance_unlock(&master->bus);
++
++	return ret;
++}
++EXPORT_SYMBOL_GPL(i3c_master_send_ccc_cmd);
++
+ /**
+  * i3c_master_do_daa() - do a DAA (Dynamic Address Assignment)
+  * @master: master doing the DAA
+diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
+index 58d01ed4cce7..b059da7777d7 100644
+--- a/include/linux/i3c/master.h
++++ b/include/linux/i3c/master.h
+@@ -602,6 +602,17 @@ void i3c_master_dma_unmap_single(struct i3c_dma *dma_xfer);
+ DEFINE_FREE(i3c_master_dma_unmap_single, void *,
+ 	    if (_T) i3c_master_dma_unmap_single(_T))
+ 
++int i3c_master_send_ccc_cmd(struct i3c_master_controller *master,
++			    struct i3c_ccc_cmd *cmd);
++
++int i3c_master_supports_ccc_cmd(struct i3c_master_controller *master,
++				const struct i3c_ccc_cmd *cmd);
++
++int i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
++				u8 old_dyn_addr);
++int i3c_master_direct_attach_i3c_dev(struct i3c_master_controller *master,
++				     struct i3c_dev_desc *dev);
++void i3c_master_direct_detach_i3c_dev(struct i3c_dev_desc *dev);
+ int i3c_master_set_info(struct i3c_master_controller *master,
+ 			const struct i3c_device_info *info);
+ 
 -- 
-2.51.0
+2.25.1
 
 
 -- 
