@@ -4,73 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1E66D29DDE
-	for <linux-i3c@archiver.kernel.org>; Tue, 13 Jan 2026 07:27:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6B562D29DE0
+	for <linux-i3c@archiver.kernel.org>; Tue, 13 Jan 2026 07:27:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oVzbuYEep2VXqF/qbyfExm6vVDqMM4vWCNVLZO315v4=; b=xM4DADWt3fzTOu
-	TycPfmrLqHaXffH5PkiFaCO2WGrqUEEsfuPBSXCmmzpOjuoAnJO1JdJPwq+5MS6Ym42GdQ0hMYpBc
-	JJRXiruPUfPE/dtjvZsSINKAGrM6JtkQdbNUjluPdJPTNXMFIcpu6Dw0C9uGKFHAV72xG24Oiy3Pl
-	d8AD4xel5CW/ccIPDNhBm8EagEAwybnC4pfOPWTyMSzC3HE3XI5nFNKNoWOopsI1hIYUB79RwJXWZ
-	/G6pgqBQdIKkOry5nHeB08+tv8yDjdFE3iwWIfM+mYjlYfLov9dHV5V1hfgofaXsC7zMzdbofpDL8
-	2Z9PWlk/nN1jodxbrzyw==;
+	List-Owner; bh=KMkJVPYRTcHsN/BfD8Az2B1ebATDiFmO32OMdvcCeas=; b=0Nk4FXFEfF7txt
+	RliXC7d46zU4AN3OS74NKPfG5ZZ2N7Iq6xqTzttEGuqkiEq00ufFhTHViGl40yNQHMPAykiRDmyfn
+	uKTlbyygMq/fqeo5oEf1TWpJulmhuIdjHYW1T9UvMGizHAKi/HIQ553eo33M1flM6Vq5B8jdN7U6L
+	1DG4Lo1GxT/JNqwNzB5Nl+CHnC7+1gz8j6XzQxuNFtUFrBn2EJbY2dRMYvF7x1loov5cfyPT84/7i
+	JEatzA7uN3FdeziPDgsdT5soqxQLQ6yhi5NLNur/IpWbBE0wm/D3TN6zknH+vvteJGtjdzTb+u6ah
+	A0YgkzugRdA4cKHkk8Sg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfYoS-00000006eVv-0mXj;
-	Tue, 13 Jan 2026 07:27:38 +0000
+	id 1vfYoW-00000006eYC-0PTI;
+	Tue, 13 Jan 2026 07:27:40 +0000
 Received: from mgamail.intel.com ([198.175.65.18])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfYoP-00000006eSy-2Wyt
+	id 1vfYoR-00000006eSy-2sAB
 	for linux-i3c@lists.infradead.org;
-	Tue, 13 Jan 2026 07:27:34 +0000
+	Tue, 13 Jan 2026 07:27:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1768289254; x=1799825254;
+  t=1768289256; x=1799825256;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=t3i2Gc7n4EzP/cLmHA4QN3cmkcU+Xj3UTCX3D2NqeH8=;
-  b=J17DxUYSXuT3lbtGoeZpqxX6uC8ZMFCdHkyy8MBbYOtyb8608DAfi1b5
-   MMffmfJpkfxieqOFf5Y7ulJNc+dD0mWTXuvGKdNlTLVnUKGkqjEmGt18s
-   gL1v0AZdfM+kbh5P62Va8BNA8NTG6rPQ5z7ZJdwaZSwyuWZqugvDEmuKA
-   0PPe2obTTNJDdMyV9IO7glyw8fZcOzOMNIPO/8o/+C9OQ4n87EnlZRKM4
-   rnwno0TzU6mL2i6bi4UIVnRiwLcl48QzXTz8fD86n3a0E3BLcreHGGm6a
-   G439On0RyEs55gT6vuW2m1SwtorcQ+jA8taeZlAjoIWXqSJQW7xX7yHTI
-   Q==;
-X-CSE-ConnectionGUID: kgMwMd0GRL+XBfzRGX/aJA==
-X-CSE-MsgGUID: LS6a7v4fSq6SOL/RkWcuuw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11669"; a="69625462"
+  bh=R5zP6qwRuUSEokBZ5gnjmLPy9vPYiT2KAgC0dBFyeHM=;
+  b=Kg1aNGPLwYaeXmtipPtKu/OaZfWMVd0Hn4Ct1mpe1dpYWlaE6yVyLq8A
+   zn+acap8T4DblcPcvl5uNy0WX9cwNGBG/yOp/EKoIu0xo4Hk2CW6aOjcJ
+   cWyGdzHQPZvi1CS0E42GJTcMHlZVNblxh6LsU2bJH9k3Lnx3uQNY51EFj
+   cQuKNoxkrFZ2Yy5iPKL6ydJa6Zdwvw/RtIghGOrb7rkowfNxdvJOMuvot
+   dYBIegBeBWvMie+LG89ainUm9L++Oy/rwS2Bfsc28yksRkmHc6uHetIs3
+   6pyYVTxnjAq7Y0iHB/CW4/EcH/jNU9wXS1Y4qYHeuTJSvRf7rcQcGeYG6
+   A==;
+X-CSE-ConnectionGUID: sLTeZT3JQcWgbRi/qNZQ0g==
+X-CSE-MsgGUID: A5yMJ7FwTu+iPW7PBZTONA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11669"; a="69625469"
 X-IronPort-AV: E=Sophos;i="6.21,222,1763452800"; 
-   d="scan'208";a="69625462"
+   d="scan'208";a="69625469"
 Received: from orviesa002.jf.intel.com ([10.64.159.142])
-  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Jan 2026 23:27:34 -0800
-X-CSE-ConnectionGUID: lbbCg5FaRQOxLHN3DV3TYw==
-X-CSE-MsgGUID: czuFs82+TNyFoLDEisbNcg==
+  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Jan 2026 23:27:36 -0800
+X-CSE-ConnectionGUID: qq3t2D59QlykNvySDPNKpA==
+X-CSE-MsgGUID: YZ7vu1m8StaPFksrgkzcQw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.21,222,1763452800"; 
-   d="scan'208";a="235021250"
+   d="scan'208";a="235021258"
 Received: from amilburn-desk.amilburn-desk (HELO ahunter6-desk) ([10.245.245.167])
-  by orviesa002-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Jan 2026 23:27:32 -0800
+  by orviesa002-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Jan 2026 23:27:34 -0800
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	Wolfram Sang <wsa+renesas@sang-engineering.com>,
 	Aniket <aniketmaurya@google.com>,
 	linux-i3c@lists.infradead.org
-Subject: [PATCH V3 07/21] i3c: mipi-i3c-hci: Manage DMA deallocation via devres action
-Date: Tue, 13 Jan 2026 09:26:48 +0200
-Message-ID: <20260113072702.16268-8-adrian.hunter@intel.com>
+Subject: [PATCH V3 08/21] i3c: mipi-i3c-hci: Cache DAT in memory for Runtime PM restore
+Date: Tue, 13 Jan 2026 09:26:49 +0200
+Message-ID: <20260113072702.16268-9-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260113072702.16268-1-adrian.hunter@intel.com>
 References: <20260113072702.16268-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260112_232733_676580_4C7C28B6 
-X-CRM114-Status: GOOD (  12.75  )
+X-CRM114-CacheID: sfid-20260112_232735_759571_5DA36C93 
+X-CRM114-Status: GOOD (  13.60  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,12 +87,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The driver already uses devres for resource management, but the standard
-resource-managed DMA allocation helpers cannot be used because they assume
-the DMA device matches the managed device.
-
-To address this, factor out the deallocation logic from hci_dma_cleanup()
-into a new helper, hci_dma_free(), and register it as a devres action.
+Prepare for Runtime PM support, which requires restoring the Device Address
+Table (DAT) registers after resume.  Maintain a copy of DAT in memory so it
+can be reprogrammed when the controller is powered back up.
 
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 Reviewed-by: Frank Li <Frank.Li@nxp.com>
@@ -101,73 +98,92 @@ Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
 Changes in V3:
 
-	Add Frank's Rev'd-by
+	None
 
 Changes in V2:
 
-	Move hci_dma_free() below hci_dma_cleanup() to make patch look
-	better to review
-
-	Frank suggested using devm_add_action_and_reset() but it doesn't
-	work because the error path needs to call hci_dma_cleanup() before
-	hci_dma_free
+	Add Frank's Rev'd-by
 
 
- drivers/i3c/master/mipi-i3c-hci/dma.c | 23 +++++++++++++++++++++--
- 1 file changed, 21 insertions(+), 2 deletions(-)
+ drivers/i3c/master/mipi-i3c-hci/dat_v1.c | 29 +++++++++++++++++++-----
+ drivers/i3c/master/mipi-i3c-hci/hci.h    |  6 +++++
+ 2 files changed, 29 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-index 54849aa98fad..4999cf3d9674 100644
---- a/drivers/i3c/master/mipi-i3c-hci/dma.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-@@ -169,6 +169,22 @@ static void hci_dma_cleanup(struct i3c_hci *hci)
+diff --git a/drivers/i3c/master/mipi-i3c-hci/dat_v1.c b/drivers/i3c/master/mipi-i3c-hci/dat_v1.c
+index c60ef5d77ca3..644ab939be1c 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/dat_v1.c
++++ b/drivers/i3c/master/mipi-i3c-hci/dat_v1.c
+@@ -34,13 +34,26 @@
+ /*	DAT_0_IBI_PAYLOAD		W0_BIT_(12) */
+ #define DAT_0_STATIC_ADDRESS		W0_MASK(6, 0)
  
- 		rh_reg_write(CR_SETUP, 0);
- 		rh_reg_write(IBI_SETUP, 0);
-+	}
+-#define dat_w0_read(i)		readl(hci->DAT_regs + (i) * 8)
+-#define dat_w1_read(i)		readl(hci->DAT_regs + (i) * 8 + 4)
+-#define dat_w0_write(i, v)	writel(v, hci->DAT_regs + (i) * 8)
+-#define dat_w1_write(i, v)	writel(v, hci->DAT_regs + (i) * 8 + 4)
++#define dat_w0_read(i)		hci->DAT[i].w0
++#define dat_w1_read(i)		hci->DAT[i].w1
++#define dat_w0_write(i, v)	hci_dat_w0_write(hci, i, v)
++#define dat_w1_write(i, v)	hci_dat_w1_write(hci, i, v)
 +
-+	rhs_reg_write(CONTROL, 0);
++static inline void hci_dat_w0_write(struct i3c_hci *hci, int i, u32 v)
++{
++	hci->DAT[i].w0 = v;
++	writel(v, hci->DAT_regs + i * 8);
 +}
 +
-+static void hci_dma_free(void *data)
++static inline void hci_dat_w1_write(struct i3c_hci *hci, int i, u32 v)
 +{
-+	struct i3c_hci *hci = data;
-+	struct hci_rings_data *rings = hci->io_data;
-+	struct hci_rh_data *rh;
-+
-+	if (!rings)
-+		return;
-+
-+	for (int i = 0; i < rings->total; i++) {
-+		rh = &rings->headers[i];
++	hci->DAT[i].w1 = v;
++	writel(v, hci->DAT_regs + i * 8 + 4);
++}
  
- 		if (rh->xfer)
- 			dma_free_coherent(rings->sysdev,
-@@ -190,8 +206,6 @@ static void hci_dma_cleanup(struct i3c_hci *hci)
- 		kfree(rh->ibi_data);
+ static int hci_dat_v1_init(struct i3c_hci *hci)
+ {
++	struct device *dev = hci->master.dev.parent;
+ 	unsigned int dat_idx;
+ 
+ 	if (!hci->DAT_regs) {
+@@ -54,9 +67,13 @@ static int hci_dat_v1_init(struct i3c_hci *hci)
+ 		return -EOPNOTSUPP;
  	}
  
--	rhs_reg_write(CONTROL, 0);
--
- 	kfree(rings);
- 	hci->io_data = NULL;
- }
-@@ -359,10 +373,15 @@ static int hci_dma_init(struct i3c_hci *hci)
- 					   RING_CTRL_RUN_STOP);
- 	}
+-	if (!hci->DAT_data) {
+-		struct device *dev = hci->master.dev.parent;
++	if (!hci->DAT) {
++		hci->DAT = devm_kcalloc(dev, hci->DAT_entries, hci->DAT_entry_size, GFP_KERNEL);
++		if (!hci->DAT)
++			return -ENOMEM;
++	}
  
-+	ret = devm_add_action(hci->master.dev.parent, hci_dma_free, hci);
-+	if (ret)
-+		goto err_out;
++	if (!hci->DAT_data) {
+ 		/* use a bitmap for faster free slot search */
+ 		hci->DAT_data = devm_bitmap_zalloc(dev, hci->DAT_entries, GFP_KERNEL);
+ 		if (!hci->DAT_data)
+diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
+index fd08b701d094..aa8a03594e64 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/hci.h
++++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
+@@ -31,6 +31,11 @@
+ 
+ struct hci_cmd_ops;
+ 
++struct dat_words {
++	u32 w0;
++	u32 w1;
++};
 +
- 	return 0;
- 
- err_out:
- 	hci_dma_cleanup(hci);
-+	hci_dma_free(hci);
- 	return ret;
- }
- 
+ /* Our main structure */
+ struct i3c_hci {
+ 	struct i3c_master_controller master;
+@@ -51,6 +56,7 @@ struct i3c_hci {
+ 	unsigned int DAT_entries;
+ 	unsigned int DAT_entry_size;
+ 	void *DAT_data;
++	struct dat_words *DAT;
+ 	unsigned int DCT_entries;
+ 	unsigned int DCT_entry_size;
+ 	u8 version_major;
 -- 
 2.51.0
 
