@@ -4,73 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BCF35D29DE0
-	for <linux-i3c@archiver.kernel.org>; Tue, 13 Jan 2026 07:28:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A3E3D29DE4
+	for <linux-i3c@archiver.kernel.org>; Tue, 13 Jan 2026 07:28:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ETvTKM+iX1Xf42gwkmzJugqBiF7KVldDsxQpTky3f+4=; b=UgBDe2sal77sra
-	KHJFoi0VAkkqCsK4lqiofFqZ6OvvrU8Z28scBYIqJDSQNGV5zSvRRyQypuN6fG2xLfs7dQ2ckAuk0
-	+2rmQti+knEwT4vAGpUTGHaHYM8reCYstS70iay5SN/NEkbA+NJnZvirawOEa1lBLBtrN4id76Vuk
-	1EcJyzJv8w2o5Ofad93ap7PrQ0dN8eGtGyyEf6ExO/ti0T8dpKmrZ9TgUp9TTPDKEH6fYWVJsPjKo
-	2IErVk3aFog7EhC7O0Q4Jauew1KDplJJydMAguQQ2mS36tkxmzx/p2+XXKfli7ehTOjf5Oj9JNXgy
-	x8ykfNg0o/dhEhGnTpiQ==;
+	List-Owner; bh=sHTMphT4FvemRZ5DlAXDy1y9m0n5gwTgBlb1MVnz18w=; b=xp5rS/Tg6Hj/zf
+	6s7iOqKf/hCNdP+V2gnQwTK+TWiqhe38s9Og7MJ2G3kTxpWOI9RyM5qYjU19f30NOqxL/z7gQ2juH
+	eOFOtGnVzygzQvhQAkHKGcbPBd+H0GpeKeIKUUtzg577qY0X/hwHXvKuYuekdGKD5QfxSehLFoxmU
+	b751Ydx+ipcOhcwtd7An9FRDuCOs5RcR9ZfROA0PfAlnFJWcaqnK6NOMzYDsWRFOgAAfyJSiGOah+
+	jqwUUNkdKPVBKjTmmbK56OYoTnOqwBcGR68YplRKDIIhHOvA/ARLQscuILFBJ9632n0OFmOeby82M
+	YVmauQIh9MvBSNvT8nAA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfYou-00000006en5-0b26;
-	Tue, 13 Jan 2026 07:28:04 +0000
+	id 1vfYov-00000006enw-3KCB;
+	Tue, 13 Jan 2026 07:28:05 +0000
 Received: from mgamail.intel.com ([198.175.65.18])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfYor-00000006el9-0tcf
+	id 1vfYot-00000006ean-0XSu
 	for linux-i3c@lists.infradead.org;
-	Tue, 13 Jan 2026 07:28:03 +0000
+	Tue, 13 Jan 2026 07:28:04 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1768289282; x=1799825282;
+  t=1768289284; x=1799825284;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=765CABykMIHIbsG1UN/P3tjZq8B8IFIeHBe1G4aRIUw=;
-  b=ZFcIjAsTCTX1KXQ6jkfJ6xXeJu2AMXwLWymSUO9bdQka6fiEb9N7XcRj
-   T3k/3euMXRq+OpOPAsjEN6dZ/N54Ffh3YgfnxtBshBUnP9sQqPVRrjwWo
-   BQxPLLisADqGqnDed7x8qsPyPc/3cTTuwzlFt421jEa+SwxXWbUTLcJq5
-   OrUb2KvilRCwwimga9b3oT0DFw2iLQudJHnRVuSunq5StVW4vJrjWOCNe
-   26mXBA9VyYKo3BzldLOz9ow0ljR7YgUw1764Q8Tdvp8cPp8NPyhMbBARe
-   ST+pLbZeBDgWCE85CorgXlAW+YHPIvF7t1yMVvocBu1e4h/X3PLNE+1U4
+  bh=Z+YW09ZjFn1pqcsdphXi5rOE1NUElKadq6wPv8NnfQg=;
+  b=a1jBcbxvIz/fXOr2iWkPDK5UaZ1RuOt2uz7Xj9nlZIds3cifTiDFFpKX
+   H+SAQUEaVVQLpBUwT9xok2vyz1I5FCWPcBqrDuz6F5VylTTGt0WAv6GEX
+   uTIqcXeEzVa0a/XrrfpcJyBQs25TNcjNqkzBmTPqQNyliHmJw1PtRkM1c
+   0kzMTUhtez9KOHiwT7EuzpI5mpOBQ++ggTYk+rWDVacsjuO/G89Sjxep1
+   StHamwl6GT8ZopZ/qUUOzk6NEKQULg326yNcXiOAnxE/GiADmlhDjzUrW
+   8txnMfiPWc4lqvhI++u340VKQdtliS0UcTDQVBa6dmFXXGvvm6eMdkt4D
    g==;
-X-CSE-ConnectionGUID: Rn+8ivTyR2yvSCrJVKW/5g==
-X-CSE-MsgGUID: 1FyojVM/Q6a/sOvomO1guA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11669"; a="69625548"
+X-CSE-ConnectionGUID: bCsfemwORmCsvEc86yxJQA==
+X-CSE-MsgGUID: Qk8yUqETQtaDZg1v3T6gDA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11669"; a="69625554"
 X-IronPort-AV: E=Sophos;i="6.21,222,1763452800"; 
-   d="scan'208";a="69625548"
+   d="scan'208";a="69625554"
 Received: from orviesa002.jf.intel.com ([10.64.159.142])
-  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Jan 2026 23:28:01 -0800
-X-CSE-ConnectionGUID: S5Ra0jsdQ5ahdyJBHVw60w==
-X-CSE-MsgGUID: D59+OSZYTjOdTOO+FzpA4A==
+  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Jan 2026 23:28:04 -0800
+X-CSE-ConnectionGUID: /2tHe4FESMa0QwJrGc//EA==
+X-CSE-MsgGUID: NloBbujCS5CX5NN9F0TIqA==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.21,222,1763452800"; 
-   d="scan'208";a="235021399"
+   d="scan'208";a="235021417"
 Received: from amilburn-desk.amilburn-desk (HELO ahunter6-desk) ([10.245.245.167])
-  by orviesa002-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Jan 2026 23:27:59 -0800
+  by orviesa002-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Jan 2026 23:28:02 -0800
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	Wolfram Sang <wsa+renesas@sang-engineering.com>,
 	Aniket <aniketmaurya@google.com>,
 	linux-i3c@lists.infradead.org
-Subject: [PATCH V3 20/21] i3c: mipi-i3c-hci: Add optional Runtime PM support
-Date: Tue, 13 Jan 2026 09:27:01 +0200
-Message-ID: <20260113072702.16268-21-adrian.hunter@intel.com>
+Subject: [PATCH V3 21/21] i3c: mipi-i3c-hci-pci: Add Runtime PM support
+Date: Tue, 13 Jan 2026 09:27:02 +0200
+Message-ID: <20260113072702.16268-22-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260113072702.16268-1-adrian.hunter@intel.com>
 References: <20260113072702.16268-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260112_232801_316992_62C174E7 
-X-CRM114-Status: GOOD (  22.77  )
+X-CRM114-CacheID: sfid-20260112_232803_207421_A97DA09A 
+X-CRM114-Status: GOOD (  10.36  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,15 +87,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Implement optional Runtime PM support for the MIPI I3C HCI driver.
-Introduce runtime suspend and resume callbacks to manage bus state and
-restore hardware configuration after resume.  Optionally enable autosuspend
-with a default delay of 1 second, and add helper functions to control
-Runtime PM during probe and remove.
-
-Read quirks from i3c_hci_driver_ids[] and set new quirk
-HCI_QUIRK_RPM_ALLOWED for intel-lpss-i3c devices to enable runtime PM for
-them.
+Enable Runtime PM for the mipi_i3c_hci_pci driver. Introduce helpers to
+allow and forbid Runtime PM during probe and remove, using pm_runtime APIs.
 
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 Reviewed-by: Frank Li <Frank.Li@nxp.com>
@@ -108,177 +101,61 @@ Changes in V3:
 
 Changes in V2:
 
-	Use new i3c_hci_reset_and_init() and i3c_hci_set_master_dyn_addr()
-	Use devm_pm_runtime_set_active_enabled() which allows
-	i3c_hci_rpm_disable() to be dropped.
-	SET_RUNTIME_PM_OPS -> RUNTIME_PM_OPS
+	None
 
 
- drivers/i3c/master/mipi-i3c-hci/core.c | 76 ++++++++++++++++++++++++--
- drivers/i3c/master/mipi-i3c-hci/hci.h  |  2 +
- 2 files changed, 72 insertions(+), 6 deletions(-)
+ .../i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c  | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
 
-diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-index ec5425f07635..02c5a133e329 100644
---- a/drivers/i3c/master/mipi-i3c-hci/core.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-@@ -16,6 +16,7 @@
- #include <linux/module.h>
+diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
+index 458f871a2e61..1b38771667e5 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
++++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
+@@ -18,6 +18,7 @@
  #include <linux/platform_data/mipi-i3c-hci.h>
  #include <linux/platform_device.h>
+ #include <linux/pm_qos.h>
 +#include <linux/pm_runtime.h>
  
- #include "hci.h"
- #include "ext_caps.h"
-@@ -182,6 +183,7 @@ void i3c_hci_sync_irq_inactive(struct i3c_hci *hci)
- 	int irq = platform_get_irq(pdev, 0);
+ /*
+  * There can up to 15 instances, but implementations have at most 2 at this
+@@ -208,6 +209,18 @@ static const struct mipi_i3c_hci_pci_info intel_si_2_info = {
+ 	.instance_count = 1,
+ };
  
- 	reg_write(INTR_SIGNAL_ENABLE, 0x0);
-+	hci->irq_inactive = true;
- 	synchronize_irq(irq);
- }
- 
-@@ -564,6 +566,14 @@ static irqreturn_t i3c_hci_irq_handler(int irq, void *dev_id)
- 	irqreturn_t result = IRQ_NONE;
- 	u32 val;
- 
-+	/*
-+	 * The IRQ can be shared, so the handler may be called when the IRQ is
-+	 * due to a different device. That could happen when runtime suspended,
-+	 * so exit immediately if IRQs are not expected for this device.
-+	 */
-+	if (hci->irq_inactive)
-+		return IRQ_NONE;
++static void mipi_i3c_hci_pci_rpm_allow(struct device *dev)
++{
++	pm_runtime_put(dev);
++	pm_runtime_allow(dev);
++}
 +
- 	val = reg_read(INTR_STATUS);
- 	reg_write(INTR_STATUS, val);
- 	dev_dbg(&hci->master.dev, "INTR_STATUS %#x", val);
-@@ -723,6 +733,55 @@ static int i3c_hci_reset_and_init(struct i3c_hci *hci)
++static void mipi_i3c_hci_pci_rpm_forbid(struct device *dev)
++{
++	pm_runtime_forbid(dev);
++	pm_runtime_get_sync(dev);
++}
++
+ struct mipi_i3c_hci_pci_cell_data {
+ 	struct mipi_i3c_hci_platform_data pdata;
+ 	struct resource res;
+@@ -285,6 +298,8 @@ static int mipi_i3c_hci_pci_probe(struct pci_dev *pci,
+ 
+ 	pci_set_drvdata(pci, hci);
+ 
++	mipi_i3c_hci_pci_rpm_allow(&pci->dev);
++
  	return 0;
+ 
+ err_exit:
+@@ -300,6 +315,8 @@ static void mipi_i3c_hci_pci_remove(struct pci_dev *pci)
+ 	if (hci->info->exit)
+ 		hci->info->exit(hci);
+ 
++	mipi_i3c_hci_pci_rpm_forbid(&pci->dev);
++
+ 	mfd_remove_devices(&pci->dev);
  }
  
-+static int i3c_hci_runtime_suspend(struct device *dev)
-+{
-+	struct i3c_hci *hci = dev_get_drvdata(dev);
-+	int ret;
-+
-+	ret = i3c_hci_bus_disable(hci);
-+	if (ret)
-+		return ret;
-+
-+	hci->io->suspend(hci);
-+
-+	return 0;
-+}
-+
-+static int i3c_hci_runtime_resume(struct device *dev)
-+{
-+	struct i3c_hci *hci = dev_get_drvdata(dev);
-+	int ret;
-+
-+	ret = i3c_hci_reset_and_init(hci);
-+	if (ret)
-+		return -EIO;
-+
-+	i3c_hci_set_master_dyn_addr(hci);
-+
-+	mipi_i3c_hci_dat_v1.restore(hci);
-+
-+	hci->irq_inactive = false;
-+
-+	hci->io->resume(hci);
-+
-+	reg_set(HC_CONTROL, HC_CONTROL_BUS_ENABLE);
-+
-+	return 0;
-+}
-+
-+#define DEFAULT_AUTOSUSPEND_DELAY_MS 1000
-+
-+static void i3c_hci_rpm_enable(struct device *dev)
-+{
-+	struct i3c_hci *hci = dev_get_drvdata(dev);
-+
-+	pm_runtime_set_autosuspend_delay(dev, DEFAULT_AUTOSUSPEND_DELAY_MS);
-+	pm_runtime_use_autosuspend(dev);
-+	devm_pm_runtime_set_active_enabled(dev);
-+
-+	hci->master.rpm_allowed = true;
-+}
-+
- static int i3c_hci_init(struct i3c_hci *hci)
- {
- 	bool size_in_dwords;
-@@ -841,6 +900,8 @@ static int i3c_hci_probe(struct platform_device *pdev)
- 	hci->master.dev.init_name = dev_name(&pdev->dev);
- 
- 	hci->quirks = (unsigned long)device_get_match_data(&pdev->dev);
-+	if (!hci->quirks && platform_get_device_id(pdev))
-+		hci->quirks = platform_get_device_id(pdev)->driver_data;
- 
- 	ret = i3c_hci_init(hci);
- 	if (ret)
-@@ -852,12 +913,10 @@ static int i3c_hci_probe(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
- 
--	ret = i3c_master_register(&hci->master, &pdev->dev,
--				  &i3c_hci_ops, false);
--	if (ret)
--		return ret;
-+	if (hci->quirks & HCI_QUIRK_RPM_ALLOWED)
-+		i3c_hci_rpm_enable(&pdev->dev);
- 
--	return 0;
-+	return i3c_master_register(&hci->master, &pdev->dev, &i3c_hci_ops, false);
- }
- 
- static void i3c_hci_remove(struct platform_device *pdev)
-@@ -880,11 +939,15 @@ static const struct acpi_device_id i3c_hci_acpi_match[] = {
- MODULE_DEVICE_TABLE(acpi, i3c_hci_acpi_match);
- 
- static const struct platform_device_id i3c_hci_driver_ids[] = {
--	{ .name = "intel-lpss-i3c" },
-+	{ .name = "intel-lpss-i3c", HCI_QUIRK_RPM_ALLOWED },
- 	{ /* sentinel */ }
- };
- MODULE_DEVICE_TABLE(platform, i3c_hci_driver_ids);
- 
-+static const struct dev_pm_ops i3c_hci_pm_ops = {
-+	RUNTIME_PM_OPS(i3c_hci_runtime_suspend, i3c_hci_runtime_resume, NULL)
-+};
-+
- static struct platform_driver i3c_hci_driver = {
- 	.probe = i3c_hci_probe,
- 	.remove = i3c_hci_remove,
-@@ -893,6 +956,7 @@ static struct platform_driver i3c_hci_driver = {
- 		.name = "mipi-i3c-hci",
- 		.of_match_table = of_match_ptr(i3c_hci_of_match),
- 		.acpi_match_table = i3c_hci_acpi_match,
-+		.pm = pm_ptr(&i3c_hci_pm_ops),
- 	},
- };
- module_platform_driver(i3c_hci_driver);
-diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
-index ed89228ea971..6035f74212db 100644
---- a/drivers/i3c/master/mipi-i3c-hci/hci.h
-+++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
-@@ -51,6 +51,7 @@ struct i3c_hci {
- 	void *io_data;
- 	const struct hci_cmd_ops *cmd;
- 	atomic_t next_cmd_tid;
-+	bool irq_inactive;
- 	u32 caps;
- 	unsigned int quirks;
- 	unsigned int DAT_entries;
-@@ -144,6 +145,7 @@ struct i3c_hci_dev_data {
- #define HCI_QUIRK_PIO_MODE	BIT(2)  /* Set PIO mode for AMD platforms */
- #define HCI_QUIRK_OD_PP_TIMING		BIT(3)  /* Set OD and PP timings for AMD platforms */
- #define HCI_QUIRK_RESP_BUF_THLD		BIT(4)  /* Set resp buf thld to 0 for AMD platforms */
-+#define HCI_QUIRK_RPM_ALLOWED		BIT(5)  /* Runtime PM allowed */
- 
- /* global functions */
- void mipi_i3c_hci_resume(struct i3c_hci *hci);
 -- 
 2.51.0
 
