@@ -4,63 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19F8CD31A28
-	for <linux-i3c@archiver.kernel.org>; Wed, 14 Jan 2026 08:30:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C15CD37E3B
+	for <linux-i3c@archiver.kernel.org>; Wed, 14 Jan 2026 15:01:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H0YTZ/lVpY8vMamwDrEg7C8L2z1zq0r3BJ9b12gR/so=; b=GEInH0DHryUj2G
-	ovpwC/C7T5mAqTegcHzAteLPZlg2pftEa0foCkiZSbnZUbxftUy6w0ivFbGgqQdsR5Nihmy3q2ZOb
-	xo7pZgXoKI/qGSNt2qE5mAUoeErqWBqNlZDZ5GlFM9a53sLZjkaM2YR+/KteCcz4GkXW4Bg/X/rWq
-	vtFGPdBs3QHg1OawQEPrbkFvD4H4KJ9ZM7lSnEa9dSguH3Gy/JIVmikKdmoPWilKV21RQs3B+fgzd
-	73o1FOHGdoEsWy6EBL+1VU6VHTC7038u4dVd5hM0ErBUgw06Lpp1jsoa1Cfoaequ5IuTCcHbjKBWm
-	CLI4vXC1Qfloq4KnYyhQ==;
+	List-Owner; bh=DW9Koq6j3DRV3UYNEgVWjgkZ0mBSHYizGGG6f5p4RSs=; b=pcBFPiwEQzrb6z
+	1zyyYcpSd4hAueGSBYJoIdTJTUt/NXQ1YuPKU/A3Gx1AGm1I/g1/J4HDFSunEwC/yNZgl9ZAcXkPA
+	ZwUmU4xIU2YmY9dZOr7UVP+tkJIse8OjqQmntkUrzPybzE9+CY+LzvRssX8rntYBqZr7fF96eIy1T
+	g33VGhrnpKLZLKNDZmOENV1df5jE7rQOcxl6qvZwtHNGXnCxWsjED5xrslXavYlFSLiPI2Mzwl/yB
+	uDI4N2Fl/Mk3JCBLTg+xH5LJBQOxl+FooIDjrq1wvUOgXvsyoxKBLJ/7f3TsIm+l3+8WPylLS4cQR
+	+9t1ZYEKeY2UOIo49B0A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfwGl-00000008LME-2RVI;
-	Wed, 14 Jan 2026 08:30:23 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vg2Nb-00000009bgE-0DFw;
+	Wed, 14 Jan 2026 15:01:51 +0000
+Received: from smtpout-04.galae.net ([185.171.202.116])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfwGj-00000008LLS-1Uip
+	id 1vg2NX-00000009bfE-16QW
 	for linux-i3c@lists.infradead.org;
-	Wed, 14 Jan 2026 08:30:22 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id A427043510;
-	Wed, 14 Jan 2026 08:30:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F1194C16AAE;
-	Wed, 14 Jan 2026 08:30:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1768379420;
-	bh=vklD5dgHR8fE9oJ8NWm7S/QeQyUS1dHDszF/PFoFAXI=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=C3y4qzZFTpfySEbSb7bEs6OslrJFG0dF/AKeEQewpA5KEuXINup2qw3MF5BKSItX4
-	 +FKfB7ks19iZRN8LS8vRRKEMtFeZ/g7mRT8jMFl8bkRHJejCpBk4gGH1ozqEOCCR8U
-	 twZBHExlXfxlRsviVTRhxM9Kdd7qq5QYYAvJnmRF28uVzWk2vXisimylb6OvkoYIPZ
-	 zNeWRPhE+Os2hfL378vsq4Lr0k8SIQdxNW737oO7eqa/0GpRIDqOa8Yd/Eku+O4hkN
-	 4sjWQuN2xtuc7NyUXTim3Nk4xw2PRk/V4nlKqg2JpSsvYQ7f/OwY7N1XZkCu9be1Zj
-	 BYrDoKDLUB8ug==
-Date: Wed, 14 Jan 2026 09:30:18 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-Cc: linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org, 
-	alexandre.belloni@bootlin.com, krzk+dt@kernel.org, robh@kernel.org, conor+dt@kernel.org, 
-	devicetree@vger.kernel.org, broonie@kernel.org, lee@kernel.org, Frank.Li@nxp.com, 
-	lgirdwood@gmail.com, vikash.bansal@nxp.com, priyanka.jain@nxp.com, 
-	shashank.rebbapragada@nxp.com
-Subject: Re: [PATCH v4 5/5] i3c: hub: p3h2x4x: Add support for NXP P3H2x4x
- I3C hub functionality
-Message-ID: <20260114-tireless-dexterous-starling-f559dc@quoll>
-References: <20260113114529.1692213-1-aman.kumarpandey@nxp.com>
- <20260113114529.1692213-5-aman.kumarpandey@nxp.com>
+	Wed, 14 Jan 2026 15:01:49 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-04.galae.net (Postfix) with ESMTPS id 40E94C1F1C4
+	for <linux-i3c@lists.infradead.org>; Wed, 14 Jan 2026 15:01:17 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id DE4F66074A;
+	Wed, 14 Jan 2026 15:01:43 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 105ED10B68265;
+	Wed, 14 Jan 2026 16:01:41 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1768402903; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=zpTrPinS6kT/b3XQ5VJ6xSWrB525gcc/RJI07ue++eo=;
+	b=DSKs3EDfqqWLGAEC2pV59QfnEOFw1F5NO9QdDjKC6Wn/5hqfR36qHEXdAm+L0O5uLD0jjq
+	FIge7XDAGdlY8zHZyKfkYeb2I4oV3Xjn9eE4fLgfIeWJkZb8mHDKoHTIF5qzKS/y1ct4io
+	fIUJa86fD5qpSY5HBKTkXg3fUrT13Pk/Z8nLoo/4d5x3FIxjQkYLKADgjTI4Il+AcZtfwd
+	BQHrg1xU7yYlKjiO0Tru7N47fJcMPPBdALyb7m+87qOtkj/XrWrVm00CTBFvDn+UF0yXCI
+	RcBVXYnAcYYorCaOe2sIWabC0m4vMUmNC+RENDVgT+N5rC9ITV8ioMa1Cn9Jnw==
+Date: Wed, 14 Jan 2026 16:01:41 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Adrian Hunter <adrian.hunter@intel.com>
+Cc: Frank.Li@nxp.com, linux-i3c@lists.infradead.org
+Subject: Re: [PATCH V4 00/11] i3c: mipi-i3c-hci-pci: Define Multi-Bus
+ Instances for Intel controllers
+Message-ID: <176840281753.1259180.16682443849111984597.b4-ty@bootlin.com>
+References: <20260106164416.67074-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260113114529.1692213-5-aman.kumarpandey@nxp.com>
+In-Reply-To: <20260106164416.67074-1-adrian.hunter@intel.com>
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260114_003021_449600_38AED717 
-X-CRM114-Status: GOOD (  16.80  )
+X-CRM114-CacheID: sfid-20260114_070147_467468_ACE554E5 
+X-CRM114-Status: UNSURE (   8.38  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,86 +75,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jan 13, 2026 at 01:45:29PM +0200, Aman Kumar Pandey wrote:
-> Add I3C hub functionality for the NXP P3H2x4x family of multiport hubs.
-> These devices support downstream target ports that can be configured
-> as I3C, I2C, or SMBus.
+On Tue, 06 Jan 2026 18:44:05 +0200, Adrian Hunter wrote:
+> All patches now have Frank's Rev'd-by
 > 
-> This driver enables:
-> - I3C/I2C communication between host and hub
-> - Transparent communication with downstream devices
-> - Target port configuration (I3C/I2C/SMBus)
-> - MCTP device support
-> - In-band interrupt handling
 > 
-> P3H2440/P3H2441 support 4 target ports;
-> P3H2840/P3H2841 support 8 target ports.
+> Changes in V4:
+> 	Add Frank's Rev'd-by for patches 5 - 8, 10 - 11
 > 
-> Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
 > 
-> ---
-> Changes in v4:
->  - Split the driver into three separate patches (mfd, regulator and I3C hub) 
->  - Added support for NXP P3H2x4x I3C hub functionality
->  - Integrated hub driver with its on-die regulator
-> 
-> Changes in v3:
->  - Added MFD (Multi-Function Device) support for I3C hub and on-die regulator
-> 
-> Changes in v2:
->  - Refined coding style and incorporated review feedback
->  - Updated directory structure
->  - Revised logic for parsing DTS nodes
-> ---
-> ---
->  MAINTAINERS                              |   4 +
->  drivers/i3c/Kconfig                      |   1 +
->  drivers/i3c/Makefile                     |   1 +
->  drivers/i3c/hub/Kconfig                  |  10 +
->  drivers/i3c/hub/Makefile                 |   4 +
->  drivers/i3c/hub/p3h2840_i3c_hub.h        | 348 +++++++++++++++++++
->  drivers/i3c/hub/p3h2840_i3c_hub_common.c | 425 +++++++++++++++++++++++
->  drivers/i3c/hub/p3h2840_i3c_hub_i3c.c    | 351 +++++++++++++++++++
->  drivers/i3c/hub/p3h2840_i3c_hub_smbus.c  | 418 ++++++++++++++++++++++
->  include/linux/i3c/device.h               |   1 +
->  10 files changed, 1563 insertions(+)
->  create mode 100644 drivers/i3c/hub/Kconfig
->  create mode 100644 drivers/i3c/hub/Makefile
->  create mode 100644 drivers/i3c/hub/p3h2840_i3c_hub.h
->  create mode 100644 drivers/i3c/hub/p3h2840_i3c_hub_common.c
->  create mode 100644 drivers/i3c/hub/p3h2840_i3c_hub_i3c.c
->  create mode 100644 drivers/i3c/hub/p3h2840_i3c_hub_smbus.c
-> 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 4bcd52d65f1a..659a1132aa6c 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -18931,12 +18931,16 @@ L:	linux-kernel@vger.kernel.org
->  L:	linux-i3c-owner@lists.infradead.org
->  S:	Maintained
->  F:	Documentation/devicetree/bindings/mfd/nxp,p3h2840-i3c-hub.yaml
-> +F:	drivers/i3c/Kconfig
-> +F:	drivers/i3c/Makefile
+> [...]
 
-From where did you get such pattern? Which other entries look like this?
-Why are you doing something completely different than entire (ENTIRE!)
-community?
+Applied, thanks!
 
-
-> +F:	drivers/i3c/hub/*
->  F:	drivers/mfd/Kconfig
->  F:	drivers/mfd/Makefile
->  F:	drivers/mfd/p3h2840.c
->  F:	drivers/regulator/Kconfig
->  F:	drivers/regulator/Makefile
->  F:	drivers/regulator/p3h2840_i3c_hub_regulator.c
-> +F:	include/linux/i3c/device.h
->  F:	include/linux/mfd/p3h2840.h
+[01/11] i3c: mipi-i3c-hci: Remove duplicate blank lines
+        https://git.kernel.org/i3c/c/840688d8e65c
+[02/11] i3c: mipi-i3c-hci: Stop reading Extended Capabilities if capability ID is 0
+        https://git.kernel.org/i3c/c/0818e4aa8fde
+[03/11] i3c: mipi-i3c-hci: Quieten initialization messages
+        https://git.kernel.org/i3c/c/581d5b7953b8
+[04/11] i3c: mipi-i3c-hci-pci: Do not repeatedly check for NULL driver_data
+        https://git.kernel.org/i3c/c/d540d090be8f
+[05/11] i3c: mipi-i3c-hci-pci: Enable MSI support
+        https://git.kernel.org/i3c/c/b43181b724e8
+[06/11] i3c: mipi-i3c-hci-pci: Assign unique device names and IDs for Intel LPSS I3C
+        https://git.kernel.org/i3c/c/35c0bfe8fd10
+[07/11] i3c: mipi-i3c-hci: Allow for Multi-Bus Instances
+        https://git.kernel.org/i3c/c/b8460480f62e
+[08/11] i3c: mipi-i3c-hci-pci: Pass base regs as platform data to i3c core device
+        https://git.kernel.org/i3c/c/9a4d56b42ff0
+[09/11] i3c: mipi-i3c-hci-pci: Convert to MFD driver
+        https://git.kernel.org/i3c/c/0590fe32f904
+[10/11] i3c: mipi-i3c-hci-pci: Add support for Multi-Bus Instances
+        https://git.kernel.org/i3c/c/9b1679028e76
+[11/11] i3c: mipi-i3c-hci-pci: Define Multi-Bus instances for supported controllers
+        https://git.kernel.org/i3c/c/540a55a5bafd
 
 Best regards,
-Krzysztof
 
+-- 
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-i3c mailing list
