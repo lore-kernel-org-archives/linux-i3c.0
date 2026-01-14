@@ -4,61 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1518D38FE8
-	for <linux-i3c@archiver.kernel.org>; Wed, 14 Jan 2026 16:45:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86C3ED38FEF
+	for <linux-i3c@archiver.kernel.org>; Wed, 14 Jan 2026 16:59:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w+rHD479h+3yxoJwcbEO80G8OwAZJsL0qKVt3O/1At0=; b=GAyhmxXQM+V+Cs
-	VFfKHu7YIqlQOAmCSnsSFCkyOHkV0L6eAzxzdE7/NTSo0QpJFgk6XtoJ9IGuqtcP8RJyB21PwuJVV
-	oiyA9PJlxa0pHkAzS4KT0WKxLtg9qD/rr2vHJ/1olbYhXWRAnaDKOwZp9ZQDou0WJ4DfILQRXH87Y
-	yBNXCDNeiy/yIBeVcgUN0czBGjaiMIWmRNEjP1EUXXDX07RGaDSUJYtpIe60xY3Lok/EEce6LbA0I
-	fC/+LZDunLkD6O9QvqriPwA0GrCY96x/KgE0cocav3HpwqfIr8NibCH9ERgQhnvT/cu2sOFBk+nnD
-	+IKFlZ/i1rJcARuEMwaQ==;
+	List-Owner; bh=LskHdOdjyLIxOV0jCxlC1zdDyW8pkc135Jc3MzJSD7M=; b=Ei33e68g2smxzy
+	Td+5K5zk0AY1ohAHagCSYqoHMRcKTyGsqHCxfYvoJywPpXym3/3JRhV/gs1/foAv+BxxgZy3/e/Io
+	zZhk7mqPhSb00lgPMQHhhifXoO2mZAnLYwuxPKgruBaYmktwV/BP5klgdpK6DSMr0Wzn9Ryi3Uhh6
+	GxglUN5PO2GvkrLYraBOba+e3nd8D1ce+e6tuR1t587O9FNqNCI1iRnIRyZ2EWAp/eBZ+4i+X3brv
+	OK7V7OMDn6gK9nyIpx1NLuAl47jS6fYy+CsQtO6XZXx/swZs1b4UZaPlrIilXHOMKFhIoYjKS8pOb
+	pMwvFIiF+tYq2MyZKvxw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg3zV-00000009yGu-2Hcn;
-	Wed, 14 Jan 2026 16:45:05 +0000
-Received: from smtpout-04.galae.net ([185.171.202.116])
+	id 1vg4DB-0000000A1NH-11YI;
+	Wed, 14 Jan 2026 16:59:13 +0000
+Received: from mgamail.intel.com ([192.198.163.17])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg3zS-00000009yFO-07So
+	id 1vg4D8-0000000A1Lh-0Jsy
 	for linux-i3c@lists.infradead.org;
-	Wed, 14 Jan 2026 16:45:03 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-04.galae.net (Postfix) with ESMTPS id 1B46EC1F6DB;
-	Wed, 14 Jan 2026 16:44:32 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 8BF1B6074A;
-	Wed, 14 Jan 2026 16:44:58 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 1829E10B682A8;
-	Wed, 14 Jan 2026 17:44:55 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1768409098; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=fB4bkbCydl0J5MhYbvVByNo5tJtxG8ScBXGtmK/nEiU=;
-	b=WOty27G18Gnr0b241mCKtiOAKtyBsceyh1WJoW3EnDBk/TRCkBA/4FbC9yqor6rthtKOPU
-	6rWF1JIsPuqsbArk0I/fmUEdeEL3FkXCIi0NpN4z059vrsitOwN9MXq02id4XSHpqD+LzT
-	8RssyNba3OGacV4Id6T9xE08s9/wlB3JXJrGY+PLSp1UGT5zgZTQywPwWWzeiLPKFMCqFZ
-	tygdVRlQ9RSzkEFj93xjcQi6DLP9OkODvfzJ7qncNTlMcco/0mTyLnggR9ctlN5xPCDNn5
-	FB5McIY5uGH/Tovf6feRO+pQP3PkMFRlYEKri3ubU6WWj1oyXxWqL8CkuTe+IA==
-Date: Wed, 14 Jan 2026 17:44:55 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Adrian Hunter <adrian.hunter@intel.com>
-Cc: Frank.Li@nxp.com, Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Aniket <aniketmaurya@google.com>, linux-i3c@lists.infradead.org
-Subject: Re: [PATCH V3 00/21] i3c: mipi-i3c-hci-pci: Add Runtime PM support
-Message-ID: <176840902682.1305594.13987931108275156748.b4-ty@bootlin.com>
-References: <20260113072702.16268-1-adrian.hunter@intel.com>
+	Wed, 14 Jan 2026 16:59:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1768409950; x=1799945950;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=l/D1TjygnWEWBcgI5iokuhGrTQs0+FYsNCYqU6v2yGc=;
+  b=T33q6XSUYkBoWeSNiiEjSOf3g1aTTsjqBye6C0o6SBPBf71YmdFLfkgr
+   72zBylTOcL46OqbNmCh8K3kOxHA9EXQItxOIKG044uoXu/nDkO1vfp1Qz
+   oAlAigKMa4eExy3ICn+m5WK0+d2+ruooRCCk2cNCa7b3YmdfvpEgN2V/q
+   u6nheXKYCEaqthQmCmppTMXunYjWzfJEtmxHVpxfgsOczCdYUD7hyIdWg
+   zbpol5I96ltf9TV5DMCtuKAy1gAtAy4CKVbF/+uc6uSGwy/OGiiwJxn/c
+   2qitMdPb45v0555WxA4WB9JlcSwwP0buH60EROndDRVfBf5OpB7YO4VUK
+   g==;
+X-CSE-ConnectionGUID: 8SUDCQkcQBqeGqmYN1mtCA==
+X-CSE-MsgGUID: S8L7k9EYSMKzm3BAdDqF2g==
+X-IronPort-AV: E=McAfee;i="6800,10657,11671"; a="69622276"
+X-IronPort-AV: E=Sophos;i="6.21,225,1763452800"; 
+   d="scan'208";a="69622276"
+Received: from orviesa007.jf.intel.com ([10.64.159.147])
+  by fmvoesa111.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Jan 2026 08:59:08 -0800
+X-CSE-ConnectionGUID: hiJq6ta9SsmrXZbr06YeDA==
+X-CSE-MsgGUID: lpm2i9eFSwqISEJpuvKHDw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.21,225,1763452800"; 
+   d="scan'208";a="204757271"
+Received: from lkp-server01.sh.intel.com (HELO 765f4a05e27f) ([10.239.97.150])
+  by orviesa007.jf.intel.com with ESMTP; 14 Jan 2026 08:59:03 -0800
+Received: from kbuild by 765f4a05e27f with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1vg4Cy-00000000GhU-3jLB;
+	Wed, 14 Jan 2026 16:59:00 +0000
+Date: Thu, 15 Jan 2026 00:58:48 +0800
+From: kernel test robot <lkp@intel.com>
+To: Aman Kumar Pandey <aman.kumarpandey@nxp.com>,
+	linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
+	alexandre.belloni@bootlin.com, krzk+dt@kernel.org, robh@kernel.org,
+	conor+dt@kernel.org, devicetree@vger.kernel.org, broonie@kernel.org,
+	lee@kernel.org, Frank.Li@nxp.com, lgirdwood@gmail.com
+Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
+	vikash.bansal@nxp.com, priyanka.jain@nxp.com,
+	shashank.rebbapragada@nxp.com,
+	Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+Subject: Re: [PATCH v4 5/5] i3c: hub: p3h2x4x: Add support for NXP P3H2x4x
+ I3C hub functionality
+Message-ID: <202601150056.yaKfBjXc-lkp@intel.com>
+References: <20260113114529.1692213-5-aman.kumarpandey@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260113072702.16268-1-adrian.hunter@intel.com>
-X-Last-TLS-Session-Version: TLSv1.3
+In-Reply-To: <20260113114529.1692213-5-aman.kumarpandey@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260114_084502_209518_3C22882D 
-X-CRM114-Status: UNSURE (   6.18  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260114_085910_723330_A56862F5 
+X-CRM114-Status: GOOD (  10.50  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,72 +95,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, 13 Jan 2026 09:26:41 +0200, Adrian Hunter wrote:
-> Changes in V3:
-> 
->     i3c: master: Update hot-join flag only on success
->     i3c: mipi-i3c-hci: Manage DMA deallocation via devres action
->     i3c: mipi-i3c-hci: Factor out software reset into helper
->     i3c: mipi-i3c-hci: Factor out IO mode setting into helper
->     i3c: mipi-i3c-hci: Factor out master dynamic address setting into helper
->     i3c: master: Introduce optional Runtime PM support
->     i3c: mipi-i3c-hci: Add optional Runtime PM support
->     i3c: mipi-i3c-hci-pci: Add Runtime PM support
-> 	Add Frank's Rev'd-by
-> 
-> [...]
+Hi Aman,
 
-Applied, thanks!
+kernel test robot noticed the following build errors:
 
-[01/21] i3c: mipi-i3c-hci: Reset RING_OPERATION1 fields during init
-        https://git.kernel.org/i3c/c/78f63ae4a82d
-[02/21] i3c: mipi-i3c-hci: Ensure proper bus clean-up
-        https://git.kernel.org/i3c/c/8bb96575883d
-[03/21] i3c: master: Update hot-join flag only on success
-        https://git.kernel.org/i3c/c/f0775157b9f9
-[04/21] i3c: master: Replace WARN_ON() with dev_err() in i3c_dev_free_ibi_locked()
-        https://git.kernel.org/i3c/c/471895799c2f
-[05/21] i3c: mipi-i3c-hci: Switch DAT bitmap allocation to devm_bitmap_zalloc()
-        https://git.kernel.org/i3c/c/f64c1a46ea7c
-[06/21] i3c: mipi-i3c-hci: Switch PIO data allocation to devm_kzalloc()
-        https://git.kernel.org/i3c/c/11d17c2855bf
-[07/21] i3c: mipi-i3c-hci: Manage DMA deallocation via devres action
-        https://git.kernel.org/i3c/c/29bf98a6346a
-[08/21] i3c: mipi-i3c-hci: Cache DAT in memory for Runtime PM restore
-        https://git.kernel.org/i3c/c/a372cfac056a
-[09/21] i3c: mipi-i3c-hci: Introduce helper to restore DAT
-        https://git.kernel.org/i3c/c/f180524a4877
-[10/21] i3c: mipi-i3c-hci: Extract ring initialization from hci_dma_init()
-        https://git.kernel.org/i3c/c/f5401c973e7f
-[11/21] i3c: mipi-i3c-hci: Add DMA suspend and resume support
-        https://git.kernel.org/i3c/c/816958720443
-[12/21] i3c: mipi-i3c-hci: Refactor PIO register initialization
-        https://git.kernel.org/i3c/c/ca4d4682d353
-[13/21] i3c: mipi-i3c-hci: Add PIO suspend and resume support
-        https://git.kernel.org/i3c/c/8afa0dd83b60
-[14/21] i3c: mipi-i3c-hci: Factor out software reset into helper
-        https://git.kernel.org/i3c/c/57a2f976ac18
-[15/21] i3c: mipi-i3c-hci: Factor out IO mode setting into helper
-        https://git.kernel.org/i3c/c/e4269df518d6
-[16/21] i3c: mipi-i3c-hci: Factor out core initialization into helper
-        https://git.kernel.org/i3c/c/7f91e0e6aa3f
-[17/21] i3c: mipi-i3c-hci: Allow core re-initialization for Runtime PM support
-        https://git.kernel.org/i3c/c/f2b5d43c93e0
-[18/21] i3c: mipi-i3c-hci: Factor out master dynamic address setting into helper
-        https://git.kernel.org/i3c/c/3c3de6803a7d
-[19/21] i3c: master: Introduce optional Runtime PM support
-        https://git.kernel.org/i3c/c/990c149c61ee
-[20/21] i3c: mipi-i3c-hci: Add optional Runtime PM support
-        https://git.kernel.org/i3c/c/b9a15012a145
-[21/21] i3c: mipi-i3c-hci-pci: Add Runtime PM support
-        https://git.kernel.org/i3c/c/95cb1935168a
+[auto build test ERROR on i3c/i3c/next]
+[also build test ERROR on lee-mfd/for-mfd-next lee-mfd/for-mfd-fixes broonie-regulator/for-next linus/master v6.19-rc5 next-20260114]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-Best regards,
+url:    https://github.com/intel-lab-lkp/linux/commits/Aman-Kumar-Pandey/dt-bindings-i3c-Add-NXP-P3H2x4x-i3c-hub-support/20260113-195318
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git i3c/next
+patch link:    https://lore.kernel.org/r/20260113114529.1692213-5-aman.kumarpandey%40nxp.com
+patch subject: [PATCH v4 5/5] i3c: hub: p3h2x4x: Add support for NXP P3H2x4x I3C hub functionality
+config: hexagon-allmodconfig (https://download.01.org/0day-ci/archive/20260115/202601150056.yaKfBjXc-lkp@intel.com/config)
+compiler: clang version 17.0.6 (https://github.com/llvm/llvm-project 6009708b4367171ccdbf4b5905cb6a803753fe18)
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260115/202601150056.yaKfBjXc-lkp@intel.com/reproduce)
+
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202601150056.yaKfBjXc-lkp@intel.com/
+
+All errors (new ones prefixed by >>):
+
+>> drivers/i3c/hub/p3h2840_i3c_hub_common.c:51:11: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+      51 |         pullup = P3H2x4x_TP0145_PULLUP_CONF(p3h2x4x_pullup_dt_to_reg
+         |                  ^
+   drivers/i3c/hub/p3h2840_i3c_hub.h:64:3: note: expanded from macro 'P3H2x4x_TP0145_PULLUP_CONF'
+      64 |                 FIELD_PREP(P3H2x4x_TP0145_PULLUP_CONF_MASK, x)
+         |                 ^
+   drivers/i3c/hub/p3h2840_i3c_hub_common.c:80:16: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+      80 |         io_strength = P3H2x4x_CP0_IO_STRENGTH(p3h2x4x_io_strength_dt_to_reg
+         |                       ^
+   drivers/i3c/hub/p3h2840_i3c_hub.h:51:3: note: expanded from macro 'P3H2x4x_CP0_IO_STRENGTH'
+      51 |                 FIELD_PREP(P3H2x4x_CP0_IO_STRENGTH_MASK, x)
+         |                 ^
+   2 errors generated.
+
+
+vim +/FIELD_PREP +51 drivers/i3c/hub/p3h2840_i3c_hub_common.c
+
+    45	
+    46	static int p3h2x4x_configure_pullup(struct device *dev)
+    47	{
+    48		struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub = dev_get_drvdata(dev);
+    49		u8 pullup;
+    50	
+  > 51		pullup = P3H2x4x_TP0145_PULLUP_CONF(p3h2x4x_pullup_dt_to_reg
+    52							(p3h2x4x_i3c_hub->hub_config.tp0145_pullup));
+    53	
+    54		pullup |= P3H2x4x_TP2367_PULLUP_CONF(p3h2x4x_pullup_dt_to_reg
+    55							(p3h2x4x_i3c_hub->hub_config.tp2367_pullup));
+    56	
+    57		return regmap_update_bits(p3h2x4x_i3c_hub->regmap, P3H2x4x_LDO_AND_PULLUP_CONF,
+    58								  P3H2x4x_PULLUP_CONF_MASK, pullup);
+    59	}
+    60	
 
 -- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-i3c mailing list
