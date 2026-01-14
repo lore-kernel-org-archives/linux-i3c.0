@@ -4,62 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A70AED37E3E
-	for <linux-i3c@archiver.kernel.org>; Wed, 14 Jan 2026 15:02:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32D58D37E3B
+	for <linux-i3c@archiver.kernel.org>; Wed, 14 Jan 2026 15:02:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pYdqSttBPOow9Qcu9wpvJywNziCrbpafm6BqSNz+RDM=; b=RFqWDqLi9mbPdv
-	8eyVxz3nKXx8lp2duT7c62rtVTN2tqaPoOvtuqHs5kqKdFObCcrGpEIV2lUY9dwotsnt1lLQWYe5H
-	G6LzcVtc7ZhtlMw4xHb5TqAvvv9Dl8jDfyn9zw8zfSrbkCaFkRgrliamWjm6KcLTHHdc5RHZ+icFx
-	1GtWhTxJiH+gzaYXw4qzNBcEisU89TR+qxLUILcGzozZS6DqQnsohyi5OqaTKyFoQ/r/qkDQcS1ba
-	SRXwrzi/cCRcjggLauW4IQNM2vu/RDy2aeDr7RBSwFi+49PSRjJo985j3Xuz/yk8BS1HNe6KdvTr+
-	yE7X0vXpDxGypvodTGtg==;
+	List-Owner; bh=cMHHIJUns/AJsA+M0C/3f2xJ+/zwe8gMTT7GtvyL2ig=; b=cjyF30RwYeApje
+	fQPBYwLUuoe9J5/gOf5Sx2kaExe0dqGDbf/ocHPUyyZ4NaLq4dnQDzBODiYSgwGJIqC3yHKkeYwWj
+	wnY9oBK2KxjKAyWlWrpDBCrEn0qSkdfCAl2o0bzMrgIsyGXM8oglv1+jRhyJb9vbp4nLMQoHbv4WT
+	P/wLQiv9URvY01tVoI91B0/q2Sqgq3oh3ZNwXQaq/3Jc0x7Am7i5gy2AeNVBRWBXjhrBv7YCf7SKj
+	CVmckqlf3lzBz+k9GBvXpJ3H+ax44cysjIAezdH/+EE6PKlRXm5oTSSfuWrl0dxZ//COHhwtrcEup
+	ozahFQAa0VTKPMMSDtFQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg2Ny-00000009bms-3kXX;
-	Wed, 14 Jan 2026 15:02:14 +0000
-Received: from smtpout-03.galae.net ([185.246.85.4])
+	id 1vg2O7-00000009bpb-0l3V;
+	Wed, 14 Jan 2026 15:02:23 +0000
+Received: from smtpout-02.galae.net ([185.246.84.56])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg2Nw-00000009blK-2nsS
+	id 1vg2O4-00000009boJ-1TAG
 	for linux-i3c@lists.infradead.org;
-	Wed, 14 Jan 2026 15:02:14 +0000
+	Wed, 14 Jan 2026 15:02:21 +0000
 Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-03.galae.net (Postfix) with ESMTPS id 87DD74E420D7;
-	Wed, 14 Jan 2026 15:02:09 +0000 (UTC)
+	by smtpout-02.galae.net (Postfix) with ESMTPS id 0EC3A1A2852
+	for <linux-i3c@lists.infradead.org>; Wed, 14 Jan 2026 15:02:18 +0000 (UTC)
 Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 5D5106074A;
-	Wed, 14 Jan 2026 15:02:09 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 5CB6610B68265;
-	Wed, 14 Jan 2026 16:02:06 +0100 (CET)
+	by smtpout-01.galae.net (Postfix) with ESMTPS id D61D86074A;
+	Wed, 14 Jan 2026 15:02:17 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id C36BF10B6826E;
+	Wed, 14 Jan 2026 16:02:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1768402928; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=53MKDbM/lHZYRLYvti2TS9tQU5PkFFr5A5TelP/W6vo=;
-	b=ukCtw33Ul5eqOcgcZFnYy+JZ2VO0R6wSsPoBld6e+Q4n/5nhjGNn0XIpdIrzSvK7IMBVRq
-	ZtjHLKvOsILoJSlcvLe9q9ShyzznSaglwvBVGV+CB3xmWPZ9pijwbg13+vwAInzKqBEjnz
-	IWTofhftjzGa1m93RQcT8xEFvZP56/zb+dV/tNBw7XIf+2E31+ZvGLaQ+Ut0fzLloMDdx/
-	TLJreFcsBzEb9Es2kf0McO13znOJfrh1GKm0O5gcjTsQnnf0ME5W86phWgdypK7t7c2Laf
-	nkU5N09pdvTs0eS249b+fTTJ65zCYSDmbNw4FyJHkINGavGWxgGPsn3ZG4xiIA==
-Date: Wed, 14 Jan 2026 16:02:06 +0100
+	t=1768402937; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=0DFs2Rg3lXB0cEBk2s5kxFKlNKHYbbCyQP7ha4dj3/8=;
+	b=xUmDNh9cP4fG4Fy9i54/gnrazVh7GmKyj6kZhVrI90p5VhIP4IDU6WRFbdPSF6zGn4qnEx
+	YN8gqY0t2afFEPHkKhcAgYzbiWtr7xWQ5VZAqDEUV9m2NmMbBFwZBdB0jXNsE10X2Odf+q
+	862EgtQA/QDjLY80t8z635OdLOWQ5gp4GYXIXe6BYiiqdAoswWdrNeOq+F0mMTIiJHQbRQ
+	cJZwkRwZOczxRy1zNTwSVuB697dNTxEQELoK6Zm/LOTGeePvFqXJABuQHMhz6iQhUaVayi
+	B/Be1RRjEKt7Xroh17YuwO/BKAocRC0AiP5qw0Q76u1sAh1gMMoIKFcSzz8oYA==
+Date: Wed, 14 Jan 2026 16:02:16 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: jonathan.cameron@huawei.com, Frank Li <Frank.Li@nxp.com>
-Cc: andriy.shevchenko@intel.com, carlos.song@nxp.com,
-	fluturel.adrian@gmail.com, linux-i3c@lists.infradead.org,
-	linux-iio@vger.kernel.org, lkp@intel.com,
-	oe-kbuild-all@lists.linux.dev
-Subject: Re: [PATCH 1/1] i3c: Add stub functions when I3C support is disabled
-Message-ID: <176840281753.1259180.16475027635174872850.b4-ty@bootlin.com>
-References: <20251230145718.4088694-1-Frank.Li@nxp.com>
+To: Miquel Raynal <miquel.raynal@bootlin.com>,
+	linux-i3c@lists.infradead.org, imx@lists.linux.dev,
+	linux-kernel@vger.kernel.org, Frank Li <Frank.Li@nxp.com>
+Cc: imx@lists.linux.dev
+Subject: Re: [PATCH 1/1] i3c: master: svc: Initialize 'dev' to NULL in
+ svc_i3c_master_ibi_isr()
+Message-ID: <176840281752.1259180.2305157652667385666.b4-ty@bootlin.com>
+References: <20251215200852.3079073-1-Frank.Li@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20251230145718.4088694-1-Frank.Li@nxp.com>
+In-Reply-To: <20251215200852.3079073-1-Frank.Li@nxp.com>
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260114_070212_837411_C1D705F9 
-X-CRM114-Status: UNSURE (   7.44  )
+X-CRM114-CacheID: sfid-20260114_070220_526661_AC15A533 
+X-CRM114-Status: UNSURE (   6.42  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,20 +77,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, 30 Dec 2025 09:57:18 -0500, Frank Li wrote:
-> When I3C is disabled, unused functions are removed by the linker because
-> the driver relies on regmap and no I3C devices are registered, so normal
-> I3C paths are never called.
+On Mon, 15 Dec 2025 15:08:51 -0500, Frank Li wrote:
+> Initialize the 'dev' pointer to NULL in svc_i3c_master_ibi_isr() and add
+> a NULL check in the error path.
 > 
-> However, some drivers may still call low-level I3C transfer helpers.
-> Provide stub implementations to avoid adding conditional ifdefs everywhere.
 > 
-> [...]
 
 Applied, thanks!
 
-[1/1] i3c: Add stub functions when I3C support is disabled
-      https://git.kernel.org/i3c/c/8564f88df202
+[1/1] i3c: master: svc: Initialize 'dev' to NULL in svc_i3c_master_ibi_isr()
+      https://git.kernel.org/i3c/c/3c9ffb4db787
 
 Best regards,
 
