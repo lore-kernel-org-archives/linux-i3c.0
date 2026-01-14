@@ -4,81 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86C3ED38FEF
-	for <linux-i3c@archiver.kernel.org>; Wed, 14 Jan 2026 16:59:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28501D38FF1
+	for <linux-i3c@archiver.kernel.org>; Wed, 14 Jan 2026 17:08:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LskHdOdjyLIxOV0jCxlC1zdDyW8pkc135Jc3MzJSD7M=; b=Ei33e68g2smxzy
-	Td+5K5zk0AY1ohAHagCSYqoHMRcKTyGsqHCxfYvoJywPpXym3/3JRhV/gs1/foAv+BxxgZy3/e/Io
-	zZhk7mqPhSb00lgPMQHhhifXoO2mZAnLYwuxPKgruBaYmktwV/BP5klgdpK6DSMr0Wzn9Ryi3Uhh6
-	GxglUN5PO2GvkrLYraBOba+e3nd8D1ce+e6tuR1t587O9FNqNCI1iRnIRyZ2EWAp/eBZ+4i+X3brv
-	OK7V7OMDn6gK9nyIpx1NLuAl47jS6fYy+CsQtO6XZXx/swZs1b4UZaPlrIilXHOMKFhIoYjKS8pOb
-	pMwvFIiF+tYq2MyZKvxw==;
+	List-Owner; bh=OnV61K3ALD7wzDH0Zx/xeDhG554O+zhWV5c1yROx2xU=; b=OaW6VySLlJCs39
+	vBHwjr+gRmAoa1b3Ojzds89PBkfVHgcsnMPPaT/Lntk73Q37VuO7fRIXlJ2acTPqTWRURXyNZl6S2
+	0w8fQ93D2CgfUS8xSHUFr3VBdl7XGAtJNsfc6mqLYCWC/cmrUTW/XjWIf/XWAzj9/EwKHNErRFzPE
+	SVn8hzou1hyYWj5mT4EqHst9k6V/zVfA9ecB0gsxqHkOPcY+VpWdoA+UUgv2zMEh2UNJ9pEUepf1A
+	EoCHVd4MyqvDLnbzS69dfQZAVx/iD82p1I8TAhuzwD6fKi3qeQcZVm9VDMtRJVkkuToNNBl8oRErL
+	xVAB18tMBGN2CDlvO4Rg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg4DB-0000000A1NH-11YI;
-	Wed, 14 Jan 2026 16:59:13 +0000
-Received: from mgamail.intel.com ([192.198.163.17])
+	id 1vg4Lv-0000000A2ss-3VsJ;
+	Wed, 14 Jan 2026 17:08:15 +0000
+Received: from smtpout-04.galae.net ([185.171.202.116])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg4D8-0000000A1Lh-0Jsy
+	id 1vg4Ls-0000000A2s2-3nCz
 	for linux-i3c@lists.infradead.org;
-	Wed, 14 Jan 2026 16:59:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1768409950; x=1799945950;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=l/D1TjygnWEWBcgI5iokuhGrTQs0+FYsNCYqU6v2yGc=;
-  b=T33q6XSUYkBoWeSNiiEjSOf3g1aTTsjqBye6C0o6SBPBf71YmdFLfkgr
-   72zBylTOcL46OqbNmCh8K3kOxHA9EXQItxOIKG044uoXu/nDkO1vfp1Qz
-   oAlAigKMa4eExy3ICn+m5WK0+d2+ruooRCCk2cNCa7b3YmdfvpEgN2V/q
-   u6nheXKYCEaqthQmCmppTMXunYjWzfJEtmxHVpxfgsOczCdYUD7hyIdWg
-   zbpol5I96ltf9TV5DMCtuKAy1gAtAy4CKVbF/+uc6uSGwy/OGiiwJxn/c
-   2qitMdPb45v0555WxA4WB9JlcSwwP0buH60EROndDRVfBf5OpB7YO4VUK
-   g==;
-X-CSE-ConnectionGUID: 8SUDCQkcQBqeGqmYN1mtCA==
-X-CSE-MsgGUID: S8L7k9EYSMKzm3BAdDqF2g==
-X-IronPort-AV: E=McAfee;i="6800,10657,11671"; a="69622276"
-X-IronPort-AV: E=Sophos;i="6.21,225,1763452800"; 
-   d="scan'208";a="69622276"
-Received: from orviesa007.jf.intel.com ([10.64.159.147])
-  by fmvoesa111.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Jan 2026 08:59:08 -0800
-X-CSE-ConnectionGUID: hiJq6ta9SsmrXZbr06YeDA==
-X-CSE-MsgGUID: lpm2i9eFSwqISEJpuvKHDw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.21,225,1763452800"; 
-   d="scan'208";a="204757271"
-Received: from lkp-server01.sh.intel.com (HELO 765f4a05e27f) ([10.239.97.150])
-  by orviesa007.jf.intel.com with ESMTP; 14 Jan 2026 08:59:03 -0800
-Received: from kbuild by 765f4a05e27f with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1vg4Cy-00000000GhU-3jLB;
-	Wed, 14 Jan 2026 16:59:00 +0000
-Date: Thu, 15 Jan 2026 00:58:48 +0800
-From: kernel test robot <lkp@intel.com>
-To: Aman Kumar Pandey <aman.kumarpandey@nxp.com>,
-	linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
-	alexandre.belloni@bootlin.com, krzk+dt@kernel.org, robh@kernel.org,
-	conor+dt@kernel.org, devicetree@vger.kernel.org, broonie@kernel.org,
-	lee@kernel.org, Frank.Li@nxp.com, lgirdwood@gmail.com
-Cc: llvm@lists.linux.dev, oe-kbuild-all@lists.linux.dev,
-	vikash.bansal@nxp.com, priyanka.jain@nxp.com,
-	shashank.rebbapragada@nxp.com,
-	Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-Subject: Re: [PATCH v4 5/5] i3c: hub: p3h2x4x: Add support for NXP P3H2x4x
- I3C hub functionality
-Message-ID: <202601150056.yaKfBjXc-lkp@intel.com>
-References: <20260113114529.1692213-5-aman.kumarpandey@nxp.com>
+	Wed, 14 Jan 2026 17:08:14 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-04.galae.net (Postfix) with ESMTPS id E26A1C1F6DB;
+	Wed, 14 Jan 2026 17:07:43 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 8684C6074A;
+	Wed, 14 Jan 2026 17:08:10 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 50F6110B6828F;
+	Wed, 14 Jan 2026 18:08:09 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1768410490; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=BOetR0xlsTC1WPP7X56hFWPzNxbNNujaRTmlAf4rLmM=;
+	b=Ef5fEguZAG2Y72C94WVVZCm+a677M5snJIsR+aNNDenCITPqLvcXJBf34gLBlJrgP3VvyO
+	m0JhPULE/SgMtbhY36nr9+EVn0HdAefDjK0eJjFkT5k0Qwk00hgQBlIyquAKlp4PwgBEF9
+	OnrtMS3QM8ce2J31R+vV/iBUla3p5fNgt4rZT2llKIRIXFLrnNQ2vDAwGgLb2fWF/0jg7v
+	eOKG/akuoh4+wOqYsf+MdYqPY69hqehJH6Z1Rp1DBWQ7MiFJo/KIAdRyLkdt1tlZa1y/wj
+	zIUEl+RIJGE+Dv8bvexbyQsMj7j+W/b+TbMUfi777B9oQnlH6+otVzfOhTnFPQ==
+Date: Wed, 14 Jan 2026 18:08:08 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: fredrik.markstrom@est.tech
+Cc: Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Ivar Holmqvist <ivar.holmqvist@est.tech>
+Subject: Re: [PATCH] i3c: master: Set the device name only after we
+ initialize i3c_bus->id
+Message-ID: <20260114170808789a6861@mail.local>
+References: <20260113-set_i3c_master_name-v1-1-eafc5dcd1eee@est.tech>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260113114529.1692213-5-aman.kumarpandey@nxp.com>
+In-Reply-To: <20260113-set_i3c_master_name-v1-1-eafc5dcd1eee@est.tech>
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260114_085910_723330_A56862F5 
-X-CRM114-Status: GOOD (  10.50  )
+X-CRM114-CacheID: sfid-20260114_090813_083994_390C41C3 
+X-CRM114-Status: GOOD (  17.40  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,68 +76,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Aman,
+Hello,
 
-kernel test robot noticed the following build errors:
+Thanks for the patch! the exact same one had been sent earlier so I
+applied it instead.
 
-[auto build test ERROR on i3c/i3c/next]
-[also build test ERROR on lee-mfd/for-mfd-next lee-mfd/for-mfd-fixes broonie-regulator/for-next linus/master v6.19-rc5 next-20260114]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
-
-url:    https://github.com/intel-lab-lkp/linux/commits/Aman-Kumar-Pandey/dt-bindings-i3c-Add-NXP-P3H2x4x-i3c-hub-support/20260113-195318
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git i3c/next
-patch link:    https://lore.kernel.org/r/20260113114529.1692213-5-aman.kumarpandey%40nxp.com
-patch subject: [PATCH v4 5/5] i3c: hub: p3h2x4x: Add support for NXP P3H2x4x I3C hub functionality
-config: hexagon-allmodconfig (https://download.01.org/0day-ci/archive/20260115/202601150056.yaKfBjXc-lkp@intel.com/config)
-compiler: clang version 17.0.6 (https://github.com/llvm/llvm-project 6009708b4367171ccdbf4b5905cb6a803753fe18)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260115/202601150056.yaKfBjXc-lkp@intel.com/reproduce)
-
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202601150056.yaKfBjXc-lkp@intel.com/
-
-All errors (new ones prefixed by >>):
-
->> drivers/i3c/hub/p3h2840_i3c_hub_common.c:51:11: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-      51 |         pullup = P3H2x4x_TP0145_PULLUP_CONF(p3h2x4x_pullup_dt_to_reg
-         |                  ^
-   drivers/i3c/hub/p3h2840_i3c_hub.h:64:3: note: expanded from macro 'P3H2x4x_TP0145_PULLUP_CONF'
-      64 |                 FIELD_PREP(P3H2x4x_TP0145_PULLUP_CONF_MASK, x)
-         |                 ^
-   drivers/i3c/hub/p3h2840_i3c_hub_common.c:80:16: error: call to undeclared function 'FIELD_PREP'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
-      80 |         io_strength = P3H2x4x_CP0_IO_STRENGTH(p3h2x4x_io_strength_dt_to_reg
-         |                       ^
-   drivers/i3c/hub/p3h2840_i3c_hub.h:51:3: note: expanded from macro 'P3H2x4x_CP0_IO_STRENGTH'
-      51 |                 FIELD_PREP(P3H2x4x_CP0_IO_STRENGTH_MASK, x)
-         |                 ^
-   2 errors generated.
-
-
-vim +/FIELD_PREP +51 drivers/i3c/hub/p3h2840_i3c_hub_common.c
-
-    45	
-    46	static int p3h2x4x_configure_pullup(struct device *dev)
-    47	{
-    48		struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub = dev_get_drvdata(dev);
-    49		u8 pullup;
-    50	
-  > 51		pullup = P3H2x4x_TP0145_PULLUP_CONF(p3h2x4x_pullup_dt_to_reg
-    52							(p3h2x4x_i3c_hub->hub_config.tp0145_pullup));
-    53	
-    54		pullup |= P3H2x4x_TP2367_PULLUP_CONF(p3h2x4x_pullup_dt_to_reg
-    55							(p3h2x4x_i3c_hub->hub_config.tp2367_pullup));
-    56	
-    57		return regmap_update_bits(p3h2x4x_i3c_hub->regmap, P3H2x4x_LDO_AND_PULLUP_CONF,
-    58								  P3H2x4x_PULLUP_CONF_MASK, pullup);
-    59	}
-    60	
+On 13/01/2026 14:08:53+0100, Fredrik Markstrom via B4 Relay wrote:
+> From: Fredrik Markstrom <fredrik.markstrom@est.tech>
+> 
+> The i3c_bus->id field is used to construct the unique name of the I3C
+> bus device. This field is initialized and assigned its unique value
+> within the i3c_bus_init() function.
+> 
+> However, the existing code was referencing i3c_bus->id *before* the
+> call to i3c_bus_init(), leading to all the masters having the same
+> device name string.
+> 
+> This commit moves the reference to i3c_bus->id to *after* the call to
+> i3c_bus_init().
+> 
+> Fixes: 9d4f219807d5 ("i3c: fix refcount inconsistency in i3c_master_register")
+> Signed-off-by: Fredrik Markstrom <fredrik.markstrom@est.tech>
+> Reviewed-by: Ivar Holmqvist <ivar.holmqvist@est.tech>
+> ---
+>  drivers/i3c/master.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index 7f606c871648..1bc3c9068402 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -2881,7 +2881,6 @@ int i3c_master_register(struct i3c_master_controller *master,
+>  	INIT_LIST_HEAD(&master->boardinfo.i3c);
+>  
+>  	device_initialize(&master->dev);
+> -	dev_set_name(&master->dev, "i3c-%d", i3cbus->id);
+>  
+>  	master->dev.dma_mask = parent->dma_mask;
+>  	master->dev.coherent_dma_mask = parent->coherent_dma_mask;
+> @@ -2891,6 +2890,8 @@ int i3c_master_register(struct i3c_master_controller *master,
+>  	if (ret)
+>  		goto err_put_dev;
+>  
+> +	dev_set_name(&master->dev, "i3c-%d", i3cbus->id);
+> +
+>  	ret = of_populate_i3c_bus(master);
+>  	if (ret)
+>  		goto err_put_dev;
+> 
+> ---
+> base-commit: 0f61b1860cc3f52aef9036d7235ed1f017632193
+> change-id: 20260113-set_i3c_master_name-4fe45d589164
+> 
+> Best regards,
+> -- 
+> Fredrik Markstrom <fredrik.markstrom@est.tech>
+> 
+> 
 
 -- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-i3c mailing list
