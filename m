@@ -4,62 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 28501D38FF1
-	for <linux-i3c@archiver.kernel.org>; Wed, 14 Jan 2026 17:08:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01E74D38FF3
+	for <linux-i3c@archiver.kernel.org>; Wed, 14 Jan 2026 17:17:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OnV61K3ALD7wzDH0Zx/xeDhG554O+zhWV5c1yROx2xU=; b=OaW6VySLlJCs39
-	vBHwjr+gRmAoa1b3Ojzds89PBkfVHgcsnMPPaT/Lntk73Q37VuO7fRIXlJ2acTPqTWRURXyNZl6S2
-	0w8fQ93D2CgfUS8xSHUFr3VBdl7XGAtJNsfc6mqLYCWC/cmrUTW/XjWIf/XWAzj9/EwKHNErRFzPE
-	SVn8hzou1hyYWj5mT4EqHst9k6V/zVfA9ecB0gsxqHkOPcY+VpWdoA+UUgv2zMEh2UNJ9pEUepf1A
-	EoCHVd4MyqvDLnbzS69dfQZAVx/iD82p1I8TAhuzwD6fKi3qeQcZVm9VDMtRJVkkuToNNBl8oRErL
-	xVAB18tMBGN2CDlvO4Rg==;
+	List-Owner; bh=mfAFo9qKQKV/uiI7FjvoW6JGk0190NLbQOxQh5tjJIc=; b=iCC+gZamfC8OKH
+	NKEkDn596tnossAw1X5dfsYrO+FslAA4HSVGz6lMIqgk6f6cOzgNu7DZfD9QjpxmkYHBLy9mbURmh
+	u9pgjsWfKfnKC7yRV3SeGL49FosjSYLOVzqTFe8hIDH5F8bmcSZ8KAjQwU8nJhcPoiT6rkZAnMvdk
+	qZXqxYoJJKuAg1jlzxnA0rCJkRsizh58BzGOHJlYROCkqAbV/wyDx48LBwlffDp4Pu8mnomdmpiR6
+	m2sW8Dl+ytl6bLF9J4BB1Uw+VoR8f++MaI/K1aAXQWoTJMtk4Zu0hgnL/2LAzR1+u6+etxctpuNCn
+	9dTWfjpEixzhkGvvZPyA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg4Lv-0000000A2ss-3VsJ;
-	Wed, 14 Jan 2026 17:08:15 +0000
+	id 1vg4V4-0000000A6WJ-3g9n;
+	Wed, 14 Jan 2026 17:17:43 +0000
 Received: from smtpout-04.galae.net ([185.171.202.116])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vg4Ls-0000000A2s2-3nCz
+	id 1vg4V0-0000000A6Uk-3eK7
 	for linux-i3c@lists.infradead.org;
-	Wed, 14 Jan 2026 17:08:14 +0000
+	Wed, 14 Jan 2026 17:17:41 +0000
 Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-04.galae.net (Postfix) with ESMTPS id E26A1C1F6DB;
-	Wed, 14 Jan 2026 17:07:43 +0000 (UTC)
+	by smtpout-04.galae.net (Postfix) with ESMTPS id D7BB3C1F1CC;
+	Wed, 14 Jan 2026 17:17:09 +0000 (UTC)
 Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 8684C6074A;
-	Wed, 14 Jan 2026 17:08:10 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 50F6110B6828F;
-	Wed, 14 Jan 2026 18:08:09 +0100 (CET)
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 69D546074A;
+	Wed, 14 Jan 2026 17:17:36 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 6F60110B6827A;
+	Wed, 14 Jan 2026 18:17:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1768410490; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=BOetR0xlsTC1WPP7X56hFWPzNxbNNujaRTmlAf4rLmM=;
-	b=Ef5fEguZAG2Y72C94WVVZCm+a677M5snJIsR+aNNDenCITPqLvcXJBf34gLBlJrgP3VvyO
-	m0JhPULE/SgMtbhY36nr9+EVn0HdAefDjK0eJjFkT5k0Qwk00hgQBlIyquAKlp4PwgBEF9
-	OnrtMS3QM8ce2J31R+vV/iBUla3p5fNgt4rZT2llKIRIXFLrnNQ2vDAwGgLb2fWF/0jg7v
-	eOKG/akuoh4+wOqYsf+MdYqPY69hqehJH6Z1Rp1DBWQ7MiFJo/KIAdRyLkdt1tlZa1y/wj
-	zIUEl+RIJGE+Dv8bvexbyQsMj7j+W/b+TbMUfi777B9oQnlH6+otVzfOhTnFPQ==
-Date: Wed, 14 Jan 2026 18:08:08 +0100
+	t=1768411055; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=B2TVXclr5G4TZ9kjKgvErvCVSq8g1gIuYHeonnJu+qM=;
+	b=PTe9ZPM2fYaxP4/AHzJD9TWxKeDbiCMCbfBvbYfx9YUpcwSGbQLBa55a1fR3AxFmu4IRen
+	OKovfUuKiOYaZuA0gKsjswbS+yKTTfJlgW/3fol+tBkug2mcEgBGWPFZPGZt63z0AM/N4b
+	nLrONJ1oY1/H1VsIfkilHZeRd5N5EpjFu01Nh/ZXhYVH4zrayi/kCZkqWlo1epb8qL9qNr
+	SddkK8r/5znyKBGPfjj4p80ilAzcnLA1R75PLjL2EOitaDzTvT7r53PzoVFc99Brcu2DdG
+	N4yBdRsSKPcUffHqCYJResOV5upJcm9gzW2P7VizvY2WNfpgQHqBtjXOP+aHow==
+Date: Wed, 14 Jan 2026 18:17:32 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: fredrik.markstrom@est.tech
-Cc: Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Ivar Holmqvist <ivar.holmqvist@est.tech>
-Subject: Re: [PATCH] i3c: master: Set the device name only after we
- initialize i3c_bus->id
-Message-ID: <20260114170808789a6861@mail.local>
-References: <20260113-set_i3c_master_name-v1-1-eafc5dcd1eee@est.tech>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Aman Kumar Pandey <aman.kumarpandey@nxp.com>,
+	linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
+	krzk+dt@kernel.org, robh@kernel.org, conor+dt@kernel.org,
+	devicetree@vger.kernel.org, broonie@kernel.org, lee@kernel.org,
+	Frank.Li@nxp.com, lgirdwood@gmail.com, vikash.bansal@nxp.com,
+	priyanka.jain@nxp.com, shashank.rebbapragada@nxp.com
+Subject: Re: [PATCH v4 3/5] mfd: p3h2x4x: Add driver for NXP P3H2x4x i3c hub
+ and on-die regulator
+Message-ID: <20260114171732470bd389@mail.local>
+References: <20260113114529.1692213-1-aman.kumarpandey@nxp.com>
+ <20260113114529.1692213-3-aman.kumarpandey@nxp.com>
+ <20260114-refreshing-groovy-buzzard-af2eeb@quoll>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260113-set_i3c_master_name-v1-1-eafc5dcd1eee@est.tech>
+In-Reply-To: <20260114-refreshing-groovy-buzzard-af2eeb@quoll>
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260114_090813_083994_390C41C3 
-X-CRM114-Status: GOOD (  17.40  )
+X-CRM114-CacheID: sfid-20260114_091739_056484_4BEBF384 
+X-CRM114-Status: GOOD (  14.64  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,62 +81,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hello,
+On 14/01/2026 09:28:53+0100, Krzysztof Kozlowski wrote:
+> > +static int p3h2x4x_device_probe_i3c(struct i3c_device *i3cdev)
+> > +{
+> > +	struct p3h2x4x_dev *p3h2x4x;
+> > +	int ret;
+> > +
+> > +	p3h2x4x = devm_kzalloc(&i3cdev->dev, sizeof(*p3h2x4x), GFP_KERNEL);
+> > +	if (!p3h2x4x)
+> > +		return -ENOMEM;
+> > +
+> > +	i3cdev_set_drvdata(i3cdev, p3h2x4x);
+> > +
+> > +	p3h2x4x->regmap = devm_regmap_init_i3c(i3cdev, &p3h2x4x_regmap_config);
+> > +	if (IS_ERR(p3h2x4x->regmap)) {
+> > +		return dev_err_probe(&i3cdev->dev, PTR_ERR(p3h2x4x->regmap),
+> 
+> Look here...
+> 
+> > +				     "Failed to register I3C HUB regmap\n");
+> > +	}
+> > +
+> > +	p3h2x4x->is_p3h2x4x_in_i3c = true;
+> > +	p3h2x4x->i3cdev = i3cdev;
+> > +
+> > +	ret = devm_mfd_add_devices(&i3cdev->dev, PLATFORM_DEVID_NONE,
+> > +				   p3h2x4x_devs, ARRAY_SIZE(p3h2x4x_devs),
+> > +				   NULL, 0, NULL);
+> > +	if (ret)
+> > +		return dev_err_probe(&i3cdev->dev, ret, "Failed to add sub devices\n");
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int p3h2x4x_device_probe_i2c(struct i2c_client *client)
+> > +{
+> > +	struct p3h2x4x_dev *p3h2x4x;
+> > +	int ret;
+> > +
+> > +	p3h2x4x = devm_kzalloc(&client->dev, sizeof(*p3h2x4x), GFP_KERNEL);
+> > +	if (!p3h2x4x)
+> > +		return -ENOMEM;
+> > +
+> > +	i2c_set_clientdata(client, p3h2x4x);
+> > +
+> > +	p3h2x4x->regmap = devm_regmap_init_i2c(client, &p3h2x4x_regmap_config);
+> > +	if (IS_ERR(p3h2x4x->regmap)) {
+> > +		ret = PTR_ERR(p3h2x4x->regmap);
+> 
+> And here!
+> 
+> Drop. This is completely redundant. How is it that in one place you use
+> one syntax and in other place completely different syntax?
 
-Thanks for the patch! the exact same one had been sent earlier so I
-applied it instead.
+I don't think it is redundant, one is for i2c and the other one for i3c
+and the other i2c so I guess the hub can be sitting on any of those bus.
 
-On 13/01/2026 14:08:53+0100, Fredrik Markstrom via B4 Relay wrote:
-> From: Fredrik Markstrom <fredrik.markstrom@est.tech>
+I guess the driver could be made so that we could only compile the i2c
+part though.
+
 > 
-> The i3c_bus->id field is used to construct the unique name of the I3C
-> bus device. This field is initialized and assigned its unique value
-> within the i3c_bus_init() function.
-> 
-> However, the existing code was referencing i3c_bus->id *before* the
-> call to i3c_bus_init(), leading to all the masters having the same
-> device name string.
-> 
-> This commit moves the reference to i3c_bus->id to *after* the call to
-> i3c_bus_init().
-> 
-> Fixes: 9d4f219807d5 ("i3c: fix refcount inconsistency in i3c_master_register")
-> Signed-off-by: Fredrik Markstrom <fredrik.markstrom@est.tech>
-> Reviewed-by: Ivar Holmqvist <ivar.holmqvist@est.tech>
-> ---
->  drivers/i3c/master.c | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index 7f606c871648..1bc3c9068402 100644
-> --- a/drivers/i3c/master.c
-> +++ b/drivers/i3c/master.c
-> @@ -2881,7 +2881,6 @@ int i3c_master_register(struct i3c_master_controller *master,
->  	INIT_LIST_HEAD(&master->boardinfo.i3c);
->  
->  	device_initialize(&master->dev);
-> -	dev_set_name(&master->dev, "i3c-%d", i3cbus->id);
->  
->  	master->dev.dma_mask = parent->dma_mask;
->  	master->dev.coherent_dma_mask = parent->coherent_dma_mask;
-> @@ -2891,6 +2890,8 @@ int i3c_master_register(struct i3c_master_controller *master,
->  	if (ret)
->  		goto err_put_dev;
->  
-> +	dev_set_name(&master->dev, "i3c-%d", i3cbus->id);
-> +
->  	ret = of_populate_i3c_bus(master);
->  	if (ret)
->  		goto err_put_dev;
-> 
-> ---
-> base-commit: 0f61b1860cc3f52aef9036d7235ed1f017632193
-> change-id: 20260113-set_i3c_master_name-4fe45d589164
+> > +		return dev_err_probe(&client->dev, ret, "Failed to register I3C HUB regmap\n");
+> > +	}
+> > +
+> > +	p3h2x4x->is_p3h2x4x_in_i3c = false;
+> > +	p3h2x4x->i2c_client = client;
+> > +
+> > +	ret = devm_mfd_add_devices(&client->dev, PLATFORM_DEVID_NONE,
+> > +				   p3h2x4x_devs, ARRAY_SIZE(p3h2x4x_devs),
+> > +				   NULL, 0, NULL);
+> > +	if (ret)
+> > +		return dev_err_probe(&client->dev, ret, "Failed to add sub devices\n");
+> > +
+> > +	return 0;
 > 
 > Best regards,
-> -- 
-> Fredrik Markstrom <fredrik.markstrom@est.tech>
-> 
+> Krzysztof
 > 
 
 -- 
