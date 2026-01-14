@@ -4,150 +4,201 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 899E9D2F349
-	for <linux-i3c@archiver.kernel.org>; Tue, 13 Jan 2026 17:49:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E3A9D31A0F
+	for <linux-i3c@archiver.kernel.org>; Wed, 14 Jan 2026 05:53:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:CC:
+	To:From:Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3Hx+OXX1EmqHA6/kp3mRKxinu9ZKIQs2g8m2aE1kAHs=; b=PpDkIWDic4kHLl
-	pHSd8Q49x924eBqz1+EcYx8Hfz4olrXHvSsktD7SD6zXi4FNBBmDBUyMS3RRNm9cLXoWfz1/gscJo
-	shONGraM8IzqLMSkbFUjsSwibSDhL3bfgdO3wAI4hMChilSAH/Vlq38P14PIXqRMhYukANFydpoRm
-	IaP/wHIQ4mi/mnwG/aeQlcPUjI9PYeiCwMBgHKSH29AMI92hrPqtpyYX9HetWhPqHIc0rfLkBY5lT
-	3ULkSLrWZtBkFsSmVrrhViktzh7nkYpY3hymqNB7EPgUXAwbH1A4uaQxquBoth7AfQZjaXfzTCdnh
-	cPrEqjzoncsO37fqk21A==;
+	List-Owner; bh=GbRBxmciJ8Kbv7aWjNCbmRZwPJGcN4V4pBIyo5YWtRQ=; b=paX/3ywR/gOjhK
+	VHotcgjVy1dpAonhQ0z6SHDjRk7v7d0iuY5ipfwNCMznxFykJOWgVsX0/eQp7paJt+QNQYMr+lB54
+	jZsvrSirbOvIYc+3LyL+o/6C1Pz4UeAtWZFDmM+w/6dhNxbfq9YuE2SQ1sZ232Ll+wfI6bZC3nTIF
+	nJvPRGJ79jH2VxqUYANjH0v2WZfb6I9XtpUKpBpFHpOm7A/rr8zpdxXVnYeUeAGBlLVUZrJjU0QVM
+	XALYnK2LCALwbtx7bXLkAT2RFZkx8lThZTz86eJZcmQE3y/ze1pJeh8aZUeDIwFpabAbDR8AsuwSe
+	fbrj01wgt64dQqbOatZQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfiVq-00000007YoJ-17nG;
-	Tue, 13 Jan 2026 17:49:02 +0000
-Received: from mail-norwayeastazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20f::7] helo=OSPPR02CU001.outbound.protection.outlook.com)
+	id 1vftow-000000086E4-0hhw;
+	Wed, 14 Jan 2026 05:53:30 +0000
+Received: from mgamail.intel.com ([192.198.163.9])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vfiVn-00000007Ynu-1dUE
+	id 1vftot-000000086Da-2PgV
 	for linux-i3c@lists.infradead.org;
-	Tue, 13 Jan 2026 17:49:00 +0000
+	Wed, 14 Jan 2026 05:53:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1768370008; x=1799906008;
+  h=message-id:date:subject:from:to:cc:references:
+   in-reply-to:content-transfer-encoding:mime-version;
+  bh=V//35ufsbzgCnFCUU/rIC4ABrt+dABRgr2TRdx56ES8=;
+  b=CAZ7D2jT74o2IEue9y76yDEZglghEtWlpXky4PFhLInQHjP9aQYr6Ysg
+   2PwBrpiN3MK4xlJaNLUhgf/f1bzlpa/hNPT4AGviip00f4hsxuVX177va
+   FhEF5NoUfLTIR86xBiByIYRDfE+TByb6FQZEolBKTpSfrXtDqo6RvBo39
+   KF0P9tgAvwOk/ZnE68YnMuxQWyxcY9AXIG9ePicsUaF/1xUhjqDh4ulpM
+   1GXoS+aI09Qo/n4BAQtydJiz9NCYhWce/RufIrtnmEp9+dKS2KQpNydPg
+   yyp1+jfv0+UhqIdVmh7WZ0kdVIKKDFlZKKsCtgkZCrwgFB6gtFe7rdT6b
+   A==;
+X-CSE-ConnectionGUID: j7vnL3wVRKKTv4pUtKtOUQ==
+X-CSE-MsgGUID: jt8LWBjTToqjZlo4Q6bRIA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11670"; a="80384281"
+X-IronPort-AV: E=Sophos;i="6.21,225,1763452800"; 
+   d="scan'208";a="80384281"
+Received: from fmviesa006.fm.intel.com ([10.60.135.146])
+  by fmvoesa103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Jan 2026 21:53:26 -0800
+X-CSE-ConnectionGUID: YSfy+AhsT7m2Hs6U3NdTow==
+X-CSE-MsgGUID: sL/0IcYhQUOMzStUVsWg8g==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.21,225,1763452800"; 
+   d="scan'208";a="204479356"
+Received: from orsmsx902.amr.corp.intel.com ([10.22.229.24])
+  by fmviesa006.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 13 Jan 2026 21:53:26 -0800
+Received: from ORSMSX901.amr.corp.intel.com (10.22.229.23) by
+ ORSMSX902.amr.corp.intel.com (10.22.229.24) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.29; Tue, 13 Jan 2026 21:53:25 -0800
+Received: from ORSEDG903.ED.cps.intel.com (10.7.248.13) by
+ ORSMSX901.amr.corp.intel.com (10.22.229.23) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.29 via Frontend Transport; Tue, 13 Jan 2026 21:53:25 -0800
+Received: from BN1PR04CU002.outbound.protection.outlook.com (52.101.56.43) by
+ edgegateway.intel.com (134.134.137.113) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.29; Tue, 13 Jan 2026 21:53:25 -0800
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=spBE9XR0xuyqaYvB4/EPOy5gAps1beM8f1LwwwIvaeC6uwXC7LgqmWx/rQhO+eU1OAH0la0who+kdrrwtsLm4/s5/eCaiby70PU1Nq1cXMm0fLtCMXD3Om0nRkgIUnAa8w4PuZ8/NP4/xRzFSH8eFmI7ybsvtjaF3OdYQ373Aal4B4+gox8LYLuNI373DRqXld+NT5q+3T9BYF+2rZFwpfCS1Q22/Yty3r40+Ah3w2kfWOz0fwBG9X6BRcfS1Fbebwp10H1awGElXWvlEJOlIf7Q93Y5RH9DFVw9pDFh/X3wox72SfH2osxbFwSLBHrYoDIgxpEGpbSRbr7SWPtPgg==
+ b=u8k+2QP6TfrMWM/KZsToePLR4pVKg9m1gmrFBhqSze09DjlkGWDa+WjZKvGG+k8jCM5o2pmRhwIESOOcrdU5FbrqhA0WG+T56GtAeMhqyHXhfUcgTholLHO/flGnLgeX1lP7IdPuWegvIndvjd5kUcC1we8G2lVMTUWhVQ0D7OKaBF2oUsgcH0LQ+2vwTct4Dh5UiVUNz+rEtIDGS4g8vwK+ZiMj7aKaVR7NB0VCw1xLrLRvv0fBshvFWEj6pegPeHdMCrj6FPi3W2M5cfva5wdxYdutyf4Rv522zBvJk6Wk4Qx00LYU1e2xyxt2ZRovVakrv0d+HiafXigV3g6waQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=ppPHj9zlTWEOckkuFi1ApuFbFrTwy8spPuaOwkwBjAU=;
- b=McVI64WiQKjVVqLLnTP4TuQJWSe9PB2Ybd4eGu/H79EGBxbLBdZewEEDqaXyuRIjtV3jKZQhLzN7f14wU++RL00jYiz7DNC7X6rAW5XpDcDQXNYJtVa8GkInjjv2pn3rT9TZm5PxkIxnXzUBccWO+q5UxSOzaeOFl4o2R2/tMG8pqQ+EzURJBbrBY27Ava3/2N7PV3SCRFLXnSCs1/777acbKQgGqNW5NBK6AITsfTdDAvsnT5pULolJURo6wccVo5wuFb3fM1orK71NrFMyf3AT7ipaI4XfKllx8qyJPfS2Kp17e4JB3PrSiGT7Nr75W7gmre54rZiecXv03JwSZA==
+ bh=rxZin0Kl0flEu8gP0JEEMFBpctS8Gr60XpQUz4Sz3lE=;
+ b=sghL9w4LBeDstS9Rj5qwcsqe7OV+2KUQl6hjNN1mQWpzavRTmcAE0CQ2W8qj0tOOC2gKaVcWY0pykrjPkH4s1+k8DW8d5DaLN/59DpsjFwvZthH4yPDAnijKgaCLUDcOXLyplXy4zeB7uRQ180Cglhai2UPDXB5dwtKnOyViGPNZ8lL/IW1NfeYKCOwfhE7Tfmrb5mLA+HK1kOX2liOBOKUMAsrDlJHoLWMjq7R+2vxR6jeRH0toCmgsz6wce3/x4Q66AEOe/P3TBxpdbnQTvzFnQ0EEjy7AYhecYkEcRI14lzWCH26uhWtav4XPkKQIqKZ65CZlNXFL6I4GwSGwcQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ppPHj9zlTWEOckkuFi1ApuFbFrTwy8spPuaOwkwBjAU=;
- b=L0FkbBeMLxaOWevHjr8ESCLCwpbVJffUEs4UzjO17V2p3qvPM1o8845BGvGb2apNTGdeX7doaLAzQYas9TBWNcR+IafiVj1HFquBhjAjefYAAe7xQuxH9SXMJnhpJGFrnm1c60LtA6RaO6rP3R4hKHsBz+nXl16QxwFWbqOsBG1eyq5/oaNDksKmwSzEWTOiQQ3NmCiefImKGhwxZIhVlU+M7SKwbMx/gMH4msJNDwlhVaD8bkNrl64ASapvYnJnvITjKYCYmE3zMjBID+97/o1XRiT6MmBaiYFo1H8sLIrJvew90lgmqLUCB3S7c0+PBdEMt7meugurlFN63jszMg==
+ smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
+ dkim=pass header.d=intel.com; arc=none
 Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from AS8PR04MB8948.eurprd04.prod.outlook.com (2603:10a6:20b:42f::17)
- by AM9PR04MB8601.eurprd04.prod.outlook.com (2603:10a6:20b:438::21) with
+ header.d=none;dmarc=none action=none header.from=intel.com;
+Received: from IA1PR11MB7198.namprd11.prod.outlook.com (2603:10b6:208:419::15)
+ by PH7PR11MB6451.namprd11.prod.outlook.com (2603:10b6:510:1f4::16) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9520.4; Tue, 13 Jan
- 2026 17:48:55 +0000
-Received: from AS8PR04MB8948.eurprd04.prod.outlook.com
- ([fe80::843f:752e:60d:3e5e]) by AS8PR04MB8948.eurprd04.prod.outlook.com
- ([fe80::843f:752e:60d:3e5e%4]) with mapi id 15.20.9499.002; Tue, 13 Jan 2026
- 17:48:54 +0000
-Date: Tue, 13 Jan 2026 12:48:48 -0500
-From: Frank Li <Frank.li@nxp.com>
-To: Adrian Hunter <adrian.hunter@intel.com>
-Cc: alexandre.belloni@bootlin.com,
-	Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Aniket <aniketmaurya@google.com>, linux-i3c@lists.infradead.org
-Subject: Re: [PATCH V3 16/21] i3c: mipi-i3c-hci: Factor out core
- initialization into helper
-Message-ID: <aWaFgDdDk7KoutMw@lizhi-Precision-Tower-5810>
-References: <20260113072702.16268-1-adrian.hunter@intel.com>
- <20260113072702.16268-17-adrian.hunter@intel.com>
- <aWZyjxkuXEb2CH11@lizhi-Precision-Tower-5810>
- <e23f5cbf-7a1f-41d0-88fb-b8e4b9426113@intel.com>
-Content-Disposition: inline
-In-Reply-To: <e23f5cbf-7a1f-41d0-88fb-b8e4b9426113@intel.com>
-X-ClientProxiedBy: PH7P223CA0019.NAMP223.PROD.OUTLOOK.COM
- (2603:10b6:510:338::20) To AS8PR04MB8948.eurprd04.prod.outlook.com
- (2603:10a6:20b:42f::17)
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9520.5; Wed, 14 Jan
+ 2026 05:53:21 +0000
+Received: from IA1PR11MB7198.namprd11.prod.outlook.com
+ ([fe80::2c4e:e92a:4fa:a456]) by IA1PR11MB7198.namprd11.prod.outlook.com
+ ([fe80::2c4e:e92a:4fa:a456%6]) with mapi id 15.20.9499.005; Wed, 14 Jan 2026
+ 05:53:21 +0000
+Message-ID: <baa7eb1c-ebe3-4036-9f3f-a1fda77b4090@intel.com>
+Date: Wed, 14 Jan 2026 07:53:18 +0200
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH V4 00/11] i3c: mipi-i3c-hci-pci: Define Multi-Bus
+ Instances for Intel controllers
+From: Adrian Hunter <adrian.hunter@intel.com>
+To: <alexandre.belloni@bootlin.com>
+CC: <Frank.Li@nxp.com>, <linux-i3c@lists.infradead.org>
+References: <20260106164416.67074-1-adrian.hunter@intel.com>
+Content-Language: en-US
+Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park,
+ 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 -
+ 4, Domiciled in Helsinki
+In-Reply-To: <20260106164416.67074-1-adrian.hunter@intel.com>
+X-ClientProxiedBy: DUZPR01CA0156.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:4bd::19) To IA1PR11MB7198.namprd11.prod.outlook.com
+ (2603:10b6:208:419::15)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: AS8PR04MB8948:EE_|AM9PR04MB8601:EE_
-X-MS-Office365-Filtering-Correlation-Id: 2852daed-74c9-4109-af00-08de52cc0501
+X-MS-TrafficTypeDiagnostic: IA1PR11MB7198:EE_|PH7PR11MB6451:EE_
+X-MS-Office365-Filtering-Correlation-Id: 13a237c1-3ccf-40b2-49ee-08de5331392a
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|19092799006|366016|52116014|376014|13003099007|38350700014|18082099003|7053199007;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?5f4Dj7OIbv49HspgYw2K0Mui1cPIUIHF4CjJONUjYsTb+5Bso0cd4fljETm1?=
- =?us-ascii?Q?amzA08nsAMKZL0WH+lN6U0UsZ522hdPIJ80Pgr56POuyGhGkdT2OFHTkr5i1?=
- =?us-ascii?Q?jbhiHo+ia7wti51KDuDd9cdyAziw4jtZTts51cWooPwvSl1Ikuxhz+2LWOZk?=
- =?us-ascii?Q?TqBS0EJTrhNbAeKuUQZZfzof1/3WOZgmJZuUCpD3ljODwKkD4kktnns7M1f6?=
- =?us-ascii?Q?0rq7TpLJ3z9Z9szNPZ8jgIS+yggCAfCHag/f4lH82DdA09mgWL28BB2rLNJ1?=
- =?us-ascii?Q?DhvWRMImYZMdGxxcpifXhzXCGrFN3GfHvsiGn+WD4CB3tOZ6/WrIGUSbUk/R?=
- =?us-ascii?Q?69JzdX0A7cjnHJnpiqfUCSAjdIKh3dubgnKNO/TjVaMJBtpRVNxfqNzlkADY?=
- =?us-ascii?Q?f1bMYvE33iJwGTjfEcBzy3bqteaDvZjROWcXIdZ9e5p+Ww/GAv5syRWtOhVL?=
- =?us-ascii?Q?YIwDq7HAWPUs3/nGPFJVYNOIpJCKyUiAoQof9h6UV9uOqo92OPmxZP6FSMEd?=
- =?us-ascii?Q?1OZ0dTievTAYImB0B3gWsmSbmDQa2wIbgSXG84mf1acwYKtsSO66L9102y26?=
- =?us-ascii?Q?tuAK4nG9OfyjkkQ9gr3wKFe7H2iuDHsR60tpej0a0B98Ic41QBYG8HmTcDnv?=
- =?us-ascii?Q?n5gaohxOeWB5+ZgwHYeHrgmyuB79RSjm/90ipwp++zI0r+7bD30Zfv5TspLK?=
- =?us-ascii?Q?yjBzZP0kw+eTSqPHM0LDzhVpIdtOTo+K+gQHCjgL5OHey81qX9ceEcTuO3HM?=
- =?us-ascii?Q?gDmcOuERe8jvz5/5ac9TeJnrD+DoeXSaoDZj0jdAaxIS6WjWbpqgMngJ77RE?=
- =?us-ascii?Q?ayJEncblkasqSYZMPd5H9zRtoYDwTrBleBKqI9Gkh7aAhMlAEDBC7eFl9C6n?=
- =?us-ascii?Q?dBS1EA5jXgnZRnBEly6AZgLWBaP06kJ8ucWiQdz/XZBedEKFY01oP4yhD3s/?=
- =?us-ascii?Q?ji9/+ljQ+e5ksAPI3lcd71TB8fAWo4n99IhkZkglizGRW/FOBtMhJx6rKmEW?=
- =?us-ascii?Q?1sywNu60xy2TEb3F1GIU0+/S/d/Mk7/nZHqciEUpxXGL1WS4x+X02lblMQVx?=
- =?us-ascii?Q?ffuXeoltTRfW4kfiN+COGJ0qyao7gwmuaRnHSYTT3gH8bbhEa/leOApdA1HF?=
- =?us-ascii?Q?mTSZgkNDqeG1cnAzJahJ/YXBpEXl+GhFDzJXzjG3BCyxqeIFCBcQJbvpDoU5?=
- =?us-ascii?Q?HB+BDYvK/xLNpCY3MlCUuSmeWgRZ/wvNQABrhyqMsm8ZuTbsnrYpow1NsQXx?=
- =?us-ascii?Q?6thBHffzpxEiuZJeHgwrFJZKKkDT/3BQPQYpHphoMvCBLR+Pc8ZG0zz07yPC?=
- =?us-ascii?Q?GO3j+IDlgB0+e6TkmhMGNgSxPZjWNLeAqbxCZlzIbV5n4i+1mSFa//kKHMr0?=
- =?us-ascii?Q?acPoIA1i9ti9DH6iYqdJuLm/R7a0NE9+ij38VDadZrIy6Am7yt9VkuHATOHn?=
- =?us-ascii?Q?c0XMvLEv5Wil9Rvcq+iKBWw7TRBms7kYmAa1SdpXCadjRFbl4XMe1izIJV2r?=
- =?us-ascii?Q?WhytgodxHcMyWFkk9LRaAvbNrZOcCWxhg6DX?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS8PR04MB8948.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(19092799006)(366016)(52116014)(376014)(13003099007)(38350700014)(18082099003)(7053199007);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|1800799024|366016;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?ZnlTdW9QbzFpLy9mZkRFREJnaXBRcjRDaVFFK0luVncxMlg1UDUzSUMrZzB1?=
+ =?utf-8?B?amVaL3dQZ1VpcEIrRE5CYkl1aVFuWnExQnJmYXEwVnBRNW91MkdseHZRZ1d6?=
+ =?utf-8?B?bkFGRUx1S3ZRbDRaejU4OG1oa2R5S2VhVjRxa2tCelM1dC9YNDJFOXVuYSt5?=
+ =?utf-8?B?cTg1L1JybXREeTBxMWV1ZHBDSiswU1pHMkd0TFNsT1ZyOWVJcC9mYitSRk0v?=
+ =?utf-8?B?aFo5bDlkM0E0R1pnZlFsSmplQVN5ZlF1ZnQ4bmRoY21LemdqMk02dzA5V2pu?=
+ =?utf-8?B?NExCMU45T080ZVVwQ0NCV0JLbVJZOCs4RVNrcDVXZTJnemlla3czUm9HcWxV?=
+ =?utf-8?B?SGY0eEY3SlNVV3RtbnhUSCtKM2I3Q3I2R3JxSDJpbXVZNDRZcXRiNDVTSkZ5?=
+ =?utf-8?B?ak1IcHF1eEtJeU1qbmtDY21acDgvSm5XaU9PS3Q0U1RqNzk2M2JtaVhXcnlu?=
+ =?utf-8?B?a05tM1h1akJvZ3FFRm1PeTZGWWkwRUYyUisrd3V2MHRNWWx3MG5yS29UWVdY?=
+ =?utf-8?B?WWdJSGx4eEdkdktEZ3I1YWIzQ2pvZzVISnJMTFREMFlkZXgzSlpMaXZpSmZx?=
+ =?utf-8?B?LzMxWFlIWFRLcU4yU3BWOUtSbkhDMUNPenNIQ292dXhrNzFIZzVNODJBQW5r?=
+ =?utf-8?B?RnhwcXBNcW9yTUdONjUxVFR2Rm1zb1hlUzl6WkFGZGFtVWNmblFQTEoyZDlW?=
+ =?utf-8?B?TnFvRFhueWZVUGwzeUs4c2FjN2JFOGVUdnRrU3R3TVgwenU2cXYvUWxxN01F?=
+ =?utf-8?B?WENYcmJsUjBrb241NHNmcmJpZGZ1R213eGFkK09FOHlCbmdhQ2lMa0RLOWp4?=
+ =?utf-8?B?TDV0MlVOV1JtbkVmdTZLNFpzMkNISHkvd0JkSzdPVWUyaC9namVoUFVNdHNR?=
+ =?utf-8?B?cDNQVU8vUElQZXJwcUF1WmE3b09wME9KQXdHeDZjWW80RUFocm8xUE81cmtN?=
+ =?utf-8?B?REhPcHZwdzBOT08ydnJPWDVKUWE2S05LeUlRQXNPREdRaHZleGE4Y0xaSlBh?=
+ =?utf-8?B?VU9zaC9Ga2t2MFMyQzlJdnJyRWJCbzdDNkpYcS9IVXRuWXlzNEJlbnVPeXRk?=
+ =?utf-8?B?RmoxNlh1dWR0Wk1FbUozVHRWRHltTVlSSTdxMXFmNi9EMmk4RHhsVGplY0xF?=
+ =?utf-8?B?clZoaWQ0a1FVdmlmSW9DaHhwL1kwNVRTbkVwamk3TkM0R0xLMVQ0WG9nSnJ5?=
+ =?utf-8?B?ZWFNenUrVVBEc2VqWFJ6SGN5THkwWi84dnIzd3pWT2RiZzg5ZUtDYzhYd05q?=
+ =?utf-8?B?RDQzTHdTc25yTU03blVLdEhqTWo1N1o3aSs2blNQbCtIbkJ3d1NrOGI5SE5q?=
+ =?utf-8?B?akZJMFVVbFE1eTJVQ2Z0aXNGMmIxM2dHQTNMR3JlOGkxaFQzSWlMem50M2dv?=
+ =?utf-8?B?MWhtSDc3VTFYQnN3WDQvZG5oaFhTSXBjVVI5Q1MyM3VTK1B2MUN5eWc2UHNr?=
+ =?utf-8?B?cnJmM1JXcmFQY2Y1R2ZjRUlMVHNucjQ4WHZEMHUrVU1GNzRxMVhESzEvcVBp?=
+ =?utf-8?B?V2ROeEpPcEhLRVFUekZzRVBseVJIcURZeUg4d21CUEZER3dGM0RubGszTm4r?=
+ =?utf-8?B?M2kxZE1hYitBdFdadW1CYlFFU1NNL1daVzRoTStqdDRCeURRZHVxaXpDVW5i?=
+ =?utf-8?B?WkVxTm9IR1laWHNLMHVhSldKYVErQzROT0JVNHkxbmQ2QmNoenhDaE94ZXlF?=
+ =?utf-8?B?WURjT253Qy9LblRLRlc5S2dtWVI5eGdpRk9KY2E3LzlNMHdoV2g3alVRU2Zq?=
+ =?utf-8?B?czlZdWpiWk1kNnpnbGE4WVNtWm9rdkZBWkV6a2QxUlFPSVVITzhxVldTY0w1?=
+ =?utf-8?B?dXpaVmNyUGRaVk4raWZ1VllKc3c4ZDNONHMxdk0xYzg1U0dZNUNWb25PZWdx?=
+ =?utf-8?B?VFk4V29zZGZVaDNQcWEvemVOUW9Vd3RLR3lRcWtQSWVsZEhVdUtnZjIwZnds?=
+ =?utf-8?Q?ZiQA/miUNsmjCPf6WMn3HaxzBBTTwszu?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR11MB7198.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(366016);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?1cBu6ASJi0WRQDbkxDTt+iANB765cinSs6xlvq/btAfjdCW+x8DGhU/Z1iB8?=
- =?us-ascii?Q?tpCgb43Fc7VVJcHT3IACjloLloubTNoSLtVHv+wrekmE6IPq50VMC+5P/kLv?=
- =?us-ascii?Q?TwiIoIBLlKwPEKhYX6CPhwXMYeOV+nt5zQmHIAkOOn4IIe7UfOZAWYBvRHsI?=
- =?us-ascii?Q?9IA6Lx/Y9bR3F/5UtWTW5zhxQy0p9yeI6If22nLz4QSo/JizEG4ekEaxVSuC?=
- =?us-ascii?Q?gEmKGUtXuoLBkXIBeO7mP8RVe2PtntHOVVX49pNswSE9GNVvcKN578BefnNK?=
- =?us-ascii?Q?vAxvkbe9VKM+Wek7s7y9Ocvo7lPoQYBtsJhRbYsn2IPC4TwaWF3grRuevMoi?=
- =?us-ascii?Q?TZDR71eafbYLLbfpTbOji/CKZxHHsbDIl/Tf+vGXO4yB2aQnifhTc0TcKNuS?=
- =?us-ascii?Q?Tr7nMRa/X38s4gqscEKp5vWUIS/RgClmDF4uByJM/sjl1IPXjVUtlPzu6ud5?=
- =?us-ascii?Q?F1J4H7Lk7TMrbTjXV/UHmsfs9VnLCejiPBomGpo+Wgw1pXUuChPvoNEnQmhU?=
- =?us-ascii?Q?aD7ic3e2WPjV2+tV+9OCX6SiorQS67up+mJBbsZXI9DOoKJEprJ2yajWaKHM?=
- =?us-ascii?Q?d+0ELp5M4K8l1vbntbYXxcUdbf2DmftTpuLTZZGksUDl8M0S8pNUQ9/YchgH?=
- =?us-ascii?Q?deYdDlJkJgATqJ7rdG60jmlK65jaxPevNaGpR7GosfJ+tg2RRC76fDID0Bhv?=
- =?us-ascii?Q?LFl2h3Vm6s2UWdO1y2WhtyKGf+SrEw3qf4Q5zPzO/lqvG9d6tBmiTSs+F8At?=
- =?us-ascii?Q?GRN+TsygmsQtHtPKdMgyznujtDp/p1ROoPNvicjU+QdQdi88UGUpuXWXDNUj?=
- =?us-ascii?Q?kcJWhZ1EI2LNVqv0T7BTT9A2GMKZ205ihOVdm5DtKbRmrGFDJlXIUAP8odFM?=
- =?us-ascii?Q?UddavS7L/ErK8GJGdRrcGRbk5E/P7eaK1CIqHBaAuPIFgCewi45OJZuG0CD0?=
- =?us-ascii?Q?qLCrwtxF0MCJ2GJVN636/2jNOQwY1XtnqdAuSquVtY6b2/lV/5Trh6xDuDWT?=
- =?us-ascii?Q?UihhzQyQTM3zoIQtNyNQ3agUzmpB2Y3LK1zQNO4IaTudIV8sny2xR2UzhGsV?=
- =?us-ascii?Q?yWB8+yv5frRoXoisMwqSiTwiq7OTx7Y/lGCIW7mjoYtzRQCYA2TLGT0g5q9s?=
- =?us-ascii?Q?Xms7NBOicnb/kPXNE3/VyDhvIYeQl/GuXwqOtGmV0wk7MUI9wPX8B6kTcJnj?=
- =?us-ascii?Q?G4SyUDjOsTZRIXLoHf0gxwUARBmvYl+E2MMymNg+/63CZgERKe9v4ZJne4q4?=
- =?us-ascii?Q?BTI7b4vgLMqaIN/DyKlEioWene7uAsiRyIG41+K0O9vXF8OOBocKpR9xGeLd?=
- =?us-ascii?Q?z/6S5+hFxU69bmu94sItCvpIez9kR80he5VUmkvDtFWgJxoRnI/5F4ZCFtVf?=
- =?us-ascii?Q?9Io6y6XT9M/T0ffTNnqq2R/zC6DwR80AmrmMDxXy48xuNJpVDcR8Omre54tA?=
- =?us-ascii?Q?dQqu3nyOcVafGdYVcwX8MfvesINv1dhDQruoilnkAzqU9QWctjkraFH30p2a?=
- =?us-ascii?Q?GGuzyUamA/xxn42QLeOcYMsq6QzwlzlANEROEzJGSix0FAbQ2seyeErNgGkZ?=
- =?us-ascii?Q?xrV+XZqUa6x7jO9r4iClSXyUnwNXYnV9Esb0OJgIQD5zMrd0Lg1JUJlgYZZh?=
- =?us-ascii?Q?76gGoacjmr4NixqJsLA1PsN9ifpvoOi9Q0+pk3u7ncx9kRzpFkiyNhQUlqTj?=
- =?us-ascii?Q?nG3Hh7bJM54GcisIjzVmW0qFQrJdkBFiNyvgbhHg0GrhpW/K?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2852daed-74c9-4109-af00-08de52cc0501
-X-MS-Exchange-CrossTenant-AuthSource: AS8PR04MB8948.eurprd04.prod.outlook.com
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?RFJ1K2t2Tm5neEgzN0x4anJOZmRYbXdZSkFQNDJZTCsvNXpmQ2pOWFNuLzZS?=
+ =?utf-8?B?QVRnYjZuVmx6dzBMcDRkRnAxajF4ZmJuLzY4bStnYVBQQ1BoR1paeTYrMSta?=
+ =?utf-8?B?L0RxQy9oa2FLbmZBQkpHNzVtV1FLWUJzWHJ6R3FJYlJWRnZHdTdrU1VRNHZN?=
+ =?utf-8?B?THhvREUvejg1eUo4RmFReXNzU0Vrb1RrWHVCZ3h4bWQ5b0ZJMlpWVXF6RVBP?=
+ =?utf-8?B?elVuQjVSVFR1YXlacEtjUnY0WTEzYmlQRS84Y2dIS3VZR2h5OE5KZFlnMnY5?=
+ =?utf-8?B?Yk9XTERkLzJ5QzA2TWRUM0d5NnhOeWVOZldYdHFzRlpYR0paeXA3dHc4ZWd6?=
+ =?utf-8?B?a2RQVnNJMlNhT2poQmVjMG02Y2dXZkRWeGhKUHpVVmphaTM3SG1GMEtBOGlK?=
+ =?utf-8?B?NTRFVXk5TXMzVGNvUDN0eDQvblFTTEJ5Y2dTTmlIYWYyM1IyT296a0tOSzg1?=
+ =?utf-8?B?RWRzTEVzU2tRNUdkcFhhUFo3bWFIalBDdU0rYm96RWxBNmlvdGFFSWJ5T0Jv?=
+ =?utf-8?B?UXNrcW1ZTVJGRzl5anZEditEa1hWcVRIMW8rU3UzWFg5ZEdHK0NKMDNianZC?=
+ =?utf-8?B?QmxsNTNDWVE1cXFubEhPZUtUdk5BKzVpenZUN3NNMnRocDhYTUJjWFhrbUpV?=
+ =?utf-8?B?ZGptWGJkL0NpdkR5L01iMDFjR2FkcVNZODI2WHA2b3BFY3paK0dXUkZGOTNi?=
+ =?utf-8?B?VW1LQnhZTmVsZ0FIbmJQOHlaVitFMnJoYUpmNUhQeGFBdnk5VFhvR1o2VU1j?=
+ =?utf-8?B?U3VJWWs1eWZabUE4Nm1FaU1OakIxYXFleWdQbTNZc2VDd3pVTWdISmtzT1hP?=
+ =?utf-8?B?VmJ4dVh1Mm1IOWVtdDlyRGQ5cGtHdGdjSWk5OXc5Y0kza1dJYVpiQzdQUWZq?=
+ =?utf-8?B?bTFaYzhxQTlhUWVYMW9DY0RLbnBDejBVNWxBbFBaenRXc1daTnhYYVBaa1B4?=
+ =?utf-8?B?WkVVS0RvemhuOVU4T0dzOVZHRW80eXZjbHdZeW0yL2RPQXFCNGR5dkt1d2Ns?=
+ =?utf-8?B?WXpIMUZkbXJiZ09hY3FOSFRIRFJhVG1LMjh4bTgwN29jQ3VPbXdneXhkZzBH?=
+ =?utf-8?B?OVNDV01yb2FJR0d0bGxIZ0lPb3N6MXZ1U3Bzdm9TUStkUlZ5WEwxQmhTQW9z?=
+ =?utf-8?B?Z2xJKzU3OGN0Vms0OWZPeFpBdVJZeGFxZHM0SWJCL0ZmUTNWWWM4NmZySHhI?=
+ =?utf-8?B?NzMzWDlIcC9jeWdpVUJwSlVhVHB3SXJSMXBTM1RSL1BncmhWdGEyMGpId3gr?=
+ =?utf-8?B?Rmc4TDVaQm5FdkZucUpPSTdJSlhscHBpeXVTbDY4T1NBNnR5bkFvWUt2aHl0?=
+ =?utf-8?B?a3g2TFU0TGtBcG1aWEhlRVVtQnhHQW11cjMxVGgxcnhNUkxFd1dWNW5KRkQv?=
+ =?utf-8?B?aVNEL2psSlhGVnZXUWpoNHNPejB5U2ZwVUtydUlxYU55aHhiZEx2RHM3SGdo?=
+ =?utf-8?B?OWdESHZmYnNub3BQVC95VkRINDd2WXZGV0JyM2xPNER0QVN0SUNyQVpQSkZL?=
+ =?utf-8?B?dERZTXMzZGxUaE5RSmo3VUx4dVBJdzFNRUJnZ05zcFVlaDM0U1djclZ6M1hI?=
+ =?utf-8?B?OTlFVEkvNnhVVjh2UGY0cEtIME9LZG52QUJrOFRTVGRSN3piclpYdmh1dDE3?=
+ =?utf-8?B?ZnRubm5MWVAzdjB6eGZmZFh6ZVRnUnh3bUQybTVURG13VzY4bnFVaEY2UGRI?=
+ =?utf-8?B?bEtNVHg0UWpmNDRtWThqNDNCdk1IL2h1L0JSUmtVazBRZGZkMDBvay9Cdklj?=
+ =?utf-8?B?bkZadlMxb1FTcWJldEZ4UGc5TVdySExMM3pRS3hyQWxFTnpKc3dWTWk1aXFp?=
+ =?utf-8?B?c3NRUWM4cktCYUpEd1E2RThHSURDbmFsZnRyQmd2V0YwYzY5VUJISU9CQXVl?=
+ =?utf-8?B?MmVGSmhNOGM1MjFxTWxhMkkvRUF5b0NoOElUUHpkSWZZUjZORklDN0FDcGZJ?=
+ =?utf-8?B?alNmUGhhTzFBalJhRGN3elZ6VGZaNnhjTnlWb3NpZjNtRnRKODVob0txaTNE?=
+ =?utf-8?B?eXJaR3NaOFJ1dzRCdTJ3S3NpWUZtUGdQYjV3SWJyTjVFNWJoUVNSaUpVSjk4?=
+ =?utf-8?B?cnh3YzB4K202MnBvbytqVnJUbTJrS3c1V0RkOVFRZmpVZDAvQ09XeWJLclpq?=
+ =?utf-8?B?Znhqb3dqVy9hMjArMTQ5aWo0bWV5cjJ5YUtIRWtrVWJEamFXWUVyYmtQR0tK?=
+ =?utf-8?B?aUdMbzBvZGVJTE1ZZGs2SmtmNktUOXlrRmxWd2FxUHFzcHFaTHdpTjFoekRu?=
+ =?utf-8?B?NXQvcDBuNVpNLzVvREhwdWxnWnpFU1YvbXNqbFhkTTFNRk5uaXZjSFZCL3Qy?=
+ =?utf-8?B?OTZ3MmNsVHgwSklHcHBZblpYQlhaQ2N1L01qNUNGYWl4TXVkWnY5Zz09?=
+X-MS-Exchange-CrossTenant-Network-Message-Id: 13a237c1-3ccf-40b2-49ee-08de5331392a
+X-MS-Exchange-CrossTenant-AuthSource: IA1PR11MB7198.namprd11.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Jan 2026 17:48:54.7904
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Jan 2026 05:53:21.3029
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-Id: 46c98d88-e344-4ed4-8496-4ed7712e255d
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: taXpEeV2bpfJjxySP3Dkd/oXp36NzxyvgqQVy5MBx82asynOy0rt31zFZQYhDSdIjE22mc+p878CD3mn+73eRA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB8601
+X-MS-Exchange-CrossTenant-UserPrincipalName: mTbPf+FHvv6s4sueBF6FmfUwxBIfzS6/biX10FIZcZXfGaO/na3i1T2puqSc5uKHy6kaScjBynPyqcDgaL8tTQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH7PR11MB6451
+X-OriginatorOrg: intel.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260113_094859_646027_397FCB7C 
-X-CRM114-Status: GOOD (  28.20  )
+X-CRM114-CacheID: sfid-20260113_215327_648024_6B1F435E 
+X-CRM114-Status: GOOD (  18.59  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -164,233 +215,108 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jan 13, 2026 at 07:27:05PM +0200, Adrian Hunter wrote:
-> On 13/01/2026 18:27, Frank Li wrote:
-> > On Tue, Jan 13, 2026 at 09:26:57AM +0200, Adrian Hunter wrote:
-> >> Prepare for future reuse.  Move core initialization logic from
-> >> i3c_hci_init() into a dedicated helper function,
-> >> i3c_hci_reset_and_init().
-> >>
-> >> Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
-> >> ---
-> >>
-> >>
-> >> Changes in V3:
-> >>
-> >> 	Move I/O mode setting if I/O mode already selected, to a
-> >> 	separate patch
-> >>
-> >> Changes in V2:
-> >>
-> >> 	New patch
-> >>
-> >>
-> >>  drivers/i3c/master/mipi-i3c-hci/core.c | 142 +++++++++++++------------
-> >>  1 file changed, 75 insertions(+), 67 deletions(-)
-> >>
-> >> diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-> >> index 569c8584045a..8b8e3952d41d 100644
-> >> --- a/drivers/i3c/master/mipi-i3c-hci/core.c
-> >> +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-> >> @@ -639,6 +639,80 @@ static int i3c_hci_set_io_mode(struct i3c_hci *hci, bool dma)
-> >>  	return 0;
-> >>  }
-> >>
-> >> +static int i3c_hci_reset_and_init(struct i3c_hci *hci)
-> >> +{
-> >> +	u32 regval;
-> >> +	int ret;
-> >> +
-> >> +	ret = i3c_hci_software_reset(hci);
-> >> +	if (ret)
-> >> +		return -ENXIO;
-> >> +
-> >> +	/* Disable all interrupts */
-> >> +	reg_write(INTR_SIGNAL_ENABLE, 0x0);
-> >> +	/*
-> >> +	 * Only allow bit 31:10 signal updates because
-> >> +	 * Bit 0:9 are reserved in IP version >= 0.8
-> >> +	 * Bit 0:5 are defined in IP version < 0.8 but not handled by PIO code
-> >> +	 */
-> >> +	reg_write(INTR_STATUS_ENABLE, GENMASK(31, 10));
-> >> +
-> >> +	/* Make sure our data ordering fits the host's */
-> >> +	regval = reg_read(HC_CONTROL);
-> >> +	if (IS_ENABLED(CONFIG_CPU_BIG_ENDIAN)) {
-> >> +		if (!(regval & HC_CONTROL_DATA_BIG_ENDIAN)) {
-> >> +			regval |= HC_CONTROL_DATA_BIG_ENDIAN;
-> >> +			reg_write(HC_CONTROL, regval);
-> >> +			regval = reg_read(HC_CONTROL);
-> >> +			if (!(regval & HC_CONTROL_DATA_BIG_ENDIAN)) {
-> >> +				dev_err(&hci->master.dev, "cannot set BE mode\n");
-> >> +				return -EOPNOTSUPP;
-> >> +			}
-> >> +		}
-> >> +	} else {
-> >> +		if (regval & HC_CONTROL_DATA_BIG_ENDIAN) {
-> >> +			regval &= ~HC_CONTROL_DATA_BIG_ENDIAN;
-> >> +			reg_write(HC_CONTROL, regval);
-> >> +			regval = reg_read(HC_CONTROL);
-> >> +			if (regval & HC_CONTROL_DATA_BIG_ENDIAN) {
-> >> +				dev_err(&hci->master.dev, "cannot clear BE mode\n");
-> >> +				return -EOPNOTSUPP;
-> >> +			}
-> >> +		}
-> >> +	}
-> >> +
-> >> +	/* Try activating DMA operations first */
-> >> +	if (hci->RHS_regs) {
-> >> +		ret = i3c_hci_set_io_mode(hci, true);
-> >> +		if (!ret) {
-> >> +			hci->io = &mipi_i3c_hci_dma;
-> >> +			dev_dbg(&hci->master.dev, "Using DMA\n");
-> >> +		}
-> >> +	}
-> >> +
-> >> +	/* If no DMA, try PIO */
-> >> +	if (!hci->io && hci->PIO_regs) {
-> >> +		ret = i3c_hci_set_io_mode(hci, false);
-> >> +		if (!ret) {
-> >> +			hci->io = &mipi_i3c_hci_pio;
-> >> +			dev_dbg(&hci->master.dev, "Using PIO\n");
-> >> +		}
-> >> +	}
-> >> +
-> >> +	if (!hci->io) {
-> >> +		dev_err(&hci->master.dev, "neither DMA nor PIO can be used\n");
-> >> +		ret = ret ?: -EINVAL;
-> >> +	}
-> >> +	if (ret)
-> >> +		return ret;
-> >> +
-> >> +	/* Configure OD and PP timings for AMD platforms */
-> >> +	if (hci->quirks & HCI_QUIRK_OD_PP_TIMING)
-> >> +		amd_set_od_pp_timing(hci);
-> >> +
-> >> +	return 0;
-> >> +}
-> >> +
-> >>  static int i3c_hci_init(struct i3c_hci *hci)
-> >>  {
-> >>  	bool size_in_dwords;
-> >> @@ -708,43 +782,6 @@ static int i3c_hci_init(struct i3c_hci *hci)
-> >>  	if (ret)
-> >>  		return ret;
-> >>
-> >> -	ret = i3c_hci_software_reset(hci);
-> >> -	if (ret)
-> >> -		return -ENXIO;
-> >> -
-> >> -	/* Disable all interrupts */
-> >> -	reg_write(INTR_SIGNAL_ENABLE, 0x0);
-> >> -	/*
-> >> -	 * Only allow bit 31:10 signal updates because
-> >> -	 * Bit 0:9 are reserved in IP version >= 0.8
-> >> -	 * Bit 0:5 are defined in IP version < 0.8 but not handled by PIO code
-> >> -	 */
-> >> -	reg_write(INTR_STATUS_ENABLE, GENMASK(31, 10));
-> >> -
-> >> -	/* Make sure our data ordering fits the host's */
-> >> -	regval = reg_read(HC_CONTROL);
-> >> -	if (IS_ENABLED(CONFIG_CPU_BIG_ENDIAN)) {
-> >> -		if (!(regval & HC_CONTROL_DATA_BIG_ENDIAN)) {
-> >> -			regval |= HC_CONTROL_DATA_BIG_ENDIAN;
-> >> -			reg_write(HC_CONTROL, regval);
-> >> -			regval = reg_read(HC_CONTROL);
-> >> -			if (!(regval & HC_CONTROL_DATA_BIG_ENDIAN)) {
-> >> -				dev_err(&hci->master.dev, "cannot set BE mode\n");
-> >> -				return -EOPNOTSUPP;
-> >> -			}
-> >> -		}
-> >> -	} else {
-> >> -		if (regval & HC_CONTROL_DATA_BIG_ENDIAN) {
-> >> -			regval &= ~HC_CONTROL_DATA_BIG_ENDIAN;
-> >> -			reg_write(HC_CONTROL, regval);
-> >> -			regval = reg_read(HC_CONTROL);
-> >> -			if (regval & HC_CONTROL_DATA_BIG_ENDIAN) {
-> >> -				dev_err(&hci->master.dev, "cannot clear BE mode\n");
-> >> -				return -EOPNOTSUPP;
-> >> -			}
-> >> -		}
-> >> -	}
-> >> -
-> >>  	/* Select our command descriptor model */
-> >>  	switch (FIELD_GET(HC_CAP_CMD_SIZE, hci->caps)) {
-> >>  	case 0:
-> >> @@ -762,36 +799,7 @@ static int i3c_hci_init(struct i3c_hci *hci)
-> >>  	if (hci->quirks & HCI_QUIRK_PIO_MODE)
-> >>  		hci->RHS_regs = NULL;
-> >
-> > these parts have not move into helper funciton.  Is it safe to use
-> > "hci->RHS_regs" in helper funciton?
->
-> These parts are initializing things that never need to be
-> re-initialized.
->
-> RHS_regs is the MMIO address of the Ring Headers section
-> for DMA, if there is one.  It is normally setup only once and
-> never changed, but the quirk above sets it to zero to prevent
-> DMA from being used.
->
-> The I/O mode (DMA or PIO) is selected during probe and never
-> changed.
+On 06/01/2026 18:44, Adrian Hunter wrote:
+> Hi
+> 
+> All patches now have Frank's Rev'd-by
 
-Okay
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
+Can these be applied?
 
->
-> >
-> > Frank
-> >
-> >>
-> >> -	/* Try activating DMA operations first */
-> >> -	if (hci->RHS_regs) {
-> >> -		ret = i3c_hci_set_io_mode(hci, true);
-> >> -		if (!ret) {
-> >> -			hci->io = &mipi_i3c_hci_dma;
-> >> -			dev_dbg(&hci->master.dev, "Using DMA\n");
-> >> -		}
-> >> -	}
-> >> -
-> >> -	/* If no DMA, try PIO */
-> >> -	if (!hci->io && hci->PIO_regs) {
-> >> -		ret = i3c_hci_set_io_mode(hci, false);
-> >> -		if (!ret) {
-> >> -			hci->io = &mipi_i3c_hci_pio;
-> >> -			dev_dbg(&hci->master.dev, "Using PIO\n");
-> >> -		}
-> >> -	}
-> >> -
-> >> -	if (!hci->io) {
-> >> -		dev_err(&hci->master.dev, "neither DMA nor PIO can be used\n");
-> >> -		if (!ret)
-> >> -			ret = -EINVAL;
-> >> -		return ret;
-> >> -	}
-> >> -
-> >> -	/* Configure OD and PP timings for AMD platforms */
-> >> -	if (hci->quirks & HCI_QUIRK_OD_PP_TIMING)
-> >> -		amd_set_od_pp_timing(hci);
-> >> -
-> >> -	return 0;
-> >> +	return i3c_hci_reset_and_init(hci);
-> >>  }
-> >>
-> >>  static int i3c_hci_probe(struct platform_device *pdev)
-> >> --
-> >> 2.51.0
-> >>
-> >>
-> >> --
-> >> linux-i3c mailing list
-> >> linux-i3c@lists.infradead.org
-> >> http://lists.infradead.org/mailman/listinfo/linux-i3c
->
->
-> --
-> linux-i3c mailing list
-> linux-i3c@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-i3c
+> 
+> 
+> Changes in V4:
+> 	Add Frank's Rev'd-by for patches 5 - 8, 10 - 11
+> 
+> 
+> Changes in V3:
+> 
+>   A notable change in V3 is the introduction of patch 6 "Assign unique
+>   device names and IDs for Intel LPSS I3C" which does away with dynamic
+>   devid allocaion.
+> 
+>     i3c: mipi-i3c-hci: Quieten initialization messages
+> 	Minor white space tweaks to fix alignment
+> 
+>     i3c: mipi-i3c-hci-pci: Enable MSI support
+> 	Enhance commit message
+> 
+>     i3c: mipi-i3c-hci-pci: Assign unique device names and IDs for Intel LPSS I3C
+> 	New patch
+> 
+>     i3c: mipi-i3c-hci: Allow for Multi-Bus Instances
+> 	Enhance commit message
+> 
+>     i3c: mipi-i3c-hci-pci: Pass base regs as platform data to i3c core device
+> 	Enhance commit message
+> 
+>     i3c: mipi-i3c-hci-pci: Convert to MFD driver
+> 	Add Frank's Rev'd-by
+> 	Adjust for doing away with dynamic devid allocation
+> 
+>     i3c: mipi-i3c-hci-pci: Add support for Multi-Bus Instances
+> 	Make hci a parameter of mipi_i3c_hci_pci_alloc()
+> 	Adjust for doing away with dynamic devid allocation
+> 	Enhance commit message
+> 
+>     i3c: mipi-i3c-hci-pci: Define Multi-Bus instances for supported controllers
+> 	Adjust for doing away with dynamic devid allocation
+> 
+> 
+> Changes in V2:
+> 	Add Frank's Rev'd-by for patches 1 - 3
+> 	Drop default driver data
+> 	New patches split from "i3c: mipi-i3c-hci-pci: Add support for
+> 	Multi-Bus Instances"
+> 	Conversion to MFD split into separate patch
+> 	Simplify ID allocation / free
+> 	Correct use of __free()
+> 	Also define instance 0 in driver_data
+> 
+> 
+> Add support for MIPI I3C Host Controllers with the Multi-Bus Instance
+> capability.  These controllers can host multiple I3C buses (up to 15)
+> within a single hardware function (e.g., PCIe B/D/F), providing one
+> indepedent HCI register set and corresponding I3C bus controller logic
+> per bus.
+> 
+> Add support for that to mipi-i3c-hci-pci and mipi-i3c-hci and define
+> Multi-Bus Instances for Intel controllers.
+> 
+> There are also some tidy-up patches to start with.
+> 
+> 
+> Adrian Hunter (11):
+>       i3c: mipi-i3c-hci: Remove duplicate blank lines
+>       i3c: mipi-i3c-hci: Stop reading Extended Capabilities if capability ID is 0
+>       i3c: mipi-i3c-hci: Quieten initialization messages
+>       i3c: mipi-i3c-hci-pci: Do not repeatedly check for NULL driver_data
+>       i3c: mipi-i3c-hci-pci: Enable MSI support
+>       i3c: mipi-i3c-hci-pci: Assign unique device names and IDs for Intel LPSS I3C
+>       i3c: mipi-i3c-hci: Allow for Multi-Bus Instances
+>       i3c: mipi-i3c-hci-pci: Pass base regs as platform data to i3c core device
+>       i3c: mipi-i3c-hci-pci: Convert to MFD driver
+>       i3c: mipi-i3c-hci-pci: Add support for Multi-Bus Instances
+>       i3c: mipi-i3c-hci-pci: Define Multi-Bus instances for supported controllers
+> 
+>  drivers/i3c/master/Kconfig                         |   1 +
+>  drivers/i3c/master/mipi-i3c-hci/cmd_v1.c           |   2 -
+>  drivers/i3c/master/mipi-i3c-hci/cmd_v2.c           |   2 -
+>  drivers/i3c/master/mipi-i3c-hci/core.c             |  48 +++++--
+>  drivers/i3c/master/mipi-i3c-hci/dat_v1.c           |   1 -
+>  drivers/i3c/master/mipi-i3c-hci/dma.c              |   6 +-
+>  drivers/i3c/master/mipi-i3c-hci/ext_caps.c         |  58 ++++----
+>  drivers/i3c/master/mipi-i3c-hci/ext_caps.h         |   1 -
+>  drivers/i3c/master/mipi-i3c-hci/hci.h              |   5 -
+>  drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c | 160 +++++++++++++--------
+>  drivers/i3c/master/mipi-i3c-hci/pio.c              |  17 ++-
+>  include/linux/platform_data/mipi-i3c-hci.h         |  15 ++
+>  12 files changed, 185 insertions(+), 131 deletions(-)
+>  create mode 100644 include/linux/platform_data/mipi-i3c-hci.h
+> 
+> 
+> Regards
+> Adrian
+
 
 -- 
 linux-i3c mailing list
