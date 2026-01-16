@@ -4,150 +4,150 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94B48C982C7
-	for <linux-i3c@archiver.kernel.org>; Fri, 16 Jan 2026 15:30:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC835C982D3
+	for <linux-i3c@archiver.kernel.org>; Fri, 16 Jan 2026 15:37:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m/8FNDOnUo9oMERzEvZFgEwL8Xqe/2Fybc9TEXYg+lU=; b=aUHwX/b+A00LSK
-	YWnaNkxMcAqwN1zle9JgKiErRTRFhb3l2SQ7cVNPspDc1ZFBJ+/GN7NhtjOo2+o+uXqeeJ5x47vG8
-	XLk4RAITW4TSNRIbVO40pHMx+FQ2jVeM1BmCAuxwaFRYOtlU3N0cMvJiNgEPwGIXLnL7gmIVRnmHI
-	Ag7vyWE7WS9/S4nBVc8pUas+bdk5YWOYh9k44PyWdqMBXmtqX57fKn/MuJjixq4oT+qfml6hVB4Lb
-	b/XTdzPH6yRcloIPZ1Un8SWtUJDKe7MSQ2ngIa1QX6mIbtLnu8tEeSIEHhGK9tWANhziWlsupH26X
-	eNW//OlbgudOgsVgjfRQ==;
+	List-Owner; bh=hIaeHOgqnM5w6smQ9JfuwWvQ9Pll4CN00S9lKRmbGz8=; b=lN1nTFtz3xsSph
+	OM8JTFb9oOBFE3jSrqh5brsjC0ZKA+ILGn9rBjjHLx/hQ+golTXiSxI7dEsaGmAhJb7Ey2+RZhJPQ
+	hT/ub7iRMm58zyOrY7WbTL0pGDRxHG3mUk4wMUAbzSwBQugvvTI0IBkti+sMoqgbXv2lviKlOHlqt
+	tnoCB/1d3nN5sWBUzjqK25ZRf8dTD17yEJU4QCbEgGUunR6eeuJSL7I+Di1tgt6uJ9GB/Ww1dTHFg
+	ZfjWQHB1OQUAV0MB9Uroo1nnrQaBbzN25Gw487jpXji69wJH86qFP0WD9ceGqhI2qXfzXhpabEHX6
+	V8++BlGwwhFFPiiJ44aw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vglm8-0000000EMjh-1Qln;
-	Fri, 16 Jan 2026 15:30:12 +0000
-Received: from mail-swedencentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c202::7] helo=GVXPR05CU001.outbound.protection.outlook.com)
+	id 1vgltJ-0000000ENZ8-1rZX;
+	Fri, 16 Jan 2026 15:37:37 +0000
+Received: from mail-westeuropeazon11010051.outbound.protection.outlook.com ([52.101.69.51] helo=AM0PR83CU005.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vglm5-0000000EMjF-12hL
+	id 1vgltG-0000000ENWj-3EIi
 	for linux-i3c@lists.infradead.org;
-	Fri, 16 Jan 2026 15:30:11 +0000
+	Fri, 16 Jan 2026 15:37:36 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=PpH9mYAi1orFeuzwan6swAob3BWz9ClkiUrbH04USg+D8fIdRFbrN4mJVG7qWHdXPSH1tnx0EaghpezJENhZJKY17IF9SXX2lXSOFwpo/upbIFzU2Sy9HZyyNoHnrCVav6ydYUblSlCCg+IDt/sM52Ta0eo2qbArM5H+eKA4DeQuEQNxC4vMTzV9riu+ORuUGKlD7koNaTP0dbx6y//5iHw82Hll4n8TiyDCt0yog1ERSmSn3o8jH7xVOln8JOMzl0eWbI9E31ap7B0isjHDeTwqSsECxPCsnUUOGt08drRQGQ3Ihkr5JglaI32ItJp4Uubq3wQ2OVW/4uvUax2yzg==
+ b=HEJ4sSwM1YUjz4dM9XTNzqyZvpt/iND2JM91nHz56vyZfITl9rP7iDr770SOe6SHDKfSlMcBGt2QRb5izApKdKHF6mWgu7cktb4E33uOkg7PDMCFjbpcfst6C8WTBfkFRdcSJvFWE7PHS0Jh1QxaCYt0kEH6A3+pMWBveCvd7POxBJVnFtrKH/vJPLI27P/JVM6wxeHRTYAVpGkPIScz8Pi0YZ52Gvn+FrOkAkU41JLV1NlQJMWN7xgJPdBjtg4vTslEQhU1hmeDd6w/zGOxUp7n5q+PA0AgcIigRdc/trTkFTeQZH1AN7aZI1Dmv1fV8nYrmViE71mZ1zeSUnb0mg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=VqN/gOWTMGKbpAceKYfCGk3TFVGX1tSwjtzwzIGl2eI=;
- b=pxZ4RD4PFZM4wC4W2FPVs2b0924Ijx3uZ5MpHV5vjlhiTwwvR6RgvKo4W2VBq66x4WeucIS/4Hx2tk+GP76XknSIEEXda7zm8dROB18kuYwtkwHIrp7cJ4sbbslqbjAAeT2xSAqz9Yq1nsNmLhCjPfuvtJoXnjLZN0CRgECRnhg8Vmr6MNb+YHQSqcHwuKRGmfzaPOu+VF0Nk5oWKGdUYDvy2kOFSyDOmBQUll1UZoAo6D3Kmn6NPtZ4eaqC45lgbUEQhZt7vuz8ljtQYPsRqBeWblmUFjo41MMECppxoSaFoKrL/aRyIyfo78WbHBhRrCr8PnPYO97AuMFrK4FxjA==
+ bh=RTtjC6i3JgokA2Gw4cDubB//3lU5pD4nECn/mjUoyQ8=;
+ b=onmBtnrfbWwtwC65ORnu78yFPxk9nIYb0brVwOeR1lhkTgMdvVm6SOLagP7Jltiw7w7FNWf9moTID/VckVD16Tz0L7eFe6R+gzyQDK6N+3P1RuN7p52L56y1xTxWhFIZd2QbRYMQzvIrS9PE4keidn7gJcqdyyZn2aQD8WQpe9IynoijOYZlshT5yzMooP1J7MM41E24TPWKy4+9INuBHRQw1AwJ5H8Wdh2HShuDGABEUU9jJ47CPeOmFEO1itVblG+XLfF08sC+oHxWIt0RkDdwnQC2rsuTB7oRK1PLemHao4+nWnrfEuNhLldiQfsv1buGsesbJiLyRBLsJgR0pg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=VqN/gOWTMGKbpAceKYfCGk3TFVGX1tSwjtzwzIGl2eI=;
- b=R8aPiej4VdsVzfJiEDyuG4n6SFeFIawU2gdbZ4FZBLQO0x73XqUtJGJnzgyQ8kwJz0YYipIOpagZgofrcpjeane/ZFIfpTObWmJmkzDx2/3y4GEmosBbeEt5FLbY01lvLjcQ8rulZzhOpn1I6iOm2vN9fCbxLoqZTefqTztb0k2EAhAa6liiqXvy3O9JxJJtAo9ZvuwzNVd++o/foDuacRMLIlhj0nUebv6LKus5J2uXQlolRR/YL/czYYdI6J9fMCU1Oxzuaj1YaVhNfRJtoiUgUOuCb35tDow6gcChcj0K/Tfa1bMI8f+XIYqdQmGfgJfnJiKwVq7t7eVihD9YlQ==
+ bh=RTtjC6i3JgokA2Gw4cDubB//3lU5pD4nECn/mjUoyQ8=;
+ b=L6mpXwjv/3vyxUTGvzZuap/6PcPM1ODLttBO/MOIO34BtDq+4rcK8WyVjnUFAxZ+ocgxvqXwm+VfHJss1w01RkzYAaW0+WYcEIQNMBxZgleUhnzAfH6n+Die9PkvQHrR+1B3O17pUeOfsUequzDFff85jNkDzSldHYg24uxpv5kArQJy9FwxKIoajXeRWV1C99E93w2YxsYP2n9z23h+31BcCPrVJPEjykVYuSkbti2V7HJ8xSdnyHmtL7m3RFnm08eUfG6gsOos0Qqm9JlsAmwsXcjS/+2xwaT+zBF7WEY39//Gl+hHGZJQHMdzftFvD47CdIXfos2RNTY/BGEBlw==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from DU2PR04MB8951.eurprd04.prod.outlook.com (2603:10a6:10:2e2::22)
- by DB9PR04MB8377.eurprd04.prod.outlook.com (2603:10a6:10:25c::5) with
+ by AS5PR04MB9754.eurprd04.prod.outlook.com (2603:10a6:20b:654::9) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9520.4; Fri, 16 Jan
- 2026 15:30:04 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9520.5; Fri, 16 Jan
+ 2026 15:37:30 +0000
 Received: from DU2PR04MB8951.eurprd04.prod.outlook.com
  ([fe80::753c:468d:266:196]) by DU2PR04MB8951.eurprd04.prod.outlook.com
  ([fe80::753c:468d:266:196%4]) with mapi id 15.20.9478.004; Fri, 16 Jan 2026
- 15:30:04 +0000
-Date: Fri, 16 Jan 2026 10:29:59 -0500
+ 15:37:30 +0000
+Date: Fri, 16 Jan 2026 10:37:24 -0500
 From: Frank Li <Frank.li@nxp.com>
 To: Adrian Hunter <adrian.hunter@intel.com>
 Cc: alexandre.belloni@bootlin.com,
 	Wolfram Sang <wsa+renesas@sang-engineering.com>,
 	linux-i3c@lists.infradead.org
-Subject: Re: [PATCH 1/3] i3c: master: Add i3c_master_restore_daa() for
- post-hibernation address recovery
-Message-ID: <aWpZd0t4OMHrmtWW@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH 2/3] i3c: mipi-i3c-hci: Add optional System Suspend
+ support
+Message-ID: <aWpbNHLu0BXPV1Cz@lizhi-Precision-Tower-5810>
 References: <20260116151237.96721-1-adrian.hunter@intel.com>
- <20260116151237.96721-2-adrian.hunter@intel.com>
+ <20260116151237.96721-3-adrian.hunter@intel.com>
 Content-Disposition: inline
-In-Reply-To: <20260116151237.96721-2-adrian.hunter@intel.com>
-X-ClientProxiedBy: SN7PR04CA0116.namprd04.prod.outlook.com
- (2603:10b6:806:122::31) To DU2PR04MB8951.eurprd04.prod.outlook.com
+In-Reply-To: <20260116151237.96721-3-adrian.hunter@intel.com>
+X-ClientProxiedBy: BY3PR05CA0026.namprd05.prod.outlook.com
+ (2603:10b6:a03:254::31) To DU2PR04MB8951.eurprd04.prod.outlook.com
  (2603:10a6:10:2e2::22)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|DB9PR04MB8377:EE_
-X-MS-Office365-Filtering-Correlation-Id: fc2d04f5-7b2a-4a9c-72be-08de55141f03
+X-MS-TrafficTypeDiagnostic: DU2PR04MB8951:EE_|AS5PR04MB9754:EE_
+X-MS-Office365-Filtering-Correlation-Id: 18d05789-61b1-4ce1-7a53-08de551528fc
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|1800799024|19092799006|52116014|366016|38350700014|7053199007;
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?4nD/PRaCQNE8qE9Pd9CNvBuPOeQFI8f7AVq/8ZULhVKeNbkpe8oCkq9J7qC+?=
- =?us-ascii?Q?7cRbzy32QtlyQYoEsaOjTIxSISgJohdo9gNPCsdjNjLQ/IwybcyhRpANQFP4?=
- =?us-ascii?Q?GtkTG1Zrk24qFkoFlrZyeY+CPkQHTljPmaLsX8b0KuiGxxdAQu0j58Stgwb6?=
- =?us-ascii?Q?e+zq3g+9YcaT5635s5N3xzBekB3G++Q+/e5LpTEsemARBPlHkqFfPrC1VhfZ?=
- =?us-ascii?Q?Vqu3FoV1UDs9OjI72gWeDxTb/RyOeYUBuKFvPSiYqcOwjGVt8c5a3ycO4rW6?=
- =?us-ascii?Q?Xk5S6GocE7GkFbruewuGN+noS3bWhg9C0Hhyv3fvwkvtDMSK6gHkLZxVVvOa?=
- =?us-ascii?Q?+66r0JxjgNG61RwEsQS1ksXqFVGng23VFBEsvWmxbow9tFZ7WABKehhJUd5D?=
- =?us-ascii?Q?6oE45zY3apC6EFegXrqocl7lGyzfaQVlSI6q2QQ3i/gJ9UkEB2VCUuCBe18V?=
- =?us-ascii?Q?oLyDCP99f3YkeZbj/buc4gIKRBpNcj6uIOgCj+LfXU+GIC0LdLNlMyPrS9ZF?=
- =?us-ascii?Q?xC3taHsnsUckh2FrG6JBuipA/uw3wu+4bjOGEIAHp9Eeq+itha/NjjH4lOq8?=
- =?us-ascii?Q?74mfAKyMoh4hAk8Wx/3idTu4EkJnMMhe2+Vomc2/8ucjSQlkEDT58DDKokIO?=
- =?us-ascii?Q?5K9aMp07YG4WXN+lIDHLH3dfcdQWTyBuz/0Lh0Nwfo3zECfkMIKeUMnepufw?=
- =?us-ascii?Q?+yfoo8i9Rii6lAxPZrvRfZuS29SqDSC8U2IaD+I/oan6HLfQdF7yhBlnieLg?=
- =?us-ascii?Q?NtN5NCeYELHh357bwMKBQJtnbbqq9zVNir9+MwgYCEJ79g3KfcTd1EHgaCh4?=
- =?us-ascii?Q?+IWiIgV8joVOkFG1UZjyrDIpB3mr860PdvHHl3O4KDJNbKzXhfKNQcXkGMFb?=
- =?us-ascii?Q?lk0hxauqL+jusIZHtquaPgAIrLWIJ3BoEdmFAPj5Ub5NiuiQGielbZxs2kS1?=
- =?us-ascii?Q?039DWR2uZBzQkJcbcSqYOLk0OazzSnI8Eys4UiRtDMtNxzR0nztiJpQengYy?=
- =?us-ascii?Q?DTs27zQ5kAv5KPb+wOazGTnsMSFajsnIiDoP3VLynw17htqPuOvRQgZuzY3X?=
- =?us-ascii?Q?MEjHDUxwpY3E0z03MhOb991G0wnR0qc4uJ/aKQ2fHHxWBSZjDQUTYztzSOsb?=
- =?us-ascii?Q?ONMVI5tHydfwB/WW8xEwYGBNNuII7Bor3NNOS6O09i1kEjxRu0pX7zMxvLZp?=
- =?us-ascii?Q?jk5izpfNuqmATLIpwhbkgZeSsg8PDwy+LxVhG2o25+rF8DHtcDFpAlsYACox?=
- =?us-ascii?Q?7Kc4VYS1sl47KcW4fmY3a6vlAuwnoGSddb+AX0bPMrOuNhcZ0iBUEHFrIw/p?=
- =?us-ascii?Q?Y0H6fzoIXK/17JEfAH8boHCADZmMpyKYtk5ED2FViouYaJNNga4bJ+l6OAF+?=
- =?us-ascii?Q?/ahVAHq772VBZzPPTjfBuAIob/3dKxR1wBdf6qr6TJAnFuxnJKk4U4j73SKG?=
- =?us-ascii?Q?vfm9dcGPq/kHT0/74PZCsC+NvlFQzQfO5Kq9KnKBHE87hwCNawjLtqvXZ2X2?=
- =?us-ascii?Q?ruGi1wVRIxwugzmxow9vl2PRDbKNTevTt/RVcPzIu/0oCdS/Ul9r1B7rnwZb?=
- =?us-ascii?Q?r2R7/mknNA36m2F3qVnFmlRUel9mu18sCSk325Buc6LEjdA7fA2zGWE23SFq?=
- =?us-ascii?Q?j70lvJuiH5+jkdcXN8HGRqA=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(19092799006)(52116014)(366016)(38350700014)(7053199007);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|19092799006|1800799024|376014|52116014|38350700014|7053199007;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?2Z5ktheCuRD4r4BZxXONBLOVr72yXaf5ROFNTnJiErJ28lI71TZE40GLQ0PK?=
+ =?us-ascii?Q?ozcx6KMKRnuFvhytt3+5DqaE4x+KqiEeIJ9MqEVA+PZ+i50ONsj0C4xWf7x1?=
+ =?us-ascii?Q?hJglCa+bej6Mwd6dP1q+uf6wov84adr3X9QtYuWlgmPB43zjk5Kmla0K+ado?=
+ =?us-ascii?Q?bLgCrxajXuVNomg4j1ngRUQCl67ATBtfvO4WS/ljMj1j14AQgg1R3EptFgXH?=
+ =?us-ascii?Q?6QClrnKNMxtiG0wYTLkTh3NQM+dccjbTG+lOwWBFPqW5H/Tm9ngJBLkp8rKy?=
+ =?us-ascii?Q?6ydGbBU3HqRZxQOQgM9t1WeJVCakwvW9N8tmyXTT3K7h7+hBZAMpefi9sEUr?=
+ =?us-ascii?Q?U6BS/Rw2vpbM8uoC9UcOLc7XPigpHC+k4T3OZEgbPNSlU66Gqu3rQ9lwRRwK?=
+ =?us-ascii?Q?M8cpEMeOjWUKVM2gkQwKjKdHBsiVp754+AtB6cBaXX4ikHrQnKnesCZKXruM?=
+ =?us-ascii?Q?m2Z3aTYYD7bHQ0l4iHLVg7Hkkn8DpVNVyIMAqaqRa47iw0OJq55G4iNQ/X5t?=
+ =?us-ascii?Q?Z0xMgPae1upKJ8SHQEgfx54yCyu58XEG6x2ThQTgLyGzFfW+oBrJVYIN5zh8?=
+ =?us-ascii?Q?X4UCTFQ95EUu1Q0g8+8vSSTFuAixy2bayllpaarPFauarTUO5DihVM0QACWu?=
+ =?us-ascii?Q?VKfFADnz3kQ+wykR71CzCLMOkUxUHKLXj9m3l3Y9gikMaDyZKwIklsU6Ow2e?=
+ =?us-ascii?Q?y+zhyNdcNzZfmikBkXLJBwQky6NvQ/FrB0bcxMiKv60jEgkvBMgwhb5zF23h?=
+ =?us-ascii?Q?kD2A0ZHuw0zzghAruCPfyxeBkJOuBnhKnujRIpfUBL9kxqUTwlgOxEwmGCZt?=
+ =?us-ascii?Q?RI1d6mpZnY6jMckJCvDVriqXRCy0kwOJXcWGGw0AkyfGGTi+Cjbe3/WMFbiF?=
+ =?us-ascii?Q?/WT/Hr7Z7LB8HJHuty37vBZ0puhhsc7wg3PZReWr8W/3pV13WNTAnQda03VD?=
+ =?us-ascii?Q?mr3WdKUbOM5NEC4eO/APYQUWIMAljJgfSYKVRAvLPipPoqSA8DDLYNsZzTzt?=
+ =?us-ascii?Q?w9dlqLzUbm9/3evoYUZBP7x1KZywUHNvVdR8b9O88ee78LuxD9Pz3/jpoga6?=
+ =?us-ascii?Q?o1OECowSBAfAqGqDlXfS9PJJuzKbVbCCXdmlLqdoxMhskzSLo6QlQOqPvZGW?=
+ =?us-ascii?Q?62Wjbohc53VZUiY5x7UT974JCTjtmJXJrQfi6GKS0jGt+d1gnLUz20wb2Yvp?=
+ =?us-ascii?Q?YnQmTzByIWRVeyMP6w1H0U3PMd0mHC61g9Q3EZt8GzajoA23IwAsx+GXUr1C?=
+ =?us-ascii?Q?Ez/PaBpTPAB2/BC5GHC5Ixuo09B9KJ2sxjsFmDvA5b43ovaIUUDzMaAFlnyT?=
+ =?us-ascii?Q?m4REClGqqZu/M+bm5KPqFQX5v6pA1n7vqyqb/i2Y0ZemaNgjia6Jeb2pe/yC?=
+ =?us-ascii?Q?ycUadV1CDvwOKi0zxJFv5Vs/osjxJZK6dFyS/8ZsHa7oZ3vDho1L+m3ayTDp?=
+ =?us-ascii?Q?67Z7njdn2dPDG5XSse0mT7lLSQgL1hjnmJaxybRRiTdAaepVAy2g5QMdJbWR?=
+ =?us-ascii?Q?26s/3EBHamOX8JjTIzW5BJ+ubwKEYpjqaVSpNWZWq3GyszGX+xjrGIrfCvYY?=
+ =?us-ascii?Q?afGxDLSwgqDriAwGVNH7aylVYlC/XjEDKJFkvnfmyqUL+KyYPeXaQDx8zSGL?=
+ =?us-ascii?Q?fFN7YtT8h6QtCgd4rYinuxo=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU2PR04MB8951.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(19092799006)(1800799024)(376014)(52116014)(38350700014)(7053199007);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?9mrr5+bOtD+tGfO85dSB76mjMBBqgus/dLalKajTDAp+nmlQRVxnL0WO2t80?=
- =?us-ascii?Q?L8lacaoe7aX8qODti4nRXaWbTfMfwfsolaBLLMTyi4Gt7gT/H8NEXbYCoXpo?=
- =?us-ascii?Q?YKOpXkK0lvq0jCdpDnPhQw561gVxoSmGpcnybMa0Z4zip1dr8dxPvFOebuil?=
- =?us-ascii?Q?WT+OeZsqj2ot5ECdSxBy6HBoLn3V2UFYocp7LNrKyghqlKgYRoZtNpJQnGOi?=
- =?us-ascii?Q?Yte7PA9XMkGmX4gzdLXrTRZ/8wYfoD/I1NJ0vm+hVpF983xMiIQZmLzkv5og?=
- =?us-ascii?Q?MlCnaTVHmDEcCxiv8UPaOXOZmMO1RQsciE0AQIQ1MirKx8VrqMVVZA7Bn5YU?=
- =?us-ascii?Q?opJmvHC5tV//SDScsawee9TDKid/J5ldWE2DJ2N7kqAWG7Ng0ERG8kqLBaPS?=
- =?us-ascii?Q?8vQAJyWl7/S5hqUeu3TwvYZiJKtidQDS8F1y7s/w3izUQeylnyIY6u5MfCtu?=
- =?us-ascii?Q?50e4uXe7gHx2GMJ98mzTSXq5vrhD7CmaPiW/AOBhPLuObxrIDWcHbgxZWe0x?=
- =?us-ascii?Q?SbYGmhSHgnMFikC+5l5ZUh9GzOWNwaPEcCrti3an26WEBWGhNoD5azV2pvK5?=
- =?us-ascii?Q?uAkewv3iLvhirJ8m37NeT4vZGiabp2LB9VwS92z7wznqpF1E40LZag3+iX1C?=
- =?us-ascii?Q?JncmCRQBIInRGhxN1MQLnAHWJZcrEpUvktBzcXD+Rcnj7w119iQlYtqRoboQ?=
- =?us-ascii?Q?VOMo6qyfh/skLlBReYgilibaEapbA1kJ66/jo6bgGhHzTFf4I3fCy5MJY2kr?=
- =?us-ascii?Q?hKqiql8eubi4QqwPy6fblgU98XOESP4Kdzhcnpz6CYrpLRjA7VL8f9OS0bP4?=
- =?us-ascii?Q?/zv8NPxCNENv667L/OfAqb3fOTqKQbBSF/2TgPntTI/A2+mtDWhELV8F/VHx?=
- =?us-ascii?Q?If5zZeeMx9mk8VnYmHMizyfbTb+OEhp5uOORtuw5jDWLQ6S/3l8b0e0/0HtO?=
- =?us-ascii?Q?XC9Ali+72wFCLRx6EM4A9MDWGSnpjsjrTg76yA+jTOb1j3yftvfAsqGg2H7y?=
- =?us-ascii?Q?szCLSg8f+blHd9FDUreJBO5vQhCaWgntfyZ3NtiB99wwQnf6FdQUJ5UoNyIt?=
- =?us-ascii?Q?X5BmOnDIq9pRZVv38TdwLu3PtiBhNX87wQe0IWFOUxikxOpyZiOJGaaSsGRx?=
- =?us-ascii?Q?hQRbtFR3Cw1rfkLqLpH0x3w4+Tzkz5AQCBHP67JWQf6A6QbdrQyZmCBmxUGW?=
- =?us-ascii?Q?badfScw+Ry9aoU4WBPduLWvMdMaRQyDqQXMqv3fdaCySVYhV+ha3aLx2dpBk?=
- =?us-ascii?Q?Xug9ieMVb8rDMILnMBjRD7IJ7YvxqQXjzn6oPyUrZHFbcZe/M0kOpt/RaG9e?=
- =?us-ascii?Q?3ozVefQD6YcUc+BKL57ZO6AUqZoQ2/yj9ojb+2Be7ala4RqWWqlzKTY2hEOo?=
- =?us-ascii?Q?6iOuqO+UAJDxGv6PQRJgRgHkGovtwKIZ/SEHdMCnZgyYWEQHst3A2ORlHXG+?=
- =?us-ascii?Q?6HldEv+iu+yHQyRvPhdW9FaUl5UqRXY0xrjDts/iqp+8fBkbyxmfy4/rrREN?=
- =?us-ascii?Q?QAE7dfpo3s80pKYvhHeQbYK6uDnsadvhPz6pqDu5IlwKJSfFafvJAWhPWKud?=
- =?us-ascii?Q?O5tn6WJA6ZcUTjdLFQparhAuU4FO3IXCnH8+o0SGfFC5Tj9oKqzl1dTj+HsF?=
- =?us-ascii?Q?xX0i+QjC91js1FkKtet7yvoF2+tFcjh683Ss2+65RCB63+OY7SwJcct5Nd2i?=
- =?us-ascii?Q?NA9KT7M6TSuZvuVpWzikEAqW9yHxweFTVkSySpHcWVZubM7j?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?BkRuyImlZXfRWKfDiqQDdB8dBGxkz7E9G4NVR8HPo7oFT2wdsFJfXZ5SzykJ?=
+ =?us-ascii?Q?edcVEhyU2W7nmwJKOq/NTu9xS0nAq9uV9E0Ti7SsRCBdxEacukLA6bnDngS1?=
+ =?us-ascii?Q?Bq+PUU2IAg+kS1nb1qr80JMfXYEbeAz30GSl24a9Pe1xN+l/MA2xLofGAuPK?=
+ =?us-ascii?Q?5g82F68hgcD/zmhi/wl9Gfc46RfWbDIiXJrcBZw8vnXu6oCHoG1Hl6kLqJIv?=
+ =?us-ascii?Q?nOqhPt2/7OnACkRBvcBEMTLW2cG/G5C6UeXyNh8N9d3sRv+lxv3UI47RZ4Hi?=
+ =?us-ascii?Q?s2Ylw1Id89fC4U6LwwU+iwZMsFDfM5n11J0uMcq/lm8QJdJjALpY7dfAO6iR?=
+ =?us-ascii?Q?5LvQvfsYDe6fshvJSp+s2AHHhgvfITg9Wc7tEzKCGzG7JdQndusNlaEmGP0n?=
+ =?us-ascii?Q?2mpY+jTpVmpGKoLVNPyhdQcUcFZtgOfehb1C6LpvCoWjnBRG5crEJT7fB9Ck?=
+ =?us-ascii?Q?nSe9keTT/XFgBDjnBkeBJ6rF8DhPl+WCz9I4eu2IRLOuf+wKxJ/9AKL7UW+R?=
+ =?us-ascii?Q?764OIsA/hLodOd81cnCjuXyOjKF0M0qpJdDeL24W/4PMogprLBSUAtSwsGEr?=
+ =?us-ascii?Q?acGMqxOIfg/TEjQJBG2er3y13gsyXleb7dxASGAQ6Wdw3Hf4Q8k/41rNG5g+?=
+ =?us-ascii?Q?C8lsTx2WLTeam9MgLcsiDh7fQs7HKgVumxeP8eAYOhk4vrW4kRWlHyp5dcOV?=
+ =?us-ascii?Q?VJovl0Gt8QjyxqZSHsmcCa/70eUMx+pTRiW7Gmgy3oSk8pNXbXSAYn/ye3kM?=
+ =?us-ascii?Q?m8JKGQJqRsu4AU2PIPbkSl9zO/v+NC8GSn6FSl+DueGlNvPjxDLA8uzOR7q6?=
+ =?us-ascii?Q?to1e2VCaYE2KYvlwi99bw3SqSBHwH6A9ne4Unxd2J4wtfIvXKGobPR+gv+sY?=
+ =?us-ascii?Q?5PqAdlMyF0hStBmrydolfddXhjwkeqYXayBa82prabSaK6mrls1bFidfpeNq?=
+ =?us-ascii?Q?PEs/5Vu/uwRF+MVhph6WeghMSSWiV4xyaCv6/U6fZxJic7iie8jmUpG44EUP?=
+ =?us-ascii?Q?6SXXp1U0YBYQzEw5KSHgwSU6AFfvc8zT19vgdVZgh9ZjC+2vuVuNNanXtXDh?=
+ =?us-ascii?Q?HCdaor7k1EwzVswGow7yE9dmwoe+8CdCN5Mr69lC/fqxijLbc2kPDTTICogu?=
+ =?us-ascii?Q?SUmMV4XSCXFqFyLzfJK4TC9u0SEZOswX7tTyvYbybqXcfZH3V7iW1I+rxB4H?=
+ =?us-ascii?Q?r/If8xmAzVS9kjd2CQ8zlBJjQCcpuVFJ/gW1ki1NT36a5w3z04KaLPrATekm?=
+ =?us-ascii?Q?un7voGr6KlJbpSrY6I4be3OiQEVsrKkoRepwsRPzzsHCfXVr81CH20QEpOmJ?=
+ =?us-ascii?Q?L7EY3BUfmgJtyaJcEYVFlWW0sAw7cKq7tLkUJO+Gci8KjMwkL495el+IbrEJ?=
+ =?us-ascii?Q?hXkHjMXEeevrSnYXZNU/elWMqzDlqqH2mGPcI9OKKXyDgdd7dVZu7sF54LJO?=
+ =?us-ascii?Q?i4U+2/i58AhKbzLdB5DyjagZ0mgTwHRfdkseddn4ymEesmp6gg0SY1Udm0pf?=
+ =?us-ascii?Q?KJN619cqbuT1EIvVUsSqeuI7obenLEqfFcSFTJf+sjomJq/m+lZefYk74rcC?=
+ =?us-ascii?Q?rAV2cN2ZwZObQ3qSQHilt2kCT7Hq44OERhcMsmv6fUG2/TZcyhYlTC4u3VxH?=
+ =?us-ascii?Q?YA+u1MJ/W/c+Gi+ux5M7VYQJGPSXjI7guXTRLZp4vxVHBf2bau3ZSZkRJMTp?=
+ =?us-ascii?Q?t/9PIVrWz4kwyteaHWUGeldq5vpTQmol1isqUJiZ1gUZK/Yg?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: fc2d04f5-7b2a-4a9c-72be-08de55141f03
+X-MS-Exchange-CrossTenant-Network-Message-Id: 18d05789-61b1-4ce1-7a53-08de551528fc
 X-MS-Exchange-CrossTenant-AuthSource: DU2PR04MB8951.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Jan 2026 15:30:04.2641
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Jan 2026 15:37:30.4686
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 2QaeNN5heuHH/1sMaQlUoZ57meSKqnLc7zxfEX4PlFLIRISk4zdLkjxx1qZe+W/uYSoXKMGODkbM+wFjZ4rAvw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB8377
+X-MS-Exchange-CrossTenant-UserPrincipalName: biaztngwaoNfTGEnJlYt8Ed0WIdZkUj22g0fBpl62aB4nH/1sGw1pYck055wj5TpBpCwbUuFWj++R+QG/9D+Ag==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS5PR04MB9754
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260116_073009_317769_E40A2F37 
-X-CRM114-Status: GOOD (  30.35  )
+X-CRM114-CacheID: sfid-20260116_073734_814821_9152486F 
+X-CRM114-Status: GOOD (  22.56  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -164,138 +164,99 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jan 16, 2026 at 05:12:35PM +0200, Adrian Hunter wrote:
-> After system hibernation, I3C Dynamic Addresses may be reassigned at boot
-> and no longer match the values recorded before suspend. Introduce
-> i3c_master_restore_daa() to handle this situation.
+On Fri, Jan 16, 2026 at 05:12:36PM +0200, Adrian Hunter wrote:
+> Add system suspend callbacks.  Implement them by forcing runtime PM.
+> Consequently bail out if Runtime PM is not allowed.
 >
-> The restore procedure is straightforward: issue a Reset Dynamic Address
-> Assignment (RSTDAA), then run the standard DAA sequence. The existing DAA
-> logic already supports detecting and updating devices whose dynamic
-> addresses differ from previously known values.
+> On resume from System Suspend (suspend to RAM), rerun Dynamic Address
+> Assignment to restore addresses for devices that may have lost power.
 >
-> Refactor the DAA implementation by introducing a shared helper used by both
-> i3c_master_do_daa() and the new restore function, and correct the
-> kernel-doc in the process.
->
-> Export i3c_master_restore_daa() so that master drivers can invoke it from
-> their PM restore callbacks.
-
-It is good. I3C Hub also need it.
-
+> On resume from System Hibernation (suspend to disk), use the new
+> i3c_master_restore_daa() helper which additionally handles the case where
+> devices are assigned different dynamic addresses after a hibernation boot.
 >
 > Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 > ---
->  drivers/i3c/master.c       | 60 +++++++++++++++++++++++++++-----------
->  include/linux/i3c/master.h |  1 +
->  2 files changed, 44 insertions(+), 17 deletions(-)
+>  drivers/i3c/master/mipi-i3c-hci/core.c | 53 ++++++++++++++++++++++++++
+>  1 file changed, 53 insertions(+)
 >
-> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index 594d61edcef4..1ba5d08365b4 100644
-> --- a/drivers/i3c/master.c
-> +++ b/drivers/i3c/master.c
-> @@ -1734,23 +1734,9 @@ i3c_master_register_new_i3c_devs(struct i3c_master_controller *master)
->  	}
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+> index 02c5a133e329..b972d8bc81e6 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/core.c
+> +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+> @@ -769,6 +769,53 @@ static int i3c_hci_runtime_resume(struct device *dev)
+>  	return 0;
 >  }
 >
-> -/**
-> - * i3c_master_do_daa() - do a DAA (Dynamic Address Assignment)
-> - * @master: master doing the DAA
-> - *
-> - * This function is instantiating an I3C device object and adding it to the
-> - * I3C device list. All device information are automatically retrieved using
-> - * standard CCC commands.
-> - *
-> - * The I3C device object is returned in case the master wants to attach
-> - * private data to it using i3c_dev_set_master_data().
-> - *
-> - * This function must be called with the bus lock held in write mode.
-> - *
-> - * Return: a 0 in case of success, an negative error code otherwise.
-> - */
-> -int i3c_master_do_daa(struct i3c_master_controller *master)
-> +static int __i3c_master_do_daa(struct i3c_master_controller *master, bool reset)
->  {
-> +	int rstret;
->  	int ret;
->
->  	ret = i3c_master_rpm_get(master);
-> @@ -1758,7 +1744,13 @@ int i3c_master_do_daa(struct i3c_master_controller *master)
->  		return ret;
->
->  	i3c_bus_maintenance_lock(&master->bus);
+> +static int i3c_hci_suspend(struct device *dev)
+> +{
+> +	struct i3c_hci *hci = dev_get_drvdata(dev);
 > +
-> +	rstret = i3c_master_rstdaa_locked(master, I3C_BROADCAST_ADDR);
-> +	if (rstret == I3C_ERROR_M2)
-> +		rstret = 0;
+> +	if (!(hci->quirks & HCI_QUIRK_RPM_ALLOWED))
+> +		return 0;
+> +
+> +	return pm_runtime_force_suspend(dev);
+> +}
+> +
+> +static int i3c_hci_resume_common(struct device *dev, bool restore)
+> +{
+> +	struct i3c_hci *hci = dev_get_drvdata(dev);
+> +	int ret;
+> +
+> +	if (!(hci->quirks & HCI_QUIRK_RPM_ALLOWED))
+> +		return 0;
+> +
+> +	ret = pm_runtime_force_resume(dev);
+> +	if (ret)
+> +		return ret;
+> +
+> +	if (restore)
+> +		ret = i3c_master_restore_daa(&hci->master);
 
-looks like you missed check 'reset' parameter.
+Is it simpler if design API like
+
+	i3c_master_do_daa_ext(&hci->master, restore);
 
 Frank
+> +	else
+> +		ret = i3c_master_do_daa(&hci->master);
 > +
->  	ret = master->ops->do_daa(master);
+> +	if (ret)
+> +		dev_err(dev, "Dynamic Address Assignment failed on resume, error %d\n", ret);
 > +
->  	i3c_bus_maintenance_unlock(&master->bus);
->
->  	if (ret)
-> @@ -1769,10 +1761,44 @@ int i3c_master_do_daa(struct i3c_master_controller *master)
->  	i3c_bus_normaluse_unlock(&master->bus);
->  out:
->  	i3c_master_rpm_put(master);
-> -	return ret;
-> +
-> +	return rstret ?: ret;
+> +	/*
+> +	 * I3C devices may have retained their dynamic address anyway. Do not
+> +	 * fail the resume because of DAA error.
+> +	 */
+> +	return 0;
 > +}
 > +
-> +/**
-> + * i3c_master_do_daa() - do a DAA (Dynamic Address Assignment)
-> + * @master: master doing the DAA
-> + *
-> + * This function instantiates I3C device objects and adds them to the
-> + * I3C device list. All device information is automatically retrieved using
-> + * standard CCC commands.
-> + *
-> + * Return: a 0 in case of success, an negative error code otherwise.
-> + */
-> +int i3c_master_do_daa(struct i3c_master_controller *master)
+> +static int i3c_hci_resume(struct device *dev)
 > +{
-> +	return __i3c_master_do_daa(master, false);
->  }
->  EXPORT_SYMBOL_GPL(i3c_master_do_daa);
->
-> +/**
-> + * i3c_master_restore_daa() - Restore Dynamic Addresses
-> + * @master: controller
-> + *
-> + * After System Hibernation, Dynamic Addresses can have been reassigned at boot
-> + * time to different values. A simple strategy is followed to handle that.
-> + * Perform a Reset of Dynamic Address (RSTDAA) followed by the normal DAA
-> + * procedure which has provision for reassigning addresses that differ from the
-> + * previously recorded addresses.
-> + *
-> + * Return: a 0 in case of success, an negative error code otherwise.
-> + */
-> +int i3c_master_restore_daa(struct i3c_master_controller *master)
-> +{
-> +	return __i3c_master_do_daa(master, true);
+> +	return i3c_hci_resume_common(dev, false);
 > +}
-> +EXPORT_SYMBOL_GPL(i3c_master_restore_daa);
 > +
->  /**
->   * i3c_master_dma_map_single() - Map buffer for single DMA transfer
->   * @dev: device object of a device doing DMA
-> diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
-> index c1ec597f655c..ea757b92e440 100644
-> --- a/include/linux/i3c/master.h
-> +++ b/include/linux/i3c/master.h
-> @@ -598,6 +598,7 @@ int i3c_master_get_free_addr(struct i3c_master_controller *master,
->  int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
->  				  u8 addr);
->  int i3c_master_do_daa(struct i3c_master_controller *master);
-> +int i3c_master_restore_daa(struct i3c_master_controller *master);
->  struct i3c_dma *i3c_master_dma_map_single(struct device *dev, void *ptr,
->  					  size_t len, bool force_bounce,
->  					  enum dma_data_direction dir);
+> +static int i3c_hci_restore(struct device *dev)
+> +{
+> +	return i3c_hci_resume_common(dev, true);
+> +}
+> +
+>  #define DEFAULT_AUTOSUSPEND_DELAY_MS 1000
+>
+>  static void i3c_hci_rpm_enable(struct device *dev)
+> @@ -945,6 +992,12 @@ static const struct platform_device_id i3c_hci_driver_ids[] = {
+>  MODULE_DEVICE_TABLE(platform, i3c_hci_driver_ids);
+>
+>  static const struct dev_pm_ops i3c_hci_pm_ops = {
+> +	.suspend  = pm_sleep_ptr(i3c_hci_suspend),
+> +	.resume   = pm_sleep_ptr(i3c_hci_resume),
+> +	.freeze   = pm_sleep_ptr(i3c_hci_suspend),
+> +	.thaw     = pm_sleep_ptr(i3c_hci_resume),
+> +	.poweroff = pm_sleep_ptr(i3c_hci_suspend),
+> +	.restore  = pm_sleep_ptr(i3c_hci_restore),
+>  	RUNTIME_PM_OPS(i3c_hci_runtime_suspend, i3c_hci_runtime_resume, NULL)
+>  };
+>
 > --
 > 2.51.0
 >
