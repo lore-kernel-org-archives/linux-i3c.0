@@ -4,138 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9D231E7DEF4
-	for <linux-i3c@archiver.kernel.org>; Mon,  2 Feb 2026 15:24:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C57DE7DEFC
+	for <linux-i3c@archiver.kernel.org>; Mon,  2 Feb 2026 16:04:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GzsuZ3J0YgTViC9uNrLKL4DtGfzWNAM5HigLZr6dcSw=; b=YLb+FS2nluAM3m
-	pPq7q3GUufwRchrBDgup38rXaf9d+OmLNiRiNecC3vRVM4rzB0r42sD1TvqXOGUmXIqYl277OAQx3
-	kvX6xiHkiHwYJSWm+ZXx+acPFuvcQBFsWKwuaadFh1n35MweNnN35g+163Jw1rfjNcZBLcTRyAcWb
-	dPv8dnaiofGx4gWZNp1jFisYE8W2wYsZsMQFwF26iU7SUkxiwU0wiG9Zynuv8t9uh4FYrWjJrbU9v
-	DsDWtv8NBY5yfEtTIFFWf9VVrbBjoTdsmNv55PNL9IKPgXJ6BrL6/axGIEo+sXVpLh+Dze5LT7vuf
-	qjOrfUT0gZotbrTDbcQQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:References:In-Reply-To:
+	Message-Id:Cc:To:From:Date:MIME-Version:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Z2Uh1+rZ/LpMu+eN3BIUzw9sBTNCXY+lkjOVK7kH7Ok=; b=0ZXGCTDcAMIIZEDJ+jvrCdDTk8
+	3XbVnXeSKrZgJ6R/5slcZA/PAvJXCEU7EbaycviTut5d79LaYil7esC/v8VXfhI5STrxpWpk2eN30
+	/1wKfrmy3k7ACrCzbu4onF+dOr9dCdq6q5tXhpIRwNXq+BMAbjIMQU/CC537sVahKT+G1tBF17rjN
+	dqB73iz7X+HAeWmbQfMkdVmNNw0VwFfuxAibrDN7yzcnI5hz8kHJwUbiMhv4vRANyAKvb9xdu6w4l
+	SOFqXvuBByvbcxlSobcUIC1MhhaHyaZZdg12SopKRd11si6QC6Vfe+Tv7Ot+SROvYK2mjJxfCGTWE
+	J3Av+hnw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vmvnE-00000005BWC-17HP;
-	Mon, 02 Feb 2026 15:24:48 +0000
-Received: from mail-dy1-x1336.google.com ([2607:f8b0:4864:20::1336])
+	id 1vmwQ6-00000005GKx-0GYO;
+	Mon, 02 Feb 2026 16:04:58 +0000
+Received: from fhigh-b8-smtp.messagingengine.com ([202.12.124.159])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vmvnB-00000005BVX-2jju
+	id 1vmwQ3-00000005GKY-0vxF
 	for linux-i3c@lists.infradead.org;
-	Mon, 02 Feb 2026 15:24:46 +0000
-Received: by mail-dy1-x1336.google.com with SMTP id 5a478bee46e88-2b70abe3417so10041452eec.0
-        for <linux-i3c@lists.infradead.org>; Mon, 02 Feb 2026 07:24:44 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1770045884; x=1770650684; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:sender:from:to:cc:subject:date:message-id:reply-to;
-        bh=9p8YrmROARkEBgIDOl0qmgBvazyjaoa1X7f/B8K6qZE=;
-        b=irng5tFfA3hZw794cc27sNOWN/BPpsEBBTJI8EMiX3xJFb33RB/qKDenZYfRDnBmno
-         ebp/wzaeMwTlOtZpA1qT3t1sFK05K6bH3L9Wz5Jcf8Qj/////KTq/EVWB69avJV3guKg
-         RgJzbDtd+hX6Q06hniAcGmMAX3hQ1i4Jj0iufu/eWm5TEUKqF3QDWCDvIHWToZ0COLtd
-         MdlzQChDhMrgsImXKKz10AWAyCrAKqeWTb6WewQH5WBnIHuDeDfA1Rk5Ikdn4o9F6i1U
-         fdrce2RjgjXCtjc5CTOP0GmctM47vOtmwi2r37lI+oUwMvl7qjxrrR95oVOxnYFv7LYu
-         DqZw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1770045884; x=1770650684;
-        h=content-transfer-encoding:in-reply-to:autocrypt:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:sender:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=9p8YrmROARkEBgIDOl0qmgBvazyjaoa1X7f/B8K6qZE=;
-        b=qoE6uBryuVj9N9HquSu7Z//en2mGd77DKqVFACzreztkomMxeUkxfvjO7gvAyH4HH3
-         xby7W0TvddNM9lZgwYkP0ggMSgFRyZc/KaYPSb+P1m23uNDg0aEpHOS2YTGRl/eUaVqc
-         0UHxBwBBPS7LicBxBr9k9Vva+u9DRvnBbvIUWts1kCBY1lUjcHxoLC5Gim4v2Vz8k+Zz
-         onngypWVX9ae9sOkc8jXibndR7n/VhcVbYUx2uezUhAa5jcvNY5Pp/5m09OcGdGvkFpc
-         al/s7ka0sz0R1Ejlk4xkLBgVDt11uY0T/g2uOhSWC9ZBnQ+cn+X6/ZK6wx1jmS2+jAsR
-         gHPA==
-X-Forwarded-Encrypted: i=1; AJvYcCUQlHb8Y4jv2mCwZjOymfci4yOQTh84CgYDNxktiuO72NQCFzstb6uT4IlYYQq/raDk/BnYWBMjYWY=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyqEhuEMlGyrAoci3E85AryfvYHh2lRUHkbXqFKhgq/90aKB4fn
-	gu3UT9DAR5xOan48eca7HmC3I4f4TUTjcHTWfEl35tfC6ZTfzK8H9XcO
-X-Gm-Gg: AZuq6aIK8wUkUe7AeF5B9VsEmQuSWhzK2XqP8B01mvJDBaPjP2Qm5qDbJCz7WNi1VNk
-	kmNjQVOR0dl+ceEoNqXHdVjt1WCE9npzo4fhcUAmEuukATakS3wet1SLNoCKX/n8dbpbvgf9t/n
-	5Y4law0HoplttVKAkI4ffhH1JNwWS8GxP8/LE0aQiHgyxU3v2eNsd5UopvoI0fN1MTrKai5orC6
-	udvjmxozitFdWdnSGySK+oOh2Otab7Rp9LYVjaf0pJN9+w/ftlEU+3/VYqqphT8zCC+KryHomUx
-	Z7oTi1m3T49vguE8a3IRrPQgaON62u6ermDzzIIGY322RqYzQ+FK1i6FUPapmUuqpjk/IfNJHhq
-	Tw2cR/Vpki26B+0geInds4o8jff/E3+i2lC2HaxMS+c0rpDSM04oeRZMAY8bLjnMKc88UxntAb/
-	D3wK8DK9yVFymatRN3GJ5fYKnKl+bEKEWOopWcDP0c1tfrn28YYL4R13pLMT0J
-X-Received: by 2002:a05:7300:7306:b0:2b7:2664:aeae with SMTP id 5a478bee46e88-2b7c8942454mr6177131eec.37.1770045884054;
-        Mon, 02 Feb 2026 07:24:44 -0800 (PST)
-Received: from ?IPV6:2600:1700:e321:62f0:da43:aeff:fecc:bfd5? ([2600:1700:e321:62f0:da43:aeff:fecc:bfd5])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-2b7a16cfaa8sm19624057eec.4.2026.02.02.07.24.42
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 02 Feb 2026 07:24:43 -0800 (PST)
-Message-ID: <8daadfff-a8c8-4775-93de-72088f929f9f@roeck-us.net>
-Date: Mon, 2 Feb 2026 07:24:41 -0800
+	Mon, 02 Feb 2026 16:04:56 +0000
+Received: from phl-compute-04.internal (phl-compute-04.internal [10.202.2.44])
+	by mailfhigh.stl.internal (Postfix) with ESMTP id 4F3E77A0063;
+	Mon,  2 Feb 2026 11:04:53 -0500 (EST)
+Received: from phl-imap-02 ([10.202.2.81])
+  by phl-compute-04.internal (MEProxy); Mon, 02 Feb 2026 11:04:54 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=arndb.de; h=cc
+	:cc:content-transfer-encoding:content-type:content-type:date
+	:date:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:subject:subject:to:to; s=fm2; t=1770048293;
+	 x=1770134693; bh=A5s8vBJiflOObhgPxrKF4zHMzLvR/1OrlhfaqkKdkoM=; b=
+	TuT/peSxHs1OA3x7debrv619RQpqqW3EsiUUfBpztnHZnhfeZHkNKFrEf0mjSwlh
+	CJu9eALI4pvF5Ny0vDcHcn+viOYIyBUKUGDbm6wrcBCKYEuSqw9yiwEAqQx7Ib+m
+	BMhaIslBS5TxNBR2UmgrLlOvqrhJLuI9XRg9wnZ/P+5xbTSENERTwL5Ms1J1OOHX
+	lP8EEf8t451D3LkqVXNVOLgXIPEaM0r3eK7H4ZL/hItkJrUDMRSXavHoaf8k9N4B
+	cyLGTOjG3us3AikX5/aqyOau08Mlldg2Q0YrF9tD9gUGfTScyDfHBOLbUqVKom0v
+	k7W/t2XLsbMzv0gwpxGUoQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-transfer-encoding
+	:content-type:content-type:date:date:feedback-id:feedback-id
+	:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:subject:subject:to:to:x-me-proxy
+	:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=1770048293; x=
+	1770134693; bh=A5s8vBJiflOObhgPxrKF4zHMzLvR/1OrlhfaqkKdkoM=; b=r
+	9bh5Rj4or5gJRgJz8SviVthV9zC8bxUYpEC04QnAUw6JABMBlShBxy8W0mb+WFZG
+	4+zKI0y/My4DNywKqqmnOzilsWsCXvS9joUfUYKS+2w4tR4VvAIa/GMMK2afxzPO
+	7E/pVxn7M8yFMxZxASpwMS0bZMpzQrklHXWIjbxe4oojKLfm+2YmGQTTqxDw/VbU
+	llcOxzXDryTRW7G8iJvHfoFXHG46XkwRQTHP0NyklB+vdZhyD7CPfDroNAQwEL7q
+	AUKdWQjPnZHSWtdRluG8RS65zx8U4QZ/yufr6Rkqf3yjUOwTkVCjQYn7Qvh0evhc
+	FZDIDrPDlgVZiwUTjYdww==
+X-ME-Sender: <xms:JMuAaTXbDgKtpDM816v67-RMy6N2afeQDpGZ5Znc0em5JTMdMSUCwA>
+    <xme:JMuAaWbHrx_lpz3qbnAKy7d7bdfKNSpiYkB8_psAka1rmkv-NM8DK02GAJeHcO72z
+    IwdbtmU1frx2g8FiFN5Wi_y6XvldHLUvr7suZw_82NKD332_jA5Jfc>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgddujeektdejucetufdoteggodetrf
+    dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
+    rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
+    gurhepofggfffhvfevkfgjfhfutgfgsehtjeertdertddtnecuhfhrohhmpedftehrnhgu
+    uceuvghrghhmrghnnhdfuceorghrnhgusegrrhhnuggsrdguvgeqnecuggftrfgrthhtvg
+    hrnhephfdthfdvtdefhedukeetgefggffhjeeggeetfefggfevudegudevledvkefhvdei
+    necuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomheprghrnh
+    gusegrrhhnuggsrdguvgdpnhgspghrtghpthhtohepudeipdhmohguvgepshhmthhpohhu
+    thdprhgtphhtthhopehnuhhnohdrshgrsegrnhgrlhhoghdrtghomhdprhgtphhtthhope
+    gulhgvtghhnhgvrhessggrhihlihgsrhgvrdgtohhmpdhrtghpthhtoheprghlvgigrghn
+    ughrvgdrsggvlhhlohhnihessghoohhtlhhinhdrtghomhdprhgtphhtthhopehflhhuth
+    hurhgvlhdrrggurhhirghnsehgmhgrihhlrdgtohhmpdhrtghpthhtoheprghnughrihih
+    rdhshhgvvhgthhgvnhhkohesihhnthgvlhdrtghomhdprhgtphhtthhopegrnhguhieskh
+    gvrhhnvghlrdhorhhgpdhrtghpthhtoheprghrnhgusehkvghrnhgvlhdrohhrghdprhgt
+    phhtthhopehjihgtvdefsehkvghrnhgvlhdrohhrghdprhgtphhtthhopehgrhgvghhkhh
+    eslhhinhhugihfohhunhgurghtihhonhdrohhrgh
+X-ME-Proxy: <xmx:JMuAaVaMzCa6xGRIp4lVpN70Eh8Dwv_fuc8FO4QIv-jnbFwyT_0cBw>
+    <xmx:JMuAaVxQ2w95eD-3mxzEBGmBgWMHQ2qjSuo_Q2zjmRsbfefpURt8Aw>
+    <xmx:JMuAaQcdY3dZSGKEIRifX31AYO-dGUCcEXQcbkhOQziDPGPuyKHwfQ>
+    <xmx:JMuAaTIk9PEpxRxgXphC27Qnrj8CDQo-_zFW1lQ3EeD7EAusG49GyQ>
+    <xmx:JcuAaaG1E7g8O-V-3CWalHNx4RXVnakZ2xoyZhE-JCO4NGvvDPuwaqIV>
+Feedback-ID: i56a14606:Fastmail
+Received: by mailuser.phl.internal (Postfix, from userid 501)
+	id 9E8E9700065; Mon,  2 Feb 2026 11:04:52 -0500 (EST)
+X-Mailer: MessagingEngine.com Webmail Interface
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] i3c, iio: fix i3c driver dependencies
-To: Arnd Bergmann <arnd@kernel.org>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Jonathan Cameron <jic23@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Frank Li
- <Frank.Li@nxp.com>, Andy Shevchenko <andriy.shevchenko@intel.com>,
- Carlos Song <carlos.song@nxp.com>,
- Adrian Fluturel <fluturel.adrian@gmail.com>
-Cc: David Lechner <dlechner@baylibre.com>, =?UTF-8?Q?Nuno_S=C3=A1?=
- <nuno.sa@analog.com>, Andy Shevchenko <andy@kernel.org>,
- linux-hwmon@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-i3c@lists.infradead.org, linux-iio@vger.kernel.org
+X-ThreadId: AS8fLWBco_53
+Date: Mon, 02 Feb 2026 17:04:32 +0100
+From: "Arnd Bergmann" <arnd@arndb.de>
+To: "Guenter Roeck" <linux@roeck-us.net>, "Arnd Bergmann" <arnd@kernel.org>,
+ "Alexandre Belloni" <alexandre.belloni@bootlin.com>,
+ "Jonathan Cameron" <jic23@kernel.org>,
+ "Greg Kroah-Hartman" <gregkh@linuxfoundation.org>,
+ "Frank Li" <Frank.Li@nxp.com>,
+ "Andy Shevchenko" <andriy.shevchenko@intel.com>,
+ "Carlos Song" <carlos.song@nxp.com>,
+ "Adrian Fluturel" <fluturel.adrian@gmail.com>
+Cc: "David Lechner" <dlechner@baylibre.com>,
+ =?UTF-8?Q?Nuno_S=C3=A1?= <nuno.sa@analog.com>,
+ "Andy Shevchenko" <andy@kernel.org>, linux-hwmon@vger.kernel.org,
+ linux-kernel@vger.kernel.org,
+ "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
+ linux-iio@vger.kernel.org
+Message-Id: <01676354-a42d-4862-87d9-7377ea55fae8@app.fastmail.com>
+In-Reply-To: <8daadfff-a8c8-4775-93de-72088f929f9f@roeck-us.net>
 References: <20260202095628.1254175-1-arnd@kernel.org>
-Content-Language: en-US
-From: Guenter Roeck <linux@roeck-us.net>
-Autocrypt: addr=linux@roeck-us.net; keydata=
- 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
- np3900V20aS7eD9K8GTU0TGC1pyz6IVJwIE=
-In-Reply-To: <20260202095628.1254175-1-arnd@kernel.org>
+ <8daadfff-a8c8-4775-93de-72088f929f9f@roeck-us.net>
+Subject: Re: [PATCH] i3c, iio: fix i3c driver dependencies
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260202_072445_702158_570287FD 
-X-CRM114-Status: GOOD (  26.50  )
+X-CRM114-CacheID: sfid-20260202_080455_309196_44C97063 
+X-CRM114-Status: GOOD (  10.21  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -147,126 +122,36 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 2/2/26 01:55, Arnd Bergmann wrote:
-> From: Arnd Bergmann <arnd@arndb.de>
-> 
-> All combined i2c/i3c drivers appear to suffer from the same link
-> time problem when CONFIG_I3C is set to 'm':
-> 
-> arm-linux-gnueabi-ld: drivers/iio/magnetometer/mmc5633.o: in function `mmc5633_i3c_driver_init':
-> mmc5633.c:(.init.text+0x30): undefined reference to `i3c_driver_register_with_owner'
-> 
-> This was previously fixed several times by marking individual
-> drivers as 'depends on I2C; depends on I3C || !I3C', but this gets
-> tedious and is somewhat confusing.
-> 
-> Add a Kconfig symbol 'I3C_OR_I2C' to help replace those dependencies,
-> and use this in all the existing drivers that had already fixed it
-> as well as the new mmc5633 driver.
-> 
-> Fixes: 6e5f6bf2e3f0 ("iio: magnetometer: Add mmc5633 sensor")
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> ---
->   drivers/hwmon/Kconfig            | 17 ++---------------
->   drivers/i3c/Kconfig              | 12 ++++++++++++
->   drivers/iio/magnetometer/Kconfig |  2 +-
->   drivers/misc/amd-sbi/Kconfig     |  3 +--
->   4 files changed, 16 insertions(+), 18 deletions(-)
-> 
-> diff --git a/drivers/hwmon/Kconfig b/drivers/hwmon/Kconfig
-> index 41c381764c2b..1ddb3f73fdc0 100644
-> --- a/drivers/hwmon/Kconfig
-> +++ b/drivers/hwmon/Kconfig
-> @@ -1493,8 +1493,7 @@ config SENSORS_LM73
->   
->   config SENSORS_LM75
->   	tristate "National Semiconductor LM75 and compatibles"
-> -	depends on I2C
-> -	depends on I3C || !I3C
-> +	depends on I3C_OR_I2C
->   	select REGMAP_I2C
->   	select REGMAP_I3C if I3C
->   	help
-> @@ -2381,19 +2380,7 @@ config SENSORS_TMP102
->   
->   config SENSORS_TMP103
->   	tristate "Texas Instruments TMP103"
-> -	depends on I2C
-> -	select REGMAP_I2C
-> -	help
-> -	  If you say yes here you get support for Texas Instruments TMP103
-> -	  sensor chips.
-> -
-> -	  This driver can also be built as a module. If so, the module
-> -	  will be called tmp103.
-> 
+On Mon, Feb 2, 2026, at 16:24, Guenter Roeck wrote:
+> On 2/2/26 01:55, Arnd Bergmann wrote:
 
-Why ? That doesn't make sense to me, and if it does, it seems unrelated
-to what this patch claims to do.
+>> @@ -2381,19 +2380,7 @@ config SENSORS_TMP102
+>>   
+>>   config SENSORS_TMP103
+>>   	tristate "Texas Instruments TMP103"
+>> -	depends on I2C
+>> -	select REGMAP_I2C
+>> -	help
+>> -	  If you say yes here you get support for Texas Instruments TMP103
+>> -	  sensor chips.
+>> -
+>> -	  This driver can also be built as a module. If so, the module
+>> -	  will be called tmp103.
+>> 
+>
+> Why ? That doesn't make sense to me, and if it does, it seems unrelated
+> to what this patch claims to do.
 
-> -config SENSORS_TMP108
-> -	tristate "Texas Instruments TMP108"
-> -	depends on I2C
-> -	depends on I3C || !I3C
-> +	depends on I3C_OR_I2C
->   	select REGMAP_I2C
->   	select REGMAP_I3C if I3C
->   	help
-> diff --git a/drivers/i3c/Kconfig b/drivers/i3c/Kconfig
-> index 30a441506f61..626c54b386d5 100644
-> --- a/drivers/i3c/Kconfig
-> +++ b/drivers/i3c/Kconfig
-> @@ -22,3 +22,15 @@ menuconfig I3C
->   if I3C
->   source "drivers/i3c/master/Kconfig"
->   endif # I3C
-> +
-> +config I3C_OR_I2C
-> +	tristate
-> +	default m if I3C=m
-> +	default I2C
-> +	help
-> +	  Device drivers using module_i3c_i2c_driver() can use either
-> +	  i2c or i3c hosts, but cannot be built-in for the kernel when
-> +	  CONFIG_I3C=m.
-> +
-> +	  Add 'depends on I2C_OR_I3C' in Kconfig for those drivers to
-> +	  get the correct dependencies.
-> diff --git a/drivers/iio/magnetometer/Kconfig b/drivers/iio/magnetometer/Kconfig
-> index 2b81b22c9550..448fef4e5716 100644
-> --- a/drivers/iio/magnetometer/Kconfig
-> +++ b/drivers/iio/magnetometer/Kconfig
-> @@ -143,7 +143,7 @@ config MMC5633
->   	tristate "MEMSIC MMC5633 3-axis magnetic sensor"
->   	select REGMAP_I2C if I2C
->   	select REGMAP_I3C if I3C
-> -	depends on I2C || I3C
-> +	depends on I3C_OR_I2C
->   	help
->   	  Say yes here to build support for the MEMSIC MMC5633 3-axis
->   	  magnetic sensor.
-> diff --git a/drivers/misc/amd-sbi/Kconfig b/drivers/misc/amd-sbi/Kconfig
-> index be022c71a90c..30e7fad7356c 100644
-> --- a/drivers/misc/amd-sbi/Kconfig
-> +++ b/drivers/misc/amd-sbi/Kconfig
-> @@ -1,10 +1,9 @@
->   # SPDX-License-Identifier: GPL-2.0-only
->   config AMD_SBRMI_I2C
->   	tristate "AMD side band RMI support"
-> -	depends on I2C
-> +	depends on I3C_OR_I2C
->   	depends on ARM || ARM64 || COMPILE_TEST
->   	select REGMAP_I2C
-> -	depends on I3C || !I3C
->   	select REGMAP_I3C if I3C
->   	help
->   	  Side band RMI over I2C/I3C support for AMD out of band management.
+Indeed, that was not intended here. Sending a fixed version now.
 
+I have no idea how that change got in there.
+
+       Arnd
 
 -- 
 linux-i3c mailing list
