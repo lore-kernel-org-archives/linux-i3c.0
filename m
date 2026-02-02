@@ -4,62 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 775B9E6BF3F
-	for <linux-i3c@archiver.kernel.org>; Fri, 30 Jan 2026 23:08:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90C78E7314A
+	for <linux-i3c@archiver.kernel.org>; Mon,  2 Feb 2026 09:56:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=shFR3B3luYp0qckNI484UygjENTkedRtgWRQRZz/0u0=; b=nkaXVLziXmlRYG
-	2aXJdmS3uCCIQhsTCVm2c1zF3vOIcqsteZjwELOSxAYgZAuJb+GVv7jA6yrqUy4vvHLARjTApmjao
-	TK0vMXeoCeXB4cvx+2yTpAPdC4fFmlpYHXxYmCASDR3i4iQxKlTG0GJOBaVRCUfJHFipah4xGrZVB
-	7cZ0CJMfI4CE242NG4DP/YOiCCeQiKw60VUCS5Achv5hrkgxlg2cB2UqDSgcnW7I1OIT5Zf4QW81H
-	TdUhTxTjnvlGVcas1C6iToHi3/CIefyCX77eCzdUulg23sM6AYNUOtXGPA+33ymK4oIlMdf8z7Uu9
-	DeDJnnpV/qRKY/+EKwKQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0PBzSUjzkO+aJ+Qfcmklezgm5gXNEmt2gBT7NqyPLKg=; b=GHAEV6X+pUNXUQ
+	4PaOUHMc06HRMRHn1eEAjBVn/SX2193AFQJ7SXjIAsYa4rVUKmLH76AlVqddc6SNI5YbRQdh6HKoX
+	c+nXU4y1LCpw4bTuiN4vBztk27rCp7Wefy4ddvpGEsP1oAgSv0tejuD0xICgWJZVtMqvjYSAngHaK
+	MiKmSiy/Jwl8lOmddbVJDrHn86bW//3OfCnOijS39oRMfknSZpMZ+iXNrx0juMBDHlPx6DlVr6tdc
+	qk73G86+GDMFgv/w9XTSrhRNUmjZ2xisj+UfuyCUYJIT/zP5ZHX/er4C0wAZ97UY1wIgWT16nPhcB
+	2TmTN5pFrjFQTKJci+Rg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlxbn-000000025TV-0tpv;
-	Fri, 30 Jan 2026 23:08:59 +0000
-Received: from smtpout-04.galae.net ([185.171.202.116])
+	id 1vmqff-00000004kaL-1Ems;
+	Mon, 02 Feb 2026 09:56:39 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vlxbl-000000025TD-16cr
+	id 1vmqfc-00000004ka0-25Xy
 	for linux-i3c@lists.infradead.org;
-	Fri, 30 Jan 2026 23:08:58 +0000
-Received: from smtpout-01.galae.net (unknown [212.83.139.233])
-	by smtpout-04.galae.net (Postfix) with ESMTPS id 13B74C22F6C;
-	Fri, 30 Jan 2026 23:08:54 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 7186B6075A;
-	Fri, 30 Jan 2026 23:08:40 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 36A40119A88BC;
-	Sat, 31 Jan 2026 00:08:37 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1769814520; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=z3qzEGeCZzlKWUMH9rAOhDn+utLXbz17XfgqxD0uKYM=;
-	b=a9UVfyIVI/CceAbvp+8xoFg5WoWZBOeiy6YE3mSLC2iz/eOgp+tJiL2dKrOjIqyHayRcbF
-	r5H/7751G2Y6I3iCW3Zq6WdGThhc5WXxxbf/LbDDeHiITULOzYl7ekrJ4Kwmav65bKCZmI
-	5y1cKeKqXFzKq9VBpZ4Zt5NaLgy5AXMmiDxTQcZusqF7rBDyJt0pAAEzEKqjGM+Q8ZEOl4
-	vqV6XXdf07OBPSLcKMnRkzSCE4j3qTkl4AdIyJv7anVLe30Z3v2PlEoop1IZHdi0Y8SPP8
-	jN/DfD4qRUXKvJvu9lwFEhkf1ycqDXlONMliOCxOSJJBxxvVbwkT/R0H2DhSzw==
-Date: Sat, 31 Jan 2026 00:08:36 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Zilin Guan <zilin@seu.edu.cn>
-Cc: Frank.Li@nxp.com, aniketmaurya@google.com,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	jianhao.xu@seu.edu.cn
-Subject: Re: [PATCH] i3c: dw: Fix memory leak in dw_i3c_master_i2c_xfers()
-Message-ID: <176981440899.2224815.9388822314885453183.b4-ty@bootlin.com>
-References: <20260126081121.644099-1-zilin@seu.edu.cn>
+	Mon, 02 Feb 2026 09:56:37 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 6381B42B83;
+	Mon,  2 Feb 2026 09:56:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 04864C116C6;
+	Mon,  2 Feb 2026 09:56:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1770026195;
+	bh=To2VkYEmJRA5edR97P1H5WOqIjJetFQipCH+TeuvDts=;
+	h=From:To:Cc:Subject:Date:From;
+	b=nSt9BWUbMiJWt4qXGFjiKVn+G4YzRpsAAXIRMaITA0qsHNCoL0T6YbzAR5yD5hhH2
+	 0cntAZEQ1TDGFa6bTKUaTWG/ffkX2sBBWHmjMuaXNTKy9TDSf+mAJKjNNkJLeFDI2/
+	 BczdybJXbPy4lmFX2Vh6JW1jKLl4aarTpIhveSDE/fJUgwBjwovtDvLf6tNW6tHxSp
+	 HeqyV5i5f/c1sXxrurNxkT0OS5oZl2E0qeRzlEGK6eeBtv/Mmme//Rj5OlFh2SCNR4
+	 vbl5M2aYbhJoBYvCUTEI9SJGVbk1D4nN1P02k5020Tq0jaLY4yyjyEeM4M2K4p1Nnv
+	 YNsIGZI8ZGSFQ==
+From: Arnd Bergmann <arnd@kernel.org>
+To: Guenter Roeck <linux@roeck-us.net>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Jonathan Cameron <jic23@kernel.org>,
+	Arnd Bergmann <arnd@arndb.de>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Frank Li <Frank.Li@nxp.com>,
+	Andy Shevchenko <andriy.shevchenko@intel.com>,
+	Carlos Song <carlos.song@nxp.com>,
+	Adrian Fluturel <fluturel.adrian@gmail.com>
+Cc: David Lechner <dlechner@baylibre.com>,
+	=?UTF-8?q?Nuno=20S=C3=A1?= <nuno.sa@analog.com>,
+	Andy Shevchenko <andy@kernel.org>,
+	linux-hwmon@vger.kernel.org,
+	linux-kernel@vger.kernel.org,
+	linux-i3c@lists.infradead.org,
+	linux-iio@vger.kernel.org
+Subject: [PATCH] i3c, iio: fix i3c driver dependencies
+Date: Mon,  2 Feb 2026 10:55:31 +0100
+Message-Id: <20260202095628.1254175-1-arnd@kernel.org>
+X-Mailer: git-send-email 2.39.5
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260126081121.644099-1-zilin@seu.edu.cn>
-X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260130_150857_463697_E2F09BB6 
-X-CRM114-Status: UNSURE (   8.90  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260202_015636_575847_221AC521 
+X-CRM114-Status: GOOD (  16.28  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,28 +83,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, 26 Jan 2026 08:11:21 +0000, Zilin Guan wrote:
-> The dw_i3c_master_i2c_xfers() function allocates memory for the xfer
-> structure using dw_i3c_master_alloc_xfer(). If pm_runtime_resume_and_get()
-> fails, the function returns without freeing the allocated xfer, resulting
-> in a memory leak.
-> 
-> Add a dw_i3c_master_free_xfer() call to the error path to ensure the
-> allocated memory is properly freed.
-> 
-> [...]
+From: Arnd Bergmann <arnd@arndb.de>
 
-Applied, thanks!
+All combined i2c/i3c drivers appear to suffer from the same link
+time problem when CONFIG_I3C is set to 'm':
 
-[1/1] i3c: dw: Fix memory leak in dw_i3c_master_i2c_xfers()
-      https://git.kernel.org/i3c/c/253708941351
+arm-linux-gnueabi-ld: drivers/iio/magnetometer/mmc5633.o: in function `mmc5633_i3c_driver_init':
+mmc5633.c:(.init.text+0x30): undefined reference to `i3c_driver_register_with_owner'
 
-Best regards,
+This was previously fixed several times by marking individual
+drivers as 'depends on I2C; depends on I3C || !I3C', but this gets
+tedious and is somewhat confusing.
 
+Add a Kconfig symbol 'I3C_OR_I2C' to help replace those dependencies,
+and use this in all the existing drivers that had already fixed it
+as well as the new mmc5633 driver.
+
+Fixes: 6e5f6bf2e3f0 ("iio: magnetometer: Add mmc5633 sensor")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+---
+ drivers/hwmon/Kconfig            | 17 ++---------------
+ drivers/i3c/Kconfig              | 12 ++++++++++++
+ drivers/iio/magnetometer/Kconfig |  2 +-
+ drivers/misc/amd-sbi/Kconfig     |  3 +--
+ 4 files changed, 16 insertions(+), 18 deletions(-)
+
+diff --git a/drivers/hwmon/Kconfig b/drivers/hwmon/Kconfig
+index 41c381764c2b..1ddb3f73fdc0 100644
+--- a/drivers/hwmon/Kconfig
++++ b/drivers/hwmon/Kconfig
+@@ -1493,8 +1493,7 @@ config SENSORS_LM73
+ 
+ config SENSORS_LM75
+ 	tristate "National Semiconductor LM75 and compatibles"
+-	depends on I2C
+-	depends on I3C || !I3C
++	depends on I3C_OR_I2C
+ 	select REGMAP_I2C
+ 	select REGMAP_I3C if I3C
+ 	help
+@@ -2381,19 +2380,7 @@ config SENSORS_TMP102
+ 
+ config SENSORS_TMP103
+ 	tristate "Texas Instruments TMP103"
+-	depends on I2C
+-	select REGMAP_I2C
+-	help
+-	  If you say yes here you get support for Texas Instruments TMP103
+-	  sensor chips.
+-
+-	  This driver can also be built as a module. If so, the module
+-	  will be called tmp103.
+-
+-config SENSORS_TMP108
+-	tristate "Texas Instruments TMP108"
+-	depends on I2C
+-	depends on I3C || !I3C
++	depends on I3C_OR_I2C
+ 	select REGMAP_I2C
+ 	select REGMAP_I3C if I3C
+ 	help
+diff --git a/drivers/i3c/Kconfig b/drivers/i3c/Kconfig
+index 30a441506f61..626c54b386d5 100644
+--- a/drivers/i3c/Kconfig
++++ b/drivers/i3c/Kconfig
+@@ -22,3 +22,15 @@ menuconfig I3C
+ if I3C
+ source "drivers/i3c/master/Kconfig"
+ endif # I3C
++
++config I3C_OR_I2C
++	tristate
++	default m if I3C=m
++	default I2C
++	help
++	  Device drivers using module_i3c_i2c_driver() can use either
++	  i2c or i3c hosts, but cannot be built-in for the kernel when
++	  CONFIG_I3C=m.
++
++	  Add 'depends on I2C_OR_I3C' in Kconfig for those drivers to
++	  get the correct dependencies.
+diff --git a/drivers/iio/magnetometer/Kconfig b/drivers/iio/magnetometer/Kconfig
+index 2b81b22c9550..448fef4e5716 100644
+--- a/drivers/iio/magnetometer/Kconfig
++++ b/drivers/iio/magnetometer/Kconfig
+@@ -143,7 +143,7 @@ config MMC5633
+ 	tristate "MEMSIC MMC5633 3-axis magnetic sensor"
+ 	select REGMAP_I2C if I2C
+ 	select REGMAP_I3C if I3C
+-	depends on I2C || I3C
++	depends on I3C_OR_I2C
+ 	help
+ 	  Say yes here to build support for the MEMSIC MMC5633 3-axis
+ 	  magnetic sensor.
+diff --git a/drivers/misc/amd-sbi/Kconfig b/drivers/misc/amd-sbi/Kconfig
+index be022c71a90c..30e7fad7356c 100644
+--- a/drivers/misc/amd-sbi/Kconfig
++++ b/drivers/misc/amd-sbi/Kconfig
+@@ -1,10 +1,9 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ config AMD_SBRMI_I2C
+ 	tristate "AMD side band RMI support"
+-	depends on I2C
++	depends on I3C_OR_I2C
+ 	depends on ARM || ARM64 || COMPILE_TEST
+ 	select REGMAP_I2C
+-	depends on I3C || !I3C
+ 	select REGMAP_I3C if I3C
+ 	help
+ 	  Side band RMI over I2C/I3C support for AMD out of band management.
 -- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+2.39.5
+
 
 -- 
 linux-i3c mailing list
