@@ -4,64 +4,213 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0B682E7FDCD
-	for <linux-i3c@archiver.kernel.org>; Mon,  2 Feb 2026 20:50:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFD58E87823
+	for <linux-i3c@archiver.kernel.org>; Tue,  3 Feb 2026 12:55:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:CC:
+	To:Subject:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2ihDocaH8MZ0jU0YL5Kyz1pKDtoE6ttYpMz+RrRGNlg=; b=JMQ2Miixb/8Lio
-	8z3JboEZt2gYO/vc+nbpzeHCFtFUthfILW8/X68BKkBVrhbLs58j8lZ26yqU6xKWOC3V0AX0zojew
-	PHgABHq+g1G8wdUNCDLEQUFm9PSWXUBMcTK83m10xSFZM9/DkPo8ljjvASK4ae67YDWpA1Fk8llhZ
-	FGk/aA0LYV0tDB4REPILNBluZvKoVHweL/vPXmQ/RwiWqiYeD5kAVB1NDrzomuA9ok1gIzvneoi0X
-	dCAZzmp2bBURvP5YZknKnPwL1mvUbO1gbg+hTEpKV/db9GCOiCtl2PDyyR88TtA4Ko1rlZ4vmAUy/
-	qffCjOXcUNN1h0s3pNaw==;
+	List-Owner; bh=w4G/wtc+ZInUqfI/jA2Pyx2LE8sBDnEjzKd6fl0uQ6c=; b=Rrdjq+DMaPfGL1
+	0VGcHtcgk5NNQ1bWAkrAtMLzfplMY8b/PmjMOVNsLKX4KgCC6imw1rEHy+bYV0qzOFUnQUVkqu+/Q
+	33S23uUl+eK6bA7OyHMQFdpXn5Ep5zqsm+Egbq8riVkFYJM4AbknB11s9xRGV68j3KILF7NZsQ4Dm
+	B8Nu20olnc+Z9ZlT9ntHVZmjjenCSRh07lcvGTUOMBT0UEtyCX4bsMU+v85TeiEhcJi3zZwKpBmVW
+	JavFVDMcrZ2JghB2Gaq5sGPDlYrobPMWk8NxtluA6nXruUrVgkZufTBgIQjItvG0GZxOb68OPs+p8
+	akEo4m+VLyfkgrP7+18A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vn0sL-00000005dpS-35MH;
-	Mon, 02 Feb 2026 20:50:25 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vnFvp-00000006coV-0fuu;
+	Tue, 03 Feb 2026 12:55:01 +0000
+Received: from mgamail.intel.com ([192.198.163.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vn0sJ-00000005dp1-3LF3
+	id 1vnFvm-00000006cnr-0ZEP
 	for linux-i3c@lists.infradead.org;
-	Mon, 02 Feb 2026 20:50:23 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id C20C0600B0;
-	Mon,  2 Feb 2026 20:50:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4D151C19421;
-	Mon,  2 Feb 2026 20:50:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1770065422;
-	bh=1K9FI4E1ObwdqxpHx7LiEIwfiSyDWa5czwseb70lxOM=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=DWMEuYN6LL7+Xs4vqeMZxI1nmYb0GyD4q6+L9W5e152Id1qWy63DEzAhJZuKhPqPB
-	 14kn5L3XUXD50ZrsbuoalJeVt7b3qcQvcpb+Ovsdtid5wj++N8dusDPJ4efTiYK917
-	 fT0GmdZz9JXtyCvh47fBGAPYWeWIFZq02V+joLduvLhk8ttgteWqsD51nZKsjyMn4y
-	 YEXpsBuuqpn0wKmcJkl8Zc1wTlUhjqq1MBr3K4sKsSKXhkK81MhRC5OCg7T7blNihd
-	 L5kCcDiS/9oDKFguV9i75Q3rh2cCoYg+O2v43QB/vZTSuKfECGsA9Gd200GEpW0Cdj
-	 8UwRgABQXbE1A==
-Date: Mon, 2 Feb 2026 20:50:11 +0000
-From: Jonathan Cameron <jic23@kernel.org>
-To: Guenter Roeck <linux@roeck-us.net>
-Cc: Arnd Bergmann <arnd@kernel.org>, Alexandre Belloni
- <alexandre.belloni@bootlin.com>, Arnd Bergmann <arnd@arndb.de>, Greg
- Kroah-Hartman <gregkh@linuxfoundation.org>, Andy Shevchenko
- <andriy.shevchenko@intel.com>, Frank Li <Frank.Li@nxp.com>, Adrian Fluturel
- <fluturel.adrian@gmail.com>, Carlos Song <carlos.song@nxp.com>, David
- Lechner <dlechner@baylibre.com>, Nuno =?UTF-8?B?U8Oh?=
- <nuno.sa@analog.com>, Andy Shevchenko <andy@kernel.org>, Jean Delvare
- <jdelvare@suse.de>, linux-hwmon@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
- linux-iio@vger.kernel.org
-Subject: Re: [PATCH] [v2] i3c, iio: fix i3c driver dependencies
-Message-ID: <20260202205011.221c1359@jic23-huawei>
-In-Reply-To: <a8f8ee55-3c87-4e9c-a5a9-12929855b86f@roeck-us.net>
-References: <20260202160543.3654499-1-arnd@kernel.org>
-	<a8f8ee55-3c87-4e9c-a5a9-12929855b86f@roeck-us.net>
-X-Mailer: Claws Mail 4.3.1 (GTK 3.24.51; x86_64-pc-linux-gnu)
+	Tue, 03 Feb 2026 12:54:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1770123298; x=1801659298;
+  h=message-id:date:from:subject:to:cc:references:
+   in-reply-to:content-transfer-encoding:mime-version;
+  bh=+zPOyEPAgsJjsIB7pNDSszaGTDoSkhw68qxFsoNqc58=;
+  b=A0g14adX9mGDc5xy9zNQfPEPWDoEQr1Q2bW7Y/ZQXnwYxJAVejdmBAH4
+   NMFU3xbcfAxbiXKHqPb69WsPhoDIEKCuh2m9xLHkbvSaQze/HfSGprDkD
+   vDO7QFLTE0mYDKHEdynJzN8zpondPoc1NbKJRGHrbM5+RSuPnIiXi5vNT
+   vSqr2a0HfZRKZhgcL5nL2+D2Y4oPGfkMgNJJ8x2laayun+InmBN3At4DP
+   yKl4Kpdys+/guUZOG4u5V0TIN8iCu3yqJJlmWkNGG7RDUKrpH1PAYvqj2
+   K7M1Y/fHGinRJg9WztvoTAak0C69srBLa5af/AeFg94y2gLyfMZ0tGNQ/
+   g==;
+X-CSE-ConnectionGUID: MyTZm7DoSd+SL84gFYJHVA==
+X-CSE-MsgGUID: engop3qaRISAVw2GdDJbbw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11690"; a="75149584"
+X-IronPort-AV: E=Sophos;i="6.21,270,1763452800"; 
+   d="scan'208";a="75149584"
+Received: from orviesa003.jf.intel.com ([10.64.159.143])
+  by fmvoesa106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Feb 2026 04:54:56 -0800
+X-CSE-ConnectionGUID: rfx3BLO5SIaLsbHZjo02aQ==
+X-CSE-MsgGUID: cii/n+e7SEO8BRu8IjWsZg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.21,270,1763452800"; 
+   d="scan'208";a="213981217"
+Received: from fmsmsx903.amr.corp.intel.com ([10.18.126.92])
+  by orviesa003.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Feb 2026 04:54:56 -0800
+Received: from FMSMSX901.amr.corp.intel.com (10.18.126.90) by
+ fmsmsx903.amr.corp.intel.com (10.18.126.92) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.35; Tue, 3 Feb 2026 04:54:55 -0800
+Received: from fmsedg903.ED.cps.intel.com (10.1.192.145) by
+ FMSMSX901.amr.corp.intel.com (10.18.126.90) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.35 via Frontend Transport; Tue, 3 Feb 2026 04:54:55 -0800
+Received: from PH7PR06CU001.outbound.protection.outlook.com (52.101.201.5) by
+ edgegateway.intel.com (192.55.55.83) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.35; Tue, 3 Feb 2026 04:54:54 -0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=TN4aOagtXfLDFVntENLOId780BOODSFSIWUSSzaju6LDDkg5iBAOgo/uPq0QFiHK1fEZbhFIhly1dddcoR1SdX6ythj6f3LJ9CFpStf5ULVFrawQqDTPHqjqzxDmfBAHkFZKwP9GV0jehRRR5CiJHYC0g80mEy6cd9DNRi2XUNNY2qbociDGVoJvN5Xe3HWxlRubxfkS1V9a36W8Ln5yVDKw+bUe+j8+kc2jyQdP5xjl67LDmfUiDloFiWxMIGhIqNHEZe7iBrRO9pdRZhqYL9R9nxU1USf8eHA3egwiOYPcsEk+P3DGoNY1qfqRFakPFbhgf6c6nSsD6iMxYw/DZA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=U7mCCyX2XR00091OOtkI3MubIraEfR0ZPMudevfmZrk=;
+ b=eKD9Wn6KxIFiLy4ZYOIy2dEi9ovNKb3txmspVxOQHSsi4zduQWTJZ/agPDfmeh3JUeknlBDTXa6tMHGRaZBDMy+0zpF5Jfj9iIIksFWV+N5aeSbOmBy1R02+0oujOi0tFrRrIduD6w0K47i8L4kPwRg977Gh0FpBH7KTvnLwYjYGVHqJisONuiofTlHQhXIsCJMELM9R1WQbiJYbKsNi87EzPM5LHYIIJ3j7n864WSyBpPVu25FxR/+OcUNkGO076PzCcaLjwIkb3lcz1nj4Fez5iqYj1w8GJYsz6jDVksbKCcLNcqIQ9bik7MYyrkh0hNfDdUyo8UBFLnJ1ZnHAwg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
+ dkim=pass header.d=intel.com; arc=none
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=intel.com;
+Received: from IA1PR11MB7198.namprd11.prod.outlook.com (2603:10b6:208:419::15)
+ by PH7PR11MB7985.namprd11.prod.outlook.com (2603:10b6:510:240::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9564.16; Tue, 3 Feb
+ 2026 12:54:49 +0000
+Received: from IA1PR11MB7198.namprd11.prod.outlook.com
+ ([fe80::2c4e:e92a:4fa:a456]) by IA1PR11MB7198.namprd11.prod.outlook.com
+ ([fe80::2c4e:e92a:4fa:a456%6]) with mapi id 15.20.9564.016; Tue, 3 Feb 2026
+ 12:54:49 +0000
+Message-ID: <eb335daa-ab6b-4cff-bea2-90160892bc8f@intel.com>
+Date: Tue, 3 Feb 2026 14:54:44 +0200
+User-Agent: Mozilla Thunderbird
+From: Adrian Hunter <adrian.hunter@intel.com>
+Subject: Re: [PATCH 5/7] i3c: mipi-i3c-hci: Allow parent to manage runtime PM
+To: "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>
+CC: <alexandre.belloni@bootlin.com>, <linux-i3c@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>, <linux-pm@vger.kernel.org>, Frank Li
+	<Frank.li@nxp.com>
+References: <20260129181841.130864-1-adrian.hunter@intel.com>
+ <20260129181841.130864-6-adrian.hunter@intel.com>
+ <aXu8TiFpMiIVk5Iq@lizhi-Precision-Tower-5810>
+ <dd681a97-de37-436b-b09e-5173c1de2f24@intel.com>
+ <aXvKZK8tTnCDGzth@lizhi-Precision-Tower-5810>
+ <a8a608c8-c6ce-415b-ac02-db1246edb15e@intel.com>
+ <aXzIeLLDxsmzUhI+@lizhi-Precision-Tower-5810>
+ <09622627-2ff3-4fb7-80f2-686d6474e417@intel.com>
+ <aYDP847mgleQBF5Y@lizhi-Precision-Tower-5810>
+Content-Language: en-US
+Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park,
+ 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 -
+ 4, Domiciled in Helsinki
+In-Reply-To: <aYDP847mgleQBF5Y@lizhi-Precision-Tower-5810>
+X-ClientProxiedBy: DB9PR06CA0002.eurprd06.prod.outlook.com
+ (2603:10a6:10:1db::7) To IA1PR11MB7198.namprd11.prod.outlook.com
+ (2603:10b6:208:419::15)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: IA1PR11MB7198:EE_|PH7PR11MB7985:EE_
+X-MS-Office365-Filtering-Correlation-Id: 187734b1-14e6-4abb-b6de-08de63236a65
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|376014|1800799024;
+X-Microsoft-Antispam-Message-Info: =?utf-8?B?dWR0SDZGYndMWDQvTCtoVk4xRG1tN1JnbG4ySFpYdmd1ZExIMUhXWm5LOE9u?=
+ =?utf-8?B?V3Q0eTZnNnlMN3dIeHhsMEpLYlRERjFzTnFGbG05WWs2RytMOSt0WlNxRTMz?=
+ =?utf-8?B?VTQvaTVuSEZ1WnBSMlB5dnNjejF6M3JsVEZKZGdNSTEvVWo2d0pkVlJkOHpP?=
+ =?utf-8?B?enJRYzJyNjhzQ2JLRVQ2TnRwUDByWlpNenlkUG1VREkzUnB5MmhXcmdsYWlw?=
+ =?utf-8?B?aGFZN2toQUtXeU1zS1Y5bVZWVkhCb3hVbGdIa2xTWlgxak9LUXZFeVdMdW5k?=
+ =?utf-8?B?MzlJOHVqWVNPQ1dTRXpvbnJ5NG1OZER2K0Z6aGhFUC8xS2d2UWZUeTg0MDk0?=
+ =?utf-8?B?ZFJwNTloVzZuUkNYYklXVy9Za2NqZUQ4azJpNWk2L3dWUlBPV3Z5bXFQR3hw?=
+ =?utf-8?B?ems3RFNlTWtTQXlzeDg0S0lUZVRaMkRWK1V4bEVPY0Q0QmVZZjNURTZMSmFq?=
+ =?utf-8?B?RFZhQzBDUks4Ni8xcWRYOEtmRzNrZnFZNEJGZFBDMTlEaDhqZ05VR3ErKzZj?=
+ =?utf-8?B?U0dCMnpxQmpIdGdGamdrcXU5OVMxcjVPcy9nVDd1N0xseHdlY0JzaTMxZ0tH?=
+ =?utf-8?B?S1JWUzEvVk0ySWw3NXErT0lvbFdxV0llWVNkNm1UN0ZtU0tHUHBMZW1xeWpG?=
+ =?utf-8?B?WkFSVDgyRk92QWJCVTl3Q291L1BBaSs2ajVuV1ViOVFDTUVtWUl3T1pGNXBG?=
+ =?utf-8?B?REFELzUwbko1U3JLanE1ZnBwNjJ1VW03OXZGY3JjZ2pJRTlrdVdwNUlaaHdE?=
+ =?utf-8?B?R2Q2UGc4bFVQM3FYYjhKTVhUeXM5d3RBN1UxbUJpZVlXNUh3eFdmakJGK20v?=
+ =?utf-8?B?cUR1SHFVUlhFNklaUDNmQXF2UStjUWhqTjlPM3Q2RzZoUXdXbzZRbENhbUNx?=
+ =?utf-8?B?MU9Gdk1ScEwvb29GVVRrYStmREhXR1NBT1J6NmZJUUM0R0o0STlBOE5UNWkx?=
+ =?utf-8?B?VDUrSitRU1dZT0cwMlk4WmJpVzJQbW1Ed2cwRmdmekdXU3hQQ3NHQW5GWFFm?=
+ =?utf-8?B?enJ3eVRMSEZuUyt6WHBHV0pDeDZ4M1Q4QmEwalVoN0QrYnpCcVFPbWFPQzJY?=
+ =?utf-8?B?NDZ5cnF3MWdSdG04dFVURmFmeng3TGl2eU9QTjk4MHNRZmpPWnBVRWtvblV2?=
+ =?utf-8?B?amxSSWN6anRvbytvV3VWZW8za3lpQ3NCUFpVbnFBZEplQVJGOHViNDhPSHJz?=
+ =?utf-8?B?UkQ1SWtrcU1PTmhPTmRTTzd1T09nenliTUh4MFQ1OUdCSHR6UEp6RjI0R2d0?=
+ =?utf-8?B?d2JqU09NdmJoMFZIMnF5KzUzck00STdZdG9BejN1V2ZJY1lPKzFITmUwOFdu?=
+ =?utf-8?B?cXFuSzZPUEdUMGlWb2hRbUlZdlNNVnluQ3VtU0lFUkY3ckErcklvU2lNZ1lw?=
+ =?utf-8?B?Nnd1dlZuWDJuY3J1VGcxOUp3WVhaQlpTUk1kb3pDTmlXZS9iQ3VNUUJkWkpv?=
+ =?utf-8?B?OXkzcVBqSlpmWTFlQWFCTCtKUUowR0FjSWlqS2xuTkVvaHp6SGd0RWpEbnZK?=
+ =?utf-8?B?azhqVDZwbm9QL0VEN2E1dnkyNktSdjBKTTRCZ2tnNGdhamlSK2ZoTTdyU0Y1?=
+ =?utf-8?B?RGVYZ3Y5MHNDRS90VUVtOVIvUnp0bG45T1RPbG5iNlZWZVQrbE5iQ29Wc0hL?=
+ =?utf-8?B?UElQNkxGcVF6MVFTN2gvejVIMWJGektjMDRJbUJ2U1FFeWtSNGR5d0ZudlZ0?=
+ =?utf-8?B?dFh0NTlmWDBpaU43dWI5UHdDbFYrSEk4RTJKYllUajdKaWlRMEM3eGZNTURJ?=
+ =?utf-8?B?M3pPQjc4amtsV3YxQ0YyQjdCbHE1aUFvSDdjSXZkN3VXTFVaVytvT2tjUnpz?=
+ =?utf-8?B?OFRJQ0RaTUpPTWc3N3VYejZjWTVZd0UwSGd1V3daRGRBZ05ZcGRyZVd4VzI5?=
+ =?utf-8?B?V3FsSklDdjl4ODFLbVZBQ0pOeGV3Q3R0OU5tdWc3NjhicldNY2FVWjZBLzk1?=
+ =?utf-8?B?UTk4V1lRZmNuUlZzbTVVKzk3aGV5ZnRRbS80ZGo5VmRvdEVrekc1a1QvQ0FF?=
+ =?utf-8?B?by90KzBWbkh0eWRxaklWdmwxdTZ0RC9uMXJwVGFuN1U4TTNUdUhUVFhsWC9L?=
+ =?utf-8?B?a0lEWjd2ejAzbWgrU0dwVWRrR3IrNlJJTEpCZ1ZnUm5BNU5QRTNOT3Uxcm5m?=
+ =?utf-8?Q?hUrM=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR11MB7198.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(1800799024);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?allOLzZRbE5CQzhJcGN1N1pVbW9CdlY3cHlFSDNubzl3SWEwRGpyZ21NQmlv?=
+ =?utf-8?B?K1JneDJReUlUR25BVnJNSi9jM0xYTHlWbGM5KzdpTG40dEgraWVwb2RVYTNt?=
+ =?utf-8?B?dzNYbEV2N1RjYzVISGlKTDlGaVg2a2w1OWpvUjdMNXY0Wkt1QS81QXQ1ZkJZ?=
+ =?utf-8?B?NjZQUEtuQ0szWDRDVm5nODBNV3pqcTFEakJnZmIvVjFwdVQ1TFhjeFZBRXA3?=
+ =?utf-8?B?VDdYS0xSNERuTzd0WDdCSHdoNnFaMVYyK0oyQThrU1c3UkNScm1pWHRDZHBo?=
+ =?utf-8?B?eVFKdTlhdEtZMFMwTEk2bS9zSmlUSlhJNXpYRlowa3d3MWRLY3UzY1Jyek9N?=
+ =?utf-8?B?ZHlJZHVCY0o3UHh5MFB2MDBZaFJVNU5yViswdy9TdDVlU0phc0x1SFp3dGxL?=
+ =?utf-8?B?UlhRNCtrZ1M3S0w2V2JMUFYxVkZ0czZ3MEt6R0ZLUkRiU0hpNk9CeXI5cDFL?=
+ =?utf-8?B?M0Z3NEhyNFFVUThTZWMyMmN1c3FlakRoNG5XZmN3MDd1YnFBakdRQzFCczIr?=
+ =?utf-8?B?V0k3UHNTL1pkSWI5ejZzZlQyME9hOHRsT1RFWHV5Z0ZKaTlkRHZzeE1mZVQ1?=
+ =?utf-8?B?a0ltL1ZPOW5jYzFBM1BQWGpQRStuTzc4SDFySFV6V1hkTWoyd05FSFVBYldQ?=
+ =?utf-8?B?dTZNSU1MazFUdGVvUXZBMGRBQ0lwQXo4bnRjcFE0OGRpaVZWcWhRaElORGZO?=
+ =?utf-8?B?b0R1QVdGc2h4dFYyK2lFMGxDQ1FkVW42U1l5bFIxSDZrVDBqZmVGblJYZ2to?=
+ =?utf-8?B?N0g1UXprSDNrTFFNMjBZSlpMTzMrR3labncvY05teklWUll4cncraFoxU2Rr?=
+ =?utf-8?B?Z2pEdmVSditabFJERGFuSUE4Ujh6NWxpZFZnenRPWjJkQU5oNmtSYllsWkFh?=
+ =?utf-8?B?Mk96RmswSmVJUzI1STg3Y2VOQkRZWFphYTNsMWNhS292QS9OWjRuclNpNGVN?=
+ =?utf-8?B?WElSQkV1UUpDL3BaeWZ1WDVsYTRsaWdRbDlOREtPeSsxbFVnL0M2YkF6WnFE?=
+ =?utf-8?B?b1JsZDcxRU5tWkhBTU9rQW1Xc0dJNEdPNkozVmdxcnJ5Zmt1UXI1bGVIYUVQ?=
+ =?utf-8?B?SUVSVVdJODR5bWxwaDFyQkJERzVRY3FqbFZpd3hZVHZRR0NEWUFxRkp3ODhK?=
+ =?utf-8?B?d2JVTm1NVzg5cy9iSzNoSElvWXZEZExzcmlhVHJsTW9vaEM1Y1A3ZU5mZnQ2?=
+ =?utf-8?B?ZUFLenovQm1wcDZaa2JHNWtKak5lWXZNeXl6eC9Sand5TXNIMDE5SzRVQzVL?=
+ =?utf-8?B?S1BRT2c2bnJZSk1ZVlVZNHMyRGhPMUU4d1RiQ3J6a0djNnl1VGw1ZEw5alNB?=
+ =?utf-8?B?SmJxaFBOc0d4cGVVOUNmUFB0ckhSdDJHVXlaNUU0dVFsK3dSdFlzTFlydTZo?=
+ =?utf-8?B?ZWhhOFArK3RYNU5PSEQ0L1dNM05oQjZUZElhSjhUd0taV2xHejN3Y3R2eE5l?=
+ =?utf-8?B?dmpuNG9YOHhJSTU5bjZ6MUtwbnBRdmNnejh0MlBnZC8rNzBkVm15d1lwaDhS?=
+ =?utf-8?B?bVYxMDhTSG5kR202YjJnTnY5aFVxWU5XTDhKSHY2UjQ4Mk51Y3JLaG1mNXd6?=
+ =?utf-8?B?dHdoMytSbS9rMXZ4OFJaYldlMDBUNlp2ZTBEVTBvbUdOV1JSSmYxdHpuL2RL?=
+ =?utf-8?B?ZUxxY3lFVURLeUlyLzRTb200MHN4QTJ1WVphcC9wWGwwb3B6T2d3OWhvTlRt?=
+ =?utf-8?B?cnRqY3Z3aWVLaitCRkpaMGJzOFJqNkx0ODVSejl5TjFXRklESGRmKzY4WnpE?=
+ =?utf-8?B?WGs5THloUlJrODUxQkJYQ1QyTG5jd0hLQXNWZVA4cThhZVRvb3NkYkdmY1Yz?=
+ =?utf-8?B?TmFDYlVPakNuRU4yY2FNSUJBY05zMjUwQmpZdU5MMW56NGVmOUVvVXlFTHNt?=
+ =?utf-8?B?VEtaR2ppR1hFS3Jhc20yQkhicDZVQWFrU01DYnBLeHZsQVdMUUtaUHp0dnVo?=
+ =?utf-8?B?WFVIR2szNTZ0TGprMzZMUzJmRzliZnVjNXNZejl1Q3JGb2NKVTE5MlczZ3Zr?=
+ =?utf-8?B?bE4rS0g3a1pSb2NjVkRtTU04elJ1SWg4eWtQSVFXRzZCd0RGOW5LNm1ab2N6?=
+ =?utf-8?B?S29JTEg2MnB2V21uenB5aXhvK1hFc0ZjOTIwMXl0Tld5dWNJeGxFKzByM0Iy?=
+ =?utf-8?B?ekppeEN2SUxadVY2V1pjcEhlSzVGZkpBclJsaStpbmpTRlZzQlZIeEhGOTN6?=
+ =?utf-8?B?c3l3MjJBSUVSQThMM0tlYXZhYzVOdkFIZllia0wrRTJOVXphQkFCR3dlUjZO?=
+ =?utf-8?B?b0JCZVNTVVNmTEFacUhUeU9PUVlYNkpDMUVBaDZoUDVHVHJ6M2RNcVhKWnQx?=
+ =?utf-8?B?bEFwejhmZjdRVTJZUHI0Y0xBUzRpMzBTWk9lWVJvTkVEM1BUU1Ztdz09?=
+X-MS-Exchange-CrossTenant-Network-Message-Id: 187734b1-14e6-4abb-b6de-08de63236a65
+X-MS-Exchange-CrossTenant-AuthSource: IA1PR11MB7198.namprd11.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Feb 2026 12:54:49.6731
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 46c98d88-e344-4ed4-8496-4ed7712e255d
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: R6tsx45Ha3YgLVnm8m/6cqgZejEeU1Fk4+ZwG+uOau+GmL+rQ3oY9KHGHiLSvRLVJL3WH5wqj1Cqvhl00RFxZQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH7PR11MB7985
+X-OriginatorOrg: intel.com
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260203_045458_251641_7F5AEF4A 
+X-CRM114-Status: GOOD (  13.92  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,131 +227,107 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, 2 Feb 2026 09:50:58 -0800
-Guenter Roeck <linux@roeck-us.net> wrote:
++ Rafael
 
-> On 2/2/26 08:04, Arnd Bergmann wrote:
-> > From: Arnd Bergmann <arnd@arndb.de>
-> > 
-> > All combined i2c/i3c drivers appear to suffer from the same link
-> > time problem when CONFIG_I3C is set to 'm':
-> > 
-> > arm-linux-gnueabi-ld: drivers/iio/magnetometer/mmc5633.o: in function `mmc5633_i3c_driver_init':
-> > mmc5633.c:(.init.text+0x30): undefined reference to `i3c_driver_register_with_owner'
-> > 
-> > This was previously fixed several times by marking individual
-> > drivers as 'depends on I2C; depends on I3C || !I3C', but this gets
-> > tedious and is somewhat confusing.
-> > 
-> > Add a Kconfig symbol 'I3C_OR_I2C' to help replace those dependencies,
-> > and use this in all the existing drivers that had already fixed it
-> > as well as the new mmc5633 driver.
-> > 
-> > Fixes: 6e5f6bf2e3f0 ("iio: magnetometer: Add mmc5633 sensor")
-> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> > ---
-> > v2: restore accidentally deleted lines
-> > ---
-> >   drivers/hwmon/Kconfig            |  6 ++----  
+Rafael, this is not at all urgent, but when you have time
+please have a look at this patch set.  There is also some
+more explanation below.  Is it acceptable?  Is there a
+better way?
+
+On 02/02/2026 18:25, Frank Li wrote:
 > 
-> For hwmon:
+> Does your device Hierarchy look like
 > 
-> Acked-by: Guenter Roeck <linux@roeck-us.net>
+>            PCI device
+>                |
+>        -----------------
+>       HCI1            HCI2
+>        |               |
+>      I3C M1          I3C M2
+
+Yes and no.  There is only 1 real device : the PCI device.
+It implements the MIPI I3C HCI standard which allows multiple
+I3C bus controllers in one device (in our case 2 controllers).
+
+The PCI driver mipi-i3c-hci-pci creates 2 platform devices,
+one for each controller.  The platform driver is mipi-i3c-hci:
+
+ Driver                        Device                     Bus
+
+ mipi-i3c-hci-pci            0000:00:11.1                 PCI
+                            /            \
+ mipi-i3c-hci      intel-lpss-i3c.0  intel-lpss-i3c.1     Platform
+
+LPSS I3C also supports wake-up from in-band interrupt (IBI) via
+PCI PME.  The PME only works when the PCI device is in a low power
+state (D3hot in our case).  Also the PME is effectively shared by
+the 2 controllers i.e. an IBI signal (the controller's SDA line
+pulled low) for either controller will cause the PME.
+
+That means there are only 2 valid configurations:
+
+	1: Both controllers enabled to receive IBIs
+		PCI device	D0
+		Controller 1	Enabled
+		Controller 2	Enabled
+
+	2: Both controllers disabled to enable PME wakeup
+		PCI device	D3hot
+		Controller 1	Disabled
+		Controller 2	Disabled
+
+However, represented as platform devices, the 2 controllers
+runtime suspend and resume independently from each other.
+Whereas they effectively need to runtime suspend (or resume)
+at the same time.
+
+The proposed solution is for the PCI driver mipi-i3c-hci-pci
+to take over managing runtime PM for both controllers, calling
+into mipi-i3c-hci when it is safe to do so, to save/restore state
+and disable/enable the controllers one after the other.
+
+Current situation (I3C next branch):
+
+	PCI device	Runtime PM enabled, dependent on child devices
+			PCI subsystem controls PCI device power state
+
+	Controller 1	Runtime PM enabled plus auto-suspend
+			I3C subsystem runtime PM gets/puts the Platform device
+			Runtime suspend: disable and save state
+			Runtime resume: restore state and enable
+
+	Controller 2	Runtime PM enabled plus auto-suspend
+			I3C subsystem runtime PM gets/puts the Platform device
+			Runtime suspend: disable and save state
+			Runtime resume: restore state and enable
+
+Proposed (this patch set):
+
+	PCI device	Runtime PM enabled plus auto-suspend
+			I3C subsystem runtime PM gets/puts the PCI device
+			For each controller:
+				Call into mipi-i3c-hci (when it is safe)
+					Runtime suspend: disable and save state
+					Runtime resume: restore state and enable
+
+	Controller 1	Runtime PM disabled
+
+	Controller 2	Runtime PM disabled
+
 > 
-Hi Arnd / All,
-
-I applied a less good fix and the pull request has gone to Greg for
-the IIO bug. I copied the hwmon config you have below.
-
-So I'm absolutely in favour of this improvement but it's
-probably a case of rebase after rc1 and it goes in next cycle.
-Or maybe Greg could pick a rebased version up on top of char-misc-next?
-
-So with it rebased,
-Reviewed-by: Jonathan Cameron <jonathan.cameron@huawei.com>
-
-
-Jonathan
-
-> >   drivers/i3c/Kconfig              | 12 ++++++++++++
-> >   drivers/iio/magnetometer/Kconfig |  2 +-
-> >   drivers/misc/amd-sbi/Kconfig     |  3 +--
-> >   4 files changed, 16 insertions(+), 7 deletions(-)
-> > 
-> > diff --git a/drivers/hwmon/Kconfig b/drivers/hwmon/Kconfig
-> > index 41c381764c2b..ecfba861f66d 100644
-> > --- a/drivers/hwmon/Kconfig
-> > +++ b/drivers/hwmon/Kconfig
-> > @@ -1493,8 +1493,7 @@ config SENSORS_LM73
-> >   
-> >   config SENSORS_LM75
-> >   	tristate "National Semiconductor LM75 and compatibles"
-> > -	depends on I2C
-> > -	depends on I3C || !I3C
-> > +	depends on I3C_OR_I2C
-> >   	select REGMAP_I2C
-> >   	select REGMAP_I3C if I3C
-> >   	help
-> > @@ -2392,8 +2391,7 @@ config SENSORS_TMP103
-> >   
-> >   config SENSORS_TMP108
-> >   	tristate "Texas Instruments TMP108"
-> > -	depends on I2C
-> > -	depends on I3C || !I3C
-> > +	depends on I3C_OR_I2C
-> >   	select REGMAP_I2C
-> >   	select REGMAP_I3C if I3C
-> >   	help
-> > diff --git a/drivers/i3c/Kconfig b/drivers/i3c/Kconfig
-> > index 30a441506f61..626c54b386d5 100644
-> > --- a/drivers/i3c/Kconfig
-> > +++ b/drivers/i3c/Kconfig
-> > @@ -22,3 +22,15 @@ menuconfig I3C
-> >   if I3C
-> >   source "drivers/i3c/master/Kconfig"
-> >   endif # I3C
-> > +
-> > +config I3C_OR_I2C
-> > +	tristate
-> > +	default m if I3C=m
-> > +	default I2C
-> > +	help
-> > +	  Device drivers using module_i3c_i2c_driver() can use either
-> > +	  i2c or i3c hosts, but cannot be built-in for the kernel when
-> > +	  CONFIG_I3C=m.
-> > +
-> > +	  Add 'depends on I2C_OR_I3C' in Kconfig for those drivers to
-> > +	  get the correct dependencies.
-> > diff --git a/drivers/iio/magnetometer/Kconfig b/drivers/iio/magnetometer/Kconfig
-> > index 2b81b22c9550..448fef4e5716 100644
-> > --- a/drivers/iio/magnetometer/Kconfig
-> > +++ b/drivers/iio/magnetometer/Kconfig
-> > @@ -143,7 +143,7 @@ config MMC5633
-> >   	tristate "MEMSIC MMC5633 3-axis magnetic sensor"
-> >   	select REGMAP_I2C if I2C
-> >   	select REGMAP_I3C if I3C
-> > -	depends on I2C || I3C
-> > +	depends on I3C_OR_I2C
-> >   	help
-> >   	  Say yes here to build support for the MEMSIC MMC5633 3-axis
-> >   	  magnetic sensor.
-> > diff --git a/drivers/misc/amd-sbi/Kconfig b/drivers/misc/amd-sbi/Kconfig
-> > index be022c71a90c..30e7fad7356c 100644
-> > --- a/drivers/misc/amd-sbi/Kconfig
-> > +++ b/drivers/misc/amd-sbi/Kconfig
-> > @@ -1,10 +1,9 @@
-> >   # SPDX-License-Identifier: GPL-2.0-only
-> >   config AMD_SBRMI_I2C
-> >   	tristate "AMD side band RMI support"
-> > -	depends on I2C
-> > +	depends on I3C_OR_I2C
-> >   	depends on ARM || ARM64 || COMPILE_TEST
-> >   	select REGMAP_I2C
-> > -	depends on I3C || !I3C
-> >   	select REGMAP_I3C if I3C
-> >   	help
-> >   	  Side band RMI over I2C/I3C support for AMD out of band management.  
 > 
+> You want HCI1 and HCI2 suspened only when both HCI1 and HCI2 can enter RM
+> time suspend status?
+> 
+> Device Link can link two devices, but not sure if it can handle cyclic
+> case, HCI1 and HCI2 depend each other.
+> 
+> Or you create common power domain for HCI1 and HCI2, in power domain to
+> handle suspend.
+> 
+> It'd better ask run time pm owner to provide better suggestion.
+
+Ok
 
 
 -- 
