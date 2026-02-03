@@ -4,98 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFD58E87823
-	for <linux-i3c@archiver.kernel.org>; Tue,  3 Feb 2026 12:55:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E849E87843
+	for <linux-i3c@archiver.kernel.org>; Tue,  3 Feb 2026 15:59:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:CC:
-	To:Subject:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w4G/wtc+ZInUqfI/jA2Pyx2LE8sBDnEjzKd6fl0uQ6c=; b=Rrdjq+DMaPfGL1
-	0VGcHtcgk5NNQ1bWAkrAtMLzfplMY8b/PmjMOVNsLKX4KgCC6imw1rEHy+bYV0qzOFUnQUVkqu+/Q
-	33S23uUl+eK6bA7OyHMQFdpXn5Ep5zqsm+Egbq8riVkFYJM4AbknB11s9xRGV68j3KILF7NZsQ4Dm
-	B8Nu20olnc+Z9ZlT9ntHVZmjjenCSRh07lcvGTUOMBT0UEtyCX4bsMU+v85TeiEhcJi3zZwKpBmVW
-	JavFVDMcrZ2JghB2Gaq5sGPDlYrobPMWk8NxtluA6nXruUrVgkZufTBgIQjItvG0GZxOb68OPs+p8
-	akEo4m+VLyfkgrP7+18A==;
+	List-Owner; bh=Mzb+BUr2t/vSxUIBPO0ZA+RE6zKT6oVWp01+KKuu19E=; b=OezgKhi/p/8tFH
+	15bgKas1k6mFOVAimb8tUcto0hPqcRiEoSBP+whWxbdo5Quz1/HU49+pUpu5VtrTmni9EBTAPMJPO
+	100xtBBinZ3wwnLy3hEpXPbq+mHv6HjkKk3SJMPoGrkgnlvdlt0aZ+Dzvfq0DYSmAWCg0oHjEyfGv
+	kn1OtLKdY78kQb/pENnPFkfTah+LiPMnFkUlGLC7ELuZ/yqiFrKP3+n2GW7DS7/FKmu/ug4Y6qdFl
+	LdttEZSg6yHoGAEk1YwS5SI6BmmIyCOYACek9hJ+HZYqK7MgOboxFIMWebkwXsGOzglC/5zYXa+Wt
+	1LT3bRE1Mw/ieZ5NciBQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnFvp-00000006coV-0fuu;
-	Tue, 03 Feb 2026 12:55:01 +0000
-Received: from mgamail.intel.com ([192.198.163.12])
+	id 1vnIoh-00000006scE-0pik;
+	Tue, 03 Feb 2026 15:59:51 +0000
+Received: from mail-norwayeastazon11013058.outbound.protection.outlook.com ([40.107.159.58] helo=OSPPR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnFvm-00000006cnr-0ZEP
+	id 1vnIoe-00000006sbj-2Y4S
 	for linux-i3c@lists.infradead.org;
-	Tue, 03 Feb 2026 12:54:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1770123298; x=1801659298;
-  h=message-id:date:from:subject:to:cc:references:
-   in-reply-to:content-transfer-encoding:mime-version;
-  bh=+zPOyEPAgsJjsIB7pNDSszaGTDoSkhw68qxFsoNqc58=;
-  b=A0g14adX9mGDc5xy9zNQfPEPWDoEQr1Q2bW7Y/ZQXnwYxJAVejdmBAH4
-   NMFU3xbcfAxbiXKHqPb69WsPhoDIEKCuh2m9xLHkbvSaQze/HfSGprDkD
-   vDO7QFLTE0mYDKHEdynJzN8zpondPoc1NbKJRGHrbM5+RSuPnIiXi5vNT
-   vSqr2a0HfZRKZhgcL5nL2+D2Y4oPGfkMgNJJ8x2laayun+InmBN3At4DP
-   yKl4Kpdys+/guUZOG4u5V0TIN8iCu3yqJJlmWkNGG7RDUKrpH1PAYvqj2
-   K7M1Y/fHGinRJg9WztvoTAak0C69srBLa5af/AeFg94y2gLyfMZ0tGNQ/
-   g==;
-X-CSE-ConnectionGUID: MyTZm7DoSd+SL84gFYJHVA==
-X-CSE-MsgGUID: engop3qaRISAVw2GdDJbbw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11690"; a="75149584"
-X-IronPort-AV: E=Sophos;i="6.21,270,1763452800"; 
-   d="scan'208";a="75149584"
-Received: from orviesa003.jf.intel.com ([10.64.159.143])
-  by fmvoesa106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Feb 2026 04:54:56 -0800
-X-CSE-ConnectionGUID: rfx3BLO5SIaLsbHZjo02aQ==
-X-CSE-MsgGUID: cii/n+e7SEO8BRu8IjWsZg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.21,270,1763452800"; 
-   d="scan'208";a="213981217"
-Received: from fmsmsx903.amr.corp.intel.com ([10.18.126.92])
-  by orviesa003.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Feb 2026 04:54:56 -0800
-Received: from FMSMSX901.amr.corp.intel.com (10.18.126.90) by
- fmsmsx903.amr.corp.intel.com (10.18.126.92) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.35; Tue, 3 Feb 2026 04:54:55 -0800
-Received: from fmsedg903.ED.cps.intel.com (10.1.192.145) by
- FMSMSX901.amr.corp.intel.com (10.18.126.90) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.35 via Frontend Transport; Tue, 3 Feb 2026 04:54:55 -0800
-Received: from PH7PR06CU001.outbound.protection.outlook.com (52.101.201.5) by
- edgegateway.intel.com (192.55.55.83) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.35; Tue, 3 Feb 2026 04:54:54 -0800
+	Tue, 03 Feb 2026 15:59:49 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=TN4aOagtXfLDFVntENLOId780BOODSFSIWUSSzaju6LDDkg5iBAOgo/uPq0QFiHK1fEZbhFIhly1dddcoR1SdX6ythj6f3LJ9CFpStf5ULVFrawQqDTPHqjqzxDmfBAHkFZKwP9GV0jehRRR5CiJHYC0g80mEy6cd9DNRi2XUNNY2qbociDGVoJvN5Xe3HWxlRubxfkS1V9a36W8Ln5yVDKw+bUe+j8+kc2jyQdP5xjl67LDmfUiDloFiWxMIGhIqNHEZe7iBrRO9pdRZhqYL9R9nxU1USf8eHA3egwiOYPcsEk+P3DGoNY1qfqRFakPFbhgf6c6nSsD6iMxYw/DZA==
+ b=L94c0x1On3eFn0i9rPV4yDsMqam5HpgGVeeRNT2EuLDcCz+yZmuC0dZDLhp+TLETZLQ0sohSokmXt9fXQw+Xik7RcMtGVysSskAK8wJh9iJt9End2aBMyZj6gOWsttFvryOmZ7EaG73RFIT1GV1odwCgQo++aF4jA6Id5XN0CeQyIeunSqSrGxyPYXG9eeJX/huaCx8vVy+lW9UNG748wOIppj8RhYgNJU9MyH0QHL6A4sMU8HVcqJQ/s6+QpwaaaWlgLMhUsazxizpgfuyhvs+asekx3Q0YiI2IdvVls0MdGX4UKaRDSMP0BaWeyrIfvbdngHI49sxoLn5mgbCUOg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=U7mCCyX2XR00091OOtkI3MubIraEfR0ZPMudevfmZrk=;
- b=eKD9Wn6KxIFiLy4ZYOIy2dEi9ovNKb3txmspVxOQHSsi4zduQWTJZ/agPDfmeh3JUeknlBDTXa6tMHGRaZBDMy+0zpF5Jfj9iIIksFWV+N5aeSbOmBy1R02+0oujOi0tFrRrIduD6w0K47i8L4kPwRg977Gh0FpBH7KTvnLwYjYGVHqJisONuiofTlHQhXIsCJMELM9R1WQbiJYbKsNi87EzPM5LHYIIJ3j7n864WSyBpPVu25FxR/+OcUNkGO076PzCcaLjwIkb3lcz1nj4Fez5iqYj1w8GJYsz6jDVksbKCcLNcqIQ9bik7MYyrkh0hNfDdUyo8UBFLnJ1ZnHAwg==
+ bh=Kxayv9oYFOwdjOWE6fs2W44/grfp70ZUbsJ3tFrqS98=;
+ b=iN1XXSjDVD1YQDUtiKf7w596X81ou+ATNmIw7OmXD6Ik48gFBcopAKtG7dR3AlgIrmycHw+WSxQztW0ZMKJnTokmexo1i8mvKPJtE6MHBA8c04gD/ET3gZz+6AwtoAKJdZI+X5EbcTPSqKGa1qa1I5PXaM29PhV2jmNgLANQx/lml1KnDd3+20ZylskA4VPoRbSSM7wWZI+90QvEP/LzgECrBIZ69QQIIvO0aH3lxVUX0QB+oD0wRjPABn7bQFy5J84x5Q0vF3R+VCJWm2ggbzvhfW3Buptax4EK6m9ES46+jihagzxQy9H5xU96pDngUwIPl4vSJV9eDquaJ10HMQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
- dkim=pass header.d=intel.com; arc=none
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Kxayv9oYFOwdjOWE6fs2W44/grfp70ZUbsJ3tFrqS98=;
+ b=J8DBOKnYT1YkPB8VN9pkBtcDdniKkY5zUeyKW3ADMk9umAfWvRlfHw4zVW5RjEp/oKMDkHXm8xwN6yspJoUDSRaZMl6IxXhG/4O3F2ieTbhoK7neT7Ih0P8OW2E1laa6YoAXjXRKwGOjcT0LzmzvcmFWdv5jmpIRcJ+R8SopAtvC7mHzpmOnFfLanr67/ZZIP9t8EKzE19z1gjOYTnhfFcXfRDu3ML/mUjIO8BRoYpF5o9nprhnzD5xsi6U0grcpNhnD2DukmcZKifYuG2FORoJfzXCY4Yzy65i+xtdXoyphX1hM2WeN1+R4bUvNhvNESCqn114Bbvp+Q0J0ikN53w==
 Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=intel.com;
-Received: from IA1PR11MB7198.namprd11.prod.outlook.com (2603:10b6:208:419::15)
- by PH7PR11MB7985.namprd11.prod.outlook.com (2603:10b6:510:240::16) with
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from DU0PR04MB9372.eurprd04.prod.outlook.com (2603:10a6:10:35b::7)
+ by GV1PR04MB10728.eurprd04.prod.outlook.com (2603:10a6:150:200::13) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9564.16; Tue, 3 Feb
- 2026 12:54:49 +0000
-Received: from IA1PR11MB7198.namprd11.prod.outlook.com
- ([fe80::2c4e:e92a:4fa:a456]) by IA1PR11MB7198.namprd11.prod.outlook.com
- ([fe80::2c4e:e92a:4fa:a456%6]) with mapi id 15.20.9564.016; Tue, 3 Feb 2026
- 12:54:49 +0000
-Message-ID: <eb335daa-ab6b-4cff-bea2-90160892bc8f@intel.com>
-Date: Tue, 3 Feb 2026 14:54:44 +0200
-User-Agent: Mozilla Thunderbird
-From: Adrian Hunter <adrian.hunter@intel.com>
+ 2026 15:59:41 +0000
+Received: from DU0PR04MB9372.eurprd04.prod.outlook.com
+ ([fe80::4f6:1e57:c3b9:62b4]) by DU0PR04MB9372.eurprd04.prod.outlook.com
+ ([fe80::4f6:1e57:c3b9:62b4%4]) with mapi id 15.20.9564.016; Tue, 3 Feb 2026
+ 15:59:41 +0000
+Date: Tue, 3 Feb 2026 10:59:35 -0500
+From: Frank Li <Frank.li@nxp.com>
+To: Adrian Hunter <adrian.hunter@intel.com>
+Cc: "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+	alexandre.belloni@bootlin.com, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-pm@vger.kernel.org
 Subject: Re: [PATCH 5/7] i3c: mipi-i3c-hci: Allow parent to manage runtime PM
-To: "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>
-CC: <alexandre.belloni@bootlin.com>, <linux-i3c@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, <linux-pm@vger.kernel.org>, Frank Li
-	<Frank.li@nxp.com>
+Message-ID: <aYIbZ3PwiKUfp/eL@lizhi-Precision-Tower-5810>
 References: <20260129181841.130864-1-adrian.hunter@intel.com>
  <20260129181841.130864-6-adrian.hunter@intel.com>
  <aXu8TiFpMiIVk5Iq@lizhi-Precision-Tower-5810>
@@ -105,112 +69,93 @@ References: <20260129181841.130864-1-adrian.hunter@intel.com>
  <aXzIeLLDxsmzUhI+@lizhi-Precision-Tower-5810>
  <09622627-2ff3-4fb7-80f2-686d6474e417@intel.com>
  <aYDP847mgleQBF5Y@lizhi-Precision-Tower-5810>
-Content-Language: en-US
-Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park,
- 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 -
- 4, Domiciled in Helsinki
-In-Reply-To: <aYDP847mgleQBF5Y@lizhi-Precision-Tower-5810>
-X-ClientProxiedBy: DB9PR06CA0002.eurprd06.prod.outlook.com
- (2603:10a6:10:1db::7) To IA1PR11MB7198.namprd11.prod.outlook.com
- (2603:10b6:208:419::15)
+ <eb335daa-ab6b-4cff-bea2-90160892bc8f@intel.com>
+Content-Disposition: inline
+In-Reply-To: <eb335daa-ab6b-4cff-bea2-90160892bc8f@intel.com>
+X-ClientProxiedBy: PH8P221CA0043.NAMP221.PROD.OUTLOOK.COM
+ (2603:10b6:510:346::23) To DU0PR04MB9372.eurprd04.prod.outlook.com
+ (2603:10a6:10:35b::7)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: IA1PR11MB7198:EE_|PH7PR11MB7985:EE_
-X-MS-Office365-Filtering-Correlation-Id: 187734b1-14e6-4abb-b6de-08de63236a65
+X-MS-TrafficTypeDiagnostic: DU0PR04MB9372:EE_|GV1PR04MB10728:EE_
+X-MS-Office365-Filtering-Correlation-Id: bded904a-c41c-4cab-e507-08de633d3de3
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|376014|1800799024;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?dWR0SDZGYndMWDQvTCtoVk4xRG1tN1JnbG4ySFpYdmd1ZExIMUhXWm5LOE9u?=
- =?utf-8?B?V3Q0eTZnNnlMN3dIeHhsMEpLYlRERjFzTnFGbG05WWs2RytMOSt0WlNxRTMz?=
- =?utf-8?B?VTQvaTVuSEZ1WnBSMlB5dnNjejF6M3JsVEZKZGdNSTEvVWo2d0pkVlJkOHpP?=
- =?utf-8?B?enJRYzJyNjhzQ2JLRVQ2TnRwUDByWlpNenlkUG1VREkzUnB5MmhXcmdsYWlw?=
- =?utf-8?B?aGFZN2toQUtXeU1zS1Y5bVZWVkhCb3hVbGdIa2xTWlgxak9LUXZFeVdMdW5k?=
- =?utf-8?B?MzlJOHVqWVNPQ1dTRXpvbnJ5NG1OZER2K0Z6aGhFUC8xS2d2UWZUeTg0MDk0?=
- =?utf-8?B?ZFJwNTloVzZuUkNYYklXVy9Za2NqZUQ4azJpNWk2L3dWUlBPV3Z5bXFQR3hw?=
- =?utf-8?B?ems3RFNlTWtTQXlzeDg0S0lUZVRaMkRWK1V4bEVPY0Q0QmVZZjNURTZMSmFq?=
- =?utf-8?B?RFZhQzBDUks4Ni8xcWRYOEtmRzNrZnFZNEJGZFBDMTlEaDhqZ05VR3ErKzZj?=
- =?utf-8?B?U0dCMnpxQmpIdGdGamdrcXU5OVMxcjVPcy9nVDd1N0xseHdlY0JzaTMxZ0tH?=
- =?utf-8?B?S1JWUzEvVk0ySWw3NXErT0lvbFdxV0llWVNkNm1UN0ZtU0tHUHBMZW1xeWpG?=
- =?utf-8?B?WkFSVDgyRk92QWJCVTl3Q291L1BBaSs2ajVuV1ViOVFDTUVtWUl3T1pGNXBG?=
- =?utf-8?B?REFELzUwbko1U3JLanE1ZnBwNjJ1VW03OXZGY3JjZ2pJRTlrdVdwNUlaaHdE?=
- =?utf-8?B?R2Q2UGc4bFVQM3FYYjhKTVhUeXM5d3RBN1UxbUJpZVlXNUh3eFdmakJGK20v?=
- =?utf-8?B?cUR1SHFVUlhFNklaUDNmQXF2UStjUWhqTjlPM3Q2RzZoUXdXbzZRbENhbUNx?=
- =?utf-8?B?MU9Gdk1ScEwvb29GVVRrYStmREhXR1NBT1J6NmZJUUM0R0o0STlBOE5UNWkx?=
- =?utf-8?B?VDUrSitRU1dZT0cwMlk4WmJpVzJQbW1Ed2cwRmdmekdXU3hQQ3NHQW5GWFFm?=
- =?utf-8?B?enJ3eVRMSEZuUyt6WHBHV0pDeDZ4M1Q4QmEwalVoN0QrYnpCcVFPbWFPQzJY?=
- =?utf-8?B?NDZ5cnF3MWdSdG04dFVURmFmeng3TGl2eU9QTjk4MHNRZmpPWnBVRWtvblV2?=
- =?utf-8?B?amxSSWN6anRvbytvV3VWZW8za3lpQ3NCUFpVbnFBZEplQVJGOHViNDhPSHJz?=
- =?utf-8?B?UkQ1SWtrcU1PTmhPTmRTTzd1T09nenliTUh4MFQ1OUdCSHR6UEp6RjI0R2d0?=
- =?utf-8?B?d2JqU09NdmJoMFZIMnF5KzUzck00STdZdG9BejN1V2ZJY1lPKzFITmUwOFdu?=
- =?utf-8?B?cXFuSzZPUEdUMGlWb2hRbUlZdlNNVnluQ3VtU0lFUkY3ckErcklvU2lNZ1lw?=
- =?utf-8?B?Nnd1dlZuWDJuY3J1VGcxOUp3WVhaQlpTUk1kb3pDTmlXZS9iQ3VNUUJkWkpv?=
- =?utf-8?B?OXkzcVBqSlpmWTFlQWFCTCtKUUowR0FjSWlqS2xuTkVvaHp6SGd0RWpEbnZK?=
- =?utf-8?B?azhqVDZwbm9QL0VEN2E1dnkyNktSdjBKTTRCZ2tnNGdhamlSK2ZoTTdyU0Y1?=
- =?utf-8?B?RGVYZ3Y5MHNDRS90VUVtOVIvUnp0bG45T1RPbG5iNlZWZVQrbE5iQ29Wc0hL?=
- =?utf-8?B?UElQNkxGcVF6MVFTN2gvejVIMWJGektjMDRJbUJ2U1FFeWtSNGR5d0ZudlZ0?=
- =?utf-8?B?dFh0NTlmWDBpaU43dWI5UHdDbFYrSEk4RTJKYllUajdKaWlRMEM3eGZNTURJ?=
- =?utf-8?B?M3pPQjc4amtsV3YxQ0YyQjdCbHE1aUFvSDdjSXZkN3VXTFVaVytvT2tjUnpz?=
- =?utf-8?B?OFRJQ0RaTUpPTWc3N3VYejZjWTVZd0UwSGd1V3daRGRBZ05ZcGRyZVd4VzI5?=
- =?utf-8?B?V3FsSklDdjl4ODFLbVZBQ0pOeGV3Q3R0OU5tdWc3NjhicldNY2FVWjZBLzk1?=
- =?utf-8?B?UTk4V1lRZmNuUlZzbTVVKzk3aGV5ZnRRbS80ZGo5VmRvdEVrekc1a1QvQ0FF?=
- =?utf-8?B?by90KzBWbkh0eWRxaklWdmwxdTZ0RC9uMXJwVGFuN1U4TTNUdUhUVFhsWC9L?=
- =?utf-8?B?a0lEWjd2ejAzbWgrU0dwVWRrR3IrNlJJTEpCZ1ZnUm5BNU5QRTNOT3Uxcm5m?=
- =?utf-8?Q?hUrM=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR11MB7198.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(1800799024);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|52116014|1800799024|376014|19092799006|38350700014;
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?Dpf5JjkWIzDQf8tq0FoQuturl5tzfY9i5bCf6Uy2RlKuWuL6FWDw9srZg1ig?=
+ =?us-ascii?Q?RK23yaYZDYF1km20onAa505bAtIzCCppdrT3kwOjwfJVR/v1/mGd7qBhv5qx?=
+ =?us-ascii?Q?S+fYwMR20rfFe31o399EMawZdUqgFSnSVOSdQmleYdd1xMc28ctnFD9JALE1?=
+ =?us-ascii?Q?ZzI5cKjjW2G8rA+u9JeZOyoGJDybRweHmq8NeWmHMi9MgaO/0VQxtSbWieW0?=
+ =?us-ascii?Q?PgyWgLc49F3oWVAjCgGlY/mAKAlROubciGWolhi5n40H48ZZ1U/XeCWqmogX?=
+ =?us-ascii?Q?QzmyMMzEiyobPcNUPfZ32rDPMX0v2pl6FeY3a3G0/t0qLPvaJz8v3fBSZ/oZ?=
+ =?us-ascii?Q?G9+5YZtk7muCjTD5UF6xpe5oRN9J0h68DX0KN2MTqhd1mnkm04USgcdwV/pH?=
+ =?us-ascii?Q?dgKGiuiEaGORtY1+Zq7tnhqserQ8BIwlqhUpo5XmhEl3zfJGQgM4G27REkjJ?=
+ =?us-ascii?Q?7zIGG8T6KYiUgJfkrtBHBtneNHbCR+SRpJG7e+ggeaunKYHA0GA3aW7SZdCn?=
+ =?us-ascii?Q?hR5W1kG8WaldhaQIm3Z2s7KxqBTzKBrZD+lJL1ZrBdsiAv6F7gMFn1FItOmy?=
+ =?us-ascii?Q?PHLLFDrBtGXyU6rbJFY1ZXE4Jeba23mVIUVXwaAVgYK6bxK0ANfdOviIXZIX?=
+ =?us-ascii?Q?IDsaeaUJWwFK2xf8ud6ufp3ELDqOA0PTgHf+6tP/E1mka35av3A0XNN1z8rK?=
+ =?us-ascii?Q?rB4r2BVTKdUeKR46/VIm4pPIEgJAqBWjPYSs+PjCd0Nvv5IEGfcZzhyiHNqn?=
+ =?us-ascii?Q?787LuWyH6WQLSBE1HwG8l2tHDnI2EztX/uYT+MKOelsCxEbw70Suwjs4G0nM?=
+ =?us-ascii?Q?EL76buTc2SBUVz4cxlgB4wvMI5mBC2jkwGsjQvdQWYGYPdMcThtAiEMZdCXo?=
+ =?us-ascii?Q?od7yJlFYlBMLdPm9NuZkODa7SxZjlRCDumfB4lXYNQTFoavncO4VaqzVwNFS?=
+ =?us-ascii?Q?FJyY6g0Mjedl/u2IcLv7bnu58EDgsNAIzvXeJZSYDBqxIDt3kC7WXohGlOr5?=
+ =?us-ascii?Q?eEv0OEihrdgGSVNOZrMaV1QS3Py+pJd6Cuh1HpH4frDaoEbUDTYPZ5062/dD?=
+ =?us-ascii?Q?QnAc2hcsU1HgP4d9k5iLJ84tRj+tkA6/BNbtS0mtuv83UHL24eCpsCTluGef?=
+ =?us-ascii?Q?gfS47q+A2DaBt/d9UwFoyz/rVlkwHpe21rCJfFTMM/Et/RP6O3Z2izJMdYNu?=
+ =?us-ascii?Q?MC+UGxspp48Wi9ge8WBht3QfUyGWHv5NGzbWqety9kgXd1ZeZfam8GmBiY6u?=
+ =?us-ascii?Q?FbUHCFWykF2F8G8vFuLBOMAqoBVksldIPDSLfHeFyNWxOzctxTuSIXgVIGAB?=
+ =?us-ascii?Q?fYu0qD3YzrUSvN+ucQ6ZsqQjT3d5JGADCDAv9WtiNxCKyDugOwaKn2IZfGPq?=
+ =?us-ascii?Q?vbT69zvRHbM32Bk/0u66Kkc3umT8aDzxsrjJ7kWyNocr528jNv01j4s11cjS?=
+ =?us-ascii?Q?fGdfb9GS1/Zfiy2ArbdHQDfCnMTImj0sT5y7lJyWA4bgWw7B+kjw0NtQb3Vc?=
+ =?us-ascii?Q?YoroekVSfMCcekeU2nV9Kr/wRu8eqfLUUFe+E7DJYvSH+tVOd9FLu/27ekcO?=
+ =?us-ascii?Q?GguJbQqh34H26GnZgNXOpGwi3ypXRPN0gLyboNWEUIOG4/6OM68UApSssV9W?=
+ =?us-ascii?Q?dFXqGKIUpYWS3Yu/+vAHbsQ=3D?=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU0PR04MB9372.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(52116014)(1800799024)(376014)(19092799006)(38350700014);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?allOLzZRbE5CQzhJcGN1N1pVbW9CdlY3cHlFSDNubzl3SWEwRGpyZ21NQmlv?=
- =?utf-8?B?K1JneDJReUlUR25BVnJNSi9jM0xYTHlWbGM5KzdpTG40dEgraWVwb2RVYTNt?=
- =?utf-8?B?dzNYbEV2N1RjYzVISGlKTDlGaVg2a2w1OWpvUjdMNXY0Wkt1QS81QXQ1ZkJZ?=
- =?utf-8?B?NjZQUEtuQ0szWDRDVm5nODBNV3pqcTFEakJnZmIvVjFwdVQ1TFhjeFZBRXA3?=
- =?utf-8?B?VDdYS0xSNERuTzd0WDdCSHdoNnFaMVYyK0oyQThrU1c3UkNScm1pWHRDZHBo?=
- =?utf-8?B?eVFKdTlhdEtZMFMwTEk2bS9zSmlUSlhJNXpYRlowa3d3MWRLY3UzY1Jyek9N?=
- =?utf-8?B?ZHlJZHVCY0o3UHh5MFB2MDBZaFJVNU5yViswdy9TdDVlU0phc0x1SFp3dGxL?=
- =?utf-8?B?UlhRNCtrZ1M3S0w2V2JMUFYxVkZ0czZ3MEt6R0ZLUkRiU0hpNk9CeXI5cDFL?=
- =?utf-8?B?M0Z3NEhyNFFVUThTZWMyMmN1c3FlakRoNG5XZmN3MDd1YnFBakdRQzFCczIr?=
- =?utf-8?B?V0k3UHNTL1pkSWI5ejZzZlQyME9hOHRsT1RFWHV5Z0ZKaTlkRHZzeE1mZVQ1?=
- =?utf-8?B?a0ltL1ZPOW5jYzFBM1BQWGpQRStuTzc4SDFySFV6V1hkTWoyd05FSFVBYldQ?=
- =?utf-8?B?dTZNSU1MazFUdGVvUXZBMGRBQ0lwQXo4bnRjcFE0OGRpaVZWcWhRaElORGZO?=
- =?utf-8?B?b0R1QVdGc2h4dFYyK2lFMGxDQ1FkVW42U1l5bFIxSDZrVDBqZmVGblJYZ2to?=
- =?utf-8?B?N0g1UXprSDNrTFFNMjBZSlpMTzMrR3labncvY05teklWUll4cncraFoxU2Rr?=
- =?utf-8?B?Z2pEdmVSditabFJERGFuSUE4Ujh6NWxpZFZnenRPWjJkQU5oNmtSYllsWkFh?=
- =?utf-8?B?Mk96RmswSmVJUzI1STg3Y2VOQkRZWFphYTNsMWNhS292QS9OWjRuclNpNGVN?=
- =?utf-8?B?WElSQkV1UUpDL3BaeWZ1WDVsYTRsaWdRbDlOREtPeSsxbFVnL0M2YkF6WnFE?=
- =?utf-8?B?b1JsZDcxRU5tWkhBTU9rQW1Xc0dJNEdPNkozVmdxcnJ5Zmt1UXI1bGVIYUVQ?=
- =?utf-8?B?SUVSVVdJODR5bWxwaDFyQkJERzVRY3FqbFZpd3hZVHZRR0NEWUFxRkp3ODhK?=
- =?utf-8?B?d2JVTm1NVzg5cy9iSzNoSElvWXZEZExzcmlhVHJsTW9vaEM1Y1A3ZU5mZnQ2?=
- =?utf-8?B?ZUFLenovQm1wcDZaa2JHNWtKak5lWXZNeXl6eC9Sand5TXNIMDE5SzRVQzVL?=
- =?utf-8?B?S1BRT2c2bnJZSk1ZVlVZNHMyRGhPMUU4d1RiQ3J6a0djNnl1VGw1ZEw5alNB?=
- =?utf-8?B?SmJxaFBOc0d4cGVVOUNmUFB0ckhSdDJHVXlaNUU0dVFsK3dSdFlzTFlydTZo?=
- =?utf-8?B?ZWhhOFArK3RYNU5PSEQ0L1dNM05oQjZUZElhSjhUd0taV2xHejN3Y3R2eE5l?=
- =?utf-8?B?dmpuNG9YOHhJSTU5bjZ6MUtwbnBRdmNnejh0MlBnZC8rNzBkVm15d1lwaDhS?=
- =?utf-8?B?bVYxMDhTSG5kR202YjJnTnY5aFVxWU5XTDhKSHY2UjQ4Mk51Y3JLaG1mNXd6?=
- =?utf-8?B?dHdoMytSbS9rMXZ4OFJaYldlMDBUNlp2ZTBEVTBvbUdOV1JSSmYxdHpuL2RL?=
- =?utf-8?B?ZUxxY3lFVURLeUlyLzRTb200MHN4QTJ1WVphcC9wWGwwb3B6T2d3OWhvTlRt?=
- =?utf-8?B?cnRqY3Z3aWVLaitCRkpaMGJzOFJqNkx0ODVSejl5TjFXRklESGRmKzY4WnpE?=
- =?utf-8?B?WGs5THloUlJrODUxQkJYQ1QyTG5jd0hLQXNWZVA4cThhZVRvb3NkYkdmY1Yz?=
- =?utf-8?B?TmFDYlVPakNuRU4yY2FNSUJBY05zMjUwQmpZdU5MMW56NGVmOUVvVXlFTHNt?=
- =?utf-8?B?VEtaR2ppR1hFS3Jhc20yQkhicDZVQWFrU01DYnBLeHZsQVdMUUtaUHp0dnVo?=
- =?utf-8?B?WFVIR2szNTZ0TGprMzZMUzJmRzliZnVjNXNZejl1Q3JGb2NKVTE5MlczZ3Zr?=
- =?utf-8?B?bE4rS0g3a1pSb2NjVkRtTU04elJ1SWg4eWtQSVFXRzZCd0RGOW5LNm1ab2N6?=
- =?utf-8?B?S29JTEg2MnB2V21uenB5aXhvK1hFc0ZjOTIwMXl0Tld5dWNJeGxFKzByM0Iy?=
- =?utf-8?B?ekppeEN2SUxadVY2V1pjcEhlSzVGZkpBclJsaStpbmpTRlZzQlZIeEhGOTN6?=
- =?utf-8?B?c3l3MjJBSUVSQThMM0tlYXZhYzVOdkFIZllia0wrRTJOVXphQkFCR3dlUjZO?=
- =?utf-8?B?b0JCZVNTVVNmTEFacUhUeU9PUVlYNkpDMUVBaDZoUDVHVHJ6M2RNcVhKWnQx?=
- =?utf-8?B?bEFwejhmZjdRVTJZUHI0Y0xBUzRpMzBTWk9lWVJvTkVEM1BUU1Ztdz09?=
-X-MS-Exchange-CrossTenant-Network-Message-Id: 187734b1-14e6-4abb-b6de-08de63236a65
-X-MS-Exchange-CrossTenant-AuthSource: IA1PR11MB7198.namprd11.prod.outlook.com
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?rU2wkJWD7WhZMnYAs6K8BEZaInqxZ5AXg+sOIVzKbuh/W+Ma4yb/kptmaxU0?=
+ =?us-ascii?Q?j7y2nioT9uLHqPw2zX8/RHlRvSVngAWp3RlWn/hoIM9TuvA5zKP92yMPDD9+?=
+ =?us-ascii?Q?ZT9Tb7OmN/blAE/6f8+3GCo3YYK0gFbcLCmxrrBxUHEHP0su50hNK9KafpCM?=
+ =?us-ascii?Q?YKO5Gq+VBLk7dm4KYYmL5XONa7gkx+xXJdFIWaTY6bB6QuV7BmZ6a7kwnyd6?=
+ =?us-ascii?Q?RrRKXLfa3CXGvfHwwPdLW0NZ7p1tvhiXV3xVldrvhgxCK/LCcDM3yL7ISzLB?=
+ =?us-ascii?Q?SBgC31AiPx0/jLixKAZqgaik9xVqiWIXMYpgWW+G/6zuyDYTSlpGAVpQfqEj?=
+ =?us-ascii?Q?Gp10MZl9Ckil8wV3raccZAlFUO6FMem2FgC/+7OOmycNXDRMT87TplsYTd77?=
+ =?us-ascii?Q?tC0Dl/N5XaW78NEJyesJcyYX2JVDiUUS0Lkqr04u0IBYhqGHUOEVYBceL45R?=
+ =?us-ascii?Q?Qlwh++tN2D7n1RrfSAzKJdtJIVQ0wSccVuZzlf378Ce0Yy/aDfADj29gsJnC?=
+ =?us-ascii?Q?plTI8mcMR3g0GnXT+1UL9FN7MO2WRCUkl3yGcj2G1zLPtTBTKSa4O/d4YdMF?=
+ =?us-ascii?Q?cU/RMdrCzTFGFpvrAaiQU6s9jL2lkq0sUI3yUd6rprg7JXjmolbsTADps3Jd?=
+ =?us-ascii?Q?CC+DGC9/0+g8L6O2TI8ZAq4OLN/cKCVMgAOl2uY+otWS7zPoUGWI1zc8k8zy?=
+ =?us-ascii?Q?hmwiS48Jeeqqzp6C2Je1wnFu7ogGVc60rL54xpyjqlxU3qb15MXO8h5DRIFO?=
+ =?us-ascii?Q?cDg6nL3pz2L3g138eFz1Zd0cH0+cWALA/IBd6Vg6yWQDH29AKRyWJnv8g9yh?=
+ =?us-ascii?Q?DkditIFAKo7+sNU1SUoQqBR3ckqdyMQazfZN3mYpwasr2zeGXF3P7aWMY8oz?=
+ =?us-ascii?Q?78jE5z9BeZIHK6qHkeBx0ViUckCHqCK/Uh9zdiiJvAvjUhDAlF+zuURyzjcI?=
+ =?us-ascii?Q?Nfj0TYFA9TGPJNKpznJ0h7OvX0Zc3nHmuV4QCjTFeZ0fZMRIYpsaHvSlFhO0?=
+ =?us-ascii?Q?/KQGq4yGnWFYftma0IOiPylYGsZeczUUd9GxDY7+kbHN8Uk2BBcavrt3t3Ej?=
+ =?us-ascii?Q?5ObGDceuabC0/3Q+x8vF3KkulyIs1srZWMmcq9B4N8AGbA/8YWlm4P3QPe6k?=
+ =?us-ascii?Q?Bi5+PvT7c86mINwPK4THlU9wHrkGr/KoeMEKe/2D8xhfPIDxqHlKjEdBh5hA?=
+ =?us-ascii?Q?IrP83NqCljVvnocGwvS7CiPySUHnpshWBU7XO+kQ01AUI6WZurjrq/VDk+aF?=
+ =?us-ascii?Q?EFSC1jnt60ZeF4cFIW7bHNN73LFuZuK9nvBgqOo9VanKuEykdEYXvAesiUf4?=
+ =?us-ascii?Q?dyTBKTSwbYc5tbBI/OFq5jQv/e6TxliOp1bK8v0xVkxFEHJnNk9AAOU2fund?=
+ =?us-ascii?Q?aVTpi2UId49s38tiYRMXVB1/dOVIR50jQXusRaYgsJdi2N9qv5QRLUBzDxJR?=
+ =?us-ascii?Q?2JkvtGOLGr0Pjy+6Nun4RLAL/c10JWgDr7AepThRCxZT8Vln4NxoNQRiW2sV?=
+ =?us-ascii?Q?k2p4RdE0p6krJVDt6ha+0pcC2BmFIAVmQNVUszWu/e2cTMU53Evzs7jIiGDa?=
+ =?us-ascii?Q?IQEk0g6QC0hFz0EY6aI/I9arhdJ8yHJ36rNH470UfIAtD2FDw3e0qdlGTmqM?=
+ =?us-ascii?Q?yCGudONAaK3Xb3/VQWrJzySWVtbPg4AVVAWlHgOMc9EO5ginAQn2pPyA/6su?=
+ =?us-ascii?Q?1ibT8wgmMILaSjnM2R67akh8APEyD+nW3+VnvcR9+bQ50e/xQ/YdcsL5J8hf?=
+ =?us-ascii?Q?1wl14Wclag=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: bded904a-c41c-4cab-e507-08de633d3de3
+X-MS-Exchange-CrossTenant-AuthSource: DU0PR04MB9372.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Feb 2026 12:54:49.6731
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Feb 2026 15:59:41.7378
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 46c98d88-e344-4ed4-8496-4ed7712e255d
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: R6tsx45Ha3YgLVnm8m/6cqgZejEeU1Fk4+ZwG+uOau+GmL+rQ3oY9KHGHiLSvRLVJL3WH5wqj1Cqvhl00RFxZQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH7PR11MB7985
-X-OriginatorOrg: intel.com
+X-MS-Exchange-CrossTenant-UserPrincipalName: o0rrZL+Iw+60o+hd7fU2j5eYlKcXPmOyPN/3bbF0wlgT4dZpA4ulHTQTnrrYEJxv2u24dfqsjc2Unf5i54V1uQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR04MB10728
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260203_045458_251641_7F5AEF4A 
-X-CRM114-Status: GOOD (  13.92  )
+X-CRM114-CacheID: sfid-20260203_075948_658724_0A077E53 
+X-CRM114-Status: GOOD (  27.55  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -227,108 +172,125 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-+ Rafael
+On Tue, Feb 03, 2026 at 02:54:44PM +0200, Adrian Hunter wrote:
+> + Rafael
+>
+> Rafael, this is not at all urgent, but when you have time
+> please have a look at this patch set.  There is also some
+> more explanation below.  Is it acceptable?  Is there a
+> better way?
+>
+> On 02/02/2026 18:25, Frank Li wrote:
+> >
+> > Does your device Hierarchy look like
+> >
+> >            PCI device
+> >                |
+> >        -----------------
+> >       HCI1            HCI2
+> >        |               |
+> >      I3C M1          I3C M2
+>
+> Yes and no.  There is only 1 real device : the PCI device.
+> It implements the MIPI I3C HCI standard which allows multiple
+> I3C bus controllers in one device (in our case 2 controllers).
+>
+> The PCI driver mipi-i3c-hci-pci creates 2 platform devices,
+> one for each controller.  The platform driver is mipi-i3c-hci:
+>
+>  Driver                        Device                     Bus
+>
+>  mipi-i3c-hci-pci            0000:00:11.1                 PCI
+>                             /            \
+>  mipi-i3c-hci      intel-lpss-i3c.0  intel-lpss-i3c.1     Platform
+>
+> LPSS I3C also supports wake-up from in-band interrupt (IBI) via
+> PCI PME.  The PME only works when the PCI device is in a low power
+> state (D3hot in our case).  Also the PME is effectively shared by
+> the 2 controllers i.e. an IBI signal (the controller's SDA line
+> pulled low) for either controller will cause the PME.
+>
+> That means there are only 2 valid configurations:
+>
+> 	1: Both controllers enabled to receive IBIs
+> 		PCI device	D0
+> 		Controller 1	Enabled
+> 		Controller 2	Enabled
+>
+> 	2: Both controllers disabled to enable PME wakeup
+> 		PCI device	D3hot
+> 		Controller 1	Disabled
+> 		Controller 2	Disabled
+>
+> However, represented as platform devices, the 2 controllers
+> runtime suspend and resume independently from each other.
+> Whereas they effectively need to runtime suspend (or resume)
+> at the same time.
+>
+> The proposed solution is for the PCI driver mipi-i3c-hci-pci
+> to take over managing runtime PM for both controllers, calling
+> into mipi-i3c-hci when it is safe to do so, to save/restore state
+> and disable/enable the controllers one after the other.
+>
+> Current situation (I3C next branch):
+>
+> 	PCI device	Runtime PM enabled, dependent on child devices
+> 			PCI subsystem controls PCI device power state
+>
+> 	Controller 1	Runtime PM enabled plus auto-suspend
+> 			I3C subsystem runtime PM gets/puts the Platform device
+> 			Runtime suspend: disable and save state
+> 			Runtime resume: restore state and enable
+>
+> 	Controller 2	Runtime PM enabled plus auto-suspend
+> 			I3C subsystem runtime PM gets/puts the Platform device
+> 			Runtime suspend: disable and save state
+> 			Runtime resume: restore state and enable
+>
+> Proposed (this patch set):
+>
+> 	PCI device	Runtime PM enabled plus auto-suspend
+> 			I3C subsystem runtime PM gets/puts the PCI device
+> 			For each controller:
+> 				Call into mipi-i3c-hci (when it is safe)
+> 					Runtime suspend: disable and save state
+> 					Runtime resume: restore state and enable
+>
+> 	Controller 1	Runtime PM disabled
+>
+> 	Controller 2	Runtime PM disabled
 
-Rafael, this is not at all urgent, but when you have time
-please have a look at this patch set.  There is also some
-more explanation below.  Is it acceptable?  Is there a
-better way?
+Controller 1/2 is child device of PCI device.
 
-On 02/02/2026 18:25, Frank Li wrote:
-> 
-> Does your device Hierarchy look like
-> 
->            PCI device
->                |
->        -----------------
->       HCI1            HCI2
->        |               |
->      I3C M1          I3C M2
+So first patch "i3c: master: Allow controller drivers to select runtime PM device"
+is not necessary.
 
-Yes and no.  There is only 1 real device : the PCI device.
-It implements the MIPI I3C HCI standard which allows multiple
-I3C bus controllers in one device (in our case 2 controllers).
+You can enable controller 1 and 2 Runtime PM with dummy operation.
 
-The PCI driver mipi-i3c-hci-pci creates 2 platform devices,
-one for each controller.  The platform driver is mipi-i3c-hci:
+When controller 1 run time suspend, parent PCI device will reduce ref counter
+when controller 2 run time suspend, parent PCI device will reduce ref counter
 
- Driver                        Device                     Bus
+Only runtime pm reference counter of PCI device is 0, PCI device's run time
+suspend will be called, you can do actual disable and save work.
 
- mipi-i3c-hci-pci            0000:00:11.1                 PCI
-                            /            \
- mipi-i3c-hci      intel-lpss-i3c.0  intel-lpss-i3c.1     Platform
+Frank
 
-LPSS I3C also supports wake-up from in-band interrupt (IBI) via
-PCI PME.  The PME only works when the PCI device is in a low power
-state (D3hot in our case).  Also the PME is effectively shared by
-the 2 controllers i.e. an IBI signal (the controller's SDA line
-pulled low) for either controller will cause the PME.
-
-That means there are only 2 valid configurations:
-
-	1: Both controllers enabled to receive IBIs
-		PCI device	D0
-		Controller 1	Enabled
-		Controller 2	Enabled
-
-	2: Both controllers disabled to enable PME wakeup
-		PCI device	D3hot
-		Controller 1	Disabled
-		Controller 2	Disabled
-
-However, represented as platform devices, the 2 controllers
-runtime suspend and resume independently from each other.
-Whereas they effectively need to runtime suspend (or resume)
-at the same time.
-
-The proposed solution is for the PCI driver mipi-i3c-hci-pci
-to take over managing runtime PM for both controllers, calling
-into mipi-i3c-hci when it is safe to do so, to save/restore state
-and disable/enable the controllers one after the other.
-
-Current situation (I3C next branch):
-
-	PCI device	Runtime PM enabled, dependent on child devices
-			PCI subsystem controls PCI device power state
-
-	Controller 1	Runtime PM enabled plus auto-suspend
-			I3C subsystem runtime PM gets/puts the Platform device
-			Runtime suspend: disable and save state
-			Runtime resume: restore state and enable
-
-	Controller 2	Runtime PM enabled plus auto-suspend
-			I3C subsystem runtime PM gets/puts the Platform device
-			Runtime suspend: disable and save state
-			Runtime resume: restore state and enable
-
-Proposed (this patch set):
-
-	PCI device	Runtime PM enabled plus auto-suspend
-			I3C subsystem runtime PM gets/puts the PCI device
-			For each controller:
-				Call into mipi-i3c-hci (when it is safe)
-					Runtime suspend: disable and save state
-					Runtime resume: restore state and enable
-
-	Controller 1	Runtime PM disabled
-
-	Controller 2	Runtime PM disabled
-
-> 
-> 
-> You want HCI1 and HCI2 suspened only when both HCI1 and HCI2 can enter RM
-> time suspend status?
-> 
-> Device Link can link two devices, but not sure if it can handle cyclic
-> case, HCI1 and HCI2 depend each other.
-> 
-> Or you create common power domain for HCI1 and HCI2, in power domain to
-> handle suspend.
-> 
-> It'd better ask run time pm owner to provide better suggestion.
-
-Ok
-
+>
+> >
+> >
+> > You want HCI1 and HCI2 suspened only when both HCI1 and HCI2 can enter RM
+> > time suspend status?
+> >
+> > Device Link can link two devices, but not sure if it can handle cyclic
+> > case, HCI1 and HCI2 depend each other.
+> >
+> > Or you create common power domain for HCI1 and HCI2, in power domain to
+> > handle suspend.
+> >
+> > It'd better ask run time pm owner to provide better suggestion.
+>
+> Ok
+>
 
 -- 
 linux-i3c mailing list
