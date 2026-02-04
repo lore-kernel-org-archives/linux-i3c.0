@@ -4,57 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA876E8B37E
-	for <linux-i3c@archiver.kernel.org>; Tue,  3 Feb 2026 23:39:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFB58E95385
+	for <linux-i3c@archiver.kernel.org>; Wed,  4 Feb 2026 11:15:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2byMswqUd8j2VuHGaz6QsE4B0F09WCNis+bq9+rk0PI=; b=IeD9Cojiautjvj
-	avxFkeaAwaFvkEieMRHLFJrhmQh28VVv00Nyew6h/1lOTV0KNT0PxVuRiD/iavSDUTXJ/+ahh+WNo
-	B2UBmMPjcen8+HNgXScQisFXHxBFn0Nx8uGY+0UVCVzA4eXTpll/2NYb92B05lETsuYV60TgvM517
-	mQjH99uwXisouSn8Cl1Yo/fb53TOqnFeFJ34HXb1NeAUn5vocS4kxRYgXt2NIlA5ccTJ85bfNfAEX
-	PPaQGD53BgNaZnyrxbQOcjSEojqIUGUaHko+Q3eD5RrbSlcUD5HKZGZYKDZ13jblsVjLB6KaBdr50
-	R9PrUgURRkem2y4Y7L5g==;
+	List-Owner; bh=I6/rfX6RxS3Z/V+M8vtXrkuHZiI2OJL6lW3Mj8w2kiU=; b=lmQezoka3SXpqM
+	fCPc+xekYQWUHa2TPu9W7PITg6ec+csq2S/i1VILC9e5wyuQrK7YL9txGKty3PU4+f6oeLEUkNj5h
+	zSdf1JEs62uSlxMJIoC7pfpFPlm46+Na24oOVr1XXMb/Xqlmdlp8YGJOsalqJ2wQpsOq5rVPnv0ZW
+	BlJU49TrW2VDOoLe0mofd+n87TVmcE9IlQ0yL7n+hAXwKscZzUmBQSyOcKesp5q+NUMcSQxWrf5NB
+	VTB8Wazvt5eEkbG8DQkCogTyWnio3GSRcLwWUWo32BNCgCfjCVGwzy55Ky51tlh07Tssb/SAjB53/
+	yPDRlmcurCpuGQPP0gVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnPzP-00000007ZoO-2Toz;
-	Tue, 03 Feb 2026 23:39:23 +0000
-Received: from smtpout-02.galae.net ([185.246.84.56])
+	id 1vnar0-00000008LHa-1wZt;
+	Wed, 04 Feb 2026 11:15:26 +0000
+Received: from mgamail.intel.com ([192.198.163.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnPzM-00000007ZnW-2q95
+	id 1vnaqx-00000008LGo-0Czf
 	for linux-i3c@lists.infradead.org;
-	Tue, 03 Feb 2026 23:39:22 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-02.galae.net (Postfix) with ESMTPS id 0C7B61A2BD0;
-	Tue,  3 Feb 2026 23:39:16 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id C107D60728;
-	Tue,  3 Feb 2026 23:39:15 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id E1B04119A8888;
-	Wed,  4 Feb 2026 00:39:13 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1770161955; h=from:subject:date:message-id:to:cc:mime-version:content-type;
-	bh=ucYbgMTXu9O2nhpJq8hjASjMhl+lmyesfJEs8TT0QqI=;
-	b=wGcDwXjVNrapnZkeIvMlPeftHCxADa4Zse17UBW8mJzoZiBetVvR3cGLEdXMA4v+ODFDMW
-	C2eWdk/h1sMkW9n4IhyWKqn4M1RLv2CUzti3H5M8LGdpcPXgTjxFIpEhHLoQvLTAB9LuTe
-	xaxofF0MPG4iaTUqdfWKF9XCd1oxVJfQc5MqReSvy5vGtC8cPwvHPXkDRzS8pOSOA9rnSR
-	v9S+HEKBD499mwOtwQupaqkQUcebQQTqVMoA03DIDp8O7cHrBKFjAm5TNdz9gRI9mTYtBm
-	RZB1mvS4ubovEyOZ20fpkavPjdsKSwPciXmUkhpyQz8Sis2oeC8p1P2s9ibn7A==
-Date: Wed, 4 Feb 2026 00:39:12 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Linus Torvalds <torvalds@linux-foundation.org>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [GIT PULL] I3C changes for 6.20
-Message-ID: <20260203233912448420e5@mail.local>
+	Wed, 04 Feb 2026 11:15:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1770203723; x=1801739723;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=JiZ/8/1B53sXpMXRHgNEYOv16nTOw7GQIOE1NQHCNxs=;
+  b=ZqKBvUv7EYbgrXoO/fckN3B3mEOOjL7KvzRVAEAZ/MjmSDiNn9fpoFH8
+   rxQVVUqGSR0ZOpVRo2LjyvFoTINDG2kWrM8N4N471DMYoPhudmGuSS0D7
+   B2IqpRAvBleLQE+vp4iqDOMh7tqNmz76cIZthKYd6j0FaC2Dxg9DN3x3n
+   03d8pg1MKuNXA8lOsMfElPFfXVSZXoQuYU5NMNjdObLuG2NQFbuWtUdht
+   KskektMKvALMm7uU0mdmRQPUsPDythRjlGBsIt5VFE/TjRUAvBPPZrVaM
+   yPU87k8iM009vKUuRTUTZnopXQsm4BPYYxro22yUyogf39ntHWt9xw64a
+   A==;
+X-CSE-ConnectionGUID: 6aIuldsWStKLuyUk1kVpeA==
+X-CSE-MsgGUID: ODewVbNpSNSbNM5cYUsb+Q==
+X-IronPort-AV: E=McAfee;i="6800,10657,11691"; a="70406039"
+X-IronPort-AV: E=Sophos;i="6.21,272,1763452800"; 
+   d="scan'208";a="70406039"
+Received: from fmviesa006.fm.intel.com ([10.60.135.146])
+  by fmvoesa113.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Feb 2026 03:15:22 -0800
+X-CSE-ConnectionGUID: Mf7uEao5Q8ORbfZbTiJlsQ==
+X-CSE-MsgGUID: EllE/dtDTBCmTJoTe5fotA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.21,272,1763452800"; 
+   d="scan'208";a="209739270"
+Received: from cpetruta-mobl1.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.245.181])
+  by fmviesa006-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Feb 2026 03:15:20 -0800
+From: Adrian Hunter <adrian.hunter@intel.com>
+To: alexandre.belloni@bootlin.com
+Cc: Frank.Li@nxp.com,
+	rafael@kernel.org,
+	linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-pm@vger.kernel.org
+Subject: [PATCH V2 0/6] i3c: mipi-i3c-hci-pci: Enable IBI while runtime suspended for Intel controllers
+Date: Wed,  4 Feb 2026 13:15:05 +0200
+Message-ID: <20260204111511.78626-1-adrian.hunter@intel.com>
+X-Mailer: git-send-email 2.51.0
 MIME-Version: 1.0
-Content-Disposition: inline
-X-Last-TLS-Session-Version: TLSv1.3
+Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260203_153920_867842_9E8EF4C0 
-X-CRM114-Status: GOOD (  12.58  )
+X-CRM114-CacheID: sfid-20260204_031523_126851_475037DE 
+X-CRM114-Status: UNSURE (   7.71  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,134 +87,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hello Linus,
+Hi
 
-Here is the i3c subsystem pull request for 6.19. Most of the work has
-been concentrated on mipi-i3c-hci and in particular its pci variant. The
-renesas and dw drivers have also seen a few improvements.
+Changes in V2:
 
-The following changes since commit 8f0b4cce4481fb22653697cced8d0d04027cb1e8:
+    i3c: mipi-i3c-hci-pci: Set d3hot_delay to 0 for Intel controllers
+	Add Frank's Rev'd-by
 
-  Linux 6.19-rc1 (2025-12-14 16:05:07 +1200)
+    i3c: master: Allow controller drivers to select runtime PM device
+	Patch dropped
 
-are available in the Git repository at:
+    i3c: master: Mark last_busy on IBI when runtime PM is allowed
+	Adjusted slightly for earlier changes
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-6.20
+    i3c: mipi-i3c-hci: Allow parent to manage runtime PM
+	For HCI_QUIRK_RPM_PARENT_MANAGED case, change from
+	disabling runtime PM to instead causing the runtime PM
+	callbacks to do nothing
 
-for you to fetch changes up to ed318b3fb4ab317c533d38d160326fa5d7569497:
+    i3c: mipi-i3c-hci-pci: Add optional ability to manage child runtime PM
+	Do not enable autosuspend.
+	Callbacks for parent-managed invocation were renamed
+	from i3c_hci_runtime_suspend to i3c_hci_rpm_suspend and
+	from i3c_hci_runtime_resume to i3c_hci_rpm_resume.
+	Amend commit message slightly.
 
-  i3c: dw-i3c-master: fix SIR reject bit mapping for dynamic addresses (2026-01-31 00:05:22 +0100)
+    i3c: mipi-i3c-hci-pci: Enable IBI while runtime suspended for Intel controllers
+	Retain HCI_QUIRK_RPM_ALLOWED
+	Amend commit message accordingly
 
-----------------------------------------------------------------
-I3C for 6.20
 
-Subsystem:
- - add sysfs entry and attribute for Device NACK Retry count
+Here are patches related to enabling IBI while runtime suspended for Intel
+controllers.
 
-Drivers:
- - dw: Device NACK Retry configuration knob
- - mipi-i3c-hci: support for Multi-Bus Instances, Runtime PM support, System
-   Suspend support
- - renesas: suspend/resume support
+Intel LPSS I3C controllers can wake from runtime suspend to receive
+in-band interrupts (IBIs).
 
-----------------------------------------------------------------
-Adrian Hunter (35):
-      i3c: mipi-i3c-hci: Remove duplicate blank lines
-      i3c: mipi-i3c-hci: Stop reading Extended Capabilities if capability ID is 0
-      i3c: mipi-i3c-hci: Quieten initialization messages
-      i3c: mipi-i3c-hci-pci: Do not repeatedly check for NULL driver_data
-      i3c: mipi-i3c-hci-pci: Enable MSI support
-      i3c: mipi-i3c-hci-pci: Assign unique device names and IDs for Intel LPSS I3C
-      i3c: mipi-i3c-hci: Allow for Multi-Bus Instances
-      i3c: mipi-i3c-hci-pci: Pass base regs as platform data to i3c core device
-      i3c: mipi-i3c-hci-pci: Convert to MFD driver
-      i3c: mipi-i3c-hci-pci: Add support for Multi-Bus Instances
-      i3c: mipi-i3c-hci-pci: Define Multi-Bus instances for supported controllers
-      i3c: mipi-i3c-hci: Reset RING_OPERATION1 fields during init
-      i3c: mipi-i3c-hci: Ensure proper bus clean-up
-      i3c: master: Update hot-join flag only on success
-      i3c: master: Replace WARN_ON() with dev_err() in i3c_dev_free_ibi_locked()
-      i3c: mipi-i3c-hci: Switch DAT bitmap allocation to devm_bitmap_zalloc()
-      i3c: mipi-i3c-hci: Switch PIO data allocation to devm_kzalloc()
-      i3c: mipi-i3c-hci: Manage DMA deallocation via devres action
-      i3c: mipi-i3c-hci: Cache DAT in memory for Runtime PM restore
-      i3c: mipi-i3c-hci: Introduce helper to restore DAT
-      i3c: mipi-i3c-hci: Extract ring initialization from hci_dma_init()
-      i3c: mipi-i3c-hci: Add DMA suspend and resume support
-      i3c: mipi-i3c-hci: Refactor PIO register initialization
-      i3c: mipi-i3c-hci: Add PIO suspend and resume support
-      i3c: mipi-i3c-hci: Factor out software reset into helper
-      i3c: mipi-i3c-hci: Factor out IO mode setting into helper
-      i3c: mipi-i3c-hci: Factor out core initialization into helper
-      i3c: mipi-i3c-hci: Allow core re-initialization for Runtime PM support
-      i3c: mipi-i3c-hci: Factor out master dynamic address setting into helper
-      i3c: master: Introduce optional Runtime PM support
-      i3c: mipi-i3c-hci: Add optional Runtime PM support
-      i3c: mipi-i3c-hci-pci: Add Runtime PM support
-      i3c: master: Add i3c_master_do_daa_ext() for post-hibernation address recovery
-      i3c: mipi-i3c-hci: Add optional System Suspend support
-      i3c: mipi-i3c-hci-pci: Add System Suspend support
+It is non-trivial to implement because the parent PCI device has 2 I3C bus
+instances (MIPI I3C HCI Multi-Bus Instance capability) represented by
+platform devices with a separate driver, but the IBI-wakeup is shared by
+both, which means runtime PM has to be managed by the parent PCI driver.
 
-Adrian Ng Ho Yin (6):
-      i3c: add sysfs entry and attribute for Device NACK Retry count
-      i3c: dw: Add support for Device NACK Retry configuration
-      i3c: dw: use FIELD_PREP for device address table macros
-      i3c: dw: Preserve DAT entry bits when restoring addresses
-      i3c: dw-i3c-master: convert spinlock usage to scoped guards
-      i3c: dw-i3c-master: fix SIR reject bit mapping for dynamic addresses
+To make that work, the PCI driver handles runtime PM, but leverages the
+mipi-i3c-hci platform driver's functionality for saving and restoring
+controller state.
 
-Billy Tsai (1):
-      i3c: Move device name assignment after i3c_bus_init
 
-Frank Li (3):
-      i3c: drop i3c_priv_xfer and i3c_device_do_priv_xfers()
-      i3c: master: svc: Initialize 'dev' to NULL in svc_i3c_master_ibi_isr()
-      i3c: Add stub functions when I3C support is disabled
+Adrian Hunter (6):
+      i3c: mipi-i3c-hci-pci: Set d3hot_delay to 0 for Intel controllers
+      i3c: master: Mark last_busy on IBI when runtime PM is allowed
+      i3c: mipi-i3c-hci: Add quirk to allow IBI while runtime suspended
+      i3c: mipi-i3c-hci: Allow parent to manage runtime PM
+      i3c: mipi-i3c-hci-pci: Add optional ability to manage child runtime PM
+      i3c: mipi-i3c-hci-pci: Enable IBI while runtime suspended for Intel controllers
 
-Fredrik Markstrom (1):
-      i3c: dw: Initialize spinlock to avoid upsetting lockdep
+ drivers/i3c/master.c                               |   5 +
+ drivers/i3c/master/mipi-i3c-hci/core.c             |  35 +++++-
+ drivers/i3c/master/mipi-i3c-hci/hci.h              |   7 ++
+ drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c | 138 +++++++++++++++++++++
+ 4 files changed, 180 insertions(+), 5 deletions(-)
 
-Krzysztof Kozlowski (1):
-      i3c: master: Simplify with scoped for each OF child loop
-
-Tommaso Merciai (4):
-      i3c: renesas: Switch to clk_bulk API and store clocks in private data
-      i3c: renesas: Store clock rate and reset controls in struct renesas_i3c
-      i3c: renesas: Factor out hardware initialization to separate function
-      i3c: renesas: Add suspend/resume support
-
-Zilin Guan (1):
-      i3c: dw: Fix memory leak in dw_i3c_master_i2c_xfers()
-
- Documentation/ABI/testing/sysfs-bus-i3c            |  11 +
- drivers/i3c/device.c                               |  46 +-
- drivers/i3c/internals.h                            |   4 +
- drivers/i3c/master.c                               | 213 ++++++++--
- drivers/i3c/master/Kconfig                         |   1 +
- drivers/i3c/master/dw-i3c-master.c                 | 121 ++++--
- drivers/i3c/master/mipi-i3c-hci/cmd_v1.c           |   2 -
- drivers/i3c/master/mipi-i3c-hci/cmd_v2.c           |   2 -
- drivers/i3c/master/mipi-i3c-hci/core.c             | 465 +++++++++++++++------
- drivers/i3c/master/mipi-i3c-hci/dat.h              |   2 +-
- drivers/i3c/master/mipi-i3c-hci/dat_v1.c           |  46 +-
- drivers/i3c/master/mipi-i3c-hci/dma.c              | 171 +++++---
- drivers/i3c/master/mipi-i3c-hci/ext_caps.c         |  58 ++-
- drivers/i3c/master/mipi-i3c-hci/ext_caps.h         |   1 -
- drivers/i3c/master/mipi-i3c-hci/hci.h              |  17 +-
- drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c | 186 ++++++---
- drivers/i3c/master/mipi-i3c-hci/pio.c              |  64 ++-
- drivers/i3c/master/renesas-i3c.c                   | 319 ++++++++------
- drivers/i3c/master/svc-i3c-master.c                |   4 +-
- include/linux/i3c/device.h                         |  24 +-
- include/linux/i3c/master.h                         |  11 +
- include/linux/platform_data/mipi-i3c-hci.h         |  15 +
- 22 files changed, 1269 insertions(+), 514 deletions(-)
- create mode 100644 include/linux/platform_data/mipi-i3c-hci.h
-
--- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+Regards
+Adrian
 
 -- 
 linux-i3c mailing list
