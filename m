@@ -4,113 +4,134 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1EF5AE9D410
-	for <linux-i3c@archiver.kernel.org>; Wed,  4 Feb 2026 16:45:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72895E83F05
+	for <linux-i3c@archiver.kernel.org>; Wed,  4 Feb 2026 18:16:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:References:In-Reply-To:
-	Message-Id:Cc:To:From:Date:MIME-Version:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=FvHCchrtPAk6pmzxN6n+Zs4zvJawwZtE8Nv9Uqt1d8k=; b=i4ASsBwylsKT1jOBqXzcHycEO4
-	S9UqyLMrIoAJt3f4lDTDkid36aAy+Gh3mNbBmQhvNj7IHuSFaMTdi3m1guhCFOxqZYNX2wYX50KU+
-	01aDW3Lvf9foTIE8cfXOCM9IezMfIH1YcsOCSE4u9pRfw2RNjHHmebgG7ENZhs90BNC41fiFyrgN8
-	7/7mA8oRDVWqNLovkRFApLyWK49OjpRPdybX1/NtaYpGtl/gZyLEv6RDS1H1doi4XpkapiIGKXxDk
-	aE4CA3QZCP1wqzaBrxwn9TE4LL1uBDDzuf1z0AUe9iuS5YBol0IYLlT94sdyyHgESvvY252xyYDKQ
-	OwKFQSdw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YkbwEgruQ69LCtbrHp0+JgNmqoqOlMPhZ2oO7B/ohGM=; b=sAiW1EKbhvpxbo
+	FtoRi0bXqswZQzJIZobxIySIVNBLckpmnnq8INzeMT9tzw9PO2+8H3fxAEKuvQbYhGClS95+VMAq4
+	kTFEWnonJd0TXW56NUBC2tmsYBZORNB4hdnlZfQUXvI69qH2NnJQrYlROvK0kdO8gmpY3id++Tgos
+	+egWgE3TKGdV/aAmKfrDX1dU6686XKBoLWNaAkdYK8ZxK3DX1+ODvQ6SN4uZF6RGiBB7nH6EZBpV3
+	Ekrm/Wvwzq5O1kKf3uAmCEhHgD8LHH+cbWqYLmpKNBP158dbWNDAcTiGl7QMani9+6PrPxmI8dGf+
+	0DNOie+gCiFo9X4Bjc4g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vng05-00000008n3L-3XN9;
-	Wed, 04 Feb 2026 16:45:09 +0000
-Received: from fout-a7-smtp.messagingengine.com ([103.168.172.150])
+	id 1vnhQ3-00000008v1Y-0jQ0;
+	Wed, 04 Feb 2026 18:16:03 +0000
+Received: from mail-pf1-x433.google.com ([2607:f8b0:4864:20::433])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vng02-00000008n2n-2GKy
+	id 1vnhPz-00000008v19-37wi
 	for linux-i3c@lists.infradead.org;
-	Wed, 04 Feb 2026 16:45:07 +0000
-Received: from phl-compute-04.internal (phl-compute-04.internal [10.202.2.44])
-	by mailfout.phl.internal (Postfix) with ESMTP id 9A801EC012A;
-	Wed,  4 Feb 2026 11:45:04 -0500 (EST)
-Received: from phl-imap-02 ([10.202.2.81])
-  by phl-compute-04.internal (MEProxy); Wed, 04 Feb 2026 11:45:04 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=arndb.de; h=cc
-	:cc:content-transfer-encoding:content-type:content-type:date
-	:date:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:subject:subject:to:to; s=fm2; t=1770223504;
-	 x=1770309904; bh=8ZDcifP4P4fB473XIUlUUVFbynGXLbl7un7iNzjpgQs=; b=
-	SSmGxKc2cbUDyiKze5BUUTz72Bdz32Vae9rT47WI2G+y8w+sw5bj/IieMHaNiFp1
-	kxbem8CLTwOzXuX1oWoasyu27sNEdNfgkQQJxLL53eJtak/0Sw36ibkOAJULMbWr
-	PmFR2QG0fHCcJFKE2NHT7Zooo42beXSl4Txh91I2EBcV+uYaHNIwNX77dd0FIRjm
-	eMt6AvEWI59dx3zGs96YE+PRSUI5Ndd9NQNEidudWP7QtBwT7AUIag06YemuHQPU
-	GuoVsGoAr6VM8rfAUIZNP7oIucNGEUF8yImOakazZAor/QjgXjGXp2iV0hTJ0Adr
-	AHz37t3vlyS9W7TR8jxnzA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding
-	:content-type:content-type:date:date:feedback-id:feedback-id
-	:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:subject:subject:to:to:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=1770223504; x=
-	1770309904; bh=8ZDcifP4P4fB473XIUlUUVFbynGXLbl7un7iNzjpgQs=; b=Y
-	13BINuIsuZMcfWNAD18WoPWecFxXHUVFmbl8gyAR7wTDz2HZz6yxaH2NB2RLnCvS
-	O/4nLanot9cVuPwdNRZVNPWKXS7Mw0GSlxlIpmLmI9KyHnVVqKixWOT28rdRuT8m
-	PIjJh14czpKB2bXqBMsOXbg9AvOUryCZxgV7RPj56oinx9T+NHRRpQPvAs+vU29Z
-	3TJ31fVXe28S7z/f+bvd2yOyTmGBcWmx7j1zlsrHd/WEyEjLZ1HsQfFCOp8xPi3U
-	XNCxeWoYEDLpw0Gln68LOVIuLnRV3DDh7o3kRu5FiHV3UjCeDfCn3iBfyFtjrANl
-	8Sc6e87F6Iy0ntdfGDlHw==
-X-ME-Sender: <xms:j3eDaQIh68sdHEBLAdgKKiE7_QPQZldYwvnbcwW_nMIkpRlEiPUmqg>
-    <xme:j3eDaa-tKxhgezjm8XbjBgts7SZH6tPzuiRLUZbSZvb7ie4Rw1a2x1EuEnvo3B1sh
-    j0hxqQdgHiZzxLBqaKXFd8lohEvMRLYww6xV9SPc1yyho_ShICCrbI>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgddukedvleehucetufdoteggodetrf
-    dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
-    rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
-    gurhepofggfffhvfevkfgjfhfutgfgsehtjeertdertddtnecuhfhrohhmpedftehrnhgu
-    uceuvghrghhmrghnnhdfuceorghrnhgusegrrhhnuggsrdguvgeqnecuggftrfgrthhtvg
-    hrnhephfdthfdvtdefhedukeetgefggffhjeeggeetfefggfevudegudevledvkefhvdei
-    necuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomheprghrnh
-    gusegrrhhnuggsrdguvgdpnhgspghrtghpthhtohepudejpdhmohguvgepshhmthhpohhu
-    thdprhgtphhtthhopehnuhhnohdrshgrsegrnhgrlhhoghdrtghomhdprhgtphhtthhope
-    gulhgvtghhnhgvrhessggrhihlihgsrhgvrdgtohhmpdhrtghpthhtoheprghlvgigrghn
-    ughrvgdrsggvlhhlohhnihessghoohhtlhhinhdrtghomhdprhgtphhtthhopehflhhuth
-    hurhgvlhdrrggurhhirghnsehgmhgrihhlrdgtohhmpdhrtghpthhtoheprghnughrihih
-    rdhshhgvvhgthhgvnhhkohesihhnthgvlhdrtghomhdprhgtphhtthhopegrnhguhieskh
-    gvrhhnvghlrdhorhhgpdhrtghpthhtoheprghrnhgusehkvghrnhgvlhdrohhrghdprhgt
-    phhtthhopehjihgtvdefsehkvghrnhgvlhdrohhrghdprhgtphhtthhopehgrhgvghhkhh
-    eslhhinhhugihfohhunhgurghtihhonhdrohhrgh
-X-ME-Proxy: <xmx:j3eDaciJcp7UtbcI1E9MDX-n3vBfvJ0rcnVXBG0KFsHRHtM7r78OFg>
-    <xmx:j3eDaWj2z5XqSxaZmgqcMnpRbASTJ-3PavxoJQsnYk-QXIMmmJvdtA>
-    <xmx:j3eDaRszcxuuCQ0msJ3HPtyeIIpklvW-S-OEG6DruxTKF0a9Wm40hw>
-    <xmx:j3eDaUu3msNgbg0fnnMvVsf1BNg84IdVR9SbZSVXp8FsnosJVoUGTA>
-    <xmx:kHeDaae8ybN10he0zJRdQ2G7hDG_u7LYKWGUeEESRIsKi6Rgxk5-_z7Y>
-Feedback-ID: i56a14606:Fastmail
-Received: by mailuser.phl.internal (Postfix, from userid 501)
-	id C77BF70006A; Wed,  4 Feb 2026 11:45:03 -0500 (EST)
-X-Mailer: MessagingEngine.com Webmail Interface
+	Wed, 04 Feb 2026 18:16:01 +0000
+Received: by mail-pf1-x433.google.com with SMTP id d2e1a72fcca58-8217f2ad01eso27903b3a.2
+        for <linux-i3c@lists.infradead.org>; Wed, 04 Feb 2026 10:15:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1770228958; x=1770833758; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=jOVQ+nPE416W0DPiahH1jzaA8OHm3OMY6p/VFvnPU/s=;
+        b=gGPjfRy0gFYSglFUkScdz9ih4xv76VUXc6UuuGxZoMf9kbr7QpWrPe+OJnqxh7CjO0
+         gPuYFxsxNAE+vKwFkx7+th1uPkl9m/UVRfk7wx9PPMSDJ4iIeUvCjYn8n2uh7jmCZ8Yt
+         tx7P6bd1ocEAU6usVd3uJ+A824m0jri1LA+CBD+QNaHf9JY1m9XSBLV+4Fhbp2tP4e2u
+         8fhw9brHMjQPP/SkaaguHkMoG8DOXG6N0hTpu5kz2ltOmRSNBWPigYTDWOSp56UYnGgM
+         z6NgY1QrU7gzGHjsXeTBAEISoOnsfpf0/OIMYm7qwtVWC1Bk1suPtBTO8BMow0kqIgAf
+         sU3w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1770228958; x=1770833758;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:sender:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=jOVQ+nPE416W0DPiahH1jzaA8OHm3OMY6p/VFvnPU/s=;
+        b=ZtzGSboLaha2FYCaZRRjIUQ3QohK40Tour+BckdTXujQKUZcYuvlfRHdBNLuzRqsI2
+         63Mx54QV30VDrxknY1ufiZveYxZ8CuXtEfsUa0Jt+XyWzoZvEqzlq+w94UbQqXVXFceG
+         dtkfjsuVaJ1T70X53aPly3NZvke9a5xkxzbjBsiljPFeJEBCmbbNTKhIUxDY/Fi/clfw
+         C9Wc8gZIVLoWpzyB+cejq++853c/h7NudGAItx5GOSPFIjN6eMTCUrfO+lZBy9ZTTJLC
+         63fFHG9cu2MH5UhvEd7+PRbjUMmf0tVOigRbm2MOk1DXy0lerBoFWiaDR/isA/hMlKKN
+         WYXA==
+X-Forwarded-Encrypted: i=1; AJvYcCXE2HsqIOAJIPqzZILQwXAz6M2tZ0B6nJ1p5hCHfVoaRWeUj6yswkLN5mCIH3GiysSMSVLjCf3Qkgw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz4hItbA8apFcYq/hdi3CE00fPxJz+kk6OaO8Puoep8WHxNPXuD
+	PlHFbLPFrFVTKMw7udmTWPszSr47p5ErgQi0RIXDZ8WRbe9+y6iq8dh9
+X-Gm-Gg: AZuq6aJxjlrtz6Oo3NSyT6gmxLNcXVQrVQWyksXYr7M6W/hrmyEb+X7nedtGkHy49dH
+	DZxI9mg1k+d6l31RjvD3E8H1HlPaKzaC9ldBerXZNy5eXdfek7BZuddmqaZw+LYjg7DW5WB/yS6
+	B9fLy4IVs2fSANzuiMQgWJpkIn+m5zvhlezhpKljKjc1U5IwcsHs5JzGYVfdkQ36FG0yjqXy5MQ
+	23WYBTvXj5RLmSdeQgoH1+U6hI/b2PzAm/IPFplUZ997R44tWyNHre8oBUR3K4bxCj2UoOkjM35
+	v+ekI71KBdSyrXXu5oVpp5wIkyN3EMos41QSil4eiDNe6YoezpaVNiaXs7syLzET8G3KU0kWRFR
+	F+ONAK2TeuaBIpe8QOh0ZqVEfOiggUClJZtZFRidyQPoOf4f1FL4xhYgkgI/m/3zg7/+8S5mgdC
+	SyeiCVlQJvpMZ+tPrtbYeiR6CuWVp5VxOnMjQf9zNwfNk8tlJ8YHGim6M0Qq6dqjws4tw2Hec=
+X-Received: by 2002:a05:6a21:7016:b0:366:14ac:e1ee with SMTP id adf61e73a8af0-3937249be13mr4124349637.64.1770228958068;
+        Wed, 04 Feb 2026 10:15:58 -0800 (PST)
+Received: from ?IPV6:2600:1700:e321:62f0:da43:aeff:fecc:bfd5? ([2600:1700:e321:62f0:da43:aeff:fecc:bfd5])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2a93397cb23sm29570185ad.93.2026.02.04.10.15.57
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 04 Feb 2026 10:15:57 -0800 (PST)
+Message-ID: <b2fdaf5f-62b3-4695-aa89-b674aabefffb@roeck-us.net>
+Date: Wed, 4 Feb 2026 10:15:56 -0800
 MIME-Version: 1.0
-X-ThreadId: AEyqQNis3263
-Date: Wed, 04 Feb 2026 17:44:37 +0100
-From: "Arnd Bergmann" <arnd@arndb.de>
-To: "Alexandre Belloni" <alexandre.belloni@bootlin.com>,
- "Jonathan Cameron" <jic23@kernel.org>
-Cc: "Guenter Roeck" <linux@roeck-us.net>, "Arnd Bergmann" <arnd@kernel.org>,
- "Greg Kroah-Hartman" <gregkh@linuxfoundation.org>,
- "Andy Shevchenko" <andriy.shevchenko@intel.com>,
- "Frank Li" <Frank.Li@nxp.com>, "Adrian Fluturel" <fluturel.adrian@gmail.com>,
- "Carlos Song" <carlos.song@nxp.com>, "David Lechner" <dlechner@baylibre.com>,
- =?UTF-8?Q?Nuno_S=C3=A1?= <nuno.sa@analog.com>,
- "Andy Shevchenko" <andy@kernel.org>, "Jean Delvare" <jdelvare@suse.de>,
- linux-hwmon@vger.kernel.org, linux-kernel@vger.kernel.org,
- "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] [v3, apply after -rc1] i3c: simplify combined i3c/i2c
+ dependencies
+To: Arnd Bergmann <arnd@kernel.org>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: Arnd Bergmann <arnd@arndb.de>,
+ Jonathan Cameron <jonathan.cameron@huawei.com>, linux-hwmon@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
  linux-iio@vger.kernel.org
-Message-Id: <207e6197-ca3b-4266-9b96-49ad5ec56fdd@app.fastmail.com>
-In-Reply-To: <20260204162604f55a84b5@mail.local>
-References: <20260202160543.3654499-1-arnd@kernel.org>
- <a8f8ee55-3c87-4e9c-a5a9-12929855b86f@roeck-us.net>
- <20260202205011.221c1359@jic23-huawei> <20260204162604f55a84b5@mail.local>
-Subject: Re: [PATCH] [v2] i3c, iio: fix i3c driver dependencies
+References: <20260204164216.544409-1-arnd@kernel.org>
+Content-Language: en-US
+From: Guenter Roeck <linux@roeck-us.net>
+Autocrypt: addr=linux@roeck-us.net; keydata=
+ xsFNBE6H1WcBEACu6jIcw5kZ5dGeJ7E7B2uweQR/4FGxH10/H1O1+ApmcQ9i87XdZQiB9cpN
+ RYHA7RCEK2dh6dDccykQk3bC90xXMPg+O3R+C/SkwcnUak1UZaeK/SwQbq/t0tkMzYDRxfJ7
+ nyFiKxUehbNF3r9qlJgPqONwX5vJy4/GvDHdddSCxV41P/ejsZ8PykxyJs98UWhF54tGRWFl
+ 7i1xvaDB9lN5WTLRKSO7wICuLiSz5WZHXMkyF4d+/O5ll7yz/o/JxK5vO/sduYDIlFTvBZDh
+ gzaEtNf5tQjsjG4io8E0Yq0ViobLkS2RTNZT8ICq/Jmvl0SpbHRvYwa2DhNsK0YjHFQBB0FX
+ IdhdUEzNefcNcYvqigJpdICoP2e4yJSyflHFO4dr0OrdnGLe1Zi/8Xo/2+M1dSSEt196rXaC
+ kwu2KgIgmkRBb3cp2vIBBIIowU8W3qC1+w+RdMUrZxKGWJ3juwcgveJlzMpMZNyM1jobSXZ0
+ VHGMNJ3MwXlrEFPXaYJgibcg6brM6wGfX/LBvc/haWw4yO24lT5eitm4UBdIy9pKkKmHHh7s
+ jfZJkB5fWKVdoCv/omy6UyH6ykLOPFugl+hVL2Prf8xrXuZe1CMS7ID9Lc8FaL1ROIN/W8Vk
+ BIsJMaWOhks//7d92Uf3EArDlDShwR2+D+AMon8NULuLBHiEUQARAQABzTJHdWVudGVyIFJv
+ ZWNrIChMaW51eCBhY2NvdW50KSA8bGludXhAcm9lY2stdXMubmV0PsLBgQQTAQIAKwIbAwYL
+ CQgHAwIGFQgCCQoLBBYCAwECHgECF4ACGQEFAmgrMyQFCSbODQkACgkQyx8mb86fmYGcWRAA
+ oRwrk7V8fULqnGGpBIjp7pvR187Yzx+lhMGUHuM5H56TFEqeVwCMLWB2x1YRolYbY4MEFlQg
+ VUFcfeW0OknSr1s6wtrtQm0gdkolM8OcCL9ptTHOg1mmXa4YpW8QJiL0AVtbpE9BroeWGl9v
+ 2TGILPm9mVp+GmMQgkNeCS7Jonq5f5pDUGumAMguWzMFEg+Imt9wr2YA7aGen7KPSqJeQPpj
+ onPKhu7O/KJKkuC50ylxizHzmGx+IUSmOZxN950pZUFvVZH9CwhAAl+NYUtcF5ry/uSYG2U7
+ DCvpzqOryJRemKN63qt1bjF6cltsXwxjKOw6CvdjJYA3n6xCWLuJ6yk6CAy1Ukh545NhgBAs
+ rGGVkl6TUBi0ixL3EF3RWLa9IMDcHN32r7OBhw6vbul8HqyTFZWY2ksTvlTl+qG3zV6AJuzT
+ WdXmbcKN+TdhO5XlxVlbZoCm7ViBj1+PvIFQZCnLAhqSd/DJlhaq8fFXx1dCUPgQDcD+wo65
+ qulV/NijfU8bzFfEPgYP/3LP+BSAyFs33y/mdP8kbMxSCjnLEhimQMrSSo/To1Gxp5C97fw5
+ 3m1CaMILGKCmfI1B8iA8zd8ib7t1Rg0qCwcAnvsM36SkrID32GfFbv873bNskJCHAISK3Xkz
+ qo7IYZmjk/IJGbsiGzxUhvicwkgKE9r7a1rOwU0ETofVZwEQALlLbQeBDTDbwQYrj0gbx3bq
+ 7kpKABxN2MqeuqGr02DpS9883d/t7ontxasXoEz2GTioevvRmllJlPQERVxM8gQoNg22twF7
+ pB/zsrIjxkE9heE4wYfN1AyzT+AxgYN6f8hVQ7Nrc9XgZZe+8IkuW/Nf64KzNJXnSH4u6nJM
+ J2+Dt274YoFcXR1nG76Q259mKwzbCukKbd6piL+VsT/qBrLhZe9Ivbjq5WMdkQKnP7gYKCAi
+ pNVJC4enWfivZsYupMd9qn7Uv/oCZDYoBTdMSBUblaLMwlcjnPpOYK5rfHvC4opxl+P/Vzyz
+ 6WC2TLkPtKvYvXmdsI6rnEI4Uucg0Au/Ulg7aqqKhzGPIbVaL+U0Wk82nz6hz+WP2ggTrY1w
+ ZlPlRt8WM9w6WfLf2j+PuGklj37m+KvaOEfLsF1v464dSpy1tQVHhhp8LFTxh/6RWkRIR2uF
+ I4v3Xu/k5D0LhaZHpQ4C+xKsQxpTGuYh2tnRaRL14YMW1dlI3HfeB2gj7Yc8XdHh9vkpPyuT
+ nY/ZsFbnvBtiw7GchKKri2gDhRb2QNNDyBnQn5mRFw7CyuFclAksOdV/sdpQnYlYcRQWOUGY
+ HhQ5eqTRZjm9z+qQe/T0HQpmiPTqQcIaG/edgKVTUjITfA7AJMKLQHgp04Vylb+G6jocnQQX
+ JqvvP09whbqrABEBAAHCwWUEGAECAA8CGwwFAmgrMyQFCSbODQkACgkQyx8mb86fmYHlgg/9
+ H5JeDmB4jsreE9Bn621wZk7NMzxy9STxiVKSh8Mq4pb+IDu1RU2iLyetCY1TiJlcxnE362kj
+ njrfAdqyPteHM+LU59NtEbGwrfcXdQoh4XdMuPA5ADetPLma3YiRa3VsVkLwpnR7ilgwQw6u
+ dycEaOxQ7LUXCs0JaGVVP25Z2hMkHBwx6BlW6EZLNgzGI2rswSZ7SKcsBd1IRHVf0miwIFYy
+ j/UEfAFNW+tbtKPNn3xZTLs3quQN7GdYLh+J0XxITpBZaFOpwEKV+VS36pSLnNl0T5wm0E/y
+ scPJ0OVY7ly5Vm1nnoH4licaU5Y1nSkFR/j2douI5P7Cj687WuNMC6CcFd6j72kRfxklOqXw
+ zvy+2NEcXyziiLXp84130yxAKXfluax9sZhhrhKT6VrD45S6N3HxJpXQ/RY/EX35neH2/F7B
+ RgSloce2+zWfpELyS1qRkCUTt1tlGV2p+y2BPfXzrHn2vxvbhEn1QpQ6t+85FKN8YEhJEygJ
+ F0WaMvQMNrk9UAUziVcUkLU52NS9SXqpVg8vgrO0JKx97IXFPcNh0DWsSj/0Y8HO/RDkGXYn
+ FDMj7fZSPKyPQPmEHg+W/KzxSSfdgWIHF2QaQ0b2q1wOSec4Rti52ohmNSY+KNIW/zODhugJ
+ np3900V20aS7eD9K8GTU0TGC1pyz6IVJwIE=
+In-Reply-To: <20260204164216.544409-1-arnd@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260204_084506_650980_E6AC1834 
-X-CRM114-Status: UNSURE (   9.86  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260204_101559_801074_9A90C2FA 
+X-CRM114-Status: GOOD (  22.81  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,35 +143,121 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Feb 4, 2026, at 17:26, Alexandre Belloni wrote:
-> On 02/02/2026 20:50:11+0000, Jonathan Cameron wrote:
->> On Mon, 2 Feb 2026 09:50:58 -0800
->> > 
->> Hi Arnd / All,
->> 
->> I applied a less good fix and the pull request has gone to Greg for
->> the IIO bug. I copied the hwmon config you have below.
->> So I'm absolutely in favour of this improvement but it's
->> probably a case of rebase after rc1 and it goes in next cycle.
->> Or maybe Greg could pick a rebased version up on top of char-misc-next?
->> 
->> So with it rebased,
->> Reviewed-by: Jonathan Cameron <jonathan.cameron@huawei.com>
+On 2/4/26 08:41, Arnd Bergmann wrote:
+> From: Arnd Bergmann <arnd@arndb.de>
+> 
+> All combined i2c/i3c drivers appear to suffer from the same link
+> time problem when CONFIG_I3C is set to 'm':
+> 
+> arm-linux-gnueabi-ld: drivers/iio/magnetometer/mmc5633.o: in function `mmc5633_i3c_driver_init':
+> mmc5633.c:(.init.text+0x30): undefined reference to `i3c_driver_register_with_owner'
+> 
+> This was previously fixed every time by marking individual
+> drivers as 'depends on I2C; depends on I3C || !I3C', but this gets
+> tedious and is somewhat confusing.
+> 
+> Add a Kconfig symbol 'I3C_OR_I2C' to help replace those dependencies,
+> and use this in all the existing drivers that had already fixed it
+> as well as the new mmc5633 driver.
+> 
+> Fixes: 6e5f6bf2e3f0 ("iio: magnetometer: Add mmc5633 sensor")
+> Reviewed-by: Jonathan Cameron <jonathan.cameron@huawei.com>
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 
-Sounds good, thanks!
+For hwmon:
 
+Acked-by: Guenter Roeck <linux@roeck-us.net>
 
-> I guess I can pick this up after rc1.
+> ---
+> v2: restore accidentally deleted lines
+> v3: rebase on top of Jonathan's IIO patch in linux-next
+> ---
+>   drivers/hwmon/Kconfig            |  6 ++----
+>   drivers/i3c/Kconfig              | 12 ++++++++++++
+>   drivers/iio/magnetometer/Kconfig |  3 +--
+>   drivers/misc/amd-sbi/Kconfig     |  3 +--
+>   4 files changed, 16 insertions(+), 8 deletions(-)
+> 
+> diff --git a/drivers/hwmon/Kconfig b/drivers/hwmon/Kconfig
+> index 41c381764c2b..ecfba861f66d 100644
+> --- a/drivers/hwmon/Kconfig
+> +++ b/drivers/hwmon/Kconfig
+> @@ -1493,8 +1493,7 @@ config SENSORS_LM73
+>   
+>   config SENSORS_LM75
+>   	tristate "National Semiconductor LM75 and compatibles"
+> -	depends on I2C
+> -	depends on I3C || !I3C
+> +	depends on I3C_OR_I2C
+>   	select REGMAP_I2C
+>   	select REGMAP_I3C if I3C
+>   	help
+> @@ -2392,8 +2391,7 @@ config SENSORS_TMP103
+>   
+>   config SENSORS_TMP108
+>   	tristate "Texas Instruments TMP108"
+> -	depends on I2C
+> -	depends on I3C || !I3C
+> +	depends on I3C_OR_I2C
+>   	select REGMAP_I2C
+>   	select REGMAP_I3C if I3C
+>   	help
+> diff --git a/drivers/i3c/Kconfig b/drivers/i3c/Kconfig
+> index 30a441506f61..626c54b386d5 100644
+> --- a/drivers/i3c/Kconfig
+> +++ b/drivers/i3c/Kconfig
+> @@ -22,3 +22,15 @@ menuconfig I3C
+>   if I3C
+>   source "drivers/i3c/master/Kconfig"
+>   endif # I3C
+> +
+> +config I3C_OR_I2C
+> +	tristate
+> +	default m if I3C=m
+> +	default I2C
+> +	help
+> +	  Device drivers using module_i3c_i2c_driver() can use either
+> +	  i2c or i3c hosts, but cannot be built-in for the kernel when
+> +	  CONFIG_I3C=m.
+> +
+> +	  Add 'depends on I2C_OR_I3C' in Kconfig for those drivers to
+> +	  get the correct dependencies.
+> diff --git a/drivers/iio/magnetometer/Kconfig b/drivers/iio/magnetometer/Kconfig
+> index 9345fb6d5317..fb313e591e85 100644
+> --- a/drivers/iio/magnetometer/Kconfig
+> +++ b/drivers/iio/magnetometer/Kconfig
+> @@ -143,8 +143,7 @@ config MMC5633
+>   	tristate "MEMSIC MMC5633 3-axis magnetic sensor"
+>   	select REGMAP_I2C
+>   	select REGMAP_I3C if I3C
+> -	depends on I2C
+> -	depends on I3C || !I3C
+> +	depends on I3C_OR_I2C
+>   	help
+>   	  Say yes here to build support for the MEMSIC MMC5633 3-axis
+>   	  magnetic sensor.
+> diff --git a/drivers/misc/amd-sbi/Kconfig b/drivers/misc/amd-sbi/Kconfig
+> index be022c71a90c..30e7fad7356c 100644
+> --- a/drivers/misc/amd-sbi/Kconfig
+> +++ b/drivers/misc/amd-sbi/Kconfig
+> @@ -1,10 +1,9 @@
+>   # SPDX-License-Identifier: GPL-2.0-only
+>   config AMD_SBRMI_I2C
+>   	tristate "AMD side band RMI support"
+> -	depends on I2C
+> +	depends on I3C_OR_I2C
+>   	depends on ARM || ARM64 || COMPILE_TEST
+>   	select REGMAP_I2C
+> -	depends on I3C || !I3C
+>   	select REGMAP_I3C if I3C
+>   	help
+>   	  Side band RMI over I2C/I3C support for AMD out of band management.
 
-Ok. I've sent a rebased patch with a slightly adapted changelog
-text and Jonathan's R-b.
-
-     Arnd
 
 -- 
 linux-i3c mailing list
