@@ -4,60 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 51EA8ECD999
-	for <linux-i3c@archiver.kernel.org>; Thu,  5 Feb 2026 20:11:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0227AECD9B1
+	for <linux-i3c@archiver.kernel.org>; Thu,  5 Feb 2026 22:45:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u10FJftHqm+OZyJ7RebeV84ZnkLn098lhiQFh2Ea1/I=; b=dx3kn48MDCNWfe
-	9RZ5oZueSYowsqxFP2WA54Wcj/ssbIrz+LLtXHQsjxTSgSJMoSYa0gCSpXxCjQ2c/UZbb2hUIkPwb
-	WZTRRSYubdgz3SOYUBHZON2l34iQ3DpnAOKILl2dSQ5BZNtIi+L5gx84fd02C3QRlfDBpNGrasTqP
-	hjuskuPHPSRy3bWvKPkjDukanOU7qFAeaat0UyDnI05B1NtBhifbd6JCovzDc3Pn3gEksWqF6XX/N
-	GIRiE+RO343N1KbUXjUCITs3Bfu39n6JnT7VJpCZ7AhN7vI2aigtbBgOajpPka81VL9tBF0stINws
-	jRkOHRzL0PTDYCW+hk9Q==;
+	List-Owner; bh=Ic+5mab96KRaPWLlwWqW/1uQImXPwYhTsFioznV7n30=; b=3L19HN8Kc2bKgr
+	6deXk5gCICJthRvz+7qpbKEmdzqJG1wo1jW/hsx5/q6dlD9q9ugIwP0M7A+ROfZMEHF9fG17XS4j+
+	cSGmBBpqeuproBGLw5yPX/mxFG0zJnNudrwyqDyBLsd6yZbN6WD8H9FKnTf3OeSMl5WFRtb6N/1LF
+	fY9vwnyQZYJmYcLyZ19tORk5kRydj8/Sut4f999XiRLpouvygEZ5hodn266bf1TrnERF/JTrRbyPt
+	DoUf6dwObBWaKfwlpe5G+8Haiq2wHAnGvpCTDnODC8rcDEdEnQ/NkaefPoPcVS8zRmBcQLyOj4iYa
+	dog5sTNHo8Uuh2tna4Qg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vo5hT-0000000AScH-1acu;
-	Thu, 05 Feb 2026 20:11:39 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
-	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vo5hS-0000000AScA-37MT
+	id 1vo86m-0000000AaGf-0zWZ;
+	Thu, 05 Feb 2026 22:45:58 +0000
+Received: from linux.microsoft.com ([13.77.154.182])
+	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vo86i-0000000AaGK-2AS7
 	for linux-i3c@lists.infradead.org;
-	Thu, 05 Feb 2026 20:11:39 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id A299E600AD;
-	Thu,  5 Feb 2026 20:11:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9A064C4CEF7;
-	Thu,  5 Feb 2026 20:11:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1770322297;
-	bh=gekqAShyRuvBQ70OScUhtcb+pcqa6F/iTOcndq1RCqQ=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
-	b=CRW4MRm5nF4wuvXyDII9FT73yPbbSWMIWjih9eQdHpW6nKwwDUpOCDJfl8ko6MAzJ
-	 IFYZWFoATiMpJ3pdXXCyPTaP1qCKUUOfWbFGRC5pBN+LCge6jreE48SZWpv/aXTjuz
-	 N+KsNgutufpAE8FB6duSHJ1/+bEHexidn90Imgksg8hv6uNrGi06hvjD6ZcG8kOg/V
-	 zjbO1NGwGWAIvLFB2d0a8nWzMuF2aYBUaJ9jBEE+5WgVVQYrfNgI0KmGmblD85bNcx
-	 6dn7xPV31jBPBt4h1MRhZn1UAdWHYtB3amJ5LzzgSH6EALgGIN+rNTBOLJoKSOBj5g
-	 lfvv//diTw/Kg==
-Date: Thu, 5 Feb 2026 20:11:26 +0000
-From: Jonathan Cameron <jic23@kernel.org>
-To: Guenter Roeck <linux@roeck-us.net>
-Cc: Arnd Bergmann <arnd@kernel.org>, Alexandre Belloni
- <alexandre.belloni@bootlin.com>, Arnd Bergmann <arnd@arndb.de>, Jonathan
- Cameron <jonathan.cameron@huawei.com>, linux-hwmon@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
- linux-iio@vger.kernel.org
-Subject: Re: [PATCH] [v3, apply after -rc1] i3c: simplify combined i3c/i2c
- dependencies
-Message-ID: <20260205201126.66995e9e@jic23-huawei>
-In-Reply-To: <b2fdaf5f-62b3-4695-aa89-b674aabefffb@roeck-us.net>
-References: <20260204164216.544409-1-arnd@kernel.org>
-	<b2fdaf5f-62b3-4695-aa89-b674aabefffb@roeck-us.net>
-X-Mailer: Claws Mail 4.3.1 (GTK 3.24.51; x86_64-pc-linux-gnu)
+	Thu, 05 Feb 2026 22:45:55 +0000
+Received: from [100.64.0.122] (unknown [20.191.74.188])
+	by linux.microsoft.com (Postfix) with ESMTPSA id 77E7F20B7165;
+	Thu,  5 Feb 2026 14:45:50 -0800 (PST)
+DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com 77E7F20B7165
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.microsoft.com;
+	s=default; t=1770331550;
+	bh=O7nQ1RpzKe3BId8FwUQ/x7xNm+yTkiO7HB8A8XNyb3M=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=LmvmWedrW/u65u/kzFs6T0uuXgxrztrxePZNEWyIlgv7fFWbisQbJnSFrJXohor7d
+	 /2vhcOP0n3KK6PsSrBhSYiTCY1vRBK/ngTyJn4pZ4QxvWGC4dj4JwkdQhsl0WcnVs6
+	 EKbnconV/sJjqCpfefi8vKgxy0BhPgJNUZZem0Bg=
+Message-ID: <9cd39bad-a526-4695-8dfe-5882ad15f4f9@linux.microsoft.com>
+Date: Thu, 5 Feb 2026 14:45:50 -0800
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4] i3c: master: Add sysfs option to rescan bus via entdaa
+To: Frank Li <Frank.li@nxp.com>
+Cc: =?UTF-8?Q?David_Nystr=C3=B6m?= <david.nystrom@est.tech>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Joshua Yeong <joshua.yeong@starfivetech.com>
+References: <20260126-i3c_rescan-v4-1-6b3559d82abc@est.tech>
+ <aXeh9ORxy0qxKPBj@lizhi-Precision-Tower-5810>
+ <149b630d-ba89-453d-aad1-a0d96b0c26b6@linux.microsoft.com>
+ <8484bb1a-3b74-4911-aa22-15a6f48cc844@linux.microsoft.com>
+ <aYTC5uZ8U-BbkPpS@lizhi-Precision-Tower-5810>
+Content-Language: en-US
+From: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
+In-Reply-To: <aYTC5uZ8U-BbkPpS@lizhi-Precision-Tower-5810>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260205_144554_041416_D48309BC 
+X-CRM114-Status: GOOD (  19.16  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,140 +70,110 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, 4 Feb 2026 10:15:56 -0800
-Guenter Roeck <linux@roeck-us.net> wrote:
-
-> On 2/4/26 08:41, Arnd Bergmann wrote:
-> > From: Arnd Bergmann <arnd@arndb.de>
-> > 
-> > All combined i2c/i3c drivers appear to suffer from the same link
-> > time problem when CONFIG_I3C is set to 'm':
-> > 
-> > arm-linux-gnueabi-ld: drivers/iio/magnetometer/mmc5633.o: in function `mmc5633_i3c_driver_init':
-> > mmc5633.c:(.init.text+0x30): undefined reference to `i3c_driver_register_with_owner'
-> > 
-> > This was previously fixed every time by marking individual
-> > drivers as 'depends on I2C; depends on I3C || !I3C', but this gets
-> > tedious and is somewhat confusing.
-> > 
-> > Add a Kconfig symbol 'I3C_OR_I2C' to help replace those dependencies,
-> > and use this in all the existing drivers that had already fixed it
-> > as well as the new mmc5633 driver.
-> > 
-> > Fixes: 6e5f6bf2e3f0 ("iio: magnetometer: Add mmc5633 sensor")
-
-I think can drop the Fixes tag now given there is a fix in between for
-the original issue.
-
-> > Reviewed-by: Jonathan Cameron <jonathan.cameron@huawei.com>
-> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>  
-> 
-> For hwmon:
-> 
-> Acked-by: Guenter Roeck <linux@roeck-us.net>
-
-For IIO
-Acked-by: Jonathan Cameron <jonathan.cameron@huawei.com>
-
-Thanks!
-
-Jonathan
-
-> 
-> > ---
-> > v2: restore accidentally deleted lines
-> > v3: rebase on top of Jonathan's IIO patch in linux-next
-> > ---
-> >   drivers/hwmon/Kconfig            |  6 ++----
-> >   drivers/i3c/Kconfig              | 12 ++++++++++++
-> >   drivers/iio/magnetometer/Kconfig |  3 +--
-> >   drivers/misc/amd-sbi/Kconfig     |  3 +--
-> >   4 files changed, 16 insertions(+), 8 deletions(-)
-> > 
-> > diff --git a/drivers/hwmon/Kconfig b/drivers/hwmon/Kconfig
-> > index 41c381764c2b..ecfba861f66d 100644
-> > --- a/drivers/hwmon/Kconfig
-> > +++ b/drivers/hwmon/Kconfig
-> > @@ -1493,8 +1493,7 @@ config SENSORS_LM73
-> >   
-> >   config SENSORS_LM75
-> >   	tristate "National Semiconductor LM75 and compatibles"
-> > -	depends on I2C
-> > -	depends on I3C || !I3C
-> > +	depends on I3C_OR_I2C
-> >   	select REGMAP_I2C
-> >   	select REGMAP_I3C if I3C
-> >   	help
-> > @@ -2392,8 +2391,7 @@ config SENSORS_TMP103
-> >   
-> >   config SENSORS_TMP108
-> >   	tristate "Texas Instruments TMP108"
-> > -	depends on I2C
-> > -	depends on I3C || !I3C
-> > +	depends on I3C_OR_I2C
-> >   	select REGMAP_I2C
-> >   	select REGMAP_I3C if I3C
-> >   	help
-> > diff --git a/drivers/i3c/Kconfig b/drivers/i3c/Kconfig
-> > index 30a441506f61..626c54b386d5 100644
-> > --- a/drivers/i3c/Kconfig
-> > +++ b/drivers/i3c/Kconfig
-> > @@ -22,3 +22,15 @@ menuconfig I3C
-> >   if I3C
-> >   source "drivers/i3c/master/Kconfig"
-> >   endif # I3C
-> > +
-> > +config I3C_OR_I2C
-> > +	tristate
-> > +	default m if I3C=m
-> > +	default I2C
-> > +	help
-> > +	  Device drivers using module_i3c_i2c_driver() can use either
-> > +	  i2c or i3c hosts, but cannot be built-in for the kernel when
-> > +	  CONFIG_I3C=m.
-> > +
-> > +	  Add 'depends on I2C_OR_I3C' in Kconfig for those drivers to
-> > +	  get the correct dependencies.
-> > diff --git a/drivers/iio/magnetometer/Kconfig b/drivers/iio/magnetometer/Kconfig
-> > index 9345fb6d5317..fb313e591e85 100644
-> > --- a/drivers/iio/magnetometer/Kconfig
-> > +++ b/drivers/iio/magnetometer/Kconfig
-> > @@ -143,8 +143,7 @@ config MMC5633
-> >   	tristate "MEMSIC MMC5633 3-axis magnetic sensor"
-> >   	select REGMAP_I2C
-> >   	select REGMAP_I3C if I3C
-> > -	depends on I2C
-> > -	depends on I3C || !I3C
-> > +	depends on I3C_OR_I2C
-> >   	help
-> >   	  Say yes here to build support for the MEMSIC MMC5633 3-axis
-> >   	  magnetic sensor.
-> > diff --git a/drivers/misc/amd-sbi/Kconfig b/drivers/misc/amd-sbi/Kconfig
-> > index be022c71a90c..30e7fad7356c 100644
-> > --- a/drivers/misc/amd-sbi/Kconfig
-> > +++ b/drivers/misc/amd-sbi/Kconfig
-> > @@ -1,10 +1,9 @@
-> >   # SPDX-License-Identifier: GPL-2.0-only
-> >   config AMD_SBRMI_I2C
-> >   	tristate "AMD side band RMI support"
-> > -	depends on I2C
-> > +	depends on I3C_OR_I2C
-> >   	depends on ARM || ARM64 || COMPILE_TEST
-> >   	select REGMAP_I2C
-> > -	depends on I3C || !I3C
-> >   	select REGMAP_I3C if I3C
-> >   	help
-> >   	  Side band RMI over I2C/I3C support for AMD out of band management.  
-> 
-> 
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+Ck9uIDIvNS8yMDI2IDg6MTggQU0sIEZyYW5rIExpIHdyb3RlOgo+IE9uIFdlZCwgRmViIDA0LCAy
+MDI2IGF0IDAzOjQ5OjM1UE0gLTA4MDAsIE1lYWdhbiBMbG95ZCB3cm90ZToKPj4gT24gMS8yNi8y
+MDI2IDY6NTAgUE0sIE1lYWdhbiBMbG95ZCB3cm90ZToKPj4+IE9uIDEvMjYvMjAyNiA5OjE4IEFN
+LCBGcmFuayBMaSB3cm90ZToKPj4+PiBPbiBNb24sIEphbiAyNiwgMjAyNiBhdCAwOTozNzowMUFN
+ICswMTAwLCBEYXZpZCBOeXN0csO2bSB3cm90ZToKPj4+Pj4gQWxsb3cgdXNlcnNwYWNlIHRvIHJl
+cXVlc3QgZHluYW1pYyBhZGRyZXNzIGFzc2lnbm1lbnQsIHdoaWNoIGlzCj4+Pj4+IHVzZWZ1bCBm
+b3IgaTNjZGV2IGRldmljZXMgd2l0aCBicm9rZW4gaG90LWpvaW4gc3VwcG9ydC4KPj4+Pj4gVGhp
+cyB3aWxsIGFzc2lnbiBkeW5hbWljIGFkZHJlc3NlcyB0byBhbGwgZGV2aWNlcyBvbiB0aGUgSTND
+IGJ1cwo+Pj4+PiB3aGljaCBhcmUgY3VycmVudGx5IHVuYXNzaWduZWQuCj4+Pj4gUmV2aWV3ZWQt
+Ynk6IEZyYW5rIExpIDxGcmFuay5MaUBueHAuY29tPgo+Pj4+PiBTaWduZWQtb2ZmLWJ5OiBEYXZp
+ZCBOeXN0csO2bSA8ZGF2aWQubnlzdHJvbUBlc3QudGVjaD4KPj4+Pj4gLS0tCj4+Pj4+IENoYW5n
+ZXMgaW4gdjQ6Cj4+Pj4+IC0gSW1wcm92ZWQgY29tbWl0IG1lc3NhZ2UsIG9uY2UgbW9yZS4gQ29t
+bWVudDogRnJhbmsgTGkKPj4+Pj4gLSBBZGRlZCByZXF1aXJlZCBkb2N1bWVudGF0aW9uIGZvciBz
+eXNmcyBhZGRpdGlvbi4gQ29tbWVudDogRnJhbmsgTGkKPj4+Pj4gLSBMaW5rIHRvIHYzOiBodHRw
+czovL3BhdGNoLm1zZ2lkLmxpbmsvMjAyNjAxMjMtaTNjX3Jlc2Nhbi12My0xLTAyNjQyOWZhMGM2
+NUBlc3QudGVjaAo+Pj4+Pgo+Pj4+PiBDaGFuZ2VzIGluIHYzOgo+Pj4+PiAtIFJlbmFtZSBzeXNm
+cyBlbnRyeSBmcm9tIHJlc2NhbiB0byBlbnRkZGEsIENvbW1lbnQ6IEpvc2h1YSBZZW9uZwo+Pj4+
+PiAtIExpbmsgdG8gdjI6IGh0dHBzOi8vcGF0Y2gubXNnaWQubGluay8yMDI2MDEyMi1pM2NfcmVz
+Y2FuLXYyLTEtODRjNzRhNDgzZjAzQGVzdC50ZWNoCj4+Pj4+Cj4+Pj4+IENoYW5nZXMgaW4gdjI6
+Cj4+Pj4+IC0gSW1wcm92ZWQgdGhlIGNvbW1pdCBtZXNzYWdlIHdpdGggIndoeSIuCj4+Pj4+IC0g
+TGluayB0byB2MTogaHR0cHM6Ly9wYXRjaC5tc2dpZC5saW5rLzIwMjYwMTIyLWkzY19yZXNjYW4t
+djEtMS0wYzE3MDcxZTIzMmJAZXN0LnRlY2gKPj4+Pj4gLS0tCj4+Pj4+ICBEb2N1bWVudGF0aW9u
+L0FCSS90ZXN0aW5nL3N5c2ZzLWJ1cy1pM2MgfCAxOSArKysrKysrKysrKysrKysrKysrCj4+Pj4+
+ICBkcml2ZXJzL2kzYy9tYXN0ZXIuYyAgICAgICAgICAgICAgICAgICAgfCAyNCArKysrKysrKysr
+KysrKysrKysrKysrKysKPj4+Pj4gIDIgZmlsZXMgY2hhbmdlZCwgNDMgaW5zZXJ0aW9ucygrKQo+
+Pj4+Pgo+Pj4+PiBkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9BQkkvdGVzdGluZy9zeXNmcy1i
+dXMtaTNjIGIvRG9jdW1lbnRhdGlvbi9BQkkvdGVzdGluZy9zeXNmcy1idXMtaTNjCj4+Pj4+IGlu
+ZGV4IGMxZTA0ODk1N2EwMS4uMDQwODI0YWM3NDAxIDEwMDY0NAo+Pj4+PiAtLS0gYS9Eb2N1bWVu
+dGF0aW9uL0FCSS90ZXN0aW5nL3N5c2ZzLWJ1cy1pM2MKPj4+Pj4gKysrIGIvRG9jdW1lbnRhdGlv
+bi9BQkkvdGVzdGluZy9zeXNmcy1idXMtaTNjCj4+Pj4+IEBAIC0xNzIsMyArMTcyLDIyIEBAIERl
+c2NyaXB0aW9uOgo+Pj4+PiAgCQl0aGUgYXV0b21hdGljIHJldHJpZXMuIEV4aXN0IG9ubHkgd2hl
+biBJM0MgY29uc3Ryb2xsZXIgc3VwcG9ydHMKPj4+Pj4gIAkJdGhpcyByZXRyeSBvbiBuYWNrIGZl
+YXR1cmUuCj4+Pj4+Cj4+Pj4+ICtXaGF0OgkJL3N5cy9idXMvaTNjL2RldmljZXMvaTNjLTxidXMt
+aWQ+L2VudGRhYQo+Pj4+PiArS2VybmVsVmVyc2lvbjogIDYuMjAKPj4+Pj4gK0NvbnRhY3Q6CWxp
+bnV4LWkzY0B2Z2VyLmtlcm5lbC5vcmcKPj4+Pj4gK0Rlc2NyaXB0aW9uOgo+Pj4+PiArCQlXcml0
+ZS1vbmx5IGF0dHJpYnV0ZSB0aGF0IHRyaWdnZXJzIGEgRHluYW1pYyBBZGRyZXNzIEFzc2lnbm1l
+bnQKPj4+Pj4gKwkJKERBQSkgcHJvY2VkdXJlIHdoaWNoIGRpc2NvdmVycyBuZXcgSTNDIGRldmlj
+ZXMgb24gdGhlIGJ1cy4KPj4+Pj4gKwkJV3JpdGluZyBhbnkgbm9uLXplcm8gdmFsdWUgdG8gdGhp
+cyBhdHRyaWJ1dGUKPj4+Pj4gKwkJY2F1c2VzIHRoZSBtYXN0ZXIgY29udHJvbGxlciB0byBicm9h
+ZGNhc3QgYW4gRU5UREFBCj4+Pj4+ICsJCShFbnRlciBEeW5hbWljIEFkZHJlc3MgQXNzaWdubWVu
+dCkgQ29tbW9uIENvbW1hbmQgQ29kZShDQ0MpIG9uCj4+Pj4+ICsJCXRoZSBidXMuCj4+Pj4+ICsK
+Pj4+Pj4gKwkJVGhpcyBpcyB1c2VmdWwgZm9yIGRpc2NvdmVyaW5nIEkzQyBkZXZpY2VzIHRoYXQg
+d2VyZSBub3QgcHJlc2VudAo+Pj4+PiArCQlkdXJpbmcgaW5pdGlhbCBidXMgaW5pdGlhbGl6YXRp
+b24gYW5kIGFyZSB1bmFibGUgdG8gaXNzdWUKPj4+Pj4gKwkJSG90LUpvaW4uIE9ubHkgZGV2aWNl
+cyB3aXRob3V0IGEgY3VycmVudGx5IGFzc2lnbmVkIGR5bmFtaWMgYWRkcmVzcwo+Pj4+PiArCQl3
+aWxsIHJlc3BvbmQgdG8gdGhlIEVOVERBQSBicm9hZGNhc3QgYW5kIGJlIGFzc2lnbmVkIGFkZHJl
+c3Nlcy4KPj4+Pj4gKwo+Pj4+PiArCQlOb3RlIHRoYXQgdGhpcyBtZWNoYW5pc20gaXMgZGlzdGlu
+Y3QgZnJvbSBIb3QtSm9pbiwgc2luY2UgdGhpcyBpcwo+Pj4+PiArCQljb250cm9sbGVyLWluaXRp
+YXRlZCBkaXNjb3ZlcnksIHdoaWxlIEhvdC1Kb2luIGlzIGRldmljZS1pbml0aWF0ZWQKPj4+Pj4g
+KwkJbWV0aG9kIHRvIHByb3Zva2UgY29udHJvbGxlciBkaXNjb3ZlcnkgcHJvY2VkdXJlLgo+Pj4+
+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9pM2MvbWFzdGVyLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIu
+Ywo+Pj4+PiBpbmRleCA4MGRkYTBlODU1NTguLmExZDgxNjYzNGEyNSAxMDA2NDQKPj4+Pj4gLS0t
+IGEvZHJpdmVycy9pM2MvbWFzdGVyLmMKPj4+Pj4gKysrIGIvZHJpdmVycy9pM2MvbWFzdGVyLmMK
+Pj4+Pj4gQEAgLTc1OCw2ICs3NTgsMjkgQEAgc3RhdGljIHNzaXplX3QgZGV2X25hY2tfcmV0cnlf
+Y291bnRfc3RvcmUoc3RydWN0IGRldmljZSAqZGV2LAo+Pj4+Pgo+Pj4+PiAgc3RhdGljIERFVklD
+RV9BVFRSX1JXKGRldl9uYWNrX3JldHJ5X2NvdW50KTsKPj4+Pj4KPj4+Pj4gK3N0YXRpYyBzc2l6
+ZV90IGVudGRhYV9zdG9yZShzdHJ1Y3QgZGV2aWNlICpkZXYsCj4+Pj4+ICsJCQkgICAgc3RydWN0
+IGRldmljZV9hdHRyaWJ1dGUgKmF0dHIsCj4+Pj4+ICsJCQkgICAgY29uc3QgY2hhciAqYnVmLCBz
+aXplX3QgY291bnQpCj4+Pj4+ICt7Cj4+Pj4+ICsJc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxl
+ciAqbWFzdGVyID0gZGV2X3RvX2kzY21hc3RlcihkZXYpOwo+Pj4+PiArCXVuc2lnbmVkIGxvbmcg
+dmFsOwo+Pj4+PiArCWludCByZXQ7Cj4+Pj4+ICsKPj4+Pj4gKwlyZXQgPSBrc3RydG91bChidWYs
+IDAsICZ2YWwpOwo+Pj4+PiArCWlmIChyZXQpCj4+Pj4+ICsJCXJldHVybiByZXQ7Cj4+Pj4+ICsK
+Pj4+Pj4gKwlpZiAodmFsKSB7Cj4+Pj4+ICsJCXJldCA9IGkzY19tYXN0ZXJfZG9fZGFhKG1hc3Rl
+cik7Cj4+Pj4+ICsJCWlmIChyZXQpCj4+Pj4+ICsJCQlyZXR1cm4gcmV0Owo+Pj4+PiArCX0KPj4+
+Pj4gKwo+Pj4gV2h5IG5vdCB1c2Uga3N0cnRvYm9vbCBhbmQgcmV0dXJuIC1FSU5WQUwgZm9yIGlu
+cHV0cyB0aGF0IGV2YWx1YXRlIHRvIGZhbHNlPwo+Pj4KPj4+Pj4gKwlyZXR1cm4gY291bnQ7Cj4+
+Pj4+ICt9Cj4+Pj4+ICsKPj4+Pj4gK3N0YXRpYyBERVZJQ0VfQVRUUl9XTyhlbnRkYWEpOwo+Pj4+
+PiArCj4+Pj4+ICBzdGF0aWMgc3RydWN0IGF0dHJpYnV0ZSAqaTNjX21hc3RlcmRldl9hdHRyc1td
+ID0gewo+Pj4+PiAgCSZkZXZfYXR0cl9tb2RlLmF0dHIsCj4+Pj4+ICAJJmRldl9hdHRyX2N1cnJl
+bnRfbWFzdGVyLmF0dHIsCj4+Pj4+IEBAIC03NjksNiArNzkyLDcgQEAgc3RhdGljIHN0cnVjdCBh
+dHRyaWJ1dGUgKmkzY19tYXN0ZXJkZXZfYXR0cnNbXSA9IHsKPj4+Pj4gIAkmZGV2X2F0dHJfZHlu
+YW1pY19hZGRyZXNzLmF0dHIsCj4+Pj4+ICAJJmRldl9hdHRyX2hkcmNhcC5hdHRyLAo+Pj4+PiAg
+CSZkZXZfYXR0cl9ob3Rqb2luLmF0dHIsCj4+Pj4+ICsJJmRldl9hdHRyX2VudGRhYS5hdHRyLAo+
+Pj4gSXMgJ2VudGRhYScgdGhlIGJlc3QgbmFtaW5nIGhlcmU/IEtlZXBpbmcgaXQgZ2VuZXJhbCBp
+LmUuICdkYWEnIG9yICd0cmlnZ2VyX2RhYScgd291bGQgYmUgbW9yZSBmbGV4aWJsZS9leHRlbnNp
+YmxlIGluIG15IG9waW5pb24uCj4+IE9uIHNlY29uZCB0aG91Z2h0LCBJIGd1ZXNzIHRoaXMgc3lz
+ZnMgYXR0cmlidXRlIGRvZXNuJ3QgbmVlZCB0byBiZSBleHRlbnNpYmxlLiBGb3IgZXhhbXBsZSwg
+aWYgYSBuZWVkIGFyaXNlcyB0byBpc3N1ZSBTRVREQVNBIG9yIFNFVEFBU0EgYmVmb3JlIEVOVERB
+QSBpcyBpc3N1ZWQsIHdlJ2QgY3JlYXRlIHNlcGFyYXRlIHN5c2ZzIGF0dHJpYnV0ZXMgZm9yIHRo
+b3NlICYgdGhleSBjb3VsZCBiZSB1c2VkIGJlZm9yZWhhbmQuCj4+Cj4+IEluZGVlZCwgaXQgZG9l
+cyBzZWVtIHRoYXQgLmRvX2RhYSBpcyBpbnRlbmRlZCBmb3IgdGhlIEVOVERBQSBtZWNoYW5pc20g
+aW4gRHluYW1pYyBBZGRyZXNzIEFzc2lnbm1lbnQuwqBNeSBzdWdnZXN0aW9uIHdvdWxkIHN0aWxs
+IGJlIGZvciBhIGdlbmVyaWMgbmFtaW5nIGxpa2UgJ2RhYScgcmF0aGVyIHRoYW4gYSBkaXJlY3Qg
+cmVmZXJlbmNlIHRvIHRoZSBFTlREQUHCoENDQyBzaW5jZSBvdGhlciBDQ0NzIGNhbiBzdGlsbCBo
+YXBwZW4gb24gdGhlIGNvZGUgcGF0aCBkZXBlbmRpbmcgb24gdGhlIGNvbnRyb2xsZXIgZHJpdmVy
+J3MgaW1wbGVtZW50YXRpb24uIEZvciBleGFtcGxlLCBvdGhlciBDQ0NzIG9uIHRoZSBwYXRoIGN1
+cnJlbnRseSBpbmNsdWRlIFNFVE5FV0RBLCBERUZTTFZTLCBFTkVDLiBXaGF0IGFyZSB5b3VyIHRo
+b3VnaHRzPwo+IEkgdm90ZSBkb19kYWEsIHdoaWNoIGlzIGVhc3kgdG8gdW5kZXJzdGFuZCBieSB1
+c2VyIHdobyBoYXMgbGVzcyBpM2MgYmFja2dyb3VuZAo+IGtub3dsZWRnZS4KSSBsaWtlIHlvdXIg
+c3VnZ2VzdGlvbi4gZG9fZGFhIGlzIHN0cmFpZ2h0Zm9yd2FyZCBhbmQgYXBwcm9wcmlhdGUgc2lu
+Y2UKdGhhdCdzIHRoZSBmdW5jdGlvbiB0aGF0IGlzIGRpcmVjdGx5IGNhbGxlZCBoZXJlLgo+IFBs
+ZWFzZSB3cmFwIHlvdXIgcmVwbHkuCgphY2ssIHRoYW5rIHlvdSEKCk1lYWdhbgoKPgo+IEZyYW5r
+Cj4+IE1lYWdhbgo+Pgo+Pj4+PiAgCU5VTEwsCj4+Pj4+ICB9Owo+Pj4+PiAgQVRUUklCVVRFX0dS
+T1VQUyhpM2NfbWFzdGVyZGV2KTsKPj4+Pj4KPj4+Pj4gLS0tCj4+Pj4+IGJhc2UtY29tbWl0OiBl
+M2IzMmRjYjlmMjNlM2MzOTI3ZWYzZWVjNmE1ODQyYTk4OGZiNTc0Cj4+Pj4+IGNoYW5nZS1pZDog
+MjAyNjAxMTYtaTNjX3Jlc2Nhbi00OTIxZDBiNDFhMDAKPj4+Pj4KPj4+Pj4gQmVzdCByZWdhcmRz
+LAo+Pj4+PiAtLQo+Pj4+PiBEYXZpZCBOeXN0csO2bSA8ZGF2aWQubnlzdHJvbUBlc3QudGVjaD4K
+Pj4+Pj4KPj4+Pj4KPj4+Pj4gLS0KPj4+Pj4gbGludXgtaTNjIG1haWxpbmcgbGlzdAo+Pj4+PiBs
+aW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwo+Pj4+PiBodHRwOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxp
+c3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
