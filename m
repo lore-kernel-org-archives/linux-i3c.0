@@ -4,56 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 500E7EC1E86
-	for <linux-i3c@archiver.kernel.org>; Thu,  5 Feb 2026 10:09:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3D7BEC1E91
+	for <linux-i3c@archiver.kernel.org>; Thu,  5 Feb 2026 10:09:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hb0g2lLteKC4TByeZRPs7S++Qf9fDRR8EzuceoXi3lA=; b=i/P09HF3eKx2wm
-	GsyXrzX7qOUNqBKOJf4vrP0eHrCAcUL1HIx9XSQTUgKv8Qg6iC4KFg6eEZLfdmeYyUKpscnq69y74
-	a80RrRYfJ+zY2JapHvtwog+owtFtGjytKOMSIhrXVEWQEvPU9KPSfZ/VdZVqSkf0BufBRd1KtEug5
-	gADS8s2I4DIGbMd1NUo/6PL3CdhaSsob6d+sDCQNSlzktI5JMYxJM2PkK4Yiizcz2bnM3k7JWrNEg
-	49xtIchjpwbwcXCGJGvzwXtlEha4ZNfP+pI30oIB6xZoplzKQQzBBZl+4ww3e9y0mwsDOt/1MgPqo
-	KEusBB9azDUMFBYUxE6A==;
+	List-Owner; bh=tgbD9MTyTY0XooB/Lqorn2O+96RsI7/nXaQpfjmSiwY=; b=4oBA4I4NqH3n0m
+	xj3Mzo322AvyvyzVVxqUfdYR7/Ku+nO5GhYDV6VbTCiPqriOWnt8BNbK/VGmQlEEZselRhW9c6tvy
+	8DH2KAZOykx8IJ11mvDNXVzNbv9bv9U5TeWvOZV7hgkxOyZb7Ib7ONcNTrCAcRxiB18w6eGXWWwnw
+	7cnj+FS+4vI2XonGby5gI9J09x00cQeeK8cPvwMfrzOGKe1RMrPhkKIInq3wcPKnirfkVFevRN4d5
+	zXbARYBPAmr+dCVCSJD75r2lklaMPn3daeXDihEwhVa4yAejz4ASICMiQDfnpnA9LZbs0rhlRA4J3
+	8UtSY6qzBy//VpL5Ik7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnwIu-00000009l9l-08Fz;
-	Thu, 05 Feb 2026 10:09:40 +0000
+	id 1vnwIw-00000009lAV-1GDX;
+	Thu, 05 Feb 2026 10:09:42 +0000
 Received: from mgamail.intel.com ([198.175.65.17])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnwIp-00000009l5W-0x7C
+	id 1vnwIs-00000009l5W-1lZ4
 	for linux-i3c@lists.infradead.org;
-	Thu, 05 Feb 2026 10:09:36 +0000
+	Thu, 05 Feb 2026 10:09:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1770286175; x=1801822175;
+  t=1770286178; x=1801822178;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=DD9GwiMBL9tqywZGGnj2CxjgGRcwc9UfetVy6QhZ3l0=;
-  b=J//rs7v6UKc3Kexz+HtlqTGF/whR8nF2uCiO6pxEZYh5L0VngbuU/ZB9
-   mngFNr7ZBjQ6DpCC7H19hAum3Dx3NLP5u7EHTrGpJWzJcowpvOM6lI15M
-   LQnSdIquqxYO/Ja7S17ey85PdfUvUH/HAIpfMVkZ3E9EnxsI0VhvjqDAE
-   yKTKg3/bcNvXJ/P7h9CBnnC2f26tQc2I+iIPeulSmYOX77sGIY/nOck96
-   UwX+Ds5PVyvWfiX/GAGSnwsDGOhLMwyOurT86+XqpWLYNJsHWMagtzjlW
-   dqjaTOpupPFXNAL2BAZRaPA/zRRsJ3CBxBKSz09Uinrq/9aC4GHBoN/vx
+  bh=8THRXBi85fbzXkk7iqY16ie3SHmpU5RsoRpOmh5p5eo=;
+  b=YkHjfAWU1uDRc2eBEh7jMHieBSeKVGjZHiwuPR5e7xjwkS31tozvLDS+
+   6/RsGkUfqcnm2h2syU9J5G39UE2pXhRmXkoiKKMtMSxFylZNNklMNfQ1x
+   n3aTTxjEOavnD1PFaYBg5w8KICb2nlCltrN11Q9DznH8rsTTPL/9AFc6M
+   4aBVzY0Ie4XudvOzCRTTEnmbqaQPvxGsD5lRGvOV1QhepcqshlIdGMBAK
+   kr8Lh6MQZHTVsovDxkFjdzHH6oS9aZLBK0nru0rbmJwbSp1+OexYxSfs+
+   5OyArGWkk39uB3Jwjwwd4v998/50Byqda4U/lYfZ+gVjywoygJHQYbB9r
    A==;
-X-CSE-ConnectionGUID: iA/10fRVTHuq72kIhxiYpA==
-X-CSE-MsgGUID: 3/RyJpBhRaSyvymt4pmAEQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11691"; a="71471724"
+X-CSE-ConnectionGUID: Stv2CkkwRGiXCMfU19BqHQ==
+X-CSE-MsgGUID: 7qevcnQVSW6bkc+81suchQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11691"; a="71471731"
 X-IronPort-AV: E=Sophos;i="6.21,274,1763452800"; 
-   d="scan'208";a="71471724"
+   d="scan'208";a="71471731"
 Received: from orviesa003.jf.intel.com ([10.64.159.143])
-  by orvoesa109.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Feb 2026 02:09:35 -0800
-X-CSE-ConnectionGUID: 5gozJ/7+TkaLuZEy+Ls3KQ==
-X-CSE-MsgGUID: 2w9wxJJRTwyna8imsCAScg==
+  by orvoesa109.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Feb 2026 02:09:37 -0800
+X-CSE-ConnectionGUID: zo9u6nJmSFeGqzEsIH/wEQ==
+X-CSE-MsgGUID: baG2yiM2TAaCnj/kTQwxVA==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.21,274,1763452800"; 
-   d="scan'208";a="214631180"
+   d="scan'208";a="214631183"
 Received: from smoticic-mobl1.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.244.58])
-  by ORVIESA003-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Feb 2026 02:09:33 -0800
+  by ORVIESA003-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Feb 2026 02:09:35 -0800
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
@@ -61,17 +61,17 @@ Cc: Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	linux-pm@vger.kernel.org
-Subject: [PATCH V3 4/5] i3c: mipi-i3c-hci-pci: Add optional ability to manage child runtime PM
-Date: Thu,  5 Feb 2026 12:09:14 +0200
-Message-ID: <20260205100915.19792-5-adrian.hunter@intel.com>
+Subject: [PATCH V3 5/5] i3c: mipi-i3c-hci-pci: Enable IBI while runtime suspended for Intel controllers
+Date: Thu,  5 Feb 2026 12:09:15 +0200
+Message-ID: <20260205100915.19792-6-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260205100915.19792-1-adrian.hunter@intel.com>
 References: <20260205100915.19792-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260205_020935_313601_B73482BC 
-X-CRM114-Status: GOOD (  21.98  )
+X-CRM114-CacheID: sfid-20260205_020939_491757_452AABFD 
+X-CRM114-Status: GOOD (  12.21  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,237 +88,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Some platforms implement the MIPI I3C HCI Multi-Bus Instance capability,
-where a single parent device hosts multiple I3C controller instances.  In
-such designs, the parent - not the individual child instances - may need to
-coordinate runtime PM so that all controllers runtime PM callbacks are
-invoked in a controlled and synchronized manner.
+Intel LPSS I3C controllers can wake from runtime suspend to receive
+in-band interrupts (IBIs), and they also implement the MIPI I3C HCI
+Multi-Bus Instance capability.  When multiple I3C bus instances share the
+same PCI wakeup, the PCI parent must coordinate runtime PM so that all
+instances suspend together and their mipi-i3c-hci runtime suspend
+callbacks are invoked in a consistent manner.
 
-For example, if the parent enables IBI-wakeup when transitioning into a
-low-power state, every bus instance must remain able to receive IBIs up
-until that point.  This requires deferring the individual controllers'
-runtime suspend callbacks (which disable bus activity) until the parent
-decides it is safe for all instances to suspend together.
-
-To support this usage model:
-
-  * Add runtime PM and system PM callbacks in the PCI driver to invoke
-    the mipi-i3c-hci driver's runtime PM callbacks for each instance.
-
-  * Introduce a driver-data flag, control_instance_pm, which opts into
-    the new parent-managed PM behaviour.
-
-  * Ensure the callbacks are only used when the corresponding instance is
-    operational at suspend time.  This is reliable because the operational
-    state cannot change while the parent device is undergoing a PM
-    transition, and PCI always performs a runtime resume before system
-    suspend on current configurations, so that suspend and resume alternate
-    irrespective of whether it is runtime or system PM.
-
-By that means, parent-managed runtime PM coordination for multi-instance
-MIPI I3C HCI PCI devices is provided without altering existing behaviour on
-platforms that do not require it.
+Enable IBI-based wakeup by setting HCI_QUIRK_RPM_IBI_ALLOWED for the
+intel-lpss-i3c platform device.  Also set HCI_QUIRK_RPM_PARENT_MANAGED so
+that the mipi-i3c-hci core driver expects runtime PM to be controlled by
+the PCI parent rather than by individual instances.  For all Intel HCI PCI
+configurations, enable the corresponding control_instance_pm flag in the
+PCI driver.
 
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
 ---
 
 
 Changes in V3:
 
-	Remove unnecessary pm_runtime_mark_last_busy()
+	Add Frank's Rev'd-by
 
 Changes in V2:
 
-	Do not enable autosuspend.
-	Callbacks for parent-managed invocation were renamed
-	from i3c_hci_runtime_suspend to i3c_hci_rpm_suspend and
-	from i3c_hci_runtime_resume to i3c_hci_rpm_resume.
-	Amend commit message slightly.
+	Retain HCI_QUIRK_RPM_ALLOWED
+	Amend commit message accordingly
 
 
- .../master/mipi-i3c-hci/mipi-i3c-hci-pci.c    | 131 ++++++++++++++++++
- 1 file changed, 131 insertions(+)
+ drivers/i3c/master/mipi-i3c-hci/core.c             | 4 +++-
+ drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c | 3 +++
+ 2 files changed, 6 insertions(+), 1 deletion(-)
 
+diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+index 149b3fad34b5..d19be1d276b5 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/core.c
++++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+@@ -1005,7 +1005,9 @@ static const struct acpi_device_id i3c_hci_acpi_match[] = {
+ MODULE_DEVICE_TABLE(acpi, i3c_hci_acpi_match);
+ 
+ static const struct platform_device_id i3c_hci_driver_ids[] = {
+-	{ .name = "intel-lpss-i3c", HCI_QUIRK_RPM_ALLOWED },
++	{ .name = "intel-lpss-i3c", HCI_QUIRK_RPM_ALLOWED |
++				    HCI_QUIRK_RPM_IBI_ALLOWED |
++				    HCI_QUIRK_RPM_PARENT_MANAGED },
+ 	{ /* sentinel */ }
+ };
+ MODULE_DEVICE_TABLE(platform, i3c_hci_driver_ids);
 diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-index bc83caad4197..ed0efed17726 100644
+index ed0efed17726..54a2176ca79d 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-@@ -9,6 +9,7 @@
- #include <linux/acpi.h>
- #include <linux/bitfield.h>
- #include <linux/debugfs.h>
-+#include <linux/i3c/master.h>
- #include <linux/idr.h>
- #include <linux/iopoll.h>
- #include <linux/kernel.h>
-@@ -20,16 +21,24 @@
- #include <linux/pm_qos.h>
- #include <linux/pm_runtime.h>
- 
-+#include "hci.h"
-+
- /*
-  * There can up to 15 instances, but implementations have at most 2 at this
-  * time.
-  */
- #define INST_MAX 2
- 
-+struct mipi_i3c_hci_pci_instance {
-+	struct device *dev;
-+	bool operational;
-+};
-+
- struct mipi_i3c_hci_pci {
- 	struct pci_dev *pci;
- 	void __iomem *base;
- 	const struct mipi_i3c_hci_pci_info *info;
-+	struct mipi_i3c_hci_pci_instance instance[INST_MAX];
- 	void *private;
+@@ -200,6 +200,7 @@ static const struct mipi_i3c_hci_pci_info intel_mi_1_info = {
+ 	.id = {0, 1},
+ 	.instance_offset = {0, 0x400},
+ 	.instance_count = 2,
++	.control_instance_pm = true,
  };
  
-@@ -40,6 +49,7 @@ struct mipi_i3c_hci_pci_info {
- 	int id[INST_MAX];
- 	u32 instance_offset[INST_MAX];
- 	int instance_count;
-+	bool control_instance_pm;
+ static const struct mipi_i3c_hci_pci_info intel_mi_2_info = {
+@@ -209,6 +210,7 @@ static const struct mipi_i3c_hci_pci_info intel_mi_2_info = {
+ 	.id = {2, 3},
+ 	.instance_offset = {0, 0x400},
+ 	.instance_count = 2,
++	.control_instance_pm = true,
  };
  
- #define INTEL_PRIV_OFFSET		0x2b0
-@@ -210,6 +220,125 @@ static const struct mipi_i3c_hci_pci_info intel_si_2_info = {
+ static const struct mipi_i3c_hci_pci_info intel_si_2_info = {
+@@ -218,6 +220,7 @@ static const struct mipi_i3c_hci_pci_info intel_si_2_info = {
+ 	.id = {2},
+ 	.instance_offset = {0},
  	.instance_count = 1,
++	.control_instance_pm = true,
  };
  
-+static int mipi_i3c_hci_pci_find_instance(struct mipi_i3c_hci_pci *hci, struct device *dev)
-+{
-+	for (int i = 0; i < INST_MAX; i++) {
-+		if (!hci->instance[i].dev)
-+			hci->instance[i].dev = dev;
-+		if (hci->instance[i].dev == dev)
-+			return i;
-+	}
-+
-+	return -1;
-+}
-+
-+#define HC_CONTROL			0x04
-+#define HC_CONTROL_BUS_ENABLE		BIT(31)
-+
-+static bool __mipi_i3c_hci_pci_is_operational(struct device *dev)
-+{
-+	const struct mipi_i3c_hci_platform_data *pdata = dev->platform_data;
-+	u32 hc_control = readl(pdata->base_regs + HC_CONTROL);
-+
-+	return hc_control & HC_CONTROL_BUS_ENABLE;
-+}
-+
-+static bool mipi_i3c_hci_pci_is_operational(struct device *dev, bool update)
-+{
-+	struct mipi_i3c_hci_pci *hci = dev_get_drvdata(dev->parent);
-+	int pos = mipi_i3c_hci_pci_find_instance(hci, dev);
-+
-+	if (pos < 0) {
-+		dev_err(dev, "%s: I3C instance not found\n", __func__);
-+		return false;
-+	}
-+
-+	if (update)
-+		hci->instance[pos].operational = __mipi_i3c_hci_pci_is_operational(dev);
-+
-+	return hci->instance[pos].operational;
-+}
-+
-+struct mipi_i3c_hci_pci_pm_data {
-+	struct device *dev[INST_MAX];
-+	int dev_cnt;
-+};
-+
-+static bool mipi_i3c_hci_pci_is_mfd(struct device *dev)
-+{
-+	return dev_is_platform(dev) && mfd_get_cell(to_platform_device(dev));
-+}
-+
-+static int mipi_i3c_hci_pci_suspend_instance(struct device *dev, void *data)
-+{
-+	struct mipi_i3c_hci_pci_pm_data *pm_data = data;
-+	int ret;
-+
-+	if (!mipi_i3c_hci_pci_is_mfd(dev) ||
-+	    !mipi_i3c_hci_pci_is_operational(dev, true))
-+		return 0;
-+
-+	ret = i3c_hci_rpm_suspend(dev);
-+	if (ret)
-+		return ret;
-+
-+	pm_data->dev[pm_data->dev_cnt++] = dev;
-+
-+	return 0;
-+}
-+
-+static int mipi_i3c_hci_pci_resume_instance(struct device *dev, void *data)
-+{
-+	struct mipi_i3c_hci_pci_pm_data *pm_data = data;
-+	int ret;
-+
-+	if (!mipi_i3c_hci_pci_is_mfd(dev) ||
-+	    !mipi_i3c_hci_pci_is_operational(dev, false))
-+		return 0;
-+
-+	ret = i3c_hci_rpm_resume(dev);
-+	if (ret)
-+		return ret;
-+
-+	pm_data->dev[pm_data->dev_cnt++] = dev;
-+
-+	return 0;
-+}
-+
-+static int mipi_i3c_hci_pci_suspend(struct device *dev)
-+{
-+	struct mipi_i3c_hci_pci *hci = dev_get_drvdata(dev);
-+	struct mipi_i3c_hci_pci_pm_data pm_data = {};
-+	int ret;
-+
-+	if (!hci->info->control_instance_pm)
-+		return 0;
-+
-+	ret = device_for_each_child_reverse(dev, &pm_data, mipi_i3c_hci_pci_suspend_instance);
-+	if (ret)
-+		for (int i = 0; i < pm_data.dev_cnt; i++)
-+			i3c_hci_rpm_resume(pm_data.dev[i]);
-+
-+	return ret;
-+}
-+
-+static int mipi_i3c_hci_pci_resume(struct device *dev)
-+{
-+	struct mipi_i3c_hci_pci *hci = dev_get_drvdata(dev);
-+	struct mipi_i3c_hci_pci_pm_data pm_data = {};
-+	int ret;
-+
-+	if (!hci->info->control_instance_pm)
-+		return 0;
-+
-+	ret = device_for_each_child(dev, &pm_data, mipi_i3c_hci_pci_resume_instance);
-+	if (ret)
-+		for (int i = 0; i < pm_data.dev_cnt; i++)
-+			i3c_hci_rpm_suspend(pm_data.dev[i]);
-+
-+	return ret;
-+}
-+
- static void mipi_i3c_hci_pci_rpm_allow(struct device *dev)
- {
- 	pm_runtime_put(dev);
-@@ -323,6 +452,8 @@ static void mipi_i3c_hci_pci_remove(struct pci_dev *pci)
- 
- /* PM ops must exist for PCI to put a device to a low power state */
- static const struct dev_pm_ops mipi_i3c_hci_pci_pm_ops = {
-+	RUNTIME_PM_OPS(mipi_i3c_hci_pci_suspend, mipi_i3c_hci_pci_resume, NULL)
-+	SYSTEM_SLEEP_PM_OPS(mipi_i3c_hci_pci_suspend, mipi_i3c_hci_pci_resume)
- };
- 
- static const struct pci_device_id mipi_i3c_hci_pci_devices[] = {
+ static int mipi_i3c_hci_pci_find_instance(struct mipi_i3c_hci_pci *hci, struct device *dev)
 -- 
 2.51.0
 
