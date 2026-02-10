@@ -4,60 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 01E4CE94625
-	for <linux-i3c@archiver.kernel.org>; Tue, 10 Feb 2026 02:33:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 47D81EB2700
+	for <linux-i3c@archiver.kernel.org>; Tue, 10 Feb 2026 23:31:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0UHQDEpiffp7SFIp0Uw7RcG0k5FXMjafJyOVktFZbDs=; b=c/lBwYUkMAaKB8
-	vZAXp/uaqBENqEvANbuDmRSzFt2BxtoT8kmlQOiQa56SOcBIB8DQfDLV+PYzTfECD8lKigoHWdBTc
-	xDWdzyTxx6CctbftB0wafVSKC61vJM5iMiAj+5vbe7wjJwNBnzoUQSSxz41zYc48scFbd5GzfwWcL
-	KgEA5ZNUJTCAxGZ3E8QYQj5aS4oK25M0av3PF+vLfS9R9QmpQI3BJjkx2l9ry4DfVDC682T8LJM+O
-	qIZJmrplnsWURMUtRKEQZjyEYlEtG5sX5r2PbSnLqjFwHlIWzxGgPSQd3OteCaUUduUYWCZBHyCzU
-	3w1dBCWMtopSW1BxtMmA==;
+	List-Owner; bh=SojBoizLqKAf1JBZbAC+kgyWegtVYGpuN689xejVMVA=; b=OLFCy6RkrzLz4m
+	+r1J8W1FuJExGQ3bSvj4Ps/4l0aB7fpPCtfsTOJqUeqE2skxNDo/I9IqA28CiFqT0Uuh0RT6QniRM
+	v/is6t9GhuokgzV9gioR91Cd7RBIEzxbIq95gqI6iJnG7VGaIjqGKC1nXtkM7N1Bu/xbb6dMMAQZS
+	g0Bt0mY5WhY7+8+r/z0rkR2xpz6jWU60J2S2qHvMB+b5BOCpqy6IUge2I7TcTfePWBBvOTCCg+IU4
+	nb4dQb8gkRHNfFqQ4WKKiB9VA+a7KIZhO2jDUwttmffWXLrRuB8609dL5lFwTclK2C9Z9A1IlUkFx
+	LVdHCmQOsMBu9OiOoudw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpdZe-0000000GKkK-3WMm;
-	Tue, 10 Feb 2026 02:33:58 +0000
+	id 1vpxCx-000000001I5-3Ub1;
+	Tue, 10 Feb 2026 23:31:51 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vpdZd-0000000GKkB-0JIl
+	id 1vpxCw-000000001Hy-0FQX
 	for linux-i3c@lists.infradead.org;
-	Tue, 10 Feb 2026 02:33:57 +0000
+	Tue, 10 Feb 2026 23:31:50 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 1E07060008;
-	Tue, 10 Feb 2026 02:33:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9B91CC116C6;
-	Tue, 10 Feb 2026 02:33:55 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id BAFC76013D;
+	Tue, 10 Feb 2026 23:31:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8E633C116C6;
+	Tue, 10 Feb 2026 23:31:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1770690835;
-	bh=syuWAARA9iMh+dVzeM0HvjnT9Pn+uWfXe2/ZwAPb0lU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=l14SjJWzLh5T6b6liwE7ujFsCjhFE5DX34l6qLa55FV8bu+czERFYBlgI13vg3KiG
-	 t9OpZGsPqGgb/Q7VYxcXUOZBg2Z6IFQhNhRPhoUqq8IdR7zXduCRUPUu0wwAYLg1f1
-	 2xAmMbQnnaKjz1B3OPQzszTOj2c6+xm3C4yheudms6lV6w83fq4gMhgd7NuRxKhdaN
-	 Fa4Zok/+BUyQIeWohwT3j51cf0JDSdcOU3KAUBf7usUvkUNlgIluVBXTQXfezKRk0K
-	 EY6WDGmlQuDyOVI/InRUVfffCamCgJ1Xt1hLvrW9LvXj18+nukmX9TV83xZv0cg715
-	 5b6r8ECfUwG7w==
-Date: Mon, 9 Feb 2026 20:33:54 -0600
-From: Rob Herring <robh@kernel.org>
-To: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-Cc: linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
-	alexandre.belloni@bootlin.com, krzk+dt@kernel.org,
-	conor+dt@kernel.org, devicetree@vger.kernel.org, broonie@kernel.org,
-	lee@kernel.org, Frank.Li@nxp.com, lgirdwood@gmail.com,
-	vikash.bansal@nxp.com, priyanka.jain@nxp.com,
-	shashank.rebbapragada@nxp.com
-Subject: Re: [PATCH v5 2/5] dt-bindings: i3c: Add NXP P3H2x4x i3c-hub support
-Message-ID: <20260210023354.GA2357771-robh@kernel.org>
-References: <20260206120121.856471-1-aman.kumarpandey@nxp.com>
- <20260206120121.856471-2-aman.kumarpandey@nxp.com>
+	s=k20201202; t=1770766308;
+	bh=w8vP2q0rvyREAlNGeuGRnI2tnurQEkz6cx0XcZRcUEg=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=HD7S7FXPISVjiI0kgl/Zzbd0266DaRT+tMqzcfMkVklGxuouBbd3zLM+x+n7+HL0X
+	 12i5CBTPd5W3vbWD6WavJ3wHovVkeOVC+wpDRhszNBGSbNLe5Opmkm+BqVJ8mGBiI0
+	 kU+AtZDI3g23iqCiwc8XWMxnFlsWUCIAhTvQSsbmzk+PQVvv47r9Ey4iDilA4s8PEn
+	 8d/UYvLBus6x7CNdBjKl5kX3tcK2mVWpMfS9GlTNyzUl2M8KATll56qdfS4DcDMSDw
+	 exy8Och43mkuMiZ8bGcWJsGxHTTmphrk2g+jv7W9UTAwxTPfAaI/96aZiSMy5xXK7J
+	 e2sFksGhcQz5w==
+From: Sasha Levin <sashal@kernel.org>
+To: patches@lists.linux.dev,
+	stable@vger.kernel.org
+Cc: Frank Li <Frank.Li@nxp.com>,
+	kernel test robot <lkp@intel.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Sasha Levin <sashal@kernel.org>,
+	miquel.raynal@bootlin.com,
+	linux-i3c@lists.infradead.org,
+	imx@lists.linux.dev
+Subject: [PATCH AUTOSEL 6.19-5.15] i3c: master: svc: Initialize 'dev' to NULL in svc_i3c_master_ibi_isr()
+Date: Tue, 10 Feb 2026 18:31:00 -0500
+Message-ID: <20260210233123.2905307-15-sashal@kernel.org>
+X-Mailer: git-send-email 2.51.0
+In-Reply-To: <20260210233123.2905307-1-sashal@kernel.org>
+References: <20260210233123.2905307-1-sashal@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260206120121.856471-2-aman.kumarpandey@nxp.com>
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.19
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,298 +73,119 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Feb 06, 2026 at 02:01:18PM +0200, Aman Kumar Pandey wrote:
-> Add bindings for the NXP P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841)
-> multiport I3C hub family. These devices connect to a host via
-> I3C/I2C/SMBus and allow communication with multiple downstream
-> peripherals.
-> 
-> Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
-> 
-> ---
-> Changes in v5:
->  - Removed SW properties: cp0-ldo-microvolt,cp1-ldo-microvolt,
->    tp0145-ldo-microvolt, tp2367-ldo-microvolt 
->  - Changed supply entries and its descriptions
-> 
-> Changes in v4:
->  - Fixed DT binding check warning
->  - Removed SW properties: ibi-enable, local-dev, and always-enable
-> 
-> Changes in v3:
->  - Added MFD (Multi-Function Device) support for I3C hub and on-die regulator
->  - Added Regulator supply node
-> 
-> Changes in v2:
->  - Fixed DT binding check warning
->  - Revised logic for parsing DTS nodes
-> ---
-> ---
->  .../devicetree/bindings/i3c/nxp,p3h2840.yaml  | 209 ++++++++++++++++++
->  MAINTAINERS                                   |   8 +
->  2 files changed, 217 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml b/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
-> new file mode 100644
-> index 000000000000..edc1f988c0d5
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
-> @@ -0,0 +1,209 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +# Copyright 2025 NXP
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/i3c/nxp,p3h2840.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: NXP P3H2X4X I3C HUB
-> +
-> +maintainers:
-> +  - Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> +  - Vikash Bansal <vikash.bansal@nxp.com>
-> +
-> +description: |
-> +  P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841) is a family of multiport I3C
-> +  hub devices that connect to:-
-> +  1. A host CPU via I3C/I2C/SMBus bus on upstream side and connect to multiple
-> +     peripheral devices on the downstream  side.
-> +  2. Have two Controller Ports which can support either
-> +     I2C/SMBus or I3C buses and connect to a CPU, BMC or SOC.
-> +  3. P3H2840/ P3H2841 are 8 port I3C hub with eight I3C/I2C Target Port.
-> +  4. P3H2440/ P3H2441 are 4 port I3C hub with four I3C/I2C Target Port.
-> +     Target ports can be configured as I2C/SMBus, I3C or GPIO and connect to
-> +     peripherals.
-> +
-> +allOf:
-> +  - $ref: /schemas/i3c/i3c.yaml#
-> +
-> +properties:
-> +  compatible:
-> +    const: nxp,p3h2840
-> +
-> +  tp0145-pullup-ohms:
-
-Needs vendor prefix. And on the rest of the -ohms properties.
-
-
-> +    description:
-> +      Selects the pull up resistance for target Port 0/1/4/5, in ohms.
-> +    enum: [250, 500, 1000, 2000]
-> +    default: 500
-> +
-> +  tp2367-pullup-ohms:
-> +    description:
-> +      Selects the pull up resistance for target Port 2/3/6/7, in ohms.
-> +    enum: [250, 500, 1000, 2000]
-> +    default: 500
-> +
-> +  cp0-io-strength-ohms:
-> +    description:
-> +      Selects the IO drive strength for controller Port 0, in ohms.
-> +    enum: [20, 30, 40, 50]
-> +    default: 20
-> +
-> +  cp1-io-strength-ohms:
-> +    description:
-> +      Selects the IO drive strength for controller Port 1, in ohms.
-> +    enum: [20, 30, 40, 50]
-> +    default: 20
-> +
-> +  tp0145-io-strength-ohms:
-> +    description:
-> +      Selects the IO drive strength for target port 0/1/4/5, in ohms.
-> +    enum: [20, 30, 40, 50]
-> +    default: 20
-> +
-> +  tp2367-io-strength-ohms:
-> +    description:
-> +      Selects the IO drive strength for target port 2/3/6/7, in ohms.
-> +    enum: [20, 30, 40, 50]
-> +    default: 20
-> +
-> +  vcc1-supply:
-> +    description: Controller port 0 power supply.
-> +
-> +  vcc2-supply:
-> +    description: Controller port 1 power supply.
-> +
-> +  vcc3-supply:
-> +    description: Target port 0/1/4/5 power supply.
-> +
-> +  vcc4-supply:
-> +    description: Target port 2/3/6/7 power supply.
-> +
-> +  regulators:
-> +    type: object
-> +    additionalProperties: false
-> +
-> +    properties:
-> +      LDO_CP0:
-
-Lowercase and use '-' rather than '_'.
-
-> +        type: object
-> +        $ref: /schemas/regulator/regulator.yaml#
-> +        unevaluatedProperties: false
-> +
-> +      LDO_CP1:
-> +        type: object
-> +        $ref: /schemas/regulator/regulator.yaml#
-> +        unevaluatedProperties: false
-> +
-> +      LDO_TPG0:
-> +        type: object
-> +        $ref: /schemas/regulator/regulator.yaml#
-> +        unevaluatedProperties: false
-> +
-> +      LDO_TPG1:
-> +        type: object
-> +        $ref: /schemas/regulator/regulator.yaml#
-> +        unevaluatedProperties: false
-> +
-> +patternProperties:
-> +  "^i3c@[0-7]$":
-> +    type: object
-> +    $ref: /schemas/i3c/i3c.yaml#
-> +    unevaluatedProperties: false
-> +
-> +    properties:
-> +      reg:
-> +        description:
-> +          The I3C HUB Target Port number.
-> +        maxItems: 1
-
-maximum: 7
-
-Instead of maxItems.
-
-> +
-> +      pullup-enable:
-> +        type: boolean
-> +        description:
-> +          Enables the on-die pull-up for Target Port.
-> +
-> +  "^(i2c|smbus)@[0-7]$":
-> +    type: object
-> +    $ref: /schemas/i2c/i2c-controller.yaml#
-> +    unevaluatedProperties: false
-> +
-> +    properties:
-> +      reg:
-> +        description:
-> +          The I3C HUB Target Port number.
-> +        maxItems: 1
-
-maximum: 7
-
-> +
-> +      pullup-enable:
-> +        type: boolean
-> +        description:
-> +          Enables the on-die pull-up for Target Port.
-> +
-> +unevaluatedProperties: false
-> +
-> +examples:
-> +  - |
-> +    i3c {
-> +        #address-cells = <3>;
-> +        #size-cells = <0>;
-> +
-> +        hub@70,236153000c2 {
-> +            reg = <0x70 0x236 0x3000c2>;
-> +            #address-cells = <1>;
-> +            #size-cells = <0>;
-> +            assigned-address = <0x50>;
-> +
-> +            tp0145-pullup-ohm = <1000>;
-> +            tp2367-pullup-ohm = <1000>;
-> +            cp0-io-strength-ohm = <50>;
-> +            cp1-io-strength-ohm = <50>;
-> +            tp0145-io-strength-ohm = <50>;
-> +            tp2367-io-strength-ohm = <50>;
-> +            vcc3-supply = <&reg_tpg0>;
-> +            vcc4-supply = <&reg_tpg1>;
-> +
-> +            regulators {
-> +                reg_cp0: LDO_CP0 {
-> +                    regulator-name = "ldo_cp0";
-> +                    regulator-min-microvolt = <1800000>;
-> +                    regulator-max-microvolt = <1800000>;
-> +                };
-> +
-> +                reg_cp1: LDO_CP1 {
-> +                    regulator-name = "ldo_cp1";
-> +                    regulator-min-microvolt = <1800000>;
-> +                    regulator-max-microvolt = <1800000>;
-> +                };
-> +
-> +                reg_tpg0: LDO_TPG0 {
-> +                    regulator-name = "ldo_tpg0";
-> +                    regulator-min-microvolt = <1800000>;
-> +                    regulator-max-microvolt = <1800000>;
-> +                };
-> +
-> +                reg_tpg1: LDO_TPG1 {
-> +                    regulator-name = "ldo_tpg1";
-> +                    regulator-min-microvolt = <1800000>;
-> +                    regulator-max-microvolt = <1800000>;
-> +                };
-> +            };
-> +
-> +            smbus@0 {
-> +                reg = <0x0>;
-> +                #address-cells = <1>;
-> +                #size-cells = <0>;
-> +                pullup-enable;
-> +            };
-> +
-> +            i2c@1 {
-> +                reg = <0x1>;
-> +                #address-cells = <1>;
-> +                #size-cells = <0>;
-> +                pullup-enable;
-> +            };
-> +
-> +            i3c@2 {
-> +                reg = <0x2>;
-> +                #address-cells = <3>;
-> +                #size-cells = <0>;
-> +                pullup-enable;
-> +            };
-> +        };
-> +    };
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index e08767323763..7e1a6cb22ca3 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -18906,6 +18906,14 @@ S:	Maintained
->  F:	Documentation/devicetree/bindings/ptp/nxp,ptp-netc.yaml
->  F:	drivers/ptp/ptp_netc.c
->  
-> +NXP P3H2X4X I3C-HUB DRIVER
-> +M:	Vikash Bansal <vikash.bansal@nxp.com>
-> +M:	Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> +L:	linux-kernel@vger.kernel.org
-> +L:	linux-i3c-owner@lists.infradead.org
-> +S:	Maintained
-> +F:	Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
-> +
->  NXP PF5300/PF5301/PF5302 PMIC REGULATOR DEVICE DRIVER
->  M:	Woodrow Douglass <wdouglass@carnegierobotics.com>
->  S:	Maintained
-> -- 
-> 2.25.1
-> 
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+RnJvbTogRnJhbmsgTGkgPEZyYW5rLkxpQG54cC5jb20+CgpbIFVwc3RyZWFtIGNvbW1pdCAzYzlm
+ZmI0ZGI3ODc0MjhhNTg1MWQ1ODY1ODIzYWIyMzg0MmQ1MTAzIF0KCkluaXRpYWxpemUgdGhlICdk
+ZXYnIHBvaW50ZXIgdG8gTlVMTCBpbiBzdmNfaTNjX21hc3Rlcl9pYmlfaXNyKCkgYW5kIGFkZAph
+IE5VTEwgY2hlY2sgaW4gdGhlIGVycm9yIHBhdGguCgpSZXBvcnRlZC1ieToga2VybmVsIHRlc3Qg
+cm9ib3QgPGxrcEBpbnRlbC5jb20+CkNsb3NlczogaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvci8y
+MDI1MTIxMzEwMTYuWUNLSXNEWE0tbGtwQGludGVsLmNvbS8KU2lnbmVkLW9mZi1ieTogRnJhbmsg
+TGkgPEZyYW5rLkxpQG54cC5jb20+Ckxpbms6IGh0dHBzOi8vcGF0Y2gubXNnaWQubGluay8yMDI1
+MTIxNTIwMDg1Mi4zMDc5MDczLTEtRnJhbmsuTGlAbnhwLmNvbQpTaWduZWQtb2ZmLWJ5OiBBbGV4
+YW5kcmUgQmVsbG9uaSA8YWxleGFuZHJlLmJlbGxvbmlAYm9vdGxpbi5jb20+ClNpZ25lZC1vZmYt
+Ynk6IFNhc2hhIExldmluIDxzYXNoYWxAa2VybmVsLm9yZz4KLS0tCgpMTE0gR2VuZXJhdGVkIGV4
+cGxhbmF0aW9ucywgbWF5IGJlIGNvbXBsZXRlbHkgYm9ndXM6CgpIZXJlJ3MgbXkgY29tcGxldGUg
+YW5hbHlzaXM6CgojIyBEZXRhaWxlZCBBbmFseXNpcwoKIyMjIDEuIEJ1ZyBNZWNoYW5pc20KClRo
+ZSBmdW5jdGlvbiBgc3ZjX2kzY19tYXN0ZXJfaWJpX2lzcigpYCBkZWNsYXJlcyBgc3RydWN0IGkz
+Y19kZXZfZGVzYwoqZGV2O2Agd2l0aG91dCBpbml0aWFsaXphdGlvbiAobGluZSA1MzcpLiBUaGUg
+dmFyaWFibGUgYGRldmAgaXMgKipvbmx5CmFzc2lnbmVkKiogaW5zaWRlIHRoZSBgU1ZDX0kzQ19N
+U1RBVFVTX0lCSVRZUEVfSUJJYCBjYXNlIG9mIHRoZSBzd2l0Y2gKc3RhdGVtZW50IChsaW5lIDYw
+MCkuIEZvciB0aGUgb3RoZXIgdGhyZWUgY2FzZXMg4oCUIGBIT1RfSk9JTmAsCmBNQVNURVJfUkVR
+VUVTVGAsIGFuZCBgZGVmYXVsdGAg4oCUIGBkZXZgIGlzICoqbmV2ZXIgYXNzaWduZWQqKiBhbmQK
+cmVtYWlucyBhbiB1bmluaXRpYWxpemVkIHN0YWNrIHBvaW50ZXIgY29udGFpbmluZyBnYXJiYWdl
+LgoKQWZ0ZXIgdGhlIHN3aXRjaCwgdGhlIGVycm9yIHBhdGggYXQgbGluZSA2MjktNjM1IGNoZWNr
+czoKYGBgYwppZiAoc3ZjX2kzY19tYXN0ZXJfZXJyb3IobWFzdGVyKSkgewogICAgaWYgKG1hc3Rl
+ci0+aWJpLnRicV9zbG90KSB7CiAgICAgICAgZGF0YSA9IGkzY19kZXZfZ2V0X21hc3Rlcl9kYXRh
+KGRldik7ICAvLyBCVUc6IGRldiBjb3VsZCBiZQp1bmluaXRpYWxpemVkCmBgYAoKYGkzY19kZXZf
+Z2V0X21hc3Rlcl9kYXRhKClgIGRpcmVjdGx5IGRlcmVmZXJlbmNlcwpgZGV2LT5jb21tb24ubWFz
+dGVyX3ByaXZgIChpbiBgaW5jbHVkZS9saW51eC9pM2MvbWFzdGVyLmg6NjI0LTYyN2ApLiBJZgpg
+ZGV2YCBpcyB1bmluaXRpYWxpemVkIGdhcmJhZ2UsIHRoaXMgZGVyZWZlcmVuY2UgY2F1c2VzICoq
+dW5kZWZpbmVkCmJlaGF2aW9yKiog4oCUIG1vc3QgbGlrZWx5IGEga2VybmVsIGNyYXNoL29vcHMs
+IG9yIHdvcnNlLCBhY2Nlc3MgdG8gcmFuZG9tCm1lbW9yeSAocG90ZW50aWFsIHNlY3VyaXR5IGlz
+c3VlKS4KCiMjIyAyLiBQcmFjdGljYWwgUmVhY2hhYmlsaXR5CgpJbiB0aGUgKipjdXJyZW50IGNv
+ZGUqKiwgYG1hc3Rlci0+aWJpLnRicV9zbG90YCBpcyBvbmx5IHNldCBub24tTlVMTCBieQpgc3Zj
+X2kzY19tYXN0ZXJfaGFuZGxlX2liaSgpYCAobGluZSA0NzYpLCB3aGljaCBpcyBvbmx5IGNhbGxl
+ZCBpbiB0aGUKYElCSWAgY2FzZSB3aGVyZSBgZGV2YCBJUyBhc3NpZ25lZC4gU28gaW4gbm9ybWFs
+IGZsb3csIGlmIGB0YnFfc2xvdGAgaXMKbm9uLU5VTEwgaW4gdGhpcyBpbnZvY2F0aW9uLCBgZGV2
+YCBzaG91bGQgYmUgdmFsaWQuCgoqKkhvd2V2ZXIsIHRoZXJlIGFyZSBzY2VuYXJpb3Mgd2hlcmUg
+dGhlIGJ1ZyBjYW4gdHJpZ2dlcjoqKgoKLSBJZiBgdGJxX3Nsb3RgIHdhcyBsZWZ0IG5vbi1OVUxM
+IGZyb20gYSAqKnByZXZpb3VzIGludm9jYXRpb24qKiBkdWUgdG8KICBhIGNvZGUgcGF0aCB0aGF0
+IGZhaWxlZCB0byBjbGVhbiBpdCB1cCAoYSBzZWNvbmRhcnkgYnVnKS4gVGhlbiBvbiB0aGUKICBu
+ZXh0IElTUiBlbnRyeSB3aXRoIGEgZGlmZmVyZW50IGBpYml0eXBlYCAoZS5nLiwgSE9UX0pPSU4p
+LCBgZGV2YAogIHdvdWxkIGJlIHVuaW5pdGlhbGl6ZWQgd2hpbGUgYHRicV9zbG90YCBpcyBub24t
+TlVMTC4KLSBUaGUgY29kZSBpcyAqKmZyYWdpbGUqKiDigJQgYW55IGZ1dHVyZSBjaGFuZ2UgdGhh
+dCBzZXRzIGB0YnFfc2xvdGAgaW4gYQogIGRpZmZlcmVudCBwYXRoIHdvdWxkIGltbWVkaWF0ZWx5
+IG1ha2UgdGhpcyBjcmFzaCByZWFjaGFibGUuCgpOb3RhYmx5LCB0aGUgIm5vbiBjcml0aWNhbCB0
+YXNrcyIgc2VjdGlvbiBhdCBsaW5lIDY0NiAqKmFscmVhZHkgaGFzKioKYGlmIChkZXYpYCBndWFy
+ZCwgaW5kaWNhdGluZyB0aGUgYXV0aG9yIG9mIHRoYXQgY29kZSByZWNvZ25pemVkIGBkZXZgCm1p
+Z2h0IG5vdCBiZSB2YWxpZC4gVGhlIGVycm9yIHBhdGggYXQgbGluZSA2MzAgbGFja2VkIHRoaXMg
+c2FtZQpwcm90ZWN0aW9uIOKAlCBhbiBpbmNvbnNpc3RlbmN5LgoKIyMjIDMuIFJlcG9ydGVyIGFu
+ZCBEZXRlY3Rpb24KClJlcG9ydGVkIGJ5IGBrZXJuZWwgdGVzdCByb2JvdCA8bGtwQGludGVsLmNv
+bT5gIOKAlCBJbnRlbCdzIGF1dG9tYXRlZAprZXJuZWwgdGVzdGluZyBpbmZyYXN0cnVjdHVyZSB0
+aGF0IHJ1bnMgc3RhdGljIGFuYWx5c2lzIHRvb2xzIChTbWF0Y2gsCnNwYXJzZSwgY29tcGlsZXIg
+d2FybmluZ3MpLiBUaGUgYENsb3NlczpgIGxpbmsgdG8gYW4gbGtwIHJlcG9ydCBjb25maXJtcwp0
+aGlzIGlzIGEgY29tcGlsZXIvc3RhdGljLWFuYWx5emVyIHdhcm5pbmcgYWJvdXQgdXNlIG9mIGFu
+IHVuaW5pdGlhbGl6ZWQKdmFyaWFibGUuIFRoZXNlIHJlcG9ydHMgaWRlbnRpZnkgcmVhbCBjb2Rl
+IGRlZmVjdHMuCgojIyMgNC4gRml4IEFzc2Vzc21lbnQKClRoZSBmaXggaXMgbWluaW1hbCBhbmQg
+b2J2aW91c2x5IGNvcnJlY3Q6CjEuICoqSW5pdGlhbGl6ZSBgZGV2YCB0byBOVUxMKiogKGxpbmUg
+Y2hhbmdlOiBgc3RydWN0IGkzY19kZXZfZGVzYwogICAqZGV2O2Ag4oaSIGBzdHJ1Y3QgaTNjX2Rl
+dl9kZXNjICpkZXYgPSBOVUxMO2ApCjIuICoqQWRkIE5VTEwgY2hlY2sgaW4gZXJyb3IgcGF0aCoq
+IChsaW5lIGNoYW5nZTogYGlmCiAgIChtYXN0ZXItPmliaS50YnFfc2xvdClgIOKGkiBgaWYgKG1h
+c3Rlci0+aWJpLnRicV9zbG90ICYmIGRldilgKQoKVGhpcyBtYWtlcyB0aGUgZXJyb3IgcGF0aCBj
+b25zaXN0ZW50IHdpdGggdGhlICJub24gY3JpdGljYWwgdGFza3MiIHBhdGgKdGhhdCBhbHJlYWR5
+IGNoZWNrcyBgaWYgKGRldilgIGF0IGxpbmUgNjQ2LgoKIyMjIDUuIFNjb3BlIGFuZCBSaXNrCgot
+ICoqTGluZXMgY2hhbmdlZDoqKiAyICh0cml2aWFsbHkgc21hbGwpCi0gKipGaWxlcyB0b3VjaGVk
+OioqIDEgKGBkcml2ZXJzL2kzYy9tYXN0ZXIvc3ZjLWkzYy1tYXN0ZXIuY2ApCi0gKipSaXNrIG9m
+IHJlZ3Jlc3Npb246KiogWmVybyDigJQgdGhpcyBvbmx5IEFERFMgc2FmZXR5IGNoZWNrcwotICoq
+Tm8gYmVoYXZpb3JhbCBjaGFuZ2UqKiBpbiB0aGUgaGFwcHkgcGF0aCAod2hlbiBgZGV2YCBpcyB2
+YWxpZCkKLSBUaGUgZml4IGlzICoqZGVmZW5zZS1pbi1kZXB0aCoqIOKAlCBwcmV2ZW50cyBhIGNy
+YXNoIGlmIHRoZSBndWFyZAogIGNvbmRpdGlvbiBgdGJxX3Nsb3QgIT0gTlVMTGAgaXMgZXZlciB0
+cnVlIHdoZW4gYGRldmAgd2Fzbid0IHNldAoKIyMjIDYuIFN0YWJsZSBUcmVlIEFwcGxpY2FiaWxp
+dHkKClRoZSBvcmlnaW5hbCBkcml2ZXIgd2FzIGFkZGVkIGluIHY1LjEyIChgZGQzYzUyODQ2ZDU5
+YCkuIFRoZSBlcnJvciBwYXRoCndpdGggdGhlIHVuaW5pdGlhbGl6ZWQgYGRldmAgaGFzIGV4aXN0
+ZWQgc2luY2UgdGhlIGRyaXZlcidzIGNyZWF0aW9uLgpUaGUgZXhhY3QgY29kZSBzaGFwZSBjaGFu
+Z2VkIGluOgotIGA4ZDI5ZmE2ZDkyMWNhYCAoNi4xNyBjeWNsZSkg4oCUIG1vdmVkIGZyb20gd29y
+a3F1ZXVlIHRvIElTUiBjb250ZXh0Ci0gYGE3ODY5YjBhMjU0MGZgICg2LjE4IGN5Y2xlKSDigJQg
+bWFudWFsIElCSSByZXNwb25zZQoKRm9yIG9sZGVyIHN0YWJsZSB0cmVlcywgdGhlIGZpeCB3b3Vs
+ZCBuZWVkIHRvIHRhcmdldCB0aGUKYHN2Y19pM2NfbWFzdGVyX2liaV93b3JrKClgIGZ1bmN0aW9u
+IGluc3RlYWQgb2YKYHN2Y19pM2NfbWFzdGVyX2liaV9pc3IoKWAsIGJ1dCB0aGUgc2FtZSBwYXR0
+ZXJuIGFwcGxpZXMuCgojIyMgNy4gQ2xhc3NpZmljYXRpb24KClRoaXMgaXMgYW4gKip1bmluaXRp
+YWxpemVkIHZhcmlhYmxlIGZpeCoqIOKAlCBvbmUgb2YgdGhlIHJlY29nbml6ZWQgYnVnCmNhdGVn
+b3JpZXMgZm9yIHN0YWJsZSBiYWNrcG9ydHMuIEl0IHByZXZlbnRzOgotIFBvdGVudGlhbCAqKmtl
+cm5lbCBjcmFzaCoqIGZyb20gZGVyZWZlcmVuY2luZyBnYXJiYWdlIHBvaW50ZXIKLSBQb3RlbnRp
+YWwgKipzZWN1cml0eSB2dWxuZXJhYmlsaXR5KiogKGFjY2Vzc2luZyB1bmNvbnRyb2xsZWQgbWVt
+b3J5KQotICoqQ29tcGlsZXIgd2FybmluZ3MqKiB0aGF0IHBvbGx1dGUgYnVpbGQgb3V0cHV0Cgoj
+IyMgQ29uY2x1c2lvbgoKVGhpcyBjb21taXQgZml4ZXMgYSByZWFsIHVuaW5pdGlhbGl6ZWQgdmFy
+aWFibGUgaXNzdWUgZGV0ZWN0ZWQgYnkgc3RhdGljCmFuYWx5c2lzLiBUaGUgZml4IGlzIHRyaXZp
+YWxseSBzbWFsbCAoMiBsaW5lcyksIG9idmlvdXNseSBjb3JyZWN0LCB6ZXJvCnJpc2sgb2YgcmVn
+cmVzc2lvbiwgYW5kIHByZXZlbnRzIGEgcG90ZW50aWFsIGtlcm5lbCBjcmFzaC9vb3BzIGlmIHRo
+ZQplcnJvciBwYXRoIGlzIHJlYWNoZWQgd2l0aCBgZGV2YCB1bmluaXRpYWxpemVkLiBJdCBhbGln
+bnMgdGhlIGVycm9yCnBhdGgncyBzYWZldHkgY2hlY2tzIHdpdGggdGhvc2UgYWxyZWFkeSBwcmVz
+ZW50IGluIHRoZSBub24tY3JpdGljYWwgdGFzawpoYW5kbGluZyBwYXRoLiBJdCBtZWV0cyBhbGwg
+c3RhYmxlIGtlcm5lbCBjcml0ZXJpYTogZml4ZXMgYSByZWFsIGJ1ZywgaXMKc21hbGwgYW5kIGNv
+bnRhaW5lZCwgb2J2aW91c2x5IGNvcnJlY3QsIGFuZCBpbnRyb2R1Y2VzIG5vIG5ldyBmZWF0dXJl
+cy4KCioqWUVTKioKCiBkcml2ZXJzL2kzYy9tYXN0ZXIvc3ZjLWkzYy1tYXN0ZXIuYyB8IDQgKyst
+LQogMSBmaWxlIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygrKSwgMiBkZWxldGlvbnMoLSkKCmRpZmYg
+LS1naXQgYS9kcml2ZXJzL2kzYy9tYXN0ZXIvc3ZjLWkzYy1tYXN0ZXIuYyBiL2RyaXZlcnMvaTNj
+L21hc3Rlci9zdmMtaTNjLW1hc3Rlci5jCmluZGV4IGE2MmYyMmZmOGI1NzYuLjg1NzUwNGQzNmUx
+ODYgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvaTNjL21hc3Rlci9zdmMtaTNjLW1hc3Rlci5jCisrKyBi
+L2RyaXZlcnMvaTNjL21hc3Rlci9zdmMtaTNjLW1hc3Rlci5jCkBAIC01MzMsOCArNTMzLDggQEAg
+c3RhdGljIGludCBzdmNfaTNjX21hc3Rlcl9oYW5kbGVfaWJpX3dvbihzdHJ1Y3Qgc3ZjX2kzY19t
+YXN0ZXIgKm1hc3RlciwgdTMyIG1zdGEKIHN0YXRpYyB2b2lkIHN2Y19pM2NfbWFzdGVyX2liaV9p
+c3Ioc3RydWN0IHN2Y19pM2NfbWFzdGVyICptYXN0ZXIpCiB7CiAJc3RydWN0IHN2Y19pM2NfaTJj
+X2Rldl9kYXRhICpkYXRhOworCXN0cnVjdCBpM2NfZGV2X2Rlc2MgKmRldiA9IE5VTEw7CiAJdW5z
+aWduZWQgaW50IGliaXR5cGUsIGliaWFkZHI7Ci0Jc3RydWN0IGkzY19kZXZfZGVzYyAqZGV2Owog
+CXUzMiBzdGF0dXMsIHZhbDsKIAlpbnQgcmV0OwogCkBAIC02MjcsNyArNjI3LDcgQEAgc3RhdGlj
+IHZvaWQgc3ZjX2kzY19tYXN0ZXJfaWJpX2lzcihzdHJ1Y3Qgc3ZjX2kzY19tYXN0ZXIgKm1hc3Rl
+cikKIAkgKiBmb3IgdGhlIHNsYXZlIHRvIGludGVycnVwdCBhZ2Fpbi4KIAkgKi8KIAlpZiAoc3Zj
+X2kzY19tYXN0ZXJfZXJyb3IobWFzdGVyKSkgewotCQlpZiAobWFzdGVyLT5pYmkudGJxX3Nsb3Qp
+IHsKKwkJaWYgKG1hc3Rlci0+aWJpLnRicV9zbG90ICYmIGRldikgewogCQkJZGF0YSA9IGkzY19k
+ZXZfZ2V0X21hc3Rlcl9kYXRhKGRldik7CiAJCQlpM2NfZ2VuZXJpY19pYmlfcmVjeWNsZV9zbG90
+KGRhdGEtPmliaV9wb29sLAogCQkJCQkJICAgICBtYXN0ZXItPmliaS50YnFfc2xvdCk7Ci0tIAoy
+LjUxLjAKCgotLSAKbGludXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
+LWkzYwo=
