@@ -4,167 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09E74103E2E8
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC7AF103E2EA
 	for <linux-i3c@archiver.kernel.org>; Wed, 11 Mar 2026 22:02:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-Type:
-	References:Message-ID:In-Reply-To:Subject:cc:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=lxx51hne00Ff6Rc9S7dCmbJCy/0L31EawpAAPWsRkvI=; b=ucJz+cOG1P3ACm2jszjyQ/L3Sm
-	y8HcGZqoIk7puB6cDr+7JUu1B5+NAg5+ggLk2GbGlosd9gBTW5s6F86SNxj0IDm17+4MlRs8y+mgD
-	0GFKfzPnUdR2EX1uH1jhuQXn2aSP8G9pDd2JOI+6yU/3wqI2oki+ZktPA56se7S3URHkV5t6optng
-	JbriFUxwp8KuK4phPHb7Ce8qb8JdlEnGuYpz2/NawRdu0mWSKNuY/KWJ2taOwqZ9KXO7/yRwIJ4GJ
-	PXALdVHDwCtE2MoeyxnSJOKuv31Jp45DtRPoy5UPgufyE3v0BX5QC84CTXGSHsPuL45TxcjQ7a+7l
-	ypv3hc6Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=L8Yo0MJhUJEhdvrMqUTyu2MAj6DMiZn0gR6luWdi9IQ=; b=s/Wfe8adiW/T6K
+	X2WHvCW05j442znBNoYlxLzB090nmckzIUCR4LfQR+UdsOkvPvmhA5agat+vCa209Xq5dj+gaTk20
+	DNWD87lOZa/trYN6k1n7dqDL8eIbLSZQyawpVmN7vRa4JYQNB2OBjNwB5aBZpVC8BFLdDJNF78kA5
+	TIjVMR68BPBxu50BH7T7cq6i21kslXabiFLBh58Gpf+wknI9rCD930tfIdkx88r+mBZGudsbji5eq
+	w8FyamAftrrCLN+SqZhyqq0JmEimXnFvIpfZEu3al9L5XQihBDIE97mCnI+HfV/3KW/iBrrm/Aimr
+	LeJj29QuJLwozzC9FxBA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0Rct-0000000Cbby-2cSZ;
-	Wed, 11 Mar 2026 22:01:59 +0000
-Received: from mail-westeuropeazon11011022.outbound.protection.outlook.com ([52.101.70.22] helo=AS8PR04CU009.outbound.protection.outlook.com)
+	id 1w0Rcu-0000000Cbck-1c6N;
+	Wed, 11 Mar 2026 22:02:00 +0000
+Received: from mail-m49216.qiye.163.com ([45.254.49.216])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vjBDl-00000008L8K-42Zp
-	for linux-i3c@lists.infradead.org;
-	Fri, 23 Jan 2026 07:04:43 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=oVMTPn87DSZDisKXiDFG5HGMM8qOoeGF8/miKbOtVEJbkPiocu0pCgKWvjKVYsHRDhlpLQOzWWFj3G93bkoT4m1X1ccyAsVBPd3McFiyzRUUqw5ijI1SXtN8XWiCDNNqPB84aoajRgGqcYOsrL+aah9m76z19+jJw/P7cdrU54KWeQHyj2bH7oHh7hfmcv2cgOpSkFbvNCgQvkos5jreoFQIXdeDm2qHGmLmo0+LM6nrDlVBsGKszu7/YHakMCuPfi+LhqYSJ/N3/Tfhd+vd11aoqzIy+hG2hNHfqz1OcFkAOcWGwnVztECfmv4t4xJBwuuuG7vC9S6DqFqKxogpnw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=pIhSLVdwPaXMlnXMN2XOs0X5ppqQ3IlWANP3NH2RXcw=;
- b=RC4sSchR4gAvdbFsAp8sVH37iRpoeL12GO/tOuo02wujIZAXsvo6hv8CvjfqKbDt+djMCG3pnr6BScv9mwTl18CR1yHEPQ+z787uLORkIyJaf54NVm2DLi2VLIQ1GQzXQbGz39PaocitwHYFxZiopvGegfxbCA54ZhGpOh5qpmHqVDgu2+/D5Kg3SnOt/YQdZLEeKAIzLAjExeDb4SA7STrUdHQxWD+QuuT5cQoPWo8s2Ym2rBX+aWOQpuXXpZO/cJK69v/B+F3FvR9b0Kbf43Q2Z1kkQPqaaRtpXAneGlpjTnXPQiL4eXBHn3fbozAUQtPcxepcy0L00BmhZXKAyw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=est.tech; dmarc=pass action=none header.from=est.tech;
- dkim=pass header.d=est.tech; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=est.tech; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=pIhSLVdwPaXMlnXMN2XOs0X5ppqQ3IlWANP3NH2RXcw=;
- b=bRSe9GEPXsXE7KxQ9kSTt8MPBJi4JrtgHtiXZXV7T2H28etIcSWSmgq5vH68Jhxxhr0/Lx+yMOVWBgH7x0gPj3F0G7wkiVUz8thY5IiY/BWMdMw3opmjo7L2XFuMvHce/bXAn70QMNiID/oBkhcAjzwyu2HuaP/QN5JL4oMlOZtpW79eodSuzj6EPrvAUcOldiDo2rRrxRfgxmFJ3qa/Aok+Xpi189IE68TItQPXTgGmFDsLOdypyyBYiBGP2Ot0DrV30uj8iPT1UXd7kG4ICLzGv45B1gtAhmHY07hJujqRV69uiIiqsyrkl6N8bEJzxC3Rv3pUIXoHs76fSS81Zg==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=est.tech;
-Received: from BESP189MB3241.EURP189.PROD.OUTLOOK.COM (2603:10a6:b10:f3::19)
- by VI0P189MB3494.EURP189.PROD.OUTLOOK.COM (2603:10a6:800:2d2::5) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9542.11; Fri, 23 Jan
- 2026 07:04:36 +0000
-Received: from BESP189MB3241.EURP189.PROD.OUTLOOK.COM
- ([fe80::49f:4bc1:672f:45c8]) by BESP189MB3241.EURP189.PROD.OUTLOOK.COM
- ([fe80::49f:4bc1:672f:45c8%4]) with mapi id 15.20.9542.008; Fri, 23 Jan 2026
- 07:04:36 +0000
-Date: Fri, 23 Jan 2026 08:04:31 +0100 (CET)
-From: =?ISO-8859-15?Q?David_Nystr=F6m?= <david.nystrom@est.tech>
-To: Joshua Yeong <joshua.yeong@starfivetech.com>
-cc: =?ISO-8859-15?Q?David_Nystr=F6m?= <david.nystrom@est.tech>, 
-    Alexandre Belloni <alexandre.belloni@bootlin.com>, 
-    Frank Li <Frank.Li@nxp.com>, 
-    "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>, 
-    "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH v2] i3c: master: Add sysfs option to rescan bus.
-In-Reply-To: <SH0PR01MB0841E47B510DB5EFB48B3460F9972@SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn>
-Message-ID: <cae9ba4e-acb1-099d-0d03-329ddad8057f@est.tech>
-References: <20260122-i3c_rescan-v2-1-84c74a483f03@est.tech> <SH0PR01MB0841E47B510DB5EFB48B3460F9972@SH0PR01MB0841.CHNPR01.prod.partner.outlook.cn>
-Content-Type: multipart/mixed; boundary=832332918645963717691518711255250
-X-ClientProxiedBy: GV3P280CA0083.SWEP280.PROD.OUTLOOK.COM
- (2603:10a6:150:a::11) To BESP189MB3241.EURP189.PROD.OUTLOOK.COM
- (2603:10a6:b10:f3::19)
-MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BESP189MB3241:EE_|VI0P189MB3494:EE_
-X-MS-Office365-Filtering-Correlation-Id: a3c57914-b79c-4b15-76c3-08de5a4dab03
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|376014;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?ME9iL3pLT3J5RHdjRmFRUFd1YUpvZXFrZTdTdElZTGtoMDRFQnNhdHdrZVJN?=
- =?utf-8?B?YTVuc2t6cGl0QkpIVDR4Tlc4Y1JjZ3RaNjlreStVVXpXdHZoUkdLNlF0QkFL?=
- =?utf-8?B?bGdzVGVUQXBsSzZTMWlVckU4NlNiM2kydEFmeUs0ZWNtKzVMWHlrb05PbFJz?=
- =?utf-8?B?bXpCK0NtRmdrRTZHSDkvYUFoZDNlRUdWem1DclNIZ3E3U2tvUGxlcmRHUGkw?=
- =?utf-8?B?bXZYTzB3ekZvenY0WFNDU0VWZTlrMkZCdjBsN2RZUXBHOUp6WVJzV0lnWFhR?=
- =?utf-8?B?ZjZmV0VFQXhOZUtXTHU0ek1sbGVBdTNhYVl2TVYxUzRPK3doazN0M3g3QXlv?=
- =?utf-8?B?RGNnZGV0dWR0YWlJd3ZReExoTnNBL2RnazdJdEROZFViUytuVjJVMUxxd0NE?=
- =?utf-8?B?czJUbFV1TVBuOTlEOXJzRHU0dzA2NVUzNlRnVzBHWm1zRmZQQklNWDkzTERJ?=
- =?utf-8?B?NktwT3YxN0dCa083b29TeHZyV2k5QkZBMmRabHRXOXU1b2dDTm0rNzNVSWRs?=
- =?utf-8?B?RklDRzR0NEhaOG4wRVRwWHJPY3MyQ1N5OHI1aTQvcjc3S1IrWnNUN1hoNFY1?=
- =?utf-8?B?TURyUDlTMzE0OWwrRlkxd29jcE9pQ0xhR3RoZWNaaWtUeVRuRDh5eWkrTDNk?=
- =?utf-8?B?cnN4ZGJibVR1dkxaRWIvY09IbTV1R3BvajFWTmhFSFVDNVJiUENadXRKYTNF?=
- =?utf-8?B?Q3MrdFRnZ1h3R3RwRkxSS1h4ZFNRSHR2Tjl1eVBpS1hPTm5uK0RPdExkUDRP?=
- =?utf-8?B?bElET0NWWGxkb2RWdlJJcTFEcXNrRmFaMjFVNVhqb3VKM3FWekROWTBua2VR?=
- =?utf-8?B?MG5vNEgyYWJUN2FxQ0txaGFFd2J2L2lPaHVqZUVlNTdEQWxwS3FLRktDNWFN?=
- =?utf-8?B?b3p3Qk55bWk2S08rUklzakpXcmI1WjdmOFl0NGZzamVVTVRPcU5DMytNeFNs?=
- =?utf-8?B?aTJNSnhrKytkNGxuOFhjM2VDSXFnZ3NOZnczMkJYdDRKRHNhODVsNDZqZml3?=
- =?utf-8?B?cERxM1dMeUtNNkdvRE5yWFZQdlRFR1VUWVNDNkxJdThYRlZTWUc5cVhmZHhT?=
- =?utf-8?B?R2ZUSWFLNTE0Vm9aemt1UVZkbm84ODB5Q096NUQ0UDZVNGVOTjFiWTRHUHky?=
- =?utf-8?B?ajA4VVprNkZWeUtXVTZFSHRUNUQ3VWJsWmt3Ukk3cWdRSkJ4eFhBdXhqWTU2?=
- =?utf-8?B?NEpHK090b01yWjlEVU5BQUNNeGNTVncvVUd1ckVpOHE0TUVocjl2N3VNNVFB?=
- =?utf-8?B?SUtpaklORmZGamZSUlFiS1RkUTlYU09JQUtRNlFXV08wYVVTUGRQRkNZV1Np?=
- =?utf-8?B?dzgwRW5TN3JiZHNQTGZJWkxVcG5MMzF1QStWYmNCUDN2MFlJc2lPK3EzajBN?=
- =?utf-8?B?ZG1xK2FiRFMvVFpEdXR2NjFEeVJXWUZSTFRmVFhQSGlpaENIb25Ub3hzSkZX?=
- =?utf-8?B?SUR1UUhFb0pHWWNsbUg1WkNmNG1tbTZPTGl5SFRYWlV4YnphSmFPM1lHZmF6?=
- =?utf-8?B?eGUwdnNENGtOeTh2SGV3NmQvV0xuM1pKbFZMbjFiazBKMlEveDlvVlFBYjRH?=
- =?utf-8?B?Q1Z5KzViaDZSaWxlSjRSSUtlcldybTd3N21tc3ozOGtLYlN4amExK1VIWlZE?=
- =?utf-8?B?Ty9YOHpPa0ZVbG14U3MzRHhQNzZWMC9US3g0TUVSNVBYWEkvRmQ5OW1yUERQ?=
- =?utf-8?B?YkVtbUxVZDBuQWlNcXQyODVDQndxZk1EVWRJaWVJdVNhcjZCZ0tOSW11bjY5?=
- =?utf-8?B?QUxMakI5TmxyQXdweUphc285Q2dhUGQ4a3BCcWdiRXZMdFRaRk52MElYWUIw?=
- =?utf-8?B?dTQ2SDh2akErWFRlay9YNHo2blkvRnh6UHJBTkVsekxKTEppUTM1MVgzbW12?=
- =?utf-8?B?Q3EwRTcwZ3oxSXpIV2prMlAzbWxlOTl5WUtZclhzbkdqOFB3WjdjaFZ2RGVV?=
- =?utf-8?B?OVFMNEtqQmNWRjIvTlJCN3FreW1nbll2RGlWbjAzS1lEZWFMUC9JQUVSZzZT?=
- =?utf-8?B?blg0Z3NLdzczcC9hRXQxR2xEVXIybUJKVUVvY1ZUTy9TSHNaWFhpdmd3Y1Qx?=
- =?utf-8?Q?ln15fr?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BESP189MB3241.EURP189.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?V3U3MmEzdm1tSG02WTR3Y2RLU2RjR1RyazAxdFNteHM5cUxLaC82bi9SS2s5?=
- =?utf-8?B?TDdWSEZHTGtza3JNM0hlbW9sNzJ1TVhxVnhrMy9EV2N2VHZVTDJYUVcrMXIx?=
- =?utf-8?B?bWtndjAySmFvQUhGcWlnK3B3WUs5ZmZVRUJ4RnBrVDNWTlpWaExLOW4yMlhQ?=
- =?utf-8?B?NDQyUGswZ3F0ZWx3NWo3VC9PSyttOVlJazd2aWd1dnpBSzF5SE9JdTNzRzJY?=
- =?utf-8?B?Y0VWRnVOelVMUVV2ZGx6VEJKN1A3OW90a1M3ak0waUUyK0I0NzFQeDlyaWdr?=
- =?utf-8?B?cm9DNElPNStrSS93cEhGYVVsc3c4R2JIMjh3TmUwMXdRcGgwU21wMnJodlQ4?=
- =?utf-8?B?aXNqRDdGSWpFWm5XWWhVWm5KUWN0ejRrMWJGalFTSDNLc1ZDdVd0cVcweHQr?=
- =?utf-8?B?a1lTK2JIU2JXaVRuRWI0K0RPRVhWNE55YytEOUpGS0VBNUpjdU5KWnNpSjZL?=
- =?utf-8?B?UUhTSDJMbFJtbDRQYTMzOUZyeWloeWZWYWZSWXZiYnRWMTVKRlg0UE93Mmdr?=
- =?utf-8?B?VDc0d29HZWdTN2g1bkw0QmFoV2g0UWRTTk95TlphNWZjK2tQajVneFY1U2Fy?=
- =?utf-8?B?ZXdVb0pYcTFGeFJPWkx3MHg2d3B2ZTJ6NVNYUjhpSC9PcHRobGJuS054ODZy?=
- =?utf-8?B?Q01MNUhDcnRaVFo2MCs1bk9HdGkzcnlEcElDVC95Ym5CRjIwMDRsWlJ0aFFi?=
- =?utf-8?B?Q25KcWNYakhkK1A1OWJaTUhQWnJodUZGSXNTb3BQa3JXeGVmVVNwbE9YN1Va?=
- =?utf-8?B?ZXNVUXpTTHA4VytvRGtjWmhCTG50blhRaEROT0JGc1BWdG42QzVPWTNBMnY1?=
- =?utf-8?B?blBLMCtJeHl1ZER4VzJCcVEyR3NZQkFJYzNYUTRZalVVblJYRU85TEdqTHVk?=
- =?utf-8?B?R3poWWlnUThpbkg2dzhuQjc1ZUN3SGgvdlBhUzdQY1duVlB3OGJqcWdqYTJ0?=
- =?utf-8?B?bzUvMmxJUTY2bktscm1xS1oxRldmWVNnNVpqUWJmcm1JNzE3SUIwa2ZyTExz?=
- =?utf-8?B?NUJORVdRbFNkRERsZHJDTUZRRVRENGFNbW02b2tPMWloZ0VYaU5lSGM1b0JJ?=
- =?utf-8?B?N0dTQ1BHZTE3Q2JWdkJJRTh2QUJqOEpTZ0E4OHhUV0xHUndqMGZxZXdQbkFm?=
- =?utf-8?B?OVNPYzdwcGwzSzZQOWg3L2NSSkVsZktmTlhtYjhXaWNQa1d3bWdqeDl4eXBY?=
- =?utf-8?B?Qkt1VHNURGN0RHc3SFVYcFZOTng4VkNnQmtZd1lkbGtFZlVZR25PamZJZXpG?=
- =?utf-8?B?RzluWFd3L2NtOEl1TGtwQUpYTVBtZ0VKMjRiQ3pwai94SDFPRVBOSCtpc05O?=
- =?utf-8?B?RGllMTBaOWtOWGhxZGplbTEwRVNjaFdGdkZUTUVuY3NsWFlrTG9hQ1JFTkhL?=
- =?utf-8?B?Njc1ZTZXaSt1Tm1HNkhRVnZEVXUzR01EcVNjNnNnb1h2RnZSaXd5TnZwYVRK?=
- =?utf-8?B?NnhUN2xYajFybytiQk5EODllYVVqM0ZOWW0vc0RSZjhBVXg3RlppZGpDeWM1?=
- =?utf-8?B?eFNUMUtTOXFyQmlCbm1UVWNHYTExZEg0SzJTcVFDd1lLWTVNTGFGVUd6UUps?=
- =?utf-8?B?NkdBbTlNejR2WHdRd2d2bWFZVUUvTEh0alFxNzhaZ2NUVVhCNVYyZWZTa0hm?=
- =?utf-8?B?TlE5eFVTMm1GYkhmUjBRQlJETEhVZXlybmNMODI5dldwMXpDNXRUV21WQnVE?=
- =?utf-8?B?NFQzTHdkcHFzSlVzcjJJb0N5Q09xRlZNc1JQUnlWR0NWem9pSmxVYWZnRGt5?=
- =?utf-8?B?ZndRMVoxUUZVVXRvb0lpTG9LRGVabTJuMVc1dlpIS1Z2N2VwNGZPMXI2YnJ2?=
- =?utf-8?B?NWJMLzB6RnFweGJCaDBuTXJsdGF6aTlvN1hqMlJlZ0xhV0poaVN5cEVQb0VB?=
- =?utf-8?B?OVhwWml3a0pqMzdIL240Vnd6dzFJV2RjWjVHam1nZXJEcEhONS9hOWhFcFhx?=
- =?utf-8?B?TkhXTzgvVFF6cWg3MkFYcm4zSXFwSkwvcXFVenN2dTBnVWdiaXFuNDJHcDlQ?=
- =?utf-8?B?cURka2k3UWRBU1o1eUFIMzduemw0cWt3RStaRzZhWU1aQnVhNmFpZWU3MjFS?=
- =?utf-8?B?NHE2WGdmVkZWQk5IdEtoMFczL3lMQ1pmNFZKVlViQlU0R2dJSXp2SDBHUUpN?=
- =?utf-8?B?bi9ZTGxlSjAxR0owSmpqdVZ1eG1mOHRjYkZtOGFjeDJmaHlDTlFBYVZsMnUw?=
- =?utf-8?B?MzFFMVFHemVTSVRBYlJSdWZxeEVCNVpPQmV4Qmg3M3k1YkIxNzEyV2doc1M0?=
- =?utf-8?B?RnMzcW1NTzRMTDBvdWRhQnVCWWM5K3l1UnJDY1pFMGxrNW9yTUI3RlJxUll0?=
- =?utf-8?B?Vzk0Q2w2T3lySjJwRnlrMEhTYVE4bEFaSWJQOUVKdHY3OTFWTDQ4dz09?=
-X-OriginatorOrg: est.tech
-X-MS-Exchange-CrossTenant-Network-Message-Id: a3c57914-b79c-4b15-76c3-08de5a4dab03
-X-MS-Exchange-CrossTenant-AuthSource: BESP189MB3241.EURP189.PROD.OUTLOOK.COM
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Jan 2026 07:04:36.2111
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: d2585e63-66b9-44b6-a76e-4f4b217d97fd
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: +jFsKKO3QF4jOfqeZLuicRTmVzsWY9VS2pyliQ0zfuts6+puqHibWaSkawtEUwF8es7KdEYjhengVZyXQwhzag==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI0P189MB3494
+	id 1vuXut-00000000Zxe-0NKt;
+	Mon, 23 Feb 2026 15:32:12 +0000
+Received: from localhost.localdomain (unknown [58.22.7.114])
+	by smtp.qiye.163.com (Hmail) with ESMTP id 34b37f77f;
+	Mon, 23 Feb 2026 23:31:55 +0800 (GMT+08:00)
+From: Shawn Lin <shawn.lin@rock-chips.com>
+To: Bjorn Helgaas <bhelgaas@google.com>,
+	"Vaibhaav Ram T . L" <vaibhaavram.tl@microchip.com>,
+	Kumaravel Thiagarajan <kumaravel.thiagarajan@microchip.com>,
+	Even Xu <even.xu@intel.com>,
+	Xinpeng Sun <xinpeng.sun@intel.com>,
+	Srinivas Pandruvada <srinivas.pandruvada@linux.intel.com>,
+	Jiri Kosina <jikos@kernel.org>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Zhou Wang <wangzhou1@hisilicon.com>,
+	Longfang Liu <liulongfang@huawei.com>,
+	Vinod Koul <vkoul@kernel.org>,
+	Lee Jones <lee@kernel.org>,
+	Jijie Shao <shaojijie@huawei.com>,
+	Jian Shen <shenjian15@huawei.com>,
+	Sunil Goutham <sgoutham@marvell.com>,
+	Andrew Lunn <andrew+netdev@lunn.ch>,
+	Heiner Kallweit <hkallweit1@gmail.com>,
+	"David S . Miller" <davem@davemloft.net>,
+	Jeff Hugo <jeff.hugo@oss.qualcomm.com>,
+	Oded Gabbay <ogabbay@kernel.org>,
+	Maciej Falkowski <maciej.falkowski@linux.intel.com>,
+	Karol Wachowski <karol.wachowski@linux.intel.com>,
+	Min Ma <mamin506@gmail.com>,
+	Lizhi Hou <lizhi.hou@amd.com>,
+	Andreas Noever <andreas.noever@gmail.com>,
+	Mika Westerberg <westeri@kernel.org>,
+	Tomasz Jeznach <tjeznach@rivosinc.com>,
+	Will Deacon <will@kernel.org>,
+	Xinliang Liu <xinliang.liu@linaro.org>,
+	Tian Tao <tiantao6@hisilicon.com>,
+	Davidlohr Bueso <dave@stgolabs.net>,
+	Jonathan Cameron <jonathan.cameron@huawei.com>,
+	Srujana Challa <schalla@marvell.com>,
+	Bharat Bhushan <bbhushan2@marvell.com>,
+	Antoine Tenart <atenart@kernel.org>,
+	Herbert Xu <herbert@gondor.apana.org.au>,
+	Raag Jadav <raag.jadav@intel.com>,
+	Hans de Goede <hansg@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Jiri Slaby <jirislaby@kernel.org>,
+	Andy Shevchenko <andy@kernel.org>,
+	Manivannan Sadhasivam <mani@kernel.org>,
+	Mika Westerberg <mika.westerberg@linux.intel.com>,
+	Andi Shyti <andi.shyti@kernel.org>,
+	Robert Richter <rric@kernel.org>,
+	Mark Brown <broonie@kernel.org>,
+	Nirmal Patel <nirmal.patel@linux.intel.com>,
+	Kurt Schwemmer <kurt.schwemmer@microsemi.com>,
+	Logan Gunthorpe <logang@deltatee.com>,
+	Linus Walleij <linusw@kernel.org>,
+	Bartosz Golaszewski <brgl@kernel.org>,
+	Sakari Ailus <sakari.ailus@linux.intel.com>,
+	Bingbu Cao <bingbu.cao@intel.com>,
+	Ulf Hansson <ulf.hansson@linaro.org>
+Cc: Arnd Bergmann <arnd@arndb.de>,
+	Benjamin Tissoires <bentiss@kernel.org>,
+	linux-input@vger.kernel.org,
+	linux-i3c@lists.infradead.org,
+	dmaengine@vger.kernel.org,
+	Philipp Stanner <phasta@kernel.org>,
+	netdev@vger.kernel.org,
+	nic_swsd@realtek.com,
+	linux-arm-msm@vger.kernel.org,
+	dri-devel@lists.freedesktop.org,
+	linux-usb@vger.kernel.org,
+	iommu@lists.linux.dev,
+	linux-riscv@lists.infradead.org,
+	David Airlie <airlied@gmail.com>,
+	Simona Vetter <simona@ffwll.ch>,
+	linux-cxl@vger.kernel.org,
+	linux-crypto@vger.kernel.org,
+	platform-driver-x86@vger.kernel.org,
+	linux-serial@vger.kernel.org,
+	mhi@lists.linux.dev,
+	Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+	Jan Dabros <jsd@semihalf.com>,
+	linux-i2c@vger.kernel.org,
+	Daniel Mack <daniel@zonque.org>,
+	Haojian Zhuang <haojian.zhuang@gmail.com>,
+	linux-spi@vger.kernel.org,
+	Jonathan Derrick <jonathan.derrick@linux.dev>,
+	linux-pci@vger.kernel.org,
+	linux-gpio@vger.kernel.org,
+	Mauro Carvalho Chehab <mchehab@kernel.org>,
+	linux-media@vger.kernel.org,
+	linux-mmc@vger.kernel.org,
+	Shawn Lin <shawn.lin@rock-chips.com>
+Subject: [PATCH 01/37] PCI/MSI: Add Devres managed IRQ vectors allocation
+Date: Mon, 23 Feb 2026 23:29:40 +0800
+Message-Id: <1771860581-82092-2-git-send-email-shawn.lin@rock-chips.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1771860581-82092-1-git-send-email-shawn.lin@rock-chips.com>
+References: <1771860581-82092-1-git-send-email-shawn.lin@rock-chips.com>
+X-HM-Tid: 0a9c8b20e63209cckunm6946b3c7986369
+X-HM-MType: 1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgPGg8OCBgUHx5ZQUlOS1dZFg8aDwILHllBWSg2Ly
+	tZV1koWUFDSUNOT01LS0k3V1ktWUFJV1kPCRoVCBIfWUFZGh5JGFYdQhpNQ0tOHx8aQhpWFRQJFh
+	oXVRMBExYaEhckFA4PWVdZGBILWUFZTkNVSUlVTFVKSk9ZV1kWGg8SFR0UWUFZS1VLVUtVS1kG
+DKIM-Signature: a=rsa-sha256;
+	b=hesEBWpuUfkngcgz1f2Ig1nlGmmzRwW4WQwqVSHNJo/8mDrQHyi2jBXfpRejbQ5213Bi/x3y5ZKsO4yPdU29saCaBfjZuhiQPZrXuFi/nfbjzR0kpb+gL5Eft5gNlVXtMsgoBjIOykghNIgFG4xZvqITu8wqjNed5lf17v/+SjU=; s=default; c=relaxed/relaxed; d=rock-chips.com; v=1;
+	bh=j3H95hgVRLs6dldnhhXVuqSGrPI2yynu10KTCXrGKLk=;
+	h=date:mime-version:subject:message-id:from;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260122_230442_037445_A0B2AE11 
-X-CRM114-Status: GOOD (  16.31  )
+X-CRM114-CacheID: sfid-20260223_073211_326926_C9266795 
+X-CRM114-Status: GOOD (  10.94  )
 X-Mailman-Approved-At: Wed, 11 Mar 2026 15:01:57 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -177,113 +147,105 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
---832332918645963717691518711255250
-Content-Type: text/plain; charset=utf-8; format=flowed
-Content-Transfer-Encoding: QUOTED-PRINTABLE
+pcim_alloc_irq_vectors() and pcim_alloc_irq_vectors_affinity() are created for
+pci device drivers which rely on the devres machinery to help cleanup the IRQ
+vectors.
 
+Signed-off-by: Shawn Lin <shawn.lin@rock-chips.com>
+---
 
+ drivers/pci/msi/api.c | 26 ++++++++++++++++++++++++++
+ include/linux/pci.h   | 22 ++++++++++++++++++++++
+ 2 files changed, 48 insertions(+)
 
-On Thu, 22 Jan 2026, Joshua Yeong wrote:
+diff --git a/drivers/pci/msi/api.c b/drivers/pci/msi/api.c
+index c18559b..2362fca 100644
+--- a/drivers/pci/msi/api.c
++++ b/drivers/pci/msi/api.c
+@@ -297,6 +297,32 @@ int pci_alloc_irq_vectors_affinity(struct pci_dev *dev, unsigned int min_vecs,
+ EXPORT_SYMBOL(pci_alloc_irq_vectors_affinity);
+ 
+ /**
++ * pcim_alloc_irq_vectors() - devres managed pci_alloc_irq_vectors()
++ * Interrupt vectors are automatically freed by the devres machinery
++ */
++int pcim_alloc_irq_vectors(struct pci_dev *dev, unsigned int min_vecs,
++			   unsigned int max_vecs, unsigned int flags)
++{
++	return pcim_alloc_irq_vectors_affinity(dev, min_vecs, max_vecs,
++					       flags, NULL);
++}
++EXPORT_SYMBOL(pcim_alloc_irq_vectors);
++
++/**
++ * pcim_alloc_irq_vectors_affinity() - devres managed pci_alloc_irq_vectors_affinity()
++ * Interrupt vectors are automatically freed by the devres machinery
++ */
++int pcim_alloc_irq_vectors_affinity(struct pci_dev *dev, unsigned int min_vecs,
++				   unsigned int max_vecs, unsigned int flags,
++				   struct irq_affinity *affd)
++{
++	dev->is_msi_managed = true;
++	return pci_alloc_irq_vectors_affinity(dev, min_vecs, max_vecs,
++					      flags, affd);
++}
++EXPORT_SYMBOL(pcim_alloc_irq_vectors_affinity);
++
++/**
+  * pci_irq_vector() - Get Linux IRQ number of a device interrupt vector
+  * @dev: the PCI device to operate on
+  * @nr:  device-relative interrupt vector index (0-based); has different
+diff --git a/include/linux/pci.h b/include/linux/pci.h
+index d5ec0f8..ae58f70 100644
+--- a/include/linux/pci.h
++++ b/include/linux/pci.h
+@@ -1764,6 +1764,12 @@ int pci_alloc_irq_vectors_affinity(struct pci_dev *dev, unsigned int min_vecs,
+ 				   unsigned int max_vecs, unsigned int flags,
+ 				   struct irq_affinity *affd);
+ 
++int pcim_alloc_irq_vectors(struct pci_dev *dev, unsigned int min_vecs,
++			  unsigned int max_vecs, unsigned int flags);
++int pcim_alloc_irq_vectors_affinity(struct pci_dev *dev, unsigned int min_vecs,
++				   unsigned int max_vecs, unsigned int flags,
++				   struct irq_affinity *affd);
++
+ bool pci_msix_can_alloc_dyn(struct pci_dev *dev);
+ struct msi_map pci_msix_alloc_irq_at(struct pci_dev *dev, unsigned int index,
+ 				     const struct irq_affinity_desc *affdesc);
+@@ -1806,6 +1812,22 @@ pci_alloc_irq_vectors(struct pci_dev *dev, unsigned int min_vecs,
+ 					      flags, NULL);
+ }
+ 
++static inline int
++pcim_alloc_irq_vectors_affinity(struct pci_dev *dev, unsigned int min_vecs,
++			       unsigned int max_vecs, unsigned int flags,
++			       struct irq_affinity *aff_desc)
++{
++	return pci_alloc_irq_vectors_affinity(dev, min_vecs, max_vecs,
++					      flags, aff_desc);
++}
++static inline int
++pcim_alloc_irq_vectors(struct pci_dev *dev, unsigned int min_vecs,
++		      unsigned int max_vecs, unsigned int flags)
++{
++	return pcim_alloc_irq_vectors_affinity(dev, min_vecs, max_vecs,
++					      flags, NULL);
++}
++
+ static inline bool pci_msix_can_alloc_dyn(struct pci_dev *dev)
+ { return false; }
+ static inline struct msi_map pci_msix_alloc_irq_at(struct pci_dev *dev, unsigned int index,
+-- 
+2.7.4
 
-> On Friday, January 23, 2026 1:58 AM, David Nystr=C3=B6m wrote:
->
->> Add the ability to rescan the i3c bus from userspace, i.e. provoke a DDA=
-.
->> The usecase could be f.ex. an i3cdev userspace driver for a device with =
-broken hotjoin support. If the i3c device boots slowly, it might be miss th=
-e DDA during boot.
->>
->> Signed-off-by: David Nystr=C3=B6m <david.nystrom@est.tech>
->> ---
->
-> Can we rename rescan to something where indicate we are only doing ENTDAA=
-? I think rescan keyword should be reserved for complete rescan of i3c bus.
-> DISEC -> RSTDAA -> ENTDAA -> ...
-
-Are you referring to clarifying wording in the commit message, or the=20
-sysfs interface naming ?
-What would be your suggestion, restore -> entdaa ?
-
->> Changes in v2:
->> - Improved the commit message with "why".
->> - Link to v1: https://patch.msgid.link/20260122-i3c_rescan-v1-1-0c17071e=
-232b@est.tech
->> ---
->>  drivers/i3c/master.c | 24 ++++++++++++++++++++++++
->>  1 file changed, 24 insertions(+)
->>
->> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c index 80dda0e85=
-558..edeae7493b3b 100644
->> --- a/drivers/i3c/master.c
->> +++ b/drivers/i3c/master.c
->> @@ -758,6 +758,29 @@ static ssize_t dev_nack_retry_count_store(struct de=
-vice *dev,
->>
->>  static DEVICE_ATTR_RW(dev_nack_retry_count);
->>
->> +static ssize_t rescan_store(struct device *dev,
->> +			    struct device_attribute *attr,
->> +			    const char *buf, size_t count)
->> +{
->> +	struct i3c_master_controller *master =3D dev_to_i3cmaster(dev);
->> +	unsigned long val;
->> +	int ret;
->> +
->> +	ret =3D kstrtoul(buf, 0, &val);
->> +	if (ret)
->> +		return ret;
->> +
->> +	if (val) {
->> +		ret =3D i3c_master_do_daa(master);
->> +		if (ret)
->> +			return ret;
->> +	}
->> +
->> +	return count;
->> +}
->> +
->> +static DEVICE_ATTR_WO(rescan);
->> +
->>  static struct attribute *i3c_masterdev_attrs[] =3D {
->>  	&dev_attr_mode.attr,
->>  	&dev_attr_current_master.attr,
->> @@ -769,6 +792,7 @@ static struct attribute *i3c_masterdev_attrs[] =3D {
->>  	&dev_attr_dynamic_address.attr,
->>  	&dev_attr_hdrcap.attr,
->>  	&dev_attr_hotjoin.attr,
->> +	&dev_attr_rescan.attr,
->>  	NULL,
->>  };
->>  ATTRIBUTE_GROUPS(i3c_masterdev);
->>
->> ---
->> base-commit: e3b32dcb9f23e3c3927ef3eec6a5842a988fb574
->> change-id: 20260116-i3c_rescan-4921d0b41a00
->>
->> Best regards,
->> --
->> David Nystr=C3=B6m <david.nystrom@est.tech>
->>
->>
->> --
->> linux-i3c mailing list
->> linux-i3c@lists.infradead.org
->> http://lists.infradead.org/mailman/listinfo/linux-i3c
->=
-
---832332918645963717691518711255250
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
-
---832332918645963717691518711255250--
-
