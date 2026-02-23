@@ -4,56 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52D14C5B55D
-	for <linux-i3c@archiver.kernel.org>; Fri, 20 Feb 2026 21:13:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ECB74E98DFF
+	for <linux-i3c@archiver.kernel.org>; Mon, 23 Feb 2026 09:20:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lIaoyLvpaggPQdqQqrh0OKDQDvBOeepuqfNvnE6rB6M=; b=38U/2E0MEH2wc0
-	mp/8yLdDVn8SXqUwmRePheYIUHzQc6S+WZ6JbeJGiDhD7hX5CnDFo2uPnZp3ONeYFKav7m2xnF3wR
-	uiFv7Q+SDQ1gNK4p5vkQBOeJnvbfRWbabklR2KSaAmwIYc1GJRqf+XxpOKf0bjns+t0lpDmAZmyfF
-	yKSamFlRs5KMP558siPd+bDiF7epiQ4A3FjkFtKu+W0u74UnMhQvbOLfwfFoif/GI25B21dbkNP4m
-	fPXU6cFTfuGF7qVxbJdOlkOoSGyaTVJSFqaXeoQlUaXEqbxCBS97WinrbDpzL+z7VMhqCRp7REwCI
-	rLCcF1bqZa1CnBffWQDg==;
+	List-Owner; bh=c4kgZ80Er6gtz71xbqyU0qfXrkIkUb0oGc15kJRWMks=; b=hLHt8CZMo3U45J
+	pvdg1QGgBxFPg6TTvHbiBsWY71Tbh5dY1CgrP8t4q7xzxfQTVcvmLpHHPZqRP2xuirjBA7BDesEZI
+	2w5QCQ+FpOJuj4os8PoUnEcLkSsGIn2cWG9dvtATVSqv3P66DeS8xFWf1Op11ti/Ya/SL0xCvmh3/
+	ZsP1yGZHo6I/gXSMh0Kp95wJzO55ZjZw9vG1YVC+oV8YvHfJr3UfFwGuBABiCiXgCylfneFTb3cN+
+	DvycDXDc+Tojm7CmMHUGnGMuUSy4zOMLwUiPVyEkCg8bafXo/HrKGWSwK81u/5TAQ8ErT4dW+zKUA
+	/nrX+MCz+OsBKRtLcddA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vtXou-0000000Fc5E-3sPg;
-	Fri, 20 Feb 2026 21:13:52 +0000
-Received: from linux.microsoft.com ([13.77.154.182])
-	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vtXor-0000000Fc4T-2S0x
+	id 1vuS7f-0000000HWkv-2V7B;
+	Mon, 23 Feb 2026 09:20:59 +0000
+Received: from mgamail.intel.com ([192.198.163.15])
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vuS7d-0000000HWk8-3uI9
 	for linux-i3c@lists.infradead.org;
-	Fri, 20 Feb 2026 21:13:51 +0000
-Received: by linux.microsoft.com (Postfix, from userid 1223)
-	id D8D5A20B6F00; Fri, 20 Feb 2026 13:13:47 -0800 (PST)
-DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com D8D5A20B6F00
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.microsoft.com;
-	s=default; t=1771622027;
-	bh=xvjA05Kd+i3BfXoggGGGdDiduwLRfsQeRP2h/l97qB4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=Lb3Ew7scP91PZctTiLu7ULBtsK5yJV2LoP5+O/SCJS4oQSdhObccADXaemXv9uduV
-	 QuSMkx93rNoqiA6ieax2NLDQTU6XChLNgLdCBtjvqM2h3n6pGm/lpT2yPDZMOnoT5l
-	 6pbEWREfGoh0kvKP0CwJ8Qtpqi89OJHjpbrq6Bzg=
-Date: Fri, 20 Feb 2026 13:13:47 -0800
-From: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
-To: Frank Li <Frank.li@nxp.com>
-Cc: David =?iso-8859-1?Q?Nystr=F6m?= <david.nystrom@est.tech>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	Joshua Yeong <joshua.yeong@starfivetech.com>
-Subject: Re: [PATCH v6] i3c: master: Add sysfs option to rescan bus via entdaa
-Message-ID: <20260220-fb92aef7e431041d8d0bb2bc@linux.microsoft.com>
-References: <20260219-i3c_rescan-v6-1-b81d6cc3cb30@est.tech>
- <aZiGRrRIaqbMSaTI@lizhi-Precision-Tower-5810>
+	Mon, 23 Feb 2026 09:20:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1771838458; x=1803374458;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=Uv3jpUhmVoyehRTPjsR3joBh7t+FveVb5u2E+JjKH+I=;
+  b=IndEJ1AuzTlYLEndHS10Oq8pXQdQx1AnOmaVALSI3NgTTCMWBcH4ROB1
+   Wxg/RCBhtNEeXTQadhs5IsnoMuU6HUgpPpPmaBKX9O0xv8+6SfoaFGJxV
+   IxHljUYWd4Nwdq1yxzq6B1dgJk7eFrPXGVhtrQuAul84QIDZL4rKuRtPd
+   Acdya8EOqB6TFxVKqBAlk2AGIaMBTRqsN/P72a4t5vB74Mu7qAnlxM35B
+   eTFBvK1GYDdmkXd2NXCjH7Ioyx04+sLdEtDjejM2JZEtCnzgCokoqojaQ
+   Y9nG5JESVeHb0rcPDY+pdDVedC6dLcNJpV10ntts9IL1mdVZ7I3tMPEbl
+   g==;
+X-CSE-ConnectionGUID: oLBxHA9MRbGA8DcSwWLxOA==
+X-CSE-MsgGUID: BMPuLAx2TYCIn+uYh510Fw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11709"; a="72928685"
+X-IronPort-AV: E=Sophos;i="6.21,306,1763452800"; 
+   d="scan'208";a="72928685"
+Received: from orviesa009.jf.intel.com ([10.64.159.149])
+  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Feb 2026 01:20:55 -0800
+X-CSE-ConnectionGUID: Gr+vAtJfRF6jFyxs+DZYiA==
+X-CSE-MsgGUID: UFP61TU/SyOUyuRrPR4Vdw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.21,306,1763452800"; 
+   d="scan'208";a="215346051"
+Received: from fpallare-mobl4.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.245.206])
+  by orviesa009-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 23 Feb 2026 01:20:54 -0800
+From: Adrian Hunter <adrian.hunter@intel.com>
+To: alexandre.belloni@bootlin.com
+Cc: Frank.Li@nxp.com,
+	rafael@kernel.org,
+	linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-pm@vger.kernel.org
+Subject: [PATCH V4 1/5] i3c: mipi-i3c-hci-pci: Set d3hot_delay to 0 for Intel controllers
+Date: Mon, 23 Feb 2026 11:20:37 +0200
+Message-ID: <20260223092041.104689-2-adrian.hunter@intel.com>
+X-Mailer: git-send-email 2.51.0
+In-Reply-To: <20260223092041.104689-1-adrian.hunter@intel.com>
+References: <20260223092041.104689-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <aZiGRrRIaqbMSaTI@lizhi-Precision-Tower-5810>
+Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260220_131349_657015_B4E49676 
-X-CRM114-Status: GOOD (  28.76  )
+X-CRM114-CacheID: sfid-20260223_012057_980758_875C2936 
+X-CRM114-Status: UNSURE (   7.04  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -65,143 +84,47 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Feb 20, 2026 at 11:05:26AM -0500, Frank Li wrote:
-> On Thu, Feb 19, 2026 at 09:58:03PM +0100, David Nystr=F6m wrote:
-> > Allow userspace to request dynamic address assignment, which is
-> > useful for i3cdev devices with broken hot-join support.
-> > This will assign dynamic addresses to all devices on the I3C bus
-> > which are currently unassigned.
-> >
-> > Signed-off-by: David Nystr=F6m <david.nystrom@est.tech>
-> > ---
-> Reviewed-by: Frank Li <Frank.Li@nxp.com>
+Set d3hot_delay to 0 for Intel controllers because a delay is not needed.
 
-Reviewed-by: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
+Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+---
 
-> > Changes in v6:
-> > - Add check for init_done to close race with init.
-> > - Link to v5: https://patch.msgid.link/20260219-i3c_rescan-v5-1-42404db=
-20d18@est.tech
-> >
-> > Changes in v5:
-> > - Change sysfs interface to boolean. Comment: Meagan Lloyd
-> > - Change sysfs entry name to do_daa: Comment Megan Lloyd, Frank Li
-> > - Link to v4: https://patch.msgid.link/20260126-i3c_rescan-v4-1-6b3559d=
-82abc@est.tech
-> >
-> > Changes in v4:
-> > - Improved commit message, once more. Comment: Frank Li
-> > - Added required documentation for sysfs addition. Comment: Frank Li
-> > - Link to v3: https://patch.msgid.link/20260123-i3c_rescan-v3-1-026429f=
-a0c65@est.tech
-> >
-> > Changes in v3:
-> > - Rename sysfs entry from rescan to entdda, Comment: Joshua Yeong
-> > - Link to v2: https://patch.msgid.link/20260122-i3c_rescan-v2-1-84c74a4=
-83f03@est.tech
-> >
-> > Changes in v2:
-> > - Improved the commit message with why.
-> > - Link to v1: https://patch.msgid.link/20260122-i3c_rescan-v1-1-0c17071=
-e232b@est.tech
-> > ---
-> >  Documentation/ABI/testing/sysfs-bus-i3c | 20 ++++++++++++++++++++
-> >  drivers/i3c/master.c                    | 27 +++++++++++++++++++++++++=
-++
-> >  2 files changed, 47 insertions(+)
-> >
-> > diff --git a/Documentation/ABI/testing/sysfs-bus-i3c b/Documentation/AB=
-I/testing/sysfs-bus-i3c
-> > index c1e048957a01..19f5cf8b1b11 100644
-> > --- a/Documentation/ABI/testing/sysfs-bus-i3c
-> > +++ b/Documentation/ABI/testing/sysfs-bus-i3c
-> > @@ -172,3 +172,23 @@ Description:
-> >  		the automatic retries. Exist only when I3C constroller supports
-> >  		this retry on nack feature.
-> >
-> > +What:		/sys/bus/i3c/devices/i3c-<bus-id>/do_daa
-> > +KernelVersion:  7.0
-> > +Contact:	linux-i3c@vger.kernel.org
-> > +Description:
-> > +		Write-only attribute that triggers a Dynamic Address Assignment
-> > +		(DAA) procedure which discovers new I3C devices on the bus.
-> > +		Writing a boolean true value (1, y, yes, true, on) to this
-> > +		attribute causes the master controller to perform DAA, which
-> > +		includes broadcasting an ENTDAA (Enter Dynamic Address Assignment)
-> > +		Common Command Code (CCC) on the bus. Writing a false value
-> > +		returns -EINVAL.
-> > +
-> > +		This is useful for discovering I3C devices that were not present
-> > +		during initial bus initialization and are unable to issue
-> > +		Hot-Join. Only devices without a currently assigned dynamic address
-> > +		will respond to the ENTDAA broadcast and be assigned addresses.
-> > +
-> > +		Note that this mechanism is distinct from Hot-Join, since this is
-> > +		controller-initiated discovery, while Hot-Join is device-initiated
-> > +		method to provoke controller discovery procedure.
-> > diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> > index 0eae19b3823d..8f49d4ad473d 100644
-> > --- a/drivers/i3c/master.c
-> > +++ b/drivers/i3c/master.c
-> > @@ -758,6 +758,32 @@ static ssize_t dev_nack_retry_count_store(struct d=
-evice *dev,
-> >
-> >  static DEVICE_ATTR_RW(dev_nack_retry_count);
-> >
-> > +static ssize_t do_daa_store(struct device *dev,
-> > +			    struct device_attribute *attr,
-> > +			    const char *buf, size_t count)
-> > +{
-> > +	struct i3c_master_controller *master =3D dev_to_i3cmaster(dev);
-> > +	bool val;
-> > +	int ret;
-> > +
-> > +	if (kstrtobool(buf, &val))
-> > +		return -EINVAL;
-> > +
-> > +	if (!val)
-> > +		return -EINVAL;
-> > +
-> > +	if (!master->init_done)
-> > +		return -EAGAIN;
-> > +
-> > +	ret =3D i3c_master_do_daa(master);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	return count;
-> > +}
-> > +
-> > +static DEVICE_ATTR_WO(do_daa);
-> > +
-> >  static struct attribute *i3c_masterdev_attrs[] =3D {
-> >  	&dev_attr_mode.attr,
-> >  	&dev_attr_current_master.attr,
-> > @@ -769,6 +795,7 @@ static struct attribute *i3c_masterdev_attrs[] =3D {
-> >  	&dev_attr_dynamic_address.attr,
-> >  	&dev_attr_hdrcap.attr,
-> >  	&dev_attr_hotjoin.attr,
-> > +	&dev_attr_do_daa.attr,
-> >  	NULL,
-> >  };
-> >  ATTRIBUTE_GROUPS(i3c_masterdev);
-> >
-> > ---
-> > base-commit: 44982d352c33767cd8d19f8044e7e1161a587ff7
-> > change-id: 20260116-i3c_rescan-4921d0b41a00
-> >
-> > Best regards,
-> > --
-> > David Nystr=F6m <david.nystrom@est.tech>
-> >
 
--- =
+Changes in V3 and V4:
 
+	None
+
+Changes in V2:
+
+	Add Frank's Rev'd-by
+
+
+ drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
+index 0f05a15c14c7..bc83caad4197 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
++++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
+@@ -164,6 +164,7 @@ static int intel_i3c_init(struct mipi_i3c_hci_pci *hci)
+ 	dma_set_mask_and_coherent(&hci->pci->dev, DMA_BIT_MASK(64));
+ 
+ 	hci->pci->d3cold_delay = 0;
++	hci->pci->d3hot_delay = 0;
+ 
+ 	hci->private = host;
+ 	host->priv = priv;
+-- 
+2.51.0
+
+
+-- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
