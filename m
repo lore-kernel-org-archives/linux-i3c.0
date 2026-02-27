@@ -4,126 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 62EFCFD45F9
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Feb 2026 23:05:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43E16FD7F8E
+	for <linux-i3c@archiver.kernel.org>; Fri, 27 Feb 2026 10:22:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3WRFN96etBb1JiAqWeTvnKIpoc5R45xqZ/qAHcxzCQg=; b=Qzyw1djmcuSvHu
-	zF3oE55rcxG/vCWgqDGuCIAeuYA3SNflQeJ1Wk2EeArBtn6+M0gVYkrjkYnFZ76i6fLepAiAyzf99
-	s3IGuYA1Nl3kiAvq32RQglR5PTsXKq0YEmbED231DviH44vuq3qa8iiB/kLPRmnuoLA57KwK4AeUs
-	OWWOL+lM6OSvk2XrdfSiaaRD0kH/Q8DMnI9s4timjQsmn95BVDvdiczgmj1iYd6KZTfUeZZ/dO7We
-	ai2oe6H0fhi6h4ahzXNtafWOQiGDAiuILHhughJ3jYgPnB2vssQD9RPYyotppO8K+JZhPo9rJO6fM
-	HgYRKGobsWWjJkB33MiQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:From:Cc:To:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3J+R6upetG8EOm42HafFps7u1JIQZf2YKD7Jh3MWCtQ=; b=RIEHH25l4gh9cl
+	Y5XoK26u2lZnWrceyO3ZaV6Gt7rNnpIVWyfJ5+eub1gkMS7met6Zig1kh2hKZBmyu+V0vIYVpCtLp
+	ltYt+rKjj2qBcfgik6JV7oStgE1XypTEzh2xdzYEmPLUsOh1cH+vW2xWcNIZ+79YuwpefoJsyAqDE
+	UNwDt1zZucqwpbP/H2CHlfhpcfNhqpe72gXN5A81FPYlIeP035rWyz+wVYU/lBNT3VF/JBV3E8dc2
+	O5xbuaNppLfXPpDN2YSztv91cka+vxeCzRwhiGWUlzwpsQH0xbR3GSM98b6OI/BP1XRVG06pKfehM
+	InNWT+oUE5w/P0v6H02g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvNwT-000000052I8-0cig;
-	Wed, 25 Feb 2026 23:05:17 +0000
-Received: from mail-westeuropeazon11011026.outbound.protection.outlook.com ([52.101.70.26] helo=AS8PR04CU009.outbound.protection.outlook.com)
+	id 1vvuyx-00000008EN3-063c;
+	Fri, 27 Feb 2026 10:22:03 +0000
+Received: from mout.web.de ([212.227.17.12])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvNwR-000000052HN-222x
+	id 1vvuyu-00000008EKy-1VBf
 	for linux-i3c@lists.infradead.org;
-	Wed, 25 Feb 2026 23:05:16 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=gEJ2Fja+Q2qDE6qib+qGEWL0pNWFHmVivOAsHaQZ4S17b/jPU7X1RQNLTqQPDlXFWCsWL+bp1O2LMr2lPjmKMwXh/yumBC08jXLvt5xEmLBCQVIgUj38uokrfeYoXWXiKnJWQnAKlffYkUTtxn0P0H8kDI2E0uOQX8Uw4nwboKsf5P3QaFjzktFgYSCLpRueZFAs5+9qTcfo48+lvocztQ5U6vwzdLGMQ3Cu/jb6pSrXEyld5yB/s1fqG6PLIAuqTVl+eOF5C1NU6Jnh87pNmR8lSJa2MT5iSdXwzzqxSTkIhYtSr6uWvDqtp0UdwScxhHIoOKPXuV61InFLg88Tzw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=ToZNko8ulHXKYewgAgaxgpY4uaSWPaEUnU8wXb7wZp0=;
- b=uepIBgdtjKVZ+S1Gbyf8GPp34krEE2SEAEY00DNFL7cJiJaAITIhmub4pjUl0ulKfjIxh2UUFHy+FO0v7kkMH2ufOtOa+Dm5D8eKDp1ap6flsk5UIhlcTxmyNSPkM/AVWd1vi5ODZ8NzFRDibZhXrUwA5icFrvN25SomLN8vZdCcEO2UFlclUbNOg1oBvBf2zTMohodi0IZCJ6h2uUwzYpGiKk/HAlaqVdRBDmy+0FEy7WE3f3tpUWKe5CQckbPknO2ejo5MWSRuIEXLQW0WWBhwUpNkd+Tt4RggiBU6k4feFbsADKvC3JJZYDbsFkmogt74cNDLvnfzDVCbDvtUYg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ToZNko8ulHXKYewgAgaxgpY4uaSWPaEUnU8wXb7wZp0=;
- b=SjixmeuorLuBvBDOEXfpgyn6QM0Jpq3PTQLP0r6DGlrvRzrteskjMnyDqzdDN/jZAgOHyg4VpC17xbraNelASCuHKX4FC+kLrZ6ll1UcNFg8VwOJ88/UegNzxGsiaJ90+Yw4v17+9gHvV/4jH4JX/r6UZ+4FvyYfXGHcor/43kNcof1toskMQoAMrs/4EdnuScA03yiOdNHR/f8+iWdpC4MXlIE88yo2LkBSmTGgKbEbdUiUl8tBypZmOeLV/wQjxOE/rv9plXKrqaLUSGPSyIWftQYJGWqU1p+gkonZ4iHljNA6iYWVRlQvs5nPQnt1DDgoyTv8lhg0MwLKHPVayQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8)
- by GV1PR04MB10394.eurprd04.prod.outlook.com (2603:10a6:150:1c6::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9632.23; Wed, 25 Feb
- 2026 23:05:09 +0000
-Received: from PA4PR04MB9366.eurprd04.prod.outlook.com
- ([fe80::75e4:8143:ddbc:6588]) by PA4PR04MB9366.eurprd04.prod.outlook.com
- ([fe80::75e4:8143:ddbc:6588%6]) with mapi id 15.20.9632.017; Wed, 25 Feb 2026
- 23:05:09 +0000
-Date: Wed, 25 Feb 2026 18:05:01 -0500
-From: Frank Li <Frank.li@nxp.com>
-To: Peter Yin <peteryin.openbmc@gmail.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>,
-	Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Manikanta Guntupalli <manikanta.guntupalli@amd.com>,
-	Sakari Ailus <sakari.ailus@linux.intel.com>,
-	Jorge Marques <jorge.marques@analog.com>,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2] i3c: master: dw-i3c: Fix missing of_node for virtual
- I2C adapter
-Message-ID: <aZ-AHSkUKIBtb7ZZ@lizhi-Precision-Tower-5810>
-References: <20260225093755.3696236-1-peteryin.openbmc@gmail.com>
-Content-Disposition: inline
-In-Reply-To: <20260225093755.3696236-1-peteryin.openbmc@gmail.com>
-X-ClientProxiedBy: SJ0P220CA0027.NAMP220.PROD.OUTLOOK.COM
- (2603:10b6:a03:41b::18) To PA4PR04MB9366.eurprd04.prod.outlook.com
- (2603:10a6:102:2a9::8)
+	Fri, 27 Feb 2026 10:22:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=web.de;
+	s=s29768273; t=1772187677; x=1772792477; i=markus.elfring@web.de;
+	bh=5w9tfWPJ/J8tNpSjjkxWmDR7Z6rsSRPdTJ9yzFd/T3c=;
+	h=X-UI-Sender-Class:Message-ID:Date:MIME-Version:To:Cc:From:
+	 Subject:Content-Type:Content-Transfer-Encoding:cc:
+	 content-transfer-encoding:content-type:date:from:message-id:
+	 mime-version:reply-to:subject:to;
+	b=EIrLnBaLsLkZmfcp2dGeTAS9QozKWU4g3ShRn9G+bC0U3osqPSdBQKx6sAwNLRAj
+	 kSx/1KA7fGomcR8gZoVQwlRgLVBEg/K9Avt6jpCaw5Zlrl9LwdRd7zr+fig3iARur
+	 y6S3ZpzYx4BBs6mie5Eyls+blVbruGSMIA+bsxyHRYZgXVQTFvtKc6HSKBOuNgOTy
+	 zZG+GLr3C2PEfQ6SO+MqTHcSBN+Rqe+iAKImk5PEmPhSbNikCLVB+J8/7RCUq5/sX
+	 FDERidVbfO9T7zBUu4yfDu76r8JPhtDLL2tSGZDS4CBvcbfJmrEdsuCJDWJQxXKIQ
+	 QX7q7dBMlqPMGEm5Ng==
+X-UI-Sender-Class: 814a7b36-bfc1-4dae-8640-3722d8ec6cd6
+Received: from client.hidden.invalid by smtp.web.de (mrweb106
+ [213.165.67.124]) with ESMTPSA (Nemesis) id 1MG9DC-1vumNV1t5o-00CZSl; Fri, 27
+ Feb 2026 11:21:17 +0100
+Message-ID: <2411a872-5bf5-4353-a754-47fa54d69c46@web.de>
+Date: Fri, 27 Feb 2026 11:20:59 +0100
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|GV1PR04MB10394:EE_
-X-MS-Office365-Filtering-Correlation-Id: ec0d0fa3-1e0d-40f5-6ebf-08de74c2525e
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|1800799024|52116014|376014|366016|38350700014|7053199007;
-X-Microsoft-Antispam-Message-Info: VwYtqr4KPqLb1OJka/IeQPjINW/vc/6Ck4I+HefuJpa2aQfdggCwLMCyqltapaa34UkLJPQZ+iNMsqYtFZE+pnSthB+Av1A/pojltbLfXWMylYhOank5xpY2wDmDm8SKuKxokRnR2KCpYfUe+zhuTUhKs4M6+NAiAt2TW0yMBDHs+NbQ8rpiKvyW5LJ2qRld73ALGvylOIeADcvZP4eBBGy1IJMpQ9SxU+EFvf2Ixh6m2Kb/t8Paxedk4lN8NoPpRm9HnXu0JOlrbfhzGX34SRjHo8XTNiODy6VhlUsyrfJUroACb0mU1JFkGHxGTMMdwxfbf52dfzADZkdv2F1MV3x03b7/3JSHY+sBobhmEscz9QMnv8E8twHsV8t7ljB1NIXL5hiH3bqzGeyJb8Gzjo2PgN4stFRNDpjWjY8GFneZwFk42zkSH107FOj7z+/sSuG5z6iSZr/XNPi1W6vfKxhnsEYvWVLbbWn43bkbfgA/tVawqnG3BTr7okmjUrUKQYkc9qKVvcvtuh3iZOp/c96LA6uV1jhy8U4fZ/vNmaEulAYOYMI6zbwvtWSADzraYDX16+8U4oa9d/ZeqixDggxtt+pa+RG4iyF8RlYyJ6nPC82a6aADtJx4XNf5g/u4g83bCBDO80LsDlF0/BjzqlyEyp2tzEanS0VZiO8cByCirEFsDH7/C88WUJgL034i5i7DXnX9e0JnIT0QZIPx+8PQ1RBAU1biqHjdnOXaCkedfsdox6BATR3zb7FkwhLzvARGI5uo/S4nnnw6gNcfoWzvK6hEQwludnBH6onrcqs=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(1800799024)(52116014)(376014)(366016)(38350700014)(7053199007);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?IytAGZl+aO7j/5O8+Grq63pCCANgO1sHhYpvKA4P4MayVV3W/uTcc8kDCYzo?=
- =?us-ascii?Q?X922AoavijRDxndUAl2Q3G29OXhGvUwPLaIzWjJH4/QbcJU0Bcn/JLhIY5qI?=
- =?us-ascii?Q?WLmMQiWpBGKQCHTKB30tUUli7yM8040KoorEeuex6FDAgXebrTbWCiOc7wBq?=
- =?us-ascii?Q?qfR5c01vuMYPlweatgEzK21c9snFH9F0sHhoPu0DuyoQcMEAlCS3qwRZdN0a?=
- =?us-ascii?Q?IaaBAuKFZEf7P3IzhkSQ2pRwioqDKparSFFJOK2oCkURTsigZrFrN6bXq9ZM?=
- =?us-ascii?Q?sujXz5pJaTT3GzR/byrpA5oCH2lV+FgFQuJ3pc50UigwXKwxmBwTzewI/HZL?=
- =?us-ascii?Q?TZy2JRwVF5yltiixaAifYXp9MY4v5MMncKn75siytgo8ijHobTQeY3dNoe7Q?=
- =?us-ascii?Q?Mrr5nCfrt4nNzKMsADBMQ8GMcUubUa2NQOjCyb8cYJ8OPA6/e8tOB2qkPCYw?=
- =?us-ascii?Q?5AEpMwjHTxDQyVuVPa7VyanVmea1JyoTv2vSCJVPhNsjobml2pglrcxr87Xs?=
- =?us-ascii?Q?I05I1ntwXGVw+onNiaYs6mhe8ODXZm0usPb10Fi+Koenn69yMZbyfcEzIKmc?=
- =?us-ascii?Q?/zxHrMj7s41CZxKBa5n2VsO2m5T3A0PMKmG5m23f2ZCMxY7A60GMSYoxpktU?=
- =?us-ascii?Q?pHg6z1njkgKj3rfdj2sQX3jBAO/u8eBIZ+wwuT3+i+ZYbG2ypOeit5oKcvg7?=
- =?us-ascii?Q?SIk95HogJu7BMfuaZ5l8QhTvOLITbQUQpyJ+cb/vPf8yEPWpengfLKbPmyKp?=
- =?us-ascii?Q?TOTA0iJ68/uRsXDI4cV9/sw6j2BEyeRd/utEW1akNYM+HnXRHDdIL9p7SeIz?=
- =?us-ascii?Q?eJ9sX9UUz75UmWIrZ79bWG/4/PDmM7fzini2FjjlTVhZLuWE4zSnsomYWhz6?=
- =?us-ascii?Q?i5gEt0fsKyQ8f6fMf2DIUiFrv9jFgJ/ZbB4luwSp0IR+VXqyzyus8gZXPnoC?=
- =?us-ascii?Q?BFYS8+qUoJYgFrcvaQvuwWGwJTnKrHMMSr0ZxovTLa0LrWw86IGhcsd3OQcS?=
- =?us-ascii?Q?m+tU/T35vgncwxzs+dUVghEtGJ6Hk2AGAVII4HNLjh5JqqLf8ty965NI3nkk?=
- =?us-ascii?Q?JVxBPxZRvDYIVpALINJgvHiKRoOPm+l0Oa++9QC9zmSTZYbxPl8zkDWMHAe6?=
- =?us-ascii?Q?b+YikU2IMuaM/nfnTRlbzNVFerNy5gIhGyU0Lkr9VCHBSxVtdEHZz5l7mWkf?=
- =?us-ascii?Q?OQhBQ4jG6pwcKPzB854V/BU9pT0DXDpeEu1H/UT7isEYBsIT9R7+c4AoQqZt?=
- =?us-ascii?Q?o2bOhG/HB426KK8tvsGqB6WzCSs227H/z32H4iclhcP3trsCWQwwdqcbtdEa?=
- =?us-ascii?Q?AwmzXjzVZQd1iAv8Bv+eFMa0+ZvEcORtEWk8hiiHk4iKKvZK4/zhX/5jhrIq?=
- =?us-ascii?Q?Q1hM08nqF3i06ztfoeqh86JBuFbd3J8y6J/r8etSy7zn+loKTsfw2xn66lYi?=
- =?us-ascii?Q?w4FrE6d9DnX8fuQyH2ddzb8fk/vyXEjb1gOC1DbVC5f3ObkoEfiDjsqSHH93?=
- =?us-ascii?Q?os1H/OC8IfTkVkJZAnvDQf3gBBT+rr7f9sNsTPfzN6O8ellQDdY22dd7Kiyn?=
- =?us-ascii?Q?J2vzzMdYKyvjIpT3jNbIAaU3t9UBPinKWfhFxXJRwnZZP/K5288ktYToqYji?=
- =?us-ascii?Q?O2zl2/Tju3S8t5UDQ/KdI/s5ayZuzn6l6S4tpsd8zn/ZjwPYpfgogLmshyJh?=
- =?us-ascii?Q?n6SuwTrFEgC4ql7LSS6ds+SFs3FROzg6Tbetdy0NWpVOZMk8?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ec0d0fa3-1e0d-40f5-6ebf-08de74c2525e
-X-MS-Exchange-CrossTenant-AuthSource: PA4PR04MB9366.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Feb 2026 23:05:08.9970
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 8h2xq9gIulD81X3dlvTXtJdsgIffOtZThXll9tIuMKgaumYjW2cWASIYjAzpH63J7B6qDNTWwQktif/y2QS/ng==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR04MB10394
+User-Agent: Mozilla Thunderbird
+Content-Language: en-GB, de-DE
+To: linux-i3c@lists.infradead.org,
+ Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Frank Li <Frank.Li@nxp.com>, Fredrik Markstrom <fredrik.markstrom@est.tech>,
+ Ivar Holmqvist <ivar.holmqvist@est.tech>,
+ Jorge Marques <jorge.marques@analog.com>,
+ Manikanta Guntupalli <manikanta.guntupalli@amd.com>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ Zilin Guan <zilin@seu.edu.cn>
+Cc: LKML <linux-kernel@vger.kernel.org>, Aniket <aniketmaurya@google.com>,
+ Jianhao Xu <jianhao.xu@seu.edu.cn>
+From: Markus Elfring <Markus.Elfring@web.de>
+Subject: [PATCH] i3c: dw: Use more common code in dw_i3c_master_i2c_xfers()
+X-Provags-ID: V03:K1:vAWYUmEjxdinmVrh8PCq3cap/aeYN8SfFCFOiyoEn8IxAIXJBpG
+ KZOmsYdEG/oZu9BwkiJPedWoYz5qiM0Ma8WwlWdZDSTNsjyh9gcRNh3okrsND0ITyXfLJ3g
+ U1ehRfVoKQcw5CSID63J+2Nol7iQ/GeSKMMSiOT9JhEMaPnCn1kUrqMV42PajHhf1cCYp7J
+ XK0T54zamNw4xc/8A029Q==
+UI-OutboundReport: notjunk:1;M01:P0:2b2XSI1oyPc=;X/vtm9gC9ld6Bw4MZ2uXSBNkyuL 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
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260225_150515_539707_8DFA8ADE 
-X-CRM114-Status: GOOD (  17.74  )
+X-CRM114-CacheID: sfid-20260227_022200_771679_234079AE 
+X-CRM114-Status: UNSURE (   7.71  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -140,45 +89,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Feb 25, 2026 at 05:37:52PM +0800, Peter Yin wrote:
-> The DesignWare I3C master driver creates a virtual I2C adapter to
-> provide backward compatibility with I2C devices. However, the current
-> implementation does not associate this virtual adapter with any
-> Device Tree node.
->
-> Propagate the of_node from the I3C master platform device to the
-> virtual I2C adapter's device structure. This ensures that standard
-> I2C aliases are correctly resolved and bus numbering remains consistent.
->
-> Signed-off-by: Peter Yin <peteryin.openbmc@gmail.com>
-> ---
->
-> Changes in v2:
-> - Move the fix from the ast2600-specific driver to the dw-i3c common
->
->  drivers/i3c/master/dw-i3c-master.c | 2 ++
->  1 file changed, 2 insertions(+)
->
-> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-> index d87bde3f7700..adf618d131dc 100644
-> --- a/drivers/i3c/master/dw-i3c-master.c
-> +++ b/drivers/i3c/master/dw-i3c-master.c
-> @@ -1659,6 +1659,8 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
->  		pm_runtime_get_noresume(&pdev->dev);
->
->  	INIT_WORK(&master->hj_work, dw_i3c_hj_work);
-> +
-> +	master->base.i2c.dev.of_node = pdev->dev.of_node;
+From: Markus Elfring <elfring@users.sourceforge.net>
+Date: Fri, 27 Feb 2026 10:16:50 +0100
 
-It should use device_set_of_node_from_dev();
+Use an additional label so that a bit of common code can be better reused
+at the end of this function implementation.
 
-Frank
->  	ret = i3c_master_register(&master->base, &pdev->dev,
->  				  &dw_mipi_i3c_ops, false);
->  	if (ret)
-> --
-> 2.43.0
->
+Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
+---
+ drivers/i3c/master/dw-i3c-master.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index d87bde3f7700..beb40d947e6e 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -1113,8 +1113,7 @@ static int dw_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
+ 		dev_err(master->dev,
+ 			"<%s> cannot resume i3c bus master, err: %d\n",
+ 			__func__, ret);
+-		dw_i3c_master_free_xfer(xfer);
+-		return ret;
++		goto free_xfer;
+ 	}
+ 
+ 	for (i = 0; i < i2c_nxfers; i++) {
+@@ -1144,10 +1143,10 @@ static int dw_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
+ 	if (!wait_for_completion_timeout(&xfer->comp, m->i2c.timeout))
+ 		dw_i3c_master_dequeue_xfer(master, xfer);
+ 
++	pm_runtime_put_autosuspend(master->dev);
+ 	ret = xfer->ret;
++free_xfer:
+ 	dw_i3c_master_free_xfer(xfer);
+-
+-	pm_runtime_put_autosuspend(master->dev);
+ 	return ret;
+ }
+ 
+-- 
+2.53.0
+
 
 -- 
 linux-i3c mailing list
