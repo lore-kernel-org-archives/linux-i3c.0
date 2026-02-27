@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D03A2FEFB59
-	for <linux-i3c@archiver.kernel.org>; Fri, 27 Feb 2026 14:12:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CCD4BFEFB5B
+	for <linux-i3c@archiver.kernel.org>; Fri, 27 Feb 2026 14:12:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xrEG++p3rt6+sDFUBjfaznl8VjdhQudbxv6+7PsUZ5o=; b=jN8532t8fcMt1F
-	XbX19MFcdTzaKA1S+3eyGn21MrUkt/tU2lt+Golz0I+s9Nv7pcqP4o9oUD2H14DAqzsgVKKPbHGZw
-	CR6nN4X3gLPfwTrVwIyASxvBok/S35/5IwUrDFVwLnEwT9cmW/whZXOeQof1oN+nJwQQ1NLhnr5RJ
-	lsAUQwfJwKE70oOewU+hNQB/pO7STUdYTF5OEChzb0waITOxYy9EaSuuOM6qnBZZ+WwUcHs1Ldfmv
-	e+CK3I5vp+7kxCdlFdixuSzJzwIVR8HtMvmUPp1s/VssUwtZFsetDzB7tsItIyq3eNPK38gVW/9fZ
-	lQzRO2cBoBMX8Xani3nA==;
+	List-Owner; bh=B5KdITLpHeG0r3ky+ovTh47VEe3y2ts/ZvmWnMOdd+I=; b=tev+4lNEO+h+6/
+	34nmHqbfF5PudGqen+tcCrzmef5MekpXyhIvGtmZQIdBxmQwxf8kzWDF/iEZKdlP2AZ9i+v2EzBJ+
+	bFLg0+kF2Sikd1Cv4oU13lPzqmftG5IeyqWV2h+j0AtYKvDrF0euccMg9Oq4dQXcDu58GPwvO8pcf
+	S+KgQM7eDUjPY8XZw5ZTmSJV4MRvD5eLXOmezUFkNGdYqhTuDGKM6HoCtbIEOdpkQ018mVBme6YVO
+	ScIwmdlEGDpkH4rSLVkzn/JqOP9twB3RoDQ2gY8f71iLLHG/AlTr0fmDK9Bbe9647AZgDPkHumHKZ
+	HMvWXrtq3PlZN96F4wog==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvyZj-00000008TV9-2Nml;
-	Fri, 27 Feb 2026 14:12:15 +0000
+	id 1vvyZl-00000008TX7-2Qxe;
+	Fri, 27 Feb 2026 14:12:17 +0000
 Received: from mgamail.intel.com ([192.198.163.7])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vvyZg-00000008TRS-2l8K
+	id 1vvyZh-00000008TRS-3UWp
 	for linux-i3c@lists.infradead.org;
-	Fri, 27 Feb 2026 14:12:13 +0000
+	Fri, 27 Feb 2026 14:12:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1772201532; x=1803737532;
+  t=1772201534; x=1803737534;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=HKmxXO/G0waWJDcbFGuBmFa9hBLjhiRyK8QyOKbC8M0=;
-  b=e9p2dViUMKsw1vLRUJtGEu6eZmxS/Z91b7AEzYAdsmq9nN/nrDHNEHjN
-   ImiOCNgjF6IH+7Yj79O10PE2B3XxGk0z0Hu2B57vM0clUwMcZdG2bMJXc
-   rNKRNAw4a9EnQZIKao/YdPGy/c5tVYOQueygUp9zeuRoijZiS529G5e6F
-   UxSEBY+4NYyCbnJuH15SJnvSpHeYrcyeOBFj0wLqXFaK5qUqlZF31yC5D
-   WX8hOKMvCANvRoyHIx1NfZP6ZRqHUkRUK5oMOwHWHuUuLIPjLq3923C3l
-   Bs3mGRuSJkuSLhwviLqYM1ktCJJfFAfSi36/ZKrGF7K7/wqP4g1tofEvM
-   g==;
-X-CSE-ConnectionGUID: LRQwnF+jQNKEh19rLUy6wA==
-X-CSE-MsgGUID: qe6vGx2hSQmba1TXbNwk0A==
-X-IronPort-AV: E=McAfee;i="6800,10657,11714"; a="98750018"
+  bh=qKBg3PlaHQoGxLo0cK9ROAxj6+95EvSNJTVBY3FQt+o=;
+  b=NHHCFDv5w3pCtUfEU1hufKD14+4OUqmSFVZPaS15H+rsOcMCia8o7VEG
+   l3s0dT1VRNLHQ8WPmQ5jI+/mFO9iQ9chIAi/xDt89rNqEvrDUuuspXmet
+   lXXucasXrRBBQPbqJbZPi7OdLk7jwN447ZqcMmU1orn3mhDZrZdTtAhwi
+   sh47WfAEdE803BQcER/i7ALQtd0uDaeGORokHZGSBv0aOIG8CYTgtgBBg
+   Igg5BE0CwzxU2PGJaorkoAtCz7sXY8R0KgGPfQ4q5LIYdN0qCDyDdBR+Y
+   QgVg3f4jTk/xgMXrq1P949HhN29Nimf/eT9CEHXHHMF/tq9ITtFA7e9iN
+   w==;
+X-CSE-ConnectionGUID: KLLHrnjoQXqYDJ11XQbz3Q==
+X-CSE-MsgGUID: DWJU7A7aT1S5K1MtjzR4jQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11714"; a="98750036"
 X-IronPort-AV: E=Sophos;i="6.21,314,1763452800"; 
-   d="scan'208";a="98750018"
+   d="scan'208";a="98750036"
 Received: from orviesa007.jf.intel.com ([10.64.159.147])
-  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 27 Feb 2026 06:12:05 -0800
-X-CSE-ConnectionGUID: nDLNEvWpTjegr4o+lfH3UQ==
-X-CSE-MsgGUID: nT2cf3xgRJWO5K6Lrc+ERA==
+  by fmvoesa101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 27 Feb 2026 06:12:10 -0800
+X-CSE-ConnectionGUID: LFxjzuwoQSuAbj9Dht57oQ==
+X-CSE-MsgGUID: sXiam1TiSgq0E2Ee4rY7gw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.21,314,1763452800"; 
-   d="scan'208";a="217015581"
+   d="scan'208";a="217015676"
 Received: from egrumbac-mobl6.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.245.80])
-  by orviesa007-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 27 Feb 2026 06:12:03 -0800
+  by orviesa007-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 27 Feb 2026 06:12:09 -0800
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org
-Subject: [PATCH 03/12] i3c: mipi-i3c-hci: Fix race in DMA ring enqueue for parallel xfers
-Date: Fri, 27 Feb 2026 16:11:40 +0200
-Message-ID: <20260227141149.184980-4-adrian.hunter@intel.com>
+Subject: [PATCH 06/12] i3c: mipi-i3c-hci: Correct RING_CTRL_ABORT handling in DMA dequeue
+Date: Fri, 27 Feb 2026 16:11:43 +0200
+Message-ID: <20260227141149.184980-7-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260227141149.184980-1-adrian.hunter@intel.com>
 References: <20260227141149.184980-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260227_061212_706930_80FC4DF7 
-X-CRM114-Status: GOOD (  19.16  )
+X-CRM114-CacheID: sfid-20260227_061213_880985_AF8B72E8 
+X-CRM114-Status: GOOD (  13.40  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,113 +80,78 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-VGhlIEkzQyBzdWJzeXN0ZW0gYWxsb3dzIG11bHRpcGxlIHRyYW5zZmVycyB0byBiZSBxdWV1ZWQg
-Y29uY3VycmVudGx5LgpIb3dldmVyLCB0aGUgTUlQSSBJM0MgSENJIGRyaXZlcuKAmXMgRE1BIGVu
-cXVldWUgcGF0aCwgaGNpX2RtYV9xdWV1ZV94ZmVyKCksCmxhY2tzIHN1ZmZpY2llbnQgc2VyaWFs
-aXphdGlvbi4KCkluIHBhcnRpY3VsYXIsIHRoZSBhbGxvY2F0aW9uIG9mIHRoZSBlbnF1ZXVlX3B0
-ciBhbmQgaXRzIHN1YnNlcXVlbnQgdXBkYXRlCmluIHRoZSBSSU5HX09QRVJBVElPTjEgcmVnaXN0
-ZXIsIG11c3QgYmUgZG9uZSBhdG9taWNhbGx5LiAgT3RoZXJ3aXNlLCBmb3IKZXhhbXBsZSwgaXQg
-d291bGQgYmUgcG9zc2libGUgZm9yIDIgdHJhbnNmZXJzIHRvIGJlIGFsbG9jYXRlZCB0aGUgc2Ft
-ZQplbnF1ZXVlX3B0ci4KCkV4dGVuZCB0aGUgdXNlIG9mIHRoZSBleGlzdGluZyBzcGlubG9jayBm
-b3IgdGhhdCBwdXJwb3NlLiAgS2VlcCBhIGNvdW50IG9mCnRoZSBudW1iZXIgb2YgeGZlcnMgZW5x
-dWV1ZWQgc28gdGhhdCBpdCBpcyBlYXN5IHRvIGRldGVybWluZSBpZiB0aGUgcmluZwpoYXMgZW5v
-dWdoIHNwYWNlLgoKUmVmYWN0b3IgaGNpX2RtYV9xdWV1ZV94ZmVyKCkgdG8gZG8gYWxsIERNQSBt
-YXBwaW5nIGZpcnN0LCBzbyB0aGF0IERNQQptYXBwaW5nIGlzIG5vdCBkb25lIHVuZGVyIHNwaW5s
-b2NrLgoKRml4ZXM6IDlhZDlhNTJjY2UyODIgKCJpM2MvbWFzdGVyOiBpbnRyb2R1Y2UgdGhlIG1p
-cGktaTNjLWhjaSBkcml2ZXIiKQpDYzogc3RhYmxlQHZnZXIua2VybmVsLm9yZwpTaWduZWQtb2Zm
-LWJ5OiBBZHJpYW4gSHVudGVyIDxhZHJpYW4uaHVudGVyQGludGVsLmNvbT4KLS0tCiBkcml2ZXJz
-L2kzYy9tYXN0ZXIvbWlwaS1pM2MtaGNpL2RtYS5jIHwgNzkgKysrKysrKysrKysrKysrKy0tLS0t
-LS0tLS0tCiAxIGZpbGUgY2hhbmdlZCwgNDggaW5zZXJ0aW9ucygrKSwgMzEgZGVsZXRpb25zKC0p
-CgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9pM2MvbWFzdGVyL21pcGktaTNjLWhjaS9kbWEuYyBiL2Ry
-aXZlcnMvaTNjL21hc3Rlci9taXBpLWkzYy1oY2kvZG1hLmMKaW5kZXggYjkwM2EyZGExZmQxLi5m
-NjA2NTRmYmU1OGUgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvaTNjL21hc3Rlci9taXBpLWkzYy1oY2kv
-ZG1hLmMKKysrIGIvZHJpdmVycy9pM2MvbWFzdGVyL21pcGktaTNjLWhjaS9kbWEuYwpAQCAtMTI5
-LDcgKzEyOSw3IEBAIHN0cnVjdCBoY2lfcmhfZGF0YSB7CiAJZG1hX2FkZHJfdCB4ZmVyX2RtYSwg
-cmVzcF9kbWEsIGliaV9zdGF0dXNfZG1hLCBpYmlfZGF0YV9kbWE7CiAJdW5zaWduZWQgaW50IHhm
-ZXJfZW50cmllcywgaWJpX3N0YXR1c19lbnRyaWVzLCBpYmlfY2h1bmtzX3RvdGFsOwogCXVuc2ln
-bmVkIGludCB4ZmVyX3N0cnVjdF9zeiwgcmVzcF9zdHJ1Y3Rfc3osIGliaV9zdGF0dXNfc3osIGli
-aV9jaHVua19zejsKLQl1bnNpZ25lZCBpbnQgZG9uZV9wdHIsIGliaV9jaHVua19wdHI7CisJdW5z
-aWduZWQgaW50IGRvbmVfcHRyLCBpYmlfY2h1bmtfcHRyLCB4ZmVyX3NwYWNlOwogCXN0cnVjdCBo
-Y2lfeGZlciAqKnNyY194ZmVyczsKIAlzcGlubG9ja190IGxvY2s7CiAJc3RydWN0IGNvbXBsZXRp
-b24gb3BfZG9uZTsKQEAgLTI2MSw2ICsyNjEsNyBAQCBzdGF0aWMgdm9pZCBoY2lfZG1hX2luaXRf
-cmgoc3RydWN0IGkzY19oY2kgKmhjaSwgc3RydWN0IGhjaV9yaF9kYXRhICpyaCwgaW50IGkpCiAK
-IAlyaC0+ZG9uZV9wdHIgPSAwOwogCXJoLT5pYmlfY2h1bmtfcHRyID0gMDsKKwlyaC0+eGZlcl9z
-cGFjZSA9IHJoLT54ZmVyX2VudHJpZXM7CiB9CiAKIHN0YXRpYyB2b2lkIGhjaV9kbWFfaW5pdF9y
-aW5ncyhzdHJ1Y3QgaTNjX2hjaSAqaGNpKQpAQCAtNDM5LDI2ICs0NDAsNjMgQEAgc3RhdGljIHZv
-aWQgaGNpX2RtYV91bm1hcF94ZmVyKHN0cnVjdCBpM2NfaGNpICpoY2ksCiAJfQogfQogCitzdGF0
-aWMgc3RydWN0IGkzY19kbWEgKmhjaV9kbWFfbWFwX3hmZXIoc3RydWN0IGRldmljZSAqZGV2LCBz
-dHJ1Y3QgaGNpX3hmZXIgKnhmZXIpCit7CisJZW51bSBkbWFfZGF0YV9kaXJlY3Rpb24gZGlyID0g
-eGZlci0+cm53ID8gRE1BX0ZST01fREVWSUNFIDogRE1BX1RPX0RFVklDRTsKKwlib29sIG5lZWRf
-Ym91bmNlID0gZGV2aWNlX2lvbW11X21hcHBlZChkZXYpICYmIHhmZXItPnJudyAmJiAoeGZlci0+
-ZGF0YV9sZW4gJiAzKTsKKworCXJldHVybiBpM2NfbWFzdGVyX2RtYV9tYXBfc2luZ2xlKGRldiwg
-eGZlci0+ZGF0YSwgeGZlci0+ZGF0YV9sZW4sIG5lZWRfYm91bmNlLCBkaXIpOworfQorCitzdGF0
-aWMgaW50IGhjaV9kbWFfbWFwX3hmZXJfbGlzdChzdHJ1Y3QgaTNjX2hjaSAqaGNpLCBzdHJ1Y3Qg
-ZGV2aWNlICpkZXYsCisJCQkJIHN0cnVjdCBoY2lfeGZlciAqeGZlcl9saXN0LCBpbnQgbikKK3sK
-Kwlmb3IgKGludCBpID0gMDsgaSA8IG47IGkrKykgeworCQlzdHJ1Y3QgaGNpX3hmZXIgKnhmZXIg
-PSB4ZmVyX2xpc3QgKyBpOworCisJCWlmICgheGZlci0+ZGF0YSkKKwkJCWNvbnRpbnVlOworCisJ
-CXhmZXItPmRtYSA9IGhjaV9kbWFfbWFwX3hmZXIoZGV2LCB4ZmVyKTsKKwkJaWYgKCF4ZmVyLT5k
-bWEpIHsKKwkJCWhjaV9kbWFfdW5tYXBfeGZlcihoY2ksIHhmZXJfbGlzdCwgaSk7CisJCQlyZXR1
-cm4gLUVOT01FTTsKKwkJfQorCX0KKworCXJldHVybiAwOworfQorCiBzdGF0aWMgaW50IGhjaV9k
-bWFfcXVldWVfeGZlcihzdHJ1Y3QgaTNjX2hjaSAqaGNpLAogCQkJICAgICAgc3RydWN0IGhjaV94
-ZmVyICp4ZmVyX2xpc3QsIGludCBuKQogewogCXN0cnVjdCBoY2lfcmluZ3NfZGF0YSAqcmluZ3Mg
-PSBoY2ktPmlvX2RhdGE7CiAJc3RydWN0IGhjaV9yaF9kYXRhICpyaDsKIAl1bnNpZ25lZCBpbnQg
-aSwgcmluZywgZW5xdWV1ZV9wdHI7Ci0JdTMyIG9wMV92YWwsIG9wMl92YWw7CisJdTMyIG9wMV92
-YWw7CisJaW50IHJldDsKKworCXJldCA9IGhjaV9kbWFfbWFwX3hmZXJfbGlzdChoY2ksIHJpbmdz
-LT5zeXNkZXYsIHhmZXJfbGlzdCwgbik7CisJaWYgKHJldCkKKwkJcmV0dXJuIHJldDsKIAogCS8q
-IEZvciBub3cgd2Ugb25seSB1c2UgcmluZyAwICovCiAJcmluZyA9IDA7CiAJcmggPSAmcmluZ3Mt
-PmhlYWRlcnNbcmluZ107CiAKKwlzcGluX2xvY2tfaXJxKCZyaC0+bG9jayk7CisKKwlpZiAobiA+
-IHJoLT54ZmVyX3NwYWNlKSB7CisJCXNwaW5fdW5sb2NrX2lycSgmcmgtPmxvY2spOworCQloY2lf
-ZG1hX3VubWFwX3hmZXIoaGNpLCB4ZmVyX2xpc3QsIG4pOworCQlyZXR1cm4gLUVCVVNZOworCX0K
-KwogCW9wMV92YWwgPSByaF9yZWdfcmVhZChSSU5HX09QRVJBVElPTjEpOwogCWVucXVldWVfcHRy
-ID0gRklFTERfR0VUKFJJTkdfT1AxX0NSX0VOUV9QVFIsIG9wMV92YWwpOwogCWZvciAoaSA9IDA7
-IGkgPCBuOyBpKyspIHsKIAkJc3RydWN0IGhjaV94ZmVyICp4ZmVyID0geGZlcl9saXN0ICsgaTsK
-IAkJdTMyICpyaW5nX2RhdGEgPSByaC0+eGZlciArIHJoLT54ZmVyX3N0cnVjdF9zeiAqIGVucXVl
-dWVfcHRyOwotCQllbnVtIGRtYV9kYXRhX2RpcmVjdGlvbiBkaXIgPSB4ZmVyLT5ybncgPyBETUFf
-RlJPTV9ERVZJQ0UgOgotCQkJCQkJCSAgRE1BX1RPX0RFVklDRTsKLQkJYm9vbCBuZWVkX2JvdW5j
-ZTsKIAogCQkvKiBzdG9yZSBjbWQgZGVzY3JpcHRvciAqLwogCQkqcmluZ19kYXRhKysgPSB4ZmVy
-LT5jbWRfZGVzY1swXTsKQEAgLTQ3NywxOCArNTE1LDYgQEAgc3RhdGljIGludCBoY2lfZG1hX3F1
-ZXVlX3hmZXIoc3RydWN0IGkzY19oY2kgKmhjaSwKIAogCQkvKiAybmQgYW5kIDNyZCB3b3JkcyBv
-ZiBEYXRhIEJ1ZmZlciBEZXNjcmlwdG9yIFN0cnVjdHVyZSAqLwogCQlpZiAoeGZlci0+ZGF0YSkg
-ewotCQkJbmVlZF9ib3VuY2UgPSBkZXZpY2VfaW9tbXVfbWFwcGVkKHJpbmdzLT5zeXNkZXYpICYm
-Ci0JCQkJICAgICAgeGZlci0+cm53ICYmCi0JCQkJICAgICAgeGZlci0+ZGF0YV9sZW4gIT0gQUxJ
-R04oeGZlci0+ZGF0YV9sZW4sIDQpOwotCQkJeGZlci0+ZG1hID0gaTNjX21hc3Rlcl9kbWFfbWFw
-X3NpbmdsZShyaW5ncy0+c3lzZGV2LAotCQkJCQkJCSAgICAgIHhmZXItPmRhdGEsCi0JCQkJCQkJ
-ICAgICAgeGZlci0+ZGF0YV9sZW4sCi0JCQkJCQkJICAgICAgbmVlZF9ib3VuY2UsCi0JCQkJCQkJ
-ICAgICAgZGlyKTsKLQkJCWlmICgheGZlci0+ZG1hKSB7Ci0JCQkJaGNpX2RtYV91bm1hcF94ZmVy
-KGhjaSwgeGZlcl9saXN0LCBpKTsKLQkJCQlyZXR1cm4gLUVOT01FTTsKLQkJCX0KIAkJCSpyaW5n
-X2RhdGErKyA9IGxvd2VyXzMyX2JpdHMoeGZlci0+ZG1hLT5hZGRyKTsKIAkJCSpyaW5nX2RhdGEr
-KyA9IHVwcGVyXzMyX2JpdHMoeGZlci0+ZG1hLT5hZGRyKTsKIAkJfSBlbHNlIHsKQEAgLTUwMywy
-MiArNTI5LDEwIEBAIHN0YXRpYyBpbnQgaGNpX2RtYV9xdWV1ZV94ZmVyKHN0cnVjdCBpM2NfaGNp
-ICpoY2ksCiAJCXhmZXItPnJpbmdfZW50cnkgPSBlbnF1ZXVlX3B0cjsKIAogCQllbnF1ZXVlX3B0
-ciA9IChlbnF1ZXVlX3B0ciArIDEpICUgcmgtPnhmZXJfZW50cmllczsKLQotCQkvKgotCQkgKiBX
-ZSBtYXkgdXBkYXRlIHRoZSBoYXJkd2FyZSB2aWV3IG9mIHRoZSBlbnF1ZXVlIHBvaW50ZXIKLQkJ
-ICogb25seSBpZiB3ZSBkaWRuJ3QgcmVhY2ggaXRzIGRlcXVldWUgcG9pbnRlci4KLQkJICovCi0J
-CW9wMl92YWwgPSByaF9yZWdfcmVhZChSSU5HX09QRVJBVElPTjIpOwotCQlpZiAoZW5xdWV1ZV9w
-dHIgPT0gRklFTERfR0VUKFJJTkdfT1AyX0NSX0RFUV9QVFIsIG9wMl92YWwpKSB7Ci0JCQkvKiB0
-aGUgcmluZyBpcyBmdWxsICovCi0JCQloY2lfZG1hX3VubWFwX3hmZXIoaGNpLCB4ZmVyX2xpc3Qs
-IGkgKyAxKTsKLQkJCXJldHVybiAtRUJVU1k7Ci0JCX0KIAl9CiAKLQkvKiB0YWtlIGNhcmUgdG8g
-dXBkYXRlIHRoZSBoYXJkd2FyZSBlbnF1ZXVlIHBvaW50ZXIgYXRvbWljYWxseSAqLwotCXNwaW5f
-bG9ja19pcnEoJnJoLT5sb2NrKTsKLQlvcDFfdmFsID0gcmhfcmVnX3JlYWQoUklOR19PUEVSQVRJ
-T04xKTsKKwlyaC0+eGZlcl9zcGFjZSAtPSBuOworCiAJb3AxX3ZhbCAmPSB+UklOR19PUDFfQ1Jf
-RU5RX1BUUjsKIAlvcDFfdmFsIHw9IEZJRUxEX1BSRVAoUklOR19PUDFfQ1JfRU5RX1BUUiwgZW5x
-dWV1ZV9wdHIpOwogCXJoX3JlZ193cml0ZShSSU5HX09QRVJBVElPTjEsIG9wMV92YWwpOwpAQCAt
-NTg2LDYgKzYwMCw3IEBAIHN0YXRpYyB2b2lkIGhjaV9kbWFfeGZlcl9kb25lKHN0cnVjdCBpM2Nf
-aGNpICpoY2ksIHN0cnVjdCBoY2lfcmhfZGF0YSAqcmgpCiB7CiAJdTMyIG9wMV92YWwsIG9wMl92
-YWwsIHJlc3AsICpyaW5nX3Jlc3A7CiAJdW5zaWduZWQgaW50IHRpZCwgZG9uZV9wdHIgPSByaC0+
-ZG9uZV9wdHI7CisJdW5zaWduZWQgaW50IGRvbmVfY250ID0gMDsKIAlzdHJ1Y3QgaGNpX3hmZXIg
-KnhmZXI7CiAKIAlmb3IgKDs7KSB7CkBAIC02MTcsMTAgKzYzMiwxMiBAQCBzdGF0aWMgdm9pZCBo
-Y2lfZG1hX3hmZXJfZG9uZShzdHJ1Y3QgaTNjX2hjaSAqaGNpLCBzdHJ1Y3QgaGNpX3JoX2RhdGEg
-KnJoKQogCiAJCWRvbmVfcHRyID0gKGRvbmVfcHRyICsgMSkgJSByaC0+eGZlcl9lbnRyaWVzOwog
-CQlyaC0+ZG9uZV9wdHIgPSBkb25lX3B0cjsKKwkJZG9uZV9jbnQgKz0gMTsKIAl9CiAKIAkvKiB0
-YWtlIGNhcmUgdG8gdXBkYXRlIHRoZSBzb2Z0d2FyZSBkZXF1ZXVlIHBvaW50ZXIgYXRvbWljYWxs
-eSAqLwogCXNwaW5fbG9jaygmcmgtPmxvY2spOworCXJoLT54ZmVyX3NwYWNlICs9IGRvbmVfY250
-OwogCW9wMV92YWwgPSByaF9yZWdfcmVhZChSSU5HX09QRVJBVElPTjEpOwogCW9wMV92YWwgJj0g
-flJJTkdfT1AxX0NSX1NXX0RFUV9QVFI7CiAJb3AxX3ZhbCB8PSBGSUVMRF9QUkVQKFJJTkdfT1Ax
-X0NSX1NXX0RFUV9QVFIsIGRvbmVfcHRyKTsKLS0gCjIuNTEuMAoKCi0tIApsaW51eC1pM2MgbWFp
-bGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNjCg==
+The logic used to abort the DMA ring contains several flaws:
+
+ 1. The driver unconditionally issues a ring abort even when the ring has
+    already stopped.
+ 2. The completion used to wait for abort completion is never
+    re-initialized, resulting in incorrect wait behavior.
+ 3. The abort sequence unintentionally clears RING_CTRL_ENABLE, which
+    resets hardware ring pointers and disrupts the controller state.
+ 4. If the ring is already stopped, the abort operation should be
+    considered successful without attempting further action.
+
+Fix the abort handling by checking whether the ring is running before
+issuing an abort, reinitializing the completion when needed, ensuring that
+RING_CTRL_ENABLE remains asserted during abort, and treating an already
+stopped ring as a successful condition.
+
+Fixes: 9ad9a52cce282 ("i3c/master: introduce the mipi-i3c-hci driver")
+Cc: stable@vger.kernel.org
+Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
+---
+ drivers/i3c/master/mipi-i3c-hci/dma.c | 25 ++++++++++++++++---------
+ 1 file changed, 16 insertions(+), 9 deletions(-)
+
+diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
+index 8d5f808e03ea..dff96b84479e 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/dma.c
++++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
+@@ -550,18 +550,25 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
+ 	struct hci_rh_data *rh = &rings->headers[xfer_list[0].ring_number];
+ 	unsigned int i;
+ 	bool did_unqueue = false;
++	u32 ring_status;
+ 
+ 	guard(mutex)(&rh->control_mutex);
+ 
+-	/* stop the ring */
+-	rh_reg_write(RING_CONTROL, RING_CTRL_ABORT);
+-	if (wait_for_completion_timeout(&rh->op_done, HZ) == 0) {
+-		/*
+-		 * We're deep in it if ever this condition is ever met.
+-		 * Hardware might still be writing to memory, etc.
+-		 */
+-		dev_crit(&hci->master.dev, "unable to abort the ring\n");
+-		WARN_ON(1);
++	ring_status = rh_reg_read(RING_STATUS);
++	if (ring_status & RING_STATUS_RUNNING) {
++		/* stop the ring */
++		reinit_completion(&rh->op_done);
++		rh_reg_write(RING_CONTROL, RING_CTRL_ENABLE | RING_CTRL_ABORT);
++		wait_for_completion_timeout(&rh->op_done, HZ);
++		ring_status = rh_reg_read(RING_STATUS);
++		if (ring_status & RING_STATUS_RUNNING) {
++			/*
++			 * We're deep in it if ever this condition is ever met.
++			 * Hardware might still be writing to memory, etc.
++			 */
++			dev_crit(&hci->master.dev, "unable to abort the ring\n");
++			WARN_ON(1);
++		}
+ 	}
+ 
+ 	spin_lock_irq(&rh->lock);
+-- 
+2.51.0
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
