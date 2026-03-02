@@ -4,8 +4,8 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1ADBD58E7A
-	for <linux-i3c@archiver.kernel.org>; Mon,  2 Mar 2026 08:45:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 964F9D58E7A
+	for <linux-i3c@archiver.kernel.org>; Mon,  2 Mar 2026 08:45:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,65 +13,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:CC:To:Subject:Date:Message-ID:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=xv9UN8csZ4jW3VEB0Tt+ERmliYjuoejBQPCeGT3lh1U=; b=IoQ4u9qWC8cwUT/6xvZZdBAIG2
-	voWL/YEXJIKp818kxqcFCIVP3watDGjStEbmPTFLyGfIB/1SDycRFbdZ2zH0A3ZubvicNcSbxLn5O
-	LOPhEB8zB8O+5mQzFQPmGNzV5uisdNOIrPwYLrxEzrLFg6Dv3kHrlKM0ip0sgPBB44x1+q9p4SR3C
-	uJDoI8tCQbGAu2+I6l/6rT4bH4Q0txO2+FY8VSdT3AxYqp+m8pXdOhtri7m/hf00SeqwNInxkMIrB
-	99YBZBshxY62Lih7pzB+b4viYCjnelbFzK18GEOsrDyhwDmRpy24duCeaTMFUSHMUEyMx7fn+zDx7
-	ylLQ2SQA==;
+	bh=W3h9sSEtzo0bV0fGgYec7GfB0sRwjfwarE+NBVyPmCo=; b=Jp0m/QPIxW30rnyjw0595DpI0S
+	n+nroow5NH/4Op8HsqoYD3+nOBPQtsN2JFLPEgf6ZXqdtv6t1mN8BJH2U7CZAs/DGqzvL2fOSBwux
+	Wzi0116j4PnuDgJ+6ARCE22S95RGeA/ClWg0YpLhe1JQaN3tGYQYQSvG4J9Jx1bh2kZEdvgSayJcx
+	8B1nEgjVVDWBPoWZuntP2nkqQ+iZPsWJdDUsHupwER3/xLsEHW2NeYgL+doVDENNQfrMK/Inr403o
+	EJTpGJExjuZ79koCGhBDSwh+Ukn0x6a+HUZlSCERhNcYempkbHgoHDauGnwKo+f4GDbASZJHuiLGy
+	UCp+FNjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vwyu0-0000000CXde-2Sr8;
-	Mon, 02 Mar 2026 08:45:20 +0000
-Received: from mgamail.intel.com ([198.175.65.21])
+	id 1vwyuE-0000000CXfM-1Kof;
+	Mon, 02 Mar 2026 08:45:34 +0000
+Received: from mgamail.intel.com ([198.175.65.17])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vwytx-0000000CXck-3g8M
+	id 1vwyuC-0000000CXet-1EeQ
 	for linux-i3c@lists.infradead.org;
-	Mon, 02 Mar 2026 08:45:19 +0000
+	Mon, 02 Mar 2026 08:45:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1772441117; x=1803977117;
+  t=1772441132; x=1803977132;
   h=message-id:date:subject:to:cc:references:from:
    in-reply-to:content-transfer-encoding:mime-version;
-  bh=JLElx7boTIoklK0t9U5gY16mua8mYkJnKaijMlNCLMk=;
-  b=bHyrVS+c4Yi79U8QE/OWoOyAFBUj13/Q0vCUGNGM0JHMa9bNhsoKBHv7
-   JOivKWijORfr0s+xkXhGMc1eiZJ6zMAds0xzg6f8qDusuetwVqjsZbpzo
-   tRL1iwKB9pTQ4824kqOGnx9uZUFy6411/un+S0hFLxpVX9GlvE3+nDnyI
-   OGBwDKMQPiFEQdhtZ6DFsXnEfuPguRdCdWWc/Iw+zC/XD8/oLS3dQKAMj
-   HDQq81sAnThDqbSDa7ChSFMzRbP/FQIcBL6CikbI8hJ1ONe56lKCyXk4X
-   IJhACd+0luGpKXX02ebUKg03245/Fui9v9T3lQV28HejudrbFUmg8AQAn
-   g==;
-X-CSE-ConnectionGUID: p/CPwKJgQnWYq5l+2ebBJA==
-X-CSE-MsgGUID: Bq8IP8UQS6qSRQy0DhEfkQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11716"; a="73311137"
+  bh=XnpTQmX0ChCJ4Rq07Ugva8g+uELn06gv6nfJwfUj4Cc=;
+  b=AQy8IeOC+nRg4zGctVWEOyLQZPqu7KALixjUWvW2B354hTUpPcWDnY7T
+   1cz+cZ6Ni9NCnDtzwaQHXk9IzYB3hm8XZ6BmEXAr/VXtJBOgm82J9urIc
+   GoB9LbF0XM6RKnwatDSTJ5JX6dvi7ToAWsP/46xw85hsvVIBgGXwzU1E5
+   RgPhULw5U69jwzKj0aOCG/4E9BHLVD5Wo0anpiNpy9RpYsQRMdmErlfl7
+   ivKhnd4jOyiV39kiff4Jild99H9UMQcbDjCP/v43CDrQp4hsVaPBJXEuT
+   HtF6otigpSHdBm7/9vX9F5yvEVa7HnmVJzY4WwzgUXwD6K2hvBLxxcyPw
+   Q==;
+X-CSE-ConnectionGUID: Icdqt8VGSja+6/gfYQwQsg==
+X-CSE-MsgGUID: KbSqVg9gSMGhtKvJo2IZ+g==
+X-IronPort-AV: E=McAfee;i="6800,10657,11716"; a="73406847"
 X-IronPort-AV: E=Sophos;i="6.21,319,1763452800"; 
-   d="scan'208";a="73311137"
-Received: from fmviesa003.fm.intel.com ([10.60.135.143])
-  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 Mar 2026 00:45:17 -0800
-X-CSE-ConnectionGUID: JhGbhe+rRReFsWvmbegy5Q==
-X-CSE-MsgGUID: XBzSIhEXQjq3gkDJet5RIQ==
+   d="scan'208";a="73406847"
+Received: from fmviesa006.fm.intel.com ([10.60.135.146])
+  by orvoesa109.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 Mar 2026 00:45:32 -0800
+X-CSE-ConnectionGUID: MVeIhUiCSESiK9P9KbIyDQ==
+X-CSE-MsgGUID: 2Wmjbi1uQnmok2DNKTES8A==
 X-ExtLoop1: 1
-Received: from orsmsx902.amr.corp.intel.com ([10.22.229.24])
-  by fmviesa003.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 Mar 2026 00:45:17 -0800
-Received: from ORSMSX903.amr.corp.intel.com (10.22.229.25) by
- ORSMSX902.amr.corp.intel.com (10.22.229.24) with Microsoft SMTP Server
+X-IronPort-AV: E=Sophos;i="6.21,319,1763452800"; 
+   d="scan'208";a="214829441"
+Received: from fmsmsx901.amr.corp.intel.com ([10.18.126.90])
+  by fmviesa006.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 Mar 2026 00:45:31 -0800
+Received: from FMSMSX903.amr.corp.intel.com (10.18.126.92) by
+ fmsmsx901.amr.corp.intel.com (10.18.126.90) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.37; Mon, 2 Mar 2026 00:45:16 -0800
-Received: from ORSEDG902.ED.cps.intel.com (10.7.248.12) by
- ORSMSX903.amr.corp.intel.com (10.22.229.25) with Microsoft SMTP Server
+ 15.2.2562.37; Mon, 2 Mar 2026 00:45:31 -0800
+Received: from fmsedg902.ED.cps.intel.com (10.1.192.144) by
+ FMSMSX903.amr.corp.intel.com (10.18.126.92) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.37 via Frontend Transport; Mon, 2 Mar 2026 00:45:16 -0800
-Received: from PH0PR06CU001.outbound.protection.outlook.com (40.107.208.46) by
- edgegateway.intel.com (134.134.137.112) with Microsoft SMTP Server
+ 15.2.2562.37 via Frontend Transport; Mon, 2 Mar 2026 00:45:31 -0800
+Received: from MW6PR02CU001.outbound.protection.outlook.com (52.101.48.47) by
+ edgegateway.intel.com (192.55.55.82) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.37; Mon, 2 Mar 2026 00:45:16 -0800
+ 15.2.2562.37; Mon, 2 Mar 2026 00:45:31 -0800
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=hnC1oR7dtOaoEDJtWm6WZdVwc9b8xxJ0GQSoCHnBTp2cXn5YtD2x+agOtHt6zJQWIo2AQarBHcu0Qi7YDY4Gz6JIhKqh5OVug7hZlZ8+OKjNkZuKHxtz3r9/sRMWAppdtKLvl73rPSeNhzZKHYVlhGZJHOXq8i1G4zAor4205bactJEB5k2o2ZphEIr2Hh3y94HUZ5VaEWiDHSry9PxJmuchMj6CQouRjl5RJKrqd+2ufPKBedRX90TLboEOKHgz5fs06LQCCEPdGrGYt8nnIR7+2cS+6dIqjuV3qdSTmNfRKj1uL3eHSRGwVBkH95o2D+uShZAqBodzdJ8KaE/erg==
+ b=uCisS8RkR90iNe1AvZyNDruvOSvEHhbB9VtrEJwBYwkGc0NWxpOPHGFriPbTjri+6hFSOUxAnxFc67mdhL3eWjc2/Y0EsDpIjuebvQIL/A9UD01MAaXf27suKTzOx7rybUcaDErZJXtGnxOof4RPErEhmnm2fhAYnzsmL0dVRRlf1qUCZ/A/Hmme2aInaWSNxTBdWF+oSJ1j9hVz5ErE8K77zp9cKpqp4pQ06/191Eu5FyfLDLzcRa8AKcKIU2fK1dFpEPE7yq3xQRYOxOEDs8ooytr7Ag86dVkuccYaiWv4n3T31FpAMjR4vI0EGqE3sPfxeD0vN1/NqqGj2JOvAw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=U5L/f4G4lwrHtCTkmA+TI4bq2MEAx12T7KYSCmAAomE=;
- b=RLBOZKI1GawJfK5B5Rx1VIS44zTq+/NHpyUUAyKazk5inP4zLSwEuGB/aoQ/KzMTAjnPt2JNY8HLaoGrAqb6UFOPYfFJtsQAWLTbvTw0SHrGfiZ6f/dQtrStQD6+aeeeSkbzlKJEYAmW+xMaWsw2iP46ScMX+gcXRqeJ8xhFR88Rx+ZTdMNv1w1B0bmFy3LStA/J2uBvO35bYX7dLbG0PjTdKjQFVpNh8uJmKiTAqGOWpwrqTu7HAFcSwRGaKaDuwCC32g7dLnnVoEADOrbN12pb5YnwUR/pWrTD7xMvJpLI1MfFdm6Tr4dj8FJveDbLPXks+pnojXV8GPFcaNMThw==
+ bh=wpAjzULLAN5xVDZHzsdhWVoF/VwauiDwKl21TPy5S2w=;
+ b=M5qwSxLYtDAgYRx/IYgdg3Wl6NqXdRsIheDlYtmgpcv9EUR68g2UPN2ZPUh6fGqIkSRMQSgf7iYBI8FF/7z/C3vfN2RMEzB6E1I+S8x1BWRMxw2xnU6JULBorAB3wrhWZJVRtAg8//sCtHkR+evfk1GGQqe8juai7Mv+/5urK/Es+gURhRrhrF8edIcv108Jg+zCUDoGVE4Z6GhHHADfIe4tqHo9dMZhKmWDYsXQ0nB6Q4mQp2aSCV9SgEQWakdqWOD7XCzmmy12zUYJJcZK4kjbhZ8dAJzfIqFOTtjKP+A0l8t7FaGjdOpcsQoby1rlh713zXp+HmpU9ufWGeeNGA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
  dkim=pass header.d=intel.com; arc=none
@@ -81,94 +83,94 @@ Received: from IA1PR11MB7198.namprd11.prod.outlook.com (2603:10b6:208:419::15)
  by DS4PPFC60125F65.namprd11.prod.outlook.com (2603:10b6:f:fc02::4b) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9654.19; Mon, 2 Mar
- 2026 08:45:14 +0000
+ 2026 08:45:29 +0000
 Received: from IA1PR11MB7198.namprd11.prod.outlook.com
  ([fe80::2c4e:e92a:4fa:a456]) by IA1PR11MB7198.namprd11.prod.outlook.com
  ([fe80::2c4e:e92a:4fa:a456%6]) with mapi id 15.20.9654.020; Mon, 2 Mar 2026
- 08:45:14 +0000
-Message-ID: <e20c5876-01ba-4153-8317-25e70337144b@intel.com>
-Date: Mon, 2 Mar 2026 10:45:11 +0200
+ 08:45:29 +0000
+Message-ID: <27e5c912-1541-4acc-ab29-1e16a15113e7@intel.com>
+Date: Mon, 2 Mar 2026 10:45:25 +0200
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 06/12] i3c: mipi-i3c-hci: Correct RING_CTRL_ABORT handling
- in DMA dequeue
+Subject: Re: [PATCH 10/12] i3c: mipi-i3c-hci: Fix race in DMA error handling
+ in interrupt context
 To: Frank Li <Frank.li@nxp.com>
 CC: <alexandre.belloni@bootlin.com>, <linux-i3c@lists.infradead.org>
 References: <20260227141149.184980-1-adrian.hunter@intel.com>
- <20260227141149.184980-7-adrian.hunter@intel.com>
- <aaHFjYAWOlvNkYDQ@lizhi-Precision-Tower-5810>
+ <20260227141149.184980-11-adrian.hunter@intel.com>
+ <aaHI9A2LTJKHo5Rz@lizhi-Precision-Tower-5810>
 Content-Language: en-US
 From: Adrian Hunter <adrian.hunter@intel.com>
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park,
  6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 -
  4, Domiciled in Helsinki
-In-Reply-To: <aaHFjYAWOlvNkYDQ@lizhi-Precision-Tower-5810>
-X-ClientProxiedBy: DUZPR01CA0176.eurprd01.prod.exchangelabs.com
- (2603:10a6:10:4b3::12) To IA1PR11MB7198.namprd11.prod.outlook.com
+In-Reply-To: <aaHI9A2LTJKHo5Rz@lizhi-Precision-Tower-5810>
+X-ClientProxiedBy: DUZPR01CA0063.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:3c2::13) To IA1PR11MB7198.namprd11.prod.outlook.com
  (2603:10b6:208:419::15)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: IA1PR11MB7198:EE_|DS4PPFC60125F65:EE_
-X-MS-Office365-Filtering-Correlation-Id: 2a5ce882-d58b-4ccf-59fd-08de783805fd
+X-MS-Office365-Filtering-Correlation-Id: b76a520b-cbe9-461c-df59-08de78380eb9
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|1800799024|366016;
-X-Microsoft-Antispam-Message-Info: ViRrvxMenft9WEKfBJ/vlVf2F4iwNHDIkO065P24NpRhFjc7p70q5pgwchdTm/HGWH4zPdMQjmEq7jCDWbiF8p5lloGToqGN72pcydRxU40MirhF6KhCZi5JbyX0IAfX2t8L0EdALq5RMT+maa2zpUQmebBK/A3GF4qYcpzLqm6JG5DAfhMTwCj32LdtKanDq8lrHeCGT7jKEYWMOQm7Y0s9WreXdddGqeIynvqI9C5MTmnG1Y027sxNHJiNixUCeUiKQjfG1KcFL46n7ZD+LXU/Op8a4WSxiq4aQQlWPRtF5M+KaEV+0cpQllOET8FrT8NKL1qFUkwlrhhgsqnFsL6fpQk0uTN0NQu93eq9ZtHv/jnK7MmK3xI8dUPiSIgGLnbYQwOCNHvmcC5RqzbPtZW0nnAary9P3qZ7Fn/gmxA2vjLG2VvgmJ/SBRFD9p2y3u9wi5BPDVzVGMHRq0mom9zPwfekL66gIqa2CyL/qv1nGy8cmETQvFStpjaUVLuO2CLnvoz+l7iSOCPSBfWwgiqma843GeDcQtX1CE6wQosW3ZQovJ4XQtgru/EXQp1UnSIO+d3Mki6cRuGQc4mJncEqik+GC4IY0MugsMlfcj2cPHAH8YkWnYYfYEADoRPCEN24zw0Asnqtr5Q1TVcgGdap8GeyaVilrVE/XYiKKRtnH8c+97QLTpDQjUGMKkAO7I7CxZo5sE4rS521yPZDgmg4xd5N53hDNS/J5QghuAY=
+X-Microsoft-Antispam-Message-Info: aPWOsceT/Xrf0jFe6MRSokFO3+Y8EJ4Xg7wyI5zHw15emaGLYlsuDvGvYxHg8iys5rLLI8u1ribqUFNebEvyo2/qduZUWc2Kfj4ya151L5d+QJY9fuvJYffTojzW4GOsFfnRrEZgRuZIg6oNVUkeW/z1hRReigk34sI0gAGiSYRrv1E/jrEQONsH3i47ppLCQIBm4OPkWZMCSGU7cpnC2mRZKOTPspB+f7kzj3O6ckupU/b3p8HEndCjF+7m3ZY4IZ3BK12dciMfoKCLl4gRWglsW0PrQFgF2w5OiokFxJM+p7gJf17hPn6Rc+bITsWMOxJcJGBSSmcFLv+NnHlTgvR9FlU8sn8J0CL9Ush7dFsTwVyepoWwaMwYhMHruhsV9hE7CEdHziSV11PvugFy6suCW2pprlsBKnyDjj2CIlov3hQXEy36m4yTyZgehvIagg0he3KXMAc9vW5Ry9gFq4iIYKvZV3F7Q6IFga30PHEInwjrkdvNBuPin6flmJPz4gSs5T0sOOGzs8gnv8MkIQ8eqnlfpMj1RQ+/TzxUkj5oZ0czVJKVjRoyynuz+5Ob/Akkj62LHwsaYGxVW14JTqDopW2vPDsL+EaLzjrUnaYGH1OAPfQM+h0+Ib0hsRn6+FhmqNOcFV4/VouDHnRKZxX0CVFvUH5ayDOlA/G0yF5NIcVTa3i7TH34yumEXbydiBLrzbJQlLYt0bmQvt3g5fYJAcyLY6F1kIidLjepWGs=
 X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR11MB7198.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(366016);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?NWIwOFRuc2p2YmQ5N0I2Yjd6d3pBVDgyQktrMjJHdmxZT29jM0x0OHdZaEVS?=
- =?utf-8?B?OVR4Z2s2cDVNWk1YcWFFc2V1M3c5ZUp2eDdGSWdhTmVhS21SM1JSUG5sMGsw?=
- =?utf-8?B?Tk9nMVJOdDBuNlpGNWRzZjdPYS9kb3lVS20vV1IwWTIrOW4xZlNQTDBicDdQ?=
- =?utf-8?B?MnNwUHpkdFpwTkRtcEdyZU9yQkptbzJucE9YVVZIUUJPSEJkcjFWU0tOa0hS?=
- =?utf-8?B?OGw3YnVTcFFzaTlZdDNlNzAzcmZEYit1aHhKMVdKZWh6empPQW5WUTVXcmtE?=
- =?utf-8?B?NHJyOXZoTm90ekRMaFVhekNMczZzdzM1RS9HMUgxdU1uZStMMU1TVnF1VlZP?=
- =?utf-8?B?QTJRVGIxdXIxc1pXbVNNZW5MVkdQclUwdVM1TVZEWkxYSGF1L2laU2NRa0wv?=
- =?utf-8?B?WXJIQ28zS0RIcEcyU25GK0xPOHhwSEI2VTZReGVld0FCMEFtZ2VvL09vREpy?=
- =?utf-8?B?TlM0eStxS2E3ZTNkdzl4TS9TRHlnQTZLUU5ONk1lNnBWbVJQeVFhTmlaSGNl?=
- =?utf-8?B?eDhBenpUeFBxYlZqTmlJOWQrR3hLMDVZMWFVZE1UUVZhbWJnNWNRQnRSZDhu?=
- =?utf-8?B?TExSMWNNMWVwVEMxcW1ZWVkvZTEwaEt4VXBubG9RMGx2U3Y4YUhrSTNhNmlZ?=
- =?utf-8?B?WG8ySmJLRkswVHRRcDNpbU03VFEzVUxiQkMzY1JFdE9qSEpKTWwySk5qS0I0?=
- =?utf-8?B?YkhLY3pKeU10djdwaHdtdjVaNGptYVllZlFjSDhXb3BQQ0hRbWVLdTFGWFVm?=
- =?utf-8?B?TFBLWmxiQW9rS2NHZU0wd2o1TWJScmFNMTFkNnRJNVpvODBHUm5EQTlidWpG?=
- =?utf-8?B?QjRkWTE5d0dwdlpnaXNZS2lTL0gxK3hzNUFGTGt5bWdtaXBML2czQ1FMSkw4?=
- =?utf-8?B?dVc0SUw3UXpZbkRWSVE4Wk93MjBMZkIzTU44b2NTeHg3Z3dJeXM3K0ZKcnhU?=
- =?utf-8?B?bEZyZ1pkRExCK3pDUERWY0p2QUtteS9yY2craEVReVRxNkd1MlArTElaeVlU?=
- =?utf-8?B?OHBqUUZOZldmWi9DN0RXT014WVAwTmc2VEt6aC95all6d2tkOWNITUVoRXpM?=
- =?utf-8?B?Y2doUmw0NDNXTzFDS3lkUkNrUjNTQ0xJeTREZ3BDUGRTVlNBT280eXdyaWZz?=
- =?utf-8?B?ZDFPWGRDa01VV2NPSDdzcUpQMlBXbWxrTktCalZXeGQ2TTlIU1JmSzllNjhz?=
- =?utf-8?B?SWNBVU1BMW96bmRRdS90WGd2alhLejRxamUrbUhOOVNqUFFwNTNjRzYyaWps?=
- =?utf-8?B?a1BjK003TXduaWk1azN0SXNndHdyVEEwZkUza0d0Y1FqK3JmUEtUK2VJZ2c3?=
- =?utf-8?B?NFFQWkx2aDhTMDFaWHY5dTVQYjBUZHNZZnYwSFJ4SXlXbnlMOGt6M0prVTZy?=
- =?utf-8?B?UlNwUUhTMzVjYks4Z3hFNG5NM0RxYldhOGVyUFRTR0xyVEIrUEcxY0M0amFO?=
- =?utf-8?B?d3B3VHhVVjlYZFNZSlhIZUl3V0lpbXE0MndRVWlwdWdVUUhENlB5bWt3aUww?=
- =?utf-8?B?TVc0UjltMUU3Q2ErcElpWEVXZGNPanhFL1ZFbEhPU0RBRGh1TjE3NXZiL0xW?=
- =?utf-8?B?cG9lTkdaU1FSbmVzWDhVNXJLeWoxU3AvR3RvaGFudnR6ZzN4Y1psL20wVEdC?=
- =?utf-8?B?czhTM21iSUtLdG10dy9lOTM5Ri8vUEJDdEFEdkRmdlIyM255dytYWHNDc3Av?=
- =?utf-8?B?V0VSbHZEMDRxOHN4S08ycDJoaWtkUnF1WFlZek4ydzhOMUg0ZzNrY2FrcWZD?=
- =?utf-8?B?Zmd1enAvR2RqZ0FuZUk4U3dVbDQvWk5NYldkQkUycjcwTUxiU0xrUGR4Mmxn?=
- =?utf-8?B?MVhNQmRRa1haYk5XejB4L05IdWVrTitvQlJxVW9CUk9kQ1p4WjBlZGEvZjNN?=
- =?utf-8?B?bE00eTI3M3hCR1JwOGoyRElNKzAzd3BmeGFOTTRtUHNkSjFweWRvd084a2ti?=
- =?utf-8?B?OCs3bVA5M1ZFS1RDcFVEODV3K0xHa2JCOU1jZy9sc0VJblcrZU1KZWoyeTd4?=
- =?utf-8?B?a1Zya3Y0OUdLNHlBazcxVVRLeFh6Wnk3aEhLbUZYdEt6cmY5em9Fd2d1aWRO?=
- =?utf-8?B?ekVoR0J5RHFqNGJnN0hLcFlvMzVtU3Q1a2tLUkQxYVdyYmI3NVVXSnl3cFlJ?=
- =?utf-8?B?Y1FYTVpBN1FubWFPckVBcDJyMit2dng0aDY0a2VZR2ZWT0thSUVqWC9QV1Zm?=
- =?utf-8?B?RVZZeVlHalB4czk1N050N2pFN3R4VzJoamV3RTM0TUF2M2lNRllhckZWcXh0?=
- =?utf-8?B?S1RsczNZZjNadEJDTXMvb21walZwN3I4VCtxVk0rMUt1VkwrQ0ZjbGFPT1F6?=
- =?utf-8?B?enpnRXY3ajJUNTlRT2d6MWNkZ3lQdk54SWlmVVBKc3JoNU5zVURWaUY0N1h4?=
- =?utf-8?Q?Z54hcpPnWzWtSMrc=3D?=
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2a5ce882-d58b-4ccf-59fd-08de783805fd
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?UlNLaXZzTmpRZFhvWDNDak1XK0o1WnI5SnpxdXBkdU9VbGxhTlA2RWkyRCsz?=
+ =?utf-8?B?TWgwQlhkeEJPV2Y5R2hKbzlkWTBYc0p2U1IveG00ZmNUYlpYNnY4Ty9TY2Ft?=
+ =?utf-8?B?T2lQWXFsbnp3R0JyZmJMRUJxVDBkejRmR0dFVC8weG00dE9WYVBzTUZrZEpX?=
+ =?utf-8?B?WGZsS3lCSlZPU0UzTCtaaFNIN09BU0p3cW5KR3NiTGRjNFlyMGIydStJYmhu?=
+ =?utf-8?B?b3Bvak1SdXlEelVyWEE2bWd3RlIwRGNva0JhcmtlMHZicndDZlFabWRkT09E?=
+ =?utf-8?B?d2gzQlp0aU4wN2YrYWVlNFNMTFJEb0RIRkxrZXJRVjdqR3ZpdC96NnFVckgx?=
+ =?utf-8?B?b1pVMTJQeC9Bb3J6Y1BwRHVXREpTTkhldnp6NmQ4ejlQTzRneUJiZDNkZUVj?=
+ =?utf-8?B?elZ4enBqZjEzNHBLcGRKNlh1K3hZY2lmS0NOVlBQVWFlaXFiTnBSOWZtc1V3?=
+ =?utf-8?B?cGgvd05ibVdMN1BIOWtzWWk0eTN0WHRCeGFZaFlUSXA0RDYvdjRESHZlVDIz?=
+ =?utf-8?B?cVNQdlpzUnVCc2dweHFyamxEdzBYSEpIQjdveDhtQURxREozeVp0ZXRHM3JX?=
+ =?utf-8?B?YVYzY1FKYlE3cjJsMWFNdGgwVDRoSVk1Ym52bmNoenZ5Q3pNTlJoRytHaStL?=
+ =?utf-8?B?Tm5OMjVHOGxjejMzWERQSzhwL0d1Q1FSYXgvMkNnRXFCa3V4ZXc4OEtKN0VY?=
+ =?utf-8?B?K3hqMUcrVG1NUHVrazJ0emQxaWJxYXFSYk00SGk3d3dBdTVtcHRZQmNJYVBQ?=
+ =?utf-8?B?N01XQzFCZWNhSTVwQi9sQlpmMFZET3pXSVNKV09OazJzUGVzYVlEaDduTHVu?=
+ =?utf-8?B?L3VRVi9XZThGUkFKTVhvem5wWGs0Wlp1RlVQaDhJZWlpZVdmVHh2VjZsNXND?=
+ =?utf-8?B?M0NBU0UrcGpkR1hqb3FLY3c0TlhrVzdNcVRUczBsN3FKcC85VlF0UlFuVldD?=
+ =?utf-8?B?Q1dTallVbWxtQ3lFTCtzTktLb1NwRUovRzc5Mm9JUjIzN1F3SFkrQlpBWWYv?=
+ =?utf-8?B?QnRiZW5LMkVxN2ZOYXN6RmhraXpDM1ZuVmVIaElXamhEMkNKWm5zN3MwMHRF?=
+ =?utf-8?B?enVRcnY0RjlVM0ZLWmkrOHhaUkk3UFRBVlhrNnNmcytyaUtOZllNSXB3bEEv?=
+ =?utf-8?B?bVd4T2lZTDZ2NTlWTG1ZRHdjaHJ4NW1jaWU0ZnpHZENMdmJYWjRRVUxzWGdB?=
+ =?utf-8?B?SWdmZi9heHQvdGVEYlpBTlhseTFOMTMyZGpRRmZxS05CNk41Uk5RYzdiNlpu?=
+ =?utf-8?B?UExwQ0pMRmhndVU0b1BSTnpjTE5MUnR1enRMQTN6QUk5UUZKd1lVbndZdkFa?=
+ =?utf-8?B?VTRSR3B4NGxlR3BBRGRNY2YrSGJCOEovSk5UNnNwNnRheXV0V295QjlXUlFK?=
+ =?utf-8?B?azVrbmp4R3d5d3Rac1o2L2xVaHluZjdqT3p4aDAyaFhOY2sxaG42ZTJtRlZn?=
+ =?utf-8?B?VDNuQjFna0JONlhWemhTdVd6ZzUvU0RLT0RKbXk3My9iR21MRWpPeXJvK1Vw?=
+ =?utf-8?B?UStaczVCbDRWVEs1VDFUcFhZNU5jTkJYcktKYkZuSGduM0FWdDRHK0FwVFdR?=
+ =?utf-8?B?QXhnU2x1UDlPdmhRdWc4ZTlYSFFzWUlKQk5DaTBlNENnc04xREhYMmdrQU1L?=
+ =?utf-8?B?OEJINTdZY2hQTS92RFBRQnQvcWJFZXpqbEM4R1QwazBDZVB1cE9aVURCNWJ1?=
+ =?utf-8?B?NU1Xb2JGQVp0clpFdXhNZTVXRkJvS3ZsN3k5QnViMVdnaEZycDh1Rnlibkg1?=
+ =?utf-8?B?OENrNjVRRGhKbXQ5YnJyOGZEdG9BZ3JBdWpjMERNd0M3cEkzbmhFTWZLeHMv?=
+ =?utf-8?B?UWxhLzU5TUU1Zlg3c0thRlo3d01BVmlCSk1zMDFoTHNQYmk2cHhBM2xENHc5?=
+ =?utf-8?B?eWV3NU1yOUJxNTJ0cXMwcHBkUFlyRE1yQnYwNFQySnI5NTV2dlYzQ0RVdEwr?=
+ =?utf-8?B?S1BpcXdTZThodkNsc3V0SUFxNGJRcGNYYzZyd1RxenJIbVRMNkpQai9LYUg3?=
+ =?utf-8?B?N0grek50bFAwc0FpcVlRVGJ2WjBzVlU0aHhjTkRDQjIvclZKQ2I4b1UxWFZM?=
+ =?utf-8?B?Q1hQd3ZQOEdXOCszSXAza3BLR3FJRXErVFlHTUJ5TlZYR3RMbDFlYXBOVGV2?=
+ =?utf-8?B?dFF2TUNWSGF1RUhZWkFFOGZwYXdFdUdTNWtrVWtDbDJhczJlS3I2VmJPMm1u?=
+ =?utf-8?B?NGZOYVpqb05QbVhJNGt1R0tnclBYNHVMM0VVcmF2RDhwZ0ZBTjc0MFBpZkV1?=
+ =?utf-8?B?cGJROGFZOVE1ZkRYbld5c3dLZUNLSHEvWTRDL2VKUXNyV2RBcno1ZkpCcElo?=
+ =?utf-8?B?dlgxamdHZDUyT3huTjcycFEvK0ZlRnRzTEZnVjZqc2tTaitCSXFOV1QySGJM?=
+ =?utf-8?Q?0JmCbUuAly2SuzLg=3D?=
+X-MS-Exchange-CrossTenant-Network-Message-Id: b76a520b-cbe9-461c-df59-08de78380eb9
 X-MS-Exchange-CrossTenant-AuthSource: IA1PR11MB7198.namprd11.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Mar 2026 08:45:14.8854
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Mar 2026 08:45:29.5865
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 46c98d88-e344-4ed4-8496-4ed7712e255d
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: O8Xh9JejGI1Of/tF9RHR/S3O/0+Ar3lHxo/xlqrz5VzXhfaTk22S0+z+sbL3dzYg294kj84EzUocMpQieJ4XQQ==
+X-MS-Exchange-CrossTenant-UserPrincipalName: lvnsoNmgi4775Dr0kph5F7rPSa7HOH7H8aRM3U1BOmGacmLrZ7T32AIwBmGwb1B7kUXLZZH39E8PAKCZYtD2Pw==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS4PPFC60125F65
 X-OriginatorOrg: intel.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260302_004518_020653_188C537D 
-X-CRM114-Status: GOOD (  18.52  )
+X-CRM114-CacheID: sfid-20260302_004532_410461_5569EA74 
+X-CRM114-Status: GOOD (  23.25  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -185,78 +187,142 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 27/02/2026 18:25, Frank Li wrote:
-> On Fri, Feb 27, 2026 at 04:11:43PM +0200, Adrian Hunter wrote:
->> The logic used to abort the DMA ring contains several flaws:
+On 27/02/2026 18:40, Frank Li wrote:
+> On Fri, Feb 27, 2026 at 04:11:47PM +0200, Adrian Hunter wrote:
+>> The DMA ring halts whenever a transfer encounters an error. The interrupt
+>> handler previously attempted to detect this situation and restart the ring
+>> if a transfer completed at the same time. However, this restart logic runs
+>> entirely in interrupt context and is inherently racy: it interacts with
+>> other paths manipulating the ring state, and fully serializing it within
+>> the interrupt handler is not practical.
 >>
->>  1. The driver unconditionally issues a ring abort even when the ring has
->>     already stopped.
->>  2. The completion used to wait for abort completion is never
->>     re-initialized, resulting in incorrect wait behavior.
->>  3. The abort sequence unintentionally clears RING_CTRL_ENABLE, which
->>     resets hardware ring pointers and disrupts the controller state.
->>  4. If the ring is already stopped, the abort operation should be
->>     considered successful without attempting further action.
+>> Move this error-recovery logic out of the interrupt handler and into the
+>> transfer-processing path (i3c_hci_process_xfer()), where serialization and
+>> state management are already controlled. Introduce a new optional I/O-ops
+>> callback, handle_error(), invoked when a completed transfer reports an
+>> error. For DMA operation, the implementation simply calls the existing
+>> dequeue function, which safely aborts and restarts the ring when needed.
 >>
->> Fix the abort handling by checking whether the ring is running before
->> issuing an abort, reinitializing the completion when needed, ensuring that
->> RING_CTRL_ENABLE remains asserted during abort, and treating an already
->> stopped ring as a successful condition.
+>> This removes the fragile ring-restart logic from the interrupt handler and
+>> centralizes error handling where proper sequencing can be ensured.
 >>
->> Fixes: 9ad9a52cce282 ("i3c/master: introduce the mipi-i3c-hci driver")
+>> Fixes: ccdb2e0e3b00d ("i3c: mipi-i3c-hci: Add Intel specific quirk to ring resuming")
 >> Cc: stable@vger.kernel.org
 >> Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 >> ---
->>  drivers/i3c/master/mipi-i3c-hci/dma.c | 25 ++++++++++++++++---------
->>  1 file changed, 16 insertions(+), 9 deletions(-)
+>>  drivers/i3c/master/mipi-i3c-hci/core.c | 19 ++++++++++++----
+>>  drivers/i3c/master/mipi-i3c-hci/dma.c  | 31 +++++++-------------------
+>>  drivers/i3c/master/mipi-i3c-hci/hci.h  |  1 +
+>>  3 files changed, 24 insertions(+), 27 deletions(-)
 >>
->> diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
->> index 8d5f808e03ea..dff96b84479e 100644
->> --- a/drivers/i3c/master/mipi-i3c-hci/dma.c
->> +++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
->> @@ -550,18 +550,25 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
->>  	struct hci_rh_data *rh = &rings->headers[xfer_list[0].ring_number];
->>  	unsigned int i;
->>  	bool did_unqueue = false;
->> +	u32 ring_status;
+>> diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+>> index 9cfe12fb9a0e..741f543aae68 100644
+>> --- a/drivers/i3c/master/mipi-i3c-hci/core.c
+>> +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+>> @@ -223,10 +223,21 @@ int i3c_hci_process_xfer(struct i3c_hci *hci, struct hci_xfer *xfer, int n)
+>>  	if (ret)
+>>  		return ret;
 >>
->>  	guard(mutex)(&rh->control_mutex);
->>
->> -	/* stop the ring */
->> -	rh_reg_write(RING_CONTROL, RING_CTRL_ABORT);
->> -	if (wait_for_completion_timeout(&rh->op_done, HZ) == 0) {
->> -		/*
->> -		 * We're deep in it if ever this condition is ever met.
->> -		 * Hardware might still be writing to memory, etc.
->> -		 */
->> -		dev_crit(&hci->master.dev, "unable to abort the ring\n");
->> -		WARN_ON(1);
->> +	ring_status = rh_reg_read(RING_STATUS);
->> +	if (ring_status & RING_STATUS_RUNNING) {
->> +		/* stop the ring */
->> +		reinit_completion(&rh->op_done);
->> +		rh_reg_write(RING_CONTROL, RING_CTRL_ENABLE | RING_CTRL_ABORT);
->> +		wait_for_completion_timeout(&rh->op_done, HZ);
->> +		ring_status = rh_reg_read(RING_STATUS);
->> +		if (ring_status & RING_STATUS_RUNNING) {
+>> -	if (!wait_for_completion_timeout(done, timeout) &&
+>> -	    hci->io->dequeue_xfer(hci, xfer, n)) {
+>> -		dev_err(&hci->master.dev, "%s: timeout error\n", __func__);
+>> -		return -ETIMEDOUT;
+>> +	if (!wait_for_completion_timeout(done, timeout)) {
+>> +		if (hci->io->dequeue_xfer(hci, xfer, n)) {
 > 
-> Do you need readl_poll_timeout() here to make sure hardware actual stopped?
+> It is also an error, why not call handle_error() here.
 
-No the completion already waits for op_done
+It is different between PIO and DMA.  DMA has an extra need to
+restart the DMA ring after an error.  PIO does not need that,
+so for PIO ->handle_error() should do nothing, which is not the
+same as ->dequeue_xfer().
 
 > 
 > Frank
-> 
->> +			/*
->> +			 * We're deep in it if ever this condition is ever met.
->> +			 * Hardware might still be writing to memory, etc.
->> +			 */
->> +			dev_crit(&hci->master.dev, "unable to abort the ring\n");
->> +			WARN_ON(1);
+>> +			dev_err(&hci->master.dev, "%s: timeout error\n", __func__);
+>> +			return -ETIMEDOUT;
 >> +		}
+>> +		return 0;
+>> +	}
+>> +
+>> +	if (hci->io->handle_error) {
+>> +		bool error = false;
+>> +
+>> +		for (int i = 0; i < n && !error; i++)
+>> +			error = RESP_STATUS(xfer[i].response);
+>> +		if (error)
+>> +			return hci->io->handle_error(hci, xfer, n);
 >>  	}
 >>
->>  	spin_lock_irq(&rh->lock);
+>>  	return 0;
+>> diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
+>> index 323c5ead82a5..4951fd0a63ac 100644
+>> --- a/drivers/i3c/master/mipi-i3c-hci/dma.c
+>> +++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
+>> @@ -613,6 +613,11 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
+>>  	return did_unqueue;
+>>  }
+>>
+>> +static int hci_dma_handle_error(struct i3c_hci *hci, struct hci_xfer *xfer_list, int n)
+>> +{
+>> +	return hci_dma_dequeue_xfer(hci, xfer_list, n) ? -EIO : 0;
+>> +}
+>> +
+>>  static void hci_dma_xfer_done(struct i3c_hci *hci, struct hci_rh_data *rh)
+>>  {
+>>  	u32 op1_val, op2_val, resp, *ring_resp;
+>> @@ -880,29 +885,8 @@ static bool hci_dma_irq_handler(struct i3c_hci *hci)
+>>  			hci_dma_xfer_done(hci, rh);
+>>  		if (status & INTR_RING_OP)
+>>  			complete(&rh->op_done);
+>> -
+>> -		if (status & INTR_TRANSFER_ABORT) {
+>> -			u32 ring_status;
+>> -
+>> -			dev_notice_ratelimited(&hci->master.dev,
+>> -				"Ring %d: Transfer Aborted\n", i);
+>> -			mipi_i3c_hci_resume(hci);
+>> -			ring_status = rh_reg_read(RING_STATUS);
+>> -			if (!(ring_status & RING_STATUS_RUNNING) &&
+>> -			    status & INTR_TRANSFER_COMPLETION &&
+>> -			    status & INTR_TRANSFER_ERR) {
+>> -				/*
+>> -				 * Ring stop followed by run is an Intel
+>> -				 * specific required quirk after resuming the
+>> -				 * halted controller. Do it only when the ring
+>> -				 * is not in running state after a transfer
+>> -				 * error.
+>> -				 */
+>> -				rh_reg_write(RING_CONTROL, RING_CTRL_ENABLE);
+>> -				rh_reg_write(RING_CONTROL, RING_CTRL_ENABLE |
+>> -							   RING_CTRL_RUN_STOP);
+>> -			}
+>> -		}
+>> +		if (status & INTR_TRANSFER_ABORT)
+>> +			dev_dbg(&hci->master.dev, "Ring %d: Transfer Aborted\n", i);
+>>  		if (status & INTR_IBI_RING_FULL)
+>>  			dev_err_ratelimited(&hci->master.dev,
+>>  				"Ring %d: IBI Ring Full Condition\n", i);
+>> @@ -918,6 +902,7 @@ const struct hci_io_ops mipi_i3c_hci_dma = {
+>>  	.cleanup		= hci_dma_cleanup,
+>>  	.queue_xfer		= hci_dma_queue_xfer,
+>>  	.dequeue_xfer		= hci_dma_dequeue_xfer,
+>> +	.handle_error		= hci_dma_handle_error,
+>>  	.irq_handler		= hci_dma_irq_handler,
+>>  	.request_ibi		= hci_dma_request_ibi,
+>>  	.free_ibi		= hci_dma_free_ibi,
+>> diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
+>> index 6680b8640c5a..0f5e5bad9fb1 100644
+>> --- a/drivers/i3c/master/mipi-i3c-hci/hci.h
+>> +++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
+>> @@ -121,6 +121,7 @@ struct hci_io_ops {
+>>  	bool (*irq_handler)(struct i3c_hci *hci);
+>>  	int (*queue_xfer)(struct i3c_hci *hci, struct hci_xfer *xfer, int n);
+>>  	bool (*dequeue_xfer)(struct i3c_hci *hci, struct hci_xfer *xfer, int n);
+>> +	int (*handle_error)(struct i3c_hci *hci, struct hci_xfer *xfer, int n);
+>>  	int (*request_ibi)(struct i3c_hci *hci, struct i3c_dev_desc *dev,
+>>  			   const struct i3c_ibi_setup *req);
+>>  	void (*free_ibi)(struct i3c_hci *hci, struct i3c_dev_desc *dev);
 >> --
 >> 2.51.0
 >>
