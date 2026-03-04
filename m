@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6BC60EFCE37
-	for <linux-i3c@archiver.kernel.org>; Wed,  4 Mar 2026 18:17:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F829EFCE2A
+	for <linux-i3c@archiver.kernel.org>; Wed,  4 Mar 2026 18:17:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SFcOhY5xKXNxtQJNP869O3hZ0440orV55V9obU/tYro=; b=bXqeTI1POLzw3h
-	2BGuSX9Ll+9b5NyULlceeWSCv6bg1hDh1gNA5WQ1p+BmX+tgxlSCxwUSFYJDxYanfW+yi5gp7y+tM
-	LalIQAUGU+MNLmRhTG7KaGx3oM+7EJlR1lL5mdRj4Qe9skVeSCWZC7p87S9ozuDZ25CVzLmHSTnwH
-	kJxfd4gIsEtG1wxjaUXHlplhlp6rPv5czJCvQpFVOUMRgDK/XEUCuC4Ufwr1huPshWqcH5hp35Lbg
-	xpeNO9I62qX5VYWdj0MHKQP34Z1i9KkTaZS83qEmEtq0NxqpPUf+mEtV8957AmIQmeuJci3Xo8LrX
-	BprH/CdNI9sLMuehjT4w==;
+	List-Owner; bh=EJFEaZLfgP4BfPlYIIWqJTsmnsoVcKbxZmnzJ2UMP7I=; b=vuS6+nAMDGm9uX
+	QuEUDk0mxHo7HusP0rKKr15J/LdwcrqVlfSjHvsF0tUpqcBkL4kq1d7EBawnOlcHicNizcgJV9Ma6
+	xwjsantuiegLtyyMknRdK31oSGIRkBLuQfV/WI537M6p4KVowVD2hQFeqoQnJvpAYTMhdQvix73GA
+	VakfbV1lKRNp0OenWGv6KFCALet83ErjcnGxZ6eUk2teijXePropTCTqoWUwTA5J/Cgc1Dhosd1Nd
+	NevOZhWsM1FRQuZvmhTTX+9N0PvQoll/h/Ly5YQ7Wcs1mtoS5q1cbJpB/YG/fna0WE1SeFr7RlIDY
+	hZN+sEKLrrxvtKzifXLA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxqmv-00000000K9O-2yfp;
-	Wed, 04 Mar 2026 18:17:37 +0000
+	id 1vxqmw-00000000KAi-41qk;
+	Wed, 04 Mar 2026 18:17:38 +0000
 Received: from mgamail.intel.com ([192.198.163.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vxqmt-00000000K1V-1YZ5
+	id 1vxqmu-00000000K1V-44lS
 	for linux-i3c@lists.infradead.org;
-	Wed, 04 Mar 2026 18:17:36 +0000
+	Wed, 04 Mar 2026 18:17:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1772648256; x=1804184256;
+  t=1772648257; x=1804184257;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=Wcdp6EMUqEBKkfw95WRgZ70Pbgb75gQd39eoVDYkDY8=;
-  b=OdrXj3FwodeHo5aq1CAeVElRqFzw3M5B699R9BY4YFiGr5Jn5QwJPm8U
-   IZQvybY7jx3g0pX8/j/7RDWSCoSF/n3lYxGKpUaD56dAjKFUVeL6kMeFl
-   psgrO22PtpW+2S8oY1hlgzfHabgxm9XGvxfvUh1pregDXvFBluOGXpk2c
-   NxlKxyALBzf1LyGQ4rmRrKCIpJs3CtEkAi62cRlJZwLxhWOlexWIInF1G
-   LYFRfxAWBGKrOYD2tRfTEFOs4A8DxQEpBkNEq/7Aw92FcPFHAmw5/Te2v
-   R2ZTLhTwf1zTBGYZwF3uD8bF1MU+2F9GAZXJkspPYy0MRCAY8fjFd3oTN
-   A==;
-X-CSE-ConnectionGUID: sCkVLxRKT6yoqzvTO48VXA==
-X-CSE-MsgGUID: q9c83eH2RbmwYybfofaf0Q==
-X-IronPort-AV: E=McAfee;i="6800,10657,11719"; a="72745920"
+  bh=VJUGidbBE83GjcKAEbXMYb3ZkgWaR/jT8MB3h2EtVyI=;
+  b=hx/IMuZpCPVKZYMdCyqekHuxKFQw3U6oK/Wa1ePVqQvwWAB7gyS0wjLI
+   tlVgumiwl5U3dzzDP4EUcqsSkzsqm10KjnqF3rsvh6Em3iiCChf2FauFb
+   Bg4Gze/mNd2H/ffewGlaug0Ng4xb48qtAtuDGHzyRFdFM5YQ1HJYjpenb
+   9+lYchhvwXzs+eNp0qfvleTsju1ugi8+B75DVNghLGqScRLf8wodnBcQK
+   PmasHnrRJNN/5YsLh4pmAVKSv3u1uPlxK0bq8H/c5jZbx+JH9+D+PleDf
+   ai3DOytMAt+xLRPOpBtClo7wYV931ruWIHUNXHB74w0F2Ku57erACtCh0
+   Q==;
+X-CSE-ConnectionGUID: Wy9XCVI0Se2gJp08NA0LLg==
+X-CSE-MsgGUID: FzDxI0AbR8K/rYhf2jfh3g==
+X-IronPort-AV: E=McAfee;i="6800,10657,11719"; a="72745927"
 X-IronPort-AV: E=Sophos;i="6.21,324,1763452800"; 
-   d="scan'208";a="72745920"
+   d="scan'208";a="72745927"
 Received: from orviesa010.jf.intel.com ([10.64.159.150])
-  by fmvoesa113.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Mar 2026 10:17:35 -0800
-X-CSE-ConnectionGUID: pZ8yZL6qTmifS8fpXE35Tw==
-X-CSE-MsgGUID: 5yx0Ev/EQ6WmVYnp0f7stA==
+  by fmvoesa113.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Mar 2026 10:17:37 -0800
+X-CSE-ConnectionGUID: kRUrKHEqRvS4csTUgsAsjw==
+X-CSE-MsgGUID: r1bjJ3QSSbet/X3RAhNQig==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.21,324,1763452800"; 
-   d="scan'208";a="217656768"
+   d="scan'208";a="217656772"
 Received: from dalessan-mobl3.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.245.133])
-  by orviesa010-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Mar 2026 10:17:34 -0800
+  by orviesa010-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Mar 2026 10:17:35 -0800
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org
-Subject: [PATCH V2 08/14] i3c: mipi-i3c-hci: Correct RING_CTRL_ABORT handling in DMA dequeue
-Date: Wed,  4 Mar 2026 20:16:59 +0200
-Message-ID: <20260304181706.143841-9-adrian.hunter@intel.com>
+Subject: [PATCH V2 09/14] i3c: mipi-i3c-hci: Add missing TID field to no-op command descriptor
+Date: Wed,  4 Mar 2026 20:17:00 +0200
+Message-ID: <20260304181706.143841-10-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260304181706.143841-1-adrian.hunter@intel.com>
 References: <20260304181706.143841-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260304_101735_430545_2247FB60 
-X-CRM114-Status: GOOD (  13.48  )
+X-CRM114-CacheID: sfid-20260304_101737_043910_22DEE591 
+X-CRM114-Status: GOOD (  11.91  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,21 +85,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The logic used to abort the DMA ring contains several flaws:
+The internal control command descriptor used for no-op commands includes a
+Transaction ID (TID) field, but the no-op command constructed in
+hci_dma_dequeue_xfer() omitted it.  As a result, the hardware receives a
+no-op descriptor without the expected TID.
 
- 1. The driver unconditionally issues a ring abort even when the ring has
-    already stopped.
- 2. The completion used to wait for abort completion is never
-    re-initialized, resulting in incorrect wait behavior.
- 3. The abort sequence unintentionally clears RING_CTRL_ENABLE, which
-    resets hardware ring pointers and disrupts the controller state.
- 4. If the ring is already stopped, the abort operation should be
-    considered successful without attempting further action.
+This bug has gone unnoticed because the TID is currently not validated in
+the no-op completion path, but the descriptor format requires it to be
+present.
 
-Fix the abort handling by checking whether the ring is running before
-issuing an abort, re-initializing the completion when needed, ensuring that
-RING_CTRL_ENABLE remains asserted during abort, and treating an already
-stopped ring as a successful condition.
+Add the missing TID field when generating a no-op descriptor so that its
+layout matches the defined command structure.
 
 Fixes: 9ad9a52cce282 ("i3c/master: introduce the mipi-i3c-hci driver")
 Cc: stable@vger.kernel.org
@@ -111,51 +107,37 @@ Reviewed-by: Frank Li <Frank.Li@nxp.com>
 Changes in V2:
 
 	Add Frank's Rev'd-by
-	Mutex is now defined in struct i3c_hci
 
 
- drivers/i3c/master/mipi-i3c-hci/dma.c | 25 ++++++++++++++++---------
- 1 file changed, 16 insertions(+), 9 deletions(-)
+ drivers/i3c/master/mipi-i3c-hci/cmd.h | 1 +
+ drivers/i3c/master/mipi-i3c-hci/dma.c | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
 
+diff --git a/drivers/i3c/master/mipi-i3c-hci/cmd.h b/drivers/i3c/master/mipi-i3c-hci/cmd.h
+index 1d6dd2c5d01a..b1bf87daa651 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/cmd.h
++++ b/drivers/i3c/master/mipi-i3c-hci/cmd.h
+@@ -17,6 +17,7 @@
+ #define CMD_0_TOC			W0_BIT_(31)
+ #define CMD_0_ROC			W0_BIT_(30)
+ #define CMD_0_ATTR			W0_MASK(2, 0)
++#define CMD_0_TID			W0_MASK(6, 3)
+ 
+ /*
+  * Response Descriptor Structure
 diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-index d7840ff69e59..a3e8e01a35c9 100644
+index a3e8e01a35c9..239a195df7c7 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/dma.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-@@ -546,18 +546,25 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
- 	struct hci_rh_data *rh = &rings->headers[xfer_list[0].ring_number];
- 	unsigned int i;
- 	bool did_unqueue = false;
-+	u32 ring_status;
+@@ -582,7 +582,7 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
+ 			u32 *ring_data = rh->xfer + rh->xfer_struct_sz * idx;
  
- 	guard(mutex)(&hci->control_mutex);
- 
--	/* stop the ring */
--	rh_reg_write(RING_CONTROL, RING_CTRL_ABORT);
--	if (wait_for_completion_timeout(&rh->op_done, HZ) == 0) {
--		/*
--		 * We're deep in it if ever this condition is ever met.
--		 * Hardware might still be writing to memory, etc.
--		 */
--		dev_crit(&hci->master.dev, "unable to abort the ring\n");
--		WARN_ON(1);
-+	ring_status = rh_reg_read(RING_STATUS);
-+	if (ring_status & RING_STATUS_RUNNING) {
-+		/* stop the ring */
-+		reinit_completion(&rh->op_done);
-+		rh_reg_write(RING_CONTROL, RING_CTRL_ENABLE | RING_CTRL_ABORT);
-+		wait_for_completion_timeout(&rh->op_done, HZ);
-+		ring_status = rh_reg_read(RING_STATUS);
-+		if (ring_status & RING_STATUS_RUNNING) {
-+			/*
-+			 * We're deep in it if ever this condition is ever met.
-+			 * Hardware might still be writing to memory, etc.
-+			 */
-+			dev_crit(&hci->master.dev, "unable to abort the ring\n");
-+			WARN_ON(1);
-+		}
- 	}
- 
- 	spin_lock_irq(&hci->lock);
+ 			/* store no-op cmd descriptor */
+-			*ring_data++ = FIELD_PREP(CMD_0_ATTR, 0x7);
++			*ring_data++ = FIELD_PREP(CMD_0_ATTR, 0x7) | FIELD_PREP(CMD_0_TID, xfer->cmd_tid);
+ 			*ring_data++ = 0;
+ 			if (hci->cmd == &mipi_i3c_hci_cmd_v2) {
+ 				*ring_data++ = 0;
 -- 
 2.51.0
 
