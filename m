@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61E1FF01806
-	for <linux-i3c@archiver.kernel.org>; Fri,  6 Mar 2026 07:25:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DAB13F01804
+	for <linux-i3c@archiver.kernel.org>; Fri,  6 Mar 2026 07:25:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fjlemuBfXmF8h4exbANL83Qw2QHTnRIeuxbf0LQ3vgg=; b=B21R301mJQYsgt
-	gGWXrYrdqt3bkkr4jZpzWQ666pC8LcUOe+sNTmoCSfuzsy/2Jt354v2YLPTzam2PiiKIZFIS0iyfw
-	lkYozAYukVfhUyZ3bC8furfVizYRetO8uL8ndestVUPJiT2u4PYT3lAWZMEnJw/8E/P148xcBVl+i
-	H2qLdsFCJRopCe0DzSim3bsc2z6tluLm2VE9ucm7lx/i5XCZa5QdBgOpS+T/OQ1rK0yGLuaEHy8hn
-	ayang/gHzV1C4l25COtwZi0hQ7TPy0PmhOfEdAiLmAL/CEN3U0rg9bkHzKhT6b6UM3trF3jDXnlPh
-	oVvtbE9SG102UQCyFfLQ==;
+	List-Owner; bh=hvdbp37425IEfXZ1cXPEnxcRASmMBBfjbz6PfOv7X80=; b=ESQgyf1PMZqAS8
+	E7ZFo9iJUQjtwpkaZbNO69Wkt5bxDZuQaqNvALtLu45LCEtVADUslsylbGHofkrhChZH38g7/MIaN
+	qdoonfHolqc2MzIIuK9I3PGs9bJHGA984ywDyHb+4813G6/u0rW6ugQou2Yjyvtpa0WldWN8HbrhU
+	nJZVBfkXKU7UPOFJdf1krnDxRvzF5WQVqEPgz2NK5lvxtWHYpjSAi603XUIcBE0yTeeoNTLb0N8/K
+	WSdit/s9WL9LycK1ed5E8KnpRviOrasjZjaeb0GlOsKSBVAsVFYg6nQ/+bo02jFSgF0qo8lBYRWi3
+	NV8XsQvy2dUycPNrILHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vyPYg-0000000398J-3b5l;
-	Fri, 06 Mar 2026 07:25:14 +0000
+	id 1vyPYj-000000039AM-1XQ7;
+	Fri, 06 Mar 2026 07:25:17 +0000
 Received: from mgamail.intel.com ([192.198.163.8])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vyPYf-0000000395H-1A2e
+	id 1vyPYg-0000000395H-45zi
 	for linux-i3c@lists.infradead.org;
-	Fri, 06 Mar 2026 07:25:14 +0000
+	Fri, 06 Mar 2026 07:25:16 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1772781913; x=1804317913;
+  t=1772781915; x=1804317915;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=0ZKJ2GScSnamMEAgJfgAqhRME5OwF+42tWNsFg9y+X0=;
-  b=haMqbAX9cB3N2J5hPDBMcXY7Un4UCzpAizBTLgyZtUzmnsTgQPTXV9qL
-   7aHq/kI3eacyS6iVuhtQxAqfREJJCt99S5EowmK60CTAZCRSkt32bo/JJ
-   U/Atsk1yepPwTHaLaxrmNEcPO8qe8uHKyy/8H+sWOARLka24SfyvvdeYU
-   lr0Jr9XXNki0ZUjag4TroEA2RlxYGOcyU5kaJJLymBs5iiKJYURntxlXp
-   EN5ndtGGL0LhEUf2FRqHe4vNUAfZZs424atjxrw56+gAROiJFrPdsNOtL
-   MB10DMNJkOjW5dIXZb+buZdido0fa7L59YTMktHmu2fe1vEycLR214plj
-   A==;
-X-CSE-ConnectionGUID: OM4gRhoMS6yRnSDYyWJNhQ==
-X-CSE-MsgGUID: 97R1Fi0XQjSVKX0PhBb+Zg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11720"; a="91461336"
+  bh=Ygd82bK1KmpZAhcFis/1tuFnLbmVLYzVgeGiiyJU3Uc=;
+  b=VWdQkBwyQ/Ots+0AMbXoINMD6ZPVUUgXB8Rr/pkD/e6oIjg2opmgrjGe
+   yylAXIWtTSaqcHS4mYQkL/+sAHVd6dSifWl6qg4lCLhi4RsWywxWKEmtG
+   h/lwX7NwN9MqrkUmH6kbDcFRZgj4LiPcs5CZS8AqyT1t9K3Rgcn6dYAVD
+   7ZImwrrSMxIXUOxsGH1Q/lke3KDeFa5FQ5TmV7M+M5IW61JCRJY6azqWF
+   czRVMMe+msFNRKff/oR2k/LPEf2k9mIRNL6q5p8Q7M5OBZLz8XFXf7PJ0
+   GSc/mLlprd356ZJgZg5RzPBR1eWHH0zMkIu0DKvxuSeXB1yqpO0VsyAZ/
+   Q==;
+X-CSE-ConnectionGUID: P5ywMFl5QWSSLJtmol9bzQ==
+X-CSE-MsgGUID: hcMBro88Q/KJBpKPsJl3tQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11720"; a="91461339"
 X-IronPort-AV: E=Sophos;i="6.23,104,1770624000"; 
-   d="scan'208";a="91461336"
+   d="scan'208";a="91461339"
 Received: from orviesa004.jf.intel.com ([10.64.159.144])
-  by fmvoesa102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Mar 2026 23:25:13 -0800
-X-CSE-ConnectionGUID: dOct7xh2SGOqYM4PIGB/7Q==
-X-CSE-MsgGUID: Nbi2tx6ERYuMUAI+lXJYPw==
+  by fmvoesa102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Mar 2026 23:25:15 -0800
+X-CSE-ConnectionGUID: jihYj41OTR+TBSIBdSzcJA==
+X-CSE-MsgGUID: wAaVXk7BR0inYxm94ub+rQ==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.23,104,1770624000"; 
-   d="scan'208";a="223419921"
+   d="scan'208";a="223419928"
 Received: from dhhellew-desk2.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.244.171])
-  by orviesa004-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Mar 2026 23:25:11 -0800
+  by orviesa004-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 05 Mar 2026 23:25:13 -0800
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org
-Subject: [PATCH V3 06/14] i3c: mipi-i3c-hci: Fix race in DMA ring dequeue
-Date: Fri,  6 Mar 2026 09:24:43 +0200
-Message-ID: <20260306072451.11131-7-adrian.hunter@intel.com>
+Subject: [PATCH V3 07/14] i3c: mipi-i3c-hci: Fix race between DMA ring dequeue and interrupt handler
+Date: Fri,  6 Mar 2026 09:24:44 +0200
+Message-ID: <20260306072451.11131-8-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260306072451.11131-1-adrian.hunter@intel.com>
 References: <20260306072451.11131-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260305_232513_327458_C125CA62 
-X-CRM114-Status: GOOD (  11.17  )
+X-CRM114-CacheID: sfid-20260305_232515_030909_35D3E64F 
+X-CRM114-Status: GOOD (  16.80  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,18 +85,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The HCI DMA dequeue path (hci_dma_dequeue_xfer()) may be invoked for
-multiple transfers that timeout around the same time.  However, the
-function is not serialized and can race with itself.
+The DMA ring bookkeeping in the MIPI I3C HCI driver is updated from two
+contexts: the DMA ring dequeue path (hci_dma_dequeue_xfer()) and the
+interrupt handler (hci_dma_xfer_done()).  Both modify the ring's
+in-flight transfer state - specifically rh->src_xfers[] and
+xfer->ring_entry - but without any serialization.  This allows the two
+paths to race, potentially leading to inconsistent ring state.
 
-When a timeout occurs, hci_dma_dequeue_xfer() stops the ring, processes
-incomplete transfers, and then restarts the ring.  If another timeout
-triggers a parallel call into the same function, the two instances may
-interfere with each other - stopping or restarting the ring at unexpected
-times.
+Serialize access to the shared ring state by extending the existing
+spinlock to cover the DMA dequeue path and the entire interrupt handler.
+Since the core IRQ handler now holds this lock, remove the per-function
+locking from the PIO and DMA sub-handlers.
 
-Add a mutex so that hci_dma_dequeue_xfer() is serialized with respect to
-itself.
+Additionally, clear the completed entry in rh->src_xfers[] in
+hci_dma_xfer_done() so it cannot be matched or completed again.
+
+Finally, place the ring restart sequence under the same lock in
+hci_dma_dequeue_xfer() to avoid concurrent enqueue or completion
+operations while the ring state is being modified.
 
 Fixes: 9ad9a52cce282 ("i3c/master: introduce the mipi-i3c-hci driver")
 Cc: stable@vger.kernel.org
@@ -111,51 +117,117 @@ Changes in V3:
 
 Changes in V2:
 
-	Mutex now defined in struct i3c_hci instead of struct hci_rh_data
+	Now uses unified spinlock (as per earlier patch "i3c: mipi-i3c-hci:
+	Consolidate spinlocks") and extends coverage to the entire interrupt
+	handler
 
 
- drivers/i3c/master/mipi-i3c-hci/core.c | 1 +
- drivers/i3c/master/mipi-i3c-hci/dma.c  | 2 ++
- drivers/i3c/master/mipi-i3c-hci/hci.h  | 1 +
- 3 files changed, 4 insertions(+)
+ drivers/i3c/master/mipi-i3c-hci/core.c |  2 ++
+ drivers/i3c/master/mipi-i3c-hci/dma.c  | 11 +++++------
+ drivers/i3c/master/mipi-i3c-hci/pio.c  |  6 +-----
+ 3 files changed, 8 insertions(+), 11 deletions(-)
 
 diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-index faf5eae2409f..061e84a5c412 100644
+index 061e84a5c412..adf35b7fa498 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/core.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-@@ -927,6 +927,7 @@ static int i3c_hci_probe(struct platform_device *pdev)
- 		return -ENOMEM;
+@@ -567,6 +567,8 @@ static irqreturn_t i3c_hci_irq_handler(int irq, void *dev_id)
+ 	irqreturn_t result = IRQ_NONE;
+ 	u32 val;
  
- 	spin_lock_init(&hci->lock);
-+	mutex_init(&hci->control_mutex);
- 
++	guard(spinlock)(&hci->lock);
++
  	/*
- 	 * Multi-bus instances share the same MMIO address range, but not
+ 	 * The IRQ can be shared, so the handler may be called when the IRQ is
+ 	 * due to a different device. That could happen when runtime suspended,
 diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-index 74b255ad6d0f..f7d411e5e11f 100644
+index f7d411e5e11f..d7840ff69e59 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/dma.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-@@ -547,6 +547,8 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
- 	unsigned int i;
- 	bool did_unqueue = false;
+@@ -560,6 +560,8 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
+ 		WARN_ON(1);
+ 	}
  
-+	guard(mutex)(&hci->control_mutex);
++	spin_lock_irq(&hci->lock);
 +
- 	/* stop the ring */
- 	rh_reg_write(RING_CONTROL, RING_CTRL_ABORT);
- 	if (wait_for_completion_timeout(&rh->op_done, HZ) == 0) {
-diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
-index f1dd502c071f..9c63d80f7fc4 100644
---- a/drivers/i3c/master/mipi-i3c-hci/hci.h
-+++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
-@@ -51,6 +51,7 @@ struct i3c_hci {
- 	void *io_data;
- 	const struct hci_cmd_ops *cmd;
- 	spinlock_t lock;
-+	struct mutex control_mutex;
- 	atomic_t next_cmd_tid;
- 	bool irq_inactive;
- 	u32 caps;
+ 	for (i = 0; i < n; i++) {
+ 		struct hci_xfer *xfer = xfer_list + i;
+ 		int idx = xfer->ring_entry;
+@@ -593,6 +595,8 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
+ 	/* restart the ring */
+ 	rh_reg_write(RING_CONTROL, RING_CTRL_ENABLE);
+ 
++	spin_unlock_irq(&hci->lock);
++
+ 	return did_unqueue;
+ }
+ 
+@@ -618,6 +622,7 @@ static void hci_dma_xfer_done(struct i3c_hci *hci, struct hci_rh_data *rh)
+ 			dev_dbg(&hci->master.dev, "orphaned ring entry");
+ 		} else {
+ 			hci_dma_unmap_xfer(hci, xfer, 1);
++			rh->src_xfers[done_ptr] = NULL;
+ 			xfer->ring_entry = -1;
+ 			xfer->response = resp;
+ 			if (tid != xfer->cmd_tid) {
+@@ -635,14 +640,11 @@ static void hci_dma_xfer_done(struct i3c_hci *hci, struct hci_rh_data *rh)
+ 		done_cnt += 1;
+ 	}
+ 
+-	/* take care to update the software dequeue pointer atomically */
+-	spin_lock(&hci->lock);
+ 	rh->xfer_space += done_cnt;
+ 	op1_val = rh_reg_read(RING_OPERATION1);
+ 	op1_val &= ~RING_OP1_CR_SW_DEQ_PTR;
+ 	op1_val |= FIELD_PREP(RING_OP1_CR_SW_DEQ_PTR, done_ptr);
+ 	rh_reg_write(RING_OPERATION1, op1_val);
+-	spin_unlock(&hci->lock);
+ }
+ 
+ static int hci_dma_request_ibi(struct i3c_hci *hci, struct i3c_dev_desc *dev,
+@@ -822,13 +824,10 @@ static void hci_dma_process_ibi(struct i3c_hci *hci, struct hci_rh_data *rh)
+ 	i3c_master_queue_ibi(dev, slot);
+ 
+ done:
+-	/* take care to update the ibi dequeue pointer atomically */
+-	spin_lock(&hci->lock);
+ 	op1_val = rh_reg_read(RING_OPERATION1);
+ 	op1_val &= ~RING_OP1_IBI_DEQ_PTR;
+ 	op1_val |= FIELD_PREP(RING_OP1_IBI_DEQ_PTR, deq_ptr);
+ 	rh_reg_write(RING_OPERATION1, op1_val);
+-	spin_unlock(&hci->lock);
+ 
+ 	/* update the chunk pointer */
+ 	rh->ibi_chunk_ptr += ibi_chunks;
+diff --git a/drivers/i3c/master/mipi-i3c-hci/pio.c b/drivers/i3c/master/mipi-i3c-hci/pio.c
+index 02866c2237fa..8f48a81e65ab 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/pio.c
++++ b/drivers/i3c/master/mipi-i3c-hci/pio.c
+@@ -1014,15 +1014,12 @@ static bool hci_pio_irq_handler(struct i3c_hci *hci)
+ 	struct hci_pio_data *pio = hci->io_data;
+ 	u32 status;
+ 
+-	spin_lock(&hci->lock);
+ 	status = pio_reg_read(INTR_STATUS);
+ 	dev_dbg(&hci->master.dev, "PIO_INTR_STATUS %#x/%#x",
+ 		status, pio->enabled_irqs);
+ 	status &= pio->enabled_irqs | STAT_LATENCY_WARNINGS;
+-	if (!status) {
+-		spin_unlock(&hci->lock);
++	if (!status)
+ 		return false;
+-	}
+ 
+ 	if (status & STAT_IBI_STATUS_THLD)
+ 		hci_pio_process_ibi(hci, pio);
+@@ -1056,7 +1053,6 @@ static bool hci_pio_irq_handler(struct i3c_hci *hci)
+ 	pio_reg_write(INTR_SIGNAL_ENABLE, pio->enabled_irqs);
+ 	dev_dbg(&hci->master.dev, "PIO_INTR_STATUS %#x/%#x",
+ 		pio_reg_read(INTR_STATUS), pio_reg_read(INTR_SIGNAL_ENABLE));
+-	spin_unlock(&hci->lock);
+ 	return true;
+ }
+ 
 -- 
 2.51.0
 
