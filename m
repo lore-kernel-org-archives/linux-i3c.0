@@ -4,8 +4,8 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C898FD4F16
-	for <linux-i3c@archiver.kernel.org>; Tue, 10 Mar 2026 19:14:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CED4AFD4F19
+	for <linux-i3c@archiver.kernel.org>; Tue, 10 Mar 2026 19:15:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,67 +13,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:CC:To:Subject:Date:Message-ID:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=2FLrSm+dYsym3klzX3fpAIHlk1/yugN65aJsWm06JDI=; b=hkmTyrBRzDVQxrfM4gsj2Geetd
-	urvY5G5XU3GLiTmzG7GfBDvaPOZiE/KDGnWW0YEyuMr/MsVhXJU49crmaS6xikrbfYEyOxIRmhW15
-	I+5UFVJvF/sOIhtC+ZexezK4M/+alCDZsBJlwavVGzx4OQkjuG5Nok+e8g/TLhVDuOSgC5FVTtW5d
-	uh2jjMbTL/Ani3pJ2YvqeljUZ96TBUMWdZ+YFH8R/mnrk+Rubm2EQW8nYa9OQiL6KsxwisVMoxztv
-	d0EPhzlghO5FU09USYVeT5YzMo87vpiKDr919oiQxSa/CBjPpafW9DLWfL0AcRi7NRQxfIh/jMpe8
-	WgraJJCw==;
+	bh=9EjQOKAmhOXO1ftslFOSsSG3TGKZOWASF03SLCnxIMY=; b=ws53IsaiFavFTAeh9J7sI0sX0f
+	jC2oQ7wlvtR3kIi7uw5P5IpxvbKciJaeUcp/0xauKbpy6KV0iIqHiVy3Xi4HtBbSkGG3iA2WGANuS
+	9f4Ob+qJGj6MpkKf1nTrjGajD5P36vFtVQuul9/HiX8vsI92bec3sxlkaITyJ+eqX0U+WTaHqdev2
+	9a9df+D90sChrPOhSv+Xfzik/jRvJnVLclijA4R5+QWuDxDVPImy4j35CUICwALSm1Un3OhhwbAVf
+	tvaCQURIb7uR9GIUyO+JEWE5BltdFVYyBRIonLjdA2oL2PTceHFhOGG+glQRRCzpttsbWo0uVZ68S
+	+N5Q2Nng==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w02XT-0000000A9vB-05q3;
-	Tue, 10 Mar 2026 19:14:43 +0000
-Received: from mgamail.intel.com ([198.175.65.13])
+	id 1w02Xp-0000000AA2u-2NfE;
+	Tue, 10 Mar 2026 19:15:05 +0000
+Received: from mgamail.intel.com ([198.175.65.16])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w02XR-0000000A9ue-0FMm
+	id 1w02Xm-0000000AA2L-3DpT
 	for linux-i3c@lists.infradead.org;
-	Tue, 10 Mar 2026 19:14:42 +0000
+	Tue, 10 Mar 2026 19:15:04 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1773170079; x=1804706079;
+  t=1773170103; x=1804706103;
   h=message-id:date:subject:to:cc:references:from:
    in-reply-to:content-transfer-encoding:mime-version;
-  bh=vIFLZUKvRcuLDyB6xYkv640N1RdTQ0kPw4/GPObvgDI=;
-  b=QYpu+F3s2BEp2VaUh9FI9NQkNPFKTJnjfu1FAwZWbuh8xFWpifEi5S83
-   fR8/pzZ0XNIHZhJ2wT0AeCbTPx+tz/vIHlWo3RphOPDW1Apr2iz86j55j
-   5UGAX8nhzYJMiLpNFBZCk97CMfNDLHLXJRsJ4Z3LUGjmmvNATYSgx0rS7
-   IAtP8s78KrBzXtkk1DiW4mA2dt2I/PZsoffsOmVmEIiqL4rKjO0zVgSmZ
-   smg8W0Zf1LmmOYNoTySGqy3iU97rVLeqGvw8wBnwrAuqcb+3MjEgKdClW
-   n+ukQ/14GqvlqPID/tXqPYmcJCo74pRXMuRBLSrr2CyGZ+k/QUr0MX0wl
+  bh=OstLv5OZ5oEs32wUBOopH/AQvD4AjdMnjuMJvlm/4e8=;
+  b=DMp3iLxU4EW15/v8u4PXdlbMpS2cf9+/dk49d0RnlfGwYjsdJlkKE0zH
+   DXXFheudcpcAZxoniB+WGhbCvfFqXc/7AMZ3nHk1f5LcFcbDDCN/Jz3Si
+   LFR88C7Xw4JlzflhW3yc4+OBxQJyQBvfziEMlR110/JKZdhNfG75YnHeW
+   4VzEgqEXE+WNzV0e+mBdxoTqkr5gRb7sI8YKFioteHkXpUU+xLgGgkepi
+   HCwPU1Vcp554C/fr0rC51u5luq7DtVBM+XNj3eMy10SK2fbGk8N3L2ic0
+   bvLRhfmE+pugFnDtnfoLLcNTDHEZJjI4so3j7OeWVQnMPL16Pq+y5/rPY
    g==;
-X-CSE-ConnectionGUID: IyShji4BQGW54ATgcrtOyw==
-X-CSE-MsgGUID: 5AD4o/+hQ/eOEU+aQPnKmA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11725"; a="85319780"
+X-CSE-ConnectionGUID: auakZOXAQtGron0glUZBBQ==
+X-CSE-MsgGUID: MwUn3PnTQ5mHimU4oL9VIg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11725"; a="74419301"
 X-IronPort-AV: E=Sophos;i="6.23,112,1770624000"; 
-   d="scan'208";a="85319780"
-Received: from orviesa001.jf.intel.com ([10.64.159.141])
-  by orvoesa105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 10 Mar 2026 12:14:38 -0700
-X-CSE-ConnectionGUID: Jc4ByURJTwCLeKxdVB4V9A==
-X-CSE-MsgGUID: hbpX1bcsQWawOwh/gxwANg==
+   d="scan'208";a="74419301"
+Received: from orviesa008.jf.intel.com ([10.64.159.148])
+  by orvoesa108.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 10 Mar 2026 12:15:02 -0700
+X-CSE-ConnectionGUID: W8pU+3l7TK2uXF/1OZD1lQ==
+X-CSE-MsgGUID: TXQOMdXWTjSrIm5N+buUXw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.23,112,1770624000"; 
-   d="scan'208";a="258138265"
-Received: from fmsmsx903.amr.corp.intel.com ([10.18.126.92])
-  by orviesa001.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 10 Mar 2026 12:14:40 -0700
-Received: from FMSMSX903.amr.corp.intel.com (10.18.126.92) by
- fmsmsx903.amr.corp.intel.com (10.18.126.92) with Microsoft SMTP Server
+   d="scan'208";a="220259373"
+Received: from fmsmsx901.amr.corp.intel.com ([10.18.126.90])
+  by orviesa008.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 10 Mar 2026 12:15:02 -0700
+Received: from FMSMSX901.amr.corp.intel.com (10.18.126.90) by
+ fmsmsx901.amr.corp.intel.com (10.18.126.90) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.37; Tue, 10 Mar 2026 12:14:39 -0700
+ 15.2.2562.37; Tue, 10 Mar 2026 12:15:01 -0700
 Received: from fmsedg903.ED.cps.intel.com (10.1.192.145) by
- FMSMSX903.amr.corp.intel.com (10.18.126.92) with Microsoft SMTP Server
+ FMSMSX901.amr.corp.intel.com (10.18.126.90) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.37 via Frontend Transport; Tue, 10 Mar 2026 12:14:39 -0700
-Received: from PH8PR06CU001.outbound.protection.outlook.com (40.107.209.49) by
+ 15.2.2562.37 via Frontend Transport; Tue, 10 Mar 2026 12:15:01 -0700
+Received: from PH8PR06CU001.outbound.protection.outlook.com (40.107.209.21) by
  edgegateway.intel.com (192.55.55.83) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.37; Tue, 10 Mar 2026 12:14:38 -0700
+ 15.2.2562.37; Tue, 10 Mar 2026 12:15:00 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=b630OpnY7GvHdS6wgOeEAPaHys6sap8D/taIMowEKrSanR9QeQ7SQC68Urn0MfWSZ+YmBkilT5yDxfaXuwWxDP9Ybv+uTgqdUQdSkhRmO1c8VuIc4hhII8OBJbu8+zmYO+H1swGwZwS3Rhti/50eV5QxBoWvpUpXrqnPmLrtoAxgJydFkDYQckzbV292Ysa4AbeyjzhAra+9EVquNGdIjs0+K+Hfa1NbYRNYJkKpjP6DrpgEnspCsgS5jknOybI91dasapDD1jgowZnbNLZg12rkYwLApFamrVp+N23TSzAIb1qLeQYFXP5O5q2rztWhXY1IBXyGfJNFt8Tno87WqA==
+ b=fMaX++vi3hy7kWcXZyjGEiv2kQxaMU83+BOhRvvhZnced9BlxebhM2O9407f1rmVDgwovogUoHCA0TMQunfbLWRaWV0YdnQbU30X6YHxM5d9DRz16OleVClLTminLknSAOYchjApoXg+ZUtvt3XEec2XH2A4qKAARYdFx8/MJkRlrpekc/HhqpuojIuf/CWoclhTtBRLiFc3LaGpaQHwvfGKrVsCbYgp6g6Wg7LU1l9/KsRYlir7Yl/Wg4pK2kAV0gRx3epc8fJpXFiP7DCwe0oOXAKTK4gVTyApvpwrpSsFvH0BkIzuDB7pHvYtDUMro1PuRHL42tHjCG7XaMIxCg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=KCkbC6YL9LyYli41muiK9q3gT+ZyYoyib1vKVoyAqOg=;
- b=qiR4ruUB8Sa+auwCei80xkN/AeIV0iTqhem5oP5D9ENQ3zq37x96vvxMmPJHLzcgvLb7ITazh6RUPIsz6yn3HzYo6U5ZyJnK89gpluhx5ReE3ItnNN9NeBjfZ9vk+HvxMPHZjS6N98EyzgD/UA7/7uTVBEBX8pn7XE4w12BgfUAL5UYOWuUZggvcr1XFKFnv1Ay0QL7gMH3PWP+vzhPkTl178RikBQfq8iYJURvDeMRm7+AayJyz3IRcBJ9ne5iCIdYf65lwUNDSXHuWlkbvTugLKJSJVzsHiXADHtYv2Mp3ruOvEIh8UPeKAIiYoVo104II4jPz7ApD5n2bAqnSSA==
+ bh=Q+LZsz54vcl/PfLnapbJdCDNTOyXF3M3PjPA38pUZFE=;
+ b=iI2V3KOKTlDYt+x2O2avxbvpd1e82fD3X8QkmLWszj5WGCGGhOjNCfqJEmwn+GJFbsMjRGYu3PX/4IAlaFaVdfRldnjlPeGtoabdT6+RTFudDzhTdhQwAt8vuFpsWqxbzQkYRxJMhZYRPIod0DsTw0+HZkiyUgJWz4tqaVff/bYvt/5HngSVfAiPKLQvoZ4SkCyMzfzFD9AVSg0OflZg5Gt29f6gJgGdMHmW5rbUapDmUq/KsiR8cR76SdtzLrnJDRpyFsq4357SP20kIWr+P9NS7jMahFnmSS8K0UVo6jwnYUPFiSPjyEaAyYr1d50h4UrJkOvYsUbbY3PpZlK7fA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
  dkim=pass header.d=intel.com; arc=none
@@ -83,96 +83,96 @@ Received: from IA1PR11MB7198.namprd11.prod.outlook.com (2603:10b6:208:419::15)
  by DS4PPFE901A304F.namprd11.prod.outlook.com (2603:10b6:f:fc02::5b) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9700.11; Tue, 10 Mar
- 2026 19:14:35 +0000
+ 2026 19:14:58 +0000
 Received: from IA1PR11MB7198.namprd11.prod.outlook.com
  ([fe80::2c4e:e92a:4fa:a456]) by IA1PR11MB7198.namprd11.prod.outlook.com
  ([fe80::2c4e:e92a:4fa:a456%6]) with mapi id 15.20.9700.010; Tue, 10 Mar 2026
- 19:14:34 +0000
-Message-ID: <6d526ec8-af80-460c-9663-67ed7ceb78bb@intel.com>
-Date: Tue, 10 Mar 2026 21:14:30 +0200
+ 19:14:58 +0000
+Message-ID: <a8bac9d0-3d7e-4d9c-8066-e030dd221153@intel.com>
+Date: Tue, 10 Mar 2026 21:14:53 +0200
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/5] i3c: master: Move bus_init error suppression
+Subject: Re: [PATCH 4/5] i3c: master: Negative error codes at send_ccc_cmd
 To: Jorge Marques <jorge.marques@analog.com>, Alexandre Belloni
 	<alexandre.belloni@bootlin.com>, Frank Li <Frank.Li@nxp.com>,
 	=?UTF-8?Q?Przemys=C5=82aw_Gaj?= <pgaj@cadence.com>
 CC: <linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>, "Dan
  Carpenter" <dan.carpenter@linaro.org>, Jonathan Cameron <jic23@kernel.org>
 References: <20260308-ad4062-positive-error-fix-v1-0-72d3c5290b4a@analog.com>
- <20260308-ad4062-positive-error-fix-v1-3-72d3c5290b4a@analog.com>
+ <20260308-ad4062-positive-error-fix-v1-4-72d3c5290b4a@analog.com>
 Content-Language: en-US
 From: Adrian Hunter <adrian.hunter@intel.com>
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park,
  6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 -
  4, Domiciled in Helsinki
-In-Reply-To: <20260308-ad4062-positive-error-fix-v1-3-72d3c5290b4a@analog.com>
-X-ClientProxiedBy: DB9PR02CA0029.eurprd02.prod.outlook.com
- (2603:10a6:10:1d9::34) To IA1PR11MB7198.namprd11.prod.outlook.com
+In-Reply-To: <20260308-ad4062-positive-error-fix-v1-4-72d3c5290b4a@analog.com>
+X-ClientProxiedBy: DUZPR01CA0320.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:4ba::16) To IA1PR11MB7198.namprd11.prod.outlook.com
  (2603:10b6:208:419::15)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: IA1PR11MB7198:EE_|DS4PPFE901A304F:EE_
-X-MS-Office365-Filtering-Correlation-Id: 998e30c4-bacd-4965-8d31-08de7ed943d6
+X-MS-Office365-Filtering-Correlation-Id: 3538eb56-6913-4542-064f-08de7ed95223
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|1800799024|366016|18002099003|56012099003|22082099003|7053199007;
-X-Microsoft-Antispam-Message-Info: ruKk5jNH3NqIgd7jpRXC+r9lm/E1WPRtV5OpQKQaczQmNaXU/mOh9ITky0GJR1BHy9x3Mgmm1bTDS1L2rJ+/K/C2k8GcmFp7dCe6E1c7tPRAcTfA1rslqkXguYjxNfCZLDUpj69iaJibpLVG/6oZRyyy4Hod6/cw9u4D1ZPVAI7LkxrrekDdJKgeBv8pNmFaVhF65ue3xaSajnLpemMXxrwDyzFmgsySJfzV7gluyqqIJSa8RHAh8aM9cyZZ2DwoYTQZFs6T8nWEwUnjO1GTMcp2lHUhuxlbxE3YxRz9ZbJD0ZlhRpcR+8AaShDMgyz3My/qHfXgk2g/gGS5neoAF/HMXozCZeZoIGhQ7xTx6QaXk2v59Q8OaUtkfHigUCKwiVgeMv7bIt+IbhUzQ5IHrQo66ZwlovJtfLhy3IF5erSqUnr2K5psZAptVsgqtDXc8A/fVK4Bbsds3bXyZqhAAKFKFVV3lwiWZEow4PYKvxES879Xzd6xUjI6UtQN/FK9/wY4z0DTROeY7G8869qN+NYR3YLR6fofdWmmNSqC+thWyK3wofWNVvVzYcRT4eFzGr9hM9ajubOUFv5xni/zJ2ZeeHCtRMU11h4Z0yCE9pNJcjYLGKpmKYleMYZ859hRd+FVEsXP4+BZtPlyC7g5yvDKsLuDLEbLGjzXyoSwj8xNzLVbn8jNz6oGA/WnQAVXt1fwiGkzoHSiBithpRlZzFCNY7ed+uREKf/l4stWbXk=
+X-Microsoft-Antispam-Message-Info: fgxFw9EkPACIPIzu2GbpCOOCUYYff4akA8Kr072Z/b9umWG7e3hiiPQ/N2ppgl9uV3tZQ4i7ozkyfXjXEraiv6SFS9hjij06JE+S9xDqBtxJqx3ccV/4dsKsZ44mRcdMG16s3xTzOwv81hHi4ekJZVOUzPyHPphKXES/8NrtJ6CEHR3O9+ViiQNrA5m3SdAsqKIJgBTFXWJmZy+xtZQYYt8ON1iMbhNPfYEVwhwT3qbaQNNorgtb7Fj+Y+RmhE/+oRnRoMm0sMTJNSRl/ngg0GxpyYxte0P3xGkeYPQHF1tQhGNJh6LMn12fkpM0gI3jTLYXLLgZQOIriHSnrqGCTbcywTYUaBdxoHCeOeA4XbwBi2ZurERevArarCGte6+oLSPvCd3HMokq1WgLcn9Kf8RoVEKJ5XkUaSEYmVOH5OIWoA5jorxI6PtmI4yAIC51InWERKudXbhFqql7aAivJpf2LYT7q/1Cgr9/+aG2lTUX3laFDpXiy8dCJurHvNP3EaC1yrc2QhNXbwGD8dhWlEJkWnQ5MOFaS99n2XhKyGcZGb+SDUkohfAitagsTQc11Kj8fLYCxlnmKrkHT9lnAYchXaIVE1wmUEa8ya822wzTYS5S+UnVB85POjohKBsSSAPxoLikwXeU9J6vczbxgwi3p/aXOyrVgCKqd2t/VKmPUBPXc5Fg/PrTOLk8qCfkvKH6bgOTw0wIgomOzXRn6HbZIctxq6aE5fIQ11U2bBzr9e4wNvuZwcPR278E+dJa
 X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR11MB7198.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(366016)(18002099003)(56012099003)(22082099003)(7053199007);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?K08rRmlJd1JXbTFIYjBlYnM2WHEzR3ltZENvSDVuYnlqclExbWp2WkFFQ3RL?=
- =?utf-8?B?OWR1bnBFa3cxVDlEMUVqKzZhNkNVc2V5VERvajJxV2srSDB6dmVGcWdFTm0z?=
- =?utf-8?B?MnpvdlJoQk9ERnNRUEZpNFhWQ2JsNGpEdGdPTkxNQ2pCa1ltY3lMVHY5V3U0?=
- =?utf-8?B?V3pUTmVCQVNkMnNLNE5nRGdINFFwdmUwOXN4V21Oakt1WVlhS3E0Sm9KUEt0?=
- =?utf-8?B?dFlZVUJUQ0p1WThqWG5nQkNDTEhXczY4ZFBaR0tRU3RHMkQySVBNbUROZlFw?=
- =?utf-8?B?N2ZaYjFBTmttaWFMNEtyTU5BVTQ1RUZTakFLaEpQazArbHBJQ01RbEx4andw?=
- =?utf-8?B?Zk5zam1rSTY3NzFBa1Yya25qSmZBYmFtQ1cwSXEyVGF2MHNvNHNkT05NbG9x?=
- =?utf-8?B?ZTdoYVdSbVZsaXFUdDhXTmNNeG5NdERIaU0xaXlQaWxFRWVGOFVjZnUzWS91?=
- =?utf-8?B?SE84alJpQVlRQU16cmcrWUV6NE9pRWl1K1NzMXF0TXZSNFNuWHVVQ3A0QmxH?=
- =?utf-8?B?R2NVeFNlRVJOUUJqNzdtekw0MDR0blNTOVJld3BsWFU2dDhWeDJjNmFjVnM0?=
- =?utf-8?B?YVhQYjZzdGF4cXpXQ25mSThsdW9HbkNaYmtENVd0ZmRqb3BsRC9OVis5OUw0?=
- =?utf-8?B?WHM1czBxSG5TT1NKUkZGVlBRWDZVNlBKUHFxTkswdUwrRmlUWDg4dnVxYXF2?=
- =?utf-8?B?Z2xSN1VTWDM3WEJLVmFVOWpFYTJPVnk4TmEwRXdxd0RKZVR6VEpEYXBlUVIy?=
- =?utf-8?B?S0NJT1RrYTlsbk5lSTVnSjZFdjV3Q3pLWU10S1M2dlBKcWRKZVl2VFhkSnVs?=
- =?utf-8?B?YXA0ZmFmdTRUL3lKSmhIL0FWLzhJdUlQT2xEM3cxY3YyR1R4TThVK3RGNHM4?=
- =?utf-8?B?ajBkd2tHZnhXYXZaa0NHVkxFMnJPMitxUTc3ZTBCblJCUkFzS09ZQzlGQ3BZ?=
- =?utf-8?B?Z2djTlZFVGFvT2ZUdDFYMDdZS095TVhFMzNqMC94dDgza015Wmo0K3IydDhy?=
- =?utf-8?B?a3czVy9odlpWZ21NU1RHSzVuM1VBYnRiV1NrR0hxb3kxdGNoZGFmTWFEbE5R?=
- =?utf-8?B?M3JRTXBsMitVMjhNOWRvY252NzMrQlFrTm8xWndwVFE4UHgxVmVHYU9FTG9I?=
- =?utf-8?B?VzQ2Z2tacHVhdGM3NVhrQW8zR0svZkhyYUQyUmlaWDUreDFLQjFMM2U1eFZ3?=
- =?utf-8?B?QmxXalNqYzZFeWYvUVh3V215cnhJUHdoanJicEsrN0IzU2w3aXF4RUFCRVFx?=
- =?utf-8?B?TldSZGZpL1daU1l6Yi9hRnl3NE9od0lXRjVweFQ2c0pNK013WTdKMkI3K1ZX?=
- =?utf-8?B?QTdsSzVPcjdaZHhidllWUzRkVDV3L1VJK0ZnSEVVK3Q4cnVUMnVNcHgwRnVY?=
- =?utf-8?B?bVhOT3BVd1VTSXJhQ0V3YXBSdnB4WWFkU21YZWo2Zm40ZkZXWm5tRnBFakY0?=
- =?utf-8?B?Ky9LQ1BUekhEUFhsdFJXY2FaZm5OenNzdnd3V3BZTUxKU1k1eDQ0eSswa2pC?=
- =?utf-8?B?bUI1SkQwY01TbkgzSmRHL2g2UTF4NW5mb0RpWXF1SjY4NnZtTTlTVXFHUUJX?=
- =?utf-8?B?b2hydVpmemJJdTRWdU5weWRjRlpHekxnbnV5Mk1ZUFNLTENYRit1Z0FEQWRW?=
- =?utf-8?B?bEhSZEZ1RFRnTVBrRDZ3Qjhzd1FaY1VTckNZRENsRUFnaVdxbk1OR0prbGZL?=
- =?utf-8?B?QzhyTG5LSjZNVjFUUXJsV3Q3MElWM0oxRzJWU3pzNWxkNUx6ODN5dWcvMnBq?=
- =?utf-8?B?elQ5Tlh3bk0rMVR5OC8vQUdGMjArUWI0bXpIazhZWWhsazZLbUJsVW1KZ01K?=
- =?utf-8?B?djVIRDlVMEVQazNyRGdpaDVSeW9xQ1NWY1Z1d0EreHVUSitiN0FDM0wyK0Ja?=
- =?utf-8?B?SkJDMmJqMU9aNnRjWWJlNnl6TWxjcmdjcWlPMWQ3eEtOTEFQcXF1cmUxUnU0?=
- =?utf-8?B?V0FET2ljbmkzbnUxRFIwN3VYTm42WkZuaks1ZC8ydGMxamEybWRQTlVpOWg5?=
- =?utf-8?B?TFlJOXVFMW9KbnA1dWZKWXR1MXkzcWZQalBLVjdSVnhOU2luUnNoUUJDeXM3?=
- =?utf-8?B?RVA4SWxLdUI1UmNiWUUzL1MrdnVqVTRkV1Y4VjNKblVvL1Fvb3F1bTdxSGd0?=
- =?utf-8?B?Y3o4UWZ3MDNxVXNjbVBqbjd2bHNLTjU1ZmluUUwxY0ZYTm1LMWRuY2ZzQkFh?=
- =?utf-8?B?SkZhVjhMQlZTa1BTOXNTSklhYjJwQlBoSnBNVnh3Z3diK0hmMTN4SmNZNkx3?=
- =?utf-8?B?T1R0c3dBdGZCVjVxYnBhSElhL014Nmp4L1VlM1pITDVmUHRwNTIweElLTnh1?=
- =?utf-8?B?RjFseWlTT2VGTHdZM0ZYMWdyZFlzUkRWYmlCaG1JZEYxaW5Ec0gweDFtaTBC?=
- =?utf-8?Q?+2ULs848JH5XOwsQ=3D?=
-X-Exchange-RoutingPolicyChecked: oCRB8AA2ElbYcc39Ru//eFJh3FVJhUsM9nabBo32BCsgXLq08sBg/wQAa/Y0osXlbWFoGhatm+OWlUjWPwR+Hw2ysRklaX2HMlPhaDj5ZPTOf4z44RHBsZ3nWu7gUhZ1k3XbAr3F6yltV/ddLY1IBqPbOJeHt/LKJFLL8Gbzg1jOugeBy3onfVcVNYyZzmbUqsFNUYv4QjYeTMm/AibmqpTLoJOnqQQ2p2xEqvVm8ibdPsvnVt3HOlkR/7PRF+9atDxuVovBHdtZaiGuF+B7o+BVjstHiNMPo91nCRVXseZqzC2VHze846B814oLLl60mj6SnAAT+s9QJclCLnEA/w==
-X-MS-Exchange-CrossTenant-Network-Message-Id: 998e30c4-bacd-4965-8d31-08de7ed943d6
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?Q3lFdFlxQ29MTDViTVFramJHUitUOUdKTzhjTG9vV2F4emd4ZnN4VEJSb3pT?=
+ =?utf-8?B?Mi8vcFZkVGtlRUtsdTV1bWp4eU9Gd3d6MExxOE44QXVMYlhmTU0weVdkZkdV?=
+ =?utf-8?B?Z1FYMis4MVg2NWJBTTZQaVo5bk83dlJyZVVERElJRmpxd2RKR2srZVVab0py?=
+ =?utf-8?B?dTFuRXdheGU4ZzhWckR1YjNGNUM3dld6YUVCa2ozcGhHQzF2V0I0VkJYM0xD?=
+ =?utf-8?B?NFhrT0RFenpnaDkzdnZqek9lRlZOaXRDT2dFbDBwVWo5L0NWK1JZMHhKd0kz?=
+ =?utf-8?B?eUlrMDlYK0VwUjhWWUZMUmI2L1FhYWc0TEcxQ3VwakNwK1ZKVmFXWVBMZlhL?=
+ =?utf-8?B?UjFFM2dzNVlGVmlXQzZXc1R6Z2RGMi9Yczc0UWlqczdnWDJGRzB5MnRPNXJJ?=
+ =?utf-8?B?V3pyelo2eWdNVWo0RHF0OTk3cWxGQlErTzlkTW1qL3c1RlQ2K0ZaNDVQbW9L?=
+ =?utf-8?B?NDN3M1JFVHVONU90bGNFMWszd1lwQ2l4ZkRMbnovejBIR3dqNnR6N1JheDdG?=
+ =?utf-8?B?RzJHK3JDSDBTZTJUYmpHTVBCbXBsQlk4Z2YvZTBzSEErR0hiYXZudVAzY2dZ?=
+ =?utf-8?B?UDFXMEpxRGxjN3JjTFArVEJiSzlZRGRFQURraGJoRURzM1Z1ZTZoOElTVVR2?=
+ =?utf-8?B?ZExkcDQzL1AxRFBaTHFtV0lycmlnMHNueEExcmwvK09MVllXK0ZtbkZKNUt3?=
+ =?utf-8?B?Zm5XL0I3QUsxVk56d2VncWJPbUFXRXZ0NkVFaTJoRmpMV0wxRHJjMXBiam12?=
+ =?utf-8?B?bVNxaHRBMDRUVlIzSHFkR3IrUmpPS0pmWnhmRWw3YStWS0ZHQWszMndxY0NQ?=
+ =?utf-8?B?S1ExVjRXT1o2M2w2QWphekcwcDRnV0RlTmk2MXhKNXVtSHBzUXVFYmhYTFQ2?=
+ =?utf-8?B?MXRZbGxncVQydC9sTnAzTXhyV1ZlTmRFcndLRVJTOWQ2dkhPc0ZOSHJueUY2?=
+ =?utf-8?B?WWpUT2wrbEF1TS95Qkw0TVhjU2czeXFLU005eWZLbitZaHZLWFpDdm8xSXpQ?=
+ =?utf-8?B?eVhQUmh0c0MwZFpTNzlVN292bjJZanZPOUM4cmgwcmFBclhGd3I2azQ4V2Iv?=
+ =?utf-8?B?VUNsRjZLOWd5R2VBWC83T2hpbW9MTytIU3ZJQkNtaDhmTVpReEJab0dOdDlm?=
+ =?utf-8?B?RkVFbUdEL0xFK2hBcEE3bkt1YmxYL2h4WmNENWJPbmxUOHpTOXJIN3MxSWhw?=
+ =?utf-8?B?N0dKbnlXWElTQnYvejA3a1RJS0xWK3pNUEZpWjdrUWJQaUJmQnJ1MTN3MjRu?=
+ =?utf-8?B?Mzdzeis4SkgvV1FxVGcvam1zSXRpa0NDd3RHYWF2VXRYelpacVBlUmVLajNF?=
+ =?utf-8?B?Mnl6bWJJMzVWdU9vSiswWWZNMGtJY1B6Zjd1RkR3YUdmQVpnMUlybjNyK3Np?=
+ =?utf-8?B?VUdGdkEyWUhWMHdYQm1XQm52dnNRMGYzWmNWeGtIdWFjQVVhZEpwYVVmL1V4?=
+ =?utf-8?B?L2dyU1l3WklqVzlzVGtLMU92YjBrY1BUYmdNeFdoZ0Y0dWI2TDkvcisrU09R?=
+ =?utf-8?B?YnZaT3R4bE9SZ2p3bi9nbXhJVXFwdkhXcXV0bUs3U0dFVTU3M0RUaWFNMUFt?=
+ =?utf-8?B?QVg0ek5jMmczMWc1dzZXWmNQTjMzVXNQaFU3aXJvUEhqSXAvaEJXT1ZiWnRi?=
+ =?utf-8?B?RlpoLy81OEtpcDUzTU4vank1MUw4Zng3SStCN2JhY1VnTllIT3NObzRJTUpr?=
+ =?utf-8?B?aE9BR3pOaGl2VldEZGJzaXBZY21yb0JRL0w2bmFQSnFwb2tNNG53UUdCZE94?=
+ =?utf-8?B?SC8wKzdXV3FkcjNtV0dPQmltVWtBY1RXbFRudVRUMVNsaTlCMkdPQlRLeFFY?=
+ =?utf-8?B?SVd6TkoyNGdZOGxOeC9ObkZXMWxVdWF1RDA4eUlPUm1BcVlCL2VEVWhRK0Ri?=
+ =?utf-8?B?MFNhR2RKREUrQmkvbmJ0QTZYU2UzMkswbUpnc3NmdXhiQ0o0RXU4VHRkb2ly?=
+ =?utf-8?B?b1FyZ0hyZk9KcW43RWV1OEtTZ3FzdjFFNy9lbXhQMVpxVE9aaUNFOHlhd2tr?=
+ =?utf-8?B?L2JHVEtCYUVlVEw2d29JcFkvb2lHNmkvTm93elNWRmF0Vmx6UnZIWjBNSVBn?=
+ =?utf-8?B?SWtENWVFZDNYbjFvWXN2ck5EblVKbTZDSkZ0ZjBDUk9wVDRTZ21UdWdXMGpV?=
+ =?utf-8?B?cDEvbS82N0Q1YjBaSjVGdDJlRE5pZDFQd2JKNnNadFlFalV4eWZwOGk3UEw2?=
+ =?utf-8?B?anFSY2p2UjNvSFRXV2NFMWNiZXFXWFROWlpRaXZkeWFXeHlCdGVWOG1HM1RB?=
+ =?utf-8?B?Q2puM2FZWi9oQ2s1VFhJNEs3cXBWdzRMaVZZYlY1YlhiUGc3SmVzS0I5eVlL?=
+ =?utf-8?B?TWw3ZHhCeUs2K3JBOXhyT1FXK1g2a1FjMTArZ3FqU0IrRHZ4ME4yWjB4bjFV?=
+ =?utf-8?Q?/pA2tUg2/dQa7R9g=3D?=
+X-Exchange-RoutingPolicyChecked: uDvzJZWcpOOXM0MKSaBxGOYdlI9Ou9ca/Ws/d1rhallrKk3Wr+rK0APCXOSmjoMx6x73Ys0lWx4e+h4oTnStCwH1RujXZYFG1cIoTT2KJSVhpjDVUCD4WAsOrIwYLZli28NWvjJaBqR6/YiskN8+rVPvmTCCXsERrk2t20WasnYHR0Sj4InqQ2W+8M69VjoeE7Jo4Koa0x0/pYro4bjnzy8eAQDFLTpZXPyRzC3rdzbFvc7Xw73WPXQR8miPLXfSMJEmYP1DHe0dUyeaDDhMiijOqKjEkQY22oKP613do5TH1VJ0CM4nvsTK53BLdMDhbSK63cBzQAOIVJ8d/JebIw==
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3538eb56-6913-4542-064f-08de7ed95223
 X-MS-Exchange-CrossTenant-AuthSource: IA1PR11MB7198.namprd11.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Mar 2026 19:14:34.7421
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Mar 2026 19:14:58.6251
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 46c98d88-e344-4ed4-8496-4ed7712e255d
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: ht+EILG9SCxeKdh5BnCmUJdJiXuu/0cP3KTXa4otBzIPyRnicnOQMhqbbX/ozPhjh07wjIAssjTECNshYhl4xg==
+X-MS-Exchange-CrossTenant-UserPrincipalName: 7O9jHJ5sPfzzRsUm7R1ZN8G+MJiE4i1A87mocFWQYY/xzbUrXa42F53uzXNV/kkM1wpEfB7NOj6ER0tfZUIZQQ==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS4PPFE901A304F
 X-OriginatorOrg: intel.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260310_121441_150657_D1FB2E6D 
-X-CRM114-Status: GOOD (  20.27  )
+X-CRM114-CacheID: sfid-20260310_121502_872354_5F4FAC97 
+X-CRM114-Status: GOOD (  19.88  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -190,62 +190,107 @@ Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 On 08/03/2026 18:47, Jorge Marques wrote:
-> The CCC DISEC to broadcast address is invoked with
-> i3c_master_enec_disec_locked and yields error I3C_ERROR_M2 if there are
-> no devices active on the bus. This is expected at the bus initialization
-> stage, where it is not known yet that there are no active devices on the
-> bus.
+> i3c_master_send_ccc_cmd_locked would propagate cmd->err (positive,
+> Mx codes) to the ret variable, cascading down multiple methods until
+> reaching methods that explicitly stated they would return 0 on success
+> or negative error code. For example, the call chain:
 > 
-> Handle inside i3c_master_enec_disec_locked the exact corner case to not
-> require propagating positive Mx error codes.
+>   i3c_device_enable_ibi <- i3c_dev_enable_ibi_locked <-
+>   master->ops.enable_ibi <- i3c_master_enec_locked <-
+>   i3c_master_enec_disec_locked <- i3c_master_send_ccc_cmd_locked
+> 
+> Fix this by returning the ret value, callers can
+> still read the cmd->err value if ret is negative.
 
-Commit message has the same issues as patch 1
+You should say something about how you know that is safe
+to do. e.g. although there are myriad call paths, the code
+never distinguishes positive from negative error codes except
+in cases where it explicitly checks for I3C_ERROR_M2 and
+those have been dealt with in the preparation patches.
+
+> 
+> Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
+> Closes: https://lore.kernel.org/linux-iio/aYXvT5FW0hXQwhm_@stanley.mountain/
+
+Fixes tag?
 
 > 
 > Signed-off-by: Jorge Marques <jorge.marques@analog.com>
 > ---
->  drivers/i3c/master.c | 11 ++++++++++-
->  1 file changed, 10 insertions(+), 1 deletion(-)
+>  drivers/i3c/master.c | 29 ++++++++++++-----------------
+>  1 file changed, 12 insertions(+), 17 deletions(-)
 > 
 > diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index ce1898345810..3e465587c9c7 100644
+> index 3e465587c9c7..8459fffbdebb 100644
 > --- a/drivers/i3c/master.c
 > +++ b/drivers/i3c/master.c
-> @@ -1078,6 +1078,15 @@ static int i3c_master_enec_disec_locked(struct i3c_master_controller *master,
->  	ret = i3c_master_send_ccc_cmd_locked(master, &cmd);
->  	i3c_ccc_cmd_dest_cleanup(&dest);
->  
-> +	/*
-> +	 * If the addr is I3C_BROADCAST_ADDR and enable is false, the return
-> +	 * error is cleared if the Mx error is I3C_ERROR_M2, to match the
-> +	 * initialization state where there is no active device on the bus.
-> +	 */
-> +	if (ret && addr == I3C_BROADCAST_ADDR && !enable &&
-> +	    cmd.err == I3C_ERROR_M2)
-> +		ret = 0;
-
-Seems a bit ugly.  Maybe it would be better to pass down a parameter
-to specify caller's requirement for M2 errors e.g.
-
-static int i3c_master_enec_disec_locked(struct i3c_master_controller *master,
-					u8 addr, bool enable, u8 evts, bool suppress_m2)
-...
-	if (ret && suppress_m2 && cmd.err == I3C_ERROR_M2)
-		ret = 0;
-
-> +
->  	return ret;
+> @@ -898,11 +898,17 @@ static void i3c_ccc_cmd_init(struct i3c_ccc_cmd *cmd, bool rnw, u8 id,
+>  	cmd->err = I3C_ERROR_UNKNOWN;
 >  }
 >  
-> @@ -2112,7 +2121,7 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
->  	ret = i3c_master_disec_locked(master, I3C_BROADCAST_ADDR,
->  				      I3C_CCC_EVENT_SIR | I3C_CCC_EVENT_MR |
->  				      I3C_CCC_EVENT_HJ);
-> -	if (ret && ret != I3C_ERROR_M2)
-> +	if (ret)
->  		goto err_bus_cleanup;
+> +/**
+> + * i3c_master_send_ccc_cmd_locked() - send a CCC (Common Command Codes)
+> + * @master: master used to send frames on the bus
+> + * @cmd: command to send
+> + *
+> + * Return: 0 in case of success, or a negative error code otherwise.
+> + *         I3C Mx error codes are stored in cmd->err.
+> + */
+>  static int i3c_master_send_ccc_cmd_locked(struct i3c_master_controller *master,
+>  					  struct i3c_ccc_cmd *cmd)
+>  {
+> -	int ret;
+> -
+>  	if (!cmd || !master)
+>  		return -EINVAL;
 >  
->  	/*
+> @@ -920,15 +926,7 @@ static int i3c_master_send_ccc_cmd_locked(struct i3c_master_controller *master,
+>  	    !master->ops->supports_ccc_cmd(master, cmd))
+>  		return -EOPNOTSUPP;
+>  
+> -	ret = master->ops->send_ccc_cmd(master, cmd);
+> -	if (ret) {
+> -		if (cmd->err != I3C_ERROR_UNKNOWN)
+> -			return cmd->err;
+> -
+> -		return ret;
+> -	}
+> -
+> -	return 0;
+> +	return master->ops->send_ccc_cmd(master, cmd);
+>  }
+>  
+>  static struct i2c_dev_desc *
+> @@ -1101,8 +1099,7 @@ static int i3c_master_enec_disec_locked(struct i3c_master_controller *master,
+>   *
+>   * This function must be called with the bus lock held in write mode.
+>   *
+> - * Return: 0 in case of success, a positive I3C error code if the error is
+> - * one of the official Mx error codes, and a negative error code otherwise.
+> + * Return: 0 in case of success, or a negative error code otherwise.
+>   */
+>  int i3c_master_disec_locked(struct i3c_master_controller *master, u8 addr,
+>  			    u8 evts)
+> @@ -1122,8 +1119,7 @@ EXPORT_SYMBOL_GPL(i3c_master_disec_locked);
+>   *
+>   * This function must be called with the bus lock held in write mode.
+>   *
+> - * Return: 0 in case of success, a positive I3C error code if the error is
+> - * one of the official Mx error codes, and a negative error code otherwise.
+> + * Return: 0 in case of success, or a negative error code otherwise.
+>   */
+>  int i3c_master_enec_locked(struct i3c_master_controller *master, u8 addr,
+>  			   u8 evts)
+> @@ -1148,8 +1144,7 @@ EXPORT_SYMBOL_GPL(i3c_master_enec_locked);
+>   *
+>   * This function must be called with the bus lock held in write mode.
+>   *
+> - * Return: 0 in case of success, a positive I3C error code if the error is
+> - * one of the official Mx error codes, and a negative error code otherwise.
+> + * Return: 0 in case of success, or a negative error code otherwise.
+>   */
+>  int i3c_master_defslvs_locked(struct i3c_master_controller *master)
+>  {
 > 
 
 
