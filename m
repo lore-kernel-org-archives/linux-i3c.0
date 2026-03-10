@@ -4,38 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF491FCC9D2
-	for <linux-i3c@archiver.kernel.org>; Tue, 10 Mar 2026 06:57:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0D7C5FCC9D3
+	for <linux-i3c@archiver.kernel.org>; Tue, 10 Mar 2026 06:57:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c1nC7KFXe/JHgiXtYkBf25wGfz4KGxvxBZgFmdH/veE=; b=dFSAy2M66Vk2Mr
-	bnq+uWQqIXgKCa/nCMaeo1hOH+hJMZA2/Df9FCNfQY6YTrAtiRuL3HQpdl/phlnqGmYxtAwY4nIyr
-	rohK5txXrr2J2sBxI2TzC89H7P6GJWZdTSlqoC3KBpvd4s2I9LUWz62gSBRiSUT+a+PfIxkHJb6Ps
-	eQCzMHeAVEibfca0bWUinnNObP8LNnpsdLKQfxxnvH0we1ABGKg1x3y38BIIzfXNvQEQ+FtWu+9Gu
-	jO5NKz+P1Cm46fBvy0CrPZTapxZ26OXdZLy3RZK7h+QNHqZ/8iPNBYZDl6DIuQvec2jgkSI2cwKgg
-	CgVLImCfOFa1oNZ3K//w==;
+	List-Owner; bh=3faj+klwdCe+BMY/2DzUn7gIRF/6mP35pOfhFSiFxAM=; b=imSGo2Hfmqs7s8
+	No8eYMWmbuWWS4Rw7ziatDY3FNNAebqPWE5AXqwREgz/EUfC2EWt5mXvjWLdTN6uBCX4ylEEjRdti
+	tv0jNjeZ2M1EjHjxZdoRJnkGUbucjVs50+F5I1Tc//6qXRwI8aTF2+TfzrBZPLSXyw9raugkhkOsb
+	u2YhNwMd7mmtCTfLQTp7SuyJWajjzdZwssvvR65nHq70Q7wgq1yEiJ9K+C9ZkvD0ZKJraYWE7FqEi
+	O93Qh5gL0io8TuK5bbfwR590kKUDr/mE1y2NvKLEghe1REocVHpADVs66jbPKD2EAznDBmURPFuVw
+	BGbfYaXxESaZ3vI/rJnQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzr2C-00000008p7X-26BZ;
-	Tue, 10 Mar 2026 06:57:40 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1vzr2E-00000008p8l-3DYv;
+	Tue, 10 Mar 2026 06:57:42 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vzr29-00000008p5R-2qLu
-	for linux-i3c@lists.infradead.org;
+	id 1vzr2B-00000008p6K-2Z1X
+	for linux-i3c@bombadil.infradead.org;
 	Tue, 10 Mar 2026 06:57:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
+	:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+	Content-Type:Content-ID:Content-Description;
+	bh=MY7QUfhsHsRfzF78Mdr7r1JkN/9UCP2YpeXKBT7Qf/o=; b=XOGIMJ2rzW8bsjjp4q0rBPuppN
+	Oqq7r/aISPHh1JtByXbGtITdauBkO7U0ysmUsfrVTVL1T8eW9BmtrO96zHy1TIhv/nj9FABh6in0u
+	A3bTPn/85K9Vz7TNyrO0by4yCjGhjwJW3IL02RxIA749WnHkhNmWeLa7HYFyxGxbni1pc7g9bKQmS
+	WHegRAcFsvotiJoWVe2xZHifAwTq409oH1iH7W1F1gAcUPYPlxEB9/asdncf33c2WWsJHnWV64Ra6
+	nBXUF7eZEvh1CYr0A8WxWHJrviXoNEQ8FDjJ4m8Vus9uBy/CCaxEaAznnhP9yrqoSIZI+g0sek0k/
+	d4OtkU/w==;
+Received: from inva020.nxp.com ([92.121.34.13])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1vzr27-0000000DpnA-2ZNf
+	for linux-i3c@lists.infradead.org;
+	Tue, 10 Mar 2026 06:57:37 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 4632C1A1EF1;
-	Tue, 10 Mar 2026 07:57:36 +0100 (CET)
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C45AD1A1ED7;
+	Tue, 10 Mar 2026 07:57:33 +0100 (CET)
 Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0F4C91A1ED3;
-	Tue, 10 Mar 2026 07:57:36 +0100 (CET)
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 8D9171A1EF1;
+	Tue, 10 Mar 2026 07:57:33 +0100 (CET)
 Received: from lsv03900.swis.in-blr01.nxp.com (lsv03900.swis.in-blr01.nxp.com [10.12.177.15])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id B586218000A4;
-	Tue, 10 Mar 2026 14:57:34 +0800 (+08)
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 3BB4218000A4;
+	Tue, 10 Mar 2026 14:57:32 +0800 (+08)
 From: Lakshay Piplani <lakshay.piplani@nxp.com>
 To: linux-kernel@vger.kernel.org,
 	linux-i3c@lists.infradead.org,
@@ -52,17 +67,17 @@ Cc: vikash.bansal@nxp.com,
 	priyanka.jain@nxp.com,
 	aman.kumarpandey@nxp.com,
 	lakshay.piplani@nxp.com
-Subject: [PATCH v6 5/7] regulator: p3h2x4x: Add driver for on-die regulators in NXP P3H2x4x i3c hub
-Date: Tue, 10 Mar 2026 12:27:25 +0530
-Message-Id: <20260310065727.3759342-5-lakshay.piplani@nxp.com>
+Subject: [PATCH v6 3/7] dt-bindings: i3c: Add NXP P3H2x4x i3c-hub support
+Date: Tue, 10 Mar 2026 12:27:23 +0530
+Message-Id: <20260310065727.3759342-3-lakshay.piplani@nxp.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20260310065727.3759342-1-lakshay.piplani@nxp.com>
 References: <20260310065727.3759342-1-lakshay.piplani@nxp.com>
 MIME-Version: 1.0
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260309_235738_011480_93297A7F 
-X-CRM114-Status: GOOD (  21.71  )
+X-CRM114-CacheID: sfid-20260310_065736_015310_9FCEC0C1 
+X-CRM114-Status: GOOD (  14.38  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,303 +96,275 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
 
-The NXP P3H2x4x family integrates on-die regulators alongside I3C hub
-functionality. This driver registers the regulators using the MFD
-framework and exposes them via the regulator subsystem.
+Add bindings for the NXP P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841)
+multiport I3C hub family. These devices connect to a host via
+I3C/I2C/SMBus and allow communication with multiple downstream
+peripherals.
 
 Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
 Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
 
 ---
 Changes in v6:
- - Use DEFINE_LOCK_GUARD_1 for reg lock/unlock 
+ - Use a vendor prefix for the attributes
 
 Changes in v5:
- - Updated dev_err_probe() for regmap_init failure.
- - Updated module description
+ - Removed SW properties: cp0-ldo-microvolt,cp1-ldo-microvolt,
+   tp0145-ldo-microvolt, tp2367-ldo-microvolt
+ - Changed supply entries and its descriptions
 
 Changes in v4:
- - Split the driver into three separate patches (mfd, regulator and I3C hub)
- - Introduced driver for on-die regulators in NXP P3H2x4x I3C hub
----
----
- MAINTAINERS                                   |   1 +
- drivers/regulator/Kconfig                     |  10 +
- drivers/regulator/Makefile                    |   1 +
- drivers/regulator/p3h2840_i3c_hub_regulator.c | 219 ++++++++++++++++++
- 4 files changed, 231 insertions(+)
- create mode 100644 drivers/regulator/p3h2840_i3c_hub_regulator.c
+ - Fixed DT binding check warning
+ - Removed SW properties: ibi-enable, local-dev, and always-enable
 
+Changes in v3:
+ - Added MFD (Multi-Function Device) support for I3C hub and on-die regulator
+ - Added Regulator supply node
+
+Changes in v2:
+ - Fixed DT binding check warning
+ - Revised logic for parsing DTS nodes
+---
+---
+ .../devicetree/bindings/i3c/nxp,p3h2840.yaml  | 209 ++++++++++++++++++
+ MAINTAINERS                                   |   8 +
+ 2 files changed, 217 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+
+diff --git a/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml b/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+new file mode 100644
+index 000000000000..e592952e8164
+--- /dev/null
++++ b/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+@@ -0,0 +1,209 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++# Copyright 2025 NXP
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/i3c/nxp,p3h2840.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: NXP P3H2X4X I3C HUB
++
++maintainers:
++  - Aman Kumar Pandey <aman.kumarpandey@nxp.com>
++  - Vikash Bansal <vikash.bansal@nxp.com>
++
++description: |
++  P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841) is a family of multiport I3C
++  hub devices that connect to:-
++  1. A host CPU via I3C/I2C/SMBus bus on upstream side and connect to multiple
++     peripheral devices on the downstream  side.
++  2. Have two Controller Ports which can support either
++     I2C/SMBus or I3C buses and connect to a CPU, BMC or SOC.
++  3. P3H2840/ P3H2841 are 8 port I3C hub with eight I3C/I2C Target Port.
++  4. P3H2440/ P3H2441 are 4 port I3C hub with four I3C/I2C Target Port.
++     Target ports can be configured as I2C/SMBus, I3C or GPIO and connect to
++     peripherals.
++
++allOf:
++  - $ref: /schemas/i3c/i3c.yaml#
++
++properties:
++  compatible:
++    const: nxp,p3h2840
++
++  nxp,tp0145-pullup-ohms:
++    description:
++      Selects the pull up resistance for target Port 0/1/4/5, in ohms.
++    enum: [250, 500, 1000, 2000]
++    default: 500
++
++  nxp,tp2367-pullup-ohms:
++    description:
++      Selects the pull up resistance for target Port 2/3/6/7, in ohms.
++    enum: [250, 500, 1000, 2000]
++    default: 500
++
++  nxp,cp0-io-strength-ohms:
++    description:
++      Selects the IO drive strength for controller Port 0, in ohms.
++    enum: [20, 30, 40, 50]
++    default: 20
++
++  nxp,cp1-io-strength-ohms:
++    description:
++      Selects the IO drive strength for controller Port 1, in ohms.
++    enum: [20, 30, 40, 50]
++    default: 20
++
++  nxp,tp0145-io-strength-ohms:
++    description:
++      Selects the IO drive strength for target port 0/1/4/5, in ohms.
++    enum: [20, 30, 40, 50]
++    default: 20
++
++  nxp,tp2367-io-strength-ohms:
++    description:
++      Selects the IO drive strength for target port 2/3/6/7, in ohms.
++    enum: [20, 30, 40, 50]
++    default: 20
++
++  vcc1-supply:
++    description: Controller port 0 power supply.
++
++  vcc2-supply:
++    description: Controller port 1 power supply.
++
++  vcc3-supply:
++    description: Target port 0/1/4/5 power supply.
++
++  vcc4-supply:
++    description: Target port 2/3/6/7 power supply.
++
++  regulators:
++    type: object
++    additionalProperties: false
++
++    properties:
++      ldo-cp0:
++        type: object
++        $ref: /schemas/regulator/regulator.yaml#
++        unevaluatedProperties: false
++
++      ldo-cp1:
++        type: object
++        $ref: /schemas/regulator/regulator.yaml#
++        unevaluatedProperties: false
++
++      ldo-tpg0:
++        type: object
++        $ref: /schemas/regulator/regulator.yaml#
++        unevaluatedProperties: false
++
++      ldo-tpg1:
++        type: object
++        $ref: /schemas/regulator/regulator.yaml#
++        unevaluatedProperties: false
++
++patternProperties:
++  "^i3c@[0-7]$":
++    type: object
++    $ref: /schemas/i3c/i3c.yaml#
++    unevaluatedProperties: false
++
++    properties:
++      reg:
++        description:
++          The I3C HUB Target Port number.
++        maximum: 7
++
++      nxp,pullup-enable:
++        type: boolean
++        description:
++          Enables the on-die pull-up for Target Port.
++
++  "^(i2c|smbus)@[0-7]$":
++    type: object
++    $ref: /schemas/i2c/i2c-controller.yaml#
++    unevaluatedProperties: false
++
++    properties:
++      reg:
++        description:
++          The I3C HUB Target Port number.
++        maximum: 7
++
++      nxp,pullup-enable:
++        type: boolean
++        description:
++          Enables the on-die pull-up for Target Port.
++
++unevaluatedProperties: false
++
++examples:
++  - |
++    i3c {
++        #address-cells = <3>;
++        #size-cells = <0>;
++
++        hub@70,236153000c2 {
++            reg = <0x70 0x236 0x3000c2>;
++            #address-cells = <1>;
++            #size-cells = <0>;
++            assigned-address = <0x50>;
++
++            nxp,tp0145-pullup-ohms = <1000>;
++            nxp,tp2367-pullup-ohms = <1000>;
++            nxp,cp0-io-strength-ohms = <50>;
++            nxp,cp1-io-strength-ohms = <50>;
++            nxp,tp0145-io-strength-ohms = <50>;
++            nxp,tp2367-io-strength-ohms = <50>;
++            vcc3-supply = <&reg_tpg0>;
++            vcc4-supply = <&reg_tpg1>;
++
++            regulators {
++                reg_cp0: ldo-cp0 {
++                    regulator-name = "ldo-cp0";
++                    regulator-min-microvolt = <1800000>;
++                    regulator-max-microvolt = <1800000>;
++                };
++
++                reg_cp1: ldo-cp1 {
++                    regulator-name = "ldo-cp1";
++                    regulator-min-microvolt = <1800000>;
++                    regulator-max-microvolt = <1800000>;
++                };
++
++                reg_tpg0: ldo-tpg0 {
++                    regulator-name = "ldo-tpg0";
++                    regulator-min-microvolt = <1800000>;
++                    regulator-max-microvolt = <1800000>;
++                };
++
++                reg_tpg1: ldo-tpg1 {
++                    regulator-name = "ldo-tpg1";
++                    regulator-min-microvolt = <1800000>;
++                    regulator-max-microvolt = <1800000>;
++                };
++            };
++
++            smbus@0 {
++                reg = <0x0>;
++                #address-cells = <1>;
++                #size-cells = <0>;
++                nxp,pullup-enable;
++            };
++
++            i2c@1 {
++                reg = <0x1>;
++                #address-cells = <1>;
++                #size-cells = <0>;
++                nxp,pullup-enable;
++            };
++
++            i3c@2 {
++                reg = <0x2>;
++                #address-cells = <3>;
++                #size-cells = <0>;
++                nxp,pullup-enable;
++            };
++        };
++    };
 diff --git a/MAINTAINERS b/MAINTAINERS
-index cc33c6c300e4..2fc44b489ea1 100644
+index 55af015174a5..06b803d6f45d 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -19115,6 +19115,7 @@ L:	linux-i3c-owner@lists.infradead.org
- S:	Maintained
- F:	Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
- F:	drivers/mfd/p3h2840.c
-+F:	drivers/regulator/p3h2840_i3c_hub_regulator.c
- F:	include/linux/mfd/p3h2840.h
+@@ -19107,6 +19107,14 @@ S:	Maintained
+ F:	Documentation/devicetree/bindings/ptp/nxp,ptp-netc.yaml
+ F:	drivers/ptp/ptp_netc.c
  
++NXP P3H2X4X I3C-HUB DRIVER
++M:	Vikash Bansal <vikash.bansal@nxp.com>
++M:	Aman Kumar Pandey <aman.kumarpandey@nxp.com>
++L:	linux-kernel@vger.kernel.org
++L:	linux-i3c-owner@lists.infradead.org
++S:	Maintained
++F:	Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
++
  NXP PF5300/PF5301/PF5302 PMIC REGULATOR DEVICE DRIVER
-diff --git a/drivers/regulator/Kconfig b/drivers/regulator/Kconfig
-index a708fc63f581..f3f57b74e2ad 100644
---- a/drivers/regulator/Kconfig
-+++ b/drivers/regulator/Kconfig
-@@ -1019,6 +1019,16 @@ config REGULATOR_MTK_DVFSRC
- 	  of Mediatek. It allows for voting on regulator state
- 	  between multiple users.
- 
-+config REGULATOR_P3H2X4X
-+       tristate "P3H2X4X regulator support"
-+       depends on MFD_P3H2X4X
-+       help
-+         This driver provides support for the voltage regulators of the
-+         P3H244x/P3H284x multi-function I3C Hub device.
-+
-+         Say M here if you want to include support for this regulator as
-+         a module. The module will be named "p3h2840_i3c_hub_regulator".
-+
- config REGULATOR_PALMAS
- 	tristate "TI Palmas PMIC Regulators"
- 	depends on MFD_PALMAS
-diff --git a/drivers/regulator/Makefile b/drivers/regulator/Makefile
-index 35639f3115fd..46f586ccde63 100644
---- a/drivers/regulator/Makefile
-+++ b/drivers/regulator/Makefile
-@@ -128,6 +128,7 @@ obj-$(CONFIG_REGULATOR_QCOM_RPMH) += qcom-rpmh-regulator.o
- obj-$(CONFIG_REGULATOR_QCOM_SMD_RPM) += qcom_smd-regulator.o
- obj-$(CONFIG_REGULATOR_QCOM_SPMI) += qcom_spmi-regulator.o
- obj-$(CONFIG_REGULATOR_QCOM_USB_VBUS) += qcom_usb_vbus-regulator.o
-+obj-$(CONFIG_REGULATOR_P3H2X4X) += p3h2840_i3c_hub_regulator.o
- obj-$(CONFIG_REGULATOR_PALMAS) += palmas-regulator.o
- obj-$(CONFIG_REGULATOR_PCA9450) += pca9450-regulator.o
- obj-$(CONFIG_REGULATOR_PF0900) += pf0900-regulator.o
-diff --git a/drivers/regulator/p3h2840_i3c_hub_regulator.c b/drivers/regulator/p3h2840_i3c_hub_regulator.c
-new file mode 100644
-index 000000000000..b2d31ecd5f19
---- /dev/null
-+++ b/drivers/regulator/p3h2840_i3c_hub_regulator.c
-@@ -0,0 +1,219 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright 2025 NXP
-+ * This P3H2x4x driver file contain functions for enable/disable regulator and voltage set/get.
-+ */
-+#include <linux/bitfield.h>
-+#include <linux/cleanup.h>
-+#include <linux/mfd/p3h2840.h>
-+#include <linux/of.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+#include <linux/regulator/driver.h>
-+
-+#define P3H2x4x_LDO_AND_PULLUP_CONF				0x19
-+#define P3H2x4x_LDO_ENABLE_DISABLE_MASK				GENMASK(3, 0)
-+#define P3H2x4x_CP0_EN_LDO				        BIT(0)
-+#define P3H2x4x_CP1_EN_LDO				        BIT(1)
-+#define P3H2x4x_TP0145_EN_LDO					BIT(2)
-+#define P3H2x4x_TP2367_EN_LDO					BIT(3)
-+
-+#define P3H2x4x_NET_OPER_MODE_CONF				0x15
-+#define P3H2x4x_VCCIO_LDO_CONF					0x16
-+#define P3H2x4x_CP0_VCCIO_LDO_VOLTAGE_MASK			GENMASK(1, 0)
-+#define P3H2x4x_CP0_VCCIO_LDO_VOLTAGE(x)	\
-+		FIELD_PREP(P3H2x4x_CP0_VCCIO_LDO_VOLTAGE_MASK, x)
-+#define P3H2x4x_CP1_VCCIO_LDO_VOLTAGE_MASK			GENMASK(3, 2)
-+#define P3H2x4x_CP1_VCCIO_LDO_VOLTAGE(x)	\
-+		FIELD_PREP(P3H2x4x_CP1_VCCIO_LDO_VOLTAGE_MASK, x)
-+#define P3H2x4x_TP0145_VCCIO_LDO_VOLTAGE_MASK			GENMASK(5, 4)
-+#define P3H2x4x_TP0145_VCCIO_LDO_VOLTAGE(x)	\
-+		FIELD_PREP(P3H2x4x_TP0145_VCCIO_LDO_VOLTAGE_MASK, x)
-+#define P3H2x4x_TP2367_VCCIO_LDO_VOLTAGE_MASK			GENMASK(7, 6)
-+#define P3H2x4x_TP2367_VCCIO_LDO_VOLTAGE(x)	\
-+		FIELD_PREP(P3H2x4x_TP2367_VCCIO_LDO_VOLTAGE_MASK, x)
-+#define P3H2x4x_LDO_COUNT					4
-+
-+struct p3h2x4x_regulator_dev {
-+	struct regulator_dev *rp3h2x4x_dev[P3H2x4x_LDO_COUNT];
-+	struct regmap *regmap;
-+};
-+
-+struct p3h2x4x_reg_state {
-+	unsigned int orig;
-+	bool restore;
-+};
-+
-+static void p3h2x4x_reg_guard_enter(struct regulator_dev *rdev,
-+				    struct p3h2x4x_reg_state *state)
-+{
-+	state->restore = false;
-+
-+	if (regmap_read(rdev->regmap,
-+			P3H2x4x_DEV_REG_PROTECTION_CODE,
-+			&state->orig))
-+		return;
-+
-+	if (state->orig != P3H2x4x_REGISTERS_UNLOCK_CODE) {
-+		regmap_write(rdev->regmap,
-+			     P3H2x4x_DEV_REG_PROTECTION_CODE,
-+			     P3H2x4x_REGISTERS_UNLOCK_CODE);
-+		state->restore = true;
-+	}
-+}
-+
-+static void p3h2x4x_reg_guard_exit(struct regulator_dev *rdev,
-+				   struct p3h2x4x_reg_state *state)
-+{
-+	if (state->restore)
-+		regmap_write(rdev->regmap,
-+			     P3H2x4x_DEV_REG_PROTECTION_CODE,
-+			     state->orig);
-+}
-+
-+DEFINE_LOCK_GUARD_1(p3h2x4x_reg, struct regulator_dev,
-+		    p3h2x4x_reg_guard_enter(_T->lock, &_T->state),
-+		    p3h2x4x_reg_guard_exit(_T->lock, &_T->state),
-+		    struct p3h2x4x_reg_state state);
-+
-+static int p3h2x4x_regulator_enable(struct regulator_dev *rdev)
-+{
-+	guard(p3h2x4x_reg)(rdev);
-+	return regulator_enable_regmap(rdev);
-+}
-+
-+static int p3h2x4x_regulator_disable(struct regulator_dev *rdev)
-+{
-+	guard(p3h2x4x_reg)(rdev);
-+	return regulator_disable_regmap(rdev);
-+}
-+
-+static int p3h2x4x_regulator_set_voltage_sel(struct regulator_dev *rdev,
-+					     unsigned int sel)
-+{
-+	guard(p3h2x4x_reg)(rdev);
-+	return regulator_set_voltage_sel_regmap(rdev, sel);
-+}
-+
-+static const struct regulator_ops p3h2x4x_ldo_ops = {
-+	.list_voltage = regulator_list_voltage_table,
-+	.map_voltage = regulator_map_voltage_iterate,
-+	.set_voltage_sel = p3h2x4x_regulator_set_voltage_sel,
-+	.get_voltage_sel = regulator_get_voltage_sel_regmap,
-+	.enable = p3h2x4x_regulator_enable,
-+	.disable = p3h2x4x_regulator_disable,
-+	.is_enabled = regulator_is_enabled_regmap,
-+};
-+
-+static const unsigned int p3h2x4x_voltage_table[] = {
-+	1000000,
-+	1100000,
-+	1200000,
-+	1800000,
-+};
-+
-+static struct regulator_desc p3h2x4x_regulators[] = {
-+	{
-+		.name = "ldo-cp0",
-+		.of_match = of_match_ptr("ldo-cp0"),
-+		.regulators_node = of_match_ptr("regulators"),
-+		.volt_table = p3h2x4x_voltage_table,
-+		.n_voltages = ARRAY_SIZE(p3h2x4x_voltage_table),
-+		.ops = &p3h2x4x_ldo_ops,
-+		.type = REGULATOR_VOLTAGE,
-+		.owner = THIS_MODULE,
-+		.enable_reg = P3H2x4x_LDO_AND_PULLUP_CONF,
-+		.enable_mask = P3H2x4x_CP0_EN_LDO,
-+		.vsel_reg = P3H2x4x_VCCIO_LDO_CONF,
-+		.vsel_mask = P3H2x4x_CP0_VCCIO_LDO_VOLTAGE_MASK,
-+	},
-+	{
-+		.name = "ldo-cp1",
-+		.of_match = of_match_ptr("ldo-cp1"),
-+		.regulators_node = of_match_ptr("regulators"),
-+		.volt_table = p3h2x4x_voltage_table,
-+		.n_voltages = ARRAY_SIZE(p3h2x4x_voltage_table),
-+		.ops = &p3h2x4x_ldo_ops,
-+		.type = REGULATOR_VOLTAGE,
-+		.owner = THIS_MODULE,
-+		.enable_reg = P3H2x4x_LDO_AND_PULLUP_CONF,
-+		.enable_mask = P3H2x4x_CP1_EN_LDO,
-+		.vsel_reg = P3H2x4x_VCCIO_LDO_CONF,
-+		.vsel_mask = P3H2x4x_CP1_VCCIO_LDO_VOLTAGE_MASK,
-+	},
-+	{
-+		.name = "ldo-tpg0",
-+		.of_match = of_match_ptr("ldo-tpg0"),
-+		.regulators_node = of_match_ptr("regulators"),
-+		.volt_table = p3h2x4x_voltage_table,
-+		.n_voltages = ARRAY_SIZE(p3h2x4x_voltage_table),
-+		.ops = &p3h2x4x_ldo_ops,
-+		.type = REGULATOR_VOLTAGE,
-+		.owner = THIS_MODULE,
-+		.enable_reg = P3H2x4x_LDO_AND_PULLUP_CONF,
-+		.enable_mask = P3H2x4x_TP0145_EN_LDO,
-+		.vsel_reg = P3H2x4x_VCCIO_LDO_CONF,
-+		.vsel_mask = P3H2x4x_TP0145_VCCIO_LDO_VOLTAGE_MASK,
-+	},
-+	{
-+		.name = "ldo-tpg1",
-+		.of_match = of_match_ptr("ldo-tpg1"),
-+		.regulators_node = of_match_ptr("regulators"),
-+		.volt_table = p3h2x4x_voltage_table,
-+		.n_voltages = ARRAY_SIZE(p3h2x4x_voltage_table),
-+		.ops = &p3h2x4x_ldo_ops,
-+		.type = REGULATOR_VOLTAGE,
-+		.owner = THIS_MODULE,
-+		.enable_reg = P3H2x4x_LDO_AND_PULLUP_CONF,
-+		.enable_mask = P3H2x4x_TP2367_EN_LDO,
-+		.vsel_reg = P3H2x4x_VCCIO_LDO_CONF,
-+		.vsel_mask = P3H2x4x_TP2367_VCCIO_LDO_VOLTAGE_MASK,
-+	},
-+};
-+
-+static int p3h2x4x_regulator_probe(struct platform_device *pdev)
-+{
-+	struct p3h2x4x_dev *p3h2x4x = dev_get_drvdata(pdev->dev.parent);
-+	struct p3h2x4x_regulator_dev *p3h2x4x_regulator;
-+	struct regulator_config rcfg = { };
-+	struct device *dev = &pdev->dev;
-+	struct regulator_dev *rdev;
-+	int i;
-+
-+	p3h2x4x_regulator = devm_kzalloc(dev, sizeof(*p3h2x4x_regulator), GFP_KERNEL);
-+	if (!p3h2x4x_regulator)
-+		return -ENOMEM;
-+
-+	platform_set_drvdata(pdev, p3h2x4x_regulator);
-+
-+	p3h2x4x_regulator->regmap = p3h2x4x->regmap;
-+	device_set_of_node_from_dev(dev, dev->parent);
-+
-+	rcfg.dev = dev;
-+	rcfg.dev->of_node = dev->of_node;
-+	rcfg.regmap = p3h2x4x_regulator->regmap;
-+	rcfg.driver_data = p3h2x4x_regulator;
-+
-+	for (i = 0; i < ARRAY_SIZE(p3h2x4x_regulators); i++) {
-+		rdev = devm_regulator_register(&pdev->dev, &p3h2x4x_regulators[i], &rcfg);
-+		if (IS_ERR(rdev))
-+			return dev_err_probe(dev, PTR_ERR(rdev), "Failed to register %s\n",
-+					     p3h2x4x_regulators[i].name);
-+		p3h2x4x_regulator->rp3h2x4x_dev[i] = rdev;
-+	}
-+	return 0;
-+}
-+
-+static struct platform_driver p3h2x4x_regulator_driver = {
-+	.driver = {
-+		.name = "p3h2x4x-regulator",
-+		.probe_type = PROBE_PREFER_ASYNCHRONOUS,
-+	},
-+	.probe = p3h2x4x_regulator_probe,
-+};
-+module_platform_driver(p3h2x4x_regulator_driver);
-+
-+MODULE_AUTHOR("Aman Kumar Pandey <aman.kumarpandey@nxp.com>");
-+MODULE_AUTHOR("Vikash Bansal <vikash.bansal@nxp.com>");
-+MODULE_DESCRIPTION("P3H2x4x I3C HUB Regulator driver");
-+MODULE_LICENSE("GPL");
+ M:	Woodrow Douglass <wdouglass@carnegierobotics.com>
+ S:	Maintained
 -- 
 2.25.1
 
