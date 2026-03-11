@@ -4,62 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B612FD2D9D
-	for <linux-i3c@archiver.kernel.org>; Wed, 11 Mar 2026 06:13:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 762D8103E2E6
+	for <linux-i3c@archiver.kernel.org>; Wed, 11 Mar 2026 21:13:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C2hWMs3HZZ+M54+EtXNVYjC11OmPnAZYfOUdm+xzG+Q=; b=b5dJzDCmT+ytrr
-	/RMhSmyEKkZNcXF03PKlyPAjL6fEj1q0kusgatSz8ZhBK5U4GzLJwPwlRjF+teV6/kVBUraVHMqcp
-	YL03/E+gdjFIilRcYrB8Wdn28lCLcseSyT4Tu27oOKHzxXar0tCMwCgP19iD7OgoDdYgNeyM5K5ge
-	URkL44CHhq7ZRpf+1ranj0Se7RN2PQbXotgl39+I4Quwoyzps/YbePZVFiPI9D7XZSyipRMs6Bf7n
-	NWaJ5zw0wGWxJqBBUTr9XiMfY4pOzkg4NO6Xtn0yxYz/M1a8wksi/Q3ADnIpVI3lzBFK8fXjIjAkw
-	akEw3kQY7j6zNoy5sUWA==;
+	List-Owner; bh=/j5IAk3J/JjxD88sHuMnLODyY4g/+zWKAk8BHGbZP0w=; b=c+bKYm5xmxfZR4
+	ObMzfUobvSFUsE8Z0M99ixHMhTWQXo1cOdXSIrJkrooLaNoTS/7iJtWBy3+fGAwZLFsUzUxeWb6Rv
+	P8MxOjXJ96jDnVqE0oW1auuVzX7ap08wd7z7lWBTiRyefA9f8sclU73f02ayZAauVTx8yJvoD4oo/
+	KxCpNyWnYr0lNcCYJ/Gq5VAjUkTXeobG11OkPJEXjqimEtDV++YaaXazLZ8BLWkfeLLPWdM1xMZ8P
+	nry5AGTFpHr2UgoS3WOCZsmGrXxsFDKQBaNU52FkJCjk+p8tST5TQI+9rcvXqqlsF4EiswHwO6ZsE
+	OaMpTjNJcZ451sRNPpsw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0CpR-0000000Atlr-228S;
-	Wed, 11 Mar 2026 06:13:57 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1w0Qre-0000000CXMU-0fwC;
+	Wed, 11 Mar 2026 21:13:10 +0000
+Received: from smtpout-02.galae.net ([185.246.84.56])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0CpO-0000000Atl6-3SKj
+	id 1w0Qra-0000000CXMB-1UQA
 	for linux-i3c@lists.infradead.org;
-	Wed, 11 Mar 2026 06:13:56 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 25DB342AB8;
-	Wed, 11 Mar 2026 06:13:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 70C6DC4CEF7;
-	Wed, 11 Mar 2026 06:13:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1773209634;
-	bh=5Pjyj7qk26e2UZMRGFZd5jRSfl4UY2EVDMukmfLCbls=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=JACoQvodn5gPHNCS3B2qSkHw+zfWYKoOljAIkZQLh4GsdPkaYViOYujlu/zbKzIzo
-	 TFsbgJHU/1TlE4qnuWAQWnmiJtpQ75DYclC5MaJCtkOwp8HjWcqyFKBM9IIkqZ2++g
-	 OMbukG/8rh6Qt2xijo8/YHRUKFxnCKRlyMmM3PuJmEB6F4HK4gYeO0SwfkpL6StiWw
-	 Yqwq4GqMzqLEjrDM2A9JistKOrqBxHwgMaVoQTl1nybcUjvmmlE8hBeCW9VMwgPYuj
-	 SkyED2pGN9FVpfu7CSLaqjjpwpiGYfDXGHpmSsMMpKlIrW+wEFsvxXhWOYtNhu7oNr
-	 Efa9idbayrQiw==
-Date: Wed, 11 Mar 2026 07:13:51 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Lakshay Piplani <lakshay.piplani@nxp.com>
-Cc: linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org, 
-	alexandre.belloni@bootlin.com, krzk+dt@kernel.org, robh@kernel.org, conor+dt@kernel.org, 
-	devicetree@vger.kernel.org, broonie@kernel.org, lee@kernel.org, Frank.Li@nxp.com, 
-	lgirdwood@gmail.com, vikash.bansal@nxp.com, priyanka.jain@nxp.com, 
-	aman.kumarpandey@nxp.com
-Subject: Re: [PATCH v6 3/7] dt-bindings: i3c: Add NXP P3H2x4x i3c-hub support
-Message-ID: <20260311-outrageous-unnatural-jerboa-53f5a8@quoll>
-References: <20260310065727.3759342-1-lakshay.piplani@nxp.com>
- <20260310065727.3759342-3-lakshay.piplani@nxp.com>
+	Wed, 11 Mar 2026 21:13:09 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-02.galae.net (Postfix) with ESMTPS id C74A51A2DCF;
+	Wed, 11 Mar 2026 21:13:01 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 9CE8360004;
+	Wed, 11 Mar 2026 21:13:01 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id E969610369BD3;
+	Wed, 11 Mar 2026 22:12:59 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1773263581; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=fyto21RB+uOsc+uaLkgYs5zsOmmGTHcsDev3ONAp2yk=;
+	b=lZuK1dmxzBA0sMO++Bj8WbOgdgxJXjQurVPGheENqvYdRWtjVcd4/jbd2ayegjsCH2R/2+
+	wwf/dgGVZM1OSTsr5+Nl8QN14LEE0Sz7YvxT6W07WrPSOh1GzoRi6d/R0JPC97Tcc76IEe
+	fvvGV0nKAxkauTM6oXQuX9KRKWLfSYTsPs0Zb9pjetttOVJULElVpsvL0zXFShtgujustF
+	UJuJDlWUQpLUKm0LJIZb7uAASlEqfw9P3wMdLoddcFBgfoY1GUgeYDe2gB0Akah6xNpJZ3
+	Pbs/Jh7tvKCtnwo/m/GBLnsqhMra1oUoGlkkjnULjz8ZoJR+m6nMZitzyoae6Q==
+Date: Wed, 11 Mar 2026 22:12:59 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Adrian Hunter <adrian.hunter@intel.com>
+Cc: Frank.Li@nxp.com, linux-i3c@lists.infradead.org
+Subject: Re: [PATCH V3 00/14] i3c: mipi-i3c-hci: Fixes for v7.0
+Message-ID: <177326357290.2374605.14652430560806898271.b4-ty@bootlin.com>
+References: <20260306072451.11131-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260310065727.3759342-3-lakshay.piplani@nxp.com>
+In-Reply-To: <20260306072451.11131-1-adrian.hunter@intel.com>
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260310_231354_907242_3D3E493D 
-X-CRM114-Status: GOOD (  20.29  )
+X-CRM114-CacheID: sfid-20260311_141306_905503_831953CC 
+X-CRM114-Status: UNSURE (   9.13  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,210 +74,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Mar 10, 2026 at 12:27:23PM +0530, Lakshay Piplani wrote:
-> From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+On Fri, 06 Mar 2026 09:24:37 +0200, Adrian Hunter wrote:
+>     Please note, all patches now have Frank's Reviewed-by.
 > 
-> Add bindings for the NXP P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841)
-> multiport I3C hub family. These devices connect to a host via
-> I3C/I2C/SMBus and allow communication with multiple downstream
-> peripherals.
 > 
-> Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
+> Here are some fixes to the MIPI I3C HCI driver.  Please consider them
+> as fixes for v7.0.
 > 
-> ---
-> Changes in v6:
->  - Use a vendor prefix for the attributes
+> They are mostly related to error recovery and a lack of serialization.
+> 
+> [...]
 
-Where is cover letter with links to previous versions?
+Applied, thanks!
 
-> 
-> Changes in v5:
->  - Removed SW properties: cp0-ldo-microvolt,cp1-ldo-microvolt,
->    tp0145-ldo-microvolt, tp2367-ldo-microvolt
->  - Changed supply entries and its descriptions
-> 
-> Changes in v4:
->  - Fixed DT binding check warning
->  - Removed SW properties: ibi-enable, local-dev, and always-enable
-> 
-> Changes in v3:
->  - Added MFD (Multi-Function Device) support for I3C hub and on-die regulator
->  - Added Regulator supply node
-> 
-> Changes in v2:
->  - Fixed DT binding check warning
->  - Revised logic for parsing DTS nodes
-> ---
-> ---
->  .../devicetree/bindings/i3c/nxp,p3h2840.yaml  | 209 ++++++++++++++++++
->  MAINTAINERS                                   |   8 +
->  2 files changed, 217 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml b/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
-> new file mode 100644
-> index 000000000000..e592952e8164
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
-> @@ -0,0 +1,209 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +# Copyright 2025 NXP
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/i3c/nxp,p3h2840.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: NXP P3H2X4X I3C HUB
-> +
-> +maintainers:
-> +  - Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> +  - Vikash Bansal <vikash.bansal@nxp.com>
-> +
-> +description: |
-> +  P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841) is a family of multiport I3C
-> +  hub devices that connect to:-
-> +  1. A host CPU via I3C/I2C/SMBus bus on upstream side and connect to multiple
-> +     peripheral devices on the downstream  side.
-> +  2. Have two Controller Ports which can support either
-> +     I2C/SMBus or I3C buses and connect to a CPU, BMC or SOC.
-> +  3. P3H2840/ P3H2841 are 8 port I3C hub with eight I3C/I2C Target Port.
-> +  4. P3H2440/ P3H2441 are 4 port I3C hub with four I3C/I2C Target Port.
-> +     Target ports can be configured as I2C/SMBus, I3C or GPIO and connect to
-> +     peripherals.
-> +
-> +allOf:
-> +  - $ref: /schemas/i3c/i3c.yaml#
-> +
-> +properties:
-> +  compatible:
-> +    const: nxp,p3h2840
-> +
-> +  nxp,tp0145-pullup-ohms:
-> +    description:
-> +      Selects the pull up resistance for target Port 0/1/4/5, in ohms.
-> +    enum: [250, 500, 1000, 2000]
-> +    default: 500
-> +
-> +  nxp,tp2367-pullup-ohms:
-> +    description:
-> +      Selects the pull up resistance for target Port 2/3/6/7, in ohms.
-> +    enum: [250, 500, 1000, 2000]
-> +    default: 500
-> +
-> +  nxp,cp0-io-strength-ohms:
-> +    description:
-> +      Selects the IO drive strength for controller Port 0, in ohms.
-> +    enum: [20, 30, 40, 50]
-> +    default: 20
-> +
-> +  nxp,cp1-io-strength-ohms:
-> +    description:
-> +      Selects the IO drive strength for controller Port 1, in ohms.
-> +    enum: [20, 30, 40, 50]
-> +    default: 20
-> +
-> +  nxp,tp0145-io-strength-ohms:
-> +    description:
-> +      Selects the IO drive strength for target port 0/1/4/5, in ohms.
-> +    enum: [20, 30, 40, 50]
-> +    default: 20
-> +
-> +  nxp,tp2367-io-strength-ohms:
-> +    description:
-> +      Selects the IO drive strength for target port 2/3/6/7, in ohms.
-> +    enum: [20, 30, 40, 50]
-> +    default: 20
-> +
-> +  vcc1-supply:
-> +    description: Controller port 0 power supply.
-> +
-> +  vcc2-supply:
-> +    description: Controller port 1 power supply.
-> +
-> +  vcc3-supply:
-> +    description: Target port 0/1/4/5 power supply.
-> +
-> +  vcc4-supply:
-> +    description: Target port 2/3/6/7 power supply.
-> +
-> +  regulators:
-> +    type: object
-> +    additionalProperties: false
-> +
-> +    properties:
-> +      ldo-cp0:
-> +        type: object
-> +        $ref: /schemas/regulator/regulator.yaml#
-> +        unevaluatedProperties: false
-> +
-> +      ldo-cp1:
-> +        type: object
-> +        $ref: /schemas/regulator/regulator.yaml#
-> +        unevaluatedProperties: false
-> +
-> +      ldo-tpg0:
-> +        type: object
-> +        $ref: /schemas/regulator/regulator.yaml#
-> +        unevaluatedProperties: false
-> +
-> +      ldo-tpg1:
-> +        type: object
-> +        $ref: /schemas/regulator/regulator.yaml#
-> +        unevaluatedProperties: false
-> +
-> +patternProperties:
-> +  "^i3c@[0-7]$":
-> +    type: object
-> +    $ref: /schemas/i3c/i3c.yaml#
-> +    unevaluatedProperties: false
-> +
-> +    properties:
-> +      reg:
-> +        description:
-> +          The I3C HUB Target Port number.
-> +        maximum: 7
-> +
-> +      nxp,pullup-enable:
-> +        type: boolean
-> +        description:
-> +          Enables the on-die pull-up for Target Port.
-> +
-> +  "^(i2c|smbus)@[0-7]$":
-> +    type: object
-> +    $ref: /schemas/i2c/i2c-controller.yaml#
-> +    unevaluatedProperties: false
-> +
-> +    properties:
-> +      reg:
-> +        description:
-> +          The I3C HUB Target Port number.
-> +        maximum: 7
-> +
-> +      nxp,pullup-enable:
-> +        type: boolean
-> +        description:
-> +          Enables the on-die pull-up for Target Port.
-> +
-> +unevaluatedProperties: false
-> +
-> +examples:
-> +  - |
-> +    i3c {
-> +        #address-cells = <3>;
-> +        #size-cells = <0>;
-> +
-> +        hub@70,236153000c2 {
-> +            reg = <0x70 0x236 0x3000c2>;
-
-Where is the compatible?
-
-So this wasn't checked/tested. Try yourself, remove required properties
-and see if there is an error. No error, right?
+[01/14] i3c: mipi-i3c-hci: Use ETIMEDOUT instead of ETIME for timeout errors
+        https://git.kernel.org/abelloni/c/4167b8914463
+[02/14] i3c: mipi-i3c-hci: Fix Hot-Join NACK
+        https://git.kernel.org/abelloni/c/fa9586bd77ad
+[03/14] i3c: mipi-i3c-hci: Factor out DMA mapping from queuing path
+        https://git.kernel.org/abelloni/c/f3bcbfe1b8b0
+[04/14] i3c: mipi-i3c-hci: Consolidate spinlocks
+        https://git.kernel.org/abelloni/c/fa12bb903bc3
+[05/14] i3c: mipi-i3c-hci: Fix race in DMA ring enqueue for parallel xfers
+        https://git.kernel.org/abelloni/c/4decbbc8a8cf
+[06/14] i3c: mipi-i3c-hci: Fix race in DMA ring dequeue
+        https://git.kernel.org/abelloni/c/1dca8aee80ee
+[07/14] i3c: mipi-i3c-hci: Fix race between DMA ring dequeue and interrupt handler
+        https://git.kernel.org/abelloni/c/f0b5159637ca
+[08/14] i3c: mipi-i3c-hci: Correct RING_CTRL_ABORT handling in DMA dequeue
+        https://git.kernel.org/abelloni/c/b795e68bf307
+[09/14] i3c: mipi-i3c-hci: Add missing TID field to no-op command descriptor
+        https://git.kernel.org/abelloni/c/ec3cfd835f7c
+[10/14] i3c: mipi-i3c-hci: Restart DMA ring correctly after dequeue abort
+        https://git.kernel.org/abelloni/c/b6d586431ae2
+[11/14] i3c: mipi-i3c-hci: Consolidate common xfer processing logic
+        https://git.kernel.org/abelloni/c/7ac45bc68f08
+[12/14] i3c: mipi-i3c-hci: Fix race in DMA error handling in interrupt context
+        https://git.kernel.org/abelloni/c/e44d2719225e
+[13/14] i3c: mipi-i3c-hci: Fix handling of shared IRQs during early initialization
+        https://git.kernel.org/abelloni/c/c6396b835a5e
+[14/14] i3c: mipi-i3c-hci: Fallback to software reset when bus disable fails
+        https://git.kernel.org/abelloni/c/9a258d1336f7
 
 Best regards,
-Krzysztof
 
+-- 
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-i3c mailing list
