@@ -4,80 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 258D5FD88D3
-	for <linux-i3c@archiver.kernel.org>; Wed, 11 Mar 2026 01:00:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2B612FD2D9D
+	for <linux-i3c@archiver.kernel.org>; Wed, 11 Mar 2026 06:13:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VbOlfH3STwzyEP2mF9CXKjcpGOhywjbJkS+B6RrdHYA=; b=bWtxnYBW4GBQKu
-	FsZKpaYyinMjoUm3vF1Q+QjD0IMs1v4zCkXubqNAEROCAgxpO/vPNe/s+r2amnY6NA8Db7rB2Q6h0
-	imbQf4cLhpqr2bb3a3ueM+b4PWe+vzZCOqwe7kmkCy4ki8BVw/ORJcfWxrSH8SK71BWancQGu7Q8v
-	0XqvjBMoVlYlHI1R/bHQRtK9DdARbxjdLe3VTzEEl65vIIbjxvbtMz5szEiKSf+QBo6boFjvgkGfy
-	ttwBsMuAFA8CbOfDieYjQlst71kp9+nheqU7LDH98FsUV2hRFUNPAuDlULE1teWoOYyP6w2bA5tJ+
-	h1PKkFAm7YrrGe3zT15w==;
+	List-Owner; bh=C2hWMs3HZZ+M54+EtXNVYjC11OmPnAZYfOUdm+xzG+Q=; b=b5dJzDCmT+ytrr
+	/RMhSmyEKkZNcXF03PKlyPAjL6fEj1q0kusgatSz8ZhBK5U4GzLJwPwlRjF+teV6/kVBUraVHMqcp
+	YL03/E+gdjFIilRcYrB8Wdn28lCLcseSyT4Tu27oOKHzxXar0tCMwCgP19iD7OgoDdYgNeyM5K5ge
+	URkL44CHhq7ZRpf+1ranj0Se7RN2PQbXotgl39+I4Quwoyzps/YbePZVFiPI9D7XZSyipRMs6Bf7n
+	NWaJ5zw0wGWxJqBBUTr9XiMfY4pOzkg4NO6Xtn0yxYz/M1a8wksi/Q3ADnIpVI3lzBFK8fXjIjAkw
+	akEw3kQY7j6zNoy5sUWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w07wG-0000000ATYD-3fmA;
-	Wed, 11 Mar 2026 01:00:40 +0000
-Received: from mgamail.intel.com ([192.198.163.18])
+	id 1w0CpR-0000000Atlr-228S;
+	Wed, 11 Mar 2026 06:13:57 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w07wD-0000000ATXq-3bJG
+	id 1w0CpO-0000000Atl6-3SKj
 	for linux-i3c@lists.infradead.org;
-	Wed, 11 Mar 2026 01:00:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1773190838; x=1804726838;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=2nRyGCp/u/t48t6g/TeP3eA6TCsz9hD8l7/U6aBpPlw=;
-  b=PpSYGUBaV5TdIEfyaZDDrS0x7GeKQXh/YgYKPNpDEFS0YAakEf54316C
-   d6lKXVKjF6KLSRPQsVSUSPaXd4ZfD1lkbEbyNTc4FQL2svERBMwFgMDCH
-   mNh/en7T5sLjbbfQr9o2g5O3iV+wVp2zWQ5bfN9onGOM4QXPxqaB0NzEs
-   dlOKI9XH+6pFqjTWnZQgKVpsDApRWHH7AbHrSAQBpxef2A+ZG6xUb/EnT
-   JR6N9nXD4PNbJ+RNibIt6J9tuRDFCB4xNusI6sb/+ABugU6PysqyynwO9
-   kTm1Ku3QLWBiULdXTOBZRuAa3MTsmFLhmf5G6Ek+m7VbkxMmxPTgHHwBC
-   w==;
-X-CSE-ConnectionGUID: GcgJu8o9T0KK3LQPrfcgZw==
-X-CSE-MsgGUID: duCES2WfSgKlp9F8lmpCnQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11725"; a="73448439"
-X-IronPort-AV: E=Sophos;i="6.23,113,1770624000"; 
-   d="scan'208";a="73448439"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by fmvoesa112.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 10 Mar 2026 18:00:29 -0700
-X-CSE-ConnectionGUID: QV6pcc3jTFqGiNjRTI7yTg==
-X-CSE-MsgGUID: UOIGKUdHRhGE065+kWWlVw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.23,113,1770624000"; 
-   d="scan'208";a="216602576"
-Received: from lkp-server01.sh.intel.com (HELO 418530b1a366) ([10.239.97.150])
-  by fmviesa006.fm.intel.com with ESMTP; 10 Mar 2026 18:00:26 -0700
-Received: from kbuild by 418530b1a366 with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1w07vz-000000000Td-1wcb;
-	Wed, 11 Mar 2026 01:00:23 +0000
-Date: Wed, 11 Mar 2026 08:59:55 +0800
-From: kernel test robot <lkp@intel.com>
-To: Lakshay Piplani <lakshay.piplani@nxp.com>, linux-kernel@vger.kernel.org,
-	linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
-	krzk+dt@kernel.org, robh@kernel.org, conor+dt@kernel.org,
-	devicetree@vger.kernel.org, broonie@kernel.org, lee@kernel.org,
-	Frank.Li@nxp.com, lgirdwood@gmail.com
-Cc: oe-kbuild-all@lists.linux.dev, vikash.bansal@nxp.com,
-	priyanka.jain@nxp.com, aman.kumarpandey@nxp.com,
-	lakshay.piplani@nxp.com
-Subject: Re: [PATCH v6 6/7] i3c: hub: Add support for the I3C interface in
- the I3C hub
-Message-ID: <202603110810.eZLkgGbx-lkp@intel.com>
-References: <20260310065727.3759342-6-lakshay.piplani@nxp.com>
+	Wed, 11 Mar 2026 06:13:56 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 25DB342AB8;
+	Wed, 11 Mar 2026 06:13:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 70C6DC4CEF7;
+	Wed, 11 Mar 2026 06:13:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1773209634;
+	bh=5Pjyj7qk26e2UZMRGFZd5jRSfl4UY2EVDMukmfLCbls=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=JACoQvodn5gPHNCS3B2qSkHw+zfWYKoOljAIkZQLh4GsdPkaYViOYujlu/zbKzIzo
+	 TFsbgJHU/1TlE4qnuWAQWnmiJtpQ75DYclC5MaJCtkOwp8HjWcqyFKBM9IIkqZ2++g
+	 OMbukG/8rh6Qt2xijo8/YHRUKFxnCKRlyMmM3PuJmEB6F4HK4gYeO0SwfkpL6StiWw
+	 Yqwq4GqMzqLEjrDM2A9JistKOrqBxHwgMaVoQTl1nybcUjvmmlE8hBeCW9VMwgPYuj
+	 SkyED2pGN9FVpfu7CSLaqjjpwpiGYfDXGHpmSsMMpKlIrW+wEFsvxXhWOYtNhu7oNr
+	 Efa9idbayrQiw==
+Date: Wed, 11 Mar 2026 07:13:51 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Lakshay Piplani <lakshay.piplani@nxp.com>
+Cc: linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org, 
+	alexandre.belloni@bootlin.com, krzk+dt@kernel.org, robh@kernel.org, conor+dt@kernel.org, 
+	devicetree@vger.kernel.org, broonie@kernel.org, lee@kernel.org, Frank.Li@nxp.com, 
+	lgirdwood@gmail.com, vikash.bansal@nxp.com, priyanka.jain@nxp.com, 
+	aman.kumarpandey@nxp.com
+Subject: Re: [PATCH v6 3/7] dt-bindings: i3c: Add NXP P3H2x4x i3c-hub support
+Message-ID: <20260311-outrageous-unnatural-jerboa-53f5a8@quoll>
+References: <20260310065727.3759342-1-lakshay.piplani@nxp.com>
+ <20260310065727.3759342-3-lakshay.piplani@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260310065727.3759342-6-lakshay.piplani@nxp.com>
+In-Reply-To: <20260310065727.3759342-3-lakshay.piplani@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260310_180037_962983_15F4CC89 
-X-CRM114-Status: GOOD (  10.19  )
+X-CRM114-CacheID: sfid-20260310_231354_907242_3D3E493D 
+X-CRM114-Status: GOOD (  20.29  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,56 +76,210 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Lakshay,
+On Tue, Mar 10, 2026 at 12:27:23PM +0530, Lakshay Piplani wrote:
+> From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+> 
+> Add bindings for the NXP P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841)
+> multiport I3C hub family. These devices connect to a host via
+> I3C/I2C/SMBus and allow communication with multiple downstream
+> peripherals.
+> 
+> Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+> Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
+> 
+> ---
+> Changes in v6:
+>  - Use a vendor prefix for the attributes
 
-kernel test robot noticed the following build errors:
+Where is cover letter with links to previous versions?
 
-[auto build test ERROR on i3c/i3c/next]
-[also build test ERROR on lee-mfd/for-mfd-next broonie-regulator/for-next linus/master v7.0-rc3 next-20260310]
-[cannot apply to lee-mfd/for-mfd-fixes]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+> 
+> Changes in v5:
+>  - Removed SW properties: cp0-ldo-microvolt,cp1-ldo-microvolt,
+>    tp0145-ldo-microvolt, tp2367-ldo-microvolt
+>  - Changed supply entries and its descriptions
+> 
+> Changes in v4:
+>  - Fixed DT binding check warning
+>  - Removed SW properties: ibi-enable, local-dev, and always-enable
+> 
+> Changes in v3:
+>  - Added MFD (Multi-Function Device) support for I3C hub and on-die regulator
+>  - Added Regulator supply node
+> 
+> Changes in v2:
+>  - Fixed DT binding check warning
+>  - Revised logic for parsing DTS nodes
+> ---
+> ---
+>  .../devicetree/bindings/i3c/nxp,p3h2840.yaml  | 209 ++++++++++++++++++
+>  MAINTAINERS                                   |   8 +
+>  2 files changed, 217 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml b/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+> new file mode 100644
+> index 000000000000..e592952e8164
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+> @@ -0,0 +1,209 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +# Copyright 2025 NXP
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/i3c/nxp,p3h2840.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: NXP P3H2X4X I3C HUB
+> +
+> +maintainers:
+> +  - Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+> +  - Vikash Bansal <vikash.bansal@nxp.com>
+> +
+> +description: |
+> +  P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841) is a family of multiport I3C
+> +  hub devices that connect to:-
+> +  1. A host CPU via I3C/I2C/SMBus bus on upstream side and connect to multiple
+> +     peripheral devices on the downstream  side.
+> +  2. Have two Controller Ports which can support either
+> +     I2C/SMBus or I3C buses and connect to a CPU, BMC or SOC.
+> +  3. P3H2840/ P3H2841 are 8 port I3C hub with eight I3C/I2C Target Port.
+> +  4. P3H2440/ P3H2441 are 4 port I3C hub with four I3C/I2C Target Port.
+> +     Target ports can be configured as I2C/SMBus, I3C or GPIO and connect to
+> +     peripherals.
+> +
+> +allOf:
+> +  - $ref: /schemas/i3c/i3c.yaml#
+> +
+> +properties:
+> +  compatible:
+> +    const: nxp,p3h2840
+> +
+> +  nxp,tp0145-pullup-ohms:
+> +    description:
+> +      Selects the pull up resistance for target Port 0/1/4/5, in ohms.
+> +    enum: [250, 500, 1000, 2000]
+> +    default: 500
+> +
+> +  nxp,tp2367-pullup-ohms:
+> +    description:
+> +      Selects the pull up resistance for target Port 2/3/6/7, in ohms.
+> +    enum: [250, 500, 1000, 2000]
+> +    default: 500
+> +
+> +  nxp,cp0-io-strength-ohms:
+> +    description:
+> +      Selects the IO drive strength for controller Port 0, in ohms.
+> +    enum: [20, 30, 40, 50]
+> +    default: 20
+> +
+> +  nxp,cp1-io-strength-ohms:
+> +    description:
+> +      Selects the IO drive strength for controller Port 1, in ohms.
+> +    enum: [20, 30, 40, 50]
+> +    default: 20
+> +
+> +  nxp,tp0145-io-strength-ohms:
+> +    description:
+> +      Selects the IO drive strength for target port 0/1/4/5, in ohms.
+> +    enum: [20, 30, 40, 50]
+> +    default: 20
+> +
+> +  nxp,tp2367-io-strength-ohms:
+> +    description:
+> +      Selects the IO drive strength for target port 2/3/6/7, in ohms.
+> +    enum: [20, 30, 40, 50]
+> +    default: 20
+> +
+> +  vcc1-supply:
+> +    description: Controller port 0 power supply.
+> +
+> +  vcc2-supply:
+> +    description: Controller port 1 power supply.
+> +
+> +  vcc3-supply:
+> +    description: Target port 0/1/4/5 power supply.
+> +
+> +  vcc4-supply:
+> +    description: Target port 2/3/6/7 power supply.
+> +
+> +  regulators:
+> +    type: object
+> +    additionalProperties: false
+> +
+> +    properties:
+> +      ldo-cp0:
+> +        type: object
+> +        $ref: /schemas/regulator/regulator.yaml#
+> +        unevaluatedProperties: false
+> +
+> +      ldo-cp1:
+> +        type: object
+> +        $ref: /schemas/regulator/regulator.yaml#
+> +        unevaluatedProperties: false
+> +
+> +      ldo-tpg0:
+> +        type: object
+> +        $ref: /schemas/regulator/regulator.yaml#
+> +        unevaluatedProperties: false
+> +
+> +      ldo-tpg1:
+> +        type: object
+> +        $ref: /schemas/regulator/regulator.yaml#
+> +        unevaluatedProperties: false
+> +
+> +patternProperties:
+> +  "^i3c@[0-7]$":
+> +    type: object
+> +    $ref: /schemas/i3c/i3c.yaml#
+> +    unevaluatedProperties: false
+> +
+> +    properties:
+> +      reg:
+> +        description:
+> +          The I3C HUB Target Port number.
+> +        maximum: 7
+> +
+> +      nxp,pullup-enable:
+> +        type: boolean
+> +        description:
+> +          Enables the on-die pull-up for Target Port.
+> +
+> +  "^(i2c|smbus)@[0-7]$":
+> +    type: object
+> +    $ref: /schemas/i2c/i2c-controller.yaml#
+> +    unevaluatedProperties: false
+> +
+> +    properties:
+> +      reg:
+> +        description:
+> +          The I3C HUB Target Port number.
+> +        maximum: 7
+> +
+> +      nxp,pullup-enable:
+> +        type: boolean
+> +        description:
+> +          Enables the on-die pull-up for Target Port.
+> +
+> +unevaluatedProperties: false
+> +
+> +examples:
+> +  - |
+> +    i3c {
+> +        #address-cells = <3>;
+> +        #size-cells = <0>;
+> +
+> +        hub@70,236153000c2 {
+> +            reg = <0x70 0x236 0x3000c2>;
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Lakshay-Piplani/i3c-master-Add-the-APIs-to-support-I3C-hub/20260310-150040
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git i3c/next
-patch link:    https://lore.kernel.org/r/20260310065727.3759342-6-lakshay.piplani%40nxp.com
-patch subject: [PATCH v6 6/7] i3c: hub: Add support for the I3C interface in the I3C hub
-config: s390-randconfig-001-20260311 (https://download.01.org/0day-ci/archive/20260311/202603110810.eZLkgGbx-lkp@intel.com/config)
-compiler: s390-linux-gcc (GCC) 8.5.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260311/202603110810.eZLkgGbx-lkp@intel.com/reproduce)
+Where is the compatible?
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202603110810.eZLkgGbx-lkp@intel.com/
+So this wasn't checked/tested. Try yourself, remove required properties
+and see if there is an error. No error, right?
 
-All errors (new ones prefixed by >>):
+Best regards,
+Krzysztof
 
-   s390-linux-ld: drivers/i3c/hub.o: in function `i3c_hub_disable_ibi':
->> hub.c:(.text+0x344): undefined reference to `i3c_dev_disable_ibi_locked'
-   s390-linux-ld: drivers/i3c/hub.o: in function `i3c_hub_enable_ibi':
->> hub.c:(.text+0x43c): undefined reference to `i3c_dev_enable_ibi_locked'
-   s390-linux-ld: drivers/i3c/hub.o: in function `i3c_hub_free_ibi':
->> hub.c:(.text+0x508): undefined reference to `i3c_master_direct_detach_i3c_dev'
->> s390-linux-ld: hub.c:(.text+0x51c): undefined reference to `i3c_dev_free_ibi_locked'
-   s390-linux-ld: drivers/i3c/hub.o: in function `i3c_hub_request_ibi':
->> hub.c:(.text+0x5e2): undefined reference to `i3c_master_direct_attach_i3c_dev'
->> s390-linux-ld: hub.c:(.text+0x644): undefined reference to `i3c_dev_request_ibi_locked'
-   s390-linux-ld: drivers/i3c/hub.o: in function `i3c_hub_master_priv_xfers':
->> hub.c:(.text+0x78e): undefined reference to `i3c_device_do_xfers'
->> s390-linux-ld: hub.c:(.text+0x7b8): undefined reference to `i3c_master_reattach_i3c_dev'
-   s390-linux-ld: hub.c:(.text+0x7d2): undefined reference to `i3c_master_reattach_i3c_dev'
-   s390-linux-ld: drivers/i3c/hub.o: in function `i3c_hub_master_send_ccc_cmd':
->> hub.c:(.text+0x88c): undefined reference to `i3c_master_send_ccc_cmd'
-   s390-linux-ld: drivers/i3c/hub.o: in function `i3c_hub_master_do_daa':
->> hub.c:(.text+0x92a): undefined reference to `i3c_master_do_daa'
-   s390-linux-ld: drivers/i3c/hub.o: in function `i3c_hub_master_supports_ccc_cmd':
->> hub.c:(.text+0x9ae): undefined reference to `i3c_master_supports_ccc_cmd'
-
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-i3c mailing list
