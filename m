@@ -4,61 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE302103E2E6
-	for <linux-i3c@archiver.kernel.org>; Wed, 11 Mar 2026 21:52:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DFBA1103E2E7
+	for <linux-i3c@archiver.kernel.org>; Wed, 11 Mar 2026 21:53:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hlOuFFz3iGclANy30UV6pW/G4ebD/wDnQqIIlHSnH/U=; b=frUyOhtyfMgPwk
-	tRohi/8h5Li1c/mjPXFWjpUEYOu8rLeCOHuQlQY+drHLvspS3tbYrKay8HN59HUeL7olGwZ9dZ04V
-	xDRHWLNJe7gYWbANKgExG09j8bwTrmbZOxDXt9KW7b4i0NjOKM85GDy64hAkJRl+M6eivQPytwrwY
-	hDkQsiiO3QbQCo4b810WnrK8uxt94XI3V7PRaqgU+yfTqWNDTdv5T+yauLhZGPA4+Bvoz3Orjth/8
-	rtJbvNuto0igaZ2dt30yOTH+Cb/2okoPrOqggWFQLSQm5rLDLAbgHdzNk45EwCpVXqd4Ap/oNGI4c
-	E11AeHMSZN2nbmwigIGQ==;
+	List-Owner; bh=/VuLIHexRj4HXL/U1cQmF3jAe+/khzwF6c5fBQsvx4M=; b=XAKuRJkjKRRqfk
+	wR9pZ8OFP40I/2iLVCC/z6T6UjgCtBSZlvGm1TZCLX9a5O4zwaemhNNcbjXxRTS3gcknGUqPb469O
+	bSV38The8NaNyLrWU1jv9RmZ4tA7m4Hqe+A9s70bIFN/BSw4MKHguH12Fhbj3zGJ4jaFrjkGjb/BL
+	O8bVz+coirY3RqA3QQoF4ghHoCETeIaYXS2W9ojdlLFw/Bv8UFmZYeFNdwPioyTMWAHhg1SUMr8Z6
+	k36hwyYpmUKf5H8nFQTOrzEssp3xDolKLw+D4MOVTfBES2tEMqusa5h5bAj5yVbyQLpvG3mYZB/tC
+	Osv4nvQCEZztqE8EGLxQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0RTv-0000000Ca4a-1aAg;
-	Wed, 11 Mar 2026 21:52:43 +0000
+	id 1w0RUJ-0000000Ca8z-2lTn;
+	Wed, 11 Mar 2026 21:53:07 +0000
 Received: from smtpout-02.galae.net ([185.246.84.56])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0RTs-0000000Ca30-0AiB
+	id 1w0RUI-0000000Ca8O-0FaY
 	for linux-i3c@lists.infradead.org;
-	Wed, 11 Mar 2026 21:52:41 +0000
+	Wed, 11 Mar 2026 21:53:07 +0000
 Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-02.galae.net (Postfix) with ESMTPS id 07CF21A2DCD;
-	Wed, 11 Mar 2026 21:52:38 +0000 (UTC)
+	by smtpout-02.galae.net (Postfix) with ESMTPS id AAA6F1A2DCD;
+	Wed, 11 Mar 2026 21:53:04 +0000 (UTC)
 Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id C502460004;
-	Wed, 11 Mar 2026 21:52:37 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id ED1E110369BDC;
-	Wed, 11 Mar 2026 22:52:35 +0100 (CET)
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 7E27860004;
+	Wed, 11 Mar 2026 21:53:04 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 1B63B10369BFD;
+	Wed, 11 Mar 2026 22:52:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1773265957;
+	t=1773265983;
 	h=from:subject:date:message-id:to:mime-version:content-type:in-reply-to:
-	 references; bh=1CQa3HlVKpA7Zt8df8fVfrCsP58jrDjo5THxQFnL9zQ=;
-	b=0Cql3txB7KNthrzRqn7ayNVOSRZwhoGegqum4iNnOLxgnHgt1+kn+lkoOUGzoVrEYhZcC/
-	D9RJnwq1xzCnIMAggEVl7ONJRO2WjCiG3+SLzHu5GZ96E41CHe9nG2F0tFkvC5VQt4ElOo
-	QDe3BXtpF3FGvhmdS7oAcShKS0t2neJyIcxSh7iyzTT0CqXDodfwRFDGAyiMeqeiXFIPNx
-	FOiAY4vJHmp9iEqJ5KNTsg3y/iwMiEECSXXancFBS01Y77KNSCIfn1npZmca2WQv4XhN+8
-	8lkzzPMpc9snuVhSB4t+oXCQU9BXeYEtN/gpJP0rSdJZOqOJLcIk6OwnR0vSvA==
-Date: Wed, 11 Mar 2026 22:52:35 +0100
+	 references; bh=dj2++XrCwB8uFq2Ku+Y2zsBo0dnRILVNESoXb8ji700=;
+	b=Jz4kKoLakEO2Ys1TUpF5xePOLGbwYZlDB01aZT8V0hZ2do0zfkehl8njlXobL9IyUO5+AB
+	DuqQX0Q5fOs/PX+ueLWjNMCib2vOL05ORap+uWl34puetw7Su9kpo6y0jqHubRgXSFVLZK
+	KVnAb5ltDOecO1VQLwcjUfA0v+Cx+GkuyzRXXYggUISGuXazmW5QHGVhK5MADtfXtjh3bN
+	K1VgFUh0iuE6TKxgESTG96dRINdFhhMdZHWh5cc5bSdejhrZqvkEKYPTrFgQigG0CVonCj
+	ldhSK8SLgQvSVS/OhPnnJl6VQJSZt+Snlg7hGIg71NchD0V+hZgnM1cj9Z9NvA==
+Date: Wed, 11 Mar 2026 22:52:58 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Frank.Li@nxp.com, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org, adrianhoyin.ng@altera.com
-Subject: Re: [PATCH v2] i3c: dw-i3c-master: Set SIR_REJECT in DAT on device
- attach and reattach
-Message-ID: <177326593348.2388749.14698557344627271725.b4-ty@bootlin.com>
-References: <53f5b8cbdd8af789ec38b95b02873f32f9182dd6.1770962368.git.adrianhoyin.ng@altera.com>
+To: Frank Li <Frank.Li@nxp.com>,
+	Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>,
+	Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	Manikanta Guntupalli <manikanta.guntupalli@amd.com>,
+	Zilin Guan <zilin@seu.edu.cn>,
+	Jorge Marques <jorge.marques@analog.com>,
+	Sakari Ailus <sakari.ailus@linux.intel.com>,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+	Peter Yin <peteryin.openbmc@gmail.com>
+Subject: Re: [PATCH v3] i3c: master: dw-i3c: Fix missing of_node for virtual
+ I2C adapter
+Message-ID: <177326593348.2388749.10335592300269012513.b4-ty@bootlin.com>
+References: <20260302075645.1492766-1-peteryin.openbmc@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <53f5b8cbdd8af789ec38b95b02873f32f9182dd6.1770962368.git.adrianhoyin.ng@altera.com>
+In-Reply-To: <20260302075645.1492766-1-peteryin.openbmc@gmail.com>
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260311_145240_234538_417AB145 
-X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-CacheID: sfid-20260311_145306_236823_DE08FB8C 
+X-CRM114-Status: UNSURE (   7.82  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,25 +83,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, 13 Feb 2026 14:00:48 +0800, adrianhoyin.ng@altera.com wrote:
-> The DesignWare I3C master controller ACKs IBIs as soon as a valid
-> Device Address Table (DAT) entry is present. This can create a race
-> between device attachment (after DAA) and the point where the client
-> driver enables IBIs via i3c_device_enable_ibi().
+On Mon, 02 Mar 2026 15:56:42 +0800, Peter Yin wrote:
+> The DesignWare I3C master driver creates a virtual I2C adapter to
+> provide backward compatibility with I2C devices. However, the current
+> implementation does not associate this virtual adapter with any
+> Device Tree node.
 > 
-> Set DEV_ADDR_TABLE_SIR_REJECT in the DAT entry during
-> attach_i3c_dev() and reattach_i3c_dev() so that IBIs are rejected
-> by default. The bit is managed thereafter by the existing
-> dw_i3c_master_set_sir_enabled() function, which clears it in
-> enable_ibi() after ENEC is issued, and restores it in disable_ibi()
-> after DISEC.
+> Propagate the of_node from the I3C master platform device to the
+> virtual I2C adapter's device structure. This ensures that standard
+> I2C aliases are correctly resolved and bus numbering remains consistent.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] i3c: dw-i3c-master: Set SIR_REJECT in DAT on device attach and reattach
-      https://git.kernel.org/abelloni/c/f311a0578463
+[1/1] i3c: master: dw-i3c: Fix missing of_node for virtual I2C adapter
+      https://git.kernel.org/i3c/c/f26ecaa0f0ab
 
 Best regards,
 
