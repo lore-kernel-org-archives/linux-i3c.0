@@ -4,103 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 781F4103E2F2
-	for <linux-i3c@archiver.kernel.org>; Wed, 11 Mar 2026 22:02:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4AE76103E2E6
+	for <linux-i3c@archiver.kernel.org>; Wed, 11 Mar 2026 22:06:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:CC:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VdBNdpOjvhKh0U9Yscq1YguGkoYYlp5w470YvFUPYv8=; b=TYdkcoRMh2oN70
-	nzKuN5sPLOX9dLISQyF0pmbr7eCe4IXaCiY2qojhkiUYoeyav98exX+yBAb91m7M8P8dec6rI/fxs
-	O3l/lvkRegJb7PvjicQYBhewJCQlJmsZ8EZpjTfdTx80G62oyXNS5JY72kHdli2T6IbqrTJksQkbX
-	GWiEukYFEVXqy1x0n7KSST9i2jIUr1G1lpOHsZwXYwxE71WegdbZ9trdMAJ53eVJB5ThrvDu+MpUs
-	zbzVU9p7lOrn42cH44meTdVao/kenvfHlvREZ/oaBc7DbFzndID5TJoFR69w+AS3BLYpTMnK42x0s
-	wX+EgkrkwMWgknkT6ijw==;
+	List-Owner; bh=0musZMdW41SbvAecbILlNVX2x0nEpK9VxGTk/I60SWQ=; b=I+NrtsWFHNen7e
+	Aj+wt1uR+I1m1+6v1h5Vvl89BbUNPEV3yI2cBDMxBIYEXxhl/KmsCIRxrWN87t1WFxRrhVrDY5N3X
+	p1qKFQk8HfigyOn1cA2k57Skh9HGuuwCGEJS+QWO0Uumxnt8lVbnRtmX3lbhmEGXWUzjfBXyqi1RK
+	pabSJkTRPsK3N05yUUktuxejapAzW9AJ1IrzBVX8LST+gLFtL9/iXx+mbJsD7TmQC4swpe5noxepu
+	N9q3j/u+7ZS3OSSI2+VHYzOeuOHvkACDj/FLPxsrNhkFtrcpsg3vCVHIu6bjboMBq0RiNG1i+fkL6
+	MdFtpDY8PsnpTDpWFPmw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0Rd1-0000000Cblz-0Z7H;
-	Wed, 11 Mar 2026 22:02:07 +0000
-Received: from frasgout.his.huawei.com ([185.176.79.56])
+	id 1w0Rh7-0000000Ccae-4A1K;
+	Wed, 11 Mar 2026 22:06:21 +0000
+Received: from smtpout-02.galae.net ([185.246.84.56])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vuv8r-00000002OWb-170o;
-	Tue, 24 Feb 2026 16:20:11 +0000
-Received: from mail.maildlp.com (unknown [172.18.224.107])
-	by frasgout.his.huawei.com (SkyGuard) with ESMTPS id 4fL2wr4V2szHnGjG;
-	Wed, 25 Feb 2026 00:19:24 +0800 (CST)
-Received: from dubpeml500005.china.huawei.com (unknown [7.214.145.207])
-	by mail.maildlp.com (Postfix) with ESMTPS id C0C2D40570;
-	Wed, 25 Feb 2026 00:20:04 +0800 (CST)
-Received: from localhost (10.203.177.15) by dubpeml500005.china.huawei.com
- (7.214.145.207) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.11; Tue, 24 Feb
- 2026 16:20:01 +0000
-Date: Tue, 24 Feb 2026 16:20:00 +0000
-From: Jonathan Cameron <jonathan.cameron@huawei.com>
-To: Shawn Lin <shawn.lin@rock-chips.com>
-CC: Bjorn Helgaas <bhelgaas@google.com>, "Vaibhaav Ram T . L"
-	<vaibhaavram.tl@microchip.com>, Kumaravel Thiagarajan
-	<kumaravel.thiagarajan@microchip.com>, Even Xu <even.xu@intel.com>, Xinpeng
- Sun <xinpeng.sun@intel.com>, Srinivas Pandruvada
-	<srinivas.pandruvada@linux.intel.com>, Jiri Kosina <jikos@kernel.org>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>, Zhou Wang
-	<wangzhou1@hisilicon.com>, Longfang Liu <liulongfang@huawei.com>, "Vinod
- Koul" <vkoul@kernel.org>, Lee Jones <lee@kernel.org>, Jijie Shao
-	<shaojijie@huawei.com>, Jian Shen <shenjian15@huawei.com>, Sunil Goutham
-	<sgoutham@marvell.com>, Andrew Lunn <andrew+netdev@lunn.ch>, "Heiner
- Kallweit" <hkallweit1@gmail.com>, "David S . Miller" <davem@davemloft.net>,
-	Jeff Hugo <jeff.hugo@oss.qualcomm.com>, Oded Gabbay <ogabbay@kernel.org>,
-	Maciej Falkowski <maciej.falkowski@linux.intel.com>, Karol Wachowski
-	<karol.wachowski@linux.intel.com>, Min Ma <mamin506@gmail.com>, Lizhi Hou
-	<lizhi.hou@amd.com>, Andreas Noever <andreas.noever@gmail.com>, "Mika
- Westerberg" <westeri@kernel.org>, Tomasz Jeznach <tjeznach@rivosinc.com>,
-	Will Deacon <will@kernel.org>, Xinliang Liu <xinliang.liu@linaro.org>, Tian
- Tao <tiantao6@hisilicon.com>, Davidlohr Bueso <dave@stgolabs.net>, Srujana
- Challa <schalla@marvell.com>, Bharat Bhushan <bbhushan2@marvell.com>, Antoine
- Tenart <atenart@kernel.org>, Herbert Xu <herbert@gondor.apana.org.au>, Raag
- Jadav <raag.jadav@intel.com>, "Hans de Goede" <hansg@kernel.org>, Greg
- Kroah-Hartman <gregkh@linuxfoundation.org>, Jiri Slaby
-	<jirislaby@kernel.org>, Andy Shevchenko <andy@kernel.org>, Manivannan
- Sadhasivam <mani@kernel.org>, Mika Westerberg
-	<mika.westerberg@linux.intel.com>, Andi Shyti <andi.shyti@kernel.org>, Robert
- Richter <rric@kernel.org>, Mark Brown <broonie@kernel.org>, "Nirmal Patel"
-	<nirmal.patel@linux.intel.com>, Kurt Schwemmer
-	<kurt.schwemmer@microsemi.com>, Logan Gunthorpe <logang@deltatee.com>, Linus
- Walleij <linusw@kernel.org>, Bartosz Golaszewski <brgl@kernel.org>, Sakari
- Ailus <sakari.ailus@linux.intel.com>, Bingbu Cao <bingbu.cao@intel.com>, Ulf
- Hansson <ulf.hansson@linaro.org>, Arnd Bergmann <arnd@arndb.de>, Benjamin
- Tissoires <bentiss@kernel.org>, <linux-input@vger.kernel.org>,
-	<linux-i3c@lists.infradead.org>, <dmaengine@vger.kernel.org>, Philipp Stanner
-	<phasta@kernel.org>, <netdev@vger.kernel.org>, <nic_swsd@realtek.com>,
-	<linux-arm-msm@vger.kernel.org>, <dri-devel@lists.freedesktop.org>,
-	<linux-usb@vger.kernel.org>, <iommu@lists.linux.dev>,
-	<linux-riscv@lists.infradead.org>, David Airlie <airlied@gmail.com>, Simona
- Vetter <simona@ffwll.ch>, <linux-cxl@vger.kernel.org>,
-	<linux-crypto@vger.kernel.org>, <platform-driver-x86@vger.kernel.org>,
-	<linux-serial@vger.kernel.org>, <mhi@lists.linux.dev>, Andy Shevchenko
-	<andriy.shevchenko@linux.intel.com>, Jan Dabros <jsd@semihalf.com>,
-	<linux-i2c@vger.kernel.org>, Daniel Mack <daniel@zonque.org>, "Haojian
- Zhuang" <haojian.zhuang@gmail.com>, <linux-spi@vger.kernel.org>, "Jonathan
- Derrick" <jonathan.derrick@linux.dev>, <linux-pci@vger.kernel.org>,
-	<linux-gpio@vger.kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
-	<linux-media@vger.kernel.org>, <linux-mmc@vger.kernel.org>
-Subject: Re: [PATCH 01/37] PCI/MSI: Add Devres managed IRQ vectors
- allocation
-Message-ID: <20260224162000.000001a5@huawei.com>
-In-Reply-To: <1771860581-82092-2-git-send-email-shawn.lin@rock-chips.com>
-References: <1771860581-82092-1-git-send-email-shawn.lin@rock-chips.com>
-	<1771860581-82092-2-git-send-email-shawn.lin@rock-chips.com>
-X-Mailer: Claws Mail 4.3.0 (GTK 3.24.42; x86_64-w64-mingw32)
+	id 1w0Rh5-0000000CcZI-05bI
+	for linux-i3c@lists.infradead.org;
+	Wed, 11 Mar 2026 22:06:20 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-02.galae.net (Postfix) with ESMTPS id EABB81A2DCD;
+	Wed, 11 Mar 2026 22:06:16 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id AB94460004;
+	Wed, 11 Mar 2026 22:06:16 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 3A0B510369BAF;
+	Wed, 11 Mar 2026 23:06:15 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1773266775; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=8I/cBM2paZR5qxCHtc+Yf5SzrN3xCWu16o5R1WNwpBY=;
+	b=TKH/wyx89U42BCdv3OBj9m1984RIfhyFEZyTnpKB865t/x0waHjxfbWXsVRyDKCE1ovizp
+	S2pKYlU82zJ2J0K+R3LjrOLe17W3B2HMWN8aN5iPCN0oDp9p+Wz2wuGW0SQYyH8GYY8gvm
+	G95Zx62cpFGSXodgVLmQOkMyXgzpOZKyO8iZopYI50ntLxbxbT7yoRX4nfpNH7UkUJu8Wu
+	UDr9Z2RfhlnlP7chbP5p4fJ4KETtMxGGvXlBRDEkcSKi5mjKVgq7iGvy5cGuSdTD3YYngI
+	8m8U6VcsRuYjNYOKpvFwmuZGiCpMg7ToDwk6MAPw2sGMLP+A7fx6fwu718Ozzg==
+Date: Wed, 11 Mar 2026 23:06:14 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: linux-kernel@vger.kernel.org, Randy Dunlap <rdunlap@infradead.org>
+Cc: Miquel Raynal <miquel.raynal@bootlin.com>, Frank Li <Frank.Li@nxp.com>,
+	linux-i3c@lists.infradead.org, imx@lists.linux.dev
+Subject: Re: [PATCH] i3c: master: svc: spelling corrections
+Message-ID: <177326636988.2391121.8519981227347109446.b4-ty@bootlin.com>
+References: <20260216061755.2801697-1-rdunlap@infradead.org>
 MIME-Version: 1.0
-X-Originating-IP: [10.203.177.15]
-X-ClientProxiedBy: lhrpeml500009.china.huawei.com (7.191.174.84) To
- dubpeml500005.china.huawei.com (7.214.145.207)
+Content-Disposition: inline
+In-Reply-To: <20260216061755.2801697-1-rdunlap@infradead.org>
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260224_082009_625663_131E67B9 
-X-CRM114-Status: UNSURE (   7.05  )
+X-CRM114-CacheID: sfid-20260311_150619_214850_1B40F2F4 
+X-CRM114-Status: UNSURE (   5.08  )
 X-CRM114-Notice: Please train this message.
-X-Mailman-Approved-At: Wed, 11 Mar 2026 15:01:57 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,18 +75,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, 23 Feb 2026 23:29:40 +0800
-Shawn Lin <shawn.lin@rock-chips.com> wrote:
+On Sun, 15 Feb 2026 22:17:55 -0800, Randy Dunlap wrote:
+> Correct spelling for 3 words as identified by codespell:
+> 
+> svc-i3c-master.c:340: tigger ==> trigger
+> svc-i3c-master.c:532: reamins ==> remains
+> svc-i3c-master.c:734: filetered ==> filtered
+> 
+> 
+> [...]
 
-> pcim_alloc_irq_vectors() and pcim_alloc_irq_vectors_affinity() are created for
-> pci device drivers which rely on the devres machinery to help cleanup the IRQ
-> vectors.
+Applied, thanks!
 
-It might be worth adding some details on why we need the is_msi_managed
-flag in the first place vs just doing conventional devm_add_action_or_reset()
-with pci_free_irq_vectors().
+[1/1] i3c: master: svc: spelling corrections
+      https://git.kernel.org/i3c/c/5912baff068a
 
+Best regards,
 
+-- 
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-i3c mailing list
