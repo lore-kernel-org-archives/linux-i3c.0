@@ -4,117 +4,112 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73786106ACCB
-	for <linux-i3c@archiver.kernel.org>; Thu, 12 Mar 2026 16:38:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 91363106ACC9
+	for <linux-i3c@archiver.kernel.org>; Thu, 12 Mar 2026 16:38:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:MIME-Version:Message-ID:Date:
-	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=6TrIZuc6sFgJqX6CYC9vRXVCjOElJ/86/SIkrlQ/Ch4=; b=b6Xy+PHm8H6f+o
-	4HIE97EUL0jXfDR5cYXW9rQFiTVS4pa6S93tyOYgJ8CbhY4PXuRKzNyBWxQs4hX34AHdY5HyE1Q4c
-	CHDZbsso0UD7VP+bq/Mt8LLl3TIeFcDDn2oQtCW/raIAgOyxGTuBdEgji7O9EtFfUOfeoTWh+SRkx
-	5f+sqxjNByH6txlDbzO2KAPg8qscnp7e+9Iwp/4seAwbgCzBfqOCC2suuwXk+b9NKb0wlc3q7g+30
-	rXaz0QP1G/QVE+0bqj/pOA6n/t6LuI9F4PZKA4fZATzVS4ofeB+qtTY6Oinh8qEv+NV/loUU2Q7u5
-	tBNhajoKr4yoHs4NtQuA==;
+	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XhYeXuW3NS6HpnFZMg2JrQU0SL+I3unlJDHteojk7Qs=; b=NlLFtbs1cWgJ09
+	VP8gyygiBhNPN8zEIXqSKWI9QHb6PdDl1XHx8KN4Uv0NZSE+t/31ztR52SDlNSa9Z2Oe8ItQITxrS
+	uFEPlGPLTLh09UqGlLAxKt/zd01LZsfXhk6CoWdLEl9BI7CE9YHqrvEOLx4tpquJ2zbh2eomnKMrn
+	SiK47Gmcq1d1ik3V+YeaD0JXo8YBrl4FLobbxqDHjL1CWEF8tln7+GjV/lwuhyGIwbrfJJLqaLS/S
+	DGfFYRxtOu5f6P/jw2bqCdHeS2ekA6rj/S9rN51JsXl4ByU+aMhT8ESnSdwLke85KtepImxF4QgLp
+	q+YezKEbfvNC1GT+vx1Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0j3b-0000000Eail-0JwM;
-	Thu, 12 Mar 2026 16:38:43 +0000
+	id 1w0j3b-0000000EajC-2WbP;
+	Thu, 12 Mar 2026 16:38:44 +0000
 Received: from mx0a-00128a01.pphosted.com ([148.163.135.77])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0j3Y-0000000EaeC-0Zda
+	id 1w0j3Y-0000000EaeS-0ZnK
 	for linux-i3c@lists.infradead.org;
-	Thu, 12 Mar 2026 16:38:41 +0000
-Received: from pps.filterd (m0516787.ppops.net [127.0.0.1])
-	by mx0a-00128a01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62CFfoNR2906891;
-	Thu, 12 Mar 2026 12:38:24 -0400
+	Thu, 12 Mar 2026 16:38:42 +0000
+Received: from pps.filterd (m0167089.ppops.net [127.0.0.1])
+	by mx0a-00128a01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62CB2f5m1999727;
+	Thu, 12 Mar 2026 12:38:27 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=analog.com; h=cc
-	:content-transfer-encoding:content-type:date:from:message-id
-	:mime-version:subject:to; s=DKIM; bh=JCpv4WQ8L7NoSTzERSi131Lwt+X
-	J5BcWkyT43nWz1qs=; b=uv07c/bkYWoud/fatftV6PA493EH9n4WJsjv9cMfdiZ
-	QE8qo3YtFDglqe8gFCklza6ZxjRNv5rjTEpivp0MKhBf7NDb06OzbEAFUBL8JUMP
-	HEa38EdSPozTu373YtOtproYS4qAQIDU+upA40ksikTv/umq0hZBq7XBHSimAQwL
-	FU5S4/URdEMvcChQTB4BkO3zSv1Jhdr+cRWWGOq++t9D7d2+p2m073fNHOQPqaHk
-	O7511/pKuRC8p8EknwK7lnKFCUpLum8zHHDzJ5/Km65aZbKfYbzOgYgrSsEUhbxj
-	Co2ILzIfpIjBrkgOrTIWeQKm0baMdwkDgHiCEry3arg==
+	:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=DKIM; bh=dPvUL
+	CIUekonudW8rZUau6fSmrfsOpqPfpx/auhxynM=; b=u8cB8ylxrtQg1/vVtxdP2
+	6g0Mmafwo1zUvUyOIOH6DB4fl3Ju9KLlNA3HvXLSwcQSXbQdhiiN4AAOKPxKE2AL
+	XF+y/aRNeKosq3KjRRDA4QLsldaWYmUKB/iEI+jG/Hz6l4unPjW1K4XDsVd/PSoS
+	2whSBy4W/DmYQCJbv4u1XDRRZL81SlXGNyKntPm1sF9czYps0sOiK9m0hFZnK+ad
+	jmnmm9Dxj+FSE8J8qoU+UmePBW5KPVYvmcP8fTC4LRbuAzTLjxXY93AdMPD+nc9N
+	ruqGIO9uQm9THfJOIqrpGWo+t6MxdM9j8z2ZibZcyldDLR5cqi4wdk9LwU00eHIi
+	g==
 Received: from nwd2mta4.analog.com ([137.71.173.58])
-	by mx0a-00128a01.pphosted.com (PPS) with ESMTPS id 4cuh50uhdx-1
+	by mx0a-00128a01.pphosted.com (PPS) with ESMTPS id 4cuh5wkdqd-1
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Thu, 12 Mar 2026 12:38:24 -0400 (EDT)
+	Thu, 12 Mar 2026 12:38:27 -0400 (EDT)
 Received: from ASHBMBX9.ad.analog.com (ASHBMBX9.ad.analog.com [10.64.17.10])
-	by nwd2mta4.analog.com (8.14.7/8.14.7) with ESMTP id 62CGcNOb009185
+	by nwd2mta4.analog.com (8.14.7/8.14.7) with ESMTP id 62CGcQak009191
 	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Thu, 12 Mar 2026 12:38:23 -0400
-Received: from ASHBCASHYB4.ad.analog.com (10.64.17.132) by
- ASHBMBX9.ad.analog.com (10.64.17.10) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1748.37; Thu, 12 Mar 2026 12:38:23 -0400
-Received: from ASHBMBX9.ad.analog.com (10.64.17.10) by
- ASHBCASHYB4.ad.analog.com (10.64.17.132) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1748.37; Thu, 12 Mar 2026 12:38:22 -0400
-Received: from zeus.spd.analog.com (10.66.68.11) by ashbmbx9.ad.analog.com
- (10.64.17.10) with Microsoft SMTP Server id 15.2.1748.37 via Frontend
- Transport; Thu, 12 Mar 2026 12:38:22 -0400
+	Thu, 12 Mar 2026 12:38:26 -0400
+Received: from ASHBMBX8.ad.analog.com (10.64.17.5) by ASHBMBX9.ad.analog.com
+ (10.64.17.10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.37; Thu, 12 Mar
+ 2026 12:38:25 -0400
+Received: from zeus.spd.analog.com (10.66.68.11) by ashbmbx8.ad.analog.com
+ (10.64.17.5) with Microsoft SMTP Server id 15.2.1748.37 via Frontend
+ Transport; Thu, 12 Mar 2026 12:38:25 -0400
 Received: from HYB-DlYm71t3hSl.ad.analog.com (HYB-DlYm71t3hSl.ad.analog.com [10.44.3.82] (may be forged))
-	by zeus.spd.analog.com (8.15.1/8.15.1) with ESMTP id 62CGc8GX021063;
-	Thu, 12 Mar 2026 12:38:11 -0400
+	by zeus.spd.analog.com (8.15.1/8.15.1) with ESMTP id 62CGc8GY021063;
+	Thu, 12 Mar 2026 12:38:18 -0400
 From: Jorge Marques <jorge.marques@analog.com>
-Subject: [PATCH v2 0/5] Fix paths unexpectedly returning Mx error codes
-Date: Thu, 12 Mar 2026 17:38:03 +0100
-Message-ID: <20260312-ad4062-positive-error-fix-v2-0-1c933b5c7ed8@analog.com>
+Date: Thu, 12 Mar 2026 17:38:04 +0100
+Subject: [PATCH v2 1/5] i3c: master: Move rstdaa error suppression
 MIME-Version: 1.0
-X-B4-Tracking: v=1; b=H4sIAOvrsmkC/32NQQ6CMBBFr0Jm7ZjSAlZX3sOwqO0AkyglLWk0p
- He3krh1+V7y398gUmCKcKk2CJQ4sp8LyEMFdjLzSMiuMEghO6FEi8Y1opO4+MgrJ0IKwQcc+IX
- OaqWsk4PQGsp+CVT03r71hSeOqw/v/SrVX/ur6j/VVKPAk3TKtvIs7o25mtk8/Hi0/gl9zvkDp
- Y1Rw8MAAAA=
-X-Change-ID: 20260305-ad4062-positive-error-fix-dc833cd2f088
+Message-ID: <20260312-ad4062-positive-error-fix-v2-1-1c933b5c7ed8@analog.com>
+References: <20260312-ad4062-positive-error-fix-v2-0-1c933b5c7ed8@analog.com>
+In-Reply-To: <20260312-ad4062-positive-error-fix-v2-0-1c933b5c7ed8@analog.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
         Frank Li
 	<Frank.Li@nxp.com>,
         =?utf-8?q?Przemys=C5=82aw_Gaj?= <pgaj@cadence.com>
 CC: <linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        "Dan
- Carpenter" <dan.carpenter@linaro.org>,
+        Dan
+ Carpenter <dan.carpenter@linaro.org>,
         Jonathan Cameron <jic23@kernel.org>,
         Jorge Marques <jorge.marques@analog.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1773333488; l=3204;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1773333488; l=1617;
  i=jorge.marques@analog.com; s=20250303; h=from:subject:message-id;
- bh=pttvBE1RyXMXHObe2PbEoTmlqOnS9JslcCMhhN6A85k=;
- b=fFNtHLqhtYQP/bMZwaWmNjeO4k2BecoIE2vtSvw5aA/ke6e0zyOYXKNQ9b3+4epa9EMfOc36a
- HLjHQ4FWWpvB1oiMpH/6pJkGIMPYLULt7Q3WZqkOpl3y9H0+R70TsDz
+ bh=k5d2D92jeaLhYWwICwnl31VS8E518jAAEp+IOyu6hgM=;
+ b=9dF8oVRn6wzSHTCElJaG87piYIiBZzxjyzDu/aavhb8BPFJDXrwey9ZcBdBAzsnV/fX0iA+vE
+ zxMPrK6NBx/CEHWKsKxab9EgITPcQI3r/+G0G3l9Nf3iWLVPzaUhZ88
 X-Developer-Key: i=jorge.marques@analog.com; a=ed25519;
  pk=NUR1IZZMH0Da3QbJ2tBSznSPVfRpuoWdhBzKGSpAdbg=
 X-ADIRuleOP-NewSCL: Rule Triggered
-X-Authority-Analysis: v=2.4 cv=RsjI7SmK c=1 sm=1 tr=0 ts=69b2ec00 cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzEyMDEzNCBTYWx0ZWRfX4PbCcdm1SkVL
+ kHMpv7yxR95fdGOSXoJJNKvqBFa/NGZGCgEH+9oinTAqov2g00C9/pdE2FIQRMlJuso71IM5a4H
+ EdaCXHgn+qU7lK8E/TqEsUwOjVOp2bpdmArZWDstVbkEctGcM9pv0CedZ1dUL6r2l+Kgc68TCVu
+ DJDuelNwAolh8MZ/dUbnpHQlY8hX8OHDP5FHsPlrrIBVvV1kqTHTpQg4+bSL7cZCw2e9jVX6q7n
+ P/MI+ubU7N52x8+2AW5aGRGKsK9KPCStkrw3ZD8jnYK3ew2aot6Sg6gkkarebpPWopTYaB/6grI
+ PdC8T/qSw0KuLQBeUO7vVD9s08IbLjmd3/ijw3Cyae7ng+KMWVHrCGOUgBsd586J8OiIjhOLeB3
+ N+bSb0zWM7maz1VytyfAjVDlq+Xw2RB3e0XxD29Ztloi4QMCzu+WinXzy+2HJezuxuRy+inFiLs
+ xe1bJBtZCa7s6jyGZtg==
+X-Proofpoint-ORIG-GUID: bGf4YKQ2bNpnjLU6i7FzPkNQWBrPyEjQ
+X-Proofpoint-GUID: bGf4YKQ2bNpnjLU6i7FzPkNQWBrPyEjQ
+X-Authority-Analysis: v=2.4 cv=K+Qv3iWI c=1 sm=1 tr=0 ts=69b2ec03 cx=c_pps
  a=3WNzaoukacrqR9RwcOSAdA==:117 a=3WNzaoukacrqR9RwcOSAdA==:17
  a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=0sLvza09kfJOxVLZPwjg:22 a=OmVn7CZJonkx5R5zMQLL:22 a=VwQbUJbxAAAA:8
- a=gAnH3GRIAAAA:8 a=2cd5jzKCDDM3a5ddEsEA:9 a=QEXdDO2ut3YA:10
-X-Proofpoint-ORIG-GUID: ZUhTc8-iU0mtx9VyNm3TWxSO9j3JZwVb
-X-Proofpoint-GUID: ZUhTc8-iU0mtx9VyNm3TWxSO9j3JZwVb
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzEyMDEzNCBTYWx0ZWRfX/ADT5pAkfGOK
- AVTn9YW4LO71XjsaqjTaeExutwtNLPn/imm6JXUYsGjn251YMG6blmSh+fuNjOrUHLjk9Ndqplv
- BvRvUJVB13Juq3yNQGV7dSQ6Fby51lsV/2Zm6HYgKuJorW3vNL394myBRluX4qu9xXS4cJCFgr/
- VXizxqqSQRTJJY176NGJuZNvxxsPTNAjJNaJEqe6pD5mXOo15nVkjP7HfF+kWoI0CPFPnMfHXeA
- mWWyBBkkrFHuKySNvHmEiflV3ISOJNuYSETxJzMGbwystCX1oKw/aoRshEYqMMJmBEbvDgbYG+Z
- 19ldcRxvWMptVZU5XME2UUlna3ocEky5dIqecgmrNOsGMPHU16e2zeTo+wiAbVMP+75hRYPhE0X
- baEfVujfg4tPOmL1PdGgX/otwQrjGHUOtBkCJNm2JjE555GenUYn1CIo48HhaA+PfYh6JtBHn1A
- +y84BCdVYuRNbgzL3Qw==
+ a=0sLvza09kfJOxVLZPwjg:22 a=Z0pTeXoby7EwIRygza74:22 a=gAnH3GRIAAAA:8
+ a=jGnnJhjHKBc1zkP0xQgA:9 a=QEXdDO2ut3YA:10
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
  definitions=2026-03-12_02,2026-03-12_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 adultscore=0 suspectscore=0 impostorscore=0 clxscore=1015
- spamscore=0 bulkscore=0 phishscore=0 lowpriorityscore=0 malwarescore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2603120134
+ lowpriorityscore=0 suspectscore=0 priorityscore=1501 malwarescore=0
+ bulkscore=0 clxscore=1015 spamscore=0 impostorscore=0 adultscore=0
+ phishscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2603050001
+ definitions=main-2603120134
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260312_093840_183727_340AB4FE 
-X-CRM114-Status: GOOD (  14.78  )
+X-CRM114-CacheID: sfid-20260312_093840_803915_10500CBB 
+X-CRM114-Status: GOOD (  14.39  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,82 +126,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-A smatch warning on the iio/adc/ad4062.c driver raised that many i3c
-methods that documented returning "0 on success or negative error code"
-but actually propagate positive Mx error codes (I3C_ERROR_M0=1, M1=2,
-M2=3) from i3c_master_send_ccc_cmd_locked().
-
-Close paths returning positive Mx error codes when 0 for success or
-negative error code otherwise are explicitly stated, ambiguous or
-expected.
-
-If any Mx error code is present, for each controller:
-- adi: returns -EIO
-- cdns: returns -EIO
-- dw:
-  - RESPONSE_ERROR_IBA_NACK -> I3C_ERROR_M2 : returns -EIO
-  - RESPONSE_ERROR_ADDRESS_NACK : returns -EINVAL
-- renesas :
-  - NRSPQP_ERROR_IBA_NACK : returns -EIO
-  - NRSPQP_ERROR_ADDRESS_NACK : returns -EINVAL
-- svc : Unclear ret value, but cmd->err = I3C_ERROR_M2 for any ret
-
-Each i3c_master_send_ccc_cmd_locked caller handles cmd->err directly.
-There are three exceptions all related to the bus initialization:
-* RSTDAA -> i3c_master_rstdaa_locked
-* ENTDAA -> i3c_master_entdaa_locked
-* DISEC (broadcast address only) -> i3c_master_enec_disec_locked
-
-For direct enable ibi, disable ibi to a target, error code M2 should not
-be suppressed, the device must acknowledge it.
-
-The patch series start with moving the error check suppressions, then
-does the actual change in i3c_master_send_ccc_cmd_locked to return
-0 on success or negative error code otherwise (drops the positive Mx
-error codes). Then ends with returning the xfer->err at
-adi_i3c_master_end_xfer_locked.
-
-The series was tested with adi-i3c-master.c and iio/adc/ad4062.c.
-
-Link: https://lore.kernel.org/linux-iio/aYXvT5FW0hXQwhm_@stanley.mountain/
+Prepares to fix improper Mx positive error propagation in later
+commits by handling Mx error codes where the i3c_ccc_cmd command
+is allocated. Two of the four i3c_master_rstdaa_locked() are error
+paths that already suppressed the return value, the remaining two
+are changed to handle the I3C_ERROR_M2 Mx error code inside
+i3c_master_rstdaa_locked(), checking cmd->err directly.
 
 Signed-off-by: Jorge Marques <jorge.marques@analog.com>
 ---
-Changes in v2:
-- Restore rstret to continue to do_daa on any RSTDAA error.
-  Note 1:
-    This patch also solves
-    mipi-i3c-hci/code.c@i3c_hci_resume_common returning positive error
-    code at dev_err, since the Mx error codes are not propagated to ret.
-  Note 2:
-    It is safe to do the DAA again on devices that lost power
-    (hibernation, ...) but already had the driver probed, since the PID
-    is unique and i3c_master_search_i3c_dev_duplicate() searches and
-    recovers the previous instance.
-- Update the commit messages to explain the commits that prepare for the
-  actual fix commit.
-- Move premature method return documentation change to fix commit.
-- Link to v1: https://lore.kernel.org/r/20260308-ad4062-positive-error-fix-v1-0-72d3c5290b4a@analog.com
+ drivers/i3c/master.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
----
-Jorge Marques (5):
-      i3c: master: Move rstdaa error suppression
-      i3c: master: Move entdaa error suppression
-      i3c: master: Move bus_init error suppression
-      i3c: master: Fix error codes at send_ccc_cmd
-      i3c: master: adi: Fix error propagation for CCCs
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 9e6be49bebb2c..c66f2655eb404 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -1016,6 +1016,10 @@ static int i3c_master_rstdaa_locked(struct i3c_master_controller *master,
+ 	ret = i3c_master_send_ccc_cmd_locked(master, &cmd);
+ 	i3c_ccc_cmd_dest_cleanup(&dest);
+ 
++	/* No active devices on the bus. */
++	if (ret && cmd.err == I3C_ERROR_M2)
++		ret = 0;
++
+ 	return ret;
+ }
+ 
+@@ -1796,8 +1800,6 @@ int i3c_master_do_daa_ext(struct i3c_master_controller *master, bool rstdaa)
+ 
+ 	if (rstdaa) {
+ 		rstret = i3c_master_rstdaa_locked(master, I3C_BROADCAST_ADDR);
+-		if (rstret == I3C_ERROR_M2)
+-			rstret = 0;
+ 	}
+ 
+ 	ret = master->ops->do_daa(master);
+@@ -2093,7 +2095,7 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
+ 	 * (assigned by the bootloader for example).
+ 	 */
+ 	ret = i3c_master_rstdaa_locked(master, I3C_BROADCAST_ADDR);
+-	if (ret && ret != I3C_ERROR_M2)
++	if (ret)
+ 		goto err_bus_cleanup;
+ 
+ 	if (master->ops->set_speed) {
 
- drivers/i3c/master.c                 | 67 ++++++++++++++++++++----------------
- drivers/i3c/master/adi-i3c-master.c  |  5 ++-
- drivers/i3c/master/i3c-master-cdns.c |  2 +-
- 3 files changed, 40 insertions(+), 34 deletions(-)
----
-base-commit: abaa7682a784a0ba4ddebb08a46ed8b76859d1e6
-change-id: 20260305-ad4062-positive-error-fix-dc833cd2f088
-
-Best regards,
 -- 
-Jorge Marques <jorge.marques@analog.com>
+2.51.1
 
 
 -- 
