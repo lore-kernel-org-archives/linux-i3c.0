@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 29F33FED2C7
-	for <linux-i3c@archiver.kernel.org>; Thu, 12 Mar 2026 04:22:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 556D1FED2C8
+	for <linux-i3c@archiver.kernel.org>; Thu, 12 Mar 2026 04:22:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=imgdPuWaeXwwJmM0ciqEDmvXtOfu03Kp9DTKi/RvFhA=; b=NzrqtmLhNurrzL
-	s8z1KnpN9HQxUq9oVU6HopzS9VyngK4u3YKBtXTe1GbGhCucAFyJuFkO41968IUquHW7a5N/lKKSq
-	yDf90mb8wqSTvCt9RoR4enVW09pprBKJwa23ttt1kfCeSU0CtOQ1nscNkOUEfcJN8v08M5C5WYWMC
-	Do8egzL5XdIzvDp/vQjv3vDjIu78PIJE7a6oWYpB2gmPAmpkxJE/ioVg3UQGGrCBAMSXworAO8h4d
-	+2qjaET1BXZTl3Ddt07D74vOQuqE32kttmkBgzLHjaSRS/2S9RKqobuAd5HdMNXXc6KIWimaT42Ft
-	8M1tC/KlqUbVXmAAwAlg==;
+	List-Owner; bh=Y9hxZPF4ziBLliVhW0sATZ0S6pqPyh61r2KELHE9Weg=; b=25jsDwenyy+ugZ
+	HYqjCx5XJOsF/cUs9WRkSdjwo+pmWJhWjlv/DzMv3b0xCaHDfRAxrkijF/cQwj80kUrODgPAKWrqQ
+	yhn8PQvGjN42Tv8xySy+bF7o1SkSuwsF2zU/zmJ750q4SehONWbpP5rz5oAt3xBJcE8IRye/xMRmr
+	mD9xHPn+WDPZBztpY/eDC/L+nfEHfR0iCphG2PuMIkMp+YUPe9O6DrWL32ul8Z4HQy0yl4c95WboR
+	LcSbYtgrIGy1odiWqsqzOmBlDDKg2snLFbc0pweffSfR08Im7+D3gLRO2clG8sLJXPiSD2q57LVxZ
+	yobKO6fspyOi7bfl1KEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0XYm-0000000DFVu-3ST0;
-	Thu, 12 Mar 2026 04:22:08 +0000
+	id 1w0XZ3-0000000DFgN-04fY;
+	Thu, 12 Mar 2026 04:22:25 +0000
 Received: from esa.microchip.iphmx.com ([68.232.153.233])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0XYg-0000000DFSC-2N3r;
-	Thu, 12 Mar 2026 04:22:07 +0000
+	id 1w0XYz-0000000DFdL-0VoE;
+	Thu, 12 Mar 2026 04:22:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1773289320; x=1804825320;
+  t=1773289340; x=1804825340;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=3wHXxRZW+3pyAHHF5bwYh0JQE5H6TZmyeNQhJB8UKIQ=;
-  b=Pk3PYjwkURtFENqasa0SC9hDP+gS/A6x3Kc7BGFa3jCUBdUSag111iRN
-   2UMDGe+kGw95aRNxGx7vHYlKLmThY9iVKHmIl3kXPoH3c3pm4va7BS2Nw
-   1lWWAfCQBcUPKpJeQu0YmouexkwB9A0SMuYUj+AvvFrT5hnAHqcTh0EOl
-   TLb0dZ6M/dKDCftv0OIM4j1HpJK6xeSDY9rTqpe50n6LBsP3zYXy6MrIt
-   L0yLBqkGu/iH+N8K2WNoGXWDEk2PZ3AfW5zvKFiNHxaN+uua+iDvzBcuq
-   Oyzl/XdwFGJkPrQNJ4QpX09wlSMAF/U872PmtWNhvnvJNHyhijmJcMLQM
-   g==;
-X-CSE-ConnectionGUID: NZXECXbnSTC3akxw2a7kVQ==
-X-CSE-MsgGUID: n2UhO/M+TAONHhHV7VTwtw==
+  bh=PUYnKeKHUBCeKind9Npf1NIbjQzWI2oBFhL1pRGpyEw=;
+  b=yNQ+XmAorypvnC+9wQ8Z8z7ZdOwgcYqpejk4N32O61pIQZRrI6TlOExL
+   6cnxVqt1xOSXUr1Rcyxq/vMRj+oi0GeBNu3oQfM6EaUZzSzvL65SBSS8d
+   GAhxzIQ2hBErxAChaE4VrsRw8i3SL+abiQSEMoshki3RJpXvjdDx2rcet
+   UbaQIPBhnLS2TAg4ydLiQhkFNjfHmm6OumzXWwdzGV7OxNbRvdBVhGOK9
+   ZlMc8fEfZ+Fhmhpc/uAgDYvF7SFaAxfXzrLhgYmMqNWF4yDkD+PZxLSR9
+   9KfTEU1SZG/+gltts6MqczVq5BY9yJkPwTEZyyLJgeIaYQH5bX4f3CYDX
+   Q==;
+X-CSE-ConnectionGUID: il7LFELGTMWBUr9DGihooA==
+X-CSE-MsgGUID: Cw+T+2u+Sv2qNM7MfPGmPw==
 X-IronPort-AV: E=Sophos;i="6.23,115,1770620400"; 
-   d="scan'208";a="62128084"
+   d="scan'208";a="54551562"
 X-Amp-Result: SKIPPED(no attachment in message)
 Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa1.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 11 Mar 2026 21:21:58 -0700
-Received: from chn-vm-ex04.mchp-main.com (10.10.87.151) by
- chn-vm-ex4.mchp-main.com (10.10.87.33) with Microsoft SMTP Server
+  by esa3.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 11 Mar 2026 21:22:19 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.2.2562.35; Wed, 11 Mar 2026 21:21:20 -0700
+ 15.1.2507.58; Wed, 11 Mar 2026 21:21:49 -0700
 Received: from che-lt-i67131.microchip.com (10.10.85.11) by
  chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server id
- 15.1.2507.58 via Frontend Transport; Wed, 11 Mar 2026 21:21:11 -0700
+ 15.1.2507.58 via Frontend Transport; Wed, 11 Mar 2026 21:21:40 -0700
 From: Manikandan Muralidharan <manikandan.m@microchip.com>
 To: <alexandre.belloni@bootlin.com>, <Frank.Li@nxp.com>, <robh@kernel.org>,
 	<krzk+dt@kernel.org>, <conor+dt@kernel.org>, <nicolas.ferre@microchip.com>,
@@ -64,17 +64,18 @@ To: <alexandre.belloni@bootlin.com>, <Frank.Li@nxp.com>, <robh@kernel.org>,
 	<linux-i3c@lists.infradead.org>, <devicetree@vger.kernel.org>,
 	<linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
 	<linux-clk@vger.kernel.org>
-CC: <manikandan.m@microchip.com>
-Subject: [PATCH v3 1/5] dt-bindings: i3c: mipi-i3c-hci: add Microchip SAMA7D65 compatible
-Date: Thu, 12 Mar 2026 09:50:52 +0530
-Message-ID: <20260312042056.309237-2-manikandan.m@microchip.com>
+CC: <manikandan.m@microchip.com>, Durai Manickam KR
+	<durai.manickamkr@microchip.com>
+Subject: [PATCH v3 4/5] ARM: dts: microchip: add I3C controller
+Date: Thu, 12 Mar 2026 09:50:55 +0530
+Message-ID: <20260312042056.309237-5-manikandan.m@microchip.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20260312042056.309237-1-manikandan.m@microchip.com>
 References: <20260312042056.309237-1-manikandan.m@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260311_212202_622055_B27DB4E0 
-X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-CacheID: sfid-20260311_212221_993006_43A449E8 
+X-CRM114-Status: UNSURE (   9.79  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -92,63 +93,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add the microchip,sama7d65-i3c-hci compatible string to the MIPI I3C
-HCI binding. The Microchip SAMA7D65 I3C controller is based on the
-MIPI HCI specification but requires two clocks, so add a conditional
-constraint when this compatible is present.
+From: Durai Manickam KR <durai.manickamkr@microchip.com>
 
+Add I3C controller for sama7d65 SoC.
+
+Signed-off-by: Durai Manickam KR <durai.manickamkr@microchip.com>
 Signed-off-by: Manikandan Muralidharan <manikandan.m@microchip.com>
 ---
- .../devicetree/bindings/i3c/mipi-i3c-hci.yaml | 22 +++++++++++++++----
- 1 file changed, 18 insertions(+), 4 deletions(-)
+Changes in v3:
+- Remove clock-names property as driver enables the clk in bulk
+---
+ arch/arm/boot/dts/microchip/sama7d65.dtsi | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/i3c/mipi-i3c-hci.yaml b/Documentation/devicetree/bindings/i3c/mipi-i3c-hci.yaml
-index 39bb1a1784c9..db659388a27d 100644
---- a/Documentation/devicetree/bindings/i3c/mipi-i3c-hci.yaml
-+++ b/Documentation/devicetree/bindings/i3c/mipi-i3c-hci.yaml
-@@ -9,9 +9,6 @@ title: MIPI I3C HCI
- maintainers:
-   - Nicolas Pitre <npitre@baylibre.com>
- 
--allOf:
--  - $ref: /schemas/i3c/i3c.yaml#
--
- description: |
-   MIPI I3C Host Controller Interface
- 
-@@ -28,7 +25,9 @@ description: |
- 
- properties:
-   compatible:
--    const: mipi-i3c-hci
-+    enum:
-+      - mipi-i3c-hci
-+      - microchip,sama7d65-i3c-hci
-   reg:
-     maxItems: 1
-   interrupts:
-@@ -39,6 +38,21 @@ required:
-   - reg
-   - interrupts
- 
-+allOf:
-+  - $ref: /schemas/i3c/i3c.yaml#
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            const: microchip,sama7d65-i3c-hci
-+    then:
-+      properties:
-+        clocks:
-+          minItems: 2
-+          maxItems: 2
-+      required:
-+        - clocks
+diff --git a/arch/arm/boot/dts/microchip/sama7d65.dtsi b/arch/arm/boot/dts/microchip/sama7d65.dtsi
+index e21556f46384..f358aae3ec59 100644
+--- a/arch/arm/boot/dts/microchip/sama7d65.dtsi
++++ b/arch/arm/boot/dts/microchip/sama7d65.dtsi
+@@ -1015,5 +1015,13 @@ gic: interrupt-controller@e8c11000 {
+ 			#address-cells = <0>;
+ 			interrupt-controller;
+ 		};
 +
- unevaluatedProperties: false
- 
- examples:
++		i3c: i3c@e9000000 {
++			compatible = "microchip,sama7d65-i3c-hci";
++			reg = <0xe9000000 0x300>;
++			interrupts = <GIC_SPI 105 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&pmc PMC_TYPE_PERIPHERAL 105>, <&pmc PMC_TYPE_GCK 105>;
++			status = "disabled";
++		};
+ 	};
+ };
 -- 
 2.25.1
 
