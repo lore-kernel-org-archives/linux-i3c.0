@@ -4,85 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 271F2103E2F6
-	for <linux-i3c@archiver.kernel.org>; Thu, 12 Mar 2026 00:15:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34462FED2C7
+	for <linux-i3c@archiver.kernel.org>; Thu, 12 Mar 2026 04:21:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7IRZ6isG58rIT1QkDju+01rkMp29WFz7rECUoG6u6Z8=; b=lvMTABpaKfonp0
-	Q28Gedxy5RdgHdb5nS0gGbDtQ3KIGqvZjWbYJTsK+Bcz05GhlzPqLbLZMPTXstz+Y9LpeWxdakDoL
-	dmpkUQa0uHO0PoJAuUpd83y3huSS6yTHGJ7FWOQSyOktVO4ofdSFXmYed7+kg5aBcZIgfe+VsPXu1
-	c93cseEjigfkdTcO7GjKIcwhFezwDLLf8n5dLtJEoW0kYg3gJ/TFUdAwJN4wlBCP5OalprzILFRkp
-	uim8tBrwaYp6pvVcOnQGukMS2j8bkHOqLG03TBlGz0BaS+QwCOeJ3FVO6KIPLVfABeaCwmBm/FoVE
-	YZHOTx7C9EdzUncZdJ2w==;
+	List-Owner; bh=7XnuDV8CJ9iWcQu3yl2+h0Kbp500NfedpDmdpUc82o8=; b=GRWV4v/zbHOtvs
+	/5xovqk7N7AfJLDvV4TiPi6oN3sJ3tH7c8r61gEHG0PROBuckifNCIkDvAenxK/xls+bdgreDSvvh
+	o1DCYo5/rK0ph5+2UihAA1MMP2sM+pZCDKhz6b3kNM0h3c/Cm5DFaiTJo4oGf2ZmC+Eu0SWP7GBr6
+	hLzb+fbmBnuaUiNAysprz9H/WYqtFg0kSdXBaQ+XM+mGdpGYxbK0Iua2/1l5X5QFiwJ26e5RToY7X
+	p+2+WcCVS14Gi9KXUaRjL5dTc8g/lD1vnkIHJqtv5RjZ4iC/xcx3X5hf7n1jy00PNfxEdDc4VRQeI
+	6vxW7hZqSBYYG89uv1mQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0TiW-0000000CvSi-1LnV;
-	Thu, 12 Mar 2026 00:15:56 +0000
-Received: from mail-pg1-x52c.google.com ([2607:f8b0:4864:20::52c])
+	id 1w0XYQ-0000000DFJE-3v9t;
+	Thu, 12 Mar 2026 04:21:46 +0000
+Received: from esa.microchip.iphmx.com ([68.232.154.123])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w0TiU-0000000CvS9-02QD
-	for linux-i3c@lists.infradead.org;
-	Thu, 12 Mar 2026 00:15:55 +0000
-Received: by mail-pg1-x52c.google.com with SMTP id 41be03b00d2f7-c73d251b93bso204686a12.0
-        for <linux-i3c@lists.infradead.org>; Wed, 11 Mar 2026 17:15:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1773274552; x=1773879352; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=5kLAJsER4lp2HD3vq6mJxj6QgJh+XYZbatqBm7oKRCo=;
-        b=DfYuQltDOUlAGRHgMjkHuZqm2fbr5EfcSdEsXKGE4EKfZiXg038lI6RBxs6KTWXyDp
-         lmY+OBPILYdB8QI2WMro0YCiBH6YH7OMhHFf1w9qonmRD0Jxdm431JhSlZQZZNDbfuGq
-         3JVQ+i/xvpV3mHwmElx6JLsUDCcVV3C8lb2V+RUrV1TIv96+mUaHDZEU1AQOWInXQAfH
-         OjQZ0KP2aZKq0KI/Kyr06aogUtA25JqRgUkN1QXmbZJj7M/SXnhQjvBMAkyeOQ/jD04y
-         9ja9PP9bIQZ1bD/3oHPnK8WrMhDrYSckBq1xhSa9cU+3ENoY63yCWCu4mKPIYE+zhMET
-         qkkA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1773274552; x=1773879352;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=5kLAJsER4lp2HD3vq6mJxj6QgJh+XYZbatqBm7oKRCo=;
-        b=xSK6uiKq3oV8eqA7KAtoA/Nxs8Kgwv8nWlpNwaYZLBjS+UAeL5vTlZx+rfC/Zy4mFs
-         XcJ8vZQ0/5sSZDTTdLr57rpqEb9YOi9ywphYzzhsXBB9nFEq7nTaubwBY/4SvuqwPHOc
-         F9o8BCWnTAYFXcJD00nGxU60sPedbiTS4JLiSPPjkTcTVNUbywpRvJug3cMdZm5mr5KF
-         x17Qw73ILCo4dn3HpJAOE2zXAlBhGlLAc9icInk7ZuTcLvdDmVZqTC3mhM4MJaSNd6K4
-         AqChKzZVXb47IM5OUerQifwOJjM80Qndl/eNAbMnQ+gLy4VSS8nV495cPhWIZXkkbf1M
-         gWpw==
-X-Gm-Message-State: AOJu0YyJVfbn9/fJ4YDqsKAARG6Zmvn4ZI3DqO66R6Myf0yRu1w1RcXp
-	NUz0PRHPsQfG6tpRbwxWypziUlnG6QxPnreep3SH9TT0tLhNS4v/C0f2nLYURWe6
-X-Gm-Gg: ATEYQzz5cTJJPbVf9dZB1s4GT7XgAPKu9AAgDImruwWFW6zWUheJysz0PDB6zy26yLQ
-	sficdjCletfhaJ+0FpDZi4X1nrRhBVEMLggBNjTValI0V3wTANoTgCorMFiLae2OQ0OZHsOGNqn
-	NTYfpfAHdvpbyUywWVlF9pfb57lLgL879p0bbnsa9HNCEA5aVJ2mwLgKfLIrVJZQZx+GjIxoMm1
-	t6NM2iEMgbNCIQEsWyimb14W6YhgFXR1NVgLF7ULFo+keRph6VEB8AVcCcSJpYCYYoVe7c+0ePA
-	Nfze77ow9pwUy1h/b90iTdoa/6RC7hwF/sDA1FBm+g7Rhh2I5kwV9QYHAhzgNkOCkzquRfFVrms
-	Yh+a1KNK+tTs+MYN3+luda/3dI09243gSyPhMJC6fBK6jYalooBvC1JUt14Mk/aVxsLqnOcM+xg
-	cLW65RKIVUj264ydNwcjjQavsFfl/fKAd45jq4QH2k2/+A1Og6dusBAQ==
-X-Received: by 2002:a05:6a21:6f89:b0:398:ab2c:a5bd with SMTP id adf61e73a8af0-398d7875fd1mr1213671637.21.1773274552521;
-        Wed, 11 Mar 2026 17:15:52 -0700 (PDT)
-Received: from ryzen ([2601:644:8000:56f5::8bd])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-82a072449fesm891746b3a.13.2026.03.11.17.15.51
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 11 Mar 2026 17:15:52 -0700 (PDT)
-From: Rosen Penev <rosenp@gmail.com>
-To: linux-i3c@lists.infradead.org
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>,
-	Kees Cook <kees@kernel.org>,
-	"Gustavo A. R. Silva" <gustavoars@kernel.org>,
-	linux-kernel@vger.kernel.org (open list),
-	linux-hardening@vger.kernel.org (open list:KERNEL HARDENING (not covered by other areas):Keyword:\b__counted_by(_le|_be)?\b)
-Subject: [PATCH] i3c: master: use kzalloc_flex
-Date: Wed, 11 Mar 2026 17:15:34 -0700
-Message-ID: <20260312001534.24423-1-rosenp@gmail.com>
-X-Mailer: git-send-email 2.53.0
+	id 1w0XYN-0000000DFHg-2eFY;
+	Thu, 12 Mar 2026 04:21:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+  t=1773289301; x=1804825301;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=wdI0p60YaCgXLrj/iUxMmmz6VvOV20Yk+z+tHEbhKv8=;
+  b=PLN4to3W/1YDU9sAsu8eFmA5rk/ib03I84KrVn+00DUayIXdPsQV7dlc
+   V9dHABu2FgMNqIX/sg0cY0a8UYcVYHkZ4M+WvA1qcTyTJIQf+BBbQjSja
+   3TvVrwpTkrNwJB/fKmhbmqCG5ytQkApGKa9DNzMH2JHQhRxsiC4BP2q78
+   OHVbA9/OUJhvReBXEahU8w+NkNkrEhomw/fEgAjfGxhCSifTtzOl9sO4Z
+   WPiw8C0TUExix1SL+CmAOZnqhyZhqa3fuJGK+6hWhLxt7icS6snOw40QK
+   yeJTwYHyI2qrVEwh6xXZ1W12M3r4ewcrXZ8iiFbq1RXHEtwb/QrS+Ueti
+   w==;
+X-CSE-ConnectionGUID: uJrHAOLBREOlPHbMYZOtwQ==
+X-CSE-MsgGUID: R7IJWLvAS6qm15x3KGqO0g==
+X-IronPort-AV: E=Sophos;i="6.23,115,1770620400"; 
+   d="scan'208";a="53801522"
+X-Amp-Result: SKIPPED(no attachment in message)
+Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
+  by esa4.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256; 11 Mar 2026 21:21:39 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2507.58; Wed, 11 Mar 2026 21:21:10 -0700
+Received: from che-lt-i67131.microchip.com (10.10.85.11) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server id
+ 15.1.2507.58 via Frontend Transport; Wed, 11 Mar 2026 21:21:02 -0700
+From: Manikandan Muralidharan <manikandan.m@microchip.com>
+To: <alexandre.belloni@bootlin.com>, <Frank.Li@nxp.com>, <robh@kernel.org>,
+	<krzk+dt@kernel.org>, <conor+dt@kernel.org>, <nicolas.ferre@microchip.com>,
+	<claudiu.beznea@tuxon.dev>, <linux@armlinux.org.uk>,
+	<mturquette@baylibre.com>, <sboyd@kernel.org>, <ardb@kernel.org>,
+	<ebiggers@google.com>, <martin.petersen@oracle.com>, <tytso@mit.edu>,
+	<cristian.birsan@microchip.com>, <adrian.hunter@intel.com>,
+	<jarkko.nikula@linux.intel.com>, <kees@kernel.org>, <npitre@baylibre.com>,
+	<linux-i3c@lists.infradead.org>, <devicetree@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+	<linux-clk@vger.kernel.org>
+CC: <manikandan.m@microchip.com>
+Subject: [PATCH v3 0/5] Add microchip sama7d65 SoC I3C support
+Date: Thu, 12 Mar 2026 09:50:51 +0530
+Message-ID: <20260312042056.309237-1-manikandan.m@microchip.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260311_171554_073338_04FCFECD 
-X-CRM114-Status: UNSURE (   9.36  )
+X-CRM114-CacheID: sfid-20260311_212143_728591_2187E2EA 
+X-CRM114-Status: UNSURE (   9.69  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -100,73 +90,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Simplifies allocations by using a flexible array member in this struct.
+Add support for microchip sama7d65 SoC I3C master only IP which is
+based on mipi-i3c-hci from synopsys implementing version 1.0
+specification. The platform specific changes are integrated in the
+existing mipi-i3c-hci driver by introducing a quirk
 
-Add __counted_by to get extra runtime analysis.
+I3C in master mode supports up to 12.5MHz, SDR mode data transfer in
+mixed bus mode (I2C and I3C target devices on same i3c bus).
 
-Signed-off-by: Rosen Penev <rosenp@gmail.com>
----
- drivers/i3c/master.c | 14 ++++----------
- 1 file changed, 4 insertions(+), 10 deletions(-)
+Durai Manickam KR (3):
+  clk: at91: sama7d65: add peripheral clock for I3C
+  ARM: dts: microchip: add I3C controller
+  ARM: configs: at91: sama7: add sama7d65 i3c-hci
 
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 9e6be49bebb2..b62cb3ee69c1 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -2793,10 +2793,10 @@ struct i3c_generic_ibi_slot {
- struct i3c_generic_ibi_pool {
- 	spinlock_t lock;
- 	unsigned int num_slots;
--	struct i3c_generic_ibi_slot *slots;
- 	void *payload_buf;
- 	struct list_head free_slots;
- 	struct list_head pending;
-+	struct i3c_generic_ibi_slot slots[] __counted_by(num_slots);
- };
- 
- /**
-@@ -2824,7 +2824,6 @@ void i3c_generic_ibi_free_pool(struct i3c_generic_ibi_pool *pool)
- 	WARN_ON(nslots != pool->num_slots);
- 
- 	kfree(pool->payload_buf);
--	kfree(pool->slots);
- 	kfree(pool);
- }
- EXPORT_SYMBOL_GPL(i3c_generic_ibi_free_pool);
-@@ -2847,20 +2846,16 @@ i3c_generic_ibi_alloc_pool(struct i3c_dev_desc *dev,
- 	unsigned int i;
- 	int ret;
- 
--	pool = kzalloc_obj(*pool);
-+	pool = kzalloc_flex(*pool, slots, req->num_slots);
- 	if (!pool)
- 		return ERR_PTR(-ENOMEM);
- 
-+	pool->num_slots = req->num_slots;
-+
- 	spin_lock_init(&pool->lock);
- 	INIT_LIST_HEAD(&pool->free_slots);
- 	INIT_LIST_HEAD(&pool->pending);
- 
--	pool->slots = kzalloc_objs(*slot, req->num_slots);
--	if (!pool->slots) {
--		ret = -ENOMEM;
--		goto err_free_pool;
--	}
--
- 	if (req->max_payload_len) {
- 		pool->payload_buf = kcalloc(req->num_slots,
- 					    req->max_payload_len, GFP_KERNEL);
-@@ -2879,7 +2874,6 @@ i3c_generic_ibi_alloc_pool(struct i3c_dev_desc *dev,
- 					  (i * req->max_payload_len);
- 
- 		list_add_tail(&slot->node, &pool->free_slots);
--		pool->num_slots++;
- 	}
- 
- 	return pool;
+Manikandan Muralidharan (2):
+  dt-bindings: i3c: mipi-i3c-hci: add Microchip SAMA7D65 compatible
+  i3c: mipi-i3c-hci: add microchip sama7d65 SoC compatible with the
+    appropriate quirk
+
+ .../devicetree/bindings/i3c/mipi-i3c-hci.yaml | 22 +++++++++++++++----
+ arch/arm/boot/dts/microchip/sama7d65.dtsi     |  8 +++++++
+ arch/arm/configs/sama7_defconfig              |  2 ++
+ drivers/clk/at91/sama7d65.c                   |  1 +
+ drivers/i3c/master/mipi-i3c-hci/core.c        | 12 ++++++++++
+ drivers/i3c/master/mipi-i3c-hci/hci.h         |  4 ++++
+ 6 files changed, 45 insertions(+), 4 deletions(-)
+
 -- 
-2.53.0
+2.25.1
 
 
 -- 
