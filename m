@@ -4,95 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6798F53D7F
-	for <linux-i3c@archiver.kernel.org>; Mon, 16 Mar 2026 17:48:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 073D0FB5EA8
+	for <linux-i3c@archiver.kernel.org>; Tue, 17 Mar 2026 03:40:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bNxtl7bpxDBua7NN3FB4D39G4kh8qIp6t1dKDTGe7BE=; b=2Le4SVgirJWzax
-	PMYmL8JoMs/Fs2T2UhpjTEpIy7NInY7C9xA4GtdjsBkeYGZk3uigmhUc3oiFpS/Z6RL8gqNlAdSAM
-	C1142HhV0q1KZ3RHr3yOyFKqBJpQbVBUI+R++lWDK1Bl1T+Eq65/7XzBQUg4c06R+YjgQZeO94hAx
-	vTJhbIgSzzrlkCGyNoHONQrVNXC8f/YC2m6kDAv3dOH4uV7XnktHWKzaR09L2kXlbp/9HxDu+CEuE
-	0iFd+QrGO8vv3poa2a+bevjo/xP2qDcJ3LYEuZIOA4RL1z5numsAVYG3tc/Aud3E1i6aKXQJq3gVd
-	M+wz3oqd8pFCAjGcq1Hw==;
+	List-Owner; bh=DnbL8ChizgZOfG9flaY9n4QRLmO/KNkq6Rw9mqcpcOc=; b=AciD7YaGC57+Wl
+	XTg8wl/KmK+PEvpVgdAXTYsPAJlm9SAXZC7u7G/4BYGUnl9WXD6fMQeU/2tu/12VVMY6+c6IBwXdW
+	p2LYQB590REfiyygIiY2K4YHrd2oJJsAQZmW+w4BPF3+T6SzNMJDsSufNQEzUQQlbKVEDJ1bYQnZ2
+	5DAtX05xKSnzfPKRJOWyCUSRfo43Lvvw9tthFBh2gLsObl1+bDHqeHYkJ9h9g0JEUdi8QMlajwCZK
+	qePQaGs/MInhc2Kdd1i+rIzg9kaM0VCdwdpVVM3iKq15p6LDiwoWFPWl79DlfNANvyx8TeKecM1u1
+	wN6J+xaSHFQM8s2Xx4mQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w2C3D-00000004bzV-1gfY;
-	Mon, 16 Mar 2026 17:48:23 +0000
-Received: from mail-pg1-x535.google.com ([2607:f8b0:4864:20::535])
+	id 1w2LI9-00000005Kv7-364s;
+	Tue, 17 Mar 2026 03:40:25 +0000
+Received: from mail-pg1-x534.google.com ([2607:f8b0:4864:20::534])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w2C3A-00000004bz2-2Vre
+	id 1w2LI7-00000005Kun-2bwO
 	for linux-i3c@lists.infradead.org;
-	Mon, 16 Mar 2026 17:48:22 +0000
-Received: by mail-pg1-x535.google.com with SMTP id 41be03b00d2f7-c70e27e2b74so1705071a12.0
-        for <linux-i3c@lists.infradead.org>; Mon, 16 Mar 2026 10:48:20 -0700 (PDT)
+	Tue, 17 Mar 2026 03:40:24 +0000
+Received: by mail-pg1-x534.google.com with SMTP id 41be03b00d2f7-c7358a7a8d1so3720482a12.3
+        for <linux-i3c@lists.infradead.org>; Mon, 16 Mar 2026 20:40:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1773683300; x=1774288100; darn=lists.infradead.org;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=V4r4EPN0k4/5QJ3xUXUMd727+oQtnnk0aBexwlfPH3c=;
-        b=HcDpib7v7y20M9uOrsv4hMigQ8zMl0ygS1DsnMxqsYz7vBb/MWVyfmJ7edsXkiQWpW
-         wavCM+R+JOG+MIaYlorYMsyBvQqFfA0dYQYG4DwXpJ4vQcDANe5ykwp2pQ2cXcPY49zr
-         ZfvF8V/6tfUjeKWv/6ZHq1LsDlK/wyD110HtSopJXdA3YP10+ZT74VQkhilpLtmm4Bu6
-         l1hHCO6cT1YlUi1+LJpcYT+asiTBXOTXEgKKWCmR3mosbw1S7GH6clJqpebsrU3tea01
-         I4pbV/8JE9rrpFFovqh0VRqC/RPBvkSTHe4siCDtOIi/u6K04KLMxIdU2/0GGfFDC5al
-         BEjg==
+        d=gmail.com; s=20230601; t=1773718822; x=1774323622; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=0e4a1XqGu8pWFSZImA7ilBed018RbSnXlZrAKGDX89A=;
+        b=DwyRyjf693M3aIDEuTsH/QaOg4ULHl1mmWgK8agHUzDLoiIUFY3ChJN0ODa54Grttp
+         y7ecVcgOn+jjm0qaVG29wAnTZGxbjBI/q3a8qXiqsb1+HKiQq5WeKXqc25yIe4fLXZuc
+         7MHln2eqMn168zkfQdzqzcugOkRPXoUf8jvkfR8hDOn3l4EZyyDThSaSmbs8FAzMKmOX
+         xDQgblQWl7/F3Ow3LZSf4hbAGfhl9ByCqtmEypEWm5a4BrlZSS8/ltFOj+W0NBzOuXeb
+         P53DWPyqjIPrBqYP1Xgctnom4UuLpCBGP8IbexrSCeJYeSBEVBHNNsaC4OPLqhuhPari
+         LTPA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1773683300; x=1774288100;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=1e100.net; s=20251104; t=1773718822; x=1774323622;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=V4r4EPN0k4/5QJ3xUXUMd727+oQtnnk0aBexwlfPH3c=;
-        b=Qah0Xkj2jX6n2D8+Bleb/zBs+nunrk33690QdzBi8XOp11sEVP4nB1vBebfhZP2Lbe
-         N3msZVL6K1a7nJH6/ZaX2LUfTKMC4E8zl+2qB/ATTkw7GpwM32lHS3tv6/NuWLjPGpHI
-         GpWoolmqsZwZhemDh6OI/0gmqKvFlPrAafk4mhJW48XX2fPEoPD+QWLbBui7EWrOkaRa
-         Y45BenWidQE4puHM0mlT7v9LrmHmZQTzDzLwDb9k6FdapquTl2EyHBVOjrSjAZ589PfZ
-         6GXNtpcYuv2AowbRwV0hAGjpZBlj2/WJONbX31rNh2LFlP1U5NNvE4SLkhjZXIPLc+Ep
-         UOLw==
-X-Gm-Message-State: AOJu0Yx+xqegtK3HfUusglIQ7maTd5BM2QrhNHkdy6SMhEjpeh0dbFzk
-	SfL6MF1A1mUSowSrnJD9/BBARlz7OLGCAqHzslknByCxWgumQtutvJQCenaM7TyZBSc=
-X-Gm-Gg: ATEYQzxhYqOfEh5CBvmW/TcRhXq2k9cPIZX3+Vs5XJU19mPooGJzZ12atmfqkjiuq6s
-	f2QD3G2gmh+XuyOsmhr7vKZJGWJW9vbAQYotLkW+/MTP+SbiBfdvFJ3Aao1gUw/R5L9VrBy5rTo
-	1/Vuf46O193Nzi3WeHMS5+/zdD9sd6OtiErGtR7ZnAUSYgvG5anzjUQx1nYbqQTXBQG7gFhSun5
-	fe284ES9kxL47+ZFz1B21nMqyNE96wv7k7pFxMYIIWcrUgbMOvqHC4VH2tHvTIBcdQ3UnyE6UYI
-	tgY4+B8GzNaucrBLhL/bVW4o1tm3WXB1WT63oxpll8VeCEWTHHZFHGYRxd9sz4iJvWeCj3kYIhZ
-	WVdnAQ+QNJPW6u9XKFG59wbeQAQNyCCsOH9NmkBw29tfbIe3+0Bx8MmYFH3ZjpesoJH+LIU2SFx
-	JHamBSs9TZ4WXHV/sg6UK59mJVW4rSkoUnzFrh
-X-Received: by 2002:a17:903:41c6:b0:2ae:5345:89ee with SMTP id d9443c01a7336-2aeca9589a2mr125945015ad.1.1773683299538;
-        Mon, 16 Mar 2026 10:48:19 -0700 (PDT)
-Received: from junjungu-PC.localdomain ([223.167.147.240])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2aece7ed6cfsm146391765ad.59.2026.03.16.10.48.17
+        bh=0e4a1XqGu8pWFSZImA7ilBed018RbSnXlZrAKGDX89A=;
+        b=CxnOCMLW6Lb/rOMXdTB/wiJLmGoVaWsqCNUYEDlqLsa4vuwFSDuXriV9W0ZRAXnNdw
+         RBwbQIfoFkQ2N5yR/6Zps7NilITu4NDh/7vNW9LkVOJhPjo+k2hMF+ht6ry99bs7WlDS
+         Rdv9J16BYJs9UMcQE5efxkfALNvltv3cbcsvZRTcl8+82G8tIe/Yle6JKU0bkU9C1Tqa
+         JT2HHmutCD9vIL5INIFXUsEGQKLpa23Q44H3+kmMYx8y5aZH+ucD5q/AF3sQ00OJaiha
+         S5wRlYvyZN6ovqyEkpXdPT+b9mxwO3EG0r+2sYmubP3Av6OAFYnPhAe53WZ5V48fKAkq
+         m3Ig==
+X-Forwarded-Encrypted: i=1; AJvYcCXN7my57jqBNpUDmdYCYluL0uKmDJN0WEY2QrGxkWlXG0uLDnMujNN/b30EIPLOs2vmH+m2GIX4ZOw=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy59QB1gV5vl7MxEcJFUd/WvMhkQwu7++yQvs81H4nHVqDIkbQY
+	bAiYvfZaSMyWKuOuvwkWTtZtdcacUargSi0ABiRfmwu9Rd9UuSyCYWtd
+X-Gm-Gg: ATEYQzxfnCj/dX8iVd96r/hdqBF58x8T44I7eJhzGYBfqQEYbncAByv5Z4T76YjN1ea
+	ytQ4Yp2LEmzODfhKv6+DROX1L36JzAOzIrdHWmBfW8QYuvlf7OgBJmAZ2N8LoxQIy26TrjEifwQ
+	Fx/Zx0NER0QE55XDSsiXvaQpi5UGw/r1yt8pnm0W42ri2wAR2sU1TFN1opgZVHAP449/zEjOhCX
+	tAzFPoNzuIKIsdN6lRAxr2Alo/pSd7nHd3HJc3Kioy8kTzxmAnifrn+jyW9B8LJpbCh/MPk+R8i
+	Q3G8hndNGHsX0yzQTxNeEKm67/Io2ktVveZ9KTKyHuU0XIhBBUGnKYMVHp2w05NOLw3G+GWpGgt
+	haM8Fpo3Q747B0H8jmeaPRIPOh7Iosy12YoWGQP/ozJ8Bn2TnJYwDUEmTLutmLNDvEV4NliVzQN
+	AIvvDKo2FYd6SPYDigRH/2uXxGA9XEzR3hTgIi+oppKpJCAu9jtG/mMdlz/84W5JtR
+X-Received: by 2002:a05:6a20:2446:b0:366:2447:6778 with SMTP id adf61e73a8af0-398ecd6c849mr13870485637.53.1773718822408;
+        Mon, 16 Mar 2026 20:40:22 -0700 (PDT)
+Received: from ZC-202510311500 ([61.185.217.216])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-82a07343719sm14847237b3a.38.2026.03.16.20.40.19
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Mar 2026 10:48:19 -0700 (PDT)
-From: Felix Gu <ustc.gu@gmail.com>
-Date: Tue, 17 Mar 2026 01:48:14 +0800
-Subject: [PATCH v2] i3c: master: dw-i3c: Fix missing reset assertion in
- remove() callback
+        Mon, 16 Mar 2026 20:40:21 -0700 (PDT)
+From: Haoyu Lu <hechushiguitu666@gmail.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>
+Cc: Miquel Raynal <miquel.raynal@bootlin.com>,
+	linux-i3c@lists.infradead.org,
+	imx@lists.linux.dev,
+	linux-kernel@vger.kernel.org,
+	"haoyu.lu" <hechushiguitu666@gmail.com>
+Subject: [PATCH] i3c: fix missing newline in dev_err messages
+Date: Tue, 17 Mar 2026 11:40:15 +0800
+Message-ID: <20260317034015.638-1-hechushiguitu666@gmail.com>
+X-Mailer: git-send-email 2.53.0.windows.1
 MIME-Version: 1.0
-Message-Id: <20260317-dw-i3c-v2-1-fa57e6394b1d@gmail.com>
-X-B4-Tracking: v=1; b=H4sIAF1CuGkC/2XMyw6CMBCF4Vchs3ZML6SAK9/DsChlgEmEmtZUD
- em7W9m6/E9Ovh0iBaYIl2qHQIkj+62EOlXgFrvNhDyWBiWUEVoaHF/I2iE1VpvBdcK0Csr5EWj
- i9wHd+tILx6cPn8NN8rf+EUmiRDvUshP15JpWXOfV8v3s/Ap9zvkLsIt59pwAAAA=
-X-Change-ID: 20260316-dw-i3c-e7a36bc90682
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
- Frank Li <Frank.Li@nxp.com>, Philipp Zabel <p.zabel@pengutronix.de>, 
- Aniket <aniketmaurya@google.com>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Felix Gu <ustc.gu@gmail.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1773683296; l=2173;
- i=ustc.gu@gmail.com; h=from:subject:message-id;
- bh=9pPeX9Og9XKvw52be7oukqVQdGpyIJ+ESHORa/A+tiE=;
- b=0Tc3dLmA/m1BZHxHoc1k1QWs8lf+DLHIWaHK9TqAhUxBqTcvrMK+uroa5ZKf/zu57mNLGyu7p
- b1m2OFB6nOLDe/dhIhfk8AyxnoWeITcGHfRrdjld9j64eGwzCj4q+/6
-X-Developer-Key: i=ustc.gu@gmail.com; a=ed25519;
- pk=fjUXwmjchVN7Ja6KGP55IXOzFeCl9edaHoQIEUA+/hw=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260316_104820_675377_B0620B7C 
-X-CRM114-Status: GOOD (  10.04  )
+X-CRM114-CacheID: sfid-20260316_204023_720462_6F50E5F2 
+X-CRM114-Status: UNSURE (   9.31  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,71 +101,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The reset line acquired during probe is currently left deasserted when
-the driver is unbound.
+From: "haoyu.lu" <hechushiguitu666@gmail.com>
 
-Switch to devm_reset_control_get_optional_exclusive_deasserted() to
-ensure the reset is automatically re-asserted by the devres core when
-the driver is removed.
+Add missing newline to dev_err messages in:
+- drivers/i3c/master.c
+- drivers/i3c/master/svc-i3c-master.c
 
-Fixes: 62fe9d06f570 ("i3c: dw: Add power management support")
-Signed-off-by: Felix Gu <ustc.gu@gmail.com>
+Signed-off-by: haoyu.lu <hechushiguitu666@gmail.com>
 ---
-Changes in v2:
-- Switch to devm_reset_control_get_optional_exclusive_deasserted() 
-suggested by Philipp Zabel.
-- Link to v1: https://lore.kernel.org/r/20260316-dw-i3c-v1-1-ab41904fc780@gmail.com
----
- drivers/i3c/master/dw-i3c-master.c | 11 +++--------
- 1 file changed, 3 insertions(+), 8 deletions(-)
+ drivers/i3c/master.c                | 2 +-
+ drivers/i3c/master/svc-i3c-master.c | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index d87bde3f7700..f3dabd8d1225 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -1606,13 +1606,11 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
- 	if (IS_ERR(master->pclk))
- 		return PTR_ERR(master->pclk);
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 9e6be49bebb2..27e93fcf2eba 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -2396,7 +2396,7 @@ of_i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
+ 	 * DEFSLVS command.
+ 	 */
+ 	if (boardinfo->base.flags & I2C_CLIENT_TEN) {
+-		dev_err(dev, "I2C device with 10 bit address not supported.");
++		dev_err(dev, "I2C device with 10 bit address not supported.\n");
+ 		return -EOPNOTSUPP;
+ 	}
  
--	master->core_rst = devm_reset_control_get_optional_exclusive(&pdev->dev,
--								    "core_rst");
-+	master->core_rst = devm_reset_control_get_optional_exclusive_deasserted(
-+		&pdev->dev, "core_rst");
- 	if (IS_ERR(master->core_rst))
- 		return PTR_ERR(master->core_rst);
- 
--	reset_control_deassert(master->core_rst);
--
- 	spin_lock_init(&master->xferqueue.lock);
- 	INIT_LIST_HEAD(&master->xferqueue.list);
- 
-@@ -1624,7 +1622,7 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
- 			       dw_i3c_master_irq_handler, 0,
- 			       dev_name(&pdev->dev), master);
+diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
+index b84b324e4111..e09a6218bf34 100644
+--- a/drivers/i3c/master/svc-i3c-master.c
++++ b/drivers/i3c/master/svc-i3c-master.c
+@@ -1268,7 +1268,7 @@ static int svc_i3c_master_do_daa(struct i3c_master_controller *m)
+ 	/* Configure IBI auto-rules */
+ 	ret = svc_i3c_update_ibirules(master);
  	if (ret)
--		goto err_assert_rst;
-+		return ret;
+-		dev_err(master->dev, "Cannot handle such a list of devices");
++		dev_err(master->dev, "Cannot handle such a list of devices\n");
  
- 	platform_set_drvdata(pdev, master);
- 
-@@ -1671,9 +1669,6 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
- 	pm_runtime_set_suspended(&pdev->dev);
- 	pm_runtime_dont_use_autosuspend(&pdev->dev);
- 
--err_assert_rst:
--	reset_control_assert(master->core_rst);
--
- 	return ret;
- }
- EXPORT_SYMBOL_GPL(dw_i3c_common_probe);
-
----
-base-commit: b84a0ebe421ca56995ff78b66307667b62b3a900
-change-id: 20260316-dw-i3c-e7a36bc90682
-
-Best regards,
+ rpm_out:
+ 	pm_runtime_put_autosuspend(master->dev);
 -- 
-Felix Gu <ustc.gu@gmail.com>
+2.53.0.windows.1
 
 
 -- 
