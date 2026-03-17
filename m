@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27E3BF3381B
-	for <linux-i3c@archiver.kernel.org>; Tue, 17 Mar 2026 08:53:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5615FD8740
+	for <linux-i3c@archiver.kernel.org>; Tue, 17 Mar 2026 11:33:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IN/Ms5+G5dWzq85EdXrJqX2VztwW/fLHWMnmYMrMxxA=; b=jauQJ36JhBs8wb
-	bFRrISUC/p/YCN+TzFT7DyxJ13ZimLaByb4KHliA2lZi7tXSV5+EFjnLNbBGgVJ715QDjoztu7Dil
-	dCiGehrqXKcqy5qqOg888LpQM/M3bc6NgJkna8YWEPRVlZXsHGr6D+sl80uavhR7Y8+kJMSSuwWkm
-	scLC2XOw5Ughfc33VXJTjmI4+d1h3y9AUNIPsiKspoL8D19GXlL0HMS53aBiZALNVH8di2bK1kUVJ
-	ilEEwCGzlBobkliqOTdZiFAYWLMmz4vq2VFz2xMi2ZYI+cPY7ZhTD/u0NOYPwHcu0BYwM3ek2f+HV
-	fDM+NZP5UTwxxVczFiMQ==;
+	List-Owner; bh=fWWHKOv1FTGSOG/8YgBBDe26VRM9JINGTreiFHUkKQ0=; b=MBI/IHhMnTK5uN
+	/Fyp8Tn7+2GpiUhFGnXbDzG/DEUFmMcwcaWMQE0LRSYe/cdghP/FeGMAiHLih5z2Zz8DgC02LyIb9
+	h17U9gvWX9GDVN+tPTOmGmLJljiynkxcHDVUJWnD1STvQibCMLOYQzbAbOeJ93zEjBcVSQA4OmNcr
+	f28ZZpYfWheCB1dRf0/kMKD9S2U8IXj10hqABaVIrY0e+KJRjwzSX2RfCgidLoFC1cBchkCVvS5I4
+	mu4UOqFbFw4IJod4Ojj0xOJNj/g1G4QSTVH+Cjfj/IlX1UWOPQOzQW3bNBkFYK3cKDeUE+qr39/82
+	hNUCLJ3GSI7Wzx3RWjow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w2QBA-00000005lpX-3p7R;
-	Tue, 17 Mar 2026 08:53:32 +0000
-Received: from smtpout-04.galae.net ([185.171.202.116])
+	id 1w2Sfg-000000069KM-25kT;
+	Tue, 17 Mar 2026 11:33:12 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w2QB7-00000005lp6-3lQl
+	id 1w2Sff-000000069Je-0Dfp
 	for linux-i3c@lists.infradead.org;
-	Tue, 17 Mar 2026 08:53:32 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-04.galae.net (Postfix) with ESMTPS id 7292DC55054
-	for <linux-i3c@lists.infradead.org>; Tue, 17 Mar 2026 08:53:49 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 7DADA5FC9A;
-	Tue, 17 Mar 2026 08:53:25 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id D105610450425;
-	Tue, 17 Mar 2026 09:53:23 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1773737604; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=In8idt2yZweANMAepWHj54chzIEKvH54YasTehXIpzQ=;
-	b=VfXCGi8qmU3nCq3Gukypcit5ZVFlruwkaPJ15ozYvVPvdTISE6bbCPJBV9jYPT9MUjP/g2
-	NUQw2F7PQ1VHJEeBeLSJaRZvTb62wcUycIwRGHhWCrXsdN61z5nI5LetmpU5aUb0Wo0dxX
-	yDMxSeNXLoMZiJ828qRnMEVnLwNakdBBaYmYdQzcMwE1s4gkBOjxrMS0IHSDmCgFIbfBMf
-	nSeZWeoiRuUhfE2FZY7oGMDN8EXTzpu5+t7wpyjkFgsMrymINVwrLNy/sXHNIgtBAC6Vj+
-	9QIa0urILQ6XsECAr85kUH3sqqXGKAGsdGW16cZzmHzuP+zpkhZdL2T0EinQoA==
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Haoyu Lu <hechushiguitu666@gmail.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,  Frank Li
- <Frank.Li@nxp.com>,  linux-i3c@lists.infradead.org,  imx@lists.linux.dev,
-  linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] i3c: fix missing newline in dev_err messages
-In-Reply-To: <20260317034015.638-1-hechushiguitu666@gmail.com> (Haoyu Lu's
-	message of "Tue, 17 Mar 2026 11:40:15 +0800")
-References: <20260317034015.638-1-hechushiguitu666@gmail.com>
-User-Agent: mu4e 1.12.7; emacs 30.2
-Date: Tue, 17 Mar 2026 09:53:23 +0100
-Message-ID: <87a4w6g7lo.fsf@bootlin.com>
+	Tue, 17 Mar 2026 11:33:11 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 6106D60103;
+	Tue, 17 Mar 2026 11:33:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4091BC2BCB1;
+	Tue, 17 Mar 2026 11:33:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1773747190;
+	bh=5U2mMX/BlLBee1LSdlSImz7BsVRSpnc0P2jc+ihhZZ0=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=mbyn+2ydh6nb/DaXAHMR6d/LaQ1K02bDSbe9iM4mfaIrIH6QtXRtdEhL4yo9QlMcy
+	 vWHFijTiNJko/1eYrtOGZdvq6I3TvhSFYwPGXfjyQBXsLLukeoU81C4bwV7Lc81dqj
+	 oZqgjzIYAK6CVCr5ypcPHPadaAVuDrdwMMJYkX4OZ4iNT1esr3AX66SP+BtBKxCrx/
+	 b6QkG2eArDhwbJ521Q8RWg3b9A93xtLfpystIwSB7gSbrlP45UHxP4P5q4Ei+QrVhc
+	 PGQyvuD24oK/EeQ4EKfsD3gmIi6BZL2gRvvWoYjQpNdlKPLqjPsm1HB466h9KcB7e0
+	 gflvrJCEMXM8Q==
+From: Sasha Levin <sashal@kernel.org>
+To: patches@lists.linux.dev,
+	stable@vger.kernel.org
+Cc: Peter Yin <peteryin.openbmc@gmail.com>,
+	Frank Li <Frank.Li@nxp.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Sasha Levin <sashal@kernel.org>,
+	linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH AUTOSEL 6.19-6.12] i3c: master: dw-i3c: Fix missing of_node for virtual I2C adapter
+Date: Tue, 17 Mar 2026 07:32:46 -0400
+Message-ID: <20260317113249.117771-15-sashal@kernel.org>
+X-Mailer: git-send-email 2.51.0
+In-Reply-To: <20260317113249.117771-1-sashal@kernel.org>
+References: <20260317113249.117771-1-sashal@kernel.org>
 MIME-Version: 1.0
-X-Last-TLS-Session-Version: TLSv1.3
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260317_015330_097091_C00F8B4D 
-X-CRM114-Status: UNSURE (   4.85  )
-X-CRM114-Notice: Please train this message.
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.19.8
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,18 +77,133 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 17/03/2026 at 11:40:15 +08, Haoyu Lu <hechushiguitu666@gmail.com> wrote:
+From: Peter Yin <peteryin.openbmc@gmail.com>
 
-> From: "haoyu.lu" <hechushiguitu666@gmail.com>
->
-> Add missing newline to dev_err messages in:
-> - drivers/i3c/master.c
-> - drivers/i3c/master/svc-i3c-master.c
->
-> Signed-off-by: haoyu.lu <hechushiguitu666@gmail.com>
-> ---
+[ Upstream commit f26ecaa0f0abfe5db173416214098a00d3b7db79 ]
 
-Reviewed-by: Miquel Raynal <miquel.raynal@bootlin.com>
+The DesignWare I3C master driver creates a virtual I2C adapter to
+provide backward compatibility with I2C devices. However, the current
+implementation does not associate this virtual adapter with any
+Device Tree node.
+
+Propagate the of_node from the I3C master platform device to the
+virtual I2C adapter's device structure. This ensures that standard
+I2C aliases are correctly resolved and bus numbering remains consistent.
+
+Signed-off-by: Peter Yin <peteryin.openbmc@gmail.com>
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+Link: https://patch.msgid.link/20260302075645.1492766-1-peteryin.openbmc@gmail.com
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+
+LLM Generated explanations, may be completely bogus:
+
+Now I have the complete picture.
+
+## Analysis
+
+### What the commit fixes
+
+The DesignWare I3C master driver creates a virtual I2C adapter
+(`master->base.i2c`) for backward compatibility. When this adapter is
+registered via `i3c_master_register()` ->
+`i3c_master_i2c_adapter_init()` -> `i2c_add_adapter()`, the I2C core
+calls `of_i2c_register_devices(adap)` (at `i2c-core-base.c:1593`).
+
+The critical code in `of_i2c_register_devices()` at `i2c-core-of.c:90`:
+```c
+if (!adap->dev.of_node)
+    return;
+```
+
+**Without this fix**, `adap->dev.of_node` is NULL, so
+`of_i2c_register_devices()` returns immediately without registering any
+I2C child devices described in the device tree. This means **I2C devices
+under the I3C master node in the DT will never be discovered or
+registered**.
+
+### Bug severity
+
+This is a real functional bug. On systems using Device Tree (most
+ARM/embedded systems where this driver is used - OpenBMC systems, etc.),
+I2C devices behind the DW I3C master won't be enumerated. The author's
+email (`peteryin.openbmc@gmail.com`) confirms this is from an OpenBMC
+context where DT-based I2C device discovery is essential.
+
+### Stable criteria assessment
+
+- **Fixes a real bug**: Yes - I2C devices behind I3C master are not
+  discovered from DT
+- **Obviously correct**: Yes - `device_set_of_node_from_dev` is a well-
+  established helper, and propagating the parent's of_node to a virtual
+  adapter is standard practice
+- **Small and contained**: Yes - single line addition in one file
+- **No new features**: Correct - this restores expected functionality
+  (DT device discovery)
+- **Reviewed**: Yes - by Frank Li at NXP (an I3C hardware vendor)
+
+### Risk assessment
+
+Very low risk. The change adds one call to
+`device_set_of_node_from_dev()` before `i3c_master_register()`. The
+function safely handles refcounting (does `of_node_put` on old,
+`of_node_get` on new). If the pdev has no of_node, it's a no-op (NULL ->
+NULL).
+
+### Verification
+
+- Read `dw-i3c-master.c:1616-1618`: confirmed the current code has no
+  of_node propagation before `i3c_master_register()`
+- Read `drivers/i3c/master.c:2554-2574`: confirmed
+  `i3c_master_i2c_adapter_init()` sets `adap->dev.parent` but NOT
+  `adap->dev.of_node`
+- Read `drivers/i2c/i2c-core-of.c:84-91`: confirmed
+  `of_i2c_register_devices()` returns immediately if `adap->dev.of_node`
+  is NULL - this is the concrete bug mechanism
+- Read `drivers/i2c/i2c-core-base.c:1593`: confirmed
+  `of_i2c_register_devices()` is called during adapter registration
+- git log confirmed the dw-i3c-master.c has existed for a long time and
+  this code path is established
+- The fix pattern (propagating of_node to virtual/child devices) is
+  standard across the kernel
+
+### Concerns
+
+- The commit doesn't have a `Fixes:` tag pointing to the original commit
+  that created the driver, but as noted in the guidelines, this is
+  expected for commits under review
+- No dependency on other patches - this is fully self-contained
+- The `device_set_of_node_from_dev()` function has been available since
+  kernel 5.x, so this should apply cleanly to all active stable trees
+  that have the DW I3C driver
+
+This is a clear bug fix: I2C devices described in Device Tree under an
+I3C master node are silently not discovered because the virtual I2C
+adapter lacks the of_node needed by the I2C core's DT enumeration. The
+fix is a single, safe, well-reviewed line.
+
+**YES**
+
+ drivers/i3c/master/dw-i3c-master.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index 4033bc16677ff..aa683894e6de9 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -1614,6 +1614,8 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+ 		pm_runtime_get_noresume(&pdev->dev);
+ 
+ 	INIT_WORK(&master->hj_work, dw_i3c_hj_work);
++
++	device_set_of_node_from_dev(&master->base.i2c.dev, &pdev->dev);
+ 	ret = i3c_master_register(&master->base, &pdev->dev,
+ 				  &dw_mipi_i3c_ops, false);
+ 	if (ret)
+-- 
+2.51.0
+
 
 -- 
 linux-i3c mailing list
