@@ -4,76 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 887DB10775F9
-	for <linux-i3c@archiver.kernel.org>; Wed, 18 Mar 2026 17:29:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4453A10775EB
+	for <linux-i3c@archiver.kernel.org>; Wed, 18 Mar 2026 17:30:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3F1dNPtAFiDSA119I/c8hL9+EDGq/HF/da0w3D6ZFSE=; b=o1IpOx82yEj4B7
-	mFK7yC+A6EjuPJQCXboBzsKV/ByXgtpGMQzyitn3fbWaoOhzNW25F8kaNDJd/zzwgbZ/o/EvVeoOs
-	Ab1yF86aQeJDwWGgKoES71WNlaFXuUyTBdS+Emoj+3Zg/fQY0HSeyHZR4nWOSGIUeFrpKSf8MTrhv
-	nf8VOvjDSOtWXAUbA2yib7Ft+fW9veeyO3VaaskmDyWVqQC4kUoC9cogJ93FX/TollgBZfxNjKvO/
-	Ax0B1ZxW7KpFKpcSPSN+EsEWAWlPWT6JYZ3BM4n8rhz3bAarA3Eg4uA5EX9HPEb0M8XjkN0XXfKnC
-	CPOIYT/oRVwCG4UFH9IA==;
+	List-Owner; bh=2J/FaXYOLbe5ideGw6pj8ccW2Ucvm2DA+6KMYdeWStE=; b=nmxGE1FGTY7ul+
+	o5v756JPSOrkEQdHPNjepcO5vi3ngC7g4Ti9zuHOjsG1Oxo/F2iCmP7r6BE2moXNgK6zlsYwEFEOs
+	mvRRJ9b+n/Bgbzn79abD8KDDn/kIuSkjbvD5n+/uJCV58PKyQ3fAjnhEjbUb8xZhZfEFmHXNAovi6
+	w1V3hyflboFSk2+bukqvDKuHQQr433Kb5ZhMOMK8obgL8mR4rsEwkG+uFg1gsWpMzS2u75vmJRrm8
+	k8PX2LCluW3DitxTHk1gBMvKktxb46r8tJ8UX7EYcM20zNekQNZsud1VIv6ohsltqCwn61+rTkCYf
+	+GPD0OMfKNcyfpPmDu1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w2uiI-000000094eQ-0wOF;
-	Wed, 18 Mar 2026 17:29:46 +0000
-Received: from mail-southcentralusazon11011057.outbound.protection.outlook.com ([40.93.194.57] helo=SN4PR0501CU005.outbound.protection.outlook.com)
+	id 1w2uig-000000094je-029R;
+	Wed, 18 Mar 2026 17:30:10 +0000
+Received: from mail-northcentralusazon11013041.outbound.protection.outlook.com ([40.107.201.41] helo=CH4PR04CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w2uiF-000000094d3-1jAR
+	id 1w2uib-000000094i3-01ud
 	for linux-i3c@lists.infradead.org;
-	Wed, 18 Mar 2026 17:29:45 +0000
+	Wed, 18 Mar 2026 17:30:06 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=g+ftIAWDy4F2194My1PVI07P5cotFGfc2fqHlFkhitYm4WqEJSaUmjPvb2yEesQEyvORCJ7X5ecJ3Qw/BOf1fsGcQB7olNcWseeMucgQB5jx4CUQTqsYBEYSzH4kMcTlCjAXlSn1t8bTMEDM0FV1rN87Q2KGYJZLDAQTQ0/XS0IYaL6dzgxcL5WPpLx3S115laKQ2B2KqO2RRwvuyw97EzvKSkYaKDaG2VaK+v3kD8Rc8VsOepYRZwuG7dpfBWBfAwdnALCq1nPPy1f7r2C6gLjDBti3C8UoWDpym9HANMMrCwHls0HnKUPuguuYW8NxSCrixw8PPboVlqxITXrfUg==
+ b=sgao+XSxHS4g4EOL/UOB8rQeDysPprHChf+vYe+Nr7JRHDfFJr330UBs/lZQjfSAcUIVh820U+xVjrX5K0NtnuoPvUiK5RtsMfh/rKSWMKZ/4GacJrqn9n+NKnqEbqnko35g5FCesK9GxnBaenv/PD/Xxik/H5Vz9FGL5XXT5X08+Pg57VRrdBaFOq7JlCCkwW/mX9+1TnIrxLWlw6rLEoX7a9GWkW85TlBoznrapzXF2R9xfOFeZTwx2WWisbkhuZuEyZVwwOM1Jtmrk5hWr1sR5SqLbyeqhXYPdc0CaGbabwnCGrpILAbVxQ/Hl4b4qfcnhSSH6RHiBf2qWrrf1Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=bW/98tZuzpeypHTbaLlolnhW5jM6gorI6K4c3+KQ7A8=;
- b=V2z5waOY+C5EU1zDWJu+jCYJfHZ6lDFPaxqlF7Z4PAMrmeqQqvg3ApGGC1cIvTqd37QVsONveJDna9jd0ftt4KNez2NIU8KNS9NzThp5uWo8Y/WcM6lJAOSeRAOSGFwypeg6ZhZi3o4ieWAxEuhJwj2R69VRQC1VcPTVTPYugzO+DHg8ONvvrcy99PZWrTdOwXokxAA2qwn5MtUGgx6BjzQEbuNzuKuSLFcVAUdrnyYSawtJ6kNYk8aemh4+iEj1rDqEJAhQ4CJ/tA4ti1tMjOunw8BMqvMxrGvJwtmDjjtFGbmhAS9gVNA74g8Ob0bCMgMdEwawbf/1Aayxuz62Bw==
+ bh=c24F1wGB2xEVNRh3VxeJZ2NuYt9YFfsPnDjvpuQaMI8=;
+ b=kLi41bYOTPSUUUYRZSJO1H2R1Hoj7lz67u9NMJTSvuvFO/LkjsTAh/YTFIBp6mWgIaQqM5Y8cWOB7q9XaMIj1ldSP+CB7zkfWlaWIaRS20wFQQkj95cf9ywVo8uLiqxWU1k1KnLlSBiqYvmc1rZOjSo6qVVWsWvb+vrMn+oG8ELD6A0xCKdYoF/QRbsJQDgW3oPdXhLci/q7Yo6p771894n8RZgUhr0/syZCRcYFqXsnSDCW3SyAWKxQgffsq4gRMePRyR/jPChjlm91UgrO7kzaYcmcwwv9pE7MRg179NOLzU0h47fOwCkmht0N4GD3qb1ka4PRTF4V6ZgXMjBEsQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.117.161) smtp.rcpttodomain=bootlin.com smtp.mailfrom=nvidia.com;
+ 216.228.117.160) smtp.rcpttodomain=bootlin.com smtp.mailfrom=nvidia.com;
  dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
  dkim=none (message not signed); arc=none (0)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=bW/98tZuzpeypHTbaLlolnhW5jM6gorI6K4c3+KQ7A8=;
- b=JKSCca5Ww/rLQ8FIqE9/hkgrkF+TPLeSP29a+yjTnPk33VQ7XRuxvO2IOfebZxnW0KGIJYfCjPCrwHA72tAiKks6fnvo8tcmKDZMOY/adZq83DyCrhd3gmYMIUCG/YDd/a8IB0ZxVR2WIIbPHz4QUs9Hk7cD3KSlbm0yQJT/6nEPcgvNv5hkdCHTqke68GNlh4OeM89yqzo/7HEzq9Ac/WhrnuCqeuA0QEy/5Iaxig/97ynK/9u+X69C6vHiVA/9oW/ENpVX7ghEOa+sQezCqpWJghKBptg4FC+VEBVqMv2OxELC9iQwbi3LBQxB50dHF8HEJwARirbnIPB/PNOutw==
-Received: from SJ2PR07CA0002.namprd07.prod.outlook.com (2603:10b6:a03:505::25)
- by CH2PR12MB4277.namprd12.prod.outlook.com (2603:10b6:610:ae::23) with
+ bh=c24F1wGB2xEVNRh3VxeJZ2NuYt9YFfsPnDjvpuQaMI8=;
+ b=rdtUaBWWcw4wka3+9vTaGvK4INKQkTAj6pfIYgYDarLzCR7whDLan6oqNHG3DIJBQCgiRIAF0OndIIjRqjDnVbf/9NZ7S19kbpyQtDOwS6unn5oegLxDjBYaq13TJDgducrk5vN48hbTvB7A7D22vaWa2SKzCqqFdmsossGOYibt7nr4djgxn4/1XzX1szaWwb6udkXVEvS4yQmZK2Zoept8zLwSsbw53aRpBDIV7dAGhZ6TdRBzuIIXzKgWyDiJrSaDz5lXFEfia5IFp/oLjq1wBWVpVG/858tKOKhvTCGa8nSjYZDiP+3GnqnIp04LwWq1l7Giui+VY92m1ixFQw==
+Received: from DS7PR03CA0308.namprd03.prod.outlook.com (2603:10b6:8:2b::31) by
+ CH0PR12MB8486.namprd12.prod.outlook.com (2603:10b6:610:18a::10) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9745.9; Wed, 18 Mar
- 2026 17:29:31 +0000
-Received: from CO1PEPF00012E83.namprd03.prod.outlook.com
- (2603:10b6:a03:505:cafe::60) by SJ2PR07CA0002.outlook.office365.com
- (2603:10b6:a03:505::25) with Microsoft SMTP Server (version=TLS1_3,
+ 2026 17:29:50 +0000
+Received: from DM2PEPF00003FC9.namprd04.prod.outlook.com
+ (2603:10b6:8:2b:cafe::94) by DS7PR03CA0308.outlook.office365.com
+ (2603:10b6:8:2b::31) with Microsoft SMTP Server (version=TLS1_3,
  cipher=TLS_AES_256_GCM_SHA384) id 15.20.9700.27 via Frontend Transport; Wed,
- 18 Mar 2026 17:29:26 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.161)
+ 18 Mar 2026 17:29:38 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
  smtp.mailfrom=nvidia.com; dkim=none (message not signed)
  header.d=none;dmarc=pass action=none header.from=nvidia.com;
 Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.117.161 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.117.161; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.117.161) by
- CO1PEPF00012E83.mail.protection.outlook.com (10.167.249.58) with Microsoft
+ 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.160) by
+ DM2PEPF00003FC9.mail.protection.outlook.com (10.167.23.27) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.9723.19 via Frontend Transport; Wed, 18 Mar 2026 17:29:29 +0000
+ 15.20.9723.19 via Frontend Transport; Wed, 18 Mar 2026 17:29:49 +0000
 Received: from rnnvmail201.nvidia.com (10.129.68.8) by mail.nvidia.com
- (10.129.200.67) with Microsoft SMTP Server (version=TLS1_2,
+ (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Wed, 18 Mar
- 2026 10:29:05 -0700
+ 2026 10:29:30 -0700
 Received: from rnnvmail201.nvidia.com (10.129.68.8) by rnnvmail201.nvidia.com
  (10.129.68.8) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Wed, 18 Mar
- 2026 10:29:04 -0700
+ 2026 10:29:30 -0700
 Received: from BUILDSERVER-IO-L4T.nvidia.com (10.127.8.9) by mail.nvidia.com
  (10.129.68.8) with Microsoft SMTP Server id 15.2.2562.20 via Frontend
- Transport; Wed, 18 Mar 2026 10:28:58 -0700
+ Transport; Wed, 18 Mar 2026 10:29:23 -0700
 From: Akhil R <akhilrajeev@nvidia.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
 	<Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
@@ -89,9 +89,9 @@ To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
 	<linux-acpi@vger.kernel.org>, <acpica-devel@lists.linux.dev>,
 	<linux-hwmon@vger.kernel.org>
 CC: Akhil R <akhilrajeev@nvidia.com>
-Subject: [PATCH 02/12] ACPICA: Read LVR from the I2C resource descriptor
-Date: Wed, 18 Mar 2026 22:57:15 +0530
-Message-ID: <20260318172820.13771-3-akhilrajeev@nvidia.com>
+Subject: [PATCH 04/12] i3c: master: Support ACPI enumeration
+Date: Wed, 18 Mar 2026 22:57:17 +0530
+Message-ID: <20260318172820.13771-5-akhilrajeev@nvidia.com>
 X-Mailer: git-send-email 2.50.1
 In-Reply-To: <20260318172820.13771-1-akhilrajeev@nvidia.com>
 References: <20260318172820.13771-1-akhilrajeev@nvidia.com>
@@ -100,28 +100,28 @@ X-NVConfidentiality: public
 X-NV-OnPremToCloud: ExternallySecured
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CO1PEPF00012E83:EE_|CH2PR12MB4277:EE_
-X-MS-Office365-Filtering-Correlation-Id: 615e374c-98a9-4c2d-47aa-08de8513e906
+X-MS-TrafficTypeDiagnostic: DM2PEPF00003FC9:EE_|CH0PR12MB8486:EE_
+X-MS-Office365-Filtering-Correlation-Id: 5a5e58fe-4be9-48b0-4a13-08de8513f507
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700016|82310400026|1800799024|7416014|376014|921020|13003099007|18002099003|22082099003|56012099003;
-X-Microsoft-Antispam-Message-Info: gP4eTrkkLd07z06SEc5iGHO02xdM1zuwQKF+bqsm+SXpjgv8VKYb2XdHDdkRfZVUIk0v/TTtqiOcIp0aevL/jCneUaLIYUfPJrTeOBwk9eGkP+7YzTLaK3sa+rb0Q8fb7/ikIGXJguIausUl4nJGkVdpkOWunc94vtwaXO0IVBgUljHt683I5mc3GEDb8lxHYyoAcx1eyUIO/T7pIiK64lDtAt+UUHd/Jm5g11tGR+qfSuNliR6X2cjevaAma4RUI1lLuOl39g5Mi40fXAuwZvknMvXd5V4o1M63RVtwOx1qJf78sr5C3zBGqC/IQWBWn/x1cgdjL959u/2MrOCoX3QgntJpI3BN6L2WIlba8gcETF722PZYQDa02S2w8fpEuavXq7uany1pBMTZVF+9Oby25UKq9vRIVxVHUIAUHdCaKgKv7sBt7IgmFlLZkqYgwELcNESAj4+oF9crZUOjowqK9dceIMmyKdj0A90Z6iN+NZO99lawJ5M4NdHTX/hKIYSaKcaRaq1CGhOzHRY6nkJPjgt1AIl9NKAb1EA+buFEGXuOFJPMRpXcJCHbmhQFr3UvTu+uo60PLn8JOJ/9gpOo8WNgQXc2jZe8WnzF2MEVvLljA8rku4TQ9QG5lboAYEYsW+ehgWS2NUaISczEbMmOIKBLlp2HiUNyMwXfR98khn9Rdo9qjwFUaQmC8OY1q8Mlo05LrLPJibiQBCR1ThQMdUqpfx5bx+Ou5P3oE/jzsJDCN3qtbe6ngwu8cWMGZWbRgE8gh43QiIuTgqtiv23/NkiVqS5Z20/MIl1AnrxAe8/G1/gKER5R6sEfyYypmkW1iqEE6R20mq/crB+Swg==
-X-Forefront-Antispam-Report: CIP:216.228.117.161;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge2.nvidia.com;CAT:NONE;SFS:(13230040)(36860700016)(82310400026)(1800799024)(7416014)(376014)(921020)(13003099007)(18002099003)(22082099003)(56012099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|376014|36860700016|7416014|1800799024|18002099003|56012099003|22082099003|921020|13003099007;
+X-Microsoft-Antispam-Message-Info: W0e/r1JSIaRWmfmvZ7oLd1fJkF3FNrysTOkm90P6zK5ACnEzIy6LxIrcOC4/rnG5ig/P+oHh1J62tW55D8S5pZW5NeBPawWZp6KvUbly6/Mg3612R3uMOI2zed/GnfgSFM0S587sF4p9ic8Ywz4tLXXpQR7aQabQhEGm6UFiIEq35Wp4o0KkNez5oUL7zokt5riQAfcAcqTIVolU36eC0Eb6k411frzyRB8Shj/2BxLR+B3gcBToyMTW0x/S2v4WkBqSF++JPJmqgwaS8nx7clZvG21WZOd4gLL7Cc5D2Nb/iDhFCjHzA8FXgE40sPtQNBpr3RlBvO+AAKr/4Q0KA/K1SgQy0lJUwwrYKGJFHk+QJhVvKz1oR1ru35kVlAgNHGZlzSlxHwZIK/1nth5+tPOo9sXZ88fjt1BobvZtYXLB+UFgbwvmhoIWZ9wsVquE3Py2pI8tuZSqqm+TEKCDAs4TaxjYMmW5kaCfTj7mRF2OvWcuzeJ9bAL6kFEqj0FN5wGXW1kpMDd5WAq96uWUoZpAxmrLDu568drMHOYfbNwT+YZjxF6L1iCg5l9wRHWkyRL55o865vOLKXGJ2UBWtWxqSKJji0xKMoW2sAUA2xzz4NTqd9wh5GgofSPf2CQcYPkQSjYyw3tWuzF5z3vDrZsrYREjsevVLEOOke0iHlnV5MAHYWjw7trnWvyUofnLZm9762LcuSsPmwLPm8NMC+qp6av2hyJIwVMaLLOCVGiDQjHwOLQbBRUCXmFxLb8HvVFeRrNJ5eRh+zG6q7eNjFMEdV0yJEhs48DGL1vWdi0/M3Rjt6D0mHpom9B+Fl8u
+X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(82310400026)(376014)(36860700016)(7416014)(1800799024)(18002099003)(56012099003)(22082099003)(921020)(13003099007);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: g/NXMGUuFCSTyYWryMMZ21dSZz/b+WEZDapWZOni3QHIRESnEB6SpoO9fAxGYIktKRFwkEKY4580YSMjZdR07t8BG/dHqQm3GFiH3yxMtDh/NZWepDbJkR2RQphHXZA0QUzhk6DUYOGKvsXy5NLthHhn0xHm9QyMSY8oUPSYlWkDEqoV60dEtHKht03svbYR3dPNeQAtXz8mk2H+HbdAlkooK6m3VSEdIOKlEqn0n2b+Bybn4/S7D4LSEVeUV4CsfYL8Ddm7Vyk0tx5NTEBYjhsc4oWlo7u68ByvELfS71SgdRTjilx/KToS3UBGZddy2tJ0XYQjs9WvX/DGpeW6TmIuatvNLUcaIsoAGQPzHNqr2UBi76OQe5x/je2sF1ICPr+9HsdDTawMkM4+RNuaBv9W8t+w7SCwhHpmyQElBxSwmUoHDm0MGurQ5hQwx11B
+X-MS-Exchange-AntiSpam-MessageData-0: bUFncu08YUchnn/jt3RcxjwOY26W7wMN1OVd8oGX/CwkEJQ5w1jcwQeJ1OL0urSz7TC/bmXn30GC9vyLTuCbbiFB1lvUMEGJObIf4nfGCaEzYkCePG77jDNMXWSsR6xMKXL5l3Z9hffcc/lK/Rs0f2ruyrott19OM40UxEzzbr+BzKWBlcPFijUs/Mb+3uXfeRV9bFw0pxaXqbHVx9kkDe3CT3Z43nrymnSLtdA96LFRKRxfULSS9fKX1FjFHXA/HukjMBYxPBE1fWKvwfVKG9uXIeT0ukN8ALZicGW8NKJekVY1WGFd3laHU+gh7EbNH7qpLAT0EvqtzQLpBUJqK86F5UzFf1DI2UnFTTk2JMJj4Z8ycZqjSmsKdoJwo4gnkK99w7E2lrbUim2TncMiI52t8arBJymYjrrvS5/CsE7RAW1j+KNaITEFI73jBpra
 X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Mar 2026 17:29:29.2624
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Mar 2026 17:29:49.3699
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 615e374c-98a9-4c2d-47aa-08de8513e906
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5a5e58fe-4be9-48b0-4a13-08de8513f507
 X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.161];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: CO1PEPF00012E83.namprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: DM2PEPF00003FC9.namprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR12MB4277
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH0PR12MB8486
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260318_102943_451133_FABE8C58 
-X-CRM114-Status: GOOD (  11.27  )
+X-CRM114-CacheID: sfid-20260318_103005_049513_A51CC275 
+X-CRM114-Status: GOOD (  20.46  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,67 +138,187 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-ACPI 6.3 specifies byte 8 of I2C Serial Bus Connection descriptor to be
-used for Legacy Virtual Register (LVR) data as specified in the MIPI
-I3C Specification for an I2C device connected to an I3C Host Controller.
-LVR will be read by I3C host controller drivers and it provides details
-about the specific speed and 50ns spike filter capabilities of I2C
-devices.
+Support ACPI enumeration for I2C and I3C devices on an I3C bus.
+Read _ADR and LVR from the ACPI resources and extract the data
+as per the ACPI specification for an I3C bus. Also read
+mipi-i3c-static-address as per the MIPI DISCO specifications [1]
+to get the static address to be used.
 
-Update the rsconvert_info to include this field. For I2C devices on an
-I2C bus, this field is Reserved and unused.
+Although the existing subsystem allows host controllers to register
+through the ACPI table, it was not possible to describe I3C or I2C
+devices there. This change enables describing the I3C or I2C devices
+in the ACPI table, which is required if the device is using a static
+address or if it needs some specific properties to be attached to it.
 
-This commit is the result of squashing the following:
-ACPICA commit 70082dc8fc847673ac7f4bbb1541776730f0b63e
-ACPICA commit e62e74baf7e08cf059ec82049aeccd565b24d661
-ACPICA commit c404118235108012cad396c834b5aabe2dd1b51a
-ACPICA commit 7650d4a889ea7907060bfce89f4f780ce83e7b28
-ACPICA commit 014fa9f2dbcc6b1bd42a4a4a6f6705d9cf7d460b
+[1] https://www.mipi.org/specifications/disco
 
-Link: https://github.com/acpica/acpica/commit/70082dc8
-Link: https://github.com/acpica/acpica/commit/b3c38dc9
 Signed-off-by: Akhil R <akhilrajeev@nvidia.com>
 ---
- drivers/acpi/acpica/rsserial.c | 6 +++++-
- include/acpi/acrestyp.h        | 1 +
- 2 files changed, 6 insertions(+), 1 deletion(-)
+ drivers/i3c/master.c | 101 +++++++++++++++++++++++++++++++++++++++----
+ 1 file changed, 93 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/acpi/acpica/rsserial.c b/drivers/acpi/acpica/rsserial.c
-index 279bfa27da94..c06e918ab889 100644
---- a/drivers/acpi/acpica/rsserial.c
-+++ b/drivers/acpi/acpica/rsserial.c
-@@ -315,7 +315,7 @@ struct acpi_rsconvert_info acpi_rs_convert_csi2_serial_bus[14] = {
-  *
-  ******************************************************************************/
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 2c479fecbfdf..15a356a2b3c8 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -2404,12 +2404,31 @@ EXPORT_SYMBOL_GPL(i3c_master_add_i3c_dev_locked);
  
--struct acpi_rsconvert_info acpi_rs_convert_i2c_serial_bus[17] = {
-+struct acpi_rsconvert_info acpi_rs_convert_i2c_serial_bus[18] = {
- 	{ACPI_RSC_INITGET, ACPI_RESOURCE_TYPE_SERIAL_BUS,
- 	 ACPI_RS_SIZE(struct acpi_resource_i2c_serialbus),
- 	 ACPI_RSC_TABLE_SIZE(acpi_rs_convert_i2c_serial_bus)},
-@@ -391,6 +391,10 @@ struct acpi_rsconvert_info acpi_rs_convert_i2c_serial_bus[17] = {
- 	 AML_OFFSET(i2c_serial_bus.type_specific_flags),
- 	 0},
+ #define OF_I3C_REG1_IS_I2C_DEV			BIT(31)
  
-+	{ACPI_RSC_MOVE8, ACPI_RS_OFFSET(data.i2c_serial_bus.lvr),
-+	 AML_OFFSET(i2c_serial_bus.type_specific_flags) + 1,
-+	 1},
++static int i3c_acpi_get_i2c_resource(struct acpi_resource *ares, void *data)
++{
++	struct i2c_dev_boardinfo *boardinfo = data;
++	struct acpi_resource_i2c_serialbus *sb;
 +
- 	{ACPI_RSC_MOVE32, ACPI_RS_OFFSET(data.i2c_serial_bus.connection_speed),
- 	 AML_OFFSET(i2c_serial_bus.connection_speed),
- 	 1},
-diff --git a/include/acpi/acrestyp.h b/include/acpi/acrestyp.h
-index 842f932e2c2b..38a19b1d19ac 100644
---- a/include/acpi/acrestyp.h
-+++ b/include/acpi/acrestyp.h
-@@ -423,6 +423,7 @@ struct acpi_resource_i2c_serialbus {
- 	ACPI_RESOURCE_SERIAL_COMMON u8 access_mode;
- 	u16 slave_address;
- 	u32 connection_speed;
-+	u8 lvr;
- };
++	if (!i2c_acpi_get_i2c_resource(ares, &sb))
++		return 1;
++
++	boardinfo->base.addr = sb->slave_address;
++	if (sb->access_mode == ACPI_I2C_10BIT_MODE)
++		boardinfo->base.flags |= I2C_CLIENT_TEN;
++
++	boardinfo->lvr = sb->lvr;
++
++	return 0;
++}
++
+ static int
+ i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
+ 			     struct fwnode_handle *fwnode, u32 *reg)
+ {
+ 	struct i2c_dev_boardinfo *boardinfo;
+ 	struct device *dev = &master->dev;
++	struct acpi_device *adev;
++	LIST_HEAD(resources);
+ 	int ret;
  
- /* Values for access_mode field above */
+ 	boardinfo = devm_kzalloc(dev, sizeof(*boardinfo), GFP_KERNEL);
+@@ -2420,6 +2439,23 @@ i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
+ 		ret = of_i2c_get_board_info(dev, to_of_node(fwnode), &boardinfo->base);
+ 		if (ret)
+ 			return ret;
++
++		/* LVR is encoded in reg[2] for Device Tree. */
++		boardinfo->lvr = reg[2];
++	} else if (is_acpi_device_node(fwnode)) {
++		adev = to_acpi_device_node(fwnode);
++		boardinfo->base.fwnode = acpi_fwnode_handle(adev);
++
++		ret = acpi_dev_get_resources(adev, &resources,
++					     i3c_acpi_get_i2c_resource, boardinfo);
++
++		if (ret < 0)
++			return ret;
++
++		acpi_dev_free_resource_list(&resources);
++
++		if (!boardinfo->base.addr)
++			return -ENODEV;
+ 	} else {
+ 		return -EINVAL;
+ 	}
+@@ -2434,9 +2470,6 @@ i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
+ 		return -EOPNOTSUPP;
+ 	}
+ 
+-	/* LVR is encoded in reg[2]. */
+-	boardinfo->lvr = reg[2];
+-
+ 	list_add_tail(&boardinfo->node, &master->boardinfo.i2c);
+ 	fwnode_handle_get(fwnode);
+ 
+@@ -2491,8 +2524,8 @@ i3c_master_add_i3c_boardinfo(struct i3c_master_controller *master,
+ 	return 0;
+ }
+ 
+-static int i3c_master_add_dev(struct i3c_master_controller *master,
+-			      struct fwnode_handle *fwnode)
++static int i3c_master_add_of_dev(struct i3c_master_controller *master,
++				 struct fwnode_handle *fwnode)
+ {
+ 	u32 reg[3];
+ 	int ret;
+@@ -2516,6 +2549,31 @@ static int i3c_master_add_dev(struct i3c_master_controller *master,
+ 	return ret;
+ }
+ 
++static int i3c_master_add_acpi_dev(struct i3c_master_controller *master,
++				   struct fwnode_handle *fwnode)
++{
++	struct acpi_device *adev = to_acpi_device_node(fwnode);
++	acpi_bus_address adr;
++	u32 reg[3] = { 0 };
++
++	/*
++	 * If the ACPI table entry does not have _ADR method, it's an I2C device
++	 * If the ACPI table entry has _ADR method, it's an I3C device
++	 */
++	if (!acpi_has_method(adev->handle, "_ADR"))
++		return i3c_master_add_i2c_boardinfo(master, fwnode, reg);
++
++	adr = acpi_device_adr(adev);
++
++	/* For I3C devices, _ADR will have the 48 bit PID of the device  */
++	reg[1] = upper_32_bits(adr);
++	reg[2] = lower_32_bits(adr);
++
++	fwnode_property_read_u32(fwnode, "mipi-i3c-static-address", &reg[0]);
++
++	return i3c_master_add_i3c_boardinfo(master, fwnode, reg);
++}
++
+ static int fwnode_populate_i3c_bus(struct i3c_master_controller *master)
+ {
+ 	struct device *dev = &master->dev;
+@@ -2527,7 +2585,13 @@ static int fwnode_populate_i3c_bus(struct i3c_master_controller *master)
+ 		return 0;
+ 
+ 	fwnode_for_each_available_child_node_scoped(fwnode, child) {
+-		ret = i3c_master_add_dev(master, child);
++		if (is_of_node(child))
++			ret = i3c_master_add_of_dev(master, child);
++		else if (is_acpi_device_node(child))
++			ret = i3c_master_add_acpi_dev(master, child);
++		else
++			continue;
++
+ 		if (ret)
+ 			return ret;
+ 	}
+@@ -2593,10 +2657,31 @@ static u8 i3c_master_i2c_get_lvr(struct i2c_client *client)
+ {
+ 	/* Fall back to no spike filters and FM bus mode. */
+ 	u8 lvr = I3C_LVR_I2C_INDEX(2) | I3C_LVR_I2C_FM_MODE;
++	struct i2c_dev_boardinfo boardinfo;
++	struct acpi_device *adev;
++	LIST_HEAD(resources);
+ 	u32 reg[3];
++	int ret;
++
++	if (is_of_node(client->dev.fwnode)) {
++		if (!fwnode_property_read_u32_array(client->dev.fwnode, "reg",
++						    reg, ARRAY_SIZE(reg)))
++			lvr = reg[2];
++	} else if (is_acpi_device_node(client->dev.fwnode)) {
++		adev = to_acpi_device_node(client->dev.fwnode);
++		memset(&boardinfo, 0, sizeof(boardinfo));
++
++		ret = acpi_dev_get_resources(adev, &resources,
++					     i3c_acpi_get_i2c_resource, &boardinfo);
+ 
+-	if (!fwnode_property_read_u32_array(client->dev.fwnode, "reg", reg, ARRAY_SIZE(reg)))
+-		lvr = reg[2];
++		if (ret < 0)
++			return lvr;
++
++		if (boardinfo.base.addr)
++			lvr = boardinfo.lvr;
++
++		acpi_dev_free_resource_list(&resources);
++	}
+ 
+ 	return lvr;
+ }
 -- 
 2.50.1
 
