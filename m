@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4179ACD13DE
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0677BCD13DA
 	for <linux-i3c@archiver.kernel.org>; Thu, 30 Apr 2026 10:04:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
@@ -12,51 +12,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ojQ0b7+eAjwstbThR0hvv9HO7d9jVZ5J71Xb6Pu1LC8=; b=hg7aXyldX0XlZel16NkhMncnxG
-	3fvoxX78H0O0LQQ5uV3ZbASfZaJV+qWIpnACaMzzG97MAiZbvjwK6219OzeQKs1q+7nK/JFQucl0A
-	ueKD+8O//EiOI4+IMQIP8M5Z/9hB1Q4skDxNyf/JauNaVy8oj4aIbjeuifzlztjXv2BKG2UFZdRvX
-	7W2Z0r2AXrYoxzbguFAZUmshujiSxP0mtwX0I8j8TS5q1P2rw3nzQpLuwZ/RiPOSqgAVz9k6kTlbJ
-	RF8OXRIRPblMbBOos8qgIpmNdXp5FOK7RBWHYJLCPR4ctFTwRsJ+WMVCOLVcVetoj1pDsybtwkXV0
-	Z+bTkEjg==;
+	bh=AR7X+PpEiegiepOpCf1D9c6k0wQQbKryxj6Qs+Uc4Gk=; b=X80wDWll17oRT1VSdOJw9Y8uth
+	6gt/jjV9CBrnE7VXEA5e7p2utJUJ1IiUKiRwGGbzugLzzmu5lvp4KCKqpo4/T1jrYskZ83tI94D2a
+	RDazgOUphVhTdLsdVO4cXA4Gb62okhlWL1uRzShFHkvSBLHhG+Xc825VcVKuJm3tyy1EJefKPUdPg
+	io1O2snK9oRX4wdTbo1V+A4BpMNZJ+5tIXzYASL71G6G93mM6Inpj6h2wsy7RVxT3H+Wh7iMifXhT
+	dcFI+BEiBFRq8ue089zNLByX9iaxTvJOHrrC7Ffa7Pl2jYV69MdgcmgWhLKYpDkCIBhmOVxF/ByNO
+	5EO5PbOA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wIOG1-000000059vv-44rZ;
+	id 1wIOG1-000000059ve-3388;
 	Thu, 30 Apr 2026 10:04:33 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wFEir-00000008xlS-0kg5
+	id 1w2ukP-000000095MM-2sSf
 	for linux-i3c@lists.infradead.org;
-	Tue, 21 Apr 2026 17:17:17 +0000
+	Wed, 18 Mar 2026 17:31:59 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 2EEA460172;
-	Tue, 21 Apr 2026 17:17:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8DB95C2BCB0;
-	Tue, 21 Apr 2026 17:17:13 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 4707D4434A;
+	Wed, 18 Mar 2026 17:31:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CB0E4C19421;
+	Wed, 18 Mar 2026 17:31:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1776791835;
-	bh=qz+UTYnQ/3atOxznUSJQeJ0xPXa7iKA7CMp5q359fEo=;
+	s=k20201202; t=1773855117;
+	bh=HhmffGUp9Y91NzAt05HzDzuECj5jUzcfd9L5WeMVgRE=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=sBbDXwixTZZiXhJr5NbyCGPcqYmn4rAG6fS81WLVX9BCBZ6yyad5eT2IEsO6VrujO
-	 0TTtQWc3+/WEerkk6UfzK2QYZYzHIaHPH7HjDQrtEWonkGkX/aVgpnDdS0vUJ7cygu
-	 8PgBzCrFUWGDiYYxSXisODx78YcBvjcLs0ArN/9qvqrc+tan7Cora3gbD+53RMixEq
-	 +39wnN59/y9KI4xW6Iu5ALpyI/3kIcfcc16CktJTGYQp4drzMZwmG3zWPNYBHx9a20
-	 jaRohjWhxDt2dytVRUSUshtlLUbEqzScTyPIpHM0BqmbgXR9cf3wTW5khHuD3pJEVS
-	 2q2fdUK2esxAw==
-Date: Tue, 21 Apr 2026 18:17:11 +0100
+	b=fOhJ7numKOTyFBGnbu6sjnslIaPgCJ6YJoNRlo6wqbaJaq+9rC7PSaCpwXncYgTUX
+	 9MqJ59SRYVHNytkkWTAwz0gzeu7m+MXqf/eEDMBtZGVSYSGpXzXWULVV77yqfflHDq
+	 ilse5DP9qMKG9asn0/dUsMEMzuh6B5OU3L3zdoJ91s9Ic/2y0asVQMle9Mf7X2uBGU
+	 q3sRJWhRMSGUytZmVNHhxbl+jQFHQUILMBBTBQvOjsU5EaI+uKOsD6GZVZ31IxG4ya
+	 wn0OvCp5ve3TA23cpFHAZ+Qc2cfH7s65Vrvt9Axuv2SufIQ0b+JY6op8DbG3hqOVol
+	 1tZ8ip/vfNkYQ==
+Date: Wed, 18 Mar 2026 17:31:50 +0000
 From: Conor Dooley <conor@kernel.org>
-To: Shubhrajyoti Datta <shubhrajyoti.datta@amd.com>
-Cc: linux-edac@vger.kernel.org, git@amd.com, shubhrajyoti.datta@gmail.com,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+To: Akhil R <akhilrajeev@nvidia.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
 	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, linux-i3c@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/2] dt-bindings: i3c: dw: Add VersalNet compatible string
-Message-ID: <20260421-voting-proofs-3a4b86df5383@spud>
-References: <20260421103059.2484623-1-shubhrajyoti.datta@amd.com>
- <20260421103059.2484623-2-shubhrajyoti.datta@amd.com>
+	Conor Dooley <conor+dt@kernel.org>,
+	"Rafael J . Wysocki" <rafael@kernel.org>,
+	Robert Moore <robert.moore@intel.com>, Len Brown <lenb@kernel.org>,
+	Guenter Roeck <linux@roeck-us.net>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Eric Biggers <ebiggers@kernel.org>,
+	Fredrik Markstrom <fredrik.markstrom@est.tech>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
+	Thierry Reding <thierry.reding@kernel.org>,
+	Jon Hunter <jonathanh@nvidia.com>,
+	Suresh Mangipudi <smangipudi@nvidia.com>,
+	linux-tegra@vger.kernel.org, linux-i3c@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-acpi@vger.kernel.org, acpica-devel@lists.linux.dev,
+	linux-hwmon@vger.kernel.org
+Subject: Re: [PATCH 01/12] dt-bindings: i3c: Add mipi-i3c-static-method to
+ support SETAASA
+Message-ID: <20260318-tweed-herbicide-eb924ef056b8@spud>
+References: <20260318172820.13771-1-akhilrajeev@nvidia.com>
+ <20260318172820.13771-2-akhilrajeev@nvidia.com>
 MIME-Version: 1.0
-In-Reply-To: <20260421103059.2484623-2-shubhrajyoti.datta@amd.com>
+In-Reply-To: <20260318172820.13771-2-akhilrajeev@nvidia.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260318_103157_773441_05499266 
+X-CRM114-Status: GOOD (  30.43  )
 X-Mailman-Approved-At: Thu, 30 Apr 2026 03:04:33 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -69,74 +85,132 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1600668876790113248=="
+Content-Type: multipart/mixed; boundary="===============1723399908213032092=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 
---===============1600668876790113248==
+--===============1723399908213032092==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="bpRFO5pIWMcCxPid"
+	protocol="application/pgp-signature"; boundary="EmK0zunkW5CWMMpV"
 Content-Disposition: inline
 
 
---bpRFO5pIWMcCxPid
+--EmK0zunkW5CWMMpV
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Tue, Apr 21, 2026 at 04:00:58PM +0530, Shubhrajyoti Datta wrote:
-> Add amd,versalnet-dw-i3c-master as a vendor-specific compatible
-> for the i3c ip available on Versal NET SOC.
+On Wed, Mar 18, 2026 at 10:57:14PM +0530, Akhil R wrote:
+> Add the 'mipi-i3c-static-method' property mentioned in the MIPI I3C
+> Discovery and Configuration Specification [1] to specify which discovery
+> method an I3C device supports during bus initialization. The property is
+> a bitmap, where a bit value of 1 indicates support for that method, and 0
+> indicates lack of support.
+> Bit 0: SETDASA CCC (Direct)
+> Bit 1: SETAASA CCC (Broadcast)
+> Bit 2: Other CCC (vendor / standards extension)
+> All other bits are reserved.
 >=20
-> Signed-off-by: Shubhrajyoti Datta <shubhrajyoti.datta@amd.com>
+> It is specifically needed when an I3C device requires SETAASA for the
+> address assignment. SETDASA will be supported by default if this property
+> is absent - which means for now the property just serves as a flag to
+> enable SETAASA, but keep the property as a bitmap to align with the
+> specifications.
+>=20
+> [1] https://www.mipi.org/specifications/disco
+>=20
+> Signed-off-by: Akhil R <akhilrajeev@nvidia.com>
 > ---
+>  .../devicetree/bindings/i3c/i3c.yaml          | 30 ++++++++++++++++---
+>  1 file changed, 26 insertions(+), 4 deletions(-)
 >=20
->  Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml | 1 +
->  1 file changed, 1 insertion(+)
->=20
-> diff --git a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yam=
-l b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
-> index e803457d3f55..98dafec0ace5 100644
-> --- a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
-> +++ b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
-> @@ -18,6 +18,7 @@ properties:
->        - const: snps,dw-i3c-master-1.00a
->        - items:
->            - const: altr,agilex5-dw-i3c-master
-> +          - const: amd,versalnet-dw-i3c-master
->            - const: snps,dw-i3c-master-1.00a
-
-Yeah, no... This will just introduce warnings for the existing platform
-and is incorrect on your platform because the altera compatible will
-match before yours, dragging in the quirk that platform has.
-
-You need to make this into and enum with your new compatible and the
-altera one, with a fallback to the snps one.
-
-pw-bot: changes-requested
-
+> diff --git a/Documentation/devicetree/bindings/i3c/i3c.yaml b/Documentati=
+on/devicetree/bindings/i3c/i3c.yaml
+> index e25fa72fd785..1705d90d4d79 100644
+> --- a/Documentation/devicetree/bindings/i3c/i3c.yaml
+> +++ b/Documentation/devicetree/bindings/i3c/i3c.yaml
+> @@ -31,10 +31,12 @@ properties:
+>        described in the device tree, which in turn means we have to descr=
+ibe
+>        I3C devices.
 > =20
->    reg:
+> -      Another use case for describing an I3C device in the device tree i=
+s when
+> -      this I3C device has a static I2C address and we want to assign it a
+> -      specific I3C dynamic address before the DAA takes place (so that o=
+ther
+> -      devices on the bus can't take this dynamic address).
+> +      Other use-cases for describing an I3C device in the device tree ar=
+e:
+> +      - When the I3C device has a static I2C address and we want to assi=
+gn
+> +        it a specific I3C dynamic address before the DAA takes place (so
+> +        that other devices on the bus can't take this dynamic address).
+> +      - When the I3C device requires SETAASA for its discovery and uses a
+> +        pre-defined static address.
+> =20
+>    "#size-cells":
+>      const: 0
+> @@ -147,6 +149,26 @@ patternProperties:
+>            through SETDASA. If static address is not present, this addres=
+s is assigned
+>            through SETNEWDA after assigning a temporary address via ENTDA=
+A.
+> =20
+> +      mipi-i3c-static-method:
+> +        $ref: /schemas/types.yaml#/definitions/uint32
+> +        minimum: 0x1
+> +        maximum: 0xff
+> +        default: 1
+> +        description: |
+> +          Bitmap describing which methods of Dynamic Address Assignment =
+=66rom a
+> +          static address are supported by this I3C Target. A bit value o=
+f 1
+> +          indicates support for that method, and 0 indicates lack of sup=
+port.
+
+I really am not keen on properties that are bitmaps, why can't we just
+use the strings "setdasa", "setaasa" etc?
+
+> +          Bit 0: SETDASA CCC (Direct)
+> +          Bit 1: SETAASA CCC (Broadcast)
+> +          Bit 2: Other CCC (vendor / standards extension)
+> +          All other bits are reserved.
+> +
+> +          This property follows the MIPI I3C specification. The primary =
+use
+> +          of this property is to indicate support for SETAASA, i.e Bit 1=
+, but
+> +          will allow all values so that it is aligned with the specifica=
+tions.
+> +          SETDASA will remain as the default method even if this propert=
+y is
+> +          not present.
+> +
+>      required:
+>        - reg
+> =20
 > --=20
-> 2.34.1
+> 2.50.1
 >=20
 
---bpRFO5pIWMcCxPid
+--EmK0zunkW5CWMMpV
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaeexFwAKCRB4tDGHoIJi
-0smmAP9xAHCFNlFYQbAU2Kk3Ai7/0TbhcEH/CPDO0GF21BegpAEA/PXycRys1LQG
-K/mWElDS/CbUjBfHgI8siu6raNZvcQo=
-=zI7w
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCabrhhgAKCRB4tDGHoIJi
+0kMwAP9M6TXwaUc/BKHm+0Rt/FM5DM33/g7JjBxK1p/4dzSpUAD/Qrggu6aS3gqn
+FhlL6llczwN+H7jlvZoHMk1JsE+xJgc=
+=/Hz0
 -----END PGP SIGNATURE-----
 
---bpRFO5pIWMcCxPid--
+--EmK0zunkW5CWMMpV--
 
 
---===============1600668876790113248==
+--===============1723399908213032092==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -147,5 +221,5 @@ linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
 
---===============1600668876790113248==--
+--===============1723399908213032092==--
 
