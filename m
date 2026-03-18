@@ -4,122 +4,122 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC2EC103E18F
-	for <linux-i3c@archiver.kernel.org>; Wed, 18 Mar 2026 14:30:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BECF410775F9
+	for <linux-i3c@archiver.kernel.org>; Wed, 18 Mar 2026 17:29:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Az6eHXXdPF/qAmF7n1HJKYeiwcOY+HBrS4ELMoNjBg=; b=O23T8eac8rxbvb
-	FqlK8NfEkyY2VGR6GhLSGoQDXdGXKEItJ3zmh6R5p3aZp4f70gDidSDkfUahqJctqFeoD5jHCzj54
-	7S0ZGISl9ZpcwQc+tEEav+VlIV3IDrLfE9RiyYF8VMad5JY0hl8M0YWUC7pkrAH0TAon8fjJLy8PZ
-	a512M2EmMejzBQfakOSUpiuJafgWRlUq9e10Vb1TnqMpbGhsPx0ISWys+ioLxZaVuaP3RX23tmbuU
-	dzQeg0B+VgLy+6fizmRWPbuC0fE50EShdshipBn6+uwwYH6H5yXg6csVJbYeYXxFFTW+RO8rPUwDk
-	H+ee/nMFy+0quKPBNfyw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=UnzL5HkRFp+c8b0sceFj3CeCNiuD+ZxOMEfE8H1o3J8=; b=OKxeOuU/Qepm6B
+	kMOGyIhrM6jz7bqDp4g9iA+83DWAm70PVtpDFBdjdAwaO78pUMuqgjNvG3NxDBpr8JOZSz/BiWg3/
+	j18XR73M44yJjh6Gx6snFAPWqku/Et+dTHtZKJiBnNJPAlchFVNwpsC7dYwz85YTy5FNwu9F+FlF5
+	y846RKpwlHyXyWJ7cE+/kNPzg5O9qBv+4VWHQltoTGr7ISzwhExMCwad5y+bk9PBkL6k4kEuGodPs
+	2q5t81Kx6THlZGYY0XrFGpxbnGkZ+bVffkT2Gc3WGxwD/1p+bwcg87wq+uba+4vp4d1QVV/kqB9FX
+	CoDriWa7ejVkS6jSWHSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w2ruo-00000008b9Y-2O0s;
-	Wed, 18 Mar 2026 14:30:30 +0000
-Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
+	id 1w2uhk-000000094Ug-1OYA;
+	Wed, 18 Mar 2026 17:29:12 +0000
+Received: from mail-northcentralusazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c105::1] helo=CH1PR05CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w2ruj-00000008b8N-3Ynt
+	id 1w2uhh-000000094TH-49Bb
 	for linux-i3c@lists.infradead.org;
-	Wed, 18 Mar 2026 14:30:26 +0000
+	Wed, 18 Mar 2026 17:29:11 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=GiW3AUpRFC36SJTGOYMabMM1Tise43slDmuTBZOrfRtVXk3X0PvYSQ+5cpOBILEl6vzorDdG6ZgMYEQG45AAsllMLL9xVQcNFpbL7ISYvklVIF8eMENUvqBLr/lJSvfjKy+C4qrOMV+OG9ivFrMdUfzCIcyrZ35tcmXEVJ2p/wb7y7tvVUZdDJZAMwTHPID0NpsFHSZBPtWmVL33BJzoROgXvOGPhZdhxEdKq+kvx8tmQ1nQ8bp1yHLLxQXaOn3pqv/MsUivA6HH0b7drRlXa0EXZKPoP0HcH18PqqHB6c623VEH41doZIQha9eCFfh99yqbSUyXDO+Afzt4pWqnyA==
+ b=UsYvPyQ55p6hq6Qntk3z/TCVv6qOJdFX8AzGQGRg/Rvn5qOP2qAd3krekugsGnhvl8q89CEyrJcmYlT3l9mq8b7Zg5bcL1phEVk2vHc1XrdpUHPomQiPCyiai06ldtn1pQOT4zYvTehibJEbaIfGn+BNsTAmpnFCrZwAA/4qkQSRX1SFI5Cd9rr7B0/ueGXQHJnZtZ2vm3eaEa9mpW2avzeLilrEbQWa5yzLJbnV+KGKoDLfU9LsoO80Xv706Memsqab/CuRYfaHJq9ePOMdfYEGkiPXyDu6Xd8QBUDLiOVoOItw76YsA89inFFTGXvzP1LudI/jX4Sn2JmHVZfpdA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=2ZL41iJBPbs9Wy97ZOvYimlPOH4hHVHpe1cvl2eXAaE=;
- b=dpn3NF04trBJbIDkbh5GxM8AeA0vSaA9fkj/nsMSeFAklgwrATBAvN8Of9E5z49/GvhtyJX91xbx7R/4wty+WrqvUPxQT2Dxmdm2E92T80l3VwFnL2y3DSdJn/+9IIaNwCb+QBdK2nqwYTkaUIG+KDWdLugH/jGOTw9STYU8xSqrTBIwAVTb3hDBXrEIP9Dkbn5hZ1qISNkvGpMO82V+MJXYLwAU2gjnm0y+dS/K5Usop6S1xKQoob5t6O6L+TfkVerMWB/Nq8UQlxTdbArogvSTbVJtNzfzaKmoyiGN1TkevwB5QQyrKm5LFG/hNoA1mr0SyPaUG6bO1ic7ZLPzAA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ bh=a3BiRDm9LD/TWNCy0470OWScGle1q0iYyCockNhQuSo=;
+ b=rN+6I//l37IuBgy92Af667BXH/0MvWvfhf6WN7O8lkcrZW28MmaXc2Q+z7OKaNf64qgkb4RIT41Eo5hvoXX58krxj2/l/rYBWG3BM74vVk95RMcJMlfKH3rcVCol5zIRia8kKtAzmn/tytNdZsk3Yxoh78Ki9zKUfzpW1H8RMSg5UXKNsyrBA+WtIch584jlu6Fbfoc3oKlgl+/IndTBu5wQBkpRPcs6VrRTW+GfDOkGqLSjOOfronzTTIH//72foE77C+6m/mdppEF3JQ+01lRSCb+XSLeAtAnvCQc407eCgldl39JKO7wFKQQfPgbLuAVaCt4raLizxULrcpsi6Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.160) smtp.rcpttodomain=bootlin.com smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2ZL41iJBPbs9Wy97ZOvYimlPOH4hHVHpe1cvl2eXAaE=;
- b=bFBhqPotxvZU6IUxUST6R+BVW0SNRUHmaEAnei036ieYAo0Wt3rZ40MjoX6AcTz+y+U9l7dXuhVz8c54T4YZpmcraVW90F2JaGrcLlJjUPNgPgF5eqr4AczNrU0gsQb0rT2TRkt8DojhnmZSNlorfHB90tt1sAurMP1uJhxZ6c5oYTlMt7aCzZPjAxxdSt9uPVnL0/1HcTAYChXNvWwEsy1uoTJCMxYKTRcEdq1Qick2JdY3vq4SOXbfaLAaQZGMI03TBKI/AkHt60jhcJR3DXGjjkGA6b5y7pXa0eh8TvCM4/poYv8c4gvVMSQRR6mJJNEnEd0xE5Kqpavt7qYtZw==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8)
- by GVXPR04MB10383.eurprd04.prod.outlook.com (2603:10a6:150:1df::22) with
+ bh=a3BiRDm9LD/TWNCy0470OWScGle1q0iYyCockNhQuSo=;
+ b=hC2NGDgukF2/1w3a+7BgSbRv2V+F9JIlo1xGvUcoIhNvGVn8YAfkP3PsJKCS4c9vGb39oSeFg3QVKewDQyyPuclbKd2r3Z5CypcjtlrSePNpvIEg0KH9yK5MFQQCWdp0y7QbXKSLhsiVGt6G37mPXS7eVugPkPRE2Gqunx0KHRlIyu/alAprAtdUxaQTO8GZZELwZ1J7pXB5gYIotb4di65OgG6Bl16naZf2++4P6Bt+m+sXVLzi1lt/vQBMgLTe6Ul62+a33OXhlkpUNOFqCX+hnOj1X1WWXErzfr2no3JV39b+tS4qobShI+3Zjz+3cGoZWlZ8s/kgDqrYvg/Qdg==
+Received: from DS7PR03CA0116.namprd03.prod.outlook.com (2603:10b6:5:3b7::31)
+ by MW6PR12MB8865.namprd12.prod.outlook.com (2603:10b6:303:23b::21) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9723.19; Wed, 18 Mar
- 2026 14:30:17 +0000
-Received: from PA4PR04MB9366.eurprd04.prod.outlook.com
- ([fe80::75e4:8143:ddbc:6588]) by PA4PR04MB9366.eurprd04.prod.outlook.com
- ([fe80::75e4:8143:ddbc:6588%6]) with mapi id 15.20.9700.021; Wed, 18 Mar 2026
- 14:30:18 +0000
-Date: Wed, 18 Mar 2026 10:30:11 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Haoyu Lu <hechushiguitu666@gmail.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	linux-i3c@lists.infradead.org, imx@lists.linux.dev,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] i3c: fix missing newline in dev_err messages
-Message-ID: <abq282jISZd1xfp9@lizhi-Precision-Tower-5810>
-References: <20260317034015.638-1-hechushiguitu666@gmail.com>
-Content-Disposition: inline
-In-Reply-To: <20260317034015.638-1-hechushiguitu666@gmail.com>
-X-ClientProxiedBy: SJ0PR03CA0156.namprd03.prod.outlook.com
- (2603:10b6:a03:338::11) To PA4PR04MB9366.eurprd04.prod.outlook.com
- (2603:10a6:102:2a9::8)
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9723.8; Wed, 18 Mar
+ 2026 17:28:59 +0000
+Received: from DM2PEPF00003FC6.namprd04.prod.outlook.com
+ (2603:10b6:5:3b7:cafe::1c) by DS7PR03CA0116.outlook.office365.com
+ (2603:10b6:5:3b7::31) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9700.27 via Frontend Transport; Wed,
+ 18 Mar 2026 17:28:35 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.160) by
+ DM2PEPF00003FC6.mail.protection.outlook.com (10.167.23.25) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9723.19 via Frontend Transport; Wed, 18 Mar 2026 17:28:58 +0000
+Received: from rnnvmail201.nvidia.com (10.129.68.8) by mail.nvidia.com
+ (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Wed, 18 Mar
+ 2026 10:28:42 -0700
+Received: from rnnvmail201.nvidia.com (10.129.68.8) by rnnvmail201.nvidia.com
+ (10.129.68.8) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Wed, 18 Mar
+ 2026 10:28:42 -0700
+Received: from BUILDSERVER-IO-L4T.nvidia.com (10.127.8.9) by mail.nvidia.com
+ (10.129.68.8) with Microsoft SMTP Server id 15.2.2562.20 via Frontend
+ Transport; Wed, 18 Mar 2026 10:28:36 -0700
+From: Akhil R <akhilrajeev@nvidia.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
+	<Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
+	<krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, "Rafael J .
+ Wysocki" <rafael@kernel.org>, Robert Moore <robert.moore@intel.com>, "Len
+ Brown" <lenb@kernel.org>, Guenter Roeck <linux@roeck-us.net>, Philipp Zabel
+	<p.zabel@pengutronix.de>, Eric Biggers <ebiggers@kernel.org>, "Fredrik
+ Markstrom" <fredrik.markstrom@est.tech>, Miquel Raynal
+	<miquel.raynal@bootlin.com>, Thierry Reding <thierry.reding@kernel.org>, "Jon
+ Hunter" <jonathanh@nvidia.com>, Suresh Mangipudi <smangipudi@nvidia.com>,
+	<linux-tegra@vger.kernel.org>, <linux-i3c@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<linux-acpi@vger.kernel.org>, <acpica-devel@lists.linux.dev>,
+	<linux-hwmon@vger.kernel.org>
+CC: Akhil R <akhilrajeev@nvidia.com>
+Subject: [PATCH 00/12] i3c: Support ACPI and SETAASA device discovery
+Date: Wed, 18 Mar 2026 22:57:13 +0530
+Message-ID: <20260318172820.13771-1-akhilrajeev@nvidia.com>
+X-Mailer: git-send-email 2.50.1
 MIME-Version: 1.0
+X-NVConfidentiality: public
+X-NV-OnPremToCloud: ExternallySecured
+X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|GVXPR04MB10383:EE_
-X-MS-Office365-Filtering-Correlation-Id: af8c0f62-8c9a-4936-be56-08de84fae10c
+X-MS-TrafficTypeDiagnostic: DM2PEPF00003FC6:EE_|MW6PR12MB8865:EE_
+X-MS-Office365-Filtering-Correlation-Id: 58d55e1d-ae58-49ca-a505-08de8513d6b8
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|19092799006|376014|52116014|1800799024|18002099003|22082099003|56012099003|7053199007|38350700014;
-X-Microsoft-Antispam-Message-Info: sKpFiZ7Mo2Ze51VQLK4F9In8FH2YjzmrR3+SRrbEaLw6EvLXNHxO5l54kj7c0YQ0pUNOib4l2I4uc471gqhrgunP81HDG8XUgF1jn8B/MsdCFUSuCv+4KkebLylUA+RdheXzZtiEcjs7aBVSgUF1ep+d8cS/kS44QwsJfW+CjFYHcRiFAg9a9l60PLqzYeV6RmLJk+w7DU1kyxyHFS/Uqkj3gX4HvzECGdxPYCuhFCRBSayPJaCuWbd2cgmwYOmmVY5yLLwUNXMWqFvve5Ju+qdyzTTiP2RCqrKy7X8MEmECMlXjCZmQCmWzg0xWzLMfFahd9hJGw0pTz2j8bDf8koZwf5GnK16VaOwMRLEtepUKi+KDOANgMsbIkY87nYM3xseTssjseK4MbcL4xJBnsHA+CAGbHEub6d6TRrXPjhg2lqCsChlVnW4nke1vIqsiI4vIR2DXQ5UZOwZB0xwkD0KKmHN3QJgiAjnYoTquYhBy2VP2Xv6DIza1kbx/Txe3hI/lYEgf2V85hdRnV237C9P4i/fS/MV4M6gqmFFNU78rOXwXQU6moRnV5PchYpL3IqXA3qFq14DqqRPkHlXL5YFUAfbjnf0utL7NBfE+SdGFgrAneC3PIL76gwQcHxdO8SkVRRj2RVLzHlEFGOCQxc4b+dwiP8GnhDi5narRBEMWSOcEByN+LJyjb7X7MNzK5sEA17yj0bdkqrQBs8lpPeLtFijyK1hpaZKqwHtf9qD4Tg0tCoTkd6Xo10FkPxpwX5c7m52V1z9AisR2luhcCAwGd2oFgbxH3LmEglTmXpI=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(19092799006)(376014)(52116014)(1800799024)(18002099003)(22082099003)(56012099003)(7053199007)(38350700014);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|36860700016|1800799024|376014|82310400026|18002099003|56012099003|921020;
+X-Microsoft-Antispam-Message-Info: C207k49eGeYfeWgTvKukwBMnavd+6l9qhsTxrgfhOw7jLuPjCYGcCxApyNyX3HU71+sLqvAwcmU7xV/KODuKOD62tQGEG3cnfYOSxMczWZ1q6rl+Dnu7aYS0/4qNkgKrYn9AWRyZN4WZWVwlTeUuH+7eJe/uwBPRjzytPDO9wKVav2tVcaS/Auz4DXWY1ZOvwIQGPSt5cGZMg7pWTSWpOAR9DeLRVS1ioO3R8n6oFrgDEPKHk6WDYPalwSOc3w+PNH7PgPdjkLN+3j+6169GtyIoh96P0zoSpEpYcb2jRA2FohIpMvuHKnk6o20uyVJ5+ROhc0QRNBLop9/xVd2CZyfpDf42Hy+wQNSKFGcsyYkhk2/V8MrwX4eqEXoCX4uxNATrSd0q5YGyT9aAz7ZND2a8Q2HvQ8V9+Ya/FV5xhqzAx3uqiCghuT6YhnzvH6xSN3W9/2dcR9ng0NLxbmo/n+FCn+waUFQWVcXUE31DMLMqMNlU7wc7iF+Q+sqAcQopK3rTOAGC7MNN5/jS6W01ZeiygKAOW3znZ1HnCTkVAA4Fme6JBMjWKNGPNCcyQMPxuzfxAyau2A3RVJv8aDqtxI8Dh+qQsNZAcO+xNPNFcakZSd61IrLOMMFMqfqOgylOMHDHaBz0gthr/vr7/aIQ5Olf+WQOzCklfDd5sRMnpC225xi1EVDMNEjzLUw1hL2JFMdaZO2P2dpGSKnkmHvP9ySpy4OKHN5Pq1CCjBX8FX0oBvmVg9haA7nlhG3R925iQV+RrBeO9/w9FAWs8KX4w5SgCf5seNWGu71NqL6jveCvA0YvdSxz81dc4Vg8fW/0
+X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(7416014)(36860700016)(1800799024)(376014)(82310400026)(18002099003)(56012099003)(921020);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?V3ubUkFmozmwlzPJeZkof2HODPiriQVNVagc+qU+LCDjTBNPKbcrMrI7oPxY?=
- =?us-ascii?Q?ljjUxKnQZJOn2lAPyGMOUrAsgjytnl13y4yMb03d2yY9/ES0gvxQC1owdx1R?=
- =?us-ascii?Q?yBuWgVFTwnSILSkizts8vLlceQgZiJpNZup/Pt7XmGN+Qw4iACsr7auqyyz4?=
- =?us-ascii?Q?j+5ZU/TNjCiOqZBQngU0iYvUWg4ZD9Zw0VUG+swv+MSsze00nJe2iAR1kCOO?=
- =?us-ascii?Q?K7deX8FANDLspBYtwAKC9geGml6OgKAMhK8ZHkqxwGF2buyk49+L0TkRos2b?=
- =?us-ascii?Q?oBT3DRUDNvwwGiI4HtA96IFjcGThTgex4WvLZR31PrbIrmHECI6WZRoocQeM?=
- =?us-ascii?Q?nvcUMRKKGWFsRNaZZqjGfrw/fOA5Rs7EJ4YXe7cwC1QGedPoIDI4N+pBmv44?=
- =?us-ascii?Q?RSLb4xbBAOWOaXloTzHUsHYUxYZMBft3DXKLLXIG3DUfm/tOu3IZeoMVEwDz?=
- =?us-ascii?Q?jbugZOUyfRDMIk53JTUmx33s1NfNeZGsB5Y7GSVu+h4D06QGxUl6dM/lsoys?=
- =?us-ascii?Q?sL9RcbSL5UlZ2K4d93jTBwswjc/smpzzAVTqFNArQ78C/SG1olds6NWKiqw4?=
- =?us-ascii?Q?TVaa9HdX5xnNv3zHQMo99hSsb259yDDUkXgUnB4zLY1fY0dyPsWwU0lXOmaT?=
- =?us-ascii?Q?xhUYgI/4/cGRxJc89lkTF1ZcOKBU8qfpEs6ffDE0/x/f75k3UJMjjh9XWj6s?=
- =?us-ascii?Q?r7fYin2dJWZDACDgyD7V9T6bbv89aoy7A9vBdc/7a5VCKdr8r+XqiTMEkTES?=
- =?us-ascii?Q?t2M2Pny5fASC8znT7rd/n+tW3RVZ6x1iatqcwsZHzu7tjgo8K3Nssubw4x+w?=
- =?us-ascii?Q?hElmMlFu9fUdDctF/lR33clC2FmFF/jc05siudW0Z7n23BCdLy69qMyh0oHT?=
- =?us-ascii?Q?Fhj/wLQHdNPf/SlM4smB+gJtlFGTLnvJx7a40ty6SsIRFFzeJTVAtEy5G0+T?=
- =?us-ascii?Q?pd9L2MmonJbBzfrzRO5qAGsf1D4k8Ej1hDhb++i0IHj/p+mVrte0z+bMlsWg?=
- =?us-ascii?Q?si9UQ59dY11i4LPDB1leyyqlQglJW+wjILn3U49NFLITZCibefkGm+7QulYI?=
- =?us-ascii?Q?RUCXUSeEfOmjlsQbnMA2Q/1VDpjxYzRUOsstpcQBkpRbldG0Xkkpokz+Lf97?=
- =?us-ascii?Q?6NUEOK3048lpsLEgtpUWq6wP6An25BNYvyKCy+S4ei2CO9X7FKRw0MYBt3YV?=
- =?us-ascii?Q?qM024lOOm32WmE/K7bnf0N4t7gg5dBcZFjmvxUOBcNEZNv7XIkQCMDce7rck?=
- =?us-ascii?Q?JOm55IQqjza+jDO66kv6RRpRMfGqQN5aW/dY+A5bI0lf7cTCWRbravNTag1m?=
- =?us-ascii?Q?w/qB1mc+9+zxl6Pl6d/Cxg5NJAcdOPBvGSjx+qQ7DySt4VNpTNxCsZZASx4m?=
- =?us-ascii?Q?ijjjL5KW77ZEY4Hg8hX9k5B7UbHnnYwHFwgeFoQzDwx/BmKdXYdwALY/hdIQ?=
- =?us-ascii?Q?2cQTreNIpBE1+vr/QcgTHyOWHzeKLab/umhigmrwbQNTgK+tqq13QhjsiAyl?=
- =?us-ascii?Q?P5h07Ub5KE3G8dvUJhQCHWaMfia9lD3hCG7S1Vi+/WlVbtUpd8+RYa5OeA9X?=
- =?us-ascii?Q?fWKMTVHHH8R7yyXlewlmcWJ78bXqzzsnZ68cPRatSIWN3Ywd3aX2BoPVWeVQ?=
- =?us-ascii?Q?suZ4arMbDFkzcCSmJjw6pKpr70USdthsgxqEyDV0CCf1KMhwAO7m7HwYkGhv?=
- =?us-ascii?Q?wn02PVzNA50S1pFBifs4BNBZh76Zw9qh0lKNnndqJA5ODfwt?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: af8c0f62-8c9a-4936-be56-08de84fae10c
-X-MS-Exchange-CrossTenant-AuthSource: PA4PR04MB9366.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Mar 2026 14:30:18.6947
+X-MS-Exchange-AntiSpam-MessageData-0: G/fkhBe8M/g/1EhpytxjkyEdbQ7oIJ7dzh6omUbaSnKBhG9yjk4eMOuIs+SZvhNjUJdHBZxo3FmqPCUHbjcubv/BJ/GkEi0VKvJGR6qHVSmBM51QukHmiAUnmvtuzr2i8tcZJ9qU1RrB6A1YxNpqeu0IhSPElOz4bgRi3JdvftDHCQ65xIRENLVXmkqArqZAOsKKDML13piLPyD5H2Nzii7gV+EYfiwyUnmsvIC4HTa1OZM3HH7ZHmoOyVGM+eMl3zppeDmk5foPqTJA8W10LNp8Kiq0H5+GNjuKFqcWQ4MkhGctOOzIUYiKz8ftE7Fy5lEwns05K7l7yrasckLJNgynMvtTpQjH+RNxxRjh8uxi28CDWuxFFwSkHFuEcO3jQu2ePgRW2tM8iBa4+W0uhXrzico+m4799cYTHhGVRr2JOw+mr+anhNitomtDupUJ
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Mar 2026 17:28:58.5029
  (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: A+68V7+f3usN38S9ZGOynWrGEo+764qc20G2eAzHQmWMdUK/wp6+xREHT4ytKVf7QDBCYT533huxY7Mk4pKY1g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXPR04MB10383
+X-MS-Exchange-CrossTenant-Network-Message-Id: 58d55e1d-ae58-49ca-a505-08de8513d6b8
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: DM2PEPF00003FC6.namprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MW6PR12MB8865
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260318_073025_891439_DF6C9C13 
-X-CRM114-Status: GOOD (  15.29  )
+X-CRM114-CacheID: sfid-20260318_102910_027143_A671F7F9 
+X-CRM114-Status: GOOD (  10.43  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -136,49 +136,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Mar 17, 2026 at 11:40:15AM +0800, Haoyu Lu wrote:
-> From: "haoyu.lu" <hechushiguitu666@gmail.com>
->
-> Add missing newline to dev_err messages in:
-> - drivers/i3c/master.c
-> - drivers/i3c/master/svc-i3c-master.c
->
-> Signed-off-by: haoyu.lu <hechushiguitu666@gmail.com>
-> ---
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
->  drivers/i3c/master.c                | 2 +-
->  drivers/i3c/master/svc-i3c-master.c | 2 +-
->  2 files changed, 2 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index 9e6be49bebb2..27e93fcf2eba 100644
-> --- a/drivers/i3c/master.c
-> +++ b/drivers/i3c/master.c
-> @@ -2396,7 +2396,7 @@ of_i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
->  	 * DEFSLVS command.
->  	 */
->  	if (boardinfo->base.flags & I2C_CLIENT_TEN) {
-> -		dev_err(dev, "I2C device with 10 bit address not supported.");
-> +		dev_err(dev, "I2C device with 10 bit address not supported.\n");
->  		return -EOPNOTSUPP;
->  	}
->
-> diff --git a/drivers/i3c/master/svc-i3c-master.c b/drivers/i3c/master/svc-i3c-master.c
-> index b84b324e4111..e09a6218bf34 100644
-> --- a/drivers/i3c/master/svc-i3c-master.c
-> +++ b/drivers/i3c/master/svc-i3c-master.c
-> @@ -1268,7 +1268,7 @@ static int svc_i3c_master_do_daa(struct i3c_master_controller *m)
->  	/* Configure IBI auto-rules */
->  	ret = svc_i3c_update_ibirules(master);
->  	if (ret)
-> -		dev_err(master->dev, "Cannot handle such a list of devices");
-> +		dev_err(master->dev, "Cannot handle such a list of devices\n");
->
->  rpm_out:
->  	pm_runtime_put_autosuspend(master->dev);
-> --
-> 2.53.0.windows.1
->
+This patch series adds SETAASA device discovery to the I3C subsystem,
+enabling support for SPD5118 temperature sensors found on DDR5 memory
+modules. The changes also add ACPI support for all existing DAA
+methods like SETDASA, SETNEWDA as well as I2C devices on I3C bus.
+
+SPD5118 and similar devices on DDR5 memory modules differ from typical
+I3C devices in their initialization. They use SETAASA broadcast CCC
+instead of ENTDAA for address assignment, and per JEDEC specification,
+are not required to have a Provisioned ID or implement standard device
+information CCC commands (GETPID, GETDCR, GETBCR).
+
+The series enables to describe all I3C and I2C devices on both Device
+Tree and the ACPI table, using unified device property APIs throughout
+the I3C core and the Synopsys DesignWare I3C master driver.
+
+Please note that the series modifies drivers across multiple subsystems,
+like Device Tree bindings, ACPI, I3C and HWMON.
+
+Akhil R (12):
+  dt-bindings: i3c: Add mipi-i3c-static-method to support SETAASA
+  ACPICA: Read LVR from the I2C resource descriptor
+  i3c: master: Use unified device property interface
+  i3c: master: Support ACPI enumeration
+  i3c: master: Add support for devices using SETAASA
+  i3c: master: Add support for devices without PID
+  i3c: master: match I3C device through DT and ACPI
+  i3c: dw-i3c-master: Add SETAASA as supported CCC
+  i3c: dw-i3c-master: Add a quirk to skip clock and reset
+  i3c: dw-i3c-master: Add ACPI ID for Tegra410
+  hwmon: spd5118: Add I3C support
+  arm64: defconfig: Enable I3C and SPD5118 hwmon
+
+ .../devicetree/bindings/i3c/i3c.yaml          |  30 +-
+ arch/arm64/configs/defconfig                  |   3 +
+ drivers/acpi/acpica/rsserial.c                |   6 +-
+ drivers/hwmon/Kconfig                         |   7 +-
+ drivers/hwmon/spd5118.c                       |  66 +++-
+ drivers/i3c/master.c                          | 327 +++++++++++++++---
+ drivers/i3c/master/dw-i3c-master.c            |  66 ++--
+ include/acpi/acrestyp.h                       |   1 +
+ include/linux/i3c/ccc.h                       |   1 +
+ include/linux/i3c/master.h                    |  22 +-
+ 10 files changed, 439 insertions(+), 90 deletions(-)
+
+-- 
+2.50.1
+
 
 -- 
 linux-i3c mailing list
