@@ -4,63 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A8880109025E
-	for <linux-i3c@archiver.kernel.org>; Thu, 19 Mar 2026 17:14:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3EE1E1090257
+	for <linux-i3c@archiver.kernel.org>; Thu, 19 Mar 2026 17:15:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uqI1l1WG0ESFezuQWIpivGjfbK3DPzojLQSsEpW0xz0=; b=pPWWNwExTfiW7g
-	xCShAn19dSyQiomMqQMlQ+V+H048/enMObRBJlq5ypM41km1bG7zXh3fNTlVEDNIvY2eiXDp/vzq7
-	jcAjOhyONklqsGuTv9WjGp81wY7UM0ZnCsE+hI4xR5kECU+7tikExrCDRD/kqT9eRdqBfTcq+Ei0n
-	lL3ErlpEvzT6jz+sqqtoMYmqkXYEfW2KQU7NnM2s+JyNaQfFxhLCd8px6FhVHE1Retsz2hLMbSahV
-	07JGehqUWajsLLnNbopHIivwvEImLL2vy4f47P90LO9FwJiM+gO1bsxvZ/PchxSRke5InNnOBu0vD
-	IT+5KbqHmRtRy2jIdvig==;
+	List-Owner; bh=5vxudZqb1RwjhtC/JmimjYXJLkOz1W9oA29FUJRWZRE=; b=iiPTUR/Ml+DZH8
+	R2W5ZzfxysUwlwsEO2YytvQcOvUS0ZT9zsJFNjJrpRbfV8L/SjvoQkSPRe7lZ36pttT/E5kezBvkZ
+	X/GH4rgX86Q6u6ddB/pb52mARoGr8kp9taLOc1XCA9Rn/PqfxBl/qreSlogGdQh7f0wsUrZRbbypA
+	Sv+bWT3flSQbH7Gwh2BNcbsg5YwPfiwbmVAjWFUIuwYUB9Y/r7V8Q5sXo/oZ675zcyYmnBYkbgdcg
+	lXjchNCbAKIn+jh4ZkJsEju4lPKoSb7VYjRZdBIO39sH7yQcINIKg04E/0c6v+BeAYRijOKBVjj61
+	N8lHeTUiHbt+Gk0WGucw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3GxO-0000000BAIZ-1iST;
-	Thu, 19 Mar 2026 17:14:50 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1w3Gxw-0000000BAPp-02E9;
+	Thu, 19 Mar 2026 17:15:24 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3GxN-0000000BAID-0KzL
+	id 1w3Gxu-0000000BAP3-1pQU
 	for linux-i3c@lists.infradead.org;
-	Thu, 19 Mar 2026 17:14:49 +0000
+	Thu, 19 Mar 2026 17:15:22 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 81578600AD;
-	Thu, 19 Mar 2026 17:14:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1F1E8C19424;
-	Thu, 19 Mar 2026 17:14:42 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 94E6C60097;
+	Thu, 19 Mar 2026 17:15:21 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 745F5C19424;
+	Thu, 19 Mar 2026 17:15:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1773940488;
-	bh=n4GjjoPb3ph6TdK09rRdkzcw8wuRkRmPhqitOkkqNLg=;
+	s=k20201202; t=1773940521;
+	bh=uKygPlvSKYPHJXuYh9Pp9MitMHciwR5qiLRKQjQSO/A=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=MB+s890L+t3IUYhTYQF+y+D+Z45wflxq954axlDMGUeWZtdTS+X288PVxpRoSckpq
-	 HTjYpfwSw9BtBvdEBGAbGbvFSlmBRV8Kv8LsTqJPetR8bdNfuBZlhKfUpRLdGzYxtZ
-	 QGF73T6uP6XYuzY7jideVqw/N3QSdsGZEaZ3UKVus9M68Pz1fLt8zRUPKAasY5SImN
-	 COl0k9xltraiw8PiQkDduL5/CxMBl6WwCnqTYr7zl7NaQLi6FnVld2Mz5KM5/Hnqxb
-	 hnjpDCC4Ew9nzR/4gHiaZuc8aTwZn99MbGScrxJqqrJky0fdCh5/SQ+3NeQil8VfqZ
-	 cVruSEozn5WXQ==
-Message-ID: <d36ef5bc-8f9d-48db-a868-f3683fce0d7b@kernel.org>
-Date: Thu, 19 Mar 2026 18:14:41 +0100
+	b=EJFbASpxyCOnhL5NB7UhGtGiSobz+L3lUODxULsJmL+NN1ae4vs3+x4/DzUyiMyPo
+	 BW++zhloffWCHd9AJ/ZcwESZZB/F2LLeU5Yud190AmenxeI1OgABnWUuw1sPVSxrat
+	 6dZX1klKc7vkxR6gdhm+nM7GceSgDmWSb/qwl9J7rVAQ+Kd4d9J/eCXwihARO94fRK
+	 7VMU3DN1jnqWRbYOB+70cCmPNa27NBXbXb7i3q8hZVJkmQiTzxcw1cL7bB6+HXDr9X
+	 e9vHnuYziAs6ICI10o3Hv3+DAnkTjaHjXzm4XtQiL+vXXMr5UzIw23FdWF/PkdRLlD
+	 Tm9IqiGljQH1Q==
+Message-ID: <67165a1f-9fa3-4853-b530-b1f9d6e4c2cf@kernel.org>
+Date: Thu, 19 Mar 2026 18:15:14 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 01/12] dt-bindings: i3c: Add mipi-i3c-static-method to
- support SETAASA
+Subject: Re: [PATCH 12/12] arm64: defconfig: Enable I3C and SPD5118 hwmon
 To: Akhil R <akhilrajeev@nvidia.com>
 Cc: Frank.Li@nxp.com, acpica-devel@lists.linux.dev,
- alexandre.belloni@bootlin.com, conor+dt@kernel.org, conor@kernel.org,
+ alexandre.belloni@bootlin.com, conor+dt@kernel.org,
  devicetree@vger.kernel.org, ebiggers@kernel.org, fredrik.markstrom@est.tech,
  jonathanh@nvidia.com, krzk+dt@kernel.org, lenb@kernel.org,
  linux-acpi@vger.kernel.org, linux-hwmon@vger.kernel.org,
  linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-tegra@vger.kernel.org, linux@roeck-us.net, miquel.raynal@bootlin.com,
  p.zabel@pengutronix.de, rafael@kernel.org, robert.moore@intel.com,
- robh@kernel.org, smangipudi@nvidia.com, thierry.reding@kernel.org,
- andriy.shevchenko@linux.intel.com
-References: <20260319-spiritual-defiant-galago-9bed7e@quoll>
- <20260319170129.13441-1-akhilrajeev@nvidia.com>
+ robh@kernel.org, smangipudi@nvidia.com, thierry.reding@kernel.org
+References: <20260319-nano-manatee-of-vastness-fbafa1@quoll>
+ <20260319170929.14543-1-akhilrajeev@nvidia.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -106,7 +104,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20260319170129.13441-1-akhilrajeev@nvidia.com>
+In-Reply-To: <20260319170929.14543-1-akhilrajeev@nvidia.com>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,22 +121,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 19/03/2026 18:01, Akhil R wrote:
+On 19/03/2026 18:09, Akhil R wrote:
+> On Thu, 19 Mar 2026 10:40:34 +0100, Krzysztof Kozlowski wrote:
+>> On Wed, Mar 18, 2026 at 10:57:25PM +0530, Akhil R wrote:
+>>> Add I3C subsystem support, DesignWare I3C master controller, and
+>>> SPD5118 hwmon sensor as modules to the defconfig.
 >>
->>> more than one method. It also cannot represent the vendor extensions (Bit 2)
->>> cleanly. Would this be better if we use macros instead of raw numbers?
->>
->> Hoes does setting bit 2 differ from a string "vendor"?
+>> Why? If there is no user of that, why would we want it? Your commit msg
+>> should explain that.
 > 
-> Okay, a string array would handle those cases.
-> 
-> I am concerned if this can be a string array for the ACPI because the MIPI
-> specification defines the property differently. Would it be fine to deviate
-> from that specification in the ACPI? Or do you suggest to keep it as bitmap
-> for the ACPI and use strings in DT?
+> Ack. This is for Tegra410 which has a DesignWare I3C host controller.
+> I will add this in the commit message.
 
-We are not defining here a property for the ACPI. I don't suggest
-anything for ACPI.
+Board or products. Not SoCs.
 
 Best regards,
 Krzysztof
