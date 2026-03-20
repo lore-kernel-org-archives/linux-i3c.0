@@ -4,136 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 18F741091904
-	for <linux-i3c@archiver.kernel.org>; Thu, 19 Mar 2026 18:33:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 039DF108B8E9
+	for <linux-i3c@archiver.kernel.org>; Fri, 20 Mar 2026 10:31:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9SgQ4WeBrV3xli60hHklzGN/iuVLPfm1CZuCIt2l6aE=; b=cU4iLiYWVdlJT7
-	Zzr3SC2l0e58Vfbl8nytay5iUtFsd7ZQ8VkNCOhVcSXOy2MDr6g9cyan8exDTpFo2jdc4Gz5SSjeh
-	qB4MM8v0yop48sJ75UvHbwNAOSfrTWxbvfaAGfbpHl+2oTYURX+sKx8YnGdtgZI6GnxQtbZsZF3jj
-	N+wZ2ITE6Z5cB73vun1I3kWqkPCY03Dz2To8VZ5Sjc8QhDadOfL67BlkFlxXGzsjUqxNwc6TS6tGV
-	FzWuo7eHUBevf12yhQU1lMbve9JON9evsIPBx7WngLxEQ62JXWFDzCt9TPvh9AOWmY+pu9jucwZZ3
-	gXeABhb732oh1cvkuMBw==;
+	List-Owner; bh=GAJu5nPZ5Bnh+hFbYpgl6ITbVHhbCvevIJ07UcqcERU=; b=ei2mfntg5Yxxd2
+	MIpqag3F0Dt7dnb0xrvmJSZwZ6c0pEqCV/JcLJC6Edzs2dLIyVIUuYLcj8M81F8JtRYeSUlnj1XUa
+	qAlhGaJ/Dnzw80Pz8hFIH12uFw1J3iQnnX3lMeAL5i2/A0yF4Wjh1L8DWoqkniloM1XMZ6Uu2sAep
+	99h1kV1nfyPkPxvmH1Z8qz52S4vGyMUGRJvPK2of4W/DE+v/dpJZli5wMWLROn/rWvgjt8kdNCoKm
+	HCKwTvBbvxuhSvMMcWXXmBClFT9QQmh/qP6vnMaw10rgh6bQG18bArCY8jkUG6bDe5jHf10ZPiuQW
+	bFB6uwP05jdBEBx5O3JA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3IBV-0000000BMVC-3SDp;
-	Thu, 19 Mar 2026 18:33:29 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1w3X8F-0000000CbkE-2fjm;
+	Fri, 20 Mar 2026 10:31:07 +0000
+Received: from metis.whiteo.stw.pengutronix.de ([2a0a:edc0:2:b01:1d::104])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3IBT-0000000BMUU-4Ahx
-	for linux-i3c@bombadil.infradead.org;
-	Thu, 19 Mar 2026 18:33:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
-	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=pvOvO6+FSQubnw0MKLqhn2UbkwryzQNikH2hJKdpyZs=; b=m8cjV6yzGleCgEIwjauH/RI61y
-	FveEK2mdEMhYkeNTovBxS5qbwoO1UttHSfVg4Y1eaxapL4KO4SLVCDcnnxzYvm6ewQ0x057+aVZXu
-	oUq/uCFIiMzp7zZHlN9GIUmwBKDNrddH1ix8iWEmffTS/xmmTH9zzmaHJ2LGsyzXtqphen74PlQ3j
-	xKMpDpJjpjk6urAdKA2NTNyHsxB3n1EfFPacXPtV+bWIdeAwJN5/ZuSVvdfnixYdJfupoSbyp0O7T
-	9rVdi9G1FA4cTe/lz1/UaW4Lz9lU5Bx9jTXtgbjCj6ewjEmRaMExoKX4URMRd5Rt+u/a9T6wWNSBT
-	gbWS9TBQ==;
-Received: from mail-northcentralusazon11010058.outbound.protection.outlook.com ([52.101.193.58] helo=CH1PR05CU001.outbound.protection.outlook.com)
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3IBQ-0000000EGL8-1qS2
+	id 1w3X8D-0000000Cbjp-1wwD
 	for linux-i3c@lists.infradead.org;
-	Thu, 19 Mar 2026 18:33:26 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=olaHKfdf6YbSpyvXE8Qz6ezX0NwWzGTFACo3bFtMz729RgvY/8LGEJrzVgf7BvY9f2UaNhYABGjXFSvrzcgommDAlnEEwTouGApABcWPP8sxa5JkyuiAPNo8D/iz0u9ks0xmc4FqG1qjZZXfLGa3o/ujygLfvSUUv550Xuo/NY/pr5peq7mVVHtOubefHSdDm+akl0Og4LwnM3+6ctnm95FK0DEh8HwF2OkVpj9qshici387dS4ZowxzHQJijILrfNplg8pUi8arb7osk8kfhEbIptgjn0pE+vdx0ZKpVarEegttvfAPeFRb6GGh7DTIGXa8eKqiyESOhBydQN8HuQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=pvOvO6+FSQubnw0MKLqhn2UbkwryzQNikH2hJKdpyZs=;
- b=tWRhbnbRsuUabg+BRwXKBYaIyAg7SF4LUawuchE0hG7twbgsD9vB34oIlfj6/fIQUrnuxeDVMs1qn+HmS+YfkKljkf8EgcBtV+y0dTDk9E3W35bhCfqEacSbkjsm7wdBrmaFBNspOO2OCUAaOg+ewpZrDaKRIyGPxs3FeL6e1m7djUoLRkH33bMWGX/RLd1E57oiDbf6+lqda+qZEZQK38cvlvAsCMcgRNksFmpT5KzlX6YHXCsOwRiFBTKBGSyLApW3+SI0x/iypPE0J/zNPt9hmtuvxoGjCA0M73Z4G2+VC2itCp9hQwbmX6b4X1TwEYFMWIjykQvf+k0C6biMaA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.118.233) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
- dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
- dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=pvOvO6+FSQubnw0MKLqhn2UbkwryzQNikH2hJKdpyZs=;
- b=XnnIgoFlPEUPklXGCqCoyohsLgSz7KYbWjsVdNqtPfADfQ+6xSJVzMORmsOoBfzlLsCG3i0VQ/Brvwll95298NoHjsUVsWN3nJA9c2PYAP6R/WbRP/LmaDpMe2TXvif2iLsb4o+PtvmU5CtpXgjAEYtn+7BAyTGtl5AmyRK6oQXt/EmjuEiUOIISVsQThovZTXascorVG8tbIO3jkACoaG8pxp8PanzC9pqXUJEgc+GtJS+qvRoo66rHDyTcAa3sBmr3xQAaiAGoNuOndVfiHr/KcqyvRKJBj5UD4X5h/D5PfpzL3nLXcC6cuwfWdsjVwqvktwixl2ryR9Qgr3P+8Q==
-Received: from PH7P220CA0146.NAMP220.PROD.OUTLOOK.COM (2603:10b6:510:327::32)
- by DS5PPF78FC67EBA.namprd12.prod.outlook.com (2603:10b6:f:fc00::655) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9723.17; Thu, 19 Mar
- 2026 18:17:50 +0000
-Received: from CY4PEPF0000EDD6.namprd03.prod.outlook.com
- (2603:10b6:510:327:cafe::2d) by PH7P220CA0146.outlook.office365.com
- (2603:10b6:510:327::32) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.9700.27 via Frontend Transport; Thu,
- 19 Mar 2026 18:17:50 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.118.233)
- smtp.mailfrom=nvidia.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=nvidia.com;
-Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.118.233 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.118.233; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.118.233) by
- CY4PEPF0000EDD6.mail.protection.outlook.com (10.167.241.202) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.9723.19 via Frontend Transport; Thu, 19 Mar 2026 18:17:50 +0000
-Received: from drhqmail201.nvidia.com (10.126.190.180) by mail.nvidia.com
- (10.127.129.6) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Thu, 19 Mar
- 2026 11:17:32 -0700
-Received: from drhqmail203.nvidia.com (10.126.190.182) by
- drhqmail201.nvidia.com (10.126.190.180) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.20; Thu, 19 Mar 2026 11:17:31 -0700
-Received: from BUILDSERVER-IO-L4T.nvidia.com (10.127.8.9) by mail.nvidia.com
- (10.126.190.182) with Microsoft SMTP Server id 15.2.2562.20 via Frontend
- Transport; Thu, 19 Mar 2026 11:17:25 -0700
-From: Akhil R <akhilrajeev@nvidia.com>
-To: <krzk@kernel.org>
-CC: <Frank.Li@nxp.com>, <acpica-devel@lists.linux.dev>,
-	<akhilrajeev@nvidia.com>, <alexandre.belloni@bootlin.com>,
-	<conor+dt@kernel.org>, <devicetree@vger.kernel.org>, <ebiggers@kernel.org>,
-	<fredrik.markstrom@est.tech>, <jonathanh@nvidia.com>, <krzk+dt@kernel.org>,
-	<lenb@kernel.org>, <linux-acpi@vger.kernel.org>,
-	<linux-hwmon@vger.kernel.org>, <linux-i3c@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, <linux-tegra@vger.kernel.org>,
-	<linux@roeck-us.net>, <miquel.raynal@bootlin.com>, <p.zabel@pengutronix.de>,
-	<rafael@kernel.org>, <robert.moore@intel.com>, <robh@kernel.org>,
-	<smangipudi@nvidia.com>, <thierry.reding@kernel.org>
-Subject: Re: [PATCH 12/12] arm64: defconfig: Enable I3C and SPD5118 hwmon
-Date: Thu, 19 Mar 2026 23:47:24 +0530
-Message-ID: <20260319181724.22091-1-akhilrajeev@nvidia.com>
-X-Mailer: git-send-email 2.50.1
-In-Reply-To: <67165a1f-9fa3-4853-b530-b1f9d6e4c2cf@kernel.org>
-References: <67165a1f-9fa3-4853-b530-b1f9d6e4c2cf@kernel.org>
+	Fri, 20 Mar 2026 10:31:06 +0000
+Received: from drehscheibe.grey.stw.pengutronix.de ([2a0a:edc0:0:c01:1d::a2])
+	by metis.whiteo.stw.pengutronix.de with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1w3X88-0006ot-B1; Fri, 20 Mar 2026 11:31:00 +0100
+Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
+	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1w3X87-001E37-32;
+	Fri, 20 Mar 2026 11:30:59 +0100
+Received: from pza by lupine with local (Exim 4.98.2)
+	(envelope-from <p.zabel@pengutronix.de>)
+	id 1w3X87-000000005hA-3dGH;
+	Fri, 20 Mar 2026 11:30:59 +0100
+Message-ID: <f5727eb71ec52db67918e4df8a05c7c3a6b45343.camel@pengutronix.de>
+Subject: Re: [PATCH v2] i3c: master: dw-i3c: Fix missing reset assertion in
+ remove() callback
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Felix Gu <ustc.gu@gmail.com>, Alexandre Belloni
+	 <alexandre.belloni@bootlin.com>, Frank Li <Frank.Li@nxp.com>, Aniket
+	 <aniketmaurya@google.com>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Date: Fri, 20 Mar 2026 11:30:59 +0100
+In-Reply-To: <20260317-dw-i3c-v2-1-fa57e6394b1d@gmail.com>
+References: <20260317-dw-i3c-v2-1-fa57e6394b1d@gmail.com>
+User-Agent: Evolution 3.56.2-0+deb13u1 
 MIME-Version: 1.0
-X-NV-OnPremToCloud: ExternallySecured
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CY4PEPF0000EDD6:EE_|DS5PPF78FC67EBA:EE_
-X-MS-Office365-Filtering-Correlation-Id: d42896b6-1111-4b1e-11b9-08de85e3d474
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|82310400026|36860700016|376014|1800799024|56012099003|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: Re0a+2bJ/Z3OIPtX78ZIDiMNfJ/08hRpVmHY0F4DZDisWmVMJiq8BxSvbw9+M8/HO5JynjPF/heLCJUfG+ExaXzvs4qJa4c/A+lHJnRMGrD2KaLbXvb0q2yg84GTa5JaVzOm6xaZK00dGCD9rGCjb4EVk3m9KM81tNMfGC54lyhupto/I4pZfVlLYr+vyKtzhb4TFfN/h87ysMuD+ZtUWbAdyUxCUm/2/6oBYS7plYY2nmSwwN78HO9Q4eLLHL7nMssTy60+WBuecqFuhZ+0o/JRvpa9qCM7kjzCVwO0nHPovCat6KhFLPhf3DMnOSOnJekXZKCFA/e4/m5p4sBAjImPwZpYMjMjN1AtJX2rhkP1JGndnHpbSPy0mwn9c/b2D3Liqo2nk+pghsg3K1GaYvMLQcFLcdKn5F14V6f42c8fGd3yfuv/EWLJTaePJUCANFT9b9W9eKlBTPzQzWXW6SR6Jo2RkUqOVcjBcMWGwU3yJ9OVApvVj7Jds72P64ZnYiPEEChExoBicEwEdFXFkHqjvbAZn5liUGRD12XW3pbWyw2Fa5WgfylP/HKbM6LgJsqda03gyM+0mKqqGf/+NYJ8FIK1QnLMSYTRN7XFioS/Rmfi22Bh4AeAh1rtoQYJ04meKoS3AGhiZK9wA6VFDpxfB21Yd1EAKWzNsM2QEcUAhItPbbZ1cF4xd5Nd5ChozdtYxxLNqTG5GgR+pHJqbVB/BcxB22vJmN4UrXVrHBIZZ0L/9pR32Y8rFO4QLOUuBtouqjQYsPLwtZuYKBMxTQ==
-X-Forefront-Antispam-Report: CIP:216.228.118.233;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc7edge2.nvidia.com;CAT:NONE;SFS:(13230040)(7416014)(82310400026)(36860700016)(376014)(1800799024)(56012099003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: +ZF3YgJ1ijEesYfG9TiPJpaHOVmAtPhwNvhDeexw7eFzlQqImqNKDqRzU0dWGC5dbFW15JJzTstFVPiogKTEikWctu9bCVXm3Qwl8CwQtawxXCrxLODgCsyM+FotWo/Mtlq2nG8w3rBAouXI5j5qQ979/iaMr13EzZHP9TKX8VZm46XtYTaOUBTdXhsqOd8g+l3L3/Hd7rbQ79WvRe2YVfe87N4DWwfGsebrcNPa+5sLwG4xXOXx3wbTLmRcHxZfejQqdB20ryg4rc7NH8iHA8WG5yMVVBypOaLiEh20h3R/BONBDmedYWwhHOveSlBskpWpwxpGfUnerUq4BTyMZ2l95MzaB8uf83Yl/Kb89Ch2DZjZ/maN4PjB7y4CLKq8A2ucTLLRsVsFyDX40awANfLzf3ZB8C2AvwkbTguz+wyoSaCQflYFxV/V4yh728kk
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Mar 2026 18:17:50.0320
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: d42896b6-1111-4b1e-11b9-08de85e3d474
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.118.233];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: CY4PEPF0000EDD6.namprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS5PPF78FC67EBA
+X-SA-Exim-Connect-IP: 2a0a:edc0:0:c01:1d::a2
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.whiteo.stw.pengutronix.de); SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-i3c@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260319_183324_579957_844F6847 
-X-CRM114-Status: UNSURE (   7.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260320_033105_525786_F9A7D902 
+X-CRM114-Status: GOOD (  13.28  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,25 +78,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, 19 Mar 2026 18:15:14 +0100 Krzysztof Kozlowski wrote:
-> On 19/03/2026 18:09, Akhil R wrote:
->> On Thu, 19 Mar 2026 10:40:34 +0100, Krzysztof Kozlowski wrote:
->>> On Wed, Mar 18, 2026 at 10:57:25PM +0530, Akhil R wrote:
->>>> Add I3C subsystem support, DesignWare I3C master controller, and
->>>> SPD5118 hwmon sensor as modules to the defconfig.
->>>
->>> Why? If there is no user of that, why would we want it? Your commit msg
->>> should explain that.
->> 
->> Ack. This is for Tegra410 which has a DesignWare I3C host controller.
->> I will add this in the commit message.
+On Di, 2026-03-17 at 01:48 +0800, Felix Gu wrote:
+> The reset line acquired during probe is currently left deasserted when
+> the driver is unbound.
 > 
-> Board or products. Not SoCs.
+> Switch to devm_reset_control_get_optional_exclusive_deasserted() to
+> ensure the reset is automatically re-asserted by the devres core when
+> the driver is removed.
+> 
+> Fixes: 62fe9d06f570 ("i3c: dw: Add power management support")
+> Signed-off-by: Felix Gu <ustc.gu@gmail.com>
+> ---
+> Changes in v2:
+> - Switch to devm_reset_control_get_optional_exclusive_deasserted() 
+> suggested by Philipp Zabel.
+> - Link to v1: https://lore.kernel.org/r/20260316-dw-i3c-v1-1-ab41904fc780@gmail.com
+> ---
+>  drivers/i3c/master/dw-i3c-master.c | 11 +++--------
+>  1 file changed, 3 insertions(+), 8 deletions(-)
+> 
+> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+> index d87bde3f7700..f3dabd8d1225 100644
+> --- a/drivers/i3c/master/dw-i3c-master.c
+> +++ b/drivers/i3c/master/dw-i3c-master.c
+> @@ -1606,13 +1606,11 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+>  	if (IS_ERR(master->pclk))
+>  		return PTR_ERR(master->pclk);
+>  
+> -	master->core_rst = devm_reset_control_get_optional_exclusive(&pdev->dev,
+> -								    "core_rst");
+> +	master->core_rst = devm_reset_control_get_optional_exclusive_deasserted(
+> +		&pdev->dev, "core_rst");
 
-Makes sense. I will have to get that information. Will update.
++	master->core_rst = devm_reset_control_get_optional_exclusive_deasserted(&pdev->dev,
++										"core_rst");
 
-Regards,
-Akhil
+to make checkpatch --strict happy. Otherwise,
+
+Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
+
+regards
+Philipp
 
 -- 
 linux-i3c mailing list
