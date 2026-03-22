@@ -4,95 +4,91 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D31DC1094463
-	for <linux-i3c@archiver.kernel.org>; Sat, 21 Mar 2026 09:04:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85DFFFC72C4
+	for <linux-i3c@archiver.kernel.org>; Sun, 22 Mar 2026 16:56:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ThYdkHaNXfzN38m2jFMN3cIAHcKD0oAgjTBVbFKiSYQ=; b=rYNzg6AKLQe6eO
-	VYavWs4hJB21hYGHzANarN/sPm+RuSRDLoxdn0HZUnA2iX3WhyBLzvDnoR+cENscee8BzKG9BeoUF
-	3vbD78yBzv0fEuWsc5wGXq+PO71fBNhD3oyfXx+utSDTiBQcxPKM7M4hcZ6dJvVwWzLpWSqXtZHDQ
-	fWZ0ABjbl4MaLQy5T/p1vrtMYGxmGEneYc8NG4pwNMQgV12mobK8fTphfiiPowPUFixBMqKqZ9QD4
-	xTjR1dB7+9t0IFoWmNqTw0v5q4aJDwO+UEFbOibTuEsU0tkKCFw0k/onm2y6fYhb+FgfsAlUTHIRa
-	5Ol1cYTQcbC8LzOvIGXA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ideYOhpAcJNJPYR2PrywtpWJtpXheXfDg7ivFQ9gkdw=; b=wzPgSSQT1PsLLo
+	ULas2+sBmY9jQJrT6+4etYnDDQge7KjCO/mjc7kUjFrPp5P5Fk0Y4L1VbzFyMdPvNSZRMotEcxDm8
+	0s5YBlRr/CPNd1TjWTqTwdNUW94K6RllIWmFRpCnnCmwaVHvwoVEDUfX2mmchAGSXWQ8RYtlpOqgO
+	d3Tkh3n007ZMf6Rk4n9XY3ZkkJioQrRdsURm8WK3Qip8CEooezqUYsXBTQl18RMgVS6SMkTFFJWmM
+	bUb1gzZ3TzuPp9G/92QjifFodVRxcO950L9yWmJr3MZqARLj4hKlTWtO7/C/fDpohd2cXmpuJ+JSQ
+	K0NptCgPkA2aVA2mngBQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3sGL-0000000EHxd-1W3t;
-	Sat, 21 Mar 2026 09:04:53 +0000
-Received: from mail-pl1-x632.google.com ([2607:f8b0:4864:20::632])
+	id 1w4M6Z-0000000FWM2-45ck;
+	Sun, 22 Mar 2026 16:56:47 +0000
+Received: from mgamail.intel.com ([192.198.163.16])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w3sGH-0000000EHxJ-3ZNd
+	id 1w4M6X-0000000FWLe-0ven
 	for linux-i3c@lists.infradead.org;
-	Sat, 21 Mar 2026 09:04:52 +0000
-Received: by mail-pl1-x632.google.com with SMTP id d9443c01a7336-2ad21f437eeso22853165ad.0
-        for <linux-i3c@lists.infradead.org>; Sat, 21 Mar 2026 02:04:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1774083889; x=1774688689; darn=lists.infradead.org;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=hpUZe8TkhEecqawtonAmq2cSOitTvDySQl0V70wMD9A=;
-        b=KcswvApZ4Ud6s6Q/At6kRzaE4bMl3zapmKjaS2bHO372rSjgQPjmVdxg50HLcSjnYP
-         n0+BWXW+FRsgixcGiIBcjGV+kCm4hdnKK9fUlE9pRSe94QykhvgjaEqQd57Kcc5FkzHT
-         vsEK0qE4/+BlfOehUmSra1JspBlMgw8o3gQ1S3pgX3zwCojZWOWTz94ynSwN2XXMd2W+
-         pgieJuJLYiXvfpeg5eL88ocvZGMSNZ/7UmMemkAL6qbiIPN+L+Gr5UnnVXaRhO0h1z/A
-         ThSUkxtCwjy2lVUTvtqBo+QtQo3MxYCZYB5LjFNf+jkW3LGbGd5x8Pa9EVDw9xPceyH/
-         KX2g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1774083889; x=1774688689;
-        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
-         :date:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=hpUZe8TkhEecqawtonAmq2cSOitTvDySQl0V70wMD9A=;
-        b=ZXrePFvaCk1NOyaHYpv2PeWqDYEkBGsf+VSfQV8FxwyB7n9OlAUDBSyOFiFgF/kdrG
-         5Xqnr8/BCHEo6nnDIbYXtdjAsd0AR9YUUT3wOMG+kYFSJFJI/8U90xAFWnHGw+cDm6hm
-         O8/i+54iFZ0JhStZISbT3BdjwYfIYZhMlzfRSYS1f9SwP7Y+9nOjVOr2F5L5IXV74Xql
-         UZTBI4h68a7fAwWRhjtfPFu3m0ntReG0z0Az46w8CvZvj9YkKupHGaJqJETvigQlxbUV
-         1+ypGbDSQp/HMW7EIoOaeAuoUFtTqHN9PcyU8HVjtxivLrySH91IBGYj5WCOqp9xGWm5
-         ckcw==
-X-Gm-Message-State: AOJu0Ywawrt6Q6P6buVbTpHLphK2INFz5VkeSVbTQCznswvdQ/pRxDXX
-	EogjHAa2wXpksSgj9w2sGpTIOlTbXBtcYsUGUaE4MywmvMEh+HN8U98g
-X-Gm-Gg: ATEYQzxjm2iCvckAxdeL/+6+IOSWtSYrGu5wssJb2iIa2OsDtLJd0at6qOuwgeXhWHZ
-	9T/QPHTrTsY0GLJykQJGISxuhKZgATccnPz+bqWvBCz6oEm+wx5WkKq659MaQdcZpGFzqZUC5Lx
-	6Pd8SJ4zRrl8gGcizCghv//bBz+QCRQgChhr96wgo1CNiKMyxJJTsId8lmAsn2Corc0uyZhgqCN
-	u+GGVkJhZcv/L/tgoFLelyiKQ29dx3DTzOSMqfa5AJRnT95+5Pz67wILpD2gYnziqp+3ZqvhrHi
-	pphsJ4/MDA0mZbREYqRSE0KUuRChjTLuM3OHHjAy6XkjdC2lN99iMwfLU2B5VKv1gKKc+7kU7gl
-	XVq+OY4gqST4exgG1eklq63RGUajxXTzpYnsh4Kq+TKyPzN1Uhl9YdpDpGj+mry95th0MUymk9I
-	V7b82dXOBtP/3bFnIqTUyHXrEyGpyu6kxQ7miu
-X-Received: by 2002:a17:903:1b6b:b0:2ae:cdf7:4740 with SMTP id d9443c01a7336-2b0771d687cmr82325135ad.17.1774083888501;
-        Sat, 21 Mar 2026 02:04:48 -0700 (PDT)
-Received: from junjungu-PC.localdomain ([223.167.147.240])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2b083516aa6sm64122275ad.9.2026.03.21.02.04.46
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 21 Mar 2026 02:04:48 -0700 (PDT)
-From: Felix Gu <ustc.gu@gmail.com>
-Date: Sat, 21 Mar 2026 17:04:43 +0800
-Subject: [PATCH] i3c: master: dw-i3c: Balance PM runtime usage count on
- probe failure
+	Sun, 22 Mar 2026 16:56:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1774198605; x=1805734605;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:in-reply-to;
+  bh=2Om8Sh6EzFq8cdWMV2yg/VmRtANxX5brcu8b8T0bpJM=;
+  b=m8ybOsZtg0W/6X8OE7SQ0i5W+RbQk3npk8oKWZr2aYKw6qZW6IuuKOwV
+   bw0P1zV+47WMfQIiCl8xN7trfVOBviGV/fcooJu+wUcd474o55qfCZx7y
+   oGAX7ZtoxQtC7X+bptPDl3j7iEpNDpo/Wrho7pZE2SF2Wn7taoaispjx9
+   3XZnCpkb2HR21C9/5uu+hRrCz/pLuhP0GDZP0ZHPmHUlbKUqD2KvjYuv/
+   ocWu2uTgupN+ZGfqlVwTBb8aCPNC8m76xOBL6/G008WCcFiCSGV4iQgLl
+   zrWhTNFMcTXqkH741K3EUFFf8gawUEbZwvQHAqRWigCfVq+diQ7JHozcl
+   g==;
+X-CSE-ConnectionGUID: uOSmpB0nR7WaBeVByyI5AA==
+X-CSE-MsgGUID: reQcaWpNS4qZD0OdUMAMTQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11737"; a="62771304"
+X-IronPort-AV: E=Sophos;i="6.23,135,1770624000"; 
+   d="scan'208";a="62771304"
+Received: from fmviesa008.fm.intel.com ([10.60.135.148])
+  by fmvoesa110.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 22 Mar 2026 09:56:44 -0700
+X-CSE-ConnectionGUID: kskDwVYgRAmOKoWKLWv+rA==
+X-CSE-MsgGUID: cEQ8NYITQa+qKe9qXBtf9A==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.23,135,1770624000"; 
+   d="scan'208";a="221030586"
+Received: from lkp-server02.sh.intel.com (HELO d7fefbca0d04) ([10.239.97.151])
+  by fmviesa008.fm.intel.com with ESMTP; 22 Mar 2026 09:56:38 -0700
+Received: from kbuild by d7fefbca0d04 with local (Exim 4.98.2)
+	(envelope-from <lkp@intel.com>)
+	id 1w4M6J-000000002QH-2gLA;
+	Sun, 22 Mar 2026 16:56:32 +0000
+Date: Mon, 23 Mar 2026 00:55:11 +0800
+From: kernel test robot <lkp@intel.com>
+To: Akhil R <akhilrajeev@nvidia.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	"Rafael J . Wysocki" <rafael@kernel.org>,
+	Robert Moore <robert.moore@intel.com>, Len Brown <lenb@kernel.org>,
+	Guenter Roeck <linux@roeck-us.net>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Eric Biggers <ebiggers@kernel.org>,
+	Fredrik Markstrom <fredrik.markstrom@est.tech>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
+	Thierry Reding <thierry.reding@kernel.org>,
+	Jon Hunter <jonathanh@nvidia.com>,
+	Suresh Mangipudi <smangipudi@nvidia.com>,
+	linux-tegra@vger.kernel.org, linux-i3c@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	linux-acpi@vger.kernel.org, acpica-devel@lists.linux.dev,
+	linux-hwmon@vger.kernel.org
+Cc: oe-kbuild-all@lists.linux.dev, Akhil R <akhilrajeev@nvidia.com>
+Subject: Re: [PATCH 04/12] i3c: master: Support ACPI enumeration
+Message-ID: <202603230007.WOMwklQ6-lkp@intel.com>
+References: <20260318172820.13771-5-akhilrajeev@nvidia.com>
 MIME-Version: 1.0
-Message-Id: <20260321-dw-i3c-1-v1-1-821623aac7bb@gmail.com>
-X-B4-Tracking: v=1; b=H4sIACpfvmkC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
- vPSU3UzU4B8JSMDIzMDYyND3ZRy3UzjZF1DXUsjIyOTJGPTFPNUEyWg8oKi1LTMCrBR0bG1tQC
- vBUIPWgAAAA==
-X-Change-ID: 20260321-dw-i3c-1-92224b35d7e4
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
- Frank Li <Frank.Li@nxp.com>, Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
- Felix Gu <ustc.gu@gmail.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1774083886; l=1264;
- i=ustc.gu@gmail.com; h=from:subject:message-id;
- bh=pPBWxJByBIMPVhwWVZpfO/kWIevj/fEs6rDai+Ej678=;
- b=tPJZILubpuxGwtuzABBn0GVIe2w8utfijftGaOjHS1H5mTJPwxMMvVH/pDDSbCg623SQcIJEE
- JX6k5prjHYmDCXf5s8EUsk+6aSpdN+hyR0crsyTMEdMaFQ35y5XBygM
-X-Developer-Key: i=ustc.gu@gmail.com; a=ed25519;
- pk=fjUXwmjchVN7Ja6KGP55IXOzFeCl9edaHoQIEUA+/hw=
+Content-Disposition: inline
+In-Reply-To: <20260318172820.13771-5-akhilrajeev@nvidia.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260321_020451_035386_AA1E8059 
-X-CRM114-Status: UNSURE (   7.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260322_095645_285399_8CB28712 
+X-CRM114-Status: GOOD (  16.12  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,42 +105,218 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-When DW_I3C_DISABLE_RUNTIME_PM_QUIRK is set, the probe function calls
-pm_runtime_get_noresume() to prevent runtime suspend. However, if
-i3c_master_register() fails, the error path does not balance this
-call, leaving the usage count incremented.
+Hi Akhil,
 
-Add pm_runtime_put_noidle() in the error cleanup path to properly
-balance the usage count.
+kernel test robot noticed the following build errors:
 
-Fixes: fba0e56ee752 ("i3c: dw: Disable runtime PM on Agilex5 to avoid bus hang on IBI")
-Signed-off-by: Felix Gu <ustc.gu@gmail.com>
----
- drivers/i3c/master/dw-i3c-master.c | 2 ++
- 1 file changed, 2 insertions(+)
+[auto build test ERROR on next-20260320]
+[also build test ERROR on linus/master v7.0-rc4]
+[cannot apply to i3c/i3c/next rafael-pm/linux-next rafael-pm/bleeding-edge groeck-staging/hwmon-next v7.0-rc4 v7.0-rc3 v7.0-rc2]
+[If your patch is applied to the wrong git tree, kindly drop us a note.
+And when submitting patch, we suggest to use '--base' as documented in
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index d6bdb32397fb..9c8de64c203b 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -1669,6 +1669,8 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
- 	return 0;
- 
- err_disable_pm:
-+	if (master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)
-+		pm_runtime_put_noidle(&pdev->dev);
- 	pm_runtime_disable(&pdev->dev);
- 	pm_runtime_set_suspended(&pdev->dev);
- 	pm_runtime_dont_use_autosuspend(&pdev->dev);
+url:    https://github.com/intel-lab-lkp/linux/commits/Akhil-R/dt-bindings-i3c-Add-mipi-i3c-static-method-to-support-SETAASA/20260322-174037
+base:   next-20260320
+patch link:    https://lore.kernel.org/r/20260318172820.13771-5-akhilrajeev%40nvidia.com
+patch subject: [PATCH 04/12] i3c: master: Support ACPI enumeration
+config: sparc-randconfig-002-20260322 (https://download.01.org/0day-ci/archive/20260323/202603230007.WOMwklQ6-lkp@intel.com/config)
+compiler: sparc-linux-gcc (GCC) 15.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260323/202603230007.WOMwklQ6-lkp@intel.com/reproduce)
 
----
-base-commit: b5d083a3ed1e2798396d5e491432e887da8d4a06
-change-id: 20260321-dw-i3c-1-92224b35d7e4
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Closes: https://lore.kernel.org/oe-kbuild-all/202603230007.WOMwklQ6-lkp@intel.com/
 
-Best regards,
+All errors (new ones prefixed by >>):
+
+   drivers/i3c/master.c: In function 'i3c_master_add_i2c_boardinfo':
+>> drivers/i3c/master.c:2449:23: error: implicit declaration of function 'acpi_dev_get_resources'; did you mean 'acpi_get_event_resources'? [-Wimplicit-function-declaration]
+    2449 |                 ret = acpi_dev_get_resources(adev, &resources,
+         |                       ^~~~~~~~~~~~~~~~~~~~~~
+         |                       acpi_get_event_resources
+>> drivers/i3c/master.c:2455:17: error: implicit declaration of function 'acpi_dev_free_resource_list' [-Wimplicit-function-declaration]
+    2455 |                 acpi_dev_free_resource_list(&resources);
+         |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+   drivers/i3c/master.c: In function 'i3c_master_add_acpi_dev':
+>> drivers/i3c/master.c:2556:9: error: unknown type name 'acpi_bus_address'; did you mean 'acpi_io_address'?
+    2556 |         acpi_bus_address adr;
+         |         ^~~~~~~~~~~~~~~~
+         |         acpi_io_address
+>> drivers/i3c/master.c:2563:14: error: implicit declaration of function 'acpi_has_method'; did you mean 'acpi_has_watchdog'? [-Wimplicit-function-declaration]
+    2563 |         if (!acpi_has_method(adev->handle, "_ADR"))
+         |              ^~~~~~~~~~~~~~~
+         |              acpi_has_watchdog
+>> drivers/i3c/master.c:2563:34: error: invalid use of undefined type 'struct acpi_device'
+    2563 |         if (!acpi_has_method(adev->handle, "_ADR"))
+         |                                  ^~
+>> drivers/i3c/master.c:2566:15: error: implicit declaration of function 'acpi_device_adr'; did you mean 'acpi_device_handle'? [-Wimplicit-function-declaration]
+    2566 |         adr = acpi_device_adr(adev);
+         |               ^~~~~~~~~~~~~~~
+         |               acpi_device_handle
+
+
+vim +2449 drivers/i3c/master.c
+
+  2423	
+  2424	static int
+  2425	i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
+  2426				     struct fwnode_handle *fwnode, u32 *reg)
+  2427	{
+  2428		struct i2c_dev_boardinfo *boardinfo;
+  2429		struct device *dev = &master->dev;
+  2430		struct acpi_device *adev;
+  2431		LIST_HEAD(resources);
+  2432		int ret;
+  2433	
+  2434		boardinfo = devm_kzalloc(dev, sizeof(*boardinfo), GFP_KERNEL);
+  2435		if (!boardinfo)
+  2436			return -ENOMEM;
+  2437	
+  2438		if (is_of_node(fwnode)) {
+  2439			ret = of_i2c_get_board_info(dev, to_of_node(fwnode), &boardinfo->base);
+  2440			if (ret)
+  2441				return ret;
+  2442	
+  2443			/* LVR is encoded in reg[2] for Device Tree. */
+  2444			boardinfo->lvr = reg[2];
+  2445		} else if (is_acpi_device_node(fwnode)) {
+  2446			adev = to_acpi_device_node(fwnode);
+  2447			boardinfo->base.fwnode = acpi_fwnode_handle(adev);
+  2448	
+> 2449			ret = acpi_dev_get_resources(adev, &resources,
+  2450						     i3c_acpi_get_i2c_resource, boardinfo);
+  2451	
+  2452			if (ret < 0)
+  2453				return ret;
+  2454	
+> 2455			acpi_dev_free_resource_list(&resources);
+  2456	
+  2457			if (!boardinfo->base.addr)
+  2458				return -ENODEV;
+  2459		} else {
+  2460			return -EINVAL;
+  2461		}
+  2462	
+  2463		/*
+  2464		 * The I3C Specification does not clearly say I2C devices with 10-bit
+  2465		 * address are supported. These devices can't be passed properly through
+  2466		 * DEFSLVS command.
+  2467		 */
+  2468		if (boardinfo->base.flags & I2C_CLIENT_TEN) {
+  2469			dev_err(dev, "I2C device with 10 bit address not supported.");
+  2470			return -EOPNOTSUPP;
+  2471		}
+  2472	
+  2473		list_add_tail(&boardinfo->node, &master->boardinfo.i2c);
+  2474		fwnode_handle_get(fwnode);
+  2475	
+  2476		return 0;
+  2477	}
+  2478	
+  2479	static int
+  2480	i3c_master_add_i3c_boardinfo(struct i3c_master_controller *master,
+  2481				     struct fwnode_handle *fwnode, u32 *reg)
+  2482	{
+  2483		struct i3c_dev_boardinfo *boardinfo;
+  2484		struct device *dev = &master->dev;
+  2485		enum i3c_addr_slot_status addrstatus;
+  2486		u32 init_dyn_addr = 0;
+  2487	
+  2488		boardinfo = devm_kzalloc(dev, sizeof(*boardinfo), GFP_KERNEL);
+  2489		if (!boardinfo)
+  2490			return -ENOMEM;
+  2491	
+  2492		if (reg[0]) {
+  2493			if (reg[0] > I3C_MAX_ADDR)
+  2494				return -EINVAL;
+  2495	
+  2496			addrstatus = i3c_bus_get_addr_slot_status(&master->bus,
+  2497								  reg[0]);
+  2498			if (addrstatus != I3C_ADDR_SLOT_FREE)
+  2499				return -EINVAL;
+  2500		}
+  2501	
+  2502		boardinfo->static_addr = reg[0];
+  2503	
+  2504		if (!fwnode_property_read_u32(fwnode, "assigned-address", &init_dyn_addr)) {
+  2505			if (init_dyn_addr > I3C_MAX_ADDR)
+  2506				return -EINVAL;
+  2507	
+  2508			addrstatus = i3c_bus_get_addr_slot_status(&master->bus,
+  2509								  init_dyn_addr);
+  2510			if (addrstatus != I3C_ADDR_SLOT_FREE)
+  2511				return -EINVAL;
+  2512		}
+  2513	
+  2514		boardinfo->pid = ((u64)reg[1] << 32) | reg[2];
+  2515	
+  2516		if ((boardinfo->pid & GENMASK_ULL(63, 48)) ||
+  2517		    I3C_PID_RND_LOWER_32BITS(boardinfo->pid))
+  2518			return -EINVAL;
+  2519	
+  2520		boardinfo->init_dyn_addr = init_dyn_addr;
+  2521		boardinfo->fwnode = fwnode_handle_get(fwnode);
+  2522		list_add_tail(&boardinfo->node, &master->boardinfo.i3c);
+  2523	
+  2524		return 0;
+  2525	}
+  2526	
+  2527	static int i3c_master_add_of_dev(struct i3c_master_controller *master,
+  2528					 struct fwnode_handle *fwnode)
+  2529	{
+  2530		u32 reg[3];
+  2531		int ret;
+  2532	
+  2533		if (!master)
+  2534			return -EINVAL;
+  2535	
+  2536		ret = fwnode_property_read_u32_array(fwnode, "reg", reg, ARRAY_SIZE(reg));
+  2537		if (ret)
+  2538			return ret;
+  2539	
+  2540		/*
+  2541		 * The manufacturer ID can't be 0. If reg[1] == 0 that means we're
+  2542		 * dealing with an I2C device.
+  2543		 */
+  2544		if (!reg[1])
+  2545			ret = i3c_master_add_i2c_boardinfo(master, fwnode, reg);
+  2546		else
+  2547			ret = i3c_master_add_i3c_boardinfo(master, fwnode, reg);
+  2548	
+  2549		return ret;
+  2550	}
+  2551	
+  2552	static int i3c_master_add_acpi_dev(struct i3c_master_controller *master,
+  2553					   struct fwnode_handle *fwnode)
+  2554	{
+  2555		struct acpi_device *adev = to_acpi_device_node(fwnode);
+> 2556		acpi_bus_address adr;
+  2557		u32 reg[3] = { 0 };
+  2558	
+  2559		/*
+  2560		 * If the ACPI table entry does not have _ADR method, it's an I2C device
+  2561		 * If the ACPI table entry has _ADR method, it's an I3C device
+  2562		 */
+> 2563		if (!acpi_has_method(adev->handle, "_ADR"))
+  2564			return i3c_master_add_i2c_boardinfo(master, fwnode, reg);
+  2565	
+> 2566		adr = acpi_device_adr(adev);
+  2567	
+  2568		/* For I3C devices, _ADR will have the 48 bit PID of the device  */
+  2569		reg[1] = upper_32_bits(adr);
+  2570		reg[2] = lower_32_bits(adr);
+  2571	
+  2572		fwnode_property_read_u32(fwnode, "mipi-i3c-static-address", &reg[0]);
+  2573	
+  2574		return i3c_master_add_i3c_boardinfo(master, fwnode, reg);
+  2575	}
+  2576	
+
 -- 
-Felix Gu <ustc.gu@gmail.com>
-
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
 -- 
 linux-i3c mailing list
