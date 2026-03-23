@@ -4,118 +4,121 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9793CF483C5
-	for <linux-i3c@archiver.kernel.org>; Mon, 23 Mar 2026 16:12:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5746F483E1
+	for <linux-i3c@archiver.kernel.org>; Mon, 23 Mar 2026 18:42:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
-	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sq6Ml0+keweDM2A3rVNIJ6mGGDCtD4ApJn5KbnizCzs=; b=epJC7R/m9Mtlxg
-	UObtGy+0g95Elq1HKVDq2RS28TUuxNz3sHyyQEgUKmy3KKiAslTD3So1kgai7Kk8uVXTMPQEfOYrf
-	2XvdEbBOt44BgAGmL9/5tYNeNUwT2dhye2b0BcZCDePfynu8VzfMYnyfPF4IgcG41EnCh43er6Oe0
-	6hweU4m5GMJSiaqUZLNtJ0fPMB3H5EV+vqyEucWV8synMZE52aDo98T4dpCAJsmzTJUGq3n7o/rxf
-	YNmS1WAXPDC0z2uFDVuDsTSguJqyPu8urgOQqHhVeT0OHW3LmjdRp4BJnxKCcxx06HVxsjS9kXSYi
-	0jtp7NE9rk9xqlTtxlbg==;
+	List-Owner; bh=jfh3qM5rHYMxnA3OOb50iT/OjrH1POypdvzE49PSU/M=; b=cBrh7rnnsaKPTn
+	ryaa/0AiYODdTuyJJftBc5LEBHowEeN300u2UubIOYqm1NGSxNfCxQU2mxLADWYheEE1kQ/tS65lg
+	BekcnaJl7rF2LpMUXGz6po3F2ARH5AhITjPJsgsrC7ZrnJtCMY/TLX1ZwOM8eU7x3UiHcN6kMZdWP
+	2jffUSJFu5m//Ci5gdROTDabg88tIqWDeBr4DzNzPk3k5temtIvnEan00oNON4f0sFbYcGJz7NrjN
+	y2erMmx1T7nfxf9rfCAFzJtxtvgbXaJYyWolBWI2J0wWLX04XIMEWaeYNikKLopUWS0E9fZHvDqOS
+	pEt0d7IT71b5OHc3HfdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4hst-0000000H6Kd-1EbB;
-	Mon, 23 Mar 2026 16:12:07 +0000
-Received: from mx0a-00128a01.pphosted.com ([148.163.135.77])
+	id 1w4kEp-0000000HMhs-1YRg;
+	Mon, 23 Mar 2026 18:42:55 +0000
+Received: from mail-westusazon11010054.outbound.protection.outlook.com ([52.101.85.54] helo=BYAPR05CU005.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4hsp-0000000H6I2-2ar7
+	id 1w4kEk-0000000HMh9-3Ctw
 	for linux-i3c@lists.infradead.org;
-	Mon, 23 Mar 2026 16:12:04 +0000
-Received: from pps.filterd (m0516787.ppops.net [127.0.0.1])
-	by mx0a-00128a01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62NDGvve2271070;
-	Mon, 23 Mar 2026 12:11:54 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=analog.com; h=cc
-	:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=DKIM; bh=22wa1
-	IcvbmGWHaddNqNINTnZZckFB8o0psKJ23G1isY=; b=e5F3gdH3/IttTFGDYNz2P
-	CjXxaCLHjRh0+aQIX/O93/spZmqTMFxWP1+H8tBotlcadnPysERTip0n3DtTKIw8
-	iNmLtOc6ipvBCpK+WivKsdFU9KpRxLA4C2qlhJoYr171QgWGcSxrdci2A4alzixi
-	eqxCH8LrBMhacISgy2VypxLJEAX9ecaP4CYkb66F70vab+do/1uehDpgl+2w45Kt
-	eCZjyYbd2nmo5Tkwn52UagF/zuCPX8LTpR+EQ6uiedqgEHpItnDOkc00wTAlqDg9
-	fR0cNZ5G0rnOK1TxHmTWgo2NJC8zgzH76ov9IUvwNVdX1hc7fbcTW1RSyZtYy1JS
-	A==
-Received: from nwd2mta4.analog.com ([137.71.173.58])
-	by mx0a-00128a01.pphosted.com (PPS) with ESMTPS id 4d2cnew41k-1
-	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
-	Mon, 23 Mar 2026 12:11:54 -0400 (EDT)
-Received: from ASHBMBX9.ad.analog.com (ASHBMBX9.ad.analog.com [10.64.17.10])
-	by nwd2mta4.analog.com (8.14.7/8.14.7) with ESMTP id 62NGBrdi044715
-	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Mon, 23 Mar 2026 12:11:53 -0400
-Received: from ASHBCASHYB4.ad.analog.com (10.64.17.132) by
- ASHBMBX9.ad.analog.com (10.64.17.10) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1748.37; Mon, 23 Mar 2026 12:11:53 -0400
-Received: from ASHBMBX9.ad.analog.com (10.64.17.10) by
- ASHBCASHYB4.ad.analog.com (10.64.17.132) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1748.37; Mon, 23 Mar 2026 12:11:53 -0400
-Received: from zeus.spd.analog.com (10.66.68.11) by ashbmbx9.ad.analog.com
- (10.64.17.10) with Microsoft SMTP Server id 15.2.1748.37 via Frontend
- Transport; Mon, 23 Mar 2026 12:11:53 -0400
-Received: from HYB-DlYm71t3hSl.ad.analog.com (HYB-DlYm71t3hSl.ad.analog.com [10.44.3.69] (may be forged))
-	by zeus.spd.analog.com (8.15.1/8.15.1) with ESMTP id 62NGBYnu019356;
-	Mon, 23 Mar 2026 12:11:49 -0400
-From: Jorge Marques <jorge.marques@analog.com>
-Date: Mon, 23 Mar 2026 17:11:32 +0100
-Subject: [PATCH v3 4/5] i3c: master: Fix error codes at send_ccc_cmd
+	Mon, 23 Mar 2026 18:42:54 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=CMKq+CnNQfPOW0HrfQ+J9vrzjvxoE0PIEdwGoptYJPk09lEYPtwOap1vDSScGeVRujsOgoSlHp6sDuCGOYwtwZ8SmRi6zqwEI2pXK38G2Cg9ZTkDFDF8xJDziLIOGnwpsopybETEN9dAG4PPp0VATaC4Svpefp+e5KNapruwC1/zjEOdtd3FjGbs4mu3iwN3E3A2/Ee7b6NslpZbHYZfbFELEkpA0PPfytGyNsOWzoOtZsHWwFD/bulwaUfA3X2GQJ0hC7OFRapGZY4Vf35vWOeT2sSiIZwrQzM5K8lUiimp74cdGHoVAH6mRdzwvhZYqG3+vwTqXAGnwL5eAVjENg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=BPndFtE8B6bVqJmADMf1xBaiwFAnovZ17uGNPtnvv0U=;
+ b=Z0D3y+J9G1dfvVPGLHfUUQCnPwFTxu9yUbm2MNSziKqqiMLQicMNR0IevV00CCVGNyOUg4n3xxhSMD+scwcY4ReQUePTiTqcyXz19DBq5GijVxKXhszHquiJ63hZsMHxQL3GaoDbSzNKC0Qc37dTcSkiGl3jcbf0mVzKiWwTs1o5aI1uuwrtXleb762HS5SJYQVKRbXDUptpBkRUQX6T/hP/bZnVmdux/INi2rwFrgFfDACRUP2Xn5k5B31Orns6vbwPx6c+VwLMj2hK3sYV+E0x4NyE5CbGsQP8Rg11MqzPu0iNx18oXsGyi3+zM2KCkLYu/9nl2yuNWHCQn8epoQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.160) smtp.rcpttodomain=intel.com smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=BPndFtE8B6bVqJmADMf1xBaiwFAnovZ17uGNPtnvv0U=;
+ b=OIh7cOu3lItzRjdkJd438Sg1RJ45Fi7MedgszeH32cRMtMj5B5QlLHVpjaNEG0ITYAFjtWTZCMPUSf9Lob1eVZBfXSCxGjLB4J5DpXYQs1ZtgF4EdgewTrFv9W2dPqfqYixXJEA1fr/zhA57jMDHeCal+VFdKK504P06k9WpTuW/JzJrkeI2mjZRv9LwIyO4SIGzEGNiOvCmv/dOckWGMq3319g/A3XdR20RDnGUJDKaT8J2MiwvC0m+6zdEy2YY2mRN0aBAjwNY6DxYW0he9NIHs6+fsvlQdWVlEEZKofhFodDZzlBuQ1lelJq2Q8sQracZydsIc39tBozC78cNiw==
+Received: from BL1PR13CA0119.namprd13.prod.outlook.com (2603:10b6:208:2b9::34)
+ by DM4PR12MB5867.namprd12.prod.outlook.com (2603:10b6:8:66::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9745.9; Mon, 23 Mar
+ 2026 18:42:37 +0000
+Received: from BL6PEPF00020E61.namprd04.prod.outlook.com
+ (2603:10b6:208:2b9:cafe::c6) by BL1PR13CA0119.outlook.office365.com
+ (2603:10b6:208:2b9::34) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9723.31 via Frontend Transport; Mon,
+ 23 Mar 2026 18:42:37 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.160) by
+ BL6PEPF00020E61.mail.protection.outlook.com (10.167.249.22) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9723.19 via Frontend Transport; Mon, 23 Mar 2026 18:42:36 +0000
+Received: from rnnvmail203.nvidia.com (10.129.68.9) by mail.nvidia.com
+ (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Mon, 23 Mar
+ 2026 11:42:16 -0700
+Received: from rnnvmail201.nvidia.com (10.129.68.8) by rnnvmail203.nvidia.com
+ (10.129.68.9) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Mon, 23 Mar
+ 2026 11:42:15 -0700
+Received: from BUILDSERVER-IO-L4T.nvidia.com (10.127.8.9) by mail.nvidia.com
+ (10.129.68.8) with Microsoft SMTP Server id 15.2.2562.20 via Frontend
+ Transport; Mon, 23 Mar 2026 11:42:08 -0700
+From: Akhil R <akhilrajeev@nvidia.com>
+To: <lkp@intel.com>
+CC: <Frank.Li@nxp.com>, <acpica-devel@lists.linux.dev>,
+	<akhilrajeev@nvidia.com>, <alexandre.belloni@bootlin.com>,
+	<conor+dt@kernel.org>, <devicetree@vger.kernel.org>, <ebiggers@kernel.org>,
+	<fredrik.markstrom@est.tech>, <jonathanh@nvidia.com>, <krzk@kernel.org>,
+	<lenb@kernel.org>, <linux-acpi@vger.kernel.org>,
+	<linux-hwmon@vger.kernel.org>, <linux-i3c@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>, <linux-tegra@vger.kernel.org>,
+	<linux@roeck-us.net>, <llvm@lists.linux.dev>, <miquel.raynal@bootlin.com>,
+	<oe-kbuild-all@lists.linux.dev>, <p.zabel@pengutronix.de>,
+	<rafael@kernel.org>, <robert.moore@intel.com>, <robh@kernel.org>,
+	<smangipudi@nvidia.com>, <thierry.reding@kernel.org>
+Subject: Re: [PATCH 04/12] i3c: master: Support ACPI enumeration
+Date: Tue, 24 Mar 2026 00:12:07 +0530
+Message-ID: <20260323184207.68515-1-akhilrajeev@nvidia.com>
+X-Mailer: git-send-email 2.50.1
+In-Reply-To: <202603230124.VFt6CPBe-lkp@intel.com>
+References: <202603230124.VFt6CPBe-lkp@intel.com>
 MIME-Version: 1.0
-Message-ID: <20260323-ad4062-positive-error-fix-v3-4-30bdc68004be@analog.com>
-References: <20260323-ad4062-positive-error-fix-v3-0-30bdc68004be@analog.com>
-In-Reply-To: <20260323-ad4062-positive-error-fix-v3-0-30bdc68004be@analog.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-        Frank Li
-	<Frank.Li@nxp.com>,
-        =?utf-8?q?Przemys=C5=82aw_Gaj?= <pgaj@cadence.com>
-CC: <linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-        "Dan
- Carpenter" <dan.carpenter@linaro.org>,
-        Jonathan Cameron <jic23@kernel.org>,
-        Jorge Marques <jorge.marques@analog.com>,
-        Adrian Hunter
-	<adrian.hunter@intel.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1774282294; l=4492;
- i=jorge.marques@analog.com; s=20250303; h=from:subject:message-id;
- bh=mXexfWrPC8job5yxecoVQWlrK4dSj2XswWAmOWB70/A=;
- b=fG+sRnwvsADIgpFBn97TZRXbm0jfwZ8sYFYqKD4oL04ZKdbKLWswD74UU2uewSwMjZxdqwyzF
- fNT29XOvQrrC3YdVqta70ICe+XmOdAbkvyzbKql3BSjd0SIxD7ThTye
-X-Developer-Key: i=jorge.marques@analog.com; a=ed25519;
- pk=NUR1IZZMH0Da3QbJ2tBSznSPVfRpuoWdhBzKGSpAdbg=
-X-ADIRuleOP-NewSCL: Rule Triggered
-X-Authority-Analysis: v=2.4 cv=UcVciaSN c=1 sm=1 tr=0 ts=69c1664a cx=c_pps
- a=3WNzaoukacrqR9RwcOSAdA==:117 a=3WNzaoukacrqR9RwcOSAdA==:17
- a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=0sLvza09kfJOxVLZPwjg:22 a=OmVn7CZJonkx5R5zMQLL:22 a=VwQbUJbxAAAA:8
- a=KKAkSRfTAAAA:8 a=QyXUC8HyAAAA:8 a=gAnH3GRIAAAA:8 a=hEpeh2MoHh9kNZLcwicA:9
- a=QEXdDO2ut3YA:10 a=cvBusfyB2V15izCimMoJ:22
-X-Proofpoint-ORIG-GUID: GbH2A9rCJzKlv7EiEWIRPiQ9EbHjdscF
-X-Proofpoint-GUID: GbH2A9rCJzKlv7EiEWIRPiQ9EbHjdscF
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzIzMDEyMyBTYWx0ZWRfX2gmJz8LSsR8s
- bvrKr6dgx6EUhrcLWEwV9N+2PQoRSJS8Igu9/NZmiJECrXaChsl4aP+vBTmbuZ0geJITL+NuhvH
- cvdLiQI+ND6bwBXQoNGcsafgOe9QoCaJd7GEXmfzVatgd0HM1gj/3PT8fJaVwUZrRr/IbF3Fq2I
- w9OUiUC/tyC0sYmb4hdOCqCFy+B/jqkem9biBaIcCJWXdHP76wLUeFIVNjbxpOjIydc8u9GCNA2
- tgXtesQinV3Sm7pgdjsqp2LSrkO21hvaz1wO3hiI+8LD6dMV9lAEMTJtCPsb86o2rdECKW3HhMY
- Ob7arW0suX4nn/XABMn+JXODmUSr9+FSYR9Cc/uquT2Lc65XbQBU5eWDtAJrhEXPG9tFud3n1og
- 2bi0HcRZ/Nqq6pml+fhnLBWO9+EZ8lkvSCSAAf4Wyh59syGXOGU1HhV9AiLp1+3db6c/0NUfTsW
- 6BrpSTmvYiHU6h5WDhw==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-03-23_04,2026-03-23_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 suspectscore=0 phishscore=0 malwarescore=0 spamscore=0
- clxscore=1011 bulkscore=0 adultscore=0 priorityscore=1501 lowpriorityscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2603230123
+X-NV-OnPremToCloud: ExternallySecured
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BL6PEPF00020E61:EE_|DM4PR12MB5867:EE_
+X-MS-Office365-Filtering-Correlation-Id: 17386d8b-37cd-4736-56c8-08de890bf445
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|1800799024|36860700016|7416014|376014|22082099003|18002099003|7053199007|56012099003;
+X-Microsoft-Antispam-Message-Info: kzMxMuRnD9fjvedV7Bhxf8CIVIHuIqZt9wrNgIq0AnI7vM34S/9spGWKZ/mg6xrqGPmAomMnZIymIn8LtgfgOHTOr2CHWMU5Crla5kzEM/20NtQ1bWyfvR02zu9ubaE306FvzigzBpBHe++zK3UX5zGvs/JTzRAdx5o5FLraouWB7U6ev1+SPudM5cXGkmiPURAlstUoXBJBIcQPQd1DB7pIATmXuRN70R7vnZMTBGgkNOHgSAmQY1WJsYkb+En8E17QvwudbP4VVcH0NYF+0zIJ/j9MOLqun9pBCIlTraY9C96zDm4IQwZ5qkJc/hjEdlhPY06wWOqeV2zmLWs6c66tVhBjVN9+aJDgcoH15cZhmcJ0z1SDQ1btgU2tNln7T7SIhJyy/QgCG9vkZUTcnUgFcUFwWa8dSFBSUpRVeWjn4ujbdGp3IOjTwN0odbUdJmNMu5RebDMFAClXDihGlMOqGs9LgcA1yiHQhyUBqfu7/DCxTace2c2xAFNp6gIi8zxx/k+uB1IU7SbvfYm/YqnTVKoWbFDidTjBxJkkEQFej4yJ+1kXUivW8xXsOdXFsj8WAdo8ObjERN1KGxUHy/w7yzp6IlfmHHCRsqufhL6CuzxPo/s5X/icOwBgasK6ek2OyX9qmXwY90NMv4UmvmkLhJbW4QEe0kWU+UAOKF0XaEwF814A0zVDgxcr2sxTay+asMtNrqlbkseClWLCEKPFyDTWnxXA8MzXEBtJOYKi6yRwivTnV02MRlwD77+IFGK764RmVq5InHYNfa2Q/g==
+X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(82310400026)(1800799024)(36860700016)(7416014)(376014)(22082099003)(18002099003)(7053199007)(56012099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: Knjwv4/5Gkq4LNSwj3HO3WdE/5rr/KUC01DNf6JUcGoSITltrMHTpTb0TM3EDxcJyDQTBjsaHvmS9kLMIuwvVUj7geOIZ3zLoCBJb2fy6XSfvjDFkO/oiAJlI0shXUZNlxzLVJ3bQBPCnwE4AQo51zjGBH3DToOzDDdrsRRGK30W/LXR3etBD0+zTQmTHjK6wQMulORd4VIvghd3S825fCGpFa/lj4FPY+knoolcG87pQtJMwAFUi91F4GZePog2oF/9qrBVPowmqz099Fadz1ShxI7rjb17mH+aoUzPARTz+C8jdqFJNPzjyf/Lyi78aORRRSJmfr4JvpWPF/l/dO1UHbci9Z4EQwdqmQ/qkW1k7EqhNR397OPHtV17IQxVzqu03aew+uuCbaAZRcgRrtA9FpjfE6Mm7jLqi2uhFs+OMAptE0sS6Ow0qFqVpc3Q
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Mar 2026 18:42:36.7292
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 17386d8b-37cd-4736-56c8-08de890bf445
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: BL6PEPF00020E61.namprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM4PR12MB5867
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260323_091203_665741_EAB03C4B 
-X-CRM114-Status: GOOD (  15.92  )
+X-CRM114-CacheID: sfid-20260323_114250_819716_AD6FF400 
+X-CRM114-Status: GOOD (  13.61  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,121 +135,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-i3c_master_send_ccc_cmd_locked() would propagate cmd->err (positive,
-Mx codes) to the ret variable, cascading down multiple methods until
-reaching methods that explicitly stated they would return 0 on success
-or negative error code. For example, the call chain:
+On Mon, 23 Mar 2026 01:47:20 +0800, kernel test robot wrote:
+> kernel test robot noticed the following build errors:
+> 
+> [auto build test ERROR on next-20260320]
+> [also build test ERROR on linus/master v7.0-rc4]
+> [cannot apply to i3c/i3c/next rafael-pm/linux-next rafael-pm/bleeding-edge groeck-staging/hwmon-next v7.0-rc4 v7.0-rc3 v7.0-rc2]
+> [If your patch is applied to the wrong git tree, kindly drop us a note.
+> And when submitting patch, we suggest to use '--base' as documented in
+> https://git-scm.com/docs/git-format-patch#_base_tree_information]
+> 
+> url:    https://github.com/intel-lab-lkp/linux/commits/Akhil-R/dt-bindings-i3c-Add-mipi-i3c-static-method-to-support-SETAASA/20260322-174037
+> base:   next-20260320
+> patch link:    https://lore.kernel.org/r/20260318172820.13771-5-akhilrajeev%40nvidia.com
+> patch subject: [PATCH 04/12] i3c: master: Support ACPI enumeration
+> config: sparc-randconfig-002-20260322 (https://download.01.org/0day-ci/archive/20260323/202603230007.WOMwklQ6-lkp@intel.com/config)
+> compiler: sparc-linux-gcc (GCC) 15.2.0
+> reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260323/202603230007.WOMwklQ6-lkp@intel.com/reproduce)
+> 
+> If you fix the issue in a separate patch/commit (i.e. not just a new version of
+> the same patch/commit), kindly add following tags
+> | Reported-by: kernel test robot <lkp@intel.com>
+> | Closes: https://lore.kernel.org/oe-kbuild-all/202603230007.WOMwklQ6-lkp@intel.com/
+> 
+> All errors (new ones prefixed by >>):
+> 
+>    drivers/i3c/master.c: In function 'i3c_master_add_i2c_boardinfo':
+>>> drivers/i3c/master.c:2449:23: error: implicit declaration of function 'acpi_dev_get_resources'; did you mean 'acpi_get_event_resources'? [-Wimplicit-function-declaration]
+>     2449 |                 ret = acpi_dev_get_resources(adev, &resources,
+>          |                       ^~~~~~~~~~~~~~~~~~~~~~
+>          |                       acpi_get_event_resources
+>>> drivers/i3c/master.c:2455:17: error: implicit declaration of function 'acpi_dev_free_resource_list' [-Wimplicit-function-declaration]
+>     2455 |                 acpi_dev_free_resource_list(&resources);
+>          |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+>    drivers/i3c/master.c: In function 'i3c_master_add_acpi_dev':
+>>> drivers/i3c/master.c:2556:9: error: unknown type name 'acpi_bus_address'; did you mean 'acpi_io_address'?
+>     2556 |         acpi_bus_address adr;
+>          |         ^~~~~~~~~~~~~~~~
+>          |         acpi_io_address
+>>> drivers/i3c/master.c:2563:14: error: implicit declaration of function 'acpi_has_method'; did you mean 'acpi_has_watchdog'? [-Wimplicit-function-declaration]
+>     2563 |         if (!acpi_has_method(adev->handle, "_ADR"))
+>          |              ^~~~~~~~~~~~~~~
+>          |              acpi_has_watchdog
+>>> drivers/i3c/master.c:2563:34: error: invalid use of undefined type 'struct acpi_device'
+>     2563 |         if (!acpi_has_method(adev->handle, "_ADR"))
+>          |                                  ^~
+>>> drivers/i3c/master.c:2566:15: error: implicit declaration of function 'acpi_device_adr'; did you mean 'acpi_device_handle'? [-Wimplicit-function-declaration]
+>     2566 |         adr = acpi_device_adr(adev);
+>          |               ^~~~~~~~~~~~~~~
+>          |               acpi_device_handle
 
-  i3c_device_enable_ibi <- i3c_dev_enable_ibi_locked <-
-  master->ops.enable_ibi <- i3c_master_enec_locked <-
-  i3c_master_enec_disec_locked <- i3c_master_send_ccc_cmd_locked
+#include <linux/acpi.h> is added in PATCH 03/12. The functions' prototypes
+are present in acpi.h. I think the bot checked this patch individually,
+or did I miss something?
 
-Fix this by returning the ret value, callers can still read the cmd->err
-value if ret is negative.
-
-All corner cases where the Mx codes do need to be handled individually,
-are resolved in previous commits. Those corner cases are all scenarios
-when I3C_ERROR_M2 is expected and acceptable.
-The prerequisite patches for the fix are:
-
-  i3c: master: Move rstdaa error suppression
-  i3c: master: Move entdaa error suppression
-  i3c: master: Move bus_init error suppression
-
-Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
-Closes: https://lore.kernel.org/linux-iio/aYXvT5FW0hXQwhm_@stanley.mountain/
-Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
-Reviewed-by: Adrian Hunter <adrian.hunter@intel.com>
-Signed-off-by: Jorge Marques <jorge.marques@analog.com>
----
- drivers/i3c/master.c | 32 +++++++++++++-------------------
- 1 file changed, 13 insertions(+), 19 deletions(-)
-
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index b80f7528948ab..e092c833124c0 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -898,11 +898,17 @@ static void i3c_ccc_cmd_init(struct i3c_ccc_cmd *cmd, bool rnw, u8 id,
- 	cmd->err = I3C_ERROR_UNKNOWN;
- }
- 
-+/**
-+ * i3c_master_send_ccc_cmd_locked() - send a CCC (Common Command Codes)
-+ * @master: master used to send frames on the bus
-+ * @cmd: command to send
-+ *
-+ * Return: 0 in case of success, or a negative error code otherwise.
-+ *         I3C Mx error codes are stored in cmd->err.
-+ */
- static int i3c_master_send_ccc_cmd_locked(struct i3c_master_controller *master,
- 					  struct i3c_ccc_cmd *cmd)
- {
--	int ret;
--
- 	if (!cmd || !master)
- 		return -EINVAL;
- 
-@@ -920,15 +926,7 @@ static int i3c_master_send_ccc_cmd_locked(struct i3c_master_controller *master,
- 	    !master->ops->supports_ccc_cmd(master, cmd))
- 		return -EOPNOTSUPP;
- 
--	ret = master->ops->send_ccc_cmd(master, cmd);
--	if (ret) {
--		if (cmd->err != I3C_ERROR_UNKNOWN)
--			return cmd->err;
--
--		return ret;
--	}
--
--	return 0;
-+	return master->ops->send_ccc_cmd(master, cmd);
- }
- 
- static struct i2c_dev_desc *
-@@ -1036,8 +1034,7 @@ static int i3c_master_rstdaa_locked(struct i3c_master_controller *master,
-  *
-  * This function must be called with the bus lock held in write mode.
-  *
-- * Return: 0 in case of success, a positive I3C error code if the error is
-- * one of the official Mx error codes, and a negative error code otherwise.
-+ * Return: 0 in case of success, or a negative error code otherwise.
-  */
- int i3c_master_entdaa_locked(struct i3c_master_controller *master)
- {
-@@ -1097,8 +1094,7 @@ static int i3c_master_enec_disec_locked(struct i3c_master_controller *master,
-  *
-  * This function must be called with the bus lock held in write mode.
-  *
-- * Return: 0 in case of success, a positive I3C error code if the error is
-- * one of the official Mx error codes, and a negative error code otherwise.
-+ * Return: 0 in case of success, or a negative error code otherwise.
-  */
- int i3c_master_disec_locked(struct i3c_master_controller *master, u8 addr,
- 			    u8 evts)
-@@ -1118,8 +1114,7 @@ EXPORT_SYMBOL_GPL(i3c_master_disec_locked);
-  *
-  * This function must be called with the bus lock held in write mode.
-  *
-- * Return: 0 in case of success, a positive I3C error code if the error is
-- * one of the official Mx error codes, and a negative error code otherwise.
-+ * Return: 0 in case of success, or a negative error code otherwise.
-  */
- int i3c_master_enec_locked(struct i3c_master_controller *master, u8 addr,
- 			   u8 evts)
-@@ -1144,8 +1139,7 @@ EXPORT_SYMBOL_GPL(i3c_master_enec_locked);
-  *
-  * This function must be called with the bus lock held in write mode.
-  *
-- * Return: 0 in case of success, a positive I3C error code if the error is
-- * one of the official Mx error codes, and a negative error code otherwise.
-+ * Return: 0 in case of success, or a negative error code otherwise.
-  */
- int i3c_master_defslvs_locked(struct i3c_master_controller *master)
- {
-
--- 
-2.51.1
-
+Best Regards,
+Akhil
 
 -- 
 linux-i3c mailing list
