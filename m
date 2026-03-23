@@ -4,121 +4,123 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5746F483E1
-	for <linux-i3c@archiver.kernel.org>; Mon, 23 Mar 2026 18:42:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 38E68F483D7
+	for <linux-i3c@archiver.kernel.org>; Mon, 23 Mar 2026 18:53:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jfh3qM5rHYMxnA3OOb50iT/OjrH1POypdvzE49PSU/M=; b=cBrh7rnnsaKPTn
-	ryaa/0AiYODdTuyJJftBc5LEBHowEeN300u2UubIOYqm1NGSxNfCxQU2mxLADWYheEE1kQ/tS65lg
-	BekcnaJl7rF2LpMUXGz6po3F2ARH5AhITjPJsgsrC7ZrnJtCMY/TLX1ZwOM8eU7x3UiHcN6kMZdWP
-	2jffUSJFu5m//Ci5gdROTDabg88tIqWDeBr4DzNzPk3k5temtIvnEan00oNON4f0sFbYcGJz7NrjN
-	y2erMmx1T7nfxf9rfCAFzJtxtvgbXaJYyWolBWI2J0wWLX04XIMEWaeYNikKLopUWS0E9fZHvDqOS
-	pEt0d7IT71b5OHc3HfdQ==;
+	List-Owner; bh=XKh+DBI948Y/9AjI+niLQh2Nb1wNxFHVZiPmOv6zfHo=; b=LNMSyzteMtY6/Z
+	MHw1a40gJzOYeF58G8BQCo2TpIH2Sqlbn4Zz4lZpLjWSOLR6QMDc0ztWZoTN2A4Rc0cNo18qSs0De
+	CQZA4ZnjYdRwCV7TVVw7xHp7hXXk8oxo9maf081xzxxbG+I6stauRvRGOhU3HXkx9zJt9AF5fVQ2X
+	qimK7A6tI4/cygNLaFXu2gMVKA0l9zbQdv0kKE7ahIu4cj3k/AGE/zCM649yxlb2dEF4/wBh9jBkN
+	vFV2wsUUjSCJLIt/LRL81l6goo5ldBoAI+yi+48Yat9qILjf+HWUxKsVMgXvtM97IvE1bWG4ocIev
+	hDe4/doJT1+5V5dmWvow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4kEp-0000000HMhs-1YRg;
-	Mon, 23 Mar 2026 18:42:55 +0000
-Received: from mail-westusazon11010054.outbound.protection.outlook.com ([52.101.85.54] helo=BYAPR05CU005.outbound.protection.outlook.com)
+	id 1w4kOf-0000000HNct-3veN;
+	Mon, 23 Mar 2026 18:53:05 +0000
+Received: from mail-francesouthazon11011054.outbound.protection.outlook.com ([40.107.130.54] helo=MRWPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4kEk-0000000HMh9-3Ctw
+	id 1w4kOc-0000000HNc7-2gHK
 	for linux-i3c@lists.infradead.org;
-	Mon, 23 Mar 2026 18:42:54 +0000
+	Mon, 23 Mar 2026 18:53:04 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=CMKq+CnNQfPOW0HrfQ+J9vrzjvxoE0PIEdwGoptYJPk09lEYPtwOap1vDSScGeVRujsOgoSlHp6sDuCGOYwtwZ8SmRi6zqwEI2pXK38G2Cg9ZTkDFDF8xJDziLIOGnwpsopybETEN9dAG4PPp0VATaC4Svpefp+e5KNapruwC1/zjEOdtd3FjGbs4mu3iwN3E3A2/Ee7b6NslpZbHYZfbFELEkpA0PPfytGyNsOWzoOtZsHWwFD/bulwaUfA3X2GQJ0hC7OFRapGZY4Vf35vWOeT2sSiIZwrQzM5K8lUiimp74cdGHoVAH6mRdzwvhZYqG3+vwTqXAGnwL5eAVjENg==
+ b=qT96kv4zJVpVoZ8vVEqhZNg8LW1pY6oABoayKFtLtzRCfXw02o1V/ZmVGW4F5tDTQ18ZYFiZShoeEH5Q0nx22mY8OVH0EzNzuTWJKx6b+enDHyPNA6/YmdFp3oGbYUMMCbHw3Y3GGxTgihzpYECPIXFKqD1bbBZN+Vw7WuVXDinuNHME9AkcL1U6hlv4Lx6T4fd1zvlsfUpZBhKxvji7oVokg8wGj9rBVzgkHs/Zyu5x626Qi645JzJZt2smjw/D6Hj4waMLNLM2lILrkb6ulgoKX1T6adxM1uo8CFXU+TXil1IQnwFGdnNCArBWLWLWOT4DkuhCT0SbCAIzUW833w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=BPndFtE8B6bVqJmADMf1xBaiwFAnovZ17uGNPtnvv0U=;
- b=Z0D3y+J9G1dfvVPGLHfUUQCnPwFTxu9yUbm2MNSziKqqiMLQicMNR0IevV00CCVGNyOUg4n3xxhSMD+scwcY4ReQUePTiTqcyXz19DBq5GijVxKXhszHquiJ63hZsMHxQL3GaoDbSzNKC0Qc37dTcSkiGl3jcbf0mVzKiWwTs1o5aI1uuwrtXleb762HS5SJYQVKRbXDUptpBkRUQX6T/hP/bZnVmdux/INi2rwFrgFfDACRUP2Xn5k5B31Orns6vbwPx6c+VwLMj2hK3sYV+E0x4NyE5CbGsQP8Rg11MqzPu0iNx18oXsGyi3+zM2KCkLYu/9nl2yuNWHCQn8epoQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.117.160) smtp.rcpttodomain=intel.com smtp.mailfrom=nvidia.com;
- dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
- dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
+ bh=/0FLq2q7D0/1iqRx3Hrete9Rt0xsSwqnwYUnJVXu75w=;
+ b=aMfYAMb749rb/+vDpl3dExzvCVPbBspFzofZH4DWGoq+p2i39nP5gCo3hPmKTY72ewsokw7VqzetlwufS1AQftLRpn9ahYpW4wIZnzgKmuM3lWLkg9zqqVKLV3dtTKYN2Ol9EGzx+EviLKPgN+zOM0gNZvsp8S3oy6lCq984iR4qY9dy1UZ58g6U9XsJNe/QIqdTRekclALMmCOy9lWPO39oYK3OyRTTTU7AYJ6MZRlCG7r64Cot7xx0cZs7fKEAGnX+YfoOLtd9/ho2jxsmJ5cRpSx2tT0GpjeLyqFUWnK9El6tzK2IZIXvH79ZR9tZWRxo4Ka16hc+qXnSBbhmgg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BPndFtE8B6bVqJmADMf1xBaiwFAnovZ17uGNPtnvv0U=;
- b=OIh7cOu3lItzRjdkJd438Sg1RJ45Fi7MedgszeH32cRMtMj5B5QlLHVpjaNEG0ITYAFjtWTZCMPUSf9Lob1eVZBfXSCxGjLB4J5DpXYQs1ZtgF4EdgewTrFv9W2dPqfqYixXJEA1fr/zhA57jMDHeCal+VFdKK504P06k9WpTuW/JzJrkeI2mjZRv9LwIyO4SIGzEGNiOvCmv/dOckWGMq3319g/A3XdR20RDnGUJDKaT8J2MiwvC0m+6zdEy2YY2mRN0aBAjwNY6DxYW0he9NIHs6+fsvlQdWVlEEZKofhFodDZzlBuQ1lelJq2Q8sQracZydsIc39tBozC78cNiw==
-Received: from BL1PR13CA0119.namprd13.prod.outlook.com (2603:10b6:208:2b9::34)
- by DM4PR12MB5867.namprd12.prod.outlook.com (2603:10b6:8:66::18) with
+ bh=/0FLq2q7D0/1iqRx3Hrete9Rt0xsSwqnwYUnJVXu75w=;
+ b=Lr4IivockKDSLjnAuEZnIHsDgAQHphC2M7loP6CSuB/VnT0XA+zEZXKh0xaOjtr4WG21HqUoPdtZHoWDTNfl6eI8pcf8L13QE/W9+2JkaVJoC770CjsfsgGfc2tMKfv63/3V5Hzq2jTcJuXxd/sxpRT0G6ReaAQCSKKS6eG6caf2hC43AL+0Ckmxo2j6HYzPdeeNgulEIJqMTMOvB0qzPBRMqGrPYstmrONwdio1nfZu7OpeeG97BExelY7xuI1nzgv30Ci2h6zrCeb+VIgwnGBTSHYtYL7z/nh9IYk804rYAbxJlt/nCUyFqcrOgfZg0bF7BvNgmJnEAhSEQ/qzgQ==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8)
+ by PAXPR04MB9422.eurprd04.prod.outlook.com (2603:10a6:102:2b4::21) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9745.9; Mon, 23 Mar
- 2026 18:42:37 +0000
-Received: from BL6PEPF00020E61.namprd04.prod.outlook.com
- (2603:10b6:208:2b9:cafe::c6) by BL1PR13CA0119.outlook.office365.com
- (2603:10b6:208:2b9::34) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.9723.31 via Frontend Transport; Mon,
- 23 Mar 2026 18:42:37 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
- smtp.mailfrom=nvidia.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=nvidia.com;
-Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.117.160) by
- BL6PEPF00020E61.mail.protection.outlook.com (10.167.249.22) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.9723.19 via Frontend Transport; Mon, 23 Mar 2026 18:42:36 +0000
-Received: from rnnvmail203.nvidia.com (10.129.68.9) by mail.nvidia.com
- (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Mon, 23 Mar
- 2026 11:42:16 -0700
-Received: from rnnvmail201.nvidia.com (10.129.68.8) by rnnvmail203.nvidia.com
- (10.129.68.9) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Mon, 23 Mar
- 2026 11:42:15 -0700
-Received: from BUILDSERVER-IO-L4T.nvidia.com (10.127.8.9) by mail.nvidia.com
- (10.129.68.8) with Microsoft SMTP Server id 15.2.2562.20 via Frontend
- Transport; Mon, 23 Mar 2026 11:42:08 -0700
-From: Akhil R <akhilrajeev@nvidia.com>
-To: <lkp@intel.com>
-CC: <Frank.Li@nxp.com>, <acpica-devel@lists.linux.dev>,
-	<akhilrajeev@nvidia.com>, <alexandre.belloni@bootlin.com>,
-	<conor+dt@kernel.org>, <devicetree@vger.kernel.org>, <ebiggers@kernel.org>,
-	<fredrik.markstrom@est.tech>, <jonathanh@nvidia.com>, <krzk@kernel.org>,
-	<lenb@kernel.org>, <linux-acpi@vger.kernel.org>,
-	<linux-hwmon@vger.kernel.org>, <linux-i3c@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, <linux-tegra@vger.kernel.org>,
-	<linux@roeck-us.net>, <llvm@lists.linux.dev>, <miquel.raynal@bootlin.com>,
-	<oe-kbuild-all@lists.linux.dev>, <p.zabel@pengutronix.de>,
-	<rafael@kernel.org>, <robert.moore@intel.com>, <robh@kernel.org>,
-	<smangipudi@nvidia.com>, <thierry.reding@kernel.org>
-Subject: Re: [PATCH 04/12] i3c: master: Support ACPI enumeration
-Date: Tue, 24 Mar 2026 00:12:07 +0530
-Message-ID: <20260323184207.68515-1-akhilrajeev@nvidia.com>
-X-Mailer: git-send-email 2.50.1
-In-Reply-To: <202603230124.VFt6CPBe-lkp@intel.com>
-References: <202603230124.VFt6CPBe-lkp@intel.com>
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9723.25; Mon, 23 Mar
+ 2026 18:52:36 +0000
+Received: from PA4PR04MB9366.eurprd04.prod.outlook.com
+ ([fe80::75e4:8143:ddbc:6588]) by PA4PR04MB9366.eurprd04.prod.outlook.com
+ ([fe80::75e4:8143:ddbc:6588%6]) with mapi id 15.20.9723.030; Mon, 23 Mar 2026
+ 18:52:43 +0000
+Date: Mon, 23 Mar 2026 14:52:44 -0400
+From: Frank Li <Frank.li@nxp.com>
+To: Felix Gu <ustc.gu@gmail.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Adrian Ng Ho Yin <adrianhoyin.ng@altera.com>,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] i3c: master: dw-i3c: Balance PM runtime usage count on
+ probe failure
+Message-ID: <acGL_H0jV-P_Xb8s@lizhi-Precision-Tower-5810>
+References: <20260321-dw-i3c-1-v1-1-821623aac7bb@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20260321-dw-i3c-1-v1-1-821623aac7bb@gmail.com>
+X-ClientProxiedBy: SA9PR03CA0001.namprd03.prod.outlook.com
+ (2603:10b6:806:20::6) To PA4PR04MB9366.eurprd04.prod.outlook.com
+ (2603:10a6:102:2a9::8)
 MIME-Version: 1.0
-X-NV-OnPremToCloud: ExternallySecured
-X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BL6PEPF00020E61:EE_|DM4PR12MB5867:EE_
-X-MS-Office365-Filtering-Correlation-Id: 17386d8b-37cd-4736-56c8-08de890bf445
+X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|PAXPR04MB9422:EE_
+X-MS-Office365-Filtering-Correlation-Id: cc4b2e08-c573-483b-6bfb-08de890d5db0
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|1800799024|36860700016|7416014|376014|22082099003|18002099003|7053199007|56012099003;
-X-Microsoft-Antispam-Message-Info: kzMxMuRnD9fjvedV7Bhxf8CIVIHuIqZt9wrNgIq0AnI7vM34S/9spGWKZ/mg6xrqGPmAomMnZIymIn8LtgfgOHTOr2CHWMU5Crla5kzEM/20NtQ1bWyfvR02zu9ubaE306FvzigzBpBHe++zK3UX5zGvs/JTzRAdx5o5FLraouWB7U6ev1+SPudM5cXGkmiPURAlstUoXBJBIcQPQd1DB7pIATmXuRN70R7vnZMTBGgkNOHgSAmQY1WJsYkb+En8E17QvwudbP4VVcH0NYF+0zIJ/j9MOLqun9pBCIlTraY9C96zDm4IQwZ5qkJc/hjEdlhPY06wWOqeV2zmLWs6c66tVhBjVN9+aJDgcoH15cZhmcJ0z1SDQ1btgU2tNln7T7SIhJyy/QgCG9vkZUTcnUgFcUFwWa8dSFBSUpRVeWjn4ujbdGp3IOjTwN0odbUdJmNMu5RebDMFAClXDihGlMOqGs9LgcA1yiHQhyUBqfu7/DCxTace2c2xAFNp6gIi8zxx/k+uB1IU7SbvfYm/YqnTVKoWbFDidTjBxJkkEQFej4yJ+1kXUivW8xXsOdXFsj8WAdo8ObjERN1KGxUHy/w7yzp6IlfmHHCRsqufhL6CuzxPo/s5X/icOwBgasK6ek2OyX9qmXwY90NMv4UmvmkLhJbW4QEe0kWU+UAOKF0XaEwF814A0zVDgxcr2sxTay+asMtNrqlbkseClWLCEKPFyDTWnxXA8MzXEBtJOYKi6yRwivTnV02MRlwD77+IFGK764RmVq5InHYNfa2Q/g==
-X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(82310400026)(1800799024)(36860700016)(7416014)(376014)(22082099003)(18002099003)(7053199007)(56012099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|19092799006|1800799024|52116014|376014|38350700014|56012099003|22082099003|18002099003|7053199007;
+X-Microsoft-Antispam-Message-Info: UyRV+Jubv6HxlEDswNd7+LRFEyTuZx6xDfeEECt6a44LG3bmCVu9vDcTyoWGHAW9DHZQzfjDnIO5NLrb7HMiV7SuMbZaTWYuHXTpf8xh0AaRQIhXrSexfzBZr0L0Sp4GBtrq46OSvlT6TdGKwAhk8nrdGBiGhhBuZ6gKto/YruvkaggXR/pg3G9YYiSNg+cn7cm/5gipo+0sZh4jjgpTR+ftqEMT/m3f4cc+0vjAEFXT+uZLLbECxHLnT4edFysxHRm2Mb0+DV55HjYU6gZ94ee3IbT+h8y4sViaVi8SBrQfY/CnspmcPhjyUFE2LMa/YgmG97v5pabzvD8Sq6S+NEloeJdwbWVW7BiRR9OvORyx4IDbtRnzln/GeNb+O8vDI5m0UFbtHqsbCxJfbvPMoUGx5ug0EpE/dW1tTBpFxz/tiu8Ax6L9gAOlf+WqL8+LSaicTqSCGqVa5tr2iCYERDsIXCCTDTl8DKobIGNLuwOlUT9j93ci8TFs3IiD8erEHRXUIQPc6cgCt8sTxkqYl5UiLdqPImv9zJG7q2vwL3tc1IM+LvxZrtfpl6nDNwjGlhqf+RzVSABHD3k2HiIX3qDQvcdw+mMLAF/xnt7Lb0ktdsWfCGPj2ZPhcHjX4TczdHMDdr5bfwO3YXCsiIYWhLnzh0wTnhBfI+XvahZuipeBz/gIC9BoOFTwwQ5H3XqqLimHGZ0mwS7cnp0P5cmoqi04J10Wax6pMZQGVlUSfAsC7oXH3HfjdyyZ22frXg20CDr15kmFJL+7ZViRpPpasw06ixUagUQa5fk3M9ArQxc=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(19092799006)(1800799024)(52116014)(376014)(38350700014)(56012099003)(22082099003)(18002099003)(7053199007);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: Knjwv4/5Gkq4LNSwj3HO3WdE/5rr/KUC01DNf6JUcGoSITltrMHTpTb0TM3EDxcJyDQTBjsaHvmS9kLMIuwvVUj7geOIZ3zLoCBJb2fy6XSfvjDFkO/oiAJlI0shXUZNlxzLVJ3bQBPCnwE4AQo51zjGBH3DToOzDDdrsRRGK30W/LXR3etBD0+zTQmTHjK6wQMulORd4VIvghd3S825fCGpFa/lj4FPY+knoolcG87pQtJMwAFUi91F4GZePog2oF/9qrBVPowmqz099Fadz1ShxI7rjb17mH+aoUzPARTz+C8jdqFJNPzjyf/Lyi78aORRRSJmfr4JvpWPF/l/dO1UHbci9Z4EQwdqmQ/qkW1k7EqhNR397OPHtV17IQxVzqu03aew+uuCbaAZRcgRrtA9FpjfE6Mm7jLqi2uhFs+OMAptE0sS6Ow0qFqVpc3Q
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Mar 2026 18:42:36.7292
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?h2cTOr6m+VE3cMF3OERTLLJCblAWsZrMNod4ZP+RGItWey3zC7EFnAy/ZaSI?=
+ =?us-ascii?Q?DJ9VkE/h24nASyy6Bk4FplfwPw75OTQEIjWHSQFrAuYldSij7onY4YvMxTOV?=
+ =?us-ascii?Q?BzP9dZ0GnoeTcVsFg8Q71vzTCMFJs++LaLhbpKqw6YPl2QVhYtFSGX+DOEpf?=
+ =?us-ascii?Q?39E3rx/PPYP++Ujt5tjBqLUD5wtXCKTF/6XUF5cMjLzKaFzNwJxl0IL9+aSG?=
+ =?us-ascii?Q?BTUGsDpfMTBSUV3R2TDX6WBt5qcvWEEL9aO3+MQQ9mQI6BRjNAG/7QHhh+Cl?=
+ =?us-ascii?Q?jaVpyGEAt6p6j2Aa9B8Yq2CHgm0+fTZ4F+yEh7cJW4WR8h4G3F2BuBVoO6/r?=
+ =?us-ascii?Q?QkH9+8URWe0LTimzyfD74S39X5fxQD2Re/LI5AJLvAb9VAUfZ4GqGvoUx9t0?=
+ =?us-ascii?Q?D0XtLXIvhy8+Zw8eXOJII2s0HtMlPaCVph783u2lajXMxa+Z5ohWFJa1wDv2?=
+ =?us-ascii?Q?v2xfSC2T+1MGwuaADd0tvGcKKg8vEtnAoKsnSYcM+l2bxWWnNmQFZKXh/T+0?=
+ =?us-ascii?Q?5k4jm5q0Px1ukjHtOE7w9wrhK8wN+ecNLFMhBAVW03crCbuEa750A2fipwQo?=
+ =?us-ascii?Q?VNfHCM7eho1Gbx0oNMuLy9iS0x9LzR0A71eu83aCS/Ab7Ja8Q0X7iRuP7bqT?=
+ =?us-ascii?Q?TJHi31LJ18GTOye8cXuj6Tp6w1jD9U0WFr0nbrDnWXkDauYpUvUTWi/1fFAt?=
+ =?us-ascii?Q?u3zmHHEQjrePwOiIgFnvu6gPwuySSypE0wLcTGu/qtsFKFYZSaICzem/foOQ?=
+ =?us-ascii?Q?z1SggHyrvlPqAhs6HDcbAatKt/oqnkO5FfnLKgfIgi6vNQb5bh44MMxKX5G5?=
+ =?us-ascii?Q?UvJrkt9rufowrcIYpkQFklgRBV/9tNER3EEiriwO2EDi40FWbunNwZBSjP1A?=
+ =?us-ascii?Q?4qH59B5avrKf/0xLP4nQOkSnvI552CKLIl5jN9HrKMqb3jt/J5lbOFtG6jx8?=
+ =?us-ascii?Q?h8vpS70CNREF5DZow1PznKhOeuYjskXvXGz50v1W8HWEgIjVF0nzxqslkQhy?=
+ =?us-ascii?Q?CrEXCMEwwOwaATI3fTdb8CnikglfJXO0dvzIaByw+NxKhKrYaCbU0mamL1kf?=
+ =?us-ascii?Q?BMNmnX7WvchG2qbMLUjYQmt8giYzF8FFRTIM59YyG7fBHDVowVPJf4vZWBJN?=
+ =?us-ascii?Q?6oOd/VzugPlIJbNb0pRdYwd/vVObAPO9+/bceQ5brJ2t9Y21RWr+UmidCHQ0?=
+ =?us-ascii?Q?M8MAeXKPEHVCkuFBmW1BlNauLLQRpd3/8CDWr448ELpuAxNN0+XnGF7AKLEr?=
+ =?us-ascii?Q?i9fJbEGROGIs5Cimrp1UrJBI8eS7ZbLjyxBRWG6JNom9AGLHB8gw1ZlhHM/1?=
+ =?us-ascii?Q?341hCBsHAegNqNJGPHmEQ0blyS4+uUCm25WZmUM/LlMY3x7WWmUsGjNV7LVT?=
+ =?us-ascii?Q?XZ2fPxGBD6OdWeLt78Wv3b26EuvJ4Q7jQgQz2l/Xbs7VbyNAKvxHGdA6ijT9?=
+ =?us-ascii?Q?nTcD4V2lWr8HevZCydBXxiT1dkrFX/aRVUcV9MUFeRPfeW6itCSVLuXRcqzi?=
+ =?us-ascii?Q?8d+n2wq0r1EZofUiz9LHnxKhSRmjpbHqxrRaRZTzMMQHPlWcpCHpX0X4D64b?=
+ =?us-ascii?Q?IW6tuM1nFNo1kS5NwsLTseKnSsyOU2m2OxJicIGOw0nG7olqnGGyg2Q06yNT?=
+ =?us-ascii?Q?X5qjSqqlL3p8NBfnB8LwzWhGvaOWZYou652H6NWsxgu1qwdNTOAbzNH2PItP?=
+ =?us-ascii?Q?0aZjnA/+yiKw+L3Jfm6jYnWESHm5oJwL/AnY+mR22R25QentDOv35ooCIAAl?=
+ =?us-ascii?Q?lahpdxhL0g=3D=3D?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: cc4b2e08-c573-483b-6bfb-08de890d5db0
+X-MS-Exchange-CrossTenant-AuthSource: PA4PR04MB9366.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Mar 2026 18:52:43.5782
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 17386d8b-37cd-4736-56c8-08de890bf445
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: BL6PEPF00020E61.namprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM4PR12MB5867
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: hF5FtbyOjr6E/zDZapBBl2WfvjGnU4P5zuvyeRHpgE5qpiXe/5iXO6Q5sLuDt9XZpEzJE4gJRSHPOSPQOcp0YA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB9422
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260323_114250_819716_AD6FF400 
-X-CRM114-Status: GOOD (  13.61  )
+X-CRM114-CacheID: sfid-20260323_115303_022913_F555085C 
+X-CRM114-Status: GOOD (  15.74  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,62 +137,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, 23 Mar 2026 01:47:20 +0800, kernel test robot wrote:
-> kernel test robot noticed the following build errors:
-> 
-> [auto build test ERROR on next-20260320]
-> [also build test ERROR on linus/master v7.0-rc4]
-> [cannot apply to i3c/i3c/next rafael-pm/linux-next rafael-pm/bleeding-edge groeck-staging/hwmon-next v7.0-rc4 v7.0-rc3 v7.0-rc2]
-> [If your patch is applied to the wrong git tree, kindly drop us a note.
-> And when submitting patch, we suggest to use '--base' as documented in
-> https://git-scm.com/docs/git-format-patch#_base_tree_information]
-> 
-> url:    https://github.com/intel-lab-lkp/linux/commits/Akhil-R/dt-bindings-i3c-Add-mipi-i3c-static-method-to-support-SETAASA/20260322-174037
-> base:   next-20260320
-> patch link:    https://lore.kernel.org/r/20260318172820.13771-5-akhilrajeev%40nvidia.com
-> patch subject: [PATCH 04/12] i3c: master: Support ACPI enumeration
-> config: sparc-randconfig-002-20260322 (https://download.01.org/0day-ci/archive/20260323/202603230007.WOMwklQ6-lkp@intel.com/config)
-> compiler: sparc-linux-gcc (GCC) 15.2.0
-> reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260323/202603230007.WOMwklQ6-lkp@intel.com/reproduce)
-> 
-> If you fix the issue in a separate patch/commit (i.e. not just a new version of
-> the same patch/commit), kindly add following tags
-> | Reported-by: kernel test robot <lkp@intel.com>
-> | Closes: https://lore.kernel.org/oe-kbuild-all/202603230007.WOMwklQ6-lkp@intel.com/
-> 
-> All errors (new ones prefixed by >>):
-> 
->    drivers/i3c/master.c: In function 'i3c_master_add_i2c_boardinfo':
->>> drivers/i3c/master.c:2449:23: error: implicit declaration of function 'acpi_dev_get_resources'; did you mean 'acpi_get_event_resources'? [-Wimplicit-function-declaration]
->     2449 |                 ret = acpi_dev_get_resources(adev, &resources,
->          |                       ^~~~~~~~~~~~~~~~~~~~~~
->          |                       acpi_get_event_resources
->>> drivers/i3c/master.c:2455:17: error: implicit declaration of function 'acpi_dev_free_resource_list' [-Wimplicit-function-declaration]
->     2455 |                 acpi_dev_free_resource_list(&resources);
->          |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
->    drivers/i3c/master.c: In function 'i3c_master_add_acpi_dev':
->>> drivers/i3c/master.c:2556:9: error: unknown type name 'acpi_bus_address'; did you mean 'acpi_io_address'?
->     2556 |         acpi_bus_address adr;
->          |         ^~~~~~~~~~~~~~~~
->          |         acpi_io_address
->>> drivers/i3c/master.c:2563:14: error: implicit declaration of function 'acpi_has_method'; did you mean 'acpi_has_watchdog'? [-Wimplicit-function-declaration]
->     2563 |         if (!acpi_has_method(adev->handle, "_ADR"))
->          |              ^~~~~~~~~~~~~~~
->          |              acpi_has_watchdog
->>> drivers/i3c/master.c:2563:34: error: invalid use of undefined type 'struct acpi_device'
->     2563 |         if (!acpi_has_method(adev->handle, "_ADR"))
->          |                                  ^~
->>> drivers/i3c/master.c:2566:15: error: implicit declaration of function 'acpi_device_adr'; did you mean 'acpi_device_handle'? [-Wimplicit-function-declaration]
->     2566 |         adr = acpi_device_adr(adev);
->          |               ^~~~~~~~~~~~~~~
->          |               acpi_device_handle
+On Sat, Mar 21, 2026 at 05:04:43PM +0800, Felix Gu wrote:
+> When DW_I3C_DISABLE_RUNTIME_PM_QUIRK is set, the probe function calls
+> pm_runtime_get_noresume() to prevent runtime suspend. However, if
+> i3c_master_register() fails, the error path does not balance this
+> call, leaving the usage count incremented.
+>
+> Add pm_runtime_put_noidle() in the error cleanup path to properly
+> balance the usage count.
+>
+> Fixes: fba0e56ee752 ("i3c: dw: Disable runtime PM on Agilex5 to avoid bus hang on IBI")
+> Signed-off-by: Felix Gu <ustc.gu@gmail.com>
+> ---
 
-#include <linux/acpi.h> is added in PATCH 03/12. The functions' prototypes
-are present in acpi.h. I think the bot checked this patch individually,
-or did I miss something?
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
-Best Regards,
-Akhil
+>  drivers/i3c/master/dw-i3c-master.c | 2 ++
+>  1 file changed, 2 insertions(+)
+>
+> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+> index d6bdb32397fb..9c8de64c203b 100644
+> --- a/drivers/i3c/master/dw-i3c-master.c
+> +++ b/drivers/i3c/master/dw-i3c-master.c
+> @@ -1669,6 +1669,8 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+>  	return 0;
+>
+>  err_disable_pm:
+> +	if (master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)
+> +		pm_runtime_put_noidle(&pdev->dev);
+>  	pm_runtime_disable(&pdev->dev);
+>  	pm_runtime_set_suspended(&pdev->dev);
+>  	pm_runtime_dont_use_autosuspend(&pdev->dev);
+>
+> ---
+> base-commit: b5d083a3ed1e2798396d5e491432e887da8d4a06
+> change-id: 20260321-dw-i3c-1-92224b35d7e4
+>
+> Best regards,
+> --
+> Felix Gu <ustc.gu@gmail.com>
+>
 
 -- 
 linux-i3c mailing list
