@@ -4,89 +4,114 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 847DFF483C1
-	for <linux-i3c@archiver.kernel.org>; Mon, 23 Mar 2026 16:05:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53CC7F483C1
+	for <linux-i3c@archiver.kernel.org>; Mon, 23 Mar 2026 16:12:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Djfd62PLYjXuFwV3WeQMOaMcsGI04udVwVlUC8udELM=; b=BYsXK7VXAQFiRP
-	/CUWaiq10kD/fvKXMysQBfpfeUdy+I4o50Q5AXWOhcgd8Ny+uZPdJ9Y3wQgk1VBcRBdC9Ty8L6ZPn
-	cHTMAszkfGtZQfc/f+gAhAmTT6xYNQEaPIY0LdRi9Hvb9iXBVPPyVE8lvbHV6FqRaLxBE7+GW1A3+
-	CCMRKIAqVhjqye56hrF28LVRjG70QBj/DlIhu4mNRYWddGHNAPqwx+lxJSnHU4snEAYAJWtn9PaMn
-	YHvbicYcAsa1wcQ4DNGzbqQgcemqlOmam29xu2VdzLxC8QqzG1qpYA3efyGlAz0IZqD0vtyLpTGq2
-	CIcx0td0BlQcw4RR3GBQ==;
+	List-Owner; bh=02C5KvG6NAGEfJnTJB8D61uC7k6hfzUtbbGZGwMbOs8=; b=Y8+gpCixJTee80
+	KV4C4FkYYLvo3AH4in8Gxw/aEnu10XYU/q+cvy1Lqa2Pg4vNPXLEHHAXVAg3nxyBmNyIErdNjY++1
+	6rHAlsCgc/USFZ6Ej24EVFVQurk4mposP7Ki0+L8/E3G8q3UQ15e11uw/dnxg10ILBYZm+W46CmIK
+	6tkPhhOInxufdr28I65VaX+sY97GX167oXxR1WsNphZY6o0AP0YOjd4XMMRpzNc1I5hbAp08CGbJi
+	n54DQPbMZgztYzVtwUn+0XeJ066oyJ8bp2Mq3Epvuoje37NhC9SeKfnt4T3EoIiiIjYZrY+PHmEy+
+	w01IJNI6G7Zv3jb/Ek+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4hm5-0000000H5sk-1DTo;
-	Mon, 23 Mar 2026 16:05:05 +0000
-Received: from mail-wm1-x32e.google.com ([2a00:1450:4864:20::32e])
+	id 1w4hsq-0000000H6IO-0JrX;
+	Mon, 23 Mar 2026 16:12:04 +0000
+Received: from mx0a-00128a01.pphosted.com ([148.163.135.77] helo=mx0b-00128a01.pphosted.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4hm2-0000000H5s1-1Jnq
+	id 1w4hsn-0000000H6GO-19IP
 	for linux-i3c@lists.infradead.org;
-	Mon, 23 Mar 2026 16:05:03 +0000
-Received: by mail-wm1-x32e.google.com with SMTP id 5b1f17b1804b1-486b9675d36so35787695e9.0
-        for <linux-i3c@lists.infradead.org>; Mon, 23 Mar 2026 09:05:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1774281900; x=1774886700; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=v5ZDJ4qudp2rQRGPYBel6jjCM9KUk/GHKvVqDYjz7dw=;
-        b=ipaRcPB79QlzXU4eurYL05idoXfRRGIc9oy/eypVHA4QnB0KellF5A+DHql6CAngBo
-         /ZqXxE3ZY0YIqBPX4fHWFtkfStdxzEX5V/QQFil2AsAEXgV3fp8oRZYJMk12HYxpyqEd
-         hpSpoMrkUTfLc/uYXV9gXjUjq3YudWtTG3TdmLjsB2wqo5Pirr4WY0g6we9F+F83VbLQ
-         Q+wi+kcY0ydYLXcNIqzWwoSvP8zSA2KS/x1iVFhOvF1fh9GbkOZF+1VOt+G4r1VkbSji
-         enJTWJ9CcRfVCV56RcKgsS0C7RE60IXqEe9L/RII/x7WHduvELxjDsGDKaizUFXoBFpo
-         knlQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1774281900; x=1774886700;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=v5ZDJ4qudp2rQRGPYBel6jjCM9KUk/GHKvVqDYjz7dw=;
-        b=IJhaSxo9J8hg2bGALJeEhx94eoUhN72TIssD9CxkRFitrD0WbU+c4ORdS258lF8dhm
-         bDmOowqxL8C1JQmluGRaZIbwhG9u7++GWd8XKh7m1RpvpPNtQmpqoMwzr05vO9fRD/nu
-         2/FZXKklndUBujqr+8qdqofREIhryp0NZjLYiEtnvKcOCxg5QJ4CYxtzX5xGSUHYDg7+
-         JvMEKQF0a31vMg1aG73xsZpgnm7bN856wHQDlLae+6nanVRftqeQrWzy5btupnGPnXlJ
-         WQg/+eRdXpAZ5vwsnqgSnCTTnO1rdISNC29Whohwohnv3/u+2oZdbqpg61bvowKBBedP
-         OS0A==
-X-Forwarded-Encrypted: i=1; AJvYcCWolrg4D/APciH4sifLPIRjlSgim4QzDtljPlyStc6cSNbZE5C1nV/0Ma8dfAV40rWGR41lH8pqpwE=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yx1L33tD4JvU8mdbRTXPg9FTFu3N9wRYwYVd8RkD93L5JO426yd
-	GjMcYXdzwYXi2M6WdYCEdpKwzxRpHTUODFIzKHxhQ5y8bmVN4AoBpoo8
-X-Gm-Gg: ATEYQzyJfUDXboPFhEt5Y5S+B1j1quEN3DD0CpiR4niZWkKvIZZB/9TskSxB6QHeVVe
-	w77YbKMTyebvG3sMaznHD56z+ZMkgRio5t13t+3mA5lA6vlASYdC+Ea2oZE3TQegBOhx74tOcYf
-	/Ya2oZtmRs4NSbKvrdPKV/XSM5Cixgd6iQmBPt/mJMhNxdhKluFGQYfGgMydjoN04WBM5Wph/na
-	PBrbcE4nom0gTtjbL59DYQ+kK2Bfb453pWbKwNPul1KEUJZeyBNRFvnue/72H7+bZd5WF62B87v
-	3GgA2B/YYF8U6dI1QOOZv7gWrDRlfNdhvyFXLJfdIl2xTd7uAue1tuIPr+4KXVEzBXRk1q3gKKV
-	rTvicJlVlJlzpysRYxkGyvL6lxpmXrhbPGDZIGT/4xDmuhnZQsmhoAZ02BhfvGrljVPyeD4hz0l
-	WWtNQPHi4j6X/+828L7s2xz1a9nXCfm8ldcMQgJmNm6mMM5PMeW/EpoXhBk7iQ+girLXqSH6Pcu
-	GT1ZVTHha/K5CWKlKeti3bAbya4NYSqF+rxPsfKnyT4Wxd06KKCdDTXUQyn+kQB
-X-Received: by 2002:a05:600c:46c8:b0:485:3d3e:167b with SMTP id 5b1f17b1804b1-486febb59a1mr181933055e9.5.1774281900135;
-        Mon, 23 Mar 2026 09:05:00 -0700 (PDT)
-Received: from HYB-DlYm71t3hSl.ad.analog.com ([137.71.226.102])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-487004e7bc4sm118703145e9.2.2026.03.23.09.04.58
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 23 Mar 2026 09:04:59 -0700 (PDT)
-Date: Mon, 23 Mar 2026 17:04:57 +0100
-From: Jorge Marques <gastmaier@gmail.com>
-To: Frank Li <Frank.li@nxp.com>
-Cc: Jorge Marques <jorge.marques@analog.com>, 
-	Alexandre Belloni <alexandre.belloni@bootlin.com>, =?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>, 
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	Dan Carpenter <dan.carpenter@linaro.org>, Jonathan Cameron <jic23@kernel.org>
-Subject: Re: [PATCH v2 4/5] i3c: master: Fix error codes at send_ccc_cmd
-Message-ID: <qa3jl7k4e36bscqgtqi5ziu6nriekck5vpukqgxedkglc4bqm6@ngv3nrlciux5>
-References: <20260312-ad4062-positive-error-fix-v2-0-1c933b5c7ed8@analog.com>
- <20260312-ad4062-positive-error-fix-v2-4-1c933b5c7ed8@analog.com>
- <abq2PZY3cz1-mmgV@lizhi-Precision-Tower-5810>
+	Mon, 23 Mar 2026 16:12:02 +0000
+Received: from pps.filterd (m0375855.ppops.net [127.0.0.1])
+	by mx0b-00128a01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 62NBE4HM4072644;
+	Mon, 23 Mar 2026 12:11:51 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=analog.com; h=cc
+	:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=DKIM; bh=4fpDi
+	uqkRGna7MMzVmnbYT3i/AqwEU5qiAradGGvOJ4=; b=xdZi6Yk2bOWS3sLpgteu0
+	lxWJ6aGuM9F1rSBoZ51so3ef3eAx5bg9ca5VOJdRS1OHZ/dglgUbT9i+2++86syF
+	hFfNPhRU/J/+idSNgcQaAjj3yYztdH/JN54Fpehajn9vT94jxR9FfDzW22raAkhi
+	ZI4CuWQsIoDkpcE4Rc4+nL7APnMR+qDePYJT1Itq8M65JYuErxnhSdwbHBgE2UNH
+	65Ln6wL2Gc4IHAf8Xydi6hXrfFmqegnibfWHFQZfYKVLh3NEJNTsN7HEer7jetay
+	iFVn3R5+IgbVJg1VFjuJ149bGA2aXYGWWrJn3BW5h3eAgE3gwjE9Tsn3m7Pxrr6S
+	g==
+Received: from nwd2mta4.analog.com ([137.71.173.58])
+	by mx0b-00128a01.pphosted.com (PPS) with ESMTPS id 4d2pxqbvd9-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Mon, 23 Mar 2026 12:11:51 -0400 (EDT)
+Received: from ASHBMBX9.ad.analog.com (ASHBMBX9.ad.analog.com [10.64.17.10])
+	by nwd2mta4.analog.com (8.14.7/8.14.7) with ESMTP id 62NGBoNf044706
+	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Mon, 23 Mar 2026 12:11:50 -0400
+Received: from ASHBMBX8.ad.analog.com (10.64.17.5) by ASHBMBX9.ad.analog.com
+ (10.64.17.10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.37; Mon, 23 Mar
+ 2026 12:11:50 -0400
+Received: from zeus.spd.analog.com (10.66.68.11) by ashbmbx8.ad.analog.com
+ (10.64.17.5) with Microsoft SMTP Server id 15.2.1748.37 via Frontend
+ Transport; Mon, 23 Mar 2026 12:11:50 -0400
+Received: from HYB-DlYm71t3hSl.ad.analog.com (HYB-DlYm71t3hSl.ad.analog.com [10.44.3.69] (may be forged))
+	by zeus.spd.analog.com (8.15.1/8.15.1) with ESMTP id 62NGBYns019356;
+	Mon, 23 Mar 2026 12:11:47 -0400
+From: Jorge Marques <jorge.marques@analog.com>
+Date: Mon, 23 Mar 2026 17:11:30 +0100
+Subject: [PATCH v3 2/5] i3c: master: Move entdaa error suppression
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <abq2PZY3cz1-mmgV@lizhi-Precision-Tower-5810>
+Message-ID: <20260323-ad4062-positive-error-fix-v3-2-30bdc68004be@analog.com>
+References: <20260323-ad4062-positive-error-fix-v3-0-30bdc68004be@analog.com>
+In-Reply-To: <20260323-ad4062-positive-error-fix-v3-0-30bdc68004be@analog.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+        Frank Li
+	<Frank.Li@nxp.com>,
+        =?utf-8?q?Przemys=C5=82aw_Gaj?= <pgaj@cadence.com>
+CC: <linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+        Dan
+ Carpenter <dan.carpenter@linaro.org>,
+        Jonathan Cameron <jic23@kernel.org>,
+        Jorge Marques <jorge.marques@analog.com>,
+        Adrian Hunter
+	<adrian.hunter@intel.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1774282294; l=2469;
+ i=jorge.marques@analog.com; s=20250303; h=from:subject:message-id;
+ bh=ccXa3/KY5qLJj4TgciT2buI5BrqCzsF3ggv3lfciV/U=;
+ b=zoTi5Gh9i4O3Wn29I460AgFHWtJ2dqfp79dnPBmgGVR1jTGeaAVCqSrrAZOpUZFlfj4FLdZqa
+ rP3uRUYBOtQADmoeatxOXKzUDixgxK7Vn+j4oZa+7EIjF0NBBjFj8e9
+X-Developer-Key: i=jorge.marques@analog.com; a=ed25519;
+ pk=NUR1IZZMH0Da3QbJ2tBSznSPVfRpuoWdhBzKGSpAdbg=
+X-ADIRuleOP-NewSCL: Rule Triggered
+X-Authority-Analysis: v=2.4 cv=ALPFdfBd c=1 sm=1 tr=0 ts=69c16647 cx=c_pps
+ a=3WNzaoukacrqR9RwcOSAdA==:117 a=3WNzaoukacrqR9RwcOSAdA==:17
+ a=IkcTkHD0fZMA:10 a=Yq5XynenixoA:10 a=VkNPw1HP01LnGYTKEx00:22
+ a=0sLvza09kfJOxVLZPwjg:22 a=N--XFCr6TIEc_64PeIT2:22 a=8AirrxEcAAAA:8
+ a=QyXUC8HyAAAA:8 a=gAnH3GRIAAAA:8 a=lW4FyyzJGg7ItnWL1goA:9 a=QEXdDO2ut3YA:10
+ a=ST-jHhOKWsTCqRlWije3:22
+X-Proofpoint-ORIG-GUID: FKsn_9g92PWClqcxxAFE614kZpo-oGGF
+X-Proofpoint-GUID: FKsn_9g92PWClqcxxAFE614kZpo-oGGF
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMzIzMDEyMyBTYWx0ZWRfX7U6odw56nuFO
+ xb73x66WvbcdfaYz5jBz4E4a1dMpcuv0+WTr/VCGjDsMQZQJfc2UMEDx3n+NMLTs4WJj++eRb3o
+ VVVUwY/Ym9bEocPk154uhbp4SkozoEv8UO0ju1AgKXawGHElRwkJWMOFKYZfLWV1y8yVAYhhhjH
+ KdJ0IRW5NkSdb4sQWNyyP4pKNq9clL30vvAnLz3ivHsMYVEZgLiKj0XsSFp2sF0sAr1ClowstPZ
+ XlHzd4ErlNwwacJJvLbGwSLg2AEsos9FZT/A6kccx6GuX/KFR9fTnvotcItJzn25w2x4mzGLtKX
+ MCpX8IgbotXtGG8MNAG1ppZOQrJXrGlu6GzigOcqFCxcVxMETPkaAbCVGaMZjP6QioWe/e2kWgt
+ SRCPcpxSUnwGQ12R09qmdibWnlkyfky02WA3yNQ6AvyBuxfcDocnZDYe5BJnF0pAnRzVQ98QZk4
+ Fypg4dPcVP6nztUfG8A==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
+ definitions=2026-03-23_04,2026-03-23_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501 malwarescore=0 clxscore=1015 spamscore=0 impostorscore=0
+ bulkscore=0 phishscore=0 suspectscore=0 lowpriorityscore=0 adultscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2603050001 definitions=main-2603230123
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260323_090502_805198_D7EB174D 
-X-CRM114-Status: GOOD (  12.28  )
+X-CRM114-CacheID: sfid-20260323_091201_315520_53F845A1 
+X-CRM114-Status: GOOD (  15.47  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,41 +128,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Mar 18, 2026 at 10:27:09AM -0400, Frank Li wrote:
-> On Thu, Mar 12, 2026 at 05:38:07PM +0100, Jorge Marques wrote:
-> > i3c_master_send_ccc_cmd_locked would propagate cmd->err (positive,
-> 
-> function name need (), i3c_dev_enable_ibi_locked(), check others.
-> 
-> > Mx codes) to the ret variable, cascading down multiple methods until
-> > reaching methods that explicitly stated they would return 0 on success
-> > or negative error code. For example, the call chain:
-> >
-> >   i3c_device_enable_ibi <- i3c_dev_enable_ibi_locked <-
-> >   master->ops.enable_ibi <- i3c_master_enec_locked <-
-> >   i3c_master_enec_disec_locked <- i3c_master_send_ccc_cmd_locked
-> 
-> why "<-" , look like should be "->" Or
-> 
-> 	i3c_device_enable_ibi()
-> 	i3c_dev_enable_ibi_locked()
-> 
-> function need (), i3c_dev_enable_ibi_locked(),
-> 
-> >
-> > Fix this by returning the ret value, callers can
-> > still read the cmd->err value if ret is negative.
-> 
-> Can you wrap at 75 char.
-> Fix this by returning the ret value, callers can still read the cmd->err
-> value if ret is negative.
-> 
-> Frank
+Prepare to fix improper Mx positive error propagation in later commits
+by handling Mx error codes where the i3c_ccc_cmd command is allocated.
+The CCC ENTDAA is invoked with i3c_master_entdaa_locked() and yields
+error I3C_ERROR_M2 if there are no devices active on the bus. Some
+controllers may also yield if there are no more devices need an dynamic
+address, since the sequence do always end in a NACK. Handle inside
+i3c_master_entdaa_locked(), checking cmd->err directly. Both call sites
+are updated, adi_i3c_master_do_daa() and cdns_i3c_master_do_daa().
 
-Ack all review comments.
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+Reviewed-by: Adrian Hunter <adrian.hunter@intel.com>
+Signed-off-by: Jorge Marques <jorge.marques@analog.com>
+---
+ drivers/i3c/master.c                 | 4 ++++
+ drivers/i3c/master/adi-i3c-master.c  | 3 +--
+ drivers/i3c/master/i3c-master-cdns.c | 2 +-
+ 3 files changed, 6 insertions(+), 3 deletions(-)
 
-Regards,
-Jorge
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 7f4630ac8f0bc..1e2c086a24ac2 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -1050,6 +1050,10 @@ int i3c_master_entdaa_locked(struct i3c_master_controller *master)
+ 	ret = i3c_master_send_ccc_cmd_locked(master, &cmd);
+ 	i3c_ccc_cmd_dest_cleanup(&dest);
+ 
++	/* No active devices need an address. */
++	if (ret && cmd.err == I3C_ERROR_M2)
++		ret = 0;
++
+ 	return ret;
+ }
+ EXPORT_SYMBOL_GPL(i3c_master_entdaa_locked);
+diff --git a/drivers/i3c/master/adi-i3c-master.c b/drivers/i3c/master/adi-i3c-master.c
+index 6616f751075ae..fb9a488304469 100644
+--- a/drivers/i3c/master/adi-i3c-master.c
++++ b/drivers/i3c/master/adi-i3c-master.c
+@@ -655,8 +655,7 @@ static int adi_i3c_master_do_daa(struct i3c_master_controller *m)
+ 
+ 	writel(irq_mask, master->regs + REG_IRQ_MASK);
+ 
+-	/* DAA always finishes with CE2_ERROR or NACK_RESP */
+-	if (ret && ret != I3C_ERROR_M2)
++	if (ret)
+ 		return ret;
+ 
+ 	/* Add I3C devices discovered */
+diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
+index b78aebf6b2ca4..5cfec6761494d 100644
+--- a/drivers/i3c/master/i3c-master-cdns.c
++++ b/drivers/i3c/master/i3c-master-cdns.c
+@@ -1143,7 +1143,7 @@ static int cdns_i3c_master_do_daa(struct i3c_master_controller *m)
+ 	}
+ 
+ 	ret = i3c_master_entdaa_locked(&master->base);
+-	if (ret && ret != I3C_ERROR_M2)
++	if (ret)
+ 		return ret;
+ 
+ 	newdevs = readl(master->regs + DEVS_CTRL) & DEVS_CTRL_DEVS_ACTIVE_MASK;
+
+-- 
+2.51.1
+
 
 -- 
 linux-i3c mailing list
