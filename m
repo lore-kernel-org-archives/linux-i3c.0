@@ -4,49 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 343ED103A9A7
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Mar 2026 10:59:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 328E0FEC11B
+	for <linux-i3c@archiver.kernel.org>; Wed, 25 Mar 2026 11:03:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c9DxU0w39zzM5Xk1FLe4BNkIHRLSxeZHROtocJ6KQxs=; b=hzW80Y8OP+Qz+I
-	PaA7diXM1oIZba4WySnA9Zya0ypm5lgM4r9FOvQwknwsbUun3uyzXyxezDxiWHgbtUh+DD3wrGDVB
-	95fCVo4QmvR1cMqlmLcGrEqy99JAbtjUMSPJAO5LuFvVnlfHpe/glbkc9b2jr4EN0ncEnFWQ5HOWD
-	Eus2ZcqQlPp1yanORhkNh5EYiiyBxL3gML3mdCCQS1lecks+z2i2yvNnly/5ekGE7DlDqhsv476aM
-	ipceV/VBXmAz1qUAZu1EflYZCMzdNy6/CVn3gLFESVXV1E8l1FObUxb5SS/91hlX8OTCFt51+FDSl
-	Kf5upGJM7l2TNGky9V2Q==;
+	List-Owner; bh=JlJNWlHtf7nkMlWmXY2REHRjueqq58dcj03NQlTZRp0=; b=ml/ypHY6kTbFgH
+	gofvefvIHS9XTUO+Vt1RGQyxeIiVy+KfMLpdLkYhe3dfS+3OkuQ038jbLazvMJ9SXrQpp88bQuUkh
+	vVSQAxucKgw83YqqDyv4UUA4tWUhoKSRfEPhkPsBe+6zn8ELtTus63/OlcqISZGDYjjohbkTrYsHF
+	xEmU6CvpCiMOxgTd7bwT2cJVTMZxBrae/tSxfYTB0otTeTgFP04xxlyEEpkXMBh4kBpPbSA9P5R/K
+	TYBVgCJ1ZMpCIW6J9rPbu/7LB1lujTYjZv5DPQuwrunM9Vdf8LXoayo+eDl4pnH9Y3C/q1Q8TbLN8
+	NLBYNhmKz1Og1ZwdT+Tg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w5Lxh-00000003C4R-3RQU;
-	Wed, 25 Mar 2026 10:59:45 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1w5M1c-00000003DCW-3yQE;
+	Wed, 25 Mar 2026 11:03:48 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w5Lxg-00000003C4A-22nk
+	id 1w5M1a-00000003DAp-15mk
 	for linux-i3c@lists.infradead.org;
-	Wed, 25 Mar 2026 10:59:44 +0000
+	Wed, 25 Mar 2026 11:03:47 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 9E2AD60121;
-	Wed, 25 Mar 2026 10:59:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A8F1AC2BCB0;
-	Wed, 25 Mar 2026 10:59:38 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 7464A40458;
+	Wed, 25 Mar 2026 11:03:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8A877C2BC9E;
+	Wed, 25 Mar 2026 11:03:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1774436383;
-	bh=q4ISp22s1rxl1zVxUTKr8kjuJzCoRUSlde0IbCZxE8g=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=Cbm67t2VwMHonR/cmaDiyOj80uub3hhSDkWZJqpJLx1JYc60DYJIO9ooJODqRr/XI
-	 qfl8uRV6Jz7IZmDpsSD1BajUC5e5AW5cXVHHWwPmM94rOA9cxoF/mZzaMuZ/RGsp0o
-	 gmxlAiIWaP2AFQ1/wWQke064eSHoxl9ASqiXuFGZB3sUF+1Uekb+9P2zkITaAq6DYO
-	 lXFhOn5XfVl1p3zmemxucIuPr2Duz/CJpuSaSWZ6deIWtwKkxQ80/O+MDWU7v3hN+3
-	 td/7MbfTOjXaB83ZZGyE4YLqiT0pnUtnaEEe2wLtvqHI03gt6phjN/HRhnXmgAMbgS
-	 bSVPoP1WROcTQ==
-Message-ID: <6342b6fd-9802-49d9-a269-ecb3b70b4604@kernel.org>
-Date: Wed, 25 Mar 2026 11:59:36 +0100
+	s=k20201202; t=1774436625;
+	bh=/OTs14n6e4lM+2UQQJLdG1GrLfT2+YR2cma9kWyjbe0=;
+	h=Date:Subject:From:To:Cc:References:In-Reply-To:From;
+	b=BdtkAWcnVv1iui5vIOhjVQeBzxmTUsOApf/pYppOehfw4fCCm23F5mdbILAInpITD
+	 quLa2QHKJcxC5w2CejKLcCjM4Ba+go6RnakxNQCNlg0KVxxLBHRJH9Oxk+RZKDjRil
+	 XDM9eYDhFKTFd/2Z6IyZHONzwLWnWTtWEweNFxcfG3YHZRexjlwXW2N+bg+bylj2nY
+	 oRmWVoU5erBSoCOst/yDMC/dD146ddtMyUI/bclMj+3Nv0DyPd4nwmnNw7O1womYDM
+	 2PNU+D+X+yFqFzWuGc9TaLuzMlpxGm7t/fHLiFr1OofftlP4U6zmzYTGF0OcHf7grZ
+	 5+tmBrG6smRsA==
+Message-ID: <ed3828b9-fd2d-46c1-b486-c5172f61eafa@kernel.org>
+Date: Wed, 25 Mar 2026 12:03:37 +0100
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH 12/12] arm64: defconfig: Enable I3C and SPD5118 hwmon
+From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Thierry Reding <thierry.reding@kernel.org>
 Cc: Akhil R <akhilrajeev@nvidia.com>, Frank.Li@nxp.com,
  acpica-devel@lists.linux.dev, alexandre.belloni@bootlin.com,
@@ -60,7 +61,7 @@ Cc: Akhil R <akhilrajeev@nvidia.com>, Frank.Li@nxp.com,
 References: <20260319-nano-manatee-of-vastness-fbafa1@quoll>
  <20260319170929.14543-1-akhilrajeev@nvidia.com>
  <67165a1f-9fa3-4853-b530-b1f9d6e4c2cf@kernel.org> <acO4NKPDUayny-I4@orome>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+ <6342b6fd-9802-49d9-a269-ecb3b70b4604@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -105,7 +106,10 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <acO4NKPDUayny-I4@orome>
+In-Reply-To: <6342b6fd-9802-49d9-a269-ecb3b70b4604@kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260325_040346_344270_173ECAF7 
+X-CRM114-Status: GOOD (  11.08  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,34 +126,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 25/03/2026 11:31, Thierry Reding wrote:
-> On Thu, Mar 19, 2026 at 06:15:14PM +0100, Krzysztof Kozlowski wrote:
->> On 19/03/2026 18:09, Akhil R wrote:
->>> On Thu, 19 Mar 2026 10:40:34 +0100, Krzysztof Kozlowski wrote:
->>>> On Wed, Mar 18, 2026 at 10:57:25PM +0530, Akhil R wrote:
->>>>> Add I3C subsystem support, DesignWare I3C master controller, and
->>>>> SPD5118 hwmon sensor as modules to the defconfig.
+On 25/03/2026 11:59, Krzysztof Kozlowski wrote:
+> On 25/03/2026 11:31, Thierry Reding wrote:
+>> On Thu, Mar 19, 2026 at 06:15:14PM +0100, Krzysztof Kozlowski wrote:
+>>> On 19/03/2026 18:09, Akhil R wrote:
+>>>> On Thu, 19 Mar 2026 10:40:34 +0100, Krzysztof Kozlowski wrote:
+>>>>> On Wed, Mar 18, 2026 at 10:57:25PM +0530, Akhil R wrote:
+>>>>>> Add I3C subsystem support, DesignWare I3C master controller, and
+>>>>>> SPD5118 hwmon sensor as modules to the defconfig.
+>>>>>
+>>>>> Why? If there is no user of that, why would we want it? Your commit msg
+>>>>> should explain that.
 >>>>
->>>> Why? If there is no user of that, why would we want it? Your commit msg
->>>> should explain that.
+>>>> Ack. This is for Tegra410 which has a DesignWare I3C host controller.
+>>>> I will add this in the commit message.
 >>>
->>> Ack. This is for Tegra410 which has a DesignWare I3C host controller.
->>> I will add this in the commit message.
+>>> Board or products. Not SoCs.
 >>
->> Board or products. Not SoCs.
+>> Is this a new requirement? I see a bit of both in defconfig changes.
 > 
-> Is this a new requirement? I see a bit of both in defconfig changes.
+> Almost every review from me has it for 2-3 years... And it is a known
 
-Almost every review from me has it for 2-3 years... And it is a known
-thing since always in a bit different wording: we do not care about
-downstream things and downstream products. defconfig does not serve
-downstream at all, makes no sense outside of our (upstream) work.
+And I already explained this to *you* 3 years ago:
 
-> Some mention specific products, other mention SoCs. Does this
-> requirement apply to DT platforms or also ACPI platforms?
+https://lore.kernel.org/all/ac8f30a7-fc72-9a44-74b3-a69001bfdaaf@linaro.org/
 
-Just like kernel, applies to all platforms, regardless of firmware
-interface.
+So how this could be a new requirement *now* if three years ago we had
+exactly same discussion.
+
+I understand question for the first time, but why this being brought up
+as "why is this a new thing" again?
 
 Best regards,
 Krzysztof
