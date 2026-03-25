@@ -4,80 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6367A109C05A
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Mar 2026 18:57:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 400041093168
+	for <linux-i3c@archiver.kernel.org>; Wed, 25 Mar 2026 21:24:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=488Eoz5RoeEtJP0SrAkv5t51DtyWEYQF0pTbQDQ6KHM=; b=V5rZNgVT2aqZ0k
-	UeUjNLhG6CkpTVaNIVSy8o3HNlYg6yqtczL2bKXzX3CzHDFx23FJ1SJ/y1P6c+AkgRN+6NxSC6l4p
-	SEKDRt1RR3d1fUqsYaC5iNfpFil2A0oUw2bVtgIqLmdBDaJCMdBTdIk2m0ONz9thvcvpi69+lahEl
-	RnZZLPG1PZco8ma6v0tfCth7V8fqy1VlUYU14yEk43RtVakPTr4B8ypnQiLZ/Lgy21Vx17dLdeZdb
-	MNPVPo0tURKxGkaK0cqi7uFCzZSNI59CxWxpD26bXJnK1Wxpw/sBvsX4Poq7mfyds/7czK4GWiF0g
-	pNL9BxbpnppZAO5xMDUQ==;
+	List-Owner; bh=rVAUW2fdjJNRQRwvtn/cg478nn1isCid0lP1jLqjgOY=; b=PmEOaBO/kqoCjo
+	VPUtoXYfMvjaj68pq1pc5YSYR+UJ4mLF80dNp0/ZyaysdCfmlSPky24YagfYSfocAVWiWsujqVmU5
+	wAspd74g0OeBloGT3YDq1/CLLKWlwWM+WVMQwqZDYwEr6z3qgOELRIDTCiU52n4Nenqd3J6etcuEp
+	AqcOpoZ4LDF/opw6Yd5kKErGJjdJyDfsoLU3jzYSQI9RG1CBy1L+T4px+La0SOmjxY8g8djknT3Lr
+	gi92BBT9ppmyMOTx2NbFJCR5h54BB/v0oEPYMNN6WTN3NNCfq5he9qB8BGG7FkvA+LveTMnSBJ65C
+	kpseKyMC273zDrDsVgFw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w5TQ2-0000000472J-0RoG;
-	Wed, 25 Mar 2026 18:57:30 +0000
-Received: from mgamail.intel.com ([198.175.65.20])
+	id 1w5ViB-00000004HQn-3aKi;
+	Wed, 25 Mar 2026 21:24:23 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w5TPz-0000000471l-1rrx
+	id 1w5Vi9-00000004HQS-1KeN
 	for linux-i3c@lists.infradead.org;
-	Wed, 25 Mar 2026 18:57:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1774465047; x=1806001047;
-  h=date:from:to:cc:subject:message-id:references:
-   mime-version:in-reply-to;
-  bh=aChN73re9+mDwaRjlRj252C+1Dh7cQiHjrvH4XH2fpA=;
-  b=AL0Dlz2656AzerMZuojBPYt35JNkuDqBS1h4N6Faz8HIE8QtMUT7CiEC
-   kfR18klm8V/bYe3D3QJArUS+NuyoHwGrT9iGlur04Qer56USpAV8Eu7Uc
-   kMPxNEfL9lJH5Yf8xyE0OJAw7xHaF465vNr7SEy8JFR7kT6n5k+p4YOJu
-   ZEDlgOqjkWlI0zRpTPUgMEefPomb+dLnjIUlriGHCcAGGPSwMtJPLklqA
-   vAjfKi0nNZwI6vlCykYxLk1l+VuCXPNsU2V2mzMkK0fx1ZGuwFkRnv5ME
-   MXaxsfKllH4dEGxBxmrT7Ry6l0euwqy8RVdW5CfZIjeEBf531guQO9cRE
-   w==;
-X-CSE-ConnectionGUID: jnuxdeuuTb+EX0yFgzu4oQ==
-X-CSE-MsgGUID: jIq8GoocS9WW7ZglhVnIWQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11740"; a="75230449"
-X-IronPort-AV: E=Sophos;i="6.23,140,1770624000"; 
-   d="scan'208";a="75230449"
-Received: from fmviesa005.fm.intel.com ([10.60.135.145])
-  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 25 Mar 2026 11:57:27 -0700
-X-CSE-ConnectionGUID: D6UEZT7PS+KeWoHvhF6ZIw==
-X-CSE-MsgGUID: JZ77ZO8xQaWiJnHqdFbBeA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.23,140,1770624000"; 
-   d="scan'208";a="229544630"
-Received: from lkp-server01.sh.intel.com (HELO 3905d212be1b) ([10.239.97.150])
-  by fmviesa005.fm.intel.com with ESMTP; 25 Mar 2026 11:57:22 -0700
-Received: from kbuild by 3905d212be1b with local (Exim 4.98.2)
-	(envelope-from <lkp@intel.com>)
-	id 1w5TPs-000000007Uf-1EVv;
-	Wed, 25 Mar 2026 18:57:20 +0000
-Date: Thu, 26 Mar 2026 02:57:18 +0800
-From: kernel test robot <lkp@intel.com>
-To: Lakshay Piplani <lakshay.piplani@nxp.com>, linux-kernel@vger.kernel.org,
-	linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
-	krzk+dt@kernel.org, robh@kernel.org, conor+dt@kernel.org,
-	devicetree@vger.kernel.org, broonie@kernel.org, lee@kernel.org,
-	Frank.Li@nxp.com, lgirdwood@gmail.com
-Cc: oe-kbuild-all@lists.linux.dev, vikash.bansal@nxp.com,
-	priyanka.jain@nxp.com, aman.kumarpandey@nxp.com,
-	lakshay.piplani@nxp.com
-Subject: Re: [PATCH v8 7/7] i3c: hub: p3h2x4x: Add support for NXP P3H2x4x
- I3C hub functionality
-Message-ID: <202603260207.uKW7MqMC-lkp@intel.com>
-References: <20260323062737.886728-8-lakshay.piplani@nxp.com>
+	Wed, 25 Mar 2026 21:24:22 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id B43F041959;
+	Wed, 25 Mar 2026 21:24:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4F3C8C4CEF7;
+	Wed, 25 Mar 2026 21:24:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1774473860;
+	bh=3UftVOg0IFr5tv5Ygg1Rl9xOsfEycN0eTd8jj+exBEo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=ABYaTHDJCxD2Rdaj6onhotLxYuolk0jrQq6U6uiOhF+7johkhRFDsSvvJyyoJYC/7
+	 jCnH5B6sTwvL7z6be+/eemFjeREt9l9NK7CDq9s5cNNT/3/WjkzdNHCER/51uV7cmH
+	 WlCH33L2U61scEZxaaXZuvZI2+jILRHE2iyFBrACqKJW73PmiRePmci0rsBsmcK7Dt
+	 pNKldo8aqplNuBxolMhsoAhqshXOUQO1hO0FLe6GRaKkrQu84aTz1MC+6ubPaocfeR
+	 bnlpKDUGAg2OqelXRZi1THJbcI9wUWr9VGhfIKtulswHucLix9xgXM6UjgL4S14pU3
+	 LarhOT1eLLINg==
+Date: Wed, 25 Mar 2026 16:24:19 -0500
+From: Rob Herring <robh@kernel.org>
+To: Lakshay Piplani <lakshay.piplani@nxp.com>
+Cc: linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
+	alexandre.belloni@bootlin.com, krzk+dt@kernel.org,
+	conor+dt@kernel.org, devicetree@vger.kernel.org, broonie@kernel.org,
+	lee@kernel.org, Frank.Li@nxp.com, lgirdwood@gmail.com,
+	vikash.bansal@nxp.com, priyanka.jain@nxp.com,
+	aman.kumarpandey@nxp.com
+Subject: Re: [PATCH v8 3/7] dt-bindings: i3c: Add NXP P3H2x4x i3c-hub support
+Message-ID: <20260325212419.GA4024060-robh@kernel.org>
+References: <20260323062737.886728-1-lakshay.piplani@nxp.com>
+ <20260323062737.886728-4-lakshay.piplani@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260323062737.886728-8-lakshay.piplani@nxp.com>
+In-Reply-To: <20260323062737.886728-4-lakshay.piplani@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260325_115727_522952_E8E433E4 
-X-CRM114-Status: GOOD (  11.73  )
+X-CRM114-CacheID: sfid-20260325_142421_401292_D2FF3C00 
+X-CRM114-Status: GOOD (  20.50  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,72 +77,223 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Lakshay,
+On Mon, Mar 23, 2026 at 11:57:33AM +0530, Lakshay Piplani wrote:
+> From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+> 
+> Add bindings for the NXP P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841)
+> multiport I3C hub family. These devices connect to a host via
+> I3C/I2C/SMBus and allow communication with multiple downstream
+> peripherals.
+> 
+> Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+> Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
 
-kernel test robot noticed the following build errors:
+All these patches need your S-o-b tag. 
 
-[auto build test ERROR on broonie-regulator/for-next]
-[also build test ERROR on linus/master v7.0-rc5 next-20260324]
-[cannot apply to i3c/i3c/next lee-mfd/for-mfd-next lee-mfd/for-mfd-fixes]
-[If your patch is applied to the wrong git tree, kindly drop us a note.
-And when submitting patch, we suggest to use '--base' as documented in
-https://git-scm.com/docs/git-format-patch#_base_tree_information]
+> 
+> ---
+> Changes in v8:
+>  - Add compatible in i3c example
+> 
+> Changes in v7:
+>  - Fix schema validation issues
+>  - Adjust required properties
+>  - Add I2C example
+> 
+> Changes in v6:
+>  - Use a vendor prefix for the attributes
+> 
+> Changes in v5:
+>  - Removed SW properties: cp0-ldo-microvolt,cp1-ldo-microvolt,
+>    tp0145-ldo-microvolt, tp2367-ldo-microvolt
+>  - Changed supply entries and its descriptions
+> 
+> Changes in v4:
+>  - Fixed DT binding check warning
+>  - Removed SW properties: ibi-enable, local-dev, and always-enable
+> 
+> Changes in v3:
+>  - Added MFD (Multi-Function Device) support for I3C hub and on-die regulator
+>  - Added Regulator supply node
+> 
+> Changes in v2:
+>  - Fixed DT binding check warning
+>  - Revised logic for parsing DTS nodes
+> ---
+> ---
+>  .../devicetree/bindings/i3c/nxp,p3h2840.yaml  | 304 ++++++++++++++++++
+>  MAINTAINERS                                   |   8 +
+>  2 files changed, 312 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml b/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+> new file mode 100644
+> index 000000000000..f588fd8318a0
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+> @@ -0,0 +1,304 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +# Copyright 2025 NXP
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/i3c/nxp,p3h2840.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: NXP P3H2X4X I3C HUB
+> +
+> +maintainers:
+> +  - Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+> +  - Vikash Bansal <vikash.bansal@nxp.com>
+> +
+> +description: |
+> +  P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841) is a family of multiport I3C
+> +  hub devices that connect to:-
+> +  1. A host CPU via I3C/I2C/SMBus bus on upstream side and connect to multiple
+> +     peripheral devices on the downstream  side.
+> +  2. Have two Controller Ports which can support either
+> +     I2C/SMBus or I3C buses and connect to a CPU, BMC or SOC.
+> +  3. P3H2840/ P3H2841 are 8 port I3C hub with eight I3C/I2C Target Port.
+> +  4. P3H2440/ P3H2441 are 4 port I3C hub with four I3C/I2C Target Port.
+> +     Target ports can be configured as I2C/SMBus, I3C or GPIO and connect to
+> +     peripherals.
+> +
+> +properties:
+> +  compatible:
+> +    const: nxp,p3h2840
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  '#address-cells':
+> +    const: 1
+> +
+> +  '#size-cells':
+> +    const: 0
+> +
+> +  assigned-address:
+> +    maximum: 0x7f
+> +
+> +  nxp,tp0145-pullup-ohms:
+> +    description:
+> +      Selects the pull up resistance for target Port 0/1/4/5, in ohms.
+> +    enum: [250, 500, 1000, 2000]
+> +    default: 500
+> +
+> +  nxp,tp2367-pullup-ohms:
+> +    description:
+> +      Selects the pull up resistance for target Port 2/3/6/7, in ohms.
+> +    enum: [250, 500, 1000, 2000]
+> +    default: 500
+> +
+> +  nxp,cp0-io-strength-ohms:
+> +    description:
+> +      Selects the IO drive strength for controller Port 0, in ohms.
+> +    enum: [20, 30, 40, 50]
+> +    default: 20
+> +
+> +  nxp,cp1-io-strength-ohms:
+> +    description:
+> +      Selects the IO drive strength for controller Port 1, in ohms.
+> +    enum: [20, 30, 40, 50]
+> +    default: 20
+> +
+> +  nxp,tp0145-io-strength-ohms:
+> +    description:
+> +      Selects the IO drive strength for target port 0/1/4/5, in ohms.
+> +    enum: [20, 30, 40, 50]
+> +    default: 20
+> +
+> +  nxp,tp2367-io-strength-ohms:
+> +    description:
+> +      Selects the IO drive strength for target port 2/3/6/7, in ohms.
+> +    enum: [20, 30, 40, 50]
+> +    default: 20
+> +
+> +  vcc1-supply:
+> +    description: Controller port 0 power supply.
+> +
+> +  vcc2-supply:
+> +    description: Controller port 1 power supply.
+> +
+> +  vcc3-supply:
+> +    description: Target port 0/1/4/5 power supply.
+> +
+> +  vcc4-supply:
+> +    description: Target port 2/3/6/7 power supply.
+> +
+> +  regulators:
+> +    type: object
+> +    additionalProperties: false
+> +
+> +    properties:
+> +      ldo-cp0:
+> +        type: object
+> +        $ref: /schemas/regulator/regulator.yaml#
+> +        unevaluatedProperties: false
+> +
+> +      ldo-cp1:
+> +        type: object
+> +        $ref: /schemas/regulator/regulator.yaml#
+> +        unevaluatedProperties: false
+> +
+> +      ldo-tpg0:
+> +        type: object
+> +        $ref: /schemas/regulator/regulator.yaml#
+> +        unevaluatedProperties: false
+> +
+> +      ldo-tpg1:
+> +        type: object
+> +        $ref: /schemas/regulator/regulator.yaml#
+> +        unevaluatedProperties: false
+> +
+> +required:
+> +  - reg
+> +
+> +patternProperties:
+> +  "^i3c@[0-7]$":
+> +    type: object
+> +    unevaluatedProperties: false
 
-url:    https://github.com/intel-lab-lkp/linux/commits/Lakshay-Piplani/i3c-master-Expose-the-APIs-to-support-I3C-hub/20260325-150847
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regulator.git for-next
-patch link:    https://lore.kernel.org/r/20260323062737.886728-8-lakshay.piplani%40nxp.com
-patch subject: [PATCH v8 7/7] i3c: hub: p3h2x4x: Add support for NXP P3H2x4x I3C hub functionality
-config: um-randconfig-002-20260326 (https://download.01.org/0day-ci/archive/20260326/202603260207.uKW7MqMC-lkp@intel.com/config)
-compiler: gcc-14 (Debian 14.2.0-19) 14.2.0
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20260326/202603260207.uKW7MqMC-lkp@intel.com/reproduce)
+This is a child I3C bus, right? You don't support any devices on the 
+bus. You need a $ref to i3c.yaml.
 
-If you fix the issue in a separate patch/commit (i.e. not just a new version of
-the same patch/commit), kindly add following tags
-| Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202603260207.uKW7MqMC-lkp@intel.com/
+> +
+> +    properties:
+> +      reg:
+> +        description:
+> +          The I3C HUB Target Port number.
+> +        maximum: 7
+> +
 
-All error/warnings (new ones prefixed by >>):
+> +      '#address-cells':
+> +        const: 3
+> +
+> +      '#size-cells':
+> +        const: 0
 
->> drivers/i3c/hub/p3h2840_i3c_hub_smbus.c:357:10: error: 'struct i2c_algorithm' has no member named 'reg_slave'
-     357 |         .reg_slave = p3h2x4x_tp_i2c_reg_slave,
-         |          ^~~~~~~~~
->> drivers/i3c/hub/p3h2840_i3c_hub_smbus.c:357:22: error: initialization of 'int (*)(struct i2c_adapter *, struct i2c_msg *, int)' from incompatible pointer type 'int (*)(struct i2c_client *)' [-Wincompatible-pointer-types]
-     357 |         .reg_slave = p3h2x4x_tp_i2c_reg_slave,
-         |                      ^~~~~~~~~~~~~~~~~~~~~~~~
-   drivers/i3c/hub/p3h2840_i3c_hub_smbus.c:357:22: note: (near initialization for 'p3h2x4x_tp_i2c_algorithm.<anonymous>.xfer_atomic')
->> drivers/i3c/hub/p3h2840_i3c_hub_smbus.c:358:10: error: 'struct i2c_algorithm' has no member named 'unreg_slave'
-     358 |         .unreg_slave = p3h2x4x_tp_i2c_unreg_slave,
-         |          ^~~~~~~~~~~
->> drivers/i3c/hub/p3h2840_i3c_hub_smbus.c:358:24: error: initialization of 'int (*)(struct i2c_adapter *, u16,  short unsigned int,  char,  u8,  int,  union i2c_smbus_data *)' {aka 'int (*)(struct i2c_adapter *, short unsigned int,  short unsigned int,  char,  unsigned char,  int,  union i2c_smbus_data *)'} from incompatible pointer type 'int (*)(struct i2c_client *)' [-Wincompatible-pointer-types]
-     358 |         .unreg_slave = p3h2x4x_tp_i2c_unreg_slave,
-         |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
-   drivers/i3c/hub/p3h2840_i3c_hub_smbus.c:358:24: note: (near initialization for 'p3h2x4x_tp_i2c_algorithm.smbus_xfer')
->> drivers/i3c/hub/p3h2840_i3c_hub_smbus.c:355:56: warning: missing braces around initializer [-Wmissing-braces]
-     355 | static struct i2c_algorithm p3h2x4x_tp_i2c_algorithm = {
-         |                                                        ^
-     356 |         .master_xfer    = p3h2x4x_tp_i2c_xfer,
-         |                                              }
-     357 |         .reg_slave = p3h2x4x_tp_i2c_reg_slave,
-         |                      {                       }
+Then these 2 can be dropped.
 
+> +
+> +      nxp,pullup-enable:
+> +        type: boolean
+> +        description:
+> +          Enables the on-die pull-up for Target Port.
+> +
+> +    required:
+> +      - reg
+> +      - "#address-cells"
+> +      - "#size-cells"
 
-vim +357 drivers/i3c/hub/p3h2840_i3c_hub_smbus.c
+And these 2.
 
-   351	
-   352	/*
-   353	 * I2C algorithm Structure
-   354	 */
- > 355	static struct i2c_algorithm p3h2x4x_tp_i2c_algorithm = {
-   356		.master_xfer    = p3h2x4x_tp_i2c_xfer,
- > 357		.reg_slave = p3h2x4x_tp_i2c_reg_slave,
- > 358		.unreg_slave = p3h2x4x_tp_i2c_unreg_slave,
-   359		.functionality  = p3h2x4x_tp_smbus_funcs,
-   360	};
-   361	
+> +
+> +  "^(i2c|smbus)@[0-7]$":
+> +    type: object
+> +    unevaluatedProperties: false
 
--- 
-0-DAY CI Kernel Test Service
-https://github.com/intel/lkp-tests/wiki
+Likewise, you need a reference to i2c-controller.yaml.
+
+Rob
 
 -- 
 linux-i3c mailing list
