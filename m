@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 400041093168
-	for <linux-i3c@archiver.kernel.org>; Wed, 25 Mar 2026 21:24:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F89E10A3D7F
+	for <linux-i3c@archiver.kernel.org>; Thu, 26 Mar 2026 11:58:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rVAUW2fdjJNRQRwvtn/cg478nn1isCid0lP1jLqjgOY=; b=PmEOaBO/kqoCjo
-	VPUtoXYfMvjaj68pq1pc5YSYR+UJ4mLF80dNp0/ZyaysdCfmlSPky24YagfYSfocAVWiWsujqVmU5
-	wAspd74g0OeBloGT3YDq1/CLLKWlwWM+WVMQwqZDYwEr6z3qgOELRIDTCiU52n4Nenqd3J6etcuEp
-	AqcOpoZ4LDF/opw6Yd5kKErGJjdJyDfsoLU3jzYSQI9RG1CBy1L+T4px+La0SOmjxY8g8djknT3Lr
-	gi92BBT9ppmyMOTx2NbFJCR5h54BB/v0oEPYMNN6WTN3NNCfq5he9qB8BGG7FkvA+LveTMnSBJ65C
-	kpseKyMC273zDrDsVgFw==;
+	List-Owner; bh=Qwsm7wVSyCfxQykQ4+9AijkIey4g+7CxOg2I/O9BwWQ=; b=sztY6qsFBJscSB
+	syF6XB2NunEG1uCMvr2C3a0HIWAKwMiw44+JkLqZazlhsx8c4PIZETUKpO1dfBqaBbi+2k8+B6Kpe
+	HpkpoKuUSwDLslYk5jGgbHba755TqQjrlR6l8V3jrOqnw4HDzqAp5GzkePUhUy3yX3u6Y0qLrkjxK
+	GuEG8fR4/j36C/XvD1myT6fMkvICe3s7CUrZZFMsUctEleVXJrZruF82WFFGypxPK2smB9bEgB7dT
+	zVPU11YQr3VzXGSbcVQimLSdY0RCue8XSN+IUZrSd1ZmWeRen0snkdtaPzxrpA/xTDJ/1RuiGIln3
+	QGBa3J8YFA5170iztSUg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w5ViB-00000004HQn-3aKi;
-	Wed, 25 Mar 2026 21:24:23 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1w5jMX-00000005OOd-3rvZ;
+	Thu, 26 Mar 2026 11:58:57 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w5Vi9-00000004HQS-1KeN
+	id 1w5jMV-00000005OOC-0aEs
 	for linux-i3c@lists.infradead.org;
-	Wed, 25 Mar 2026 21:24:22 +0000
+	Thu, 26 Mar 2026 11:58:56 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id B43F041959;
-	Wed, 25 Mar 2026 21:24:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4F3C8C4CEF7;
-	Wed, 25 Mar 2026 21:24:20 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id BF47B439BB;
+	Thu, 26 Mar 2026 11:58:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E35DDC2BC87;
+	Thu, 26 Mar 2026 11:58:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1774473860;
-	bh=3UftVOg0IFr5tv5Ygg1Rl9xOsfEycN0eTd8jj+exBEo=;
+	s=k20201202; t=1774526333;
+	bh=aJGxEH6abHvJG1/YDdFthINX7UFKbe9YYLe2cTfN8JY=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=ABYaTHDJCxD2Rdaj6onhotLxYuolk0jrQq6U6uiOhF+7johkhRFDsSvvJyyoJYC/7
-	 jCnH5B6sTwvL7z6be+/eemFjeREt9l9NK7CDq9s5cNNT/3/WjkzdNHCER/51uV7cmH
-	 WlCH33L2U61scEZxaaXZuvZI2+jILRHE2iyFBrACqKJW73PmiRePmci0rsBsmcK7Dt
-	 pNKldo8aqplNuBxolMhsoAhqshXOUQO1hO0FLe6GRaKkrQu84aTz1MC+6ubPaocfeR
-	 bnlpKDUGAg2OqelXRZi1THJbcI9wUWr9VGhfIKtulswHucLix9xgXM6UjgL4S14pU3
-	 LarhOT1eLLINg==
-Date: Wed, 25 Mar 2026 16:24:19 -0500
-From: Rob Herring <robh@kernel.org>
+	b=M9C2ASmkZQq9/XXTxASyRFE2mDv8+QRWNRzMnAxtFGkmxxmXOG715QRrpk7d5LWxa
+	 rEwXdG2HIq9A6WJhnkFUIP5XyFxn1M9NnDAGI64PZSAZ8LTDOeFCe5ngVISffDQqC3
+	 QaIarLkfwyKLHu925Gp0U25INxQXe6DhyFfWSPr307g0L/NTtbzYcWonkVzyS6YFRH
+	 jLfwGaba45JnpYQWAl1aDqdOdNoub28c979w9F09Tb8mWSwisMo27EYZht5ZXOictm
+	 bW0uTgP1Fgdmi92+wVK+t8y772/64rw2uOxwCYPgj0bQdkUWRDzKsrTCepNNcYCCZg
+	 0QcoLRTXjpAUA==
+Date: Thu, 26 Mar 2026 11:58:48 +0000
+From: Lee Jones <lee@kernel.org>
 To: Lakshay Piplani <lakshay.piplani@nxp.com>
 Cc: linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
-	alexandre.belloni@bootlin.com, krzk+dt@kernel.org,
+	alexandre.belloni@bootlin.com, krzk+dt@kernel.org, robh@kernel.org,
 	conor+dt@kernel.org, devicetree@vger.kernel.org, broonie@kernel.org,
-	lee@kernel.org, Frank.Li@nxp.com, lgirdwood@gmail.com,
-	vikash.bansal@nxp.com, priyanka.jain@nxp.com,
-	aman.kumarpandey@nxp.com
-Subject: Re: [PATCH v8 3/7] dt-bindings: i3c: Add NXP P3H2x4x i3c-hub support
-Message-ID: <20260325212419.GA4024060-robh@kernel.org>
-References: <20260323062737.886728-1-lakshay.piplani@nxp.com>
- <20260323062737.886728-4-lakshay.piplani@nxp.com>
+	Frank.Li@nxp.com, lgirdwood@gmail.com, vikash.bansal@nxp.com,
+	priyanka.jain@nxp.com, aman.kumarpandey@nxp.com
+Subject: Re: [PATCH v7 4/7] mfd: p3h2x4x: Add driver for NXP P3H2x4x i3c hub
+ and on-die regulator
+Message-ID: <20260326115848.GL1141718@google.com>
+References: <20260319112441.3888957-1-lakshay.piplani@nxp.com>
+ <20260319112441.3888957-5-lakshay.piplani@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260323062737.886728-4-lakshay.piplani@nxp.com>
+In-Reply-To: <20260319112441.3888957-5-lakshay.piplani@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260325_142421_401292_D2FF3C00 
-X-CRM114-Status: GOOD (  20.50  )
+X-CRM114-CacheID: sfid-20260326_045855_225111_69ED2D71 
+X-CRM114-Status: GOOD (  35.74  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,230 +72,178 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, Mar 23, 2026 at 11:57:33AM +0530, Lakshay Piplani wrote:
-> From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> 
-> Add bindings for the NXP P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841)
-> multiport I3C hub family. These devices connect to a host via
-> I3C/I2C/SMBus and allow communication with multiple downstream
-> peripherals.
-> 
-> Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
-
-All these patches need your S-o-b tag. 
-
-> 
-> ---
-> Changes in v8:
->  - Add compatible in i3c example
-> 
-> Changes in v7:
->  - Fix schema validation issues
->  - Adjust required properties
->  - Add I2C example
-> 
-> Changes in v6:
->  - Use a vendor prefix for the attributes
-> 
-> Changes in v5:
->  - Removed SW properties: cp0-ldo-microvolt,cp1-ldo-microvolt,
->    tp0145-ldo-microvolt, tp2367-ldo-microvolt
->  - Changed supply entries and its descriptions
-> 
-> Changes in v4:
->  - Fixed DT binding check warning
->  - Removed SW properties: ibi-enable, local-dev, and always-enable
-> 
-> Changes in v3:
->  - Added MFD (Multi-Function Device) support for I3C hub and on-die regulator
->  - Added Regulator supply node
-> 
-> Changes in v2:
->  - Fixed DT binding check warning
->  - Revised logic for parsing DTS nodes
-> ---
-> ---
->  .../devicetree/bindings/i3c/nxp,p3h2840.yaml  | 304 ++++++++++++++++++
->  MAINTAINERS                                   |   8 +
->  2 files changed, 312 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml b/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
-> new file mode 100644
-> index 000000000000..f588fd8318a0
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
-> @@ -0,0 +1,304 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +# Copyright 2025 NXP
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/i3c/nxp,p3h2840.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: NXP P3H2X4X I3C HUB
-> +
-> +maintainers:
-> +  - Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> +  - Vikash Bansal <vikash.bansal@nxp.com>
-> +
-> +description: |
-> +  P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841) is a family of multiport I3C
-> +  hub devices that connect to:-
-> +  1. A host CPU via I3C/I2C/SMBus bus on upstream side and connect to multiple
-> +     peripheral devices on the downstream  side.
-> +  2. Have two Controller Ports which can support either
-> +     I2C/SMBus or I3C buses and connect to a CPU, BMC or SOC.
-> +  3. P3H2840/ P3H2841 are 8 port I3C hub with eight I3C/I2C Target Port.
-> +  4. P3H2440/ P3H2441 are 4 port I3C hub with four I3C/I2C Target Port.
-> +     Target ports can be configured as I2C/SMBus, I3C or GPIO and connect to
-> +     peripherals.
-> +
-> +properties:
-> +  compatible:
-> +    const: nxp,p3h2840
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  '#address-cells':
-> +    const: 1
-> +
-> +  '#size-cells':
-> +    const: 0
-> +
-> +  assigned-address:
-> +    maximum: 0x7f
-> +
-> +  nxp,tp0145-pullup-ohms:
-> +    description:
-> +      Selects the pull up resistance for target Port 0/1/4/5, in ohms.
-> +    enum: [250, 500, 1000, 2000]
-> +    default: 500
-> +
-> +  nxp,tp2367-pullup-ohms:
-> +    description:
-> +      Selects the pull up resistance for target Port 2/3/6/7, in ohms.
-> +    enum: [250, 500, 1000, 2000]
-> +    default: 500
-> +
-> +  nxp,cp0-io-strength-ohms:
-> +    description:
-> +      Selects the IO drive strength for controller Port 0, in ohms.
-> +    enum: [20, 30, 40, 50]
-> +    default: 20
-> +
-> +  nxp,cp1-io-strength-ohms:
-> +    description:
-> +      Selects the IO drive strength for controller Port 1, in ohms.
-> +    enum: [20, 30, 40, 50]
-> +    default: 20
-> +
-> +  nxp,tp0145-io-strength-ohms:
-> +    description:
-> +      Selects the IO drive strength for target port 0/1/4/5, in ohms.
-> +    enum: [20, 30, 40, 50]
-> +    default: 20
-> +
-> +  nxp,tp2367-io-strength-ohms:
-> +    description:
-> +      Selects the IO drive strength for target port 2/3/6/7, in ohms.
-> +    enum: [20, 30, 40, 50]
-> +    default: 20
-> +
-> +  vcc1-supply:
-> +    description: Controller port 0 power supply.
-> +
-> +  vcc2-supply:
-> +    description: Controller port 1 power supply.
-> +
-> +  vcc3-supply:
-> +    description: Target port 0/1/4/5 power supply.
-> +
-> +  vcc4-supply:
-> +    description: Target port 2/3/6/7 power supply.
-> +
-> +  regulators:
-> +    type: object
-> +    additionalProperties: false
-> +
-> +    properties:
-> +      ldo-cp0:
-> +        type: object
-> +        $ref: /schemas/regulator/regulator.yaml#
-> +        unevaluatedProperties: false
-> +
-> +      ldo-cp1:
-> +        type: object
-> +        $ref: /schemas/regulator/regulator.yaml#
-> +        unevaluatedProperties: false
-> +
-> +      ldo-tpg0:
-> +        type: object
-> +        $ref: /schemas/regulator/regulator.yaml#
-> +        unevaluatedProperties: false
-> +
-> +      ldo-tpg1:
-> +        type: object
-> +        $ref: /schemas/regulator/regulator.yaml#
-> +        unevaluatedProperties: false
-> +
-> +required:
-> +  - reg
-> +
-> +patternProperties:
-> +  "^i3c@[0-7]$":
-> +    type: object
-> +    unevaluatedProperties: false
-
-This is a child I3C bus, right? You don't support any devices on the 
-bus. You need a $ref to i3c.yaml.
-
-> +
-> +    properties:
-> +      reg:
-> +        description:
-> +          The I3C HUB Target Port number.
-> +        maximum: 7
-> +
-
-> +      '#address-cells':
-> +        const: 3
-> +
-> +      '#size-cells':
-> +        const: 0
-
-Then these 2 can be dropped.
-
-> +
-> +      nxp,pullup-enable:
-> +        type: boolean
-> +        description:
-> +          Enables the on-die pull-up for Target Port.
-> +
-> +    required:
-> +      - reg
-> +      - "#address-cells"
-> +      - "#size-cells"
-
-And these 2.
-
-> +
-> +  "^(i2c|smbus)@[0-7]$":
-> +    type: object
-> +    unevaluatedProperties: false
-
-Likewise, you need a reference to i2c-controller.yaml.
-
-Rob
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+T24gVGh1LCAxOSBNYXIgMjAyNiwgTGFrc2hheSBQaXBsYW5pIHdyb3RlOgoKPiBGcm9tOiBBbWFu
+IEt1bWFyIFBhbmRleSA8YW1hbi5rdW1hcnBhbmRleUBueHAuY29tPgo+IAo+IEFkZCBjb3JlIE1G
+RCBzdXBwb3J0IGZvciB0aGUgTlhQIFAzSDJ4NHggKFAzSDI0NDAvUDNIMjQ0MS9QM0gyODQwL1Az
+SDI4NDEpCj4gZmFtaWx5IG9mIG11bHRpcG9ydCBJM0MgaHViIGRldmljZXMuIFRoZXNlIGRldmlj
+ZXMgY29ubmVjdCB0byBhIGhvc3QgdmlhCj4gSTNDL0kyQy9TTUJ1cyBhbmQgZXhwb3NlIG11bHRp
+cGxlIGRvd25zdHJlYW0gdGFyZ2V0IHBvcnRzLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEFtYW4gS3Vt
+YXIgUGFuZGV5IDxhbWFuLmt1bWFycGFuZGV5QG54cC5jb20+Cj4gU2lnbmVkLW9mZi1ieTogVmlr
+YXNoIEJhbnNhbCA8dmlrYXNoLmJhbnNhbEBueHAuY29tPgo+IAo+IC0tLQo+IENoYW5nZXMgaW4g
+djc6Cj4gIC0gVXNlIG5ldyBjb25maWcgSTNDX09SX0kyQwo+IAo+IENoYW5nZXMgaW4gdjY6Cj4g
+IC0gTm8gY2hhbmdlCj4gCj4gQ2hhbmdlcyBpbiB2NToKPiAgLSBDb3JyZWN0ZWQgdGhlIG9yZGVy
+aW5nIGluIHRoZSBNYWtlZmlsZSBhbmQgS2NvbmZpZyBmb3IgTUZEX1AzSDJYNFgKPiAgLSBVcGRh
+dGVkIGRldl9lcnJfcHJvYmUoKSBmb3IgcmVnbWFwX2luaXQgZmFpbHVyZS4KPiAgLSBVcGRhdGVk
+IG1vZHVsZSBkZXNjcmlwdGlvbgo+IAo+IENoYW5nZXMgaW4gdjQ6Cj4gIC0gU3BsaXQgdGhlIGRy
+aXZlciBpbnRvIHRocmVlIHNlcGFyYXRlIHBhdGNoZXMobWZkLCByZWd1bGF0b3IgYW5kIEkzQyBo
+dWIpCj4gIC0gQWRkZWQgc3VwcG9ydCBmb3IgTlhQIFAzSDJ4NHggTUZEIGZ1bmN0aW9uYWxpdHkK
+PiAtLS0KPiAtLS0KCk9uZSBpcyBlbm91Z2guCgo+ICBNQUlOVEFJTkVSUyAgICAgICAgICAgICAg
+ICAgfCAgIDIgKwo+ICBkcml2ZXJzL21mZC9LY29uZmlnICAgICAgICAgfCAgMTMgKysrKwo+ICBk
+cml2ZXJzL21mZC9NYWtlZmlsZSAgICAgICAgfCAgIDEgKwo+ICBkcml2ZXJzL21mZC9wM2gyODQw
+LmMgICAgICAgfCAxMjUgKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrCj4gIGlu
+Y2x1ZGUvbGludXgvbWZkL3AzaDI4NDAuaCB8ICAyNyArKysrKysrKwo+ICA1IGZpbGVzIGNoYW5n
+ZWQsIDE2OCBpbnNlcnRpb25zKCspCj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL21mZC9w
+M2gyODQwLmMKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGluY2x1ZGUvbGludXgvbWZkL3AzaDI4NDAu
+aAo+IAo+IGRpZmYgLS1naXQgYS9NQUlOVEFJTkVSUyBiL01BSU5UQUlORVJTCj4gaW5kZXggYzcy
+OTc2ZGJkZjMxLi40ZjY3ZmU2NGM4MzMgMTAwNjQ0Cj4gLS0tIGEvTUFJTlRBSU5FUlMKPiArKysg
+Yi9NQUlOVEFJTkVSUwo+IEBAIC0xOTEwMSw2ICsxOTEwMSw4IEBAIEw6CWxpbnV4LWtlcm5lbEB2
+Z2VyLmtlcm5lbC5vcmcKPiAgTDoJbGludXgtaTNjLW93bmVyQGxpc3RzLmluZnJhZGVhZC5vcmcK
+PiAgUzoJTWFpbnRhaW5lZAo+ICBGOglEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
+aTNjL254cCxwM2gyODQwLnlhbWwKPiArRjoJZHJpdmVycy9tZmQvcDNoMjg0MC5jCj4gK0Y6CWlu
+Y2x1ZGUvbGludXgvbWZkL3AzaDI4NDAuaAo+ICAKPiAgTlhQIFBGNTMwMC9QRjUzMDEvUEY1MzAy
+IFBNSUMgUkVHVUxBVE9SIERFVklDRSBEUklWRVIKPiAgTToJV29vZHJvdyBEb3VnbGFzcyA8d2Rv
+dWdsYXNzQGNhcm5lZ2llcm9ib3RpY3MuY29tPgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL21mZC9L
+Y29uZmlnIGIvZHJpdmVycy9tZmQvS2NvbmZpZwo+IGluZGV4IDcxOTJjOWQxZDI2OC4uMTRmNDcz
+NjY4M2ExIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvbWZkL0tjb25maWcKPiArKysgYi9kcml2ZXJz
+L21mZC9LY29uZmlnCj4gQEAgLTYxNyw2ICs2MTcsMTkgQEAgY29uZmlnIE1GRF9NWDI1X1RTQURD
+Cj4gIAkgIGkuTVgyNSBwcm9jZXNzb3JzLiBUaGV5IGNvbnNpc3Qgb2YgYSBjb252ZXJzaW9uIHF1
+ZXVlIGZvciBnZW5lcmFsCj4gIAkgIHB1cnBvc2UgQURDIGFuZCBhIHF1ZXVlIGZvciBUb3VjaHNj
+cmVlbnMuCj4gIAo+ICtjb25maWcgTUZEX1AzSDJYNFgKCk1GRF9OWFBfUDNIMlg0WAoKPiArICAg
+ICAgIHRyaXN0YXRlICJOWFAgUDNIMlg0WCBJM0MgSHViIERldmljZSIKPiArICAgICAgIGRlcGVu
+ZHMgb24gSTNDX09SX0kyQwo+ICsgICAgICAgc2VsZWN0IE1GRF9DT1JFCj4gKyAgICAgICBzZWxl
+Y3QgUkVHTUFQX0kzQwo+ICsgICAgICAgc2VsZWN0IFJFR01BUF9JMkMKPiArICAgICAgIGhlbHAK
+PiArICAgICAgICAgRW5hYmxlIFN1cHBvcnQgZm9yIE5YUCBQM0gyNDR4L1AzSDI4NHggSTNDIEhV
+QiBkZXZpY2UgdXNpbmcgSTNDL0kyQwo+ICsgICAgICAgICBjb21tdW5pY2F0aW9uIGludGVyZmFj
+ZS4KPiArCj4gKyAgICAgICAgIFRoaXMgZHJpdmVyIHByb3ZpZGVzIHN1cHBvcnQgZm9yIEkzQyBo
+dWIgYW5kIHJlZ3VsYXRvciwgZWFjaCBzdWJkcml2ZXIKPiArICAgICAgICAgY2FuIGJlIGVuYWJs
+ZWQgaW5kZXBlbmRlbnRseSBkZXBlbmRpbmcgb24gdGhlIHJlcXVpcmVkIGZ1bmN0aW9uYWxpdHku
+Cj4gKwo+ICBjb25maWcgTUZEX1BGMTU1MAo+ICAJdHJpc3RhdGUgIk5YUCBQRjE1NTAgUE1JQyBT
+dXBwb3J0Igo+ICAJZGVwZW5kcyBvbiBJMkM9eSAmJiBPRgo+IGRpZmYgLS1naXQgYS9kcml2ZXJz
+L21mZC9NYWtlZmlsZSBiL2RyaXZlcnMvbWZkL01ha2VmaWxlCj4gaW5kZXggZTc1ZTgwNDVjMjhh
+Li5hYWFkZjUwZmVkZjQgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9tZmQvTWFrZWZpbGUKPiArKysg
+Yi9kcml2ZXJzL21mZC9NYWtlZmlsZQo+IEBAIC0xMjIsNiArMTIyLDcgQEAgb2JqLSQoQ09ORklH
+X01GRF9NQzEzWFhYKQkrPSBtYzEzeHh4LWNvcmUubwo+ICBvYmotJChDT05GSUdfTUZEX01DMTNY
+WFhfU1BJKQkrPSBtYzEzeHh4LXNwaS5vCj4gIG9iai0kKENPTkZJR19NRkRfTUMxM1hYWF9JMkMp
+CSs9IG1jMTN4eHgtaTJjLm8KPiAgCj4gK29iai0kKENPTkZJR19NRkRfUDNIMlg0WCkgIAkrPSBw
+M2gyODQwLm8KClRoZXJlIGlzIGEgbWlzbWF0Y2ggaW4gdGhlIG5hbWluZyBoZXJlLgoKQXJlIHdl
+IGV4cHJlc3NpbmcgdGhlIGZhbWlseSBvciB0aGUgc3BlY2lmaWMgZGV2aWNlPwoKPiAgb2JqLSQo
+Q09ORklHX01GRF9QRjE1NTApCSs9IHBmMTU1MC5vCj4gIAo+ICBvYmotJChDT05GSUdfTUZEX05D
+VDY2OTQpCSs9IG5jdDY2OTQubwo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL21mZC9wM2gyODQwLmMg
+Yi9kcml2ZXJzL21mZC9wM2gyODQwLmMKPiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+IGluZGV4IDAw
+MDAwMDAwMDAwMC4uNjUwOTBhMDlmN2M2Cj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL2RyaXZlcnMv
+bWZkL3AzaDI4NDAuYwo+IEBAIC0wLDAgKzEsMTI1IEBACj4gKy8vIFNQRFgtTGljZW5zZS1JZGVu
+dGlmaWVyOiBHUEwtMi4wCj4gKy8qCj4gKyAqIENvcHlyaWdodCAyMDI1IE5YUAoKTmVlZHMgdXBk
+YXRpbmcuCgpBdXRob3Iocyk/Cgo+ICsgKiBQM0gyeDR4IGkzYyBodWIgYW5kIHJlZ3VsYXRvciBk
+ZXZpY2UuCj4gKyAqLwoKQ291bGQgdGhpcyBjb21tZW50IGJlIGEgbGl0dGxlIG1vcmUgZGVzY3Jp
+cHRpdmU/IFNvbWV0aGluZyBsaWtlOgoKIkNvcmUgZHJpdmVyIGZvciB0aGUgTlhQIFAzSDJ4NHgg
+ZmFtaWx5IG9mIEkzQyBodWJzLiIKCkRyb3AgdGhlIHJlZ3VsYXIgcGFydC4KCj4gKyNpbmNsdWRl
+IDxsaW51eC9pM2MvbWFzdGVyLmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9pMmMuaD4KPiArI2luY2x1
+ZGUgPGxpbnV4L21mZC9jb3JlLmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9tZmQvcDNoMjg0MC5oPgo+
+ICsjaW5jbHVkZSA8bGludXgvcmVnbWFwLmg+CgpQbGVhc2Ugc29ydCB5b3VyIGAjaW5jbHVkZWAg
+ZGlyZWN0aXZlcyBhbHBoYWJldGljYWxseS4KCj4gK3N0YXRpYyBjb25zdCBzdHJ1Y3QgbWZkX2Nl
+bGwgcDNoMng0eF9kZXZzW10gPSB7Cj4gKwl7Cj4gKwkJLm5hbWUgPSAicDNoMng0eC1yZWd1bGF0
+b3IiLAo+ICsJfSwKPiArCXsKPiArCQkubmFtZSA9ICJwM2gyeDR4LWkzYy1odWIiLAo+ICsJfSwK
+PiArfTsKCk1GRF9DRUxMX05BTUUoKQoKPiArc3RhdGljIGNvbnN0IHN0cnVjdCByZWdtYXBfY29u
+ZmlnIHAzaDJ4NHhfcmVnbWFwX2NvbmZpZyA9IHsKPiArCS5yZWdfYml0cyA9IFAzSDJ4NHhfUkVH
+X0JJVFMsCj4gKwkudmFsX2JpdHMgPSBQM0gyeDR4X1ZBTF9CSVRTLAo+ICsJLm1heF9yZWdpc3Rl
+ciA9IDB4RkYsCj4gK307Cj4gKwo+ICtzdGF0aWMgaW50IHAzaDJ4NHhfZGV2aWNlX3Byb2JlX2kz
+YyhzdHJ1Y3QgaTNjX2RldmljZSAqaTNjZGV2KQo+ICt7Cj4gKwlzdHJ1Y3QgcDNoMng0eF9kZXYg
+KnAzaDJ4NHg7Cj4gKwlpbnQgcmV0Owo+ICsKPiArCXAzaDJ4NHggPSBkZXZtX2t6YWxsb2MoJmkz
+Y2Rldi0+ZGV2LCBzaXplb2YoKnAzaDJ4NHgpLCBHRlBfS0VSTkVMKTsKPiArCWlmICghcDNoMng0
+eCkKPiArCQlyZXR1cm4gLUVOT01FTTsKPiArCj4gKwlpM2NkZXZfc2V0X2RydmRhdGEoaTNjZGV2
+LCBwM2gyeDR4KTsKCk5vIHBvaW50IGluIHNldHRpbmcgdGhpcyB1bnRpbCBhZnRlciBpdHMgcG9w
+dWxhdGVkLgoKPiArCXAzaDJ4NHgtPnJlZ21hcCA9IGRldm1fcmVnbWFwX2luaXRfaTNjKGkzY2Rl
+diwgJnAzaDJ4NHhfcmVnbWFwX2NvbmZpZyk7Cj4gKwlpZiAoSVNfRVJSKHAzaDJ4NHgtPnJlZ21h
+cCkpCj4gKwkJcmV0dXJuIGRldl9lcnJfcHJvYmUoJmkzY2Rldi0+ZGV2LCBQVFJfRVJSKHAzaDJ4
+NHgtPnJlZ21hcCksCj4gKwkJCQkgICAgICJGYWlsZWQgdG8gcmVnaXN0ZXIgSTNDIEhVQiByZWdt
+YXBcbiIpOwoKVGhpcyBlcnJvciBtZXNzYWdlIGFwcGVhcnMgdG8gYmUgYSBjb3B5LXBhc3RlIGZy
+b20gdGhlIEkyQyBwcm9iZSBmdW5jdGlvbi4KUGVyaGFwcyBhIG1vcmUgZ2VuZXJpYyBtZXNzYWdl
+IGxpa2UgIkZhaWxlZCB0byBpbml0aWFsaXNlIHJlZ21hcCIgd291bGQgYmUKbW9yZSBhcHByb3By
+aWF0ZSBmb3IgYm90aCBjb250ZXh0cy4KCj4gKwo+ICsJcDNoMng0eC0+aXNfcDNoMng0eF9pbl9p
+M2MgPSB0cnVlOwoKVGhpcyBpcyBzdXBlcmZsdW91cy4gIEp1c3QgY2hlY2sgYHAzaDJ4NHgtPmkz
+Y2RldmAuCgo+ICsJcDNoMng0eC0+aTNjZGV2ID0gaTNjZGV2Owo+ICsKPiArCXJldCA9IGRldm1f
+bWZkX2FkZF9kZXZpY2VzKCZpM2NkZXYtPmRldiwgUExBVEZPUk1fREVWSURfTk9ORSwKPiArCQkJ
+CSAgIHAzaDJ4NHhfZGV2cywgQVJSQVlfU0laRShwM2gyeDR4X2RldnMpLAo+ICsJCQkJICAgTlVM
+TCwgMCwgTlVMTCk7Cj4gKwlpZiAocmV0KQo+ICsJCXJldHVybiBkZXZfZXJyX3Byb2JlKCZpM2Nk
+ZXYtPmRldiwgcmV0LCAiRmFpbGVkIHRvIGFkZCBzdWIgZGV2aWNlc1xuIik7Cj4gKwo+ICsJcmV0
+dXJuIDA7Cj4gK30KPiArCj4gK3N0YXRpYyBpbnQgcDNoMng0eF9kZXZpY2VfcHJvYmVfaTJjKHN0
+cnVjdCBpMmNfY2xpZW50ICpjbGllbnQpCj4gK3sKPiArCXN0cnVjdCBwM2gyeDR4X2RldiAqcDNo
+Mng0eDsKPiArCWludCByZXQ7Cj4gKwo+ICsJcDNoMng0eCA9IGRldm1fa3phbGxvYygmY2xpZW50
+LT5kZXYsIHNpemVvZigqcDNoMng0eCksIEdGUF9LRVJORUwpOwo+ICsJaWYgKCFwM2gyeDR4KQo+
+ICsJCXJldHVybiAtRU5PTUVNOwo+ICsKPiArCWkyY19zZXRfY2xpZW50ZGF0YShjbGllbnQsIHAz
+aDJ4NHgpOwoKQXMgYWJvdmUuCgo+ICsJcDNoMng0eC0+cmVnbWFwID0gZGV2bV9yZWdtYXBfaW5p
+dF9pMmMoY2xpZW50LCAmcDNoMng0eF9yZWdtYXBfY29uZmlnKTsKPiArCWlmIChJU19FUlIocDNo
+Mng0eC0+cmVnbWFwKSkKPiArCQlyZXR1cm4gZGV2X2Vycl9wcm9iZSgmY2xpZW50LT5kZXYsIFBU
+Ul9FUlIocDNoMng0eC0+cmVnbWFwKSwKPiArCQkJCSAgICAgIkZhaWxlZCB0byByZWdpc3RlciBJ
+M0MgSFVCIHJlZ21hcFxuIik7CgpJMkMKCj4gKwo+ICsJcDNoMng0eC0+aXNfcDNoMng0eF9pbl9p
+M2MgPSBmYWxzZTsKCkFzIGFib3ZlLgoKPiArCXJldCA9IGRldm1fbWZkX2FkZF9kZXZpY2VzKCZj
+bGllbnQtPmRldiwgUExBVEZPUk1fREVWSURfTk9ORSwKPiArCQkJCSAgIHAzaDJ4NHhfZGV2cywg
+QVJSQVlfU0laRShwM2gyeDR4X2RldnMpLAo+ICsJCQkJICAgTlVMTCwgMCwgTlVMTCk7Cj4gKwlp
+ZiAocmV0KQo+ICsJCXJldHVybiBkZXZfZXJyX3Byb2JlKCZjbGllbnQtPmRldiwgcmV0LCAiRmFp
+bGVkIHRvIGFkZCBzdWIgZGV2aWNlc1xuIik7Cj4gKwo+ICsJcmV0dXJuIDA7Cj4gK30KClRoZXNl
+IHR3byBwcm9iZSBmdW5jdGlvbnMsIGBwM2gyeDR4X2RldmljZV9wcm9iZV9pM2NgIGFuZApgcDNo
+Mng0eF9kZXZpY2VfcHJvYmVfaTJjYCwgYXJlIGFsbW9zdCBpZGVudGljYWwuIENvdWxkIHRoZXkg
+YmUgcmVmYWN0b3JlZAppbnRvIGEgc2luZ2xlIGNvbW1vbiBwcm9iZSBmdW5jdGlvbiB0byByZWR1
+Y2UgY29kZSBkdXBsaWNhdGlvbj8KClRoZSBidXMtc3BlY2lmaWMgd3JhcHBlcnMgY291bGQgaGFu
+ZGxlIHRoZSByZWdtYXAgaW5pdGlhbGlzYXRpb24gYW5kIHRoZW4KY2FsbCBhIHNoYXJlZCBgcDNo
+Mng0eF9wcm9iZShzdHJ1Y3QgZGV2aWNlICpkZXYsIHN0cnVjdCByZWdtYXAgKnJlZ21hcClgCmZ1
+bmN0aW9uLgoKPiArCj4gKy8qIHAzaDJ4NHggaWRzIChpM2MpICovCj4gK3N0YXRpYyBjb25zdCBz
+dHJ1Y3QgaTNjX2RldmljZV9pZCBwM2gyeDR4X2kzY19pZHNbXSA9IHsKPiArCUkzQ19DTEFTUyhJ
+M0NfRENSX0hVQiwgTlVMTCksCj4gKwl7IC8qIHNlbnRpbmVsICovIH0sCj4gK307Cj4gK01PRFVM
+RV9ERVZJQ0VfVEFCTEUoaTNjLCBwM2gyeDR4X2kzY19pZHMpOwo+ICsKPiArLyogcDNoMng0eCBp
+ZHMgKGkyYykgKi8KPiArc3RhdGljIGNvbnN0IHN0cnVjdCBpMmNfZGV2aWNlX2lkIHAzaDJ4NHhf
+aTJjX2lkX3RhYmxlW10gPSB7Cj4gKwl7ICJueHAtaTNjLWh1YiIgfSwKClRoaXMgaXMgYW4gTUZE
+IGNvcmUgZHJpdmVyLCBub3QganVzdCBhIGh1YiBkcml2ZXIuIFBlcmhhcHMgYSBtb3JlIHN1aXRh
+YmxlCm5hbWUgd291bGQgYmUgInAzaDJ4NHgiPwoKPiArCXsgLyogc2VudGluZWwgKi8gfQo+ICt9
+Owo+ICtNT0RVTEVfREVWSUNFX1RBQkxFKGkyYywgcDNoMng0eF9pMmNfaWRfdGFibGUpOwo+ICsK
+PiArc3RhdGljIGNvbnN0IHN0cnVjdCBvZl9kZXZpY2VfaWQgIHAzaDJ4NHhfaTJjX29mX21hdGNo
+W10gPSB7Cj4gKwl7IC5jb21wYXRpYmxlID0gIm54cCxwM2gyODQwIiwgfSwKPiArCXsgLyogc2Vu
+dGluZWwgKi8gfQo+ICt9Owo+ICsKPiArTU9EVUxFX0RFVklDRV9UQUJMRShvZiwgcDNoMng0eF9p
+MmNfb2ZfbWF0Y2gpOwoKVGhpcyBzaG91bGQgYmUgYWRqYWNlbnQgdG8gdGhlIHN0cnVjdCBhYm92
+ZS4KCj4gK3N0YXRpYyBzdHJ1Y3QgaTNjX2RyaXZlciBwM2gyeDR4X2kzYyA9IHsKPiArCS5kcml2
+ZXIgPSB7Cj4gKwkJLm5hbWUgPSAicDNoMng0eF9pM2NfZHJ2IiwKCiJfZHJ2IiBzaG91bGQgYmUg
+cmVtb3ZlZC4KCj4gKwl9LAo+ICsJLnByb2JlID0gcDNoMng0eF9kZXZpY2VfcHJvYmVfaTNjLAo+
+ICsJLmlkX3RhYmxlID0gcDNoMng0eF9pM2NfaWRzLAo+ICt9Owo+ICsKPiArc3RhdGljIHN0cnVj
+dCBpMmNfZHJpdmVyIHAzaDJ4NHhfaTJjID0gewo+ICsJLmRyaXZlciA9IHsKPiArCQkubmFtZSA9
+ICJwM2gyeDR4X2kyY19kcnYiLAoKQXMgYWJvdmUuCgo+ICsJCS5vZl9tYXRjaF90YWJsZSA9IHAz
+aDJ4NHhfaTJjX29mX21hdGNoLAo+ICsJfSwKPiArCS5wcm9iZSA9ICBwM2gyeDR4X2RldmljZV9w
+cm9iZV9pMmMsCj4gKwkuaWRfdGFibGUgPSBwM2gyeDR4X2kyY19pZF90YWJsZSwKPiArfTsKPiAr
+Cj4gK21vZHVsZV9pM2NfaTJjX2RyaXZlcihwM2gyeDR4X2kzYywgJnAzaDJ4NHhfaTJjKTsKPiAr
+Cj4gK01PRFVMRV9BVVRIT1IoIkFtYW4gS3VtYXIgUGFuZGV5IDxhbWFuLmt1bWFycGFuZGV5QG54
+cC5jb20+Iik7Cj4gK01PRFVMRV9BVVRIT1IoIlZpa2FzaCBCYW5zYWwgPHZpa2FzaC5iYW5zYWxA
+bnhwLmNvbT4iKTsKClN0aWNrIHRvIGhhdmluZyBvbmUgb2YgdGhlc2UgYW5kIHB1dCB0d28gaW4g
+dGhlIGhlYWRlciBjb21tZW50LgoKPiArTU9EVUxFX0RFU0NSSVBUSU9OKCJQM0gyeDR4IEkzQyBI
+VUIgbXVsdGkgZnVuY3Rpb24gZHJpdmVyIik7CgpUaGlzIGNvdWxkIGJlIG1vcmUgcHJlY2lzZS4g
+SG93IGFib3V0OgoKIk5YUCBQM0gyeDR4IEkzQyBIdWIgY29yZSBkcml2ZXIiCgpEcm9wIGFsbCBt
+ZW50aW9ucyBvZiBNRkQuICBJdCdzIG5vdCBhIHJlYWwgdGhpbmcuCgo+ICtNT0RVTEVfTElDRU5T
+RSgiR1BMIik7Cj4gZGlmZiAtLWdpdCBhL2luY2x1ZGUvbGludXgvbWZkL3AzaDI4NDAuaCBiL2lu
+Y2x1ZGUvbGludXgvbWZkL3AzaDI4NDAuaAo+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4gaW5kZXgg
+MDAwMDAwMDAwMDAwLi5jYmE2ZmE1MTZkMWUKPiAtLS0gL2Rldi9udWxsCj4gKysrIGIvaW5jbHVk
+ZS9saW51eC9tZmQvcDNoMjg0MC5oCj4gQEAgLTAsMCArMSwyNyBAQAo+ICsvKiBTUERYLUxpY2Vu
+c2UtSWRlbnRpZmllcjogR1BMLTIuMCAqLwo+ICsvKgo+ICsgKiBDb3B5cmlnaHQgMjAyNSBOWFAK
+PiArICogVGhpcyBoZWFkZXIgZmlsZSBjb250YWluIHByaXZhdGUgUmVnIGFkZHJlc3MgYW5kIGl0
+cyBiaXQgbWFwcGluZyBldGMuCj4gKyAqLwoKVGhlIGNvbW1lbnQgaXMgbm90IGEgY29tcGxldGUg
+c2VudGVuY2UgYW5kIHN0YXRlcyB0aGUgb2J2aW91cy4gUGxlYXNlIGNvbnNpZGVyCnNvbWV0aGlu
+ZyBtb3JlIGRlc2NyaXB0aXZlLCBmb3IgZXhhbXBsZToKCiJSZWdpc3RlciBkZWZpbml0aW9ucyBm
+b3IgdGhlIE5YUCBQM0gyeDR4IEkzQyBIdWIuIgoKPiArCj4gKyNpZm5kZWYgX0xJTlVYX01GRF9Q
+M0gyODQwX0gKPiArI2RlZmluZSBfTElOVVhfTUZEX1AzSDI4NDBfSAoKSWYgdGhlIGZpbGVuYW1l
+cyBhcmUgY2hhbmdlZCB0byBgcDNoMng0eC5oYCBhcyBzdWdnZXN0ZWQgZWFybGllciwgdGhpcwpo
+ZWFkZXIgZ3VhcmQgd2lsbCBuZWVkIHRvIGJlIHVwZGF0ZWQgdG8gYF9MSU5VWF9NRkRfUDNIMlg0
+WF9IYC4KCj4gKwo+ICsjaW5jbHVkZSA8bGludXgvdHlwZXMuaD4KPiArCj4gKy8qIERldmljZSBD
+b25maWd1cmF0aW9uIFJlZ2lzdGVycyAqLwo+ICsjZGVmaW5lIFAzSDJ4NHhfREVWX1JFR19QUk9U
+RUNUSU9OX0NPREUJCQkJMHgxMAo+ICsjZGVmaW5lIFAzSDJ4NHhfUkVHSVNURVJTX0xPQ0tfQ09E
+RQkJCQkweDAwCj4gKyNkZWZpbmUgUDNIMng0eF9SRUdJU1RFUlNfVU5MT0NLX0NPREUJCQkJMHg2
+OQo+ICsjZGVmaW5lIFAzSDJ4NHhfQ1AxX1JFR0lTVEVSU19VTkxPQ0tfQ09ERQkJCTB4NmEKPiAr
+Cj4gKy8qIFJlZyBjb25maWcgZm9yIFJlZ21hcCAqLwo+ICsjZGVmaW5lIFAzSDJ4NHhfUkVHX0JJ
+VFMJCQkJCTgKPiArI2RlZmluZSBQM0gyeDR4X1ZBTF9CSVRTCQkJCQk4Cj4gKwo+ICtzdHJ1Y3Qg
+cDNoMng0eF9kZXYgewo+ICsJc3RydWN0IGkzY19kZXZpY2UgKmkzY2RldjsKPiArCXN0cnVjdCBy
+ZWdtYXAgKnJlZ21hcDsKPiArCWJvb2wgaXNfcDNoMng0eF9pbl9pM2M7Cj4gK307CgpXaHkgYXJl
+IHdlIHN0b3JpbmcgaTNjX2RldmljZSwgYnV0IG5vdCBpMmNfZGV2aWNlX2lkPwoKLS0gCkxlZSBK
+b25lcyBb5p2O55C85pavXQoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1pM2MK
