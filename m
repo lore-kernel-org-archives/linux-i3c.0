@@ -4,69 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC02110BA43C
-	for <linux-i3c@archiver.kernel.org>; Fri, 27 Mar 2026 08:27:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A627E10ED65C
+	for <linux-i3c@archiver.kernel.org>; Fri, 27 Mar 2026 11:43:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GZkXBPk6HUA/yaMtuOiuovV1aKZvp2O7EPpy+qVL9pk=; b=mdEeocOWkbJCTB
-	lvDAGiqRY0ABiKXJ73X+XtUW5IQKH8w54lIM7nOMpqkhRdFlhV6u4rDrKoLCLozStzTz+0zQ36Bhr
-	Lu7kijsAHqziM2m4ByPeT6QVVhoo+F4yLyT8exJ5ks+L+joan5JAMGL2afR3vI+zvokCkG5sGyr25
-	xoscmJVmNbKPkDZXcNoAbBVjjePacrY+9WxyBW3QdjGmGXhf8NgEQGlSZrbepPm07R1cSpyu31rFv
-	UwNRBBCRVrTd5AFYSaul5wh2sDmkludGLYIsOde8br2mI3xqzyKmKE7YnWZLM1u+Jrmjl5Smte07v
-	1T/9NuchIBWPDTbbOlaQ==;
+	List-Owner; bh=6vLtu4ps/qUBZHUvhVd6UZEir+38FErOOT/qQ/jDoRA=; b=lCrk/vf0Cai8yK
+	8fj87dK1G0Yknh65QC65hcRNdgn1iWzglC2vuc+z4FiPpG/n/au9TCuSE+TSwmNVNJAi1ZsqVkSAo
+	XmTfTw46XRdUakzA/VJcpXpQNjNtepMZX3kL5gS6UnO/JytNo1ciPvI11Qp9lCc/oe8Hpj9LQQHdO
+	Am7Ps6pTKgSM1VJNXhBShHy8EBNx5FDamuHV9ifPxR0qMFjnNlRs1FJ5KjkmT/VEIXyA4f2zaEBym
+	I7Vuc0Ck5SZrgtlHZWz1LcSR0rsw64skTuxPmrkPPGN9pbw3EeFL+ta7hMdlFOQIlSUw5JpwtVgPr
+	Oi17/gm1nxmxtrp/qsrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w62Xg-00000006y5Q-1SRH;
-	Fri, 27 Mar 2026 08:27:44 +0000
-Received: from smtpout-02.galae.net ([185.246.84.56])
+	id 1w65ag-00000007I1a-1haN;
+	Fri, 27 Mar 2026 11:43:02 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w62Xb-00000006y3p-0J8C
+	id 1w65af-00000007I0w-224c
+	for linux-i3c@bombadil.infradead.org;
+	Fri, 27 Mar 2026 11:43:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
+	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=tD8bAf7vSZo26Z8+ty8eD2xQ82JX1Fqvq6fCGUaSkwc=; b=Nx39WDqk60IK5aBFrYZGJGqBoe
+	zNn3iFK59eZDdD8gLHfCUwDkRMIHu7n8qKtDIMwatOkrtfobE1xeyUNjOP+ZAbE6/VujgwplQQiaR
+	u3bqxgcs8HSUzq18xuklUsb07TJpx1CE1BZaXsBB0zKaW72l0hMeFBsrCqrjyB6dijsyGX8G3qmDT
+	GySnaL4/FWzl5J+h+IzpIypjKKMk5fylvvcS2RwbdkxQT1ys20Oos6VtN2jXsKD8AbHmVE0h6oSvN
+	vd9Bg+RpZRuHGn2E/n7AiAsI3VAPIr0liX1op2ftFsxFVFh30zcYt9VkuyXMpzKjOVJPzsU5EhA3i
+	yRdGC8kQ==;
+Received: from mail-northcentralusazon11012050.outbound.protection.outlook.com ([40.107.200.50] helo=CH5PR02CU005.outbound.protection.outlook.com)
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1w65aV-0000000AJnJ-2GOC
 	for linux-i3c@lists.infradead.org;
-	Fri, 27 Mar 2026 08:27:42 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-02.galae.net (Postfix) with ESMTPS id 54D8D1A3018;
-	Fri, 27 Mar 2026 08:27:36 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 1E1E660230;
-	Fri, 27 Mar 2026 08:27:36 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 5E16510450F0D;
-	Fri, 27 Mar 2026 09:27:30 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1774600054; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=txJM2GJWPPWLss62O+A2FkU4gpdBs6qgEn0gNwSfyQw=;
-	b=xWsA0LTkRU1SsJOMLr0Hc92VkQpX9sqGZGYnEk4gFZlSykvrEghAy12WspWUCTUnu9uuMl
-	OwRAudxKkfLzuBaYjgzFAjfi/EACbl/iqfBZ1I+FRctTDBpCA0dNx05COtH621c9aIz2EB
-	kViSgYBFQM/sOipM5ZjVrf/dlvS7AkSxZT8GqT2RpjVbvYcQRr8o0oD7GWtH988k3nk9Wz
-	gxVeLSDNBSdmkAPUCjcMYx7JdzbvNWE/GTHbuL8Haf82UV1rlJl1FjBoRCvTpDEenVzeTD
-	8sAzrPgD6o9J3k8hPOZGTaJFnGxwG8hQxEfGvEoR/J8FLQLwaiy29wdu0RIhhQ==
-Date: Fri, 27 Mar 2026 09:27:21 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Akhil R <akhilrajeev@nvidia.com>
-Cc: Frank.Li@nxp.com, acpica-devel@lists.linux.dev, conor+dt@kernel.org,
-	conor@kernel.org, devicetree@vger.kernel.org, ebiggers@kernel.org,
-	fredrik.markstrom@est.tech, jonathanh@nvidia.com,
-	krzk+dt@kernel.org, lenb@kernel.org, linux-acpi@vger.kernel.org,
-	linux-hwmon@vger.kernel.org, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-tegra@vger.kernel.org,
-	linux@roeck-us.net, miquel.raynal@bootlin.com,
-	p.zabel@pengutronix.de, rafael@kernel.org, robert.moore@intel.com,
-	robh@kernel.org, smangipudi@nvidia.com, thierry.reding@kernel.org
-Subject: Re: [PATCH 01/12] dt-bindings: i3c: Add mipi-i3c-static-method to
- support SETAASA
-Message-ID: <20260327082721f7e69e6a@mail.local>
-References: <202603261544313f63018c@mail.local>
- <20260327081858.32354-1-akhilrajeev@nvidia.com>
+	Fri, 27 Mar 2026 11:42:53 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=YeE/orj4kVlvxfbyet0sZHPR6uS6EMtHVlMe/4KYxotUSou6o9ya/ONzpeAdv1EQb23zjS4Aomgj1k6zei4kGnaBJK1fF1O6+m0qZXTk7TTMD61hTo63JgWLQXsNNbaxj8zIpJQxTKwVkYzSnavm37xidCaAHx6bQ+I0p0hhAYAy3arl4X2LvZTY9d4Er2QZbmCKHn6AFV3Xa1IEeg22bsZb5mTXR2wijMl81mjQ+hZmI2MQvo4Rb+4d2ReejBxaa29mccslgvn6B6qBjyh12sRu7kvodbw4NbBQd6lZQe0sC/4RD3Yx4ziylfbyq6KoZQVaBBv4sCU93akCsYj5zA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=tD8bAf7vSZo26Z8+ty8eD2xQ82JX1Fqvq6fCGUaSkwc=;
+ b=HuSq5j3wQjepAIcdYRhodchaWP9W2fn4kci74zrOT/ZtLYaT08GpiB7VV+cOveufAUAE3ajkkVH7TIPR46weI4sj7RQeOVTzYBDRVanVZ3HjQF8xfv98YF3seeCuqLA2I8YKkwikc8A1CkOb/8k4pxpnCQBzH9yNDWiARSwL7lFVzhdnkMjn2LkPNKOqcQbL38dkE2l/hUupPs+CZaXpXKay/QMtZXqRGUVqlOUK6Oi/YvBc7iwkA35N09C0ve676rHuJL0NoDJCGc6pjFrblD43Fm1FSwrK4cTM3/B4Sppn/tUoD1CHPH1L//JsQXicJXb+d342x2TOLbQL64PuZQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.160) smtp.rcpttodomain=bootlin.com smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=tD8bAf7vSZo26Z8+ty8eD2xQ82JX1Fqvq6fCGUaSkwc=;
+ b=hvfeRcuX+nLW0qFnLU9hLJBhixSztEvETmKg6m4Me5dPIQvP9u5PQdUZx7UsrEcvBBlxYhXCA1wdJFN8m9gbVBFk574L/MVJj0jKWEtCK3lIvTuu651C70n0weWz/QvGodG/JsNkFmoLQ7Mre75fnB5eUuIPLnX334DXTlFQxCoNQ8SHnKGTEA+iRe4lmC+lpEo41ACa+qF6/X1GdyZ1YdthlosnR7ryYqTjsnCZR6K7sA1zOGWNZkC1mQcc7cSGPISetS2yPpefxH72sw/TicJJEZOCpuWPDoTNIUILQCnrgdib6MhV9FYYM2o3tBMsVyv0Gelqu8nfiO55I9LUIg==
+Received: from DM6PR08CA0043.namprd08.prod.outlook.com (2603:10b6:5:1e0::17)
+ by CH3PR12MB9079.namprd12.prod.outlook.com (2603:10b6:610:1a1::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9769.8; Fri, 27 Mar
+ 2026 11:42:26 +0000
+Received: from CY4PEPF0000E9D7.namprd05.prod.outlook.com
+ (2603:10b6:5:1e0:cafe::a) by DM6PR08CA0043.outlook.office365.com
+ (2603:10b6:5:1e0::17) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9745.23 via Frontend Transport; Fri,
+ 27 Mar 2026 11:42:26 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.160) by
+ CY4PEPF0000E9D7.mail.protection.outlook.com (10.167.241.70) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9745.21 via Frontend Transport; Fri, 27 Mar 2026 11:42:25 +0000
+Received: from rnnvmail203.nvidia.com (10.129.68.9) by mail.nvidia.com
+ (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Fri, 27 Mar
+ 2026 04:42:12 -0700
+Received: from rnnvmail205.nvidia.com (10.129.68.10) by rnnvmail203.nvidia.com
+ (10.129.68.9) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Fri, 27 Mar
+ 2026 04:42:11 -0700
+Received: from BUILDSERVER-IO-L4T.nvidia.com (10.127.8.9) by mail.nvidia.com
+ (10.129.68.10) with Microsoft SMTP Server id 15.2.2562.20 via Frontend
+ Transport; Fri, 27 Mar 2026 04:42:05 -0700
+From: Akhil R <akhilrajeev@nvidia.com>
+To: <alexandre.belloni@bootlin.com>
+CC: <Frank.Li@nxp.com>, <acpica-devel@lists.linux.dev>,
+	<akhilrajeev@nvidia.com>, <conor+dt@kernel.org>, <conor@kernel.org>,
+	<devicetree@vger.kernel.org>, <ebiggers@kernel.org>,
+	<fredrik.markstrom@est.tech>, <jonathanh@nvidia.com>, <krzk+dt@kernel.org>,
+	<lenb@kernel.org>, <linux-acpi@vger.kernel.org>,
+	<linux-hwmon@vger.kernel.org>, <linux-i3c@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>, <linux-tegra@vger.kernel.org>,
+	<linux@roeck-us.net>, <miquel.raynal@bootlin.com>, <p.zabel@pengutronix.de>,
+	<rafael@kernel.org>, <robert.moore@intel.com>, <robh@kernel.org>,
+	<smangipudi@nvidia.com>, <thierry.reding@kernel.org>
+Subject: Re: [PATCH 01/12] dt-bindings: i3c: Add mipi-i3c-static-method to support SETAASA
+Date: Fri, 27 Mar 2026 17:12:04 +0530
+Message-ID: <20260327114204.46556-1-akhilrajeev@nvidia.com>
+X-Mailer: git-send-email 2.50.1
+In-Reply-To: <20260327082721f7e69e6a@mail.local>
+References: <20260327082721f7e69e6a@mail.local>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260327081858.32354-1-akhilrajeev@nvidia.com>
-X-Last-TLS-Session-Version: TLSv1.3
+X-NV-OnPremToCloud: ExternallySecured
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: CY4PEPF0000E9D7:EE_|CH3PR12MB9079:EE_
+X-MS-Office365-Filtering-Correlation-Id: 64464096-a5f5-46ac-adfc-08de8bf5eaba
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|1800799024|7416014|36860700016|376014|13003099007|18002099003|22082099003|56012099003;
+X-Microsoft-Antispam-Message-Info: kB+llwkeY7GyoM9NIgM+w170Yai/RItxkAYH3q3LRnVawlKfGQXceHAr4/lTwwI+lpsOFbRz3wV9RQsgOSyAqhy3K3uLfIRe1W2sa1FyiwSFvdcZCXyhBDnH7jm4eeWuptjFW08FM5Blc3emwwgemeHVDjhqJ9SFO252VndGD756fTGl33R3DdGUBDXtZTZYvrL4dl4E3IkVuqzBR4hKfQgoljGW7ZmmWzROFtPFa3F73+BU/A/4f8UV8Kjz9r67f5iRmu+h4xNR/fL6dERc6sh8Eovg/6LfnmnWnh5AdtEITehrFodB0xNkU9x54wgyGzYhPEHXxf94axnIn8T2lU7/FdLvrFI11S2u8e+FruwHmd8+XkX2xu4qPEKwnmZVL6L9zCSo0EyP+GJAAIeIjp9WyeJLLuZCVp8Db2pvj5n5iZzn23q8fU8Xo6xuL6PPiZWFaw96REOxSbHbcVKJ6S2kh8D5iOfcnAvE/q1WJDP3bmRRiIzvrqRfT+dPYZObr9y3IaVFX+8SGFHeHnnUohhjwbr5I7f+xoGVCnpxTYuU37BQEiNRv7L/JJ5eXobRMaJ4hU2ydsaZqVsukIYmZYs+NRKoDJg7odPMpnzgtwg3cPb9gcmEwWSO23HQGb3Cv6DS58snAs3JrQ543y2dbCCFWsG6EWj0t9EzyA/WMH8c5NlPx1DuMUS72JTadQ9gozz7ckYDrDZR0DA5fhuU6eC2LEoRdV2tiIQPYSxfpOCBVKkkkGdS3RegyOkdN6H2XbiIfra1Kyr51/19YL43jg==
+X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(82310400026)(1800799024)(7416014)(36860700016)(376014)(13003099007)(18002099003)(22082099003)(56012099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: T3MuXZ7ocO2j6jP/Nl+9ve/r+qfWB3gcnHysvJoALs3ERHqhq54REcexq3bPhqYtVW8luJAegH8u22Ie5dB6hwZ58dda+WUGIxJjISL00vUfzcWXYc2IQ/vWDICADBt3JZko2i+uEQA67LL4zofsQFXUHY0ZdQxTqNiWjOcEtOBhdw/JsCUaRmrL+ifYyT8OQaZzA6MwmmnCy3gtEl7IBaCT5pmhPKUdS3sX5CyDCEEjM1IYPWISXkii4nGt8MZA2zNCqtEjru3RGtwc+1aS7zZhXwwR9u7OgK/UwwZXkkVVOanTWI8+IcVOmYi2Q/+i5Zn2117NqqYys8rH6SkqtJv8NcnfgXqBK4+wxN46EJarzzd1771LcCvQEou8xBXYLbfDMrFUstENpMTmtr6DH/yOtGN2ouh0JSNL3Eqwjz4BiAkYhqmfQbxXUuvuCaSb
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Mar 2026 11:42:25.3080
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 64464096-a5f5-46ac-adfc-08de8bf5eaba
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: CY4PEPF0000E9D7.namprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH3PR12MB9079
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260327_012740_242566_297381FF 
-X-CRM114-Status: GOOD (  38.41  )
+X-CRM114-CacheID: sfid-20260327_114251_686891_BB1126EA 
+X-CRM114-Status: GOOD (  33.49  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,94 +149,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 27/03/2026 13:48:58+0530, Akhil R wrote:
-> On Thu, 26 Mar 2026 16:44:31 +0100, Alexandre Belloni wrote:
-> > On 26/03/2026 10:05:03-0500, Rob Herring wrote:
-> >> On Wed, Mar 18, 2026 at 05:31:50PM +0000, Conor Dooley wrote:
-> >> > On Wed, Mar 18, 2026 at 10:57:14PM +0530, Akhil R wrote:
-> >> > > Add the 'mipi-i3c-static-method' property mentioned in the MIPI I3C
-> >> > > Discovery and Configuration Specification [1] to specify which discovery
-> >> > > method an I3C device supports during bus initialization. The property is
-> >> > > a bitmap, where a bit value of 1 indicates support for that method, and 0
-> >> > > indicates lack of support.
-> >> > > Bit 0: SETDASA CCC (Direct)
-> >> > > Bit 1: SETAASA CCC (Broadcast)
-> >> > > Bit 2: Other CCC (vendor / standards extension)
-> >> > > All other bits are reserved.
-> >> > > 
-> >> > > It is specifically needed when an I3C device requires SETAASA for the
-> >> > > address assignment. SETDASA will be supported by default if this property
-> >> > > is absent - which means for now the property just serves as a flag to
-> >> > > enable SETAASA, but keep the property as a bitmap to align with the
-> >> > > specifications.
-> >> > > 
-> >> > > [1] https://www.mipi.org/specifications/disco
-> >> > > 
-> >> > > Signed-off-by: Akhil R <akhilrajeev@nvidia.com>
-> >> > > ---
-> >> > >  .../devicetree/bindings/i3c/i3c.yaml          | 30 ++++++++++++++++---
-> >> > >  1 file changed, 26 insertions(+), 4 deletions(-)
-> >> > > 
-> >> > > diff --git a/Documentation/devicetree/bindings/i3c/i3c.yaml b/Documentation/devicetree/bindings/i3c/i3c.yaml
-> >> > > index e25fa72fd785..1705d90d4d79 100644
-> >> > > --- a/Documentation/devicetree/bindings/i3c/i3c.yaml
-> >> > > +++ b/Documentation/devicetree/bindings/i3c/i3c.yaml
-> >> > > @@ -31,10 +31,12 @@ properties:
-> >> > >        described in the device tree, which in turn means we have to describe
-> >> > >        I3C devices.
-> >> > >  
-> >> > > -      Another use case for describing an I3C device in the device tree is when
-> >> > > -      this I3C device has a static I2C address and we want to assign it a
-> >> > > -      specific I3C dynamic address before the DAA takes place (so that other
-> >> > > -      devices on the bus can't take this dynamic address).
-> >> > > +      Other use-cases for describing an I3C device in the device tree are:
-> >> > > +      - When the I3C device has a static I2C address and we want to assign
-> >> > > +        it a specific I3C dynamic address before the DAA takes place (so
-> >> > > +        that other devices on the bus can't take this dynamic address).
-> >> > > +      - When the I3C device requires SETAASA for its discovery and uses a
-> >> > > +        pre-defined static address.
-> >> > >  
-> >> > >    "#size-cells":
-> >> > >      const: 0
-> >> > > @@ -147,6 +149,26 @@ patternProperties:
-> >> > >            through SETDASA. If static address is not present, this address is assigned
-> >> > >            through SETNEWDA after assigning a temporary address via ENTDAA.
-> >> > >  
-> >> > > +      mipi-i3c-static-method:
-> >> > > +        $ref: /schemas/types.yaml#/definitions/uint32
-> >> > > +        minimum: 0x1
-> >> > > +        maximum: 0xff
-> >> > > +        default: 1
-> >> > > +        description: |
-> >> > > +          Bitmap describing which methods of Dynamic Address Assignment from a
-> >> > > +          static address are supported by this I3C Target. A bit value of 1
-> >> > > +          indicates support for that method, and 0 indicates lack of support.
-> >> > 
-> >> > I really am not keen on properties that are bitmaps, why can't we just
-> >> > use the strings "setdasa", "setaasa" etc?
-> >> 
-> >> If this comes from a specification, then I'd tend to just copy it rather 
-> >> than invent our own thing. Obviously if is something structured 
-> >> fundamentally different from how DT is designed, then we wouldn't. But 
-> >> this is just a simple property.
-> >> 
-> > 
-> > The issue being that the specification is not public so it is difficult
-> > to take any decision.
+On Fri, 27 Mar 2026 09:27:21 +0100, Alexandre Belloni wrote:
+> On 27/03/2026 13:48:58+0530, Akhil R wrote:
+>> On Thu, 26 Mar 2026 16:44:31 +0100, Alexandre Belloni wrote:
+>> > On 26/03/2026 10:05:03-0500, Rob Herring wrote:
+>> >> On Wed, Mar 18, 2026 at 05:31:50PM +0000, Conor Dooley wrote:
+>> >> > On Wed, Mar 18, 2026 at 10:57:14PM +0530, Akhil R wrote:
+>> >> > > Add the 'mipi-i3c-static-method' property mentioned in the MIPI I3C
+>> >> > > Discovery and Configuration Specification [1] to specify which discovery
+>> >> > > method an I3C device supports during bus initialization. The property is
+>> >> > > a bitmap, where a bit value of 1 indicates support for that method, and 0
+>> >> > > indicates lack of support.
+>> >> > > Bit 0: SETDASA CCC (Direct)
+>> >> > > Bit 1: SETAASA CCC (Broadcast)
+>> >> > > Bit 2: Other CCC (vendor / standards extension)
+>> >> > > All other bits are reserved.
+>> >> > > 
+>> >> > > It is specifically needed when an I3C device requires SETAASA for the
+>> >> > > address assignment. SETDASA will be supported by default if this property
+>> >> > > is absent - which means for now the property just serves as a flag to
+>> >> > > enable SETAASA, but keep the property as a bitmap to align with the
+>> >> > > specifications.
+>> >> > > 
+>> >> > > [1] https://www.mipi.org/specifications/disco
+>> >> > > 
+>> >> > > Signed-off-by: Akhil R <akhilrajeev@nvidia.com>
+>> >> > > ---
+>> >> > >  .../devicetree/bindings/i3c/i3c.yaml          | 30 ++++++++++++++++---
+>> >> > >  1 file changed, 26 insertions(+), 4 deletions(-)
+>> >> > > 
+>> >> > > diff --git a/Documentation/devicetree/bindings/i3c/i3c.yaml b/Documentation/devicetree/bindings/i3c/i3c.yaml
+>> >> > > index e25fa72fd785..1705d90d4d79 100644
+>> >> > > --- a/Documentation/devicetree/bindings/i3c/i3c.yaml
+>> >> > > +++ b/Documentation/devicetree/bindings/i3c/i3c.yaml
+>> >> > > @@ -31,10 +31,12 @@ properties:
+>> >> > >        described in the device tree, which in turn means we have to describe
+>> >> > >        I3C devices.
+>> >> > >  
+>> >> > > -      Another use case for describing an I3C device in the device tree is when
+>> >> > > -      this I3C device has a static I2C address and we want to assign it a
+>> >> > > -      specific I3C dynamic address before the DAA takes place (so that other
+>> >> > > -      devices on the bus can't take this dynamic address).
+>> >> > > +      Other use-cases for describing an I3C device in the device tree are:
+>> >> > > +      - When the I3C device has a static I2C address and we want to assign
+>> >> > > +        it a specific I3C dynamic address before the DAA takes place (so
+>> >> > > +        that other devices on the bus can't take this dynamic address).
+>> >> > > +      - When the I3C device requires SETAASA for its discovery and uses a
+>> >> > > +        pre-defined static address.
+>> >> > >  
+>> >> > >    "#size-cells":
+>> >> > >      const: 0
+>> >> > > @@ -147,6 +149,26 @@ patternProperties:
+>> >> > >            through SETDASA. If static address is not present, this address is assigned
+>> >> > >            through SETNEWDA after assigning a temporary address via ENTDAA.
+>> >> > >  
+>> >> > > +      mipi-i3c-static-method:
+>> >> > > +        $ref: /schemas/types.yaml#/definitions/uint32
+>> >> > > +        minimum: 0x1
+>> >> > > +        maximum: 0xff
+>> >> > > +        default: 1
+>> >> > > +        description: |
+>> >> > > +          Bitmap describing which methods of Dynamic Address Assignment from a
+>> >> > > +          static address are supported by this I3C Target. A bit value of 1
+>> >> > > +          indicates support for that method, and 0 indicates lack of support.
+>> >> > 
+>> >> > I really am not keen on properties that are bitmaps, why can't we just
+>> >> > use the strings "setdasa", "setaasa" etc?
+>> >> 
+>> >> If this comes from a specification, then I'd tend to just copy it rather 
+>> >> than invent our own thing. Obviously if is something structured 
+>> >> fundamentally different from how DT is designed, then we wouldn't. But 
+>> >> this is just a simple property.
+>> >> 
+>> > 
+>> > The issue being that the specification is not public so it is difficult
+>> > to take any decision.
+>> 
+>> There is a public version available in the same link, but you would still
+>> have to provide them a name and an email ID. The document will be sent to
+>> the mail ID.
+>> 
 > 
-> There is a public version available in the same link, but you would still
-> have to provide them a name and an email ID. The document will be sent to
-> the mail ID.
-> 
+> The public version only contains one property:
+> mipi-disco-interface-revision
 
-The public version only contains one property:
-mipi-disco-interface-revision
+Could you check once if the below link works?
+https://www.mipi.org/mipi-disco-for-i3c-download
 
-
--- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+Best Regards,
+Akhil
 
 -- 
 linux-i3c mailing list
