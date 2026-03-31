@@ -4,62 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C54161061B37
-	for <linux-i3c@archiver.kernel.org>; Tue, 31 Mar 2026 12:12:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1FC31109B462
+	for <linux-i3c@archiver.kernel.org>; Tue, 31 Mar 2026 12:52:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:CC:To:Message-ID:MIME-Version:Subject:
-	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=RqcNDFceMFnDAqbfRyDmyMNgu0vDR+ebCOTPDbj4tS4=; b=tC+hlD8Ke1Al7B
-	OxtBig/3JwFH/Co7RXXkkwrm+yiNkct4EgEr2UU2ow2BEP8Ki7SYiI/zMrgLySBn/JBVj4Xo6vigX
-	56QhuL9JPoUXxrig25eS7Z+BWVk5DV1xhFj/eb5/eBnWOZW3VM0sqwClkmMDj+BdI9BLocTWz/QsE
-	Qb3jKzmmBHfvrmFV6KyK/kSbkzsVfR2+FN3gOy+p9wH+NFzfbWmABGhV3iA4Oz+Utu5fgdiEl6Vl+
-	GguQfApXkPJpg2/nLaKRJQmP6v9SVx32jJFE8i+rkoCsFppS0InTJ3UI/MKEAXS5YgALq0uZNIEFF
-	Sbnn22oY8tebQ9AC0GHg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8XSdPZGbhfQfSC+Pv4GR7LW2YzLH5+aYvwJlhvsPH78=; b=Vq8xKdI7TROfzI
+	tbugMx7xqPPl8TSOPPCDNA8TzXKKnUBPDPd+U/3SfTc4zwgSitE/Nu8cbAIQFvlGYIhL/Dq8gDVjR
+	llHTlfym3z8Wjl23+DbiQ9OdoK4dHGIiL1kW8iSz4l93ExcvQALp2Qa0ECER6RXJIvAnfRnR5+qVJ
+	h6dSP3G/c25LZs8OLpL+BgRTMhi6bNkHpH06zm4f6+l/lgCvtd1siByKFhZq8/kVKZy1gzsmznQfz
+	5Q+NV4+ApmqDQ4iZcRpwv5McyybAnkdbS63DxAc1skN8tGr9XkjzFgx2e/ck5XijEWpUaDmhXuprf
+	g+Aw3HVv+sJiu1WtKIMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7XxY-0000000Cv8b-29E3;
-	Tue, 31 Mar 2026 12:12:40 +0000
-Received: from mail.aspeedtech.com ([211.20.114.72] helo=TWMBX01.aspeed.com)
+	id 1w7YaA-0000000Cy11-3Zo3;
+	Tue, 31 Mar 2026 12:52:34 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w7XxU-0000000Cv7q-2llw
+	id 1w7Ya9-0000000Cy0v-1rWD
 	for linux-i3c@lists.infradead.org;
-	Tue, 31 Mar 2026 12:12:38 +0000
-Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Tue, 31 Mar
- 2026 20:12:29 +0800
-Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
- (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
- Transport; Tue, 31 Mar 2026 20:12:29 +0800
-From: Billy Tsai <billy_tsai@aspeedtech.com>
-Date: Tue, 31 Mar 2026 20:12:23 +0800
-Subject: [PATCH] i3c: mipi-i3c-hci: fix atomic updates to RING_OPERATION1
- register
+	Tue, 31 Mar 2026 12:52:33 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id AD97D6091C;
+	Tue, 31 Mar 2026 12:52:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 57850C2BC9E;
+	Tue, 31 Mar 2026 12:52:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1774961552;
+	bh=GBjwwlhVRcZ8E+Q1FxdQHIvN3dai7IBRu3SVYHZ0k7Q=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=BVNw43TJieGw6X1WBgDs2qcxUcKy8Zj6xYCp0Yn7sEMzx3JO09tBm7cJGVP/O1MVN
+	 I/93E9jsBd+PEohshpaI5/lUPnhm1JvHqI7sfbkEW4WO6C59NhwH2A/cqzwi1mGM++
+	 82TUAQyPmbOAQMho7/CsdmqITR25XSNKY1mft8rvSvBKKzY2TJL4pRuSO5dLRabfe7
+	 Ht5t8/Hg4p708cJ1At1p1tdusz7AmjpjnDyJaplttMsYJcvNDzVqdLwQHuWEyrvC1K
+	 r6Q48uXNILx5pEMqMnYu9m2RmnfJEYMybLYk8jHR1qDG67L2j5xnH+jOTt8okmFMof
+	 juvPZRV5dAV3g==
+Date: Tue, 31 Mar 2026 13:52:26 +0100
+From: Lee Jones <lee@kernel.org>
+To: Lakshay Piplani <lakshay.piplani@nxp.com>
+Cc: linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
+	alexandre.belloni@bootlin.com, krzk+dt@kernel.org, robh@kernel.org,
+	conor+dt@kernel.org, devicetree@vger.kernel.org, broonie@kernel.org,
+	Frank.Li@nxp.com, lgirdwood@gmail.com, vikash.bansal@nxp.com,
+	priyanka.jain@nxp.com, aman.kumarpandey@nxp.com
+Subject: Re: [PATCH v8 4/7] mfd: p3h2x4x: Add driver for NXP P3H2x4x i3c hub
+ and on-die regulator
+Message-ID: <20260331125226.GF3795166@google.com>
+References: <20260323062737.886728-1-lakshay.piplani@nxp.com>
+ <20260323062737.886728-5-lakshay.piplani@nxp.com>
+ <20260331112918.GD3795166@google.com>
 MIME-Version: 1.0
-Message-ID: <20260331-i3c-hci-dma-lock-v1-1-708bc5848381@aspeedtech.com>
-X-B4-Tracking: v=1; b=H4sIACa6y2kC/x3MSQqAMAxA0atI1gZS64RXERclRg2OtCBC8e4Wl
- 2/xf4QgXiVAl0XwcmvQ80gweQa8uGMW1DEZCipqstagWsaFFcfd4Xbyiq4hcqYkbssKUnZ5mfT
- 5l/3wvh/2fLkKYgAAAA==
-X-Change-ID: 20260331-i3c-hci-dma-lock-a700a140c845
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
-	<Frank.Li@nxp.com>, Nicolas Pitre <npitre@baylibre.com>, Boris Brezillon
-	<boris.brezillon@collabora.com>
-CC: <linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>, "Billy
- Tsai" <billy_tsai@aspeedtech.com>
-X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1774959149; l=3526;
- i=billy_tsai@aspeedtech.com; s=20251118; h=from:subject:message-id;
- bh=zXraJM4rpO14mz7DUQbRXxLT+rMD+bP7LNhl1brNqWo=;
- b=wjuA4WSwCZqv8JAsbxYjpEqyHR1FkkSzQCDMBoeSDMEHU45qNt6ZxWONH6n3NOeDC2dFHpvOy
- UNWYAkkyOahCiQ33LgAOSBe3S8s6zM7tNHeXAk+RfeQd057j70Ip8LF
-X-Developer-Key: i=billy_tsai@aspeedtech.com; a=ed25519;
- pk=/A8qvgZ6CPfnwKgT6/+k+nvXOkN477MshEGJvVdzeeQ=
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260331_051236_706899_1AA53B57 
-X-CRM114-Status: GOOD (  11.78  )
+Content-Disposition: inline
+In-Reply-To: <20260331112918.GD3795166@google.com>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,103 +70,41 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The RING_OPERATION1 register contains multiple bitfields (enqueue,
-software dequeue, and IBI dequeue pointers) that are updated from
-different contexts. Because these updates are performed via
-read-modify-write sequences, concurrent access from process and IRQ
-contexts can lead to lost updates.
-
-Example:
-CPU 0 (hci_dma_queue_xfer): reads RING_OPERATION1 (enq=5, deq=2)
-CPU 1 (hci_dma_xfer_done): reads RING_OPERATION1 (enq=5, deq=2)
-CPU 0: updates enq to 6, writes back (enq=6, deq=2)
-CPU 1: updates deq to 3, writes back (enq=5, deq=3) <--Pointer 6 is LOST!
-
-Fix this by wrapping all accesses to RING_OPERATION1 and associated
-ring state variables (xfer_space, done_ptr, ibi_chunk_ptr) in the unified
-hci->lock. This ensures that the read-modify-write sequence is atomic
-across enqueue, dequeue, and completion paths.
-
-Specifically:
-- Add hci->lock protection to hci_dma_xfer_done() and
-hci_dma_process_ibi().
-- Ensure hci_dma_queue_xfer() and hci_dma_dequeue_xfer() use the unified
-  lock consistently.
-- Ensure the software-maintained ring pointers are synchronized with
-  the hardware pointer updates.
-
-Fixes: 9ad9a52cce28 ("i3c/master: introduce the mipi-i3c-hci driver")
-Signed-off-by: Billy Tsai <billy_tsai@aspeedtech.com>
----
- drivers/i3c/master/mipi-i3c-hci/dma.c | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-index e487ef52f6b4..3d967157411e 100644
---- a/drivers/i3c/master/mipi-i3c-hci/dma.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-@@ -617,10 +617,12 @@ static int hci_dma_handle_error(struct i3c_hci *hci, struct hci_xfer *xfer_list,
- static void hci_dma_xfer_done(struct i3c_hci *hci, struct hci_rh_data *rh)
- {
- 	u32 op1_val, op2_val, resp, *ring_resp;
--	unsigned int tid, done_ptr = rh->done_ptr;
-+	unsigned int tid, done_ptr;
- 	unsigned int done_cnt = 0;
- 	struct hci_xfer *xfer;
- 
-+	spin_lock(&hci->lock);
-+	done_ptr = rh->done_ptr;
- 	for (;;) {
- 		op2_val = rh_reg_read(RING_OPERATION2);
- 		if (done_ptr == FIELD_GET(RING_OP2_CR_DEQ_PTR, op2_val))
-@@ -659,6 +661,7 @@ static void hci_dma_xfer_done(struct i3c_hci *hci, struct hci_rh_data *rh)
- 	op1_val &= ~RING_OP1_CR_SW_DEQ_PTR;
- 	op1_val |= FIELD_PREP(RING_OP1_CR_SW_DEQ_PTR, done_ptr);
- 	rh_reg_write(RING_OPERATION1, op1_val);
-+	spin_unlock(&hci->lock);
- }
- 
- static int hci_dma_request_ibi(struct i3c_hci *hci, struct i3c_dev_desc *dev,
-@@ -716,6 +719,7 @@ static void hci_dma_process_ibi(struct i3c_hci *hci, struct hci_rh_data *rh)
- 	void *ring_ibi_data;
- 	dma_addr_t ring_ibi_data_dma;
- 
-+	spin_lock(&hci->lock);
- 	op1_val = rh_reg_read(RING_OPERATION1);
- 	deq_ptr = FIELD_GET(RING_OP1_IBI_DEQ_PTR, op1_val);
- 
-@@ -767,6 +771,7 @@ static void hci_dma_process_ibi(struct i3c_hci *hci, struct hci_rh_data *rh)
- 		dev_dbg(&hci->master.dev,
- 			"no LAST_STATUS available (e=%d d=%d)",
- 			enq_ptr, deq_ptr);
-+		spin_unlock(&hci->lock);
- 		return;
- 	}
- 	deq_ptr = last_ptr + 1;
-@@ -849,6 +854,7 @@ static void hci_dma_process_ibi(struct i3c_hci *hci, struct hci_rh_data *rh)
- 
- 	/* and tell the hardware about freed chunks */
- 	rh_reg_write(CHUNK_CONTROL, rh_reg_read(CHUNK_CONTROL) + ibi_chunks);
-+	spin_unlock(&hci->lock);
- }
- 
- static bool hci_dma_irq_handler(struct i3c_hci *hci)
-
----
-base-commit: f311a05784634febd299f03476b80f3f18489767
-change-id: 20260331-i3c-hci-dma-lock-a700a140c845
-
-Best regards,
--- 
-Billy Tsai <billy_tsai@aspeedtech.com>
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+T24gVHVlLCAzMSBNYXIgMjAyNiwgTGVlIEpvbmVzIHdyb3RlOgoKPiBPbiBNb24sIDIzIE1hciAy
+MDI2LCBMYWtzaGF5IFBpcGxhbmkgd3JvdGU6Cj4gCj4gPiBGcm9tOiBBbWFuIEt1bWFyIFBhbmRl
+eSA8YW1hbi5rdW1hcnBhbmRleUBueHAuY29tPgo+ID4gCj4gPiBBZGQgY29yZSBNRkQgc3VwcG9y
+dCBmb3IgdGhlIE5YUCBQM0gyeDR4IChQM0gyNDQwL1AzSDI0NDEvUDNIMjg0MC9QM0gyODQxKQo+
+ID4gZmFtaWx5IG9mIG11bHRpcG9ydCBJM0MgaHViIGRldmljZXMuIFRoZXNlIGRldmljZXMgY29u
+bmVjdCB0byBhIGhvc3QgdmlhCj4gPiBJM0MvSTJDL1NNQnVzIGFuZCBleHBvc2UgbXVsdGlwbGUg
+ZG93bnN0cmVhbSB0YXJnZXQgcG9ydHMuCj4gPiAKPiA+IFNpZ25lZC1vZmYtYnk6IEFtYW4gS3Vt
+YXIgUGFuZGV5IDxhbWFuLmt1bWFycGFuZGV5QG54cC5jb20+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBW
+aWthc2ggQmFuc2FsIDx2aWthc2guYmFuc2FsQG54cC5jb20+Cj4gPiAKPiA+IC0tLQo+ID4gQ2hh
+bmdlcyBpbiB2ODoKPiA+ICAtIE5vIGNoYW5nZQo+ID4gCj4gPiBDaGFuZ2VzIGluIHY3Ogo+ID4g
+IC0gVXNlIG5ldyBjb25maWcgSTNDX09SX0kyQwo+ID4gCj4gPiBDaGFuZ2VzIGluIHY2Ogo+ID4g
+IC0gTm8gY2hhbmdlCj4gPiAKPiA+IENoYW5nZXMgaW4gdjU6Cj4gPiAgLSBDb3JyZWN0ZWQgdGhl
+IG9yZGVyaW5nIGluIHRoZSBNYWtlZmlsZSBhbmQgS2NvbmZpZyBmb3IgTUZEX1AzSDJYNFgKPiA+
+ICAtIFVwZGF0ZWQgZGV2X2Vycl9wcm9iZSgpIGZvciByZWdtYXBfaW5pdCBmYWlsdXJlLgo+ID4g
+IC0gVXBkYXRlZCBtb2R1bGUgZGVzY3JpcHRpb24KPiA+IAo+ID4gQ2hhbmdlcyBpbiB2NDoKPiA+
+ICAtIFNwbGl0IHRoZSBkcml2ZXIgaW50byB0aHJlZSBzZXBhcmF0ZSBwYXRjaGVzKG1mZCwgcmVn
+dWxhdG9yIGFuZCBJM0MgaHViKQo+ID4gIC0gQWRkZWQgc3VwcG9ydCBmb3IgTlhQIFAzSDJ4NHgg
+TUZEIGZ1bmN0aW9uYWxpdHkKPiA+IC0tLQo+ID4gLS0tCj4gPiAgTUFJTlRBSU5FUlMgICAgICAg
+ICAgICAgICAgIHwgICAyICsKPiA+ICBkcml2ZXJzL21mZC9LY29uZmlnICAgICAgICAgfCAgMTMg
+KysrKwo+ID4gIGRyaXZlcnMvbWZkL01ha2VmaWxlICAgICAgICB8ICAgMSArCj4gPiAgZHJpdmVy
+cy9tZmQvcDNoMjg0MC5jICAgICAgIHwgMTI1ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysr
+KysrKysrKwo+ID4gIGluY2x1ZGUvbGludXgvbWZkL3AzaDI4NDAuaCB8ICAyNyArKysrKysrKwo+
+ID4gIDUgZmlsZXMgY2hhbmdlZCwgMTY4IGluc2VydGlvbnMoKykKPiA+ICBjcmVhdGUgbW9kZSAx
+MDA2NDQgZHJpdmVycy9tZmQvcDNoMjg0MC5jCj4gPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGluY2x1
+ZGUvbGludXgvbWZkL3AzaDI4NDAuaAoKWy4uLl0KCj4gPiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9s
+aW51eC9tZmQvcDNoMjg0MC5oIGIvaW5jbHVkZS9saW51eC9tZmQvcDNoMjg0MC5oCj4gPiBuZXcg
+ZmlsZSBtb2RlIDEwMDY0NAo+ID4gaW5kZXggMDAwMDAwMDAwMDAwLi5jYmE2ZmE1MTZkMWUKPiA+
+IC0tLSAvZGV2L251bGwKPiA+ICsrKyBiL2luY2x1ZGUvbGludXgvbWZkL3AzaDI4NDAuaAo+ID4g
+QEAgLTAsMCArMSwyNyBAQAo+ID4gKy8qIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4w
+ICovCj4gCj4gVGhlc2Ugc2hvdWxkIHVzZSAvLyBpbiBoZWFkZXIgZmlsZXMuCgpJZ25vcmUgdGhp
+cy4gIEkndmUgbGVhZCB5b3UgYXN0cmF5IHRoZXJlLgoKLS0gCkxlZSBKb25lcyBb5p2O55C85pav
+XQoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
