@@ -4,123 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6CD2BD3942F
-	for <linux-i3c@archiver.kernel.org>; Thu,  2 Apr 2026 14:21:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21E80D3943C
+	for <linux-i3c@archiver.kernel.org>; Thu,  2 Apr 2026 14:52:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KZyMMBNoiGybb59YcO799oY7rnPi0XcSEMgcWtD9TgQ=; b=CrPvrr5bI298E+
-	xeLkQyNlD5kPJSZTWF9nQLEITLrJQJo0bmLuYGG70D1tqldte4L6IwVKaxZhxxGixYq09sWItRyev
-	FEa3ncQZFF2dVclQs3T8kVEgKgII1R7iMDCcIJ0eisyFcxETmP0ts+SjpJCT37OnSLZ/KfpnDvwb/
-	h35PKXDru3AXrVekjVOxmDCTCv5QUR6kvDh2S7AOwZrBs/89aN5wmhvZx3I5LlQowTN3KETDjmAft
-	PRUKmkCFyXNYX96NgJGJ1h3YkKtYKDO/HZD0cYA7XN5yGUuPMP8QFGmX7nfx9vZy3UnVwpAfvBg63
-	Jb8jKtrZpxLe+6ppMMfA==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
+	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3//SUjjeTjSMFz4x1XAgR9sKGJStj1V6NtYATWGlfws=; b=wzn3TVHM5qOIN9
+	Wa5hu0r+jolQ3mzd39+zmJ3OiG+2mQJtcZpeybya1j1xlO9MeSo4Qi/rNePiEt2xMybEc7GQ98CDN
+	/2aL6U5hcxdyVhmwYEdSheZHaZyYgF4kUJSzG9eDVUUfmInnNB7GlJyNafTBQZ8Ytw2nSJwq1XBBq
+	CZOFUiyU1W4oBiapsz4AkC5+ZxLCZhln9LkbYCLWMWCYn3abTpyiwO9jxhrn5vS6HxgdJ5QGTsf+d
+	mus0TDmfZOUo9wXUK6IGTSnwm5eBNgdGVLxADjY2AzO1HgPKOw3hwTfL/+IIAzYIokOl/YypMjbEV
+	s+P3YDv3xm4r61Qmzeqw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w8Iuq-00000000Jj3-0OBJ;
-	Thu, 02 Apr 2026 14:21:00 +0000
-Received: from mail-northeuropeazon11010057.outbound.protection.outlook.com ([52.101.84.57] helo=DB3PR0202CU003.outbound.protection.outlook.com)
+	id 1w8JPP-00000000Nid-3fuN;
+	Thu, 02 Apr 2026 14:52:35 +0000
+Received: from mail-pf1-x434.google.com ([2607:f8b0:4864:20::434])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w8Iuf-00000000Jhu-2Ht9
+	id 1w8JPN-00000000Ni6-0hVw
 	for linux-i3c@lists.infradead.org;
-	Thu, 02 Apr 2026 14:20:58 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=NdDHF9GQsZfQR4UCdprJf7ErmuarhDiCPBew5HCPSqvmStai4hYxPzr6gbRBW6VS66PF5H8pkyc5wMFyr7IW2stim49NU+Opd+ZdGrs/Ve2uy4EdrHPNfjc5HbJUd5elTGfN/T7uIVp/r5zN8uM2WgfNvEQ9H/Q+LIsanzXWCEtcaZ0flWfos4zLY50VX94c7RqmyDNhSD5+zwcApWTrSfu2Nv2YRIEgXOpq7Ht5h0SqbPq91neOUgzWbwjtatVKZrYZgvkgmwHw+Zoq9OtDPmIA7bTGc61FpiOrnjYFIopJKpSUnmrhYUjG+FvDNK+pnL8trTj4wOxFG4a9L2zZXg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=PVpYSh66mX75SXcRqPC7oJTRm0JM0A75dwGVXsb4RW0=;
- b=eM0GjK7EMe1PXescx8JP98znLPDJfQOXkjqxv3XyiT6jdgcNHVxjLdXZI8sbp4qXgmUeasnLmhpdAH5g3EPpTVM6oMlXsl+t8feWPdYMjmxpjl0t9xfL36vwyBTZPrqxJuAFWy+BHUD0opCyggF+4a1JMWcr9rJb1r2oL5r5iE18nPTGlOXvcVL+j18ihfRR89ZkXhOGlIfKiVX/0uE8RQPOFrrnIzFnWOyXt2D6F3+Wpo+DcMhT5YlLXaxGRPtQuBHB8DTLvTU2EMcFz//DE6W8p3k4uxSrYN7jvM0kH1cmpMfpEYRJIxcRbI5koxwUhExfaOmltCKsPvL+/aVJAg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PVpYSh66mX75SXcRqPC7oJTRm0JM0A75dwGVXsb4RW0=;
- b=csD6EsWVxKRQA5CQCvQ4rBLuav65+3Q/rw2VqCf3jPqS9FLALBJQQMdQMMbtgUtKkYf2fPJ57WaTKGmAR9uXIKfz/L2J+qAmUvPA7DNdZ0tFfXHr3fgFg/f31t3tVRDo3NerZdRfnWpy7+/qV5oa7jAN5h5pgBZRTF+mWtspfOzd/i9PR5GbJJWvj+nKdjGDTFgKnuAnkeeEPlz9u7lQQspf+XAgCFhRhaz1QQ4/KQKauhF/t8yvJTH0PtZotVUnYLHFuVi9MtPNQwqPpPxWlvKmcAhywhgAyc57qagR8ULRP8y7bVvdxh/4d+MFhZwKPeNgKopxeRH34Bg9F1A9Sg==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8)
- by PA1PR04MB10626.eurprd04.prod.outlook.com (2603:10a6:102:48e::7) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9769.17; Thu, 2 Apr
- 2026 14:20:46 +0000
-Received: from PA4PR04MB9366.eurprd04.prod.outlook.com
- ([fe80::75e4:8143:ddbc:6588]) by PA4PR04MB9366.eurprd04.prod.outlook.com
- ([fe80::75e4:8143:ddbc:6588%6]) with mapi id 15.20.9769.016; Thu, 2 Apr 2026
- 14:20:45 +0000
-Date: Thu, 2 Apr 2026 10:20:40 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Felix Gu <ustc.gu@gmail.com>
-Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] i3c: master: renesas: Fix memory leak in
+	Thu, 02 Apr 2026 14:52:34 +0000
+Received: by mail-pf1-x434.google.com with SMTP id d2e1a72fcca58-82ce49785a0so432737b3a.2
+        for <linux-i3c@lists.infradead.org>; Thu, 02 Apr 2026 07:52:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1775141552; x=1775746352; darn=lists.infradead.org;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=i42oyAoWrWhqYiY7EaTfu2aPCqxrJU30Sf3G8iAIZSc=;
+        b=rqfZ7g0cFmxGDZDrxkSvtfw13aQ+Gjkqpen07s/sMaNQJRD25u1sp8aIDAkROzDVam
+         uvJJSknQLXtA/9TIvsFMUpwqSthtc6BDRYs+LzdJMVLj9zELetCiLUS8eqPQiOnpOp3P
+         rUA97bKX9cB4/roMitIoUaQyvdHtDUog4mDdwxYntXjouQDvgnSsgfZeMEsjEGMrPpxk
+         19flXeu4cbQqa331i1oSjT6iVgHkeJCwHXdrkCgMBpfazD3JXjNHSgMg9jehm22msa9e
+         6mEJsrGmeCQa9jM9yg9GWBjWX40RokXS5voHiuypk4+RwJgqJdH2Htb1S9kNSpuszzJS
+         qwfg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1775141552; x=1775746352;
+        h=cc:to:message-id:content-transfer-encoding:mime-version:subject
+         :date:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=i42oyAoWrWhqYiY7EaTfu2aPCqxrJU30Sf3G8iAIZSc=;
+        b=hB3OmBgHhneAyrgmSOKjR2bIeU5EodkXOkL623li6B7Cd5b0cxzvFcF24Yp2/87RJa
+         qEP68uAvsFbDAJSBp1Dc8Cpsq4+/Gv/AfL86CawCTQzLUwseChQ6tLSY+r6JmPotCne8
+         5Zfb1pjKX3rdbI2VnH0RxJ1EHWXLD4vRzs+akWqmGCr0tnk/9wKU1Fm6iLmkizf+M1i4
+         RbkbbMyoygfXoA3blTqf//DVE41TDcVx6FXZriZMYaszoGhciMYAeb9E3E0PE5DlDlc3
+         2Ua0YakltnIIWpyaqvEU+lDSGYwp9ibK2iQJstDgTUzLRZOlAybeu62NzxNZlxhcIHk6
+         lK4A==
+X-Gm-Message-State: AOJu0YyBlVsHBT8ebjI/8UmliBnEovS88yZq27NI0q5IIwi5yl9F133L
+	nHaHehf1Jg163btQty2Fu1IVB6NuXy67EJ6DZqGrbiPXdmMfTarOjaIh
+X-Gm-Gg: ATEYQzwSY8MA2o+zt9NMDhVsga2LMLH9/1zKOTGGKvdUlMbHQGesbUNhwd8nhVyxK/U
+	b25oxLaaMqayTL+12LjB2y7SGRxJOpL2SyYxg2cj2CaeXtx2VKDov8SBBzJEn4gdBDU0OKGMMwI
+	QE9wi1onGxdzuXV2oaA/DL7ssQY8QFb6MYxpwTJ08wm9sURf0PRWVppT6644WFTIa7RGd5RZh+k
+	fMZR+1b8P/iWkWtfuEO9lcFxCXZMWzpWu2RzWv9xOOFo9RqLNsxP34hdBGmPHdUrqg9dt3ij3UT
+	5l+kEYAwKfRJvXlI5k1YK6Pftz/5PHQVZDV5aO1/WPbWEnrAQ3nYpySbbijwEcUSs7sHheh4tsR
+	FTF6wn6pkfjjwH6TgBCansf9b8ecWhoHTXAApUftgxWmP/CkA1BK8YkYNTUmkdh3TggitAQPGVS
+	VArDrEunEh/hB9Xfmer1b5NKKABzqWiR9I58Vi
+X-Received: by 2002:a05:6a00:1a1c:b0:82c:ebae:3cb with SMTP id d2e1a72fcca58-82cebae0a76mr5987896b3a.43.1775141552030;
+        Thu, 02 Apr 2026 07:52:32 -0700 (PDT)
+Received: from junjungu-PC.localdomain ([223.167.147.240])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-82cf9c6f0c3sm3282256b3a.43.2026.04.02.07.52.29
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 02 Apr 2026 07:52:31 -0700 (PDT)
+From: Felix Gu <ustc.gu@gmail.com>
+Date: Thu, 02 Apr 2026 22:52:26 +0800
+Subject: [PATCH v2] i3c: master: renesas: Fix memory leak in
  renesas_i3c_i3c_xfers()
-Message-ID: <ac57OE5Nflp24bAm@lizhi-Precision-Tower-5810>
-References: <20260402-renesas-v1-1-369a7d867502@gmail.com>
-Content-Disposition: inline
-In-Reply-To: <20260402-renesas-v1-1-369a7d867502@gmail.com>
-X-ClientProxiedBy: SA1P222CA0176.NAMP222.PROD.OUTLOOK.COM
- (2603:10b6:806:3c4::12) To PA4PR04MB9366.eurprd04.prod.outlook.com
- (2603:10a6:102:2a9::8)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|PA1PR04MB10626:EE_
-X-MS-Office365-Filtering-Correlation-Id: fbfc2f1e-4b90-452e-f9cc-08de90c307cf
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|366016|376014|52116014|1800799024|38350700014|56012099003|22082099003|18002099003;
-X-Microsoft-Antispam-Message-Info: 5ZByHn6vdBwwswGBrEjYJk8ROkilpptv/9Y/RMuOL1OExd6DJHXglZNaMxGl06XY9w1BHyapALUybz5DtREINcKVwOCGBJ2GvSvGSqX+h8li9ytR6NOcz6QwhFA3Na8vocXB4TjDnwmbJlZSggyZbjNqV/0AkVwJkiYqu27md62qjbyPvCFxlePuh/usDpgRrWaZM0BwRRXESsfm17I+3Y3lflO5cA1WT/+QNUAGqPT0e1ijxHsSl942LhvkmV5q7eOWDHre3pLHp/QKboimHBtmXu8eApesZYI49SXIFXMsBwj58bhqhgWwduCWEmz4Nm3pCrDHL5cqddfNtxs8Wn0hLEmRGyAjdNnpMLxGeyd3QtILYlShgvOGDmx6G1LJXhn88l6yeLDzjrqp9xOewT+pLSEbv5lKpaMqjMuJ2tNnB5RoXlnABifeqr+aQBIiI9epGIq8VRb1X/1RKyvffpDwZUs/6BP/THd35s4dr3QwL+knRtknPXDx1O4/1lAL4ECq3DKmJw7uaALrUij52IPjMJ+Ryg8+FACd57wLSD8UWgR0Bjj3wpv8UvSHrAoDlH9Q9MuL3/FB9KanZVYwsQyiJ3I6WJ3grNyrr6HohdVqT5Zhu468WOeorY4JOI7uzmPZUCMWIGx+io/90uqilKRbEXZICZnKxqtu+JZh8aXHdLMetahSm0t5dLA8F7HvaPpdygkqJzmyh5x9jbCvlbHxIYoENFkBUDdmucBbMdyrVUFIlbMuVSPDuOvHrunc4LxwCH5Mk8X7Xe/QL/VkzjQ2iHRaUqZ6d5aRh2kXGCE=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(366016)(376014)(52116014)(1800799024)(38350700014)(56012099003)(22082099003)(18002099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?uHIhIwzuoFMkaxjjJVr9U8zBdwLOmzHhnMiXf5sKbJMVzSjDVAsUIezLlBMx?=
- =?us-ascii?Q?MkYjfpocpHpFS34f6uFa180fHNnEAYuX7k++5okFw8kcbyu2o4K6Do8WnKh2?=
- =?us-ascii?Q?4G/Y0d7x8p73frLbDUQ9fqdtfJY/zq1AOiXFXaboVjt8VsGlrYF/7b3Om9Oz?=
- =?us-ascii?Q?p8CqnAU98jmLbqE2I1MGqW5wxhBDySa8xWxDUwwoqavwiWTL3TRi1S/eQIL1?=
- =?us-ascii?Q?kN5fHrP+/UU1LcxshMV7j9ldHnSsYyCuMYIbGZEzZWdWy90NyYU4OFZMIx/w?=
- =?us-ascii?Q?2IxRO+KJGUShjQ7xu+BedZlBh813yZHSWD0Wyx5V5pp0qHY2twTGd206GtHq?=
- =?us-ascii?Q?UrVWn9kdaqC+HmbSchy5/4aQB1e0GactGLSErl/7wOz0KDY9oDfXXPpzt6oC?=
- =?us-ascii?Q?zFP3lNMvCV260PGzK21MRb01Hb4ng8EOHcTdKlGbaqQIOkQ3WY4AYZC7RUME?=
- =?us-ascii?Q?t+amUC9nr9AgI/Bk5WI86ryxlhVscoNfikLA8oq1ZNrGey4LaFFcPPTWzpfF?=
- =?us-ascii?Q?ZNP7MBlklw0vkS72zWRtqpxnlGmbMNgM/r4aA22oGG+g9SNxgenhpKg6z5ie?=
- =?us-ascii?Q?qsvOtOxGndU3jYlHOf9R5OT4kYvLdiPBT/93ebrx9r0MaIxufO0bXnv1Y6l1?=
- =?us-ascii?Q?Hj7W1Y8y9nN8rETL/A33Bx+jAre6XKdveDr89D5xEyiLBzUCVSZAaEQiWIJ2?=
- =?us-ascii?Q?0FfX+fbgOUnhbKKXqLYCasxRyEA2fsBnfyIoVsmU7EO0XFS0R9TZX8gn28kB?=
- =?us-ascii?Q?GYGbf9HyJAh/KgX3Nhi5Yf70wzqa9t4Tuajyg76vp3zJqq6OZENxmC0U4jde?=
- =?us-ascii?Q?XndqgYrOU+FWS60+jEBeY2LRIe4NbRKbMm6PeTv+p3cVlBBT6dOy38C+UQoT?=
- =?us-ascii?Q?5FmACoDEHIH3udY8S/5WI1ncl79qLuCSl3SC+q0qEkSn34ppd7GKtBMoe9yP?=
- =?us-ascii?Q?+Xp97YG7t1UXKdGO/30Jxn1EIMDw6IYxAd2R0lqOeeDiEznnZvZifj47PsKe?=
- =?us-ascii?Q?d4tb9hXK7SF6AUGxbGzyIDVhQP5Cy+3l0lzmx7n6LxBL5R9KhB0LNvdoAVRd?=
- =?us-ascii?Q?DP9fvJQPcwGSmAgr8KZWwTwBAPjDbrndrSQIVD4mIiWuuccS3sejsFVMaggW?=
- =?us-ascii?Q?22/JD9sE1g4ajJgdb/Mr9aONaTL8SskpFJphWggTaOeEkRhsyYIxDM03sMoB?=
- =?us-ascii?Q?RyxwlPmjGt9ZNzcD3ngjj/35Jc8CiajhIeKpoHOOp7LAu5bR22/y7yH0FH1X?=
- =?us-ascii?Q?Rn3KT47y+xNsWv66BbOC4gt6BEDzSi3emQnfIxebFEXD7Z3mqtTdxudo78K7?=
- =?us-ascii?Q?nrxfdha/2+xFjC12/3+lRP1wdp6v5dcqC19h+ENw5Pf4kIlejOIRuWMF6lHC?=
- =?us-ascii?Q?Jy4aMaPLFCUXbXdBHVRDGCLBGdUImARTVgqA8YdFSAWnknu347SYKcfBsZuZ?=
- =?us-ascii?Q?QPmA1AfKm92AafNUhs6Zld7LoIyCCNug//gR2bzQy8gCn89biApvL8r3fyXB?=
- =?us-ascii?Q?iroWMp39gtMrBex4Gf1P68mwRAHrE3oPhJCLyoyDsLW4Rf00y8FVzk4fLOFO?=
- =?us-ascii?Q?BWcF5BRDwz6MBm4hEzYTRkF/jDRv+FBfO/nvwuRBb1dAnILodTcHOqGWY/2n?=
- =?us-ascii?Q?VuMHEVnNxSIWkYDl7UhuGNm0wnLjV0qBjLx2BQCU6hd2Lo2aJfqpH/0BEnm0?=
- =?us-ascii?Q?loHLYpzTGoAGYib7K8fMRGkdXSBIIbBSCkS2ZVQKuYlmknjw?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: fbfc2f1e-4b90-452e-f9cc-08de90c307cf
-X-MS-Exchange-CrossTenant-AuthSource: PA4PR04MB9366.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Apr 2026 14:20:45.9086
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: ni55qsR/cU0PtPoUdqnDeoF9wR4/AOzrv3TcVgQIHogqTU8uvv8gIovA3rvajLic0fqS2y9eoUJPGTcQkYqdQw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA1PR04MB10626
+Message-Id: <20260402-renesas-v2-1-f7e8cf73c7df@gmail.com>
+X-B4-Tracking: v=1; b=H4sIAKmCzmkC/2XMQQ7CIBCF4as0sxYDqNS68h6mixGGdhILBgzRN
+ Nxd7Nbl//LyrZApMWW4dCskKpw5hhZ614GdMUwk2LUGLbWRR6lFokAZs7AGvUM/3K0maO9nIs/
+ vTbqNrWfOr5g+G1zUb/03ihJKHMyAvTub/iT1dVqQH3sbFxhrrV/ozOM7ngAAAA==
+X-Change-ID: 20260402-renesas-c6afdaf9bc2e
+To: Wolfram Sang <wsa+renesas@sang-engineering.com>, 
+ Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>, 
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ Frank Li <Frank.Li@nxp.com>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Felix Gu <ustc.gu@gmail.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1775141550; l=1726;
+ i=ustc.gu@gmail.com; h=from:subject:message-id;
+ bh=Gc0CJ76TP9tPyD/jOJJbqcXy0deV2iVAeV9vSIr2vgk=;
+ b=mB+J5g//XKRZJo5mWiLXJEwM7rUsvEUwvi2zU+Mz4ETkF96KNLuWce1pdssXohriZjBSDHobM
+ wfZ+4mpKi6IArPj0SF0JxiMne67Ht6WJZPR1qOA4StWS0mXplb4YE9g
+X-Developer-Key: i=ustc.gu@gmail.com; a=ed25519;
+ pk=fjUXwmjchVN7Ja6KGP55IXOzFeCl9edaHoQIEUA+/hw=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260402_072049_609146_A322A2EB 
-X-CRM114-Status: GOOD (  18.40  )
+X-CRM114-CacheID: sfid-20260402_075233_212384_C44DEEF9 
+X-CRM114-Status: GOOD (  13.14  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,51 +110,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Apr 02, 2026 at 09:05:48PM +0800, Felix Gu wrote:
-> The xfer structure allocated by renesas_i3c_alloc_xfer() was never freed
-> in the renesas_i3c_i3c_xfers() function. Use the __free(kfree) cleanup
-> attribute to automatically free the memory when the variable goes out of
-> scope.
->
-> Fixes: d028219a9f14 ("i3c: master: Add basic driver for the Renesas I3C controller")
-> Signed-off-by: Felix Gu <ustc.gu@gmail.com>
-> ---
->  drivers/i3c/master/renesas-i3c.c | 3 +--
->  1 file changed, 1 insertion(+), 2 deletions(-)
->
-> diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
-> index d9f5b30a4b2f..11f2d6f7c701 100644
-> --- a/drivers/i3c/master/renesas-i3c.c
-> +++ b/drivers/i3c/master/renesas-i3c.c
-> @@ -817,13 +817,12 @@ static int renesas_i3c_i3c_xfers(struct i3c_dev_desc *dev, struct i3c_xfer *i3c_
->  	struct i3c_master_controller *m = i3c_dev_get_master(dev);
->  	struct renesas_i3c *i3c = to_renesas_i3c(m);
->  	struct renesas_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
-> -	struct renesas_i3c_xfer *xfer;
->  	int i;
->
->  	/* Enable I3C bus. */
->  	renesas_i3c_bus_enable(m, true);
->
-> -	xfer = renesas_i3c_alloc_xfer(i3c, 1);
-> +	struct renesas_i3c_xfer *xfer __free(kfree) = renesas_i3c_alloc_xfer(i3c, 1);
+The xfer structure allocated by renesas_i3c_alloc_xfer() was never freed
+in the renesas_i3c_i3c_xfers() function. Use the __free(kfree) cleanup
+attribute to automatically free the memory when the variable goes out of
+scope.
 
+Fixes: d028219a9f14 ("i3c: master: Add basic driver for the Renesas I3C controller")
+Signed-off-by: Felix Gu <ustc.gu@gmail.com>
+---
+Changes in v2:
+- Add cleanup header file to fix Frank's comment.
+- Link to v1: https://lore.kernel.org/r/20260402-renesas-v1-1-369a7d867502@gmail.com
+---
+ drivers/i3c/master/renesas-i3c.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Add include <cleanup.h>
+diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
+index d9f5b30a4b2f..a8a9e89a9710 100644
+--- a/drivers/i3c/master/renesas-i3c.c
++++ b/drivers/i3c/master/renesas-i3c.c
+@@ -8,6 +8,7 @@
+ 
+ #include <linux/bitfield.h>
+ #include <linux/bitops.h>
++#include <linux/cleanup.h>
+ #include <linux/clk.h>
+ #include <linux/completion.h>
+ #include <linux/err.h>
+@@ -817,13 +818,12 @@ static int renesas_i3c_i3c_xfers(struct i3c_dev_desc *dev, struct i3c_xfer *i3c_
+ 	struct i3c_master_controller *m = i3c_dev_get_master(dev);
+ 	struct renesas_i3c *i3c = to_renesas_i3c(m);
+ 	struct renesas_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
+-	struct renesas_i3c_xfer *xfer;
+ 	int i;
+ 
+ 	/* Enable I3C bus. */
+ 	renesas_i3c_bus_enable(m, true);
+ 
+-	xfer = renesas_i3c_alloc_xfer(i3c, 1);
++	struct renesas_i3c_xfer *xfer __free(kfree) = renesas_i3c_alloc_xfer(i3c, 1);
+ 	if (!xfer)
+ 		return -ENOMEM;
+ 
 
-Frank
->  	if (!xfer)
->  		return -ENOMEM;
->
->
-> ---
-> base-commit: bd0f139e5fc11182777b81cefc3893ea508544ec
-> change-id: 20260402-renesas-c6afdaf9bc2e
->
-> Best regards,
-> --
-> Felix Gu <ustc.gu@gmail.com>
->
+---
+base-commit: bd0f139e5fc11182777b81cefc3893ea508544ec
+change-id: 20260402-renesas-c6afdaf9bc2e
+
+Best regards,
+-- 
+Felix Gu <ustc.gu@gmail.com>
+
 
 -- 
 linux-i3c mailing list
