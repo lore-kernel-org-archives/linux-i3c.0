@@ -4,96 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 21E80D3943C
-	for <linux-i3c@archiver.kernel.org>; Thu,  2 Apr 2026 14:52:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BE9AD3943C
+	for <linux-i3c@archiver.kernel.org>; Thu,  2 Apr 2026 15:14:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:MIME-Version:Subject:
 	Date:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3//SUjjeTjSMFz4x1XAgR9sKGJStj1V6NtYATWGlfws=; b=wzn3TVHM5qOIN9
-	Wa5hu0r+jolQ3mzd39+zmJ3OiG+2mQJtcZpeybya1j1xlO9MeSo4Qi/rNePiEt2xMybEc7GQ98CDN
-	/2aL6U5hcxdyVhmwYEdSheZHaZyYgF4kUJSzG9eDVUUfmInnNB7GlJyNafTBQZ8Ytw2nSJwq1XBBq
-	CZOFUiyU1W4oBiapsz4AkC5+ZxLCZhln9LkbYCLWMWCYn3abTpyiwO9jxhrn5vS6HxgdJ5QGTsf+d
-	mus0TDmfZOUo9wXUK6IGTSnwm5eBNgdGVLxADjY2AzO1HgPKOw3hwTfL/+IIAzYIokOl/YypMjbEV
-	s+P3YDv3xm4r61Qmzeqw==;
+	List-Owner; bh=bl/FijWZojqySDO/1nPmL/zr3FzbVhgwc/yUZygR8dw=; b=npDsSRuEHhXo4L
+	01Ku5ay2UQ3nNLoOHlZmjcPZaBWEtBOgm1e1Ymit3uN3H3IDIAVbL3B/db5XwN7bMvyqSsej/Xu+e
+	OSOZgFiaXytL2VwkNxn3GDHPPcEZxGVMSHg8OubAiuek6mA5ZchC7t9o2X4B1WTe6IPJ3wOwVZkh8
+	trmkMu5tqG6wGjyJ/ixZAnQiUpE5WSBkIGEjemqOHCrxP6pE1id0xqiFWUR81rfHTJ0JipspF4M6s
+	kMXPgDwkhLTJWZlEobmhmWLUNFmzHk80yRPi6BLHgu7rZzKxYm03kSu0G9tmmIo9YWsXzU51QcyDJ
+	JznEcHuR7oPCDQKl6YOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w8JPP-00000000Nid-3fuN;
-	Thu, 02 Apr 2026 14:52:35 +0000
-Received: from mail-pf1-x434.google.com ([2607:f8b0:4864:20::434])
+	id 1w8Jks-00000000QYK-03Qz;
+	Thu, 02 Apr 2026 15:14:46 +0000
+Received: from mail-pl1-x62d.google.com ([2607:f8b0:4864:20::62d])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w8JPN-00000000Ni6-0hVw
+	id 1w8Jkp-00000000QXc-0ZrD
 	for linux-i3c@lists.infradead.org;
-	Thu, 02 Apr 2026 14:52:34 +0000
-Received: by mail-pf1-x434.google.com with SMTP id d2e1a72fcca58-82ce49785a0so432737b3a.2
-        for <linux-i3c@lists.infradead.org>; Thu, 02 Apr 2026 07:52:32 -0700 (PDT)
+	Thu, 02 Apr 2026 15:14:44 +0000
+Received: by mail-pl1-x62d.google.com with SMTP id d9443c01a7336-2ab077e3f32so3845255ad.3
+        for <linux-i3c@lists.infradead.org>; Thu, 02 Apr 2026 08:14:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1775141552; x=1775746352; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1775142882; x=1775747682; darn=lists.infradead.org;
         h=cc:to:message-id:content-transfer-encoding:mime-version:subject
          :date:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=i42oyAoWrWhqYiY7EaTfu2aPCqxrJU30Sf3G8iAIZSc=;
-        b=rqfZ7g0cFmxGDZDrxkSvtfw13aQ+Gjkqpen07s/sMaNQJRD25u1sp8aIDAkROzDVam
-         uvJJSknQLXtA/9TIvsFMUpwqSthtc6BDRYs+LzdJMVLj9zELetCiLUS8eqPQiOnpOp3P
-         rUA97bKX9cB4/roMitIoUaQyvdHtDUog4mDdwxYntXjouQDvgnSsgfZeMEsjEGMrPpxk
-         19flXeu4cbQqa331i1oSjT6iVgHkeJCwHXdrkCgMBpfazD3JXjNHSgMg9jehm22msa9e
-         6mEJsrGmeCQa9jM9yg9GWBjWX40RokXS5voHiuypk4+RwJgqJdH2Htb1S9kNSpuszzJS
-         qwfg==
+        bh=SxY2w6DCsYlRi40UkBDrubtuEniANeT5i6QMbLNLZS0=;
+        b=UC4xTlxO1NaFeUqNhQql8bEdFCdXrfhmsXm6ZnmmK4SlYr3uU2E1D6K97a+JiyFiGA
+         ew7jR8fiPsynJVJsW4AQ14DLbjzQgxcJvN/XAPbrLR4IzPjedi5qug7/PTnSabS0u3xJ
+         /OLTqC8sfChC3AdrwWfna7GByt6Ccy/U+RkTaT5bKp95sSwFz2MUQDEvydnqmYTGX5R2
+         ixFmtwm+mieamnBt5ePHwyXLkb8J7vr0Y8KRbpA5EatHjFjfNoWxK64TxiLweU+K+EiC
+         VvTUc/dkQWkKLXNIHUWLvQ4Aqpj+TRUr+7Gxl8KUoy2Zs6orEtocL+T/m0MOR+GOqkfg
+         /BBw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1775141552; x=1775746352;
+        d=1e100.net; s=20251104; t=1775142882; x=1775747682;
         h=cc:to:message-id:content-transfer-encoding:mime-version:subject
          :date:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=i42oyAoWrWhqYiY7EaTfu2aPCqxrJU30Sf3G8iAIZSc=;
-        b=hB3OmBgHhneAyrgmSOKjR2bIeU5EodkXOkL623li6B7Cd5b0cxzvFcF24Yp2/87RJa
-         qEP68uAvsFbDAJSBp1Dc8Cpsq4+/Gv/AfL86CawCTQzLUwseChQ6tLSY+r6JmPotCne8
-         5Zfb1pjKX3rdbI2VnH0RxJ1EHWXLD4vRzs+akWqmGCr0tnk/9wKU1Fm6iLmkizf+M1i4
-         RbkbbMyoygfXoA3blTqf//DVE41TDcVx6FXZriZMYaszoGhciMYAeb9E3E0PE5DlDlc3
-         2Ua0YakltnIIWpyaqvEU+lDSGYwp9ibK2iQJstDgTUzLRZOlAybeu62NzxNZlxhcIHk6
-         lK4A==
-X-Gm-Message-State: AOJu0YyBlVsHBT8ebjI/8UmliBnEovS88yZq27NI0q5IIwi5yl9F133L
-	nHaHehf1Jg163btQty2Fu1IVB6NuXy67EJ6DZqGrbiPXdmMfTarOjaIh
-X-Gm-Gg: ATEYQzwSY8MA2o+zt9NMDhVsga2LMLH9/1zKOTGGKvdUlMbHQGesbUNhwd8nhVyxK/U
-	b25oxLaaMqayTL+12LjB2y7SGRxJOpL2SyYxg2cj2CaeXtx2VKDov8SBBzJEn4gdBDU0OKGMMwI
-	QE9wi1onGxdzuXV2oaA/DL7ssQY8QFb6MYxpwTJ08wm9sURf0PRWVppT6644WFTIa7RGd5RZh+k
-	fMZR+1b8P/iWkWtfuEO9lcFxCXZMWzpWu2RzWv9xOOFo9RqLNsxP34hdBGmPHdUrqg9dt3ij3UT
-	5l+kEYAwKfRJvXlI5k1YK6Pftz/5PHQVZDV5aO1/WPbWEnrAQ3nYpySbbijwEcUSs7sHheh4tsR
-	FTF6wn6pkfjjwH6TgBCansf9b8ecWhoHTXAApUftgxWmP/CkA1BK8YkYNTUmkdh3TggitAQPGVS
-	VArDrEunEh/hB9Xfmer1b5NKKABzqWiR9I58Vi
-X-Received: by 2002:a05:6a00:1a1c:b0:82c:ebae:3cb with SMTP id d2e1a72fcca58-82cebae0a76mr5987896b3a.43.1775141552030;
-        Thu, 02 Apr 2026 07:52:32 -0700 (PDT)
+        bh=SxY2w6DCsYlRi40UkBDrubtuEniANeT5i6QMbLNLZS0=;
+        b=c7svdp1O+E7J5QeNS8LveewSftG3ej161RnSAEs2Xovw4NQ7ghUx9JbQ1djGKo/eW6
+         L/3nH/aRwAo5/EKGe42VOBbSqwKfqsUh01j55Bf0iqrMKP64+eUDgV45FzgpUbLdVlVK
+         3Aug6O0qEbZnhDtFh3F8/25XRR/KCMNQwjRNutn7k/N74hdyG9LJ8BNJk9niZ2LwBsPd
+         aHJSHIyRzuwc4O2OGwNSBIUQjrJxRswKDV7ZnJMcDk0HN7TKJbKjuvLv+ctJpquNpKpy
+         5Ry8704Lr5RIdfCmAY7wYEKKqMoSDXfFXQuuYsH+RJtFKvNLEUaGWqyLDJB+/2MpF13P
+         71vw==
+X-Gm-Message-State: AOJu0Yyy50nWOD+6QSxW2WqLPkQjDlNa2W9ml0kFuoXuv7wrUNyPXiZX
+	HVyM8Gn8lTG/TWxQpPi86GXQXIoVAs5GfP58Mg9HaW1DX/NIHOtidOQdovBXZoWB
+X-Gm-Gg: AeBDies1VjDJqLKerYs0ExbWf2QpGLIVuKp2y1lbjdd+lbuzVxDFZX0zhIuLdtiYYwJ
+	NlK2+uM1cZe3UrX1xIGUu1737R4bANa5RfUFhhf1SX3RQNn4RCBG/vY93WtFcG/nbtxI0JLA09M
+	aQpg1JELWSXE/m+krqA4kgLMcqpMrnfrAQ10Om8UJONF/2YmTsKBikHUNmO6Ue/RXcFKkU6kS+3
+	8NowLjLUg9nvvn6ygGbF4QGY1/G/cylPu9IlZlLR1ZvtQiTgUo9OuH/EPAi0J62ynEiO+qbpIaA
+	d8vlhKTjY9V7t9HL3nYJFOv/RHLRmXBi6zVp8geI8K9/0qn3JymI+vERQ7yzRiNVePTxJpvLKHO
+	qg0Jn59GQqQmApQMosLczCzFtiqxHkUrgLADOs2eifJ8M6HQw2HeEFs/RdjTm8Q5RSU9Dvqs3kP
+	rmZpo2jgwUhvdoEVmhDQgy3RQZmDXeawa0KGVw
+X-Received: by 2002:a17:903:1b50:b0:2b2:4df2:1e69 with SMTP id d9443c01a7336-2b269ab2ddcmr83266315ad.4.1775142881980;
+        Thu, 02 Apr 2026 08:14:41 -0700 (PDT)
 Received: from junjungu-PC.localdomain ([223.167.147.240])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-82cf9c6f0c3sm3282256b3a.43.2026.04.02.07.52.29
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2b27478b64csm35079155ad.30.2026.04.02.08.14.39
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 02 Apr 2026 07:52:31 -0700 (PDT)
+        Thu, 02 Apr 2026 08:14:41 -0700 (PDT)
 From: Felix Gu <ustc.gu@gmail.com>
-Date: Thu, 02 Apr 2026 22:52:26 +0800
-Subject: [PATCH v2] i3c: master: renesas: Fix memory leak in
- renesas_i3c_i3c_xfers()
+Date: Thu, 02 Apr 2026 23:14:38 +0800
+Subject: [PATCH v2] i3c: dw: Fix memory leak in dw_i3c_master_i3c_xfers()
 MIME-Version: 1.0
-Message-Id: <20260402-renesas-v2-1-f7e8cf73c7df@gmail.com>
-X-B4-Tracking: v=1; b=H4sIAKmCzmkC/2XMQQ7CIBCF4as0sxYDqNS68h6mixGGdhILBgzRN
- Nxd7Nbl//LyrZApMWW4dCskKpw5hhZ614GdMUwk2LUGLbWRR6lFokAZs7AGvUM/3K0maO9nIs/
- vTbqNrWfOr5g+G1zUb/03ihJKHMyAvTub/iT1dVqQH3sbFxhrrV/ozOM7ngAAAA==
-X-Change-ID: 20260402-renesas-c6afdaf9bc2e
-To: Wolfram Sang <wsa+renesas@sang-engineering.com>, 
- Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>, 
- Alexandre Belloni <alexandre.belloni@bootlin.com>, 
- Frank Li <Frank.Li@nxp.com>
+Message-Id: <20260402-dw-i3c-2-v2-1-aa6c81d392da@gmail.com>
+X-B4-Tracking: v=1; b=H4sIAN2HzmkC/23MQQ6CMBCF4auQWTumnQKKK+9hWEA7hUkETGuqh
+ nB3K2uX/8vLt0LkIBzhUqwQOEmUZc5BhwLs2M0Do7jcQIpqVSpC90IxFgnPXpNx7JumJ8j3R2A
+ v7526tblHic8lfHY56d/6B0kaNfaVUc1J1VXJ9jpMndyPdpmg3bbtC+yOEY6gAAAA
+X-Change-ID: 20260402-dw-i3c-2-8f123def99b2
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ Frank Li <Frank.Li@nxp.com>, Aniket <aniketmaurya@google.com>
 Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
  Felix Gu <ustc.gu@gmail.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1775141550; l=1726;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1775142880; l=2156;
  i=ustc.gu@gmail.com; h=from:subject:message-id;
- bh=Gc0CJ76TP9tPyD/jOJJbqcXy0deV2iVAeV9vSIr2vgk=;
- b=mB+J5g//XKRZJo5mWiLXJEwM7rUsvEUwvi2zU+Mz4ETkF96KNLuWce1pdssXohriZjBSDHobM
- wfZ+4mpKi6IArPj0SF0JxiMne67Ht6WJZPR1qOA4StWS0mXplb4YE9g
+ bh=tkVOEMPd2UVvi7ufnqgFQQBx4xsxicEdqBqOqe29Zco=;
+ b=XErUWn9qgG/pW/leCpGYJvSs7Q5dtfxKuSM6bAHAdwfUJoR1ZwYQHChU7j80buv2qHVnNUM5R
+ jFin8KZ1sh0B3lNvytqWLe2cR537xeu7RDK9MXKpz6vOuaIXhlKyRdn
 X-Developer-Key: i=ustc.gu@gmail.com; a=ed25519;
  pk=fjUXwmjchVN7Ja6KGP55IXOzFeCl9edaHoQIEUA+/hw=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260402_075233_212384_C44DEEF9 
-X-CRM114-Status: GOOD (  13.14  )
+X-CRM114-CacheID: sfid-20260402_081443_202702_40DD7F3D 
+X-CRM114-Status: GOOD (  12.54  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,26 +107,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The xfer structure allocated by renesas_i3c_alloc_xfer() was never freed
-in the renesas_i3c_i3c_xfers() function. Use the __free(kfree) cleanup
-attribute to automatically free the memory when the variable goes out of
-scope.
+The dw_i3c_master_i3c_xfers() function allocates memory for the xfer
+structure using dw_i3c_master_alloc_xfer(). If pm_runtime_resume_and_get()
+fails, the function returns without freeing the allocated xfer, resulting
+in a memory leak.
 
-Fixes: d028219a9f14 ("i3c: master: Add basic driver for the Renesas I3C controller")
+Use the __free(kfree) cleanup attribute to automatically free the memory
+when the variable goes out of scope.
+
+Fixes: 62fe9d06f570 ("i3c: dw: Add power management support")
 Signed-off-by: Felix Gu <ustc.gu@gmail.com>
 ---
 Changes in v2:
-- Add cleanup header file to fix Frank's comment.
-- Link to v1: https://lore.kernel.org/r/20260402-renesas-v1-1-369a7d867502@gmail.com
+- Switch to use __free(kfree) to automatically free the memory.
+- Link to v1: https://lore.kernel.org/r/20260402-dw-i3c-2-v1-1-b530970654ec@gmail.com
 ---
- drivers/i3c/master/renesas-i3c.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/i3c/master/dw-i3c-master.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
-index d9f5b30a4b2f..a8a9e89a9710 100644
---- a/drivers/i3c/master/renesas-i3c.c
-+++ b/drivers/i3c/master/renesas-i3c.c
-@@ -8,6 +8,7 @@
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index d6bdb32397fb..2e31228b3809 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -7,6 +7,7 @@
  
  #include <linux/bitfield.h>
  #include <linux/bitops.h>
@@ -137,25 +137,35 @@ index d9f5b30a4b2f..a8a9e89a9710 100644
  #include <linux/clk.h>
  #include <linux/completion.h>
  #include <linux/err.h>
-@@ -817,13 +818,12 @@ static int renesas_i3c_i3c_xfers(struct i3c_dev_desc *dev, struct i3c_xfer *i3c_
+@@ -924,7 +925,6 @@ static int dw_i3c_master_i3c_xfers(struct i3c_dev_desc *dev,
  	struct i3c_master_controller *m = i3c_dev_get_master(dev);
- 	struct renesas_i3c *i3c = to_renesas_i3c(m);
- 	struct renesas_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
--	struct renesas_i3c_xfer *xfer;
- 	int i;
+ 	struct dw_i3c_master *master = to_dw_i3c_master(m);
+ 	unsigned int nrxwords = 0, ntxwords = 0;
+-	struct dw_i3c_xfer *xfer;
+ 	int i, ret = 0;
  
- 	/* Enable I3C bus. */
- 	renesas_i3c_bus_enable(m, true);
+ 	if (!i3c_nxfers)
+@@ -944,7 +944,7 @@ static int dw_i3c_master_i3c_xfers(struct i3c_dev_desc *dev,
+ 	    nrxwords > master->caps.datafifodepth)
+ 		return -EOPNOTSUPP;
  
--	xfer = renesas_i3c_alloc_xfer(i3c, 1);
-+	struct renesas_i3c_xfer *xfer __free(kfree) = renesas_i3c_alloc_xfer(i3c, 1);
+-	xfer = dw_i3c_master_alloc_xfer(master, i3c_nxfers);
++	struct dw_i3c_xfer *xfer __free(kfree) = dw_i3c_master_alloc_xfer(master, i3c_nxfers);
  	if (!xfer)
  		return -ENOMEM;
  
+@@ -995,7 +995,6 @@ static int dw_i3c_master_i3c_xfers(struct i3c_dev_desc *dev,
+ 	}
+ 
+ 	ret = xfer->ret;
+-	dw_i3c_master_free_xfer(xfer);
+ 
+ 	pm_runtime_put_autosuspend(master->dev);
+ 	return ret;
 
 ---
 base-commit: bd0f139e5fc11182777b81cefc3893ea508544ec
-change-id: 20260402-renesas-c6afdaf9bc2e
+change-id: 20260402-dw-i3c-2-8f123def99b2
 
 Best regards,
 -- 
