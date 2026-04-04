@@ -4,68 +4,96 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15A31E85379
-	for <linux-i3c@archiver.kernel.org>; Fri,  3 Apr 2026 16:24:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C53D7E88D66
+	for <linux-i3c@archiver.kernel.org>; Sat,  4 Apr 2026 10:32:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HxIsrsNMxgy6WtnwwjG0ghoQl616SR0ez+RFPBR1h3E=; b=LolGzMH/dBQwmE
-	D7cynTU7zk3GNuw1HhCWcJt3PtrtELEgkgJDLJNIOSqVZWJwQTUZhqPIo3BwIA9p5+EeFcGw0xW5D
-	TjkX+CYcx+tRoQWGRE9qIWM552FLvPiX8bjlc8xMt7yANX86fZtRMfVyrcjwo50c/REUyadF3Tn8H
-	O3HltzPO8UXTqmjep3xcPYUTWwO6i4R/fkvTm2PvwM56wG9iwXYYw7QZpTESTRXTz/hfjr0RjbsZ4
-	/rMNSpxRgB1JpcgRTgQvbcWbubORGa3jWTHzrzA07k2XkE7E4qLrynX0WfjibJeuUhgNlvnWV35Fd
-	7A7y82CUAiMBeT5KaB7A==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ZpdcVyZY6TlaAfEcg+4F12iswSmjKTKS1f80Dwi2KI8=; b=VnpFqAzFtDLEUH
+	eWrjvgyg3VjPrUeUIL/BLFvVKTYtDnaHHD4HuSFmN3E1O/oY/myE2a/qfT1U7y/yLvll1MXkb+pq6
+	YfDhew5Ag3bPDXkw1F5j3gF9XALqk9cFRQSWlIHrORTtoscmjzKG1b7wVapfR44J3l2EMOhdTwQ/H
+	8XAmJFsxRV3SWFoWKtD656L/eLy68/VIe0L7E5qyFb1jSUQDU3XZZgjx2EavVGlu9MLxLR3RzxxJv
+	IcEYi3ij0eRyAywNVkshbeT/qR1N0x9IiQOEes0zQNd+7ymubt9dc82D66T87X1XujjGo55JjTOIp
+	X3Ul+rcIsYmynrNSvKrw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w8hKF-00000002JuW-3RYB;
-	Fri, 03 Apr 2026 16:24:51 +0000
-Received: from smtpout-04.galae.net ([185.171.202.116])
+	id 1w8yJH-00000003Nu4-1I0m;
+	Sat, 04 Apr 2026 10:32:59 +0000
+Received: from mail-pf1-x432.google.com ([2607:f8b0:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w8hKC-00000002Jti-2olp
+	id 1w8yJE-00000003NtS-3Epx
 	for linux-i3c@lists.infradead.org;
-	Fri, 03 Apr 2026 16:24:50 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-04.galae.net (Postfix) with ESMTPS id E519AC59F5E;
-	Fri,  3 Apr 2026 16:25:17 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id D7A90603C1;
-	Fri,  3 Apr 2026 16:24:45 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id CFDB5104500FB;
-	Fri,  3 Apr 2026 18:24:42 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1775233485; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 content-transfer-encoding:in-reply-to:references;
-	bh=53h5lBCesrRbN58GkWw0dPf7qTDPSdaW29s2knM9AY8=;
-	b=jxUjCiEkIBuUy7VstcorIWgzSFDtFWxoH6PKRen+aJKF8kONNxoKnOuXbIzj0vEPrp+H1N
-	d0CFHUknyrRZTl2DSNDyi2IEJD5uZP3fWARsFzwzZnCNQw0mhwhI2xZO9qumfDujTKxKX8
-	4HbraXWSO7D2GpZgBnXMUR1o3oFtdwGFVuBqXVvUl7lVbsT6rJasQhwi/Q0cBeIb25bnDp
-	h6/YB3wp0gd/pvm3bR7+tjoWxneWJNAK7QM5j3osKTCXprhiv+CYRzAGgmy7z9wYCXLKQ4
-	DKgYd6ftC0+csFs2HCBqyittjHnXFkT2Ygd7mXI/jGNvDtz70zMc9anaJocfjw==
-Date: Fri, 3 Apr 2026 18:24:42 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Jeremy Kerr <jk@codeconstruct.com.au>
-Cc: "Datta, Shubhrajyoti" <shubhrajyoti.datta@amd.com>,
-	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
-	"git (AMD-Xilinx)" <git@amd.com>, Frank Li <Frank.Li@nxp.com>,
-	Joel Stanley <joel@jms.id.au>,
-	"linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>
-Subject: Re: [PATCH v2] i3c: dw-i3c-master: Fix IBI count register selection
- for versalnet
-Message-ID: <20260403162442668f12b7@mail.local>
-References: <20260401084430.436059-1-shubhrajyoti.datta@amd.com>
- <a9b3a99f42bb9d092e95b35290cf4043fc780d3f.camel@codeconstruct.com.au>
- <LV5PR12MB9828D700D168803CBD022A708151A@LV5PR12MB9828.namprd12.prod.outlook.com>
- <5cb83afcd5340a108fd5a7346494ccf73752cc27.camel@codeconstruct.com.au>
+	Sat, 04 Apr 2026 10:32:58 +0000
+Received: by mail-pf1-x432.google.com with SMTP id d2e1a72fcca58-82ce49785a0so1117540b3a.2
+        for <linux-i3c@lists.infradead.org>; Sat, 04 Apr 2026 03:32:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1775298775; x=1775903575; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=KuulWYX46kMU+HsWXol+iSxeRr4jFO4h7JDESur4MF8=;
+        b=PJI74QImLUbJ8CZRtkr0hj97pzvGx1z+cB18g1HqAMy+RHMIXAqjkcgdFWfpzMV1Dl
+         xH8nhOA/4D7fKbObDK1VBeX5miybmaqaEsoomIFwBcZYX12NP11fQ/bRZ2xBUFmq0pe0
+         CPevugoxP2qxqlAVOJRLwTk1pbm3w0jJwady4Ysoootv9kn2Ko1DKVqQ4FChAgMcYDrU
+         XJz8/BdkvsPyeY9OHJg6NXS4umw0WAaTQK1lllUmOx4e1/yQqBfrzXjHvlqYQRd7z0bq
+         D/GKQPYQLoAnoAX16Qi9tTXIsTVQ5vgrAJFL8qJjsJ8xetenzhcr0KTsQHHwq27KYVrS
+         FiGw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1775298775; x=1775903575;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=KuulWYX46kMU+HsWXol+iSxeRr4jFO4h7JDESur4MF8=;
+        b=mWNv3vK+ictEQW30ELcBJVt2dIgzh3/y2yekpcF/3EuwqXH1xRu863q4I36uRysJpE
+         evkE/vdHy8uoXhvMOLaM9yrgCJAUT3/dS+Yv9vwto1HPj3sLwqPnI5UF4hF8w8GctPfK
+         BlsL6RsmEALvsD2MZ7WLD2/+4VbZvgv2JFkdLV2a22bDmxDDHgsyCMqmA9xV5V+Pi84X
+         A1afNS6EkNwXGnPYUqpadr8H1CpFrz4GevlziQg7PqGE8AXhPfSL7qO1pvIh6hpqcA89
+         9Hsmjkrc1qWxpIVu+PrF9dbJ5g3BZxRm0xNCrYSXkwpdTGIf11HtZQ/Kabr094rQn637
+         Oxxw==
+X-Gm-Message-State: AOJu0YxrEJP34d8IfXPOK4CVhJH4f1EzaUlKPHdBaAd6VZGye/NPKGCU
+	CKRqq5tidlFFYDMjV7iYaP3hROIS1YSSCvHaz7uwpomG9kEZzwgLSuTI
+X-Gm-Gg: AeBDietvuUjFyOmPgy9bEPZl+aIQjEjGSn5Zfequ5Ajc0C2S3wUJGJ0ZKuL/+WO5Kbf
+	NB6k4wwrX8K7oUj8Vt3yWeuUx9IKjQU9HqUtgU9wlWrwsO+K6Fg0fv4GM9zxtOV8RuI74FtASt1
+	O+slySLB7NC6AIwwrCmNAfiEPId/E9NGJ5IO5ukfutKmBNJbF2gCucklQkXetzQbZ+/eYLOYLr/
+	MTrqVhncfJUOuM3+dGo3R5Fr01XdIa1V+QklRLHka48c1d7YoOFAc3lF+umwBmv8E60Ba8JKODv
+	h8m09u4taD6iSXaTqqmsG18m2Rw9kwlUTuB3MiXSAxy71AolLhQMP1fiomRouOqBwgMPMM0ErPS
+	i86HxOluVdhjIidkuRAQawQL7E5hoy/LIDkmd8jegV06QnsS/Dx7S9fG6xXNPyPoZYpDKcyXrDS
+	3qKjRaPd/5B3pJKGFgZZckgHj4ec2rJJb09DTG
+X-Received: by 2002:a05:6a00:23d5:b0:827:2ed6:888f with SMTP id d2e1a72fcca58-82d0dbe526emr5953416b3a.54.1775298775048;
+        Sat, 04 Apr 2026 03:32:55 -0700 (PDT)
+Received: from junjungu-PC.localdomain ([223.167.147.240])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-82cf9b27064sm10475789b3a.9.2026.04.04.03.32.53
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 04 Apr 2026 03:32:54 -0700 (PDT)
+From: Felix Gu <ustc.gu@gmail.com>
+Subject: [PATCH v3 0/2] i3c: dw: Fix memory leak in
+ dw_i3c_master_i3c_xfers()
+Date: Sat, 04 Apr 2026 18:32:29 +0800
+Message-Id: <20260404-dw-i3c-2-v3-0-8f7d146549c1@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <5cb83afcd5340a108fd5a7346494ccf73752cc27.camel@codeconstruct.com.au>
-X-Last-TLS-Session-Version: TLSv1.3
+X-B4-Tracking: v=1; b=H4sIAL3o0GkC/3WMQQ6CMBBFr2JmbU07BaSuvIdxUdoBJhEwrakaw
+ t0trFzo8v3892aIFJginHYzBEoceRoz6P0OXG/HjgT7zIASK1lIFP4pWDuBom4Vak+tMQ1Cvt8
+ DtfzaUpdr5p7jYwrvrZzUuv6IJCWUaEotzVFWZUHu3A2Wbwc3DbBGEv4TMYvWVq5WXhv09ltcl
+ uUDU5KMDNkAAAA=
+X-Change-ID: 20260402-dw-i3c-2-8f123def99b2
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ Frank Li <Frank.Li@nxp.com>, Aniket <aniketmaurya@google.com>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Felix Gu <ustc.gu@gmail.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1775298773; l=832;
+ i=ustc.gu@gmail.com; h=from:subject:message-id;
+ bh=x9Q1Dytg1jpgcMbrK9wyOjYFHtU2jrei+y4w29mksxQ=;
+ b=pq07I8tYGpZ4QcIeSD22jf4wVFOqYrI22x8FtryDENscUB9aCwGvb+Q8Dl2H7qDP6/7chB5JP
+ 4zERcYsb1peCLkdjqdKv+TPW81rRiuzfb0NeVO7A1RVUTsdi517uyu5
+X-Developer-Key: i=ustc.gu@gmail.com; a=ed25519;
+ pk=fjUXwmjchVN7Ja6KGP55IXOzFeCl9edaHoQIEUA+/hw=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260403_092448_889467_598ED478 
-X-CRM114-Status: GOOD (  28.54  )
+X-CRM114-CacheID: sfid-20260404_033256_817229_A0D0E0E8 
+X-CRM114-Status: UNSURE (   6.37  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,58 +105,39 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-SGVsbG8sCgpPbiAwMi8wNC8yMDI2IDE2OjMyOjMwKzA4MDAsIEplcmVteSBLZXJyIHdyb3RlOgo+
-IEhpIFNodWJocmFqeW90aSwKPiAKPiA+ID4gSG93IGFyZSB5b3UgYmluZGluZyB0aGUgZHJpdmVy
-IHRvIHRoaXMgZGV2aWNlPyBBcmUgeW91IHVzaW5nIGEgdW5pcXVlIE9GCj4gPiA+IGNvbXBhdGli
-bGUgc3RyaW5nLCBvciBzb21ldGhpbmcgQUNQSS1iYXNlZD8KPiA+ID4gCj4gPiA+IC4uLiBhbmQg
-aWYgdGhhdCBjYW4gYmUgc3BlY2lmaWMgdG8gdGhpcyBoYXJkd2FyZSBpbnN0YW5jZSwgd291bGQg
-dGhhdCBiZSBhbgo+ID4gPiBlZmZlY3RpdmUgbWVjaGFuaXNtIHRvIHNlbGVjdCB0aGUgSUJJIHJl
-YWQgbWV0aG9kIGluc3RlYWQ/Cj4gPiBIaSBKZXJlbXksCj4gPiAKPiA+IFZlcnNhbE5ldCBjdXJy
-ZW50bHkgdXNlcyB0aGUgZ2VuZXJpYyAic25wcyxkdy1pM2MtbWFzdGVyLTEuMDBhIgo+ID4gY29t
-cGF0aWJsZSBzdHJpbmcg4oCUIHRoZXJlIGlzIG5vIHVuaXF1ZSBjb21wYXRpYmxlIHN0cmluZyBm
-b3IgdGhpcwo+ID4gaGFyZHdhcmUgaW5zdGFuY2UuIFRoZSBEVFMgwqDCoCBlbnRyeSBsb29rcyBs
-aWtlOgo+ID4gCj4gPiDCoCBjb21wYXRpYmxlID0gInNucHMsZHctaTNjLW1hc3Rlci0xLjAwYSI7
-Cj4gCj4gWW91IHNob3VsZCAqYWx3YXlzKiBoYXZlIGEgdW5pcXVlIGNvbXBhdGlibGUgc3RyaW5n
-IGZvciBlYWNoIGRldmljZQo+IGluc3RhbmNlLCBpZiB0aGVyZSBjYW4gYmUgYW55IHZhcmlhdGlv
-biBpbiBiZWhhdmlvdXJzIGZyb20gdGhhdCBnZW5lcmljCj4gb25lICh3aGljaCB5b3UgY2VydGFp
-bmx5IGRvIGhhdmUgaGVyZSkuCj4gCj4gWW91IGNhbiBzdGlsbCBmYWxsLWJhY2sgb24gYSBnZW5l
-cmljIG9uZSwgYnV0IHVzaW5nIHRoYXQgYXMgeW91ciBvbmx5Cj4gY29tcGF0aWJsZSB2YWx1ZSBt
-ZWFucyB5b3UgY2FuJ3QgZG8gZGV2aWNlLXNwZWNpZmljIGJlaGF2aW91cnMgaW4geW91cgo+IGRy
-aXZlciwgYXMgeW91IGhhdmUganVzdCBmb3VuZC4KPiAKPiA+IMKgIFdlIGNvdWxkIGludHJvZHVj
-ZSBhIFZlcnNhbE5ldC1zcGVjaWZpYyBjb21wYXRpYmxlIHdpdGggYSBnZW5lcmljIGZhbGxiYWNr
-Ogo+ID4gCj4gPiDCoCBjb21wYXRpYmxlID0gInhsbngsdmVyc2FsbmV0LWR3LWkzYy1tYXN0ZXIi
-LCAic25wcyxkdy1pM2MtbWFzdGVyLTEuMDBhIjsKPiAKPiBZZXMsIHlvdSB3YW50IHRoYXQgYW55
-d2F5Lgo+IAoKSSBhZ3JlZSB5b3UgbmVlZCBhIFZlcnNhbE5ldC1zcGVjaWZpYyBjb21wYXRpYmxl
-IHN0cmluZy4KCj4gPiDCoCBhbmQgcGFzcyBhIHF1aXJrIGZsYWcgdmlhIG9mX2RldmljZV9pZC5k
-YXRhIHRvIHNlbGVjdCB0aGUgSUJJIHJlYWQgbWV0aG9kLgo+IAo+IEV4YWN0bHksIGFuZCB0aGVy
-ZSBpcyBhbHJlYWR5IHRoZSBzdHJ1Y3QgZHdfaTNjX2RydmRhdGEgdG8gaGVscCB3aXRoCj4gdGhp
-cy4KPiAKPiA+IEhvd2V2ZXIsIHRoZSBwcm9iZS10aW1lIGRldGVjdGlvbiBhdm9pZHMgaGF2aW5n
-IHRvIGVudW1lcmF0ZSBhbGwgYWZmZWN0ZWQKPiA+IHZhcmlhbnRzIOKAlCB0aGUgSUNfSEFTX0lC
-SV9EQVRBPTAgY29uZmlndXJhdGlvbiBpcyBhIHN5bnRoZXNpemFibGUKPiA+IG9wdGlvbiBpbiB0
-aGUgSVAgYW5kIG1heSBhcHBlYXIgaW4gb3RoZXIgU29DcyB1c2luZyB0aGUgc2FtZSBjb3JlLgo+
-ID4gCj4gPiBEbyB5b3UgaGF2ZSBhIHByZWZlcmVuY2U/IElmIHRoZSBEVFMgY2hhbmdlIGlzIGFj
-Y2VwdGFibGUsIEkgY2FuIGdvCj4gPiB3aXRoIHRoZSBjb21wYXRpYmxlICsgbWF0Y2gtZGF0YSBh
-cHByb2FjaAo+IAo+IFRoYXQgd291bGQgY2VydGFpbmx5IGJlIG15IHJlY29tbWVuZGF0aW9uLgo+
-IAo+IElmIGl0J3MgYSBzeW50aGVzaXNhYmxlIG9wdGlvbiwgaXQgbWF5IGV2ZW4gYmUgd29ydGgg
-YWRkaW5nIGFzIGEgZmxhZyB0bwo+IHRoZSBiaW5kaW5nIGRlZmluaXRpb24gKGFsb25nIHdpdGgg
-dGhlIHNhbWUgZm9yIG90aGVyIG9wdGlvbnMgdGhhdCBtaWdodAo+IGJlIHByZXNlbnQpLiBUaGlz
-IHdvdWxkIG1lYW4geW91IGRvbid0IG5lZWQgYS1wcmlvcmkga25vd2xlZGdlIG9mIHRoZQo+IG1h
-cHBpbmcgb2YgY29tcGF0aWJsZSBzdHJpbmdzIHRvIHRoZWlyIHN5bnRoZXNpcyBvcHRpb25zLgo+
-IAo+IEkgZG9uJ3QgaGF2ZSBhbnkgYWNjZXNzIHRvIGRvY3VtZW50YXRpb24gb24gdGhvc2Ugb3B0
-aW9ucyB0aG91Z2gsIHNvCj4gY2FuJ3QgYmUgb2YgbXVjaCBoZWxwIHdpdGggZG9pbmcgdGhhdC4K
-PiAKPiA+IEhvd2V2ZXIgSSB0aG91Z2h0IHRoYXQgZGV0ZWN0aW5nIGl0IHdpbGwgYmUgaGVscGZ1
-bCBmb3IgYmFja3dhcmQgY29tcGF0aWJsZS4KPiAKPiBHaXZlbiBpdCBkb2Vzbid0IHdvcmsgYXQg
-dGhlIG1vbWVudCwgdGhlcmUgc2hvdWxkbid0IGJlIGFueSBiYWNrd2FyZHMKPiBjb21wYXQgY29u
-Y2VybnMsIEkgdGhpbms/CgpJIGd1ZXNzIHRoZSBwcm9wb3NlZCBzb2x1dGlvbiB3b3JrcyBhcyB3
-ZSBjYW4gcHJvYmUgdGhlIEhXIHRvIGtub3cgaG93Cml0IHdhcyBzeW50aGVzaXNlZC4gSXQncyBn
-b29kIHRvIGJlIGFibGUgdG8gYXZvaWQgaGF2aW5nIGRldmljZSB0cmVlCnByb3BlcnRpZXMgZm9y
-IHRoaW5ncyB3ZSBjYW4gZGlzY292ZXIuCgoKLS0gCkFsZXhhbmRyZSBCZWxsb25pLCBjby1vd25l
-ciBhbmQgQ09PLCBCb290bGluCkVtYmVkZGVkIExpbnV4IGFuZCBLZXJuZWwgZW5naW5lZXJpbmcK
-aHR0cHM6Ly9ib290bGluLmNvbQoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNj
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1pM2MK
+Signed-off-by: Felix Gu <ustc.gu@gmail.com>
+---
+Changes in v3:
+- Refine the commit message.
+- Simplify the xfer cleanup using __free(kfree).
+- Link to v2: https://lore.kernel.org/r/20260402-dw-i3c-2-v2-1-aa6c81d392da@gmail.com
+
+Changes in v2:
+- Switch to use __free(kfree) to automatically free the memory.
+- Link to v1: https://lore.kernel.org/r/20260402-dw-i3c-2-v1-1-b530970654ec@gmail.com
+
+---
+Felix Gu (2):
+      i3c: dw: Fix memory leak in dw_i3c_master_i3c_xfers()
+      i3c: dw: Simplify xfer cleanup with __free(kfree)
+
+ drivers/i3c/master/dw-i3c-master.c | 38 +++++++++-----------------------------
+ 1 file changed, 9 insertions(+), 29 deletions(-)
+---
+base-commit: bd0f139e5fc11182777b81cefc3893ea508544ec
+change-id: 20260402-dw-i3c-2-8f123def99b2
+
+Best regards,
+-- 
+Felix Gu <ustc.gu@gmail.com>
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
