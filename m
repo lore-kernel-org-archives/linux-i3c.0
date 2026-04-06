@@ -4,104 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3FAE1EF4EAE
-	for <linux-i3c@archiver.kernel.org>; Mon,  6 Apr 2026 06:52:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A2909EF4EDE
+	for <linux-i3c@archiver.kernel.org>; Mon,  6 Apr 2026 12:43:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UdEnRzENZTPXDYv+MTxKWq9itm1PpyqZgyZPBB0jxBY=; b=elxflE/16k7TCe
-	UekTSQuDgsoLH1zGPKbtEZzVcxHjYsQoYfd01G+/y8+cJ/5ZLwiKgTu9BmuA8rVU3UFcw5/FS6Yfd
-	kkFSM3HWcCAxuKQFDQuH5HsHTTmWhxqfttZe9XjyipJV9pg86VuAgGDIjgVeleOyg4l9mqPU9PfcP
-	FtNIb2Ng8IF5jZ7skNiUP5lhQUNLFHbcqVI6O7GP9sw5eOY7aZTwdjFZec9kb8J3EoQAJuf7tBYNl
-	VtKFHL/5KSa/M9hXFf2A/3+/edXrhQT7GisvDIaW6SP/ppsOZJ0WlxJFbPGus/B54IXnu45gvmvL9
-	rUR9tHfR+IIZKVOJstyw==;
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:MIME-Version:Message-Id:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oVrpJNbA8JDQvZSExoue4X6lhzxOMnNjxAn9uR52kkM=; b=2R3xhzKEP4HRyf
+	7hA+yjG8BJAksBdQ/ZBsLWK8Ut+UTBPoYFeBdRmX4cZofWx5IqHMVzMxHXtTuzYiy9RbcZSxh9Nhj
+	9PiZwHdq5QsLyet7huJu8Bo//FvfQdCB6de40m3e+V95VdsCf83cXufSXM0A6yTtEHHMO/F25el03
+	lWfTmOU7E5l5Arwwfp4rHEgX3PJEqDczlbdtEJ0o0zhTmK4Ur1j0JvzzHTIiToIlraw6uX/+qHhdr
+	izzyMUynVUxixT+upQS0epffnsS28MKwoNd7QnPMkwqL39IyIsg89dzap2aqqgizsvVKcfP5y90K1
+	OicEpBpCctYujcIUTTkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w9dou-00000004rtd-3lW4;
-	Mon, 06 Apr 2026 06:52:24 +0000
-Received: from mail-pl1-x635.google.com ([2607:f8b0:4864:20::635])
+	id 1w9jIa-000000057MS-0TP3;
+	Mon, 06 Apr 2026 12:43:24 +0000
+Received: from mail-pl1-x629.google.com ([2607:f8b0:4864:20::629])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w9dos-00000004rtJ-1jST
+	id 1w9jIX-000000057M4-3qdM
 	for linux-i3c@lists.infradead.org;
-	Mon, 06 Apr 2026 06:52:23 +0000
-Received: by mail-pl1-x635.google.com with SMTP id d9443c01a7336-2b25cf1b5f0so22552195ad.3
-        for <linux-i3c@lists.infradead.org>; Sun, 05 Apr 2026 23:52:21 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1775458341; cv=none;
-        d=google.com; s=arc-20240605;
-        b=VBh9bVuwkO9dTxJjqVRCxddiIHRcf4qVY1bRfSYfbnKlu1yMfWmzDU8fl2gHXxfICC
-         cyo/2sBCSRY3GhCD0hyLL8nmMNqBgUuV0D3tjB4kdzZ+8uSj4pLvEf7fXdu8gNTBo7Q3
-         xNL8GQi14NScwA3erOObI7NEi6/jjuAyO8ee4qxMC0TMj60WspEHf7RHcfsFlPLW7XnP
-         vHFrQz1RVWRN0d7jsytPRMaP2Cem4VysDuEdquNQr1Qb7MgivmBDvP5DhWAQ/944vF/h
-         3NMBOhl4U+JpL8SLbhtbz37QiWzCfuLViT05iKLHBZzj6DVJzAA2U+00YE7FFIdAEs7M
-         peeQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=dOHFdjMgn0tlpNSZ65+Jd2ij6X/dY0AeNmJZm09jjKQ=;
-        fh=V3LC+ys9ZWURRBsewBwuvA9djaqNqzpItpEgRYSMFXE=;
-        b=ZS8pDQysgvfAPQNg+gD8B6fp24jIX+luUgi7/6PF5gfNbyBW0GprqnUUb2hi5tdcqd
-         4kq9GBRckpREUt6f0+73BTvTxwG/LeAizeM82jsF8yD4H7WpSu4DbP8mapeXLkQoA7G+
-         yBhgQGxxr65M4fFeH4lEn9eo3I/YMTgND4FjIjUGXPEkjNDVRz2kR2GTywpFa87ErleG
-         gsb9Rbva+zj0nCZYCINhNMfB0Dk7XpyRNMdkYLlereo/sNFjg39jD9D92Jva+AdQupKA
-         IVagB9fGxDHbhV/WGSKjT3dblItJWzjAYss3knXKBTCzhjIYxF55E08VNUXNxY4Rc2qc
-         TUcA==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	Mon, 06 Apr 2026 12:43:23 +0000
+Received: by mail-pl1-x629.google.com with SMTP id d9443c01a7336-2b2494440f3so13472475ad.2
+        for <linux-i3c@lists.infradead.org>; Mon, 06 Apr 2026 05:43:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1775458341; x=1776063141; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=dOHFdjMgn0tlpNSZ65+Jd2ij6X/dY0AeNmJZm09jjKQ=;
-        b=YY0b/WSrtXAGS95sr0J+ryIYu9QyQbeuhp38sJPZsLCqLHpPoEMstrdO5sBspryE8A
-         PwPMw7bV8GMvORyNl/1IdWG2Pjg3ZUgm5Y+DzWVOY8Az7RL/IK8gUWAKcDb1Vuat7CGx
-         Xg1yHwF9D7Q14DdoXFihAEs8ZlNYJRZmSQFZRpwxnAtPz3BAccj4M75NH/8rK7FCM1Go
-         jD7TvGutOIOVK43RMwkbPGaUELbUQSBCI/xuXVUON5iP8bdcdCEIzw/3RVsngJRxvf2N
-         05a3fvKav0mzvfQIq3beCr8LHh7uYSp2XJBAu+ATamai0bzk4jgVQS6rD9Gesm0MSLzW
-         FMpQ==
+        d=gmail.com; s=20251104; t=1775479401; x=1776084201; darn=lists.infradead.org;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=/BQnaz219jqPtrPhiYSPbcWuRkUa+sPXsIfTmKKXwWM=;
+        b=GtIicfg0RZJdl0BYnqDtavwLyUedNklpqFiMC8LDogPxadnb0WFSMcwD8a0gDQgPRq
+         +xuiiX/8SiWjC2KYQjk5Z+5spPoKxUEFK3NGp/nNdza4+88CcDwXBPkstv/6jsmsbWIg
+         F05BvqRpeyr+joIVuJaZKEZ4KKnvthC/Tk41z/3vAQ+3jjJsNfMmHFZNrNFpjY8j7QpW
+         vGlbM5YuUh6DtoMq1h/bEsQGrlecCJzIDiX5X9XKRENd0+K2EtwIJcscd+mxg+UWmLqK
+         H9wpxTBzRSXaYS5vbR0ox/3WByyT8M7HsQLpkrIST8lHgrD4YpSMT4abaJglMs1gVFQ7
+         0dQg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1775458341; x=1776063141;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=dOHFdjMgn0tlpNSZ65+Jd2ij6X/dY0AeNmJZm09jjKQ=;
-        b=UhK1d3UXM6P9JqtPmcPX8ED8GWUxZ6dDuwSZl70ujULXAMd0PrF13h5yhV/2Ox2SGV
-         mdMtKzS4mwLviisAnt4qKRdjmGPqSuJC7VLOx6/KLIvVziqWgCWM4SbCqE75l4ajMMLK
-         QTVongqu7WWXyDgk9EpAOvxcK3pHXVwsyTndHRgXDJEQaI8tpH7Bco7cjkgrlgZmsmMx
-         m8/GIgGlKlaGei1CjfSwtOU5ideTGT1MWXxXMBwkU2zp0E7sg+kXxVAANS9qWVhwRlmk
-         9//mkuialqzcVRbRXZOAfYZ6WSw6PtKAO/ZSs8nIK7vdHOBOvinvUHSHPvw4q30rSfIv
-         2eDg==
-X-Forwarded-Encrypted: i=1; AJvYcCUm2cP/BD7b47Rj8EUfhOTZtasjKtjzSmEYuWdk/GdXOVoGSOQCToM/tpa4fH+tuhiNLZRLYVuVQ28=@lists.infradead.org
-X-Gm-Message-State: AOJu0YxPBds1YLW6wnyxRNp6ox3i7vnYNbAp07laOCyfSGdAqSuctM1F
-	dgDXo20+LgkZuNbhcXO9E6W1JuVaKbLn5znCPxnM52p86dXxweI4vibM3ytphdkLN6U8dfBcCzy
-	gYAAjsnAjuhMhm0l4xwOg/qjm+uEbJ5dR1+Bk
-X-Gm-Gg: AeBDieso4hxL5rqp3WLBGV3/ahZ/3d016CAoGouGqrNrow0RG//D0v87+zCJiAVcIv6
-	zYr9/DHgq/LsrgWnhSooMaBPnDcMZhR31m79yTCI4hhoCb+ZL+TgHkW7QUV4J13v+dumgoyCSR+
-	HSz1W+tkTH99YQ3Lyz1/LkzaNDTs/1liTU/GYjApOFo4KsRJ5fLcZ60stCy6dJGb1zEHNkUZ28S
-	rxOO0EfgloRTms4tPSQMnrjECulL5tkzzaRSrNO1bXZeimv76O2g9af/Rqp+Q4h2Axqk453ZKwF
-	Ozdwl/Bqs4QqiiViM0NLqyKL1VNfIyH70S8hYh/qkVISYLM5Tl9Wv73sy5jWCEPwpTGgHMulHcu
-	UEbRiKNwh6TustEl/9Km2TQ==
-X-Received: by 2002:a17:903:1ae3:b0:2b0:afad:7aad with SMTP id
- d9443c01a7336-2b2818016c3mr121001825ad.45.1775458340699; Sun, 05 Apr 2026
- 23:52:20 -0700 (PDT)
-MIME-Version: 1.0
-References: <20260404-dw-i3c-2-v3-0-8f7d146549c1@gmail.com>
- <20260404-dw-i3c-2-v3-1-8f7d146549c1@gmail.com> <adMjD5qrfXjtioDJ@lizhi-Precision-Tower-5810>
-In-Reply-To: <adMjD5qrfXjtioDJ@lizhi-Precision-Tower-5810>
+        d=1e100.net; s=20251104; t=1775479401; x=1776084201;
+        h=cc:to:content-transfer-encoding:mime-version:message-id:date
+         :subject:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=/BQnaz219jqPtrPhiYSPbcWuRkUa+sPXsIfTmKKXwWM=;
+        b=pdT0lOLWofCXyJMCmYBnKPvhORErNwbDaMQuyDsepNG5pU0jE2EhDRnhG2VZD538rB
+         ApvADSojbGsGTqnSkJx7G7JCYwEP+MVFd9jVfTMKORoner9Nlr4lc2752eGBSGsTzeZG
+         2FSDd9roPahWml9UwtnHjEU9Vz8W8mcoMj+zOUObgBUTnLBG4gr/mcyll8yZk51CgKKo
+         zv+sCeLTCuceO3yGmHPKX2P8uAErXg3frq8bGfiQTP1+qDFbXLDtE8co9slYrVdKH9ck
+         h4VhceGYugdH5k/i8y7AGs6UJEJxGImJcl2KkC/z/d6QNYHk7JSaSjo9EuSH8oBax904
+         3yRQ==
+X-Gm-Message-State: AOJu0Yw7E379x6AOuhAsF0ocVew48va/fLX8G8jBnJKYq6xzckiuajbw
+	y6jOsxpHL5RMIjX+iBlBL3qlGHzFnDFy3SlRUqo4lO8yzwPUM4zpWpSF
+X-Gm-Gg: AeBDiesVRko1o1k97BY9szIyqn73C1GdfvRwB2ILmVLpGbdjQ32/5P/srtYaLXN1LJx
+	QCOhJ0DFBaucxHBHns0bPrdQlYURupiPVmvJoaY0/NlchEpB6qFa62pLYq4oTcY6HYocJNFJh6l
+	V3KWK/xIjoztXPg3zZ6dH9i3fF6yE+jTbY3cxZAAuMDz59nmUUvIEs1TQdYyvrX5aDlI4JvT2rG
+	t2iQWhNKXDQXUw1sp/vT/1V7Dhr2eJMVBr8vJpEubSbNd1FwTUAZKUekhW8pmvHIZ9k7YMo+nnc
+	qGBfVm3BYhyGP2BLn4w085dB8VbPdlCAASUVBfywEED6K0BlEWCFJ5Ner9TmJfnbZ8b9DpQYe+m
+	ddraVjMjeXSeoz6IL1vZsmBE+6rvl7frXCbEKUbO3fQhrOvoY8uQeTFr5MBZYZ5qLlq9L7yhIkB
+	duKS7V1It0ojazOn0JWz95LmnCUHFEoPGx9K/ltNwB/Xf4FwInpqa7tIqRfz5azp3MCY2oTwB5A
+	USGIz/OnHnkeHiChCrH
+X-Received: by 2002:a17:903:384d:b0:2ae:4555:479e with SMTP id d9443c01a7336-2b2816be43dmr144323705ad.18.1775479400596;
+        Mon, 06 Apr 2026 05:43:20 -0700 (PDT)
+Received: from junjungu-PC.localdomain ([223.167.147.240])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2b27472d233sm143486445ad.2.2026.04.06.05.43.18
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 06 Apr 2026 05:43:20 -0700 (PDT)
 From: Felix Gu <ustc.gu@gmail.com>
-Date: Mon, 6 Apr 2026 14:52:09 +0800
-X-Gm-Features: AQROBzA-0vKPtIMZ7LO-Y2cxIKDNINgmizRhjhPS9E9Y35d4bMmHhlmZ4_zzsCc
-Message-ID: <CAN4SLj3+4+hhz_O-6tH6dug2UUxYowm7nnFb7YXe4iuWcAaMQQ@mail.gmail.com>
-Subject: Re: [PATCH v3 1/2] i3c: dw: Fix memory leak in dw_i3c_master_i3c_xfers()
-To: Frank Li <Frank.li@nxp.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, Aniket <aniketmaurya@google.com>, 
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v3 0/2] i3c: master: renesas: Fix a memory leak and use
+ __free(kfree) to simplify the code
+Date: Mon, 06 Apr 2026 20:43:15 +0800
+Message-Id: <20260406-renesas-v3-0-4b724d7708f4@gmail.com>
+MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIAGOq02kC/3WMQQrCMBBFr1JmbSSdatK68h7iIiaTdsA2kkhQS
+ u9u2pUgLt/nvzdDosiU4FTNEClz4jAVaHYV2MFMPQl2hQElKnmQKCJNlEwSVhnvjO9uFgnK+xH
+ J82srXa6FB07PEN9bONfr+tvItahFozqjXav0UeK5Hw3f9zaMsDYy/vGweF5Ta71urHb+21uW5
+ QMMg+Ds1gAAAA==
+X-Change-ID: 20260402-renesas-c6afdaf9bc2e
+To: Wolfram Sang <wsa+renesas@sang-engineering.com>, 
+ Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>, 
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ Frank Li <Frank.Li@nxp.com>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ Felix Gu <ustc.gu@gmail.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1775479398; l=837;
+ i=ustc.gu@gmail.com; h=from:subject:message-id;
+ bh=2ZGhHGFfSfoGzpISONh4As0lRvW4rlzQOLfSrI7sqXY=;
+ b=mjB/7ps08fqTsoB/rbBABlSzqZTfLDeMQjXR88DnidMxC94bpqddYghLJkhrqOUjkkfa0kgzQ
+ V7Va5s/T+1EAgYjbd/5kmby8xPPpTcYLB5Z4X520JRnGioaNp5F0WtN
+X-Developer-Key: i=ustc.gu@gmail.com; a=ed25519;
+ pk=fjUXwmjchVN7Ja6KGP55IXOzFeCl9edaHoQIEUA+/hw=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260405_235222_483061_3BD1D419 
-X-CRM114-Status: UNSURE (   6.77  )
+X-CRM114-CacheID: sfid-20260406_054321_962341_CE423997 
+X-CRM114-Status: UNSURE (   8.12  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -114,16 +108,39 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBBcHIgNiwgMjAyNiBhdCAxMTowNeKAr0FNIEZyYW5rIExpIDxGcmFuay5saUBueHAu
-Y29tPiB3cm90ZToKPgo+Cj4gWW91IG1pc3NzZWQgVG9tbWFzbyBNZXJjaWFpIHJldmlldyB0YWdz
-IGluIHYyCj4KPiBGcmFuawpIaSBGcmFuaywKWW91IG1peGVkIHVwIHRoZSByZXZpZXcsIFRvbW1h
-c28gTWVyY2lhaSByZXZpZXcgdGFncyBpcyBmb3IgYW5vdGhlciByZXZpZXcuCmh0dHBzOi8vbG9y
-ZS5rZXJuZWwub3JnL2xrbWwvYWM5MjJVYTNVamJaWGRQVkB0b20tZGVza3RvcC8KCkJlc3QgUmVn
-YXJkcywKRmVsaXggR3UKCi0tIApsaW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0
-cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
-Zm8vbGludXgtaTNjCg==
+Signed-off-by: Felix Gu <ustc.gu@gmail.com>
+---
+Changes in v3:
+- Collect the tags from Frank and Tommaso.
+- Use __free(kfree) to simplify the code.
+- Link to v2: https://lore.kernel.org/r/20260402-renesas-v2-1-f7e8cf73c7df@gmail.com
+
+Changes in v2:
+- Add cleanup header file to fix Frank's comment.
+- Link to v1: https://lore.kernel.org/r/20260402-renesas-v1-1-369a7d867502@gmail.com
+
+---
+Felix Gu (2):
+      i3c: master: renesas: Fix memory leak in renesas_i3c_i3c_xfers()
+      i3c: master: renesas: Use __free(kfree) for xfer cleanup in renesas_i3c_send_ccc_cmd()
+
+ drivers/i3c/master/renesas-i3c.c | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
+---
+base-commit: bd0f139e5fc11182777b81cefc3893ea508544ec
+change-id: 20260402-renesas-c6afdaf9bc2e
+
+Best regards,
+-- 
+Felix Gu <ustc.gu@gmail.com>
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
