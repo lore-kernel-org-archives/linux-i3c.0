@@ -4,137 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD55AE9D82E
-	for <linux-i3c@archiver.kernel.org>; Mon,  6 Apr 2026 03:03:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0600EE9D82E
+	for <linux-i3c@archiver.kernel.org>; Mon,  6 Apr 2026 03:06:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jopyGNBWOmWVSz7cGLs24534iVGEl86FjyYLSztNeg4=; b=eVwOWao/XHWegy
-	ITI6CQUgUSHf53DZOG7t1E4rvozhGR0O8LJslW3xNtEIivpSE2v+5X4eebmAvRo5CN83XVdsFlTSm
-	aZ9ZhXNysnzfVu1IN11E7GchH9y9yHfSZBsWyFP45Exp1+hH4Oe3dWYbckG2PVqblaj1amDl3OdOs
-	Iy4gH1hu7sgnkW/jqL9HJ3U22kkcn1s9/i1kyKDMZdYJw0wMZBkpZUrEd+ixXHuGCbfNIUJ/q1cct
-	nCK5t+AU4HQlRxSHBcEeOR18/vZ4wX9OlmFri43MSBsBIy2taYb41tgANwvwxbk95mJxmZkcL4qEm
-	0tffDGFXbyPjuNALpUcg==;
+	List-Owner; bh=btNjIICzlp9tMIW7h2yifsxKD6lV0jarXM3ou7qqA48=; b=wwHK+Wl79MzlTJ
+	3fZkL1C7nEd5nGSzoPjlVzny8P+yZVmnF/4uGIgypsA45ZMIm4FcTDn4XujVlUZ6U5bjKCCRJl55A
+	mg1wgnFDET/9HJAAyM2ssV7B9mfNInIBb1DWaGIS+qy4QUbHyRa4epzOz3MgSnbdYZ8yuyhV9KRaz
+	tTap8ojSZNA/Wm5zrp3btI0YU9hlU/srFxT0ttMalpLHBewK9c/ZAmYjQZa2nXdE3Zjg79es4CeGC
+	jhZ0xJ7htDV9HSrqeHE7O/nLW3jnY3dJ9MJKJoNFs0UwLul7ojsybUiamyA6CwJAa0wZzNBSyhozs
+	mR/uNVtB8eKG2Nqs/rLg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w9aFg-00000004ixN-0t7R;
-	Mon, 06 Apr 2026 03:03:48 +0000
+	id 1w9aHu-00000004j4C-2mWT;
+	Mon, 06 Apr 2026 03:06:06 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w9aFd-00000004ixH-47ye
+	id 1w9aHt-00000004j43-0QKA
 	for linux-i3c@bombadil.infradead.org;
-	Mon, 06 Apr 2026 03:03:47 +0000
+	Mon, 06 Apr 2026 03:06:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=MIME-Version:In-Reply-To:Content-Type:
 	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=EWdmOkwTFSvtMuTGewgvIY/OKfY5yteGvJK8UDVOiC4=; b=JMbg9BnHGKyK0M2gP2aAAjJIui
-	akoJoxTHsIAWRIy7uNjoGxz627bVIxLtdbGXtze2SDEXDYwYa5EtmV5OSaGPgC4AJz/PaWfl2EmwP
-	JQUV8Cvjdzcjt5FlCIzHbE6RQrmKzQEa4XPGE/SafeodbtcOE9OmYik6oIE8WsZNfeGLRIrqjNJju
-	kyWgro4NZa+hi9qsfe5Fy9fVzbndEQRa4fwGMZnDIUnZQ7jGgAlimDE3Ow8A+q6BZlSSiK30kvSSp
-	0DediYQ2HKf2sSiexbSKwvy0i/L0xCBlttWfPFEsxj/39y/O15t6F2d1ORz0rLskoA68D2V7BTE9e
-	OQOEAQ9A==;
-Received: from mail-westeuropeazon11011024.outbound.protection.outlook.com ([52.101.70.24] helo=AS8PR04CU009.outbound.protection.outlook.com)
+	bh=Q/QCuviczJr9IYpIPx/YcxlMp+avKs5yuWlk4dQADcM=; b=cdIT8xUB3yk46aILQmnjvl8g/W
+	gbYuWnQX5msZPrCw7JnEcFsTjvq/xKU5fDfcMAVALT//ql6u1QW9Ucoj3IwKOLNsgcVo9hmfSLKVI
+	0I1EQYZOJDOCh7JsGAgdM0KGnh4DVHs0mQy/6XGOE7YRbktmICtE8olZee4+g6DxJB2XA7qO4whAe
+	0T2QDEi70LdwVKUlyFA4kuicxnWap8kYvAm/P/Rwbg7wQHmCSUe0w15rA2OFplpUfyIywlbigKxU9
+	q6ecr8S0P4BHAIFDWpCIJ/lvX3m485Qps4tfrUkZJmdcCXbksO6C9alNOaBieOpwknwSyv2H+IlJt
+	40Q9i8FA==;
+Received: from mail-swedencentralazon11013014.outbound.protection.outlook.com ([52.101.83.14] helo=GVXPR05CU001.outbound.protection.outlook.com)
 	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w9aFY-00000006M4I-0b5k
+	id 1w9aHo-00000006MLX-32qd
 	for linux-i3c@lists.infradead.org;
-	Mon, 06 Apr 2026 03:03:44 +0000
+	Mon, 06 Apr 2026 03:06:02 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=DJmQroImfdwpoLGaEAtFtIq0VbKDCpxQ16+36XvZfVtTVwnnzKum0eRiVf4VTm6dZ3xoxqFv+o5hhZZl7sjfy6EzO1gPeooKTNH9QGnhOQAugrINQT9MFGIt/qrktJwUaKKP0IjDn0V5W2HvTVsw5CM0PZyTY8Pu1zlK7PIbp3oTLLI+JwjGKd296DmaCfeVEHMFk1JArI0MhGNNA43E9b6pOklaNCfZ62G77dEYnugurW7E/wxIMoqcWeKuA7EDol2q4X05Irq8QxAoGkqUoar3cXyib4xD5pdyBdCv+smRgWt/XS4whFwSGFA/TQA+SAw2+TtVjqetXLMmpI+m5g==
+ b=rFNTpTLUK2yF2O4or3Qjupv802fsx2guWZVDlLgoG9ex12od0rPy/g8tph+FWkJLfd8FLUZJ/1FlS30yK+8B00VH7gtwfG4uV8byGop14bF7bfh7T+1pWvInJpm5Kr8DcvWTKb2ihaoQvRQeB8Ag6or7sZX3s/71EsLUCShlPo1abY+0PEFrIuBYaTGkTypXsesN3OmjV8uavKqkQf3bsL52ju7AIHiv3+/zngMFNpLjneCuS3Ozkuf7XzEwV25p/AGPm4rYQJFQARwnA3hhf/JgRxT0sIyy+xKN1ZZN+P01JfoFs+UrVZPNsojtiiLfM3k78d+YqC6ena8bXzcwtA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=EWdmOkwTFSvtMuTGewgvIY/OKfY5yteGvJK8UDVOiC4=;
- b=k8BWd2gU5MeTWCy/0hGQJoyk1QRl9Al59LQmgwDXRCb+pvlFJ7fo1xNso186glqLEncEqlCB8APdd4hcDgYpUk+3lQmPX5uH6M5WeVgMSmpoZpew2JTG/Z8TSCLApLTL9EJkett4vRFYSl/w9bIOsHHvdSsKebeg4TUMLpZquG4N+uKk34M+FTcW5qDjs+QWT8Ifn7qfKtL9N7zKjx2kbam/hGnsmDfz6EpryWrwYBuWaf9LJ/SDVcmk/3jqiGvFhH+F+VJaSqJtoMDfR6/M+FTk3K5BD4fFmKoRBdyoRkWgQbKckwuFCkQVWQGHlJLCbf+8YxZVoa+dQVmtM6RSQA==
+ bh=Q/QCuviczJr9IYpIPx/YcxlMp+avKs5yuWlk4dQADcM=;
+ b=BNsN82fgjOEeAwXTCkStwgA4H6r44BquyqI84+brrc+ewRPV+nfbqoWQsjf8c7I8Klhx9jYv0GcJAYh8XpergJ2C1rQM7aNT2Kg8AKOoqSeONZrPKTT3oWOqMJmtzkmQ2YwbeKOVYAzryuQMYw766Z4fL7ZL3xvBvtS1EubIl64sdJaqBlt+nbTAdZvZEvFheuo/v6VkR153b1nSO9ZguU1PtRQdcYeT1jBBX8Soqjdala4O1V2jjiG9FPQDqOXrpBep3efIKUONw8T/ecDYztvekPg91A0zwfiAvJauy6TNZF7sz6xV3isFqLaqnyhELbgwdcSCRRRlJCLRaeSTqA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EWdmOkwTFSvtMuTGewgvIY/OKfY5yteGvJK8UDVOiC4=;
- b=Qjx260r6QGw/GuUP4QZLCytDXzE+zJhh42dIfFZtQouq7c58hELuSn9tkqDpwodZEdhmS837M+iAgIKbFtVc6b2tKcOwfdl75jxZDVcf9/zuiorz8Eq5KL5dknTRmLk9iUZsctvDvycsPC3BJz/igJKHOiKJQpX5CnPVtAS/moUmkre273Pi8a093vo1qWBb5MJJEsIuG1ebwzG/qc3xHmOhX/7tQvs2o2ATxOVy9d/JGvhSUJNqLxRC++Ka0/MNCWsuX5N+UsFmJP/V4Qyy32X4pGSCzj4M9lrX3Yb3l4U5ibjxWzibF4PuP5XCQaK0EaQidLo0yaGbbGQsU0zc5g==
+ bh=Q/QCuviczJr9IYpIPx/YcxlMp+avKs5yuWlk4dQADcM=;
+ b=boparxeGxsRTcScrBkGmBbjjTKYQSpcF8LL+/sfAlh/JXosJMxuLlBktlgnlqFOf02eshO18yN4c0sMO1vHlv+Gow9XrfuUyPHvpvDM0fliPr/xgnZ87d9UTh3yn/bSaeMqemXf38fan6md4sto6H3srVKJSlFJfdvscjZAdY3u6UP+Kxxuo4Ki944GYctOgpRT2JdeSj8xX7dItvFWGVG8XxWeP/rQs53VZT65zuoqe8AMzvy4I1TtfrHcLRxom0xtDMTM9rBrAFXGcLwI9RH7Yz/ntOThwzPm3urpANlEQR02at4qeqnOsCs+92+M06ruMwDtLzHtXiX4E15dATw==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8)
  by AM7PR04MB6791.eurprd04.prod.outlook.com (2603:10a6:20b:103::19) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9769.20; Mon, 6 Apr
- 2026 03:03:35 +0000
+ 2026 03:05:57 +0000
 Received: from PA4PR04MB9366.eurprd04.prod.outlook.com
  ([fe80::75e4:8143:ddbc:6588]) by PA4PR04MB9366.eurprd04.prod.outlook.com
  ([fe80::75e4:8143:ddbc:6588%6]) with mapi id 15.20.9769.018; Mon, 6 Apr 2026
- 03:03:35 +0000
-Date: Sun, 5 Apr 2026 23:03:29 -0400
+ 03:05:57 +0000
+Date: Sun, 5 Apr 2026 23:05:51 -0400
 From: Frank Li <Frank.li@nxp.com>
 To: Felix Gu <ustc.gu@gmail.com>
 Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Aniket <aniketmaurya@google.com>, linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v3 2/2] i3c: dw: Simplify xfer cleanup with __free(kfree)
-Message-ID: <adMigffIK6Fe-A2Z@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH v3 1/2] i3c: dw: Fix memory leak in
+ dw_i3c_master_i3c_xfers()
+Message-ID: <adMjD5qrfXjtioDJ@lizhi-Precision-Tower-5810>
 References: <20260404-dw-i3c-2-v3-0-8f7d146549c1@gmail.com>
- <20260404-dw-i3c-2-v3-2-8f7d146549c1@gmail.com>
+ <20260404-dw-i3c-2-v3-1-8f7d146549c1@gmail.com>
 Content-Disposition: inline
-In-Reply-To: <20260404-dw-i3c-2-v3-2-8f7d146549c1@gmail.com>
-X-ClientProxiedBy: PH8PR07CA0045.namprd07.prod.outlook.com
- (2603:10b6:510:2cf::14) To PA4PR04MB9366.eurprd04.prod.outlook.com
+In-Reply-To: <20260404-dw-i3c-2-v3-1-8f7d146549c1@gmail.com>
+X-ClientProxiedBy: SA0PR11CA0144.namprd11.prod.outlook.com
+ (2603:10b6:806:131::29) To PA4PR04MB9366.eurprd04.prod.outlook.com
  (2603:10a6:102:2a9::8)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|AM7PR04MB6791:EE_
-X-MS-Office365-Filtering-Correlation-Id: 62b291f5-9fef-4265-408c-08de938917de
+X-MS-Office365-Filtering-Correlation-Id: 02e05840-0e81-4a1b-714c-08de93896c3c
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|52116014|366016|19092799006|1800799024|38350700014|56012099003|22082099003|18002099003;
-X-Microsoft-Antispam-Message-Info: YcdIEqTfHblwH1d+FT96gf8s61lkAZryaEOUs5NfmWmAxaYK9fUK6bj0F0vyIGrzv0pVr8T5UXbAeAgu1jJlGLoGRDrHkhqLhFJan5bodeG8DS+0VXzcHSjH8W+lNKQg8rpejV4aDYJHcDJSfNbtfl022GV69T0J91gOqDZ3XwwybqtttO/AgN2l4cpDadySBAcWypeWVvUCvalagWkSoOz2D4QD5XsWYeZMxr7dhzd6Ab4uAhIxYSKwBXatEcC+7Pm21EczH4V2EnJK3me4G60vdNaTS0EE5YWbES8R5vGQjuQj24m57K3SWvzFjO7d5oSA9Kd9wuIT3GOf7c3iJ+aFzZrsvxqndso6g7i+zzDW/j7mFvyhpzAWM0f2NdCIXpshXwAN+jvBZ7yaLDCBSji01pNcdft+3ULh8OF99WJ0k9pB1pokI3ps8qSBKzRotznT4SWjknp4UmZWI34HABkYE/0WEIujvoL+qwSq3McCF5VV8uF+5VHBNOotaFjfTTnIMiyTgZKhBNUkye8S3ww1c0SKwkLJ0GR1i2QC6ZlrD88xxYvtPDU0ifBItu1wYl4f9PG9F56xWPnJMVGrArSK63amH9nCF0AngsaFZx54UzrJpLifxr9PFEilShgBLxL3o9WjbpqxgNVobRcMfYuIDDaRUSSkBHik3xCLlDRooZbL0A+Nlly0374/W8DBPoa1NBOOd+zMN8QLnWxtY/SejB9o1konHgnqqgquRmUK6QuGecR3t2zSWaJhw4Ercm0uAJuVkuvF95VXRoNxmAOLWRN29sqS106iNABiUzE=
+X-Microsoft-Antispam-Message-Info: 2g50+g1U6FSaP6sgGpZjGV5Ab3SLDaywxkKeiUgKjCWU6x213X/pOaiwTNO4oJ7vHGVSvE7mIGP4RWni4M8xUC+JiFyEM0Ydg3uHZRqBww+8RADhgo9zIZKTaupNCPiFxkmyF4rNmxSCxRf3Rk+sOCqjxw6LcRiPaL6n9H08XXIBiNn7dVGYXvilUWO3ccsSIINmHTpO0l0zUNDGNDUGrE9PT1vX8FjW5uSF11EYgEDA21NL+Q1VvatzOffhxopcG5uCsH0HdjSCy4kUZz8XzUnv30fZUw3+1qai9u9YnZjFKLxLyCrlSI9n/aYXTH8GSBQfkPnK3TDd+tn4uai2qXvukHYURTyS0kIHqWlmvuUCUGaED6nkgnYCPpl09ZwjSLirhZzKK9rYYPOnF/Lbzss/QR8cTG8FB5Lv5AHVhYRhVZz5pEN2NoBTGZI7M9j11Ffj1FZzohxn5gkEK9VdE6zrDf0uYge5TTlsq2ewSuqomO/3txeJgNiKz4RE9WLsQzCilFpl9adXJZ3roG4LJBvGl3y98TrmPVun1B2yUAb+Z8hqOb/mzMYOcu6kVGHXicf0JTSLb82waY0oOGnF9Jwke0jpseG21ugJ8Aut+pqYwzesuykX4dfxnUtPVAbLcvzc/cuRHof70RO8+acH4kLFw92f8IhEcMeaL64wiqwjnPeOpMuOMybmsOzX5TIRdWcRLhDdpGesqKyym233kIaY8nag41FFa5lrBM62NTgWRXT9quHkaV7ExqPVkqHXCiQpKMZ+uO4JFcFVvsOFWDoCT+ENhLzxe7NAoAlR3+4=
 X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(52116014)(366016)(19092799006)(1800799024)(38350700014)(56012099003)(22082099003)(18002099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?dmge8PbEca67XhMV+NjLyLR630GnCCsO4AcZQrvz+31dYUlsLeKERn7Ss+do?=
- =?us-ascii?Q?Sa4A2Ec0D0FP2GJUNhRZFMvq2EpZQgIcVb7jGhruGCoOLu55XRxadRolLvkn?=
- =?us-ascii?Q?OTDbDfCklNf+Nq4oH3jkA04Z82B0p+rRY3VMr8ShZCwzdSXYc9h3JxrQoEow?=
- =?us-ascii?Q?2N7tc1icn2kt4zfVWoNV28DKfm3t/zaLel5dTM3BnhJkS8oJ5NgGrg0mrJXb?=
- =?us-ascii?Q?ViGc5zdAbh/VxzdZybI8LeD5QGy29iFlCVoQ3ef1bydR4HtDWT+DzwL4qMKW?=
- =?us-ascii?Q?l5NgGDcuEjnd7ubtYeBpA94bIccV7p/pGmqzqXkRIWgLQ+yFqAkPcdXAiN0F?=
- =?us-ascii?Q?ZoXoJjKYdS4N31fr9sHxqGL/jbsHpyyYm4hHo6L/xU2y8drYdFpQ4S7Ja1F7?=
- =?us-ascii?Q?Ir+D5RsQHldTGFTJoxz2tCIWurG/UkAl4p7XzavlougGbu+ZlLvMWu8RkbFV?=
- =?us-ascii?Q?gLkuvKIItSSPglv8l4njO7OpTXA+QDLSm/sL5sSFF7/A50/e98tGqxh2qgu7?=
- =?us-ascii?Q?R7gBrau2tNsYZAey8Agg8UrwFJ+Qtm0U2hjada6tSg5WF5dN9fy1a+REaDb5?=
- =?us-ascii?Q?tnGbMYYkA9jYUyrfBpjFeBNiinLZENGB73lLsK4N5p2H89A9hTxsYudKc3+g?=
- =?us-ascii?Q?hH7bIp+OFOpZZicqJkQ90G2rC0wH4GpEfIany2ciObnft7l/MdDE47JZwyhJ?=
- =?us-ascii?Q?EHao/M5LE1XLgNIAYIWK7WcF48pxBqAxUyIMKxYuHbZB6AfNawuLkB2nwfnn?=
- =?us-ascii?Q?VGVh1wHL08fu6653pTobAA91iqYtZ6LRRsselbKDpJE/FlSjxpgZPE16dUiu?=
- =?us-ascii?Q?sJfsivvzuZa/gZoEA6EUOdGNnZ/TA4u4Kmvflt7wwWYi9L8NscuamKeHotJ7?=
- =?us-ascii?Q?G6MuMIeOyu921V6Bi2q3OoWfJ2J8Q6FZMGCa+NTrsCOJc3MrKDAdfolGdkOQ?=
- =?us-ascii?Q?SXedXODgXYaezhUdBspbuUqr8Py0sbOLEJ9xwKC5D2KxFdVnCT3TA5xSozJt?=
- =?us-ascii?Q?Eszu5vvmHr+xlV0qAUP1Qr+KY55sJpweZMxMDzcdDM2Y7efdW5dhPHNicA+u?=
- =?us-ascii?Q?ytm/n/Omrx8Eb0etDrDlesZbIl8YeY/6KccA074B9qxG7dPEaMpocjkzQCd5?=
- =?us-ascii?Q?80Ty6BClH6etPbI/lVTsNJ3SaQhUfsIzaLEPNxn065eGzQac/j55y2cjollt?=
- =?us-ascii?Q?d+/DMZHBjU2dCFeZ5j9uINDJqyWuSodueBZDy/rTPC5R/8YngvrVZ5jrXFiF?=
- =?us-ascii?Q?V2jQxK8Lemo0p7Us23eJ6aeTQFRT9QwOZ9tgg1wnA/TKK5vNaP6WLkQnJN0T?=
- =?us-ascii?Q?Y1ibZ8x0Jx5yDRcUgAdq4JmeSegd5ZQd70lu2XHyYF/0vMdBV0NiEfSBib2P?=
- =?us-ascii?Q?A1SzAaHC88tRBXPHarc0Z9/zhInykUVElfky7BKEbwkRKtKR+y103nikpZ3o?=
- =?us-ascii?Q?BkreaINMCM18FsaI1yHSB49JHypY7vdZTkHMoceyL94yznOc+nqyh+bYc7ue?=
- =?us-ascii?Q?rsUgZw5ey0Zbw2tpj52t2EcNbdb1p62G6RKGo9WDiA3CGJQgj1+ZFsQVh60L?=
- =?us-ascii?Q?6wRDuOyRPh1eUBPF9cMkkPPqabp2DAjZTP6chVsCS4Z8GkUhRDiYE/HPtWAI?=
- =?us-ascii?Q?zWGeaOCeX4ACijtucmTAFnUlufV7AclQ9qQ73C8WHmI86/rUM3yV5MWcakLx?=
- =?us-ascii?Q?MtpmfNbjsQXv1Oo35aqKf+PrzV51ClSP5lp9iVTtVLAfqRaq?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?KMHVWoUB0bltKS4PWVdfWAKAVcGN3tkLsoI9zQw+fOyAk7Vq7798fZM+s4CZ?=
+ =?us-ascii?Q?Ugl/tte5ECQWCI+BKmdUL4aSvt9OhxctIcjJXmNO1t0vsVGHqCtWz9a7I2uP?=
+ =?us-ascii?Q?zmGtMUUdLIimdVVgnutywE2/IJ9q/Fiv3hx2XS21P3fIjOMp1WUdYBkMu/PC?=
+ =?us-ascii?Q?HAj97Ddp+TvYZLYnVP2P9ZpPOOO4SoEGJ/QDCj6KtUEHTF1E4hNO8rEpM+G2?=
+ =?us-ascii?Q?eYNqyt3EiQjaH+cphkwFEKl6i8NWQ+MoxLxI7j0NBqe3rkJFMDWXw6C4veGs?=
+ =?us-ascii?Q?2iWnuz9C07bqM3p6Fs7sZsADStsHNJcf6LH0n1TaZbEPpUHnOZJJ69p49HKJ?=
+ =?us-ascii?Q?HFjpyfPowHe7E5P1pPW2VAz69ATRUH3lgr2YeGCzZA93IPFJWaL3bQB1rIIZ?=
+ =?us-ascii?Q?EEJiewLg2h7cTwmg+eJudXrEr7ywiK15oBufLsiQjqoPi7WkQ17QLTxPKls3?=
+ =?us-ascii?Q?QqFS34eoba5bmTb106PI7m67kIcaCV6oK2ypjybtA7mVNt8HGYz6j02pIWU5?=
+ =?us-ascii?Q?iQeSZbLxe8wJM5kPMZwR2KJKHn/1QC5RixHqFlqub8To3bq6lA335GqHltpl?=
+ =?us-ascii?Q?POY677JJzEcBYf95xEgvv6FYXw8+Vxu/lTZJHGRILlUyR/8iw86GGV5U1MlV?=
+ =?us-ascii?Q?eJeKoQaUu2DaKJIPbBEMuERnSY1DqhmYRDro+YknL+lcY6iGVc24Y/cuUhER?=
+ =?us-ascii?Q?df7mwrNEIXBs4aGOBlLkwgWARuUKL6SjF8Okhfr5qXTKCxkFJsUg/SVFYhvx?=
+ =?us-ascii?Q?f4Ulf/U+Wlof94Ic0FRHjGe1tPemBZst7+ekj2WPJJ/YomNC/bH5y55VBphk?=
+ =?us-ascii?Q?g8v5696/J01GzO/bUjy/N+hYuZsYQV4h6K/2xm6HOoaGtuSQOaEHftAu2bnB?=
+ =?us-ascii?Q?b0DGyvsyIw2C3wdE41zk4YcFhte/ZLCjFbJwWlPFKf4kHjHWI3WDmSGly49k?=
+ =?us-ascii?Q?6/C6d1fHligZ+Bc9Cs2TeU7P+YVssV+f0G0fjjUtShXh1nA4Z3A6OKviTrLO?=
+ =?us-ascii?Q?unB+qzGTpDwA2KMNfxw8+aqlr23orVE/1MMj8QATVl1l8AU6KI64Ummew/kd?=
+ =?us-ascii?Q?vO2S/EGJZGj4/0BpYsfzJTqdQUsJbux/RVnISuPBYG3m5YOpBV2LVumgpP9T?=
+ =?us-ascii?Q?F2620L9V0a3gtQmyKxR6ZdFLL5kPXUyKfdUjg+RssQDIm0nkJYbPeXm37uCe?=
+ =?us-ascii?Q?/39CPRCl56O7hxAJWSQbdDr26CVKAAjPBEZ1+DbHINXwyUDNn6pLshOU39CY?=
+ =?us-ascii?Q?ZnKpDr5xc54KJgmi2Usxc/izVBocRLjttQ+zFUdf4dR8jr7l77c4QdxBZV4P?=
+ =?us-ascii?Q?CUEP5d6zNWXvhoFGFXuywvssHT2hZV9fjxZgSjP7eCoZmel+vuyV+KwsZJBm?=
+ =?us-ascii?Q?yV1JayOCR8vmNWI0QJbaFPTkAzPl9sCWjG2T1H2of4GQ00Lnc7dXVgf46gec?=
+ =?us-ascii?Q?THow2TZARx1NIS53m/Q19nnBwLpM7sAcL4JhVKYaYP2VIFRS9CQdH2Tdn7AF?=
+ =?us-ascii?Q?l3AIOxBVxOQmXGOFUWFnl1ruyG5xMwFM9xDEZ+IrBmOJCcsmes0iuIekGvzT?=
+ =?us-ascii?Q?XtVtT5Pquis0gcxhy58xmcrDR2+uQKBKHb18Su3y/ldaGEkPtl+27ApMUFWH?=
+ =?us-ascii?Q?MDPHZb+6pECa9TS/DjraET6j/Q+Unn1D54OQsS4xLTw/bKle6vH9St0X4TRX?=
+ =?us-ascii?Q?1GT5GlWSanFkGjdKiL9kQpFuJ9vySnK49+MtYZJEgzrHbEQD?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 62b291f5-9fef-4265-408c-08de938917de
+X-MS-Exchange-CrossTenant-Network-Message-Id: 02e05840-0e81-4a1b-714c-08de93896c3c
 X-MS-Exchange-CrossTenant-AuthSource: PA4PR04MB9366.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Apr 2026 03:03:35.5040
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Apr 2026 03:05:57.1788
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: gPpeNykWx9DBIpu4LiWeEo3Ff+ydfLViOY0JA9z8XEbrZgpUk6D14LB+i/AdTZz7noGLSegD7f+rpjsPBt0dTQ==
+X-MS-Exchange-CrossTenant-UserPrincipalName: ziw7OntpTes/R+K1Sdgs70XVZ+thXcPkN7xPqlr/vPn0y46QOJom59Iw1JtPIOBNPoXm/toTAR4yyPYE19KZ2w==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7PR04MB6791
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260406_040342_679234_2F35B463 
-X-CRM114-Status: GOOD (  18.90  )
+X-CRM114-CacheID: sfid-20260406_040601_337977_22BFF868 
+X-CRM114-Status: GOOD (  17.85  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -151,152 +152,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Sat, Apr 04, 2026 at 06:32:31PM +0800, Felix Gu wrote:
-> Convert dw-i3c-master to use __free(kfree) guards for struct dw_i3c_xfer
-> allocations. This frees xfer objects automatically on scope exit, and
-> removes the now-unused dw_i3c_master_free_xfer() helper.
+On Sat, Apr 04, 2026 at 06:32:30PM +0800, Felix Gu wrote:
+> The dw_i3c_master_i3c_xfers() function allocates memory for the xfer
+> structure using dw_i3c_master_alloc_xfer(). If pm_runtime_resume_and_get()
+> fails, the function returns without freeing the allocated xfer, resulting
+> in a memory leak.
 >
+> Since dw_i3c_master_free_xfer() is a thin wrapper around kfree(), use
+> the __free(kfree) cleanup attribute to handle the free automatically on
+> all exit paths.
+>
+> Fixes: 62fe9d06f570 ("i3c: dw: Add power management support")
 > Signed-off-by: Felix Gu <ustc.gu@gmail.com>
-
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
 > ---
->  drivers/i3c/master/dw-i3c-master.c | 33 +++++++--------------------------
->  1 file changed, 7 insertions(+), 26 deletions(-)
+
+You misssed Tommaso Merciai review tags in v2
+
+Frank
+>  drivers/i3c/master/dw-i3c-master.c | 5 ++---
+>  1 file changed, 2 insertions(+), 3 deletions(-)
 >
 > diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-> index 2e31228b3809..41ef37115f8b 100644
+> index d6bdb32397fb..2e31228b3809 100644
 > --- a/drivers/i3c/master/dw-i3c-master.c
 > +++ b/drivers/i3c/master/dw-i3c-master.c
-> @@ -394,11 +394,6 @@ dw_i3c_master_alloc_xfer(struct dw_i3c_master *master, unsigned int ncmds)
->  	return xfer;
->  }
+> @@ -7,6 +7,7 @@
 >
-> -static void dw_i3c_master_free_xfer(struct dw_i3c_xfer *xfer)
-> -{
-> -	kfree(xfer);
-> -}
-> -
->  static void dw_i3c_master_start_xfer_locked(struct dw_i3c_master *master)
->  {
->  	struct dw_i3c_xfer *xfer = master->xferqueue.cur;
-> @@ -716,7 +711,6 @@ static void dw_i3c_master_bus_cleanup(struct i3c_master_controller *m)
->  static int dw_i3c_ccc_set(struct dw_i3c_master *master,
->  			  struct i3c_ccc_cmd *ccc)
->  {
-> -	struct dw_i3c_xfer *xfer;
->  	struct dw_i3c_cmd *cmd;
->  	int ret, pos = 0;
->
-> @@ -726,7 +720,7 @@ static int dw_i3c_ccc_set(struct dw_i3c_master *master,
->  			return pos;
->  	}
->
-> -	xfer = dw_i3c_master_alloc_xfer(master, 1);
-> +	struct dw_i3c_xfer *xfer __free(kfree) = dw_i3c_master_alloc_xfer(master, 1);
->  	if (!xfer)
->  		return -ENOMEM;
->
-> @@ -751,14 +745,11 @@ static int dw_i3c_ccc_set(struct dw_i3c_master *master,
->  	if (xfer->cmds[0].error == RESPONSE_ERROR_IBA_NACK)
->  		ccc->err = I3C_ERROR_M2;
->
-> -	dw_i3c_master_free_xfer(xfer);
-> -
->  	return ret;
->  }
->
->  static int dw_i3c_ccc_get(struct dw_i3c_master *master, struct i3c_ccc_cmd *ccc)
->  {
-> -	struct dw_i3c_xfer *xfer;
->  	struct dw_i3c_cmd *cmd;
->  	int ret, pos;
->
-> @@ -766,7 +757,7 @@ static int dw_i3c_ccc_get(struct dw_i3c_master *master, struct i3c_ccc_cmd *ccc)
->  	if (pos < 0)
->  		return pos;
->
-> -	xfer = dw_i3c_master_alloc_xfer(master, 1);
-> +	struct dw_i3c_xfer *xfer __free(kfree) = dw_i3c_master_alloc_xfer(master, 1);
->  	if (!xfer)
->  		return -ENOMEM;
->
-> @@ -791,7 +782,6 @@ static int dw_i3c_ccc_get(struct dw_i3c_master *master, struct i3c_ccc_cmd *ccc)
->  	ret = xfer->ret;
->  	if (xfer->cmds[0].error == RESPONSE_ERROR_IBA_NACK)
->  		ccc->err = I3C_ERROR_M2;
-> -	dw_i3c_master_free_xfer(xfer);
->
->  	return ret;
->  }
-> @@ -838,12 +828,15 @@ static int dw_i3c_master_send_ccc_cmd(struct i3c_master_controller *m,
->  static int dw_i3c_master_daa(struct i3c_master_controller *m)
->  {
->  	struct dw_i3c_master *master = to_dw_i3c_master(m);
-> -	struct dw_i3c_xfer *xfer;
->  	struct dw_i3c_cmd *cmd;
->  	u32 olddevs, newdevs;
->  	u8 last_addr = 0;
->  	int ret, pos;
->
-> +	struct dw_i3c_xfer *xfer __free(kfree) = dw_i3c_master_alloc_xfer(master, 1);
-> +	if (!xfer)
-> +		return -ENOMEM;
-> +
->  	ret = pm_runtime_resume_and_get(master->dev);
->  	if (ret < 0) {
->  		dev_err(master->dev,
-> @@ -877,15 +870,8 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
->  		ret = 0;
->  	}
->
-> -	xfer = dw_i3c_master_alloc_xfer(master, 1);
-> -	if (!xfer) {
-> -		ret = -ENOMEM;
-> -		goto rpm_out;
-> -	}
-> -
->  	pos = dw_i3c_master_get_free_pos(master);
->  	if (pos < 0) {
-> -		dw_i3c_master_free_xfer(xfer);
->  		ret = pos;
->  		goto rpm_out;
->  	}
-> @@ -910,8 +896,6 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
->  			i3c_master_add_i3c_dev_locked(m, master->devs[pos].addr);
->  	}
->
-> -	dw_i3c_master_free_xfer(xfer);
-> -
->  rpm_out:
->  	pm_runtime_put_autosuspend(master->dev);
->  	return ret;
-> @@ -1083,7 +1067,6 @@ static int dw_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
->  	struct i3c_master_controller *m = i2c_dev_get_master(dev);
+>  #include <linux/bitfield.h>
+>  #include <linux/bitops.h>
+> +#include <linux/cleanup.h>
+>  #include <linux/clk.h>
+>  #include <linux/completion.h>
+>  #include <linux/err.h>
+> @@ -924,7 +925,6 @@ static int dw_i3c_master_i3c_xfers(struct i3c_dev_desc *dev,
+>  	struct i3c_master_controller *m = i3c_dev_get_master(dev);
 >  	struct dw_i3c_master *master = to_dw_i3c_master(m);
 >  	unsigned int nrxwords = 0, ntxwords = 0;
 > -	struct dw_i3c_xfer *xfer;
 >  	int i, ret = 0;
 >
->  	if (!i2c_nxfers)
-> @@ -1103,7 +1086,7 @@ static int dw_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
+>  	if (!i3c_nxfers)
+> @@ -944,7 +944,7 @@ static int dw_i3c_master_i3c_xfers(struct i3c_dev_desc *dev,
 >  	    nrxwords > master->caps.datafifodepth)
 >  		return -EOPNOTSUPP;
 >
-> -	xfer = dw_i3c_master_alloc_xfer(master, i2c_nxfers);
-> +	struct dw_i3c_xfer *xfer __free(kfree) = dw_i3c_master_alloc_xfer(master, i2c_nxfers);
+> -	xfer = dw_i3c_master_alloc_xfer(master, i3c_nxfers);
+> +	struct dw_i3c_xfer *xfer __free(kfree) = dw_i3c_master_alloc_xfer(master, i3c_nxfers);
 >  	if (!xfer)
 >  		return -ENOMEM;
 >
-> @@ -1112,7 +1095,6 @@ static int dw_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
->  		dev_err(master->dev,
->  			"<%s> cannot resume i3c bus master, err: %d\n",
->  			__func__, ret);
-> -		dw_i3c_master_free_xfer(xfer);
->  		return ret;
+> @@ -995,7 +995,6 @@ static int dw_i3c_master_i3c_xfers(struct i3c_dev_desc *dev,
 >  	}
->
-> @@ -1144,7 +1126,6 @@ static int dw_i3c_master_i2c_xfers(struct i2c_dev_desc *dev,
->  		dw_i3c_master_dequeue_xfer(master, xfer);
 >
 >  	ret = xfer->ret;
 > -	dw_i3c_master_free_xfer(xfer);
