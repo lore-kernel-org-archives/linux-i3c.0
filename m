@@ -4,80 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 445DA10F9976
-	for <linux-i3c@archiver.kernel.org>; Wed,  8 Apr 2026 19:42:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 905AB10FC447
+	for <linux-i3c@archiver.kernel.org>; Wed,  8 Apr 2026 21:35:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fH6FhTEFLg8DyjW7W1MqmW2Go3kyPBmImmzVAEIh5Lw=; b=EXnVX5adYrmQj+
-	ikWm6vnHgcakEPqKDRX9GKwtTJG5p3cJCUBg4XaVfpNNSHkd7ItKmhxcend0LT1lMvVxVIU/Txl/J
-	UiuTxkKHM4nByt9hM9hmqJJLwA5p8/sw5ki+m7Ml/zRBiOHMeDrsKfJFQmYtWNP2PLeTQVNHB5nY6
-	RQWd1+YD/t5Vcgta/1lL6/PQBvqJQsGCY0SweIVlkGlYvKVbP75oCKzGGFiP92tpPMjnuDerNTeWW
-	OErw54TXfxeL+2JPULDLxTEcJPQp9LCq2CAzNyWrD+edEtuiV7BTmn1Sga2pXSvsytmIJPcUZnapq
-	0ygjM+h1ldsrJ/RmNwkw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=eO9Zv8/VXQSNBJVVUZmYO4UCWUSlBx5SrgwIIcP+FqI=; b=a1skx9C9c7XZyGJQNE5k8QUDsZ
+	sl9Kn0SCsjO0LHcu7GSMZW8NAZ1WRHjg8HOm2ndth24Sd3paf78c5ThNb2LgbNewOUSi//0oYIkP3
+	JnzRI5GFCHHovlLycgxvvRyyeKNxe4ICnpCLBaxe7NvYfnSQiGoLN0JO5IjP6b5z/FvfptjukvUST
+	qbvo1IzzhhAVIKbWXqA7A9ctcYQt6Q574RqBOLPxFFmu56gEOV0prv8mRj4RfyqmRpFubttoxSUvU
+	OJS+SeakgOxDVAc6ncGxKGyOKgOB0amQyF+it6pgaj2bvH25WTbTjiiOoC/ffkJFDI0aulKiQ/T0v
+	y9HzfkMg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wAYn1-00000009KKR-01gz;
-	Wed, 08 Apr 2026 19:42:15 +0000
-Received: from mgamail.intel.com ([192.198.163.10])
+	id 1wAaYV-00000009RR0-1RGy;
+	Wed, 08 Apr 2026 21:35:23 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wAYmw-00000009KI6-3UxH;
-	Wed, 08 Apr 2026 19:42:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1775677331; x=1807213331;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=JswzvqIUM/Y0snFlKb+yBLx2iydNCgWMkhaiYqyvcrU=;
-  b=jUhKwJ1W7gov/JYBLSaNT0h3O10vyWoQ945eo7O8Z+W4ON5fM+o3lZM2
-   3ZK5pterbLXBKbKTKt+HVNITokkdZ/eOc1x4momVDn9E/F6UBGRxGuStz
-   61LcVdddLIuT2YkjmVrko9hPOrSthY8vcnpKiJEg5jJgFbQfexsGxvcC2
-   cp2iu14/Zt0IA/hRVrkzgTftsV1tp41sEK279hfDAO67835xq4lf8jQ9p
-   gXniqtD06AJYICxN7FGKlWgq0XdfgX6raFanfBY/Ir0XK4oCugSDfTDvE
-   +TXESbYC6tm0ONDXvEaMQDdfZqHbsK8y8dYGFiYJr1ec+j2j0v6Hx3Jbu
-   A==;
-X-CSE-ConnectionGUID: e5Kx79BtQru8vH2ILFaDeg==
-X-CSE-MsgGUID: OOPZwBbZQz6juImHROO4cg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11753"; a="88056920"
-X-IronPort-AV: E=Sophos;i="6.23,168,1770624000"; 
-   d="scan'208";a="88056920"
-Received: from fmviesa009.fm.intel.com ([10.60.135.149])
-  by fmvoesa104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Apr 2026 12:42:11 -0700
-X-CSE-ConnectionGUID: fU2drvZHTDqcQFHupFc6zg==
-X-CSE-MsgGUID: ecX8swQCSCSeREGdg7ZbOA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.23,168,1770624000"; 
-   d="scan'208";a="222053381"
-Received: from gklab-103a-129.igk.intel.com ([10.91.103.129])
-  by fmviesa009-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Apr 2026 12:42:07 -0700
-From: Dawid Glazik <dawid.glazik@linux.intel.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Joel Stanley <joel@jms.id.au>,
-	Andrew Jeffery <andrew@codeconstruct.com.au>,
-	linux-aspeed@lists.ozlabs.org
-Cc: linux-i3c@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org,
-	Frank Li <Frank.Li@nxp.com>,
-	Dawid Glazik <dawid.glazik@linux.intel.com>,
-	Maciej Lawniczak <maciej.lawniczak@intel.com>
-Subject: [PATCH v3 3/3] dt-bindings: i3c: Add AST2600 I3C global registers
-Date: Wed,  8 Apr 2026 22:34:35 +0200
-Message-ID: <7f55458097ef651b4fc46650254afd3fa7b87348.1775679285.git.dawid.glazik@linux.intel.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <cover.1775679285.git.dawid.glazik@linux.intel.com>
-References: <cover.1775679285.git.dawid.glazik@linux.intel.com>
+	id 1wAaYT-00000009RQW-1MDh;
+	Wed, 08 Apr 2026 21:35:21 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 35E0B600AD;
+	Wed,  8 Apr 2026 21:35:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 921BCC19421;
+	Wed,  8 Apr 2026 21:35:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1775684119;
+	bh=U5m8hCve0SToPzGN57qTzQp7oW2CDN8d/H/F/Gwr1gk=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject:From;
+	b=c8Lz1avGo9y/3VwFqk+vg4C2dwokvPKM2kRCkByp3XrW7RZDSnYhczOJwfkn5J17L
+	 fZPiEDIAb2KROGCWUAncAdHDC37/G9H+3r/bDVJyxxMaT0qqLf9fZmz7PzP1madm3h
+	 Y/XJsLkf6KaJAK845zD1MKfM7MnRVciZJENhnfgD+0aaBr6QVYJIPfrZ9LDk9WaW2B
+	 +LWfNPwjYgAEpol/ft2FMPoaAZFaqgynKvrqrPgXPkS7Upr4LNOd5/CxKqPUIP1kjq
+	 xxCp7IN2bqWWAIAFgZJG98ZioTl6cU/Y9ZeSVkPWh7bnLWcoHLjT/nFmSJvbuIQ6z4
+	 dYmBPC/7/qxqQ==
+Date: Wed, 08 Apr 2026 16:35:17 -0500
 MIME-Version: 1.0
-Organization: Intel Technology Poland sp. z o.o. - ul. Slowackiego 173, 80-298 Gdansk - KRS 101882 - NIP 957-07-52-316
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260408_124211_827676_DD8A0A17 
-X-CRM114-Status: GOOD (  12.95  )
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: Andrew Jeffery <andrew@codeconstruct.com.au>, 
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Joel Stanley <joel@jms.id.au>, 
+ linux-arm-kernel@lists.infradead.org, Frank Li <Frank.Li@nxp.com>, 
+ Conor Dooley <conor+dt@kernel.org>, linux-i3c@lists.infradead.org, 
+ Maciej Lawniczak <maciej.lawniczak@intel.com>, 
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ linux-aspeed@lists.ozlabs.org, devicetree@vger.kernel.org
+To: Dawid Glazik <dawid.glazik@linux.intel.com>
+In-Reply-To: <7f55458097ef651b4fc46650254afd3fa7b87348.1775679285.git.dawid.glazik@linux.intel.com>
+References: <cover.1775679285.git.dawid.glazik@linux.intel.com>
+ <7f55458097ef651b4fc46650254afd3fa7b87348.1775679285.git.dawid.glazik@linux.intel.com>
+Message-Id: <177568411772.3278896.3414957895375606965.robh@kernel.org>
+Subject: Re: [PATCH v3 3/3] dt-bindings: i3c: Add AST2600 I3C global
+ registers
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,84 +75,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Introduce the device-tree bindings for I3C global registers found on
-AST2600 SoCs.
 
-Signed-off-by: Dawid Glazik <dawid.glazik@linux.intel.com>
----
-I wasn't sure if I should add newline at the end of the
-file or not so I took
-https://github.com/torvalds/linux/tree/master/Documentation/devicetree/bindings/i3c
-as an example.
----
- .../i3c/aspeed,ast2600-i3c-global.yaml        | 55 +++++++++++++++++++
- 1 file changed, 55 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/i3c/aspeed,ast2600-i3c-global.yaml
+On Wed, 08 Apr 2026 22:34:35 +0200, Dawid Glazik wrote:
+> Introduce the device-tree bindings for I3C global registers found on
+> AST2600 SoCs.
+> 
+> Signed-off-by: Dawid Glazik <dawid.glazik@linux.intel.com>
+> ---
+> I wasn't sure if I should add newline at the end of the
+> file or not so I took
+> https://github.com/torvalds/linux/tree/master/Documentation/devicetree/bindings/i3c
+> as an example.
+> ---
+>  .../i3c/aspeed,ast2600-i3c-global.yaml        | 55 +++++++++++++++++++
+>  1 file changed, 55 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/i3c/aspeed,ast2600-i3c-global.yaml
+> 
 
-diff --git a/Documentation/devicetree/bindings/i3c/aspeed,ast2600-i3c-global.yaml b/Documentation/devicetree/bindings/i3c/aspeed,ast2600-i3c-global.yaml
-new file mode 100644
-index 000000000000..edecc18796a9
---- /dev/null
-+++ b/Documentation/devicetree/bindings/i3c/aspeed,ast2600-i3c-global.yaml
-@@ -0,0 +1,55 @@
-+# SPDX-License-Identifier: GPL-2.0 OR BSD-2-Clause
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/i3c/aspeed,ast2600-i3c-global.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: ASPEED AST2600 I3C Global Registers
-+
-+description: |
-+  The AST2600 SoC provides a shared I3C global register block used by all
-+  I3C controller instances. This block contains per-instance global
-+  configuration fields, including controller instance ID and SDA pull-up
-+  configuration.
-+  Each I3C controller references this syscon node through the
-+  aspeed,global-regs property.
-+
-+maintainers:
-+  - Dawid Glazik <dawid.glazik@linux.intel.com>
-+
-+allOf:
-+  - $ref: /schemas/mfd/syscon-common.yaml#
-+
-+properties:
-+  compatible:
-+    items:
-+      - const: aspeed,ast2600-i3c-global
-+      - const: syscon
-+
-+  reg:
-+    maxItems: 1
-+
-+  resets:
-+    maxItems: 1
-+
-+required:
-+  - compatible
-+  - reg
-+
-+unevaluatedProperties: false
-+
-+examples:
-+  - |
-+    bus@1e7a0000 {
-+        compatible = "simple-bus";
-+        #address-cells = <1>;
-+        #size-cells = <1>;
-+        ranges = <0 0x1e7a0000 0x8000>;
-+
-+        i3c-global@0 {
-+            compatible = "aspeed,ast2600-i3c-global", "syscon";
-+            reg = <0x0 0x1000>;
-+            resets = <&syscon ASPEED_RESET_I3C_DMA>;
-+        };
-+    };
-+...
-\ No newline at end of file
--- 
-2.43.0
+My bot found errors running 'make dt_binding_check' on your patch:
+
+yamllint warnings/errors:
+./Documentation/devicetree/bindings/i3c/aspeed,ast2600-i3c-global.yaml:55:4: [error] no new line character at the end of file (new-line-at-end-of-file)
+
+dtschema/dtc warnings/errors:
+Lexical error: Documentation/devicetree/bindings/i3c/aspeed,ast2600-i3c-global.example.dts:27.35-55 Unexpected 'ASPEED_RESET_I3C_DMA'
+FATAL ERROR: Syntax error parsing input tree
+make[2]: *** [scripts/Makefile.dtbs:140: Documentation/devicetree/bindings/i3c/aspeed,ast2600-i3c-global.example.dtb] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [/builds/robherring/dt-review-ci/linux/Makefile:1597: dt_binding_check] Error 2
+make: *** [Makefile:248: __sub-make] Error 2
+
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.kernel.org/project/devicetree/patch/7f55458097ef651b4fc46650254afd3fa7b87348.1775679285.git.dawid.glazik@linux.intel.com
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
 
 
 -- 
