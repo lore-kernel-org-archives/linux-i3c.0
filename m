@@ -4,67 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8FA1C1073C8A
-	for <linux-i3c@archiver.kernel.org>; Wed,  8 Apr 2026 10:06:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7049B10F9972
+	for <linux-i3c@archiver.kernel.org>; Wed,  8 Apr 2026 19:41:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XGXyhcg9cicejBproOAt2w3BJKMZJtPtXXEC8GLDJm0=; b=37JWkOdcBtgKCp
-	5JrZzBxAl/Lk2knhE74rHX6TvlTMIzSaE+u1A9hBNMPh3DEw1W7SE2v2rNMrZWUt1FxfoWBDd1iHZ
-	9CRrCvzpLRuWUjfOZyFp1CzcjZiJom2z/qJDlG9P1SIiGy6t5VnGbw3F/NJ+MboXAO8TIbfFM/AMp
-	eSIytHPTWHO7QO9/xHORnDeffI/6o6rimaUNOCysGYCvDOz8P3QS0iANiO9TVTQ2cLVet5Sd0itXL
-	gR5a32lnBYs9/aiRUf2Q62EvSnnQKgdX0YNB09hfeNFlpLoRgczfiTKIMcEVU4n7Q4pVdDotCUh/w
-	huVMkf7fDGI4kxn7/VUA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jI1jThxY5z1YkvEZ2mzHuRv/MSD4QRmN1Xl5ubSjGK8=; b=Lc7SFNGmdiAGI1
+	YzAmZDbWzHQMci3pPhBOW8vIDwOh3p677Ge1j8MPdlS6LcfCcxk6h5122DhKjTWHkDUmBMhTLRgy5
+	XHpALPa+RD9618S87eZPL0tcc5rBKwVnm8FYsYcPVFf4EjxhOH+i8gXNgbW6HM3asqXUTm69qDApc
+	JRCsCV7FK4C+9imi4OEvmasoPPKKTMlp0qKx5a4UZA6Y3noDY1le9xoqBHhT+yaOW3xcXNuMGtO5Y
+	u8C3aaKyrqUt4/4gSTC+jPzX44yDdKJhRO2oXjlKY8l2cjq3Z/Qmd4YXII+mVYKUyiJHILaXMNnnZ
+	hBMTD8GqfFmNEzaDwFOQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wAPnn-00000008eyf-1TFg;
-	Wed, 08 Apr 2026 10:06:27 +0000
-Received: from pi.codeconstruct.com.au ([203.29.241.158] helo=codeconstruct.com.au)
+	id 1wAYmR-00000009K8P-3qIn;
+	Wed, 08 Apr 2026 19:41:39 +0000
+Received: from mgamail.intel.com ([192.198.163.10])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wAPnk-00000008ewo-3gvR
-	for linux-i3c@lists.infradead.org;
-	Wed, 08 Apr 2026 10:06:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=codeconstruct.com.au; s=2022a; t=1775642778;
-	bh=oiyeq3Ur4x2y2xjIPdSHCE2q70JzPYHlkX4NN/+e+dY=;
-	h=Subject:From:To:Cc:Date:In-Reply-To:References;
-	b=ZordAn9pbn2uqRR3zM0Ss9pFhF02lmsS8/eHdjQu/s34io7VsuokT+7916xqjbCua
-	 9CpD6u+y+GVLzjvzAo5tKi6xH7otNi81CjQFQTuv2VE5wRC7cmR6uYdOOn7UKCu97d
-	 i4MEtTNiR2jkSneGKBzjiR/jJCUs7dkpxI3ndIcHP0K5T8nFEj5e1nU1JtmZ1rafez
-	 rvNjhCEWsFcErSVVcVPTOuZBsWdgmZhuBqmd8EGisxyZvQ7hxDXXQOqJrzq+0swcq4
-	 G4doWsWsZ2CsdXBR07R8TwjEahnPh7W8ebNtwwB1/eHi5IEyOZa1wBm5f6mj5eP7pE
-	 Hd3E4dbBTndlQ==
-Received: from sparky.lan (unknown [159.196.93.152])
-	by mail.codeconstruct.com.au (Postfix) with ESMTPSA id 9620D651D5;
-	Wed,  8 Apr 2026 18:06:17 +0800 (AWST)
-Message-ID: <f202840ba1053f9d14655c9f6310298ba3e9c5a1.camel@codeconstruct.com.au>
-Subject: Re: [PATCH v2] i3c: dw-i3c-master: Fix IBI count register selection
- for versalnet
-From: Jeremy Kerr <jk@codeconstruct.com.au>
-To: "Datta, Shubhrajyoti" <shubhraj@amd.com>, Alexandre Belloni
-	 <alexandre.belloni@bootlin.com>
-Cc: "Datta, Shubhrajyoti" <shubhrajyoti.datta@amd.com>, 
-	"linux-kernel@vger.kernel.org"
-	 <linux-kernel@vger.kernel.org>, "git (AMD-Xilinx)" <git@amd.com>, Frank Li
-	 <Frank.Li@nxp.com>, Joel Stanley <joel@jms.id.au>, 
-	"linux-i3c@lists.infradead.org"
-	 <linux-i3c@lists.infradead.org>
-Date: Wed, 08 Apr 2026 18:06:15 +0800
-In-Reply-To: <f6253217-4b40-4d0e-b2cb-085c3d090b71@amd.com>
-References: <20260401084430.436059-1-shubhrajyoti.datta@amd.com>
-	 <a9b3a99f42bb9d092e95b35290cf4043fc780d3f.camel@codeconstruct.com.au>
-	 <LV5PR12MB9828D700D168803CBD022A708151A@LV5PR12MB9828.namprd12.prod.outlook.com>
-	 <5cb83afcd5340a108fd5a7346494ccf73752cc27.camel@codeconstruct.com.au>
-	 <20260403162442668f12b7@mail.local>
-	 <f6253217-4b40-4d0e-b2cb-085c3d090b71@amd.com>
-User-Agent: Evolution 3.46.4-2+deb12u1 
+	id 1wAYmO-00000009K7k-00n9;
+	Wed, 08 Apr 2026 19:41:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1775677296; x=1807213296;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=m2f0MgviSe4n7FamZwL8P5PBCKEndEE+/KV0B5nZuDg=;
+  b=VRVUWw87ifky6nWudnWM0PAhXNiiBXS+1XcesHaXOXAgMWIVhVO11Od9
+   HOgFscmQL+S/DB+wt9QzHUIVWxmvx0fjKvBs08Wzh9/8nPnSMzbm9OqPH
+   Ymb1g8NNO/9C33Z1fh99L9BK1DqORmY9fkt1mJTxJY5ofv1ZksZhtlTYt
+   IFuUh11PNNsjQsB2YgUR/BV5WSL+TdsPrDCn7IhYpf3Sl/oD6DzYTyyub
+   VVj7en3dWfbaMfNMvfidHEpTSZfLGcp/KYGJjAHZWlsCSAf7TnUM2OvBN
+   bDOJ9xvz7UHnnKcGKQ6i1i9GxAxBV4zvqFw3dKMV4jcWvuRLwHkD6HCIP
+   A==;
+X-CSE-ConnectionGUID: SzpP8guWTwqrrRyYczx5ig==
+X-CSE-MsgGUID: mN41o4hoQeGie6aimAUivA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11753"; a="88056882"
+X-IronPort-AV: E=Sophos;i="6.23,168,1770624000"; 
+   d="scan'208";a="88056882"
+Received: from fmviesa009.fm.intel.com ([10.60.135.149])
+  by fmvoesa104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Apr 2026 12:41:34 -0700
+X-CSE-ConnectionGUID: XAD6QAc2SwKwIrhvqhfXHg==
+X-CSE-MsgGUID: 8wH8aIgPT6WijufKP3yuHw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.23,168,1770624000"; 
+   d="scan'208";a="222053320"
+Received: from gklab-103a-129.igk.intel.com ([10.91.103.129])
+  by fmviesa009-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 08 Apr 2026 12:41:30 -0700
+From: Dawid Glazik <dawid.glazik@linux.intel.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Joel Stanley <joel@jms.id.au>,
+	Andrew Jeffery <andrew@codeconstruct.com.au>,
+	linux-aspeed@lists.ozlabs.org
+Cc: linux-i3c@lists.infradead.org,
+	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,
+	Frank Li <Frank.Li@nxp.com>,
+	Dawid Glazik <dawid.glazik@linux.intel.com>,
+	Maciej Lawniczak <maciej.lawniczak@intel.com>
+Subject: [PATCH v3 0/3] ARM: dts: aspeed-g6: add AST2600 I3C nodes and bindings
+Date: Wed,  8 Apr 2026 22:34:32 +0200
+Message-ID: <cover.1775679285.git.dawid.glazik@linux.intel.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
+Organization: Intel Technology Poland sp. z o.o. - ul. Slowackiego 173, 80-298 Gdansk - KRS 101882 - NIP 957-07-52-316
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260408_030625_204122_B7E651C4 
-X-CRM114-Status: UNSURE (   8.49  )
+X-CRM114-CacheID: sfid-20260408_124136_094996_62776887 
+X-CRM114-Status: UNSURE (   7.62  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,37 +88,41 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-SGkgU2h1YmhyYWp5b3RpLAoKPiBJIHNlZSB0aHJlZSBwb3NzaWJsZSBhcHByb2FjaGVzIGhlcmU6
-Cj4gCj4gwqAxLiBTb0PigJFzcGVjaWZpYyB8Y29tcGF0aWJsZXwoZS5nLiBWZXJzYWxOZXQgZGV0
-ZWN0aW9uKQo+IMKgwqDCoCBVc2UgYSBkZWRpY2F0ZWQgY29tcGF0aWJsZSBzdHJpbmcgdG8gaWRl
-bnRpZnkgVmVyc2FsTmV0IGFuZCBhZGp1c3QKPiDCoMKgwqAgdGhlIGJlaGF2aW9yIGFjY29yZGlu
-Z2x5Lgo+IMKgMi4gRHluYW1pYyBydW50aW1lIGRldGVjdGlvbiAoY3VycmVudCBhcHByb2FjaCkK
-PiDCoMKgwqAgVGhlIGN1cnJlbnQgcGF0Y2ggYXR0ZW1wdHMgdG8gaW5mZXIgdGhlIGFic2VuY2Ug
-b2YgSUJJIHBheWxvYWQgZGF0YQo+IMKgwqDCoCBkeW5hbWljYWxseSwgd2l0aG91dCByZWx5aW5n
-IG9uIERUIGluZm9ybWF0aW9uLgo+IMKgMy4gRXhwbGljaXQgRFQgcHJvcGVydHkgKHxoYXMtbm8t
-aWJpLWRhdGF8KQo+IMKgwqDCoCBJbnRyb2R1Y2UgYSBib29sZWFuIGRldmljZeKAkXRyZWUgcHJv
-cGVydHkgdG8gZXhwbGljaXRseSBkZXNjcmliZSB0aGUKPiDCoMKgwqAgaGFyZHdhcmUgY2FwYWJp
-bGl0eSB0aGF0IG5vIElCSSBwYXlsb2FkIGRhdGEgaXMgcHJvdmlkZWQsIGFuZCB1c2UKPiDCoMKg
-wqAgdGhhdCB0byBkcml2ZSB0aGUgYmVoYXZpb3IuCj4gCj4gQ291bGQgeW91IHBsZWFzZSBhZHZp
-c2Ugd2hpY2ggYXBwcm9hY2ggd291bGQgYmUgcHJlZmVycmVkPwoKUmVnYXJkbGVzcyBvZiBjaG9p
-Y2UgaGVyZSwgeW91IHdpbGwgc3RpbGwgbmVlZCB0byBpbnRyb2R1Y2UgYQpkZXZpY2Utc3BlY2lm
-aWMgY29tcGF0aWJsZSBzdHJpbmcuCgpGcm9tIHRoZXJlLCB5b3VyIHRocmVlIG9wdGlvbnMgYXBw
-bHkuIE15IHRoaW5raW5nIGlzOgoKIC0gaWYgeW91IGNhbiAqZ3VhcmFudGVlKiB0aGF0IHRoZSBw
-cm9iaW5nIG1ldGhvZCAoMikgaXMgYWNjdXJhdGUgKGFuZAogICB0aGVyZSBhcmUgbm8gb3RoZXIg
-c3ludGhlc2lzIHNldHRpbmdzIHRoYXQgbWlnaHQgaW52YWxpZGF0ZSBpdCksIHRoZW4KICAgdXNl
-IHRoYXQuCgogLSBvdGhlcndpc2UsIGlmIHlvdSdyZSB1bnN1cmUgb2YgdGhlIHJlbGlhYmlsaXR5
-IG9mIHByb2JpbmcsIHVzZSBhIG5ldwogICBleHBsaWNpdCBEVCBwcm9wZXJ0eSBhcyBwZXIgeW91
-ciAoMykuIFRoaXMgaXMgbW9yZSBhcHByb3ByaWF0ZSB0aGFuCiAgIHVzaW5nIHRoZSBjb21wYXRp
-YmxlIHN0cmluZywgYXMgaXQncyBhbiBhY3R1YWwgY29uZmlndXJhYmxlIHByb3BlcnR5CiAgIG9m
-IHRoZSBoYXJkd2FyZSwgcmF0aGVyIHRoYW4gYSB3b3JrYXJvdW5kLXN0eWxlIHRoaW5nLgoKTm90
-ZSB0aGF0IEFsZXhhbmRyZSBoYXMgdGhlIGZpbmFsIHNheSBpbiB0aGlzIHRob3VnaC4gSGUncyBv
-a2F5IHdpdGggdGhlCnByb2JlIGFwcHJvYWNoLCBzbyBpdCdzIHVwIHRvIHlvdXIgY2FsbCBvbiB3
-aGV0aGVyIHRoYXQgd2lsbCBiZSBzb2xpZAplbm91Z2ggZm9yIGFsbCBkdy1pM2MgaGFyZHdhcmUu
-CgpDaGVlcnMsCgoKSmVyZW15CgotLSAKbGludXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWkzYwo=
+This series reworks and resubmits AST2600 I3C DTS updates that were
+originally posted in 2024, but stalled without further upstream
+progress.[1] The series was rebased onto the current tree and merge
+conflicts were resolved.
+
+The patches first move i2c nodes under the APB simple-bus for layout
+consistency, then add AST2600 I3C controller nodes in aspeed-g6.dtsi
+and finally add the missing dt-binding for AST2600 I3C global
+registers. Jeremy agreed in a separate email thread that I can continue
+this series under my authorship.
+
+Link: https://lore.kernel.org/all/9d8c03d742fa9767f30e23d75ddf0baf4296c88e.1714647917.git.jk@codeconstruct.com.au/
+
+Dawid Glazik (3):
+  ARM: dts: aspeed-g6: move i2c controllers directly into apb node
+  ARM: dts: aspeed-g6: Add nodes for i3c controllers
+  dt-bindings: i3c: Add AST2600 I3C global registers
+
+ .../i3c/aspeed,ast2600-i3c-global.yaml        |  55 ++
+ arch/arm/boot/dts/aspeed/aspeed-g6.dtsi       | 549 ++++++++++--------
+ 2 files changed, 377 insertions(+), 227 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/i3c/aspeed,ast2600-i3c-global.yaml
+
+
+base-commit: 6de23f81a5e08be8fbf5e8d7e9febc72a5b5f27f
+-- 
+2.43.0
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
