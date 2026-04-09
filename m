@@ -4,76 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CD34EA3C4F
-	for <linux-i3c@archiver.kernel.org>; Thu,  9 Apr 2026 11:01:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5E22DEA3C23
+	for <linux-i3c@archiver.kernel.org>; Thu,  9 Apr 2026 11:02:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3F1dNPtAFiDSA119I/c8hL9+EDGq/HF/da0w3D6ZFSE=; b=bJLS9yZ/L4HYIM
-	xS63NYIoUhxl4bbkb7MFeiPJjZHglXlhwqRZZz/LBs/cuTJ33uLvs5yG/R2hXXfbWlbTleKG2A0kp
-	8K735Fs1T9TBY1ndhkkqFGShqghhKKGkT+uYb15Ace47Q7SBCVmwB10VcLsErUdZLc0oFKK8zS2Gs
-	sThqKTSAEX4esVcr16DnBTqOTuGvpyseWDL6xDfoz43pef21GvPmkQNAyd1w+on3iNBzqxtpIjjJm
-	o3RpBtTTvyKo1fNzXT9F23gZXCRejOkxp/k2FOWNx74u5d0C6vgbi/Yd4F7KXQpt1fLrfn0Bgu7Y7
-	6V/W/2ZQhrDHHcwI00/Q==;
+	List-Owner; bh=o7M+u4qaVDCdDWlNydD6/q9qWbYlfBjXamgVF7JjdbY=; b=pHe4RFEkDoGJwt
+	G3zilgGwYEymQQR0G/V0L0QdMCrDdwnnJ0C+dbNmEpX4eOsG6FlkuNdaRT99xVLCMDk6balhDCx27
+	A7BgSPfHm6qKHWuuRkcAsPuJLDHcJk69K16g4WGJjOsRDx6QcVrJUzZH5/YsvCrirdDTgJCvBeR4S
+	o/pTa2C21guAF7KXXBa2rKdWASCEbM3T+3HoOIDfgspRJQYPJ0O1PrU+OFoRgAtx6ySYI/wsw2s6t
+	ZbbBCVRWZ6oEVxiUNLEmN8M8QyeRPuXr9G7HhXvblQIkIZ+2mxH29TirOlHJFN+Z4X8GKpKO9oUiS
+	qCMpHldDlMiFRu6Xs9DA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wAn8g-0000000ADYM-0q9V;
-	Thu, 09 Apr 2026 11:01:34 +0000
-Received: from mail-southcentralusazlp170120001.outbound.protection.outlook.com ([2a01:111:f403:c10d::1] helo=SN4PR2101CU001.outbound.protection.outlook.com)
+	id 1wAn9C-0000000ADig-07Je;
+	Thu, 09 Apr 2026 11:02:06 +0000
+Received: from mail-eastusazon11011005.outbound.protection.outlook.com ([52.101.52.5] helo=BL2PR02CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wAn6F-0000000AD7X-31VJ
+	id 1wAn8S-0000000ADSM-3efe
 	for linux-i3c@lists.infradead.org;
-	Thu, 09 Apr 2026 11:01:27 +0000
+	Thu, 09 Apr 2026 11:01:32 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=gFDql00B+fO0XK0sx/Q5800O/e1SdXOKbh82FYcmXl8H1fRHHgwz1GMebOUPjhkBKaTa2UNOyIvzscDqJETBLUyutbU4iezy6cwGAq/lUSM8Of4InWh/3zPRwZmduqpvc7raiMiaI/oao5HLPQ2bP33A3LlEEy/JBzm97H0+6exZptA49VAKCGZXCErF+iH009Hjr6Xh6nMPtfAs80kljzy+qIdzLucgDGW8fPA/iv6dSfIRwF/A3AcOAtNkt0E/3XYDY5K5f4CfBN6y2grf/igzyaQgthUj7Z786TRLf8PGKJjESNUDLtYJ9lBHYkVrb6B+jiXG+RGBtMW5tNjt6A==
+ b=lI6CrAR+8nwVKhWjJKswUT6nw3f1frU+lilBnlMa9DoyAtUkGkac5ZCV73yXpAaGX58ytJrFlhLQueNJkDsLhPJLWQrbiWF0ml9qlcMPRjOXwUvIWAvqqG6+pLzpvjnievmprtbRtOxLseLe2JEEegatxrmojSBuBU4ZTN6lmvbOmfrxnSPutIIKlqvaLMb+qpHeT50+fMwzQ3XJKI2KhXN7tdGvLeyfdLadk4vwlrO8ocCsAW+5sGNEE3lGLKSrVQ9zDldbDx2bGU8tpuVkSxfrHiA4ELj6YIlruwgXWPLHB4Ty4dk3xnS9ieG25KjZXGAVUqMTx212IM03ynPjqQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=bW/98tZuzpeypHTbaLlolnhW5jM6gorI6K4c3+KQ7A8=;
- b=xHOV6ybo4dHSxZ2Ca/lXOEKnda2hLBZPfZg7FbUswm7LsBUzkau8U6WDcuMWcoBkwwIx43lZ2gBCBnWSOYCAuwS2HUz50qJVRZvZfowU4tQzGvxyDhJXR1r9fLdBBZNjTOW8osZumSstuJA9fj9ph30ovtvR3FYDOsI0D75Ec7f8Y9c6hfs/u8Ssdq7XjCcpos8iEFd0bH44zOT72BDEE1y2NBATM+Mfcv/RG2QLEBGz4P+KtgwzHc3JFKYbvprmqrrY1RGheqkabJBNJaofmi0oaQASO4LUvnbTuyNhMKlO16qCGcIjzT1SIUvQFQcQeH0o4o+0OOVIpy2S8X/gOg==
+ bh=PuWTPDhKYHIg4NfGpvEGXzM7ZSpoohxJ+5vTCC5irws=;
+ b=JjK3KSY4QYyVzEuBi9ZXJAWvi1bA6dXWXkEH5KOcb1cmb3UAL/quDfyMGqo2gOBI93aoTngjXtKD6YopKPYoFtu5w8rDiSvq0r7IvonmtRlbYlyJg6OAAEESFT7TYp2BxYNUFDBIS8ng/NdFHOy2L0JRfTpiAp3fmclFU5PmmRqhJ+bse7NObiDPdyj7XapXaNjKUyrLZaP+S/SMC/ClsjHyvi5OlvletNzHIlGbLTMNk8KdvG6HAL7ZBE40L+EAF/E3aM/8Q7CLCtdp9jLVFtMzDd1AJUDuLSJJqnSi0B0JQcbB+4mKljUPJTIjM7ydq3TT/RasuVNQyTSHHyjwyA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.117.160) smtp.rcpttodomain=bootlin.com smtp.mailfrom=nvidia.com;
+ 216.228.117.161) smtp.rcpttodomain=bootlin.com smtp.mailfrom=nvidia.com;
  dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
  dkim=none (message not signed); arc=none (0)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=bW/98tZuzpeypHTbaLlolnhW5jM6gorI6K4c3+KQ7A8=;
- b=kxc1Z3LnQbYV4EVUM4NkTWok+A6WxOufHpsrxig6NvF2+7VZfHFT6xX5hJ8VpKF2K4xvyltmQDz7l61uByda/8TypjE5PKNJQ+WT8bnTDkPDZTXXbCnP7otPnu1K3AikgvFDeC5aaEflJ1nPRYkRfbkk/voSPZ/Lu7bpIsvM+hfGrF5leBPMQn0WlX/5aJAlZW+riL/0+3jmexR1JC3hFGM3vzYdTLhqLO1jkSy0b+IyCX2cDMrlgdRitpilucer03PTxa+bYPui1Gfb+Mdg9lvbJEzOcj5nxLbz6o/+BVxzPUJyMcf7rU6sA0s785Qusf/1jeOzYND7JATm0jv7Bg==
-Received: from CH0P221CA0006.NAMP221.PROD.OUTLOOK.COM (2603:10b6:610:11c::29)
- by SJ2PR12MB9244.namprd12.prod.outlook.com (2603:10b6:a03:574::19) with
+ bh=PuWTPDhKYHIg4NfGpvEGXzM7ZSpoohxJ+5vTCC5irws=;
+ b=oc7lJ9GEX3ql3rU5rjP2tumRD0DWhpqxnqxak0v4/5UaeoCh0yZmdiURFoNQWt60HPabc7wycD/7UoaglPjuxhvHJZ/fWQ8MTJn+EK7Gl4N6ytkoXU5UDz9fOFRjanK533sXE47oJ5zDA8lPtBaFCS6ic4PK+M2HJLGzyT50kjB07OHlCosb5C2pa8mDKWcUdWD7p6g6zAzs75aAZAL4sv3NH2rExzUUH8LNx+lufpZH3PPq+cuEhOYebiqut9YTPu8Bjkefp5oz9eB7aIB6JIClpS8Yh+jSN0DF6d3Md5Ny3qPkywzubYTmNFVb27stpP4VWvkLpSRzIhmyXFvRFg==
+Received: from CH5PR05CA0017.namprd05.prod.outlook.com (2603:10b6:610:1f0::7)
+ by CH3PR12MB8711.namprd12.prod.outlook.com (2603:10b6:610:176::20) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9769.21; Thu, 9 Apr
- 2026 10:58:53 +0000
-Received: from CH3PEPF00000015.namprd21.prod.outlook.com
- (2603:10b6:610:11c:cafe::bb) by CH0P221CA0006.outlook.office365.com
- (2603:10b6:610:11c::29) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.9769.40 via Frontend Transport; Thu,
- 9 Apr 2026 10:58:47 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9769.20; Thu, 9 Apr
+ 2026 11:01:09 +0000
+Received: from CH1PEPF0000AD83.namprd04.prod.outlook.com
+ (2603:10b6:610:1f0:cafe::e) by CH5PR05CA0017.outlook.office365.com
+ (2603:10b6:610:1f0::7) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9769.41 via Frontend Transport; Thu,
+ 9 Apr 2026 11:01:09 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.161)
  smtp.mailfrom=nvidia.com; dkim=none (message not signed)
  header.d=none;dmarc=pass action=none header.from=nvidia.com;
 Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.117.160) by
- CH3PEPF00000015.mail.protection.outlook.com (10.167.244.120) with Microsoft
+ 216.228.117.161 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.161; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.161) by
+ CH1PEPF0000AD83.mail.protection.outlook.com (10.167.244.85) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.9818.0 via Frontend Transport; Thu, 9 Apr 2026 10:58:52 +0000
-Received: from rnnvmail202.nvidia.com (10.129.68.7) by mail.nvidia.com
- (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
+ 15.20.9769.17 via Frontend Transport; Thu, 9 Apr 2026 11:01:08 +0000
+Received: from rnnvmail204.nvidia.com (10.129.68.6) by mail.nvidia.com
+ (10.129.200.67) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Thu, 9 Apr
- 2026 03:58:37 -0700
-Received: from rnnvmail203.nvidia.com (10.129.68.9) by rnnvmail202.nvidia.com
- (10.129.68.7) with Microsoft SMTP Server (version=TLS1_2,
+ 2026 04:00:43 -0700
+Received: from rnnvmail203.nvidia.com (10.129.68.9) by rnnvmail204.nvidia.com
+ (10.129.68.6) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Thu, 9 Apr
- 2026 03:58:37 -0700
+ 2026 04:00:42 -0700
 Received: from BUILDSERVER-IO-L4T.nvidia.com (10.127.8.9) by mail.nvidia.com
  (10.129.68.9) with Microsoft SMTP Server id 15.2.2562.20 via Frontend
- Transport; Thu, 9 Apr 2026 03:58:31 -0700
+ Transport; Thu, 9 Apr 2026 04:00:37 -0700
 From: Akhil R <akhilrajeev@nvidia.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
 	<Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
@@ -88,9 +88,9 @@ To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
 	<linux-acpi@vger.kernel.org>, <acpica-devel@lists.linux.dev>,
 	<linux-hwmon@vger.kernel.org>
 CC: Akhil R <akhilrajeev@nvidia.com>
-Subject: [PATCH v2 02/13] ACPICA: Read LVR from the I2C resource descriptor
-Date: Thu, 9 Apr 2026 16:27:32 +0530
-Message-ID: <20260409105747.48158-3-akhilrajeev@nvidia.com>
+Subject: [PATCH v2 11/13] hwmon: spd5118: Remove 16-bit addressing
+Date: Thu, 9 Apr 2026 16:27:41 +0530
+Message-ID: <20260409105747.48158-12-akhilrajeev@nvidia.com>
 X-Mailer: git-send-email 2.50.1
 In-Reply-To: <20260409105747.48158-1-akhilrajeev@nvidia.com>
 References: <20260409105747.48158-1-akhilrajeev@nvidia.com>
@@ -99,28 +99,28 @@ X-NVConfidentiality: public
 X-NV-OnPremToCloud: ExternallySecured
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CH3PEPF00000015:EE_|SJ2PR12MB9244:EE_
-X-MS-Office365-Filtering-Correlation-Id: 4c9b8977-74cf-4dbf-58ac-08de9626fc77
+X-MS-TrafficTypeDiagnostic: CH1PEPF0000AD83:EE_|CH3PR12MB8711:EE_
+X-MS-Office365-Filtering-Correlation-Id: c334abc5-dbdb-4c66-745c-08de96274e03
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|36860700016|7416014|376014|1800799024|13003099007|921020|56012099003|22082099003|18002099003;
-X-Microsoft-Antispam-Message-Info: cv+ommWNMV1woDLf1AJewrdVh4lGdTbjLeQcpz6OuB1gV5AEeIJpGUOKkBXNmC2dgP6+4UxJv3KE9usiyk2xPwmArNsPL2qSPHo4I6Bw2hd4btOtJ9L34mmBUfF031aZkOWHrAmVBEM/rhooMF9XjvGXQiw0dvcBIBUmUYNg84YiSSNVIu9WkzHoY0ySPYlHUNM2OBjQyz5P8qxBvDdJVIFxFMUdHC9PIziPt/PLTA5nZv/1bpbkrI9gxys0jsgSBl2Wl4f2tiC0lF3g9i/YE8hqWKGQQ4boT5kHVZLjkbkztGklzIVT9rcT9AI7dMz6gOnh1D0Ei24CjBVq7EROD1Xll7YyYjaCdjou3C8fmcCt0+oasK2u+SvFP85fmrAn8BZNnCkyuq5+L2cuBZoyLCoz7ZrQHG2M87KbIea6qXtaoPI2swI13GT9l5AH+P3ifZnChrESQQoPPB3k9K/FYvCXF/LVryTzgwBr+Xg6Zz4CyC2s+293h1BSSet3b/LsQ6UguqiYshYjSrOVNcbeNLIINNQ2OTKQeJrthLvGgOxk+vpxE2Rfo0C7EeEM70EwS/3N9DWdwP4N6LTRGLdELDCZHPEXRBU1d6F5RgFaUefwR0oOxnlK4/zRWxELADUEOWRVpTayyo9kQ7eTjvcrKXJ1tOGzlGkxSXZSflA0Zym4ke/CdzOKnPL5ze9AmLeb3PiOaVi0AKT/rCu8fwGrrcW9v72akY6aKbdzA/33WMmpBOF7TGJ3P87t3G915+SoAwxEn6eN+GRcrOJIrrBv1H7P1kZn0Vib/sztCzWeBQy9oKRKo4qZrQLiDysbKzyZ
-X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(82310400026)(36860700016)(7416014)(376014)(1800799024)(13003099007)(921020)(56012099003)(22082099003)(18002099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700016|376014|82310400026|7416014|1800799024|921020|18002099003|56012099003|22082099003;
+X-Microsoft-Antispam-Message-Info: BKclWvFuUOJ3QICdjpQJ/YdIe4JZb0ChZNp/JEFoBeiP9385+Zdl9ZH2rVhGOcKTNEfxF59AsK0dpAWfn2FgzN/bRAd1Fb1QEvqC1Jmm4T9ds5TIirA4DMboCY0grXrJJpol373JMwv8YUx8J5Z3TVJeoIxxaEt0hyxjpJl75Kkp+ooe3VHd2em/o0MAdR93krNjjO1PM06fqyd6+jybBtGcB+s/GawWcZzRX3QN11rpBLzeTUyWk0b+d8L0++EWUa6lPWGG77oJ2Vqs/D95kqurIhYUrVkyMl569Pm7Q7w0aqlVquUSL4dewAgDjRgQB+L0HINCi7fRaA5326Ls3mDLoVm6hO6oRA/VhqMxsVJAjo8SnZUdMq3sWIsWC6riUH9n0mDv3PFdqzeCe8qDAQ+LBF0UXftzCyeiEspLzYDzOSEnItbd2IXj3jnstEWpTv7Ooutv6qpeOMfRLQR14zWiq/+sGZo9z7DqyG22DP5q5RGaXEIGeTAAH5i7f6Qww0a4c2ZiOC1RxiVldXYrZwqXMAlUfuDobMlyRc6iafCZVd/W8miLzcrBhDgnabPtsBn6UruijqFS+WVbtccgpLbnrqYdxVvc/sRF/GQo/Rhu8fRmRQI0sudMcX2zCpSwMFDAg4miBcB4yyRlaQwWkocUjt319Oi8a584xaqGRSO8AHPBBl5EdxpvDfGCv1lMBwDqzbfmuqOw+Il14TES4G5mM+Qb2WvUD7OLRODAvle60Qv6WMZRDyZhyOGAU3X2STfmIHGIZkJNfDwe97/IooFxpQCAZFHOtnjSSkyH51Y7mm3LpmhpWZayIxkvXQI2
+X-Forefront-Antispam-Report: CIP:216.228.117.161;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge2.nvidia.com;CAT:NONE;SFS:(13230040)(36860700016)(376014)(82310400026)(7416014)(1800799024)(921020)(18002099003)(56012099003)(22082099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: /mB6pqlGqpO1mmwfGpiIuuvoeH+v7pvjszmWrSBEbH4kxqq0EqvxtUzNYsJWji/9GuE/MaCa4Zgw18b2lO4aKVAbzaTxL/DsswF6/OdAoF0VSyBaxWaA2eja5/GIub/zovQwdjClLHlkkBM8u5or0+rvYBNCuFrsVqf6Aovs48uY92zWBNTegCLWjdZJu49lCLND6Et5URKOerJItIfd4RmGqNAtJRsgERVA48P7cqqibVuOGNIR/IJ+bVv3EEdRiwzTk8D4MaUZ3apyZUrPLqDQG4/RpWyP7mqdQbNgdDDfyU/yUUm+LeIlQTroTYLF4ukk8HNvEePenN51KaBaOux5Pf/HS0HI/JE03InMUtK69/NklyHo7CPpAsmIArhrWfH91MnZBIeq936QZSgVNIKE3qeXLVkI8tnQd2UMRUOKHsC4k8Qee1kAxK7joRDC
+X-MS-Exchange-AntiSpam-MessageData-0: PwzOF3HxX+g89+0evZSDg0qSTu1YVz6DzGCpfFl1j2ik6zPHIsVQqSCyG4m8sOFMkFieCXebvJvXgC2QB64IK68YBMf3fhOxQQRJXZlijb+XGrJFTNkTBJbeLAuvbObcEcQsxCBreRTPiVgh/lXR8ZfCtnd7SsgnOS6usAsKPHcoSgjSiO5II/v+/RFfxm77YSNwkKS5TcQIrNA/OcpBjd3yAm6qRxUY4QFNS1wJW+ksBh3UHhAVZoZH5/PYrXM2Y92BApXcTADa6rdlkcL4jatn9fvK8PVPxlE7wEjMv/Y/Ui5iPUp+GFuCdmgKDLPzm+UlvBuM5uiL8LD5xgs9vWAk+auvJWOSslCup6+83j7WVPFXxrNJzjAj+pMjscLdeBtMgx9DcWrMuIuKjRMeTnP8fzCiK84mPFVkycSP4iyD8z6aeozWWvYhp87UWKyn
 X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Apr 2026 10:58:52.0192
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Apr 2026 11:01:08.8338
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4c9b8977-74cf-4dbf-58ac-08de9626fc77
+X-MS-Exchange-CrossTenant-Network-Message-Id: c334abc5-dbdb-4c66-745c-08de96274e03
 X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: CH3PEPF00000015.namprd21.prod.outlook.com
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.161];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: CH1PEPF0000AD83.namprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ2PR12MB9244
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH3PR12MB8711
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260409_035953_218573_4ACF727D 
-X-CRM114-Status: GOOD (  11.26  )
+X-CRM114-CacheID: sfid-20260409_040126_445632_68390668 
+X-CRM114-Status: GOOD (  24.07  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,67 +137,163 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-ACPI 6.3 specifies byte 8 of I2C Serial Bus Connection descriptor to be
-used for Legacy Virtual Register (LVR) data as specified in the MIPI
-I3C Specification for an I2C device connected to an I3C Host Controller.
-LVR will be read by I3C host controller drivers and it provides details
-about the specific speed and 50ns spike filter capabilities of I2C
-devices.
+The intent of introducing 16-bit addressing was to support I3C, but it
+turns out to be that I3C do not require to read the Legacy Mode register
+nor any specific encoding for page translation. The testing of 16-bit
+code was limited and there are no known users for this feature. Remove
+the sections which are there to support 16-bit addressing and prepare the
+driver to support I3C appropriately.
 
-Update the rsconvert_info to include this field. For I2C devices on an
-I2C bus, this field is Reserved and unused.
-
-This commit is the result of squashing the following:
-ACPICA commit 70082dc8fc847673ac7f4bbb1541776730f0b63e
-ACPICA commit e62e74baf7e08cf059ec82049aeccd565b24d661
-ACPICA commit c404118235108012cad396c834b5aabe2dd1b51a
-ACPICA commit 7650d4a889ea7907060bfce89f4f780ce83e7b28
-ACPICA commit 014fa9f2dbcc6b1bd42a4a4a6f6705d9cf7d460b
-
-Link: https://github.com/acpica/acpica/commit/70082dc8
-Link: https://github.com/acpica/acpica/commit/b3c38dc9
 Signed-off-by: Akhil R <akhilrajeev@nvidia.com>
+Suggested-by: Guenter Roeck <linux@roeck-us.net>
 ---
- drivers/acpi/acpica/rsserial.c | 6 +++++-
- include/acpi/acrestyp.h        | 1 +
- 2 files changed, 6 insertions(+), 1 deletion(-)
+ drivers/hwmon/spd5118.c | 79 +++--------------------------------------
+ 1 file changed, 5 insertions(+), 74 deletions(-)
 
-diff --git a/drivers/acpi/acpica/rsserial.c b/drivers/acpi/acpica/rsserial.c
-index 279bfa27da94..c06e918ab889 100644
---- a/drivers/acpi/acpica/rsserial.c
-+++ b/drivers/acpi/acpica/rsserial.c
-@@ -315,7 +315,7 @@ struct acpi_rsconvert_info acpi_rs_convert_csi2_serial_bus[14] = {
-  *
-  ******************************************************************************/
+diff --git a/drivers/hwmon/spd5118.c b/drivers/hwmon/spd5118.c
+index 5da44571b6a0..8fdde35e68cd 100644
+--- a/drivers/hwmon/spd5118.c
++++ b/drivers/hwmon/spd5118.c
+@@ -66,9 +66,6 @@ static const unsigned short normal_i2c[] = {
+ #define SPD5118_EEPROM_BASE		0x80
+ #define SPD5118_EEPROM_SIZE		(SPD5118_PAGE_SIZE * SPD5118_NUM_PAGES)
  
--struct acpi_rsconvert_info acpi_rs_convert_i2c_serial_bus[17] = {
-+struct acpi_rsconvert_info acpi_rs_convert_i2c_serial_bus[18] = {
- 	{ACPI_RSC_INITGET, ACPI_RESOURCE_TYPE_SERIAL_BUS,
- 	 ACPI_RS_SIZE(struct acpi_resource_i2c_serialbus),
- 	 ACPI_RSC_TABLE_SIZE(acpi_rs_convert_i2c_serial_bus)},
-@@ -391,6 +391,10 @@ struct acpi_rsconvert_info acpi_rs_convert_i2c_serial_bus[17] = {
- 	 AML_OFFSET(i2c_serial_bus.type_specific_flags),
- 	 0},
- 
-+	{ACPI_RSC_MOVE8, ACPI_RS_OFFSET(data.i2c_serial_bus.lvr),
-+	 AML_OFFSET(i2c_serial_bus.type_specific_flags) + 1,
-+	 1},
-+
- 	{ACPI_RSC_MOVE32, ACPI_RS_OFFSET(data.i2c_serial_bus.connection_speed),
- 	 AML_OFFSET(i2c_serial_bus.connection_speed),
- 	 1},
-diff --git a/include/acpi/acrestyp.h b/include/acpi/acrestyp.h
-index 842f932e2c2b..38a19b1d19ac 100644
---- a/include/acpi/acrestyp.h
-+++ b/include/acpi/acrestyp.h
-@@ -423,6 +423,7 @@ struct acpi_resource_i2c_serialbus {
- 	ACPI_RESOURCE_SERIAL_COMMON u8 access_mode;
- 	u16 slave_address;
- 	u32 connection_speed;
-+	u8 lvr;
+-#define PAGE_ADDR0(page)		(((page) & BIT(0)) << 6)
+-#define PAGE_ADDR1_4(page)		(((page) & GENMASK(4, 1)) >> 1)
+-
+ /* Temperature unit in millicelsius */
+ #define SPD5118_TEMP_UNIT		(MILLIDEGREE_PER_DEGREE / 4)
+ /* Representable temperature range in millicelsius */
+@@ -78,7 +75,6 @@ static const unsigned short normal_i2c[] = {
+ struct spd5118_data {
+ 	struct regmap *regmap;
+ 	struct mutex nvmem_lock;
+-	bool is_16bit;
  };
  
- /* Values for access_mode field above */
+ /* hwmon */
+@@ -348,12 +344,7 @@ static ssize_t spd5118_nvmem_read_page(struct spd5118_data *data, char *buf,
+ 	if (offset + count > SPD5118_PAGE_SIZE)
+ 		count = SPD5118_PAGE_SIZE - offset;
+ 
+-	if (data->is_16bit) {
+-		addr = SPD5118_EEPROM_BASE | PAGE_ADDR0(page) |
+-		  (PAGE_ADDR1_4(page) << 8);
+-	} else {
+-		addr = page * 0x100 + SPD5118_EEPROM_BASE;
+-	}
++	addr = page * 0x100 + SPD5118_EEPROM_BASE;
+ 	err = regmap_bulk_read(regmap, addr + offset, buf, count);
+ 	if (err)
+ 		return err;
+@@ -473,15 +464,6 @@ static const struct regmap_config spd5118_regmap8_config = {
+ 	.num_ranges = ARRAY_SIZE(spd5118_i2c_regmap_range_cfg),
+ };
+ 
+-static const struct regmap_config spd5118_regmap16_config = {
+-	.reg_bits = 16,
+-	.val_bits = 8,
+-	.max_register = 0x7ff,
+-	.writeable_reg = spd5118_writeable_reg,
+-	.volatile_reg = spd5118_volatile_reg,
+-	.cache_type = REGCACHE_MAPLE,
+-};
+-
+ static int spd5118_suspend(struct device *dev)
+ {
+ 	struct spd5118_data *data = dev_get_drvdata(dev);
+@@ -519,8 +501,7 @@ static int spd5118_resume(struct device *dev)
+ 
+ static DEFINE_SIMPLE_DEV_PM_OPS(spd5118_pm_ops, spd5118_suspend, spd5118_resume);
+ 
+-static int spd5118_common_probe(struct device *dev, struct regmap *regmap,
+-				bool is_16bit)
++static int spd5118_common_probe(struct device *dev, struct regmap *regmap)
+ {
+ 	unsigned int capability, revision, vendor, bank;
+ 	struct spd5118_data *data;
+@@ -537,8 +518,6 @@ static int spd5118_common_probe(struct device *dev, struct regmap *regmap,
+ 	if (!(capability & SPD5118_CAP_TS_SUPPORT))
+ 		return -ENODEV;
+ 
+-	data->is_16bit = is_16bit;
+-
+ 	err = regmap_read(regmap, SPD5118_REG_REVISION, &revision);
+ 	if (err)
+ 		return err;
+@@ -680,69 +659,21 @@ static int spd5118_i2c_init(struct i2c_client *client)
+ 	return 0;
+ }
+ 
+-/*
+- * 16-bit addressing note:
+- *
+- * If I2C_FUNC_I2C is not supported by an I2C adapter driver, regmap uses
+- * SMBus operations as alternative. To simulate a read operation with a 16-bit
+- * address, it writes the address using i2c_smbus_write_byte_data(), followed
+- * by one or more calls to i2c_smbus_read_byte() to read the data.
+- * Per spd5118 standard, a read operation after writing the address must start
+- * with <Sr> (Repeat Start). However, a SMBus read byte operation starts with
+- * <S> (Start). This resets the register address in the spd5118 chip. As result,
+- * i2c_smbus_read_byte() always returns data from register address 0x00.
+- *
+- * A working alternative to access chips with 16-bit register addresses in the
+- * absence of I2C_FUNC_I2C support is not known.
+- *
+- * For this reason, 16-bit addressing can only be supported with I2C if the
+- * adapter supports I2C_FUNC_I2C.
+- *
+- * For I2C, the addressing mode selected by the BIOS must not be changed.
+- * Experiments show that at least some PC BIOS versions will not change the
+- * addressing mode on a soft reboot and end up in setup, claiming that some
+- * configuration change happened. This will happen again after a power cycle,
+- * which does reset the addressing mode. To prevent this from happening,
+- * detect if 16-bit addressing is enabled and always use the currently
+- * configured addressing mode.
+- */
+-
+ static int spd5118_i2c_probe(struct i2c_client *client)
+ {
+-	const struct regmap_config *config;
+ 	struct device *dev = &client->dev;
+ 	struct regmap *regmap;
+-	int err, mode;
+-	bool is_16bit;
++	int err;
+ 
+ 	err = spd5118_i2c_init(client);
+ 	if (err)
+ 		return err;
+ 
+-	mode = i2c_smbus_read_byte_data(client, SPD5118_REG_I2C_LEGACY_MODE);
+-	if (mode < 0)
+-		return mode;
+-
+-	is_16bit = mode & SPD5118_LEGACY_MODE_ADDR;
+-	if (is_16bit) {
+-		/*
+-		 * See 16-bit addressing note above explaining why it is
+-		 * necessary to check for I2C_FUNC_I2C support here.
+-		 */
+-		if (!i2c_check_functionality(client->adapter, I2C_FUNC_I2C)) {
+-			dev_err(dev, "Adapter does not support 16-bit register addresses\n");
+-			return -ENODEV;
+-		}
+-		config = &spd5118_regmap16_config;
+-	} else {
+-		config = &spd5118_regmap8_config;
+-	}
+-
+-	regmap = devm_regmap_init_i2c(client, config);
++	regmap = devm_regmap_init_i2c(client, &spd5118_regmap8_config);
+ 	if (IS_ERR(regmap))
+ 		return dev_err_probe(dev, PTR_ERR(regmap), "regmap init failed\n");
+ 
+-	return spd5118_common_probe(dev, regmap, is_16bit);
++	return spd5118_common_probe(dev, regmap);
+ }
+ 
+ static const struct i2c_device_id spd5118_i2c_id[] = {
 -- 
 2.50.1
 
