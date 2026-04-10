@@ -4,120 +4,173 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 05B94F36BA9
-	for <linux-i3c@archiver.kernel.org>; Fri, 10 Apr 2026 04:45:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59129F36BAA
+	for <linux-i3c@archiver.kernel.org>; Fri, 10 Apr 2026 05:03:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:CC:
+	To:From:Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xMtMYBXvCBI+kXBqrAaWEp9qIWj6CfMM4LUnnX+Tojc=; b=Sliq3nqeOJubt1
-	qkHIaK4+uq8etJZyERLrRYZNfzJ7GoXMFOLaLTwhwkCngVopeO4P9jbYGx36gBpJP0wGHKuthilSZ
-	LN8Rdfa2GjGCXIemrEFcydX3XWeQXhi5wjaGZlz9iPTj/tC3wWRkKOfBPxH/eE6Xfd71H8Zt7TB5b
-	wlRfV585GZSvCG9myGik/Hds4REwig82Akdkkqz4PxC8FCkFoo+6veWnLCs+AJwUrij2Lb3++jJAi
-	59VkGUiRmRfVmtslPZjlp3GRfIVpfD8NaFkKjgf0oYvQx3AbJ/eHk0z3RhvYZFaYEtfyo7O7xr3F0
-	zDPr3uZ+v/qpdXUoEx8Q==;
+	List-Owner; bh=sWXVqLgS+wyYiX5BMql9uPyVl7Nm1v7IejSBKXSUlkw=; b=TLXl/B6eXVM3AK
+	wlBzvGbZrwBB6Qo45ybJbqspMYvp80dkZu+bRhQAMcOSn6bGKAFAiQZAo+aDKPcjtSvXqe6g1t0Sn
+	ScbQTtEB87WX0vJIq78XutCiRHy3L6JOAnlyfdXbgrdDRbpGdNylONEoxNl2OMJvSDdCZCcWcfBdJ
+	x5rXdcRvOB+KPB2zTCD236Mfbni1Sc7cE+eEcKiLUv9JsCh9j9FwMnToOp8bxDQGTQTMIwzRfs6H3
+	y/x/NY38j7FlN+P/nBVc2DrmLeGIiGU86k9s+N3dwIPZkWAhVjL9ySdI/aKNf1/ccGTplXUIkgrk7
+	6DmI0cf3bxNQhwDjphGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wB3kc-0000000BbFC-351L;
-	Fri, 10 Apr 2026 04:45:50 +0000
-Received: from mail-northcentralusazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c105::7] helo=CH4PR04CU002.outbound.protection.outlook.com)
+	id 1wB429-0000000Bc1f-0ExC;
+	Fri, 10 Apr 2026 05:03:57 +0000
+Received: from mgamail.intel.com ([198.175.65.11])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wB3ka-0000000BbEs-19K7
+	id 1wB426-0000000Bc1G-0f75
 	for linux-i3c@lists.infradead.org;
-	Fri, 10 Apr 2026 04:45:49 +0000
+	Fri, 10 Apr 2026 05:03:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1775797434; x=1807333434;
+  h=message-id:date:subject:from:to:cc:references:
+   in-reply-to:content-transfer-encoding:mime-version;
+  bh=7RRs4+5wouGExWh1u6YJ2B8r2ubtWi58yhqVQMeQM38=;
+  b=CyVV2jcqJPGuw96p94AHdP5VCej1Rq33NCQUc61r2NXrl5xz/QATU2Fe
+   uazH6oonZS8yG1/HkxZc8vXD37HjskMbfGsuscDLbrWP+cMCFY5xMzaZW
+   XCdIswVkJQXoUORMLCtQlpmxSKWKnn0rbtwQzrZPteP0a8vMvSlYrkDj1
+   7ZANRvI31GTWHooGtlzy32K9yoLfvOx/PjRAlVcPHylbG+0mg4FtQO4mO
+   /FTPLTqTPLD1GKx8YPp4qE3c25gfSWk5k+KJR2bIM2r+SkW+zI0AZ3Rmc
+   PnsaDD8syLLDphYKthwRadvMCYMqqb+m7bLxQySbTKu3KJy7o/JTXApJI
+   g==;
+X-CSE-ConnectionGUID: rAp015giQQSUk85kOdxeTw==
+X-CSE-MsgGUID: m1h94XqNSXGgjs2J/Kr9mQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11754"; a="87099608"
+X-IronPort-AV: E=Sophos;i="6.23,170,1770624000"; 
+   d="scan'208";a="87099608"
+Received: from fmviesa009.fm.intel.com ([10.60.135.149])
+  by orvoesa103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Apr 2026 22:03:51 -0700
+X-CSE-ConnectionGUID: qDyN/AXvQySGTIGNcEYWnA==
+X-CSE-MsgGUID: B9dWxpU+SwewpfSWoZONNg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.23,170,1770624000"; 
+   d="scan'208";a="222488333"
+Received: from fmsmsx903.amr.corp.intel.com ([10.18.126.92])
+  by fmviesa009.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 09 Apr 2026 22:03:51 -0700
+Received: from FMSMSX903.amr.corp.intel.com (10.18.126.92) by
+ fmsmsx903.amr.corp.intel.com (10.18.126.92) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.37; Thu, 9 Apr 2026 22:03:50 -0700
+Received: from fmsedg901.ED.cps.intel.com (10.1.192.143) by
+ FMSMSX903.amr.corp.intel.com (10.18.126.92) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.37 via Frontend Transport; Thu, 9 Apr 2026 22:03:50 -0700
+Received: from BN8PR05CU002.outbound.protection.outlook.com (52.101.57.32) by
+ edgegateway.intel.com (192.55.55.81) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.37; Thu, 9 Apr 2026 22:03:48 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=fvq73L30OKZMZhtrT40cjgkR5c/sFUcRMzbwNrraa0JpjwT9FGv9jyxN3QZrKOlfkl49vwYmZJ4PBzF97r8aTFO03BLUNWZml14WtlSqi7zKkwSNWCv4s7Fr/qBsLswJif7ljeZ5R7Rz7RkKFYIOC0QDWXNH9SyCP6pMnhFq2qeLNtWe1GtOUpFb4cq/QWZxL621WzdV2cBBEDDcG2TKCAfh9vS0ndaqODHXxV3sS84lT50FY/PFV6vHnJ4bphRmZgDJ0W1Omh5ZhJ08k5jmCdG9OkHEpFrpBzzefb7TpMKd9hqCBTmwnT5cPQ0PCQjHwymYy5Slw9X32UzVWr8VtQ==
+ b=Qfy8FeHMJU2s1fzfkBzeKMJdnIArujpwAdSZiUjFxPefkNWeuRYyHFxQGsW/whCZA5TETBrPiSb9efum0Vohy6xic8l582uwL3Vd5yCmNXE6BA4TuCRRCr9kwQEtlBqbfznlNy7vRaWyjUMpGWTtxuXu+OB0WvVFzycXTWpYCSx3RgQkDthCR8giKZYEjhHMDsIYL3MSVjBrZGyLTEKw5JSvHDkMB4PcYD4+zsnDTXousVLFGtUlKx+gLJ20vd2CCWUs/UiI17Zk9/QgwRF2DLkdZUgxsuOcDWIDUDK3qggW0vzbEgBRxpaffUBH6vV4UgAJ3wbFa99bQaEBZZjzOQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=vuA3bJ2itvJCLxbu52uuJhg7JB4a9uTpGwqBP1mhrmQ=;
- b=OwTHPY3g19YD+UrmtoDIfwq1SOvJwrizrCe1RlF8Zm+SWOGgjfhIW+cziUaG8LGurCwDslHgP4bD2RrnwvQIH0qeBSwGXp2DtoPmsCHUlM1EMiSk1NOzp6TvNb+nE9ZPWsCvkvCGFwF6RVkAEiYefuZUFeulfWAehGEOPr5VVRgnfs8pkNPsKSFlLZMLlEe+UWuSmTbIbQt0zu7lOcmT6Fw14HTW+RKHiiZp4ZqoR8uGe6s8xInSN5MPCTl0P9UvEJrzO+/XuX1CZD/Iw9vGiLQFCsxk3cNUFpzOWILeg+g36xkTdygqAqUvbi9usmvSsh3UZWKIesLXKQGlsChx7A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.117.160) smtp.rcpttodomain=nxp.com smtp.mailfrom=nvidia.com;
- dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
- dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=vuA3bJ2itvJCLxbu52uuJhg7JB4a9uTpGwqBP1mhrmQ=;
- b=X9wzc/kcdrHR+JM5ukA5EqszWhajNps7JaIgSHOHRs+c2w5wkZYV3uZjBLjskorgUKqfYntcxcRVSMmaODwOrckEJzl4ferOCML5gUeHAYtYpUgZbIGQMvUKd3QaYHws6xb5uE0Pru0xeOqhsTmb1JaX1vsEh3j3l/l+eFZNyJqTJJ91jsncq30W1AWpzOx/6AO0vpQ2hQaQFcGrgskH8JclKmY76dnBQcyfQeIxVy+Vg37zs2CCi0/Pu2haWcMAhLknux3QolC0ANryE2CRZmX1iM7vSDl0HxNU3X7gO42QPEpbReSgFmJqDhNJSEhf2iHE2RvMhHrGkYYRia1cbg==
-Received: from BN9PR03CA0598.namprd03.prod.outlook.com (2603:10b6:408:10d::33)
- by SA5PPF8BD1FB094.namprd12.prod.outlook.com (2603:10b6:80f:fc04::8d3) with
+ bh=LxUoHEo0nqhA+FcX7NY6pEng/nJ5IO6r4/DkpVmjW3Y=;
+ b=T0v4RO/IEo+wsHJhDRWBaOQLBys3Crz5zj4T4J47NGQuE05/hOIzWlbbJXUsKvITwiehaCPoveFjyjXguHNl9PG60wUge5MPvjuT2Uo5dYikAobhnW5uOgPhVm51eNqmtEuMZ0Cs7ZKRjvx8Lm7FNPiyY94AfB7FDSDCpcAPdSc7vedxPosoIj+828vGjSoOeWW6EiVlocwQEpLbHimHiF9IuVSycn1ZWSGUs1YBvm0DTd/mrkEtucZr8iC5P7ajs6mz8Uy9dUKxyz6a89DTEbJZ2cBvzUqAhkVBCrCv0b0H+4wI2oHAnwk+ZX1wk89PHtftIQxFqQJXIOBI/7Aong==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
+ dkim=pass header.d=intel.com; arc=none
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=intel.com;
+Received: from IA1PR11MB7198.namprd11.prod.outlook.com (2603:10b6:208:419::15)
+ by PH0PR11MB5016.namprd11.prod.outlook.com (2603:10b6:510:32::23) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9769.20; Fri, 10 Apr
- 2026 04:45:39 +0000
-Received: from BN3PEPF0000B073.namprd04.prod.outlook.com
- (2603:10b6:408:10d:cafe::93) by BN9PR03CA0598.outlook.office365.com
- (2603:10b6:408:10d::33) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.20.9769.42 via Frontend Transport; Fri,
- 10 Apr 2026 04:45:39 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
- smtp.mailfrom=nvidia.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=nvidia.com;
-Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.117.160) by
- BN3PEPF0000B073.mail.protection.outlook.com (10.167.243.118) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.9769.17 via Frontend Transport; Fri, 10 Apr 2026 04:45:39 +0000
-Received: from rnnvmail203.nvidia.com (10.129.68.9) by mail.nvidia.com
- (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Thu, 9 Apr
- 2026 21:45:22 -0700
-Received: from rnnvmail202.nvidia.com (10.129.68.7) by rnnvmail203.nvidia.com
- (10.129.68.9) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Thu, 9 Apr
- 2026 21:45:22 -0700
-Received: from BUILDSERVER-IO-L4T.nvidia.com (10.127.8.9) by mail.nvidia.com
- (10.129.68.7) with Microsoft SMTP Server id 15.2.2562.20 via Frontend
- Transport; Thu, 9 Apr 2026 21:45:16 -0700
-From: Akhil R <akhilrajeev@nvidia.com>
-To: <frank.li@nxp.com>
-CC: <acpica-devel@lists.linux.dev>, <akhilrajeev@nvidia.com>,
-	<alexandre.belloni@bootlin.com>, <conor+dt@kernel.org>,
-	<devicetree@vger.kernel.org>, <ebiggers@kernel.org>, <krzk+dt@kernel.org>,
-	<lenb@kernel.org>, <linux-acpi@vger.kernel.org>,
-	<linux-hwmon@vger.kernel.org>, <linux-i3c@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, <linux@roeck-us.net>,
-	<miquel.raynal@bootlin.com>, <p.zabel@pengutronix.de>, <rafael@kernel.org>,
-	<robh@kernel.org>, <sakari.ailus@linux.intel.com>,
-	<wsa+renesas@sang-engineering.com>
-Subject: Re: [PATCH v2 02/13] ACPICA: Read LVR from the I2C resource descriptor
-Date: Fri, 10 Apr 2026 10:15:15 +0530
-Message-ID: <20260410044515.23667-1-akhilrajeev@nvidia.com>
-X-Mailer: git-send-email 2.50.1
-In-Reply-To: <adhalQxfbMsL3V0T@lizhi-Precision-Tower-5810>
-References: <adhalQxfbMsL3V0T@lizhi-Precision-Tower-5810>
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9791.33; Fri, 10 Apr
+ 2026 05:03:46 +0000
+Received: from IA1PR11MB7198.namprd11.prod.outlook.com
+ ([fe80::2c4e:e92a:4fa:a456]) by IA1PR11MB7198.namprd11.prod.outlook.com
+ ([fe80::2c4e:e92a:4fa:a456%6]) with mapi id 15.20.9769.041; Fri, 10 Apr 2026
+ 05:03:45 +0000
+Message-ID: <4f66cf15-7780-4b48-b5ff-ec39783219c6@intel.com>
+Date: Fri, 10 Apr 2026 08:03:41 +0300
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH V5 0/5] i3c: mipi-i3c-hci-pci: Enable IBI while runtime
+ suspended for Intel controllers
+From: Adrian Hunter <adrian.hunter@intel.com>
+To: <alexandre.belloni@bootlin.com>
+CC: <Frank.Li@nxp.com>, <rafael@kernel.org>, <linux-i3c@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>, <linux-pm@vger.kernel.org>
+References: <20260306085338.62955-1-adrian.hunter@intel.com>
+ <b9a756b2-a283-41c7-9ae4-b139551205c8@intel.com>
+Content-Language: en-US
+Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park,
+ 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 -
+ 4, Domiciled in Helsinki
+In-Reply-To: <b9a756b2-a283-41c7-9ae4-b139551205c8@intel.com>
+X-ClientProxiedBy: DUZPR01CA0217.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:4b4::11) To IA1PR11MB7198.namprd11.prod.outlook.com
+ (2603:10b6:208:419::15)
 MIME-Version: 1.0
-X-NV-OnPremToCloud: ExternallySecured
-X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BN3PEPF0000B073:EE_|SA5PPF8BD1FB094:EE_
-X-MS-Office365-Filtering-Correlation-Id: 169202a6-54eb-4ab2-35ac-08de96bc03e6
+X-MS-TrafficTypeDiagnostic: IA1PR11MB7198:EE_|PH0PR11MB5016:EE_
+X-MS-Office365-Filtering-Correlation-Id: 73da6041-5c69-4416-726e-08de96be8b28
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|82310400026|36860700016|1800799024|13003099007|56012099003|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: QxmbO7zsMpoYQkBWoqGxSsZDlpHcso0+UleConsDZm7fwfeplwpX/NwHNUV912BSsew4DWj0A8XENaWq9tkqlpAykEFe6MvDOPqVRpVlSRDrOt2ijPEP4a9b95eIQbvvWFucv5hfPRvGyBr538f+hR/g/gWo9vTtJtu4pgJ3sck/wQvVfoIHhnW7+DIpKqTfvd4Zq2L2CFZ4QB6tqrU/ZEHacr9Qm3P48MUqVck9ETN7TP1cv0x6fXXrgrT8SmFcL2e79gp0qwE1tTCrULa/Qb+AnWmeCmlHQtuwOfCqlXh2OxMHXt28s6dXBOYKxMfJTdSSb27lBNBIwDW9CDeaprsiMLwV4RTVvjKZvPeI9CaWUC4T2QBOwj0ynQ4ctRM8nQbvJwmLJxHZctNAi2yO5YbMaHELlilviUm6HB0bzXXwGk+0cdIdwgEGd/M2KvKPoNrGFvLCZxUMn4J3ApHeGr4GdZZzDltfyjVDVJFXf0WaxoOyvaRKkGEd0GljNZRHwBS9VGqbrCGY/adr8QZkItNM3Bfdf68u6x7GGBVTLeKf+3woydkZTPyFwEp66oP6ijWFiF8bqFU8BeHvx1A2hS7GQCSbKTFXnWphHeH/HjzKSi3nPyQshMkGYuMFDMzYxx+SCHFWyZejHq5Yx7Z5qLoShsz8FZbkuIgQyKA82UiMMW0UsAtu+Ku3hp4uwKHESETNzEIbBLMjwDjBcROjYb+OIrcZSyr+cen4qv84E+SMgwoCk7JJx8qWur5XMv7L4/b138yyJe25sBnBO4Hcnw==
-X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(376014)(7416014)(82310400026)(36860700016)(1800799024)(13003099007)(56012099003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|376014|18002099003|56012099003|22082099003;
+X-Microsoft-Antispam-Message-Info: kKBp2KJ2hEAT3rIyUHt63GvLBTqQGIwzl7tsKJpdxnrcK2wUqp4cDu/rUPWKRShqi3XRyy/76YH76Lvz0Fy4cNGxNE5wCqXYvmAaZtLt/cGQREnTJ7rJoMw/9H/cqkCchy+xqpMoCwR+Lu+o94FylGfogDwD0zCg6D4PD19K2VPvBgB8Vzg+YA2p0U0ACdyMTiL2A8fSraanHdZ716cMXcUzUnqvNw91rC6NsffoYbaNrn3LwSM8B1q57qYmg1qz3apkhsnsVjGYzTznfEIo+qvibNL2e1cf382cMYOdL9t+TbbXBsftqu1zTuISShOM5E4d7kS3OK4exY6D97ZeC2BMZyoqHpOUYtBOuRlaYEh3v3T6EqWzk5+UFZvBTQNxSQKSDoPcLegBtI6x7TZ278Ieg2z3rysr2XgToQvwBnrMXiW+CNTTzhdeMdBt0GiuxtQucO7pxN1uyXyE/GGsFKXuMPSFCUIzP3hqJpR5rc1y6VaT+EBK7s3DHsiZJtHveftUKwsunJM+8ncARQVu3ZQcGlyQBKEuTsrxQj+w29PnyOLIZhUAJCjsw9gAOBXOEtSZD8HgrJi6bwrijmsOmbUPGBmeCwHw7gh4EnQGskJuK8oR7XvUW81mAAgdVl1xQ1DByT1LCIwt1wyQ1uswyY6gg73xjxro4hwKksnc13P2Zs8BfhUS4KP0Dg7wuAGk641/m2xaGnFiGYdxCRxy1T1hQiURzIxNYzy8QysQvZw=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR11MB7198.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(18002099003)(56012099003)(22082099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: Rg0hbIQxvfyaynGNzqayxBthacw3ISY6qlKnCsUPEYHerhUfC4/HrWG1hckf0RoTfT9VlE1H7fgxSkDMw0SMcpMkWp24wpgQKaOISlGjQfLAJMGwTz3pxnbImGmuldOj5NpI/izbn/wuQQKcfNOY8zGaqhkTMM8SUK7zEaaUXtmsFdSXcJIhIqEmgTe07PKLoM6lS7W/hamoz0Os5AKStFYPLSuxDnoWdK6zrOGRmD8x1Mo7xaklvX9W9Td4gA29paZV+VNHheHtjMSP2gC+23nRL1FtBFR1bExWdfO9cDKc7FRAen5zon1jrb1cJyMpOGvSC6KaF9b4+OeC3qwCa9ekq6yFutZWvZBStyV51CvP/f/JjXa5WQV4bQ1zTERfPNdfaxX5uVwUGjA6oXy2TaiuIui3jEx0oRHBkf1XVv4i0xOcBxrzeFRD1VPHFZ63
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Apr 2026 04:45:39.4701
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?TWZEdnZEdTN2QU13S1dHM3MxbHNtVmEvZk5TcnFaZGo1cW9VSEl0ODJDZk9p?=
+ =?utf-8?B?ek10OWg1bitzMk1oV3RIcWtMTFdlbFZ6d0dMcFFYdE5tbnE5ZS9ieEVsSjk3?=
+ =?utf-8?B?aFhoN2xlT3VBQkxlcmE0aFJnaUkzczVEMHpoVlpPQTgzaHF5SEV3VEhpYVZY?=
+ =?utf-8?B?VXVpYnpXYnJ5c2dWRkdERThoMEUzYmp6WGloRkIxWnhTeUtRRE5UUFE1RVFz?=
+ =?utf-8?B?L0s5bXhHUS93T0NkMjJvandmSkpVbGYzVExRVm5sK2xJbGxIcUhTTW5kNUhy?=
+ =?utf-8?B?STlwayt3Ymkvc2ZYczF5SGo2UndhNVZFR1MrWXRvNXM3ZVhLMHBHeUo3R3NX?=
+ =?utf-8?B?UHFoQkRtMnh2MWpzdWdwUDVSczZvbWVOeFMyT2drOXdGMVpTK0owTmJkeE96?=
+ =?utf-8?B?M0NjWUVXS2lFV2htNFdLV1BNNWpWMzFoUk1jUkJ0UXhJSUlXWlVKVktGL3hU?=
+ =?utf-8?B?Tk5kSE5USXpWSktIenhZekdEMVBNVHBmTGUxS216c2RENThUeXRXc2pScXZB?=
+ =?utf-8?B?a2JNYnB3YzZtdDR4UGQwZHdRSUVva29YeU4ydGR6aWFDd09JWlcrbk9CbnVi?=
+ =?utf-8?B?bHlBdnR2OWwwNStzRk02VUVsWERxckdCZDBPcFZLTklqMnV2SzhuN0pxc3k5?=
+ =?utf-8?B?ckpyWTVic2ZZRUFQNEdzbjZOeU9laDhrSzliMTZuRkM4Mk1RdC9tZ0x3NXNq?=
+ =?utf-8?B?cTVDNkErTGdoaGNYa2c3dkJuemNCc1RRREdSQWRsb0Rnb245YnZpUG0zSENG?=
+ =?utf-8?B?MEE5MWxna2I3WXpCYXlCT3graFpMdzFubmZNRlQyR1VnVUxTTHZMMGphNEtC?=
+ =?utf-8?B?bnZ2WEIwbmxraTNiZzdFQm5GM3BneWVuUWFJakZSOVl2dEVIL1NwWmlLS0M0?=
+ =?utf-8?B?SUlpTjYwOGh3aDhXQzhtS3V3cHFnN2hLYkwwQ2s0eFdtZDNySXphYVkwaUlG?=
+ =?utf-8?B?SHYrcXdsTzdDUllNZnlIVzA0YkRhK3VVRlo1aldzdll5OEgzbWlVdkRKTlNJ?=
+ =?utf-8?B?bE9ucW0rU0JZMlMvbHc0Q01wbDl0aFpaVDczMVMwcXVFai8rZUVLenhKdmY5?=
+ =?utf-8?B?RndXUGJrSzJONjl1VWRoMEgrMlpzTkhTL1lKTllScm9ZcEZlU2dhTko5Y2V1?=
+ =?utf-8?B?VzdYSFVqSEpNQ0UxS0I5cEtyNXpRNVlNYjY5elJYVXEvMWlZcmErZzB4dWtW?=
+ =?utf-8?B?ai9kR2xGTEthN3pUWmdCR0loM3VtQ3JSYUhxY0N4WEx2a1ArWUwzMHdZeDl1?=
+ =?utf-8?B?b2ZHTzRrQ3hYVlQreHB3UlExenVaOHhOeklZQ0Z3V1FsZkZZclNCOHlTVzJv?=
+ =?utf-8?B?QlVIbkNHUzJ3NXZUL3Jza09jUWM5UnYybE1oaHcxNEJIczQ2alZ6QTdLNmIx?=
+ =?utf-8?B?WHVjU1BNei8reW1Wdlpld0s2Z1hia1hIeWFWb2lhVDRUN0poc1VkNnZYWVg3?=
+ =?utf-8?B?L2gzc2pmSmlQc2FpK1FhVUI1Nk9ncUo0d0ZnajYwT05yRUhWc2tvRHFVQ0dl?=
+ =?utf-8?B?dFlDRVJVdEt4YTM2aW5seHJXbG5CMmRubDk4c1RYV0t3ZjZHMDIvNCs5VTZK?=
+ =?utf-8?B?emdKZkF3amQzNTdwZStiQ043eC92T1RkRTBjUFhXSXR4WWlHNCtiK3Q5dnF3?=
+ =?utf-8?B?UWh2REk2S0JhZ0doR3JXNVgrNUJSMElaZ3lKL3VORm1Qa2Q4TUIzS2JlMGNE?=
+ =?utf-8?B?R0dkVno5WVBMam81Nk1mR1ovWEFuY25KaCsyZFBVK3Y0ZHlPUWRiaUl2VVF6?=
+ =?utf-8?B?L1l2OXdVRXVsUFdWeXEyV1F0VjMxUUl4QUgvdHJTN1kxTXllS3JoSDJGSmJm?=
+ =?utf-8?B?WEZhbElOSSt5bkdXWFdjbWVhTzFSVzAyZUV0dUEyUXd1QXRYcnY3R3BZeUFk?=
+ =?utf-8?B?Y0o4bjZBRStnaUI4VlJ1cWtFY0ZvanFVSU5WUlc3MHJ6R1lIdmNPRE5qMXdj?=
+ =?utf-8?B?UXoveWd2Q0hjVHhaZ1JpbnQxU1NYSEM2YW9qTzBFTWFiS3l4QkxIMnJaUlZt?=
+ =?utf-8?B?NGxLRTZXUGRUN2dTSW5BSTd4bm5qR01EazZaK01peG12YUp3Z2Jud2VJNTBD?=
+ =?utf-8?B?RXV5NVVjRmp3TWtqekd3dCswWldLSEpsRDZ4T3I1QjVjTXg5OHRTZTFnZnpm?=
+ =?utf-8?B?MTB6UTNxTG9yMjF3VWg4L0tFRDBtODZmcmVMd0ptYnpLWVBFTkJxanJVL0ZJ?=
+ =?utf-8?B?RWJBdStkcEJERmdZRkZ4Y08yeStORG1GWnZxVTJuQm11S3VMR0dQdjNaU09l?=
+ =?utf-8?B?NTZDNzF6bkJ5ZXFkMUJaTS9GRzRDL29aMElNc1hMd0YxR2lSay9qUDdXeThu?=
+ =?utf-8?B?NFUzUlA4RWJ2WlVZRFFPK1ZyRjVwYThhNHhCU05McEZ4YmNnM3RIQU01N0Z5?=
+ =?utf-8?Q?YqA3GPeXWgpWxksA=3D?=
+X-Exchange-RoutingPolicyChecked: HH464j1K97gRhy41S5JDZvaWzRv6PNXgDBIMCAsuO17Bia+Dy1wTbj6zdoozc9bigRmXWevuZihUyRBwoLOZmIwRZcglFZ3yk1+s3OYpFD9wAO5oQiiRQWcARGQG3HFZy+emRolMyN2wX/O0AP5tmlvI+5JI7fdF+1uwTcHHDsre7S+a5zu/kND6LeKFy15GypqkK3ComQ5EUTz7B3zsaiDpV+C4VXvWGIECXPKv/HJwR/nwrqs5zjBKHI0LtFVG9D6kJKOuJa5DlwlfYUm8g3OdVTum4coghAUlfR+v9rWPbL2XU27csWl6xdVw8EAz00zgl0Ds2xLo70fnVVdRQw==
+X-MS-Exchange-CrossTenant-Network-Message-Id: 73da6041-5c69-4416-726e-08de96be8b28
+X-MS-Exchange-CrossTenant-AuthSource: IA1PR11MB7198.namprd11.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Apr 2026 05:03:45.7994
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 169202a6-54eb-4ab2-35ac-08de96bc03e6
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: BN3PEPF0000B073.namprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA5PPF8BD1FB094
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 46c98d88-e344-4ed4-8496-4ed7712e255d
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: bdcZ4rSp+0LrMsV5L/6nw+jfH3IzMTjQMVADYqVr23NUjNkiJqw6i7d7fU6v5/USXXJ2uC9ca15elzJE5GCv4w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH0PR11MB5016
+X-OriginatorOrg: intel.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260409_214548_318203_A84FF8A2 
-X-CRM114-Status: UNSURE (   9.29  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260409_220354_320857_441352AF 
+X-CRM114-Status: GOOD (  14.13  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,34 +187,109 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, 9 Apr 2026 22:04:05 -0400, Frank Li wrote:
-> On Thu, Apr 09, 2026 at 04:27:32PM +0530, Akhil R wrote:
->> ACPI 6.3 specifies byte 8 of I2C Serial Bus Connection descriptor to be
->> used for Legacy Virtual Register (LVR) data as specified in the MIPI
->> I3C Specification for an I2C device connected to an I3C Host Controller.
->> LVR will be read by I3C host controller drivers and it provides details
->> about the specific speed and 50ns spike filter capabilities of I2C
->> devices.
+On 01/04/2026 20:16, Adrian Hunter wrote:
+> On 06/03/2026 10:53, Adrian Hunter wrote:
+>> Hi
 >>
->> Update the rsconvert_info to include this field. For I2C devices on an
->> I2C bus, this field is Reserved and unused.
 >>
->> This commit is the result of squashing the following:
->> ACPICA commit 70082dc8fc847673ac7f4bbb1541776730f0b63e
->> ACPICA commit e62e74baf7e08cf059ec82049aeccd565b24d661
->> ACPICA commit c404118235108012cad396c834b5aabe2dd1b51a
->> ACPICA commit 7650d4a889ea7907060bfce89f4f780ce83e7b28
->> ACPICA commit 014fa9f2dbcc6b1bd42a4a4a6f6705d9cf7d460b
+>> 	Please note all patches have Frank's Rev'd-by.
 > 
-> These commit number is not existed at linus official tree. Please remove it.
+> Can this be queued for next (v7.1)?
 
-These are commits from ACPI-CA github. The files in the acpica folder is
-a mirror of that repo. I suppose the commits in this folder are expected
-to be structured like this. The process is also described here -
-https://docs.kernel.org/driver-api/acpi/linuxized-acpica.html
+Any update on this?
 
-Best Regards,
-Akhil
+> 
+>>
+>>
+>> Changes in V5:
+>>
+>> 	Re-base on top of v7.0 fixes series:
+>> 		https://lore.kernel.org/linux-i3c/20260306072451.11131-1-adrian.hunter@intel.com/T
+>>
+>> Changes in V4:
+>>
+>>     i3c: mipi-i3c-hci: Allow parent to manage runtime PM
+>> 	Add Frank's Rev'd-by
+>>
+>>     i3c: mipi-i3c-hci-pci: Add optional ability to manage child runtime PM
+>> 	Add Frank's Rev'd-by
+>>
+>>
+>> Changes in V3:
+>>
+>>     i3c: master: Mark last_busy on IBI when runtime PM is allowed
+>> 	Patch dropped
+>>
+>>     i3c: mipi-i3c-hci: Add quirk to allow IBI while runtime suspended
+>> 	Add Frank's Rev'd-by
+>>
+>>     i3c: mipi-i3c-hci-pci: Add optional ability to manage child runtime PM
+>> 	Remove unnecessary pm_runtime_mark_last_busy()
+>>
+>>     i3c: mipi-i3c-hci-pci: Enable IBI while runtime suspended for Intel controllers
+>> 	Add Frank's Rev'd-by
+>>
+>>
+>> Changes in V2:
+>>
+>>     i3c: mipi-i3c-hci-pci: Set d3hot_delay to 0 for Intel controllers
+>> 	Add Frank's Rev'd-by
+>>
+>>     i3c: master: Allow controller drivers to select runtime PM device
+>> 	Patch dropped
+>>
+>>     i3c: master: Mark last_busy on IBI when runtime PM is allowed
+>> 	Adjusted slightly for earlier changes
+>>
+>>     i3c: mipi-i3c-hci: Allow parent to manage runtime PM
+>> 	For HCI_QUIRK_RPM_PARENT_MANAGED case, change from
+>> 	disabling runtime PM to instead causing the runtime PM
+>> 	callbacks to do nothing
+>>
+>>     i3c: mipi-i3c-hci-pci: Add optional ability to manage child runtime PM
+>> 	Do not enable autosuspend.
+>> 	Callbacks for parent-managed invocation were renamed
+>> 	from i3c_hci_runtime_suspend to i3c_hci_rpm_suspend and
+>> 	from i3c_hci_runtime_resume to i3c_hci_rpm_resume.
+>> 	Amend commit message slightly.
+>>
+>>     i3c: mipi-i3c-hci-pci: Enable IBI while runtime suspended for Intel controllers
+>> 	Retain HCI_QUIRK_RPM_ALLOWED
+>> 	Amend commit message accordingly
+>>
+>>
+>> Here are patches related to enabling IBI while runtime suspended for Intel
+>> controllers.
+>>
+>> Intel LPSS I3C controllers can wake from runtime suspend to receive
+>> in-band interrupts (IBIs).
+>>
+>> It is non-trivial to implement because the parent PCI device has 2 I3C bus
+>> instances (MIPI I3C HCI Multi-Bus Instance capability) represented by
+>> platform devices with a separate driver, but the IBI-wakeup is shared by
+>> both, which means runtime PM has to be managed by the parent PCI driver.
+>>
+>> To make that work, the PCI driver handles runtime PM, but leverages the
+>> mipi-i3c-hci platform driver's functionality for saving and restoring
+>> controller state.
+>>
+>>
+>> Adrian Hunter (5):
+>>       i3c: mipi-i3c-hci-pci: Set d3hot_delay to 0 for Intel controllers
+>>       i3c: mipi-i3c-hci: Add quirk to allow IBI while runtime suspended
+>>       i3c: mipi-i3c-hci: Allow parent to manage runtime PM
+>>       i3c: mipi-i3c-hci-pci: Add optional ability to manage child runtime PM
+>>       i3c: mipi-i3c-hci-pci: Enable IBI while runtime suspended for Intel controllers
+>>
+>>  drivers/i3c/master/mipi-i3c-hci/core.c             |  35 +++++-
+>>  drivers/i3c/master/mipi-i3c-hci/hci.h              |   7 ++
+>>  drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c | 135 +++++++++++++++++++++
+>>  3 files changed, 172 insertions(+), 5 deletions(-)
+>>
+>> Regards
+>> Adrian
+> 
+
 
 -- 
 linux-i3c mailing list
