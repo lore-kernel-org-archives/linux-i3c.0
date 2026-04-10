@@ -4,57 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D79B6F36BBB
-	for <linux-i3c@archiver.kernel.org>; Fri, 10 Apr 2026 06:39:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14C65EA3C5C
+	for <linux-i3c@archiver.kernel.org>; Fri, 10 Apr 2026 06:57:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+6BZZfe5x7qE/sNfOB1tlYXLPggznyJV7NpmcyUF65k=; b=PqhnLUBHOI9Ou3
-	heCfgllgvAYA2P5D0dBiaokNznRx4wvCRC6mFomJm7MAAVkvUHGItTAUxe3dSy18tS1mtrUBzQuo2
-	lNsCzzNKs0GPlXjiydjx0wBsqZhffp009dPcY3sYrw1j1IImEdpgSg/Gij4zp/FVJk5f59xQg4Kia
-	nDz/uxPfVkeEd2AMt8VbvrewiS5SVGhPJsSm+NCyyLZdY2Cv/CqbSx3GGm2lI8c3+Tk4RPNb3No/S
-	Szv3kLaykcvESm80Q1gpLLITdvcj8eQK4xQLrXooQ3flSuzmb24iANt5XiIJqousKr2wSymprgBGN
-	/0NEerA9MbKNHLBnGS/Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
+	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=G6F/fQMC9gLeU5Pr4VYLwnzjUhX9J/EV+iQmOxj78Lk=; b=g2fEk0ElBwlv4a/A+eqcDuL4Ub
+	eHDA97FfrW1L4hOSzP1xGFQNTFFKl5fw6A4PfSFdeOu5lBitr0NY197il2GYeTJ3QMlwP7mt3M4p0
+	9BbqxWfiDLa5NTcf+uaU3iV+zcG4cnFlb+wo57uNhTfMMzmHk+si4ao0bYZ+JIF1/63QmfsT+qPwp
+	UAQlIqfSbNM+coz6meQURfyLCJ8xl/Punt8qBmyF6UJrZJF8bNw1WEc4x3THd7HmO+vS4fg/aZ2zQ
+	41yPaPw01IPVknvmAcLmlc2kp8ix63qL94e0N69dnpOWoUP1DLqAb7ZxwSVQPqACr1rEmTKewesQz
+	X7IeGSwg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wB5Wa-0000000BgvW-38J1;
-	Fri, 10 Apr 2026 06:39:28 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wB5o7-0000000BhiU-3NbR;
+	Fri, 10 Apr 2026 06:57:35 +0000
+Received: from mail-pf1-x42b.google.com ([2607:f8b0:4864:20::42b])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wB5WY-0000000BgvO-3yUJ
+	id 1wB5o4-0000000BhiC-2muV
 	for linux-i3c@lists.infradead.org;
-	Fri, 10 Apr 2026 06:39:27 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 4322A6013E;
-	Fri, 10 Apr 2026 06:39:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C58B8C19421;
-	Fri, 10 Apr 2026 06:39:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1775803166;
-	bh=adFlCWEbVEtJn7uVVuDP6o/4LyOuJc6hY/7r8SsCL2g=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=JG3bDXPraBPJ2+GZVjmZTYyL1o8EbbD/nuSPbDsaKuTzBKuO5gHU6M7VCpFm0qOGT
-	 XLtErB5QKYnzRe8Vxc0NCOeFJ7eLJutNHcxHVtuSD8Jy9YsPdc8xvzYc9GorozZcdS
-	 ugZ1WNOhztNMT3RrGAPAdyKWPKLQfFhMIOTBNZCFgjs7P7S+aQQp/+tHl2NsFyittL
-	 xnD2OQu3RpSPI6AAtfQ8RZMRX0N2FqU9npNQN78LT9JHs/mpNZHe1cCwCW/3W+fZWf
-	 L1iC6dH3wzk51p8d9Dg1uRhPcRzhfSYUIQkFbSYZH9zCsrP+Hyxg11iwHrnVXxzBSj
-	 HT/w8Fn2bN68A==
-Message-ID: <6fd4bb71-90c5-4fe2-a520-97167fba049f@kernel.org>
-Date: Fri, 10 Apr 2026 08:39:19 +0200
+	Fri, 10 Apr 2026 06:57:33 +0000
+Received: by mail-pf1-x42b.google.com with SMTP id d2e1a72fcca58-82cec955160so1289247b3a.0
+        for <linux-i3c@lists.infradead.org>; Thu, 09 Apr 2026 23:57:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1775804251; x=1776409051; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:to:subject:user-agent:mime-version:date
+         :message-id:sender:from:to:cc:subject:date:message-id:reply-to;
+        bh=BCuVyAE//c6z8z5XxMRPVpCheDMz8TJGAL7Q7eoAANg=;
+        b=sGhjwvLUg6OUm3PhbksTmFLc55qBwk9ip4Qiep2/+rizfswTuGHW391hTrCgx9sj9F
+         k9jtisr+FERhvrG0jLxzr3qWrUeXx4fiPjnAl5X8DNa0NPC2tGT09fJeskqJZwuMipda
+         34DiFO/RzB+Jujmknq00WoIkWcErDR8HpMu9AVU7A0q8apCa/eVs3Xk8Uyw/H01VCQu9
+         3EGs7Gm0WNzE/ijoL4EVjqmc9RmNRaCiE5rcmX7N0dReJqlyjD+90Lh2naZ9GHPr+9mC
+         PS/bZUXb7o9MSnCvkdIc+I1hfb/28bVsx6dA4oPYag1ROHZ39cyT3s0CXR8UV4VIvpnh
+         ZXQA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1775804251; x=1776409051;
+        h=content-transfer-encoding:in-reply-to:autocrypt:from
+         :content-language:references:to:subject:user-agent:mime-version:date
+         :message-id:sender:x-gm-gg:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=BCuVyAE//c6z8z5XxMRPVpCheDMz8TJGAL7Q7eoAANg=;
+        b=DfpdAg/fdfQD8rNN6vzK0Zr/o7BU0V7OIxwlrm3WYhd9fUgfdxHR9s6LOY3lpZazNy
+         LqYTefKo85NM9fdjlEqo6v2VpwCNBVo21JxLrW9f0yBQcge98oJtY/C36/KXHLVLBWnp
+         ffJCJkXdaDmaKnkSJp+hgiCs6JXlgM/02u2KhhjiLHFfRwE5YV9TE8Keixpu7T9Vq13Y
+         BMadkPvA3u39lR8bcn1esNMM3yToQU5C5rW4z4Hhq3sbFPZZUs4ptt/+XExRTfX8L1GD
+         Zl3UZ/xmAavy+9flplaKCe6j0DYQIUrFsr17imU5p9Nu2Kqvfb5QCohzio60/OsBGfyf
+         FVjg==
+X-Forwarded-Encrypted: i=1; AJvYcCWP639dZxEHZO1vJH2XWG5Ri/NmOSzL9VZtjbDCIXNQ6HvsQ+PRQwvlvVhLD87VHJsfW1gc0VqJj5c=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwrJsX8Qu+18RgBHvZKE0IOKEYMnRKFrqtuF1VHTglnGvNlZRCi
+	HRi7heAku5dU/EwNe+BrudkP8UeQBIiBpXcEy2hDr8VFLUpy7jJ0CJRh
+X-Gm-Gg: AeBDieufs5fmeuHeTYE6ThCed7iDq+2tagpK9zwGmQPbXQXYO9Ot9o2Xd8fvtOZlwpR
+	HVc7g+T6NlRQK8HLbtDEDXaInYLV1YfgRnrWv59JAiQuy1XAkO5xPeOoWELsHncYDUyBhWm01D2
+	rr65IklKLdPp1qyhVwMWR+WYkZ/ZqqDzEya6YKODMh/DO06vXjXIgwax6tyyrJvuINH8iYHdq0n
+	uDLyb+OYWdCGs6XeB6+Bpez+xJJxYm/HjqnuCyNX3xCNdp8XtYxA3GwS6+uBPoUD/sQv8dvv8ZM
+	H+WvkCVY5RTAxHk101A6VYV0mXJp3BRQ0Qv1/1Jul3e+xTdcXG0N2orWk2CoGvqhxPf+V/ZKS6C
+	/V0kUseBZKb9eoQPOBu0q4lF3Bh7fecby7FcDYa8rjr4Wfk4Gv7C7h7DoiDXRKHu5MPPkEhavpH
+	kaylfqyvAub6u8udzD9CoXgkys34C7VV3z6TF4vfvBN459p8H200THMse7TkW74sV9yDrBNHrG
+X-Received: by 2002:a05:6a00:278b:b0:82c:9897:70d9 with SMTP id d2e1a72fcca58-82f0c2c8dcemr2350303b3a.38.1775804251348;
+        Thu, 09 Apr 2026 23:57:31 -0700 (PDT)
+Received: from ?IPV6:2600:1700:e321:62f0:da43:aeff:fecc:bfd5? ([2600:1700:e321:62f0:da43:aeff:fecc:bfd5])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-82f0c30ee3fsm1801229b3a.12.2026.04.09.23.57.29
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 09 Apr 2026 23:57:30 -0700 (PDT)
+Message-ID: <0a943b31-ca52-4ed7-b455-87fbb98fbc23@roeck-us.net>
+Date: Thu, 9 Apr 2026 23:57:29 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v2 13/13] arm64: defconfig: Enable I3C and SPD5118 hwmon
-To: Akhil R <akhilrajeev@nvidia.com>,
+To: Krzysztof Kozlowski <krzk@kernel.org>, Akhil R <akhilrajeev@nvidia.com>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>,
  Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
  Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
  <conor+dt@kernel.org>, "Rafael J . Wysocki" <rafael@kernel.org>,
  Robert Moore <robert.moore@intel.com>, Len Brown <lenb@kernel.org>,
- Guenter Roeck <linux@roeck-us.net>, Philipp Zabel <p.zabel@pengutronix.de>,
- Eric Biggers <ebiggers@kernel.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Eric Biggers <ebiggers@kernel.org>,
  Sakari Ailus <sakari.ailus@linux.intel.com>,
  Wolfram Sang <wsa+renesas@sang-engineering.com>,
  Miquel Raynal <miquel.raynal@bootlin.com>, linux-i3c@lists.infradead.org,
@@ -63,52 +90,57 @@ To: Akhil R <akhilrajeev@nvidia.com>,
  linux-hwmon@vger.kernel.org
 References: <20260409105747.48158-1-akhilrajeev@nvidia.com>
  <20260409105747.48158-14-akhilrajeev@nvidia.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+ <6fd4bb71-90c5-4fe2-a520-97167fba049f@kernel.org>
 Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <20260409105747.48158-14-akhilrajeev@nvidia.com>
+From: Guenter Roeck <linux@roeck-us.net>
+Autocrypt: addr=linux@roeck-us.net; keydata=
+ xsFNBE6H1WcBEACu6jIcw5kZ5dGeJ7E7B2uweQR/4FGxH10/H1O1+ApmcQ9i87XdZQiB9cpN
+ RYHA7RCEK2dh6dDccykQk3bC90xXMPg+O3R+C/SkwcnUak1UZaeK/SwQbq/t0tkMzYDRxfJ7
+ nyFiKxUehbNF3r9qlJgPqONwX5vJy4/GvDHdddSCxV41P/ejsZ8PykxyJs98UWhF54tGRWFl
+ 7i1xvaDB9lN5WTLRKSO7wICuLiSz5WZHXMkyF4d+/O5ll7yz/o/JxK5vO/sduYDIlFTvBZDh
+ gzaEtNf5tQjsjG4io8E0Yq0ViobLkS2RTNZT8ICq/Jmvl0SpbHRvYwa2DhNsK0YjHFQBB0FX
+ IdhdUEzNefcNcYvqigJpdICoP2e4yJSyflHFO4dr0OrdnGLe1Zi/8Xo/2+M1dSSEt196rXaC
+ kwu2KgIgmkRBb3cp2vIBBIIowU8W3qC1+w+RdMUrZxKGWJ3juwcgveJlzMpMZNyM1jobSXZ0
+ VHGMNJ3MwXlrEFPXaYJgibcg6brM6wGfX/LBvc/haWw4yO24lT5eitm4UBdIy9pKkKmHHh7s
+ jfZJkB5fWKVdoCv/omy6UyH6ykLOPFugl+hVL2Prf8xrXuZe1CMS7ID9Lc8FaL1ROIN/W8Vk
+ BIsJMaWOhks//7d92Uf3EArDlDShwR2+D+AMon8NULuLBHiEUQARAQABzTJHdWVudGVyIFJv
+ ZWNrIChMaW51eCBhY2NvdW50KSA8bGludXhAcm9lY2stdXMubmV0PsLBgQQTAQIAKwIbAwYL
+ CQgHAwIGFQgCCQoLBBYCAwECHgECF4ACGQEFAmgrMyQFCSbODQkACgkQyx8mb86fmYGcWRAA
+ oRwrk7V8fULqnGGpBIjp7pvR187Yzx+lhMGUHuM5H56TFEqeVwCMLWB2x1YRolYbY4MEFlQg
+ VUFcfeW0OknSr1s6wtrtQm0gdkolM8OcCL9ptTHOg1mmXa4YpW8QJiL0AVtbpE9BroeWGl9v
+ 2TGILPm9mVp+GmMQgkNeCS7Jonq5f5pDUGumAMguWzMFEg+Imt9wr2YA7aGen7KPSqJeQPpj
+ onPKhu7O/KJKkuC50ylxizHzmGx+IUSmOZxN950pZUFvVZH9CwhAAl+NYUtcF5ry/uSYG2U7
+ DCvpzqOryJRemKN63qt1bjF6cltsXwxjKOw6CvdjJYA3n6xCWLuJ6yk6CAy1Ukh545NhgBAs
+ rGGVkl6TUBi0ixL3EF3RWLa9IMDcHN32r7OBhw6vbul8HqyTFZWY2ksTvlTl+qG3zV6AJuzT
+ WdXmbcKN+TdhO5XlxVlbZoCm7ViBj1+PvIFQZCnLAhqSd/DJlhaq8fFXx1dCUPgQDcD+wo65
+ qulV/NijfU8bzFfEPgYP/3LP+BSAyFs33y/mdP8kbMxSCjnLEhimQMrSSo/To1Gxp5C97fw5
+ 3m1CaMILGKCmfI1B8iA8zd8ib7t1Rg0qCwcAnvsM36SkrID32GfFbv873bNskJCHAISK3Xkz
+ qo7IYZmjk/IJGbsiGzxUhvicwkgKE9r7a1rOwU0ETofVZwEQALlLbQeBDTDbwQYrj0gbx3bq
+ 7kpKABxN2MqeuqGr02DpS9883d/t7ontxasXoEz2GTioevvRmllJlPQERVxM8gQoNg22twF7
+ pB/zsrIjxkE9heE4wYfN1AyzT+AxgYN6f8hVQ7Nrc9XgZZe+8IkuW/Nf64KzNJXnSH4u6nJM
+ J2+Dt274YoFcXR1nG76Q259mKwzbCukKbd6piL+VsT/qBrLhZe9Ivbjq5WMdkQKnP7gYKCAi
+ pNVJC4enWfivZsYupMd9qn7Uv/oCZDYoBTdMSBUblaLMwlcjnPpOYK5rfHvC4opxl+P/Vzyz
+ 6WC2TLkPtKvYvXmdsI6rnEI4Uucg0Au/Ulg7aqqKhzGPIbVaL+U0Wk82nz6hz+WP2ggTrY1w
+ ZlPlRt8WM9w6WfLf2j+PuGklj37m+KvaOEfLsF1v464dSpy1tQVHhhp8LFTxh/6RWkRIR2uF
+ I4v3Xu/k5D0LhaZHpQ4C+xKsQxpTGuYh2tnRaRL14YMW1dlI3HfeB2gj7Yc8XdHh9vkpPyuT
+ nY/ZsFbnvBtiw7GchKKri2gDhRb2QNNDyBnQn5mRFw7CyuFclAksOdV/sdpQnYlYcRQWOUGY
+ HhQ5eqTRZjm9z+qQe/T0HQpmiPTqQcIaG/edgKVTUjITfA7AJMKLQHgp04Vylb+G6jocnQQX
+ JqvvP09whbqrABEBAAHCwWUEGAECAA8CGwwFAmgrMyQFCSbODQkACgkQyx8mb86fmYHlgg/9
+ H5JeDmB4jsreE9Bn621wZk7NMzxy9STxiVKSh8Mq4pb+IDu1RU2iLyetCY1TiJlcxnE362kj
+ njrfAdqyPteHM+LU59NtEbGwrfcXdQoh4XdMuPA5ADetPLma3YiRa3VsVkLwpnR7ilgwQw6u
+ dycEaOxQ7LUXCs0JaGVVP25Z2hMkHBwx6BlW6EZLNgzGI2rswSZ7SKcsBd1IRHVf0miwIFYy
+ j/UEfAFNW+tbtKPNn3xZTLs3quQN7GdYLh+J0XxITpBZaFOpwEKV+VS36pSLnNl0T5wm0E/y
+ scPJ0OVY7ly5Vm1nnoH4licaU5Y1nSkFR/j2douI5P7Cj687WuNMC6CcFd6j72kRfxklOqXw
+ zvy+2NEcXyziiLXp84130yxAKXfluax9sZhhrhKT6VrD45S6N3HxJpXQ/RY/EX35neH2/F7B
+ RgSloce2+zWfpELyS1qRkCUTt1tlGV2p+y2BPfXzrHn2vxvbhEn1QpQ6t+85FKN8YEhJEygJ
+ F0WaMvQMNrk9UAUziVcUkLU52NS9SXqpVg8vgrO0JKx97IXFPcNh0DWsSj/0Y8HO/RDkGXYn
+ FDMj7fZSPKyPQPmEHg+W/KzxSSfdgWIHF2QaQ0b2q1wOSec4Rti52ohmNSY+KNIW/zODhugJ
+ np3900V20aS7eD9K8GTU0TGC1pyz6IVJwIE=
+In-Reply-To: <6fd4bb71-90c5-4fe2-a520-97167fba049f@kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260409_235732_734027_560460F2 
+X-CRM114-Status: UNSURE (   9.00  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,22 +152,27 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 09/04/2026 12:57, Akhil R wrote:
-> Add I3C subsystem support, DesignWare I3C master controller, and
-> SPD5118 hwmon sensor as modules to the defconfig and therefore
-> enable the support for SPD5118 sensor on SOCAMM found in NVIDIA
-> Vera platforms.
+On 4/9/26 23:39, Krzysztof Kozlowski wrote:
+> On 09/04/2026 12:57, Akhil R wrote:
+>> Add I3C subsystem support, DesignWare I3C master controller, and
+>> SPD5118 hwmon sensor as modules to the defconfig and therefore
+>> enable the support for SPD5118 sensor on SOCAMM found in NVIDIA
+>> Vera platforms.
+> 
+> git grep for "Vera" gave me zero results. Are you sure this is an
+> upstream platform? Please point the DTS using this.
+> 
 
-git grep for "Vera" gave me zero results. Are you sure this is an
-upstream platform? Please point the DTS using this.
+I think this is an ACPI based system, or at least that is what Google search
+tells me.
 
-Best regards,
-Krzysztof
+Guenter
+
 
 -- 
 linux-i3c mailing list
