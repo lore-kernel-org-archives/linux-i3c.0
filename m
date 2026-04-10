@@ -4,106 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3B2C4E99068
-	for <linux-i3c@archiver.kernel.org>; Fri, 10 Apr 2026 09:57:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C2F8EA3C5C
+	for <linux-i3c@archiver.kernel.org>; Fri, 10 Apr 2026 10:57:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T9t3vt4XliRyensVfapX8S7MePegY6zKhINJnb9ea5E=; b=J6fOHdlhiUfTkJ
-	yjpUU/iRXk3fwh0zapsCXJBhH7KOOApbEhtma5VLEW8pPGYnsmV9099CMohb2y1DrwIBLoeIt/GAP
-	ir8CeABFDPS5IQe24g43R/Hhb3h5gV9kOa65YSxTQ8JJmAagYtrSpNpjrCPF7/zh5dBdfwrL+o+3x
-	1XqPwRnzfwoZzfl/+HYii3R+pm0MWYOe7Tux4/d2/23NqKt9WCAiTazqwUC2cMbLjMlGSkdSSjPGn
-	X6VOxDmrbAFKlyQ6eBsBl+7bYqsU8NAZwlxVI8zg3RNdBLtLWY4/TU596fFVBldTXpBgglKhY2+1Z
-	ZcLGUkBTUIuamJGVTpiw==;
+	List-Owner; bh=ruRoKX9aCvmQ6kubXVHbr2yyXx325WBaxIfvE8Pk3l4=; b=G8WAR0ZY8zzn7W
+	9lodNVLAQ7XRubNbwABPs06S40IzUmobyGdiFUO757sylm8HV2447hX+gthj56xFgGzBa4l7A31YG
+	kB2JrWRkA9NgyNsoKoEObAyvMAp8JK5SJhCsf1FSo4ANdmM8RuVl6LzyijrEZSlpXfNY/3lzWvpFY
+	EQ3DMJ3bUwb1laZ+iK+O/boFS3pE/kcWN/XsynoZ0VjemNSXCVnsCgc29gQSdER7d45UrNe5n0P5g
+	voiYDAOyuK891o9JKVtArk1Z+tvHnX5mNWXDq78nVEmuBh9GB2LypntGQES8yR6Rm3XfwttqfdlXR
+	FIib4NOyjM5MGBRWG/9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wB8c4-0000000BxZZ-42nn;
-	Fri, 10 Apr 2026 09:57:20 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wB9Yl-0000000C2yR-0QMi;
+	Fri, 10 Apr 2026 10:57:59 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wB8c3-0000000BxZR-13JQ
+	id 1wB9Yj-0000000C2yA-0rVw
 	for linux-i3c@lists.infradead.org;
-	Fri, 10 Apr 2026 09:57:19 +0000
+	Fri, 10 Apr 2026 10:57:57 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 4416160018;
-	Fri, 10 Apr 2026 09:57:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DF269C19421;
-	Fri, 10 Apr 2026 09:57:13 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id A54B76091C
+	for <linux-i3c@lists.infradead.org>; Fri, 10 Apr 2026 10:57:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 55A25C2BCB3
+	for <linux-i3c@lists.infradead.org>; Fri, 10 Apr 2026 10:57:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1775815038;
-	bh=T8Dpiclgk8Jf9La7iQF35pp6q30d9rgfaHQL5Rakqjc=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=RX9WLI4y3+csJJcf9jQG8Ba2LLobhbU+ToOw16B9IyN282S8duPvxsvh7qp4QSehp
-	 Vv07bLfvMbqQo5WaS63U9QzvWXFFcVh+ZsJgfJw1XmpQGoZOv+MubIowr1jKxoM2Hw
-	 7u6saOL9tK0sREeLg+/TuJCSzSmDtjZ2ux8P4Vl+bbftyIImJbr6DqvMaLMsxlBOmy
-	 ppeka/25AnYN35ReaHoURS5hjJd7ce4GeujNV1r6GvUbygGyfEKRQU/9n8VQT+OPQF
-	 kklpnjwHTPpSG4R/oL8e/M+TaoquHp5ORlVzFC3LobJIeD8yamNQXf548S8ctokRjG
-	 YL5AT2swl/7gQ==
-Message-ID: <5c751739-5044-4d23-9648-8d46dd0945d1@kernel.org>
-Date: Fri, 10 Apr 2026 11:57:11 +0200
+	s=k20201202; t=1775818676;
+	bh=J3SSveqiYGEqaxrur6FeuF/gwWkfkw7ff6t1aPxNYSY=;
+	h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+	b=Dwgpam1tEIdD4KfA38GLrh/kCplxbb1sZsi4kWDQOVcU/0tTUe7m3eJfuAhJoxuL8
+	 T4LIl+2KPAKpNfHPRFX1+r3S1hkiuvyBRKmDLRwYzdiF0X0Og19SVk3GWo37y4SATU
+	 mW3PETNmvpIUJC7kp/v1kwQ+XZC8FkAe3eY6Fb5OcbWVKOVWYycieZhIvDcNFMoRRL
+	 JjSkC6RPc+SrMyKSQUw6wl29bjk7KHlO0NFKIH6XkOBhx60Hpl/II1R7jaNNPWfTPU
+	 lmId3dYTXb8I9MIWozUoe3Dyr845RD3njfWukCSDjMMv9wo+kFdSj/9WDqaFbxSg26
+	 itFG9fN30+Uew==
+Received: by mail-ot1-f50.google.com with SMTP id 46e09a7af769-7dbce74e537so1417934a34.1
+        for <linux-i3c@lists.infradead.org>; Fri, 10 Apr 2026 03:57:56 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCUdGfw8X6lmPpW3dlpwq28vADk6W59bA13oJAfQvli+L1dYn+d4sCOg/xqPTTLkC3gyhBAOBK4dyoo=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwufJvapNwu/XFTgIPgpTKrhu8B2OCZUTZzmp5lNzVdCe+eyuNM
+	rY7xKoIIrp2BRUTvS2uzuPS+jTU58W5nItqmviBj5d9owdIHU+XYoqazGjMtwUcb55Ua01zQhuq
+	jWmlfXbVkFentKX8zrH2iJjHuL1pj33k=
+X-Received: by 2002:a05:6820:328d:b0:682:fa66:61cb with SMTP id
+ 006d021491bc7-68be7ee1e4emr834163eaf.41.1775818675345; Fri, 10 Apr 2026
+ 03:57:55 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 13/13] arm64: defconfig: Enable I3C and SPD5118 hwmon
-To: Akhil R <akhilrajeev@nvidia.com>
-Cc: Frank.Li@nxp.com, acpica-devel@lists.linux.dev,
- alexandre.belloni@bootlin.com, conor+dt@kernel.org,
- devicetree@vger.kernel.org, ebiggers@kernel.org, krzk+dt@kernel.org,
- lenb@kernel.org, linux-acpi@vger.kernel.org, linux-hwmon@vger.kernel.org,
- linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux@roeck-us.net, miquel.raynal@bootlin.com, p.zabel@pengutronix.de,
- rafael@kernel.org, robh@kernel.org, sakari.ailus@linux.intel.com,
- wsa+renesas@sang-engineering.com
-References: <9e1093e6-18f9-4edc-8659-510245c5d6db@kernel.org>
- <20260410083710.54993-1-akhilrajeev@nvidia.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
- cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
- JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
- gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
- J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
- NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
- BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
- vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
- Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
- TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
- S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
- FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJoF1BKBQkWlnSaAAoJEBuTQ307
- QWKbHukP/3t4tRp/bvDnxJfmNdNVn0gv9ep3L39IntPalBFwRKytqeQkzAju0whYWg+R/rwp
- +r2I1Fzwt7+PTjsnMFlh1AZxGDmP5MFkzVsMnfX1lGiXhYSOMP97XL6R1QSXxaWOpGNCDaUl
- ajorB0lJDcC0q3xAdwzRConxYVhlgmTrRiD8oLlSCD5baEAt5Zw17UTNDnDGmZQKR0fqLpWy
- 786Lm5OScb7DjEgcA2PRm17st4UQ1kF0rQHokVaotxRM74PPDB8bCsunlghJl1DRK9s1aSuN
- hL1Pv9VD8b4dFNvCo7b4hfAANPU67W40AaaGZ3UAfmw+1MYyo4QuAZGKzaP2ukbdCD/DYnqi
- tJy88XqWtyb4UQWKNoQqGKzlYXdKsldYqrLHGoMvj1UN9XcRtXHST/IaLn72o7j7/h/Ac5EL
- 8lSUVIG4TYn59NyxxAXa07Wi6zjVL1U11fTnFmE29ALYQEXKBI3KUO1A3p4sQWzU7uRmbuxn
- naUmm8RbpMcOfa9JjlXCLmQ5IP7Rr5tYZUCkZz08LIfF8UMXwH7OOEX87Y++EkAB+pzKZNNd
- hwoXulTAgjSy+OiaLtuCys9VdXLZ3Zy314azaCU3BoWgaMV0eAW/+gprWMXQM1lrlzvwlD/k
- whyy9wGf0AEPpLssLVt9VVxNjo6BIkt6d1pMg6mHsUEVzsFNBFVDXDQBEADNkrQYSREUL4D3
- Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
- MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
- OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
- GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
- 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
- YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
- 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
- BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
- JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
- 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
- YpsFAmgXUF8FCRaWWyoACgkQG5NDfTtBYptO0w//dlXJs5/42hAXKsk+PDg3wyEFb4NpyA1v
- qmx7SfAzk9Hf6lWwU1O6AbqNMbh6PjEwadKUk1m04S7EjdQLsj/MBSgoQtCT3MDmWUUtHZd5
- RYIPnPq3WVB47GtuO6/u375tsxhtf7vt95QSYJwCB+ZUgo4T+FV4hquZ4AsRkbgavtIzQisg
- Dgv76tnEv3YHV8Jn9mi/Bu0FURF+5kpdMfgo1sq6RXNQ//TVf8yFgRtTUdXxW/qHjlYURrm2
- H4kutobVEIxiyu6m05q3e9eZB/TaMMNVORx+1kM3j7f0rwtEYUFzY1ygQfpcMDPl7pRYoJjB
- dSsm0ZuzDaCwaxg2t8hqQJBzJCezTOIkjHUsWAK+tEbU4Z4SnNpCyM3fBqsgYdJxjyC/tWVT
- AQ18NRLtPw7tK1rdcwCl0GFQHwSwk5pDpz1NH40e6lU+NcXSeiqkDDRkHlftKPV/dV+lQXiu
- jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
- zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
- XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20260410083710.54993-1-akhilrajeev@nvidia.com>
+References: <20260409105747.48158-1-akhilrajeev@nvidia.com>
+ <20260409105747.48158-3-akhilrajeev@nvidia.com> <adhalQxfbMsL3V0T@lizhi-Precision-Tower-5810>
+In-Reply-To: <adhalQxfbMsL3V0T@lizhi-Precision-Tower-5810>
+From: "Rafael J. Wysocki" <rafael@kernel.org>
+Date: Fri, 10 Apr 2026 12:57:43 +0200
+X-Gmail-Original-Message-ID: <CAJZ5v0jKZJg3Yh6OYiKncipT-47N0o0QLniPtj4NO+ojmsJ1rQ@mail.gmail.com>
+X-Gm-Features: AQROBzAjJeCEEVSt2XY1F7M-MV9mizZ42mbvlFT3Shx19xZYzF_yLub_Mz-tACQ
+Message-ID: <CAJZ5v0jKZJg3Yh6OYiKncipT-47N0o0QLniPtj4NO+ojmsJ1rQ@mail.gmail.com>
+Subject: Re: [PATCH v2 02/13] ACPICA: Read LVR from the I2C resource descriptor
+To: Frank Li <Frank.li@nxp.com>
+Cc: Akhil R <akhilrajeev@nvidia.com>, 
+	Alexandre Belloni <alexandre.belloni@bootlin.com>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	"Rafael J . Wysocki" <rafael@kernel.org>, Robert Moore <robert.moore@intel.com>, Len Brown <lenb@kernel.org>, 
+	Guenter Roeck <linux@roeck-us.net>, Philipp Zabel <p.zabel@pengutronix.de>, 
+	Eric Biggers <ebiggers@kernel.org>, Sakari Ailus <sakari.ailus@linux.intel.com>, 
+	Wolfram Sang <wsa+renesas@sang-engineering.com>, 
+	Miquel Raynal <miquel.raynal@bootlin.com>, linux-i3c@lists.infradead.org, 
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, 
+	linux-acpi@vger.kernel.org, acpica-devel@lists.linux.dev, 
+	linux-hwmon@vger.kernel.org
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,99 +84,68 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 10/04/2026 10:37, Akhil R wrote:
-> On Fri, 10 Apr 2026 09:18:48 +0200, Krzysztof Kozlowski wrote:
->> On 10/04/2026 08:57, Guenter Roeck wrote:
->>> On 4/9/26 23:39, Krzysztof Kozlowski wrote:
->>>> On 09/04/2026 12:57, Akhil R wrote:
->>>>> Add I3C subsystem support, DesignWare I3C master controller, and
->>>>> SPD5118 hwmon sensor as modules to the defconfig and therefore
->>>>> enable the support for SPD5118 sensor on SOCAMM found in NVIDIA
->>>>> Vera platforms.
->>>>
->>>> git grep for "Vera" gave me zero results. Are you sure this is an
->>>> upstream platform? Please point the DTS using this.
->>>>
->>>
->>> I think this is an ACPI based system, or at least that is what Google search
->>> tells me.
->>
->> Thanks. Following Google Vera is either a "CPU" or entire architecture
->> (at least that's how they call it), so it does not have SPD5118 sensor.
-> 
-> SOCAMM is a Memory Module. SPD5118, as it's Kconfig mentions, is a sensor
-> found within such memory modules. I didn't quite get why would you state
-> that the SOCAMM present in Vera architecture (or CPU) does not have
-> SPD5118 in it.
-
-I said that CPU or entire architecture does not have it.
-
-Commit is pretty vague in helping me to figure out the things I asked
-for in last email.
-
-
-> 
-> Pasting the below from the Vera Rubin product page [1] -
-> "NVIDIA Vera CPUs add enhanced serviceability with small-outline
-> compression-attached memory modules (SOCAMM) LPDDR5X and in-system tests
-> for the CPU cores."
-> 
-> [1]: https://www.nvidia.com/en-us/data-center/technologies/rubin/
-
-So this is for Vera Rubin? For what is this exactly?
-
-> 
->>
->>
->> "Nvidia vera socamm" gives me something about "rubin". It's not me who
->> should be guessing all this.
->>
->> "nvidia vera socamm SPD5118" gives me even less, so justification is flaky.
->>
->> To remind, this commit msg should convince why generic kernel for
->> developers affecting all possible platforms - not end users, because
->> they always use distro kernels - should enable these configs. And it
->> should bring me clear rule what I can or cannot remove from defconfig,
->> if in 2 years I come and start pruning it from symbols.
-> 
-> I found little details on what we should be adding in the defconfig. It
-
-Then maybe we should not be adding it to defconfig?
-
-We usually do not make changes which we do not know why we are making
-them. IOW, every commit must be useful for the community and this is
-achieved by either explicit or implicit answer why doing this.
-
-And I gave in the past clear guidelines - this is config for the
-upstream kernel developers to use the upstream hardware and/or for
-distros to understand what is needed to support that upstream hardware
-(although last part in theory, because many distros do variantion of
-allmodconfig, so they don't really care about our defconfig).
-
-> would help if you could share some guidance. Do you mean to say that the
-> defconfig should include only the configs which are necessary in
-> development platforms and not in end-products?
-
-No, the type of product does not matter because upstream supports every
-type of product. Upstream does not say "oh, you run end-product, so we
-don't care about you". But defconfig is not used by endusers and has
-zero meaning to them.
-
-It seems to missed or ignored one more reason I wrote:
-
->> And it
->> should bring me clear rule what I can or cannot remove from defconfig,
->> if in 2 years I come and start pruning it from symbols.
-
-Best regards,
-Krzysztof
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+T24gRnJpLCBBcHIgMTAsIDIwMjYgYXQgNDowNOKAr0FNIEZyYW5rIExpIDxGcmFuay5saUBueHAu
+Y29tPiB3cm90ZToKPgo+IE9uIFRodSwgQXByIDA5LCAyMDI2IGF0IDA0OjI3OjMyUE0gKzA1MzAs
+IEFraGlsIFIgd3JvdGU6Cj4gPiBBQ1BJIDYuMyBzcGVjaWZpZXMgYnl0ZSA4IG9mIEkyQyBTZXJp
+YWwgQnVzIENvbm5lY3Rpb24gZGVzY3JpcHRvciB0byBiZQo+ID4gdXNlZCBmb3IgTGVnYWN5IFZp
+cnR1YWwgUmVnaXN0ZXIgKExWUikgZGF0YSBhcyBzcGVjaWZpZWQgaW4gdGhlIE1JUEkKPiA+IEkz
+QyBTcGVjaWZpY2F0aW9uIGZvciBhbiBJMkMgZGV2aWNlIGNvbm5lY3RlZCB0byBhbiBJM0MgSG9z
+dCBDb250cm9sbGVyLgo+ID4gTFZSIHdpbGwgYmUgcmVhZCBieSBJM0MgaG9zdCBjb250cm9sbGVy
+IGRyaXZlcnMgYW5kIGl0IHByb3ZpZGVzIGRldGFpbHMKPiA+IGFib3V0IHRoZSBzcGVjaWZpYyBz
+cGVlZCBhbmQgNTBucyBzcGlrZSBmaWx0ZXIgY2FwYWJpbGl0aWVzIG9mIEkyQwo+ID4gZGV2aWNl
+cy4KPiA+Cj4gPiBVcGRhdGUgdGhlIHJzY29udmVydF9pbmZvIHRvIGluY2x1ZGUgdGhpcyBmaWVs
+ZC4gRm9yIEkyQyBkZXZpY2VzIG9uIGFuCj4gPiBJMkMgYnVzLCB0aGlzIGZpZWxkIGlzIFJlc2Vy
+dmVkIGFuZCB1bnVzZWQuCj4gPgo+ID4gVGhpcyBjb21taXQgaXMgdGhlIHJlc3VsdCBvZiBzcXVh
+c2hpbmcgdGhlIGZvbGxvd2luZzoKPiA+IEFDUElDQSBjb21taXQgNzAwODJkYzhmYzg0NzY3M2Fj
+N2Y0YmJiMTU0MTc3NjczMGYwYjYzZQo+ID4gQUNQSUNBIGNvbW1pdCBlNjJlNzRiYWY3ZTA4Y2Yw
+NTllYzgyMDQ5YWVjY2Q1NjViMjRkNjYxCj4gPiBBQ1BJQ0EgY29tbWl0IGM0MDQxMTgyMzUxMDgw
+MTJjYWQzOTZjODM0YjVhYWJlMmRkMWI1MWEKPiA+IEFDUElDQSBjb21taXQgNzY1MGQ0YTg4OWVh
+NzkwNzA2MGJmY2U4OWY0Zjc4MGNlODNlN2IyOAo+ID4gQUNQSUNBIGNvbW1pdCAwMTRmYTlmMmRi
+Y2M2YjFiZDQyYTRhNGE2ZjY3MDVkOWNmN2Q0NjBiCj4KPiBUaGVzZSBjb21taXQgbnVtYmVyIGlz
+IG5vdCBleGlzdGVkIGF0IGxpbnVzIG9mZmljaWFsIHRyZWUuIFBsZWFzZSByZW1vdmUgaXQuCgpU
+aGVzZSBhcmUgdXBzdHJlYW0gQUNQSUNBIGNvbW1pdHMgYW5kIGl0IGlzIGVudGlyZWx5IGxlZ2l0
+aW1hdGUgdG8KbWVudGlvbiB0aGVtIGluIGtlcm5lbCBjb21taXRzIHRvdWNoaW5nIEFDUElDQSBj
+b2RlLgoKSG93ZXZlciwgTGluazogdGFncyBwb2ludGluZyB0byB0aG9zZSBjb21taXRzIHdvdWxk
+IGJlIHN1ZmZpY2llbnQuCgo+ID4KPiA+IExpbms6IGh0dHBzOi8vZ2l0aHViLmNvbS9hY3BpY2Ev
+YWNwaWNhL2NvbW1pdC83MDA4MmRjOAo+ID4gTGluazogaHR0cHM6Ly9naXRodWIuY29tL2FjcGlj
+YS9hY3BpY2EvY29tbWl0L2IzYzM4ZGM5Cj4gPiBTaWduZWQtb2ZmLWJ5OiBBa2hpbCBSIDxha2hp
+bHJhamVldkBudmlkaWEuY29tPgo+ID4gLS0tCj4gPiAgZHJpdmVycy9hY3BpL2FjcGljYS9yc3Nl
+cmlhbC5jIHwgNiArKysrKy0KPiA+ICBpbmNsdWRlL2FjcGkvYWNyZXN0eXAuaCAgICAgICAgfCAx
+ICsKPiA+ICAyIGZpbGVzIGNoYW5nZWQsIDYgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQo+
+ID4KPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2FjcGkvYWNwaWNhL3Jzc2VyaWFsLmMgYi9kcml2
+ZXJzL2FjcGkvYWNwaWNhL3Jzc2VyaWFsLmMKPiA+IGluZGV4IDI3OWJmYTI3ZGE5NC4uYzA2ZTkx
+OGFiODg5IDEwMDY0NAo+ID4gLS0tIGEvZHJpdmVycy9hY3BpL2FjcGljYS9yc3NlcmlhbC5jCj4g
+PiArKysgYi9kcml2ZXJzL2FjcGkvYWNwaWNhL3Jzc2VyaWFsLmMKPiA+IEBAIC0zMTUsNyArMzE1
+LDcgQEAgc3RydWN0IGFjcGlfcnNjb252ZXJ0X2luZm8gYWNwaV9yc19jb252ZXJ0X2NzaTJfc2Vy
+aWFsX2J1c1sxNF0gPSB7Cj4gPiAgICoKPiA+ICAgKioqKioqKioqKioqKioqKioqKioqKioqKioq
+KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqLwo+ID4K
+PiA+IC1zdHJ1Y3QgYWNwaV9yc2NvbnZlcnRfaW5mbyBhY3BpX3JzX2NvbnZlcnRfaTJjX3Nlcmlh
+bF9idXNbMTddID0gewo+ID4gK3N0cnVjdCBhY3BpX3JzY29udmVydF9pbmZvIGFjcGlfcnNfY29u
+dmVydF9pMmNfc2VyaWFsX2J1c1sxOF0gPSB7Cj4gPiAgICAgICB7QUNQSV9SU0NfSU5JVEdFVCwg
+QUNQSV9SRVNPVVJDRV9UWVBFX1NFUklBTF9CVVMsCj4gPiAgICAgICAgQUNQSV9SU19TSVpFKHN0
+cnVjdCBhY3BpX3Jlc291cmNlX2kyY19zZXJpYWxidXMpLAo+ID4gICAgICAgIEFDUElfUlNDX1RB
+QkxFX1NJWkUoYWNwaV9yc19jb252ZXJ0X2kyY19zZXJpYWxfYnVzKX0sCj4gPiBAQCAtMzkxLDYg
+KzM5MSwxMCBAQCBzdHJ1Y3QgYWNwaV9yc2NvbnZlcnRfaW5mbyBhY3BpX3JzX2NvbnZlcnRfaTJj
+X3NlcmlhbF9idXNbMTddID0gewo+ID4gICAgICAgIEFNTF9PRkZTRVQoaTJjX3NlcmlhbF9idXMu
+dHlwZV9zcGVjaWZpY19mbGFncyksCj4gPiAgICAgICAgMH0sCj4gPgo+ID4gKyAgICAge0FDUElf
+UlNDX01PVkU4LCBBQ1BJX1JTX09GRlNFVChkYXRhLmkyY19zZXJpYWxfYnVzLmx2ciksCj4gPiAr
+ICAgICAgQU1MX09GRlNFVChpMmNfc2VyaWFsX2J1cy50eXBlX3NwZWNpZmljX2ZsYWdzKSArIDEs
+Cj4gPiArICAgICAgMX0sCj4gPiArCj4gPiAgICAgICB7QUNQSV9SU0NfTU9WRTMyLCBBQ1BJX1JT
+X09GRlNFVChkYXRhLmkyY19zZXJpYWxfYnVzLmNvbm5lY3Rpb25fc3BlZWQpLAo+ID4gICAgICAg
+IEFNTF9PRkZTRVQoaTJjX3NlcmlhbF9idXMuY29ubmVjdGlvbl9zcGVlZCksCj4gPiAgICAgICAg
+MX0sCj4gPiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9hY3BpL2FjcmVzdHlwLmggYi9pbmNsdWRlL2Fj
+cGkvYWNyZXN0eXAuaAo+ID4gaW5kZXggODQyZjkzMmUyYzJiLi4zOGExOWIxZDE5YWMgMTAwNjQ0
+Cj4gPiAtLS0gYS9pbmNsdWRlL2FjcGkvYWNyZXN0eXAuaAo+ID4gKysrIGIvaW5jbHVkZS9hY3Bp
+L2FjcmVzdHlwLmgKPiA+IEBAIC00MjMsNiArNDIzLDcgQEAgc3RydWN0IGFjcGlfcmVzb3VyY2Vf
+aTJjX3NlcmlhbGJ1cyB7Cj4gPiAgICAgICBBQ1BJX1JFU09VUkNFX1NFUklBTF9DT01NT04gdTgg
+YWNjZXNzX21vZGU7Cj4gPiAgICAgICB1MTYgc2xhdmVfYWRkcmVzczsKPiA+ICAgICAgIHUzMiBj
+b25uZWN0aW9uX3NwZWVkOwo+ID4gKyAgICAgdTggbHZyOwo+ID4gIH07Cj4gPgo+ID4gIC8qIFZh
+bHVlcyBmb3IgYWNjZXNzX21vZGUgZmllbGQgYWJvdmUgKi8KPiA+IC0tCj4gPiAyLjUwLjEKPiA+
+Cj4KCi0tIApsaW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNj
+Cg==
