@@ -4,108 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 57E75E937E3
-	for <linux-i3c@archiver.kernel.org>; Sun, 12 Apr 2026 13:34:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE7AEE937E3
+	for <linux-i3c@archiver.kernel.org>; Sun, 12 Apr 2026 14:34:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nOYldcsR6icLe8ga9OBGw/8GmLdeoBkPul7WJ4/gaik=; b=jjjtVbMKxqujjb
-	o5o0Qvm2yxiFvOfy1VGNSFTidBuZGW5aMzhSvyrGwztdMGkCMPhE8ZGeJ5S94zCHuheC/I1JSHjhM
-	trrdoG6jdCHi5KlCQHwjFF5ifFSQIKyWq74MQWgl4GnzYcw+TUtKdSH+MYc2eAhY98LomgBOuuR/k
-	a80/8h6N9+Us78cj0r36a1bbJyFERxs57Q7MzRjJRZlePov6aROjuW6Go37iSzsJtDlCrnsAcJ+2P
-	dd6D1IAxrsVeHeVcFMyH918aKrKd5q2tF+IX3k6cxi9U9Q0EhjUnOboNCawPG0QFUtsBNicBmQ/3s
-	9bePvxh0LmHQfvsrwatg==;
+	List-Owner; bh=V6bA0x/gd6gET8o8r/bGRRLEAyqWbUGEw9R3UvrJn5E=; b=NADsa0zEpsUQrj
+	eqdnZMyy0fq7LUQmsh5XTroGiYPWoBjHS8lHqBEDyXaXcLJwNZeBFgcycwCJPCY7aDyvZ9pLbuHNh
+	0V9PDY00yIY4/R/p9LRLpPadQupcnbzyeMC6gIToR/2NapmbqfeyO6ltUgppwBb29KCW1txKpvs8N
+	LIJn8lFYnqbJkIdkojxDOcEYr9S7LiRFgEr1lLgW3Tvp2KhTZf26YSkizoNrF/7nXpRfIunDN3zZi
+	M5oMjUVwT1ABTvqUBSbJ002OW5jSKwbe+nXHvYXvjlJVca/8uQJl9SZBOGmxyk5b38y5vgMUyARSZ
+	d0f1U3bEfOP228m/bTPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wBuwq-0000000ELAt-0779;
-	Sun, 12 Apr 2026 13:34:00 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wBvtH-0000000EOMq-3OUb;
+	Sun, 12 Apr 2026 14:34:25 +0000
+Received: from smtpout-02.galae.net ([185.246.84.56])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wBuwo-0000000ELAm-3iVh
+	id 1wBvtE-0000000EOMR-3XBC
 	for linux-i3c@lists.infradead.org;
-	Sun, 12 Apr 2026 13:33:58 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 67AFF60008;
-	Sun, 12 Apr 2026 13:33:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 09FC2C19424;
-	Sun, 12 Apr 2026 13:33:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1776000836;
-	bh=scSfjuZM69nzVpL4Q8vryol1tcjFhxl84aCJjNlkw+M=;
-	h=Date:Subject:From:To:Cc:References:In-Reply-To:From;
-	b=sjdnM7yKk3w3+vX3F2/CKZmXC6zvSq3UwtS73XT7Fy0FLrsxD0yS4e0EGI4Ldz212
-	 XPw9knSR7Pm7G1b36XE8RfP87CQOX6e++BTlBcrFx9YQrJ2kjNp1JNAoAoZf4c6K8G
-	 izRkdXaUX64ETeTab5Oeg3GAWzdw7MCkt2ZuhlFRD9TJuiGLaYlpwTKs+EvlA17Tra
-	 mA94DOPpIkPDnYu9on2AxThuWhgQcz3C4E8vtOlLc5tl2ADLK2lYehQwIa4Nwo0mz/
-	 tO+z6co/14zCoH8doVebQG29y1tTc1FikvQozh2PkzedPvnVUlIkkSZxT9d89UNeYn
-	 lCiwMFIRnzbFw==
-Message-ID: <d62130c6-c503-479d-99d8-b4f0f0582a4b@kernel.org>
-Date: Sun, 12 Apr 2026 15:33:42 +0200
+	Sun, 12 Apr 2026 14:34:22 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-02.galae.net (Postfix) with ESMTPS id 0488C1A31B2;
+	Sun, 12 Apr 2026 14:34:16 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id C3D185FFB9;
+	Sun, 12 Apr 2026 14:34:15 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id CC6A610451B8E;
+	Sun, 12 Apr 2026 16:34:12 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1776004455; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=91msdPNkWMnw/BAAIhlDZGhpLVxnZ2cz6aRipzbPmTE=;
+	b=Mskiwlbxx4MqBlvN5B+uBf6kKoVpkkiwwdomK5No7A5b1gtWrV9NKl8diP9T2F+SVqgRPL
+	7wFh99I5sz7CT8FObkQP36LnpB7i5jK2Zp68/kQz2+ooDvjDEjbmHhJw5o4xXzTtrVIlBY
+	aAYUiLGzNaGiI/BMbb/+147XzUulpzRRRUcFDf9Bz21re6qMJR9mBDXWAOU6fhCaZZXzm9
+	6nM6GFqmxJtFUkAFzJcGkZuag5KvbS6NOAc3ChYxpBXyz2o9xliYJe/9jkCImnzCxHqaua
+	NHAE4S4sm1kjZvEVpfmllPexhgaW+QqiB/G+LZbOuE+eZLPNgNDPGT9PpHafsw==
+Date: Sun, 12 Apr 2026 16:34:11 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Adrian Hunter <adrian.hunter@intel.com>
+Cc: Frank.Li@nxp.com, rafael@kernel.org, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-pm@vger.kernel.org
+Subject: Re: [PATCH V5 0/5] i3c: mipi-i3c-hci-pci: Enable IBI while runtime
+ suspended for Intel controllers
+Message-ID: <177600443486.2783407.4838575164126519141.b4-ty@b4>
+References: <20260306085338.62955-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 13/13] arm64: defconfig: Enable I3C and SPD5118 hwmon
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Guenter Roeck <linux@roeck-us.net>, Akhil R <akhilrajeev@nvidia.com>
-Cc: Frank.Li@nxp.com, acpica-devel@lists.linux.dev,
- alexandre.belloni@bootlin.com, conor+dt@kernel.org,
- devicetree@vger.kernel.org, ebiggers@kernel.org, krzk+dt@kernel.org,
- lenb@kernel.org, linux-acpi@vger.kernel.org, linux-hwmon@vger.kernel.org,
- linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
- miquel.raynal@bootlin.com, p.zabel@pengutronix.de, rafael@kernel.org,
- robh@kernel.org, sakari.ailus@linux.intel.com,
- wsa+renesas@sang-engineering.com
-References: <5c751739-5044-4d23-9648-8d46dd0945d1@kernel.org>
- <20260411053433.49655-1-akhilrajeev@nvidia.com>
- <d0f1f053-589a-4681-8c8f-8e4b5daec145@roeck-us.net>
- <ef05d6fd-97d9-4795-9626-e69895e5df74@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <ef05d6fd-97d9-4795-9626-e69895e5df74@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20260306085338.62955-1-adrian.hunter@intel.com>
+X-Last-TLS-Session-Version: TLSv1.3
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260412_073421_034393_A8F5355E 
+X-CRM114-Status: UNSURE (   5.84  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,71 +76,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 12/04/2026 15:32, Krzysztof Kozlowski wrote:
-> On 11/04/2026 09:20, Guenter Roeck wrote:
->> On 4/10/26 22:34, Akhil R wrote:
->> [ ... ]
->>>>>> And it
->>>>>> should bring me clear rule what I can or cannot remove from defconfig,
->>>>>> if in 2 years I come and start pruning it from symbols.
->>>
->>> I am still a little confused on what information would likely accept (and
->>> keep) these configs in the defconfig. Would updating the commit message
->>> as below work?
->>>
->>> "These configs enable the support for SPD5118 within the
->>> Small-Outline-Compression-Attached Memory Modules (SOCAMM) LPDDR5X found
->>> in the NVIDIA Vera CPUs. The Vera CPU uses ACPI and is part of platforms
->>> such as Vera Rubin."
->>>
->>
->> It is quite interesting that we argue about SPD5118 which is mandatory in
->> DDR5 systems. At the same time, CONFIG_IGB_HWMON, CONFIG_SENSORS_MACSMC_HWMON,
->> CONFIG_SENSORS_RASPBERRYPI_HWMON, and CONFIG_RTC_DRV_DS3232_HWMON _are_
->> enabled in arm64:defconfig. CONFIG_IGB_HWMON is even built-in.
+On Fri, 06 Mar 2026 10:53:33 +0200, Adrian Hunter wrote:
+> 	Please note all patches have Frank's Rev'd-by.
 > 
-> Why CONFIG_SENSORS_MACSMC_HWMON is weird? It is part of the soc using
-> the defconfig?
 > 
-> The author here has troubles bringing any arguments why his drivers
-> should be defconfig and keeps asking what do I want to hear. If one
-> cannot make an argument why a change is needed, then maybe the change
-> should not be sent?
+> Changes in V5:
 > 
-> It's the job of the author to convince why the community needs this
-> change, unless it is obvious, ofc.
+> 	Re-base on top of v7.0 fixes series:
+> 		https://lore.kernel.org/linux-i3c/20260306072451.11131-1-adrian.hunter@intel.com/T
 > 
->>
->> It is kind of difficult to understand why those are more important than
->> the temperature sensor on DDR5 modules (or the temperature sensor on DDR4
->> modules, for that matter).
-> 
-> No one discussed this. I have no clue what is SPD5118 and commit msg did
-> not explain that. Did not even provide accurate user of that.
-> 
->>
->> I don't know what the policy for defconfig is, but just based on that it does
->> seem to lack consistency.
-> 
-> No wonder... people write poor commits and send that to upstream. And
-> when asked "why do we want this" they got stuck.
-> 
->>
->> A separate question is if it is time to enable I3C in default configurations.
->> I'd think so - more and more chip vendors support it, and presumably they would
->> not invest in it if there was no demand, but that is just my personal opinion.
-> 
-> Isn't I3C needed for SPD5118. Otherwise I understand even less from this
-> rationale - why I3C is being enabled here?
-> 
-> And before author asks what do I want to here: no, it is author's job to
-> convince me to accept I3C in defconfig. Not mine.
+> [...]
 
-BTW, all this was asked at v1 and author did not improve the commit msg
-beside giving quite broad/unspecific "Vera".
+Applied, thanks!
+
+[1/5] i3c: mipi-i3c-hci-pci: Set d3hot_delay to 0 for Intel controllers
+      https://git.kernel.org/i3c/c/815b4448198f
+[2/5] i3c: mipi-i3c-hci: Add quirk to allow IBI while runtime suspended
+      https://git.kernel.org/i3c/c/5fe77a6d8d5d
+[3/5] i3c: mipi-i3c-hci: Allow parent to manage runtime PM
+      https://git.kernel.org/i3c/c/82851828a8b1
+[4/5] i3c: mipi-i3c-hci-pci: Add optional ability to manage child runtime PM
+      https://git.kernel.org/i3c/c/e813e7e30086
+[5/5] i3c: mipi-i3c-hci-pci: Enable IBI while runtime suspended for Intel controllers
+      https://git.kernel.org/i3c/c/e7a718627c6f
 
 Best regards,
-Krzysztof
+
+-- 
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-i3c mailing list
