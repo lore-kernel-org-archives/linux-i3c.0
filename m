@@ -4,63 +4,74 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BEFE1E93804
-	for <linux-i3c@archiver.kernel.org>; Sun, 12 Apr 2026 20:07:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E1881E93800
+	for <linux-i3c@archiver.kernel.org>; Sun, 12 Apr 2026 20:16:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4gqyvQfOxoT1AorzWeVWKmHExuCLV9S94Vm3NgDCaH0=; b=nxn3nx6Ab3Y8fy
-	n8/zVDpifJ1sO3nkIxNMLQZ3hme1AEF33LV7KSiCYuLuEOCe+K5a3XxdC493iddsNyeyQQJSj4HX3
-	wTud+kJLfOF/oe+XM8BH8TVP+tXy3YsydWGkKDeInuOGJoN39zzJ1vV1ztOoJo2Dl2V+JlW4qaBV8
-	TgWE/6hg6xsafNoh5OOzhR54gXc/uTPftIqEXP3VDtTIjSgPmCX477DQc2bQkUpPeOmRtSyKVT1+o
-	UMCo5iJyOq4i2TQXUXagCFg0woxBu+AIYQUJQdUpiconi7WpqWT7YOvue6YdAIxfmo7z9qc6HbDWx
-	/YNfRGJXG239wYgZzuLA==;
+	List-Owner; bh=8nwfspyn4pL47ahPnUEMt6nb3YHmbPc2LDgqJWvAXqQ=; b=jUYVcgLLGSXSxo
+	kgLoiff4kDbFEdwMQJgODN1R4RfPYFv8HdAsJwO44weC/7JfEzW7zRs24lBZrFJ0Vpvco8GmzfOR1
+	MMsVabiEDFrXqN/1U7RoqE7OcQA0cGrDChVvV6gDf5WWP+CpOycWXfaIbn0fzj0M5Hkw3oJTpZQ3/
+	FGXvBK56sZmyUMM7PtniGpYIIr96GiMgi99yaZf7zE5gHxF+DFKsF4A7hV6PxJh9qIbigbSVRc/nv
+	ZPUFjvzU2O68i6GRr1IL5WlwNtaZmTW94wXZ8lUMGi0NbAA+oX1/gwBVWWCizu6JnphUpzeDec8gJ
+	l/xYw1xYhi1DjwhGOq2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wC15h-0000000Eevl-1ssV;
-	Sun, 12 Apr 2026 20:07:33 +0000
+	id 1wC1EZ-0000000EfPe-1wzr;
+	Sun, 12 Apr 2026 20:16:43 +0000
 Received: from smtpout-03.galae.net ([185.246.85.4])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wC15e-0000000Eeus-0ztV
+	id 1wC1EU-0000000EfPJ-2Vk1
 	for linux-i3c@lists.infradead.org;
-	Sun, 12 Apr 2026 20:07:32 +0000
+	Sun, 12 Apr 2026 20:16:40 +0000
 Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-03.galae.net (Postfix) with ESMTPS id 69E6B4E429D5
-	for <linux-i3c@lists.infradead.org>; Sun, 12 Apr 2026 20:07:26 +0000 (UTC)
+	by smtpout-03.galae.net (Postfix) with ESMTPS id 5DB1E4E429E2;
+	Sun, 12 Apr 2026 20:16:36 +0000 (UTC)
 Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 2D66B5FFB9;
-	Sun, 12 Apr 2026 20:07:26 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id A78BB104500EE;
-	Sun, 12 Apr 2026 22:07:22 +0200 (CEST)
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 1330D5FFB9;
+	Sun, 12 Apr 2026 20:16:36 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id B536E104500EE;
+	Sun, 12 Apr 2026 22:16:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1776024445; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=oOTxpheUEF8ksp9JzNSInbOvg/aaZV83AB70CBz0LwM=;
-	b=ZGxwedvwGglzy7dyOoylaAahlHjEfzPL6VNy3OM4iu+kjFLMGg3g0+QTOXidXbL0k4N/Xo
-	ZSBHBvnRKnfwCT7nVzMJZ4nljL2AjkHHv2edxyBfnqmSAErNWm0epbt5BLmsk5RGNe6VXe
-	pPDY0FGTsghHjr47wTlx7jQ9i10ZG2589781uVjjDa4cNQggC/yw9bmcsLCwGFhQSKYlC2
-	P4sTXwNllIBP1FQnszNLHfR/VwelR4thAsrvvzqr68kFA/BIqTjr4n0W0YvTwwvahA1xY1
-	OHpLGvKMvvl1U5a2RfCWkN8B2hEa9jOqb6QVoj8tTP9EMTzbFPFrl3Q7ScoZgA==
-Date: Sun, 12 Apr 2026 22:07:21 +0200
+	t=1776024994; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=YYgaBasPu/jNs2Sww7H5ka9hu3+0rgpJ63cKOKJsiiQ=;
+	b=E+5vuCcY8XufyKdg61LHjIa8ao0Lemtd3QpFm2aXGsodRtAQVLh/XF7q7xxUBrEngeCfrQ
+	Sws4n02B2Pb37njbWb9Hi/lA2d44xLw2l5hD18qw/pvl5O4zztiflEmnsgEVP62PljsCky
+	NdHxfO6U4tj5z28ord/9O4rZgp7Dqr+6dxqkWWq9XPCCJZ/bT8Vc7dFRLNN1NVXJk/zm6k
+	AmMlusSIfG2UAafaWjIdu2afO551qSMTj8uowrxDxpQFW9QeYYgdQtVVK6V8L2sdPq7EWD
+	qEiHAI/RtBjapUEaJq5RODY2ryG4oAyKZQpBiaJMt4+9PKnXJxe7bzjXr0AfVA==
+Date: Sun, 12 Apr 2026 22:16:29 +0200
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Frank Li <Frank.Li@nxp.com>, Nicolas Pitre <npitre@baylibre.com>,
-	Boris Brezillon <boris.brezillon@collabora.com>,
-	Billy Tsai <billy_tsai@aspeedtech.com>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2] i3c: mipi-i3c-hci: fix IBI payload length calculation
- for final status
-Message-ID: <177602443411.2831575.14896131514235713722.b4-ty@b4>
-References: <20260407-i3c-hci-dma-v2-1-a583187b9d22@aspeedtech.com>
+To: Guenter Roeck <linux@roeck-us.net>
+Cc: Akhil R <akhilrajeev@nvidia.com>, Frank Li <Frank.Li@nxp.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	"Rafael J . Wysocki" <rafael@kernel.org>,
+	Robert Moore <robert.moore@intel.com>, Len Brown <lenb@kernel.org>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Eric Biggers <ebiggers@kernel.org>,
+	Sakari Ailus <sakari.ailus@linux.intel.com>,
+	Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
+	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org,
+	acpica-devel@lists.linux.dev, linux-hwmon@vger.kernel.org
+Subject: Re: [PATCH v2 12/13] hwmon: spd5118: Add I3C support
+Message-ID: <20260412201629345ffec6@mail.local>
+References: <20260409105747.48158-1-akhilrajeev@nvidia.com>
+ <20260409105747.48158-13-akhilrajeev@nvidia.com>
+ <19218853-499c-46a2-8843-0bafa17c81d5@roeck-us.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260407-i3c-hci-dma-v2-1-a583187b9d22@aspeedtech.com>
+In-Reply-To: <19218853-499c-46a2-8843-0bafa17c81d5@roeck-us.net>
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260412_130730_722644_AF07DD5F 
-X-CRM114-Status: UNSURE (   6.74  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260412_131638_784097_38ED8D5F 
+X-CRM114-Status: GOOD (  11.46  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,24 +88,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, 07 Apr 2026 16:53:23 +0800, Billy Tsai wrote:
-> In DMA mode, the IBI status descriptor encodes the payload using
-> CHUNKS (number of chunks) and DATA_LENGTH (valid bytes in the last
-> chunk). All preceding chunks are implicitly full-sized.
+On 09/04/2026 07:19:25-0700, Guenter Roeck wrote:
+> On 4/9/26 03:57, Akhil R wrote:
+> > Add a regmap config and a probe function to support for I3C based
+> > communication to SPD5118 devices.
+> > 
+> > On an I3C bus, SPD5118 are enumerated via SETAASA and always require an
+> > ACPI or device tree entry. The device matching is hence through the OF
+> > match tables only and do not need an I3C class match table. The device
+> > identity is verified in the type registers before proceeding to the
+> > common probe function.
+> > 
+> > Signed-off-by: Akhil R <akhilrajeev@nvidia.com>
 > 
-> The current code accumulates full chunk sizes for non-final status
-> descriptors, but for the final status descriptor it only adds
-> DATA_LENGTH. This ignores the contribution of the preceding full
-> chunks described by the same final status entry.
+> Acked-by: Guenter Roeck <linux@roeck-us.net>
 > 
-> [...]
 
-Applied, thanks!
+Guenter, I guess you can actually take 11/13 and 12/13 for 7.1 if you
+prefer as they don't seem to actually have any dependency on the
+previous patches. The worst that can happen is that the driver won't be
+probed because the I3C subsystem will not enumerate the device.
 
-[1/1] i3c: mipi-i3c-hci: fix IBI payload length calculation for final status
-      https://git.kernel.org/i3c/c/d35a6db887ee
-
-Best regards,
 
 -- 
 Alexandre Belloni, co-owner and COO, Bootlin
