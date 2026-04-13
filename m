@@ -4,106 +4,119 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34B06E93805
-	for <linux-i3c@archiver.kernel.org>; Mon, 13 Apr 2026 04:00:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04C60EBFD05
+	for <linux-i3c@archiver.kernel.org>; Mon, 13 Apr 2026 06:58:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Ue0FHGyTHgTF/GU2SQjmSE5q274QeigQm54LYiiHCY=; b=cnd8Sb+ZdMs8u+
-	Ja+nCG7wYoqvRB9TfHFonH0VXOPN3Rfe4b8anbXXC9t5yHkXmDnn7dYR/aVSg0s42A5DYO23n/pP0
-	eYOvvvA7lheBVKMt21jhnOxt/wad2t4BOTbbiz0IruZ6nx3UWp8obOALgJkHZtHy3T3vEWSK/H0pa
-	NjSzY4l8KMlW+R9YPe1ujsqDE9gxuksYZxG8q4omm1ecLuxWl0RoMCM3CwTvCwDo+BcKXDto4ErfY
-	vmfQZtCnuDkt10/LOBSetRU3KoHHUUJDkQPqWqn87moTYPuBBNrJ6XqW+4vrRUI1IQcKuREYfklRH
-	Y44jKU3qVQezByx9fASw==;
+	List-Owner; bh=1sq3C5mBvzjDc1+UpJXU2j/VtjXd9vTTRxZQ8l8xYvs=; b=fzablAPF6n5DuC
+	/oQW4a5CpSWSGwvwF/D3pK9mNcztS9nYHMdVHwoD0whujOr6wGQ0tR6H2X2nwtIUf7ZBmx4d1CNN3
+	TEnYKXfiPcUiiAEthQi35zdU6hSs1XVvAxycR8/0aacxjBuFmXKnDr7pGHoi3l2E6AA0cEw+mwG7g
+	NwKw3MFkfM4jPthN/vxLG4+B1FUJ9NG9iVcfculxZT1IH4q0B0prUwxGT5FUExoMURfUgGMu/OpTy
+	fqt0hORG6YwWZZimjYgcuBHA42bQJ0rxhUw9ENQKBWq5RlLY+YVj+oSuvxPLZBpURaEYs4WXpOsIY
+	rRCcEYfYXa1jlRIpodtQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wC8TB-0000000ExU2-2Ta1;
-	Mon, 13 Apr 2026 04:00:17 +0000
-Received: from mail-ot1-x335.google.com ([2607:f8b0:4864:20::335])
+	id 1wCBFR-0000000F6Z4-33od;
+	Mon, 13 Apr 2026 06:58:17 +0000
+Received: from mail-eastus2azon11011011.outbound.protection.outlook.com ([52.101.57.11] helo=BN8PR05CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wC8T7-0000000ExTh-1nXu
+	id 1wCBFP-0000000F6Yd-0ctI
 	for linux-i3c@lists.infradead.org;
-	Mon, 13 Apr 2026 04:00:16 +0000
-Received: by mail-ot1-x335.google.com with SMTP id 46e09a7af769-7dbce74e537so3087629a34.1
-        for <linux-i3c@lists.infradead.org>; Sun, 12 Apr 2026 21:00:12 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1776052812; cv=none;
-        d=google.com; s=arc-20240605;
-        b=PhN0pXFatVxHFU4xTXLwAYKAA4iz71b0W+b6IVFgt8vO21D+XNts2D1uIYjLeqelZ1
-         lRSk35RhhiDJgLCR7MTLeoRD2ONJ3sIzsZT9rwyyC266N/YyROunJppRPmRO8Cf9tUj9
-         nmRaPorKxpWCZIS54c/Y3EI74kUfnzNKLH5aGhwMrjlKEc9UnggEsQlfF/oCylyEfBx1
-         NAnRQBlnW6SwGjXOsVk7ybrdQrKBnNKDv1JvCUEwagtiBbGZxPY9aAe5z/ZUUVL593PM
-         jGyTES66R9VQkxp+ms07vBolYbDwWLvzGE0m509AKxZMo6cHrhOrmYMl+XHPoQUlyZDf
-         m0gw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=e1qugk97HN58oG4lfsb4e7f1SbUWIQKeDLHXzdZcL9U=;
-        fh=3BLx9VVUacZDFfivu87J+JSsImbfEs+xwh/Z2zG2RhQ=;
-        b=etWmLASV2I7WjxyP8eOmvlfaKqIuwRNYAtymBaCZZuv0824LRSUytvuSelyG9cLwnZ
-         ZEQykGk0qmdSyEE7tMmLy94nxgQRTC76ZnIRw8SE5T7OKZVOvpGkJ0WwcBsiH1o/qWwy
-         Mvv9gK3vZ0AMxYIg5rWwhOeih00rXCnbazgclSjdXUAEUniwXQPrOVN7tx7rjsAEKvG4
-         eXJPncqTr72J6gpfGK0btmJaj+i5xr7TRCKz6CxPkBpwV7ber/msgyCuf3ok3pWB3LoI
-         +HrGf6IjP/Uwk4b6+xuUm4JizvjB2nAwI3nGRsJIhTFUCvZzVNZCBTYNNMc6s7bSWJiM
-         fGtg==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1776052812; x=1776657612; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=e1qugk97HN58oG4lfsb4e7f1SbUWIQKeDLHXzdZcL9U=;
-        b=oRwq11LoPUbwWQd5bGwd5mqlvrD3xi4pvBw31VluNGel6HjcznotpxDN7bbFtFrg5u
-         3uIoqIdPE7/5HUhcCZMeJn2bhJtn9yrLxo6xUo1iCtdPkJl5p3Wo023pO5PM/ktqaTas
-         gvlJNzN4o6NC0f3GhZmsRVkk9Fxi6gBeHPnGhsM15jWCfbc+gI2ojM/CqqinLbjfcVoG
-         +dWkQZanxEYqpwBi8v/kmI9ZZpoXq3ArMmNv1uzwdrYWzth3iMzw1xeI74ZzYKJinjng
-         Wml8/ZHBb4ROH0q9DYbZhoyOZNOWTJYd4Te+yTHfE0Wlrj8LIPzaW0UmjOQrN2lUzX+s
-         7SSg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1776052812; x=1776657612;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=e1qugk97HN58oG4lfsb4e7f1SbUWIQKeDLHXzdZcL9U=;
-        b=R+DK5lRI6DiIiKgL0Yk00yWoXaClNadUISqyw55QGkcVd7NmlH6vK29tqhcObUv+wK
-         Anj8xHN2f3vEK8uQgxk7BCj0Jxl5+FfuIpR5luMFW7Xuqcaq9jXUp7Pdc/ynED1ScVN3
-         LOUBxwNN9AJGXmr5az+tZh/xyZDCWg4qWB15AnqCy/CNTD/FMCYKo5e6ntpXFCtVm6Zi
-         gVjm/dxC7PyCKW0viX1q7ki6vYu/Iza4hUYcD2jga7Waean076I+RTFdb36iUGD9tOom
-         rI9MBq8rCwwi0A8JOxuwpv5KmueCDDjKIAci+60sL9CrYVTk39G8Pb3NBXLuNYiZ2MdZ
-         4yew==
-X-Forwarded-Encrypted: i=1; AJvYcCU0KjMu9HhkZ9O0vh7ght/QKJjvj39de1kPwhhUVdBjtSvmhvu6wfYNP8uu7ubyY7T//i9jofpDyvA=@lists.infradead.org
-X-Gm-Message-State: AOJu0YyOSDDJ+njnH5rHoiIWNtqI4DKl/PJg5g8j/aKNc8cPEJFlvsim
-	kEnOzQD3J7Ur2RXA3hfM7dupYLpnLLeYhKoVCUVVWgjB9mEKJCqm1ufdspmI1GglqZQIn4m8oxV
-	0MS17mHArEMY3v7tIY7Eo0ya8z7v1tac=
-X-Gm-Gg: AeBDievdzlU6z5eEVTpGxfgSSw/COBKcOd7BA5L5gVxEEYJ/VlQFDmg5MaPnvFuAQvO
-	EVwe6XDk+QHmTCK1mmnBJHhujifBiigDSJ+S7OR6kIgTK9kPBPdK6h702vQOZ+XiAJN87aQjNQB
-	I6cMzQ5kuYnmwCUxVsNrAvUAr/Z33ennUEXU3DwIkFiLV4R+0GJR1kvVWCh8znmmRPCdgmxA2qD
-	IacK3ETX1s2E8KZkunCfk7i42zxtrUZgGWAjOVTdl/zUrc8fLHh8YiqZobBsaNgTuRIcxHmSsyS
-	vobTGOs=
-X-Received: by 2002:a05:6820:1349:b0:68e:514d:1d60 with SMTP id
- 006d021491bc7-68e514d2791mr2873148eaf.45.1776052811666; Sun, 12 Apr 2026
- 21:00:11 -0700 (PDT)
+	Mon, 13 Apr 2026 06:58:16 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=sIhW0lapTjZbrn1Em7mPTKDQc8QWo45wLqp4BsHw/WR9dCLYrm/8+zCKy7n1av4IVSmQRXd2w46st8wyAULrRkT/dOxdy8gq/y9lq3vHhezooWYKH6NxUJwa66GKeVmPbetd6OJRkAthQP0GpTQTx5L06Yf0Q2GXUjmtftZrSS5xj99Mkjo7L4zsqsC9mdsQwPANNu41OP9Kw8GlegGyZYCxoVbqNDk01uyPmkfANK4g3EpHkGG4P7OEHQQleWxcmw56bP/ceZJr5dLbzUFLjDSVDsXLPgjwpKLhaMrS24+gjeSHkJb6/gEjYq5z3nKb2nx1Hf770Gtf9fVp6QBCqw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=Mc2JHPftxn6su4G20FRzk/QpZ1WTGhsqylFzBr/VyDE=;
+ b=IYAK1N+AZTjxNQiWHqfX0laScaN4stp3fYkjSNG7Q+KcXZKyBi9/to56R8bH7Hsoltue4UAlMWkHIcIZR2oBiQhhKN0An4EBXX7pHgJA4lOHFWB2kqMZZbRH25UFnUu/Ks0Pp3AP8ymTpgKf0jY9v1b7AlRPo+Mhz2c2eYXc2OMjFrJh8SacuUGJIqQNBj/CgRYS2zs0qgwNDCCQWhc9Nlv/egT/lNf/x8CtLjYY6tu2m4HLbv0YaCz4O3CW/JOnUwoXN0YSSX1mH8plNbadnl6iJ0c8zHLT6UjsBDZNWB/cOcrafBPfNCsO/DXLZlopYa/cPiV9djBf3mbSPQfd5w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.161) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Mc2JHPftxn6su4G20FRzk/QpZ1WTGhsqylFzBr/VyDE=;
+ b=Q7HYvaOhiC0TT79by63DisdL1y6VB1KNWvYv8J6IDaBbIKIR2tvWQwZ691VkgSHsBpsXmEzVzcIxMzRNhcyVgvYbCSn0gAbRqRtZ2S/3J+E/5BmwV/HwsQl2HwNlgBgXJ1YfXZXztywefJgJRk6v7f1M8hkz8JJC3uboyJGfNcsrxYMiYOgfIi2bz2u7SXwGFEvroteN41QtTPwNPO0hLheyvrSkKFEg9k7i/DytKGdtMucpPOtazqJU/fJ70mrpBYvrYZAgcJK6zDFCd/ZNGk1+A3+wUoU3P8/mVooWVZoNjI63kTINh85tDCtBmch1QErdDR25tuWF/DwcXBR7Xg==
+Received: from DM6PR06CA0102.namprd06.prod.outlook.com (2603:10b6:5:336::35)
+ by CH3PR12MB7691.namprd12.prod.outlook.com (2603:10b6:610:151::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9769.46; Mon, 13 Apr
+ 2026 06:58:06 +0000
+Received: from DS3PEPF000099DE.namprd04.prod.outlook.com
+ (2603:10b6:5:336:cafe::6d) by DM6PR06CA0102.outlook.office365.com
+ (2603:10b6:5:336::35) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9769.48 via Frontend Transport; Mon,
+ 13 Apr 2026 06:58:09 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.161)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.161 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.161; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.161) by
+ DS3PEPF000099DE.mail.protection.outlook.com (10.167.17.200) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9769.17 via Frontend Transport; Mon, 13 Apr 2026 06:58:06 +0000
+Received: from rnnvmail204.nvidia.com (10.129.68.6) by mail.nvidia.com
+ (10.129.200.67) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Sun, 12 Apr
+ 2026 23:57:55 -0700
+Received: from rnnvmail204.nvidia.com (10.129.68.6) by rnnvmail204.nvidia.com
+ (10.129.68.6) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Sun, 12 Apr
+ 2026 23:57:54 -0700
+Received: from BUILDSERVER-IO-L4T.nvidia.com (10.127.8.9) by mail.nvidia.com
+ (10.129.68.6) with Microsoft SMTP Server id 15.2.2562.20 via Frontend
+ Transport; Sun, 12 Apr 2026 23:57:48 -0700
+From: Akhil R <akhilrajeev@nvidia.com>
+To: <krzk@kernel.org>
+CC: <Frank.Li@nxp.com>, <acpica-devel@lists.linux.dev>,
+	<akhilrajeev@nvidia.com>, <alexandre.belloni@bootlin.com>,
+	<conor+dt@kernel.org>, <devicetree@vger.kernel.org>, <ebiggers@kernel.org>,
+	<krzk+dt@kernel.org>, <lenb@kernel.org>, <linux-acpi@vger.kernel.org>,
+	<linux-hwmon@vger.kernel.org>, <linux-i3c@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>, <linux@roeck-us.net>,
+	<miquel.raynal@bootlin.com>, <p.zabel@pengutronix.de>, <rafael@kernel.org>,
+	<robh@kernel.org>, <sakari.ailus@linux.intel.com>,
+	<wsa+renesas@sang-engineering.com>, <smangipudi@nvidia.com>
+Subject: Re: [PATCH v2 13/13] arm64: defconfig: Enable I3C and SPD5118 hwmon
+Date: Mon, 13 Apr 2026 12:27:46 +0530
+Message-ID: <20260413065747.31834-1-akhilrajeev@nvidia.com>
+X-Mailer: git-send-email 2.50.1
+In-Reply-To: <d62130c6-c503-479d-99d8-b4f0f0582a4b@kernel.org>
+References: <d62130c6-c503-479d-99d8-b4f0f0582a4b@kernel.org>
 MIME-Version: 1.0
-References: <20260413005040.1211107-1-yschu@nuvoton.com> <20260413005040.1211107-2-yschu@nuvoton.com>
- <adxD10wsP7hJdR9y@lizhi-Precision-Tower-5810> <CAPwEoQPsp6mEqHaztnjKvh9qd49H7jKbq0EGBBR_fa70e-iR=g@mail.gmail.com>
- <adxcMiW7HWr4KutC@lizhi-Precision-Tower-5810>
-In-Reply-To: <adxcMiW7HWr4KutC@lizhi-Precision-Tower-5810>
-From: Stanley Chu <stanley.chuys@gmail.com>
-Date: Mon, 13 Apr 2026 11:59:59 +0800
-X-Gm-Features: AQROBzA8_eErRQXdIfTVB0gy3KVIVTeZtLAMsHjVy9WRgRSj38p_4so1fPzpw4Y
-Message-ID: <CAPwEoQNy7yMhfP-7rZevenwnasy2u_=nm0f4hReAbUbCc4-J1g@mail.gmail.com>
-Subject: Re: [PATCH v1 1/2] i3c: master: svc: Fix missed IBI after false
- SLVSTART on NPCM845
-To: Frank Li <Frank.li@nxp.com>
-Cc: miquel.raynal@bootlin.com, alexandre.belloni@bootlin.com, 
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
-	tomer.maimon@nuvoton.com, kwliu@nuvoton.com, yschu@nuvoton.com
+X-NV-OnPremToCloud: ExternallySecured
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DS3PEPF000099DE:EE_|CH3PR12MB7691:EE_
+X-MS-Office365-Filtering-Correlation-Id: b5be24d7-9276-48e4-e76a-08de992a03bb
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700016|82310400026|376014|1800799024|7416014|22082099003|56012099003|18002099003;
+X-Microsoft-Antispam-Message-Info: ZQjKTw9HTlQb5z2XaQqH1IBWWpR1VtJAy/8tpfAO+TC+ysEI0cW71RN4IF2vJHgqg38BRvtUbyaOFMj7PifIpxl7MyBqGhNrWWq5WMhfJ33itKrH1poEQaYLQOwFI+CMKTcrfGTaYuGGE21tmXwFt+6izHa4L93lj3q1N4I+TlVeWp0/OGCWvzxNZnZY8KO5iHISI+umXi2ZYM1Uat2OM6uschWzah5H91RqSHUlpmPASyb2age563Cw9YUHjwt1L8cbCJj0E/j438CpYhbm8xVvzbDwv0welXpHZqvmwDBcsclgu9yAPvrbAOkKb8V2dFdmddAnUUd88Yru7qIUL7atOZxdK8SDaUwWN5ItUntss0xV/IBJ8JItE2ntHNq0iYwlgRgWqye3/sLaKGQ+BvChDlhj4dAUDdphLrVHwnMWuJlzsw+LBoan4d2zz9vdPjOSadiJcVWs96Fw4hl0j5eqmu1yMYq2V/CQtsQmZHIAZedUAjpTZ875CaWLLLG0T5OfuTP9pG6VJ9wMvvMKixXiizSg2q5J2x48R/BXvzI1RF2yURHzfsR9xruSan2sXa7jppmkYKPdQLyNj2aNGkQKrKVSWtxNsKzLV1fomdXN80e/ln0aK4zp/ZH/jv//Sf9xKJcjhx4Jyo5Qsz23gDGMrLToxjx9HPVmbM/AgOjMO2vsc6aSKlqqFbBlAbwI/u6w3szH0w62KQrlAgLE+f8E23xDKv6W2qdhg69UQ4ZTkMLO9aI3tQjz/INA9ms2HvkOmGHr873ZWVpb6ZtNEA==
+X-Forefront-Antispam-Report: CIP:216.228.117.161;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge2.nvidia.com;CAT:NONE;SFS:(13230040)(36860700016)(82310400026)(376014)(1800799024)(7416014)(22082099003)(56012099003)(18002099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: 7fFm/0xKZWgjYAVZjbIvc/H2N7gna0e8taFZoQNRcXQSQu7GThrf/BdgEINCGlKBqLfTbRfWrvZqdhZFTUZ7cJtWU+3DwZaGNGEhwyjMSXOtDMJDi5Xq2degfQ3LOs8a/XjRaCGVJ5g0UKGpKrgkGyvQTce1e6D5Q3kiz/7h5Uxzen/mN9fSACvMtAeCneuOWFfWGufigLHNkkEbdI5w3c5FR/Y3ZRr6+zEb8S+tMAKxpZgqD6f0zf1eo6KJVr4oFbhOTrCUx58M1tYwP0Q17719e3t5xiskrZ969CiO9XayKVggfyrZxv5T0X14ZqEt5FGcEALs/QVlWqSEnjwqAehn0RzFAVIZJdLVpqJ6Hv8LSaUGfqaaEO7CYEScKvbWOF3lNyoTqsSRc/7XS0++BtO4hB/jtJSGT2ZWfZN55sZ1qcIQpbLq26FNgKw40rdu
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Apr 2026 06:58:06.2048
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: b5be24d7-9276-48e4-e76a-08de992a03bb
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.161];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: DS3PEPF000099DE.namprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH3PR12MB7691
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260412_210014_465016_F1CEEACE 
-X-CRM114-Status: GOOD (  32.80  )
+X-CRM114-CacheID: sfid-20260412_235815_196987_09D0BB99 
+X-CRM114-Status: GOOD (  19.12  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -115,86 +128,91 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-T24gTW9uLCBBcHIgMTMsIDIwMjYgYXQgMTE6MDDigK9BTSBGcmFuayBMaSA8RnJhbmsubGlAbnhw
-LmNvbT4gd3JvdGU6Cj4KPiBPbiBNb24sIEFwciAxMywgMjAyNiBhdCAwOTo0MDowMkFNICswODAw
-LCBTdGFubGV5IENodSB3cm90ZToKPiA+IE9uIE1vbiwgQXByIDEzLCAyMDI2IGF0IDk6MTbigK9B
-TSBGcmFuayBMaSA8RnJhbmsubGlAbnhwLmNvbT4gd3JvdGU6Cj4gPiA+Cj4gPiA+IE9uIE1vbiwg
-QXByIDEzLCAyMDI2IGF0IDA4OjUwOjM5QU0gKzA4MDAsIFN0YW5sZXkgQ2h1IHdyb3RlOgo+ID4g
-PiA+IEZyb206IFN0YW5sZXkgQ2h1IDx5c2NodUBudXZvdG9uLmNvbT4KPiA+ID4gPgo+ID4gPiA+
-IFRoZSBOUENNODQ1IEkzQyBjb250cm9sbGVyIG1heSByYWlzZSBhIGZhbHNlIFNMVlNUQVJUIGlu
-dGVycnVwdC4gVGhlCj4gPiA+ID4gaGFuZGxlciBmaXJzdCBsYXRjaGVzIE1TVEFUVVMgYW5kIHRo
-ZW4gY2xlYXJzIFNMVlNUQVJULiBJZiBhIHJlYWwgSUJJCj4gPiA+ID4gcmVxdWVzdCBhcnJpdmVz
-IGFmdGVyIHRoZSBoYW5kbGVyIGxhdGNoZXMgTVNUQVRVUyBidXQgYmVmb3JlIGl0IGNsZWFycwo+
-ID4gPiA+IHRoZSBTTFZTVEFSVCBpbnRlcnJ1cHQgc3RhdHVzLAo+ID4gPgo+ID4gPiBIb3cgdGhp
-cyBoYXBwZW4/IElmIGlycSBoYW5kbGVyIHJ1bm5pbmcsIGhhcmR3YXJlIChyZWFsIElCSSkgd2ls
-bCB0cmlnZ2VyCj4gPiA+IGlycSBsaW5lIGJlZm9yZSBpdC4KPiA+ID4KPiA+ID4gRG8geW91IGVu
-YWJsZSBvdGhlciB0eXBlIGlycT8KPiA+ID4KPiA+ID4gRnJhbmsKPiA+Cj4gPiBIaSBGcmFuaywK
-PiA+Cj4gPiBPbmx5IFNMVlNUQVJUIGludGVycnVwdC4gQmVsb3cgaXMgdGhlIHNlcXVlbmNlOgo+
-ID4gLSBIVyByYWlzZXMgYSBmYWxzZSBTTFZTVEFSVCBpbnRlcnJ1cHQuCj4gPiAtIFRoZSBJUlEg
-aGFuZGxlciBsYXRjaGVzIHRoZSBNU1RBVFVTIHJlZ2lzdGVyLgo+ID4gLSBCZWZvcmUgdGhlIGhh
-bmRsZXIgY2xlYXJzIHRoZSBTTFZTVEFSVCBzdGF0dXMsIGEgcmVhbCBJQkkgcmVxdWVzdCBhcnJp
-dmVzLgo+ID4gLSBIVyB1cGRhdGVzIHRoZSBTTFZSRVEgc3RhdGUgdG8gaW5kaWNhdGUgYSBwZW5k
-aW5nIElCSS4KPiA+IC0gVGhlIGhhbmRsZXIgY29udGludWVzIHVzaW5nIHRoZSBzdGFsZSBNU1RB
-VFVTIHNuYXBzaG90LCBkb2VzIG5vdCBzZWUKPiA+ICAgdGhlIG5ldyBTTFZSRVEgc3RhdGUsIGFu
-ZCByZXR1cm5zIGVhcmx5Lgo+Cj4gQmVjYXVzZSByZWFkaW5nIHJlZ2lzdGVyIGFuZCBJQkkgcmVx
-dWVzdCBhcnJpdmluZyBhcmUgdG90YWxseSBhc3luYwo+Cj4gcmVhZGwobWFzdGVyLT5yZWdzICsg
-U1ZDX0kzQ19NU1RBVFVTKSwgIG1heSByZXR1cm4gdHdvIHJlc3VsdHMKPiAxLiBiZWZvcmUgSUJJ
-IHJlcXVlc3QKPiAyLiBhZnRlciBJQkkgcmVxdWVzdAo+Cj4gSG93IGRvIHlvdSBtYWtlIHN1cmUg
-c2Vjb25kIHJlYWRsKG1hc3Rlci0+cmVncyArIFNWQ19JM0NfTVNUQVRVUykgYWx3YXlzCj4gZ2V0
-IHRoZSByZXN1bHQgb2YgYWZ0ZXIgSUJJIHJlcXVlc3QuCj4KPiBGcmFuawoKSGkgRnJhbmssClRo
-ZSBvcmRlcmluZyBiZXR3ZWVuIHRoZSBzZWNvbmQgcmVhZGwoTVNUQVRVUykgYW5kIHRoZSByZWFs
-IElCSSBhcnJpdmFsIGlzCm5vdCBjcml0aWNhbCwgYXMgbG9uZyBhcyB0aGUgc2Vjb25kIHJlYWQg
-aXMgcGVyZm9ybWVkIGFmdGVyIGNsZWFyaW5nIFNMVlNUQVJULgoKVGhlcmUgYXJlIHR3byBjYXNl
-czoKMS4gSUJJIGFycml2ZXMgYmVmb3JlIHRoZSBzZWNvbmQgcmVhZApBZnRlciBTTFZTVEFSVCBp
-cyBjbGVhcmVkLCBIVyBoYXMgYWxyZWFkeSB1cGRhdGVkIHRoZSBTTFZSRVEgc3RhdGUsIHNvIHRo
-ZQpzZWNvbmQgTVNUQVRVUyByZWFkIGNhbiBvYnNlcnZlIHRoZSBwZW5kaW5nIElCSSBhbmQgaGFu
-ZGxlIGl0IGluIHRoZSBzYW1lCklSUS4KCjIuIElCSSBhcnJpdmVzIGFmdGVyIHRoZSBzZWNvbmQg
-cmVhZApFdmVuIHRob3VnaCB0aGUgc2Vjb25kIE1TVEFUVVMgcmVhZCBkb2VzIG5vdCByZWZsZWN0
-IHRoZSBwZW5kaW5nIElCSSwgdGhlCklCSSB3aWxsIGFzc2VydCBTTFZTVEFSVCBhZ2Fpbi4gQSBu
-ZXcgaW50ZXJydXB0IHdpbGwgYmUgZ2VuZXJhdGVkCmFmdGVyIHRoZSBjdXJyZW50CmhhbmRsZXIg
-cmV0dXJucywgYW5kIHRoZSBwZW5kaW5nIElCSSBpcyBoYW5kbGVkIGluIHRoZSBuZXh0IElSUS4K
-ClRoYW5rcy4KCj4KPiA+IC0gVGhlIHJlYWwgSUJJIGlzIG1pc3NlZCBhbmQgbm8gZnVydGhlciBp
-bnRlcnJ1cHQgaXMgZ2VuZXJhdGVkLgo+ID4KPiA+IFRoYW5rcy4KPiA+Cj4gPiA+Cj4gPiA+ID4g
-SFcgc2V0cyB0aGUgU0xWUkVRIHN0YXRlLiBIb3dldmVyLCB0aGUKPiA+ID4gPiBoYW5kbGVyIHN0
-aWxsIHJlbGllcyBvbiB0aGUgc3RhbGUgTVNUQVRVUyBzbmFwc2hvdCwgcmV0dXJucyBlYXJseSwg
-YW5kCj4gPiA+ID4gbWlzc2VzIHRoZSByZWFsIElCSS4gTm8gZnVydGhlciBpbnRlcnJ1cHQgaXMg
-Z2VuZXJhdGVkIGZvciB0aGlzIHBlbmRpbmcKPiA+ID4gPiBJQkkuCj4gPiA+ID4KPiA+ID4gPiBS
-ZS1yZWFkIE1TVEFUVVMgdG8gb2J0YWluIHRoZSBsYXRlc3Qgc3RhdGUgYW5kIGF2b2lkIG1pc3Np
-bmcgYSByZWFsIElCSQo+ID4gPiA+IGR1ZSB0byB0aGlzIHJhY2UgY29uZGl0aW9uLgo+ID4gPiA+
-Cj4gPiA+ID4gRml4ZXM6IDRkZDEyZTk0NGYwNyAoImkzYzogbWFzdGVyOiBzdmM6IEZpeCBucGNt
-ODQ1IGludmFsaWQgc2x2c3RhcnQgZXZlbnQiKQo+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IFN0YW5s
-ZXkgQ2h1IDx5c2NodUBudXZvdG9uLmNvbT4KPiA+ID4gPiAtLS0KPiA+ID4gPiAgZHJpdmVycy9p
-M2MvbWFzdGVyL3N2Yy1pM2MtbWFzdGVyLmMgfCAxNiArKysrKysrKysrKystLS0tCj4gPiA+ID4g
-IDEgZmlsZSBjaGFuZ2VkLCAxMiBpbnNlcnRpb25zKCspLCA0IGRlbGV0aW9ucygtKQo+ID4gPiA+
-Cj4gPiA+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaTNjL21hc3Rlci9zdmMtaTNjLW1hc3Rlci5j
-IGIvZHJpdmVycy9pM2MvbWFzdGVyL3N2Yy1pM2MtbWFzdGVyLmMKPiA+ID4gPiBpbmRleCBiODRi
-MzI0ZTQxMTEuLjdkODhlOGZlMzc0MiAxMDA2NDQKPiA+ID4gPiAtLS0gYS9kcml2ZXJzL2kzYy9t
-YXN0ZXIvc3ZjLWkzYy1tYXN0ZXIuYwo+ID4gPiA+ICsrKyBiL2RyaXZlcnMvaTNjL21hc3Rlci9z
-dmMtaTNjLW1hc3Rlci5jCj4gPiA+ID4gQEAgLTY3MiwxMCArNjcyLDE4IEBAIHN0YXRpYyBpcnFy
-ZXR1cm5fdCBzdmNfaTNjX21hc3Rlcl9pcnFfaGFuZGxlcihpbnQgaXJxLCB2b2lkICpkZXZfaWQp
-Cj4gPiA+ID4gICAgICAgLyogQ2xlYXIgdGhlIGludGVycnVwdCBzdGF0dXMgKi8KPiA+ID4gPiAg
-ICAgICB3cml0ZWwoU1ZDX0kzQ19NSU5UX1NMVlNUQVJULCBtYXN0ZXItPnJlZ3MgKyBTVkNfSTND
-X01TVEFUVVMpOwo+ID4gPiA+Cj4gPiA+ID4gLSAgICAgLyogSWdub3JlIHRoZSBmYWxzZSBldmVu
-dCAqLwo+ID4gPiA+IC0gICAgIGlmIChzdmNfaGFzX3F1aXJrKG1hc3RlciwgU1ZDX0kzQ19RVUlS
-S19GQUxTRV9TTFZTVEFSVCkgJiYKPiA+ID4gPiAtICAgICAgICAgIVNWQ19JM0NfTVNUQVRVU19T
-VEFURV9TTFZSRVEoYWN0aXZlKSkKPiA+ID4gPiAtICAgICAgICAgICAgIHJldHVybiBJUlFfSEFO
-RExFRDsKPiA+ID4gPiArICAgICBpZiAoc3ZjX2hhc19xdWlyayhtYXN0ZXIsIFNWQ19JM0NfUVVJ
-UktfRkFMU0VfU0xWU1RBUlQpKSB7Cj4gPiA+ID4gKyAgICAgICAgICAgICAvKgo+ID4gPiA+ICsg
-ICAgICAgICAgICAgICogUmUtcmVhZCBNU1RBVFVTIHRvIG9idGFpbiB0aGUgbGF0ZXN0IHN0YXRl
-IGFuZCBhdm9pZAo+ID4gPiA+ICsgICAgICAgICAgICAgICogbWlzc2luZyBhbiBJQkkgdGhhdCBh
-cnJpdmVzIGFmdGVyIE1TVEFUVVMgaXMgbGF0Y2hlZAo+ID4gPiA+ICsgICAgICAgICAgICAgICog
-YnV0IGJlZm9yZSBTTFZTVEFSVCBpcyBjbGVhcmVkLgo+ID4gPiA+ICsgICAgICAgICAgICAgICov
-Cj4gPiA+ID4gKyAgICAgICAgICAgICBhY3RpdmUgPSByZWFkbChtYXN0ZXItPnJlZ3MgKyBTVkNf
-STNDX01TVEFUVVMpOwo+ID4gPiA+ICsKPiA+ID4gPiArICAgICAgICAgICAgIC8qIElnbm9yZSB0
-aGUgZmFsc2UgZXZlbnQgKi8KPiA+ID4gPiArICAgICAgICAgICAgIGlmICghU1ZDX0kzQ19NU1RB
-VFVTX1NUQVRFX1NMVlJFUShhY3RpdmUpKQo+ID4gPiA+ICsgICAgICAgICAgICAgICAgICAgICBy
-ZXR1cm4gSVJRX0hBTkRMRUQ7Cj4gPiA+ID4gKyAgICAgfQo+ID4gPiA+Cj4gPiA+ID4gICAgICAg
-LyoKPiA+ID4gPiAgICAgICAgKiBUaGUgU0RBIGxpbmUgcmVtYWlucyBsb3cgdW50aWwgdGhlIHJl
-cXVlc3QgaXMgcHJvY2Vzc2VkLgo+ID4gPiA+IC0tCj4gPiA+ID4gMi4zNC4xCj4gPiA+ID4KCi0t
-IApsaW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNjCg==
+On Sun, 12 Apr 2026 15:33:42 +0200, Krzysztof Kozlowski
+> On 12/04/2026 15:32, Krzysztof Kozlowski wrote:
+>> On 11/04/2026 09:20, Guenter Roeck wrote:
+>>> On 4/10/26 22:34, Akhil R wrote:
+>>> [ ... ]
+>>>>>>> And it
+>>>>>>> should bring me clear rule what I can or cannot remove from defconfig,
+>>>>>>> if in 2 years I come and start pruning it from symbols.
+>>>>
+>>>> I am still a little confused on what information would likely accept (and
+>>>> keep) these configs in the defconfig. Would updating the commit message
+>>>> as below work?
+>>>>
+>>>> "These configs enable the support for SPD5118 within the
+>>>> Small-Outline-Compression-Attached Memory Modules (SOCAMM) LPDDR5X found
+>>>> in the NVIDIA Vera CPUs. The Vera CPU uses ACPI and is part of platforms
+>>>> such as Vera Rubin."
+>>>>
+>>>
+>>> It is quite interesting that we argue about SPD5118 which is mandatory in
+>>> DDR5 systems. At the same time, CONFIG_IGB_HWMON, CONFIG_SENSORS_MACSMC_HWMON,
+>>> CONFIG_SENSORS_RASPBERRYPI_HWMON, and CONFIG_RTC_DRV_DS3232_HWMON _are_
+>>> enabled in arm64:defconfig. CONFIG_IGB_HWMON is even built-in.
+>> 
+>> Why CONFIG_SENSORS_MACSMC_HWMON is weird? It is part of the soc using
+>> the defconfig?
+>> 
+>> The author here has troubles bringing any arguments why his drivers
+>> should be defconfig and keeps asking what do I want to hear. If one
+>> cannot make an argument why a change is needed, then maybe the change
+>> should not be sent?
+>> 
+>> It's the job of the author to convince why the community needs this
+>> change, unless it is obvious, ofc.
+>> 
+>>>
+>>> It is kind of difficult to understand why those are more important than
+>>> the temperature sensor on DDR5 modules (or the temperature sensor on DDR4
+>>> modules, for that matter).
+>> 
+>> No one discussed this. I have no clue what is SPD5118 and commit msg did
+>> not explain that. Did not even provide accurate user of that.
+>> 
+>>>
+>>> I don't know what the policy for defconfig is, but just based on that it does
+>>> seem to lack consistency.
+>> 
+>> No wonder... people write poor commits and send that to upstream. And
+>> when asked "why do we want this" they got stuck.
+>> 
+>>>
+>>> A separate question is if it is time to enable I3C in default configurations.
+>>> I'd think so - more and more chip vendors support it, and presumably they would
+>>> not invest in it if there was no demand, but that is just my personal opinion.
+>> 
+>> Isn't I3C needed for SPD5118. Otherwise I understand even less from this
+>> rationale - why I3C is being enabled here?
+>> 
+>> And before author asks what do I want to here: no, it is author's job to
+>> convince me to accept I3C in defconfig. Not mine.
+> 
+> BTW, all this was asked at v1 and author did not improve the commit msg
+> beside giving quite broad/unspecific "Vera".
+
+If I am not wrong, the ask in v1 was to specify the product which this is
+getting used - 'Vera' it is. I do not know why you would think it is
+unspecific.
+
+As Thierry and Guenter mentioned, the lack of policy and 'mix of both' in
+the defconfig makes it quite difficult to understand what could genuinely
+be convincing other than putting down every little detail or do a trial
+and error.
+
+Anyway, I will describe where each config is getting used in the next
+revision - hoping that would help.
+
+Regards,
+Akhil
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
