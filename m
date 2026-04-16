@@ -4,61 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3552BF42131
-	for <linux-i3c@archiver.kernel.org>; Wed, 15 Apr 2026 18:22:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1411DF433FE
+	for <linux-i3c@archiver.kernel.org>; Thu, 16 Apr 2026 06:21:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7asiHEJVtzFW/CabIzu/oQ/kyqq4qzrMJZszRlVdAc0=; b=oJwxPIu1A/Q1LX
-	xik4gxuag2rGJYCGYMqXG8V3SKLhOxRVWZtG+L2B/oLEwF3WQqlufILBK8tFct3xc7j/nWFseD6b+
-	25wz2NRFM/7C3LgnBPyil9yTdbEnCgOReykrFo16IOk1MSMKz0UTeolfkmRkYszAAcNF4EcJpDLWZ
-	Eq23JeXZ1bpCjrez1dGu0u4KWH7qINWVd0Yxmh2+W+1hynDnY6LGrrHWJ+mDFOkvpx13qqw0T4sGa
-	pyB/Mk1C4HjXaE3d7MlA4YH+qu3Ie+shKe9kVZZdCFA+bvg8s5/xbQXFjeKPRa41AZDbE0+xGulqD
-	LWcoCD9dCE2ivM4y6eSA==;
+	List-Owner; bh=Ct7PoKuW/4nxq9qn5nN8+Ua4RgU3SRd0ss7jh/cpj+4=; b=O1BHw0Mspz8WMg
+	Xrvxd/nRbtGpVo+Vx7sO2uV3C/0Oaack8jZA4tmE/xl/KuawUcIX0uhvWZf6tWEVxIVzp6Hyv97Q1
+	3GS1OXEbmAKppdmGFOLA9S/tHgAPyY8TMFlP7K3/QACUu0+EN1GpokvBlB7SeZeEl7sHVYrw5EMjM
+	HjDpHYIIMsdDJHr14V01U5E1rHxbfjlxZwCKWLEdAYreu9jmbSpRaad8HLo238P+benqfGXJZSTKM
+	OODsi8klJVoKLcRN97H16hESgtG+Bvy3Yy4RmN8Npn3lO6+nNo4LGWfolyNpj5WbGFG5gjYZOwGbI
+	dEhBIvea6XBlqW51OcgQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wD4sI-00000001VCk-17QU;
-	Wed, 15 Apr 2026 18:22:08 +0000
-Received: from mgamail.intel.com ([192.198.163.17])
+	id 1wDG6o-000000022e5-3UOY;
+	Thu, 16 Apr 2026 06:21:50 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wD4sE-00000001VCN-3NwU;
-	Wed, 15 Apr 2026 18:22:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1776277322; x=1807813322;
-  h=message-id:date:mime-version:subject:to:cc:references:
-   from:in-reply-to:content-transfer-encoding;
-  bh=H7jvNxMoyDOskGYfx3Wf2OxswmTnEl9blys24JcUhHc=;
-  b=Go+3oe0L1FroatmWKlCJ4Yw5x7/YGN+sGlFCwlnucm0foR/GBQnnMaeH
-   Uf6xW3DrG3LwAdftGmuR5sN0od3g0xdanUgKGLbIa8rLYJBzb6lXndndc
-   oUFI4WXBvgw7VJLZdpu26leRw9lwGwUWKtZEZDa35i+tzKDnJf9MRenwg
-   gNkl2+MtxjpIpZMnQm+e/bXz4kUR03G0eRHVufmIwSA0MJyQCN9Ed86wD
-   Z3LdbzOXnbGTODq0CNWmkE1VNjvVwnMMjdtsEuvdCp+CnGu27DAdZxzqw
-   0+CLrJ9oESpz2yuJcAVnM3UsbUL2HnZBR6xTrlVipZMQfVHrclDCEkoH8
-   A==;
-X-CSE-ConnectionGUID: 0BxwL9vaQBWc0F1Yb289GA==
-X-CSE-MsgGUID: d1JUJxFbSES9oAOsTixGSA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11760"; a="77141903"
-X-IronPort-AV: E=Sophos;i="6.23,179,1770624000"; 
-   d="scan'208";a="77141903"
-Received: from orviesa003.jf.intel.com ([10.64.159.143])
-  by fmvoesa111.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 Apr 2026 11:22:00 -0700
-X-CSE-ConnectionGUID: scLcZlr2RIyw2mcbKX1FTQ==
-X-CSE-MsgGUID: Xa+s81DcRsK9kV8uVfWbYQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.23,179,1770624000"; 
-   d="scan'208";a="234524620"
-Received: from dawidgla-mobl.ger.corp.intel.com (HELO [10.94.250.17]) ([10.94.250.17])
-  by ORVIESA003-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 Apr 2026 11:21:57 -0700
-Message-ID: <cb0d16bf-988d-403e-8a8e-c85bf2a208d0@linux.intel.com>
-Date: Wed, 15 Apr 2026 20:21:48 +0200
+	id 1wDG6m-000000022dS-100U;
+	Thu, 16 Apr 2026 06:21:48 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 6F5AA60126;
+	Thu, 16 Apr 2026 06:21:47 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2517CC2BCB3;
+	Thu, 16 Apr 2026 06:21:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1776320507;
+	bh=+8F/oNoPxuc2vDOxM10nGfFdu9tPo7pBm69TDEWVfqw=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=dqjw73v6pCxPPkSP1tGhLm07LRmFYov7EMOcmrmGEnYpK3ksynagaWsZS+yJsfEsx
+	 0MM1VbjBbRm/TUB5RcxjJgtFzBbMC/37ZFzP/wIGX7/uFLNK+mmGMv744cClhyY8vg
+	 vRUrIxUbN4ZhyH8z8Ie52gwYTuY1IJrp3moQ9QHh7wZQU2tkStuuEKNSvgkpw2gvm4
+	 EeZBob/rnsOZmAQzEq1jEquvMVNKHQlMKxJhqiSzvdeuGvIX933nhgba88Ab98sRvv
+	 jbhl/L/SYfZNrHqOJsTappDlIK8Tk1nPwUhdx0mogQGbn16ZaeqNTCqdkpAiVhuUml
+	 18ZJXC2kWS9rg==
+Message-ID: <276df910-4ae0-4241-86bc-f8182e40eaf3@kernel.org>
+Date: Thu, 16 Apr 2026 08:21:42 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v3 3/3] dt-bindings: i3c: Add AST2600 I3C global registers
-To: Krzysztof Kozlowski <krzk@kernel.org>
+To: Dawid Glazik <dawid.glazik@linux.intel.com>
 Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
  Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
  Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
@@ -70,14 +58,53 @@ References: <cover.1775679285.git.dawid.glazik@linux.intel.com>
  <7f55458097ef651b4fc46650254afd3fa7b87348.1775679285.git.dawid.glazik@linux.intel.com>
  <20260409-beneficial-sociable-tamarin-dbcaeb@quoll>
  <d74e7aa8-1110-469a-ac7e-3829c2458852@kernel.org>
+ <cb0d16bf-988d-403e-8a8e-c85bf2a208d0@linux.intel.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-From: Dawid Glazik <dawid.glazik@linux.intel.com>
-Organization: Intel Technology Poland sp. z o.o. - ul. Slowackiego 173, 80-298
- Gdansk - KRS 101882 - NIP 957-07-52-316
-In-Reply-To: <d74e7aa8-1110-469a-ac7e-3829c2458852@kernel.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260415_112202_884439_AFBDB3A6 
-X-CRM114-Status: GOOD (  12.49  )
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <cb0d16bf-988d-403e-8a8e-c85bf2a208d0@linux.intel.com>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,41 +116,47 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 4/9/2026 9:30 AM, Krzysztof Kozlowski wrote:
-> On 09/04/2026 09:28, Krzysztof Kozlowski wrote:
->> On Wed, Apr 08, 2026 at 10:34:35PM +0200, Dawid Glazik wrote:
->>> Introduce the device-tree bindings for I3C global registers found on
->>> AST2600 SoCs.
+On 15/04/2026 20:21, Dawid Glazik wrote:
+> On 4/9/2026 9:30 AM, Krzysztof Kozlowski wrote:
+>> On 09/04/2026 09:28, Krzysztof Kozlowski wrote:
+>>> On Wed, Apr 08, 2026 at 10:34:35PM +0200, Dawid Glazik wrote:
+>>>> Introduce the device-tree bindings for I3C global registers found on
+>>>> AST2600 SoCs.
+>>>>
+>>>> Signed-off-by: Dawid Glazik <dawid.glazik@linux.intel.com>
+>>>> ---
+>>>> I wasn't sure if I should add newline at the end of the
+>>>> file or not so I took
+>>>> https://github.com/torvalds/linux/tree/master/Documentation/devicetree/bindings/i3c
+>>>> as an example.
 >>>
->>> Signed-off-by: Dawid Glazik <dawid.glazik@linux.intel.com>
->>> ---
->>> I wasn't sure if I should add newline at the end of the
->>> file or not so I took
->>> https://github.com/torvalds/linux/tree/master/Documentation/devicetree/bindings/i3c
->>> as an example.
+>>> Answer is: you cannot have patch warnings.
+>>>
+>>> Documentation/devicetree/bindings/i3c does not have patch warning, does
+>>> it?
 >>
->> Answer is: you cannot have patch warnings.
+>> And if you tested this code with standard tools, you would see that...
 >>
->> Documentation/devicetree/bindings/i3c does not have patch warning, does
->> it?
+>> Best regards,
+>> Krzysztof
 > 
-> And if you tested this code with standard tools, you would see that...
-> 
-> Best regards,
-> Krzysztof
+> Thank you for the review and feedback. This is my first contribution to 
+> Linux kernel so I'm still learning the process and toolchain. I 
+> apologize for the rookie mistakes. I will address all the issues you've 
+> pointed out and resubmit the series.
 
-Thank you for the review and feedback. This is my first contribution to 
-Linux kernel so I'm still learning the process and toolchain. I 
-apologize for the rookie mistakes. I will address all the issues you've 
-pointed out and resubmit the series.
+
+So get the patch reviewed by Intel colleagues which would tell you what
+tools you must run and what warnings are accepted or not (and patch
+warning is never accepted).
 
 Best regards,
-Dawid
+Krzysztof
 
 -- 
 linux-i3c mailing list
