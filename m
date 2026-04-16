@@ -4,72 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F8F0F8D763
-	for <linux-i3c@archiver.kernel.org>; Thu, 16 Apr 2026 17:57:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DAAEBF8D763
+	for <linux-i3c@archiver.kernel.org>; Thu, 16 Apr 2026 17:57:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qznZWc7eLv6z7wgoqNsd+c1SvFB3o+6lU4XBre602bs=; b=C+IpdtXMuh2X6h
-	nPX+meEEEzFcS9ONM3Y6L+5EA4ddVqe4coBL7/laSCaBqFG0QPyMXQA27Co9rXcoAulY2YPWXEgLc
-	ALp1ouDjvUGJJyYj2Kw7v7xMyIzO/OFEokMdf/ikmf5mzRJE6XmW75a1YfNbnmkqGI75lni1Q+wM0
-	Dji22u/fB3dI4WktvfHanRP0hJ8dH5BqrIxTbWYUuTby65uXRyvlsXr2J7mDxP25xcJ6uHhWm5Rkw
-	1ASEz0rQLkuH223MxERPUn3SKb/p7sE5qIStV4O0ngFu/fRfRlynSE/QCUc2yZdVjcPHTIj+bG9ij
-	FZwcqBK3clF09PZSK9xw==;
+	List-Owner; bh=ND2wm0l/fEIaAE2JccYfsJ3jBGMSID+eoWh3iid6si4=; b=Trr1x9blQATf6u
+	XwLqAczF322qt9dm9wyEZOMBlupS0Hk0Zv8krscstjgBYj8l5YSq2WFAKN+0eXqH3kLseBhCqzZn4
+	gegsZmbxhG7QpC4SLeMSV47axAhGNDFQebEqSmDfj8y4yPzezh/UlpPK4cIbAATR2n/tr+ERprJPp
+	80fxa0tn6VnFlZk54DgbJRouDv0PYlPAWDFQS1FKnxxKlvh04XgnhR32oZBGrc8xsLUGlqMMEdjnm
+	X3R9/v0J+2wScR1feGN4nm9PIRDKUpU5s187M5OcFF9c1qNwLaf5HiNGa/9aDyKuNyb1P9zIoYYPt
+	2jWNz/rm37d0kOBfSVpA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wDQy4-00000002jiK-1gOv;
-	Thu, 16 Apr 2026 17:57:32 +0000
+	id 1wDQy6-00000002jjQ-2kUX;
+	Thu, 16 Apr 2026 17:57:34 +0000
 Received: from mgamail.intel.com ([198.175.65.10])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wDQy3-00000002jej-01qa
+	id 1wDQy4-00000002jhl-0l7y
 	for linux-i3c@lists.infradead.org;
-	Thu, 16 Apr 2026 17:57:32 +0000
+	Thu, 16 Apr 2026 17:57:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1776362251; x=1807898251;
+  t=1776362252; x=1807898252;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=sftKnuMKbgr2LYtEm+2TjhHATg50Nz6kkphzeIBb1pg=;
-  b=dytrw+zpwnCXQCI6bmp/aGrGr8IcY5RcBAErpLroEbzgnCEqHLlKlvVG
-   Jq5tXUGG/5RW24yHYYn6wjhE98Tn9/hELmjMNvhUFfTg7bhHMmbGILnB1
-   gAQhV7n6zKMVzu8fqamQYBXHRL32BRQiQUjsP5JuMxzZItCTSujj+B8WG
-   gbwK6P5opCdQGJfOgunwGFDfysyn5vJub114kVy0pdIqxjGYf7LJkK/9G
-   iUompk3J+yKqIwHETrX9JfTWbeWqxEZl1M6vHfryRyroxGSHRfuLchmcb
-   mfNchxqCi5nb2xI4D1BmRhIdz37//Ogx1COWMNBoLlZzoq5lZAjFkdorb
-   A==;
-X-CSE-ConnectionGUID: JZ8npAnARDy8sLlAG65Fkw==
-X-CSE-MsgGUID: fdeIUE8WSy2HlcPY9al9Yw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11761"; a="94778387"
+  bh=VOdkT7NXbsHNVxTYgvsRx2+hTyXIiHvRLkuOP0upwMQ=;
+  b=kVxwGelcpyXi6VW2Dort8dwlamGwPxHjv0LCWqbZD+G2zqeVafS5il2F
+   v0Z1HoG3sUQf5JNVhuBQEGt8S6YILstaQpJWCdZkg+/jKEgFFNlp66xEL
+   D7n4mgt+NXox4HGSjTE8/fOofrZakstTTiQM3Fxoucd7SOMVsYLienfRL
+   sXnwLXbeaYtpiFoguOCZ6l8FjJ04nPQuYnVgj+yR6YgunFQsXm7LRxI1K
+   5qWoDjqgmzAQrsy7p1L9UJMYs8AKF3j5SvAcuKBvVp0fwVSvE5UMqg8SF
+   S0k+cVLdYO1YA6tqLeKcQqBCmYB3Ed0U8KXiuPd+n2Uy1HZUSCTh4A87R
+   g==;
+X-CSE-ConnectionGUID: ro/rnSg1QPe1nRspCweMog==
+X-CSE-MsgGUID: LVvtzCguRK24oOlYAihj8w==
+X-IronPort-AV: E=McAfee;i="6800,10657,11761"; a="94778392"
 X-IronPort-AV: E=Sophos;i="6.23,181,1770624000"; 
-   d="scan'208";a="94778387"
+   d="scan'208";a="94778392"
 Received: from orviesa005.jf.intel.com ([10.64.159.145])
-  by orvoesa102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Apr 2026 10:57:30 -0700
-X-CSE-ConnectionGUID: t6yEQZbgR+O9DWEwRUK2Ug==
-X-CSE-MsgGUID: abSEi+MFT5+G4Rq2KJ/R3w==
+  by orvoesa102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Apr 2026 10:57:31 -0700
+X-CSE-ConnectionGUID: iOg9MuiPSX2ByWY7uE4Z4A==
+X-CSE-MsgGUID: yB1sEmkbQpCwsks0vTAmVw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.23,181,1770624000"; 
-   d="scan'208";a="235784564"
+   d="scan'208";a="235784586"
 Received: from abityuts-desk.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.244.222])
-  by orviesa005-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Apr 2026 10:57:28 -0700
+  by orviesa005-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Apr 2026 10:57:30 -0700
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 07/16] i3c: mipi-i3c-hci: Complete transfer lists immediately on error
-Date: Thu, 16 Apr 2026 20:56:55 +0300
-Message-ID: <20260416175704.41217-8-adrian.hunter@intel.com>
+Subject: [PATCH 08/16] i3c: mipi-i3c-hci: Avoid restarting DMA ring after aborting wrong transfer
+Date: Thu, 16 Apr 2026 20:56:56 +0300
+Message-ID: <20260416175704.41217-9-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260416175704.41217-1-adrian.hunter@intel.com>
 References: <20260416175704.41217-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260416_105731_093006_37AEE2D2 
-X-CRM114-Status: GOOD (  12.33  )
+X-CRM114-CacheID: sfid-20260416_105732_279420_7F25C44E 
+X-CRM114-Status: GOOD (  15.50  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,60 +86,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-In DMA mode, transfer lists are currently completed only when the final
-transfer in the list completes. If an earlier transfer fails, the list is
-left incomplete and callers wait until timeout.
+Software ABORT of the DMA ring is used to recover from transfer list
+timeouts, but it is inherently racy.  The intended transfer list may
+complete just before the ABORT takes effect, causing the subsequent
+transfer list to be aborted instead.
 
-There is no need to wait for a timeout, as the completion path in
-i3c_hci_process_xfer() already checks for error status. Complete the
-transfer list as soon as any transfer in the list reports an error.
+In this case, an incomplete transfer list may remain in the ring and has
+not yet been processed by hci_dma_dequeue_xfer().  Restarting the DMA
+ring at that point can lead to unpredictable results.
 
-This avoids unnecessary delays and spurious timeouts on error.
-
-Complete a transfer list completion immediately there is an error.
+Detect when the next queued transfer is not the first entry of a transfer
+list and does not belong to the list currently being dequeued.  In that
+case, skip restarting the DMA ring and defer recovery until a subsequent
+call to hci_dma_dequeue_xfer(), which will safely restart the ring once
+the incomplete list is handled.
 
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 ---
- drivers/i3c/master/mipi-i3c-hci/dma.c | 6 ++++--
- drivers/i3c/master/mipi-i3c-hci/hci.h | 1 +
- 2 files changed, 5 insertions(+), 2 deletions(-)
+ drivers/i3c/master/mipi-i3c-hci/dma.c | 16 ++++++++++++++++
+ drivers/i3c/master/mipi-i3c-hci/hci.h |  1 +
+ 2 files changed, 17 insertions(+)
 
 diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-index 28e4d38f55d3..5eea4fe6ebb3 100644
+index 5eea4fe6ebb3..5b394220a509 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/dma.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-@@ -502,6 +502,8 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
- 		struct hci_xfer *xfer = xfer_list + i;
+@@ -503,6 +503,7 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
  		u32 *ring_data = rh->xfer + rh->xfer_struct_sz * enqueue_ptr;
  
-+		xfer->completing_xfer = xfer_list + n - 1;
-+
+ 		xfer->completing_xfer = xfer_list + n - 1;
++		xfer->xfer_list_pos = i;
+ 
  		/* store cmd descriptor */
  		*ring_data++ = xfer->cmd_desc[0];
- 		*ring_data++ = xfer->cmd_desc[1];
-@@ -576,8 +578,8 @@ static void hci_dma_xfer_done(struct i3c_hci *hci, struct hci_rh_data *rh)
- 					tid, xfer->cmd_tid);
- 				/* TODO: do something about it? */
- 			}
--			if (xfer->completion)
--				complete(xfer->completion);
-+			if (xfer == xfer->completing_xfer || RESP_STATUS(resp))
-+				complete(xfer->completing_xfer->completion);
- 			if (RESP_STATUS(resp))
- 				hci->enqueue_blocked = true;
+@@ -669,6 +670,21 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
  		}
+ 	}
+ 
++	/*
++	 * A software ABORT may race with transfer completion and abort the next
++	 * transfer list instead. Detect that case, and do not restart the ring.
++	 * It will be handled by a subsequent dequeue.
++	 */
++	if (!did_unqueue) {
++		struct hci_xfer *xfer = rh->src_xfers[rh->done_ptr];
++
++		if (xfer && xfer->xfer_list_pos &&
++		    xfer->completing_xfer != xfer_list->completing_xfer) {
++			spin_unlock_irq(&hci->lock);
++			return false;
++		}
++	}
++
+ 	/* restart the ring */
+ 	reinit_completion(&rh->op_done);
+ 	mipi_i3c_hci_resume(hci);
 diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
-index d630400ec945..eee3e11810dd 100644
+index eee3e11810dd..527345a995ad 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/hci.h
 +++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
-@@ -104,6 +104,7 @@ struct hci_xfer {
- 		struct {
- 			/* DMA specific */
- 			struct i3c_dma *dma;
-+			struct hci_xfer *completing_xfer;
+@@ -107,6 +107,7 @@ struct hci_xfer {
+ 			struct hci_xfer *completing_xfer;
  			int ring_number;
  			int ring_entry;
++			int xfer_list_pos;
  		};
+ 	};
+ };
 -- 
 2.51.0
 
