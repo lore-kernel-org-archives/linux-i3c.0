@@ -4,107 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1411DF433FE
-	for <linux-i3c@archiver.kernel.org>; Thu, 16 Apr 2026 06:21:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12144F8A160
+	for <linux-i3c@archiver.kernel.org>; Thu, 16 Apr 2026 11:59:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ct7PoKuW/4nxq9qn5nN8+Ua4RgU3SRd0ss7jh/cpj+4=; b=O1BHw0Mspz8WMg
-	Xrvxd/nRbtGpVo+Vx7sO2uV3C/0Oaack8jZA4tmE/xl/KuawUcIX0uhvWZf6tWEVxIVzp6Hyv97Q1
-	3GS1OXEbmAKppdmGFOLA9S/tHgAPyY8TMFlP7K3/QACUu0+EN1GpokvBlB7SeZeEl7sHVYrw5EMjM
-	HjDpHYIIMsdDJHr14V01U5E1rHxbfjlxZwCKWLEdAYreu9jmbSpRaad8HLo238P+benqfGXJZSTKM
-	OODsi8klJVoKLcRN97H16hESgtG+Bvy3Yy4RmN8Npn3lO6+nNo4LGWfolyNpj5WbGFG5gjYZOwGbI
-	dEhBIvea6XBlqW51OcgQ==;
+	List-Owner; bh=eZpFk8bHW7ZPOaXDoRiXSHALnJwzto/r8sCg6NmvT/4=; b=uJiaI1hXLzhUwy
+	oUSHs6CcLT01ZlZClnuhrM+ZqWPJ6KV07/hAbh4FJefHl28KT6Ay8OwIZeICBDC11hgY237BKQH1m
+	a5bvqM5oAlMwqhPeAeK/MbDA62onCSqNfnYNNL9YtLzTOfZKQoVCnlStggZ1YehC0/F4ozH8a9DAI
+	cPhz2OhjjAn2IzgrZTeUjNEpeGt4cgtt1JssvKqfW2yGSwreMhwnyeyUDs3KRUZvOWoPsYFRTTVWX
+	hFIZ/4C1cdur8RaxQcLqBaIjqGLJ2iag4qF6iM/leimikLHBKInFnwMU44N+enf3YQSH0GZVV91i8
+	xzsfdJFFZ7dQDxXnAqUw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wDG6o-000000022e5-3UOY;
-	Thu, 16 Apr 2026 06:21:50 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wDLNW-00000002Pjx-3Ku6;
+	Thu, 16 Apr 2026 11:59:26 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wDG6m-000000022dS-100U;
-	Thu, 16 Apr 2026 06:21:48 +0000
+	id 1wDLNU-00000002PjW-13cL
+	for linux-i3c@lists.infradead.org;
+	Thu, 16 Apr 2026 11:59:25 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 6F5AA60126;
-	Thu, 16 Apr 2026 06:21:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2517CC2BCB3;
-	Thu, 16 Apr 2026 06:21:43 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 7F47D436A8;
+	Thu, 16 Apr 2026 11:59:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 34ACAC2BCAF;
+	Thu, 16 Apr 2026 11:59:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1776320507;
-	bh=+8F/oNoPxuc2vDOxM10nGfFdu9tPo7pBm69TDEWVfqw=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=dqjw73v6pCxPPkSP1tGhLm07LRmFYov7EMOcmrmGEnYpK3ksynagaWsZS+yJsfEsx
-	 0MM1VbjBbRm/TUB5RcxjJgtFzBbMC/37ZFzP/wIGX7/uFLNK+mmGMv744cClhyY8vg
-	 vRUrIxUbN4ZhyH8z8Ie52gwYTuY1IJrp3moQ9QHh7wZQU2tkStuuEKNSvgkpw2gvm4
-	 EeZBob/rnsOZmAQzEq1jEquvMVNKHQlMKxJhqiSzvdeuGvIX933nhgba88Ab98sRvv
-	 jbhl/L/SYfZNrHqOJsTappDlIK8Tk1nPwUhdx0mogQGbn16ZaeqNTCqdkpAiVhuUml
-	 18ZJXC2kWS9rg==
-Message-ID: <276df910-4ae0-4241-86bc-f8182e40eaf3@kernel.org>
-Date: Thu, 16 Apr 2026 08:21:42 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 3/3] dt-bindings: i3c: Add AST2600 I3C global registers
-To: Dawid Glazik <dawid.glazik@linux.intel.com>
+	s=k20201202; t=1776340763;
+	bh=py7wWhiWmBXGzlBtBHNVd2e7B5dJrS5FkveYE/aeNek=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=FKQSpSffpiBziKTs2wrKLd54/U5m8YfRAOg7k9HlmeUGd0cqVQsHQmICDl1sS4fWw
+	 7YxEtCqUdJ3/MMg2ymrm4NgXW185Jd+gcoFxX0mGJwVeJenMzT1VFgtZGuoU9cE2lb
+	 hefo+YQtU9/oXiL9AyKUpgbzPvnCDLQCYsPil9MjvqVU+3ONKf15yRSE5eLwxA9lss
+	 IClFfY+vWWpS/vOvKtoMcw9m1/40d0SRkN3aPIWBP0gdwreaAfdJofPlZEemcw8sk8
+	 igPnINMEYDlNRCj7pupcdNWvr31ITdhrXpfd5GI9lpJc2pgWBQiXpx6Nqde0sazqrh
+	 fPlu2DYfBWzrA==
+Date: Thu, 16 Apr 2026 06:59:21 -0500
+From: Rob Herring <robh@kernel.org>
+To: Akhil R <akhilrajeev@nvidia.com>
 Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
- Andrew Jeffery <andrew@codeconstruct.com.au>, linux-aspeed@lists.ozlabs.org,
- linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Frank Li <Frank.Li@nxp.com>,
- Maciej Lawniczak <maciej.lawniczak@intel.com>
-References: <cover.1775679285.git.dawid.glazik@linux.intel.com>
- <7f55458097ef651b4fc46650254afd3fa7b87348.1775679285.git.dawid.glazik@linux.intel.com>
- <20260409-beneficial-sociable-tamarin-dbcaeb@quoll>
- <d74e7aa8-1110-469a-ac7e-3829c2458852@kernel.org>
- <cb0d16bf-988d-403e-8a8e-c85bf2a208d0@linux.intel.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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 a/A=
-In-Reply-To: <cb0d16bf-988d-403e-8a8e-c85bf2a208d0@linux.intel.com>
+	Frank Li <Frank.Li@nxp.com>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	"Rafael J . Wysocki" <rafael@kernel.org>,
+	Robert Moore <robert.moore@intel.com>, Len Brown <lenb@kernel.org>,
+	Guenter Roeck <linux@roeck-us.net>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Eric Biggers <ebiggers@kernel.org>,
+	Sakari Ailus <sakari.ailus@linux.intel.com>,
+	Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
+	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org,
+	acpica-devel@lists.linux.dev, linux-hwmon@vger.kernel.org
+Subject: Re: [PATCH v2 01/13] dt-bindings: i3c: Add mipi-i3c-static-method to
+ support SETAASA
+Message-ID: <20260416115921.GA2724261-robh@kernel.org>
+References: <20260409105747.48158-1-akhilrajeev@nvidia.com>
+ <20260409105747.48158-2-akhilrajeev@nvidia.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260409105747.48158-2-akhilrajeev@nvidia.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260416_045924_362509_C2F7536F 
+X-CRM114-Status: GOOD (  29.93  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -121,42 +87,90 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 15/04/2026 20:21, Dawid Glazik wrote:
-> On 4/9/2026 9:30 AM, Krzysztof Kozlowski wrote:
->> On 09/04/2026 09:28, Krzysztof Kozlowski wrote:
->>> On Wed, Apr 08, 2026 at 10:34:35PM +0200, Dawid Glazik wrote:
->>>> Introduce the device-tree bindings for I3C global registers found on
->>>> AST2600 SoCs.
->>>>
->>>> Signed-off-by: Dawid Glazik <dawid.glazik@linux.intel.com>
->>>> ---
->>>> I wasn't sure if I should add newline at the end of the
->>>> file or not so I took
->>>> https://github.com/torvalds/linux/tree/master/Documentation/devicetree/bindings/i3c
->>>> as an example.
->>>
->>> Answer is: you cannot have patch warnings.
->>>
->>> Documentation/devicetree/bindings/i3c does not have patch warning, does
->>> it?
->>
->> And if you tested this code with standard tools, you would see that...
->>
->> Best regards,
->> Krzysztof
+On Thu, Apr 09, 2026 at 04:27:31PM +0530, Akhil R wrote:
+> Add the 'mipi-i3c-static-method' property mentioned in the MIPI I3C
+> Discovery and Configuration Specification [1] to specify which discovery
+> method an I3C device supports during bus initialization. The property is
+> a bitmap, where a bit value of 1 indicates support for that method, and 0
+> indicates lack of support.
+> Bit 0: SETDASA CCC (Direct)
+> Bit 1: SETAASA CCC (Broadcast)
+> Bit 2: Other CCC (vendor / standards extension)
+> All other bits are reserved.
 > 
-> Thank you for the review and feedback. This is my first contribution to 
-> Linux kernel so I'm still learning the process and toolchain. I 
-> apologize for the rookie mistakes. I will address all the issues you've 
-> pointed out and resubmit the series.
+> It is specifically needed when an I3C device requires SETAASA for the
+> address assignment. SETDASA will be supported by default if this property
+> is absent, which means for now the property just serves as a flag to
+> enable SETAASA, but keep the property as a bitmap to align with the
+> specifications.
+> 
+> [1] https://www.mipi.org/mipi-disco-for-i3c-download
+> 
+> Signed-off-by: Akhil R <akhilrajeev@nvidia.com>
+> ---
+>  .../devicetree/bindings/i3c/i3c.yaml          | 30 ++++++++++++++++---
+>  1 file changed, 26 insertions(+), 4 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/i3c/i3c.yaml b/Documentation/devicetree/bindings/i3c/i3c.yaml
+> index e25fa72fd785..1705d90d4d79 100644
+> --- a/Documentation/devicetree/bindings/i3c/i3c.yaml
+> +++ b/Documentation/devicetree/bindings/i3c/i3c.yaml
+> @@ -31,10 +31,12 @@ properties:
+>        described in the device tree, which in turn means we have to describe
+>        I3C devices.
+>  
+> -      Another use case for describing an I3C device in the device tree is when
+> -      this I3C device has a static I2C address and we want to assign it a
+> -      specific I3C dynamic address before the DAA takes place (so that other
+> -      devices on the bus can't take this dynamic address).
+> +      Other use-cases for describing an I3C device in the device tree are:
+> +      - When the I3C device has a static I2C address and we want to assign
+> +        it a specific I3C dynamic address before the DAA takes place (so
+> +        that other devices on the bus can't take this dynamic address).
+> +      - When the I3C device requires SETAASA for its discovery and uses a
+> +        pre-defined static address.
+>  
+>    "#size-cells":
+>      const: 0
+> @@ -147,6 +149,26 @@ patternProperties:
+>            through SETDASA. If static address is not present, this address is assigned
+>            through SETNEWDA after assigning a temporary address via ENTDAA.
+>  
+> +      mipi-i3c-static-method:
+> +        $ref: /schemas/types.yaml#/definitions/uint32
+> +        minimum: 0x1
+> +        maximum: 0xff
 
+Looks like the max is 0x7 currently.
 
-So get the patch reviewed by Intel colleagues which would tell you what
-tools you must run and what warnings are accepted or not (and patch
-warning is never accepted).
+> +        default: 1
+> +        description: |
+> +          Bitmap describing which methods of Dynamic Address Assignment from a
+> +          static address are supported by this I3C Target. A bit value of 1
+> +          indicates support for that method, and 0 indicates lack of support.
 
-Best regards,
-Krzysztof
+blank line here.
+
+> +          Bit 0: SETDASA CCC (Direct)
+> +          Bit 1: SETAASA CCC (Broadcast)
+> +          Bit 2: Other CCC (vendor / standards extension)
+> +          All other bits are reserved.
+
+Indent these by 2 more.
+
+> +
+> +          This property follows the MIPI I3C specification. The primary use
+> +          of this property is to indicate support for SETAASA, i.e Bit 1, but
+> +          will allow all values so that it is aligned with the specifications.
+> +          SETDASA will remain as the default method even if this property is
+> +          not present.
+> +
+>      required:
+>        - reg
+>  
+> -- 
+> 2.50.1
+> 
 
 -- 
 linux-i3c mailing list
