@@ -4,38 +4,38 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46E11F5580B
-	for <linux-i3c@archiver.kernel.org>; Mon, 20 Apr 2026 10:52:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 83287F5580E
+	for <linux-i3c@archiver.kernel.org>; Mon, 20 Apr 2026 10:52:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=e2lZt1PUHmdL89nEgy+J4xPvT8dA2MIm5FcvtXc5hzA=; b=fY0Zd+HyvB8IjP
-	8MtgWf/y1sfYQmalZd4CxFkwaNDboyAbcv6mKaQMVA7mlU323e0ML58M6KWKSNUjaP+WuYRPa1TlF
-	XTuyaM1CCG/A1H1ZeCRWJ8ts9h4Qr+JGoAhzw+9wqCEAq5+w+E+/ReVbIMqHx4WloycX+VgrFVPTg
-	3CI8FzZZM3oOmX6wZA70EkF5AmWoq1OqqtgxBLF/9404fwXCKUPjd9kBx1Zc+jqZlUnEMGpnLGktX
-	skXW8Pvo4yUSWuV6zvamu3rgl2s37/Xu3jh2B00WTyNpxs8Scs+uwxaR42oCUgNC+6xfIu+xbXYdh
-	s0eh6XCvz7LLyTfNr9rA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NsyQ07Mx3aToyMUnBi8/KLcGfV//4o7KpSm7g3AwqOk=; b=KqiLzS9OPaPtL4
+	wkyM0pP93VsnaYSLOPRpE4UN4+021+f6c2VJe5m9gsWfmhGyE3B8YAfGlidbl7muwaZYaRmYA5DLc
+	KcqHXBlNsAjJfB0lPyxCVotcpA5mNEjkt50beWJTVwpXjdOprXvqPpeyw+KbFBDK+WE+rTp7CQgyj
+	kCzkham2Nr8yWIEHICfyJTxzXbm1/76WEtsfJwjrKXvMHoKfGpwxIrlo14Vwy6NvJXRuHBD5FaSxm
+	Zhy6P/wC2fNz74amg/2hAPAapotA2vyBwhT8wyfl8c1UJCl4SoM3fibMgIv1g8l5BiTwCf/kW78yU
+	bsxqVO8awIyI/Dxkjbig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wEmFB-00000006kYj-3MRW;
-	Mon, 20 Apr 2026 10:52:45 +0000
+	id 1wEmFC-00000006kYr-0Kkq;
+	Mon, 20 Apr 2026 10:52:46 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wEmF8-00000006kWz-2MRj
+	id 1wEmF9-00000006kXT-2h8s
 	for linux-i3c@lists.infradead.org;
-	Mon, 20 Apr 2026 10:52:44 +0000
+	Mon, 20 Apr 2026 10:52:45 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A5E2E1A0334;
-	Mon, 20 Apr 2026 12:52:38 +0200 (CEST)
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 97FB41A0346;
+	Mon, 20 Apr 2026 12:52:40 +0200 (CEST)
 Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6E38B1A0308;
-	Mon, 20 Apr 2026 12:52:38 +0200 (CEST)
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5F9B31A033A;
+	Mon, 20 Apr 2026 12:52:40 +0200 (CEST)
 Received: from lsv03900.swis.in-blr01.nxp.com (lsv03900.swis.in-blr01.nxp.com [10.12.177.15])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 1EFFC1800257;
-	Mon, 20 Apr 2026 18:52:37 +0800 (+08)
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 5E301180028E;
+	Mon, 20 Apr 2026 18:52:39 +0800 (+08)
 From: Lakshay Piplani <lakshay.piplani@nxp.com>
 To: linux-kernel@vger.kernel.org,
 	linux-i3c@lists.infradead.org,
@@ -52,15 +52,17 @@ Cc: vikash.bansal@nxp.com,
 	priyanka.jain@nxp.com,
 	aman.kumarpandey@nxp.com,
 	Lakshay Piplani <lakshay.piplani@nxp.com>
-Subject: [PATCH v9 0/7] Add support for NXP P3H2x4x I3C hub driver
-Date: Mon, 20 Apr 2026 16:22:15 +0530
-Message-Id: <20260420105222.1562243-1-lakshay.piplani@nxp.com>
+Subject: [PATCH v9 1/7] i3c: master: Expose the APIs to support I3C hub
+Date: Mon, 20 Apr 2026 16:22:16 +0530
+Message-Id: <20260420105222.1562243-2-lakshay.piplani@nxp.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20260420105222.1562243-1-lakshay.piplani@nxp.com>
+References: <20260420105222.1562243-1-lakshay.piplani@nxp.com>
 MIME-Version: 1.0
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260420_035242_900328_A0B70BC5 
-X-CRM114-Status: GOOD (  14.03  )
+X-CRM114-CacheID: sfid-20260420_035244_017829_72F76A7D 
+X-CRM114-Status: GOOD (  19.13  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,114 +79,190 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-This series adds a driver for the NXP P3H2x4x family of multiport I3C hub
-devices.
- 
-This is an MFD driver integrating I3C hub and on-die regulators.
- 
-The series introduces:
-- Core I3C master enhancements required for hub support
-- Generic I3C hub framework
-- MFD and regulator drivers for P3H2x4x
-- P3H2x4x I3C hub driver built on top of the generic layer
+From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
 
+The following APIs were already declared in i3c_internals.h but were
+missing EXPORT_SYMBOL_GPL() in their implementation, making them
+inaccessible to modular drivers such as the I3C hub driver:
+
+1) i3c_dev_enable_ibi_locked()
+2) i3c_dev_disable_ibi_locked()
+3) i3c_dev_request_ibi_locked()
+4) i3c_dev_free_ibi_locked()
+
+i3c_master_reattach_i3c_dev() is declared in include/linux/i3c/master.h
+and exported via EXPORT_SYMBOL_GPL() to make it accessible to the I3C
+hub driver.
+
+Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+Signed-off-by: Lakshay Piplani <lakshay.piplani@nxp.com>
+
+---
 Changes in v9:
-- Renamed macros to follow consistent uppercase naming conventions
-- Made REGMAP selects in the P3H2X4X MFD Kconfig conditional, to avoid I3C/I2C dependency issues
-- Referenced i3c.yaml and i2c-controller.yaml for child bus nodes
-- Dropped unnecessary #address-cells and #size-cells from child nodes
-- Added CONFIG_I2C_SLAVE guards where necessary to avoid build errors when I2C slave support is disabled
-- Link to v8: https://lore.kernel.org/linux-i3c/20260323062737.886728-1-lakshay.piplani@nxp.com/T/#u
+ - No change
 
 Changes in v8:
-- Add compatible in i3c example
-- Link to v7: https://lore.kernel.org/linux-i3c/20260319112441.3888957-1-lakshay.piplani@nxp.com/T/#u
+ - No change
 
 Changes in v7:
-- Fix kernel-doc warnings across I3C core and hub code
-- Rework DT binding schema and examples to pass dt_binding_check
-- Update MFD Kconfig to use I3C_OR_I2C
-- Convert CONFIG_I3C_HUB to tristate
-- Remove unnecessary CONFIG_I2C_SLAVE guards
-- Replace custom helpers with find_closest()
-- Use devm_regulator_get_enable_optional()
-- Link to v6: https://lore.kernel.org/linux-i3c/64c5070c-aa9e-427a-933e-91e168f0510c@kernel.org/T/#u
+ - Fix kernel-doc warnings for *_locked() APIs
+ - Clarify API exposure in commit message
 
 Changes in v6:
-- Update DT binding with vendor-prefixed properties
-- Add generic I3C hub support
-- Remove generic code from P3H2x4x driver
-- Link to v5: https://lore.kernel.org/linux-i3c/20260206120121.856471-1-aman.kumarpandey@nxp.com/T/#u
+ - Split the patch into two parts:
+        1) expose the existing API
+        2) add new APIs.
 
 Changes in v5:
-- Update supply naming and descriptions
-- Improve MFD Kconfig/Makefile ordering
-- Link to v4: https://lore.kernel.org/linux-i3c/20260113114529.1692213-2-aman.kumarpandey@nxp.com/T/#u
+ - No change
 
 Changes in v4:
-- Split driver into MFD, regulator and I3C hub parts
-- Update I3C master for hub support
-- Fix DT binding issues
-- Link to v3: https://lore.kernel.org/linux-i3c/20250811-bittern-of-abstract-prestige-aaeda9@kuoka/T/#u
+ - Updated I3C master to handle hub support
+---
+---
+ drivers/i3c/master.c       | 70 ++++++++++++++++++++++++++++++++++++--
+ include/linux/i3c/master.h |  2 ++
+ 2 files changed, 70 insertions(+), 2 deletions(-)
 
-Changes in v3:
-- Add MFD support for hub and regulators
-- Add regulator integration
-- Link to v2: https://lore.kernel.org/linux-i3c/17145d2f-5d07-4939-8381-74e27cde303c@kernel.org/T/#u
-
-Changes in v2:
-- Fix DT binding warnings
-- Refine DT parsing logic
-- Link to v1: https://lore.kernel.org/linux-i3c/822d6dca-b2c6-4439-ade5-219620ebc435@kernel.org/T/#u
-
-Aman Kumar Pandey (6):
-  i3c: master: Expose the APIs to support I3C hub
-  i3c: master: Add the APIs to support I3C hub
-  dt-bindings: i3c: Add NXP P3H2x4x i3c-hub support
-  mfd: p3h2x4x: Add driver for NXP P3H2x4x i3c hub and on-die regulator
-  regulator: p3h2x4x: Add driver for on-die regulators in NXP P3H2x4x
-    i3c hub
-  i3c: hub: p3h2x4x: Add support for NXP P3H2x4x I3C hub functionality
-
-Lakshay Piplani (1):
-  i3c: hub: Add support for the I3C interface in the I3C hub
-
- .../devicetree/bindings/i3c/nxp,p3h2840.yaml  | 291 +++++++++++
- MAINTAINERS                                   |  15 +
- drivers/i3c/Kconfig                           |  16 +
- drivers/i3c/Makefile                          |   2 +
- drivers/i3c/hub.c                             | 460 ++++++++++++++++++
- drivers/i3c/hub/Kconfig                       |  11 +
- drivers/i3c/hub/Makefile                      |   4 +
- drivers/i3c/hub/p3h2840_i3c_hub.h             | 334 +++++++++++++
- drivers/i3c/hub/p3h2840_i3c_hub_common.c      | 352 ++++++++++++++
- drivers/i3c/hub/p3h2840_i3c_hub_i3c.c         | 132 +++++
- drivers/i3c/hub/p3h2840_i3c_hub_smbus.c       | 426 ++++++++++++++++
- drivers/i3c/master.c                          | 173 ++++++-
- drivers/mfd/Kconfig                           |  13 +
- drivers/mfd/Makefile                          |   1 +
- drivers/mfd/p3h2840.c                         | 124 +++++
- drivers/regulator/Kconfig                     |  10 +
- drivers/regulator/Makefile                    |   1 +
- drivers/regulator/p3h2840_i3c_hub_regulator.c | 218 +++++++++
- include/linux/i3c/device.h                    |   1 +
- include/linux/i3c/hub.h                       | 107 ++++
- include/linux/i3c/master.h                    |  10 +
- include/linux/mfd/p3h2840.h                   |  27 +
- 22 files changed, 2726 insertions(+), 2 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
- create mode 100644 drivers/i3c/hub.c
- create mode 100644 drivers/i3c/hub/Kconfig
- create mode 100644 drivers/i3c/hub/Makefile
- create mode 100644 drivers/i3c/hub/p3h2840_i3c_hub.h
- create mode 100644 drivers/i3c/hub/p3h2840_i3c_hub_common.c
- create mode 100644 drivers/i3c/hub/p3h2840_i3c_hub_i3c.c
- create mode 100644 drivers/i3c/hub/p3h2840_i3c_hub_smbus.c
- create mode 100644 drivers/mfd/p3h2840.c
- create mode 100644 drivers/regulator/p3h2840_i3c_hub_regulator.c
- create mode 100644 include/linux/i3c/hub.h
- create mode 100644 include/linux/mfd/p3h2840.h
-
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 5cd4e5da2233..d11fe6937ba8 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -1652,8 +1652,23 @@ static int i3c_master_attach_i3c_dev(struct i3c_master_controller *master,
+ 	return 0;
+ }
+ 
+-static int i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
+-				       u8 old_dyn_addr)
++/**
++ * i3c_master_reattach_i3c_dev() - reattach an I3C device with a new address
++ * @dev: I3C device descriptor to reattach
++ * @old_dyn_addr: previous dynamic address of the device
++ *
++ * This function reattaches an existing I3C device to the bus when its dynamic
++ * address has changed. It updates the bus address slot status accordingly:
++ * - Marks the new dynamic address as occupied by an I3C device.
++ * - Frees the old dynamic address slot if applicable.
++ *
++ * This function must be called with the bus lock held in write mode.
++ *
++ * Return: 0 on success, or a negative error code if reattachment fails
++ *         (e.g. -EBUSY if the new address slot is not free).
++ */
++int i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
++				u8 old_dyn_addr)
+ {
+ 	struct i3c_master_controller *master = i3c_dev_get_master(dev);
+ 	int ret;
+@@ -1677,6 +1692,7 @@ static int i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
+ 
+ 	return 0;
+ }
++EXPORT_SYMBOL_GPL(i3c_master_reattach_i3c_dev);
+ 
+ static void i3c_master_detach_i3c_dev(struct i3c_dev_desc *dev)
+ {
+@@ -3195,6 +3211,16 @@ int i3c_dev_do_xfers_locked(struct i3c_dev_desc *dev, struct i3c_xfer *xfers,
+ 	return master->ops->i3c_xfers(dev, xfers, nxfers, mode);
+ }
+ 
++/**
++ * i3c_dev_disable_ibi_locked() - Disable IBIs coming from a specific device
++ * @dev: device on which IBIs should be disabled
++ *
++ * This function disable IBIs coming from a specific device and wait for
++ * all pending IBIs to be processed.
++ *
++ * Context: Must be called with mutex_lock(&dev->desc->ibi_lock) held.
++ * Return: 0 in case of success, a negative error core otherwise.
++ */
+ int i3c_dev_disable_ibi_locked(struct i3c_dev_desc *dev)
+ {
+ 	struct i3c_master_controller *master;
+@@ -3216,7 +3242,22 @@ int i3c_dev_disable_ibi_locked(struct i3c_dev_desc *dev)
+ 
+ 	return 0;
+ }
++EXPORT_SYMBOL_GPL(i3c_dev_disable_ibi_locked);
+ 
++/**
++ * i3c_dev_enable_ibi_locked() - Enable IBIs from a specific device (lock held)
++ * @dev: device on which IBIs should be enabled
++ *
++ * This function enable IBIs coming from a specific device and wait for
++ * all pending IBIs to be processed. This should be called on a device
++ * where i3c_device_request_ibi() has succeeded.
++ *
++ * Note that IBIs from this device might be received before this function
++ * returns to its caller.
++ *
++ * Context: Must be called with mutex_lock(&dev->desc->ibi_lock) held.
++ * Return: 0 on success, or a negative error code on failure.
++ */
+ int i3c_dev_enable_ibi_locked(struct i3c_dev_desc *dev)
+ {
+ 	struct i3c_master_controller *master = i3c_dev_get_master(dev);
+@@ -3231,7 +3272,20 @@ int i3c_dev_enable_ibi_locked(struct i3c_dev_desc *dev)
+ 
+ 	return ret;
+ }
++EXPORT_SYMBOL_GPL(i3c_dev_enable_ibi_locked);
+ 
++/**
++ * i3c_dev_request_ibi_locked() - Request an IBI
++ * @dev: device for which we should enable IBIs
++ * @req: setup requested for this IBI
++ *
++ * This function is responsible for pre-allocating all resources needed to
++ * process IBIs coming from @dev. When this function returns, the IBI is not
++ * enabled until i3c_device_enable_ibi() is called.
++ *
++ * Context: Must be called with mutex_lock(&dev->desc->ibi_lock) held.
++ * Return: 0 in case of success, a negative error core otherwise.
++ */
+ int i3c_dev_request_ibi_locked(struct i3c_dev_desc *dev,
+ 			       const struct i3c_ibi_setup *req)
+ {
+@@ -3270,7 +3324,18 @@ int i3c_dev_request_ibi_locked(struct i3c_dev_desc *dev,
+ 
+ 	return ret;
+ }
++EXPORT_SYMBOL_GPL(i3c_dev_request_ibi_locked);
+ 
++/**
++ * i3c_dev_free_ibi_locked() - Free all resources needed for IBI handling
++ * @dev: device on which you want to release IBI resources
++ *
++ * This function is responsible for de-allocating resources previously
++ * allocated by i3c_device_request_ibi(). It should be called after disabling
++ * IBIs with i3c_device_disable_ibi().
++ *
++ * Context: Must be called with mutex_lock(&dev->desc->ibi_lock) held.
++ */
+ void i3c_dev_free_ibi_locked(struct i3c_dev_desc *dev)
+ {
+ 	struct i3c_master_controller *master = i3c_dev_get_master(dev);
+@@ -3301,6 +3366,7 @@ void i3c_dev_free_ibi_locked(struct i3c_dev_desc *dev)
+ 	kfree(dev->ibi);
+ 	dev->ibi = NULL;
+ }
++EXPORT_SYMBOL_GPL(i3c_dev_free_ibi_locked);
+ 
+ static int __init i3c_init(void)
+ {
+diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
+index 592b646f6134..aeccec171e64 100644
+--- a/include/linux/i3c/master.h
++++ b/include/linux/i3c/master.h
+@@ -613,6 +613,8 @@ void i3c_master_dma_unmap_single(struct i3c_dma *dma_xfer);
+ DEFINE_FREE(i3c_master_dma_unmap_single, void *,
+ 	    if (_T) i3c_master_dma_unmap_single(_T))
+ 
++int i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
++				u8 old_dyn_addr);
+ int i3c_master_set_info(struct i3c_master_controller *master,
+ 			const struct i3c_device_info *info);
+ 
 -- 
 2.25.1
 
