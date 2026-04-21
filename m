@@ -4,72 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC1C7F94CA0
-	for <linux-i3c@archiver.kernel.org>; Tue, 21 Apr 2026 17:55:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46488F94CA0
+	for <linux-i3c@archiver.kernel.org>; Tue, 21 Apr 2026 17:55:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TPxMD9+ru5Y58EtDZWcUV6IzBTP59ousrt5H608owGE=; b=CRecf68D1RrGBV
-	42dIQU55Wj7cAn5GrnQBAHJm6zDjS6+iucESWIURKa7Cbhu4rNfW8mZnZM7SGhGN2DE+hJbnggnIU
-	TaG1MMt3KOkRbcrsx2ofrQ7G0aMBlFOj4RRYKyPiDRKORMOMNuMiKkJff6++SV+xnCPkYeK4F1VKj
-	3pVBacK0T7dSD5VesS2BhkGQMvp711dxXxxGaJHP+HXsIHNu+o9O6icUn77ug106w5OBq8oahKyyz
-	VRNnsnthIyiWC1gf9O4tazlc8H+eu6dq3EF+5PUuMRbWXjBnI7FlNwiQXcO2NYf30PasgZ3z61QcZ
-	GIZm2IzEcCbpaVHE9bKw==;
+	List-Owner; bh=EzTPPTZak4wM0it4R2hZMZkqnZpU4n0M4DJBavRYFXI=; b=W6u6yksUYL5GH7
+	G1EfpnFofcQBIxiUwQLmSys7HADW53Pw8Zv2NTarvyeUodbBAxaez16bkl3P2neYz6p7j4YyqZYjQ
+	O+3GrPoXEP+/cA+UcYnh3E8wRTHEeJ+7ognjuHQO9WqYw3kqlk4p4X8mtHgFbwdkjcDyDYzAsLkpU
+	TsFL+VXfkvfG/YvUgco8OHG5FfITX1eiQenTWr03F8WQ9NAJnkbF4beGhJYJk8hmjzhWxRxpj/r+M
+	SuMAXkpwPZTiXjYfeQGXnD4UM5R0JdXXrITlvaneUsK3cLAOzKNZ1gyQ/pRRDJqAoxJ9tquoij9i0
+	3bhhXoLUFsE41kOeJrKg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wFFJT-00000008zbw-2D3e;
-	Tue, 21 Apr 2026 17:55:07 +0000
+	id 1wFFJW-00000008zdo-01zI;
+	Tue, 21 Apr 2026 17:55:10 +0000
 Received: from mgamail.intel.com ([198.175.65.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wFFJR-00000008zV1-3vwa
+	id 1wFFJT-00000008zV1-3a9g
 	for linux-i3c@lists.infradead.org;
-	Tue, 21 Apr 2026 17:55:07 +0000
+	Tue, 21 Apr 2026 17:55:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1776794106; x=1808330106;
+  t=1776794108; x=1808330108;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=NpzaIw6a5NBg7J1K6zUS8RFh74CZIrJVOLcdBA3XCo8=;
-  b=IvvEHZ48OVP6PmOet4Q+aFm1XJRdO2q8CglzwiP1ikLE6P2IZv4Z4/Gc
-   rAbNJIFEIWeFntnZBbwJK71GXfHwqzXNJ3pY9roUSwLkzYl7SUCT/2L3S
-   OuK1S8YJnlVqssD1eFA/ahf4NT0nrFYnMmP63viyZ41uUdFjkQggvyhMo
-   Ji9hfJ+st3xx9JmyC/uGlwPR+64MqUh2lcCz5MWNUq+1v7lCRqs2Tum/O
-   J6O5mrXwX5nTm/HDuFw/GKGJ3O/JI1hoehwN3ZHXC8Ukzj9JHqxZS+A2e
-   kDxJ2W5wmW924FXZ2AtuAh8IVpD8uyiqocr5GWAy/ZskHX5yeLZP7tZAH
+  bh=GpXicQuAUwvk9bRUIWFNMDZTDiSM4cRz2I/RyILus2A=;
+  b=L67pRYxfciFhoA+Rd4MCZtO/dp0PxuYTZPSKb6mRYE7weH8yfiRCYRSc
+   JoLQo5gZy23kL6Xa55gZkZQwKHGvkUak8MmYMfxItZB2ECl2/FYRgU1Yn
+   7SWG0Ae2qFnpmKG8y2uksuvbTngIbk0pboT2vLgpqWt+A4/4rbRTXMr1i
+   cce0S9bomBwckAOSn8d0/xsdK1pRxeLaTHt/1a2aVh1bCb0AnDcED7cIV
+   aPjBiHdrV84OjSSu8gT4u7T0VhsArNmVum6P0ZWW6YMoTaFhlsCP76q6k
+   36XxzIt7bcmjUVK0HSYuw7f0drd0ErF1ockjLyxTwnuFn+tx1Qrg8NLWT
    A==;
-X-CSE-ConnectionGUID: nymQCrT1RRemUxMTlC+RjA==
-X-CSE-MsgGUID: 6H9phnt9S/C32LeIgIBUiA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11763"; a="77651397"
+X-CSE-ConnectionGUID: F39EhGkFTVONS+1b3fQRJQ==
+X-CSE-MsgGUID: Vb0pHpwbRO+bdmiFfwXW6g==
+X-IronPort-AV: E=McAfee;i="6800,10657,11763"; a="77651404"
 X-IronPort-AV: E=Sophos;i="6.23,192,1770624000"; 
-   d="scan'208";a="77651397"
+   d="scan'208";a="77651404"
 Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Apr 2026 10:55:05 -0700
-X-CSE-ConnectionGUID: npk/c1CnQc67XYomVlQGeQ==
-X-CSE-MsgGUID: BDH4wLO0RVq7i7xycKk5iw==
+  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Apr 2026 10:55:07 -0700
+X-CSE-ConnectionGUID: mWJaT1fySSO2mXc5ZRxrxg==
+X-CSE-MsgGUID: ogcOLL9kTDa0Tu5SQFimfA==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.23,192,1770624000"; 
-   d="scan'208";a="227494950"
+   d="scan'208";a="227495000"
 Received: from hrotuna-mobl2.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.244.242])
-  by fmviesa006-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Apr 2026 10:55:04 -0700
+  by fmviesa006-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 21 Apr 2026 10:55:06 -0700
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH V2 10/16] i3c: mipi-i3c-hci: Add DMA ring abort quirk for Intel controllers
-Date: Tue, 21 Apr 2026 20:54:29 +0300
-Message-ID: <20260421175435.122094-11-adrian.hunter@intel.com>
+Subject: [PATCH V2 11/16] i3c: mipi-i3c-hci: Factor out reset-and-restore helper
+Date: Tue, 21 Apr 2026 20:54:30 +0300
+Message-ID: <20260421175435.122094-12-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260421175435.122094-1-adrian.hunter@intel.com>
 References: <20260421175435.122094-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260421_105506_027532_1ACD53DC 
-X-CRM114-Status: GOOD (  14.83  )
+X-CRM114-CacheID: sfid-20260421_105507_938093_A47D8272 
+X-CRM114-Status: UNSURE (   9.58  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,14 +87,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-DMA rings can be aborted either per-ring via RING_CONTROL or globally
-via HC_CONTROL_ABORT. The driver currently relies on the per-ring
-mechanism.
+Factor the reset-and-restore sequence out of i3c_hci_rpm_resume() into
+a separate helper.
 
-Some Intel I3C HCI controllers require HC_CONTROL_ABORT to be asserted
-before a DMA ring abort is effective.  This behavior is non-standard.
-Introduce a controller quirk to select the required abort method and
-enable it for Intel LPSS I3C controllers.
+This allows the same logic to be reused for recovery paths in subsequent
+changes without duplicating suspend/resume handling.
+
+No functional change.
 
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 ---
@@ -101,111 +101,64 @@ Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 
 Changes in V2:
 
-	None
+	Drop redundant i3c_hci_sync_irq_inactive(hci)
+	from i3c_hci_reset_and_restore() because it is called by
+	hci->io->suspend() anyway
 
 
- drivers/i3c/master/mipi-i3c-hci/core.c | 18 +++++++++++++++--
- drivers/i3c/master/mipi-i3c-hci/dma.c  | 27 +++++++++++++++++++++++---
+ drivers/i3c/master/mipi-i3c-hci/core.c | 19 +++++++++++++++++--
  drivers/i3c/master/mipi-i3c-hci/hci.h  |  2 ++
- 3 files changed, 42 insertions(+), 5 deletions(-)
+ 2 files changed, 19 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-index 770235ad6b25..8274c84b16be 100644
+index 8274c84b16be..12a0122fb709 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/core.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-@@ -231,7 +231,20 @@ static void i3c_hci_bus_cleanup(struct i3c_master_controller *m)
- 
- void mipi_i3c_hci_resume(struct i3c_hci *hci)
- {
--	reg_set(HC_CONTROL, HC_CONTROL_RESUME);
-+	u32 reg = reg_read(HC_CONTROL);
-+
-+	reg |= HC_CONTROL_RESUME;
-+	reg &= ~HC_CONTROL_ABORT;
-+	reg_write(HC_CONTROL, reg);
-+}
-+
-+void mipi_i3c_hci_abort(struct i3c_hci *hci)
-+{
-+	u32 reg = reg_read(HC_CONTROL);
-+
-+	reg &= ~HC_CONTROL_RESUME; /* Do not set resume */
-+	reg |= HC_CONTROL_ABORT;
-+	reg_write(HC_CONTROL, reg);
+@@ -798,9 +798,8 @@ int i3c_hci_rpm_suspend(struct device *dev)
  }
+ EXPORT_SYMBOL_GPL(i3c_hci_rpm_suspend);
  
- /* located here rather than pio.c because needed bits are in core reg space */
-@@ -1053,7 +1066,8 @@ static const struct platform_device_id i3c_hci_driver_ids[] = {
- 	{ .name = "intel-lpss-i3c", HCI_QUIRK_RPM_ALLOWED |
- 				    HCI_QUIRK_RPM_IBI_ALLOWED |
- 				    HCI_QUIRK_RPM_PARENT_MANAGED |
--				    HCI_QUIRK_DMA_ABORT_REQUIRES_PIO_RESET },
-+				    HCI_QUIRK_DMA_ABORT_REQUIRES_PIO_RESET |
-+				    HCI_QUIRK_DMA_REQUIRES_HC_ABORT },
- 	{ /* sentinel */ }
- };
- MODULE_DEVICE_TABLE(platform, i3c_hci_driver_ids);
-diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-index 699c6d523eed..41bbd912df7f 100644
---- a/drivers/i3c/master/mipi-i3c-hci/dma.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-@@ -597,6 +597,29 @@ static void hci_dma_xfer_done(struct i3c_hci *hci, struct hci_rh_data *rh)
- 	rh_reg_write(RING_OPERATION1, op1_val);
- }
- 
-+static bool hci_dma_requires_hc_abort_quirk(struct i3c_hci *hci, struct hci_rh_data *rh)
-+{
-+	if (!(hci->quirks & HCI_QUIRK_DMA_REQUIRES_HC_ABORT))
-+		return false;
-+
-+	reinit_completion(&rh->op_done);
-+	mipi_i3c_hci_abort(hci);
-+	wait_for_completion_timeout(&rh->op_done, HZ);
-+	rh_reg_write(RING_CONTROL, rh_reg_read(RING_CONTROL) | RING_CTRL_ABORT);
-+
-+	return true;
-+}
-+
-+static void hci_dma_abort(struct i3c_hci *hci, struct hci_rh_data *rh)
-+{
-+	if (hci_dma_requires_hc_abort_quirk(hci, rh))
-+		return;
-+
-+	reinit_completion(&rh->op_done);
-+	rh_reg_write(RING_CONTROL, rh_reg_read(RING_CONTROL) | RING_CTRL_ABORT);
-+	wait_for_completion_timeout(&rh->op_done, HZ);
-+}
-+
- static void hci_dma_abort_requires_pio_reset_quirk(struct i3c_hci *hci, struct hci_rh_data *rh)
+-int i3c_hci_rpm_resume(struct device *dev)
++static int i3c_hci_do_reset_and_restore(struct i3c_hci *hci)
  {
- 	if ((hci->quirks & HCI_QUIRK_DMA_ABORT_REQUIRES_PIO_RESET) &&
-@@ -630,9 +653,7 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
- 		hci->enqueue_blocked = true;
- 		spin_unlock_irq(&hci->lock);
- 		/* stop the ring */
--		reinit_completion(&rh->op_done);
--		rh_reg_write(RING_CONTROL, rh_reg_read(RING_CONTROL) | RING_CTRL_ABORT);
--		wait_for_completion_timeout(&rh->op_done, HZ);
-+		hci_dma_abort(hci, rh);
- 		spin_lock_irq(&hci->lock);
- 		ring_status = rh_reg_read(RING_STATUS);
- 		if (ring_status & RING_STATUS_RUNNING) {
+-	struct i3c_hci *hci = dev_get_drvdata(dev);
+ 	int ret;
+ 
+ 	ret = i3c_hci_reset_and_init(hci);
+@@ -821,6 +820,22 @@ int i3c_hci_rpm_resume(struct device *dev)
+ 
+ 	return 0;
+ }
++
++int i3c_hci_reset_and_restore(struct i3c_hci *hci)
++{
++	i3c_hci_bus_disable(hci);
++
++	hci->io->suspend(hci);
++
++	return i3c_hci_do_reset_and_restore(hci);
++}
++
++int i3c_hci_rpm_resume(struct device *dev)
++{
++	struct i3c_hci *hci = dev_get_drvdata(dev);
++
++	return i3c_hci_do_reset_and_restore(hci);
++}
+ EXPORT_SYMBOL_GPL(i3c_hci_rpm_resume);
+ 
+ static int i3c_hci_runtime_suspend(struct device *dev)
 diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
-index 01237b12d32e..97c31a315a6e 100644
+index 97c31a315a6e..a3151c26827e 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/hci.h
 +++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
-@@ -157,9 +157,11 @@ struct i3c_hci_dev_data {
- #define HCI_QUIRK_RPM_IBI_ALLOWED	BIT(6)  /* IBI and Hot-Join allowed while runtime suspended */
- #define HCI_QUIRK_RPM_PARENT_MANAGED	BIT(7)  /* Runtime PM managed by parent device */
- #define HCI_QUIRK_DMA_ABORT_REQUIRES_PIO_RESET	BIT(8)  /* Do PIO queue SW resets after DMA abort */
-+#define HCI_QUIRK_DMA_REQUIRES_HC_ABORT		BIT(9)  /* Use HC_CONTROL ABORT to abort DMA */
+@@ -175,4 +175,6 @@ int i3c_hci_process_xfer(struct i3c_hci *hci, struct hci_xfer *xfer, int n);
+ int i3c_hci_rpm_suspend(struct device *dev);
+ int i3c_hci_rpm_resume(struct device *dev);
  
- /* global functions */
- void mipi_i3c_hci_resume(struct i3c_hci *hci);
-+void mipi_i3c_hci_abort(struct i3c_hci *hci);
- void mipi_i3c_hci_pio_reset(struct i3c_hci *hci);
- void mipi_i3c_hci_pio_reset_all_queues(struct i3c_hci *hci);
- void mipi_i3c_hci_dct_index_reset(struct i3c_hci *hci);
++int i3c_hci_reset_and_restore(struct i3c_hci *hci);
++
+ #endif
 -- 
 2.51.0
 
