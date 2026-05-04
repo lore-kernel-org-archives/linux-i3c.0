@@ -4,72 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06CB3CD342C
-	for <linux-i3c@archiver.kernel.org>; Mon,  4 May 2026 11:34:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3C1CCCD3430
+	for <linux-i3c@archiver.kernel.org>; Mon,  4 May 2026 11:34:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vwEskncv4xo4yK0+OVoT8VMu6GPEfNW46e+GRBoVsgo=; b=4BRWw48SO9Y+6S
-	4axvFfSwrnp3Hu+wpUEsF2/cQXcOvW1tNLZHkXifpbFu3I2NWxUFXoEi2iKsdF1nCWuxEIvDnt7Za
-	AtvacfQmJln53QsY75t0TVaLFJznXVc6auIYqbi7eL5DaS+8F4QDJolWt3McWNie8gukxPedHyTmr
-	ZUqLVhrgZeDBHozS7FbpCOuIpjzfUW7sveoJnMYL0hj3xtRHWtSnIxGRjx6p7EQDRGSvN9wOlvnME
-	HtrjoGWsXE7lvTxh7lNtL/kb2P1KaCyDLp2BeD/Gm1YBPAE1wVTGmaIyg//CnZEOKgaRVXEKF3WUg
-	6daSJV2TgdcA+phGrhGA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0X9zQK6ntPF1IMmQ+fs93ArY3r/Rszo1VoInXq4Q/tg=; b=kw71cWxQOWVYAA
+	YVB0xQkRv0y0BVtk48CDM/qQ0TeOOgDZThdvX4ijxDivwlSFV8hjNX0x8dOeFEihC3g+wmdQ6lwzR
+	/bw64JJZIreqq0MVRONZ0XFBPb/1DsrswoUnD31vIV1+8l8FvDTDk6KUAhtbqizUFQuwCdaVFkq4Y
+	INLCfoCMdnTyGJGzlQSZ40kk+RuT78+Hxl+TFsT/ec/jxyiwX0qpqcFsde+M+cR0RkwwaBSEK6A/H
+	wifp5NLbD+juRQfIaiMkBhV//SJYGVrFtjiX7rgYxzmvGPP/PUgj1s9bBysvEUKxyYoyu6eNkKMuv
+	tpP8uttlOyJeXrvJ4dYA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wJrYw-0000000D3Iy-2qAy;
+	id 1wJrYw-0000000D3J5-3uQ7;
 	Mon, 04 May 2026 11:34:10 +0000
 Received: from mgamail.intel.com ([192.198.163.13])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wJrYt-0000000D3HH-2NxM
+	id 1wJrYt-0000000D3H2-2Nqu
 	for linux-i3c@lists.infradead.org;
-	Mon, 04 May 2026 11:34:08 +0000
+	Mon, 04 May 2026 11:34:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
   t=1777894448; x=1809430448;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=teWJz0OV8eS9QHdCuehQXJXiHZ/gJsf/+8wEIwLhtIE=;
-  b=ORxqHim9ZsD3mMAgWx6vNVS0/V9ZkNC9EOlhuVl6KEROr1qwIgeWLWcQ
-   NbU85RmbBkstVUx8Pa6hXvG8KTeEzLcLUAPc5dHdnrJlKsOh6RdrPMG3v
-   pB81J07iXrSP2ohzpgtiwI1kcIeXIDFyjceyzoKjCNViwB7l3dmmSr12e
-   2LmLN6kX1QSiVqMjqEbKdbJ9p3mtpX0K9XoOzGMfXJyl82uUsM1TqO06k
-   HD2QD9FkTuK2H4bKBdURPncAwz6FgUOjcZWYbKhlKz4lc+MgH3B9//fxq
-   WbBKdpp4DHNTyxn4vXo/gdiXtnFt5SI3nFSGhoHleqRp3Y+cBLat10Sxi
-   A==;
-X-CSE-ConnectionGUID: dZsip+djSuGxMYenEPrKhQ==
-X-CSE-MsgGUID: S7TIMizgQFCOKLVpXl8jkQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11775"; a="81315140"
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=FHCTQ3+sigT+L7VKnTTyPQKyOb0B8qUJA+8n78iv7kA=;
+  b=N2Q+9DYrOntMA3JoOVMBO90b5bNk2uZ8glyTnhke2UNmhNJie/F9po9+
+   dv8R5LXYIcXR9riCjHNekq76O6PUmI4YsnoJHhXk+t9fA8g02kNP148vK
+   fVVs50KlFLbr2VwNqVgrgE5CPK3eXF04pH+cDVUpCSOAkLFlN1Vwyo2Nd
+   IZLxi3MahA228jn29alY92oQ/27VAs0dHFIOxRxVdZCHUBrrbtw4LTEFs
+   iy7xziuLUMlWGIUyu/qbHwpt0/MzuLeNnKi21itFiUIjlfJMojTLDM1g/
+   zxmwFD3cOlgEsJxz4pQ/scT+LaSbdAALTvUFAyfJ/kXeBWWm2OGP4yGKm
+   g==;
+X-CSE-ConnectionGUID: 2Ra0cLPrSLS5WaoUnJw+Kg==
+X-CSE-MsgGUID: qJDuDrSgSGiE/ZhwmBEJSg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11775"; a="81315137"
 X-IronPort-AV: E=Sophos;i="6.23,215,1770624000"; 
-   d="scan'208";a="81315140"
+   d="scan'208";a="81315137"
 Received: from fmviesa005.fm.intel.com ([10.60.135.145])
-  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 May 2026 04:34:05 -0700
-X-CSE-ConnectionGUID: HUKmFH1vTRSpfOIvS0ncJQ==
-X-CSE-MsgGUID: HasUU7NGROKR5FngHOQvNA==
+  by fmvoesa107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 May 2026 04:34:03 -0700
+X-CSE-ConnectionGUID: rgR3ilgvSnaZrFWOJmCCXQ==
+X-CSE-MsgGUID: fhENPdNtSGOlYE8uK5auWQ==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.23,215,1770624000"; 
-   d="scan'208";a="240478189"
+   d="scan'208";a="240478176"
 Received: from hrotuna-mobl2.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.245.92])
-  by fmviesa005-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 May 2026 04:34:03 -0700
+  by fmviesa005-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 May 2026 04:34:01 -0700
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH V3 01/16] i3c: mipi-i3c-hci: Fix suspend behavior when bus disable falls back to software reset
-Date: Mon,  4 May 2026 14:33:37 +0300
-Message-ID: <20260504113352.38490-2-adrian.hunter@intel.com>
+Subject: [PATCH V3 00/16] i3c: mipi-i3c-hci: DMA abort, recovery and related improvements
+Date: Mon,  4 May 2026 14:33:36 +0300
+Message-ID: <20260504113352.38490-1-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
-In-Reply-To: <20260504113352.38490-1-adrian.hunter@intel.com>
-References: <20260504113352.38490-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260504_043407_689024_A1710FE1 
-X-CRM114-Status: GOOD (  13.45  )
+X-CRM114-CacheID: sfid-20260504_043407_689318_75581E68 
+X-CRM114-Status: GOOD (  12.78  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,73 +84,149 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Software reset was introduced as a fallback if bus disable failed.  The
-change was made in 2 places: the cleanup path and the suspend path.
+Hi
 
-For the cleanup path (i3c_hci_bus_cleanup()), after software reset the
-function continues to do cleanup for the current I/O mode.  For the
-suspend path (i3c_hci_rpm_suspend()), after software reset the function
-returns early.  However software reset does not reset any Ring Headers in
-the Host Controller, so returning early is not the right thing to do.
+This series improves the robustness of the MIPI I3C HCI DMA mode driver,
+addressing issues observed during error handling and recovery.
 
-Instead, continue to call suspend for the current I/O mode, which for DMA
-mode will reset any Ring Headers.
+Patch 1 ensures suspend always invokes io->suspend.
 
-Note, although Ring Headers should not be active at this stage, performing
-this reset follows the procedure defined by the specification and keeps
-the suspend path consistent with the cleanup path.
+Patches 2-4 fix issues in the existing DMA abort path: preserving the RUN
+bit during abort per the MIPI specification, blocking enqueue during
+abort/error, and waiting for ring restart completion.
 
-Note also, i3c_hci_sync_irq_inactive() is still called via the PIO and DMA
-hci->io->suspend() callbacks.
+Patches 5-8 improve how partially completed transfer lists are handled
+during dequeue: moving hci_dma_xfer_done() earlier so completed
+responses are processed before NoOp replacement, completing transfer
+lists immediately on error rather than deferring, and detecting when an
+abort races with transfer completion to avoid restarting the wrong
+transfer list.
 
-Always return 0 because the device is quiesced as much as possible and
-returning a negative error code would unnecessarily prevent system suspend.
+Patches 9-10 add Intel-specific quirks for DMA ring abort: a PIO queue
+reset after abort, and an HC_CONTROL ABORT before the ring-level abort.
 
-Fixes: 9a258d1336f7 ("i3c: mipi-i3c-hci: Fallback to software reset when bus disable fails")
-Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
----
+Patch 11 factors out a reset-and-restore helper from the suspend path
+for reuse.
+
+Patch 12 adds a full DMA recovery path for internal controller errors.
+When the hardware reports a TID mismatch or the ring becomes stuck, the
+driver now resets and restores the controller, terminating all in-flight
+transfers with an error status.
+
+Patch 13 makes NoOp command handling observable: instead of discarding
+NoOp responses, the driver now waits for them to complete and triggers
+recovery if they fail.
+
+Patch 14 adjusts transfer timeout accounting to start from when a
+transfer actually begins execution rather than when it was queued,
+preventing premature timeouts behind slow predecessors.
+
+Patches 15-16 are minor optimizations: consolidating the DMA command and
+response ring into a single coherent allocation, and increasing the ring
+size to the maximum 255 entries to avoid ring-space exhaustion.
 
 
 Changes in V3:
 
+  i3c: mipi-i3c-hci: Fix suspend behavior when bus disable falls back to software reset
+  i3c: mipi-i3c-hci: Preserve RUN bit when aborting DMA ring
 	Add Frank's rev'd-by
+
+  i3c: mipi-i3c-hci: Add DMA-mode recovery for internal controller errors
+	When erroring out transfers, ensure the final transfer of a
+	transfer list is processed last
+
 
 Changes in V2:
 
+  i3c: mipi-i3c-hci: Fix suspend behavior when bus disable falls back to software reset
 	Always return 0 from suspend callback
 	Amend commit message
 
+  i3c: mipi-i3c-hci: Preserve RUN bit when aborting DMA ring
+	Improve commit message
 
- drivers/i3c/master/mipi-i3c-hci/core.c | 11 +++--------
- 1 file changed, 3 insertions(+), 8 deletions(-)
+  i3c: mipi-i3c-hci: Prevent DMA enqueue while ring is aborting or in error
+	Improve commit message
 
-diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-index b781dbed2165..afb0764b5e1f 100644
---- a/drivers/i3c/master/mipi-i3c-hci/core.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-@@ -762,15 +762,10 @@ static int i3c_hci_reset_and_init(struct i3c_hci *hci)
- int i3c_hci_rpm_suspend(struct device *dev)
- {
- 	struct i3c_hci *hci = dev_get_drvdata(dev);
--	int ret;
- 
--	ret = i3c_hci_bus_disable(hci);
--	if (ret) {
--		/* Fall back to software reset to disable the bus */
--		ret = i3c_hci_software_reset(hci);
--		i3c_hci_sync_irq_inactive(hci);
--		return ret;
--	}
-+	/* Fall back to software reset to disable the bus */
-+	if (i3c_hci_bus_disable(hci))
-+		i3c_hci_software_reset(hci);
- 
- 	hci->io->suspend(hci);
- 
--- 
-2.51.0
+  i3c: mipi-i3c-hci: Wait for DMA ring restart to complete
+	None
 
+  i3c: mipi-i3c-hci: Move hci_dma_xfer_done() definition
+	Add Frank's Rev'd-by
+
+  i3c: mipi-i3c-hci: Call hci_dma_xfer_done() from dequeue path
+	Add Frank's Rev'd-by
+
+  i3c: mipi-i3c-hci: Complete transfer lists immediately on error
+	Rename completing_xfer to final_xfer
+
+  i3c: mipi-i3c-hci: Avoid restarting DMA ring after aborting wrong transfer
+	Rename completing_xfer to final_xfer
+
+  i3c: mipi-i3c-hci: Add DMA ring abort/reset quirk for Intel controllers
+	None
+
+  i3c: mipi-i3c-hci: Add DMA ring abort quirk for Intel controllers
+	None
+
+  i3c: mipi-i3c-hci: Factor out reset-and-restore helper
+	Drop redundant i3c_hci_sync_irq_inactive(hci)
+	from i3c_hci_reset_and_restore() because it is called by
+	hci->io->suspend() anyway
+
+  i3c: mipi-i3c-hci: Add DMA-mode recovery for internal controller errors
+	Rename completing_xfer to final_xfer
+	Add hci_dma_xfer_done() before checking for an already complete
+	transfer
+	Improve commit message
+
+  i3c: mipi-i3c-hci: Wait for NoOp commands to complete
+	Rename completing_xfer to final_xfer
+	Add missing reinit_completion()
+
+  i3c: mipi-i3c-hci: Base timeouts on actual transfer start time
+	Do not flag the next transfer as started when there is an error
+	which halts the controller
+	Instead flag it started at the end of hci_dma_dequeue_xfer()
+	Use hci_start_xfer() in pio.c
+
+  i3c: mipi-i3c-hci: Consolidate DMA ring allocation
+	Check for failed allocation before assignments to avoid doing
+	arithmetic with NULL pointers
+
+  i3c: mipi-i3c-hci: Increase DMA transfer ring size to maximum
+	None
+
+
+Adrian Hunter (16):
+  i3c: mipi-i3c-hci: Fix suspend behavior when bus disable falls back to software reset
+  i3c: mipi-i3c-hci: Preserve RUN bit when aborting DMA ring
+  i3c: mipi-i3c-hci: Prevent DMA enqueue while ring is aborting or in error
+  i3c: mipi-i3c-hci: Wait for DMA ring restart to complete
+  i3c: mipi-i3c-hci: Move hci_dma_xfer_done() definition
+  i3c: mipi-i3c-hci: Call hci_dma_xfer_done() from dequeue path
+  i3c: mipi-i3c-hci: Complete transfer lists immediately on error
+  i3c: mipi-i3c-hci: Avoid restarting DMA ring after aborting wrong transfer
+  i3c: mipi-i3c-hci: Add DMA ring abort/reset quirk for Intel controllers
+  i3c: mipi-i3c-hci: Add DMA ring abort quirk for Intel controllers
+  i3c: mipi-i3c-hci: Factor out reset-and-restore helper
+  i3c: mipi-i3c-hci: Add DMA-mode recovery for internal controller errors
+  i3c: mipi-i3c-hci: Wait for NoOp commands to complete
+  i3c: mipi-i3c-hci: Base timeouts on actual transfer start time
+  i3c: mipi-i3c-hci: Consolidate DMA ring allocation
+  i3c: mipi-i3c-hci: Increase DMA transfer ring size to maximum
+
+ drivers/i3c/master/mipi-i3c-hci/cmd.h  |   6 +
+ drivers/i3c/master/mipi-i3c-hci/core.c |  82 ++++++--
+ drivers/i3c/master/mipi-i3c-hci/dma.c  | 344 +++++++++++++++++++++++++--------
+ drivers/i3c/master/mipi-i3c-hci/hci.h  |  22 +++
+ drivers/i3c/master/mipi-i3c-hci/pio.c  |   1 +
+ 5 files changed, 365 insertions(+), 90 deletions(-)
+
+
+Regards
+Adrian
 
 -- 
 linux-i3c mailing list
