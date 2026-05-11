@@ -4,64 +4,126 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 07A63CD37AC
-	for <linux-i3c@archiver.kernel.org>; Mon, 11 May 2026 03:39:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D645DCD37BE
+	for <linux-i3c@archiver.kernel.org>; Mon, 11 May 2026 19:04:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4CTP90J/hy44kpLFjjCH8yLUi89CgbwDXriswd/zuio=; b=Y9d5ZxVnLBRP4B
-	2G9ul3cF0ySQYklRf0iqjvK/Gf1II2dDOWbm5OVkkC4Y7TX20zqIPb1B8ZQ782cF1lpk4qy9e6kfO
-	n+htNocNfHTHSdP/M861No3o/dum5jgRBMXlCEd3Zakrh2Qg+Vkmf6imCIgAYhy75HithUE/6NXhC
-	vnVOtE1N5g6Vy/N/nZmNmlP2+GsgCkziFLefQEVljD65RrHODON6FmGJqelI19+jlLIhWiQJ95FEt
-	BHoD8tW/jAk+cWYnKLwrNqByf581beAZTibgvoJCPBsrftyqniNaJc9ry+Mzgj2iHOtfyXZwayd7f
-	aWdjjj3DlhiqycAAfDPA==;
+	List-Owner; bh=D5jPjsgVnsSpu/DBaPQrJ7TmBULSR8lKPUBWq3XpEd0=; b=yArJVceLKuCY2x
+	kKUVu4wSbP3pOk6zBaF9F3Vsbt0r6Kk6OkIhPSBO42aCbpAEzfHv1gdn5AzIuipN4KLDfZUebEajx
+	RZLpMLnQ14GceKYgkK9nnbwca/cSU/b0iUrDT00wFhxadBrOQRv/RhM6ol+4BKmTZohlgIJG23W5j
+	cuEI7cawSk5zJcBQvz8J2aMF9N8J3FjkARKr9BQxNusjfWFk+lK8rIJb/iZ7L8GmfS+30o3dwlPHs
+	q6zGo/g4emUNRfBozojpddkb4k7yH21gAXFZM7xkvgw/xTfXgABJi4440t6FyhyrI47dFZQCgopEr
+	qQ1xM6u4zvyaLvQosQVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMHTv-0000000CBtn-34WG;
-	Mon, 11 May 2026 03:38:59 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wMVvN-0000000EZQR-2ZqT;
+	Mon, 11 May 2026 19:04:17 +0000
+Received: from mail-swedencentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c202::7] helo=GVXPR05CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMHTs-0000000CBsX-3PyH
+	id 1wMVvL-0000000EZPl-17wu
 	for linux-i3c@lists.infradead.org;
-	Mon, 11 May 2026 03:38:57 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6B3D7440F7;
-	Mon, 11 May 2026 03:38:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2EE8FC2BCB8;
-	Mon, 11 May 2026 03:38:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778470735;
-	bh=3454wlriFBYA1PmIAk/pGLH1G5fs1iNZBJZwMOMScAc=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=ibSDnOdNyd2gnWmV+NNehOso6/U/BMH0iKY+X9yUw0n/PTQtILvN0NqQHiryo1Cef
-	 /QeS1g9DlGjUeUjVysGmmVVS0pDrGepP++sa/OugY9+ru2vQV7gK9OzoSm82NpjX9C
-	 Zg0KkhRQ5eciVL0vyNqKdlIWEHfNSnmevWqhkdbAh44hQlseQ7RAGAqAL15IMngXRr
-	 Jqkii7e3pbR5YBVwqEcXswaw7bn8clwTbpKsDMp7W4sne0mzRTe+H89CA+TYn98cwP
-	 1dYK+W27XFzuhtS1hqCVnXD098C5zxGBjwFdsyzjrqhsJrqoZ6tVVXVymtX9jHiiCn
-	 pEimzSsud7jfg==
-From: Jisheng Zhang <jszhang@kernel.org>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>
-Cc: linux-i3c@lists.infradead.org,
-	devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v2 3/3] i3c: dw: Add apb reset support
-Date: Mon, 11 May 2026 11:19:45 +0800
-Message-ID: <20260511031945.3228-4-jszhang@kernel.org>
-X-Mailer: git-send-email 2.51.0
-In-Reply-To: <20260511031945.3228-1-jszhang@kernel.org>
+	Mon, 11 May 2026 19:04:16 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=aaIei8H9UUDMNTX/qXJR+HZH5XacxtG6U0OEOoPrT3btF/mEscNckzC7im8ImEhEXQp/6yTRyBdhkfDQgjCcf+l+GcHdY9jK2mVDj5eOQveMBaol8x/FTXS8W7Q/tyWsgt9DAOype4Vm1m+fOaoCtSEeEZQP/lJO6+TKRzkQoV4MvevwyD4PO4Ik/xFC+WgT/Oc94CGPiRYTcx/jZrubncyxu4fJ28RGNHAxZRqXFUOq6dKS5SS+rlGElZyXnSiJTPIQf4m7Vs4HqoHq3pLw+mK3A77lDt6jxs9GuYnmm611I2JCzYjXNlpmEJrD1VXYGWqXqMHa88pGp926Z1smWw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=tYhc0hhXWYz+OnZqEB9PqxsEVTpD/mTJY7P1/0DZWqw=;
+ b=w9D5DkGhTz9YyjknmR5AeSFE1GIml3JW4DCRUveWsA/ltapjT8gtaSgxlraeDQuuslvChB3cYYLfj4KJ14SOGJ2dxmEwFQ7oUvZ0q0pUCWZzReaUpQSWuQQw1Wlq8YPOMG6n5R7hUxq4t+k6vqXPRDFE43txae9lft5g8o5vq5cbVf8vyQr/r0CXh9HBwblnScFhYHax1OlAC5ihnDsMf3Lm20umb5PTX6TXSeyvUy5t+fGTGf82o8Ih1cOCBbvBIsTQl7oM0QZ4T7zn3j2DjZ+AWYrPzbBDlLOnRhPXtD0/7fX5Q4bp4oS+/dPYtslsfYqoWKxJRJvH6MdKOE5CUA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=tYhc0hhXWYz+OnZqEB9PqxsEVTpD/mTJY7P1/0DZWqw=;
+ b=CQCsI5QGYD3Iz8P3u40+1umniRNkdqJtCXu6wBaZktW8vzQnRor+w80AfcWxcJ0aTiuhl18XanyJztTi1sRQvh67O+o6eRgrVBNEGeOr07uxYIHd/M4FAeqVGHH9c/CosXxRLcvtmiZnV2o9XK+co5juUptOCACuDjIUk5hht55rqMZTsr7H7u+yl4M/2kR4UQCGTfuR+6dslu0MnRLHqIuH+ZbuNu+iPdIUoQgXZ3Mh7e+e0rIuULprwzFVoTHHHHuLm6bQ4NTvD3N/C9j7J/U37D6AEao2/PDQhYL4NB+9LOffGYhd4F5ugRKY8dom+uj8JtUDbUBIq9TnwMiruw==
+Received: from PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8)
+ by DUZPR04MB9983.eurprd04.prod.outlook.com (2603:10a6:10:4d9::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9891.23; Mon, 11 May
+ 2026 19:04:07 +0000
+Received: from PA4PR04MB9366.eurprd04.prod.outlook.com
+ ([fe80::75e4:8143:ddbc:6588]) by PA4PR04MB9366.eurprd04.prod.outlook.com
+ ([fe80::75e4:8143:ddbc:6588%3]) with mapi id 15.20.9891.021; Mon, 11 May 2026
+ 19:04:07 +0000
+From: Frank Li <frank.li@nxp.com>
+To: Jisheng Zhang <jszhang@kernel.org>, Alexandre Belloni
+	<alexandre.belloni@bootlin.com>, Philipp Zabel <p.zabel@pengutronix.de>, Rob
+ Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor
+ Dooley <conor+dt@kernel.org>
+CC: "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
+	"devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+	"linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Subject: RE: [EXT] [PATCH v2 0/3] i3c: dw: Add apb reset support
+Thread-Topic: [EXT] [PATCH v2 0/3] i3c: dw: Add apb reset support
+Thread-Index: AQHc4PevgCkxendzF0W+79WngzG1f7YJLzaA
+Date: Mon, 11 May 2026 19:04:07 +0000
+Message-ID: <PA4PR04MB936627010F8C9C6ABACB1FF488382@PA4PR04MB9366.eurprd04.prod.outlook.com>
 References: <20260511031945.3228-1-jszhang@kernel.org>
+In-Reply-To: <20260511031945.3228-1-jszhang@kernel.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: PA4PR04MB9366:EE_|DUZPR04MB9983:EE_
+x-ms-office365-filtering-correlation-id: 6a6c2ec6-5206-494d-8594-08deaf9013c3
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|376014|19092799006|1800799024|366016|38070700021|11063799003|56012099003|18002099003|22082099003;
+x-microsoft-antispam-message-info: 5BcsKN8jK9LpR1b24B9U+Bq8uNSsB6l4RqUCXAogCKMD6/734uDddKxJTUs+u5Z9VaVWhBav7cN2HpwDWqZPaKCNm2QH45leNwFyeNjV9KWvNQDuOrajHfSKi8TNKLx/ZzN7icxL09EMxr+NmUHBbCgVR06uhFrYaYnkO/TKNRN9ZMlGTsBJdmRDZv1kSczL+YrDjgu3GbJCJv6qpQyMSzhr9KnW98c4IcLvI+2jwDktMpezoaO8BwwqLQPN9NhYHLObnEHTerRUWzE/5+ZKW+ful3HDAMIDsrcU1owW9jEs9ZGw5yAiDYOXFLT3UbMFTjJPGS649ShlUt9pfEjfWhqIbwyXTHcQcBPyr3sM9VKrplI1ADRaPNdifc2414pmLzGvom6bSJQScOlT3ZFudZOigXh6Xi4fhXHbRAKcJKnI9smVCrKPLvvsR2a/s7nqnUmb3AEhGnoEURdxgiwS6CL9oWa+e7No/uB3psjct1KwQJUBc+2jOao3eIV/DoByOzGF70+nn+vV6RJI3R2BFNkw6NSiRsRQ4IVIH9J23huImaWMG1Al2cEX5crig8kcLLSirvQ+4Z1s9dRWkmdJh5Go2mhVQWVd1Nykl1j7EMA1vA+yiHkg5U4yCIMjsltvrEHYn2FzqLTpdDU2CL4IhlB4Qsm57D47eWG0G9gfd2PaXf97i2wGF1QlzXTduG6fDyq3rTufgI3lB8DcjGiLmhu6IHZjrbIa52G25tgvKYb7xvpyxLYiEo40V9BwBydv
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(19092799006)(1800799024)(366016)(38070700021)(11063799003)(56012099003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?vDWhWiAhAff4Lwdsvy3G0weDCLJCKNHzjWGOTega4UUKt6PBFz9K1OF68fkV?=
+ =?us-ascii?Q?C+hl/uH1eHvPs77Z1TW5hK/wxqRZtxdkJW6LbVaKgFAvtKFa196WxHhc6nrd?=
+ =?us-ascii?Q?Ltob3bTq7CSPR3mK4RMxMXFya1l+h/iXqRztEiIoLLyWBGkN/iS/XSG4/3d0?=
+ =?us-ascii?Q?E0sKVmqU4qyJ7PaDtDOCuuLulLXXAnmuCEBIOHLChIkpTRoHOvZ3ZpH4Z83L?=
+ =?us-ascii?Q?TxonvSdsVa6EE6BT6MVGPWuEaDUdZV+MABnw1ZW6j/XuEP254XMkxe0FWrDw?=
+ =?us-ascii?Q?it0AyFDbwmyysx5spmvrPLjKNbkj4JYWc+t43TBIBRTEiH5zNWeHyPsp815A?=
+ =?us-ascii?Q?gYWME9JWC9XXYqNLysFo8uCxVHRaFr9XrIn7dOGrUniXlTrCL1QJp+j+k+zq?=
+ =?us-ascii?Q?gSR9qwoftj+epnaCL20mX7a68In+o0ofVEn0dpBfuCNgzMwXBzOpoZv+y+Cs?=
+ =?us-ascii?Q?TLhD6bGMb22eROF+gOAqBhS0O3i/C8cQBkHxEDWgtKkSnLvjTget8ZDgH9+7?=
+ =?us-ascii?Q?N9pzU7/eSUOkq63QW1sor3FTUOQ3tZn/rVmzuEVnDBzENW0MaqUgAI+RYpn+?=
+ =?us-ascii?Q?QDw019YvT/517C30eX3aN7ZEUm2Sdb3qZlD63yoH1aTKIxgDs3weZjtFvw1v?=
+ =?us-ascii?Q?CUm5NpfduMCN0hcoWx+r58Tc/5v4zYa/LwMAw8zRcHkRX0EyzlAppdcHkFXa?=
+ =?us-ascii?Q?5SLsl71h11eDJ3CEPPYoRjLM9HWqyTMktemP/LxzaAwxTzmOMV4N8iigbWQd?=
+ =?us-ascii?Q?xTlzb4gdpaBYSV+Je5I+uosF4tyhdTjuCqtxulpkOW3JZ48z8Bs778fjhinD?=
+ =?us-ascii?Q?uf70IcP5dBBZcqNP/7MO4kkijcVCx+KbBoOK7aRdkWTT8+Z/+uBcsf5HqiBZ?=
+ =?us-ascii?Q?rlllmSfBmJjCHw2y/Ky7dmZ1p30qtPjVBBs7laRCKJSRQq52bodey9b6k13O?=
+ =?us-ascii?Q?TlnGx7NzaGwm3pQLIhE06wBisMlMKz2o37ky2yX0wd455cpSWu1RROl7nq5a?=
+ =?us-ascii?Q?zk4wwe9XNqNz8p0LJKEK6JTN0bEWqgXv6gvHNHWjINP0fIX+ROb1xUeTXiXT?=
+ =?us-ascii?Q?bg5zk7boim3eCwltMd6FdZgmEMPh1lnHthQc8RPoU2fY/3oNHBLxrgIVTrdq?=
+ =?us-ascii?Q?XGP1sQhYWWDYAwOnxnoaMMyC0bn0CbeAAtWtY4t/0LPGsL4utuPlmlekImbG?=
+ =?us-ascii?Q?UHIp8Zd9NMajr4xqzO+skO8JBmxgJl7+WxLyrsgNvE++75AnLUFAP/qq6/fd?=
+ =?us-ascii?Q?K1NUPU0FmxGawefEkonXsJ7IY7Lw7t+pg/Pr/G1DwyuuFpmLRsVi5Fe5IlUQ?=
+ =?us-ascii?Q?ba+Mr2nQe8P6pdPsDATmuaPlJpR8hlSuUlp6YgvDgWKUEf5/+xzb590fUiwY?=
+ =?us-ascii?Q?o3OY9DgPP5yodAzG/sOOFgjZFB+q+Y29/m9uI6iqZ5uLls7NoW4HpWjwfKhD?=
+ =?us-ascii?Q?Kdhh4LgLYaMoY0OvAi4JfKOqV9c+lm6vbJwz/D6upeGZA+SKrLPsKD/ANcwx?=
+ =?us-ascii?Q?pWpK8inZaYGet8dPB08R4BwJ9ilHEob53Xn5Vs2kqt8Zpk8E4z9a3sP4HA05?=
+ =?us-ascii?Q?Bg+j0jFRNNmkRU6RC8FlsbSUD6tCsK/ecCBj43elH/eNnPvXrbsNjtgy9a/c?=
+ =?us-ascii?Q?XRup2uNy3Y2bUs8C2GeZSErs9y/0iVvftp7ybVeJNpTHEpUI30aHGPJuSNxf?=
+ =?us-ascii?Q?BiREwt25XBNvR3bTfUBLKKoPO6A0u6aUv1kge03rAN3l49HN?=
 MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: PA4PR04MB9366.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6a6c2ec6-5206-494d-8594-08deaf9013c3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 May 2026 19:04:07.4429
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: mA+rtAtv4eljxZjcBBrrjYFJu1RY32r1BxEYjMcghgvSS+glAp5JUZR2dRFw4yK5K4lGlMsZiewOQxHfVqNmHw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DUZPR04MB9983
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260510_203856_960389_F57C2415 
-X-CRM114-Status: GOOD (  10.40  )
+X-CRM114-CacheID: sfid-20260511_120415_326694_3B3859B0 
+X-CRM114-Status: GOOD (  13.15  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,60 +140,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add support of apb reset which is to reset the APB interface.
+> 
+> Add support of apb reset which is to reset the APB interface.
+> The first patch is to document the exisiting reset dt-binding. 2nd patch
+> is to add apb reset dt-binding. The last patch is to add apb reset
+> support.
+> 
+> Hi Frank,
+> 
+> comments to question "why not name the reset as "apb" instead of "apb_rst":
+> exisiting core reset is named as "core_rst", this is to align with its
+> style.
 
-Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
----
- drivers/i3c/master/dw-i3c-master.c | 7 +++++++
- drivers/i3c/master/dw-i3c-master.h | 1 +
- 2 files changed, 8 insertions(+)
+You add new bind at path 1. It is new reset name. All needn't "_rst" suffix. 
 
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index 655693a2187e..9de54d584bc3 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -1591,6 +1591,11 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
- 	if (IS_ERR(master->core_rst))
- 		return PTR_ERR(master->core_rst);
- 
-+	master->apb_rst = devm_reset_control_get_optional_exclusive_deasserted(&pdev->dev,
-+									       "apb_rst");
-+	if (IS_ERR(master->apb_rst))
-+		return PTR_ERR(master->apb_rst);
-+
- 	spin_lock_init(&master->xferqueue.lock);
- 	INIT_LIST_HEAD(&master->xferqueue.list);
- 
-@@ -1765,6 +1770,7 @@ static int __maybe_unused dw_i3c_master_runtime_suspend(struct device *dev)
- 	dw_i3c_master_disable(master);
- 
- 	reset_control_assert(master->core_rst);
-+	reset_control_assert(master->apb_rst);
- 	dw_i3c_master_disable_clks(master);
- 	pinctrl_pm_select_sleep_state(dev);
- 	return 0;
-@@ -1777,6 +1783,7 @@ static int __maybe_unused dw_i3c_master_runtime_resume(struct device *dev)
- 	pinctrl_pm_select_default_state(dev);
- 	dw_i3c_master_enable_clks(master);
- 	reset_control_deassert(master->core_rst);
-+	reset_control_deassert(master->apb_rst);
- 
- 	dw_i3c_master_set_intr_regs(master);
- 	dw_i3c_master_restore_timing_regs(master);
-diff --git a/drivers/i3c/master/dw-i3c-master.h b/drivers/i3c/master/dw-i3c-master.h
-index c5cb695c16ab..a4ba60043288 100644
---- a/drivers/i3c/master/dw-i3c-master.h
-+++ b/drivers/i3c/master/dw-i3c-master.h
-@@ -37,6 +37,7 @@ struct dw_i3c_master {
- 	struct dw_i3c_master_caps caps;
- 	void __iomem *regs;
- 	struct reset_control *core_rst;
-+	struct reset_control *apb_rst;
- 	struct clk *core_clk;
- 	struct clk *pclk;
- 	char version[5];
--- 
-2.53.0
+Frank
+
+> 
+> Thanks
+> 
+> Since v1:
+>   - add dt-binding
+> 
+> 
+> Jisheng Zhang (3):
+>   dt-bindings: i3c: dw: Describe core reset
+>   dt-bindings: i3c: dw: Add apb reset
+>   i3c: dw: Add apb reset support
+> 
+>  .../devicetree/bindings/i3c/snps,dw-i3c-master.yaml    | 10 ++++++++++
+>  drivers/i3c/master/dw-i3c-master.c                     |  7 +++++++
+>  drivers/i3c/master/dw-i3c-master.h                     |  1 +
+>  3 files changed, 18 insertions(+)
+> 
+> --
+> 2.53.0
 
 
 -- 
