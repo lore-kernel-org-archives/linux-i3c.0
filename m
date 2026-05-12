@@ -4,137 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4CF2CD4F24
-	for <linux-i3c@archiver.kernel.org>; Tue, 12 May 2026 16:17:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 564D9CD343F
+	for <linux-i3c@archiver.kernel.org>; Tue, 12 May 2026 16:23:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p6XF8GuxPu79Q+vDKXb3NjjVA+YzzyMN7BTU64YohVA=; b=ZFq+RC+9VUa85T
-	0AQn9kNu9JcvBXkPi8zDfWWcmCV4BL+Ya+cwBZGv6FVH9lXXRJ6qpmT9gbVd33AdGnsJa5yfAbfKD
-	QzjxUc1Moqn/PRpE6EEzHWg+IGzQF7VPDiuj5y5a/rH20Vqc4ZJ0QI14xy4jLptELYGrM2X27O4bV
-	SD/uKTE1UzkqvY4LxTpQnQ5wYyqZsRsckEm7yRxhzNBQXWZB58lUvtwxvX40UqC1fPLV4VJJAfJb2
-	wtjjGY2eyCc496g0edhVyJBt44eSrPxVBXPX+w3njIO0Li4sUtbuQaKvCb0cah/dV6zPuyMJFNl4W
-	u5S5RrHcsJ5oZY617I2Q==;
+	List-Owner; bh=DDHCd6iL29pMkI2BUoHe5GDDticzm7WDBt+uswWf634=; b=1E+b30LqVqCiGX
+	fy25dHtmU8V7HMtoGkVHSob9Gl2S9gHJDqo9EhvzYOxsHL6kpxlrfi4uV2JYV1crKcGHEwPr/15fE
+	UlagJBszAh5EAXGX4/H6WauB1MYvWMJ2/txvVf20sBREtgoTzF4HDvpwtuCjeOr30HZHRQn2YhWWm
+	jnQkTrVh8VQalnZY5nxUyXRIJXjiBNsv9k6vcSeWyrwm696+62BhqQPDXlS7YAMgnbU+BoXasnfpx
+	i+nrrz11GiABgdhRpFKDcgz6h2NHvjtpD6pNqsKMksF37uiHvuBCSY6Lde47sNAewVMRGfQDHWk74
+	1E8a4Fa6+cpsnpvA8FQA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMpnx-0000000HKiD-1xoP;
-	Tue, 12 May 2026 16:17:57 +0000
+	id 1wMptJ-0000000HLfE-19Uw;
+	Tue, 12 May 2026 16:23:31 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMpnw-0000000HKhF-05HS
+	id 1wMptH-0000000HLdl-2A49
 	for linux-i3c@bombadil.infradead.org;
-	Tue, 12 May 2026 16:17:56 +0000
+	Tue, 12 May 2026 16:23:27 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=MIME-Version:In-Reply-To:Content-Type:
 	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=WOoDBSUYfvHsHiqaknMyrLOH8by552gRWtOXav+4Zew=; b=pZShJAQ94fUSd21Jc8yofp+1ne
-	2bNgZdGf8GwR/JZRGe3/38pD/vRrxHeH2nTe9kUaz/bLKPoQ/XJgvtj7queif1l5930g/W1HBmTj3
-	pzHVY31zFs66Ym547x1P5/QTOgTyjA3cv6mvJ4FxtH+rBdooVKSSTR2wjID9s3GqEe8HpNFyP5H4c
-	dIjAdKv2R/pbj3w0e0f16EJlIEoWCGl8mZhSc5HHi5ye4PxtuMySSA0wuPDZ8VjkVHzUy9KXgp66S
-	guhgIGo4NJlusTCY65SHuT23nP1u7QBPfIpx9CzbYhNI0iiVVYehE0cR8zlt5asSyml/tMjlpMqqk
-	egb6G6cw==;
-Received: from mail-francecentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20a::7] helo=PA4PR04CU001.outbound.protection.outlook.com)
+	bh=vRFJ1Bt3OxpV4Ig1rVzcqnsLxwfWXmfdNnQIYAXyVhw=; b=CEfDfvM6oQNX3mBGuIPcFwvqux
+	6TAaSrC1Ikb4MojudYKDYliRfRcg0enA7ck0aoN7hQXk3/Ahcjo+KxVq0tAElyqpmPse0pN7ooNdq
+	iqjreBXoJ6TsaO6srCggdE3DVV9zoxvNMIaRz88FKIm/WaigPQ+FqURkdAezyVTprOEBVmTNSiP85
+	sKPrWbedk3osMsWryLnYSfWlEH1Yk/b2UqvRoTfUOWdH22sxhqb6keZkZDfv80vyt1e8R9kHE2r+P
+	q/wLkhONodM/zJyrjQP/7TCNGPA/cYoHELVR4N5eQ5bwvDoToqOft1fG6uYWPszx1rR8pFGzI3ZP6
+	t4GTvUqw==;
+Received: from mail-westeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c201::3] helo=AS8PR04CU009.outbound.protection.outlook.com)
 	by desiato.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMpfp-0000000FGpQ-0CDM
+	id 1wMpiC-0000000FHDP-2EsV
 	for linux-i3c@lists.infradead.org;
-	Tue, 12 May 2026 16:09:35 +0000
+	Tue, 12 May 2026 16:12:02 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=lyiolozE16FEui1QbH/BkYhBlQAQVvikbRFRxFJoxhXZ97rht0NzCMqfy/d1cqenls5BUl6XfGquGkDE3BU/2KJ9lr0QtDXnworNjUvNRhMk6HXfr2i1Svraq//UzwcwZd5Olk/17c/cyQrFV/ik/6TNUOgBNxSatjCwfXIvwa0vda6Q4wwPtlBeyeB+K1KenYT7JkT/T3UayxW+NVp38yZr2HZdqS7ELkcIOJxpH/Nqe4OHoslLeRLXQAEaVyzijFm+qTtK+P9hvk2HWJJc62EA6+EbewURAmvG6rwQICJIUvD3jwCZFhHL02MsyQiEr2cDg3mp45i1ASEZ1dgiYw==
+ b=FT36Uhp4RZpKGvT1XKMb31J4px7pIAuSgyy9wYaavyLshZdyaBYjWj8WRKTM9GfuwPLeVno/dtNkqU+7s6vOBCVV1GoH9rx2CLq7XOBUO4n+tnGxA2cKKEkDgVoat/xy9in9+Axmkzu/jy9GncXwVsu8q8gzBUALwYCkq/ZMFppWyrS3T9H8wzVMcNjhc+fI1z4ETYJicVpUavthRiuZw0Fqe58mHT8M6F3m0CE3UMgvx9vG5sY9NTEdSeLSdlFUpBXCdzgM75krXZ3EyA59U1RgX/mKRPspMjkiZgbm8iP+d2IHLvnhSQ8YkICKIvl5mkz1q/vK7aIvUXbBsTuEcQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=WOoDBSUYfvHsHiqaknMyrLOH8by552gRWtOXav+4Zew=;
- b=jgSRnmE7My8d0nuLZzTFwuX17GtjMNjOeIty/37IgHcMTihh60JZdgVoeYrR3pa1l0YdaAghaHGisE7bfMD2LJS3Tw5WLXP4bilSkPxrIq9b7I3t6qEMEwTyXyjgzdK6lHtnrKr+SEARSIzgVc+weX0rdkmKoC1TmeP/KcJDNmo0VyC5Jcz9zqtEpprOzuBpK18+EV2X9jMbKtqwhaGcaeOdqEpC1kf7TXQjk0GGoGEwTzKSdrIaRWxiC5IqiPcT2MqgzrYxkjIip3hxazLOP3vbxkqW0KpAc0SJOTt/99aOeTfOeidbliN0Fp/dYw6gH5WsKhzJ7DmQqNsYfucg1w==
+ bh=vRFJ1Bt3OxpV4Ig1rVzcqnsLxwfWXmfdNnQIYAXyVhw=;
+ b=flQ9J1gjZtm7uypupDIQAkcAPt5o/3gNwagVe/Y2Nuuy1jnwCKZx7D23pYAsiB1I6CGDK1FKihGhC9CR2Ki5NRznJ1dlHt3L00f20oktX2Yc/CVlO2P7OBh1tpzP8fOyl4wTSoOhlXIHM2feURMuf2CRslrbUkqoOwLTu6DyhZdsKbn45NS6EuKICpP2mtfmF+tmpEe+rmg18RJk2UYZrevYz5AP/pOStKfGXDHdNzgJ3wZ2kn0O9mz0eC7sOE8wnBUoM8ViQFIb09WxL97XlNVtnq7cosn5+EkYPmil/usBHA7zhE/Sn1Y24otfxEcc+f0K0OthViC1IaIkwkRmpw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WOoDBSUYfvHsHiqaknMyrLOH8by552gRWtOXav+4Zew=;
- b=lOEMoN8sxq7MF42zUXSN8trrduvRholle/yoy1h5fbYOwkn1FG8tTMmvuDDoKLQ7yOTmwR9OPDFcYNFCt2ZyeikLd8FuSzc3wCB099wKGR9Jv9sPlQb0VyBFo+hdISSvvBTc5dbqgVEJAw+umeWZZs80tZO778MIrw++z3UJ40Gy36dXBPxLp2ZzvEXaupHDjXCfilYlzVr3HYu6hLV59k4NnMp9EZi5FGGnxlDmyruAcTEaV/BPjvNApkkpNJnREE50VAOm5zR8D5PF4MP0UDo8I65ChN6LE0AUTI36fumlMW8g8gO9VVobwvzGlODdnADGDiBHsD/227d4wu9/cQ==
+ bh=vRFJ1Bt3OxpV4Ig1rVzcqnsLxwfWXmfdNnQIYAXyVhw=;
+ b=ZVQmY3m74k5qa9wgQSrHH90BBl3e7Iqr4IHVZkVbdczECDAoMn0XRfTwIDv+jmCEkJWyUTqyyFPiQqEhEIfie7zZTY+PSMybcUZECyorMorovBsq3CtOfHHtwaP+DjbTE6Zb1GqjhoY8aFzkFni7knkLzPr0jeFcNYOPoEKGRzI10ZErSu6FZ6sQpUxECY3XIJKOEmwfczflMu99GfqjhgiPV2qYGqtE8TwfLeVPAfO3jicB5a0ihYlc7TlMbxSYl915uRa5SPbzoVQVpuZvG8i8SyM6RzCyd8besSgE/CGSctbpaOi/2ci2MvUduMam00QrFBkJH92JVJxBnre1UQ==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8)
  by AM0PR04MB6866.eurprd04.prod.outlook.com (2603:10a6:208:183::16) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9913.11; Tue, 12 May
- 2026 16:09:28 +0000
+ 2026 16:11:57 +0000
 Received: from PA4PR04MB9366.eurprd04.prod.outlook.com
  ([fe80::75e4:8143:ddbc:6588]) by PA4PR04MB9366.eurprd04.prod.outlook.com
  ([fe80::75e4:8143:ddbc:6588%3]) with mapi id 15.20.9891.021; Tue, 12 May 2026
- 16:09:28 +0000
-Date: Tue, 12 May 2026 12:09:23 -0400
+ 16:11:56 +0000
+Date: Tue, 12 May 2026 12:11:51 -0400
 From: Frank Li <Frank.li@nxp.com>
 To: Adrian Hunter <adrian.hunter@intel.com>
 Cc: alexandre.belloni@bootlin.com, linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/8] i3c: master: Make hot-join workqueue freezable to
- block hot-join during suspend
-Message-ID: <agNQs5Qf4x0Diaj9@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH 2/8] i3c: master: Serialize i3c_set_hotjoin() with the
+ maintenance lock
+Message-ID: <agNRR1wHi_FhHf4u@lizhi-Precision-Tower-5810>
 References: <20260512121732.406009-1-adrian.hunter@intel.com>
- <20260512121732.406009-2-adrian.hunter@intel.com>
+ <20260512121732.406009-3-adrian.hunter@intel.com>
 Content-Disposition: inline
-In-Reply-To: <20260512121732.406009-2-adrian.hunter@intel.com>
-X-ClientProxiedBy: SA0PR11CA0001.namprd11.prod.outlook.com
- (2603:10b6:806:d3::6) To PA4PR04MB9366.eurprd04.prod.outlook.com
+In-Reply-To: <20260512121732.406009-3-adrian.hunter@intel.com>
+X-ClientProxiedBy: SA1P222CA0100.NAMP222.PROD.OUTLOOK.COM
+ (2603:10b6:806:35e::6) To PA4PR04MB9366.eurprd04.prod.outlook.com
  (2603:10a6:102:2a9::8)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|AM0PR04MB6866:EE_
-X-MS-Office365-Filtering-Correlation-Id: f2e20c50-bc38-41d7-fea3-08deb040d82e
+X-MS-Office365-Filtering-Correlation-Id: efbf2ddc-2b45-4451-2345-08deb0413083
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|19092799006|376014|1800799024|366016|38350700014|22082099003|18002099003|56012099003|3023799003|11063799003;
-X-Microsoft-Antispam-Message-Info: UgOw3bfVzNuZGHwqXtYaMHjaGOdHIVjwk/H+/t+CLdQ4ENTzsBN11d3tG3Z6Lajp8452i0xM1ynAHEHkCoClCVL1xbT6keq9PxeiSmrnRQkTPp496p9OWmNQ/NyqDA9IRm8qFPjppO2FgXZNt3BoFGyuiq1+iEqqLj+BhW4xfaW/WkFf2jigOBgRp1LnL1eYEEC4uSTgPlMs/unP8KTSvGdBLd1RCtymC+uQe3obFHrH7DcrMdzbDPmqG0f7M5QWRzI740NjnV2w9Sxe81ZHWMaGzWw5+mT0JIT7MvLgdyVbYUpKqBvZoj3Wf4PkLzuHyb0Ud8vikmnOuNYUgxyYqDQN35Yr1xL2mV5sW5ontSw4XnvXML3Ptl3F51+emoPPoOvuW5+PZYpWFiAv616g5psODjC3J3M875WnkiC2+GYVjZpYbkUNwGANGuCcQByq29GEqhu48cS+ztGX+wTFV8zG8nUQHkqpRhfadfnzGklP796eqnXUorowzjv2YYj5K2zeChb2yYF+rOBKSlM4j468ceB1OwftXSQ5J18jun8E12qEIH3tOjonEioKxoPwaWpSCF+OZe+JDGa3OqkUqt7uNn0crAi+Y3yMKcEk2g6SpDPX5e3R1V2pA50gZw2JV16ccpA9+/yUe//cFqsWSEnqzY8DRWCoDGLze+//U4ohiwdYn/zTiapuxXC7bFd8CG/6NFisI5gLSyiS+gS2BqxWMrDAklaZCAwRPmxH9f5/fG4iXom5dSefJTPQU+Uy
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(19092799006)(376014)(1800799024)(366016)(38350700014)(22082099003)(18002099003)(56012099003)(3023799003)(11063799003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|19092799006|376014|1800799024|366016|38350700014|22082099003|18002099003|56012099003|11063799003;
+X-Microsoft-Antispam-Message-Info: YurZsa8sY4PwKhjWTTkQmGg2svB69vUN2F+sCXMYeAQ+ACv3z8ScASoj+gZojmV4KOgdfw67t1FzjUrr+2bMqtX5/Ylty1bwH2ZdkSbywnNvRnjje/4pDSI/E/SjlRrsEy7Ue79gAkw7OdByCCb/XeBs7rFfQBy0/3DqPhtZX0/qKt/SXvWX88OhyyI5Fv8paYXK3Bln+p/g9d/lZUuwWlRVoBAdK+uw20vflSq9iR2aaWvpyGzcz4ljJmDHoVW8sG8X3pE7aKzsFxZ3bpHHKDVXyM7BpwEl1sPcBkbVCY7cHrvccQxIMqNnGzX3yDqsIY5p22pbJ5kprSWtGUuX6VbWNnNUfDNPwqkkBZ16AdPc2iA2V8dIFV0jLgm2g+zMdwQuOxIaUzFLUVyhuFkwJxCVlk99s9/XqO8mVIuI/EsRt5Yw57QRuUEYJwMqybHgQUBnoarCzHkLzKaZnf71V8WJtJi+FBkbr1u9reOz/xDNCwXR0s/ksFpLFthZ/po4Ua5mDwJ/rVQNSGd8fFX45y/DqbTMvMdzqXqdwnMTyTl/D6JTKzpAIo/NUbqFsu3cu2cEc68EozGqX1taVva+ddRC2hfjPLjxR9dWZ1HG2C6VUR+Wf6s8Bsps+sQK40ZjJHhfNwuc17anP9nwRLakAK7V1TPKyAYJZFZ+yBZPjipqu+hetqt377QU63uCTAycG28Gb3W0YDV6GWnmOgLJfANFS3IUPz8kkmmS2wZLSiifL9KZv85C4uN9J/z0bwww
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(19092799006)(376014)(1800799024)(366016)(38350700014)(22082099003)(18002099003)(56012099003)(11063799003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?ieW6ehHWnInYogc6iu17SSjvuJgdwSA85yeYpOR4soWPxbtFmVoC6yncL66q?=
- =?us-ascii?Q?ZLK+qPUCZy2luth/LjYTOl7JcvTnl50gwtSzGRHf1Rg5TsVwfJ0xPB7YwLD2?=
- =?us-ascii?Q?nxnRe9342bvauO9/8knvTQyvmTSSPGi4zHqafTQKHzY6DPXjRNp9g/4wyfXu?=
- =?us-ascii?Q?jrifonbfaJC3k6bCw8qcHzRaMc0ZrpZoA40a9FV68Nr+SlWbHzlpWCMkENKG?=
- =?us-ascii?Q?uIykbCxR5jbfHpaJ0H3ioyE+k+Rrxn8EKN5xHsXpOfRFd2ENJADDDP7EhACm?=
- =?us-ascii?Q?XZfUXaAiUObRthzC8XlIt9Ib+rKDz3rZAl3ly4+WmSHgZgIWammEN7JuguIh?=
- =?us-ascii?Q?9ok0kK3MUxB/pHHZ3YwcXr5pXioLWPEZ5QtIvRVPiH/4ZDXkTrtgVYRD7EI5?=
- =?us-ascii?Q?QauS9f8GPkWiyGxyNxae3mLU6gzjhrzsPAvwcUNZm7cMyjiR8eZKVcO6hNQP?=
- =?us-ascii?Q?MHOSPxYr+g5PmIVyj/kFlwesEW5STGDXTuQuGTbnZVXq64qZxEo4H9M7w0fZ?=
- =?us-ascii?Q?fL3VtuBCUVpj86rgsJX2I4G8CCjKoNnFFlT0dRsibgpJlCigMVAM7+KkPhl2?=
- =?us-ascii?Q?PS7u/Ikerkn/+nXi0WptmO/50AlWhK4POcRh9ycZXYdXptNfJzjkXfkTUW7/?=
- =?us-ascii?Q?wPYHyjR4qImunCYjhAbT1Vw4zObhGp8qjEhWyl+PDJFTA2uAgriMs9t0HS3A?=
- =?us-ascii?Q?Y7YYLlFP1HPaX3Kc572l41ojY4WUZCyz6xAL2V0nSd2FCLtimrVP1Dhj2Mtd?=
- =?us-ascii?Q?hQw54lNFU/U9bo6NIcaiWkZBFrW77lQ73Q/+ZODoMzcavmXpULq+d1u9iPic?=
- =?us-ascii?Q?kqhClbKL52y4GRY6F+yOYYRd0cH84zu+/jl88u5nZbn3N2Tg3Mo8hTGcvyCD?=
- =?us-ascii?Q?cf5bTbyoMzPGsnO+6nklWQjXy2VSAaoqwAqPEikqxNmm89dBewDb/gv8G8Yu?=
- =?us-ascii?Q?TjCgG94ypWp7+HPLpKBmrsTg8iwsnAFVCGhydwE2JmaiT0pSzYWoP9kwFOdp?=
- =?us-ascii?Q?T1OSKN2824+PjnU/7k3EuJzAMYKyQOckHdod2AlI3uDMcVG4hAlDwErRxwfu?=
- =?us-ascii?Q?0VfxhFKMi1oENz2F4e9WNlycIwS4+XiXE1by+0EEnSd5rKVpFLOL8rA6xEcv?=
- =?us-ascii?Q?IuWzlu80pxsWwYc4OxttwWlkGp5V7rev9UgUdW93uGTeMNjLwzz+tztY4xLw?=
- =?us-ascii?Q?P4Jh4zPXyWruuyiZN2zb0+Woco7pdZqr7lkbbDVmA9t1G9mFNQHLgOgFw+OV?=
- =?us-ascii?Q?9LlI0+3bYvaLSCpBMMfBx5FijKmR74ijqcO6iENvoP2cSe2Al1bneupx5/oV?=
- =?us-ascii?Q?J6Gs7Z2MuIlKeE1RWSJGT+JaoWO6hqGS+Z/F01YhSOsKJUl5QoIYx9d5nLT1?=
- =?us-ascii?Q?KIQeAYV+zrBJoMXbj+2cEk+MC03U9XDnCdjq3AzkCPq++uLjemL4EJSb9jlb?=
- =?us-ascii?Q?THA8XY/SCyDwE57pGybcl/xUfgv/l/hC+hSty32bO4ukFon6Kkpj02bk1CcL?=
- =?us-ascii?Q?2Fme2oDwavqtgR/U4IMKtCnmigcL72o1TV2A78LEYOExVChKZOni+ucC8/gf?=
- =?us-ascii?Q?QqlZ/bzI8hnBHJpYyN+QBXQt6a3imf9Xq+hYRwkv8T6uWXqhDrq2amwnV2nt?=
- =?us-ascii?Q?+XanCC3OvrAS4NodaY0lgGjdKEYOF5iX55SWNdjhYzkRgTa0tIZpyfomyS5p?=
- =?us-ascii?Q?Rj/hZUCGJls52DyZgz9ohEZZ2OOjyB0Km/AbNvak5Qn7VYWY?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?628lHHzyQ+fQTrkj90SzI4ZV25Pm3y91X0NLxdWlLQmIXvmwP8lAdz7tPb20?=
+ =?us-ascii?Q?bzhR++YI07rd+m0pdwkRbU/sJg5aIyct15berrWFs3Yspa6NBzFy+Y04aUfK?=
+ =?us-ascii?Q?7z+oeOPqoi6ZSN/z8as028Bl7fsnDm9sDZoLpWnwsIcrAHz3oyXB5NDnjMaJ?=
+ =?us-ascii?Q?UWCImnEMoVZhuhusaGECtHHMstGpb7VZu/kDyVkr3qqZ9nDnEfXx3ju2WR7x?=
+ =?us-ascii?Q?aBL/ingHYEZ6VC9Tg88iK0nduWT9EHsdXaWZgKj/OGbOwqY4bGTjTjfNEkCV?=
+ =?us-ascii?Q?tEXLXulTIZSgCMFY6HOviBviLTeo0yQ7CwWlVabXbu8LcMYdiqP4sEa2mIpv?=
+ =?us-ascii?Q?gFdFFOhnJvpR3i13GkGQTySltfSvxK/tpJVE8wrcAb69khCpAfIEQoNmWUAF?=
+ =?us-ascii?Q?RMSS6Ij/EVUqb0xMW9gh9zJ2cES5woVe3Nmrk83anvVzdpRItd2zgF7hdS6a?=
+ =?us-ascii?Q?VgL9I/wb7zTI9D+DKE197LdhO+ghwU1aTe14vre4nLMr63LfAmzaSMFcxoqS?=
+ =?us-ascii?Q?EnyXGLYqzp/JMbMxpLlyEFi15CimVbfEOpzHHGUxjO4S7rHrz3t6dngmLEgf?=
+ =?us-ascii?Q?N8PSoAF4/ssUQbmptC8AaYazHK08+nzSXwzgW8+GYUwUnNnC6IaaMaMK39XW?=
+ =?us-ascii?Q?FTuY50D2r8X4DWIbDpYpBOpVJz1iiqVlJSN2dNl9wo1vmtDCk6gG3xRAH3yR?=
+ =?us-ascii?Q?pAWBIs1pzIbblnObGA69PBcbl/i+7VWnByeTzkPN1uTvEGVUnxtDsVXbw6OA?=
+ =?us-ascii?Q?RUfNav1Ai3X4xI4eQz3qK6KZ6eQwwLc/+E5i9gsTexS89f+F0IfWxuJXr79V?=
+ =?us-ascii?Q?S13RtMDWRhSol+MSJUxdZHWUNl9rwSpv2ReArBO7BGaN90RZImRf8BmMgyYX?=
+ =?us-ascii?Q?/wRODb19w2JNgyT5KunIo6w9MqLiVbCBxFWNRS5mWtL5tdUistzIgDJhDHcg?=
+ =?us-ascii?Q?7lsbmjP45rTnAa/5Nsnh3HGuI0Q17iNqzh3CFuXgLFB0No1WS8zQUEDn0zDP?=
+ =?us-ascii?Q?+h8P/gP84b5hde3OMO0H2CghSHVlb4D6C9eOMp/vT7lK7SOnTLPk4mlnOR6U?=
+ =?us-ascii?Q?xsk1DyOcFt/tOL2zvqm1KfaY4QeHfRoXXdvWVWY1kc5FFRRaC4bu8AvpohYg?=
+ =?us-ascii?Q?XQcOL03NlWyw2kxtRj/rlgnwU3kxt56nc4P/ED9eV/pbx58QCfWsQZiib9xD?=
+ =?us-ascii?Q?SRKn4XCmGOoRy0INYaaWtsxcedSguukNXCM290mlN/MRw5FkWxdhGPUUJu7M?=
+ =?us-ascii?Q?AQqBhwaDZ4g5w8zFKx9KF2Z5F9tcRrzimIWzFBxkGRz+Isg77fyTPWPJoFAw?=
+ =?us-ascii?Q?/l1ejt8c7/VlC9Ne/suzitKOsT0TVNoU7rtoKgC9o/kt3fXuxqT+ChzdRAtn?=
+ =?us-ascii?Q?O9VFpfFlwEhbQo2bG0EAOy8h2zoA47RFCpepdGiCSo7CBrZXaNlIBbPoQy4C?=
+ =?us-ascii?Q?0Dom+HbgIJV88QcXHJSqHmjbKBxh0RAXsSIfzhB0LjctzfPk633YufZ3Icz3?=
+ =?us-ascii?Q?yBHR87jChgFxMY4zHHbJgX/U9N8Sek+nWBLlCrSuYZ7J9PwqQNRNCbGgzLEy?=
+ =?us-ascii?Q?HwqNvC3aXLVbkc6wRXyZjPYYx2sKSjjlHNjUCcp7YDiE5jVGoHVVXV/o9aEp?=
+ =?us-ascii?Q?O4o4wPUHAlvfIgVDBf7kMoSZcQO6w7sbHBG3niI0fQ6MvwVGLVe7ivjGoFM+?=
+ =?us-ascii?Q?1SAqWhkZ73g6qEGlpdwbDGrK6Q9b6jgDaVM9wjP+UdTT9HL9?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f2e20c50-bc38-41d7-fea3-08deb040d82e
+X-MS-Exchange-CrossTenant-Network-Message-Id: efbf2ddc-2b45-4451-2345-08deb0413083
 X-MS-Exchange-CrossTenant-AuthSource: PA4PR04MB9366.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 May 2026 16:09:28.6308
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 May 2026 16:11:56.8761
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: Xzty7nVYaW5THu5zSPggGEM18Ww6swKrzEIANHaaC3p2FdBz7pEqdKAFSD36K8FXxrcYcpjq9AnYT43pQqnShg==
+X-MS-Exchange-CrossTenant-UserPrincipalName: ztaTmxVRN9FtX2cvqgNBLXs0cM/vsp6IyrPgXT0OWmwo6CkF+6dJJaLoXdxeAT2vdeyp0rL7Rl8K3vRocdFjJA==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6866
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260512_170933_400168_282CBCB1 
-X-CRM114-Status: GOOD (  14.47  )
+X-CRM114-CacheID: sfid-20260512_171201_182204_0C9A2E60 
+X-CRM114-Status: GOOD (  19.78  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -151,37 +151,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, May 12, 2026 at 03:17:25PM +0300, Adrian Hunter wrote:
-> The I3C master workqueue (master->wq) is used to defer work that needs
-> thread context and the bus maintenance lock, most notably Hot Join
-> processing (which calls i3c_master_do_daa() to assign dynamic addresses
-> to newly joined devices).
+On Tue, May 12, 2026 at 03:17:26PM +0300, Adrian Hunter wrote:
+> i3c_set_hotjoin() dispatches the controller's enable_hotjoin() or
+> disable_hotjoin() op and updates master->hotjoin under
+> i3c_bus_normaluse_lock(). That lock is a read-side acquisition of
+> bus->lock (down_read()), so it does not exclude concurrent callers.
 >
-> Currently the workqueue keeps running across system suspend, which can
-> race with the suspend path:
+> The hotjoin sysfs attribute can be opened multiple times, and writes
+> through different opens are not serialized.  Two concurrent writers
+> to "hotjoin" can therefore race in i3c_set_hotjoin(), with the
+> controller op and the master->hotjoin store from one call interleaving
+> with the other.  The hardware enable/disable state and the value reported
+> by hotjoin_show() can end up out of sync.
 >
->  - do_daa() may execute after the controller has been suspended,
->    issuing bus transactions on a powered-down or otherwise unusable
->    controller.
->  - New I3C devices can be enumerated and added to the bus mid-suspend,
->    registering driver model objects at a point where the I3C subsystem
->    and its consumers are not prepared to handle them.
->
-> Mark the workqueue WQ_FREEZABLE so its workers are frozen for the
-> duration of system suspend/hibernate and resumed afterwards. This
-> naturally defers any pending or newly queued Hot Join work until the
-> system (and the controller) is fully resumed, closing both races
-> without adding explicit suspend/resume synchronization in the master
-> drivers.
->
-> Update the kerneldoc for struct i3c_master_controller::wq to reflect
-> that the workqueue is freezable.
+> Take i3c_bus_maintenance_lock() instead. Toggling Hot Join enable
+> changes bus state and is conceptually a maintenance operation, so the
+> write-side acquisition of bus->lock is the appropriate lock and
+> serializes concurrent callers against each other and against other
+> maintenance operations.
+
+It should be bug fix, add fix tag here.
+
+Frank
 >
 > Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 > ---
-
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
-
+>  drivers/i3c/master.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+>
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index ab11e2d79aab..38ffc8713167 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -649,7 +649,7 @@ static int i3c_set_hotjoin(struct i3c_master_controller *master, bool enable)
+>  			return ret;
+>  	}
+>
+> -	i3c_bus_normaluse_lock(&master->bus);
+> +	i3c_bus_maintenance_lock(&master->bus);
+>
+>  	if (enable)
+>  		ret = master->ops->enable_hotjoin(master);
+> @@ -659,7 +659,7 @@ static int i3c_set_hotjoin(struct i3c_master_controller *master, bool enable)
+>  	if (!ret)
+>  		master->hotjoin = enable;
+>
+> -	i3c_bus_normaluse_unlock(&master->bus);
+> +	i3c_bus_maintenance_unlock(&master->bus);
+>
+>  	if ((enable && ret) || (!enable && !ret) || master->rpm_ibi_allowed)
+>  		i3c_master_rpm_put(master);
+> --
+> 2.51.0
 >
 
 -- 
