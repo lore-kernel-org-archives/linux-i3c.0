@@ -4,72 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B58ACD4F39
-	for <linux-i3c@archiver.kernel.org>; Tue, 12 May 2026 12:18:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6F767CD4F21
+	for <linux-i3c@archiver.kernel.org>; Tue, 12 May 2026 12:18:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PCi5yubqO7I2t2Uzs6XlWHCWINDYfva/QaiXWTuQ2eQ=; b=akuxEB15juwziC
-	pOb3R2NMdeoAfKMExX9kC899BZ9I9P1RkULo4DCLd4uknQeq8ZAmFoYoTb5hqGRjMUY5s4ek38MKQ
-	3blDAcxGyTR7hvNbAQqiypuRykcOPTVwIdjZCMK5zJpcbBRH2igJ+5dmyWvidjECwoFGM7NNptCJ2
-	IReHxTBcpLj15XcToWqYrEE/6oFiI6ZW5Ryu415RF1yyGiz9pu8oS/gbDhih+kNVIPWJAtOI0lqXb
-	s/CrjmkjJwNm7RQqUIeE1f4vsdi8XU0b791sbdLYw1g4tJZ0uC8DCGgyLs3d+k2+OzLrC8B96XMQn
-	gKn1RZcL+4thzp1KmcAA==;
+	List-Owner; bh=UooQT0UuPQyOYFKiWUWJZAQjfE/pe4B0Ajgb22OVA+Y=; b=qJ15NbUd1/R2nf
+	S/iwyiUYjUguUzWQPzvrhBd/3v6XAS8lEuk9D7optYCM+zcuShkjboyKxuwl9APCXX/ZCd8eCFwa+
+	QRbB84LGpx7ZoDFf4F+jqt4hZxmGE6rL0NMYJcJMbKKSJBKg+lNv+4mcrzbaeVZqqaf62ElHx+zDd
+	3gtDVn3gqFfx5gGgrEEoKrguGLyXpNp8ZbHegSyRYX+ICQ5tO9LQuhTqJcG8ZW40j5nm9QHsn8BHw
+	yrv+OK0j+YWQwYuXV6/xWIQ854XuG2adzOtBcIL+ER+w7RH31mXPlQ7jtzqySW30G1HJzC0/87LO1
+	mPmJ3U7FBds1bCpMjQNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMm3k-0000000GeHh-0RtR;
-	Tue, 12 May 2026 12:18:00 +0000
+	id 1wMm3m-0000000GeIc-0hrN;
+	Tue, 12 May 2026 12:18:02 +0000
 Received: from mgamail.intel.com ([198.175.65.21])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMm3h-0000000GeBi-2gpp
+	id 1wMm3j-0000000GeBi-3sOD
 	for linux-i3c@lists.infradead.org;
-	Tue, 12 May 2026 12:17:58 +0000
+	Tue, 12 May 2026 12:18:01 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1778588278; x=1810124278;
+  t=1778588280; x=1810124280;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=6ur5JBBGYTamJIF8vkPB60mmBgivyajgrCceivY8PCY=;
-  b=WGrIcSFwXpivw2S2aDZvRlDF7hRs7C0iHLSGnML4sA9p/sxsT3WRHZeq
-   i8phGV+Rt2pHMzHicoqezCVv2ahGNo71oQrXdqEfDm+vWm07C9xxPCgI3
-   CDxuiITG5jH1UA32YfqZAmbSbqwwECifVM9Idf/y92sOCfJwV9MZ3rB3g
-   BZ8aR64mBb0Ed9yvSksqX+S5oSalFDVn5xuMxGEGfqPoa5sBpu+roLn6s
-   S6GmBng/Z/LGzbBF9b+TCCKvSgASM/TG9h3FtPefgBrVlrN/IX5HsccDC
-   mCVu9Cd4375ImEvndc4+ti4547z/cBwEJx7f2THTibzd4a6yhLzvI2DAH
-   A==;
-X-CSE-ConnectionGUID: DHB56gtyT9e/bHR+OtLLBw==
-X-CSE-MsgGUID: k4TYAV0+S1uU0tWM5s2ATw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11783"; a="79389509"
+  bh=dLRhDnWM4Di3J+tuOGINkNqL7RQRdQqfuYDocVs/c00=;
+  b=YFUVCla7dmHqM8tDhFBvoWPrPSlqx+fuJcmhtIisp/dVKcDY1qS/KW19
+   qQhQh+nsxQvXHrEJm5H6l4/ZYuFINP21oIMjzD62Qp5z6MJTea48K2u4R
+   rskRfEidno7EAEissAgQUwuTQofT15Q370pcv84IFgOBc27tjUdWXL9mN
+   F7TgG6iEMAaSB5LU0Zq44aCihXs7ngWoyEy7J/Tb5VUE0xO/oBjp7ZPP3
+   46JWgQ+RgRTA58D6V25zYYM6DxY1jFgUuq5ArGh9NJgYR0XXItBnnD43Z
+   VuCrp0h5NgPlJG1zzpgk4OpVd0HKlvYA1ENcXU1f/lQA77t/RzXGIjPXl
+   Q==;
+X-CSE-ConnectionGUID: htCz5NZoS6KcEIH+djFoJw==
+X-CSE-MsgGUID: OI3R+W7FTKmVRecYnXLhRQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11783"; a="79389514"
 X-IronPort-AV: E=Sophos;i="6.23,230,1770624000"; 
-   d="scan'208";a="79389509"
+   d="scan'208";a="79389514"
 Received: from orviesa003.jf.intel.com ([10.64.159.143])
-  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 May 2026 05:17:58 -0700
-X-CSE-ConnectionGUID: tKPH/cBBR2G0OCeCeBHZvg==
-X-CSE-MsgGUID: 6KYFDAKEQmiRMTLPTEefLQ==
+  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 May 2026 05:18:00 -0700
+X-CSE-ConnectionGUID: sZgNtBxVTbSkdpcwrS/srw==
+X-CSE-MsgGUID: J9NmNwtBSnmO3iywpDOEoQ==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.23,230,1770624000"; 
-   d="scan'208";a="241756157"
+   d="scan'208";a="241756165"
 Received: from amilburn-desk.amilburn-desk (HELO ahunter6-desk) ([10.245.245.121])
-  by ORVIESA003-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 May 2026 05:17:56 -0700
+  by ORVIESA003-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 May 2026 05:17:58 -0700
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 6/8] i3c: master: Defer new-device registration out of DAA caller context
-Date: Tue, 12 May 2026 15:17:30 +0300
-Message-ID: <20260512121732.406009-7-adrian.hunter@intel.com>
+Subject: [PATCH 7/8] i3c: master: Export i3c_master_enec_disec_locked()
+Date: Tue, 12 May 2026 15:17:31 +0300
+Message-ID: <20260512121732.406009-8-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260512121732.406009-1-adrian.hunter@intel.com>
 References: <20260512121732.406009-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260512_051757_728023_BB40AFF9 
-X-CRM114-Status: GOOD (  17.92  )
+X-CRM114-CacheID: sfid-20260512_051800_007949_B3C62BEC 
+X-CRM114-Status: GOOD (  15.30  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,124 +86,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Master drivers may invoke i3c_master_do_daa_ext() during resume to
-re-run Dynamic Address Assignment.  As well as assigning addresses to
-any newly arrived devices, this restores the dynamic address of devices
-that lost it across system suspend, so it has to run as part of the
-controller's resume path.
+The existing i3c_master_enec_locked() wrapper always treats a NACKed
+ENEC CCC as a failure (M2 error).  However, broadcasting ENEC to enable
+Hot-Join is legitimately useful even when no I3C devices are currently
+present on the bus, in which case the broadcast will be NACKed and
+should not be reported as an error.
 
-A side effect of i3c_master_do_daa_ext() today is that it also
-registers any newly discovered I3C devices with the driver model
-inline, via i3c_master_register_new_i3c_devs().  Doing that from the
-resume path is problematic: a hot-join-capable device may join the bus
-during this same DAA, and registering it immediately would push driver
-model work (probing, sysfs, etc.) into the controller's resume context,
-where the rest of the system is not yet fully resumed and the
-controller driver is still partway through its own resume sequence.
-
-Decouple discovery from registration: add a reg_work work item to
-struct i3c_master_controller and have i3c_master_do_daa_ext() queue it
-on master->wq (the freezable workqueue) instead of calling
-i3c_master_register_new_i3c_devs() directly.  The worker performs the
-registration only when the controller is not shutting_down, and is
-cancelled alongside hj_work in i3c_master_shutdown().  Because wq is
-freezable, any newly observed devices end up being registered after
-the system has finished resuming.
-
-i3c_master_register() also routes its initial post-bus-init registration
-through reg_work, using flush_work() to keep probe-time behavior
-synchronous.  This keeps a single registration code path and ensures the
-worker is the only writer of desc->dev.
+The underlying helper i3c_master_enec_disec_locked() already accepts a
+suppress_m2 flag that lets callers ignore such NACKs.  Expose it so that
+a subsequent patch enabling Hot-Join events can issue ENEC with M2
+suppression.
 
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 ---
- drivers/i3c/master.c       | 21 +++++++++++++++------
- include/linux/i3c/master.h |  6 ++++++
- 2 files changed, 21 insertions(+), 6 deletions(-)
+ drivers/i3c/master.c       | 27 ++++++++++++++++++++++++---
+ include/linux/i3c/master.h |  2 ++
+ 2 files changed, 26 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index a59c4b744b36..1eb157c8091d 100644
+index 1eb157c8091d..db46cc12c7db 100644
 --- a/drivers/i3c/master.c
 +++ b/drivers/i3c/master.c
-@@ -839,6 +839,7 @@ static void i3c_master_shutdown(struct i3c_master_controller *master)
- 	i3c_bus_maintenance_unlock(&master->bus);
- 
- 	cancel_work_sync(&master->hj_work);
-+	cancel_work_sync(&master->reg_work);
+@@ -1121,9 +1121,29 @@ int i3c_master_entdaa_locked(struct i3c_master_controller *master)
  }
+ EXPORT_SYMBOL_GPL(i3c_master_entdaa_locked);
  
- static void i3c_device_shutdown(struct device *dev)
-@@ -1838,6 +1839,16 @@ i3c_master_register_new_i3c_devs(struct i3c_master_controller *master)
- 	}
+-static int i3c_master_enec_disec_locked(struct i3c_master_controller *master,
+-					u8 addr, bool enable, u8 evts,
+-					bool suppress_m2)
++/**
++ * i3c_master_enec_disec_locked() - send an ENEC or DISEC CCC command
++ * @master: master used to send frames on the bus
++ * @addr: a valid I3C slave address or %I3C_BROADCAST_ADDR
++ * @enable: true to send ENEC, false to send DISEC
++ * @evts: events to enable or disable
++ * @suppress_m2: if true, treat an M2 (NACK) error from the CCC as success
++ *
++ * Send an ENEC or DISEC CCC command to enable or disable some or all events
++ * coming from a specific slave, or all devices if @addr is
++ * %I3C_BROADCAST_ADDR.
++ *
++ * When @suppress_m2 is true, a NACK of the broadcast (which can happen when
++ * no devices are present on the bus) is not reported as an error. This is
++ * useful for callers that want to configure event reporting unconditionally,
++ * regardless of whether any devices are currently on the bus.
++ *
++ * This function must be called with the bus lock held in write mode.
++ *
++ * Return: 0 in case of success, or a negative error code otherwise.
++ */
++int i3c_master_enec_disec_locked(struct i3c_master_controller *master, u8 addr,
++				 bool enable, u8 evts, bool suppress_m2)
+ {
+ 	struct i3c_ccc_events *events;
+ 	struct i3c_ccc_cmd_dest dest;
+@@ -1148,6 +1168,7 @@ static int i3c_master_enec_disec_locked(struct i3c_master_controller *master,
+ 
+ 	return ret;
  }
++EXPORT_SYMBOL_GPL(i3c_master_enec_disec_locked);
  
-+static void i3c_master_reg_work_fn(struct work_struct *work)
-+{
-+	struct i3c_master_controller *master = container_of(work, typeof(*master), reg_work);
-+
-+	i3c_bus_normaluse_lock(&master->bus);
-+	if (!master->shutting_down)
-+		i3c_master_register_new_i3c_devs(master);
-+	i3c_bus_normaluse_unlock(&master->bus);
-+}
-+
  /**
-  * i3c_master_do_daa_ext() - Dynamic Address Assignment (extended version)
-  * @master: controller
-@@ -1878,9 +1889,7 @@ int i3c_master_do_daa_ext(struct i3c_master_controller *master, bool rstdaa)
- 	if (ret)
- 		goto out;
- 
--	i3c_bus_normaluse_lock(&master->bus);
--	i3c_master_register_new_i3c_devs(master);
--	i3c_bus_normaluse_unlock(&master->bus);
-+	queue_work(master->wq, &master->reg_work);
- out:
- 	i3c_master_rpm_put(master);
- 
-@@ -3126,6 +3135,7 @@ int i3c_master_register(struct i3c_master_controller *master,
- 		goto err_put_dev;
- 	}
- 	INIT_WORK(&master->hj_work, i3c_master_hj_work_fn);
-+	INIT_WORK(&master->reg_work, i3c_master_reg_work_fn);
- 
- 	ret = i3c_master_bus_init(master);
- 	if (ret)
-@@ -3154,9 +3164,8 @@ int i3c_master_register(struct i3c_master_controller *master,
- 	 * register I3C devices discovered during the initial DAA.
- 	 */
- 	master->init_done = true;
--	i3c_bus_normaluse_lock(&master->bus);
--	i3c_master_register_new_i3c_devs(master);
--	i3c_bus_normaluse_unlock(&master->bus);
-+	queue_work(master->wq, &master->reg_work);
-+	flush_work(&master->reg_work);
- 
- 	if (master->ops->set_dev_nack_retry)
- 		device_create_file(&master->dev, &dev_attr_dev_nack_retry_count);
+  * i3c_master_disec_locked() - send a DISEC CCC command
 diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
-index 77e63082b06e..8cdd7be505d3 100644
+index 8cdd7be505d3..e2c831fb5354 100644
 --- a/include/linux/i3c/master.h
 +++ b/include/linux/i3c/master.h
-@@ -523,6 +523,11 @@ struct i3c_master_controller_ops {
-  *	be done from a sleep-able context
-  * @hj_work: work item used to run DAA after a Hot-Join event is detected.
-  *           Queued to @wq by i3c_master_queue_hotjoin()
-+ * @reg_work: work item used to register newly discovered I3C devices with
-+ *            the driver model. Queued to @wq by i3c_master_do_daa_ext() so
-+ *            that device registration is deferred out of the DAA caller's
-+ *            context (notably the resume path), and is skipped if the
-+ *            controller is shutting down
-  * @dev_nack_retry_count: retry count when slave device nack
-  *
-  * A &struct i3c_master_controller has to be registered to the I3C subsystem
-@@ -548,6 +553,7 @@ struct i3c_master_controller {
- 	struct i3c_bus bus;
- 	struct workqueue_struct *wq;
- 	struct work_struct hj_work;
-+	struct work_struct reg_work;
- 	unsigned int dev_nack_retry_count;
- };
+@@ -607,6 +607,8 @@ int i3c_master_disec_locked(struct i3c_master_controller *master, u8 addr,
+ 			    u8 evts);
+ int i3c_master_enec_locked(struct i3c_master_controller *master, u8 addr,
+ 			   u8 evts);
++int i3c_master_enec_disec_locked(struct i3c_master_controller *master, u8 addr,
++				 bool enable, u8 evts, bool suppress_m2);
+ int i3c_master_entdaa_locked(struct i3c_master_controller *master);
+ int i3c_master_defslvs_locked(struct i3c_master_controller *master);
  
 -- 
 2.51.0
