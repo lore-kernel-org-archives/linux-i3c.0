@@ -4,172 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66E4BCD4F21
-	for <linux-i3c@archiver.kernel.org>; Tue, 12 May 2026 12:35:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C441CD4F24
+	for <linux-i3c@archiver.kernel.org>; Tue, 12 May 2026 16:16:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:CC:
-	To:From:Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fqvIrSyXGh72o09myPJ/YbZB5kQ3t6OWE/oC6M0MfjM=; b=uI8pjinFz1WxKe
-	/B22aJ2GTI/ByXYDC9f6ZxW4SYupWbgxlUf3nqhzi0pXbRifkUrzofK7NhWdWZl5f30BlyYFwpt5U
-	nVBoir7X7Qqgdghi/QiMeLy3g7RFShLIeJyauPqjJyh6M8H8L5bHmRh69ncSO16Jk9ETsdb5v4u2f
-	Tsa0GrWFgkBliZgSDN1POvKLC0hRysRv2zZPy4sAjSRQg2JPQL/yiidQT1ia799VMlIhzNLNn7eEj
-	A0Er5ZdWm6N+WlLWHm+/2QQmGKaWEZRA2EfsiUyyXTQ0WZk3ZsF6r8WZVCTPVHNBR3Ai2erVcugXS
-	FjVjv5Y6jDw6NXVhAtGg==;
+	List-Owner; bh=NEbASVIU6V8nurFAxLDRdBVx1mqPEl56EG5/GqUHTL8=; b=cklWMV0cuyiZL8
+	H+0VkfaXEFIhE1z71D+WYkAgJ/nDlhFMW8NjUboYyZYdCdUv7k37Au/C/3WeaFsH9FI+2ihac0+ai
+	iQZfNC0NTEnV4+t01SGDzpAK5shE2XQ1wWvonqOpTUckAL5YIY7QukIbXgsGyum68lPLghVyHT+ug
+	Q7QoaWeqhp5bjWPbc/ryJA4UyJtcnT/E3GIQnlF7clq5VZz3PhuLAtYIiSKwP4smVsWdgkCrvbWoA
+	vOiI9/QhpLDvAC38gIk+2pgd2MGyLbI+tMzt4/fpAVeYzR4VHGbzPD5pKoS9djzpnDi70CiqWehGy
+	nfHRB01BxWnHed25LAaA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMmKh-0000000GgNB-32Au;
-	Tue, 12 May 2026 12:35:32 +0000
-Received: from mgamail.intel.com ([192.198.163.18])
+	id 1wMpmR-0000000HKUc-46c6;
+	Tue, 12 May 2026 16:16:23 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMmKf-0000000GgMZ-0QI0
+	id 1wMpmR-0000000HKUI-1X17
+	for linux-i3c@bombadil.infradead.org;
+	Tue, 12 May 2026 16:16:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=MIME-Version:In-Reply-To:Content-Type:
+	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=kAPLKuzILPgnapo0F0KEwJ2tOYk7at95j8qcLk1iSjE=; b=MPTE9fMGY8wWzR3rc2vandHDP1
+	w5tJVujYo1rJSw44raEL5wkW/9/ipSeForNvP0si1rRa0cZl7pBibDJ4wQMc2ocmTnn697PKhfA+L
+	zTiVsXcwKEJmelWTfFvJWOopGK/urYE+h3nH+B04L09O/XvH/z+NNyDdLG7klgBcvMsSg5xJ5n53C
+	c6Y5/JfP28Zy/jodzxkYd8CYdyEt2kag7poxI9xV8Ivi36D5A/zNd5vbzXreGHQPZdoGuMD5cDa5n
+	2M6laNcPNno6zHTDu20rxxUx6u8YHf3pHK5hW+F+DUyElcyDgkcuie+kj3/BmUPG5JpHc7q1C7Bgn
+	NM29zHTA==;
+Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
+	by desiato.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
+	id 1wMpmN-0000000FI4g-1ty9
 	for linux-i3c@lists.infradead.org;
-	Tue, 12 May 2026 12:35:30 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1778589329; x=1810125329;
-  h=message-id:date:subject:from:to:cc:references:
-   in-reply-to:content-transfer-encoding:mime-version;
-  bh=ub7580m6mKnWJMDxGkI9Da4uk8RHPCshEeH0w29jCuk=;
-  b=RYefMr8n6br2fy9WJtLqGb4QYNxcZ5Is56udVd6Mt3fz83xu6TpwNA5b
-   /BMBxN467zarw+KYOeYSh1kiz8sFaE7EI+/XkcZUnd+ZSygBvo3G8deKV
-   6ZISd9AU3RgXBOaIF9XuSik6aIlRAfrlOtiSv0XFQR4V1hNHzEM+mLN2B
-   XztWuGGHnSVpeqNLzTSCEYgq9R4irtwXmFhXKfXVyb+dmhNUndt5cay2L
-   KTmraW3NPyp/yfJX+2U4u9+rlHJzAp0nA3bEPMwkinXZOTChv3bjKN3yg
-   zxKjNtcA1rpug+0SZ9zKe7jiRSA/CTo4/vaP6jyD/q3Vdfb7cRSuUm8rh
-   g==;
-X-CSE-ConnectionGUID: RHDP6FPySoO3Er8dXYzJzg==
-X-CSE-MsgGUID: dS/4v+lhSkGTk/QqBuN73g==
-X-IronPort-AV: E=McAfee;i="6800,10657,11783"; a="78642672"
-X-IronPort-AV: E=Sophos;i="6.23,230,1770624000"; 
-   d="scan'208";a="78642672"
-Received: from fmviesa005.fm.intel.com ([10.60.135.145])
-  by fmvoesa112.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 May 2026 05:35:26 -0700
-X-CSE-ConnectionGUID: b4t5N+X8TaCqmcT6zV/A/g==
-X-CSE-MsgGUID: tYBMqWAsQyyRZ8ARWY9Qug==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.23,230,1770624000"; 
-   d="scan'208";a="242726858"
-Received: from orsmsx903.amr.corp.intel.com ([10.22.229.25])
-  by fmviesa005.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 May 2026 05:35:26 -0700
-Received: from ORSMSX902.amr.corp.intel.com (10.22.229.24) by
- ORSMSX903.amr.corp.intel.com (10.22.229.25) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.37; Tue, 12 May 2026 05:35:26 -0700
-Received: from ORSEDG903.ED.cps.intel.com (10.7.248.13) by
- ORSMSX902.amr.corp.intel.com (10.22.229.24) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.37 via Frontend Transport; Tue, 12 May 2026 05:35:26 -0700
-Received: from SN4PR0501CU005.outbound.protection.outlook.com (40.93.194.63)
- by edgegateway.intel.com (134.134.137.113) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.37; Tue, 12 May 2026 05:35:25 -0700
+	Tue, 12 May 2026 16:16:22 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=UXjd875bexWO9r5OAeXfq0vJSU0N4AjsBZ93UbFYabbJ6OBPzKBGzXdDMRipszHJgIrJ9aEBYm39lmdLAT7fNKuZjnO4z4MRkdFuuMRbNhxh4xNxV7iftyoRseb/r0+hMLtj/P/9P8gWrtZY2Zhtgj+KI4TweU/cUMjKKBFf07abEW5hg80LAr0tY4JCyKmcLRxR0+tvsbND7BVlXfXw8i5llmN/xJ087eNJ6NwTAd408XNVobKvQGnSNu+asLCTTHxhK7TMBRbMS2VJOuqY5ieEBFodMdGJ+sdubQokw37xYqprME65Uh3dulDdiyn20fEywybKSxUx48c8xYNIZA==
+ b=vq0wPMQ4A4f3DLPwEFjAOqvSg6QRJCeJGvQiFZRJ6AGY0LlAWhqBElyn6MUZrmXlQBXhLj9FDqDg//G3Y4smt6kYBnywf9WAZmWEnLq7bXEpKwsXohCNco1+fFTYhC+WUzBJ9jZNhCt4GPqNQ0D9c1BaeYm/oZfSsPgrWgbjUp7yvJsuSK9cHxSgWrQ8BBRW05YauhVyHZOVFdbe21D9B/akY9/Hb/s9tlwW3//kTUkTBza0809tMl93Htw0pvWa5PvFWTkX7LHnw9CdVea8oqKM5DnyKa0QZUXSndzq5tKxBJG6x09PgTmNVryxfcXMqJFu+xOh7YVZpek1ERTZew==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=ckBxmFj3Qj0gmMuUnDskjxIt51cbwrieIxOj6Zje3ng=;
- b=FP6QWJLAWDTddr+KQ81JetiQ3PmAtw5+XRL9ToI+fB2CLYW3QgVAiakUYPI9ylFk59GZYBEvB0PvfZAJvN4ma3Wyx2rKL1zDOHLiqxdsIFHZS/o5frdNJfqLicJ3NljkESw2lRUvSdgBCKU1ESeM6cFoVKN2Lkla+mtAE9TymLrySQrWnM8d/+yZ79SmimyKWR76wTZnitRL+fWvNwTbmuByrf18L0qjq38oBem2oG8hH9DzCIhylmvWKsOLG4o3lejCgxZmi1mdA8un/gFmdEWeec206609Yw9Y5k4abOgFewdb8Bsk3eSpt5af8rA5t71SV9I/ZMrE8AgsWKuqXw==
+ bh=kAPLKuzILPgnapo0F0KEwJ2tOYk7at95j8qcLk1iSjE=;
+ b=eEKVHcF7jYU+CoL76xJtQnsYeUisVYhW1jkotDg7zXY0yWcRxSn999/KUAL3T1ByupvpAU9BG0MQBeIu/d/8o4k7VCtMIgVCNIkCac8ya7IMyBBuulxqisArNE8ZPHzAN+jUFBK+R61EwQVUl7S9cYCYgEnKZ08bqCEyMuRbL5Qae4Hr5aoC1ZRaZWi1qT6k/J+iKbge/BNRoOY4SQMPGdPpW8DS6BiRZJ67kpFf6O/3IPQA4DRjcQBrG66vNp2JUPFenVcxqXcCiiFLmp5G9p65GH88IbAventABwrl8WMd2WrbVzFUL3POOazOtbZjSVYk4IaA12g4FvGDCTCMsw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
- dkim=pass header.d=intel.com; arc=none
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=kAPLKuzILPgnapo0F0KEwJ2tOYk7at95j8qcLk1iSjE=;
+ b=bBQUW9H4vsfWIF/2Pm7CeY/9qfZPlE8zSqQR2nRrTrWSIR4GB7cGSxQvhq3afMLBZU4SiD+2t3+J4QUAB/clVzBXw6Xt5eEw1AFLGIZQSYY1evzIN9fx8Nt2ZHm3GrEMcyAC6V7QyRZr9NR3OXFqHvYdYJK1/yOqAEbErtloGQdbK5mX4vn8fPYRpLA3i/IAERaF9x2Gdna7HnouBiSt+jF2lP2eqGE6NpdbDgpVdmM141DuuY7dBhyRHYxYHRJVraiEQuijkbgwzHB/y5pXWOWURBKPqlSKEA1nEeCLCcRty4/hwARqoUTN1SYInfUPRjSzb72A8/ZML/W7Jyy3PQ==
 Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=intel.com;
-Received: from IA1PR11MB7198.namprd11.prod.outlook.com (2603:10b6:208:419::15)
- by PH7PR11MB7593.namprd11.prod.outlook.com (2603:10b6:510:27f::9) with
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8)
+ by DU4PR04MB11813.eurprd04.prod.outlook.com (2603:10a6:10:624::9) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9891.23; Tue, 12 May
- 2026 12:35:22 +0000
-Received: from IA1PR11MB7198.namprd11.prod.outlook.com
- ([fe80::2c4e:e92a:4fa:a456]) by IA1PR11MB7198.namprd11.prod.outlook.com
- ([fe80::2c4e:e92a:4fa:a456%3]) with mapi id 15.20.9891.021; Tue, 12 May 2026
- 12:35:22 +0000
-Message-ID: <d803f8da-edaf-458f-a059-8df3ffe1316f@intel.com>
-Date: Tue, 12 May 2026 15:35:18 +0300
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V3 00/16] i3c: mipi-i3c-hci: DMA abort, recovery and
- related improvements
-From: Adrian Hunter <adrian.hunter@intel.com>
-To: <alexandre.belloni@bootlin.com>
-CC: <Frank.Li@nxp.com>, <linux-i3c@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>
-References: <20260504113352.38490-1-adrian.hunter@intel.com>
-Content-Language: en-US
-Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park,
- 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 -
- 4, Domiciled in Helsinki
-In-Reply-To: <20260504113352.38490-1-adrian.hunter@intel.com>
-X-ClientProxiedBy: DU7P190CA0026.EURP190.PROD.OUTLOOK.COM
- (2603:10a6:10:550::10) To IA1PR11MB7198.namprd11.prod.outlook.com
- (2603:10b6:208:419::15)
+ 2026 16:16:13 +0000
+Received: from PA4PR04MB9366.eurprd04.prod.outlook.com
+ ([fe80::75e4:8143:ddbc:6588]) by PA4PR04MB9366.eurprd04.prod.outlook.com
+ ([fe80::75e4:8143:ddbc:6588%3]) with mapi id 15.20.9891.021; Tue, 12 May 2026
+ 16:16:13 +0000
+Date: Tue, 12 May 2026 12:16:08 -0400
+From: Frank Li <Frank.li@nxp.com>
+To: Adrian Hunter <adrian.hunter@intel.com>
+Cc: alexandre.belloni@bootlin.com, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 3/8] i3c: master: Consolidate Hot-Join DAA work in the
+ core
+Message-ID: <agNSSNaIf5GI_yoP@lizhi-Precision-Tower-5810>
+References: <20260512121732.406009-1-adrian.hunter@intel.com>
+ <20260512121732.406009-4-adrian.hunter@intel.com>
+Content-Disposition: inline
+In-Reply-To: <20260512121732.406009-4-adrian.hunter@intel.com>
+X-ClientProxiedBy: SN7PR04CA0237.namprd04.prod.outlook.com
+ (2603:10b6:806:127::32) To PA4PR04MB9366.eurprd04.prod.outlook.com
+ (2603:10a6:102:2a9::8)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: IA1PR11MB7198:EE_|PH7PR11MB7593:EE_
-X-MS-Office365-Filtering-Correlation-Id: 39d8e352-f674-45dc-47c8-08deb022ef21
+X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|DU4PR04MB11813:EE_
+X-MS-Office365-Filtering-Correlation-Id: 8c16e214-d54c-4744-f14d-08deb041c97b
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014|56012099003|18002099003|22082099003|3023799003|11063799003;
-X-Microsoft-Antispam-Message-Info: txAjNhEsT17cbfiL1ZDwUUS//AVncC7SJLxlTLQ/s2T1I+tBg+wLjfvuW4PE1LN1epY73tgHQpyKCW0ROg3yMNIRv56Mz5MyGDaDh4vKm2/gzzd2HqHQisQKRF3Z7olsVwqa1U27DUXAWc3erOl97UYyS/0d/m1lPjP5/FXBpGjfzAPM771pcQ+mbqH/Orm1uGSj5pEeg32RZkf5W81zdYtsJpKsPh+zQY3fpeeJgjk9DC4HxUm46vXLwFv+UMaWksd94gO+yWtVPDkcfZ3cGo5mRh/oPbXTJcNGBLWK1P/QzICC+U23ogEH0VBs/VW1msnuEewR76gr//C8rh2CZw5AbxH0NeOABkNVqAANddBxOFSR+Wtq5Mja1GF9/fL5/SI9Ty92ILC9QxpHD3GX+r6eCJxNx9F8HWt8VILg31Baq7oycrhmuANzpCwp7c6UuY3Uu4x5SlPS4LyUjpoGowr5M4N1l85n75Dbyp80leNam2jwzPqwNxfOYivVagBdw4UJc0XMXQfATUr+KdueDsTJGgEACWX1sqnefxAkoa5eigPKqNwFX0dUr6kplnBsBUQSqP5y98HkIbA86UvhFesfy2B55Z3OQwfv0HaNdcPu1+FK2nOktiKi6z5+n2i83ln6+0kp83ET45aoDB+14Gx13vjRJ9+bO9JIrMswqvYUISf28XfJw2z7vZJdX2Uc
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR11MB7198.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(56012099003)(18002099003)(22082099003)(3023799003)(11063799003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|376014|52116014|366016|1800799024|38350700014|11063799003|56012099003|22082099003|18002099003;
+X-Microsoft-Antispam-Message-Info: +3RMdf2jeR70pnJh8vvLaMAoYwsgiZWe1WB7qNT1Ha0ndvpGcGWMzfheIvyiTYTESr+WUP10/C4+g8G/U4Tg21elJJacAaGK62Yk76EBWl4547x61Qzwruy0lS25KXiaIj6geoK/3vi43fpD6vcUptiPm6ECJo4Yj/H+PSPjbvgcJG22QHTrdxlDfyy0FlRRB7ZznVz6UogFLC1q1X7+aFp/yc9w2+emeGNMI6UIERD7d1FTIqBZCCQcFZn+QZKiA2IAkRrlyb9K5O8KNHMqj4yiXS0D3VZzPa+ayU4ZQU8bcEM/z6LSyW1BSKQF9fdM1UaZFq/bFCMjJqFrI5AxU1GZjZdkSiw9lp1a3FZ9ps73Tdau7ILhG+36ckY4DnHjGzw48ofcnu3S2qtl4+HVC1fsFrCzt05mYHO8oyYWFJBKoDCb2AtT1ihkkhYP0gHGO/GWrTpCdvvgO6pARIYY8YPY/s4HMfLPv7UTutV8ARj8OG5TmpYyu5K/htkjZsasZnHsO5ZpyhyJgVO2RqhhAycM3bFHJgVlw8koC8A/AxtkM2erHhhG4f7msu0q2Ke2pBvNJyaS53uJkvLY0SJf+SsXtFXhiA98qnO7jS0HnTQby7J0JWIqzOIVxglV/aepCX4RsJlpJ/tur3vmZQ3NhF4ewsYy9jtq9pv8epopWYO8Alh4REW8YkfdwQ5yWykhCN/PExnjL03uYBLqZ1FQ96gxsPybZmUpOBbRU2y8taFy7u5OCYdomL37qF1P4WR1
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(376014)(52116014)(366016)(1800799024)(38350700014)(11063799003)(56012099003)(22082099003)(18002099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?WHVrV3VObVJZVzFKWDZwby9kWEhGb0xySFg3NlBsdUIzMW9YTkdTVmNuMkZQ?=
- =?utf-8?B?VGNxQXVCU2hSdFJ0TG0rdU44Z0Q4Ymw4dGErcjNBaWFBbVc2M1hlMmlCd0FI?=
- =?utf-8?B?d2U5NTMwbWhlOGQwMVNoZlZRYlFIUkVBSTN1SCsyQ0pOMU80VE1qT21nT1ZX?=
- =?utf-8?B?b0l4d1ViL3kyaENuZTNSa2Z3RlA4Snh6RytITjJOY3lTd2U0T3hEdVdHZ3Jo?=
- =?utf-8?B?RmtUSXcyOGNieWt6OEpoZldQaU9tTW9EYk82MlZxUjVreFhSZnBqWTZHcGJY?=
- =?utf-8?B?aWlZK3pCTEZaRFc0ZEJwTXRKNHdTUTJxVmx6STF5alhFdXNkT0pWT29kYmRj?=
- =?utf-8?B?UWZ5UFhzZ1c5M2o4NnNtVFRVM05kTXVKTUp3K3h0dDVWRDZCRitsTENEL2h0?=
- =?utf-8?B?YThRVzN6czJ3MnMxTFhtZDNTMkZydlRXVHA2MFZEYzdCM1dMYnJMem14cGJW?=
- =?utf-8?B?L3FuOEFQYzk4QnVJWmV1QUpjVnNzYmtqYnVjUU5xMlN3YkRyZmdXQlY5aTBC?=
- =?utf-8?B?UHM0azZOQXFPanlCVDd3azdCN0x0WnpkQ1VueEhpbmduVzI4S0RYb2RIbUs4?=
- =?utf-8?B?c3BmM2FnMWQwRS84ay8yTm9RUS80eG40c0Y2bTJhaC9BdkdENWVISTdYRUtY?=
- =?utf-8?B?dWoyYWJUN043WkZWUU1MckZYeDVGTXZ2bUE1T0xDM2h1Z21KQnU1ZWU5eGRr?=
- =?utf-8?B?aUtwaFFoQzJXYXBaZkFsOFJiVzRidWRxMUYwd1dBeHZWNHBlaXJwVm1tcFNK?=
- =?utf-8?B?aWJzaVRMOXRNN2tDZ1J3S2wyMFNETHJoK0pFVmhxd3N1bzl6SzNTcTJ6Qzgv?=
- =?utf-8?B?QW1BNzE2Vk1reHc0VmxPRFRENjBpMngwaWpLUDZOVW50Yk00WnRvYjh1b1NR?=
- =?utf-8?B?THVZY0Vld1lkODUvVW1EdThNM09HOU9RRVRiK2tTQ0FIeWtGWnJOYkZhY2tt?=
- =?utf-8?B?RTQ4bk5yclgvR05NK2drcjhPTDFKUVA2NmNhZkdJYUtBZXBTY1RYWEpYTGVO?=
- =?utf-8?B?WTR2N2paL3lIOXlBY3E5U3dTSWRRb0ViazROM3BNc3hxRXZvbFYvNkdQUE9J?=
- =?utf-8?B?c25Eamx3TDNYejUwSm05N0JWa21vQWFxMXVNMUdLVGhlamc2S1V5MDJyTWYz?=
- =?utf-8?B?bkdYOWE0d0QrRzExeTJoYnF0Y0RzS1J2UzQvTkJNOVdMK3d0Mnhtd1hRMmtk?=
- =?utf-8?B?cDNveThpUEFaeE1JN0VUaUFFRnV2TWpLdFpqWDF5dDRjTlVwNDhzcjBBZG8x?=
- =?utf-8?B?dzhEbHh2UWNaY0ZUWjlmR2hSQWEvbjVxNDFCTzdpbG5ibzZUOHhBUi9nOUxj?=
- =?utf-8?B?U3RKNGpWQ09pVExkWnpZQ2Jkb2pqcGFua2Y0T0lwMUlHVUc2QjZxdm1hVzc0?=
- =?utf-8?B?NUFUdGFIUkd4Nyt1UVJER1hiL1hqMjI3QVJaaHpQSzBONnNVa0ZvNEluT0dN?=
- =?utf-8?B?QmFzeFZqdEVtZXUyZXZEWFZLbkN1aXRBZUt5ZDBWOHpNMiszQjFwTU9ZM1E2?=
- =?utf-8?B?WGcycnhDVmpZNHVLeHBoNFFhQjNmLzE3Z0xxOWtIbUFTUVljYVo3NUV4YW53?=
- =?utf-8?B?MEcvRXJvQTltTEpwOS9TZ0l6WUhzVDFEVG4yaEtpdlJYbDh3dUpSaEJtOXpY?=
- =?utf-8?B?V29LTFhzL3Z4a1kvS0NFb1Byc3Z1Y1ExSGc0S0s1ekJaYisxazl1Rlh1NVlR?=
- =?utf-8?B?blhPQUtIQjlzaXkzZUFXQVRlTUl0RUpkU1diOW50azZjbUdlQVQyR1A5SlF6?=
- =?utf-8?B?aG9WN1VzbDU4eld5NGlMK0Ixd0VubTJzbHgyTlZlcS9uSzhZTVhORnpKbWN1?=
- =?utf-8?B?UzZ6UytzclZ5cC9MK3VUWlg4WU1XT3Zubkd5UXlTNmZVSFlFU1BEZnlTU3Jy?=
- =?utf-8?B?WHZhQTBjeTFOMEo4YU9mbTUvVlVFUU5KQXhUSGVEbnNWR1FMcDd6YmlZc1pH?=
- =?utf-8?B?bFM0dCsxaUc1YXpkNytERFZEOE1ueGsrTTNmSi9RRTkvSDJONTdjeUkyM1NN?=
- =?utf-8?B?NkJxT3VRSFBCRDhGSlRKUkpWTHA1SlVZdC91aXV3QTN2V3dUZTAvcVFhU29L?=
- =?utf-8?B?NGVEMmV3T21jcTQ4Q2M3MXNESDJwOXlEZTk4OGFtcm56S1JQUVk2cGluOWhy?=
- =?utf-8?B?ZncyUVNwRStVTHBMY3YrekxjbzI4MlQvbU1yWDdoMVgwbTJ4NVQ2YjhpZUN3?=
- =?utf-8?B?Q1BCRGxvT0VwRDZRYTdEaGpzUDhKR2hiazFJM3RKY3BjVjFjNE1kM1JhTlJN?=
- =?utf-8?B?alI1eUdhUVVDU0hiakFWMWxaT0FrUHB4Q2ZTMGEvalhVZyttZ2U1eGlweCtG?=
- =?utf-8?B?NkdTWkIwbFE3dks4cGY5Tzk4UkFTTkJpWWlxWllRYVJjZzJDUFR0Ylk5TWw1?=
- =?utf-8?Q?qW3FeGJrGE6VdQYc=3D?=
-X-Exchange-RoutingPolicyChecked: NIBSpDtnnfnxwBqXAgRTRBtm4QKRKyWGdbVuPUXXRH51zigmgQwURHKExa6I3JdiBP49qY5VwojfFN2GPPVK2uDJS5/MH9E8l9mTAFi+ys+5DWRKD2D4/Jt4UsCWUc1ftSazVgCGgxI0D/T0gIg6smhJ7Ld9+I5CVTlAaVy7eBdj2/Tobq1rJMnQgIy8W5SAFHZUUTk2ypqTXYNo2snnq0o/fWyfoH0XwycjmTCuWJ7yw7yDllBxJ6oaFtzDoBLUGad30cFI6kxw90L93ySvA8i2RPo+tFAzY/s+0PDpV2KWM5mF4vM5DHno3mrC22VGc4GtFATMdn/mwmP3io6NCw==
-X-MS-Exchange-CrossTenant-Network-Message-Id: 39d8e352-f674-45dc-47c8-08deb022ef21
-X-MS-Exchange-CrossTenant-AuthSource: IA1PR11MB7198.namprd11.prod.outlook.com
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?HmLHyEIVrHhTcYEmyTbkg0BQ/7JFSAXcY1Ami3OVMC23CGEt5wF7F3cqvLlJ?=
+ =?us-ascii?Q?GBofYH6hzdENh1JW1X6xUzcklzovhxY66ECtgvY0awdBmyYaHr4qKeN/H1R1?=
+ =?us-ascii?Q?9c2y9HXxh8ibxhSl2KOEWvZqj0Ih4bR8dwlGK4USQd1o98qjvpCERNdycPxe?=
+ =?us-ascii?Q?7x9w6Plr2aMcu2ZXwokqrwgz6N/z9QYP9CGdoDl9yHBsWfeUpFuALPClVGza?=
+ =?us-ascii?Q?53TBjIwBdz/QklUnTLXbKpjpk2Vfwrr92TffSygem1yMxTlGe20Zvi77Hbk6?=
+ =?us-ascii?Q?R6CayxbGUFO03+Wae/BdMxprs2viiZHg0udoYp0uMHtkKZdD9bmtcCJtpFEi?=
+ =?us-ascii?Q?g0saP3YTCjUaEsdPALA92KEvtcgXcwjxMWkkVwGy8hwdmuNlZhXrh3SixDQJ?=
+ =?us-ascii?Q?qqwuYg67yF8jHRixKXXLWBfHNW2Os698hBPCkEfisEWeYYj7/OAv73r4pk41?=
+ =?us-ascii?Q?jMRgFOYRnPzg6U3estSDIvlnG0VdbTbhRPBD3rhDwiBW/jfX1k/XfS/8ObNP?=
+ =?us-ascii?Q?/fklW+/TSqAkj2Nvx7g3lLIbatDgIvFwFKaXG7DIC81VmJzR5O+RQIhVDLfo?=
+ =?us-ascii?Q?0PyUJhyDsOVm7UWjPS89giVT/KIYl6nGf7IrGuwJPJF292SpvPLLM2pQcskE?=
+ =?us-ascii?Q?/G6WByZ/C5JH4GHtzDFh7PVOTwaljieXPn/333q8LS3CiNYTu/t7VCWG5ReB?=
+ =?us-ascii?Q?u5fLwX/K66aAEqNcrszTW/8Se4Xt9PWAh4Z3bsG9fBj+NqFt5el43yi5tlLG?=
+ =?us-ascii?Q?/sBGHbY9Ra5peBvZcmhxC8STADAZrjWRUbXeMLtkpKivKkI9OOTd0LEI293A?=
+ =?us-ascii?Q?CCX6gT6QgKez3tCRm6Si5MkiGIc7XmyYbNh6H8WdbZEfs/2cuTj+m8YuRLHK?=
+ =?us-ascii?Q?v9M0aLO0c/1ey2eVPRGV7EU0hngxs+URJcd0/XIZUN2vJlkCLC2JNqMjZ0Oq?=
+ =?us-ascii?Q?Grywggc1othVADBXjJnt1e5bYPvTXzYiAUHyOo5iM2gA5W5md0vqCwnEQOLg?=
+ =?us-ascii?Q?h27tR+a581kDob4mwXDRPyGaExq/sWpeih4ZCm0B2RiAgigk5APTmLec76H7?=
+ =?us-ascii?Q?X3uAhvRFhy2mIqYj1ky3vckgUDlxtGnEKU7FPYzmPDpH+fYDT5HEG2JqnSDv?=
+ =?us-ascii?Q?977cagaNzDl84oVscf4MUEsSYCcwZd10R0Uxgmbu5rvEY+EsiuWHXCvI6exZ?=
+ =?us-ascii?Q?HAZVgcTfEBMcIL1bHTAOK2KInCsN9nWm541vUTLpjQxPcE/oI1fJdJfI2Syj?=
+ =?us-ascii?Q?n+KcP9DfuEqeAhBgn76zBYIg/HWoGnYFshV7MzaJgz63iRi6OBmCbHvQbJcm?=
+ =?us-ascii?Q?63s+kb018fZpOqk5YE9N6PaQ92eEtQUqhP+HjgE07A2h8pnUJ/zUFuZXP66P?=
+ =?us-ascii?Q?RKquSS3ZgZtEuW95tZjZrvx7VhtoXkfDoTm0cWMKDHEJdVB+51lMupltJk5N?=
+ =?us-ascii?Q?cmNKfVHo75xb5NqcZRCrVK0u5VSd/JSmqXnbYK/bndCZXb9uE7A7JbXMKG+5?=
+ =?us-ascii?Q?2C74yqqjaRyR8LGDYX+HD4aygN9PNCipFRgBAgQI4zL3xBl3kEJnXzkFwO5J?=
+ =?us-ascii?Q?9HSwvHsjtj8XLfPCzBQIgxcC9jsFpLUkgJZbI6krfTmWikrBs0umAoWLlk+s?=
+ =?us-ascii?Q?9rVurLe1UMzdhvP8n9o7cMBgxlOjg2MumiZPucjHoFDlH9sKWmtSuCh/OFT6?=
+ =?us-ascii?Q?BfCZJTrVjMRozHtpQhL/oPI18J1oMtgtbeTL7bAAA2kvDF/v?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8c16e214-d54c-4744-f14d-08deb041c97b
+X-MS-Exchange-CrossTenant-AuthSource: PA4PR04MB9366.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 May 2026 12:35:22.4258
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 May 2026 16:16:13.6246
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 46c98d88-e344-4ed4-8496-4ed7712e255d
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: sJJomY1HgUh5ySF6SB1RtcqBtKOXlWZmkYM9rL/o4iD0eECBgZGVNe66zGfah50/tjAbNVkZ5QOIY6tTDY1zxA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH7PR11MB7593
-X-OriginatorOrg: intel.com
+X-MS-Exchange-CrossTenant-UserPrincipalName: wJSpiXe0IoFcaJlbpTEqFFdiVjfrKWsA1uAYrWpNGNJE9+tpmcCtDcwAbHUgKzK+OSvv/fZAXToRzfLyylhoIA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU4PR04MB11813
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260512_053529_239497_FC5F6D16 
-X-CRM114-Status: GOOD (  22.39  )
+X-CRM114-CacheID: sfid-20260512_171619_862969_5086E5D5 
+X-CRM114-Status: GOOD (  17.35  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -186,154 +151,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 04/05/2026 14:33, Adrian Hunter wrote:
-> Hi
-> 
-> This series improves the robustness of the MIPI I3C HCI DMA mode driver,
-> addressing issues observed during error handling and recovery.
+On Tue, May 12, 2026 at 03:17:27PM +0300, Adrian Hunter wrote:
+> Three master drivers (dw-i3c-master, i3c-master-cdns, svc-i3c-master)
+> each carry an essentially identical Hot-Join handler: a struct
+> work_struct embedded in their private state, a work function that just
+> calls i3c_master_do_daa() on the embedded i3c_master_controller, plus
+> matching INIT_WORK()/cancel_work_sync() boilerplate in probe/remove (and
+> shutdown for dw-i3c). The IBI/ISR paths then queue that work onto
+> master->wq, which already lives in the core.
+>
+> Move this pattern into the I3C core:
+>
+>  - Add struct work_struct hj_work to struct i3c_master_controller and
+>    initialise it in i3c_master_register() with a core-provided handler
+>    i3c_master_hj_work_fn() that performs i3c_master_do_daa().
+>  - Cancel the work in i3c_master_unregister() so all controllers get
+>    correct teardown ordering against the workqueue for free.
+>  - Export i3c_master_queue_hotjoin() as the single entry point drivers
+>    call from their Hot-Join IBI handler.
+>
+> Convert the three existing users to the new API: drop their private
+> hj_work fields, work functions, INIT_WORK() and cancel_work_sync()
+> calls, and replace the queue_work(master->wq, &drv->hj_work) call sites
+> with i3c_master_queue_hotjoin(&drv->base). The dw-i3c shutdown path
+> still needs to flush pending Hot-Join work before tearing down the
+> hardware, so it is updated to cancel master->base.hj_work directly.
+>
+> No functional change intended: the work is still queued on the same
+> master->wq, runs the same i3c_master_do_daa(), and is cancelled at
+> controller teardown.  Future Hot-Join improvements now only need to
+> be made in one place.
+>
+> Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
+> ---
 
-Any comments on this?
+Thank you for do such consolidate work.
 
-> 
-> Patch 1 ensures suspend always invokes io->suspend.
-> 
-> Patches 2-4 fix issues in the existing DMA abort path: preserving the RUN
-> bit during abort per the MIPI specification, blocking enqueue during
-> abort/error, and waiting for ring restart completion.
-> 
-> Patches 5-8 improve how partially completed transfer lists are handled
-> during dequeue: moving hci_dma_xfer_done() earlier so completed
-> responses are processed before NoOp replacement, completing transfer
-> lists immediately on error rather than deferring, and detecting when an
-> abort races with transfer completion to avoid restarting the wrong
-> transfer list.
-> 
-> Patches 9-10 add Intel-specific quirks for DMA ring abort: a PIO queue
-> reset after abort, and an HC_CONTROL ABORT before the ring-level abort.
-> 
-> Patch 11 factors out a reset-and-restore helper from the suspend path
-> for reuse.
-> 
-> Patch 12 adds a full DMA recovery path for internal controller errors.
-> When the hardware reports a TID mismatch or the ring becomes stuck, the
-> driver now resets and restores the controller, terminating all in-flight
-> transfers with an error status.
-> 
-> Patch 13 makes NoOp command handling observable: instead of discarding
-> NoOp responses, the driver now waits for them to complete and triggers
-> recovery if they fail.
-> 
-> Patch 14 adjusts transfer timeout accounting to start from when a
-> transfer actually begins execution rather than when it was queued,
-> preventing premature timeouts behind slow predecessors.
-> 
-> Patches 15-16 are minor optimizations: consolidating the DMA command and
-> response ring into a single coherent allocation, and increasing the ring
-> size to the maximum 255 entries to avoid ring-space exhaustion.
-> 
-> 
-> Changes in V3:
-> 
->   i3c: mipi-i3c-hci: Fix suspend behavior when bus disable falls back to software reset
->   i3c: mipi-i3c-hci: Preserve RUN bit when aborting DMA ring
-> 	Add Frank's rev'd-by
-> 
->   i3c: mipi-i3c-hci: Add DMA-mode recovery for internal controller errors
-> 	When erroring out transfers, ensure the final transfer of a
-> 	transfer list is processed last
-> 
-> 
-> Changes in V2:
-> 
->   i3c: mipi-i3c-hci: Fix suspend behavior when bus disable falls back to software reset
-> 	Always return 0 from suspend callback
-> 	Amend commit message
-> 
->   i3c: mipi-i3c-hci: Preserve RUN bit when aborting DMA ring
-> 	Improve commit message
-> 
->   i3c: mipi-i3c-hci: Prevent DMA enqueue while ring is aborting or in error
-> 	Improve commit message
-> 
->   i3c: mipi-i3c-hci: Wait for DMA ring restart to complete
-> 	None
-> 
->   i3c: mipi-i3c-hci: Move hci_dma_xfer_done() definition
-> 	Add Frank's Rev'd-by
-> 
->   i3c: mipi-i3c-hci: Call hci_dma_xfer_done() from dequeue path
-> 	Add Frank's Rev'd-by
-> 
->   i3c: mipi-i3c-hci: Complete transfer lists immediately on error
-> 	Rename completing_xfer to final_xfer
-> 
->   i3c: mipi-i3c-hci: Avoid restarting DMA ring after aborting wrong transfer
-> 	Rename completing_xfer to final_xfer
-> 
->   i3c: mipi-i3c-hci: Add DMA ring abort/reset quirk for Intel controllers
-> 	None
-> 
->   i3c: mipi-i3c-hci: Add DMA ring abort quirk for Intel controllers
-> 	None
-> 
->   i3c: mipi-i3c-hci: Factor out reset-and-restore helper
-> 	Drop redundant i3c_hci_sync_irq_inactive(hci)
-> 	from i3c_hci_reset_and_restore() because it is called by
-> 	hci->io->suspend() anyway
-> 
->   i3c: mipi-i3c-hci: Add DMA-mode recovery for internal controller errors
-> 	Rename completing_xfer to final_xfer
-> 	Add hci_dma_xfer_done() before checking for an already complete
-> 	transfer
-> 	Improve commit message
-> 
->   i3c: mipi-i3c-hci: Wait for NoOp commands to complete
-> 	Rename completing_xfer to final_xfer
-> 	Add missing reinit_completion()
-> 
->   i3c: mipi-i3c-hci: Base timeouts on actual transfer start time
-> 	Do not flag the next transfer as started when there is an error
-> 	which halts the controller
-> 	Instead flag it started at the end of hci_dma_dequeue_xfer()
-> 	Use hci_start_xfer() in pio.c
-> 
->   i3c: mipi-i3c-hci: Consolidate DMA ring allocation
-> 	Check for failed allocation before assignments to avoid doing
-> 	arithmetic with NULL pointers
-> 
->   i3c: mipi-i3c-hci: Increase DMA transfer ring size to maximum
-> 	None
-> 
-> 
-> Adrian Hunter (16):
->   i3c: mipi-i3c-hci: Fix suspend behavior when bus disable falls back to software reset
->   i3c: mipi-i3c-hci: Preserve RUN bit when aborting DMA ring
->   i3c: mipi-i3c-hci: Prevent DMA enqueue while ring is aborting or in error
->   i3c: mipi-i3c-hci: Wait for DMA ring restart to complete
->   i3c: mipi-i3c-hci: Move hci_dma_xfer_done() definition
->   i3c: mipi-i3c-hci: Call hci_dma_xfer_done() from dequeue path
->   i3c: mipi-i3c-hci: Complete transfer lists immediately on error
->   i3c: mipi-i3c-hci: Avoid restarting DMA ring after aborting wrong transfer
->   i3c: mipi-i3c-hci: Add DMA ring abort/reset quirk for Intel controllers
->   i3c: mipi-i3c-hci: Add DMA ring abort quirk for Intel controllers
->   i3c: mipi-i3c-hci: Factor out reset-and-restore helper
->   i3c: mipi-i3c-hci: Add DMA-mode recovery for internal controller errors
->   i3c: mipi-i3c-hci: Wait for NoOp commands to complete
->   i3c: mipi-i3c-hci: Base timeouts on actual transfer start time
->   i3c: mipi-i3c-hci: Consolidate DMA ring allocation
->   i3c: mipi-i3c-hci: Increase DMA transfer ring size to maximum
-> 
->  drivers/i3c/master/mipi-i3c-hci/cmd.h  |   6 +
->  drivers/i3c/master/mipi-i3c-hci/core.c |  82 ++++++--
->  drivers/i3c/master/mipi-i3c-hci/dma.c  | 344 +++++++++++++++++++++++++--------
->  drivers/i3c/master/mipi-i3c-hci/hci.h  |  22 +++
->  drivers/i3c/master/mipi-i3c-hci/pio.c  |   1 +
->  5 files changed, 365 insertions(+), 90 deletions(-)
-> 
-> 
-> Regards
-> Adrian
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
+>
 
 -- 
 linux-i3c mailing list
