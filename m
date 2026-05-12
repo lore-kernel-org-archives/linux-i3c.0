@@ -4,137 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C5AFCD4F24
-	for <linux-i3c@archiver.kernel.org>; Tue, 12 May 2026 16:50:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5118CD4F25
+	for <linux-i3c@archiver.kernel.org>; Tue, 12 May 2026 16:53:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5G8LxJsGnbjtJwN36wv+P6bVMhpOJafj3YlSsasAfco=; b=D7626x2NeElsEW
-	4NHqR08H5bC/8ZKwdqavX/daLbY0BK+0KrvezZEfOL1/GAzHeL1h+Y3JHKhD5JIWzWC9BcXh5ZF30
-	y/yGLYKM10aJVHnY1wgIxEy088BU0Uzi3JSB7Igea1g69GRLPrkX2Y4TE6PvdwpuZ/qLON2BmMLZU
-	so0c7M3n2pXt8k6kn2Pk/QrAIphizI/o3U77fyEhEBWgwMSqwX/PcDQWLZ0IqVdJ0/S9SBMY/vfI2
-	bj7M2tIUp5Uet8YUoXarFr4DavX5mw59H4emkXxCfgHE4ImszlqVMaFk16B0rFt+Wk/Bes8klJK3I
-	omU8pC1hH0h7t21snArQ==;
+	List-Owner; bh=2Quh3UX4JIXiG56noP05Ev4s5hb+1vwzHQnN5stBk2g=; b=ZsTX/MZ4R3LPMd
+	Icy/tJkkxm8GHGdkwq6fCDlc/XvQpLv0lju787hYD/EolarTa4HlMJekicEEmKIm8sT9IF8IlBinj
+	c9jDUiqtUtlTFfVqN3gfNyB8yvlvw2JMr39vvI0cWaoB48r25iyp1i/Tm/c1BNcS6Lc2VYgEXmlmn
+	9aLHQvmfopj1rxM+7Hjp6b1EKuvaW4gECNWWas8rfd+JHRiso4wgiUedlBt8kwy9MzbbX2bH3vE16
+	EfmLyygKgqwtXizBl+qL9i9GWodnQabCJW3Y5YlgJ4YR00q2tQSy2bTNAjRROU5Id6ORIuAQ4txCv
+	1f0UDIbPO+Q1bFr3Jq8g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMqJa-0000000HRAp-0I3v;
-	Tue, 12 May 2026 16:50:38 +0000
+	id 1wMqMT-0000000HRfF-1nuz;
+	Tue, 12 May 2026 16:53:37 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMqJZ-0000000HRAQ-0UHE
+	id 1wMqMS-0000000HReq-1T39
 	for linux-i3c@bombadil.infradead.org;
-	Tue, 12 May 2026 16:50:37 +0000
+	Tue, 12 May 2026 16:53:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=MIME-Version:In-Reply-To:Content-Type:
 	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=QM/9H1aA+cAybjpNBiS3Eik+9eQ8bFBCvdfDboWzUNU=; b=XMlS/TviC6kojihQQM1X7bpLRT
-	yxYkBb72aQ10c2pBu7+jLtvBdm9M8es3oAQ7DRpSWPAHBoUWHoROKWC9sz8MO2Cod9sVtE2w4XSCl
-	RkbW5GlxJRs9DHbpbmcwSWpwrWxfN8Q2E7cRUDZ/YuDTtU9DMQ1vRryR4abaBDhC6AO6Z1xqTj7eU
-	A8Ew7ehf06dm8+X3sb09rJAqs7hYhc9zd6Lf4vyQw/Ryq64ZNvgm8HbN+fzf/gnS4QpA+hNkD054u
-	ZTP+pb/5/U2MonuZp+LN0Ze8kiqhRA40Rdzck5nkOU2pBU/6kkRL7glvkASocPipqBtbB3i6nLOfn
-	DNoQPr7A==;
-Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
+	bh=oMXQPYvWQDTxqTUKPCOEDN14J3yj1esPCkWd4i5eapA=; b=NaoypZ6yZGvMS1tfS3zuP52oif
+	+XXMxJupHXFyusoMZnJ5W2W595nsT8fJGxW5gGmMZkWP6beBq0CDXilgWYTSxLgyiiLB3UyzZLZm6
+	ZWD5mk14pMrxEINikACa8+Wmcmo+pz4RJkEe0rEsqWdns/YIs9sjxCx8wmJU9hyfiQ0bd8GkC664w
+	5GK3hN4LvJ4sl0f7HFnR8jxK3j31EF3WyXS8lUaayJ/UjJjMzyW8ePTC5OieOdG9ONYFUZyLRUMdy
+	rtkzEzEBJ1yWT7IcfQkimCfQSxmOctT5z7g4i/E72nqDfNtV4wLO56pR3KThG0FsEMlnG7Z9NS3BU
+	1ypsp2Aw==;
+Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
 	by desiato.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMqJV-0000000FOnW-46xa
+	id 1wMqMO-0000000FPMD-3hPr
 	for linux-i3c@lists.infradead.org;
-	Tue, 12 May 2026 16:50:35 +0000
+	Tue, 12 May 2026 16:53:35 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=tlHea/WP3IVDYcsVjgAqHcjHHQqfl/QyiTVIY/TjZtesfzOQdlcnPXtupRDZA9C+alxVdojcMJMJBg87rRtShsKt2tgGslQP1QorMnBAofUb+jrIsDTSGHq9UPEMR0mbttlAutT0d4pyno5GJ5vOaK3lxXjcfxvQQVY+GPJC5GZLXLvDIrpXcvdWhWiarfoVhn0iK0RzD4fi9KmkDNjCYvlqmJrWeD+AxsSWaKeqEZug41mBRcOmF/7814URjW0XWt9O/ZvUqriJIdlwEEnkJWcizRlxhAj6chqscjxEp3PsrisxFJ9v3UbraxPcb4zfKjzF/H+x9z2WsncY/6I0yg==
+ b=BDWcpKaJ9sHlcbjLqVjGPWgpwjNBRZGC8/WDmC31hW6zLnQJ/tI21fjSK9McG09Umk5ZsaYl8UdndylTeJWhBFJIAOGcx2r9n10urLPqqIm2LAT9xTRjR1go39uMSWvDLXRSK8iXyDuzpD6EJ8rWMmdDoJRuxF15COnxhIIHEmplXfTCLxzbGr5xgLcST3XX/X7Y8g8qOwLO8+e/yHdk6sMVmDfpvTLN13EVL8ZHm1UkjlVavqYyJAVmwSvh3pyPY3++Bv+9m56Fq55CV67OCXnqTnSQiFIBxLGYvLQt0ARFcS9tZP6j9V/M2NANaI4u0zD4RcAol2VhMTi/k2v4hw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=QM/9H1aA+cAybjpNBiS3Eik+9eQ8bFBCvdfDboWzUNU=;
- b=M+o1Z+uI/8XXNbOxPoP/BbnxcGpjMOLON2xV/EH9im2+3TdJT0mOuI++4g+JM6Bs0od/vOBwuCki2MGL9DCjhedGbHIsKolsCTGTDCL8xgLl8I3Gn+H6e955cywNZHcLceE5MQ/vHxVTdapmFIuA9f/oQ3U0tmsRc5UeW1Ad1mUej9ZbrCGhFMda7Ebh97XPK53qxa4Zqu0GkdaFEu6NrVYIXotDIn/IFXrmLBXHu7KPB1MRvAkJNSQnmNF6K556Y5/NcnxOAiOBxgZWSPoi1A25019tsHpuD1F/4HracmWdxl9DoKU0WasR6udcEQf7Hzkr7QBbYJYavUaEBH+weA==
+ bh=oMXQPYvWQDTxqTUKPCOEDN14J3yj1esPCkWd4i5eapA=;
+ b=i0DPiif3vk1+I3/AGnwdnDHIYSzcGzibinAnScmCRtwWNJyis94+Z9Ruim7n9tS7YxlPkixNgCYhD5/tA4xRigp0sM+WHTlycYf6ROrFaqI0W/ORmTz3c9+cjv4ZpTkpq19RA6BtzJVAR2NGvsFQJVnlm1b5B+Cmgr1YyiQco4UBwvYiEr8jTX05Kp/vMmuh/mhz7qXVH8LN26xxdEHk2SgQdqhO34z1kgNUUwkJOd0lipWDPlqVjFpl6ZiGkbApHyJrqtci1uO5WhzIEOce4TSqlWRKmitttx+XkNNdOr83f38q2dQs8gX7prF/6LqaxJXFqqbsO+q63d4ZJbW7gg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=QM/9H1aA+cAybjpNBiS3Eik+9eQ8bFBCvdfDboWzUNU=;
- b=fiYPrOBtHGzAcpi0iRIJvGmMq0aMh1Ju4NUAAHhoWu5dmNFoXP28vsuc+y8pB6xSNDxVy3xawR8LlxhUufOrQ7J3OnFDIfyqlHoTk1XQGVYJxj7YCfQw0/3JAn1QpGDSU/64FCXQA1WcnExotTmO1x5rMSSAen/lgvnmVbAD9UT5AYnnr5ZRLA0wJfIxi1kR5opS6PaT02c+VrSriahOczl2cMepxIbCyF94m3H+QW+mLd7rZrWXY8R4gZ0tca5UXDUN2wwTUvxl6VnyjZ9ej6fzGq0s3noFK/zmA2QaZKkFxjMhtPvpdhsVyD0aGeQEH6/WHhkqsXzBKThYA1/qrw==
+ bh=oMXQPYvWQDTxqTUKPCOEDN14J3yj1esPCkWd4i5eapA=;
+ b=NRdJsDo8fXvZ2YAjE47re0rf3hW7MsCV6/T5q5DIfE0r9PqDEVIaNLRKqZbr7yOij4bilbQWUkWvePt+pcWrEkmx4q5TEqbmetRlshrEY6TNU5Ou00PFCY52AbeiTr1wzNWzJJoPVpjqz+Cs8L/VmN8QpGavhKJua52iwfNK3qnApvIcdOsxTcuY8FMpUJhMbIm9GMDB32q9AG5rDP2BRCB33axy1yu0Pg8UIWqvlcrR3hWJqcQIet2NC5mQUkbeiR2dEZTmTOqkcXYDHhBq1X06CJbdJqnNoRVlCtOVgQAjMs4gWqvL4SOkMnd9RimEaJHJGmUbcRZDqVLE0pT/xQ==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8)
- by DU2PR04MB9195.eurprd04.prod.outlook.com (2603:10a6:10:2fa::22) with
+ by GV4PR04MB11971.eurprd04.prod.outlook.com (2603:10a6:150:2ec::7) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9913.11; Tue, 12 May
- 2026 16:50:30 +0000
+ 2026 16:53:28 +0000
 Received: from PA4PR04MB9366.eurprd04.prod.outlook.com
  ([fe80::75e4:8143:ddbc:6588]) by PA4PR04MB9366.eurprd04.prod.outlook.com
  ([fe80::75e4:8143:ddbc:6588%3]) with mapi id 15.20.9891.021; Tue, 12 May 2026
- 16:50:30 +0000
-Date: Tue, 12 May 2026 12:50:25 -0400
+ 16:53:28 +0000
+Date: Tue, 12 May 2026 12:53:23 -0400
 From: Frank Li <Frank.li@nxp.com>
 To: Adrian Hunter <adrian.hunter@intel.com>
 Cc: alexandre.belloni@bootlin.com, linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH V3 08/16] i3c: mipi-i3c-hci: Avoid restarting DMA ring
- after aborting wrong transfer
-Message-ID: <agNaUSIjMc252Jj8@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH V3 09/16] i3c: mipi-i3c-hci: Add DMA ring abort/reset
+ quirk for Intel controllers
+Message-ID: <agNbA6IlaF5f-sW8@lizhi-Precision-Tower-5810>
 References: <20260504113352.38490-1-adrian.hunter@intel.com>
- <20260504113352.38490-9-adrian.hunter@intel.com>
+ <20260504113352.38490-10-adrian.hunter@intel.com>
 Content-Disposition: inline
-In-Reply-To: <20260504113352.38490-9-adrian.hunter@intel.com>
-X-ClientProxiedBy: SA1P222CA0123.NAMP222.PROD.OUTLOOK.COM
- (2603:10b6:806:3c5::10) To PA4PR04MB9366.eurprd04.prod.outlook.com
+In-Reply-To: <20260504113352.38490-10-adrian.hunter@intel.com>
+X-ClientProxiedBy: SA1P222CA0092.NAMP222.PROD.OUTLOOK.COM
+ (2603:10b6:806:35e::12) To PA4PR04MB9366.eurprd04.prod.outlook.com
  (2603:10a6:102:2a9::8)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|DU2PR04MB9195:EE_
-X-MS-Office365-Filtering-Correlation-Id: 908bc912-f57e-4de4-79be-08deb04693c5
+X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|GV4PR04MB11971:EE_
+X-MS-Office365-Filtering-Correlation-Id: cefcd9de-e615-4466-e021-08deb046fda0
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|376014|19092799006|52116014|38350700014|11063799003|56012099003|22082099003|18002099003;
-X-Microsoft-Antispam-Message-Info: Ly3mNMIdPIQoS2MV+PqIA0ILK6ggC8iVi48W9YbRLAdYYVt/rpR/U34eqa24HQ2NhijmCIXSyKKqFfcEwd264St4fYyAG6v/Mi/wViX0ht+KhyKc1YQZXOVoqot9qhdYBJlT3zX/yjb5AsHpqneUwVO71HwpH4+rDrEcZrqKOVQGUKl1l0eT6qA/97S5523A/Yo1vuVCOVUQpKH8rUgBODCGlE1LMBKurT66qNN7VF+pmmHc1XTp31itEOt0YN9LASJ2rtz2AyCXxWQb2p6D/Mjxx6umERUEuCQf+322fGxcXm9VrpIeqmARBESwGrfGj2XD+5eiFfisLcW08K5mcF63PRQd8DcXfLNsxgFbQh+GM1HVhEbPQbumgFXbnI62bJ2M+8aW4bMVRbSymda1rXJWCdSr+tPSnSdqwPg+vj0YPWHJZ6t0lUfiV3iPjMeino6l+CqeIk2VyIDn6aSS5Oz0Eq9dBi1tmHdPeZCfZPkGQZB0cl6jGS21h9i/o2uWkaXpvJ3tbUdl3/j7xhbqtRXIa6WrZRY3TI99NN07c5C+oAPKUl9UUFO8pZQbgiZktM0cBiiC5yG3vgWY1bCBESPKVF9R71GO3JqSvcAgUBgHMLQbts+tQlyFIQohfqwAPG83/ayViHlrbJiOTP5yHI1s8zM224ThvnCv9muAqVuDCDaIFfkehPrUbs+C6knm3ni6yOjt6dI9iUb6ICuSiiGNs/BIcjUnn3TaMamokGf0Vn1R54tQrdIQCOROdHM4
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(19092799006)(52116014)(38350700014)(11063799003)(56012099003)(22082099003)(18002099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|1800799024|52116014|366016|19092799006|22082099003|18002099003|56012099003|11063799003|38350700014;
+X-Microsoft-Antispam-Message-Info: hm9pCX71c0mF81rjfJd/4jx8w/R5SIsYz8z3JVj+a9etT4PitforS8WHHKZ2n3R8JUg+iEmn2Api9+w4gTWMFVEZhupTaCVywkqheIRdFRbJu9VLALtXWRLJni8fKZPY+7G8Ahk9if3YSnhyDa6MV0HA50Z0jnkBqqx0lgGbfJzJM0tlB5zOJqN8eX9eiknsE29YZhSkfYcrjqbeQkHBHvUU7RrdbDmuRkV+LbJD/S+iHp3+O1Tw5zW5hKLQ5xxt+tLEnwEqzUXrKiH4VFPvzJyIq0gjqAJMrzNuQ6xlshxM25g10Ztwb7quxG6RxvMRUP3AyfSAQi1vMyyey9jt+P79wmWMm556QWzO/+SbkwWVsr6KK4aLlTjH5qYLstKgk59NJPARodOTvS0b6S3eEKhmo0XgkLS1mZqaqT7M0RAo3WYiFBXRe0yrlFi5TIy4OM61CtvJwVxclxe7Oa6K6CrevC653nWuTpI5FwoVmAFOWElK+lQ1nHp1bbAACUzGtBd0nR+NLD4o5TvewxJZQmYogvFsIdCSaaIxubP2EOXVCQtkH+MDCKobMQI1gtlrI2qGa6s+CXns7Z5mw/j3dX6MuZRHBgpVYkq7QFdKKtFAZQJZXPZqBAJYP4pmYtbYC8PV3xfCzdAPn7NOSYptvjtEcHKgaIThmnwVOYPFTDaaWy5ZcEYUmwnG0bCQHql0OXbN/lASLyBiN6m33Sl1bzPbzVNytMyD1MCBBpqmTA2C1qglCcT+Bl4/OFkNkgbk
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(52116014)(366016)(19092799006)(22082099003)(18002099003)(56012099003)(11063799003)(38350700014);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?AYkREWOSYMnNbFCZMMgB2pA2D2gDKu2GwuU4vxB5BTNI1HXXUXpK6vKR09v/?=
- =?us-ascii?Q?bYqP6n1d2uMIXT108AD3fGoYo1CGr7oM2Pj6JKfPsDpNPVnWSyELlJUDPgZG?=
- =?us-ascii?Q?TAflq+SykxUTeygsSNjsyhglJ9iTWYYcXkNsjSObDsJ7v/aiEbmtRh5uaIzp?=
- =?us-ascii?Q?H2zCXcsDnLFcgxZvhAKMVyhrWO3PFFjT+T7m4zCvCIkYvf5WMEcm56ZsrcxD?=
- =?us-ascii?Q?9opBJcBrR294tZ5YoZtvpq+Qizb0LmL9smeZFXzYIfqjeN2buXwPWlV8XEaG?=
- =?us-ascii?Q?w+JhSHXUJllb2FJ6Zb33wuSZPhCt1QQM0ONJIbrAsuo9s8FPkmc294mB4ksv?=
- =?us-ascii?Q?fvs/53/GN4voW8QteoSp3hXQLmD1XfC1V3NWubzWizxpGtFQUi+qqbaZe2uI?=
- =?us-ascii?Q?ZIZ6BIP50zT7Wh6yg5hF5V9YJoE9AA0tomZZPcwcEEYDZoW9/K+s5rdy4mGS?=
- =?us-ascii?Q?ruS79hAduY4Md6/FBHYSOh5tS+Ai9G+Mez4qkXBj7pnGJY6rWDRp3M7/k6eK?=
- =?us-ascii?Q?jQJFbUH6mtcRRm1bIrs5Hclhpawl+rJqmrArinVf9Gq2jpSFTzbzFon0gpHD?=
- =?us-ascii?Q?FmYVBQDHaTVV+uUHUK+Uqf2mX2kJJv5gb77RNfDUj3l+yiYjNTATcRTvsYjE?=
- =?us-ascii?Q?kP8CeyAzbNLCTf4nK+2RiVVwka+A55kFhhifUl0+DGO5kjNmXh31o7/+QJ+x?=
- =?us-ascii?Q?FNBZm25ezhXgQdTVQvATsOCdLhC4kmvlMDjltvWBsTclhI1RrxiwGxEtUZCp?=
- =?us-ascii?Q?FDNQTkIKSneEaLmAFO91Xk3qmWZEPHotuzEtenEu3MZqg9OALoo/kraDWftN?=
- =?us-ascii?Q?ojMp0KJZbM+MFkmjYRXJNx9PMZW5dkmebxeZc9aeuEu7B9UcZpJ69m2PFj7p?=
- =?us-ascii?Q?gxNnDIs78A1vzkMxcbFPkcB+ukWZMLkJE5WnSgtHRFBPxcoPwn14e3QbIW+/?=
- =?us-ascii?Q?zaIlMWzt4CQS7tTQXkW9tov0FLQW3Aji/AGT9i0RLt6lELqQ7NSVuuSlmPVf?=
- =?us-ascii?Q?7WgmtLasyfHjtK+RLFtstrZfGcEFP66yM3QvWsq5QCoTf+0pq1uXUuci0HCt?=
- =?us-ascii?Q?iDb9P+anNzZpp6r+hdq4HDN0dsOSnttX45zvOgauChH6PCxnIwuZKo52n8+E?=
- =?us-ascii?Q?YI+ni03fIJAPNOVxZPS7K0xAu+oOE34Twl8tt616Y3Hhk93THLW0KiCE9s8V?=
- =?us-ascii?Q?H7KZtV8Jen7gxp04X9nuqWCuFVXLCwG42AEwFltCUBwJzZZE9gPtgVxpmJVE?=
- =?us-ascii?Q?zTEv97NQNz/ZsUVDTxQtC9eTC69SApTGTH97CnY9RIOnCsuFpar5gmnTOfmi?=
- =?us-ascii?Q?YiD8M63UShkfKvkWSwvKQvBA/OPRYBDLfjapB6DxTWEZz3kARC0ynWOqs+JB?=
- =?us-ascii?Q?vua431YeY9u2+WJUVWSyN6dt5FJACwFC5ajFdWr4p0GMPJwreiHKuywYZB3N?=
- =?us-ascii?Q?hUJ3/UlFEa8DpeRN0jEE5xy+nRGd1upV5UeevB+M8ZEH+vbN5wtIbr7e7VtH?=
- =?us-ascii?Q?r0oL6+G4sgOT4W2KdU1U3sUBiQZRNYdzmszAj7oF8tRY4BR3E5j2VDXoZtUH?=
- =?us-ascii?Q?miQ2VtxCfY6l8lfKMt158Nki/685UQ68Q0vDIvDU6CFX850xp/6rA0UTDlgT?=
- =?us-ascii?Q?wDNI2NdNnWaQUYKd8hk/CiA+RikmoIdRFCPh+axnj6Kn7dMyAk0f1y/vXUUH?=
- =?us-ascii?Q?aM5+/H7CN4UivXvzn5uBN8Gh4WzDf9bPc/ChbxDb3BRF8/3G?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?IF0wJ1AytDdt0Fhb59MQNaoB4/kOfu2juFPBDobjnxEFcNw9L/9kOJ7oZrWF?=
+ =?us-ascii?Q?ac5B5TIg/tA1HQdbgga17wtM0cMx+Yod2qHRpe00w33wkgk6EmlXU3HoRx4G?=
+ =?us-ascii?Q?gjpHBCRtovDG6z8Qe53movSuDrPKje0YabY0e2THYL8jFcXrDCNq0YC5/rQM?=
+ =?us-ascii?Q?gkrtnam+jFdyzBP3LTBiIxTbdof1GDK5xejaINbFmCaIDU1q2I24DO0SxLqM?=
+ =?us-ascii?Q?fElyHLzb/ed++jV94B3WG5tiZp3lSYY218Pl/4uPbD3pAIXI7V8ufDpYQXE1?=
+ =?us-ascii?Q?VC9HXCGRCyRMPbbX5MIP2u6AZFecHxita4qDr4MI+LlZi23PW7q8wg2LElgQ?=
+ =?us-ascii?Q?TOD0naiWsZF/HxF5yj/smXG4smDPJw/Tc7kEmXvseoifX6DXsnw57MCq7thq?=
+ =?us-ascii?Q?MZxAqo2FrhIGJK0IsM+Swl4uM/fT8bgRiTFZi0JPZT/szuqCbemOQxcdbdz0?=
+ =?us-ascii?Q?vMEsVzpu+Xc7EPrWfgp0Iz/MBG58Mtsfjr5L5otYP+JCChamPlGhTPFdkju+?=
+ =?us-ascii?Q?WnnXqcEYC1I3ZlnoTF/C5oi1wWYFvFGe0YK5kXY441e3tWNnRor0XLsQ3qmu?=
+ =?us-ascii?Q?YOg3+vAxGhGSbE2wI5RTDC/YwyhgUjiyUk6J89RwBQY3LLHRkeio6JHxOwfD?=
+ =?us-ascii?Q?okdsmRx+uQcJolfFVJPEljCku8XjC3baw/xMCfnA0DveOIiqA9NYEE7ZdjDa?=
+ =?us-ascii?Q?vqEtHivDH3eLd9e+NxdTkjOVTdNvOds3Z3+VoSq4zzWJMBXMzSnWrPs7Mp3D?=
+ =?us-ascii?Q?tNBReXyT6LRGF9zwgEphHfMykdnvf6uXHOZFrz3AJmMu2A7lfiLvKZTd3hZL?=
+ =?us-ascii?Q?VIwH8vVs3aCJFl177P2tjPTbtNXsovWNDVm52WmWN4o4KP/XjC8yrQ/v5bwA?=
+ =?us-ascii?Q?3kN7u376BEcF4Crsph3jhdUQprpHVu6hgeI4Vesq6yVhR5XRHn5xLkIqiygd?=
+ =?us-ascii?Q?Qqd7748mRF8xkdrA2NqONWhfz62Cg+Ffqgo8J2TJolKuCLMK+aoNYt4hkkSL?=
+ =?us-ascii?Q?2EJtlJwfC+48n5UHLSKoe+K6djmvBNHFz8TnDTzq7NJN85pMKPK4S/bwBO9+?=
+ =?us-ascii?Q?dk1HyuuW76l4kgHLrP8VDKIJFQHmGbMysvrGVzUSh4tSUtvbLJap67lQQBn7?=
+ =?us-ascii?Q?Fl4ijNWa4w/XBqbFqK92FV+WeR80hXZT/NHRrbVfjnx4TQpK0TuxewGE1xad?=
+ =?us-ascii?Q?3+7dEUJsDfy5I+zy0L3MgpHMTdLMFkasIBM1aDr1GefBaRCv3aDBEZ7X1kwV?=
+ =?us-ascii?Q?wAooe/1R4VxkaYY2zDwRygliTm0TbR/hyaBl/Fu2o2XvoD2Ub/dYy2twY6hu?=
+ =?us-ascii?Q?OtBtblQY5Zs6v9eErPXnXMG/bctqRCkUDJ1z0QVOUfnM5TynZg3pzd0CcQAt?=
+ =?us-ascii?Q?yEZJi+n58BlCbD+iVPbrskffS/T6vOWLhHzBhfNxE18jMu8Vit3pyS5wt96w?=
+ =?us-ascii?Q?XkAU+wxM3o90RGF+XCUm9Au3msaDSWUN5sXx8M8iWDQQ4PhaMM6Q7jHNWPX3?=
+ =?us-ascii?Q?+hGzpneBtBl5Bc8troeXo0zxTJXqULu6KdlS45yLK3/MNa+HFOr0IHRZLCjf?=
+ =?us-ascii?Q?QsdvzPMLtKlQsYWAApSuvo3/dIwEGdcYnkHavznLzROzwKJeUj0vviwUac2R?=
+ =?us-ascii?Q?4QIhB74cpxNDh92kvHJyP0fpZF11A7GFzCDy5cBwoskWqx0kNSmCyrhHc4VG?=
+ =?us-ascii?Q?0lda/rdes4NU/tbYLYN1ZogXT2YVYt8oa5wPf1sHIDb7BXcF?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 908bc912-f57e-4de4-79be-08deb04693c5
+X-MS-Exchange-CrossTenant-Network-Message-Id: cefcd9de-e615-4466-e021-08deb046fda0
 X-MS-Exchange-CrossTenant-AuthSource: PA4PR04MB9366.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 May 2026 16:50:30.7808
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 May 2026 16:53:28.4576
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: x1BluSgWdXRb6yJlL4lrvNRNqlSde6qT4DqMyefcL1YVN2JVjW9UfaUsxDB4LVkW6kVc5NoGl+MVCZ8SPJj8ag==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU2PR04MB9195
+X-MS-Exchange-CrossTenant-UserPrincipalName: Sm1VlRrGI/IstpQtX+NRr9AfXXzcNNPPz4EgdnbUO9SweYYRTw0Y9h5lunVjRoYKUeet3isIvqgFGsn/eyZu9A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV4PR04MB11971
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260512_175034_343959_34B7BF3D 
-X-CRM114-Status: GOOD (  29.05  )
+X-CRM114-CacheID: sfid-20260512_175333_516238_E99845BB 
+X-CRM114-Status: GOOD (  26.78  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -151,88 +151,111 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, May 04, 2026 at 02:33:44PM +0300, Adrian Hunter wrote:
-> Software ABORT of the DMA ring is used to recover from transfer list
-> timeouts, but it is inherently racy.  The intended transfer list may
-> complete just before the ABORT takes effect, causing the subsequent
-> transfer list to be aborted instead.
+On Mon, May 04, 2026 at 02:33:45PM +0300, Adrian Hunter wrote:
+> Some Intel I3C HCI controllers cannot reliably restart a DMA ring after an
+> ABORT.  Additional queue resets are required to recover, and must be
+> performed using PIO reset bits even while operating in DMA mode.
 >
-> In this case, an incomplete transfer list may remain in the ring and has
-> not yet been processed by hci_dma_dequeue_xfer().  Restarting the DMA
-> ring at that point can lead to unpredictable results.
->
-> Detect when the next queued transfer is not the first entry of a transfer
-> list and does not belong to the list currently being dequeued.  In that
-> case, skip restarting the DMA ring and defer recovery until a subsequent
-> call to hci_dma_dequeue_xfer(), which will safely restart the ring once
-> the incomplete list is handled.
+> This behavior is non-standard.  Introduce a controller quirk to opt into
+> the required PIO queue resets after a DMA ring abort, and enable it for
+> Intel LPSS I3C controllers.
 >
 > Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 > ---
 >
 >
-> Changes in V3:
+> Changes in V2 and V3:
 >
 > 	None
 >
-> Changes in V2:
 >
-> 	Renamed completing_xfer to final_xfer
+>  drivers/i3c/master/mipi-i3c-hci/core.c | 15 ++++++++++++++-
+>  drivers/i3c/master/mipi-i3c-hci/dma.c  |  9 +++++++++
+>  drivers/i3c/master/mipi-i3c-hci/hci.h  |  2 ++
+>  3 files changed, 25 insertions(+), 1 deletion(-)
 >
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+> index 44617eb3a3f1..770235ad6b25 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/core.c
+> +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+> @@ -240,6 +240,18 @@ void mipi_i3c_hci_pio_reset(struct i3c_hci *hci)
+>  	reg_write(RESET_CONTROL, RX_FIFO_RST | TX_FIFO_RST | RESP_QUEUE_RST);
+>  }
 >
->  drivers/i3c/master/mipi-i3c-hci/dma.c | 15 +++++++++++++++
->  drivers/i3c/master/mipi-i3c-hci/hci.h |  1 +
->  2 files changed, 16 insertions(+)
->
+> +#define ALL_QUEUES_RST (CMD_QUEUE_RST | RESP_QUEUE_RST | RX_FIFO_RST | TX_FIFO_RST | IBI_QUEUE_RST)
+> +
+> +void mipi_i3c_hci_pio_reset_all_queues(struct i3c_hci *hci)
+> +{
+> +	u32 regval;
+> +
+> +	reg_write(RESET_CONTROL, ALL_QUEUES_RST);
+> +	if (readx_poll_timeout_atomic(reg_read, RESET_CONTROL, regval,
+> +				      !(regval & ALL_QUEUES_RST), 0, 20))
+> +		dev_err(&hci->master.dev, "%s: Reset queues failed\n", __func__);
+> +}
+> +
+>  /* located here rather than dct.c because needed bits are in core reg space */
+>  void mipi_i3c_hci_dct_index_reset(struct i3c_hci *hci)
+>  {
+> @@ -1040,7 +1052,8 @@ MODULE_DEVICE_TABLE(acpi, i3c_hci_acpi_match);
+>  static const struct platform_device_id i3c_hci_driver_ids[] = {
+>  	{ .name = "intel-lpss-i3c", HCI_QUIRK_RPM_ALLOWED |
+>  				    HCI_QUIRK_RPM_IBI_ALLOWED |
+> -				    HCI_QUIRK_RPM_PARENT_MANAGED },
+> +				    HCI_QUIRK_RPM_PARENT_MANAGED |
+> +				    HCI_QUIRK_DMA_ABORT_REQUIRES_PIO_RESET },
+>  	{ /* sentinel */ }
+>  };
+>  MODULE_DEVICE_TABLE(platform, i3c_hci_driver_ids);
 > diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-> index 899fdf6555a8..268f54b32101 100644
+> index 268f54b32101..699c6d523eed 100644
 > --- a/drivers/i3c/master/mipi-i3c-hci/dma.c
 > +++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-> @@ -503,6 +503,7 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
->  		u32 *ring_data = rh->xfer + rh->xfer_struct_sz * enqueue_ptr;
+> @@ -597,6 +597,13 @@ static void hci_dma_xfer_done(struct i3c_hci *hci, struct hci_rh_data *rh)
+>  	rh_reg_write(RING_OPERATION1, op1_val);
+>  }
 >
->  		xfer->final_xfer = xfer_list + n - 1;
-> +		xfer->xfer_list_pos = i;
->
->  		/* store cmd descriptor */
->  		*ring_data++ = xfer->cmd_desc[0];
-> @@ -669,6 +670,20 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
+> +static void hci_dma_abort_requires_pio_reset_quirk(struct i3c_hci *hci, struct hci_rh_data *rh)
+> +{
+> +	if ((hci->quirks & HCI_QUIRK_DMA_ABORT_REQUIRES_PIO_RESET) &&
+> +	    (rh_reg_read(RING_STATUS) & RING_STATUS_ABORTED))
+> +		mipi_i3c_hci_pio_reset_all_queues(hci);
+> +}
+> +
+>  static void hci_dma_unblock_enqueue(struct i3c_hci *hci)
+>  {
+>  	if (hci->enqueue_blocked) {
+> @@ -638,6 +645,8 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
 >  		}
 >  	}
 >
-> +	/*
-> +	 * A software ABORT may race with transfer completion and abort the next
-> +	 * transfer list instead. Detect that case, and do not restart the ring.
-> +	 * It will be handled by a subsequent dequeue.
-> +	 */
-> +	if (!did_unqueue) {
-> +		struct hci_xfer *xfer = rh->src_xfers[rh->done_ptr];
+> +	hci_dma_abort_requires_pio_reset_quirk(hci, rh);
 > +
-> +		if (xfer && xfer->xfer_list_pos && xfer->final_xfer != xfer_list->final_xfer) {
-> +			spin_unlock_irq(&hci->lock);
 
-Is it possible to use auto cleanup to handle lock()?
+If only use once, needn't helper function since this helper function is
+simple
 
 Frank
-> +			return false;
-> +		}
-> +	}
-> +
->  	/* restart the ring */
->  	reinit_completion(&rh->op_done);
->  	mipi_i3c_hci_resume(hci);
+>  	hci_dma_xfer_done(hci, rh);
+>
+>  	for (i = 0; i < n; i++) {
 > diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
-> index f07fc627d4d2..83d4f13a68a3 100644
+> index 83d4f13a68a3..01237b12d32e 100644
 > --- a/drivers/i3c/master/mipi-i3c-hci/hci.h
 > +++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
-> @@ -107,6 +107,7 @@ struct hci_xfer {
->  			struct hci_xfer *final_xfer;
->  			int ring_number;
->  			int ring_entry;
-> +			int xfer_list_pos;
->  		};
->  	};
->  };
+> @@ -156,10 +156,12 @@ struct i3c_hci_dev_data {
+>  #define HCI_QUIRK_RPM_ALLOWED		BIT(5)  /* Runtime PM allowed */
+>  #define HCI_QUIRK_RPM_IBI_ALLOWED	BIT(6)  /* IBI and Hot-Join allowed while runtime suspended */
+>  #define HCI_QUIRK_RPM_PARENT_MANAGED	BIT(7)  /* Runtime PM managed by parent device */
+> +#define HCI_QUIRK_DMA_ABORT_REQUIRES_PIO_RESET	BIT(8)  /* Do PIO queue SW resets after DMA abort */
+>
+>  /* global functions */
+>  void mipi_i3c_hci_resume(struct i3c_hci *hci);
+>  void mipi_i3c_hci_pio_reset(struct i3c_hci *hci);
+> +void mipi_i3c_hci_pio_reset_all_queues(struct i3c_hci *hci);
+>  void mipi_i3c_hci_dct_index_reset(struct i3c_hci *hci);
+>  void amd_set_od_pp_timing(struct i3c_hci *hci);
+>  void amd_set_resp_buf_thld(struct i3c_hci *hci);
 > --
 > 2.51.0
 >
