@@ -4,138 +4,137 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DC34CCD4F24
-	for <linux-i3c@archiver.kernel.org>; Tue, 12 May 2026 16:47:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4C5AFCD4F24
+	for <linux-i3c@archiver.kernel.org>; Tue, 12 May 2026 16:50:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sDMLy273RukPg+JRnnapPiH4WSqs2dXul6d31uHIm2c=; b=Nc22EoDZgQO+Y0
-	SkrNMF/nJeb5Pf9yU9L+ZsUDdTPaoHoGoP4ouv+ml+yM7WeVZmndDG8VEn3E5WoBogtNUd15FJ2/m
-	B284pmsT3s0jn6avRhcFFzKhAywZ2PICtI9vNVSEayzZUuxOGaT/FqNzAaLhVrAPQRuz+KuVkfwgW
-	3+WkjCWLGNKtFOrY12olg4WM/nQxvjL6ojwW/Wd4DKYj28YuXQjIX1Wc5Ey4w5vxtnBTa/LHKWXD/
-	BBXeriB4I1wXxUOOGvwTyq7nh0t6fLPy0E3LEl71FnNOl799Kt2gzO0hGSupBiqYFU3dRrl2zmF0t
-	IGMwPudXzx6BzjR7Br9w==;
+	List-Owner; bh=5G8LxJsGnbjtJwN36wv+P6bVMhpOJafj3YlSsasAfco=; b=D7626x2NeElsEW
+	4NHqR08H5bC/8ZKwdqavX/daLbY0BK+0KrvezZEfOL1/GAzHeL1h+Y3JHKhD5JIWzWC9BcXh5ZF30
+	y/yGLYKM10aJVHnY1wgIxEy088BU0Uzi3JSB7Igea1g69GRLPrkX2Y4TE6PvdwpuZ/qLON2BmMLZU
+	so0c7M3n2pXt8k6kn2Pk/QrAIphizI/o3U77fyEhEBWgwMSqwX/PcDQWLZ0IqVdJ0/S9SBMY/vfI2
+	bj7M2tIUp5Uet8YUoXarFr4DavX5mw59H4emkXxCfgHE4ImszlqVMaFk16B0rFt+Wk/Bes8klJK3I
+	omU8pC1hH0h7t21snArQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMqG9-0000000HQYO-2hiU;
-	Tue, 12 May 2026 16:47:05 +0000
+	id 1wMqJa-0000000HRAp-0I3v;
+	Tue, 12 May 2026 16:50:38 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMqG8-0000000HQXx-0UfQ
+	id 1wMqJZ-0000000HRAQ-0UHE
 	for linux-i3c@bombadil.infradead.org;
-	Tue, 12 May 2026 16:47:04 +0000
+	Tue, 12 May 2026 16:50:37 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=MIME-Version:In-Reply-To:Content-Type:
 	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description;
-	bh=1AK/ey0jyyrFNzIpRdY8UhjrqQOAEfYDL5tfTQ/w+ds=; b=fclC9JgHd+q2BMxKUqzsO1kEmT
-	PXpMVLqLeo3MdDWfDp44tgqjG0Xb9huVD/lRa3cKJbL5mClbZ4ORiY2T8beF7rZhEAldOjiI3P2vd
-	uzph2tinpp6B/lrC2AcNFvwdPYCrSLeNLW2S3QSmLC3d7sNf9ivrXRcjD4rY0NsdLqBEAEK59nqr5
-	BaY5i5PUW2v2CcT+5N4bmJ300ykZt6Am576WeGmC7NaMIIQ6C1oCPszGReJ4Za2giJ6+jxDbNW/Hg
-	UNO+FerDtYXBIIkm1DTPwpERj/2t+LAyEmQUoBF5BIdNxRRulnGFYqPtvT27GotzbznBbVPlLUcBu
-	8ebcbH5g==;
+	bh=QM/9H1aA+cAybjpNBiS3Eik+9eQ8bFBCvdfDboWzUNU=; b=XMlS/TviC6kojihQQM1X7bpLRT
+	yxYkBb72aQ10c2pBu7+jLtvBdm9M8es3oAQ7DRpSWPAHBoUWHoROKWC9sz8MO2Cod9sVtE2w4XSCl
+	RkbW5GlxJRs9DHbpbmcwSWpwrWxfN8Q2E7cRUDZ/YuDTtU9DMQ1vRryR4abaBDhC6AO6Z1xqTj7eU
+	A8Ew7ehf06dm8+X3sb09rJAqs7hYhc9zd6Lf4vyQw/Ryq64ZNvgm8HbN+fzf/gnS4QpA+hNkD054u
+	ZTP+pb/5/U2MonuZp+LN0Ze8kiqhRA40Rdzck5nkOU2pBU/6kkRL7glvkASocPipqBtbB3i6nLOfn
+	DNoQPr7A==;
 Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
 	by desiato.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wMqG4-0000000FO3w-2JRd
+	id 1wMqJV-0000000FOnW-46xa
 	for linux-i3c@lists.infradead.org;
-	Tue, 12 May 2026 16:47:02 +0000
+	Tue, 12 May 2026 16:50:35 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Hn39hKc9QflH2XYvBo9TVWkO5J0gig9zclyTDpojXOds8LKr4ZXY2UgYuHLwCfZSqpLRGrUHCHnqjCvju6h8/2GWUty+oWEl4NIyBAnvee4hI3qRPF7a/6hPWGHwjw844cqTrXMICO0bEGODvEiOBmd2yvTFEWyjGm4jjeLgXBZNzNOIUHRJp/QZxdvVFIPIiBxIVrsy3HYJ2hgsYS8I2Y8DzAc1Y1fZgi1cQa1FHna2mv5NaXv4PZBN1NhjZRtH2+uauSRNjr9JBpFqeQXO+GsD9tz+Qyn0mJOt5YFhgi/KPwnz++Exnhckc493y3zEjSKlBaBlVGmvzNmWDq/61A==
+ b=tlHea/WP3IVDYcsVjgAqHcjHHQqfl/QyiTVIY/TjZtesfzOQdlcnPXtupRDZA9C+alxVdojcMJMJBg87rRtShsKt2tgGslQP1QorMnBAofUb+jrIsDTSGHq9UPEMR0mbttlAutT0d4pyno5GJ5vOaK3lxXjcfxvQQVY+GPJC5GZLXLvDIrpXcvdWhWiarfoVhn0iK0RzD4fi9KmkDNjCYvlqmJrWeD+AxsSWaKeqEZug41mBRcOmF/7814URjW0XWt9O/ZvUqriJIdlwEEnkJWcizRlxhAj6chqscjxEp3PsrisxFJ9v3UbraxPcb4zfKjzF/H+x9z2WsncY/6I0yg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=1AK/ey0jyyrFNzIpRdY8UhjrqQOAEfYDL5tfTQ/w+ds=;
- b=XjAjfW7OKzDj6eGh3DpjEFOJgEhhjkgd5TiKyXbk63HnAm8I/OOEaMQTqiKLwSPbt1jokYE8ZpbIEa4wylYS4HuanV1YVsxko2ZfZ2D6hRWR+3UzUiwXC+ooJ++w0hNOVjrM7Vb9iQ63m5fhLS9+42HsRED7CUgstURZWPA+DNwBw9hiY4BdV7/GUAtHDLaLpWCBFxZu3kYAnZ6K8D1YaQQIWQ+rRlE0TywkrXlh3k3hIu1CinMJxNP7RjrVI2Laq1hoe1HXgS9RFBiNOKLTgB4SeEi4YnMTISeKWKOlriUQba+oGbTdCAOPbc8LxitSDh/g8pAREPBbdjM9am78rA==
+ bh=QM/9H1aA+cAybjpNBiS3Eik+9eQ8bFBCvdfDboWzUNU=;
+ b=M+o1Z+uI/8XXNbOxPoP/BbnxcGpjMOLON2xV/EH9im2+3TdJT0mOuI++4g+JM6Bs0od/vOBwuCki2MGL9DCjhedGbHIsKolsCTGTDCL8xgLl8I3Gn+H6e955cywNZHcLceE5MQ/vHxVTdapmFIuA9f/oQ3U0tmsRc5UeW1Ad1mUej9ZbrCGhFMda7Ebh97XPK53qxa4Zqu0GkdaFEu6NrVYIXotDIn/IFXrmLBXHu7KPB1MRvAkJNSQnmNF6K556Y5/NcnxOAiOBxgZWSPoi1A25019tsHpuD1F/4HracmWdxl9DoKU0WasR6udcEQf7Hzkr7QBbYJYavUaEBH+weA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=1AK/ey0jyyrFNzIpRdY8UhjrqQOAEfYDL5tfTQ/w+ds=;
- b=DvH4mw3WZVclbGkn0KDObCr9j9Q3EFez97Fmv1LwoxYaBQFnEUH94cox5df+iv/KAWiF/8jtNLxLctldhmsGWdHQcMgHEot2x1wM5t52WU4Gx+SfqDT+WRGMCkll7RPtClV3fGmyAP+VgVuG4vCnX1uh+myMUz5MCyr8Nyx+/gvIshogxQQTboYryviMPqkeP8Y5MwuWDDFSI/ga0dTKpOz1Y+HXb06hxLbd3na6EWcFj+B5eYRBztG96nW9wAK6fqlakyfDq7yh52ryuIMhty0bmrcjSi111X3m82BVKnrgKrfeRMFh2RdF2k+5eJupq/knxQ22tuqVMO9B0TQSPA==
+ bh=QM/9H1aA+cAybjpNBiS3Eik+9eQ8bFBCvdfDboWzUNU=;
+ b=fiYPrOBtHGzAcpi0iRIJvGmMq0aMh1Ju4NUAAHhoWu5dmNFoXP28vsuc+y8pB6xSNDxVy3xawR8LlxhUufOrQ7J3OnFDIfyqlHoTk1XQGVYJxj7YCfQw0/3JAn1QpGDSU/64FCXQA1WcnExotTmO1x5rMSSAen/lgvnmVbAD9UT5AYnnr5ZRLA0wJfIxi1kR5opS6PaT02c+VrSriahOczl2cMepxIbCyF94m3H+QW+mLd7rZrWXY8R4gZ0tca5UXDUN2wwTUvxl6VnyjZ9ej6fzGq0s3noFK/zmA2QaZKkFxjMhtPvpdhsVyD0aGeQEH6/WHhkqsXzBKThYA1/qrw==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8)
- by AS8PR04MB8069.eurprd04.prod.outlook.com (2603:10a6:20b:3f5::14) with
+ by DU2PR04MB9195.eurprd04.prod.outlook.com (2603:10a6:10:2fa::22) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9891.23; Tue, 12 May
- 2026 16:46:58 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9913.11; Tue, 12 May
+ 2026 16:50:30 +0000
 Received: from PA4PR04MB9366.eurprd04.prod.outlook.com
  ([fe80::75e4:8143:ddbc:6588]) by PA4PR04MB9366.eurprd04.prod.outlook.com
  ([fe80::75e4:8143:ddbc:6588%3]) with mapi id 15.20.9891.021; Tue, 12 May 2026
- 16:46:58 +0000
-Date: Tue, 12 May 2026 12:46:52 -0400
+ 16:50:30 +0000
+Date: Tue, 12 May 2026 12:50:25 -0400
 From: Frank Li <Frank.li@nxp.com>
 To: Adrian Hunter <adrian.hunter@intel.com>
 Cc: alexandre.belloni@bootlin.com, linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH V3 07/16] i3c: mipi-i3c-hci: Complete transfer lists
- immediately on error
-Message-ID: <agNZfL92Fo5qM0Iq@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH V3 08/16] i3c: mipi-i3c-hci: Avoid restarting DMA ring
+ after aborting wrong transfer
+Message-ID: <agNaUSIjMc252Jj8@lizhi-Precision-Tower-5810>
 References: <20260504113352.38490-1-adrian.hunter@intel.com>
- <20260504113352.38490-8-adrian.hunter@intel.com>
+ <20260504113352.38490-9-adrian.hunter@intel.com>
 Content-Disposition: inline
-In-Reply-To: <20260504113352.38490-8-adrian.hunter@intel.com>
-X-ClientProxiedBy: SA9P223CA0003.NAMP223.PROD.OUTLOOK.COM
- (2603:10b6:806:26::8) To PA4PR04MB9366.eurprd04.prod.outlook.com
+In-Reply-To: <20260504113352.38490-9-adrian.hunter@intel.com>
+X-ClientProxiedBy: SA1P222CA0123.NAMP222.PROD.OUTLOOK.COM
+ (2603:10b6:806:3c5::10) To PA4PR04MB9366.eurprd04.prod.outlook.com
  (2603:10a6:102:2a9::8)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|AS8PR04MB8069:EE_
-X-MS-Office365-Filtering-Correlation-Id: 38f96d62-d4de-48c7-40f5-08deb04614d7
+X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|DU2PR04MB9195:EE_
+X-MS-Office365-Filtering-Correlation-Id: 908bc912-f57e-4de4-79be-08deb04693c5
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|376014|19092799006|1800799024|366016|56012099003|18002099003|22082099003|38350700014|11063799003;
-X-Microsoft-Antispam-Message-Info: eQYG1hoLN2Ep2+DpE0XCM7mAzVpFACz0JdHHc+Zw7QhoRDU+7dIti+l7W0D2A/Wf2lelMvv77kxyUyHq6D0m/Hao9hee3NNcP3W0ntokIEIQAygxgLTvEBC6V3Ugc5hNZXhj7alMpiKo86p4/5KkCQf2o4+bgNCcuja+qS4kF8NSjMSQtYwr+RouBtzTaEznyvKnHVeuumIPdG7lrzo1jqEqCNdKUbeys2u4iWquzJH7Z6Uz8xy4o3bFnKG850qToV9lxGwNgXiw5yWCl3cgdpNWVy8up/440NQ6T01lWxrl6nRF2mypLvTE61rcGN3S8JoCY2a/iNUKFBWq4JlZj27be+qkb8p53z4pbbuB0mnp/LOjtUMpgzK/cETCyTf7FopAguqeJUAFwkZJSntTeHaPID8ipH13kDdTMHX4fwOvUDRP/OCmr0pmdS16p4ur1LRgoq1hZJQnjK5d+TU/EudYfUX1sNqRdjHk64R913Se9UmwsHvFUymazzjVF6Za+HcAfT6DyEFED/ajX4yA8yGdG17qYn4TEqSmFxaiQTI7QCtf0tJsdC7JaF0abDWMFaLYJNUxtpR0WeZdx4ooGzRskLr6u5HiBalrXCqU11JrKqp38gUD1s4vIdZyXhcD9dh4h83SLddD0RO5j17tq6QNLVgr1XXJeuufuud/gRwaZTpK3w5ecC5h90m1F2DoMQdgwknva3CmTD17R46FM2jHYEsJcVpJKtgCexPpWZ85Vaipk88lrNu5RavutJQx
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(376014)(19092799006)(1800799024)(366016)(56012099003)(18002099003)(22082099003)(38350700014)(11063799003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|376014|19092799006|52116014|38350700014|11063799003|56012099003|22082099003|18002099003;
+X-Microsoft-Antispam-Message-Info: Ly3mNMIdPIQoS2MV+PqIA0ILK6ggC8iVi48W9YbRLAdYYVt/rpR/U34eqa24HQ2NhijmCIXSyKKqFfcEwd264St4fYyAG6v/Mi/wViX0ht+KhyKc1YQZXOVoqot9qhdYBJlT3zX/yjb5AsHpqneUwVO71HwpH4+rDrEcZrqKOVQGUKl1l0eT6qA/97S5523A/Yo1vuVCOVUQpKH8rUgBODCGlE1LMBKurT66qNN7VF+pmmHc1XTp31itEOt0YN9LASJ2rtz2AyCXxWQb2p6D/Mjxx6umERUEuCQf+322fGxcXm9VrpIeqmARBESwGrfGj2XD+5eiFfisLcW08K5mcF63PRQd8DcXfLNsxgFbQh+GM1HVhEbPQbumgFXbnI62bJ2M+8aW4bMVRbSymda1rXJWCdSr+tPSnSdqwPg+vj0YPWHJZ6t0lUfiV3iPjMeino6l+CqeIk2VyIDn6aSS5Oz0Eq9dBi1tmHdPeZCfZPkGQZB0cl6jGS21h9i/o2uWkaXpvJ3tbUdl3/j7xhbqtRXIa6WrZRY3TI99NN07c5C+oAPKUl9UUFO8pZQbgiZktM0cBiiC5yG3vgWY1bCBESPKVF9R71GO3JqSvcAgUBgHMLQbts+tQlyFIQohfqwAPG83/ayViHlrbJiOTP5yHI1s8zM224ThvnCv9muAqVuDCDaIFfkehPrUbs+C6knm3ni6yOjt6dI9iUb6ICuSiiGNs/BIcjUnn3TaMamokGf0Vn1R54tQrdIQCOROdHM4
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(19092799006)(52116014)(38350700014)(11063799003)(56012099003)(22082099003)(18002099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?kE1P1UQk5qrPOUccpWIhTyIQL1P9mObmFhZMvjf4ww+srfr0AKzcaKCfPmN5?=
- =?us-ascii?Q?P44Kk/981fjT7ibtld5OzkWIf3FhXJEG4d0+kAAzn+QC/tgsppto/jBP86Bc?=
- =?us-ascii?Q?reZdxqWu4c9irJsjZI8oN/dyNYG9+XUAI6VxXZ53mRHHwCP369RLVUaw7mbv?=
- =?us-ascii?Q?Zl7m15G+jALHuMJqMFomWs0rWUgv4zgyK3m6bXJ5I2sxxFQLYf++6HWlxgfP?=
- =?us-ascii?Q?ay10zNbMCEcDNNQtE3p7aOsocjFg1wbEY5VVeY/5gcB9VkcO8k5CtcnAAN4I?=
- =?us-ascii?Q?b9irnc+e8NlUBSsW+SDpTLQ4WD2W0QQh/wdzab69NGWoUKnxS/VANq2axCjT?=
- =?us-ascii?Q?D2U8t4mcQ8jID7Ndli06plqqG0KFJMkDZij0TJeSUmBzYu6w7Vv01Hxmac5x?=
- =?us-ascii?Q?vbFBz56tdUnAmZQ22QBhX2RL4RXAQWtbGwr4+JasB5roifuVVTqKx9t3NVyP?=
- =?us-ascii?Q?rgcQCSaazE1kN3EQo/ec1kQ0mPDhPAnyzZ/GV/jPirGSuS0wxvecbmA/DkCG?=
- =?us-ascii?Q?TozwYeZv9cdbzndel/macIyfZhCxuAxpEZPetGP1g2rQV7OSMLMS1eW/yLkq?=
- =?us-ascii?Q?jtBHgSMFjYTEUb+GYhy7RadzFCFmogk7MAfOXL4RrD4B5snJdEEvMa2Cexu6?=
- =?us-ascii?Q?ryY7WHeqoz3oTiFqZcj258smTU2pL80n5iEkJ/TujfNE5RuKHN5sNnMCptGc?=
- =?us-ascii?Q?NW4yWzNs7YfPhJTP5qXGWd27NLQmOBZeCsjr1Ty2xTRH9v7kA1S+pTa/afhu?=
- =?us-ascii?Q?oj4OYVkUueIsQfPn4CAX2EQGqiwAZ+5oAdOIdf+0rWswqfNSFtElecX2aEt4?=
- =?us-ascii?Q?CnV6qpobkQcsNURr5Ro2+wEcwmqxBlkh70cT+z7tDHl7+px24QHkQw//O/V/?=
- =?us-ascii?Q?nlBTAQ34VjAowv7CVSmHpLxEeMmxcRm2t6pFF8e4HPnJgKZadxLAgTstgGjY?=
- =?us-ascii?Q?PDWVydORHdXd3vNkVowUPgQZ+1ii33QImGbKgTQ36xpstVCzEqDTZh3s4vIO?=
- =?us-ascii?Q?H1xytyRQ14hmysfSE+cHNVUO7dBlGQwJeyRhbBGH7lxhN8/dL8SaQv5f5xn/?=
- =?us-ascii?Q?ZF1/pH7YaMgmqHRF9nN8k91ekfVzzv1P15DAblAybjRzVFKoAsoAmyKrsDvI?=
- =?us-ascii?Q?AvxYryQLztOtxKLpJQpaO1A3nEUgRhQC4x59RLrKp7H0XDLIJnosQKDDbU1a?=
- =?us-ascii?Q?wN84j38w5w3BZo0kiIFmbBmphE5AKcL0wFFQfIZlspRJaI86dKT/x2F/lGRW?=
- =?us-ascii?Q?LPJM040NLPONZdT1ay//xlu/TYdGJd9vu/PIyHnLHTdDz7FG5tOskoAF01iE?=
- =?us-ascii?Q?aW6Gg/vPvzGqMPNjypljEfXSFUyPIuBquystGNNj4E/S9PTRFYjGOtVUBbYy?=
- =?us-ascii?Q?9PdE5OOHeOPVMb/psXkcl1dlu6TpQsX7jB7lwvZPdoUjLGs2kN2jiWkxnD+m?=
- =?us-ascii?Q?vVZvcydgav4NdysbOVc/zYd0CRB5hhD64X5l6Lanl6mQL5Aj0obOkcki0fla?=
- =?us-ascii?Q?jWAv1ZEJl+JuXHSlTDsyctnUsVFrKYRUyCiJehbm0Bw8ROFemYNwmdbRtVp2?=
- =?us-ascii?Q?S6qLPA+CCdzviZ4XC840H8YFBvVY0Z5fDtQnAIEIDu73JefQZ8HYnqWkIq7M?=
- =?us-ascii?Q?uRnFLk+cJiGnbCxJQVoiNcQY78kFCCUbkYzNw3DGSUEjE6qal59FYb3MT69B?=
- =?us-ascii?Q?1Wkkzc5DkMOOugosQpfqdWjNiC6tCv/OXNqoMGebyqgMZ9I0/ssK5L4rzHuo?=
- =?us-ascii?Q?RHayFlklqw=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?AYkREWOSYMnNbFCZMMgB2pA2D2gDKu2GwuU4vxB5BTNI1HXXUXpK6vKR09v/?=
+ =?us-ascii?Q?bYqP6n1d2uMIXT108AD3fGoYo1CGr7oM2Pj6JKfPsDpNPVnWSyELlJUDPgZG?=
+ =?us-ascii?Q?TAflq+SykxUTeygsSNjsyhglJ9iTWYYcXkNsjSObDsJ7v/aiEbmtRh5uaIzp?=
+ =?us-ascii?Q?H2zCXcsDnLFcgxZvhAKMVyhrWO3PFFjT+T7m4zCvCIkYvf5WMEcm56ZsrcxD?=
+ =?us-ascii?Q?9opBJcBrR294tZ5YoZtvpq+Qizb0LmL9smeZFXzYIfqjeN2buXwPWlV8XEaG?=
+ =?us-ascii?Q?w+JhSHXUJllb2FJ6Zb33wuSZPhCt1QQM0ONJIbrAsuo9s8FPkmc294mB4ksv?=
+ =?us-ascii?Q?fvs/53/GN4voW8QteoSp3hXQLmD1XfC1V3NWubzWizxpGtFQUi+qqbaZe2uI?=
+ =?us-ascii?Q?ZIZ6BIP50zT7Wh6yg5hF5V9YJoE9AA0tomZZPcwcEEYDZoW9/K+s5rdy4mGS?=
+ =?us-ascii?Q?ruS79hAduY4Md6/FBHYSOh5tS+Ai9G+Mez4qkXBj7pnGJY6rWDRp3M7/k6eK?=
+ =?us-ascii?Q?jQJFbUH6mtcRRm1bIrs5Hclhpawl+rJqmrArinVf9Gq2jpSFTzbzFon0gpHD?=
+ =?us-ascii?Q?FmYVBQDHaTVV+uUHUK+Uqf2mX2kJJv5gb77RNfDUj3l+yiYjNTATcRTvsYjE?=
+ =?us-ascii?Q?kP8CeyAzbNLCTf4nK+2RiVVwka+A55kFhhifUl0+DGO5kjNmXh31o7/+QJ+x?=
+ =?us-ascii?Q?FNBZm25ezhXgQdTVQvATsOCdLhC4kmvlMDjltvWBsTclhI1RrxiwGxEtUZCp?=
+ =?us-ascii?Q?FDNQTkIKSneEaLmAFO91Xk3qmWZEPHotuzEtenEu3MZqg9OALoo/kraDWftN?=
+ =?us-ascii?Q?ojMp0KJZbM+MFkmjYRXJNx9PMZW5dkmebxeZc9aeuEu7B9UcZpJ69m2PFj7p?=
+ =?us-ascii?Q?gxNnDIs78A1vzkMxcbFPkcB+ukWZMLkJE5WnSgtHRFBPxcoPwn14e3QbIW+/?=
+ =?us-ascii?Q?zaIlMWzt4CQS7tTQXkW9tov0FLQW3Aji/AGT9i0RLt6lELqQ7NSVuuSlmPVf?=
+ =?us-ascii?Q?7WgmtLasyfHjtK+RLFtstrZfGcEFP66yM3QvWsq5QCoTf+0pq1uXUuci0HCt?=
+ =?us-ascii?Q?iDb9P+anNzZpp6r+hdq4HDN0dsOSnttX45zvOgauChH6PCxnIwuZKo52n8+E?=
+ =?us-ascii?Q?YI+ni03fIJAPNOVxZPS7K0xAu+oOE34Twl8tt616Y3Hhk93THLW0KiCE9s8V?=
+ =?us-ascii?Q?H7KZtV8Jen7gxp04X9nuqWCuFVXLCwG42AEwFltCUBwJzZZE9gPtgVxpmJVE?=
+ =?us-ascii?Q?zTEv97NQNz/ZsUVDTxQtC9eTC69SApTGTH97CnY9RIOnCsuFpar5gmnTOfmi?=
+ =?us-ascii?Q?YiD8M63UShkfKvkWSwvKQvBA/OPRYBDLfjapB6DxTWEZz3kARC0ynWOqs+JB?=
+ =?us-ascii?Q?vua431YeY9u2+WJUVWSyN6dt5FJACwFC5ajFdWr4p0GMPJwreiHKuywYZB3N?=
+ =?us-ascii?Q?hUJ3/UlFEa8DpeRN0jEE5xy+nRGd1upV5UeevB+M8ZEH+vbN5wtIbr7e7VtH?=
+ =?us-ascii?Q?r0oL6+G4sgOT4W2KdU1U3sUBiQZRNYdzmszAj7oF8tRY4BR3E5j2VDXoZtUH?=
+ =?us-ascii?Q?miQ2VtxCfY6l8lfKMt158Nki/685UQ68Q0vDIvDU6CFX850xp/6rA0UTDlgT?=
+ =?us-ascii?Q?wDNI2NdNnWaQUYKd8hk/CiA+RikmoIdRFCPh+axnj6Kn7dMyAk0f1y/vXUUH?=
+ =?us-ascii?Q?aM5+/H7CN4UivXvzn5uBN8Gh4WzDf9bPc/ChbxDb3BRF8/3G?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 38f96d62-d4de-48c7-40f5-08deb04614d7
+X-MS-Exchange-CrossTenant-Network-Message-Id: 908bc912-f57e-4de4-79be-08deb04693c5
 X-MS-Exchange-CrossTenant-AuthSource: PA4PR04MB9366.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 May 2026 16:46:57.9546
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 May 2026 16:50:30.7808
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: E+0XCa0/xACvisMYyse7b31Mdvu/EcLNmjOn6TipzS8bTJu/ZigNGH8FaLn0fVtZ4gUW8vlM3DVyvzbmzBa6mA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8069
+X-MS-Exchange-CrossTenant-UserPrincipalName: x1BluSgWdXRb6yJlL4lrvNRNqlSde6qT4DqMyefcL1YVN2JVjW9UfaUsxDB4LVkW6kVc5NoGl+MVCZ8SPJj8ag==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU2PR04MB9195
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260512_174701_138197_B7518EB6 
-X-CRM114-Status: GOOD (  23.28  )
+X-CRM114-CacheID: sfid-20260512_175034_343959_34B7BF3D 
+X-CRM114-Status: GOOD (  29.05  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -152,24 +151,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, May 04, 2026 at 02:33:43PM +0300, Adrian Hunter wrote:
-> In DMA mode, transfer lists are currently completed only when the final
-> transfer in the list completes. If an earlier transfer fails, the list is
-> left incomplete and callers wait until timeout.
+On Mon, May 04, 2026 at 02:33:44PM +0300, Adrian Hunter wrote:
+> Software ABORT of the DMA ring is used to recover from transfer list
+> timeouts, but it is inherently racy.  The intended transfer list may
+> complete just before the ABORT takes effect, causing the subsequent
+> transfer list to be aborted instead.
 >
-> There is no need to wait for a timeout, as the completion path in
-> i3c_hci_process_xfer() already checks for error status. Complete the
-> transfer list as soon as any transfer in the list reports an error.
+> In this case, an incomplete transfer list may remain in the ring and has
+> not yet been processed by hci_dma_dequeue_xfer().  Restarting the DMA
+> ring at that point can lead to unpredictable results.
 >
-> This avoids unnecessary delays and spurious timeouts on error.
->
-> Complete a transfer list completion immediately there is an error.
+> Detect when the next queued transfer is not the first entry of a transfer
+> list and does not belong to the list currently being dequeued.  In that
+> case, skip restarting the DMA ring and defer recovery until a subsequent
+> call to hci_dma_dequeue_xfer(), which will safely restart the ring once
+> the incomplete list is handled.
 >
 > Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 > ---
-
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
-
 >
 >
 > Changes in V3:
@@ -181,46 +180,59 @@ Reviewed-by: Frank Li <Frank.Li@nxp.com>
 > 	Renamed completing_xfer to final_xfer
 >
 >
->  drivers/i3c/master/mipi-i3c-hci/dma.c | 6 ++++--
->  drivers/i3c/master/mipi-i3c-hci/hci.h | 1 +
->  2 files changed, 5 insertions(+), 2 deletions(-)
+>  drivers/i3c/master/mipi-i3c-hci/dma.c | 15 +++++++++++++++
+>  drivers/i3c/master/mipi-i3c-hci/hci.h |  1 +
+>  2 files changed, 16 insertions(+)
 >
 > diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-> index 28e4d38f55d3..899fdf6555a8 100644
+> index 899fdf6555a8..268f54b32101 100644
 > --- a/drivers/i3c/master/mipi-i3c-hci/dma.c
 > +++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-> @@ -502,6 +502,8 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
->  		struct hci_xfer *xfer = xfer_list + i;
+> @@ -503,6 +503,7 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
 >  		u32 *ring_data = rh->xfer + rh->xfer_struct_sz * enqueue_ptr;
 >
-> +		xfer->final_xfer = xfer_list + n - 1;
-> +
+>  		xfer->final_xfer = xfer_list + n - 1;
+> +		xfer->xfer_list_pos = i;
+>
 >  		/* store cmd descriptor */
 >  		*ring_data++ = xfer->cmd_desc[0];
->  		*ring_data++ = xfer->cmd_desc[1];
-> @@ -576,8 +578,8 @@ static void hci_dma_xfer_done(struct i3c_hci *hci, struct hci_rh_data *rh)
->  					tid, xfer->cmd_tid);
->  				/* TODO: do something about it? */
->  			}
-> -			if (xfer->completion)
-> -				complete(xfer->completion);
-> +			if (xfer == xfer->final_xfer || RESP_STATUS(resp))
-> +				complete(xfer->final_xfer->completion);
->  			if (RESP_STATUS(resp))
->  				hci->enqueue_blocked = true;
+> @@ -669,6 +670,20 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
 >  		}
+>  	}
+>
+> +	/*
+> +	 * A software ABORT may race with transfer completion and abort the next
+> +	 * transfer list instead. Detect that case, and do not restart the ring.
+> +	 * It will be handled by a subsequent dequeue.
+> +	 */
+> +	if (!did_unqueue) {
+> +		struct hci_xfer *xfer = rh->src_xfers[rh->done_ptr];
+> +
+> +		if (xfer && xfer->xfer_list_pos && xfer->final_xfer != xfer_list->final_xfer) {
+> +			spin_unlock_irq(&hci->lock);
+
+Is it possible to use auto cleanup to handle lock()?
+
+Frank
+> +			return false;
+> +		}
+> +	}
+> +
+>  	/* restart the ring */
+>  	reinit_completion(&rh->op_done);
+>  	mipi_i3c_hci_resume(hci);
 > diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
-> index d630400ec945..f07fc627d4d2 100644
+> index f07fc627d4d2..83d4f13a68a3 100644
 > --- a/drivers/i3c/master/mipi-i3c-hci/hci.h
 > +++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
-> @@ -104,6 +104,7 @@ struct hci_xfer {
->  		struct {
->  			/* DMA specific */
->  			struct i3c_dma *dma;
-> +			struct hci_xfer *final_xfer;
+> @@ -107,6 +107,7 @@ struct hci_xfer {
+>  			struct hci_xfer *final_xfer;
 >  			int ring_number;
 >  			int ring_entry;
+> +			int xfer_list_pos;
 >  		};
+>  	};
+>  };
 > --
 > 2.51.0
 >
