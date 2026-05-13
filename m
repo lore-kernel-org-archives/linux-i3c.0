@@ -4,8 +4,8 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8CB72CD4851
-	for <linux-i3c@archiver.kernel.org>; Wed, 13 May 2026 05:32:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F141CD37B6
+	for <linux-i3c@archiver.kernel.org>; Wed, 13 May 2026 05:46:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -13,166 +13,166 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:CC:To:Subject:Date:Message-ID:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=VVaEV/w9onblK0zyXiKokfIG1ZFlG154djOA4AahAM4=; b=EWVniDhDAD0YmikVDsbfD1f0ig
-	T2zUfu2Qowd1JYpmhIJn1niYrINa/u6NulPxqxnd7WQX0wKrEiDC3Cw8hk8hwqgNCaGqfpkV/kpXD
-	Py2YGZ+EJLprTeuiGHcFwbUtEh4wiISm94bZd7MK9aa/PJyeobPuAMuQ2C3GwjMj/3NZgkfPqmP02
-	eMPK7m7iQ7UI2Za12lWietdWyUcCCi2FUGgmIa8VPmkko9Frycun9thKoyVORG9qWK9IRDBDtR5L7
-	a4SB20FkPwk5biKnAcB4Sxji8Dx33X1lsK6EGVscuaRPZX27/4OoMjWdbAfyJTlIhKOgLtn5ci8aD
-	sI387SLQ==;
+	bh=V/S+EAtgK13gLac/RmBUFvtcvUHissM8Yk/d9PDJeYs=; b=Lf9FsnNG4yE9lLtTJfjgrVGg94
+	uSLvPmNlegycU3S5Xb65m/1IvxaQCjqJKOpERPfeeJ4kYsLj2l8pU/WQVUI4iMZI7V0MEGMiSkvjl
+	Ue6DB1Mr/m/bZtmHxEuGjPbKg2F16G1EcLqAKG8jAK1n4hGwP7muwZoY0nhsLLLP87lo3Dxhr9lXS
+	9Ho61awzUnWqpRUb8mVck2F1Q63qXZLf08K+zfntlHOQuvl5eMUBb3rb/6uYntFWqXscYOdXKlHyc
+	A+QMmn6mFMG630fsiLl6Mvu57O76BPAtmZJ0IYYVFr66ZNaGFJa8SDdrKQwLiRmS9jCX6nMmZiPG/
+	zYoRouBw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wN2CV-00000001KFJ-0cUe;
-	Wed, 13 May 2026 05:32:07 +0000
-Received: from mgamail.intel.com ([198.175.65.18])
+	id 1wN2Q5-00000001MTA-0unR;
+	Wed, 13 May 2026 05:46:09 +0000
+Received: from mgamail.intel.com ([192.198.163.8])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wN2CS-00000001KEt-3TGf
+	id 1wN2Q0-00000001MSF-1zPm
 	for linux-i3c@lists.infradead.org;
-	Wed, 13 May 2026 05:32:06 +0000
+	Wed, 13 May 2026 05:46:07 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1778650325; x=1810186325;
+  t=1778651164; x=1810187164;
   h=message-id:date:subject:to:cc:references:from:
    in-reply-to:content-transfer-encoding:mime-version;
-  bh=wTWBeXVe7m4dQtvV/HQFY+YNNb07cz/y30xX3YU3ryo=;
-  b=fH+a/WaRqu4mEbdsYoHgJYF//7LFGfY/GYAzL02bnHD9VsEBZ3jJKGHO
-   sSqkNx62PXvVW8SDLMElgurRZWVsgqaqfuiuPO+72o/HOkhtKuBgcxKc0
-   Qh8wo0iYDCJG0OalB7Zp6yq6atMY4CWlp04iadnMpmxVZdcuC1GMVs0+x
-   M5yqjdsbI18VMQaYjdrLH+Dny2zOioE30TTMVhe77ND21hA+abMMatdtk
-   VXAWhWa1JISDGyxZWztWLPJnz4ENum/uKiBYFlv8WUgz3dGZEdJGvcSLg
-   iTKfmVmQ9wNHY+4TGtltzL8oyokgJQDGLLggw5AStzDyGVAHk1d1SCbLU
-   Q==;
-X-CSE-ConnectionGUID: tl62h5o0Th2EM3kTk7JeKg==
-X-CSE-MsgGUID: e1EooJlWSHyjLu03QVNUSA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11784"; a="79591893"
+  bh=k6P41imvMp0r/gCySrlFZNs5fZfwxwDForKSOuNh3Ys=;
+  b=DgJmxaga7fKls0pTzrxgaKuDzPQ+u4WvoU5lWvuCgI6Mcbr1FCFxYs2c
+   Mgs7qhoUDBYroQX3SaFTTFLikwXfP3R0W2N0LS1LGl6odnvABMbsFcQFO
+   jcClRio+P4s0pE9EcfBJgcb5gNlLMWXbRS6y4nRMEhdfTEH6yDNtbNvBi
+   Mu8JHntF1ZqSRFamaTKzrpGD41o8Wmbn8ZQY/iTjXmSzU7Ut0/Aqwef30
+   7alWGmqinSjOfjxQXDOY8wUqsjgNsrKPZO18CLUe2I/HG7I2wNSF0Uv7L
+   BjlztSAqoEuCyhypP0g1bQ2dgnRz0ZJUvruHHDh5cu2KB5HHIibWyo2mq
+   w==;
+X-CSE-ConnectionGUID: mGepPCxjSXuIO+Hubq35IA==
+X-CSE-MsgGUID: gT9wCevYSh6sXT8c1SAr3w==
+X-IronPort-AV: E=McAfee;i="6800,10657,11784"; a="97137019"
 X-IronPort-AV: E=Sophos;i="6.23,232,1770624000"; 
-   d="scan'208";a="79591893"
-Received: from orviesa002.jf.intel.com ([10.64.159.142])
-  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 May 2026 22:32:03 -0700
-X-CSE-ConnectionGUID: FUK3ZWVLRqqITbGLvxpwQw==
-X-CSE-MsgGUID: 2DbdPbnySYSqYRYtveWneA==
+   d="scan'208";a="97137019"
+Received: from fmviesa010.fm.intel.com ([10.60.135.150])
+  by fmvoesa102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 May 2026 22:46:03 -0700
+X-CSE-ConnectionGUID: saSDrrxYSFqseOvqTv1pBQ==
+X-CSE-MsgGUID: dTXqIq/OQdyOrpxSXbpm7g==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.23,232,1770624000"; 
-   d="scan'208";a="268322708"
-Received: from orsmsx902.amr.corp.intel.com ([10.22.229.24])
-  by orviesa002.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 May 2026 22:32:04 -0700
-Received: from ORSMSX903.amr.corp.intel.com (10.22.229.25) by
- ORSMSX902.amr.corp.intel.com (10.22.229.24) with Microsoft SMTP Server
+   d="scan'208";a="233708800"
+Received: from fmsmsx903.amr.corp.intel.com ([10.18.126.92])
+  by fmviesa010.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 May 2026 22:46:03 -0700
+Received: from FMSMSX901.amr.corp.intel.com (10.18.126.90) by
+ fmsmsx903.amr.corp.intel.com (10.18.126.92) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.37; Tue, 12 May 2026 22:32:02 -0700
-Received: from ORSEDG903.ED.cps.intel.com (10.7.248.13) by
- ORSMSX903.amr.corp.intel.com (10.22.229.25) with Microsoft SMTP Server
+ 15.2.2562.37; Tue, 12 May 2026 22:46:03 -0700
+Received: from fmsedg902.ED.cps.intel.com (10.1.192.144) by
+ FMSMSX901.amr.corp.intel.com (10.18.126.90) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.37 via Frontend Transport; Tue, 12 May 2026 22:32:02 -0700
-Received: from PH8PR06CU001.outbound.protection.outlook.com (40.107.209.51) by
- edgegateway.intel.com (134.134.137.113) with Microsoft SMTP Server
+ 15.2.2562.37 via Frontend Transport; Tue, 12 May 2026 22:46:03 -0700
+Received: from CY7PR03CU001.outbound.protection.outlook.com (40.93.198.46) by
+ edgegateway.intel.com (192.55.55.82) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.37; Tue, 12 May 2026 22:32:02 -0700
+ 15.2.2562.37; Tue, 12 May 2026 22:46:02 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=fPQa4U2RLZTUuO9XIDakLfWlK5Mq5wMAZ0sLbPwIsD1bzd3wkln7IwfTn7N5b83z7CCys4icM4RjquXvGMMBzLj/SRA6vsiszyvckFtJzhZ1ee+S5AQ6GedTVQqZjNyNmepkD+9cRUxSFZ668ef+M7Ux96FJeTSmDQRxcGelv1zFNWp8KzgVqmY24UHLtul1WvsyKypvS7d83dQKR+RnrQNX4K+bxMzPSp58rcfzOQMsB2OF8TvAnll6pYHoCl3b1DBIYyAHhNm8aVUMpqmVLn8czezpPXUCXnAYx4xkqS7cVOBLhEWHO/KFsfGsQVo9qxkgq+1Kw6V80QsoWLa4jA==
+ b=gIrdLmjH6ucV2UNZ0JnLDfBxNmDRLoUZ7XR24ntFrIaO7H8awD2Ao7YkXOFLVXc812g6uwjDVBM1NWgQbgz+/c9/XNy93ZO2EYNNUMZyo67edab9vxJVdQQr4R8m83/HgYRfybwjV/GRl2XY0bYwY8YWHXt9dGJplPR3nQ1tL8C4Yu7mmP6Wso8R8RPQn1iBrIGGcxquTMi3hTQFCG6M3V+PSSgV3QUWeYKLkDFML1aqX3vSFOG4kUVwAkz+ThYD0MzH/smzleBVRWV1Krk3mPzSvwpWhaMKFraKC8rMER/FZDlUAr3DHdKEcz761olinFMtYiQIGg74lJxWVAM2qg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=kblIKXOiKyK0k1S5GlzOxTWWDH2y2ruPUV6NpKffrOs=;
- b=agJlhYYc1xRU/rfTSuF0rZelwl4FZbtERNSD54pU//0nxepdNvK36z6Hyt344ZuVQ71VabdCHgTJAfpG71Xjk8fgu9n+iwMYqkEPLN/128G/H/0dr0odRaJJyS6FrCF56RUblLNX7ONKFZjWIIDnn3iluxsJOu2v6KhKfqUHeT5I7sMNB07mdVF3J+mb1YDyC+jdsE5VkzfseYisXqgYWyjoLaZCLCszp1Tq9wzI6sS8/BHowEMH6K7ZJklRq4FuUxKge/LUEPhSjJsUo+KOCj7SLBpdIf+LMncQMCNyzLtUQsqXNHGNTqxUUCiJ48dzZxlVr7n+LaLLKS3LG5Sikw==
+ bh=nzac7DHI3+2jAKuqdLt/86Hnu0N0rI0F8odrk3JLGuw=;
+ b=jvv16dgd6AMDgSKxPNVxHapEjP1gHjCUlW3/tVaCKWTdQaI9e70eAwzWiN/xpAkCWfGn8OHzo0tj4QHnZSNw3wtFYSWlfv69RIZZ4X7zK+jEprfvSltb+MQ3AFHdeMvCpvufJ8dg6P2y+s4FNBsjcsdDT8sW7Rcadxp+ZaQqEznA42t33guEWtpyU/hdgYiwFLTRQFOtzhKWzU77fqV9/iwzfLUpmiemm+7eGFKLcfIG/SQdyTEDQLbWHK05PZdOsIND6YyOq36t5786TU8Kq0fFD0C0dIXWBEvajyIBGMnoyESP0MUD6+v0eqFq1275OTwCXoKhdb3q+PYaWZ3rNg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
  dkim=pass header.d=intel.com; arc=none
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=intel.com;
 Received: from IA1PR11MB7198.namprd11.prod.outlook.com (2603:10b6:208:419::15)
- by SA1PR11MB6805.namprd11.prod.outlook.com (2603:10b6:806:24c::8) with
+ by SA3PR11MB8046.namprd11.prod.outlook.com (2603:10b6:806:2fb::22) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9913.11; Wed, 13 May
- 2026 05:32:00 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9891.23; Wed, 13 May
+ 2026 05:46:00 +0000
 Received: from IA1PR11MB7198.namprd11.prod.outlook.com
  ([fe80::2c4e:e92a:4fa:a456]) by IA1PR11MB7198.namprd11.prod.outlook.com
  ([fe80::2c4e:e92a:4fa:a456%3]) with mapi id 15.20.9891.021; Wed, 13 May 2026
- 05:32:00 +0000
-Message-ID: <9d2a7c42-7eb1-4de2-ac9c-c1777d7fcb13@intel.com>
-Date: Wed, 13 May 2026 08:31:56 +0300
+ 05:46:00 +0000
+Message-ID: <01df8e0e-9041-401b-ab73-634701c4acdc@intel.com>
+Date: Wed, 13 May 2026 08:45:55 +0300
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 4/8] i3c: master: Ensure Hot-Join operations are stopped
- on shutdown
+Subject: Re: [PATCH 6/8] i3c: master: Defer new-device registration out of DAA
+ caller context
 To: Frank Li <Frank.li@nxp.com>
 CC: <alexandre.belloni@bootlin.com>, <linux-i3c@lists.infradead.org>,
 	<linux-kernel@vger.kernel.org>
 References: <20260512121732.406009-1-adrian.hunter@intel.com>
- <20260512121732.406009-5-adrian.hunter@intel.com>
- <agNVCdZ93XwtBHjB@lizhi-Precision-Tower-5810>
+ <20260512121732.406009-7-adrian.hunter@intel.com>
+ <agNXuQDsj_bHSA7s@lizhi-Precision-Tower-5810>
 Content-Language: en-US
 From: Adrian Hunter <adrian.hunter@intel.com>
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park,
  6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 -
  4, Domiciled in Helsinki
-In-Reply-To: <agNVCdZ93XwtBHjB@lizhi-Precision-Tower-5810>
-X-ClientProxiedBy: DU7P191CA0029.EURP191.PROD.OUTLOOK.COM
- (2603:10a6:10:54e::24) To IA1PR11MB7198.namprd11.prod.outlook.com
+In-Reply-To: <agNXuQDsj_bHSA7s@lizhi-Precision-Tower-5810>
+X-ClientProxiedBy: DB8PR06CA0053.eurprd06.prod.outlook.com
+ (2603:10a6:10:120::27) To IA1PR11MB7198.namprd11.prod.outlook.com
  (2603:10b6:208:419::15)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: IA1PR11MB7198:EE_|SA1PR11MB6805:EE_
-X-MS-Office365-Filtering-Correlation-Id: 38d1a878-c701-4ecf-b6e4-08deb0b0f4f6
+X-MS-TrafficTypeDiagnostic: IA1PR11MB7198:EE_|SA3PR11MB8046:EE_
+X-MS-Office365-Filtering-Correlation-Id: 88934645-dab0-4cd5-0d09-08deb0b2e925
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|376014|56012099003|22082099003|18002099003|11063799003;
-X-Microsoft-Antispam-Message-Info: tv4LMIK3xqx2F35wfISDMC9Pet4zoHI9VIsnMsfFraOuYZ1pXcrFB5dTL642KqJcnH6rqW6CJUPV9HRRnGJSgazmmzrgrNyYyvgYE+n8f+lE3olJv+5f4J4WTi/m/5WL7+ZCFsENCeKck1sZgB1udApnmsKx4K8P3ZdEFfO5kMpeLqV+hIQVoNs45Mh8bgYBt1GQC0QL35kPmBHC+SkLPHT3oEtz3rx3q+UzI49ON5Wl8n/KjiWL6AZYc+WY+cSwxvDPBhfXOsX6Qt5b715gCzaSPb03fZ9kAym+NrU/0SRgbrLwGgSrjKigrvD2gZQR85DnT5NXVzA7IAGQwAha4O+MMDha1CX4simnoqjzYz6omzqXpO01oIP049yCdEbTDlMKqUDHrO0uaK26Hxxug32o5z9Q3Uv/z6EjLpytscWJTHd/mUmWX7lFxop9CyJQlRdqtPG6lC/8XnZqNSIu+2BXC1dC3RP4NAXu9fV09LaNhLRqKG38/Ni8eJLSTo5XrIW89T3soj/CP4fawf3IfU8/N+mvFtm4Xqk5jp9vSCcljXC26r/mJqPnEl/qG8a8PcjQr7QOf8JMjftDrPnl8R6otOBzUZ1qqwWYdG69SCu3MoKRgw+OFgrHPjbbyd1atQwsZFCb3SLLI+vTkWRoZNN3IdfqZ7x3on5n2J8FBgAjnYoJDUgOqe592l7nXvlA
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR11MB7198.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(56012099003)(22082099003)(18002099003)(11063799003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|376014|56012099003|22082099003|18002099003|11063799003;
+X-Microsoft-Antispam-Message-Info: 1e6Eqv16z9VJKoFx2ejh7HTXiCgZzIRyDiCGqt5kYTS1WQK0TghFkOLFTTMcKU5c0t08mTJPD5I9q8YNNbeKmB3+dLq/aZ7Pc2K3wrdVnHCTlV+quI8tDQNBqllGyvr4oLuZQSEzSPAgP090XxqJgXkuBesXuGvDyFUVGoY6f0xt2kIGIdhsWZe38a/LTt5djyVb4IbNMCBTDuXCD7Y9c+CyJKeOXNKua8555FUZbiE1ZD7MZh6Zoim4xtNIeWmLJyBNYXCAZtFEhMee8rfOFccdze6pExSTttFl1ETRXrWSXkuD5iH8ky8yne2N7eFmOJceFZ9EBwV/4rPWOcqvCR0NSYsDnhRzq87DQn8wJROrRxZ3sGjB0f+LASpckWzGx5mszdmMGsgCBYUxhLClOuuPskhbVhdrA2Q778uaDB1JBfYgDsw7t2sNt3oR/1XtVAkdVbAOGJKPPQoe8iGlfAAg8ZCY5BbaGl++DPa5QBfW/6oekQbGo1vf/BmSaFw/iWerLshQ0gZ4E1YX2mGbb4GD1uRDla2jLdaqC4rUoI20I9YNWSjEbVi5gE16gHXAgSBWNi6dXiH+oIz/7A6Vb2bnI6caGS5vsy/0Wi2/3eJcdkSZS0kDFS/FsuguGpXULj6yoUrafTA2DRwXyowBhGh8tLGSGFkW1xb2qEnuqcn93EKqpHcMFln5lm5y+YcW
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR11MB7198.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(56012099003)(22082099003)(18002099003)(11063799003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?S2ZrcXFES0xlMGtnMjBnQ3JWRmpLbHk3NmU0MGozaEJ1TlhZdTVnZDdJdXVC?=
- =?utf-8?B?TGtKcXNjWEg5cTcwcHZIbFRaNXFFL2RmVllObVRjbkhjUlpXRjhmV1Y5a3h1?=
- =?utf-8?B?ZS9uOW85WHlON2FlcVhjOGFlc1dKemptdEpBZ0tiTHk5b2h5blBSdlFuWE9p?=
- =?utf-8?B?TFZoWnU5TjhsRk0yRSsrWjBmVHZlRjErZDZBdVBETzRnMjVPeHhTM1JVd2hI?=
- =?utf-8?B?WGlwWitqTVB0L1JtVFRIZHhSREtSdHRqOWpkaTYrVkN5QWdRa2ducnFtQnFk?=
- =?utf-8?B?b0JKMDNjd0pFMzNZekFGeEhVZ0J1VnI1SFEyN21OOUdpZkhnbUV2bkFGMEE5?=
- =?utf-8?B?dHc5OUU3WVBOOGpqUzVyQjNCTTl4eUNnUThyU0tHRE81YUNVSWViTU9OWHJQ?=
- =?utf-8?B?M3ZubzFkbEhuRHVJTmVXcDEvU0lUbjA3ZC9ZbkE0bWczSXBSY205QktIcUtL?=
- =?utf-8?B?NkN0ZlJvTWV0K0RtbExaSnNvVCtueVZBRUFNWG44a1dPdXZ0NXozdWVLL1Z2?=
- =?utf-8?B?aFE1dWw2Z1pxNkU2cmN4Z0NheDlDRVdRc3phMHdlOGVFNENQMzREc0dON3lr?=
- =?utf-8?B?Nm5aeUtsMk9XWk5PZkd6WENRRSt1OXhsU0JLMW01NGd3WS9XVVhPMlF6VU5i?=
- =?utf-8?B?bjhTc2J6eHVqT01sTWFPVmpxUTV0RnN2TE5zYUJ5QVl6YUlvY2t1bnBlTm54?=
- =?utf-8?B?dFA0OHo0cUpQK3hnYkZEWHVubDYyTFVON2l6dWRQUGZIaVUwZE9wUy9ZSWti?=
- =?utf-8?B?NFZYdzZ0Y1ZEcGFZZTRMUVM3T0hyenpjajdZcVREcG95QjZOSGdGZktPaDVM?=
- =?utf-8?B?MEFMSHVrcTQ1SDhqOW93TUw2VjNNSUpNRTRwQ2tKQXZESmJxYzRQbW9Ld2kr?=
- =?utf-8?B?OHZObjgvalVYbzhXSy9CSTdkWElMWlB0UllkVFZXYzRvS3YyUWlzdG9qZ0ZI?=
- =?utf-8?B?VWFmZUhpdG93ZkpHTU1HenQ1RUE1cUN1K0ovM2trc2lMeXlCbUNjcmdXWXdP?=
- =?utf-8?B?VUxrUkVrRVJUT0JKMytibXd0Nk9WWXZneU9IdlMxMi9TWWcxU1FNRmpPTW1s?=
- =?utf-8?B?U0xrODVqSFhjRG9ReTRsd1dXdXc4MEFzY0xxYWlEVGsrQXExUjVyQys1MkUv?=
- =?utf-8?B?L0VCVzF4ZDlubEtJOSt5ZUIyaTJ1OUxYWjJEWTRwOHJHMy9aSnpnSFBMMU50?=
- =?utf-8?B?VDhpRXo1RFZLcGRxTWM3Y3J3R01vZkRkaCswY0RTUnl0ZU1HdHJ3Vi9sam9i?=
- =?utf-8?B?d3RvSFdHd29UcUF3K0pqcGtCSWMrbXA2c1YxZFIzUytpQ2ttMy94czhlQjdw?=
- =?utf-8?B?QVpnbm1GZnEvbjlBOFo0a21YV2w1ejdYOTNybHJuMGdwc1Y3dVQ0cUxBa1Zz?=
- =?utf-8?B?cXF6VkxMYWlMSGVmanF0WHpTeHRSZDloZ0FrdUZieFppQkNUbkg1YmhHVlVO?=
- =?utf-8?B?Y2hrMEVhenJ6b3ZXOUVRV0VSZUg0TS9KTm4vSzNCbnBaZnpYVENNSThicFZz?=
- =?utf-8?B?aUlIQTIvaVlOODA3Y1BNWmVWKzQxend3U1ozSXdYYXhVZElvUmpLUDBkbDNX?=
- =?utf-8?B?NElyMTlnKzdDNXA3MWRTWWthOVFiNDczZlBhK3RDVjdOZ01vL1BWMzVsS3k3?=
- =?utf-8?B?dkFETzRtMXowdWsyVGRlSmg1eE9yUjNwT056ZVl2VDNrWlJaOE4yNEM1MTBN?=
- =?utf-8?B?bGoxdHdvaTJCWE9OTVdiRFZXUEw4K1h6MFdqNDdGVnJNYURLL0VvRE04M2dT?=
- =?utf-8?B?WDlyK01UYVlia0ZPN0puTmhqQnBWY1YyZEFxV1ZZSG13V3B3TEN6T3JBNGFw?=
- =?utf-8?B?SWRTS2xDNWZ6bzJWbXVjUFRKQWhpK3VHSlFMWll0M2s0Tkl3dXFQN0gwakkr?=
- =?utf-8?B?T2R6aEIzdHJQWVhNa1oxMVFRSzhFNEtveTl5Z25PYzMycmh5aUdNS3ErcTBH?=
- =?utf-8?B?b1dtaU00eERBWUx4enpsa25GNjFld2xDMzgwQUFnZmQwRklJendKM1BRc2tM?=
- =?utf-8?B?bG96RjJJQ2QvN0srSjY1dFFMd2lhOExyL0c0L01IRGRlZEw4M1hUZmNuVzFJ?=
- =?utf-8?B?aHpsd2FRLzhSNVpRMm5sZ1FPY1dkQ2p3OFIrMGFIcHpYV09BanhOazVaR2VQ?=
- =?utf-8?B?UGttMGRIV2N1ekNmcUxUdllxOXhYSjNKZHRMaDBHQnQyZ1BINCtRS1RuTlhy?=
- =?utf-8?B?SWhSQjFBQkVSZWd3UGtxeitLTENiem9reEFCVzFYZFhCeEhoSlI4L0tBaDlx?=
- =?utf-8?B?b1d3L0JIdmgzekVtQnJCZS81OUZoVkJ6RGFNOTgvOFQ2Tk9maXl3djhDTDFN?=
- =?utf-8?B?bExOazVKenh0UEVWbzZVTVpuU1V4azNXeVNjNFo3QU9kUjBxV1BUakRpVEt0?=
- =?utf-8?Q?xSfmni5P2m8cF/pw=3D?=
-X-Exchange-RoutingPolicyChecked: nE7oKxjwuFSgNSfB/IF3ewMjsZBpugxjy3vZYEzqtKmZsmGSveAU3nUN6yrsfvQb29D5J9jHSh2rGifsdnG4+KsEK0XGpCCg5LWMHuhb3MqOIvWy5HcmMKFfAQWEDg0yhiLYbg9rTioZPedB1MAn/vS85tfI5vt3+ji7ROfVyu84Sh5niVSzlK2ubU/ZVGDvDtubfihR4Dpb0xuqQEdm4t9p8doYufAdPmCvXAOPGMHawYZy2nghoTWKpYl6ormIZJ//sKoTRIgQBYFCbnA4OoBM/jTyC7LIfZelRRbEhxSEtNTNVDKv3OoGMY+ePImr+kyALktZ/SkbR62kQs40GA==
-X-MS-Exchange-CrossTenant-Network-Message-Id: 38d1a878-c701-4ecf-b6e4-08deb0b0f4f6
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?aFpRREF2T3lPYTFPZnY2Uk9OZzFERDBJMEhjK2JCcjBXeTVMRFFGTzEzTmIz?=
+ =?utf-8?B?Tk5VbW1lSkRaSncvWjVHaWZrZldDUEdTZ0xoNEFSWnd3djY1QU9uUEJvQ1Qv?=
+ =?utf-8?B?c05ITDQ0cnlrNGw0U0dDQ1pQcXV5RnRCZHB1MTFLSzQzd2tuSStDazFqZ2Vx?=
+ =?utf-8?B?aTdHN1pVbko0TlBoYXhMM0MwY1B2RzU0dG5QbnB4RitoTFhGK3A4VnBtUk5y?=
+ =?utf-8?B?NFRSbkw3aGQ4SWNGUy9haGN1K0ZiQWxFR2VxaFRyMTZ2ZHlBR1RpWXQwYUZK?=
+ =?utf-8?B?NGtQOVluT24vK1I4S1F5K0tnemg4dVZMS2Z6ajQ2WmhKN1djNEp6eEx3Um92?=
+ =?utf-8?B?NWxxazJ4M2h5c01pc0lGUnlpenZFd21Deng0d3JUanltcGM3M2NWc2cxY2I1?=
+ =?utf-8?B?ZGlOd2t0eTVpcVVRV3c0QTNYUGVCNHNleFRxZ1hPQldZVGNhNm1mZ2hKY1Jt?=
+ =?utf-8?B?aFg5bEpUMGNjYW9pV1cvVEFzcnUwYVFGRWVoeVVpREI4RFpBdG9ZdGlXYlJY?=
+ =?utf-8?B?TnYzZm50VkladndiRTFJcVRZT3dCcy9ZSTlhNkFqNEFKNWJHSzl0bU9pZ25F?=
+ =?utf-8?B?S2xaS0RsVGE4cXBMcWVlWHNVL0JJZ0JwVi9YZSs2T3EwbGY1TWNvcEZ5UHpa?=
+ =?utf-8?B?Mkx2aGtjT0dXU2JMcnlyOG84SkZOcHVTWnFlZ3pCWXZ2THdWbUJ4YTY5Rk1T?=
+ =?utf-8?B?eHphK3NzSzQxdXRDZCtsMStBMlp6MFdxaFN6WjZ4YW1BbTFwdXJSZU1lRWJW?=
+ =?utf-8?B?cTlNbThoZTMrRnY3Z2s3QWhmTXpQU3JYdFpTZk9PQThZQXRwWjF2UFNOeTRH?=
+ =?utf-8?B?UFVacnEyQnlJNFVTRHRNeHhHMzZEbVpWbEtKdFdGT3NxRXB3TktoWnhYdDlZ?=
+ =?utf-8?B?NHlyb2F3QjB6enU0WUJMUHRDZ3Vld0RWS0lPTHdyeXBzbTMvY1VjelhZL05D?=
+ =?utf-8?B?N1hRaXJqWlJDRXJEODNBOFRUVE1BWUxzWUhSOVVQRStSbWFHTVRYTlVmM3Bi?=
+ =?utf-8?B?bjRUVXlCVXpvM1c2N2xrdFc1enZiLzlxS0xIdmcyUjdNL1JBYUMvUWlzd01B?=
+ =?utf-8?B?RkZDZDkveVYxdHVUYTY4czlRR29LOVhrWTFIRmhncDVMZldjRkQ5MGJ5TDJy?=
+ =?utf-8?B?Q1Q1NnROUktLdjk3VERwYjJBeHdhQzZoQjFMVUdjdFlhdkVVUjJzYzRuUTgr?=
+ =?utf-8?B?bFlFdmN5bnFIaXpxV1FJOWVHZUZsVERzT08wdkZrbzR4R2h1Ni9XQUI1SEgv?=
+ =?utf-8?B?a2pEc2t5dEIzV1pKUDFFTHphQ0JrNkdFR01QZ0hoVjRFNVRkV2JyYVJFMzlE?=
+ =?utf-8?B?TVpRV0l3QWJGTUF2NGVLN2FpdXh6RUVHTGwwcGRBSXZiZUhtakoxVjllK0Vv?=
+ =?utf-8?B?TEVsR1B4RGJFR0h0U0J0RUlwRVFyVkxXR1hGMUd1Tmd3NzNJOEE0VFRlcTVC?=
+ =?utf-8?B?NUUyb2JoTzd3dXMrSy91OGJ3ank1dldVbEhGZ3I4YkNyVFkzbC91SnJlVGFp?=
+ =?utf-8?B?TWpwNTNyczYrODRSYlJyQ0Q2bXA0UFBFOFJnTU5WUVpnZkdwZmdodmhCWnha?=
+ =?utf-8?B?QmZKTzNWZis4eithVWhFcFQwQ3kzcml1QlpwcmlCZmVySGNZNTBHUisvQng5?=
+ =?utf-8?B?OXZiNkNZMUZ2d3phN3hOMU5pT043d2lRWkpXZ1JhaXhnUFdzdTlqU0ZRem13?=
+ =?utf-8?B?MjNtem5VRHgwSms0UlJYdW8raU9wTjc4aDgwaGdQM0dndmtBaFpnaloxU0to?=
+ =?utf-8?B?VEdGQldadTJGOUJBdUF0bUxzcCtYRGNYY2ZWUW9nTW83VHQ5bFd2SG40SUVU?=
+ =?utf-8?B?Q0tsWEFsNnhEWVJCT3ZnbkVPVlJ5a01FRGFiSHFCWFJiR0lLQWdMSWQrdURB?=
+ =?utf-8?B?dk03RmJjV211VVZReVVFeXoyMXAzQmhqbkdiL0ZiNWQ4YjA5dzJ6TTYxNll4?=
+ =?utf-8?B?UWpEcWhvUyt1cjg5a2kvMnVSb0FuY1MxckUwV0xHMUQwY01Lc3F0SUpzVk1V?=
+ =?utf-8?B?blhPbzBWWXhkQm51RGJrdTJveVRFVjk1a01QWXJuQjZleEZocTZlUzRUTnJJ?=
+ =?utf-8?B?dDljMVlJUXhQRkZwRHBzMzcrcVRHRlQ1WTFVWnpiRUZWRmxsQzNsekY4ZkdK?=
+ =?utf-8?B?MUcvREtVTjJoSVQ3eEIyMGpTemhaeTVLWTV1S0M0T0VpMGVBVkRxT2RLaVFu?=
+ =?utf-8?B?Q25ic2gyRitmSXFyWVp0SEJqMURoWmptU0diVnRiMVBrVEpua2tkZWMzbVlU?=
+ =?utf-8?B?VE5XNlh2YUFNWWp2K0lsd0lpUlR0amRIK2ZYOUJXcXJ2L2MvdFBqeGcrdFFq?=
+ =?utf-8?B?Z3k2NmVTelNEQ1lncEx4SzQ5YXVJTEVxT2lNTU90SGsxeU9LM1hCMFMzZmNT?=
+ =?utf-8?Q?bZrWwLf3lSeSvNq8=3D?=
+X-Exchange-RoutingPolicyChecked: WO/UZxJTE97IxN8YQvAtJBNIzxwbJaMeeNewT3iN7zCApggEBP8QBRotYix5OMFfbQtj9RHFnHjtPoOYBPUu1qrB/PdT9THbr0mQeGRp2vV/brRKvdoIZZaMoLZifT2+AvGpFHFqM2AkYHheRQFSQ5HKppBl1RUe4fAItRln2/s7AGzyFnfYYYtcs4+oc4RFBrd+Ab0SiEffm2W9Dbp69NoMbgPLNnSPG23aGOuRMH7faXghIsPwxMA9hBw4VXdsT+JWWu83jc1qOtbsbsLrVe/p96a62SAFjpEt9zvKLcnI+8VW6yPIdld8Btivvl0+IE95sA/dP4ho3eOBWDIJLQ==
+X-MS-Exchange-CrossTenant-Network-Message-Id: 88934645-dab0-4cd5-0d09-08deb0b2e925
 X-MS-Exchange-CrossTenant-AuthSource: IA1PR11MB7198.namprd11.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 May 2026 05:32:00.5924
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 May 2026 05:45:59.9325
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 46c98d88-e344-4ed4-8496-4ed7712e255d
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: MQJjyqR1L1E7zQikcQAbkWNirDyrPcfTQN1K1gGaSnJa3y/OG4xvA+LvN8hVmmLYHMGHeoIZE/cgKNfTPDx7gw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA1PR11MB6805
+X-MS-Exchange-CrossTenant-UserPrincipalName: X/VUD1C6ZBq+65yyerLD0Ux4nwXpRkH318JWl2Ab93qFL8ttOf0Rs+91wgz8OAzgWjLCjTCEfEBoP1VHhD82FA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA3PR11MB8046
 X-OriginatorOrg: intel.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260512_223204_967845_9A3ADCF2 
-X-CRM114-Status: GOOD (  22.07  )
+X-CRM114-CacheID: sfid-20260512_224604_532478_6104BB25 
+X-CRM114-Status: GOOD (  13.24  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -189,94 +189,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 12/05/2026 19:27, Frank Li wrote:
-> On Tue, May 12, 2026 at 03:17:28PM +0300, Adrian Hunter wrote:
->> System shutdown invokes each device's bus shutdown callback to quiesce
->> hardware, but the I3C bus type does not currently implement one.  As a
->> result, on shutdown the controller's Hot-Join work and any in-flight
->> i3c_master_do_daa() can keep running (or be newly triggered) while the
->> rest of the system is being torn down.
+On 12/05/2026 19:39, Frank Li wrote:
+> On Tue, May 12, 2026 at 03:17:30PM +0300, Adrian Hunter wrote:
+>> Master drivers may invoke i3c_master_do_daa_ext() during resume to
+>> re-run Dynamic Address Assignment.  As well as assigning addresses to
+>> any newly arrived devices, this restores the dynamic address of devices
+>> that lost it across system suspend, so it has to run as part of the
+>> controller's resume path.
 >>
->> A similar window exists at i3c_master_unregister() time: cancel_work_sync()
->> on hj_work prevents queued work from completing, but does not stop a
->> fresh Hot-Join IBI from re-queueing the worker, nor a concurrent sysfs
->> writer from toggling Hot-Join via i3c_set_hotjoin().
+>> A side effect of i3c_master_do_daa_ext() today is that it also
+>> registers any newly discovered I3C devices with the driver model
+>> inline, via i3c_master_register_new_i3c_devs().  Doing that from the
+>> resume path is problematic: a hot-join-capable device may join the bus
+>> during this same DAA, and registering it immediately would push driver
+>> model work (probing, sysfs, etc.) into the controller's resume context,
+>> where the rest of the system is not yet fully resumed and the
+>> controller driver is still partway through its own resume sequence.
 >>
->> Introduce a single "shutting down" gate in the I3C core, set under the
->> bus maintenance lock so it is observed by any in-progress DAA path
->> before pending work is cancelled.  Install an i3c_bus_type shutdown
->> callback that engages this gate for master devices during system
->> shutdown, and use the same gate in i3c_master_unregister() so both
->> paths get identical guarantees.
+>> Decouple discovery from registration: add a reg_work work item to
+>> struct i3c_master_controller and have i3c_master_do_daa_ext() queue it
+>> on master->wq (the freezable workqueue) instead of calling
+>> i3c_master_register_new_i3c_devs() directly.  The worker performs the
+>> registration only when the controller is not shutting_down, and is
+>> cancelled alongside hj_work in i3c_master_shutdown().  Because wq is
+>> freezable, any newly observed devices end up being registered after
+>> the system has finished resuming.
 >>
->> Once the gate is engaged, the Hot-Join worker, i3c_master_do_daa_ext()
->> and i3c_set_hotjoin() all bail out cleanly, so Hot-Join IBIs that race
->> with shutdown become no-ops, direct DAA callers see -ENODEV, and sysfs
->> writers can no longer re-enable Hot-Join through ops->enable_hotjoin()
->> while the controller is going away.
->>
->> No functional change for the steady-state runtime path; the new checks
->> only take effect once the controller has been marked as shutting down.
->>
->> Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
->> ---
->>  drivers/i3c/master.c       | 52 +++++++++++++++++++++++++++-----------
->>  include/linux/i3c/master.h |  2 ++
->>  2 files changed, 39 insertions(+), 15 deletions(-)
->>
->> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
->> index cdb5cb2aa65d..a59c4b744b36 100644
->> --- a/drivers/i3c/master.c
->> +++ b/drivers/i3c/master.c
->> @@ -368,14 +368,6 @@ static void i3c_device_remove(struct device *dev)
->>  		driver->remove(i3cdev);
->>  }
->>
->> -const struct bus_type i3c_bus_type = {
->> -	.name = "i3c",
->> -	.match = i3c_device_match,
->> -	.probe = i3c_device_probe,
->> -	.remove = i3c_device_remove,
->> -};
->> -EXPORT_SYMBOL_GPL(i3c_bus_type);
->> -
+>> i3c_master_register() also routes its initial post-bus-init registration
+>> through reg_work, using flush_work() to keep probe-time behavior
+>> synchronous.  This keeps a single registration code path and ensures the
+>> worker is the only writer of desc->dev.
 > 
-> why need move this tunk?
+> why not direct use hj_work?
 
-To avoid forward declarations.
-
-i3c_device_shutdown() references i3c_masterdev_type so it needs to be
-after i3c_masterdev_type definition.  i3c_device_shutdown() is being
-added to struct i3c_bus_type, so i3c_bus_type needs to be after
-i3c_device_shutdown().
-
-> 
->>  static enum i3c_addr_slot_status
->>  i3c_bus_get_addr_slot_status_mask(struct i3c_bus *bus, u16 addr, u32 mask)
->>  {
->> @@ -637,7 +629,8 @@ static void i3c_master_hj_work_fn(struct work_struct *work)
->>  {
->>  	struct i3c_master_controller *master = container_of(work, typeof(*master), hj_work);
->>
->> -	i3c_master_do_daa(master);
->> +	if (!master->shutting_down)
->> +		i3c_master_do_daa(master);
->>  }
->>
->>  static int i3c_set_hotjoin(struct i3c_master_controller *master, bool enable)
->> @@ -658,7 +651,9 @@ static int i3c_set_hotjoin(struct i3c_master_controller *master, bool enable)
->>
->>  	i3c_bus_maintenance_lock(&master->bus);
-> 
-> later, consider change to use cleanup, so
-> 	if (master->shutting_down)
-> 		return -ENODEV
-> 
-> 	and avoid use else if branch.
-> 
-> but this change is okay for now.
-> 
-> Frank
+i3c_master_register_new_i3c_devs() use of desc->dev is racy, so
+i3c_master_register_new_i3c_devs() must not be allowed to race
+with itself.  Having it only ever run via reg_work achieves that.
 
 
 -- 
