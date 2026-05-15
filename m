@@ -4,73 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B2EACD343F
-	for <linux-i3c@archiver.kernel.org>; Fri, 15 May 2026 16:26:44 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D981CD4F49
+	for <linux-i3c@archiver.kernel.org>; Fri, 15 May 2026 16:26:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HoyChlNd4ssPCgObza9D/SpAwKNHctud1r3rPpTqbP4=; b=kFQG+XYNn+ZsTB
-	suzjnaP/gKh86aUyZQjESZon3Tvw0q1kdP1Ot0b10aDB1iyg1QjlQJWnKIGoxTgtgW1M29YZCNadv
-	YOch8k0erTclIrrBOo7W7mAJbMTKL7MmJBu1yP6KPP+7KP6dBgTj/zN5Ny6yz4cliv7icR5BEKXTU
-	hLgBAYmq3GzkCoHrDlgpYesEMMYGPrYnx0u0boPgU726FhnHHPLqx9t6urysqm1d0nDewEkBuO8I/
-	58GRz2Yau98TzINDn0IJ1o714qW6bOhMVQdH03B9xaP6G6OZfaNFoL+NmN10M3/lHFH3RESgVEcCR
-	IsXRO6XajQYgKBlSaI+w==;
+	List-Owner; bh=ZtcR8D+GqVl9p4DF6hh/bOFGFcsLg53ZDagfbH+2DBA=; b=PU1VbxScGQCy3Z
+	5Rioh2+KIoHdQk9aScC2eLugC/we3bYvDW8HOD47dexNPZ++p0ZB46J9FzpHHIPe/0COm2tS6rk7+
+	UplZI4EQELsUZ99mR3Fpsp1DmG4zvG25dBb1S15EkFiiahaxRBgeLbkPj8gIAiODj1u0m9iJ6w27t
+	AkTOEcRj9zHmz90H7xJVB8sZGrGmCbFRT2H0m9Aq4AACtMYVIaWuydi1jwy/NRh/iSwx4/3lrqfB3
+	K2EdfZTxNzQsJGIeiDG6j5kHA0pAXb3e241sRP2JfSBvxwoyOpyfQR7I2wA6Cj/iggbNW8rSNm/y4
+	/BoY/J2NyW031EEYoLZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNvN5-00000008rLY-3hRP;
-	Fri, 15 May 2026 16:26:43 +0000
+	id 1wNvN8-00000008rNw-0Fyq;
+	Fri, 15 May 2026 16:26:46 +0000
 Received: from mgamail.intel.com ([198.175.65.19])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNvN3-00000008rJ2-2IoM
+	id 1wNvN5-00000008rJ2-2D1C
 	for linux-i3c@lists.infradead.org;
-	Fri, 15 May 2026 16:26:42 +0000
+	Fri, 15 May 2026 16:26:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1778862402; x=1810398402;
+  t=1778862404; x=1810398404;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=dVCJ05IA2LC6vrTUR77jZ+SF61lBLGgMfwXzmINuLFk=;
-  b=J6tf+4U/u4tiZgoU9t1j158+lVEUrJrqhDlssA0NG4PLA7Fg0WKCaaE8
-   yOwgikEFgw231WUM5Y7WfHB4dKiWdS4deydthrO36EnJ77bVBI6SouUzH
-   kOkTlFzEFaP61lwl+AI1bevgg6DJ7GgUrNK9ho7/gTY8bRn344azI/j6z
-   7IdVvyZLMvrxq72io46aQXMkt0SRto+dJ9lUWuZf2hc19ONbr/v8co4k+
-   1f3qI2V4r0C+SIphhJoUhB4hTiQnI4j9k/QUJRvG9I5VTJQ6LapQFa8ZP
-   c2C1gUzO+2jZuEaIp6CUuHgwY8oPVOOAdVxyxzHh3eUIdZLaG+1P7CTXL
-   Q==;
-X-CSE-ConnectionGUID: cw1lw1C9QfOjRfnT8hl/+A==
-X-CSE-MsgGUID: /Scwn4bOTjOX3gvlopxzzQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11787"; a="79785238"
+  bh=211AEh4Pq5WMRP3XSH8i3Q0DXrtefLFwgHUDVvOKiQo=;
+  b=QAdViaYvksBGdMhqYvuATxqewaQ+yWNBT3/5MJkKdLO8VgS70+Va83tl
+   bG2nX62dMXr9ZrUOHIwTZ8XGYiktyIeWEBV4Q9VMzDlCaqKZByW/Lq9L7
+   JBu7UW5Urif8AsSf13VNdmI4nq3mTZXXIm3O+4MJJeK0pthDaIJq16lBv
+   W7UVdNhbOjNO4xcHedmrfLgaM6ximjMHvb76jnXvDCm364CBcRvuPiHqa
+   ugCHO/kh1GgQf47hM134F/b4h8N7MAMjSQ4LpNuUPVjuQLmNOwf/VbJN9
+   3lZku8SrQqJhzPDhDnWr593Oq3PO7Vxe8ccFyhHFWc6xhe7devqhMUNJQ
+   A==;
+X-CSE-ConnectionGUID: arv43vr/RAebn088SkGFNg==
+X-CSE-MsgGUID: yNqLWpWOSZusfyMoJKg6xw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11787"; a="79785242"
 X-IronPort-AV: E=Sophos;i="6.23,236,1770624000"; 
-   d="scan'208";a="79785238"
+   d="scan'208";a="79785242"
 Received: from orviesa009.jf.intel.com ([10.64.159.149])
-  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 May 2026 09:26:42 -0700
-X-CSE-ConnectionGUID: oHWmFItpSp6mp+xABDAUWw==
-X-CSE-MsgGUID: 1IJrWLIbT+up4aUd90OynA==
+  by orvoesa111.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 May 2026 09:26:44 -0700
+X-CSE-ConnectionGUID: LHOzoov2QkW0QUT73aIGvg==
+X-CSE-MsgGUID: fJf2opkWQnG7RLTYuOu6Wg==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.23,236,1770624000"; 
-   d="scan'208";a="238857167"
+   d="scan'208";a="238857186"
 Received: from ijarvine-mobl1.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.245.28])
-  by orviesa009-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 May 2026 09:26:40 -0700
+  by orviesa009-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 15 May 2026 09:26:42 -0700
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH V4 04/17] i3c: mipi-i3c-hci: Wait for DMA ring restart to complete
-Date: Fri, 15 May 2026 19:26:08 +0300
-Message-ID: <20260515162621.57719-5-adrian.hunter@intel.com>
+Subject: [PATCH V4 05/17] i3c: mipi-i3c-hci: Move hci_dma_xfer_done() definition
+Date: Fri, 15 May 2026 19:26:09 +0300
+Message-ID: <20260515162621.57719-6-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260515162621.57719-1-adrian.hunter@intel.com>
 References: <20260515162621.57719-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260515_092641_635210_B1BF13F7 
-X-CRM114-Status: UNSURE (   9.11  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260515_092643_610476_B6481FCC 
+X-CRM114-Status: GOOD (  11.83  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,55 +86,144 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Although hci_dma_dequeue_xfer() is serialized against itself via
-control_mutex, this does not guarantee that a DMA ring restart
-triggered by a previous invocation has fully completed.
+Move hci_dma_xfer_done() earlier in the file to avoid a forward
+declaration needed by a subsequent change.
 
-When the function is called again in rapid succession, the DMA ring may
-still be transitioning back to the running state, which may confound or
-disrupt further state changes.
-
-Address this by waiting for the DMA ring restart to complete before
-continuing.
+No functional change.
 
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 Reviewed-by: Frank Li <Frank.Li@nxp.com>
 ---
 
 
-Changes in V4:
-
-	Add Frank's Rev'd-by
-
-Changes in V2 and V3:
+Changes in V3 and V4:
 
 	None
 
+Changes in V2:
 
- drivers/i3c/master/mipi-i3c-hci/dma.c | 3 +++
- 1 file changed, 3 insertions(+)
+	Added Frank's Rev'd-by
+
+
+ drivers/i3c/master/mipi-i3c-hci/dma.c | 98 +++++++++++++--------------
+ 1 file changed, 49 insertions(+), 49 deletions(-)
 
 diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-index c3da6eab8eae..3b14bc87bdf6 100644
+index 3b14bc87bdf6..ad47bb2890d6 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/dma.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-@@ -617,6 +617,7 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
- 	}
- 
- 	/* restart the ring */
-+	reinit_completion(&rh->op_done);
- 	mipi_i3c_hci_resume(hci);
- 	rh_reg_write(RING_CONTROL, RING_CTRL_ENABLE);
- 	rh_reg_write(RING_CONTROL, RING_CTRL_ENABLE | RING_CTRL_RUN_STOP);
-@@ -625,6 +626,8 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
- 
- 	spin_unlock_irq(&hci->lock);
- 
-+	wait_for_completion_timeout(&rh->op_done, HZ);
-+
- 	return did_unqueue;
+@@ -545,6 +545,55 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
+ 	return 0;
  }
  
++static void hci_dma_xfer_done(struct i3c_hci *hci, struct hci_rh_data *rh)
++{
++	u32 op1_val, op2_val, resp, *ring_resp;
++	unsigned int tid, done_ptr = rh->done_ptr;
++	unsigned int done_cnt = 0;
++	struct hci_xfer *xfer;
++
++	for (;;) {
++		op2_val = rh_reg_read(RING_OPERATION2);
++		if (done_ptr == FIELD_GET(RING_OP2_CR_DEQ_PTR, op2_val))
++			break;
++
++		ring_resp = rh->resp + rh->resp_struct_sz * done_ptr;
++		resp = *ring_resp;
++		tid = RESP_TID(resp);
++		dev_dbg(&hci->master.dev, "resp = 0x%08x", resp);
++
++		xfer = rh->src_xfers[done_ptr];
++		if (!xfer) {
++			dev_dbg(&hci->master.dev, "orphaned ring entry");
++		} else {
++			hci_dma_unmap_xfer(hci, xfer, 1);
++			rh->src_xfers[done_ptr] = NULL;
++			xfer->ring_entry = -1;
++			xfer->response = resp;
++			if (tid != xfer->cmd_tid) {
++				dev_err(&hci->master.dev,
++					"response tid=%d when expecting %d\n",
++					tid, xfer->cmd_tid);
++				/* TODO: do something about it? */
++			}
++			if (xfer->completion)
++				complete(xfer->completion);
++			if (RESP_STATUS(resp))
++				hci->enqueue_blocked = true;
++		}
++
++		done_ptr = (done_ptr + 1) % rh->xfer_entries;
++		rh->done_ptr = done_ptr;
++		done_cnt += 1;
++	}
++
++	rh->xfer_space += done_cnt;
++	op1_val = rh_reg_read(RING_OPERATION1);
++	op1_val &= ~RING_OP1_CR_SW_DEQ_PTR;
++	op1_val |= FIELD_PREP(RING_OP1_CR_SW_DEQ_PTR, done_ptr);
++	rh_reg_write(RING_OPERATION1, op1_val);
++}
++
+ static void hci_dma_unblock_enqueue(struct i3c_hci *hci)
+ {
+ 	if (hci->enqueue_blocked) {
+@@ -636,55 +685,6 @@ static int hci_dma_handle_error(struct i3c_hci *hci, struct hci_xfer *xfer_list,
+ 	return hci_dma_dequeue_xfer(hci, xfer_list, n) ? -EIO : 0;
+ }
+ 
+-static void hci_dma_xfer_done(struct i3c_hci *hci, struct hci_rh_data *rh)
+-{
+-	u32 op1_val, op2_val, resp, *ring_resp;
+-	unsigned int tid, done_ptr = rh->done_ptr;
+-	unsigned int done_cnt = 0;
+-	struct hci_xfer *xfer;
+-
+-	for (;;) {
+-		op2_val = rh_reg_read(RING_OPERATION2);
+-		if (done_ptr == FIELD_GET(RING_OP2_CR_DEQ_PTR, op2_val))
+-			break;
+-
+-		ring_resp = rh->resp + rh->resp_struct_sz * done_ptr;
+-		resp = *ring_resp;
+-		tid = RESP_TID(resp);
+-		dev_dbg(&hci->master.dev, "resp = 0x%08x", resp);
+-
+-		xfer = rh->src_xfers[done_ptr];
+-		if (!xfer) {
+-			dev_dbg(&hci->master.dev, "orphaned ring entry");
+-		} else {
+-			hci_dma_unmap_xfer(hci, xfer, 1);
+-			rh->src_xfers[done_ptr] = NULL;
+-			xfer->ring_entry = -1;
+-			xfer->response = resp;
+-			if (tid != xfer->cmd_tid) {
+-				dev_err(&hci->master.dev,
+-					"response tid=%d when expecting %d\n",
+-					tid, xfer->cmd_tid);
+-				/* TODO: do something about it? */
+-			}
+-			if (xfer->completion)
+-				complete(xfer->completion);
+-			if (RESP_STATUS(resp))
+-				hci->enqueue_blocked = true;
+-		}
+-
+-		done_ptr = (done_ptr + 1) % rh->xfer_entries;
+-		rh->done_ptr = done_ptr;
+-		done_cnt += 1;
+-	}
+-
+-	rh->xfer_space += done_cnt;
+-	op1_val = rh_reg_read(RING_OPERATION1);
+-	op1_val &= ~RING_OP1_CR_SW_DEQ_PTR;
+-	op1_val |= FIELD_PREP(RING_OP1_CR_SW_DEQ_PTR, done_ptr);
+-	rh_reg_write(RING_OPERATION1, op1_val);
+-}
+-
+ static int hci_dma_request_ibi(struct i3c_hci *hci, struct i3c_dev_desc *dev,
+ 			       const struct i3c_ibi_setup *req)
+ {
 -- 
 2.51.0
 
