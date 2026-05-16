@@ -4,63 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1397CD343F
-	for <linux-i3c@archiver.kernel.org>; Sat, 16 May 2026 01:22:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3B16CD4F21
+	for <linux-i3c@archiver.kernel.org>; Sat, 16 May 2026 16:06:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=XOEfHtu8nLMSvomsioEo9Y2vUcVON/DgUmpJ9X3Bht0=; b=kYIv1IfTAHgyp2BKvaOCrztZK8
-	7Nf//Z2OKoFzqZk5fln9mZ8bkRgFWvvRvUyBMVbaV/VdYnKGmmaU76dQdsk5svc1nsJQ1M/mh99Bu
-	yd6y2/byFRks2UFKYEcRQpdd8HGt0fZ4/th7TDnEeYrYvzsb+un0ReRB+TFjNRZfKRKvVPuReQ1mg
-	q9YgbwAadEA/pEvk77lyD0sDJfJh5XDvVgoLGrGzTE9VB18r5pvJUajpnY5sjDwzX+NBf3gXS+dEL
-	cuB1OjOEFHIouQGfHYAiNMfE900Z8eRctTeKaHRFvuuixhon92HN7xFIYd51rJa2OtBDR7gNxWsxz
-	fSLhAcMA==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
+	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=apHQ1XkhfUBXs7WTx50l09m9Ws969IpfngxTV42Use8=; b=bupCSKo6yiCZDZcWBSwDwnDwwi
+	VrWhaTQ63XhuIW+Ab/4DtcNTz+TwbsYXNDvtlp4S6HM4SMG5NbSwe30mSoAy94wwkwuWaXJIN6iRC
+	egWOiKBySk4XESIG8ESzS0FejtMussA/Dx49h+bXx8eBrdo+ck6MeJrc7UYWjU0aa7dkIYUJOlX6z
+	yTY71uZAaRbJNJ08k3LYhrZJ9CcI6Eof4RYsYGcUyTfojZxrDmobYWFOnuY22jCXhcHh8jU0sb6kB
+	zradDUjA9tZWKcQSso4opa2sQSdalPuYvPW5+AZODz/yJW71UcmuVJrVTr/F9Pe/j1fkK2j+FGNXD
+	NsQh+Z8Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wO3jV-00000009sFW-019x;
-	Sat, 16 May 2026 01:22:25 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wOHXL-0000000AzW7-1GoF;
+	Sat, 16 May 2026 16:06:47 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wNYpE-000000062jV-1PRW
-	for linux-i3c@lists.infradead.org;
-	Thu, 14 May 2026 16:22:16 +0000
+	id 1wOHXI-0000000AzVG-1rU0;
+	Sat, 16 May 2026 16:06:45 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id AE8B360132;
-	Thu, 14 May 2026 16:22:15 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 469AFC2BCB3;
-	Thu, 14 May 2026 16:22:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1778775735;
-	bh=73fxWTuyiBOp6+GjEI2yaO9EgtXApTP1T+BOeTS3rAA=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=KFbaG9QVp1qytR13DVfdptqgNWmRSqoEcj1AZPIJ3K40WgWlY5MxwrT2YOPXDxBon
-	 S3FUrX48+glSKCgdEO7ME6HFjzO66pSNbCOYRindSFkZJSUzvJIN0AUdZzhNnIAvJt
-	 1dydMn6238ZkjndwD3hppo1s9jOrR3SO4GouDHflcUom5KAkrnO7tkdvNzlEENdfV0
-	 Dzuf96JYFEC5dZDTGIzoLX5eD316+k4Vbw8cjec2aZFFqh/amKdq9AWrxfIQEL3/0w
-	 ultgIlAnQ6TDt4E8dAZ1vCl395lo8pOU8y1UmFrrl1R9svh86jWTSibUQsbAjl8X4p
-	 mEqkPlBovnzSQ==
-Date: Thu, 14 May 2026 17:22:11 +0100
-From: Conor Dooley <conor@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Jisheng Zhang <jszhang@kernel.org>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>, Philipp Zabel <p.zabel@pengutronix.de>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, linux-i3c@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 2/3] dt-bindings: i3c: dw: Add apb reset
-Message-ID: <20260514-gestation-hatred-69029fd05f70@spud>
-References: <20260511031945.3228-1-jszhang@kernel.org>
- <20260511031945.3228-3-jszhang@kernel.org>
- <20260511-amnesty-afoot-84537aafc02c@spud>
- <20260514-fat-unyielding-jaguarundi-a5ddc6@quoll>
+	by sea.source.kernel.org (Postfix) with ESMTP id 61F6B432CE;
+	Sat, 16 May 2026 16:06:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9D7B2C19425;
+	Sat, 16 May 2026 16:06:37 +0000 (UTC)
+Message-ID: <2d9dc9dd-f008-4cd3-95a6-4413986f4b51@tuxon.dev>
+Date: Sat, 16 May 2026 19:06:35 +0300
 MIME-Version: 1.0
-In-Reply-To: <20260514-fat-unyielding-jaguarundi-a5ddc6@quoll>
-X-Mailman-Approved-At: Fri, 15 May 2026 18:22:23 -0700
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v6 2/5] clk: at91: sama7d65: add peripheral clock for I3C
+To: Manikandan Muralidharan <manikandan.m@microchip.com>,
+ alexandre.belloni@bootlin.com, Frank.Li@nxp.com, robh@kernel.org,
+ krzk+dt@kernel.org, conor+dt@kernel.org, nicolas.ferre@microchip.com,
+ linux@armlinux.org.uk, mturquette@baylibre.com, sboyd@kernel.org,
+ tytso@mit.edu, aubin.constans@microchip.com, Ryan.Wanner@microchip.com,
+ romain.sioen@microchip.com, durai.manickamkr@microchip.com,
+ cristian.birsan@microchip.com, adrian.hunter@intel.com,
+ jarkko.nikula@linux.intel.com, npitre@baylibre.com,
+ linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-clk@vger.kernel.org
+References: <20260507084805.481737-1-manikandan.m@microchip.com>
+ <20260507084805.481737-3-manikandan.m@microchip.com>
+Content-Language: en-US
+From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
+In-Reply-To: <20260507084805.481737-3-manikandan.m@microchip.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260516_090644_503903_0FAD6813 
+X-CRM114-Status: UNSURE (   4.23  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,62 +67,24 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3296595753378329675=="
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 
---===============3296595753378329675==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="BbfoBwP5jS6lf41o"
-Content-Disposition: inline
 
+On 5/7/26 11:48, Manikandan Muralidharan wrote:
+> From: Durai Manickam KR<durai.manickamkr@microchip.com>
+> 
+> Add peripheral clock description for I3C.
+> 
+> Signed-off-by: Durai Manickam KR<durai.manickamkr@microchip.com>
+> Signed-off-by: Manikandan Muralidharan<manikandan.m@microchip.com>
 
---BbfoBwP5jS6lf41o
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, May 14, 2026 at 02:17:55PM +0200, Krzysztof Kozlowski wrote:
-> On Mon, May 11, 2026 at 05:02:18PM +0100, Conor Dooley wrote:
-> > On Mon, May 11, 2026 at 11:19:44AM +0800, Jisheng Zhang wrote:
-> > > Add dt-binding for support of apb reset which is to reset the APB
-> > > interface.
-> > >=20
-> > > Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
-> >=20
-> > Please squash both dt-binding patches.
->=20
-> I think this should stay separate, because first commit is trying to fix
-> undocumented existing ABI. It will have different rationale and could be
-> chosen for backports.
-
-Ah, I guess I didn't read the commit message. Sorry about that Jisheng!
-
---BbfoBwP5jS6lf41o
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCagX2sgAKCRB4tDGHoIJi
-0m78APoC7BNZBKHuVWzSNwad6VS12v/38/OUqyzyeFhLxAyYrQD/UAu/Y28omxU8
-tywp9InGV8Iox+8BKGMTg4/oq6IjNAY=
-=efLo
------END PGP SIGNATURE-----
-
---BbfoBwP5jS6lf41o--
-
-
---===============3296595753378329675==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Reviewed-by: Claudiu Beznea <claudiu.beznea@tuxon.dev>
 
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
-
---===============3296595753378329675==--
-
