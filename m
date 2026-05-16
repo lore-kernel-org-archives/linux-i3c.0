@@ -4,38 +4,38 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D3B16CD4F21
-	for <linux-i3c@archiver.kernel.org>; Sat, 16 May 2026 16:06:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2AFCCD4F3C
+	for <linux-i3c@archiver.kernel.org>; Sat, 16 May 2026 16:07:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:To:Subject:MIME-Version:
 	Date:Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=apHQ1XkhfUBXs7WTx50l09m9Ws969IpfngxTV42Use8=; b=bupCSKo6yiCZDZcWBSwDwnDwwi
-	VrWhaTQ63XhuIW+Ab/4DtcNTz+TwbsYXNDvtlp4S6HM4SMG5NbSwe30mSoAy94wwkwuWaXJIN6iRC
-	egWOiKBySk4XESIG8ESzS0FejtMussA/Dx49h+bXx8eBrdo+ck6MeJrc7UYWjU0aa7dkIYUJOlX6z
-	yTY71uZAaRbJNJ08k3LYhrZJ9CcI6Eof4RYsYGcUyTfojZxrDmobYWFOnuY22jCXhcHh8jU0sb6kB
-	zradDUjA9tZWKcQSso4opa2sQSdalPuYvPW5+AZODz/yJW71UcmuVJrVTr/F9Pe/j1fkK2j+FGNXD
-	NsQh+Z8Q==;
+	bh=u5h4tUw6+0Y3wcZjRl/sRlDyueFtoPnCrS4Drga/ohg=; b=WR+nKpennVBIp2Z5e9GMNWU3H6
+	UH5Sseqj8bX/f0Wis19mlHMorfo4cM4Q7dN8ddhm8qXdxArTLD0xWAogZA3M3W1f5JeDRP+8iKlMF
+	gkfgZWGsnyp49CokZqlZqYjgw71dkvxEmvxxpW/V+glG1tElfb5DzIATKl9z7k9eohlI9bDjboDM4
+	wZ8CssI98lOzc8bZ9KFPqSrXTZgOHr6cr8ctU/8WtsAPbBgUY3TqARPfsimB+LsU6L6Vn/h3tz1hJ
+	tTIRliijrf/8XyZI2aZ3Z/xvtXgfuOHLLe4xzwzT1GTL8zyuPP/OaRqnblm6f0Xe3Cm/YNeJFUayD
+	/rc0oIQg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOHXL-0000000AzW7-1GoF;
-	Sat, 16 May 2026 16:06:47 +0000
+	id 1wOHXu-0000000Azew-2GAI;
+	Sat, 16 May 2026 16:07:22 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOHXI-0000000AzVG-1rU0;
-	Sat, 16 May 2026 16:06:45 +0000
+	id 1wOHXq-0000000Azdk-09xX;
+	Sat, 16 May 2026 16:07:20 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 61F6B432CE;
-	Sat, 16 May 2026 16:06:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9D7B2C19425;
-	Sat, 16 May 2026 16:06:37 +0000 (UTC)
-Message-ID: <2d9dc9dd-f008-4cd3-95a6-4413986f4b51@tuxon.dev>
-Date: Sat, 16 May 2026 19:06:35 +0300
+	by sea.source.kernel.org (Postfix) with ESMTP id AEC0943DBD;
+	Sat, 16 May 2026 16:07:17 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 690B9C19425;
+	Sat, 16 May 2026 16:07:12 +0000 (UTC)
+Message-ID: <da83523d-f3ac-42e3-83a2-fb7e7d64ebf9@tuxon.dev>
+Date: Sat, 16 May 2026 19:07:10 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v6 2/5] clk: at91: sama7d65: add peripheral clock for I3C
+Subject: Re: [PATCH v6 4/5] ARM: dts: microchip: add I3C controller
 To: Manikandan Muralidharan <manikandan.m@microchip.com>,
  alexandre.belloni@bootlin.com, Frank.Li@nxp.com, robh@kernel.org,
  krzk+dt@kernel.org, conor+dt@kernel.org, nicolas.ferre@microchip.com,
@@ -48,14 +48,13 @@ To: Manikandan Muralidharan <manikandan.m@microchip.com>,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-clk@vger.kernel.org
 References: <20260507084805.481737-1-manikandan.m@microchip.com>
- <20260507084805.481737-3-manikandan.m@microchip.com>
+ <20260507084805.481737-5-manikandan.m@microchip.com>
 Content-Language: en-US
 From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
-In-Reply-To: <20260507084805.481737-3-manikandan.m@microchip.com>
+In-Reply-To: <20260507084805.481737-5-manikandan.m@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260516_090644_503903_0FAD6813 
-X-CRM114-Status: UNSURE (   4.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260516_090718_097767_E8E7918E 
+X-CRM114-Status: GOOD (  14.07  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,17 +71,52 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-
+Hi, Manikandan,
 
 On 5/7/26 11:48, Manikandan Muralidharan wrote:
-> From: Durai Manickam KR<durai.manickamkr@microchip.com>
+> From: Durai Manickam KR <durai.manickamkr@microchip.com>
 > 
-> Add peripheral clock description for I3C.
+> Add I3C controller for sama7d65 SoC.
 > 
-> Signed-off-by: Durai Manickam KR<durai.manickamkr@microchip.com>
-> Signed-off-by: Manikandan Muralidharan<manikandan.m@microchip.com>
+> Signed-off-by: Durai Manickam KR <durai.manickamkr@microchip.com>
+> Signed-off-by: Manikandan Muralidharan <manikandan.m@microchip.com>
+> ---
+> Changes in v3:
+> - Remove clock-names property as driver enables the clk in bulk
+> 
+>   arch/arm/boot/dts/microchip/sama7d65.dtsi | 8 ++++++++
+>   1 file changed, 8 insertions(+)
+> 
+> diff --git a/arch/arm/boot/dts/microchip/sama7d65.dtsi b/arch/arm/boot/dts/microchip/sama7d65.dtsi
+> index 67253bbc08df..ec200848c153 100644
+> --- a/arch/arm/boot/dts/microchip/sama7d65.dtsi
+> +++ b/arch/arm/boot/dts/microchip/sama7d65.dtsi
+> @@ -1055,5 +1055,13 @@ gic: interrupt-controller@e8c11000 {
+>   			#address-cells = <0>;
+>   			interrupt-controller;
+>   		};
+> +
+> +		i3c: i3c@e9000000 {
+> +			compatible = "microchip,sama7d65-i3c-hci";
+> +			reg = <0xe9000000 0x300>;
 
-Reviewed-by: Claudiu Beznea <claudiu.beznea@tuxon.dev>
+ From manual at [1] I see the size of I3CC region is 0x1000. Unless that is 
+wrong I think we should use 0x1000 to properly describe de HW. Please let me 
+know and I can do it while applying.
+
+Thank you,
+Claudiu
+
+[1] 
+https://ww1.microchip.com/downloads/aemDocuments/documents/MPU32/ProductDocuments/DataSheets/SAMA7D6-Series-Data-Sheet-DS60001851.pdf
+
+> +			interrupts = <GIC_SPI 105 IRQ_TYPE_LEVEL_HIGH>;
+> +			clocks = <&pmc PMC_TYPE_PERIPHERAL 105>, <&pmc PMC_TYPE_GCK 105>;
+> +			status = "disabled";
+> +		};
+>   	};
+>   };
+
 
 -- 
 linux-i3c mailing list
