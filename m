@@ -4,73 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 688AACD4F52
-	for <linux-i3c@archiver.kernel.org>; Mon, 18 May 2026 11:55:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A485CCD4F54
+	for <linux-i3c@archiver.kernel.org>; Mon, 18 May 2026 11:55:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZXiTmU2Kw0MpnM9xMJklbyQYIV2BKxzg9g9mpH3G7ZE=; b=VIlLDSzmQSXQbt
-	+5GT0i+8+I2j9F3EdFYntxHdBsTVHk6xYdt2E4oMxrbpHjeTrTEj/GmNp3+Xc4bKPX5JF9XOQ6KSN
-	PXMWdKoZ/s9gUdHN5DF3uwZYo0cIHRXKMGQsDAPY9tVtwLat0miOJAYtxTW1DvLceBz/eehm/Ibyz
-	G7MwSoo/xl3msq6K5YIyvtbOf5O7xSPJM7MVucZjWMGAbZ3SNjx6ny8onw1WulFhcIepnTwMz8GSI
-	LhH5ydLjAWUV7noj0gBdjwojY0CrT/NWaYySpY8VE5zmrYbO/LPYNLrrqh/EjMM2a5zM8sFMEpfja
-	aYZHHpB7tWMPqPesNlzA==;
+	List-Owner; bh=yQQo6c9ULFy7D1ZOKE0fA5FuHWdC3frIPS4rexSbisk=; b=Rvf9D2iJ3WPsu4
+	qLpJIzUVjWjmX0pjERSuzY6sTK+fC3uBCvVirvVTAOyvWAU389pE6fsyh8qsashO/8OH9T2RYB+sT
+	1o91+IH6wv0pK7v/LV8Ow6WEmSCrRe1bNmwribWmfwRbSS7wtYg7/NcUum/n4ZmwO1jJ7Sj9wKv1b
+	0Be2G3QqHMWV2OVnsDr95kFuP80K92px4PFpWEAAiyFBh5irkVOVJFS3f2t+KXc1qrb3/GHVtDRDo
+	0BrRj66wfwunNIzkJJd5+G1TrUbjcwd7zrZ09voJ+gYJq34IIvBYR2Ve3NNdow9nUzKL23D7OqdB5
+	lWn0Tzfs8Q6mNf2ZsWoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOwZg-0000000FWDs-0lJm;
-	Mon, 18 May 2026 11:55:56 +0000
+	id 1wOwZi-0000000FWFE-1p9W;
+	Mon, 18 May 2026 11:55:58 +0000
 Received: from mgamail.intel.com ([192.198.163.10])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOwZd-0000000FW3B-1CpP
+	id 1wOwZf-0000000FW3B-3q9v
 	for linux-i3c@lists.infradead.org;
-	Mon, 18 May 2026 11:55:54 +0000
+	Mon, 18 May 2026 11:55:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1779105353; x=1810641353;
+  t=1779105355; x=1810641355;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=ZyQJlmK5assxX/8AYeFVFyJBlXNiV3507wFGzmjI2t4=;
-  b=ie8czLk6lA0Vnjouxc3ZJhBNlBH0yHFujCUd3mX2ETH9h/jxG4ZJSsTJ
-   p3h1jfvcvQW+13fNGmNv3ArYGKbzgulm/M/QYpCyoGnXCs6IJV0L5TLPN
-   5Z/dH66ZkdxPjmo+9oCzzz1QNC2R5JPyYrXboX3p617GZJYo+fiPZ33EK
-   sTSrT7A6s8Bq7VJgJ6/2UAl5+GBFwG002BxbWoycV8/OY64voe9O3q1ZS
-   JSt7OpDd+oJrju+PXtsHXVcsoWpfCl63wloYeU4cZoZfGbCJ1dydyOI5X
-   gJ25RaUDWAF98s29ibZy1at7md8LPUtcgc35pjpBGzzi8+Okq6uHDD5Kt
-   w==;
-X-CSE-ConnectionGUID: ZqJ0r3IIRKGctt++GRKU5A==
-X-CSE-MsgGUID: AkPrsqkUSMqKq0LmRBCI7Q==
-X-IronPort-AV: E=McAfee;i="6800,10657,11789"; a="91347099"
+  bh=0bL8ulieysntLRvRnDmRzhbLwv2zaHH4mGscI66FhyI=;
+  b=j3VzyBVBFJJBygDnpIfyxJsjCA0pXD/FILhxr6eF/6qf0rz6Xn5RG7Pf
+   bsAXKbyvj55xsGbeCOXtLXoZY9Z7IIfjIpsBteke43GDWfpGFKtuNE94R
+   dTF7eCos1ASpl2lfaibN/4kGj1lUQ6NMCQfSf0F+XLp72DSwOFwBBEoPp
+   NiVf+s74T9SSL57zBd36nzZUNveAaY8r2pwFEDysU5w0HWdEkV+4fAVNw
+   X7RWMl9698j+mPc+ZZ/gRYI3ijFyitcyD+s4cQg9/5BceaqE/C3hMLdPF
+   MmD6/p9fK/nWhvtbf9pBRcC43tERZvP4j3yLBOzrDSI8u5g/UPYaNyWM9
+   g==;
+X-CSE-ConnectionGUID: gJ9sDCv9RE2c7JSQa5onQw==
+X-CSE-MsgGUID: tDWzKnX4TkSLEu4eLvuhMA==
+X-IronPort-AV: E=McAfee;i="6800,10657,11789"; a="91347105"
 X-IronPort-AV: E=Sophos;i="6.23,241,1770624000"; 
-   d="scan'208";a="91347099"
+   d="scan'208";a="91347105"
 Received: from orviesa007.jf.intel.com ([10.64.159.147])
-  by fmvoesa104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 18 May 2026 04:55:53 -0700
-X-CSE-ConnectionGUID: StcHyrc1QJG/zb1ZagwHEw==
-X-CSE-MsgGUID: eQ8AlNQJQd2uAtzjJooy4w==
+  by fmvoesa104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 18 May 2026 04:55:55 -0700
+X-CSE-ConnectionGUID: fiMkYgZ1TxSjmm6Iat4Qtg==
+X-CSE-MsgGUID: C1HPnQMJRTyz+XZRsEOfkw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.23,241,1770624000"; 
-   d="scan'208";a="239663434"
+   d="scan'208";a="239663437"
 Received: from egrumbac-mobl6.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.245.220])
-  by orviesa007-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 18 May 2026 04:55:51 -0700
+  by orviesa007-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 18 May 2026 04:55:53 -0700
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	david.nystrom@est.tech,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH V2 7/8] i3c: master: Export i3c_master_enec_disec_locked()
-Date: Mon, 18 May 2026 14:55:18 +0300
-Message-ID: <20260518115520.98335-8-adrian.hunter@intel.com>
+Subject: [PATCH V2 8/8] i3c: mipi-i3c-hci: Add Hot-Join support
+Date: Mon, 18 May 2026 14:55:19 +0300
+Message-ID: <20260518115520.98335-9-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260518115520.98335-1-adrian.hunter@intel.com>
 References: <20260518115520.98335-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260518_045553_336958_D86A674F 
-X-CRM114-Status: GOOD (  15.05  )
+X-CRM114-CacheID: sfid-20260518_045555_965808_814B8F86 
+X-CRM114-Status: GOOD (  19.31  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -87,16 +87,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The existing i3c_master_enec_locked() wrapper always treats a NACKed
-ENEC CCC as a failure (M2 error).  However, broadcasting ENEC to enable
-Hot-Join is legitimately useful even when no I3C devices are currently
-present on the bus, in which case the broadcast will be NACKed and
-should not be reported as an error.
+Wire the MIPI I3C HCI driver into the I3C core Hot-Join framework to
+allow targets to dynamically join the bus after initial DAA.
 
-The underlying helper i3c_master_enec_disec_locked() already accepts a
-suppress_m2 flag that lets callers ignore such NACKs.  Expose it so that
-a subsequent patch enabling Hot-Join events can issue ENEC with M2
-suppression.
+HCI hardware ACKs or NACKs Hot-Join requests based on
+HC_CONTROL.HOT_JOIN_CTRL.  This was previously left in the
+NACK-and-DISEC state, effectively preventing Hot-Join.  Implement
+the ->enable_hotjoin() and ->disable_hotjoin() master operations
+so the core and user space can control this policy at runtime.
+
+Also issue broadcast ENEC HJ when enabling Hot-Join.  This is required
+because the controller may have previously DISEC'ed the Hot-Join
+event, causing targets that were NACKed once to never retry.
+
+Acknowledged Hot-Join requests are delivered as IBIs on the reserved
+address 0x02.  Update both the DMA and PIO IBI paths to recognise this
+address and forward the event to i3c_master_queue_hotjoin().
+
+To make Hot-Join usable by default, enable it once after the initial
+DAA.  This is gated by rpm_ibi_allowed, since otherwise keeping Hot-Join
+enabled prevents runtime suspend.  A new hj_init_done flag ensures this
+one-time enablement is not repeated on subsequent DAAs.
 
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 Reviewed-by: Frank Li <Frank.Li@nxp.com>
@@ -108,68 +119,135 @@ Changes in V2:
 	Add Frank's Rev'd by
 
 
- drivers/i3c/master.c       | 27 ++++++++++++++++++++++++---
- include/linux/i3c/master.h |  2 ++
- 2 files changed, 26 insertions(+), 3 deletions(-)
+ drivers/i3c/master/mipi-i3c-hci/core.c | 50 ++++++++++++++++++++++++--
+ drivers/i3c/master/mipi-i3c-hci/dma.c  |  5 +++
+ drivers/i3c/master/mipi-i3c-hci/hci.h  |  1 +
+ drivers/i3c/master/mipi-i3c-hci/pio.c  |  5 +++
+ 4 files changed, 58 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index c9685379e868..f87bf0099d3c 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -1121,9 +1121,29 @@ int i3c_master_entdaa_locked(struct i3c_master_controller *master)
- }
- EXPORT_SYMBOL_GPL(i3c_master_entdaa_locked);
- 
--static int i3c_master_enec_disec_locked(struct i3c_master_controller *master,
--					u8 addr, bool enable, u8 evts,
--					bool suppress_m2)
-+/**
-+ * i3c_master_enec_disec_locked() - send an ENEC or DISEC CCC command
-+ * @master: master used to send frames on the bus
-+ * @addr: a valid I3C slave address or %I3C_BROADCAST_ADDR
-+ * @enable: true to send ENEC, false to send DISEC
-+ * @evts: events to enable or disable
-+ * @suppress_m2: if true, treat an M2 (NACK) error from the CCC as success
-+ *
-+ * Send an ENEC or DISEC CCC command to enable or disable some or all events
-+ * coming from a specific slave, or all devices if @addr is
-+ * %I3C_BROADCAST_ADDR.
-+ *
-+ * When @suppress_m2 is true, a NACK of the broadcast (which can happen when
-+ * no devices are present on the bus) is not reported as an error. This is
-+ * useful for callers that want to configure event reporting unconditionally,
-+ * regardless of whether any devices are currently on the bus.
-+ *
-+ * This function must be called with the bus lock held in write mode.
-+ *
-+ * Return: 0 in case of success, or a negative error code otherwise.
-+ */
-+int i3c_master_enec_disec_locked(struct i3c_master_controller *master, u8 addr,
-+				 bool enable, u8 evts, bool suppress_m2)
- {
- 	struct i3c_ccc_events *events;
- 	struct i3c_ccc_cmd_dest dest;
-@@ -1148,6 +1168,7 @@ static int i3c_master_enec_disec_locked(struct i3c_master_controller *master,
- 
+diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+index c6edbbedfdd7..53797841b63f 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/core.c
++++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+@@ -392,11 +392,52 @@ static int i3c_hci_send_ccc_cmd(struct i3c_master_controller *m,
  	return ret;
  }
-+EXPORT_SYMBOL_GPL(i3c_master_enec_disec_locked);
  
- /**
-  * i3c_master_disec_locked() - send a DISEC CCC command
-diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
-index 8cdd7be505d3..e2c831fb5354 100644
---- a/include/linux/i3c/master.h
-+++ b/include/linux/i3c/master.h
-@@ -607,6 +607,8 @@ int i3c_master_disec_locked(struct i3c_master_controller *master, u8 addr,
- 			    u8 evts);
- int i3c_master_enec_locked(struct i3c_master_controller *master, u8 addr,
- 			   u8 evts);
-+int i3c_master_enec_disec_locked(struct i3c_master_controller *master, u8 addr,
-+				 bool enable, u8 evts, bool suppress_m2);
- int i3c_master_entdaa_locked(struct i3c_master_controller *master);
- int i3c_master_defslvs_locked(struct i3c_master_controller *master);
++static int i3c_hci_enable_hotjoin(struct i3c_master_controller *m)
++{
++	struct i3c_hci *hci = to_i3c_hci(m);
++	int ret;
++
++	reg_clear(HC_CONTROL, HC_CONTROL_HOT_JOIN_CTRL);
++
++	/*
++	 * Broadcast Hot_join enable, so that an I3C device that has previously
++	 * had its Hot-Join request NACK'ed knows to try again.
++	 */
++	ret = i3c_master_enec_disec_locked(m, I3C_BROADCAST_ADDR, true, I3C_CCC_EVENT_HJ, true);
++	if (ret) {
++		reg_set(HC_CONTROL, HC_CONTROL_HOT_JOIN_CTRL);
++		dev_err(&hci->master.dev, "Hot-Join ENEC CCC failed\n");
++	}
++
++	return ret;
++}
++
++static int i3c_hci_disable_hotjoin(struct i3c_master_controller *m)
++{
++	struct i3c_hci *hci = to_i3c_hci(m);
++
++	reg_set(HC_CONTROL, HC_CONTROL_HOT_JOIN_CTRL);
++	return 0;
++}
++
+ static int i3c_hci_daa(struct i3c_master_controller *m)
+ {
+ 	struct i3c_hci *hci = to_i3c_hci(m);
++	int ret;
  
+-	return hci->cmd->perform_daa(hci);
++	ret = hci->cmd->perform_daa(hci);
++
++	if (!hci->hj_init_done) {
++		hci->hj_init_done = true;
++		/*
++		 * Enable Hot-Join by default after initial DAA if it does not
++		 * prevent runtime suspend.
++		 */
++		if (m->rpm_ibi_allowed && !ret)
++			m->hotjoin = !i3c_hci_enable_hotjoin(m);
++	}
++
++	return ret;
+ }
+ 
+ static int i3c_hci_i3c_xfers(struct i3c_dev_desc *dev,
+@@ -652,6 +693,8 @@ static const struct i3c_master_controller_ops i3c_hci_ops = {
+ 	.enable_ibi		= i3c_hci_enable_ibi,
+ 	.disable_ibi		= i3c_hci_disable_ibi,
+ 	.recycle_ibi_slot	= i3c_hci_recycle_ibi_slot,
++	.enable_hotjoin		= i3c_hci_enable_hotjoin,
++	.disable_hotjoin	= i3c_hci_disable_hotjoin,
+ };
+ 
+ static irqreturn_t i3c_hci_irq_handler(int irq, void *dev_id)
+@@ -833,8 +876,9 @@ static int i3c_hci_do_reset_and_restore(struct i3c_hci *hci)
+ 	scoped_guard(spinlock_irqsave, &hci->lock)
+ 		hci->irq_inactive = false;
+ 
+-	/* Enable bus with Hot-Join disabled */
+-	reg_set(HC_CONTROL, HC_CONTROL_BUS_ENABLE | HC_CONTROL_HOT_JOIN_CTRL);
++	/* Enable bus, restoring hot-join state */
++	reg_set(HC_CONTROL,
++		HC_CONTROL_BUS_ENABLE | (hci->master.hotjoin ? 0 : HC_CONTROL_HOT_JOIN_CTRL));
+ 
+ 	return 0;
+ }
+diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
+index 5c6ae2055618..87622d6f817e 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/dma.c
++++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
+@@ -960,6 +960,11 @@ static void hci_dma_process_ibi(struct i3c_hci *hci, struct hci_rh_data *rh)
+ 	}
+ 
+ 	/* determine who this is for */
++	if (ibi_addr == I3C_HOT_JOIN_ADDR) {
++		i3c_master_queue_hotjoin(&hci->master);
++		goto done;
++	}
++
+ 	dev = i3c_hci_addr_to_dev(hci, ibi_addr);
+ 	if (!dev) {
+ 		dev_err(&hci->master.dev,
+diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
+index 30297823ca85..41d31a53abd3 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/hci.h
++++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
+@@ -57,6 +57,7 @@ struct i3c_hci {
+ 	bool irq_inactive;
+ 	bool enqueue_blocked;
+ 	bool recovery_needed;
++	bool hj_init_done;
+ 	wait_queue_head_t enqueue_wait_queue;
+ 	u32 caps;
+ 	unsigned int quirks;
+diff --git a/drivers/i3c/master/mipi-i3c-hci/pio.c b/drivers/i3c/master/mipi-i3c-hci/pio.c
+index 6b8cc5f2b4d2..b5ae1cfaa9e0 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/pio.c
++++ b/drivers/i3c/master/mipi-i3c-hci/pio.c
+@@ -862,6 +862,11 @@ static bool hci_pio_prep_new_ibi(struct i3c_hci *hci, struct hci_pio_data *pio)
+ 	ibi->seg_len = FIELD_GET(IBI_DATA_LENGTH, ibi_status);
+ 	ibi->seg_cnt = ibi->seg_len;
+ 
++	if (ibi->addr == I3C_HOT_JOIN_ADDR) {
++		i3c_master_queue_hotjoin(&hci->master);
++		return true;
++	}
++
+ 	dev = i3c_hci_addr_to_dev(hci, ibi->addr);
+ 	if (!dev) {
+ 		dev_err(&hci->master.dev,
 -- 
 2.51.0
 
