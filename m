@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E505DCD4F3C
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D94C6CD4F54
 	for <linux-i3c@archiver.kernel.org>; Tue, 19 May 2026 06:10:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,36 +12,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U4k+yG8FllVZARGyfiqGMbumfW5M20kNBlldmB7Usi4=; b=1C+LFeHSOJLHKH
-	Io0e5mGWiqxGWOXA6QR1UPM91oBzQ267Xx0v3r9jYu7kvMXipTQWdUxAD9ThhvteWy/l8Uk7WJcVJ
-	C4a2ianrcpcVUdgYVL0MUaqjtGG3+zrQIDmxMz+HLUV70xA7ZR9gFFabrsKlYfLy15wBwjXUMg8Tt
-	DzN8oDEPWoq59roPfh5mvsjW0l6ANriatBs7Gw4CAzx9Qdp3M5Ehvz7bnLm+504uIyMVIx1lUNG+L
-	Jk3B7tdvvZP0MFIqCiZxMT9FoB/weYwo5voXpJB1wqSAfN7DeO/KAzyzaV5FhWVu6U6tqht0Ti9xz
-	O0M6cMvc65qdZnrKGt/w==;
+	List-Owner; bh=9db9yXC98XiQ4qZpY3BKHaJtxgDeDBJTEUZk1V+eBgY=; b=U/ernU8K5Wi7U5
+	JiMMxG1UkzgnGHNuo6xSJ/1aeijQTUOc2l3tnA5pdUylvbdwqlEONimK/YPvGHOHov5cGl1bAYDgT
+	nISZcG5+rta86N49nSmkRNCP1gJkyCVq0ElMvetKR9xVE5fuDOB91IxNkjsMOrCumn5G5WQcj3z7c
+	D0CCn8tgvtCgGSicIHnXCty2lwU///r9bEUaVYml3VZkpX9q7E4akmr9eo6iZg9ia0IaD6OJZhfqj
+	4quUFVmIXuRfRIXbxSSPxlbMBIcu0jqk8dFmjxJuVq9zSQhGnO054N+5Uw35YTQn9Uul+GezlVcOY
+	nXymsEtZuW7cEFXVjJVw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPDej-00000000HVs-2saJ;
+	id 1wPDej-00000000HVl-2glq;
 	Tue, 19 May 2026 06:10:17 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPDeh-00000000HUf-0sy2
+	id 1wPDei-00000000HVB-0JWp
 	for linux-i3c@lists.infradead.org;
 	Tue, 19 May 2026 06:10:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 669224458E;
+	by tor.source.kernel.org (Postfix) with ESMTP id 4B71060207;
+	Tue, 19 May 2026 06:10:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B75B9C2BCC6;
 	Tue, 19 May 2026 06:10:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F71DC2BCB3;
-	Tue, 19 May 2026 06:10:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1779171012;
-	bh=q6rby7Z/QurVEf6glmO1A+Aax63NyuzVjNDSoZEKwlU=;
+	s=k20201202; t=1779171015;
+	bh=DswRk7ybF3fLnX3MJJEkMdXEDTp+sndW4Ikfc6SzmYA=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=ZlakL1TRjtjmwAPTsGC2Jrqq6V9vqNHo6bboiQh9aJgXjA+ETzrmpWG14ryyEjwfm
-	 C6/ti4LXRp5HLsRiAldKYg3O5c1wCRScevLiTLcNMvq+YKPXnRp2o9at10mOxdgfcs
-	 xfJBKOMEu/ojyywn1iXfxdrcnHdVy+nox9nz9+2QJLhULYv7JBmK321BBD7K32ydcx
-	 bh9ph5rE5ZYSBDBVqgLJ9ntCDgMtcKmSV6jHmpk4JmB1nZNNQIbj5sNzB+2B8ypy7G
-	 Ia8EqrSapZzDzvjUgWbbhnw2RZUM43Z/xJTqxOotYNVUc7XFm0tFy+dxuGl902aF4Y
-	 12ggriEeDq8/A==
+	b=pWnbT7azwoFDGZ2cgzH739aopiBPMSZJ66RowHpanjAeu9ZCDvXaULoJQ8aVPXFfA
+	 flCWnm+d+t2nDA5angnxRdlEkU8a7HXnwvLiNTUJlugsLrnc1bkcycXSF/bxebOydt
+	 rIDiX4vuoPaUfqwFD8/PRFGhX8tUee2UyOclL7IGqlVh5fUzr5qjEc11hfH7xS4qLc
+	 80FV0NshFJguz8BYIwfjQBBJ8CcelmHKcGXp2UUcPOA14FwAQvPkyk7Y6DMl6Wtehz
+	 eEjERCqxsreB/QvVigBrL+y9CYHlkXPla81Jw/JwFwtJMiWZXR+vBnAi2OENnuaC9L
+	 NhddF/HqvIkcg==
 From: Jisheng Zhang <jszhang@kernel.org>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Frank Li <Frank.Li@nxp.com>,
@@ -52,17 +52,13 @@ To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 Cc: linux-i3c@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v3 1/4] i3c: dw: Remove core reset "_rst" suffix
-Date: Tue, 19 May 2026 13:51:02 +0800
-Message-ID: <20260519055105.13079-2-jszhang@kernel.org>
+Subject: [PATCH v3 2/4] dt-bindings: i3c: dw: Describe core reset
+Date: Tue, 19 May 2026 13:51:03 +0800
+Message-ID: <20260519055105.13079-3-jszhang@kernel.org>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260519055105.13079-1-jszhang@kernel.org>
 References: <20260519055105.13079-1-jszhang@kernel.org>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260518_231015_271524_32381497 
-X-CRM114-Status: UNSURE (   9.91  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,27 +75,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-It's redundant. This suffix has been in the code from day1, fortunately
-there's no such dt property usage in all dw i3c users after grepping all
-dts files, so we can remove it.
+The core reset support has been in the code from day1, but the
+dt-binding doesn't exist. Add dt-binding to describe reset property.
 
 Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
 ---
- drivers/i3c/master/dw-i3c-master.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ .../devicetree/bindings/i3c/snps,dw-i3c-master.yaml       | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index 655693a2187e..c4a848cc978a 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -1587,7 +1587,7 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
- 		return PTR_ERR(master->pclk);
+diff --git a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
+index e803457d3f55..519797c6b4fe 100644
+--- a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
++++ b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
+@@ -35,6 +35,14 @@ properties:
+       - const: core
+       - const: apb
  
- 	master->core_rst = devm_reset_control_get_optional_exclusive_deasserted(&pdev->dev,
--										"core_rst");
-+										"core");
- 	if (IS_ERR(master->core_rst))
- 		return PTR_ERR(master->core_rst);
++  resets:
++    items:
++      - description: Reset signal
++
++  reset-names:
++    items:
++      - const: core
++
+   interrupts:
+     maxItems: 1
  
 -- 
 2.53.0
