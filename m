@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C5340CD4F3C
-	for <linux-i3c@archiver.kernel.org>; Tue, 19 May 2026 06:10:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E505DCD4F3C
+	for <linux-i3c@archiver.kernel.org>; Tue, 19 May 2026 06:10:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ZQVR9uKsTcxLn8azKDKKBTIKRbkEq+pP/uSCP/IlFRQ=; b=vHXy8V6icGnXxk
-	qlMGhM1djUGEchhl/XSymTFQOwb7DlQkBvB5aSh2JDUOu1ExM9AIV0vHgndtoT+IWpegFxse3DTi9
-	vVFU4SaKFYm7U4nrcOdliIdKVbrsD3/mWPJ+qlgBbc/JJSGLh4stTODDaTMoPw5ChercR6zIPy616
-	i4QdVT2chzk66n155d6R0iM+Pwt3DptFzkeVZphT2XhEO4sGHrDNoOYN4bf5lBbFiZAc4t1+nPIYV
-	E59rgPBiIibgZSbBuGu2850LlIzzo3PyaPqShw+IxARYvWBQqhhcZZdjIXbsc7x7EG+nocMGpzEfO
-	7nmybCcy0nCYdwjxZATw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U4k+yG8FllVZARGyfiqGMbumfW5M20kNBlldmB7Usi4=; b=1C+LFeHSOJLHKH
+	Io0e5mGWiqxGWOXA6QR1UPM91oBzQ267Xx0v3r9jYu7kvMXipTQWdUxAD9ThhvteWy/l8Uk7WJcVJ
+	C4a2ianrcpcVUdgYVL0MUaqjtGG3+zrQIDmxMz+HLUV70xA7ZR9gFFabrsKlYfLy15wBwjXUMg8Tt
+	DzN8oDEPWoq59roPfh5mvsjW0l6ANriatBs7Gw4CAzx9Qdp3M5Ehvz7bnLm+504uIyMVIx1lUNG+L
+	Jk3B7tdvvZP0MFIqCiZxMT9FoB/weYwo5voXpJB1wqSAfN7DeO/KAzyzaV5FhWVu6U6tqht0Ti9xz
+	O0M6cMvc65qdZnrKGt/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPDee-00000000HUJ-2ECk;
-	Tue, 19 May 2026 06:10:12 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wPDej-00000000HVs-2saJ;
+	Tue, 19 May 2026 06:10:17 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPDec-00000000HTv-3WkB
+	id 1wPDeh-00000000HUf-0sy2
 	for linux-i3c@lists.infradead.org;
-	Tue, 19 May 2026 06:10:10 +0000
+	Tue, 19 May 2026 06:10:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id E41ED60212;
+	by sea.source.kernel.org (Postfix) with ESMTP id 669224458E;
+	Tue, 19 May 2026 06:10:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F71DC2BCB3;
 	Tue, 19 May 2026 06:10:09 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 83E16C2BCC9;
-	Tue, 19 May 2026 06:10:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1779171009;
-	bh=hBz6LTYI5t7x4hreKVlmTXs2Mvl6FjET6EY5b5DiR2c=;
-	h=From:To:Cc:Subject:Date:From;
-	b=nJkI6IgxQsCL7Ma5BbnEobWmhUntrZtd3CIDhqFvt18kfF4Hlf31g38SSadKQ8EGa
-	 bxhrdWdjNXrgPcdiiMk3Plov1BHMujcvw+xSc0aPqE5TehGJNTtkbUCUKlJwgSpAFh
-	 j/d7i4yYTs8HbWGmhRPL13mr5E1+6Zv+bN8zClLAztoKGlnwqE+MK4BR/ptD6TEwVv
-	 dujm0n6g1ryvpUqFWYGfpGD5NsXgE7820+OELuqZuvIszSkYfwp3bh9F3e4/9vSfvA
-	 mq7SF3a1fzy0jS2maJeR5PERs86IyHPfALkuK35ApjUBb39kG1PIO+NuyN6JTA/rcJ
-	 RFkebmK5d+6xg==
+	s=k20201202; t=1779171012;
+	bh=q6rby7Z/QurVEf6glmO1A+Aax63NyuzVjNDSoZEKwlU=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+	b=ZlakL1TRjtjmwAPTsGC2Jrqq6V9vqNHo6bboiQh9aJgXjA+ETzrmpWG14ryyEjwfm
+	 C6/ti4LXRp5HLsRiAldKYg3O5c1wCRScevLiTLcNMvq+YKPXnRp2o9at10mOxdgfcs
+	 xfJBKOMEu/ojyywn1iXfxdrcnHdVy+nox9nz9+2QJLhULYv7JBmK321BBD7K32ydcx
+	 bh9ph5rE5ZYSBDBVqgLJ9ntCDgMtcKmSV6jHmpk4JmB1nZNNQIbj5sNzB+2B8ypy7G
+	 Ia8EqrSapZzDzvjUgWbbhnw2RZUM43Z/xJTqxOotYNVUc7XFm0tFy+dxuGl902aF4Y
+	 12ggriEeDq8/A==
 From: Jisheng Zhang <jszhang@kernel.org>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Frank Li <Frank.Li@nxp.com>,
@@ -52,11 +52,17 @@ To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 Cc: linux-i3c@lists.infradead.org,
 	devicetree@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v3 0/4] i3c: dw: Add apb reset support
-Date: Tue, 19 May 2026 13:51:01 +0800
-Message-ID: <20260519055105.13079-1-jszhang@kernel.org>
+Subject: [PATCH v3 1/4] i3c: dw: Remove core reset "_rst" suffix
+Date: Tue, 19 May 2026 13:51:02 +0800
+Message-ID: <20260519055105.13079-2-jszhang@kernel.org>
 X-Mailer: git-send-email 2.51.0
+In-Reply-To: <20260519055105.13079-1-jszhang@kernel.org>
+References: <20260519055105.13079-1-jszhang@kernel.org>
 MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260518_231015_271524_32381497 
+X-CRM114-Status: UNSURE (   9.91  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,30 +79,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add support of apb reset which is to reset the APB interface.
-The first patch is to document the exisiting reset dt-binding. 2nd patch
-is to add apb reset dt-binding. The last patch is to add apb reset
-support.
+It's redundant. This suffix has been in the code from day1, fortunately
+there's no such dt property usage in all dw i3c users after grepping all
+dts files, so we can remove it.
 
+Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
+---
+ drivers/i3c/master/dw-i3c-master.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Since v2:
-  - remove "_rst" suffix
-
-Since v1:
-  - add dt-binding
-
-
-Jisheng Zhang (4):
-  i3c: dw: Remove core reset "_rst" suffix
-  dt-bindings: i3c: dw: Describe core reset
-  dt-bindings: i3c: dw: Add apb reset
-  i3c: dw: Add apb reset support
-
- .../devicetree/bindings/i3c/snps,dw-i3c-master.yaml    | 10 ++++++++++
- drivers/i3c/master/dw-i3c-master.c                     |  9 ++++++++-
- drivers/i3c/master/dw-i3c-master.h                     |  1 +
- 3 files changed, 19 insertions(+), 1 deletion(-)
-
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index 655693a2187e..c4a848cc978a 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -1587,7 +1587,7 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+ 		return PTR_ERR(master->pclk);
+ 
+ 	master->core_rst = devm_reset_control_get_optional_exclusive_deasserted(&pdev->dev,
+-										"core_rst");
++										"core");
+ 	if (IS_ERR(master->core_rst))
+ 		return PTR_ERR(master->core_rst);
+ 
 -- 
 2.53.0
 
