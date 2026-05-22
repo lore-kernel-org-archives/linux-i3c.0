@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78E88CD5BAC
-	for <linux-i3c@archiver.kernel.org>; Fri, 22 May 2026 10:19:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A7B9CD5BAC
+	for <linux-i3c@archiver.kernel.org>; Fri, 22 May 2026 10:19:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MzxZkC4q3RbjV6t2kAfi7YHR9SMwzhCVP6E6E+O5qqc=; b=pOl1WZO+sPTOiz
-	LXNXJON92frAjvoXXYMcOaNrzKFj0UmGFdUCU7a3Px3n/DCYs14t8Xab92fK94AkDc2wysVElV/tR
-	tlKfUr8lzfhGGdhAEXFrkxwo6V7J5CktjOAF8D6f54SO+Zc7dwFj69A3mGjJ9B8vLt9lduPmrQT1Z
-	+1z3gbZe9n/+wE+JLroTa9u5sKzI4lmc5JYTR2DCtlGV+5IgQdVCb+TgnLExMaP0mH5yQEgvC5mxF
-	P5kYzA6Xa5KhE841GXAiIplkTAs8Zlw23IJVS4Do6DVuxtktcbsi0kfPHfnmuRD2EWuxZWkRGR4+N
-	EdPZ5xxZGbbzhb47iuCA==;
+	List-Owner; bh=DsxGQo/8izraa2TExL84mC/Ru0tcgdsgjS3lRw5q4wg=; b=GVXc1vimxryMxB
+	rc+KsTQwaED3G7jqGVGgf53QtjHhkGUwnShTYQSW19fzY0I3I5HTGjxgZinx2r6DAOhZcfFRvvw13
+	+CrNTecXy1/3jiQx4IEZX7Z/GGWnLKkqgpZw/uNomY5dShh2XS7lMu4ENsFmOM+bcM7p6EjT8Jcd0
+	nMhpAbac/RUN6kkSwsSL6t24qja+Z6AtxonlD0pjluw0hLe1zFDhenSAxlgLjbNA68eE5UC9hZIq8
+	6FX3ZFUMgdwH85s+pOHCm/ikVNwttbU6gRKlu2VA4svLYEZkzi93eUKb5P5ULt9mT+ej1HDDvMi4a
+	Cw+fjX8Zx8c5I7HpbJgw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wQMyE-0000000AUZ9-15fe;
-	Fri, 22 May 2026 10:19:10 +0000
+	id 1wQMyJ-0000000AUd2-1QL6;
+	Fri, 22 May 2026 10:19:15 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wQMyB-0000000AUXW-2qQh
+	id 1wQMyE-0000000AUZK-2V0T
 	for linux-i3c@lists.infradead.org;
-	Fri, 22 May 2026 10:19:08 +0000
+	Fri, 22 May 2026 10:19:13 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5256E445E3;
+	by sea.source.kernel.org (Postfix) with ESMTP id 52BDC4370A;
+	Fri, 22 May 2026 10:19:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AAF321F00A3E;
 	Fri, 22 May 2026 10:19:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9F2911F00A3D;
-	Fri, 22 May 2026 10:19:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1779445147;
-	bh=t1ETYeozg7CFWt2DrNX0CbO/MU4FMFeuD38xoBF1sMg=;
+	s=k20260515; t=1779445150;
+	bh=aSGJt3Bw4ZA4gZKsUVnQGrh272MXdVQ2Sy4qXRc2hO0=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=R890KuJLkTrgTHNT1i4/eHoOHOMtVRzBIUdmuZG3KNgLngTY77KKakYvXJtS+uqy7
-	 +5MfVU5LahS7U3rfAKgnYKf1hIK6IEJadAN98U4pjs4/zZiwSjq8pvlWp8m2OO1PO1
-	 a/y730K085NG3XWr+8eagG+/6s9F+M/mhQGPkOUvB47W75Hedjsp1dKuSqNLay9/N6
-	 dKlGKBaFRNKv292cEbc1pLZf7IF6tTj7iRA/fGJwiZLWNcKiVjlQbnA6mIgTLbIqAz
-	 yTgs4frTHnOlG539uzif3YpxApiC6hqxe0KBI/6dTeapVl3cpcRPhE4dCIEbFIVRE8
-	 YV5FrARG3eUtA==
+	b=DE46XXTFyTpSDLEKGYfUQXsXQUSuAPT4QxJy/YdnMmXlpeWr1b8d0A5LlS/7ZrRs0
+	 QNqo/KMs0IbaJfbeXUVCmCEUIBtMfIgIxtEI4VLvMKtmLL5gIDuK++YdWQASJMhVQd
+	 brxKtppOWO37o3corXPOlic2aHg7QeYvklId5TTWQI8ELDQwIVwtAeYhjM1ox+bNR+
+	 GlkMc9DUf4BjJOpdR4F2Q2t63UVYCQ7b4g5iRcd9rNmLLKDvFZptKI9aN0ho1pjNDa
+	 B5+ojGrIecMnEeQqa7194MXe5dmAHH8spFgTg6/BGTrrHk5B2setp5o3Lb5E1sV8hx
+	 9k9GxN3zdFpXQ==
 From: Claudiu Beznea <claudiu.beznea@kernel.org>
 To: wsa+renesas@sang-engineering.com,
 	tommaso.merciai.xr@bp.renesas.com,
@@ -54,17 +54,16 @@ Cc: claudiu.beznea@kernel.org,
 	linux-kernel@vger.kernel.org,
 	linux-renesas-soc@vger.kernel.org,
 	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: [PATCH 14/17] i3c: renesas: Organize structures to avoid unnecessary padding
-Date: Fri, 22 May 2026 13:18:12 +0300
-Message-ID: <20260522101815.1722909-15-claudiu.beznea@kernel.org>
+Subject: [PATCH 15/17] i3c: renesas: Use the "dev_name:irq_name" format for the interrupt name
+Date: Fri, 22 May 2026 13:18:13 +0300
+Message-ID: <20260522101815.1722909-16-claudiu.beznea@kernel.org>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20260522101815.1722909-1-claudiu.beznea@kernel.org>
 References: <20260522101815.1722909-1-claudiu.beznea@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260522_031907_735127_CF1CAFDA 
-X-CRM114-Status: UNSURE (   8.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260522_031910_667264_8AE52DA5 
+X-CRM114-Status: GOOD (  11.50  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,73 +82,40 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
-Reorder structure members to reduce padding and improve memory layout.
+Use the "dev_name:irq_name" format for the interrupt names. This makes it
+easier to identify interrupts in systems where multiple devices may request
+interrupts with the same name.
 
 Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 ---
- drivers/i3c/master/renesas-i3c.c | 28 ++++++++++++++--------------
- 1 file changed, 14 insertions(+), 14 deletions(-)
+ drivers/i3c/master/renesas-i3c.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
-index 631c9c5d8038..5614ed99553c 100644
+index 5614ed99553c..e6e05ac03082 100644
 --- a/drivers/i3c/master/renesas-i3c.c
 +++ b/drivers/i3c/master/renesas-i3c.c
-@@ -221,19 +221,19 @@ enum renesas_i3c_event {
- };
+@@ -1385,12 +1385,19 @@ static int renesas_i3c_probe(struct platform_device *pdev)
+ 		return ret;
  
- struct renesas_i3c_cmd {
-+	const void *tx_buf;
-+	void *rx_buf;
-+	/* i2c xfer */
-+	u8 *i2c_buf;
-+	const struct i2c_msg *msg;
-+	int i2c_bytes_left;
-+	int i2c_is_last;
- 	u32 cmd0;
- 	u32 len;
--	const void *tx_buf;
- 	u32 tx_count;
--	void *rx_buf;
- 	u32 rx_count;
- 	u32 err;
- 	u8 rnw;
--	/* i2c xfer */
--	int i2c_bytes_left;
--	int i2c_is_last;
--	u8 *i2c_buf;
--	const struct i2c_msg *msg;
- };
+ 	for (i = 0; i < ARRAY_SIZE(renesas_i3c_irqs); i++) {
++		const char *irqname;
++
+ 		ret = platform_get_irq_byname(pdev, renesas_i3c_irqs[i].name);
+ 		if (ret < 0)
+ 			return ret;
  
- struct renesas_i3c_xfer {
-@@ -253,21 +253,21 @@ struct renesas_i3c_xferqueue {
- };
- 
- struct renesas_i3c {
-+	void __iomem *regs;
-+	struct clk_bulk_data *clks;
-+	struct reset_control *presetn;
-+	struct reset_control *tresetn;
-+	struct renesas_i3c_xferqueue xferqueue;
- 	struct i3c_master_controller base;
-+	unsigned long rate;
- 	enum i3c_internal_state internal_state;
--	u16 maxdevs;
- 	u32 free_pos;
- 	u32 dyn_addr;
- 	u32 i2c_STDBR;
- 	u32 i3c_STDBR;
- 	u32 extbr;
--	unsigned long rate;
-+	u16 maxdevs;
- 	u8 addrs[RENESAS_I3C_MAX_DEVS];
--	struct renesas_i3c_xferqueue xferqueue;
--	void __iomem *regs;
--	struct clk_bulk_data *clks;
--	struct reset_control *presetn;
--	struct reset_control *tresetn;
- 	u8 num_clks;
- 	u8 refclk_div;
- };
++		irqname = devm_kasprintf(&pdev->dev, GFP_KERNEL, "%s:%s", dev_name(&pdev->dev),
++					 renesas_i3c_irqs[i].desc);
++		if (!irqname)
++			return -ENOMEM;
++
+ 		ret = devm_request_irq(&pdev->dev, ret, renesas_i3c_irqs[i].isr,
+-				       0, renesas_i3c_irqs[i].desc, i3c);
++				       0, irqname, i3c);
+ 		if (ret)
+ 			return ret;
+ 	}
 -- 
 2.43.0
 
