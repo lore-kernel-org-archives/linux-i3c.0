@@ -4,121 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71D09CD5BB8
-	for <linux-i3c@archiver.kernel.org>; Sat, 23 May 2026 14:48:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1834ACD5BB1
+	for <linux-i3c@archiver.kernel.org>; Sun, 24 May 2026 18:41:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8s8e+A2osWK+eAV9dmMLeQ9ldQWnSDOaX/VAnJTkJ4U=; b=D98XcH9ZKH2f/3
-	LUqYhovPjpMcVmcpHqisgZYu/XfzHevnmAQZPkLfulq4sI6nvM7hj6DQcERyuViDxz0WuPUk83yC8
-	T7fQxe9yUnzaWMmGRBkS0ZNTw0VYs70dZgUcL9GjbV5ahLZifvNkjt20dywRTZJRsZynJBjYgdBH2
-	hZlsO1mFYnUnKBViYSs7JjWJi8o/g2iXgtQUXMZh18O7AZ7J8CZNAZ9AOkuHP9vW4bnhOdMT0W8ES
-	2zLgkXbpiWqzwsK3HXsMvI1aBIWYU8evr5dKD1/T86QeBCmkpASsoYRIsvawSnUKhbQPj3I7wjbdY
-	UzmMQdo1CMGYo5b5597g==;
+	List-Owner; bh=ejHkiQzb8cwB8uLyP5Gp3SRwBId+ZUeISoDxFSeoniQ=; b=lIl7Jy5JaIiZfL
+	1YEtxcp8YPjgMNgCn330KCr2V4Lr0kSLEZ2UF8ARs8VpNtf6uNroIphRHW0fLALQ5+aen9IvYnvec
+	Xv5oMvDdJg0fhpi5HaMlfBCdglsCeJXZRcHBSxMKZHsLTQEvXtP/0DyQJ7TVxIixxBs4nTJiFrc/8
+	kiu7ktuXgNNLZgM+WRhJkCBggd78NZuqe5EaV9tG4jUS7ce7wXQwmSEqJ6Io0dee2owIADle9byX1
+	QQq7g/UJU1D2DA94LKOKPvEU54xwIy2kpnPM3aUl6GG++K6Ja2MeFeVh2z3u0j22/gqWSP/fcY/Du
+	8ffNqo5TkOb5e1k5OfwQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wQneC-0000000DRQA-0Lt5;
-	Sat, 23 May 2026 14:48:16 +0000
-Received: from mail-francesouthazon11011020.outbound.protection.outlook.com ([40.107.130.20] helo=MRWPR03CU001.outbound.protection.outlook.com)
+	id 1wRDlh-0000000FRHH-0JCz;
+	Sun, 24 May 2026 18:41:45 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wQneA-0000000DRPg-14Uu
+	id 1wRDle-0000000FRGY-3PQ9
 	for linux-i3c@lists.infradead.org;
-	Sat, 23 May 2026 14:48:15 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=TyDMQOx9q7Zgck7eOG0l6mJLYRN1AIZHo8kzeNSzSh/DtpsuHG+/vxVt0VIzGS2lvAs9zHzCzW1vPI+zyrJYemcG4aB+diJ+nbpuV4Ad0U6l3UTfmd69wMXocJhk7tdIbHHmv4OSgM5irSB+fpw7WBMvG571n1MrdCIPuPGkVLsshyRHOtGIHnoMLHiohE40NN4NmypYxbewYMz240t6M5tlFv/HWIek9Fl396Q9/b2Zy+z48SRyzGndKO/rZGIbUpcErDI1H9jr2iH/R+x2VqAzeGbSSnYkg6oEnV907utbXCxG9zD5klvMoHP7NZK3U988cw04PcXClvBIEM4ETg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=ROoU3WaW4vJOuF7pmF65av3aDeb17MQJx9nOswXXGuU=;
- b=PbIWv6z5Wvh2U+NRiBp/TFMYz14n0t9hZ5kuzJnB5sSAT03ykR+iV/Dwq4UPuMhHs4kz0iKDW1QTYopcs/Ki90TkbKP1S+du+Gj2YiAR83fTty6au7yAuKmTDQgmj/vQD3Q5XQRtQcGkINz95k5CJxPg8F1qpNxsK02TgO6E5rCTfziWHsj3BzrNY3BIT2HAz+ctnUoNuX6mMpZprjJUu5wrj9kz30vzhPuO+7TpOhiTKH4MoLjYCdlv5eJfHw/VjQpkwFa64WRuSo9FiLvdxmArAeL1A09Ey6Gtob5c8IAEUv2zfDc49qoAfGUL2cIiOz1WHYmxmQmjOHdIDrSpLQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ROoU3WaW4vJOuF7pmF65av3aDeb17MQJx9nOswXXGuU=;
- b=OK+hRjlP9LKLVUAU4au60HcTgi60h0xmdgIgsHHDFcrytkSUlSd5BSk0hEtO+NqDtLKYBJtb4nBalMd3HrSSSGvWCtQLQ7TfxGFDcrTx9+VRj4W4FIpTsoSVmkTOG0ejIcXBKabJTwRvetYUz5EN+iMjUbeL1QNiH2Ba8NM0NppHeyA2s6Hju/WbyOyjh1eFMwCut5SGxEjmGt0tFzaL+kWj945Ib/GMsvtmIuIlkx2wuP610HSp+i2vh+vqYTm0d9wevkFHq3WWP+D5VFEs6d8DSo/SBDIsrAgRtQfOJ05pwjqMooUJV3Vw59JvKyHCsxQ6rdYQJuTMPsBJF8GYlg==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nxp.com;
-Received: from DU0PR04MB9372.eurprd04.prod.outlook.com (2603:10a6:10:35b::7)
- by GVXPR04MB11692.eurprd04.prod.outlook.com (2603:10a6:150:2e5::20) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.48.18; Sat, 23 May
- 2026 14:48:05 +0000
-Received: from DU0PR04MB9372.eurprd04.prod.outlook.com
- ([fe80::4f6:1e57:c3b9:62b4]) by DU0PR04MB9372.eurprd04.prod.outlook.com
- ([fe80::4f6:1e57:c3b9:62b4%4]) with mapi id 15.21.0048.016; Sat, 23 May 2026
- 14:48:05 +0000
-Date: Sat, 23 May 2026 10:47:59 -0400
-From: Frank Li <Frank.li@nxp.com>
-To: Sam Agazaryan <samagazaryan@google.com>
-Cc: linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
-	npitre@baylibre.com
-Subject: Re: [RFC] mipi-i3c-hci: Support for DMA Ring Pipelining /
- High-throughput Streaming
-Message-ID: <ahG-H3D9P-qGjigB@lizhi-Precision-Tower-5810>
-References: <CAHreonE1UF=BJjeQH_i0jjAEMBb8OALeTKoxPBcrRwLZWq=p0w@mail.gmail.com>
-Content-Disposition: inline
-In-Reply-To: <CAHreonE1UF=BJjeQH_i0jjAEMBb8OALeTKoxPBcrRwLZWq=p0w@mail.gmail.com>
-X-ClientProxiedBy: SA9PR13CA0002.namprd13.prod.outlook.com
- (2603:10b6:806:21::7) To DU0PR04MB9372.eurprd04.prod.outlook.com
- (2603:10a6:10:35b::7)
+	Sun, 24 May 2026 18:41:44 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 23C5144064;
+	Sun, 24 May 2026 18:41:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CE93B1F000E9;
+	Sun, 24 May 2026 18:41:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1779648101;
+	bh=4v1cmbQ3gqGecJ/U80Ih5SD4Gtt7JLsThU+5XdpiST4=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=gPiDBQdkJq4fcJyMWF3ImTrvjOp8QNVDM23ZY09v6vGeWNQkEbZ2BHYPxr9saW8LS
+	 bGP/aGLQFI6F+NfyYvR/kW+9ugx1lRikacKoqjEtOduH1fLXp52MWbsMdNuYoUMyEz
+	 g9mf4jtGpowgiZ/K7Opugw8OdownFpwUg88LLzkrY0UvNwWobWIwM7QylmIQdUNSnt
+	 AFemExAp5jj1+o0vGfdDcI5r2g4pIxtUNGuYHIBSiBAxu9ILujDSNXdsrv3W3HcjIf
+	 6kA1uW/gcjzFxcydyD9LJXeZcpsziKQ8xUtTbkCo3VXHEng7uLf5Ce8FKnXPeG/pTK
+	 v6h/IEMCT1Wrw==
+Message-ID: <05b2547c-535c-4beb-882f-d424f135acc4@kernel.org>
+Date: Sun, 24 May 2026 20:41:37 +0200
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DU0PR04MB9372:EE_|GVXPR04MB11692:EE_
-X-MS-Office365-Filtering-Correlation-Id: 8f263e17-74e4-4663-e25a-08deb8da4c41
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|52116014|376014|366016|19092799006|38350700014|11063799006|56012099003|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: LpM0+wW/WyZiwJ6eF8bLxyyVezsltkOckSESyD/qJUQi2GYFg+fpBrIDASjPRjTZ5WRjKJrYIeJuWm90GI5GcNt9x7CCJFvWS0bjh/5DtnRmQB9+ynGhLIeZu4Fv2Q2hR1sQpF+Vw3AIQc2A4f8RBPMA+0KPfi02d9otjPJUeVqAfAx904MiNBoj/4kIU/bWcTBH04EfVtId7cSTa1IV64oIG2MYcQ5t/rZ+ptXhE/GDT1vZILcZVZcxfr3Wgq7TXJyy0TkCDtG2BZXW5oU7jfG4maVeUh5/8jfwH0msTptjL0Qr4+PGVdl7BdE8SsF5Q/vKyhHfPWJDaPvmJh2SBHOhnQHzlFOgvmCgFMh+WDHVLCyVUDHzVqGB/pEz2+xswuPuBV30I+vMllVo1RTTK9uRYSPraMBkAla3MEccEJf0eIJuPz6801VBGka6tR3m3F7BvPfEmnaRY23sInjYZ/88Wm4YyY1cA+S9a9zTRsfP7kad70/aIOf+Pk4yh1FlbWXk6RlOr33hc6uNdcsO0sP8eZlvQlFQULKNXRWdvOwplUIGwdovGsBqlE3wefp8WMTHoiUTywgjLRCgMrLwNpalhLn5pVrQSdsqYbVNTF2I5S76t+xqV7YrhvG7w8QleRr5o8EeOGv3mYkIsglqLKSb4uybg84vLTIRZtT2CzpDGv1yjPE22fgiV4LdtDK3WaxoiCk+s1wOWHGnSA+mQqGyU0zYnyaUM95UYgMJqjZ9Ap45AlQEwTYIK/KhsnDa
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU0PR04MB9372.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(52116014)(376014)(366016)(19092799006)(38350700014)(11063799006)(56012099003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?bQG9xLjmKXAqKBh9HuHr1BDXH33e37nLtopHamVaRF6MyLb3yKIFc3X7LrBg?=
- =?us-ascii?Q?R2JGBgoVwplm0fzg7totvvxM2y/6Mfq/aPoyq3o60pzkFlB4YToxuOHZEakT?=
- =?us-ascii?Q?PHp6DRJk/icEPm99UVSeJOa10BEKsnzkVuIfRqgXntsPR+fzwz9R8mSHCE9d?=
- =?us-ascii?Q?dkuZfcvY+FHooZPmDsDqV0x2N8bYoC/CF4Ou/reWRvMI9fR5QDhNnMV47BCj?=
- =?us-ascii?Q?gd080ej3pJwri9He/+ALjnbyzK5nZcXBUUDXDc45lKn7809X+3brVSPeMXV0?=
- =?us-ascii?Q?VZhBQpPjttMlIlQg6Vcte0CNgJvUv02zuqZAn4z4m6AVpF6LxHmrAdC40i51?=
- =?us-ascii?Q?mGbIgyhglCfChPipxX03yo2Pzm6tqhkaEh5il285F55BX+OVYKMOelseojMZ?=
- =?us-ascii?Q?vlDl0MoAbRnoFbWNus+pOiAiJVVWHUrKJfxSqTSP6T7r/iSqSwaoIXogrDwh?=
- =?us-ascii?Q?3sNCZp9oalj+CrqLyl4F88LRETh0nzKtH8hyzq0W1AZx8IA9JYtN/2dWFCI2?=
- =?us-ascii?Q?QV3DeXBOjClkDaH7SfFC1NTS/CLgwal28VG1grZTQx0bSAemdg089is3ynCm?=
- =?us-ascii?Q?5JwGVwShk5tk8NLnEdBgbTnXC3bjOxjnqhilc360kpLWcsNEoV/i2oYt3I9+?=
- =?us-ascii?Q?J+68IrQGq3zElqcAzCPF4/hb3YpwFGll3DE4t6ZPK37+eERuYfi+xyiaAejx?=
- =?us-ascii?Q?Awqg4GogsaOj2Utg/A3NOHBIk4UeFlfCc0bdsnET//6V/yN9puVVtj9kcSjb?=
- =?us-ascii?Q?3nuAGQcEq7ck695crVNpsMP2KmPyBIUKiCGAhlzReUsY2nxC9oMHNXLGgJck?=
- =?us-ascii?Q?bxp798beSsLq9T1mcqcHg5R9ajwjy4Z1YPmBy2VL7Q+CaUkmfMU4k+iCS5fh?=
- =?us-ascii?Q?FxtANZ5ffQCERer28xQgUPvD5j/yZV7OohNpxh7wqAMqZ34NN3oqS8fCRCbO?=
- =?us-ascii?Q?opLlhztnZR5o0OBAY6eCokmMk5vnXRbjzInAZlhB7QlQM+811fz3v43H2OFu?=
- =?us-ascii?Q?gLwfTe4VXoiguyzKyP2Mx7ZZNoU+BN/ZfcOsR+Yq0GToP9ratrBy/wbM6nEL?=
- =?us-ascii?Q?hNLOg7OzwivuydzepV3TewOjIcfm5N3U342g89hrXNj4ZxyQGPnEuCM8wqVp?=
- =?us-ascii?Q?IJk9rzwMWTbP0cBeOcezrl2a/1XC9M5CDYj7psre2MogvSp77lCIK0CwaIHd?=
- =?us-ascii?Q?nk3w7Vf7WDmd6HjglL7ZZo55huGCNa5l+0eK5581LI8gSpZo4ZrPfRs2Bdx5?=
- =?us-ascii?Q?zgO5qkGU48gpck49/u79SNQC8hf0U9mNbpOTYl1LT9wPHpQfZMyoDxLD6H4B?=
- =?us-ascii?Q?+DmtajTi1BxVUKE7zmRZfEVWWyhSnL7w641hZYjWmYrXH+dohXoe5LGXFrOe?=
- =?us-ascii?Q?rKgcDbXEB6tCY/pSCj6mo3OfArEdojsm9vE7EQTilkHluBBmduqa7z5t2J3O?=
- =?us-ascii?Q?TdnV2E9MQtJDxQIF7vu4Sn3I5U72ymoG7HbjwFHcNEYJOktnYQGmyECzpJ73?=
- =?us-ascii?Q?ccBsz1WCOwYVLZOW/LBG4AabJLM8/pNohVDHJL4Ojqvf59tLSS0K9LjyedZ5?=
- =?us-ascii?Q?OJcUuWOTs4UPa8RhPr94d+GR7FqtGrYctcNpPipOr2BQj/SKNohZDi+mFwDj?=
- =?us-ascii?Q?v0fdV9CnTkYLy3gThXLovQmH/Q54engGloZbFYO9LXhB0O/YKxYlBKzH5Wic?=
- =?us-ascii?Q?ZfTelUbdYdLqDrVjPojS+/jo3eyWrS+8kHgQhbsA/PjXhNdu?=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8f263e17-74e4-4663-e25a-08deb8da4c41
-X-MS-Exchange-CrossTenant-AuthSource: DU0PR04MB9372.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 May 2026 14:48:05.6054
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: ZgBA+k1fMt3f0v8C5wfK2S24gzRNpP7rbGs3SyH+sbVbxfDjxBKSXSDMGtEKO+7fP1ihZiuzVqP7U4+tjzAWoQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXPR04MB11692
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 1/4] i3c: dw: Remove core reset "_rst" suffix
+To: Jisheng Zhang <jszhang@kernel.org>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20260519055105.13079-1-jszhang@kernel.org>
+ <20260519055105.13079-2-jszhang@kernel.org>
+ <20260520-scrupulous-notorious-ibis-ab6cbc@quoll> <ag2eUlweJdgWRKUG@xhacker>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Language: en-US
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <ag2eUlweJdgWRKUG@xhacker>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260523_074814_302681_4B221AAE 
-X-CRM114-Status: GOOD (  22.94  )
+X-CRM114-CacheID: sfid-20260524_114142_902743_CD905C9A 
+X-CRM114-Status: GOOD (  16.97  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,59 +122,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, May 22, 2026 at 03:37:35PM -0700, Sam Agazaryan wrote:
-> Hello all,
->
-> I am working on a project using the mipi-i3c-hci driver that involves
-> large packet bursts (exceeding the physical hardware DMA ring size,
-> such as large MCTP-over-I3C payloads).
+On 20/05/2026 13:43, Jisheng Zhang wrote:
+> On Wed, May 20, 2026 at 09:13:58AM +0200, Krzysztof Kozlowski wrote:
+>> On Tue, May 19, 2026 at 01:51:02PM +0800, Jisheng Zhang wrote:
+>>> It's redundant. This suffix has been in the code from day1, fortunately
+>>> there's no such dt property usage in all dw i3c users after grepping all
+>>> dts files, so we can remove it.
+>>
+>> Hm, how could you grep all 3rd party / out of tree users of this?
+>>
+>>>
+>>> Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
+>>> ---
+>>>  drivers/i3c/master/dw-i3c-master.c | 2 +-
+>>>  1 file changed, 1 insertion(+), 1 deletion(-)
+>>>
+>>> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+>>> index 655693a2187e..c4a848cc978a 100644
+>>> --- a/drivers/i3c/master/dw-i3c-master.c
+>>> +++ b/drivers/i3c/master/dw-i3c-master.c
+>>> @@ -1587,7 +1587,7 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+>>>  		return PTR_ERR(master->pclk);
+>>>  
+>>>  	master->core_rst = devm_reset_control_get_optional_exclusive_deasserted(&pdev->dev,
+>>> -										"core_rst");
+>>> +										"core");
+>>
+>> ABI impact for something released since 2018. Cleanup of name is not
+>> really worth affecting users. core_rst is not the best name but it is
+>> not incorrect, either.
+>>
+> Hmm make sense.
+> Two questions: if the ABI is introduced but never used by any intree
+> users, is modifying the ABI taken as "ABI breakage"?
 
-How large to exceed DMA ring size, can you increase ring size?
+Yes. The out of tree user was working before. Now it is not working. How
+is it not a "breakage"?
 
-And if large transfer, it will defer IBI handle for while. IBI check only
-happen at every START phase.
+> 
+> if the ABI is only used by outtree users, can we modify the ABI?
 
->
-> I noticed that the current driver implementation treats these as
-> discrete batches.
->
-> I am considering implementing a ring pipelining or DMA streaming
-> mechanism to allow for asynchronous refills while the ring is running.
-> This would leverage the
-> standard ENQ_PTR doorbell mechanism (per MIPI HCI v1.2, Section 6.8.2)
-> to continuously feed the hardware. I figured in that case it may be
-> worth while to see how the upstream community feels about this
-> feature.
->
-> Before I dive into the implementation for upstream, I wanted to check:
-> 1. Is there any existing work or a roadmap for DMA
-> streaming/pipelining in the HCI driver?
-> 2. Is a generic dma streaming mechanism for large transfers something
-> you would be interested in seeing as a contribution to the mainline
-> driver?
+Yes and no. Depends. It's up to platform maintainer and you need
+reasons. The reasons MUST be documented. See writing-bindings. I do not
+see here a good reason.
 
-Usb\network\storage is async. The I3C's framework is sync.
-
->
-> Currently, my proof-of-concept handles the pipelining at the core
-> transfer level, but I
-
-Can you send your patch as RFC to check what you already did?
-
-> suspect for a generic upstream implementation, this sliding window
-> logic should be moved into dma.c to properly support controllers with
-> multiple Ring Bundles.
->
-> I would appreciate any thoughts on this approach or the preferred
-> architectural placement.
->
-> Best regards,
-> Sam
->
-> --
-> linux-i3c mailing list
-> linux-i3c@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-i3c
+Best regards,
+Krzysztof
 
 -- 
 linux-i3c mailing list
