@@ -4,93 +4,83 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4DA30CD5BBF
-	for <linux-i3c@archiver.kernel.org>; Mon, 25 May 2026 09:25:11 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88F63CD5BD0
+	for <linux-i3c@archiver.kernel.org>; Mon, 25 May 2026 12:52:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yLYTIpotvJUiekPFCCYYHPIdBkX6CiNywSTMdQVr2io=; b=2gwDGMbQ5cAcZN
-	7jcofOzterhgliSvxIRDUOeVCwOX7B9zDBs6aremCWpiBCBzmMXPVenSiU+8UGOajaM9eUtpSVOjc
-	fYcwT0kpM/O0/GKNmWpJMQnM47DCsBnLoBYLwdkMO8Ml2COIoRs9gRppIDL6tfMA1ZUJvAcnSc+Mq
-	6bzcHhRfvG64jWsFW8AiQrKJpk9nPhpOCv4rilvaM5IvXsMBxyCjQRUAANXtScNJflB9HDvZqCbHz
-	6x9UbvGwFlRSU2afhu9OpWsBElQRZLpaY3uYzDDa+IvTRvSFydOp1sK/+GZXJqLWc/WmNO8dAL78H
-	OZuadv6Q3VhFXm44G/MA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ZIX0iXOHtbVm6YZD15+9WNsnNDantc3M+GNxn2aaqVY=; b=CMup1cbwV6HOLA
+	f+C8as1OpLu7DrPXJ+Mhpyng2F0D2OPlKlU4vM15BjRB31BUc1drLXDuR53gFXysc7f2K3Z9X9bq9
+	BghPI8T9cbQ81f8Ix85gVbM7/j6Gn9VwNTDIm0ECyZDWr9Gl66gtNENOm54Zgua0apm6OSP39dq7a
+	Cn+ze3JBtFTbbtNDmHQ7EcFDt1Cr+bdV6zm+gU4F7ilRuJtYsEr5kkH1HyJqKDieiZfkaZuRHtGIc
+	66DQ1DiUwl4PavN5LF296Q/NkqhXs00sS8gD0+3G47JVjVnHgdM31Jwz7t4wNpOjKx3rBJcybGftt
+	2pU5X9srxKCmNBDjaRLg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wRRYd-0000000GnrK-02m7;
-	Mon, 25 May 2026 09:25:11 +0000
+	id 1wRUn9-0000000HEZ8-1JAv;
+	Mon, 25 May 2026 12:52:23 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wRRYb-0000000Gnq8-3J7q;
-	Mon, 25 May 2026 09:25:09 +0000
+	id 1wRUn7-0000000HEYt-3Dhr
+	for linux-i3c@bombadil.infradead.org;
+	Mon, 25 May 2026 12:52:22 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
-	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=7Y/U3zylxiiKFPVpsOwi/XNbLU1kl/YjFR8sHoGtWj8=; b=iGPxpyPjH9rK6+soG9250VzUrh
-	s1lcvYj38/mLtl7aGDNC1IiQAdLCRzXUNeieUDQLOlHI8DHjCZ4NU01C+QLYtvgCNObgvG4N1GTp7
-	3beIhNhOAFkDDQdbJ+jl2s8zLeas2DbUo3Ot81hovV4Lb8vMNd9YFnraJRYzNtNLegciC6HBieLo9
-	/KGViwVhLuTPHpGvAKDUPevV3p1/3mbPRlp9ZunpWKkx4GgaBAA2/vvHrtsjwdRbf86XpwM/rxwTd
-	cKr/mRl03QjuEt9HIFvMjZG6K6Vhn7RtuckXwq4uXn6CKauSG4jH8GpT8p0/LeWrJnnEe8p3DTAEa
-	s/Juju3A==;
-Received: from esa.microchip.iphmx.com ([68.232.154.123])
+	:MIME-Version:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
+	Content-Description:In-Reply-To:References;
+	bh=HhuAfq0KrjWR2hOdUgLXv8apqAQKmXIb959Lev66uvE=; b=K+jlC99o/cU5gbk8/FJ6NzK92A
+	2ePQYCMfrGUx3UFHoQlVvsW/p4AgISQ6CCqcHMHOn8/xVZR+Fnjw/hyPCC55OBu2PF5T/k+q//lqE
+	xYDb/hO98a3X+J+2n2oAK+6L800pLEtbfepYX9SIVW/81QaYjag5aKGWax0Fud/lsU3roxMJu2jVV
+	z9r5dAlYDBt5K/UC9vRbwQ+BuK0mhEXhQd/aapXHajKLH57e7Cv0BrZPVvwh7P9xc+Y5cSRMmiEVp
+	CIvn89thPp2c9lTcFpAOJAtGag5ok92QknSWypL1dadn4lvGU03Ckuw/RLp+40S5BcqvmQy7K064p
+	FGVbKRCA==;
+Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
 	by desiato.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wRRYY-00000008tJm-19A0;
-	Mon, 25 May 2026 09:25:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
-  t=1779701106; x=1811237106;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=6AUu28k/Clqbv8wTtKnnwKjWBW9XtjZIigR38lrNNYw=;
-  b=kMQU2dQVWh38LuqcCf8lBnlC+hNDPcSJwGL2wx42GMlHT4852Zxol3nu
-   qFycqmn8L1Y/LW9u+/4lMlrVKABKdDFLbfMzlMAHD9ISxBV+YY5Lg25Oq
-   xxvQqnyovOZDNHlnIV05SEfm5rIENXhHlNJWbZWVJIb9ouYUXGJov4p/T
-   siDQ6sL8hAP0PC21MIE7h2wEqcef2EQbHcfIeklo5VDAou7XKtZ7qW41p
-   LXqz0JxUoZAWKRQzRYYk2T9hesBkAXAH9JVuEIEIzvRe0RGWDKYqqKydc
-   1SR2WJmWcFBYHPAqHC6CBAIdtRWU0+BlPBZvXQh0SRaWiOtbVQ9YT5ji5
-   Q==;
-X-CSE-ConnectionGUID: w72KhTerRzCNpgloKDd3vQ==
-X-CSE-MsgGUID: /Y7BedzdS4eyqLDAz5w4zw==
-X-IronPort-AV: E=Sophos;i="6.24,167,1774335600"; 
-   d="scan'208";a="57215514"
-X-Amp-Result: SKIPPED(no attachment in message)
-Received: from unknown (HELO email.microchip.com) ([170.129.1.10])
-  by esa4.microchip.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 25 May 2026 02:25:04 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
- chn-vm-ex4.mchp-main.com (10.10.87.33) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.2.2562.41; Mon, 25 May 2026 02:25:04 -0700
-Received: from che-lt-i67131.microchip.com (10.10.85.11) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.2507.58 via Frontend Transport; Mon, 25 May 2026 02:24:55 -0700
-From: Manikandan Muralidharan <manikandan.m@microchip.com>
-To: <alexandre.belloni@bootlin.com>, <Frank.Li@nxp.com>, <robh@kernel.org>,
-	<krzk+dt@kernel.org>, <conor+dt@kernel.org>, <nicolas.ferre@microchip.com>,
-	<claudiu.beznea@tuxon.dev>, <linux@armlinux.org.uk>,
-	<mturquette@baylibre.com>, <sboyd@kernel.org>, <bmasney@redhat.com>,
-	<aubin.constans@microchip.com>, <Ryan.Wanner@microchip.com>,
-	<romain.sioen@microchip.com>, <tytso@mit.edu>,
-	<cristian.birsan@microchip.com>, <adrian.hunter@intel.com>,
-	<npitre@baylibre.com>, <linux-i3c@lists.infradead.org>,
-	<devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
-	<linux-arm-kernel@lists.infradead.org>, <linux-clk@vger.kernel.org>
-CC: Manikandan Muralidharan <manikandan.m@microchip.com>, Durai Manickam KR
-	<durai.manickamkr@microchip.com>
-Subject: [PATCH v7 5/5] ARM: configs: at91: sama7: add sama7d65 i3c-hci
-Date: Mon, 25 May 2026 14:54:05 +0530
-Message-ID: <20260525092405.1514213-6-manikandan.m@microchip.com>
+	id 1wRUn3-00000009ERK-0DiI
+	for linux-i3c@lists.infradead.org;
+	Mon, 25 May 2026 12:52:20 +0000
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 64PCpesuF1058787, This message is accepted by code: ctloc85258
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realsil.com.cn;
+	s=dkim; t=1779713501;
+	bh=HhuAfq0KrjWR2hOdUgLXv8apqAQKmXIb959Lev66uvE=;
+	h=From:To:CC:Subject:Date:Message-ID:MIME-Version:
+	 Content-Transfer-Encoding:Content-Type;
+	b=pyht0Q78EiaIC6iJIjqw82xk6qOYzBBQYM1XQgHw4FnU3QBcLkHQGXM4hXj3Rx63s
+	 IINYyHVdMcJNimOgpi3to4fXBSum/VRH93zi9EtpnYNYJBF40jPMvbiweQ0rZ4Eo/w
+	 QBZfkrbY3wWeiflA+lM0Ers2RKoP7CJVFsykn+1uFZR9WRXd595i3k3lZo3SUbxGFU
+	 +KwzzS4eJBY6CjR3+V6cfLALLRribH1ZM1DkZL0QwGV8OCtlZz3fkONBqJ68dLjs1k
+	 o1HiD2Q/qcGxZSHcHLNOo7jjVUMXox/lDShLWF/EWPoCqGPRwAEJHAPXfgziUj0dui
+	 0ZcCgbLVRM9Ng==
+Received: from RS-EX-MBS2.realsil.com.cn ([172.29.17.102])
+	by rtits2.realtek.com.tw (8.15.2/3.28/5.94) with ESMTPS id 64PCpesuF1058787
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Mon, 25 May 2026 20:51:41 +0800
+Received: from A106071510.realsil.com.cn (172.29.42.211) by
+ RS-EX-MBS2.realsil.com.cn (172.29.17.102) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.17; Mon, 25 May 2026 20:51:40 +0800
+From: <zain_zhou@realsil.com.cn>
+To: <linux-staging@lists.linux.dev>, <linux-i3c@lists.infradead.org>,
+	<devicetree@vger.kernel.org>
+CC: <gregkh@linuxfoundation.org>, <alexandre.belloni@bootlin.com>,
+	<Frank.Li@nxp.com>, <robh@kernel.org>, <krzk+dt@kernel.org>,
+	<conor+dt@kernel.org>, <linusw@kernel.org>, <brgl@kernel.org>,
+	<linux-gpio@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+	<wei_wang@realsil.com.cn>, Yin Zhou <zain_zhou@realsil.com.cn>
+Subject: [PATCH v2 1/2] dt-bindings: i3c: add Realtek RTS490x I3C HUB
+Date: Mon, 25 May 2026 20:51:27 +0800
+Message-ID: <20260525125128.297-1-zain_zhou@realsil.com.cn>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20260525092405.1514213-1-manikandan.m@microchip.com>
-References: <20260525092405.1514213-1-manikandan.m@microchip.com>
 MIME-Version: 1.0
+X-Originating-IP: [172.29.42.211]
+X-ClientProxiedBy: RS-EX-MBS1.realsil.com.cn (172.29.17.101) To
+ RS-EX-MBS2.realsil.com.cn (172.29.17.102)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260525_102506_967325_CADD8589 
-X-CRM114-Status: UNSURE (   7.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260525_135218_261216_35723E9D 
+X-CRM114-Status: GOOD (  16.07  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,31 +97,304 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Enable the configs needed for I3C framework and microchip
-sama7d65 i3c-hci driver.
+From: Yin Zhou <zain_zhou@realsil.com.cn>
 
-Signed-off-by: Durai Manickam KR <durai.manickamkr@microchip.com>
-Reviewed-by: Claudiu Beznea <claudiu.beznea@tuxon.dev>
-Signed-off-by: Manikandan Muralidharan <manikandan.m@microchip.com>
+Add DT binding schema for Realtek RTS490x series I3C HUB devices.
+
+The binding describes configuration properties for:
+  - LDO enable/disable and voltage level per port group
+  - Pull-up resistance per port group
+  - IO driver strength per port
+  - Per target-port mode (I3C/SMBus/GPIO/disabled), pull-up,
+    IO mode, SMBus clock frequency and polling interval
+  - Hub network always-I3C mode
+  - Hardware identification via CSEL pin (id) and CP1 pins (id-cp1)
+
+Signed-off-by: Yin Zhou <zain_zhou@realsil.com.cn>
+
+Changes in v2:
+- Rework binding per Krzysztof Kozlowski's review:
+  add realtek, vendor prefix to all custom properties; use boolean
+  for enable flags; use u32 with unit suffixes (-microvolt, -ohms)
+  for voltage/resistance; change to unevaluatedProperties: false;
+  fix title, maintainer name, description, $nodename pattern
+- Consolidate examples; add dt-bindings/i2c/i2c.h include
 ---
- arch/arm/configs/sama7_defconfig | 2 ++
- 1 file changed, 2 insertions(+)
+ .../bindings/i3c/realtek,rts490x-i3c-hub.yaml | 263 ++++++++++++++++++
+ 1 file changed, 263 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/i3c/realtek,rts490x-i3c-hub.yaml
 
-diff --git a/arch/arm/configs/sama7_defconfig b/arch/arm/configs/sama7_defconfig
-index e52f671ccec4..6470c7d3fe8a 100644
---- a/arch/arm/configs/sama7_defconfig
-+++ b/arch/arm/configs/sama7_defconfig
-@@ -117,6 +117,8 @@ CONFIG_HW_RANDOM=y
- CONFIG_I2C=y
- CONFIG_I2C_CHARDEV=y
- CONFIG_I2C_AT91=y
-+CONFIG_I3C=y
-+CONFIG_MIPI_I3C_HCI=y
- CONFIG_SPI=y
- CONFIG_SPI_ATMEL=y
- CONFIG_SPI_ATMEL_QUADSPI=y
+diff --git a/Documentation/devicetree/bindings/i3c/realtek,rts490x-i3c-hub.yaml b/Documentation/devicetree/bindings/i3c/realtek,rts490x-i3c-hub.yaml
+new file mode 100644
+index 000000000000..851a433abcd3
+--- /dev/null
++++ b/Documentation/devicetree/bindings/i3c/realtek,rts490x-i3c-hub.yaml
+@@ -0,0 +1,263 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/i3c/realtek,rts490x-i3c-hub.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Realtek RTS490x I3C HUB
++
++maintainers:
++  - Yin Zhou <zain_zhou@realsil.com.cn>
++
++description:
++  The Realtek RTS490x is an I3C HUB device that provides voltage level
++  translation between I3C controller and target devices, bus capacitance
++  isolation, address conflict isolation, I3C port expansion (up to 8
++  target ports), simultaneous dual-controller port support, and per-port
++  mode selection (I3C, SMBus, GPIO, or disabled).
++
++properties:
++  $nodename:
++    pattern: "^hub@[0-9a-f]+(,[0-9a-f]+)*$"
++
++  compatible:
++    const: realtek,rts490x-i3c-hub
++
++  reg:
++    maxItems: 1
++    description:
++      Encodes the static I2C address, manufacturer ID, and part/instance ID
++      as defined by the I3C specification.
++
++  assigned-address:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    minimum: 0x1
++    maximum: 0xff
++    description:
++      Dynamic I3C address to assign to this device.
++
++  dcr:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    description:
++      Device Characteristic Register value of the hub.
++
++  "#address-cells":
++    const: 1
++
++  "#size-cells":
++    const: 0
++
++  realtek,cp0-ldo-enable:
++    type: boolean
++    description:
++      Enable the on-die LDO for Controller Port 0.
++
++  realtek,cp1-ldo-enable:
++    type: boolean
++    description:
++      Enable the on-die LDO for Controller Port 1.
++
++  realtek,tp0145-ldo-enable:
++    type: boolean
++    description:
++      Enable the on-die LDO for Target Ports 0/1/4/5.
++
++  realtek,tp2367-ldo-enable:
++    type: boolean
++    description:
++      Enable the on-die LDO for Target Ports 2/3/6/7.
++
++  realtek,cp0-ldo-microvolt:
++    enum: [1000000, 1100000, 1200000, 1800000]
++    description:
++      Output voltage of the Controller Port 0 on-die LDO, in microvolts.
++
++  realtek,cp1-ldo-microvolt:
++    enum: [1000000, 1100000, 1200000, 1800000]
++    description:
++      Output voltage of the Controller Port 1 on-die LDO, in microvolts.
++
++  realtek,tp0145-ldo-microvolt:
++    enum: [1000000, 1100000, 1200000, 1800000]
++    description:
++      Output voltage of the Target Ports 0/1/4/5 on-die LDO, in
++      microvolts.
++
++  realtek,tp2367-ldo-microvolt:
++    enum: [1000000, 1100000, 1200000, 1800000]
++    description:
++      Output voltage of the Target Ports 2/3/6/7 on-die LDO, in
++      microvolts.
++
++  realtek,tp0145-pullup-ohms:
++    enum: [0, 250, 500, 1000, 2000]
++    description:
++      Pull-up resistance for Target Ports 0/1/4/5, in ohms. 0 disables
++      the pull-up.
++
++  realtek,tp2367-pullup-ohms:
++    enum: [0, 250, 500, 1000, 2000]
++    description:
++      Pull-up resistance for Target Ports 2/3/6/7, in ohms. 0 disables
++      the pull-up.
++
++  realtek,cp0-io-strength-ohms:
++    enum: [20, 30, 40, 50]
++    description:
++      Output driver impedance for Controller Port 0, in ohms.
++
++  realtek,cp1-io-strength-ohms:
++    enum: [20, 30, 40, 50]
++    description:
++      Output driver impedance for Controller Port 1, in ohms.
++
++  realtek,tp0145-io-strength-ohms:
++    enum: [20, 30, 40, 50]
++    description:
++      Output driver impedance for Target Ports 0/1/4/5, in ohms.
++
++  realtek,tp2367-io-strength-ohms:
++    enum: [20, 30, 40, 50]
++    description:
++      Output driver impedance for Target Ports 2/3/6/7, in ohms.
++
++  realtek,id:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    enum: [0, 1, 3]
++    description: |
++      I3C HUB hardware ID based on CSEL pin state. Values:
++        0 - CP0 is selected as primary Controller Port
++        1 - Primary Controller Port selected by software
++        3 - CP1 is selected as primary Controller Port
++
++  realtek,id-cp1:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    enum: [0, 1, 2, 3]
++    description:
++      I3C HUB hardware ID based on CP1 SDA and SCL pin state probed
++      during power-on.
++
++patternProperties:
++  "^target-port@[0-9]+$":
++    type: object
++    description:
++      I3C HUB target port child node, named target-port@<id>.
++
++    properties:
++      compatible:
++        const: realtek,rts490x-i3c-hub-port
++
++      reg:
++        maxItems: 1
++        description:
++          Target port index (0-based).
++
++      "#address-cells":
++        const: 1
++
++      "#size-cells":
++        const: 0
++
++      realtek,mode:
++        enum: [disabled, i3c, smbus, gpio]
++        description:
++          Operating mode of this target port.
++
++      realtek,pullup-enable:
++        type: boolean
++        description:
++          When present, enables the pull-up for this target port.
++
++      realtek,always-enable:
++        type: boolean
++        description:
++          When present, the target port is always enabled. Otherwise
++          the port is enabled on demand and disabled after use.
++
++      realtek,polling-interval-ms:
++        minimum: 0
++        description:
++          SMBus polling interval in milliseconds. If absent or 0,
++          polling is disabled and IBI is used instead.
++
++      clock-frequency:
++        enum: [100000, 200000, 400000, 1000000]
++        description:
++          SMBus clock frequency in Hz. Applies only when mode is smbus.
++          Defaults to 400000 if absent.
++
++    additionalProperties: true
++
++required:
++  - compatible
++  - reg
++
++unevaluatedProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/i2c/i2c.h>
++    i3c-master@d040000 {
++      reg = <0xd040000 0x1000>;
++      #address-cells = <3>;
++      #size-cells = <0>;
++
++      hub@70,4ba00000000 {
++        compatible = "realtek,rts490x-i3c-hub";
++        reg = <0x70 0x4ba 0x00000000>;
++        assigned-address = <0x70>;
++        dcr = <0xc2>;
++        #address-cells = <1>;
++        #size-cells = <0>;
++
++        realtek,cp0-ldo-enable;
++        realtek,cp1-ldo-enable;
++        realtek,cp0-ldo-microvolt = <1000000>;
++        realtek,cp1-ldo-microvolt = <1100000>;
++        realtek,tp0145-ldo-enable;
++        realtek,tp0145-ldo-microvolt = <1200000>;
++        realtek,tp2367-ldo-microvolt = <1800000>;
++        realtek,tp0145-pullup-ohms = <2000>;
++        realtek,tp2367-pullup-ohms = <500>;
++        realtek,tp0145-io-strength-ohms = <50>;
++        realtek,tp2367-io-strength-ohms = <30>;
++        realtek,cp0-io-strength-ohms = <20>;
++        realtek,cp1-io-strength-ohms = <40>;
++
++        target-port@0 {
++          compatible = "realtek,rts490x-i3c-hub-port";
++          reg = <0>;
++          realtek,mode = "i3c";
++          realtek,pullup-enable;
++          realtek,always-enable;
++        };
++
++        target-port@1 {
++          compatible = "realtek,rts490x-i3c-hub-port";
++          reg = <1>;
++          #address-cells = <1>;
++          #size-cells = <0>;
++          realtek,mode = "smbus";
++          realtek,pullup-enable;
++          clock-frequency = <1000000>;
++          realtek,polling-interval-ms = <10>;
++
++          i2c@10 {
++            compatible = "i2c-slave-mqueue";
++            reg = <(0x10 | I2C_OWN_SLAVE_ADDRESS)>;
++          };
++        };
++
++        target-port@2 {
++          compatible = "realtek,rts490x-i3c-hub-port";
++          reg = <2>;
++          realtek,mode = "gpio";
++        };
++
++        target-port@3 {
++          compatible = "realtek,rts490x-i3c-hub-port";
++          reg = <3>;
++          realtek,mode = "disabled";
++        };
++      };
++    };
 -- 
-2.25.1
+2.34.1
 
 
 -- 
