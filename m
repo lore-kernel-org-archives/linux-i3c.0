@@ -4,49 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90A65CD5BD2
-	for <linux-i3c@archiver.kernel.org>; Mon, 25 May 2026 13:59:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E560CD5BB1
+	for <linux-i3c@archiver.kernel.org>; Mon, 25 May 2026 14:00:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vgPz0y2/FhhaOYo+Bp7Hmm4qGODqzeDjBq9zsHOHeec=; b=4CDXD2+6OSK0kv
-	PGY+HYsaAUemXkvE3seT9oXjV7+h0aAJZ/l52R0iuaIVCO3M9qSDY18kgeHupwdmFBp6a8xWeCIUb
-	JD5wxg1l0uYM74utyJuG4aCz+MLINyn/weYYe+tVa2rYgGm/ueArJqOWfNHaF/tRVViftDEcq2e4V
-	xJRGg2YOTRP6EQSbdHAfsOLfEbFUx44qEnOWNSMZqnob3B8AN+debHP8DlT1nmWJGb+fh7WscBXUv
-	Hm5KvzKMBG7v+PBUI3CU5DkZu0vXtRk9Ym4O/iiYMw1cmSKhX26t+JBqXmFZjfuM0XOaA8ZRrs0q3
-	z4VO1ll6yb2fICCactmg==;
+	List-Owner; bh=Dfwc+WUsBAoYDkC/NLzd97udI1fYwHz5VjC60NuR6RE=; b=yRPzcNSL2iYz4R
+	8e3rTgmQyxCDxn0VWf8MJDaMKkyLNcy4KyYelSUvesxJZ4SgpwuXmERLNVXlgosBCFXLOaE4bzm7r
+	QbPRpxNtOaqX3AQ2CcJsUtWaCKnP5wTxrrwwBcQMXXvTYTGvnF7+wRD/gzW9IR4jY5h/7EIJb9T9n
+	p3gAIl4NjV9Hl+RSdKW4DBcPwT/UZ3Rbe3OYjCP0yJEobrFOhQtueb0L+rO7X7DegHoMN/mLEcxJS
+	mQbJZXaBUZ7YYu6s4C3ozh3dv4wo88d+CmpUIUeEXlUaLccbwN1/aP7sj4+QaNQO/Glq6FDU54mXt
+	8N7Av9gyZ8LFU9OPRjaw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wRVpf-0000000HMlE-17cO;
-	Mon, 25 May 2026 13:59:03 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wRVr2-0000000HMvq-1gt1;
+	Mon, 25 May 2026 14:00:28 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wRVpd-0000000HMkR-14Ub
+	id 1wRVr1-0000000HMva-2gjE
 	for linux-i3c@lists.infradead.org;
-	Mon, 25 May 2026 13:59:02 +0000
+	Mon, 25 May 2026 14:00:27 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id AF44743B85;
-	Mon, 25 May 2026 13:59:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 34EA51F000E9;
-	Mon, 25 May 2026 13:58:56 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id B5E94600BB;
+	Mon, 25 May 2026 14:00:26 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 166AF1F000E9;
+	Mon, 25 May 2026 14:00:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1779717540;
-	bh=RIUWmMygyhldSJFbC7rHQlnc7wlI1UHEtpSHfrxKi7A=;
+	s=k20260515; t=1779717626;
+	bh=g5oYXv2b6VWLtIK2iS3P4ZRH+VT0xnxpOXO2zb2Mwn4=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=M/XL+iiYZ0OMXe/bFiUvmEm014iVSeMltcW8yFcQDqZu2yti8DRmktyo2ORzST9b9
-	 b7SniUKgrt+4d+K/kKBLwEbY6TzNHYwVlyw2mhWpD1bGBYuJ6Z2hOI6tlvUnnE9KQt
-	 7mX0E/t+oIXDOb9L/6gVxo1eOppzipL9M9gvvA5G8qETNwMk+EErfWoAJY+Tzci/nm
-	 jrhnoq8NzWeZLPH2DxbBbXnjhQ2mnTempSZw0a1/0A0mc93gcOo5DtK5Q1pyTeP6ND
-	 0iTajM8kfILya2yOb/3oBDgmTgnV0vBErJ9p08tQPR2g32VXNFV67Oq81Fjl3hRVg7
-	 2gimDWbOZqYXw==
-Message-ID: <64a8ba7e-f044-4f51-8619-9419ec7dfc27@kernel.org>
-Date: Mon, 25 May 2026 15:58:52 +0200
+	b=X0/xnwk/nDGlpyNWKtOfNmiJlNNFYI7lNsr2OxC2holR3uVFyOXpIzD/pOU2QG6iB
+	 DVIWOwQNE/PJ5hwhf7Rnq1WBaiDvzalPiCEEO/RZP3bpAj4TDh+RyoNetC5z+sF9tG
+	 O16YZHQ3oHVoybQKKEPOaJNPX0f6hO9zoRVGlQyInOhYtR1giRXfGDB33PJZq5uigG
+	 uTPzejogswCFHFzWlK9zmWjOooJJ1CcZmUdAWNQM73vcXqdVR/Mz4AfdnoZj/guLIS
+	 jH9ZGnFRcXxH6a5JsNEbe2oRXTlnB589NSj5J6nZTPfFchbOuBX4VJVmrA/APrMV70
+	 pBnkJgRHbtMAQ==
+Message-ID: <c38c3c96-a775-45a9-b2e0-64ed5d0a49d4@kernel.org>
+Date: Mon, 25 May 2026 16:00:21 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 1/2] dt-bindings: i3c: add Realtek RTS490x I3C HUB
+Subject: Re: [PATCH v2 2/2] staging: i3c: add Realtek RTS490x I3C HUB driver
 To: zain_zhou@realsil.com.cn, linux-staging@lists.linux.dev,
  linux-i3c@lists.infradead.org, devicetree@vger.kernel.org
 Cc: gregkh@linuxfoundation.org, alexandre.belloni@bootlin.com,
@@ -54,6 +54,7 @@ Cc: gregkh@linuxfoundation.org, alexandre.belloni@bootlin.com,
  linusw@kernel.org, brgl@kernel.org, linux-gpio@vger.kernel.org,
  linux-kernel@vger.kernel.org, wei_wang@realsil.com.cn
 References: <20260525125128.297-1-zain_zhou@realsil.com.cn>
+ <20260525125128.297-2-zain_zhou@realsil.com.cn>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -99,10 +100,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20260525125128.297-1-zain_zhou@realsil.com.cn>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260525_065901_343436_534431CD 
-X-CRM114-Status: GOOD (  17.11  )
+In-Reply-To: <20260525125128.297-2-zain_zhou@realsil.com.cn>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,89 +120,39 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 On 25/05/2026 14:51, zain_zhou@realsil.com.cn wrote:
 > From: Yin Zhou <zain_zhou@realsil.com.cn>
 > 
-> Add DT binding schema for Realtek RTS490x series I3C HUB devices.
+> Add driver for Realtek RTS490x series I3C HUB devices.
 > 
-> The binding describes configuration properties for:
->   - LDO enable/disable and voltage level per port group
->   - Pull-up resistance per port group
->   - IO driver strength per port
->   - Per target-port mode (I3C/SMBus/GPIO/disabled), pull-up,
->     IO mode, SMBus clock frequency and polling interval
->   - Hub network always-I3C mode
->   - Hardware identification via CSEL pin (id) and CP1 pins (id-cp1)
+> The driver supports:
+>   - Device Tree based configuration of LDO, pull-up, IO strength
+>     and per-port mode (I3C/SMBus/GPIO/disabled)
+>   - Logical I3C bus registration per target port
+>   - SMBus agent functionality with IBI and polling modes
+>   - GPIO chip with IRQ support
+>   - DebugFS interface for register access and DT config inspection
+>   - IBI (In-Band Interrupt) handling
+> 
+> The driver is placed in staging as it has known issues to be resolved
+> before mainlining; see drivers/staging/rts490x/TODO for details.
 > 
 > Signed-off-by: Yin Zhou <zain_zhou@realsil.com.cn>
 > 
 > Changes in v2:
-
-Messed patch. DCO is always the last. And this should tell you that
-changelog does not belong here - goes under ---.
-
-Anyway, did you test the binding this time or we expect another failures?
-
-
-> - Rework binding per Krzysztof Kozlowski's review:
->   add realtek, vendor prefix to all custom properties; use boolean
->   for enable flags; use u32 with unit suffixes (-microvolt, -ohms)
->   for voltage/resistance; change to unevaluatedProperties: false;
->   fix title, maintainer name, description, $nodename pattern
-> - Consolidate examples; add dt-bindings/i2c/i2c.h include
+> - Update driver to match v2 DT binding: parse physical values
+>   directly via of_property_read_bool/u32; drop string enum lookup
+>   tables; update property names with realtek, prefix and unit suffixes
+> - Fix maintainer name; move MAINTAINERS entry to driver patch
+> - Code style: rename TPn_* macros to TPN_*; rename SMBus frequency
+>   constants to UPPER_CASE; add mutex field comments
 > ---
->  .../bindings/i3c/realtek,rts490x-i3c-hub.yaml | 263 ++++++++++++++++++
->  1 file changed, 263 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/i3c/realtek,rts490x-i3c-hub.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/i3c/realtek,rts490x-i3c-hub.yaml b/Documentation/devicetree/bindings/i3c/realtek,rts490x-i3c-hub.yaml
-> new file mode 100644
-> index 000000000000..851a433abcd3
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/i3c/realtek,rts490x-i3c-hub.yaml
-> @@ -0,0 +1,263 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/i3c/realtek,rts490x-i3c-hub.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Realtek RTS490x I3C HUB
-> +
-> +maintainers:
-> +  - Yin Zhou <zain_zhou@realsil.com.cn>
-> +
-> +description:
-> +  The Realtek RTS490x is an I3C HUB device that provides voltage level
-> +  translation between I3C controller and target devices, bus capacitance
-> +  isolation, address conflict isolation, I3C port expansion (up to 8
-> +  target ports), simultaneous dual-controller port support, and per-port
-> +  mode selection (I3C, SMBus, GPIO, or disabled).
-> +
-> +properties:
-> +  $nodename:
-> +    pattern: "^hub@[0-9a-f]+(,[0-9a-f]+)*$"
-> +
-> +  compatible:
-> +    const: realtek,rts490x-i3c-hub
-> +
-> +  reg:
-> +    maxItems: 1
-> +    description:
-> +      Encodes the static I2C address, manufacturer ID, and part/instance ID
-> +      as defined by the I3C specification.
-> +
-> +  assigned-address:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    minimum: 0x1
-> +    maximum: 0xff
-> +    description:
-> +      Dynamic I3C address to assign to this device.
-> +
-> +  dcr:
+>  MAINTAINERS                                |    6 +
+>  drivers/staging/Kconfig                    |    2 +
+>  drivers/staging/Makefile                   |    1 +
+>  drivers/staging/rts490x/Kconfig            |   16 +
+>  drivers/staging/rts490x/Makefile           |    2 +
+>  drivers/staging/rts490x/TODO               |   35 +
 
-Where is the property defined?
-
-Read carefully writing bindings doc and DTS101 slides. I finished review
-here. You still did not implement things we asked - to follow other
-bindings style.
+So this is staging driver? Then why do you send us bindings? We don't
+need them. You must follow staging rules then.
 
 Best regards,
 Krzysztof
