@@ -4,106 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E14D3CD5BB1
-	for <linux-i3c@archiver.kernel.org>; Mon, 25 May 2026 15:25:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A600ACD5BC9
+	for <linux-i3c@archiver.kernel.org>; Mon, 25 May 2026 18:45:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5BTwpXTP06th8Xi6QxsvmDxI6LNo4msgjJjJ/fYRF4I=; b=NE4iwTokt8+24Y
-	FLTBQR/qPepHt+YxmNjyRJFRIHsFGs44kxDkvVAhZNEpfUa9+aEuedHP6u9sGZPZPRrElS56bmwkr
-	/F8Sx3tQrwhv4ydp8onYJaZ4iMMp038qDrv1kZ0s+gvNt60Bk9KBy2B0oicron+pG6nhcmxAR0zgE
-	GQ8TTCtqOA9Tp4L2yNRR50FgLyLstsfG4VL86SqyozsR/NhaSnyF3uyRe4gpVSfmV1d/OpWI4V4p3
-	KEV8ohoo1uBhyRIkw/y24Y376RZyDtD812LSmIxISiFJzUlzIM33K3e5gFQ1WgkPAjnb3GzHyDOyn
-	ONTs4mvi2uLm/68A0XTQ==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:References:
+	In-Reply-To:To:Cc:From:MIME-Version:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=UFyFEDFjcNxulKeZmHPeLaluGZDTEcM/+8k+zAwMIm8=; b=XEGM/AzF08lOFVCFo8mzpB3kqM
+	FDcpnCR8SDdFqLjQVT8JIN0v8QnN3KjZL5xRfIaTg2OmDre+gcImjkkQ0Wr/NbpMZ7nKlgBt46xjT
+	Rsmoas+ZpqPuaPnPFx1JmRs2in5GEDS6/ah0Udfknh3mKFIyy6LCUCEzZhgLxWNRM5UYwGikzyaiW
+	nHEv6fM0ef+ktUovCgDy5vatmuSLkR5t/BZ5xi3dNHHYSqJe9fFgWNGDGpous748HOiCC8km3Z+l8
+	7AWJRjSJewNztpHlRpJ6K/Uhw/ovUzaxlQ/j8uK4XUWfinvz++aYfFhsJm+qLWcCfUmhBiGPpSSCE
+	irzSbLIg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wRXBf-0000000HW5Z-1sGI;
-	Mon, 25 May 2026 15:25:51 +0000
+	id 1wRaIh-00000000GYP-0IE6;
+	Mon, 25 May 2026 18:45:19 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wRXBd-0000000HW59-0gCo
+	id 1wRaIe-00000000GXe-2D8Z
 	for linux-i3c@lists.infradead.org;
-	Mon, 25 May 2026 15:25:50 +0000
+	Mon, 25 May 2026 18:45:18 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id D0A8A429C8;
-	Mon, 25 May 2026 15:25:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B3C001F000E9;
-	Mon, 25 May 2026 15:25:46 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id A4C0243C42;
+	Mon, 25 May 2026 18:45:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 68E281F000E9;
+	Mon, 25 May 2026 18:45:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1779722748;
-	bh=rkceiDKo6xALWEMqgzRs+U6DP8NZGDF5ng33eQBgteI=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=LqtmXdzoAbxwVEblySAOMz9ZwxEHPo/zFdj1HQqzgwEIBhGc7QDdngA01upNjlbyj
-	 lSyAySPVushHHn8cIUhEMmyIfayIKfZi6OVsuVUcSxySjykILFwI9AG1xA+/VuxsVr
-	 rDImQYGETBG3JmVySrXKPWCXp+LrsDpzdVBTNU5JGv9AFX41Bb1qTxduHxLqIiH0gC
-	 lL4XBN9H09ip4kJD0dpHkN9hYDqEd0rnC2fQADtfl4eygBxuojUhbkwnwyzlctpZSM
-	 aLbATff5kn9RayKgMamUI3GuvMCawmJNTJpGDY8EUhA6zjt7WV4D1925oD8lt7FbU5
-	 6AiVq/OqW7ZcA==
-Message-ID: <f8efa4ae-76e8-4082-a445-ca5f6d230bf3@kernel.org>
-Date: Mon, 25 May 2026 17:25:45 +0200
+	s=k20260515; t=1779734715;
+	bh=64e79zTo0Q/3LTOxcKMi6PmSR/wzB/guSZphOxF/gzg=;
+	h=Date:From:Cc:To:In-Reply-To:References:Subject;
+	b=MgybNK8e0qDHzldZoTzHC4seiisEWAeA9YkqVlO80OC3g5EwZK2bBSsVmE3ZKoFdz
+	 UNygU6b5ZqVG/6WJkRDh9Mse/ZjObjuaWU/45K+K8DCy5maEZyOGGgX9hpA+f1rx06
+	 arEWKWJQ/hKGPpprOvUZMK5NIJmNvTKPWmzdCCFOFCBfarBJz91XRVTPqy/ysv/S5r
+	 TRB0wfVzXVW6izyDUKvqUiKPgsJo+jN/yHIuVm3aGMGp9Tir+moBdS7N9lkX0rNGVX
+	 wpONYLWinFang3PCQk20mbS9aN+zOpjObtCM8Yl2bjtY7itoLzBUFeFogtvBhTQBq5
+	 jvVGgwfFosk7Q==
+Date: Mon, 25 May 2026 13:45:14 -0500
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 2/3] dt-bindings: i3c: dw: Add apb reset
-To: Jisheng Zhang <jszhang@kernel.org>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>
-Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org
-References: <20260525140018.19598-1-jszhang@kernel.org>
- <20260525140018.19598-3-jszhang@kernel.org>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
- cFgcqTTuNHjAvxtUG8pQgGTHAObYs6xeYJtjUH0ZX6ndJ33FJYf5V3yXqqjcZ30FgHzJCFUu
- JMp7PSyMPzpUXfU12yfcRYVEMQrmplNZssmYhiTeVicuOOypWugZKVLGNm0IweVCaZ/DJDIH
- gNbpvVwjcKYrx85m9cBVEBUGaQP6AT7qlVCkrf50v8bofSIyVa2xmubbAwwFA1oxoOusjPIE
- J3iadrwpFvsZjF5uHAKS+7wHLoW9hVzOnLbX6ajk5Hf8Pb1m+VH/E8bPBNNYKkfTtypTDUCj
- NYcd27tjnXfG+SDs/EXNUAIRefCyvaRG7oRYF3Ec+2RgQDRnmmjCjoQNbFrJvJkFHlPeHaeS
- BosGY+XWKydnmsfY7SSnjAzLUGAFhLd/XDVpb1Een2XucPpKvt9ORF+48gy12FA5GduRLhQU
- vK4tU7ojoem/G23PcowM1CwPurC8sAVsQb9KmwTGh7rVz3ks3w/zfGBy3+WmLg++C2Wct6nM
- Pd8/6CBVjEWqD06/RjI2AnjIq5fSEH/BIfXXfC68nMp9BZoy3So4ZsbOlBmtAPvMYX6U8VwD
- TNeBxJu5Ex0Izf1NV9CzC3nNaFUYOY8KfN01X5SExAoVTr09ewARAQABzSVLcnp5c3p0b2Yg
- S296bG93c2tpIDxrcnprQGtlcm5lbC5vcmc+wsGVBBMBCgA/AhsDBgsJCAcDAgYVCAIJCgsE
- FgIDAQIeAQIXgBYhBJvQfg4MUfjVlne3VBuTQ307QWKbBQJoF1BKBQkWlnSaAAoJEBuTQ307
- QWKbHukP/3t4tRp/bvDnxJfmNdNVn0gv9ep3L39IntPalBFwRKytqeQkzAju0whYWg+R/rwp
- +r2I1Fzwt7+PTjsnMFlh1AZxGDmP5MFkzVsMnfX1lGiXhYSOMP97XL6R1QSXxaWOpGNCDaUl
- ajorB0lJDcC0q3xAdwzRConxYVhlgmTrRiD8oLlSCD5baEAt5Zw17UTNDnDGmZQKR0fqLpWy
- 786Lm5OScb7DjEgcA2PRm17st4UQ1kF0rQHokVaotxRM74PPDB8bCsunlghJl1DRK9s1aSuN
- hL1Pv9VD8b4dFNvCo7b4hfAANPU67W40AaaGZ3UAfmw+1MYyo4QuAZGKzaP2ukbdCD/DYnqi
- tJy88XqWtyb4UQWKNoQqGKzlYXdKsldYqrLHGoMvj1UN9XcRtXHST/IaLn72o7j7/h/Ac5EL
- 8lSUVIG4TYn59NyxxAXa07Wi6zjVL1U11fTnFmE29ALYQEXKBI3KUO1A3p4sQWzU7uRmbuxn
- naUmm8RbpMcOfa9JjlXCLmQ5IP7Rr5tYZUCkZz08LIfF8UMXwH7OOEX87Y++EkAB+pzKZNNd
- hwoXulTAgjSy+OiaLtuCys9VdXLZ3Zy314azaCU3BoWgaMV0eAW/+gprWMXQM1lrlzvwlD/k
- whyy9wGf0AEPpLssLVt9VVxNjo6BIkt6d1pMg6mHsUEVzsFNBFVDXDQBEADNkrQYSREUL4D3
- Gws46JEoZ9HEQOKtkrwjrzlw/tCmqVzERRPvz2Xg8n7+HRCrgqnodIYoUh5WsU84N03KlLue
- MNsWLJBvBaubYN4JuJIdRr4dS4oyF1/fQAQPHh8Thpiz0SAZFx6iWKB7Qrz3OrGCjTPcW6ei
- OMheesVS5hxietSmlin+SilmIAPZHx7n242u6kdHOh+/SyLImKn/dh9RzatVpUKbv34eP1wA
- GldWsRxbf3WP9pFNObSzI/Bo3kA89Xx2rO2roC+Gq4LeHvo7ptzcLcrqaHUAcZ3CgFG88CnA
- 6z6lBZn0WyewEcPOPdcUB2Q7D/NiUY+HDiV99rAYPJztjeTrBSTnHeSBPb+qn5ZZGQwIdUW9
- YegxWKvXXHTwB5eMzo/RB6vffwqcnHDoe0q7VgzRRZJwpi6aMIXLfeWZ5Wrwaw2zldFuO4Dt
- 91pFzBSOIpeMtfgb/Pfe/a1WJ/GgaIRIBE+NUqckM+3zJHGmVPqJP/h2Iwv6nw8U+7Yyl6gU
- BLHFTg2hYnLFJI4Xjg+AX1hHFVKmvl3VBHIsBv0oDcsQWXqY+NaFahT0lRPjYtrTa1v3tem/
- JoFzZ4B0p27K+qQCF2R96hVvuEyjzBmdq2esyE6zIqftdo4MOJho8uctOiWbwNNq2U9pPWmu
- 4vXVFBYIGmpyNPYzRm0QPwARAQABwsF8BBgBCgAmAhsMFiEEm9B+DgxR+NWWd7dUG5NDfTtB
- YpsFAmgXUF8FCRaWWyoACgkQG5NDfTtBYptO0w//dlXJs5/42hAXKsk+PDg3wyEFb4NpyA1v
- qmx7SfAzk9Hf6lWwU1O6AbqNMbh6PjEwadKUk1m04S7EjdQLsj/MBSgoQtCT3MDmWUUtHZd5
- RYIPnPq3WVB47GtuO6/u375tsxhtf7vt95QSYJwCB+ZUgo4T+FV4hquZ4AsRkbgavtIzQisg
- Dgv76tnEv3YHV8Jn9mi/Bu0FURF+5kpdMfgo1sq6RXNQ//TVf8yFgRtTUdXxW/qHjlYURrm2
- H4kutobVEIxiyu6m05q3e9eZB/TaMMNVORx+1kM3j7f0rwtEYUFzY1ygQfpcMDPl7pRYoJjB
- dSsm0ZuzDaCwaxg2t8hqQJBzJCezTOIkjHUsWAK+tEbU4Z4SnNpCyM3fBqsgYdJxjyC/tWVT
- AQ18NRLtPw7tK1rdcwCl0GFQHwSwk5pDpz1NH40e6lU+NcXSeiqkDDRkHlftKPV/dV+lQXiu
- jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
- zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
- XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <20260525140018.19598-3-jszhang@kernel.org>
+From: "Rob Herring (Arm)" <robh@kernel.org>
+Cc: krzk+dt@kernel.org, linux-staging@lists.linux.dev, 
+ gregkh@linuxfoundation.org, devicetree@vger.kernel.org, 
+ alexandre.belloni@bootlin.com, Frank.Li@nxp.com, conor+dt@kernel.org, 
+ linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org, 
+ brgl@kernel.org, linux-gpio@vger.kernel.org, linusw@kernel.org, 
+ wei_wang@realsil.com.cn
+To: zain_zhou@realsil.com.cn
+In-Reply-To: <20260525125128.297-1-zain_zhou@realsil.com.cn>
+References: <20260525125128.297-1-zain_zhou@realsil.com.cn>
+Message-Id: <177973471463.4085017.2026764711842557373.robh@kernel.org>
+Subject: Re: [PATCH v2 1/2] dt-bindings: i3c: add Realtek RTS490x I3C HUB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260525_082549_244639_22DF6116 
-X-CRM114-Status: GOOD (  12.01  )
+X-CRM114-CacheID: sfid-20260525_114516_585148_90C927AF 
+X-CRM114-Status: GOOD (  12.66  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,45 +76,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 25/05/2026 16:00, Jisheng Zhang wrote:
-> Add dt-binding for support of apb reset which is to reset the APB
-> interface.
 
-And this is ABI break, so you must explain WHY breaking ABI is worth
-doing that or what is the impact. Additionally you should explain which
-devices have it. Does Altera have it? You really lack explanation WHY
-you are doing it and which hardware you exactly describe.
-
+On Mon, 25 May 2026 20:51:27 +0800, zain_zhou@realsil.com.cn wrote:
+> From: Yin Zhou <zain_zhou@realsil.com.cn>
 > 
-> Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
+> Add DT binding schema for Realtek RTS490x series I3C HUB devices.
+> 
+> The binding describes configuration properties for:
+>   - LDO enable/disable and voltage level per port group
+>   - Pull-up resistance per port group
+>   - IO driver strength per port
+>   - Per target-port mode (I3C/SMBus/GPIO/disabled), pull-up,
+>     IO mode, SMBus clock frequency and polling interval
+>   - Hub network always-I3C mode
+>   - Hardware identification via CSEL pin (id) and CP1 pins (id-cp1)
+> 
+> Signed-off-by: Yin Zhou <zain_zhou@realsil.com.cn>
+> 
+> Changes in v2:
+> - Rework binding per Krzysztof Kozlowski's review:
+>   add realtek, vendor prefix to all custom properties; use boolean
+>   for enable flags; use u32 with unit suffixes (-microvolt, -ohms)
+>   for voltage/resistance; change to unevaluatedProperties: false;
+>   fix title, maintainer name, description, $nodename pattern
+> - Consolidate examples; add dt-bindings/i2c/i2c.h include
 > ---
->  Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml | 2 ++
->  1 file changed, 2 insertions(+)
+>  .../bindings/i3c/realtek,rts490x-i3c-hub.yaml | 263 ++++++++++++++++++
+>  1 file changed, 263 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/i3c/realtek,rts490x-i3c-hub.yaml
 > 
-> diff --git a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
-> index 613dce7757bc..2575442b28ff 100644
-> --- a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
-> +++ b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
-> @@ -38,10 +38,12 @@ properties:
->    resets:
->      items:
->        - description: Reset signal
-> +      - description: APB interface reset signal
->  
->    reset-names:
->      items:
->        - const: core_rst
-> +      - const: apb_rst
 
-apb
+My bot found errors running 'make dt_binding_check' on your patch:
 
->  
->    interrupts:
->      maxItems: 1
+yamllint warnings/errors:
 
+dtschema/dtc warnings/errors:
+Documentation/devicetree/bindings/i3c/realtek,rts490x-i3c-hub.example.dtb: /example-0/i3c-master@d040000/hub@70,4ba00000000/target-port@1/i2c@10: failed to match any schema with compatible: ['i2c-slave-mqueue']
 
-Best regards,
-Krzysztof
+doc reference errors (make refcheckdocs):
+
+See https://patchwork.kernel.org/project/devicetree/patch/20260525125128.297-1-zain_zhou@realsil.com.cn
+
+The base for the series is generally the latest rc1. A different dependency
+should be noted in *this* patch.
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure 'yamllint' is installed and dt-schema is up to
+date:
+
+pip3 install dtschema --upgrade
+
+Please check and re-submit after running the above command yourself. Note
+that DT_SCHEMA_FILES can be set to your schema file to speed up checking
+your schema. However, it must be unset to test all examples with your schema.
+
 
 -- 
 linux-i3c mailing list
