@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19F63CD98C5
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1BF32CD98D2
 	for <linux-i3c@archiver.kernel.org>; Sun, 14 Jun 2026 20:09:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
@@ -12,78 +12,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ZTj/O1RpKR+5OxHdGe6Jlv6f5NL6swx9ggt/UV8HrR0=; b=hGZpPMPxWgQ9CwyJgtWk76Zi2k
-	aiFfwnF1RoMvZPgXKDP30sQcl/ltSidOH1+xpZ+ENPOgdibFTQFEPHby71k2Y1rUVELm5obpmZA9d
-	N+mWnf4tA7hNhqWR5QWr3i8OUaZZwaoHCdcOp/BVRND0v1wyzrBNMsH6oQBgDedB98h6Wj/ISn0N2
-	D/KwyZt5ganRVIcv/ZZgoh85RkqjGdnalEihBN0RFVhjy+yyxMQXMeTt+FyYfKyqqMmYPQZ/XwwR7
-	hrDUwx3IMhXlA7CJOg4TiXAS15P5jbtbz6tuawYE1H87mobJ0lseIF6g5LWsQMtsCdWlo/SrzQUSw
-	qrqK1cRQ==;
+	bh=yj3JuRXBZej7CBeUKaqU2dJt437CxZ+YC2+4us+q1cs=; b=QLqDGtNlxNnlwopkSg/uH8AB0J
+	/frEd/qNdFflZR5ueZ/mxu30pW9NLAeSfYaZCJjbio9Co49WkUAPd/5Du6e4EolRfdCHleKJAil6C
+	rU73JR6lxijbXtmM6VCDF1UyJPTEWu9bmwSYhm7XDAibcSJ3QEMz+PAiWSFP9oGogXP5LnNr/TaQE
+	nlmcXv8mXKE9TsEZUB5ufijjp+9FJDsN5km1l0cb7bohkcP7jFPvMyunu2pQJoYn79vSFYpXVKBmZ
+	rNYr79wELc5rhNp8+nvveQqZHpSfMSDNafqyqOqM98fJhQUdglIga6gMkjjwGYTQTTbfIOpZkEjNI
+	SKQ6wd9A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wYr9a-0000000DGt8-2swX;
+	id 1wYr9a-0000000DGt4-2bnI;
 	Sun, 14 Jun 2026 20:09:58 +0000
-Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXhRY-00000009gpZ-0nLW
+	id 1wRwKg-00000002q1g-1LG1
 	for linux-i3c@lists.infradead.org;
-	Thu, 11 Jun 2026 15:35:47 +0000
-Received: by mail-wr1-x429.google.com with SMTP id ffacd0b85a97d-460662fcb4eso721384f8f.0
-        for <linux-i3c@lists.infradead.org>; Thu, 11 Jun 2026 08:35:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=baylibre.com; s=google; t=1781192142; x=1781796942; darn=lists.infradead.org;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
-        bh=PSf1G7nzPbDLNKS1hhi7niyN8o55l0yM7rdHv8DgAgc=;
-        b=I744PxFRhCrgNlraNck0KODboOwawtivPmlnOdNdQF4dfl7vb57fryuEdQetVuZO2M
-         u6ZGG7CtX/8UpDGNsY6ozuifFFt50u27Z9A5t3PdpNzdoL/EvuxavDhAEuYVD44XAXqR
-         x2KrRC7/j9x/kzb4YNT8QKrQQ6Q6bmSZXdgr3rzqq8FLIFp6kKLAD1cTF8BHoDQzIU3A
-         GIguddfJdVCgduE4vic7ZITYJbYnIpZ02Nco7qNfIn/oyr0MsWzEo4ebQUK74HbOLDaf
-         ouA3MYqYzqbqxNHQJeOw4R8S0cr9eQwOa4sUo33EKKUaiOorj5j0F46q72ZK70Mmwzj7
-         uqMg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1781192142; x=1781796942;
-        h=in-reply-to:content-disposition:mime-version:references:message-id
-         :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=PSf1G7nzPbDLNKS1hhi7niyN8o55l0yM7rdHv8DgAgc=;
-        b=NcDEBPuUvtx/H8ee9CoWcbHc6BaDxxNshT1if3gZQxmqF4aibAKFmkivutXe72hIJi
-         jWHf0bWmlRrwDJ92+em3O4nRVUBp6Qt7rKqHUcyZsb/goipQhIGVtN/YHCai8h/LNwac
-         9g7QmVzShhnEa4y0+ex3Mfy6a/lpcfuvUjizS0Gekb2hWhHIp4RkZIgUt0YvrT28jwSz
-         Hh+zzIx8M9gfkLIZc+e7fpCHJSOGC+p6JaQxEl0E+EA1IIrVHdXFz/c+GR7CYajKD5uy
-         2Cfr/+9GnLfkENIaoFXKQuuPREzeaaa/rznVJdenX5HME9ljVy/Ent//1QL3nNBiyAWa
-         DQeQ==
-X-Forwarded-Encrypted: i=1; AFNElJ9+kB36qGJAVZO1WwauDKRlYF2s3ISICVway8Scx8vFD5amE/UyFwd+CqYBve3riVACaj1g3kP3YfY=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwL9qlNGkWfhWdS9XCQFgL5eV7k1BLz+uQZ29aqV/1ldLdVMGDP
-	X7Egl6HVVett9xT+JFw1H7rH7N83Ga7/BPDvZIazJcVVIxHPXkutsR6THwg3kdvj0uE=
-X-Gm-Gg: Acq92OEFZV+xEHm1ed4F36hOpwlWqBjW+DjGd0bWHkw5vS9FVs0FdRRHQgJqtY2tMfC
-	IPNp4K42PU+reB4w/t9l0K1DGdLQmqh9vUo1rDgUoL/9+jdygvGzPZQQWriHOOC6enyDacsBR2a
-	1W73mmXH7lU1kW/6sxcz7WvrcLTlXZdFV74ta6wr1BHGTt2VK3DM5B0hqZqCuIBjqznwDa05NmT
-	v2q3ATJLv2Bkmz63Ki1BVyvVaqM7xSahaRytdKyGSB19OsMcDTr8ddWbajNk6GVvAotGPoHJ3KB
-	x+emRSo70/i0SmrSA83RBPAN3catgsc7pIbEogpH+8OcUnr5xyIIJdamBDmRXOasYNvSxRw8AQS
-	bUBpr2jFlT18UkAshZydgkd9MEic/3ZO1++/2LIS5XmJd5GhhutOHmc9AUBmGPvkEtogYFk/IyO
-	lr7M1pKBp3QauBZVPuLcSQ+QwT+BNV0CurJnW2rSm3gW1UhihEbPSN4A+O7lJXjsEThF2dmTskF
-	kiNfjBKQF//mOcufwv9IQDIB2pmQNuUO3rU
-X-Received: by 2002:a5d:5d11:0:b0:45e:73eb:5119 with SMTP id ffacd0b85a97d-460677cabc2mr4882372f8f.22.1781192142310;
-        Thu, 11 Jun 2026 08:35:42 -0700 (PDT)
-Received: from localhost (p200300f65f47db044fe8500d14a9bb87.dip0.t-ipconnect.de. [2003:f6:5f47:db04:4fe8:500d:14a9:bb87])
-        by smtp.gmail.com with UTF8SMTPSA id ffacd0b85a97d-4601f35fb24sm88360173f8f.34.2026.06.11.08.35.41
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 11 Jun 2026 08:35:41 -0700 (PDT)
-Date: Thu, 11 Jun 2026 17:35:40 +0200
-From: Uwe =?utf-8?Q?Kleine-K=C3=B6nig_=28The_Capable_Hub=29?= <u.kleine-koenig@baylibre.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Markus Schneider-Pargmann <msp@baylibre.com>, 
-	Frank Li <Frank.Li@nxp.com>, Adrian Hunter <adrian.hunter@intel.com>, 
-	Jarkko Nikula <jarkko.nikula@linux.intel.com>, linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] i3c: Consistently define pci_device_ids using named
- initializers
-Message-ID: <airVk0itH1m03Qmp@monoceros>
-References: <20260504143324.2122737-2-u.kleine-koenig@baylibre.com>
+	Tue, 26 May 2026 18:16:50 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 7132760018;
+	Tue, 26 May 2026 18:16:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 936FB1F000E9;
+	Tue, 26 May 2026 18:16:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1779819409;
+	bh=I2OsPB9xwMzP8bTRW/BdFImKiBqOv6GwJEepAQeykmY=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=Wnn93VgBbaZIOuqN0Ht2pPIhqPHtL+ogpB6srusIHN4so9rLBcbnWSqk3Rs3V29iR
+	 Z3TixGsksO+3v2gKZPlMsuf1tgQnYOyKqjPDMxkVycy9J89PLXBvzGcpU8689JuVF/
+	 /xn+5s5IUPI43rzsB9pvUC7bFFQqT8GzHE0XJqh6ae1ocd/q2yJVBcvEziuqSNRS8v
+	 kzx1qO7mVmkGRv7rpvKhXfxCbug2tlWvCxA3EJVtTrW1UNB1bJlp9jh0QGmnsY0mos
+	 SMoU5TP3ElXTSgW9eoDFJKTrYvpcMqe5Rp3I7MWJs9qtjk0CSQaTDjGQbRUg72XpjJ
+	 ltDdK+3qhclUw==
+Date: Tue, 26 May 2026 19:16:44 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Lakshay Piplani <lakshay.piplani@nxp.com>
+Cc: linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
+	alexandre.belloni@bootlin.com, krzk+dt@kernel.org, robh@kernel.org,
+	conor+dt@kernel.org, devicetree@vger.kernel.org, lee@kernel.org,
+	Frank.Li@nxp.com, lgirdwood@gmail.com, vikash.bansal@nxp.com,
+	priyanka.jain@nxp.com, aman.kumarpandey@nxp.com
+Subject: Re: [PATCH v10 6/9] regulator: p3h2x4x: Add driver for on-die
+ regulators in NXP P3H2x4x i3c hub
+Message-ID: <6e939fd1-0d65-442c-aced-e18705774ab8@sirena.org.uk>
+References: <20260525064209.2263045-1-lakshay.piplani@nxp.com>
+ <20260525064209.2263045-7-lakshay.piplani@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <20260504143324.2122737-2-u.kleine-koenig@baylibre.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260611_083544_686787_5B7F455D 
-X-CRM114-Status: GOOD (  11.92  )
+In-Reply-To: <20260525064209.2263045-7-lakshay.piplani@nxp.com>
+X-Cookie: You are fairminded, just and loving.
 X-Mailman-Approved-At: Sun, 14 Jun 2026 13:09:57 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -96,66 +70,50 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============2800063722594923556=="
+Content-Type: multipart/mixed; boundary="===============7527306814066682863=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 
---===============2800063722594923556==
+--===============7527306814066682863==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="tfq7rxhzmb4i53ds"
+	protocol="application/pgp-signature"; boundary="6VIrc6YsHm1pWuLW"
 Content-Disposition: inline
 
 
---tfq7rxhzmb4i53ds
-Content-Type: text/plain; protected-headers=v1; charset=iso-8859-1
+--6VIrc6YsHm1pWuLW
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
-Subject: Re: [PATCH] i3c: Consistently define pci_device_ids using named
- initializers
-MIME-Version: 1.0
 
-Hello,
-
-On Mon, May 04, 2026 at 04:33:15PM +0200, Uwe Kleine-K=F6nig (The Capable H=
-ub) wrote:
-> The .driver_data member of the various struct pci_device_id arrays were
-> initialized by list expressions. This isn't easily readable if you're
-> not into PCI. Using named initializers is more explicit and thus easier
-> to parse.
+On Mon, May 25, 2026 at 12:12:06PM +0530, Lakshay Piplani wrote:
+> From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
 >=20
-> This change doesn't introduce changes to the compiled pci_device_id
-> arrays. Tested on x86 and arm64.
->=20
-> Signed-off-by: Uwe Kleine-K=F6nig (The Capable Hub) <u.kleine-koenig@bayl=
-ibre.com>
+> The NXP P3H2x4x family integrates on-die regulators alongside I3C hub
+> functionality. This driver registers the regulators using the MFD
+> framework and exposes them via the regulator subsystem.
 
-Given the feedback for this patch was positive and there is no change to
-the compiled result, I wonder if it's still possible to get this into
-v7.2-rc1?!
+Reviewed-by: Mark Brown <broonie@kernel.org>
 
-Best regards
-Uwe
-
---tfq7rxhzmb4i53ds
+--6VIrc6YsHm1pWuLW
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEP4GsaTp6HlmJrf7Tj4D7WH0S/k4FAmoq1ckACgkQj4D7WH0S
-/k6JAwf/eE4rafDRI0IcfdEXTxm6z6/tLnvQH335rz6tVtYE8so4q8Mlfsu3gm0V
-bwSSvgK86jwfqDukENeNjQ8sg6RNiA+EfDCWOJ8YqZyjd9b+6CPebkXY/c4LrwT3
-IlT03FFG27c+ZZdT/F4a0MMgDJhEzzRV91/hhka1Af4TZUe0qEwlLkOjdYYlLcmy
-KSDOBwpA1ncPbQkIbYRDNFubYnN2quOJ4As8T/2BU9yVk94Pk6WSXLxpeXU0RXq0
-kvO+2ldEe0/T8qyQrLN7IMs/ASdO7XkS4NUvDzqeHisa1ASSTdBo/R5ub2HvWt6X
-g6N2ESEkWsgQbuVs9uKt89wBUfO5Ew==
-=z22G
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAmoV44sACgkQJNaLcl1U
+h9CI2Qf/S9IFzRbBRN5qoF1uXEkFdqLcfGDe/TkziPuQM0Wf1fbzs2zAm6kGR1Y4
+7qInMlsC+H0FiO2jmITJJffSSiUnWZuUXjCUSIZ46UnyuPhtnJnr5ZIZInk5CE0O
+PXPm8oxZlNmG0nI87vwkUytDv60xcbC9gDB8I+PEk8SYVmdEfcH0Fob+hnm9/yUm
+u6ukx1igjf/EK0x9kzDnFi14QXfj7MR72hzcYANJYLXz5vsgsroRtJ/+KUhYctax
+tS0tz+UABbrp8ns6uX7w8BM0/Cc23QMnArK0eWFSPc/U7bxV7G3c9qAnUfNroZRI
+Y3+9eoDd1nZGs0NuVty19ywWlMOVqQ==
+=rXED
 -----END PGP SIGNATURE-----
 
---tfq7rxhzmb4i53ds--
+--6VIrc6YsHm1pWuLW--
 
 
---===============2800063722594923556==
+--===============7527306814066682863==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -166,5 +124,5 @@ linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
 
---===============2800063722594923556==--
+--===============7527306814066682863==--
 
