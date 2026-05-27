@@ -4,63 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26AC3CD5BD0
-	for <linux-i3c@archiver.kernel.org>; Wed, 27 May 2026 17:44:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AE7E8CD4F54
+	for <linux-i3c@archiver.kernel.org>; Wed, 27 May 2026 19:49:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BnjQiGMT+ywgnj74rYR5GZ1qPDWXY2BuGPryuy2hVQU=; b=lpVdRUUihL9pVl
-	sJ8I3Zj1ThNonzbd3RlQkHZ6EVEhf9THLm9v4324mlP7sk2MLw2J/c6Y4TNW/MTipxZBnmvwv4RTu
-	hqYDCtkRdth3ikEcxis5ZZAIYUaqag1lRN/ilD5wfkFFEbzSt0rN4AevWoLvAyBfefeoR7KiYh62r
-	2xmkKeSRfHQFfKabJ+vBdQNCiN42boR86Lc5APvj6cGiQHsGKBUrCIG/YGsjhIKuIQvtVKKLXSHTR
-	VJSq+Bdq5ngGi30zPqMlOAixdf6efxBh9t9pJy/JWKlKw9wpRolid1/enDwz9duWP1qUo9HRLMO7W
-	5sn7hvWGVl1asM3fXEHw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HHsJVjyn2YhtOsIIl9gckI8Sm9vTm7jRDGLIIUNVV8Q=; b=DJHcXdgrrVmMv4
+	815v693n+JGyww5yxGxCDrxQq3g99jWtWtAzPWtRhsasFAwT0BbYHHKD3+Mp3TnkRgf1KbUGHVlkg
+	0VXciUoTebBb8JllvKXGHsywtsUBYw/8t8+QuAo5OE57RVW74q7B2b6489N7aEnRa2hHugTITsQsZ
+	choCeeps7acIwEEnDsJngG39t2wRPXIK8oHrtWRoihK9gO9K8PPUoJWkYyH/lgJ68vMeK60Jxj11n
+	gdNRMBT2Bq2vcMEz2LactKFOHbCdZkfvUHc/XzCo/V2RrGEDe7SsAfg6idqKemwC2+8MRgDJDJ4Nn
+	ZcjBBtw9kTuQPIsuqB2g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wSIIu-00000004b1c-2wZj;
-	Wed, 27 May 2026 17:44:28 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wSKG3-00000004giV-1rGT;
+	Wed, 27 May 2026 19:49:39 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wSIIr-00000004b0u-3PWT
+	id 1wSKG2-00000004ghy-16Nz
 	for linux-i3c@lists.infradead.org;
-	Wed, 27 May 2026 17:44:26 +0000
+	Wed, 27 May 2026 19:49:38 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 70C1F41908;
-	Wed, 27 May 2026 17:44:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 802B41F000E9;
-	Wed, 27 May 2026 17:44:21 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id B3BC4605AC;
+	Wed, 27 May 2026 19:49:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 25B5D1F00A3D;
+	Wed, 27 May 2026 19:49:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1779903862;
-	bh=1bam8ZRCLqualEQIsKYimQJ1F23JgrKdfTKCBeEN7kc=;
-	h=From:To:Cc:Subject:Date;
-	b=LaBmYl4xAqKR220GQXs1T6XnVveVxflxv1gw00U8d6AkRXMYe/RPagPYFGEcs1Aef
-	 SmC/jv5dO2dPy4ZmL5fFLeGoFVFoXuLr91jrxqdTGmJtzkzZDAmzwcW6qRo9Nafn3b
-	 3FAwBUQtNFRs2kZ7QkGgw/7+tEP6srfxZQNfbwLRmS8AqL9Ox630m3u6XKdNXqV+BW
-	 E0tMgj0P5QDY7k439bjQncuaSFyjezQpCXKI6TNBTdGAL43pjPLB9M4D091WnksJJ/
-	 S1BzbFFgUwUf1I6HwzB/owI/G/4pYSFgZwppcvHpZMrhp9rP4N8eu3vjPz3WmFODIj
-	 m3HwsEt0sBXTg==
-From: Dinh Nguyen <dinguyen@kernel.org>
-To: linux-i3c@lists.infradead.org
-Cc: dinguyen@kernel.org,
-	devicetree@vger.kernel.org,
-	robh@kernel.org,
-	krzk+dt@kernel.org,
-	conor+dt@kernel.org,
-	adrian.ho.yin.ng@altera.com,
+	s=k20260515; t=1779911377;
+	bh=AAui/35BdXAduW1BLpfpXGcfFy5asK/kJ+Fe6tFyXWo=;
+	h=From:To:Cc:Subject:Date:In-Reply-To:References;
+	b=eg7Yu50CLmeomDkgpi6/9HXsOwbQwhVMdCa46yIB3jB8UsteWD7HCyCk937fZlV/v
+	 QPo6BuRLt181aC6tvyRk8rxdhMQziK+rtTh7WKjC9+33AJY7meYCRz+tPhdWev2kIQ
+	 m2hgpzQyRdBckkyBJQV7Yc0Ltx7MnVyEMitIW0cP690IGR0rFd3xuennFgSqioMvnM
+	 snTl6GfAkn6yQtWWJOQEgsrs1E8xTexclHp/ciXsQnXwenEiKXTa3+Q9DVgNLWhBfp
+	 BhjcdMzY2W4l4rcdls12opOq8R9rJzqkSBU7bheJAU0vjTKbb41Z1JISoRW1cFdgdH
+	 WiSZVrRE/tr1A==
+From: Sasha Levin <sashal@kernel.org>
+To: gregkh@linuxfoundation.org,
+	stable@vger.kernel.org,
+	adrian.hunter@intel.com
+Cc: Sasha Levin <sashal@kernel.org>,
+	patches@lists.linux.dev,
+	linux-kernel@vger.kernel.org,
 	alexandre.belloni@bootlin.com,
-	Frank.Li@nxp.com
-Subject: [PATCHv2 1/2] dt-bindings: i3c: dw: add resets and reset-names
-Date: Wed, 27 May 2026 12:42:19 -0500
-Message-ID: <20260527174221.79259-1-dinguyen@kernel.org>
-X-Mailer: git-send-email 2.42.0.411.g813d9a9188
+	Frank.Li@nxp.com,
+	billy_tsai@aspeedtech.com,
+	npitre@baylibre.com,
+	boris.brezillon@collabora.com,
+	linux-i3c@lists.infradead.org,
+	Jianqiang kang <jianqkang@sina.cn>
+Subject: Re: [PATCH 6.12.y] i3c: mipi-i3c-hci: Correct RING_CTRL_ABORT handling in DMA dequeue
+Date: Wed, 27 May 2026 15:49:10 -0400
+Message-ID: <20260527-agent5-item018-i3c@kernel.org>
+X-Mailer: git-send-email 2.53.0
+In-Reply-To: <20260527061933.3612126-1-jianqkang@sina.cn>
+References: <20260527061933.3612126-1-jianqkang@sina.cn>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260527_104425_880900_FB9A4304 
-X-CRM114-Status: UNSURE (   7.04  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,38 +79,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The DW I3C driver is already getting the "core_rst" reset name, but it
-has not been documented.
+> [ Upstream commit b795e68bf3073d67bebbb5a44d93f49efc5b8cc7 ]
 
-Signed-off-by: Dinh Nguyen <dinguyen@kernel.org>
----
-v2: Added this patch
----
- .../devicetree/bindings/i3c/snps,dw-i3c-master.yaml       | 8 ++++++++
- 1 file changed, 8 insertions(+)
+Queued for 6.12.y, 6.6.y, 6.1.y and 5.15.y, thanks. The 6.12 backport
+required dropping the upstream guard(mutex) usage (control_mutex doesn't
+exist on these branches); the rest of the change applied cleanly.
 
-diff --git a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
-index e803457d3f554..7a39fe62bbbc0 100644
---- a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
-+++ b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
-@@ -35,6 +35,14 @@ properties:
-       - const: core
-       - const: apb
- 
-+  resets:
-+    items:
-+      - description: Core reset signal
-+
-+  reset-names:
-+    items:
-+      - const: core_rst
-+
-   interrupts:
-     maxItems: 1
- 
--- 
-2.42.0.411.g813d9a9188
-
+--
+Thanks,
+Sasha
 
 -- 
 linux-i3c mailing list
