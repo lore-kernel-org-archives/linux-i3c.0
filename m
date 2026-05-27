@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AD293CD5BDE
-	for <linux-i3c@archiver.kernel.org>; Wed, 27 May 2026 06:20:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 955AFCD5BDE
+	for <linux-i3c@archiver.kernel.org>; Wed, 27 May 2026 06:21:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=K0pp1e1BJ4L9HaHbG8cUpxJ1IwRcVxsbMteasLJeTps=; b=nMhYshWeVb4CBA
-	aZWjkESCTMx5hh8F3hTkE4cvNWzIwFDa0b9kIhABAlzBlWYil/bFIWj3shVGov6gKI4A/q3tMrSRU
-	sHLhAgdUAxnoYcF1Z1YY6ODMJGcb+XQ1CAs92skioAJE4aAarSvHj/Vjd6ZkP2xXECLqlNw+ATVVf
-	k6wtH0v3mm4wyZwOhgPhmsF1qtcMFG2jujCNxwi9M9++uVU959bC/l88TpKRIDLP86rNWa8Wk65S7
-	b15UEx1QPQinVTW27QbhYg7buIteOwRoEMmCLWWPnQSvNZ3C1+0dQIilCT6Sl/nmFwt4rET0UH0j+
-	qrMZfpk3AVoNKBugBdiw==;
+	List-Owner; bh=ZYhagUx1DeOiBxsuxyYsNwHEkrwlooPiuQLMJTSH8pk=; b=HdBfVXVmT/MDsc
+	rgmc04VAwj4NWNWfKFOXzFErVjx/2mDks5x3BrQ61fWE6oaX+XfVrVaDe6ZuG6TfUr3AOe2KwIlDE
+	3+fAhaYe7qBilzR/shNweH71fhPdA1mbj3Dagq9HDZSsHUtGGWWpt9vjTP0ssvJREfw9A52LCkZ9B
+	DV9hjsO2oI233tLy5SrLno91Z7LA1vnmoXLqxgRUHialveaO7Y+vbYyRYVEclEK3jPWTifDeOJkHI
+	XvHqmWeDBMRMQ6Sd1rqxx+v98ITC+LRULo2jMwlACqnNy2IRNDSBObzJz2mIIYyiVlmim1A58Oofi
+	jnyqtaq37gT80K16hNKQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wS7dO-00000003OLF-0j0n;
-	Wed, 27 May 2026 06:20:54 +0000
-Received: from mail115-118.sinamail.sina.com.cn ([218.30.115.118])
+	id 1wS7dv-00000003ORg-133G;
+	Wed, 27 May 2026 06:21:27 +0000
+Received: from mail78-36.sinamail.sina.com.cn ([219.142.78.36])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wS7dK-00000003OIY-3QjT
+	id 1wS7dq-00000003OPw-2Okl
 	for linux-i3c@lists.infradead.org;
-	Wed, 27 May 2026 06:20:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sina.cn; s=201208; t=1779862851;
-	bh=V/Y6MuG1dUmeFRhVhwjtGhY2waWpqlhOBuklwr+jydU=;
+	Wed, 27 May 2026 06:21:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sina.cn; s=201208; t=1779862882;
+	bh=hbnRnoV3Jx+oe1T2d7/QC12cebGRtky6tHNfgSNm7Oo=;
 	h=From:Subject:Date:Message-Id;
-	b=jOuJDP2y9UimaviXTynFVKSJH9adVielG/OeUPgxlnKmydWMk1fJtXIS1HAv2cqqb
-	 YCLmCaxIUVqoCbbI1sPaLw8EVgyaRZkBZpC0Y9/093UiTYd5qllTHMf577k8cNgg73
-	 TheiEjfHU9F+7jEgoGMn7ucWIaessbO0Wlse6t18=
+	b=zt/0Ul89KW7kEBhjSo+R0jnVXOGpzQBl0sx4rQHs2XiSUZULLOcLqRbAd48IGF39A
+	 87rnNjWSHuGEEysvs85PLQcFBNrKkqquOImrCSwviNnUeYZNTGFrRNRT5hHAqs6aw8
+	 A8+B8e4kAg96eW3dNDTbrpx+XcQbsMRn5sZba4lY=
 X-SMAIL-HELO: NTT-kernel-dev
 Received: from unknown (HELO NTT-kernel-dev)([60.247.85.88])
 	by sina.cn (10.185.250.24) with ESMTP
-	id 6A168D3800001848; Wed, 27 May 2026 14:20:41 +0800 (CST)
+	id 6A168D5400002623; Wed, 27 May 2026 14:21:16 +0800 (CST)
 X-Sender: jianqkang@sina.cn
 X-Auth-ID: jianqkang@sina.cn
 Authentication-Results: sina.cn;
 	 spf=none smtp.mailfrom=jianqkang@sina.cn;
 	 dkim=none header.i=none;
 	 dmarc=none action=none header.from=jianqkang@sina.cn
-X-SMAIL-MID: 81871510747978
-X-SMAIL-UIID: 3EF491FA24E547F983570195DF246D43-20260527-142041-1
+X-SMAIL-MID: 14446610748300
+X-SMAIL-UIID: D03F0158C8954993AB34FEAC1390823A-20260527-142116-1
 From: Jianqiang kang <jianqkang@sina.cn>
 To: gregkh@linuxfoundation.org,
 	stable@vger.kernel.org,
@@ -58,13 +58,13 @@ Cc: patches@lists.linux.dev,
 	npitre@baylibre.com,
 	boris.brezillon@collabora.com,
 	linux-i3c@lists.infradead.org
-Subject: [PATCH 6.6.y] i3c: mipi-i3c-hci: Correct RING_CTRL_ABORT handling in DMA dequeue
-Date: Wed, 27 May 2026 14:20:39 +0800
-Message-Id: <20260527062039.3612331-1-jianqkang@sina.cn>
+Subject: [PATCH 6.1.y] i3c: mipi-i3c-hci: Correct RING_CTRL_ABORT handling in DMA dequeue
+Date: Wed, 27 May 2026 14:21:07 +0800
+Message-Id: <20260527062107.3612446-1-jianqkang@sina.cn>
 X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260526_232051_275908_B7B8C394 
+X-CRM114-CacheID: sfid-20260526_232122_932863_AB50698D 
 X-CRM114-Status: GOOD (  12.79  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -114,7 +114,7 @@ Signed-off-by: Jianqiang kang <jianqkang@sina.cn>
  1 file changed, 17 insertions(+), 10 deletions(-)
 
 diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-index 624d00b853a5..61007167606f 100644
+index e270fcd0f7c3..5616f3a9551b 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/dma.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
 @@ -448,16 +448,23 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
