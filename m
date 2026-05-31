@@ -4,63 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D46A2CD6E49
-	for <linux-i3c@archiver.kernel.org>; Sat, 30 May 2026 13:17:50 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4258BCD6E52
+	for <linux-i3c@archiver.kernel.org>; Sun, 31 May 2026 14:51:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uqFuzgvTjhFQOl/wCQxSYYf6HLmBtQPQH6Ya++IB0C0=; b=iVfRcW/c3haDZq
-	mu/dvPjqsJoeyoprCQnfqb+zzykCcXvKvHESWGkczi8zHuU0SU/yRHwgQ5JvNqIKHNbBPlQipTqGY
-	O0iLHR+Jb+Mc1zHkSffh8wapHV/RFmTylhzUB7yp3+Ps193psU+bIwpgWtjqLF+G5RQfcQCEc4ie5
-	Du7QkxLbf5dPR0JhOy0mhSDHQdd+wdSTqBG26QvFnzskoCiLM/aIF22z5lYoYRpcJZkZmyxQGbiQ/
-	3vKyL8NFKsuZ6LCNbKJk0PDBeFcGrAzKoNGvES2C9FRAc/pqchClTWRhd4+QFmv70bq1jlNx4RDTR
-	n6iKMaTJXRNsN6tmZyjg==;
+	List-Owner; bh=bK0WVtKimrnjoJNF36rcnF6uWHBm+jDZBuTUOmkWY+U=; b=Nuc8jglsxgukly
+	RCJxtbiLaxyjY1M9cwVvVLCblE6R2bzZB12ohrG/Mm+pVK+wukX4mzHNvcCX3evcGYBF3TJZZtBze
+	7neay8kYpsvA3EvU+Wiuz4Q66qvdz80VfWqadmRSw9EkH8pMVC3U2bSKLKtfaZuFvF2vZv/OmNPie
+	OfDCMrHIytB+Za+/aNELyAv7tr1GMDK7u2XQqJ+/LqvpHARVNoFLidJW/8f8b896zNdipdQ4t36kF
+	3oedX+AEOcYETxI8sBYE0V0Htoo/UmcrBCnuu38s/qit+rrS98Jmhqo59roJFGKVyiK0FOnFOgwpo
+	cRMh0M3phDeqfBw1RIvA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wTJZW-00000008l1H-0Vu5;
-	Sat, 30 May 2026 13:17:50 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wThVJ-00000009eqk-2tCU;
+	Sun, 31 May 2026 14:51:05 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wTJZU-00000008l1B-3uC9
-	for linux-i3c@lists.infradead.org;
-	Sat, 30 May 2026 13:17:49 +0000
+	id 1wThVG-00000009epq-3YZt;
+	Sun, 31 May 2026 14:51:04 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id D66D3600AB;
-	Sat, 30 May 2026 13:17:47 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E2F661F00893;
-	Sat, 30 May 2026 13:17:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1780147067;
-	bh=t2oLA32n49fw6YC2BTNEdxQuVC72zm9QzG8dufL6sQY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=AuX3B8qp2vK2JzGouTZHgXfIYXJvMcaIRuKiLFgBb+7iicYWZgc0cjdWjQD+sEVpV
-	 ltAftx06JlgaOc4xhYQXcHjlPVKEd5vn+gQWd/Nj8ahx0T8r1Gx5PhDtDJRnjW4foC
-	 GzYEGmJxg5oxQIiYuxpBnwaeEQLYJblpPKqAqFaxok8kDGfdw5azZdqiLfe3pJ8PU/
-	 rcF3kOd9cOUMe+GJsR463yCJjgIw+lS0jptKSlVT8USufJgzHVUJ9I1kDIV7Cn/a/F
-	 Oe4FJhplsohnWrpLK4ub+z5DRImEs/UMd74KD1VkK2aMOUVzQCzY3pmKjL0gDBkbTb
-	 Srw2OwBZMX4Kw==
-Date: Sat, 30 May 2026 20:58:35 +0800
-From: Jisheng Zhang <jszhang@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH v4 2/3] dt-bindings: i3c: dw: Add apb reset
-Message-ID: <ahre-7YdlcOZkwS1@xhacker>
-References: <20260525140018.19598-1-jszhang@kernel.org>
- <20260525140018.19598-3-jszhang@kernel.org>
- <f8efa4ae-76e8-4082-a445-ca5f6d230bf3@kernel.org>
- <ahZwl3uXjyOZRvGW@xhacker>
- <4a8539d3-704b-4433-b4d6-e5acfe22d512@kernel.org>
+	by sea.source.kernel.org (Postfix) with ESMTP id A92D04166E;
+	Sun, 31 May 2026 14:51:01 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AE4A11F00893;
+	Sun, 31 May 2026 14:50:56 +0000 (UTC)
+Message-ID: <35c2ea3d-e257-43d9-8d02-4a111259fd5f@tuxon.dev>
+Date: Sun, 31 May 2026 17:50:54 +0300
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4a8539d3-704b-4433-b4d6-e5acfe22d512@kernel.org>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v7 2/5] clk: at91: sama7d65: add peripheral clock for I3C
+To: Manikandan Muralidharan <manikandan.m@microchip.com>,
+ alexandre.belloni@bootlin.com, Frank.Li@nxp.com, robh@kernel.org,
+ krzk+dt@kernel.org, conor+dt@kernel.org, nicolas.ferre@microchip.com,
+ linux@armlinux.org.uk, mturquette@baylibre.com, sboyd@kernel.org,
+ bmasney@redhat.com, aubin.constans@microchip.com, Ryan.Wanner@microchip.com,
+ romain.sioen@microchip.com, tytso@mit.edu, cristian.birsan@microchip.com,
+ adrian.hunter@intel.com, npitre@baylibre.com, linux-i3c@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org
+Cc: Durai Manickam KR <durai.manickamkr@microchip.com>
+References: <20260525092405.1514213-1-manikandan.m@microchip.com>
+ <20260525092405.1514213-3-manikandan.m@microchip.com>
+Content-Language: en-US
+From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
+In-Reply-To: <20260525092405.1514213-3-manikandan.m@microchip.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260531_075102_909390_06E8E25F 
+X-CRM114-Status: UNSURE (   4.33  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,56 +66,23 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, May 27, 2026 at 09:53:16AM +0200, Krzysztof Kozlowski wrote:
-> On 27/05/2026 06:18, Jisheng Zhang wrote:
-> > On Mon, May 25, 2026 at 05:25:45PM +0200, Krzysztof Kozlowski wrote:
-> >> On 25/05/2026 16:00, Jisheng Zhang wrote:
-> >>> Add dt-binding for support of apb reset which is to reset the APB
-> >>> interface.
-> >>
-> >> And this is ABI break, so you must explain WHY breaking ABI is worth
-> > 
-> > This just adds an optional apb reset, it doesn't break any exisiting
-> > ABI. Kindly let me know whether adding new optional binding is also
-> > an ABI break.
-> 
-> It does. One reset was before. Now all devices must have two resets.
-> Clear ABI impact.
-
-I checked the dts with only one reset by manual dt_binding_check
-and dtbs_check, it still work, so I'm not sure why those dts "must have
-two resets". Kindly let me know what's wrong.
-
-> 
-> > 
-> >> doing that or what is the impact. Additionally you should explain which
-> >> devices have it. Does Altera have it? You really lack explanation WHY
-> >> you are doing it and which hardware you exactly describe.
-> > 
-> > I'm preparing one of synaptics SoCs support to uptream, it needs this
-> > apb reset signal for i3c. So you mean I delay this series until the SoC
-> > upstream series come, right?
-> 
-> No. You just sent patch which basically says that Altera has two resets,
-> without any explanation of that.
-
-I guess you mixed other series/patches with mine here, no? I didn't
-mention Altera at all ;) What my series mentioned is adding apb reset
-which is to reset the APB interface.
 
 
+On 5/25/26 12:24, Manikandan Muralidharan wrote:
+> From: Durai Manickam KR<durai.manickamkr@microchip.com>
 > 
-> Write explicit patches with answers WHY you re doing and WHY its impact
-> is correct.
+> Add peripheral clock description for I3C.
 > 
-> 
-> Best regards,
-> Krzysztof
+> Signed-off-by: Durai Manickam KR<durai.manickamkr@microchip.com>
+> Reviewed-by: Claudiu Beznea<claudiu.beznea@tuxon.dev>
+> Signed-off-by: Manikandan Muralidharan<manikandan.m@microchip.com>
+
+Applied to clk-microchip, thanks!
 
 -- 
 linux-i3c mailing list
