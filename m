@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 59A57CD6E57
-	for <linux-i3c@archiver.kernel.org>; Tue,  2 Jun 2026 13:29:24 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6CE0FCD6E57
+	for <linux-i3c@archiver.kernel.org>; Tue,  2 Jun 2026 13:29:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v7QcWAHHxwilxg+e3JXTX2A77wbwTnnfPlqnGvVFhck=; b=zMx2LtHDhrwGzh
-	Uq6B/HGq6PMARTQwqeeg7ICJ11yd+/xvbRSNtqnDk6z1AHcwQ6k7n/Tu3uOFcmDQikSexVafMV0u5
-	7lw/EPY8K5GRy9F6VvuhTZKQqAyVz2P0NuUxTb13X+5QKM5WHcrfYiXHspNYbySg06xzNej8OxNwa
-	mRBefm8vbIo21mGQLZSZvFIKrXV8Vh1gA67QF9RfUdO9r+yqb43cIchCZnHrqbqOPwSwJ9l4Ha7to
-	lSgsaJ68bX/RmvhmN+1l7O1/DET8SsGQLSvxGbJfA5IDimp7jCN/a4LBazFVsg4Q4NniPEGr5GBpc
-	tg/CsmytcRCaIdQwm3Uw==;
+	List-Owner; bh=W8JlJVnTiNKXTmd8Wr4Vura/FOj2s1kwprfWpr+6roo=; b=qIxteSWOkxQtBl
+	lnX7oi7irC+ZlUhEL2KRzbZBeBUTVtbR7JkEIf8/0MxogBG3TN2Qu25AhbaM1lL8hL/woonweUG1a
+	lq6soDEcnHwspupta2HT0wVlFeUb5yZZGCrbRYwyOfljc7vWZ4BdHf/ZEPgBttO97Sg9J+1p8Nz6s
+	pp8wAYSB5hLccBD6D7wSt9hvGhGno8WAVwQ8xvj7TB4TUXnt4SXN4jkgGj966bciMDEfcg3tnlSYj
+	TpPavo88N9cU1MngaekJqupNhn+FVAumOPs5Ge3Hd3Dyk/RrSosG4lqyHMZ1LJouK6xKVfakYNL9r
+	Cqqud1tXtenGlv62r9/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUPBM-0000000D7R0-0KUB;
-	Tue, 02 Jun 2026 13:29:24 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wUPBP-0000000D7SC-0hTu;
+	Tue, 02 Jun 2026 13:29:27 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUPBJ-0000000D7QJ-3D01
+	id 1wUPBM-0000000D7RC-2N0z
 	for linux-i3c@lists.infradead.org;
-	Tue, 02 Jun 2026 13:29:22 +0000
+	Tue, 02 Jun 2026 13:29:25 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 7C00343B7F;
+	by sea.source.kernel.org (Postfix) with ESMTP id 354A8407D8;
+	Tue,  2 Jun 2026 13:29:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D11441F00898;
 	Tue,  2 Jun 2026 13:29:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E6D7B1F00893;
-	Tue,  2 Jun 2026 13:29:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1780406961;
-	bh=Yqb9F/SWFWyaQnxe0OzvdBZA32dRT3tLYVEuPNodHio=;
+	s=k20260515; t=1780406964;
+	bh=fZeedrLja92Z9bJCdVwk9qz/J7YvmgIy9rqBGdrsA7s=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=hFPYWc4LeJwPLS2JTnRAs/UngqDwkxitPxQVJFnpsyNxSKeOQeBI/OUM38moSqGue
-	 3Azlcivj8fPmje+GkhMHLpHoxV2JqjgszdQbjknTNEVTjjUzR3cclQ4tL/1GrC8/0J
-	 K7/hYyJVvJHMe1+lPOc68QxDiobptbGy+BY/59I3LeCfooc8H+dFuCTKwdGxm1fFxg
-	 1zprK0Pw8MJStYV5DBbFwgVy61IB9jdDCAWu4Zj7A3X5WPIxkvt17KVv80akkaPAMK
-	 8h5feRHOSXvVZurWBsNrHxeROZkYkxehgulIMrSqrl7Bgsqm250S7/rTABvvOMFu6t
-	 DmvrQy0l35muA==
+	b=lV6zGYbnizZzhYeohQ7Oz/RiL3Ypwel0r9t64N24yaHkqw8TolUQzN4AFDW3ncy7V
+	 CQyBDC9SbFkIMuJ8Zle5kM6EmqMc64fawG8zVoY7gUYAvoW4Xuy0bLBUY/B9wnsv5t
+	 LVgsUuP/i9SWmZweFcnWU5ldZQRJwzUSUfRszqj5WCnQ05l3Z6yE559M2SgZ7wq+oi
+	 QNH8t6GJyFtjN3wBgRuwlBJLoO8Ph73H4F9Lf1zLRvH9m3ajHCwSZQ0xP0rYp+wzDy
+	 GLLVfqsfdQqU7fsNMv3t1zLNUxvV4NtMLRPM/55W2/SqDLQIesmHJvZt3AmWMYbNIV
+	 9Gu32pExmyZPQ==
 From: Claudiu Beznea <claudiu.beznea@kernel.org>
 To: wsa+renesas@sang-engineering.com,
 	tommaso.merciai.xr@bp.renesas.com,
@@ -53,16 +53,17 @@ Cc: claudiu.beznea@kernel.org,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: [PATCH v2 15/17] i3c: renesas: Use the "dev_name:irq_name" format for the interrupt name
-Date: Tue,  2 Jun 2026 16:28:22 +0300
-Message-ID: <20260602132824.3541151-16-claudiu.beznea@kernel.org>
+Subject: [PATCH v2 16/17] i3c: renesas: Drop unnecessary tab
+Date: Tue,  2 Jun 2026 16:28:23 +0300
+Message-ID: <20260602132824.3541151-17-claudiu.beznea@kernel.org>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20260602132824.3541151-1-claudiu.beznea@kernel.org>
 References: <20260602132824.3541151-1-claudiu.beznea@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260602_062921_825673_2333B1F3 
-X-CRM114-Status: GOOD (  12.07  )
+X-CRM114-CacheID: sfid-20260602_062924_627041_BB7864C7 
+X-CRM114-Status: UNSURE (   9.02  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,9 +82,7 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
-Use the "dev_name:irq_name" format for the interrupt names. This makes it
-easier to identify interrupts in systems where multiple devices may request
-interrupts with the same name.
+Remove an unnecessary tab to make the code cleaner.
 
 Reviewed-by: Frank Li <Frank.Li@nxp.com>
 Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
@@ -92,34 +91,22 @@ Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 Changes in v2:
 - collected tags
 
- drivers/i3c/master/renesas-i3c.c | 9 ++++++++-
- 1 file changed, 8 insertions(+), 1 deletion(-)
+ drivers/i3c/master/renesas-i3c.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
-index e1aa445de933..1ccd1c4ea27c 100644
+index 1ccd1c4ea27c..2a9bb035b8a2 100644
 --- a/drivers/i3c/master/renesas-i3c.c
 +++ b/drivers/i3c/master/renesas-i3c.c
-@@ -1450,12 +1450,19 @@ static int renesas_i3c_probe(struct platform_device *pdev)
- 		return ret;
+@@ -109,7 +109,7 @@
+ #define  NCMDQP_DATA_LENGTH(x)	FIELD_PREP(GENMASK(31, 16), x)
  
- 	for (i = 0; i < ARRAY_SIZE(renesas_i3c_irqs); i++) {
-+		const char *irqname;
-+
- 		ret = platform_get_irq_byname(pdev, renesas_i3c_irqs[i].name);
- 		if (ret < 0)
- 			return ret;
- 
-+		irqname = devm_kasprintf(&pdev->dev, GFP_KERNEL, "%s:%s", dev_name(&pdev->dev),
-+					 renesas_i3c_irqs[i].desc);
-+		if (!irqname)
-+			return -ENOMEM;
-+
- 		ret = devm_request_irq(&pdev->dev, ret, renesas_i3c_irqs[i].isr,
--				       0, renesas_i3c_irqs[i].desc, i3c);
-+				       0, irqname, i3c);
- 		if (ret)
- 			return ret;
- 	}
+ #define NRSPQP			0x154 /* Normal Respone Queue */
+-#define  NRSPQP_NO_ERROR			0
++#define  NRSPQP_NO_ERROR		0
+ #define  NRSPQP_ERROR_CRC		1
+ #define  NRSPQP_ERROR_PARITY		2
+ #define  NRSPQP_ERROR_FRAME		3
 -- 
 2.43.0
 
