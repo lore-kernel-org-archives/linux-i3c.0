@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A22ACD6E4A
-	for <linux-i3c@archiver.kernel.org>; Tue,  2 Jun 2026 13:29:04 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A85E8CD6E4A
+	for <linux-i3c@archiver.kernel.org>; Tue,  2 Jun 2026 13:29:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n++csTLLi2EAHIoUh9ApAmwwredekV8FVmDmDFX55Yk=; b=rnmQJNAF7ychko
-	Fb6F8WTgp8AVEKDvpHHfOCQGrFmcdhb6buL1ox2H4yKEp0HIe33Nnf8KrR975uLwhOQsgiRW9j/Rg
-	VFWtm7Dc7dYn6hYAC3r9x+Eb1k08yE7rqU7W+Vql5qcHyzPvXeMyS9EIlREXlxEe5INdHImUfhT4u
-	ljgXFwqZnkClM5SVWYbGhrOk0gF7rCmBAMgN/WbIhswmMFpEkWgbc3UlJuaaNeX5ZH/X+Is7gHCQu
-	xMMGL/TX3FVGQTJpv74hNcBKLf+hnL0ufNxGGfUiwm539NMHSHgYJd2mTvb/ls9/IWvQmQ2vJMlEe
-	z/TmzEhB8K1z2FWM0BXg==;
+	List-Owner; bh=3s8q4M9fzRZ25nnhIl2avZpSkLQW+rIDGTL6zyriwh4=; b=fer+XnTYaIX/M9
+	LFrAEz3VsTO7e24HijbilvqpdKUp9ermtM5N31hu97Q+e1cAqpOWUJCsv7VV59MN0NvnnCnnxPNky
+	ob3vJCCqqQ21x9FTQS0CoUFlkdUXH4NPcPKRCjK7kbU2DheQhgJCyNsLMRi1DZe0V0TIsUmueZ6KS
+	/+e+UJpSUHfhLxKSpp9GExxDoRa5Jzk9TFzWNOhulo5ILekbmAZZM+xqPYClOVsGyuO38IupAmxE8
+	1T55DMVVodiyGca2fv8EHF+TsvAvtOslgwIHJXW6JucEpLQ5mpb5HrM8824dPdP+qoFB9quxZSUYB
+	54YZw6WyimwmfnCiGEMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUPB2-0000000D7IH-1ZW6;
-	Tue, 02 Jun 2026 13:29:04 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wUPB5-0000000D7Jg-1svo;
+	Tue, 02 Jun 2026 13:29:07 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUPB0-0000000D7HO-2xke
+	id 1wUPB3-0000000D7Ic-1MwB
 	for linux-i3c@lists.infradead.org;
-	Tue, 02 Jun 2026 13:29:04 +0000
+	Tue, 02 Jun 2026 13:29:06 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 56D7443790;
+	by sea.source.kernel.org (Postfix) with ESMTP id EF55743FE8;
+	Tue,  2 Jun 2026 13:29:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AE0AF1F00898;
 	Tue,  2 Jun 2026 13:29:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D117C1F00893;
-	Tue,  2 Jun 2026 13:28:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1780406942;
-	bh=oYMOrxgRJMWSL8TQv7hQo8EwvU2bnk7SM1kv7Y62O6Y=;
+	s=k20260515; t=1780406944;
+	bh=IfCVbZ5MNhLZ2k/mZZ6dMFMSJ/4ShA27RA4/y6hlIj8=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=MSO0Uo1f004DvILS7nrFuA1dvjTlttKNR0UToOdSXhXOSmB+Jl99Tvn4lapxBXglM
-	 BfUklN3KwDgq3FmBnr3GjPRzSx72L+eyiNfMW3sreUIJiN8lp+bun9e1DuD5yn8ZiV
-	 LYXzJySaEOhHOQdoVcL8NjT4Au9ssXA/xfNUXrzF1m2bFm60QLtCRXVXBKsbxZMCzg
-	 sDxB7L99LjpfEaXGq/TychYjP+OAUcPYJIy1Ob/OTBmWKmRV1/aBtnAK/M70r+MEup
-	 6S3R/U2xiXM4bthVfM3k4NgAxwIo8ZnJGPrGv2jGqSk3k4w8LUYi5ZGNpnVLYCNj3B
-	 18ORIoRy9WzWg==
+	b=T8uYQsmb6a7hO5aBvyb/cEV+CKbuBff/eck/zWre1njfXZhiraKMedE8LTeNzdiLe
+	 1a7FAa9baq9oiLv2379T9i3VpteMeqs57brn9PndPr9RZDPhgli9V/XtLzlAQmgt2E
+	 W5XDARPRmLy/y3q3HTAD5CfYLsM56S4HXTXYyn5Uv8X80BjeKNIo+VkORZfAhETiyV
+	 81VNLTni5ZnUkoA608E3OhDb/WZuu3f220ZJ+t6du19mXhD+CrFTARtu0Sr2SjgZaJ
+	 lSnO7Xy0KDk4z+oszjjXwV8o9b6S0qQILGOuWbkxBesxPH408pp1AdC2SivDweLjbO
+	 jNLFJWSqzggCA==
 From: Claudiu Beznea <claudiu.beznea@kernel.org>
 To: wsa+renesas@sang-engineering.com,
 	tommaso.merciai.xr@bp.renesas.com,
@@ -52,19 +52,17 @@ Cc: claudiu.beznea@kernel.org,
 	claudiu.beznea@tuxon.dev,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
-	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
-	stable@vger.kernel.org
-Subject: [PATCH v2 08/17] i3c: renesas: Clean DATBAS register on detach
-Date: Tue,  2 Jun 2026 16:28:15 +0300
-Message-ID: <20260602132824.3541151-9-claudiu.beznea@kernel.org>
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+Subject: [PATCH v2 09/17] i3c: renesas: Use reset_control_bulk_{assert, deassert}()
+Date: Tue,  2 Jun 2026 16:28:16 +0300
+Message-ID: <20260602132824.3541151-10-claudiu.beznea@kernel.org>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20260602132824.3541151-1-claudiu.beznea@kernel.org>
 References: <20260602132824.3541151-1-claudiu.beznea@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260602_062902_769165_59260B65 
-X-CRM114-Status: UNSURE (   8.51  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260602_062905_408066_B1E7E174 
+X-CRM114-Status: GOOD (  11.56  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,34 +81,94 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
-The controller uses DATBAS registers on TX/RX logic. Clean the DATBAS
-register for the detached I3C device to avoid issues.
+Use reset_control_bulk_assert() and reset_control_bulk_deassert() in the
+suspend and resume paths to simplify the code.
 
-Fixes: d028219a9f14 ("i3c: master: Add basic driver for the Renesas I3C controller")
-Cc: stable@vger.kernel.org
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
 Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 ---
 
 Changes in v2:
-- collected tags
+- none
 
- drivers/i3c/master/renesas-i3c.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/i3c/master/renesas-i3c.c | 30 +++++++++++++-----------------
+ 1 file changed, 13 insertions(+), 17 deletions(-)
 
 diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
-index de09f0cadb72..7167ca12a328 100644
+index 7167ca12a328..860c9f2f17de 100644
 --- a/drivers/i3c/master/renesas-i3c.c
 +++ b/drivers/i3c/master/renesas-i3c.c
-@@ -964,6 +964,8 @@ static void renesas_i3c_detach_i3c_dev(struct i3c_dev_desc *dev)
- 	struct i3c_master_controller *m = i3c_dev_get_master(dev);
- 	struct renesas_i3c *i3c = to_renesas_i3c(m);
+@@ -1485,6 +1485,10 @@ static void renesas_i3c_remove(struct platform_device *pdev)
+ static int renesas_i3c_suspend(struct device *dev)
+ {
+ 	struct renesas_i3c *i3c = dev_get_drvdata(dev);
++	struct reset_control_bulk_data resets[] = {
++		{ .rstc = i3c->presetn },
++		{ .rstc = i3c->tresetn },
++	};
+ 	int i, ret;
  
-+	renesas_writel(i3c->regs, DATBAS(data->index), 0);
-+
- 	i3c_dev_set_master_data(dev, NULL);
- 	i3c->addrs[data->index].addr = 0;
- 	i3c->free_pos |= BIT(data->index);
+ 	i2c_mark_adapter_suspended(&i3c->base.i2c);
+@@ -1493,20 +1497,14 @@ static int renesas_i3c_suspend(struct device *dev)
+ 	for (i = 0; i < i3c->maxdevs; i++)
+ 		i3c->DATBASn[i] = renesas_readl(i3c->regs, DATBAS(i));
+ 
+-	ret = reset_control_assert(i3c->presetn);
++	ret = reset_control_bulk_assert(ARRAY_SIZE(resets), resets);
+ 	if (ret)
+ 		goto err_mark_resumed;
+ 
+-	ret = reset_control_assert(i3c->tresetn);
+-	if (ret)
+-		goto err_presetn;
+-
+ 	clk_bulk_disable(i3c->num_clks, i3c->clks);
+ 
+ 	return 0;
+ 
+-err_presetn:
+-	reset_control_deassert(i3c->presetn);
+ err_mark_resumed:
+ 	i2c_mark_adapter_resumed(&i3c->base.i2c);
+ 
+@@ -1516,19 +1514,19 @@ static int renesas_i3c_suspend(struct device *dev)
+ static int renesas_i3c_resume(struct device *dev)
+ {
+ 	struct renesas_i3c *i3c = dev_get_drvdata(dev);
++	struct reset_control_bulk_data resets[] = {
++		{ .rstc = i3c->presetn },
++		{ .rstc = i3c->tresetn },
++	};
+ 	int ret;
+ 
+-	ret = reset_control_deassert(i3c->tresetn);
++	ret = reset_control_bulk_deassert(ARRAY_SIZE(resets), resets);
+ 	if (ret)
+ 		return ret;
+ 
+-	ret = reset_control_deassert(i3c->presetn);
+-	if (ret)
+-		goto err_tresetn;
+-
+ 	ret = clk_bulk_enable(i3c->num_clks, i3c->clks);
+ 	if (ret)
+-		goto err_presetn;
++		goto err_resets_asserted;
+ 
+ 	ret = renesas_i3c_reset(i3c);
+ 	if (ret)
+@@ -1563,10 +1561,8 @@ static int renesas_i3c_resume(struct device *dev)
+ 
+ err_clks_disable:
+ 	clk_bulk_disable(i3c->num_clks, i3c->clks);
+-err_presetn:
+-	reset_control_assert(i3c->presetn);
+-err_tresetn:
+-	reset_control_assert(i3c->tresetn);
++err_resets_asserted:
++	reset_control_bulk_assert(ARRAY_SIZE(resets), resets);
+ 	return ret;
+ }
+ 
 -- 
 2.43.0
 
