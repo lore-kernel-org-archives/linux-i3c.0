@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27E2BCD5BD1
-	for <linux-i3c@archiver.kernel.org>; Tue,  2 Jun 2026 17:14:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 927A3CD6E60
+	for <linux-i3c@archiver.kernel.org>; Tue,  2 Jun 2026 17:17:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QagG/ZYRUhl6NVTNrbuoZ3c/pQEbRSjk2fqgyD4Z16k=; b=2dWK6q7KnEe0V9
-	Vo1sR+XdfNk0wrTi7dQOP9TKf0xk0Lo8XE0ih+NMn9nVAafbTe0B0no+f4AQ45F9RvIjezOp/6ipV
-	11CJlEqOe3JuynhqeevDye5P4992oSLKl3ALoSAaYxuiip6Okxo6q/0sD1J/FDuH+0gqExU+dTb1P
-	C6J6ZEQLhxD2mteKGZs8oleBft9hoCaWQMJQSEbgmqYqRG2gkGXO8YzHA7JdM8glfRS/C9RLRXMY/
-	OwRiLOYOFAGPpLvYnPAX0tKFWVxqEe3ACVwvMc24bmhEtND4mOBm1ARur2MFx5IwFnsEg2Wm61BQY
-	DvRzXzBf83Vm6ucOLj2g==;
+	List-Owner; bh=6p5bdj90bDE4Hc2/JbsliidZzVN6AIJemkHXLeoCdJE=; b=WlDbhYazZCJcEW
+	51dFVdycDeAvJZ2xZYB2T2cv17MY2u9rq5X6gJFWr4BAj+T+CfaOqNZMxXnPQvFfl+gyIqg04itAw
+	7HFdLEPKlPHK4Ez8oUX4aNntDErz+HDeqPdqPGcz+dFDBvmqLtk8ijEqTm8h/XMELTR6dYZwQmlo9
+	txoxzWwQsjKsLE3qdPgOAQ2GszpWGbsN+pLDl52Mpu34diqR/T9lZVdZ56CeIne29Nnq/c+HmiqRh
+	mG9bE4liAPVFwGnmx42zim70tzUiCgJT4kP6VM9gnLUtBrXW+xR0L7ZKDxRPwYXN//rZXavT95IUN
+	sGFJKe9R3jU2AkuMVhAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUShD-0000000DZ9T-3gVK;
-	Tue, 02 Jun 2026 17:14:31 +0000
-Received: from mail-westeuropeazon11013001.outbound.protection.outlook.com ([52.101.72.1] helo=AM0PR02CU008.outbound.protection.outlook.com)
+	id 1wUSjg-0000000DZP5-1CIi;
+	Tue, 02 Jun 2026 17:17:04 +0000
+Received: from mail-westeuropeazon11013007.outbound.protection.outlook.com ([52.101.72.7] helo=AM0PR02CU008.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUShB-0000000DZ97-2wlr
+	id 1wUSjd-0000000DZO9-0Mcn
 	for linux-i3c@lists.infradead.org;
-	Tue, 02 Jun 2026 17:14:30 +0000
+	Tue, 02 Jun 2026 17:17:02 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=XWF9HYdSWuBdlDONBz5fGMYZax75IqPCvBFqNKWhTAjTUhoxa1xHg4qWriQzt6cKkyRkJ8Im8yea2FCMXa8RxDUttNdyzqBvle1FTEbTg9SkJSbSbXFte4HtUwFhmHoNrIPmlxuUBi+UNAHKYrY29tVFTxd9q55nnt8Dj7TLIh9+vIOcWFCA5sFuXanF35itqwgnH2WQ/MHhUpmY9dWbYYvD3KQ00MeNMuKOYjGqZ/dvCws7KMLdUNNFm2N37dAwplL8OJt19JBfLOO/t0o94q2KSh+fdhsNg/Kajm+szNTtv+bOnUo/XyjVHe8NQIf8rSqa6Gn6Na/DYmhgTcrHtg==
+ b=JWT+FxPgMlgjPTY/C/SuznP6FPL7LiaWkfGKlUywVa86QspYddkoTO+hTeY48moghDPXHOd7vKtJ/J9PJ2pHQ9sZEnI2WSE4NhOTUa12kZ4AToHOc9416HK0e+RhA5BOabHuRjq77vQxKd2DFQWzEAUjCJUKblPQASJScb3l5Pf84ZHyl3Nmy7xE4mxh/cM9amu7vE4b8N2t5u4jb36u1Z0FMcws+INdsD2SHkmmiNJzL/Dz0wM8Y98V5IFA7Mfn4C+6p1+k9U8vqyNGB4Kf0simCR3lEHe7PWg3XYRgOewNbQvNVm/TO8sKQ6ukH3PO50zkotETlreayY7RAXBtKg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=un4Hewj3XJdwZJ9Qwmzrhgj0wPf12Agv6hTRHKTC9dI=;
- b=Kl+n2I+HVT72akDQrk8PdHtIwKEK8vW0n1lGypXUax8Z/ZkSbF7RqXEodbm7qBaRzbu2uxUMAKyC+/dtbCPI614W5UgjjpqAzaGeS3PBcqnzJyaDCjHLkKctmJjHKfjTQrt2zuJSe9HNLPO5TJ/6oqXHWq22HSprlgGzqNxYrPWqcZ46dUByPe4fqwVQCYlWZKfnU5Zz1BZvYEJwKhR4KYeE2qn3hkVZyITtPiknbK86QxHatYLQ/j6z4oOebb5rXH4C5pAXb7Qw46124EEAHMklSs56Fz4jolcW2aqKp67S3rohd74SO7eYbF3kh4owtpkix9S+xhPIEHQbQZXvFA==
+ bh=aBIqU27PgwAhLDGzvbH8276m0HCE76J7ij4u/Nh/v7E=;
+ b=u74NveCw/ecBSy8aXhmRC0766Aqb3o+C7P4OgILVsyrQ4Y94iubfkUNWb1hUiyFHBZDlloSKJ9lfpK82P98HNMzNxqbaX2gJIf8Hdsb0c2EEuMGRAIF4ODHFd/UtlseF+JV8UHznzVFke+TXWHW7ZLSOyAhWYnIY2LbCuCOSwQ5TVAwEuQa8buvmxtMmjVFMsMD7GrK0SHp+kNW17e6VChKwl8Rzks10A+AOI2EQI7OaAdvL8hCnxwx8awDkPuAWnOn7MwpcTn4zJ2jJq+Dmq79D6/ZgRpMySSyOuJbvsJIIIwUFS0rVWxbpvz2+fFS9O8b4fbngDAAv8DJpoRUUMw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=un4Hewj3XJdwZJ9Qwmzrhgj0wPf12Agv6hTRHKTC9dI=;
- b=Vdio1ULjgDRb+hcRqMA6SjSAAPWLpjletV5lExUVzguahrH6gbFIbg2snogdH5e2EpnVoVTFBBIdLNHwE/gnw9J3134OL1DqyfvoC7GEOzTCe+91cUs6JXojwkbKNdq2zmIGKh2pF3raA+voK3SBFO0eEPxmouQkUUIwcX7lxrDwSUWbiFFHSw0eL7tFjEu0pLEAfTks48kXWmt9vX4jsQg0xaoOA6hfTYQ6WNZ/atqgbKc9QiEyV5+23+4gQZY3vJYbHJFiTQizngOyRpA6ys9JlkL9cUq6T6lmFrbbGfoMKxg1gy5kP3KLkArsDXcj5km8Fqy/2mIJJI6hxqT8AA==
+ bh=aBIqU27PgwAhLDGzvbH8276m0HCE76J7ij4u/Nh/v7E=;
+ b=amnSI92o1NZNsn6jF+1Qb669b6TgwuBVLE++lO36mBelKQ64GqDfMhDxtX0OOa2Yenjs2Crw0ug9RoeeBhtCt7F8r6S0vfXmSGC0bVP0HZSY99mLd+Wfcu2WMCW5Kw0hFPQ9lgVctBZfy8CmBXLAO7ookCS5a8VHvfxXOVLHA+fHahSdXkA/Ja3H1LqJVyYk/4PUfjC09f8YZzW6POjJnoCMIXykqyoozeQFlOQvs8NoF6VS6lneBiQn3LRIiIs5EZeAsCmLVjfSekbQssNUqBeJ+K1tkr8oJ1zYNNe7/rOfJZxqUUh8fCD4q1UGvk/Dskiqs6bNteNzOQ9jT8SjGg==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8)
  by DU2PR04MB8550.eurprd04.prod.outlook.com (2603:10a6:10:2d5::16) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.71.17; Tue, 2 Jun 2026
- 17:14:23 +0000
+ 17:16:57 +0000
 Received: from PA4PR04MB9366.eurprd04.prod.outlook.com
  ([fe80::75e4:8143:ddbc:6588]) by PA4PR04MB9366.eurprd04.prod.outlook.com
  ([fe80::75e4:8143:ddbc:6588%3]) with mapi id 15.21.0071.015; Tue, 2 Jun 2026
- 17:14:20 +0000
-Date: Tue, 2 Jun 2026 13:14:14 -0400
+ 17:16:56 +0000
+Date: Tue, 2 Jun 2026 13:16:49 -0400
 From: Frank Li <Frank.li@nxp.com>
 To: Lakshay Piplani <lakshay.piplani@nxp.com>
 Cc: linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
@@ -60,70 +60,68 @@ Cc: linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
 	conor+dt@kernel.org, devicetree@vger.kernel.org, broonie@kernel.org,
 	lee@kernel.org, lgirdwood@gmail.com, vikash.bansal@nxp.com,
 	priyanka.jain@nxp.com, aman.kumarpandey@nxp.com
-Subject: Re: [PATCH v10 1/9] i3c: master: rename
- i3c_master_reattach_i3c_dev() to *_locked
-Message-ID: <ah8PZrLTkgLGF3XT@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH v10 2/9] i3c: master: Expose the APIs to support I3C hub
+Message-ID: <ah8QAWLFa6iflHiE@lizhi-Precision-Tower-5810>
 References: <20260525064209.2263045-1-lakshay.piplani@nxp.com>
- <20260525064209.2263045-2-lakshay.piplani@nxp.com>
+ <20260525064209.2263045-3-lakshay.piplani@nxp.com>
 Content-Disposition: inline
-In-Reply-To: <20260525064209.2263045-2-lakshay.piplani@nxp.com>
-X-ClientProxiedBy: SN6PR16CA0049.namprd16.prod.outlook.com
- (2603:10b6:805:ca::26) To PA4PR04MB9366.eurprd04.prod.outlook.com
+In-Reply-To: <20260525064209.2263045-3-lakshay.piplani@nxp.com>
+X-ClientProxiedBy: SA1PR03CA0024.namprd03.prod.outlook.com
+ (2603:10b6:806:2d3::25) To PA4PR04MB9366.eurprd04.prod.outlook.com
  (2603:10a6:102:2a9::8)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|DU2PR04MB8550:EE_
-X-MS-Office365-Filtering-Correlation-Id: 186aa2e8-c0cc-471e-ac48-08dec0ca62cb
+X-MS-Office365-Filtering-Correlation-Id: 9cc09b73-278e-4eb4-4128-08dec0cabfb9
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|52116014|7416014|376014|19092799006|366016|38350700014|22082099003|18002099003|4143699003|56012099006|11063799006;
-X-Microsoft-Antispam-Message-Info: /rO0gcutvxpBdOdyC4MMIkOSThCFwxXBSD/5xMWpqDjuWTuexIJO+dNMiJbSWT5MsQ54oE8dbVoW/jWjG+whkjLFvlqVNkes301NYft71EC3CNFLZZlZ2Ijkn183w9T6PJriAoWu1O6qx7HiwUit1kxrUChyiBi1tFtiDCKEkalfv6bpRUBCqGywPKf3gNwMyICVa+5ofyzjRWz0Y/ni9+dX3ZOlbiAvTHS/1j8aneZ9VYSzurR8eVOV6iWJOjpmYrv19Ze5xNJFeWDsWAkMVj061h2qzZtBJ/Bf872nfJAe4KqYU/0r8zH2SqB9/cHfTYPavwKYCfgDOMuQaRBLukVDymrmHpT8dDjxRfTCg8zm9NdARYl/0ipRXL9ytkqeiRBm2sU91BPAbi7BixAozIGUmju3J/4GSrH18b6EI02HhnXAj8v2j1ll7abDgPB1rVofu9IEulbpY5gXU/YHrS8wObn5EECo9PPwNnOUz7C9PKoQ4B81shZEjsHOM2/0TG0uDLyJGRPgw4l2BtM2OFFyS4Q1K+K2WEtf1z55MUjOKyZQ8LVD2obAJ5Z+LgUE4bm+zf+8QbgdAbgo7YApgPZgg/hAauuUXd9ccA5PZJ5o2swUqoa016nx/O4EHIGfdw0p18QFVbdzA5Q4AXeJN+3/Toj0ROEYOI2m7BGh8e1mdk+7gkFGZWmYt02/s/+f4SdaDYDuBivjyPesPpdYR2AwJXQqyb29O2QEMmSbehxj3IyoY+J4k8xSaBLiRHV1
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(52116014)(7416014)(376014)(19092799006)(366016)(38350700014)(22082099003)(18002099003)(4143699003)(56012099006)(11063799006);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|52116014|7416014|376014|19092799006|366016|38350700014|22082099003|18002099003|4143699003|56012099006|11063799006|6133799003;
+X-Microsoft-Antispam-Message-Info: Gz4qHqzQD+esPrG3pPnGP4wTaFi71m7ItONK13MQQLe3gtibQzX/BVLzoR29ithda6yZb8mMal1GWCXy4rBINHIjQz5/Whgc7cU/c3Tk91rYw3yEZinsPc8nb34TrM8zTtKzAFywMMM/S68CIXgduOyz39XFSAOgUt9fW7B8jI4qFD5DWoFLtiZbbsmGl8MtRyyEn/JrxDCgyP0qkPRVDZgXwlhpyVGpvK5k8HmNrJqdcugBZftfJKEe7SeBT47WeShIN8aV7Sd8HpW8jscg/ppFpwa1uQ91rz3GS6dYA9x9s+1DWWTxVm26oYjpWZJYNheh5Y0EAziBiZiYQlgPMlybnLsxEqon1MvpyLRF0QGRy1EnQn5jYlV28rT4wg09/sy2tS6CmABognQdNLrHSY7SNK37cPzJxWQm/n7FdnCnPoHt0bMBEkhdy1b6ywikK9v/X0cNHd6SF6sKYwh3a+in5f1XICn6iRVu2Dg5uM7dv0P9y3iVCd4AsLQpsP0vydYlh1WN0591cmGxgIfOlfQjsMWVvuVb9sA9RJMPTM8yJf32dfxjn5qQQYknMEhClphxF6AnRiyNAg6iSGYLXUZ17RYTgSM4XB9ps+2UbWB98HFf7Y3hXdGujiza6I+Eafm2XjnJRWsn+CebjTthTlvOea8v1+ZUdmlwR2rv/kFUPSq2AYcntGXvHLbO/fQQfCayqhsA8IR7lTSIjP/3/aBx/PKTLS7q8Ry7bkNydv+xbpRBGJ2Ov0Ih8lnadEsB
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(52116014)(7416014)(376014)(19092799006)(366016)(38350700014)(22082099003)(18002099003)(4143699003)(56012099006)(11063799006)(6133799003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?HRrBBEWOoJYiiJo2oxSDKOmPkgrWTcj56l2f2Ttc2DZ/tibUjbse1F01OcMU?=
- =?us-ascii?Q?tdQA1xoWeRQGaHIc848V7jCf4iZ8B9pG3hvfbjQxXFu1xDMQaNJKlWJqOsLk?=
- =?us-ascii?Q?DojScirX7FIBgekvdCWlqartPVpwKaNavDX6SWKWY0xnKblmp2/47bDTke3O?=
- =?us-ascii?Q?zOCMDBb5EXcaNarqRyapb84l6UySI4vvVmU/83FeyqINz9TIV1fyjFMMxwDE?=
- =?us-ascii?Q?IR5FjD6FAL7z+tF8h0qDZfldd+DQ7eujKB00GAFvVRl3b7RxBjnyDGuWr+HB?=
- =?us-ascii?Q?OV00KjIG535AfLxDPjrfPpI3kS1qxKcyNNyXOxWlJzHZxec8468e6LwTStaK?=
- =?us-ascii?Q?njSnilFCRWnYTr7YJ20rcZCkrZ9bxayHQgLeKSzsgHZHCC9detp1g/6+g888?=
- =?us-ascii?Q?niRVmD/447OKljyXvdvv6LcvrkxF71xAEULK1yBi7uR6tUqSlcVvugeQi7vF?=
- =?us-ascii?Q?dBMTeQOSah9PXpkWUYCEPQl+hMmlQjeIzaqT3tCyk0j3Pk6djG7/D7XD57wU?=
- =?us-ascii?Q?NUEgy5pMyxZ6o/Q1L0TbJSpxlJdtfjkXIEKyF9hcDtte56EBCV7p+MVnWU3+?=
- =?us-ascii?Q?RR6DmzKry0dzNefUrGsVUzZ42IebUJrw4I1arH36jfnmBht+G52LlnvJJuvi?=
- =?us-ascii?Q?j3+2oYrKiQhBrzQlgsKb7xANw+I8mWEkn3p6+5/exRMOTpyfduNOxJ8jPVL7?=
- =?us-ascii?Q?1YZswvgdh+K/wXzAKWQYMxMg0XD2HndydrwPEwul6FHEIvaRr8TSEnBRJ5vh?=
- =?us-ascii?Q?arqGRo3eVEF2Tou3iZCGDwsdy/OjeP2N0kTHW4IKwuAt66Di8L2x/P8KcE1Y?=
- =?us-ascii?Q?18QxJHvTA0aook8PdU+mXwkzb8DE58e1z7qXhA5tZ+th9koM1Dijpedd5g+h?=
- =?us-ascii?Q?WW7jOS8SSJ73HeisdSkURyYHIeV7Aoy10uImUAzPDG/fWdRiCYI54JJJrwTP?=
- =?us-ascii?Q?lpSWI2FT96x04Y9kghdOcngpXwATcMDHJEVz7AktCLs8GA2a2UdFVY/kafzu?=
- =?us-ascii?Q?WppoM+LAkLCiQdPgIJOYyAjfKo7kH7cvhnUTPO7hxluwYP6ffxnNKhLJGWtP?=
- =?us-ascii?Q?nTrh+O0k4EQdTULoI7/BwwW8FdZR+rhwDIJJQdvXsoq+9CR7wrhYsDdUELQD?=
- =?us-ascii?Q?XJflsvIwlzcZNpPv/+ZS+vdnhTqczDwuDdtyA889nL56gJG9o1UEkW7imJtv?=
- =?us-ascii?Q?s1Y/5bGQ6PyqIhsNETuRGWvr13lIPT7CF1GHNdFpnorKSdknFT6Qvu76MxAX?=
- =?us-ascii?Q?50dN5eJrsp+JpJRhcXFc56KfhOZ2WLDq+FhjDPshPmd2CxcuqZFJFFzZ1Jvu?=
- =?us-ascii?Q?nduHd684/Tq4619r6iTR3KJ3nCG0qqmjD2fI9nJXkDScBV4cuL7l3fNz/rj/?=
- =?us-ascii?Q?49I0pqK5/5oQ4PCPDAf+auB7U1zI2Lj8LyUCt3s+tLQYrZS1A9MVvXfxbHLw?=
- =?us-ascii?Q?jKruRH0Seg4/l/c4H9eyWV/hMx+A/8ArJKi7QEpcBU2JwJeqQlWa5mJUPC8x?=
- =?us-ascii?Q?Fh6vCM+/ayogj+XQ9uLG9yXHf/zZFWjfTVgXAugdfV/uIIuFLacIdT3DXGUX?=
- =?us-ascii?Q?9Zdph+KYB5kGp0m0+4+EYnAOOtc1FMnTH4KwCYV5pHOYyTzgFjoZ+KropfOb?=
- =?us-ascii?Q?jMrwfWCM6g6ftYCODmtBsExNFALQ2iK6ZhvYo5vWvdYRhRMh+ptJNT/vbbVh?=
- =?us-ascii?Q?jmMvSQX0SD9Z+zfKwi5jDJQPuozKblPLoOnHeZoJ+MEccS2GTdYButG0LGUT?=
- =?us-ascii?Q?YyZ0gk/20g=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?nwwVJKGA+85CVATqSkwqznUDlh9phLlKSPNgAuysp2TsuI1R2VQW2he5rjhu?=
+ =?us-ascii?Q?qACPzGV89Uo3jIxdu1Xqkm+UV2SS4OeSsYOFshklDiA4rHPeZN8JBITLfgO6?=
+ =?us-ascii?Q?paFgD28kFUmT/FSf77zhy26KPDEGvmO/LjlZRGsrsGQGULWDUChMhREUt4Lo?=
+ =?us-ascii?Q?7DGFQU0Qy5gaalp21TYQt0reayhIyXKOwngO/T1tmrFq5iYhvqb2Z0pbr/Ea?=
+ =?us-ascii?Q?o6gIxBjPPnUA8ihnx/XjVbAuF2xgLH5X+GiKkVtDlcNZDWbTyv0+BwhJHuSt?=
+ =?us-ascii?Q?CTMuhzJ+tuAnhzSR/8oryDQiQz38jCpyv//w1Q+d3/wYcq57YBCkQzKUHJMr?=
+ =?us-ascii?Q?MTXiYRBNw+k3Qh2M6F6E+goxC49pad8av+CxnzbTTTmkPgO2RQfPS2YW1HMq?=
+ =?us-ascii?Q?qCFewMFCSi2M5ucT6PGwMrJc3FAVIcrTRG07+8/2Wf4/X1g/ZVf8L1hPPwfr?=
+ =?us-ascii?Q?QjjHa2G+2mNalsz6s3R55PnQB/sEQo3WB2d+YCAj6PvPup+SBUPMqq7w/xWN?=
+ =?us-ascii?Q?0uCR1UEJbt9MsFi2lgPqjCPezuX5gCapenW1k+uYKEHovaT+I75COeasU6pp?=
+ =?us-ascii?Q?Vpl/6Vz2rTRHKZrtH5iOO9uxoNWjpz5qYzD7ZYHsJoal6utPWaykk8rnc4Tp?=
+ =?us-ascii?Q?j/L3gVEC+XYZRT5DSgPVlpu5sUXtECp/WTD6BKjACKD2NRFCJzWseg3mtosN?=
+ =?us-ascii?Q?8OWwCNKoeX3RVDGkoAF30Z4iWUxylN9KTTjfep7O8WBQKJ9ospk/XTiWHAy8?=
+ =?us-ascii?Q?iHdJ+bozElxbIrdRjDA3YZ7UEYr0xmcRj59qalfPZ/zHI7NuVjUdGSrG0sP8?=
+ =?us-ascii?Q?7WTvRGBw6OFOApF6yKYRciR8FGdbRZx3iAlV8rKm/gQru9netzooJnIAvhu3?=
+ =?us-ascii?Q?HEZzpouFTiqZptIqS1KQc9w4VxSM4Kp0ur5Y9HHscx8cTOjdrUFBS/UK7LRs?=
+ =?us-ascii?Q?bHqbiiJi52prcJGkRuhQtBFdHpCzQN7SW3m7Vj+irP3JOO23SeqU4Gq0ZTxS?=
+ =?us-ascii?Q?QLsvnReOpwyXg/VTj/JW6RxlF5PruGh0Dvocm1DjsEQ7w4yZ+rFffEvjCik0?=
+ =?us-ascii?Q?jcpXbF1m84Pip+IgFHmQBUhJhRA+fsZQZFQ/rzS+N5Z9gq7gJnNHDU7uwS7p?=
+ =?us-ascii?Q?tQQ3jEWxwYH+VDDohGhFb6CuDzX5FLDQfRzm+3lZG4QJn/hXragNgLcvghnU?=
+ =?us-ascii?Q?F8azhShomXOx7IIp6hGdFB1Rj1ZpMLgImeby5mrr2leL52AN03U0X4AdvHwH?=
+ =?us-ascii?Q?qmsp2RX2eIuYkQe9hgTWi1AWUP5BNhW6jpOl7+yXnZaImSaMAtAtH3DOQIHa?=
+ =?us-ascii?Q?+iwolfI2r4tHPqtKo8yLJofZHNB4+GKc/60FjyMHc6oyy3LYXLUcsDXkyq2p?=
+ =?us-ascii?Q?1bnR2BCckyT2puQpmllNGu59K5PWVezq37TDggUkrZVH0QxbYUKp1awzopQi?=
+ =?us-ascii?Q?14KkgwirNbG9CwpBXnrZwNaqAuNd+14RM5nTBN0ohS7UiRvqbkyM8gVF0Iem?=
+ =?us-ascii?Q?5zIGtMLiP/LYnR4YzqkeexsPdPzwOAUNIO/UzXbOWsPpn+kLhPcsTxcsF5T0?=
+ =?us-ascii?Q?nxYYjAO7UgRR8xy2Zcdd67SmGoT8cwBBi3Dfwp+SkFwoNHSF651FitriN3Sk?=
+ =?us-ascii?Q?qvN+ViJ3hnJBCeBtNKxeJf/U+XHsWt8JtUQCefTUMQU6anucuNa2acfrXGsS?=
+ =?us-ascii?Q?71eA8ITNIWD1dQB3FBaoPW7FIVsC2qvuVaB90tfd+3xHmH9g?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 186aa2e8-c0cc-471e-ac48-08dec0ca62cb
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9cc09b73-278e-4eb4-4128-08dec0cabfb9
 X-MS-Exchange-CrossTenant-AuthSource: PA4PR04MB9366.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Jun 2026 17:14:20.8380
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Jun 2026 17:16:56.7584
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 4/BRB9YIFYvq17cT+FNVrm8gma6oToD/K7sZ40Y6V5mkooMr9z0choiiJYIAN2N/rOaPuHsa/zgBjwKB27G2SQ==
+X-MS-Exchange-CrossTenant-UserPrincipalName: sJlaU4OGaimWa+tNfMJqUC76kS95NXYBGiDQZeEdhCAa5kGIqBAs+Kggp9S6zPoJL8vEUwszj9fHVnsTtjk7rQ==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU2PR04MB8550
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260602_101429_745956_B8E6F511 
-X-CRM114-Status: GOOD (  18.09  )
+X-CRM114-CacheID: sfid-20260602_101701_279649_9600CCA1 
+X-CRM114-Status: GOOD (  32.63  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -140,58 +138,193 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, May 25, 2026 at 12:12:01PM +0530, Lakshay Piplani wrote:
-> Rename i3c_master_reattach_i3c_dev() to *_locked() to make the locking
-> requirement explicit and consistent with other I3C core helpers that
-> require the bus lock to be held by the caller.
+On Mon, May 25, 2026 at 12:12:02PM +0530, Lakshay Piplani wrote:
+> From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
 >
+> Change the below internal static functions to APIs to allow new I3C hub
+> driver to use them
+>
+> 1) i3c_dev_enable_ibi_locked()
+> 2) i3c_dev_disable_ibi_locked()
+> 3) i3c_dev_request_ibi_locked()
+> 4) i3c_dev_free_ibi_locked()
+> 5) i3c_master_reattach_i3c_dev_locked()
+>
+> Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
 > Signed-off-by: Lakshay Piplani <lakshay.piplani@nxp.com>
->
 
 Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
+>
 > ---
 > Changes in v10:
->  - Rename i3c_master_reattach_i3c_dev() to *_locked to reflect required
->    bus locking
+>  - Expose the renamed reattach API.
+>
+> Changes in v9:
+>  - No change
+>
+> Changes in v8:
+>  - No change
+>
+> Changes in v7:
+>  - Fix kernel-doc warnings for *_locked() APIs
+>  - Clarify API exposure in commit message
+>
+> Changes in v6:
+>  - Split the patch into two parts:
+>         1) expose the existing API
+>         2) add new APIs.
+>
+> Changes in v5:
+>  - No change
+>
+> Changes in v4:
+>  - Updated I3C master to handle hub support
 > ---
 > ---
->  drivers/i3c/master.c | 8 ++++----
->  1 file changed, 4 insertions(+), 4 deletions(-)
+>  drivers/i3c/master.c       | 70 ++++++++++++++++++++++++++++++++++++--
+>  include/linux/i3c/master.h |  2 ++
+>  2 files changed, 70 insertions(+), 2 deletions(-)
 >
 > diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index 5cd4e5da2233..e89d73508b9a 100644
+> index e89d73508b9a..0636e3e21758 100644
 > --- a/drivers/i3c/master.c
 > +++ b/drivers/i3c/master.c
-> @@ -1652,8 +1652,8 @@ static int i3c_master_attach_i3c_dev(struct i3c_master_controller *master,
+> @@ -1652,8 +1652,23 @@ static int i3c_master_attach_i3c_dev(struct i3c_master_controller *master,
 >  	return 0;
 >  }
 >
-> -static int i3c_master_reattach_i3c_dev(struct i3c_dev_desc *dev,
-> -				       u8 old_dyn_addr)
-> +static int i3c_master_reattach_i3c_dev_locked(struct i3c_dev_desc *dev,
-> +					      u8 old_dyn_addr)
+> -static int i3c_master_reattach_i3c_dev_locked(struct i3c_dev_desc *dev,
+> -					      u8 old_dyn_addr)
+> +/**
+> + * i3c_master_reattach_i3c_dev_locked() - reattach an I3C device with a new address
+> + * @dev: I3C device descriptor to reattach
+> + * @old_dyn_addr: previous dynamic address of the device
+> + *
+> + * This function reattaches an existing I3C device to the bus when its dynamic
+> + * address has changed. It updates the bus address slot status accordingly:
+> + * - Marks the new dynamic address as occupied by an I3C device.
+> + * - Frees the old dynamic address slot if applicable.
+> + *
+> + * This function must be called with the bus lock held in write mode.
+> + *
+> + * Return: 0 on success, or a negative error code if reattachment fails
+> + *         (e.g. -EBUSY if the new address slot is not free).
+> + */
+> +int i3c_master_reattach_i3c_dev_locked(struct i3c_dev_desc *dev,
+> +				       u8 old_dyn_addr)
 >  {
 >  	struct i3c_master_controller *master = i3c_dev_get_master(dev);
 >  	int ret;
-> @@ -1742,7 +1742,7 @@ static int i3c_master_early_i3c_dev_add(struct i3c_master_controller *master,
->  		goto err_detach_dev;
+> @@ -1677,6 +1692,7 @@ static int i3c_master_reattach_i3c_dev_locked(struct i3c_dev_desc *dev,
 >
->  	i3cdev->info.dyn_addr = i3cdev->boardinfo->init_dyn_addr;
-> -	ret = i3c_master_reattach_i3c_dev(i3cdev, 0);
-> +	ret = i3c_master_reattach_i3c_dev_locked(i3cdev, 0);
->  	if (ret)
->  		goto err_rstdaa;
+>  	return 0;
+>  }
+> +EXPORT_SYMBOL_GPL(i3c_master_reattach_i3c_dev_locked);
 >
-> @@ -2358,7 +2358,7 @@ int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
->  		if (!ret) {
->  			old_dyn_addr = newdev->info.dyn_addr;
->  			newdev->info.dyn_addr = expected_dyn_addr;
-> -			i3c_master_reattach_i3c_dev(newdev, old_dyn_addr);
-> +			i3c_master_reattach_i3c_dev_locked(newdev, old_dyn_addr);
->  		} else {
->  			dev_err(&master->dev,
->  				"Failed to assign reserved/old address to device %d%llx",
+>  static void i3c_master_detach_i3c_dev(struct i3c_dev_desc *dev)
+>  {
+> @@ -3195,6 +3211,16 @@ int i3c_dev_do_xfers_locked(struct i3c_dev_desc *dev, struct i3c_xfer *xfers,
+>  	return master->ops->i3c_xfers(dev, xfers, nxfers, mode);
+>  }
+>
+> +/**
+> + * i3c_dev_disable_ibi_locked() - Disable IBIs coming from a specific device
+> + * @dev: device on which IBIs should be disabled
+> + *
+> + * This function disable IBIs coming from a specific device and wait for
+> + * all pending IBIs to be processed.
+> + *
+> + * Context: Must be called with mutex_lock(&dev->desc->ibi_lock) held.
+> + * Return: 0 in case of success, a negative error core otherwise.
+> + */
+>  int i3c_dev_disable_ibi_locked(struct i3c_dev_desc *dev)
+>  {
+>  	struct i3c_master_controller *master;
+> @@ -3216,7 +3242,22 @@ int i3c_dev_disable_ibi_locked(struct i3c_dev_desc *dev)
+>
+>  	return 0;
+>  }
+> +EXPORT_SYMBOL_GPL(i3c_dev_disable_ibi_locked);
+>
+> +/**
+> + * i3c_dev_enable_ibi_locked() - Enable IBIs from a specific device (lock held)
+> + * @dev: device on which IBIs should be enabled
+> + *
+> + * This function enable IBIs coming from a specific device and wait for
+> + * all pending IBIs to be processed. This should be called on a device
+> + * where i3c_device_request_ibi() has succeeded.
+> + *
+> + * Note that IBIs from this device might be received before this function
+> + * returns to its caller.
+> + *
+> + * Context: Must be called with mutex_lock(&dev->desc->ibi_lock) held.
+> + * Return: 0 on success, or a negative error code on failure.
+> + */
+>  int i3c_dev_enable_ibi_locked(struct i3c_dev_desc *dev)
+>  {
+>  	struct i3c_master_controller *master = i3c_dev_get_master(dev);
+> @@ -3231,7 +3272,20 @@ int i3c_dev_enable_ibi_locked(struct i3c_dev_desc *dev)
+>
+>  	return ret;
+>  }
+> +EXPORT_SYMBOL_GPL(i3c_dev_enable_ibi_locked);
+>
+> +/**
+> + * i3c_dev_request_ibi_locked() - Request an IBI
+> + * @dev: device for which we should enable IBIs
+> + * @req: setup requested for this IBI
+> + *
+> + * This function is responsible for pre-allocating all resources needed to
+> + * process IBIs coming from @dev. When this function returns, the IBI is not
+> + * enabled until i3c_device_enable_ibi() is called.
+> + *
+> + * Context: Must be called with mutex_lock(&dev->desc->ibi_lock) held.
+> + * Return: 0 in case of success, a negative error core otherwise.
+> + */
+>  int i3c_dev_request_ibi_locked(struct i3c_dev_desc *dev,
+>  			       const struct i3c_ibi_setup *req)
+>  {
+> @@ -3270,7 +3324,18 @@ int i3c_dev_request_ibi_locked(struct i3c_dev_desc *dev,
+>
+>  	return ret;
+>  }
+> +EXPORT_SYMBOL_GPL(i3c_dev_request_ibi_locked);
+>
+> +/**
+> + * i3c_dev_free_ibi_locked() - Free all resources needed for IBI handling
+> + * @dev: device on which you want to release IBI resources
+> + *
+> + * This function is responsible for de-allocating resources previously
+> + * allocated by i3c_device_request_ibi(). It should be called after disabling
+> + * IBIs with i3c_device_disable_ibi().
+> + *
+> + * Context: Must be called with mutex_lock(&dev->desc->ibi_lock) held.
+> + */
+>  void i3c_dev_free_ibi_locked(struct i3c_dev_desc *dev)
+>  {
+>  	struct i3c_master_controller *master = i3c_dev_get_master(dev);
+> @@ -3301,6 +3366,7 @@ void i3c_dev_free_ibi_locked(struct i3c_dev_desc *dev)
+>  	kfree(dev->ibi);
+>  	dev->ibi = NULL;
+>  }
+> +EXPORT_SYMBOL_GPL(i3c_dev_free_ibi_locked);
+>
+>  static int __init i3c_init(void)
+>  {
+> diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
+> index 592b646f6134..355e9b3d9ae3 100644
+> --- a/include/linux/i3c/master.h
+> +++ b/include/linux/i3c/master.h
+> @@ -613,6 +613,8 @@ void i3c_master_dma_unmap_single(struct i3c_dma *dma_xfer);
+>  DEFINE_FREE(i3c_master_dma_unmap_single, void *,
+>  	    if (_T) i3c_master_dma_unmap_single(_T))
+>
+> +int i3c_master_reattach_i3c_dev_locked(struct i3c_dev_desc *dev,
+> +				       u8 old_dyn_addr);
+>  int i3c_master_set_info(struct i3c_master_controller *master,
+>  			const struct i3c_device_info *info);
+>
 > --
 > 2.25.1
 >
