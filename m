@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8BF5CD6E57
-	for <linux-i3c@archiver.kernel.org>; Tue,  2 Jun 2026 13:29:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C6E17CD6E4A
+	for <linux-i3c@archiver.kernel.org>; Tue,  2 Jun 2026 13:29:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Om7xC+JovsHqKLb/eG4KGxoapAFqFVxsnu3Jtki/HKo=; b=KcKVlpBfE1lytW
-	m5R8FyjBcr9Ru9m9F4Z2RRXH+41tjnCr6hYxSoPxfoPSub+NCe+ausk+KqnB/iZ0ze1hVMv7biQT3
-	eMpC2HEtZCaIamIyQqhYYk8AWsbtgz99euUcJCU3Iwv7muP2L2QwR1lnkBskbYiXUBNkQ08C2DqbD
-	c6QybvxcU2NKj7cXgOGpVYapqbs/9cvEnMn5I16/uY8uK2DF5PR7OMETbl7d5UyIuQPqa295s4PH7
-	UuxZKK4BhmuCiDw7sBoL4OCop+3hM5Z49UsJWNK87WzoD5NVvaYVuzUA5kVJ3peRKKrVJmLF3d8uJ
-	SyGV2rAJMpPNmqy/d3qw==;
+	List-Owner; bh=lQPdVMZAoZtN7baiGgy20EwPLPGK3tK2UqK37sFTfrY=; b=dqzeSNM0O3b86/
+	/Q+LTTaF2OSEeRW49W9F9UXRdphn2BrzQk23Y1dxSIoYx5cRD8azkB+uknwFrOtpNtcPB+K8iAl+m
+	UV0Z5MOybZXOaR3JRbIT7FhhlO32vMQIC67x3pw8s2SpTSUzGKuGioF05c1bYt2f2oJVYZouAPdMM
+	mjN7SloG2jZ7B7bLVrybr4QemLGgu1XymY1t37mKb1nPeq0sq+U+R+edDrUdSPS5WdUBYbxYHPtqw
+	vSRLwoG2jFY0Wv68cu6S9/ECq/KT39yNC+oY4JGRPj5ggPu3e+UIsHt6teryWR7u5b7XD/J9qIL3q
+	gD+HyABf/JrUEw20XtrA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUPB7-0000000D7Kh-25G6;
-	Tue, 02 Jun 2026 13:29:09 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wUPBA-0000000D7Lz-2Q8H;
+	Tue, 02 Jun 2026 13:29:12 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUPB5-0000000D7Jq-3c1H
+	id 1wUPB9-0000000D7L9-0CNo
 	for linux-i3c@lists.infradead.org;
-	Tue, 02 Jun 2026 13:29:08 +0000
+	Tue, 02 Jun 2026 13:29:11 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 93F15405FF;
+	by tor.source.kernel.org (Postfix) with ESMTP id 7F803601D9;
+	Tue,  2 Jun 2026 13:29:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E7D961F00898;
 	Tue,  2 Jun 2026 13:29:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4F2D11F00893;
-	Tue,  2 Jun 2026 13:29:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1780406947;
-	bh=NUfAs+sHMqHmxNkY0D9GV+o/r6ED3U2p1btc5r6UtuQ=;
+	s=k20260515; t=1780406950;
+	bh=kB0mTS4bPznyvBQvcWqNat3upb4ComylAy+AiC3M3g8=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=UIwgl+6+I/qo083RzdVRohHXZbyCK+Fiiwnt7Ax7yoUgbLaocDzci4sBWeu6Lw9AQ
-	 DEZRgP15OdmkmyQyt9z2dlG1Z6Ge80NH6U04Bkh5MLIBRhWKk9iBfib446tXipBRQA
-	 OFrz0JlkPqNXMWSNMox9jHSEkqNzncLlnRHTG/+n0SlNDf6F4+9TQEXWFxQrurhsKh
-	 HTUSz5VNaSqD89OWFTmMjPO331hlmS9jWF0y+WCcBemDrncMXXWSBAWsSD4e2hhSod
-	 FTRm3v7lWhBUcsZ2/DKo1nhQm4y0i+ooihERDCvCKufbWk1nqTpD+3q7hfVanONDYE
-	 2cZCS8CfilHGw==
+	b=hZNwz7syLcUbmrM/ow3xjYOeuPvPmns+4mYEF4P9cQF4Z9TlaSqtMSeFzTyEM/H7f
+	 +pTrJRNfVeu7Op0Y7NqLn8TghYfLW+gAhy26IkEWcW/l1RS++paQIc8medr431uOkP
+	 FXZ995RW3mnEEBwwvUVKygZuP7zrLFJE5kHFXJx0LZHwR3q9xooM/XGpcfhgxiYxVl
+	 EzAUkLFpcm0RFFrwdNHuZ6D7HgSi4Q7R2+xtsCxnsSKUNOVSmP8a2jvleiEdfgH3KC
+	 HZ7cocmsPGQdNGf/EzVtUyEXyQdONmFTiolkLKC2y0OKGntx7Hgznq2mc5pBMcCDDQ
+	 eE3FBm5pLTBUg==
 From: Claudiu Beznea <claudiu.beznea@kernel.org>
 To: wsa+renesas@sang-engineering.com,
 	tommaso.merciai.xr@bp.renesas.com,
@@ -53,17 +53,13 @@ Cc: claudiu.beznea@kernel.org,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: [PATCH v2 10/17] i3c: renesas: Return immediately if there is no transfer
-Date: Tue,  2 Jun 2026 16:28:17 +0300
-Message-ID: <20260602132824.3541151-11-claudiu.beznea@kernel.org>
+Subject: [PATCH v2 11/17] i3c: renesas: Follow a unified pattern for transfer and command initialization
+Date: Tue,  2 Jun 2026 16:28:18 +0300
+Message-ID: <20260602132824.3541151-12-claudiu.beznea@kernel.org>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20260602132824.3541151-1-claudiu.beznea@kernel.org>
 References: <20260602132824.3541151-1-claudiu.beznea@kernel.org>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260602_062907_944327_103199F2 
-X-CRM114-Status: UNSURE (   9.76  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,39 +78,97 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
-There is no need to allocate a transfer structure when i2c_nxfers is zero.
-Return immediately instead of unnecessarily allocating memory.
+Follow a unified pattern for transfer and command initialization across
+the driver. This keeps the code cleaner and easier to follow. Also, in
+some cases the I3C device was enabled before the transfer data structure
+was even allocated.
 
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
 Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 ---
 
 Changes in v2:
-- updated patch title
+- collected tags
 
- drivers/i3c/master/renesas-i3c.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/i3c/master/renesas-i3c.c | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
 
 diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
-index 860c9f2f17de..ed925b673b38 100644
+index ed925b673b38..601d879fce9d 100644
 --- a/drivers/i3c/master/renesas-i3c.c
 +++ b/drivers/i3c/master/renesas-i3c.c
-@@ -982,13 +982,13 @@ static int renesas_i3c_i2c_xfers(struct i2c_dev_desc *dev,
- 	u8 start_bit = CNDCTL_STCND;
+@@ -656,6 +656,10 @@ static int renesas_i3c_daa(struct i3c_master_controller *m)
+ 	if (!xfer)
+ 		return -ENOMEM;
+ 
++	init_completion(&xfer->comp);
++	cmd = xfer->cmds;
++	cmd->rx_count = 0;
++
+ 	/* Enable I3C bus. */
+ 	renesas_i3c_bus_enable(m, true);
+ 
+@@ -696,10 +700,6 @@ static int renesas_i3c_daa(struct i3c_master_controller *m)
+ 		renesas_writel(i3c->regs, DATBAS(pos), datbas_dvdyad_with_parity(ret));
+ 	}
+ 
+-	init_completion(&xfer->comp);
+-	cmd = xfer->cmds;
+-	cmd->rx_count = 0;
+-
+ 	if (i3c->resuming) {
+ 		/* Nothing to do if all slots are ocupied by I2C devices. */
+ 		if (last_i2c_pos == i3c->maxdevs - 1)
+@@ -804,13 +804,13 @@ static int renesas_i3c_send_ccc_cmd(struct i3c_master_controller *m,
+ 	if (!xfer)
+ 		return -ENOMEM;
+ 
+-	renesas_i3c_bus_enable(m, true);
+-
+ 	init_completion(&xfer->comp);
+ 	cmd = xfer->cmds;
+ 	cmd->rnw = ccc->rnw;
+ 	cmd->cmd0 = 0;
+ 
++	renesas_i3c_bus_enable(m, true);
++
+ 	/* Calculate the command descriptor. */
+ 	switch (ccc->id) {
+ 	case I3C_CCC_SETDASA:
+@@ -860,15 +860,15 @@ static int renesas_i3c_i3c_xfers(struct i3c_dev_desc *dev, struct i3c_xfer *i3c_
+ 	struct renesas_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
  	int i;
  
-+	if (!i2c_nxfers)
-+		return 0;
-+
+-	/* Enable I3C bus. */
+-	renesas_i3c_bus_enable(m, true);
+-
  	struct renesas_i3c_xfer *xfer __free(kfree) = renesas_i3c_alloc_xfer(i3c, 1);
  	if (!xfer)
  		return -ENOMEM;
  
--	if (!i2c_nxfers)
--		return 0;
--
- 	renesas_i3c_bus_enable(m, false);
- 
  	init_completion(&xfer->comp);
+ 
++	/* Enable I3C bus. */
++	renesas_i3c_bus_enable(m, true);
++
+ 	for (i = 0; i < i3c_nxfers; i++) {
+ 		struct renesas_i3c_cmd *cmd = xfer->cmds;
+ 
+@@ -989,12 +989,12 @@ static int renesas_i3c_i2c_xfers(struct i2c_dev_desc *dev,
+ 	if (!xfer)
+ 		return -ENOMEM;
+ 
+-	renesas_i3c_bus_enable(m, false);
+-
+ 	init_completion(&xfer->comp);
+ 	xfer->is_i2c_xfer = true;
+ 	cmd = xfer->cmds;
+ 
++	renesas_i3c_bus_enable(m, false);
++
+ 	if (!(renesas_readl(i3c->regs, BCST) & BCST_BFREF)) {
+ 		cmd->err = -EBUSY;
+ 		return cmd->err;
 -- 
 2.43.0
 
