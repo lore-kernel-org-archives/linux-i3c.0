@@ -4,71 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5AB89CD6E64
-	for <linux-i3c@archiver.kernel.org>; Wed,  3 Jun 2026 09:08:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AED3CD6E69
+	for <linux-i3c@archiver.kernel.org>; Wed,  3 Jun 2026 09:08:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E4h+S23EPvl0exSO/6LPDzNgN5iNGa6PQ9bOOXme8aA=; b=znNbbLZnr4gBJV
-	nt3e/AY6CgnJfP4KTFRD0L3snbGYm5W2eHJdLUCCV6zc8Ze2lG6ztvWY03PscBrgUEUszCko1WbR0
-	82GNXAzddqsXEf64rusGPuzPEqRoKIfbIJSYSMZ3eLDpXLlXPl8CRyO6hTEYswWzvJ03OWBx2i+zR
-	XO2nVGG6wgebr3JB/f7hZBJEvdw4NdTKxTTANazS+AeDby2WU3f8ALaGccftvyBtd64QcU5t+Q4N9
-	jyq8IlanRr52ILiFIvZ7iecAGnbvHwmf+Cw5uhgmZEnYfuI6p4wtN1dFrLeK2q2jKcwpaejfMl0fG
-	CwsidgRLe/T4O8/dhUjA==;
+	List-Owner; bh=VlBYzT2zBGyI+QzcCJ6X56fioFcSlFQR6C6LoeqM27w=; b=1tMdB9i2za3Dea
+	J/MGdThSQoiulhoNUYzgPYvNRpZupZglu5kmuvgqiZc4DAhICKk8d7QkN+wzdDs6T4nZidV+EtWAv
+	CK9Qv4rr27Ky20G0c3L3iH5Dh408ZxVAnhx/88tKMDp5dio75t2WqTCm5GCzG2VuUDZSGy1QzW9w+
+	OYRdewiBaBSPfS5Dx4dU8oOqnoI24UAIsN2aZa7wwJB1+diKX5B5s5vVDgnfpVEnfTDvLW58Ek9TA
+	0PCVAxOQAuHJCxgEyqRdjoQXqHeRKGiO5kY8FIyfgIdQyC6zQGhhK9G2znIILek8A/HDlMKRvK+NZ
+	RMKiomdr9F2CHit7yWGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUhaV-0000000Efus-0X26;
-	Wed, 03 Jun 2026 09:08:35 +0000
+	id 1wUhaX-0000000Efw0-0iah;
+	Wed, 03 Jun 2026 09:08:37 +0000
 Received: from mgamail.intel.com ([192.198.163.11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUhaS-0000000Effy-3YKV
+	id 1wUhaU-0000000Effy-2pFV
 	for linux-i3c@lists.infradead.org;
-	Wed, 03 Jun 2026 09:08:34 +0000
+	Wed, 03 Jun 2026 09:08:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1780477712; x=1812013712;
+  t=1780477714; x=1812013714;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=O0xK5K3/G53nKbyeNuBRq5NzzvrVjzhiTGzNgav0Z8A=;
-  b=iZzhH2cSJl5alyiTZbFk67D1Cip8JJIqmxB50sXxbV5WQlzMMcaHL8DE
-   kzl4oQ8OFIDEUaFojh6jBxHuKGUIiLqSxCug7hsP9ml2Nbuojknw3PAS8
-   LnfgDd5TMhrfTnr28oT97d8yn7zs06NQPOUkzCazzz2HqoTMZ1L7wwO16
-   czViH2gM/v+gI01DRQ1xqfXkyhwRRW98kGVj7bzAhG/2i9OVpjb95Shh5
-   pLaVXv7yQT9kW2urGnoewNQ/mEcWjX8posV3af/ehu4XxFNRHN3WyivU8
-   NbuZ2ImNZk2WrMY1Xen5bCsobcBroLv0wW0faT7434J93BZonM11W9xsE
-   w==;
-X-CSE-ConnectionGUID: 83xPBqFdRt+Fo3IG7tZDTg==
-X-CSE-MsgGUID: 4vNFR4oLRS6rYUaxAPYLEg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11805"; a="91852654"
+  bh=ES6p2FSEssm78P4wZ3z2gUmhV4dh5rKf/GWKiwttkqk=;
+  b=dWeWOB7gGe7SSXPAxPKz+JHCZm/zu76agE5QMtBIAT0blDjw3SD1xlrT
+   J87YzcMkIoZGjvmzn47bYV3ZR/T+wAhye9Dn61Jw9B3CR0YrhrlaK8LLj
+   yDskECmAEwTrrVmmiKSOF5xUPhKri681WDA0CbKYmU15ZCZiVGMqy+NE7
+   UOdaymal8THDMXfhCiKckcwIXlTcdRPBIuEcefmP65fcu8NSSOHbc+SPh
+   mL2mmDp4lO6D9UZtICAO052VMBc8meemDGJ491CYnd1BFl5OIeMeD2jzI
+   PFYzK/7H+VZzBxacVB8SdOssVsgufPqtdPcKZ1f5DUtG8kjWinducZj42
+   Q==;
+X-CSE-ConnectionGUID: vsPCfE7fQye2+ypOEbmUrw==
+X-CSE-MsgGUID: GQeX7It5SeGHI45WbuiaCw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11805"; a="91852658"
 X-IronPort-AV: E=Sophos;i="6.24,184,1774335600"; 
-   d="scan'208";a="91852654"
+   d="scan'208";a="91852658"
 Received: from fmviesa003.fm.intel.com ([10.60.135.143])
-  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Jun 2026 02:08:32 -0700
-X-CSE-ConnectionGUID: cRAVE+GJSP269cCypU6rxA==
-X-CSE-MsgGUID: 3Xa6AlspSwadXpprSPRzzQ==
+  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Jun 2026 02:08:34 -0700
+X-CSE-ConnectionGUID: cjYEjkP7T5GNiKRJ1uX2tA==
+X-CSE-MsgGUID: UIIs+bvPTa+uqRSw+JnVzQ==
 X-ExtLoop1: 1
 Received: from ijarvine-mobl1.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.244.137])
-  by fmviesa003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Jun 2026 02:08:31 -0700
+  by fmviesa003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Jun 2026 02:08:33 -0700
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH V5 12/17] i3c: mipi-i3c-hci: Factor out reset-and-restore helper
-Date: Wed,  3 Jun 2026 12:07:49 +0300
-Message-ID: <20260603090754.16252-13-adrian.hunter@intel.com>
+Subject: [PATCH V5 13/17] i3c: mipi-i3c-hci: Add DMA-mode recovery for internal controller errors
+Date: Wed,  3 Jun 2026 12:07:50 +0300
+Message-ID: <20260603090754.16252-14-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260603090754.16252-1-adrian.hunter@intel.com>
 References: <20260603090754.16252-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260603_020832_898420_356CFC39 
-X-CRM114-Status: UNSURE (   9.26  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260603_020834_732959_70086E90 
+X-CRM114-Status: GOOD (  23.97  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,13 +84,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Factor the reset-and-restore sequence out of i3c_hci_rpm_resume() into
-a separate helper.
+Handle internal I3C HCI errors when operating in DMA mode by adding a
+simple recovery mechanism.
 
-This allows the same logic to be reused for recovery paths in subsequent
-changes without duplicating suspend/resume handling.
+On detection of an internal controller error, mark recovery as needed and
+attempt to restore operation by performing a software reset followed by
+state restore.  To keep recovery straightforward on this unlikely error
+path, all currently queued transfers are terminated and completed with an
+error.
 
-No functional change.
+This allows the controller to resume operation after internal failures
+rather than remaining permanently stuck.
+
+Note, internal errors indicated by INTR_HC_INTERNAL_ERR, cause the
+controller to stop.
 
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 Reviewed-by: Frank Li <Frank.Li@nxp.com>
@@ -100,76 +106,228 @@ Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
 Changes in V5:
 
-	None
+	Added Frank's Rev'd-by
 
 Changes in V4:
 
-	Add Frank's Rev'd by
+	None
 
 Changes in V3:
 
-	None
+	When erroring out transfers, ensure the final transfer of a
+	transfer list is processed last
 
 Changes in V2:
 
-	Drop redundant i3c_hci_sync_irq_inactive(hci)
-	from i3c_hci_reset_and_restore() because it is called by
-	hci->io->suspend() anyway
+	Rename completing_xfer to final_xfer
+	Add hci_dma_xfer_done() before checking for an already complete
+	transfer
+	Improve commit message
 
 
- drivers/i3c/master/mipi-i3c-hci/core.c | 19 +++++++++++++++++--
- drivers/i3c/master/mipi-i3c-hci/hci.h  |  2 ++
- 2 files changed, 19 insertions(+), 2 deletions(-)
+ drivers/i3c/master/mipi-i3c-hci/cmd.h  |  6 ++
+ drivers/i3c/master/mipi-i3c-hci/core.c |  1 +
+ drivers/i3c/master/mipi-i3c-hci/dma.c  | 93 +++++++++++++++++++++++---
+ drivers/i3c/master/mipi-i3c-hci/hci.h  |  1 +
+ 4 files changed, 92 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-index 8274c84b16be..12a0122fb709 100644
---- a/drivers/i3c/master/mipi-i3c-hci/core.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-@@ -798,9 +798,8 @@ int i3c_hci_rpm_suspend(struct device *dev)
- }
- EXPORT_SYMBOL_GPL(i3c_hci_rpm_suspend);
+diff --git a/drivers/i3c/master/mipi-i3c-hci/cmd.h b/drivers/i3c/master/mipi-i3c-hci/cmd.h
+index b1bf87daa651..7bada7b4b2de 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/cmd.h
++++ b/drivers/i3c/master/mipi-i3c-hci/cmd.h
+@@ -65,4 +65,10 @@ struct hci_cmd_ops {
+ extern const struct hci_cmd_ops mipi_i3c_hci_cmd_v1;
+ extern const struct hci_cmd_ops mipi_i3c_hci_cmd_v2;
  
--int i3c_hci_rpm_resume(struct device *dev)
-+static int i3c_hci_do_reset_and_restore(struct i3c_hci *hci)
- {
--	struct i3c_hci *hci = dev_get_drvdata(dev);
- 	int ret;
- 
- 	ret = i3c_hci_reset_and_init(hci);
-@@ -821,6 +820,22 @@ int i3c_hci_rpm_resume(struct device *dev)
- 
- 	return 0;
- }
-+
-+int i3c_hci_reset_and_restore(struct i3c_hci *hci)
++static inline void hci_cmd_set_resp_err(u32 *response, int resp_err)
 +{
-+	i3c_hci_bus_disable(hci);
-+
-+	hci->io->suspend(hci);
-+
-+	return i3c_hci_do_reset_and_restore(hci);
++	*response &= ~RESP_ERR_FIELD;
++	*response |= FIELD_PREP(RESP_ERR_FIELD, resp_err);
 +}
-+
-+int i3c_hci_rpm_resume(struct device *dev)
-+{
-+	struct i3c_hci *hci = dev_get_drvdata(dev);
-+
-+	return i3c_hci_do_reset_and_restore(hci);
-+}
- EXPORT_SYMBOL_GPL(i3c_hci_rpm_resume);
- 
- static int i3c_hci_runtime_suspend(struct device *dev)
-diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
-index 97c31a315a6e..a3151c26827e 100644
---- a/drivers/i3c/master/mipi-i3c-hci/hci.h
-+++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
-@@ -175,4 +175,6 @@ int i3c_hci_process_xfer(struct i3c_hci *hci, struct hci_xfer *xfer, int n);
- int i3c_hci_rpm_suspend(struct device *dev);
- int i3c_hci_rpm_resume(struct device *dev);
- 
-+int i3c_hci_reset_and_restore(struct i3c_hci *hci);
 +
  #endif
+diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+index 12a0122fb709..69dcf5dad3a5 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/core.c
++++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+@@ -668,6 +668,7 @@ static irqreturn_t i3c_hci_irq_handler(int irq, void *dev_id)
+ 	if (val & INTR_HC_INTERNAL_ERR) {
+ 		dev_err(&hci->master.dev, "Host Controller Internal Error\n");
+ 		val &= ~INTR_HC_INTERNAL_ERR;
++		hci->recovery_needed = true;
+ 	}
+ 
+ 	if (val)
+diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
+index f9023cb3c5a2..f39a6ce2aad5 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/dma.c
++++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
+@@ -9,6 +9,7 @@
+  */
+ 
+ #include <linux/bitfield.h>
++#include <linux/delay.h>
+ #include <linux/device.h>
+ #include <linux/dma-mapping.h>
+ #include <linux/errno.h>
+@@ -258,6 +259,10 @@ static void hci_dma_init_rh(struct i3c_hci *hci, struct hci_rh_data *rh, int i)
+ 	rh_reg_write(RING_CONTROL, RING_CTRL_ENABLE);
+ 	rh_reg_write(RING_CONTROL, RING_CTRL_ENABLE | RING_CTRL_RUN_STOP);
+ 
++	/*
++	 * Do not clear the entries of rh->src_xfers because the recovery uses
++	 * them.  In other cases they should be NULL anyway.
++	 */
+ 	rh->done_ptr = 0;
+ 	rh->ibi_chunk_ptr = 0;
+ 	rh->xfer_space = rh->xfer_entries;
+@@ -362,7 +367,7 @@ static int hci_dma_init(struct i3c_hci *hci)
+ 		rh->resp = dma_alloc_coherent(rings->sysdev, resps_sz,
+ 					      &rh->resp_dma, GFP_KERNEL);
+ 		rh->src_xfers =
+-			kmalloc_objs(*rh->src_xfers, rh->xfer_entries);
++			kzalloc_objs(*rh->src_xfers, rh->xfer_entries);
+ 		ret = -ENOMEM;
+ 		if (!rh->xfer || !rh->resp || !rh->src_xfers)
+ 			goto err_out;
+@@ -572,13 +577,15 @@ static void hci_dma_xfer_done(struct i3c_hci *hci, struct hci_rh_data *rh)
+ 			hci_dma_unmap_xfer(hci, xfer, 1);
+ 			rh->src_xfers[done_ptr] = NULL;
+ 			xfer->ring_entry = -1;
+-			xfer->response = resp;
+ 			if (tid != xfer->cmd_tid) {
+ 				dev_err(&hci->master.dev,
+ 					"response tid=%d when expecting %d\n",
+ 					tid, xfer->cmd_tid);
+-				/* TODO: do something about it? */
++				hci->recovery_needed = true;
++				if (!RESP_STATUS(resp))
++					hci_cmd_set_resp_err(&resp, RESP_ERR_HC_TERMINATED);
+ 			}
++			xfer->response = resp;
+ 			if (xfer == xfer->final_xfer || RESP_STATUS(resp))
+ 				complete(xfer->final_xfer->completion);
+ 			if (RESP_STATUS(resp))
+@@ -625,6 +632,60 @@ static void hci_dma_unblock_enqueue(struct i3c_hci *hci)
+ 	}
+ }
+ 
++static void hci_dma_error_out_rh(struct i3c_hci *hci, struct hci_rh_data *rh)
++{
++	/*
++	 * The entries of rh->src_xfers are not cleared by
++	 * i3c_hci_reset_and_restore(), so can be used here.  Do 2 passes so
++	 * that the final_xfer of an xfer list is always processed last.
++	 */
++	for (int pass = 0; pass < 2; pass++)
++		for (int i = 0; i < rh->xfer_entries; i++) {
++			struct hci_xfer *xfer = rh->src_xfers[i];
++
++			if (!xfer || (!pass && xfer == xfer->final_xfer))
++				continue;
++			hci_dma_unmap_xfer(hci, xfer, 1);
++			rh->src_xfers[i] = NULL;
++			xfer->ring_entry = -1;
++			hci_cmd_set_resp_err(&xfer->response, RESP_ERR_HC_TERMINATED);
++			if (xfer == xfer->final_xfer)
++				complete(xfer->final_xfer->completion);
++		}
++}
++
++static void hci_dma_error_out_all(struct i3c_hci *hci)
++{
++	struct hci_rings_data *rings = hci->io_data;
++
++	for (int i = 0; i < rings->total; i++)
++		hci_dma_error_out_rh(hci, &rings->headers[i]);
++}
++
++static void hci_dma_recovery(struct i3c_hci *hci)
++{
++	int ret;
++
++	dev_err(&hci->master.dev, "Attempting to recover from internal errors\n");
++
++	for (int i = 0; i < 3; i++) {
++		ret = i3c_hci_reset_and_restore(hci);
++		if (!ret)
++			break;
++		dev_err(&hci->master.dev, "Reset and restore failed, error %d\n", ret);
++		/* Just in case the controller is busy, give it some time */
++		msleep(1000);
++	}
++
++	spin_lock_irq(&hci->lock);
++	hci_dma_error_out_all(hci);
++	hci_dma_unblock_enqueue(hci);
++	hci->recovery_needed = false;
++	spin_unlock_irq(&hci->lock);
++
++	dev_err(&hci->master.dev, "Recovery %s\n", ret ? "failed!" : "done");
++}
++
+ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
+ 				 struct hci_xfer *xfer_list, int n)
+ {
+@@ -640,6 +701,17 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
+ 
+ 	ring_status = rh_reg_read(RING_STATUS);
+ 	if (ring_status & RING_STATUS_RUNNING) {
++		/*
++		 * The transfer may have already completed, especially
++		 * if recovery has just run.  Do nothing in that case.
++		 */
++		hci_dma_xfer_done(hci, rh);
++		if (xfer_list->final_xfer->ring_entry < 0 &&
++		    !hci->recovery_needed && !hci->enqueue_blocked &&
++		    ring_status == (RING_STATUS_ENABLED | RING_STATUS_RUNNING)) {
++			spin_unlock_irq(&hci->lock);
++			return false;
++		}
+ 		hci->enqueue_blocked = true;
+ 		spin_unlock_irq(&hci->lock);
+ 		/* stop the ring */
+@@ -647,12 +719,8 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
+ 		spin_lock_irq(&hci->lock);
+ 		ring_status = rh_reg_read(RING_STATUS);
+ 		if (ring_status & RING_STATUS_RUNNING) {
+-			/*
+-			 * We're deep in it if ever this condition is ever met.
+-			 * Hardware might still be writing to memory, etc.
+-			 */
+-			dev_crit(&hci->master.dev, "unable to abort the ring\n");
+-			WARN_ON(1);
++			dev_err(&hci->master.dev, "Unable to abort the DMA ring\n");
++			hci->recovery_needed = true;
+ 		}
+ 	}
+ 
+@@ -662,6 +730,13 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
+ 
+ 	hci_dma_xfer_done(hci, rh);
+ 
++	if (hci->recovery_needed) {
++		hci->enqueue_blocked = true;
++		spin_unlock_irq(&hci->lock);
++		hci_dma_recovery(hci);
++		return true;
++	}
++
+ 	for (i = 0; i < n; i++) {
+ 		struct hci_xfer *xfer = xfer_list + i;
+ 		int idx = xfer->ring_entry;
+diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
+index a3151c26827e..4bf2c66c97b4 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/hci.h
++++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
+@@ -55,6 +55,7 @@ struct i3c_hci {
+ 	atomic_t next_cmd_tid;
+ 	bool irq_inactive;
+ 	bool enqueue_blocked;
++	bool recovery_needed;
+ 	wait_queue_head_t enqueue_wait_queue;
+ 	u32 caps;
+ 	unsigned int quirks;
 -- 
 2.51.0
 
