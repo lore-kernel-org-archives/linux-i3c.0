@@ -4,62 +4,105 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D2AC2CD6E57
-	for <linux-i3c@archiver.kernel.org>; Wed,  3 Jun 2026 14:23:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09982CD6E55
+	for <linux-i3c@archiver.kernel.org>; Wed,  3 Jun 2026 14:36:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SbspiEup2W2RL/tg4jWM6WbA7sY2Xg994/RSh4eOPCM=; b=jTjuwH037x3Xv3
-	hagujwAyYNszmlXhSw0w6HnETxeaTyW3Ikv71pp3kwM/oVVLVvqmgGkREEuNGILHPcRboALkTYaiN
-	hb86XAZbhVUIazSHNi4Q9UTjcbKMBhWl2gdC3trE70kohaDjqA5EowrOaOBMLrS57BRZojWb2LRc/
-	W+vif0k/ohkVEekY+L+7EybIj0xx47azVBTg/eMPW74XUCcVboQ7NxwwVCS86/AhagInfcB+2J/qc
-	2DdKURX2pK+lkLSdcneMIQzknIGmzqrLrx5T26zJ8AWawAhVi/vmkji57xBiFr6Nk/hLfuz2Hst15
-	4R92mq7iOey5hfV3oClg==;
+	List-Owner; bh=l0YReg/lWuOal8Dd8rkOVsOhfHelKcEWcsiQru7qyio=; b=Jd6StFVmVK8yjB
+	sgjhbLZr3KBnSHhLIjoUYTSfI1ccwWTN4D8KDYLzJO8yTsBEjGq9q6hozf0oEzmdsuh06tH6RzcRZ
+	9daiJRfEIZpPj3XNE8w6OXq0KgfLiWndxf6wpXO+8LRfekz4DkzOyf9W7/koGgWlqSSVT9paub1N4
+	kHFEccJYK8bT53lfiH4Mh4BgDlggPWybmJXIEHYa9uES5ZdtugF/04pmN/Q1sfrjDC0u+Vsuyp7/I
+	uEQoTPzNU7X3ZtjMiZRGy2NI82zp3GG4E9ESlF46GMoQ0twQl69iefTdF70lN/TdsUiSUzf+Bil0o
+	vLUUSc+jape1RxJADIFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUmUz-0000000FFD5-2Z14;
-	Wed, 03 Jun 2026 14:23:13 +0000
+	id 1wUmhv-0000000FGIY-3LPV;
+	Wed, 03 Jun 2026 14:36:35 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUmUy-0000000FFCT-12wI
+	id 1wUmhu-0000000FGIR-1htP
 	for linux-i3c@lists.infradead.org;
-	Wed, 03 Jun 2026 14:23:12 +0000
+	Wed, 03 Jun 2026 14:36:34 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 0DF536022F;
-	Wed,  3 Jun 2026 14:23:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A28B11F00893;
-	Wed,  3 Jun 2026 14:23:08 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id D931D601DD;
+	Wed,  3 Jun 2026 14:36:33 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5472A1F00893;
+	Wed,  3 Jun 2026 14:36:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1780496590;
-	bh=x1z48cikCloEgwei4UZk2o1cFtb4Fcuckbpr03SF0K4=;
+	s=k20260515; t=1780497393;
+	bh=AI46kP8UK6l9WEk1AQ1AFIFgvTSBlPzimOI+GhKMfYM=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=GhbtyuJ2Lk5KVFguq11SYAHj+S5CMxeq39Ya2P9x4oLLpnU8O4/Deg51/RpCYuO/+
-	 d3p5YonWwOINm29f2sNzIlGdtncmC6AgglLpPEijOpV1G3GC6DpY6xzsuZY7EkZ45N
-	 QLtQcMVyxJFqp+CehMhZsjSAOuEopmuGR4MRDiWr26V0BXx3Db60gjNsZ3uKmntaV4
-	 30JAivctrmzDXBqye3x0LZe2rZ4Znr3jNGy5Q93vn3j0sC82akGqrdUh52cRgVLFIi
-	 cKfd4TrehxlPP0uQydYLTDofP39S7TzoSjE8Al8dJF1BOoAHL9n96fWWqa0txQDOgv
-	 i6LDvgMUnW1zA==
-Message-ID: <8687d3cb-628a-477b-9dfd-2db8c412b277@kernel.org>
-Date: Wed, 3 Jun 2026 17:23:06 +0300
+	b=UcfYuFswHKAWIOrbLOYdqwoYhRqsTDq4fDSvF2kb+f4bb+pJAfs16hBtXloG0cAP2
+	 abbksORJdIvj3OPEL8XILi37eQ7zOO720EQYz20zT9y9iL44ZKX8DpQYiFx74z4YY7
+	 bzbheKxr7R5wATCyqH0I8NUy4mp+d1+c9SPAcaMPnETFHZt0BhBk4ad2AX/PPgVaWA
+	 otwY14ogToUWG25fQQmtQ2UOQJNJNuI+Zu3gD28CN4aVU5vNDejdjx8e5eEtCmOoMu
+	 /nOTJRYtO5bQOAfQLUvX5yqaaTYHXZID/LNeUt/broeVJOujFTMZ+veR/Ho4FNrwJe
+	 Avfxi6Zz9OLcg==
+Message-ID: <035ffb31-e4c8-49b0-8323-f9cfe54eae30@kernel.org>
+Date: Wed, 3 Jun 2026 16:36:26 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 06/17] i3c: renesas: Perform Dynamic Address Assignment
- on resume
-To: Frank Li <Frank.li@nxp.com>
-Cc: wsa+renesas@sang-engineering.com, tommaso.merciai.xr@bp.renesas.com,
- alexandre.belloni@bootlin.com, p.zabel@pengutronix.de,
- claudiu.beznea@tuxon.dev, linux-i3c@lists.infradead.org,
- linux-kernel@vger.kernel.org,
- Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>, stable@vger.kernel.org
-References: <20260602132824.3541151-1-claudiu.beznea@kernel.org>
- <20260602132824.3541151-7-claudiu.beznea@kernel.org>
- <ah85RaUXmaBVFkYk@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH v4 2/3] dt-bindings: i3c: dw: Add apb reset
+To: Jisheng Zhang <jszhang@kernel.org>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
+ Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
+ <conor+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ linux-i3c@lists.infradead.org, devicetree@vger.kernel.org
+References: <20260525140018.19598-1-jszhang@kernel.org>
+ <20260525140018.19598-3-jszhang@kernel.org>
+ <f8efa4ae-76e8-4082-a445-ca5f6d230bf3@kernel.org> <ahZwl3uXjyOZRvGW@xhacker>
+ <4a8539d3-704b-4433-b4d6-e5acfe22d512@kernel.org> <ahre-7YdlcOZkwS1@xhacker>
+From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
-From: Claudiu Beznea <claudiu.beznea@kernel.org>
-In-Reply-To: <ah85RaUXmaBVFkYk@lizhi-Precision-Tower-5810>
+Autocrypt: addr=krzk@kernel.org; keydata=
+ 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 a/A=
+In-Reply-To: <ahre-7YdlcOZkwS1@xhacker>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,271 +114,58 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi, Frank, I3C maintainers,
-
-I've inlined the sashiko comments here to discuss them:
-
-On 6/2/26 23:12, Frank Li wrote:
-> On Tue, Jun 02, 2026 at 04:28:13PM +0300, Claudiu Beznea wrote:
->> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+On 30/05/2026 14:58, Jisheng Zhang wrote:
+> On Wed, May 27, 2026 at 09:53:16AM +0200, Krzysztof Kozlowski wrote:
+>> On 27/05/2026 06:18, Jisheng Zhang wrote:
+>>> On Mon, May 25, 2026 at 05:25:45PM +0200, Krzysztof Kozlowski wrote:
+>>>> On 25/05/2026 16:00, Jisheng Zhang wrote:
+>>>>> Add dt-binding for support of apb reset which is to reset the APB
+>>>>> interface.
+>>>>
+>>>> And this is ABI break, so you must explain WHY breaking ABI is worth
+>>>
+>>> This just adds an optional apb reset, it doesn't break any exisiting
+>>> ABI. Kindly let me know whether adding new optional binding is also
+>>> an ABI break.
 >>
->> The Renesas RZ/G3S SoC supports a power saving mode where power to most
->> SoC components, including I3C, is turned off.
->>
->> On systems where the I3C devices also loses power during suspend (e.g. NXP
->> P3T1085UK-ARD connected to the PMOD1_6A connector of the RZ SMARC Carrier
->> 2 + Renesas RZ/G3S SMARC SOM), the devices becomes unreachable after
->> resume.
->>
->> Running DAA in the controller resume path restores communication. However,
->> DAA relies on interrupts for TX/RX, which are not available in the noirq
->> suspend/resume phase (unless they are wakeup interrupts). For this, the
->> suspend/resume callbacks were moved out of the noirq phase. Currently,
->> there is no identified use case on either the Renesas RZ/G3S or Renesas
->> RZ/G3E SoCs that requires the controller suspend/resume hooks to be part of
->> the noirq suspend/resume phase.
->>
->> Since renesas_i3c_reset() is not called anymore in atomic context
->> update it to use read_poll_timeout().
->>
->> To cover the case where the controller had already attached all the
->> i3c->maxdevs devices before a suspend/resume cycle and i3c->free_pos is
->> zero, struct renesas_i3c::resuming flag was introduced.
->>
->> The flag is set in renesas_i3c_resume() before calling
->> i3c_master_do_daa_ext() and checked in renesas_i3c_daa(). In case it is
->> set the previous saved DATBAS register values are used for the slots
->> already occupied before suspend. This allows keeping alive the connection
->> to the I3C devices when all the supported slots are occupied before
->> suspend.
->>
->> When resuming from suspend, renesas_i3c_daa() re-runs DAA for al
->> slots except those used by I2C devices. I2C devices are attached during
->> probe, at bus initialization time, and always occupy the first positions in
->> i3c->free_pos. In addition, there are no DATBAS register settings
->> associated with them.
->>
->> Fixes: e7218986319b ("i3c: renesas: Add suspend/resume support")
->> Cc: stable@vger.kernel.org
->> Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
->> ---
+>> It does. One reset was before. Now all devices must have two resets.
+>> Clear ABI impact.
 > 
-> Please check sashiko review result
+> I checked the dts with only one reset by manual dt_binding_check
+> and dtbs_check, it still work, so I'm not sure why those dts "must have
+> two resets". Kindly let me know what's wrong.
 > 
-> https://sashiko.dev/#/patchset/20260602132824.3541151-1-claudiu.beznea%40kernel.org
+>>
+>>>
+>>>> doing that or what is the impact. Additionally you should explain which
+>>>> devices have it. Does Altera have it? You really lack explanation WHY
+>>>> you are doing it and which hardware you exactly describe.
+>>>
+>>> I'm preparing one of synaptics SoCs support to uptream, it needs this
+>>> apb reset signal for i3c. So you mean I delay this series until the SoC
+>>> upstream series come, right?
+>>
+>> No. You just sent patch which basically says that Altera has two resets,
+>> without any explanation of that.
 > 
- >commit 6783acf82418dd115df661f4dc9d5758f653b084
- >Author: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
- >Date:   Tue Jun 2 13:28:13 2026 +0000
- >    i3c: renesas: Perform Dynamic Address Assignment on resume
- >    The Renesas RZ/G3S SoC supports a power saving mode where power to most
- >    SoC components, including I3C, is turned off.
- >
- >    On systems where the I3C devices also loses power during suspend (e.g. NXP
- >    P3T1085UK-ARD connected to the PMOD1_6A connector of the RZ SMARC Carrier
- >    2 + Renesas RZ/G3S SMARC SOM), the devices becomes unreachable after
- >    resume.
- >
- >    Running DAA in the controller resume path restores communication. However,
- >    DAA relies on interrupts for TX/RX, which are not available in the noirq
- >    suspend/resume phase (unless they are wakeup interrupts). For this, the
- >    suspend/resume callbacks were moved out of the noirq phase. Currently,
- >    there is no identified use case on either the Renesas RZ/G3S or Renesas
- >    RZ/G3E SoCs that requires the controller suspend/resume hooks to be part of
- >    the noirq suspend/resume phase.
- >    Fixes: e7218986319b ("i3c: renesas: Add suspend/resume support")
- >    Cc: stable@vger.kernel.org
- >> --- a/drivers/i3c/master/renesas-i3c.c
- >> +++ b/drivers/i3c/master/renesas-i3c.c
- >[ ... ]
- >> @@ -657,14 +664,33 @@ static int renesas_i3c_daa(struct 
-i3c_master_controller *m)
- >>
- >>      /* Setting DATBASn registers for target devices. */
- >>      for (pos = 0; pos < i3c->maxdevs; pos++) {
- >> -            if (olddevs & BIT(pos))
- >> +            if (olddevs & BIT(pos)) {
- >> +                    /*
- >> +                     * In case of resume, reassign DAs for all devices on the
- >> +                     * bus to avoid failures when all i3c->maxdevs slots were
- >> +                     * already occupied before suspend.
- >> +                     *
- >> +                     * Exclude I2C devices, as they are attached during probe,
- >> +                     * at bus initialization time, and there are currently no
- >> +                     * register updates associated with them.
- >> +                     */
- >> +                    if (i3c->resuming) {
- >> +                            if (i3c->addrs[pos].is_i2c) {
- >> +                                    last_i2c_pos = pos;
- >> +                            } else {
- >> +                                    renesas_writel(i3c->regs, DATBAS(pos),
- >> +                                                   i3c->DATBASn[pos]);
- >> +                            }
- >> +                    }
- >Does restoring these blindly from the saved state cement addresses for future
- >ENTDAA, bypassing normal device assignment?
- >If a device is removed, hot-plugged, or wakes up slowly, couldn't a different
- >device win arbitration and be assigned an address from an unrelated DATBASn
- >slot?
-
-Currently, the driver don't support hot-plug.
-
-I presumed the remove in suspend is not actually a valid use-case, but with this 
-scenario, if that happens, the device still remains attached in the software 
-data structures. After this sequence:
-1/ suspend
-2/ disconnect an I3C device
-3/ resume
-4/ suspend
-5/ re-connect the I3C devices
-6/ resume
-
-the reconnected I3C device works again after step 6 (according to my testing).
-
-Waking up may happen slowly, indeed. So, I presume this is a valid use case.
-
-Now, I have few question (if my I3C understanding is right):
-
-I noticed none of the I3C drivers are taking care of the use case where the bus 
-is fully populated after resume (and we are after a resume with power lost, for 
-both the controller and the devices). That looks a bit tricky scenario to cover, 
-to be honest, as all the drivers check for a free slot in ->attach_i3c_dev(), 
-and, for a fully populated bus, that will not update the newly assigned 
-addresses in the subsystem data structure.
-
-If the ->attach_i3c_dev() called though the i3c_master_add_i3c_dev_locked() 
-fails then nothing is continued so, the device address changes are not 
-propagated in all the software data structures.
-
-In case we re-use the DATBAS() register values as proposed in this patch, we 
-have the changes that the driver software data caches (i3c->addrs[].addr) and 
-the subsystem I3C devices addresses to match. But, that may not be true all the 
-time.
-
-If we re-assign new addresses to i3c->addrs[].addr in the DAA API, then write 
-those values to DATBAS() registers, but the bus is fully populated, or no new 
-devices are discovered as the indices remains the same, then, since we execute 
-i3c_master_add_i3c_dev_locked() only for the newly attached devices, then the 
-subsystem and the driver addresses don't match anymore. I couldn't found a 
-global API similar to i3c_master_add_i3c_dev_locked() to work for removing 
-devices and re-attaching at resume, for such scenario. I'm not sure that's good 
-to do, though. If we call i3c_master_add_i3c_dev_locked() unconditionally, then 
-it will still not work on a full previously occupied bus.
-
-If I'm not wrong with all these, could you please let me know how would you 
-consider covering this scenario? This is what I've tried to address with the 
-approach in this patch. I currently don't have a testing setup for this, I only 
-simulated it by setting i3c->free_pos = 0 before calling i3c_master_do_daa_ext().
-
-Would the usage of i3c_device_do_setdasa() being called from a master driver be 
-something acceptable? Though, I currently haven't played around with it.
-
-As I don't have a real setup to test this, would it be OK to restore the 
-approach in this patch as proposed in v1?
-
-Please let me know. Thank you!
-
- >> +
- >>                      continue;
- >> +            }
- >>
- >>              ret = i3c_master_get_free_addr(m, last_addr + 1);
- >[ ... ]
- >> @@ -674,9 +700,21 @@ static int renesas_i3c_daa(struct i3c_master_controller *m)
- >>      cmd = xfer->cmds;
- >>      cmd->rx_count = 0;
- >>
- >> -    ret = renesas_i3c_get_free_pos(i3c);
- >> -    if (ret < 0)
- >> -            return ret;
- >> +    if (i3c->resuming) {
- >> +            /* Nothing to do if all slots are ocupied by I2C devices. */
- >> +            if (last_i2c_pos == i3c->maxdevs - 1)
- >> +                    return 0;
- >> +
- >> +            /*
- >> +             * Do DAA for all the devices on the bus, if resuming, except
- >> +             * the I2C ones.
- >> +             */
- >> +            ret = last_i2c_pos < 0 ? 0 : last_i2c_pos + 1;
- >Does this incorrectly assume that all I2C devices occupy contiguous slots at
- >the beginning of the device array?
-
-I wasn't aware of the notifier used to add I2C devices to the bus.
-
- >If an I2C device is attached dynamically at a higher slot while lower slots
- >are occupied by I3C devices, will DAA start at a higher index, skipping the
- >lower I3C devices? The hardware would assign new addresses from the higher
- >offset, duplicating devices and breaking communication.
- >> +    } else {
- >> +            ret = renesas_i3c_get_free_pos(i3c);
- >> +            if (ret < 0)
- >> +                    return ret;
- >> +    }
- >>
- >>      /*
- >>       * Setup the command descriptor to start the ENTDAA command
- >> @@ -694,7 +732,7 @@ static int renesas_i3c_daa(struct i3c_master_controller *m)
- >>
- >>      for (pos = 0; pos < i3c->maxdevs; pos++) {
- >>              if (newdevs & BIT(pos))
- >> -                    i3c_master_add_i3c_dev_locked(m, i3c->addrs[pos]);
- >> +                    i3c_master_add_i3c_dev_locked(m, i3c->addrs[pos].addr);
- >>      }
- >Since olddevs are masked out from newdevs prior to this loop in renesas_i3c_daa
- >(newdevs &= ~olddevs), is the I3C framework prevented from being notified of
- >shifted dynamic addresses landing in previously occupied slots?
- >Because i3c_master_add_i3c_dev_locked() is never called for these, the
- >framework could remain unaware of identity shifts and continue communicating
- >with devices using mismatched PIDs, risking data corruption.
-
-That is a previously existing problem that may happen. However, I am not sure 
-how we should deal with the case when this is called after resume, on a fully 
-populated bus.
-
-Frank, I3C maintainers, should we cover this case for now? Do you have some 
-hints on how to go forward with it?
-
- >[ ... ]
- >> @@ -1435,7 +1475,7 @@ static void renesas_i3c_remove(struct platform_device 
-*pdev)
- >>      i3c_master_unregister(&i3c->base);
- >>  }
- >>
- >> -static int renesas_i3c_suspend_noirq(struct device *dev)
- >> +static int renesas_i3c_suspend(struct device *dev)
- >>  {
- >>      struct renesas_i3c *i3c = dev_get_drvdata(dev);
- >>      int i, ret;
- >[ ... ]
- >> +    ret = reset_control_assert(i3c->tresetn);
- >> +    if (ret)
- >> +            goto err_presetn;
- >> +
- >> +    clk_bulk_disable(i3c->num_clks, i3c->clks);
- >> +
- >> +    return 0;
- >Since this callback is being moved out of the noirq phase where interrupts are
- >still enabled, is it safe to disable clocks and assert hardware resets without
- >first disabling the device interrupts (e.g., via disable_irq())?
- >If an interrupt fires during this time, the ISR might access unclocked MMIO
- >registers belonging to a reset IP, which could trigger a synchronous external
- >abort.
-
-That may have happen even previously if the interrupts were configured as wakeup 
-sources. However, at this point, all the clients should be suspended and thus, 
-they shouldn't generate interrupts.
+> I guess you mixed other series/patches with mine here, no? I didn't
+> mention Altera at all ;) What my series mentioned is adding apb reset
+> which is to reset the APB interface.
+> 
 
 
--- 
-Thank you,
-Claudiu
+Read the binding. Altera is already there. I do not talk about other
+patches.
 
+Your are changing an already accepted binding.
+
+Best regards,
+Krzysztof
 
 -- 
 linux-i3c mailing list
