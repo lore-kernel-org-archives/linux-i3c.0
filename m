@@ -4,133 +4,129 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 035FCCD6E55
-	for <linux-i3c@archiver.kernel.org>; Wed,  3 Jun 2026 18:23:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 41D22CD6E55
+	for <linux-i3c@archiver.kernel.org>; Wed,  3 Jun 2026 19:26:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9LUCHNOjcrD1BosWDpOPo8HVu3EhgHT7iMu8Xm4MZjg=; b=xjUy6jcDhxlXIC
-	nUz7C0BZ5f+9b0qx4B1DTBJeCgmickqsu/RzmQbCF/ESpxI8UqSqki28UaAzWZUQqVMdZNWM6ytr4
-	v5R5L0qjbVdMlObFSG49Rb52sF+DpS5yWEICcwzqTdoOSSk2PDVTySjy5gAn2AV8t4FUKxCfRzuzB
-	Su0IR47H+24GU2ceoK9NP4+9VvGvbbFxuksqjV+I2pxdpR2k/uhYBcJjVoo1m5D6Vww06B1TEJs7W
-	2qVJ/LZC8wZ/xZwizT77ydvOhiGVcAqn9u5CcdH20Mud35ZQsZG/j/YoJcHkt4+gkcQcoFQJf+ND+
-	JLBQH8/masnhtcRZ/k2w==;
+	List-Owner; bh=vx3ucGrO3YZRT/5tIsbkJaNUopvKvRq1Bglhdct45ck=; b=KM3xOPyq9ezoh2
+	m84oCijsP05YHcjaXXF9Rq1R70o17ASESU8FBwR0jkDem5/9PA0mjZf/3bid8erc9yaEyMdcVlX/K
+	pOCzrz3imEHi1cZOPIEF4VTmKItnLnlfpdWBxPjXwhz4sDQRCSZO7+qa2U+GwkJZFDFGLyX8Y8Oh/
+	0jlAXqz8fMw0rrK3GtEAU3wQzGSB6wGw4iA7vDUlyq1OXl1aS1Y58Vx8wxvjTsfHv0LJhhP7oMiTk
+	JwQCJSpMCto864bWJgX1kaKuSuarkEZ9R/O/534iVXsQuBPp5ywRJYY47VPadYhErVDH/HVsf8JRJ
+	E30Y0J56i3w9W0Xwpu7g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUqFs-0000000FfcF-2vtF;
-	Wed, 03 Jun 2026 18:23:52 +0000
-Received: from mail-norwayeastazon11013013.outbound.protection.outlook.com ([40.107.159.13] helo=OSPPR02CU001.outbound.protection.outlook.com)
+	id 1wUrEb-0000000FkpG-00wM;
+	Wed, 03 Jun 2026 19:26:37 +0000
+Received: from mail-swedencentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c202::7] helo=GVXPR05CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUqFp-0000000Ffb6-13l0
+	id 1wUrEY-0000000Fkop-312r
 	for linux-i3c@lists.infradead.org;
-	Wed, 03 Jun 2026 18:23:50 +0000
+	Wed, 03 Jun 2026 19:26:36 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=ULIJQRxzcSaUCG0hB0IRPjqRAWIQRrlYZXf4xyy5hSRXzu/9TRNceVLG6xmU8NuTMVKzoOrzpGp57pE9uDFI63UddoPPTFgM18j4zAhu8C3QfyM2CqxYX+2nkx0rhkMmp3D3eHY7uWuewM1R/z2VLXXWMY/6HeuJUzSi5xZli0RwDxcgic9+zeiUlWd07+S2cAILUiKb6WxcVEMnjXZ4JieSFZw/qMsrLJT7Ho2tE3Qc1TmJrADfR0bSMhfRzi5ZBAyigo/Fy3JFhzWeonnvGk6y7o4WLFZe7IL8IFQzHSpXuWiG3WT9vdNmOBPz4iPxyHRWXsuPx1NmiFOPanMWqw==
+ b=ptXJIMDVeUvTjNyBqibHZqWNq26xyjmWGNraoRyhVZnqQfyEWC2yBcNFaq0zw4XWRjBfE0MYulBJeocALbDoROF/GHUEuETpTQ6P220PYnBXqu/tEspjtyQLTd+Sk9pEPJ14fVrXpEiapd09a7Sl+oO/IBlNqZNgmdrv1BhOx6yHC/zKOpSQRzGYNF4K0QyZy68YhZurVcyumycq0YbNEbfW58qs37r6ylKyarQAbN1jdVTcU/PXTCnjmZRpoQBjlus3/g8upWI3XcVKSOvUULyCNWqqZnKlFf2oi4BBtdh4WLrp2jeds59bq8oD/nLUq5dzBSJsFovwCcrgJRWJmg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=YvRHqFWHGHr1UpvIl/p2LbOUrtBPczy2z8q5THrfbaU=;
- b=x6vGd94Ni/4U0XAvkWh0JECIQGoHwHDIAv0X9XDVUFvUJm+RblhNzshbUIp0fN0B+biJDtXKCnLiXJXKiNN7/MecF6jGLYk5/NeiPFfCLiK/svn1URoc9RRYLaDcwzuuXKOWt5TyfkvkvoTdTNFOd8+uEL4WhDVT3Xz4ywXWLdP93G4uFtPn2RnZ/1lVyrr+mHOeFvPtqMu3iVkwynG7udm2xuWPlPYTNein693iQ4TkgI4gI79wFLSZ7gOtUHZSOuJFfY+hcJs56+flKOypN1i5Tn3NTc+WK1v1D6FHW5Zmn8L2RRztZ4PZ9LCF32vSnoWj5VUNk6uptscfgcMWfQ==
+ bh=JJgSkF4SziIRczhYR3iStgFv0Et7BKhVCLtmnOgKLpY=;
+ b=jvWMVe0AiRf5A18PjKmc22Tmdn9vaRpsstBGFYmO+ethUUGXn3+V7SdIhyAtrspl2dzyoIGpO9z8AlHy1BZDqkOI5K2YxpPHYFtd4EOzEBDr//OKQSlxPu7/KEgHA3snF09PZWHuTZsJgpRkxjfK3Af5MmZXARv3Vu1X8cQkTfWLZqAud4lI7rGWPX+H0Ey7fT1ThfUsHvqtBtgjx11i5FejmRQTQcIvmv5JkMSYGn1F52OUVxoIo7pesm55DUa0GpbU2qdSEcuX2RtA3pGs5f5/HSg6l2clpSxlH4x6BzqvGHozL/JqL4f1vJ9XBI5JH4AbT12dTzx8glMf3bVE5g==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YvRHqFWHGHr1UpvIl/p2LbOUrtBPczy2z8q5THrfbaU=;
- b=G1aThxJSBe2UVA7KUAirenEkGbGOluEEXQhGXBF+VbyOZFx06cZJVM1THxLRpcpAuQ1sK1pziHl48aC6RtJsKlrif+5aDKbCuqOLdQZ179MclWk0fE5UpkOToYfwcRC8VMYMwWJ4XxHLruzSZti+xZOoJwp/g4TN6gcs2UxdRj44Y1UpmhpWIde0imhTO1IeBQzLm/7pAS1hxv6F2yNyjt4JYrsyq2AWXvGz5cBO2CfU8uWxdsg30GdFUZnzEQ9OR/kj0RLxFS/ZxD+DHb0xvnvbNdrHJq/3zaIC7buq987yn1y4cL3bscYUP92cP7u+fA2GPV4hs0YQoeJMaYyhQg==
+ bh=JJgSkF4SziIRczhYR3iStgFv0Et7BKhVCLtmnOgKLpY=;
+ b=nO/BDpz6Z2U4E6C5xm/xXCejIFmyDisNa40icxK9Td5L46k9ZuVsAllnoQ4HyUME22pvLXrVHAF9Jb+ucjg6Kb+QDPPUVrtXVwVLRS5I4DW8b5bsaEm5TewvuNDcWTfzquym5/hwEFKvbBAdgVwrUXIrr6GrzcPvWXkJo6bQBWCTSkfBBKc8gL0lRzn9nrPHGZS8T8KP5PZk5kokTqS2E07rkdEAi8OnyDDoebxua2qa2AnCPWlC9NftGsgbMZ4JEoTy+QUv7JbDBrXMK3GaGPNpk8xp8ayu4hAXtLZPALonf09s/dlcenEGCQMCisSLjCihdSrHtggDoXRdRnb2Cg==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8)
- by AMCPR04MB12669.eurprd04.prod.outlook.com (2603:10a6:20b:76f::15) with
+ by AM8PR04MB7940.eurprd04.prod.outlook.com (2603:10a6:20b:240::19) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.92.7; Wed, 3 Jun 2026
- 18:23:43 +0000
+ 19:26:29 +0000
 Received: from PA4PR04MB9366.eurprd04.prod.outlook.com
  ([fe80::75e4:8143:ddbc:6588]) by PA4PR04MB9366.eurprd04.prod.outlook.com
  ([fe80::75e4:8143:ddbc:6588%3]) with mapi id 15.21.0092.006; Wed, 3 Jun 2026
- 18:23:43 +0000
-Date: Wed, 3 Jun 2026 14:23:37 -0400
+ 19:26:29 +0000
+Date: Wed, 3 Jun 2026 15:26:22 -0400
 From: Frank Li <Frank.li@nxp.com>
-To: Sam Agazaryan <samagazaryan@google.com>
-Cc: linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
-	npitre@baylibre.com
-Subject: Re: [RFC] mipi-i3c-hci: Support for DMA Ring Pipelining /
- High-throughput Streaming
-Message-ID: <aiBxKRj6Aaw4RodS@lizhi-Precision-Tower-5810>
-References: <CAHreonE1UF=BJjeQH_i0jjAEMBb8OALeTKoxPBcrRwLZWq=p0w@mail.gmail.com>
- <ahG-H3D9P-qGjigB@lizhi-Precision-Tower-5810>
- <CAHreonFQ1NiROnz4q-zsHhttYumgSxWurkTbZz_Jq5yDFCEt0A@mail.gmail.com>
+To: Claudiu Beznea <claudiu.beznea@kernel.org>
+Cc: wsa+renesas@sang-engineering.com, tommaso.merciai.xr@bp.renesas.com,
+	alexandre.belloni@bootlin.com, p.zabel@pengutronix.de,
+	claudiu.beznea@tuxon.dev, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
+	stable@vger.kernel.org
+Subject: Re: [PATCH v2 06/17] i3c: renesas: Perform Dynamic Address
+ Assignment on resume
+Message-ID: <aiB_3kneo2Scy5bB@lizhi-Precision-Tower-5810>
+References: <20260602132824.3541151-1-claudiu.beznea@kernel.org>
+ <20260602132824.3541151-7-claudiu.beznea@kernel.org>
+ <ah85RaUXmaBVFkYk@lizhi-Precision-Tower-5810>
+ <8687d3cb-628a-477b-9dfd-2db8c412b277@kernel.org>
 Content-Disposition: inline
-In-Reply-To: <CAHreonFQ1NiROnz4q-zsHhttYumgSxWurkTbZz_Jq5yDFCEt0A@mail.gmail.com>
-X-ClientProxiedBy: SA9P223CA0012.NAMP223.PROD.OUTLOOK.COM
- (2603:10b6:806:26::17) To PA4PR04MB9366.eurprd04.prod.outlook.com
+In-Reply-To: <8687d3cb-628a-477b-9dfd-2db8c412b277@kernel.org>
+X-ClientProxiedBy: PH5P220CA0012.NAMP220.PROD.OUTLOOK.COM
+ (2603:10b6:510:34a::9) To PA4PR04MB9366.eurprd04.prod.outlook.com
  (2603:10a6:102:2a9::8)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|AMCPR04MB12669:EE_
-X-MS-Office365-Filtering-Correlation-Id: db560b97-9e0d-4413-0a05-08dec19d3e01
+X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|AM8PR04MB7940:EE_
+X-MS-Office365-Filtering-Correlation-Id: b8851293-d61c-4ee2-5dff-08dec1a602e1
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|19092799006|376014|52116014|6133799003|4143699003|22082099003|18002099003|56012099006|11063799006|38350700014;
-X-Microsoft-Antispam-Message-Info: KD7KxoWomDzCz/Vzx4bUBr4erejiDxftqncwz/89GHm4QwKur0W4UFtvrnZo+Z48QtqOlvmi/VlPu4QInXPgdorppRyh8HVD9oFyMe7BD6HJ+od4DVjaHj7iN3jyCZXNkaUKsMTDu3Svqcy3anFRrSXgr+uCDis+IZVOfFQZIOGh7xp+1s/hePs0nHqlpJhpJvnrMmAyJayeysizY6zI0APeDUUOZhTqo8R+tdP3NIWD9ytL7oXmwY7XeBH3uHf8My1EC8+XTSIsEDZzcOx0jNWD1ichi/5o68buIChCkqqe20wvmXpxfpH5zJ2SpjfMyPz1Qx/VkVOEk8MjeIORDJc7C5hSvBHLHJZorLaukWklQhSCMceUrW3k9GwWbW885TnIIoLLD2ZTcDO+xtYfoWpjvR6swjzXYZtlh3vIqMedZ1tg/4NudqsMnSkW+mzPfn1daiMwR3ZGf8o2JPHzYcgoXHqNQpAWZI+/hPx1kjdKepjafxc//kvIV/Kkz9778cNFaBvzrGXDNZxBff6ReA8k8dYSzkhuy2TOYIhQDBzbtTUW4hJbkSJRqR4eerbBUeRTJoOVPMe6r+FI9MDnxUXMyY4z9bHqP1VkxTVYiHUjAupQYeiCOuNvr/spx2Ckhz8WM2pEfigh/0WAZjhHxxWe/n1JgWq58tCv6gjVjinlI2JuNLvGUN0/74eytKm6qxt1gtncXl/xLb6XshyXjmw/JNEVr9gk0Hqymmw6SyWiszIGgC+3+B1RwvGsWvs5
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(19092799006)(376014)(52116014)(6133799003)(4143699003)(22082099003)(18002099003)(56012099006)(11063799006)(38350700014);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|19092799006|376014|7416014|52116014|366016|38350700014|11063799006|4143699003|5023799004|56012099006|18002099003|6133799003|22082099003;
+X-Microsoft-Antispam-Message-Info: /UeRAbVlD9AT6bUsfG7lZNZtQqXSwLevj/VAJF6HBfuoJiqSneG9cb6ixJrV0W8NhDqSfsTCJfPdkmzhO8+Tc+INV+rpakjTSrzkGTImAOij8UT+8gb8f3sMXNrwedwoZnfP+bp/VjoZSwnqJtEAzC4JYFVxNfg+V4F4+TtlThTss4XffdsSw6gXxIZquCpBEWqNQ0K4MdwZFzuJn5YvX/v1MRxVl4MVIMqs3BhnOeVPeVWD8Qz0cMhVt5jHTbqXNBhkEFhwJOrW5G06ilU4tiqbgSpo/DJWI1T67Dy/8oo+AkgFNAjReOJpV0qlOcn0pwQdvn5IliN88f8j5Ggqw2oafzANK/9R89RQd806t7Qa3U5C4qTzQfoz+EkDtNnJ7FOFnD9oGrYnO1+UzQJQmYiGNinCOHfpldOhyK3jKg6pVTmEbV/ByRsjLzazMmI7WunSXSNz5ULERce8VGvP6v/c2VuHnEYiQq7h1fJT6OUZPKNAy3WPgvk+UAlTS57agKgMdu91WV8FP8VVUJWw9HWjujM63SgNkpbYYBquP3+zGNRcs0qOE9NVMCUeJbOqlkImb7zqZdMwx5S88nExilGtkU1u1iRYm9SkQqtlC3ndEe/+8cZ6WwZ6metV5H5L0DHmb77sSU4iDohAau6m4F3iRPVL3SGNe3S53Ln0kZBu6EGfbQA3q8x5NxnoYGsy
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(19092799006)(376014)(7416014)(52116014)(366016)(38350700014)(11063799006)(4143699003)(5023799004)(56012099006)(18002099003)(6133799003)(22082099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?Rks3UU9WSEl0MVVURjk2OHQvM0xQb1JaR0ZueGtyb1Jza29MZE16eFlwbDYr?=
- =?utf-8?B?STVUYlExdFpnWDdaZTV4K3FkdW51bEx0KzhtdkJMV2dHeFIzdVk2L01zbmRL?=
- =?utf-8?B?dlh5ZWVNUys5bHZacm50TjRhbW4xMWNuZXU2cDIvOGxoclJ1WEJxTDI4TUQ3?=
- =?utf-8?B?UFBPTklOUHV6SDhEYlAxRkZXalo3S3Qva2tkRjFqRHFPWWRac2FEWTQ3WWRF?=
- =?utf-8?B?elZwVGRJaEdKbWZmSlh3L2liQUF5TXpFa2s2K3Nud1VYcnVGT3htbnpza2RZ?=
- =?utf-8?B?TGtSUy9oS1hsdkYreU9yNzB1dXZLb2dzKzV5aUZTMDFsTnJBNEhMbmovOHlC?=
- =?utf-8?B?RDhhVjZleHB0NmtkZW5ZMVZRZnIyK3ovejFyWklPMkxDMFlJeGp3T29QcjBk?=
- =?utf-8?B?UDMzUFhvWVlnUWE0dFJ2UFY5dGMzcEhwa3lwZHpvTVBsSGtibHU4TG4wSnZt?=
- =?utf-8?B?Q2NVY1hsaUU4dHpRZVQxQ0RlTHFXMStFbGhhcGk4Z3ZaS2ZvS1p0SlpTci9K?=
- =?utf-8?B?Tkt2djdnSzV1dUlDR1V4L0xtNW45Y1lCeGo5SUdoa2FHLytrTWRwdTNPT3pq?=
- =?utf-8?B?MjAveFk0UkZaSW5uZFArV3ZxWlpuVm9rN2VHakVub1BNVkRWY2xWQTdxYWRy?=
- =?utf-8?B?SHNxOTQxNU4wS3ZJcFpVVDdUeVIxNjY5a1kyTm1QMHMzaUNGVXM1akdzRnFD?=
- =?utf-8?B?ZE13a3c4QWFXakljMnQ3cjZJemt0TVNMZTVJbVlVQXhZeEpmZStKTjNJSGo4?=
- =?utf-8?B?ck02YVRRM2hjb3JmclNxYW1LV04zWGlKMFRBVWVyWlJuTFB3d1ZmdmNZa3la?=
- =?utf-8?B?R3Zqa0c1Vm1MNG14TndJSnQ4bFFhVmtja1lsUUtDeHRQWFVjbGZWZ0RmSXla?=
- =?utf-8?B?dXNvRnREcCtSWnFZSlIwZ2k1NnRPdkdaN2JScmNTT05adVpVU3drYTlmeFVV?=
- =?utf-8?B?Nlppc2VIQVlnbWNyUWNOc1Z5ZlFyY2VlOXE2QmFRY0VIN3RRT2szT29Id1dP?=
- =?utf-8?B?OVJYQzJRVGl1NEdhV1pWd0xScWpCekQwWldDbUNnUFRWSTR0MDJ6eHVYTjF0?=
- =?utf-8?B?QjFQVGNBZHl5aHFVVjhFS2hUN1R4RW16QTlvOUtQL0g0MVhUWlNHay9aT3pP?=
- =?utf-8?B?YVNCMmJnUFNyZWUvWFF4aTAyOGFzRytIaVVVaDlLTEZOazFiOFpocDRZKzRR?=
- =?utf-8?B?NDd6L0N0bEw0WlFDWGtIazRBNitYZnNsaGxWZk9nYmtadnVURExQT1R5L2Nh?=
- =?utf-8?B?cjFKK0p3MlRHVVI4UnNEemZKbWtHRzZDWldkSXArUC9NeWt2TWpwZzkyd09I?=
- =?utf-8?B?TFpPM3JGdGRaVTY2R1RxemxuWmtrbHNzd0JCclBod2FPMXpsT3RYZnVpakc5?=
- =?utf-8?B?bkFNTWxhRG1rZ3ozbUs1NjEvai8ybmNHRjgwYU5PZEo1STRqMHRub0RyMG1r?=
- =?utf-8?B?UU5xejlhNmFOZnViaTgyRVlZcVo3Qjg0NUdVNGJRaklqcjgzWWUyZ2RpcXhN?=
- =?utf-8?B?NFZjUzZPSUpHbXM2d1l4VjhiNHVyY3RvRThIWW5qcjUzc0E1MWhqaFNMYjFK?=
- =?utf-8?B?S25nQUdXaTVnOU0vTjNWekNPdmJGMVNoNXN4bTMyT1BSSCtmRWl6N0JsazJP?=
- =?utf-8?B?YjdldGpieVZpYWJveE92Z3YwMkdnekxJeElsa2h3d2wxU0pSbitqTWJRenVm?=
- =?utf-8?B?Z2h0cmZpUUdFRmZ4cVJmMnZjb3dKRTcydmdjbVE4YnY5UkMwMklxMkN4REN3?=
- =?utf-8?B?Y3FldVJUYm1OZ3NNQzFsWDd3L0JTcUtpbGQ0Rm9ZMFVwRUJvQmhVNnNOWjla?=
- =?utf-8?B?V0pxVGtjWFNpTmM4VFpTU0QxY293bWN3U0JINzRNeVhkMVhQcXM4ZHVVNTFX?=
- =?utf-8?B?Tmp5ZWJMajl4VjJHRXdvVjRQRXhaTmpIS1RvYXk5eVJaSVp3aG04WXBYZnZq?=
- =?utf-8?B?Zi80WE55WGJWbEt2Z2Z2L0JTMlJVU2ZnMGZMc2hDeW1maDhSZWpKcWlQU1ox?=
- =?utf-8?B?N01KM3g4UVFvT3p1dlFIc0ZTQkhpTWc2RXEya04wSkRmSFV2U0ZkVjYreUYr?=
- =?utf-8?B?d0pxaHhVSWx4Um0wUnlJbUZBaVoyeVF1UWZtNS90K3Nudlg2aVQvMXBJMm9O?=
- =?utf-8?B?WEdOM3RYVWU2Tzd0ZXgwVFd6SjFUdFhGUG9WV1FLVkMyN3F5NTlOWnV0OUFo?=
- =?utf-8?B?WTJ1ZFBWRGluSjdMVmZpSHd1Y2NLcEVFQXRwdDlCNUFKOWVvU2UwQ1JtOUhX?=
- =?utf-8?B?L0M4bk9tbENVMFpnWmhTN2V0eHl5NVA0ZXRpRWlnNzhQbWlPTVF3YnJVMWpD?=
- =?utf-8?B?MUx5NTRjYmpBSEFZZFh2TVNqaTdvMHVlTDFzTWhmVi84VG1lQVlSZz09?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?AFaLv9MkthH/6Lyj2bI1Q5Q6QgWK8lFejjt4NwqKuED1OKHY2gRVxnBPhWXe?=
+ =?us-ascii?Q?L2OXrnLOfpZ6RncWTwr8361WHkPHlSZ5Uk6/D8czQUa+oEqJtiM1nDIqRQNc?=
+ =?us-ascii?Q?U/Ab4NCdx9smW0ykBD1nwXswM2rtOvd54T6Pv1J02ryYvAIwrn2WJaEfEWdz?=
+ =?us-ascii?Q?KVerCE+k7pCZFFAFZD8rDbUsdNOR5WRIEvH1gKY2QgwknHtBayjR+GBAh/52?=
+ =?us-ascii?Q?yPY5bzpQknvMkbVZQSEIlNvffxanMX7H3ImkdIip3QzrycLyDIIsY6NUPbxh?=
+ =?us-ascii?Q?1AgUcT9rrASOVEJpDS+nz+455sDNOr8mXqLG/wMEOaLZ0DgtnBanLFIv4XWF?=
+ =?us-ascii?Q?Vny5xggkMX8eTuReSX0eR+87DYeIvWV8TZYsT5mPfk7rl0UiDUpvrgazaAjz?=
+ =?us-ascii?Q?nDQs8MBaS8n/M2j5r9WGg67aHtEBvk6T+4EgC5HeKTy5SDdv5PhLG6SgALkK?=
+ =?us-ascii?Q?B6pUDurf7g8vQS/lHU+vG+EnFevBgYiYHA2/LknwCEzVc+zfELtrDwTejO4l?=
+ =?us-ascii?Q?lRbmeQwbOXckmcRVUlF2Pqj20GG4lZ/OeqlhDNgEJtfuDNtVY77+hkXZHTdN?=
+ =?us-ascii?Q?FrsUUthCPeGPWzlyEsJl2yJ2NYHN/0Xa1XpTuHlvnM7rSERMgI2dhKzKf4uc?=
+ =?us-ascii?Q?OHx+R5RSw3dHPDKHE3PyNbHH9i86BuyZ/krwhCxS++0f3y3Yl5YQJKE+eD8W?=
+ =?us-ascii?Q?eNicnZGeAsmSdeSXKY8VCmUuSWc2cZBhP7IQWckXB48rY3ucTTQ/P/JIePHf?=
+ =?us-ascii?Q?WBD2mAhLzxlO5VPi1V9u5MQ/nveDkJhEd6ddbWCZDyNu6YugO/+8bFpU0Cjw?=
+ =?us-ascii?Q?Gr6GnzamUVlixwm4Ysh/wQZXFEfZedclJZG9jSYS3CXvj98r7HqS8l7l4rIK?=
+ =?us-ascii?Q?emhpLLH/lVA048KvbLD53iQwnlfstL3hdL0uQZFJyOXWf/RiAsSL6Vi400sv?=
+ =?us-ascii?Q?MFPWq0jTelNqVmXl0BPKOIp8BxEE69Hn2QfdkBYFhbHjwMSDxNLi6LhKl3Ka?=
+ =?us-ascii?Q?HGW/n7D8JLtGdc23ulSSjTgDaK0PYUZMaJffiy+Y7C+KhONXKsRZujYWgkMr?=
+ =?us-ascii?Q?vsGLQwIIysL2s4wu5pf8ArtjyEVdTyXwimM5KLxQ/UlRpJlIq5HSAuCKif0V?=
+ =?us-ascii?Q?SmW/3Q/P4gmgEKh3F4AFuvaTO5GfEQvzbYKgs1FIPRJer2YFijco3VT5WVyu?=
+ =?us-ascii?Q?Xfy/LOCY9lisE5fxA0lcvV16LrwEkMf+mgb1fLOWKI7aIQ/8YslmJ9KTIW17?=
+ =?us-ascii?Q?9sOeU1FoR37vStH43d+AifgSOah1SDFSCrN+RBWPUSWo+iqky/UxYcmYbXI8?=
+ =?us-ascii?Q?eIdlAz6LKlYAdJSjNmP4nu++aizD1fbZIRwwr/w19+MMzw1k16aWXonll0kq?=
+ =?us-ascii?Q?8LrWcs285LUsqEp2evQFeS6jh1ufEl7/Rm1GbbK9uSp2K4VbqddZhjkSDk4d?=
+ =?us-ascii?Q?Ip2tRhxdk+6BOiF7zogfLsWAkTM3m1SBMXkTFPi7QUc/pL4r0sgrLZhPYV3g?=
+ =?us-ascii?Q?Lj+ahen5/kAU7UOEXp5Lw03qo+yp2JOoy5jaZkAg2bmuR1nV+pqRMbqhT8DU?=
+ =?us-ascii?Q?LQHt5sLh6oPBhyMrWrN2uVEpp7j52iy4T6JeDn5df4ovK5yk3ejCvE79QDSW?=
+ =?us-ascii?Q?kLxvnoqjabrv/Lj6K2fBUExYKRbnIWv8eH9n6awV8q27DSzIuCUGyo+6RDcy?=
+ =?us-ascii?Q?kqmA3x3JjVkdimcI0V0VDA999WOkNbJ+Ny27QmFqh/koR2ArVtKXT2M3Mg0g?=
+ =?us-ascii?Q?wL/0lAZnJw=3D=3D?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: db560b97-9e0d-4413-0a05-08dec19d3e01
+X-MS-Exchange-CrossTenant-Network-Message-Id: b8851293-d61c-4ee2-5dff-08dec1a602e1
 X-MS-Exchange-CrossTenant-AuthSource: PA4PR04MB9366.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Jun 2026 18:23:42.9968
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Jun 2026 19:26:29.2951
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: fQiRJu6WCh+iXSJ8/UX7tNWJrRfp4iRBKPpXTerICP8UOKbwkW3Skv114m17qOzMdu3vK1jeLlJFTyEc0CRvAQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AMCPR04MB12669
+X-MS-Exchange-CrossTenant-UserPrincipalName: 70TtptEKWPNc+srUvm5Gs78FuClQuQssMEWTZMvVhU1Kw/VQgVvVYRQBdePgWvpaVFldJU2NsVaCVeePfPgYcw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM8PR04MB7940
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260603_112349_479187_D908E607 
-X-CRM114-Status: GOOD (  53.99  )
+X-CRM114-CacheID: sfid-20260603_122634_926199_5E184572 
+X-CRM114-Status: GOOD (  48.47  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,215 +138,290 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-T24gV2VkLCBKdW4gMDMsIDIwMjYgYXQgMTI6NDM6NDBBTSAtMDcwMCwgU2FtIEFnYXphcnlhbiB3
-cm90ZToKPiBPbiBTYXQsIE1heSAyMywgMjAyNiBhdCA3OjQ44oCvQU0gRnJhbmsgTGkgPEZyYW5r
-LmxpQG54cC5jb20+IHdyb3RlOgo+ID4KPiA+IE9uIEZyaSwgTWF5IDIyLCAyMDI2IGF0IDAzOjM3
-OjM1UE0gLTA3MDAsIFNhbSBBZ2F6YXJ5YW4gd3JvdGU6Cj4gPiA+IEhlbGxvIGFsbCwKPiA+ID4K
-PiA+ID4gSSBhbSB3b3JraW5nIG9uIGEgcHJvamVjdCB1c2luZyB0aGUgbWlwaS1pM2MtaGNpIGRy
-aXZlciB0aGF0IGludm9sdmVzCj4gPiA+IGxhcmdlIHBhY2tldCBidXJzdHMgKGV4Y2VlZGluZyB0
-aGUgcGh5c2ljYWwgaGFyZHdhcmUgRE1BIHJpbmcgc2l6ZSwKPiA+ID4gc3VjaCBhcyBsYXJnZSBN
-Q1RQLW92ZXItSTNDIHBheWxvYWRzKS4KPiA+Cj4gPiBIb3cgbGFyZ2UgdG8gZXhjZWVkIERNQSBy
-aW5nIHNpemUsIGNhbiB5b3UgaW5jcmVhc2UgcmluZyBzaXplPwo+ID4KPiA+IEFuZCBpZiBsYXJn
-ZSB0cmFuc2ZlciwgaXQgd2lsbCBkZWZlciBJQkkgaGFuZGxlIGZvciB3aGlsZS4gSUJJIGNoZWNr
-IG9ubHkKPiA+IGhhcHBlbiBhdCBldmVyeSBTVEFSVCBwaGFzZS4KPiA+Cj4KPiBSaWdodCBub3cg
-d2UgYXJlIHdvcmtpbmcgd2l0aCB0aGUgRE1BIHJpbmcgbWF4ZWQgb3V0IGF0IDI1NSBlbnRyaWVz
-Lgo+IFRoZSBtaXBpIGkzYyBoY2kKPiBjb250cm9sbGVyIEknbSB3b3JraW5nIHdpdGggYWxsb3dz
-IHVwIHRvIDEyOCBieXRlcyBwZXIgdHJhbnNhY3Rpb24gZHVlCj4gdG8gaGFyZHdhcmUgbGltaXRh
-dGlvbnMgb2YKPiB0aGUgU29DLgo+Cj4gVG8gbXkgdW5kZXJzdGFuZGluZyB3aXRoIHRoZSBkcml2
-ZXIgaW1wbGVtZW50YXRpb24gcmlnaHQgbm93IGlmIEkgc2VuZAo+IGRvd24gMjU1IGVudHJpZXMs
-IFRPQyBnZXRzCj4gc2V0IG9uIHRoZSBmaW5hbCAyNTV0aCB0cmFuc2FjdGlvbiwgYW5kIGFjY29y
-ZGluZyB0byB0aGUgTUlQSSBIQ2kKPiBzdGFuZGFyZCB2MS4yIHNlY3Rpb24gNi4xMiB0aGlzCj4g
-bWVhbnMgdGhhdCB0aGUgU1RPUCBzaWduYWwgd2lsbCBiZSBzZW50IG9uIHRoZSBidXMgYWZ0ZXIg
-dGhhdCBmaW5hbAo+IHRyYW5zYWN0aW9uLiBNeQo+IGRlc2lnbiBwcm9wb3NlcyBhIGNoYW5nZSB0
-byB0aGlzOgo+Cj4gRm9yIHRyYW5zZmVycyBpbnZvbHZpbmcgdHJhbnNmZXIgZGVzY3JpcHRvcnMg
-bGVzcyB0aGFuIG9yIGVxdWFsIHRvIHRoZQo+IG1heGltdW0gcmluZyBzaXplIHRoZSBkcml2ZXIK
-PiBmdW5jdGlvbnMgZXhhY3RseSB0aGUgc2FtZS4KPgo+IEZvciB0cmFuc2ZlcnMgaW52b2x2aW5n
-IG1vcmUgdGhhbiB0aGUgcmluZyBzaXplLCBzYXkgcmluZyBzaXplID0gMjU1Cj4gYW5kIHdlIHNl
-bmQgZG93biA1MDAgZGVzY3JpcHRvcnMKPiB0byB0aGUgZHJpdmVyIC0gV2UgYmVnaW4gc2V0dGlu
-ZyB1cCBUT0MgPSAxIG9uIHRoZSAxMjd0aCBkZXNjcmlwdG9yCj4gYW5kIHRoZSBsYXN0IGRlc2Ny
-aXB0b3IgaW4gdGhlIGJ1ZmZlciwKPiB0aGlzIGlzIHNvIHdlIGNhbiB3YWtlIHVwIHRoZSB0aHJl
-YWQgcmVzcG9uc2libGUgZm9yIHNlbmRpbmcgZGF0YSBkb3duCj4gdGhlIGJ1cyB0byBxdWV1ZSB1
-cCBhbm90aGVyIDEyNwoKQXNzdW1lIGxlZnQgMTI4IGVudHJ5LCBlYWNoIGVudHJ5IG9ubHkgMSBi
-eXRlLCAgYWJvdXQgMTI4ICogKDEwICsgOCkncwpTQ0wsCgpJZiBTQ0wgaXMgMTJNLCBvbmx5IGhh
-dmUgMTkydXMgdG8gZmlsbCBuZXcgZGVzY3JpcHRvci4gdGltZSBvZiB3YWtlIHVwIGEKdGhyZWFk
-IG1heSBiZSBiaWdnZXIgdGhhbiB0aGlzIHRpbWUuCgpGcmFuawo+IGRlc2NyaXB0b3JzIGFuZCB0
-aGVuIGdvIGJhY2sgdG8gd2FpdGluZyBmb3IgY29tcGxldGlvbiBhZ2FpbiAtIHVudGlsCj4gdGhl
-IDEyNyBkZXNjcmlwdG9ycyB0aGUgRE1BIGNvbnRyb2xsZXIKPiBpcyBjdXJyZW50bHkgaGFuZGxp
-bmcgaXMgZG9uZS4gVGhpcyBpcyByZXBlYXRlZCB1bnRpbCBhbGwgNTAwCj4gZGVzY3JpcHRvcnMg
-YXJlIHRyYW5zZmVycmVkLiBJbiB0aGVvcnksIHdlIHNob3VsZAo+IHN0aWxsIGhhdmUgcmVsYXRp
-dmVseSBnb29kIElCSSByZXNwb25zaXZlbmVzcyBjb21wYXJlZCB0byB0aGUgY3VycmVudAo+IHN0
-YXRlIG9mIHRoZSBkcml2ZXIuCj4KPiA+ID4KPiA+ID4gSSBub3RpY2VkIHRoYXQgdGhlIGN1cnJl
-bnQgZHJpdmVyIGltcGxlbWVudGF0aW9uIHRyZWF0cyB0aGVzZSBhcwo+ID4gPiBkaXNjcmV0ZSBi
-YXRjaGVzLgo+ID4gPgo+ID4gPiBJIGFtIGNvbnNpZGVyaW5nIGltcGxlbWVudGluZyBhIHJpbmcg
-cGlwZWxpbmluZyBvciBETUEgc3RyZWFtaW5nCj4gPiA+IG1lY2hhbmlzbSB0byBhbGxvdyBmb3Ig
-YXN5bmNocm9ub3VzIHJlZmlsbHMgd2hpbGUgdGhlIHJpbmcgaXMgcnVubmluZy4KPiA+ID4gVGhp
-cyB3b3VsZCBsZXZlcmFnZSB0aGUKPiA+ID4gc3RhbmRhcmQgRU5RX1BUUiBkb29yYmVsbCBtZWNo
-YW5pc20gKHBlciBNSVBJIEhDSSB2MS4yLCBTZWN0aW9uIDYuOC4yKQo+ID4gPiB0byBjb250aW51
-b3VzbHkgZmVlZCB0aGUgaGFyZHdhcmUuIEkgZmlndXJlZCBpbiB0aGF0IGNhc2UgaXQgbWF5IGJl
-Cj4gPiA+IHdvcnRoIHdoaWxlIHRvIHNlZSBob3cgdGhlIHVwc3RyZWFtIGNvbW11bml0eSBmZWVs
-cyBhYm91dCB0aGlzCj4gPiA+IGZlYXR1cmUuCj4gPiA+Cj4gPiA+IEJlZm9yZSBJIGRpdmUgaW50
-byB0aGUgaW1wbGVtZW50YXRpb24gZm9yIHVwc3RyZWFtLCBJIHdhbnRlZCB0byBjaGVjazoKPiA+
-ID4gMS4gSXMgdGhlcmUgYW55IGV4aXN0aW5nIHdvcmsgb3IgYSByb2FkbWFwIGZvciBETUEKPiA+
-ID4gc3RyZWFtaW5nL3BpcGVsaW5pbmcgaW4gdGhlIEhDSSBkcml2ZXI/Cj4gPiA+IDIuIElzIGEg
-Z2VuZXJpYyBkbWEgc3RyZWFtaW5nIG1lY2hhbmlzbSBmb3IgbGFyZ2UgdHJhbnNmZXJzIHNvbWV0
-aGluZwo+ID4gPiB5b3Ugd291bGQgYmUgaW50ZXJlc3RlZCBpbiBzZWVpbmcgYXMgYSBjb250cmli
-dXRpb24gdG8gdGhlIG1haW5saW5lCj4gPiA+IGRyaXZlcj8KPiA+Cj4gPiBVc2JcbmV0d29ya1xz
-dG9yYWdlIGlzIGFzeW5jLiBUaGUgSTNDJ3MgZnJhbWV3b3JrIGlzIHN5bmMuCj4gPgo+Cj4gSSB0
-aGluayBJIG1hZGUgdGhpcyBzb3VuZCBsaWtlIGFuIGFzeW5jaHJvbm91cyBvcGVyYXRpb24gd2hl
-cmUgd2UKPiByZXR1cm4gYmVmb3JlIGZpbmlzaGluZyBhbGwKPiB0cmFuc2FjdGlvbnM7IHRoZSBk
-cml2ZXIgd291bGQgc3RpbGwgYmUgc3luY2hyb25vdXMgaW4gdGhpcyBjYXNlLgo+Cj4gPiA+Cj4g
-PiA+IEN1cnJlbnRseSwgbXkgcHJvb2Ytb2YtY29uY2VwdCBoYW5kbGVzIHRoZSBwaXBlbGluaW5n
-IGF0IHRoZSBjb3JlCj4gPiA+IHRyYW5zZmVyIGxldmVsLCBidXQgSQo+ID4KPiA+IENhbiB5b3Ug
-c2VuZCB5b3VyIHBhdGNoIGFzIFJGQyB0byBjaGVjayB3aGF0IHlvdSBhbHJlYWR5IGRpZD8KPiA+
-Cj4KPiBZZXMsIGJlbG93IGlzIGEgaW1wbGVtZW50YXRpb24gb2YgdGhlIHN0cmVhbWluZyBsb2dp
-Ywo+IGltcGxlbWVudGVkIGluIGNvcmUuYy4KPgo+IEkgaW5pdGlhbGx5IGNvbnNpZGVyZWQgbW92
-aW5nIHRoaXMgaW50byBkbWEuYyB0byBzdXBwb3J0IG11bHRpcGxlIFJpbmcKPiBCdW5kbGVzLiBI
-b3dldmVyLCBiZWNhdXNlIGRtYS5jIGV4cGVjdHMgcHJlLXRyYW5zbGF0ZWQgaGNpX3hmZXIgc3Ry
-dWN0cywKPiBtb3ZpbmcgdGhlIGxvZ2ljIHRoZXJlIHdvdWxkIHJlcXVpcmUgY29yZS5jIHRvIGFs
-bG9jYXRlIHRoZQo+IGVudGlyZSB0cmFuc2ZlciBhcnJheSB1cGZyb250IChlLmcuLCBhIG1hc3Np
-dmUga21hbGxvYyBmb3IgNTAwKyBzdHJ1Y3RzCj4gb3IgaG93ZXZlciBiaWcgdGhlIHRyYW5zZmVy
-cyBlbmQgdXAgYmVpbmcpLiBUaGlzIGxlYWRzIHRvIGhlYXAgZXhoYXVzdGlvbiBhbmQKPiAiU2xl
-ZXAgd2hpbGUgQXRvbWljIiBjcmFzaGVzIGlmIGFuIElCSSB0cmlnZ2VycyBhIHJlYWRiYWNrCj4g
-Y29uY3VycmVudGx5LiBCeSBrZWVwaW5nCj4gdGhlIHNsaWRpbmcgd2luZG93IGluIGNvcmUuYywg
-d2UgY2FuIHJldXNlIGEgc2luZ2xlLCBwcmUtYWxsb2NhdGVkIDI1NS1lbnRyeQo+IGhjaV94ZmVy
-IGFycmF5Lgo+Cj4KPiBTaWduZWQtb2ZmLWJ5OiBTYW0gQWdhemFyeWFuIDxzYW1hZ2F6YXJ5YW5A
-Z29vZ2xlLmNvbT4KPiAtLS0KPiBkcml2ZXJzL2kzYy9tYXN0ZXIvbWlwaS1pM2MtaGNpL2NvcmUu
-YyB8IDEzMyArKysrKysrKysrKysrKysrKysrLS0tLS0tCj4gZHJpdmVycy9pM2MvbWFzdGVyL21p
-cGktaTNjLWhjaS9kbWEuYyB8IDEgLQo+IGRyaXZlcnMvaTNjL21hc3Rlci9taXBpLWkzYy1oY2kv
-aGNpLmggfCA2ICsrCj4gMyBmaWxlcyBjaGFuZ2VkLCAxMDYgaW5zZXJ0aW9ucygrKSwgMzQgZGVs
-ZXRpb25zKC0pCj4KPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9pM2MvbWFzdGVyL21pcGktaTNjLWhj
-aS9jb3JlLmMKPiBiL2RyaXZlcnMvaTNjL21hc3Rlci9taXBpLWkzYy1oY2kvY29yZS5jCj4gaW5k
-ZXggYjc4MWRiZWQyMTY1Li43N2UwNDU4NTE1MGIgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9pM2Mv
-bWFzdGVyL21pcGktaTNjLWhjaS9jb3JlLmMKPiArKysgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvbWlw
-aS1pM2MtaGNpL2NvcmUuYwo+IEBAIC0yOTAsOSArMjkwLDEyIEBAIHN0YXRpYyBpbnQgaTNjX2hj
-aV9zZW5kX2NjY19jbWQoc3RydWN0Cj4gaTNjX21hc3Rlcl9jb250cm9sbGVyICptLAo+IGRldl9k
-YmcoJmhjaS0+bWFzdGVyLmRldiwgImNtZD0lI3ggcm53PSVkIG5kZXN0cz0lZCBkYXRhWzBdLmxl
-bj0lZCIsCj4gY2NjLT5pZCwgY2NjLT5ybncsIGNjYy0+bmRlc3RzLCBjY2MtPmRlc3RzWzBdLnBh
-eWxvYWQubGVuKTsKPiArIG11dGV4X2xvY2soJmhjaS0+eGZlcl9sb2NrKTsKPiB4ZmVyID0gaGNp
-X2FsbG9jX3hmZXIobnhmZXJzKTsKPiAtIGlmICgheGZlcikKPiArIGlmICgheGZlcikgewo+ICsg
-bXV0ZXhfdW5sb2NrKCZoY2ktPnhmZXJfbG9jayk7Cj4gcmV0dXJuIC1FTk9NRU07Cj4gKyB9Cj4g
-aWYgKHByZWZpeGVkKSB7Cj4geGZlci0+ZGF0YSA9IE5VTEw7Cj4gQEAgLTM0Niw2ICszNDksNyBA
-QCBzdGF0aWMgaW50IGkzY19oY2lfc2VuZF9jY2NfY21kKHN0cnVjdAo+IGkzY19tYXN0ZXJfY29u
-dHJvbGxlciAqbSwKPiBjY2MtPmRlc3RzWzBdLnBheWxvYWQubGVuLCBjY2MtPmRlc3RzWzBdLnBh
-eWxvYWQuZGF0YSk7Cj4gb3V0Ogo+ICsgbXV0ZXhfdW5sb2NrKCZoY2ktPnhmZXJfbG9jayk7Cj4g
-aGNpX2ZyZWVfeGZlcih4ZmVyLCBueGZlcnMpOwo+IHJldHVybiByZXQ7Cj4gfQo+IEBAIC0zNjMs
-NTMgKzM2NywxMDAgQEAgc3RhdGljIGludCBpM2NfaGNpX2kzY194ZmVycyhzdHJ1Y3QgaTNjX2Rl
-dl9kZXNjICpkZXYsCj4gewo+IHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIgKm0gPSBpM2Nf
-ZGV2X2dldF9tYXN0ZXIoZGV2KTsKPiBzdHJ1Y3QgaTNjX2hjaSAqaGNpID0gdG9faTNjX2hjaSht
-KTsKPiAtIHN0cnVjdCBoY2lfeGZlciAqeGZlcjsKPiAtIERFQ0xBUkVfQ09NUExFVElPTl9PTlNU
-QUNLKGRvbmUpOwo+ICsgc3RydWN0IGhjaV94ZmVyICp4ZmVyID0gaGNpLT54ZmVyX3Jpbmc7Cj4g
-dW5zaWduZWQgaW50IHNpemVfbGltaXQ7Cj4gLSBpbnQgaSwgbGFzdCwgcmV0ID0gMDsKPiArIGlu
-dCBpLCByZXQgPSAwOwo+ICsgaW50IHByb2Nlc3NlZCA9IDA7Cj4gKyBpbnQgcXVldWVkID0gMDsK
-PiArIGludCByaW5nX3NpemUgPSBYRkVSX1JJTkdfRU5UUklFUzsKPiArIGludCBjaHVua19saW1p
-dCA9IChyaW5nX3NpemUgLSAxKSAvIDI7Cj4gKyBpbnQgc3dfcmluZ19zaXplID0gY2h1bmtfbGlt
-aXQgKiAyOwo+IGRldl9kYmcoJmhjaS0+bWFzdGVyLmRldiwgIm54ZmVycyA9ICVkIiwgbnhmZXJz
-KTsKPiAtIHhmZXIgPSBoY2lfYWxsb2NfeGZlcihueGZlcnMpOwo+IGlmICgheGZlcikKPiAtIHJl
-dHVybiAtRU5PTUVNOwo+ICsgcmV0dXJuIC1FTk9ERVY7Cj4gKwo+ICsgbXV0ZXhfbG9jaygmaGNp
-LT54ZmVyX2xvY2spOwo+ICsgcmVpbml0X2NvbXBsZXRpb24oJmhjaS0+eGZlcl9kb25lKTsKPiBz
-aXplX2xpbWl0ID0gMVUgPDwgKDE2ICsgRklFTERfR0VUKEhDX0NBUF9NQVhfREFUQV9MRU5HVEgs
-IGhjaS0+Y2FwcykpOwo+IC0gZm9yIChpID0gMDsgaSA8IG54ZmVyczsgaSsrKSB7Cj4gLSB4ZmVy
-W2ldLmRhdGFfbGVuID0gaTNjX3hmZXJzW2ldLmxlbjsKPiAtIHJldCA9IC1FRkJJRzsKPiAtIGlm
-ICh4ZmVyW2ldLmRhdGFfbGVuID49IHNpemVfbGltaXQpCj4gLSBnb3RvIG91dDsKPiAtIHhmZXJb
-aV0ucm53ID0gaTNjX3hmZXJzW2ldLnJudzsKPiAtIGlmIChpM2NfeGZlcnNbaV0ucm53KSB7Cj4g
-LSB4ZmVyW2ldLmRhdGEgPSBpM2NfeGZlcnNbaV0uZGF0YS5pbjsKPiAtIH0gZWxzZSB7Cj4gLSAv
-KiBzaWxlbmNlIHRoZSBjb25zdCBxdWFsaWZpZXIgd2FybmluZyB3aXRoIGEgY2FzdCAqLwo+IC0g
-eGZlcltpXS5kYXRhID0gKHZvaWQgKikgaTNjX3hmZXJzW2ldLmRhdGEub3V0Owo+ICsgLyogMS4g
-UHJpbWUgdGhlIHJpbmcgKi8KPiArIHdoaWxlIChxdWV1ZWQgPCBueGZlcnMgJiYgKHF1ZXVlZCAt
-IHByb2Nlc3NlZCkgPCBzd19yaW5nX3NpemUpIHsKPiArIGludCBuID0gbWluKG54ZmVycyAtIHF1
-ZXVlZCwgY2h1bmtfbGltaXQpOwo+ICsgc3RydWN0IGhjaV94ZmVyICpjaHVua19zdGFydCA9IHhm
-ZXIgKyAocXVldWVkICUgc3dfcmluZ19zaXplKTsKPiArCj4gKyBmb3IgKGkgPSAwOyBpIDwgbjsg
-aSsrKSB7Cj4gKyBpbnQgaWR4ID0gcXVldWVkICsgaTsKPiArIGNodW5rX3N0YXJ0W2ldLmRhdGFf
-bGVuID0gaTNjX3hmZXJzW2lkeF0ubGVuOwo+ICsgY2h1bmtfc3RhcnRbaV0ucm53ID0gaTNjX3hm
-ZXJzW2lkeF0ucm53Owo+ICsgY2h1bmtfc3RhcnRbaV0uZGF0YSA9IGkzY194ZmVyc1tpZHhdLnJu
-dyA/Cj4gKyBpM2NfeGZlcnNbaWR4XS5kYXRhLmluIDoKPiArICh2b2lkICopaTNjX3hmZXJzW2lk
-eF0uZGF0YS5vdXQ7Cj4gKyBoY2ktPmNtZC0+cHJlcF9pM2NfeGZlcihoY2ksIGRldiwgJmNodW5r
-X3N0YXJ0W2ldKTsKPiArIGNodW5rX3N0YXJ0W2ldLmNtZF9kZXNjWzBdIHw9IENNRF8wX1JPQzsK
-PiArIGNodW5rX3N0YXJ0W2ldLmNvbXBsZXRpb24gPSBOVUxMOwo+IH0KPiAtIGhjaS0+Y21kLT5w
-cmVwX2kzY194ZmVyKGhjaSwgZGV2LCAmeGZlcltpXSk7Cj4gLSB4ZmVyW2ldLmNtZF9kZXNjWzBd
-IHw9IENNRF8wX1JPQzsKPiArIGNodW5rX3N0YXJ0W24gLSAxXS5jbWRfZGVzY1swXSB8PSBDTURf
-MF9UT0M7Cj4gKyBjaHVua19zdGFydFtuIC0gMV0uY29tcGxldGlvbiA9ICZoY2ktPnhmZXJfZG9u
-ZTsKPiArCj4gKyByZXQgPSBoY2ktPmlvLT5xdWV1ZV94ZmVyKGhjaSwgY2h1bmtfc3RhcnQsIG4p
-Owo+ICsgaWYgKHJldCkKPiArIGdvdG8gb3V0Owo+ICsgcXVldWVkICs9IG47Cj4gfQo+IC0gbGFz
-dCA9IGkgLSAxOwo+IC0geGZlcltsYXN0XS5jbWRfZGVzY1swXSB8PSBDTURfMF9UT0M7Cj4gLSB4
-ZmVyW2xhc3RdLmNvbXBsZXRpb24gPSAmZG9uZTsKPiAtIHhmZXJbbGFzdF0udGltZW91dCA9IEha
-Owo+IC0gcmV0ID0gaTNjX2hjaV9wcm9jZXNzX3hmZXIoaGNpLCB4ZmVyLCBueGZlcnMpOwo+IC0g
-aWYgKHJldCkKPiAtIGdvdG8gb3V0Owo+IC0gZm9yIChpID0gMDsgaSA8IG54ZmVyczsgaSsrKSB7
-Cj4gLSBpZiAoaTNjX3hmZXJzW2ldLnJudykKPiAtIGkzY194ZmVyc1tpXS5sZW4gPSBSRVNQX0RB
-VEFfTEVOR1RIKHhmZXJbaV0ucmVzcG9uc2UpOwo+IC0gaWYgKFJFU1BfU1RBVFVTKHhmZXJbaV0u
-cmVzcG9uc2UpICE9IFJFU1BfU1VDQ0VTUykgewo+IC0gcmV0ID0gLUVJTzsKPiArIC8qIDIuIFNs
-aWRpbmcgV2luZG93IExvb3AgKENvdW50aW5nIFNlbWFwaG9yZSkgKi8KPiArIHdoaWxlIChwcm9j
-ZXNzZWQgPCBueGZlcnMpIHsKPiArIGlmICghd2FpdF9mb3JfY29tcGxldGlvbl90aW1lb3V0KCZo
-Y2ktPnhmZXJfZG9uZSwgSFopKSB7Cj4gKyBoY2ktPmlvLT5kZXF1ZXVlX3hmZXIoaGNpLCB4ZmVy
-LCByaW5nX3NpemUpOwo+ICsgcmV0ID0gLUVUSU1FOwo+IGdvdG8gb3V0Owo+IH0KPiArCj4gKyBp
-bnQgbl9kb25lID0gbWluKG54ZmVycyAtIHByb2Nlc3NlZCwgY2h1bmtfbGltaXQpOwo+ICsgc3Ry
-dWN0IGhjaV94ZmVyICpkb25lX2NodW5rID0geGZlciArIChwcm9jZXNzZWQgJSBzd19yaW5nX3Np
-emUpOwo+ICsKPiArIGZvciAoaSA9IDA7IGkgPCBuX2RvbmU7IGkrKykgewo+ICsgaW50IGlkeCA9
-IHByb2Nlc3NlZCArIGk7Cj4gKyBpZiAoaTNjX3hmZXJzW2lkeF0ucm53KQo+ICsgaTNjX3hmZXJz
-W2lkeF0ubGVuID0gUkVTUF9EQVRBX0xFTkdUSChkb25lX2NodW5rW2ldLnJlc3BvbnNlKTsKPiAr
-IGlmIChSRVNQX1NUQVRVUyhkb25lX2NodW5rW2ldLnJlc3BvbnNlKSAhPSBSRVNQX1NVQ0NFU1Mp
-IHsKPiArIHJldCA9IC1FSU87Cj4gKyBnb3RvIG91dDsKPiArIH0KPiArIH0KPiArIHByb2Nlc3Nl
-ZCArPSBuX2RvbmU7Cj4gKwo+ICsgLyogMy4gUmVmaWxsIHRoZSByaW5nICovCj4gKyBpZiAocXVl
-dWVkIDwgbnhmZXJzKSB7Cj4gKyBpbnQgbl9uZXh0ID0gbWluKG54ZmVycyAtIHF1ZXVlZCwgY2h1
-bmtfbGltaXQpOwo+ICsgc3RydWN0IGhjaV94ZmVyICpuZXh0X2NodW5rID0geGZlciArIChxdWV1
-ZWQgJSBzd19yaW5nX3NpemUpOwo+ICsKPiArIGZvciAoaSA9IDA7IGkgPCBuX25leHQ7IGkrKykg
-ewo+ICsgaW50IGlkeCA9IHF1ZXVlZCArIGk7Cj4gKyBuZXh0X2NodW5rW2ldLmRhdGFfbGVuID0g
-aTNjX3hmZXJzW2lkeF0ubGVuOwo+ICsgbmV4dF9jaHVua1tpXS5ybncgPSBpM2NfeGZlcnNbaWR4
-XS5ybnc7Cj4gKyBuZXh0X2NodW5rW2ldLmRhdGEgPSBpM2NfeGZlcnNbaWR4XS5ybncgPwo+ICsg
-aTNjX3hmZXJzW2lkeF0uZGF0YS5pbiA6Cj4gKyAodm9pZCAqKWkzY194ZmVyc1tpZHhdLmRhdGEu
-b3V0Owo+ICsgaGNpLT5jbWQtPnByZXBfaTNjX3hmZXIoaGNpLCBkZXYsICZuZXh0X2NodW5rW2ld
-KTsKPiArIG5leHRfY2h1bmtbaV0uY21kX2Rlc2NbMF0gfD0gQ01EXzBfUk9DOwo+ICsgbmV4dF9j
-aHVua1tpXS5jb21wbGV0aW9uID0gTlVMTDsKPiArIH0KPiArIG5leHRfY2h1bmtbbl9uZXh0IC0g
-MV0uY21kX2Rlc2NbMF0gfD0gQ01EXzBfVE9DOwo+ICsgbmV4dF9jaHVua1tuX25leHQgLSAxXS5j
-b21wbGV0aW9uID0gJmhjaS0+eGZlcl9kb25lOwo+ICsKPiArIHJldCA9IGhjaS0+aW8tPnF1ZXVl
-X3hmZXIoaGNpLCBuZXh0X2NodW5rLCBuX25leHQpOwo+ICsgaWYgKHJldCkKPiArIGdvdG8gb3V0
-Owo+ICsgcXVldWVkICs9IG5fbmV4dDsKPiArIH0KPiB9Cj4gb3V0Ogo+IC0gaGNpX2ZyZWVfeGZl
-cih4ZmVyLCBueGZlcnMpOwo+ICsgbXV0ZXhfdW5sb2NrKCZoY2ktPnhmZXJfbG9jayk7Cj4gcmV0
-dXJuIHJldDsKPiB9Cj4gQEAgLTQyNCw5ICs0NzUsMTIgQEAgc3RhdGljIGludCBpM2NfaGNpX2ky
-Y194ZmVycyhzdHJ1Y3QgaTJjX2Rldl9kZXNjICpkZXYsCj4gZGV2X2RiZygmaGNpLT5tYXN0ZXIu
-ZGV2LCAibnhmZXJzID0gJWQiLCBueGZlcnMpOwo+ICsgbXV0ZXhfbG9jaygmaGNpLT54ZmVyX2xv
-Y2spOwo+IHhmZXIgPSBoY2lfYWxsb2NfeGZlcihueGZlcnMpOwo+IC0gaWYgKCF4ZmVyKQo+ICsg
-aWYgKCF4ZmVyKSB7Cj4gKyBtdXRleF91bmxvY2soJmhjaS0+eGZlcl9sb2NrKTsKPiByZXR1cm4g
-LUVOT01FTTsKPiArIH0KPiBmb3IgKGkgPSAwOyBpIDwgbnhmZXJzOyBpKyspIHsKPiB4ZmVyW2ld
-LmRhdGEgPSBpMmNfeGZlcnNbaV0uYnVmOwo+IEBAIC00NTEsNiArNTA1LDcgQEAgc3RhdGljIGlu
-dCBpM2NfaGNpX2kyY194ZmVycyhzdHJ1Y3QgaTJjX2Rldl9kZXNjICpkZXYsCj4gfQo+IG91dDoK
-PiArIG11dGV4X3VubG9jaygmaGNpLT54ZmVyX2xvY2spOwo+IGhjaV9mcmVlX3hmZXIoeGZlciwg
-bnhmZXJzKTsKPiByZXR1cm4gcmV0Owo+IH0KPiBAQCAtMTAxOSw2ICsxMDc0LDE4IEBAIHN0YXRp
-YyBpbnQgaTNjX2hjaV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+IGlmICho
-Y2ktPnF1aXJrcyAmIEhDSV9RVUlSS19SUE1fSUJJX0FMTE9XRUQpCj4gaGNpLT5tYXN0ZXIucnBt
-X2liaV9hbGxvd2VkID0gdHJ1ZTsKPiArIC8qIFByZS1hbGxvY2F0ZSByaW5nIGZvciBoaWdoLXRo
-cm91Z2hwdXQgc2xpZGluZyB3aW5kb3cgdHJhbnNmZXJzICovCj4gKwo+ICsgaGNpLT54ZmVyX3Jp
-bmcgPSBkZXZtX2tjYWxsb2MoJnBkZXYtPmRldiwgWEZFUl9SSU5HX0VOVFJJRVMsCj4gc2l6ZW9m
-KHN0cnVjdCBoY2lfeGZlciksIEdGUF9LRVJORUwpOwo+ICsKPiArIGlmICghaGNpLT54ZmVyX3Jp
-bmcpCj4gKwo+ICsgcmV0dXJuIC1FTk9NRU07Cj4gKwo+ICsgaW5pdF9jb21wbGV0aW9uKCZoY2kt
-PnhmZXJfZG9uZSk7Cj4gKwo+ICsgbXV0ZXhfaW5pdCgmaGNpLT54ZmVyX2xvY2spOwo+ICsKPiBy
-ZXR1cm4gaTNjX21hc3Rlcl9yZWdpc3RlcigmaGNpLT5tYXN0ZXIsICZwZGV2LT5kZXYsICZpM2Nf
-aGNpX29wcywgZmFsc2UpOwo+IH0KPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9pM2MvbWFzdGVyL21p
-cGktaTNjLWhjaS9kbWEuYwo+IGIvZHJpdmVycy9pM2MvbWFzdGVyL21pcGktaTNjLWhjaS9kbWEu
-Ywo+IGluZGV4IGU0ZGFhYTYxMjA1NS4uMmNmZDZmZjI1MDQwIDEwMDY0NAo+IC0tLSBhL2RyaXZl
-cnMvaTNjL21hc3Rlci9taXBpLWkzYy1oY2kvZG1hLmMKPiArKysgYi9kcml2ZXJzL2kzYy9tYXN0
-ZXIvbWlwaS1pM2MtaGNpL2RtYS5jCj4gQEAgLTI2LDcgKzI2LDYgQEAKPiAqLwo+ICNkZWZpbmUg
-WEZFUl9SSU5HUyAxIC8qIG1heDogOCAqLwo+IC0jZGVmaW5lIFhGRVJfUklOR19FTlRSSUVTIDE2
-IC8qIG1heDogMjU1ICovCj4gI2RlZmluZSBJQklfUklOR1MgMSAvKiBtYXg6IDggKi8KPiAjZGVm
-aW5lIElCSV9TVEFUVVNfUklOR19FTlRSSUVTIDMyIC8qIG1heDogMjU1ICovCj4gZGlmZiAtLWdp
-dCBhL2RyaXZlcnMvaTNjL21hc3Rlci9taXBpLWkzYy1oY2kvaGNpLmgKPiBiL2RyaXZlcnMvaTNj
-L21hc3Rlci9taXBpLWkzYy1oY2kvaGNpLmgKPiBpbmRleCBmMTdmNDM0OTRjMWIuLmM2YzhlYWJi
-Y2JhOCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2kzYy9tYXN0ZXIvbWlwaS1pM2MtaGNpL2hjaS5o
-Cj4gKysrIGIvZHJpdmVycy9pM2MvbWFzdGVyL21pcGktaTNjLWhjaS9oY2kuaAo+IEBAIC0zNyw2
-ICszNyw4IEBAIHN0cnVjdCBkYXRfd29yZHMgewo+IH07Cj4gLyogT3VyIG1haW4gc3RydWN0dXJl
-ICovCj4gKyNkZWZpbmUgWEZFUl9SSU5HX0VOVFJJRVMgMjU1IC8qIG1heDogMjU1ICovCj4gKwo+
-IHN0cnVjdCBpM2NfaGNpIHsKPiBzdHJ1Y3QgaTNjX21hc3Rlcl9jb250cm9sbGVyIG1hc3RlcjsK
-PiB2b2lkIF9faW9tZW0gKmJhc2VfcmVnczsKPiBAQCAtNzAsNiArNzIsMTAgQEAgc3RydWN0IGkz
-Y19oY2kgewo+IHUzMiB2ZW5kb3JfdmVyc2lvbl9pZDsKPiB1MzIgdmVuZG9yX3Byb2R1Y3RfaWQ7
-Cj4gdm9pZCAqdmVuZG9yX2RhdGE7Cj4gKyAvKiBIaWdoLXRocm91Z2hwdXQgc2xpZGluZyB3aW5k
-b3cgc3VwcG9ydCAqLwo+ICsgc3RydWN0IGhjaV94ZmVyICp4ZmVyX3Jpbmc7Cj4gKyBzdHJ1Y3Qg
-Y29tcGxldGlvbiB4ZmVyX2RvbmU7Cj4gKyBzdHJ1Y3QgbXV0ZXggeGZlcl9sb2NrOwo+IH07Cj4g
-LyoKPiAtLQo+Cj4gLS0KPiBsaW51eC1pM2MgbWFpbGluZyBsaXN0Cj4gbGludXgtaTNjQGxpc3Rz
-LmluZnJhZGVhZC5vcmcKPiBodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LWkzYwoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1pM2MK
+On Wed, Jun 03, 2026 at 05:23:06PM +0300, Claudiu Beznea wrote:
+> Hi, Frank, I3C maintainers,
+>
+> I've inlined the sashiko comments here to discuss them:
+>
+> On 6/2/26 23:12, Frank Li wrote:
+> > On Tue, Jun 02, 2026 at 04:28:13PM +0300, Claudiu Beznea wrote:
+> > > From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+> > >
+> > > The Renesas RZ/G3S SoC supports a power saving mode where power to most
+> > > SoC components, including I3C, is turned off.
+> > >
+> > > On systems where the I3C devices also loses power during suspend (e.g. NXP
+> > > P3T1085UK-ARD connected to the PMOD1_6A connector of the RZ SMARC Carrier
+> > > 2 + Renesas RZ/G3S SMARC SOM), the devices becomes unreachable after
+> > > resume.
+> > >
+> > > Running DAA in the controller resume path restores communication. However,
+> > > DAA relies on interrupts for TX/RX, which are not available in the noirq
+> > > suspend/resume phase (unless they are wakeup interrupts). For this, the
+> > > suspend/resume callbacks were moved out of the noirq phase. Currently,
+> > > there is no identified use case on either the Renesas RZ/G3S or Renesas
+> > > RZ/G3E SoCs that requires the controller suspend/resume hooks to be part of
+> > > the noirq suspend/resume phase.
+> > >
+> > > Since renesas_i3c_reset() is not called anymore in atomic context
+> > > update it to use read_poll_timeout().
+> > >
+> > > To cover the case where the controller had already attached all the
+> > > i3c->maxdevs devices before a suspend/resume cycle and i3c->free_pos is
+> > > zero, struct renesas_i3c::resuming flag was introduced.
+> > >
+> > > The flag is set in renesas_i3c_resume() before calling
+> > > i3c_master_do_daa_ext() and checked in renesas_i3c_daa(). In case it is
+> > > set the previous saved DATBAS register values are used for the slots
+> > > already occupied before suspend. This allows keeping alive the connection
+> > > to the I3C devices when all the supported slots are occupied before
+> > > suspend.
+> > >
+> > > When resuming from suspend, renesas_i3c_daa() re-runs DAA for al
+> > > slots except those used by I2C devices. I2C devices are attached during
+> > > probe, at bus initialization time, and always occupy the first positions in
+> > > i3c->free_pos. In addition, there are no DATBAS register settings
+> > > associated with them.
+> > >
+> > > Fixes: e7218986319b ("i3c: renesas: Add suspend/resume support")
+> > > Cc: stable@vger.kernel.org
+> > > Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+> > > ---
+> >
+> > Please check sashiko review result
+> >
+> > https://sashiko.dev/#/patchset/20260602132824.3541151-1-claudiu.beznea%40kernel.org
+> >
+> >commit 6783acf82418dd115df661f4dc9d5758f653b084
+> >Author: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+> >Date:   Tue Jun 2 13:28:13 2026 +0000
+> >    i3c: renesas: Perform Dynamic Address Assignment on resume
+> >    The Renesas RZ/G3S SoC supports a power saving mode where power to most
+> >    SoC components, including I3C, is turned off.
+> >
+> >    On systems where the I3C devices also loses power during suspend (e.g. NXP
+> >    P3T1085UK-ARD connected to the PMOD1_6A connector of the RZ SMARC Carrier
+> >    2 + Renesas RZ/G3S SMARC SOM), the devices becomes unreachable after
+> >    resume.
+> >
+> >    Running DAA in the controller resume path restores communication. However,
+> >    DAA relies on interrupts for TX/RX, which are not available in the noirq
+> >    suspend/resume phase (unless they are wakeup interrupts). For this, the
+> >    suspend/resume callbacks were moved out of the noirq phase. Currently,
+> >    there is no identified use case on either the Renesas RZ/G3S or Renesas
+> >    RZ/G3E SoCs that requires the controller suspend/resume hooks to be part of
+> >    the noirq suspend/resume phase.
+> >    Fixes: e7218986319b ("i3c: renesas: Add suspend/resume support")
+> >    Cc: stable@vger.kernel.org
+> >> --- a/drivers/i3c/master/renesas-i3c.c
+> >> +++ b/drivers/i3c/master/renesas-i3c.c
+> >[ ... ]
+> >> @@ -657,14 +664,33 @@ static int renesas_i3c_daa(struct
+> i3c_master_controller *m)
+> >>
+> >>      /* Setting DATBASn registers for target devices. */
+> >>      for (pos = 0; pos < i3c->maxdevs; pos++) {
+> >> -            if (olddevs & BIT(pos))
+> >> +            if (olddevs & BIT(pos)) {
+> >> +                    /*
+> >> +                     * In case of resume, reassign DAs for all devices on the
+> >> +                     * bus to avoid failures when all i3c->maxdevs slots were
+> >> +                     * already occupied before suspend.
+> >> +                     *
+> >> +                     * Exclude I2C devices, as they are attached during probe,
+> >> +                     * at bus initialization time, and there are currently no
+> >> +                     * register updates associated with them.
+> >> +                     */
+> >> +                    if (i3c->resuming) {
+> >> +                            if (i3c->addrs[pos].is_i2c) {
+> >> +                                    last_i2c_pos = pos;
+> >> +                            } else {
+> >> +                                    renesas_writel(i3c->regs, DATBAS(pos),
+> >> +                                                   i3c->DATBASn[pos]);
+> >> +                            }
+> >> +                    }
+> >Does restoring these blindly from the saved state cement addresses for future
+> >ENTDAA, bypassing normal device assignment?
+> >If a device is removed, hot-plugged, or wakes up slowly, couldn't a different
+> >device win arbitration and be assigned an address from an unrelated DATBASn
+> >slot?
+>
+> Currently, the driver don't support hot-plug.
+>
+> I presumed the remove in suspend is not actually a valid use-case, but with
+> this scenario, if that happens, the device still remains attached in the
+> software data structures. After this sequence:
+> 1/ suspend
+> 2/ disconnect an I3C device
+> 3/ resume
+> 4/ suspend
+> 5/ re-connect the I3C devices
+> 6/ resume
+>
+> the reconnected I3C device works again after step 6 (according to my testing).
+>
+> Waking up may happen slowly, indeed. So, I presume this is a valid use case.
+>
+> Now, I have few question (if my I3C understanding is right):
+>
+> I noticed none of the I3C drivers are taking care of the use case where the
+> bus is fully populated after resume (and we are after a resume with power
+> lost, for both the controller and the devices). That looks a bit tricky
+> scenario to cover, to be honest, as all the drivers check for a free slot in
+> ->attach_i3c_dev(), and, for a fully populated bus, that will not update the
+> newly assigned addresses in the subsystem data structure.
+>
+> If the ->attach_i3c_dev() called though the i3c_master_add_i3c_dev_locked()
+> fails then nothing is continued so, the device address changes are not
+> propagated in all the software data structures.
+>
+> In case we re-use the DATBAS() register values as proposed in this patch, we
+> have the changes that the driver software data caches (i3c->addrs[].addr)
+> and the subsystem I3C devices addresses to match. But, that may not be true
+> all the time.
+>
+> If we re-assign new addresses to i3c->addrs[].addr in the DAA API, then
+> write those values to DATBAS() registers, but the bus is fully populated, or
+> no new devices are discovered as the indices remains the same, then, since
+> we execute i3c_master_add_i3c_dev_locked() only for the newly attached
+> devices, then the subsystem and the driver addresses don't match anymore. I
+> couldn't found a global API similar to i3c_master_add_i3c_dev_locked() to
+> work for removing devices and re-attaching at resume, for such scenario. I'm
+> not sure that's good to do, though. If we call
+> i3c_master_add_i3c_dev_locked() unconditionally, then it will still not work
+> on a full previously occupied bus.
+>
+> If I'm not wrong with all these, could you please let me know how would you
+> consider covering this scenario? This is what I've tried to address with the
+> approach in this patch. I currently don't have a testing setup for this, I
+> only simulated it by setting i3c->free_pos = 0 before calling
+> i3c_master_do_daa_ext().
+>
+> Would the usage of i3c_device_do_setdasa() being called from a master driver
+> be something acceptable? Though, I currently haven't played around with it.
+>
+> As I don't have a real setup to test this, would it be OK to restore the
+> approach in this patch as proposed in v1?
+
+This case is quite complex, and many people try to resolve simialar
+problems, you may want to reattach device because controller lost state.
+
+hub have similar requirement, which need reattach devices.
+
+https://lore.kernel.org/linux-i3c/20260525064209.2263045-1-lakshay.piplani@nxp.com/T/#ma99fa92cb3aac770995350e0fc22c144b974a038
+
+controller lost state, but may i3c devices still alive and they dynamtic
+address during suspend. Does reattach to the old address help your case?
+
+Frank
+
+
+>
+> Please let me know. Thank you!
+>
+> >> +
+> >>                      continue;
+> >> +            }
+> >>
+> >>              ret = i3c_master_get_free_addr(m, last_addr + 1);
+> >[ ... ]
+> >> @@ -674,9 +700,21 @@ static int renesas_i3c_daa(struct i3c_master_controller *m)
+> >>      cmd = xfer->cmds;
+> >>      cmd->rx_count = 0;
+> >>
+> >> -    ret = renesas_i3c_get_free_pos(i3c);
+> >> -    if (ret < 0)
+> >> -            return ret;
+> >> +    if (i3c->resuming) {
+> >> +            /* Nothing to do if all slots are ocupied by I2C devices. */
+> >> +            if (last_i2c_pos == i3c->maxdevs - 1)
+> >> +                    return 0;
+> >> +
+> >> +            /*
+> >> +             * Do DAA for all the devices on the bus, if resuming, except
+> >> +             * the I2C ones.
+> >> +             */
+> >> +            ret = last_i2c_pos < 0 ? 0 : last_i2c_pos + 1;
+> >Does this incorrectly assume that all I2C devices occupy contiguous slots at
+> >the beginning of the device array?
+>
+> I wasn't aware of the notifier used to add I2C devices to the bus.
+>
+> >If an I2C device is attached dynamically at a higher slot while lower slots
+> >are occupied by I3C devices, will DAA start at a higher index, skipping the
+> >lower I3C devices? The hardware would assign new addresses from the higher
+> >offset, duplicating devices and breaking communication.
+> >> +    } else {
+> >> +            ret = renesas_i3c_get_free_pos(i3c);
+> >> +            if (ret < 0)
+> >> +                    return ret;
+> >> +    }
+> >>
+> >>      /*
+> >>       * Setup the command descriptor to start the ENTDAA command
+> >> @@ -694,7 +732,7 @@ static int renesas_i3c_daa(struct i3c_master_controller *m)
+> >>
+> >>      for (pos = 0; pos < i3c->maxdevs; pos++) {
+> >>              if (newdevs & BIT(pos))
+> >> -                    i3c_master_add_i3c_dev_locked(m, i3c->addrs[pos]);
+> >> +                    i3c_master_add_i3c_dev_locked(m, i3c->addrs[pos].addr);
+> >>      }
+> >Since olddevs are masked out from newdevs prior to this loop in renesas_i3c_daa
+> >(newdevs &= ~olddevs), is the I3C framework prevented from being notified of
+> >shifted dynamic addresses landing in previously occupied slots?
+> >Because i3c_master_add_i3c_dev_locked() is never called for these, the
+> >framework could remain unaware of identity shifts and continue communicating
+> >with devices using mismatched PIDs, risking data corruption.
+>
+> That is a previously existing problem that may happen. However, I am not
+> sure how we should deal with the case when this is called after resume, on a
+> fully populated bus.
+>
+> Frank, I3C maintainers, should we cover this case for now? Do you have some
+> hints on how to go forward with it?
+>
+> >[ ... ]
+> >> @@ -1435,7 +1475,7 @@ static void renesas_i3c_remove(struct
+> platform_device *pdev)
+> >>      i3c_master_unregister(&i3c->base);
+> >>  }
+> >>
+> >> -static int renesas_i3c_suspend_noirq(struct device *dev)
+> >> +static int renesas_i3c_suspend(struct device *dev)
+> >>  {
+> >>      struct renesas_i3c *i3c = dev_get_drvdata(dev);
+> >>      int i, ret;
+> >[ ... ]
+> >> +    ret = reset_control_assert(i3c->tresetn);
+> >> +    if (ret)
+> >> +            goto err_presetn;
+> >> +
+> >> +    clk_bulk_disable(i3c->num_clks, i3c->clks);
+> >> +
+> >> +    return 0;
+> >Since this callback is being moved out of the noirq phase where interrupts are
+> >still enabled, is it safe to disable clocks and assert hardware resets without
+> >first disabling the device interrupts (e.g., via disable_irq())?
+> >If an interrupt fires during this time, the ISR might access unclocked MMIO
+> >registers belonging to a reset IP, which could trigger a synchronous external
+> >abort.
+>
+> That may have happen even previously if the interrupts were configured as
+> wakeup sources. However, at this point, all the clients should be suspended
+> and thus, they shouldn't generate interrupts.
+>
+>
+> --
+> Thank you,
+> Claudiu
+>
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
