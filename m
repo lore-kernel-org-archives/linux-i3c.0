@@ -4,49 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 09982CD6E55
-	for <linux-i3c@archiver.kernel.org>; Wed,  3 Jun 2026 14:36:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E456CD6E57
+	for <linux-i3c@archiver.kernel.org>; Wed,  3 Jun 2026 14:38:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:References:Cc:To:From:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l0YReg/lWuOal8Dd8rkOVsOhfHelKcEWcsiQru7qyio=; b=Jd6StFVmVK8yjB
-	sgjhbLZr3KBnSHhLIjoUYTSfI1ccwWTN4D8KDYLzJO8yTsBEjGq9q6hozf0oEzmdsuh06tH6RzcRZ
-	9daiJRfEIZpPj3XNE8w6OXq0KgfLiWndxf6wpXO+8LRfekz4DkzOyf9W7/koGgWlqSSVT9paub1N4
-	kHFEccJYK8bT53lfiH4Mh4BgDlggPWybmJXIEHYa9uES5ZdtugF/04pmN/Q1sfrjDC0u+Vsuyp7/I
-	uEQoTPzNU7X3ZtjMiZRGy2NI82zp3GG4E9ESlF46GMoQ0twQl69iefTdF70lN/TdsUiSUzf+Bil0o
-	vLUUSc+jape1RxJADIFA==;
+	List-Owner; bh=AB7hNYZJmgRQStcYtS/OnYfWqn6yANsaobnElji9hmA=; b=dzYbYfNjKOjVBF
+	ps27k9ZrdTy4iQTiumVaKAahk09ppFocdw/mCPZPL+F3biXdtNrtR+7dX/g0Pkiky31ZpJNPbdum4
+	Z8yshlO+J+2l9gt0hjs51+/80ta9yk+ffOM0jcmNG36H2hoi8/qi6aJssRYhttXP8pVIfaKxQu17m
+	whCKmv9xPIZbms0dqxmH5AedFCoe3oaVMH08UpVZ01rJnNXgZ5IPHTxssPR0ZsGsPLrSuq4orbHmj
+	vQ1CMtV2R8UV0sJmcGinlm9+bE1+BRgEx8BDz+OrRmdJfpSCzwW6Y8FLy/v+HmmDNBeqlvcwvLMVG
+	kptt7yH0wM6Q5K9yHQGA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUmhv-0000000FGIY-3LPV;
-	Wed, 03 Jun 2026 14:36:35 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wUmkC-0000000FHs1-1dzZ;
+	Wed, 03 Jun 2026 14:38:56 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUmhu-0000000FGIR-1htP
+	id 1wUmkB-0000000FHrN-07nM
 	for linux-i3c@lists.infradead.org;
-	Wed, 03 Jun 2026 14:36:34 +0000
+	Wed, 03 Jun 2026 14:38:55 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id D931D601DD;
-	Wed,  3 Jun 2026 14:36:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5472A1F00893;
-	Wed,  3 Jun 2026 14:36:28 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 2ACCC601DD;
+	Wed,  3 Jun 2026 14:38:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 10E191F00893;
+	Wed,  3 Jun 2026 14:38:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1780497393;
-	bh=AI46kP8UK6l9WEk1AQ1AFIFgvTSBlPzimOI+GhKMfYM=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=UcfYuFswHKAWIOrbLOYdqwoYhRqsTDq4fDSvF2kb+f4bb+pJAfs16hBtXloG0cAP2
-	 abbksORJdIvj3OPEL8XILi37eQ7zOO720EQYz20zT9y9iL44ZKX8DpQYiFx74z4YY7
-	 bzbheKxr7R5wATCyqH0I8NUy4mp+d1+c9SPAcaMPnETFHZt0BhBk4ad2AX/PPgVaWA
-	 otwY14ogToUWG25fQQmtQ2UOQJNJNuI+Zu3gD28CN4aVU5vNDejdjx8e5eEtCmOoMu
-	 /nOTJRYtO5bQOAfQLUvX5yqaaTYHXZID/LNeUt/broeVJOujFTMZ+veR/Ho4FNrwJe
-	 Avfxi6Zz9OLcg==
-Message-ID: <035ffb31-e4c8-49b0-8323-f9cfe54eae30@kernel.org>
-Date: Wed, 3 Jun 2026 16:36:26 +0200
+	s=k20260515; t=1780497533;
+	bh=LHQiol3uHgeSVYAOENZQw+8MwtqOLi7EfXfjeX0xyXs=;
+	h=Date:Subject:From:To:Cc:References:In-Reply-To;
+	b=k03fkPuKr9vRYOp5BM2AhIYxiYnD+X02wrkqp9V5u50w2wJRNCIKwZftsbybmlh8z
+	 bnmZq6cUuvmLtHBAG+svVY8yzSg9YWw5/gwbCbRDPBTHO0ACFx60nhaE3bNztAoQbL
+	 D6oK8o6R9hgk5A8V8jJYFDXTnvw+kVOZGQAWFj/xpS+ONo51T4XZAAF4RtQFpFLfR5
+	 fSN614ZhpFBP/7/mp6fA6NPuUTCNLtfj7W5qofOfKaoOCmRWolbxka52wFE70x8uqw
+	 O8TCEYXoA8PfdbWJOD0kjYCVJpKVxszv+4a4lY+ZZ/IipgUmJot++8M+f/veGURx42
+	 r7VelLNMktA1w==
+Message-ID: <0284546c-3a74-416d-8ad2-3f0628d08a1b@kernel.org>
+Date: Wed, 3 Jun 2026 16:38:49 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 Subject: Re: [PATCH v4 2/3] dt-bindings: i3c: dw: Add apb reset
+From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Jisheng Zhang <jszhang@kernel.org>
 Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
  Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
@@ -57,7 +58,7 @@ References: <20260525140018.19598-1-jszhang@kernel.org>
  <20260525140018.19598-3-jszhang@kernel.org>
  <f8efa4ae-76e8-4082-a445-ca5f6d230bf3@kernel.org> <ahZwl3uXjyOZRvGW@xhacker>
  <4a8539d3-704b-4433-b4d6-e5acfe22d512@kernel.org> <ahre-7YdlcOZkwS1@xhacker>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+ <035ffb31-e4c8-49b0-8323-f9cfe54eae30@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
  xsFNBFVDQq4BEAC6KeLOfFsAvFMBsrCrJ2bCalhPv5+KQF2PS2+iwZI8BpRZoV+Bd5kWvN79
@@ -102,7 +103,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  jWt87ecuHlpL3uuQ0ZZNWqHgZoQLXoqC2ZV5KrtKWb/jyiFX/sxSrodALf0zf+tfHv0FZWT2
  zHjUqd0t4njD/UOsuIMOQn4Ig0SdivYPfZukb5cdasKJukG1NOpbW7yRNivaCnfZz6dTawXw
  XRIV/KDsHQiyVxKvN73bThKhONkcX2LWuD928tAR6XMM2G5ovxLe09vuOzzfTWQDsm++9UKF a/A=
-In-Reply-To: <ahre-7YdlcOZkwS1@xhacker>
+In-Reply-To: <035ffb31-e4c8-49b0-8323-f9cfe54eae30@kernel.org>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,50 +120,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 30/05/2026 14:58, Jisheng Zhang wrote:
-> On Wed, May 27, 2026 at 09:53:16AM +0200, Krzysztof Kozlowski wrote:
->> On 27/05/2026 06:18, Jisheng Zhang wrote:
->>> On Mon, May 25, 2026 at 05:25:45PM +0200, Krzysztof Kozlowski wrote:
->>>> On 25/05/2026 16:00, Jisheng Zhang wrote:
->>>>> Add dt-binding for support of apb reset which is to reset the APB
->>>>> interface.
+On 03/06/2026 16:36, Krzysztof Kozlowski wrote:
+> On 30/05/2026 14:58, Jisheng Zhang wrote:
+>> On Wed, May 27, 2026 at 09:53:16AM +0200, Krzysztof Kozlowski wrote:
+>>> On 27/05/2026 06:18, Jisheng Zhang wrote:
+>>>> On Mon, May 25, 2026 at 05:25:45PM +0200, Krzysztof Kozlowski wrote:
+>>>>> On 25/05/2026 16:00, Jisheng Zhang wrote:
+>>>>>> Add dt-binding for support of apb reset which is to reset the APB
+>>>>>> interface.
+>>>>>
+>>>>> And this is ABI break, so you must explain WHY breaking ABI is worth
 >>>>
->>>> And this is ABI break, so you must explain WHY breaking ABI is worth
+>>>> This just adds an optional apb reset, it doesn't break any exisiting
+>>>> ABI. Kindly let me know whether adding new optional binding is also
+>>>> an ABI break.
 >>>
->>> This just adds an optional apb reset, it doesn't break any exisiting
->>> ABI. Kindly let me know whether adding new optional binding is also
->>> an ABI break.
+>>> It does. One reset was before. Now all devices must have two resets.
+>>> Clear ABI impact.
 >>
->> It does. One reset was before. Now all devices must have two resets.
->> Clear ABI impact.
-> 
-> I checked the dts with only one reset by manual dt_binding_check
-> and dtbs_check, it still work, so I'm not sure why those dts "must have
-> two resets". Kindly let me know what's wrong.
-> 
+>> I checked the dts with only one reset by manual dt_binding_check
+>> and dtbs_check, it still work, so I'm not sure why those dts "must have
+>> two resets". Kindly let me know what's wrong.
 >>
 >>>
->>>> doing that or what is the impact. Additionally you should explain which
->>>> devices have it. Does Altera have it? You really lack explanation WHY
->>>> you are doing it and which hardware you exactly describe.
+>>>>
+>>>>> doing that or what is the impact. Additionally you should explain which
+>>>>> devices have it. Does Altera have it? You really lack explanation WHY
+>>>>> you are doing it and which hardware you exactly describe.
+>>>>
+>>>> I'm preparing one of synaptics SoCs support to uptream, it needs this
+>>>> apb reset signal for i3c. So you mean I delay this series until the SoC
+>>>> upstream series come, right?
 >>>
->>> I'm preparing one of synaptics SoCs support to uptream, it needs this
->>> apb reset signal for i3c. So you mean I delay this series until the SoC
->>> upstream series come, right?
+>>> No. You just sent patch which basically says that Altera has two resets,
+>>> without any explanation of that.
 >>
->> No. You just sent patch which basically says that Altera has two resets,
->> without any explanation of that.
+>> I guess you mixed other series/patches with mine here, no? I didn't
+>> mention Altera at all ;) What my series mentioned is adding apb reset
+>> which is to reset the APB interface.
+>>
 > 
-> I guess you mixed other series/patches with mine here, no? I didn't
-> mention Altera at all ;) What my series mentioned is adding apb reset
-> which is to reset the APB interface.
 > 
+> Read the binding. Altera is already there. I do not talk about other
+> patches.
 
+... and then read exactly what your patch (not commit) is saying. It
+says among things that Altera has two resets, while commit is completely
+silent on that.
 
-Read the binding. Altera is already there. I do not talk about other
-patches.
+> 
+> Your are changing an already accepted binding.
 
-Your are changing an already accepted binding.
 
 Best regards,
 Krzysztof
