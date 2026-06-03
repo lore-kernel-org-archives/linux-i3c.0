@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AF6BECD6E64
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EBD85CD6E6B
 	for <linux-i3c@archiver.kernel.org>; Wed,  3 Jun 2026 09:08:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,77 +12,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tH2jx9zOReWsfd2e9V5/gett2+uD4DF1BftpkSuLaD4=; b=gXeVlHSSy4wCvd
-	gvl8k6XOacBaXR+kEZDhRb2M1t1mO7RipFdVJm0RDAfwHeLJdnARoV9cj2laZD0rgaKdjXdPss53n
-	LvjG/66GBRpmDKFq2fnWn/F+6c7HaSc3EL2jjZenyUZxWqV/+Q6a4FCsZm7pZydqwelU/+tu6L9TK
-	KHOjyIEwJxotkG4ksTd+QdV2nrnZYxTYmKiGnDD7yZEMlDTNW4eQo7tHNlF4KriyrLtOJ2OYsJ8zP
-	NkcOITcOMsga1rRG4j5gITqhbx7tKj4GsMcghvyVuqm6g+fxeyaYu80wd6InD6wOKgZ3knuzgNI2u
-	tuVjNBt0OjWpvBDMubCQ==;
+	List-Owner; bh=DsD2/RHxnxiv3joMaj/HIVWmD0D8gjIvMmqWbB8t78g=; b=4lbDvERlNDftTk
+	zCX3zW+mqHVHuVGBzPbawjocqJ32mBDW9BGnOMC7hRktIprpaXYTiNwESTeHTpKpHkLLO7IDRJwh6
+	6rm6AGLKKiy066kuUmpVmkBZafyJay78AvOL927hyc9gHDq+WIXFdlMpvjSI33YT+g8svfUhREkKb
+	zV8mBpgnQJ81RYQ+AMf1ZGgrHwwlcIpS/G8eyx88SxO6bHScq/n7hP9oR4zkzFEFEooEgSzhOdnsO
+	7orHlS93W2vC2wgj0nNvOVAlwvZ2V+q8RY1oZWLbVho+JPGfSWYewmqJxXDZDpJUM7KpGdDYNx5wA
+	Dk6DMhufJaox9c9Y+vEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUhaI-0000000Efk5-1q07;
+	id 1wUhaI-0000000EfkQ-2dZi;
 	Wed, 03 Jun 2026 09:08:22 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
-	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUhaG-0000000EfiQ-3qJI
-	for linux-i3c@bombadil.infradead.org;
-	Wed, 03 Jun 2026 09:08:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=wT5BOn+nwTnnXpHZJBL0wTSWFIKv9vpYN03XCCOjAjU=; b=DD/kyzz9OrZ7brWg/HCIlt1D4L
-	mcauhUKJMsjw9LauSs0hBVk10y0QOz5rg/IYgxXKGDsym96eYSf4bzarPHFQmyMYArFzLbY09bWmR
-	W4oLxoQAwnIwFwEyktw74mJXWXn+8Ao85+zNZtcNCtlgCIZowpbOsDK01/lFd0rsWe5hZyXJDURJ4
-	Ppi6+z5KStPXAQ3kFkyAY8/K/aWId7Alxtc4CiP7XB4Ox5DI31FX6ZTxwNRJFDbFoDc1ESJTRX1//
-	+dzPgE55NdjXdK4K0uiuhamoSfbNpyGDymgMz8f7pmCLVuR6ZP2l1jBwAxSshc9rhbscTlUbM2TQ0
-	B/MfaaMA==;
 Received: from mgamail.intel.com ([192.198.163.11])
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1wUhaC-0000000BfST-3hFN
+	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
+	id 1wUhaF-0000000Effy-48eR
 	for linux-i3c@lists.infradead.org;
-	Wed, 03 Jun 2026 09:08:18 +0000
+	Wed, 03 Jun 2026 09:08:21 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1780477697; x=1812013697;
+  t=1780477700; x=1812013700;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=pO9UCkLcVCgzQJ15Oc5dy2H25WqqT7dvU0P6rp92XRk=;
-  b=h/aQlHkikNcbxVnAZj81AWZkUH9ZfgZ6Zy0vE3DmXfc66zLzI3ZobESs
-   +cSu1qbVg3X7zftrV3359ZJRuhXjgZPLiRiEwrG5rm1hPgGuhYmRsq08M
-   gVD7x1ApL5r+awl/f6cDh6DjTO6p/zitHaCR+57dNVYc9Et3tmIcztObb
-   8e8avjq6ST01WPdR/z6aFuK2mYSjCLkJIbPOlf+Cw5tADNOKzTE4hJXvw
-   GVIkD3XP7Bp60u8usiyWnUXz5U+hbd81Rd236+dRR0PeERrChduDPwbAM
-   WZNDOyrnDj3YpAQsDVB+X9tfVfwpD2aNM1LJlqS1G4uMLyFE45Jrbfn11
-   g==;
-X-CSE-ConnectionGUID: iWlBPbC5RNuEG3ENdpCqSQ==
-X-CSE-MsgGUID: WaGAyPbuQ9C6kDD3fVtp7g==
-X-IronPort-AV: E=McAfee;i="6800,10657,11805"; a="91852591"
+  bh=FrOJT+GMlFZupkFUGhXMbzwd+H6FKn1hNvq7sark9fs=;
+  b=A6AC6HXmDHnsd0zwnKOMfBXR7geJdnHildGI47LOBHJPYEpgtLKeTaU4
+   mRx0xWUMYevOX49A/y95HQJBNbSKVV2dhtHFZOwVQiTVzy2ZeOLj5XvW5
+   q6hRQ0T2tNTFpZzG24VvqRD3genDPeMvzF7GzXAsdwjtBFOsP+ZBBhpJ9
+   1oITkBQ3QiiBbAMIlnI64augxorVkwn8ejvkoffRqsZ6rW5njbLWiP/E4
+   PE2noHTY7YyAgxysPwGoyL8VX0EPhJ55V9TirSJyhvrkMnJigbKvB2iiG
+   uWQaHY4V2S8P28aZauTGQ0e1zJLdpYk4+zIDj00gfIxqFOUqnkkM4rEig
+   A==;
+X-CSE-ConnectionGUID: RvKONSW9RfCT2DQPETmyyA==
+X-CSE-MsgGUID: rO0+xon4SjqMUOnTz11KNQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11805"; a="91852613"
 X-IronPort-AV: E=Sophos;i="6.24,184,1774335600"; 
-   d="scan'208";a="91852591"
+   d="scan'208";a="91852613"
 Received: from fmviesa003.fm.intel.com ([10.60.135.143])
-  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Jun 2026 02:08:12 -0700
-X-CSE-ConnectionGUID: BQT1qqSFT+egLyOiyZ2shA==
-X-CSE-MsgGUID: bBW3aLS9QeKJ8e3NHZEBRA==
+  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Jun 2026 02:08:19 -0700
+X-CSE-ConnectionGUID: m8tyBmAaRlaTx1atbB/jOQ==
+X-CSE-MsgGUID: 79qOXMN5QGyzRMZpz6f0tQ==
 X-ExtLoop1: 1
 Received: from ijarvine-mobl1.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.244.137])
-  by fmviesa003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Jun 2026 02:08:10 -0700
+  by fmviesa003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Jun 2026 02:08:18 -0700
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH V5 01/17] i3c: mipi-i3c-hci: Fix suspend behavior when bus disable falls back to software reset
-Date: Wed,  3 Jun 2026 12:07:38 +0300
-Message-ID: <20260603090754.16252-2-adrian.hunter@intel.com>
+Subject: [PATCH V5 05/17] i3c: mipi-i3c-hci: Move hci_dma_xfer_done() definition
+Date: Wed,  3 Jun 2026 12:07:42 +0300
+Message-ID: <20260603090754.16252-6-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260603090754.16252-1-adrian.hunter@intel.com>
 References: <20260603090754.16252-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260603_100817_324920_37584A19 
-X-CRM114-Status: GOOD (  13.47  )
+X-CRM114-CacheID: sfid-20260603_020820_073614_27F8CD39 
+X-CRM114-Status: GOOD (  11.88  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,74 +84,144 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Software reset was introduced as a fallback if bus disable failed.  The
-change was made in 2 places: the cleanup path and the suspend path.
+Move hci_dma_xfer_done() earlier in the file to avoid a forward
+declaration needed by a subsequent change.
 
-For the cleanup path (i3c_hci_bus_cleanup()), after software reset the
-function continues to do cleanup for the current I/O mode.  For the
-suspend path (i3c_hci_rpm_suspend()), after software reset the function
-returns early.  However software reset does not reset any Ring Headers in
-the Host Controller, so returning early is not the right thing to do.
+No functional change.
 
-Instead, continue to call suspend for the current I/O mode, which for DMA
-mode will reset any Ring Headers.
-
-Note, although Ring Headers should not be active at this stage, performing
-this reset follows the procedure defined by the specification and keeps
-the suspend path consistent with the cleanup path.
-
-Note also, i3c_hci_sync_irq_inactive() is still called via the PIO and DMA
-hci->io->suspend() callbacks.
-
-Always return 0 because the device is quiesced as much as possible and
-returning a negative error code would unnecessarily prevent system suspend.
-
-Fixes: 9a258d1336f7 ("i3c: mipi-i3c-hci: Fallback to software reset when bus disable fails")
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 Reviewed-by: Frank Li <Frank.Li@nxp.com>
 ---
 
 
-Changes in V4 and V5:
+Changes in V3, V4 and V5:
 
 	None
 
-Changes in V3:
-
-	Add Frank's rev'd-by
-
 Changes in V2:
 
-	Always return 0 from suspend callback
-	Amend commit message
+	Added Frank's Rev'd-by
 
 
- drivers/i3c/master/mipi-i3c-hci/core.c | 11 +++--------
- 1 file changed, 3 insertions(+), 8 deletions(-)
+ drivers/i3c/master/mipi-i3c-hci/dma.c | 98 +++++++++++++--------------
+ 1 file changed, 49 insertions(+), 49 deletions(-)
 
-diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-index b781dbed2165..afb0764b5e1f 100644
---- a/drivers/i3c/master/mipi-i3c-hci/core.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-@@ -762,15 +762,10 @@ static int i3c_hci_reset_and_init(struct i3c_hci *hci)
- int i3c_hci_rpm_suspend(struct device *dev)
+diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
+index 3b14bc87bdf6..ad47bb2890d6 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/dma.c
++++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
+@@ -545,6 +545,55 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
+ 	return 0;
+ }
+ 
++static void hci_dma_xfer_done(struct i3c_hci *hci, struct hci_rh_data *rh)
++{
++	u32 op1_val, op2_val, resp, *ring_resp;
++	unsigned int tid, done_ptr = rh->done_ptr;
++	unsigned int done_cnt = 0;
++	struct hci_xfer *xfer;
++
++	for (;;) {
++		op2_val = rh_reg_read(RING_OPERATION2);
++		if (done_ptr == FIELD_GET(RING_OP2_CR_DEQ_PTR, op2_val))
++			break;
++
++		ring_resp = rh->resp + rh->resp_struct_sz * done_ptr;
++		resp = *ring_resp;
++		tid = RESP_TID(resp);
++		dev_dbg(&hci->master.dev, "resp = 0x%08x", resp);
++
++		xfer = rh->src_xfers[done_ptr];
++		if (!xfer) {
++			dev_dbg(&hci->master.dev, "orphaned ring entry");
++		} else {
++			hci_dma_unmap_xfer(hci, xfer, 1);
++			rh->src_xfers[done_ptr] = NULL;
++			xfer->ring_entry = -1;
++			xfer->response = resp;
++			if (tid != xfer->cmd_tid) {
++				dev_err(&hci->master.dev,
++					"response tid=%d when expecting %d\n",
++					tid, xfer->cmd_tid);
++				/* TODO: do something about it? */
++			}
++			if (xfer->completion)
++				complete(xfer->completion);
++			if (RESP_STATUS(resp))
++				hci->enqueue_blocked = true;
++		}
++
++		done_ptr = (done_ptr + 1) % rh->xfer_entries;
++		rh->done_ptr = done_ptr;
++		done_cnt += 1;
++	}
++
++	rh->xfer_space += done_cnt;
++	op1_val = rh_reg_read(RING_OPERATION1);
++	op1_val &= ~RING_OP1_CR_SW_DEQ_PTR;
++	op1_val |= FIELD_PREP(RING_OP1_CR_SW_DEQ_PTR, done_ptr);
++	rh_reg_write(RING_OPERATION1, op1_val);
++}
++
+ static void hci_dma_unblock_enqueue(struct i3c_hci *hci)
  {
- 	struct i3c_hci *hci = dev_get_drvdata(dev);
--	int ret;
+ 	if (hci->enqueue_blocked) {
+@@ -636,55 +685,6 @@ static int hci_dma_handle_error(struct i3c_hci *hci, struct hci_xfer *xfer_list,
+ 	return hci_dma_dequeue_xfer(hci, xfer_list, n) ? -EIO : 0;
+ }
  
--	ret = i3c_hci_bus_disable(hci);
--	if (ret) {
--		/* Fall back to software reset to disable the bus */
--		ret = i3c_hci_software_reset(hci);
--		i3c_hci_sync_irq_inactive(hci);
--		return ret;
+-static void hci_dma_xfer_done(struct i3c_hci *hci, struct hci_rh_data *rh)
+-{
+-	u32 op1_val, op2_val, resp, *ring_resp;
+-	unsigned int tid, done_ptr = rh->done_ptr;
+-	unsigned int done_cnt = 0;
+-	struct hci_xfer *xfer;
+-
+-	for (;;) {
+-		op2_val = rh_reg_read(RING_OPERATION2);
+-		if (done_ptr == FIELD_GET(RING_OP2_CR_DEQ_PTR, op2_val))
+-			break;
+-
+-		ring_resp = rh->resp + rh->resp_struct_sz * done_ptr;
+-		resp = *ring_resp;
+-		tid = RESP_TID(resp);
+-		dev_dbg(&hci->master.dev, "resp = 0x%08x", resp);
+-
+-		xfer = rh->src_xfers[done_ptr];
+-		if (!xfer) {
+-			dev_dbg(&hci->master.dev, "orphaned ring entry");
+-		} else {
+-			hci_dma_unmap_xfer(hci, xfer, 1);
+-			rh->src_xfers[done_ptr] = NULL;
+-			xfer->ring_entry = -1;
+-			xfer->response = resp;
+-			if (tid != xfer->cmd_tid) {
+-				dev_err(&hci->master.dev,
+-					"response tid=%d when expecting %d\n",
+-					tid, xfer->cmd_tid);
+-				/* TODO: do something about it? */
+-			}
+-			if (xfer->completion)
+-				complete(xfer->completion);
+-			if (RESP_STATUS(resp))
+-				hci->enqueue_blocked = true;
+-		}
+-
+-		done_ptr = (done_ptr + 1) % rh->xfer_entries;
+-		rh->done_ptr = done_ptr;
+-		done_cnt += 1;
 -	}
-+	/* Fall back to software reset to disable the bus */
-+	if (i3c_hci_bus_disable(hci))
-+		i3c_hci_software_reset(hci);
- 
- 	hci->io->suspend(hci);
- 
+-
+-	rh->xfer_space += done_cnt;
+-	op1_val = rh_reg_read(RING_OPERATION1);
+-	op1_val &= ~RING_OP1_CR_SW_DEQ_PTR;
+-	op1_val |= FIELD_PREP(RING_OP1_CR_SW_DEQ_PTR, done_ptr);
+-	rh_reg_write(RING_OPERATION1, op1_val);
+-}
+-
+ static int hci_dma_request_ibi(struct i3c_hci *hci, struct i3c_dev_desc *dev,
+ 			       const struct i3c_ibi_setup *req)
+ {
 -- 
 2.51.0
 
