@@ -4,70 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A1C63CD6E64
-	for <linux-i3c@archiver.kernel.org>; Wed,  3 Jun 2026 09:08:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3EFECD6E69
+	for <linux-i3c@archiver.kernel.org>; Wed,  3 Jun 2026 09:08:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jo0kPZWlucthRe+VzOHowkzgtrNExH9JQMboUy+RDM8=; b=RsXz4bJCLbWwTG
-	RCErTPbOCUzvmq4g8dRsH0o8HWyJ6X5WBbl/x8HLMMyw9M9hrnaMkhYKK9f7YM2Dk0TP8dkokW04F
-	m2p0mwojBQiEOhBhIMd8xJ+Xyp33zJmVJzPoohkNQaWaSP3hNJf5Zk1mlCnTTD0RLCS08mFxgPT3Y
-	p9Is60kPBX55GGBBqmSeKXeq/8gPI22K3AsauonPI6eaa9wI0eSwmBk8o8E/pOBGUX3rX32CZGBhd
-	YhClHKWshAY/3zrvEJqjTXAnwYB91eKqn3KCfRBnCTWTq5MDS9V5AIvgcCvZwOmxtVD+gyXrRt59m
-	oJw/WybdyqHZji8aJZdQ==;
+	List-Owner; bh=q2dRicq3uCZ6TZzEmbQBtDNUA2AHVYxjZu2vwlFsKok=; b=i5U9akGYiGTVKG
+	vyJI2ZUnH+OPDNYIyIrJ6Hdt5eMRCnwnQcicaITdRRrJ2V8aw1YiLj9lvnD7z2G3J7ezU8NdCALFZ
+	4UGUhccIPQfcSi8u+KieIP6DyUKROAtkOhBNm0TgYJiScRR8jLY4/CgJ+kipdYfExqjRsPy65rU5f
+	NUBZj6phS41cFUARds8KlhHByzkiCN1k0j/V6/tHGLrK2hGSRGW54Yq5Q7AyWLzKTBGow2f0TmAYU
+	pZ0MBDqDeCqOmX4jS8Znrk6D7TGEalS8nGBFMUSJCGai4brAgErFAj4gW29abQeMsFFjFzsFjyIjv
+	j5skRfdpr+xSVWYdT2PA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUhaa-0000000Efye-1ipf;
-	Wed, 03 Jun 2026 09:08:40 +0000
+	id 1wUhac-0000000Eg00-22Ln;
+	Wed, 03 Jun 2026 09:08:42 +0000
 Received: from mgamail.intel.com ([192.198.163.11])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wUhaY-0000000Effy-0zxI
+	id 1wUhaa-0000000Effy-03yR
 	for linux-i3c@lists.infradead.org;
-	Wed, 03 Jun 2026 09:08:39 +0000
+	Wed, 03 Jun 2026 09:08:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1780477718; x=1812013718;
+  t=1780477720; x=1812013720;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=zRmxHz7QOF8wg4xiU+74Lsud0jGfj3V19jyLi1tzhA8=;
-  b=IweUW6VKVpxzA7BWCeEOHH5u+fuJJZN8REf2A/Z/a+HUyAe/8XZRiHRI
-   LCH++PRcAExeQcXwJArKjqMAtHcoOUlSd6Clv6BJTNKX8k0NoBtCwluE2
-   lb8ttScD8CMRHXcZJvQqaFqbizZUw19AlBB1RinWqJknVw2y33d3AsxEK
-   v0yyAJ9JDe7iADAe+nGB19uhS0uiDNVqSIbXpDFTkqhz4JdS4VbS8Yo0+
-   82VMU5fZTNRf5Ba6CsxujPq+Gjk7Wt7ngbbtHQ6isK9gDRHd3qzSR6wBL
-   fKzmUYlf9/1VT1lUdwVD2ndPLnDEAQUJ3RWwfB1ylgqC/3f78+H9V6NBE
+  bh=SJo3309KexvrFf//nLbqMf1AExY0G6rtZtFHj0R9BIU=;
+  b=RB71bz3qSL11BExDvvsTEjQcwxextWyR9noMMUUtueDne42SxeGXVyz7
+   qsfuBtLTXUIcKBd5NiX8G6zUAWCzg0yNZiwUyM615IfhfX3FDsRFn1wND
+   DbUZFCeV67Xl8awNKQBb+U2CzMeJ/lpGBaUOqcHc01MR0cOHx+C8aZD70
+   dYjdZAYqbxwgq4aEIPoNqWzm1copM1sl5g8D9Smah5yWwqkNVOntLl+xD
+   +vLIrF2mlIA8zDsDYqNQ+br9c3CUMWR8N6HMIBHlz+5jcy2Y/IpgM2fM2
+   o5L38CZQoUPDozZOwe63fup2fV/5ZVzLEQPAelZmGMacQH3gv0squz9Jq
    Q==;
-X-CSE-ConnectionGUID: 4+BwGio2SZm7lct2rLFKTw==
-X-CSE-MsgGUID: 3a5pl9HSTWK1tKf8Svz6nQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11805"; a="91852668"
+X-CSE-ConnectionGUID: ktMx08KJSyqgNXwIvei1Ig==
+X-CSE-MsgGUID: aV8h5gLwTSqjRPhLZl0F7A==
+X-IronPort-AV: E=McAfee;i="6800,10657,11805"; a="91852674"
 X-IronPort-AV: E=Sophos;i="6.24,184,1774335600"; 
-   d="scan'208";a="91852668"
+   d="scan'208";a="91852674"
 Received: from fmviesa003.fm.intel.com ([10.60.135.143])
-  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Jun 2026 02:08:38 -0700
-X-CSE-ConnectionGUID: AUweQzF1QfuHqYH75qhHvw==
-X-CSE-MsgGUID: 3mtNN/afSymihOkQIkE4Mw==
+  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Jun 2026 02:08:39 -0700
+X-CSE-ConnectionGUID: rmRzx+hTSTmyL9vEMr/fyg==
+X-CSE-MsgGUID: xTvlwOGBSzq6EJYX3pJTVQ==
 X-ExtLoop1: 1
 Received: from ijarvine-mobl1.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.244.137])
-  by fmviesa003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Jun 2026 02:08:36 -0700
+  by fmviesa003-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 03 Jun 2026 02:08:38 -0700
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH V5 15/17] i3c: mipi-i3c-hci: Base timeouts on actual transfer start time
-Date: Wed,  3 Jun 2026 12:07:52 +0300
-Message-ID: <20260603090754.16252-16-adrian.hunter@intel.com>
+Subject: [PATCH V5 16/17] i3c: mipi-i3c-hci: Consolidate DMA ring allocation
+Date: Wed,  3 Jun 2026 12:07:53 +0300
+Message-ID: <20260603090754.16252-17-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
 In-Reply-To: <20260603090754.16252-1-adrian.hunter@intel.com>
 References: <20260603090754.16252-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260603_020838_381377_DB379947 
-X-CRM114-Status: GOOD (  19.87  )
+X-CRM114-CacheID: sfid-20260603_020840_073998_2FCD9BA5 
+X-CRM114-Status: UNSURE (   9.51  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,19 +85,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Transfer timeouts are currently measured from the point where a transfer
-list is queued to the controller.  This can cause transfers to time out
-before they have actually started, if earlier queued transfers consume
-the timeout interval.
+dma_alloc_coherent() allocates memory in whole pages, which can waste
+space when command and response queues are allocated separately.
 
-Fix this by recording when a transfer reaches the head of the queue and
-adjusting the timeout calculation to start from that point.  The existing
-low-overhead completion-based timeout mechanism is preserved, but care is
-taken to ensure the transfer start time is consistently recorded for both
-PIO and DMA paths.
+Allocate the DMA command and response queues from a single coherent
+allocation instead, while preserving the required 4-byte alignment.
 
-This prevents premature timeouts while retaining efficient timeout
-handling.
+This reduces memory overhead without changing behavior.
 
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 Reviewed-by: Frank Li <Frank.Li@nxp.com>
@@ -109,173 +104,75 @@ Changes in V5:
 
 Changes in V4:
 
-	Rename start_time to start_jiffies
+	Cache allocation size in rh->xfer_alloc_sz to avoid recomputing in
+	hci_dma_free()
 
 Changes in V3:
 
 	None
 
 Changes in V2:
-	Do not flag the next transfer as started when there is an error
-	which halts the controller
-	Instead flag it started at the end of hci_dma_dequeue_xfer()
-	Use hci_start_xfer() in pio.c
+
+	Check for failed allocation before assignments to avoid doing
+	arithmetic with NULL pointers
 
 
- drivers/i3c/master/mipi-i3c-hci/core.c | 19 ++++++++++++++++++-
- drivers/i3c/master/mipi-i3c-hci/dma.c  | 19 ++++++++++++++++++-
- drivers/i3c/master/mipi-i3c-hci/hci.h  | 11 +++++++++++
- drivers/i3c/master/mipi-i3c-hci/pio.c  |  1 +
- 4 files changed, 48 insertions(+), 2 deletions(-)
+ drivers/i3c/master/mipi-i3c-hci/dma.c | 21 ++++++++-------------
+ 1 file changed, 8 insertions(+), 13 deletions(-)
 
-diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-index 69dcf5dad3a5..c6edbbedfdd7 100644
---- a/drivers/i3c/master/mipi-i3c-hci/core.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-@@ -275,13 +275,30 @@ int i3c_hci_process_xfer(struct i3c_hci *hci, struct hci_xfer *xfer, int n)
- {
- 	struct completion *done = xfer[n - 1].completion;
- 	unsigned long timeout = xfer[n - 1].timeout;
-+	unsigned long remaining_timeout = timeout;
-+	long time_taken;
-+	bool started;
- 	int ret;
- 
-+	xfer[0].started = false;
-+
- 	ret = hci->io->queue_xfer(hci, xfer, n);
- 	if (ret)
- 		return ret;
- 
--	if (!wait_for_completion_timeout(done, timeout)) {
-+	while (!wait_for_completion_timeout(done, remaining_timeout)) {
-+		scoped_guard(spinlock_irqsave, &hci->lock) {
-+			started = xfer[0].started;
-+			time_taken = jiffies - xfer[0].start_jiffies;
-+		}
-+		/* Keep waiting if xfer has not started */
-+		if (!started)
-+			continue;
-+		/* Recalculate timeout based on actual start time */
-+		if (time_taken < timeout) {
-+			remaining_timeout = timeout - time_taken;
-+			continue;
-+		}
- 		if (hci->io->dequeue_xfer(hci, xfer, n)) {
- 			dev_err(&hci->master.dev, "%s: timeout error\n", __func__);
- 			return -ETIMEDOUT;
 diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-index 0fd56bbb84ef..9a01c740760f 100644
+index 9a01c740760f..0136f3064ada 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/dma.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-@@ -543,6 +543,9 @@ static int hci_dma_queue_xfer(struct i3c_hci *hci,
- 		enqueue_ptr = (enqueue_ptr + 1) % rh->xfer_entries;
- 	}
+@@ -130,7 +130,7 @@ struct hci_rh_data {
+ 	dma_addr_t xfer_dma, resp_dma, ibi_status_dma, ibi_data_dma;
+ 	unsigned int xfer_entries, ibi_status_entries, ibi_chunks_total;
+ 	unsigned int xfer_struct_sz, resp_struct_sz, ibi_status_sz, ibi_chunk_sz;
+-	unsigned int done_ptr, ibi_chunk_ptr, xfer_space;
++	unsigned int xfer_alloc_sz, done_ptr, ibi_chunk_ptr, xfer_space;
+ 	struct hci_xfer **src_xfers;
+ 	struct completion op_done;
+ };
+@@ -187,13 +187,7 @@ static void hci_dma_free(void *data)
+ 		rh = &rings->headers[i];
  
-+	if (rh->xfer_space == rh->xfer_entries)
-+		hci_start_xfer(xfer_list);
-+
- 	rh->xfer_space -= n;
+ 		if (rh->xfer)
+-			dma_free_coherent(rings->sysdev,
+-					  rh->xfer_struct_sz * rh->xfer_entries,
+-					  rh->xfer, rh->xfer_dma);
+-		if (rh->resp)
+-			dma_free_coherent(rings->sysdev,
+-					  rh->resp_struct_sz * rh->xfer_entries,
+-					  rh->resp, rh->resp_dma);
++			dma_free_coherent(rings->sysdev, rh->xfer_alloc_sz, rh->xfer, rh->xfer_dma);
+ 		kfree(rh->src_xfers);
+ 		if (rh->ibi_status)
+ 			dma_free_coherent(rings->sysdev,
+@@ -359,18 +353,19 @@ static int hci_dma_init(struct i3c_hci *hci)
+ 		dev_dbg(&hci->master.dev,
+ 			"xfer_struct_sz = %d, resp_struct_sz = %d",
+ 			rh->xfer_struct_sz, rh->resp_struct_sz);
+-		xfers_sz = rh->xfer_struct_sz * rh->xfer_entries;
++		xfers_sz = round_up(rh->xfer_struct_sz * rh->xfer_entries, 4);
+ 		resps_sz = rh->resp_struct_sz * rh->xfer_entries;
++		rh->xfer_alloc_sz = xfers_sz + resps_sz;
  
- 	op1_val &= ~RING_OP1_CR_ENQ_PTR;
-@@ -558,6 +561,7 @@ static void hci_dma_xfer_done(struct i3c_hci *hci, struct hci_rh_data *rh)
- 	u32 op1_val, op2_val, resp, *ring_resp;
- 	unsigned int tid, done_ptr = rh->done_ptr;
- 	unsigned int done_cnt = 0;
-+	bool start_next = false;
- 	struct hci_xfer *xfer;
+-		rh->xfer = dma_alloc_coherent(rings->sysdev, xfers_sz,
++		rh->xfer = dma_alloc_coherent(rings->sysdev, rh->xfer_alloc_sz,
+ 					      &rh->xfer_dma, GFP_KERNEL);
+-		rh->resp = dma_alloc_coherent(rings->sysdev, resps_sz,
+-					      &rh->resp_dma, GFP_KERNEL);
+ 		rh->src_xfers =
+ 			kzalloc_objs(*rh->src_xfers, rh->xfer_entries);
+ 		ret = -ENOMEM;
+-		if (!rh->xfer || !rh->resp || !rh->src_xfers)
++		if (!rh->xfer || !rh->src_xfers)
+ 			goto err_out;
++		rh->resp = rh->xfer + xfers_sz;
++		rh->resp_dma = rh->xfer_dma + xfers_sz;
  
- 	for (;;) {
-@@ -588,8 +592,14 @@ static void hci_dma_xfer_done(struct i3c_hci *hci, struct hci_rh_data *rh)
- 			xfer->response = resp;
- 			if (xfer == xfer->final_xfer || RESP_STATUS(resp))
- 				complete(xfer->final_xfer->completion);
--			if (RESP_STATUS(resp))
-+			else
-+				hci_start_xfer(xfer);
-+			if (RESP_STATUS(resp)) {
- 				hci->enqueue_blocked = true;
-+				start_next = false;
-+			} else {
-+				start_next = true;
-+			}
- 		}
+ 		/* IBIs */
  
- 		done_ptr = (done_ptr + 1) % rh->xfer_entries;
-@@ -598,6 +608,10 @@ static void hci_dma_xfer_done(struct i3c_hci *hci, struct hci_rh_data *rh)
- 	}
- 
- 	rh->xfer_space += done_cnt;
-+	if (start_next && rh->xfer_space < rh->xfer_entries) {
-+		xfer = rh->src_xfers[done_ptr];
-+		hci_start_xfer(xfer);
-+	}
- 	op1_val = rh_reg_read(RING_OPERATION1);
- 	op1_val &= ~RING_OP1_CR_SW_DEQ_PTR;
- 	op1_val |= FIELD_PREP(RING_OP1_CR_SW_DEQ_PTR, done_ptr);
-@@ -810,6 +824,9 @@ static bool hci_dma_dequeue_xfer(struct i3c_hci *hci,
- 
- 	hci_dma_unblock_enqueue(hci);
- 
-+	if (rh->xfer_space < rh->xfer_entries)
-+		hci_start_xfer(rh->src_xfers[rh->done_ptr]);
-+
- 	spin_unlock_irq(&hci->lock);
- 
- 	wait_for_completion_timeout(&rh->op_done, HZ);
-diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
-index 4bf2c66c97b4..30297823ca85 100644
---- a/drivers/i3c/master/mipi-i3c-hci/hci.h
-+++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
-@@ -11,6 +11,7 @@
- #define HCI_H
- 
- #include <linux/io.h>
-+#include <linux/jiffies.h>
- 
- /* 32-bit word aware bit and mask macros */
- #define W0_MASK(h, l)  GENMASK((h) - 0,  (l) - 0)
-@@ -88,11 +89,13 @@ struct hci_xfer {
- 	u32 cmd_desc[4];
- 	u32 response;
- 	bool rnw;
-+	bool started;
- 	void *data;
- 	unsigned int data_len;
- 	unsigned int cmd_tid;
- 	struct completion *completion;
- 	unsigned long timeout;
-+	unsigned long start_jiffies;
- 	union {
- 		struct {
- 			/* PIO specific */
-@@ -123,6 +126,14 @@ static inline void hci_free_xfer(struct hci_xfer *xfer, unsigned int n)
- 	kfree(xfer);
- }
- 
-+static inline void hci_start_xfer(struct hci_xfer *xfer)
-+{
-+	if (!xfer->started) {
-+		xfer->started = true;
-+		xfer->start_jiffies = jiffies;
-+	}
-+}
-+
- /* This abstracts PIO vs DMA operations */
- struct hci_io_ops {
- 	bool (*irq_handler)(struct i3c_hci *hci);
-diff --git a/drivers/i3c/master/mipi-i3c-hci/pio.c b/drivers/i3c/master/mipi-i3c-hci/pio.c
-index 8f48a81e65ab..6b8cc5f2b4d2 100644
---- a/drivers/i3c/master/mipi-i3c-hci/pio.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/pio.c
-@@ -605,6 +605,7 @@ static bool hci_pio_process_cmd(struct i3c_hci *hci, struct hci_pio_data *pio)
- 		 * Finally send the command.
- 		 */
- 		hci_pio_write_cmd(hci, pio->curr_xfer);
-+		hci_start_xfer(pio->curr_xfer);
- 		/*
- 		 * And move on.
- 		 */
 -- 
 2.51.0
 
