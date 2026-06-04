@@ -4,64 +4,131 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB283CD6E6B
-	for <linux-i3c@archiver.kernel.org>; Thu,  4 Jun 2026 13:04:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 95E6FCD6E6E
+	for <linux-i3c@archiver.kernel.org>; Thu,  4 Jun 2026 18:49:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LZioLNEgnMqHI/mnAcIKWOUnr8m48kbbP7MzGLE68gw=; b=owUlhMItxNAZ41
-	IudoqFnhJb0Yyvi6ybhnRdaFRCveQbhqz0dOeTcLRvALwgkpO/xlfySLTUkdoWeMPWzn2Ytot0dvf
-	JxMoRACV8q7cIlEJIjB5iI4BPJ7OJFFyToBK5lD1i8F2SOu1pShOn9MCnXp8hwymaMUWLxq9d6lvs
-	mmj4bCBBtRxh11w2RX1e02CnRoVdAiPiWMu0UErhCKwIvM1UKeTJj5psNdbTcMBXbpP7h58ib5aFt
-	8s9fG1vLiCxIzXgZLtI1q4tMTiGPSNjq15QQL7oC7jWL64C6GmY72gWZPmXMSGDz7xe41UsHWQMPx
-	Fm73rT95l1oYRMh/isnA==;
+	List-Owner; bh=/+AwjsAqiYv3pc5qNksMV6CeeDttJRxNJHCpK1lJ98M=; b=rSqTiVeGWcv70Z
+	kgJFDUoKjqE08cm5cebZKy/Kw4B5+Ky3iUaFto9U4TfVftEIpziIqkV2M7ZbmvfYUWNyP3TWdUkTn
+	hIY39czSz/0fbhan92TbZswf4JcYQ19wRQYRMTr6kzCs9qtwN6hnjZsylCM0qQatJlCyi4ZvivoZs
+	lmRWKFJxAtDivJ9ARaB6lFfIdfWlnnpgg0r0H49of5u8sIWF9oeLec9mCvPw0ZOOEaoYKvJOtCWYS
+	dzcgsZveEtyTCl1HMIStJJAtqIoNIwgrNIuvmLWiTKZG7fvqcugVMMjHpVkbKANqOJI2DSXSjEAW4
+	UQWa2JzydMn19QJJ3ubw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wV7kp-0000000GlAB-1pKV;
-	Thu, 04 Jun 2026 13:04:59 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wVD8g-0000000HBRU-0h96;
+	Thu, 04 Jun 2026 18:49:58 +0000
+Received: from mail-westeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c201::3] helo=AS8PR04CU009.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wV7kn-0000000Gl9h-3EHP
+	id 1wVD8d-0000000HBR8-2czD
 	for linux-i3c@lists.infradead.org;
-	Thu, 04 Jun 2026 13:04:57 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 1C2F9439D0;
-	Thu,  4 Jun 2026 13:04:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E65E31F00893;
-	Thu,  4 Jun 2026 13:04:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1780578297;
-	bh=Ouk81xprjo4lWjBJXrltuvcmQkhjiEHAH428GrXLZt4=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=YWoqnDlvd0ychHWTakimutDjgi4nnBkhaDXu9AdIzLIDNpJ01k6HjBiyfyyLcFqhv
-	 9KK2RKgTc1TywV7pEU5bnby4hA5TPk42ArDi7HUWUIxGnbmH4sKCIMKduacaoC6PX6
-	 1DTRc+TTm5iaDMm04l7h45FRs9a0nhweMpd59GW0k8BsLf49LuxmDwO8KC2ywhVFZe
-	 qXB2ttnz+oVF24GoFb2IWAUlrevKMQP2YdP3N6Ebl4ZlUtTI4YUO6ZQx5dYgX5+VRj
-	 y6BWyI4h33U7LmcRupJaRjwK2P0ntVlql/fOWOBHCrnwbe4A9sTcbA+LBJ4Ktcjmdz
-	 b4M11ctCErRiA==
-Message-ID: <19754889-0aa9-4a4a-b015-8ddb0a61b678@kernel.org>
-Date: Thu, 4 Jun 2026 16:04:52 +0300
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 06/17] i3c: renesas: Perform Dynamic Address Assignment
- on resume
-To: Frank Li <Frank.li@nxp.com>
+	Thu, 04 Jun 2026 18:49:56 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=sxa/Idsda/JojUMZu51a7c9eeTX0+eQCW8kQQDEJbNnBGe7QwMgWjuwNlw3hRMqXMVA+MsVYFMHhlPlqGWVmC1ilDNt50FN2WCBfi6hINA/hKBuO9tc5GbJdpE8aitbY6HMeZuhbbGQsfcGMDOc7aq0vZHdkyPX1eCoXNV+4wDit3vgmLovmncCluJwZta4t5k5VooagCTJIF80nPZjNkvK7CW63qFpstSCaRogVD6aYb7Kl8tka1SHUTlJPsnPz5RaQEtwfgTGuQqGIq06istPXCn/P3PpTCkvpEJ3csagnwTSpq8c3Zn31HhoBy1xxOB2Qn/H4Ouo6bDPWBkx27g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=yYfhCAN8BtURDykXQWKjqqdOajaqp5Rbbrsek1MEc4Y=;
+ b=fwiEqTQk08i4nji555vuCj7u+bZMecblAmNLL42WEZ9eV3VrBXQdwjyJbI20PHr/g/AfDPMe6kA+e0c8YT46Hwi5LWEfHl/fKVpRk71ay+IyLyyK72wN998gqkiKMDT6j6reizmWv7ZVXU3afW+g49nWSoyfhq8puKiWK4RjZ2nDOKhgxA8gbtl0W9peMqk4xKhOo3STdKI5DK5YvvMgHHuxGfqCRfdjV6+rkTLV3R2qlqWNO5/Tvo8aBgo2e5tPKcVNHQoJdafpZVGYrRUUNRSbNO0nmdje4nOwnRQKUGEEFmwN401X2JuPikZNaEFwP8CaHP4PzDIm7Aqn6z72NA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=yYfhCAN8BtURDykXQWKjqqdOajaqp5Rbbrsek1MEc4Y=;
+ b=JvCzaIRU67sMWPKWG9mRNbpZs3FWIvDiz/hGw56ISaKRtY+MJu7MobzPQ7cApZ/4jdu1rx/LA2eiNH6DWzV5DrGSCOJ8R54XWn4m8Y3kpEk3U34I0f+Xx6M44ouKuogCrDgpakHAWb+zKday/s4iJXoX6b89mNjV+PsCLXtN2EfXfeZgOQ+ZrTNRagtArkbWyn+RzepiQieyOvzViIow0uR89AkD4WA1meCA/pRioFMAVtrD/2WzHJz1EAgeqLhEZ6s2FCvymp63rh3Z4TxUKl0aBGI0yKtE3Ztwv1w3ooUzwnfRrG/hb3NYij/cWQZSDYi+42bUWzjB3STxelA6Fg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+Received: from PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8)
+ by VI0PR04MB12055.eurprd04.prod.outlook.com (2603:10a6:800:325::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.92.7; Thu, 4 Jun 2026
+ 18:49:48 +0000
+Received: from PA4PR04MB9366.eurprd04.prod.outlook.com
+ ([fe80::75e4:8143:ddbc:6588]) by PA4PR04MB9366.eurprd04.prod.outlook.com
+ ([fe80::75e4:8143:ddbc:6588%3]) with mapi id 15.21.0092.006; Thu, 4 Jun 2026
+ 18:49:48 +0000
+Date: Thu, 4 Jun 2026 14:49:41 -0400
+From: Frank Li <Frank.li@nxp.com>
+To: Claudiu Beznea <claudiu.beznea@kernel.org>,
+	alexandre.belloni@bootlin.com
 Cc: wsa+renesas@sang-engineering.com, tommaso.merciai.xr@bp.renesas.com,
- alexandre.belloni@bootlin.com, p.zabel@pengutronix.de,
- claudiu.beznea@tuxon.dev, linux-i3c@lists.infradead.org,
- linux-kernel@vger.kernel.org,
- Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>, stable@vger.kernel.org
+	alexandre.belloni@bootlin.com, p.zabel@pengutronix.de,
+	claudiu.beznea@tuxon.dev, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
+	stable@vger.kernel.org
+Subject: Re: [PATCH v2 06/17] i3c: renesas: Perform Dynamic Address
+ Assignment on resume
+Message-ID: <aiHIKEKIT_V4RdfP@lizhi-Precision-Tower-5810>
 References: <20260602132824.3541151-1-claudiu.beznea@kernel.org>
  <20260602132824.3541151-7-claudiu.beznea@kernel.org>
  <ah85RaUXmaBVFkYk@lizhi-Precision-Tower-5810>
  <8687d3cb-628a-477b-9dfd-2db8c412b277@kernel.org>
  <aiB_3kneo2Scy5bB@lizhi-Precision-Tower-5810>
-Content-Language: en-US
-From: Claudiu Beznea <claudiu.beznea@kernel.org>
-In-Reply-To: <aiB_3kneo2Scy5bB@lizhi-Precision-Tower-5810>
+ <19754889-0aa9-4a4a-b015-8ddb0a61b678@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <19754889-0aa9-4a4a-b015-8ddb0a61b678@kernel.org>
+X-ClientProxiedBy: SA9PR13CA0017.namprd13.prod.outlook.com
+ (2603:10b6:806:21::22) To PA4PR04MB9366.eurprd04.prod.outlook.com
+ (2603:10a6:102:2a9::8)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|VI0PR04MB12055:EE_
+X-MS-Office365-Filtering-Correlation-Id: 1c41b465-b818-4826-5013-08dec26a0d65
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|19092799006|366016|7416014|52116014|376014|4143699003|22082099003|18002099003|11063799006|56012099006|38350700014;
+X-Microsoft-Antispam-Message-Info: DOOyEpfM4bumSQgvnSHjGu6FYUEhvfegaJvO7nEB8jLW7ddBwF5hSLcyFh7iQmmdN1wM2l1fBLeap/VTScEqoNd2rs9keyfcXEUf1tKz372G9ip+ZKaYhAwrbLm6+NnaKUMUmuAiQ2BIQGn8IsfsVmmKOiDNv+58PQzsShukviMqG2qCp2sVgiUj48irZ8YMzGk4ZV/rWO6LQOFUQ8q2drgiVlCOb0KOZYFTVAA92c23SQmES8hxQlCQf4mRb6hB8tauNtBaMBbzhwwPV3CZ6jWLyWa3F+irNsgj0bc91IQnGkSJOzV3Rk+r/gH+fHUbWRWZlwJ2MveLa0amxa+5hSLay7vEWCVwDxFAuSQbKvaH5YY6g2MR32oi71gfnC21/m8WJ7kvGOBILdGZDAY9QyMy8RtOljGGueGfvjdrz03Zk6+05cTBk+JkTxDHZeBtsv8FcnGSALLHiQLJY9pg0xUxHgG5HfLDheIsJ8VkYVM9xlzEgZPbreDD8mVEFk5naCrFJKd1kwm5ZLmChdDBU4Fz4LCiLcDIxAeNirI2JkHlUTjXmayLtwi7bNUzgNiKShqmMMBavfA+AXZFTJ0AYJtmwZTuNGH8z0YlFmQPig9v0+d/Md2aIwOT7A0IZniXZa+lnMcWOHI2Obu5vmIJKBHG/hz9byvI+VZFPFQc/+9+s0NsM/c+4DE3f/UoVkN1oHX6P/e2YsVNCPtLKuMmMw==
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(19092799006)(366016)(7416014)(52116014)(376014)(4143699003)(22082099003)(18002099003)(11063799006)(56012099006)(38350700014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Nf9hOu/rM+0QS8rznR1npkmSmWi0jdWhNo4xUX8sp17SYxHssLIX/0iW/1+o?=
+ =?us-ascii?Q?ZGeyQrE/b7F3mT/P2L84/OGC6FXG+mdqg9dAo3/iRMtDfBMM+GRXCecS0JGb?=
+ =?us-ascii?Q?K3B8Jq3pcxzoT3XcSAevC56Kqkd6k2iFWYm8imYdMjp26JIYect7FXm5zxkM?=
+ =?us-ascii?Q?SGRsAoc3diZX080CECv4l1Kb3CjfAu7dUA+L/+VFDBihGjDaT1B01xP8fqoC?=
+ =?us-ascii?Q?Ue3/k8kRox6EOVcbwmZTkfwhgf5ai3zFCvGhNJu5hRRV559jtbRtM0n3FGMm?=
+ =?us-ascii?Q?piw65P8Gwgx1zPIz5+3L1OiHAgXBhsaAOZWzBn+wz7tlHXEUGeUacU/0oUEN?=
+ =?us-ascii?Q?gzCbxrxr6BEuAP289OvF8VOM1+aqgLnGleNzmGPaB/0YvnMhVafx0XetpYXv?=
+ =?us-ascii?Q?gos4VIc/ucCZVZsxMzo+cDz8K6D2gOHhBdl/zQX2vBS+twHHzWldH7OvQurP?=
+ =?us-ascii?Q?Y/Ws+hi22begYhBnKX9apOKn5fJ4ZANvZr2G9EP2e+J1gXHHnu4TRKBGWrht?=
+ =?us-ascii?Q?9xyy2XSqjeQc6wZaC9GPnUgkGYCpDvhnHs9eT1odwt/QborIJT4Fd9AZFliu?=
+ =?us-ascii?Q?aydT37iLUfaDROk3DHpthzenIE0HAgrV8YX33Zhr507S4FMtQmljaLQOvLNw?=
+ =?us-ascii?Q?07DOglqVpEOTaVNQ1KbOwt9cGe6T+15qTkJlwe+Xuvgx8fLRDCsa8c7i7wVm?=
+ =?us-ascii?Q?7Vlk4WbvSoZ/+ykEyj/vn+geycU/WJQuDpw3ZcG0clf3tZM8gSoDVaWuihPJ?=
+ =?us-ascii?Q?+oxX6Maa8LK1nkjUwZJPknChhCFvL1TYrCqMWAV28zkH7FV8mryVvX8NKeBb?=
+ =?us-ascii?Q?AogNBsSmHA+h4JrZe6JauC2B/gkAq/QDzxAW3CR6iv1/bkg0UdS2Y0KhDtEq?=
+ =?us-ascii?Q?+aCkBYx3uDbjGIQOqQIEOXoU6AaDZLkeozPTcePq1NnOjkgkYk0TFEKMdWgE?=
+ =?us-ascii?Q?8rrW8hMxZy9WssA4jhK/HMzImMS1UCW96FA+9VpBLQgVWkgXHUW8MljhxhrS?=
+ =?us-ascii?Q?320QT7mh3gxt4Wc2qEGcTeTT56Sd54tLdrW2XYklCfTrZqfi+PFPleg3Ahql?=
+ =?us-ascii?Q?zoTAJrmWs+wXAn+/kQXprbyp9snsCaW7RROdLz1OBotRzaSOCvwAu8gTO4KP?=
+ =?us-ascii?Q?T5W2iMHdmMFowNW5o3MPn9uqF4wk7WBkYDFUwD8C0tqdFHUY/ruvsEnLjxQB?=
+ =?us-ascii?Q?4NdXrlNYblfKs3PR7N6pK/CZu5WXGz0VlyQ1n7d7Oy48AeOsX+Tkr1HP4QKn?=
+ =?us-ascii?Q?OV2z8HVmOMUpPFcl8Lw3cA1sTN7JK/I+wAatwB8Z+iN0vNvT93hKRTVP7Ais?=
+ =?us-ascii?Q?Q0TfEWYHnpyFA4womL9HsH0RzeQ/1PZc0Pzuum1y6zp2/xmn3M3NPflvRoCc?=
+ =?us-ascii?Q?bkBVls4szGQoVR5ahyofcdlMh9j1u4soKVleAAyjdKpanehbwNvDljweQ37v?=
+ =?us-ascii?Q?SHEAufk7pKQ8518iIT6VJoWudy7qjvjUfXD7gAvzJ0xoAqitj/1KjQ6vp+Li?=
+ =?us-ascii?Q?KCkqLJ4JHCjfInn1MwE7IX2lmT/9y9geKgSj5teKD9b/EE9Do5llUCnCBpim?=
+ =?us-ascii?Q?0U8m1EapBjNSGO371mtVRR9LQnc4z8ggIxHS1U2YoaHCWCcQxF4mwVH9ABxG?=
+ =?us-ascii?Q?Zz38bzy91oDbQol5zA1uqSoMCgWFOv34FCEyd0aeKlcL3Krkhd3pjIwA6GIG?=
+ =?us-ascii?Q?X7dUoOfq9lvhhDpX3SxWACu+xsIcd+3c3S22Cuzg2sMms5FH?=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1c41b465-b818-4826-5013-08dec26a0d65
+X-MS-Exchange-CrossTenant-AuthSource: PA4PR04MB9366.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Jun 2026 18:49:48.1937
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: wtqKO17vnnWzVgfOqxmTE1d3qGcvPhU8MAvnFeJ0of2GRXgDcW1m66W8K9ljzznvc4QKsuPAqEhZspgGLVjqtQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI0PR04MB12055
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260604_114955_693384_AB74BE15 
+X-CRM114-Status: GOOD (  27.28  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,267 +140,76 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi, Frank,
+On Thu, Jun 04, 2026 at 04:04:52PM +0300, Claudiu Beznea wrote:
+> Hi, Frank,
+>
+> On 6/3/26 22:26, Frank Li wrote:
+> > On Wed, Jun 03, 2026 at 05:23:06PM +0300, Claudiu Beznea wrote:
+> > > Hi, Frank, I3C maintainers,
+> > >
+...
+> > >
+> > > As I don't have a real setup to test this, would it be OK to restore the
+> > > approach in this patch as proposed in v1?
+> > This case is quite complex, and many people try to resolve simialar
+> > problems, you may want to reattach device because controller lost state.
+> >
+> > hub have similar requirement, which need reattach devices.
+> >
+> > https://lore.kernel.org/linux-i3c/20260525064209.2263045-1-
+> > lakshay.piplani@nxp.com/T/#ma99fa92cb3aac770995350e0fc22c144b974a038
+> >
+> > controller lost state, but may i3c devices still alive and they dynamtic
+> > address during suspend. Does reattach to the old address help your case?
+> Yes, re-attaching works and I also need to update the subsystem data
+> structures. Something like the following works for me:
+>
+...
+> +                               old_dyn_addr = dev->info.dyn_addr;
+> +                               dev->info.dyn_addr = i3c->addrs[pos].addr;
+> +
+> +                               i3c_master_reattach_i3c_dev_locked(dev,
+> old_dyn_addr);
+...
+>
+> To me, this looks OK but I don't think it is yet completed. If I'm not
+> wrong, even with this adjustment the problem may still persist when running
+> DAA on a full ocupied bus at runtime (e.g. after devices are
+> removed/inserted). This driver don't support hotplug but I noticed the ones
+> that supports it do DAA on hotplug events.
+>
+> Could you please let me know what's the procedure to go forward with this
+> series? The approach proposed in the above diff depends on the series
+> exporting i3c_master_reattach_i3c_dev_locked(), which is in progress.
 
-On 6/3/26 22:26, Frank Li wrote:
-> On Wed, Jun 03, 2026 at 05:23:06PM +0300, Claudiu Beznea wrote:
->> Hi, Frank, I3C maintainers,
->>
->> I've inlined the sashiko comments here to discuss them:
->>
->> On 6/2/26 23:12, Frank Li wrote:
->>> On Tue, Jun 02, 2026 at 04:28:13PM +0300, Claudiu Beznea wrote:
->>>> From: Claudiu Beznea<claudiu.beznea.uj@bp.renesas.com>
->>>>
->>>> The Renesas RZ/G3S SoC supports a power saving mode where power to most
->>>> SoC components, including I3C, is turned off.
->>>>
->>>> On systems where the I3C devices also loses power during suspend (e.g. NXP
->>>> P3T1085UK-ARD connected to the PMOD1_6A connector of the RZ SMARC Carrier
->>>> 2 + Renesas RZ/G3S SMARC SOM), the devices becomes unreachable after
->>>> resume.
->>>>
->>>> Running DAA in the controller resume path restores communication. However,
->>>> DAA relies on interrupts for TX/RX, which are not available in the noirq
->>>> suspend/resume phase (unless they are wakeup interrupts). For this, the
->>>> suspend/resume callbacks were moved out of the noirq phase. Currently,
->>>> there is no identified use case on either the Renesas RZ/G3S or Renesas
->>>> RZ/G3E SoCs that requires the controller suspend/resume hooks to be part of
->>>> the noirq suspend/resume phase.
->>>>
->>>> Since renesas_i3c_reset() is not called anymore in atomic context
->>>> update it to use read_poll_timeout().
->>>>
->>>> To cover the case where the controller had already attached all the
->>>> i3c->maxdevs devices before a suspend/resume cycle and i3c->free_pos is
->>>> zero, struct renesas_i3c::resuming flag was introduced.
->>>>
->>>> The flag is set in renesas_i3c_resume() before calling
->>>> i3c_master_do_daa_ext() and checked in renesas_i3c_daa(). In case it is
->>>> set the previous saved DATBAS register values are used for the slots
->>>> already occupied before suspend. This allows keeping alive the connection
->>>> to the I3C devices when all the supported slots are occupied before
->>>> suspend.
->>>>
->>>> When resuming from suspend, renesas_i3c_daa() re-runs DAA for al
->>>> slots except those used by I2C devices. I2C devices are attached during
->>>> probe, at bus initialization time, and always occupy the first positions in
->>>> i3c->free_pos. In addition, there are no DATBAS register settings
->>>> associated with them.
->>>>
->>>> Fixes: e7218986319b ("i3c: renesas: Add suspend/resume support")
->>>> Cc:stable@vger.kernel.org
->>>> Signed-off-by: Claudiu Beznea<claudiu.beznea.uj@bp.renesas.com>
->>>> ---
->>> Please check sashiko review result
->>>
->>> https://sashiko.dev/#/patchset/20260602132824.3541151-1- 
->>> claudiu.beznea%40kernel.org
->>>
->>> commit 6783acf82418dd115df661f4dc9d5758f653b084
->>> Author: Claudiu Beznea<claudiu.beznea.uj@bp.renesas.com>
->>> Date:   Tue Jun 2 13:28:13 2026 +0000
->>>     i3c: renesas: Perform Dynamic Address Assignment on resume
->>>     The Renesas RZ/G3S SoC supports a power saving mode where power to most
->>>     SoC components, including I3C, is turned off.
->>>
->>>     On systems where the I3C devices also loses power during suspend (e.g. NXP
->>>     P3T1085UK-ARD connected to the PMOD1_6A connector of the RZ SMARC Carrier
->>>     2 + Renesas RZ/G3S SMARC SOM), the devices becomes unreachable after
->>>     resume.
->>>
->>>     Running DAA in the controller resume path restores communication. However,
->>>     DAA relies on interrupts for TX/RX, which are not available in the noirq
->>>     suspend/resume phase (unless they are wakeup interrupts). For this, the
->>>     suspend/resume callbacks were moved out of the noirq phase. Currently,
->>>     there is no identified use case on either the Renesas RZ/G3S or Renesas
->>>     RZ/G3E SoCs that requires the controller suspend/resume hooks to be part of
->>>     the noirq suspend/resume phase.
->>>     Fixes: e7218986319b ("i3c: renesas: Add suspend/resume support")
->>>     Cc:stable@vger.kernel.org
->>>> --- a/drivers/i3c/master/renesas-i3c.c
->>>> +++ b/drivers/i3c/master/renesas-i3c.c
->>> [ ... ]
->>>> @@ -657,14 +664,33 @@ static int renesas_i3c_daa(struct
->> i3c_master_controller *m)
->>>>       /* Setting DATBASn registers for target devices. */
->>>>       for (pos = 0; pos < i3c->maxdevs; pos++) {
->>>> -            if (olddevs & BIT(pos))
->>>> +            if (olddevs & BIT(pos)) {
->>>> +                    /*
->>>> +                     * In case of resume, reassign DAs for all devices on the
->>>> +                     * bus to avoid failures when all i3c->maxdevs slots were
->>>> +                     * already occupied before suspend.
->>>> +                     *
->>>> +                     * Exclude I2C devices, as they are attached during probe,
->>>> +                     * at bus initialization time, and there are currently no
->>>> +                     * register updates associated with them.
->>>> +                     */
->>>> +                    if (i3c->resuming) {
->>>> +                            if (i3c->addrs[pos].is_i2c) {
->>>> +                                    last_i2c_pos = pos;
->>>> +                            } else {
->>>> +                                    renesas_writel(i3c->regs, DATBAS(pos),
->>>> +                                                   i3c->DATBASn[pos]);
->>>> +                            }
->>>> +                    }
->>> Does restoring these blindly from the saved state cement addresses for future
->>> ENTDAA, bypassing normal device assignment?
->>> If a device is removed, hot-plugged, or wakes up slowly, couldn't a different
->>> device win arbitration and be assigned an address from an unrelated DATBASn
->>> slot?
->> Currently, the driver don't support hot-plug.
->>
->> I presumed the remove in suspend is not actually a valid use-case, but with
->> this scenario, if that happens, the device still remains attached in the
->> software data structures. After this sequence:
->> 1/ suspend
->> 2/ disconnect an I3C device
->> 3/ resume
->> 4/ suspend
->> 5/ re-connect the I3C devices
->> 6/ resume
->>
->> the reconnected I3C device works again after step 6 (according to my testing).
->>
->> Waking up may happen slowly, indeed. So, I presume this is a valid use case.
->>
->> Now, I have few question (if my I3C understanding is right):
->>
->> I noticed none of the I3C drivers are taking care of the use case where the
->> bus is fully populated after resume (and we are after a resume with power
->> lost, for both the controller and the devices). That looks a bit tricky
->> scenario to cover, to be honest, as all the drivers check for a free slot in
->> ->attach_i3c_dev(), and, for a fully populated bus, that will not update the
->> newly assigned addresses in the subsystem data structure.
->>
->> If the ->attach_i3c_dev() called though the i3c_master_add_i3c_dev_locked()
->> fails then nothing is continued so, the device address changes are not
->> propagated in all the software data structures.
->>
->> In case we re-use the DATBAS() register values as proposed in this patch, we
->> have the changes that the driver software data caches (i3c->addrs[].addr)
->> and the subsystem I3C devices addresses to match. But, that may not be true
->> all the time.
->>
->> If we re-assign new addresses to i3c->addrs[].addr in the DAA API, then
->> write those values to DATBAS() registers, but the bus is fully populated, or
->> no new devices are discovered as the indices remains the same, then, since
->> we execute i3c_master_add_i3c_dev_locked() only for the newly attached
->> devices, then the subsystem and the driver addresses don't match anymore. I
->> couldn't found a global API similar to i3c_master_add_i3c_dev_locked() to
->> work for removing devices and re-attaching at resume, for such scenario. I'm
->> not sure that's good to do, though. If we call
->> i3c_master_add_i3c_dev_locked() unconditionally, then it will still not work
->> on a full previously occupied bus.
->>
->> If I'm not wrong with all these, could you please let me know how would you
->> consider covering this scenario? This is what I've tried to address with the
->> approach in this patch. I currently don't have a testing setup for this, I
->> only simulated it by setting i3c->free_pos = 0 before calling
->> i3c_master_do_daa_ext().
->>
->> Would the usage of i3c_device_do_setdasa() being called from a master driver
->> be something acceptable? Though, I currently haven't played around with it.
->>
->> As I don't have a real setup to test this, would it be OK to restore the
->> approach in this patch as proposed in v1?
-> This case is quite complex, and many people try to resolve simialar
-> problems, you may want to reattach device because controller lost state.
-> 
-> hub have similar requirement, which need reattach devices.
-> 
-> https://lore.kernel.org/linux-i3c/20260525064209.2263045-1- 
-> lakshay.piplani@nxp.com/T/#ma99fa92cb3aac770995350e0fc22c144b974a038
-> 
-> controller lost state, but may i3c devices still alive and they dynamtic
-> address during suspend. Does reattach to the old address help your case?
-Yes, re-attaching works and I also need to update the subsystem data structures. 
-Something like the following works for me:
+Two patch already was acked by me. I supposed alex will pick my acked before
+your patch, you can send out update and cover later said depend on first two
+patches of hubs.
 
-diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
-index cd7f33250b7c..494703a87a18 100644
---- a/drivers/i3c/master/renesas-i3c.c
-+++ b/drivers/i3c/master/renesas-i3c.c
-@@ -252,6 +252,7 @@ struct renesas_i3c_xferqueue {
-  };
+Recently there are more people involve i3c work and create some cross
+dependency.
 
-  struct renesas_i3c_addr {
-+       struct i3c_dev_desc *dev_desc;
-         bool is_i2c;
-         u8 addr;
-  };
-@@ -771,15 +772,27 @@ static int renesas_i3c_daa(struct i3c_master_controller *m)
-                 newdevs = 0;
-         } else {
-                 newdevs = GENMASK(i3c->maxdevs - cmd->rx_count - 1, 0);
--               newdevs &= ~olddevs;
-+               if (!i3c->resuming)
-+                       newdevs &= ~olddevs;
-         }
+Alex:
+	Do you expect me to temp land these patches to one branch in
+git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git? so you can double
+check before send pull-request to linus?
 
-         for (pos = 0; pos < i3c->maxdevs; pos++) {
--               if (newdevs & BIT(pos))
--                       i3c_master_add_i3c_dev_locked(m, i3c->addrs[pos].addr);
-+               if (newdevs & BIT(pos)) {
-+                       if (i3c->resuming && i3c->addrs[pos].dev_desc) {
-+                               struct i3c_dev_desc *dev = 
-i3c->addrs[pos].dev_desc->dev->desc;
-+                               u8 old_dyn_addr;
-+
-+                               old_dyn_addr = dev->info.dyn_addr;
-+                               dev->info.dyn_addr = i3c->addrs[pos].addr;
-+
-+                               i3c_master_reattach_i3c_dev_locked(dev, 
-old_dyn_addr);
-+                       } else
-+                               i3c_master_add_i3c_dev_locked(m, 
-i3c->addrs[pos].addr);
-+               }
-         }
+Frank
 
-         return 0;
-@@ -997,6 +1010,7 @@ static int renesas_i3c_attach_i3c_dev(struct i3c_dev_desc *dev)
-
-         data->index = pos;
-         i3c->addrs[pos].addr = dev->info.dyn_addr ? : dev->info.static_addr;
-+       i3c->addrs[pos].dev_desc = dev;
-         i3c->free_pos &= ~BIT(pos);
-
-         renesas_writel(i3c->regs, DATBAS(pos), 
-DATBAS_DVSTAD(dev->info.static_addr) |
-@@ -1060,6 +1074,7 @@ static void renesas_i3c_detach_i3c_dev(struct i3c_dev_desc 
-*dev)
-
-         i3c_dev_set_master_data(dev, NULL);
-         i3c->addrs[data->index].addr = 0;
-+       i3c->addrs[data->index].dev_desc = NULL;
-         i3c->free_pos |= BIT(data->index);
-         kfree(data);
-
-To me, this looks OK but I don't think it is yet completed. If I'm not wrong, 
-even with this adjustment the problem may still persist when running DAA on a 
-full ocupied bus at runtime (e.g. after devices are removed/inserted). This 
-driver don't support hotplug but I noticed the ones that supports it do DAA on 
-hotplug events.
-
-Could you please let me know what's the procedure to go forward with this 
-series? The approach proposed in the above diff depends on the series exporting 
-i3c_master_reattach_i3c_dev_locked(), which is in progress.
-
-If all good with the rest of the patches in this series, as I don't have a real 
-setup to test this, would it be OK to switch this patch as it was in v1 and 
-return with the adjustments in the above diff once the 
-i3c_master_reattach_i3c_dev_locked() is integrated?
-
--- 
-Thank you,
-Claudiu
+>
+> If all good with the rest of the patches in this series, as I don't have a
+> real setup to test this, would it be OK to switch this patch as it was in v1
+> and return with the adjustments in the above diff once the
+> i3c_master_reattach_i3c_dev_locked() is integrated?
+>
+> --
+> Thank you,
+> Claudiu
 
 -- 
 linux-i3c mailing list
