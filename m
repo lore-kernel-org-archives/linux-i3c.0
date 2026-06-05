@@ -4,123 +4,122 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 55D60CD6E7C
-	for <linux-i3c@archiver.kernel.org>; Fri,  5 Jun 2026 16:19:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19F41CD6E7D
+	for <linux-i3c@archiver.kernel.org>; Fri,  5 Jun 2026 16:23:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4ASAX4XRziEkXvCB8omAuk5StjeDa1LcBqP4xJ/7vH0=; b=0JjY5m7OKUHTBC
-	qO80r4w+7+joc0jXgL+J9mUe0A/pFYiUkmtTzvTuxBLTXdOEOy7215bQ3Fyi4HpGn2XJNpgHmazpg
-	csQLkfEJ0NH2wJljQuScBntUdbdb6yLxgXszRIgUnrDasA0VARuB/kr+FtfHVH6Y+0yjMr4Xq91A8
-	OkrXOVEGJlNqZYVhKkCSH6ypAAy7tB/zSpre0gh96fNrf0GhOBHXw22q5l1VC5O1zrui2n5gwPtQ0
-	pjoYQBPjZMqLoG5ozdTb6cxQb92HstT+79n5SMmQ2INlSCXHFTRZYqO/amcmwtU4Oi54YlZlCkSj6
-	RE8bmpsbZKAnYrkUV77A==;
+	List-Owner; bh=dfRhs2y4CBWQ2G9MDbkp1yvejs34Lvr8337BVsoCxus=; b=Q4U/Al0t8w9Wqp
+	JtcNUER/01uZMmpzL84cwsp1SPGOTKwHnrsudc7HyxKfUcPSd9sZIwD+VRLV4MDiMLdCc2qZz8jtP
+	/gYfxlITdo4I/TXnzes7NtBfslLd/SP1V0gZZOjHEYqKGjgrZzXvNEpQqE5QemITrx4gkD/QVkfvk
+	ENYS1EAiyANHURbkDaos8YjmyNcm7mZ8SxVaWUEy+LE+fP9lLoNpQDfaG7BWjh3sOIU9TNgDErwOM
+	d8aplLGIVsFLGeJRwJN6wjtsHsf65WH9ZVe1aCxev2gQKx0/malNnR2eAnfh74dihaWSkG4ehqHEM
+	HAWZ3FM9SUqSUYLUAR0Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wVXH4-00000000u8X-0RvG;
-	Fri, 05 Jun 2026 16:19:58 +0000
-Received: from mail-westeuropeazon11011000.outbound.protection.outlook.com ([52.101.70.0] helo=AS8PR04CU009.outbound.protection.outlook.com)
+	id 1wVXKL-00000000uHq-2qma;
+	Fri, 05 Jun 2026 16:23:21 +0000
+Received: from mail-northeuropeazon11010040.outbound.protection.outlook.com ([52.101.84.40] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wVXH1-00000000u7y-2EZw
+	id 1wVXKJ-00000000uH1-08Jg
 	for linux-i3c@lists.infradead.org;
-	Fri, 05 Jun 2026 16:19:56 +0000
+	Fri, 05 Jun 2026 16:23:20 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=yQljnzKjsA6iAzsQF/XG4RpIMy7cSklCMsbVzg4DWXuFKTHL/yVygnC3/RwDIfSS5JpIVbEFzUY2BpXRlQIFGjmejIcsHEfEiyNFos5U1qj7r46rHvOTYsMkjXekp4InNTfs2UNcSidegx+i87tBU3U/TzAHfE/EYQFSQlTpOtnRlMUYFe1Ig5JysO5aeg29hJvrqcM9PkB9KStyVI6Hqb74N7VS2eUFrsvdTTO9MjJzfd/liXvcFrOYud6EpdusbqvtR/am+O2+6/i/hkVOi/FKTX/nB4yir6CYTyTQmZFp5yuulgT6n31rbiE991H97hwhvd6e3ehufmlTGUYqug==
+ b=V1F9Fy76T6vpXoL48/IRYlsC3vH8HzeExjD6t7pUkCzVOPvhNRM57QT0kaGoNHMmBEEnnOOCaNEmAHKN6kjSRTmarSF8jLauDUNnjMpvBYG/S/VVl5o0GwCupwUBgWIguTk2iRhD5S8yx/H282Ocg6Qgb63F0IP2nQwt9zkFzxYk50yngV/Bm5h6S38IQXaczmVNyRfHjZT5P/bt4JCX11Ato4CNcwBG+GzwEKb7tAFz7pnYkHcOZN3qS8rYreKbY7NbZCeKBYjayrEUqpg0EX4RJj8fNnreRFbHKWGBjz98p9ov5b0XPR9HRbFq33dgZKXfhUgMxJKoFS4FZzVDJA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=eUrcxbwLprUuoTS4GCCAVnrYIhTsHoXKesq4kwC3jXE=;
- b=InoVB/wL1IcOMuKozgUGapMah3CpLdfHk5s0qyib7xLvNRanMsFCo4jJmpAoDuYVsUEZkU2PR/MLM0a8cg0M2blwKVsrLDV+N5pq38Jtsx3de7C7SUju3HQT2z/8xF4qb5gNeEdU0w5YwHCUE1IWrYQfX28vVpzdnEtwiHSP1ququlvXp2ZNvQDPjTXg3Bwbz6YgN7rebvHbJWaUntb2FqAkuapMHJMAA6pPzskNvbG2WJ6gEgsZbuiwrcZQWP0/Hm7HtBITk40Q33RQ7wYOp3LFVm5INBVJTxYiLyxrN3YOf8lFl5FeUIViR/Fj28wLdNHcw4Ek0hf7wK0lTA5cbw==
+ bh=3Cp/ByKzR/RQDZA8ej/hraT2GviQLhEbpQnT0H5iJ9U=;
+ b=JIxCyB6Xi5Bc0PBzlnnTab+LzQxJB74feMwzqLFH/kKyNy4ed3ROO0ZWh6/TaV0GGzkszWeyk46za0+PI6b0HM89FMDh7luUs+k3A/2pCkskm80Hx5OLvf1pyCstSvEJfPFGveePhubukpHPBZtm3YSEmbLIktITwKlQHMa8d6qwYhsmUponfX8yfvOImhpd4OCwDN6dVrQxfM4rhYzZUamOhojITRHUiO2vV5RQwHJf9D9ZZbk5UsgEkK5KeT02RirQSZ8Uz6lf/16kp63svEAR3xhRPvw1vF1iOVlHnXYHd5B3yh87JnwBKKwZbCYC5fHv9dlzh9GjVtEf+cYH0Q==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=eUrcxbwLprUuoTS4GCCAVnrYIhTsHoXKesq4kwC3jXE=;
- b=PcXywVig4tRhk7/I+qDCka160A2hZhE9w/SxyfEKAxAu8Y982rUa3jvbuhyZnsikwgwc0HMsx7e6X/kEY3RvNWYPhi4duQNSAzbYAyng+0N1+lm3K4L2dqqHunEQJnws1ir+rGUYJB7fRxTIjshfSZVnFcenI388oxnRONa7WVBQBv9TSo0F/gZvyBoYJ1jEdCgmhBfnTjLNpJhcPi/Sj98GWXpuB0uEBTJBq/Iu+T0ylZcy/QFSiEHQO8oKQbq8D9ZZykkQKL9smYQUgRqGcfW9jze9qS8lFZ4FDGFBgXkjqu6bF+3gXV+yH5UwFtWt3qtL451ojcl0nTuOnprH3A==
+ bh=3Cp/ByKzR/RQDZA8ej/hraT2GviQLhEbpQnT0H5iJ9U=;
+ b=h50na8Wl9OH89+d8oGESl819IXGE3Flt5sECrIo38ON4RxKONno6vwghxkgXNbb3rg/KnOCt75RCtIzLPEw8bo9b724tTbkNy6BzYU9N0fKAW5b8WQb6KmKstgXgcB9YvRD819C352Ok9706b6al4t8euqc8uaDxSzdhkb7Kg2eBqL+e87ESZmdLrB2XoQ/8btWYO9RIiQ1fucaAHEZTpt199o8Gu3X3PSyWqKxPe1jWnt4mk6He0NrM7HtVgsS34LHtHy6DM3ZeMGQzz+rkIv62rjMywsjDu7V3BtwmXi/g5vk680x6npHZcOvDX3TiimxOwACgZmGo2LZ68Mp1jg==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=nxp.com;
 Received: from PA4PR04MB9366.eurprd04.prod.outlook.com (2603:10a6:102:2a9::8)
- by GVXPR04MB10304.eurprd04.prod.outlook.com (2603:10a6:150:1e9::19) with
+ by DU4PR04MB11387.eurprd04.prod.outlook.com (2603:10a6:10:5cc::22) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.92.8; Fri, 5 Jun 2026
- 16:19:48 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.92.9; Fri, 5 Jun 2026
+ 16:23:15 +0000
 Received: from PA4PR04MB9366.eurprd04.prod.outlook.com
  ([fe80::75e4:8143:ddbc:6588]) by PA4PR04MB9366.eurprd04.prod.outlook.com
  ([fe80::75e4:8143:ddbc:6588%3]) with mapi id 15.21.0092.007; Fri, 5 Jun 2026
- 16:19:48 +0000
-Date: Fri, 5 Jun 2026 12:19:41 -0400
+ 16:23:14 +0000
+Date: Fri, 5 Jun 2026 12:23:08 -0400
 From: Frank Li <Frank.li@nxp.com>
 To: Adrian Hunter <adrian.hunter@intel.com>
 Cc: alexandre.belloni@bootlin.com, david.nystrom@est.tech,
 	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH V2 2/8] i3c: master: Serialize i3c_set_hotjoin() with the
- maintenance lock
-Message-ID: <aiL3HeVshOLWdniJ@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH V2 6/8] i3c: master: Defer new-device registration out of
+ DAA caller context
+Message-ID: <aiL37EmdkHp6uKJ7@lizhi-Precision-Tower-5810>
 References: <20260518115520.98335-1-adrian.hunter@intel.com>
- <20260518115520.98335-3-adrian.hunter@intel.com>
+ <20260518115520.98335-7-adrian.hunter@intel.com>
 Content-Disposition: inline
-In-Reply-To: <20260518115520.98335-3-adrian.hunter@intel.com>
-X-ClientProxiedBy: PH0PR07CA0020.namprd07.prod.outlook.com
- (2603:10b6:510:5::25) To PA4PR04MB9366.eurprd04.prod.outlook.com
+In-Reply-To: <20260518115520.98335-7-adrian.hunter@intel.com>
+X-ClientProxiedBy: PH7PR03CA0021.namprd03.prod.outlook.com
+ (2603:10b6:510:339::28) To PA4PR04MB9366.eurprd04.prod.outlook.com
  (2603:10a6:102:2a9::8)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|GVXPR04MB10304:EE_
-X-MS-Office365-Filtering-Correlation-Id: 6e1fe25d-f873-4d38-e9b1-08dec31e4340
+X-MS-TrafficTypeDiagnostic: PA4PR04MB9366:EE_|DU4PR04MB11387:EE_
+X-MS-Office365-Filtering-Correlation-Id: cadfee2a-e860-494b-c031-08dec31ebe90
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|52116014|366016|376014|19092799006|1800799024|38350700014|22082099003|18002099003|56012099006|4143699003|11063799006;
-X-Microsoft-Antispam-Message-Info: be5qZ5qZ7ydihtTWicb8XEYB8QZV6TcIPC346z9H0g5+icyXW8kby7IcImwEg3Ta5Qoa6/Y5i9YB65YNiQ5vD9QMJi2Xdh5hfYofzF2McFNKmAvwQewu/SO4WKI2qVoFZpe3YnNx/FG48tXinioafdbQp/cTPlAFkiSjKYZE9G1TRPZ9s56JwfqCOP017BLCPs6KNqSQe1xYKyV4KlTbovZJlwmeuzlCmrqX8UhHOb67s0EpmwlRGVMUAs+t2pShoZjcTV3E84pxIgbe+xOQ8WqNEbz08OP8Yy48VM97rwFFMyxfulIbSnFzBvdGfPLdxMWHqWuzXx0O65uJGoPTiFzYE0/m6p1uUfaQZV8r2z/oj03uhlrkzdZS3tUN4eFW8lX08gD29i23ei51BTjuSEkrzRYX0pLODIb9cPqdLDIfFvJr5PaPsz5z4vJHAbHqod+fVmVtu2a/NXzI6ptoqoefzfgHIZ5Zg07/a/pBoRut2vbs3gMnt5uSC4BuGC54oYORlYSuOj5At6WwQtSOV/6dUhGc5e3kDOuiVvcES4WwgP2sTLpl6LFEhcPbyxDAUifpdpkhhoN38vUjI3bXJhfujFWCjDbuZkIwVn1WwD/MFYn7nK0grLM8uOiV31HdX4TcdC+/UAo4sd1PKwwrswP2QVsIBh+pYlqa6VceTWvjohfQ610kp7n8sTlHDTyFHtD4TlRBzm/jqV6fiFKkqdQb7wSMz7bpXL7hCucVreVnbT3C9Lq5HUhY+bFqMIZ+
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(52116014)(366016)(376014)(19092799006)(1800799024)(38350700014)(22082099003)(18002099003)(56012099006)(4143699003)(11063799006);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|376014|52116014|19092799006|1800799024|38350700014|11063799006|56012099006|5023799004|4143699003|6133799003|22082099003|18002099003;
+X-Microsoft-Antispam-Message-Info: WPdlLmts4ESbO+oANwhAeJlSjlY894qPfk9mc+HHjtkC4iUd10tHG8mPJHFKJ0MEk0UrgCm/uQNcQ1yXW2abm4SG+RTry6Q1wAlepv5aiOmUUsXU9b7J5i/SaNQdYxw4ERGZF6nAK+aBAeXegHEJHpb61si3wK2NtVgAmYY9cBMQTTEcXJX5Br8nP5W68mEgmDGo205lAN+jj2nO1EXCg/pnyionicEK2W4dQ2St3lVsOUcoFavsKdP2oSirQLzhAAXCmB28xAAVxifymAatLm0A7WkLwa5FOmPHIcHWknvQf+uea6oDM45tf68P7kXVFk1aDuRRyd9wWel39Ul61TgerWlYRLfogoPhtKpw2Y+CarpifGXKrBj/e+iB6A5vKTUFh48t5fFcli1u5uvtAWA0mLjfgSbG6sHfUdT9zMikjI+AVpTk5Qs123PDelztgyqn6zCknjwWfQ9af32UKsD1c+SKw3D1gKYQiSv3xvfF1hnh5hpO+JaUvhg8pUp1SHVJjdUtnCFellUIxXCn58ZehKiFbsLe9nJxGIK+PM5fUYgtAuHvrV0WABK0ow0yo8iNWCuJ98rqIY+JWgGvsUKf/24WM/CXReyepiRyNNsr3NgOvcpbD3QHrMBWcyI/3PQB/o5nOiUj4chmTxudvQHl7YKNOfE9dWbzZgohEa77friy1FOwV4ay3MrwMC2tVswC6mDeRvipLMM1vCfsAho2uo+8zh3vTjYqs+PjZynsJrdHTXDS2/d+ufm7CFq5
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PA4PR04MB9366.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(52116014)(19092799006)(1800799024)(38350700014)(11063799006)(56012099006)(5023799004)(4143699003)(6133799003)(22082099003)(18002099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?ojBkoNouvfATh91YdUFWcLibdUKbfbLGGyJq4dUT2wpZVn6sfWKHYmdJbXBX?=
- =?us-ascii?Q?PDFBAfxQ1lepskwLuIUV/+k1N1b/FAQ0KO1WlXuqgJujv95U4acYe4IVHrMx?=
- =?us-ascii?Q?PKhaWq1/30S5IAztBwwHtKGNW0Q0SUyZnbJTvcYewIwpQTG63Y6QOEb19M+K?=
- =?us-ascii?Q?OVjFxAnvxQnSAVmMBRewti+vWmmIZRSKSUfbOJ9HfZ/SNJN7l8UDi3dQLcA6?=
- =?us-ascii?Q?LQnAeMl2boT+ioGFwXOyxTAoimbndzqXlN498kz9N5nL0FdjjHFvJ55o8Dh0?=
- =?us-ascii?Q?DW6u0s7A5FIxT+o3YmmQQMeVsjCXIR3lrrj1nCZQbzr3C1sOn0lRrcJaOodS?=
- =?us-ascii?Q?GocDlVYHe2/63yjZdWgc787Ul229mRyLPqKNA16Q1qKFDl82L4a43zknXOmP?=
- =?us-ascii?Q?SmwGDD1yTCIx2rovNtGapBodzBUpQS3X9KGZyDwwM7dm7lXkc0SqQ4q391JY?=
- =?us-ascii?Q?eUGKXn+h6ze9TOuJ3lA7+mXYOTVl5o44DOAn2tv6CH0zVFNMqjoqdR74qz7d?=
- =?us-ascii?Q?OWEB2Ussrm2wvfHt/LVTKiUL0ik+cEYPqnMVEoYKz4SjQKkhLGQlZu2QfaO4?=
- =?us-ascii?Q?tFBfeapl4ufuOFzNyRPSMKAju21UuJeVOXO2uI5UtTtvGecw5zlDbf+OfMtF?=
- =?us-ascii?Q?JpVPQCkKOwFOh0+zLBLT0uR2CWFg/R8Zf1GfHo0NtFF8XG0hlcIfNbYUs+TB?=
- =?us-ascii?Q?wseX+HONWDx5WfkrkfJeAqyecHj9rEdm6TecD+uq9dQNyt/9mq+Ffd3eL6E+?=
- =?us-ascii?Q?gLrw5DNOHWUs3hajR+EmOCy/BLKEQWdJpHc3yyuzYWvD61uGj1pYUFJbsjuj?=
- =?us-ascii?Q?zNdXmX4RL+iKd/0U7MxUMzJUVoYkN/lcuEG2Df9se3lv6jJQfhzwtQ4QeovS?=
- =?us-ascii?Q?Elb+j+z9TqdUB2EK50HxlFIHGCxbSp39mYQ+gKNe9t0GxFi522eliGLCWezm?=
- =?us-ascii?Q?Bt1UNpkCEoZj/Rtvt7UMGOf6zVYpIdDWAnes+aTKpQH9t7pEjtYI2bFt2LKx?=
- =?us-ascii?Q?DKNPfYHxJM4x+2+MPd3j04EbLwWh7foa5Wk6V6DIkqaQoZiNQmVZhfMDpVnn?=
- =?us-ascii?Q?CW+7Ynvi9YxijNJRPVUG0vtN5ut6f1zIZ7jPXjcqweaqrjb4VqG38w6PSnBE?=
- =?us-ascii?Q?vSB2r818+leu/qDLeoDAoq4y4UJzmsqq+uH/OnYm/V7HRIgKx7PXrvSBcIM1?=
- =?us-ascii?Q?gqsAe7rR9Hwm+WpIz2llQxBkjhqqQIcvuEOl9FPu4D0uPqQhQwQzk/pEU523?=
- =?us-ascii?Q?vb+3FqsL4HG0fGUWlgykwlzuYVMv87A2hFdojSlK88BG4XQKxgl6okEj28KR?=
- =?us-ascii?Q?oozhxzXSAUpIBqWFKpTigIjHa14BnBbWmvp6fm1Dcs9z/IRmCZw8p6H/3zQf?=
- =?us-ascii?Q?VQrJKdk7vZV/wbTbzdAxg4+SpTqawWs6GBttjYZkrztrrXOuaDUzHMtB2364?=
- =?us-ascii?Q?9JNbEWAr/Efc2xW/GItKsyAsW0nJanzJh8NzuO6p3tGx51wfyZ4i8yG+abN0?=
- =?us-ascii?Q?B2vFqQbo9pmTH1zwTkeJFx3mybWAgbh23fDsoyYGe5200LoltcTwOve62HhC?=
- =?us-ascii?Q?LQPvWMheMNAZNCv03Y2hs3n/wCsT1RoNmVUU1E1MvW2fUGQIRTSa/hYoygWo?=
- =?us-ascii?Q?uta3BWd+CeHTKJbOmgoM2l41wple12xNli2VxDCPLrkp1PxpAZRnVbk/G8CS?=
- =?us-ascii?Q?vnZRyP/92uVunzXz+i1S1dVomoaKgcuZpyI+SIxsDbkilLRSJBMS2VNXX6r2?=
- =?us-ascii?Q?JG+aRDa4Wg=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Iy/E27zIxpFx8RPIBMuLH73l7YLiOkql4T9F6ykbzDt2yPUyShwtRERu996M?=
+ =?us-ascii?Q?vH1V5Ma95dcsktubb5R+ju+tbk0iLPCQtatc2Hys3SFbTAZBJ0mrR4CMNbs6?=
+ =?us-ascii?Q?s6u4YACq0PaRhcdqvywSmWZhs9zIGZ4xFblACfe7uTZR69OxlVUriusn+bOd?=
+ =?us-ascii?Q?44yEDP2p5+mb/jlQfdXAZwTNCWcPKxKnXjWyjwu87b2jMEn3mvyZHgB4pPeS?=
+ =?us-ascii?Q?PGYgMR8XWV6iSIJx6yX9dDdCmRJNqxsUQ/pmn3urtswzP0XGeXlFcEaFKNbO?=
+ =?us-ascii?Q?X8aZbLMSq9ODxa4LGzjI32arbpRxeX/B9PvDGLaizqESkn/WghAgNODEKvYB?=
+ =?us-ascii?Q?yxyvUfoIme2rfR3dazJ1bqzA+xu+QwhBvQLzOc3cFiRLJS2LGmiuhiZGkRMK?=
+ =?us-ascii?Q?xq0DAEOoHFoJQBL2xUgON1BfmXJyj4pnwl9FViwcduK5LFxOz69EedOqBwJw?=
+ =?us-ascii?Q?Sf9zPgdf8ejmj0GF8rV6vsielKHtKnZw/j/V4tBUlZYY/NQ9fALrb1qSLTQ/?=
+ =?us-ascii?Q?2huarPdzUq9ylBfXxI94JcjS4DjIOugAnaDPybqT+BmBFnmBo6gh4VbJgxNh?=
+ =?us-ascii?Q?a/DptCrzU77bXIaJQEH5SP+wGbZPYiwxIBWUG4YkM9en5e7ozRDemwF7cEKe?=
+ =?us-ascii?Q?mf5eGOxI0q58bpy5PaWumTp9rbADl97/oVEOudcS70WPFjVcNLN0YoZFFUs2?=
+ =?us-ascii?Q?Svd/doAgwqVhXVd409EZlbLb0UDrTe8XUtT3nzs0bJJvqMp5+h/gdqWGEaXT?=
+ =?us-ascii?Q?e990E8MJHue8wjLCNLwlrqtUw+HhELRTDdRrfKmEYB5Lx64zzNyTUEdxw3Cj?=
+ =?us-ascii?Q?sTxsM1CcMNQ6IlBsxm67fvtq4GvEJEQV4N7VpivqBh71P9KJFZGDv4j8PIXA?=
+ =?us-ascii?Q?mTLj9cVS0+AJoqS5sLBujq1oqhcG6n8amoxMM6Z801GohS4vdHQnkIfCNoRO?=
+ =?us-ascii?Q?2BtrJjmnWtgZgSlUm3k/7ucnRGYGJSS+9VhH19q7NC9eEqx53eZj4Ns8Qujr?=
+ =?us-ascii?Q?voMrPgMhiZjO2x5TlLPUxEtodhRLdvHqd5TEViXbI8P7MQ2P3MEo5vy3u+Xb?=
+ =?us-ascii?Q?kWoD7UgfxykbpKJzd9wDrQ2/hdCZsfswOFDxfiZEuyIqDls6ktXkfehODLcL?=
+ =?us-ascii?Q?ed/vYU2FHlk8M8eygWHlPb4Xdhs9LTtH4uq8GgLcRB53TvcCSvcHzejY3sBV?=
+ =?us-ascii?Q?OOKxBNPvdXSGiw/jC5veRqiMftUZhW0EZvZBBi6LHt6ErPOkGhKYCzqGJ1r5?=
+ =?us-ascii?Q?GNb+V3qlZzscUjA8onWYYQimIIjB+Bh5CsysKmApWPWI1WBT34iHOC65qr8R?=
+ =?us-ascii?Q?wguY3aCAdwSXN7lC2bN2AQzPiX5iM0efJk6LB49ZQ2TZsRiN2A5/jwCDt2w0?=
+ =?us-ascii?Q?UWQG2rltN9rylPItsdt/WtsAoNeXblz6ZqJdgx/DqBm2UEzwfdE/r3Mh52wk?=
+ =?us-ascii?Q?t07EyVb0+Mywv6iYnHnQ7KiXIHbNEC+jqajaoZJTZlP3hkiz9o8lE5jGNfuO?=
+ =?us-ascii?Q?7BR6/REj1qj2E1AAOkSQ5n+cYIoTeBE8CDP5d/0mBISTQDFlRlHhWb4LaceZ?=
+ =?us-ascii?Q?h1YzF8ysLlCx8qQBXKXdV4QJy0sWbaFVJiz9s5kBdcMtS99tn1bdGixipBXn?=
+ =?us-ascii?Q?GhFVQ4LXsDiG3bOIE+EUyn2yR0E89H0qz2R7W7uwuQCE6iclfESWcHUmLiKR?=
+ =?us-ascii?Q?hYukYUCc5GSfhoPOOjDUOvHQQBWyYSI5gyhVkZoj9wcFw0p5?=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6e1fe25d-f873-4d38-e9b1-08dec31e4340
+X-MS-Exchange-CrossTenant-Network-Message-Id: cadfee2a-e860-494b-c031-08dec31ebe90
 X-MS-Exchange-CrossTenant-AuthSource: PA4PR04MB9366.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Jun 2026 16:19:48.0276
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Jun 2026 16:23:14.9059
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: xCKyyHubnkXwV1Fi0qn4Kiz1QMYxo6wqAkBOxx2FzfNkWK/cVGehyJ63eYtmvzx4pen/z3PcJQHaTZei2J+Fjw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXPR04MB10304
+X-MS-Exchange-CrossTenant-UserPrincipalName: wZY0F7eKQULrQrLT9iSDOVuLXhOFtrrlb862JTOyJ7llkBr7BmqRHlECTB+9khwoMg2qyVZRLFuFcvQeYSDqQA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU4PR04MB11387
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260605_091955_602655_AA158C47 
-X-CRM114-Status: GOOD (  20.45  )
+X-CRM114-CacheID: sfid-20260605_092319_080723_E5F3E220 
+X-CRM114-Status: GOOD (  34.10  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,26 +136,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, May 18, 2026 at 02:55:13PM +0300, Adrian Hunter wrote:
-> i3c_set_hotjoin() dispatches the controller's enable_hotjoin() or
-> disable_hotjoin() op and updates master->hotjoin under
-> i3c_bus_normaluse_lock(). That lock is a read-side acquisition of
-> bus->lock (down_read()), so it does not exclude concurrent callers.
+On Mon, May 18, 2026 at 02:55:17PM +0300, Adrian Hunter wrote:
+> Master drivers may invoke i3c_master_do_daa_ext() during resume to
+> re-run Dynamic Address Assignment.  As well as assigning addresses to
+> any newly arrived devices, this restores the dynamic address of devices
+> that lost it across system suspend, so it has to run as part of the
+> controller's resume path.
 >
-> The hotjoin sysfs attribute can be opened multiple times, and writes
-> through different opens are not serialized.  Two concurrent writers
-> to "hotjoin" can therefore race in i3c_set_hotjoin(), with the
-> controller op and the master->hotjoin store from one call interleaving
-> with the other.  The hardware enable/disable state and the value reported
-> by hotjoin_show() can end up out of sync.
+> A side effect of i3c_master_do_daa_ext() today is that it also
+> registers any newly discovered I3C devices with the driver model
+> inline, via i3c_master_register_new_i3c_devs().  Doing that from the
+> resume path is problematic: a hot-join-capable device may join the bus
+> during this same DAA, and registering it immediately would push driver
+> model work (probing, sysfs, etc.) into the controller's resume context,
+> where the rest of the system is not yet fully resumed and the
+> controller driver is still partway through its own resume sequence.
 >
-> Take i3c_bus_maintenance_lock() instead. Toggling Hot Join enable
-> changes bus state and is conceptually a maintenance operation, so the
-> write-side acquisition of bus->lock is the appropriate lock and
-> serializes concurrent callers against each other and against other
-> maintenance operations.
+> Decouple discovery from registration: add a reg_work work item to
+> struct i3c_master_controller and have i3c_master_do_daa_ext() queue it
+> on master->wq (the freezable workqueue) instead of calling
+> i3c_master_register_new_i3c_devs() directly.  The worker performs the
+> registration only when the controller is not shutting_down, and is
+> cancelled alongside hj_work in i3c_master_shutdown().  Because wq is
+> freezable, any newly observed devices end up being registered after
+> the system has finished resuming.
 >
-> Fixes: 317bacf960a48 ("i3c: master: add enable(disable) hot join in sys entry")
+> i3c_master_register() also routes its initial post-bus-init registration
+> through reg_work, using flush_work() to keep probe-time behavior
+> synchronous.  This keeps a single registration code path and ensures the
+> worker is the only writer of desc->dev.
+>
+> Fixes: 3a379bbcea0af ("i3c: Add core I3C infrastructure")
 > Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 > ---
 
@@ -166,34 +176,106 @@ Reviewed-by: Frank Li <Frank.Li@nxp.com>
 >
 > Changes in V2:
 >
+> 	Add comment about reg_work use
 > 	Add Fixes tag
 >
 >
->  drivers/i3c/master.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+>  drivers/i3c/master.c       | 27 ++++++++++++++++++++-------
+>  include/linux/i3c/master.h |  6 ++++++
+>  2 files changed, 26 insertions(+), 7 deletions(-)
 >
 > diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index ab11e2d79aab..38ffc8713167 100644
+> index a59c4b744b36..c9685379e868 100644
 > --- a/drivers/i3c/master.c
 > +++ b/drivers/i3c/master.c
-> @@ -649,7 +649,7 @@ static int i3c_set_hotjoin(struct i3c_master_controller *master, bool enable)
->  			return ret;
+> @@ -839,6 +839,7 @@ static void i3c_master_shutdown(struct i3c_master_controller *master)
+>  	i3c_bus_maintenance_unlock(&master->bus);
+>
+>  	cancel_work_sync(&master->hj_work);
+> +	cancel_work_sync(&master->reg_work);
+>  }
+>
+>  static void i3c_device_shutdown(struct device *dev)
+> @@ -1838,6 +1839,16 @@ i3c_master_register_new_i3c_devs(struct i3c_master_controller *master)
 >  	}
+>  }
+>
+> +static void i3c_master_reg_work_fn(struct work_struct *work)
+> +{
+> +	struct i3c_master_controller *master = container_of(work, typeof(*master), reg_work);
+> +
+> +	i3c_bus_normaluse_lock(&master->bus);
+> +	if (!master->shutting_down)
+> +		i3c_master_register_new_i3c_devs(master);
+> +	i3c_bus_normaluse_unlock(&master->bus);
+> +}
+> +
+>  /**
+>   * i3c_master_do_daa_ext() - Dynamic Address Assignment (extended version)
+>   * @master: controller
+> @@ -1878,9 +1889,7 @@ int i3c_master_do_daa_ext(struct i3c_master_controller *master, bool rstdaa)
+>  	if (ret)
+>  		goto out;
 >
 > -	i3c_bus_normaluse_lock(&master->bus);
-> +	i3c_bus_maintenance_lock(&master->bus);
->
->  	if (enable)
->  		ret = master->ops->enable_hotjoin(master);
-> @@ -659,7 +659,7 @@ static int i3c_set_hotjoin(struct i3c_master_controller *master, bool enable)
->  	if (!ret)
->  		master->hotjoin = enable;
->
+> -	i3c_master_register_new_i3c_devs(master);
 > -	i3c_bus_normaluse_unlock(&master->bus);
-> +	i3c_bus_maintenance_unlock(&master->bus);
+> +	queue_work(master->wq, &master->reg_work);
+>  out:
+>  	i3c_master_rpm_put(master);
 >
->  	if ((enable && ret) || (!enable && !ret) || master->rpm_ibi_allowed)
->  		i3c_master_rpm_put(master);
+> @@ -3126,6 +3135,7 @@ int i3c_master_register(struct i3c_master_controller *master,
+>  		goto err_put_dev;
+>  	}
+>  	INIT_WORK(&master->hj_work, i3c_master_hj_work_fn);
+> +	INIT_WORK(&master->reg_work, i3c_master_reg_work_fn);
+>
+>  	ret = i3c_master_bus_init(master);
+>  	if (ret)
+> @@ -3151,12 +3161,15 @@ int i3c_master_register(struct i3c_master_controller *master,
+>
+>  	/*
+>  	 * We're done initializing the bus and the controller, we can now
+> -	 * register I3C devices discovered during the initial DAA.
+> +	 * register I3C devices discovered during the initial DAA. Device
+> +	 * registration is done via reg_work because that keeps a single
+> +	 * registration code path and ensures the worker is the only writer
+> +	 * of desc->dev. Flush the work to preserve synchronous probe-time
+> +	 * behavior.
+>  	 */
+>  	master->init_done = true;
+> -	i3c_bus_normaluse_lock(&master->bus);
+> -	i3c_master_register_new_i3c_devs(master);
+> -	i3c_bus_normaluse_unlock(&master->bus);
+> +	queue_work(master->wq, &master->reg_work);
+> +	flush_work(&master->reg_work);
+>
+>  	if (master->ops->set_dev_nack_retry)
+>  		device_create_file(&master->dev, &dev_attr_dev_nack_retry_count);
+> diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
+> index 77e63082b06e..8cdd7be505d3 100644
+> --- a/include/linux/i3c/master.h
+> +++ b/include/linux/i3c/master.h
+> @@ -523,6 +523,11 @@ struct i3c_master_controller_ops {
+>   *	be done from a sleep-able context
+>   * @hj_work: work item used to run DAA after a Hot-Join event is detected.
+>   *           Queued to @wq by i3c_master_queue_hotjoin()
+> + * @reg_work: work item used to register newly discovered I3C devices with
+> + *            the driver model. Queued to @wq by i3c_master_do_daa_ext() so
+> + *            that device registration is deferred out of the DAA caller's
+> + *            context (notably the resume path), and is skipped if the
+> + *            controller is shutting down
+>   * @dev_nack_retry_count: retry count when slave device nack
+>   *
+>   * A &struct i3c_master_controller has to be registered to the I3C subsystem
+> @@ -548,6 +553,7 @@ struct i3c_master_controller {
+>  	struct i3c_bus bus;
+>  	struct workqueue_struct *wq;
+>  	struct work_struct hj_work;
+> +	struct work_struct reg_work;
+>  	unsigned int dev_nack_retry_count;
+>  };
+>
 > --
 > 2.51.0
 >
