@@ -4,63 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5DB59CD6E79
-	for <linux-i3c@archiver.kernel.org>; Mon,  8 Jun 2026 20:16:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C0B3BCD6E79
+	for <linux-i3c@archiver.kernel.org>; Mon,  8 Jun 2026 20:27:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VUp/PGOmjMPD2AwgVLfcYDHYaIasPfky/6yL2tlG+rg=; b=X78+SLwcoOgV6k
-	nVx3dn+Uphb2KDFqcQPWF41c395KHNFbpxWNus8+ZdSigvZNw7xN01sus4nXKPa21E10pQh/yfQ2y
-	lRmhcaxrA3EXc2NMJ6itSnl1JnFglpnjycYsaWasM+7kabvprQW9RZsi3nMBOA2Mtk7CT6g4fE3Pk
-	m8TwSaKMlDfUagWCh9YljRhlK2zar6r45D6tHEu2RKi8gdGy9ojhMd4vGq6z3a8mmoWKW9Y8NY3mX
-	mXjrcEQNv/h31N3a8p5XR3bmooQY9Ys134fxJ7rQDy1yi71Bdbq1pntZHliWLI7QhDt1sIjFDzIJZ
-	miUXXuT66PZASstOnAdg==;
+	List-Owner; bh=V8SHtv99yghp2UzsRg4fQ5fjCZzitiXQClfdPzgthaU=; b=oAqVNp5wjXbw9E
+	wLPYg4ilMsQMH6raxjP5EiJponqQhJb6jIM4FfMk7foFy7wa9Ez65f38UwMcqR62q2mC7yJWbYZC+
+	d5683fAOsMbrQ8t4mRzp5D+Bj8V55enquzPAjpLmY5KRQwD5+6kr1sokjmeURE5CUl+GizH59VKZ9
+	hgH7oUu9GKceEQCnX9tCmpsJ7zqzNvGBwR5Vjc2854v+S0hIL4QzYmtSrlgM8I0ued1SkX+15enrl
+	1OHB7u0hhUY9Y7w5wPYKcveoLYvP+Ksj0ouxmmt7PpNxkk8r7p0eLt1yZ1w/uS2c6AVL/9p+oN7fX
+	GbInVVN+JoHoKOSFG/ZQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWgOr-00000004LpQ-2z54;
-	Mon, 08 Jun 2026 20:16:45 +0000
+	id 1wWgZb-00000004MNs-0TNR;
+	Mon, 08 Jun 2026 20:27:51 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWgOq-00000004Lp0-3dzd
+	id 1wWgZa-00000004MNk-1Ouv
 	for linux-i3c@lists.infradead.org;
-	Mon, 08 Jun 2026 20:16:45 +0000
+	Mon, 08 Jun 2026 20:27:50 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 42A18601E6;
-	Mon,  8 Jun 2026 20:16:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7C93B1F00898;
-	Mon,  8 Jun 2026 20:16:41 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 7A9D660098;
+	Mon,  8 Jun 2026 20:27:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EA1141F00898;
+	Mon,  8 Jun 2026 20:27:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1780949804;
-	bh=RHP6HS6b5+U/6cKljmDnmU3I12hOu6mdtrdpdlC9EDo=;
-	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=RklmNhgk0hda7262QggA9aE1BvmBXXEYSDqgiHg0kp2bzBqJ/qVGcg1lcrQrcZlY5
-	 fYib/eILYhNwrN8P/zm47+9X/Qew+pZujoyWAsRO/bjvnmUXh8cSccZv0ZWlkZL0ZN
-	 Ked/jVLIDv9VRjEhebWtSa8EaGo8Ho1L/DXdJFttJrzQ4506ElKO3wm5hwF3TyVezs
-	 cD+f7Spe36trvz6vbVgcHwsiIMiquAeCvWrpYB0Ldicr8t5whvGrd0deyZN9hcuHjb
-	 NlcqI4kxNubLLIBqu0w5u3wKpCuuHCJ6/QoYi0Zwfrenqe3oZXaSdjiH4BWTjk7Zp1
-	 kltOyI4tcccyg==
-From: Claudiu Beznea <claudiu.beznea@kernel.org>
-To: wsa+renesas@sang-engineering.com,
-	tommaso.merciai.xr@bp.renesas.com,
-	alexandre.belloni@bootlin.com,
-	Frank.Li@nxp.com,
-	p.zabel@pengutronix.de
-Cc: claudiu.beznea@kernel.org,
-	claudiu.beznea@tuxon.dev,
-	linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-renesas-soc@vger.kernel.org,
-	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: [PATCH v3 17/17] i3c: renesas: Add runtime PM support
-Date: Mon,  8 Jun 2026 23:15:43 +0300
-Message-ID: <20260608201543.804902-18-claudiu.beznea@kernel.org>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20260608201543.804902-1-claudiu.beznea@kernel.org>
-References: <20260608201543.804902-1-claudiu.beznea@kernel.org>
-MIME-Version: 1.0
+	s=k20260515; t=1780950469;
+	bh=wQkm7ma8LlSsYpOjIIJAx2xt6+ZnvJgRUBtplQMgW9c=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=AcmJNmbJxW/z6F9N4k0F8AVgRur6dLF9/VjirueYIa20w4Ecmlc+bHv2jNUI1OAe1
+	 vVpJ9xogs9HOqqcoBwt5QROV9updzjKaMUX7OILrBLIKTlNKuwLhjln5w5WN8211n0
+	 c+kniQDv63BUhThcRuJkdWt3fvZPCQhqdkWtspwuTY0Nth+GCwpGnjs+m9fzYG3HkI
+	 l0OvX9xBKc5BKOj/iGCw7twN4Q/33Kp2GIOGoTwRABakZ65S+7moGibt8D57xE9D1e
+	 1cYvcL5n33fFje1baWeTrgSyANBBBLAk43M+paqL4Hub1y+m/XQ2KH4Jwudj7nYnQr
+	 3c5ZlWN6xGMeA==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v3 10/17] i3c: renesas: Return immediately if there is
+ no transfer
+To: "Claudiu Beznea" <claudiu.beznea@kernel.org>
+Cc: Frank.Li@kernel.org, linux-i3c@lists.infradead.org, wsa+renesas@sang-engineering.com
+In-Reply-To: <20260608201543.804902-11-claudiu.beznea@kernel.org>
+References: <20260608201543.804902-11-claudiu.beznea@kernel.org>
+Date: Mon, 08 Jun 2026 20:27:48 +0000
+Message-Id: <20260608202748.EA1141F00898@smtp.kernel.org>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,443 +62,63 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-
-On the SoCs where the Renesas I3C driver is enabled (RZ/G3S and RZ/G3E),
-the clocks of the IP are managed through a clock PM domain. To keep the
-I3C code simpler, the explicit clock handling was dropped along with the
-addition of runtime PM support, in favor of the runtime PM APIs. Only the
-code for getting tclk was preserved, as it is necessary to compute the
-I3C clock rate.
-
-All the APIs provided to the I3C subsystem through struct
-i3c_master_controller_ops are guarded with runtime PM APIs to
-enable/disable the controller at runtime.
-
-As the Renesas I3C driver implements an asynchronous transmit model by
-preparing a transfer and waiting for its completion through the ISR,
-renesas_i3c_abort_xfer() was added to disable interrupts and clear any
-pending IRQ status bits when there is no completion in the defined
-timeout. Along with this, renesas_i3c_wait_xfer() return type was changed
-to unsigned long.
-
-Add runtime PM support for the Renesas I3C driver.
-
-Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
----
-
-Changes in v3:
-- dropped the RPM resume/suspend in renesas_i3c_suspend() to read the
-  DATBASn registers as the DATBASn register are not used on suspend/resume
-  path anymore in this version
-
-Changes in v2:
-- dropped the runtime suspend/resume functions as for now, there will be
-  no pinctrl sleep state described in DT
-- do not synchronize the IRQs in renesas_i3c_abort_xfer() as some handlers
-  may re-enable interrupts; instead just disable the interrupts and clean
-  any status bits that the IRQ handlers are touching; with this the
-  struct renesas_i3c::{irqs, num_irqs} and the associated code was removed
-- dropped the renesas_i3c_dont_use_autosuspend() along with the
-  devm_add_action_or_reset() call to set it since the same operation is
-  done by the devres cleanup helper of devm_pm_runtime_enable()
-- adjusted the renesas_i3c_suspend() with RPM calls to save the DATBAS
-  registers
-- use pm_runtime_resume_and_get() in renesas_i3c_resume() to avoid
-  mixing gotos with cleanup helpers
-- adjusted the patch description to reflect these changes
-
- drivers/i3c/master/renesas-i3c.c | 150 +++++++++++++++++++++++++------
- 1 file changed, 122 insertions(+), 28 deletions(-)
-
-diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
-index b6c282c53a54..d6121ca86990 100644
---- a/drivers/i3c/master/renesas-i3c.c
-+++ b/drivers/i3c/master/renesas-i3c.c
-@@ -22,6 +22,7 @@
- #include <linux/module.h>
- #include <linux/of.h>
- #include <linux/platform_device.h>
-+#include <linux/pm_runtime.h>
- #include <linux/reset.h>
- #include <linux/slab.h>
- #include "../internals.h"
-@@ -199,8 +200,6 @@
- #define RENESAS_I3C_MAX_DEVS	8
- #define I2C_INIT_MSG		-1
- 
--#define RENESAS_I3C_TCLK_IDX	1
--
- enum i3c_internal_state {
- 	I3C_INTERNAL_STATE_DISABLED,
- 	I3C_INTERNAL_STATE_CONTROLLER_IDLE,
-@@ -263,9 +262,10 @@ struct renesas_i3c_addr {
- 
- struct renesas_i3c {
- 	void __iomem *regs;
--	struct clk_bulk_data *clks;
-+	struct clk *tclk;
- 	struct reset_control *presetn;
- 	struct reset_control *tresetn;
-+	struct device *dev;
- 	struct renesas_i3c_xferqueue xferqueue;
- 	struct i3c_master_controller base;
- 	struct renesas_i3c_addr addrs[RENESAS_I3C_MAX_DEVS];
-@@ -278,7 +278,6 @@ struct renesas_i3c {
- 	u32 i3c_STDBR;
- 	u32 extbr;
- 	u16 maxdevs;
--	u8 num_clks;
- 	u8 refclk_div;
- };
- 
-@@ -443,7 +442,24 @@ static void renesas_i3c_enqueue_xfer(struct renesas_i3c *i3c, struct renesas_i3c
- 	}
- }
- 
--static void renesas_i3c_wait_xfer(struct renesas_i3c *i3c, struct renesas_i3c_xfer *xfer)
-+static void renesas_i3c_abort_xfer(struct renesas_i3c *i3c)
-+{
-+	guard(spinlock_irqsave)(&i3c->xferqueue.lock);
-+
-+	/* Disable all the interrupts */
-+	renesas_writel(i3c->regs, BIE, 0);
-+	renesas_writel(i3c->regs, NTIE, 0);
-+
-+	/* Clear normal transfer status flags. */
-+	renesas_clear_bit(i3c->regs, NTST, NTST_TDBEF0 | NTST_RDBFF0 | NTST_RSPQFF |
-+					   NTST_TEF | NTST_TABTF);
-+	/* Clear bus status flags. */
-+	renesas_clear_bit(i3c->regs, BST, BST_NACKDF | BST_TENDF | BST_SPCNDDF);
-+	/* Clear error flags. */
-+	renesas_clear_bit(i3c->regs, BCTL, BCTL_ABT);
-+}
-+
-+static unsigned long renesas_i3c_wait_xfer(struct renesas_i3c *i3c, struct renesas_i3c_xfer *xfer)
- {
- 	unsigned long time_left;
- 
-@@ -452,6 +468,8 @@ static void renesas_i3c_wait_xfer(struct renesas_i3c *i3c, struct renesas_i3c_xf
- 	time_left = wait_for_completion_timeout(&xfer->comp, msecs_to_jiffies(1000));
- 	if (!time_left)
- 		renesas_i3c_dequeue_xfer(i3c, xfer);
-+
-+	return time_left;
- }
- 
- static void renesas_i3c_set_prts(struct renesas_i3c *i3c, u32 val)
-@@ -485,6 +503,12 @@ static void renesas_i3c_bus_enable(struct i3c_master_controller *m, bool i3c_mod
- static int renesas_i3c_reset(struct renesas_i3c *i3c)
- {
- 	u32 val;
-+	int ret;
-+
-+	PM_RUNTIME_ACQUIRE_IF_ENABLED_AUTOSUSPEND(i3c->dev, pm);
-+	ret = PM_RUNTIME_ACQUIRE_ERR(&pm);
-+	if (ret)
-+		return ret;
- 
- 	renesas_writel(i3c->regs, BCTL, 0);
- 	renesas_set_bit(i3c->regs, RSTCTL, RSTCTL_RI3CRST);
-@@ -556,7 +580,7 @@ static int renesas_i3c_bus_init(struct i3c_master_controller *m)
- 	int od_high_ticks, od_low_ticks, i2c_total_ticks;
- 	int ret;
- 
--	i3c->rate = clk_get_rate(i3c->clks[RENESAS_I3C_TCLK_IDX].clk);
-+	i3c->rate = clk_get_rate(i3c->tclk);
- 	if (!i3c->rate)
- 		return -EINVAL;
- 
-@@ -627,6 +651,11 @@ static int renesas_i3c_bus_init(struct i3c_master_controller *m)
- 	if (ret)
- 		return ret;
- 
-+	PM_RUNTIME_ACQUIRE_IF_ENABLED_AUTOSUSPEND(i3c->dev, pm);
-+	ret = PM_RUNTIME_ACQUIRE_ERR(&pm);
-+	if (ret)
-+		return ret;
-+
- 	renesas_writel(i3c->regs, STDBR, i3c->i3c_STDBR);
- 	renesas_writel(i3c->regs, EXTBR, i3c->extbr);
- 	renesas_writel(i3c->regs, REFCKCTL, REFCKCTL_IREFCKS(cks));
-@@ -716,6 +745,7 @@ static int renesas_i3c_daa(struct i3c_master_controller *m)
- {
- 	struct renesas_i3c *i3c = to_renesas_i3c(m);
- 	struct renesas_i3c_cmd *cmd;
-+	unsigned long time_left;
- 	u32 olddevs, newdevs;
- 	u8 last_addr = 0, pos;
- 	u8 first_i3c_pos = 0;
-@@ -729,6 +759,11 @@ static int renesas_i3c_daa(struct i3c_master_controller *m)
- 	cmd = xfer->cmds;
- 	cmd->rx_count = 0;
- 
-+	PM_RUNTIME_ACQUIRE_IF_ENABLED_AUTOSUSPEND(i3c->dev, pm);
-+	ret = PM_RUNTIME_ACQUIRE_ERR(&pm);
-+	if (ret)
-+		return ret;
-+
- 	/* Enable I3C bus. */
- 	renesas_i3c_bus_enable(m, true);
- 
-@@ -777,7 +812,9 @@ static int renesas_i3c_daa(struct i3c_master_controller *m)
- 		    NCMDQP_CMD(I3C_CCC_ENTDAA) | NCMDQP_DEV_INDEX(ret) |
- 		    NCMDQP_DEV_COUNT(i3c->maxdevs - ret) | NCMDQP_TOC;
- 
--	renesas_i3c_wait_xfer(i3c, xfer);
-+	time_left = renesas_i3c_wait_xfer(i3c, xfer);
-+	if (!time_left)
-+		renesas_i3c_abort_xfer(i3c);
- 
- 	/* Skip attaching if there are failures on the xfer. */
- 	if (xfer->ret) {
-@@ -870,6 +907,7 @@ static int renesas_i3c_send_ccc_cmd(struct i3c_master_controller *m,
- {
- 	struct renesas_i3c *i3c = to_renesas_i3c(m);
- 	struct renesas_i3c_cmd *cmd;
-+	unsigned long time_left;
- 	int ret, pos = 0;
- 
- 	if (ccc->id & I3C_CCC_DIRECT) {
-@@ -887,6 +925,11 @@ static int renesas_i3c_send_ccc_cmd(struct i3c_master_controller *m,
- 	cmd->rnw = ccc->rnw;
- 	cmd->cmd0 = 0;
- 
-+	PM_RUNTIME_ACQUIRE_IF_ENABLED_AUTOSUSPEND(i3c->dev, pm);
-+	ret = PM_RUNTIME_ACQUIRE_ERR(&pm);
-+	if (ret)
-+		return ret;
-+
- 	renesas_i3c_bus_enable(m, true);
- 
- 	/* Calculate the command descriptor. */
-@@ -921,7 +964,9 @@ static int renesas_i3c_send_ccc_cmd(struct i3c_master_controller *m,
- 		}
- 	}
- 
--	renesas_i3c_wait_xfer(i3c, xfer);
-+	time_left = renesas_i3c_wait_xfer(i3c, xfer);
-+	if (!time_left)
-+		renesas_i3c_abort_xfer(i3c);
- 
- 	ret = xfer->ret;
- 	if (ret)
-@@ -936,7 +981,9 @@ static int renesas_i3c_i3c_xfers(struct i3c_dev_desc *dev, struct i3c_xfer *i3c_
- 	struct i3c_master_controller *m = i3c_dev_get_master(dev);
- 	struct renesas_i3c *i3c = to_renesas_i3c(m);
- 	struct renesas_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
--	int i;
-+	unsigned long time_left;
-+	bool abort_xfer = false;
-+	int i, ret;
- 
- 	struct renesas_i3c_xfer *xfer __free(kfree) = renesas_i3c_alloc_xfer(i3c, 1);
- 	if (!xfer)
-@@ -944,6 +991,11 @@ static int renesas_i3c_i3c_xfers(struct i3c_dev_desc *dev, struct i3c_xfer *i3c_
- 
- 	init_completion(&xfer->comp);
- 
-+	PM_RUNTIME_ACQUIRE_IF_ENABLED_AUTOSUSPEND(i3c->dev, pm);
-+	ret = PM_RUNTIME_ACQUIRE_ERR(&pm);
-+	if (ret)
-+		return ret;
-+
- 	/* Enable I3C bus. */
- 	renesas_i3c_bus_enable(m, true);
- 
-@@ -975,9 +1027,14 @@ static int renesas_i3c_i3c_xfers(struct i3c_dev_desc *dev, struct i3c_xfer *i3c_
- 				renesas_set_bit(i3c->regs, NTIE, NTIE_TDBEIE0);
- 		}
- 
--		renesas_i3c_wait_xfer(i3c, xfer);
-+		time_left = renesas_i3c_wait_xfer(i3c, xfer);
-+		if (!time_left)
-+			abort_xfer = true;
- 	}
- 
-+	if (abort_xfer)
-+		renesas_i3c_abort_xfer(i3c);
-+
- 	return 0;
- }
- 
-@@ -986,12 +1043,17 @@ static int renesas_i3c_attach_i3c_dev(struct i3c_dev_desc *dev)
- 	struct i3c_master_controller *m = i3c_dev_get_master(dev);
- 	struct renesas_i3c *i3c = to_renesas_i3c(m);
- 	struct renesas_i3c_i2c_dev_data *data;
--	int pos;
-+	int pos, ret;
- 
- 	pos = renesas_i3c_get_free_pos(i3c);
- 	if (pos < 0)
- 		return pos;
- 
-+	PM_RUNTIME_ACQUIRE_IF_ENABLED_AUTOSUSPEND(i3c->dev, pm);
-+	ret = PM_RUNTIME_ACQUIRE_ERR(&pm);
-+	if (ret)
-+		return ret;
-+
- 	data = kzalloc_obj(*data);
- 	if (!data)
- 		return -ENOMEM;
-@@ -1015,7 +1077,12 @@ static int renesas_i3c_reattach_i3c_dev(struct i3c_dev_desc *dev,
- 	struct renesas_i3c *i3c = to_renesas_i3c(m);
- 	struct renesas_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
- 	struct i3c_dev_desc *tmp_dev = i3c->addrs[data->index].i3c_dev;
--	int pos;
-+	int pos, ret;
-+
-+	PM_RUNTIME_ACQUIRE_IF_ENABLED_AUTOSUSPEND(i3c->dev, pm);
-+	ret = PM_RUNTIME_ACQUIRE_ERR(&pm);
-+	if (ret)
-+		return ret;
- 
- 	pos = renesas_i3c_get_free_pos(i3c);
- 
-@@ -1045,8 +1112,12 @@ static void renesas_i3c_detach_i3c_dev(struct i3c_dev_desc *dev)
- 	struct renesas_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
- 	struct i3c_master_controller *m = i3c_dev_get_master(dev);
- 	struct renesas_i3c *i3c = to_renesas_i3c(m);
-+	int ret;
- 
--	renesas_writel(i3c->regs, DATBAS(data->index), 0);
-+	PM_RUNTIME_ACQUIRE_IF_ENABLED_AUTOSUSPEND(i3c->dev, pm);
-+	ret = PM_RUNTIME_ACQUIRE_ERR(&pm);
-+	if (!ret)
-+		renesas_writel(i3c->regs, DATBAS(data->index), 0);
- 
- 	i3c_dev_set_master_data(dev, NULL);
- 	i3c->addrs[data->index].addr = 0;
-@@ -1063,7 +1134,9 @@ static int renesas_i3c_i2c_xfers(struct i2c_dev_desc *dev,
- 	struct renesas_i3c *i3c = to_renesas_i3c(m);
- 	struct renesas_i3c_cmd *cmd;
- 	u8 start_bit = CNDCTL_STCND;
--	int i;
-+	unsigned long time_left;
-+	bool abort_xfer = false;
-+	int i, ret;
- 
- 	if (!i2c_nxfers)
- 		return 0;
-@@ -1076,6 +1149,11 @@ static int renesas_i3c_i2c_xfers(struct i2c_dev_desc *dev,
- 	xfer->is_i2c_xfer = true;
- 	cmd = xfer->cmds;
- 
-+	PM_RUNTIME_ACQUIRE_IF_ENABLED_AUTOSUSPEND(i3c->dev, pm);
-+	ret = PM_RUNTIME_ACQUIRE_ERR(&pm);
-+	if (ret)
-+		return ret;
-+
- 	renesas_i3c_bus_enable(m, false);
- 
- 	if (!(renesas_readl(i3c->regs, BCST) & BCST_BFREF)) {
-@@ -1102,7 +1180,9 @@ static int renesas_i3c_i2c_xfers(struct i2c_dev_desc *dev,
- 
- 		renesas_set_bit(i3c->regs, NTSTE, NTSTE_TDBEE0);
- 
--		wait_for_completion_timeout(&xfer->comp, m->i2c.timeout);
-+		time_left = wait_for_completion_timeout(&xfer->comp, m->i2c.timeout);
-+		if (!time_left)
-+			abort_xfer = true;
- 
- 		if (cmd->err)
- 			break;
-@@ -1111,6 +1191,10 @@ static int renesas_i3c_i2c_xfers(struct i2c_dev_desc *dev,
- 	}
- 
- 	renesas_i3c_dequeue_xfer(i3c, xfer);
-+
-+	if (abort_xfer)
-+		renesas_i3c_abort_xfer(i3c);
-+
- 	return cmd->err;
- }
- 
-@@ -1511,12 +1595,16 @@ static int renesas_i3c_probe(struct platform_device *pdev)
- 	if (IS_ERR(i3c->regs))
- 		return PTR_ERR(i3c->regs);
- 
--	ret = devm_clk_bulk_get_all_enabled(&pdev->dev, &i3c->clks);
--	if (ret <= RENESAS_I3C_TCLK_IDX)
--		return dev_err_probe(&pdev->dev, ret < 0 ? ret : -EINVAL,
--				     "Failed to get clocks (need > %d, got %d)\n",
--				     RENESAS_I3C_TCLK_IDX, ret);
--	i3c->num_clks = ret;
-+	i3c->tclk = devm_clk_get(&pdev->dev, "tclk");
-+	if (IS_ERR(i3c->tclk))
-+		return dev_err_probe(&pdev->dev, PTR_ERR(i3c->tclk), "Failed to get tclk");
-+
-+	i3c->dev = &pdev->dev;
-+	pm_runtime_set_autosuspend_delay(&pdev->dev, 300);
-+	pm_runtime_use_autosuspend(&pdev->dev);
-+	ret = devm_pm_runtime_enable(&pdev->dev);
-+	if (ret)
-+		return ret;
- 
- 	i3c->tresetn = devm_reset_control_get_optional_exclusive_deasserted(&pdev->dev, "tresetn");
- 	if (IS_ERR(i3c->tresetn))
-@@ -1583,8 +1671,6 @@ static int renesas_i3c_suspend(struct device *dev)
- 	if (ret)
- 		goto err_mark_resumed;
- 
--	clk_bulk_disable(i3c->num_clks, i3c->clks);
--
- 	return 0;
- 
- err_mark_resumed:
-@@ -1606,13 +1692,13 @@ static int renesas_i3c_resume(struct device *dev)
- 	if (ret)
- 		return ret;
- 
--	ret = clk_bulk_enable(i3c->num_clks, i3c->clks);
-+	ret = renesas_i3c_reset(i3c);
- 	if (ret)
- 		goto err_resets_asserted;
- 
--	ret = renesas_i3c_reset(i3c);
-+	ret = pm_runtime_resume_and_get(dev);
- 	if (ret)
--		goto err_clks_disable;
-+		goto err_resets_asserted;
- 
- 	/* Re-store I3C registers value. */
- 	renesas_writel(i3c->regs, STDBR, i3c->i3c_STDBR);
-@@ -1635,15 +1721,23 @@ static int renesas_i3c_resume(struct device *dev)
- 
- 	i2c_mark_adapter_resumed(&i3c->base.i2c);
- 
-+	pm_runtime_put_autosuspend(dev);
-+
- 	/*
- 	 * I3C devices may have retained their dynamic address anyway. Do not
- 	 * fail the resume because of DAA error.
- 	 */
- 	return 0;
- 
--err_clks_disable:
--	clk_bulk_disable(i3c->num_clks, i3c->clks);
- err_resets_asserted:
-+	/*
-+	 * If this happens, there is no way to recover from this state without
-+	 * reloading the driver. We want to avoid keeping the reset line
-+	 * deasserted unnecessarily. The runtime paths will still work correctly
-+	 * even if the IP registers are accessed while reset is asserted (e.g.
-+	 * if a runtime path is triggered after a failed resume). Checked on
-+	 * RZ/G3S.
-+	 */
- 	reset_control_bulk_assert(ARRAY_SIZE(resets), resets);
- 	return ret;
- }
--- 
-2.43.0
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
+IFtIaWdoXSBUaGlzIHByb2JsZW0gd2Fzbid0IGludHJvZHVjZWQgYnkgdGhpcyBwYXRjaCwgYnV0
+IHRoZSByZXR1cm4gdmFsdWUgb2YgYHdhaXRfZm9yX2NvbXBsZXRpb25fdGltZW91dCgpYCBpcyBp
+Z25vcmVkIGluIGByZW5lc2FzX2kzY19pMmNfeGZlcnMoKWAsIGxlYWRpbmcgdG8gZmFsc2VseSBy
+ZXBvcnRpbmcgc3VjY2VzcyBvbiB0aW1lb3V0cyBhbmQgY29udGludWluZyB0byBpc3N1ZSBzdWJz
+ZXF1ZW50IG1lc3NhZ2VzIHRvIGEgaHVuZyBidXMuCi0gW0hpZ2hdIFRoaXMgcHJvYmxlbSB3YXNu
+J3QgaW50cm9kdWNlZCBieSB0aGlzIHBhdGNoLCBidXQgdHJhbnNmZXIgY29tcGxldGlvbiBzdGF0
+dXMgKGB4ZmVyLT5yZXRgKSBpcyBjb21wbGV0ZWx5IGlnbm9yZWQgaW4gYHJlbmVzYXNfaTNjX2kz
+Y194ZmVycygpYCwgY2F1c2luZyBhbGwgSTNDIHByaXZhdGUgdHJhbnNmZXJzIHRvIHVuY29uZGl0
+aW9uYWxseSByZXBvcnQgc3VjY2VzcyBldmVuIGlmIHRoZXkgZmFpbCBvciB0aW1lIG91dC4KLS0K
+CmNvbW1pdCBjOWE1MDU5ZDk3MDUyZTM5YmNiYTk0ZmRiODJkNDYyYTMwOWE5OGQyCkF1dGhvcjog
+Q2xhdWRpdSBCZXpuZWEgPGNsYXVkaXUuYmV6bmVhLnVqQGJwLnJlbmVzYXMuY29tPgoKICAgIGkz
+YzogcmVuZXNhczogUmV0dXJuIGltbWVkaWF0ZWx5IGlmIHRoZXJlIGlzIG5vIHRyYW5zZmVyCiAg
+ICAKICAgIFRoZXJlIGlzIG5vIG5lZWQgdG8gYWxsb2NhdGUgYSB0cmFuc2ZlciBzdHJ1Y3R1cmUg
+d2hlbiBpMmNfbnhmZXJzIGlzIHplcm8uCiAgICBSZXR1cm4gaW1tZWRpYXRlbHkgaW5zdGVhZCBv
+ZiB1bm5lY2Vzc2FyaWx5IGFsbG9jYXRpbmcgbWVtb3J5LgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVy
+cy9pM2MvbWFzdGVyL3JlbmVzYXMtaTNjLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvcmVuZXNhcy1p
+M2MuYwo+IGluZGV4IDRhMDU1YzlmNGZmZWEuLjFmZDM5ZGQ1Nzg0NzQgMTAwNjQ0Cj4gLS0tIGEv
+ZHJpdmVycy9pM2MvbWFzdGVyL3JlbmVzYXMtaTNjLmMKPiArKysgYi9kcml2ZXJzL2kzYy9tYXN0
+ZXIvcmVuZXNhcy1pM2MuYwo+IEBAIC0xMDY2LDEzICsxMDY2LDEzIEBAIHN0YXRpYyBpbnQgcmVu
+ZXNhc19pM2NfaTJjX3hmZXJzKHN0cnVjdCBpMmNfZGV2X2Rlc2MgKmRldiwKPiAgCXU4IHN0YXJ0
+X2JpdCA9IENORENUTF9TVENORDsKPiAgCWludCBpOwo+ICAKPiArCWlmICghaTJjX254ZmVycykK
+PiArCQlyZXR1cm4gMDsKPiArCgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXNuJ3QgYSBidWcgaW50
+cm9kdWNlZCBieSB0aGlzIHBhdGNoLCBidXQgdGhlIHJldHVybiB2YWx1ZSBvZgp3YWl0X2Zvcl9j
+b21wbGV0aW9uX3RpbWVvdXQoKSBpcyBpZ25vcmVkIGxhdGVyIGluIHJlbmVzYXNfaTNjX2kyY194
+ZmVycygpOgoKCQl3YWl0X2Zvcl9jb21wbGV0aW9uX3RpbWVvdXQoJnhmZXItPmNvbXAsIG0tPmky
+Yy50aW1lb3V0KTsKCgkJaWYgKGNtZC0+ZXJyKQoJCQlicmVhazsKCldoZW4gd2FpdF9mb3JfY29t
+cGxldGlvbl90aW1lb3V0KCkgcmV0dXJucyAwIChpbmRpY2F0aW5nIGEgdGltZW91dCksIHRoZXJl
+CmlzIG5vIGNoZWNrIHRvIHNldCBjbWQtPmVyci4gU2luY2UgY21kLT5lcnIgcmVtYWlucyAwLCB0
+aGUgbG9vcCBpbmNvcnJlY3RseQpjb250aW51ZXMgdG8gaXNzdWUgc3RhcnQgY29uZGl0aW9ucyBm
+b3IgcmVtYWluaW5nIG1lc3NhZ2VzIG9uIHRoZSB0aW1lZC1vdXQKYnVzLgoKRmluYWxseSwgdGhl
+IGZ1bmN0aW9uIHJldHVybnMgY21kLT5lcnIgKDApLCBmYWxzZWx5IHJlcG9ydGluZyBzdWNjZXNz
+IHRvCnRoZSBJMkMgc3Vic3lzdGVtLiBEb2VzIHRoaXMgc2lsZW50bHkgaGlkZSBJMkMgdGltZW91
+dHMgZnJvbSBjYWxsZXIgZHJpdmVycz8KCltTZXZlcml0eTogSGlnaF0KVGhpcyBpc24ndCBhIGJ1
+ZyBpbnRyb2R1Y2VkIGJ5IHRoaXMgcGF0Y2gsIGJ1dCB0cmFuc2ZlciBjb21wbGV0aW9uIHN0YXR1
+cwppcyBjb21wbGV0ZWx5IGlnbm9yZWQgaW4gcmVuZXNhc19pM2NfaTNjX3hmZXJzKCkgaW4gdGhl
+IHNhbWUgZmlsZToKCgkJcmVuZXNhc19pM2Nfd2FpdF94ZmVyKGkzYywgeGZlcik7Cgl9CgoJcmV0
+dXJuIDA7CgpUaGUgZnVuY3Rpb24gcmVuZXNhc19pM2Nfd2FpdF94ZmVyKCkgcmVjb3JkcyBjb21w
+bGV0aW9uIHN0YXR1cyAoZS5nLiwgLUVJTywKLUVOT1NQQywgLUVUSU1FRE9VVCkgaW4geGZlci0+
+cmV0LiBIb3dldmVyLCB0aGUgbG9vcCBuZXZlciBpbnNwZWN0cwp4ZmVyLT5yZXQgYW5kIHVuY29u
+ZGl0aW9uYWxseSByZXR1cm5zIDAgYXQgdGhlIGVuZC4KCkNvdWxkIHRoaXMgc2lsZW50bHkgaGlk
+ZSBOQUNLcywgcGFyaXR5IGVycm9ycywgYW5kIHRpbWVvdXRzIGZyb20gSTNDIHRhcmdldApkcml2
+ZXJzLCBicmVha2luZyB0aGUgc3Vic3lzdGVtJ3MgZXJyb3IgaGFuZGxpbmcgYW5kIGxlYWRpbmcg
+dG8gZmFsc2UKYXNzdW1wdGlvbnMgYWJvdXQgZGF0YSB2YWxpZGl0eT8KCj4gIAlzdHJ1Y3QgcmVu
+ZXNhc19pM2NfeGZlciAqeGZlciBfX2ZyZWUoa2ZyZWUpID0gcmVuZXNhc19pM2NfYWxsb2NfeGZl
+cihpM2MsIDEpOwo+ICAJaWYgKCF4ZmVyKQo+ICAJCXJldHVybiAtRU5PTUVNOwo+ICAKPiAtCWlm
+ICghaTJjX254ZmVycykKPiAtCQlyZXR1cm4gMDsKPiAtCj4gIAlyZW5lc2FzX2kzY19idXNfZW5h
+YmxlKG0sIGZhbHNlKTsKPiAgCj4gIAlpbml0X2NvbXBsZXRpb24oJnhmZXItPmNvbXApOwoKLS0g
+ClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2
+MDYwODIwMTU0My44MDQ5MDItMS1jbGF1ZGl1LmJlem5lYUBrZXJuZWwub3JnP3BhcnQ9MTAKCi0t
+IApsaW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNjCg==
