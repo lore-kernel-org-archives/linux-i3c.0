@@ -4,124 +4,124 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F396CD8C9D
-	for <linux-i3c@archiver.kernel.org>; Mon,  8 Jun 2026 17:51:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC948CD6E79
+	for <linux-i3c@archiver.kernel.org>; Mon,  8 Jun 2026 17:52:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2jBRvkx/I3QQ1JJgKJT0Hp3097BBMKH3V4FTBgGC8fk=; b=OtQZMcixEnq51a
-	UdkCp47mkGVbRXdM0rvqhBD2yeoMAJqI3p7aKZwr+EUaRhlxm2zYh9RKB9pJ8EfEP9oa983vh0Sof
-	OoL8WY1aZ/EThIuoYNmlMbFiZbpNZRt1pYQIgxBlRHL7HL3kLWiuHD9h9vq/skdmOqTOh+DasY6tT
-	xhojPgb1oESiHMn7DQiGJgi0B8sTO6N/zHGHsWGZY/L287Vpmn7dbkMTFYAwFTv4urs2eZbkrON+u
-	y1NGZ030It7ytb7+RXZ9kGz7qjZqu9O2/5bJi3EpLSqqm3V7SezOp2R6twzeN7ABN7Z5Rwunb7pMQ
-	MV4UfC2JCNTLnGAX1SOQ==;
+	List-Owner; bh=tUONrpg5gTf1D4nnVxZHLqi4bnnHYtr69CVP+Mxycww=; b=Ci6U4Ggyiw2ADE
+	/1rN0un7b90iMyNwWP4jvY7EPqht4GxQQ02UFpwLT7yCMDT0RysD40buy+nHS1fuidDLpgrWrGRsM
+	bLrsiwyohUd0949WZTiTBFB+jPy24TZQzmeUTXoD0DEd/QnPnVSpqKy5859nbJxkSAa4DM5Z/d7G8
+	F6NOL95YdmYc2K9C5IdLUrj9LXCmLbs64lqDAAfu7b8ObimgkeV+FXdweOou47IaEzhOonHN0pyLB
+	5/FiUaWEoLqsU0XYCVXpikn3IVaYtk0zqAqiLqRjIOdUA5AAZGLGTKWj3BznmbpjyLb9G5SPjKMbI
+	lusLNHzRhWqrCo01s/DQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWe85-00000004Ds3-0XSB;
-	Mon, 08 Jun 2026 17:51:17 +0000
-Received: from mail-northeuropeazon11010021.outbound.protection.outlook.com ([52.101.84.21] helo=DB3PR0202CU003.outbound.protection.outlook.com)
+	id 1wWe9E-00000004DyG-1IDe;
+	Mon, 08 Jun 2026 17:52:28 +0000
+Received: from mail-northeuropeazon11010046.outbound.protection.outlook.com ([52.101.84.46] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wWe82-00000004DrO-05SA
+	id 1wWe9C-00000004Dxf-3gqF
 	for linux-i3c@lists.infradead.org;
-	Mon, 08 Jun 2026 17:51:15 +0000
+	Mon, 08 Jun 2026 17:52:28 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=QwfauaMjcO43695ktiXCG8Df61eWXDF6ehFvg0pl0NUaUR4zZPKsbHl2ouyfFoPhF3OD4PN+s3fRhGAZT7cnCMNmc3uX1ujkPWvtbyPMs+pteBEbkWNFy+e6bcTw2AYHZvEagPlS0nzltrxwQWvPjv6wGq7db4hH2n0VbiVmk/u8Utz4WP/6jFbgbBl4Tz5nQ77wwo1SwAjL+p3+2W/YYD4lsz2VJ0a3gVWBldVv9pG9P0dWMZE2H/pbLVC6K48tb9wSvphtZA3t8Mqao+LawVMBqzw/oqyqtDkDpVxAdT2NQT6N7c0YuskxX37IsjpaHX9IAcow85upzOUWjSyWYw==
+ b=kuNhyuw6UID14lizB2xAjwDmDIlmmGkkCQVjtP0VCXmZmEmqKNEo2x8SvCWNJRL/B95Rvge5skRru8f8JrsFBAsKZrnOk1ELK+cOKZLSEHMQxLmjbU4grLwWBsCacVVRSXwxMr6cjlgtoYobUylg9Oy61RXL7aLDOSemMosDbPJRZkxt2Xxu8A140hKuOUHzpgylzOmyvN8850ZZL5BzmA/zoNWcX9bJDs4SZC4JJ3AhkkQ0NkHrQX8yobcniEgzAJEMa2VGpZQYUjL2jIB1pBp9W1n/LHaziZwBFudwJtv9R72WrbA3IfGNQ1f26FDedgmyaRDODJ/r3FfloBVucQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=wLAX6ZkRvkhwxZCt3Gg/O7Tcf5HZPQki3mWp5X2WnWM=;
- b=lcChVhZjR2u3fXD0NEu62aF0QCO9MHIKbw7zFNF65YiZfCpG1vvUnSbNCSH+YoNnI2OYo8qmprVrFH0un6tvfQuc5HdlUuzAkCVgKGGK+HIXiYeB2+yvI1VXf7o9fOATqOPIkliUQjllg77EF0sOLekkAe2krBXY0OncZaKSff8PwKnKcGzIgaWi4Z9snvqVAcCgIIfAsD16scGLVn0cvGpbL/LUG3PvbNM1RmWrTQZ5O7P27do5zXrRNfSADD65HAnlr/EQDKgSf921I/QduKS2+//iSxTObuAA0wehJI1BP+H1bpXF0vT+HxXoMFmHiLHmxmY+p9NmCcZGVxyz+g==
+ bh=Acz0l/mmN6sAcQ7vlv2L5s+0vVdeeLgporTsMkJVd68=;
+ b=u4mnxWneTyH917Hjq18epmyOnU+R+O4CM6dj7gnpLgaMCcHcCqW1z3fueW59Ix0yCFsCPWD1tGx9d6rE/HdZ6LIekzbSa3YlWHFKwG/sLsbkBtGNo60wH/80U3UIH9jsc6PN+TGwiBfIs1O6u+IMullGeIuHnJjs2xM55PdCXUxyK+WE2niI9x3CcEsX787vS871iPHtgd1t9TRQMa5Dy3o68RvJPpswbLfRZT85xpjWJeW4k6PgjNuSCaI5QeuAL1n9AD1eqtbuiBoMIEqhSv7PFs4V/OgWniTEyA1kGYz5kAFvRyH/ev+CSu/wcd1Up5xGZIminZSczfBVWHpF7Q==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
  dkim=pass header.d=oss.nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
  s=selector1-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=wLAX6ZkRvkhwxZCt3Gg/O7Tcf5HZPQki3mWp5X2WnWM=;
- b=qHiniMiNDYCqvbtvUfxT2DZFSS+Ap1mq2oW5ViFhG69RH3jnXI42v2uXOOSQxCesub90HuauD31wbDYfvNMpXVw/gHqX/tOS4/k7UkILuSsl0tbAWEOAhrxTVGJf/4sEXWj27YgwZN5d1ZpI/nBnLEpTA7uL2fQB6CJ5mGo/Xh2alhvKHSvU0HfDbmGukHh5PljRpKhLXU1CDy6z7+DTmj2lKDDRvuksCYwCuzOx5oT7ahempoApcD+vCBTZRP5xSgIjJ5BfQEWaDew1Nn5P/wLACtLhWlgPKxxvrglQcygXvlPwPPMiL31IU0WNhS8bca0HSd+xoZGL8xwXsyvtnA==
+ bh=Acz0l/mmN6sAcQ7vlv2L5s+0vVdeeLgporTsMkJVd68=;
+ b=K0OL8FORx6vnv09kRE6bIx3SbzbY98VUFlTQY4bFZbp20kgcOg7TCLwXpmbaZx6I6x6Vt+orpQ2UGX2CugW8YcSUDJ3QRShwPrBk7oLk+rvNXKnQXqwkXQ2B08RS876fIZ81y9kXKDHv1yWDXDII9UYdRTwrH1Jrjfpg6KMbBlmnTIfjzubViuDQY6sm3Vsp6jaeUyUBDyAtP0S06DxbKDLiZGiNqH2gzeHlcN55im/eiG4uXSFZV8uecM3mEKP55XMNcqGSvkUo7XntVf9PIFB5w8qcr1xNdkA9QaBnYTH5jwpJ5Z1km7UJljcooX3g2AC2aMQnBigElCLyqNajhg==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=oss.nxp.com;
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
  by AM9PR04MB8194.eurprd04.prod.outlook.com (2603:10a6:20b:3e6::7) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.92.13; Mon, 8 Jun 2026
- 17:51:08 +0000
+ 17:52:23 +0000
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0092.011; Mon, 8 Jun 2026
- 17:51:08 +0000
-Date: Mon, 8 Jun 2026 13:51:03 -0400
+ 17:52:23 +0000
+Date: Mon, 8 Jun 2026 13:52:19 -0400
 From: Frank Li <Frank.Li@oss.nxp.com>
 To: Adrian Hunter <adrian.hunter@intel.com>
 Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH V2 5/7] i3c: master: Make i3c_master_add_i3c_dev_locked()
- return void
-Message-ID: <aicBB3YVefLdwBFG@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH V2 6/7] i3c: master: Move DAA API functions after
+ i3c_master_add_i3c_dev_locked()
+Message-ID: <aicBU28PHpR8_7-g@lizhi-Precision-Tower-5810>
 References: <20260608075801.16111-1-adrian.hunter@intel.com>
- <20260608075801.16111-6-adrian.hunter@intel.com>
+ <20260608075801.16111-7-adrian.hunter@intel.com>
 Content-Disposition: inline
-In-Reply-To: <20260608075801.16111-6-adrian.hunter@intel.com>
-X-ClientProxiedBy: PH0PR07CA0076.namprd07.prod.outlook.com
- (2603:10b6:510:f::21) To GV2PR04MB11799.eurprd04.prod.outlook.com
+In-Reply-To: <20260608075801.16111-7-adrian.hunter@intel.com>
+X-ClientProxiedBy: SA1P222CA0087.NAMP222.PROD.OUTLOOK.COM
+ (2603:10b6:806:35e::20) To GV2PR04MB11799.eurprd04.prod.outlook.com
  (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|AM9PR04MB8194:EE_
-X-MS-Office365-Filtering-Correlation-Id: 2e4fabec-1f96-4483-4e21-08dec586850d
+X-MS-Office365-Filtering-Correlation-Id: 6537ffb7-bf5a-4866-0dd9-08dec586b1ee
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|376014|366016|1800799024|3023799007|56012099006|11063799006|4143699003|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: ZS4TvFv0esYbpALmha3c01F4I4uO3I7GMBXf5S+yhHmBP1WAg+fhEGZiDMNVnKK0efOkgDfT/iDyY/nCUMawRC+IT0SH0ArNvuCTPQfBgdrAhqJt0bBZ1jl1HfuNojxADe/NEFwRQSX2EDYhDcg+4nHR4Iif09szBou3gZbLT2Yb+ezJJgtnbOMsjg9AOVsOYh4GPlbtCqiFkcQRbWp51wn08GAZXs7kwohoIkO7L/T0pXkgkWRIhuE3uPX2pSQd/ZZl8WmAuR4rzkpTo9cuGBQpwszFwEhuKtIRHoXe5dupfJ7lfzrTIZruP0HBD8xgSNFDVhswl0gBLwg9mNfScDTtpmua8QVvvtriu9XvLzm3a5T9kdMp/4DcOo9eRbFTkv33dBcnIB9XsmBD++9puoX2R50o7fILaAFqRhDyMnaPN07RN6QhWcAMB4w+jCInfPSlc6kcA4a23e0q1vnnoBx5SFlwBXIKrpvO8GV5szgy6bTQwtfkdj6Z+XuWCn1gj0NvL6GkvbGpEWE6M4GeIvODwdSnYujIi1FdR3kEUDsT6MOiIe3g5x4bcy3XHa5bvUymLbHKEnd4eq/QD9YVYfclvdvN4utFzS4yDoMDKBAQDd1LB8Zdddev22cHdZQY2yev1JxPkJIZoLnVLgZbMPiZ2xZUNmr2f6pogGF4UuZnCS6RgtjtF5dVVj0WaT/Z
+X-Microsoft-Antispam-Message-Info: XG7VNz5MKnQ20c+c6eIiLftK1Kx6WYqIKM+KbGcfyqMhG0+HU6jvzkYYOqX6KzI+t+vfwnux78z9Xd4NAgLU+kewjy/p9bAcCsDFtXiORSmNvuTxxrZQ4a8AOo59Yqs+8tx7Herg3Zxo8P0a1s+1/atpTZgcDZ9oV8aVwTyHGyGYUfx5LZTkwp5+v1v0hwNXgqutgov3UrWHm7mGWGatH4lesBvt648irOgOCt33itOYwppcEb4ekGtVEEzxYOXVcllIyf1BNldi1Hd69AKkAGyGDPqEdBPa+336re8RD4SKM/O16soB+Z1eTrHQeTJYdHu7RINnam5oFGXBGsyL42aJNOjldncVp1wxhfVK4dKI5lEhkmrMntM+69fkeUF7dQGTugTpv1ydPbBg+E2wQ5GSU/oCh6ce0L5Gp6Cyy1MYpn6UmC0VdX+U3gNWaLUPhYv4Kv8uPZl+z/S9PwJ7+DswIAWiuKzZKellKw1xXvxwnHxBtNXQ8z1dz7/R13grOcKAKOFo8C8LYY8hpOYil9ol1RwL82aTl4gs/MepuHdYfJtNJ+5+zaK8YzDlk2KO0icIItV0M1+8yddZ1khQRyp8zrBl+sZrpNHvzo+rGef1E0Vt8aoVApDM0ZjmYpU/EvbB2HJTpnE4DduqGmAP5iSUfjYk/JJHHFtTbfS0vYd1iadKKeTbHIPkqfSIKr5p
 X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(376014)(366016)(1800799024)(3023799007)(56012099006)(11063799006)(4143699003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Lnx8EPvOhXeQPXrpVg5LY6qZbjEhG8a0UqgfjahucbqCjyUBZr4tKvF39RB+?=
- =?us-ascii?Q?PdfTAc/YfMJwi4qir/3nGXWSmLvJcxbk2ilKKqlH7WawpC+gefxDjGebZVL0?=
- =?us-ascii?Q?Q0dtnbobry7bsEpiLHU/ibVWHSJFp0NPhqtg71Pd/V5+Fm1qRcX6Pl3Wwlip?=
- =?us-ascii?Q?PgnZ4QKvkD/3gW1c8lY5HeGOhd/uDLBx77yGUhWfwV62J5aLZ3zbrMsDDOzw?=
- =?us-ascii?Q?llZBrqQjI0M7Y/043ABEUGJgLA/y1nxwVJv5b4rKbL9GIC2nS8dTxmuZSX6O?=
- =?us-ascii?Q?ITEJVO2wSNQjWMqtQ60aKToGgBNYWpW+APeHgwfOImyro7FZSJLL8kyxCgpV?=
- =?us-ascii?Q?SY9us2CorAmO+A+aFQADAUTBQ2o08qZMKoC51Fw0veBrhDPJtK8aGx4TZp8d?=
- =?us-ascii?Q?+1hJTe+UK5PUv/2GmFnWpwK1A//d+Ib53CAUKgRTjuTaGONF397Q9Rb/y3QK?=
- =?us-ascii?Q?9n5HCbBa6bjfe7jC5iCD3fmHIskzEBYyUpj/aAhFnYvHKXV86oGeamNaTmfZ?=
- =?us-ascii?Q?wnhB+Ia09zyHBWpD2bpMBveOHgCvmXjFdOBXYOcKzjNARFpc7tA3ttVHWz8W?=
- =?us-ascii?Q?C2rXasU8r1th0SnfFuPBP9fITdalvyYj1IYiVl4PNtO0PxS5vKSfX9kh9CLR?=
- =?us-ascii?Q?D692E/bTRzgVTfEdiVScC9um2j2qa/omcIULk22lZtPf7qpRgB3ja8r2Qnd9?=
- =?us-ascii?Q?5JlToLZy81MwkehHR1oVXgWFPHaPs5apd/5PWarnY2srKCA0loSY90j+tGH4?=
- =?us-ascii?Q?i+ASQTWVYXUEaOQ5PDYo6MijV5R8OZk5nFnYLvrFfMbVO8N3QcdYL4FTUEn7?=
- =?us-ascii?Q?nfZVIM+0aab8nILmXJ8/OybEZK/CQiFkbLOuKQvTQ5mebEpzKjxwDNw8Sdx7?=
- =?us-ascii?Q?13j4tggHkuQILRROXceLyMgYRnzhkxm5HN/Q+jyKRxvV7kIV7BZW6jC4QiSq?=
- =?us-ascii?Q?VtufLCFQzKOCkZGrRF2EoVfjta5RqtqP5FfXmvvaPAKxIA1fCfPUEJ26sKAf?=
- =?us-ascii?Q?3314xostzi9jUPhEJihTzIhq4wqEpWie/wVlwqJQJxZEXCi25N88MAH9OKRA?=
- =?us-ascii?Q?g/evwnPHqkmTc4REm61VJRfE6QEyOK2CHGeOWN9OHsEqM19BgDbDKY1nVQbk?=
- =?us-ascii?Q?RQa5uG7s9wAIM/McHugnXD2O5YmewOcUDme30micKJuY3GSdpbpm1mCqpTEY?=
- =?us-ascii?Q?xzCbM4MMwYryzcAkXRVXb2Qo9bcqitV5Bng/p8ZzcZSSnMGGfLOQsbK2R8GN?=
- =?us-ascii?Q?Qb8HCsrf+ePCbZY88XWEWNLoZ53HAWOcYrVdBiX1OwkewRjeGcLIQja1wCaI?=
- =?us-ascii?Q?SGn+DeF7OTiYDgyxJlq+wEc7oAJ8EKeyYcgD8cyRWW0ARqKLckcBEOq6yJu+?=
- =?us-ascii?Q?lW6K+rhn+tl54fCAti4wIR8LudkVonjXuYiuTm3Hfqt+fP7LMzIFelxQ5mlH?=
- =?us-ascii?Q?yj2o3sqmIZz/3xHMRXa8891mETWlxG7NKZjgUUMgBZh1BTWiPWPTjzbO4vVv?=
- =?us-ascii?Q?aC58nlPeZ7I/pJRiuQX365QPHCWlxRY/soXvtIlgDeEW1JHqq5lYP7pVXl23?=
- =?us-ascii?Q?YbJloPylj7mfdMjo/uqBqyyIsdqKXYVyxfcdEP6lXzFls2NLhBduokP/v3tl?=
- =?us-ascii?Q?32oWqnVhyZGqfnkEIJqLyanvmXspwUABBQZhibruh+sg45YWry/QKtFkl6J+?=
- =?us-ascii?Q?unVrMtdiOILX6LOw5GGR5y5t32wy+Trc77nKZk0JWiGG2HTsDHqAQcYWFpg8?=
- =?us-ascii?Q?REVzVG+q76ilrFlAoM8fYKTA1nXqzI6whoYms5k2InIQMBmX+sHs?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?wRAFFMO7B2+6OW11SXK/PPVYdX2/l0bY2j0oxroId5Cn2KwkNx2e9heU31vI?=
+ =?us-ascii?Q?45FQajraNt/iW8OZmvE4nDx0CXkfQXXZGqGbConiVsCrB5H/8Sqv5hIz3idh?=
+ =?us-ascii?Q?8egkcLTCEyA/QN3WdfzFigKfY3bjx8NibMWzAAXk2lMkC8nBKyQ8HZ4y3AQs?=
+ =?us-ascii?Q?PaLEhax6wW7lSltPxgGRJ+/muMquw2UY0X+lth1HbNnp02CiZcittZOHXEFI?=
+ =?us-ascii?Q?TnYE1eX97p2RJV4P8lUSqz0bW4/D9cSlbNcXuDYI+Jej/EFiP+WcA7+24xsF?=
+ =?us-ascii?Q?o8dmyJgGjfnqlQCQs7jf7sstA9hTRXOsPJ0LCpLFkw5M2bSdAIlFpZSkhk4E?=
+ =?us-ascii?Q?T/e/gyeQWYRTNpiRhAPqJsPsvg4u4LC/ZzYxSdJMNhZoaaRheXFkqu+ZBmWr?=
+ =?us-ascii?Q?4q6aeI0Ji3idbIVaHt3q4iX6kr+ca4bF/W2DQla0pFsKoUhdkcUqlYrWt++W?=
+ =?us-ascii?Q?tU654wzWA1YKtAPfB26D/DRm5K3QMxW/YR2hl+boV6A115Y9kj7QGW6T3Nn1?=
+ =?us-ascii?Q?/Ey/DZryHvVutS9zu+R+byPk8Ge98KfD5JxiRXYSNe+bH2aiquJnmzTxb9F2?=
+ =?us-ascii?Q?MOdPGQFnZQiWK+JYqE2EONGUU5lm0TbN7lsWYCuvSpDXIV2VQdOKMcqkjll3?=
+ =?us-ascii?Q?OxG5fB2wpbVeunvh0YDkkkVoF6zvlEk7ru160TdfLZL8cksoSKwzZz5pbvzo?=
+ =?us-ascii?Q?EQDHwzvjZX4g4HSE8XNqppNTpySba2yp5Cw03VXXbOb/dLzOYx+cBvuC+Gts?=
+ =?us-ascii?Q?r7XipiiaYj5w/Ohqi/p+8lUZQtuKv6O2p2U5fD85D3kRdSsq8MkFNvgfyDJ5?=
+ =?us-ascii?Q?VqiS4ik4HKchdA9NnkuAAHLpEGrYshj1kHWqQFWYbYx6aL0IZkFlD5+rVzp9?=
+ =?us-ascii?Q?q8EzrRDHEnmvn0wzUGs8SfMb41NwrsqOwctg2us3TAZK876tn3ZRreYznyZP?=
+ =?us-ascii?Q?SfLGytVnOlzAYMdlBcz4KB7BcxzdlnM7l3Qd22n17Z6WYYeqa5U3ckmbkZwF?=
+ =?us-ascii?Q?q384Q6jMDU8LC94rqC0T9swW/3+YpkcmlFMQl8aNZL1ZfJPJAjf0AJTCCk57?=
+ =?us-ascii?Q?jhdgolWALujjx5L+y/NUXHIhru6O6GdgwWLatcaXWiXJlSviPYdv4cOhp9H/?=
+ =?us-ascii?Q?qDFMRbhn/8PNAfHZULzroEemA1N1nNCdGoTymWxSaduHv1TY4NZhBo/3IMaM?=
+ =?us-ascii?Q?xiZeSktZLczYew1SlNOgz5rKIkSi6iSqE9RMY8iMCqNR0RIc8Ke7g+VfzGGX?=
+ =?us-ascii?Q?J2Q8GRfVpJONoeTFpUkutmrGtmCvhUFqsSAYZeEuq1yOCrpa2dmqD/trovGc?=
+ =?us-ascii?Q?lKm+tNLDxaBBAvnNA4cUkVJ+SkrA8UdIj7RfsdEDu7526qkvxMnzq8bSwmP6?=
+ =?us-ascii?Q?cdOgKvEm4rA1h0Bpp1QQjK1pfMegRLXBBs2MHXziSO7g6ukjMk25+w3CfJGm?=
+ =?us-ascii?Q?YIFaMTyHgKdalp/LF0nMYY0D1Qc3H9+BfrE3GarC9ohA/qVmrpRNwbK41N8P?=
+ =?us-ascii?Q?3R63MKyMVC1uvgd6GyfvFz3vyefg4TiOhUr52lF9of4JsoctQR7tqb5vnsDl?=
+ =?us-ascii?Q?ToqzNuaoegsIpXkIooQdm+38mqTGixleKzoQC1x/X7ca/rS4KiPhlolqHAJu?=
+ =?us-ascii?Q?AstpdPDjQZhbyTwNcOjpbn1alTtH9X5cpbG/Fcv1m8Bn2sDzBanNA0m82/U3?=
+ =?us-ascii?Q?jUSmHqORTBmsPPVphsH+mLtwzGhVf14CqEhC+pNnOAuo9Y2k/qKd4Goeh9BK?=
+ =?us-ascii?Q?kFqrV7BZnp/0MmTosBedIZRrqm3ja1O7tgsv20BhmuDNfgd14CUo?=
 X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2e4fabec-1f96-4483-4e21-08dec586850d
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6537ffb7-bf5a-4866-0dd9-08dec586b1ee
 X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Jun 2026 17:51:08.3563
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Jun 2026 17:52:23.7919
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: E/hM7mP1pyVFvOXqrXqE0K3A984ZGaosMNvlLkYeXOsmH+8xvHZqsOtsY/RkQJ5m51GSoixLPfyLY5ILdy7ny2foPPH7xXZvflm9XpVxg7KhYGxNLVuLZVT7g0O8skKR
+X-MS-Exchange-CrossTenant-UserPrincipalName: b9NBH83wD/G27lazeYoZoXu4SyetpVAbfgITN/AdTg4IrVccl+CZxb3Qm+SA9osciX0m5+uGYJnP1B5oQgbcta3ojTZfgh75T7mzZ3oXnySlMdkX6lz6m1FtwPEOojxG
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB8194
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260608_105114_091762_4536DD4B 
-X-CRM114-Status: GOOD (  23.33  )
+X-CRM114-CacheID: sfid-20260608_105226_926693_A44152C8 
+X-CRM114-Status: GOOD (  25.89  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -138,13 +138,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jun 08, 2026 at 10:57:58AM +0300, Adrian Hunter wrote:
-> The return value of i3c_master_add_i3c_dev_locked() is not used by any
-> caller, and callers are not in a position to recover from failures in
-> this path.
+On Mon, Jun 08, 2026 at 10:57:59AM +0300, Adrian Hunter wrote:
+> Relocate i3c_master_do_daa_ext() and i3c_master_do_daa() so they appear
+> after i3c_master_add_i3c_dev_locked().
 >
-> Change the function to return void.  Amend the kernel-doc accordingly,
-> fix some grammar and remove a stale paragraph.
+> This ordering is required for upcoming changes where the DAA flow will
+> (indirectly) rely on i3c_master_add_i3c_dev_locked() functionality.
+> Reordering avoids forward dependency issues and keeps related code paths
+> logically arranged.
+>
+> No functional change.
 >
 > Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 > ---
@@ -155,72 +158,158 @@ Reviewed-by: Frank Li <Frank.Li@nxp.com>
 >
 > Changes in V2:
 >
-> 	Re-base due to changes in previous patches.
+> 	None
 >
 >
->  drivers/i3c/master.c       | 17 ++++-------------
->  include/linux/i3c/master.h |  3 +--
->  2 files changed, 5 insertions(+), 15 deletions(-)
+>  drivers/i3c/master.c | 128 +++++++++++++++++++++----------------------
+>  1 file changed, 64 insertions(+), 64 deletions(-)
 >
 > diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index 7b60b0c7f646..57857a3351c7 100644
+> index 57857a3351c7..5021d25b718a 100644
 > --- a/drivers/i3c/master.c
 > +++ b/drivers/i3c/master.c
-> @@ -2324,19 +2324,12 @@ i3c_master_search_i3c_dev_duplicate(struct i3c_dev_desc *refdev)
->   * @master: master used to send frames on the bus
->   * @addr: I3C slave dynamic address assigned to the device
->   *
-> - * This function is instantiating an I3C device object and adding it to the
-> - * I3C device list. All device information are automatically retrieved using
-> - * standard CCC commands.
+> @@ -1870,70 +1870,6 @@ static void i3c_master_reg_work_fn(struct work_struct *work)
+>  	i3c_bus_normaluse_unlock(&master->bus);
+>  }
+>
+> -/**
+> - * i3c_master_do_daa_ext() - Dynamic Address Assignment (extended version)
+> - * @master: controller
+> - * @rstdaa: whether to first perform Reset of Dynamic Addresses (RSTDAA)
 > - *
-> - * The I3C device object is returned in case the master wants to attach
-> - * private data to it using i3c_dev_set_master_data().
-> + * This function instantiates an I3C device object and adds it to the I3C device
-> + * list. All device information is retrieved using standard CCC commands.
->   *
->   * This function must be called with the bus lock held in write mode.
+> - * Perform Dynamic Address Assignment with optional support for System
+> - * Hibernation (@rstdaa is true).
+> - *
+> - * After System Hibernation, Dynamic Addresses can have been reassigned at boot
+> - * time to different values. A simple strategy is followed to handle that.
+> - * Perform a Reset of Dynamic Addresses (RSTDAA) followed by the normal DAA
+> - * procedure which has provision for reassigning addresses that differ from the
+> - * previously recorded addresses.
 > - *
 > - * Return: a 0 in case of success, an negative error code otherwise.
->   */
-> -int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
-> -				  u8 addr)
-> +void i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master, u8 addr)
->  {
->  	struct i3c_device_info info = { .dyn_addr = addr };
->  	struct i3c_dev_desc *newdev, *olddev;
-> @@ -2460,7 +2453,7 @@ int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
->  		mutex_unlock(&newdev->ibi_lock);
->  	}
->
-> -	return 0;
-> +	return;
->
->  err_detach_dev:
->  	if (newdev->dev && newdev->dev->desc)
-> @@ -2480,8 +2473,6 @@ int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
->  		i3c_bus_set_addr_slot_status(&master->bus, addr, I3C_ADDR_SLOT_I3C_DEV);
->
->  	dev_err(&master->dev, "Failed to add I3C device at address %u, error %d\n", addr, ret);
+> - */
+> -int i3c_master_do_daa_ext(struct i3c_master_controller *master, bool rstdaa)
+> -{
+> -	int rstret = 0;
+> -	int ret;
 > -
-> -	return ret;
+> -	ret = i3c_master_rpm_get(master);
+> -	if (ret)
+> -		return ret;
+> -
+> -	i3c_bus_maintenance_lock(&master->bus);
+> -
+> -	if (master->shutting_down) {
+> -		ret = -ENODEV;
+> -	} else {
+> -		if (rstdaa)
+> -			rstret = i3c_master_rstdaa_locked(master, I3C_BROADCAST_ADDR);
+> -		ret = master->ops->do_daa(master);
+> -	}
+> -
+> -	i3c_bus_maintenance_unlock(&master->bus);
+> -
+> -	if (ret)
+> -		goto out;
+> -
+> -	queue_work(master->wq, &master->reg_work);
+> -out:
+> -	i3c_master_rpm_put(master);
+> -
+> -	return rstret ?: ret;
+> -}
+> -EXPORT_SYMBOL_GPL(i3c_master_do_daa_ext);
+> -
+> -/**
+> - * i3c_master_do_daa() - do a DAA (Dynamic Address Assignment)
+> - * @master: master doing the DAA
+> - *
+> - * This function instantiates I3C device objects and adds them to the
+> - * I3C device list. All device information is automatically retrieved using
+> - * standard CCC commands.
+> - *
+> - * Return: a 0 in case of success, an negative error code otherwise.
+> - */
+> -int i3c_master_do_daa(struct i3c_master_controller *master)
+> -{
+> -	return i3c_master_do_daa_ext(master, false);
+> -}
+> -EXPORT_SYMBOL_GPL(i3c_master_do_daa);
+> -
+>  /**
+>   * i3c_master_dma_map_single() - Map buffer for single DMA transfer
+>   * @dev: device object of a device doing DMA
+> @@ -2476,6 +2412,70 @@ void i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master, u8 addr
 >  }
 >  EXPORT_SYMBOL_GPL(i3c_master_add_i3c_dev_locked);
 >
-> diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
-> index e2c831fb5354..f73cede87d36 100644
-> --- a/include/linux/i3c/master.h
-> +++ b/include/linux/i3c/master.h
-> @@ -615,8 +615,7 @@ int i3c_master_defslvs_locked(struct i3c_master_controller *master);
->  int i3c_master_get_free_addr(struct i3c_master_controller *master,
->  			     u8 start_addr);
+> +/**
+> + * i3c_master_do_daa_ext() - Dynamic Address Assignment (extended version)
+> + * @master: controller
+> + * @rstdaa: whether to first perform Reset of Dynamic Addresses (RSTDAA)
+> + *
+> + * Perform Dynamic Address Assignment with optional support for System
+> + * Hibernation (@rstdaa is true).
+> + *
+> + * After System Hibernation, Dynamic Addresses can have been reassigned at boot
+> + * time to different values. A simple strategy is followed to handle that.
+> + * Perform a Reset of Dynamic Addresses (RSTDAA) followed by the normal DAA
+> + * procedure which has provision for reassigning addresses that differ from the
+> + * previously recorded addresses.
+> + *
+> + * Return: a 0 in case of success, an negative error code otherwise.
+> + */
+> +int i3c_master_do_daa_ext(struct i3c_master_controller *master, bool rstdaa)
+> +{
+> +	int rstret = 0;
+> +	int ret;
+> +
+> +	ret = i3c_master_rpm_get(master);
+> +	if (ret)
+> +		return ret;
+> +
+> +	i3c_bus_maintenance_lock(&master->bus);
+> +
+> +	if (master->shutting_down) {
+> +		ret = -ENODEV;
+> +	} else {
+> +		if (rstdaa)
+> +			rstret = i3c_master_rstdaa_locked(master, I3C_BROADCAST_ADDR);
+> +		ret = master->ops->do_daa(master);
+> +	}
+> +
+> +	i3c_bus_maintenance_unlock(&master->bus);
+> +
+> +	if (ret)
+> +		goto out;
+> +
+> +	queue_work(master->wq, &master->reg_work);
+> +out:
+> +	i3c_master_rpm_put(master);
+> +
+> +	return rstret ?: ret;
+> +}
+> +EXPORT_SYMBOL_GPL(i3c_master_do_daa_ext);
+> +
+> +/**
+> + * i3c_master_do_daa() - do a DAA (Dynamic Address Assignment)
+> + * @master: master doing the DAA
+> + *
+> + * This function instantiates I3C device objects and adds them to the
+> + * I3C device list. All device information is automatically retrieved using
+> + * standard CCC commands.
+> + *
+> + * Return: a 0 in case of success, an negative error code otherwise.
+> + */
+> +int i3c_master_do_daa(struct i3c_master_controller *master)
+> +{
+> +	return i3c_master_do_daa_ext(master, false);
+> +}
+> +EXPORT_SYMBOL_GPL(i3c_master_do_daa);
+> +
+>  #define OF_I3C_REG1_IS_I2C_DEV			BIT(31)
 >
-> -int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
-> -				  u8 addr);
-> +void i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master, u8 addr);
->  int i3c_master_do_daa(struct i3c_master_controller *master);
->  int i3c_master_do_daa_ext(struct i3c_master_controller *master, bool rstdaa);
->  struct i3c_dma *i3c_master_dma_map_single(struct device *dev, void *ptr,
+>  static int
 > --
 > 2.51.0
 >
