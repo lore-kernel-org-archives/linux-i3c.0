@@ -4,125 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98EE9CD98D5
-	for <linux-i3c@archiver.kernel.org>; Thu, 11 Jun 2026 16:22:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 660F7CD98CE
+	for <linux-i3c@archiver.kernel.org>; Thu, 11 Jun 2026 16:30:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QUHG1Sz4rVt6DYCeE6vcOom2CgLbA0CpDMJHySNCcdo=; b=G5BHXLrudriBP3
-	bnI/dR3MtYRAJJEuhMxKgSL466qVtclE8Z/6ghMNVSBvZOVu5t78yENHdPLjETZeQOR5g3v8xRip1
-	iJne/v1JeoPETmwkcVedjiFas4pdY4iByX2MSvwBI433lQZPO/BxkAYieRlWu86Dk4x/Qt9takoUm
-	uXcCTh4RFX+mrIxwz1iuOm+1soF3bdIN7m8qOH1bv4n47msQrfGirvrbFzGnIPJTiwzQMhmTvQWDC
-	24J28CQ1oS5ZJBokHqj84lEs30jx9/dFWa2ltH+QPHudGQYkjPi94qXonyXkUrh1QkGMmFNYnlW1n
-	ig4+hvl2mpkZL+AtUsgg==;
+	List-Owner; bh=ARlc2qAHwWGW1QN0S78Xr6guvSBuJYBtSO+jf/u3yEA=; b=I8wbO1Eu/jkwYY
+	w9QRA7h4/WfNuwSTKAcCoaZjL/lx32CECv4rv0Y6tuALOiguKWDI2f7p9sbCuVgWO/FkufXANRq2/
+	+UuqD13QjCCLDyZSUoHGi4Z6JM0aSzw1FyJ4W1sMAxBs3rQxTSPFopTQlb9LCiP+3WbjEO8OhYnbO
+	TStKwUg/ObXOazwEUOtZEF/cQIDAhEzmKepOp66k96uk+HiiJv9G07jE3zoHZ5S/eC4M2/hOTcs09
+	EUJmnPilmpwOnHV1wNp0JrnGHRHQynpF3XSBbG2y0+lu0u7GbXSL1+WS4u5IwM/effXFfOjVsHJ1c
+	x5HdXWP5Cl516Q58Ou1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXiAN-00000009khv-1IwY;
-	Thu, 11 Jun 2026 16:22:03 +0000
-Received: from mail-westeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c201::1] helo=AM0PR83CU005.outbound.protection.outlook.com)
+	id 1wXiII-00000009lH2-0iBv;
+	Thu, 11 Jun 2026 16:30:14 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXiAL-00000009kgh-0I3x
+	id 1wXiIG-00000009lGu-2TRb
 	for linux-i3c@lists.infradead.org;
-	Thu, 11 Jun 2026 16:22:02 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=DtQDYloqqPG3UYhyL97CSAZgzmxK1m6+vmivHOsgAXH9GnQi3ecuZmyEuAFO/fnlgyJejrfhwITvSLOaVN+DwB4nB4LXQRW+muJWXzwFfGCdqeTRF/csfct3qiJ1nGbwNAlXuQ2FW7JYtgNh/rPLtJ5NbuoOc8ljJmuuM81iFkfpZMPpojv8ITsAMyIpousZe/ZXikiaNkZnBEN4zt2KAFbPb9MtKQ/toziFLzWMon/lFHRjUMg4OFQ2ghVqOBA98IuWIAvSKSHkma294/x5SFp8+47yFntPX9uSweJ3vYJk6yt68O/aML5PvBK2RnGiT1jlhTFkA12RaY9WkrWs6Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Jg28mzVgLMv/IJwWmY7aEa/1D3Mzzwcyrfn3WH/1JTc=;
- b=i2Ja/+13cbkDI7Wj69v+QumCJUOwxZ53jcG0CfYIIrlQhbsqnwM4xTpUBpx1TcWLLfvKURNSpfLvNH50v/SKIu1iL8a3/ga4WVc6P7PnJonl7Flnyd/YNY3gJKvFkHeNWSZthiAJAxcXGQ8OHFbuCjD2zdhdEKv8Ky3LzzZw5hQ+6qy0Gj6yUEb4FvTGggmPVr/WL/vMpOb5Y7/sK+bGPMyV/97iioTf7lwsU9M5n5k/IPu/yeyHZof+KBp/mhGHLETyzIxD75lk0K7UUOH00flWYEFC+U86jy0arxQEZkO1gcnghHv6IFh4txLhyvrhK/RMsjT7AIzhXhT0PJNUrg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Jg28mzVgLMv/IJwWmY7aEa/1D3Mzzwcyrfn3WH/1JTc=;
- b=lMfpwqV3pfk1Gu9xHyH822FlexinQrBs7EDJJuVHhtotFIbTLKiGUrH2VpTK4HRR0oX7sxheR9UrrZzaYpd72Vgg7oRDU1Myrk5BpEis5ic34jZ2+R9owAvl47LyVMwU/k9gXTnaVnFomS5hOTCnOC2TnAlQUjUqgDO7HvDToRd0bxaYAswU9wiUzvd2FJqeonGUrQ8gkwxdNNcyZWI5+uWO9hC6PRi+7YOtu9y7GZF3w3w+DB79O+uwruxEADedgb8dkvBx5tIp3yxbcMRGk3gUq+P+hmH1hamtAZtK1SiLxZ7xkMKnpSKMM72QGJWESOMHmqu6yvJ8tGLkhFDaJg==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by AS8PR04MB8312.eurprd04.prod.outlook.com (2603:10a6:20b:3f1::20) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.113.13; Thu, 11 Jun
- 2026 16:21:56 +0000
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0092.016; Thu, 11 Jun 2026
- 16:21:56 +0000
-Date: Thu, 11 Jun 2026 12:21:50 -0400
-From: Frank Li <Frank.li@oss.nxp.com>
-To: sashiko-reviews@lists.linux.dev
-Cc: tze.yee.ng@altera.com, linux-i3c@lists.infradead.org,
-	Frank.Li@kernel.org
-Subject: Re: [PATCH] i3c: master: dw-i3c-master: fix OD timing for first
- broadcast
-Message-ID: <airgnoB0Uh60mn8T@lizhi-Precision-Tower-5810>
-References: <ebddb8b62eae92de0a7eeda93cb18213c677ae96.1781077653.git.tze.yee.ng@altera.com>
- <20260610083656.334CA1F00893@smtp.kernel.org>
-Content-Disposition: inline
-In-Reply-To: <20260610083656.334CA1F00893@smtp.kernel.org>
-X-ClientProxiedBy: PH8PR05CA0004.namprd05.prod.outlook.com
- (2603:10b6:510:2cc::23) To GV2PR04MB11799.eurprd04.prod.outlook.com
- (2603:10a6:150:2cf::9)
+	Thu, 11 Jun 2026 16:30:12 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 9A182600AA;
+	Thu, 11 Jun 2026 16:30:11 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7B7FE1F00893;
+	Thu, 11 Jun 2026 16:30:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1781195411;
+	bh=sUuwlpaBLh6tnQQlebDBJ+Xh85HCcs+ftZZACcojad8=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=lPAUnYjvERUR/HIfXUfkPZr7mABv/kXAyU0egUEHrOFzHTDGYirZ7Luc/ysaRLhq5
+	 DAusACqbld2BEPZTrtrd515xu6yKzjES5A55v4YZIfyWspMa8geU5kz5SOXKeZXwi1
+	 Mu0wrz3DA21hLRkL0igpjxymCttEJ22owRx4WBptxiZZLorNxeNgyKfNu7lB2yCv1t
+	 mUBfAcMQa1vIzrUNGIwHVfw0FyNZxvVq8bTbtpy/Ure/0sbxcOF3tSORsSf5CxMFZp
+	 kWZF92v4agLONM+Nn56/EN02wkzxV4B/4pzXzq7FChsKuDXrg/8L/xNKpgSkQC+RPA
+	 Qje+L7gFMX7Ug==
+Date: Thu, 11 Jun 2026 17:30:05 +0100
+From: Lee Jones <lee@kernel.org>
+To: Lakshay Piplani <lakshay.piplani@nxp.com>
+Cc: linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
+	alexandre.belloni@bootlin.com, krzk+dt@kernel.org, robh@kernel.org,
+	conor+dt@kernel.org, devicetree@vger.kernel.org, broonie@kernel.org,
+	Frank.Li@nxp.com, lgirdwood@gmail.com, vikash.bansal@nxp.com,
+	priyanka.jain@nxp.com, aman.kumarpandey@nxp.com
+Subject: Re: [PATCH v10 5/9] mfd: p3h2x4x: Add driver for NXP P3H2x4x i3c hub
+ and on-die regulator
+Message-ID: <20260611163005.GA1140262@google.com>
+References: <20260525064209.2263045-1-lakshay.piplani@nxp.com>
+ <20260525064209.2263045-6-lakshay.piplani@nxp.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|AS8PR04MB8312:EE_
-X-MS-Office365-Filtering-Correlation-Id: d3a8f732-4591-49f6-a214-08dec7d58e68
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|23010399003|376014|366016|1800799024|3023799007|6133799003|11063799006|56012099006|4143699003|5023799004|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: EOHlkuco3RCaBPNyCuzeZXhuDivTJ90zsvdYQCOUOuWBmidzOPTju9XZ9bM3MO/2EVhiOsr8FLnAO6zfUNeYF+s+1gpaup2AlMEjo/TU4+aBn0mCiPTGZjXNmo1E9QoCDoGMLlh5hK4Y6yQ7ilXls3h6RHPFIR6Z/Wo1p8m7qDxEWxnKUpNrD8VVe15yk66Vt/gFJK4TISPr3qsLGGZaEEJ79OLuP0gfMxtg/fM2PblrpSkFlJ/InbTq2u4KFGpXK3hxkKrtvfSw2deaPXgRE6VymL7Yu12tagNFpkaL8BW5I2UEpC2lk+w/Tycmil1jiqamDbedMvDaLrO6N4B167g+5M/4TCARV0cMfrMgIniDVx2hVqzBPr97UP5/zeG1NWU5AIt70WCWSzQWMi/OJAHnXS6J4+AG+yf2YaQYwVXpEzDvHsveG7UK5wB10dK2SqCQPyvK/LHwG/E+kbPRGnr6Q/tltFaktc4ug7EOh4pQyQM60V/vah4sHbRY2KNbMxC+wFXP7eF/qw5QzBPnI/BQkGCFRS0ig9wm0Xpqv6rUCaDhRbiJGkxeHczpShypA926oWbWZUNyr8YMqKOf/y2edYnFxgwvPY2DHQsiYRybrZ+ON+n8AnzkcPJnvbZKc6kRSO19Lgtt9Wkxl2bWxw==
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(23010399003)(376014)(366016)(1800799024)(3023799007)(6133799003)(11063799006)(56012099006)(4143699003)(5023799004)(18002099003)(22082099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?Bv88Hwybq1C5Ransf5dWVeV2vgdgqm0k4Q1/+X/SWbjg5J2bYQuSVn8Tk5?=
- =?iso-8859-1?Q?/73VqOusEU0mXn2YjQXuLD2tnJEnQaOhM3j3fsYH0cEozZwCnogtTr+xz7?=
- =?iso-8859-1?Q?S2oLHzdGDXEJ7IEWrsiDTylGgk4kyrzk17GtG7cf1qNLDGuMjqGpoY15ZB?=
- =?iso-8859-1?Q?4jBSwFKdWeQsfwbT0PCSFUV+SgIR4zvhBl4PuXfr5KUSFFS3fpkAQatpP4?=
- =?iso-8859-1?Q?pmKCsd2+ztTf84l9rjVhAFE6jO4h9gjVwC7v3aGijjxIJywZCRrcZn9hqy?=
- =?iso-8859-1?Q?NAfaO5mrD1MGZQpG6ELxhF1fMlRV2vjdBtB8ukKpAPGi7Q3ro69Dth0peT?=
- =?iso-8859-1?Q?va27Qo0G08WaJSH9dNNysnOu3JUoXlRA3Km0npZBTpP2vCeRqOB4JBLeAj?=
- =?iso-8859-1?Q?Q3RjlU33nbxheilrxzhqcKE/kccysSToPoxcZ/eZqztv4T9Ur+PMvsB/dv?=
- =?iso-8859-1?Q?nDtWfyDBoEu6YZ3i+d4LHSFv+6/2VU/Q+9k0HGO7JDLP8jRAkwZ1enRiwy?=
- =?iso-8859-1?Q?MSdgY/9jj9qEklmWZDJ78Yq8rC+izcGvlfNYcIJJ0CA/qH5dXGK483sVWI?=
- =?iso-8859-1?Q?4LBTmXTpX287nltxwOU1NVP5WvRPy6XpScpiqmtdMviFx/oN/r004yRv0T?=
- =?iso-8859-1?Q?glzdGEV2oGU4dd62lu0dOMbnZm5zMscpDcKiVDS0WjTPoK4II68VJQN/bC?=
- =?iso-8859-1?Q?78xuj8NtbGw0FjFewbBwzjs9hpVAyIucExGtod6OY3I1hweddUTyvP06xr?=
- =?iso-8859-1?Q?HeRtk2qHkswGhqyQKczMPH4XO7UqM/P/OIANhZYDEQLSC/kWlwWfAuXY53?=
- =?iso-8859-1?Q?w/IA+0nsMA94JXLIiiaGbO6JvExehPl+qLrzZyeGV8nkJNjT4jqWnj3Ur3?=
- =?iso-8859-1?Q?cg+lHO4lYUU0xQ2hG1oNirdeD/1XXcVc4FXmDGJEC1rpyCl+ZnjuxHRvrZ?=
- =?iso-8859-1?Q?xxKV+nRK+SbY21vug7X1PH0l6F+NXHFjsgB4E70FfVIeEiS/q6KHFz7qvb?=
- =?iso-8859-1?Q?9VcT1c3FAwfswlLT1C+sSQ9O4P+GEpTWXez5fr6CUUxR3UOSv2UEFqR4sv?=
- =?iso-8859-1?Q?zxoF7f/w0Fy3RSqMQrSEaRtUClvGdNYu6jdvcpT68HyqohEsyAE7YPMZNI?=
- =?iso-8859-1?Q?0JBiBWyIHYeBgJX7s4kvcXZvc8Kew9KFrl5nKxKf52pemo/zQ+QFgUnO2U?=
- =?iso-8859-1?Q?DZQr03f1nF5VuDcOYHZq/xQ3ieXZ+WTDeOprOYZD/CLoY8of1UjUdFdlWK?=
- =?iso-8859-1?Q?QAcYg6+5y9M/mmZk7hVHaLW2+zAFJwrbqS5cgSbDxRK3FMohM7ul/wrO3L?=
- =?iso-8859-1?Q?F/mmYwblEWjdGwjzaVS9/2jY53QZ4TAK9BM7jLdqr83uQTsyaMx1ZuGGbg?=
- =?iso-8859-1?Q?s/hOPG2Pvj+q7J8OkLurps61c7thKm9VAv7dQKVkIMo6HxuRG7bDXW1Rf6?=
- =?iso-8859-1?Q?hmVaM7cxL5bGm0buaPQmJL5md+uQLcNRzlrmcQYHC1jG6N2DFKiI2Ze+EW?=
- =?iso-8859-1?Q?7rqEdshl7z6srW0EIRWWS71mq5bc0USlTew+6yrQsTYjpyat6pg/9M+l6g?=
- =?iso-8859-1?Q?cjS1/ty1xafi+0s7DngsAAo+WgWo/nPhStc1rg1pdJnf51dNEK4dQ7LQgL?=
- =?iso-8859-1?Q?ODtJd4AEYiKh/gmTPakO1ATOugzkEDIxlSNZNxWcaSQ7oduRSj2m/HMute?=
- =?iso-8859-1?Q?tJk9xHr5xIFTJFnZDK2OcoRyYbiTCOtMf1uBSFbLe0pfEl5RLbnIchTd02?=
- =?iso-8859-1?Q?d4sfk983Bx4Znydopf22e/a748F/2cclJZDIACYgYLG0RqO7EXNY65ACg/?=
- =?iso-8859-1?Q?S+97zYkIJtYHMMDFWuqwlgm8psi77hZ/ZE2kWm6aD/dsjpcRADGs?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d3a8f732-4591-49f6-a214-08dec7d58e68
-X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Jun 2026 16:21:56.6077
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: nPN+PmuNKn6FUI5DX/0miWwzt4OT4qBiDDZxgMGFf7EYOCo3c5K+iPOK5u3CDZdIaM3wjwm8qs8tmPbRR1gQDtPSyaklpbKdtRNNFXA8GmdqkMH4+RkDGR+PB7dpRd3a
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR04MB8312
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260611_092201_277084_A73D21DC 
-X-CRM114-Status: GOOD (  34.72  )
+Content-Disposition: inline
+In-Reply-To: <20260525064209.2263045-6-lakshay.piplani@nxp.com>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -134,198 +69,307 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 10, 2026 at 08:36:55AM +0000, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 5 potential issu=
-e(s) to consider:
->
-> New issues:
-> - [High] The newly introduced `dw_i3c_master_set_speed()` permanently ove=
-rwrites hardware-specific AMD timings with generic timings.
-> - [High] The `od_hcnt` calculation for `I3C_OPEN_DRAIN_SLOW_SPEED` violat=
-es the `tHIGH_INIT` minimum requirement.
->
-> Pre-existing issues:
-> - [High] The IRQ handler accesses hardware registers without Runtime PM p=
-rotection.
-> - [High] Use-After-Free and invalid `queue_work()` due to improper teardo=
-wn ordering in `dw_i3c_common_remove()`.
-> - [High] `dw_i3c_master_set_dev_nack_retry` modifies hardware registers w=
-ithout resuming the device via Runtime PM.
-> --
->
-> commit bd5322e3d6d6cd3a6a8155f24cc89a12fe61be00
-> Author: Tze Yee Ng <tze.yee.ng@altera.com>
->
-> i3c: master: dw-i3c-master: fix OD timing for first broadcast
->
-> This commit implements the set_speed() callback to switch open-drain timi=
-ng
-> for the first broadcast address to slow speed. It aims to fix I2C devices
-> with spike filters not being detected on mixed buses by dynamically
-> switching between slow and normal open drain speeds.
->
-> > diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw=
--i3c-master.c
-> > index a7593d6efac5a..6cf7071d3d06b 100644
-> > --- a/drivers/i3c/master/dw-i3c-master.c
-> > +++ b/drivers/i3c/master/dw-i3c-master.c
-> [ ... ]
-> > @@ -1484,6 +1485,57 @@ static irqreturn_t dw_i3c_master_irq_handler(int=
- irq, void *dev_id)
-> >  	return IRQ_HANDLED;
-> >  }
->
-> [Severity: High]
-> This is a pre-existing issue, but does the IRQ handler access hardware
-> registers without Runtime PM protection?
->
-> The interrupt handler directly reads hardware registers before checking t=
-he
-> device's PM active state:
->
-> drivers/i3c/master/dw-i3c-master.c:dw_i3c_master_irq_handler() {
->     ...
->     status =3D readl(master->regs + INTR_STATUS);
->     ...
-> }
->
-> Since the driver does not synchronize IRQs in its runtime_suspend callbac=
-k,
-> if an interrupt arrives right as the device enters runtime suspend (or if=
- a
-> spurious interrupt occurs), will this raw register read access powered-do=
-wn
-> hardware and cause a synchronous external abort?
->
-> > +static int dw_i3c_master_set_speed(struct i3c_master_controller *m,
-> > +				   enum i3c_open_drain_speed speed)
-> > +{
-> [ ... ]
-> > +	switch (speed) {
-> > +	case I3C_OPEN_DRAIN_SLOW_SPEED:
-> [ ... ]
-> > +		core_period =3D DIV_ROUND_UP(1000000000, core_rate);
-> > +		lcnt =3D SCL_I3C_TIMING_LCNT(master->i3c_od_timing_normal);
-> > +		od_hcnt =3D max_t(u8, SCL_I3C_TIMING_CNT_MIN,
-> > +				DIV_ROUND_UP(I3C_BUS_THIGH_INIT_OD_MIN_NS,
-> > +					     core_period) - 1);
->
-> [Severity: High]
-> Does this precision loss guarantee the resulting pulse is shorter than the
-> specification minimum for certain clock frequencies?
->
-> If core_period is calculated by rounding up 1000000000 / core_rate, using
-> this overestimated integer in the division
-> DIV_ROUND_UP(I3C_BUS_THIGH_INIT_OD_MIN_NS, core_period) - 1 underestimates
-> the necessary cycle count.
->
-> For example, at a 133.3 MHz core rate, the exact period is 7.5 ns but
-> core_period evaluates to 8 ns. The calculated cycle count evaluates to 25
-> cycles, which produces a 187.5 ns pulse.
->
-> Does this violate the strict 200 ns minimum for tHIGH_INIT required by the
-> I3C specification?
+On Mon, 25 May 2026, Lakshay Piplani wrote:
 
-Is it true?
+> From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+> 
+> Add core MFD support for the NXP P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841)
+> family of multiport I3C hub devices. These devices connect to a host via
+> I3C/I2C/SMBus and expose multiple downstream target ports.
+> 
+> Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+> Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
+> Signed-off-by: Lakshay Piplani <lakshay.piplani@nxp.com>
+> 
+> ---
+> Changes in v10:
+>  - Drop redundant is_p3h2x4x_in_i3c flag
+> 
+> Changes in v9:
+>  - Renamed macros to follow consistent uppercase naming conventions
+>  - Made REGMAP selects in the P3H2X4X MFD Kconfig conditional,
+>    to avoid I3C/I2C dependency issues
+> 
+> Changes in v8:
+>  - No change
+> 
+> Changes in v7:
+>  - Use new config I3C_OR_I2C
+> 
+> Changes in v6:
+>  - No change
+> 
+> Changes in v5:
+>  - Corrected the ordering in the Makefile and Kconfig for MFD_P3H2X4X
+>  - Updated dev_err_probe() for regmap_init failure.
+>  - Updated module description
+> 
+> Changes in v4:
+>  - Split the driver into three separate patches(mfd, regulator and I3C hub)
+>  - Added support for NXP P3H2x4x MFD functionality
+> ---
+> ---
+>  MAINTAINERS                 |   2 +
+>  drivers/mfd/Kconfig         |  13 ++++
+>  drivers/mfd/Makefile        |   1 +
+>  drivers/mfd/p3h2840.c       | 122 ++++++++++++++++++++++++++++++++++++
+>  include/linux/i3c/device.h  |   1 +
+>  include/linux/mfd/p3h2840.h |  26 ++++++++
+>  6 files changed, 165 insertions(+)
+>  create mode 100644 drivers/mfd/p3h2840.c
+>  create mode 100644 include/linux/mfd/p3h2840.h
+> 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 8ae231f67460..25e578dd74dd 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -19311,6 +19311,8 @@ L:	linux-kernel@vger.kernel.org
+>  L:	linux-i3c-owner@lists.infradead.org
+>  S:	Maintained
+>  F:	Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+> +F:	drivers/mfd/p3h2840.c
+> +F:	include/linux/mfd/p3h2840.h
+>  
+>  NXP PF5300/PF5301/PF5302 PMIC REGULATOR DEVICE DRIVER
+>  M:	Woodrow Douglass <wdouglass@carnegierobotics.com>
+> diff --git a/drivers/mfd/Kconfig b/drivers/mfd/Kconfig
+> index 7192c9d1d268..405b50c3c77b 100644
+> --- a/drivers/mfd/Kconfig
+> +++ b/drivers/mfd/Kconfig
+> @@ -617,6 +617,19 @@ config MFD_MX25_TSADC
+>  	  i.MX25 processors. They consist of a conversion queue for general
+>  	  purpose ADC and a queue for Touchscreens.
+>  
+> +config MFD_P3H2X4X
+> +	tristate "NXP P3H2X4X I3C Hub Device"
+> +	depends on I3C_OR_I2C
+> +	select MFD_CORE
+> +	select REGMAP_I3C if I3C
+> +	select REGMAP_I2C if I2C
+> +	help
+> +	  Enable Support for NXP P3H244x/P3H284x I3C HUB device using I3C/I2C
+> +	  communication interface.
+> +
+> +	  This driver provides support for I3C hub and regulator, each subdriver
+> +	  can be enabled independently depending on the required functionality.
+> +
+>  config MFD_PF1550
+>  	tristate "NXP PF1550 PMIC Support"
+>  	depends on I2C=y && OF
+> diff --git a/drivers/mfd/Makefile b/drivers/mfd/Makefile
+> index e75e8045c28a..a284b22c7b13 100644
+> --- a/drivers/mfd/Makefile
+> +++ b/drivers/mfd/Makefile
+> @@ -122,6 +122,7 @@ obj-$(CONFIG_MFD_MC13XXX)	+= mc13xxx-core.o
+>  obj-$(CONFIG_MFD_MC13XXX_SPI)	+= mc13xxx-spi.o
+>  obj-$(CONFIG_MFD_MC13XXX_I2C)	+= mc13xxx-i2c.o
+>  
+> +obj-$(CONFIG_MFD_P3H2X4X)	+= p3h2840.o
+>  obj-$(CONFIG_MFD_PF1550)	+= pf1550.o
+>  
+>  obj-$(CONFIG_MFD_NCT6694)	+= nct6694.o
+> diff --git a/drivers/mfd/p3h2840.c b/drivers/mfd/p3h2840.c
+> new file mode 100644
+> index 000000000000..9bd8cf6980f1
+> --- /dev/null
+> +++ b/drivers/mfd/p3h2840.c
+> @@ -0,0 +1,122 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright 2025-2026 NXP
+> + * P3H2X4X i3c hub and regulator device.
+> + */
+> +
+> +#include <linux/i2c.h>
+> +#include <linux/i3c/master.h>
+> +#include <linux/mfd/core.h>
+> +#include <linux/mfd/p3h2840.h>
+> +#include <linux/regmap.h>
+> +
+> +static const struct mfd_cell p3h2x4x_devs[] = {
+> +	{
+> +		.name = "p3h2x4x-regulator",
+> +	},
+> +	{
+> +		.name = "p3h2x4x-i3c-hub",
+> +	},
+> +};
 
->
-> > +		scl_timing =3D SCL_I3C_TIMING_HCNT(od_hcnt) |
-> > +			     SCL_I3C_TIMING_LCNT(lcnt);
-> > +		writel(scl_timing, master->regs + SCL_I3C_OD_TIMING);
-> > +		master->i3c_od_timing =3D scl_timing;
-> > +		break;
-> > +
-> > +	case I3C_OPEN_DRAIN_NORMAL_SPEED:
-> > +		writel(master->i3c_od_timing_normal,
-> > +		       master->regs + SCL_I3C_OD_TIMING);
->
-> [Severity: High]
-> Does unconditionally restoring master->i3c_od_timing_normal here permanen=
-tly
-> overwrite hardware-specific AMD timings with generic timings?
->
-> If amd_configure_od_pp_quirk() is not updated to modify
-> master->i3c_od_timing_normal, restoring it after a broadcast destroys the
-> required AMD-specific quirk timings.
->
-> Additionally, does dw_i3c_master_send_ccc_cmd() unconditionally overwrite
-> the OD timing with AMD normal timing right before sending a broadcast CCC,
-> bypassing the I3C_OPEN_DRAIN_SLOW_SPEED state expected by the I3C core?
->
-> > +		master->i3c_od_timing =3D master->i3c_od_timing_normal;
-> > +		break;
+MFD_CELL_NAME()
 
-Please check this also?
+> +static const struct regmap_config p3h2x4x_regmap_config = {
+> +	.reg_bits = P3H2X4X_REG_BITS,
+> +	.val_bits = P3H2X4X_VAL_BITS,
+> +	.max_register = 0xFF,
+> +};
+> +
+> +static int p3h2x4x_device_probe_i3c(struct i3c_device *i3cdev)
+> +{
+> +	struct p3h2x4x_dev *p3h2x4x;
 
-Frank
+struct p3h2x4x *ddata;
 
-> [ ... ]
-> > +static int dw_i3c_master_set_dev_nack_retry(struct i3c_master_controll=
-er *m,
-> > +					    unsigned long dev_nack_retry_cnt)
-> > +{
-> [ ... ]
-> > +	for (i =3D 0; i < master->maxdevs; i++) {
-> > +		/* Skip free/empty slots */
-> > +		if (master->free_pos & BIT(i))
-> > +			continue;
-> > +
-> > +		reg =3D readl(master->regs +
-> > +				DEV_ADDR_TABLE_LOC(master->datstartaddr, i));
->
-> [Severity: High]
-> This is a pre-existing issue, but does this function modify hardware
-> registers without resuming the device via Runtime PM?
->
-> The sysfs attribute dev_nack_retry_count directly invokes
-> master->ops->set_dev_nack_retry(). Since sysfs callbacks can be triggered
-> from userspace at any time, executing this while the device is runtime
-> suspended will access powered-down hardware.
->
-> On ARM SoCs, can this trigger a kernel panic (external abort) and allow
-> userspace to trivially crash the system?
->
-> [ ... ]
->
-> [Severity: High]
-> This is a pre-existing issue, but is there a use-after-free or invalid
-> queue_work() due to improper teardown ordering in dw_i3c_common_remove()?
->
-> dw_i3c_common_remove() calls cancel_work_sync(&master->hj_work) before the
-> hardware interrupt is disabled and freed by devres:
->
-> drivers/i3c/master/dw-i3c-master.c:dw_i3c_common_remove() {
->     ...
->     cancel_work_sync(&master->hj_work);
->     i3c_master_unregister(&master->base);
->     ...
-> }
->
-> Because the IRQ remains active throughout the function and during early
-> devres teardown, can an incoming Hot Join interrupt trigger the IRQ handl=
-er,
-> which will call queue_work() to re-queue hj_work?
->
-> Does this either cause queue_work() to execute on a destroyed workqueue or
-> result in a use-after-free when the workqueue subsequently processes the
-> work using the master object that has already been freed by devres?
->
-> --
-> Sashiko AI review =B7 https://sashiko.dev/#/patchset/ebddb8b62eae92de0a7e=
-eda93cb18213c677ae96.1781077653.git.tze.yee.ng@altera.com?part=3D1
->
-> --
-> linux-i3c mailing list
-> linux-i3c@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-i3c
+> +	int ret;
+> +
+> +	p3h2x4x = devm_kzalloc(&i3cdev->dev, sizeof(*p3h2x4x), GFP_KERNEL);
+> +	if (!p3h2x4x)
+> +		return -ENOMEM;
+> +
+> +	i3cdev_set_drvdata(i3cdev, p3h2x4x);
+> +
+> +	p3h2x4x->regmap = devm_regmap_init_i3c(i3cdev, &p3h2x4x_regmap_config);
+> +	if (IS_ERR(p3h2x4x->regmap))
+> +		return dev_err_probe(&i3cdev->dev, PTR_ERR(p3h2x4x->regmap),
+> +				     "Failed to register HUB regmap\n");
+> +	p3h2x4x->i3cdev = i3cdev;
 
--- =
+Where is this used again?
 
+> +
+> +	ret = devm_mfd_add_devices(&i3cdev->dev, PLATFORM_DEVID_AUTO,
+> +				   p3h2x4x_devs, ARRAY_SIZE(p3h2x4x_devs),
+> +				   NULL, 0, NULL);
+> +	if (ret)
+> +		return dev_err_probe(&i3cdev->dev, ret, "Failed to add sub devices\n");
+> +
+> +	return 0;
+> +}
+> +
+> +static int p3h2x4x_device_probe_i2c(struct i2c_client *client)
+> +{
+> +	struct p3h2x4x_dev *p3h2x4x;
+> +	int ret;
+> +
+> +	p3h2x4x = devm_kzalloc(&client->dev, sizeof(*p3h2x4x), GFP_KERNEL);
+> +	if (!p3h2x4x)
+> +		return -ENOMEM;
+> +
+> +	i2c_set_clientdata(client, p3h2x4x);
+> +
+> +	p3h2x4x->regmap = devm_regmap_init_i2c(client, &p3h2x4x_regmap_config);
+> +	if (IS_ERR(p3h2x4x->regmap))
+> +		return dev_err_probe(&client->dev, PTR_ERR(p3h2x4x->regmap),
+> +				     "Failed to register HUB regmap\n");
+> +
+> +	p3h2x4x->i3cdev = NULL;
+> +
+> +	ret = devm_mfd_add_devices(&client->dev, PLATFORM_DEVID_AUTO,
+> +				   p3h2x4x_devs, ARRAY_SIZE(p3h2x4x_devs),
+> +				   NULL, 0, NULL);
+> +	if (ret)
+> +		return dev_err_probe(&client->dev, ret, "Failed to add sub devices\n");
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct i3c_device_id p3h2x4x_i3c_ids[] = {
+> +	I3C_CLASS(I3C_DCR_HUB, NULL),
+> +	{ /* sentinel */ },
+> +};
+> +MODULE_DEVICE_TABLE(i3c, p3h2x4x_i3c_ids);
+> +
+> +static const struct i2c_device_id p3h2x4x_i2c_id_table[] = {
+> +	{ "nxp-i3c-hub" },
+> +	{ /* sentinel */ }
+> +};
+> +MODULE_DEVICE_TABLE(i2c, p3h2x4x_i2c_id_table);
+> +
+> +static const struct of_device_id p3h2x4x_i2c_of_match[] = {
+> +	{ .compatible = "nxp,p3h2840", },
+> +	{ /* sentinel */ }
+> +};
+> +MODULE_DEVICE_TABLE(of, p3h2x4x_i2c_of_match);
+> +
+> +static struct i3c_driver p3h2x4x_i3c = {
+> +	.driver = {
+> +		.name = "p3h2x4x_i3c_drv",
+> +	},
+
+'-'s only and drop the "_drv" part.
+
+> +	.probe = p3h2x4x_device_probe_i3c,
+> +	.id_table = p3h2x4x_i3c_ids,
+> +};
+> +
+> +static struct i2c_driver p3h2x4x_i2c = {
+> +	.driver = {
+> +		.name = "p3h2x4x_i2c_drv",
+> +		.of_match_table = p3h2x4x_i2c_of_match,
+> +	},
+> +	.probe =  p3h2x4x_device_probe_i2c,
+> +	.id_table = p3h2x4x_i2c_id_table,
+> +};
+> +
+
+Remove this line.
+
+> +module_i3c_i2c_driver(p3h2x4x_i3c, &p3h2x4x_i2c);
+> +
+> +MODULE_AUTHOR("Aman Kumar Pandey <aman.kumarpandey@nxp.com>");
+> +MODULE_AUTHOR("Vikash Bansal <vikash.bansal@nxp.com>");
+> +MODULE_AUTHOR("Lakshay Piplani <lakshay.piplani@nxp.com>");
+> +MODULE_DESCRIPTION("NXP P3H2X4X I3C HUB multi function driver");
+> +MODULE_LICENSE("GPL");
+> diff --git a/include/linux/i3c/device.h b/include/linux/i3c/device.h
+> index 971d53349b6f..6188082599dd 100644
+> --- a/include/linux/i3c/device.h
+> +++ b/include/linux/i3c/device.h
+> @@ -85,6 +85,7 @@ struct i3c_xfer {
+>   */
+>  enum i3c_dcr {
+>  	I3C_DCR_GENERIC_DEVICE = 0,
+> +	I3C_DCR_HUB = 194,
+>  };
+>  
+>  #define I3C_PID_MANUF_ID(pid)		(((pid) & GENMASK_ULL(47, 33)) >> 33)
+> diff --git a/include/linux/mfd/p3h2840.h b/include/linux/mfd/p3h2840.h
+> new file mode 100644
+> index 000000000000..18ff15f9e2d9
+> --- /dev/null
+> +++ b/include/linux/mfd/p3h2840.h
+> @@ -0,0 +1,26 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * Copyright 2025-2026 NXP
+> + * This header file contain private Reg address and its bit mapping etc.
+> + */
+
+"This header file contains register definitions and bit masks for the P3H2X4X."
+
+> +
+> +#ifndef _LINUX_MFD_P3H2840_H
+> +#define _LINUX_MFD_P3H2840_H
+> +
+> +#include <linux/types.h>
+> +
+> +/* Device Configuration Registers */
+> +#define P3H2X4X_DEV_REG_PROTECTION_CODE				0x10
+> +#define P3H2X4X_REGISTERS_LOCK_CODE				0x00
+> +#define P3H2X4X_REGISTERS_UNLOCK_CODE				0x69
+> +#define P3H2X4X_CP1_REGISTERS_UNLOCK_CODE			0x6a
+> +
+> +/* Reg config for Regmap */
+> +#define P3H2X4X_REG_BITS					8
+> +#define P3H2X4X_VAL_BITS					8
+> +
+> +struct p3h2x4x_dev {
+> +	struct i3c_device *i3cdev;
+> +	struct regmap *regmap;
+> +};
+> +#endif /* _LINUX_MFD_P3H2840_H */
+> -- 
+> 2.25.1
+> 
+
+-- 
+Lee Jones
+
+-- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
