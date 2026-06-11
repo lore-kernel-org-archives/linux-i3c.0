@@ -4,58 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DB35DCD8C9D
-	for <linux-i3c@archiver.kernel.org>; Thu, 11 Jun 2026 18:30:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A5CDCCD98CC
+	for <linux-i3c@archiver.kernel.org>; Thu, 11 Jun 2026 18:51:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TQR+on6pxOTxgkzwPpDt0Pmm48GYracLdwOJGIWI61U=; b=IE8psIvne+3ptk
-	va3WYbkg/7A5mcyz+4ZNqU9zQrWWN+wGNpr10Kq7uEQww58EYgMg+VxFBbZldsrevi6jnmnn808bB
-	TXwPNE4wwBe5gdJOUANOOs6WHoS77Swl1LFHCMOcLWoMRzxLvUfHrqsLB23ccar3eXl4QPhRyB7mR
-	YaSrIE7j34ZGyvG1XUYPoPPhPmmt4AvwMVXWAN/iOEfFVOsZV4Jl855rYlOtFdRuc8UYt5fdV4GVW
-	r+B+IlH9lBt5MCsq57rusu6RyMRA72JFQiTRwdy/+EaP2t4pciDePoHEIffrhqHwdHbqu5Y13+yI4
-	qWb57+kgGXeU89gi2/eQ==;
+	List-Owner; bh=PcSp7alqqzsggj9x6OZ4ER/dIjZ/+wJvGH6m/dAjPpE=; b=ADcWCNcQuGnVps
+	9uWMD2lZp/t/eQEloDeWjts4YoTt6UaeJVJLESkqFnl11NW4vzzmoBR2vp9wso1M8yriuNnALiatY
+	lqOBxmHMVQzzso+0YJcyWNDhTyRf5pzq6dEL31Xwq3O2fQDBOP1cdGz53Pd7xxgs2MwKYzv+2Val3
+	/8IegP2xt4kO8yrChw9DYwqtrToLFnFC2rId71J0ou/bg0IGOm8kfZADLguLBMvzBAPl24MB+YLj2
+	LzJ8xeAmfpXjrOH4Yap74bG9QBGcAl8P0CNSvpelVWhwD8Yhl+lM87GmmLGb6vZ/G50OtO3yq+DtZ
+	53Xj0Sf8gxrH2FoB23Ew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXkAK-00000009t1s-0Ws1;
-	Thu, 11 Jun 2026 18:30:09 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wXkVI-00000009ufv-06AC;
+	Thu, 11 Jun 2026 18:51:48 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXkAI-00000009t1m-1c8y
+	id 1wXkVG-00000009ufl-18yP
 	for linux-i3c@lists.infradead.org;
-	Thu, 11 Jun 2026 18:30:06 +0000
+	Thu, 11 Jun 2026 18:51:46 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 86FD840DEF;
-	Thu, 11 Jun 2026 18:30:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 298891F000E9;
-	Thu, 11 Jun 2026 18:30:03 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id C072960138;
+	Thu, 11 Jun 2026 18:51:44 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 37B351F000E9;
+	Thu, 11 Jun 2026 18:51:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781202605;
-	bh=mUdMsvLpjD4bDeo9zF2p27HyJ781fK2RAxjZ/HWcvNs=;
+	s=k20260515; t=1781203904;
+	bh=jhuzA1G4jTb+hQU3036PmWT90HMt35YKLv0VztRedsI=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=lMPWpjD+jl3yplPYks0xMz3rgksD99nvDAyNjtKOFM72Rz5tvSdNTDLFdZ4zpUJ0K
-	 iaLvqUSgoSVyxaPxBikGb35E/ueZutra41ruPs/vMxNYSyqlktZOr2TAdD9XK3C/G1
-	 PBKy1bzYZuXphe1w11kebZXGmpKkS2htSrkaTm23uB4IgleuAKNuyB2XEeHg6BcsK5
-	 qAAgLFXHOArlCRepSpBg9f71dk6G6XVNlmZW4QXoagAp4yipRUe0vebyz6bvIOtf2M
-	 ls07mQg1HZf9UVdIho+DsM7/rUwBtTWaEwr1PQ3ewxrWN1MdGxxuTa7z+XRER7MFMS
-	 ONJ4o0SK9leWg==
-Message-ID: <0b01eebc-ba16-48ff-9b42-eec07dd372ef@kernel.org>
-Date: Thu, 11 Jun 2026 21:30:01 +0300
+	b=ilWPUrEFuWikABMhoLFPrL4DU/39xPCRsvCGtcwQ7lKVPKM1M1gTy+vWQqGJhNfDi
+	 8A/VT8I44T/vmk6th8eIEdFc+iom0U8EqldOI6xKdiZOZyErYPwaXE7dDYz91+iKOr
+	 9EHuJjLzSzxMsTmuXwNcUE9Cjrq+jCYeTk4oNw8cNqamrlV5l/QD5zkTxmqu7xP+8v
+	 9Sxyez3X+cDZVrOnT5xGA4jMAhX8K8SlklcVtZhBh0kdRhjkMsXsdVdAEgacRGPs3E
+	 hXkD0kp01CJgolEcYXGOWaY+N0UozO4Exh3CG56MYAnV+A0Ws9RQ5SYMR0wpCwIWI2
+	 gwrBdO6wuIl0g==
+Message-ID: <502bf7c9-afc6-4904-9d49-05b5f0455c2f@kernel.org>
+Date: Thu, 11 Jun 2026 21:51:41 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v3 06/17] i3c: renesas: Perform Dynamic Address Assignment
- on resume
+Subject: Re: [PATCH v3 17/17] i3c: renesas: Add runtime PM support
 To: sashiko-reviews@lists.linux.dev
-Cc: linux-i3c@lists.infradead.org, Frank.Li@kernel.org,
- wsa+renesas@sang-engineering.com
-References: <20260608201543.804902-7-claudiu.beznea@kernel.org>
- <20260608203648.CAC451F00893@smtp.kernel.org>
+Cc: wsa+renesas@sang-engineering.com, linux-i3c@lists.infradead.org,
+ Frank.Li@kernel.org
+References: <20260608201543.804902-18-claudiu.beznea@kernel.org>
+ <20260608204650.5A13C1F00893@smtp.kernel.org>
 Content-Language: en-US
 From: Claudiu Beznea <claudiu.beznea@kernel.org>
-In-Reply-To: <20260608203648.CAC451F00893@smtp.kernel.org>
+In-Reply-To: <20260608204650.5A13C1F00893@smtp.kernel.org>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,250 +73,176 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 
 
-On 6/8/26 23:36, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 7 potential issue(s) to consider:
+On 6/8/26 23:46, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 4 potential issue(s) to consider:
 > 
 > New issues:
-> - [Critical] `renesas_i3c_group_devs_in_slots()` crashes on free slots and fails to update the `free_pos` bitmask.
-> - [Critical] Typo in array swapping logic duplicates I2C devices and corrupts driver state.
-> - [High] Call to undefined function `i3c_master_reattach_i3c_dev_locked` and logically invalid usage of the reattach API.
-> - [High] Bypassing `i3c_master_add_i3c_dev_locked()` on resume ignores UID arbitration order, breaking device isolation.
-> - [High] Redundant and unsafe dereference of `->dev->desc` when retrieving master data.
-> - [High] Stale `olddevs` mask corrupts DATBAS registers for relocated I2C devices.
+> - [High] Async Runtime PM put during driver unbind leaves the clock enabled.
+> - [High] Newly added renesas_i3c_abort_xfer clears the abort bit instead of setting it, leaving hardware stuck.
 > 
 > Pre-existing issues:
-> - [High] Integer underflow in `GENMASK` calculation in `renesas_i3c_daa()` causes undefined behavior.
+> - [High] Timeout handling in transfer loops fails to break the loop, ignores the timeout, and incorrectly returns success.
+> - [High] I3C RX buffer is not advanced during FIFO reads, leaving buffer tails uninitialized.
 > --
 > 
-> commit 3b3dbe672a58e6c80b4a3c7aad942c61076f9cd2
+> commit 810cc3873a9dc52a932c03376330719f06d17de0
 > Author: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 > 
-> i3c: renesas: Perform Dynamic Address Assignment on resume
+> i3c: renesas: Add runtime PM support
 > 
-> The patch modifies the Renesas I3C driver to run Dynamic Address Assignment
-> (DAA) in the controller resume path to restore communication with I3C devices
-> that lose power during suspend. It groups I2C and I3C devices during resume
-> and re-runs ENTDAA for I3C devices.
+> This commit adds runtime PM support to the Renesas I3C driver, replacing
+> explicit clock management with runtime PM APIs. It updates controller
+> operations with PM guards and introduces a transfer abort mechanism to handle
+> timeouts asynchronously.
 > 
 >> diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
+>> index b6c282c53a541..d6121ca869908 100644
 >> --- a/drivers/i3c/master/renesas-i3c.c
 >> +++ b/drivers/i3c/master/renesas-i3c.c
-> 
 > [ ... ]
-> 
->> +static u8 renesas_i3c_group_devs_in_slots(struct renesas_i3c *i3c)
+>> @@ -443,7 +442,24 @@ static void renesas_i3c_enqueue_xfer(struct renesas_i3c *i3c, struct renesas_i3c
+>>   	}
+>>   }
+>>   
+>> -static void renesas_i3c_wait_xfer(struct renesas_i3c *i3c, struct renesas_i3c_xfer *xfer)
+>> +static void renesas_i3c_abort_xfer(struct renesas_i3c *i3c)
 >> +{
->> +	struct renesas_i3c_i2c_dev_data *new_i2c_data, *new_i3c_data;
->> +	struct renesas_i3c_addr i2c_addr, i3c_addr;
->> +	struct i3c_dev_desc *i3c_dev;
->> +	struct i2c_dev_desc *i2c_dev;
->> +	u8 i2c_pos = 0;
+>> +	guard(spinlock_irqsave)(&i3c->xferqueue.lock);
+>> +
+>> +	/* Disable all the interrupts */
+>> +	renesas_writel(i3c->regs, BIE, 0);
+>> +	renesas_writel(i3c->regs, NTIE, 0);
+>> +
+>> +	/* Clear normal transfer status flags. */
+>> +	renesas_clear_bit(i3c->regs, NTST, NTST_TDBEF0 | NTST_RDBFF0 | NTST_RSPQFF |
+>> +					   NTST_TEF | NTST_TABTF);
+>> +	/* Clear bus status flags. */
+>> +	renesas_clear_bit(i3c->regs, BST, BST_NACKDF | BST_TENDF | BST_SPCNDDF);
+>> +	/* Clear error flags. */
+>> +	renesas_clear_bit(i3c->regs, BCTL, BCTL_ABT);
 > 
+> [Severity: High]
+> Does this clear the abort bit instead of setting it?
+> 
+> Hardware abort bits like BCTL_ABT typically must be written as 1 to trigger
+> an abort. If we only clear the bit, will the hardware controller be left
+> running the timed-out transfer in the background and get stuck?
+
+The role of the renesas_i3c_abort_xfer() is just to avoid triggering any new 
+interrupt in case a transfer times out. The handler disables the interrupts and 
+clear any status bits along with the BCTL.ABT bit.
+
+Maybe a different name for the function would have been better.
+
+> 
+>> +}
+>> +
 > [ ... ]
-> 
->> +	for (u8 pos = 0; pos < i3c->maxdevs; pos++) {
->> +		if (i3c->free_pos & BIT(pos))
->> +			continue;
->> +
->> +		if (!i3c->addrs[pos].is_i2c)
->> +			continue;
->> +
->> +		if (pos == i2c_pos) {
->> +			i2c_pos++;
->> +			continue;
->> +		}
->> +
->> +		/*
->> +		 * Swap the I3C device on i2c_pos slot with the I2C dev
->> +		 * on pos slot.
->> +		 */
->> +		i3c_addr = i3c->addrs[i2c_pos];
->> +		i3c_dev = i3c_addr.i3c_dev;
->> +
->> +		i2c_addr = i3c->addrs[pos];
-> 
-> [Severity: Critical]
-> If i2c_pos points to a free slot because earlier iterations skipped free
-> slots without advancing i2c_pos, won't i3c_dev be NULL?
-
-Since, as of my code inspection, the detach could happen only though a 
-re-attachment procedure, this should lead to continuous slots allocation in 
-free_pos. Thus, at the point this code is executed there should be no gaps in 
-free_pos, unless I'm missing something.
-
-> 
-> Furthermore, does this function need to update i3c->free_pos when swapping
-> slots to ensure the bitmask stays synchronized with the array layout?
-
-Since, as of my code inspection, the detach could happen only though a 
-re-attachment procedure, this should lead to continuous slots allocation in 
-free_pos. Thus, at the point this code is executed there should be no gaps in 
-free_pos, swapping positions in i3c->addrs[] wouldn't need updating free_pos.
-
-> 
->> +		i2c_dev = i2c_addr.i2c_dev;
->> +
->> +		new_i2c_data = i3c_dev_get_master_data(i3c_dev->dev->desc);
-> 
-> [Severity: High]
-> Is the ->dev->desc dereference here safe?
-
-At the point this code is executed the devices should have already been
-properly allocated.
-
-> Since i3c_dev is already a struct i3c_dev_desc *, the dev field might
-> be NULL if the device was only partially attached or memory allocation failed,
-> causing a crash. i3c_dev_get_master_data() can accept i3c_dev directly.
-> 
->> +		new_i3c_data = i2c_dev_get_master_data(i2c_dev);
->> +
->> +		i3c->addrs[i2c_pos] = i3c->addrs[pos];
->> +		i3c->addrs[i2c_pos].is_i2c = true;
->> +		i3c->addrs[i2c_pos].i2c_dev = i2c_dev;
->> +
->> +		i3c->addrs[pos] = i2c_addr;
-> 
-> [Severity: Critical]
-> Since i2c_addr was initialized to i3c->addrs[pos] above, doesn't this
-> assign the entry to itself?
-
-Indeed, this looks wrong.
-
-> 
-> This would duplicate the I2C device into both slots, destroy the original I3C
-> device's dynamic address state, and cross-assign private data structures.
-> Should i3c_addr be used instead?
-> 
->> +		i3c->addrs[pos].is_i2c = false;
->> +		i3c->addrs[pos].i3c_dev = i3c_dev;
->> +
->> +		new_i2c_data->index = i2c_pos++;
->> +		new_i3c_data->index = pos;
->> +
->> +		i2c_dev_set_master_data(i2c_dev, new_i2c_data);
->> +		i3c_dev_set_master_data(i3c_dev, new_i3c_data);
-> 
-> [ ... ]
-> 
->>   static int renesas_i3c_daa(struct i3c_master_controller *m)
->>   {
->>   	struct renesas_i3c *i3c = to_renesas_i3c(m);
->>   	struct renesas_i3c_cmd *cmd;
->>   	u32 olddevs, newdevs;
->>   	u8 last_addr = 0, pos;
->> +	u8 first_i3c_pos = 0;
->>   	int ret;
-> 
-> [ ... ]
-> 
->> @@ -655,16 +732,25 @@ static int renesas_i3c_daa(struct i3c_master_controller *m)
->>   	olddevs = ~(i3c->free_pos);
->>   	i3c->internal_state = I3C_INTERNAL_STATE_CONTROLLER_ENTDAA;
+>> @@ -975,9 +1027,14 @@ static int renesas_i3c_i3c_xfers(struct i3c_dev_desc *dev, struct i3c_xfer *i3c_
+>>   				renesas_set_bit(i3c->regs, NTIE, NTIE_TDBEIE0);
+>>   		}
 >>   
->> +	if (i3c->resuming)
->> +		first_i3c_pos = renesas_i3c_group_devs_in_slots(i3c);
+>> -		renesas_i3c_wait_xfer(i3c, xfer);
+>> +		time_left = renesas_i3c_wait_xfer(i3c, xfer);
+>> +		if (!time_left)
+>> +			abort_xfer = true;
 > 
 > [Severity: High]
-> Since olddevs is computed from i3c->free_pos before calling
-> renesas_i3c_group_devs_in_slots(), which shuffles the array but doesn't
-> update i3c->free_pos, is it possible for olddevs to be stale?
-
-As of the current code base, the i2c slots in free_pos should be continuous
-and this should not happen.
-
+> This isn't a bug introduced by this patch, but does the lack of a break here
+> cause the loop to continue iterating?
 > 
-> If an I2C device is relocated into an empty slot where the stale mask is 0,
-> the subsequent DAA loop might fall through and overwrite the I2C device's slot
-> with a new I3C dynamic address.
+> If the transfer times out, it sets abort_xfer = true but continues to the
+> next command, overwriting the shared cmd descriptor.
 > 
->> +
->>   	/* Setting DATBASn registers for target devices. */
->>   	for (pos = 0; pos < i3c->maxdevs; pos++) {
+> Also, since renesas_i3c_i3c_xfers() unconditionally returns 0 at the end,
+> will this hide the timeout from the subsystem and potentially cause it to
+> read uninitialized RX buffers?
 > 
-> [ ... ]
-> 
->> @@ -689,12 +780,38 @@ static int renesas_i3c_daa(struct i3c_master_controller *m)
->>   
->>   	renesas_i3c_wait_xfer(i3c, xfer);
->>   
->> -	newdevs = GENMASK(i3c->maxdevs - cmd->rx_count - 1, 0);
->> -	newdevs &= ~olddevs;
->> +	newdevs = GENMASK(i3c->maxdevs - cmd->rx_count - 1, first_i3c_pos);
-> 
-> [Severity: High]
-> This is a pre-existing issue, but if cmd->rx_count equals i3c->maxdevs
-> (e.g., when no devices are assigned), the first argument to GENMASK becomes
-> -1.
-> 
-> Doesn't this invoke undefined behavior via an invalid shift count in the
-> GENMASK macro, returning garbage values?
-> 
->> +	/* Re-attach all the I3C devices on resume. */
->> +	if (!i3c->resuming)
->> +		newdevs &= ~olddevs;
->>   
->>   	for (pos = 0; pos < i3c->maxdevs; pos++) {
->> -		if (newdevs & BIT(pos))
->> -			i3c_master_add_i3c_dev_locked(m, i3c->addrs[pos]);
->> +		if (!(newdevs & BIT(pos)))
->> +			continue;
->> +
->> +		/*
->> +		 * If the bus was fully occupied before suspend, re-attach the
->> +		 * devices and update the addresses tracked by the subsystem.
->> +		 * Without this, i3c_master_add_i3c_dev_locked() returns errors
->> +		 * due to a lack of free slots (as reported by
->> +		 * renesas_i3c_get_free_pos()), causing the attachment to fail.
->> +		 *
->> +		 * Otherwise, follow the normal
->> +		 * i3c_master_add_i3c_dev_locked() path, which will re-attach the
->> +		 * devices, keep the subsystem state and driver addresses in sync,
->> +		 * and perform all the required internal bookkeeping.
->> +		 */
->> +		if (!i3c->free_pos && i3c->resuming) {
->> +			struct i3c_dev_desc *dev = i3c->addrs[pos].i3c_dev->dev->desc;
-> 
-> [Severity: High]
-> Is it safe to dereference i3c_dev->dev->desc here?
-> 
-> If dev is NULL due to partial attachment or memory allocation failure prior
-> to suspend, this will cause a kernel crash.
-
-This should not happen since at this point the devices should be properly 
-attached. Moreover, using directly i3c->addrs[pos].i3c_dev doesn't
-work for the case here.
-
-> 
->> +			u8 old_dyn_addr;
->> +
->> +			old_dyn_addr = dev->info.dyn_addr;
->> +			dev->info.dyn_addr = i3c->addrs[pos].addr;
->> +
->> +			i3c_master_reattach_i3c_dev_locked(dev, old_dyn_addr);
-> 
-> [Severity: High]
-> Does i3c_master_reattach_i3c_dev_locked() exist in the kernel?
-> 
-> Calling a non-existent function will result in a build failure. Additionally,
-> even if this was intended to be i3c_master_reattach_i3c_dev(), that API
-> sends a SETNEWDA CCC to the device's old dynamic address. Since ENTDAA just
-> assigned a new dynamic address via hardware, won't the device NACK the
-> command?
-
-The API is part of the series pointed out in the cover letter of this series.
-
-> 
-> Furthermore, by bypassing i3c_master_add_i3c_dev_locked(), does this ignore
-> the PID arbitration order? ENTDAA assigns addresses based on PID arbitration,
-> so the device that won arbitration might not correspond to the descriptor at
-> i3c->addrs[pos], breaking device isolation.
-> 
->> +		} else {
->> +			i3c_master_add_i3c_dev_locked(m, i3c->addrs[pos].addr);
->> +		}
 >>   	}
 >>   
+>> +	if (abort_xfer)
+>> +		renesas_i3c_abort_xfer(i3c);
+>> +
 >>   	return 0;
+>>   }
+> [ ... ]
+>> @@ -1045,8 +1112,12 @@ static void renesas_i3c_detach_i3c_dev(struct i3c_dev_desc *dev)
+>>   	struct renesas_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
+>>   	struct i3c_master_controller *m = i3c_dev_get_master(dev);
+>>   	struct renesas_i3c *i3c = to_renesas_i3c(m);
+>> +	int ret;
+>>   
+>> -	renesas_writel(i3c->regs, DATBAS(data->index), 0);
+>> +	PM_RUNTIME_ACQUIRE_IF_ENABLED_AUTOSUSPEND(i3c->dev, pm);
+>> +	ret = PM_RUNTIME_ACQUIRE_ERR(&pm);
+>> +	if (!ret)
+>> +		renesas_writel(i3c->regs, DATBAS(data->index), 0);
+>>   
+>>   	i3c_dev_set_master_data(dev, NULL);
+>>   	i3c->addrs[data->index].addr = 0;
+> 
+> [Severity: High]
+> Does this asynchronously put the runtime PM usage counter without a
+> synchronous suspend before driver teardown completes?
+> 
+> During driver unbind, renesas_i3c_remove() unregisters the I3C master, which
+> detaches devices. The PM_RUNTIME_ACQUIRE_IF_ENABLED_AUTOSUSPEND macro releases
+> the device asynchronously via pm_runtime_put_autosuspend().
+> 
+> Right after remove returns, devres calls pm_runtime_disable(), which cancels
+> the pending autosuspend work. 
+
+Before calling pm_runtime_disable() the devres helper 
+(pm_runtime_disable_action()) call:
+
+pm_runtime_dont_use_autosuspend() ->
+   __pm_runtime_use_autosuspend(dev, false) ->
+     update_autosuspend(dev, old_delay, old_use) ->
+        rpm_idle(dev, RPM_AUTO)
+
+which should end up calling the idle and suspend callbacks.
+
+> Could this leave the hardware permanently in
+> the RPM_ACTIVE state and leak resources by never disabling the clocks?
+> 
+> [ ... ]
+>> @@ -1102,7 +1180,9 @@ static int renesas_i3c_i2c_xfers(struct i2c_dev_desc *dev,
+>>   
+>>   		renesas_set_bit(i3c->regs, NTSTE, NTSTE_TDBEE0);
+>>   
+>> -		wait_for_completion_timeout(&xfer->comp, m->i2c.timeout);
+>> +		time_left = wait_for_completion_timeout(&xfer->comp, m->i2c.timeout);
+>> +		if (!time_left)
+>> +			abort_xfer = true;
+>>   
+>>   		if (cmd->err)
+>>   			break;
+> 
+> [Severity: High]
+> This is a pre-existing issue, but similar to I3C transfers above, does this
+> fail to break the loop when wait_for_completion_timeout() times out?
+> 
+> Since cmd->err remains 0 on timeout, the loop continues and eventually returns
+> 0, hiding the timeout from the subsystem.
+> 
+> 
+> Additionally, I noticed a pre-existing issue outside the immediate scope of
+> this patch:
+> 
+> [Severity: High]
+> This is a pre-existing issue, but in renesas_i3c_rx_isr() and
+> renesas_i3c_resp_isr(), do the I3C FIFO reads copy data into cmd->rx_buf
+> without advancing the buffer pointer?
+> 
+> renesas_i3c_rx_isr() does:
+> 
+>      i3c_readl_fifo(i3c->regs + NTDTBP0, cmd->rx_buf, read_bytes);
+>      cmd->rx_count = read_bytes;
+> 
+> Since cmd->rx_buf is not incremented and rx_count is overwritten rather than
+> accumulated, will multiple interrupts overwrite the beginning of the buffer?
+> Could this leave the tail of the buffer uninitialized, leading to information
+> leaks or data corruption when the subsystem reads it?
 > 
 
 -- 
