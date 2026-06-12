@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75709CD98D6
-	for <linux-i3c@archiver.kernel.org>; Fri, 12 Jun 2026 16:05:18 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8067ECD98CF
+	for <linux-i3c@archiver.kernel.org>; Fri, 12 Jun 2026 16:05:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q1uwBdD3ZUPSVv+OfnsiO3mj9qh1qL6YxKcVETtYoMc=; b=OJxDRlESQoBEBi
-	NMqi/5ziD7ZRFk361BeDmylIiOEp6T9WTqohhkJIkL+FaEV5aGjZcH7AlQhQFel8RKuacZVFkW21x
-	Qq+v57tuy36SC/7508GlAt6HvHvICECA5J0q7LbNdD4viWqYSUM2kVjOfCuI+/6ftmpCtcbVJBoIx
-	ezW82pyi98mCiSFshMYAgdHjHVpz3fkH/d4JT/XTj5yccb7UYq3UirxhCFM5fe314qxWgrNL1MOCn
-	6nbYEW/YS/U9LVziAC/0KcJwg/Y69qsc609pnnHKOF82e8C/wSAXuqOwZRCGeabyLoV9pJCjnjIy/
-	cwbVomceIl3TKund1e2Q==;
+	List-Owner; bh=Kyduh1hjdK+XcoCEXjf6Yf5FfH+hbV4t0qSwSVhxem4=; b=ya2sa5vD2hdL/O
+	D/Y1ly+9aspgyDnwtEarATu3W7J0uXL+TMU/esHUpVJipY58Ki/4g9RpD/Gu/6ecGwshRR7E0Af15
+	c7vg4A7clOT6fODjWVLo3UH63A0ADaiUZpCdk1KpS3vAXS4/MQ7TsWnqOvuc2Znb4pb2YaZxK8q8U
+	g/UF+o5fPWMDO/2xOruDEi78REA4lsHDLdNapSmZixibUk569WIMv+Z4vSOr5Hz9amT4UEC84nYsm
+	eU2hzRUB5o4NqFWwRlYirN7VeytQ/spBEBkMtmmM7wTKi3/DJ71tsmVe76qCJHOZXKbJcY++3WdIV
+	JxC69D/VIW2Dnyvgb/Gg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wY4Ni-0000000BCl2-0x5Y;
-	Fri, 12 Jun 2026 16:05:18 +0000
+	id 1wY4Nl-0000000BCm4-19Qd;
+	Fri, 12 Jun 2026 16:05:21 +0000
 Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wY4Nh-0000000BCkV-0HiV
+	id 1wY4Nj-0000000BClO-2p8E
 	for linux-i3c@lists.infradead.org;
-	Fri, 12 Jun 2026 16:05:17 +0000
+	Fri, 12 Jun 2026 16:05:19 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 2F58060145;
+	by tor.source.kernel.org (Postfix) with ESMTP id 22DF860129;
+	Fri, 12 Jun 2026 16:05:19 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 632FF1F00A3A;
 	Fri, 12 Jun 2026 16:05:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5E1FA1F000E9;
-	Fri, 12 Jun 2026 16:05:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781280315;
-	bh=3PBZb7cGt6xcR9wbrJite7LTqkhXtfQAMt+/2SqMx8Q=;
+	s=k20260515; t=1781280318;
+	bh=TKn9uhAJWlT6BrId2omUn9JuAlf/aJfC5YydL8TPGko=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References;
-	b=NV7ARvWS/AAlXNnz6sUFeV8x2ljwnz5rdGC2QTrH2SM2fo4aRMgCKFB0nEqgi5BpR
-	 KbhJM47Plph9jzKTsOfBzODQZ00Z+XvEL5kB4jkZfEKD27xXwMfXVxazXxKuArCg7c
-	 tdxjAziEieb3w4mwhbTi8Hz+bGoSQhvHopIoZp2yF0WwBw05PK3q15siJZ0MvnQMQE
-	 85zfuAzRV4ylgy/kmMuW5AO86jnGI6j91G4bb0p4jHi8oKLg2ICxZ/RmQpuZvY9LXR
-	 GhZAXUYyySlXAy/o24cRum3689eaPadSmGxf7AjPB2XpDHUCzEZP/89THoBPfxUHd5
-	 FlRIYajCIBwSQ==
+	b=QWVk/2r1crt+eXao2CkRRqy4pwZgUIyndoN9dxOtUZuPiNAuG+ei2gPIV7OINrrAC
+	 0AWiQA2qD8QLxcMi2Ai5SqTK6XYDvkOj+40CzmURwPiQLzXFtOef7sMVAdUMy/jgP0
+	 jK/DnY4QVowCf1ufwCjt4btBZoC5JCNSviPQpHEP0vt04oHKrRj40L4q9zA3YjDJoE
+	 o40ApMVtIDz0oTDDQij9NBiYk6JbqKSmiab3fDW7KeGa5SQfE/3Rtww3j9gvRzrViW
+	 7FeK6xOnCA12DeEU4CJwyc0gbXg882Fm+v9afn5wLms2mMAWpz5rhd2FCY9oZDfrlA
+	 s5hdQVc9JfghA==
 From: Claudiu Beznea <claudiu.beznea@kernel.org>
 To: wsa+renesas@sang-engineering.com,
 	tommaso.merciai.xr@bp.renesas.com,
@@ -54,9 +54,9 @@ Cc: claudiu.beznea@kernel.org,
 	claudiu.beznea@tuxon.dev,
 	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
 	stable@vger.kernel.org
-Subject: [PATCH v4 04/16] i3c: renesas: Reconfigure the DATBAS register on re-attach
-Date: Fri, 12 Jun 2026 19:04:46 +0300
-Message-ID: <20260612160458.3102106-5-claudiu.beznea@kernel.org>
+Subject: [PATCH v4 05/16] i3c: renesas: Reset the controller on resume
+Date: Fri, 12 Jun 2026 19:04:47 +0300
+Message-ID: <20260612160458.3102106-6-claudiu.beznea@kernel.org>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20260612160458.3102106-1-claudiu.beznea@kernel.org>
 References: <20260612160458.3102106-1-claudiu.beznea@kernel.org>
@@ -79,66 +79,71 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
-During re-attach, the device may change its position in the i3c->addrs[]
-array. As a result, it may use a different Device Address Table Basic
-Register (DATBAS), which needs to be reconfigured.
+Reset the controller on resume after enabling the clocks to follow the
+same sequence as in probe and avoid potential ordering related failures.
 
-Reconfigure the DATBAS register on re-attach. Along with it update
-software caches.
+With it, renesas_i3c_reset() was updated to use read_poll_timeout_atomic(),
+as the driver's resume callback is executed during the noirq phase of
+resume, where interrupts are disabled.
 
-Fixes: d028219a9f14 ("i3c: master: Add basic driver for the Renesas I3C controller")
+Fixes: e7218986319b ("i3c: renesas: Add suspend/resume support")
 Cc: stable@vger.kernel.org
 Reviewed-by: Frank Li <Frank.Li@nxp.com>
 Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 ---
 
 Changes in v4:
-- use "data->index > pos" condition
+- none
 
 Changes in v3:
 - collected tags
 
 Changes in v2:
-- dropped the "if (pos < 0)" check in renesas_i3c_reattach_i3c_dev() to allow
-  re-attaching in case of a full bus; along with it the condition to update
-  the DATBAS register and software caches was updated to
-  if (data->index != pos && pos >= 0)
-- adjusted the patch title
+- replaced the read_poll_timeout() in renesas_i3c_reset() with
+  read_poll_timeout_atomic() as the renesas_i3c_reset() is called
+  in noirq phase of the suspend/resume; updated the patch description
+  to reflect that
+- collected Frank's tag. Frank, please let me know if this should be
+  dropped. Thanks!
 
- drivers/i3c/master/renesas-i3c.c | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+ drivers/i3c/master/renesas-i3c.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
-index 7d448936b74c..4b81c32b1fde 100644
+index 4b81c32b1fde..67b9a31300d0 100644
 --- a/drivers/i3c/master/renesas-i3c.c
 +++ b/drivers/i3c/master/renesas-i3c.c
-@@ -892,10 +892,26 @@ static int renesas_i3c_reattach_i3c_dev(struct i3c_dev_desc *dev,
- 	struct i3c_master_controller *m = i3c_dev_get_master(dev);
- 	struct renesas_i3c *i3c = to_renesas_i3c(m);
- 	struct renesas_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
-+	int pos;
-+
-+	pos = renesas_i3c_get_free_pos(i3c);
-+
-+	if (data->index > pos && pos >= 0) {
-+		renesas_writel(i3c->regs, DATBAS(data->index), 0);
-+		i3c->addrs[data->index] = 0;
-+		i3c->free_pos |= BIT(data->index);
-+
-+		data->index = pos;
-+		i3c->free_pos &= ~BIT(data->index);
-+	}
+@@ -480,8 +480,8 @@ static int renesas_i3c_reset(struct renesas_i3c *i3c)
+ 	renesas_writel(i3c->regs, BCTL, 0);
+ 	renesas_set_bit(i3c->regs, RSTCTL, RSTCTL_RI3CRST);
  
- 	i3c->addrs[data->index] = dev->info.dyn_addr ? dev->info.dyn_addr :
- 							dev->info.static_addr;
- 
-+	renesas_writel(i3c->regs, DATBAS(data->index),
-+		       DATBAS_DVSTAD(dev->info.static_addr) |
-+		       datbas_dvdyad_with_parity(i3c->addrs[data->index]));
-+
- 	return 0;
+-	return read_poll_timeout(renesas_readl, val, !(val & RSTCTL_RI3CRST),
+-				 0, 1000, false, i3c->regs, RSTCTL);
++	return read_poll_timeout_atomic(renesas_readl, val, !(val & RSTCTL_RI3CRST),
++					0, 1000, false, i3c->regs, RSTCTL);
  }
  
+ static void renesas_i3c_hw_init(struct renesas_i3c *i3c)
+@@ -1485,6 +1485,10 @@ static int renesas_i3c_resume_noirq(struct device *dev)
+ 	if (ret)
+ 		goto err_presetn;
+ 
++	ret = renesas_i3c_reset(i3c);
++	if (ret)
++		goto err_clks_disable;
++
+ 	/* Re-store I3C registers value. */
+ 	renesas_writel(i3c->regs, STDBR, i3c->i3c_STDBR);
+ 	renesas_writel(i3c->regs, EXTBR, i3c->extbr);
+@@ -1504,6 +1508,8 @@ static int renesas_i3c_resume_noirq(struct device *dev)
+ 
+ 	return 0;
+ 
++err_clks_disable:
++	clk_bulk_disable(i3c->num_clks, i3c->clks);
+ err_presetn:
+ 	reset_control_assert(i3c->presetn);
+ err_tresetn:
 -- 
 2.43.0
 
