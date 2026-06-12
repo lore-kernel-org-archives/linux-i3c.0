@@ -4,70 +4,72 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 709B3CD98CF
-	for <linux-i3c@archiver.kernel.org>; Fri, 12 Jun 2026 08:01:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C09CBCD98DC
+	for <linux-i3c@archiver.kernel.org>; Fri, 12 Jun 2026 08:01:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lewf1Z1qFX56quEcsg9UmQq4789n1JtjSjV/Ufjnfbo=; b=WZL7p7+RnCEvOH
-	BjgIH2Kl3aRXVYUU6pX9SQlnWFW08SQN7nPQRBPAH6FobqIIYyoxB8FFsPGUchcC1o9sf6edRqSOo
-	QJHSkDkeBTTHP2aL/D67G5cA/OwKH9vCXzaxPWwnH1Ulaz9HeCWrkTulUNVaEumcXfkV2aqtk0URo
-	Vr3SjatPQ2hGeM4hKxF+4676tczK6mOQIoviLQh1rQ8pzYAh/JDA4itu49adCZyIuKkwulwYY4evO
-	nV1E2JmhqfCmZ8edhvUJWuvA6er8Te08kenRwz0esH71YFTvPvNSWQM0cDcJ6SxZ4OZTJyKRpZ7Tm
-	yIJzr2XDtNpYVneMwaWA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=p9Hlfnof/FO3jZ6UdVCU7avwhHTqj2j6Im2qF7sRTFM=; b=QTN3XX1yqIPdKC
+	2x4xBc2zc6mRfn3wJcl1F5YYkkzyEJwRoJqzQYGka0tHQhj5MPt1J/46tM9brMRKb1TfWciA3M2eX
+	3Y/dG4dsHB0svxKmFxBgLTi7L/uUrX2/9jCpNssmGnGQWagnvHv5ajimCrhsLYjDR231rukKhPSYE
+	gTh5NbuuOTzyeq3ghq4y8IWm0vs8ukS2c4PLRPPk/UH4J6TzB4GrY4saCjCXrMhPLDAJt2p6149xs
+	z+MUfSL4Qpy1Q0vP6xm9GcOx2w0pJdKYjTxVOS2UM53nOA/sIlBAN/xUW+Lus+mmxynEMxek98hQx
+	jmlCxotxoxsy31aLMYdQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXwpc-0000000AXBu-0r9Y;
-	Fri, 12 Jun 2026 08:01:36 +0000
+	id 1wXwpe-0000000AXE3-2Dvx;
+	Fri, 12 Jun 2026 08:01:38 +0000
 Received: from mgamail.intel.com ([192.198.163.15])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wXwpZ-0000000AX8Y-342p
+	id 1wXwpb-0000000AX8Y-0R6T
 	for linux-i3c@lists.infradead.org;
-	Fri, 12 Jun 2026 08:01:35 +0000
+	Fri, 12 Jun 2026 08:01:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1781251294; x=1812787294;
-  h=from:to:cc:subject:date:message-id:mime-version:
-   content-transfer-encoding;
-  bh=pvwSj2+sH7Rn37+lFRx+bP4U1caEPkCvYPv5x0EzYWE=;
-  b=V6DhwOg/HHNHbMZPdAGiynlXLeOxAUAGPff3mIAc04+W00EQOn0DT/Ra
-   cpNfGXFuenMaotyCyIeSmrJ5cF5O9KCA+nH0aLT7N6dHNr8p94VaIpBf7
-   EO+LYjPRM8pSqeoXElDA+pltk8ML2x6dKEDEh528dRqgXDdv3NVd8A5C+
-   pVFyWhsV680xonDXUJE7oluQVlly6jChNWC0i+9/nJ2a2v4Y0um1uWsWs
-   QfEGq/kTq73ZuEnTqfIVV/cgRl3LRrWC88BsLPH3tX42gLW9VpoyJqFP6
-   iJdKCs0dSM8YaQqT0E3LhkpiHj3w4vEA2nDVQZ0FcTZ2gpRWAhMJzXLfV
-   g==;
-X-CSE-ConnectionGUID: X1+42SaES/yNG6e+XJUzcQ==
-X-CSE-MsgGUID: vn5zP/qbRiSl1X8soKi0JA==
-X-IronPort-AV: E=McAfee;i="6800,10657,11813"; a="82186730"
+  t=1781251295; x=1812787295;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=Hlm/wya+n9NOIaapCCAWz8hKxUCeDWt5EzkegeKPzIA=;
+  b=g0wU0Fh1/9S1LrmgsOxODvbGmgWWpLhwRQGLlEVWTBlY0Fori+YEYnQb
+   iYV/li68midsYZPG0/L6PHhTR8kefH/N/GU5j/s+v3VDJrRCN7UB6nYiw
+   PbmeEf/LaKAI+xC79ZDv3AnhyRgfXcM+xZQMS9eQIgfpAThxkHSYStRRY
+   TZjrQ9Eco2CvVcuicECXCnE0aJ+ImCIwcxCG+lks3nRMezZJuwtqw+dfQ
+   BUrWdnyQo6OCZxFETJdUqzQdAe36HcIPvTfdEHLf/ENjCd01LTxkeUlhi
+   3JJSB+MLnBdT+oYkx3TaTU7murt8pSXnlqQUsKR0iR62DnsVi3yzMp35Q
+   A==;
+X-CSE-ConnectionGUID: vQxOIoZDRHKFs6cpdIRDwg==
+X-CSE-MsgGUID: m3HRhhT5QgyypiBIZqlgtg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11813"; a="82186754"
 X-IronPort-AV: E=Sophos;i="6.24,200,1774335600"; 
-   d="scan'208";a="82186730"
+   d="scan'208";a="82186754"
 Received: from orviesa008.jf.intel.com ([10.64.159.148])
-  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Jun 2026 01:01:18 -0700
-X-CSE-ConnectionGUID: /Zxye9UDRgO++dndNDK6gw==
-X-CSE-MsgGUID: 3X8CLNgYQ4KSfxI6iT7fnw==
+  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Jun 2026 01:01:27 -0700
+X-CSE-ConnectionGUID: FJl3Ne3CQxSTdGMp0ymNow==
+X-CSE-MsgGUID: z9hLAmt6SviwHw/yFguElA==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.24,200,1774335600"; 
-   d="scan'208";a="246630330"
+   d="scan'208";a="246630368"
 Received: from vpanait-mobl.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.245.41])
-  by orviesa008-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Jun 2026 01:01:16 -0700
+  by orviesa008-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 12 Jun 2026 01:01:26 -0700
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH V4 0/7] i3c: Fix IBI race, address handling, and reconcile DAA
-Date: Fri, 12 Jun 2026 11:01:00 +0300
-Message-ID: <20260612080107.11606-1-adrian.hunter@intel.com>
+Subject: [PATCH V4 5/7] i3c: master: Make i3c_master_add_i3c_dev_locked() return void
+Date: Fri, 12 Jun 2026 11:01:05 +0300
+Message-ID: <20260612080107.11606-6-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.51.0
+In-Reply-To: <20260612080107.11606-1-adrian.hunter@intel.com>
+References: <20260612080107.11606-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260612_010133_784781_324A29C1 
-X-CRM114-Status: GOOD (  10.49  )
+X-CRM114-CacheID: sfid-20260612_010135_162736_4DE8DF5B 
+X-CRM114-Status: GOOD (  13.52  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,107 +86,97 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi
+The return value of i3c_master_add_i3c_dev_locked() is not used by any
+caller, and callers are not in a position to recover from failures in
+this path.
 
-	Note all patches have now been reviewed by Frank.
+Change the function to return void.  Amend the kernel-doc accordingly,
+fix some grammar and remove a stale paragraph.
 
-Patches 1-2 fix a use-after-free race in the MIPI I3C HCI driver's IBI
-handling and make IBI teardown resilient to DISEC failures.
-
-Patches 3-7 fix address management issues in the I3C core and HCI
-driver that arise when Dynamic Address Assignment (DAA) does not complete
-cleanly, culminating in a reconciliation step that detects and resolves
-inconsistencies between assigned address slots and registered devices.
-
-Patches are based on top of:
-
-      [PATCH V3 0/8] i3c: Hot-Join improvements and MIPI HCI Hot-Join support
-      https://lore.kernel.org/linux-i3c/20260608054312.10604-1-adrian.hunter@intel.com
-
-which, in turn, applies on top of:
-
-      [PATCH V5 00/17] i3c: mipi-i3c-hci: DMA abort, recovery and related improvements
-      https://lore.kernel.org/linux-i3c/20260603090754.16252-1-adrian.hunter@intel.com
+Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+---
 
 
 Changes in V4:
-    i3c: master: Prevent reuse of dynamic address on device add failure
-    i3c: master: Reconcile dynamic addresses after DAA
-	Add Frank's Rev'd-by
+
+	None
 
 Changes in V3:
-    i3c: mipi-i3c-hci: Fix race in i3c_hci_addr_to_dev()
-    i3c: mipi-i3c-hci: Ignore DISEC failures when disabling IBIs
+
 	Add Frank's Rev'd-by
-
-    i3c: master: Prevent reuse of dynamic address on device add failure
-	Add note to commit message about Direct RSTDAA deprecation
-
-    i3c: mipi-i3c-hci: Tolerate i3c_master_add_i3c_dev_locked() failures in DAA
-    i3c: master: Make i3c_master_add_i3c_dev_locked() return void
-    i3c: master: Move DAA API functions after i3c_master_add_i3c_dev_locked()
-	Add Frank's Rev'd-by
-
-    i3c: master: Reconcile dynamic addresses after DAA
-	Add comment about the source of I3C_DEV_PROBE_* macro values.
-	Also account for static_addr in i3c_master_reconcile_dyn_addrs()
 
 Changes in V2:
-    i3c: mipi-i3c-hci: Fix race in i3c_hci_addr_to_dev()
-	Factor out __i3c_hci_disable_ibi() to facilitate also clearing
-	ibi_devs[dat_idx] upon IBI free, and update commit message
-	accordingly.
-	Demote a message in PIO and DMA IBI handling, and update commit
-	message accordingly.
 
-    i3c: mipi-i3c-hci: Ignore DISEC failures when disabling IBIs
-	Re-base due to changes in previous patch.
-
-    i3c: master: Prevent reuse of dynamic address on device add failure
-	Fix 'if (IS_ERR(newdev)' error path.
-	Be defensive and do not change the addr_slot_status if it is not
-	free, and update commit message accordingly.
-	Amend commit message to note removal of unnecesary 'if (!master)'
-	check.
-	Add Fixes tag.
-
-    i3c: mipi-i3c-hci: Tolerate i3c_master_add_i3c_dev_locked() failures in DAA
-	None
-
-    i3c: master: Make i3c_master_add_i3c_dev_locked() return void
-	Re-base due to changes in previous patches.
-
-    i3c: master: Move DAA API functions after i3c_master_add_i3c_dev_locked()
-	None
-
-    i3c: master: Reconcile dynamic addresses after DAA
-	Add bitmap.h include for bitmap_zero() etc.
 	Re-base due to changes in previous patches.
 
 
-Adrian Hunter (7):
-      i3c: mipi-i3c-hci: Fix race in i3c_hci_addr_to_dev()
-      i3c: mipi-i3c-hci: Ignore DISEC failures when disabling IBIs
-      i3c: master: Prevent reuse of dynamic address on device add failure
-      i3c: mipi-i3c-hci: Tolerate i3c_master_add_i3c_dev_locked() failures in DAA
-      i3c: master: Make i3c_master_add_i3c_dev_locked() return void
-      i3c: master: Move DAA API functions after i3c_master_add_i3c_dev_locked()
-      i3c: master: Reconcile dynamic addresses after DAA
+ drivers/i3c/master.c       | 17 ++++-------------
+ include/linux/i3c/master.h |  3 +--
+ 2 files changed, 5 insertions(+), 15 deletions(-)
 
- drivers/i3c/master.c                     | 279 ++++++++++++++++++++++---------
- drivers/i3c/master/mipi-i3c-hci/cmd_v1.c |   4 +-
- drivers/i3c/master/mipi-i3c-hci/cmd_v2.c |   4 +-
- drivers/i3c/master/mipi-i3c-hci/core.c   |  45 ++++-
- drivers/i3c/master/mipi-i3c-hci/dma.c    |   7 +-
- drivers/i3c/master/mipi-i3c-hci/hci.h    |   1 +
- drivers/i3c/master/mipi-i3c-hci/ibi.h    |  13 +-
- drivers/i3c/master/mipi-i3c-hci/pio.c    |   7 +-
- include/linux/i3c/master.h               |   3 +-
- 9 files changed, 254 insertions(+), 109 deletions(-)
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 7b60b0c7f646..57857a3351c7 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -2324,19 +2324,12 @@ i3c_master_search_i3c_dev_duplicate(struct i3c_dev_desc *refdev)
+  * @master: master used to send frames on the bus
+  * @addr: I3C slave dynamic address assigned to the device
+  *
+- * This function is instantiating an I3C device object and adding it to the
+- * I3C device list. All device information are automatically retrieved using
+- * standard CCC commands.
+- *
+- * The I3C device object is returned in case the master wants to attach
+- * private data to it using i3c_dev_set_master_data().
++ * This function instantiates an I3C device object and adds it to the I3C device
++ * list. All device information is retrieved using standard CCC commands.
+  *
+  * This function must be called with the bus lock held in write mode.
+- *
+- * Return: a 0 in case of success, an negative error code otherwise.
+  */
+-int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
+-				  u8 addr)
++void i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master, u8 addr)
+ {
+ 	struct i3c_device_info info = { .dyn_addr = addr };
+ 	struct i3c_dev_desc *newdev, *olddev;
+@@ -2460,7 +2453,7 @@ int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
+ 		mutex_unlock(&newdev->ibi_lock);
+ 	}
+ 
+-	return 0;
++	return;
+ 
+ err_detach_dev:
+ 	if (newdev->dev && newdev->dev->desc)
+@@ -2480,8 +2473,6 @@ int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
+ 		i3c_bus_set_addr_slot_status(&master->bus, addr, I3C_ADDR_SLOT_I3C_DEV);
+ 
+ 	dev_err(&master->dev, "Failed to add I3C device at address %u, error %d\n", addr, ret);
+-
+-	return ret;
+ }
+ EXPORT_SYMBOL_GPL(i3c_master_add_i3c_dev_locked);
+ 
+diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
+index e2c831fb5354..f73cede87d36 100644
+--- a/include/linux/i3c/master.h
++++ b/include/linux/i3c/master.h
+@@ -615,8 +615,7 @@ int i3c_master_defslvs_locked(struct i3c_master_controller *master);
+ int i3c_master_get_free_addr(struct i3c_master_controller *master,
+ 			     u8 start_addr);
+ 
+-int i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master,
+-				  u8 addr);
++void i3c_master_add_i3c_dev_locked(struct i3c_master_controller *master, u8 addr);
+ int i3c_master_do_daa(struct i3c_master_controller *master);
+ int i3c_master_do_daa_ext(struct i3c_master_controller *master, bool rstdaa);
+ struct i3c_dma *i3c_master_dma_map_single(struct device *dev, void *ptr,
+-- 
+2.51.0
 
-
-Regards
-Adrian
 
 -- 
 linux-i3c mailing list
