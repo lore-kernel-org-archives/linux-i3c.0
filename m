@@ -4,121 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53C7DCD98CE
-	for <linux-i3c@archiver.kernel.org>; Mon, 15 Jun 2026 06:26:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B0679CD98DE
+	for <linux-i3c@archiver.kernel.org>; Mon, 15 Jun 2026 08:57:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zt8Ca+h0Xb9pklHPpkSAdh/dbx3fCv+pRIt1tbxYTZA=; b=C/u6kTIgTA+lbF
-	3ny7ynUBud/jBkFGU6T2WOrLluxrCTG4SU1Aa3tQicr8OeunCJMwISb/MY47OKIdR/UOq+lMwVRZN
-	AwvMX+rF7nKh3RWvZ0WzQvl0Pfl1fqU+v4qcGIVXtWwma1KodDi2T0L79NF+3PNwz8BCELfWZ0woC
-	8VZNnDqXzUk/D3Kp2HkqWGVMb1HOTVhq+ycX+t5Ov9eVjxufM2kEzVqDkwONCWfaPyKdbVzdeItfH
-	105FIs/IFHzc8afVCS7Gt2+iOzcdjDdGmZHG0iX7H7KOR2eb7oqIY6YNOcWPdx2I2dBGlJgHly3dM
-	8H6XsSlQGJr0553fGKSQ==;
+	List-Owner; bh=Cs/swXxYUF7J0z0BBSBhlu6cejDTJyYDki5dbiIJrmM=; b=g89qajrGF9KiHr
+	N9ifab7DqmnbNwVjQ0Nn1mFBRJd+4Zf113iXdwJmB/ViXoEgptMk9NgYwjNteSKW1WfnhkMr7v5dR
+	R2+y5+6lvsDJDKLJfzhd2W4e3g+Q+RwIDQyVskSXTcjwM6SdOkiG/D2TKHehoPZe4r1pCENvMdpAp
+	SPXoKBGuj7d7ZU0IBFZ4eh9xWOA19MJbCNXCYF2Scxd6l2JewuGn8L/amJ6Av39zoun8L9/NonX4d
+	5O0hpB/AP+rgIRE5euVuCp3Hu8cklK6Vc3CsttO62j1ykmMZfF1rAzLTlpp1di+dgXIZccONWM5Re
+	OFcfWq4pOAbOnCaAK8Gg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZ0lt-0000000Dggp-1Mi3;
-	Mon, 15 Jun 2026 06:26:09 +0000
-Received: from mail-eastusazon11012029.outbound.protection.outlook.com ([52.101.53.29] helo=BL0PR03CU003.outbound.protection.outlook.com)
+	id 1wZ38o-0000000DvcT-1qEm;
+	Mon, 15 Jun 2026 08:57:58 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZ0lq-0000000DggJ-3Qy1
+	id 1wZ38n-0000000Dvbs-1aiV
 	for linux-i3c@lists.infradead.org;
-	Mon, 15 Jun 2026 06:26:08 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Q/akVQZ1r5zcDfB+c1hVxI5rbUaw2iZtA5ta1MHLhRVz0ew4H4edHLy9uFzv+sOFJCpmBi94bOwF75/HWhv80us9YX7z5zFXqK6K5fFZ0Nzm2bvmr3mzRjZFtG+AgOsOwCxQb0fXIFdnctkzyBX3XkC81gZ/QgVjEeGqwvJUVuS51FYopUbP4tReoeiL17JBulCgpbgKvtkQZLqQ6WGwtOnNAKxnXN/x0SwiJ9xQwBB4g+BEfziREG6acPLi3zfSPDPvnvnCPpb9NyM4bbUob8FQ8BHC6yAX0GzVTyTpcyQX6LWUyLV+IsmSkwwK8y2kfChcmNqR3CHhb/EzBBnpkg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=fYupdNe3nQtdmMiyaFghCII9D+Vtcv+moO5pfmsKQhY=;
- b=mqa+U0pTkwvAeKGRPEAIXBgt4vuRkm96PiljgsF39XFwBcOkeLRsnpKBnPtTDh/1h/C23y3gbZN99DPvSOlBqEgdV6pzq9jywapoUsnXxAtNlvFZTipKZfo3T4SSz4GyO51HX3r6zECDXxvvIFH5iuRk/eYIpU9fmrxrNQ6+dXAWHpKEU+tsCcwD9wGEpJQkNUfgMXs4IXclUgbWIJ2cL5TPN3yXp8Y3xcRuGeZ/PfofcWKfyacE5W8+HC0F0G5Ck7uD05+0FNZ6/ct1B+vi8btcGDzkSfuEF4crUNQ5KKjNp34DsNmbPDQ6mM/b2kPY2b8rZ6ko2hFCii75bAQyEw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.118.233) smtp.rcpttodomain=bootlin.com smtp.mailfrom=nvidia.com;
- dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
- dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=fYupdNe3nQtdmMiyaFghCII9D+Vtcv+moO5pfmsKQhY=;
- b=P25cl6zJCldmgTl8Iw3pyCQj8cas+xpInFk+Waqj/odlGnladLPctXIfxM829tZ+Nq2E/IhCOA1KRI2lgxiJT7T/wJNZo2GFdJWT30KDqzpgRvPjupGkDo4FJp1Ia0KnjmjARD9uiX+a/b3l2S2J4yreVzwnfUF4ycNV0qyeZaL1KXcmKzNwdh4j9ioCt+ETgZON8ZBvueCZ/canWm+umaY00S1wgbSgGHZu1J8uIU+1AYH0f8QTsofZgf21z114BwPrsOWam4EdTNHOC7lHRU4eHJFKDOJbwKhSLm88M9CMezmFq9S/2xO5NHrGODivvufzKiTusSwb8X33Qa2g9w==
-Received: from DM6PR06CA0091.namprd06.prod.outlook.com (2603:10b6:5:336::24)
- by SJ5PPF2CD49510F.namprd12.prod.outlook.com (2603:10b6:a0f:fc02::98f) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.113.18; Mon, 15 Jun
- 2026 06:25:56 +0000
-Received: from DM2PEPF00003FC5.namprd04.prod.outlook.com
- (2603:10b6:5:336:cafe::34) by DM6PR06CA0091.outlook.office365.com
- (2603:10b6:5:336::24) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.113.18 via Frontend Transport; Mon,
- 15 Jun 2026 06:25:55 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.118.233)
- smtp.mailfrom=nvidia.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=nvidia.com;
-Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.118.233 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.118.233; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.118.233) by
- DM2PEPF00003FC5.mail.protection.outlook.com (10.167.23.23) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.139.8 via Frontend Transport; Mon, 15 Jun 2026 06:25:54 +0000
-Received: from drhqmail201.nvidia.com (10.126.190.180) by mail.nvidia.com
- (10.127.129.6) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Sun, 14 Jun
- 2026 23:25:47 -0700
-Received: from drhqmail202.nvidia.com (10.126.190.181) by
- drhqmail201.nvidia.com (10.126.190.180) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.20; Sun, 14 Jun 2026 23:25:47 -0700
-Received: from build-akhilrajeev-noble-20260602.internal (10.127.8.11) by
- mail.nvidia.com (10.126.190.181) with Microsoft SMTP Server id 15.2.2562.20
- via Frontend Transport; Sun, 14 Jun 2026 23:25:40 -0700
-From: Akhil R <akhilrajeev@nvidia.com>
-To: <alexandre.belloni@bootlin.com>
-CC: <Frank.Li@nxp.com>, <acpica-devel@lists.linux.dev>,
-	<akhilrajeev@nvidia.com>, <arnd@arndb.de>,
-	<bjorn.andersson@oss.qualcomm.com>, <conor+dt@kernel.org>,
-	<devicetree@vger.kernel.org>, <dmitry.baryshkov@oss.qualcomm.com>,
-	<ebiggers@kernel.org>, <geert@linux-m68k.org>, <jonathanh@nvidia.com>,
-	<krzk+dt@kernel.org>, <lenb@kernel.org>, <linux-acpi@vger.kernel.org>,
-	<linux-hwmon@vger.kernel.org>, <linux-i3c@lists.infradead.org>,
-	<linux-kernel@vger.kernel.org>, <linux-tegra@vger.kernel.org>,
-	<linux@roeck-us.net>, <miquel.raynal@bootlin.com>, <p.zabel@pengutronix.de>,
-	<rafael@kernel.org>, <robh@kernel.org>, <saket.dumbre@intel.com>,
-	<treding@nvidia.com>, <wsa+renesas@sang-engineering.com>
-Subject: Re: [PATCH v3 00/13] Support ACPI and SETAASA device discovery
-Date: Mon, 15 Jun 2026 06:25:39 +0000
-Message-ID: <20260615062539.3225240-1-akhilrajeev@nvidia.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <2026061420560674ab6fb9@mail.local>
-References: <2026061420560674ab6fb9@mail.local>
+	Mon, 15 Jun 2026 08:57:57 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 0500343BD3;
+	Mon, 15 Jun 2026 08:57:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D5E9A1F000E9;
+	Mon, 15 Jun 2026 08:57:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1781513876;
+	bh=BHDUtQTed+hn+mTvjKKEmuSL1hPlj0o2lJcEyC32cTE=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To;
+	b=PeCsM7ZWpojsNSaxbP8P+I+iQlYJBakAK9Iuv0uTWNeUxlVkSBHCCdGbCVY/Fr1oh
+	 klmO5QyT5PQtRetTbI5x0K6QvQbe8EX7RG9Kpbfc/uToFCaYdIhkJ5q5KU/+WzThqU
+	 U7LaxbYwtJ9SYdAEr/qWlhSooyJ65xThGkjhMwvhSH+lQ+57BvIIOOhcy1YlQyISel
+	 KyiKLduYAtHp52fBfNGwaJIRTXQNoxpkGgLuw9NJGBJZTs46V1cUyGHMDhQ960pme7
+	 I6DZ8PAx0fzqoL+OGZegcmEZUWxZUJZ4sxW1FPNZdEL9XMxDon3ltXD9rJnCseNOR8
+	 XzP0oosjGN8rQ==
+Message-ID: <e3f8a05c-85ab-4c29-ae61-b9e81420bbb8@kernel.org>
+Date: Mon, 15 Jun 2026 11:57:53 +0300
 MIME-Version: 1.0
-X-NV-OnPremToCloud: ExternallySecured
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DM2PEPF00003FC5:EE_|SJ5PPF2CD49510F:EE_
-X-MS-Office365-Filtering-Correlation-Id: f9c2c01e-af50-4370-ca80-08decaa6f49e
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700016|1800799024|82310400026|23010399003|7416014|376014|22082099003|18002099003|6133799003|3023799007|56012099006|11063799006;
-X-Microsoft-Antispam-Message-Info: ELaeA9CD2usk5fqhLjnP3egjL45Nrobn1uWTjZnR5/th98C87Tfg3nRgeQvkmC+0DIug8fAfJtD5Ii3tu4aHar3+kXqem4Tu2XLLIGvkFEYEY4eUuKkle1tdm382E49wO5xI7xM6nJUE9/SyW2uI2e/l/1ciLpgYusuyeFiOOKDf3Ja0MSQJ0cDyONEz1K+6OjzSqcV9/pGRcZWSnsXBLyVkPJIwpbmqo9V2mV8pIJQNRnyil8B+fYnEvSxvLQjbIZWg3yjZFVf7/7oZi+F0P2R6lLs3SGJ00lCJOBmzBKZt3cuE/hK3vjzsw/jZToTNi196C7gMtC4ymNhjykUaDKVS8cn4Xc3zvI2S2aartObt2d6M5XSzQwkzHfSFtFlyMxP7bM37lYp1xSddo5y0tKrm6d4p2+ZsHdQLvhw91yQUlaKsdsYZq7a1c9RKp62D9xMeMypAbSbrQ87+q9Nvy28AaLPrNmuNuPc/MiFFkFtarjpJZ9xpMc0Cg+oUjuSSnYzqS+dVKOA4ziiMb6+YhnOvy494D6/dOvjgpZqFU4PQyyfrJBax+jfeLYefQGFmeMwYi4ihjTDlFDmhZRsh2zHshE1dAeDXRYkQ9qrgpb+I+IMI0PJbkaYL7q9gI4TuarUI4okKNDn0GtM512uEp/00Y/3kBxbG/YB6lu7J6u/anpBn73t0d6ynb4QFWOVvJx7ynq+BKHKsyWHPOPsKq10vwCDB6WmOeXvGFg4s5Hc=
-X-Forefront-Antispam-Report: CIP:216.228.118.233;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc7edge2.nvidia.com;CAT:NONE;SFS:(13230040)(36860700016)(1800799024)(82310400026)(23010399003)(7416014)(376014)(22082099003)(18002099003)(6133799003)(3023799007)(56012099006)(11063799006);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: q5eSdfSxXRdzvMA+DVmPpSPQuspCae6xLucRk86lYdXTLEoXynBlqbtqPFjgFQ6xbeGTzP/Lw9rETq4sl1zWbrU9ExZFi2AvnidoKF2sfhoCcapzQTUwgmIeS8BytC1S0+XEEZLzpmGDs9cWeNDCJfoRNmrHgrG2bwqiuly7KM8fHIj3fzBfoRbGCXfLzbiOUTy2bsbhzKgYPuyySitIH5nEb+E3E3rZ1aMjIIX91QyI8gTjMwQHxkFJctPPf4VjHbsTwjfcx/CxlOb/Iq/DaAA6eNtMT78KxAmWqDmJJlxnSok9FTZXJlWXxYZwxAGb0+PCsWpuHS0C5k2VMo+t2h/zvPAlrK3s3gDJJdrqGjWqwKHGn9X84cgfeEKqcVxWi05JRtv7ujx8nYNbiLvetZnhGopc60LlqdEFDrzAJOjVC+DV1Atc4/iwCAqmg9pS
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Jun 2026 06:25:54.9037
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: f9c2c01e-af50-4370-ca80-08decaa6f49e
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.118.233];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: DM2PEPF00003FC5.namprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ5PPF2CD49510F
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260614_232606_873591_A1E0B600 
-X-CRM114-Status: GOOD (  18.63  )
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v4 01/16] i3c: renesas: Check that the transfer is valid
+ before accessing it
+To: sashiko-reviews@lists.linux.dev
+Cc: Frank.Li@kernel.org, linux-i3c@lists.infradead.org
+References: <20260612160458.3102106-2-claudiu.beznea@kernel.org>
+ <20260612162039.A5D701F000E9@smtp.kernel.org>
+Content-Language: en-US
+From: Claudiu Beznea <claudiu.beznea@kernel.org>
+In-Reply-To: <20260612162039.A5D701F000E9@smtp.kernel.org>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -130,75 +66,130 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Sun, 14 Jun 2026 22:56:06 +0200, Alexandre Belloni wrote:
-> On 23/04/2026 14:26:59+0530, Akhil R wrote:
->> This patch series adds SETAASA device discovery to the I3C subsystem,
->> enabling support for SPD5118 temperature sensors found on DDR5 memory
->> modules. The changes also add ACPI support for all existing DAA
->> methods like SETDASA, SETNEWDA as well as I2C devices on I3C bus.
->> 
->> SPD5118 and similar devices on DDR5 memory modules differ from typical
->> I3C devices in their initialization. They use SETAASA broadcast CCC
->> instead of ENTDAA for address assignment, and per JEDEC specification,
->> are not required to have a Provisioned ID or implement standard device
->> information CCC commands (GETPID, GETDCR, GETBCR).
->> 
->> The series enables to describe all I3C and I2C devices on both Device
->> Tree and the ACPI table, using unified device property APIs throughout
->> the I3C core and the Synopsys DesignWare I3C master driver.
->> 
->> Please note that the series modifies drivers across multiple subsystems,
->> like Device Tree bindings, ACPI, I3C and HWMON.
->> 
->> v2->v3:
->>   * Fix maximum value and indent bit list for mipi-i3c-static-method.
->>   * Move I3C_ADDR_METHOD_* macros to dt-bindings header.
->>   * Drop ACPICA commit IDs, keep only the Link: tags.
->>   * Revert the change which proceeds to register other devices if SETAASA
->>     is not supported so that it aligns with the rest of the driver and to
->>     avoid the issues pointed by Sashiko.
->>   * Rework multiple commit messages.
->> 
->> v1->v2:
->>   * Added patch to remove 16-bit addressing support for SPD5118
->>   * Guard ACPI calls with #ifdef CONFIG_ACPI
->>   * Remove CONFIG_OF guard for of_alias_get_highest_id()
->>   * Mask mipi-i3c-static-method in the driver to select only valid values.
->>   * Proceed to register other devices if SETAASA is not supported.
->>   * Update commit message and links in the description of multiple commits.
->> 
->> 
->> Akhil R (13):
->>   dt-bindings: i3c: Add mipi-i3c-static-method to support SETAASA
->>   ACPICA: Read LVR from the I2C resource descriptor
->>   i3c: master: Use unified device property interface
->>   i3c: master: Support ACPI enumeration of child devices
->>   i3c: master: Add support for devices using SETAASA
->>   i3c: master: Add support for devices without PID
->>   i3c: master: match I3C device through DT and ACPI
->>   i3c: dw-i3c-master: Add SETAASA as supported CCC
->>   i3c: dw-i3c-master: Add a quirk to skip clock and reset
->>   i3c: dw-i3c-master: Add ACPI ID for Tegra410
->>   hwmon: spd5118: Remove 16-bit addressing
->>   hwmon: spd5118: Add I3C support
->>   arm64: defconfig: Enable I3C and SPD5118 hwmon
->> 
+
+
+On 6/12/26 19:20, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 8 potential issue(s) to consider:
 > 
-> I'd really like to apply this but I would have preferred having an
-> actual ack from Rob on patch 1. Also, you are going to have to rebase on
-> the current i3c-next. Can you do this?
+> New issues:
+> - [High] The `!xfer` early return path in `renesas_i3c_rx_isr` fails to disable the `NTIE_RDBFIE0` interrupt, causing an interrupt storm.
+> - [High] A typo in the `!xfer` early return path of `renesas_i3c_tend_isr` duplicates the `BIE_TENDIE` flag, failing to mask the NACK interrupt.
+> - [High] The `!xfer` early return path in `renesas_i3c_start_isr` fails to disable the `BIE_STCNDDIE` interrupt.
+> 
+> Pre-existing issues:
+> - [Critical] The transfer functions `renesas_i3c_i3c_xfers` and `renesas_i3c_i2c_xfers` silently ignore timeouts and hardware errors, falsely returning success.
+> - [Critical] Hardware State Desync causing cross-transfer corruption due to failure to abort hardware on timeout.
+> - [Critical] FIFO overflow in I3C writes due to unconditionally writing the entire transfer length without progress tracking.
+> - [Critical] Out-of-bounds write and pointer offset corruption in `renesas_i3c_rx_isr` during I3C reads.
+> - [High] Hardware interrupt registers are modified via non-atomic read-modify-write operations from process context without locking, causing lost mask updates.
+> --
+> 
+> commit 80958e2863c878df9b87948c2774499050e47aee
+> Author: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+> 
+>      i3c: renesas: Check that the transfer is valid before accessing it
+>      
+>      The Renesas I3C driver uses an asynchronous model to transfer data. It
+>      prepares a struct renesas_i3c_xfer, enqueues it, and waits for completion.
+>      The interrupt handler dequeues the transfer, updates/uses it, and signals
+>      the waiting thread.
+> 
+>> diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
+>> index f39c449922ca2..bc1a0ae1d12d8 100644
+>> --- a/drivers/i3c/master/renesas-i3c.c
+>> +++ b/drivers/i3c/master/renesas-i3c.c
+> 
+> [ ... ]
+> 
+>> @@ -1138,6 +1153,15 @@ static irqreturn_t renesas_i3c_tend_isr(int irq, void *data)
+>>   
+>>   	scoped_guard(spinlock, &i3c->xferqueue.lock) {
+>>   		xfer = i3c->xferqueue.cur;
+>> +		if (!xfer) {
+>> +			/* Disable interrupts. */
+>> +			renesas_clear_bit(i3c->regs, BIE, BIE_TENDIE | BIE_TENDIE);
+> 
+> [Severity: High]
+> Does this duplicated flag fail to mask the NACK interrupt?
 
-Definitely. I had been addressing the comments from Rob and Saashiko, but
-got hooked up into somethings else in the last few weeks. I will send v4
-soon. Thanks for reaching out.
+Yes, it is a typo.
 
-Best Regards,
-Akhil
+> 
+> It appears the code is meant to mask both the Transmit End and NACK
+> interrupts (as the next line clears BST_NACKDF | BST_TENDF).
+
+The scope of the code was to disable the IRQs that are disable on the path were 
+the xfer is valid and clear the same bits, to avoid re-triggering the handler 
+execution again.
+
+> 
+> The failure to include BIE_NACKDIE leaves the NACK interrupt unmasked,
+> which could cause an interrupt storm if a NACK triggered the ISR.
+> 
+>> +			renesas_clear_bit(i3c->regs, NTSTE, NTSTE_TDBEE0);
+>> +			/* Clear any status flag. */
+>> +			renesas_clear_bit(i3c->regs, BST, BST_NACKDF | BST_TENDF);
+>> +			return IRQ_HANDLED;
+>> +		}
+> 
+> [ ... ]
+> 
+>> @@ -1184,6 +1208,14 @@ static irqreturn_t renesas_i3c_rx_isr(int irq, void *data)
+>>   
+>>   	scoped_guard(spinlock, &i3c->xferqueue.lock) {
+>>   		xfer = i3c->xferqueue.cur;
+>> +		if (!xfer) {
+>> +			/* Clear any status registers. */
+>> +			renesas_clear_bit(i3c->regs, BST, BST_SPCNDDF);
+>> +			/* Clear the Read Buffer Full status flag. */
+>> +			renesas_clear_bit(i3c->regs, NTST, NTST_RDBFF0);
+>> +			return IRQ_HANDLED;
+>> +		}
+> 
+> [Severity: High]
+> Can this early return path cause an interrupt storm?
+> 
+> When a Read Buffer Full interrupt fires, this attempts to handle an aborted
+> transfer by simply clearing the status flag NTST_RDBFF0.
+> 
+> Because the hardware fifo remains full and the interrupt enable bit
+> NTIE_RDBFIE0 is not disabled, the interrupt will immediately re-trigger
+> when the ISR returns.
+
+I'm not sure if that can happen. The scope of the code was to touch the IRQ 
+disable and status bits in the handlers they are handled on the normal path. 
+However, I'll review it.
+
+> 
+> [ ... ]
+> 
+>> @@ -1259,6 +1293,12 @@ static irqreturn_t renesas_i3c_start_isr(int irq, void *data)
+>>   
+>>   	scoped_guard(spinlock, &i3c->xferqueue.lock) {
+>>   		xfer = i3c->xferqueue.cur;
+>> +		if (!xfer) {
+>> +			/* Clear any status registers. */
+>> +			renesas_clear_bit(i3c->regs, BST, BST_STCNDDF);
+>> +			return IRQ_HANDLED;
+>> +		}
+> 
+> [Severity: High]
+> Does this early return path fail to disable the Start Condition interrupt?
+> 
+> The early return clears the BST_STCNDDF status flag but doesn't disable the
+> Start Condition interrupt via BIE_STCNDDIE.
+
+Yes, that should have been done.
+
+-- 
+Thank you,
+Claudiu
+
 
 -- 
 linux-i3c mailing list
