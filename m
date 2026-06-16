@@ -4,76 +4,76 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 35FB3CD98DA
-	for <linux-i3c@archiver.kernel.org>; Tue, 16 Jun 2026 09:55:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E4990CD98DA
+	for <linux-i3c@archiver.kernel.org>; Tue, 16 Jun 2026 09:56:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JJVsy8icWVW/JnT32l6F8kWWRk7nZw/34uATCLF3VWk=; b=Cqaxm0ACzD2d6l
-	OhTNepd9V04Za4+oDomUMe62AlPCpT+foT7+Im9h23mbP8HkXSojvaYdJAuFs6BEQQSEdOFp0ctOE
-	K8TdXL4aQaFPIGrOE1vOOdJKeo5H+rslXkM3gR6LrXbwSB1l9smvTxm/TGItHRRg0ADQUuJYhO2wP
-	k7VeUCROjEUNhhMV8GE9baOSUH/lBLcn9RsRERvCP0MK+mVufxBuAiiIBvF+whjlQvUGXYoyP+f5b
-	MBjnLjaW6wFMyhH5EfU3KSfMAGtcShw3pCrf4X0/+2xt51eyEb4EVD+uV9sIeWcmEbWVeE7z1aD/5
-	0fUTXGOYjL6LVsCrNVgg==;
+	List-Owner; bh=zvRR6uwKEn03alKeyMNw060BsH08xMqDxArksxJmaw0=; b=GMBV8ZSwHzNuEk
+	zh03JKBT2gGf7YRyiOjDD8xXCiBaK0LuEjOxSyOyxE2ACYIrZlNTOvo7ESKQKSLurM+wN6rBVscI4
+	zik8D5kOglDeR9S2PVs2vHNpIhSA46mBl88LjkxYJ+G969cCDyXcDkYoAKXlKQqZSMKeSaVeXwUPs
+	jsHIpJmh5DLjUIVDs/JdHAJBLTzT0B7YjgbDEpowEfnK/op6/xsfTgKW9dhBLYtcYCtv1PJw4mqXP
+	zUxIt38oFpevi5H+8Kqp6Ff+G0ShjjAK7JJQufkWT5p5Mlh/fnQsrnVyslwPirHNKOvBawz+Ap6h2
+	1JAiGOXZZ5snCCPm24iQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZQWN-0000000FY5v-34OU;
-	Tue, 16 Jun 2026 09:55:51 +0000
-Received: from mail-eastusazon11011060.outbound.protection.outlook.com ([52.101.52.60] helo=BL2PR02CU003.outbound.protection.outlook.com)
+	id 1wZQWX-0000000FY83-3eQa;
+	Tue, 16 Jun 2026 09:56:02 +0000
+Received: from mail-westus3azon11011034.outbound.protection.outlook.com ([40.107.208.34] helo=PH0PR06CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZQWL-0000000FY57-184P
+	id 1wZQWU-0000000FY7b-3zYN
 	for linux-i3c@lists.infradead.org;
-	Tue, 16 Jun 2026 09:55:50 +0000
+	Tue, 16 Jun 2026 09:56:00 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=pMxpofGPosXeNi3e7tIIq+WTAk/3af854t+EumrPDSVK5bTK2b7VVWsSl1vZjky8swU3FyX2PIwnRI7VBie/GinLVVFGuQh7d1dGq/zVEbM3OPK0KVqODxukTnZTVUkcWDew70pv6iuIISaSk1OzlsokSYqALeGDMlKliRdaU4f8Ue3FeHs1KUtTugWyz10OTp1j6nDncqVSJe1e+Q8EZbI1lP1/H/pObAVWIzfJhltsl3wiaqwYJNzt/pstRJaslGB2CX4+jjjR8yiZtNSRR9cOr2i0WqesjkJiUg1ntCtCrdMHf0yd+sIpL5UYmfoIEd5EMwnGIPp/TIIRBZCcsQ==
+ b=x2ZtnrrAgGLt7FNnEK6sJ9a9SA9lbNKCI5E2qFGgN4oNHSu4U9SFH/m0QQDulOVGKRSege9WMH/sZcyYGmZHJN9cEA0JEuayUbhM2y0KMkNsGAFM9eH37YnwHWQcTzogOlwSlpBpXt32k46aOYC8MKDBXbhDXQQA7GsZoSHMbLrWxvxVP/ZrZc4SElGLP5bc1qc2TefahF6DGrmMVOQf8jNrINPSu9cqGHSQyS+HT+xUZ9HSyN573aSDBJ8cX8OBZDe67xbZlQhcOJBVYdW4abfe3fWxMKt/MLe9zUG78BlQonCVeFpR1Gbf5VsQnzdCpp1L0JrT0Q7eQTD/k0WeuA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=bLblVqHgGyGNZYbdlgR7qlRD7HK1bGGiBOXBWh3Sxhs=;
- b=OpmDzWG/52U74ytKwBajVWcVVWxOw+JW4lsEn3Arv0Of0BLpusWORTjwJN9d2XN9bathocxFXJzYNc+ba0REwjppVWCmDLzKFvm/dNjdZoQI5GqdD0VlC3RrGoCiAGTphcHu+GVwJnD2EkEhm82SKPXvZ32oWAGcUralZO+86z1L1aTbuaah4Z4t+YO/+qghOi8w+TgGlPHWC1fruQu7JjBDucHh7+pIn1LUq5Hz4srw9y1Egn6i7YC8VWbDojyeECHrmP0KoOs3kOKtcFsc+2xTsekEnZXOdg0C3c/0C2/eYsqGmLhCuvhsMYQUATQvjCqFagdRNw/5Urup4Ess5Q==
+ bh=KOCKynqs0A6lP2bX7KGwqFqUYrJiLESjS9E+Qj3RUu0=;
+ b=rNyMUPSya6HM5BlIQswWRL3E/aXd5QvbzTAwNwquhqPd+ByK+tOTRoj8w8DSmTKx13E8BvAVdwUJBn2XE9VUUP+4DAXZUAhI6iBFGVQKa3J+7uMfH2PnY4+4eVca6s12VW8nLV5gPkrVWt/6QuxeIr7PyrmZNJYaxmLO/lcA/1irXQuOXZ+z/yzYq+i4PSgX+Sp9f5MVV3ZiG9sw1bAp3bOJXigXGRqddxmPrqAF+7wi0sVNc8mm3j6RlvHMg1tIHp9yd/iroOpKIef2FDxI+hZNIxsxINgg2oFno8E9yDM2Pe7ljlwKRxsesK60fnxgSIYIXc25ulx9+6GseVapVQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.118.232) smtp.rcpttodomain=bootlin.com smtp.mailfrom=nvidia.com;
+ 216.228.118.233) smtp.rcpttodomain=bootlin.com smtp.mailfrom=nvidia.com;
  dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
  dkim=none (message not signed); arc=none (0)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=bLblVqHgGyGNZYbdlgR7qlRD7HK1bGGiBOXBWh3Sxhs=;
- b=VMlrJkKiYyRwmgMzOENh2vFm0lRmEpGiSUKu8ObmCG89wavhBhnfcWIfZQfo2FCZrgWbA7SU+mDa1+14hml0Co0r4a7IxUvbR2nqGXpPNLq0jZdq7ezzKGj9JI9hY2Zf8dvnizjqHk2bShqLR0tHorbllSAMcF4EdC2terdhOviocT3Au3neg0EUsCrmsgsxnTO2UxZ8HwA2fcmIwAi09QDKCT/K9mhZOTEHCYAErEOlI6FcF7nSK/wSJYI8yGdXFeSOdH65QQh/QTVcy3G8cad5lxpbfjRrRUsT22XeGI7tD6apP/hlJUQgTaqxXoE7TG5wSHHbN7Pt8cNp3A8y8A==
-Received: from MN0P223CA0024.NAMP223.PROD.OUTLOOK.COM (2603:10b6:208:52b::31)
- by DM6PR12MB4450.namprd12.prod.outlook.com (2603:10b6:5:28e::18) with
+ bh=KOCKynqs0A6lP2bX7KGwqFqUYrJiLESjS9E+Qj3RUu0=;
+ b=ZAbxNFjHsyDF6bJxRvDMyEbDr0JSokmhvyC62ry20BQZqlmZ3/CpjV8+rgJZcZv5l9SpnARTMzlahAnwUv9jog33kuquSogIQAzrcvFqca9e6mjV7lIEdZjVIuQ8cLzT1lefp7eKKKTFjzWK+VqreZ9ytsVmS93VYYQ1/QYrWDTYPZZgROCBW8t7dci/Uy/ND1kzkofROV0CBpAqd3XlWCkswJuNVG2is1Pq5LRNJ24tl3aTNA2qU6DmrS0pP0eaQZAnj5l4iO91ZdiRw9KC4IuzW73wJ/R878KcfnKM6LH+AVOKP/HSxY8JC9gUrHHzjjorL/jeK78jwXYLSmZ3yQ==
+Received: from SA1P222CA0127.NAMP222.PROD.OUTLOOK.COM (2603:10b6:806:3c2::17)
+ by PH7PR12MB7794.namprd12.prod.outlook.com (2603:10b6:510:276::15) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.113.18; Tue, 16 Jun
- 2026 09:55:37 +0000
-Received: from MN1PEPF0000F0E4.namprd04.prod.outlook.com
- (2603:10b6:208:52b:cafe::59) by MN0P223CA0024.outlook.office365.com
- (2603:10b6:208:52b::31) with Microsoft SMTP Server (version=TLS1_3,
+ 2026 09:55:43 +0000
+Received: from SN1PEPF0002636A.namprd02.prod.outlook.com
+ (2603:10b6:806:3c2:cafe::5b) by SA1P222CA0127.outlook.office365.com
+ (2603:10b6:806:3c2::17) with Microsoft SMTP Server (version=TLS1_3,
  cipher=TLS_AES_256_GCM_SHA384) id 15.21.113.18 via Frontend Transport; Tue,
- 16 Jun 2026 09:55:37 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.118.232)
+ 16 Jun 2026 09:55:43 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.118.233)
  smtp.mailfrom=nvidia.com; dkim=none (message not signed)
  header.d=none;dmarc=pass action=none header.from=nvidia.com;
 Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.118.232 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.118.232; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.118.232) by
- MN1PEPF0000F0E4.mail.protection.outlook.com (10.167.242.42) with Microsoft
+ 216.228.118.233 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.118.233; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.118.233) by
+ SN1PEPF0002636A.mail.protection.outlook.com (10.167.241.135) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.139.8 via Frontend Transport; Tue, 16 Jun 2026 09:55:36 +0000
-Received: from drhqmail203.nvidia.com (10.126.190.182) by mail.nvidia.com
- (10.127.129.5) with Microsoft SMTP Server (version=TLS1_2,
+ 15.21.139.8 via Frontend Transport; Tue, 16 Jun 2026 09:55:43 +0000
+Received: from drhqmail202.nvidia.com (10.126.190.181) by mail.nvidia.com
+ (10.127.129.6) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Tue, 16 Jun
- 2026 02:55:25 -0700
+ 2026 02:55:34 -0700
 Received: from drhqmail203.nvidia.com (10.126.190.182) by
- drhqmail203.nvidia.com (10.126.190.182) with Microsoft SMTP Server
+ drhqmail202.nvidia.com (10.126.190.181) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.20; Tue, 16 Jun 2026 02:55:24 -0700
+ 15.2.2562.20; Tue, 16 Jun 2026 02:55:33 -0700
 Received: from build-akhilrajeev-noble-20260602.internal (10.127.8.11) by
  mail.nvidia.com (10.126.190.182) with Microsoft SMTP Server id 15.2.2562.20
- via Frontend Transport; Tue, 16 Jun 2026 02:55:20 -0700
+ via Frontend Transport; Tue, 16 Jun 2026 02:55:29 -0700
 From: Akhil R <akhilrajeev@nvidia.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>
 CC: Frank Li <Frank.Li@nxp.com>, Miquel Raynal <miquel.raynal@bootlin.com>,
@@ -84,9 +84,9 @@ CC: Frank Li <Frank.Li@nxp.com>, Miquel Raynal <miquel.raynal@bootlin.com>,
 	<devicetree@vger.kernel.org>, <linux-hwmon@vger.kernel.org>,
 	<linux-tegra@vger.kernel.org>, <linux-kernel@vger.kernel.org>, Akhil R
 	<akhilrajeev@nvidia.com>
-Subject: [PATCH v4 02/12] i3c: master: Use unified device property interface
-Date: Tue, 16 Jun 2026 09:54:16 +0000
-Message-ID: <20260616095429.3947205-3-akhilrajeev@nvidia.com>
+Subject: [PATCH v4 03/12] i3c: master: Support ACPI enumeration of child devices
+Date: Tue, 16 Jun 2026 09:54:17 +0000
+Message-ID: <20260616095429.3947205-4-akhilrajeev@nvidia.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20260616095429.3947205-1-akhilrajeev@nvidia.com>
 References: <20260616095429.3947205-1-akhilrajeev@nvidia.com>
@@ -94,28 +94,28 @@ MIME-Version: 1.0
 X-NV-OnPremToCloud: ExternallySecured
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MN1PEPF0000F0E4:EE_|DM6PR12MB4450:EE_
-X-MS-Office365-Filtering-Correlation-Id: 1234cf10-eda0-4988-a5c3-08decb8d6a76
+X-MS-TrafficTypeDiagnostic: SN1PEPF0002636A:EE_|PH7PR12MB7794:EE_
+X-MS-Office365-Filtering-Correlation-Id: 7ad542d5-aea3-424a-f6b7-08decb8d6e42
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|36860700016|376014|82310400026|23010399003|1800799024|11063799006|56012099006|22082099003|18002099003|6133799003;
-X-Microsoft-Antispam-Message-Info: Yg6NgAJeENvS5b7UY7YOq6Jw6tsyJvc+3vi5DVXeNr6g1EHW/yGfwOodUWpTJtkrW6F0N6uSo+4P4Q54YvVIix+nmXSsYlfLbvLEVkD5h6Zm6zyBVoZRIJrTN3/fIiyaMaFIBndW877I7qdxvhu3GF+OhitkZnhl+99ukfT4OgKn/ZiMd/Ev57s/inc5OOmeMAdi6JN2jrEenjTS0g2lRcqISwnQCOTJa/mCpCiGdPR3WsUhMD3TLDqYyNwz1Ad6ETW+X4QzEPslQMBRdg/lMUszDpZAVlG7yPEsvUz2jQCxLN9XOm5dx+icu9gnQLBA6PDqTY+NzZ4TgVh6lZKdd+e5F3dIyY900wK6bM/eXiW1fsNcWRObULUcx5HyZY/2ECu0KUONN+lUNRxoTUrp5LjD/q7Or4xUbb2jiovuMrKo941Hdg18nB8OyP9PP6a57mLXPgonTqYhfcqGsz3JPRSkg39zZtHLDlkEG8wrIP7DQQBIwf+pWrE24y7BuM0qBssYde0Z5WselCOUefHQmp16kC+DRjshnCarjwnV+urznZhMbNvOT3anUO191IPW5EtZLe0Juf+VHzOlveEvoaM9nrHv1JsZNXCYG6Y6dhN6d3lSd2MaVXrSMVySLdejDwVAI7nxRJxpe7n96J6OeEUWZ1gvmSu2OfjQw7Od5fflAa6ffgWTEfGcfukBA/OyWkKmnhqmky4WPui5AOS8peVi67CZNoUWR4qGwyo7Dak=
-X-Forefront-Antispam-Report: CIP:216.228.118.232;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc7edge1.nvidia.com;CAT:NONE;SFS:(13230040)(7416014)(36860700016)(376014)(82310400026)(23010399003)(1800799024)(11063799006)(56012099006)(22082099003)(18002099003)(6133799003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|376014|7416014|23010399003|1800799024|36860700016|10063799003|3023799007|22082099003|18002099003|11063799006|56012099006|13003099007;
+X-Microsoft-Antispam-Message-Info: wyMG9hN03tqYU+s4tOOTtzCiJ6nIIwYcovlifDFZL0ixVMsnbNyGDwY48gkkazS8q6EwIWvJiXagsIkVgThU9VwEZiqXGx9H97PhyipOe6bkeaPWliPS8foZR3cAxP/+5Jj4vmVDipIsbn4qKwlIRvccMaumjzU9lJRbQUDUvXzn3VBudfx+JAUKSpuCwCvjpPPOI+4EBITkEtgi6uJUq6DzG3aQlBR4+9smPBjFdck2QAiH5ucy7i+qtjvIjEQhLhNaiblrHb/0Rf8i4LqHHHP9bh0CWNqFWxpKIGJvOMmIPX9KfBVIOpD2DIpClljY6GAjaGdpN6HFSQ5P1teNUdQbNTpcCqu+Mk2pLY/D6MOYM6jvpmm/Hl9ACAkNUgSVSnhRw/aA5VnsDc4G+/p+qOAMQOMz0PzkR3DIWrjgcf1oCY24ZL3ygW/Lja+h2S4MpXGYWzoPNKIeErJTSCYVErmqwUDCzJi0WjbzY693areg2qUXAwFEbSeSxWRiRUo1mKIj1vhHKy6nd/mCDrpWcgpy4k9e+WjixhSNZycBC6gvrYt9eoMTHPR8Sq5WuHADsZczkqfzHEVb+vA/U+RRI9KCXaDcA+xztnte+BhbNxJZ+kjDy5BBfzEXYIPwARVPoUHQDYp2tJC0UwJQzvaIcJ1jdkdQgerQgnqYcBluRGNkH06LgVgR4nBEKIZLwXMTSDy23IHM84cglJxJwm43igVCknPKcPmUrCB2Y9Iw09E=
+X-Forefront-Antispam-Report: CIP:216.228.118.233;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc7edge2.nvidia.com;CAT:NONE;SFS:(13230040)(82310400026)(376014)(7416014)(23010399003)(1800799024)(36860700016)(10063799003)(3023799007)(22082099003)(18002099003)(11063799006)(56012099006)(13003099007);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: 6LRNz7vonsyyJ+a9/VL/gyrcj3Apxt3NTN7M/Hk8XyTyIgtJdpESWCGyMFH6bI2sGQhCeQRwXjH304F8Oo0RSivDRMF4X+Lwd9axeJMaQBRijznQojwYa+6xsqfT4miTHHZM1+jDYhAdys/iQN/wI/IEwMHJzMBkm7iHnVJkT3SSyA5ZMrko++8JI70GgH+LytXfFsolYgFpr87lSz+3wJKIcCES5Yv+KInzNXYzBvD3MLHTjvBrFElyW0T+Cz1QuFrwGOO7zLb9ai6HpXoKlpAKxdrr8ZV1UlIs0gQbXQ+1DeFZW/U17sibYNDZu7FG0C8LEHvWGki2F2fBV8etYDSZbhPcMHVsWfLJAN9PVe8afsaiS2hsh2P6vEFo2B62cSEMBMwTFGCFtYPKNsuSmJVL8Emkwz2X0ZxZY2XUq2/Q9IrKDNnuJanezM9h3nAT
+X-MS-Exchange-AntiSpam-MessageData-0: 6XplX2vuxMnnNf4C9ZRhafME28XbjYVAccVa8BZNPApDTPwPkp7xhtye1N6PuQkiTVacXkauZhDOG9m1WdA7kVDW9EfvRyRW591E2+e4pboPg95yRtK3EiEo3gSiGT4KpwqIvq9BC9dcheodXRwe0CukIEtaVmkJLT07vY08DRe/GkMGCdATdVLmof+TU/aN5vKTDr5gE8UQNEbNn8vpXwVf+Z+Vt0dPzTm6ZhBIzYZjjXj00m9I0fHla2R+SPcZ1tYTVDIlyqXQjmp+FeuSzZCjusWhX9L2tPnvt1koilWaK9VTzNek8c9mdHkl3eDPcmGy8jykSa4K0ymV/bI97TsYLgnagdjb1rEyGfnhiml9p/oOtCQHUQGtq2+7ei8tJCmt/+sqpeUJ/JwrYBR7f+nMdeBDlYmhjd+Z9eSGUFMQ7Lv7o/YCvIO0kQT8ARtC
 X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Jun 2026 09:55:36.8426
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Jun 2026 09:55:43.2511
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1234cf10-eda0-4988-a5c3-08decb8d6a76
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7ad542d5-aea3-424a-f6b7-08decb8d6e42
 X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.118.232];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: MN1PEPF0000F0E4.namprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.118.233];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: SN1PEPF0002636A.namprd02.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR12MB4450
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH7PR12MB7794
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260616_025549_415932_301B6001 
-X-CRM114-Status: GOOD (  16.59  )
+X-CRM114-CacheID: sfid-20260616_025559_039856_AB32851C 
+X-CRM114-Status: GOOD (  20.32  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -132,287 +132,237 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Replace all OF-specific functions with unified device property functions
-as a prerequisite to support both ACPI and device tree.
+Although the existing subsystem allows host controllers to register
+through the ACPI table, it was not possible to describe I3C or I2C
+devices when using ACPI. This is because the driver relied on the reg
+property to retrieve the PID, static address, etc., whereas ACPI uses
+_ADR or serial resources to describe such devices.
 
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
+Read _ADR and LVR from ACPI resources and extract the data as per the
+ACPI specification for an I3C bus. Also read mipi-i3c-static-address as
+per the MIPI DISCO specifications [1] to get the static address to be
+used.
+
+Enable describing I3C or I2C devices in the ACPI table. This is required
+if the device uses a static address or if it needs device-specific
+properties.
+
+[1] https://www.mipi.org/mipi-disco-for-i3c-download
+
 Signed-off-by: Akhil R <akhilrajeev@nvidia.com>
 ---
- drivers/i3c/master.c       | 78 +++++++++++++++++++++-----------------
- include/linux/i3c/master.h |  5 ++-
- 2 files changed, 47 insertions(+), 36 deletions(-)
+ drivers/i3c/master.c | 149 ++++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 141 insertions(+), 8 deletions(-)
 
 diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 109aa50eb1f8..3b19a5e8f46d 100644
+index 3b19a5e8f46d..f0e05bcac26d 100644
 --- a/drivers/i3c/master.c
 +++ b/drivers/i3c/master.c
-@@ -13,10 +13,12 @@
- #include <linux/dma-mapping.h>
- #include <linux/err.h>
- #include <linux/export.h>
-+#include <linux/i2c.h>
- #include <linux/kernel.h>
- #include <linux/list.h>
- #include <linux/of.h>
- #include <linux/pm_runtime.h>
-+#include <linux/property.h>
- #include <linux/slab.h>
- #include <linux/spinlock.h>
- #include <linux/workqueue.h>
-@@ -491,7 +493,7 @@ static void i3c_bus_cleanup(struct i3c_bus *i3cbus)
- 	mutex_unlock(&i3c_core_lock);
- }
+@@ -5,6 +5,7 @@
+  * Author: Boris Brezillon <boris.brezillon@bootlin.com>
+  */
  
--static int i3c_bus_init(struct i3c_bus *i3cbus, struct device_node *np)
-+static int i3c_bus_init(struct i3c_bus *i3cbus, struct fwnode_handle *fwnode)
- {
- 	int ret, start, end, id = -1;
++#include <linux/acpi.h>
+ #include <linux/atomic.h>
+ #include <linux/bitmap.h>
+ #include <linux/bug.h>
+@@ -2596,6 +2597,55 @@ EXPORT_SYMBOL_GPL(i3c_master_do_daa);
  
-@@ -501,8 +503,8 @@ static int i3c_bus_init(struct i3c_bus *i3cbus, struct device_node *np)
- 	i3c_bus_init_addrslots(i3cbus);
- 	i3cbus->mode = I3C_BUS_MODE_PURE;
- 
--	if (np)
--		id = of_alias_get_id(np, "i3c");
-+	if (fwnode && is_of_node(fwnode))
-+		id = of_alias_get_id(to_of_node(fwnode), "i3c");
- 
- 	mutex_lock(&i3c_core_lock);
- 	if (id >= 0) {
-@@ -827,7 +829,7 @@ static void i3c_masterdev_release(struct device *dev)
- 	WARN_ON(!list_empty(&bus->devs.i2c) || !list_empty(&bus->devs.i3c));
- 	i3c_bus_cleanup(bus);
- 
--	of_node_put(dev->of_node);
-+	fwnode_handle_put(dev->fwnode);
- }
- 
- static const struct device_type i3c_masterdev_type = {
-@@ -1034,7 +1036,7 @@ static void i3c_device_release(struct device *dev)
- 
- 	WARN_ON(i3cdev->desc);
- 
--	of_node_put(i3cdev->dev.of_node);
-+	fwnode_handle_put(dev->fwnode);
- 	kfree(i3cdev);
- }
- 
-@@ -1902,7 +1904,8 @@ i3c_master_register_new_i3c_devs(struct i3c_master_controller *master)
- 			     desc->info.pid);
- 
- 		if (desc->boardinfo)
--			desc->dev->dev.of_node = desc->boardinfo->of_node;
-+			device_set_node(&desc->dev->dev,
-+					fwnode_handle_get(desc->boardinfo->fwnode));
- 
- 		ret = device_register(&desc->dev->dev);
- 		if (ret) {
-@@ -2594,8 +2597,8 @@ EXPORT_SYMBOL_GPL(i3c_master_do_daa);
  #define OF_I3C_REG1_IS_I2C_DEV			BIT(31)
  
++#ifdef CONFIG_ACPI
++static int i3c_acpi_get_i2c_resource(struct acpi_resource *ares, void *data)
++{
++	struct i2c_dev_boardinfo *boardinfo = data;
++	struct acpi_resource_i2c_serialbus *sb;
++
++	if (boardinfo->base.addr || !i2c_acpi_get_i2c_resource(ares, &sb))
++		return 1;
++
++	boardinfo->base.addr = sb->slave_address;
++	if (sb->access_mode == ACPI_I2C_10BIT_MODE)
++		boardinfo->base.flags |= I2C_CLIENT_TEN;
++
++	boardinfo->lvr = sb->lvr;
++
++	return 1;
++}
++
++static int i3c_acpi_add_i2c_boardinfo(struct i2c_dev_boardinfo *boardinfo,
++				      struct fwnode_handle *fwnode)
++{
++	struct acpi_device *adev = to_acpi_device_node(fwnode);
++	LIST_HEAD(resources);
++	int ret;
++
++	boardinfo->base.fwnode = acpi_fwnode_handle(adev);
++	acpi_set_modalias(adev, dev_name(&adev->dev), boardinfo->base.type,
++			  sizeof(boardinfo->base.type));
++
++	ret = acpi_dev_get_resources(adev, &resources,
++				     i3c_acpi_get_i2c_resource, boardinfo);
++	if (ret < 0)
++		return ret;
++
++	acpi_dev_free_resource_list(&resources);
++
++	if (!boardinfo->base.addr)
++		return -ENODEV;
++
++	return 0;
++}
++#else
++static inline int i3c_acpi_add_i2c_boardinfo(struct i2c_dev_boardinfo *boardinfo,
++					     struct fwnode_handle *fwnode)
++{
++	return -ENODEV;
++}
++#endif
++
  static int
--of_i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
--				struct device_node *node, u32 *reg)
-+i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
-+			     struct fwnode_handle *fwnode, u32 *reg)
- {
- 	struct i2c_dev_boardinfo *boardinfo;
- 	struct device *dev = &master->dev;
-@@ -2605,9 +2608,13 @@ of_i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
- 	if (!boardinfo)
- 		return -ENOMEM;
- 
--	ret = of_i2c_get_board_info(dev, node, &boardinfo->base);
--	if (ret)
--		return ret;
-+	if (is_of_node(fwnode)) {
-+		ret = of_i2c_get_board_info(dev, to_of_node(fwnode), &boardinfo->base);
+ i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
+ 			     struct fwnode_handle *fwnode, u32 *reg)
+@@ -2612,6 +2662,13 @@ i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
+ 		ret = of_i2c_get_board_info(dev, to_of_node(fwnode), &boardinfo->base);
+ 		if (ret)
+ 			return ret;
++
++		/* LVR is encoded in reg[2] for Device Tree. */
++		boardinfo->lvr = reg[2];
++	} else if (is_acpi_device_node(fwnode)) {
++		ret = i3c_acpi_add_i2c_boardinfo(boardinfo, fwnode);
 +		if (ret)
 +			return ret;
-+	} else {
-+		return -EINVAL;
-+	}
- 
- 	/*
- 	 * The I3C Specification does not clearly say I2C devices with 10-bit
-@@ -2623,14 +2630,14 @@ of_i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
- 	boardinfo->lvr = reg[2];
- 
- 	list_add_tail(&boardinfo->node, &master->boardinfo.i2c);
--	of_node_get(node);
-+	fwnode_handle_get(fwnode);
- 
- 	return 0;
- }
- 
- static int
--of_i3c_master_add_i3c_boardinfo(struct i3c_master_controller *master,
--				struct device_node *node, u32 *reg)
-+i3c_master_add_i3c_boardinfo(struct i3c_master_controller *master,
-+			     struct fwnode_handle *fwnode, u32 *reg)
- {
- 	struct i3c_dev_boardinfo *boardinfo;
- 	struct device *dev = &master->dev;
-@@ -2653,7 +2660,7 @@ of_i3c_master_add_i3c_boardinfo(struct i3c_master_controller *master,
- 
- 	boardinfo->static_addr = reg[0];
- 
--	if (!of_property_read_u32(node, "assigned-address", &init_dyn_addr)) {
-+	if (!fwnode_property_read_u32(fwnode, "assigned-address", &init_dyn_addr)) {
- 		if (init_dyn_addr > I3C_MAX_ADDR)
- 			return -EINVAL;
- 
-@@ -2670,14 +2677,14 @@ of_i3c_master_add_i3c_boardinfo(struct i3c_master_controller *master,
+ 	} else {
  		return -EINVAL;
+ 	}
+@@ -2626,9 +2683,6 @@ i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
+ 		return -EOPNOTSUPP;
+ 	}
  
- 	boardinfo->init_dyn_addr = init_dyn_addr;
--	boardinfo->of_node = of_node_get(node);
-+	boardinfo->fwnode = fwnode_handle_get(fwnode);
- 	list_add_tail(&boardinfo->node, &master->boardinfo.i3c);
+-	/* LVR is encoded in reg[2]. */
+-	boardinfo->lvr = reg[2];
+-
+ 	list_add_tail(&boardinfo->node, &master->boardinfo.i2c);
+ 	fwnode_handle_get(fwnode);
  
+@@ -2683,8 +2737,8 @@ i3c_master_add_i3c_boardinfo(struct i3c_master_controller *master,
  	return 0;
  }
  
--static int of_i3c_master_add_dev(struct i3c_master_controller *master,
--				 struct device_node *node)
-+static int i3c_master_add_dev(struct i3c_master_controller *master,
-+			      struct fwnode_handle *fwnode)
+-static int i3c_master_add_dev(struct i3c_master_controller *master,
+-			      struct fwnode_handle *fwnode)
++static int i3c_master_add_of_dev(struct i3c_master_controller *master,
++				 struct fwnode_handle *fwnode)
  {
  	u32 reg[3];
  	int ret;
-@@ -2685,7 +2692,7 @@ static int of_i3c_master_add_dev(struct i3c_master_controller *master,
- 	if (!master)
- 		return -EINVAL;
- 
--	ret = of_property_read_u32_array(node, "reg", reg, ARRAY_SIZE(reg));
-+	ret = fwnode_property_read_u32_array(fwnode, "reg", reg, ARRAY_SIZE(reg));
- 	if (ret)
- 		return ret;
- 
-@@ -2694,25 +2701,25 @@ static int of_i3c_master_add_dev(struct i3c_master_controller *master,
- 	 * dealing with an I2C device.
- 	 */
- 	if (!reg[1])
--		ret = of_i3c_master_add_i2c_boardinfo(master, node, reg);
-+		ret = i3c_master_add_i2c_boardinfo(master, fwnode, reg);
- 	else
--		ret = of_i3c_master_add_i3c_boardinfo(master, node, reg);
-+		ret = i3c_master_add_i3c_boardinfo(master, fwnode, reg);
- 
+@@ -2708,6 +2762,74 @@ static int i3c_master_add_dev(struct i3c_master_controller *master,
  	return ret;
  }
  
--static int of_populate_i3c_bus(struct i3c_master_controller *master)
-+static int fwnode_populate_i3c_bus(struct i3c_master_controller *master)
++#ifdef CONFIG_ACPI
++static int i3c_master_add_acpi_dev(struct i3c_master_controller *master,
++				   struct fwnode_handle *fwnode)
++{
++	struct acpi_device *adev = to_acpi_device_node(fwnode);
++	acpi_bus_address adr;
++	u32 reg[3] = { 0 };
++	int ret;
++
++	/*
++	 * If the ACPI table entry has _ADR method, it's an I3C device.
++	 * Otherwise it may be an I2C device described by an I2cSerialBus
++	 * resource. If no I2cSerialBus resource is found, ignore the entry.
++	 */
++	if (!acpi_has_method(adev->handle, "_ADR")) {
++		ret = i3c_master_add_i2c_boardinfo(master, fwnode, reg);
++		if (ret == -ENODEV)
++			return 0;
++
++		return ret;
++	}
++
++	adr = acpi_device_adr(adev);
++
++	/* For I3C devices, _ADR will have the 48 bit PID of the device  */
++	reg[1] = upper_32_bits(adr);
++	reg[2] = lower_32_bits(adr);
++
++	fwnode_property_read_u32(fwnode, "mipi-i3c-static-address", &reg[0]);
++
++	return i3c_master_add_i3c_boardinfo(master, fwnode, reg);
++}
++
++static u8 i3c_acpi_i2c_get_lvr(struct i2c_client *client)
++{
++	struct acpi_device *adev = to_acpi_device_node(client->dev.fwnode);
++	struct i2c_dev_boardinfo boardinfo = {};
++	LIST_HEAD(resources);
++	int ret;
++	u8 lvr;
++
++	lvr = I3C_LVR_I2C_INDEX(2) | I3C_LVR_I2C_FM_MODE;
++
++	ret = acpi_dev_get_resources(adev, &resources,
++				     i3c_acpi_get_i2c_resource, &boardinfo);
++	if (ret < 0)
++		return lvr;
++
++	if (boardinfo.base.addr)
++		lvr = boardinfo.lvr;
++
++	acpi_dev_free_resource_list(&resources);
++
++	return lvr;
++}
++#else
++static inline int i3c_master_add_acpi_dev(struct i3c_master_controller *master,
++					  struct fwnode_handle *fwnode)
++{
++	return -ENODEV;
++}
++
++static inline u8 i3c_acpi_i2c_get_lvr(struct i2c_client *client)
++{
++	return I3C_LVR_I2C_INDEX(2) | I3C_LVR_I2C_FM_MODE;
++}
++#endif
++
+ static int fwnode_populate_i3c_bus(struct i3c_master_controller *master)
  {
  	struct device *dev = &master->dev;
--	struct device_node *i3cbus_np = dev->of_node;
-+	struct fwnode_handle *fwnode = dev_fwnode(dev);
- 	int ret;
- 	u32 val;
- 
--	if (!i3cbus_np)
-+	if (!fwnode)
+@@ -2719,7 +2841,13 @@ static int fwnode_populate_i3c_bus(struct i3c_master_controller *master)
  		return 0;
  
--	for_each_available_child_of_node_scoped(i3cbus_np, node) {
--		ret = of_i3c_master_add_dev(master, node);
-+	fwnode_for_each_available_child_node_scoped(fwnode, child) {
-+		ret = i3c_master_add_dev(master, child);
+ 	fwnode_for_each_available_child_node_scoped(fwnode, child) {
+-		ret = i3c_master_add_dev(master, child);
++		if (is_of_node(child))
++			ret = i3c_master_add_of_dev(master, child);
++		else if (is_acpi_device_node(child))
++			ret = i3c_master_add_acpi_dev(master, child);
++		else
++			continue;
++
  		if (ret)
  			return ret;
  	}
-@@ -2722,10 +2729,10 @@ static int of_populate_i3c_bus(struct i3c_master_controller *master)
- 	 * on the bus are not supporting typical rates, or if the bus topology
- 	 * prevents it from using max possible rate.
- 	 */
--	if (!of_property_read_u32(i3cbus_np, "i2c-scl-hz", &val))
-+	if (!device_property_read_u32(dev, "i2c-scl-hz", &val))
- 		master->bus.scl_rate.i2c = val;
- 
--	if (!of_property_read_u32(i3cbus_np, "i3c-scl-hz", &val))
-+	if (!device_property_read_u32(dev, "i3c-scl-hz", &val))
- 		master->bus.scl_rate.i3c = val;
- 
- 	return 0;
-@@ -2780,7 +2787,7 @@ static u8 i3c_master_i2c_get_lvr(struct i2c_client *client)
+@@ -2787,8 +2915,13 @@ static u8 i3c_master_i2c_get_lvr(struct i2c_client *client)
  	u8 lvr = I3C_LVR_I2C_INDEX(2) | I3C_LVR_I2C_FM_MODE;
  	u32 reg[3];
  
--	if (!of_property_read_u32_array(client->dev.of_node, "reg", reg, ARRAY_SIZE(reg)))
-+	if (!fwnode_property_read_u32_array(client->dev.fwnode, "reg", reg, ARRAY_SIZE(reg)))
- 		lvr = reg[2];
+-	if (!fwnode_property_read_u32_array(client->dev.fwnode, "reg", reg, ARRAY_SIZE(reg)))
+-		lvr = reg[2];
++	if (is_of_node(client->dev.fwnode)) {
++		if (!fwnode_property_read_u32_array(client->dev.fwnode, "reg",
++						    reg, ARRAY_SIZE(reg)))
++			lvr = reg[2];
++	} else if (is_acpi_device_node(client->dev.fwnode)) {
++		lvr = i3c_acpi_i2c_get_lvr(client);
++	}
  
  	return lvr;
-@@ -2899,7 +2906,8 @@ static int i3c_master_i2c_adapter_init(struct i3c_master_controller *master)
- 	struct i2c_adapter *adap = i3c_master_to_i2c_adapter(master);
- 	struct i2c_dev_desc *i2cdev;
- 	struct i2c_dev_boardinfo *i2cboardinfo;
--	int ret, id;
-+	struct fwnode_handle *fwnode = dev_fwnode(&master->dev);
-+	int ret, id = -1;
- 
- 	adap->dev.parent = master->dev.parent;
- 	adap->owner = master->dev.parent->driver->owner;
-@@ -2908,7 +2916,9 @@ static int i3c_master_i2c_adapter_init(struct i3c_master_controller *master)
- 	adap->timeout = HZ;
- 	adap->retries = 3;
- 
--	id = of_alias_get_id(master->dev.of_node, "i2c");
-+	if (fwnode && is_of_node(fwnode))
-+		id = of_alias_get_id(to_of_node(fwnode), "i2c");
-+
- 	if (id >= 0) {
- 		adap->nr = id;
- 		ret = i2c_add_numbered_adapter(adap);
-@@ -3209,7 +3219,7 @@ int i3c_master_register(struct i3c_master_controller *master,
- 		return ret;
- 
- 	master->dev.parent = parent;
--	master->dev.of_node = of_node_get(parent->of_node);
-+	device_set_node(&master->dev, fwnode_handle_get(dev_fwnode(parent)));
- 	master->dev.bus = &i3c_bus_type;
- 	master->dev.type = &i3c_masterdev_type;
- 	master->dev.release = i3c_masterdev_release;
-@@ -3228,13 +3238,13 @@ int i3c_master_register(struct i3c_master_controller *master,
- 	master->dev.coherent_dma_mask = parent->coherent_dma_mask;
- 	master->dev.dma_parms = parent->dma_parms;
- 
--	ret = i3c_bus_init(i3cbus, master->dev.of_node);
-+	ret = i3c_bus_init(i3cbus, dev_fwnode(&master->dev));
- 	if (ret)
- 		goto err_put_dev;
- 
- 	dev_set_name(&master->dev, "i3c-%d", i3cbus->id);
- 
--	ret = of_populate_i3c_bus(master);
-+	ret = fwnode_populate_i3c_bus(master);
- 	if (ret)
- 		goto err_put_dev;
- 
-diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
-index f73cede87d36..22b10cff476c 100644
---- a/include/linux/i3c/master.h
-+++ b/include/linux/i3c/master.h
-@@ -177,7 +177,8 @@ struct i3c_device_ibi_info {
-  * @pid: I3C Provisioned ID exposed by the device. This is a unique identifier
-  *	 that may be used to attach boardinfo to i3c_dev_desc when the device
-  *	 does not have a static address
-- * @of_node: optional DT node in case the device has been described in the DT
-+ * @fwnode: Firmware node (DT or ACPI) in case the device has been
-+ *	    described in firmware
-  *
-  * This structure is used to attach board-level information to an I3C device.
-  * Not all I3C devices connected on the bus will have a boardinfo. It's only
-@@ -189,7 +190,7 @@ struct i3c_dev_boardinfo {
- 	u8 init_dyn_addr;
- 	u8 static_addr;
- 	u64 pid;
--	struct device_node *of_node;
-+	struct fwnode_handle *fwnode;
- };
- 
- /**
+ }
 -- 
 2.43.0
 
