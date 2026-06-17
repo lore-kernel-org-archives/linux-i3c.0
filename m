@@ -4,127 +4,126 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BE7DBCD98E4
-	for <linux-i3c@archiver.kernel.org>; Wed, 17 Jun 2026 14:50:37 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 22A1ECD98E4
+	for <linux-i3c@archiver.kernel.org>; Wed, 17 Jun 2026 14:53:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VC6w5QbK9OoA5nYfQSN/DyhErN3z9Fjl/riub2Nq8dU=; b=PuMeIGdpFxjUsE
-	j5pCYmBWP+MjF2ejCRpVyDCqMxxiZ4xHb0kBABz2OyYIkWKaLQ36PdJkqs0wtJjdH93kXSLUZcfE9
-	7pqhg+EVAZ79505mQNnW7MmQR3a5aDz8wLEO0cIGyAUgpYOkwivQWEhCJiGwd9DLCDQNuk87iCtkX
-	SqLTW5/XfCg/e+Yi1pyeXne7pYgZqYFrtmAtuJ+cEkHReQcpQy/ibj2UjNoKv0bvo80F5RD9DWgmH
-	s8xrC1gPEzdNFNtoo0NnS99eEVGdWmKVZfpcaJcYGCKY451LNs339p5W7Lhen2Uzrea7V+ujxeKin
-	HBlWb3G/dUwILSOi1K4Q==;
+	List-Owner; bh=RGX8UlcEvbSKYAkGfMgHzkYXvWlyvL/AzbcefxCixOA=; b=WNrNwcQrSqin4B
+	xVWTt5WLXpZQolqT4rSReRxuXiqhIubCgC72TfL+lVXfZrJ9+0eJcsrCAAE0u66hfcCcKfNC920+c
+	hWMoxA+BE4kxBE+HsAKaXA2hGQX28tw0rzduiKyNwjOonJQy/T8e9yBYG0PrRQD8wM10WBIrKUb41
+	7lyCzCI3bJXplA3x5CGr2XHLGBRNrn1v8Gf/TqZg6Z3h98GQpypS/SwhSKI++YDBv0B78f7avuWqg
+	rqBEzV4AE3dz5XN3LFA2YiCLvzJ3+lb6Hrr44nKl1UtqRWLg4YenEm3z+1x7sJ2/tmEgZOMwSmwHK
+	/kUHYq/lB5HBOETQSJWA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZrbB-0000000HV5n-1saB;
-	Wed, 17 Jun 2026 14:50:37 +0000
-Received: from mail-francecentralazon11013034.outbound.protection.outlook.com ([40.107.162.34] helo=PA4PR04CU001.outbound.protection.outlook.com)
+	id 1wZrdW-0000000HVju-3anp;
+	Wed, 17 Jun 2026 14:53:02 +0000
+Received: from mail-westeuropeazon11010029.outbound.protection.outlook.com ([52.101.69.29] helo=AM0PR83CU005.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wZrb9-0000000HV53-17En
+	id 1wZrdU-0000000HVjE-2Hsd
 	for linux-i3c@lists.infradead.org;
-	Wed, 17 Jun 2026 14:50:36 +0000
+	Wed, 17 Jun 2026 14:53:01 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=GmFLTydDsfSDMHFEf2QyjtXBnhRwAsforswKs9FKMvQyQlSAC0dV5Ze/mLIwcQu1qLReMHZ7f58MktbkWjbeHYlJHEFkJGEURqPwYIQgHSmYwUku0KUhl6d9XcOEO6l6m/PMGS3H9tHQviQJ790IMz0dpWaf/hKrxGuFfPFIBciAapp1wv67GTZRfCFwxV9t5J5CT7NulPxcFdy64jlcdMEOArZT8nENpj2/Yu3Ubc+/4bkgNphn+M++MEev2cZO5q5grDREyfXpri0zkNS6RxHm5AVUMSlAEGJxxUj6u6Lk5hD0js3lejYef7xeOPBPVBsAgeB0F6QTK2h3tpWFmg==
+ b=THmCa29w0/0G37hN+e1TLM4pamXI5/nPAVOkhfrg1aaX1cl2ZrkvOcJhMc8I0wHl3oKsdjMHcoJ4ouHDduVN97Q2U1R4FYhR6WSMc9SptW8w/7miP4aJa9f97aDKdYhbVasu4i5+iY1VSqB9D2d9WG7qDcond9lFYflEAKmIbu2drJjL0u+2g2xShMJEW3S8zvzN8fkRZLdPiMB6EsKOzBlkRMs2wG9x6+JYVIoc2vQT1DDId8ggf8aMc3StRTmglPJJ9rIxn3od4MDxqWlvAGsyoO6geS/BkYZUIGO9yQx8VRj6o5PWYokQt1CG2cGMBtgw72A0myhAKS0BGHb8ng==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=3hj++v/+QF2Xw0o6zZbgXmV2PWMo01+HEu55IyrDzkw=;
- b=YdBf1FgQGER5QGF4wyyZuQJO6EP2MAYxh7n2lPsrct51HvP0h85pKXC4L7t4duHqXcl4jQHrvkCJe7BaVe28seUE/Hl7OeaIOCCZCqvDXK4KJIbYpfpfXXD5CZtvLGYBS50dMcenA3ZG7SgG20Ba4ypIAnDuh+LLH01dXdr0S3lxOorwqJOgAgmDb/5b1nSsE2dg0vPrk/Q9EL9Ny1xZ2DaRZX+8C+yo/qnEFlfwIO16dpeACZLprRzsGTVf/FpVfSb6DE2nR7pLEP4S30jfpLtcvdfkOLGLLf+5h0EDFbTMx7nFWLmZY4w6XZ/oRTiwmdgJg6bqA6Z9sh8KcttOqA==
+ bh=WQP1JVKiwqOU0zDKjFEJSF3uTacR3Sugq3u/tlkjpbY=;
+ b=VuYpFa9rztQOwR1MTYLp5ruNHAkEq+KmBLIPND7P2r9zvrkWthCPTi+AwzAwubOLsSw95rO+gEYQzFUti0wlYWMRoiEbYZydjTNHUVcAn5pF4ubRk/MeHt8644Qv2hsJ+++9lEpkc44FSoorlRcvtiX4A/gaFGsSvZp7isMlS3Gu74p7r/XBkzBvYnQX0l5qfAMRcLO222MxSsqQq6RRumYrdNtKszUlioNRFVaFBdTM580NrSMOpvI8fVwWCAPyipoapO68CPBOV2x5yMSRZJfeHeJHySwngQ2Btfqnf2RCx5RV9Bc9S86zcj0mAMpIhe3C3onO1K5M/q5LitHKWg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
  dkim=pass header.d=oss.nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
  s=selector1-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3hj++v/+QF2Xw0o6zZbgXmV2PWMo01+HEu55IyrDzkw=;
- b=iT6hE7OonfGETtXlCuFlNCeVIU5zkur8t6VHVyszNS9RjW/dIqVgZIvXV3m/c3WbeiaOmyJH4ff7NqOIJkb+RNUiH55eybWbUKGqUqY9bFNr+lXUQ3FH6LQYLIcFEdJTErHHQjSVocVbJfoF05qZb5ZP//jpxmpVpZYXm+fbAeybmIXHsEUjdzz76y41+UFTVmZE556ZeKFpNN1EneMIhxkViCqzArPCRS3c2jlHMTOr7obHcU2SMmv6jH+hRvDpDHY52J4lsf/9dgoO4OlZdGoCpOnh38CaFbbcw18D5Srd1l1sxEi4RQfiipmegTJzGUJQsqcl3+zg46OFrYVCFQ==
+ bh=WQP1JVKiwqOU0zDKjFEJSF3uTacR3Sugq3u/tlkjpbY=;
+ b=lSIirCEz62A0CTjodqcVw7gNhxnFMMlgepwwaH8Qur9l9gI46j3xfI49Rfosv2jo81DcCaPRq/gw0QPXaCjLT8/1iyiVGtWzTG5nyBhoNWUST0ObWtWL2Y5RGuAC3aBFSgHMNw7w6z15O3PoeBmYx/ze82VCAdtZeKehqwpdvkPrijYQ8wsfEa0F5HScdSx5cqLwMlOjDz7AqLaengU4n1GuWdUZ5XQP0ioeHZM+6rKJ0ZTtcHVIZSG0rVcbQjhSoYUIAnvoaF20+SFdNoIyxZ9l0YZASoT9d8hiZ27oT1FLCbi4SF+DY2wEttobbjlXr75NGT/3MsspdaIwcQKH4w==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=oss.nxp.com;
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by DB9PR04MB11625.eurprd04.prod.outlook.com (2603:10a6:10:607::14) with
+ by DBBPR04MB7947.eurprd04.prod.outlook.com (2603:10a6:10:1f1::22) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.139.11; Wed, 17 Jun
- 2026 14:50:31 +0000
+ 2026 14:52:56 +0000
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0113.015; Wed, 17 Jun 2026
- 14:50:31 +0000
-Date: Wed, 17 Jun 2026 10:50:24 -0400
+ 14:52:56 +0000
+Date: Wed, 17 Jun 2026 10:52:50 -0400
 From: Frank Li <Frank.li@oss.nxp.com>
 To: sashiko-reviews@lists.linux.dev
-Cc: Lakshay Piplani <lakshay.piplani@nxp.com>,
-	linux-i3c@lists.infradead.org, robh@kernel.org, conor+dt@kernel.org,
-	Frank.Li@kernel.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH v12 4/7] regulator: p3h2x4x: Add driver for on-die
- regulators in NXP P3H2x4x i3c hub
-Message-ID: <ajK0MJgfx2YXODI7@lizhi-Precision-Tower-5810>
+Cc: Lakshay Piplani <lakshay.piplani@nxp.com>, robh@kernel.org,
+	conor+dt@kernel.org, devicetree@vger.kernel.org,
+	linux-i3c@lists.infradead.org, Frank.Li@kernel.org
+Subject: Re: [PATCH v12 2/7] dt-bindings: i3c: Add NXP P3H2x4x i3c-hub support
+Message-ID: <ajK0wrNxxlhvaRvT@lizhi-Precision-Tower-5810>
 References: <20260617110355.1591844-1-lakshay.piplani@nxp.com>
- <20260617110355.1591844-5-lakshay.piplani@nxp.com>
- <20260617111744.1A0971F000E9@smtp.kernel.org>
+ <20260617110355.1591844-3-lakshay.piplani@nxp.com>
+ <20260617111331.7AB671F000E9@smtp.kernel.org>
 Content-Disposition: inline
-In-Reply-To: <20260617111744.1A0971F000E9@smtp.kernel.org>
-X-ClientProxiedBy: SA0PR11CA0002.namprd11.prod.outlook.com
- (2603:10b6:806:d3::7) To GV2PR04MB11799.eurprd04.prod.outlook.com
+In-Reply-To: <20260617111331.7AB671F000E9@smtp.kernel.org>
+X-ClientProxiedBy: SN7PR04CA0193.namprd04.prod.outlook.com
+ (2603:10b6:806:126::18) To GV2PR04MB11799.eurprd04.prod.outlook.com
  (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|DB9PR04MB11625:EE_
-X-MS-Office365-Filtering-Correlation-Id: 071872a9-0f23-41b8-77ba-08decc7fc72d
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|DBBPR04MB7947:EE_
+X-MS-Office365-Filtering-Correlation-Id: 3c7f7c49-8648-4627-f139-08decc801deb
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|19092799006|366016|23010399003|376014|18002099003|22082099003|56012099006|11063799006|6133799003|4143699003;
-X-Microsoft-Antispam-Message-Info: M/KxEPgN6mc66tUMOCBGhEl8B07G/1X8J0PWR5FfDbqKYNVMtsCDspjspNCcpWlbnPE0AWWfsJnK0YPvislEAyA2H/6+IwH/oj8kgGIiGJx6SpAXgat+n3o8RD4NdKtk9Ijp9Q5m+VkvQnSw056ywNwaLsxdwkwkFrQ6ldRmTeLBkIpkojw596HxCDwo7bejSrT9vJxlJY38xFYYsvvQeg8zvcRgG2QzNK89EWlBL1nj+tTRJ6S3HZ/elYOfRuWNPS6UYs8uQrVI6z6Bxp0AFjiwKZaOLd/hnPmV6vSqJltMtir6Skt56MNCizpB3SDBgMxiQJBzaTiD39rFGVPms9F5SraiIHI+7gVwbncvLgoZID98Uq6wD0mlvjFvnc/H5/1V3C3YzBP6TFWH3N5kr4awel7vYOuhFxpgSgvYuVrdeobwDaaEzn3wHX3cl/5VAGpiRCVwpUijIG+hJ5nEZLjFbIalSdV9KQ69+9HpxZEwY7D47b63c4VU5Fo7wdge87DGxmwRXn1CGuNHgvZCEHCMp8DQpBNGWnFsaAndalgTWghEvk0D4a4aO13QUJr0LMkts0qEwKNH+4B6JQUvofkwb96Zsvi0rwLaq71aHO0m5xsnbINA9raGfhNshxh8LGGSwlneLIjCQnhCYENo1Q==
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(19092799006)(366016)(23010399003)(376014)(18002099003)(22082099003)(56012099006)(11063799006)(6133799003)(4143699003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|366016|376014|23010399003|1800799024|11063799006|56012099006|5023799004|4143699003|6133799003|18002099003|22082099003|3023799007;
+X-Microsoft-Antispam-Message-Info: aAD29E9Xkbpnit6+XyKw6uPAjY3ne5Fj4QLO3lJoYoHMWCoyY7xQtIejH6a8qMFeAtxYEamViHvfst24H+gYwKaDvfd/JVdJYDlh0ub16IawOFs75aUo2VZ6dAHyp8y2bVgrCBcoSuFd3ibGp0vudDOX3GZ1s5/fYBiHABbsnCh07CNwtXWx/BEv7O3EribasPUKM/kyggURvhlwxdHoV+X6Ph0OQ6nVsTUkWFX2Vhs7PXtgxPAv5MrFN+xmiwPcqVP0Z5sbqWRtnjV3ykDqDpwac/24G1B/wgYTw3q9BiPA5egWsKj2tpN7thAPinc4XtzSa3EEwrJguqhMDSdsLd3JD1tP/I2itY7v8vfLdLpCOsLO0jzRJVsC4x7Z18qlNlqTvfazYbzZNaRW05gTGPufP+CjLwnpzWaULYBHbps1spfyaHDsm+bHz1n336cf6pBgLFHa1JOpmIZWksWAJfvsVcLUiNhzig4aDhCoqNHCRD3o2EypoUII1T/d8gqIkjgc8xZB5p6PqCrWDoUYzU0SQwc1N20cWOpAujhYaNLHpzyMAfO4p8S/woBzO6pzmmI8bUEmomJdjC7ZoI3W8KvXNUpBy/rMPnS926ve2lUseVeySd8MJ2a+XhNxfqis
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(366016)(376014)(23010399003)(1800799024)(11063799006)(56012099006)(5023799004)(4143699003)(6133799003)(18002099003)(22082099003)(3023799007);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?/GZUl+4Wa1pXqdeI+lYovAqe99sUeuJ66YE/FsBe4GfetX3oK8WnvwsYvZ?=
- =?iso-8859-1?Q?Ad8Q/fUvLp2yjO58urF3aHJ3+/lE38awjqUqSYeEeSiU/854ElUsFH/yTM?=
- =?iso-8859-1?Q?Gi10yPwebreKz1xsqk6ilVMYTNH0wWTipLh9Enbf+nPEIiEAWABUQCs15F?=
- =?iso-8859-1?Q?PJjUbQj2brCurjB+K+Nez1mcOPHWtXBGxGBtDWAj1CFbOJGru72BgXHTm3?=
- =?iso-8859-1?Q?DMPUQogruqY3zjSBb1HKDrZet/8z/YezwxyazATuj5JTVcEIf3ZaKcw8tW?=
- =?iso-8859-1?Q?JYK07W8CnZtmcPuabH8MJBUH3CxWpnGLIVOmN2Qh5LlQdp0O2Tu9206DcU?=
- =?iso-8859-1?Q?l4HW37aX7NaieWswjh9k3vm68zgeT0cK6wDcqy8bCZjLpHn1X2Vzp3YsNx?=
- =?iso-8859-1?Q?UU/x+I1w42kMs/BnOgkeUTkXCjj+hvlg+xx8eX5zF01E9FXzXEtDiHVjhK?=
- =?iso-8859-1?Q?0w19bKSbXxsU88dHGQQ6ozNiNWEo9ZQn4GhRiMH79/wUpE+gErDxeyEJik?=
- =?iso-8859-1?Q?Wq6KqVaycvn7WOQAPsicBYSK94A6jns+d83Hi/JkCXlCL8GYpGjvcl+OTN?=
- =?iso-8859-1?Q?fsSA2FNbjxZ5bJWgguU5OaGmbAKGpVi5D38/AGCzvvB6UxtzUXittki6bY?=
- =?iso-8859-1?Q?3QN4F8f6qgbR/mxZ/RCsxOwGt4/3nuSL7A0QXo4ZVPo1DJ/7Lsvlj6Ec25?=
- =?iso-8859-1?Q?TmWLi3W03+dkSIpHyq9SaQ5jof3fetiJN+pRrO6vz+jAPFRSlvrUhoRydK?=
- =?iso-8859-1?Q?LL9BkgF4tYG+SPQj7i+BQO2M5BBH/gbdmcUyX6My1MC1X6ndsUt0oru75O?=
- =?iso-8859-1?Q?nM64U9LFWh6ssbYOn0vDQT9fPtkdPF+tVX3uToNw3IEGX4eW3BRZHsnOJ8?=
- =?iso-8859-1?Q?FkWWrB9H3VUaw2iuZMbwrF5F1ENxCaL8//xNtudBLW4zYNdplhONqJYdW8?=
- =?iso-8859-1?Q?J02m0Bj/29zZ8YK5fDBu5Xwz+BrHIZS+yXTqF+eUX/IAs4IBb2vu+yro0B?=
- =?iso-8859-1?Q?f1jf69bidFvDSbJJLSfwVugeryaYreGPNFGXBylykr9HhoAQ5OQAL6DLs9?=
- =?iso-8859-1?Q?+KuGBfq4zQSfXCGETxQFRiAU4+yPSXOu9USDGTs5bthRZG0KUI+JcLfO+1?=
- =?iso-8859-1?Q?G8D7oCF1ofIs2KYAUxuJkqXv70FkmOg7GKbaDwJFgGZ13u3NYJJ9ND2O6j?=
- =?iso-8859-1?Q?KGjOI7asfdX1SlGgn0rfSMqdu14EYSLOt/DaH6RwoDE1peAiVbDnXlV7hx?=
- =?iso-8859-1?Q?BsG0cn/yghrsh9dI4UiMvqyQXyIbOWDXXA4ruylcOI3SJ2Z42gQr/eQWTJ?=
- =?iso-8859-1?Q?AwTVdclSy9DW9ouZTAZ8TwUVkCgIo0RLUUN6sFtQq9qkMgQ9c3Ki1IjnAa?=
- =?iso-8859-1?Q?oY/BOOw/YNxYNdeWUOZSgzqwQQ5yzPE1pusTh+ch89Fp7XfuIHo1F01Y2b?=
- =?iso-8859-1?Q?NQYNQAWvSAQcCf7dBdEPdW1pz5Plnrz9iYMQvkGQT0eJlEuVhghRN3+rXb?=
- =?iso-8859-1?Q?V+rqPbK9NsPO25tZpITYdUtvd8rsvdLln+VTEHskezsdEf5Ax0A4wU8uel?=
- =?iso-8859-1?Q?1H2JQjCTEDQFvmLO7daLAP6Q2/4tkk3r0oDxsXESCHvOZY8Pdsmi97qmO0?=
- =?iso-8859-1?Q?Xg1U7jnXoc+wH7WfuG5ZgHk3C+YrfmxELk99UEilGNOoKEHZXdGkK+2gFr?=
- =?iso-8859-1?Q?iSz7oSnflQMeMCC5Q0VN6lgcOXWMj8dDHI60s/NaBEM3kNBsp3U+qNq+Hb?=
- =?iso-8859-1?Q?TwCNaatk4nf1+1RvXboQ/ATWGNXRFZNMpVC8bpZ/YgeoJsX3xzGOos7i9S?=
- =?iso-8859-1?Q?38ZqCzGjanRjh8ebZ3h4hBh4D5ib7YUx4pWjg9FVD9dgGaHEciYf?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?eppYw6VfNV2v5xPalB1VjvWzD7GXx6d7kb4AHI+QoRwjIFWDf+CEjUlLTI?=
+ =?iso-8859-1?Q?E31fQ51lvytx6rwZozy1f66CnIHHd59tKoMXxDt10nnRIRVCcbz5NyjfGA?=
+ =?iso-8859-1?Q?ZbKKfzmVPDRSnuC6iKHSlHtMOidkYTiwBQvkyowB4/VSFT9oxERYajaYpA?=
+ =?iso-8859-1?Q?4nPkx1vwPyRxhX/T2FX/ccIEFsFCloGtw0yh3DbOOM/8PHsSWJrzTWdSpS?=
+ =?iso-8859-1?Q?8C34aFUexunfKiKC8mO9KCr1gC/VWgxoj0mnilMBxLU2fEFU4yHle6FeIM?=
+ =?iso-8859-1?Q?zK5H1dUBbv4//FNvSmW8EwOKRMv5DaWjPMJtEcdix8/HVvar/9ZPh25Gtp?=
+ =?iso-8859-1?Q?Hu4DUhPyBxGDhmIp8zdKu6ptRuQb0vuuBxs1VgUyOa9e/WBUANQ1rgc+ol?=
+ =?iso-8859-1?Q?li5sVjDMALUSr6AD28WNNbTEmb242EfsUwszt/+RPq8xxdLktUwFsAHmL+?=
+ =?iso-8859-1?Q?WZGqAV0MeKsyV3Y2ulibTozJcMqcEdM/EnH/RjABEAkPzsjabh0tkzJ4hi?=
+ =?iso-8859-1?Q?m2FTxHxLfSUBJfCXMVp8U1qDIQdAwb6yZUl0mTEll7JvxsJqGYz3jMcOdr?=
+ =?iso-8859-1?Q?V73/JS9C3A0j9JFwWz95DhLgBsZtdNuer+l1kLA7w/zZPdmsqujpwW1i+e?=
+ =?iso-8859-1?Q?tLPlDiPOGIIstbwnL7sCXvfoUiiopFHaIOSBxCKyNLg5AfGzBbPV5wCWJu?=
+ =?iso-8859-1?Q?qGcgB8eHdKPNWqSSrZGrz2VTlRpfP1t1JZjiLumSqsyL1T/xVJks/OQltM?=
+ =?iso-8859-1?Q?KFOj73rSCZ/vs+DFk5c+3KgjS393mLiVW6ByeBWwdyfn28UJWj71NUH8co?=
+ =?iso-8859-1?Q?zglREuLZfv3Usy1EYm66ESBUWMAIWRXV5jmo5E6F3pNxiTY14sB2bjlglD?=
+ =?iso-8859-1?Q?MoEhr+o/FdJ1uZ7ww7PzAg6KqMoCwWP7ERqIaJc12WSVYyRVIDteLBWg5G?=
+ =?iso-8859-1?Q?cUohrCJ6yGslUCBKstWreAhQJWvda8OLGmNY/fmEJqeHcVB1cZNitPOp80?=
+ =?iso-8859-1?Q?tRR/1v+8kN6XqhnMnB+VRCZzbzjzC2DBdC2HaMEqhQZt0wBzQ+pG6KiKn2?=
+ =?iso-8859-1?Q?1CWawUvPfCVUrZh/8kdtvRiNDVnjvM4+MgmcMcYkEFZLpN3RTpasWvByLd?=
+ =?iso-8859-1?Q?Gec0OovsapTiPwix9JEVF6P71A1fTxom/Bdwtz5wVS1ZwKSqtY/+jZ1V+e?=
+ =?iso-8859-1?Q?TWKTmIVGGuqwsjL/OC+zumlb8qJXMrJ9ch9xjZKvV7eC5KR/WL9d+gkUZy?=
+ =?iso-8859-1?Q?EGGV3YYRAyG3HLPdVvmvb2TSKL20+1+iD1nQUENr258U9Ew63F2Vb/xnov?=
+ =?iso-8859-1?Q?8oFO1rzowQiT39Xt4b1DEY6MRrZrOoQAJ6iFDDz+ne7QzvRPhqB8WX4r5C?=
+ =?iso-8859-1?Q?UxIKTyYjR4t96p5Ta67G7EKNY8RG5XH9AYUffvrygoHLmLO5sOb/+mTRvl?=
+ =?iso-8859-1?Q?PhD7xKG3W7rC06G75hAd3GdSlsWeO+MnyPjL2F+q8hyYuzN+VA9Aile1qy?=
+ =?iso-8859-1?Q?1QcnFkCJf3uGpSIyVcdeK8qaoxD6/3yVYLgd5ZscJCpx/z6kvtnMoz2PHt?=
+ =?iso-8859-1?Q?7uPej1qrwygTNdhGF42tUmPG2cOHWZ7Gt0TofvgJQYNEiOgR9EVzpnqtPW?=
+ =?iso-8859-1?Q?2IpBlohW5Tivs/KQ3VeguP/WomwbYNHKCtB6JV16GKXqbEA7fx/5VjILYd?=
+ =?iso-8859-1?Q?Kp0hSwQTPNaKpugJtVi+fvV1BiWuaOyr/QJFyAItdxzSwdziEeZ2q1M4zU?=
+ =?iso-8859-1?Q?q0wV4f2+t+XKNkGVZ4sIIyF58Q8P8UxZpaFIRhFuJv3SRPStCG1eE0VdOi?=
+ =?iso-8859-1?Q?4MGZTNEbB269FhBgUnkSgSEkJnV9CT08WgZUq20VRosNlyNsrCQD?=
 X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 071872a9-0f23-41b8-77ba-08decc7fc72d
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3c7f7c49-8648-4627-f139-08decc801deb
 X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Jun 2026 14:50:30.9948
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Jun 2026 14:52:56.5115
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: lvO13Ye4UUGNDvHI2JOAZnWO98R4jw2vJ2j9G5iBRYcOUnf0EaCXC2pMEBOA0L+Niiet8HATODrecNN+AF21s9OUqAz+4R5cy9PAyS9I7vlsB7flR5i8ZPJr1aO4i7+3
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9PR04MB11625
+X-MS-Exchange-CrossTenant-UserPrincipalName: a1vwUha+tkCgBFVF+5rTOY9f9wDnoeitu5PqV8RZiYhSnjri513/37F6Rig82/+jszi3ntlURF6WT2drmCvgHqotX77MpP0IX868WvR1v7643YKz33ZcV0rDjk0CSoKe
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR04MB7947
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260617_075035_308864_D41582BD 
-X-CRM114-Status: GOOD (  28.19  )
+X-CRM114-CacheID: sfid-20260617_075300_593466_A6DF13C8 
+X-CRM114-Status: GOOD (  23.65  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,164 +140,139 @@ Content-Transfer-Encoding: quoted-printable
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 17, 2026 at 11:17:43AM +0000, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 4 potential issu=
+On Wed, Jun 17, 2026 at 11:13:31AM +0000, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 3 potential issu=
 e(s) to consider:
-> - [High] Concurrent regulator operations race on the shared device-level =
-protection register, leading to silent hardware configuration failures.
-> - [Medium] The driver module will not auto-load because it lacks a MODULE=
-_ALIAS or platform_device_id table.
-> - [Medium] If regmap_read or the unlock sequence fails in the guard const=
-ructor, the driver proceeds with the regulator operation on locked register=
-s.
-> - [Low] Typo in regulator config assignment assigns dev->of_node to itsel=
-f instead of rcfg.of_node.
+> - [Medium] The binding documents GPIO capability for target ports but omi=
+ts the standard GPIO provider properties, violating subsystem guidelines.
+> - [Medium] The binding fails to include compatible strings for the 4-port=
+ variants and unconditionally allows up to 8 ports.
+> - [Low] The unit address in the I3C example does not match its `reg` prop=
+erty.
 > --
 >
-> commit e68081b58005a2422d441a5611dac29f8cffe2f4
+> commit af3b77595fece3e15864b37b9b683be835a0e1eb
 > Author: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
 >
-> regulator: p3h2x4x: Add driver for on-die regulators in NXP P3H2x4x i3c h=
-ub
+> dt-bindings: i3c: Add NXP P3H2x4x i3c-hub support
 >
-> The NXP P3H2x4x family integrates on-die regulators alongside I3C hub
-> functionality. This driver registers the regulators using the MFD
-> framework and exposes them via the regulator subsystem.
+> This commit adds device tree bindings for the NXP P3H2x4x multi-port I3C =
+hub
+> family. It supports connecting a host via I3C/I2C/SMBus to multiple downs=
+tream
+> peripherals across up to 8 ports.
 >
+> > diff --git a/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml b/D=
+ocumentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+> > new file mode 100644
+> > index 0000000000000..c080eeb0eeaa8
 > > --- /dev/null
-> > +++ b/drivers/regulator/p3h2840_i3c_hub_regulator.c
->
-> [ ... ]
->
-> > +static void p3h2x4x_reg_guard_enter(struct regulator_dev *rdev,
-> > +				    struct p3h2x4x_reg_state *state)
-> > +{
-> > +	state->restore =3D false;
+> > +++ b/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+> > @@ -0,0 +1,291 @@
+> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> > +# Copyright 2025 NXP
+> > +%YAML 1.2
+> > +---
+> > +$id: http://devicetree.org/schemas/i3c/nxp,p3h2840.yaml#
+> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > > +
-> > +	if (regmap_read(rdev->regmap,
-> > +			P3H2X4X_DEV_REG_PROTECTION_CODE,
-> > +			&state->orig))
-> > +		return;
+> > +title: NXP P3H2X4X I3C HUB
+> > +
+> > +maintainers:
+> > +  - Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+> > +  - Vikash Bansal <vikash.bansal@nxp.com>
+> > +  - Lakshay Piplani <lakshay.piplani@nxp.com>
+> > +
+> > +description: |
+> > +  P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841) is a family of multiport I=
+3C
+> > +  hub devices that connect to:-
+> > +  1. A host CPU via I3C/I2C/SMBus bus on upstream side and connect to =
+multiple
+> > +     peripheral devices on the downstream  side.
+> > +  2. Have two Controller Ports which can support either
+> > +     I2C/SMBus or I3C buses and connect to a CPU, BMC or SOC.
+> > +  3. P3H2840/ P3H2841 are 8 port I3C hub with eight I3C/I2C Target Por=
+t.
+> > +  4. P3H2440/ P3H2441 are 4 port I3C hub with four I3C/I2C Target Port.
+> > +     Target ports can be configured as I2C/SMBus, I3C or GPIO and conn=
+ect to
+> > +     peripherals.
 >
 > [Severity: Medium]
-> If regmap_read() fails here, the function returns early and swallows the
-> error since the guard constructor returns void. Will this cause the caller
-> to proceed with regulator operations on locked hardware, potentially
-> resulting in silent hardware configuration failures?
+> Since the description advertises that target ports can be configured as G=
+PIO,
+> should this binding include the standard GPIO provider properties like
+> gpio-controller and #gpio-cells?
 >
-> If the device ACKs the transaction despite ignoring the write, wouldn't
-> the driver incorrectly report success to the regulator core?
+> Because unevaluatedProperties is false and there are no child node patter=
+ns
+> defined for GPIO ports in patternProperties, won't adding a GPIO child no=
+de
+> fail schema validation?
 >
 > > +
-> > +	if (state->orig !=3D P3H2X4X_REGISTERS_UNLOCK_CODE) {
-> > +		regmap_write(rdev->regmap,
-> > +			     P3H2X4X_DEV_REG_PROTECTION_CODE,
-> > +			     P3H2X4X_REGISTERS_UNLOCK_CODE);
-> > +		state->restore =3D true;
-> > +	}
-> > +}
-> > +
-> > +static void p3h2x4x_reg_guard_exit(struct regulator_dev *rdev,
-> > +				   struct p3h2x4x_reg_state *state)
-> > +{
-> > +	if (state->restore)
-> > +		regmap_write(rdev->regmap,
-> > +			     P3H2X4X_DEV_REG_PROTECTION_CODE,
-> > +			     state->orig);
-> > +}
-> > +
-> > +DEFINE_LOCK_GUARD_1(p3h2x4x_reg, struct regulator_dev,
-> > +		    p3h2x4x_reg_guard_enter(_T->lock, &_T->state),
-> > +		    p3h2x4x_reg_guard_exit(_T->lock, &_T->state),
-> > +		    struct p3h2x4x_reg_state state);
+> > +properties:
+> > +  compatible:
+> > +    const: nxp,p3h2840
 >
-> [Severity: High]
-> Does this guard provide mutual exclusion across the four different regula=
-tors
-> on the same device?
+> [Severity: Medium]
+> The commit message and description state the binding supports the P3H2440
+> and P3H2441 4-port hubs alongside the 8-port P3H2840/P3H2841.
 >
-> The regmap lock protects individual I/O operations, but since there is no
-> device-level lock held across the unlock/modify/lock sequence, can concur=
-rent
-> operations on different regulators interleave?
-
-Look like make sense, need use mutex to protect this sequency.
-
->
-> For example, could one thread re-lock the device in p3h2x4x_reg_guard_exi=
-t()
-> while another thread is just about to write its configuration, causing the
-> hardware write to be silently ignored? Is a shared device-level mutex nee=
-ded
-> to serialize these sequences?
+> Should compatible strings be included for the 4-port variants here as wel=
+l?
 >
 > [ ... ]
 >
-> > +static int p3h2x4x_regulator_probe(struct platform_device *pdev)
-> > +{
-> > +	struct p3h2x4x_dev *p3h2x4x =3D dev_get_drvdata(pdev->dev.parent);
-> > +	struct p3h2x4x_regulator_dev *p3h2x4x_regulator;
-> > +	struct regulator_config rcfg =3D { };
-> > +	struct device *dev =3D &pdev->dev;
-> > +	struct regulator_dev *rdev;
-> > +	int i;
+> > +patternProperties:
+> > +  "^i3c@[0-7]$":
+> > +    type: object
+> > +    $ref: /schemas/i3c/i3c.yaml#
+> > +    unevaluatedProperties: false
 > > +
-> > +	p3h2x4x_regulator =3D devm_kzalloc(dev, sizeof(*p3h2x4x_regulator), G=
-FP_KERNEL);
-> > +	if (!p3h2x4x_regulator)
-> > +		return -ENOMEM;
+> > +    properties:
+> > +      reg:
+> > +        description:
+> > +          The I3C HUB Target Port number.
+> > +        maximum: 7
+>
+> [Severity: Medium]
+> Does unconditionally allowing a maximum port index of 7 cause issues for =
+the
+> 4-port variants mentioned in the description?
+>
+> It seems this allows invalid configurations that define non-existent ports
+> (4-7) for the 4-port hardware.
+>
+> [ ... ]
+>
+> > +examples:
+> > +  - |
+> > +    i3c {
+> > +        #address-cells =3D <3>;
+> > +        #size-cells =3D <0>;
 > > +
-> > +	platform_set_drvdata(pdev, p3h2x4x_regulator);
-> > +
-> > +	p3h2x4x_regulator->regmap =3D p3h2x4x->regmap;
-> > +	device_set_of_node_from_dev(dev, dev->parent);
-> > +
-> > +	rcfg.dev =3D dev;
-> > +	rcfg.dev->of_node =3D dev->of_node;
+> > +        hub@70,236153000c2 {
+> > +            reg =3D <0x70 0x236 0x3000c2>;
 >
 > [Severity: Low]
-> Should this be rcfg.of_node =3D dev->of_node? Since rcfg.dev is assigned =
-to dev
-> on the previous line, this just assigns dev->of_node to itself.
+> Does the unit address in this example match its reg property?
+>
+> The reg property combines to a provisioned ID of 0x236003000c2, which app=
+ears
+> to differ from 236153000c2 in the unit address. Could this mismatch trigg=
+er a
+> simple_bus_reg warning during make dt_binding_check?
 
-Although it is small problem, look likes not necesary to set of_node here.
-It'd better to fix it at next version.
+I remember I3C mask 0x15, it'd better kept node name consisent with reg
 
 Frank
 
 >
-> > +	rcfg.regmap =3D p3h2x4x_regulator->regmap;
-> > +	rcfg.driver_data =3D p3h2x4x_regulator;
->
-> [ ... ]
->
-> > +static struct platform_driver p3h2x4x_regulator_driver =3D {
-> > +	.driver =3D {
-> > +		.name =3D "p3h2x4x-regulator",
-> > +		.probe_type =3D PROBE_PREFER_ASYNCHRONOUS,
-> > +	},
-> > +	.probe =3D p3h2x4x_regulator_probe,
-> > +};
-> > +module_platform_driver(p3h2x4x_regulator_driver);
-> > +
-> > +MODULE_AUTHOR("Aman Kumar Pandey <aman.kumarpandey@nxp.com>");
-> > +MODULE_AUTHOR("Vikash Bansal <vikash.bansal@nxp.com>");
-> > +MODULE_AUTHOR("Lakshay Piplani <lakshay.piplani@nxp.com>");
-> > +MODULE_DESCRIPTION("NXP P3H2X4X I3C HUB Regulator driver");
-> > +MODULE_LICENSE("GPL");
->
-> [Severity: Medium]
-> Since the driver is registered as a platform driver with the name
-> "p3h2x4x-regulator" but the module is compiled as
-> "p3h2840_i3c_hub_regulator.ko", will this module fail to auto-load?
->
-> Without a MODULE_ALIAS("platform:p3h2x4x-regulator") or an exported
-> platform_device_id table, udev may not be able to load the module when the
-> MFD core creates the child platform device.
->
 > --
 > Sashiko AI review =B7 https://sashiko.dev/#/patchset/20260617110355.15918=
-44-1-lakshay.piplani@nxp.com?part=3D4
+44-1-lakshay.piplani@nxp.com?part=3D2
 
 -- =
 
