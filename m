@@ -4,65 +4,135 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BFB9DCD98ED
-	for <linux-i3c@archiver.kernel.org>; Thu, 18 Jun 2026 13:12:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9D2DCD98F2
+	for <linux-i3c@archiver.kernel.org>; Thu, 18 Jun 2026 19:35:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:Cc:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BBaxLPjuyOG6ess93nNZfXuCfqg/AHDGZATti1jWNs4=; b=ziNSp1lhxkp5pl
-	DKKDo7yAeCb4gJIn0zEvnI+ZKenYwkN+Uadh4mN+ZPBgtxBpRhjgX/Ozi8sWsdZO431lk81pMK+6q
-	SU+4MMlDHLZq3K9HnCKpwKl7Rat5yBR34hQmb1aG8+MIrwFNMok3ytPvVSUZDcM6AwvUAbHMkb5E+
-	20Yd1ibcD/6JZZjPJmK5CBzHgoQkcJp0srpiiNjy6dLiysZve5pQCKVJdHiMx5cKqYZcb8iCgMayb
-	+1C8wdAVP3blgrL8TH+qDlZK8LXLLd2mW+XxCzwmP9qrsFzMfdo4e3JHEtxZbplB7x4LXXwWHIrkU
-	pcqB2Toh1JvGJVvrCxZQ==;
+	List-Owner; bh=m15ZJcEko5jYc9KXlsEQ3qv0b6Aem6hNAQIjOUueoZI=; b=VmACTuZcO73Nyp
+	qMRAT6aPjze9/JWSoE3JsU1xtYKWxZ0iaqxq0F+VPE+LhaAqS9Ed7k9hHvNmurv97wtCQoltFmtIQ
+	KMcbceRlXnOq3yfIsNXk8oAeiybQ2XVJ3X9cdCmCq3IKGwhhg5D1zNmMjUS2CbKffGoTDil+8vMtO
+	axYIItkm1Hq5dTy0IDi6DsjdeYPdEMKQ5lkOLaNtTp695br29odc4BELq8Nf+5W42l8d7foMvIsXs
+	N/uR6Nfygx+s7eEHNL5EgM0Xv+iEXlRrYVPIzedaHtQ6ni4XD0tjd0Vbbqx5t+05HfuBek2Rw0Uo7
+	gFUUm0UhhTDtycCDTktg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1waCY3-00000001Kiw-2BCJ;
-	Thu, 18 Jun 2026 13:12:47 +0000
-Received: from mx1.white.stw.pengutronix.de ([2a0a:edc0:0:b01:1d::107])
+	id 1waIWm-00000001kIo-1J5X;
+	Thu, 18 Jun 2026 19:35:52 +0000
+Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1waCY0-00000001KiO-16Fm
+	id 1waIWj-00000001kIR-3YIS
 	for linux-i3c@lists.infradead.org;
-	Thu, 18 Jun 2026 13:12:46 +0000
-Received: from drehscheibe.grey.stw.pengutronix.de (drehscheibe.grey.stw.pengutronix.de [IPv6:2a0a:edc0:0:c01:1d::a2])
-	(Authenticated sender: relay-from-drehscheibe.grey.stw.pengutronix.de)
-	by mx1.white.stw.pengutronix.de (Postfix) with ESMTPSA id 5440220071A;
-	Thu, 18 Jun 2026 15:12:41 +0200 (CEST)
-Received: from lupine.office.stw.pengutronix.de ([2a0a:edc0:0:900:1d::4e] helo=lupine)
-	by drehscheibe.grey.stw.pengutronix.de with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.96)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1waCXx-003RXD-0m;
-	Thu, 18 Jun 2026 15:12:41 +0200
-Received: from pza by lupine with local (Exim 4.98.2)
-	(envelope-from <p.zabel@pengutronix.de>)
-	id 1waCXx-00000000B3O-0Xsr;
-	Thu, 18 Jun 2026 15:12:41 +0200
-Message-ID: <b84c8940187da3a493c8334bb50a992be7553092.camel@pengutronix.de>
-Subject: Re: [PATCH v4 08/12] i3c: dw-i3c-master: Add a quirk to skip clock
- and reset
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Akhil R <akhilrajeev@nvidia.com>, Alexandre Belloni
-	 <alexandre.belloni@bootlin.com>
-Cc: Frank Li <Frank.Li@nxp.com>, Miquel Raynal <miquel.raynal@bootlin.com>, 
- Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
- Conor Dooley <conor+dt@kernel.org>,  Guenter Roeck <linux@roeck-us.net>,
- Jon Hunter <jonathanh@nvidia.com>, Thierry Reding	
- <thierry.reding@kernel.org>, linux-i3c@lists.infradead.org, 
-	devicetree@vger.kernel.org, linux-hwmon@vger.kernel.org, 
-	linux-tegra@vger.kernel.org, linux-kernel@vger.kernel.org
-Date: Thu, 18 Jun 2026 15:12:40 +0200
-In-Reply-To: <20260616095429.3947205-9-akhilrajeev@nvidia.com>
+	Thu, 18 Jun 2026 19:35:51 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=WAL87ZregJ9xzsOSg5HxTv6n8wKpcPBF1q+kgfxt24+llROn5diYGmiR1ELETML4dHzzBNI9LMI1OiU0SGs5GpJSru/yf7gWzAawdkgfnzMBoGVpHvj0aNhK+49FhzF/eJ136M8tFGGKzTOrLTgHnqMaQbOBwANG/ZWg5JySza1LtGdUQbvWX6vr0JxoQ4NK+LHrpsE9s1dkIT5B1RbXpLvmYQ7pd8krgtExi8WinMd960xzkHYGhEVZlrSuDm2n+d+23HuW4FccbmPERX8tuEjHbis5X1so2AQCgQgGF+0dTSeKS30EYkPWsHMNV9j2nsvwCB8F1FwtdfV04ieRHQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=dG+phzadvR5frCOuFqd4v1+9N97TAgc2Ju7m09jnEbo=;
+ b=IZiFGC3b+jP0ILDrTgEOlYVLp+sn4XirsMkdt2oQ7lpKz2AIyDC4YJ30KP5s/T777IWZaLS0NVuVzWPopQYHnvENRsNz5XLQvPit6MBt0yHu0jLANSNKcY6EpehA3ROGmyK28MJiMa0CbJEqzI/LtpXoWEPvySKQV5D5RKM1swYjURr2ly9m9tKaKM1FRMU34k/2s0wEsMpgeqpOLjkDEMeYHF0r3P+j+cR+z46avWK4YBWWQjWv7lSCllc1PClWaDH0mbi3Y+pppdivtOkCB2bRzd9/K07YtFO9gr2otdaBgAP1wZVOAqMdafnSRdgktdq62pOrZPjRlljRP6j4Ow==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=dG+phzadvR5frCOuFqd4v1+9N97TAgc2Ju7m09jnEbo=;
+ b=RLuYZxcATD9rzRwb5bZ5QjYybB2Ksf98SBIOSVcx+cunTuKljs4RVWtht5VYXTaqxuw9GKaVmSbFlg9P4yNGQFEuNUazD81awTAIK1xvnydRUvsj2Be44vQn5zNyKkD4Eqe/KSOQSgGg2QlD6Xsn3Gy7H+4rcJ5L2I91dOyPA9eeNtgrUjpMkWzU05BJeeYHUCewwD80jbMZhM1MmkRAcpe5KjfHCRv0kAW+2DC4Aymrji0MClLM6I58J0wPCEmh3VGsIrnLNmwbPu3KcezaZFN3pUxWG/pVLP58UsJGjxvMT0WnTDhtgBNHiapUypVN/XSCn3TxOtC6KvzV+mZfqw==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
+ by GV2PR04MB12293.eurprd04.prod.outlook.com (2603:10a6:150:32b::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.113.18; Thu, 18 Jun
+ 2026 19:35:44 +0000
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0113.015; Thu, 18 Jun 2026
+ 19:35:44 +0000
+Date: Thu, 18 Jun 2026 15:35:34 -0400
+From: Frank Li <Frank.li@oss.nxp.com>
+To: Akhil R <akhilrajeev@nvidia.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Guenter Roeck <linux@roeck-us.net>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Jon Hunter <jonathanh@nvidia.com>,
+	Thierry Reding <thierry.reding@kernel.org>,
+	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-hwmon@vger.kernel.org, linux-tegra@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v4 01/12] dt-bindings: i3c: Add mipi-i3c-static-method to
+ support SETAASA
+Message-ID: <ajRIhqyT8bSi3EkN@lizhi-Precision-Tower-5810>
 References: <20260616095429.3947205-1-akhilrajeev@nvidia.com>
-	 <20260616095429.3947205-9-akhilrajeev@nvidia.com>
-User-Agent: Evolution 3.56.2-0+deb13u1 
+ <20260616095429.3947205-2-akhilrajeev@nvidia.com>
+Content-Disposition: inline
+In-Reply-To: <20260616095429.3947205-2-akhilrajeev@nvidia.com>
+X-ClientProxiedBy: PH7P223CA0001.NAMP223.PROD.OUTLOOK.COM
+ (2603:10b6:510:338::22) To GV2PR04MB11799.eurprd04.prod.outlook.com
+ (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|GV2PR04MB12293:EE_
+X-MS-Office365-Filtering-Correlation-Id: 56c21eaf-4f55-4066-2669-08decd70ca18
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|19092799006|23010399003|7416014|1800799024|366016|56012099006|11063799006|3023799007|4143699003|6133799003|22082099003|18002099003;
+X-Microsoft-Antispam-Message-Info: +wiczm52a8MephlXMzVvg/VzK6pqeZf2bQjF2uDhmrNJpy9TDjcdZH/i2b1a2JRshP7j/ITCTtCNvx7W/yvX1ApiEAEZ7ppWIX6ffeWtsMaltATInNnBTtXZm2Otb9H9kT38IwP4mIiaEhRZ8wQtS6O0k/r2NWi1CKLXb2OO9oroGt5F3N6BioMvwzLJEdLsOo2/F2ZyhSsl07sfsKrTAQAt7ijSsKIKy3l1uHR8Nwe3aTr5jR5yHqMhnVFc0krhS5jQs/7lFHOoTocC1lkunwy+6xBzprnEIbnYEho9wx9QAsDgQImfR3Ng9J4phIlgjOkYPXuQJcQjMBERlrR1MoMnm14fciiyxu0u7r1vCKt5vzqhq+XgPUu2xA6sxvNDU1zu0bcdZhpd7b+AFnFsB9GNL1gca5BPVzYMGCnU0IIGTKL//tLINwACtzydTtdvJ4mEZO+hTOaSYqKMtqrtrgI/iNpoapvZ+SX+gFRZW/MOabn8XPjISEY7s3+p1XrJwPAj2Y3zyYX3cGypTU21idpkx3FcFlvDulA3bXi9WKE30n+P1Mp2jZmtg4ppciRoqRBsMtq1/ChrX38BDOuHjdOocdMXuQg1xT6C03Na/yQnp6QH7qUgBAESYC9Zizs8SBggt+mYByajLDd12XGdJrAkwvnnHzKbzdhitMCogpxb8d7ewXlBquOEr0yoGkSXtKBEdYSAgJqagbsI4p+pFw==
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(19092799006)(23010399003)(7416014)(1800799024)(366016)(56012099006)(11063799006)(3023799007)(4143699003)(6133799003)(22082099003)(18002099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?ngMOuOMtuShTJGkDU+D5AEXmg3jSbfh1sOznLa5KgT+zt5cWaXqWVrhz0VF1?=
+ =?us-ascii?Q?AsZQ70oC7swrgihjkFFFgfbpvW4f2p66vELQ55O9lFYQKjf9+EHPqtHDneJf?=
+ =?us-ascii?Q?ypDUV1yjQz8vIYkTejj+f1ycv5dYwWiszU5h2TUuF3RrGGBYOWy9321KuE+Z?=
+ =?us-ascii?Q?WmXh30sP0UvK1S2HcbnJJS0ZK5JoSVB2dupPIBayH5ZM59jNhXfGCuhOVyhG?=
+ =?us-ascii?Q?9Fbmp74/qIoo03K/sH/C46Rz/k0FCt9dnXWsuh7cI10f9h7I76mwPo1+Yn4c?=
+ =?us-ascii?Q?Z9TWDAYeJ7lNRW2oa86QAnjRE4Pg76MT86+o/KwEHioyOThePkBUa/94RfUt?=
+ =?us-ascii?Q?lEHwIBc2sbFTjYdLu6w78EdN3PzN4hqA7EwNkedNQZJPpRMtW/xnxXS6+gP3?=
+ =?us-ascii?Q?qUGgRRC4pvW0ciNcg2ifD2KDn9DiXfXetYUiV6OAfEI9tzlJAlCLYa7ikd5f?=
+ =?us-ascii?Q?BSN7iCAg3EDiIm6UwkeFhtTCbkYunuVUe3u5sHg8Yl5mBSC+UUCi6yFC4/hJ?=
+ =?us-ascii?Q?PPshqZ3VUb8Ku1DmZkcfOK6r/SJFq0lKiTIQFOZb79os7dtiOTXTAMR5Brmd?=
+ =?us-ascii?Q?VpCaB8okEioUeRH5XDNRGA7ifBFwk+zFuYf8Om0/8izwlIQAxbdx9+gtY4qV?=
+ =?us-ascii?Q?uXT0OI5sDiiyStwfwxqLqg1o84SEcoO8fW4auN+sp6NuibPOBHRZQzsJS94f?=
+ =?us-ascii?Q?XhISqj1TuI7+oIKJ9Wfcyj/6agEz+kWnEVTogK/7/4UsI4KkR4+AUuI+RX5O?=
+ =?us-ascii?Q?L6GuCfwS35Q3gOoRibxQHb/Ft0xN7Kiew1jS09xLR9Q60wmCPLIeYwwjW6oB?=
+ =?us-ascii?Q?UXZL/Yz8bqhMC8Nn2eGZwvsCa7zsDlkDmQraDKYz0z/M9h23f7pXcf/iZ+xg?=
+ =?us-ascii?Q?GaM6AhFBrzQSc2dR0wOJvW4aLnTr/8gyDcENF0CDfWwgERqhvDLkfpwKHx8J?=
+ =?us-ascii?Q?ncQlpvBhEGs9MwHScVaR0vJxsQynXVymQPDibCHdHyHvME1dvYKJt/nVJsz9?=
+ =?us-ascii?Q?5tVxKGQd/k4cjVNRVHmwVwFV2OaANoFBd7kTGztz9H+HP2WSOyYPX4dd9YHE?=
+ =?us-ascii?Q?C33u1hsIMNWLmm62QXKro1y0uSVs6cSLt5A6ktagYeJBmfKpE7E2JFzhCOgw?=
+ =?us-ascii?Q?hugbXei+ji83rAmZDFxmBExpE4u4CPUrq+lThyh+WX74M1Yhu+P8UvEodc63?=
+ =?us-ascii?Q?nXcQZBZwBDmi1dUfJSgEdWsL2YNYwvd7S25rRHoZ8M3z3Lfhgsst9T8UMtkJ?=
+ =?us-ascii?Q?GZAgMZKb741cAxoizHF9DA2mrfAbM67+o/gGpCAFCXNOOYFLyAwPm6Dz/ryD?=
+ =?us-ascii?Q?t+9hRukI85doUlS158A98mU99zSEjfD7H8/Nbog+KjkndQFn88NIqvce1WRL?=
+ =?us-ascii?Q?guZXvHdiFi0+GuWgI8CmNBS9TM1Z2CmUEAfUwOwRaJ5hKaM7EXrwbTNGY5Or?=
+ =?us-ascii?Q?IiHKdYzY+KusNFicFYt79AVW95GRkQR/8Wa44OtwDP2EVGIJmDx7UPzT4SWr?=
+ =?us-ascii?Q?vJjB+fqytUYoU/PRJOtoohV0ORKZIsIMr+w6rnuXCAFy8xZ6fv7YO2L/H94Y?=
+ =?us-ascii?Q?chw59+neage003XSfIOtxGni7uaYimToGwoMReGC5rUQsR+lG0PsQDrpe84W?=
+ =?us-ascii?Q?QLiNKgImhrlQilaPQFr99NhL1kg/QgjyKZE1+3yQCPaRxpOqvpyyLReL4iQM?=
+ =?us-ascii?Q?jPu30aHXoRhvBd4nihaL1XLg2XZoCeqhvNfe2yjayJtZ0MmlmM1r4/mHu2KT?=
+ =?us-ascii?Q?A52I4LRFDM4sI88jBDpxVb59LM09DTj+naFy8LrLRWdzObEpi7Rl?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 56c21eaf-4f55-4066-2669-08decd70ca18
+X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Jun 2026 19:35:44.5864
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: h1tnvdrKPOLG4DjKduMxjiRlh/kTIZ8sK3B7JCwcAmW+Reggmpnilz7XU1KU0gH+8elfx8/ilhCIoG8BiO5Tk56PZpLlXkJcGVgUOP93ezmluePlNtOxFROSD7x8efYq
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV2PR04MB12293
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260618_061244_451171_8BD6410D 
-X-CRM114-Status: GOOD (  25.00  )
+X-CRM114-CacheID: sfid-20260618_123549_899981_D34F0F6A 
+X-CRM114-Status: GOOD (  32.13  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,131 +149,105 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Di, 2026-06-16 at 09:54 +0000, Akhil R wrote:
-> Some ACPI-enumerated devices like Tegra410 do not have clock and reset
-> resources exposed via the clk/reset frameworks. Unlike device tree,
-> ACPI on Arm does not model such provider functions. The hardware is
-> expected to be brought out of reset and have its clocks enabled by the
-> firmware before the OS takes over. Any data to be shared with the OS is
-> passed using the _DSD property.
-> 
-> Add match data for such devices to skip acquiring clock and reset controls
-> during probe and read the clock rate from the "clock-frequency" _DSD
-> property. Note that the "clock-frequency" here is the controller's core
-> clock and not the bus speed. I3C specifies the bus speed separately using
-> "i3c-scl-hz" and "i2c-scl-hz" and hence this should not cause any conflict.
-> 
-> Also, move match data parsing before clock/reset acquisition so the quirk
-> is available early enough.
-> 
+On Tue, Jun 16, 2026 at 09:54:15AM +0000, Akhil R wrote:
+> Add the 'mipi-i3c-static-method' property mentioned in the MIPI I3C
+> Discovery and Configuration Specification [1] to specify which discovery
+> method an I3C device supports during bus initialization. The property is
+> a bitmap, where a bit value of 1 indicates support for that method, and 0
+> indicates lack of support.
+>
+> Bit 0: SETDASA CCC (Direct)
+> Bit 1: SETAASA CCC (Broadcast)
+> Bit 2: Other CCC (vendor / standards extension)
+> All other bits are reserved.
+>
+> It is specifically needed when an I3C device requires SETAASA for the
+> address assignment. SETDASA will be supported by default if this property
+> is absent, which means for now the property just serves as a flag to
+> enable SETAASA, but keep the property as a bitmap to align with the
+> specifications.
+>
+> [1] https://www.mipi.org/mipi-disco-for-i3c-download
+>
 > Signed-off-by: Akhil R <akhilrajeev@nvidia.com>
 > ---
->  drivers/i3c/master/dw-i3c-master.c | 66 ++++++++++++++++++++----------
->  1 file changed, 44 insertions(+), 22 deletions(-)
-> 
-> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-> index 3e510fddf06c..a2a4b88c2017 100644
-> --- a/drivers/i3c/master/dw-i3c-master.c
-> +++ b/drivers/i3c/master/dw-i3c-master.c
-> @@ -242,6 +242,7 @@
->  /* List of quirks */
->  #define AMD_I3C_OD_PP_TIMING		BIT(1)
->  #define DW_I3C_DISABLE_RUNTIME_PM_QUIRK	BIT(2)
-> +#define DW_I3C_ACPI_SKIP_CLK_RST		BIT(3)
->  
->  struct dw_i3c_cmd {
->  	u32 cmd_lo;
-> @@ -556,13 +557,28 @@ static void dw_i3c_master_set_intr_regs(struct dw_i3c_master *master)
->  	writel(IBI_REQ_REJECT_ALL, master->regs + IBI_MR_REQ_REJECT);
->  }
->  
-> +static unsigned long dw_i3c_master_get_core_rate(struct dw_i3c_master *master)
-> +{
-> +	unsigned int core_rate_prop;
-> +
-> +	if (!(master->quirks & DW_I3C_ACPI_SKIP_CLK_RST))
-> +		return clk_get_rate(master->core_clk);
-> +
-> +	if (device_property_read_u32(master->dev, "clock-frequency", &core_rate_prop)) {
-> +		dev_err(master->dev, "missing clock-frequency property\n");
-> +		return 0;
-> +	}
-> +
-> +	return core_rate_prop;
-> +}
-> +
->  static int dw_i3c_clk_cfg(struct dw_i3c_master *master)
->  {
->  	unsigned long core_rate, core_period;
->  	u32 scl_timing;
->  	u8 hcnt, lcnt;
->  
-> -	core_rate = clk_get_rate(master->core_clk);
-> +	core_rate = dw_i3c_master_get_core_rate(master);
->  	if (!core_rate)
->  		return -EINVAL;
->  
-> @@ -615,7 +631,7 @@ static int dw_i2c_clk_cfg(struct dw_i3c_master *master)
->  	u16 hcnt, lcnt;
->  	u32 scl_timing;
->  
-> -	core_rate = clk_get_rate(master->core_clk);
-> +	core_rate = dw_i3c_master_get_core_rate(master);
->  	if (!core_rate)
->  		return -EINVAL;
->  
-> @@ -1577,18 +1593,33 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
->  	if (IS_ERR(master->regs))
->  		return PTR_ERR(master->regs);
->  
-> -	master->core_clk = devm_clk_get_enabled(&pdev->dev, NULL);
-> -	if (IS_ERR(master->core_clk))
-> -		return PTR_ERR(master->core_clk);
-> -
-> -	master->pclk = devm_clk_get_optional_enabled(&pdev->dev, "pclk");
-> -	if (IS_ERR(master->pclk))
-> -		return PTR_ERR(master->pclk);
-> +	if (has_acpi_companion(&pdev->dev)) {
-> +		quirks = (unsigned long)device_get_match_data(&pdev->dev);
-> +	} else if (pdev->dev.of_node) {
-> +		drvdata = device_get_match_data(&pdev->dev);
-> +		if (drvdata)
-> +			quirks = drvdata->flags;
-> +	}
-> +	master->quirks = quirks;
->  
-> -	master->core_rst = devm_reset_control_get_optional_exclusive_deasserted(&pdev->dev,
-> -										"core_rst");
-> -	if (IS_ERR(master->core_rst))
-> -		return PTR_ERR(master->core_rst);
-> +	if (master->quirks & DW_I3C_ACPI_SKIP_CLK_RST) {
-> +		master->core_clk = NULL;
-> +		master->pclk = NULL;
-> +		master->core_rst = NULL;
-> +	} else {
-> +		master->core_clk = devm_clk_get_enabled(&pdev->dev, NULL);
-> +		if (IS_ERR(master->core_clk))
-> +			return PTR_ERR(master->core_clk);
-> +
-> +		master->pclk = devm_clk_get_optional_enabled(&pdev->dev, "pclk");
-> +		if (IS_ERR(master->pclk))
-> +			return PTR_ERR(master->pclk);
-> +
-> +		master->core_rst = devm_reset_control_get_optional_exclusive_deasserted(&pdev->dev,
-> +											"core_rst");
-> +		if (IS_ERR(master->core_rst))
-> +			return PTR_ERR(master->core_rst);
 
-Why does this need to move around at all?
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
-The reset control is already optional, so I would expect this to set
-core_rst to NULL on missing reset, no quirk necessary.
-
-Same question for pclk. Wouldn't it be enough to make core_clk optional
-as well?
-
-regards
-Philipp
+>  .../devicetree/bindings/i3c/i3c.yaml          | 36 ++++++++++++++++---
+>  include/dt-bindings/i3c/i3c.h                 |  4 +++
+>  2 files changed, 35 insertions(+), 5 deletions(-)
+>
+> diff --git a/Documentation/devicetree/bindings/i3c/i3c.yaml b/Documentation/devicetree/bindings/i3c/i3c.yaml
+> index e25fa72fd785..5603f2e7807d 100644
+> --- a/Documentation/devicetree/bindings/i3c/i3c.yaml
+> +++ b/Documentation/devicetree/bindings/i3c/i3c.yaml
+> @@ -31,10 +31,12 @@ properties:
+>        described in the device tree, which in turn means we have to describe
+>        I3C devices.
+>
+> -      Another use case for describing an I3C device in the device tree is when
+> -      this I3C device has a static I2C address and we want to assign it a
+> -      specific I3C dynamic address before the DAA takes place (so that other
+> -      devices on the bus can't take this dynamic address).
+> +      Other use-cases for describing an I3C device in the device tree are:
+> +      - When the I3C device has a static I2C address and we want to assign
+> +        it a specific I3C dynamic address before the DAA takes place (so
+> +        that other devices on the bus can't take this dynamic address).
+> +      - When the I3C device requires SETAASA for its discovery and uses a
+> +        pre-defined static address.
+>
+>    "#size-cells":
+>      const: 0
+> @@ -145,7 +147,31 @@ patternProperties:
+>            Dynamic address to be assigned to this device. In case static address is
+>            present (first cell of the reg property != 0), this address is assigned
+>            through SETDASA. If static address is not present, this address is assigned
+> -          through SETNEWDA after assigning a temporary address via ENTDAA.
+> +          through SETNEWDA after assigning a temporary address via ENTDAA. If
+> +          SETAASA is used, this property is not used, and the static address itself
+> +          becomes the dynamic address.
+> +
+> +      mipi-i3c-static-method:
+> +        $ref: /schemas/types.yaml#/definitions/uint32
+> +        minimum: 0x1
+> +        maximum: 0x7
+> +        default: 1
+> +        description: |
+> +          Bitmap describing which methods of Dynamic Address Assignment from a
+> +          static address are supported by this I3C Target. For each defined bit
+> +          position, a set bit indicates support for that method and a cleared
+> +          bit indicates lack of support.
+> +
+> +            Bit 0: SETDASA CCC (Direct)
+> +            Bit 1: SETAASA CCC (Broadcast)
+> +            Bit 2: Other CCC (vendor / standards extension)
+> +            All other bits are reserved.
+> +
+> +          This property follows the MIPI I3C specification. The primary use
+> +          of this property is to indicate support for SETAASA, i.e Bit 1, but
+> +          will allow other values mentioned in the specification so that it
+> +          mirrors the specification. SETDASA will remain as the default method
+> +          even if this property is not present.
+>
+>      required:
+>        - reg
+> diff --git a/include/dt-bindings/i3c/i3c.h b/include/dt-bindings/i3c/i3c.h
+> index 373439218bba..78b8c634aad8 100644
+> --- a/include/dt-bindings/i3c/i3c.h
+> +++ b/include/dt-bindings/i3c/i3c.h
+> @@ -13,4 +13,8 @@
+>  #define I2C_NO_FILTER_HIGH_FREQUENCY    (1 << 5)
+>  #define I2C_NO_FILTER_LOW_FREQUENCY     (2 << 5)
+>
+> +#define I3C_ADDR_METHOD_SETDASA     (1 << 0)
+> +#define I3C_ADDR_METHOD_SETAASA     (1 << 1)
+> +#define I3C_ADDR_METHOD_VENDOR      (1 << 2)
+> +
+>  #endif
+> --
+> 2.43.0
+>
 
 -- 
 linux-i3c mailing list
