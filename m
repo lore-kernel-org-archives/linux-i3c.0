@@ -4,56 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B31FCD98F9
-	for <linux-i3c@archiver.kernel.org>; Thu, 18 Jun 2026 04:30:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 493F2CD98F9
+	for <linux-i3c@archiver.kernel.org>; Thu, 18 Jun 2026 04:37:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
 	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jsFL3HMj4E7Q9xlN3p0/L8Xd5dFm+F630YHETh4Opa8=; b=nqrmFH4czpXHhj
-	o8oaVGLReUPq6AUApZdrxkTkZXO/j++MoxEzzf2KJPqYBca+ug1xORpfuSC8NYq4z6Tn0OctLCeKV
-	9ZwR2M/ZTiY0ekLvzhvtDxpbr9nA5RBQ14QT5KOw51rnQfsjwAw92X1P3TOVQoUvEhXE4Z7e2x62e
-	zFQHbYGde1o8/ek/hK0KX9gDahd8OJAr44zTfWzEGzIZKL1HuHvhdoCDNTNF7F+5ZRFkm0ZdQkxYc
-	lZ0yL/yyxqeew54JFIRiN8tFRZcvgXeJMrmBazlNtEu1Mo7ySSCrIUyN4n4gmxUzmXn8CV4mM/uao
-	6Za+Eba6Bu9xPVDTRfSA==;
+	List-Owner; bh=+ERSuZlpvXa5GwzNtrafeic6JIhMCD1moTt3s4lLSDE=; b=A/9i2wcZZ6c9aW
+	Y5SL8glnGTN1oIogLFpHpTPAB31YrlkFKSSkLlcIAO5KNwWUlSu84dA2nSMLQIVN5Hrb5JfffCSs/
+	e54M6VFz2DN9RvJlrrYZRGnxPRHFj+SAp+2kdSv43Kzp5FlVQALsZNVysJdYXsdAJ/SVs8SaH7y/v
+	irAk34pqbmyPy+6rlrFMjByC0n1XqPB3fWQ9654p8B0oc99yx4mefJjORJKHBNe6+h7OXiYWyzNlv
+	HVHdeaxASirH+VPue3Ax/SjmPLFgYhMtCEFmpSxDvTCF8DW8UJa5U1AlAufVaGxMey23Q40aEYJ8q
+	24XGxstnzIijz7N+PGRA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wa4Ou-00000000c7g-2qo5;
-	Thu, 18 Jun 2026 04:30:48 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wa4VU-00000000cJW-1cEt;
+	Thu, 18 Jun 2026 04:37:36 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wa4Ot-00000000c7Z-1fcJ
+	id 1wa4VT-00000000cJO-1GBB
 	for linux-i3c@lists.infradead.org;
-	Thu, 18 Jun 2026 04:30:47 +0000
+	Thu, 18 Jun 2026 04:37:35 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id DC6644093B;
-	Thu, 18 Jun 2026 04:30:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C84DD1F000E9;
-	Thu, 18 Jun 2026 04:30:45 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 6540C60008;
+	Thu, 18 Jun 2026 04:37:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 278C01F000E9;
+	Thu, 18 Jun 2026 04:37:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781757046;
-	bh=DHmk96uiHkviuL9OahPCLRPAmLH8lVTAdu6jHOhQphw=;
+	s=k20260515; t=1781757454;
+	bh=07yMhPrmy8PV9Q7BMypGeASBfIEPZIFrJRpnXYyo1ck=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=Q1kkdcjlo9bdHWXagAB9lsoyDUExbM5jfkCl1p6WD4WxpvI5HNJwm0AYV3CWeyENk
-	 atdTDNOKXzZiWTVdfE+kDGasnAxHgZGYW5q7UhptfvqJrabvVnl+ztOQ8BNYXQwdh0
-	 gmv6XPtTiJuuuOAn+qJl/POQuxYtDc9brFeF3PckEBr8W+fBF9+XHn+1QuvOclY7+W
-	 d9L39vM0UkcxDFYSx0VRvd1/k7HWTCNTAJG0lbq6GKBr3s9RJNlq2bsyXpiOiMjeMC
-	 YOrtcMzaY9LRahpe9UjWuvtotawQN+qy6elkX3rvWjmWwxqQX74AnQYu1VHfp868Vg
-	 q3dGiWveZlvYg==
-Message-ID: <85144ed7-50b3-42cd-8405-f64335a94486@kernel.org>
-Date: Thu, 18 Jun 2026 07:30:43 +0300
+	b=J6Uop2KK9MQHRsq8CJvQWxWAb0wpgiSHksG8/nvGeXpYBLmyfQxb8c19/fQKlxwMZ
+	 ZV/1vDGTO4iOwaEGk66wybad7tSIfqQOY+4Pj3/5Xgbo0b94wigYadgHPzY/GyHIP4
+	 slvOAvt9OQzXYfQpH9LmQT0LvoV4ed13qdwMcYgGFyKJDAhWwUy83hucbH0FzmZj9w
+	 /oD/JoSRfad/z0QALDm7Jm8q3N3aBIh/f7c+SGQ5INPCeKemOLiNFQHpNVu5svoVtV
+	 OGKoA/OksqvOq7wZzkkwK/PkFai3N1gevbMsabSlZ1U5Mvho5/rRyrrK7wY1bQsvSv
+	 l4Z8TIBBdhkZw==
+Message-ID: <a538baca-fc5f-43db-8d19-2b5fa8c510dc@kernel.org>
+Date: Thu, 18 Jun 2026 07:37:31 +0300
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 16/16] i3c: renesas: Add runtime PM support
+Subject: Re: [PATCH v4 07/16] i3c: renesas: Clean DATBAS register on detach
 To: sashiko-reviews@lists.linux.dev
-Cc: linux-i3c@lists.infradead.org, Frank.Li@kernel.org
-References: <20260612160458.3102106-17-claudiu.beznea@kernel.org>
- <20260612163403.B8A091F000E9@smtp.kernel.org>
+Cc: Frank.Li@kernel.org, linux-i3c@lists.infradead.org
+References: <20260612160458.3102106-8-claudiu.beznea@kernel.org>
+ <20260612162050.9CDD01F000E9@smtp.kernel.org>
 Content-Language: en-US
 From: Claudiu Beznea <claudiu.beznea@kernel.org>
-In-Reply-To: <20260612163403.B8A091F000E9@smtp.kernel.org>
+In-Reply-To: <20260612162050.9CDD01F000E9@smtp.kernel.org>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,82 +72,51 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 
 
-On 6/12/26 19:34, sashiko-bot@kernel.org wrote:
+On 6/12/26 19:20, sashiko-bot@kernel.org wrote:
 > Thank you for your contribution! Sashiko AI review found 2 potential issue(s) to consider:
 > 
 > New issues:
-> - [High] Timeout handler fails to abort hardware transfers because it clears the BCTL_ABT bit instead of setting it.
+> - [Critical] `renesas_i3c_group_devs_in_slots` assumes the target swap slot is occupied by an I3C device, which crashes if the slot is free. It also fails to update the free slot bitmask.
 > 
 > Pre-existing issues:
-> - [High] Transfer loops do not break on timeout and unconditionally return success, leading to silent failures, race conditions, and memory corruption.
+> - [High] The DATBAS registers and device address trackers for unused slots are left dirty after Dynamic Address Assignment (DAA), which can cause hardware TX/RX logic issues.
 > --
 > 
-> commit d8976043a71981cb4634aa1e9eafca1113e44ec6
+> commit bcdea49e3d9ced6f5b774a208065f0889dbb7c12
 > Author: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 > 
-> i3c: renesas: Add runtime PM support
+> i3c: renesas: Clean DATBAS register on detach
 > 
-> This commit adds runtime PM support to the Renesas I3C driver, guarding
-> subsystem operations with pm_runtime APIs. It also drops explicit clock
-> handling, modifies wait_xfer to return unsigned long, and introduces a
-> function to clear pending IRQs on transfer aborts.
+> The controller uses DATBAS registers on TX/RX logic. Clean the DATBAS
+> register for the detached I3C device to avoid issues.
 > 
 >> diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
+>> index a63edddbc9fe0..abe24e563d217 100644
 >> --- a/drivers/i3c/master/renesas-i3c.c
 >> +++ b/drivers/i3c/master/renesas-i3c.c
-> 
-> [ ... ]
-> 
->> @@ -443,7 +442,24 @@ static void renesas_i3c_enqueue_xfer(struct renesas_i3c *i3c, struct renesas_i3c
->>   	}
->>   }
+>> @@ -1042,6 +1042,8 @@ static void renesas_i3c_detach_i3c_dev(struct i3c_dev_desc *dev)
+>>   	struct i3c_master_controller *m = i3c_dev_get_master(dev);
+>>   	struct renesas_i3c *i3c = to_renesas_i3c(m);
 >>   
->> -static void renesas_i3c_wait_xfer(struct renesas_i3c *i3c, struct renesas_i3c_xfer *xfer)
->> +static void renesas_i3c_irqs_mask_and_clear(struct renesas_i3c *i3c)
->> +{
->> +	guard(spinlock_irqsave)(&i3c->xferqueue.lock);
+>> +	renesas_writel(i3c->regs, DATBAS(data->index), 0);
 >> +
->> +	/* Disable all the interrupts */
->> +	renesas_writel(i3c->regs, BIE, 0);
->> +	renesas_writel(i3c->regs, NTIE, 0);
->> +
->> +	/* Clear normal transfer status flags. */
->> +	renesas_clear_bit(i3c->regs, NTST, NTST_TDBEF0 | NTST_RDBFF0 | NTST_RSPQFF |
->> +					   NTST_TEF | NTST_TABTF);
->> +	/* Clear bus status flags. */
->> +	renesas_clear_bit(i3c->regs, BST, BST_NACKDF | BST_TENDF | BST_SPCNDDF);
->> +	/* Clear error flags. */
->> +	renesas_clear_bit(i3c->regs, BCTL, BCTL_ABT);
->> +}
+>>   	i3c_dev_set_master_data(dev, NULL);
+>>   	i3c->addrs[data->index].addr = 0;
+>>   	i3c->addrs[data->index].i3c_dev = NULL;
 > 
-> [Severity: High]
-> Does this actually abort the hardware transfer? The commit message mentions
-> disabling interrupts and clearing pending IRQ status bits when a completion
-> timeout occurs.
-> 
-> However, clearing the BCTL_ABT bit is usually how an abort is acknowledged.
-> To actually initiate a hardware abort, the host typically must set the
-> BCTL_ABT bit, or explicitly reset the controller.
-> 
-> By only clearing an already-zero bit, does the controller remain in a busy
-> or hung state, potentially corrupting subsequent transfers?
+> [Severity: Critical]
+> Since we are allowing I3C devices to be detached and free their slots here,
+> will this cause a null pointer dereference in
+> renesas_i3c_group_devs_in_slots() during resume?
 
-The ABT bit of BCTL has the following meaning according to documentation:
+We are allowing detaching when the bus is cleaned up and on re-attaching.
 
-  ABT
-0: I3C is running.
-1: I3C has aborted a transfer.
+In case the bus is cleaned up, all the devices on the bus are detached.
 
-And the following explanation:
-
-When set to 1, this bit allows I3C to relinquish control of the I3C Bus before 
-completing the currently issued transfer.
-In response to an ABORT request, I3C issues the STOP condition on the I3C Bus 
-after the complete data byte is transferred or received.
-
-The Driver shall clear the ABT bit to allow operation on the Bus.
-
-Thus, the drive is clearing this bit to allow next I3C transfers to go on.
+On re-attaching, I considered that will happen as a result of a previously 
+detach operation which will free a slot, but looking again at the code, all the 
+detach and re-attach logic are under different conditions. I will re-consider 
+and update it accordingly.
 
 Thank you,
 Claudiu
