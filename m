@@ -4,57 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0DC9CD98ED
-	for <linux-i3c@archiver.kernel.org>; Thu, 18 Jun 2026 04:50:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B397CD98F2
+	for <linux-i3c@archiver.kernel.org>; Thu, 18 Jun 2026 12:48:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l4osY35UyIqSgAIip825bJWA4xZT7WM3ZTroJH8eidM=; b=xS5iyRXR9lapJ/
-	y5zLjGRyyG07BFIxQzAACIh69l+ONkSVysN/f0Q9h/MebQhWJYn4XBdjp5EmvxCf0qILSa9D8IjFU
-	8dvH7endgbYVhVxtTt8suga1Z61otu1ACCf8NMstQlnfUCM6UcpMpb7f0oLjfKr86ybOcVJnCps7V
-	OCLMy7WPXvGlGZW21b3BHR5SkAoBmNZhKWjj+J+G+wD4VFbQz+RjgvnTd5k2SZnDHL5gLyuM8N/Di
-	GCaY/kbhYTuisN8xpk971XOXmY8MAekepZlgWl1Y0GLZPJ8tKl0zoJTZ9vxGtjSlLHQrcq/0hr4ii
-	kyt7JXGTEgBKNFpDDK0g==;
+	List-Owner; bh=ZHSoyiNbcXmSN4zcHKex/ktf6NsM9w86RV2g1nqbDa8=; b=VA2IfLlxJO0g0w
+	YR4Y948K/ITt/xZGXjab4vQKgLfQioNBRokC9YTP1YVtJ7AnA7D4CPAns7h9B+TSdPuluiLGJdZlM
+	tlrJ+krNUaY8e3T5OS/zwRJ+9JvDITqvz2bjAqQxMcDie/U36jhA2gbDybCePn3zEaWhJK3Z74YaN
+	aS76+BQKI6twqRJnS53gk2Q+Z76mNkv3pzV8SRShFPf6sVt3xOTxoecC7GmqsR1BcjcSBug9gZiSd
+	F4E84nXsuY+qqTc8c3s8o9/4r6zxm3uHAHkYDNJOw/YewL40Zbb72UUQMzMkwx71Ubb68Y1Hm3aLR
+	kNPb7u2ybs9V4OAoeZtA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wa4iP-00000000clT-2i70;
-	Thu, 18 Jun 2026 04:50:57 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1waCAG-00000001HnV-19I2;
+	Thu, 18 Jun 2026 12:48:12 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wa4iO-00000000clK-1F07
+	id 1waCAF-00000001HnN-0Mi9
 	for linux-i3c@lists.infradead.org;
-	Thu, 18 Jun 2026 04:50:56 +0000
+	Thu, 18 Jun 2026 12:48:11 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 0264B60008;
-	Thu, 18 Jun 2026 04:50:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A87E01F000E9;
-	Thu, 18 Jun 2026 04:50:53 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 78DE7404E6;
+	Thu, 18 Jun 2026 12:48:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AA72B1F000E9;
+	Thu, 18 Jun 2026 12:48:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1781758254;
-	bh=WH2L0VL7aYUvX+jPB2e78om6SfydBYtA3DwlFVhzpZ8=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=Vpsz57FdAfnMXNQMk9+FdVm62kaqG3EmuiAlw3OwK7GDTAMduoDRoOULnGQRLPFK1
-	 4nptzPwDGV+6EdqcuvSBpFf/CQ9Ng1uR8pxIGXaItKa5bm0D6rvZiKcGU7PVbiC/Ip
-	 0oolIQ+6P4oPg1nthrZRHUW4ENxy6+/LVEfNn+2tmAavxsDv76gFMy3lzkLOUvuzyI
-	 tQqpae5fdnGLjQ4oMI3QX4qPCJXfvkmEQeEZsc+IoRsGp8fYX61UpmNeg54w6HE9hY
-	 LK4u9OytR6DgWnS3/BdIULldk/YR1rjA+kxDZo9VUDD3z4oq6lISgH4oSpFjFqGP86
-	 lu12xEuUYcspQ==
-Message-ID: <559b8b0c-412a-4d0f-9872-a4c92f3b9611@kernel.org>
-Date: Thu, 18 Jun 2026 07:50:52 +0300
+	s=k20260515; t=1781786890;
+	bh=5lKKLYGNWyFoFsJqMIxM1awayVyD6dxfs7aHSjXBGrE=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=GYfyyhqSMolwb6Asss93MrQwcNMUQL3VKObITmdYcqWSh0pjxthxjyM81HPR0Bdwe
+	 dK9xigbCkGr9A5RJ95rDv7adqUyiCc3kYvOabLpmtfTPA1GAYPVG1qX8X23rR83eXQ
+	 VqcgVPh7gs3HENtxt26ayudCxjaU7VHMDrMHastO7KLA6kwlw3ukDN5TLupOw2wMyP
+	 NI4PY6/4Yr+o8OVlUJzRIFXZthyLzjA6GRDCcjAI/6C9t/kiMWuZNzbKDW0utn3UCF
+	 UNFjWeMRi+mBv++rQDJGRfWKpOGB3QwLFgPQP6G9Q+q3bSy/Zm7ltPkruTiaokyaYO
+	 c2FSubcXLPDnA==
+Date: Thu, 18 Jun 2026 13:48:05 +0100
+From: Lee Jones <lee@kernel.org>
+To: Lakshay Piplani <lakshay.piplani@nxp.com>
+Cc: linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
+	alexandre.belloni@bootlin.com, krzk+dt@kernel.org, robh@kernel.org,
+	conor+dt@kernel.org, devicetree@vger.kernel.org, broonie@kernel.org,
+	Frank.Li@nxp.com, lgirdwood@gmail.com, vikash.bansal@nxp.com,
+	priyanka.jain@nxp.com, aman.kumarpandey@nxp.com
+Subject: Re: [PATCH v11 5/9] mfd: p3h2x4x: Add driver for NXP P3H2x4x i3c hub
+ and on-die regulator
+Message-ID: <20260618124805.GJ1672911@google.com>
+References: <20260612111816.3688240-1-lakshay.piplani@nxp.com>
+ <20260612111816.3688240-6-lakshay.piplani@nxp.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v4 06/16] i3c: renesas: Perform Dynamic Address Assignment
- on resume
-To: sashiko-reviews@lists.linux.dev
-Cc: linux-i3c@lists.infradead.org, Frank.Li@kernel.org
-References: <20260612160458.3102106-7-claudiu.beznea@kernel.org>
- <20260612161937.99F011F000E9@smtp.kernel.org>
-Content-Language: en-US
-From: Claudiu Beznea <claudiu.beznea@kernel.org>
-In-Reply-To: <20260612161937.99F011F000E9@smtp.kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20260612111816.3688240-6-lakshay.piplani@nxp.com>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -66,207 +69,326 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi, I3C maintainers,
+/* Sashiko Automation: Issues Found (3 Findings) */
 
-On 6/12/26 19:19, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 3 potential issue(s) to consider:
-> - [High] `renesas_i3c_group_devs_in_slots()` crashes due to NULL pointer dereference when swapping an I2C device into a previously empty slot.
-> - [High] Slot state corruption and hardware configuration overwrite during device grouping.
-> - [High] Build failure and state corruption due to calling undefined function `i3c_master_reattach_i3c_dev_locked()` and bypassing PID matching.
-> --
-> 
-> commit e2b35e6a6eb1e4e88dd575a2f0b9fe6f7bf5f7c5
-> Author: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-> 
-> i3c: renesas: Perform Dynamic Address Assignment on resume
-> 
-> The Renesas RZ/G3S SoC supports a power saving mode where power to most
-> SoC components, including I3C, is turned off. Running DAA in the controller
-> resume path restores communication for devices that also lose power.
-> 
->> diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
->> index 67b9a31300d09..a63edddbc9fe0 100644
->> --- a/drivers/i3c/master/renesas-i3c.c
->> +++ b/drivers/i3c/master/renesas-i3c.c
-> 
-> [ ... ]
-> 
->> @@ -637,12 +646,80 @@ static void renesas_i3c_bus_cleanup(struct i3c_master_controller *m)
->>   	renesas_i3c_reset(i3c);
->>   }
->>   
->> +static u8 renesas_i3c_group_devs_in_slots(struct renesas_i3c *i3c)
->> +{
->> +	struct renesas_i3c_i2c_dev_data *new_i2c_data, *new_i3c_data;
->> +	struct renesas_i3c_addr i2c_addr, i3c_addr;
->> +	struct i3c_dev_desc *i3c_dev;
->> +	struct i2c_dev_desc *i2c_dev;
->> +	u8 i2c_pos = 0;
-> 
-> [ ... ]
-> 
->> +	for (u8 pos = 0; pos < i3c->maxdevs; pos++) {
->> +		if (i3c->free_pos & BIT(pos))
->> +			continue;
->> +
->> +		if (!i3c->addrs[pos].is_i2c)
->> +			continue;
->> +
->> +		if (pos == i2c_pos) {
->> +			i2c_pos++;
->> +			continue;
->> +		}
->> +
->> +		/*
->> +		 * Swap the I3C device on i2c_pos slot with the I2C dev
->> +		 * on pos slot.
->> +		 */
->> +		i3c_addr = i3c->addrs[i2c_pos];
->> +		i3c_dev = i3c_addr.i3c_dev;
->> +
->> +		i2c_addr = i3c->addrs[pos];
->> +		i2c_dev = i2c_addr.i2c_dev;
->> +
->> +		new_i2c_data = i3c_dev_get_master_data(i3c_dev);
-> 
-> [Severity: High]
-> Does this crash when swapping an I2C device into a previously empty slot?
+Please investigate.
 
-I explained in [1] the rationale for which I chose it like this. I will adjust 
-it accordingly.
+> From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+> 
+> Add core MFD support for the NXP P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841)
+> family of multiport I3C hub devices. These devices connect to a host via
+> I3C/I2C/SMBus and expose multiple downstream target ports.
+> 
+> Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+> Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
+> Signed-off-by: Lakshay Piplani <lakshay.piplani@nxp.com>
+> 
+> ---
+> Changes in v11:
+>  - Use MFD_CELL_NAME() for child device registration
+>  - Rename local variables for consistency
+>  - Rename driver names to follow subsystem conventions:
+>    - Use '-' instead of '_' in driver names
+>    - Drop the "_drv" suffix from driver names
+> 
+> Changes in v10:
+>  - Drop redundant is_p3h2x4x_in_i3c flag
+> 
+> Changes in v9:
+>  - Renamed macros to follow consistent uppercase naming conventions
+>  - Made REGMAP selects in the P3H2X4X MFD Kconfig conditional,
+>    to avoid I3C/I2C dependency issues
+> 
+> Changes in v8:
+>  - No change
+> 
+> Changes in v7:
+>  - Use new config I3C_OR_I2C
+> 
+> Changes in v6:
+>  - No change
+> 
+> Changes in v5:
+>  - Corrected the ordering in the Makefile and Kconfig for MFD_P3H2X4X
+>  - Updated dev_err_probe() for regmap_init failure.
+>  - Updated module description
+> 
+> Changes in v4:
+>  - Split the driver into three separate patches(mfd, regulator and I3C hub)
+>  - Added support for NXP P3H2x4x MFD functionality
+> ---
+> ---
+>  MAINTAINERS                 |   2 +
+>  drivers/mfd/Kconfig         |  13 ++++
+>  drivers/mfd/Makefile        |   1 +
+>  drivers/mfd/p3h2840.c       | 119 ++++++++++++++++++++++++++++++++++++
+>  include/linux/i3c/device.h  |   1 +
+>  include/linux/mfd/p3h2840.h |  26 ++++++++
+>  6 files changed, 162 insertions(+)
+>  create mode 100644 drivers/mfd/p3h2840.c
+>  create mode 100644 include/linux/mfd/p3h2840.h
+> 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index ba65ae5a008b..3420701a75c5 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -19311,6 +19311,8 @@ L:	linux-kernel@vger.kernel.org
+>  L:	linux-i3c@lists.infradead.org
+>  S:	Maintained
+>  F:	Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+> +F:	drivers/mfd/p3h2840.c
+> +F:	include/linux/mfd/p3h2840.h
+>  
+>  NXP PF5300/PF5301/PF5302 PMIC REGULATOR DEVICE DRIVER
+>  M:	Woodrow Douglass <wdouglass@carnegierobotics.com>
+> diff --git a/drivers/mfd/Kconfig b/drivers/mfd/Kconfig
+> index 7192c9d1d268..405b50c3c77b 100644
+> --- a/drivers/mfd/Kconfig
+> +++ b/drivers/mfd/Kconfig
+> @@ -617,6 +617,19 @@ config MFD_MX25_TSADC
+>  	  i.MX25 processors. They consist of a conversion queue for general
+>  	  purpose ADC and a queue for Touchscreens.
+>  
+> +config MFD_P3H2X4X
+> +	tristate "NXP P3H2X4X I3C Hub Device"
+> +	depends on I3C_OR_I2C
+> +	select MFD_CORE
+> +	select REGMAP_I3C if I3C
+> +	select REGMAP_I2C if I2C
+> +	help
+> +	  Enable Support for NXP P3H244x/P3H284x I3C HUB device using I3C/I2C
+> +	  communication interface.
+> +
+> +	  This driver provides support for I3C hub and regulator, each subdriver
+> +	  can be enabled independently depending on the required functionality.
+> +
+>  config MFD_PF1550
+>  	tristate "NXP PF1550 PMIC Support"
+>  	depends on I2C=y && OF
+> diff --git a/drivers/mfd/Makefile b/drivers/mfd/Makefile
+> index e75e8045c28a..a284b22c7b13 100644
+> --- a/drivers/mfd/Makefile
+> +++ b/drivers/mfd/Makefile
+> @@ -122,6 +122,7 @@ obj-$(CONFIG_MFD_MC13XXX)	+= mc13xxx-core.o
+>  obj-$(CONFIG_MFD_MC13XXX_SPI)	+= mc13xxx-spi.o
+>  obj-$(CONFIG_MFD_MC13XXX_I2C)	+= mc13xxx-i2c.o
+>  
+> +obj-$(CONFIG_MFD_P3H2X4X)	+= p3h2840.o
+>  obj-$(CONFIG_MFD_PF1550)	+= pf1550.o
+>  
+>  obj-$(CONFIG_MFD_NCT6694)	+= nct6694.o
+> diff --git a/drivers/mfd/p3h2840.c b/drivers/mfd/p3h2840.c
+> new file mode 100644
+> index 000000000000..0a80992d6250
+> --- /dev/null
+> +++ b/drivers/mfd/p3h2840.c
+> @@ -0,0 +1,119 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright 2025-2026 NXP
+> + * P3H2X4X i3c hub and regulator device.
+> + */
+> +
+> +#include <linux/i2c.h>
+> +#include <linux/i3c/master.h>
 
-[1] 
-https://lore.kernel.org/sashiko-reviews/a538baca-fc5f-43db-8d19-2b5fa8c510dc@kernel.org/
+[Severity: Low]
+Does this include bypass the I3C subsystem abstraction? By including the
+master header, the driver has access to the internal definition of
+struct i3c_device. Should this include <linux/i3c/device.h> instead?
 
-> 
-> When i2c_pos does not advance over empty slots, i3c_dev will be NULL if
-> the destination slot is empty. Since i3c_dev_get_master_data() unconditionally
-> dereferences the pointer (dev->common.master_priv), it seems this would cause
-> a kernel panic when swapping into an empty slot.
-> 
->> +		new_i3c_data = i2c_dev_get_master_data(i2c_dev);
->> +
->> +		i3c->addrs[i2c_pos] = i2c_addr;
->> +		i3c->addrs[i2c_pos].is_i2c = true;
->> +		i3c->addrs[i2c_pos].i2c_dev = i2c_dev;
->> +
->> +		i3c->addrs[pos] = i3c_addr;
->> +		i3c->addrs[pos].is_i2c = false;
->> +		i3c->addrs[pos].i3c_dev = i3c_dev;
->> +
->> +		new_i2c_data->index = i2c_pos++;
->> +		new_i3c_data->index = pos;
->> +
->> +		i2c_dev_set_master_data(i2c_dev, new_i2c_data);
->> +		i3c_dev_set_master_data(i3c_dev, new_i3c_data);
->> +	}
-> 
-> [ ... ]
-> 
->> @@ -655,16 +732,25 @@ static int renesas_i3c_daa(struct i3c_master_controller *m)
->>   	olddevs = ~(i3c->free_pos);
->>   	i3c->internal_state = I3C_INTERNAL_STATE_CONTROLLER_ENTDAA;
->>   
->> +	if (i3c->resuming)
->> +		first_i3c_pos = renesas_i3c_group_devs_in_slots(i3c);
->> +
->>   	/* Setting DATBASn registers for target devices. */
->>   	for (pos = 0; pos < i3c->maxdevs; pos++) {
->> -		if (olddevs & BIT(pos))
->> -			continue;
->> +		if (olddevs & BIT(pos)) {
-> 
-> [Severity: High]
-> Does this clobber the configuration of I2C devices swapped into empty slots?
-> 
-> Since renesas_i3c_group_devs_in_slots() does not update i3c->free_pos during
-> a swap, the olddevs mask calculated before the grouping is now stale.
 
-Will update the free_slots for this scenario as well.
 
-> 
-> If an I2C device was moved to a previously empty slot, olddevs & BIT(pos) will
-> evaluate to false. This bypasses the skip logic, treats the newly moved I2C
-> device as an unassigned slot, and generates a new dynamic address for it,
-> blindly overwriting its DATBAS hardware configuration.
-> 
-> [ ... ]
-> 
->> @@ -689,12 +780,38 @@ static int renesas_i3c_daa(struct i3c_master_controller *m)
->>   
->>   	renesas_i3c_wait_xfer(i3c, xfer);
->>   
->> -	newdevs = GENMASK(i3c->maxdevs - cmd->rx_count - 1, 0);
->> -	newdevs &= ~olddevs;
->> +	newdevs = GENMASK(i3c->maxdevs - cmd->rx_count - 1, first_i3c_pos);
->> +	/* Re-attach all the I3C devices on resume. */
->> +	if (!i3c->resuming)
->> +		newdevs &= ~olddevs;
->>   
->>   	for (pos = 0; pos < i3c->maxdevs; pos++) {
->> -		if (newdevs & BIT(pos))
->> -			i3c_master_add_i3c_dev_locked(m, i3c->addrs[pos]);
->> +		if (!(newdevs & BIT(pos)))
->> +			continue;
->> +
->> +		/*
->> +		 * If the bus was fully occupied before suspend, re-attach the
->> +		 * devices and update the addresses tracked by the subsystem.
->> +		 * Without this, i3c_master_add_i3c_dev_locked() returns errors
->> +		 * due to a lack of free slots (as reported by
->> +		 * renesas_i3c_get_free_pos()), causing the attachment to fail.
->> +		 *
->> +		 * Otherwise, follow the normal
->> +		 * i3c_master_add_i3c_dev_locked() path, which will re-attach the
->> +		 * devices, keep the subsystem state and driver addresses in sync,
->> +		 * and perform all the required internal bookkeeping.
->> +		 */
->> +		if (!i3c->free_pos && i3c->resuming) {
->> +			struct i3c_dev_desc *dev = i3c->addrs[pos].i3c_dev;
->> +			u8 old_dyn_addr;
->> +
->> +			old_dyn_addr = dev->info.dyn_addr;
->> +			dev->info.dyn_addr = i3c->addrs[pos].addr;
->> +
->> +			i3c_master_reattach_i3c_dev_locked(dev, old_dyn_addr);
-> 
-> [Severity: High]
-> This calls i3c_master_reattach_i3c_dev_locked() which does not appear to exist
-> in the kernel, causing a build failure.
-> 
-> Also, does this logic cross-wire physical devices with the wrong software
-> structures?
-> 
-> It blindly assigns newly generated dynamic addresses to the pre-suspend
-> device structures based solely on their slot index (pos). However, ENTDAA
-> assigns addresses based on Provisioned ID (PID) arbitration order, not the
-> previous slot indices. If the bus topology changes or devices arbitrate in a
-> different order, commands might be sent to the incorrect targets, potentially
-> causing data corruption.
+> +#include <linux/mfd/core.h>
+> +#include <linux/mfd/p3h2840.h>
+> +#include <linux/regmap.h>
+> +
+> +static const struct mfd_cell p3h2x4x_devs[] = {
+> +		MFD_CELL_NAME("p3h2x4x-regulator"),
+> +		MFD_CELL_NAME("p3h2x4x-i3c-hub"),
+> +};
+> +
+> +static const struct regmap_config p3h2x4x_regmap_config = {
+> +	.reg_bits = P3H2X4X_REG_BITS,
+> +	.val_bits = P3H2X4X_VAL_BITS,
+> +	.max_register = 0xFF,
+> +};
+> +
+> +static int p3h2x4x_device_probe_i3c(struct i3c_device *i3cdev)
+> +{
+> +	struct p3h2x4x_dev *ddata;
+> +	int ret;
+> +
+> +	ddata = devm_kzalloc(&i3cdev->dev, sizeof(*ddata), GFP_KERNEL);
 
-I'm not sure how to solve this problem other than going through the 
-i3c_master_add_i3c_dev_locked(). Or duplicate code. Maybe exporting 
-i3c_master_detach_free_devs() and call it before running DAA to be able to run 
-i3c_master_add_i3c_dev_locked() which takes care of all the attachment procedure?
+[Severity: Low]
+This directly accesses the internal dev field of struct i3c_device. Should
+this use i3cdev_to_dev(i3cdev) to obtain the underlying struct device pointer
+to maintain API boundaries?
 
-I3C maintainers: could you please give some advice on this ?
 
-This scenario is only for the case where the bus was fully occupied during a 
-suspend/resume. Is it a valid case to have devices disappear during a 
-suspend/resume?
 
-Also, I want to mention that I currently don't have this problem, it was 
-implemented as a result of it being pointed by sashiko.
+> +	if (!ddata)
+> +		return -ENOMEM;
+> +
+> +	i3cdev_set_drvdata(i3cdev, ddata);
+> +
+> +	ddata->regmap = devm_regmap_init_i3c(i3cdev, &p3h2x4x_regmap_config);
+> +	if (IS_ERR(ddata->regmap))
+> +		return dev_err_probe(&i3cdev->dev, PTR_ERR(ddata->regmap),
+> +				     "Failed to register HUB regmap\n");
+> +
+> +	// The hub child driver retrieves information from i3cdev
+> +	ddata->i3cdev = i3cdev;
+> +
+> +	ret = devm_mfd_add_devices(&i3cdev->dev, PLATFORM_DEVID_AUTO,
+> +				   p3h2x4x_devs, ARRAY_SIZE(p3h2x4x_devs),
+> +				   NULL, 0, NULL);
+> +	if (ret)
+> +		return dev_err_probe(&i3cdev->dev, ret, "Failed to add sub devices\n");
+> +
+> +	return 0;
+> +}
+> +
+> +static int p3h2x4x_device_probe_i2c(struct i2c_client *client)
+> +{
+> +	struct p3h2x4x_dev *ddata;
+> +	int ret;
+> +
+> +	ddata = devm_kzalloc(&client->dev, sizeof(*ddata), GFP_KERNEL);
+> +	if (!ddata)
+> +		return -ENOMEM;
+> +
+> +	i2c_set_clientdata(client, ddata);
+> +
+> +	ddata->regmap = devm_regmap_init_i2c(client, &p3h2x4x_regmap_config);
+> +	if (IS_ERR(ddata->regmap))
+> +		return dev_err_probe(&client->dev, PTR_ERR(ddata->regmap),
+> +				     "Failed to register HUB regmap\n");
+> +
+> +	ddata->i3cdev = NULL;
+> +
+> +	ret = devm_mfd_add_devices(&client->dev, PLATFORM_DEVID_AUTO,
+> +				   p3h2x4x_devs, ARRAY_SIZE(p3h2x4x_devs),
+> +				   NULL, 0, NULL);
+> +	if (ret)
+> +		return dev_err_probe(&client->dev, ret, "Failed to add sub devices\n");
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct i3c_device_id p3h2x4x_i3c_ids[] = {
+> +	I3C_CLASS(I3C_DCR_HUB, NULL),
+> +	{ /* sentinel */ },
+> +};
+
+[Severity: High]
+Will this driver inappropriately bind to any generic I3C hub device on the
+bus?
+
+Using I3C_CLASS(I3C_DCR_HUB, NULL) instructs the subsystem to match any
+device that advertises the generic Hub DCR (194), without filtering by
+vendor or part ID.
+
+Because the probe function doesn't verify the Manufacturer ID, it seems this
+could eagerly bind to third-party hubs and attempt NXP-specific register
+operations on them.
+
+Should this use I3C_DEVICE(I3C_VENDOR_NXP, ...) to exclusively match the
+supported NXP devices instead of the generic hub class?
+
+> +MODULE_DEVICE_TABLE(i3c, p3h2x4x_i3c_ids);
+> +
+> +static const struct i2c_device_id p3h2x4x_i2c_id_table[] = {
+> +	{ "nxp-i3c-hub" },
+> +	{ /* sentinel */ }
+> +};
+> +MODULE_DEVICE_TABLE(i2c, p3h2x4x_i2c_id_table);
+> +
+> +static const struct of_device_id p3h2x4x_i2c_of_match[] = {
+> +	{ .compatible = "nxp,p3h2840", },
+> +	{ /* sentinel */ }
+> +};
+> +MODULE_DEVICE_TABLE(of, p3h2x4x_i2c_of_match);
+> +
+> +static struct i3c_driver p3h2x4x_i3c = {
+> +	.driver = {
+> +		.name = "p3h2x4x-i3c",
+> +	},
+> +	.probe = p3h2x4x_device_probe_i3c,
+> +	.id_table = p3h2x4x_i3c_ids,
+> +};
+> +
+> +static struct i2c_driver p3h2x4x_i2c = {
+> +	.driver = {
+> +		.name = "p3h2x4x-i2c",
+> +		.of_match_table = p3h2x4x_i2c_of_match,
+> +	},
+> +	.probe =  p3h2x4x_device_probe_i2c,
+> +	.id_table = p3h2x4x_i2c_id_table,
+> +};
+> +module_i3c_i2c_driver(p3h2x4x_i3c, &p3h2x4x_i2c);
+> +
+> +MODULE_AUTHOR("Aman Kumar Pandey <aman.kumarpandey@nxp.com>");
+> +MODULE_AUTHOR("Vikash Bansal <vikash.bansal@nxp.com>");
+> +MODULE_AUTHOR("Lakshay Piplani <lakshay.piplani@nxp.com>");
+> +MODULE_DESCRIPTION("NXP P3H2X4X I3C HUB multi function driver");
+> +MODULE_LICENSE("GPL");
+> diff --git a/include/linux/i3c/device.h b/include/linux/i3c/device.h
+> index 971d53349b6f..6188082599dd 100644
+> --- a/include/linux/i3c/device.h
+> +++ b/include/linux/i3c/device.h
+> @@ -85,6 +85,7 @@ struct i3c_xfer {
+>   */
+>  enum i3c_dcr {
+>  	I3C_DCR_GENERIC_DEVICE = 0,
+> +	I3C_DCR_HUB = 194,
+>  };
+>  
+>  #define I3C_PID_MANUF_ID(pid)		(((pid) & GENMASK_ULL(47, 33)) >> 33)
+> diff --git a/include/linux/mfd/p3h2840.h b/include/linux/mfd/p3h2840.h
+> new file mode 100644
+> index 000000000000..2d4fae2176ae
+> --- /dev/null
+> +++ b/include/linux/mfd/p3h2840.h
+> @@ -0,0 +1,26 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * Copyright 2025-2026 NXP
+> + * This header file contains register definitions and bit masks for the P3H2X4X.
+> + */
+> +
+> +#ifndef _LINUX_MFD_P3H2840_H
+> +#define _LINUX_MFD_P3H2840_H
+> +
+> +#include <linux/types.h>
+> +
+> +/* Device Configuration Registers */
+> +#define P3H2X4X_DEV_REG_PROTECTION_CODE				0x10
+> +#define P3H2X4X_REGISTERS_LOCK_CODE				0x00
+> +#define P3H2X4X_REGISTERS_UNLOCK_CODE				0x69
+> +#define P3H2X4X_CP1_REGISTERS_UNLOCK_CODE			0x6a
+> +
+> +/* Reg config for Regmap */
+> +#define P3H2X4X_REG_BITS					8
+> +#define P3H2X4X_VAL_BITS					8
+> +
+> +struct p3h2x4x_dev {
+> +	struct i3c_device *i3cdev;
+> +	struct regmap *regmap;
+> +};
+> +#endif /* _LINUX_MFD_P3H2840_H */
+> -- 
+> 2.25.1
+> 
 
 -- 
-Thank you,
-Claudiu
-
+Lee Jones
 
 -- 
 linux-i3c mailing list
