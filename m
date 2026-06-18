@@ -4,56 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B9D2DCD98F2
-	for <linux-i3c@archiver.kernel.org>; Thu, 18 Jun 2026 19:35:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B2B4CD98F2
+	for <linux-i3c@archiver.kernel.org>; Thu, 18 Jun 2026 19:41:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m15ZJcEko5jYc9KXlsEQ3qv0b6Aem6hNAQIjOUueoZI=; b=VmACTuZcO73Nyp
-	qMRAT6aPjze9/JWSoE3JsU1xtYKWxZ0iaqxq0F+VPE+LhaAqS9Ed7k9hHvNmurv97wtCQoltFmtIQ
-	KMcbceRlXnOq3yfIsNXk8oAeiybQ2XVJ3X9cdCmCq3IKGwhhg5D1zNmMjUS2CbKffGoTDil+8vMtO
-	axYIItkm1Hq5dTy0IDi6DsjdeYPdEMKQ5lkOLaNtTp695br29odc4BELq8Nf+5W42l8d7foMvIsXs
-	N/uR6Nfygx+s7eEHNL5EgM0Xv+iEXlRrYVPIzedaHtQ6ni4XD0tjd0Vbbqx5t+05HfuBek2Rw0Uo7
-	gFUUm0UhhTDtycCDTktg==;
+	List-Owner; bh=3sb19nB9L/M9c8ubUOn/FRuc1KOVxT+E6tY+f8q4+0M=; b=tjAKNUQuKS8lnR
+	1sJvcVmsUnWg8I0pftn+bxtBnfDmrxB8pigAfpW/sH7wxtX3Ni47oss1ZjxNXFCzLcw0L0uc40NIL
+	6A3Fn/mUVBPtlClcZznt7bPBzN0KZaVNzU+hnEasfwP58e8Npy/IaJPiZIJCQAs6s6VqIM/lFt/tV
+	de7ET6Tzq8obw9W1PiBbErW+Xfxh8M6lPnNUA7wVZKo3FwdSlUTGpzlFXA1MUcF98KnZCAdzmrQiK
+	AsVnZz7s+dl9xXArA4wuu3v2c5NZSe4aEGaHQ+8tiR7SrNxk27WpDjfoDJbMvHtBAsP3dVwl6KCcO
+	rGujp+ZPrXih/BB1hPTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1waIWm-00000001kIo-1J5X;
-	Thu, 18 Jun 2026 19:35:52 +0000
-Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
+	id 1waIcD-00000001kRN-3yFB;
+	Thu, 18 Jun 2026 19:41:29 +0000
+Received: from mail-westeuropeazon11011020.outbound.protection.outlook.com ([52.101.70.20] helo=AS8PR04CU009.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1waIWj-00000001kIR-3YIS
+	id 1waIcA-00000001kQm-1cvA
 	for linux-i3c@lists.infradead.org;
-	Thu, 18 Jun 2026 19:35:51 +0000
+	Thu, 18 Jun 2026 19:41:28 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=WAL87ZregJ9xzsOSg5HxTv6n8wKpcPBF1q+kgfxt24+llROn5diYGmiR1ELETML4dHzzBNI9LMI1OiU0SGs5GpJSru/yf7gWzAawdkgfnzMBoGVpHvj0aNhK+49FhzF/eJ136M8tFGGKzTOrLTgHnqMaQbOBwANG/ZWg5JySza1LtGdUQbvWX6vr0JxoQ4NK+LHrpsE9s1dkIT5B1RbXpLvmYQ7pd8krgtExi8WinMd960xzkHYGhEVZlrSuDm2n+d+23HuW4FccbmPERX8tuEjHbis5X1so2AQCgQgGF+0dTSeKS30EYkPWsHMNV9j2nsvwCB8F1FwtdfV04ieRHQ==
+ b=c37i30ijKEtZICk1OiSzOyB1QxjFBJa1YPyQjB7TUJKyrjVv8Mgy/C+PEC9WiuqShViosft6WuDHML5E5FMvPoslG8TXJI3pcKby27KOae5USpgWIsT46cPKk1EHZu6g6AVMBaSt2LjZDlu0/pyE6VReQPZDqQ8LSdHMJd+MbmvIKi65Eo72OKhxB+8bh+qBZ3Ghikg7zc9XOLjPYJ24Lx3/8NGTMXbbepVP1BQK7MtRItvgGwSTswmk01SW58VoOKNmBQRv7m8THQ3dFcvluOjY3gAkGWFbkh/s0PatmzH4+Umsnh9OABqPT3BLRE5JibBf8BXyw5n3dgcYkR0yaw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=dG+phzadvR5frCOuFqd4v1+9N97TAgc2Ju7m09jnEbo=;
- b=IZiFGC3b+jP0ILDrTgEOlYVLp+sn4XirsMkdt2oQ7lpKz2AIyDC4YJ30KP5s/T777IWZaLS0NVuVzWPopQYHnvENRsNz5XLQvPit6MBt0yHu0jLANSNKcY6EpehA3ROGmyK28MJiMa0CbJEqzI/LtpXoWEPvySKQV5D5RKM1swYjURr2ly9m9tKaKM1FRMU34k/2s0wEsMpgeqpOLjkDEMeYHF0r3P+j+cR+z46avWK4YBWWQjWv7lSCllc1PClWaDH0mbi3Y+pppdivtOkCB2bRzd9/K07YtFO9gr2otdaBgAP1wZVOAqMdafnSRdgktdq62pOrZPjRlljRP6j4Ow==
+ bh=Qi7yZJTu+dT5DvaxOstCIrBvgCzSu4gykdxmJgu69UA=;
+ b=LuLLaPpheemFJ7LQRVvhgHX/2ZN8Ssd1rf/2QX9ZOWwhXzLesvi953F0BtuPsqkjoQyiOOPXXMDlThNh4zFSBHJ+UOEYw5+2+5TNj+u8pxABBB+3gyJiUzvUE6sbwUMQpLLttzRI19RUEUOy+y6bAS21R5W/peNugWU0wL39eqVnsXbi6jJgq9kysPSHdH1inmrmz4HtzrBZyNgO5dz2jjDz+4ghTu43cDkh4bnoI/LQFJEXRRg4HC2icO9hj9lB+hMkjtnjZ28oJzHuXENGOI9sGBdlRpoR6R8LaP2EgpTrK6/Y74CWWUqAyQIp4VNDegEauWmEswlzcx7mJKvFCA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
  dkim=pass header.d=oss.nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
  s=selector1-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=dG+phzadvR5frCOuFqd4v1+9N97TAgc2Ju7m09jnEbo=;
- b=RLuYZxcATD9rzRwb5bZ5QjYybB2Ksf98SBIOSVcx+cunTuKljs4RVWtht5VYXTaqxuw9GKaVmSbFlg9P4yNGQFEuNUazD81awTAIK1xvnydRUvsj2Be44vQn5zNyKkD4Eqe/KSOQSgGg2QlD6Xsn3Gy7H+4rcJ5L2I91dOyPA9eeNtgrUjpMkWzU05BJeeYHUCewwD80jbMZhM1MmkRAcpe5KjfHCRv0kAW+2DC4Aymrji0MClLM6I58J0wPCEmh3VGsIrnLNmwbPu3KcezaZFN3pUxWG/pVLP58UsJGjxvMT0WnTDhtgBNHiapUypVN/XSCn3TxOtC6KvzV+mZfqw==
+ bh=Qi7yZJTu+dT5DvaxOstCIrBvgCzSu4gykdxmJgu69UA=;
+ b=a8BUFjc2rymDOC3bf7pT857QvnhTOQGVjlzwU9n71A7Qn25iUOfPhL88OjxMaqt6ZppQ6VYxxn18MlJ/Oc87VvBHC071vOoYiM2yAjMd06G9hCw9dIWpcpEXS1CO9e+iuNSxlm3d7oApRg8hVmFEy94ZLr4HRLwGxyH4oFJrV3moS6vnQUJnUpCaoKeiFqf1y5MkMj0t0jLJlcWmtrcZ5IL0diylob/YrcRP827BJiteE+OUxXQzMdvwWDeUHM1KJjMo8hIAQ+MEZdNjdZKMyOonMyRmB/0ZWrrgvUWOJhFjlbIWBc5ZEdYuTQSnp7PRaEJyoTLBoEex2QJ23ZgetQ==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=oss.nxp.com;
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
  by GV2PR04MB12293.eurprd04.prod.outlook.com (2603:10a6:150:32b::5) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.113.18; Thu, 18 Jun
- 2026 19:35:44 +0000
+ 2026 19:41:22 +0000
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0113.015; Thu, 18 Jun 2026
- 19:35:44 +0000
-Date: Thu, 18 Jun 2026 15:35:34 -0400
+ 19:41:22 +0000
+Date: Thu, 18 Jun 2026 15:41:13 -0400
 From: Frank Li <Frank.li@oss.nxp.com>
 To: Akhil R <akhilrajeev@nvidia.com>
 Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
@@ -69,70 +69,70 @@ Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
 	linux-hwmon@vger.kernel.org, linux-tegra@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 01/12] dt-bindings: i3c: Add mipi-i3c-static-method to
- support SETAASA
-Message-ID: <ajRIhqyT8bSi3EkN@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH v4 03/12] i3c: master: Support ACPI enumeration of child
+ devices
+Message-ID: <ajRJ2URg02R4AZyz@lizhi-Precision-Tower-5810>
 References: <20260616095429.3947205-1-akhilrajeev@nvidia.com>
- <20260616095429.3947205-2-akhilrajeev@nvidia.com>
+ <20260616095429.3947205-4-akhilrajeev@nvidia.com>
 Content-Disposition: inline
-In-Reply-To: <20260616095429.3947205-2-akhilrajeev@nvidia.com>
-X-ClientProxiedBy: PH7P223CA0001.NAMP223.PROD.OUTLOOK.COM
- (2603:10b6:510:338::22) To GV2PR04MB11799.eurprd04.prod.outlook.com
+In-Reply-To: <20260616095429.3947205-4-akhilrajeev@nvidia.com>
+X-ClientProxiedBy: SN7PR04CA0229.namprd04.prod.outlook.com
+ (2603:10b6:806:127::24) To GV2PR04MB11799.eurprd04.prod.outlook.com
  (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|GV2PR04MB12293:EE_
-X-MS-Office365-Filtering-Correlation-Id: 56c21eaf-4f55-4066-2669-08decd70ca18
+X-MS-Office365-Filtering-Correlation-Id: dd65533e-3c5d-4ac3-8ff6-08decd71934f
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|19092799006|23010399003|7416014|1800799024|366016|56012099006|11063799006|3023799007|4143699003|6133799003|22082099003|18002099003;
-X-Microsoft-Antispam-Message-Info: +wiczm52a8MephlXMzVvg/VzK6pqeZf2bQjF2uDhmrNJpy9TDjcdZH/i2b1a2JRshP7j/ITCTtCNvx7W/yvX1ApiEAEZ7ppWIX6ffeWtsMaltATInNnBTtXZm2Otb9H9kT38IwP4mIiaEhRZ8wQtS6O0k/r2NWi1CKLXb2OO9oroGt5F3N6BioMvwzLJEdLsOo2/F2ZyhSsl07sfsKrTAQAt7ijSsKIKy3l1uHR8Nwe3aTr5jR5yHqMhnVFc0krhS5jQs/7lFHOoTocC1lkunwy+6xBzprnEIbnYEho9wx9QAsDgQImfR3Ng9J4phIlgjOkYPXuQJcQjMBERlrR1MoMnm14fciiyxu0u7r1vCKt5vzqhq+XgPUu2xA6sxvNDU1zu0bcdZhpd7b+AFnFsB9GNL1gca5BPVzYMGCnU0IIGTKL//tLINwACtzydTtdvJ4mEZO+hTOaSYqKMtqrtrgI/iNpoapvZ+SX+gFRZW/MOabn8XPjISEY7s3+p1XrJwPAj2Y3zyYX3cGypTU21idpkx3FcFlvDulA3bXi9WKE30n+P1Mp2jZmtg4ppciRoqRBsMtq1/ChrX38BDOuHjdOocdMXuQg1xT6C03Na/yQnp6QH7qUgBAESYC9Zizs8SBggt+mYByajLDd12XGdJrAkwvnnHzKbzdhitMCogpxb8d7ewXlBquOEr0yoGkSXtKBEdYSAgJqagbsI4p+pFw==
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(19092799006)(23010399003)(7416014)(1800799024)(366016)(56012099006)(11063799006)(3023799007)(4143699003)(6133799003)(22082099003)(18002099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|19092799006|23010399003|7416014|1800799024|366016|56012099006|11063799006|3023799007|4143699003|10063799003|22082099003|18002099003;
+X-Microsoft-Antispam-Message-Info: Zn7kvPHhc6Y9Yw20j7rTBYqCIzRNPfKQ7771W375zqsmLIA3dNUU4zFc7SDogbL06s4mSx5Cgz3gjEnDixldc1fJeyfIGD52bmK7j6pnc1XUPmSFf8RV2Hf9WrpjPOm4kpX4hk2gosO6otZBzKzpHhpqLacuAl/w/kj8LpdC7t06WU5Xodbaj0AiBj7oo2Ut6qAFRRRMgrNvy937LnoeDw697dD/KefGdANG8SZWU/u26PaVOUfUEGD+BlVhN7zhkW3kjWl0JLBtrwbgfSgaxoi2bV3GbubV+MH4E5giqO9Mi7TjA3Bvmj3fdFSrO5ouyKNuJ9W+nqUkHYY8484U4ZExcrT518lj05E/rH2IOZYmn+960uB6quN5pvnpP7934LT2vAQq78PED6dcqRiPh377seQJ8nsXJ+XFz585ox8ZdRIOf2iF/whoHpWjqBp+d8ua/bA4qP1BmnCB8tr2XUIIf3MGKPV6RxDEEkho3kzrTF4fRYikxZiwkgHeEWOEmPPZuOrjL1cqCDYHHHUvyN7fwo+ejNFDqXnkF8b3ylXQ4ItwwpvKzDQyTAzPCjkVmdXDRuMvgbhzeSYqxanTwa1oAFxf4B7TwdJE3ltPcEOgFGpmerUyLiXiuNSMd4+h4pttYlLfIoVu2ejon3CYEMIRe8vVaXcwrfucGASLFSkHoXvEmwEopbkshp1W2WlNYHGksSDR289wY+EtdyEw3g==
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(19092799006)(23010399003)(7416014)(1800799024)(366016)(56012099006)(11063799006)(3023799007)(4143699003)(10063799003)(22082099003)(18002099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?ngMOuOMtuShTJGkDU+D5AEXmg3jSbfh1sOznLa5KgT+zt5cWaXqWVrhz0VF1?=
- =?us-ascii?Q?AsZQ70oC7swrgihjkFFFgfbpvW4f2p66vELQ55O9lFYQKjf9+EHPqtHDneJf?=
- =?us-ascii?Q?ypDUV1yjQz8vIYkTejj+f1ycv5dYwWiszU5h2TUuF3RrGGBYOWy9321KuE+Z?=
- =?us-ascii?Q?WmXh30sP0UvK1S2HcbnJJS0ZK5JoSVB2dupPIBayH5ZM59jNhXfGCuhOVyhG?=
- =?us-ascii?Q?9Fbmp74/qIoo03K/sH/C46Rz/k0FCt9dnXWsuh7cI10f9h7I76mwPo1+Yn4c?=
- =?us-ascii?Q?Z9TWDAYeJ7lNRW2oa86QAnjRE4Pg76MT86+o/KwEHioyOThePkBUa/94RfUt?=
- =?us-ascii?Q?lEHwIBc2sbFTjYdLu6w78EdN3PzN4hqA7EwNkedNQZJPpRMtW/xnxXS6+gP3?=
- =?us-ascii?Q?qUGgRRC4pvW0ciNcg2ifD2KDn9DiXfXetYUiV6OAfEI9tzlJAlCLYa7ikd5f?=
- =?us-ascii?Q?BSN7iCAg3EDiIm6UwkeFhtTCbkYunuVUe3u5sHg8Yl5mBSC+UUCi6yFC4/hJ?=
- =?us-ascii?Q?PPshqZ3VUb8Ku1DmZkcfOK6r/SJFq0lKiTIQFOZb79os7dtiOTXTAMR5Brmd?=
- =?us-ascii?Q?VpCaB8okEioUeRH5XDNRGA7ifBFwk+zFuYf8Om0/8izwlIQAxbdx9+gtY4qV?=
- =?us-ascii?Q?uXT0OI5sDiiyStwfwxqLqg1o84SEcoO8fW4auN+sp6NuibPOBHRZQzsJS94f?=
- =?us-ascii?Q?XhISqj1TuI7+oIKJ9Wfcyj/6agEz+kWnEVTogK/7/4UsI4KkR4+AUuI+RX5O?=
- =?us-ascii?Q?L6GuCfwS35Q3gOoRibxQHb/Ft0xN7Kiew1jS09xLR9Q60wmCPLIeYwwjW6oB?=
- =?us-ascii?Q?UXZL/Yz8bqhMC8Nn2eGZwvsCa7zsDlkDmQraDKYz0z/M9h23f7pXcf/iZ+xg?=
- =?us-ascii?Q?GaM6AhFBrzQSc2dR0wOJvW4aLnTr/8gyDcENF0CDfWwgERqhvDLkfpwKHx8J?=
- =?us-ascii?Q?ncQlpvBhEGs9MwHScVaR0vJxsQynXVymQPDibCHdHyHvME1dvYKJt/nVJsz9?=
- =?us-ascii?Q?5tVxKGQd/k4cjVNRVHmwVwFV2OaANoFBd7kTGztz9H+HP2WSOyYPX4dd9YHE?=
- =?us-ascii?Q?C33u1hsIMNWLmm62QXKro1y0uSVs6cSLt5A6ktagYeJBmfKpE7E2JFzhCOgw?=
- =?us-ascii?Q?hugbXei+ji83rAmZDFxmBExpE4u4CPUrq+lThyh+WX74M1Yhu+P8UvEodc63?=
- =?us-ascii?Q?nXcQZBZwBDmi1dUfJSgEdWsL2YNYwvd7S25rRHoZ8M3z3Lfhgsst9T8UMtkJ?=
- =?us-ascii?Q?GZAgMZKb741cAxoizHF9DA2mrfAbM67+o/gGpCAFCXNOOYFLyAwPm6Dz/ryD?=
- =?us-ascii?Q?t+9hRukI85doUlS158A98mU99zSEjfD7H8/Nbog+KjkndQFn88NIqvce1WRL?=
- =?us-ascii?Q?guZXvHdiFi0+GuWgI8CmNBS9TM1Z2CmUEAfUwOwRaJ5hKaM7EXrwbTNGY5Or?=
- =?us-ascii?Q?IiHKdYzY+KusNFicFYt79AVW95GRkQR/8Wa44OtwDP2EVGIJmDx7UPzT4SWr?=
- =?us-ascii?Q?vJjB+fqytUYoU/PRJOtoohV0ORKZIsIMr+w6rnuXCAFy8xZ6fv7YO2L/H94Y?=
- =?us-ascii?Q?chw59+neage003XSfIOtxGni7uaYimToGwoMReGC5rUQsR+lG0PsQDrpe84W?=
- =?us-ascii?Q?QLiNKgImhrlQilaPQFr99NhL1kg/QgjyKZE1+3yQCPaRxpOqvpyyLReL4iQM?=
- =?us-ascii?Q?jPu30aHXoRhvBd4nihaL1XLg2XZoCeqhvNfe2yjayJtZ0MmlmM1r4/mHu2KT?=
- =?us-ascii?Q?A52I4LRFDM4sI88jBDpxVb59LM09DTj+naFy8LrLRWdzObEpi7Rl?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?vcY2xVMSh/fGa7o9wj4WMMMFN4fdUx7UKk13kzvfY/QGbcQuEXetujp0NLeo?=
+ =?us-ascii?Q?XSfHw0qdy3UXgV4+WmkcCxG6wNKphkr4RCzqt/xZg704REwK7nN0C+Wlo4Rj?=
+ =?us-ascii?Q?ftDeqH9ZxnzaVv7hPLv7ljpvZAzn52HUKdwaySwWaukEbldNBtgwPY2ciUv6?=
+ =?us-ascii?Q?wqrHez+z789X03o5r8Ql50BVNLJhgQBbZ4IvffPdSswWxLiYs9l1ekl12XvZ?=
+ =?us-ascii?Q?83WbHrTL7PCAI1EMyVmvob9H/55YMw+sQEz0rIbfcZVRCk2tVUyhntedrifk?=
+ =?us-ascii?Q?rRLmpmoXYlzJii7BPKdik7mt3hK1qnO0VOqObA6XNuqc52jfGBXAjs8cH/Jz?=
+ =?us-ascii?Q?yHXzLXfNeO24AEN5+Fyc1d48eHL25sLQIuqOoBzyUtYEZWJEwzBPN+UIsrXZ?=
+ =?us-ascii?Q?rfViZz5s1SixpX1xe6xzuiaMj5+/wwOlwSHeNBAntiBW1YIDJzBOx/5yHhez?=
+ =?us-ascii?Q?CIlPepRiq7s752rEn7Xx7JoUYr4QBKNXR1NCPAoRapDQFSn7sUaFT0uovmKY?=
+ =?us-ascii?Q?cp0TPN2mfs0077+3nqU8mn7FWoXf/y99Orc4G6SNwnJPDF8dIVp/hDQKGea7?=
+ =?us-ascii?Q?ujaIaJVZz4tikMFG5kLcF9u66SjnO64j5DwQIqORuCV3+ZpOnbtQT5kf0m4Z?=
+ =?us-ascii?Q?MSTRqeJi3WeLjIWDO+paecxm/jdPtYUbp5qEYz2ysTqkhfK9Ny3DsEIZCgy4?=
+ =?us-ascii?Q?nK+NAlKR/6YuI6mY9Z+pdW3eWVi5U9eth4SqNuslerQmU91HzTwsMLKsC+kz?=
+ =?us-ascii?Q?MLvODNoWpq3ocrlQVQsBl7usrYjAgEt3yX3ueEsq2d/pfsyoDqP5MDfqs0Gm?=
+ =?us-ascii?Q?o7CpkSQpdS2S9/G2/2p6go3oMmE7sjktK4XVTgk9qmt0SCkTpu+99WYVROia?=
+ =?us-ascii?Q?30wTX/QwlykDO/NBCy/qyWxSzGhd9mWHZxRhUB+CP20Wu8GC9DORr2pcGCTp?=
+ =?us-ascii?Q?iGKvnFP1AklYYi//MEqxU1cyuWI8tkMN7sf4j75oevScK+sN89aKwyLq2J+L?=
+ =?us-ascii?Q?fuMpti3KIRJalZDt5xFxX9DlmroBurYYJ9uLUFYD46BKppo1JWyXaMlYai6G?=
+ =?us-ascii?Q?ChPbY0dbfUNJXTTGS9mY3jhOeGTNV7fxkXmVdK+f3BYBTsETuVztxA/Zz4R4?=
+ =?us-ascii?Q?mKihhVoGYaihv4SCu4QkYl+G1bmWTY3r7ZBmCKKdACQ2dou2Gq0FS6SPFbKR?=
+ =?us-ascii?Q?YvV7WoQryGMfUNHCC9WnSbPti7qJoktGAIb+GFGzP3Sf2BsvgJCXyjYZBuH9?=
+ =?us-ascii?Q?xqVRmz2deFOUR8DYf8GGPecCYb5LJCWl5/myQbaNPK9CTNF0DjOUT0NSiakC?=
+ =?us-ascii?Q?ILWRamLEXowuLNQY94Vgt3oFdxqjL0nsNykAmyz+K91jhhW1z3/VHGwCU/Qg?=
+ =?us-ascii?Q?Fz48AXHad4yRxS/3ZjI3vdV7M9g658grkqBFr4+DJXIzvUhkfr/41IA1zKcs?=
+ =?us-ascii?Q?U5rkrGqUgAJsdxy/qiUqtj6wEEwI8TbySLgDmQj4iT0wcHWEhpfBqgoS+Cgn?=
+ =?us-ascii?Q?uKCv++FvuUWybQCgmAL2vtHU/S3b1lHH3n3vG6YvJ7+R8431HZ0ttJCVNJ1y?=
+ =?us-ascii?Q?djWVnxdFGkNosXOLDkfNr8eG9ztG29eekYuB9w5RxluLLun27xNRpYZ0yUpv?=
+ =?us-ascii?Q?aw3LNqCmzl7Qs/JSnUFWZZA8m5IeyUq7HDQVKrKLyTHnowTyQ8bQs/APFm8b?=
+ =?us-ascii?Q?NXPV3K6OYYKWHSoAkqY/YUYJSoQGk/c9B2qC72Ew9ZSip7Va9vPEwbmxOSng?=
+ =?us-ascii?Q?hXPSdmW5aGjezytMB8aWl4wB3KKmDOP9EnLMavTTxDvMYDHpDHTd?=
 X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 56c21eaf-4f55-4066-2669-08decd70ca18
+X-MS-Exchange-CrossTenant-Network-Message-Id: dd65533e-3c5d-4ac3-8ff6-08decd71934f
 X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Jun 2026 19:35:44.5864
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Jun 2026 19:41:22.2114
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: h1tnvdrKPOLG4DjKduMxjiRlh/kTIZ8sK3B7JCwcAmW+Reggmpnilz7XU1KU0gH+8elfx8/ilhCIoG8BiO5Tk56PZpLlXkJcGVgUOP93ezmluePlNtOxFROSD7x8efYq
+X-MS-Exchange-CrossTenant-UserPrincipalName: Hmq+14BDrR2+FHlv0BQ/kBQcuHgOgfHcViHFBuv/oBPpk35WyUhekcJrq+hxZvjMwc1oMk19V+qat/sFUfouR8wiBKmolTp403U2D2g+MHP0SUvJph0Ylf3Y3cXh+K0V
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV2PR04MB12293
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260618_123549_899981_D34F0F6A 
-X-CRM114-Status: GOOD (  32.13  )
+X-CRM114-CacheID: sfid-20260618_124126_751774_74A41BCB 
+X-CRM114-Status: GOOD (  30.48  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,23 +149,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jun 16, 2026 at 09:54:15AM +0000, Akhil R wrote:
-> Add the 'mipi-i3c-static-method' property mentioned in the MIPI I3C
-> Discovery and Configuration Specification [1] to specify which discovery
-> method an I3C device supports during bus initialization. The property is
-> a bitmap, where a bit value of 1 indicates support for that method, and 0
-> indicates lack of support.
+On Tue, Jun 16, 2026 at 09:54:17AM +0000, Akhil R wrote:
+> Although the existing subsystem allows host controllers to register
+> through the ACPI table, it was not possible to describe I3C or I2C
+> devices when using ACPI. This is because the driver relied on the reg
+> property to retrieve the PID, static address, etc., whereas ACPI uses
+> _ADR or serial resources to describe such devices.
 >
-> Bit 0: SETDASA CCC (Direct)
-> Bit 1: SETAASA CCC (Broadcast)
-> Bit 2: Other CCC (vendor / standards extension)
-> All other bits are reserved.
+> Read _ADR and LVR from ACPI resources and extract the data as per the
+> ACPI specification for an I3C bus. Also read mipi-i3c-static-address as
+> per the MIPI DISCO specifications [1] to get the static address to be
+> used.
 >
-> It is specifically needed when an I3C device requires SETAASA for the
-> address assignment. SETDASA will be supported by default if this property
-> is absent, which means for now the property just serves as a flag to
-> enable SETAASA, but keep the property as a bitmap to align with the
-> specifications.
+> Enable describing I3C or I2C devices in the ACPI table. This is required
+> if the device uses a static address or if it needs device-specific
+> properties.
 >
 > [1] https://www.mipi.org/mipi-disco-for-i3c-download
 >
@@ -174,77 +172,218 @@ On Tue, Jun 16, 2026 at 09:54:15AM +0000, Akhil R wrote:
 
 Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
->  .../devicetree/bindings/i3c/i3c.yaml          | 36 ++++++++++++++++---
->  include/dt-bindings/i3c/i3c.h                 |  4 +++
->  2 files changed, 35 insertions(+), 5 deletions(-)
+>  drivers/i3c/master.c | 149 ++++++++++++++++++++++++++++++++++++++++---
+>  1 file changed, 141 insertions(+), 8 deletions(-)
 >
-> diff --git a/Documentation/devicetree/bindings/i3c/i3c.yaml b/Documentation/devicetree/bindings/i3c/i3c.yaml
-> index e25fa72fd785..5603f2e7807d 100644
-> --- a/Documentation/devicetree/bindings/i3c/i3c.yaml
-> +++ b/Documentation/devicetree/bindings/i3c/i3c.yaml
-> @@ -31,10 +31,12 @@ properties:
->        described in the device tree, which in turn means we have to describe
->        I3C devices.
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index 3b19a5e8f46d..f0e05bcac26d 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -5,6 +5,7 @@
+>   * Author: Boris Brezillon <boris.brezillon@bootlin.com>
+>   */
 >
-> -      Another use case for describing an I3C device in the device tree is when
-> -      this I3C device has a static I2C address and we want to assign it a
-> -      specific I3C dynamic address before the DAA takes place (so that other
-> -      devices on the bus can't take this dynamic address).
-> +      Other use-cases for describing an I3C device in the device tree are:
-> +      - When the I3C device has a static I2C address and we want to assign
-> +        it a specific I3C dynamic address before the DAA takes place (so
-> +        that other devices on the bus can't take this dynamic address).
-> +      - When the I3C device requires SETAASA for its discovery and uses a
-> +        pre-defined static address.
+> +#include <linux/acpi.h>
+>  #include <linux/atomic.h>
+>  #include <linux/bitmap.h>
+>  #include <linux/bug.h>
+> @@ -2596,6 +2597,55 @@ EXPORT_SYMBOL_GPL(i3c_master_do_daa);
 >
->    "#size-cells":
->      const: 0
-> @@ -145,7 +147,31 @@ patternProperties:
->            Dynamic address to be assigned to this device. In case static address is
->            present (first cell of the reg property != 0), this address is assigned
->            through SETDASA. If static address is not present, this address is assigned
-> -          through SETNEWDA after assigning a temporary address via ENTDAA.
-> +          through SETNEWDA after assigning a temporary address via ENTDAA. If
-> +          SETAASA is used, this property is not used, and the static address itself
-> +          becomes the dynamic address.
+>  #define OF_I3C_REG1_IS_I2C_DEV			BIT(31)
+>
+> +#ifdef CONFIG_ACPI
+> +static int i3c_acpi_get_i2c_resource(struct acpi_resource *ares, void *data)
+> +{
+> +	struct i2c_dev_boardinfo *boardinfo = data;
+> +	struct acpi_resource_i2c_serialbus *sb;
 > +
-> +      mipi-i3c-static-method:
-> +        $ref: /schemas/types.yaml#/definitions/uint32
-> +        minimum: 0x1
-> +        maximum: 0x7
-> +        default: 1
-> +        description: |
-> +          Bitmap describing which methods of Dynamic Address Assignment from a
-> +          static address are supported by this I3C Target. For each defined bit
-> +          position, a set bit indicates support for that method and a cleared
-> +          bit indicates lack of support.
+> +	if (boardinfo->base.addr || !i2c_acpi_get_i2c_resource(ares, &sb))
+> +		return 1;
 > +
-> +            Bit 0: SETDASA CCC (Direct)
-> +            Bit 1: SETAASA CCC (Broadcast)
-> +            Bit 2: Other CCC (vendor / standards extension)
-> +            All other bits are reserved.
+> +	boardinfo->base.addr = sb->slave_address;
+> +	if (sb->access_mode == ACPI_I2C_10BIT_MODE)
+> +		boardinfo->base.flags |= I2C_CLIENT_TEN;
 > +
-> +          This property follows the MIPI I3C specification. The primary use
-> +          of this property is to indicate support for SETAASA, i.e Bit 1, but
-> +          will allow other values mentioned in the specification so that it
-> +          mirrors the specification. SETDASA will remain as the default method
-> +          even if this property is not present.
+> +	boardinfo->lvr = sb->lvr;
+> +
+> +	return 1;
+> +}
+> +
+> +static int i3c_acpi_add_i2c_boardinfo(struct i2c_dev_boardinfo *boardinfo,
+> +				      struct fwnode_handle *fwnode)
+> +{
+> +	struct acpi_device *adev = to_acpi_device_node(fwnode);
+> +	LIST_HEAD(resources);
+> +	int ret;
+> +
+> +	boardinfo->base.fwnode = acpi_fwnode_handle(adev);
+> +	acpi_set_modalias(adev, dev_name(&adev->dev), boardinfo->base.type,
+> +			  sizeof(boardinfo->base.type));
+> +
+> +	ret = acpi_dev_get_resources(adev, &resources,
+> +				     i3c_acpi_get_i2c_resource, boardinfo);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	acpi_dev_free_resource_list(&resources);
+> +
+> +	if (!boardinfo->base.addr)
+> +		return -ENODEV;
+> +
+> +	return 0;
+> +}
+> +#else
+> +static inline int i3c_acpi_add_i2c_boardinfo(struct i2c_dev_boardinfo *boardinfo,
+> +					     struct fwnode_handle *fwnode)
+> +{
+> +	return -ENODEV;
+> +}
+> +#endif
+> +
+>  static int
+>  i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
+>  			     struct fwnode_handle *fwnode, u32 *reg)
+> @@ -2612,6 +2662,13 @@ i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
+>  		ret = of_i2c_get_board_info(dev, to_of_node(fwnode), &boardinfo->base);
+>  		if (ret)
+>  			return ret;
+> +
+> +		/* LVR is encoded in reg[2] for Device Tree. */
+> +		boardinfo->lvr = reg[2];
+> +	} else if (is_acpi_device_node(fwnode)) {
+> +		ret = i3c_acpi_add_i2c_boardinfo(boardinfo, fwnode);
+> +		if (ret)
+> +			return ret;
+>  	} else {
+>  		return -EINVAL;
+>  	}
+> @@ -2626,9 +2683,6 @@ i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
+>  		return -EOPNOTSUPP;
+>  	}
 >
->      required:
->        - reg
-> diff --git a/include/dt-bindings/i3c/i3c.h b/include/dt-bindings/i3c/i3c.h
-> index 373439218bba..78b8c634aad8 100644
-> --- a/include/dt-bindings/i3c/i3c.h
-> +++ b/include/dt-bindings/i3c/i3c.h
-> @@ -13,4 +13,8 @@
->  #define I2C_NO_FILTER_HIGH_FREQUENCY    (1 << 5)
->  #define I2C_NO_FILTER_LOW_FREQUENCY     (2 << 5)
+> -	/* LVR is encoded in reg[2]. */
+> -	boardinfo->lvr = reg[2];
+> -
+>  	list_add_tail(&boardinfo->node, &master->boardinfo.i2c);
+>  	fwnode_handle_get(fwnode);
 >
-> +#define I3C_ADDR_METHOD_SETDASA     (1 << 0)
-> +#define I3C_ADDR_METHOD_SETAASA     (1 << 1)
-> +#define I3C_ADDR_METHOD_VENDOR      (1 << 2)
+> @@ -2683,8 +2737,8 @@ i3c_master_add_i3c_boardinfo(struct i3c_master_controller *master,
+>  	return 0;
+>  }
+>
+> -static int i3c_master_add_dev(struct i3c_master_controller *master,
+> -			      struct fwnode_handle *fwnode)
+> +static int i3c_master_add_of_dev(struct i3c_master_controller *master,
+> +				 struct fwnode_handle *fwnode)
+>  {
+>  	u32 reg[3];
+>  	int ret;
+> @@ -2708,6 +2762,74 @@ static int i3c_master_add_dev(struct i3c_master_controller *master,
+>  	return ret;
+>  }
+>
+> +#ifdef CONFIG_ACPI
+> +static int i3c_master_add_acpi_dev(struct i3c_master_controller *master,
+> +				   struct fwnode_handle *fwnode)
+> +{
+> +	struct acpi_device *adev = to_acpi_device_node(fwnode);
+> +	acpi_bus_address adr;
+> +	u32 reg[3] = { 0 };
+> +	int ret;
 > +
->  #endif
+> +	/*
+> +	 * If the ACPI table entry has _ADR method, it's an I3C device.
+> +	 * Otherwise it may be an I2C device described by an I2cSerialBus
+> +	 * resource. If no I2cSerialBus resource is found, ignore the entry.
+> +	 */
+> +	if (!acpi_has_method(adev->handle, "_ADR")) {
+> +		ret = i3c_master_add_i2c_boardinfo(master, fwnode, reg);
+> +		if (ret == -ENODEV)
+> +			return 0;
+> +
+> +		return ret;
+> +	}
+> +
+> +	adr = acpi_device_adr(adev);
+> +
+> +	/* For I3C devices, _ADR will have the 48 bit PID of the device  */
+> +	reg[1] = upper_32_bits(adr);
+> +	reg[2] = lower_32_bits(adr);
+> +
+> +	fwnode_property_read_u32(fwnode, "mipi-i3c-static-address", &reg[0]);
+> +
+> +	return i3c_master_add_i3c_boardinfo(master, fwnode, reg);
+> +}
+> +
+> +static u8 i3c_acpi_i2c_get_lvr(struct i2c_client *client)
+> +{
+> +	struct acpi_device *adev = to_acpi_device_node(client->dev.fwnode);
+> +	struct i2c_dev_boardinfo boardinfo = {};
+> +	LIST_HEAD(resources);
+> +	int ret;
+> +	u8 lvr;
+> +
+> +	lvr = I3C_LVR_I2C_INDEX(2) | I3C_LVR_I2C_FM_MODE;
+> +
+> +	ret = acpi_dev_get_resources(adev, &resources,
+> +				     i3c_acpi_get_i2c_resource, &boardinfo);
+> +	if (ret < 0)
+> +		return lvr;
+> +
+> +	if (boardinfo.base.addr)
+> +		lvr = boardinfo.lvr;
+> +
+> +	acpi_dev_free_resource_list(&resources);
+> +
+> +	return lvr;
+> +}
+> +#else
+> +static inline int i3c_master_add_acpi_dev(struct i3c_master_controller *master,
+> +					  struct fwnode_handle *fwnode)
+> +{
+> +	return -ENODEV;
+> +}
+> +
+> +static inline u8 i3c_acpi_i2c_get_lvr(struct i2c_client *client)
+> +{
+> +	return I3C_LVR_I2C_INDEX(2) | I3C_LVR_I2C_FM_MODE;
+> +}
+> +#endif
+> +
+>  static int fwnode_populate_i3c_bus(struct i3c_master_controller *master)
+>  {
+>  	struct device *dev = &master->dev;
+> @@ -2719,7 +2841,13 @@ static int fwnode_populate_i3c_bus(struct i3c_master_controller *master)
+>  		return 0;
+>
+>  	fwnode_for_each_available_child_node_scoped(fwnode, child) {
+> -		ret = i3c_master_add_dev(master, child);
+> +		if (is_of_node(child))
+> +			ret = i3c_master_add_of_dev(master, child);
+> +		else if (is_acpi_device_node(child))
+> +			ret = i3c_master_add_acpi_dev(master, child);
+> +		else
+> +			continue;
+> +
+>  		if (ret)
+>  			return ret;
+>  	}
+> @@ -2787,8 +2915,13 @@ static u8 i3c_master_i2c_get_lvr(struct i2c_client *client)
+>  	u8 lvr = I3C_LVR_I2C_INDEX(2) | I3C_LVR_I2C_FM_MODE;
+>  	u32 reg[3];
+>
+> -	if (!fwnode_property_read_u32_array(client->dev.fwnode, "reg", reg, ARRAY_SIZE(reg)))
+> -		lvr = reg[2];
+> +	if (is_of_node(client->dev.fwnode)) {
+> +		if (!fwnode_property_read_u32_array(client->dev.fwnode, "reg",
+> +						    reg, ARRAY_SIZE(reg)))
+> +			lvr = reg[2];
+> +	} else if (is_acpi_device_node(client->dev.fwnode)) {
+> +		lvr = i3c_acpi_i2c_get_lvr(client);
+> +	}
+>
+>  	return lvr;
+>  }
 > --
 > 2.43.0
 >
