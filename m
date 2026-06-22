@@ -4,90 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 53942CDB466
-	for <linux-i3c@archiver.kernel.org>; Mon, 22 Jun 2026 02:22:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25C09CD98F2
+	for <linux-i3c@archiver.kernel.org>; Mon, 22 Jun 2026 16:36:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Date:Message-Id:
+	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d/VfOzRQjuTnIPJ/m2ZI2CWCKnUkoxnTd7AB85N4i8U=; b=2fVuBoo+LBfADJ
-	wESXkfay2tJe9axd8IEP1hbHgyk5W6Wo4vK5YfGEBzjEUB5jYKsOZQ6IKMMAdPQT0/BOvVN2y2Ryy
-	qIoklGYZ+eqyCFY/74PG2+XYdt3rQZwPxtUbIJpJx/W7ePgoe/BvVM8P6eUqv/8iT+bF1L3cAoIyV
-	mcOcrqLl4B/viTgijGdCG766/xJpiNRgFVMYNF0lzrT/AN6FDlD4AkRadhg0O7F7aChJDjxkBsV8j
-	WUCr/sEsQVZ2l4/wgy+LMxQW5qkf29ZlRoe6FYM7cPBT0ZU5YojAqRh2QLU4N1kU02Tg0Z4ak9Oew
-	hSi23hnhGXV39p+EacJw==;
+	List-Owner; bh=LdO9UJ1jkERyM4kzCdiKGdEm+jv2mvEK6uuZ4Rf+8Gs=; b=4NV1ocm2kAJhCY
+	+ITxb2hbR+tPLdyGPjqzW52UWz+WQ6D3QkKtXuhhARxvC8GaMUBM/z3A/1K4UjPbt/nktKk3mN43c
+	dkDhde6iB4MYXc5qCRwobSUrz1SWraq4bYA3gwMO8GwB8KSGRAqz8mxVamysNSQ2GDmNGhlBZIwkt
+	opn1hksrPx0YUt7H7NEtuporzLfWFlz7DXUYSf7SXfvGKN2XS++VFNLroEmVQOcvzOYnflnv/vO0p
+	uw+1CKXbprSCZzMID2zT0kWq4Gw4HeQMZOsXxVqrEE1mHUFBkok3aUTA9wt14GgA4B3foQ5/+pfwk
+	0Jj8mwxVeOVlqumm1sFg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wbUJG-00000004Ih8-3ova;
-	Mon, 22 Jun 2026 02:22:50 +0000
-Received: from ms.asus.com ([103.10.4.13])
+	id 1wbhdZ-00000005By5-3lVl;
+	Mon, 22 Jun 2026 16:36:41 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wbUJE-00000004Igm-2EkQ
+	id 1wbhdY-00000005Bxt-2OL0
 	for linux-i3c@lists.infradead.org;
-	Mon, 22 Jun 2026 02:22:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
-  d=asmedia.com.tw; i=@asmedia.com.tw; q=dns/txt;
-  s=asmediacomtw; t=1782094968; x=1813630968;
-  h=from:to:cc:subject:date:message-id:references:
-   in-reply-to:mime-version:content-transfer-encoding;
-  bh=KnodaR3et15Yj8h1hcQH+Cyk2J1ed4H42sSl6JaOokE=;
-  b=LzJXO/q5yUYYAaTaXXYXlkqCZEl3zJuOQgQquvw/mQ64IXmnmgmEuy+s
-   6QM3pVbBA1EXIbT1HFNJm4sZaRLcAIX3KjDDZiiOGLK1ZRmi8MWuA6AEd
-   ROgYYOeJBJHqbANyVlqqr0402m2GbI47RMNqWFJAfqdsZEOuMr/dfN7eN
-   A=;
-X-CSE-ConnectionGUID: Gi3zMA2TRMiSlIFHUaEzkw==
-X-CSE-MsgGUID: uSDYiVLfSNKcG2Dh8ohGkw==
-Received: from unknown (HELO APZA005TMD.corpnet.asus) ([172.22.47.65])
-  by ms.asus.com with ESMTP; 22 Jun 2026 10:22:37 +0800
-Received: from APZA006TMD.corpnet.asus (172.22.47.66) by
- APZA005TMD.corpnet.asus (172.22.47.65) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.43; Mon, 22 Jun 2026 10:22:36 +0800
-Received: from APZA006TMD.corpnet.asus ([172.22.47.66]) by
- APZA006TMD.corpnet.asus ([172.22.47.66]) with mapi id 15.02.2562.043; Mon, 22
- Jun 2026 10:22:36 +0800
-From: =?utf-8?B?Sm0gTGlhbyjlu5blu7rpipgp?= <Jm_Liao@asmedia.com.tw>
-To: Frank Li <Frank.li@oss.nxp.com>
-CC: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
-	"Frank.Li@nxp.com" <Frank.Li@nxp.com>, "linux-i3c@lists.infradead.org"
-	<linux-i3c@lists.infradead.org>, "linux-kernel@vger.kernel.org"
-	<linux-kernel@vger.kernel.org>, =?utf-8?B?WWQgVHNlbmco5pu+6KOV6YGUKQ==?=
-	<Yd_Tseng@asmedia.com.tw>, =?utf-8?B?UGF0cmljayBZZW4o6Za75oay5bu3KQ==?=
-	<Patrick_Yen@asmedia.com.tw>
-Subject: RE: [PATCH 0/4] i3c: mipi-i3c-hci: Add support for ASMT I3C
- controller
-Thread-Topic: [PATCH 0/4] i3c: mipi-i3c-hci: Add support for ASMT I3C
- controller
-Thread-Index: Adz/CUSG5Xi6wWEaTgCEIqDS0qn65AA0mC+AAIQu7XA=
-Date: Mon, 22 Jun 2026 02:22:36 +0000
-Message-ID: <8c04b80615c647f7a6b60e75d3d5c80f@asmedia.com.tw>
-References: <f43667a6eff54729a06aed3c23877c01@asmedia.com.tw>
- <ajWTJz4oIDU5dIiC@lizhi-Precision-Tower-5810>
-In-Reply-To: <ajWTJz4oIDU5dIiC@lizhi-Precision-Tower-5810>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.78.106.71]
-x-tm-as-product-ver: SMEX-14.0.0.3239-9.1.2019-30022.003
-x-tm-as-result: No-10--9.041400-8.000000
-x-tmase-matchedrid: SD3TfnVbAUofHU5fltg9RiyIz3xZbkbD0swyltiO/TuRnjfvXVSKt0uO
-	kOE/Vy/rd3WaQ3GsfAEee3W6j059JO7F68qEGD1WrdPIcvaPIfY4+taAy0d3a5BVub4dryB3BBQ
-	BKSVCNK8F/6guvbJCTQb2QzYoEKG1jWDfMO3Wy/kMcdUVpjQtQvAzy/g+vdT/M6E3dEajW/UlTS
-	cbe2l74JsI6K9TYesL5o4up6otKKxCVmjGJJ+P5HwlhGLby224xbk/8klUDv7+mCyV6BiuzXT2v
-	pDl5fhm
-x-tm-as-user-approved-sender: No
-x-tm-as-user-blocked-sender: No
-x-tmase-result: 10--9.041400-8.000000
-x-tmase-version: SMEX-14.0.0.3239-9.1.2019-30022.003
-x-tm-snts-smtp: 5BC5FB2A2D6D2B218EEE46B751FF86C9E4F7743A5E1DF133685D6E16627EAF442000:8
-MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260621_192248_866402_E7D43A17 
-X-CRM114-Status: UNSURE (   6.10  )
-X-CRM114-Notice: Please train this message.
+	Mon, 22 Jun 2026 16:36:40 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 907E2601F3;
+	Mon, 22 Jun 2026 16:36:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 49A751F000E9;
+	Mon, 22 Jun 2026 16:36:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1782146199;
+	bh=tBJtzb6VJQFZhPn6/WxoyfjIDUV2rSIEKj+UKnMeUo0=;
+	h=Subject:From:In-Reply-To:References:Date:To:Cc;
+	b=fo6x0cZo/OjvlRi5/CM8kLlbvKN7yjBU2XI6Wr1mgUwep4hH2oaP8ZQJuhBS11oD1
+	 0ZX7AaE8KyjloJhb2W0CVv69Ap+muQsgtcw9a2+W4D5CkEIY/HdkT7o+o7vTVmBC8i
+	 67R8Bn/ZZM2kaKkkPoblmmnM6RXTIfyZDcJNG926N27xT4z5VMVEczElbibkV98bj8
+	 poVAV76sCor5+pA3eVMOgvoi5TL0Mn9HdTlZXKXMURvNBjij9GNIZaN4QW1fP/iqBo
+	 E0J9qAu1wp4HjA5hhfYND0SmJBzg23K2L5eYmeoG/RvqcFe08spl8mMEgcAgHasgP8
+	 Tx6MkHn+CslaA==
+Received: from [10.30.226.235] (localhost [IPv6:::1])
+	by aws-us-west-2-korg-oddjob-rhel9-1.codeaurora.org (Postfix) with ESMTP id 1AFD23930907;
+	Mon, 22 Jun 2026 16:36:31 +0000 (UTC)
+Subject: Re: [GIT PULL] I3C changes for 7.2
+From: pr-tracker-bot@kernel.org
+In-Reply-To: <202606212103298c8aac5e@mail.local>
+References: <202606212103298c8aac5e@mail.local>
+X-PR-Tracked-List-Id: <linux-i3c.lists.infradead.org>
+X-PR-Tracked-Message-Id: <202606212103298c8aac5e@mail.local>
+X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-7.2
+X-PR-Tracked-Commit-Id: 678e9409dd78d5c080607df15c6f346c7edb03d0
+X-PR-Merge-Tree: torvalds/linux.git
+X-PR-Merge-Refname: refs/heads/master
+X-PR-Merge-Commit-Id: 9f333cb6b57c3f72073bf058f984b180cc00bf7b
+Message-Id: <178214618981.1310507.1028603713483011242.pr-tracker-bot@kernel.org>
+Date: Mon, 22 Jun 2026 16:36:29 +0000
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: Linus Torvalds <torvalds@linux-foundation.org>, linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,27 +71,25 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Frank,
+The pull request you sent on Sun, 21 Jun 2026 23:03:29 +0200:
 
-Thank you for your feedback and guidance. I apologize for the improper format.
+> git://git.kernel.org/pub/scm/linux/kernel/git/i3c/linux.git tags/i3c/for-7.2
 
-I am currently conducting an internal review of the code and validation on the latest kernel version. I will resend the patch series using git send-email as soon as possible.
+has been merged into torvalds/linux.git:
+https://git.kernel.org/torvalds/c/9f333cb6b57c3f72073bf058f984b180cc00bf7b
 
-Best regards,
-Jian-Ming Liao
+Thank you!
 
-==================================================================================================================
-This email and any attachments to it contain confidential information and are intended solely for the use of the individual to whom it 
-is addressed.If you are not the intended recipient or receive it accidentally, please immediately notify the sender by e-mail and delete 
-the message and any attachments from your computer system, and destroy all hard copies. If any, please be advised that any unauthorized 
-disclosure, copying, distribution or any action taken or omitted in reliance on this, is illegal and prohibited. Furthermore, any views 
-or opinions expressed are solely those of the author and do not represent those of ASMedia Technology Inc. Thank you for your cooperation.
-==================================================================================================================
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.docs.kernel.org/prtracker.html
+
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
