@@ -4,53 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC6B6CDB47C
-	for <linux-i3c@archiver.kernel.org>; Thu, 25 Jun 2026 03:21:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10168CDB47F
+	for <linux-i3c@archiver.kernel.org>; Thu, 25 Jun 2026 09:38:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bPe07J4PZKIn/Fvob3UoWF9eSOE9FvIK7zLROzBOc0Q=; b=XKsQFABLgxHGlV
-	1oMBomzX+gV7HdpqgjaKJL3i4EifRA20eMo227CFxa1ErXxejkYIqsW83yTbSjAlnvyDm+b3A+eqz
-	0SiU+uLCfR8HgJRUWq+2Un5qD63j2pp558wJbeYI0yt8Pmb03rJmAMTqjI3nkrnsRBd+hMAwJmNmj
-	zFYpFOJWnevPsVe0YgH8eheFbOjd+K6+Xt0b1/IEANqjSzJ1rJBwQ9IuLr82nYCdbOFenQvkQDxTw
-	r9xm0VA02R+HuOik7NwvERAz1UwBktHCMaJqYLISWkUN3DTSMs1nfGzEXgta3Ju8KJfPuY7dmX2Pt
-	MH16u3FDvEaro9797KJA==;
+	List-Owner; bh=UvfdemOAC7XR+cM/qqQRHkOuaKgTWnwPGmSJTO/ujJ8=; b=235M5DizjPS816
+	c3yu9m0Lx4ntVRIvyEZxd1XmxSdckK6uAPLXOHFveG3svC9rp2x/TAEruuXsDAPe62kwZP/eVpqvS
+	5artDF3zor9cdT/lfR0UKCjzkZ6z8l45mFTN2b5CB3EgjfYKo/r0eCEuphcl42Lm+DC/pqkjdkTrb
+	dgYHLfiMkEUkIe9eV6dBj/vBgR3oITul345xcWmp6mqrAiXQ1ipkR7g2lAJMZVVBPDXHxH5yX9CJX
+	+E2CIeXa7jl2zwr7UubcnM4i84NcwkmgPceyGaYfDbRe1g4Sovg0rQH9+7t8+wc9TTLsD+en6bPO7
+	uy4z7Hgd5ppbIXahOmOQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wcaeE-00000008c1g-0f8Y;
-	Thu, 25 Jun 2026 03:21:02 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wcgXn-00000008vC9-3JsP;
+	Thu, 25 Jun 2026 09:38:47 +0000
+Received: from mail-centralusazon11011033.outbound.protection.outlook.com ([52.101.62.33] helo=DM5PR21CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wcaeC-00000008c1Y-1lUO
+	id 1wcgXm-00000008vBZ-0BN3
 	for linux-i3c@lists.infradead.org;
-	Thu, 25 Jun 2026 03:21:00 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 849A860018;
-	Thu, 25 Jun 2026 03:20:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 14A3D1F000E9;
-	Thu, 25 Jun 2026 03:20:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782357659;
-	bh=zKn7TTVdE0aJzzk5WoXQQGD0KOUAXcO2iTJ5ASeYT04=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=bI+baOYhnNYK1RPoiQUf5XshY3/SQrDAoQXmqnn6C5aK2e/jR/tyjIXTaHAQs7ffu
-	 rCLHvLa7yAgpr/ivSztt/Znu1AmdT5DBWu2utKY6Jf0yAJa1HgwW6SGaA8Fxh6R+bw
-	 TrifzVe4YTyZ9j5OGyjcgEQOc7gHEYNn92+o80C0QrJQ5TkaZ8oEBSsTwXfnwMrF+3
-	 0Isg+6DEhnsHrJJbPt2xx8oNV19t031JHLtY7xi1NWBM6xBukDtoBWY0sUlQeXNn0L
-	 FYlcQEkpvOZ/gaZWJRy6FKoOu1gZndBXqTyHjWOaoNOasxBNrqpqk30Gs50TwWlQbv
-	 N2xR44iXSOVzA==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH] i3c: master: renesas: reset xfer status before each
- wait
-To: "Pengpeng Hou" <pengpeng@iscas.ac.cn>
-Cc: linux-i3c@lists.infradead.org, Frank.Li@kernel.org
-In-Reply-To: <20260625030357.87402-1-pengpeng@iscas.ac.cn>
-References: <20260625030357.87402-1-pengpeng@iscas.ac.cn>
-Date: Thu, 25 Jun 2026 03:20:58 +0000
-Message-Id: <20260625032059.14A3D1F000E9@smtp.kernel.org>
+	Thu, 25 Jun 2026 09:38:47 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=qRnqlr/IUZf/yTUsjpZ2uAaoXNmFfsUlmW2PX4g7mSvF1JyARb68TzaLQoAdm01TIsKw8ourzBhkOWg3VzBiKwusTGMkODs7JyY5KXcAxccEoYLaPmLcfgcVH+ZOqBJi0yt9ymEflTQptPeEQ2tZQdShVKHLdey5Jl+zVhDwimJvtc1fggotlyzaPyK7kpiILN0lcgRvs5GtzyK7T+q3B6DZn98kcp3iw1q2fAn4B4XHvoOb94H33kTDvbHFZvFUEYRzga7A+fhnXvfdkFtWerzLdV0u5cyDJ/YQhRCWALzkMPvlV1x5gZBbTQ8jh0OVnueZZsNI2KeMjVCmZ82rJQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=8pg48n25lL1iA9Cj6kylt7j5xobV3uQgCTOs6c9WQzs=;
+ b=RgKpgS6BRmt6YLRhjeadmllh4i4P25ffaBIfWBlDPqus6czHc6ct+zyy5BBbM/BJr0BcYBw6GtvhLMDC312+kLoUx71j2SjMj97/PwNWD2s/dv9Qk1+YoZbZqKLJO47NIc7iFjIB0s5L5jDmeQYS6movj5P5yg3RndZPmEJddgLjCq84im6KomP4Lql5Bdj5lPvHDyvs9sPMpNB/NSG3a9otbmP5bcUTZADWvl2YjlDIHn4Gcx5sHi3x4FtVvT7BIGgrgWB5UikQcYJKfxURwgN+iEXrgP3DnxAlLUhzJGuJgikeTwyWgcG0XnmiiIdVEO/Wo1k3j16DNdqgmDIkLQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.118.233) smtp.rcpttodomain=oss.nxp.com smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=8pg48n25lL1iA9Cj6kylt7j5xobV3uQgCTOs6c9WQzs=;
+ b=l98A9RUDjVmhYrv4T5kIP+3h6NcPpzAFpd+t6rkZKCFqHN3jBVKbqKThnm60ytukgFUT1eUWSPsRTmQNF14S6hGC/QpI5A2X2Eizonj69RDQlTWXshf6/VPzRsnCDOimEue/P64bKYC4qPu8eJQ35+ToQQWDQSqXIkbBA3GRLPN0FHBZxjGXbA/H9OR3UfSvr0EE4NYZubWk7mUZwjUKtOGicSZ+6a4bq4e+hvZIoiVRgR0EddwDeUsPEzf8QammWMBQrVtIP92aTPXs74RzAaKtaFBfr2B4a11AD7KzJ76PvvS45GtBZuFxG1fiDHovQXpNmPWSrIwPQwagPBsbWQ==
+Received: from MN0PR04CA0025.namprd04.prod.outlook.com (2603:10b6:208:52d::24)
+ by SA1PR12MB6893.namprd12.prod.outlook.com (2603:10b6:806:24c::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.139.18; Thu, 25 Jun
+ 2026 09:38:38 +0000
+Received: from BL6PEPF0001AB4B.namprd04.prod.outlook.com
+ (2603:10b6:208:52d:cafe::5e) by MN0PR04CA0025.outlook.office365.com
+ (2603:10b6:208:52d::24) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.159.16 via Frontend Transport; Thu,
+ 25 Jun 2026 09:38:38 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.118.233)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.118.233 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.118.233; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.118.233) by
+ BL6PEPF0001AB4B.mail.protection.outlook.com (10.167.242.69) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.181.6 via Frontend Transport; Thu, 25 Jun 2026 09:38:37 +0000
+Received: from drhqmail201.nvidia.com (10.126.190.180) by mail.nvidia.com
+ (10.127.129.6) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Thu, 25 Jun
+ 2026 02:38:21 -0700
+Received: from drhqmail203.nvidia.com (10.126.190.182) by
+ drhqmail201.nvidia.com (10.126.190.180) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.20; Thu, 25 Jun 2026 02:38:20 -0700
+Received: from build-akhilrajeev-noble-20260602.internal (10.127.8.11) by
+ mail.nvidia.com (10.126.190.182) with Microsoft SMTP Server id 15.2.2562.20
+ via Frontend Transport; Thu, 25 Jun 2026 02:38:16 -0700
+From: Akhil R <akhilrajeev@nvidia.com>
+To: <frank.li@oss.nxp.com>
+CC: <Frank.Li@kernel.org>, <akhilrajeev@nvidia.com>, <conor+dt@kernel.org>,
+	<devicetree@vger.kernel.org>, <linux-hwmon@vger.kernel.org>,
+	<linux-i3c@lists.infradead.org>, <robh@kernel.org>,
+	<sashiko-reviews@lists.linux.dev>
+Subject: Re: [PATCH v5 04/12] i3c: master: Add support for devices using SETAASA
+Date: Thu, 25 Jun 2026 09:38:15 +0000
+Message-ID: <20260625093815.1794492-1-akhilrajeev@nvidia.com>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <ajwamrU8ehBINzxq@lizhi-Precision-Tower-5810>
+References: <ajwamrU8ehBINzxq@lizhi-Precision-Tower-5810>
+MIME-Version: 1.0
+X-NV-OnPremToCloud: ExternallySecured
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BL6PEPF0001AB4B:EE_|SA1PR12MB6893:EE_
+X-MS-Office365-Filtering-Correlation-Id: c8ba63e3-d908-4e2d-7789-08ded29d88d9
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|82310400026|376014|23010399003|36860700016|18002099003|22082099003|3023799007|6133799003|56012099006|11063799006;
+X-Microsoft-Antispam-Message-Info: NyaYoNtivXhW0Pady7qzrQ8nv31caJ5GKBqQTH1l9jiKGLkvDVSA1oetMJFkyN4hl0jy7kneKtJxueN0d8wGxkitylJr3n4To+mEiiqL0s8gr/2fNuo2zr/YM/FLPdju5+FyI27pRflIJ/XUr6UdObVh6p45NsuZ5bBOZNrIzM8qs4f2nP7i51f+KCi54cnHp3+OqQXfGJ6k6MQETqTe9KsvunTWARI18o6IbTKww5wbkNHLzo5pKMs5B+Y4I38D+Il7HbNr9kE9sApwikF0nA4Gxsml2KKWPBldKFuA8YnlJAE5VzbTkAy9O7Frg5/4cf/XEVeGt4eN7EXI3PqOEXdJ0Y61fkIVkv4NCdKiTPpmAmqjc/H1phf52gn/LIOjE453HFlbeD2hKewy3qoRJ1aIBl+7mfAJWfnZMPUHGGkz3asRzMiFd0zqtY7HlAG60hhkVoEWXJPuLb3FirzOOM5e5GoKQe0D7DQGm04QwWLiC94UgsPhtxt8DOeFcvvMTpW1oaXxW0MQU+zyEV35Njhgs47PqON5ZBrNmLEyita0HcuFStQEpjd23tV8WMKnGmnGzCLJKYTrZnmK2hiYLRh17TTIXvVIQVXYJj+3IrjmZOkJd3xfouW3bEqKSxiIxRmoquEGpKet74JUqGBcPOK20dSgODNJ4P8AwViq5Kv3/JfA/CzZi0oalnWYipL2u58RlJoXizXInwnCDnD1hw==
+X-Forefront-Antispam-Report: CIP:216.228.118.233;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc7edge2.nvidia.com;CAT:NONE;SFS:(13230040)(1800799024)(82310400026)(376014)(23010399003)(36860700016)(18002099003)(22082099003)(3023799007)(6133799003)(56012099006)(11063799006);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: FAkjHJDhNE4OcquwbEPAsOcpX2H3cUJ6bAIwsoLN5QEELlxJM+F10uuUw3YEX3kxcsXWNWWyhZap7PDPoiQ1GyijvDkLdZy2uvhLOFcclReQGtzvC1LzJzTo8ZEIUzDNUmnZrRKvz27Ve24s5HKPsp5lgjZC5FFjFYLv8aSjjbbtDU8IqGdNlR7N6+Cipar65Pi0JPcJCKqp6VvbfU4i9fYG9TJRbB6VGf/LOp0YO1aTg1rA+ymj3dgIwfXcR7X8h7k9jM0M0+Pl9blhVcInylNHj6hYfXhYhcRm8fN7gwn23xuOmRgEGU17h1cOCILlSyF/h3GLbvamKfP3u+xkoSz3J83mJdxNSVrsVBlXy818P23oJbHvZBzUNDbpXb3hIMwRlQZedHJsokLVnWbhKPGLtikqUB3ozy74guPlRULT/aZjtq3srFzfPND/G6TA
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Jun 2026 09:38:37.8961
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: c8ba63e3-d908-4e2d-7789-08ded29d88d9
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.118.233];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: BL6PEPF0001AB4B.namprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA1PR12MB6893
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260625_023846_110278_4A233F1B 
+X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,103 +124,49 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-NCBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
-IFtDcml0aWNhbF0gQnVmZmVyIE92ZXJmbG93IGFuZCBEYXRhIENvcnJ1cHRpb24gaW4gVHJhbnNm
-ZXIgSW50ZXJydXB0IEhhbmRsZXJzLgotIFtIaWdoXSBNaXNzaW5nIEhhcmR3YXJlIFRlYXJkb3du
-IG9uIFRpbWVvdXQgY2F1c2luZyBVc2UtQWZ0ZXItRnJlZSBhbmQgTlVMTCBQb2ludGVyIERlcmVm
-ZXJlbmNlLgotIFtIaWdoXSBJZ25vcmVkIHRyYW5zZmVyIHRpbWVvdXQgbGVhZHMgdG8gSGFyZHdh
-cmUgU3RhdGUgRGVzeW5jIGFuZCBzaWxlbnQgZmFpbHVyZXMuCi0gW0hpZ2hdIFVudmFsaWRhdGVk
-IGhhcmR3YXJlIHJlc3BvbnNlIGxlbmd0aCBjYXVzZXMgSW50ZWdlciBVbmRlcmZsb3cgYW5kIFVu
-ZGVmaW5lZCBCZWhhdmlvciBpbiBHRU5NQVNLLgotLQoKY29tbWl0IDE4MjdkOWI3OTVlNzBjZDFm
-OTA5ZjY4OGI3MDJmMDZjNzMyYzg5ZTEKQXV0aG9yOiBQZW5ncGVuZyBIb3UgPHBlbmdwZW5nQGlz
-Y2FzLmFjLmNuPgoKaTNjOiBtYXN0ZXI6IHJlbmVzYXM6IHJlc2V0IHhmZXIgc3RhdHVzIGJlZm9y
-ZSBlYWNoIHdhaXQKCnJlbmVzYXNfaTNjX3dhaXRfeGZlcigpIHJlaW5pdGlhbGl6ZXMgdGhlIGNv
-bXBsZXRpb24gYmVmb3JlIHF1ZXVpbmcgYQp0cmFuc2ZlciwgYnV0IGl0IGxlYXZlcyB4ZmVyLT5y
-ZXQgdW5jaGFuZ2VkLiBBZnRlciBvbmUgdHJhbnNmZXIgY29tcGxldGVzCnN1Y2Nlc3NmdWxseSwg
-YSBsYXRlciB0aW1lb3V0IGNhbiB0aGVyZWZvcmUgcmV1c2UgdGhlIG9sZCB6ZXJvIHN0YXR1cy4K
-ClJlc2V0IHhmZXItPnJldCB0byAtRVRJTUVET1VUIGJlZm9yZSBlYWNoIHdhaXQsIHJldHVybiB0
-aGUgdHJhbnNmZXIKc3RhdHVzIGZyb20gdGhlIHdhaXQgaGVscGVyLCBhbmQgcHJvcGFnYXRlIGl0
-IGZyb20gREFBLCBDQ0MgYW5kIHByaXZhdGUKSTNDIHRyYW5zZmVycy4KCj4gZGlmZiAtLWdpdCBh
-L2RyaXZlcnMvaTNjL21hc3Rlci9yZW5lc2FzLWkzYy5jIGIvZHJpdmVycy9pM2MvbWFzdGVyL3Jl
-bmVzYXMtaTNjLmMKPiBpbmRleCBmMzljNDQ5OTIyY2EyLi43ZjEyM2NkNzJjZGYzIDEwMDY0NAo+
-IC0tLSBhL2RyaXZlcnMvaTNjL21hc3Rlci9yZW5lc2FzLWkzYy5jCj4gKysrIGIvZHJpdmVycy9p
-M2MvbWFzdGVyL3JlbmVzYXMtaTNjLmMKPiBAQCAtNDMzLDE1ICs0MzMsMTggQEAgc3RhdGljIHZv
-aWQgcmVuZXNhc19pM2NfZW5xdWV1ZV94ZmVyKHN0cnVjdCByZW5lc2FzX2kzYyAqaTNjLCBzdHJ1
-Y3QgcmVuZXNhc19pM2MKWyAuLi4gXQo+IC1zdGF0aWMgdm9pZCByZW5lc2FzX2kzY193YWl0X3hm
-ZXIoc3RydWN0IHJlbmVzYXNfaTNjICppM2MsIHN0cnVjdCByZW5lc2FzX2kzY194ZmVyICp4ZmVy
-KQo+ICtzdGF0aWMgaW50IHJlbmVzYXNfaTNjX3dhaXRfeGZlcihzdHJ1Y3QgcmVuZXNhc19pM2Mg
-KmkzYywgc3RydWN0IHJlbmVzYXNfaTNjX3hmZXIgKnhmZXIpCj4gIHsKPiAgCXVuc2lnbmVkIGxv
-bmcgdGltZV9sZWZ0Owo+ICAKPiArCXhmZXItPnJldCA9IC1FVElNRURPVVQ7Cj4gIAlyZW5lc2Fz
-X2kzY19lbnF1ZXVlX3hmZXIoaTNjLCB4ZmVyKTsKPiAgCj4gIAl0aW1lX2xlZnQgPSB3YWl0X2Zv
-cl9jb21wbGV0aW9uX3RpbWVvdXQoJnhmZXItPmNvbXAsIG1zZWNzX3RvX2ppZmZpZXMoMTAwMCkp
-Owo+ICAJaWYgKCF0aW1lX2xlZnQpCj4gIAkJcmVuZXNhc19pM2NfZGVxdWV1ZV94ZmVyKGkzYywg
-eGZlcik7Cj4gKwo+ICsJcmV0dXJuIHhmZXItPnJldDsKPiAgfQoKW1NldmVyaXR5OiBIaWdoXQpU
-aGlzIGlzbid0IGEgYnVnIGludHJvZHVjZWQgYnkgdGhpcyBwYXRjaCwgYnV0IGRvZXMgdGhpcyB0
-aW1lb3V0IHBhdGggc2FmZWx5CmFib3J0IHRoZSBhY3RpdmUgaGFyZHdhcmUgb3BlcmF0aW9uPwoK
-SWYgYSB0aW1lb3V0IG9jY3VycywgdGhlIGRyaXZlciByZW1vdmVzIHRoZSB0cmFuc2ZlciBmcm9t
-IHRoZSBxdWV1ZSB2aWEKcmVuZXNhc19pM2NfZGVxdWV1ZV94ZmVyKCkgYnV0IGRvZXMgbm90IGFw
-cGVhciB0byBoYWx0IHRoZSBoYXJkd2FyZSBETUEgb3IKaW50ZXJydXB0IGV4ZWN1dGlvbi4KCklm
-IHRoZSBjYWxsZXIgdGhlbiBmcmVlcyB0aGUgeGZlciBzdHJ1Y3QsIGFuZCB0aGUgaGFyZHdhcmUg
-bGF0ZXIgY29tcGxldGVzIHRoZQpvcGVyYXRpb24sIGNvdWxkIHRoZSBkZWxheWVkIGludGVycnVw
-dCBpbiByZW5lc2FzX2kzY19yZXNwX2lzcigpIGRlcmVmZXJlbmNlCmEgZnJlZWQgb3IgdW5yZWxh
-dGVkIHRyYW5zZmVyPwoKZHJpdmVycy9pM2MvbWFzdGVyL3JlbmVzYXMtaTNjLmM6cmVuZXNhc19p
-M2NfcmVzcF9pc3IoKSB7CiAgICAuLi4KICAgIHhmZXIgPSBpM2MtPnhmZXJxdWV1ZS5jdXI7CiAg
-ICBjbWQgPSB4ZmVyLT5jbWRzOwogICAgLi4uCn0KClsgLi4uIF0KPiBAQCAtNjg3LDcgKzY5MCw5
-IEBAIHN0YXRpYyBpbnQgcmVuZXNhc19pM2NfZGFhKHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xs
-ZXIgKm0pCj4gIAkJICAgIE5DTURRUF9DTUQoSTNDX0NDQ19FTlREQUEpIHwgTkNNRFFQX0RFVl9J
-TkRFWChyZXQpIHwKPiAgCQkgICAgTkNNRFFQX0RFVl9DT1VOVChpM2MtPm1heGRldnMgLSByZXQp
-IHwgTkNNRFFQX1RPQzsKPiAgCj4gLQlyZW5lc2FzX2kzY193YWl0X3hmZXIoaTNjLCB4ZmVyKTsK
-PiArCXJldCA9IHJlbmVzYXNfaTNjX3dhaXRfeGZlcihpM2MsIHhmZXIpOwo+ICsJaWYgKHJldCkK
-PiArCQlyZXR1cm4gcmV0Owo+ICAKPiAgCW5ld2RldnMgPSBHRU5NQVNLKGkzYy0+bWF4ZGV2cyAt
-IGNtZC0+cnhfY291bnQgLSAxLCAwKTsKCltTZXZlcml0eTogSGlnaF0KVGhpcyBpcyBhIHByZS1l
-eGlzdGluZyBpc3N1ZSwgYnV0IGRvZXMgdGhpcyBjYWxjdWxhdGlvbiBoYW5kbGUgdGhlIGNhc2Ug
-d2hlcmUKbm8gZGV2aWNlcyBhcmUgYXR0YWNoZWQ/CgpJZiBubyBkZXZpY2VzIHJlc3BvbmQgZHVy
-aW5nIER5bmFtaWMgQWRkcmVzcyBBc3NpZ25tZW50LCBjbWQtPnJ4X2NvdW50IHdpbGwKZXF1YWwg
-aTNjLT5tYXhkZXZzLiBUaGlzIHdvdWxkIGNhdXNlIHRoZSBzdWJ0cmFjdGlvbiB0byBldmFsdWF0
-ZSB0byAtMSwKbGVhZGluZyB0byB1bmRlZmluZWQgYmVoYXZpb3IgaW4gdGhlIEdFTk1BU0sgbWFj
-cm8uCgpDb3VsZCB0aGlzIHJlc3VsdCBpbiBuZXdkZXZzIGV2YWx1YXRpbmcgdG8gYWxsIDFzIGFu
-ZCBpbmNvcnJlY3RseSByZWdpc3RlcmluZwplbXB0eSBzbG90cyBhcyByZWFsIGRldmljZXM/Cgpb
-IC4uLiBdCgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXNuJ3QgYSBidWcgaW50cm9kdWNlZCBieSB0
-aGlzIHBhdGNoLCBidXQgZG9lcyByZW5lc2FzX2kzY19pMmNfeGZlcnMoKQpwcm9wZXJseSBoYW5k
-bGUgdHJhbnNmZXIgdGltZW91dHM/CgpXaGVuIHdhaXRfZm9yX2NvbXBsZXRpb25fdGltZW91dCgp
-IHRpbWVzIG91dCwgaXQgZG9lcyBub3Qgc2V0IGNtZC0+ZXJyLiBUaGUKbG9vcCB0aGVuIGNoZWNr
-cyBpZiAoY21kLT5lcnIpIGFuZCBwcm9jZWVkcyB0byB0aGUgbmV4dCBtZXNzYWdlOgoKZHJpdmVy
-cy9pM2MvbWFzdGVyL3JlbmVzYXMtaTNjLmM6cmVuZXNhc19pM2NfaTJjX3hmZXJzKCkgewogICAg
-Li4uCiAgICB3YWl0X2Zvcl9jb21wbGV0aW9uX3RpbWVvdXQoJnhmZXItPmNvbXAsIG0tPmkyYy50
-aW1lb3V0KTsKCiAgICBpZiAoY21kLT5lcnIpCiAgICAgICAgYnJlYWs7CiAgICAuLi4KfQoKQ291
-bGQgdGhpcyBpZ25vcmUgdGhlIHRpbWVvdXQsIGluY29ycmVjdGx5IHJldHVybiBzdWNjZXNzLCBh
-bmQgYWxsb3cgYSBkZWxheWVkCmhhcmR3YXJlIG9wZXJhdGlvbiB0byBjb3JydXB0IHRoZSBidWZm
-ZXIgb2YgdGhlIHN1YnNlcXVlbnQgbWVzc2FnZT8KCltTZXZlcml0eTogQ3JpdGljYWxdClRoaXMg
-aXMgYSBwcmUtZXhpc3RpbmcgaXNzdWUsIGJ1dCBkbyB0aGUgaW50ZXJydXB0IGhhbmRsZXJzIGNv
-cnJlY3RseSBtYW5hZ2UKYnVmZmVyIGxlbmd0aHMgYW5kIG9mZnNldHMgZm9yIHRyYW5zZmVycz8K
-CkluIHJlbmVzYXNfaTNjX3J4X2lzcigpLCB0aGUgYnl0ZSBjb3VudCBpcyByb3VuZGVkIHVwIHRv
-IHRoZSBuZWFyZXN0IDMyLWJpdAp3b3JkLCB3aGljaCBjYW4gd3JpdGUgcGFzdCB0aGUgYWN0dWFs
-IGJ1ZmZlciBsZW5ndGggZm9yIHVuYWxpZ25lZCB0cmFuc2ZlcnM6Cgpkcml2ZXJzL2kzYy9tYXN0
-ZXIvcmVuZXNhcy1pM2MuYzpyZW5lc2FzX2kzY19yeF9pc3IoKSB7CiAgICAuLi4KICAgIHJlYWRf
-Ynl0ZXMgPSBOREJTVExWMF9SREJMVihyZW5lc2FzX3JlYWRsKGkzYy0+cmVncywgTkRCU1RMVjAp
-KSAqIHNpemVvZih1MzIpOwogICAgaTNjX3JlYWRsX2ZpZm8oaTNjLT5yZWdzICsgTlREVEJQMCwg
-Y21kLT5yeF9idWYsIHJlYWRfYnl0ZXMpOwogICAgLi4uCn0KCkFkZGl0aW9uYWxseSwgdGhlIHRy
-YW5zbWl0IElTUiB3cml0ZXMgdGhlIGVudGlyZSB0cmFuc2ZlciBsZW5ndGggd2l0aG91dCB0cmFj
-a2luZwpieXRlcyBhbHJlYWR5IHNlbnQsIHdoaWNoIG1pZ2h0IG92ZXJmbG93IHRoZSBoYXJkd2Fy
-ZSBGSUZPOgoKZHJpdmVycy9pM2MvbWFzdGVyL3JlbmVzYXMtaTNjLmM6cmVuZXNhc19pM2NfdHhf
-aXNyKCkgewogICAgLi4uCiAgICBpM2Nfd3JpdGVsX2ZpZm8oaTNjLT5yZWdzICsgTlREVEJQMCwg
-Y21kLT50eF9idWYsIGNtZC0+bGVuKTsKICAgIC4uLgp9CgpGaW5hbGx5LCB0aGUgcmVzcG9uc2Ug
-SVNSIHJlYWRzIHRoZSByZW1haW5pbmcgYnl0ZXMgaW50byB0aGUgc3RhcnQgb2YgdGhlCmJ1ZmZl
-ciwgcG90ZW50aWFsbHkgb3ZlcndyaXRpbmcgZGF0YSBwcmV2aW91c2x5IHJlY2VpdmVkIGJ5IHRo
-ZSByeF9pc3I6Cgpkcml2ZXJzL2kzYy9tYXN0ZXIvcmVuZXNhcy1pM2MuYzpyZW5lc2FzX2kzY19y
-ZXNwX2lzcigpIHsKICAgIC4uLgogICAgYnl0ZXNfcmVtYWluaW5nID0gZGF0YV9sZW4gLSBjbWQt
-PnJ4X2NvdW50OwogICAgaTNjX3JlYWRsX2ZpZm8oaTNjLT5yZWdzICsgTlREVEJQMCwgY21kLT5y
-eF9idWYsIGJ5dGVzX3JlbWFpbmluZyk7CiAgICAuLi4KfQoKQ291bGQgdGhpcyBsZWFkIHRvIG1l
-bW9yeSBjb3JydXB0aW9uIGFuZCBvdXQtb2YtYm91bmRzIHdyaXRlcz8KCi0tIApTYXNoaWtvIEFJ
-IHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA2MjUwMzAzNTcu
-ODc0MDItMS1wZW5ncGVuZ0Bpc2Nhcy5hYy5jbj9wYXJ0PTEKCi0tIApsaW51eC1pM2MgbWFpbGlu
-ZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNjCg==
+On Wed, 24 Jun 2026 13:57:46 -0400, Frank Li wrote:
+...
+...
+>> [Severity: High]
+>> Is it possible that sending the SETAASA broadcast before direct SETDASA
+>> assignments breaks initialization for devices that natively support SETAASA
+>> but are configured for SETDASA?
+>>
+>> According to the I3C specification, any device on the bus natively supporting
+>> SETAASA will respond to this broadcast by adopting its static address as its
+>> dynamic address.
+>>
+>> After this broadcast, the driver iterates through devices and attempts to
+>> assign custom dynamic addresses via direct SETDASA commands:
+>>
+>> drivers/i3c/master.c:i3c_master_early_i3c_dev_add() {
+>>     ...
+>> 	ret = i3c_master_setdasa_locked(master, i3cdev->info.static_addr,
+>> 					i3cdev->boardinfo->init_dyn_addr);
+>>     ...
+>> }
+>>
+>> Since the target device already adopted its dynamic address during the
+>> SETAASA broadcast, it is no longer in the unassigned state and will NACK
+>> the subsequent SETDASA command.
+> 
+> Look like correct, but I am not sure if target will NACK SETDASA. Or should
+> use SETNEWDA for SETAASA method.
+
+Yes, this looks valid for mixed device buses. I can move
+i3c_master_setaasa_locked() after the SETDASA handling and before
+i3c_master_do_daa() in the same function, so SETDASA-assigned devices will
+ignore the later SETAASA broadcast. Does that sound good to you?
+
+Best Regards,
+Akhil
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
