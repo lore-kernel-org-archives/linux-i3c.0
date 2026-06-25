@@ -4,115 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 10168CDB47F
-	for <linux-i3c@archiver.kernel.org>; Thu, 25 Jun 2026 09:38:48 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8ABB8CDB479
+	for <linux-i3c@archiver.kernel.org>; Thu, 25 Jun 2026 12:42:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UvfdemOAC7XR+cM/qqQRHkOuaKgTWnwPGmSJTO/ujJ8=; b=235M5DizjPS816
-	c3yu9m0Lx4ntVRIvyEZxd1XmxSdckK6uAPLXOHFveG3svC9rp2x/TAEruuXsDAPe62kwZP/eVpqvS
-	5artDF3zor9cdT/lfR0UKCjzkZ6z8l45mFTN2b5CB3EgjfYKo/r0eCEuphcl42Lm+DC/pqkjdkTrb
-	dgYHLfiMkEUkIe9eV6dBj/vBgR3oITul345xcWmp6mqrAiXQ1ipkR7g2lAJMZVVBPDXHxH5yX9CJX
-	+E2CIeXa7jl2zwr7UubcnM4i84NcwkmgPceyGaYfDbRe1g4Sovg0rQH9+7t8+wc9TTLsD+en6bPO7
-	uy4z7Hgd5ppbIXahOmOQ==;
+	List-Owner; bh=alxSeTgUfbh6mCCpFTgxeS1wMDUBiTxX2ohTRSW3POs=; b=tDNYzTRfqoFJ6G
+	RJCgeP3auJ4pvSOLq0Jnq3TOVn/3K0Qg2BEWK/ZY34+0OHNVtsogF0MrSUm81a8udBTRkvOCdLN3S
+	KZdOoY9OCZl8WZjS73U85l86vL6i8gkNykvQiGIsekj+DvriZDYeGmxnTRXM40iGN2kdBfTJMPbZo
+	iwlMMiX5HteyDV0rmYaJIIxB9c2rt98H+uOkf/b8wZuBjHzagWlKWX8NCWhZ1bAtpD93gt1dbOH3W
+	tyyW0XJpDuTURTZUMltW1T57RquLwwSwyznH6IApQDDesqxs6pyX+obhzohpN2nYjTGR1Ry1hd++q
+	I7M8U+4KZlOJm+vlRNRA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wcgXn-00000008vC9-3JsP;
-	Thu, 25 Jun 2026 09:38:47 +0000
-Received: from mail-centralusazon11011033.outbound.protection.outlook.com ([52.101.62.33] helo=DM5PR21CU001.outbound.protection.outlook.com)
+	id 1wcjPR-00000009CK1-0uBc;
+	Thu, 25 Jun 2026 12:42:21 +0000
+Received: from mail-francesouthazon11011004.outbound.protection.outlook.com ([40.107.130.4] helo=MRWPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wcgXm-00000008vBZ-0BN3
+	id 1wcjPO-00000009CJa-2jb1
 	for linux-i3c@lists.infradead.org;
-	Thu, 25 Jun 2026 09:38:47 +0000
+	Thu, 25 Jun 2026 12:42:19 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=qRnqlr/IUZf/yTUsjpZ2uAaoXNmFfsUlmW2PX4g7mSvF1JyARb68TzaLQoAdm01TIsKw8ourzBhkOWg3VzBiKwusTGMkODs7JyY5KXcAxccEoYLaPmLcfgcVH+ZOqBJi0yt9ymEflTQptPeEQ2tZQdShVKHLdey5Jl+zVhDwimJvtc1fggotlyzaPyK7kpiILN0lcgRvs5GtzyK7T+q3B6DZn98kcp3iw1q2fAn4B4XHvoOb94H33kTDvbHFZvFUEYRzga7A+fhnXvfdkFtWerzLdV0u5cyDJ/YQhRCWALzkMPvlV1x5gZBbTQ8jh0OVnueZZsNI2KeMjVCmZ82rJQ==
+ b=p+U8nGhzblcKlfcPvKcvxoxTBqfJLs7pS5b0hRVPNpCfe3KkUQeGnjlalkHPRJ8xUJuubkEE0xxnD+ZbNl6B9Bwh8431tHEH43lRZZmiIckSoQVwL7P2nyI78no3KPaIBtHWjD3dn2TgJzqGkjlbwOT0ujRFAtF7DSPXxIs0nXV+Qe9bAgkxCu+Po2DpG8F07tV7KhXfen/Y0FFLXLr0sZCInko1pEs5azeSdXQRi5llyUb5o9bpLvOhI/fK9DK9alntuGhYUAmy3jf/M6WKcKSDNobnGW7IDzR+DOxfsOU3/V/pqx3LK/DPp3/XzgkpVzbx7sImfpHQZ52QbNCk6w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=8pg48n25lL1iA9Cj6kylt7j5xobV3uQgCTOs6c9WQzs=;
- b=RgKpgS6BRmt6YLRhjeadmllh4i4P25ffaBIfWBlDPqus6czHc6ct+zyy5BBbM/BJr0BcYBw6GtvhLMDC312+kLoUx71j2SjMj97/PwNWD2s/dv9Qk1+YoZbZqKLJO47NIc7iFjIB0s5L5jDmeQYS6movj5P5yg3RndZPmEJddgLjCq84im6KomP4Lql5Bdj5lPvHDyvs9sPMpNB/NSG3a9otbmP5bcUTZADWvl2YjlDIHn4Gcx5sHi3x4FtVvT7BIGgrgWB5UikQcYJKfxURwgN+iEXrgP3DnxAlLUhzJGuJgikeTwyWgcG0XnmiiIdVEO/Wo1k3j16DNdqgmDIkLQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.118.233) smtp.rcpttodomain=oss.nxp.com smtp.mailfrom=nvidia.com;
- dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
- dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
+ bh=ahWBdz9EY9bJ17Maw5hAKopAQGUFu3hIhmFjD9gNO6c=;
+ b=CIybv6IrVa53GZbDi5PT8j+6ouKLUCCq4RLZw2UyA6xbBnovFZWNdKwoDe6FsiqI/c4FqzkauG1VwSPexDyxouRUpLdFVb85G2fXSwy1eynY5lvVVx2pYo/xX/lAGUdU6koSlAZ4cDMvYVafLpZIxmXJmSZbkTIlyHPK2uUVcpMP4pMf+VswMNiNYMZxWBOkt4+/FZfUAzUAALiarEGTWCcIWnDMYrYDI4vPPuKQf33gYtjKHBm7Z9YQsV5/5g3lSjtLzpkBSQITSmzp9B+UlUWaERzJKyY8Szq7qy2yIxkTORMNJ6yweKtPgUjL5w5P6FamKtC8Bhsmpd/R3yg3/g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8pg48n25lL1iA9Cj6kylt7j5xobV3uQgCTOs6c9WQzs=;
- b=l98A9RUDjVmhYrv4T5kIP+3h6NcPpzAFpd+t6rkZKCFqHN3jBVKbqKThnm60ytukgFUT1eUWSPsRTmQNF14S6hGC/QpI5A2X2Eizonj69RDQlTWXshf6/VPzRsnCDOimEue/P64bKYC4qPu8eJQ35+ToQQWDQSqXIkbBA3GRLPN0FHBZxjGXbA/H9OR3UfSvr0EE4NYZubWk7mUZwjUKtOGicSZ+6a4bq4e+hvZIoiVRgR0EddwDeUsPEzf8QammWMBQrVtIP92aTPXs74RzAaKtaFBfr2B4a11AD7KzJ76PvvS45GtBZuFxG1fiDHovQXpNmPWSrIwPQwagPBsbWQ==
-Received: from MN0PR04CA0025.namprd04.prod.outlook.com (2603:10b6:208:52d::24)
- by SA1PR12MB6893.namprd12.prod.outlook.com (2603:10b6:806:24c::12) with
+ bh=ahWBdz9EY9bJ17Maw5hAKopAQGUFu3hIhmFjD9gNO6c=;
+ b=VFFxe2XwCS/1iFY5Em6Utqh9QPpqb1eKFek5OqWvtgqZBeK1IJOGeAv7fD4PwTd2E9mLZWUUALcL3jvPDLfqGDfS3jlzexhHibEGEZqO6suKMHjKPWwMm7oa7h98Sds5ku9okZ0H5xlv8rIUNOv0UT2/INgtQ5matE3X1RALNzJvt0sqY33MeOqUt3p4SdbAa64tAFqtgPAyiSlrLHTtxfW71Ykw70/CcH78H3U7sLSKkBGvCTdDE4EyCQR2iAB7LE/yUG4rBsWcKlcOrxW1Uui2ISlLlm4z7j5UaVte/kIP/rlLrefhJkhSiaccsisnAunRh8qMe7dJEpYngHOIzg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
+ by GVXPR04MB10023.eurprd04.prod.outlook.com (2603:10a6:150:118::10) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.139.18; Thu, 25 Jun
- 2026 09:38:38 +0000
-Received: from BL6PEPF0001AB4B.namprd04.prod.outlook.com
- (2603:10b6:208:52d:cafe::5e) by MN0PR04CA0025.outlook.office365.com
- (2603:10b6:208:52d::24) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.159.16 via Frontend Transport; Thu,
- 25 Jun 2026 09:38:38 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.118.233)
- smtp.mailfrom=nvidia.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=nvidia.com;
-Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.118.233 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.118.233; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.118.233) by
- BL6PEPF0001AB4B.mail.protection.outlook.com (10.167.242.69) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.181.6 via Frontend Transport; Thu, 25 Jun 2026 09:38:37 +0000
-Received: from drhqmail201.nvidia.com (10.126.190.180) by mail.nvidia.com
- (10.127.129.6) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Thu, 25 Jun
- 2026 02:38:21 -0700
-Received: from drhqmail203.nvidia.com (10.126.190.182) by
- drhqmail201.nvidia.com (10.126.190.180) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.20; Thu, 25 Jun 2026 02:38:20 -0700
-Received: from build-akhilrajeev-noble-20260602.internal (10.127.8.11) by
- mail.nvidia.com (10.126.190.182) with Microsoft SMTP Server id 15.2.2562.20
- via Frontend Transport; Thu, 25 Jun 2026 02:38:16 -0700
-From: Akhil R <akhilrajeev@nvidia.com>
-To: <frank.li@oss.nxp.com>
-CC: <Frank.Li@kernel.org>, <akhilrajeev@nvidia.com>, <conor+dt@kernel.org>,
-	<devicetree@vger.kernel.org>, <linux-hwmon@vger.kernel.org>,
-	<linux-i3c@lists.infradead.org>, <robh@kernel.org>,
-	<sashiko-reviews@lists.linux.dev>
-Subject: Re: [PATCH v5 04/12] i3c: master: Add support for devices using SETAASA
-Date: Thu, 25 Jun 2026 09:38:15 +0000
-Message-ID: <20260625093815.1794492-1-akhilrajeev@nvidia.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <ajwamrU8ehBINzxq@lizhi-Precision-Tower-5810>
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.159.14; Thu, 25 Jun
+ 2026 12:42:14 +0000
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0159.007; Thu, 25 Jun 2026
+ 12:42:14 +0000
+Date: Thu, 25 Jun 2026 07:42:03 -0500
+From: Frank Li <Frank.li@oss.nxp.com>
+To: Akhil R <akhilrajeev@nvidia.com>
+Cc: Frank.Li@kernel.org, conor+dt@kernel.org, devicetree@vger.kernel.org,
+	linux-hwmon@vger.kernel.org, linux-i3c@lists.infradead.org,
+	robh@kernel.org, sashiko-reviews@lists.linux.dev
+Subject: Re: [PATCH v5 04/12] i3c: master: Add support for devices using
+ SETAASA
+Message-ID: <aj0iG5xplWPWc6m_@SMW015318>
 References: <ajwamrU8ehBINzxq@lizhi-Precision-Tower-5810>
+ <20260625093815.1794492-1-akhilrajeev@nvidia.com>
+Content-Disposition: inline
+In-Reply-To: <20260625093815.1794492-1-akhilrajeev@nvidia.com>
+X-ClientProxiedBy: PH7PR13CA0022.namprd13.prod.outlook.com
+ (2603:10b6:510:174::24) To GV2PR04MB11799.eurprd04.prod.outlook.com
+ (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
-X-NV-OnPremToCloud: ExternallySecured
-X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BL6PEPF0001AB4B:EE_|SA1PR12MB6893:EE_
-X-MS-Office365-Filtering-Correlation-Id: c8ba63e3-d908-4e2d-7789-08ded29d88d9
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|GVXPR04MB10023:EE_
+X-MS-Office365-Filtering-Correlation-Id: ecd36fc1-0bde-430a-06cf-08ded2b72e9f
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|82310400026|376014|23010399003|36860700016|18002099003|22082099003|3023799007|6133799003|56012099006|11063799006;
-X-Microsoft-Antispam-Message-Info: NyaYoNtivXhW0Pady7qzrQ8nv31caJ5GKBqQTH1l9jiKGLkvDVSA1oetMJFkyN4hl0jy7kneKtJxueN0d8wGxkitylJr3n4To+mEiiqL0s8gr/2fNuo2zr/YM/FLPdju5+FyI27pRflIJ/XUr6UdObVh6p45NsuZ5bBOZNrIzM8qs4f2nP7i51f+KCi54cnHp3+OqQXfGJ6k6MQETqTe9KsvunTWARI18o6IbTKww5wbkNHLzo5pKMs5B+Y4I38D+Il7HbNr9kE9sApwikF0nA4Gxsml2KKWPBldKFuA8YnlJAE5VzbTkAy9O7Frg5/4cf/XEVeGt4eN7EXI3PqOEXdJ0Y61fkIVkv4NCdKiTPpmAmqjc/H1phf52gn/LIOjE453HFlbeD2hKewy3qoRJ1aIBl+7mfAJWfnZMPUHGGkz3asRzMiFd0zqtY7HlAG60hhkVoEWXJPuLb3FirzOOM5e5GoKQe0D7DQGm04QwWLiC94UgsPhtxt8DOeFcvvMTpW1oaXxW0MQU+zyEV35Njhgs47PqON5ZBrNmLEyita0HcuFStQEpjd23tV8WMKnGmnGzCLJKYTrZnmK2hiYLRh17TTIXvVIQVXYJj+3IrjmZOkJd3xfouW3bEqKSxiIxRmoquEGpKet74JUqGBcPOK20dSgODNJ4P8AwViq5Kv3/JfA/CzZi0oalnWYipL2u58RlJoXizXInwnCDnD1hw==
-X-Forefront-Antispam-Report: CIP:216.228.118.233;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc7edge2.nvidia.com;CAT:NONE;SFS:(13230040)(1800799024)(82310400026)(376014)(23010399003)(36860700016)(18002099003)(22082099003)(3023799007)(6133799003)(56012099006)(11063799006);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|376014|23010399003|19092799006|366016|56012099006|3023799007|6133799003|18002099003|22082099003|11063799006|4143699003;
+X-Microsoft-Antispam-Message-Info: ekZHme70r8cGLoG3VCdIc3bEc64j0j7LnY9wQgF7LdGPrZAGB7b03VVhTjwlu10fIGiy6o0vqNMOJWIczmo6m/cbWz35/EtrUd5IkN6+cZrSiEkvjiGZJrq68TdPJyEDLaTiKlM9/+ltwFdW5TB2eu7USQJ9rfEvrGdlZ5wmj5w5Qbf/sD5rYQdmk/0baIeagfiJX35WYHGLZCa3XnqSk62rKMGvlCqkV07t/JQI7bFBodjElSqaW2dZSxJr07jo3KfPvWHSxmWGw03Pwm/FTPHd+lXQfRG1j4day6SETmosbGuuE4AXdwU0GR+0emmTh0S9l/fBU8zW7FKDT1lbOmZqjjIgnXOHyxRyhoC06sbTRsSR4Fpmv5zYrX+YdOJjpPyD+E4lJsb6GjBvvrXEFQMFVZOq6t3cByzRxwNQl75KhyLwMPSEPwC0X6ssokGSHOdGaTWAgcn8vKskX4cDOlpEZBkmvscWpu0gETkiUhNgPKIeanq5sddQVGuwk9rbiySRIkRVFn/seiO210dWHmlUTW2gR5dql3DdJysYRA4KATO/wFT6DAE5j6uVaxrNeGoHFl4cIXUOBhh/INTIQZbDhIpw5XIIxQnWaQTz/OqgUk5rWEXhYFo5Kt3yMVVdwPn/uN5ZeFHMkJTZiYh/fNHRIpHuB1AP5s4N8i3rvao=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(23010399003)(19092799006)(366016)(56012099006)(3023799007)(6133799003)(18002099003)(22082099003)(11063799006)(4143699003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: FAkjHJDhNE4OcquwbEPAsOcpX2H3cUJ6bAIwsoLN5QEELlxJM+F10uuUw3YEX3kxcsXWNWWyhZap7PDPoiQ1GyijvDkLdZy2uvhLOFcclReQGtzvC1LzJzTo8ZEIUzDNUmnZrRKvz27Ve24s5HKPsp5lgjZC5FFjFYLv8aSjjbbtDU8IqGdNlR7N6+Cipar65Pi0JPcJCKqp6VvbfU4i9fYG9TJRbB6VGf/LOp0YO1aTg1rA+ymj3dgIwfXcR7X8h7k9jM0M0+Pl9blhVcInylNHj6hYfXhYhcRm8fN7gwn23xuOmRgEGU17h1cOCILlSyF/h3GLbvamKfP3u+xkoSz3J83mJdxNSVrsVBlXy818P23oJbHvZBzUNDbpXb3hIMwRlQZedHJsokLVnWbhKPGLtikqUB3ozy74guPlRULT/aZjtq3srFzfPND/G6TA
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Jun 2026 09:38:37.8961
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?2FA/K6rf1syld16wsdHGJ7HsWBBqze4/IFSB78BRsgMe+qxsANDQmEwfotvF?=
+ =?us-ascii?Q?bc0KuzrB2KMPRr5hnOKrIrdWuBfjFblDXjq7OustE7euVdz7haslvuRhJ9t3?=
+ =?us-ascii?Q?nKsR2A1E/oMCR4xvktqP9aSipa4dJwSMuUjS/1j8n6dR6B8VaGN5baocS3Kk?=
+ =?us-ascii?Q?HHgDfr37tdFK2SEWNkuVDiKaXb1vgFGcDBKLPj1R+I7rWjqulo6Id+0kj1BJ?=
+ =?us-ascii?Q?1SMHDbE9ILo7+3M5Z8iO8ZugSEvgxUHZnh3jatmw3iVkM6Lr3VHs0HICYP4A?=
+ =?us-ascii?Q?ixrOd6SdcNKcZcD1C3EEVJGWR7Aqm9cB8WyDlfUJILuAFo6cb65HNbW9Y8my?=
+ =?us-ascii?Q?Z+e88st4YYLxEGhX5bzPP4FkiZ4VyybxlnfI+PB9S03CfL0GgrNi8qMAuZNa?=
+ =?us-ascii?Q?tOEUF+nNbnyndIM3+xnZcMbdAXjxB6dWhmOUbnF1OpT69+der7jkESqKg7a9?=
+ =?us-ascii?Q?/iquWierTFRQnuwYV5rrO+E//Nq4fh12MmQ5LgCDpNIJS4OfsxsHrvzF/4Hd?=
+ =?us-ascii?Q?4O4eCDQPa+3aLXswgrC7sQZuzuJe9eWMLPgF1jruisuRb11aIALTSI7D8faz?=
+ =?us-ascii?Q?G2KBbHoISyr+kHxVDEab7cWjRThktnhFbER59ITRzhiyt1QYwGwnNXIZALCe?=
+ =?us-ascii?Q?HsE9X1Z40ou0AMxm3Uk5mwlCSbqlYG+YDMkWaXOOyieFuhhub3rxE/oS5LNh?=
+ =?us-ascii?Q?R/O1e6L96TVrXmZPrd9UZfoKBIQ+r8K33K4+s1M4XvqhFO8zfDa6h6jgvAH3?=
+ =?us-ascii?Q?4MshgtimVQBKng9HNcRgXiFFdTLwuLF9duSQAdRsiUBfQYDFo+nCYiFWh1Qv?=
+ =?us-ascii?Q?wR/BRDrFkivzaW4rUAp00uPN5hZ8IqQ/a6Pnb7o3DoQuSgHJkVzX+KnIFUfp?=
+ =?us-ascii?Q?8l//IuzJzioGziyYNR6Rv+oJT+5iDeOO0rKINsqbGPdw9Qyn/qOp2ulxf73H?=
+ =?us-ascii?Q?bueC9ou07kmilWrjog9tBSDjdA0rspTDbBs9E4ZtxkIk+GrApsTLbmwk/3JT?=
+ =?us-ascii?Q?zc2oDFczMrCxUJXyPMsk98z24GXcghqcefYBwQQsHsrUArbdJDF8zGucM5LK?=
+ =?us-ascii?Q?X/E1xU7Daw3+QWlPUY5jCALn3wDWv3yNf6l9dWtG8BOnAaUk0Mq8wO60Ks9a?=
+ =?us-ascii?Q?A3niQa47YU5mn6asrrGiH8smMnUDJrCcMQNBLb/eBhou1J37ewjwOwctfkH9?=
+ =?us-ascii?Q?6IbE+Bn2l5MqH/U0V8ZGQc9sx92T2ZcXKMM8/4kuK2ja21UhST81UmEoYoRS?=
+ =?us-ascii?Q?eP6xhc7YkkxQLYR7S/SQp0VXPe/bqKEhl+L2t+TkvNAAhkZ2A6meyvraP2jt?=
+ =?us-ascii?Q?II/EvFLgI8Bcbgyy/zrwh3zMCe8S79qaMfyETJcJSHzAWfACHSfkB8sAcaT+?=
+ =?us-ascii?Q?nncq3w+1ml37h+nM+0mrXvBe2t8ivWYSTP/FT5rGbzSfFdOrxE23tSedXPCr?=
+ =?us-ascii?Q?DOpLOuPWrj/G9PV4ZaGeXYd2FYIIPWrh+YduiDdyjB/moOUvGBHmkoPvGqHZ?=
+ =?us-ascii?Q?ufA3JubYcGWflzUT0oVwtzO+H7jghoMlIje4HbvxDb56iANxW9OT/gsQ5qTJ?=
+ =?us-ascii?Q?CZmJyPV3hmnK9iZlP4VWUOqk3uXi5keyefq18PLRZVp2y+XRuOFeWKXhsABm?=
+ =?us-ascii?Q?koIhLpTl5jah9QMOJGKxHSPt5wi1qnQcuhgIN++a/AOrx1aBT4G3XZO5w68/?=
+ =?us-ascii?Q?K6jUCy7v0/Uq2KCDRTP2LnIp8vvt0kg84jwnwmuLP2hEhiwJ3CuOmBQ+j1wO?=
+ =?us-ascii?Q?ZxSpGNBse98SvEzRDRkOCBElpxi+ePz+0HMZuk2alHkrSmrZqa4Y?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ecd36fc1-0bde-430a-06cf-08ded2b72e9f
+X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Jun 2026 12:42:13.9666
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: c8ba63e3-d908-4e2d-7789-08ded29d88d9
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.118.233];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: BL6PEPF0001AB4B.namprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA1PR12MB6893
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: gjEAPxTMfF6fxhRN01dVnfx1d1cWaNzfK7h5ByqlqFlZYVbWBvypCZKQa4J4p6R4rBZP8qtlZiXcPioiwBATYHD4wEnfEgvd3rRm2ODgw2KbZsBLuyX9U8NXf8ljw/26
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVXPR04MB10023
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260625_023846_110278_4A233F1B 
-X-CRM114-Status: UNSURE (   9.30  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260625_054218_717570_BE272497 
+X-CRM114-Status: GOOD (  16.59  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,42 +139,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, 24 Jun 2026 13:57:46 -0400, Frank Li wrote:
-...
-...
->> [Severity: High]
->> Is it possible that sending the SETAASA broadcast before direct SETDASA
->> assignments breaks initialization for devices that natively support SETAASA
->> but are configured for SETDASA?
->>
->> According to the I3C specification, any device on the bus natively supporting
->> SETAASA will respond to this broadcast by adopting its static address as its
->> dynamic address.
->>
->> After this broadcast, the driver iterates through devices and attempts to
->> assign custom dynamic addresses via direct SETDASA commands:
->>
->> drivers/i3c/master.c:i3c_master_early_i3c_dev_add() {
->>     ...
->> 	ret = i3c_master_setdasa_locked(master, i3cdev->info.static_addr,
->> 					i3cdev->boardinfo->init_dyn_addr);
->>     ...
->> }
->>
->> Since the target device already adopted its dynamic address during the
->> SETAASA broadcast, it is no longer in the unassigned state and will NACK
->> the subsequent SETDASA command.
-> 
-> Look like correct, but I am not sure if target will NACK SETDASA. Or should
-> use SETNEWDA for SETAASA method.
+On Thu, Jun 25, 2026 at 09:38:15AM +0000, Akhil R wrote:
+> On Wed, 24 Jun 2026 13:57:46 -0400, Frank Li wrote:
+> ...
+> ...
+> >> [Severity: High]
+> >> Is it possible that sending the SETAASA broadcast before direct SETDASA
+> >> assignments breaks initialization for devices that natively support SETAASA
+> >> but are configured for SETDASA?
+> >>
+> >> According to the I3C specification, any device on the bus natively supporting
+> >> SETAASA will respond to this broadcast by adopting its static address as its
+> >> dynamic address.
+> >>
+> >> After this broadcast, the driver iterates through devices and attempts to
+> >> assign custom dynamic addresses via direct SETDASA commands:
+> >>
+> >> drivers/i3c/master.c:i3c_master_early_i3c_dev_add() {
+> >>     ...
+> >> 	ret = i3c_master_setdasa_locked(master, i3cdev->info.static_addr,
+> >> 					i3cdev->boardinfo->init_dyn_addr);
+> >>     ...
+> >> }
+> >>
+> >> Since the target device already adopted its dynamic address during the
+> >> SETAASA broadcast, it is no longer in the unassigned state and will NACK
+> >> the subsequent SETDASA command.
+> >
+> > Look like correct, but I am not sure if target will NACK SETDASA. Or should
+> > use SETNEWDA for SETAASA method.
+>
+> Yes, this looks valid for mixed device buses. I can move
+> i3c_master_setaasa_locked() after the SETDASA handling and before
+> i3c_master_do_daa() in the same function, so SETDASA-assigned devices will
+> ignore the later SETAASA broadcast. Does that sound good to you?
 
-Yes, this looks valid for mixed device buses. I can move
-i3c_master_setaasa_locked() after the SETDASA handling and before
-i3c_master_do_daa() in the same function, so SETDASA-assigned devices will
-ignore the later SETAASA broadcast. Does that sound good to you?
+yes, try it to follow spec.
 
-Best Regards,
-Akhil
+Frank
+>
+> Best Regards,
+> Akhil
 
 -- 
 linux-i3c mailing list
