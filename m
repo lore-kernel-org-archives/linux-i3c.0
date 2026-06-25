@@ -4,68 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2A95CDB47C
-	for <linux-i3c@archiver.kernel.org>; Thu, 25 Jun 2026 03:04:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC6B6CDB47C
+	for <linux-i3c@archiver.kernel.org>; Thu, 25 Jun 2026 03:21:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Qs3K3xTvl+UZK/ih/f0y0a4kemK0MxE4+AaRk+QLsN4=; b=vVItP58bT7GLdT
-	tHCUjkHOqYI/c6xb+Gs4NtLmisb0IXgDXJ5BEKRg4zmAb9sZ671R/637QpjL3HmNjQsUjfGVwlZu0
-	RYcoZ0ZyItveV639C5/colXuqR7tfKFdx9OKonWevhZ5i5nTzJqcE30dFl1dYKD8HcOvZh70yZTMR
-	1B8aXJa+mQ/n0CbeQ87It3FVv+4ewIgs3pf5y+llTxOR/aJ6mZjs4tZBqS3ife96mTijlkoXIFZO7
-	8NnGuIXKEvolPVxB9cmsTNU5GTEhGCFG5zwK3537qaTMOUXP0ay3XiX9nRv+0mtewttTMKnf4IK1D
-	LIv9f7l3wXpbWE5R4wfg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bPe07J4PZKIn/Fvob3UoWF9eSOE9FvIK7zLROzBOc0Q=; b=XKsQFABLgxHGlV
+	1oMBomzX+gV7HdpqgjaKJL3i4EifRA20eMo227CFxa1ErXxejkYIqsW83yTbSjAlnvyDm+b3A+eqz
+	0SiU+uLCfR8HgJRUWq+2Un5qD63j2pp558wJbeYI0yt8Pmb03rJmAMTqjI3nkrnsRBd+hMAwJmNmj
+	zFYpFOJWnevPsVe0YgH8eheFbOjd+K6+Xt0b1/IEANqjSzJ1rJBwQ9IuLr82nYCdbOFenQvkQDxTw
+	r9xm0VA02R+HuOik7NwvERAz1UwBktHCMaJqYLISWkUN3DTSMs1nfGzEXgta3Ju8KJfPuY7dmX2Pt
+	MH16u3FDvEaro9797KJA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wcaNt-00000008bLr-2lJJ;
-	Thu, 25 Jun 2026 03:04:09 +0000
-Received: from smtp21.cstnet.cn ([159.226.251.21] helo=cstnet.cn)
+	id 1wcaeE-00000008c1g-0f8Y;
+	Thu, 25 Jun 2026 03:21:02 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wcaNr-00000008bKq-1u12
+	id 1wcaeC-00000008c1Y-1lUO
 	for linux-i3c@lists.infradead.org;
-	Thu, 25 Jun 2026 03:04:09 +0000
-Received: from localhost.localdomain (unknown [111.196.245.140])
-	by APP-01 (Coremail) with SMTP id qwCowAC3Usukmjxq41EkAw--.38511S2;
-	Thu, 25 Jun 2026 11:04:04 +0800 (CST)
-From: Pengpeng Hou <pengpeng@iscas.ac.cn>
-To: Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Frank Li <Frank.Li@nxp.com>,
-	linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	pengpeng@iscas.ac.cn
-Subject: [PATCH] i3c: master: renesas: reset xfer status before each wait
-Date: Thu, 25 Jun 2026 11:03:57 +0800
-Message-ID: <20260625030357.87402-1-pengpeng@iscas.ac.cn>
-X-Mailer: git-send-email 2.50.1
-MIME-Version: 1.0
-X-CM-TRANSID: qwCowAC3Usukmjxq41EkAw--.38511S2
-X-Coremail-Antispam: 1UD129KBjvJXoWxXFWrZr4fXFW7Ww48Wr4rKrg_yoW5XFWfpa
-	1UGr45tF48GF4vgF4UCr93Zas5A3W5KryIka1Sg3Z5Cryvvr1qkF1YvFWSyr13uFW8Jryj
-	yFWjkw4UC34rAFUanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDU0xBIdaVrnRJUUUkK14x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
-	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
-	1l84ACjcxK6xIIjxv20xvE14v26w1j6s0DM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4U
-	JVWxJr1l84ACjcxK6I8E87Iv67AKxVW0oVCq3wA2z4x0Y4vEx4A2jsIEc7CjxVAFwI0_Gc
-	CE3s1le2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E
-	2Ix0cI8IcVAFwI0_Jrv_JF1lYx0Ex4A2jsIE14v26r4j6F4UMcvjeVCFs4IE7xkEbVWUJV
-	W8JwACjcxG0xvY0x0EwIxGrwACjI8F5VA0II8E6IAqYI8I648v4I1lc7CjxVAaw2AFwI0_
-	JF0_Jw1l42xK82IYc2Ij64vIr41l4I8I3I0E4IkC6x0Yz7v_Jr0_Gr1lx2IqxVAqx4xG67
-	AKxVWUJVWUGwC20s026x8GjcxK67AKxVWUGVWUWwC2zVAF1VAY17CE14v26r126r1DMIIY
-	rxkI7VAKI48JMIIF0xvE2Ix0cI8IcVAFwI0_Jr0_JF4lIxAIcVC0I7IYx2IY6xkF7I0E14
-	v26r4j6F4UMIIF0xvE42xK8VAvwI8IcIk0rVWUJVWUCwCI42IY6I8E87Iv67AKxVW8JVWx
-	JwCI42IY6I8E87Iv6xkF7I0E14v26r4UJVWxJrUvcSsGvfC2KfnxnUUI43ZEXa7VUjMqcU
-	UUUUU==
-X-Originating-IP: [111.196.245.140]
-X-CM-SenderInfo: pshqw1xhqjqxpvfd2hldfou0/
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260624_200407_869882_08DE92E9 
-X-CRM114-Status: UNSURE (   8.59  )
-X-CRM114-Notice: Please train this message.
+	Thu, 25 Jun 2026 03:21:00 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 849A860018;
+	Thu, 25 Jun 2026 03:20:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 14A3D1F000E9;
+	Thu, 25 Jun 2026 03:20:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1782357659;
+	bh=zKn7TTVdE0aJzzk5WoXQQGD0KOUAXcO2iTJ5ASeYT04=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=bI+baOYhnNYK1RPoiQUf5XshY3/SQrDAoQXmqnn6C5aK2e/jR/tyjIXTaHAQs7ffu
+	 rCLHvLa7yAgpr/ivSztt/Znu1AmdT5DBWu2utKY6Jf0yAJa1HgwW6SGaA8Fxh6R+bw
+	 TrifzVe4YTyZ9j5OGyjcgEQOc7gHEYNn92+o80C0QrJQ5TkaZ8oEBSsTwXfnwMrF+3
+	 0Isg+6DEhnsHrJJbPt2xx8oNV19t031JHLtY7xi1NWBM6xBukDtoBWY0sUlQeXNn0L
+	 FYlcQEkpvOZ/gaZWJRy6FKoOu1gZndBXqTyHjWOaoNOasxBNrqpqk30Gs50TwWlQbv
+	 N2xR44iXSOVzA==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH] i3c: master: renesas: reset xfer status before each
+ wait
+To: "Pengpeng Hou" <pengpeng@iscas.ac.cn>
+Cc: linux-i3c@lists.infradead.org, Frank.Li@kernel.org
+In-Reply-To: <20260625030357.87402-1-pengpeng@iscas.ac.cn>
+References: <20260625030357.87402-1-pengpeng@iscas.ac.cn>
+Date: Thu, 25 Jun 2026 03:20:58 +0000
+Message-Id: <20260625032059.14A3D1F000E9@smtp.kernel.org>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,95 +62,103 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-renesas_i3c_wait_xfer() reinitializes the completion before queuing a
-transfer, but it leaves xfer->ret unchanged. After one transfer completes
-successfully, a later timeout can therefore reuse the old zero status.
-
-Reset xfer->ret to -ETIMEDOUT before each wait, return the transfer
-status from the wait helper, and propagate it from DAA, CCC and private
-I3C transfers.
-
-Signed-off-by: Pengpeng Hou <pengpeng@iscas.ac.cn>
----
- drivers/i3c/master/renesas-i3c.c | 19 ++++++++++++-------
- 1 file changed, 12 insertions(+), 7 deletions(-)
-
-diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
-index f39c449922ca..7f123cd72cdf 100644
---- a/drivers/i3c/master/renesas-i3c.c
-+++ b/drivers/i3c/master/renesas-i3c.c
-@@ -433,15 +433,18 @@ static void renesas_i3c_enqueue_xfer(struct renesas_i3c *i3c, struct renesas_i3c
- 	}
- }
- 
--static void renesas_i3c_wait_xfer(struct renesas_i3c *i3c, struct renesas_i3c_xfer *xfer)
-+static int renesas_i3c_wait_xfer(struct renesas_i3c *i3c, struct renesas_i3c_xfer *xfer)
- {
- 	unsigned long time_left;
- 
-+	xfer->ret = -ETIMEDOUT;
- 	renesas_i3c_enqueue_xfer(i3c, xfer);
- 
- 	time_left = wait_for_completion_timeout(&xfer->comp, msecs_to_jiffies(1000));
- 	if (!time_left)
- 		renesas_i3c_dequeue_xfer(i3c, xfer);
-+
-+	return xfer->ret;
- }
- 
- static void renesas_i3c_set_prts(struct renesas_i3c *i3c, u32 val)
-@@ -687,7 +690,9 @@ static int renesas_i3c_daa(struct i3c_master_controller *m)
- 		    NCMDQP_CMD(I3C_CCC_ENTDAA) | NCMDQP_DEV_INDEX(ret) |
- 		    NCMDQP_DEV_COUNT(i3c->maxdevs - ret) | NCMDQP_TOC;
- 
--	renesas_i3c_wait_xfer(i3c, xfer);
-+	ret = renesas_i3c_wait_xfer(i3c, xfer);
-+	if (ret)
-+		return ret;
- 
- 	newdevs = GENMASK(i3c->maxdevs - cmd->rx_count - 1, 0);
- 	newdevs &= ~olddevs;
-@@ -800,9 +805,7 @@ static int renesas_i3c_send_ccc_cmd(struct i3c_master_controller *m,
- 		}
- 	}
- 
--	renesas_i3c_wait_xfer(i3c, xfer);
--
--	ret = xfer->ret;
-+	ret = renesas_i3c_wait_xfer(i3c, xfer);
- 	if (ret)
- 		ccc->err = I3C_ERROR_M2;
- 
-@@ -815,7 +818,7 @@ static int renesas_i3c_i3c_xfers(struct i3c_dev_desc *dev, struct i3c_xfer *i3c_
- 	struct i3c_master_controller *m = i3c_dev_get_master(dev);
- 	struct renesas_i3c *i3c = to_renesas_i3c(m);
- 	struct renesas_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
--	int i;
-+	int i, ret;
- 
- 	/* Enable I3C bus. */
- 	renesas_i3c_bus_enable(m, true);
-@@ -854,7 +857,9 @@ static int renesas_i3c_i3c_xfers(struct i3c_dev_desc *dev, struct i3c_xfer *i3c_
- 				renesas_set_bit(i3c->regs, NTIE, NTIE_TDBEIE0);
- 		}
- 
--		renesas_i3c_wait_xfer(i3c, xfer);
-+		ret = renesas_i3c_wait_xfer(i3c, xfer);
-+		if (ret)
-+			return ret;
- 	}
- 
- 	return 0;
--- 
-2.50.1 (Apple Git-155)
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+NCBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
+IFtDcml0aWNhbF0gQnVmZmVyIE92ZXJmbG93IGFuZCBEYXRhIENvcnJ1cHRpb24gaW4gVHJhbnNm
+ZXIgSW50ZXJydXB0IEhhbmRsZXJzLgotIFtIaWdoXSBNaXNzaW5nIEhhcmR3YXJlIFRlYXJkb3du
+IG9uIFRpbWVvdXQgY2F1c2luZyBVc2UtQWZ0ZXItRnJlZSBhbmQgTlVMTCBQb2ludGVyIERlcmVm
+ZXJlbmNlLgotIFtIaWdoXSBJZ25vcmVkIHRyYW5zZmVyIHRpbWVvdXQgbGVhZHMgdG8gSGFyZHdh
+cmUgU3RhdGUgRGVzeW5jIGFuZCBzaWxlbnQgZmFpbHVyZXMuCi0gW0hpZ2hdIFVudmFsaWRhdGVk
+IGhhcmR3YXJlIHJlc3BvbnNlIGxlbmd0aCBjYXVzZXMgSW50ZWdlciBVbmRlcmZsb3cgYW5kIFVu
+ZGVmaW5lZCBCZWhhdmlvciBpbiBHRU5NQVNLLgotLQoKY29tbWl0IDE4MjdkOWI3OTVlNzBjZDFm
+OTA5ZjY4OGI3MDJmMDZjNzMyYzg5ZTEKQXV0aG9yOiBQZW5ncGVuZyBIb3UgPHBlbmdwZW5nQGlz
+Y2FzLmFjLmNuPgoKaTNjOiBtYXN0ZXI6IHJlbmVzYXM6IHJlc2V0IHhmZXIgc3RhdHVzIGJlZm9y
+ZSBlYWNoIHdhaXQKCnJlbmVzYXNfaTNjX3dhaXRfeGZlcigpIHJlaW5pdGlhbGl6ZXMgdGhlIGNv
+bXBsZXRpb24gYmVmb3JlIHF1ZXVpbmcgYQp0cmFuc2ZlciwgYnV0IGl0IGxlYXZlcyB4ZmVyLT5y
+ZXQgdW5jaGFuZ2VkLiBBZnRlciBvbmUgdHJhbnNmZXIgY29tcGxldGVzCnN1Y2Nlc3NmdWxseSwg
+YSBsYXRlciB0aW1lb3V0IGNhbiB0aGVyZWZvcmUgcmV1c2UgdGhlIG9sZCB6ZXJvIHN0YXR1cy4K
+ClJlc2V0IHhmZXItPnJldCB0byAtRVRJTUVET1VUIGJlZm9yZSBlYWNoIHdhaXQsIHJldHVybiB0
+aGUgdHJhbnNmZXIKc3RhdHVzIGZyb20gdGhlIHdhaXQgaGVscGVyLCBhbmQgcHJvcGFnYXRlIGl0
+IGZyb20gREFBLCBDQ0MgYW5kIHByaXZhdGUKSTNDIHRyYW5zZmVycy4KCj4gZGlmZiAtLWdpdCBh
+L2RyaXZlcnMvaTNjL21hc3Rlci9yZW5lc2FzLWkzYy5jIGIvZHJpdmVycy9pM2MvbWFzdGVyL3Jl
+bmVzYXMtaTNjLmMKPiBpbmRleCBmMzljNDQ5OTIyY2EyLi43ZjEyM2NkNzJjZGYzIDEwMDY0NAo+
+IC0tLSBhL2RyaXZlcnMvaTNjL21hc3Rlci9yZW5lc2FzLWkzYy5jCj4gKysrIGIvZHJpdmVycy9p
+M2MvbWFzdGVyL3JlbmVzYXMtaTNjLmMKPiBAQCAtNDMzLDE1ICs0MzMsMTggQEAgc3RhdGljIHZv
+aWQgcmVuZXNhc19pM2NfZW5xdWV1ZV94ZmVyKHN0cnVjdCByZW5lc2FzX2kzYyAqaTNjLCBzdHJ1
+Y3QgcmVuZXNhc19pM2MKWyAuLi4gXQo+IC1zdGF0aWMgdm9pZCByZW5lc2FzX2kzY193YWl0X3hm
+ZXIoc3RydWN0IHJlbmVzYXNfaTNjICppM2MsIHN0cnVjdCByZW5lc2FzX2kzY194ZmVyICp4ZmVy
+KQo+ICtzdGF0aWMgaW50IHJlbmVzYXNfaTNjX3dhaXRfeGZlcihzdHJ1Y3QgcmVuZXNhc19pM2Mg
+KmkzYywgc3RydWN0IHJlbmVzYXNfaTNjX3hmZXIgKnhmZXIpCj4gIHsKPiAgCXVuc2lnbmVkIGxv
+bmcgdGltZV9sZWZ0Owo+ICAKPiArCXhmZXItPnJldCA9IC1FVElNRURPVVQ7Cj4gIAlyZW5lc2Fz
+X2kzY19lbnF1ZXVlX3hmZXIoaTNjLCB4ZmVyKTsKPiAgCj4gIAl0aW1lX2xlZnQgPSB3YWl0X2Zv
+cl9jb21wbGV0aW9uX3RpbWVvdXQoJnhmZXItPmNvbXAsIG1zZWNzX3RvX2ppZmZpZXMoMTAwMCkp
+Owo+ICAJaWYgKCF0aW1lX2xlZnQpCj4gIAkJcmVuZXNhc19pM2NfZGVxdWV1ZV94ZmVyKGkzYywg
+eGZlcik7Cj4gKwo+ICsJcmV0dXJuIHhmZXItPnJldDsKPiAgfQoKW1NldmVyaXR5OiBIaWdoXQpU
+aGlzIGlzbid0IGEgYnVnIGludHJvZHVjZWQgYnkgdGhpcyBwYXRjaCwgYnV0IGRvZXMgdGhpcyB0
+aW1lb3V0IHBhdGggc2FmZWx5CmFib3J0IHRoZSBhY3RpdmUgaGFyZHdhcmUgb3BlcmF0aW9uPwoK
+SWYgYSB0aW1lb3V0IG9jY3VycywgdGhlIGRyaXZlciByZW1vdmVzIHRoZSB0cmFuc2ZlciBmcm9t
+IHRoZSBxdWV1ZSB2aWEKcmVuZXNhc19pM2NfZGVxdWV1ZV94ZmVyKCkgYnV0IGRvZXMgbm90IGFw
+cGVhciB0byBoYWx0IHRoZSBoYXJkd2FyZSBETUEgb3IKaW50ZXJydXB0IGV4ZWN1dGlvbi4KCklm
+IHRoZSBjYWxsZXIgdGhlbiBmcmVlcyB0aGUgeGZlciBzdHJ1Y3QsIGFuZCB0aGUgaGFyZHdhcmUg
+bGF0ZXIgY29tcGxldGVzIHRoZQpvcGVyYXRpb24sIGNvdWxkIHRoZSBkZWxheWVkIGludGVycnVw
+dCBpbiByZW5lc2FzX2kzY19yZXNwX2lzcigpIGRlcmVmZXJlbmNlCmEgZnJlZWQgb3IgdW5yZWxh
+dGVkIHRyYW5zZmVyPwoKZHJpdmVycy9pM2MvbWFzdGVyL3JlbmVzYXMtaTNjLmM6cmVuZXNhc19p
+M2NfcmVzcF9pc3IoKSB7CiAgICAuLi4KICAgIHhmZXIgPSBpM2MtPnhmZXJxdWV1ZS5jdXI7CiAg
+ICBjbWQgPSB4ZmVyLT5jbWRzOwogICAgLi4uCn0KClsgLi4uIF0KPiBAQCAtNjg3LDcgKzY5MCw5
+IEBAIHN0YXRpYyBpbnQgcmVuZXNhc19pM2NfZGFhKHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xs
+ZXIgKm0pCj4gIAkJICAgIE5DTURRUF9DTUQoSTNDX0NDQ19FTlREQUEpIHwgTkNNRFFQX0RFVl9J
+TkRFWChyZXQpIHwKPiAgCQkgICAgTkNNRFFQX0RFVl9DT1VOVChpM2MtPm1heGRldnMgLSByZXQp
+IHwgTkNNRFFQX1RPQzsKPiAgCj4gLQlyZW5lc2FzX2kzY193YWl0X3hmZXIoaTNjLCB4ZmVyKTsK
+PiArCXJldCA9IHJlbmVzYXNfaTNjX3dhaXRfeGZlcihpM2MsIHhmZXIpOwo+ICsJaWYgKHJldCkK
+PiArCQlyZXR1cm4gcmV0Owo+ICAKPiAgCW5ld2RldnMgPSBHRU5NQVNLKGkzYy0+bWF4ZGV2cyAt
+IGNtZC0+cnhfY291bnQgLSAxLCAwKTsKCltTZXZlcml0eTogSGlnaF0KVGhpcyBpcyBhIHByZS1l
+eGlzdGluZyBpc3N1ZSwgYnV0IGRvZXMgdGhpcyBjYWxjdWxhdGlvbiBoYW5kbGUgdGhlIGNhc2Ug
+d2hlcmUKbm8gZGV2aWNlcyBhcmUgYXR0YWNoZWQ/CgpJZiBubyBkZXZpY2VzIHJlc3BvbmQgZHVy
+aW5nIER5bmFtaWMgQWRkcmVzcyBBc3NpZ25tZW50LCBjbWQtPnJ4X2NvdW50IHdpbGwKZXF1YWwg
+aTNjLT5tYXhkZXZzLiBUaGlzIHdvdWxkIGNhdXNlIHRoZSBzdWJ0cmFjdGlvbiB0byBldmFsdWF0
+ZSB0byAtMSwKbGVhZGluZyB0byB1bmRlZmluZWQgYmVoYXZpb3IgaW4gdGhlIEdFTk1BU0sgbWFj
+cm8uCgpDb3VsZCB0aGlzIHJlc3VsdCBpbiBuZXdkZXZzIGV2YWx1YXRpbmcgdG8gYWxsIDFzIGFu
+ZCBpbmNvcnJlY3RseSByZWdpc3RlcmluZwplbXB0eSBzbG90cyBhcyByZWFsIGRldmljZXM/Cgpb
+IC4uLiBdCgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXNuJ3QgYSBidWcgaW50cm9kdWNlZCBieSB0
+aGlzIHBhdGNoLCBidXQgZG9lcyByZW5lc2FzX2kzY19pMmNfeGZlcnMoKQpwcm9wZXJseSBoYW5k
+bGUgdHJhbnNmZXIgdGltZW91dHM/CgpXaGVuIHdhaXRfZm9yX2NvbXBsZXRpb25fdGltZW91dCgp
+IHRpbWVzIG91dCwgaXQgZG9lcyBub3Qgc2V0IGNtZC0+ZXJyLiBUaGUKbG9vcCB0aGVuIGNoZWNr
+cyBpZiAoY21kLT5lcnIpIGFuZCBwcm9jZWVkcyB0byB0aGUgbmV4dCBtZXNzYWdlOgoKZHJpdmVy
+cy9pM2MvbWFzdGVyL3JlbmVzYXMtaTNjLmM6cmVuZXNhc19pM2NfaTJjX3hmZXJzKCkgewogICAg
+Li4uCiAgICB3YWl0X2Zvcl9jb21wbGV0aW9uX3RpbWVvdXQoJnhmZXItPmNvbXAsIG0tPmkyYy50
+aW1lb3V0KTsKCiAgICBpZiAoY21kLT5lcnIpCiAgICAgICAgYnJlYWs7CiAgICAuLi4KfQoKQ291
+bGQgdGhpcyBpZ25vcmUgdGhlIHRpbWVvdXQsIGluY29ycmVjdGx5IHJldHVybiBzdWNjZXNzLCBh
+bmQgYWxsb3cgYSBkZWxheWVkCmhhcmR3YXJlIG9wZXJhdGlvbiB0byBjb3JydXB0IHRoZSBidWZm
+ZXIgb2YgdGhlIHN1YnNlcXVlbnQgbWVzc2FnZT8KCltTZXZlcml0eTogQ3JpdGljYWxdClRoaXMg
+aXMgYSBwcmUtZXhpc3RpbmcgaXNzdWUsIGJ1dCBkbyB0aGUgaW50ZXJydXB0IGhhbmRsZXJzIGNv
+cnJlY3RseSBtYW5hZ2UKYnVmZmVyIGxlbmd0aHMgYW5kIG9mZnNldHMgZm9yIHRyYW5zZmVycz8K
+CkluIHJlbmVzYXNfaTNjX3J4X2lzcigpLCB0aGUgYnl0ZSBjb3VudCBpcyByb3VuZGVkIHVwIHRv
+IHRoZSBuZWFyZXN0IDMyLWJpdAp3b3JkLCB3aGljaCBjYW4gd3JpdGUgcGFzdCB0aGUgYWN0dWFs
+IGJ1ZmZlciBsZW5ndGggZm9yIHVuYWxpZ25lZCB0cmFuc2ZlcnM6Cgpkcml2ZXJzL2kzYy9tYXN0
+ZXIvcmVuZXNhcy1pM2MuYzpyZW5lc2FzX2kzY19yeF9pc3IoKSB7CiAgICAuLi4KICAgIHJlYWRf
+Ynl0ZXMgPSBOREJTVExWMF9SREJMVihyZW5lc2FzX3JlYWRsKGkzYy0+cmVncywgTkRCU1RMVjAp
+KSAqIHNpemVvZih1MzIpOwogICAgaTNjX3JlYWRsX2ZpZm8oaTNjLT5yZWdzICsgTlREVEJQMCwg
+Y21kLT5yeF9idWYsIHJlYWRfYnl0ZXMpOwogICAgLi4uCn0KCkFkZGl0aW9uYWxseSwgdGhlIHRy
+YW5zbWl0IElTUiB3cml0ZXMgdGhlIGVudGlyZSB0cmFuc2ZlciBsZW5ndGggd2l0aG91dCB0cmFj
+a2luZwpieXRlcyBhbHJlYWR5IHNlbnQsIHdoaWNoIG1pZ2h0IG92ZXJmbG93IHRoZSBoYXJkd2Fy
+ZSBGSUZPOgoKZHJpdmVycy9pM2MvbWFzdGVyL3JlbmVzYXMtaTNjLmM6cmVuZXNhc19pM2NfdHhf
+aXNyKCkgewogICAgLi4uCiAgICBpM2Nfd3JpdGVsX2ZpZm8oaTNjLT5yZWdzICsgTlREVEJQMCwg
+Y21kLT50eF9idWYsIGNtZC0+bGVuKTsKICAgIC4uLgp9CgpGaW5hbGx5LCB0aGUgcmVzcG9uc2Ug
+SVNSIHJlYWRzIHRoZSByZW1haW5pbmcgYnl0ZXMgaW50byB0aGUgc3RhcnQgb2YgdGhlCmJ1ZmZl
+ciwgcG90ZW50aWFsbHkgb3ZlcndyaXRpbmcgZGF0YSBwcmV2aW91c2x5IHJlY2VpdmVkIGJ5IHRo
+ZSByeF9pc3I6Cgpkcml2ZXJzL2kzYy9tYXN0ZXIvcmVuZXNhcy1pM2MuYzpyZW5lc2FzX2kzY19y
+ZXNwX2lzcigpIHsKICAgIC4uLgogICAgYnl0ZXNfcmVtYWluaW5nID0gZGF0YV9sZW4gLSBjbWQt
+PnJ4X2NvdW50OwogICAgaTNjX3JlYWRsX2ZpZm8oaTNjLT5yZWdzICsgTlREVEJQMCwgY21kLT5y
+eF9idWYsIGJ5dGVzX3JlbWFpbmluZyk7CiAgICAuLi4KfQoKQ291bGQgdGhpcyBsZWFkIHRvIG1l
+bW9yeSBjb3JydXB0aW9uIGFuZCBvdXQtb2YtYm91bmRzIHdyaXRlcz8KCi0tIApTYXNoaWtvIEFJ
+IHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA2MjUwMzAzNTcu
+ODc0MDItMS1wZW5ncGVuZ0Bpc2Nhcy5hYy5jbj9wYXJ0PTEKCi0tIApsaW51eC1pM2MgbWFpbGlu
+ZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
+YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNjCg==
