@@ -4,126 +4,58 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D4A2EC43458
-	for <linux-i3c@archiver.kernel.org>; Tue, 30 Jun 2026 17:06:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2AECBC43458
+	for <linux-i3c@archiver.kernel.org>; Tue, 30 Jun 2026 17:29:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6NbFVpJBAtHlC3uIMuJh2/b0D11H/LmSZPqlvlUsop8=; b=Y4bhMbQysx1vfn
-	rqY97XVjuxb3PXJjV8nd4xO2tmxfBF8VZ8taO53BeNCc1RwUkwo+T7UmRbcEiiXeJmiXWtxLPm/vT
-	kXqDdAIi9kwhPpCv09LLvWwAuAD/AEFHGCKLAlAiIp/jYGkgt3hhM9Hqnouxs1o5RyHnAwl3K91Bg
-	M+XlnABhwF+6/kr50MHi0ZmIwePOQC5q6L/TzEZLEea3up2qzqbRN8LP+M4faoeDe0c6cG4NK3sbA
-	cyeAaXMG5vhdo149DlXyZleJAN/FZHDi7CiH1bFMbW9AaOfPI9QrEY6VPCMMK6yKpHlZ4ke4U4ga8
-	GyUnPIAgA7CsYc8zeHGg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9z8ggiB1u+tWu9DVp+k89OIfDfhvup3cRi6imMAfOAU=; b=YSLxlxzZVIA66/
+	5WAfGVyo3znvVyuts99meYY6COFSp+uDpf9hrB5LUFd4vDld5/Pt/bxD7wmvsm0z9LvT+y401c3DD
+	hBrL8YqbcsBUhsb1vNFgqUtX4ysjt2/TB1CaxCVnPC8xeIbq7f0mRlYo1/78TDAm5qpjTR+0j3FtH
+	c8l0f3IwsBGtl+wtLFflf7E27Ffc9KYHjjmbEvbzk0uO/2sxyRmNv85TZuzvS+qsykh2/67J+SJgy
+	PGp4ZoFrhj8JNnEqWvNnXpc1LoeQ9zTNUHnJvN8Ql8m3OI9cVHLuNQC1wk6Wy2G5k2jo6K+MEN8ga
+	Q2n5p1AOHB9OequbZA1A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1webv5-0000000HXbv-2f8k;
-	Tue, 30 Jun 2026 17:06:47 +0000
-Received: from mail-westeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c201::3] helo=AS8PR04CU009.outbound.protection.outlook.com)
+	id 1wecGh-0000000HZNv-3h3j;
+	Tue, 30 Jun 2026 17:29:07 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1webv2-0000000HXbW-1Bs9
+	id 1wecGg-0000000HZNk-2nwQ
 	for linux-i3c@lists.infradead.org;
-	Tue, 30 Jun 2026 17:06:45 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Pknl8efpACyxudI7xiUBDgSH682VU6bHbFVHwXEdbG3QEbJhihsx03uP6QYLOmHqgN8E/LxVdexBMGNUuDhQ3yt64wL0iKB0GBiTy4FAhO3gQphQKd6OGPNdpVE/Ci6sREqgEpXUkKLWa6gmVuTDaR3OBHyk5BUDcMI94FibOqZb3mUw8tKYDS4M2E/jwq9Wz47zaMe8WUBUilEtHzG+8i4xqQq3cd1u64KcGETuqIe1Gaxkqqe/8cqrD3TupWn0dkSPVpK6wlDxFHTeTyoEs8omAUoCkc6MKaXmq77pEbZQbN9nctl3Nt0f/L6CyWxQCYxjOwlnh17jYN5VPOCS2g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=GY8VZ4B1SXeneZJPYav1vG0vTgOQ1CSZVEzn2m84jys=;
- b=fHiIrkqx0Oi3OxyogTRflXaVKa5rkC6nWzRuDBMMoVCmrkyQGR05JvZsG7a3rl+h95gxygU7G1cuLtaWW4wL4KZum2w7R4dYmNiz5PlTqmGa3mTDD2Efph7JOdvKYgWuBHxqLOAjFRGP5vpt9+n6bW/wbIABU4Ft3wFISnbor0hEfS5OwttwYwJo11wh7eeOEED/FhUAaF7L+536bUQiYBf8t3DjPRyjnZoN7qO8DFVm3282M2bVUlXIt6HG05zXWkcFgGz2tar1APRvgNi1BB3ecOZdHXeGm8nxjQ428sF41Osn6//9bDv+3zEprhBdyYskkhfsgSY2xKOTJuLy/g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=GY8VZ4B1SXeneZJPYav1vG0vTgOQ1CSZVEzn2m84jys=;
- b=b3kY2lmvB4apdG1QJRbHYzCyCWVMZfeBlh9sirURGSlAZ8fi4oIjIy8Z4loNfVLwy10d/O96AzYxeIcjI+Ptu8JL7cIyV1QjTcmcNbZiI1mGUmvXD6VM6+9jarDkxzV2QXHy/8+AfinsIMz/4kk7Xi9HKSqEhjS70BGfVn8oj8MthMnq+ktGqzl+1fctkK79C6KFM5rcC0hUsH1BhxlRWO1BtYtKt5ywvZ7X+AhJXQRlu2mnQoxucnlEq9WS2K8BFGd15e7WokFAw+n5e4QUt+wn7P3vPBWI/Zi+G3+CnSieRbERNJYWAHmxAMcSiOlvTUF/6RBWCTzRVSMtF/4gPw==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by DUZPR04MB10039.eurprd04.prod.outlook.com (2603:10a6:10:4d9::8) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.181.8; Tue, 30 Jun
- 2026 17:06:39 +0000
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0159.007; Tue, 30 Jun 2026
- 17:06:39 +0000
-Date: Tue, 30 Jun 2026 13:06:32 -0400
-From: Frank Li <Frank.li@oss.nxp.com>
-To: sashiko-reviews@lists.linux.dev
-Cc: tze.yee.ng@altera.com, imx@lists.linux.dev, Frank.Li@kernel.org,
-	linux-i3c@lists.infradead.org
-Subject: Re: [PATCH v4 2/3] i3c: master: dw: Map CCC hardware errors to I3C
- M0/M2
-Message-ID: <akP3mEJMkWHycvZr@lizhi-Precision-Tower-5810>
-References: <cover.1782824628.git.tze.yee.ng@altera.com>
- <56a59c5ac9a09692f9ac8a74d1d3afdce553a7d1.1782824628.git.tze.yee.ng@altera.com>
- <20260630133239.42C2F1F000E9@smtp.kernel.org>
-Content-Disposition: inline
-In-Reply-To: <20260630133239.42C2F1F000E9@smtp.kernel.org>
-X-ClientProxiedBy: SN7P222CA0018.NAMP222.PROD.OUTLOOK.COM
- (2603:10b6:806:124::27) To GV2PR04MB11799.eurprd04.prod.outlook.com
- (2603:10a6:150:2cf::9)
+	Tue, 30 Jun 2026 17:29:06 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 2654F401C1;
+	Tue, 30 Jun 2026 17:29:06 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C6E681F000E9;
+	Tue, 30 Jun 2026 17:29:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1782840546;
+	bh=Og80t2Bh/k8G5DGkYxM26YDRziAOqHMDeOdbUhE3maA=;
+	h=From:To:Cc:Subject:Date;
+	b=a1N5dPhPVVDfWXJrgzHdCcjD/zgFD9v/GlKAw4MXaVnQ2nxtsv4OvQ8ocwWMrFXQ9
+	 NSKZh86C82sl7wxC9kuWkohoL/NZGwUTe3GZAZdhwpatM0N8R+ZIry9FMnzDwC2X5H
+	 goEJM9fOThtacbYu9O1x3WH78kJOL1xFjZ6B1XLbQ9xbFbEOGahdXs3OCAeMzzVnaJ
+	 BH0bkmqUj/upzZboI0djuKxKuIteGvgtj3zaj1JX5czbZN1zcknFjBJM/WlFpotjOn
+	 60fkFNHNWXVI50kES9QWeBywMtQN6QGThIK625wg3ECEl+jJH9kAS1fscSOhxHaFvp
+	 hljXLkQUPl5bw==
+From: Jakub Kicinski <kuba@kernel.org>
+To: linux-i3c@lists.infradead.org
+Cc: Jakub Kicinski <kuba@kernel.org>,
+	alexandre.belloni@bootlin.com,
+	Frank.Li@nxp.com,
+	adrianhoyin.ng@altera.com,
+	ustc.gu@gmail.com,
+	bbrezillon@kernel.org,
+	vitor.soares@synopsys.com
+Subject: [PATCH v2] i3c: dw: avoid shift-out-of-bounds when DAA assigns no devices
+Date: Tue, 30 Jun 2026 10:29:04 -0700
+Message-ID: <20260630172904.2662160-1-kuba@kernel.org>
+X-Mailer: git-send-email 2.54.0
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|DUZPR04MB10039:EE_
-X-MS-Office365-Filtering-Correlation-Id: bfb9f09d-d91a-41c6-66d4-08ded6c9f33c
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|23010399003|19092799006|376014|1800799024|18002099003|22082099003|11063799006|56012099006|4143699003;
-X-Microsoft-Antispam-Message-Info: HisZH9GGnFcXy3pnQjr1TCwL4LuZugj0xoWOaUFUD+bi/vBeILnuwBvu3I3dLZYf01ua7tJFw2IgEoEWdgU08q5v6nYJAzACXYv4VtVNEpzQ/Jd9uSSA573bjY24E4siG8RPW7w33tManGVtj6tKQQEYySG+agHYxsfyNX1P9P23znoDfWGWkXCrDMkz5yORqYAEEEkSJ49V8/lQnHQeiJ57YTCMYaNy+ojS7HCNNGK0ZK1fJq8fQq5eYNJKMKOeoO6p3Y99KXS76z8DeIoTnQzweUHhzBX8LPWmn1OZi1VfBVodovrOyfOwkNut188PrA8dkNmcZouyUQIb2bUS8vNOBtP+Ym1TbPjibg7cwqTTsD6dQJmOrVRwRpgIhF3dXlRMlaOB1Ax3NdzWxpG5NojYAWGBGrZGIi0+wCrZEwCL3r14kwxAHxSG8mIq0WJHLt2CoV32DJ53ybOy/zPwsWbOjtLWlfRnD0JOG30UaKnzrQEzx1WsVEfkjMjGnQB0d0FUZTmJzAVUu3lNSMNQQH/SimgZszSEolZmLVbSF/h/bYII+kY90Phlj+N1C57TIcyI4xK1kE9vL3G591yY6Nv5cZ7PHKvBwRI/D/O4at8=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(23010399003)(19092799006)(376014)(1800799024)(18002099003)(22082099003)(11063799006)(56012099006)(4143699003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?Ff9MpTvuR5Nz14wevrdNaNrusUl73MY2vOmM5T/o877YbiKLzRTyMvLVZb?=
- =?iso-8859-1?Q?PAPT52rcndzrQMDD+3jl50EkCeOSFJOxMZGguBcSK+cf6p74pKGM0bKOci?=
- =?iso-8859-1?Q?EhvjT3BBJwu5qbl1iZGtl3QzBR/byi4vnTrvIs/IJuqz+OFsZfmtj3sDdK?=
- =?iso-8859-1?Q?ZYMH6eHpOUs6L1cdOmwkj7vFRtC/LPuqrw/GXE38s9LoqxsA/SIRBDZ/O5?=
- =?iso-8859-1?Q?KGyJ+8b5FKN8YY4yNYKFqD5UO0aBGPYF4BQB3ubBT3nQ8w1aPTIcJWrNYy?=
- =?iso-8859-1?Q?DRh8DnKmQUMverfwIOqLuggDm3a6zn0qdm39p9UGyxlp2v+BWoA2B371Ed?=
- =?iso-8859-1?Q?Xbi1gt9Zf7KZ/NKAROG5+apI5pFSNOjcbvSlH0SYMwj8E9syB4GbDbmjbl?=
- =?iso-8859-1?Q?sintP7RDXZoL5QbsHKCejGFDMrz6K2DK3cBbEsDHc5A9lXz9kSjUjjMhD7?=
- =?iso-8859-1?Q?a7VlXpZQDTLhNKFKmd8iR0wWjYaJtBxQ3nAXF818v3HIRGzvmX9hVrvSLp?=
- =?iso-8859-1?Q?gaWCg7Qhw1rH7MXSOQr4s8pu8Jgkl/XDRsu3/xAOM+VsF3Ar1q0mZ7/Ttt?=
- =?iso-8859-1?Q?FrX+HwpS4GyOFDIF/ISR7SklVkMydJG0V4GKF3t9GXUWlw1iroaoaH6COb?=
- =?iso-8859-1?Q?falccwn0ShY73RMbNVKPFJhOG7QWkVEJUkkLA4uBtTjX3SXnwJ66Btkckw?=
- =?iso-8859-1?Q?YvgVqw8QSjLTWLYuvmHUPOYBu7VipjFgx8kX+h15T9XYvQhV1Mm+os+4av?=
- =?iso-8859-1?Q?maKrt4Jhvu/LMfMXE5zQQCAB1x+N/f5N48oOB/DPtLw77QY5yraER9X1Yk?=
- =?iso-8859-1?Q?qWvrYj1HmweOxgdofjEgjmWPyvfU2oZ5O0S99EECp/Y+bFQV/IV/dKh5nV?=
- =?iso-8859-1?Q?Xds16ShVcP+5vYh43sRHsB7mfonxb8bIbN/mUKuyx8HFRN/3O8314cZ3Q1?=
- =?iso-8859-1?Q?i0ziDsAggrq5vrOY7CCIPdr1b4NAsZVggQ0WpXIRpRBFoEnjsDZYeem4h2?=
- =?iso-8859-1?Q?EOmODR1+vwr5QIV83IRTL1uhL819dAaPuru5tVPg0vqd9FqG7zTrBedXMf?=
- =?iso-8859-1?Q?7kfJGIkOezsgPAqj2EOhKb+xMIGDwZBnZio318+zN1CD3n03cCa2NqveF9?=
- =?iso-8859-1?Q?/Hj2/dJ11yfuSNh3PcS1ZB8598uY8iuu6RIlyN9nxOwT6mMCxm79KQfzT7?=
- =?iso-8859-1?Q?2NTsUx4r+Kg2aTSFplG4TUrv2YsWLlzWWLSTcE6nrOGFbIIjD8mwDA2CYH?=
- =?iso-8859-1?Q?YT5rRIFv0BcBJjpZw3/KsjjTsFz8Em99lBCa/3uIhKxH0ks0NJC1WCFWuT?=
- =?iso-8859-1?Q?K0MCqDtcHFIc5XBWkmPpgbuUNO7g64M/sbDjZYpFhTyTJQD1c+qf4B4SDA?=
- =?iso-8859-1?Q?Rm39xo39/zOP6tIoXtDx4MrWH5aqFXHqbSAoXAWs7ZWFnxdlF80FuANqXq?=
- =?iso-8859-1?Q?6mNJqq2Xa4G+9BWHxetwcBFlMyjcVaJkLCKTUyVYUTT18urrq8Ek4Xhlv2?=
- =?iso-8859-1?Q?2XYleK4c9qz2L5KCQf7ZzY/otnlx+kMiTKdcJt4wKm684TlCEP3JcRxepA?=
- =?iso-8859-1?Q?E1UTRc/uF4/xSqmf9WI2QGtvsEn1GETMQQ4IgE1BRAGFUpJhS8LstCo8/z?=
- =?iso-8859-1?Q?NpWhqSHlnkc4nh4TLaAePGzdNMITEWRyOmxzJgAOs2BnpmYWA9UvjoE/08?=
- =?iso-8859-1?Q?/ysa5K0wXhY2d4944H7riWpvSfbzTV5PZLq9AgPs3PDF1bsWFhYtKY77kZ?=
- =?iso-8859-1?Q?1yg14j3aD4gsMTVmPJVLBs4HsBhFVPUfcFZnxkfiMbqo0zMMa+RVprEVc+?=
- =?iso-8859-1?Q?hxKlliBtUJ+tnMVzSWRw//kcuftIAqU10HaPa2iJS11MAAk7f1zg?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: bfb9f09d-d91a-41c6-66d4-08ded6c9f33c
-X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Jun 2026 17:06:39.2577
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: QHHk/ZL9mm40HVNa5l8yGFYRvQP1PL8Y2BJUSEzf59TJWa2owxcrb/cd1mAlvO83g7SrKN1pX5+KtaFF3PIry/iDY17/CQ+Jj+PaJl4K5h/Esyich+w6vlONYbyl6yzE
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DUZPR04MB10039
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260630_100644_333837_29D99143 
-X-CRM114-Status: GOOD (  20.77  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -135,98 +67,71 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jun 30, 2026 at 01:32:38PM +0000, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 1 potential issu=
-e(s) to consider:
-> - [Medium] Undocumented behavioral change and silent bug fix
-> --
->
-> commit 5afd5fbee8dc926110284bae98310b5970134131
-> Author: Adrian Ng Ho Yin <adrian.ho.yin.ng@altera.com>
->
-> i3c: master: dw: Map CCC hardware errors to I3C M0/M2
->
-> This commit updates the DesignWare I3C master driver to map specific
-> response queue errors to standard I3C error codes M0 and M2. It also retu=
-rns
-> -EIO for address NACKs and introduces dw_i3c_ccc_map_err() to centralize
-> error mapping.
->
-> > diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw=
--i3c-master.c
-> > index e659ede79fc03..27d2025fcf041 100644
-> > --- a/drivers/i3c/master/dw-i3c-master.c
-> > +++ b/drivers/i3c/master/dw-i3c-master.c
->
-> [ ... ]
->
-> > @@ -743,10 +760,7 @@ static int dw_i3c_ccc_set(struct dw_i3c_master *ma=
-ster,
-> >
-> >  	ret =3D xfer->ret;
-> >  	cmd =3D &xfer->cmds[0];
-> > -	if (!ret)
-> > -		ccc->dests[0].payload.actual_len =3D cmd->rx_len;
-> > -	if (cmd->error =3D=3D RESPONSE_ERROR_IBA_NACK)
-> > -		ccc->err =3D I3C_ERROR_M2;
-> > +	ccc->err =3D dw_i3c_ccc_map_err(cmd->error);
->
-> [Severity: Medium]
-> Is this an unrelated bug fix? The commit message mentions mapping hardware
-> errors to I3C M0/M2, but it does not mention removing the assignment of
-> actual_len from the transmit operation here.
+On an empty bus ENTDAA assigns nothing, so cmd->rx_len (the count
+of addresses left unassigned) equals master->maxdevs.
 
-Yes, don't touch .payload.actual_len in this patch
+The GENMASK() index master->maxdevs - cmd->rx_len - 1 then becomes -1,
+which trips up UBSAN. This happens every time on boot on a Gigabyte/AMD
+server:
+
+    UBSAN: shift-out-of-bounds in drivers/i3c/master/dw-i3c-master.c:905:12
+    shift exponent 64 is too large for 64-bit type 'long unsigned int'
+    CPU: 7 UID: 0 PID: 963 Comm: (udev-worker) Not tainted 7.0.11-200.fc44.x86_64 #1 PREEMPT(lazy)
+    Hardware name: Giga Computing E163-Z34-AAH1-000/MZ33-DC1-000, BIOS R32_F45 04/01/2026
+    Call Trace:
+     <TASK>
+     dump_stack_lvl+0x5d/0x80
+     ubsan_epilogue+0x5/0x2b
+     __ubsan_handle_shift_out_of_bounds.cold+0xd7/0x1ab
+     dw_i3c_master_daa.cold+0x1b/0x96 [dw_i3c_master]
+     i3c_master_do_daa_ext.part.0+0x3e/0xf0 [i3c]
+
+Skip the mask when no new device was assigned.
+
+Fixes: 1dd728f5d4d4 ("i3c: master: Add driver for Synopsys DesignWare IP")
+Signed-off-by: Jakub Kicinski <kuba@kernel.org>
+---
+CC: alexandre.belloni@bootlin.com
+CC: Frank.Li@nxp.com
+CC: adrianhoyin.ng@altera.com
+CC: ustc.gu@gmail.com
+CC: bbrezillon@kernel.org
+CC: vitor.soares@synopsys.com
+---
+ drivers/i3c/master/dw-i3c-master.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index 2f8c0c4683e0..dc3b74822f8e 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -888,7 +888,15 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
+ 	if (!wait_for_completion_timeout(&xfer->comp, XFER_TIMEOUT))
+ 		dw_i3c_master_dequeue_xfer(master, xfer);
+ 
+-	newdevs = GENMASK(master->maxdevs - cmd->rx_len - 1, 0);
++	/*
++	 * cmd->rx_len holds the number of addresses ENTDAA left unassigned.
++	 * On an empty bus rx_len == maxdevs, so avoid GENMASK(-1, 0).
++	 */
++	if (cmd->rx_len >= master->maxdevs)
++		newdevs = 0;
++	else
++		newdevs = GENMASK(master->maxdevs - cmd->rx_len - 1, 0);
++
+ 	newdevs &= ~olddevs;
+ 
+ 	for (pos = 0; pos < master->maxdevs; pos++) {
+-- 
+2.54.0
 
 
->
-> >
-> >  	return ret;
-> >  }
->
-> [ ... ]
->
-> > @@ -783,8 +799,10 @@ static int dw_i3c_ccc_get(struct dw_i3c_master *ma=
-ster, struct i3c_ccc_cmd *ccc)
-> >  		dw_i3c_master_dequeue_xfer(master, xfer);
-> >
-> >  	ret =3D xfer->ret;
-> > -	if (xfer->cmds[0].error =3D=3D RESPONSE_ERROR_IBA_NACK)
-> > -		ccc->err =3D I3C_ERROR_M2;
-> > +	cmd =3D &xfer->cmds[0];
-> > +	ccc->err =3D dw_i3c_ccc_map_err(cmd->error);
-> > +	if (!ret)
-> > +		ccc->dests[0].payload.actual_len =3D cmd->rx_len;
->
-> [Severity: Medium]
-> Does this silently add the actual_len assignment to the receive operation?
-
-The same here.
-
-update actual_len should be new patch.
-
-Frank
-
->
-> Since moving this assignment from dw_i3c_ccc_set() to dw_i3c_ccc_get() is
-> not documented in the commit message, should it be split into a separate
-> fix or explicitly explained?
->
-> >
-> >  	return ret;
-> >  }
->
-> --
-> Sashiko AI review =B7 https://sashiko.dev/#/patchset/cover.1782824628.git=
-.tze.yee.ng@altera.com?part=3D2
-
--- =
-
+-- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
