@@ -4,54 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ACC20C43458
-	for <linux-i3c@archiver.kernel.org>; Tue, 30 Jun 2026 13:41:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A160C43602
+	for <linux-i3c@archiver.kernel.org>; Tue, 30 Jun 2026 16:15:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aXDhi6Ekla3AtFp0X8RxctGB8vTqgO640V5qbjpGzN4=; b=UHNhgtt5uwCU4z
-	AAGtGndp4uqMfdbbrdjxB26sOhgbo4CfIVyoBYa0ipbpn7O/o1x5LVr2mgqhOSG8C7KycsUXAlYrr
-	QZEBTusDEgSUE3LEnAGiYL2Z0Y2LmiCHTa8OPtx/INDGfVWAaCM8vCloBhjOYvVRb1/t+xhKBY0ri
-	+735zOI+uksXsdiodzlvDPVeoGJXV67w9VaxH2EerttIods8TB0VH4Yo68zaCduUeFmE/rR9ZPh4F
-	8EHDCBmaGEIJFYWCiW07HmlA8ejLFn+8CIVAZ/uh7SCqP0pDRWhCobb6uOHVODyidhG1hKBAhh5EH
-	Bdj/uNgK479XHpqENgrw==;
+	List-Owner; bh=/2M8UqHNL2jxCpSUkd1sqJVbay8Ag8F0OwqOhrLl+vo=; b=FLfhic1Gapp96b
+	v0wTj64+GkoocLgQJkFNuexrp8qgeihocacx6g2NSHQ1nSKPB7Uv1OZL+gvS2CFnBLYzjarCjiBrF
+	7s6MmJ3eL6zM+Njsa3uoow79j4HToHTz2OlXCxw17NSQH+oBzQdaHkB9ZUMn/+v/wKWed40V6OgYX
+	YZporrGXkR+ex83y0WeLDKzrx2Ps/UjjJu5I4fZ12VrYAAlofB3ZyVh3JzAHM1IFq9H7xCyXwXicD
+	2iZc9BBZB2uE+wBIgpDbb/hEe2cGmTBkcdJepAj4T8rEiOa7Z0MSkavDOEdaPl5mNbIZy9RkXBekQ
+	DvbiVYWbPMgAzPF2y7iw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weYil-0000000HBm4-1gMw;
-	Tue, 30 Jun 2026 13:41:52 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1web79-0000000HS7T-0iDs;
+	Tue, 30 Jun 2026 16:15:11 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weYik-0000000HBln-0BlE
+	id 1web77-0000000HS78-3KQa
 	for linux-i3c@lists.infradead.org;
-	Tue, 30 Jun 2026 13:41:50 +0000
+	Tue, 30 Jun 2026 16:15:09 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 50DE4601C1;
-	Tue, 30 Jun 2026 13:41:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C281F1F000E9;
-	Tue, 30 Jun 2026 13:41:48 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id E556B601C7;
+	Tue, 30 Jun 2026 16:15:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7359C1F000E9;
+	Tue, 30 Jun 2026 16:15:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782826909;
-	bh=Palvpsq54orTOkoIHQNXkOYPIU/0IL5CFdgkcfHTJmc=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=HXsjGdOSuq3k0gCQf8hVzEQtKJhBWdRP0UvtFDYg/6JTW/Mnzt7NwmfxINUb9fO8H
-	 u4U8bl/ZwqjUK4CI0r6p9MB+Nh0BheSicvfMmtgx+caHzJXolwNjAwoG8Frm2SJe0o
-	 TZUrWi3Oftn7YjLBa10Eo50KA5koi8CgwcmHjL5lAMisQPicxjgzu7D2zjVrvP9kUw
-	 V9ww/7P6rbB1HoyYkgRD+YgIRDUWVzbwFuYv5eaEJ+2r7AlZJTUXP6TwvxEuSbL5bC
-	 URXPPlWQBRKfYZeeVSQn1IJzbR6Y4MdyoAFeZx/jLTB0hB/DZavCB23N2Q55fbmYBS
-	 3crCaE3SiNYCg==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v4 3/3] i3c: master: Validate GET CCC payload length and
- retry Direct GET once
-To: tze.yee.ng@altera.com
-Cc: linux-i3c@lists.infradead.org, Frank.Li@kernel.org, imx@lists.linux.dev
-In-Reply-To: <1bc55d123df33e2e66ad58ccbc17ba20f74999fe.1782824628.git.tze.yee.ng@altera.com>
-References: <cover.1782824628.git.tze.yee.ng@altera.com>
- <1bc55d123df33e2e66ad58ccbc17ba20f74999fe.1782824628.git.tze.yee.ng@altera.com>
-Date: Tue, 30 Jun 2026 13:41:48 +0000
-Message-Id: <20260630134148.C281F1F000E9@smtp.kernel.org>
+	s=k20260515; t=1782836108;
+	bh=eb0sWdkKcVZuiKOIJ6FAW+I06k/4BEXqFcAMn2RFR64=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=TzoRfypqbyHyYC058os6xjzoo0pe/kS/QOQH02nFIqoXQhsi9obHZ/eurkAXX77r/
+	 TGf6F7sl95t4bcLwI2dS9DburRMXdJ6ZnW0VjmesOruwSWIXEhSJX0USX4j/PtCLoR
+	 k04vJGCUaRCwFfGQ6kUFPmlMxNfaYbvPhWrSu1NTuy2xFeZsUYxAlotm+yPIXBJbx8
+	 Zk7A7wZtD+EH7DCLZE7Owkf678LTcUSvtc+vY8+KLX404Qi1c9/1qSFwbV9JRtjHha
+	 chnvRadTMlmO/S/1hM02JYqktsTBI/E52jNgMQ1ZEsoE/woKA2wd0NFAsGOloeaNFt
+	 kcJC3NxCEdOfA==
+Date: Tue, 30 Jun 2026 11:15:07 -0500
+From: "Rob Herring (Arm)" <robh@kernel.org>
+To: Akhil R <akhilrajeev@nvidia.com>
+Cc: Miquel Raynal <miquel.raynal@bootlin.com>,
+	Conor Dooley <conor+dt@kernel.org>, Frank Li <Frank.Li@nxp.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Guenter Roeck <linux@roeck-us.net>, linux-tegra@vger.kernel.org,
+	linux-i3c@lists.infradead.org,
+	Philipp Zabel <p.zabel@pengutronix.de>, devicetree@vger.kernel.org,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	linux-hwmon@vger.kernel.org, linux-kernel@vger.kernel.org,
+	Thierry Reding <thierry.reding@kernel.org>,
+	Jon Hunter <jonathanh@nvidia.com>
+Subject: Re: [PATCH v5 01/12] dt-bindings: i3c: Add mipi-i3c-static-method to
+ support SETAASA
+Message-ID: <178283610732.3797495.11836462917948472551.robh@kernel.org>
+References: <20260624102153.1770072-1-akhilrajeev@nvidia.com>
+ <20260624102153.1770072-2-akhilrajeev@nvidia.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260624102153.1770072-2-akhilrajeev@nvidia.com>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,83 +74,44 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIFRoZSBSZW5lc2FzIEkz
-QyBkcml2ZXIgZmFpbHMgdG8gc2V0IGByeF9jb3VudGAgb24gY29tcGxldGlvbiwgZm9yY2luZyBg
-YWN0dWFsX2xlbmAgdG8gMCBhbmQgZmFpbGluZyBhbGwgR0VUIENDQyB2YWxpZGF0aW9ucwotIFtM
-b3ddIERlYWQgY29kZSBpbiBgaTNjX21hc3Rlcl9nZXRzdGF0dXNfbG9ja2VkKClgIGR1ZSB0byBt
-aXNzZWQgdXBkYXRlIGZyb20gYGxlbmAgdG8gYGFjdHVhbF9sZW5gCi0gW0xvd10gVGhlIHBheWxv
-YWQgdmFsaWRhdGlvbiBmdW5jdGlvbiBldmFsdWF0ZXMgYSBtYXRoZW1hdGljYWxseSBpbXBvc3Np
-YmxlIGFuZCByZWR1bmRhbnQgY29uZGl0aW9uCi0tCgpjb21taXQgM2M3YjQ1YzI1NzJiMjliZTIz
-MjAyYTgzZTBlMDI0MWI4MmE2MDJiYgpBdXRob3I6IEFkcmlhbiBOZyBIbyBZaW4gPGFkcmlhbi5o
-by55aW4ubmdAYWx0ZXJhLmNvbT4KCmkzYzogbWFzdGVyOiBWYWxpZGF0ZSBHRVQgQ0NDIHBheWxv
-YWQgbGVuZ3RoIGFuZCByZXRyeSBEaXJlY3QgR0VUIG9uY2UKClRoaXMgY29tbWl0IGFkZHMgb3B0
-aW9uYWxfYnl0ZXMgdG8gc3RydWN0IGkzY19jY2NfY21kX3BheWxvYWQgdG8gZGVzY3JpYmUKdmFy
-aWFibGUtbGVuZ3RoIEdFVCBDQ0MgcmVzcG9uc2VzIGFuZCB2YWxpZGF0ZXMgcGF5bG9hZCBsZW5n
-dGhzIGluCmkzY19tYXN0ZXJfc2VuZF9jY2NfY21kX2xvY2tlZCgpLiBJdCBhbHNvIHJldHJpZXMg
-ZmFpbGVkIERpcmVjdCBHRVQgQ0NDcwphbmQgdXBkYXRlcyBJM0MgbWFzdGVyIGRyaXZlcnMgdG8g
-c2V0IGFjdHVhbF9sZW4gb24gc3VjY2Vzc2Z1bCBHRVQgdHJhbnNmZXJzLgoKPiBkaWZmIC0tZ2l0
-IGEvZHJpdmVycy9pM2MvbWFzdGVyLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIuYwo+IGluZGV4IGYx
-YmUzOGE2NDBjYTEuLjU3NDFjM2Y4MGVkNTggMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9pM2MvbWFz
-dGVyLmMKPiArKysgYi9kcml2ZXJzL2kzYy9tYXN0ZXIuYwoKWyAuLi4gXQoKPiArc3RhdGljIGlu
-dCBpM2NfY2NjX3ZhbGlkYXRlX3BheWxvYWRfbGVuKHN0cnVjdCBpM2NfY2NjX2NtZCAqY21kKQo+
-ICt7Cj4gKwl1bnNpZ25lZCBpbnQgaTsKPiArCj4gKwlpZiAoIWNtZC0+cm53KQo+ICsJCXJldHVy
-biAwOwo+ICsKPiArCWZvciAoaSA9IDA7IGkgPCBjbWQtPm5kZXN0czsgaSsrKSB7Cj4gKwkJc3Ry
-dWN0IGkzY19jY2NfY21kX3BheWxvYWQgKnAgPSAmY21kLT5kZXN0c1tpXS5wYXlsb2FkOwo+ICsJ
-CXUxNiBtaW5fbGVuOwo+ICsKPiArCQlpZiAocC0+b3B0aW9uYWxfYnl0ZXMgPiBwLT5sZW4pCj4g
-KwkJCXJldHVybiAtRUlOVkFMOwo+ICsKPiArCQlpZiAocC0+YWN0dWFsX2xlbiA+IHAtPmxlbikK
-PiArCQkJcmV0dXJuIC1FSU87Cj4gKwo+ICsJCWlmICghcC0+bGVuKQo+ICsJCQljb250aW51ZTsK
-PiArCj4gKwkJbWluX2xlbiA9IHAtPmxlbiAtIHAtPm9wdGlvbmFsX2J5dGVzOwo+ICsJCWlmIChw
-LT5hY3R1YWxfbGVuIDwgbWluX2xlbiB8fAo+ICsJCSAgICAoIXAtPm9wdGlvbmFsX2J5dGVzICYm
-IHAtPmFjdHVhbF9sZW4gIT0gcC0+bGVuKSkKPiArCQkJcmV0dXJuIC1FSU87Cj4gKwl9Cj4gKwo+
-ICsJcmV0dXJuIDA7Cj4gK30KCltTZXZlcml0eTogTG93XQpEb2VzIHRoaXMgZXZhbHVhdGUgYSBy
-ZWR1bmRhbnQgY29uZGl0aW9uPyBTaW5jZSBwLT5hY3R1YWxfbGVuID4gcC0+bGVuIGlzCmFscmVh
-ZHkgY2F1Z2h0IGFib3ZlLCB3aGVuICFwLT5vcHRpb25hbF9ieXRlcyBpcyB0cnVlLCBtaW5fbGVu
-IGVxdWFscwpwLT5sZW4uIFRoZSBsZWZ0IHNpZGUgb2YgdGhlIE9SIGNhcHR1cmVzIGFsbCBjYXNl
-cyB3aGVyZSBhY3R1YWxfbGVuIDwgbGVuLgpUaGUgcmlnaHQgc2lkZSBpcyBvbmx5IGV2YWx1YXRl
-ZCBpZiBhY3R1YWxfbGVuID09IGxlbiwgbWFraW5nCmFjdHVhbF9sZW4gIT0gcC0+bGVuIGFsd2F5
-cyBmYWxzZS4KCj4gQEAgLTE0MDksNyArMTQ3Myw3IEBAIHN0YXRpYyBpbnQgaTNjX21hc3Rlcl9n
-ZXRtd2xfbG9ja2VkKHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIgKm1hc3RlciwKPiAgCWlm
-IChyZXQpCj4gIAkJZ290byBvdXQ7Cj4gIAo+IC0JaWYgKGRlc3QucGF5bG9hZC5sZW4gIT0gc2l6
-ZW9mKCptd2wpKSB7Cj4gKwlpZiAoZGVzdC5wYXlsb2FkLmFjdHVhbF9sZW4gIT0gc2l6ZW9mKCpt
-d2wpKSB7Cj4gIAkJcmV0ID0gLUVJTzsKPiAgCQlnb3RvIG91dDsKPiAgCX0KCltTZXZlcml0eTog
-TG93XQpXYXMgaTNjX21hc3Rlcl9nZXRzdGF0dXNfbG9ja2VkKCkgbWlzc2VkIGluIHRoZXNlIHVw
-ZGF0ZXM/CgpUaGlzIHBhdGNoIGNoYW5nZXMgZHJpdmVycyB0byB3cml0ZSB0aGUgcmVjZWl2ZWQg
-cGF5bG9hZCBsZW5ndGggdG8KYWN0dWFsX2xlbiBpbnN0ZWFkIG9mIG1vZGlmeWluZyBsZW4sIGJ1
-dCBpM2NfbWFzdGVyX2dldHN0YXR1c19sb2NrZWQoKQpzdGlsbCBjaGVja3MgdGhlIHVubW9kaWZp
-ZWQgbGVuZ3RoOgoKZHJpdmVycy9pM2MvbWFzdGVyLmM6aTNjX21hc3Rlcl9nZXRzdGF0dXNfbG9j
-a2VkKCkgewogICAgLi4uCiAgICBpZiAoZGVzdC5wYXlsb2FkLmxlbiAhPSBzaXplb2YoKmdldHN0
-YXR1cykpIHsKICAgICAgICByZXQgPSAtRUlPOwogICAgICAgIGdvdG8gb3V0OwogICAgfQogICAg
-Li4uCn0KClNpbmNlIGxlbiBpcyBpbml0aWFsaXplZCB0byBzaXplb2YoKmdldHN0YXR1cykgYW5k
-IGlzIG5vIGxvbmdlciBtb2RpZmllZApieSB0aGUgZHJpdmVycywgZG9lcyB0aGlzIG1ha2UgdGhl
-IGVycm9yIHBhdGggdW5yZWFjaGFibGUgZGVhZCBjb2RlPwoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVy
-cy9pM2MvbWFzdGVyL3JlbmVzYXMtaTNjLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvcmVuZXNhcy1p
-M2MuYwo+IGluZGV4IGYzOWM0NDk5MjJjYTIuLmZlYzYxNDcwMDg0M2YgMTAwNjQ0Cj4gLS0tIGEv
-ZHJpdmVycy9pM2MvbWFzdGVyL3JlbmVzYXMtaTNjLmMKPiArKysgYi9kcml2ZXJzL2kzYy9tYXN0
-ZXIvcmVuZXNhcy1pM2MuYwo+IEBAIC04MDUsNiArODA1LDggQEAgc3RhdGljIGludCByZW5lc2Fz
-X2kzY19zZW5kX2NjY19jbWQoc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlciAqbSwKPiAgCXJl
-dCA9IHhmZXItPnJldDsKPiAgCWlmIChyZXQpCj4gIAkJY2NjLT5lcnIgPSBJM0NfRVJST1JfTTI7
-Cj4gKwllbHNlIGlmIChjY2MtPnJudykKPiArCQljY2MtPmRlc3RzWzBdLnBheWxvYWQuYWN0dWFs
-X2xlbiA9IGNtZC0+cnhfY291bnQ7Cj4gIAo+ICAJcmV0dXJuIHJldDsKPiAgfQoKW1NldmVyaXR5
-OiBIaWdoXQpDYW4gdGhpcyBjYXVzZSBhbGwgR0VUIENDQyBvcGVyYXRpb25zIHRvIGZhaWwgb24g
-dGhpcyBoYXJkd2FyZT8KClRoaXMgY29kZSBhc3NpZ25zIGNtZC0+cnhfY291bnQgdG8gYWN0dWFs
-X2xlbiwgYnV0IGl0IGFwcGVhcnMKY21kLT5yeF9jb3VudCBpcyBuZXZlciBpbmNyZW1lbnRlZCBk
-dXJpbmcKSTNDX0lOVEVSTkFMX1NUQVRFX0NPTlRST0xMRVJfQ09NTUFORF9SRUFELgoKTG9va2lu
-ZyBhdCByZW5lc2FzX2kzY19yZXNwX2lzcigpOgoKICAgIGlmIChOREJTVExWMF9SREJMVihyZW5l
-c2FzX3JlYWRsKGkzYy0+cmVncywgTkRCU1RMVjApKSAmJiAhY21kLT5lcnIpCiAgICAgICAgYnl0
-ZXNfcmVtYWluaW5nID0gZGF0YV9sZW4gLSBjbWQtPnJ4X2NvdW50OwogICAgCiAgICBpM2NfcmVh
-ZGxfZmlmbyhpM2MtPnJlZ3MgKyBOVERUQlAwLCBjbWQtPnJ4X2J1ZiwgYnl0ZXNfcmVtYWluaW5n
-KTsKCklmIHJ4X2NvdW50IHJlbWFpbnMgMCwgYWN0dWFsX2xlbiB3aWxsIGFsd2F5cyBiZSAwLiBX
-aWxsIHRoZSBuZXcKaTNjX2NjY192YWxpZGF0ZV9wYXlsb2FkX2xlbigpIGxvZ2ljIHRoZW4gdW5j
-b25kaXRpb25hbGx5IHJlamVjdCB0aGUKcGF5bG9hZCB3aXRoIC1FSU8gZHVlIHRvIGEgc2hvcnQg
-cmVhZD8KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0
-Y2hzZXQvY292ZXIuMTc4MjgyNDYyOC5naXQudHplLnllZS5uZ0BhbHRlcmEuY29tP3BhcnQ9MwoK
-LS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcK
-aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
+
+On Wed, 24 Jun 2026 10:20:55 +0000, Akhil R wrote:
+> Add the 'mipi-i3c-static-method' property mentioned in the MIPI I3C
+> Discovery and Configuration Specification [1] to specify which discovery
+> method an I3C device supports during bus initialization. The property is
+> a bitmap, where a bit value of 1 indicates support for that method, and 0
+> indicates lack of support.
+> 
+> Bit 0: SETDASA CCC (Direct)
+> Bit 1: SETAASA CCC (Broadcast)
+> Bit 2: Other CCC (vendor / standards extension)
+> All other bits are reserved.
+> 
+> It is specifically needed when an I3C device requires SETAASA for the
+> address assignment. SETDASA will be supported by default if this property
+> is absent, which means for now the property just serves as a flag to
+> enable SETAASA, but keep the property as a bitmap to align with the
+> specifications.
+> 
+> [1] https://www.mipi.org/mipi-disco-for-i3c-download
+> 
+> Reviewed-by: Frank Li <Frank.Li@nxp.com>
+> Signed-off-by: Akhil R <akhilrajeev@nvidia.com>
+> ---
+>  .../devicetree/bindings/i3c/i3c.yaml          | 36 ++++++++++++++++---
+>  include/dt-bindings/i3c/i3c.h                 |  4 +++
+>  2 files changed, 35 insertions(+), 5 deletions(-)
+> 
+
+Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
