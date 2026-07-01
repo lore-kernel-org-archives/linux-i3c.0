@@ -4,129 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED81AC43458
-	for <linux-i3c@archiver.kernel.org>; Wed,  1 Jul 2026 19:42:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 602D1C43458
+	for <linux-i3c@archiver.kernel.org>; Wed,  1 Jul 2026 19:56:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PrL+GIVekphUUXIGtM2SSSY7DQfLTX/EfuK0JB8hI+w=; b=2p6fAOe1PSbbBb
-	xMG2FWBr6g0wl28XsLDKowjcCJWstTgo0MO8+XHN/e+FmccKzuKfBRH99BXOqls44Wezz2h64mQpJ
-	Tsvn63lw3OKhUmrSLuWOL3bXwBNAMyBeoEWlmEoEbpZbuCnTrZtBoZyWq5gL6K+heQLPwiewOwf+J
-	INGw2rx6yVMYOUhNdnatCEk3FBW+oFKQMRRM9R0m+uh/h2GOS5tvfFIBnMfE77w5zV54Ipapon4bz
-	NlmMgnEcKj6umW9ZISr5d4ptaqSuZONOKD8NIKgy2UM6rTqGLqkq34kPDkPa/iDXz1e2/obzpkviO
-	Zu63y0iKw3dUG4+xfx0g==;
+	List-Owner; bh=Jikkj0UXexrYH6q1aeDo6dvt+vk52/Y4kIC+c/jksTA=; b=m5p9V6BjAkWbpi
+	Lob0gmoS85FWj/3XhXqUlez9YWoi37cRf2pM8Wq49wBXAOdUGGHuzBTSlNmc0EojbhVSjS/sGmyUn
+	xBk24jveorrDEGj5WMw4zEt7K+vrzH3PAQgItPMfWvcsqE+eH+WLLZ/hk/AZOiS0aY6o8FgU1KLBC
+	+pjK0+YyE2Njf0B6g48QER85SpGZNA7bls3UsMVB+nBLNjOaE5K9gE+mkdNtfPT6JMc1GNiOrrvDG
+	hHhAKz7eOHL5Xl22bw0M3t0qgDapRXVmo0G2+IUI4CB669o39VprG3zdZgh6YgLAfkEtI/RAth3k7
+	LvEzVxlIKihhDYoZT23w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf0pP-00000002uYF-2SWw;
-	Wed, 01 Jul 2026 19:42:35 +0000
-Received: from mail-westeuropeazon11011027.outbound.protection.outlook.com ([52.101.70.27] helo=AS8PR04CU009.outbound.protection.outlook.com)
+	id 1wf136-00000002vS6-0PIi;
+	Wed, 01 Jul 2026 19:56:44 +0000
+Received: from mail-westeuropeazon11010004.outbound.protection.outlook.com ([52.101.69.4] helo=AM0PR83CU005.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf0pM-00000002uXp-2YvM
+	id 1wf131-00000002vQ0-3666
 	for linux-i3c@lists.infradead.org;
-	Wed, 01 Jul 2026 19:42:34 +0000
+	Wed, 01 Jul 2026 19:56:42 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=NGGr+jQ2uoONftCjwikj1GbSu1umlmVasHqC3X8QT3J2beIm1wk3XRmmCT2yt2icnwLdHaAKqAJEokjOenF4lJhAmUhyuHNjJ2iY+b0xDRjlQCIGE4bMr0GyEhysMTWi6pHVrLS0MgUHJ+dJql10UMeC+wMj0MYT9pZTfjVzrYEKYAerHc09xH5bgGxY5ZEQKy8twjuVoSluTXYkfYdQWSJe4Rxkaq7Xu/7y0Nb/ih6/11Jgt9+KNvVCmWYd30U5M82KiX2xXrz5jSnEkyxjMxi93RsFDv+c7cvOKNJ8n3vEj4o1wPVn8qb1JPqzmqf/u0Lpu211UUmGN/9iTUWBjg==
+ b=CYVmEjODBR5C6vX8KPdu9Ff4ezmA3059ZjF8gS9kM8rRCH0Gs31qoxu0u7Q9K65e7Mae76pOJzqoHti9cSPMtYfS/aWVD09x5Ad+csqdMxcRyUS0gLyXVUOFR9VQhVfvyR3JATQgqiKzo6C75cJlFwKxO8GWxbJNH1ymabHNTsWcb6mmdrg4eU4AMw287w+t/gAnjJHA1+luk1IMuwnQSFKt/sppDgk28MTM2OPQaB3MnpZqbdGB3MSOv21mFtr2ObIyzXPl1JRb9wIlf5AYbniL/kMwBEnvSu1tozQJKGEBjoF2EyPHIYsqEqJyGklkyx0homzgtoE/sx0aNKSuJg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=w4kGjOnntEFX9szyEvqMCHWpfdDPF890E5pvlZKVoEc=;
- b=O/giAx+zT9SQ53l/x9nAttkPKmQiZvbdQ+/me0uBs8G5ZQK0575dm3P0WWYgANFngJXbbb8u0WpTL0fZo5vgH6zCdGtLYC5Z4pfwmOzXbdK+ixEHfr+/Tq8jl2gH87Yyr/D2rUY2vkmKoFDbJfl6rXVfQnUHno/+IECOrW+UiM6UdgHNauYO86zuVqICnKrG9hAf0RNFzqLdXvLaKXpIA8n7ARVR5GIoo3kzQVXteZOl14wfDX/awYhyWXwpUgrc04adsBvJzE/gwmwUkpmiFiCFH7EIX9y3jyhaYeieKvW2UDf3VeAWwE5KM0IJkAp9ik3Z/S0jDY94eA1b0NEuSw==
+ bh=V/DC5SItapnCnqtwfoIouEMM6jZnx3WWiIiZ0Uin9+Y=;
+ b=h8Egaijaza1p81lnZbsav4nGPZlFZa+i2e3vqyRv0Poxzf/axG7KNRc2CD2E03zQELmDf5m4eFhGblOrJc1OPcZLsQ82cF9r5i1j9yh8X5MtxM7Li9Yj5OWUrabDKDgbvCRNDDJ+bP3CCZREuTgw3A1xNoXVrcBFiIL2vEbFqPYiOeYKZhPDw7WuqSg1ZIPH0xcVHK3AM1uNY30oGBbLyL1A+Ybx67jrgetFzE8W6xlTNT1OPK+OAEjPJIPv5Cl1oa27OK9AjzaFcuo8NKMBFw6laS7kTnZajwI0gPItU10LVdwckvgcy03fuRqXM1DkB92wNM66YIntMxDmCT/ehg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
  dkim=pass header.d=oss.nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
  s=selector1-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=w4kGjOnntEFX9szyEvqMCHWpfdDPF890E5pvlZKVoEc=;
- b=iYGY+Xjfii36mlOQZO8d72AtdL8YCJ/NjE8ifjv5vYSsmSbVbMRG99ZLF8I5bmWsHf3eWlNAb9KdZiHtfPPSxawyp8A6AJXqdqMi8lzC02Sgafu1bYH/hr2AENzDpRaDrzmJkuKTKZkDLPbCZSE0dJY+uOjHnCmr/e+ujpbQ+6tMTgtA8+1CymvGXbl0YxhpfZGGKRKRMyaWQ3d3HOAXr9mx+D7UG5PjSy7YFvmPYJQ44hQ7wFvNi8+mI8JqZMy2aYEmI/ZlibYd/SM7FVQudDYrV99v94+1I9b4omwqhBQ1VpVuZuROuwhtbPQ/ddeBx0GVL7mQlqCwiD/WeuSp9g==
+ bh=V/DC5SItapnCnqtwfoIouEMM6jZnx3WWiIiZ0Uin9+Y=;
+ b=jvw0GUAL/qcKFyUOnzIzLByvbPMihxiLoLHDtDBQZfOb9CLNV3mbO8RxLLimIThyQV6cQoaTD6xUimC1pY/kAo/KbwdMdeqNEk/GjHaDKUovKfaGFMpM54GEztV+2J5UDXiHvo+BFlaT3IftOvf1XoUfMXYZBK4qDRGMgZ7MBtJAzzblUUeo6+tBwA3O5FiWzPoR3bwsnKRRiv4Cq5mdvmKqHgYYj4lF6WsJinLrHU5qQenGsDGXjvv1RCwyWdQ55dyWQtoqLHrPtT1bAZeLe5MDii0VHQjzXewqzriN6nFlvO3tbKXCGuyYxKccFlUwyex6jNA82hnboalLj+pKgA==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=oss.nxp.com;
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by VI2PR04MB10114.eurprd04.prod.outlook.com (2603:10a6:800:22d::15) with
+ by VI0PR04MB10999.eurprd04.prod.outlook.com (2603:10a6:800:266::17) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.159.19; Wed, 1 Jul
- 2026 19:42:27 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.181.8; Wed, 1 Jul 2026
+ 19:56:30 +0000
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0159.007; Wed, 1 Jul 2026
- 19:42:27 +0000
-Date: Wed, 1 Jul 2026 15:42:20 -0400
+ 19:56:29 +0000
+Date: Wed, 1 Jul 2026 15:56:23 -0400
 From: Frank Li <Frank.li@oss.nxp.com>
 To: sashiko-reviews@lists.linux.dev
-Cc: Lakshay Piplani <lakshay.piplani@nxp.com>,
-	linux-i3c@lists.infradead.org, robh@kernel.org,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	devicetree@vger.kernel.org, conor+dt@kernel.org,
-	Frank.Li@kernel.org
-Subject: Re: [PATCH v13 5/7] i3c: hub: Add support for the I3C interface in
- the I3C hub
-Message-ID: <akVtnLsdN4ZEP7XN@lizhi-Precision-Tower-5810>
+Cc: Lakshay Piplani <lakshay.piplani@nxp.com>, devicetree@vger.kernel.org,
+	robh@kernel.org, conor+dt@kernel.org, linux-i3c@lists.infradead.org,
+	Frank.Li@kernel.org,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>
+Subject: Re: [PATCH v13 6/7] i3c: hub: p3h2x4x: Add support for NXP P3H2x4x
+ I3C hub functionality
+Message-ID: <akVw5-uQHW-MGTSe@lizhi-Precision-Tower-5810>
 References: <20260701065755.2067793-1-lakshay.piplani@nxp.com>
- <20260701065755.2067793-6-lakshay.piplani@nxp.com>
- <20260701072319.165A41F000E9@smtp.kernel.org>
+ <20260701065755.2067793-7-lakshay.piplani@nxp.com>
+ <20260701072149.644591F000E9@smtp.kernel.org>
 Content-Disposition: inline
-In-Reply-To: <20260701072319.165A41F000E9@smtp.kernel.org>
-X-ClientProxiedBy: SA1P222CA0108.NAMP222.PROD.OUTLOOK.COM
- (2603:10b6:806:3c5::29) To GV2PR04MB11799.eurprd04.prod.outlook.com
+In-Reply-To: <20260701072149.644591F000E9@smtp.kernel.org>
+X-ClientProxiedBy: SN7PR18CA0003.namprd18.prod.outlook.com
+ (2603:10b6:806:f3::23) To GV2PR04MB11799.eurprd04.prod.outlook.com
  (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|VI2PR04MB10114:EE_
-X-MS-Office365-Filtering-Correlation-Id: 978ee1d4-2109-4c03-03c1-08ded7a8e14a
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|VI0PR04MB10999:EE_
+X-MS-Office365-Filtering-Correlation-Id: e39696ec-51c1-4c5c-d490-08ded7aad7a1
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|376014|23010399003|19092799006|366016|6133799003|18002099003|22082099003|56012099006|11063799006|4143699003|5023799004;
-X-Microsoft-Antispam-Message-Info: QNFsZ37IRiJgOT+tRrKNQrBv8Ow0uvzk8+96Ae8JAttDWudarpk+ksy2qIMr441TDuRC4HYDK3besjEk5vm+I1X8rQiZPf0ftf5UJAo0/7Lmpd2ABPN9GjeomAxmbaw2AYWeXiQRPtZJURqVCGhlz/R0vSTO2rRL4eo/LnQoFKM98tOBNpOxXiz/dVriEfmAJ+4Ff/XU1Xf+COcTBaLhsdfa1w0CKW2DScWYzlgGwkR49ffSnQ6ujAFJzGYclHPp8jwyc0s9NdYyJKTLaplt57Rsh3cPRjdtS8FYUaLtCScbfDw1s66eFhKF5i5IlnqQ4m9fbou8w7PEYUYK04vJ24hFTv/0Ig6Iqlph5O9kQNzKKUmNR9gVQV8xMNb4Rx4JOTP8pRe3rezfMKu6U1zqVNOzw84KoZU84JpzJptRzpJggP+0gNX80v42JcOOVnVelrYcv/1/nEAabSP9s/35BpdMad/9POfZuFlFj9VC9+K9tv9XRK2nblk5rhmlblbsoB65q5u9LDMjLpcQFZmUyY7TyGmkGBktn34D/w9rT+6Fq2RfLN03vquVFUS1FjJfoX+kvD0OubuJ5RcuEGMcbRiMiaQAg7Zf5HImlJE5mis=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(376014)(23010399003)(19092799006)(366016)(6133799003)(18002099003)(22082099003)(56012099006)(11063799006)(4143699003)(5023799004);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|19092799006|376014|23010399003|1800799024|11063799006|6133799003|22082099003|18002099003|56012099006|4143699003;
+X-Microsoft-Antispam-Message-Info: MMu4J1lWiNpWsgPD1FubGEbzLzK2LMtAENVpkHN/tx/E8PP7cyPqOcEpCx/euxrUDeaFZHlL7wmg0ugSW19qLbhkbQbro5qukZhEhasQMow/MC5jCq7fs/43W07MmFaVINVZ41iiElBYHSA/6YB7z5GLhxs4vr3pVDnABY/E/QfquD7RUJAL3DnAL0tqqCShVTttszpWtOtt4KCQazg+84bziiQL2ozScxvGTckr+YIhfEqzN7LC0gNeiICzF76ozNvFUoo+1nVXea++gF/unATbMRoZY7piAhWXxpVPAAQbiv7wTBla/skMYlFCdIUxzNk83wLsEC+vb69v++D5Sdx33zDc2CAxs0PXjtzU5Ik0yiMH/DjsHTfIt10HghD8Guwfb3nS98OHfmyMiIWYBiYDrsUhCVag7ASchFyCJbknholsDEHwN8d55Jc4fMrGLTL/c/FpfQO5nL8wmcLeN00tGw+mYnFVO7SqHYjZi4pViLIBK9P5dehu4EbpR7e+w2hmPGbARFKZy7GA9ZylI9zjDhqqSw6MNPUpm4zufX58BWENvlPPWJz7PPi2hzF/REiLmUVN0wAiqStNWTEahSCSYTmQip6WfRXzaGIKRfU=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(19092799006)(376014)(23010399003)(1800799024)(11063799006)(6133799003)(22082099003)(18002099003)(56012099006)(4143699003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?0UjB36NJEUsRCWh1T0M7rb96FIB/o0/th1IiXYRh9E4iPuitEeyN5wsNAX?=
- =?iso-8859-1?Q?ujiq0YpE+75g5fMnoe2Ob7gEOrgJYwyJXemeqLtnY9noPzHI0ZR1RuGj99?=
- =?iso-8859-1?Q?gYC4hwph1Evk5cRvguCCcbEWdXOH2XKLPsUb4CygbVZN1+JuTAoBQNflzQ?=
- =?iso-8859-1?Q?wePQJSmyJBZSboRY6dvUHjJ1UGrWyTgRx73SvtRzXyhi8eb0bg3+ut41vQ?=
- =?iso-8859-1?Q?5p+st/KbN+aG6Epp0URTea7gINxeTTev8Vi8i0lTlqr2ImH+nHlyo7/eIL?=
- =?iso-8859-1?Q?Q2FDc7PYruRCErdnACyqwsx5GAJB/Ev36cjL4w/14Fv0d0GEMGmpXzZcYl?=
- =?iso-8859-1?Q?NbV8v9/6ZWOUZfRqFtagHtjYWCTswoy+9SDn/UNfjO0QmsvlWjuFMOMuds?=
- =?iso-8859-1?Q?GhxjXAVAYLf0f+wFBZ3RI3WLJEXc1bfHzBoLe6eIptWedQHQ1U1qxZv9jJ?=
- =?iso-8859-1?Q?zoSEYScrmYSTcoaCbNBUgWbCNMJ/hVHE34pPUzxsWe1d5ALFuIvDMLkz04?=
- =?iso-8859-1?Q?k9rXYYqW3QAcEhWclA459CAd3970NkqyIi3BO2mJPcUjiuv01wRg/7Nz7S?=
- =?iso-8859-1?Q?K/1teDUtGK1FDFB3cODOB7TKjQ14Z07QFyYgSdB6dGULik7wPAjwDZWzlB?=
- =?iso-8859-1?Q?kedZvlUkL1ET6B5E+UKOUX+ESCF7gaQecYXbeZwqRNtt+kjKZcDtsJssyi?=
- =?iso-8859-1?Q?ijm5ueb6Svr9pYeUxPcZUxBDmZ5T9qb4ECRuBGjhralQiIJ0di37bkEI1U?=
- =?iso-8859-1?Q?lxXIWMrl9nFBfcke1n16MYWeW4jJIeiovKz0gVo7uTRdUUEHq91spSg1yt?=
- =?iso-8859-1?Q?a3HT+R9rc/lVORQttXQMc8YFgDO6QtHtB1RTIGh9a2rtazX7oHn/iXWZJB?=
- =?iso-8859-1?Q?TlanUsN4kD82/nZ1E7EeBaDQdPfFEvd2w6qTQfiuynPzFDM8fEj44gvz8C?=
- =?iso-8859-1?Q?EFHQ89r7uEenQEpyPYZhNs02h7TpnSzp0vp2VZq6r+GBe2FpzA/m5zDwz/?=
- =?iso-8859-1?Q?WH4KGl3ofErivbTmpYjwMXi1E9U2HqyC70Hps7rkQu7RTEhLhJbvLOyHVx?=
- =?iso-8859-1?Q?TOkRrgM0MMjybrpzESYFFu0UQGPSGt9RlAEFFLFg9kHKZrDwM1HiddsmLv?=
- =?iso-8859-1?Q?u91WWFGzokG31ublP+G89gwEyzrz4mRSq5G8OWW6sdT6wFkxcnf6UmPKkF?=
- =?iso-8859-1?Q?QCod1Qqewt/kRyILQdi7c4LYjuNfC2Y+AvOk7B1jkZGM8FgEJr8CuqXz7U?=
- =?iso-8859-1?Q?AQZR7egFHTiq1NnWkZkR0QQzn27q/dGMQgKCME4glLZY8HpgughCr7TVzT?=
- =?iso-8859-1?Q?6MhmqcOI5hdA5A6tq+uio6ODMo3r/wMkCf+1U1SEEH+KvNtg5kT9r1ZTBs?=
- =?iso-8859-1?Q?rXDn0I0q7H5yneMDKkjVFWUonDc4d8MgoYpovkMbXu6xPGHoSGv2s+lHTR?=
- =?iso-8859-1?Q?p4sd5wRhr/OC+MfSO4FgT2aTwGazmCN8+ChFQTDy3GuSW6fYjeDTMhXH4r?=
- =?iso-8859-1?Q?GgTrfQtjvRG+v6nLOEOyzlRDvKvzZutsMrC2KOauD1bAnW1bCgcm/12odV?=
- =?iso-8859-1?Q?yQx18zjPlX+PCFYP51Oq3z6SltUhbwnTMO8phFTc/6VOzV8o23a3HWuxG6?=
- =?iso-8859-1?Q?pd5ta4Y38lTQnE8BbItmyhsoKGPAtgdF8NvrEe8V8iiPqNxV/RmHMLpWnI?=
- =?iso-8859-1?Q?1V/sXYTCY8NBiV9n9f7T0eU/3geh1PHLXd0yLo2sRA53Nx+HTiU/nXs8PN?=
- =?iso-8859-1?Q?1eonQKHKAuk75ULHPo/wruNOyJU0bZ/Qw0bNpLnokRMCVxcsZtEft3XTr8?=
- =?iso-8859-1?Q?iD0VZ1jywWyJ1jHXqWj50yPY/CfT5dqAnyaKeH0nmrYyQQmJVhTm?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?giO6mdJa90/Diemq80GMavMo9JzCeJ02pxiHm2fgQVO9GIk935VGsP6zA1?=
+ =?iso-8859-1?Q?94sHvHbce1V36Kz/jCzIN+zi1ViwnV+A9UVLEDAzhgQB5MVQT5/sVgQgRn?=
+ =?iso-8859-1?Q?ZY3v5gGw+WMmcKlJJqvZM9Ne4pPyP3WH+/u5TtdoBcSqt62TVFme+g/f+P?=
+ =?iso-8859-1?Q?fr2mJ8BaWmZwiV0BaUJBnoXZSVAbSvdjpdfBYSHISxfVx2ZUW75yJehigJ?=
+ =?iso-8859-1?Q?dLxbRrUG8IiFjJX94yp3rFgvhN68gXsTSjClCK3XSV2Rkt2c0G9hVn9/QG?=
+ =?iso-8859-1?Q?euD+Fc+d2bFZyvznFUbqfzji9AjZrkh06A4zLCnvEZEiTosAomKatiAIiY?=
+ =?iso-8859-1?Q?275FREnXhzihuzA1Gsw7pkd0WIcfP0mn+n7U8QcwTRomh0S6yhHzPcYMLn?=
+ =?iso-8859-1?Q?oonRLiiv2Lvq0hLep766WycpTVfx7E9abaVsUU5WDOrqBcOfocP70Xxugx?=
+ =?iso-8859-1?Q?acHLa94qKgo+SkjthtLbK3QmQwzrwuvdi0tVURJQFXakjISJ7u55aPaZQP?=
+ =?iso-8859-1?Q?fu5SRzjqGU0rrlgUjKYWyrluGzzqg2IzweyenW48kG6zCWX7g1m7UGru90?=
+ =?iso-8859-1?Q?LG/+/UTIca5xUoGjVb5ZaGlFgDFxLiwR6ZXQwIsIPhsyEa3njb5ZH9Wdf0?=
+ =?iso-8859-1?Q?wIZtDn2ADOj/Y8Os2hFOf0BDiHcgSin8Nk53p28JTMa76LHydZPAn1ZhdC?=
+ =?iso-8859-1?Q?v3XqDzZirmvZl9raiBgw4MqRzygSRIv4QHl9oLa7xRBw2okeOZqA/K5RVp?=
+ =?iso-8859-1?Q?0/CmqCal08siHWLOTxxzCB4HCtJsZXK1CX/Sy1kKvf2GKiwHIlgCgyuas0?=
+ =?iso-8859-1?Q?9KCs8wDgMB2p+psJGa6/zuqGH4Do/xh+aGZnwT11Sz0Jr+iKgHzhPln581?=
+ =?iso-8859-1?Q?WN9tbDHtHNdogjoMb8pnmcL1oDVDrIcm4z1iQWpzcbFsu+yyOZ2Ob9yVRG?=
+ =?iso-8859-1?Q?scjnFMposUp9jCDd3y/nagydHXueU6OvdYYR5mjMnLTjmt8sMhB333w9Dr?=
+ =?iso-8859-1?Q?PM91sdEWY/DYowh6JL4IDlwxDiERwZIJQt9yrs9xIHAz7K59t2IXY27LtS?=
+ =?iso-8859-1?Q?5Q1uRnMc78rwQ53rdzYehJ7M8djM1KStpuT281cgRujhV8RloC/D39LGTJ?=
+ =?iso-8859-1?Q?CKhECdDENKa/JGkvVJzPX+pjV+NnmhVC7WRq2zvY3YBsWoR6iXEiq6BpJh?=
+ =?iso-8859-1?Q?ynL6rVYl02xf21c8Ngh2zieE5d0C7sFltczZojC1aMH6wNQdxou9PMVMqf?=
+ =?iso-8859-1?Q?Kgw1wB3x+AGmmgoFvZIxkKid/Kfx1XI8mVTyvdbQEW7TnzK6YRTuiFKKpd?=
+ =?iso-8859-1?Q?dIw0kL0Y+Wb0pfA5TgcGuDjRTTv6BGiijCEiX7v5QJxZFfimasfcDUSanY?=
+ =?iso-8859-1?Q?9f151k3a/Rdv1YEjIptE0pwVRYYRMkLQiMr1fkKTi3aZoNHSAFXv+TLlxN?=
+ =?iso-8859-1?Q?oiGwWCkhl4RZCU42T+LprZJ0rp8nSCht310Z67rmc6Fm4iNu5s7NY9N2f4?=
+ =?iso-8859-1?Q?vJj9oNeZkgowpHOw3q7qHVV9uNOoGKR7VbVwX+G3Pg2GEHay13b3vz8pLm?=
+ =?iso-8859-1?Q?z9z2+nxUlK5rZwRzeaMlRCd+lJ6ZWE7LSNjnh4xzvFPXih1ylWTxLNEwBc?=
+ =?iso-8859-1?Q?Y/L0R/EQa2npRY8FABoAKKl9t9HEdke8tqFAAiyAEBWSFUSe81T7K6jhqB?=
+ =?iso-8859-1?Q?hdqmVktnfYkL6r1GDaqbZ5ML/dZJxWjPYSboJJTLXgtxMeiaV6WAZd19YP?=
+ =?iso-8859-1?Q?aNpU8Ft0HE1aivd9VsGEcWauKHfh4bbEm1Hx7P21chDzJM7INByvJyN+k8?=
+ =?iso-8859-1?Q?0aevXp9bgXQmHqNBrRj/p/RmTWGBnwlMNep4T6jKK6o23ubEfu2R?=
 X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 978ee1d4-2109-4c03-03c1-08ded7a8e14a
+X-MS-Exchange-CrossTenant-Network-Message-Id: e39696ec-51c1-4c5c-d490-08ded7aad7a1
 X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Jul 2026 19:42:27.1556
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Jul 2026 19:56:29.6889
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 8RGmtlu1CWb5b6i91dF8sZnTjAsWFIU1KLMMgDPKygMojwDzZZVvNELVeiW2xdgibrSqDGrvoHCx4jPPUmcOxmf0xKn5Q7y1/IdPHZb4VCLRCzs+YK7r/UOoqX+/z6iF
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI2PR04MB10114
+X-MS-Exchange-CrossTenant-UserPrincipalName: QVvNMfescDDNkZ9RJWbcZ045FG/55HVx+yFpjpX/6qx573mcdFxEHX/PcEgTm2QUoPJ0y82bO6F74GePwW9vJ3kUsSFGVFaAhZveWhV+Y5pE+zhS+n/vSnKq+tne+6QN
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI0PR04MB10999
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260701_124232_802645_8EC36516 
-X-CRM114-Status: GOOD (  31.93  )
+X-CRM114-CacheID: sfid-20260701_125639_926537_F23580A2 
+X-CRM114-Status: GOOD (  30.82  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -143,362 +142,274 @@ Content-Transfer-Encoding: quoted-printable
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 01, 2026 at 07:23:18AM +0000, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 7 potential issu=
+On Wed, Jul 01, 2026 at 07:21:48AM +0000, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 5 potential issu=
 e(s) to consider:
-> - [Critical] `i3c_hub_request_ibi()` intentionally frees `desc->ibi` out =
-from under its caller without cleaning up its workqueue, causing a memory l=
-eak and a double-free on failure.
-> - [High] `i3c_hub_free_ibi()` causes a guaranteed NULL pointer dereferenc=
-e in the core IBI free path by recursively clearing `dev->ibi`.
-> - [High] Address spoofing in `i3c_hub_master_priv_xfers` corrupts parent =
-bus address reservations and suffers from an unprotected race window.
-> - [High] Missing `xfer_lock` in several hub operations allows concurrent =
-port enabling, breaking virtual bus isolation.
-> - [High] `i3c_hub_free_ibi()` permanently destroys downstream device addr=
-ess reservations on the parent bus.
-> - [High] `i3c_hub_do_daa` delegates DAA entirely to the parent controller=
-, breaking boardinfo matching and DT topology for downstream devices.
-> - [Medium] Acquiring `parent->bus.lock` while holding `child->bus.lock` t=
-riggers a lockdep splat due to unannotated same-class lock nesting.
+> - [High] Unprotected and temporary reassignment of a live device's `of_no=
+de` creates a data race, and missing restoration on the error path causes r=
+eference count leaks and a double-free.
+> - [High] `regmap_read_poll_timeout` is configured with a 10ms sleep inter=
+val that vastly exceeds the actual total timeout, artificially delaying eve=
+ry transaction and causing spurious timeouts.
+> - [High] Failure to allocate memory for an I2C adapter leaves previously =
+registered adapters active but with freed backing memory, leading to a Use-=
+After-Free.
+> - [Medium] Loop counters `msg_count` and `nxfers_i` are `u8`, causing inf=
+inite loops if the transfer count `num` is >=3D 256.
+> - [Medium] Race condition between the I3C hub driver and other MFD child =
+drivers over the shared `P3H2X4X_DEV_REG_PROTECTION_CODE` register.
 > --
 >
-> commit 22c2a31197952a434777498d93a1ed925009d6de
-> Author: Lakshay Piplani <lakshay.piplani@nxp.com>
-> Subject: i3c: hub: Add support for the I3C interface in the I3C hub
+> commit 37198d19f613736872b6f1fd4f9a75597b1f0ab1
+> Author: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
 >
-> This patch adds virtual I3C bus support for the hub and provides an
-> interface to enable or disable downstream ports. Virtual master controlle=
-rs
-> are created for the downstream ports, and bus operations are forwarded
-> through the hub device.
+> i3c: hub: p3h2x4x: Add support for NXP P3H2x4x I3C hub functionality
 >
-> > diff --git a/drivers/i3c/hub.c b/drivers/i3c/hub.c
-> > new file mode 100644
-> > index 0000000000000..d29ed40b6f735
-> > --- /dev/null
-> > +++ b/drivers/i3c/hub.c
-> > @@ -0,0 +1,566 @@
+> This patch adds I3C hub functionality for the NXP P3H2x4x family of multi=
+port
+> hubs. It enables I3C/I2C communication between host and hub, downstream d=
+evice
+> support, and target port configuration.
 >
+> > diff --git a/drivers/i3c/hub/p3h2840_i3c_hub_common.c b/drivers/i3c/hub=
+/p3h2840_i3c_hub_common.c
+> > --- a/drivers/i3c/hub/p3h2840_i3c_hub_common.c
+> > +++ b/drivers/i3c/hub/p3h2840_i3c_hub_common.c
 > [ ... ]
->
-> > +static int i3c_hub_do_daa(struct i3c_hub *hub,
-> > +			  struct i3c_master_controller *controller)
+> > +static int p3h2x4x_i3c_hub_probe(struct platform_device *pdev)
 > > +{
-> > +	struct i3c_master_controller *parent;
-> > +	int ret;
-> > +
-> > +	if (!hub || !hub->hub_dev)
-> > +		return -ENODEV;
-> > +
-> > +	parent =3D i3c_dev_get_master(hub->hub_dev->desc);
-> > +	if (!parent)
-> > +		return -ENODEV;
-> > +
-> > +	i3c_hub_enable_port(controller);
-> > +	ret =3D i3c_master_do_daa(parent);
->
-> [Severity: High]
-> Does delegating DAA directly to the parent controller bypass the virtual =
-hub
-> bus entirely?
->
-> By calling i3c_master_do_daa(parent), it appears the parent discovers and
-> attaches downstream devices to the physical bus instead of the virtual
-> controller. Does this cause boardinfo matching to fail since the devices
-> are defined under the hub's device tree node?
-
-
-Add comments here: like
-
-/*
-	All target devices which connect active ports of hub are tread as
-connect to parent bus at same time. So keep simple, all devices dynamatic
-address should be in the same address space, that means it is differences
-for all target devices even it is at difference ports. So far, address
-(128, need double check) is enough now.
-*/
-
-Please rephrase it.
-
->
-> > +	i3c_hub_disable_port(controller);
-> > +
-> > +	return ret;
-> > +}
->
+> > +	struct p3h2x4x_dev *p3h2x4x =3D dev_get_drvdata(pdev->dev.parent);
+> > +	struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub;
+> > +	struct device *dev =3D &pdev->dev;
+> > +	struct device_node *node;
+> > +	int ret, i;
 > [ ... ]
->
-> > +static int i3c_hub_send_ccc_cmd(struct i3c_hub *hub,
-> > +				struct i3c_master_controller *controller,
-> > +				struct i3c_ccc_cmd *cmd)
-> > +{
-> > +	struct i3c_master_controller *parent;
-> > +	int ret;
-> > +
-> > +	if (!hub || !hub->hub_dev)
-> > +		return -ENODEV;
-> > +
-> > +	parent =3D i3c_dev_get_master(hub->hub_dev->desc);
-> > +	if (!parent)
-> > +		return -ENODEV;
-> > +
-> > +	i3c_hub_enable_port(controller);
-> > +	ret =3D i3c_master_send_ccc_cmd(parent, cmd);
->
-> [Severity: High]
-> Could the omission of hub->xfer_lock in this function allow concurrent po=
-rt
-> enabling?
-
-look like correct, you acquire it at i3c_hub_master_priv_xfers(), should
-be similar here.
-
->
-> The lock is used to serialize private transfers, but callbacks like
-> i3c_hub_send_ccc_cmd(), i3c_hub_do_daa(), and i3c_hub_enable_ibi() do not
-> acquire it. If a private transfer runs concurrently with a CCC command,
-> could multiple downstream ports be enabled simultaneously and cause the h=
-ub
-> to broadcast traffic incorrectly?
->
-> > +	i3c_hub_disable_port(controller);
-> > +
-> > +	return ret;
-> > +}
->
-> [ ... ]
->
-> > +static int i3c_hub_master_priv_xfers(struct i3c_dev_desc *dev,
-> > +				     struct i3c_xfer *xfers,
-> > +				     int nxfers,
-> > +				     enum i3c_xfer_mode mode)
-> > +{
-> > +	struct i3c_master_controller *controller =3D i3c_dev_get_master(dev);
-> > +	struct i3c_hub_controller *hub_controller;
-> > +	struct i3c_dev_desc *hub_dev;
-> > +	struct i3c_master_controller *parent;
-> > +	u8 hub_addr, target_addr;
-> > +	struct i3c_hub *hub;
-> > +	int ret, xfer_ret;
->
-> [ ... ]
->
-> > +	if (hub_addr !=3D target_addr) {
-> > +		down_write(&parent->bus.lock);
-
-call i3c_bus_maintenance_lock(), move it to API.
-
+> > +	/* Unlock access to protected registers */
+> > +	ret =3D regmap_write(p3h2x4x_i3c_hub->regmap, P3H2X4X_DEV_REG_PROTECT=
+ION_CODE,
+> > +			   P3H2X4X_REGISTERS_UNLOCK_CODE);
 >
 > [Severity: Medium]
-> Will acquiring parent->bus.lock here trigger a lockdep warning?
+> Could this global unlock race with other MFD child drivers (such as the
+> on-die regulator)?
 >
-> Since virtual hub operations are invoked by the I3C core with the child
-> bus's lock already held, acquiring the parent bus's lock (which belongs to
-> the same lock class) without nesting annotations might produce a false
-> positive lockdep splat. This also happens in i3c_hub_enable_ibi() and
-> i3c_hub_disable_ibi().
+> Because the protected configuration registers are unlocked at the start of
+> p3h2x4x_i3c_hub_probe() and left unlocked during the entire hardware
+> configuration and device discovery window (which includes sleeping in
+> i3c_master_do_daa()), a concurrent MFD child driver could access its own
+> registers and re-lock the protection code. If that happens, subsequent
+> hardware configuration writes in this function might fail silently.
 >
-> > +		hub_dev->info.dyn_addr =3D target_addr;
+> > +	if (ret)
+> > +		return dev_err_probe(dev, ret, "Failed to unlock HUB's protected reg=
+isters\n");
 > > +
-> > +		ret =3D i3c_master_reattach_i3c_dev_locked(hub_dev, hub_addr);
-> > +		if (ret) {
-> > +			up_write(&parent->bus.lock);
-> > +			hub_dev->info.dyn_addr =3D hub_addr;
-> > +			goto disable;
-> > +		}
-> > +		up_write(&parent->bus.lock);
-> > +	}
+> > +	ret =3D devm_add_action_or_reset(dev, p3h2x4x_lock_registers_action,
+> > +				       p3h2x4x_i3c_hub);
+> > +	if (ret)
+> > +		return ret;
 > > +
-> > +	ret =3D i3c_device_do_xfers(hub->hub_dev, xfers, nxfers, mode);
+> > +	ret =3D p3h2x4x_configure_hw(dev);
+> > +	if (ret)
+> > +		return dev_err_probe(dev, ret, "Failed to configure the HUB\n");
+> [ ... ]
+>
+> > diff --git a/drivers/i3c/hub/p3h2840_i3c_hub_i3c.c b/drivers/i3c/hub/p3=
+h2840_i3c_hub_i3c.c
+> > --- a/drivers/i3c/hub/p3h2840_i3c_hub_i3c.c
+> > +++ b/drivers/i3c/hub/p3h2840_i3c_hub_i3c.c
+> [ ... ]
+> > +int p3h2x4x_tp_i3c_algo(struct p3h2x4x_i3c_hub_dev *p3h2x4x_hub)
+> > +{
+> > +	struct i3c_master_controller *parent =3D i3c_dev_get_master(p3h2x4x_h=
+ub->i3cdev->desc);
+> > +	struct device_node *orig_of_node;
+> > +	u8 tp, ntwk_mask =3D 0;
+> > +	int ret;
+> [ ... ]
+> > +	for (tp =3D 0; tp < P3H2X4X_TP_MAX_COUNT; tp++) {
+> > +		if (!p3h2x4x_hub->tp_bus[tp].of_node ||
+> > +		    p3h2x4x_hub->hub_config.tp_config[tp].mode !=3D P3H2X4X_TP_MODE_=
+I3C)
+> > +			continue;
 > > +
-> > +	if (hub_addr !=3D target_addr) {
-> > +		down_write(&parent->bus.lock);
-> > +		hub_dev->info.dyn_addr =3D hub_addr;
+> > +		/*
+> > +		 * i3c_master_register() derives bus population from the parent devi=
+ce's
+> > +		 * OF node. Temporarily switch the hub device to the target-port nod=
+e for
+> > +		 * registration, then restore the original node immediately.
+> > +		 */
+
+i3c_master_register() use dev of node. if add API i3c_master_register_fwnod=
+e(),
+pass down a children fwnode, things will be simple, and no below AI' report
+issue
+
+> > +		orig_of_node =3D p3h2x4x_hub->dev->of_node;
+> > +		p3h2x4x_hub->dev->of_node =3D p3h2x4x_hub->tp_bus[tp].of_node;
 > > +
-> > +		xfer_ret =3D i3c_master_reattach_i3c_dev_locked(hub_dev,
-> > +							      target_addr);
+> > +		struct i3c_hub_controller *hub_controller =3D
+> > +				&p3h2x4x_hub->tp_bus[tp].hub_controller;
+> > +		struct i3c_master_controller *controller =3D &hub_controller->contro=
+ller;
+> > +
+> > +		hub_controller->parent =3D parent;
+> > +		hub_controller->hub =3D p3h2x4x_hub->hub;
+> > +
+> > +		dev_set_drvdata(&controller->dev, hub_controller);
+> > +
+> > +		ret =3D i3c_hub_reserve_parent_addrslots_from_dt(hub_controller,
+> > +							       p3h2x4x_hub->tp_bus[tp].of_node);
+> > +		if (ret)
+> > +			return ret;
 >
 > [Severity: High]
-> Does this sequence permanently destroy device tree static address
-> reservations?
+> Will this leak the original parent node reference and cause a double-free=
+ on
+> the target node if i3c_hub_reserve_parent_addrslots_from_dt() returns an
+> error?
 >
-> When the hub's dynamic address is altered via
-> i3c_master_reattach_i3c_dev_locked(), the hub's original address slot is
-> set to free on the parent bus, leaving it vulnerable to DAA theft since t=
-he
-> parent write-lock is dropped during the transfer. When the address is
-> restored later by passing target_addr to i3c_master_reattach_i3c_dev_lock=
-ed,
-> this marks the downstream device's address as free, which seems to wipe o=
-ut
-> its reservation.
-
-It makes sense
-
-	i3c_bus_maintenance_lock()
-	i3c_master_reattach_i3c_dev_locked()
-	i3c_device_do_xfers_locked()
-	i3c_master_reattach_i3c_dev_locked()
-	i3c_bus_maintenance_unlock()
-
-Another problem is previous lockdep().
-
-int i3c_device_do_xfers(struct i3c_device *dev, struct i3c_xfer *xfers,
-                        int nxfers, enum i3c_xfer_mode mode)
-{
-	...
-        i3c_bus_normaluse_lock(dev->bus);
-        ret =3D i3c_dev_do_xfers_locked(dev->desc, xfers, nxfers, mode);
-        i3c_bus_normaluse_unlock(dev->bus);
-        ...
-
-        return ret;
-}
-
-simple method is promote i3c_bus_normaluse_lock() to i3c_bus_maintenance_lo=
-ck()
-when dev attached to hub devices.
-
-and also lock parent master's i3c_bus_maintenance_lock(),
-
-So here needn't lock in hub.c
-
-if parent master use write lock, hub->xfer_lock needn't
-
+> If the early return is taken, dev->of_node is never restored to
+> orig_of_node. When the probe unwinds, the devres cleanup function
+> p3h2x4x_put_target_port_of_nodes() drops the target node's reference.
+> Later, when the device core destroys the device, it will call
+> of_node_put(dev->of_node) which now incorrectly points to the target node
+> again, causing a double-free.
+>
+> Concurrently, modifying dev->of_node without synchronization creates a da=
+ta
+> race for concurrent sysfs or uevent reads.
 >
 > > +
-> > +		up_write(&parent->bus.lock);
-> > +		if (!ret)
-> > +			ret =3D xfer_ret;
-> > +	}
-> > +disable:
-> > +	i3c_hub_disable_port(controller);
-> > +	mutex_unlock(&hub->xfer_lock);
-> > +	return ret;
-> > +}
->
+> > +		ret =3D i3c_master_register(controller,
+> > +					  p3h2x4x_hub->dev,
+> > +					  i3c_hub_master_ops(),
+> > +					  false);
+> > +
+> > +		p3h2x4x_hub->dev->of_node =3D orig_of_node;
 > [ ... ]
 >
-> > +static int i3c_hub_request_ibi(struct i3c_dev_desc *desc,
-> > +			       const struct i3c_ibi_setup *req)
+> > diff --git a/drivers/i3c/hub/p3h2840_i3c_hub_smbus.c b/drivers/i3c/hub/=
+p3h2840_i3c_hub_smbus.c
+> > --- a/drivers/i3c/hub/p3h2840_i3c_hub_smbus.c
+> > +++ b/drivers/i3c/hub/p3h2840_i3c_hub_smbus.c
+> [ ... ]
+> > +static int p3h2x4x_read_smbus_transaction_status(struct p3h2x4x_i3c_hu=
+b_dev *hub,
+> > +						 u8 target_port_status,
+> > +						 u8 data_length)
 > > +{
-> > +	struct i3c_master_controller *controller =3D i3c_dev_get_master(desc);
-> > +	struct i3c_hub_controller *hub_controller;
-> > +	struct i3c_master_controller *orig_parent;
-> > +	struct i3c_master_controller *parent;
-> > +	struct i3c_hub *hub;
+> > +	u32 status_read;
+> > +	u8 status;
 > > +	int ret;
->
-> [ ... ]
->
-> > +	orig_parent =3D i3c_hub_update_desc_parent(&desc->common, parent);
 > > +
-> > +	ret =3D i3c_master_direct_attach_i3c_dev_locked(parent, desc);
+> > +	ret =3D regmap_read_poll_timeout(hub->regmap, target_port_status,
+> > +				       status_read,
+> > +				       status_read & P3H2X4X_SMBUS_TRANSACTION_FINISH_FLAG,
+> > +				       P3H2X4X_POLLING_ROLL_PERIOD_MS * 1000,
+> > +				       P3H2X4X_SMBUS_400kHz_TRANSFER_TIMEOUT(data_length));
+>
+> [Severity: High]
+> Does this polling configuration cause spurious timeouts or severe perform=
+ance
+> penalties?
+>
+> The sleep_us parameter is set to P3H2X4X_POLLING_ROLL_PERIOD_MS * 1000,
+> which is 10,000us (10ms). However, the total timeout_us parameter provided
+> by P3H2X4X_SMBUS_400kHz_TRANSFER_TIMEOUT(data_length) is significantly sm=
+aller
+> (e.g., between 100us and 2,000us depending on data length).
+>
+> If the transaction is not complete on the very first read, the thread will
+> sleep for a full 10ms, drastically overshooting the intended timeout and
+> potentially returning a spurious -ETIMEDOUT depending on the state when it
+> wakes up.
 
-All IBI cap devices should be already attached to master bus when DAA? need
-attach again here?
+Make sense, pleas double check it
 
-Actived port's devices logically attached to master bus?
-
-So needn't switch port.
-
-> > +	if (ret) {
-> > +		i3c_hub_update_desc_parent(&desc->common, orig_parent);
-> > +		up_write(&parent->bus.lock);
+>
+> > +	if (ret)
 > > +		return ret;
-> > +	}
+> [ ... ]
+> > +static s32 p3h2x4x_tp_i2c_xfer(struct i2c_adapter *adap, struct i2c_ms=
+g *msgs, int num)
+> > +{
+> > +	int ret_sum =3D 0, ret;
+> > +	u8 msg_count, rw;
 > > +
-> > +	kfree(desc->ibi);
-> > +	desc->ibi =3D NULL;
-> > +	ret =3D i3c_dev_request_ibi_locked(desc, req);
+> > +	struct tp_bus *bus =3D i2c_get_adapdata(adap);
+> > +	struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub =3D bus->p3h2x4x_i3c_hub;
+> > +
+> > +	guard(mutex)(&p3h2x4x_i3c_hub->etx_mutex);
+> > +	guard(mutex)(&bus->port_mutex);
+> > +
+> > +	for (msg_count =3D 0; msg_count < num; msg_count++) {
 >
-> [Severity: Critical]
-> Can freeing desc->ibi here cause a memory leak and a double-free?
+> [Severity: Medium]
+> Can this loop run infinitely if the transfer count (num) is greater than
+> or equal to 256?
 >
-> If a downstream device requests an IBI, the core i3c_dev_request_ibi_lock=
-ed()
-> allocates ibi and ibi->wq before calling this hub operation. By calling
-> kfree(desc->ibi) here, the outer workqueue is leaked.
->
-> Furthermore, if the recursive call to i3c_dev_request_ibi_locked() fails,
-> the outer caller will execute:
->
->     if (ret) {
->             kfree(ibi);
->             dev->ibi =3D NULL;
->     }
->
-> Could this result in a double-free on the original allocation?
+> The parameter num is a signed 32-bit integer, but msg_count is declared as
+> u8. If an in-kernel driver submits an I2C transfer with 256 or more
+> messages, msg_count will wrap around to 0 before ever reaching num, making
+> the loop condition perpetually true and causing a CPU lockup.
 
-look like make sense
+make sense, please check
+
+>
+> > +		if (msgs[msg_count].len > P3H2X4X_SMBUS_PAYLOAD_SIZE) {
+> > +			dev_err(p3h2x4x_i3c_hub->dev,
+> > +				"Message nr. %d not sent - length over %d bytes.\n",
+> > +				msg_count, P3H2X4X_SMBUS_PAYLOAD_SIZE);
+> > +			return -EINVAL;
+> > +		}
+> [ ... ]
+> > +int p3h2x4x_tp_smbus_algo(struct p3h2x4x_i3c_hub_dev *hub)
+> > +{
+> > +	int ret;
+> > +	u8 tp;
+> > +
+> > +	for (tp =3D 0; tp < P3H2X4X_TP_MAX_COUNT; tp++) {
+> > +		if (!hub->tp_bus[tp].of_node ||
+> > +		    hub->hub_config.tp_config[tp].mode !=3D P3H2X4X_TP_MODE_SMBUS)
+> > +			continue;
+> > +
+> > +		/* Allocate adapter */
+> > +		struct i2c_adapter *smbus_adapter =3D
+> > +			devm_kzalloc(hub->dev, sizeof(*smbus_adapter), GFP_KERNEL);
+> > +		if (!smbus_adapter)
+> > +			return -ENOMEM;
+>
+> [Severity: High]
+> Will this early return on allocation failure cause a use-after-free for
+> previously registered I2C adapters?
+>
+> In this loop, if devm_kzalloc() fails for a given port, the function retu=
+rns
+> -ENOMEM immediately without calling p3h2x4x_unregister_smbus_adapters().
+
+make sense, please check it.
 
 Frank
 >
-> > +	if (ret)
-> > +		i3c_master_direct_detach_i3c_dev_locked(desc);
+> Any adapters successfully registered in earlier loop iterations will rema=
+in
+> active in the I2C subsystem. Because the devres unregister action
+> (p3h2x4x_unregister_smbus_adapters_action) is only added at the end of the
+> probe() function, it will not execute. However, devres will automatically
+> free the memory allocated by devm_kzalloc(), leaving the I2C subsystem to
+> dereference freed memory when it interacts with those remaining dangling
+> adapters.
+>
 > > +
-> > +	i3c_hub_update_desc_parent(&desc->common, orig_parent);
-> > +
-> > +	up_write(&parent->bus.lock);
-> > +
-> > +	return ret;
-> > +}
-> > +
-> > +static void i3c_hub_free_ibi(struct i3c_dev_desc *desc)
-> > +{
-> > +	struct i3c_master_controller *controller =3D i3c_dev_get_master(desc);
-> > +	struct i3c_hub_controller *hub_controller;
-> > +	struct i3c_master_controller *orig_parent;
-> > +	struct i3c_master_controller *parent;
-> > +	struct i3c_hub *hub;
->
-> [ ... ]
->
-> > +	i3c_hub_enable_port(controller);
-> > +
-> > +	down_write(&parent->bus.lock);
-> > +	orig_parent =3D i3c_hub_update_desc_parent(&desc->common, parent);
-> > +	i3c_dev_free_ibi_locked(desc);
-> > +	i3c_master_direct_detach_i3c_dev_locked(desc);
->
-> [Severity: High]
-> Does reparenting the device to the upstream master before detaching it
-> destroy its address reservations?
->
-> The detach logic calls i3c_master_put_i3c_addrs(), which resets the devic=
-e's
-> static and dynamic address slots to free. Because the device is temporari=
-ly
-> parented to the upstream master, this frees the addresses on the parent b=
-us.
->
-> [Severity: High]
-> Also, does the recursive call to i3c_dev_free_ibi_locked(desc) guarantee a
-> NULL pointer dereference?
->
-> The core i3c_dev_free_ibi_locked() function calls master->ops->free_ibi(d=
-ev).
-> When this hub implementation recursively calls i3c_dev_free_ibi_locked(),=
- it
-> frees the IBI and sets desc->ibi =3D NULL. Upon returning to the outer fu=
-nction,
-> it executes:
->
->     if (dev->ibi->wq) {
->             destroy_workqueue(dev->ibi->wq);
->
-> which unconditionally dereferences the newly set NULL pointer.
->
-> > +	i3c_hub_update_desc_parent(&desc->common, orig_parent);
-> > +	up_write(&parent->bus.lock);
-> > +
-> > +	i3c_hub_disable_port(controller);
-> > +}
+> > +		/* Initialize adapter */
+> > +		smbus_adapter->owner =3D THIS_MODULE;
+> > +		smbus_adapter->class =3D I2C_CLASS_HWMON;
 >
 > --
 > Sashiko AI review =B7 https://sashiko.dev/#/patchset/20260701065755.20677=
-93-1-lakshay.piplani@nxp.com?part=3D5
+93-1-lakshay.piplani@nxp.com?part=3D6
 
 -- =
 
