@@ -4,38 +4,38 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B88FBC43327
-	for <linux-i3c@archiver.kernel.org>; Wed,  1 Jul 2026 06:58:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 55343C44500
+	for <linux-i3c@archiver.kernel.org>; Wed,  1 Jul 2026 06:58:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nwibp78xgg+UePp/HsCtSpjGNNnE9BoDmL2m3J/xDhM=; b=qBEYSs52vu3Giu
-	c5WbxgX5wD9h1lrq6o/o5huJfwCLu4A3HLrFBxKxilJHFcaaEpy+pV6xuXOA+S2VWXFP2rEM1JnO+
-	wMS4jVWhhyVG9kfu67+23iM+zlkDk/3LYA0AyHw+vpJM+u5cDSh4Ay35l4SSf7ZcJ+O1G3/WbSY4J
-	7BajZlKfTiZg3LaeVjSM452p5LsgAojL8oARCwfcb3QJk25+OAnHaBt10SPSt4rNA34TkL+s5sWNu
-	lxwjRLcWJoc7RKzPvqW9s3n1JQyV5ZgI3C1eeBwYbGe3Q6lQrIe1TdEBBoDgQG5qeJvTs8GEv1MLH
-	+TBWlLqwlHQYBGG6lqEA==;
+	List-Owner; bh=5YkOUlgIPTYXn8Rg9Rauo3lXY9fdYVODVI80NVkA0qw=; b=NXRhPmSWVOw5+8
+	ukxPOwAlNnwJVcANTAEgKSvQ1TGOlVHhC+gb44HujPv5/ohcxFLeJKRY3x6KbDq17rV7dLAOXibvb
+	36MJPuc+e2DGvU0NIwj16OfDWS7zEMmFuYbxSJrNfq4vsG9s4avlv6Z1HulzObVSUKc3HgrzKm2mj
+	nmaurbBtBiLpkGnOwhv2kVV0GokV997jzhIfCH2VJ8LI34/IktKVPJey41dTB2mgWdIUGIxvLgSRk
+	UtLGIVRlpjo8nQIBfWqLmyQkPoOI+Z5jJfQKaDoZ0YKhxQVnU8TD9Dxb0E70McPgYSLP5v7730Y2V
+	AjLp1MqHxGF17saDRyDQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weotl-00000000qDs-1LI5;
-	Wed, 01 Jul 2026 06:58:17 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1weotq-00000000qHj-02EP;
+	Wed, 01 Jul 2026 06:58:22 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1weote-00000000q9d-0HKP
+	id 1weotj-00000000qCQ-0tyf
 	for linux-i3c@lists.infradead.org;
-	Wed, 01 Jul 2026 06:58:13 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 882D1200328;
-	Wed,  1 Jul 2026 08:58:07 +0200 (CEST)
+	Wed, 01 Jul 2026 06:58:17 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C787B1A032E;
+	Wed,  1 Jul 2026 08:58:13 +0200 (CEST)
 Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4B67120031D;
-	Wed,  1 Jul 2026 08:58:07 +0200 (CEST)
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 8F9E81A0324;
+	Wed,  1 Jul 2026 08:58:13 +0200 (CEST)
 Received: from lsv03900.swis.in-blr01.nxp.com (lsv03900.swis.in-blr01.nxp.com [10.12.177.15])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id F1F741800071;
-	Wed,  1 Jul 2026 14:58:05 +0800 (+08)
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 4177B1800086;
+	Wed,  1 Jul 2026 14:58:12 +0800 (+08)
 From: Lakshay Piplani <lakshay.piplani@nxp.com>
 To: linux-kernel@vger.kernel.org,
 	linux-i3c@lists.infradead.org,
@@ -52,17 +52,17 @@ Cc: vikash.bansal@nxp.com,
 	priyanka.jain@nxp.com,
 	aman.kumarpandey@nxp.com,
 	Lakshay Piplani <lakshay.piplani@nxp.com>
-Subject: [PATCH v13 3/7] mfd: p3h2x4x: Add driver for NXP P3H2x4x i3c hub and on-die regulator
-Date: Wed,  1 Jul 2026 12:27:51 +0530
-Message-Id: <20260701065755.2067793-4-lakshay.piplani@nxp.com>
+Subject: [PATCH v13 7/7] i3c: hub: p3h2x4x: Add SMBus slave mode support
+Date: Wed,  1 Jul 2026 12:27:55 +0530
+Message-Id: <20260701065755.2067793-8-lakshay.piplani@nxp.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20260701065755.2067793-1-lakshay.piplani@nxp.com>
 References: <20260701065755.2067793-1-lakshay.piplani@nxp.com>
 MIME-Version: 1.0
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260630_235810_748263_C743FB12 
-X-CRM114-Status: GOOD (  25.50  )
+X-CRM114-CacheID: sfid-20260630_235816_689497_2704B560 
+X-CRM114-Status: GOOD (  21.06  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,298 +79,381 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+Add SMBus slave mode support for the P3H2x4x hub SMBus target ports.
 
-Add core MFD support for the NXP P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841)
-family of multiport I3C hub devices. These devices connect to a host via
-I3C/I2C/SMBus and expose multiple downstream target ports.
+The hub SMBus slave agent can receive downstream payloads into target
+buffers and report receive events through IBI. Add CONFIG_I2C_SLAVE
+to support the receive path and forward the received payloads to the
+registered I2C slave client through i2c_slave_event().
 
+Signed-off-by: Lakshay Piplani <lakshay.piplani@nxp.com>
 Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
 Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
-Signed-off-by: Lakshay Piplani <lakshay.piplani@nxp.com>
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
 ---
 Changes in v13:
- - Use i3c_device helpers (i3cdev_to_dev()) instead of direct struct access
-   to maintain API abstraction
- - Avoid including internal I3C headers and use public device headers instead
- - Ensure proper device matching by relying on manufacturer ID checks in probe
+ - Make IBI setup optional and robust: avoid probe failure when IBI is unsupported and add proper
+   cleanup using devm actions
+ - Fix SMBus slave receive path: avoid over-clearing buffer status, handle unregistered ports,
+   and ensure correct event delivery
+ - Improve safety by adding proper locking around shared state
 
 Changes in v12:
- - No change, added Reviewed-By tag
+ - Add devm cleanup for IBI request/enable path
+ - Fix NULL pointer dereference before tp_smbus_client check
+ - Clear tp_smbus_client before disabling SMBus-agent IBI in unreg_slave()
 
 Changes in v11:
- - Use MFD_CELL_NAME() for child device registration
- - Rename local variables for consistency
- - Rename driver names to follow subsystem conventions:
-   - Use '-' instead of '_' in driver names
-   - Drop the "_drv" suffix from driver names
+ - Improve SMBus slave mode payload validation and parsing
 
 Changes in v10:
- - Drop redundant is_p3h2x4x_in_i3c flag
-
-Changes in v9:
- - Renamed macros to follow consistent uppercase naming conventions
- - Made REGMAP selects in the P3H2X4X MFD Kconfig conditional,
-   to avoid I3C/I2C dependency issues
-
-Changes in v8:
- - No change
-
-Changes in v7:
- - Use new config I3C_OR_I2C
-
-Changes in v6:
- - No change
-
-Changes in v5:
- - Corrected the ordering in the Makefile and Kconfig for MFD_P3H2X4X
- - Updated dev_err_probe() for regmap_init failure.
- - Updated module description
-
-Changes in v4:
- - Split the driver into three separate patches(mfd, regulator and I3C hub)
- - Added support for NXP P3H2x4x MFD functionality
+ - Split SMBus slave mode support into a separate patch
 ---
 ---
- MAINTAINERS                 |   2 +
- drivers/mfd/Kconfig         |  13 ++++
- drivers/mfd/Makefile        |   1 +
- drivers/mfd/p3h2840.c       | 126 ++++++++++++++++++++++++++++++++++++
- include/linux/i3c/device.h  |   1 +
- include/linux/mfd/p3h2840.h |  28 ++++++++
- 6 files changed, 171 insertions(+)
- create mode 100644 drivers/mfd/p3h2840.c
- create mode 100644 include/linux/mfd/p3h2840.h
+ drivers/i3c/hub/p3h2840_i3c_hub.h       |  13 ++
+ drivers/i3c/hub/p3h2840_i3c_hub_i3c.c   |  48 +++++-
+ drivers/i3c/hub/p3h2840_i3c_hub_smbus.c | 209 ++++++++++++++++++++++++
+ 3 files changed, 269 insertions(+), 1 deletion(-)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index ba65ae5a008b..3420701a75c5 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -19311,6 +19311,8 @@ L:	linux-kernel@vger.kernel.org
- L:	linux-i3c@lists.infradead.org
- S:	Maintained
- F:	Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
-+F:	drivers/mfd/p3h2840.c
-+F:	include/linux/mfd/p3h2840.h
- 
- NXP PF5300/PF5301/PF5302 PMIC REGULATOR DEVICE DRIVER
- M:	Woodrow Douglass <wdouglass@carnegierobotics.com>
-diff --git a/drivers/mfd/Kconfig b/drivers/mfd/Kconfig
-index 7192c9d1d268..405b50c3c77b 100644
---- a/drivers/mfd/Kconfig
-+++ b/drivers/mfd/Kconfig
-@@ -617,6 +617,19 @@ config MFD_MX25_TSADC
- 	  i.MX25 processors. They consist of a conversion queue for general
- 	  purpose ADC and a queue for Touchscreens.
- 
-+config MFD_P3H2X4X
-+	tristate "NXP P3H2X4X I3C Hub Device"
-+	depends on I3C_OR_I2C
-+	select MFD_CORE
-+	select REGMAP_I3C if I3C
-+	select REGMAP_I2C if I2C
-+	help
-+	  Enable Support for NXP P3H244x/P3H284x I3C HUB device using I3C/I2C
-+	  communication interface.
-+
-+	  This driver provides support for I3C hub and regulator, each subdriver
-+	  can be enabled independently depending on the required functionality.
-+
- config MFD_PF1550
- 	tristate "NXP PF1550 PMIC Support"
- 	depends on I2C=y && OF
-diff --git a/drivers/mfd/Makefile b/drivers/mfd/Makefile
-index e75e8045c28a..a284b22c7b13 100644
---- a/drivers/mfd/Makefile
-+++ b/drivers/mfd/Makefile
-@@ -122,6 +122,7 @@ obj-$(CONFIG_MFD_MC13XXX)	+= mc13xxx-core.o
- obj-$(CONFIG_MFD_MC13XXX_SPI)	+= mc13xxx-spi.o
- obj-$(CONFIG_MFD_MC13XXX_I2C)	+= mc13xxx-i2c.o
- 
-+obj-$(CONFIG_MFD_P3H2X4X)	+= p3h2840.o
- obj-$(CONFIG_MFD_PF1550)	+= pf1550.o
- 
- obj-$(CONFIG_MFD_NCT6694)	+= nct6694.o
-diff --git a/drivers/mfd/p3h2840.c b/drivers/mfd/p3h2840.c
-new file mode 100644
-index 000000000000..89a97f0449c4
---- /dev/null
-+++ b/drivers/mfd/p3h2840.c
-@@ -0,0 +1,126 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright 2025-2026 NXP
-+ * P3H2X4X i3c hub and regulator device.
-+ */
-+
-+#include <linux/i2c.h>
-+#include <linux/i3c/device.h>
-+#include <linux/mfd/core.h>
-+#include <linux/mfd/p3h2840.h>
-+#include <linux/regmap.h>
-+
-+static const struct mfd_cell p3h2x4x_devs[] = {
-+		MFD_CELL_NAME("p3h2x4x-regulator"),
-+		MFD_CELL_NAME("p3h2x4x-i3c-hub"),
-+};
-+
-+static const struct regmap_config p3h2x4x_regmap_config = {
-+	.reg_bits = P3H2X4X_REG_BITS,
-+	.val_bits = P3H2X4X_VAL_BITS,
-+	.max_register = 0xFF,
-+};
-+
-+static int p3h2x4x_device_probe_i3c(struct i3c_device *i3cdev)
-+{
-+	struct device *dev = i3cdev_to_dev(i3cdev);
-+	struct i3c_device_info info;
-+	struct p3h2x4x_dev *ddata;
-+	int ret;
-+
-+	i3c_device_get_info(i3cdev, &info);
-+
-+	if (I3C_PID_MANUF_ID(info.pid) != I3C_MANUF_ID_NXP)
-+		return -ENODEV;
-+
-+	ddata = devm_kzalloc(dev, sizeof(*ddata), GFP_KERNEL);
-+	if (!ddata)
-+		return -ENOMEM;
-+
-+	i3cdev_set_drvdata(i3cdev, ddata);
-+
-+	ddata->regmap = devm_regmap_init_i3c(i3cdev, &p3h2x4x_regmap_config);
-+	if (IS_ERR(ddata->regmap))
-+		return dev_err_probe(dev, PTR_ERR(ddata->regmap),
-+				     "Failed to register HUB regmap\n");
-+
-+	// The hub child driver retrieves information from i3cdev
-+	ddata->i3cdev = i3cdev;
-+
-+	ret = devm_mfd_add_devices(dev, PLATFORM_DEVID_AUTO,
-+				   p3h2x4x_devs, ARRAY_SIZE(p3h2x4x_devs),
-+				   NULL, 0, NULL);
-+	if (ret)
-+		return dev_err_probe(dev, ret, "Failed to add sub devices\n");
-+
-+	return 0;
-+}
-+
-+static int p3h2x4x_device_probe_i2c(struct i2c_client *client)
-+{
-+	struct p3h2x4x_dev *ddata;
-+	int ret;
-+
-+	ddata = devm_kzalloc(&client->dev, sizeof(*ddata), GFP_KERNEL);
-+	if (!ddata)
-+		return -ENOMEM;
-+
-+	i2c_set_clientdata(client, ddata);
-+
-+	ddata->regmap = devm_regmap_init_i2c(client, &p3h2x4x_regmap_config);
-+	if (IS_ERR(ddata->regmap))
-+		return dev_err_probe(&client->dev, PTR_ERR(ddata->regmap),
-+				     "Failed to register HUB regmap\n");
-+
-+	ddata->i3cdev = NULL;
-+
-+	ret = devm_mfd_add_devices(&client->dev, PLATFORM_DEVID_AUTO,
-+				   p3h2x4x_devs, ARRAY_SIZE(p3h2x4x_devs),
-+				   NULL, 0, NULL);
-+	if (ret)
-+		return dev_err_probe(&client->dev, ret, "Failed to add sub devices\n");
-+
-+	return 0;
-+}
-+
-+static const struct i3c_device_id p3h2x4x_i3c_ids[] = {
-+	I3C_CLASS(I3C_DCR_HUB, NULL),
-+	{ /* sentinel */ },
-+};
-+MODULE_DEVICE_TABLE(i3c, p3h2x4x_i3c_ids);
-+
-+static const struct i2c_device_id p3h2x4x_i2c_id_table[] = {
-+	{ "nxp-i3c-hub" },
-+	{ /* sentinel */ }
-+};
-+MODULE_DEVICE_TABLE(i2c, p3h2x4x_i2c_id_table);
-+
-+static const struct of_device_id p3h2x4x_i2c_of_match[] = {
-+	{ .compatible = "nxp,p3h2840", },
-+	{ /* sentinel */ }
-+};
-+MODULE_DEVICE_TABLE(of, p3h2x4x_i2c_of_match);
-+
-+static struct i3c_driver p3h2x4x_i3c = {
-+	.driver = {
-+		.name = "p3h2x4x-i3c",
-+	},
-+	.probe = p3h2x4x_device_probe_i3c,
-+	.id_table = p3h2x4x_i3c_ids,
-+};
-+
-+static struct i2c_driver p3h2x4x_i2c = {
-+	.driver = {
-+		.name = "p3h2x4x-i2c",
-+		.of_match_table = p3h2x4x_i2c_of_match,
-+	},
-+	.probe =  p3h2x4x_device_probe_i2c,
-+	.id_table = p3h2x4x_i2c_id_table,
-+};
-+module_i3c_i2c_driver(p3h2x4x_i3c, &p3h2x4x_i2c);
-+
-+MODULE_AUTHOR("Aman Kumar Pandey <aman.kumarpandey@nxp.com>");
-+MODULE_AUTHOR("Vikash Bansal <vikash.bansal@nxp.com>");
-+MODULE_AUTHOR("Lakshay Piplani <lakshay.piplani@nxp.com>");
-+MODULE_DESCRIPTION("NXP P3H2X4X I3C HUB multi function driver");
-+MODULE_LICENSE("GPL");
-diff --git a/include/linux/i3c/device.h b/include/linux/i3c/device.h
-index 971d53349b6f..6188082599dd 100644
---- a/include/linux/i3c/device.h
-+++ b/include/linux/i3c/device.h
-@@ -85,6 +85,7 @@ struct i3c_xfer {
-  */
- enum i3c_dcr {
- 	I3C_DCR_GENERIC_DEVICE = 0,
-+	I3C_DCR_HUB = 194,
+diff --git a/drivers/i3c/hub/p3h2840_i3c_hub.h b/drivers/i3c/hub/p3h2840_i3c_hub.h
+index d922c6b3b6be..9fcf6db15547 100644
+--- a/drivers/i3c/hub/p3h2840_i3c_hub.h
++++ b/drivers/i3c/hub/p3h2840_i3c_hub.h
+@@ -297,6 +297,9 @@ struct p3h2x4x_i3c_hub_dev {
+ 	struct i2c_client *i2c_client;
+ 	struct hub_configuration hub_config;
+ 	struct tp_bus tp_bus[P3H2X4X_TP_MAX_COUNT];
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++	bool ibi_ready;
++#endif
+ 	struct i3c_hub *hub;
  };
  
- #define I3C_PID_MANUF_ID(pid)		(((pid) & GENMASK_ULL(47, 33)) >> 33)
-diff --git a/include/linux/mfd/p3h2840.h b/include/linux/mfd/p3h2840.h
-new file mode 100644
-index 000000000000..0f0d5b442bef
---- /dev/null
-+++ b/include/linux/mfd/p3h2840.h
-@@ -0,0 +1,28 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright 2025-2026 NXP
-+ * This header file contains register definitions and bit masks for the P3H2X4X.
+@@ -322,4 +325,14 @@ int p3h2x4x_tp_smbus_algo(struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub);
+  */
+ int p3h2x4x_tp_i3c_algo(struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub);
+ 
++/**
++ * p3h2x4x_ibi_handler - IBI handler.
++ * @i3cdev: i3c device.
++ * @payload: two byte IBI payload data.
 + */
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++void p3h2x4x_ibi_handler(struct i3c_device *i3cdev,
++			 const struct i3c_ibi_payload *payload);
++#endif
 +
-+#ifndef _LINUX_MFD_P3H2840_H
-+#define _LINUX_MFD_P3H2840_H
-+
-+#include <linux/types.h>
-+
-+/* Device Configuration Registers */
-+#define P3H2X4X_DEV_REG_PROTECTION_CODE				0x10
-+#define P3H2X4X_REGISTERS_LOCK_CODE				0x00
-+#define P3H2X4X_REGISTERS_UNLOCK_CODE				0x69
-+#define P3H2X4X_CP1_REGISTERS_UNLOCK_CODE			0x6a
-+
-+/* Reg config for Regmap */
-+#define P3H2X4X_REG_BITS					8
-+#define P3H2X4X_VAL_BITS					8
-+
-+#define I3C_MANUF_ID_NXP					0x011b
-+
-+struct p3h2x4x_dev {
-+	struct i3c_device *i3cdev;
-+	struct regmap *regmap;
+ #endif /* P3H2840_I3C_HUB_H */
+diff --git a/drivers/i3c/hub/p3h2840_i3c_hub_i3c.c b/drivers/i3c/hub/p3h2840_i3c_hub_i3c.c
+index 2d069eef8f1d..91ce06ee82ca 100644
+--- a/drivers/i3c/hub/p3h2840_i3c_hub_i3c.c
++++ b/drivers/i3c/hub/p3h2840_i3c_hub_i3c.c
+@@ -10,6 +10,14 @@
+ 
+ #include "p3h2840_i3c_hub.h"
+ 
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++static const struct i3c_ibi_setup p3h2x4x_ibireq = {
++	.handler = p3h2x4x_ibi_handler,
++	.max_payload_len = P3H2X4X_MAX_PAYLOAD_LEN,
++	.num_slots = P3H2X4X_NUM_SLOTS,
 +};
-+#endif /* _LINUX_MFD_P3H2840_H */
++#endif
++
+ static inline struct tp_bus *
+ p3h2x4x_bus_from_controller(struct i3c_master_controller *controller)
+ {
+@@ -54,6 +62,16 @@ static void p3h2x4x_unregister_i3c_master(void *data)
+ 	i3c_master_unregister(controller);
+ }
+ 
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++static void p3h2x4x_free_ibi(void *data)
++{
++	struct i3c_device *i3cdev = data;
++
++	i3c_device_disable_ibi(i3cdev);
++	i3c_device_free_ibi(i3cdev);
++}
++#endif
++
+ /**
+  * p3h2x4x_tp_i3c_algo - register i3c master for target port who
+  * configured as i3c.
+@@ -130,5 +148,33 @@ int p3h2x4x_tp_i3c_algo(struct p3h2x4x_i3c_hub_dev *p3h2x4x_hub)
+ 		p3h2x4x_hub->tp_bus[tp].is_registered = true;
+ 		p3h2x4x_hub->hub_config.tp_config[tp].always_enable = true;
+ 	}
+-	return regmap_write(p3h2x4x_hub->regmap, P3H2X4X_TP_NET_CON_CONF, ntwk_mask);
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++	ret = i3c_device_request_ibi(p3h2x4x_hub->i3cdev, &p3h2x4x_ibireq);
++	if (ret) {
++		dev_warn(p3h2x4x_hub->dev,
++			 "IBI not available, SMBus slave mode disabled\n");
++			 p3h2x4x_hub->ibi_ready = false;
++	} else {
++		ret = i3c_device_enable_ibi(p3h2x4x_hub->i3cdev);
++		if (ret) {
++			i3c_device_free_ibi(p3h2x4x_hub->i3cdev);
++			dev_warn(p3h2x4x_hub->dev,
++				 "Failed to enable IBI, SMBus slave mode disabled\n");
++			p3h2x4x_hub->ibi_ready = false;
++		} else {
++			p3h2x4x_hub->ibi_ready = true;
++
++			ret = devm_add_action_or_reset(p3h2x4x_hub->dev,
++						       p3h2x4x_free_ibi,
++						       p3h2x4x_hub->i3cdev);
++			if (ret) {
++				p3h2x4x_hub->ibi_ready = false;
++				return ret;
++			}
++		}
++	}
++#endif
++	ret = regmap_write(p3h2x4x_hub->regmap, P3H2X4X_TP_NET_CON_CONF, ntwk_mask);
++
++	return ret;
+ }
+diff --git a/drivers/i3c/hub/p3h2840_i3c_hub_smbus.c b/drivers/i3c/hub/p3h2840_i3c_hub_smbus.c
+index fd000ff63507..f752cbe35c48 100644
+--- a/drivers/i3c/hub/p3h2840_i3c_hub_smbus.c
++++ b/drivers/i3c/hub/p3h2840_i3c_hub_smbus.c
+@@ -15,6 +15,157 @@ enum p3h2x4x_smbus_desc_idx {
+ 	P3H2X4X_DESC_READ_LEN,
+ };
+ 
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++static void p3h2x4x_read_smbus_agent_rx_buf(struct i3c_device *i3cdev, enum p3h2x4x_rcv_buf rfbuf,
++					    enum p3h2x4x_tp tp, bool is_of)
++{
++	struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub = i3cdev_get_drvdata(i3cdev);
++	u8 slave_rx_buffer[P3H2X4X_SMBUS_TARGET_PAYLOAD_SIZE] = { 0 };
++	u8 target_buffer_page, flag_clear = 0, temp = 0, i, addr;
++	u32 packet_len, slave_address, ret;
++	struct i2c_client *client;
++
++	target_buffer_page = (((rfbuf) ? P3H2X4X_TARGET_BUFF_1_PAGE : P3H2X4X_TARGET_BUFF_0_PAGE)
++				+  (P3H2X4X_NO_PAGE_PER_TP * tp));
++	ret = regmap_write(p3h2x4x_i3c_hub->regmap, P3H2X4X_PAGE_PTR, target_buffer_page);
++	if (ret)
++		goto ibi_err;
++
++	/* read buffer length */
++	ret = regmap_read(p3h2x4x_i3c_hub->regmap, P3H2X4X_TARGET_BUFF_LENGTH, &packet_len);
++	if (ret)
++		goto ibi_err;
++
++	if (packet_len)
++		packet_len = packet_len - 1;
++
++	if (packet_len > P3H2X4X_SMBUS_TARGET_PAYLOAD_SIZE) {
++		dev_err(&i3cdev->dev, "Received message too big for p3h2x4x buffer\n");
++		goto ibi_err;
++	}
++
++	/* read slave  address */
++	ret = regmap_read(p3h2x4x_i3c_hub->regmap, P3H2X4X_TARGET_BUFF_ADDRESS, &slave_address);
++	if (ret)
++		goto ibi_err;
++
++	/* read data */
++	if (packet_len) {
++		ret = regmap_bulk_read(p3h2x4x_i3c_hub->regmap, P3H2X4X_TARGET_BUFF_DATA,
++				       slave_rx_buffer, packet_len);
++		if (ret)
++			goto ibi_err;
++	}
++
++	if (is_of)
++		flag_clear = BUF_RECEIVED_FLAG_TF_MASK;
++	else
++		flag_clear = (((rfbuf == RCV_BUF_0) ? P3H2X4X_TARGET_BUF_0_RECEIVE :
++				P3H2X4X_TARGET_BUF_1_RECEIVE));
++
++	client = p3h2x4x_i3c_hub->tp_bus[tp].tp_smbus_client;
++	if (!client)
++		goto ibi_err;
++
++	/* notify slave driver about received data */
++	if ((client->addr & 0x7f) == (slave_address >> 1)) {
++		addr = slave_address >> 1;
++		i2c_slave_event(client,
++				I2C_SLAVE_WRITE_REQUESTED, &addr);
++		for (i = 0; i < packet_len; i++) {
++			temp = slave_rx_buffer[i];
++			i2c_slave_event(client,
++					I2C_SLAVE_WRITE_RECEIVED, &temp);
++		}
++		i2c_slave_event(client, I2C_SLAVE_STOP, &temp);
++	}
++
++ibi_err:
++	regmap_write(p3h2x4x_i3c_hub->regmap, P3H2X4X_PAGE_PTR, 0x00);
++
++	if (flag_clear)
++		regmap_write(p3h2x4x_i3c_hub->regmap, P3H2X4X_TP0_SMBUS_AGNT_STS + tp, flag_clear);
++}
++
++/**
++ * p3h2x4x_ibi_handler - IBI handler.
++ * @i3cdev: i3c device.
++ * @payload: two byte IBI payload data.
++ *
++ */
++void p3h2x4x_ibi_handler(struct i3c_device *i3cdev,
++			 const struct i3c_ibi_payload *payload)
++{
++	struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub;
++	u8 payload_byte_one, payload_byte_two;
++	u32 target_port_status, ret, i;
++	const u8 *data;
++
++	if (!payload || payload->len < P3H2X4X_MAX_PAYLOAD_LEN)
++		return;
++
++	data = payload->data;
++	payload_byte_one = data[0];
++
++	if (!(payload_byte_one & P3H2X4X_SMBUS_AGENT_EVENT_FLAG_STATUS))
++		return;
++
++	p3h2x4x_i3c_hub = i3cdev_get_drvdata(i3cdev);
++
++	if (!p3h2x4x_i3c_hub || !p3h2x4x_i3c_hub->regmap)
++		return;
++
++	payload_byte_two = data[1];
++	guard(mutex)(&p3h2x4x_i3c_hub->etx_mutex);
++
++	for (i = 0; i < P3H2X4X_TP_MAX_COUNT; ++i) {
++		if (!((payload_byte_two >> i) & 0x01))
++			continue;
++
++		if (!p3h2x4x_i3c_hub->tp_bus[i].is_registered) {
++			dev_dbg(&i3cdev->dev, "IBI for unregistered SMBus port %u\n", i);
++			regmap_write(p3h2x4x_i3c_hub->regmap,
++				     P3H2X4X_TP0_SMBUS_AGNT_STS + i,
++				     BUF_RECEIVED_FLAG_TF_MASK);
++			continue;
++		}
++
++		ret = regmap_read(p3h2x4x_i3c_hub->regmap, P3H2X4X_TP0_SMBUS_AGNT_STS + i,
++				  &target_port_status);
++		if (ret) {
++			dev_err(&i3cdev->dev, "target port read status failed %d\n", ret);
++			continue;
++		}
++
++		/* process data receive buffer */
++		switch (target_port_status & BUF_RECEIVED_FLAG_MASK) {
++		case P3H2X4X_TARGET_BUF_CA_TF:
++			break;
++		case P3H2X4X_TARGET_BUF_0_RECEIVE:
++			p3h2x4x_read_smbus_agent_rx_buf(i3cdev, RCV_BUF_0, i, false);
++			break;
++		case P3H2X4X_TARGET_BUF_1_RECEIVE:
++			p3h2x4x_read_smbus_agent_rx_buf(i3cdev, RCV_BUF_1, i, false);
++			break;
++		case P3H2X4X_TARGET_BUF_0_1_RECEIVE:
++			p3h2x4x_read_smbus_agent_rx_buf(i3cdev, RCV_BUF_0, i, false);
++			p3h2x4x_read_smbus_agent_rx_buf(i3cdev, RCV_BUF_1, i, false);
++			break;
++		case P3H2X4X_TARGET_BUF_OVRFL:
++			p3h2x4x_read_smbus_agent_rx_buf(i3cdev, RCV_BUF_0, i, false);
++			p3h2x4x_read_smbus_agent_rx_buf(i3cdev, RCV_BUF_1, i, true);
++			dev_err(&i3cdev->dev, "Overflow, reading buffer zero and one\n");
++			break;
++		default:
++			regmap_write(p3h2x4x_i3c_hub->regmap,
++				     P3H2X4X_TP0_SMBUS_AGNT_STS + i,
++				     BUF_RECEIVED_FLAG_TF_MASK);
++			break;
++		}
++	}
++}
++#endif
++
+ static int p3h2x4x_read_smbus_transaction_status(struct p3h2x4x_i3c_hub_dev *hub,
+ 						 u8 target_port_status,
+ 						 u8 data_length)
+@@ -207,11 +358,67 @@ static u32 p3h2x4x_tp_smbus_funcs(struct i2c_adapter *adapter)
+ 	return I2C_FUNC_I2C | I2C_FUNC_SMBUS_BLOCK_DATA;
+ }
+ 
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++static int p3h2x4x_tp_i2c_reg_slave(struct i2c_client *slave)
++{
++	struct tp_bus *bus = i2c_get_adapdata(slave->adapter);
++	struct p3h2x4x_i3c_hub_dev *hub = bus->p3h2x4x_i3c_hub;
++	int ret;
++
++	guard(mutex)(&hub->etx_mutex);
++
++	if (!hub->i3cdev || !hub->ibi_ready)
++		return -EOPNOTSUPP;
++
++	if (bus->tp_smbus_client)
++		return -EBUSY;
++
++	ret = regmap_set_bits(hub->regmap,
++			      P3H2X4X_TP_SMBUS_AGNT_IBI_CONFIG,
++			      bus->tp_mask);
++	if (ret)
++		return ret;
++
++	bus->tp_smbus_client = slave;
++	hub->hub_config.tp_config[bus->tp_port].ibi_en = true;
++
++	return 0;
++}
++
++static int p3h2x4x_tp_i2c_unreg_slave(struct i2c_client *slave)
++{
++	struct tp_bus *bus = i2c_get_adapdata(slave->adapter);
++	struct p3h2x4x_i3c_hub_dev *hub = bus->p3h2x4x_i3c_hub;
++	int ret;
++
++	guard(mutex)(&hub->etx_mutex);
++
++	if (bus->tp_smbus_client != slave)
++		return -EINVAL;
++
++	bus->tp_smbus_client = NULL;
++	hub->hub_config.tp_config[bus->tp_port].ibi_en = false;
++
++	ret = regmap_clear_bits(hub->regmap,
++				P3H2X4X_TP_SMBUS_AGNT_IBI_CONFIG,
++				bus->tp_mask);
++
++	if (ret)
++		return ret;
++
++	return 0;
++}
++#endif
++
+ /*
+  * I2C algorithm Structure
+  */
+ static struct i2c_algorithm p3h2x4x_tp_i2c_algorithm = {
+ 	.master_xfer    = p3h2x4x_tp_i2c_xfer,
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++	.reg_slave = p3h2x4x_tp_i2c_reg_slave,
++	.unreg_slave = p3h2x4x_tp_i2c_unreg_slave,
++#endif
+ 	.functionality  = p3h2x4x_tp_smbus_funcs,
+ };
+ 
+@@ -224,6 +431,8 @@ void p3h2x4x_unregister_smbus_adapters(struct p3h2x4x_i3c_hub_dev *hub)
+ 			continue;
+ 
+ 		i2c_del_adapter(hub->tp_bus[tp].tp_smbus_adapter);
++
++		guard(mutex)(&hub->etx_mutex);
+ 		hub->tp_bus[tp].tp_smbus_adapter = NULL;
+ 		hub->tp_bus[tp].is_registered = false;
+ 	}
 -- 
 2.25.1
 
