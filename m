@@ -4,56 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 52BC1C43458
-	for <linux-i3c@archiver.kernel.org>; Wed,  1 Jul 2026 20:06:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F7C6C43602
+	for <linux-i3c@archiver.kernel.org>; Wed,  1 Jul 2026 20:06:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t0mK0iYw/R+flihXpn8VBNgEWjWgbyiJkXiNpF0XvD4=; b=ePw64DFzeFVMXw
-	G6c8Pe41+mn6Rl84DlHAk8kz3Tr+zIObZOFb99W0EubINMKZtS/5ahB/OZTuTbZzHOI1XtK4fcuZd
-	mbMhnvol2QVxQgIHY9zECLA+wo+c7LHehUy3YmuHrnzClA9/5W8r5IlQCWlbQiW4MGu3EKarMimBk
-	g9YDS2oKyyO9nstaz7pzP62rq3TQXlI2y9O2IZ3i0Pz5Y74wDLSUUfaKZm/oFj2ygl8Chch+2vNF8
-	X3e1JhovDhlaYDMlysursUdUfQJ2Q7aFsXXD8F+Wo/qhjlxFVGWDdlTVdp5q/l/Zkx/XT31p8bxSJ
-	JXZ3aRQDvqJ4nNMm9gkw==;
+	List-Owner; bh=GZs3MAKsVr2gEJhmiJQIawtr7Nc+pF05GJ1XnKiHG8A=; b=PDtYrqq8cCNoOe
+	h3Wuxfv1UjyvKxksnDwxnvyYQXW8P+qPk25rE6rXSfrNT+8F6oLAHzanV0xkp68YOVSnC4Rs/JLaG
+	X/U/Nr5/GqPvVBW/wAAFcI4xNpB77AvVd7uPgFT9FUzjTl7CXVgSnJg6XC6ZfKSH+FKDz47+NcMCG
+	1C6vBtOzSLIvyJdsQJPJNXHB5N/mPjfaV3AfdXTQgOBlytrKcnurDJrk2T2+GIO6NKJRWIuaVurul
+	6mDasPN4NXKZO4wS/o3oeJwZ05YyXgciAnUti6y2uck+/56ffjQxEBSnTix+uUMi+qMAekZQe0jdG
+	MjgFyGeO1onSWQ6wwn7w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf1CQ-00000002wYX-0Ont;
-	Wed, 01 Jul 2026 20:06:22 +0000
+	id 1wf1CS-00000002wZf-0cpR;
+	Wed, 01 Jul 2026 20:06:24 +0000
 Received: from mgamail.intel.com ([192.198.163.15])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf1CN-00000002wRb-2bkd
+	id 1wf1CQ-00000002wRb-0QhM
 	for linux-i3c@lists.infradead.org;
-	Wed, 01 Jul 2026 20:06:20 +0000
+	Wed, 01 Jul 2026 20:06:23 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1782936380; x=1814472380;
+  t=1782936382; x=1814472382;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=XZS4HynOIQKk1VasYmcpScksdFSrsDLcowg3yXTJ4o8=;
-  b=ffPURj3CaPtgfVzFOLAJpOQ9ZzPlM8W2Nodh985+e5rtAg8+phufeu7k
-   hZzKZSb0rHulzLzUFm6fuDfzr/AWr/3dRBMd//i4lv7WU2D64JROsp9cL
-   1sFKLWS3LqQ6mWWf4kQR5h6hCwOfNRKMk9PNiiD7SWqX2qTShOBOM0kWC
-   OKRXDTVgBWsl4Zbqtg5Dh4Tiirlk1zPfHUzizL+R4G6aIjtKnOjkxXQYy
-   0rTTHkiLHF2xP63rNgd9MEkyMfZcFLGjxr2H7TKymqp6OqBSYkFu3O/Ho
-   8KbYDAR626q6N5o3c2GGgn64ZtDjBpyAyb5cPyVJq6tlEK6q+wRU93zIb
-   Q==;
-X-CSE-ConnectionGUID: uPnYO+rCTdKtLGm9HXdVuA==
-X-CSE-MsgGUID: u0bzmUqFRcKp3Yhdv+CImg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11834"; a="83812937"
+  bh=ww+876KOyCaTFEZOXknUVpXnhh8uarR97qv0FHoe12M=;
+  b=WXDGj3VbXQTd6K5Q+7PFX1Nw4pv1XiB+IPgSlCj0yJ29MxBGt+K6hW+C
+   NeTw8MKMlVrwnt2r4C38x74u3+4ECDsHqA8PvdlCV0QMZPZGhzOQ999EU
+   iwYEGOrX2Wj/QeeU3wFkh20I62GbYp/AAaADO+uuwitNsHpyspCX7NE2T
+   UAGDQ6XKc0oHy5rHEZEuWXaIJB5j7HI/JyR9ENAkw980whlUEmaEoka7O
+   aM9V1nTS5AtbxJqjyYra6SglzTc/H1FNq7IizDmssEzwF7h/stawZuEQH
+   d1tRj7HNFteLI/p/oopSinTpuHzBoOOKmi54mVddmTTx6FbRb/ySPE4SJ
+   A==;
+X-CSE-ConnectionGUID: rf8p6+LMRKCfL527up2WGA==
+X-CSE-MsgGUID: ZMkdSAv5TYO1sHrwjs8ZbQ==
+X-IronPort-AV: E=McAfee;i="6800,10657,11834"; a="83812945"
 X-IronPort-AV: E=Sophos;i="6.25,142,1779174000"; 
-   d="scan'208";a="83812937"
+   d="scan'208";a="83812945"
 Received: from orviesa007.jf.intel.com ([10.64.159.147])
-  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 01 Jul 2026 13:06:20 -0700
-X-CSE-ConnectionGUID: tfwOK/PRS9ezdKPMaAfqeA==
-X-CSE-MsgGUID: HFpKCpRzRlyhxqlYNY7plg==
+  by fmvoesa109.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 01 Jul 2026 13:06:22 -0700
+X-CSE-ConnectionGUID: yInDEiDMT5uxPMVdPW9pHg==
+X-CSE-MsgGUID: gqwb/nmwTtiAaswwbf9pDQ==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.25,142,1779174000"; 
-   d="scan'208";a="252805042"
+   d="scan'208";a="252805046"
 Received: from conormcd-mobl2.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.244.30])
-  by orviesa007-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 01 Jul 2026 13:06:17 -0700
+  by orviesa007-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 01 Jul 2026 13:06:20 -0700
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
@@ -62,17 +62,17 @@ Cc: Frank.Li@nxp.com,
 	linux-kernel@vger.kernel.org,
 	linux-pci@lists.infradead.org,
 	linux-pm@lists.infradead.org
-Subject: [PATCH RFC 5/7] i3c: mipi-i3c-hci-pci: Propagate I3C wakeup requirements to PCI
-Date: Wed,  1 Jul 2026 23:05:50 +0300
-Message-ID: <20260701200552.220042-6-adrian.hunter@intel.com>
+Subject: [PATCH RFC 6/7] i3c: mipi-i3c-hci: Factor out i3c_hci_sysdev()
+Date: Wed,  1 Jul 2026 23:05:51 +0300
+Message-ID: <20260701200552.220042-7-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20260701200552.220042-1-adrian.hunter@intel.com>
 References: <20260701200552.220042-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260701_130619_671220_DDEE261B 
-X-CRM114-Status: GOOD (  15.72  )
+X-CRM114-CacheID: sfid-20260701_130622_164487_17A8E3F9 
+X-CRM114-Status: GOOD (  16.86  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -89,92 +89,108 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Keep the PCI wakeup state aligned with the wakeup requirements of the
-devices served by the controller(s).
+The MIPI I3C HCI driver needs to identify the underlying system device
+used for DMA mapping and PM operations. The logic for determining that
+device is currently embedded in the DMA implementation.
 
-The PCI function is the wakeup source for HCI instances exposed beneath
-it.  However, wakeup is only needed when at least one attached I3C device
-is enabled as a wakeup source.
-
-During suspend, check whether any HCI instance has a wakeup-enabled I3C
-device and enable wakeup for the PCI function only in that case.
-Otherwise leave PCI wakeup disabled.
-
-Note, the suspend callback is used for both system and runtime suspend.
-Although this change may update the PCI wakeup state during runtime
-suspend, it does so only when the required wakeup state changes.
-Moreover, PCI wakeup-capable devices already have PME wakeup armed for
-runtime suspend, so changing the wakeup-enabled state does not affect
-runtime PM wakeup behavior.
-
-Note also, since the PCI wakeup state is derived from the wakeup
-configuration of the attached I3C devices, the PCI device power/wakeup
-sysfs attribute no longer provides independent wakeup control.
+Factor this code out into i3c_hci_sysdev() so it can be shared by other
+parts of the driver and keep the device-selection logic in one place.
 
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 ---
- .../master/mipi-i3c-hci/mipi-i3c-hci-pci.c    | 23 +++++++++++++++++--
- 1 file changed, 21 insertions(+), 2 deletions(-)
+ drivers/i3c/master/mipi-i3c-hci/core.c | 12 ++++++++++++
+ drivers/i3c/master/mipi-i3c-hci/dma.c  | 15 +--------------
+ drivers/i3c/master/mipi-i3c-hci/hci.h  |  2 ++
+ 3 files changed, 15 insertions(+), 14 deletions(-)
 
-diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-index 5a9e2a43eff8..2b3bf6fa74f2 100644
---- a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-@@ -265,6 +265,8 @@ static bool mipi_i3c_hci_pci_is_operational(struct device *dev, bool update)
- struct mipi_i3c_hci_pci_pm_data {
- 	struct device *dev[INST_MAX];
- 	int dev_cnt;
-+	bool can_wakeup;
-+	bool may_wakeup;
- };
- 
- static bool mipi_i3c_hci_pci_is_mfd(struct device *dev)
-@@ -272,6 +274,13 @@ static bool mipi_i3c_hci_pci_is_mfd(struct device *dev)
- 	return dev_is_platform(dev) && mfd_get_cell(to_platform_device(dev));
+diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+index e80aa1f5722e..4e17b1480362 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/core.c
++++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+@@ -15,6 +15,7 @@
+ #include <linux/interrupt.h>
+ #include <linux/iopoll.h>
+ #include <linux/module.h>
++#include <linux/pci.h>
+ #include <linux/platform_data/mipi-i3c-hci.h>
+ #include <linux/platform_device.h>
+ #include <linux/pm_runtime.h>
+@@ -117,6 +118,17 @@ static inline struct i3c_hci *to_i3c_hci(struct i3c_master_controller *m)
+ 	return container_of(m, struct i3c_hci, master);
  }
  
-+static bool mipi_i3c_hci_pci_any_wakeup_enabled(struct device *dev)
++/*
++ * Determine the device that does PM / DMA and has IOMMU setup done for it in
++ * case of enabled IOMMU (for use with the DMA API).
++ * Such device is either "mipi-i3c-hci" platform device (OF/ACPI enumeration)
++ * parent or grandparent (PCI enumeration).
++ */
++struct device *i3c_hci_sysdev(struct device *dev)
 +{
-+	struct i3c_hci *hci = dev_get_drvdata(dev);
-+
-+	return i3c_master_any_wakeup_enabled(&hci->master);
++	return dev->parent && dev_is_pci(dev->parent) ? dev->parent : dev;
 +}
 +
- static int mipi_i3c_hci_pci_suspend_instance(struct device *dev, void *data)
+ static void i3c_hci_set_master_dyn_addr(struct i3c_hci *hci)
  {
- 	struct mipi_i3c_hci_pci_pm_data *pm_data = data;
-@@ -287,6 +296,9 @@ static int mipi_i3c_hci_pci_suspend_instance(struct device *dev, void *data)
+ 	reg_write(MASTER_DEVICE_ADDR,
+diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
+index 0672ed1132f8..7c2b20474130 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/dma.c
++++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
+@@ -15,7 +15,6 @@
+ #include <linux/errno.h>
+ #include <linux/i3c/master.h>
+ #include <linux/io.h>
+-#include <linux/pci.h>
  
- 	pm_data->dev[pm_data->dev_cnt++] = dev;
+ #include "hci.h"
+ #include "cmd.h"
+@@ -301,23 +300,11 @@ static int hci_dma_init(struct i3c_hci *hci)
+ {
+ 	struct hci_rings_data *rings;
+ 	struct hci_rh_data *rh;
+-	struct device *sysdev;
+ 	u32 regval;
+ 	unsigned int i, nr_rings, xfers_sz, resps_sz;
+ 	unsigned int ibi_status_ring_sz, ibi_data_ring_sz;
+ 	int ret;
  
-+	if (pm_data->can_wakeup && mipi_i3c_hci_pci_any_wakeup_enabled(dev))
-+		pm_data->may_wakeup = true;
+-	/*
+-	 * Set pointer to a physical device that does DMA and has IOMMU setup
+-	 * done for it in case of enabled IOMMU and use it with the DMA API.
+-	 * Here such device is either
+-	 * "mipi-i3c-hci" platform device (OF/ACPI enumeration) parent or
+-	 * grandparent (PCI enumeration).
+-	 */
+-	sysdev = hci->master.dev.parent;
+-	if (sysdev->parent && dev_is_pci(sysdev->parent))
+-		sysdev = sysdev->parent;
+-
+ 	regval = rhs_reg_read(CONTROL);
+ 	nr_rings = FIELD_GET(MAX_HEADER_COUNT_CAP, regval);
+ 	dev_dbg(&hci->master.dev, "%d DMA rings available\n", nr_rings);
+@@ -332,7 +319,7 @@ static int hci_dma_init(struct i3c_hci *hci)
+ 		return -ENOMEM;
+ 	hci->io_data = rings;
+ 	rings->total = nr_rings;
+-	rings->sysdev = sysdev;
++	rings->sysdev = i3c_hci_sysdev(hci->master.dev.parent);
+ 
+ 	for (i = 0; i < rings->total; i++) {
+ 		u32 offset = rhs_reg_read(RHn_OFFSET(i));
+diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
+index b3d9803b1968..b8d2a3d680f8 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/hci.h
++++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
+@@ -184,6 +184,8 @@ void amd_set_resp_buf_thld(struct i3c_hci *hci);
+ void i3c_hci_sync_irq_inactive(struct i3c_hci *hci);
+ int i3c_hci_process_xfer(struct i3c_hci *hci, struct hci_xfer *xfer, int n);
+ 
++struct device *i3c_hci_sysdev(struct device *dev);
 +
- 	return 0;
- }
+ #define DEFAULT_AUTOSUSPEND_DELAY_MS 1000
  
-@@ -317,12 +329,19 @@ static int mipi_i3c_hci_pci_suspend(struct device *dev)
- 	if (!hci->info->control_instance_pm)
- 		return 0;
- 
-+	pm_data.can_wakeup = device_can_wakeup(dev);
-+
- 	ret = device_for_each_child_reverse(dev, &pm_data, mipi_i3c_hci_pci_suspend_instance);
--	if (ret)
-+	if (ret) {
- 		for (int i = 0; i < pm_data.dev_cnt; i++)
- 			i3c_hci_rpm_resume(pm_data.dev[i]);
-+		return ret;
-+	}
- 
--	return ret;
-+	if (device_may_wakeup(dev) != pm_data.may_wakeup)
-+		device_set_wakeup_enable(dev, pm_data.may_wakeup);
-+
-+	return 0;
- }
- 
- static int mipi_i3c_hci_pci_resume(struct device *dev)
+ int i3c_hci_rpm_suspend(struct device *dev);
 -- 
 2.53.0
 
