@@ -4,174 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1184C43458
-	for <linux-i3c@archiver.kernel.org>; Thu,  2 Jul 2026 10:39:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A332C43458
+	for <linux-i3c@archiver.kernel.org>; Thu,  2 Jul 2026 14:11:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:CC:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=hryn3Pn3zjvKyB8fqS3GFQLLEHWqU8kR8+yL1qmnw50=; b=RqHFWarB5gs9/6Qc9PN52SvAtK
-	PDn88ludrl+08FrEQJzQpYaYq6WTOlsU2bGl7xMNAvvdB0Z6wwnb5Y86cf/cQIsJveYF4J5OypztQ
-	alRp+M90XHQZSs8W9yozYsJcV6c9asjqU2UdYoitSOJgFhEnlJfLn5bqWhzW7X/BpdE75MpEeGN33
-	H7QICYIcCIxJOJBYXIVC5BNjx7hRik+Ck8Bv/yhXu2jcTZZnDQ74aLYiXSkiGpDtxfQToVm6bhjtf
-	V/EHvs2vjnbIj53GilKE18uoJrUH1UJaYLIqPbUtwTz9MaP+PRDDT48Qs5KZ1fKYgpFTU5PoDcWoE
-	f7nTUCvg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=B6mBzb3RYHSjh4A17xYaTAd9aQyUCrvDrbGiWOUt/nY=; b=OrTeTIHLp1KSit
+	cmr64gaGJMB5aFlKlvTZxPTELuxdjb5gebwM6QYceXvPoGf9drka47bELBmpRMITr57Ty8XYjGCDW
+	KwFVUnyatROyxZFSzOqlUxOvCJIEMmzRUnfPP5Lf7dbeaSKteVyU3GuPfncUYML2EJUWJ2WwzkvGy
+	AguGZ+4zLsFsFnf98EmZBReGAUgMtln60Zd+I70DnlY4klpTYZPDIdAIfv5LYmXx8feoHyGK3s5is
+	Xf/kArM5Ee1goeGUb3VnliyD7hi+stJPNZp4C84PBdh6B7zyoNVi+T2a5qpiqkp8EgfmRk3sGvFZH
+	DXP13Nq7gLjFKyhn5rsA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfEox-00000004BZI-0dON;
-	Thu, 02 Jul 2026 10:39:03 +0000
-Received: from mgamail.intel.com ([192.198.163.10])
+	id 1wfI8B-00000004bQk-481J;
+	Thu, 02 Jul 2026 14:11:07 +0000
+Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfEou-00000004BY8-1FAf
+	id 1wfI89-00000004bQ2-47sd
 	for linux-i3c@lists.infradead.org;
-	Thu, 02 Jul 2026 10:39:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1782988740; x=1814524740;
-  h=message-id:date:subject:to:cc:references:from:
-   in-reply-to:content-transfer-encoding:mime-version;
-  bh=xOzJLBuO6xZBsUGqofSmOU6U1oVXYIBYF7DLYj00Mw8=;
-  b=IV1jDPHBF6A6weCQWZYsHhTJeNMNnDhWuNCufdoDnxCCvLBEeppS3H9O
-   pX5ORAeyz3Fu59LxL5pYb4mdOf2aVvf2lPbZlVhjs6iJ52Dx6nRx55L1T
-   aH8sPTCIaWxPgN3xKLhZghIyuvlgicSy9b0aqaEEbzahguJh8RhY/qMGh
-   199IgZd1Y7JkJN+zyuokY5941ank9Mj9/CZPdWXbtBtijQuLH7r/GYn0a
-   rbTQPyLhy8bFDcV2/5QZN1UhTexJyJj6DGOeDh3JkMRRjd82Mu0PL2IDo
-   snFzyTwmzLWoA95XTXbiQCmMp4Tnf14+0l5asqCjaSr38SMJnWcPqvvJN
-   w==;
-X-CSE-ConnectionGUID: sPan0FcgSeuc/0vD42yU3g==
-X-CSE-MsgGUID: lTiECH95SzmgRfGVSLtPTQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11834"; a="95119540"
-X-IronPort-AV: E=Sophos;i="6.25,143,1779174000"; 
-   d="scan'208";a="95119540"
-Received: from orviesa009.jf.intel.com ([10.64.159.149])
-  by fmvoesa104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 Jul 2026 03:39:00 -0700
-X-CSE-ConnectionGUID: jaj3JTi+Ta+nnkCBN4Tbzg==
-X-CSE-MsgGUID: lek9CStzRCCWbD/TRBDriQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.25,143,1779174000"; 
-   d="scan'208";a="253493181"
-Received: from fmsmsx901.amr.corp.intel.com ([10.18.126.90])
-  by orviesa009.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 Jul 2026 03:38:59 -0700
-Received: from FMSMSX901.amr.corp.intel.com (10.18.126.90) by
- fmsmsx901.amr.corp.intel.com (10.18.126.90) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.43; Thu, 2 Jul 2026 03:38:58 -0700
-Received: from fmsedg901.ED.cps.intel.com (10.1.192.143) by
- FMSMSX901.amr.corp.intel.com (10.18.126.90) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.43 via Frontend Transport; Thu, 2 Jul 2026 03:38:58 -0700
-Received: from CH5PR02CU005.outbound.protection.outlook.com (40.107.200.19) by
- edgegateway.intel.com (192.55.55.81) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.43; Thu, 2 Jul 2026 03:38:57 -0700
+	Thu, 02 Jul 2026 14:11:07 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Ot2uDNLmvvkrPCyZSU3hFAajEG23dXt2AMZgT2VjsxIZpVf0a/9rT9r1gVe7Eg0lTXpzXlZnv2XG3fRuTzSNHrdK5vP0ux4XjyEH2iVJJ6QuaqlFJBPUDlXMqu8FFEAm+wzRN4u6raRRGkyfVwTU6PVwAtC9q0NruBcL+ZO7Q7klW7w6K5yvH+cCKQGX2qpLGFyq6BYxriReQ+gp/zdI0yuCfjPrQPaJWS+oOrQJ6nnaqwyPg0MRpoK3botZ+orzR4xmZJ7uucENToug3CQTfW4Od9rfH5scPoRXnN3Wd8qvyspv1rYlsDvdNjPgbPeSz0RqGUaxrfHT8yTx4HWO7g==
+ b=WdE3G+l0C/vgIePPYA5RCHhxbxq1QkjyuEEM3bh8XOuSK0TNJS297Z1ZJ4GGcdg/4R1e3Tuv4Wyz6NF8cdu/koQm4wtakFwX3B+jL/PbpNM79OeMJscdaHupVuMpda1gGqI5Ir5is1QWdiLaYMX/0MrmQdBTy+EaRF+/+Ubx5IjzHWiN4f2Nq1fzTbwvzgoZ2PpjGR+tyx3UwsA3sORHxesz4z+qlE14QCV01EetChkKq2XAt9c3JY5LE2YSrZstRKB4HRDbrfaMbAvpS7e0iVzRUItcnblzDhdnfMuasVidYyZqNAwgeks4u8ZU3ubpxh7OwmHLN9JBRByiCchCgQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=nUrYtAZ4GnBn4bbYwrwgRX3oD0Ok55AgpJWScHxCRXA=;
- b=fc1NeVyr9ouA9AiXmT+FzbCzEScr5I8cP5fPDYfyBWsYo38+gtGPSi7oB61r7xhNHrP8Q7MLce+6zn0BeIj8e8loSD6fOBoL6DdWurX7XQjOfSg1r7iNMS8sPh7LTbVtOFa1lVPSAgZx6aWEj65Ykq4bx2m9OGNwYjAdovcBG0+vkuGGARpK/crDNpQUpKSmUUAc/sXOATFPhKc2UKeltEcgRDyxke9jiudPabt8vAxUYHbZ63/1T/nUy0EFrV1QfN859RmDvG3o+PeajeD367q4dQ+IXSi2zg+q7Dxdo6gOj7yShHWcsI6LM0zNNblBXSPQD2EK+QcUQnxfKp7Svw==
+ bh=hC+/iJTNvC/QU9ZPI5g5br1RnDzK5PEdAaEvRQBwEn0=;
+ b=ZEx5wBYfOo1WNx8oqR6HWoRrIKmu9kW5kbrMkHPCr7Ub0TDtut3nm4/rb6qs4BbVoma1D4+EgozJhDx2MczTPu8WWw3szP+nKOzlytpv99HOHfb6+7m/xxHCTyGZTsG9WjoNgU+IVgCENmxjg4ocnahrf1IaJhGXz7VDTJOsU16Q4fS3XYPuc2f2TMNFO1brxW6SyIdV2TQqUVTF4BVCYJrYQSca8HpcVRV4VreAEG7l3FUlXdcZh5/d4k0mqiSoXv+vT7vR3FO0yLoWf94POmNDDzEH1gF3OaZKuzQCPjvvij/8eCLrOsWL7YFPKn7A7J5sJfuokIyPTCyr7X1o0A==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
- dkim=pass header.d=intel.com; arc=none
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hC+/iJTNvC/QU9ZPI5g5br1RnDzK5PEdAaEvRQBwEn0=;
+ b=BR2IE0C0i5jzOL7lI3dDYUCkD70QygbztuMVMPUDYmhGHYyR6Lt60MsRbSed6CDYgV6ljQW23spnVHz+xWSu3gAiY8xee9HD3hP13V3Jt7NTj8oYwQSzvvQt1fFv5uB8enE9/gwxGULHVJk44NH9t03yPb7yZNH07HnA/A5FnhJGdPfjgTX4YM5OXfP5nzTrQSrtuhWlRXMGQHr1AMTwML3ObQvgsAEthosPnmnCXslBQcO2k6jsSS6eZBVRRIY6ndkNCF4sd/3jUi6erydSJcwxRMuApPer+1L1ksaYcStGCvuTO7r40KbfwkP+8pUjecmlcVbxBnbeln2CRE3rsg==
 Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=intel.com;
-Received: from IA1PR11MB7198.namprd11.prod.outlook.com (2603:10b6:208:419::15)
- by SJ0PR11MB5893.namprd11.prod.outlook.com (2603:10b6:a03:429::13) with
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
+ by GV1PR04MB10797.eurprd04.prod.outlook.com (2603:10a6:150:20d::12) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.159.18; Thu, 2 Jul
- 2026 10:38:49 +0000
-Received: from IA1PR11MB7198.namprd11.prod.outlook.com
- ([fe80::2c4e:e92a:4fa:a456]) by IA1PR11MB7198.namprd11.prod.outlook.com
- ([fe80::2c4e:e92a:4fa:a456%3]) with mapi id 15.21.0181.008; Thu, 2 Jul 2026
- 10:38:49 +0000
-Message-ID: <a8aba6ab-75e6-4c0a-b6e3-afd9fbb2042f@intel.com>
-Date: Thu, 2 Jul 2026 13:38:44 +0300
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH RFC RESEND 2/7] i3c: master: Report wakeup events for IBIs
-To: <sashiko-reviews@lists.linux.dev>
-CC: Alexandre Belloni <alexandre.belloni@bootlin.com>, <Frank.Li@kernel.org>,
-	<linux-pci@vger.kernel.org>, <linux-i3c@lists.infradead.org>
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.159.17; Thu, 2 Jul
+ 2026 14:10:59 +0000
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0159.007; Thu, 2 Jul 2026
+ 14:10:59 +0000
+Date: Thu, 2 Jul 2026 10:10:52 -0400
+From: Frank Li <Frank.li@oss.nxp.com>
+To: Adrian Hunter <adrian.hunter@intel.com>
+Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com, rafael@kernel.org,
+	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org, linux-pm@vger.kernel.org
+Subject: Re: [PATCH RFC RESEND 1/7] i3c: master: Support IBI-based wakeup
+ capability
+Message-ID: <akZxbOvAwyVwUPgl@lizhi-Precision-Tower-5810>
 References: <20260701201533.220818-1-adrian.hunter@intel.com>
- <20260701201533.220818-3-adrian.hunter@intel.com>
- <20260701203336.D13321F000E9@smtp.kernel.org>
-Content-Language: en-US
-From: Adrian Hunter <adrian.hunter@intel.com>
-Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park,
- 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 -
- 4, Domiciled in Helsinki
-In-Reply-To: <20260701203336.D13321F000E9@smtp.kernel.org>
-X-ClientProxiedBy: DUZPR01CA0150.eurprd01.prod.exchangelabs.com
- (2603:10a6:10:4bd::7) To IA1PR11MB7198.namprd11.prod.outlook.com
- (2603:10b6:208:419::15)
+ <20260701201533.220818-2-adrian.hunter@intel.com>
+Content-Disposition: inline
+In-Reply-To: <20260701201533.220818-2-adrian.hunter@intel.com>
+X-ClientProxiedBy: SA9P223CA0008.NAMP223.PROD.OUTLOOK.COM
+ (2603:10b6:806:26::13) To GV2PR04MB11799.eurprd04.prod.outlook.com
+ (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: IA1PR11MB7198:EE_|SJ0PR11MB5893:EE_
-X-MS-Office365-Filtering-Correlation-Id: 5e705903-50e9-4bf3-306a-08ded82619d5
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|GV1PR04MB10797:EE_
+X-MS-Office365-Filtering-Correlation-Id: 7d479496-091b-4337-fe9a-08ded843bdb2
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|376014|23010399003|6133799003|18002099003|22082099003|4143699003|11063799006|56012099006;
-X-Microsoft-Antispam-Message-Info: U03mMQNTL57d3pqWdx0WUpuDTlpHRaxnSfPH1dDPyR+ners2NaoPBALL+NzVFMiVML/UM62YPxZ4+n7Z4x1pVbQS+WBOdqcArB97YOtFX5pg7oUnbrpng7RyxIzYkP454ldY1UY6mcVD7JFuGYbEENvtqVjW0U7BSjjuMjktkH7JwLJlalC/+HniNP0hC2hbNCKTeDX4DScd0OhbsK7wq6HAO5gWqK3CtVxohL05uEDahSZMGzwUgUcoKUagwmU4wSOR5ewJhupD0UYMJco3fP77g6WTsm9pWBYZX5SuRt7TdpemitGXw3Na65RwYlke/SXVVrCarwm8LWo92bDw5r8hpWtEVGpfLn7X8+sR+QdZTJzclWDUEaNRypPILufWPwL5KJF3PUxCekDF7TPEUq2LQc+Jo6A+7IW/HHnixbmfJwkTXK/slbRzTo97YGJIOX3gm5tXSfxikxAMRkVcBE/xNLLB9WlUzpasyjlM4Xkdh6Dm5RXG3sj8RaJ96GK6bMnLMces614QbvLkp8r8VcRw9gj8lrx0vs2eUo7ndM5TgmPEk9Ny7vd7Kr9Hk3aupAflXxCIRToPC0ZbKaixLlZjYz9CDN15VaKE2v+r1GpG27zOtyKoAF2laXTtm+4bDj+MaT3KZC2J5cnpOwJSQHTQLi/eGsVF6jXb1VYpAHM=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR11MB7198.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(23010399003)(6133799003)(18002099003)(22082099003)(4143699003)(11063799006)(56012099006);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|376014|23010399003|1800799024|366016|56012099006|22082099003|18002099003|5023799004|4143699003|11063799006;
+X-Microsoft-Antispam-Message-Info: qlkScWh/YbZxHAibBJivfACXi5K+iV0bbsTRZB9A2Jp/tKIT1kz5mjWTzh5Lwn0LOwmznZaq1TaROq56abxHReEfLss1R16gghCViQwmt+Z9my+lCYDRwD+Mi42uE2dKZF1PGFqn6qm8LarpC0XAyf6FBYTdYBqxYc2bbTXrUdy9jaO0Rn0rSmWCr7dTAQ6Ivx3LPw6f6+SeyeVa4839DXWPVDuY9ZeKbbdgMmX5Vio8ChoTw/OSnlr0PrVMmHsM8vymrkNOvzN6+dbcwbv+ZUUMlnIQ7TaIsamFBA5v75vIpNYHWQh4m/vNUuzO2pp53CUzm7XWSC56P09rWz4HuMvUTyei6aTiLD9me+XgEv22WJD9WdmYCviRjKB67ePS4VFdCukVMS5tjkb4NTnutfyeJBd9sVR2HT0jbxgcTXkW7evFkzjrfmp6nBV0QzKzYQALmhYqPB6NSuRLk28x8Q7mFVnucWldp8pgkrrHNOT9D161D1DlFHlM72U99QLOLxJPPd/F+SkopDTFrrft9+VQaiIuI9yIXzLcspBwaNxJM3qiNbzifXvxgbC914SNMg4b6/srapM/SppRQuRRPZC7JqvosGrMmLlh1M5rJmrs6QIbeWDVQWU3UENLUPPE72XuEeCi/AQiMRuwX6UIPUTZ5ooMthVeMjz6Q6jlyFE=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(376014)(23010399003)(1800799024)(366016)(56012099006)(22082099003)(18002099003)(5023799004)(4143699003)(11063799006);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?dExzT2lVckdvTVNqNXh1amV2WWpLelZsVFpkamxFUWlXVzJybmxINW9NVVgx?=
- =?utf-8?B?UXpHVExlK1dQN0xHdnRwM3NoTFNJYWFrNzNaTFpaZ2xBcXMzL3F1d1VpS01i?=
- =?utf-8?B?RkxvWUFELzQ4bkVFUlQ1TzlGOVFpQ3VYcG9KQ205N1FSZVpZT0NndVBPK0dy?=
- =?utf-8?B?MEVoazhWS1hXdEdiRW45dkh1cWN0cUZIeWYzdm4rWE15c2lnU2M4bWl5TkRa?=
- =?utf-8?B?VTYvSysxWEtBUzJnckVURTBLTWQ5Y09Ic1RCK25iZFUyY01yTXhoakhNem1L?=
- =?utf-8?B?cW5JN1pocEtqTzE1R3g2MndPcW94ZCtLRG10dFRuZ3oycDlvVld6YStHSWkw?=
- =?utf-8?B?ZFExNzl3Wm9IMWozazJFQnRsMkVPUnVXVzMzZDBWRTduOTBZYlZVUUIxT3NR?=
- =?utf-8?B?cG13ZklwbzJlNEZxMkQ4MnNyZUdKMkhweUNCdlhwRHFGaitOSW5QM1dXTGhy?=
- =?utf-8?B?Q202NHpheE1YTmFpcTZEbWlYa1E4eGlhTHhLZnNwK2ZpMEVWcTZyZDhGdldR?=
- =?utf-8?B?a3dSbldNV3pKL2NmZ0ZRUk1kdERoekpJaFAvVi95YUlnWFMyVTNuOFRHeEpF?=
- =?utf-8?B?cDVkVTU2UFIzWDRybTJWSCtWYldYMVhvWWJISzQxRERWQ0E2aGNieThJQU9n?=
- =?utf-8?B?ZnpTT25xZW1HbkhVYjFtOXpIWnNNOXhiL0cva0RJbnN5MVM5VVc1R1BPR2Nw?=
- =?utf-8?B?UWowT0Q2T0hqYU1SYTFOQ3M2MzBlKzljQ3FlVU03aFBMZVdkaVpMZXpzam5z?=
- =?utf-8?B?WHIwRDhBdnlUMUhPMnYvR2ZManZMVFJEWjdKR29rY1hJckYyeE1ZRnJ2ckJU?=
- =?utf-8?B?T2hhQVZ1M3Q5cjIvRXFaZTV5K0ZDazJ3S05XcmlLZnhHV2pYSFVXQjJoT2RM?=
- =?utf-8?B?Z0FIM2p0aTducjhTZXdEamZTMFdkUlkyYU83ZGp0MkhhTUdxSTdjY2h0TDV5?=
- =?utf-8?B?eFIrUXYrWjhwSmc1SG1zQnFGb2J3elB1ZFF3TTZ1aFdtSFM0TnQ2bzZBNEJE?=
- =?utf-8?B?YnM4aHBIZE1LaXppelNNQXpnM1Z4OGNSL0s1QUp1T0ZkMSs4WnlGMDJkNHNv?=
- =?utf-8?B?VDFDMzQ1dzdxZU1XbUNxNFBvSWkxbTdJY1VvamZ6ZlQ4aUZKWlptOTgrWnV0?=
- =?utf-8?B?Ukl4VWpFdy9yM2NMTG8rZ2Z6cmdLQ0JZOWZYNTFjOVlFeFpaUGdtTXFXMHlt?=
- =?utf-8?B?TWFITmEwT2Q5YmN1ZldKRmttcXdFcndoTmJZWWF0djFUZ2hjZ0FQTXRFLzB6?=
- =?utf-8?B?c0VYaFh3REFVSUVEN0FuTVc3ODFLbE5nODYzMXNQK3d4U2RXRERsY3pPa0RD?=
- =?utf-8?B?dVd4U3lPdXZ1NklxN2JqcG1nM2ZmUVVUUnl4Z05ZZW1sL3Rud0ZCZXBPQ3lI?=
- =?utf-8?B?Yk1ST1lNZGR3c3RpeDR6aHhzNVM3NzZ3NThWU2V6YmkzcDQvOW00UFM4WWlr?=
- =?utf-8?B?Z3FIZG5yeW5rbHJCclYwbXNzNjVZdjJwb0hQdVZBN3dvK0JOR3RtbHRsTFV3?=
- =?utf-8?B?VGdFbU83OEdzUE5MVHBnZjRsRFJqR0lLMU5yU3QrZitYWUkyVENWL2VGWU1J?=
- =?utf-8?B?YkRTS1hTT2dUeUFrSE9HcHZUVVBzUjU1ZkxKS1oxay9oUGgxRmFkdjJ0ekgr?=
- =?utf-8?B?cXFJZU9ucWFoU3RGV2hWNFBSUm1rbThCVE5oMXRxRFR4c09meDhIL1pReHNW?=
- =?utf-8?B?SEM4bjA4MVEzNlFlZXFlNk5kMlFBckFadWozZ3RETXFwVjNub3lPc21RUjFq?=
- =?utf-8?B?WlBjMEVjeXZhdFA2MEMyNDdFdEhxVTdYQ3JMWTBZWFphS3NPZDYxUnVGY3hX?=
- =?utf-8?B?Q1E3NjFvd3RHVVp4OXpIbTV3MW43SjF4REFWY2lkQTJKLzBmbHY3czhKVzF5?=
- =?utf-8?B?RVhERTQ3VW5hd2Z0eHpjSUF2YTJEZUdKWjY0dTVoV2oxV2lqZHFPOEVnbUdm?=
- =?utf-8?B?UUJuSDYrY1dtNW0yUEs0N3RlQXI5KzFWVkJFMHE3VlhFUkVSRzMwdVJOeVZL?=
- =?utf-8?B?M3BSK1cyWGtBc3RSV29sSDlkenhHVU1yUVJJY2Z6VzN1ZnZ6Y1I4NFRqZU5F?=
- =?utf-8?B?REhvSktGL1pnMDFKQUk2a0RGcEJ0QmlqMnRRNGRpVC85Ujlja1VDS2JTWXhP?=
- =?utf-8?B?UndBVzJmSXQvQ0t6cjhxeTR6L0lVK3Y4Rk44b1pwR28vanBaRkRtTnhmMVU4?=
- =?utf-8?B?MEZIcWtPMkhVMU9YY0xrL0xPVFp0ZlRBNHBVZ0YzcE5TWisvd2tuYU1MMzNY?=
- =?utf-8?B?R2FoU2ZaUldoYkdDM05sbmtqOC8veGRBY0YzQ1B5RVRjSndTdkJaRnlxN2hZ?=
- =?utf-8?B?T2Q4NjBXK243bXc2K2tXVHJoQ3hiZExzZHhLTjZHOFI1TlVOTm1zSTIxRUFP?=
- =?utf-8?Q?9KYk5klVV7L0JNeI=3D?=
-X-Exchange-RoutingPolicyChecked: VkKZhVOwglwwVg02ILbvEfUp7AEcep0r6Snfsg6USEKMYDkWG8jX2nd0ZwwHU0AUjb8EwBo2ALATDKmt/ZvqMdU6iixiVeeHCZHkqb45jGbpBZ7P3KbIrislEkMF5P5odlachyfv4YD3BwByFz6cWI+j1oSo349sLG1dY3fezato9EiUOgmJWgVxcQZBlQPLQez5ZXW+YtbhGQl873BIqSmlKQZ6ptK6Vy5xfbcm0fUvU9G2k7Knl/Eve681JlfF4pruMtfPj3i26meZ6CXjW4j7ew0zOQKNRy0Isge0dx6Eknm6jhBAz5yKVVWxYFtZjm8gcDBnQJPUr03YjhZvFA==
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5e705903-50e9-4bf3-306a-08ded82619d5
-X-MS-Exchange-CrossTenant-AuthSource: IA1PR11MB7198.namprd11.prod.outlook.com
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?B3e4Gw4uoIMv3BoLO+krcP5yfhgSs1iB9DMc9hWv3N2rJRTZF9/KaVqgVxIJ?=
+ =?us-ascii?Q?TL9qt+rWIcxw0rMMupHF+WUTPq2uRr8R/JWSOgVpH0ZDPGzGqLEl9w7bG+62?=
+ =?us-ascii?Q?niSpIb0yJYsOrFf18xNbeCpKEzSBHa73dvSROyRYib151Zs20mV1W+YT4TfX?=
+ =?us-ascii?Q?ATbeKJkw7qclnrvjWqJGyJkEU+DB2lq3IHO9kFzHklS1OID8SbSZCclL13Bq?=
+ =?us-ascii?Q?S3qEMa6MBL/iOSdmiFOOSSY0clT0lnqd7EsFWQ6yjcALYJ+vLbB5SmtI8R52?=
+ =?us-ascii?Q?ZJhXppbU3+/1Smo089L3dg7ZahxTDEmmpMcW4t2U+LReHOh4j/m6W6R+ob6Q?=
+ =?us-ascii?Q?9b/eXLDAOoM+gj3plqiBZuP/UvPMo0IgYphbgjSp15sd/+kxzHG/Vn0WxP01?=
+ =?us-ascii?Q?vF0xep2McVTeLnyw8qSaAW4oD9pijwzHbQbPqDPMspqUGXqocZh/DnrKY+0x?=
+ =?us-ascii?Q?64vRFryj2mKH07/PhalMZe+/PjLqYZi5RaAdABY8M8QGqIaJlgzBDY1dK+uc?=
+ =?us-ascii?Q?NtIUgibHs/AR+63kzNl4/B/56UwmOcyp7Az5u3ZYbZNS8gVchM/kkITYSKsT?=
+ =?us-ascii?Q?rZ+OQXIQxb/Nij5dI54/ThWCCUwETf3vsQrDB2iU6PRsCsLv9RJPB2VWf4/r?=
+ =?us-ascii?Q?vLZDJ+O1AovfBeslnbp2JHuIPmwo3cb5CMGL2mXV6r5k3jBHkOzfkYrW0Q3N?=
+ =?us-ascii?Q?xc5cTsukqy3D5jYO2P+BSVM8IEGYPtTmNZsa9ivu8A4uCkOs5gDNyPYYHRzl?=
+ =?us-ascii?Q?/kJbvq8nBx2OXm0GavVS3mopY7/KOTa/kwQGFH5GVz2PeBg6A8OfD6HTpQZt?=
+ =?us-ascii?Q?K41hbJTmhLi1eOzWW6IQR9cMpcVBobhEHCnD8Pf+a8tXuEiE3pTwzKz9rkXi?=
+ =?us-ascii?Q?UEeVWVgyI6U2JE5+QXnQkaUp6x44DwFR2aNpgcRUsW0uxYeGqwJEW97fYa4T?=
+ =?us-ascii?Q?krzH0YW56cc0b4/z+kFsWKzXs+2KvhpHhKUY4X6C2JAc2leZQiO7FA0BTGNt?=
+ =?us-ascii?Q?QGQCISpjFQcTnCEnZfIHhhyu6n58Kl4ukw7Tfrtt/9V3JV0HdnHfz/AIDMez?=
+ =?us-ascii?Q?va+EBphaZYPYgzWQtnNsqdbroPtBfxsaVbE1G1ZgGCFJCyvm/WT8TWYt8+Bw?=
+ =?us-ascii?Q?Ev9etePwxrbG7egRJhizOr1ePyW6m4qg57fjISavrDQvAbDy+lLiIIGQuJt3?=
+ =?us-ascii?Q?70JDHruRvivTB4UoQeN/ChxlyEx1tyYCl7HrC+6g63PRW5omZkwr+ITgB6gn?=
+ =?us-ascii?Q?Vq2s2z0dqzGgLfq/tEV8D65Xa3wySEKLdgmmzujz86TzoTD0Vyjnu/r5/B57?=
+ =?us-ascii?Q?XJAVeLtR1YIQRol/U5chXEyFrsEOKLxpnxah9uS0yfXs8shu4A4tmtFE+BDL?=
+ =?us-ascii?Q?nN8Qih+XzDUlFeqqs9UvpsrrUnP1ZutYFDLum7ef8oIckTX5jnsT0ip0ktSy?=
+ =?us-ascii?Q?C4gOsUSJB5L8xCuLU5SAnxkvU7f3OTza/sL3+f5W77geewWBws2ecAueDsRA?=
+ =?us-ascii?Q?YRTK1l9h04evwdTPNM5JykmHFYVAyEXw4VtxiahGMRBubzni+tuEtOBfwtbh?=
+ =?us-ascii?Q?DixF5/MzBCE8CQES6aAimTneVk/rJbgmOa793bPSzqp4fNfU8rOMV1NJO+N5?=
+ =?us-ascii?Q?Vp8dbKHe6E8rt8FHJfe0GsSZewf58uTf9pN1EdoS9W1S5L1I8jVOgAEaX1cB?=
+ =?us-ascii?Q?iK2ObHnyvWvjXUZCJl7W+1WrHfwJn4XmxkHC97E0/QUi53lMBo1GBx+IkQSC?=
+ =?us-ascii?Q?59inhUjza04t9Sl83HNrbJVwR6tzs6xaG7H8U7sdIBHbXMH6st7P?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7d479496-091b-4337-fe9a-08ded843bdb2
+X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Jul 2026 10:38:49.0009
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Jul 2026 14:10:59.4258
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 46c98d88-e344-4ed4-8496-4ed7712e255d
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: VmV4N4YWhIFhVyz+PXfeDICZE1RWLCYJ7Q2dQajEspf3Y1xv1t3Pjqo98IHkGY04tMEus9XQwypnh2z94XIm9w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ0PR11MB5893
-X-OriginatorOrg: intel.com
+X-MS-Exchange-CrossTenant-UserPrincipalName: RFecfVmeBtCVNnVO7FeOyiYF7WWvfBZ8sKcmt/2XrvhTon1AUlNIzLyk3E3EAp4HSMknqHBNdUcZeFg+7zyrx6TD1w8ZALyfp3JLVizH+AT2SSw0zL9y5hiLCX1V2cTX
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR04MB10797
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260702_033900_357866_8AF41362 
-X-CRM114-Status: GOOD (  24.47  )
+X-CRM114-CacheID: sfid-20260702_071106_025958_E0C4010C 
+X-CRM114-Status: GOOD (  21.61  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -188,107 +139,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 01/07/2026 23:33, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 2 potential issue(s) to consider:
-> 
-> New issues:
-> - [High] Unconditional NULL pointer dereference of `dev->dev` in `i3c_master_queue_ibi` during device teardown
-> 
-> Pre-existing issues:
-> - [High] Lockless TOCTOU race leading to Use-After-Free of `dev->ibi` during concurrent IBI teardown
+On Wed, Jul 01, 2026 at 11:15:27PM +0300, Adrian Hunter wrote:
+> An I3C controller acts as a bus controller for one or more I3C devices.
+> If the controller can wake the system in response to an In-Band
+> Interrupt (IBI), then any device on that bus that is capable of
+> generating IBIs can potentially be used as a wakeup source.
+>
+> Add an ibi_wakeup flag to struct i3c_master_controller so controller
+> drivers can advertise support for IBI-based wakeup.
+>
+> If set, mark IBI-capable I3C devices as wakeup capable when they are
+> registered, allowing wakeup management through the standard device
+> wakeup framework.
+>
+> Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
+> ---
+
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+
+>  drivers/i3c/master.c       | 8 ++++++++
+>  include/linux/i3c/master.h | 2 ++
+>  2 files changed, 10 insertions(+)
+>
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index f1be38a640ca..a47e2924bb70 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -17,6 +17,7 @@
+>  #include <linux/list.h>
+>  #include <linux/of.h>
+>  #include <linux/pm_runtime.h>
+> +#include <linux/pm_wakeup.h>
+>  #include <linux/slab.h>
+>  #include <linux/spinlock.h>
+>  #include <linux/workqueue.h>
+> @@ -1930,6 +1931,13 @@ i3c_master_register_new_i3c_devs(struct i3c_master_controller *master)
+>  		if (desc->boardinfo)
+>  			desc->dev->dev.of_node = desc->boardinfo->of_node;
+>
+> +		/*
+> +		 * In the case of IBI wakeup, any IBI-capable device can
+> +		 * wakeup.
+> +		 */
+> +		if (master->ibi_wakeup && (desc->info.bcr & I3C_BCR_IBI_REQ_CAP))
+> +			device_set_wakeup_capable(&desc->dev->dev, true);
+> +
+>  		ret = device_register(&desc->dev->dev);
+>  		if (ret) {
+>  			dev_err(&master->dev,
+> diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
+> index 4d2a68793324..af3c35a8e7b6 100644
+> --- a/include/linux/i3c/master.h
+> +++ b/include/linux/i3c/master.h
+> @@ -511,6 +511,7 @@ struct i3c_master_controller_ops {
+>   * @hotjoin: true if the master support hotjoin
+>   * @rpm_allowed: true if Runtime PM allowed
+>   * @rpm_ibi_allowed: true if IBI and Hot-Join allowed while runtime suspended
+> + * @ibi_wakeup: IBI can wakeup the system
+>   * @shutting_down: set to true when master begins shutdown or unregister
+>   * @boardinfo.i3c: list of I3C  boardinfo objects
+>   * @boardinfo.i2c: list of I2C boardinfo objects
+> @@ -545,6 +546,7 @@ struct i3c_master_controller {
+>  	unsigned int hotjoin: 1;
+>  	unsigned int rpm_allowed: 1;
+>  	unsigned int rpm_ibi_allowed: 1;
+> +	unsigned int ibi_wakeup: 1;
+>  	bool shutting_down;
+>  	struct {
+>  		struct list_head i3c;
 > --
-> 
-> commit ffdd9b066a2bdadecaab205d187dab1a5ecff5ae
-> Author: Adrian Hunter <adrian.hunter@intel.com>
-> 
-> i3c: master: Report wakeup events for IBIs
-> 
-> An I3C device configured as a wakeup source can wake the system by
-> generating an In-Band Interrupt (IBI).
-> 
-> When an IBI is queued for processing, record a wakeup event for the
-> device if wakeup is enabled.  Use a 100 ms processing interval to give
-> the I3C device driver time to process the IBI.
-> 
->> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
->> index a47e2924bb701..a36f9b617cbf7 100644
->> --- a/drivers/i3c/master.c
->> +++ b/drivers/i3c/master.c
-> 
-> [ ... ]
-> 
->> @@ -3007,6 +3010,9 @@ void i3c_master_queue_ibi(struct i3c_dev_desc *dev, struct i3c_ibi_slot *slot)
->>  	if (!dev->ibi || !slot)
->>  		return;
->>  
->> +	if (device_may_wakeup(&dev->dev->dev))
->> +		pm_wakeup_event(&dev->dev->dev, I3C_WAKEUP_PROCESSING_TIME_MS);
->> +
-> 
-> [Severity: High]
-> Does this code introduce a NULL pointer dereference if an interrupt arrives
-> during device teardown?
-> 
-> During I3C master controller unregistration, i3c_master_unregister_i3c_devs()
-> clears the device description and sets i3cdev->dev to NULL:
-> 
-> 	i3cdev->dev->desc = NULL;
-> 	if (device_is_registered(&i3cdev->dev->dev))
-> 		device_unregister(&i3cdev->dev->dev);
-
-I3C drivers are required to disable and free IBIs when they
-are removed, and they do do that.  There is a corner case, if
-the IBI disable fails, but that is out of scope for this patch
-set.
-
-> 	else
-> 		put_device(&i3cdev->dev->dev);
-
-dev->ibi will be NULL for devices that are not registered,
-so i3c_master_queue_ibi() would never get to i3c_master_queue_ibi()
-even if somehow the controller driver tried to queue an IBI.
-
-> 	i3cdev->dev = NULL;
-> 
-> Since clearing dev->desc prevents the driver's remove callback from disabling
-> the hardware IBI, the IBI may still fire. If i3c_master_queue_ibi() executes
-> at this point, the newly added device_may_wakeup(&dev->dev->dev) will
-> dereference the NULL dev->dev pointer.
-> 
->>  	atomic_inc(&dev->ibi->pending_ibis);
-> 
-> [Severity: High]
-> This is a pre-existing issue, but does this lockless check open a 
-> use-after-free race window?
-> 
-> If a hardware IBI interrupt is processed concurrently on another CPU, it can
-> evaluate if (!dev->ibi) as false, get preempted, and then access
-> dev->ibi->pending_ibis and dev->ibi->wq after they have been freed by
-> i3c_dev_free_ibi_locked():
-> 
-> 	kfree(dev->ibi);
-> 	dev->ibi = NULL;
-> 
-> This is possible for hardware controllers like dw-i3c-master that do not
-> implicitly synchronize with executing hardware IRQ handlers during their
-> disable op.
-
-Yes, some drivers have gaps.
-
-For dw, an IBI would have to arrive immediately before the DISEC CCC
-and end up being processed during the same invocation of
-dw_i3c_master_irq_handler().  The DISEC would complete() first which
-would potentially allow i3c_dev_disable_ibi_locked() to
-atomic_read(&dev->ibi->pending_ibis) before the dw driver gets to
-atomic_inc(&dev->ibi->pending_ibis) via i3c_master_queue_ibi().
-
-Out of scope for this patch set.
-
-> 
->>  	queue_work(dev->ibi->wq, &slot->work);
->>  }
-> 
-
+> 2.53.0
+>
 
 -- 
 linux-i3c mailing list
