@@ -4,71 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5A3ACC43458
-	for <linux-i3c@archiver.kernel.org>; Thu,  2 Jul 2026 18:37:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 246ADC43458
+	for <linux-i3c@archiver.kernel.org>; Thu,  2 Jul 2026 19:00:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ayMn0rdjCuwsJV6aDsoPQFZSZEFmqIpA4Kdq/BZu1LA=; b=382B/iS9B30MRz
-	1kYeHGZ7Wa6E2AqIRbWJ/MhQMFlJfUvS1jriTQuEK7CanhoeigDejXBbr8q9bKsuvUX3xZ3ARtCi2
-	CSx1bRZZ7if1bhcq2Tub+MTltcWQryPHBmNpP37g3ChpitDGzD9dmmbV43tqcEDT1Eyb9djNBYiZn
-	TQD6tM3GUio32iNIu/GD8j5qgOt8gQf1a6OCe4cgByc4o3WuU1ndhjdXQPbBHph1PSsjYKUJko0m6
-	HYfXHeZbHTxkcJlBfA3QReli6lD8vgpvev+ob/eWQQafrT+ZwcSfO5hGgrpXn/u8uayFmMD5FZwCS
-	rQ0jzhl8jt9/tx82a3ZQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OqFIc7LFc46GcLqR6I0SNuQT0fpap/ih+8iSGO6uhAg=; b=0Vg6oKk89sNzrU
+	eWPsbUIQF4hl2xYUEjzKhM6kOvX97y2rKxq4vdeIFYql7jnq0MMvJjw4EhbHuJxVUrnncI0vsvCl1
+	Q/SZQBAc97NvVWc+m1d8wu+J0akz5cZ6HJrPcF9R00TFl7T2nkT1+6zQmpSu4+0V8eCQRdP1A9pah
+	aG51r997vQXzUNCkkpj+llK3BpUBaVenAkYmoeKeNqeLyGZI85CkwhI97/Pcc51j3KTllzW9J2NeZ
+	T9lZ9hlmKkcqLnQARZLce7ksFYUpNazCUoy5IjR32ma0F73kHbEUZKY+/C58bBKhMN8ofulJ8rNtZ
+	LSVrifGSOcL6h7VqcQ9w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfMIA-00000005HJg-2v0X;
-	Thu, 02 Jul 2026 18:37:42 +0000
-Received: from mgamail.intel.com ([192.198.163.16])
+	id 1wfMdp-00000005Iq4-3m6u;
+	Thu, 02 Jul 2026 19:00:05 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfMI8-00000005HJF-1RIc
+	id 1wfMdo-00000005IoA-3NqX
 	for linux-i3c@lists.infradead.org;
-	Thu, 02 Jul 2026 18:37:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1783017460; x=1814553460;
-  h=from:to:cc:subject:date:message-id:mime-version:
-   content-transfer-encoding;
-  bh=WlF+EcDXIqVMvrgbpCi5caEF7jFuZx8Z2utDNtPTcHQ=;
-  b=jWrEC2Vc+zw02pgC24xvhQf186sDWRkJlaRGvQhe5jpUAr3VRQy08xvt
-   JaMJoCTapAXr1wS5w6UcIUB8E0R3zEHyVeb1ilx1uAXnnbXnFQUEOweT8
-   8vqKQk/DQLXB17nPbz2RSy079WgAa3RcZqigMtkijuIuKet5Zf55QEWfi
-   +faPKfFl9umzunqvS6caW64SM+e8/us6UphfUVBCgkyBX0EvDWCZVp0vt
-   czqsb2t+l+Bg9J7t5A3AoHt6CZR2W0wHYExsYiW0xvYFVyG86n/QJWMmE
-   lXBE3XSKmjEAn5/9L2dJ66ESYIclElIZ2wkSIB/QCFuOlKVc8w9uFu91i
-   Q==;
-X-CSE-ConnectionGUID: bQkgAPQ/SN2BhTOAoZeBhQ==
-X-CSE-MsgGUID: TpUnHRr2STKV4wfLO9x4Bg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11835"; a="71299013"
-X-IronPort-AV: E=Sophos;i="6.25,144,1779174000"; 
-   d="scan'208";a="71299013"
-Received: from orviesa010.jf.intel.com ([10.64.159.150])
-  by fmvoesa110.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 Jul 2026 11:37:40 -0700
-X-CSE-ConnectionGUID: 39dVX7EoTqSWP4QmvgcU/Q==
-X-CSE-MsgGUID: BsyYwALVQOeH/nlgPCfWOw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.25,144,1779174000"; 
-   d="scan'208";a="251860180"
-Received: from ncintean-mobl1.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.244.196])
-  by orviesa010-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 02 Jul 2026 11:37:39 -0700
-From: Adrian Hunter <adrian.hunter@intel.com>
-To: alexandre.belloni@bootlin.com
-Cc: Frank.Li@nxp.com,
-	linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH] i3c: master: Fix device_register() error path
-Date: Thu,  2 Jul 2026 21:36:44 +0300
-Message-ID: <20260702183644.60827-1-adrian.hunter@intel.com>
-X-Mailer: git-send-email 2.53.0
-MIME-Version: 1.0
-Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260702_113740_437652_860D9BEB 
-X-CRM114-Status: UNSURE (   7.95  )
-X-CRM114-Notice: Please train this message.
+	Thu, 02 Jul 2026 19:00:04 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by tor.source.kernel.org (Postfix) with ESMTP id 1EF85601CA;
+	Thu,  2 Jul 2026 19:00:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8BF741F000E9;
+	Thu,  2 Jul 2026 19:00:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1783018803;
+	bh=9RBeboaAlkoAdy855wfG9SpEVENakci4zgoU12NmrI4=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=Stcle7HldRuCjWWHALetTnpokRgbXoqSxZdxTS1IK+2yG9iv3mvq6kzlDiWeMsLOv
+	 u7+PaIGaeR5e5DI+BHeTbadztkJ6R3saaL9R7mVSheKIrlF4OAu/9Ct6TKgxhkv/ns
+	 ju0V659Po7V0guCiADJ3cg98oKjDwrCZOzGDTqmG9MpLwBHicvpvNWBzgQjCPj4h8p
+	 NTBMyDVGfsoSbJS4Sjl2PIP/PIyala+9V9NpLOfbNA6hziuFXocvkC6QIdj/EOE/7Y
+	 xpbmiD4P4QuFN9yPmxghKbNg6ll7UCGF3E2w08pItksE+mmqMWmB1RqP9iVyqgMF7k
+	 dMSGkDNgz7E4w==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH] i3c: master: Fix device_register() error path
+To: "Adrian Hunter" <adrian.hunter@intel.com>
+Cc: "Alexandre Belloni" <alexandre.belloni@bootlin.com>, Frank.Li@kernel.org, linux-i3c@lists.infradead.org
+In-Reply-To: <20260702183644.60827-1-adrian.hunter@intel.com>
+References: <20260702183644.60827-1-adrian.hunter@intel.com>
+Date: Thu, 02 Jul 2026 19:00:02 +0000
+Message-Id: <20260702190003.8BF741F000E9@smtp.kernel.org>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,54 +61,74 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-When device_register() fails in i3c_master_register_new_i3c_devs(),
-put_device() is called to drop the reference taken by
-device_register().  That drops the last reference, so the device's
-release callback i3c_device_release() runs and frees the i3c_device.
-
-Two problems follow from that:
-
-i3c_device_release() does WARN_ON(i3cdev->desc), so it warns because
-desc->dev->desc still points back at the descriptor.  Clear it before
-calling put_device().
-
-After put_device() frees the i3c_device, desc->dev is left pointing at
-freed memory, so clear desc->dev as well.  That prevents, for example,
-i3c_master_unregister_i3c_devs() seeing desc->dev as non-NULL and
-dereferencing it.
-
-Reported-by: sashiko-bot@kernel.org
-Link: https://lore.kernel.org/linux-i3c/20260701203053.8F3971F000E9@smtp.kernel.org/
-Fixes: cab63f6488761 ("i3c: Fix potential refcount leak in i3c_master_register_new_i3c_devs")
-Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
----
- drivers/i3c/master.c | 2 ++
- 1 file changed, 2 insertions(+)
-
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 979457e635bd..7254b13fe4f0 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -1942,7 +1942,9 @@ i3c_master_register_new_i3c_devs(struct i3c_master_controller *master)
- 		if (ret) {
- 			dev_err(&master->dev,
- 				"Failed to add I3C device (err = %d)\n", ret);
-+			desc->dev->desc = NULL;
- 			put_device(&desc->dev->dev);
-+			desc->dev = NULL;
- 		}
- 	}
- }
--- 
-2.53.0
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpOZXcgaXNzdWVzOgotIFtIaWdoXSBT
+ZXR0aW5nIGBkZXNjLT5kZXYgPSBOVUxMYCBvbiB0aGUgYGRldmljZV9yZWdpc3RlcigpYCBlcnJv
+ciBwYXRoIGludHJvZHVjZXMgYSByZXRyeSBsb29wIHRoYXQgY2F1c2VzIGEgZG91YmxlLXB1dCBh
+bmQgVXNlLUFmdGVyLUZyZWUgb2YgdGhlIGBib2FyZGluZm8tPm9mX25vZGVgLgotIFtIaWdoXSBD
+bGVhcmluZyBgZGVzYy0+ZGV2LT5kZXNjID0gTlVMTGAgaW50cm9kdWNlcyBhIGRhdGEgcmFjZSBh
+bmQgTlVMTCBwb2ludGVyIGRlcmVmZXJlbmNlIGZvciBjb25jdXJyZW50IHN5c2ZzIHJlYWRlcnMu
+CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgotIFtIaWdoXSBVbmluaXRpYWxpemVkIHN0YWNrIG1lbW9y
+eSBpcyBsZWFrZWQgdG8gdXNlcnNwYWNlIHZpYSBzeXNmcyB1ZXZlbnRzIGFuZCBhdHRyaWJ1dGVz
+IHdoZW4gYW4gSTNDIGRldmljZSBmYWlscyB0byByZWdpc3RlciBvciBpcyB1bnJlZ2lzdGVyZWQu
+Ci0tCgpjb21taXQgMzFiMjhkNzFmY2I5ZWNhN2U1OGM5MTM4ZGE3N2ExY2M3ZTQxNGY2ZApBdXRo
+b3I6IEFkcmlhbiBIdW50ZXIgPGFkcmlhbi5odW50ZXJAaW50ZWwuY29tPgoKaTNjOiBtYXN0ZXI6
+IEZpeCBkZXZpY2VfcmVnaXN0ZXIoKSBlcnJvciBwYXRoCgpXaGVuIGRldmljZV9yZWdpc3Rlcigp
+IGZhaWxzIGluIGkzY19tYXN0ZXJfcmVnaXN0ZXJfbmV3X2kzY19kZXZzKCksCnB1dF9kZXZpY2Uo
+KSBpcyBjYWxsZWQgdG8gZHJvcCB0aGUgcmVmZXJlbmNlIHRha2VuIGJ5CmRldmljZV9yZWdpc3Rl
+cigpLiBUaGF0IGRyb3BzIHRoZSBsYXN0IHJlZmVyZW5jZSwgc28gdGhlIGRldmljZSdzCnJlbGVh
+c2UgY2FsbGJhY2sgaTNjX2RldmljZV9yZWxlYXNlKCkgcnVucyBhbmQgZnJlZXMgdGhlIGkzY19k
+ZXZpY2UuCgpMaW5rOiBodHRwczovL2xvcmUua2VybmVsLm9yZy9saW51eC1pM2MvMjAyNjA3MDEy
+MDMwNTMuOEYzOTcxRjAwMEU5QHNtdHAua2VybmVsLm9yZy8KCj4gZGlmZiAtLWdpdCBhL2RyaXZl
+cnMvaTNjL21hc3Rlci5jIGIvZHJpdmVycy9pM2MvbWFzdGVyLmMKPiBpbmRleCBmMWJlMzhhNjQw
+Y2ExLi5hYzQwODA4NmRkY2M3IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvaTNjL21hc3Rlci5jCj4g
+KysrIGIvZHJpdmVycy9pM2MvbWFzdGVyLmMKPiBAQCAtMTkzNCw3ICsxOTM0LDkgQEAgaTNjX21h
+c3Rlcl9yZWdpc3Rlcl9uZXdfaTNjX2RldnMoc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlciAq
+bWFzdGVyKQo+ICAJCWlmIChyZXQpIHsKPiAgCQkJZGV2X2VycigmbWFzdGVyLT5kZXYsCj4gIAkJ
+CQkiRmFpbGVkIHRvIGFkZCBJM0MgZGV2aWNlIChlcnIgPSAlZClcbiIsIHJldCk7Cj4gKwkJCWRl
+c2MtPmRldi0+ZGVzYyA9IE5VTEw7CgpbU2V2ZXJpdHk6IEhpZ2hdCkRvZXMgY2xlYXJpbmcgZGVz
+Yy0+ZGV2LT5kZXNjIGhlcmUgaW50cm9kdWNlIGEgZGF0YSByYWNlIHdpdGggY29uY3VycmVudApz
+eXNmcyByZWFkZXJzPwoKaTNjX21hc3Rlcl9yZWdpc3Rlcl9uZXdfaTNjX2RldnMoKSBpcyBwcm90
+ZWN0ZWQgYnkgYSByZWFkIGxvY2suCklmIGRldmljZV9yZWdpc3RlcigpIGZhaWxzLCB3ZSB3cml0
+ZSBkZXNjLT5kZXYtPmRlc2MgPSBOVUxMLiBDb25jdXJyZW50bHksCnN5c2ZzIGF0dHJpYnV0ZSBy
+ZWFkZXJzIGxpa2UgYmNyX3Nob3coKSBhbHNvIGFjcXVpcmUgdGhlIHNhbWUgcmVhZCBsb2NrOgoK
+ZHJpdmVycy9pM2MvbWFzdGVyLmM6YmNyX3Nob3coKSB7CiAgICAuLi4KCWRlc2MgPSBkZXZfdG9f
+aTNjZGVzYyhkZXYpOwoJcmV0ID0gc3lzZnNfZW1pdChidWYsICIweCUwMnhcbiIsIGRlc2MtPmlu
+Zm8uYmNyKTsKICAgIC4uLgp9CgpDYW4gdGhlIHJlYWRlciBmZXRjaCBhIE5VTEwgZGVzY3JpcHRv
+ciBhbmQgY3Jhc2ggc2luY2UgYm90aCBwYXRocyBvbmx5IGhvbGQgYQpyZWFkIGxvY2s/CgpbU2V2
+ZXJpdHk6IEhpZ2hdClRoaXMgaXMgYSBwcmUtZXhpc3RpbmcgaXNzdWUsIGJ1dCBjYW4gc2V0dGlu
+ZyB0aGUgZGVzY3JpcHRvciB0byBOVUxMIGNhdXNlCnVuaW5pdGlhbGl6ZWQgc3RhY2sgbWVtb3J5
+IHRvIGxlYWsgaW4gdGhlIHVldmVudCBhbmQgbW9kYWxpYXMgcGF0aHM/CgpXaGVuIGFuIEkzQyBk
+ZXZpY2UgZmFpbHMgdG8gcmVnaXN0ZXIgKG9yIGlzIHVucmVnaXN0ZXJlZCksIGNsZWFyaW5nIHRo
+ZQpkZXNjcmlwdG9yIHRyaWdnZXJzIGEgcmVtb3ZlIHVldmVudC4gSW4gaTNjX2RldmljZV91ZXZl
+bnQoKToKCglzdHJ1Y3QgaTNjX2RldmljZV9pbmZvIGRldmluZm87CgkuLi4KCWlmIChpM2NkZXYt
+PmRlc2MpCgkJZGV2aW5mbyA9IGkzY2Rldi0+ZGVzYy0+aW5mbzsKCgltYW51ZiA9IEkzQ19QSURf
+TUFOVUZfSUQoZGV2aW5mby5waWQpOwoKSWYgaTNjZGV2LT5kZXNjIGlzIE5VTEwsIGRldmluZm8g
+cmVtYWlucyB1bmluaXRpYWxpemVkIG9uIHRoZSBzdGFjayBidXQgaXRzCmZpZWxkcyBhcmUgdW5j
+b25kaXRpb25hbGx5IGV4dHJhY3RlZCBhbmQgZm9ybWF0dGVkIGludG8gdGhlIG1vZGFsaWFzIHN0
+cmluZy4KQSBzaW1pbGFyIGxlYWsgaGFwcGVucyBjb25jdXJyZW50bHkgaW4gbW9kYWxpYXNfc2hv
+dygpLiBXaWxsIHRoaXMgbGVhayBrZXJuZWwKc3RhY2sgbWVtb3J5IHRvIHVzZXJzcGFjZT8KCj4g
+IAkJCXB1dF9kZXZpY2UoJmRlc2MtPmRldi0+ZGV2KTsKPiArCQkJZGVzYy0+ZGV2ID0gTlVMTDsK
+CltTZXZlcml0eTogSGlnaF0KV291bGQgc2V0dGluZyBkZXNjLT5kZXYgdG8gTlVMTCBoZXJlIGlu
+dHJvZHVjZSBhIHVzZS1hZnRlci1mcmVlIG9mCmJvYXJkaW5mby0+b2Zfbm9kZSBvbiBzdWJzZXF1
+ZW50IHJldHJpZXM/CgpJZiBkZXZpY2VfcmVnaXN0ZXIoKSBmYWlscywgcHV0X2RldmljZSgpIGNh
+bGxzIGkzY19kZXZpY2VfcmVsZWFzZSgpLCB3aGljaAp1bmNvbmRpdGlvbmFsbHkgY2FsbHMgb2Zf
+bm9kZV9wdXQoKSBvbiBkZXYub2Zfbm9kZSAoY29uc3VtaW5nIHRoZSBzaW5nbGUKcmVmZXJlbmNl
+IG9yaWdpbmFsbHkgaGVsZCBieSBib2FyZGluZm8pLiAKCkJ5IHNldHRpbmcgZGVzYy0+ZGV2ID0g
+TlVMTCwgb24gYSBzdWJzZXF1ZW50IGV4ZWN1dGlvbiBvZgppM2NfbWFzdGVyX3JlZ2lzdGVyX25l
+d19pM2NfZGV2cygpIChlLmcuLCB0cmlnZ2VyZWQgYnkgYSBob3Qtam9pbiBldmVudCBvcgpkeW5h
+bWljIGFkZHJlc3MgYXNzaWdubWVudCksIHRoZSBsb29wIHdpbGwgcmV0cnkgcmVnaXN0cmF0aW9u
+LCBhbGxvY2F0ZSBhCm5ldyBkZXZpY2UsIGFuZCByZWFzc2lnbiB0aGUgbm93LWZyZWVkIG9mX25v
+ZGUuIFdpbGwgYW55IGZ1cnRoZXIgZmFpbHVyZSBvcgpzdWNjZXNzZnVsIHVucmVnaXN0cmF0aW9u
+IHRoZW4gdHJpZ2dlciBhIGRvdWJsZS1wdXQ/Cgo+ICAJCX0KPiAgCX0KPiAgfQoKLS0gClNhc2hp
+a28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDcwMjE4
+MzY0NC42MDgyNy0xLWFkcmlhbi5odW50ZXJAaW50ZWwuY29tP3BhcnQ9MQoKLS0gCmxpbnV4LWkz
+YyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
