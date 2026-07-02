@@ -4,54 +4,49 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8E052C43458
-	for <linux-i3c@archiver.kernel.org>; Wed,  1 Jul 2026 20:33:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9F3A1C43458
+	for <linux-i3c@archiver.kernel.org>; Thu,  2 Jul 2026 09:06:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MfZx7L/zTBK9kWRuW4/L+zD9ZkzgFzfkDXMHRLM1nwg=; b=zSQ93Gx4dTVH4c
-	RhIFVKqcEAx4awsMsoEtgeUNW06BkB+867iXe1iR9svpM6A9svP4Qo21ponCTBSLCJIbBTeOY4usl
-	PC+FNdZZ78hAqnS1n3hyP3tZQ+5+P4IKz2IwUEsGJ+aPDwvhrDcanZiydEdtXEjKldoHEkZzLgnXI
-	2grSDx2QcCHA3/6JZxy4ZEKH3v20gSVrO5tHfBD6nf9/0TZavcwcsqzcsr8DZkhNHWCv6mKC8uSLc
-	ZXS301nQDDSwTFOnegget9Jt8jOB2ZN8WKIVHxKXSsW7DWolwwBGLpJoOb2k/wJ4vmzESI9OwuYL8
-	fk9UUCIMBTLgrS2QLuQQ==;
+	List-Owner; bh=Nb9smSEj/gilZRbHpFZyJVLMM1ORLTSjUiXwODhAp3Q=; b=Mu/Y6odGtoE62A
+	fxlrUwlDyuGeQb/Gu8ImUR/m6CNFfDIGm2e/GIr9ZcrjTecD9+G604UFdID4WAOeYsgwzi3dMRPyY
+	xRrVBv0w+iKaqwZo0aArkAmXjhI/SqZWRqxb/25guoJSCJDUWlGSFRtpeI5WIPMmii7QMLDuNy3h4
+	vMfnjqZ5lR+eLfO4Pgw8trSyH7eAj3ux6S6hGOw78D82lU8Z901tSscy74RD6EDi+38NtOi/T/dEC
+	BnXEskAICvErrnMhT3N3PNZtHMQcA6j2pNXPNhg8KaEKb+c7RFE/R40sC9GMGnnrljavmfUVe1X3J
+	ubfr4D6eMUMDpYdCbEPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf1cp-00000002yGY-1Idh;
-	Wed, 01 Jul 2026 20:33:39 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wfDNi-00000003y0C-1URH;
+	Thu, 02 Jul 2026 09:06:50 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wf1cn-00000002yGP-2RTr
+	id 1wfDNh-00000003y03-013a
 	for linux-i3c@lists.infradead.org;
-	Wed, 01 Jul 2026 20:33:37 +0000
+	Thu, 02 Jul 2026 09:06:49 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 48906407AB;
-	Wed,  1 Jul 2026 20:33:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id D13321F000E9;
-	Wed,  1 Jul 2026 20:33:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1782938017;
-	bh=NyVMPti0TCUuC112Dde4qDthm08jy8jxIFdrJwiV/Oc=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=GBdmx60UAv5LPWXpzLXTCa5ewIonKVWxFSAsI/PVek5Fn7PdFr3Znd6IpnoKViXWy
-	 MrcKC638sAs2xZRxN0oksf/bQxGwD+jYLDZAPHwjo4z16XZVYwfE3Q/IPlWTOlrpQ5
-	 KkdpDoQR+Msrz+d5VA6EmROlYF2rWdKgjiyTs4NdltInKwIfgnBUI7VlzlAdNdqwaT
-	 uWPOh8h5BIrm351ykYvEe1J8vH3GXl3FTWJenr1vGx7JkbPw5Y0WFlc5IeRnpCeMU0
-	 VCha7Un8CEMQhZFCshHo6YHNtPNRukrKuAAWkRNPgHDMvToiBHliV0R4T0Zo2PJHCC
-	 Ly2bqS4y8Jp7Q==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH RFC RESEND 2/7] i3c: master: Report wakeup events for
- IBIs
-To: "Adrian Hunter" <adrian.hunter@intel.com>
-Cc: "Alexandre Belloni" <alexandre.belloni@bootlin.com>, Frank.Li@kernel.org, linux-pci@vger.kernel.org, linux-i3c@lists.infradead.org
-In-Reply-To: <20260701201533.220818-3-adrian.hunter@intel.com>
-References: <20260701201533.220818-1-adrian.hunter@intel.com>
- <20260701201533.220818-3-adrian.hunter@intel.com>
-Date: Wed, 01 Jul 2026 20:33:36 +0000
-Message-Id: <20260701203336.D13321F000E9@smtp.kernel.org>
+	by sea.source.kernel.org (Postfix) with ESMTP id 9F52C42A60;
+	Thu,  2 Jul 2026 09:06:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 991F71F000E9;
+	Thu,  2 Jul 2026 09:06:45 +0000 (UTC)
+Message-ID: <236829b5-1bd9-44ae-ad05-71e0ea183fc8@tuxon.dev>
+Date: Thu, 2 Jul 2026 12:06:42 +0300
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] i3c: master: renesas: reset xfer status before each wait
+To: Pengpeng Hou <pengpeng@iscas.ac.cn>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <20260625030357.87402-1-pengpeng@iscas.ac.cn>
+Content-Language: en-US
+From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
+In-Reply-To: <20260625030357.87402-1-pengpeng@iscas.ac.cn>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,59 +58,117 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpOZXcgaXNzdWVzOgotIFtIaWdoXSBV
-bmNvbmRpdGlvbmFsIE5VTEwgcG9pbnRlciBkZXJlZmVyZW5jZSBvZiBgZGV2LT5kZXZgIGluIGBp
-M2NfbWFzdGVyX3F1ZXVlX2liaWAgZHVyaW5nIGRldmljZSB0ZWFyZG93bgoKUHJlLWV4aXN0aW5n
-IGlzc3VlczoKLSBbSGlnaF0gTG9ja2xlc3MgVE9DVE9VIHJhY2UgbGVhZGluZyB0byBVc2UtQWZ0
-ZXItRnJlZSBvZiBgZGV2LT5pYmlgIGR1cmluZyBjb25jdXJyZW50IElCSSB0ZWFyZG93bgotLQoK
-Y29tbWl0IGZmZGQ5YjA2NmEyYmRhZGVjYWFiMjA1ZDE4N2RhYjFhNWVjZmY1YWUKQXV0aG9yOiBB
-ZHJpYW4gSHVudGVyIDxhZHJpYW4uaHVudGVyQGludGVsLmNvbT4KCmkzYzogbWFzdGVyOiBSZXBv
-cnQgd2FrZXVwIGV2ZW50cyBmb3IgSUJJcwoKQW4gSTNDIGRldmljZSBjb25maWd1cmVkIGFzIGEg
-d2FrZXVwIHNvdXJjZSBjYW4gd2FrZSB0aGUgc3lzdGVtIGJ5CmdlbmVyYXRpbmcgYW4gSW4tQmFu
-ZCBJbnRlcnJ1cHQgKElCSSkuCgpXaGVuIGFuIElCSSBpcyBxdWV1ZWQgZm9yIHByb2Nlc3Npbmcs
-IHJlY29yZCBhIHdha2V1cCBldmVudCBmb3IgdGhlCmRldmljZSBpZiB3YWtldXAgaXMgZW5hYmxl
-ZC4gIFVzZSBhIDEwMCBtcyBwcm9jZXNzaW5nIGludGVydmFsIHRvIGdpdmUKdGhlIEkzQyBkZXZp
-Y2UgZHJpdmVyIHRpbWUgdG8gcHJvY2VzcyB0aGUgSUJJLgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVy
-cy9pM2MvbWFzdGVyLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIuYwo+IGluZGV4IGE0N2UyOTI0YmI3
-MDEuLmEzNmY5YjYxN2NiZjcgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9pM2MvbWFzdGVyLmMKPiAr
-KysgYi9kcml2ZXJzL2kzYy9tYXN0ZXIuYwoKWyAuLi4gXQoKPiBAQCAtMzAwNyw2ICszMDEwLDkg
-QEAgdm9pZCBpM2NfbWFzdGVyX3F1ZXVlX2liaShzdHJ1Y3QgaTNjX2Rldl9kZXNjICpkZXYsIHN0
-cnVjdCBpM2NfaWJpX3Nsb3QgKnNsb3QpCj4gIAlpZiAoIWRldi0+aWJpIHx8ICFzbG90KQo+ICAJ
-CXJldHVybjsKPiAgCj4gKwlpZiAoZGV2aWNlX21heV93YWtldXAoJmRldi0+ZGV2LT5kZXYpKQo+
-ICsJCXBtX3dha2V1cF9ldmVudCgmZGV2LT5kZXYtPmRldiwgSTNDX1dBS0VVUF9QUk9DRVNTSU5H
-X1RJTUVfTVMpOwo+ICsKCltTZXZlcml0eTogSGlnaF0KRG9lcyB0aGlzIGNvZGUgaW50cm9kdWNl
-IGEgTlVMTCBwb2ludGVyIGRlcmVmZXJlbmNlIGlmIGFuIGludGVycnVwdCBhcnJpdmVzCmR1cmlu
-ZyBkZXZpY2UgdGVhcmRvd24/CgpEdXJpbmcgSTNDIG1hc3RlciBjb250cm9sbGVyIHVucmVnaXN0
-cmF0aW9uLCBpM2NfbWFzdGVyX3VucmVnaXN0ZXJfaTNjX2RldnMoKQpjbGVhcnMgdGhlIGRldmlj
-ZSBkZXNjcmlwdGlvbiBhbmQgc2V0cyBpM2NkZXYtPmRldiB0byBOVUxMOgoKCWkzY2Rldi0+ZGV2
-LT5kZXNjID0gTlVMTDsKCWlmIChkZXZpY2VfaXNfcmVnaXN0ZXJlZCgmaTNjZGV2LT5kZXYtPmRl
-dikpCgkJZGV2aWNlX3VucmVnaXN0ZXIoJmkzY2Rldi0+ZGV2LT5kZXYpOwoJZWxzZQoJCXB1dF9k
-ZXZpY2UoJmkzY2Rldi0+ZGV2LT5kZXYpOwoJaTNjZGV2LT5kZXYgPSBOVUxMOwoKU2luY2UgY2xl
-YXJpbmcgZGV2LT5kZXNjIHByZXZlbnRzIHRoZSBkcml2ZXIncyByZW1vdmUgY2FsbGJhY2sgZnJv
-bSBkaXNhYmxpbmcKdGhlIGhhcmR3YXJlIElCSSwgdGhlIElCSSBtYXkgc3RpbGwgZmlyZS4gSWYg
-aTNjX21hc3Rlcl9xdWV1ZV9pYmkoKSBleGVjdXRlcwphdCB0aGlzIHBvaW50LCB0aGUgbmV3bHkg
-YWRkZWQgZGV2aWNlX21heV93YWtldXAoJmRldi0+ZGV2LT5kZXYpIHdpbGwKZGVyZWZlcmVuY2Ug
-dGhlIE5VTEwgZGV2LT5kZXYgcG9pbnRlci4KCj4gIAlhdG9taWNfaW5jKCZkZXYtPmliaS0+cGVu
-ZGluZ19pYmlzKTsKCltTZXZlcml0eTogSGlnaF0KVGhpcyBpcyBhIHByZS1leGlzdGluZyBpc3N1
-ZSwgYnV0IGRvZXMgdGhpcyBsb2NrbGVzcyBjaGVjayBvcGVuIGEgCnVzZS1hZnRlci1mcmVlIHJh
-Y2Ugd2luZG93PwoKSWYgYSBoYXJkd2FyZSBJQkkgaW50ZXJydXB0IGlzIHByb2Nlc3NlZCBjb25j
-dXJyZW50bHkgb24gYW5vdGhlciBDUFUsIGl0IGNhbgpldmFsdWF0ZSBpZiAoIWRldi0+aWJpKSBh
-cyBmYWxzZSwgZ2V0IHByZWVtcHRlZCwgYW5kIHRoZW4gYWNjZXNzCmRldi0+aWJpLT5wZW5kaW5n
-X2liaXMgYW5kIGRldi0+aWJpLT53cSBhZnRlciB0aGV5IGhhdmUgYmVlbiBmcmVlZCBieQppM2Nf
-ZGV2X2ZyZWVfaWJpX2xvY2tlZCgpOgoKCWtmcmVlKGRldi0+aWJpKTsKCWRldi0+aWJpID0gTlVM
-TDsKClRoaXMgaXMgcG9zc2libGUgZm9yIGhhcmR3YXJlIGNvbnRyb2xsZXJzIGxpa2UgZHctaTNj
-LW1hc3RlciB0aGF0IGRvIG5vdAppbXBsaWNpdGx5IHN5bmNocm9uaXplIHdpdGggZXhlY3V0aW5n
-IGhhcmR3YXJlIElSUSBoYW5kbGVycyBkdXJpbmcgdGhlaXIKZGlzYWJsZSBvcC4KCj4gIAlxdWV1
-ZV93b3JrKGRldi0+aWJpLT53cSwgJnNsb3QtPndvcmspOwo+ICB9CgotLSAKU2FzaGlrbyBBSSBy
-ZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwNzAxMjAxNTMzLjIy
-MDgxOC0xLWFkcmlhbi5odW50ZXJAaW50ZWwuY29tP3BhcnQ9MgoKLS0gCmxpbnV4LWkzYyBtYWls
-aW5nIGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
+Hi, Pengpeng,
+
+On 6/25/26 06:03, Pengpeng Hou wrote:
+> renesas_i3c_wait_xfer() reinitializes the completion before queuing a
+> transfer, but it leaves xfer->ret unchanged. 
+
+In the current code the xfer->ret is initialized with -ETIMEDOUT when it is 
+allocated in renesas_i3c_alloc_xfer().
+
+> After one transfer completes
+> successfully, a later timeout can therefore reuse the old zero status.
+
+The patch here took this into account: 
+https://lore.kernel.org/all/20260612160458.3102106-17-claudiu.beznea@kernel.org/
+
+Please check the places where renesas_i3c_irqs_mask_and_clear() is called.
+
+> 
+> Reset xfer->ret to -ETIMEDOUT before each wait, return the transfer
+> status from the wait helper, and propagate it from DAA, CCC and private
+> I3C transfers.
+> 
+> Signed-off-by: Pengpeng Hou <pengpeng@iscas.ac.cn>
+> ---
+>   drivers/i3c/master/renesas-i3c.c | 19 ++++++++++++-------
+>   1 file changed, 12 insertions(+), 7 deletions(-)
+> 
+> diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
+> index f39c449922ca..7f123cd72cdf 100644
+> --- a/drivers/i3c/master/renesas-i3c.c
+> +++ b/drivers/i3c/master/renesas-i3c.c
+> @@ -433,15 +433,18 @@ static void renesas_i3c_enqueue_xfer(struct renesas_i3c *i3c, struct renesas_i3c
+>   	}
+>   }
+>   
+> -static void renesas_i3c_wait_xfer(struct renesas_i3c *i3c, struct renesas_i3c_xfer *xfer)
+> +static int renesas_i3c_wait_xfer(struct renesas_i3c *i3c, struct renesas_i3c_xfer *xfer)
+>   {
+>   	unsigned long time_left;
+>   
+> +	xfer->ret = -ETIMEDOUT;
+>   	renesas_i3c_enqueue_xfer(i3c, xfer);
+>   
+>   	time_left = wait_for_completion_timeout(&xfer->comp, msecs_to_jiffies(1000));
+>   	if (!time_left)
+>   		renesas_i3c_dequeue_xfer(i3c, xfer);
+> +
+> +	return xfer->ret;
+
+In some DAA cases this might be a negative number but we could still consider it OK.
+
+>   }
+>   
+>   static void renesas_i3c_set_prts(struct renesas_i3c *i3c, u32 val)
+> @@ -687,7 +690,9 @@ static int renesas_i3c_daa(struct i3c_master_controller *m)
+>   		    NCMDQP_CMD(I3C_CCC_ENTDAA) | NCMDQP_DEV_INDEX(ret) |
+>   		    NCMDQP_DEV_COUNT(i3c->maxdevs - ret) | NCMDQP_TOC;
+>   
+> -	renesas_i3c_wait_xfer(i3c, xfer);
+> +	ret = renesas_i3c_wait_xfer(i3c, xfer);
+> +	if (ret)
+> +		return ret;
+
+Have you tested this? My previous experiments around this code tell me this 
+might not be OK for all the cases.
+
+Thank you,
+Claudiu
+
+>   
+>   	newdevs = GENMASK(i3c->maxdevs - cmd->rx_count - 1, 0);
+>   	newdevs &= ~olddevs;
+> @@ -800,9 +805,7 @@ static int renesas_i3c_send_ccc_cmd(struct i3c_master_controller *m,
+>   		}
+>   	}
+>   
+> -	renesas_i3c_wait_xfer(i3c, xfer);
+> -
+> -	ret = xfer->ret;
+> +	ret = renesas_i3c_wait_xfer(i3c, xfer);
+>   	if (ret)
+>   		ccc->err = I3C_ERROR_M2;
+>   
+> @@ -815,7 +818,7 @@ static int renesas_i3c_i3c_xfers(struct i3c_dev_desc *dev, struct i3c_xfer *i3c_
+>   	struct i3c_master_controller *m = i3c_dev_get_master(dev);
+>   	struct renesas_i3c *i3c = to_renesas_i3c(m);
+>   	struct renesas_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
+> -	int i;
+> +	int i, ret;
+>   
+>   	/* Enable I3C bus. */
+>   	renesas_i3c_bus_enable(m, true);
+> @@ -854,7 +857,9 @@ static int renesas_i3c_i3c_xfers(struct i3c_dev_desc *dev, struct i3c_xfer *i3c_
+>   				renesas_set_bit(i3c->regs, NTIE, NTIE_TDBEIE0);
+>   		}
+>   
+> -		renesas_i3c_wait_xfer(i3c, xfer);
+> +		ret = renesas_i3c_wait_xfer(i3c, xfer);
+> +		if (ret)
+> +			return ret;
+>   	}
+>   
+>   	return 0;
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
