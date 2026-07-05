@@ -4,55 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E423EC43458
-	for <linux-i3c@archiver.kernel.org>; Fri,  3 Jul 2026 11:06:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D042BC43458
+	for <linux-i3c@archiver.kernel.org>; Sun,  5 Jul 2026 21:29:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+AUYf4nVHOjO+A8xjeoRAslCR+7rRB9QvOHcV8MlE3g=; b=yi/cbazT2ecJtP
-	g3UMCpjCkUHoEtK6YvLb8j3qBUnf1tpjJEzVmjjH+ibJi9BIgMli+rvXmFgjQF4hgdw9pO3fEIjow
-	MuSufTpXTigWmKbdY8APm57po6O3XUyeZTboxtsxpJ+5YuFu//0maMQTPqtwbg7+So+gOyPT10Sn2
-	rJhflr5AnmFpi5aigy4zbF+amD0nM6Sgeq1MkWHj12iVKOv7NVQOoNtWwUDdXcRst7f4AROTcf1O7
-	OMs/9dud8th5753HrC/b9ZLfstkINi2rHpZdDSZYfanoi4GqcTXcGP33b+0b0pBv8xZcT1t8wQdby
-	wYk4sct7iVRqt/IA8AJA==;
+	List-Owner; bh=bzBq/x6caiF5IS9aTXxZ2ecMytU1XqqG/k6dMxLCiKU=; b=yxp7yx+41i3V3l
+	XfLtHx4Mh8zOkCz0pEeadxBbfort1T4ShmkSss8ndCWqNHJmP5Km6eI00BoVbllQBBEZmI+WFs2Oa
+	KRTwe2lkefIXoI9OoXEkvhykKLDY20FH1Yl9Qz1Szs11dcCEZTBEpHOw7neKxO5p09wJbKkp+77NJ
+	aSR1iAkYYY1IDejqZcljly4MhWPHtk/sRKURLJ5Xfeg+7Cj0JHCrCiwvh1sS2AerwlivWCjHHwtRx
+	WWrsnEp9FzGNZn0nDxCBZi4+jmn/c6npA1KVgqnofyHcmsmFPI/HJOdLCm5glIeg7GCd+4o6Y/33d
+	CLOiQzLHEcZFR+5EsVoA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfbjF-00000006mTb-2mWs;
-	Fri, 03 Jul 2026 11:06:41 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wgUOr-0000000A20x-2RwJ;
+	Sun, 05 Jul 2026 21:29:17 +0000
+Received: from smtpout-04.galae.net ([185.171.202.116])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wfbjE-00000006mTS-2Pn8
+	id 1wgUOn-0000000A1yC-3BtQ
 	for linux-i3c@lists.infradead.org;
-	Fri, 03 Jul 2026 11:06:40 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id E333341B67;
-	Fri,  3 Jul 2026 11:06:39 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 748421F000E9;
-	Fri,  3 Jul 2026 11:06:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783076799;
-	bh=DSI1frzYQEZ9/cAbNsXxD+2xVyGDPTz5LWKgW9a8/4Y=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=UouzQ2/fRHsHtPOZKD/xEgYaQv6albt8qqj+vI+MYy9pFAAzlM9yf06OYxEa7rL2T
-	 dgRQHAwWdOUdNOWkAhtulb/8NARhzwY6wEAGuVPxR7r6WRcb2/vTXAcVp07IYhzEwL
-	 rEgk8R30bac5JfT2uU7OdlWIjox5cFai9oXh8aosClIY3lyR0epli7LzKZi7J9wmme
-	 CsZZoAO4m2nFyb319YhEvE3zsez8LVYEJIeZT8p/D0qsi/PX2DjxkrY8aY5RvYDgz8
-	 Q5hvWGOIQdgLUpoLNwgREk2ZKi/I5TI8+lZh1uDu00peOIZLeZng2dZVE142H2W0ga
-	 0v6muiACjtnag==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v5 2/5] i3c: master: Report actual GET CCC payload
- length on success
-To: tze.yee.ng@altera.com
-Cc: imx@lists.linux.dev, Frank.Li@kernel.org, linux-i3c@lists.infradead.org, "Alexandre
- Belloni" <alexandre.belloni@bootlin.com>
-In-Reply-To: <b5899827bdcf3f3097ef4cf5dae221cc5305337c.1783074850.git.tze.yee.ng@altera.com>
-References: <cover.1783074850.git.tze.yee.ng@altera.com>
- <b5899827bdcf3f3097ef4cf5dae221cc5305337c.1783074850.git.tze.yee.ng@altera.com>
-Date: Fri, 03 Jul 2026 11:06:38 +0000
-Message-Id: <20260703110639.748421F000E9@smtp.kernel.org>
+	Sun, 05 Jul 2026 21:29:16 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-04.galae.net (Postfix) with ESMTPS id D9B96C8EC43;
+	Sun,  5 Jul 2026 21:29:22 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 08676601A2;
+	Sun,  5 Jul 2026 21:29:10 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id E601A11BB8700;
+	Sun,  5 Jul 2026 23:29:07 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1783286949; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=SuVIfmSrYLDNWcGh++AU8GNwBJmF1eJewpBolZ+OX7o=;
+	b=0P01a7pZPDAc8aH+TB9x9Ny2D72ovmJZK6oOx7js3rVVfwr1R8w1IP2UzKlTtL0K1a8VZS
+	FQC485rBrwfxS3UAyJOCXr1OGxpM6xwocSOP3tFbBkCo9m5vjX5iBklCFkziVd+jZZigw5
+	iia5+KKlNCdrq3a3I5xavDkN66X8Hy2v3CL6rLsISBRWmWB5VjoZ6TsvP2twYt+9LqxQcn
+	DXCUV1w1vwtsKa6R8Wkx5CrI0g0bYFZjDZDA3aPSo8K4dMvd0devH9J3mDNx3CD71KN81e
+	kbs+SvI0LzzpTqtVGm6yXujW7vWuxD+0mFd9kx2cHWsZrfKReFXJ/Ibk5pMxSA==
+Date: Sun, 5 Jul 2026 23:29:07 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Miquel Raynal <miquel.raynal@bootlin.com>, Frank Li <Frank.Li@nxp.com>,
+	Maoyi Xie <maoyixie.tju@gmail.com>
+Cc: Kaixuan Li <kaixuan.li@ntu.edu.sg>, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, stable@vger.kernel.org
+Subject: Re: [PATCH v2] i3c: master: svc: bound IBI payload to the requested
+ max_payload_len
+Message-ID: <178328692976.58266.3370861943512860784.b4-ty@b4>
+References: <178227747353.2931373.15868718612134648277@maoyixie.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <178227747353.2931373.15868718612134648277@maoyixie.com>
+X-Last-TLS-Session-Version: TLSv1.3
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260705_142914_012665_118C3CF3 
+X-CRM114-Status: UNSURE (   8.00  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -64,79 +72,39 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIEFESSBhbmQgQ2FkZW5j
-ZSBJM0MgbWFzdGVyIGRyaXZlcnMgc3Bvb2YgYWN0dWFsX2xlbiwgaGlkaW5nIHNob3J0IHJlYWRz
-IGFuZCBieXBhc3NpbmcgY29yZSB2YWxpZGF0aW9uLgotIFtIaWdoXSBSZW5lc2FzIEkzQyBtYXN0
-ZXIgZHJpdmVyIGxlYXZlcyByeF9jb3VudCBhdCAwIGZvciBzbWFsbCB0cmFuc2ZlcnMsIGJyZWFr
-aW5nIGRldmljZSBlbnVtZXJhdGlvbi4KLS0KCmNvbW1pdCBiYzYzODM2MTM4ZGVlZDI2ZjJhMzMy
-YTBjNWUxOWY0YWMwODhkNGFiCkF1dGhvcjogQWRyaWFuIE5nIEhvIFlpbiA8YWRyaWFuLmhvLnlp
-bi5uZ0BhbHRlcmEuY29tPgoKaTNjOiBtYXN0ZXI6IFJlcG9ydCBhY3R1YWwgR0VUIENDQyBwYXls
-b2FkIGxlbmd0aCBvbiBzdWNjZXNzCiAgICAKU2V0IGRlc3RzW10ucGF5bG9hZC5hY3R1YWxfbGVu
-IG9uIHN1Y2Nlc3NmdWwgR0VUIENDQyB0cmFuc2ZlcnMgaW4gSTNDCm1hc3RlciBkcml2ZXJzIHNv
-IHRoZSBjb3JlIGNhbiBkaXN0aW5ndWlzaCByZXF1ZXN0ZWQgYW5kIHJlY2VpdmVkCmJ1ZmZlciBs
-ZW5ndGhzLiBTd2l0Y2ggY29yZSBHRVQgaGVscGVycyB0byB1c2UgYWN0dWFsX2xlbiBpbnN0ZWFk
-IG9mCmxlbiB3aGVuIGludGVycHJldGluZyBHRVQgQ0NDIHJlc3VsdHMuCgpbIC4uLiBdCgo+IGRp
-ZmYgLS1naXQgYS9kcml2ZXJzL2kzYy9tYXN0ZXIvYWRpLWkzYy1tYXN0ZXIuYyBiL2RyaXZlcnMv
-aTNjL21hc3Rlci9hZGktaTNjLW1hc3Rlci5jCj4gaW5kZXggMDQ3MDgxYzlmMDY0My4uNjQ3MzVi
-NDg4NzI2MSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2kzYy9tYXN0ZXIvYWRpLWkzYy1tYXN0ZXIu
-Ywo+ICsrKyBiL2RyaXZlcnMvaTNjL21hc3Rlci9hZGktaTNjLW1hc3Rlci5jClsgLi4uIF0KPiBA
-QCAtMzYwLDYgKzM2MCw4IEBAIHN0YXRpYyBpbnQgYWRpX2kzY19tYXN0ZXJfc2VuZF9jY2NfY21k
-KHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIgKm0sCj4gIAkJYWRpX2kzY19tYXN0ZXJfdW5x
-dWV1ZV94ZmVyKG1hc3RlciwgeGZlcik7Cj4gIAo+ICAJY21kLT5lcnIgPSBhZGlfaTNjX2NtZF9n
-ZXRfZXJyKCZ4ZmVyLT5jbWRzWzBdKTsKPiArCWlmICgheGZlci0+cmV0ICYmIGNtZC0+cm53KQo+
-ICsJCWNtZC0+ZGVzdHNbMF0ucGF5bG9hZC5hY3R1YWxfbGVuID0gY21kLT5kZXN0c1swXS5wYXls
-b2FkLmxlbjsKCltTZXZlcml0eTogSGlnaF0KRG9lcyB0aGlzIHVuY29uZGl0aW9uYWxseSBzZXQg
-YWN0dWFsX2xlbiB0byB0aGUgcmVxdWVzdGVkIGxlbmd0aCwgZGlzY2FyZGluZwp0aGUgdHJ1ZSBo
-YXJkd2FyZSB0cmFuc2ZlciBzaXplPwoKQnkgYmxpbmRseSBjb3B5aW5nIHRoZSByZXF1ZXN0ZWQg
-bGVuZ3RoIGhlcmUsIGl0IHNlZW1zIHRoaXMgZGVmZWF0cyB0aGUgbmV3IEdFVApDQ0MgdmFsaWRh
-dGlvbiBsb2dpYy4gSWYgYSBkZXZpY2UgcmV0dXJucyAwIGJ5dGVzIG9yIGEgc2hvcnQgcmVhZCwg
-dGhlIGNvcmUKdmFsaWRhdGlvbiBjb3VsZCBmYWxzZWx5IHBhc3MsIHBvdGVudGlhbGx5IGNhdXNp
-bmcgdGhlIGtlcm5lbCB0byBwYXJzZQp1bmluaXRpYWxpemVkIG9yIHplcm8tcGFkZGVkIG1lbW9y
-eSBhcyB2YWxpZCBkZXZpY2UgY2FwYWJpbGl0aWVzLgoKPiAgCj4gIAlyZXR1cm4geGZlci0+cmV0
-Owo+ICB9ClsgLi4uIF0KPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9pM2MvbWFzdGVyL2kzYy1tYXN0
-ZXItY2Rucy5jIGIvZHJpdmVycy9pM2MvbWFzdGVyL2kzYy1tYXN0ZXItY2Rucy5jCj4gaW5kZXgg
-NmQyMjE1OTZlYTM1Ny4uMzY5OThlZTQwNzNkNyAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2kzYy9t
-YXN0ZXIvaTNjLW1hc3Rlci1jZG5zLmMKPiArKysgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvaTNjLW1h
-c3Rlci1jZG5zLmMKWyAuLi4gXQo+IEBAIC03MTQsNiArNzE0LDggQEAgc3RhdGljIGludCBjZG5z
-X2kzY19tYXN0ZXJfc2VuZF9jY2NfY21kKHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIgKm0s
-Cj4gIAo+ICAJcmV0ID0geGZlci0+cmV0Owo+ICAJY21kLT5lcnIgPSBjZG5zX2kzY19jbWRfZ2V0
-X2VycigmeGZlci0+Y21kc1swXSk7Cj4gKwlpZiAoIXJldCAmJiBjbWQtPnJudykKPiArCQljbWQt
-PmRlc3RzWzBdLnBheWxvYWQuYWN0dWFsX2xlbiA9IGNtZC0+ZGVzdHNbMF0ucGF5bG9hZC5sZW47
-CgpbU2V2ZXJpdHk6IEhpZ2hdClNpbWlsYXIgdG8gdGhlIEFESSBkcml2ZXIsIGRvZXMgdGhpcyBi
-eXBhc3MgdGhlIGNvcmUgdmFsaWRhdGlvbiBieQp1bmNvbmRpdGlvbmFsbHkgY29weWluZyB0aGUg
-cmVxdWVzdGVkIGxlbmd0aD8KCklmIGEgc2hvcnQgcmVhZCBvY2N1cnMsIHRoZSBkcml2ZXIgd2ls
-bCBpbmNvcnJlY3RseSByZXBvcnQgYSBmdWxsIHJlYWQgaW5zdGVhZApvZiB0aGUgYWN0dWFsIGhh
-cmR3YXJlIGJ5dGUgY291bnQuCgo+ICAJY2Ruc19pM2NfbWFzdGVyX2ZyZWVfeGZlcih4ZmVyKTsK
-PiAgCj4gIAlyZXR1cm4gcmV0OwpbIC4uLiBdCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaTNjL21h
-c3Rlci9yZW5lc2FzLWkzYy5jIGIvZHJpdmVycy9pM2MvbWFzdGVyL3JlbmVzYXMtaTNjLmMKPiBp
-bmRleCBmMzljNDQ5OTIyY2EyLi5mZWM2MTQ3MDA4NDNmIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMv
-aTNjL21hc3Rlci9yZW5lc2FzLWkzYy5jCj4gKysrIGIvZHJpdmVycy9pM2MvbWFzdGVyL3JlbmVz
-YXMtaTNjLmMKWyAuLi4gXQo+IEBAIC04MDUsNiArODA1LDggQEAgc3RhdGljIGludCByZW5lc2Fz
-X2kzY19zZW5kX2NjY19jbWQoc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlciAqbSwKPiAgCXJl
-dCA9IHhmZXItPnJldDsKPiAgCWlmIChyZXQpCj4gIAkJY2NjLT5lcnIgPSBJM0NfRVJST1JfTTI7
-Cj4gKwllbHNlIGlmIChjY2MtPnJudykKPiArCQljY2MtPmRlc3RzWzBdLnBheWxvYWQuYWN0dWFs
-X2xlbiA9IGNtZC0+cnhfY291bnQ7CgpbU2V2ZXJpdHk6IEhpZ2hdCkRvZXMgdGhpcyBsZWF2ZSBh
-Y3R1YWxfbGVuIGF0IDAgZm9yIHNtYWxsIHRyYW5zZmVycywgYnJlYWtpbmcgZGV2aWNlCmVudW1l
-cmF0aW9uPwoKRm9yIHNtYWxsIEdFVCBDQ0MgcmVhZHMsIGlmIHRoZSByZWFkIGJ1ZmZlciBmdWxs
-IGludGVycnVwdCBkb2Vzbid0CnRyaWdnZXIsIHRoZSB0cmFuc2ZlciBjb21wbGV0ZXMgaW4gcmVu
-ZXNhc19pM2NfcmVzcF9pc3IoKSB3aGVyZSBpdCBkcmFpbnMgdGhlCnJlbWFpbmluZyBieXRlcyBm
-cm9tIHRoZSBGSUZPIGJ1dCBkb2Vzbid0IGFjY3VtdWxhdGUgYnl0ZXNfcmVtYWluaW5nIGludG8K
-Y21kLT5yeF9jb3VudDoKCmRyaXZlcnMvaTNjL21hc3Rlci9yZW5lc2FzLWkzYy5jOnJlbmVzYXNf
-aTNjX3Jlc3BfaXNyKCkgewogICAgLi4uCiAgICBieXRlc19yZW1haW5pbmcgPSBkYXRhX2xlbiAt
-IGNtZC0+cnhfY291bnQ7CiAgICBpM2NfcmVhZGxfZmlmbyhpM2MtPnJlZ3MgKyBOVERUQlAwLCBj
-bWQtPnJ4X2J1ZiwgYnl0ZXNfcmVtYWluaW5nKTsKICAgIC4uLgp9CgpTaW5jZSBjbWQtPnJ4X2Nv
-dW50IHJlbWFpbnMgMCwgd29uJ3QgdGhpcyBwcm9wYWdhdGUgYW4gYWN0dWFsX2xlbiBvZiAwIHRv
-IHRoZQpjb3JlLCBjYXVzaW5nIHRoZSBjb3JlIHZhbGlkYXRpb24gdG8gcmVqZWN0IHRoZSB0cmFu
-c2ZlciB3aXRoIC1FSU8/Cgo+ICAKPiAgCXJldHVybiByZXQ7Cj4gIH0KCi0tIApTYXNoaWtvIEFJ
-IHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvY292ZXIuMTc4MzA3NDg1
-MC5naXQudHplLnllZS5uZ0BhbHRlcmEuY29tP3BhcnQ9MgoKLS0gCmxpbnV4LWkzYyBtYWlsaW5n
-IGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1pM2MK
+On Wed, 24 Jun 2026 13:04:33 +0800, Maoyi Xie wrote:
+> svc_i3c_master_handle_ibi() reads the IBI payload from the RX FIFO into
+> the IBI slot. The loop is bounded by the hardware FIFO size
+> (SVC_I3C_FIFO_SIZE), not by the slot size.
+> 
+> slot->data points into the IBI pool, which i3c_generic_ibi_alloc_pool()
+> sizes at max_payload_len per slot. svc_i3c_master_request_ibi() only
+> rejects a max_payload_len larger than SVC_I3C_FIFO_SIZE, so a driver can
+> request a smaller one. mctp-i3c requests 1. Each readsb() then copies the
+> controller RXCOUNT bytes (up to 31) with no check against the slot size.
+> A device that sends more bytes than the slot holds writes past
+> slot->data, an out-of-bounds write into the IBI pool.
+> 
+> [...]
+
+Applied, thanks!
+
+[1/1] i3c: master: svc: bound IBI payload to the requested max_payload_len
+      https://git.kernel.org/i3c/c/bcd0e9acbaad
+
+Best regards,
+
+-- 
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
