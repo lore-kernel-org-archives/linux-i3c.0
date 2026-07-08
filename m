@@ -4,55 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6012CC43458
-	for <linux-i3c@archiver.kernel.org>; Wed,  8 Jul 2026 07:18:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 90862C43602
+	for <linux-i3c@archiver.kernel.org>; Wed,  8 Jul 2026 07:18:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2C1yGjn5+Iuw6C3lqnY2s3ADzJAVlG6NF6EpVeRd9PY=; b=z2pGdntGpSnUF/
-	SRSH6WJ41Oyyx2CWZ2g8buOUyPtWF7stuJFYfhfekCP0igySQSAKjxVh9e+ju9GraLZPYvqjuzjpV
-	nHGitrxklK9GC4VHO8B8jwT6Mz+5qunsLzMBVwwnSYyQ8XhSPWwL2hDmnXtHEIwibggcasvOnFxRX
-	cnyfO9XSsfa7Rdztxi1wr38fAfuz0y3zPHx395NKVAcGEGgdRQWnvNu7ZXo/KUue1ycYZHo/gdzBS
-	XqRDfGxZ/2TCnuJAOgUkM3uyWI2jVyparGQ8/Nfva2H1hzCwzk7mE0+11fbwwitJkKVYAHAUhA9fw
-	CUuYk+37MtalLLpl4Cuw==;
+	List-Owner; bh=0s0PfWL9v9R9mRqUBX7nxjH3vhVJdSWI/Zb5dt7XMIQ=; b=VBKsPDpFoclQL5
+	4hZWsU3mDyDPTM7STAjy75AaM5cSazwK0kVxZ5p623x7GIGeWeNfixgiBo/yk/1TixqcaiTxsGW0F
+	fDO5VWasIdVgvF+J6ZHbPaYYk1xZ1xIzt8VrCD9DHZDa1unw46D/zOho7orTYrPNlzcxP+kuawfiJ
+	pPw7MQMn2S/ZG1x1DXxCSruJahZ+DhLDOOwOIWU7zFHC4tOLPZRyLNAxuj46GzpYTcB3nQIr+lveA
+	hTX6vclzuETcOvIMXORHItQS826qqpCT/26uwK3xpIUDUxfxLunOPbkI6GX4sC9WHM6q8O6ypePw+
+	hdRx9bfgTK3EB/UqXsUw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whMXn-0000000GTuT-0YWs;
-	Wed, 08 Jul 2026 07:18:07 +0000
+	id 1whMXo-0000000GTvO-0utG;
+	Wed, 08 Jul 2026 07:18:08 +0000
 Received: from mail-centralusazon11011009.outbound.protection.outlook.com ([52.101.62.9] helo=DM5PR21CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whMXj-0000000GTqb-14Xu
+	id 1whMXl-0000000GTqb-0IGV
 	for linux-i3c@lists.infradead.org;
-	Wed, 08 Jul 2026 07:18:04 +0000
+	Wed, 08 Jul 2026 07:18:07 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=jLFk6EobJ5nrggpwXVrTKQteUOjx0zaWd14hjGpIck4nxdr9S7jodp5q+7/4ltYmnAN6DeLqb8ah4zyqPTTb+Luc1HQZuHDzZH6RFvV7JH8ijxIpzxrkqn43m0HO3LGfHlqwgyIUL+GaoebnnMijhtufgwDf4bxF522toZneYv9MLJLioZ9/IOXqbc0PTE45IZr3Yd+So5Ww3XARWlVUls8dWkdKa4EDLv5ZciYgCENzAsCCpiIhuiuPQUNR2Eokk9yuSbwN8E8f+KQGL4TTEXHxUHJn2mHuAXXqQaaJa6g47h8xAq61bom6mMUlSY9FpVBNTBeWcDSobljgfMHiNQ==
+ b=H7de2kT0lTfYrCLTr2lMuQXWoFwyPv3/+cQnfIXIQyICHEo7PP+jUjz1xf+oWjFy264zdW7qXsyuGC0KzMscDn0bWNSSSfSoVQqxByeoAOdkCp9fSwDEDIS1dLtSMx+SWW6++AngMpc/kAc5jarE/a/qAcnn2te+LXCjsyDzIXCPyj0E9bqnz9zTRzfJys696fJ6M/YnptU3yMz20eO19jb2R5yoswlC59um8CiM/l/PwuA8KBZAcYJlPMlTy8BlknBdnGeS9S0zQivTGeA/qupt1cDa8EJf/+lhnn/XVrmRc9uZZPZxDWPP+48stMFrYOox9DPa56JphtfylD0RuA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=2jJiRaG2aIWKJpYfH7Y2iLmlKDY97gzbx/wJn9OgKd8=;
- b=JaDGF7PEgorrTISDJxD7+q1E66ax6ptoh9XXTS1EOtzAMfHQKndacr5d6bHV2wL54IwyaOq6MGQzaxSLEf7Blywa22BxQ8YbUOHAHQFM5T/JXXJOFAg+0ZUgkj5dIr+9KM+Gs3Wf9vAeqi2rA+y6tY3GOGt6FAzUaFyGIJR/uS2PuG7Wj8oqWld9y9MQYYu+h/VmipiFkDUu1sO6B3UQlIT9z9ywwNQ5imSv3/czF3vzXwqa6MHZZcnWhnhwkernlhgh+qsH0G9NnuxwRt6zBw24Ht9kGMhdkCQrCv1dbovQjs74U6zSlktpNhxtb3yEi+SmrVQdpsHSZMKwoiphTQ==
+ bh=v29QzvaliuZXfJVwAgQqkSX2B1Xc9FGXZNdhm8wX9L8=;
+ b=nNvqkWIiWe8oUrg7cGdSr+didKJX5m0ppQwJ/ZMxdgN70lSr9/LDZSi87bwKJfTZxubvfU1Ps47Vl9WE/kRuSvjtM0T7TWQ1W7WNO/Bamu5BB1PagWGrsvD0EF7QAEujSepFZ8yJPOF6pZS4OiHzvMreTZzS/iuYgDFoGGd+QkRa64tXvCP0SkewKQD8zcRxLew5qRrX20myuvzXjGkAS9tejARUWAFAU/srZmah1a+YyDNUSDOivHucWYZ+F3Rn9QfwXxwkspQlXuIifu+mamOn7wB1Ib9XRkfNsRbRu3Vi8pH2R/ALC6ocJxXPy0WjYIgv699XgjgbCizklCa/rA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=altera.com; dmarc=pass action=none header.from=altera.com;
  dkim=pass header.d=altera.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=altera.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2jJiRaG2aIWKJpYfH7Y2iLmlKDY97gzbx/wJn9OgKd8=;
- b=ooIe582jH5ZOD51lqJLGtSjEkcJst1qeOuKMVSuIiPyC709JEn8ho4Q/C3ZIcv8kC5hT9i4zE8VhU5nnMsvPq8ngXTE7g/f7ojJhOmAyu5idd0JSpYtm7qgIL5I/pwDDulkkrDA2td2n7mEJd9TV4rytrJBd0f6T7FlhSBctFyUEYvvXZkZKEoOKhNACEvOWMtXK0MbUqw4I6/0exV8jq+y2EvgdaJ4M65duiWf1vEYyVQ5jqWGnCeVsv+8jz+XIooTjzFbnIsQZvOHMmiS0DB6T1sdf6JVYLgfKmdZmxRsc9x/yZVh3cNBJxa0pXfunJTkEa4jFZYtUM1MYzQy8aA==
+ bh=v29QzvaliuZXfJVwAgQqkSX2B1Xc9FGXZNdhm8wX9L8=;
+ b=UZyaL1YJRZh6+i+XbecqiYHFGARBAIG1ICPv9fj00u6pRR50RxsDt2Y72m9t9k3pBnouBCATTO2jNTw18suafWqfk692uUux2YqcbpGHQR8fMvZl/xd1PD+h6C4nkefHotJEyV8w/aLrbjnKxJoV/DHNVVHNwfrYLllff2JvuJxYXLAf/26KTCwKDAJoZlJGCz0ENJdFD0wfWpsfcmhNQi8nUymKEOK6ve39i/6zxhLGrj0UhH+DxIaL9qAATnGoH5emkV5MmhPAoo+ULZqKTIQ+epKjXpa7hDZbH+GwEXumWhZSAXVuwh3BCgleLcXxT8DCy+pM8EPQ1NzH84EbUQ==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=altera.com;
 Received: from SJ0PR03MB5950.namprd03.prod.outlook.com (2603:10b6:a03:2d3::20)
  by BY5PR03MB5061.namprd03.prod.outlook.com (2603:10b6:a03:1f1::16) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.181.14; Wed, 8 Jul
- 2026 07:17:50 +0000
+ 2026 07:17:52 +0000
 Received: from SJ0PR03MB5950.namprd03.prod.outlook.com
  ([fe80::53a0:bf93:6b6b:de01]) by SJ0PR03MB5950.namprd03.prod.outlook.com
  ([fe80::53a0:bf93:6b6b:de01%5]) with mapi id 15.21.0181.012; Wed, 8 Jul 2026
- 07:17:50 +0000
+ 07:17:52 +0000
 From: tze.yee.ng@altera.com
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Frank Li <Frank.Li@nxp.com>,
@@ -70,9 +70,9 @@ To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Adrian Hunter <adrian.hunter@intel.com>,
 	Jarkko Nikula <jarkko.nikula@linux.intel.com>,
 	imx@lists.linux.dev
-Subject: [PATCH v6 3/5] i3c: master: dw: Map CCC hardware errors to I3C M0/M2
-Date: Wed,  8 Jul 2026 00:17:39 -0700
-Message-ID: <05994f0479041f3d8d199babe2a4535d6dcba3bf.1783493868.git.tze.yee.ng@altera.com>
+Subject: [PATCH v6 5/5] i3c: master: Add optional_bytes for variable-length GET CCC validation
+Date: Wed,  8 Jul 2026 00:17:41 -0700
+Message-ID: <2e07dc944eab1c4358be1da87fa5000e711ac8bd.1783493868.git.tze.yee.ng@altera.com>
 X-Mailer: git-send-email 2.43.7
 In-Reply-To: <cover.1783493867.git.tze.yee.ng@altera.com>
 References: <cover.1783493867.git.tze.yee.ng@altera.com>
@@ -82,58 +82,58 @@ X-ClientProxiedBy: SJ0PR13CA0154.namprd13.prod.outlook.com
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: SJ0PR03MB5950:EE_|BY5PR03MB5061:EE_
-X-MS-Office365-Filtering-Correlation-Id: 306d766e-4a25-43fc-29b4-08dedcc104ce
+X-MS-Office365-Filtering-Correlation-Id: 27b56f0c-64c3-4e3d-ee03-08dedcc105d5
 X-MS-Exchange-AtpMessageProperties: SA
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|1800799024|23010399003|366016|376014|921020|22082099003|18002099003|56012099006|55112099003|11063799006;
-X-Microsoft-Antispam-Message-Info: lDMS0QMFK4cLe33ihJaYJrygUpMi1VtGMycdnc9o8KlW5Jjcb4VutNiY8m08RuFNGsNc3OXQ2hSe3n4AQtFnCiKWOZVVfADkjFMEmH3TgL/+8QrzxZRL7Uf0uy2KXT3zQDavoqH/PyOMQitpGsN6uegPZhzqbTr3nx14d7G8Smst7KjQy4VZjzaSI7CQio3AHj/NDV/YvRLYm14MVTrwndjuI/80K/FnW9DGxBamJkduyA6Ho4AMsZ2ynG0jMbodU/Jw/1Qp1RzPxom5VS/JVFFUHOI+kmQwqpWMB9WHTnvm7I/VhTQQHgG51iQTgKiE95unzZWv4waCtzTov7T8a/n5HgQ45ZUkEYVKOQEcC3sozZYqTwI/gX6dxlmvO67W6HKw856Od0jSCAMIwV0NNa0/TLcpAp8D4y5jOfUL55Lwa/RZxarAqcjNa2SE/0kLSVvPNSdk5NQ1oIlgdOcOzqtHVW/2IUakZxMjZZ6dOvzYpefFMv5S23lA97Rkzwb4K+QJmkeXKlqiyQBce9qpEL8cjp5NU2VJk54Df9DSdsMrCzogZJzngaDx8+LFAD6VqZZM7vPmzUDvJ2LCj86oRv2m20DBUdAGeT1EK7EQ6RP06UBKLukGmjUSynnmaEiJZjeWdWWIOtrZJ093siGQe9UlE8LrJs3Lzn0MXIXalkEvVN5HDIFFV6jLL6nRRhLAuiF2B6laCljUQNQm3DKeQw==
+X-Microsoft-Antispam-Message-Info: 0RMB5rX6zPIRWC4PNEsUQIImC+Mc7MeyKlqjGSV3ktW0iiPpKGRF9hKxgTEvy9p/upDSfJ8WYUXWXMNrLX1wF+ct7MQ3hWeIjqlyXOr/McRBVV1w0tSjNiW6EQ4fv14IYun1GCOizBVKLgtTErcVpmFlId564IHpfCFt7LXEXw/dWlp2BReVJD8bFQzw0ohcRZcaErCtvADoiRW0/hLEWvlCpYJ90O1jdU18wX5YLtWAng3ahanYaBMJaUWKItYyhmpdtJ+F1gIfFmuFxJNDjY/+3E4daoxIEkWqFcxUypvOMqEBNGn07b8Xp6JupW3cCIEpTCHasth9nIRuVm/TRouwGj+H/kpgZu59/mjbFO2a9uJpWex/4+qefZsWCExxvo7J2XsOwMnRb9QeuuVhbzRcdXeYvP0MSpmHXboBxU5q7gnyw6Xm65TELM4GADZp/pbW/AejW+4ZvXS87XW/w/2jczvkX39uDya/wF+o80/iszkFwsKsEpe9WlunfT+j4Mnr8mPQtLMMXWYFEk1dsdYHwhkYuyjL5ke+Nhn+XNF5SC+igFpfqI9pDiJHHaBqOOYPQZowOczBsfs8mPi5rjSr30wFn4J6tx43Nnn2veOhq3p0TaqNyiuouWJnD1DT1P7e8E+AN2HJUmSKTPbUQpDTLzArrGsZQ1KfrRdUqkachC8i9wel9pkqRsUmk7YyziKXJukAobqSjrqB5wn7rA==
 X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SJ0PR03MB5950.namprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(1800799024)(23010399003)(366016)(376014)(921020)(22082099003)(18002099003)(56012099006)(55112099003)(11063799006);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?HAYN0YPDqSK4ciwZlbnEyvNMu+Ow8vDWvwcEC2XqyhlTUlEiTMSxcv2Qy0lL?=
- =?us-ascii?Q?9Ytrfqs1lTDr0+cBsz3BtlCJ7+7d77jB6X2xLjuSQXUt9ePqesieY7IGoSQQ?=
- =?us-ascii?Q?59Pm2FEBuIFXlF3uUmUfAGAXvfIEAg33OyDmogXsnpSTivWLrcJW7VxVhHFy?=
- =?us-ascii?Q?8H7XqJgrMZQqB3JakqFtPtbPrGYbB/PV9boTocNF+YzRtafnktln+a9iT7ic?=
- =?us-ascii?Q?inyafzwdVzBtnAjHogvEJl+ytIXxFFGK0dtsDjO0QIh7RR4GtxSptglV2fLZ?=
- =?us-ascii?Q?nX6499OoU9s7649zBXfNlpbkAVlT3IHmqiuOB/xsAbE/wWze6djhlPMEpOMU?=
- =?us-ascii?Q?nO5K8acRQGN4TrTHgQ4LjBBud1qfLGHisewNSB0X1DdN+QmHcagr7wdHWspj?=
- =?us-ascii?Q?7B6zXVHHijRRwFBoUOYsgO1o5IYEy1kXQsbltYhEmQ4JIJG1Aewwq8REU7tO?=
- =?us-ascii?Q?JhPB859ZmO6GzBYLAI4LkBfOaEh9u8+LnpKCkbBI3eBeGDIS2oj1B/aZL3O7?=
- =?us-ascii?Q?Qp6QOs4EgaKYh1RfylLHSEkhAMUsczoBa3as34DAEu/pdZ1++SlGEYdVgM0t?=
- =?us-ascii?Q?pxgz6oYlVToSuUniSoc1oHP05qW9PvmkPLipYYa60xjsAsTgC8F1+NyBf4ne?=
- =?us-ascii?Q?AzJSyWoCL23qlmzHBwoM8bqpxb2LszT0GBVvRtkyHIFE6Xq2g5a0lfFP90hk?=
- =?us-ascii?Q?RreedhLC09OB9zFTwsELQlVqPDycrX3rorHAcg8nHM7s73gCs8dCMbAMrG/u?=
- =?us-ascii?Q?8u2S4QEjL1VL49wzzTVNMWMVz2LPQBT2b5Y5crxymu1lF19QRFLsdS7lVKBQ?=
- =?us-ascii?Q?E5aFKMAdQ02G5Et9O902OHlJlQ8KZ/3i+n8MflcF2orJi1GH37+lRbOgfyFF?=
- =?us-ascii?Q?I8FO/RG7PnY3fY1/iS94VQBfBkH8iNHyzou4U9GTgHr8HyzNOleFZ5cCUtBf?=
- =?us-ascii?Q?AL0XszAok5zfv8nFZLa90NE6TUVC9bSS+aIrhAljsG2+pXFOYmxzQ162SkWQ?=
- =?us-ascii?Q?RQpvXzavrXxOkYAE6mJfqdfVR+nZ2mI2BWyl5D3n1DOhzIImxzsKzVDfP0np?=
- =?us-ascii?Q?f2h2tjxJeSzBaEPOS5LC+TfqIdJWUH7g9UW+yOLt0J07J2KYMyEFEwwO9cHz?=
- =?us-ascii?Q?fmVwAaXX9FDZuAglp6V2YbW4bPG9JcjmFf4vmBedug687h54YRsmwFS/m7PS?=
- =?us-ascii?Q?F6VxLR1ZJm37nmGxfi9h/YfVu9pfKPbZqWl73gvTp3P4TnmQ/ON6eTyTgsAF?=
- =?us-ascii?Q?keOZG0dzTJ1BJO3MNXRitVZ0G9te+mDXGDEYdK62zJEfNuF5XyoRhqO5JSBm?=
- =?us-ascii?Q?18oNofdYpIhrPlD4/1i9zpywSBbbWkF8nyHgnm0IrWBZt6KG2Uo+w4nzkEWo?=
- =?us-ascii?Q?38YRzmeBYV4NYu/Cfg9obgDfbcUybKA63CT+TMJw1QRBFTjn1JGuqHnvVVS3?=
- =?us-ascii?Q?3l4FxdYTgoS9NW1zLPASuUAFoqTnSXV7vo0qlKdEP63fiz7gelRCWYOYqkK5?=
- =?us-ascii?Q?kt7b8pg28DEkmxfW5J3VJoMJcN74Vu4swhhC7mtEwXI257ggH3CfXorjRM/X?=
- =?us-ascii?Q?sf1oVQHH+806scZCpwVMTmZOlh4WW+n96dJmvjrpwjN8A1e5ZFefM2WdRvON?=
- =?us-ascii?Q?KnVnWK750rn8KE7seDVQydprAYQanAZFi5rHXvpa2EsYm9tXs7gbuAcA3Re6?=
- =?us-ascii?Q?BSRTfaft2/2iNemIbgiyORvh4dutgDpdOB18vt1HYaWWZf3XpbuVTBvk1XVG?=
- =?us-ascii?Q?5nSsi8pdDQ=3D=3D?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?YuX5H1GBORCyl1X6GeAkHjT1pGFGELpRT7NeM8tYvu3fZbMvLiQmB/kl5Gr5?=
+ =?us-ascii?Q?1SNPzFPoq/qH+wObtbL3FXWjDX6InYHqk5VbNCdZSW/2QtWxq/dwyGu96UFK?=
+ =?us-ascii?Q?0eFTp/q/IUJ/7wqCnbXlD70PDa0Wc4QwSLsrfDeZyB4fMpMXuQgVICEv9sIi?=
+ =?us-ascii?Q?6jf1gVimP92LeEcAZBj/7ijzBRhshOQWJPjFPK7v3CT8grnKPFHaaFQrJ+cX?=
+ =?us-ascii?Q?Y3+zCIuEU9RTT/y2ofyi34VFBOMirbeZ1aQ549os0ZpCIPx2kbP2QIGHmuL3?=
+ =?us-ascii?Q?lmG+IyM3xpHtChvTxFcoZRKhQ7lSXfCScaj74xkUs5dAFvhftvSiMtmvrdEJ?=
+ =?us-ascii?Q?opPxKyz15syhGsQELG5wj3afxN+VNmmtL3RUI5ksXNa7D2FvqlYXgTafbO5q?=
+ =?us-ascii?Q?Bn9IHzOteGyrddFJJDvvedcsQxHKuFEbKvVrfZcx62XfTiWE5MGSKwCh6I3t?=
+ =?us-ascii?Q?TpSN6soqT4/7mJyQOFXnr4Xhy0uaULY+mn8SFuIdVvxGRBdMXzTEOgjdU3Hr?=
+ =?us-ascii?Q?VCV/xgumc0CN0r3CPFxUDnKsDlZUdHbrQ+wycukHfg4ax8CPsqLazAanNzTO?=
+ =?us-ascii?Q?MkigabFrqfBeujnuZMdI3udrs4mLhuLHbUx8j3uBJydtjE3WOdslr3aWacc9?=
+ =?us-ascii?Q?AESX/W5LlzDvoFVqNJftXTxg6MktjSnpFAgH5V7JiIi9uUrDBbExbpEg3sWE?=
+ =?us-ascii?Q?aAcTufTS0yFQQ09WETai93/0/w6eVXZDhARzds2DE7EVntK1molgI62hOT/A?=
+ =?us-ascii?Q?ec7fTyuOoy97PdNVJPBK014ZNCpO+LbLz8gn/JTx4vgifP3fVQ66mth54FiB?=
+ =?us-ascii?Q?+IweJCsOwLaZTAt6YUPfzu/qT5mnxzX1LiG36la+FeiTV1Wvm1YItYsFm1h4?=
+ =?us-ascii?Q?kFaW+w/TTQsIOtQlHUBHP9jVzp6azpgwl+ShQJW2P/O1ywK8qXAQYib+EAHt?=
+ =?us-ascii?Q?QjeoSHcHob469jMGCdYKq1+iXBj1UzwzhQyf2ZofKn+Gkn8kS6gYMIZYRozQ?=
+ =?us-ascii?Q?ulOMURCdwMk32/9xddUB+yJy3iPAyG4YPHHJDaomqjqcmHIHD9DxHbmjkAqV?=
+ =?us-ascii?Q?MlkuWF/Qdo/Tr4ivFroyrG/IQbRwUPr5uJ+6Z+B0Vo9+/6j+nAL9BhzkwTf0?=
+ =?us-ascii?Q?NyKUdvs4KB9Vq38wNIXTZYYTNkSY2F2HDgDo75fO/tnXA6A/FoUOEch2s5rG?=
+ =?us-ascii?Q?vHCORaF7iRuwOy1DYWgPF090y5T/cREoBOtjjhCBgI+rSj+ydCJGJKVVi7Z2?=
+ =?us-ascii?Q?1mSyi5iAjIWMq6yzE32H1bnVRK8KlmM/zIX7Ttl0GHZ0RjbWO9PjYto52mGg?=
+ =?us-ascii?Q?6SPm5R+rUDY0aADW3iU0pe/cKFP1jvxDcPEatytBoXeCpoUoNquHhkN+pfJu?=
+ =?us-ascii?Q?sirl5dNfcrzWwb8L0PFLwOfRmFH5j4aNmotrWlKdlfObjBWgw6ci3YWOPSAI?=
+ =?us-ascii?Q?vexR2bzXkULspQpZUfUwET5xveCUKcsTsDruk1bT/G3E7GipQNxSQkyPqMgT?=
+ =?us-ascii?Q?OLO/JwrZ4M+TL85WrwMmgP6UbfMMrzPFafuuz2nP34SeRj/bC9+aZusNGRRG?=
+ =?us-ascii?Q?KTVRIMAMi45Wtr1RV1uVe+dcXT+vn2Mo0n99n/hEAgvMg3oTqGUUZufYFQ89?=
+ =?us-ascii?Q?KNywRgFtbS92hvpToDYtlqHk2XDPhv99updRPn0QmyiqdsesC1FpAi2Rnogm?=
+ =?us-ascii?Q?9NthNumOKhHVK8zcLEvo2Bn2va0rf5qCleOgORtU63LuchSSKHUq7668XCtm?=
+ =?us-ascii?Q?x/BAMjxd9w=3D=3D?=
 X-OriginatorOrg: altera.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 306d766e-4a25-43fc-29b4-08dedcc104ce
+X-MS-Exchange-CrossTenant-Network-Message-Id: 27b56f0c-64c3-4e3d-ee03-08dedcc105d5
 X-MS-Exchange-CrossTenant-AuthSource: SJ0PR03MB5950.namprd03.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Jul 2026 07:17:50.2522
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Jul 2026 07:17:51.9219
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: fbd72e03-d4a5-4110-adce-614d51f2077a
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 9HHi1HVbF+x+TZbSrI5aSuHW/bkPaXEp3ROW1ezZoMqKYpvyfu0eTodG5SNThSfifsf8WRgkZUlLz/UvBGN3pg==
+X-MS-Exchange-CrossTenant-UserPrincipalName: af7/rvYul3rFZExr+KrB1sAKZGxT763lvjUmM11y9LJSC0k+CRSvZb99PpHGyhiSOuLz0iW9kfnz3AC9h4lItQ==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR03MB5061
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260708_001803_296048_BA56A81B 
-X-CRM114-Status: GOOD (  12.52  )
+X-CRM114-CacheID: sfid-20260708_001805_238859_B4A1EC5E 
+X-CRM114-Status: GOOD (  19.77  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -152,107 +152,115 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 From: Adrian Ng Ho Yin <adrian.ho.yin.ng@altera.com>
 
-Map DesignWare I3C master CCC hardware errors to I3C M0/M2 error codes.
-I3C_ERROR_M2 is reported only for broadcast address-header NACK
-(RESPONSE_ERROR_IBA_NACK). Target address NACK remains -EIO.
+Add optional_bytes to struct i3c_ccc_cmd_payload so callers describe
+variable-length GET CCC responses. GETMRL and GETMXDS set optional_bytes
+at the call site. Extend i3c_ccc_validate_payload_len() to honour it.
 
 Signed-off-by: Adrian Ng Ho Yin <adrian.ho.yin.ng@altera.com>
 Signed-off-by: Tze Yee Ng <tze.yee.ng@altera.com>
-Reviewed-by: Alexandre Mergnat <amergnat@baylibre.com>
 ---
-Changes in v6:
-- Fix dw_i3c_ccc_set() to use dw_i3c_ccc_map_err() so SET CCCs get the
-  same M0/M2 mapping as GET.
-
 Changes in v5:
-- Unchanged from v4 patch 2/3.
-- Add Reviewed-by: Alexandre Mergnat <amergnat@baylibre.com>.
+- Split from v4 patch 3/3: optional_bytes and variable-length GET rules only.
+- Simplify validation: drop redundant exact-length check when
+  optional_bytes == 0 (per review).
+- Clarify GETMXDS fallback: with optional_bytes = 3, a 2-byte success on
+  the first attempt no longer needs the fallback; it remains for when the
+  5-byte request fails rather than short-reading.
 ---
- drivers/i3c/master/dw-i3c-master.c | 28 +++++++++++++++++++++++-----
- 1 file changed, 23 insertions(+), 5 deletions(-)
+ drivers/i3c/master.c    | 29 +++++++++++++++++++++++------
+ include/linux/i3c/ccc.h |  2 ++
+ 2 files changed, 25 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index 6998ffd15f5f..c70f6876bd38 100644
---- a/drivers/i3c/master/dw-i3c-master.c
-+++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -493,6 +493,7 @@ static void dw_i3c_master_end_xfer_locked(struct dw_i3c_master *master, u32 isr)
- 			break;
- 		case RESPONSE_ERROR_PARITY:
- 		case RESPONSE_ERROR_IBA_NACK:
-+		case RESPONSE_ERROR_ADDRESS_NACK:
- 		case RESPONSE_ERROR_TRANSF_ABORT:
- 		case RESPONSE_ERROR_CRC:
- 		case RESPONSE_ERROR_FRAME:
-@@ -502,7 +503,6 @@ static void dw_i3c_master_end_xfer_locked(struct dw_i3c_master *master, u32 isr)
- 			ret = -ENOSPC;
- 			break;
- 		case RESPONSE_ERROR_I2C_W_NACK_ERR:
--		case RESPONSE_ERROR_ADDRESS_NACK:
- 		default:
- 			ret = -EINVAL;
- 			break;
-@@ -708,12 +708,29 @@ static void dw_i3c_master_bus_cleanup(struct i3c_master_controller *m)
- 	dw_i3c_master_disable(master);
- }
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 3b6d3ecd9d12..12ca7c929ee5 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -902,6 +902,7 @@ static void *i3c_ccc_cmd_dest_init(struct i3c_ccc_cmd_dest *dest, u8 addr,
+ 	dest->addr = addr;
+ 	dest->payload.len = payloadlen;
+ 	dest->payload.actual_len = 0;
++	dest->payload.optional_bytes = 0;
+ 	if (payloadlen)
+ 		dest->payload.data = kzalloc(payloadlen, GFP_KERNEL);
+ 	else
+@@ -944,11 +945,19 @@ static int i3c_ccc_validate_payload_len(struct i3c_ccc_cmd *cmd)
  
-+static enum i3c_error_code dw_i3c_ccc_map_err(u8 dw_err)
-+{
-+	switch (dw_err) {
-+	case RESPONSE_ERROR_IBA_NACK:
-+		return I3C_ERROR_M2;
-+	case RESPONSE_ERROR_CRC:
-+	case RESPONSE_ERROR_PARITY:
-+	case RESPONSE_ERROR_FRAME:
-+	case RESPONSE_ERROR_TRANSF_ABORT:
-+		return I3C_ERROR_M0;
-+	default:
-+		return I3C_ERROR_UNKNOWN;
-+	}
-+}
+ 	for (i = 0; i < cmd->ndests; i++) {
+ 		struct i3c_ccc_cmd_payload *p = &cmd->dests[i].payload;
++		u16 min_len;
 +
- static int dw_i3c_ccc_set(struct dw_i3c_master *master,
- 			  struct i3c_ccc_cmd *ccc)
- {
- 	struct dw_i3c_cmd *cmd;
- 	int ret, pos = 0;
++		if (p->optional_bytes > p->len)
++			return -EINVAL;
  
-+	ccc->err = I3C_ERROR_UNKNOWN;
+ 		if (p->actual_len > p->len)
+ 			return -EIO;
+ 
+-		if (p->len && p->actual_len != p->len)
++		if (!p->len)
++			continue;
 +
- 	if (ccc->id & I3C_CCC_DIRECT) {
- 		pos = dw_i3c_master_get_addr_pos(master, ccc->dests[0].addr);
- 		if (pos < 0)
-@@ -742,8 +759,8 @@ static int dw_i3c_ccc_set(struct dw_i3c_master *master,
- 		dw_i3c_master_dequeue_xfer(master, xfer);
++		min_len = p->len - p->optional_bytes;
++		if (p->actual_len < min_len)
+ 			return -EIO;
+ 	}
  
- 	ret = xfer->ret;
--	if (xfer->cmds[0].error == RESPONSE_ERROR_IBA_NACK)
--		ccc->err = I3C_ERROR_M2;
-+	cmd = &xfer->cmds[0];
-+	ccc->err = dw_i3c_ccc_map_err(cmd->error);
+@@ -1342,10 +1351,14 @@ static int i3c_master_getmrl_locked(struct i3c_master_controller *master,
+ 		return -ENOMEM;
  
- 	return ret;
- }
-@@ -753,6 +770,8 @@ static int dw_i3c_ccc_get(struct dw_i3c_master *master, struct i3c_ccc_cmd *ccc)
- 	struct dw_i3c_cmd *cmd;
- 	int ret, pos;
+ 	/*
+-	 * When the device does not have IBI payload GETMRL only returns 2
+-	 * bytes of data.
++	 * GETMRL returns 2 bytes (max read length) when the device does not
++	 * advertise IBI payload, or 2 or 3 bytes when it does (the optional
++	 * third byte is max IBI length). Use optional_bytes to allow either
++	 * length when IBI payload is supported.
+ 	 */
+-	if (!(info->bcr & I3C_BCR_IBI_PAYLOAD))
++	if (info->bcr & I3C_BCR_IBI_PAYLOAD)
++		dest.payload.optional_bytes = 1;
++	else
+ 		dest.payload.len -= 1;
  
-+	ccc->err = I3C_ERROR_UNKNOWN;
+ 	i3c_ccc_cmd_init(&cmd, true, I3C_CCC_GETMRL, &dest, 1);
+@@ -1414,14 +1427,18 @@ static int i3c_master_getmxds_locked(struct i3c_master_controller *master,
+ 	if (!getmaxds)
+ 		return -ENOMEM;
+ 
++	dest.payload.optional_bytes = 3;
 +
- 	pos = dw_i3c_master_get_addr_pos(master, ccc->dests[0].addr);
- 	if (pos < 0)
- 		return pos;
-@@ -781,10 +800,9 @@ static int dw_i3c_ccc_get(struct dw_i3c_master *master, struct i3c_ccc_cmd *ccc)
+ 	i3c_ccc_cmd_init(&cmd, true, I3C_CCC_GETMXDS, &dest, 1);
+ 	ret = i3c_master_send_ccc_cmd_locked(master, &cmd);
+ 	if (ret) {
+ 		/*
+-		 * Retry when the device does not support max read turnaround
+-		 * while expecting shorter length from this CCC command.
++		 * optional_bytes = 3 accepts a 2-byte response on the first
++		 * attempt, so this fallback runs only when the 5-byte request
++		 * fails rather than returning a short read.
+ 		 */
+ 		dest.payload.len -= 3;
++		dest.payload.optional_bytes = 0;
+ 		i3c_ccc_cmd_init(&cmd, true, I3C_CCC_GETMXDS, &dest, 1);
+ 		ret = i3c_master_send_ccc_cmd_locked(master, &cmd);
+ 		if (ret)
+diff --git a/include/linux/i3c/ccc.h b/include/linux/i3c/ccc.h
+index 2506d83b8255..7ad677baf761 100644
+--- a/include/linux/i3c/ccc.h
++++ b/include/linux/i3c/ccc.h
+@@ -347,11 +347,13 @@ struct i3c_ccc_getxtime {
+  *
+  * @len: requested payload length
+  * @actual_len: number of bytes received on a GET CCC (filled by the driver)
++ * @optional_bytes: GET CCCs may return up to this many fewer bytes than @len
+  * @data: payload data. This buffer must be DMA-able
+  */
+ struct i3c_ccc_cmd_payload {
+ 	u16 len;
+ 	u16 actual_len;
++	u16 optional_bytes;
+ 	void *data;
+ };
  
- 	ret = xfer->ret;
- 	cmd = &xfer->cmds[0];
-+	ccc->err = dw_i3c_ccc_map_err(cmd->error);
- 	if (!ret)
- 		ccc->dests[0].payload.actual_len = cmd->rx_len;
--	if (cmd->error == RESPONSE_ERROR_IBA_NACK)
--		ccc->err = I3C_ERROR_M2;
- 
- 	return ret;
- }
 -- 
 2.43.7
 
