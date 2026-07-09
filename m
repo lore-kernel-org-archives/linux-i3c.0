@@ -4,64 +4,94 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0651C55162
-	for <linux-i3c@archiver.kernel.org>; Thu, 30 Jul 2026 14:33:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34048C55165
+	for <linux-i3c@archiver.kernel.org>; Thu, 30 Jul 2026 14:36:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CWuLobqntuPOQoskpywQBz9a8AaaqVlLSREEcfGoGeA=; b=36M0XC1rgQtLeh
-	i4yy2CpVpa0b3bA4e2zUBiUjqU4dve4hYU4iO83pChor5oUNLqQuMMj62krfb9x8zINXV58ftWpr6
-	dR7sWNevZiU1NsruAjTFHh4oIRjFsw9+BFuldJ1pFNC2wiHnhnRU2xs/HWqVrjKWMiCFBjbnbSVN/
-	W647eRlULZ40VP5e+7u/Hbnuit76Zs/C6la8dKweLOlIjiP7XPdYSemG5V98566xEVxTnbiTnrcpl
-	JztBhBcByNNZyXXusldIJ0kw26D0WlikJiVshGzBokmy4a+5XjIBzwF2lLkTfMx76/jDhECFLB2X2
-	Ylf49LHO2dulBBM9njGQ==;
+	List-Owner; bh=tsOvgf+0Opqz5PzEIhGZc2nNLUUEQpJ88tqzhRaIDh0=; b=zDB+uK0q9uemr7
+	xHUkXe22s6zsmlvYWyZgwB03vzVkcWGixdpWAu5pXHWP2NrMZV9VeMdaVyhkSREazJZiD/5qWXlmi
+	3o+TLtjnmepl7abqGZAATfRQJVlqqNO+jJxWu+2VYv9m86s7+Kdb906W2+CZfNEmLfVSaIhH+ERad
+	ECK5L+fKvqhL/Xotww9zBQrynwAMHehJiAiklDwbG8ij+ONNsEoGSiTAEi543ucOqKay3fgLGKBsq
+	ku5+9wumwD592DMTokHoacfAQfRBGL+0jy8I3dxjRkUgPyHK//n2X8Rzsz7O8u47cB+FcoRzwotdJ
+	uEOzZ9R2ZejR/+IZ9FkQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpRp9-0000000Al2l-2Dau;
-	Thu, 30 Jul 2026 14:33:27 +0000
-Received: from smtpout-03.galae.net ([185.246.85.4])
+	id 1wpRrl-0000000AlmG-3Z86;
+	Thu, 30 Jul 2026 14:36:09 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpRp6-0000000Al1t-1Fi8
-	for linux-i3c@lists.infradead.org;
-	Thu, 30 Jul 2026 14:33:26 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-03.galae.net (Postfix) with ESMTPS id 691764E41005;
-	Thu, 30 Jul 2026 14:33:20 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 3C02B602B8;
-	Thu, 30 Jul 2026 14:33:20 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 3C59E11C15D06;
-	Thu, 30 Jul 2026 16:33:16 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1785421998; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=mfA+QB9rWd3etPgxphn/JIAS9tjAN+8oo8iyiuZepxw=;
-	b=z9Oc/gM0gxr7ET4b9zJ9I5+4u06/ium0hAYYxNZOycRvAiobjn0Bc1jlsg6UGemiyy1gvx
-	+VHgcnA0+9BTG4vZgHE47u3WkXXnsP+vwoyp+IVJ0xTCgb/P9sn5npjIRheLgiZcR1/fb0
-	6L+BCFjQo4gvI+MZ5nwjdKoo9eR3lv9lUvsatG6388lJpxjo6LEHFKNCmU3cheWf4W9VmA
-	xmALTUiGn2ttWIx6JaZ4vbHX39GV4ilf+R68H93iG/EhFC25s2xTHlCvlggh2U6JRZ7Xdg
-	R0nMdKpr3NgWv+6GAFRB+ZAQZEwb7Pm/VwiaTR7NSjVXNk3Ste4jJULr1DYsLw==
-Date: Thu, 30 Jul 2026 16:33:15 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Frank.Li@nxp.com, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, Shubham Patil <shubhamsanjay.patil@amd.com>
-Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, michal.simek@amd.com,
-	radhey.shyam.pandey@amd.com
-Subject: Re: [PATCH v2 0/2] i3c: dw: Document optional core reset and drop
- redundant name
-Message-ID: <178542198409.1790758.601925059498244846.b4-ty@b4>
-References: <20260720073510.1869623-1-shubhamsanjay.patil@amd.com>
+	id 1whhY3-000000014qP-228n;
+	Thu, 09 Jul 2026 05:43:47 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id D98DF40BE4;
+	Thu,  9 Jul 2026 05:43:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4CAF51F000E9;
+	Thu,  9 Jul 2026 05:43:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1783575826;
+	bh=qiRZlu+pN9UCQWPo2SujBtFWkDfJIgfryKRGlCH9SOw=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=BzMErqn7H0tBQWhIwwL6cUV+PjYiwddzfMugre75ZSIDqZBCLeCqXrYojO2boVY6m
+	 WEHqDK9+AFssKNWzeZSrEXx6ZE8pGP7XrpR/kzxGx0xXXBHhVlVk05mMLjuZx3AN3q
+	 nFwms3UbgAZTz7CoZQfvH1PiOO0qS3P/j07senEZR/5mIK9KDJT3xrUlGAfo+o5Pzk
+	 P9PlZ9QqFsr4ZtFXhvfxdyJmNot3XsN9XOSspEw0RmfmQP+oJ0IKP8AK6VLS+VFyh4
+	 9hMocZ0tLgRbX3AucUK107XcluYsLU4ZDIC+IANdz7E7zD6WbZ1KA6LiNnn/ZYB3C4
+	 F7pcOoylRdyqw==
+Date: Thu, 9 Jul 2026 07:43:19 +0200
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: Bjorn Helgaas <bhelgaas@google.com>, 
+	"Vaibhaav Ram T . L" <vaibhaavram.tl@microchip.com>, Kumaravel Thiagarajan <kumaravel.thiagarajan@microchip.com>, 
+	Even Xu <even.xu@intel.com>, Xinpeng Sun <xinpeng.sun@intel.com>, 
+	Srinivas Pandruvada <srinivas.pandruvada@linux.intel.com>, Jiri Kosina <jikos@kernel.org>, 
+	Alexandre Belloni <alexandre.belloni@bootlin.com>, Zhou Wang <wangzhou1@hisilicon.com>, 
+	Longfang Liu <liulongfang@huawei.com>, Vinod Koul <vkoul@kernel.org>, Lee Jones <lee@kernel.org>, 
+	Jijie Shao <shaojijie@huawei.com>, Jian Shen <shenjian15@huawei.com>, 
+	Sunil Goutham <sgoutham@marvell.com>, Andrew Lunn <andrew+netdev@lunn.ch>, 
+	Heiner Kallweit <hkallweit1@gmail.com>, "David S . Miller" <davem@davemloft.net>, 
+	Jeff Hugo <jeff.hugo@oss.qualcomm.com>, Oded Gabbay <ogabbay@kernel.org>, 
+	Maciej Falkowski <maciej.falkowski@linux.intel.com>, Karol Wachowski <karol.wachowski@linux.intel.com>, 
+	Min Ma <mamin506@gmail.com>, Lizhi Hou <lizhi.hou@amd.com>, 
+	Andreas Noever <andreas.noever@gmail.com>, Mika Westerberg <westeri@kernel.org>, 
+	Will Deacon <will@kernel.org>, Xinliang Liu <xinliang.liu@linaro.org>, 
+	Tian Tao <tiantao6@hisilicon.com>, Davidlohr Bueso <dave@stgolabs.net>, 
+	Srujana Challa <schalla@marvell.com>, Bharat Bhushan <bbhushan2@marvell.com>, 
+	Antoine Tenart <atenart@kernel.org>, Herbert Xu <herbert@gondor.apana.org.au>, 
+	Raag Jadav <raag.jadav@intel.com>, Hans de Goede <hansg@kernel.org>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Jiri Slaby <jirislaby@kernel.org>, 
+	Andy Shevchenko <andy@kernel.org>, Mika Westerberg <mika.westerberg@linux.intel.com>, 
+	Andi Shyti <andi.shyti@kernel.org>, Robert Richter <rric@kernel.org>, 
+	Mark Brown <broonie@kernel.org>, Nirmal Patel <nirmal.patel@linux.intel.com>, 
+	Kurt Schwemmer <kurt.schwemmer@microsemi.com>, Logan Gunthorpe <logang@deltatee.com>, 
+	Linus Walleij <linusw@kernel.org>, Bartosz Golaszewski <brgl@kernel.org>, 
+	Sakari Ailus <sakari.ailus@linux.intel.com>, Bingbu Cao <bingbu.cao@intel.com>, 
+	Tomasz Jeznach <tomasz.jeznach@linux.dev>, Jonathan Cameron <jic23@kernel.org>, 
+	Ulf Hansson <ulfh@kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>
+Cc: Arnd Bergmann <arnd@arndb.de>, Benjamin Tissoires <bentiss@kernel.org>, 
+	linux-input@vger.kernel.org, linux-i3c@lists.infradead.org, dmaengine@vger.kernel.org, 
+	Philipp Stanner <phasta@kernel.org>, netdev@vger.kernel.org, nic_swsd@realtek.com, 
+	linux-arm-msm@vger.kernel.org, dri-devel@lists.freedesktop.org, linux-usb@vger.kernel.org, 
+	iommu@lists.linux.dev, linux-riscv@lists.infradead.org, 
+	David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, linux-cxl@vger.kernel.org, 
+	linux-crypto@vger.kernel.org, platform-driver-x86@vger.kernel.org, 
+	linux-serial@vger.kernel.org, mhi@lists.linux.dev, 
+	Andy Shevchenko <andriy.shevchenko@linux.intel.com>, Jan Dabros <jsd@semihalf.com>, linux-i2c@vger.kernel.org, 
+	Daniel Mack <daniel@zonque.org>, Haojian Zhuang <haojian.zhuang@gmail.com>, 
+	linux-spi@vger.kernel.org, Jonathan Derrick <jonathan.derrick@linux.dev>, 
+	linux-pci@vger.kernel.org, linux-gpio@vger.kernel.org, 
+	Mauro Carvalho Chehab <mchehab@kernel.org>, linux-media@vger.kernel.org, linux-mmc@vger.kernel.org
+Subject: Re: (subset) [PATCH 0/37] PCI/MSI: Enforce explicit IRQ vector
+ management by removing devres auto-free
+Message-ID: <vb3ywnzdult3h3bzvh2m6ye5xcuxuzvufcsp4kdos6g2a4q6tn@5ut3kgguaey6>
+References: <1771860581-82092-1-git-send-email-shawn.lin@rock-chips.com>
+ <178357565325.731734.7291964273199898845.b4-ty@b4>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260720073510.1869623-1-shubhamsanjay.patil@amd.com>
-X-Last-TLS-Session-Version: TLSv1.3
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260730_073324_503313_DCF12A46 
-X-CRM114-Status: UNSURE (   8.53  )
-X-CRM114-Notice: Please train this message.
+In-Reply-To: <178357565325.731734.7291964273199898845.b4-ty@b4>
+X-Mailman-Approved-At: Thu, 30 Jul 2026 07:36:08 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,36 +103,28 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, 20 Jul 2026 13:05:08 +0530, Shubham Patil wrote:
-> This series documents the optional core reset for the Synopsys
-> DesignWare I3C master and updates the driver to match the binding.
-> The DesignWare I3C master IP has a single core reset input. The
-> binding never documented this reset, and the driver looked it up by
-> the "core_rst" name even though a name is redundant for a single
-> reset line.
-> 
-> [...]
-
-Applied, thanks!
-
-[1/2] dt-bindings: i3c: dw: Document missing optional core reset
-      https://git.kernel.org/i3c/c/904473e58db7
-[2/2] i3c: master: dw: Drop redundant core reset name
-      https://git.kernel.org/i3c/c/283e91b86613
-
-Best regards,
-
--- 
-Alexandre Belloni, co-owner and COO, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+T24gVGh1LCBKdWwgMDksIDIwMjYgYXQgMDc6NDA6NTNBTSArMDIwMCwgTWFuaXZhbm5hbiBTYWRo
+YXNpdmFtIHdyb3RlOgo+IAo+IE9uIE1vbiwgMjMgRmViIDIwMjYgMjM6Mjk6MzkgKzA4MDAsIFNo
+YXduIExpbiB3cm90ZToKPiA+IFRoaXMgcGF0Y2ggc2VyaWVzIGFkZHJlc3NlcyBhIGxvbmctc3Rh
+bmRpbmcgZGVzaWduIGlzc3VlIGluIHRoZSBQQ0kvTVNJCj4gPiBzdWJzeXN0ZW0gd2hlcmUgdGhl
+IGltcGxpY2l0LCBhdXRvbWF0aWMgbWFuYWdlbWVudCBvZiBJUlEgdmVjdG9ycyBieQo+ID4gdGhl
+IGRldnJlcyBmcmFtZXdvcmsgY29uZmxpY3RzIHdpdGggZXhwbGljaXQgZHJpdmVyIGNsZWFudXAs
+IGNyZWF0aW5nCj4gPiBhbWJpZ3VpdHkgYW5kIHBvdGVudGlhbCByZXNvdXJjZSBtYW5hZ2VtZW50
+IGJ1Z3MuCj4gPiAKPiA+ID09PT0gVGhlIFByb2JsZW06IEltcGxpY2l0IHZzLiBFeHBsaWNpdCBN
+YW5hZ2VtZW50ID09PT0KPiA+IEhpc3RvcmljYWxseSwgYHBjaW1fZW5hYmxlX2RldmljZSgpYCBu
+b3Qgb25seSBtYW5hZ2VzIHN0YW5kYXJkIFBDSSByZXNvdXJjZXMKPiA+IChCQVJzKSB2aWEgZGV2
+cmVzIGJ1dCBhbHNvIGltcGxpY2l0bHkgdHJpZ2dlcnMgYXV0b21hdGljIElSUSB2ZWN0b3IgbWFu
+YWdlbWVudAo+ID4gYnkgc2V0dGluZyBhIGZsYWcgdGhhdCByZWdpc3RlcnMgYHBjaW1fbXNpX3Jl
+bGVhc2UoKWAgYXMgYSBjbGVhbnVwIGFjdGlvbi4KPiA+IAo+ID4gWy4uLl0KPiAKPiBBcHBsaWVk
+LCB0aGFua3MhCj4gCj4gWzEzLzM3XSBidXM6IG1oaTogaG9zdDogUmVwbGFjZSBwY2lfYWxsb2Nf
+aXJxX3ZlY3RvcnMoKSB3aXRoIHBjaW1fYWxsb2NfaXJxX3ZlY3RvcnMoKQo+ICAgICAgICAgY29t
+bWl0OiAyNTY5OTVlODBmY2QzOWNhYjk0ZWVlODEzNWRkOTBmNmRhNmFjNzQ0Cj4gCgpTb3JyeSwg
+dGhpcyBpcyBhIG1pc3Rha2UuIFRoaXMgcGF0Y2ggaXMgbm90IGFwcGxpZWQuCgotIE1hbmkKCi0t
+IArgrq7grqPgrr/grrXgrqPgr43grqPgrqngr40g4K6a4K6k4K6+4K6a4K6/4K614K6u4K+NCgot
+LSAKbGludXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
+dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
