@@ -4,105 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C32B7C43458
-	for <linux-i3c@archiver.kernel.org>; Mon, 13 Jul 2026 10:54:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F664C43458
+	for <linux-i3c@archiver.kernel.org>; Mon, 13 Jul 2026 13:05:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vt71XcokJ3GksQf70tmwIg+bF5qmXv9kgL6t1HPTS00=; b=GG3IT5qOZGlmEs
-	ck4yzOvITlWhLfoh4uP1w8O/OXMrbSoauY2jOR3j8cSCKErXZjiQ21+hWefCnGQmkvna84Jkhjrex
-	hIwHe76tN6UmR68kaspm3ick4bRO6sHyWa0iAPwZBtUf6tLRZpi2YBzwPnFvY7UaPs8aUiHg5fT0k
-	Kul7ebDXFy3Ho3nMCylTjRscOCCKOiItTWWF3pz9vTr48NWmxD0iO8Ocn36ywVU2LQohKSnKkWW+o
-	kL7m/Ydasw9ftc/1isiAaFoo+gBbJBemyn7LgJ45C8szhWFohqkCuU0EsHA6aP0PNNB/eqjp0BQma
-	OS+0cjvA2vuhA4WHcdBw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pJAY49S86qSc98eBhJmDzDQrVlEgZf/rtakPBukAel4=; b=iuQxLEc3jN38sD
+	nLMedpiqkrFEey29XEJ14J4bQnVi8E4zZyo0njLgblg3vKJKUEbtmWLbB9b+75OMTZPdN4NJlA/FP
+	FepBRnDFIDO6FSLYV9AUZR/aRG2T0uzt+teZj8F+GA3YwtXrP1dXTNJ4qELlUHisYtjFX8krtm73N
+	lZlsGq67YABI30kup4P/u+SOubx5taSauhQb0L63nNm3mXxSEXkWtEUFXDKGUaypvgcYwYlqu3BZw
+	96pfpnIPOXBv1T5sf26z/7XJ5LCbeLMPO/7UkburOQXf8z4/YS8AfIRADvGXWyLFSk5kgsQzlf0W6
+	TYsrYY9/2zSk90mCOBdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjEIm-00000008wBr-0cxl;
-	Mon, 13 Jul 2026 10:54:20 +0000
-Received: from mail-pj1-x1033.google.com ([2607:f8b0:4864:20::1033])
+	id 1wjGM6-00000009JeJ-0Nyg;
+	Mon, 13 Jul 2026 13:05:54 +0000
+Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjEIj-00000008wBS-0dN5
+	id 1wjGM3-00000009JdU-23np
 	for linux-i3c@lists.infradead.org;
-	Mon, 13 Jul 2026 10:54:18 +0000
-Received: by mail-pj1-x1033.google.com with SMTP id 98e67ed59e1d1-38e08baf860so409438a91.2
-        for <linux-i3c@lists.infradead.org>; Mon, 13 Jul 2026 03:54:16 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1783940056; cv=none;
-        d=google.com; s=arc-20260327;
-        b=bKnzmqBGytElPhGad3OHRnd113GgMz/imqC8n8yNXlFljv1d1lDVMD1AKJZEhCnliF
-         hWMRhS6PJ+Y+jqyN3PThzNNdP+j5GqsAhtwfWOJKGxMLRhGfMrpxmUlpy54dyhH0Gn6u
-         FxiQ93BZ5CLE0ldYoMEwzeGNwPw2qUhX1fPumL9BgoO2Ia2A7MN8dL6ArSYof1ygBQCP
-         riOMsZQ0WlAEUA7r1tpg9h5+LnAFNQFvWcH8yy/B9CsMJjBaYRI/dtySTdDDEVpEpxlg
-         zO5rhkBj+t8jxKasVz5K9WOGfd2xKxG5lCsMMAxqBGuav8WmBs+Ho3Rv5MgxC54VEMWE
-         9ncw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=VsccIh1teQIB6PKWERAaqA4W9wXkj8HDgDTFHZV7+TE=;
-        fh=pbsm90ZN5IJKQYGHf1Z9XTDH2aE6Wp1dekfgooI0foo=;
-        b=JlkghbihkRTb1FsedkVoP7WkyBymI9CbbLXpO2pCQt1OF8UWipVsBo80hTtgAR0Maq
-         +SA1t3FdsK69rtFu+9YYvsbo0fr+2t8SFmGaIn34nvDdrmg7WOatJvDOIA9XgXHYHKf+
-         +2qYmYZUgHOzb1Wu7uh0i44LIiHcv7TwJChkNEXO+h+Ef+f5LRPxD7V+aS9xOC7u95OP
-         AlM2wL1uFLrwrlAwGvC/hO9am2rocKn4cYtMY0p9XyLlZSlemfdupa9MFFXuLNshjWtO
-         Y60hM37rb7Gul2OSVB7REUJMscsnWUN7NWfSA5Ztx/5KJMPbboZo8/rJ+L6gnMBtb1Iv
-         udQQ==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	Mon, 13 Jul 2026 13:05:52 +0000
+Received: by mail-wr1-x430.google.com with SMTP id ffacd0b85a97d-47f365afc5aso705713f8f.0
+        for <linux-i3c@lists.infradead.org>; Mon, 13 Jul 2026 06:05:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1783940056; x=1784544856; darn=lists.infradead.org;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=VsccIh1teQIB6PKWERAaqA4W9wXkj8HDgDTFHZV7+TE=;
-        b=eS6xxS6ffTa5h24Y1/gy//NjprifkqGS0fPEUnKDgH3dDbghmSQEklROrlEQdT4pfy
-         DyPgVNEjaiwgQst06Dy69gnJYnTDLatN4C0k7dMdC57JJtRYDCAksEPShq7YcMctvgNn
-         9tYXaLljFTQ2yrq3xaBsd9iVtV7xAh0PzHENTyuiXX9mzzscFRMfDz14+WQ9XVbwAUHz
-         egtEvZncjI0o6S4peIQGs6wI/75KlXaiLSnmUJ22FhHTNMKH1Aj7R3UV+9Y7RdkVouq0
-         T9wirPpthARfgYI49UUYu3Kxm1vvtmyB5kIdnUeafHnSBt0GDn2/gAqsEwQSVEPsD6Iw
-         mv8w==
+        d=tuxon.dev; s=google; t=1783947949; x=1784552749; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=JqLCAjsIWRR//h7ecqS4cqAoQh9bNc2JNsvLanYeLME=;
+        b=rPyCnIbOFmU4FaRgJr9lao+BdLUtaGpPombJccJBm1yLBM+kM0MQ2lCeHcNA6F+T/f
+         ha9jw/zIfqNrix10kd/+2Z2uHj74I2yvzn4/vUEKrrxxpQZAyXpKVirBRXGUNHCVIA67
+         O5491WC26E27GJiW08N04w5tj7FsbZjP6O6kIb9cIxwOZt0jgv1HKD4cW8vsn1EXNqrv
+         a+1JCxMa5dDmx5SkxcBiP7jTk1VcmDzfcnFBuNGAnPQK3sItp9IvQtEkBiiT/D/JJ6zz
+         EOUa1Ne0PIhkrISt+1xN4D+vhs52EjEPgZNhvw6NE1DMma406uCuzRZX9NVxNOqXLZz/
+         m4ZQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1783940056; x=1784544856;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=VsccIh1teQIB6PKWERAaqA4W9wXkj8HDgDTFHZV7+TE=;
-        b=Dymtalr28E97xzsYPmre+RHJtH/U7uve5UXq3t0TFSd2QIVKDWzZbXkbBAfaFXBYp+
-         LuzpMRkPdzVn3JHO6wad0cUDVFVzi2o3SS1hRxLZ6T3TOfBBICtaMIXdg4HO1VwsJzLu
-         m0WA3czuXBSzxmxhcrdHicrrVpa38VtcUqANQh2zLqysKdh9sDrtd26AJilKm1EeO/fO
-         IaqIDmLNcJmmaWm6Pl1z6Hp6wseGrdUhirj/LV+uEwbZHtBmf7L6J1jJipDt3G8v4hzd
-         aEKFVUmZGF9TqkaDiNX1QuUpJrqmhsqp28qrkyI/q9uj9qAbIb/tcjo8yfQMNp3vtfpe
-         iacQ==
-X-Forwarded-Encrypted: i=1; AHgh+RotBPHaLKktiXfnInbTrHaGx9iM42p6/RgmXgfdQYP6+gzgR87A0Y1QxYQAh3genUdNKofMQLuBOJs=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwZbZWXEg18SYXdzvGK3y9ZlCE0Jf2sfw1pgnmWi+BMiPHmpqVb
-	lTudGp0rBIkkjcDxf3rjh1S7Ml2ONxhGE0G9Wh1k5JOFhLkwQ3lqXxBa6hHZfECGAAZoWFX+xYL
-	R8SLQW4yIxjPo9wq6Gk4FjIS+CgDePZ0=
-X-Gm-Gg: AfdE7clwHULiMoqOQ5ykpta/LPawiPof6YubS56n9vSlNZlry/gGTYSbIrQlJinv8pn
-	KIcJ6Kx7YOd1YI/yxcslzHqX4D2LwyWPzggCSKBFr8jrg00+RJZzz81Mr2eFfLEW10DXQQZoujH
-	ZIw+4RujZRYcBUTXSwb46ODBgY3vf8FDEyEXitHXkgMs+AH+5RxviY9AOIEFgUYDSKoGTlSxyln
-	Y4XcxQBAFC7id7G1r5YUChQkZVWog0I7HjrJIbysA+lwh1+CsNtih3jfdGif31VFIPXVq9VfA==
-X-Received: by 2002:a17:90b:1fc4:b0:381:23d5:693f with SMTP id
- 98e67ed59e1d1-38dc777c375mr8491205a91.28.1783940056348; Mon, 13 Jul 2026
- 03:54:16 -0700 (PDT)
+        d=1e100.net; s=20251104; t=1783947949; x=1784552749;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=JqLCAjsIWRR//h7ecqS4cqAoQh9bNc2JNsvLanYeLME=;
+        b=S3yHltgl0IlYNb2X2QBWtNk7wpxQSopsWhpEZ2efLI5jDSRg61CQAYe9CQDrXox+vn
+         INPl9CkgVqOJ4SAy3Ekxy9qdk/MdRv5TfNhoX3hA2KDzNJtwLLmLLA+4oc6XcMSmDWiT
+         Htu2cMC2bSK7EQ/yPyK//ho4IAwBRQ4U1QKXV2sJ1chvbxnHeK8eqgYtP8k4x2IzcGYO
+         pxjG6pfePzdtduE3wtNWiXew5Wz4rAJDAXTYhySFu6xyPvuy1KzB6a0H1N+e5sX5FIos
+         EEcuzuI0qCN7dLepln6NtQW+S5RXHt4Gqp0/prKZ+FBC2OvAQvzF5vntxFpUfj8oEjY3
+         kCnQ==
+X-Forwarded-Encrypted: i=1; AHgh+RqmjdrpIi5ZWDiMs1dNquXPp4GOpn3X4TDegfFZrfYJRcekD976cHZIo7rV4pTFeGx3xzdywn/8CCo=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwC8LCN30dkVwjATU0nOcIAxln7pOgTeopdVh90HBVm7KysssCr
+	iKH+Mr6Ma21RsgruXgpCV+jDznZEE3IQJ6kH10eUzbmIrvlQOvoOmdWkNrMz/Ba32TQ=
+X-Gm-Gg: AfdE7cm2EnbNEmi41E2B3m3PMrCaqnpZoyw58PD5GxXuG8lu2/PxL3ChjSu8r1+h6Dq
+	WqM+7XX4qBnle9/mB5DrU97cLYTs0c1Qcz6Iz5GApgOsqtLYWxUmVo1FW26J4mQxwVokivnqWdl
+	cnfhdzo2p8OYbTMQBurd0ZVJ7cAbrP/9dGtSf1fz8o3NC+kT557vWxShaub6/gSJLViQtVYhV0U
+	QaVuLvVRvt17yKXR1kyCc3MwRBJgmNlDi8CT/g9mC/CuC0Du17dI7nFMq5vuKKvYFcQJ0/beY5z
+	duq5zB1V/WNu+Qb+A14TRENC+TnC7X7d3Y6PgdyWA7i3zub0irnOkUjaNdDIVyekjirupcEyy/x
+	NxIT537R8Kmnw/siVP+nfICCJC4ahGKF0H4LvRH0toh7b4I56eoKAS17Fj9LvkGd3Cj+G04z5oO
+	2QQybAfbbCK6uALhN3ct31EbeGm9SjwFbsXLOthy4x0FO5wN+s/vDLiqZpWH5tVB4KZQioWUQ=
+X-Received: by 2002:a5d:588b:0:b0:474:4525:eb32 with SMTP id ffacd0b85a97d-47f2dc7d451mr10839033f8f.11.1783947949241;
+        Mon, 13 Jul 2026 06:05:49 -0700 (PDT)
+Received: from claudiu-TUXEDO-InfinityBook-Pro-AMD-Gen9.. ([2a02:2f04:6402:500:e91e:fe5e:857b:d0c])
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47f273195d9sm25321609f8f.3.2026.07.13.06.05.47
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 13 Jul 2026 06:05:48 -0700 (PDT)
+From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
+X-Google-Original-From: Claudiu Beznea <claudiu.beznea+renesas@tuxon.dev>
+To: wsa+renesas@sang-engineering.com,
+	tommaso.merciai.xr@bp.renesas.com,
+	alexandre.belloni@bootlin.com,
+	Frank.Li@nxp.com,
+	p.zabel@pengutronix.de
+Cc: claudiu.beznea@tuxon.dev,
+	linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-renesas-soc@vger.kernel.org,
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+Subject: [PATCH v5 00/17] i3c: renesas: Suspend to RAM with power loss and runtime PM
+Date: Mon, 13 Jul 2026 16:05:28 +0300
+Message-ID: <20260713130545.568657-1-claudiu.beznea+renesas@tuxon.dev>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-References: <20260709071744.333403-1-Jm_Liao@asmedia.com.tw>
- <20260709071744.333403-3-Jm_Liao@asmedia.com.tw> <ak_vDyq9A60mGmny@lizhi-Precision-Tower-5810>
-In-Reply-To: <ak_vDyq9A60mGmny@lizhi-Precision-Tower-5810>
-From: =?UTF-8?B?5buW5bu66YqY?= <tim678910@gmail.com>
-Date: Mon, 13 Jul 2026 18:54:04 +0800
-X-Gm-Features: AUfX_mxMQSARce2U9OErzAzD5Gfmyosa2fDv5EA7zi1qaXBHT8fEM9k8ihNz16Y
-Message-ID: <CAGfoLndKkRokHGhQocmbqkPxuAFFy91YMpP3K9AcA5rQbmCReA@mail.gmail.com>
-Subject: Re: [PATCH 2/3] i3c: mipi-i3c-hci: Add PIO queue management support
- for HCI v1.2
-To: Frank Li <Frank.li@oss.nxp.com>
-Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com, adrian.hunter@intel.com, 
-	jarkko.nikula@linux.intel.com, linux-i3c@lists.infradead.org, 
-	Jm_Liao@asmedia.com.tw, Chloe_Chen@asmedia.com.tw, Yd_Tseng@asmedia.com.tw, 
-	Patrick_Yen@asmedia.com.tw
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260713_035417_194855_E3902A56 
-X-CRM114-Status: GOOD (  19.92  )
+X-CRM114-CacheID: sfid-20260713_060551_651821_B7FFFC12 
+X-CRM114-Status: GOOD (  12.34  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,109 +104,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, Jul 10, 2026 at 02:57:00AM +0000, Frank Li wrote:
->
-> On Thu, Jul 09, 2026 at 03:17:43PM +0800, Jian-Ming Liao wrote:
-> > - Support explicit enablement and starting of PIO queues as
-> >   required by HCI v1.2.
-> > - Handle alternate PIO queue sizes via ALT_QUEUE_SIZE register.
-> > - Implement explicit PIO queue stopping/disabling and restart
-> >   logic after errors.
->
-> Remove -
->
-> Support explicit enablement and starting of PIO queues as required by
-> HCI v1.2.
->
-> Handle alternate PIO queue sizes via ALT_QUEUE_SIZE register.
->
-> Implement explicit PIO queue stopping/disabling and restart logic after
-> errors.
->
-> if you prefer -, need
->
-> Some sentense ...
->   - abc...
->
+From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
-Hi Frank,
+Hi,
 
-Thank you for the feedback.
+This series adjusts the suspend to RAM code to handle cases where power
+to the connected devices is lost during suspend to RAM. The fixes
+included in this series are required for that support.
 
-I will remove the '-' prefix in the commit message.
+Along with suspend to RAM support, runtime PM support is also added.
+Cleanup patches were included to prepare for clean runtime PM support.
 
-> >  #define IBI_STATUS_SIZE                      GENMASK(15, 8)
-> >  #define CR_QUEUE_SIZE                        GENMASK(7, 0)
-> >
-> > +#define PIO_ALT_QUEUE_SIZE      0x1C
-> > +#define EXT_IBI_QUEUE_EN        BIT(28)
-> > +#define ALT_RESP_QUEUE_EN       BIT(24)
-> > +#define ALT_RESP_QUEUE_SIZE     GENMASK(7, 0)
-> > +
->
-> Number start pos align to prevous GENMASK(7, 0) of CR_QUEUE_SIZE
->
+Thank you,
+Claudiu
 
-I will fix it.
+Changes in v5:
+- in patch 1 introduced renesas_i3c_irqs_mask_and_clear_locked()
+  similar to what was present in v4 in patch
+  "i3c: renesas: Add runtime PM support" but without locking; use the
+  same function to mask all the interrupts and cleanup the status
+  flag in case interrupts are triggered after the transfer completion
+  timed out
+- introduce patch "i3c: renesas: Fix out-of-bounds access for newdevs mask"
+  to avoid failures when there are no I3C devices connected on the
+  bus at probe
+- patch "i3c: renesas: Perform Dynamic Address Assignment on resume"
+  was restored to the v1 variant; kept it simple to fix the
+  suspend/resume for the moment
 
-> >       __hci_pio_init(hci, &size_val);
-> >
-> > -     dev_dbg(&hci->master.dev, "CMD/RESP FIFO = %ld entries\n",
-> > -             FIELD_GET(CR_QUEUE_SIZE, size_val));
-> > -     dev_dbg(&hci->master.dev, "IBI FIFO = %ld bytes\n",
-> > -             4 * FIELD_GET(IBI_STATUS_SIZE, size_val));
-> > -     dev_dbg(&hci->master.dev, "RX data FIFO = %d bytes\n",
-> > -             4 * (2 << FIELD_GET(RX_DATA_BUFFER_SIZE, size_val)));
-> > -     dev_dbg(&hci->master.dev, "TX data FIFO = %d bytes\n",
-> > -             4 * (2 << FIELD_GET(TX_DATA_BUFFER_SIZE, size_val)));
-> > -
->
-> why need move this part?
+Changes in v4:
+- dropped patch "i3c: renesas: Do not attach devices if xfer failed"
+- fixed the swap in renesas_i3c_group_devs_in_slots() for i3c->addr[]
+  renesas_i3c_irqs_mask_and_clear();
+- in patch 16/16 renamed renesas_i3c_abort_xfer() from v3 to
+	
+Changes in v3:
+- re-based on top of series [1] to be able to use
+  i3c_master_reattach_i3c_dev_locked()
+- used i3c_master_reattach_i3c_dev_locked() on patch
+  "i3c: renesas: Perform Dynamic Address Assignment on resume" along with
+  grouping the I2C and I3C devices in the driver slot
+- collected tags
 
-I understand that unnecessary code movement makes the diff harder to review.
-My intention for moving the dev_dbg lines was to place them after
-calculating the adjusted resp_sz and ibi_val(which are dynamic in
-v1.2) @ func "__hci_pio_init".
-However, I agree with you, so I will revert the movement and calculate
-the adjusted sizes(resp_sz, ibi_val) in place to keep the diff clean.
+Changes in v2:
+- dropped patch "i3c: renesas: Use the divider 128"
+- adjusted the patches title and description where requested in the
+  review process
+- adjusted the DAA procedure after resume to still properly re-configure
+  the controller in case the bus was full before a suspend
+- added patch "i3c: renesas: Do not attach devices if xfer failed"
+- collected tags
 
+Claudiu Beznea (17):
+  i3c: renesas: Check that the transfer is valid before accessing it
+  i3c: renesas: Restore STDBR and EXTBR registers on resume
+  i3c: renesas: Follow the reset deassert order used in probe
+  i3c: renesas: Reconfigure the DATBAS register on re-attach
+  i3c: renesas: Reset the controller on resume
+  i3c: renesas: Perform Dynamic Address Assignment on resume
+  i3c: renesas: Clean DATBAS register on detach
+  i3c: renesas: Fix out-of-bounds access for newdevs mask
+  i3c: renesas: Use reset_control_bulk_{assert, deassert}()
+  i3c: renesas: Return immediately if there is no transfer
+  i3c: renesas: Follow a unified pattern for transfer and command
+    initialization
+  i3c: renesas: Drop the explicit memset() call
+  i3c: renesas: Update HW registers after SW computations are done
+  i3c: renesas: Organize structures to avoid unnecessary padding
+  i3c: renesas: Use the "dev_name:irq_name" format for the interrupt
+    name
+  i3c: renesas: Drop unnecessary tab
+  i3c: renesas: Add runtime PM support
 
-> > @@ -246,6 +280,12 @@ static void hci_pio_cleanup(struct i3c_hci *hci)
-> >               BUG_ON(pio->curr_rx);
-> >               BUG_ON(pio->curr_tx);
-> >               BUG_ON(pio->curr_resp);
-> > +             /* MIPI I3C HCI v1.2 requires explicitly stopping and disabling PIO queues */
-> > +             if (hci->version_major == 1 && hci->version_minor >= 2)
-> > +                     pio_reg_write(CONTROL, 0x0);
-> > +
-> > +             kfree(pio);
->
-> why need kfree() here? if fix existing problem, use seperate patch.
->
+ drivers/i3c/master/renesas-i3c.c | 375 +++++++++++++++++++++----------
+ 1 file changed, 261 insertions(+), 114 deletions(-)
 
-I have verified that pio is managed by devm_kzalloc. I will remove the
-manual kfree() to prevent potential double-free issues.
+-- 
+2.43.0
 
-> > @@ -766,6 +806,18 @@ static void hci_pio_err(struct i3c_hci *hci, struct hci_pio_data *pio,
-> >               hci_pio_dequeue_xfer_common(hci, pio, pio->curr_tx, 1);
-> >       /* then reset the hardware */
-> >       mipi_i3c_hci_pio_reset(hci);
-> > +
-> > +     /* MIPI I3C HCI v1.2 requires explicitly restarting PIO queues after error/abort */
-> > +     if (hci->version_major == 1 && hci->version_minor >= 2) {
->
-> Can you use helper macro this check, many place use similar check
->
-> Frank
->
-
-I agree that a helper macro for checking the HCI version is better for
-maintainability.
-I will define a helper like hci_version_at_least(hci, maj, min) and
-use it to replace the hardcoded checks throughout the driver.
-
-Best regards,
-Jian-Ming Liao
 
 -- 
 linux-i3c mailing list
