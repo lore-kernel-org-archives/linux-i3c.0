@@ -4,70 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7F664C43458
-	for <linux-i3c@archiver.kernel.org>; Mon, 13 Jul 2026 13:05:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8D909C44507
+	for <linux-i3c@archiver.kernel.org>; Mon, 13 Jul 2026 13:05:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pJAY49S86qSc98eBhJmDzDQrVlEgZf/rtakPBukAel4=; b=iuQxLEc3jN38sD
-	nLMedpiqkrFEey29XEJ14J4bQnVi8E4zZyo0njLgblg3vKJKUEbtmWLbB9b+75OMTZPdN4NJlA/FP
-	FepBRnDFIDO6FSLYV9AUZR/aRG2T0uzt+teZj8F+GA3YwtXrP1dXTNJ4qELlUHisYtjFX8krtm73N
-	lZlsGq67YABI30kup4P/u+SOubx5taSauhQb0L63nNm3mXxSEXkWtEUFXDKGUaypvgcYwYlqu3BZw
-	96pfpnIPOXBv1T5sf26z/7XJ5LCbeLMPO/7UkburOQXf8z4/YS8AfIRADvGXWyLFSk5kgsQzlf0W6
-	TYsrYY9/2zSk90mCOBdA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yx3eJ3VbKVQIZE5I18voz0gBiZgW9oCBBVGrb0EB33k=; b=bZPo0cBaa3mxWQ
+	pbuhQjIf9RCWXYyinV3N2ZxXR/A7bRQEX15ITHrJY4Rgplbe2nht9ULQKg8NuZkwcIvnXsQrM6x/v
+	D8cRlzpJ0Z1RSr+nbDVj8NZ17YFH9ztxZ3mr7vrwbg1dU4jzRij8FEsBn4YKDlA8dTuhU942yZAN+
+	V1eP6s25z8GjmNj43XLSyh3EycfuPCWwWab///891IktE2UnF5iDdqYoktP3SEeSMfYdgs2pXNb+b
+	a0mBFxACySy/caUTlmhSZju606M/9LDz70db1bUGdEOYjo4sLUeELVoHPHXK26w8ycA9UniuXux+h
+	p/bvHH1IwGBunx4v9EVQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjGM6-00000009JeJ-0Nyg;
-	Mon, 13 Jul 2026 13:05:54 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1wjGM8-00000009JfD-1Myj;
+	Mon, 13 Jul 2026 13:05:56 +0000
+Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjGM3-00000009JdU-23np
+	id 1wjGM5-00000009Jdq-0GT2
 	for linux-i3c@lists.infradead.org;
-	Mon, 13 Jul 2026 13:05:52 +0000
-Received: by mail-wr1-x430.google.com with SMTP id ffacd0b85a97d-47f365afc5aso705713f8f.0
-        for <linux-i3c@lists.infradead.org>; Mon, 13 Jul 2026 06:05:50 -0700 (PDT)
+	Mon, 13 Jul 2026 13:05:54 +0000
+Received: by mail-wr1-x433.google.com with SMTP id ffacd0b85a97d-470174001a0so1874169f8f.0
+        for <linux-i3c@lists.infradead.org>; Mon, 13 Jul 2026 06:05:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1783947949; x=1784552749; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=JqLCAjsIWRR//h7ecqS4cqAoQh9bNc2JNsvLanYeLME=;
-        b=rPyCnIbOFmU4FaRgJr9lao+BdLUtaGpPombJccJBm1yLBM+kM0MQ2lCeHcNA6F+T/f
-         ha9jw/zIfqNrix10kd/+2Z2uHj74I2yvzn4/vUEKrrxxpQZAyXpKVirBRXGUNHCVIA67
-         O5491WC26E27GJiW08N04w5tj7FsbZjP6O6kIb9cIxwOZt0jgv1HKD4cW8vsn1EXNqrv
-         a+1JCxMa5dDmx5SkxcBiP7jTk1VcmDzfcnFBuNGAnPQK3sItp9IvQtEkBiiT/D/JJ6zz
-         EOUa1Ne0PIhkrISt+1xN4D+vhs52EjEPgZNhvw6NE1DMma406uCuzRZX9NVxNOqXLZz/
-         m4ZQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1783947949; x=1784552749;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+        d=tuxon.dev; s=google; t=1783947951; x=1784552751; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=JqLCAjsIWRR//h7ecqS4cqAoQh9bNc2JNsvLanYeLME=;
-        b=S3yHltgl0IlYNb2X2QBWtNk7wpxQSopsWhpEZ2efLI5jDSRg61CQAYe9CQDrXox+vn
-         INPl9CkgVqOJ4SAy3Ekxy9qdk/MdRv5TfNhoX3hA2KDzNJtwLLmLLA+4oc6XcMSmDWiT
-         Htu2cMC2bSK7EQ/yPyK//ho4IAwBRQ4U1QKXV2sJ1chvbxnHeK8eqgYtP8k4x2IzcGYO
-         pxjG6pfePzdtduE3wtNWiXew5Wz4rAJDAXTYhySFu6xyPvuy1KzB6a0H1N+e5sX5FIos
-         EEcuzuI0qCN7dLepln6NtQW+S5RXHt4Gqp0/prKZ+FBC2OvAQvzF5vntxFpUfj8oEjY3
-         kCnQ==
-X-Forwarded-Encrypted: i=1; AHgh+RqmjdrpIi5ZWDiMs1dNquXPp4GOpn3X4TDegfFZrfYJRcekD976cHZIo7rV4pTFeGx3xzdywn/8CCo=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwC8LCN30dkVwjATU0nOcIAxln7pOgTeopdVh90HBVm7KysssCr
-	iKH+Mr6Ma21RsgruXgpCV+jDznZEE3IQJ6kH10eUzbmIrvlQOvoOmdWkNrMz/Ba32TQ=
-X-Gm-Gg: AfdE7cm2EnbNEmi41E2B3m3PMrCaqnpZoyw58PD5GxXuG8lu2/PxL3ChjSu8r1+h6Dq
-	WqM+7XX4qBnle9/mB5DrU97cLYTs0c1Qcz6Iz5GApgOsqtLYWxUmVo1FW26J4mQxwVokivnqWdl
-	cnfhdzo2p8OYbTMQBurd0ZVJ7cAbrP/9dGtSf1fz8o3NC+kT557vWxShaub6/gSJLViQtVYhV0U
-	QaVuLvVRvt17yKXR1kyCc3MwRBJgmNlDi8CT/g9mC/CuC0Du17dI7nFMq5vuKKvYFcQJ0/beY5z
-	duq5zB1V/WNu+Qb+A14TRENC+TnC7X7d3Y6PgdyWA7i3zub0irnOkUjaNdDIVyekjirupcEyy/x
-	NxIT537R8Kmnw/siVP+nfICCJC4ahGKF0H4LvRH0toh7b4I56eoKAS17Fj9LvkGd3Cj+G04z5oO
-	2QQybAfbbCK6uALhN3ct31EbeGm9SjwFbsXLOthy4x0FO5wN+s/vDLiqZpWH5tVB4KZQioWUQ=
-X-Received: by 2002:a5d:588b:0:b0:474:4525:eb32 with SMTP id ffacd0b85a97d-47f2dc7d451mr10839033f8f.11.1783947949241;
-        Mon, 13 Jul 2026 06:05:49 -0700 (PDT)
+        bh=vIEzViZhXjAraDf7Ayi3/ThvikdI1szu91oMmQWBOX0=;
+        b=a/D40rRT6bimQwfpEnPM6q9goYy7NfHxenCvMowS+WlD0vQtQVQmUt1eehhK9t0byg
+         iQZI4lAO2dbIo6t5e+EFgKT81P29nFWV2xzyFvRfyBsuLscaJuQKFneySyww2KQNq2TY
+         nwW4b+qgxEQbr39Z4ZIHphme58koCjS+0bXHwcyR0zX8SlutqQL+LdaXvrRl2Ff88+bA
+         Jmh+nX+LXvgW8MZy4HW3M4hkILQc9EcgrksLCMvOKP3VKgytXfT1msXQAeAzcQFDWKJA
+         VrCgVqjmwqnvwq+wfZHSnCUlQp2cgZgC0dEVhD2rvQkx3Tgbkye1WR1FgfLDYdjNGUIK
+         c1Nw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1783947951; x=1784552751;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=vIEzViZhXjAraDf7Ayi3/ThvikdI1szu91oMmQWBOX0=;
+        b=m9vvRFJWGoF2+/5Lz5IGFECABMO0hd4QtPye5XnRXIbCrnNPB3gh22Y/QcvylpreYV
+         wccOoxb8cafpKLDdV6Wy7IMfF2scodZ0Hesejtm+vJPcG261elcud+/OAHIopGPZtpOy
+         JuIOCWIldTGli2Zrf3ujguyaVQx6DBbGWXed031R9a61sGlp03qyALCQxJl+qQUw63XK
+         r6ui/bul9uMSLmewCXh3y6+rafzKvQdjKBhUkwqFg93FOwcSh/PucbQpjqevJ2pKISyM
+         WUDhc1uZMAq136YPbOnFgbfJbfmuEy1dpo66K9BplXmyDp4yAEDWi3baXQdST6REliId
+         39UQ==
+X-Forwarded-Encrypted: i=1; AHgh+RorUX8VyP0EEuCJtnPDoYzpgHm2SSZW6C4raxn1APB7lKLGVPtdxJuGesDh+wUpVewSavzYXYQJb60=@lists.infradead.org
+X-Gm-Message-State: AOJu0YxE8MLXy0nIife7bxkYJCCB5HQkHP5QZYly7aVQIwWu/sGbtfbT
+	24g69Ja4AvOSVWST2gRv91jVeuUS9+uYObfIYz78CL2A1Z3OHWDY8sN6mnLMb9KB3J4=
+X-Gm-Gg: AfdE7ckkM1V+nPLiH7iFCA8lzHWHDbYq/LY5Or71nzblrgfNr+bQWzmIelHopX7kEj2
+	n2KEqiRl+GrGa0RPTkwqx2QyDuitfgwu/tQ9kzeYJcLAOjQXYSNnT1MmBQJfw2GrdJomkDA/1mt
+	sieYCyxbLBwPwMKk7V5H26QQIA1o2xKbIhIm446vt2oWmDCUyMT7dhfNM9spd8E25kmOoYr1Fyi
+	x74hk5reD23fhDt2aentGzIDo7hnincogmu94FK0dN35QHKaSk4vVPoBeoo73J9Qo9j/R5o8rqr
+	hdC2auJ1owAMHQ/ksYIRtPbfI2N13ZI+X/22PPR3DN+W7R1sVpNGNpK3cMjJ0zpCkx+YlnK0CYH
+	KvaqJH9NAIndSntdksdE7GoQazY37baPUoViGjQnkRWb9t++f7aNoguRNZT9frDR0uhMsTZTTQ6
+	sBmn219+FrLXpNqJdpFmGg8SdNxVAPVE2Gkdwn3oC32xYFCBn8Mz7grqgv5/PY6rGZAgnOlb4=
+X-Received: by 2002:a05:6000:2902:b0:473:1ccc:15bf with SMTP id ffacd0b85a97d-47f2dce2fcemr10893103f8f.42.1783947951174;
+        Mon, 13 Jul 2026 06:05:51 -0700 (PDT)
 Received: from claudiu-TUXEDO-InfinityBook-Pro-AMD-Gen9.. ([2a02:2f04:6402:500:e91e:fe5e:857b:d0c])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47f273195d9sm25321609f8f.3.2026.07.13.06.05.47
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47f273195d9sm25321609f8f.3.2026.07.13.06.05.49
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 13 Jul 2026 06:05:48 -0700 (PDT)
+        Mon, 13 Jul 2026 06:05:50 -0700 (PDT)
 From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
 X-Google-Original-From: Claudiu Beznea <claudiu.beznea+renesas@tuxon.dev>
 To: wsa+renesas@sang-engineering.com,
@@ -79,15 +80,18 @@ Cc: claudiu.beznea@tuxon.dev,
 	linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org,
 	linux-renesas-soc@vger.kernel.org,
-	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: [PATCH v5 00/17] i3c: renesas: Suspend to RAM with power loss and runtime PM
-Date: Mon, 13 Jul 2026 16:05:28 +0300
-Message-ID: <20260713130545.568657-1-claudiu.beznea+renesas@tuxon.dev>
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>,
+	stable@vger.kernel.org
+Subject: [PATCH v5 01/17] i3c: renesas: Check that the transfer is valid before accessing it
+Date: Mon, 13 Jul 2026 16:05:29 +0300
+Message-ID: <20260713130545.568657-2-claudiu.beznea+renesas@tuxon.dev>
 X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20260713130545.568657-1-claudiu.beznea+renesas@tuxon.dev>
+References: <20260713130545.568657-1-claudiu.beznea+renesas@tuxon.dev>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260713_060551_651821_B7FFFC12 
-X-CRM114-Status: GOOD (  12.34  )
+X-CRM114-CacheID: sfid-20260713_060553_150859_B8E107E4 
+X-CRM114-Status: GOOD (  15.18  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -106,79 +110,152 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
-Hi,
+The Renesas I3C driver uses an asynchronous model to transfer data. It
+prepares a struct renesas_i3c_xfer, enqueues it, and waits for completion.
+The interrupt handler dequeues the transfer, updates/uses it, and signals
+the waiting thread.
 
-This series adjusts the suspend to RAM code to handle cases where power
-to the connected devices is lost during suspend to RAM. The fixes
-included in this series are required for that support.
+If the completion times out, the waiting thread dequeues the transfer and
+free it. If an interrupt fires after that, the handler may access freed
+memory, leading to crashes.
 
-Along with suspend to RAM support, runtime PM support is also added.
-Cleanup patches were included to prepare for clean runtime PM support.
+Check that the transfer is still valid before accessing it in the
+interrupt handler. With it clear any status flags and disable all
+the interrupts to avoid triggering the same interrupts again.
 
-Thank you,
-Claudiu
+Fixes: d028219a9f14 ("i3c: master: Add basic driver for the Renesas I3C controller")
+Cc: stable@vger.kernel.org
+Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+---
 
 Changes in v5:
-- in patch 1 introduced renesas_i3c_irqs_mask_and_clear_locked()
-  similar to what was present in v4 in patch
-  "i3c: renesas: Add runtime PM support" but without locking; use the
-  same function to mask all the interrupts and cleanup the status
-  flag in case interrupts are triggered after the transfer completion
-  timed out
-- introduce patch "i3c: renesas: Fix out-of-bounds access for newdevs mask"
-  to avoid failures when there are no I3C devices connected on the
-  bus at probe
-- patch "i3c: renesas: Perform Dynamic Address Assignment on resume"
-  was restored to the v1 variant; kept it simple to fix the
-  suspend/resume for the moment
+- introduced renesas_i3c_irqs_mask_and_clear_locked() that keeps
+  unified the IRQ mask and clean path
+- updated the patch description
 
 Changes in v4:
-- dropped patch "i3c: renesas: Do not attach devices if xfer failed"
-- fixed the swap in renesas_i3c_group_devs_in_slots() for i3c->addr[]
-  renesas_i3c_irqs_mask_and_clear();
-- in patch 16/16 renamed renesas_i3c_abort_xfer() from v3 to
-	
+- disable also the interrupts
+- dropped the Rb tag
+
 Changes in v3:
-- re-based on top of series [1] to be able to use
-  i3c_master_reattach_i3c_dev_locked()
-- used i3c_master_reattach_i3c_dev_locked() on patch
-  "i3c: renesas: Perform Dynamic Address Assignment on resume" along with
-  grouping the I2C and I3C devices in the driver slot
-- collected tags
+- none
 
 Changes in v2:
-- dropped patch "i3c: renesas: Use the divider 128"
-- adjusted the patches title and description where requested in the
-  review process
-- adjusted the DAA procedure after resume to still properly re-configure
-  the controller in case the bus was full before a suspend
-- added patch "i3c: renesas: Do not attach devices if xfer failed"
-- collected tags
+- clean the IRQ status bits before returning IRQ_HANDLED and adjusted the
+  patch description to reflect this change
+- collected Frank's tag. Frank, please let me know if you consider
+  I should drop your tag. Thanks!
 
-Claudiu Beznea (17):
-  i3c: renesas: Check that the transfer is valid before accessing it
-  i3c: renesas: Restore STDBR and EXTBR registers on resume
-  i3c: renesas: Follow the reset deassert order used in probe
-  i3c: renesas: Reconfigure the DATBAS register on re-attach
-  i3c: renesas: Reset the controller on resume
-  i3c: renesas: Perform Dynamic Address Assignment on resume
-  i3c: renesas: Clean DATBAS register on detach
-  i3c: renesas: Fix out-of-bounds access for newdevs mask
-  i3c: renesas: Use reset_control_bulk_{assert, deassert}()
-  i3c: renesas: Return immediately if there is no transfer
-  i3c: renesas: Follow a unified pattern for transfer and command
-    initialization
-  i3c: renesas: Drop the explicit memset() call
-  i3c: renesas: Update HW registers after SW computations are done
-  i3c: renesas: Organize structures to avoid unnecessary padding
-  i3c: renesas: Use the "dev_name:irq_name" format for the interrupt
-    name
-  i3c: renesas: Drop unnecessary tab
-  i3c: renesas: Add runtime PM support
+ drivers/i3c/master/renesas-i3c.c | 52 +++++++++++++++++++++++++++-----
+ 1 file changed, 45 insertions(+), 7 deletions(-)
 
- drivers/i3c/master/renesas-i3c.c | 375 +++++++++++++++++++++----------
- 1 file changed, 261 insertions(+), 114 deletions(-)
-
+diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
+index f39c449922ca..38b8428f464c 100644
+--- a/drivers/i3c/master/renesas-i3c.c
++++ b/drivers/i3c/master/renesas-i3c.c
+@@ -433,6 +433,21 @@ static void renesas_i3c_enqueue_xfer(struct renesas_i3c *i3c, struct renesas_i3c
+ 	}
+ }
+ 
++static void renesas_i3c_irqs_mask_and_clear_locked(struct renesas_i3c *i3c)
++{
++	/* Disable all the interrupts. */
++	renesas_writel(i3c->regs, BIE, 0);
++	renesas_writel(i3c->regs, NTIE, 0);
++
++	/* Clear normal transfer status flags. */
++	renesas_writel(i3c->regs, NTST, 0);
++
++	/* Clear bus status flags. */
++	renesas_writel(i3c->regs, BST, 0);
++	/* Read back registers to confirm writes have fully propagated. */
++	renesas_readl(i3c->regs, BST);
++}
++
+ static void renesas_i3c_wait_xfer(struct renesas_i3c *i3c, struct renesas_i3c_xfer *xfer)
+ {
+ 	unsigned long time_left;
+@@ -1014,6 +1029,11 @@ static irqreturn_t renesas_i3c_tx_isr(int irq, void *data)
+ 
+ 	scoped_guard(spinlock, &i3c->xferqueue.lock) {
+ 		xfer = i3c->xferqueue.cur;
++		if (!xfer) {
++			renesas_i3c_irqs_mask_and_clear_locked(i3c);
++			return IRQ_HANDLED;
++		}
++
+ 		cmd = xfer->cmds;
+ 
+ 		if (xfer->is_i2c_xfer) {
+@@ -1054,6 +1074,11 @@ static irqreturn_t renesas_i3c_resp_isr(int irq, void *data)
+ 
+ 	scoped_guard(spinlock, &i3c->xferqueue.lock) {
+ 		xfer = i3c->xferqueue.cur;
++		if (!xfer) {
++			renesas_i3c_irqs_mask_and_clear_locked(i3c);
++			return IRQ_HANDLED;
++		}
++
+ 		cmd = xfer->cmds;
+ 
+ 		/* Clear the Respone Queue Full status flag*/
+@@ -1138,6 +1163,11 @@ static irqreturn_t renesas_i3c_tend_isr(int irq, void *data)
+ 
+ 	scoped_guard(spinlock, &i3c->xferqueue.lock) {
+ 		xfer = i3c->xferqueue.cur;
++		if (!xfer) {
++			renesas_i3c_irqs_mask_and_clear_locked(i3c);
++			return IRQ_HANDLED;
++		}
++
+ 		cmd = xfer->cmds;
+ 
+ 		if (xfer->is_i2c_xfer) {
+@@ -1184,6 +1214,11 @@ static irqreturn_t renesas_i3c_rx_isr(int irq, void *data)
+ 
+ 	scoped_guard(spinlock, &i3c->xferqueue.lock) {
+ 		xfer = i3c->xferqueue.cur;
++		if (!xfer) {
++			renesas_i3c_irqs_mask_and_clear_locked(i3c);
++			return IRQ_HANDLED;
++		}
++
+ 		cmd = xfer->cmds;
+ 
+ 		if (xfer->is_i2c_xfer) {
+@@ -1234,15 +1269,13 @@ static irqreturn_t renesas_i3c_stop_isr(int irq, void *data)
+ 	struct renesas_i3c_xfer *xfer;
+ 
+ 	scoped_guard(spinlock, &i3c->xferqueue.lock) {
+-		xfer = i3c->xferqueue.cur;
+-
+-		/* read back registers to confirm writes have fully propagated */
+-		renesas_writel(i3c->regs, BST, 0);
+-		renesas_readl(i3c->regs, BST);
+-		renesas_writel(i3c->regs, BIE, 0);
+-		renesas_clear_bit(i3c->regs, NTST, NTST_TDBEF0 | NTST_RDBFF0);
++		renesas_i3c_irqs_mask_and_clear_locked(i3c);
+ 		renesas_clear_bit(i3c->regs, SCSTRCTL, SCSTRCTL_RWE);
+ 
++		xfer = i3c->xferqueue.cur;
++		if (!xfer)
++			return IRQ_HANDLED;
++
+ 		xfer->ret = 0;
+ 		complete(&xfer->comp);
+ 	}
+@@ -1259,6 +1292,11 @@ static irqreturn_t renesas_i3c_start_isr(int irq, void *data)
+ 
+ 	scoped_guard(spinlock, &i3c->xferqueue.lock) {
+ 		xfer = i3c->xferqueue.cur;
++		if (!xfer) {
++			renesas_i3c_irqs_mask_and_clear_locked(i3c);
++			return IRQ_HANDLED;
++		}
++
+ 		cmd = xfer->cmds;
+ 
+ 		if (xfer->is_i2c_xfer) {
 -- 
 2.43.0
 
