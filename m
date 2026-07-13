@@ -4,136 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 143BCC43458
-	for <linux-i3c@archiver.kernel.org>; Thu,  9 Jul 2026 19:25:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F1D55C43458
+	for <linux-i3c@archiver.kernel.org>; Mon, 13 Jul 2026 10:51:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=64xzj0sz6dqdzM/+DPuXYbKzDaMJfufNKy10Qu0IXPY=; b=wDTgtPgczsUinc
-	8WrEYT2+RroFbiqf1rkxwzQjTavTKL+gdQaSda1MkQIiDjD1hFMCnzUEnhM47e0GYazfnsAOZq1mt
-	1QsM8AqKMSv+VUrlRQNLh3BQyzzp3cXZQKWpqUSndR8w5JvbVzpZIldmQVtMSJaktSRhW1IvYyj26
-	uw80OIJcIj0kOTsoT0InZqfV+zrrWu1iA2+THWBjTrqC5goyqUT0yzS75jiPfrC2nxvB+t/kGp2OH
-	vJ8u/aK6R5jYMaQ8Mh70JXPakd9zk1STFBuuzs10KsLPrj9hHvtC2p9L12RSISaFh5/BHqP05FxFA
-	Grf5gFZRMGifD8Inhkbg==;
+	List-Owner; bh=RL5y8gNzwRq/cS27rAYmEN6ddlWmBEmHUauAw422BjE=; b=jF/Yqt4NA2BN0k
+	MqNr+FM8DIbbspdNp/WH2zwrRczCaTGY7vXcThDEsU3bJCmQxt/ndTUquguw7djuTmIEpUBOGnIMn
+	zRYonw2/qTTKC1c43yUGBICe68LuBzG3k0zSYCeInwI/YTmaQP88gACyWxc9alx8qPHKAJO2sw/i+
+	3bQKmAIs2OFPOz13VY08LzgEjfxyKsmIko0luTjj8f400s5Cfb4L88o8uRpFVx3kDKd16MPd+4JDY
+	Aig/bxGisOkB3PZ90EILHpu4GWVCK8BaqFfSSSXBmJWPjFtF2q3itjE0r8m44eQ441zrTmv4alqOG
+	SbEqGIDyrXgXCAaVbEmQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whuMv-00000003ScI-3Hi9;
-	Thu, 09 Jul 2026 19:25:09 +0000
-Received: from mail-northeuropeazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c200::5] helo=DUZPR83CU001.outbound.protection.outlook.com)
+	id 1wjEGJ-00000008vpM-37U1;
+	Mon, 13 Jul 2026 10:51:47 +0000
+Received: from mail-pg1-x52e.google.com ([2607:f8b0:4864:20::52e])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whuMt-00000003Sby-2Kdu
+	id 1wjEGH-00000008vne-1a1o
 	for linux-i3c@lists.infradead.org;
-	Thu, 09 Jul 2026 19:25:08 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=WCgW9iIQ6Hvekxzlm8hgKFkPTV1/FpJJ3s5CeWd/oVVU4ZTEI77e8vT4vw0nIoykoBaJNbA2shVMmScQzPaNzH6/owFPU4B+dXFUkYrXtVxwi8nCQ0KkZ1xBrPI5md+B78n39XJ6v1nmLYKVP92maE70iPlxIB3IIVRL1HeyC4FflV+0puPn642SScMmiQBRRNcWnuH/u1Si3HTYgaABdFLn/pTCe2TIOH0eb30RGmtwSbOKjyUnEQp2cayXX+Rpqm/1w7XMEDlGWBAY8IVwOKFH8y+LBMGrjTgL87grcKaMJAF19U4iTo1ixrWgs6AClm+79YmYOzSbp0T+v9NL1A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=zIE7HSk8xgMMBk9Oad8P4UlMyuIo5syFCxQWSC8/SOg=;
- b=ep6sVLK5g7wkwCgIi0HSegnsn4oAtFCBu733I9J1S9FnnoJYnnpZJLe450n0w5Mm3gtBtwIFk9JZlC0weYkyak9FaPJNuo7twFgQEt6SnxtIc5oSqmjEJKQhbIq2nkYa/eDuB2oKSP/uPCxv0ofoVC4zg6acsvOTCHN7ipxhS3iqzULDq1pXZ6ktL4xJwni3lArN49Gjp1evoU0kpDO1qpGXwqzxZZfAJ6F9TmwRJVsseTUGxoxZEArMKm7uEh3clDv8Fm7JTkebSiQt2mymG268ZADBsx3oUcwearblhAjpNZLgFP3J01T2XCufacUomSgKvGF8H47A+VRFNfjaBQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zIE7HSk8xgMMBk9Oad8P4UlMyuIo5syFCxQWSC8/SOg=;
- b=nuCulSz80QtKG3flfQLsvmHswBYArlxzOSF7QFlYzFdHvkNEkl71QjzO2qoTqd9VIfi0gb00+PsFhpZK9iMdtKw6EbA0BekyGClMx2ukD7v93N/fsu8XU9WXAs+k7eRl5EQGpI3lOvrqgSSobYRaofg1TMg/VsQ4E2WuXzIpgUf4Xzx+amqaE5GM8yZ+KI42+riN46Y5dSOBCIdxGKn9BGRwYFdB7G0bsbHrezWM9bgwdd8SC/O4lhY079Sjvp8IxUa+ErCkKS7l/fZCs+1Wp8LpqTPj2n2p+znz+a753f7dWaFDa19c+B8IkAqTBwYmMpgOw09A0j8/6qFGeC30Yg==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by GV1PR04MB10631.eurprd04.prod.outlook.com (2603:10a6:150:202::9) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.181.15; Thu, 9 Jul
- 2026 19:25:00 +0000
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0159.007; Thu, 9 Jul 2026
- 19:25:00 +0000
-Date: Thu, 9 Jul 2026 15:24:50 -0400
-From: Frank Li <Frank.li@oss.nxp.com>
-To: Shubham Patil <shubhamsanjay.patil@amd.com>
-Cc: git@amd.com, michal.simek@amd.com, alexandre.belloni@bootlin.com,
-	Frank.Li@nxp.com, robh@kernel.org, krzk+dt@kernel.org,
-	conor+dt@kernel.org, pgaj@cadence.com,
-	wsa+renesas@sang-engineering.com, tommaso.merciai.xr@bp.renesas.com,
-	arnd@arndb.de, quic_msavaliy@quicinc.com, Shyam-sundar.S-k@amd.com,
-	sakari.ailus@linux.intel.com, billy_tsai@aspeedtech.com,
-	kees@kernel.org, gustavoars@kernel.org,
-	jarkko.nikula@linux.intel.com, jorge.marques@analog.com,
-	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, linux-arch@vger.kernel.org,
-	linux-hardening@vger.kernel.org, radhey.shyam.pandey@amd.com,
-	srinivas.goud@amd.com, shubhrajyoti.datta@amd.com,
-	Manikanta Guntupalli <manikanta.guntupalli@amd.com>
-Subject: Re: [PATCH v10 2/2] i3c: master: Add driver for AMD AXI I3C master
- controller
-Message-ID: <ak_1gpc6EpgQeOOl@lizhi-Precision-Tower-5810>
-References: <20260709064233.1451482-1-shubhamsanjay.patil@amd.com>
- <20260709064233.1451482-3-shubhamsanjay.patil@amd.com>
-Content-Disposition: inline
-In-Reply-To: <20260709064233.1451482-3-shubhamsanjay.patil@amd.com>
-X-ClientProxiedBy: SA9PR03CA0014.namprd03.prod.outlook.com
- (2603:10b6:806:20::19) To GV2PR04MB11799.eurprd04.prod.outlook.com
- (2603:10a6:150:2cf::9)
+	Mon, 13 Jul 2026 10:51:46 +0000
+Received: by mail-pg1-x52e.google.com with SMTP id 41be03b00d2f7-caf45fc5202so712187a12.1
+        for <linux-i3c@lists.infradead.org>; Mon, 13 Jul 2026 03:51:42 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1783939902; cv=none;
+        d=google.com; s=arc-20260327;
+        b=Ycsz3dS06H+fIacQr07JmuZp9zlq0868icS3N+Qf4lHtq+HBMfPFy+icJNkFanuKf1
+         eIHmtyjaDfYrgnOIaW0JKPLhI/TycadlYVFe2w6J2EAp4/ZIvLGCJ7wCxpis/GkZGSZd
+         /bi11ybW4vDAslPzxHbbJGsHSdQhXOH/vZFgtC22QoGIaNR/98O0rSYRnBSnymGqTXY/
+         GwCyZD597wqwQ0B2R7/8+eIuK5Wtw7Q2FoWoVwwZz++7/lhI2Joj/D/rarSPH5264kwL
+         HFn9mEKg8VpKmM6sYcjRSdgReCxBCIfST/8tnDQ1KkLsnkdshhm0X+8NFdzzDEegf7B8
+         pm2A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=FNf92TyZVyw4x5cNjSKuqjpK286i5rfLYFZYMpGInXU=;
+        fh=tJufgPkFjmnq5yNKPy9X8F8NinpSECq0CyhSdroVM3o=;
+        b=GwJG93MllnIn/29Ql1sXOuHJfaiVaGuNYxQVWBT63YBT6WXownsGFBdn9px4n9Qnys
+         b0w8/e/Fs/EVaLLXBk2xzH6mI21ekCwZ4AOx96R0hcquICUBOhQ8a5FEB9oWDmg4dPFl
+         UZ5lvws6rUyVP4yvN7jaXA1eXpZMQWbvtga76gSqfxEziNSd1DDTX85L1Wd3VVSMIvKD
+         pxEdUi0BjDRQ0D7pS/SzK/TNz59AZMF46AxhavNDgbOdTHFDWA9vsy6xjO1Y5L3l2lMo
+         A+wVk9Ng9DKkcHebWrnkgWHbbwCodVq1ztlHDIb7qSHY2pNzrLcxl8JKGBhEl5qltXoO
+         hO7Q==;
+        darn=lists.infradead.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1783939902; x=1784544702; darn=lists.infradead.org;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=FNf92TyZVyw4x5cNjSKuqjpK286i5rfLYFZYMpGInXU=;
+        b=ss64CdOF9FL2CTQz4w6QOiOTm4DmvFe4GOpu0q5Q+r3UizWiaZHLlELxdzsvJ16RZn
+         AW3hHdXLj+/77n4+N/kVSLQH1xqCo9ztKevw4k36ABe8oK9p+248j7pMQOxKD2A0pewx
+         YHz/BUNXpuD4mtuVZtBBw2nlJATJIcJC8ZYvwm8aV+fKNLJc3Pyn52oVszi8E3fFTiQ8
+         jqUDv5eaPXM3MC0g1Z82c+RtQGtiayVSsuvyYyHL0pKgCznBOqLIV446QewKPg9iAadZ
+         zN2XAvgTllMexTwflIbwPwlGCNEywjgdEL6RVT7CIQVumK9GAb2qqomUauXcPn5MSeTE
+         eN2Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1783939902; x=1784544702;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=FNf92TyZVyw4x5cNjSKuqjpK286i5rfLYFZYMpGInXU=;
+        b=QYwnZnW/PVi+eVzbI4ecwyaxfVW5h9KxS5mcD7jgjMI2p5gVRPpmVqHHxVDGn5mTs6
+         S2y6VCOr2fzs0UCbcsfsPWL6ZgtQU1Z0FP00pRSnqWCkAmeoCxXffIBiE1YMUAZDTHxs
+         kFfXFby6ZeoEmExwGMptFDLdp4UayQ1Loescfxag4gE0o5CFJv0aMMn6HFq4df10QHpU
+         REOCxT63V6bm5euVMpgymPmLIkMKdz+Y183EppjUAi6BDOe3BeSrq8LnZfhgUXJoISOD
+         Cv5SHt4KS+fBtXRShJVktMXf8PvrBDgG1g+y8g6XwjSYC3CMZvslLTFFauDBbWprjXyM
+         cACQ==
+X-Forwarded-Encrypted: i=1; AHgh+RpFXUGM8vz7XQsLLpuaDt3hLY/Vi4DX5Vqg2AA8l8jaVfJfhtZ4UTZL+URjDUUuOLbQhbm8FlKfDSE=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yz0oeMi5Pb5agkbMkOpZ/spyZsA39sL7T5hgBKVseAhnWEwWI/Z
+	daYcEK1X0uRb5PepL9k6GlKogNZ1xhEu0WnmSAWtDs9chNHSQ6Tmx47mVyaNRR3hpGhyn5/FTOx
+	plH0pMGIrGqfKUAA6IEKPBHpIJ3pIa1alODHC71M=
+X-Gm-Gg: AfdE7ckdKhShvYsnK7NeQTfeRzaX1MtqcPWMJb1v4/nxNIg3nsv7tNJHehpJtyVWdr5
+	LY0MTU9FPL6MrCfLOyVQHCIuxMf0KBcz6eyZr4k2X3ECl1QyZmUY/6o+dLuDj+S+U0bRnDlyLia
+	ozTCODz+JdPyXKHzvJUe/qTBwoy08TYcjW6ZfPr2CzzWCbghDTncv1voiq/eBQJNDola+UfbueM
+	9pYvnJIrSTuYq9mrWOxQdGg52Op5TrNUW0ciGBrbe3Ygi3DmpwGjSKYVfqsdDAkEnh0Otfx4xPU
+	rvINHtxu
+X-Received: by 2002:a05:6a21:a341:b0:3c0:9c18:d5a8 with SMTP id
+ adf61e73a8af0-3c111079720mr8556131637.69.1783939901696; Mon, 13 Jul 2026
+ 03:51:41 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|GV1PR04MB10631:EE_
-X-MS-Office365-Filtering-Correlation-Id: 9e15c3af-3b08-4d0b-eb55-08deddefc48e
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|376014|7416014|1800799024|366016|19092799006|22082099003|18002099003|56012099006|11063799006|4143699003;
-X-Microsoft-Antispam-Message-Info: OleXcigNERDBp3zqfnQPA+gSUhy1u9bvsEhBUsqW6LNS+r4GEM5m/e7fkGUDnthRcaKMta/NGSDiB9LyDXXvGka5rlyZcPPQR1sEncBa6Etz1w69uBFgQUCT9dRF22ZedvmfGcTC2v1wx4owPO6sU2ex7U7ke9qXTP2yCNMsQqStaQHr1hTCgjb4oUL3wNFtXXFPWt+fqYQoVQjgIWmF6RQyPARLMQ7tuTZBpC+NhuvhVJp3H6Ck0cqnO5pKumgJiUxehrFIECqiWag7F5oUmD51wxGcFB/45GwVaS1bPoZ9ur4wrhY9grxMmEO16Fd1ZCmOpe3kccNfogXTanFa9ZNPkHGU6Xw5jPATQfAIY1WisrSht2aVknE7NNKseEJc4qqlf8jDl57oXPVPhnsiTrPMbDZkSg2IdeBXUZcVT7oSvJBxOJ/+bDHH0UxmRg4n0Dgr+L4JT2qmcQE0c+Px9G+1kMBF2W/20aSTOWnr06ZYMUbHSHitrAceSawE6WOBT9xtnQTvN45iRA3lkJVTrH2dVD6z1GUITvijUogNcONk9pxGfzdZ/rZ0bOpCmZHdVjaIjkHpQmeRJLr9P+QovYpqIaRHkWAmitLFEEPjWLUh0hFeWa/qaj0o13z5yNDdYYXG35Q6KC9qvn2LiyaAnr6XDFJfT3YLL4pOolleZUY=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(376014)(7416014)(1800799024)(366016)(19092799006)(22082099003)(18002099003)(56012099006)(11063799006)(4143699003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?yi1/cuHs30e+k9bBzl8zv/ZLTsrM9yMzCPgA83AMk7F1VAazlMCaSd488FaZ?=
- =?us-ascii?Q?jSSSec06TBY80S9dE5FlvxWqJ9qATLYnpkLbmSykZlWs9mk6QMmbroGZESf5?=
- =?us-ascii?Q?P7tW50uMJCBme1E0/Uyx5klsajsnfSftds0Z3Ps2fYfHghLoaDflWpwrUd24?=
- =?us-ascii?Q?vBx+4Q33ozi63ICQkR/QTFOZpK9j+y5dfRGDHb/FgPhetPadz8xkAPm0T8XB?=
- =?us-ascii?Q?QRNlJjNFM5sY52ZpmsUeQP84AFP+zuk4oSH9Km6hRqqWrRy111O0SmMJ7U4a?=
- =?us-ascii?Q?eYUvqf94mXpzPvMKd4bHqkBZMeyo2vE6kO8a1j7BcTvLO3iL+c51wxQoyZlh?=
- =?us-ascii?Q?i7CH2z4pQ0ButUGCIYXY6jjnLO+sdEf+4cVnIqEpee1UiPCoIhSxOreGulVX?=
- =?us-ascii?Q?Qax/esIagLEYZHf0FIahkwlOYq9W0l0ygrcl4aquYIl4f15Ua2UoUmlKoxzv?=
- =?us-ascii?Q?yQPceOQ4yICw0LqbtD3kgwHt4ZwDQ8w4OCvnvjX1wTJ71uCZShkIzTsOiImg?=
- =?us-ascii?Q?A85SLJO0VzlikHRjmo71qE7IeENF0ZZxZ5Vd7ayye7EWZaM5Wza1DTm1gDD4?=
- =?us-ascii?Q?J+sMyNE981jxzYshde/kJsd6nqiq+TtzlWZxfMVWTynD48ycUOavD/ahj9Mk?=
- =?us-ascii?Q?Y4bNHI5xnGxKg/THyr8eQRe1RP/MHpiS8wXgm/R6Azl/HKmK+ZKRdgLcGV/i?=
- =?us-ascii?Q?a/8kXweOE6w9jvtlj94vQNHjfA4daz2FHvtc1XsBJeG9UrpC1fWu6vcdKB5l?=
- =?us-ascii?Q?cEE8lbReJtDIFS9BFmptAm23Zkmydnin67ex+Q4GnhD+Z8db6f1hMSDSu6MX?=
- =?us-ascii?Q?0g3IJ1O0mxEhN0TGX1lhcz46VRvytDfP8PD/zUJDBWpuOQogafwReH2QFWCK?=
- =?us-ascii?Q?FTJRbPnJxEH9cjpr5GYx/QOUO41kNZ7PU/TGVFc6sVjzwTTfT0c+tYgpYuv9?=
- =?us-ascii?Q?xjlvQ+Vvr9/CCz3jYmI42sdEXFbd37RCfPnr+Z6M0vkAhOKNYNyTm1cwlUYx?=
- =?us-ascii?Q?DpZtBq0hhXZ6O+/Kj8jM7VQRT9hY08ohttqseFKs2jj+IsVxu/afSfT4OCC7?=
- =?us-ascii?Q?EqtapyA+lLNyoeoiuXVhK4ClVB//IkzmIcT0DT4KWlfdOYNoWPAYXrTp7qRm?=
- =?us-ascii?Q?aDelmqkz/jm/DAfpA19SGTXGuMiQvTrNNTSVngvSUyUfFrjRWwkLPBeZnjVO?=
- =?us-ascii?Q?YAw+PjorSi1WKFLTePyazDRoTEzf2ZVYWXbuzRc1Ur7AOUvnHBdsI8cIaqcd?=
- =?us-ascii?Q?Ze+1DZub/tS+T0hLNPwsaAx8qZHXaBKiOQaCrItx0DihZbG7VrqGcayH2H04?=
- =?us-ascii?Q?ZBvIqXiJa3S/UT6xS/OFNG9YSaoBFLxeBaWMpt7xbCTjrxdu3d/0hWusVq83?=
- =?us-ascii?Q?wIIniGWyJlP9CYbADcSWPAD7mb8qn7Reg91yAY4+Ft4kKZA7gBWwSi5QaWOh?=
- =?us-ascii?Q?IeLqBW3XMJMw4qj1cEWZBziW+wowsFDAsfSbwr1b2nPFXB8pfcnvmb5ffVKo?=
- =?us-ascii?Q?pzIOGvhgNj1bEqQw8pIMGTePMkXikQf7CkJTYc2Bx33lTCqXmK7F2rYqARKg?=
- =?us-ascii?Q?ajKbkNbvGF4w4CAfOSB+qkAvKalBr+G+aFVwDkfEFxgWuiGrldpKg+14SB9B?=
- =?us-ascii?Q?MRomSXy4O16GSSXlwN4aLZnIkuAlDeR/nSut+xOBlBKZY/3If4kE72F5LvhC?=
- =?us-ascii?Q?3hBPXw5xzNb/N6ayUGRuCxCVPfW2K5OHEQVJilTrck37hLZIPaXwaCWj5AoK?=
- =?us-ascii?Q?Gm+6JxU/8jrd3YBuI7Rbu6HTB02N8NY2lPHxHajHHRKCRTzkR5N9?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9e15c3af-3b08-4d0b-eb55-08deddefc48e
-X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Jul 2026 19:25:00.0290
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: mO8RMOhHIUULoDiyU0PiUxc8tpGbKxMoHuBBUUKNgs7pioDtxd8+XM6BVciPql6mLWPBpe2fROIz+YY+aW2i/53sGeDcNqPoui54JX5mfkob+WejgxK3G4Y7hr2WNetY
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR04MB10631
+References: <20260709071744.333403-1-Jm_Liao@asmedia.com.tw>
+ <20260709071744.333403-2-Jm_Liao@asmedia.com.tw> <ak_slNTM4Y8ed7RN@lizhi-Precision-Tower-5810>
+In-Reply-To: <ak_slNTM4Y8ed7RN@lizhi-Precision-Tower-5810>
+From: =?UTF-8?B?5buW5bu66YqY?= <tim678910@gmail.com>
+Date: Mon, 13 Jul 2026 18:51:30 +0800
+X-Gm-Features: AUfX_mzrJlrrBxrrO-QSeYBhBhgKBArxsWuce7zw3kP9xOzkYx3BU0dEBKFK_AU
+Message-ID: <CAGfoLndaWX4gov8YdCd=Z4F5vKBRoLZQk=K7XBirUXbTf8jdYw@mail.gmail.com>
+Subject: Re: [PATCH 1/3] i3c: mipi-i3c-hci: Enable IBI threshold interrupt by
+ default in PIO mode
+To: Frank Li <Frank.li@oss.nxp.com>
+Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com, adrian.hunter@intel.com, 
+	jarkko.nikula@linux.intel.com, linux-i3c@lists.infradead.org, 
+	Jm_Liao@asmedia.com.tw, Chloe_Chen@asmedia.com.tw, Yd_Tseng@asmedia.com.tw, 
+	Patrick_Yen@asmedia.com.tw
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260709_122507_598941_10D749B2 
-X-CRM114-Status: UNSURE (   9.95  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260713_035145_449152_5E9343B7 
+X-CRM114-Status: GOOD (  14.40  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -150,30 +120,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jul 09, 2026 at 12:12:33PM +0530, Shubham Patil wrote:
-> From: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+On Fri, Jul 10, 2026 at 02:46:00AM +0000, Frank Li wrote:
 >
-> Add an I3C master driver and maintainers fragment for the AMD I3C bus
-> controller.
+> On Thu, Jul 09, 2026 at 03:17:42PM +0800, Jian-Ming Liao wrote:
+> > Enable the IBI threshold interrupt (STAT_IBI_STATUS_THLD) by default
+> > during PIO initialization. This ensures that Hot-Join requests and
+> > early IBIs from devices that have not yet formally requested routing
 >
-> The driver currently supports the I3C bus operating in SDR mode,
-> with features including Dynamic Address Assignment, private data
-> transfers, and CCC transfers in both broadcast and direct modes. It
-> also supports operation in I2C mode.
+> Do you means not call i3c_device_request_ibi()?
 >
-> The controller's data FIFOs are accessed big-endian; the driver performs
-> this conversion locally using ioread32be()/iowrite32be() with the
-> helpers, so it does not depend on any core FIFO-endianness helpers.
->
-> Signed-off-by: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
-> Co-developed-by: Shubhrajyoti Datta <shubhrajyoti.datta@amd.com>
-> Signed-off-by: Shubhrajyoti Datta <shubhrajyoti.datta@amd.com>
-> Co-developed-by: Shubham Patil <shubhamsanjay.patil@amd.com>
-> Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
-> ---
+> Frank
 
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
+Hi Frank,
 
+Thank you for the feedback.
+
+To provide more context, i3c_device_request_ibi() is indeed being called.
+However, according to the HCI spec, if the driver needs to receive interrupts
+from the IBI, the STAT_IBI_STATUS_THLD bit in PIO_INTR_SIGNAL_ENABLE must be
+set. I noticed that the current driver implementation does not handle this
+flag, not even in i3c_device_request_ibi().
+
+Would you recommend handling this in hci_pio_request_ibi() to ensure it's
+only enabled when requested? Or is there a preferred way in the I3C framework
+to implement this kind of configuration?
+
+I would appreciate your guidance on the best approach to handle this
+without compromising the common code path.
+
+Best regards,
+Jian-Ming Liao
+
+> > are properly captured, improving system responsiveness and stability.
+
+> > -     pio->enabled_irqs = STAT_ALL_ERRORS;
+> > +     pio->enabled_irqs = STAT_ALL_ERRORS | STAT_IBI_STATUS_THLD;
 
 -- 
 linux-i3c mailing list
