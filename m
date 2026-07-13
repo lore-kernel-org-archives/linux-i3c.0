@@ -4,55 +4,144 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33A2BC44501
-	for <linux-i3c@archiver.kernel.org>; Mon, 13 Jul 2026 14:59:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06C63C43458
+	for <linux-i3c@archiver.kernel.org>; Mon, 13 Jul 2026 16:38:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CO2qzU4TTEdqMrhDT3chrNgmPcyO77oYaO8/XglsOAg=; b=etOIB90kQqgMC3
-	tgl+l/1UVX8Kk8oJNqQCLoq4viBrr9i7YJ9cOWSF/X87KeTQx6b2IR4WPZoJiwsBUNY58dM9uIy6X
-	iEb9m4hycR9cORLIq8YQZ5nkONxn5mgujuRsLxC9q/n5kSCxU4X8cmABeWs6QxlM5/txvyBJM1SkY
-	0AtCu9GhvKV6RvJvVgnCrjoW9rCEbzVw/os5JgsEYcKVVUGRJnCtg1ZSOxpqlm3sWD9PGOPXO6PZZ
-	itQRx1MP96CPSe+kEyOOaapIe9lApcVMkDzOIe5BjUDmEnoAOHRZD1QVTdGRl7vuHWajqff0/rxKL
-	KKmrgfd2BkM9JVYQtbbA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
+	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=jOqh7ZcVEs35SFA5WBwP4f1QeD46b0Xcot/LeMjXW8Y=; b=LpiY+16ClOIk8mB/mUI835uVLu
+	TfFwPWUDP+By1n7K4P0uzB0hDvgbzaFxisl85emjpcPBGxgZdt8R2fcZy8Fo6voBQ4IHgWYis51sN
+	+xZhtyOb5PdQ9WSQHuCge2+BmPtljrjm8fk9wfpk/aEunLkrMY5+Y+wE3EkXCyAsena83LSVIMLSa
+	TTc/UNRlOsv0YF/Cfh+91uaM/TVNypy/TWYKDakAllEJluUCJJ21ceguyBysE6kCXjxeDS/JCwDx4
+	TtluPlMuO8e9tfpYu0Bl2suqmfnK9hRirRdz11uGUUW6rgQ9NdobKaKY7rgNzsPgBVBtbeN9+WEcb
+	jPLbytMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjHRj-00000009ZNb-2wWn;
-	Mon, 13 Jul 2026 14:15:47 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wjJfs-00000009zzy-3Dtj;
+	Mon, 13 Jul 2026 16:38:32 +0000
+Received: from mail-westus2azon11010012.outbound.protection.outlook.com ([52.101.46.12] helo=CO1PR03CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjHRh-00000009ZN6-2tHe
+	id 1wjJfp-00000009zzF-0gr2
 	for linux-i3c@lists.infradead.org;
-	Mon, 13 Jul 2026 14:15:45 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id E4F97600D8;
-	Mon, 13 Jul 2026 14:15:44 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1476F1F000E9;
-	Mon, 13 Jul 2026 14:15:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783952144;
-	bh=GCshzDJgL5qpdTiAnMPnZDIbbhRokhokCmpnjVtCmFg=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=EVQepfn+IOu1KJiafUk25nMy4il8ssNZv4M78hkBt9XzxNVv436ZddDB891KaUNxL
-	 Iw9v6Um83GFS0DJJZNFYY/3Lc+8KuKXng/gglu+99BjYXHH9gUVpc/Ous7Jw/3avO7
-	 Myrl7VzPpL61uze0BTdeRZ7D5QJwRt7yKlCy4Yu1RN21Lvl1h9pKQUwe4o4fHCEQPB
-	 19KLFdln/bU0Mvw82/S5p/IIGdeEvy/0Df+wrLVjXCDcp0iysIg4mK4SlMft0ubgJy
-	 XEUA5VprlY6DODypLe3I4QqM4j6o/63FQW1lmiFXO0M8YIWnUeHfjTdI1G8eD3s9y5
-	 6wN+cN58wbp9A==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v5 14/17] i3c: renesas: Organize structures to avoid
- unnecessary padding
-To: "Claudiu Beznea" <claudiu.beznea@tuxon.dev>
-Cc: linux-i3c@lists.infradead.org, Frank.Li@kernel.org, wsa+renesas@sang-engineering.com, "Alexandre
- Belloni" <alexandre.belloni@bootlin.com>
-In-Reply-To: <20260713130545.568657-15-claudiu.beznea+renesas@tuxon.dev>
-References: <20260713130545.568657-1-claudiu.beznea+renesas@tuxon.dev>
- <20260713130545.568657-15-claudiu.beznea+renesas@tuxon.dev>
-Date: Mon, 13 Jul 2026 14:15:43 +0000
-Message-Id: <20260713141544.1476F1F000E9@smtp.kernel.org>
+	Mon, 13 Jul 2026 16:38:31 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=L1vAhvMXrgynBDXhdK/ais5Fuv2poCf9VRLlj1vTR7cCnzEBVptR5KWLCjICtQDzloDI/A7FmAk487xYzbrL9YuoCU1gpURzoQa541VHQUGIuOV0EBSSwNRJb9eRLe5HqedaI5aYn+gEgKQmIAGKTe8SclOjmdUh6P4MU4KH65f3GIBBAiz6WYh+qzbF7YvgXv0/a6nr1EAYy+92Q7r4WWRwwhasklzOeCPjToIY1iHhqWslVBq9oL/P+uay40pMg1e73JprDLg7IPdM6EHmv+cs5PgyaqHJTIn7RQ8vvvgL1nlgu5ZQG0g/uCrdd1kXf2Op3OPFbsfRhVyMIpAyJg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=1Q/en/7ckSEXraxMygO/NvLcwDhwUznwW94J4pPpTUg=;
+ b=wfxoQUKxAkjByu0ozScrsGLM/+gHDIuTmIaJIGGL3Nn/NfqVwarU0Mtkykp6imIFPmUT73iulE+D/w/dxl5HW+qkgx8KA4CjSifEprAsA1CWzXxyOn2kleZxdgCBtR5mGrYpjNObe6kHmrCqyVKILeIXkdsW/zlMENOdVNahe/0qrqrKW5BICJMIZblnpGY3XmsejTiM2srkgQDbQA5U5bMTvWEhWKJHS1uSLFArVSMtJUEU9XkgRrdOdhtRy7PM3nA2DIIO+CczgRrN7DY3nN5bezg7xkuZi1rCkTzvwSWdszXG1aKDG2wyQO/yBsiFD+zpkbZ5KdEu0nNVn/ZaeQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
+ header.d=amd.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=1Q/en/7ckSEXraxMygO/NvLcwDhwUznwW94J4pPpTUg=;
+ b=LuGZfSNUJy5XLgbmujn9u4bUQjiM6AG5cZI9jniQJahtYkQvPFvV8XiiirokaNu4appEjHstbFSYRvy1cxipcoLx3EdtZ/xGLUUN4Mtm968luXe6kqX3LjCIb/kneqGl5DQEYt5cz6Qy2Qn+KO5kLFmvxENUHyqIMcc1nIPkFLg=
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=amd.com;
+Received: from CY1PR12MB9697.namprd12.prod.outlook.com (2603:10b6:930:107::6)
+ by IA1PR12MB6532.namprd12.prod.outlook.com (2603:10b6:208:3a3::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.202.18; Mon, 13 Jul
+ 2026 16:38:17 +0000
+Received: from CY1PR12MB9697.namprd12.prod.outlook.com
+ ([fe80::3a41:55a0:8203:596d]) by CY1PR12MB9697.namprd12.prod.outlook.com
+ ([fe80::3a41:55a0:8203:596d%5]) with mapi id 15.21.0202.014; Mon, 13 Jul 2026
+ 16:38:17 +0000
+Message-ID: <02ccf4e3-8193-4ba7-931a-e5bf2dde3f12@amd.com>
+Date: Mon, 13 Jul 2026 22:08:03 +0530
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v10 1/2] dt-bindings: i3c: Add AMD I3C master controller
+ support
+To: Shubham Patil <shubhamsanjay.patil@amd.com>, git@amd.com,
+ michal.simek@amd.com, alexandre.belloni@bootlin.com, Frank.Li@nxp.com,
+ robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, pgaj@cadence.com,
+ wsa+renesas@sang-engineering.com, tommaso.merciai.xr@bp.renesas.com,
+ arnd@arndb.de, quic_msavaliy@quicinc.com, Shyam-sundar.S-k@amd.com,
+ sakari.ailus@linux.intel.com, billy_tsai@aspeedtech.com, kees@kernel.org,
+ gustavoars@kernel.org, jarkko.nikula@linux.intel.com,
+ jorge.marques@analog.com, linux-i3c@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arch@vger.kernel.org, linux-hardening@vger.kernel.org
+Cc: radhey.shyam.pandey@amd.com, srinivas.goud@amd.com,
+ shubhrajyoti.datta@amd.com,
+ Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+References: <20260709064233.1451482-1-shubhamsanjay.patil@amd.com>
+ <20260709064233.1451482-2-shubhamsanjay.patil@amd.com>
+Content-Language: en-US
+From: "Pandey, Radhey Shyam" <radheys@amd.com>
+In-Reply-To: <20260709064233.1451482-2-shubhamsanjay.patil@amd.com>
+X-ClientProxiedBy: PN3PR01CA0125.INDPRD01.PROD.OUTLOOK.COM
+ (2603:1096:c01:96::11) To CY1PR12MB9697.namprd12.prod.outlook.com
+ (2603:10b6:930:107::6)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: CY1PR12MB9697:EE_|IA1PR12MB6532:EE_
+X-MS-Office365-Filtering-Correlation-Id: 3201d55b-5b6b-45d1-4784-08dee0fd2424
+X-LD-Processed: 3dd8961f-e488-4e60-8e11-a82d994e183d,ExtAddr
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|23010399003|1800799024|7416014|376014|11063799006|56012099006|4143699003|3023799007|9063799003|22082099003|18002099003|921020;
+X-Microsoft-Antispam-Message-Info: HZ7Btc9nUGa9GKHJ4yYgntoiWddF6EtX+4MA8PZP7KXmAyhEo/XYfOTD9LYm+22EV1YB935DOe805n7sAhvG+wKnDFh+xVjl2b+B8eUEdBohmaWIPgPF4OJxbx9jCPdteC6WH2W8ED7rIVKbhotVY7KFH0o2UWQW2ZGC+YGHQl8/PLT7wm4wEVWHqNmyWwW5yh1QCHOvlLlMq1HGkxznl5xrNIjwOX0DTn7L3fVy9RjKWf5atqLXXzytLVHE36taoeyppFKxvRMw1A6FXBQENOXqE2ksnU05XAF6B39cyJ8NOa1tLfloPQGd8OWQNG3f1HQ9LGy1GpfGmOooJDzUYxOl9CTqn/FU6hn9Ye7T6ofZumg2lSKTRpxBQCbWVIz4dPr4L9npCJy/bJlqLNSoepE0nLEXy82Mnf/OQUpIPAGl8Z7E2pBEmxjUt8gRfYN85bkLqYir3NYxEKDlZPeVfv56hhZv1Pq15eobQiOH18rN/iTrSw3bMATzSPTLSh2d1cUTHM51nqN5HYl7HBcdnGbjs4j2gfqxfqcbaFhegBxy6Pzqf6FvpgXnLvN14bLNunjOnBdumTN28U3BfXbKQwIpFJCPrjT5OcyNkMqIKN1SSnoNvn7mWa+iuBkegjs9ofWYmDa++uL1G4RUsjEJcn2LHKhhq3GyrmCqludDre8=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CY1PR12MB9697.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(23010399003)(1800799024)(7416014)(376014)(11063799006)(56012099006)(4143699003)(3023799007)(9063799003)(22082099003)(18002099003)(921020);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?dkpKS2VodEprWGJRT2krVjhFOTZwdE1wb0dJOTZBVTcxOW9CZ2RvOTFjZXJi?=
+ =?utf-8?B?UVNvNUxsTm1FVmErdklES2V6VEVCSWFKdTdQYUY5V1ZsbXBHMFFHWkVTdVVB?=
+ =?utf-8?B?ZnZ3eEViTlY0SzVpS2RjbWtVUjlLdmhRKzZ3Q3B5cjFGa0JDSEZGU3ZjOFp1?=
+ =?utf-8?B?bW84eG5aQ1F4R3dISVdVM3ZLL2UvcU4yem9GMW1sbjdjTTZzTEc4c2d0amR2?=
+ =?utf-8?B?R0VkVGNXSWNSM2lDa2pjek9WbFk2WUR6TkZIZDMzTU4wOSt0VERTQTEwelJQ?=
+ =?utf-8?B?Qkx5RmhWK0ZFTmJjM2QxOWFkNkNHMnFGWXJ5bEVaWFg2NjlBNVJKNHJiRVo3?=
+ =?utf-8?B?QmJJZXBmL0FJeUptOFFleWZ6ZmFsWDNzRnhFc09wZGEybVBwWTYrWlFnd2lx?=
+ =?utf-8?B?aFJkK1hjZ3ZnZHRYNTN1L3VONnRBSkU0YnE5bnlOZzJ3QlFiRldxV3pIUzVw?=
+ =?utf-8?B?TGZibzZDUXcrckxWV2pmNitLWkR3R25QanBiQTI4YVlUN3phRnVpL2hXbE8r?=
+ =?utf-8?B?aXBteFZpMHpOTHd4ZGNjS0NZWVZLblFmeWJaTHVVYUYyZUx2QmhYdjBXdWZi?=
+ =?utf-8?B?Y21BSm16NjFUYXVUajNaN3ZLR2hzM1A5a3NibW9xaFozR24yY240NDlvTHEy?=
+ =?utf-8?B?bk56OTRxaXY2eXVCbTVKbWlkL05adUJ6M3lxbE8yb05CZ2FFZVkzMUhneCt4?=
+ =?utf-8?B?Y0Jkc01BZnhTWjlRVmJTaDYweTB6dlEwTW9WUTEzZ0hvY05WQnVUaTNvYW8w?=
+ =?utf-8?B?QXZWTkNBR0J6cWFxVmJOTFplM1pkbkNBNWZsRWFUSXFHek5YaDluZ25MZlVY?=
+ =?utf-8?B?WVVtZldWUC92bXpsU2MyZnlkRjJzbGNKL2VrZ3dHWGdlYXRlUGRHRjB5UnpK?=
+ =?utf-8?B?NUhYOWIrSUpRU1VYVCtnNXdVT0VEMUtPL0p1dnNCZ3YrV3QyTnFZUTZFRlFh?=
+ =?utf-8?B?dHovdE5CK2V4bFVzZXhBemRmaGptRkMyZ3YzNmJCVkU4RVVFdEhYYzFVWjZO?=
+ =?utf-8?B?VHUzd0Rsai93amUwSkl4RTNJUjl5Nzl6TkRvWlYydzhRUVpjUnI2ZGlkb3Jq?=
+ =?utf-8?B?TlAzRTlpZ2lpcVI2ZHFmVEZEVGtIcWZTaDU5cWxDV3J5L2lrZEFxWUF2QWxu?=
+ =?utf-8?B?akNFTHowTVJLeFNEK3FrTjhqUWRER01hc09lMSsvKzlLdTNOUm5yOG1EV0Zr?=
+ =?utf-8?B?Z04rMUtVR1VFdzl6V3JidWVOcGoyb296RGFiN1lvMmZUT2tzRWJsUisvVlFt?=
+ =?utf-8?B?VVBzSUdKbDdxWlBQRTJrdEs2Y1owamp3RVQvYzJhVkllbldXRlVsU1FRTmwy?=
+ =?utf-8?B?RnZCeE1DekZCQksxN3RMTk9lemlmd3ZUd1BCZ3czQkpvbUNjYldZdVoxNDM4?=
+ =?utf-8?B?NDRtYXlRRlBkdm8wUVpDdFhJdkprNHI2aDNBUEdqcUxnYUpTWjZLVU5QU2tK?=
+ =?utf-8?B?dTVLUVd6NS8zcWkvSmVlWDExL3JLZ0pSQm1wSHB1cUhyM3BUZHhCTXFSb0l2?=
+ =?utf-8?B?OUdCRVBBMXVOOUpYejVuUXRMMjdYTWRIT3haL1MrRzAzTEVnT0ZmQ3F4aXJu?=
+ =?utf-8?B?N3cwdWNka25rUDhZZHlFZ1NvTlQ0UVlDS2ZuM2JWN1BBNTduVmhHOSttQ09Y?=
+ =?utf-8?B?bU9KVXM2ak1OaGpNSlBnbUVGdEJQdzBJMU5NTW02dkdwejB4Y2tscFU5enRX?=
+ =?utf-8?B?NXhjdkhEaEZscW1HYTFubXNzSExJNTg3WWErb0RtOVo5YXhybmtaVExpOFh3?=
+ =?utf-8?B?K0F3WHFKN2I2TXY2VXZxS3BKNCtuTU5jRVcxNGZJNHpQSGt1UTlOczUrSm5n?=
+ =?utf-8?B?cCtBOEU1R2dhK3dTNnB5eGtWb0VOWSt6eFhNaXFrN0QyS3ROY1BZc2F5WGtt?=
+ =?utf-8?B?R0lYN0hDd3FxM2xNNldObDRiOE1LY1VjbXNaeHhYS0g0M0s5MmswODZNMXpz?=
+ =?utf-8?B?TEZkM0E5ZFdmQVphTFZOQVlDZ3VWY2t4TnhocE1xdEExc211YjNnKzhDa05k?=
+ =?utf-8?B?MlBBUHp1bGswUUM2Y1JRaWo0NGgwUVZMV2ZDZkJrUXVocncyakJaV2JQSEpM?=
+ =?utf-8?B?YThNZlRtVEpVOEM4UUc1R0Q0anJPc2NWZm5GZWgwdGl2dWZ3UTV4VGRTR29u?=
+ =?utf-8?B?NXNHZlo0T3pNekdWVTQ5am9QSnEyQ28xZVBHb2cxVFRpYi9tcUc4LzJEMloy?=
+ =?utf-8?B?VHMvelN0ZTh0TkJiZnk2c2NBbituL0Fxa09xU1VOZjVsRGppSUxhRk4vekJw?=
+ =?utf-8?B?bEV1Q3h0SHdPVFlzL2JoN3Mzai9SYzFzbUUwTUtJY1B4cmorcXVFaGJrcXBk?=
+ =?utf-8?B?c2N4clpkMXAwRzZmZk5ZcFpEL0hMOWl4OUpDckRPTHJRRkE4ejV0UT09?=
+X-OriginatorOrg: amd.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3201d55b-5b6b-45d1-4784-08dee0fd2424
+X-MS-Exchange-CrossTenant-AuthSource: CY1PR12MB9697.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Jul 2026 16:38:17.2247
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: cnOq/4vGdOlFSspQXgidxq8DNcMXTZn5xAnEJK+6bIjeGMefRqeYlWEywRrymV4G
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA1PR12MB6532
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260713_093829_242563_A68E502C 
+X-CRM114-Status: GOOD (  19.08  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -64,48 +153,130 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gVGhlIHBhdGNoIGlt
-cGxpY2l0bHkgYWRkcyBhIG5ldywgY29tcGxldGVseSB1bnVzZWQgZmllbGQgYGJvb2wgcmVzdW1p
-bmc7YCB0byBgc3RydWN0IHJlbmVzYXNfaTNjYCB3aGljaCBhbHNvIGludHJvZHVjZXMgdW5uZWNl
-c3NhcnkgcGFkZGluZy4KLS0KCi0tLSBQYXRjaCBbMTRdOiBbUEFUQ0ggdjUgMTQvMTddIGkzYzog
-cmVuZXNhczogT3JnYW5pemUgc3RydWN0dXJlcyB0byBhdm9pZCB1bm5lY2Vzc2FyeSBwYWRkaW5n
-IC0tLQpjb21taXQgYzMzZjY1Y2RkYWU5MWZiZjE3M2M2MDRlMzY5ODEwM2M1OWRhOTQ2NgpBdXRo
-b3I6IENsYXVkaXUgQmV6bmVhIDxjbGF1ZGl1LmJlem5lYS51akBicC5yZW5lc2FzLmNvbT4KaTNj
-OiByZW5lc2FzOiBPcmdhbml6ZSBzdHJ1Y3R1cmVzIHRvIGF2b2lkIHVubmVjZXNzYXJ5IHBhZGRp
-bmcKClRoaXMgY29tbWl0IHJlb3JkZXJzIHRoZSBtZW1iZXJzIG9mIHRoZSByZW5lc2FzX2kzY19j
-bWQgYW5kIHJlbmVzYXNfaTNjCnN0cnVjdHVyZXMuIFRoZSBzdGF0ZWQgZ29hbCBpcyB0byByZWR1
-Y2UgcGFkZGluZyBhbmQgaW1wcm92ZSBtZW1vcnkgbGF5b3V0LgoKPiBkaWZmIC0tZ2l0IGEvZHJp
-dmVycy9pM2MvbWFzdGVyL3JlbmVzYXMtaTNjLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvcmVuZXNh
-cy1pM2MuYwo+IGluZGV4IDJjZmY3YzZhZTM2OTIuLmE1NGMyMGVmNWY2ZWEgMTAwNjQ0Cj4gLS0t
-IGEvZHJpdmVycy9pM2MvbWFzdGVyL3JlbmVzYXMtaTNjLmMKPiArKysgYi9kcml2ZXJzL2kzYy9t
-YXN0ZXIvcmVuZXNhcy1pM2MuYwoKWyAuLi4gXQoKPiBAQCAtMjUzLDIxICsyNTMsMjIgQEAgc3Ry
-dWN0IHJlbmVzYXNfaTNjX3hmZXJxdWV1ZSB7Cj4gIH07Cj4gIAo+ICBzdHJ1Y3QgcmVuZXNhc19p
-M2Mgewo+ICsJdm9pZCBfX2lvbWVtICpyZWdzOwo+ICsJc3RydWN0IGNsa19idWxrX2RhdGEgKmNs
-a3M7Cj4gKwlzdHJ1Y3QgcmVzZXRfY29udHJvbCAqcHJlc2V0bjsKPiArCXN0cnVjdCByZXNldF9j
-b250cm9sICp0cmVzZXRuOwo+ICsJc3RydWN0IHJlbmVzYXNfaTNjX3hmZXJxdWV1ZSB4ZmVycXVl
-dWU7Cj4gIAlzdHJ1Y3QgaTNjX21hc3Rlcl9jb250cm9sbGVyIGJhc2U7Cj4gKwl1OCBhZGRyc1tS
-RU5FU0FTX0kzQ19NQVhfREVWU107Cj4gKwl1bnNpZ25lZCBsb25nIHJhdGU7Cj4gIAllbnVtIGkz
-Y19pbnRlcm5hbF9zdGF0ZSBpbnRlcm5hbF9zdGF0ZTsKPiAtCXUxNiBtYXhkZXZzOwo+ICsJYm9v
-bCByZXN1bWluZzsKCltTZXZlcml0eTogTWVkaXVtXQpEb2VzIHRoZSBhZGRpdGlvbiBvZiB0aGlz
-IGJvb2xlYW4gZmllbGQgY29udHJhZGljdCB0aGUgY29tbWl0IG1lc3NhZ2U/CgpUaGUgY29tbWl0
-IG1lc3NhZ2Ugc3RhdGVzIHRoZSBnb2FsIGlzIHRvIHJlZHVjZSBwYWRkaW5nIGFuZCBpbXByb3Zl
-IG1lbW9yeSAKbGF5b3V0LCBidXQgdGhpcyBhZGRzIGEgY29tcGxldGVseSB1bnVzZWQgZmllbGQs
-IHJlc3VtaW5nLCB0byBzdHJ1Y3QgCnJlbmVzYXNfaTNjIHRoYXQgd2FzIG5vdCBwcmVzZW50IGJl
-Zm9yZS4gQWRkaW5nIHRoaXMgMS1ieXRlIGZpZWxkIGJldHdlZW4gYSAKNC1ieXRlIGVudW0gKGlu
-dGVybmFsX3N0YXRlKSBhbmQgYSA0LWJ5dGUgdTMyIChmcmVlX3BvcykgYXBwZWFycyB0byAKaW50
-cm9kdWNlIDMgYnl0ZXMgb2YgaW50ZXJuYWwgcGFkZGluZyB0byBzYXRpc2Z5IGFsaWdubWVudCBy
-ZXF1aXJlbWVudHMuCgpJcyBpdCBwb3NzaWJsZSB0aGlzIGZpZWxkIHdhcyBhY2NpZGVudGFsbHkg
-aW5jbHVkZWQgZnJvbSBhbm90aGVyIHBhdGNoPwoKPiAgCXUzMiBmcmVlX3BvczsKPiAgCXUzMiBk
-eW5fYWRkcjsKPiAgCXUzMiBpMmNfU1REQlI7Cj4gIAl1MzIgaTNjX1NUREJSOwoKLS0gClNhc2hp
-a28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDcxMzEz
-MDU0NS41Njg2NTctMS1jbGF1ZGl1LmJlem5lYStyZW5lc2FzQHR1eG9uLmRldj9wYXJ0PTE0Cgot
-LSAKbGludXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
+> From: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+> 
+> Add device tree binding documentation for the AMD I3C master controller
+> version 1.0.
+> 
+> Signed-off-by: Manikanta Guntupalli <manikanta.guntupalli@amd.com>
+> Co-developed-by: Shubham Patil <shubhamsanjay.patil@amd.com>
+> Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
+> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+> ---
+v10 changes looks fine to me.
+
+Reviewed-by: Radhey Shyam Pandey <radhey.shyam.pandey@amd.com>
+Thanks!
+
+> Changes for V10:
+> Use symbolic interrupt macros and include arm-gic.h.
+> Added Shubham Patil as Co-developed-by / Signed-off-by on the binding.
+> 
+> Changes for V9:
+> Updated the MAINTAINER section.
+> 
+> Changes for V8:
+> None.
+> 
+> Changes for V7:
+> Added i3c controller version details to commit description.
+> 
+> Changes for V6:
+> Corrected the file name for $id in yaml to fix the dtschema warning.
+> 
+> Changes for V5:
+> Renamed the xlnx,axi-i3c.yaml file into xlnx,axi-i3c-1.0.yaml.
+> 
+> Changes for V4:
+> Added h/w documentation details.
+> 
+> Changes for V3:
+> Updated commit description.
+> Corrected the order of properties and removed resets property.
+> Added compatible to required list.
+> Added interrupts to example.
+> 
+> Changes for V2:
+> Updated commit subject and description.
+> Moved allOf to after required.
+> Removed xlnx,num-targets property.
+> ---
+>   .../bindings/i3c/xlnx,axi-i3c-1.0.yaml        | 58 +++++++++++++++++++
+>   1 file changed, 58 insertions(+)
+>   create mode 100644 Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml b/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml
+> new file mode 100644
+> index 000000000000..2caa245a8656
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml
+> @@ -0,0 +1,58 @@
+> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/i3c/xlnx,axi-i3c-1.0.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: AMD I3C master
+> +
+> +maintainers:
+> +  - Shubhrajyoti Datta <shubhrajyoti.datta@amd.com>
+> +  - Shubham Patil <shubhamsanjay.patil@amd.com>
+> +
+> +description:
+> +  The AXI-I3C IP is an I3C Controller with an AXI4-Lite interface, compatible
+> +  with the MIPI I3C Specification v1.1.1. The design includes bidirectional I/O
+> +  buffers that implement open collector drivers for the SDA and SCL signals.
+> +  External pull-up resistors are required to properly hold the bus at a Logic-1
+> +  level when the drivers are released.
+> +
+> +  For more details, please see https://docs.amd.com/r/en-US/pg439-axi-i3c
+> +
+> +properties:
+> +  compatible:
+> +    const: xlnx,axi-i3c-1.0
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +
+> +allOf:
+> +  - $ref: i3c.yaml#
+> +
+> +unevaluatedProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +
+> +    i3c@80000000 {
+> +        compatible = "xlnx,axi-i3c-1.0";
+> +        reg = <0x80000000 0x10000>;
+> +        clocks = <&zynqmp_clk 71>;
+> +        interrupt-parent = <&imux>;
+> +        interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
+> +        #address-cells = <3>;
+> +        #size-cells = <0>;
+> +    };
+> +...
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
