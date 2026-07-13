@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 75520C43458
-	for <linux-i3c@archiver.kernel.org>; Mon, 13 Jul 2026 13:06:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AFDA4C44507
+	for <linux-i3c@archiver.kernel.org>; Mon, 13 Jul 2026 13:06:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I3A4Xe5IO2eslCi9Wq9DKcRMuPVoh3stGXv6oN9Byic=; b=LWliDAQhegK0Fy
-	8XJX7llF3uDQrxwm5jnnH5DP1+bM/RDKBAc0vjsEgoAHvSqYHX2ritOhBYnoqu4AwebFeVEszIq9a
-	DKTwvZQ1dJL+MtjnWEpRdIX84QocKgAXThdwKFzkBzqEAxrK1CBZ+IwzoA9E9UWWhKBfoNF89jAL4
-	JZQscuafPfFRx97QY77K9LI9pbSKn0Lw9OkDF8mMmrshX514QVw0MKzgrPAuSlX8FN6hSEQzmt+dx
-	RGLVAHw6j3TW0j7APF8qJaPCwQeXvdl06ZK2AWRwQQlmIYjiui6wCivifqoYoQ9+N4L+dKBKvBYik
-	6+lielhzH6Kp/TaWaORA==;
+	List-Owner; bh=ROuDNRwjr7qedzZjAW/OxYCUsB2WUHDl+Gg5vIG2fXA=; b=V8GqvQ+8gaSBqn
+	pNZBgS0irN7dlUTnpDj344ZM7E+VpWTaLwd3R0xRGBlsEgHUy1oPTcCkYkPIeGdpNyLxLuUPF1xOs
+	hCKKSSbw6dyHzWa8Uef5DK+fb63ETHJgXu79ADkEjV8k7JnPIQqj/QuBX0pUjcAz4CNH3RzGeLwfa
+	ja8QKG+x69/WM7toiZmQB2enZhMMlc7K8tL3e1bM5J3NFE6VOKyoYec5Tj+o/ChJ60d65kQmFmffP
+	FXV+zhETH64nQaSKJxnJvzLVTapOoorcL0Wkf6u8usTomwsdpqBO8dr47vhK9+DlQl4BO2iZZ80Mh
+	spqaV/2MJtfFnjgrHW+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjGMQ-00000009Jse-0rI2;
-	Mon, 13 Jul 2026 13:06:14 +0000
-Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
+	id 1wjGMU-00000009Jvm-1xQB;
+	Mon, 13 Jul 2026 13:06:18 +0000
+Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjGMO-00000009Jpy-0x5W
+	id 1wjGMR-00000009Jsg-0uhd
 	for linux-i3c@lists.infradead.org;
-	Mon, 13 Jul 2026 13:06:13 +0000
-Received: by mail-wr1-x429.google.com with SMTP id ffacd0b85a97d-470174001a0so1874517f8f.0
-        for <linux-i3c@lists.infradead.org>; Mon, 13 Jul 2026 06:06:11 -0700 (PDT)
+	Mon, 13 Jul 2026 13:06:17 +0000
+Received: by mail-wm1-x334.google.com with SMTP id 5b1f17b1804b1-493c7902f47so29040145e9.1
+        for <linux-i3c@lists.infradead.org>; Mon, 13 Jul 2026 06:06:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=tuxon.dev; s=google; t=1783947971; x=1784552771; darn=lists.infradead.org;
+        d=tuxon.dev; s=google; t=1783947974; x=1784552774; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=HxhopbMjuxZXPMIhhCmmmglOvi7gG+5T75nAj7QCOxA=;
-        b=BUdBQk78aBvDPwFeTykTvPWJv1mMeIrjedmqpi9GDImNNHy2P0dvaxwaMXi4yhZeTT
-         D/zAvBKmywGGOgPP+wkQQNv+noUMJwfQYyPRb9WL/29LKyQwPhApr+daw81VK8Tx6zHw
-         9wzQWYLugdL4t5yqlBDuoN5TDZLVLl02MG0OCNN8qpomTYU7ngcOnzUHxht8LjE2Gg1K
-         Q3Ki9V+R0fpIR1KscSbIZFDA9d/ID/434dgffyNfYcBl5W0u0P8be6E0knU2GSqAS6w9
-         KtjhdLkurhEjvIEce8tbdR/yilt/wKzK0ad2u2JNo7nI2pqmfXoo5yuPQZ9ksmSIi0Pc
-         FE7w==
+        bh=Ka2WRcxeR+5lBW53fFIg0AOmhGbckfoTmT31bECGwZU=;
+        b=d9CwTiId5rNWQr4eol+qSjVNbh6DC/Dmox8ialksUaLZ9yQTFaaPNkPmUEd7Ed6tP1
+         AtD82MoC5yuUX878bRlZ1n90tuPO8N3jFArmrtpYFgGFfkFn1/mORJfUIF/8Gux4ZOA7
+         w6ZXYj6TeFdWfUld9H0Bb+nDf29jht4bmjDqA1HGc8ri0gvLE7dA2OLXNilaeOMHXrTH
+         hWwI6RFJF417xYJe/bbuSUpZD6R+ivqqKPag15LQc8qA1mnacJdbmWTzpDlNInpcu0/S
+         UWTZj3PJOqTy2/f98hGDa+adPdO0CisbkBhhCImZ1hPDGsZnVTgIbHKHBLe2DlksLHhb
+         1rxQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1783947971; x=1784552771;
+        d=1e100.net; s=20251104; t=1783947974; x=1784552774;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=HxhopbMjuxZXPMIhhCmmmglOvi7gG+5T75nAj7QCOxA=;
-        b=acNnw5XfKy02pKTy6daYw9Eb/06KHzg0XiAGlZNtXTQ6qeQLv9xZhy2Iao5yNqsEDq
-         jg4OraJn32AW4W8BOsvpSLgP3FBqsJj6NnTb4KzA09iLEqnDE6acFRvQZI1VpHLgd8Q9
-         cEi1c4Wg6u3gFs62d88yQXzrQqoC7yLFeqLKV38l8DkrE6eYkw6ev4KkUNzNAYK/A4SW
-         cdKUt5w9AG+bzBQek43YDN+aMYY6Y6g4pDJeivVg8zXMGOrv7+HYqf8hJ6ssG8nlh6Vb
-         36u8LobzoE3wBUu/Mp4xaTAGFgvyJpOWlVVfUkQlqGxSV3t+AigN4iB+40HKfskCC7s9
-         1j5g==
-X-Forwarded-Encrypted: i=1; AHgh+RqBhg00q2I22chvSpB2mFH9srf64t7qktBTR3YctI3eSMSCzs0l5efu4W5lmGCMjibsI9dwNGyOXQI=@lists.infradead.org
-X-Gm-Message-State: AOJu0Yxj9n32BfU5JTpB7lihe4gco2pxwBfNI9msnnrhuytGem0+g9mG
-	raVvEK6vHxHsFie09f54rwn7iIb4wttdr92YOFULSoPF4aGO3L7Zf5CjuDDuuI112RE=
-X-Gm-Gg: AfdE7cliMxpbYkqpA3LPYi91RG+gil41gjvqBDNB2E/6RiZ4dLsk2RlIAWQOcn82g9O
-	2Dp6aok4K22cHSDdslZjdFXqJHN/cw5wcImI1ioxmK/l7gt0Cnypvg3ME9xbiOvZZ0FSN1a1owa
-	cbvbsHXpGtPa8Iya4a8lq+B8eh+P3ykdbWhfRCVV8T/X7mL6xWnuOCGnjStbPBw4lHW8zOQ1P4Y
-	qutKKhb2vMWpsRcJRALWxh1DlDwOYBOgnqFFjNLw9Vo+0pjPfJG9zGfXZXOJodOXpqzBvnUfs/6
-	IGYSwCGr7CnS9CXcL9yB0dHPndbiqbIzRXfj3q12nBCT8fTYD4FZkUONLo4MlbR8jZrqNMpeuBW
-	nFFt6WTAL9FZZ/KbP6ZkHBwSBRXi+mthYBXSZeTgXCxF0g3iiaEz39AuA3L/scItH8VTqu4FRpi
-	sfG8Q1xCCuyadlGn7/FAw/N2G1+HKtANvQjCjtgxL/qyi2JDpZ3+1SEJYqhjfFP9ufWbWdJ8s=
-X-Received: by 2002:a05:6000:2207:b0:47f:25e4:5c34 with SMTP id ffacd0b85a97d-47f2dcd79f1mr10206098f8f.29.1783947970617;
-        Mon, 13 Jul 2026 06:06:10 -0700 (PDT)
+        bh=Ka2WRcxeR+5lBW53fFIg0AOmhGbckfoTmT31bECGwZU=;
+        b=Xz4Mp0SqsQaL9rnT41u/qqJOvbzp3QuHJsFnMpDauasWj3oxQrZpjOlpC66jrqy6x4
+         IGoIaLjU/YeIV0koumvyYKe9qu05Yzrq90nOywRZCJ8zYZ61NFkYgcOGdlEaT8Wk6nfW
+         OvtvCtPHOIOI5caeTOVro5y4bMnx2u5L2iMTPP/rqWtK192TOFRJs+i1Fj+MNwq+sah+
+         Rf5zq8mkzhWk0Q4AJkpqTUEYqDQPR8pfP//IFsFiDUy0jY3pYnEtM13c2HETY3MkL0Ru
+         RK4m0GsaHxek00krQVsNxKWOFRimuYjXknVR/PDjeUNgJSoPk/lQ8hPeBOOIGdDU1N3v
+         ILdQ==
+X-Forwarded-Encrypted: i=1; AHgh+RoV3nQC7a+mfUPiZPJiPEcJBOnceJK+mLO3CAg4E2025ZD+bK/3lotC3rDwZE8twnNI2Qdpwcl4kjc=@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw3EUxHa/mcK9k+oHYq1lPV07i/YUynd4GbZI5r7urTcJlraNYK
+	sJ7N/WcJ5fQEnaveh0ikjlKPDwUM6diGfofcTEsm5afoYM4V4R0MzURPRgnjN0pcq44=
+X-Gm-Gg: AfdE7clBBJgC9WgcKo7Z6tqik6ZTRz7t98ag2JDguApSVObSdMhjq3hwulqqNwGcnms
+	U0VeemOfiMdb2Io7usfTQqJ0p3nieKKmFMWI6a8+GIBwBacHnOatllsmLvcS5RjkqLXr9gXl3kz
+	ryaLnsI0aqW/l7iJi0IgNio0XIgyhD9QHJ62KPffuZNLHCWaw9AlkOzhqD+6LokqpBWQuGre1tm
+	sAUQOP8v9gmMVjJk4SKO01+6OvApw2qgHd7ding0yGLNp5u28tow3zHq19eVS3flHxKkdVM92oC
+	UQ/vTlGhr5voBnqZupKQ7N1GVbEGWMcxxVDZfbTZKOw4w53m56rSk5IvVEOfGWVNrgioJv6oSyW
+	iddeP3c2tLVE0nfVVHMTzXjEJp0VraSbhclgmVYl4H7WCWJ8EiX+QOqy7sBMcGrOI2m4MIyVE8K
+	wlX02G4zN04bFGo0kc9tZthNWFFNpi3tYmsCY15i29jmiVHliz6AFuP2C8p+owByjkP2nhYO0=
+X-Received: by 2002:a05:600c:3143:b0:493:b87c:c87d with SMTP id 5b1f17b1804b1-493f87e9f43mr90709465e9.11.1783947973694;
+        Mon, 13 Jul 2026 06:06:13 -0700 (PDT)
 Received: from claudiu-TUXEDO-InfinityBook-Pro-AMD-Gen9.. ([2a02:2f04:6402:500:e91e:fe5e:857b:d0c])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47f273195d9sm25321609f8f.3.2026.07.13.06.06.09
+        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47f273195d9sm25321609f8f.3.2026.07.13.06.06.12
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 13 Jul 2026 06:06:10 -0700 (PDT)
+        Mon, 13 Jul 2026 06:06:13 -0700 (PDT)
 From: Claudiu Beznea <claudiu.beznea@tuxon.dev>
 X-Google-Original-From: Claudiu Beznea <claudiu.beznea+renesas@tuxon.dev>
 To: wsa+renesas@sang-engineering.com,
@@ -81,16 +81,16 @@ Cc: claudiu.beznea@tuxon.dev,
 	linux-kernel@vger.kernel.org,
 	linux-renesas-soc@vger.kernel.org,
 	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: [PATCH v5 12/17] i3c: renesas: Drop the explicit memset() call
-Date: Mon, 13 Jul 2026 16:05:40 +0300
-Message-ID: <20260713130545.568657-13-claudiu.beznea+renesas@tuxon.dev>
+Subject: [PATCH v5 14/17] i3c: renesas: Organize structures to avoid unnecessary padding
+Date: Mon, 13 Jul 2026 16:05:42 +0300
+Message-ID: <20260713130545.568657-15-claudiu.beznea+renesas@tuxon.dev>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20260713130545.568657-1-claudiu.beznea+renesas@tuxon.dev>
 References: <20260713130545.568657-1-claudiu.beznea+renesas@tuxon.dev>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260713_060612_276594_8E424BEC 
-X-CRM114-Status: UNSURE (   7.91  )
+X-CRM114-CacheID: sfid-20260713_060615_279795_A05CB786 
+X-CRM114-Status: UNSURE (   9.27  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -110,8 +110,7 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
 
-Drop the explicit memset() call on struct i3c_device_info object, as it is
-already initialized at declaration through compiler initialization.
+Reorder structure members to reduce padding and improve memory layout.
 
 Reviewed-by: Frank Li <Frank.Li@nxp.com>
 Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
@@ -129,21 +128,71 @@ Changes in v3:
 Changes in v2:
 - collected tags
 
- drivers/i3c/master/renesas-i3c.c | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/i3c/master/renesas-i3c.c | 31 ++++++++++++++++---------------
+ 1 file changed, 16 insertions(+), 15 deletions(-)
 
 diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
-index c1396c49f45e..52f09d966651 100644
+index 2cff7c6ae369..a54c20ef5f6e 100644
 --- a/drivers/i3c/master/renesas-i3c.c
 +++ b/drivers/i3c/master/renesas-i3c.c
-@@ -639,7 +639,6 @@ static int renesas_i3c_bus_init(struct i3c_master_controller *m)
- 	i3c->dyn_addr = ret;
- 	renesas_writel(i3c->regs, MSDVAD, MSDVAD_MDYAD(ret) | MSDVAD_MDYADV);
+@@ -221,19 +221,19 @@ enum renesas_i3c_event {
+ };
  
--	memset(&info, 0, sizeof(info));
- 	info.dyn_addr = ret;
- 	return i3c_master_set_info(&i3c->base, &info);
- }
+ struct renesas_i3c_cmd {
++	const void *tx_buf;
++	void *rx_buf;
++	/* i2c xfer */
++	u8 *i2c_buf;
++	const struct i2c_msg *msg;
++	int i2c_bytes_left;
++	int i2c_is_last;
+ 	u32 cmd0;
+ 	u32 len;
+-	const void *tx_buf;
+ 	u32 tx_count;
+-	void *rx_buf;
+ 	u32 rx_count;
+ 	u32 err;
+ 	u8 rnw;
+-	/* i2c xfer */
+-	int i2c_bytes_left;
+-	int i2c_is_last;
+-	u8 *i2c_buf;
+-	const struct i2c_msg *msg;
+ };
+ 
+ struct renesas_i3c_xfer {
+@@ -253,21 +253,22 @@ struct renesas_i3c_xferqueue {
+ };
+ 
+ struct renesas_i3c {
++	void __iomem *regs;
++	struct clk_bulk_data *clks;
++	struct reset_control *presetn;
++	struct reset_control *tresetn;
++	struct renesas_i3c_xferqueue xferqueue;
+ 	struct i3c_master_controller base;
++	u8 addrs[RENESAS_I3C_MAX_DEVS];
++	unsigned long rate;
+ 	enum i3c_internal_state internal_state;
+-	u16 maxdevs;
++	bool resuming;
+ 	u32 free_pos;
+ 	u32 dyn_addr;
+ 	u32 i2c_STDBR;
+ 	u32 i3c_STDBR;
+ 	u32 extbr;
+-	unsigned long rate;
+-	u8 addrs[RENESAS_I3C_MAX_DEVS];
+-	struct renesas_i3c_xferqueue xferqueue;
+-	void __iomem *regs;
+-	struct clk_bulk_data *clks;
+-	struct reset_control *presetn;
+-	struct reset_control *tresetn;
++	u16 maxdevs;
+ 	u8 num_clks;
+ 	u8 refclk_div;
+ };
 -- 
 2.43.0
 
