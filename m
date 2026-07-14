@@ -4,53 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40BAAC43458
-	for <linux-i3c@archiver.kernel.org>; Tue, 14 Jul 2026 11:56:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BF01DC44507
+	for <linux-i3c@archiver.kernel.org>; Tue, 14 Jul 2026 18:58:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lt2K9yuS3EQBL1R4UYvXU/M8IopZTh96Lvk/qbdLIAM=; b=OnL77F9Z47wd/5
-	pmF/RPgjnsyottDQrJxfzGsg+7w7ne2/kd/t9NHynUqUljl65gvxRDfef+1M7MtGvSZeGOKqgsBep
-	2+4OJo5uzO4GbYRUZqoW9W6GXGvEFdluP+MQ0jcN5qvJla1NgGoWPN/M78coFUlsdrTjwX4nJvsli
-	McejB4IZtMKBYD7kxSP5+A4uFHnSDGFnNp+y3GWLj0aWiKaL6bBBnDngZu79E7XH+QcMnXZqZUmiI
-	86kyn4c4ZI33sVZZqu2XtZYN4hKECn2j2gk4R99Ly0cVFkLt123N43FHu0Mn4/pXZa66ClPlUkGwK
-	rA9MkBVPLHDClcAbFlIw==;
+	List-Owner; bh=+GnC+F32cIpzok7M3nGxbssc0wz1fr2Thtx3uNru5TY=; b=NqvYRL+A5p0ujR
+	tHWDlCqTMz7uSc55VvF130zhl8LQ3uFf/xSeGEgPziUIiw/QbuOU8E1VjGNfLbz2i1+Lp3oO+QrUd
+	GmFQ5eLVnFBMOQNxX8mGDCE6QMjdypbNwl0eeJNaaGjg7J7fjg+QL6Nu+k+2noEq2l6sz44IYbvyl
+	GkCypsmrfyAM0ZIfLi5z/4MjwW9a4l8i72gmz8Mi0kr1whuE2WA+yKAc6E/+m+0M3jVcgAIwKGxZ1
+	UXVadghS9P9hpbuX6N6bOzSI16+L7fuQA4IqhOTQ6TdeK2rR0kHdzxar/2Qqd+YkNlnqugZ1mnwEh
+	yk7ewtiQTl1qdb8tURbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjbkp-0000000Bof1-02Id;
-	Tue, 14 Jul 2026 11:56:51 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wjiKQ-0000000Cwmv-1s8L;
+	Tue, 14 Jul 2026 18:58:02 +0000
+Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjbkn-0000000Boea-1N52
+	id 1wjiKN-0000000CwmA-3yr6
 	for linux-i3c@lists.infradead.org;
-	Tue, 14 Jul 2026 11:56:49 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id A3BC340705;
-	Tue, 14 Jul 2026 11:56:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1C1F11F000E9;
-	Tue, 14 Jul 2026 11:56:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784030208;
-	bh=A70o6ny6N8xHNETraJzkrlU6hF3vVWkSiOeMJiM96f0=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=AbBmtGaHgJV7ZRwCVM55j+DJclF5NzhPt4usLqgczbygcIupvtB/cFSAN+l1V5U6B
-	 TcGhbiyR8ArI5+EEL6FPKkn4udycQeO52eioq3bXkY4jINtlhF72FL3KkVld4O0rp3
-	 KPMMTl96ApJtRJ9iwqN80flpwviBbepGss/z++foQa/57ATeVm6et1RmubceyUQf85
-	 nEW2BwSTVS18BmZSgdT3LYRXMZP0GXYDZLM81t8+zNnnTW7I+vKiooFZ1Vz+kRO/fq
-	 LcR7sXB0yaLhAaJWyJrWuvVcLEkgFjCFG0iA9BTX9nVmeNqsBorUpRb7YrvrSTilrk
-	 WbgeAZA0q7A0g==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v14 8/8] i3c: hub: p3h2x4x: Add SMBus slave mode support
-To: "Lakshay Piplani" <lakshay.piplani@nxp.com>
-Cc: "Alexandre Belloni" <alexandre.belloni@bootlin.com>, Frank.Li@kernel.org, devicetree@vger.kernel.org, conor+dt@kernel.org, robh@kernel.org, linux-i3c@lists.infradead.org
-In-Reply-To: <20260714092053.2461482-9-lakshay.piplani@nxp.com>
-References: <20260714092053.2461482-1-lakshay.piplani@nxp.com>
- <20260714092053.2461482-9-lakshay.piplani@nxp.com>
-Date: Tue, 14 Jul 2026 11:56:47 +0000
-Message-Id: <20260714115648.1C1F11F000E9@smtp.kernel.org>
+	Tue, 14 Jul 2026 18:58:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=oQTd32pcxVhOBqyGEbMUY/7KMGZPzsGxNV7SmAeZ7gyVkV7XWRiMWMBWI7mpnmGp5cYcA0MmtoTtdlON8pogMp1eZbStLwjGtnmNDnCTt+Yh+qmOJ5vkWBJiecEIQi5QVNg/Fxg7AL5aW9vG/uO+8Pwan+WJCfSod/2uTE2IrK3g/pRDSoyXpjhxzmL3cz8ICX78e6scW0V0gciQ+hB0uS16C3enRkfXItgfNb6jKfPBIOwurliAJMRz28R6kYpnWlnj9VJZMfNYfCHezQOCfLK2Hg5WbTRnW5O09qytUP75qRyaSTAddUz2TPe4p5Zp9jhMUFPEWonqSiIERjPxTQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ryVTX4vhiuHSYurf93Ut0ggxBH9680jsnYJnscWTlmg=;
+ b=OwQXzmEhJfZwr9PA94824dgdyv+3GPJfC/EDLAX3RQrRI6Q//LYRM2yhxpUo7H2m9c1V1cITt/yv+igBXFYN7DEmLFWdVNUvyaMHr+Y9EgjxiyCIzvqqtWbIDKLkpr8lT4nhBk9qMDaVcjZ+wL87Zwp5gAS/ri6G+F7I7eDs5divJiaNbgebEvJHhTThMF5qB1vuVzgW9l3755kEYSOTK310QVSN8EWGDUqyr5KcDx/wtCXNIfIGKpnTsl7xuKBLfk/zuD3Skc/f18RRuIbW5G+Gkqzp7GUL5xxXJMVHrSLVRriQg5PeU+hw1RdbUAV2zBHhkZMe5SGZBweNz/Fs9g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ryVTX4vhiuHSYurf93Ut0ggxBH9680jsnYJnscWTlmg=;
+ b=KkVMUkoB6LbfMIgsTa3o2QJ/o+BIuBAgJCf2+lO5TbjgPzWDQ05WgKv9Nl0VC2f6i4V7I3koQbz1gIxRuIULUqNs9Fml4HI3P88IpFC7EypmTXOViQ5ogW+xYgLfcMzyeEtUkwRXkG1wjAFE4GaWBrKicXspHoInvgSm6nr3skD9C4oYyqI4comwyxF6lomptpAnFlm+ZBt8zhEadbgk1dtKOlCLJDpvModq7TSKadoHmX8OUpFM8xKWIdfWgrI0esFxtoZiGn0wFrVXOK8tbmw0H7dk89eSW7ARYwfNj1y49SGYjatmM3afqahsTJTAc8Ap8z8gCWmASpv3s6C6wg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
+ by AM9PR04MB8778.eurprd04.prod.outlook.com (2603:10a6:20b:409::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.223.10; Tue, 14 Jul
+ 2026 18:57:54 +0000
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0202.018; Tue, 14 Jul 2026
+ 18:57:54 +0000
+Date: Tue, 14 Jul 2026 14:57:47 -0400
+From: Frank Li <Frank.li@oss.nxp.com>
+To: Claudiu Beznea <claudiu.beznea@tuxon.dev>
+Cc: sashiko-reviews@lists.linux.dev, linux-i3c@lists.infradead.org,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	wsa+renesas@sang-engineering.com, Frank.Li@kernel.org
+Subject: Re: [PATCH v5 06/17] i3c: renesas: Perform Dynamic Address
+ Assignment on resume
+Message-ID: <alaGq8mKvCm9kWao@lizhi-Precision-Tower-5810>
+References: <20260713130545.568657-1-claudiu.beznea+renesas@tuxon.dev>
+ <20260713130545.568657-7-claudiu.beznea+renesas@tuxon.dev>
+ <20260713135032.ADFB41F00A3A@smtp.kernel.org>
+ <alUZfNwy4VlMr06f@lizhi-Precision-Tower-5810>
+ <5e17bba2-9259-4d39-8170-275927835943@tuxon.dev>
+Content-Disposition: inline
+In-Reply-To: <5e17bba2-9259-4d39-8170-275927835943@tuxon.dev>
+X-ClientProxiedBy: PH7P220CA0178.NAMP220.PROD.OUTLOOK.COM
+ (2603:10b6:510:33b::17) To GV2PR04MB11799.eurprd04.prod.outlook.com
+ (2603:10a6:150:2cf::9)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|AM9PR04MB8778:EE_
+X-MS-Office365-Filtering-Correlation-Id: 4e5c56a6-d921-4330-3ec5-08dee1d9cfc6
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|23010399003|1800799024|19092799006|366016|11063799006|4143699003|22082099003|18002099003|56012099006|6133799003;
+X-Microsoft-Antispam-Message-Info: GnygerEOqOQXuxejyKj5XYSPzPqqXl3yA5Bbf/ovVuE9/S9wNjWYqb3KrlbTC1Gn5yg7/3E2jUR0QDgH96gFA3WsFQ3OJpwHAVyYrPdMcxT9q8vgu1ergA1SpaKWMHqAOtpNsaJPw4qYMwOMUr3oeXKkRxahuNrjec09+8+735lYPVy1y7mcu63G3VRBhXZIzJjnmYYR6BxXPFQlcdup6wDICK4VntQosiW/i+9eGatSrDg6L7KrKK1t069o5LWAM0ZAj2w3WEnURjvYn6jvQ/UnTQKWWdZtBNkcNMdxmy5y5q4xFFP117GPbwMVz5szXZAbKpjciLnqAKsquAz3bY7deMBOENL+NGaB9cEOdyRAm4y/DkN772trY4SXAmHgfpg+QcLEqYyn66cX93daPXuk+pju8qLWeGPzyfDhQ8EwFSftFdEWU31+WyKPnmk5R/3HUqdPrKiuIA8sDuH+9gtDq3Zz2zgAkTZ2J4wI10zxF3vvla/81pG0U4s7XBqon9k0YdlhN+AdplUrzSmBwjhYCozIeuFdTKvgXJVpx91mif8SAoe7K4iHpwAMEkI48wQkEqOAunoxmDDbvCXALjp3e6msO+NfSoyngm9eGNwM2oPVQwOp3IrjoJr8RalLMufEeuHzIciIKUdzDPhH0B/oXXH9FDzbG/8z1RBI6Q4=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(23010399003)(1800799024)(19092799006)(366016)(11063799006)(4143699003)(22082099003)(18002099003)(56012099006)(6133799003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?+HYHpE4Nvc38URmlA2/DjKfYBs82jzWyZmhDUdePLGos8OzPeiGD+Y6l+jtV?=
+ =?us-ascii?Q?Tr7FQIm5cBTUp56p7uqUAYKvVHBHSnK+tS5XNlnHfeDy3nIbIYa9UTg9ZqlO?=
+ =?us-ascii?Q?ZLSt7ZRleu7zf6Bu+2aJFjEoRLp/txe/kV4MwHPd/8hb4Llon0hX6+1nNSQ1?=
+ =?us-ascii?Q?Byp47MubEhDI9sneFE7taaRNDmWh4OwzYnf0Khq4hgoP/GONHxOOhV6NkkGu?=
+ =?us-ascii?Q?N+mQrfevIVg3KNAA4AOOykr9fL+PLmS6o6sP/9kmd1NAJsKNdISpV5C4ZZjA?=
+ =?us-ascii?Q?RTkMzrivFvF2hzDHtFbdNp0yrscHgUIO8ynMBAW+x3gVH4/KoMH+gRIZLaiH?=
+ =?us-ascii?Q?PSFe8LBllUiY8utvqjOKJApwRPd0Rq8EZ+PKsOMU2CzVIeo6MNDQaFgWxP0a?=
+ =?us-ascii?Q?KNXJo7CBCdAT1EEhv4tzK+28EGl7Co4RQAlKEu9dEE+jXiZ+U9ApM5IlpR+o?=
+ =?us-ascii?Q?Z+yhOxKeu7J2Shun8xboMnR3PszYDGrRXi4dXGezrvcyAFj/dUkDKmOX5IIN?=
+ =?us-ascii?Q?QktIN41tA13oAcw+CZZ964SvXbgvAooiv4EisDkpJOfmR7RCt0ZgKqF1DD6m?=
+ =?us-ascii?Q?+jSeES1ITS6xLSHdWixJX0eGcWRQfZr2fd7pelOLhrPWnY1saILzKp5PdTH2?=
+ =?us-ascii?Q?Y1glWbtqXl+5Uc0HMcr2d6rJ64D9pMWtQFWDKFH4OjnYM8qlnYrVL4UYIBvR?=
+ =?us-ascii?Q?QV6B84Ao4osTgxlZlqc6X/P2t9PpBw7FjijAwQLbiINZLzOHlXDbLZM9dE5q?=
+ =?us-ascii?Q?ChwtyBJ/pMk28fRBu+3nexbHUUamWKd+5Zs9R1JlbVC2KShCAbYFZhY0wyHL?=
+ =?us-ascii?Q?AstCkKX9AJ5T15UuiSEraiqtcViGM67Ugrgg4DkIlIwcxtuc+LQAMqAoDcNi?=
+ =?us-ascii?Q?9TjSBGCd1N91tKi/HSWpcyXnsNNIZyJ0prhc3oNaVRXcH2d6j/CGxJZrBWYn?=
+ =?us-ascii?Q?YZ5zaa4O7nsTtryZu0lW4Nr9KmSDrjUAxx0patEjfaFh8ShRGGE9jyaTu6wq?=
+ =?us-ascii?Q?zgvdTvj8+B8ZMDeXcy3vIOl3cXlZmoFq/zQGaE+6gUO7zPso2ZT3imR6PVkF?=
+ =?us-ascii?Q?RH73NlfS4AN0ynDhODhziQ0JOyHg+O9rhfKmA0FwMOxjRSIJd/sRbavybJCP?=
+ =?us-ascii?Q?AmZsDtqS2YY61GkWZg8Ai80o2FnVyhp/9rNx7ed8jqTPBrstjEOVFfBAAq2+?=
+ =?us-ascii?Q?8UyQKIcGMFV1EE0malyqu9L8AoEdzRjmZ/Bg2oDXrsfBmjQq5bJg2WfkWk+D?=
+ =?us-ascii?Q?dGQ5IFSN58bwUOGrXsAA/PFChY7Qg3A7GsuBg4pDrSJTfJt5zpT+cTRXzbMW?=
+ =?us-ascii?Q?vgMXspxHMQH2Ess0TVZPkF9L4nsECSosGHOB0MU7kObW1cewZ5PognRDemkl?=
+ =?us-ascii?Q?cml0R4ffCdIpMSoui5c0tvGKFOj/OCo2Pn+THl4s9L4uU1HwblcXeTJWnajv?=
+ =?us-ascii?Q?Zr1RSlZx1gn84lpPfc5l6mBR0ukgqE8EgeTewhYyxmhrdFX3hdTmf7OT5GSD?=
+ =?us-ascii?Q?eNtUoY+2EmOgSVLMAMDK2nEgJHj8KPGqL3v2nkVTV5wjex/mDb9o6Tg0g3D4?=
+ =?us-ascii?Q?JEJkuHaxHPi8NnmpRMODi+5YQA/anEzvFz5t9X40hOJwF1KC59niH1gErR4V?=
+ =?us-ascii?Q?j8I+NHvWjFdbuV83jtD6YlPY1AgaZiltGI86FU45JmRRFfFuSfep8eSpIzYZ?=
+ =?us-ascii?Q?FcHOv0Bap+sbTqDFYDXLufkFKZ/lW9k9wLtrwVH90CnynvFHsE/21tdpnEea?=
+ =?us-ascii?Q?XAIqcE1FYBiCmb88ddOwt9tuKW6xbr52zsDNr2so+k9cd4RZqkos?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4e5c56a6-d921-4330-3ec5-08dee1d9cfc6
+X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Jul 2026 18:57:54.5041
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: xM8zenHRwGUkurw03p9S0s+lq7EqDg1qeZ4a5aR94Z6wzq57YmZOLBHe7EBDo+XY1stZBDAWQd5LLGASY+7sWBsWIUkIgH3a47m3baDpsETiZbUKNlDJSqkaTeskQAx8
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB8778
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260714_115800_161946_92576DA3 
+X-CRM114-Status: GOOD (  55.00  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,88 +137,317 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIFVucHJvdGVjdGVkIHNo
-YXJlZCBzdGF0ZSBtb2RpZmljYXRpb24gYWZ0ZXIgZXhwb3NpbmcgdGhlIEkyQyBhZGFwdGVyIGNy
-ZWF0ZXMgYSByYWNlIGNvbmRpdGlvbiB0aGF0IGNhbiBvdmVyd3JpdGUgc2xhdmUgcmVnaXN0cmF0
-aW9uIHN0YXRlIGFuZCBkcm9wIElCSSBkYXRhCi0gW01lZGl1bV0gTWl4aW5nIGdvdG8tYmFzZWQg
-ZXJyb3IgaGFuZGxpbmcgd2l0aCBzY29wZS1iYXNlZCBndWFyZCgpIGNsZWFudXAKLS0KCi0tLSBQ
-YXRjaCBbOF06IFtQQVRDSCB2MTQgOC84XSBpM2M6IGh1YjogcDNoMng0eDogQWRkIFNNQnVzIHNs
-YXZlIG1vZGUgc3VwcG9ydCAtLS0KY29tbWl0IDhhZmFiNmQwZWM4NjUzNTc0ZDVkZjQzMDU4NGQ1
-M2FiNWNhNmQ4Y2IKQXV0aG9yOiBMYWtzaGF5IFBpcGxhbmkgPGxha3NoYXkucGlwbGFuaUBueHAu
-Y29tPgpTdWJqZWN0OiBpM2M6IGh1YjogcDNoMng0eDogQWRkIFNNQnVzIHNsYXZlIG1vZGUgc3Vw
-cG9ydAoKVGhpcyBjb21taXQgYWRkcyBTTUJ1cyBzbGF2ZSBtb2RlIHN1cHBvcnQgZm9yIHRoZSBQ
-M0gyeDR4IGh1YiBTTUJ1cyB0YXJnZXQKcG9ydHMuIEl0IHNldHMgdXAgdGhlIHJlY2VpdmUgcGF0
-aCB2aWEgSUJJIGFuZCBmb3J3YXJkcyBwYXlsb2FkcyB0byB0aGUKcmVnaXN0ZXJlZCBJMkMgc2xh
-dmUgY2xpZW50LgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9pM2MvaHViL3AzaDI4NDBfaTNjX2h1
-Yl9zbWJ1cy5jIGIvZHJpdmVycy9pM2MvaHViL3AzaDI4NDBfaTNjX2h1Yl9zbWJ1cy5jCj4gaW5k
-ZXggYjk5MWM0NmYzZWQ1OS4uODllOTRmNTUxYjMxZiAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2kz
-Yy9odWIvcDNoMjg0MF9pM2NfaHViX3NtYnVzLmMKPiArKysgYi9kcml2ZXJzL2kzYy9odWIvcDNo
-Mjg0MF9pM2NfaHViX3NtYnVzLmMKWyAuLi4gXQo+ICt2b2lkIHAzaDJ4NHhfaWJpX2hhbmRsZXIo
-c3RydWN0IGkzY19kZXZpY2UgKmkzY2RldiwKPiArCQkJIGNvbnN0IHN0cnVjdCBpM2NfaWJpX3Bh
-eWxvYWQgKnBheWxvYWQpCj4gK3sKWyAuLi4gXQo+ICsJZm9yIChpID0gMDsgaSA8IFAzSDJYNFhf
-VFBfTUFYX0NPVU5UOyArK2kpIHsKPiArCQlpZiAoISgocGF5bG9hZF9ieXRlX3R3byA+PiBpKSAm
-IDB4MDEpKQo+ICsJCQljb250aW51ZTsKPiArCj4gKwkJaWYgKCFwM2gyeDR4X2kzY19odWItPnRw
-X2J1c1tpXS5pc19yZWdpc3RlcmVkKSB7Cj4gKwkJCWRldl9kYmcoJmkzY2Rldi0+ZGV2LCAiSUJJ
-IGZvciB1bnJlZ2lzdGVyZWQgU01CdXMgcG9ydCAldVxuIiwgaSk7Cj4gKwkJCXJlZ21hcF93cml0
-ZShwM2gyeDR4X2kzY19odWItPnJlZ21hcCwKPiArCQkJCSAgICAgUDNIMlg0WF9UUDBfU01CVVNf
-QUdOVF9TVFMgKyBpLAo+ICsJCQkJICAgICBCVUZfUkVDRUlWRURfRkxBR19URl9NQVNLKTsKPiAr
-CQkJY29udGludWU7Cj4gKwkJfQoKW1NldmVyaXR5OiBIaWdoXQpDb3VsZCB0aGVyZSBiZSBhIHJh
-Y2UgY29uZGl0aW9uIHdpdGggc3luY2hyb25vdXMgc2xhdmUgYmluZGluZyBoZXJlPwoKV2hlbiB0
-aGUgSTJDIGFkYXB0ZXIgaXMgZXhwb3NlZCB0byB0aGUgc3lzdGVtIGluIHAzaDJ4NHhfdHBfc21i
-dXNfYWxnbygpLAphIHNsYXZlIGRyaXZlciBjYW4gYmluZCBzeW5jaHJvbm91c2x5IGFuZCBpbnZv
-a2UgcDNoMng0eF90cF9pMmNfcmVnX3NsYXZlKCkuClRoaXMgd291bGQgZW5hYmxlIElCSSBpbiBo
-YXJkd2FyZSBhbmQgc2V0IGliaV9lbiB0byB0cnVlLgoKSG93ZXZlciwgcmlnaHQgYWZ0ZXIgaTJj
-X2FkZF9hZGFwdGVyKCkgcmV0dXJucywgcDNoMng0eF90cF9zbWJ1c19hbGdvKCkKb3ZlcndyaXRl
-cyBpYmlfZW4gdG8gZmFsc2UgYW5kIHNldHMgaXNfcmVnaXN0ZXJlZCB0byB0cnVlIHdpdGhvdXQg
-YW55IGxvY2tzOgoKZHJpdmVycy9pM2MvaHViL3AzaDI4NDBfaTNjX2h1Yl9zbWJ1cy5jOnAzaDJ4
-NHhfdHBfc21idXNfYWxnbygpIHsKICAgIC4uLgogICAgcmV0ID0gaTJjX2FkZF9hZGFwdGVyKHNt
-YnVzX2FkYXB0ZXIpOwogICAgaWYgKHJldCkgewogICAgICAgIHAzaDJ4NHhfdW5yZWdpc3Rlcl9z
-bWJ1c19hZGFwdGVycyhodWIpOwogICAgICAgIHJldHVybiByZXQ7CiAgICB9CgogICAgaHViLT50
-cF9idXNbdHBdLmlzX3JlZ2lzdGVyZWQgPSB0cnVlOwogICAgaHViLT5odWJfY29uZmlnLnRwX2Nv
-bmZpZ1t0cF0uaWJpX2VuID0gZmFsc2U7CiAgICAuLi4KfQoKSWYgYW4gSUJJIGFycml2ZXMgZHVy
-aW5nIHRoaXMgdGlueSB3aW5kb3csIHdvdWxkbid0IHRoZSBoYW5kbGVyIGRyb3AgdGhlIGRhdGEK
-YmVjYXVzZSBpc19yZWdpc3RlcmVkIGlzIHN0aWxsIGZhbHNlPyBBbHNvLCB3b24ndCB0aGUgYmxp
-bmQgb3ZlcndyaXRlIG9mCmliaV9lbiB0byBmYWxzZSBjb3JydXB0IHRoZSBuZXdseSByZWdpc3Rl
-cmVkIHNsYXZlJ3Mgc3RhdGU/CgpbIC4uLiBdCj4gK3N0YXRpYyBpbnQgcDNoMng0eF90cF9pMmNf
-cmVnX3NsYXZlKHN0cnVjdCBpMmNfY2xpZW50ICpzbGF2ZSkKPiArewpbIC4uLiBdCj4gKwlndWFy
-ZChtdXRleCkoJmh1Yi0+ZXR4X211dGV4KTsKPiArCj4gKwlpZiAoIWh1Yi0+aTNjZGV2IHx8ICFo
-dWItPmliaV9yZWFkeSkKPiArCQlyZXR1cm4gLUVPUE5PVFNVUFA7Cj4gKwo+ICsJaWYgKGJ1cy0+
-dHBfc21idXNfY2xpZW50KQo+ICsJCXJldHVybiAtRUJVU1k7Cj4gKwo+ICsJbXV0ZXhfbG9jaygm
-cDNoMng0eC0+cHJvdGVjdGVkX3JlZ19sb2NrKTsKPiArCj4gKwkvKiBVbmxvY2sgYWNjZXNzIHRv
-IHByb3RlY3RlZCByZWdpc3RlcnMgKi8KPiArCXJldCA9IHJlZ21hcF93cml0ZShodWItPnJlZ21h
-cCwgUDNIMlg0WF9ERVZfUkVHX1BST1RFQ1RJT05fQ09ERSwKPiArCQkJICAgUDNIMlg0WF9SRUdJ
-U1RFUlNfVU5MT0NLX0NPREUpOwo+ICsJaWYgKHJldCkKPiArCQlnb3RvIG91dF91bmxvY2tfbXV0
-ZXg7ClsgLi4uIF0KPiArb3V0X3VubG9ja19tdXRleDoKPiArCW11dGV4X3VubG9jaygmcDNoMng0
-eC0+cHJvdGVjdGVkX3JlZ19sb2NrKTsKPiArCj4gKwlpZiAoIXJldCkgewo+ICsJCWJ1cy0+dHBf
-c21idXNfY2xpZW50ID0gc2xhdmU7Cj4gKwkJaHViLT5odWJfY29uZmlnLnRwX2NvbmZpZ1tidXMt
-PnRwX3BvcnRdLmliaV9lbiA9IHRydWU7Cj4gKwl9Cj4gKwo+ICsJcmV0dXJuIHJldDsKPiArfQoK
-W1NldmVyaXR5OiBNZWRpdW1dClRoZSBjbGVhbnVwIHN1YnN5c3RlbSBndWlkZWxpbmVzIHN1Z2dl
-c3QgYXZvaWRpbmcgbWl4aW5nIGdvdG8tYmFzZWQgZXJyb3IKaGFuZGxpbmcgd2l0aCBzY29wZS1i
-YXNlZCBndWFyZCgpIGNsZWFudXAgaW4gdGhlIHNhbWUgZnVuY3Rpb24uIENvdWxkIHRoaXMKbWl4
-IGNyZWF0ZSBjb25mdXNpbmcgb3duZXJzaGlwIHNlbWFudGljcyBoZXJlPwoKPiArCj4gK3N0YXRp
-YyBpbnQgcDNoMng0eF90cF9pMmNfdW5yZWdfc2xhdmUoc3RydWN0IGkyY19jbGllbnQgKnNsYXZl
-KQo+ICt7ClsgLi4uIF0KPiArCWd1YXJkKG11dGV4KSgmaHViLT5ldHhfbXV0ZXgpOwo+ICsKPiAr
-CWlmIChidXMtPnRwX3NtYnVzX2NsaWVudCAhPSBzbGF2ZSkKPiArCQlyZXR1cm4gLUVJTlZBTDsK
-PiArCj4gKwlidXMtPnRwX3NtYnVzX2NsaWVudCA9IE5VTEw7Cj4gKwlodWItPmh1Yl9jb25maWcu
-dHBfY29uZmlnW2J1cy0+dHBfcG9ydF0uaWJpX2VuID0gZmFsc2U7Cj4gKwo+ICsJbXV0ZXhfbG9j
-aygmcDNoMng0eC0+cHJvdGVjdGVkX3JlZ19sb2NrKTsKPiArCj4gKwkvKiBVbmxvY2sgYWNjZXNz
-IHRvIHByb3RlY3RlZCByZWdpc3RlcnMgKi8KPiArCXJldCA9IHJlZ21hcF93cml0ZShodWItPnJl
-Z21hcCwgUDNIMlg0WF9ERVZfUkVHX1BST1RFQ1RJT05fQ09ERSwKPiArCQkJICAgUDNIMlg0WF9S
-RUdJU1RFUlNfVU5MT0NLX0NPREUpOwo+ICsJaWYgKHJldCkKPiArCQlnb3RvIG91dF91bmxvY2tf
-bXV0ZXg7ClsgLi4uIF0KPiArb3V0X3VubG9ja19tdXRleDoKPiArCW11dGV4X3VubG9jaygmcDNo
-Mng0eC0+cHJvdGVjdGVkX3JlZ19sb2NrKTsKPiArCXJldHVybiByZXQ7Cj4gK30KCltTZXZlcml0
-eTogTWVkaXVtXQpTaW1pbGFyIHRvIHRoZSByZWdpc3RyYXRpb24gZnVuY3Rpb24gYWJvdmUsIGRv
-ZXMgdGhlIHVzZSBvZiBib3RoIGd1YXJkKG11dGV4KQphbmQgZ290byBvdXRfdW5sb2NrX211dGV4
-IGluIHRoaXMgZnVuY3Rpb24gdmlvbGF0ZSB0aGUgY2xlYW51cCBndWlkZWxpbmVzPwoKLS0gClNh
-c2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDcx
-NDA5MjA1My4yNDYxNDgyLTEtbGFrc2hheS5waXBsYW5pQG54cC5jb20/cGFydD04CgotLSAKbGlu
-dXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
+On Tue, Jul 14, 2026 at 12:30:13PM +0300, Claudiu Beznea wrote:
+>
+>
+> On 7/13/26 19:59, Frank Li wrote:
+> > On Mon, Jul 13, 2026 at 01:50:32PM +0000,sashiko-bot@kernel.org wrote:
+> > > Thank you for your contribution! Sashiko AI review found 1 potential issue(s) to consider:
+> > > - [High] Removal of the DATBASn save/restore mechanism completely breaks the I3C bus upon resume for previously attached devices, and fails to resume if the bus was fully occupied.
+> > > --
+> > >
+> > > --- Patch [6]: [PATCH v5 06/17] i3c: renesas: Perform Dynamic Address Assignment on resume ---
+> > > commit e4ac838c055dc33beb2ff4e8968a032da48a2a47
+> > > Author: Claudiu Beznea<claudiu.beznea.uj@bp.renesas.com>
+> > >
+> > > i3c: renesas: Perform Dynamic Address Assignment on resume
+> > >
+> > > This commit updates the suspend/resume operations by moving them out of
+> > > the noirq phase and attempting to perform Dynamic Address Assignment on
+> > > resume. It also removes the save and restore of the DATBASn registers.
+> > >
+> > > > diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
+> > > > --- a/drivers/i3c/master/renesas-i3c.c
+> > > > +++ b/drivers/i3c/master/renesas-i3c.c
+> > > [ ... ]
+> > >
+> > > > @@ -1495,15 +1484,19 @@ static int renesas_i3c_resume_noirq(struct device *dev)
+> > > >   	renesas_writel(i3c->regs, MSDVAD, MSDVAD_MDYADV |
+> > > >   		       MSDVAD_MDYAD(i3c->dyn_addr));
+> > > >
+> > > > -	/* Restore Device Address Table values. */
+> > > > -	for (i = 0; i < i3c->maxdevs; i++)
+> > > > -		renesas_writel(i3c->regs, DATBAS(i), i3c->DATBASn[i]);
+> > > > -
+> > > >   	/* I3C hw init. */
+> > > >   	renesas_i3c_hw_init(i3c);
+> > > >
+> > > > +	ret = i3c_master_do_daa_ext(&i3c->base, true);
+> > > [Severity: High]
+> > > Does removing the DATBASn save and restore mechanism break communication
+> > > with previously attached devices upon resume?
+> > >
+> > > Looking at renesas_i3c_daa(), it explicitly skips hardware register
+> > > initialization for previously attached devices:
+> > >
+> > > renesas_i3c_daa() {
+> > >          ...
+> > >          if (olddevs & BIT(pos))
+> > >                  continue;
+> > >          ...
+> > > }
+> > >
+> > > Since the controller was reset during suspend, won't these hardware
+> > > registers remain uninitialized (0) if DATBASn isn't manually restored here?
+> > >
+> > > Additionally, if the bus was fully occupied before suspend, will this cause
+> > > the DAA process to abort entirely?
+> > >
+> > > renesas_i3c_daa() {
+> > >          ...
+> > >          ret = renesas_i3c_get_free_pos(i3c);
+> > >          if (ret < 0)
+> > >                  return ret;
+> > >          ...
+> > > }
+> > >
+> > > If the bus is full, free_pos would be 0, causing this to return -ENOSPC
+> > > immediately. This aborts before the ENTDAA command is sent, which would
+> > > leave the previously attached devices permanently stranded without dynamic
+> > > addresses.
+> > Please check this sashiko review result?
+>
+> I tried to address this though the versions v2-v4 variant of this patch that
+> I've posted previously but after more investigation and thinking it looked
+> to me that the solution to this is not that simple and related only to this
+> driver (see below).
+>
+> Last time I've asked for some guidance [1] but got no input on it.
+>
+> Apart from v4, I tried (before posting v5) to use separate free_pos list to
+> be used while resuming, and still use only i3c_master_add_i3c_dev_locked()
+> in renesas_i3c_daa() but that didn't work either, because the devices
+> (present before suspend and) discovered at resume, ended up to be added to
+> the new list then deleted by the code of i3c_master_add_i3c_dev_locked().
+>
+> I have also thought about increasing the free_pos bitmask with one extra
+> entry while resuming to allow attach, detach, reattach work (for the devices
+> connected before suspend), but I don't think that is going to work either,
+> and looks hackish to me.
+>
+> I also tried calling i3c_master_detach_free_devs() (only the code for I3C
+> devices) before running DAA on resume but that wasn't enough for the
+> solution to work.
+>
+> I think this issue reported by sashiko can be encountered (at some point) on
+> all the drivers that track and limit the number of attached devices with a
+> bitmask (or other mechanism) and check that bitmask in the ->attach_i3c_dev.
+>
+> E.g., on the Renesas RZ/G3S I can end up to that point even w/o the code
+> from this patch doing the following:
+> 1/ connect 2 I3C devices to the bus (I'm using the NXP P3T1085UK-ARD with 2
+>    temperature sensors)
+> 2/ after the 2 I3C devices are attached, simulate the I3C bus is
+>    full (no entries in the free_pos mask) (with the diff patch below)
+> 3/ cut the power to the NXP P3T1085UK-ARD board
+> 4/ connect the power to the NXP P3T1085UK-ARD
+> 5/ at this point if I run do_daa the devices are not going to attach anymore
+>
+> I can simulate this on my side. I think it is the case for any other driver
+> following the above mentioned pattern for attaching.
+>
+> That was the reason I have currently dropped the attempt to solve the
+> problem highlighted by sashiko as its solution looks to me to be more
+> complicated and involved more testing to be done, not only related to this
+> driver.
+>
+> Since the issue is not only related to this patch but more on how the attach
+> procedure works, and can be reproduced w/o this patch, I considered only the
+> approach in this patch was be enough for suspend/resume fix and later fixes
+> should be added to cover this complicated scenario.
+>
+> Please let me know if you have any suggestions on how to go forward with
+> this problem.
+>
+> This is the patch I used for simulating full bus:
+
+If problem only exist when full, it should be fine. It is less possible to
+happen at real world.
+
+You explain it.
+
+Frank
+
+>
+> > git show
+> commit 01f99391ab3e (HEAD)
+> Author: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+> Date:   Tue Jul 14 11:49:14 2026 +0300
+>
+>     test
+>
+>     Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+>
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index f1be38a640ca..4cb98328c8eb 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -810,6 +810,29 @@ static ssize_t do_daa_store(struct device *dev,
+>
+>  static DEVICE_ATTR_WO(do_daa);
+>
+> +bool i3c_full_bus = false;
+> +
+> +static ssize_t full_bus_store(struct device *dev,
+> +                           struct device_attribute *attr,
+> +                           const char *buf, size_t count)
+> +{
+> +       struct i3c_master_controller *master = dev_to_i3cmaster(dev);
+> +       bool val;
+> +       int ret;
+> +
+> +       i3c_full_bus = true;
+> +
+> +       return count;
+> +}
+> +
+> +static DEVICE_ATTR_WO(full_bus);
+> +
+> +bool i3c_get_full_bus(void)
+> +{
+> +       return i3c_full_bus;
+> +}
+> +EXPORT_SYMBOL_GPL(i3c_get_full_bus);
+> +
+>  static struct attribute *i3c_masterdev_attrs[] = {
+>         &dev_attr_mode.attr,
+>         &dev_attr_current_master.attr,
+> @@ -822,6 +845,7 @@ static struct attribute *i3c_masterdev_attrs[] = {
+>         &dev_attr_hdrcap.attr,
+>         &dev_attr_hotjoin.attr,
+>         &dev_attr_do_daa.attr,
+> +       &dev_attr_full_bus.attr,
+>         NULL,
+>  };
+>  ATTRIBUTE_GROUPS(i3c_masterdev);
+> diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
+> index 65151991b4ec..8e78ef602c51 100644
+> --- a/drivers/i3c/master/renesas-i3c.c
+> +++ b/drivers/i3c/master/renesas-i3c.c
+> @@ -324,6 +324,9 @@ static inline u32 datbas_dvdyad_with_parity(u8 addr)
+>
+>  static int renesas_i3c_get_free_pos(struct renesas_i3c *i3c)
+>  {
+> +       if (i3c_get_full_bus())
+> +               return -ENOSPC;
+> +
+>         if (!(i3c->free_pos & GENMASK(i3c->maxdevs - 1, 0)))
+>                 return -ENOSPC;
+>
+> @@ -689,6 +692,11 @@ static int renesas_i3c_daa(struct i3c_master_controller *m)
+>
+>         renesas_i3c_wait_xfer(i3c, xfer);
+>
+> +       if (cmd->rx_count >= i3c->maxdevs)
+> +               newdevs = 0;
+> +       else
+> +               newdevs = GENMASK(i3c->maxdevs - cmd->rx_count - 1, 0);
+> +
+>         newdevs = GENMASK(i3c->maxdevs - cmd->rx_count - 1, 0);
+>         newdevs &= ~olddevs;
+>
+> @@ -867,6 +875,7 @@ static int renesas_i3c_attach_i3c_dev(struct i3c_dev_desc *dev)
+>         struct renesas_i3c_i2c_dev_data *data;
+>         int pos;
+>
+> +       pr_err("%s(): in\n", __func__);
+>         pos = renesas_i3c_get_free_pos(i3c);
+>         if (pos < 0)
+>                 return pos;
+> @@ -883,6 +892,7 @@ static int renesas_i3c_attach_i3c_dev(struct i3c_dev_desc *dev)
+>                                     datbas_dvdyad_with_parity(i3c->addrs[pos]));
+>         i3c_dev_set_master_data(dev, data);
+>
+> +       pr_err("%s(): out\n", __func__);
+>         return 0;
+>  }
+>
+> @@ -894,6 +904,8 @@ static int renesas_i3c_reattach_i3c_dev(struct
+> i3c_dev_desc *dev,
+>         struct renesas_i3c_i2c_dev_data *data = i3c_dev_get_master_data(dev);
+>         int pos;
+>
+> +       pr_err("%s(): in\n", __func__);
+> +
+>         pos = renesas_i3c_get_free_pos(i3c);
+>
+>         if (data->index > pos && pos >= 0) {
+> @@ -911,7 +923,7 @@ static int renesas_i3c_reattach_i3c_dev(struct
+> i3c_dev_desc *dev,
+>         renesas_writel(i3c->regs, DATBAS(data->index),
+>                        DATBAS_DVSTAD(dev->info.static_addr) |
+>                        datbas_dvdyad_with_parity(i3c->addrs[data->index]));
+> -
+> +       pr_err("%s(): out\n", __func__);
+>         return 0;
+>  }
+>
+> @@ -922,11 +934,13 @@ static void renesas_i3c_detach_i3c_dev(struct
+> i3c_dev_desc *dev)
+>         struct renesas_i3c *i3c = to_renesas_i3c(m);
+>
+>         renesas_writel(i3c->regs, DATBAS(data->index), 0);
+> +       pr_err("%s(): in\n", __func__);
+>
+>         i3c_dev_set_master_data(dev, NULL);
+>         i3c->addrs[data->index] = 0;
+>         i3c->free_pos |= BIT(data->index);
+>         kfree(data);
+> +       pr_err("%s(): out\n", __func__);
+>  }
+>
+>  static int renesas_i3c_i2c_xfers(struct i2c_dev_desc *dev,
+> diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
+> index 4d2a68793324..3ab31d85bff6 100644
+> --- a/include/linux/i3c/master.h
+> +++ b/include/linux/i3c/master.h
+> @@ -22,6 +22,8 @@
+>  #define I3C_BROADCAST_ADDR             0x7e
+>  #define I3C_MAX_ADDR                   GENMASK(6, 0)
+>
+> +bool i3c_get_full_bus(void);
+> +
+>  struct i2c_client;
+>
+>  /* notifier actions. notifier call data is the struct i3c_bus */
+>
+>
+> Applied on top of the fixes patches from this series except the one in this thread:
+>
+> 01f99391ab3e (HEAD) test
+> 6d3e526d34a3 Revert "i3c: renesas: Perform Dynamic Address Assignment on resume"
+> 7256e1a32469 i3c: renesas: Clean DATBAS register on detach
+> 1c9e940709a2 i3c: renesas: Perform Dynamic Address Assignment on resume
+> 305787a2f797 i3c: renesas: Reset the controller on resume
+> d6edb5c5d46a i3c: renesas: Reconfigure the DATBAS register on re-attach
+> 88ab25e78d95 i3c: renesas: Follow the reset deassert order used in probe
+> 80908175920f i3c: renesas: Restore STDBR and EXTBR registers on resume
+> 455ff70955fc i3c: renesas: Check that the transfer is valid before accessing it
+> 27bc7a253560 arm64: dts: renesas: rzg3s-smarc-som: Enable I3C
+> fd146e7c97f8 pinctrl: renesas: rzg2l: Add RZ/G3S support for selecting the
+> I3C power source
+> 277b0db8d168 dt-bindings: pinctrl: renesas,rzg2l-pinctrl: Document the
+> missing I3C power source option
+> de297915b104 pinctrl: renesas: rzg2l: Drop defines present in struct rzg2l_hwcfg
+> e9a915ca8cc7 pinctrl: renesas: rzg2l: Generalize the power source code
+> 34cf6dafc474 (tag: next-20260709, linux-next/master) Add linux-next specific
+> files for 20260709
+>
+> The steps I followed to reproduce the problem even w/o the patch in this
+> series is at [2].
+>
+> Thank you,
+> Claudiu
+>
+> [1] https://lore.kernel.org/all/559b8b0c-412a-4d0f-9872-a4c92f3b9611@kernel.org/
+> [2] https://github.com/claudiubeznea/logs/blob/cc6a6e80936b8368a2187c72dd7e23a6a88b5a84/logs
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
