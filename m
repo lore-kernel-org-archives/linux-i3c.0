@@ -4,135 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5B66DC43458
-	for <linux-i3c@archiver.kernel.org>; Mon, 13 Jul 2026 17:28:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8F254C44507
+	for <linux-i3c@archiver.kernel.org>; Tue, 14 Jul 2026 09:21:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uMzOAorECYcY8RBvL6ZiBbHJdhUReheon6OmembqBGA=; b=kBI2sSgwO6Ap7Q
-	+zvwZVe5Ikn7MNaN/r4Gu0xkOKOZyyYpqkjUHW9ROKVC7SrJJvvzr/XOdqBPI3K2UmUjwGMX2aiS4
-	8BT4wrHriKdJLez/GXarWskeg+yUg9PT53omjb7pLlx4Vpj0GDXu+ViKCcMZykPIkH24XuGgCBH99
-	wuzg8YZbAn+l+PyfJa+VqJJEMPVV1++dX2U0eSrtErCk+54O6+Sq6vmigzg9W8tHGm3IZiDpIagky
-	iFQeeIgBQ/mhKhpskB7c8K/a6/HTFNRIO6BxNzriyFej8S/hlChXAkIMB9/PlyjUlcEjGZAYr1y/D
-	/ug/v6k6xiVRexIax1Eg==;
+	List-Owner; bh=sVCX+fWs2NZvmqhVJkaOMTXGBIh8I/G933t0oCSyiHU=; b=A5DhFSmKIZ/Nft
+	Ap5Glp3s/iRoPT5OsOku+mdgZfIQhjf/isYmrq1ISLfYwguH3nmLc5aq+4gpFKo3i65rYpkmiWv0f
+	Y57i5L3DGFzydpdVF+LRuiOHxQ+USrd51FCM10wnZuuBivVZmeMGBpcclfvaFwAkPxyVXVUiIaKxu
+	1tpkNLuoYxTn+AC7x/jwzcKs6NK0xlFLLq9xcV3f2YnyxvJUx1Loeb6a8PVHvXgjPrpo3CMaHc+7i
+	pJgno7M0QoEy87/lONGLVPPA/uVBkoxFs4PqfaObF0m+s8s+HId7tpBwmr3ALGdbGYAkVo3zFUyqn
+	WsgZY7ZFCPEFr88W8Eow==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjKSH-0000000A7Bt-0ZtF;
-	Mon, 13 Jul 2026 17:28:33 +0000
-Received: from mail-japaneastazon11011011.outbound.protection.outlook.com ([52.101.125.11] helo=TYVP286CU001.outbound.protection.outlook.com)
+	id 1wjZK5-0000000BRSI-164u;
+	Tue, 14 Jul 2026 09:21:05 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjKSE-0000000A7BW-0Tb5
+	id 1wjZK2-0000000BRQk-477m
 	for linux-i3c@lists.infradead.org;
-	Mon, 13 Jul 2026 17:28:31 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=PLMh7HYmX77FPm6dVfp1s0cU/eTeEKWMTgsxcoOsSbT4DidlZpU/m4GdZ1/Dq0UDRyfsIex/TEcTYRYkXTDa+hiCS1Gsm6lAeQOV7JOwr5lVXrscRR8frv2jJFXnD2vWcKS66r7xyXJEOFZMl1jHY4tJaRN06OMz1YRpi8If5oP75wqsiKWJ4DLdCvz+baDDFlAVOVZE1d3KfBQq93PlyrPaCzFjPxwBadqIdDLUmHYSQtfF000iQNPPLdGhAZnaaLgZnhdKcm95ZUzGtmhSbyX+MaBTgBEo0OITY9UE/fu2m30fUBDsxymaMyMRedi1PBRP1Q2XVIh5ersFmFuIpQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=smgkgHgq5der1uIbrwii7UCRBdLNx/jffsmxxDTJR3w=;
- b=tjxM4F82GXLNqRS9zpyXSRHh5tDDFJO5ElR2rEqS0UtKUI5OGifcMU8uFhSESgTYak5zUu16xzw3aVXc5nEf8s7U8Jxs4Hl2raoTp9ffkZR5CaB3KRIyjh019vJgngn5lEfswPIOqKhhQpD4jOoxSJtN219THppPEwVy1P5QlWOY+/vVFCRapeSMOa9PQsTPYfjpFZlbTFznq7re2sxjp3Cf7goXnXFkL6tI/KGyp6c4JwiiYo5lEt9S3sJJSgQZSRvmSv1l4U8cOul4Pz+zgZpvO5HCA9Oa+RZA8MkXK9kynvON+4ic9NtxKEfESWEi+1dju+hUeAkUx2/dKNs/sQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bp.renesas.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=smgkgHgq5der1uIbrwii7UCRBdLNx/jffsmxxDTJR3w=;
- b=r2sjSQueOruvUHTIDK+XWoRAv/XyKojibe3ZzFbFIPWRQ3fthKpv7+vS5c/nVtEOIDBY5MHnOQF+kaxH3iRE+ZjL0paAcK2wURX263zcmsNrkJ/XpYd6fVWZYNRANnLinyFBPfxxH74cGtglJmLToguoCCuP/sVPLw93hdPCn4M=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=bp.renesas.com;
-Received: from TYRPR01MB13588.jpnprd01.prod.outlook.com (2603:1096:405:18d::7)
- by TYCPR01MB18075.jpnprd01.prod.outlook.com (2603:1096:405:391::23) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.202.18; Mon, 13 Jul
- 2026 17:28:18 +0000
-Received: from TYRPR01MB13588.jpnprd01.prod.outlook.com
- ([fe80::2f5b:8560:48ed:3828]) by TYRPR01MB13588.jpnprd01.prod.outlook.com
- ([fe80::2f5b:8560:48ed:3828%4]) with mapi id 15.21.0202.014; Mon, 13 Jul 2026
- 17:28:18 +0000
-Date: Mon, 13 Jul 2026 19:27:59 +0200
-From: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
-To: tze.yee.ng@altera.com
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	Jorge Marques <jorge.marques@analog.com>,
-	=?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>,
-	Wolfram Sang <wsa+renesas@sang-engineering.com>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	Adrian Ng Ho Yin <adrian.ho.yin.ng@altera.com>,
-	Felix Gu <ustc.gu@gmail.com>,
-	Manikanta Guntupalli <manikanta.guntupalli@amd.com>,
-	Sakari Ailus <sakari.ailus@linux.intel.com>,
-	Adrian Hunter <adrian.hunter@intel.com>,
-	Jarkko Nikula <jarkko.nikula@linux.intel.com>, imx@lists.linux.dev
-Subject: Re: [PATCH v6 0/5] i3c: Improve CCC reliability with actual_len,
- validation, and Direct GET retry
-Message-ID: <alUgH73gxpKQPOIF@tom-desktop>
-References: <cover.1783493867.git.tze.yee.ng@altera.com>
-Content-Disposition: inline
-In-Reply-To: <cover.1783493867.git.tze.yee.ng@altera.com>
-X-ClientProxiedBy: FR3P281CA0026.DEUP281.PROD.OUTLOOK.COM
- (2603:10a6:d10:1c::17) To TYRPR01MB13588.jpnprd01.prod.outlook.com
- (2603:1096:405:18d::7)
+	Tue, 14 Jul 2026 09:21:04 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 92A25200053;
+	Tue, 14 Jul 2026 11:21:01 +0200 (CEST)
+Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 5ADE320004C;
+	Tue, 14 Jul 2026 11:21:01 +0200 (CEST)
+Received: from lsv03900.swis.in-blr01.nxp.com (lsv03900.swis.in-blr01.nxp.com [10.12.177.15])
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 05BDE18000B5;
+	Tue, 14 Jul 2026 17:20:59 +0800 (+08)
+From: Lakshay Piplani <lakshay.piplani@nxp.com>
+To: linux-kernel@vger.kernel.org,
+	linux-i3c@lists.infradead.org,
+	alexandre.belloni@bootlin.com,
+	krzk+dt@kernel.org,
+	robh@kernel.org,
+	conor+dt@kernel.org,
+	devicetree@vger.kernel.org,
+	broonie@kernel.org,
+	lee@kernel.org,
+	Frank.Li@nxp.com,
+	lgirdwood@gmail.com
+Cc: vikash.bansal@nxp.com,
+	priyanka.jain@nxp.com,
+	aman.kumarpandey@nxp.com,
+	Lakshay Piplani <lakshay.piplani@nxp.com>
+Subject: [PATCH v14 2/8] i3c: master: Fix IBI request and free cleanup paths
+Date: Tue, 14 Jul 2026 14:50:47 +0530
+Message-Id: <20260714092053.2461482-3-lakshay.piplani@nxp.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20260714092053.2461482-1-lakshay.piplani@nxp.com>
+References: <20260714092053.2461482-1-lakshay.piplani@nxp.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: TYRPR01MB13588:EE_|TYCPR01MB18075:EE_
-X-MS-Office365-Filtering-Correlation-Id: a5ad2462-d9b1-4c09-1f1e-08dee104209d
-X-LD-Processed: 53d82571-da19-47e4-9cb4-625a166a4a2a,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|1800799024|366016|52116014|376014|7416014|56012099006|11063799006|38350700014|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: jcMWPetV0z4rdb29TAg8/3Zi6GLXmKgUmgocN5C/U/CCyn3/qqPuHLj7gmZEE8n5T4rxIQqMsiaM5OVEJkWMeXDplsVS5hjURLgHjTHYN+ujEMaTJV1cZWBNGLGVNmCO/o6RoBDgAuLFrmeQPWGgyRFE3Hi7JeO0dDnXBe82vg+TWurQcKPRDafBc2ybjJQ+sdK0YH510YdaCiXEi8jNx7/K8Khl7jSYeik23ZQvP2K+43QIxUEXpmUm64AflqJWLkJJXt0UoGV7zlGmBbXQxLtc5RS7kpX+74GrC+Amkme396zFn+wicuZ7C7eNcQevjVQ/zYYCIHyCtReLqLnfwPiUdHWIkuVa8u8YxSbtFqNbNc5jrvkEuZ0QQW8JTt4qpN+WsVePrhJhg0GrUc8k4GBvJDp1Y4WhXM+10+4dQym5iEj3bZQNkLPDCFpYkgevjYOvk+1R5PtKzWIjeZVngVJT/SPwWwrJGBcmoP4bAMa0NY7lzub1VDBuUxQL6fTgns4hyW2T3pfe0rTAPnIwq1K/Y1hF3UyQPATovjLw7eicgxQbwQQc0w940y//6F9eCoAwIaHlkZPnGhMLLy19suv/uEx9AwZnLALwycvU/71I02SGHG4aYtPuudwW049gq2azN1s47qcz5j6X5YurL3/jocZbaNPBIKLdj50e6tVdSHHotYh4lGXp1LcqIR/uyo51nw7tz0GSooKM/DwY4lrFUpid60ZD9Ba0a/uoJ48=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:TYRPR01MB13588.jpnprd01.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(1800799024)(366016)(52116014)(376014)(7416014)(56012099006)(11063799006)(38350700014)(18002099003)(22082099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?m6w9gAbnzUXto0DsBc5bxpToLPreiX5IX0x5d6bX+PY6/yRwSP4YoaJ6cNRj?=
- =?us-ascii?Q?yew5beNz6JsNyX2MPECI2QtmezUVxV9TbtMTmGYhMsvcxuVaXSkedR9DmWpW?=
- =?us-ascii?Q?zc9J5bTQB0x38jDdEC1NuZscWBB7nvOHYaJF+B7WK+KQam/uTCaQLCeBtETm?=
- =?us-ascii?Q?rlZh5EvazX3ax5z4/EciN/OPZri5d/HSdrUK2si0IgU9yOdvC2dCiGXqA6k2?=
- =?us-ascii?Q?j+WnaFo24SuaWF73CYpJI+Zftvk4e/LAVNnI87615Gm8zJHIuJrpPwhDr86F?=
- =?us-ascii?Q?vCHqX9F1Zh3JwgjT+F2gaK9F4AHkyu8arfKTydEwwTG3BIHhpEbQeEf8TUK1?=
- =?us-ascii?Q?qLl+qYzQIBZVDLP0AM9i1BizoXMCbGr7ksEvkPWASg7kODundASw0laz0orH?=
- =?us-ascii?Q?0ayftyUH1GyiP8F7QUlo/VyfjEbwMm9vp/+AdlRHOVay4+8arMNtazXPFwfu?=
- =?us-ascii?Q?FfQCHTUB6PdoI4Z/7iqjYK/Gk8eMJD2jxnFRi51/DuidGI9WTQME8Uy/JGJT?=
- =?us-ascii?Q?2S2kyLahp3N01c6MlvrW725JX+CWbyenG1aXKc951f6M4gIMxnMAIXSXyKxu?=
- =?us-ascii?Q?5Gj2SfY/7lmsOOMb5Wo/7Q9oLouZer9zHbxoM/4ZekDeOrs7rHKnGXZMyGHE?=
- =?us-ascii?Q?8WYpiV8ygFLW8swIJoMgo9Wiw0CZz4uQcEz+SFVj/4BfYNF/+Ny4TPGMTq+M?=
- =?us-ascii?Q?JSjFcndgSC1Yy+iEQMrBytOmO2VvMuY+txNaEujmo7lyF9A7oOFnK6gCiFoJ?=
- =?us-ascii?Q?TfiSzeTvnqqthL06wcX0t/yv9PTdadGJiwbXipvGTDN/E47hpfxTjFxjcg5z?=
- =?us-ascii?Q?dwy1o2X01ceIAs37XOZsLRjpWbhO6XIG+koRFpPUxd3iGVydtPetnjgzSQcb?=
- =?us-ascii?Q?m8vi8IOOu+qyBYQYMWOp8QHr8JlCfPnOs/tdytFTHufR/kwi/4yzFeS42Ahx?=
- =?us-ascii?Q?jecoVeWarTnjwylARfXugXWUHANpIdIV2GFJksvCDhxd38VFGqvsJNSAWhHz?=
- =?us-ascii?Q?NAEfLZYjVzo1v5VYX7RGcuLXhHFmZwXVvNhHE6Be7gGf0zNukmp6X0fZ44z+?=
- =?us-ascii?Q?ugUUyfiE+7Cor6RdnOAEzctfMPYsr7EcX7dArlVZrXsGJd1q0qqnqWuL9R77?=
- =?us-ascii?Q?oY7Lz6is+NZm/DWm1nqFKivMDrR3U7iwHztVJWCoW97PRBBEw5eU8aBiPt+J?=
- =?us-ascii?Q?x/kRold5J+dggBpKGW3ZdHPX/vSE7/ajqRqRBvQ3WtN+1L5tKX006XpsaAcD?=
- =?us-ascii?Q?39iiJzalr6eJVXZ87Eb7LS0waohKSeSBYiOW5Zg7PgbnGvYjEBeNus8nIw2h?=
- =?us-ascii?Q?tnPZd1kBgw+il0ipzMcrtGxalNgK4cS2Xno2z0P+YfXbsnRW75TKUhjoBCjy?=
- =?us-ascii?Q?OynYhzhE0Hc7Q6pol533nH0tTcUidAkF4Xw5EWAryakNCaOVdYQURG3T30Kj?=
- =?us-ascii?Q?u2dfyy3jBlortl3GJUZ7cXU7acvhzxFI4cQwBCPQwnmwBP4ItW9d8/qMv4qQ?=
- =?us-ascii?Q?7UtSDN4css49t0z2HrI8nku52+BFlWTZntNkwuP2xEynwOd5Uw8zf4GC21+r?=
- =?us-ascii?Q?nZb/yj0OEBwDMUEL/RQfWJTdZa7WzvqfacGyL/RhylJM0QwaV0kDH7FS9fPP?=
- =?us-ascii?Q?PPOvlZeJpFO/rTUgzdndEtsSEGJB5Ae9F9bUIwPB/H3HLL8P2+3Z56T/DNod?=
- =?us-ascii?Q?06EJFuvdjHgVVyDWSZUn40PM9YNftQ7LXavpodO57+7YuqbQlP0JP1i8kKEM?=
- =?us-ascii?Q?U/pWFgK+xbLKmctbVFZ9WswGVsjCXKP28ICTm5U9mldIeLMR+Yyi?=
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a5ad2462-d9b1-4c09-1f1e-08dee104209d
-X-MS-Exchange-CrossTenant-AuthSource: TYRPR01MB13588.jpnprd01.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Jul 2026 17:28:18.0234
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 53d82571-da19-47e4-9cb4-625a166a4a2a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: X07Fdh1oLsDrwWJASZVH+uce3HPXVlYlgiPTcshAWaAHw2PbI18uUjqkrx1YnL4tR/fiyZtYc0HY1PDSjDtlRqs0gsZPi2rCFsmxSmfLt5SF78sVTYiB14n1KhTHp83E
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYCPR01MB18075
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260713_102830_181662_6D517316 
-X-CRM114-Status: GOOD (  24.41  )
+X-CRM114-CacheID: sfid-20260714_022103_155742_08FCA87A 
+X-CRM114-Status: GOOD (  13.30  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -149,122 +79,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jul 08, 2026 at 12:17:36AM -0700, tze.yee.ng@altera.com wrote:
-> From: Tze Yee Ng <tze.yee.ng@altera.com>
-> 
-> This series improves I3C Common Command Code (CCC) handling in the I3C
-> core and master drivers. It separates requested and received GET payload
-> lengths, validates GET responses centrally, and retries failed Direct GET
-> CCCs once by default.
-> 
-> The DesignWare I3C master driver reports standard I3C M0/M2 error codes so
-> the core can decide when a retry is appropriate. Variable-length GET CCC
-> rules (GETMRL, GETMXDS) are described by callers via optional_bytes.
-> 
-> Patch 1/5 adds actual_len to struct i3c_ccc_cmd_payload.
-> 
-> Patch 2/5 has all I3C master drivers set actual_len on successful GET
-> transfers and updates core GET helpers to interpret results from actual_len
-> instead of len.
-> 
-> Patch 3/5 maps DesignWare CCC hardware errors to I3C M0/M2. M2 is reported
-> only for broadcast address-header NACK (7'h7E). Target address NACK
-> returns -EIO.
-> 
-> Patch 4/5 adds retries to struct i3c_ccc_cmd, validates GET payload length
-> in i3c_master_send_ccc_cmd_locked() after a successful transfer, and
-> retries failed Direct GET CCCs when the driver reports failure or an I3C
-> error. Validation failures are not retried.
-> 
-> Patch 5/5 adds optional_bytes so callers describe variable-length GET CCC
-> responses. GETMRL and GETMXDS set optional_bytes at the call site.
-> 
-> Changes in v6:
-> - Fix ADI and Cadence GET actual_len: store hardware-reported xfer bytes
->   in cmd->rx_len and set actual_len from that, not from payload.len.
-> - Fix Renesas GET actual_len: drain the response FIFO at rx_buf + rx_count
->   in resp_isr, clamp rx_count to data_len before subtracting (avoids
->   unsigned underflow when rx_isr reads round up to 32-bit words), and
->   report actual_len from cmd->rx_count.
-> - Fix dw_i3c_ccc_set() to use dw_i3c_ccc_map_err() so SET CCCs get the
->   same M0/M2 mapping as GET.
-> 
-> Changes in v5:
-> - Split the series into five patches for clearer review:
->   actual_len API, driver/core adoption, DW error mapping, core validation/
->   retry, and optional_bytes.
-> - Fix regression in v4 patch 1: keep actual_len assignment in
->   dw_i3c_ccc_get(), not dw_i3c_ccc_set().
-> - Move actual_len adoption in drivers/i3c/master.c into patch 2 so patch 2
->   matches its title and works on its own.
-> - Split optional_bytes into its own patch (5/5); patch 4/5 adds strict
->   exact-length validation and retry only.
-> - Do not retry on validation failure; retry only on driver/I3C errors.
-> - Reset actual_len before each GET retry only when cmd->rnw is set.
-> - Add @retries kernel-doc for struct i3c_ccc_cmd.
-> - Simplify i3c_ccc_validate_payload_len() per review (drop redundant
->   exact-length check when optional_bytes == 0).
-> - Clarify GETMXDS fallback comment: with optional_bytes = 3, a 2-byte
->   success on the first attempt no longer needs the shorter retry path.
-> - Add Reviewed-by: Alexandre Mergnat on patch 3/5.
-> 
-> Changes in v4:
-> - Add actual_len to keep requested and received lengths separate.
-> - Map M2 only for broadcast-address NACK; not for target-address NACK.
-> - Replace CCC-ID-specific validation with generic actual_len /
->   optional_bytes checks.
-> - Retry Direct GET CCCs on any error (default once), not only M0/M2.
-> - Add optional_bytes and cmd->retries to ccc.h; drop req_len and
->   payload.len save/restore in the core.
-> - Update SVC, Cadence, ADI, Renesas, and MIPI HCI master drivers.
-> 
-> Changes in v3:
-> - In dw_i3c_master_end_xfer_locked(), move RESPONSE_ERROR_ADDRESS_NACK to
->   return -EIO.
-> 
-> Changes in v2:
-> - Split the monolithic patch into three patches (per review feedback).
-> - Move GET payload validation and CCC retry from the DW driver to
->   drivers/i3c/master.c.
-> - Validate GET CCCs only; drop SET payload-length checks (DW
->   RESPONSE_PORT_DATA_LEN is 0 on SET).
-> - Retry GET CCCs only; do not repeat side-effecting SET CCCs.
-> - Tighten GETMRL validation to exactly 2 or 3 bytes; add GETMXDS
->   2/5-byte handling.
-> - Expand M0 mapping to CRC/parity/transfer-abort, not only frame
->   errors.
-> - Restore dests[].payload.len before retry and on error return.
-> - Avoid kmalloc on the common single-destination GET path.
-> 
-> 
-> Adrian Ng Ho Yin (5):
->   i3c: ccc: Add actual_len to struct i3c_ccc_cmd_payload
->   i3c: master: Report actual GET CCC payload length on success
->   i3c: master: dw: Map CCC hardware errors to I3C M0/M2
->   i3c: master: Validate GET CCC payload length and retry Direct GET once
->   i3c: master: Add optional_bytes for variable-length GET CCC validation
+i3c_dev_request_ibi_locked() allocates the generic IBI object and its
+workqueue before calling the controller request_ibi() callback. If the
+callback fails, destroy the workqueue before freeing the IBI object.
 
-Tested on RZ/G3E:
+Also, a controller callback may clear dev->ibi while forwarding the request
+or free operation to another controller. Avoid touching dev->ibi after the
+callback if it has already been cleared.
 
-Tested-by: Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+This prevents a workqueue leak in the request failure path and avoids NULL
+pointer dereference in the free path when the callback has already released
+the IBI object.
 
-Kind Regards,
-Tommaso
+Signed-off-by: Lakshay Piplani <lakshay.piplani@nxp.com>
+Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
+Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
 
-> 
->  drivers/i3c/master.c                   | 97 ++++++++++++++++++++++----
->  drivers/i3c/master/adi-i3c-master.c    |  3 +
->  drivers/i3c/master/dw-i3c-master.c     | 31 ++++++--
->  drivers/i3c/master/i3c-master-cdns.c   |  3 +
->  drivers/i3c/master/mipi-i3c-hci/core.c |  5 +-
->  drivers/i3c/master/renesas-i3c.c       | 16 +++--
->  drivers/i3c/master/svc-i3c-master.c    |  4 +-
->  include/linux/i3c/ccc.h                | 11 ++-
->  8 files changed, 142 insertions(+), 28 deletions(-)
-> 
-> -- 
-> 2.43.7
-> 
+---
+Changes in v14:
+ - Destroy the allocated IBI workqueue when request_ibi() callback fails
+ - Avoid touching dev->ibi after request/free callbacks if a forwarding
+   controller callback has already cleared it
+---
+---
+ drivers/i3c/master.c | 21 +++++++++++++++++++--
+ 1 file changed, 19 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 2cb94face156..01c6e048485c 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -3499,8 +3499,18 @@ int i3c_dev_request_ibi_locked(struct i3c_dev_desc *dev,
+ 
+ 	dev->ibi = ibi;
+ 	ret = master->ops->request_ibi(dev, req);
+-	if (ret) {
+-		kfree(ibi);
++
++	/*
++	 * The controller callback may have already released and cleared dev->ibi
++	 * when the request is forwarded by a virtual controller. Only clean up the
++	 * IBI object if the callback left dev->ibi valid.
++	 */
++	if (ret && dev->ibi) {
++		/* Avoid leaking the workqueue allocated for this IBI request. */
++		if (dev->ibi->wq)
++			destroy_workqueue(dev->ibi->wq);
++
++		kfree(dev->ibi);
+ 		dev->ibi = NULL;
+ 	}
+ 
+@@ -3540,6 +3550,13 @@ void i3c_dev_free_ibi_locked(struct i3c_dev_desc *dev)
+ 
+ 	master->ops->free_ibi(dev);
+ 
++	/*
++	 * The controller callback may have already released dev->ibi, for example
++	 * when the request was forwarded by a virtual controller.
++	 */
++	if (!dev->ibi)
++		return;
++
+ 	if (dev->ibi->wq) {
+ 		destroy_workqueue(dev->ibi->wq);
+ 		dev->ibi->wq = NULL;
+-- 
+2.25.1
+
 
 -- 
 linux-i3c mailing list
