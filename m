@@ -4,38 +4,38 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F41DC43458
-	for <linux-i3c@archiver.kernel.org>; Tue, 14 Jul 2026 09:21:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96FBDC44501
+	for <linux-i3c@archiver.kernel.org>; Tue, 14 Jul 2026 09:21:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vOA3E5RJXV40EaMj0EX1BUTUNn9zPsr0+wFTGLJfOQo=; b=ECLgdc8hh6Hbaj
-	T1zxcNopX2AkHeAt15DbTDzTpJyWq1SETwKLoW7NyjwDXVC07G6LZsMTkzTySe4bsn0vtHb4pJo8i
-	djcslAFrIYyeiCYn69WRpqfiUD860lPtfjhuBbkb9V8azBlC5f3Pxc2F8/oxlNyD0cfOxrOQbxLIA
-	OktBXcv4IQUyswPTpI0V/ouEoMlGGr7aS2k5XjHhINzMI43QGxyAlUqmZDxbWNooBWfigsd8SkPov
-	YkmuaG/Q2/AhxG6wKdtmHLZzChajDZFvuNGmoDPyy4bvBn7gADdAKPpO21ZpUxnElmGGyrOdy7nbW
-	OrSqTjHjlvUCXApNdw3Q==;
+	List-Owner; bh=ihIH8xGZ8Ryhieb1mK4zNPwBihZpE2aztF7QCDYvIuc=; b=WAR1ev9B2z899T
+	j4VWuSn96bBNXbO1EvNSQdDAO8+Z5yT6mNqNNuMEXUe0xfcVYSXu+nUClr0i2ENuoNDe9cWze0dsp
+	gmwDNzvEqi9HIRn12T3a5+Uy7EYkiH0kyzk/lFG8C5j4Jq/cCzruS/IAhE8y8LgRZMFC8kmi1QuC6
+	c30ijEvh+yMFgtsQs3/sx3bz1intDrhxpAzPaV5L4Nuo1Dim57E8bUwjZ0rl11bRfvYAQNC6qKmKt
+	Z6ptKJH7nP8/Kiee1Qrh8KnRbgBG4K+ksDT4NTS0Pc9fxziqajJrR87kHC2TqYC+vZxWOlugerd9d
+	VGHPxSsAJYf1sp5TK23A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjZKA-0000000BRWJ-2kJ1;
-	Tue, 14 Jul 2026 09:21:12 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1wjZKF-0000000BRZ8-1Iw7;
+	Tue, 14 Jul 2026 09:21:15 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjZK8-0000000BRTT-0lkI
+	id 1wjZKA-0000000BRVg-43Uv
 	for linux-i3c@lists.infradead.org;
-	Tue, 14 Jul 2026 09:21:09 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B7D411A003D;
-	Tue, 14 Jul 2026 11:21:06 +0200 (CEST)
+	Tue, 14 Jul 2026 09:21:13 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 7596220006D;
+	Tue, 14 Jul 2026 11:21:09 +0200 (CEST)
 Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5345E1A006C;
-	Tue, 14 Jul 2026 11:21:06 +0200 (CEST)
+	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 13A5120004C;
+	Tue, 14 Jul 2026 11:21:09 +0200 (CEST)
 Received: from lsv03900.swis.in-blr01.nxp.com (lsv03900.swis.in-blr01.nxp.com [10.12.177.15])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id F1C5718000B5;
-	Tue, 14 Jul 2026 17:21:04 +0800 (+08)
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id B4D0718000B5;
+	Tue, 14 Jul 2026 17:21:07 +0800 (+08)
 From: Lakshay Piplani <lakshay.piplani@nxp.com>
 To: linux-kernel@vger.kernel.org,
 	linux-i3c@lists.infradead.org,
@@ -52,17 +52,17 @@ Cc: vikash.bansal@nxp.com,
 	priyanka.jain@nxp.com,
 	aman.kumarpandey@nxp.com,
 	Lakshay Piplani <lakshay.piplani@nxp.com>
-Subject: [PATCH v14 6/8] i3c: hub: Add support for the I3C interface in the I3C hub
-Date: Tue, 14 Jul 2026 14:50:51 +0530
-Message-Id: <20260714092053.2461482-7-lakshay.piplani@nxp.com>
+Subject: [PATCH v14 8/8] i3c: hub: p3h2x4x: Add SMBus slave mode support
+Date: Tue, 14 Jul 2026 14:50:53 +0530
+Message-Id: <20260714092053.2461482-9-lakshay.piplani@nxp.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20260714092053.2461482-1-lakshay.piplani@nxp.com>
 References: <20260714092053.2461482-1-lakshay.piplani@nxp.com>
 MIME-Version: 1.0
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260714_022108_638748_61DCB06B 
-X-CRM114-Status: GOOD (  26.38  )
+X-CRM114-CacheID: sfid-20260714_022112_123798_2FE601C7 
+X-CRM114-Status: GOOD (  23.01  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,846 +79,442 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add virtual I3C bus support for the hub and provide interface to enable
-or disable downstream ports.
+Add SMBus slave mode support for the P3H2x4x hub SMBus target ports.
 
+The hub SMBus slave agent can receive downstream payloads into target
+buffers and report receive events through IBI. Add CONFIG_I2C_SLAVE
+to support the receive path and forward the received payloads to the
+registered I2C slave client through i2c_slave_event().
+
+Signed-off-by: Lakshay Piplani <lakshay.piplani@nxp.com>
 Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
 Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
-Signed-off-by: Lakshay Piplani <lakshay.piplani@nxp.com>
 
 ---
 Changes in v14:
- - Add hub route serialization around DAA, CCC, private transfer and IBI paths
- - Add comments explaining that downstream devices behind hub target ports
-   share the parent controller address space
- - Use i3c_bus_maintenance_lock()/unlock() instead of raw parent bus lock
-   operations
- - Hold the parent maintenance lock across temporary hub address reattach,
-   transfer and address restore
- - Rework IBI request/free forwarding, so downstream devices are temporarily
-   attached to the parent controller for IBI setup
- - Clean up the preallocated virtual IBI object and workqueue before forwarding
-   the IBI request to the parent controller
- - Avoid NULL dereference in the core IBI free path when the forwarding
-   callback has already cleared dev->ibi
+ - Clear receive-buffer flags even on SMBus receive error paths to avoid
+   repeated IBI storms
+ - Decode receive-buffer status using FIELD_GET()
+ - Fix overflow status value and explicitly clear overflow after reading both
+   target buffers
 
 Changes in v13:
- - Reserve parent I3C bus address slots for downstream devices with matching static and
-   assigned addresses by parsing target-port DT nodes
- - Keep broadcast RSTDAA blocked and add explanatory comment
- - Add TODO for empty IBI slot recycle callback
- - Add comments for intentional no-op callbacks
+ - Make IBI setup optional and robust: avoid probe failure when IBI is unsupported and add proper
+   cleanup using devm actions
+ - Fix SMBus slave receive path: avoid over-clearing buffer status, handle unregistered ports,
+   and ensure correct event delivery
+ - Improve safety by adding proper locking around shared state
 
 Changes in v12:
- - Drop redundant depends on I3C from config I3C_HUB
- - Return -EOPNOTSUPP for unsupported I2C transfers instead of reporting
-   success.
+ - Add devm cleanup for IBI request/enable path
+ - Fix NULL pointer dereference before tp_smbus_client check
+ - Clear tp_smbus_client before disabling SMBus-agent IBI in unreg_slave()
 
 Changes in v11:
- - Fix virtual hub address reattach handling
- - Fix parent bus locking during address reattach operations
- - Improve transfer and IBI request error handling
+ - Improve SMBus slave mode payload validation and parsing
 
 Changes in v10:
- - Remove unnecessary ibi_lock handling in request/enable/disable/free
-   IBI APIs
- - Remove redundant parent pointer from struct i3c_hub and derive upstream
-   master from hub_dev
-
-Changes in v9:
- - No change
-
-Changes in v8:
- - No change
-
-Changes in v7:
- - Convert Kconfig option to tristate
- - Fix signedness issue in return value
- - Fix kernel-doc warnings
-
-Changes in v6:
- - Add support for the generic I3C interface in the I3C Hub
+ - Split SMBus slave mode support into a separate patch
 ---
 ---
- MAINTAINERS             |   2 +
- drivers/i3c/Kconfig     |  14 +
- drivers/i3c/Makefile    |   1 +
- drivers/i3c/hub.c       | 607 ++++++++++++++++++++++++++++++++++++++++
- include/linux/i3c/hub.h | 102 +++++++
- 5 files changed, 726 insertions(+)
- create mode 100644 drivers/i3c/hub.c
- create mode 100644 include/linux/i3c/hub.h
+ drivers/i3c/hub/p3h2840_i3c_hub.h       |  18 ++
+ drivers/i3c/hub/p3h2840_i3c_hub_i3c.c   |  48 ++++-
+ drivers/i3c/hub/p3h2840_i3c_hub_smbus.c | 251 ++++++++++++++++++++++++
+ 3 files changed, 316 insertions(+), 1 deletion(-)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index fcb3917aa096..a0b7fd85f8e3 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -19311,8 +19311,10 @@ L:	linux-kernel@vger.kernel.org
- L:	linux-i3c@lists.infradead.org
- S:	Maintained
- F:	Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
-+F:	drivers/i3c/hub.c
- F:	drivers/mfd/p3h2840.c
- F:	drivers/regulator/p3h2840_i3c_hub_regulator.c
-+F:	include/linux/i3c/hub.h
- F:	include/linux/mfd/p3h2840.h
+diff --git a/drivers/i3c/hub/p3h2840_i3c_hub.h b/drivers/i3c/hub/p3h2840_i3c_hub.h
+index e7ab243bbfff..a7cb83dcf1e8 100644
+--- a/drivers/i3c/hub/p3h2840_i3c_hub.h
++++ b/drivers/i3c/hub/p3h2840_i3c_hub.h
+@@ -123,6 +123,11 @@
+ #define BUF_RECEIVED_FLAG_MASK					GENMASK(3, 1)
+ #define BUF_RECEIVED_FLAG_TF_MASK				GENMASK(3, 0)
  
- NXP PF5300/PF5301/PF5302 PMIC REGULATOR DEVICE DRIVER
-diff --git a/drivers/i3c/Kconfig b/drivers/i3c/Kconfig
-index 626c54b386d5..7536f3740c94 100644
---- a/drivers/i3c/Kconfig
-+++ b/drivers/i3c/Kconfig
-@@ -21,6 +21,20 @@ menuconfig I3C
- 
- if I3C
- source "drivers/i3c/master/Kconfig"
-+
-+config I3C_HUB
-+	tristate "I3C Hub Support"
-+	help
-+	  Enable support for the I3C interface in hub devices.
-+
-+	  This option adds virtual I3C bus support for hubs by creating
-+	  virtual master controllers for downstream ports and forwarding
-+	  bus operations through the hub device. It also provides an
-+	  interface used by hub drivers to enable or disable downstream
-+	  ports during bus transactions.
-+
-+	  Say Y here if your platform includes an I3C hub device
-+
- endif # I3C
- 
- config I3C_OR_I2C
-diff --git a/drivers/i3c/Makefile b/drivers/i3c/Makefile
-index 11982efbc6d9..9ddee56a6338 100644
---- a/drivers/i3c/Makefile
-+++ b/drivers/i3c/Makefile
-@@ -2,3 +2,4 @@
- i3c-y				:= device.o master.o
- obj-$(CONFIG_I3C)		+= i3c.o
- obj-$(CONFIG_I3C)		+= master/
-+obj-$(CONFIG_I3C_HUB)		+= hub.o
-diff --git a/drivers/i3c/hub.c b/drivers/i3c/hub.c
-new file mode 100644
-index 000000000000..6105bb710be6
---- /dev/null
-+++ b/drivers/i3c/hub.c
-@@ -0,0 +1,607 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright 2026 NXP
-+ * Generic I3C Hub core implementing virtual controller operations.
-+ */
-+#include <linux/i3c/device.h>
-+#include <linux/i3c/hub.h>
-+
-+#include "internals.h"
-+
-+/**
-+ * i3c_hub_master_bus_init() - Bind controller to hub device
-+ * @controller: Virtual controller for a hub port
-+ *
-+ * Associates the virtual controller with the hub device descriptor so that
-+ * transfers are executed through the hub on the parent bus.
-+ */
-+static int i3c_hub_master_bus_init(struct i3c_master_controller *controller)
-+{
-+	struct i3c_hub_controller *hub_controller;
-+	struct i3c_hub *hub;
-+
-+	hub_controller = dev_get_drvdata(&controller->dev);
-+	if (!hub_controller || !hub_controller->hub)
-+		return -ENODEV;
-+
-+	hub = hub_controller->hub;
-+
-+	if (!hub->hub_dev)
-+		return -ENODEV;
-+
-+	controller->this = hub->hub_dev->desc;
-+	return 0;
-+}
-+
-+static void i3c_hub_master_bus_cleanup(struct i3c_master_controller *controller)
-+{
-+	controller->this = NULL;
-+}
-+
-+/*
-+ * Devices behind the hub are not attached to the virtual bus.
-+ *
-+ * Instead, i3c_hub_master_priv_xfers() temporarily updates the hub dynamic
-+ * address with the target device address before issuing the transfer. Once the
-+ * transfer completes, the hub address is restored back to its original value.
-+ *
-+ * Therefore, no per-device attach, reattach, or detach handling is required for
-+ * the virtual bus.
-+ */
-+static int i3c_hub_attach_i3c_dev(struct i3c_dev_desc *dev)
-+{
-+	return 0;
-+}
-+
-+static int i3c_hub_reattach_i3c_dev(struct i3c_dev_desc *dev, u8 old_dyn_addr)
-+{
-+	return 0;
-+}
-+
-+static void i3c_hub_detach_i3c_dev(struct i3c_dev_desc *dev)
-+{
-+}
-+
-+/**
-+ * i3c_hub_do_daa() - Perform DAA via hub port
-+ * @hub: Hub instance
-+ * @controller: Virtual controller for a hub port
-+ *
-+ * Enables the port connection, performs DAA on the parent controller,
-+ * then disables the connection.
-+ */
-+static int i3c_hub_do_daa(struct i3c_hub *hub,
-+			  struct i3c_master_controller *controller)
-+{
-+	struct i3c_master_controller *parent;
-+	int ret;
-+
-+	if (!hub || !hub->hub_dev)
-+		return -ENODEV;
-+
-+	parent = i3c_dev_get_master(hub->hub_dev->desc);
-+	if (!parent)
-+		return -ENODEV;
-+
-+	mutex_lock(&hub->lock);
-+	i3c_hub_enable_port(controller);
-+
-+	/*
-+	 * Downstream devices reachable through hub target-port routes share the
-+	 * parent controller's I3C address space. The hub gates access to a
-+	 * target-port network, but it does not create an independent dynamic
-+	 * address domain per virtual bus.
-+	 *
-+	 * Run DAA on the parent controller so dynamic addresses remain unique
-+	 * across all downstream devices, even when they are behind different
-+	 * target ports.
-+	 */
-+	ret = i3c_master_do_daa(parent);
-+	i3c_hub_disable_port(controller);
-+	mutex_unlock(&hub->lock);
-+
-+	return ret;
-+}
-+
-+static bool i3c_hub_supports_ccc_cmd(struct i3c_hub *hub,
-+				     const struct i3c_ccc_cmd *cmd)
-+{
-+	struct i3c_master_controller *parent;
-+
-+	if (!hub || !hub->hub_dev)
-+		return false;
-+
-+	parent = i3c_dev_get_master(hub->hub_dev->desc);
-+	if (!parent)
-+		return false;
-+
-+	return i3c_master_supports_ccc_cmd(parent, cmd);
-+}
-+
-+/**
-+ * i3c_hub_send_ccc_cmd() - Send CCC through hub port
-+ * @hub: Hub instance
-+ * @controller: Virtual controller
-+ * @cmd: CCC command
-+ *
-+ * Enables the port connection while issuing CCC on the parent controller.
-+ */
-+static int i3c_hub_send_ccc_cmd(struct i3c_hub *hub,
-+				struct i3c_master_controller *controller,
-+				struct i3c_ccc_cmd *cmd)
-+{
-+	struct i3c_master_controller *parent;
-+	int ret;
-+
-+	if (!hub || !hub->hub_dev)
-+		return -ENODEV;
-+
-+	parent = i3c_dev_get_master(hub->hub_dev->desc);
-+	if (!parent)
-+		return -ENODEV;
-+
-+	mutex_lock(&hub->lock);
-+	i3c_hub_enable_port(controller);
-+	ret = i3c_master_send_ccc_cmd(parent, cmd);
-+	i3c_hub_disable_port(controller);
-+	mutex_unlock(&hub->lock);
-+
-+	return ret;
-+}
-+
-+/**
-+ * i3c_hub_master_priv_xfers() - Execute private transfers via hub
-+ * @dev: Target device descriptor
-+ * @xfers: Transfer array
-+ * @nxfers: Number of transfers
-+ * @mode: transfer mode (SDR, HDR, etc.)
-+ *
-+ * Handles address adjustment and forwards private transfers through the hub
-+ * device.
-+ */
-+static int i3c_hub_master_priv_xfers(struct i3c_dev_desc *dev,
-+				     struct i3c_xfer *xfers,
-+				     int nxfers,
-+				     enum i3c_xfer_mode mode)
-+{
-+	struct i3c_master_controller *controller = i3c_dev_get_master(dev);
-+	struct i3c_hub_controller *hub_controller;
-+	struct i3c_dev_desc *hub_dev;
-+	struct i3c_master_controller *parent;
-+	u8 hub_addr, target_addr;
-+	struct i3c_hub *hub;
-+	int ret, xfer_ret;
-+
-+	hub_controller = dev_get_drvdata(&controller->dev);
-+	if (!hub_controller || !hub_controller->hub)
-+		return -ENODEV;
-+
-+	hub = hub_controller->hub;
-+
-+	if (!hub->hub_dev)
-+		return -ENODEV;
-+
-+	hub_dev = hub->hub_dev->desc;
-+
-+	parent = i3c_dev_get_master(hub_dev);
-+	if (!parent)
-+		return -ENODEV;
-+
-+	mutex_lock(&hub->lock);
-+
-+	i3c_hub_enable_port(controller);
-+
-+	i3c_bus_maintenance_lock(&parent->bus);
-+
-+	hub_addr = hub_dev->info.dyn_addr ?
-+		hub_dev->info.dyn_addr : hub_dev->info.static_addr;
-+
-+	target_addr = dev->info.dyn_addr ?
-+		dev->info.dyn_addr : dev->info.static_addr;
-+
-+	if (hub_addr != target_addr) {
-+		hub_dev->info.dyn_addr = target_addr;
-+
-+		ret = i3c_master_reattach_i3c_dev_locked(hub_dev, hub_addr);
-+		if (ret) {
-+			hub_dev->info.dyn_addr = hub_addr;
-+			goto out_unlock_parent;
-+		}
-+	}
-+
-+	ret = i3c_dev_do_xfers_locked(hub_dev, xfers, nxfers, mode);
-+
-+	if (hub_addr != target_addr) {
-+		hub_dev->info.dyn_addr = hub_addr;
-+
-+		xfer_ret = i3c_master_reattach_i3c_dev_locked(hub_dev,
-+							      target_addr);
-+		if (!ret)
-+			ret = xfer_ret;
-+	}
-+out_unlock_parent:
-+	i3c_bus_maintenance_unlock(&parent->bus);
-+	i3c_hub_disable_port(controller);
-+	mutex_unlock(&hub->lock);
-+
-+	return ret;
-+}
-+
-+static int i3c_hub_attach_i2c_dev(struct i2c_dev_desc *dev)
-+{
-+	return -EOPNOTSUPP;
-+}
-+
-+static void i3c_hub_detach_i2c_dev(struct i2c_dev_desc *dev)
-+{
-+}
-+
-+static int i3c_hub_i2c_xfers(struct i2c_dev_desc *dev,
-+			     struct i2c_msg *xfers, int nxfers)
-+{
-+	return -EOPNOTSUPP;
-+}
-+
-+static int i3c_hub_master_do_daa(struct i3c_master_controller *controller)
-+{
-+	struct i3c_hub_controller *hub_controller;
-+	struct i3c_hub *hub;
-+
-+	hub_controller = dev_get_drvdata(&controller->dev);
-+	if (!hub_controller || !hub_controller->hub)
-+		return -ENODEV;
-+
-+	hub = hub_controller->hub;
-+
-+	return i3c_hub_do_daa(hub, controller);
-+}
-+
-+static int i3c_hub_master_send_ccc_cmd(struct i3c_master_controller *controller,
-+				       struct i3c_ccc_cmd *cmd)
-+{
-+	struct i3c_hub_controller *hub_controller;
-+	struct i3c_hub *hub;
-+
-+	hub_controller = dev_get_drvdata(&controller->dev);
-+	if (!hub_controller || !hub_controller->hub)
-+		return -ENODEV;
-+
-+	hub = hub_controller->hub;
-+
-+	if (!hub->hub_dev)
-+		return -ENODEV;
-+
-+	/*
-+	 * Do not forward broadcast RSTDAA through the hub. The hub itself
-+	 * is visible on the parent bus, so forwarding RSTDAA would also
-+	 * reset the hub dynamic address. Downstream RSTDAA is not supported
-+	 * by the hub virtual-controller model.
-+	 */
-+	if (cmd->id == I3C_CCC_RSTDAA(true))
-+		return 0;
-+
-+	return i3c_hub_send_ccc_cmd(hub, controller, cmd);
-+}
-+
-+static bool i3c_hub_master_supports_ccc_cmd(struct i3c_master_controller *controller,
-+					    const struct i3c_ccc_cmd *cmd)
-+{
-+	struct i3c_hub_controller *hub_controller;
-+	struct i3c_hub *hub;
-+
-+	hub_controller = dev_get_drvdata(&controller->dev);
-+	if (!hub_controller || !hub_controller->hub)
-+		return false;
-+
-+	hub = hub_controller->hub;
-+
-+	return i3c_hub_supports_ccc_cmd(hub, cmd);
-+}
-+
-+/**
-+ * i3c_hub_request_ibi() - Request IBI through parent controller
-+ * @desc: Target device descriptor
-+ * @req: IBI setup
-+ *
-+ * Temporarily updates parent controller context to request IBI for a device
-+ * connected through the hub.
-+ */
-+static int i3c_hub_request_ibi(struct i3c_dev_desc *desc,
-+			       const struct i3c_ibi_setup *req)
-+{
-+	struct i3c_master_controller *controller = i3c_dev_get_master(desc);
-+	struct i3c_hub_controller *hub_controller;
-+	struct i3c_master_controller *orig_parent;
-+	struct i3c_master_controller *parent;
-+	struct i3c_hub *hub;
-+	int ret;
-+
-+	hub_controller = dev_get_drvdata(&controller->dev);
-+	if (!hub_controller || !hub_controller->hub)
-+		return -ENODEV;
-+
-+	hub = hub_controller->hub;
-+
-+	if (!hub->hub_dev)
-+		return -ENODEV;
-+
-+	parent = i3c_dev_get_master(hub->hub_dev->desc);
-+
-+	i3c_bus_maintenance_lock(&parent->bus);
-+
-+	orig_parent = i3c_hub_update_desc_parent(&desc->common, parent);
-+
-+	/*
-+	 * Downstream devices are exposed through the virtual hub controller.
-+	 * Private transfers only use the hub device temporarily with the
-+	 * downstream device's dynamic address; they do not attach the downstream
-+	 * device to the parent controller.
-+	 *
-+	 * Attach the device to the parent controller before requesting IBI so
-+	 * the parent can allocate any controller-private IBI state.
-+	 */
-+	ret = i3c_master_direct_attach_i3c_dev_locked(parent, desc);
-+	if (ret) {
-+		i3c_hub_update_desc_parent(&desc->common, orig_parent);
-+		i3c_bus_maintenance_unlock(&parent->bus);
-+		return ret;
-+	}
-+
-+	if (desc->ibi) {
-+		if (desc->ibi->wq) {
-+			destroy_workqueue(desc->ibi->wq);
-+			desc->ibi->wq = NULL;
-+		}
-+
-+		kfree(desc->ibi);
-+		desc->ibi = NULL;
-+	}
-+	ret = i3c_dev_request_ibi_locked(desc, req);
-+	if (ret)
-+		i3c_master_direct_detach_i3c_dev_locked(desc);
-+
-+	i3c_hub_update_desc_parent(&desc->common, orig_parent);
-+
-+	i3c_bus_maintenance_unlock(&parent->bus);
-+
-+	return ret;
-+}
-+
-+static void i3c_hub_free_ibi(struct i3c_dev_desc *desc)
-+{
-+	struct i3c_master_controller *controller = i3c_dev_get_master(desc);
-+	struct i3c_hub_controller *hub_controller;
-+	struct i3c_master_controller *orig_parent;
-+	struct i3c_master_controller *parent;
-+	struct i3c_hub *hub;
-+
-+	hub_controller = dev_get_drvdata(&controller->dev);
-+	if (!hub_controller || !hub_controller->hub)
-+		return;
-+
-+	hub = hub_controller->hub;
-+
-+	if (!hub->hub_dev)
-+		return;
-+
-+	parent = i3c_dev_get_master(hub->hub_dev->desc);
-+
-+	mutex_lock(&hub->lock);
-+	i3c_hub_enable_port(controller);
-+
-+	i3c_bus_maintenance_lock(&parent->bus);
-+	orig_parent = i3c_hub_update_desc_parent(&desc->common, parent);
-+	i3c_dev_free_ibi_locked(desc);
-+
-+	/*
-+	 * Drop the temporary parent attachment created for IBI setup.
-+	 * The downstream device remains exposed through the virtual hub
-+	 * controller.
-+	 */
-+	i3c_master_direct_detach_i3c_dev_locked(desc);
-+	i3c_hub_update_desc_parent(&desc->common, orig_parent);
-+	i3c_bus_maintenance_unlock(&parent->bus);
-+
-+	i3c_hub_disable_port(controller);
-+	mutex_unlock(&hub->lock);
-+}
-+
-+/**
-+ * i3c_hub_enable_ibi() - Enable IBI via hub port
-+ * @desc: Target device descriptor
-+ *
-+ * Enables port connection and forwards the IBI enable request to the parent
-+ * controller.
-+ */
-+static int i3c_hub_enable_ibi(struct i3c_dev_desc *desc)
-+{
-+	struct i3c_master_controller *controller = i3c_dev_get_master(desc);
-+	struct i3c_hub_controller *hub_controller;
-+	struct i3c_master_controller *orig_parent;
-+	struct i3c_master_controller *parent;
-+	struct i3c_hub *hub;
-+	int ret;
-+
-+	hub_controller = dev_get_drvdata(&controller->dev);
-+	if (!hub_controller || !hub_controller->hub)
-+		return -ENODEV;
-+
-+	hub = hub_controller->hub;
-+
-+	if (!hub->hub_dev)
-+		return -ENODEV;
-+
-+	parent = i3c_dev_get_master(hub->hub_dev->desc);
-+
-+	mutex_lock(&hub->lock);
-+	i3c_hub_enable_port(controller);
-+
-+	orig_parent = i3c_hub_update_desc_parent(&desc->common, parent);
-+
-+	i3c_bus_maintenance_lock(&parent->bus);
-+	ret = i3c_dev_enable_ibi_locked(desc);
-+	i3c_bus_maintenance_unlock(&parent->bus);
-+
-+	i3c_hub_update_desc_parent(&desc->common, orig_parent);
-+
-+	i3c_hub_disable_port(controller);
-+	mutex_unlock(&hub->lock);
-+
-+	return ret;
-+}
-+
-+/**
-+ * i3c_hub_disable_ibi() - Disable IBI via hub port
-+ * @desc: Target device descriptor
-+ *
-+ * Enables port connection and forwards the IBI disable request to the parent
-+ * controller.
-+ */
-+static int i3c_hub_disable_ibi(struct i3c_dev_desc *desc)
-+{
-+	struct i3c_master_controller *controller = i3c_dev_get_master(desc);
-+	struct i3c_hub_controller *hub_controller;
-+	struct i3c_master_controller *orig_parent;
-+	struct i3c_master_controller *parent;
-+	struct i3c_hub *hub;
-+	int ret;
-+
-+	hub_controller = dev_get_drvdata(&controller->dev);
-+	if (!hub_controller || !hub_controller->hub)
-+		return -ENODEV;
-+
-+	hub = hub_controller->hub;
-+
-+	if (!hub->hub_dev)
-+		return -ENODEV;
-+
-+	parent = i3c_dev_get_master(hub->hub_dev->desc);
-+
-+	mutex_lock(&hub->lock);
-+	i3c_hub_enable_port(controller);
-+
-+	orig_parent = i3c_hub_update_desc_parent(&desc->common, parent);
-+
-+	i3c_bus_maintenance_lock(&parent->bus);
-+	ret = i3c_dev_disable_ibi_locked(desc);
-+	i3c_bus_maintenance_unlock(&parent->bus);
-+
-+	i3c_hub_update_desc_parent(&desc->common, orig_parent);
-+
-+	i3c_hub_disable_port(controller);
-+	mutex_unlock(&hub->lock);
-+
-+	return ret;
-+}
-+
-+static void i3c_hub_recycle_ibi_slot(struct i3c_dev_desc *desc,
-+				     struct i3c_ibi_slot *slot)
-+{
-+	/*
-+	 * TODO: Forward IBI slot recycling to the parent controller when
-+	 * downstream-device IBI support is fully enabled. Current users only
-+	 * rely on the hub device IBI path for SMBus-agent events, so no parent
-+	 * hardware slot is recycled through this virtual callback currently.
-+	 */
-+}
-+
-+static const struct i3c_master_controller_ops i3c_hub_master_ops_data = {
-+	.bus_init = i3c_hub_master_bus_init,
-+	.bus_cleanup = i3c_hub_master_bus_cleanup,
-+	.attach_i3c_dev = i3c_hub_attach_i3c_dev,
-+	.reattach_i3c_dev = i3c_hub_reattach_i3c_dev,
-+	.detach_i3c_dev = i3c_hub_detach_i3c_dev,
-+	.do_daa = i3c_hub_master_do_daa,
-+	.supports_ccc_cmd = i3c_hub_master_supports_ccc_cmd,
-+	.send_ccc_cmd = i3c_hub_master_send_ccc_cmd,
-+	.i3c_xfers = i3c_hub_master_priv_xfers,
-+	.attach_i2c_dev = i3c_hub_attach_i2c_dev,
-+	.detach_i2c_dev = i3c_hub_detach_i2c_dev,
-+	.i2c_xfers = i3c_hub_i2c_xfers,
-+	.request_ibi = i3c_hub_request_ibi,
-+	.free_ibi = i3c_hub_free_ibi,
-+	.enable_ibi = i3c_hub_enable_ibi,
-+	.disable_ibi = i3c_hub_disable_ibi,
-+	.recycle_ibi_slot = i3c_hub_recycle_ibi_slot,
-+};
-+
-+/**
-+ * i3c_hub_init() - Initialize hub context
-+ * @hub: Hub instance
-+ * @ops: Vendor callbacks
-+ * @hub_dev: I3C hub device
-+ */
-+void i3c_hub_init(struct i3c_hub *hub,
-+		  const struct i3c_hub_ops *ops,
-+		  struct i3c_device *hub_dev)
-+{
-+	hub->ops = ops;
-+	hub->hub_dev = hub_dev;
-+	mutex_init(&hub->lock);
-+}
-+EXPORT_SYMBOL_GPL(i3c_hub_init);
-+
-+const struct i3c_master_controller_ops *i3c_hub_master_ops(void)
-+{
-+	return &i3c_hub_master_ops_data;
-+}
-+EXPORT_SYMBOL_GPL(i3c_hub_master_ops);
-+
-+/**
-+ * i3c_hub_reserve_parent_addrslots_from_dt() - Reserve child addresses in parent bus.
-+ * @hubc: I3C hub controller for a target-port virtual bus.
-+ * @node: Target-port bus Device Tree node.
-+ *
-+ * Reserve parent bus address slots for downstream I3C devices that keep the
-+ * same static and assigned dynamic address, so parent DAA does not reuse them.
-+ *
-+ * Return: 0 on success, or a negative error code.
-+ */
-+int i3c_hub_reserve_parent_addrslots_from_dt(struct i3c_hub_controller *hubc,
-+					     struct device_node *node)
-+{
-+	struct i3c_master_controller *parent = hubc->parent;
-+	enum i3c_addr_slot_status status;
-+	u32 assigned_addr;
-+	u8 static_addr;
-+	u32 reg[3];
-+	int ret;
-+
-+	if (!parent || !node)
-+		return -ENODEV;
-+
-+	for_each_available_child_of_node_scoped(node, child) {
-+		ret = of_property_read_variable_u32_array(child, "reg", reg, 1, 3);
-+		if (ret < 0)
-+			continue;
-+
-+		ret = of_property_read_u32(child, "assigned-address", &assigned_addr);
-+		if (ret)
-+			continue;
-+
-+		static_addr = reg[0];
-+
-+		if (!static_addr || !assigned_addr)
-+			continue;
-+
-+		if (static_addr != assigned_addr)
-+			continue;
-+
-+		i3c_bus_maintenance_lock(&parent->bus);
-+		status = i3c_bus_get_addr_slot_status(&parent->bus,
-+						      assigned_addr);
-+		if (status == I3C_ADDR_SLOT_FREE)
-+			i3c_bus_set_addr_slot_status(&parent->bus,
-+						     assigned_addr,
-+						     I3C_ADDR_SLOT_I3C_DEV);
-+		i3c_bus_maintenance_unlock(&parent->bus);
-+	}
-+	return 0;
-+}
-+EXPORT_SYMBOL_GPL(i3c_hub_reserve_parent_addrslots_from_dt);
-+
-+MODULE_AUTHOR("Aman Kumar Pandey <aman.kumarpandey@nxp.com>");
-+MODULE_AUTHOR("Vikash Bansal <vikash.bansal@nxp.com>");
-+MODULE_AUTHOR("Lakshay Piplani <lakshay.piplani@nxp.com>");
-+MODULE_DESCRIPTION("Generic I3C hub support");
-+MODULE_LICENSE("GPL");
-diff --git a/include/linux/i3c/hub.h b/include/linux/i3c/hub.h
-new file mode 100644
-index 000000000000..8ad2cf3c9d5b
---- /dev/null
-+++ b/include/linux/i3c/hub.h
-@@ -0,0 +1,102 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright 2026 NXP
-+ * Generic hub definitions and helper interfaces.
-+ */
-+#ifndef _LINUX_I3C_HUB_H
-+#define _LINUX_I3C_HUB_H
-+
-+#include <linux/i3c/master.h>
-+#include <linux/mutex.h>
-+
-+static inline struct i3c_master_controller *
-+i3c_hub_update_desc_parent(struct i3c_i2c_dev_desc *desc,
-+			   struct i3c_master_controller *parent)
-+{
-+	struct i3c_master_controller *orig_parent = desc->master;
-+
-+	desc->master = parent;
-+	return orig_parent;
-+}
-+
-+/**
-+ * struct i3c_hub - Generic I3C hub context
-+ * @ops: Vendor callbacks for port connection control
-+ * @hub_dev: I3C device representing the hub on the parent bus
-+ */
-+struct i3c_hub {
-+	const struct i3c_hub_ops *ops;
-+	struct i3c_device *hub_dev;
-+	struct mutex lock; /* Serializes hub port routing. */
-+};
-+
-+struct i3c_hub_controller {
-+	struct i3c_master_controller *parent;
-+	struct i3c_master_controller controller;
-+	struct i3c_hub *hub;
-+};
-+
-+struct i3c_hub_ops {
-+	void (*enable_port)(struct i3c_master_controller *controller);
-+	void (*disable_port)(struct i3c_master_controller *controller);
-+};
-+
-+/**
-+ * i3c_hub_enable_port() - Enable hub connection for a controller
-+ * @controller: Virtual controller representing a hub port
-+ *
-+ * Retrieves hub context from controller drvdata and invokes the vendor
-+ * callback to enable the associated port connection.
-+ */
-+static inline void i3c_hub_enable_port(struct i3c_master_controller *controller)
-+{
-+	struct i3c_hub_controller *hub_controller;
-+	struct i3c_hub *hub;
-+
-+	hub_controller = dev_get_drvdata(&controller->dev);
-+	if (!hub_controller || !hub_controller->hub)
-+		return;
-+
-+	hub = hub_controller->hub;
-+
-+	if (hub && hub->ops && hub->ops->enable_port)
-+		hub->ops->enable_port(controller);
-+}
-+
-+/**
-+ * i3c_hub_disable_port() - Disable hub connection for a controller
-+ * @controller: Virtual controller representing a hub port
-+ *
-+ * Retrieves hub context from controller drvdata and invokes the vendor
-+ * callback to disable the associated port connection.
-+ */
-+static inline void i3c_hub_disable_port(struct i3c_master_controller *controller)
-+{
-+	struct i3c_hub_controller *hub_controller;
-+	struct i3c_hub *hub;
-+
-+	hub_controller = dev_get_drvdata(&controller->dev);
-+	if (!hub_controller || !hub_controller->hub)
-+		return;
-+
-+	hub = hub_controller->hub;
-+
-+	if (hub && hub->ops && hub->ops->disable_port)
-+		hub->ops->disable_port(controller);
-+}
-+
-+/**
-+ * i3c_hub_master_ops() - Return virtual controller ops for hub ports
-+ *
-+ * Provides i3c_master_controller_ops used by controllers created for hub
-+ * ports.
-+ */
-+const struct i3c_master_controller_ops *i3c_hub_master_ops(void);
-+
-+void i3c_hub_init(struct i3c_hub *hub,
-+		  const struct i3c_hub_ops *ops,
-+		  struct i3c_device *hub_dev);
-+
-+int i3c_hub_reserve_parent_addrslots_from_dt(struct i3c_hub_controller *hubc,
-+					     struct device_node *node);
++#define P3H2X4X_TARGET_BUF_0_RECEIVE_VAL			1
++#define P3H2X4X_TARGET_BUF_1_RECEIVE_VAL			2
++#define P3H2X4X_TARGET_BUF_0_1_RECEIVE_VAL			3
++#define P3H2X4X_TARGET_BUF_OVRFL_VAL				7
++
+ #define P3H2X4X_TARGET_AGENT_LOCAL_DEV				0x11
+ #define P3H2X4X_TARGET_BUFF_0_PAGE				0x12
+ #define P3H2X4X_TARGET_BUFF_1_PAGE				0x13
+@@ -299,6 +304,9 @@ struct p3h2x4x_i3c_hub_dev {
+ 	struct i2c_client *i2c_client;
+ 	struct hub_configuration hub_config;
+ 	struct tp_bus tp_bus[P3H2X4X_TP_MAX_COUNT];
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++	bool ibi_ready;
 +#endif
+ 	struct i3c_hub *hub;
+ };
+ 
+@@ -324,4 +332,14 @@ int p3h2x4x_tp_smbus_algo(struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub);
+  */
+ int p3h2x4x_tp_i3c_algo(struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub);
+ 
++/**
++ * p3h2x4x_ibi_handler - IBI handler.
++ * @i3cdev: i3c device.
++ * @payload: two byte IBI payload data.
++ */
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++void p3h2x4x_ibi_handler(struct i3c_device *i3cdev,
++			 const struct i3c_ibi_payload *payload);
++#endif
++
+ #endif /* P3H2840_I3C_HUB_H */
+diff --git a/drivers/i3c/hub/p3h2840_i3c_hub_i3c.c b/drivers/i3c/hub/p3h2840_i3c_hub_i3c.c
+index 0e5bf7eb3cf7..b47859a2dd14 100644
+--- a/drivers/i3c/hub/p3h2840_i3c_hub_i3c.c
++++ b/drivers/i3c/hub/p3h2840_i3c_hub_i3c.c
+@@ -10,6 +10,14 @@
+ 
+ #include "p3h2840_i3c_hub.h"
+ 
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++static const struct i3c_ibi_setup p3h2x4x_ibireq = {
++	.handler = p3h2x4x_ibi_handler,
++	.max_payload_len = P3H2X4X_MAX_PAYLOAD_LEN,
++	.num_slots = P3H2X4X_NUM_SLOTS,
++};
++#endif
++
+ static inline struct tp_bus *
+ p3h2x4x_bus_from_controller(struct i3c_master_controller *controller)
+ {
+@@ -54,6 +62,16 @@ static void p3h2x4x_unregister_i3c_master(void *data)
+ 	i3c_master_unregister(controller);
+ }
+ 
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++static void p3h2x4x_free_ibi(void *data)
++{
++	struct i3c_device *i3cdev = data;
++
++	i3c_device_disable_ibi(i3cdev);
++	i3c_device_free_ibi(i3cdev);
++}
++#endif
++
+ /**
+  * p3h2x4x_tp_i3c_algo - Register I3C virtual masters for I3C target ports.
+  * @p3h2x4x_hub: p3h2x4x device structure.
+@@ -114,5 +132,33 @@ int p3h2x4x_tp_i3c_algo(struct p3h2x4x_i3c_hub_dev *p3h2x4x_hub)
+ 		p3h2x4x_hub->tp_bus[tp].is_registered = true;
+ 		p3h2x4x_hub->hub_config.tp_config[tp].always_enable = true;
+ 	}
+-	return regmap_write(p3h2x4x_hub->regmap, P3H2X4X_TP_NET_CON_CONF, ntwk_mask);
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++	ret = i3c_device_request_ibi(p3h2x4x_hub->i3cdev, &p3h2x4x_ibireq);
++	if (ret) {
++		dev_warn(p3h2x4x_hub->dev,
++			 "IBI not available, SMBus slave mode disabled\n");
++			 p3h2x4x_hub->ibi_ready = false;
++	} else {
++		ret = i3c_device_enable_ibi(p3h2x4x_hub->i3cdev);
++		if (ret) {
++			i3c_device_free_ibi(p3h2x4x_hub->i3cdev);
++			dev_warn(p3h2x4x_hub->dev,
++				 "Failed to enable IBI, SMBus slave mode disabled\n");
++			p3h2x4x_hub->ibi_ready = false;
++		} else {
++			p3h2x4x_hub->ibi_ready = true;
++
++			ret = devm_add_action_or_reset(p3h2x4x_hub->dev,
++						       p3h2x4x_free_ibi,
++						       p3h2x4x_hub->i3cdev);
++			if (ret) {
++				p3h2x4x_hub->ibi_ready = false;
++				return ret;
++			}
++		}
++	}
++#endif
++	ret = regmap_write(p3h2x4x_hub->regmap, P3H2X4X_TP_NET_CON_CONF, ntwk_mask);
++
++	return ret;
+ }
+diff --git a/drivers/i3c/hub/p3h2840_i3c_hub_smbus.c b/drivers/i3c/hub/p3h2840_i3c_hub_smbus.c
+index b991c46f3ed5..89e94f551b31 100644
+--- a/drivers/i3c/hub/p3h2840_i3c_hub_smbus.c
++++ b/drivers/i3c/hub/p3h2840_i3c_hub_smbus.c
+@@ -3,6 +3,7 @@
+  * Copyright 2025-2026 NXP
+  * This P3H2X4X driver file contain functions for SMBus/I2C virtual Bus creation and read/write.
+  */
++#include <linux/bitfield.h>
+ #include <linux/mfd/p3h2840.h>
+ #include <linux/regmap.h>
+ 
+@@ -15,6 +16,168 @@ enum p3h2x4x_smbus_desc_idx {
+ 	P3H2X4X_DESC_READ_LEN,
+ };
+ 
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++static void p3h2x4x_read_smbus_agent_rx_buf(struct i3c_device *i3cdev, enum p3h2x4x_rcv_buf rfbuf,
++					    enum p3h2x4x_tp tp)
++{
++	struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub = i3cdev_get_drvdata(i3cdev);
++	u8 slave_rx_buffer[P3H2X4X_SMBUS_TARGET_PAYLOAD_SIZE] = { 0 };
++	u8 target_buffer_page, flag_clear, temp = 0, i, addr;
++	u32 packet_len, slave_address, ret;
++	struct i2c_client *client;
++
++	switch (rfbuf) {
++	case RCV_BUF_0:
++		target_buffer_page = P3H2X4X_TARGET_BUFF_0_PAGE;
++		flag_clear = P3H2X4X_TARGET_BUF_0_RECEIVE;
++		break;
++	case RCV_BUF_1:
++		target_buffer_page = P3H2X4X_TARGET_BUFF_1_PAGE;
++		flag_clear = P3H2X4X_TARGET_BUF_1_RECEIVE;
++		break;
++	default:
++		return;
++	}
++
++	target_buffer_page += P3H2X4X_NO_PAGE_PER_TP * tp;
++
++	ret = regmap_write(p3h2x4x_i3c_hub->regmap, P3H2X4X_PAGE_PTR, target_buffer_page);
++	if (ret)
++		goto ibi_err;
++
++	/* read buffer length */
++	ret = regmap_read(p3h2x4x_i3c_hub->regmap, P3H2X4X_TARGET_BUFF_LENGTH, &packet_len);
++	if (ret)
++		goto ibi_err;
++
++	if (packet_len)
++		packet_len = packet_len - 1;
++
++	if (packet_len > P3H2X4X_SMBUS_TARGET_PAYLOAD_SIZE) {
++		dev_err(&i3cdev->dev, "Received message too big for p3h2x4x buffer\n");
++		goto ibi_err;
++	}
++
++	/* read slave  address */
++	ret = regmap_read(p3h2x4x_i3c_hub->regmap, P3H2X4X_TARGET_BUFF_ADDRESS, &slave_address);
++	if (ret)
++		goto ibi_err;
++
++	/* read data */
++	if (packet_len) {
++		ret = regmap_bulk_read(p3h2x4x_i3c_hub->regmap, P3H2X4X_TARGET_BUFF_DATA,
++				       slave_rx_buffer, packet_len);
++		if (ret)
++			goto ibi_err;
++	}
++
++	client = p3h2x4x_i3c_hub->tp_bus[tp].tp_smbus_client;
++	if (!client)
++		goto ibi_err;
++
++	/* notify slave driver about received data */
++	if ((client->addr & 0x7f) == (slave_address >> 1)) {
++		addr = slave_address >> 1;
++		i2c_slave_event(client,
++				I2C_SLAVE_WRITE_REQUESTED, &addr);
++		for (i = 0; i < packet_len; i++) {
++			temp = slave_rx_buffer[i];
++			i2c_slave_event(client,
++					I2C_SLAVE_WRITE_RECEIVED, &temp);
++		}
++		i2c_slave_event(client, I2C_SLAVE_STOP, &temp);
++	}
++
++ibi_err:
++	regmap_write(p3h2x4x_i3c_hub->regmap, P3H2X4X_PAGE_PTR, 0x00);
++
++	regmap_write(p3h2x4x_i3c_hub->regmap, P3H2X4X_TP0_SMBUS_AGNT_STS + tp, flag_clear);
++}
++
++/**
++ * p3h2x4x_ibi_handler - IBI handler.
++ * @i3cdev: i3c device.
++ * @payload: two byte IBI payload data.
++ *
++ */
++void p3h2x4x_ibi_handler(struct i3c_device *i3cdev,
++			 const struct i3c_ibi_payload *payload)
++{
++	struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub;
++	u8 payload_byte_one, payload_byte_two;
++	u32 target_port_status, ret, i;
++	const u8 *data;
++
++	if (!payload || payload->len < P3H2X4X_MAX_PAYLOAD_LEN)
++		return;
++
++	data = payload->data;
++	payload_byte_one = data[0];
++
++	if (!(payload_byte_one & P3H2X4X_SMBUS_AGENT_EVENT_FLAG_STATUS))
++		return;
++
++	p3h2x4x_i3c_hub = i3cdev_get_drvdata(i3cdev);
++
++	if (!p3h2x4x_i3c_hub || !p3h2x4x_i3c_hub->regmap)
++		return;
++
++	payload_byte_two = data[1];
++	guard(mutex)(&p3h2x4x_i3c_hub->etx_mutex);
++
++	for (i = 0; i < P3H2X4X_TP_MAX_COUNT; ++i) {
++		if (!((payload_byte_two >> i) & 0x01))
++			continue;
++
++		if (!p3h2x4x_i3c_hub->tp_bus[i].is_registered) {
++			dev_dbg(&i3cdev->dev, "IBI for unregistered SMBus port %u\n", i);
++			regmap_write(p3h2x4x_i3c_hub->regmap,
++				     P3H2X4X_TP0_SMBUS_AGNT_STS + i,
++				     BUF_RECEIVED_FLAG_TF_MASK);
++			continue;
++		}
++
++		ret = regmap_read(p3h2x4x_i3c_hub->regmap, P3H2X4X_TP0_SMBUS_AGNT_STS + i,
++				  &target_port_status);
++		if (ret) {
++			dev_err(&i3cdev->dev, "target port read status failed %d\n", ret);
++			continue;
++		}
++
++		if (target_port_status & P3H2X4X_TARGET_BUF_CA_TF)
++			regmap_write(p3h2x4x_i3c_hub->regmap,
++				     P3H2X4X_TP0_SMBUS_AGNT_STS + i,
++				     P3H2X4X_TARGET_BUF_CA_TF);
++
++		/* process data receive buffer */
++		switch (FIELD_GET(BUF_RECEIVED_FLAG_MASK, target_port_status)) {
++		case P3H2X4X_TARGET_BUF_0_RECEIVE_VAL:
++			p3h2x4x_read_smbus_agent_rx_buf(i3cdev, RCV_BUF_0, i);
++			break;
++		case P3H2X4X_TARGET_BUF_1_RECEIVE_VAL:
++			p3h2x4x_read_smbus_agent_rx_buf(i3cdev, RCV_BUF_1, i);
++			break;
++		case P3H2X4X_TARGET_BUF_0_1_RECEIVE_VAL:
++			p3h2x4x_read_smbus_agent_rx_buf(i3cdev, RCV_BUF_0, i);
++			p3h2x4x_read_smbus_agent_rx_buf(i3cdev, RCV_BUF_1, i);
++			break;
++		case P3H2X4X_TARGET_BUF_OVRFL_VAL:
++			p3h2x4x_read_smbus_agent_rx_buf(i3cdev, RCV_BUF_0, i);
++			p3h2x4x_read_smbus_agent_rx_buf(i3cdev, RCV_BUF_1, i);
++			regmap_write(p3h2x4x_i3c_hub->regmap, P3H2X4X_TP0_SMBUS_AGNT_STS + i,
++				     P3H2X4X_TARGET_BUF_OVRFL);
++			dev_err(&i3cdev->dev, "Overflow, reading buffer zero and one\n");
++			break;
++		default:
++			regmap_write(p3h2x4x_i3c_hub->regmap,
++				     P3H2X4X_TP0_SMBUS_AGNT_STS + i,
++				     target_port_status & BUF_RECEIVED_FLAG_MASK);
++			break;
++		}
++	}
++}
++#endif
++
+ static int p3h2x4x_read_smbus_transaction_status(struct p3h2x4x_i3c_hub_dev *hub,
+ 						 u8 target_port_status,
+ 						 u8 data_length)
+@@ -213,11 +376,99 @@ static u32 p3h2x4x_tp_smbus_funcs(struct i2c_adapter *adapter)
+ 	return I2C_FUNC_I2C | I2C_FUNC_SMBUS_BLOCK_DATA;
+ }
+ 
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++static int p3h2x4x_tp_i2c_reg_slave(struct i2c_client *slave)
++{
++	struct tp_bus *bus = i2c_get_adapdata(slave->adapter);
++	struct p3h2x4x_i3c_hub_dev *hub = bus->p3h2x4x_i3c_hub;
++	struct p3h2x4x *p3h2x4x = dev_get_drvdata(hub->dev->parent);
++	int ret, ret2;
++
++	guard(mutex)(&hub->etx_mutex);
++
++	if (!hub->i3cdev || !hub->ibi_ready)
++		return -EOPNOTSUPP;
++
++	if (bus->tp_smbus_client)
++		return -EBUSY;
++
++	mutex_lock(&p3h2x4x->protected_reg_lock);
++
++	/* Unlock access to protected registers */
++	ret = regmap_write(hub->regmap, P3H2X4X_DEV_REG_PROTECTION_CODE,
++			   P3H2X4X_REGISTERS_UNLOCK_CODE);
++	if (ret)
++		goto out_unlock_mutex;
++
++	ret = regmap_set_bits(hub->regmap,
++			      P3H2X4X_TP_SMBUS_AGNT_IBI_CONFIG,
++			      bus->tp_mask);
++
++	/* Lock access to protected registers */
++	ret2 = regmap_write(hub->regmap, P3H2X4X_DEV_REG_PROTECTION_CODE,
++			    P3H2X4X_REGISTERS_LOCK_CODE);
++	if (!ret && ret2)
++		ret = ret2;
++
++out_unlock_mutex:
++	mutex_unlock(&p3h2x4x->protected_reg_lock);
++
++	if (!ret) {
++		bus->tp_smbus_client = slave;
++		hub->hub_config.tp_config[bus->tp_port].ibi_en = true;
++	}
++
++	return ret;
++}
++
++static int p3h2x4x_tp_i2c_unreg_slave(struct i2c_client *slave)
++{
++	struct tp_bus *bus = i2c_get_adapdata(slave->adapter);
++	struct p3h2x4x_i3c_hub_dev *hub = bus->p3h2x4x_i3c_hub;
++	struct p3h2x4x *p3h2x4x = dev_get_drvdata(hub->dev->parent);
++	int ret, ret2;
++
++	guard(mutex)(&hub->etx_mutex);
++
++	if (bus->tp_smbus_client != slave)
++		return -EINVAL;
++
++	bus->tp_smbus_client = NULL;
++	hub->hub_config.tp_config[bus->tp_port].ibi_en = false;
++
++	mutex_lock(&p3h2x4x->protected_reg_lock);
++
++	/* Unlock access to protected registers */
++	ret = regmap_write(hub->regmap, P3H2X4X_DEV_REG_PROTECTION_CODE,
++			   P3H2X4X_REGISTERS_UNLOCK_CODE);
++	if (ret)
++		goto out_unlock_mutex;
++
++	ret = regmap_clear_bits(hub->regmap,
++				P3H2X4X_TP_SMBUS_AGNT_IBI_CONFIG,
++				bus->tp_mask);
++
++	/* Lock access to protected registers */
++	ret2 = regmap_write(hub->regmap, P3H2X4X_DEV_REG_PROTECTION_CODE,
++			    P3H2X4X_REGISTERS_LOCK_CODE);
++	if (!ret && ret2)
++		ret = ret2;
++
++out_unlock_mutex:
++	mutex_unlock(&p3h2x4x->protected_reg_lock);
++	return ret;
++}
++#endif
++
+ /*
+  * I2C algorithm Structure
+  */
+ static struct i2c_algorithm p3h2x4x_tp_i2c_algorithm = {
+ 	.master_xfer    = p3h2x4x_tp_i2c_xfer,
++#if IS_ENABLED(CONFIG_I2C_SLAVE)
++	.reg_slave = p3h2x4x_tp_i2c_reg_slave,
++	.unreg_slave = p3h2x4x_tp_i2c_unreg_slave,
++#endif
+ 	.functionality  = p3h2x4x_tp_smbus_funcs,
+ };
+ 
 -- 
 2.25.1
 
