@@ -4,127 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94F14C44507
-	for <linux-i3c@archiver.kernel.org>; Tue, 14 Jul 2026 19:04:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45D24C4450A
+	for <linux-i3c@archiver.kernel.org>; Tue, 14 Jul 2026 19:10:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6vd8h4pNYziw5cCBq/1r7ox+VREcjOAl7gCUt4HR+wI=; b=1LAY/ytyuWLGVe
-	RXvsTVBnUNXO49YCpHSUzqFGt8oBbxC8Fgi4luKSaOsYxprA/nwHt0GdvFufcAmaiEMEEbefzT0qh
-	yA6WtK8C9LTSAK/WdCgC4kwGd5HJpw51VObHkuK1eCy4Q9l9P5FOZaIqpTOYPfE1KJ1wxEZcskhHZ
-	xEDjg08Jfsr897ssTY5O68g9qpTzvw0QW2hszcBNlVGmXgv9IyktXVJZ5EyWRJkJa3CsUL3hEwVc3
-	IQgLudE/1jWBZF0hK0evhF4EBwhBRBiTYGGIzWPWS4vvfi6KuJSt8Q8ANBYymZwYqjL3b8Lkd8uzJ
-	YODT7okTAZT3nVGdq0vA==;
+	List-Owner; bh=j5ERauFtkQmLbRp8PuEDtgJjUMX3Q3hGTRXh/EwShLI=; b=WYhgZgr6UB/SnC
+	J6EHpvRSol/bSvdntQ9eL0HLUD7DcQ9E6Gl2vrtUlzlpMXgtqde/Kw6EuItczugR2y3Rmhwmo46M+
+	816uVIb0BV37w3h1TLry0WkJAhRdzt/9ZnC8osRyHQGvKJUcbgK6o9G9lpujk2+8n7VXOsPJfzJd/
+	5NIE4HLgEYtxmPTnh/GetLSC4eh+QCib4yu8XKAlq9WZuX2cRuATIv9TAT6OQBwdv5ighSVP+nrlm
+	sFoa7ypA67Pio7W4aJq5LF3vENkR+0QLo7hsJxnIk3Vrxua9Jnkb61c4IMY0hGWMe8EonvvjP9Z+g
+	H8v6KlmOr0WRp8cZMr3A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjiQm-0000000Cz6g-1D4y;
-	Tue, 14 Jul 2026 19:04:36 +0000
-Received: from mail-francesouthazon11011013.outbound.protection.outlook.com ([40.107.130.13] helo=MRWPR03CU001.outbound.protection.outlook.com)
+	id 1wjiWM-0000000CzJp-3IgH;
+	Tue, 14 Jul 2026 19:10:22 +0000
+Received: from mail-norwayeastazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20f::7] helo=OSPPR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wjiQj-0000000Cz5Q-3j9h
+	id 1wjiWJ-0000000CzJQ-1IBf
 	for linux-i3c@lists.infradead.org;
-	Tue, 14 Jul 2026 19:04:35 +0000
+	Tue, 14 Jul 2026 19:10:20 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=V+gslhcjSA10P9wrU2J6LoOmAxKsGYuvrICfRqjb6fpJyP+lChShyTN8a2FdcyjQCG/hrrQP/8sCBbtBFiASjN2v9lB5nB4iajlcq7/HVZ0QH/tEXPKziA2HaBt3qPF0N3sLQRSf+xkaadEtvGJYWAcFrF8n1b5JOWwVuCED7IvFP/+SzGjDZFDNl9d4Lg4KXyLw/chJJ8K2hce12nayRGu9DJ5zu9RfxcOpWB1D1hVjIy9kBwtvOKo7oKjD/mDsN/x6qwiLq5GdYZIdgsyhgOPO9GqXgqyrre5b248jQy9mU/mcMBHXyjvU+qeox2SvCAl5wb5Xfqh9IXCD9pjr1w==
+ b=v30yOlDytVw7uKtLeZPsmk6FE/t6dl3U5ht0AsItcevyKRn+69My0In0UmTCqEJBgnoyVk5j57u6D11VH6P5HReBG59h2dy4vLEtJHHr3ZrMP7BfMFpieal4v/o4j6b+cXmd8ScAA6xevahzczIH8XVAiz2Me1rwXi3Y5nPedkgSXkEyqpiWHxYanWAdr7rjHvPeA+WC/Em+ZQSXe5dsWGHOVlt39ST4cSgbiWXYWOiMHUALq4MQdvd3mQ0JvyKMQyucFve6+CAbKlxU8xV1bjo96PNVHf/fJ38Hlq85E+CuPyhqVYhq1pB0b7ywTSd8KDKqfXtIksYvp3UMpBauJA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=SYdHb/LsdAwQUVUY+udEub0NAawh/x8xojKbNs0AEeI=;
- b=Q7afeu1C4w7xixXL5Q8MqZZK1Sy2eDr4TR53xpW4xnJ1UYqLMUi+xe7SXml9ip4Jx3AMh88p5a7bJszLbGLhnbu3PUls9ig1gCx4xb3wLP+INumUiK/IR2X3Ll5hyJa6oDOX5P1p1Wa9vQ1gLinfHW0PosnhbKp+pvkMPs3pgyNmeE/lnnE2nwpcxhXRj9Ut5WrMxoIt9Lbg1zL+gUnWOqcIFFzcneh8t/EV6wZCFrJjZOSZwJHx2abH+itFmhU/OuD+oGDhYbKl7hLYz5PPo/Ka8JvTL0/frPhc2upCdeYlkPqvKTR7Z/WEVzbICw4x6BhnxfWclocBOKXH0WXDtw==
+ bh=TjQ+KtovMztVNiIbwrIbROnNTLlR1wEeQOEKGu+tnn8=;
+ b=m26v8StkIjWfu+hDpuqaX9Scu5n/57+usY4e43jwDbl03xeryzguf2IwWbFqXifkNhLLauGWvAiWth0Yq1qEPugohCNgdNbmnmUtfE7igunS56FEKJj5wbzgYKOZJGBLHZv3ghsNmn/j9FYYa2DvC4k7PzcCGmVzYk9H8RSi2izghH4jdLxBSHbFGI7AZxjREV7POqu3XJFcnV7nu0Vj4Y+e9ata2hievAT+0vMRIvg/XqgL62nSZcsO8dvURGKfZRMzjw3fDds4SJ32ky0xgrtL5wyY3uyuTsjmQBO+tX23/5YGeXZVSK2hA9JOMYLWyog3RVMHlmzuxaGXHmTbPw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
  dkim=pass header.d=oss.nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
  s=selector1-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=SYdHb/LsdAwQUVUY+udEub0NAawh/x8xojKbNs0AEeI=;
- b=dSm1KEwL0Rc4Whc/ClkAU4mODswuivlU8Wl8/VMkzj1DzTiayvQPCqmMQFDsSDG+d2QQ2QfvU8nJgfl1Acv1ze0k5vrTyAP6vGaVQdvIwkRWLyvD4yOjbeUYHEOvSVVciFtpReXPuV7luneexwcTKhWTkiU8zIiO0whz7rLscM0W/NS1QC1Sgfdwkh2bFjGjlfSW2TDVnLDVtDyWJryH2a+63k5kt3qNCCy0JOuESTy7ER2aR94XkXD7wsSmP3Vz1rxN0daX84DDuJ0Fvvlyd3TkL3j9eY9gJHABD7p1iJ/+PucKw7Hd3kjTzbAg9Oa5BgLhJIi7uL4BXddGsbnvaw==
+ bh=TjQ+KtovMztVNiIbwrIbROnNTLlR1wEeQOEKGu+tnn8=;
+ b=O7uC3kXnYcZ+MI8l5NHT/bbvkEPV200ac9QNgEZBYKMHDvOR2Brd/Y9y2f3y4kIMnWJLeCsC/Lte8R6iUM1Z2EaJCUnl8xCkHL9ezzvSLUw77ht/CzRXjw8N1Tj14kc0SZUnK+ekBpjKm8YZ+ERQWaKSj5TQNZuK0r8dWlSyaV92gM7//WrsEW+lyvIAbqc0USVNJ/eluU6EEARwacq3+jpOhm28H9OxG6gdccf7H6qWKOTtFceyAF8WqOqgBZVjnfyG5vKeMG/UT5rd1pJUFaJ4OEdNTYGctl3sG6sq8TOV1+ZlrJaQyMaoGNFtgmONyfuE0O93JmY6joPStk6//A==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=oss.nxp.com;
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
  by PA4PR04MB9639.eurprd04.prod.outlook.com (2603:10a6:102:260::11) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.181.18; Tue, 14 Jul
- 2026 19:04:28 +0000
+ 2026 19:10:13 +0000
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0202.018; Tue, 14 Jul 2026
- 19:04:24 +0000
-Date: Tue, 14 Jul 2026 15:04:16 -0400
+ 19:10:13 +0000
+Date: Tue, 14 Jul 2026 15:10:06 -0400
 From: Frank Li <Frank.li@oss.nxp.com>
 To: sashiko-reviews@lists.linux.dev
-Cc: Lakshay Piplani <lakshay.piplani@nxp.com>,
-	linux-i3c@lists.infradead.org, Frank.Li@kernel.org,
+Cc: Lakshay Piplani <lakshay.piplani@nxp.com>, conor+dt@kernel.org,
+	linux-i3c@lists.infradead.org,
 	Alexandre Belloni <alexandre.belloni@bootlin.com>, robh@kernel.org,
-	conor+dt@kernel.org, devicetree@vger.kernel.org
-Subject: Re: [PATCH v14 1/8] i3c: master: Add APIs for I3C hub support
-Message-ID: <alaIMOhdFQxC--93@lizhi-Precision-Tower-5810>
+	Frank.Li@kernel.org, devicetree@vger.kernel.org
+Subject: Re: [PATCH v14 2/8] i3c: master: Fix IBI request and free cleanup
+ paths
+Message-ID: <alaJjgWkLKoQklNt@lizhi-Precision-Tower-5810>
 References: <20260714092053.2461482-1-lakshay.piplani@nxp.com>
- <20260714092053.2461482-2-lakshay.piplani@nxp.com>
- <20260714100322.7F82A1F00A3A@smtp.kernel.org>
+ <20260714092053.2461482-3-lakshay.piplani@nxp.com>
+ <20260714102026.510E01F000E9@smtp.kernel.org>
 Content-Disposition: inline
-In-Reply-To: <20260714100322.7F82A1F00A3A@smtp.kernel.org>
-X-ClientProxiedBy: PH8PR02CA0008.namprd02.prod.outlook.com
- (2603:10b6:510:2d0::17) To GV2PR04MB11799.eurprd04.prod.outlook.com
+In-Reply-To: <20260714102026.510E01F000E9@smtp.kernel.org>
+X-ClientProxiedBy: SA9PR13CA0087.namprd13.prod.outlook.com
+ (2603:10b6:806:23::32) To GV2PR04MB11799.eurprd04.prod.outlook.com
  (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|PA4PR04MB9639:EE_
-X-MS-Office365-Filtering-Correlation-Id: cf573693-d681-4bf8-5464-08dee1dab83a
+X-MS-Office365-Filtering-Correlation-Id: 5a492914-aae3-4209-9c77-08dee1db8816
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|23010399003|366016|19092799006|1800799024|6133799003|56012099006|4143699003|11063799006|5023799004|22082099003|18002099003|3023799007;
-X-Microsoft-Antispam-Message-Info: Kkh4QwW0KRg03LsP6FPOjjoL6PIlHnDS4G9AmswaYq0Lrb8D+y/TlcXwchCn9gXLhQ+u3SxrbeYq1M1ZSR/hbIM7i48Rfy8YN7WXtOEwHaFx7DY0IDr4OZZ1NYgtW8rI9bWrXGLLrmOd34VBk61LGtJbnSMuCIDTTK4OClgfKrzdYtl8SnzP4packet9goQtz3FyRrzKZixY7UeTEM2L5/7TrjYlPVRcYG8sQEkGMDATE/lWxPTNth0OIT7Uz1w39N1Zf+XflfZXs9TEwLZaaeDyRyNu7OZPPzjQTaardSKdo5yPZNnfUObwM4ugxoiu9pW/JvHXLZ3L4MOJELdbis02znJT8HJZ0fYGIYfMjZRQBvnbv/RUcznxQ9UB4VyEVF+USYSRiEhX5mjtqhKOY8e3hPsoyk/UTOU9FphV9gragbvGYreK2wEuswmjnYWoDr+dlk/Q0xBqxpY+0TmcuENDvj9Vsk6vB+claArgVaSoroH2jB5Ve/yP7Bagl+yCtkGClGYLndGYhsU119G0iIWb4PpJkRI1DSZ/gl5tIpqgdn9LLRU5uxo3aYXT/D+GGaixSrC/s7jr3GwOQI78U4SSB+etZ6JlO5dp4nKiLT4=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(23010399003)(366016)(19092799006)(1800799024)(6133799003)(56012099006)(4143699003)(11063799006)(5023799004)(22082099003)(18002099003)(3023799007);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|23010399003|366016|19092799006|1800799024|56012099006|4143699003|11063799006|22082099003|18002099003|3023799007;
+X-Microsoft-Antispam-Message-Info: TlEIKh2HTWRCV7kIA+ZRndLT25lwKmFqFrXcs7wgeCqOhu9+Po7uSwNexzPS8sZzVGvplws5U5o2J7SoEG7UAZiRsRtzo7NvvOy0A2p4kGO7+vSFXVGAWaNEo1UkOgYRmwosuwrbuN3WHfnV365pXh1zS+rENtUg6HYZAn5+eKSAANX5IEyojWNQ7nBX0ST4K63gSDaLBZxVLj5uMw3wqqSEyYSLJ5yck809NNq03mQiU8oC5Kpl17d3NlCNiWItw40OYVNs4yo4tNqjytWrDv/1Dkk0WXp3aOI96ywxSqcx1x+JVQdIKsa2mUcGgOAgw3dfzy1woeZJ88T+z5jc+YTl4NGTd7r/kDd+NtBVaWkhGzRKcJbWEYsg5TynzZt5NQ4UQ4/WSSTP/JoVbCs9TyMSFzr980wwrF634k1a9rfL60pJNIqEkMhqLU6x0h2qj8OKpt4+LJl/c5UKNVJLc1KsiNNKqcagW1iBD+gWjm+OW09OF4YeCRV8IOgtPAx8G+ElNrppPSnY2r9UIdks7lFnH8px5kvEdFjt0XQr6s4l/yD67eHUPSGBMZz18H2/+/HvovBo9oFW3H/wQB1f8Mxp8+/+FydrR7s1k2Wl7Lg=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(23010399003)(366016)(19092799006)(1800799024)(56012099006)(4143699003)(11063799006)(22082099003)(18002099003)(3023799007);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?Sm+h81H1k9p3mAFGdy4kbFJBOAi5a3t8ltvFltt5kaYCjtFr+6oG3F3aQO?=
- =?iso-8859-1?Q?enloPs4XCSvlIZwBVoTqVkZHCnfzoVTDwG7n7b5ZmzJslYtvi4NZvXJCZN?=
- =?iso-8859-1?Q?5VX3lWjmJw+6ysHemdUgXa6cxoHrly4suKsD5QpmSM5QZFqbeSrg5cmmV+?=
- =?iso-8859-1?Q?I+gtJaB84eJ61Wd+3wsS1XzENaqlD7mJM2otXM+TX5s/isC1jBcCtsmtgk?=
- =?iso-8859-1?Q?dAEkRSpPs5VpUiHZ0IySbrJoVMOoJM4yCdZDwzmVtOOzpaw5Q+iEv1DykX?=
- =?iso-8859-1?Q?7B0h3yl63ist1jJSj6LGJxSH8ZhRtQMmX9GhSehbGlQSlSfOT3sOG1ajyU?=
- =?iso-8859-1?Q?vWeFUuTBxZb6PfUbwG7JQwte+bdQDPR9lz1v/o+vzwXuuocz72BA1j4DLF?=
- =?iso-8859-1?Q?yW2dudsaOt8uFjrXsGvB0+hediqNKtBV/rVFnqUjmz+zCFGzycjbrwpKRM?=
- =?iso-8859-1?Q?Qg0Fa5B2dj4F6ZJ/i9v7y/UA0//8fE/Gcbb4xQDhS5LsaexU5+4pJ9UfuN?=
- =?iso-8859-1?Q?pjoB2eG/yX7hHJIFjKcCPCBIFd30UXOqv2QUgjTyix025kn9ubAqC9wYVC?=
- =?iso-8859-1?Q?PhMxOJLyzUL85F57qQ9AsYHfv8yfVFuPCKo168Z9qs+AzEXdX0HPFdEquv?=
- =?iso-8859-1?Q?5cZlWHAR8F1GF77Ron5lfnCvRSvDV2x9YSxo13+cT+fncCIlhdKwnC8i/i?=
- =?iso-8859-1?Q?Te6X+ZWZycsiXonx2gPbHDPGkppUD+/nY5Veic81ScEtmMxJrtE9/LPlTG?=
- =?iso-8859-1?Q?Lb61UB8ehFj7s33ut7B8sa1+pnAC1jmH8DreQCe1AdXxM75s59cRZuq7EB?=
- =?iso-8859-1?Q?cFyYNAUXjM0ujENd75i9K+P6BrJ/6YtKuQ2KwRO9A0mgqMFTsszU8bPBb7?=
- =?iso-8859-1?Q?7rk0m+f6kgOSw+FLByW26s6+yy8w9I8nJKpalWlw7XzjUWtju/eN4JTu1l?=
- =?iso-8859-1?Q?0ryEyMBgqW/OMruGtuJzWWtQYGT7W7oew43xArok8NFJ0LSqevNVOkWpJg?=
- =?iso-8859-1?Q?OySkUUqHKIa++A+lsF0xXfkcSCdDV/1Aj8cVcRCzX3O5aFDbDG9FDeCSFc?=
- =?iso-8859-1?Q?4llpKycRcd7C94IUTLlimpimbaXhcS9tzo2ACKg1kbA8FzY3DTdfmXvaHP?=
- =?iso-8859-1?Q?YY5OgmJDRSBePq5S0oooQKYWODXoHih7/zCdFdeqt/I4quLVLU3GxBy7xF?=
- =?iso-8859-1?Q?/FKOA9tHfaFAf9DkyR4pRwk4RmybLUIH4sV+wLQoNX0qbhBTqojuy6EQbC?=
- =?iso-8859-1?Q?KdnCdyynEJabZkYT8G2Prrs4q1WusfxWx8Ij0/O9oPCilYv1bLExncEDsm?=
- =?iso-8859-1?Q?LuRkNI+Espo82bd1TEpzIyEkKAqfqjUUlfM/efk+ObAEZ2FxE+Cj1l2ant?=
- =?iso-8859-1?Q?+b84hz+mPW0QUY7G3J5D13WVZDfihkOLixQewAsgDKCmab0ORI4AbtIPd8?=
- =?iso-8859-1?Q?xQfrAnGLd16b8K3oe0fCO73Ys3JgSPJ5JZh/AHam52qQYWnzHDYeX8WfBv?=
- =?iso-8859-1?Q?U/JQYlSJcd5/0MhHnGUFW0OxA22Jh/jioM7kik99fKJ4H4AmiEMmu6IPiq?=
- =?iso-8859-1?Q?IrpZV/s+PFFDftte6GIjFbmCwsCONJk55MSt/2k6T8aRiJNlniCbTd5Ktx?=
- =?iso-8859-1?Q?9SyX+3aKtjufpe3EiVfy2qHQu4ur443njGiZ1kGy7gwk+aCT9edc5sgukm?=
- =?iso-8859-1?Q?5ZQCT9ZDc52jnhXEKtXzStDvIckmjm05dLxA8JLCl/QxUkecXUt+yPNd9c?=
- =?iso-8859-1?Q?VBkL/zZtcbXf5JnXZyKhmxlxPP760BI0rEW60Uh7qFEJpPlcprc25WXuZ8?=
- =?iso-8859-1?Q?Fnb/h3Ekd5TpsbZTZNkyELqhZ5/R6z6GF+cycfy+LRKoiBWOAvRM?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?lDYnkUEd33BtiQSG3+E/s0dbcwGSTXset4awABob80mK7mM2ai9J9o2B+1?=
+ =?iso-8859-1?Q?iAFH5OztrtFida5Sc5qL1SpSVOEf0JCVm1mcIYlsji0MXDhLurEMx1M31v?=
+ =?iso-8859-1?Q?vlaWrk8Jr04rpDYBwHdNh1X4s2nDSjGzCd0ZNqUtomBxOn4jPNHcjlRbDV?=
+ =?iso-8859-1?Q?oFeC1yPadcNX22X0UNYIS2foi2XuUsRNU1URX9GKWVvSN9pVhoCIGPkOVA?=
+ =?iso-8859-1?Q?tcnUReySSj0gb5Lcyczqai+nEVz/nt1UKjpBGQUel7EvU8t5rNtHT93C6A?=
+ =?iso-8859-1?Q?02ETnR5cYatw+HMsig5/7vxlIq4ooqvlbNU9TIhxxH7j/9iEmsxbTaK2ET?=
+ =?iso-8859-1?Q?jubSkT+5lJpTP0Ux2kZeH3vpiuJscbQB3rw/ULCRZ+wkOtn44n8KLQKDte?=
+ =?iso-8859-1?Q?txsTsxrPeog6kkvdV+TjEbf/BpKCNMr8El5Kmau1rkpUJYuKY3PMKnYNqZ?=
+ =?iso-8859-1?Q?ml4Nn/xWg2KYLU46ql/2as16GqBu52QUR7NV46XQB/Wwotp2Oi8onUKuUU?=
+ =?iso-8859-1?Q?789CD1/WbKsSvQdC8m229KzYp8bwR5EH2vB6GznlTbjUqJSWEAnGnZBNkM?=
+ =?iso-8859-1?Q?HiHbIZBSU34Q1c9EK/G0vN3UvhqBzBZzLGQ0ole7w8DXdSXeOnJkqCwyT8?=
+ =?iso-8859-1?Q?NUIT5A+AMOKulvCFnwxOWKUtWxIwAvHL0jOuTKPYEAXPfTuBzWHHvB7io7?=
+ =?iso-8859-1?Q?f8s7r3IXwaL+Du14q8NK6YiRGv6z0OFTfiZR8Hr03O9dVWpZdK746AkYL1?=
+ =?iso-8859-1?Q?asb84R0Q5ra96af5xH39tz96giyRLgylh0peTEoh2lXDE2TYw2hf4kftG6?=
+ =?iso-8859-1?Q?St9z3e19VwgAp7vdbY2jwY1h8oqsHXQlFKThIiB1vEOFfPIBv+gEEuCO+4?=
+ =?iso-8859-1?Q?lIOrtcITiioPHLb+APOa9LD5M7sD6Jr6hsyjoUigSEZRylOejFlEQkBWR3?=
+ =?iso-8859-1?Q?oCNvwHGLZaNDUoBumk6qHvkxw++7zcTZfowaGBiGnSeThAu4t+8ifELNgS?=
+ =?iso-8859-1?Q?jpoWvaRD6jLArNmmhh7O280h5lEvl3/v4BQE43Wr/qdDlFmyr86vr/4WYA?=
+ =?iso-8859-1?Q?18zen3Mfkdq1f/1kGR9CWqD1xqhOIy6rnJ6/AvG01rbGy1UGSiplK1sDcx?=
+ =?iso-8859-1?Q?UCdmxN+4o4hjC8vxG8fZn+Rr9tJs4TZnUyQci1zKmZTqXJQ0+1MvOZB+r/?=
+ =?iso-8859-1?Q?KEownEtST23tExkyMXDzoK2xx4DYcTGmnm1r7npi+4qjkGfI6qnM0L42F4?=
+ =?iso-8859-1?Q?kS64dmNJux3zRmERvul+ztX56w/cOQloLOobZ3qg0Ob8mxs+iywNrKHQ+q?=
+ =?iso-8859-1?Q?LVQAtsvDyDE+zk+C5UUo/98xj8k4YvExbZKFz3yWdCqz5diHIUu6H8dCYx?=
+ =?iso-8859-1?Q?TKl4qIZRLD8A5jfV8dE1zzzBN3zimeOu6BrdnJu1pEUhls0018aUvU6Ic9?=
+ =?iso-8859-1?Q?Y2kfmPtgqnSGsJ1L1Yn56G1+3NbeRPvTTJCxOruUdj1OKaVPuP7OEZyb+j?=
+ =?iso-8859-1?Q?rlI37P7791d6WioeKdmKul280/ixFFR5uuUk7C0q35HiPokx9MgiY8J2z4?=
+ =?iso-8859-1?Q?4RMbjl4RIPU2uy5lc7/UjeGKRTaw0LS6gfihLpfUT2r2M1pzw/K9BmcEy5?=
+ =?iso-8859-1?Q?eEz5O7PbCAvck2tab29LKaf1nSDaqzmxbM7VjczB0cB4DHm54JCwOv+LiJ?=
+ =?iso-8859-1?Q?1QJLqZp05tOG4ew71Qx7X9NHRlvxU0U6xt5gGX8/NUrNPpIM2ejIEMRpXH?=
+ =?iso-8859-1?Q?/cK3O2ODfamGI6Rfc5Ib7FjUOPb+d1Sy+5KVr0mJ0UTCTzmuzXyeTrVrS9?=
+ =?iso-8859-1?Q?4nKXI0LUOeCjuaFBn8OOIP80DdltpMCgTtd646NoadelXh5jlnlE?=
 X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cf573693-d681-4bf8-5464-08dee1dab83a
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5a492914-aae3-4209-9c77-08dee1db8816
 X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Jul 2026 19:04:24.5267
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Jul 2026 19:10:13.2713
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: LBRBQOLIRYcfupUtwvOpLAcoZUAg5hRS6fLmAhLfEfxa5q8vbjqfWkAbu5J8h7doRqk1Yzz8Iv7Sed6Fdn0Ggc0kRBURAVM1zbz98eslSN7jTTpK7jkjqlw9DBCPuIjO
+X-MS-Exchange-CrossTenant-UserPrincipalName: 2v10q7w7EGR9ZM9cMxaHQK2go5VKXX+ebUU+hZodGfPH7iGBlNtPKMP/aPPjrmEaSD6kEoZNrid1gYsBd35UZRfr3SvaUjq2GxoLeI5zHzrgNJJ5wSmeWxHZlpx7AHjt
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB9639
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260714_120433_938408_7D91DBE0 
-X-CRM114-Status: GOOD (  36.20  )
+X-CRM114-CacheID: sfid-20260714_121019_360682_787E2EF4 
+X-CRM114-Status: GOOD (  27.34  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,205 +142,139 @@ Content-Transfer-Encoding: quoted-printable
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 14, 2026 at 10:03:22AM +0000, sashiko-bot@kernel.org wrote:
-> Thank you for your contribution! Sashiko AI review found 3 potential issu=
+On Tue, Jul 14, 2026 at 10:20:25AM +0000, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 2 potential issu=
 e(s) to consider:
 >
 > New issues:
-> - [High] Asymmetrical cleanup in `i3c_master_direct_detach_i3c_dev_locked=
-` leaks resources for unaddressed devices.
+> - [High] Bypassing the core cleanup paths when `dev->ibi` is cleared by a=
+ controller callback causes a permanent leak of the IBI workqueue (includin=
+g its rescuer kthread) and potentially the `ibi` object itself.
 >
 > Pre-existing issues:
-> - [High] IDR entry deletion on `i3c_bus_init` failure causes ID corruptio=
-n and sysfs collisions.
-> - [High] Missing NULL check for `dev->boardinfo` in `i3c_master_get_i3c_a=
-ddrs` leads to kernel panic.
+> - [High] Potential use-after-free of IBI pool during workqueue destructio=
+n if IBI disable fails.
 > --
 >
-> --- Patch [1]: [PATCH v14 1/8] i3c: master: Add APIs for I3C hub support =
----
-> commit 1db519c7da22819d977429d77c0d05ba94daedf9
-> Author: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+> --- Patch [2]: [PATCH v14 2/8] i3c: master: Fix IBI request and free clea=
+nup paths ---
+> commit e0d1c57d2924f66898a40232f7e52ca0e1be0aea
+> Author: Lakshay Piplani <lakshay.piplani@nxp.com>
 >
-> i3c: master: Add APIs for I3C hub support
+> i3c: master: Fix IBI request and free cleanup paths
 >
-> Add helpers for attaching and detaching I3C devices and CCC helpers
-> to check CCC support and send CCC commands, address slot helpers to
-> query and update I3C bus address slot state, registering virtual
-> masters with an explicit firmware node, and exposing the bus maintenance
-> lock helpers.
+> This commit attempts to fix a workqueue leak in the IBI request failure p=
+ath
+> by destroying the workqueue before freeing the IBI object. It also adds c=
+hecks
+> to avoid touching dev->ibi after controller callbacks if they have already
+> cleared it, aiming to prevent NULL pointer dereferences.
 >
 > > diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> > index f1be38a640ca1..3b1c342be2bc5 100644
+> > index 3b1c342be2bc5..ba37f71badac8 100644
 > > --- a/drivers/i3c/master.c
 > > +++ b/drivers/i3c/master.c
+> > @@ -3702,8 +3702,18 @@ int i3c_dev_request_ibi_locked(struct i3c_dev_de=
+sc *dev,
+> >
+> >  	dev->ibi =3D ibi;
+> >  	ret =3D master->ops->request_ibi(dev, req);
+> > -	if (ret) {
+> > -		kfree(ibi);
+> > +
+> > +	/*
+> > +	 * The controller callback may have already released and cleared dev-=
+>ibi
+> > +	 * when the request is forwarded by a virtual controller. Only clean =
+up the
+> > +	 * IBI object if the callback left dev->ibi valid.
+> > +	 */
+> > +	if (ret && dev->ibi) {
+> > +		/* Avoid leaking the workqueue allocated for this IBI request. */
+> > +		if (dev->ibi->wq)
+> > +			destroy_workqueue(dev->ibi->wq);
+> > +
+> > +		kfree(dev->ibi);
+> >  		dev->ibi =3D NULL;
+> >  	}
+>
+> [Severity: High]
+> Does this logic introduce a permanent leak of the IBI workqueue and the l=
+ocal
+> ibi object?
+>
+> Since the core framework dynamically allocated ibi and ibi->wq earlier in
+> i3c_dev_request_ibi_locked(), if master->ops->request_ibi() fails and the
+> callback cleared dev->ibi, the check if (ret && dev->ibi) will be false.
+>
+> Because the callback does not own these resources and cannot safely destr=
+oy
+> the framework's workqueue, the workqueue (including its rescuer kthread) =
+and
+> the ibi object will be skipped during cleanup and leak permanently.
+
+look like make sense
+	if (ret) {
+		if (ibi=3D>wq)
+			destroy_workqueue(...);
+		kfree(ibi)
+		dev->ibi =3D NULL;
+	}
+
 >
 > [ ... ]
 >
-> > @@ -1775,6 +1792,83 @@ static int i3c_master_attach_i3c_dev(struct i3c_=
-master_controller *master,
-> >  	return 0;
-> >  }
+> > @@ -3743,6 +3753,13 @@ void i3c_dev_free_ibi_locked(struct i3c_dev_desc=
+ *dev)
 > >
-> > +/**
-> > + * i3c_master_direct_attach_i3c_dev_locked() - Attach an I3C device to=
- a master
-> > + * @master: I3C master controller to attach the device to
-> > + * @dev: I3C device descriptor representing the device
-> > + *
-> > + * Attach an I3C device to its master controller after reserving the d=
-evice
-> > + * addresses on the bus. The device must belong to @master.
-> > + *
-> > + * The master device itself is not passed to the controller driver's
-> > + * ->attach_i3c_dev() callback.
-> > + *
-> > + * Context: Caller must hold @master->bus.lock in write mode.
-> > + *
-> > + * Return: 0 on success, or a negative error code if address reservati=
-on fails
-> > + * or if the master controller driver's ->attach_i3c_dev() callback fa=
-ils.
-> > + */
-> > +int i3c_master_direct_attach_i3c_dev_locked(struct i3c_master_controll=
-er *master,
-> > +					    struct i3c_dev_desc *dev)
-> > +{
-> > +	int ret;
-> > +
-> > +	if (WARN_ON(i3c_dev_get_master(dev) !=3D master))
-> > +		return -EINVAL;
-> > +
-> > +	ret =3D i3c_master_get_i3c_addrs(dev);
+> >  	master->ops->free_ibi(dev);
 >
 > [Severity: High]
-> This is a pre-existing issue, but does exposing this new API introduce a
-> potential NULL pointer dereference?
+> This isn't a bug introduced by this patch, but can this lead to a
+> use-after-free of the IBI pool memory if disabling the IBI fails?
 >
-> If a caller manually constructs a virtual I3C device without an OF node
-> where dev->boardinfo is NULL, but it has a static_addr, calling this
-> function will invoke i3c_master_get_i3c_addrs(). Inside that function,
-> if the static address slot is not free:
+> Earlier in i3c_dev_free_ibi_locked(), if the IBI is still enabled, it tri=
+es
+> to disable it via i3c_dev_disable_ibi_locked(). If that disable fails
+> (e.g., due to a hardware timeout), it returns an error without waiting for
+> pending IBIs to finish, and we proceed directly to master->ops->free_ibi(=
+dev).
 >
-> i3c_master_get_i3c_addrs() {
->     ...
->     status =3D i3c_bus_get_addr_slot_status(&master->bus,
->                                           dev->info.static_addr);
->     if (status !=3D I3C_ADDR_SLOT_FREE &&
->         dev->info.static_addr !=3D dev->boardinfo->init_dyn_addr)
->         return -EBUSY;
->     ...
-> }
+> This callback immediately frees the generic IBI pool. Subsequently,
+> destroy_workqueue() is called below, which synchronously drains
+> any executing IBI handler works. Since these pending work items reside in=
+side
+> the newly-freed pool, won't the rescuer thread dereference freed memory as
+> the workqueue drains?
 >
-> Could this dereference dev->boardinfo without checking if it is NULL, lea=
-ding
-> to a kernel panic?
->
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	/* Do not attach the master device itself. */
-> > +	if (master->this !=3D dev && master->ops->attach_i3c_dev) {
-> > +		ret =3D master->ops->attach_i3c_dev(dev);
+> > +	/*
+> > +	 * The controller callback may have already released dev->ibi, for ex=
+ample
+> > +	 * when the request was forwarded by a virtual controller.
+> > +	 */
+> > +	if (!dev->ibi)
+> > +		return;
 >
 > [Severity: High]
-> Could this cause an asymmetrical resource leak for unaddressed devices?
+> Similar to the request path above, does this early return bypass the
+> destruction of the workqueue and cause a resource leak?
 >
-> The original i3c_master_attach_i3c_dev() function includes a check at the
-> beginning to return early if the device has no static or dynamic address:
->
-> if (!dev->info.static_addr && !dev->info.dyn_addr)
->     return 0;
->
-> This new attach function lacks that check, meaning it invokes the master
-> controller's attach_i3c_dev() hook even for unaddressed devices.
+> If the controller callback cleared dev->ibi on the free path, we return
+> early and skip the destroy_workqueue(dev->ibi->wq) step, leaking the
+> workqueue and its rescuer thread.
 
-Please check it ?
+make sense
 
 Frank
-
->
-> However, the new i3c_master_direct_detach_i3c_dev_locked() function
-> explicitly skips detach for unaddressed devices:
->
-> if (!dev->info.static_addr && !dev->info.dyn_addr)
->     return;
->
-> Will any resources allocated by the controller driver during the attach
-> hook be permanently leaked when the device is detached?
->
-> > +		if (ret) {
-> > +			i3c_master_put_i3c_addrs(dev);
-> > +			return ret;
-> > +		}
-> > +	}
-> > +	return 0;
-> > +}
-> > +EXPORT_SYMBOL_GPL(i3c_master_direct_attach_i3c_dev_locked);
->
-> [ ... ]
->
-> > @@ -3195,34 +3342,31 @@ static int i3c_master_check_ops(const struct i3=
-c_master_controller_ops *ops)
->
-> [ ... ]
->
-> > +int i3c_master_register_fwnode(struct i3c_master_controller *master,
-> > +			       struct device *parent,
-> > +			       struct fwnode_handle *fwnode,
-> > +			       const struct i3c_master_controller_ops *ops,
-> > +			       bool secondary)
-> > +{
-> > +	unsigned long i2c_scl_rate =3D I3C_BUS_I2C_FM_PLUS_SCL_MAX_RATE;
-> > +	struct i3c_bus *i3cbus =3D i3c_master_get_bus(master);
-> > +	enum i3c_bus_mode mode =3D I3C_BUS_MODE_PURE;
-> > +	struct device_node *np =3D NULL;
-> > +	struct i2c_dev_boardinfo *i2cbi;
-> > +	int ret;
->
-> [ ... ]
->
-> > +	ret =3D i3c_bus_init(i3cbus, master->dev.of_node);
-> > +	if (ret)
-> > +		goto err_put_dev;
->
-> [Severity: High]
-> This isn't a bug introduced by this patch, but does an error here cause
-> global IDR corruption?
->
-> If i3c_bus_init() fails during idr_alloc(), it returns an error with
-> i3cbus->id still set to 0. Taking the err_put_dev path calls put_device()=
- on
-> master->dev, which invokes i3c_masterdev_release().
->
-> i3c_masterdev_release() unconditionally calls i3c_bus_cleanup(), which ru=
-ns:
->
-> i3c_bus_cleanup() {
->     ...
->     idr_remove(&i3c_bus_idr, i3cbus->id);
->     ...
-> }
->
-> If i3cbus->id is uninitialized (0), does this mistakenly remove ID 0 from
-> the global i3c_bus_idr? If a valid bus was already registered with ID 0, =
-it
-> seems it would lose its IDR entry, causing a subsequent bus registration =
-to
-> be assigned ID 0 again and triggering sysfs collisions (i3c-0).
 >
 > > +
-> > +	dev_set_name(&master->dev, "i3c-%d", i3cbus->id);
-> > +
-> > +	ret =3D of_populate_i3c_bus(master);
-> > +	if (ret)
-> > +		goto err_put_dev;
->
-> [ ... ]
+> >  	if (dev->ibi->wq) {
+> >  		destroy_workqueue(dev->ibi->wq);
+> >  		dev->ibi->wq =3D NULL;
 >
 > --
 > Sashiko AI review =B7 https://sashiko.dev/#/patchset/20260714092053.24614=
-82-1-lakshay.piplani@nxp.com?part=3D1
+82-1-lakshay.piplani@nxp.com?part=3D2
 
 -- =
 
