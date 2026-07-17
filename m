@@ -4,149 +4,124 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 98291C4450A
-	for <linux-i3c@archiver.kernel.org>; Fri, 17 Jul 2026 03:04:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E12DC4450F
+	for <linux-i3c@archiver.kernel.org>; Fri, 17 Jul 2026 03:51:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:CC:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:In-Reply-To:References:Message-Id
+	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HULC98Sk6xNAt3WYQ9Qlf55OJRYerE4jLo9zOvRYeWE=; b=tt/8AOTq+zEpIq
-	vlGKMYPQVq5l4FqIJmeoHYe3faAgAzUQnPCZ8fxHm23QLeDg1xX3Ujn9yXBV+finZf7Cyk+B4B3zf
-	PCSbb2dtNcZTO5VNHtAwwJanNZDxepmeVdNE4ZMILjflMfmTxrhq0bwMDDPehGkBmjHzmvL4Ueflo
-	xkGO/LxFeTPdPmWyeKRpDYKyzKGno0i1mrWgRX1o3poSrgIfAEoc3f/iGT3wAyMrRrxJlRGwtJn73
-	F+jyI/EhlNFNmz0okZxQMTnhjHUtqp+DOhpryaXuF5Xh087I3UIhiZGmzkPOJij0hmFCC2+CBk5yI
-	zpp7Sp/9aHMtYJSfHraQ==;
+	List-Owner; bh=HYaYpf1Mrv3o1gHGXtl+xLK3zBw/gH7WByNE4Y/wRMI=; b=swOlSbb2tmSKJ2
+	qZMXbNr1DoxK3jvgrvWp2BzH9whNXcm7zXeOGKTX1F5cy9xhrC0qt1yBHoyVdFpHlXGKlHKSPknrl
+	uEgnB3Ht5wZ+I5rZY9CUyDLWCWiuiOC0cfpTKeXhJmd6sJIxMm+++/2RB4DMaHsI/b7tVKvQ9P3FC
+	R9fFAsJdQC0gRckz9D0EgKiLGSxbyelLcD2lIBXQM+AJVH5TaTKCptvXdmVFutpXhZhYFRX7sHnev
+	zALDnzihI7Weky7rRtvswkJtREKsEIAnPlPdTyzqzQotMI6DN/EfAoyV7soXFP0Bg/dRELNBlUesU
+	8K2alH20PUaoIFbp8/GQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wkYro-000000010gp-07QS;
-	Fri, 17 Jul 2026 03:04:00 +0000
-Received: from mail-centralusazon11011020.outbound.protection.outlook.com ([52.101.62.20] helo=DM5PR21CU001.outbound.protection.outlook.com)
+	id 1wkZbq-000000014hP-22aT;
+	Fri, 17 Jul 2026 03:51:34 +0000
+Received: from mail-southcentralusazlp170130001.outbound.protection.outlook.com ([2a01:111:f403:c10c::1] helo=SA9PR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wkYrl-000000010gF-0hKQ
-	for linux-i3c@lists.infradead.org;
-	Fri, 17 Jul 2026 03:03:58 +0000
+	id 1wkZbo-000000014gT-08eK;
+	Fri, 17 Jul 2026 03:51:33 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=t9Js1sYW1U5gjmc4WMI8CrQP6NCGRNJcXbf3GoembcKGq8HR4I08z+eifWlOu+TnjiGXFE76fDyCJ1UL+LisWSoEADAq1WQYk1y2tlpJXi8XKWqE9zslFLwbZFynSBDZ1wjBZgJkO1sCymjVmi3HmLpzmoTb6wVr/4J9vzu1woxZwENW+I4kFjvpl6ESQ8NMkg5EVFP3pZhUW1uuCYzYuke1asODZNznfieivAh1lxxWAEUX6OCIdDLvMOfXyCfR5YQ/0jOwfPVTqsjZ2DVcivkMNkR6nLZMwzxx7E1/KUxzy/8mudxZelKqxlxHLxIKCXlVgliVhHfBfsVH3xWKdA==
+ b=JE3+uwE9fxcidfQOSlxAj5dyFLIV0LlsllOK0gT73c8ilRkgopeY3YihIh7VqFERuKZzM2SmmZW/A4SwSBQ95I12S/c33TSobYPdKPnqwpFZJVS7GmXcX9l6cljD+866b4MWPu8rHkQ2eO50uu96+D3zB8WySxG9PnlG71tj5bOxOv6IPnx+AIhshiwLaUjrAo3teUOUuCqXPaxBwEwqt9V5hxb0k5v90C045LHjWJciWP3QR4He/LnyRWQ/MJkECTNb9JQCoHa2OAge0QvYJe22lap/f1PJ6GsFdZaH6CFgxVn5en+r0o2Xu/hTg30ydms72kp6LWvJ0y+HWa7oYA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=+viRCUzdXT+v2nxFJaQ/TmdZSYI6bbO+0h+DGNwkfXA=;
- b=tu7psJ6vJaFAWhbsX2/wRZDNiez5NnRkmQTtyGAoHPPnrCnp6ONa+Ykg1pBipJ+CkWcIuNFOwPNxj5niuGXkhMYFuoNKj5KdK+pu11NDsiDhO3+Gfzr27nuU6huov36ncOmr70VZ63dEfAfTva/JtjSdJDX14aWfZXXQP48zeNXwCqjpjv2OShm5FPLt7Q/R3Qjdqx/kff1b29rMRU9Cdusn3zlaX5idK1FDcLWZpsgyz1AbWJy5T1TjkTnX5wo0Cupj2UVqJ5DNd07lcHJV4C+99nRmNnUK1JOGwCw7zG7JJEgonOzfbIZqCRXdjOyK4eugMcDRPr3o4FLKFeKKmA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=altera.com; dmarc=pass action=none header.from=altera.com;
- dkim=pass header.d=altera.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=altera.com;
- s=selector2;
+ bh=2ywj/R598DHvTK5R2nBVRB/G7elq9O/Ae5ypwi9az0Q=;
+ b=LZ9++RgBH58QWBj2TrICFZ2EMA0JW2yRwh5IaVmaHZ9LiU8DLjt9CT2V6/bTpIaBgJ5u3FfcfTz8JI8S9LE32/UHkwMBnOiNRzJjoQXEBYqsq06yL6XU5N2DEB9adnnNNDx06UC2ic9zMcns704d7vpsBAnw/k5fN6QWfFdoDU7ExesyWqR+PbV80pitiS2dbX7s6e9q7R7J2eefm55R+Mj/QO6JasdoEm2t642aY9JOUTw7OKabJHdvfPFep03WEW8kBKhMq7jACq6qHNPkvIn8os6XGqTgjCoVGp1W2ATZyqozzTSwWQ2kn3NIGjUhq4BR8i607wejo+gnrCELvg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=fail (sender ip is
+ 64.62.143.114) smtp.rcpttodomain=amd.com smtp.mailfrom=axiado.com; dmarc=none
+ action=none header.from=axiado.com; dkim=none (message not signed); arc=none
+ (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axiado.com;
+ s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+viRCUzdXT+v2nxFJaQ/TmdZSYI6bbO+0h+DGNwkfXA=;
- b=QiDV8Chq/CcN/gTrEbyc3wiDmTsS94fJZrm31l2wkH6uBy5lKoYOxwNM7exu9cgH1AwmyNTqOrDzZBsbgjzbEHLrBPw8xzl+E9RhchOimnfDJKFSm/E1GuMLl3qIlK5RppwCQd62vU3IdMC01Uyoc9iopTLPUeZT5QIC2LqJULxQ+n6GLWn7v4t9V8Ha1iS52uziIGIZGvaqNHUcsyAAgr/m0SZllX1Hy/DjzUx1IuOsFrSsQpKSLlwdJgfdNSlIAdqupWmC5QFVQ6svrucH5o0XckaEO8H7K/MnvCo0epdm1xnm4LjoOnvdhN1W8FLXRlJ/j06sLMQ01rH/WjEjpQ==
-Received: from SJ0PR03MB5950.namprd03.prod.outlook.com (2603:10b6:a03:2d3::20)
- by IA3PR03MB7617.namprd03.prod.outlook.com (2603:10b6:208:507::14) with
+ bh=2ywj/R598DHvTK5R2nBVRB/G7elq9O/Ae5ypwi9az0Q=;
+ b=ucv9OBm2b8DLu+X2K4+LVze6NfGiUviC3XQSj/2B7goHEkQ78yVGbxOhFuWZT9YKM9AFbVUi4mwW1kvLT/U2S4/DSB2TdoQVqoEmh++tPEkwM5ORtJGbkovmrNAfCwMYGLkNvMQkY9JpOT+6DPdigjpTYwqMiNLbDm4fODKacVFVnvjx16boLa1eX+C+oxFuWxBW5dF9PWCX9QZwn3MBDS2vwwLBoNM4y/RulBxcFam7Uga1UNki55NsxDSLsnx9M5vKIQvCJne6/Adl7arJ8WZOQlY0rvj7H7M5tskIZ0POLvE6LQg/6Y/gc5e6S4NYwjExRcjvbaAXGziEEqN5OA==
+Received: from IA4P220CA0003.NAMP220.PROD.OUTLOOK.COM (2603:10b6:208:558::12)
+ by IA5PR18MB988632.namprd18.prod.outlook.com (2603:10b6:208:607::5) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.223.12; Fri, 17 Jul
- 2026 03:03:50 +0000
-Received: from SJ0PR03MB5950.namprd03.prod.outlook.com
- ([fe80::53a0:bf93:6b6b:de01]) by SJ0PR03MB5950.namprd03.prod.outlook.com
- ([fe80::53a0:bf93:6b6b:de01%5]) with mapi id 15.21.0223.011; Fri, 17 Jul 2026
- 03:03:50 +0000
-From: "NG, TZE YEE" <tze.yee.ng@altera.com>
-To: "Datta, Shubhrajyoti" <shubhrajyoti.datta@amd.com>, "Guntupalli,
- Manikanta" <manikanta.guntupalli@amd.com>, "S-k, Shyam-sundar"
-	<Shyam-sundar.S-k@amd.com>, "Goud, Srinivas" <srinivas.goud@amd.com>
-CC: "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
-	"Frank.Li@kernel.org" <Frank.Li@kernel.org>, Frank Li <Frank.li@oss.nxp.com>
-Subject: Re: RE: RE: RE: [PATCH] i3c: master: dw-i3c-master: fix OD timing for
- first broadcast
-Thread-Topic: RE: RE: RE: [PATCH] i3c: master: dw-i3c-master: fix OD timing
- for first broadcast
-Thread-Index: AQHc+LEozGDrj02IiUO6j7w7qF/viLY3dzOAgAIUOgCAAQW1gIALBfEAgAfBbACACu/yAIAAN9mAgAxqhYCAACZ6AIAAAqgAgAwsdQA=
-Date: Fri, 17 Jul 2026 03:03:50 +0000
-Message-ID: <53195600-12a9-43ee-b120-0933dec90658@altera.com>
-References: <ebddb8b62eae92de0a7eeda93cb18213c677ae96.1781077653.git.tze.yee.ng@altera.com>
- <20260610083656.334CA1F00893@smtp.kernel.org>
- <airgnoB0Uh60mn8T@lizhi-Precision-Tower-5810>
- <ccf5721d-3193-4a2d-b1df-23e1c648eda3@altera.com>
- <48947d4c-32a7-4f60-b5bd-c0881e76831c@altera.com>
- <CY8PR12MB76110BF12DB1557B0DBEC0F78CED2@CY8PR12MB7611.namprd12.prod.outlook.com>
- <7e432dc6-fe48-44c7-8a04-f80eb7d56673@altera.com>
- <CY8PR12MB761142838F98DC828AF472248CF62@CY8PR12MB7611.namprd12.prod.outlook.com>
- <e36678e7-1c2f-4d2f-b0dd-c1ef2e533669@altera.com>
- <LV5PR12MB9828AC9C97DA5FA9C82993F781FE2@LV5PR12MB9828.namprd12.prod.outlook.com>
- <LV5PR12MB98286D643E990DDDA63B8CAC81FE2@LV5PR12MB9828.namprd12.prod.outlook.com>
-In-Reply-To: <LV5PR12MB98286D643E990DDDA63B8CAC81FE2@LV5PR12MB9828.namprd12.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=altera.com;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: SJ0PR03MB5950:EE_|IA3PR03MB7617:EE_
-x-ms-office365-filtering-correlation-id: d8f84765-2d6a-4fca-107a-08dee3b0070c
-x-ms-exchange-atpmessageproperties: SA
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|376014|1800799024|23010399003|366016|11063799006|4143699003|56012099006|4133799003|55112099003|18002099003|22082099003|10067099003|13003099007|38070700021;
-x-microsoft-antispam-message-info: rU1vWXsk8Qu7ae4Rwhx6wlVZnFne7agVlp6RIGun2RxNqxGk7TiIXPtD+oT22dk9mlewjwgYUAL6SM6QmPJLXZ/O1ImN91MX5j53qB9SnCHI9rtr3obz7lE1fWk+481ZG4izHsUJtmCBcJ0n59Ji7uD9Qf+3juxIbMCLl5RrxrdBftfXVl8q9GC5QBmJQNST3uSa38JAHTcZb5WhAO9R8rm6Fz/2pL8X4tF07BuThlPr5lPiSxmJSuyczAATPQFFR/brQ0iXXKIx63FmEbUUnfgOCu95xDvd4HVTaXEZKgX1DSgNo+4TfSFgxWiePa6l/b9WkocYm/D+ujBkviopAHYoes3uIo5In2E5wQ6ClbogDcG14riMBed0Co8Cdqf6LaP+FQar2+3L47YOYlgCaUQAYJYNPmHrxVVUt6N/yWSuRV+T2AGVdB8n3ltSXc/VZ4TQKzGm03QyutXnNrlyPnRg5+0m34/SZ+TvPSbYy6AhLXAz7nM1hc9CPvKfGEn4pte8m0HZHzfECLkpCWnjSBqsHQnByFNqH2dne2Wp+2XOv+8XWrn6S8erv65fGArWH8/xOhVfUZyTWOv0soIvQcJ9ZzvwwwZbBD3L9eLzGCJgl3xmNs9LzfRBzNmiS71mItBdbJ462Wf7mg6QAg82zI/wX6mJ1jVX1Ku7ykBF4jiL4dtvwpHS9y8cvL4MDkDlx8OgXyNpWivBCAHfcsENZw==
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SJ0PR03MB5950.namprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(23010399003)(366016)(11063799006)(4143699003)(56012099006)(4133799003)(55112099003)(18002099003)(22082099003)(10067099003)(13003099007)(38070700021);DIR:OUT;SFP:1101;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?utf-8?B?SUh4b1J0RWd2TUVYTWF4QzBUVmNqZ0JEekJaKzJIQjVmRXY5UFgwUTNCV1dY?=
- =?utf-8?B?TTYrQ29PdWJIT2JjVFVXcnlEbGVLNW9HMzdMRStiU0xEa1o3NUtOY29XbDVS?=
- =?utf-8?B?VytqQ3ZGcFZKZEFrQndwOTNBeXplTEdCNmMyS2pOSmJlRjhCUno2SE1mZFZk?=
- =?utf-8?B?YlJmZFZ0ZUhoa3RsK2RhdHlMczJFQVlEc2dTUG1KY2hhQW9ZMjVQVVh1M25P?=
- =?utf-8?B?QWdnVDVzalMvZlJsdWRhekJ0MHQwU2krV2RWMkJuSENaRVBXbEliN2NjZEJK?=
- =?utf-8?B?eFVBdDUveU5CTVl4UTV0eGh4NzBvOWllU1FEWEg3dVY1Ri8rS2ZiMTB4NzEx?=
- =?utf-8?B?U1dZVTV1VDF3RDJGdmJWdkhjbzZjVFFvMVgxcnd3UVY2a3ZpREF3R1hUKzcx?=
- =?utf-8?B?VkV3NzArLzdmNmc1dllrWjNVMmwvV3NhK21XeW9xeWFUcUVkbFRYd0gxRTZC?=
- =?utf-8?B?bVNvTVV2TWhYU1FyUW0zb1doNndqaXpBaFFrY3NrNk9ncHhtSDRPUWlBUmNT?=
- =?utf-8?B?Q25pK3JFUnFPMTJmbjdzVllMbWpDSU8yb2lsOVlGSS83QVRmWUl3QlVxb2pR?=
- =?utf-8?B?eUoyTGQxUTRMQ21BWkdTUjBINUFDYWhERkVFa3pUNDJ1UWREc2hHdmZCcExY?=
- =?utf-8?B?aEcxM3RIZXVrUzlEQlZSOFBxRGdManBjWXZ6bHZuWUFSVWQ2amVSVys0Ti9n?=
- =?utf-8?B?ZGwzUzhMdG05Tmd3Z1B2UDhaTTBPd2syWUhEK0lWMFJsWVMxYjM3azlrSlNw?=
- =?utf-8?B?L1hiRDFxYm90eGlxekZucG02RUJYbzI3NStQMllmVmZBR0dDdjJORTlVSC9v?=
- =?utf-8?B?eUFONVR2K1V3SHp1T3NYY3dBWkwyYTg1ZHVob21aZVI2NzdJZExZeDI5UkNQ?=
- =?utf-8?B?S3IyL1VqaU1talU5eVRMU3YyajVmeXhnenBXYk1tQWt1Q3I4NkwwcVBCcmxH?=
- =?utf-8?B?Y3BNRTVtQTErOEFiSnZyMGRhcmpPejBkR3N6YnZ6KzJnWW5Cb2gvbFpWNk5w?=
- =?utf-8?B?VmcxMXMzNXhuaGs2RElCVGdGVSt2OEhmaS9LTFlOaGRFVC9RWVN5d0owRFBq?=
- =?utf-8?B?Mk5DdjhLRm9DSmxEenVOZWpxRHFFWDRsQUdHeFJ4R0RMSXBENDZkSjdDRjRl?=
- =?utf-8?B?Q1JRK3I0c1NYWXpqZTc3SkVEM2lxOVVCZEM0VFQwOVdETG1zUGdTMXJNSzlU?=
- =?utf-8?B?b2NUZHFSVEF1cXBUUklpR1N1dlhJcGRzck8yUEJVRFY5NFd3N0J6UmdMeDVY?=
- =?utf-8?B?RVlGUm40cHVnZ3hsYmRCbHdKekJTenU1WkorT3NMVWc0OGFPV1lxSkFUaGMr?=
- =?utf-8?B?K3NsQ2tFWmpRbklrclNuWnVYcXp3bTB3dm9aNTN4ZFNpNzc5ZEo4K1dzZDBE?=
- =?utf-8?B?OXUzbHNPVGt0L3VpVWI3OEdPZzU2MFVMQzNXWDRkWHlMTHd1Z05JUzRoSnJy?=
- =?utf-8?B?UXVYZ3lLa1B2cFZYZXA1YjlCT3F6ZWt1TklFVkRyUmkybVMyM2o5elE5RGl6?=
- =?utf-8?B?SElyWXNUbkIycEJWWkt2Y1ZodU9SYWlkclpCNVBKMWJlSXppb1BsQlREREtZ?=
- =?utf-8?B?dU5neUZxSVIwTFlUV1krVFRBVTlHQkhoUTdHTXJWUFJiN1B6bUk1TVY0dUZQ?=
- =?utf-8?B?MmJjQ3dNSENZeDlKWDByRXUycDVvM2pSSzY5YUQ2M1lIanl0UTFCZzBtOVJP?=
- =?utf-8?B?ZytOb0lFZ1pUR1pwd0FDL3ZQbzNkUW5hVDZEY0lONmNIYktmVnhsM3psTis0?=
- =?utf-8?B?QnliTERKRDRyR1llY05HdDYrYWJKWTNPQXphQ2gxamNDVHIvL1pLbmdMUWUv?=
- =?utf-8?B?SkpxaXJZU0g3L3dVMi9DUCtzVVpRZTdFTE1ONFFqQTVQVmluYWpnL0EyT0lw?=
- =?utf-8?B?RVQreG5CeFYwenpRckltYnhMQjREaGFoMnYzQWFuNXYxODYyUHUzN1llaXZj?=
- =?utf-8?B?cUlOVmlRRkV5QWdaMUtYbDdKa1UzUXgxemZVTVZZY2o4VlBJU2dSbHoxaGRR?=
- =?utf-8?B?YXFNbVpzK2pTU2JLMXV4Q0RRdy8xMGJjNDZrWUxmNWJHNGJ4ZkpQL3hxb0Qx?=
- =?utf-8?B?VXlhaXBCeE9jczlTN0ZuS0dBbWRFenRNM0drZ2R1ZGcyUTFQdUo4WWtmMllV?=
- =?utf-8?B?Z3dMYmpUTHJxM3RJWU8zV3ZlV09mY1pVNnZHS3dzS3Fvd0hFQkxiOUVBSFhM?=
- =?utf-8?B?WW81VEpBR1pNTWxkMGNZNlk0RS9qNC9pWG5CWFI4MjlTVXJnRnVmUSttS2FF?=
- =?utf-8?B?S25qb3kvVlFpQzVwRzlva0pYRFRUV1ROYlJ2Vnpua2ZvTHBtKy9ESUh5ZTg2?=
- =?utf-8?B?ZmVCa09zRTlJUTZ0aVRCVjJEQ2M4ZlNDYWxlZEhaNFJnaWZwWUpRdz09?=
-Content-ID: <9582A177BDC5604484DF01C124982752@namprd03.prod.outlook.com>
+ 2026 03:51:27 +0000
+Received: from BL02EPF0002992B.namprd02.prod.outlook.com
+ (2603:10b6:208:558:cafe::22) by IA4P220CA0003.outlook.office365.com
+ (2603:10b6:208:558::12) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.223.12 via Frontend Transport; Fri,
+ 17 Jul 2026 03:51:27 +0000
+X-MS-Exchange-Authentication-Results: spf=fail (sender IP is 64.62.143.114)
+ smtp.mailfrom=axiado.com; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=axiado.com;
+Received-SPF: Fail (protection.outlook.com: domain of axiado.com does not
+ designate 64.62.143.114 as permitted sender) receiver=protection.outlook.com;
+ client-ip=64.62.143.114; helo=smtp.corp.axiado.com;
+Received: from smtp.corp.axiado.com (64.62.143.114) by
+ BL02EPF0002992B.mail.protection.outlook.com (10.167.249.56) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.21.245.5
+ via Frontend Transport; Fri, 17 Jul 2026 03:51:26 +0000
+Received: from [127.0.0.1] (unknown [10.4.1.181])
+	by smtp.corp.axiado.com (Postfix) with ESMTPS id 365AE4186B53;
+	Thu, 16 Jul 2026 20:51:26 -0700 (PDT)
+From: Swark Yang <syang@axiado.com>
+Date: Thu, 16 Jul 2026 20:51:08 -0700
+Subject: [PATCH v3 1/8] dt-bindings: arm: axiado: add AX3005 EVK
 MIME-Version: 1.0
-X-OriginatorOrg: altera.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: SJ0PR03MB5950.namprd03.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d8f84765-2d6a-4fca-107a-08dee3b0070c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Jul 2026 03:03:50.4814
+Message-Id: <20260716-upstream-axiado-ax3005-upstream-v3-1-c429095143ec@axiado.com>
+References: <20260716-upstream-axiado-ax3005-upstream-v3-0-c429095143ec@axiado.com>
+In-Reply-To: <20260716-upstream-axiado-ax3005-upstream-v3-0-c429095143ec@axiado.com>
+To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, 
+ Conor Dooley <conor+dt@kernel.org>, Harshit Shah <hshah@axiado.com>, 
+ Linus Walleij <linusw@kernel.org>, Bartosz Golaszewski <brgl@kernel.org>, 
+ Jan Kotas <jank@cadence.com>, Michal Simek <michal.simek@amd.com>, 
+ Andi Shyti <andi.shyti@kernel.org>, 
+ =?utf-8?q?Przemys=C5=82aw_Gaj?= <pgaj@cadence.com>, 
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+ Frank Li <Frank.Li@nxp.com>, Boris Brezillon <bbrezillon@kernel.org>, 
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
+ Jiri Slaby <jirislaby@kernel.org>, Mark Brown <broonie@kernel.org>, 
+ Mathias Nyman <mathias.nyman@intel.com>
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org, 
+ linux-i2c@vger.kernel.org, linux-i3c@lists.infradead.org, 
+ linux-serial@vger.kernel.org, linux-spi@vger.kernel.org, 
+ linux-usb@vger.kernel.org, Swark Yang <syang@axiado.com>, 
+ Conor Dooley <conor.dooley@microchip.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1098; i=syang@axiado.com;
+ h=from:subject:message-id; bh=lRd5fEURFEd7L6FVtJkfNOmGCkYyQJoZtmef8h3/52s=;
+ b=owGbwMvMwCHWlWK8+EozbyzjabUkhqzIZXum16rf+c65p3sP28Z3h5rZ3oV7c0XN2z6/d94S7
+ QOs27RmdZSyMIhxMMiKKbJ81fmWfzJX+17n3pWlMHNYmUCGMHBxCsBE1hUwMqzPt1OP9PSZZ8Zy
+ xH5v97aj/HMTHweedjU3irk//8u53rmMDIfmdvH0J+XulD3oePtJ7sqMrvatVoIea86v19N/u/2
+ 5BisA
+X-Developer-Key: i=syang@axiado.com; a=openpgp;
+ fpr=F52CF66FC96D2BDE89BDA9758A6433A3D4830D5D
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BL02EPF0002992B:EE_|IA5PR18MB988632:EE_
+X-MS-Office365-Filtering-Correlation-Id: 6512681c-b003-434b-f58a-08dee3b6ada9
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|23010399003|7416014|376014|1800799024|36860700016|3023799007|56012099006|10067099003|921020|22082099003|18002099003;
+X-Microsoft-Antispam-Message-Info: JodlnM7YRwBR+OcwmEWuCyroxszfRaCe0qfj0IYMhgJRlBE8sHYebDwENpIWUH0upNfIE6nMZjJhSwUbc5fpXFkpBXo0wPsNqprynbXpBtKwdbGzbUqQTU/XM6vWst3blbeEukb6dR+bK51+ETVHXZrSNmxHZyiEOpvh8IhC8K2nwKevRgM8Ib2odxDrpUpm8LIpzw3/vjpC4+ooHfc4CLdHpfEV7Tg4+BRA0DPXPlNhYjAqjq61oLFV9AvQLEKyybejSaqi8xufCSuy+G1zO77V47NwS9k62yMhIsuWanl9QzE8cxkg9YFQ+Z6NMT5gjPC8jqYcWy1N20TOYpxb/MzwIqh4IkvqlTu2pI6nv4N62MWGZUq/vl1g91CZdLgMxX0nzXJOxkjoSljS3DvtqHzv3BJGKgSyVNzj325syQIRTvWVA/9GqWLIPlUSGMkOQlEgoMFCHPWBFjfTosLXS+gOmlpHj4d1qfHnzZwXb1bUB5aRJy/vHXqwG17mhyCnx262JsM+SnDOWtSJvgguPjt9Vy4SpiiuzOdUZxxedfQDt777+3khMDHGVR76xOrWr4irJGvWOaeV1QQONIjt7+ROBm5ws3ezTOGZ5W9iPlCxeeY0giLIEwyxI06NMJ7/NO81+iPAWXd+VHgl+FOTtriqlFw1XULpd1qUpw4SNxZHId9RnGiEvzHfnGvL+A0KRavjSfhjy2MVTYGWZJqpA6pO5peR/pFO+PCfPGyI7xwB6q+w/10CDajDURVEgCnl
+X-Forefront-Antispam-Report: CIP:64.62.143.114;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:smtp.corp.axiado.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(82310400026)(23010399003)(7416014)(376014)(1800799024)(36860700016)(3023799007)(56012099006)(10067099003)(921020)(22082099003)(18002099003);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: oEVgZjNBsbdm1gT8K1nhaV/Bn71iNDeBNHhjaZal1h13WzEqbnQ7QXGpYE+jSIvBPIEU+q683zcSsYTjyXMGpwaR1+qZfUasTau17Uq3Itc7s00P2i/xmd2QQearzda4k0wwgpPguIcNsmJnKD99eO9GVFjHJfCxpDViQtkfbKqt1FEJYVGYADdRAM+o3/Z9ge4woBlx33m1Codn560COEVit2MWQEiuVD2+TlbcBrydi6pHk+Qb87nwdP+71L1rsrwIAtTU2xFembq76AqLNAoYvfXLM7Q1++hErNkY7eVkgld9pHk+Qu/0eYvk06cd+mnv22vD69EGwva9VxnT7RlIlildfRj2fqhc2sA9sge8BdXHO8cw5IUXGals8WVQFe4FUBdFli2rQlH7WRGWZjEBlBqUxblQJbIQ6a/kL+tHmiDydA8NrLqcLewNaXKm
+X-OriginatorOrg: axiado.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Jul 2026 03:51:26.8656
  (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: fbd72e03-d4a5-4110-adce-614d51f2077a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: DZGIhTR7XoYPUG/Je4kV4vQB0whb6WvHn+t/XmA2vQ8zHxDO76ZcFlwxss2ZWK045WD9e5drVXo4ZszgzL0EmA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA3PR03MB7617
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6512681c-b003-434b-f58a-08dee3b6ada9
+X-MS-Exchange-CrossTenant-Id: ff2db17c-4338-408e-9036-2dee8e3e17d7
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=ff2db17c-4338-408e-9036-2dee8e3e17d7;Ip=[64.62.143.114];Helo=[smtp.corp.axiado.com]
+X-MS-Exchange-CrossTenant-AuthSource: BL02EPF0002992B.namprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA5PR18MB988632
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260716_200357_218545_7516469B 
-X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-CacheID: sfid-20260716_205132_101223_8326552C 
+X-CRM114-Status: UNSURE (   8.64  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -164,84 +139,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 9/7/2026 5:09 pm, Datta, Shubhrajyoti wrote:
-> [You don't often get email from shubhrajyoti.datta@amd.com. Learn why this is important at https://aka.ms/LearnAboutSenderIdentification ]
->
-> AMD General
->
->> -----Original Message-----
->> From: Datta, Shubhrajyoti
->> Sent: Thursday, July 9, 2026 2:30 PM
->> To: 'NG, TZE YEE' <tze.yee.ng@altera.com>; Guntupalli, Manikanta
->> <manikanta.guntupalli@amd.com>
->> Cc: linux-i3c@lists.infradead.org; Frank.Li@kernel.org; Frank Li
->> <Frank.li@oss.nxp.com>; Goud, Srinivas <srinivas.goud@amd.com>
->> Subject: RE: RE: RE: [PATCH] i3c: master: dw-i3c-master: fix OD timing for first
->> broadcast
->>
->>
->>
->>> -----Original Message-----
->>> From: NG, TZE YEE <tze.yee.ng@altera.com>
->>> Sent: Thursday, July 9, 2026 12:12 PM
->>> To: Guntupalli, Manikanta <manikanta.guntupalli@amd.com>; Datta,
->>> Shubhrajyoti <shubhrajyoti.datta@amd.com>
->>> Cc: linux-i3c@lists.infradead.org; Frank.Li@kernel.org; Frank Li
->>> <Frank.li@oss.nxp.com>; Goud, Srinivas <srinivas.goud@amd.com>
->>> Subject: Re: RE: RE: [PATCH] i3c: master: dw-i3c-master: fix OD timing
->>> for first broadcast
->>>
->>> [You don't often get email from tze.yee.ng@altera.com. Learn why this
->>> is important at https://aka.ms/LearnAboutSenderIdentification ]
->>>
->>> Caution: This message originated from an External Source. Use proper
->>> caution when opening attachments, clicking links, or responding.
->>>
->>>
->>> On 1/7/2026 5:06 pm, Guntupalli, Manikanta wrote:
->>>> Public
->>>>
->>>> Hi,
->>>>
->>>> Adding the below contact:
->>>> +@Datta, Shubhrajyoti
->>>>
->>>> Thanks,
->>>> Manikanta
->>>>
->>>
->>> Hi Manikanta, Datta,
->>>
->>> Gentle follow-up on the AMD AMDI0015 quirk question below. It has been
->>> about a week since Datta was brought into the thread, and I have not
->>> received guidance yet on how ->set_speed() and send_ccc_cmd() should
->>> interact with AMD_I3C_OD_PP_TIMING.
->>
->> Will check this and get back.
-> This quirk is added for the AMD legacy platform
-> https://lore.kernel.org/all/20241114110239.660551-3-Shyam-sundar.S-k@amd.com/
->
-> added shyam .
+Add device tree binding schema for the Axiado AX3005 SoC and its
+associated evaluation board. This binding will be used for the
+board-level DTS files that support the AX3005 platforms.
 
-Hi Manikanta, Datta, Shyam,
+Acked-by: Conor Dooley <conor.dooley@microchip.com>
+Signed-off-by: Swark Yang <syang@axiado.com>
+---
+ Documentation/devicetree/bindings/arm/axiado.yaml | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-Gentle follow-up. I still have not received confirmed guidance on how
-->set_speed() should interact with AMD_I3C_OD_PP_TIMING on AMDI0015.
+diff --git a/Documentation/devicetree/bindings/arm/axiado.yaml b/Documentation/devicetree/bindings/arm/axiado.yaml
+index bfabe7b32e65..008d2b1d4e62 100644
+--- a/Documentation/devicetree/bindings/arm/axiado.yaml
++++ b/Documentation/devicetree/bindings/arm/axiado.yaml
+@@ -20,4 +20,10 @@ properties:
+               - axiado,ax3000-evk       # Axiado AX3000 Evaluation Board
+           - const: axiado,ax3000       # Axiado AX3000 SoC
+ 
++      - description: AX3005 based boards
++        items:
++          - enum:
++              - axiado,ax3005-evk       # Axiado AX3005 Evaluation Board
++          - const: axiado,ax3005       # Axiado AX3005 SoC
++
+ additionalProperties: true
 
-Rather than waiting further, I would like to continue the upstream
-process with
-- od_cnt calculation fix (per Sashiko's review)
-- using  PM_RUNTIME_ACQUIRE (per Frank's review)
-- send an AMD-specific follow-up based on a best-effort assumption for
-the AMD quirk platform.
+-- 
+2.34.1
 
-Could AMD help test that follow-up once posted?
-
-If you prefer a different AMD behavior, please let me know; otherwise I
-will proceed with that plan.
-
-Thanks,
-Tze Yee
 
 -- 
 linux-i3c mailing list
