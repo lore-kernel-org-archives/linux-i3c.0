@@ -4,44 +4,44 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06DC1C44507
-	for <linux-i3c@archiver.kernel.org>; Fri, 17 Jul 2026 08:32:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89BD1C44514
+	for <linux-i3c@archiver.kernel.org>; Fri, 17 Jul 2026 08:32:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c3SBnDA2d65kE5I5jJXE7VTD2oc+VHV2fPke9IS4RmI=; b=SO7vKWGBkSX4mP
-	J3UWyUdoinBdIRp44MfXjV3fhmyigLJ36F78mpD+ciw4opz67HzUCT3inwmDsgU0Ya61XUnRmiuJg
-	P9dwVNkQn9Ssq/rXjE9vsm51Pg4vT69YWFXBi3lPRBT+ylKGosmOgrTwIpfA6sKBc3ongCvIlB1Za
-	3YWR9Xp2AvdA4k/K3cD9oluQlfWUcNDeoVlBdVIfB8HgrNm8c21YB1yDW3ofD1jL0Io6s4JfY1MJO
-	DY7tBXmeTKL+TZ+rxYIGkm+ZQs9naeAwJQ5qp8kae0MVGgpvqGUIehBd8+n9zCh9Mi47e/ziVAsaJ
-	K7O4Vd9pa3Fpb4bQTjIA==;
+	List-Owner; bh=auvalHU5218R0cnwK3K0RyzaA0Sme+bottxex7hUycM=; b=H39i3WUSvVCeFq
+	VG+7Lb18RjzzOYQ2WW0cmc9hxQlBjlTQVcOyZjJ8SplQPlnow0oZ2j3xzdymMIu/EeFvASmunZOXQ
+	qWLgDPsj+PFTBxxIsFTT7M3NnzP1JubIztpjeUrek/eJv+mETE5NSmkXJT2B6/D9We7Pu8hbMTiOB
+	DcM3jkCzoIHs09jOO4DwSAMMbKWZlkOK6eGVX6WQG1VJvBrPiOd6sm581Lc1tGtBGweyhvjwpiOqj
+	zjlmnrxLC4o2mT9coZfo84v3zCS7lIRhxPBBupN2N1PqtmGUbHgn99a2OENJDBIf2CRfnm0wPzJpz
+	+bTrWuEhZ/lb4UfiLn2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wkdza-00000001eGn-2zTY;
-	Fri, 17 Jul 2026 08:32:22 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wkdzx-00000001eT1-101R;
+	Fri, 17 Jul 2026 08:32:45 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wkdzZ-00000001eFw-0qY0;
-	Fri, 17 Jul 2026 08:32:21 +0000
+	id 1wkdzv-00000001eRX-3FxJ;
+	Fri, 17 Jul 2026 08:32:43 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id D896D40AB8;
-	Fri, 17 Jul 2026 08:32:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 600FE1F000E9;
-	Fri, 17 Jul 2026 08:32:19 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 3B61A60A61;
+	Fri, 17 Jul 2026 08:32:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 408571F000E9;
+	Fri, 17 Jul 2026 08:32:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784277140;
-	bh=XSZWX5xFW0sVcWlHSb+4MgJ4CgTapTVN8LsIk7/nm/8=;
+	s=k20260515; t=1784277162;
+	bh=EoSnQBbtzGT4em187vuUWyzc6o09JzeyLkYsJZ+Z9kg=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=EWG0PmBskngtBjqNBmrVsVSBFqYpucErvCXUeoY1LPeUz4W37bkXZIsScvNuFQOL9
-	 IConoJndUypWgtq5JTV2kKRJS9cNFHy0OsA7rp8LOWdRhUTTKNWojQacmIQH4/Kc9B
-	 BARghgtdWg05RSb2lk2Lr4h410Pw6CoixuD3CM9yJDJc4xfBIlNZ8e5hz5tdZry66A
-	 TkmiIgguw0SWhZqBNzpHzSr6hJJYVhPOYUIT7qmBmf+2F7UDxTKaJMNr017IBaGTfQ
-	 flFTCdN9yk8d9fB08dOKJ+NnVfW5KLi0OYGGqKu/jCUdl4BvKPAqHdqDsQoB4ArGS1
-	 guf6VOiY/S4bg==
-Date: Fri, 17 Jul 2026 10:32:16 +0200
+	b=cNPpMCAfq4lnDaUIbbn+a4XsST4epNsHJpyeeSwp2Un9vdTL1b5x9kNRrd5gr2g4I
+	 EcT6Fg/IKuqzNnBWS9z3mgqnRgblvhRhgY8fzweQSUsocXikEdEyiV1a1IK3rsGKFe
+	 T4sGiaWA7nBVEH0pQ6F8QaJ2F3QXfKrQhqTBkxGShzPck4vihPFPcTWzCL9dMFJ891
+	 tnF7TcHD0kRMgm3Xwc6afFvt29WlrIEPnIEBuJdMXWdhrNRY0hEdxScKSHIve0VBC3
+	 uEuMD+z8euHSb1PnpZDVHGuViIdmpLKykGcSNMnV5O2LTGJ32jdEMvLevFCQL/mmsy
+	 mUJ4IV1FfE4zg==
+Date: Fri, 17 Jul 2026 10:32:39 +0200
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Swark Yang <syang@axiado.com>
 Cc: Rob Herring <robh@kernel.org>, 
@@ -57,14 +57,14 @@ Cc: Rob Herring <robh@kernel.org>,
 	linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org, linux-i2c@vger.kernel.org, 
 	linux-i3c@lists.infradead.org, linux-serial@vger.kernel.org, linux-spi@vger.kernel.org, 
 	linux-usb@vger.kernel.org
-Subject: Re: [PATCH v3 4/8] dt-bindings: i3c: cdns: add Axiado AX3005 I3C
+Subject: Re: [PATCH v3 5/8] dt-bindings: serial: cdns: add Axiado AX3005 UART
  variant
-Message-ID: <20260717-rainbow-innocent-mantis-eb246a@quoll>
+Message-ID: <20260717-stalwart-sandy-orca-6c5a8a@quoll>
 References: <20260716-upstream-axiado-ax3005-upstream-v3-0-c429095143ec@axiado.com>
- <20260716-upstream-axiado-ax3005-upstream-v3-4-c429095143ec@axiado.com>
+ <20260716-upstream-axiado-ax3005-upstream-v3-5-c429095143ec@axiado.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260716-upstream-axiado-ax3005-upstream-v3-4-c429095143ec@axiado.com>
+In-Reply-To: <20260716-upstream-axiado-ax3005-upstream-v3-5-c429095143ec@axiado.com>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,13 +81,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jul 16, 2026 at 08:51:11PM -0700, Swark Yang wrote:
-> Add binding for Axiado AX3005 I3C master. So far, no changes
-> are known, so it can fall back to the cdns,i3c-master compatible.
+On Thu, Jul 16, 2026 at 08:51:12PM -0700, Swark Yang wrote:
+> Add binding for Axiado AX3005 UART controller. So far, no changes
+> are known, so it can fall back to the cdns,uart-r1p12 compatible.
 > 
 > Signed-off-by: Swark Yang <syang@axiado.com>
 > ---
->  Documentation/devicetree/bindings/i3c/cdns,i3c-master.yaml | 1 +
+>  Documentation/devicetree/bindings/serial/cdns,uart.yaml | 1 +
 >  1 file changed, 1 insertion(+)
 
 Acked-by: Krzysztof Kozlowski <krzysztof.kozlowski@oss.qualcomm.com>
