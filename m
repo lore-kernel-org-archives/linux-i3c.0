@@ -4,106 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F88CC55164
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 487CBC5516E
 	for <linux-i3c@archiver.kernel.org>; Thu, 30 Jul 2026 14:36:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-Id:Subject:
-	References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3DqpdsKRCBAd+pFEAhrwpHvX3RH0aPhlt/Rs0d39hpk=; b=Hyj4Vy/csO47rD
-	28b0nCZO+DBpChhJNYHs0yJrp+h6AcpYdR/h0wTVrnEq3o5HXishux9YGiK60TXylCLz7m33NZNly
-	+cjlSBVQyeaEq0dS6oi6TihdWh/XcNzzs2D0RMgtSaifqUk7Dfj1VTAWG0lTbFuT2YAG7mSF2bNYq
-	vHqQ2MUS9GAXrIbMqU/k/acwoeoT8nnu4IRrAbDX5fT7b7cZOj5UnfUssIBF9DbY65o0A6B7SpMRc
-	S5JRAZ36zq50C2dO6g5ef6hA9OUtWWsFF2irqQxsnytbsJyhRRTNavqh+88y/Q6k2KeWLxvk7bWwv
-	+byTFHgf2Np++n/spTjA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Q347iAL/48CUookbE8LuKU1sUsOPLDZx4wGlQP3OI98=; b=GI12gaMIPc4Ibd62ZOQ0fbpPBJ
+	L59lMyBCz3+yVWsCXMN6QnNCI/6gJYltxrHt/dAAl6StvpPD+nLM5klOX8bUKDXNqlv/H+ay2nSXj
+	NAMQnh3DAoHmFGD0DsM6qxdHYn0s6ZKRqTz16r2hOJRocPh6J/+H1P/MSwbpR5WMhxqVTndI8DNQP
+	wwValORa28arVQc0VFcDVmvGLTQj2ck1UoTXkBOMoKn/gu2TXo2wcxl4CQh6zHqzAoUPC9fWdD0Xf
+	PuEJdJ1IzWfGvja70/lUau5Wy7Q4GxUhAbi+dwOXEmNY7YZiDjII1O6zC5yrDb7Tggh1cvpkQljmn
+	NzQhN74w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpRrl-0000000Alm9-2etS;
+	id 1wpRrl-0000000AlmM-3qww;
 	Thu, 30 Jul 2026 14:36:09 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1whhVf-000000014Zl-3omX;
-	Thu, 09 Jul 2026 05:41:20 +0000
+	id 1wkhHA-00000002D3c-3fXJ;
+	Fri, 17 Jul 2026 12:02:44 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 915A9600C3;
-	Thu,  9 Jul 2026 05:41:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9EAE21F000E9;
-	Thu,  9 Jul 2026 05:40:53 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id B3F1460A6F;
+	Fri, 17 Jul 2026 12:02:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 03A1A1F000E9;
+	Fri, 17 Jul 2026 12:02:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1783575677;
-	bh=GUR46VabSVZbPyehLw4syLT30MNmMe+mudnTx0VnTpA=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=PMF7MIfeOb6sPplAJM3ptwtGVrsjDjcmNM8+KBGIZapvBcxEoEW05Z71w8wT7OiCo
-	 DpyTqd8LBQSOVV2LXf12bv3I6Pc0h9ojZxvVDoieC+rI/KlduqQsbmNYRbApokpMUS
-	 906x2f5dfccmHGNLaQwrgeNkFJeM+vrwSPjhiXoBgGmr7P/GzXUVoT8b+iN+kTpuYZ
-	 3miqhB4alxgUPujwFkL9mVwHxHABNpvGLd+MKygFosR17bCiXd9AFhTno3Tpzpr8G2
-	 W04sec2rt03zdANmLtdpyqOtx7Xh3Wl/PfkGMSLLD5Y/7X7CmPps6HOirGFsnoRUm/
-	 YRXFW3BE6RuOQ==
-From: Manivannan Sadhasivam <mani@kernel.org>
-To: Bjorn Helgaas <bhelgaas@google.com>, 
- "Vaibhaav Ram T . L" <vaibhaavram.tl@microchip.com>, 
- Kumaravel Thiagarajan <kumaravel.thiagarajan@microchip.com>, 
- Even Xu <even.xu@intel.com>, Xinpeng Sun <xinpeng.sun@intel.com>, 
- Srinivas Pandruvada <srinivas.pandruvada@linux.intel.com>, 
- Jiri Kosina <jikos@kernel.org>, 
- Alexandre Belloni <alexandre.belloni@bootlin.com>, 
- Zhou Wang <wangzhou1@hisilicon.com>, Longfang Liu <liulongfang@huawei.com>, 
- Vinod Koul <vkoul@kernel.org>, Lee Jones <lee@kernel.org>, 
- Jijie Shao <shaojijie@huawei.com>, Jian Shen <shenjian15@huawei.com>, 
- Sunil Goutham <sgoutham@marvell.com>, Andrew Lunn <andrew+netdev@lunn.ch>, 
- Heiner Kallweit <hkallweit1@gmail.com>, 
- "David S . Miller" <davem@davemloft.net>, 
- Jeff Hugo <jeff.hugo@oss.qualcomm.com>, Oded Gabbay <ogabbay@kernel.org>, 
- Maciej Falkowski <maciej.falkowski@linux.intel.com>, 
- Karol Wachowski <karol.wachowski@linux.intel.com>, 
- Min Ma <mamin506@gmail.com>, Lizhi Hou <lizhi.hou@amd.com>, 
- Andreas Noever <andreas.noever@gmail.com>, 
- Mika Westerberg <westeri@kernel.org>, Will Deacon <will@kernel.org>, 
- Xinliang Liu <xinliang.liu@linaro.org>, Tian Tao <tiantao6@hisilicon.com>, 
- Davidlohr Bueso <dave@stgolabs.net>, Srujana Challa <schalla@marvell.com>, 
- Bharat Bhushan <bbhushan2@marvell.com>, Antoine Tenart <atenart@kernel.org>, 
- Herbert Xu <herbert@gondor.apana.org.au>, Raag Jadav <raag.jadav@intel.com>, 
- Hans de Goede <hansg@kernel.org>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
- Jiri Slaby <jirislaby@kernel.org>, Andy Shevchenko <andy@kernel.org>, 
- Mika Westerberg <mika.westerberg@linux.intel.com>, 
- Andi Shyti <andi.shyti@kernel.org>, Robert Richter <rric@kernel.org>, 
- Mark Brown <broonie@kernel.org>, 
- Nirmal Patel <nirmal.patel@linux.intel.com>, 
- Kurt Schwemmer <kurt.schwemmer@microsemi.com>, 
- Logan Gunthorpe <logang@deltatee.com>, Linus Walleij <linusw@kernel.org>, 
- Bartosz Golaszewski <brgl@kernel.org>, 
- Sakari Ailus <sakari.ailus@linux.intel.com>, 
- Bingbu Cao <bingbu.cao@intel.com>, 
- Tomasz Jeznach <tomasz.jeznach@linux.dev>, 
- Jonathan Cameron <jic23@kernel.org>, Ulf Hansson <ulfh@kernel.org>, 
- Shawn Lin <shawn.lin@rock-chips.com>
-Cc: Arnd Bergmann <arnd@arndb.de>, Benjamin Tissoires <bentiss@kernel.org>, 
- linux-input@vger.kernel.org, linux-i3c@lists.infradead.org, 
- dmaengine@vger.kernel.org, Philipp Stanner <phasta@kernel.org>, 
- netdev@vger.kernel.org, nic_swsd@realtek.com, linux-arm-msm@vger.kernel.org, 
- dri-devel@lists.freedesktop.org, linux-usb@vger.kernel.org, 
- iommu@lists.linux.dev, linux-riscv@lists.infradead.org, 
- David Airlie <airlied@gmail.com>, Simona Vetter <simona@ffwll.ch>, 
- linux-cxl@vger.kernel.org, linux-crypto@vger.kernel.org, 
- platform-driver-x86@vger.kernel.org, linux-serial@vger.kernel.org, 
- mhi@lists.linux.dev, Andy Shevchenko <andriy.shevchenko@linux.intel.com>, 
- Jan Dabros <jsd@semihalf.com>, linux-i2c@vger.kernel.org, 
- Daniel Mack <daniel@zonque.org>, Haojian Zhuang <haojian.zhuang@gmail.com>, 
- linux-spi@vger.kernel.org, Jonathan Derrick <jonathan.derrick@linux.dev>, 
- linux-pci@vger.kernel.org, linux-gpio@vger.kernel.org, 
- Mauro Carvalho Chehab <mchehab@kernel.org>, linux-media@vger.kernel.org, 
- linux-mmc@vger.kernel.org
-In-Reply-To: <1771860581-82092-1-git-send-email-shawn.lin@rock-chips.com>
-References: <1771860581-82092-1-git-send-email-shawn.lin@rock-chips.com>
-Subject: Re: (subset) [PATCH 0/37] PCI/MSI: Enforce explicit IRQ vector
- management by removing devres auto-free
-Message-Id: <178357565325.731734.7291964273199898845.b4-ty@b4>
-Date: Thu, 09 Jul 2026 07:40:53 +0200
+	s=k20260515; t=1784289763;
+	bh=M6dliTL3upPz3AWTcFuW/Bf8sQHGqFSf/FvFJ52AEJY=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=afG26BD5DJqcY9jFPHWwLoeF+nbY3GkVgbzmYISsj7xeZVCukUAa6Tdq4RdHOi1kv
+	 VhO0c4wlgnq8/uJ4G1UyEHvTyxI9wOPKKaqgViGb19EFGyS0cg19B9qoWfDnJR0YZm
+	 xD7VopeVKolG7iP9adxYqAQAtLV8auh9YJx/PsTDMa4HNn8peJiYCom6ppiEpBE6Ri
+	 O5VPY2KO8x4IepP8GFuNG7upUnYOFwAgzIaIiRLTvysiIiBbNcvkYDfO9/wew8cRsb
+	 l3JKPUr7GFFU/UKQZM1P948sh1G9gBvmTEg4KhGcT678i50OfZ6MBUBq9hVbqmsveD
+	 3Nyo9BqNTTjfQ==
+Date: Fri, 17 Jul 2026 13:02:35 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Swark Yang <syang@axiado.com>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Harshit Shah <hshah@axiado.com>,
+	Linus Walleij <linusw@kernel.org>,
+	Bartosz Golaszewski <brgl@kernel.org>, Jan Kotas <jank@cadence.com>,
+	Michal Simek <michal.simek@amd.com>,
+	Andi Shyti <andi.shyti@kernel.org>,
+	=?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>,
+	Boris Brezillon <bbrezillon@kernel.org>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Jiri Slaby <jirislaby@kernel.org>,
+	Mathias Nyman <mathias.nyman@intel.com>, devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+	linux-gpio@vger.kernel.org, linux-i2c@vger.kernel.org,
+	linux-i3c@lists.infradead.org, linux-serial@vger.kernel.org,
+	linux-spi@vger.kernel.org, linux-usb@vger.kernel.org
+Subject: Re: [PATCH v3 6/8] dt-bindings: spi: dw-apb-ssi: add Axiado AX3005
+ SPI variant
+Message-ID: <6d69cfd0-5f3b-4324-8d64-b4695cbb3e92@sirena.org.uk>
+References: <20260716-upstream-axiado-ax3005-upstream-v3-0-c429095143ec@axiado.com>
+ <20260716-upstream-axiado-ax3005-upstream-v3-6-c429095143ec@axiado.com>
 MIME-Version: 1.0
-X-Mailer: b4 0.15.2
+In-Reply-To: <20260716-upstream-axiado-ax3005-upstream-v3-6-c429095143ec@axiado.com>
+X-Cookie: Enjoy yourself while you're still old.
 X-Mailman-Approved-At: Thu, 30 Jul 2026 07:36:08 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -116,26 +81,64 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============6393451709628847560=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Ck9uIE1vbiwgMjMgRmViIDIwMjYgMjM6Mjk6MzkgKzA4MDAsIFNoYXduIExpbiB3cm90ZToKPiBU
-aGlzIHBhdGNoIHNlcmllcyBhZGRyZXNzZXMgYSBsb25nLXN0YW5kaW5nIGRlc2lnbiBpc3N1ZSBp
-biB0aGUgUENJL01TSQo+IHN1YnN5c3RlbSB3aGVyZSB0aGUgaW1wbGljaXQsIGF1dG9tYXRpYyBt
-YW5hZ2VtZW50IG9mIElSUSB2ZWN0b3JzIGJ5Cj4gdGhlIGRldnJlcyBmcmFtZXdvcmsgY29uZmxp
-Y3RzIHdpdGggZXhwbGljaXQgZHJpdmVyIGNsZWFudXAsIGNyZWF0aW5nCj4gYW1iaWd1aXR5IGFu
-ZCBwb3RlbnRpYWwgcmVzb3VyY2UgbWFuYWdlbWVudCBidWdzLgo+IAo+ID09PT0gVGhlIFByb2Js
-ZW06IEltcGxpY2l0IHZzLiBFeHBsaWNpdCBNYW5hZ2VtZW50ID09PT0KPiBIaXN0b3JpY2FsbHks
-IGBwY2ltX2VuYWJsZV9kZXZpY2UoKWAgbm90IG9ubHkgbWFuYWdlcyBzdGFuZGFyZCBQQ0kgcmVz
-b3VyY2VzCj4gKEJBUnMpIHZpYSBkZXZyZXMgYnV0IGFsc28gaW1wbGljaXRseSB0cmlnZ2VycyBh
-dXRvbWF0aWMgSVJRIHZlY3RvciBtYW5hZ2VtZW50Cj4gYnkgc2V0dGluZyBhIGZsYWcgdGhhdCBy
-ZWdpc3RlcnMgYHBjaW1fbXNpX3JlbGVhc2UoKWAgYXMgYSBjbGVhbnVwIGFjdGlvbi4KPiAKPiBb
-Li4uXQoKQXBwbGllZCwgdGhhbmtzIQoKWzEzLzM3XSBidXM6IG1oaTogaG9zdDogUmVwbGFjZSBw
-Y2lfYWxsb2NfaXJxX3ZlY3RvcnMoKSB3aXRoIHBjaW1fYWxsb2NfaXJxX3ZlY3RvcnMoKQogICAg
-ICAgIGNvbW1pdDogMjU2OTk1ZTgwZmNkMzljYWI5NGVlZTgxMzVkZDkwZjZkYTZhYzc0NAoKQmVz
-dCByZWdhcmRzLAotLSAK4K6u4K6j4K6/4K614K6j4K+N4K6j4K6p4K+NIOCumuCupOCuvuCumuCu
-v+CuteCuruCvjQoKCgotLSAKbGludXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LWkzYwo=
+
+--===============6393451709628847560==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="70M3+S0UoM/WolbI"
+Content-Disposition: inline
+
+
+--70M3+S0UoM/WolbI
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Thu, Jul 16, 2026 at 08:51:13PM -0700, Swark Yang wrote:
+> Add binding for Axiado AX3005 SPI controller. So far, no changes
+> are known, so it can fall back to the snps,dwc-ssi-1.01a compatible.
+
+Please include human readable descriptions of things like commits and
+issues being discussed in e-mail in your mails, this makes them much
+easier for humans to read especially when they have no internet access.
+I do frequently catch up on my mail on flights or while otherwise
+travelling so this is even more pressing for me than just being about
+making things a bit easier to read.
+
+If there is no need for things to be part of a multi-subsystem series
+(eg, dependencies) it's normally better to send each subsystem
+separately.
+
+--70M3+S0UoM/WolbI
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAmpaGdoACgkQJNaLcl1U
+h9CYYgf/a6ZXfaJE/jmFwdCosDxknw75RDj7nPAqr8ZtQ6OEKCVRSIVBgwrMG1B6
+7TPPAIzIrDPqOWeb/BZihDW7BKUj2aDsl7pZivADMe0txrRhev2UcBUZUMxW1sXn
+DgyCTELlXBzkCAltV41zPIZTn6Rwcy8lHkkDXAfh0JGD5azOUiDxKAusCY9IhML1
+YtCaED6Zm325NAZ+cUqXIKy177WK3d4XQrt4N/qPahtGnlsER6BwUocE9HGNpNLh
+l3iTBw5h+slXmMR6H40Ax4/E64jiKe5RpDEW3MeDQgZLROX+xs5G+fp3eE5NGFPQ
+Z9zQeNxaiqK3XtZlukPgm9tW3O9UDA==
+=i8XU
+-----END PGP SIGNATURE-----
+
+--70M3+S0UoM/WolbI--
+
+
+--===============6393451709628847560==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
+
+--===============6393451709628847560==--
+
