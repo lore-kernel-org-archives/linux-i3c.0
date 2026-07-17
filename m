@@ -4,148 +4,111 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8167DC44514
-	for <linux-i3c@archiver.kernel.org>; Fri, 17 Jul 2026 08:59:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 66FCBC44507
+	for <linux-i3c@archiver.kernel.org>; Fri, 17 Jul 2026 10:58:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O0Thr/jGZLNttPUV2qargIoSPQkDxxVLvZ8yuNmsJvc=; b=gXiwXfC2D2Ii5S
-	kmKrHfgYHLCtyhvU+Q1zAfyrbFgl1+9yNdv+F6D2w9bMKFsNSQ8v00tsOEaIMMUkgkcHEDgDJeXHl
-	z0g9voRzLwfyD+U/BLatFM2VqbtdL3UJw46AchTfqX8rPIwcV2u1HDzFYgXiqfnnmZ3tWEyckm0iQ
-	xrgenjVkyS4RGU7m0RQU66BhvrbfFCjgx/KoxoggrPkFmLxe4zG8wTuHIU+nt7mpkBFJ996SxiGsH
-	SoU2BKeWlmOcORIK6RNUdy+tokTqCJt00qGgikJdcckZkkWl8k38JfwGi+KXCi1f/RVQZboFJPo1q
-	zklf0Ul/ZIBYZt++f2Wg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=007Opw2UmZ3yekFoxpRDT3TKTZgWqrA35bwLCAImSB8=; b=guOvnqDDlQ2I2v
+	nI8zEiwtmTd7MFl/9c1JaYJuCFU7e9BEaDYnr6BBuGEi0Kr7myZ2WeDWBCgaWqU0NNcKm6Sk+X2lH
+	zl2zIP8fsF6ERdgZmSZ9i1PUN1uEnj6fQDQGO/OYuwKWOfoTtQlJ3n7OwzPFNRZMFMo1FHLoVGG4f
+	1YZQSaCE463PjhaGqt+8f7ZDM38jwF6JamUBGgf8CEE7nDUkT7FsQPkvqSTnBQW6isqOKT3Zqyds5
+	W0fvcJsCgLsq++G+/7qEC2bssWif7r3c8ac4RWklRPcgGraQT+B632eW5eSGBj1f+mGmKC/kZDZ3t
+	LRU5To5Y6Jy17MSeCZWw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wkePO-00000001l5u-0q9e;
-	Fri, 17 Jul 2026 08:59:02 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1wkgHK-000000024nY-0UH7;
+	Fri, 17 Jul 2026 10:58:50 +0000
+Received: from mail-southcentralusazlp170130001.outbound.protection.outlook.com ([2a01:111:f403:c10c::1] helo=SA9PR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wkePL-00000001l4t-1w15
+	id 1wkgHH-000000024mW-1f1B
 	for linux-i3c@lists.infradead.org;
-	Fri, 17 Jul 2026 08:59:00 +0000
-Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66H6cfxc1078357
-	for <linux-i3c@lists.infradead.org>; Fri, 17 Jul 2026 08:58:58 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	V6MbJnmX7m7Q+rNiwCmFsJ4wLFKfE9U7mLaz8j8CV9U=; b=l400jifcL5aKd65B
-	5LUw2Bc0DKEUaD+NP5xqtPA0B+pUH7FOZJXvTs+5QjLB6A5Gg8elI6ZNoyfPveE3
-	c6jq6vIIbzxH9mI9jgJ3j0N+TLBSoEiiPaWzLOHUlLViZNgsZmc/WjtUN0Bh+1wD
-	FBsECLyhP50+rHKfuAww3lq6pCtK3FMsoNMX/+5UPmIhIgCf+34zN7ItdPiQRVn1
-	YuBZTVahOP5+znFPqWN37skx8eW25UhncLxEY5No6gd7D2EJk6mlPGaNSy+HmlSv
-	7ZU/elCzCRgFqR2DaXZBaHSiUoaiCj/LdbpP9HjwCRdDBT6RXnsOPSUQ69WmcMTU
-	YlF3BA==
-Received: from mail-qv1-f70.google.com (mail-qv1-f70.google.com [209.85.219.70])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4feym1ca7b-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-i3c@lists.infradead.org>; Fri, 17 Jul 2026 08:58:58 +0000 (GMT)
-Received: by mail-qv1-f70.google.com with SMTP id 6a1803df08f44-8f1e4e0eac1so113877146d6.1
-        for <linux-i3c@lists.infradead.org>; Fri, 17 Jul 2026 01:58:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1784278737; x=1784883537; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:mime-version:references
-         :in-reply-to:message-id:date:subject:cc:to:from:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=V6MbJnmX7m7Q+rNiwCmFsJ4wLFKfE9U7mLaz8j8CV9U=;
-        b=W2HRlciYJk5Rif1oxWescJKn6yoOjN3LFQgxjU7IOwyES9KRFsqE7gqF1mXJeomA9k
-         u+mk9Fa+RpTzSuVfgeKd5RQKpgEhqTeX0d0e92vZAgZ29lpL+iSro3WEKU4Zmj7FVLYD
-         RN1v//dzzBRxuF1ThcwdMAZ3473Mg5Bl7N7bg+nuZtkJNUm74pKJAHobGTAMdR6NfEbl
-         om2qAe/ByvlzHAylX7zciYedNpLP1op8R8/Yz1FHExwbeCJsyhXxhJXC3lvaf44C3Su0
-         pCf+II/96jqU5OKaab5anWhGvmGtJj/iJW4n17MIq+feN4xJywFDNpR6TDnMWSBM9tiC
-         njvQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1784278737; x=1784883537;
-        h=content-transfer-encoding:content-type:mime-version:references
-         :in-reply-to:message-id:date:subject:cc:to:from:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=V6MbJnmX7m7Q+rNiwCmFsJ4wLFKfE9U7mLaz8j8CV9U=;
-        b=bEsgR+sD2gu+AnzdIB9tUdRRC3hFMlkYlNL6NUC3t1MvmrjL8nolBLdCMOH7oH4m7T
-         iTFD5pckdbgEau+y7ecJHDVT+QFwLGqb3D5USlI6bRbD9FC+fXFcYLxf9Oq8ghA10jDu
-         HvQbeknXorXGuSzL43XJfMa7iVLZIIcAcV8sGvPYA9rI5usGZz/rQw1AaLwy5ra2Qq+0
-         wU+p4ubUbnwNuCz10vECWm97w8NaLRNt4kOBCMTDH9NEwH/T/fOxHxBDakSLHhnONZoR
-         KYfzQi5STuhQnlXOkLrnJYXjESWknI3NtUMGPV2BENr4My4LaebNXdt+jLJVh/5gj+Wa
-         DOIg==
-X-Forwarded-Encrypted: i=1; AHgh+Rob3B0Sf6h6W+Z5OYKpg2cq/g0ag5kYpbCCWFGP3/QS6RwbdXKo3rX1sxgQ/nK5fiRwlHCa9WwlIro=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwhnXSqMWG7uATCVXLCqZn0gT4kGpaW0TpdG3xAXNy1v1KpUZXx
-	wLxGb8nGW+4m0YkvvpxQTTNu47OeRtbHIh8pUxJFVF6vudZPFdN+cazAbPQi+34w5LtSK2zZGS0
-	DtJ7slDoCqBBc1xpJE/Wmfl+m/z1RhEjJojhSXnEXj9fbAQPnaEogxdfN+Q68U7PJbvmH
-X-Gm-Gg: AfdE7ckRSBeRLAGtDpsVyxatRfho1weEqKSHtGjlRverPIbqbz/vnGZsyNLPIrznLxP
-	zP5Dg6MFEhC5UBGgsURJmIcc1KG1KvVtm3hwqOZw4Lv633M16eplFCZjXN3ElMGHFBUJxZqqwh6
-	toRSt+1Wr5zBrzCHpZOs/vxzGATZKkV/vKPX2B2Rogg+7YouHxClwSM6Xx98tzDz1MAhzQYIVbq
-	Bp4I/mWqZO+18l7QsphnZui1PCv4JJnJ5s058UXBmlvt6O2twli9uzfhSGE2POgqxaZd2egcb2m
-	ue9xTUotc08ki5EnXLDGW01v0QDVPUGEQKwOOjywW4DdNl3r+BdQ9cv5y/y06rax7X2CEynDAy4
-	Kkg+R2J/WS6H/WauvPqvWJYgls2qR
-X-Received: by 2002:a05:622a:1346:b0:51c:1eb5:333d with SMTP id d75a77b69052e-5213eb757d0mr12604681cf.66.1784278737599;
-        Fri, 17 Jul 2026 01:58:57 -0700 (PDT)
-X-Received: by 2002:a05:622a:1346:b0:51c:1eb5:333d with SMTP id d75a77b69052e-5213eb757d0mr12604541cf.66.1784278737262;
-        Fri, 17 Jul 2026 01:58:57 -0700 (PDT)
-Received: from brgl-qcom.home ([2a01:cb1d:dc:7e00:dc44:5b1b:5396:79d6])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-47f63e65644sm1911449f8f.16.2026.07.17.01.58.54
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Fri, 17 Jul 2026 01:58:55 -0700 (PDT)
-From: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
-To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-        Conor Dooley <conor+dt@kernel.org>, Harshit Shah <hshah@axiado.com>,
-        Linus Walleij <linusw@kernel.org>,
-        Bartosz Golaszewski <brgl@kernel.org>, Jan Kotas <jank@cadence.com>,
-        Michal Simek <michal.simek@amd.com>,
-        Andi Shyti <andi.shyti@kernel.org>,
-        =?UTF-8?q?Przemys=C5=82aw=20Gaj?= <pgaj@cadence.com>,
-        Alexandre Belloni <alexandre.belloni@bootlin.com>,
-        Frank Li <Frank.Li@nxp.com>, Boris Brezillon <bbrezillon@kernel.org>,
-        Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-        Jiri Slaby <jirislaby@kernel.org>, Mark Brown <broonie@kernel.org>,
-        Mathias Nyman <mathias.nyman@intel.com>, Swark Yang <syang@axiado.com>
-Cc: Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>,
-        devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-        linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
-        linux-i2c@vger.kernel.org, linux-i3c@lists.infradead.org,
-        linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
-        linux-usb@vger.kernel.org, Conor Dooley <conor.dooley@microchip.com>
-Subject: Re: (subset) [PATCH v3 0/8] arm64: Add Axiado AX3005 SoC and EVK support
-Date: Fri, 17 Jul 2026 10:58:47 +0200
-Message-ID: <178427872043.9452.9219608850005529427.b4-ty@oss.qualcomm.com>
-X-Mailer: git-send-email 2.47.3
-In-Reply-To: <20260716-upstream-axiado-ax3005-upstream-v3-0-c429095143ec@axiado.com>
-References: <20260716-upstream-axiado-ax3005-upstream-v3-0-c429095143ec@axiado.com>
+	Fri, 17 Jul 2026 10:58:48 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=YlPbexpH7rtwXyU1olCDa6HingK0hHd9EGht/VyzyGUyntWxOiYCs3IZwgTk4eOHGOxDMfK5C+22/aY4Qqlv/lflnoNSBiT9kx2rWkLKgr+T2C+T8AY026j5s3YHHI2q4Jdu3+ZdqvEwcdUoZDa2Ds4f+cRNNBeZjZT7xs/9tjS2sYv6wXWdX/K1YmXHQWe0mgsGmiZHnjzAfWQFrbt3mZxfruh9FAZz6wuq1qgj5NgEtvsWbtc92gEoGM2JY2hPGJ9pEWON7yrRe96Y7r430OCoQCpmqYnTnGmMVfmIkUgV8xw2CCF9JGLeN/+enTe8+PqaxIdn0DAunAblPsa3GQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=yRYeAw+7aBSpV6WT4hcuV5EiFzbWiq1oOReKg+Z+TGw=;
+ b=M8tb51LeHz9f8QQDZq7nBG6M1NFHg9FzSgpFtrqpZt1YOVLxnWfRE17S69NJj9pw/frwjaMuprMmq6Zyqf1TSjlSJ92Mki86Ui4N8InksIJKebtwqgZHt5uKAxPXfokKL5+5ql5QnFnfBUNbaJPqiZAd5YD43ZQ6i2wBCwFlHPQyLKnQhBxBMNr3z4Am9/AbMyt1HKvn0sQh44YZ/Oz9C0LUS3ZRiR5+8NLLppWNvJkTAlT8XfcGfyqLuLEBXPYymnWpglwvMUfxtxmXBsH7T7JIMD4i4UjovBNuOVsMcBFcvJSmmF3NnUAL/XGldN1uqvDwBdd8es51MXcsHQ9cKg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 165.204.84.17) smtp.rcpttodomain=bootlin.com smtp.mailfrom=amd.com;
+ dmarc=pass (p=quarantine sp=quarantine pct=100) action=none
+ header.from=amd.com; dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=yRYeAw+7aBSpV6WT4hcuV5EiFzbWiq1oOReKg+Z+TGw=;
+ b=q6IiKNtYImMM3WKcevj5dgs4rDrAsmfs22Bsuxm4OcXUaVrneWzP9V5wj2ozMaQwY/dp5fnDm45KAfGcuvLcgFpDqcqV1zl1ji9X9hQusgzsDTFLKqi3c2NcT5k5GVboIDv9HUcRNIePvsEw+pEusssgwlhtnbLoxE6gEkRcXA0=
+Received: from SJ0PR05CA0178.namprd05.prod.outlook.com (2603:10b6:a03:339::33)
+ by SA0PR12MB7073.namprd12.prod.outlook.com (2603:10b6:806:2d5::8) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.223.10; Fri, 17 Jul
+ 2026 10:58:41 +0000
+Received: from SJ1PEPF00001CDE.namprd05.prod.outlook.com
+ (2603:10b6:a03:339:cafe::7c) by SJ0PR05CA0178.outlook.office365.com
+ (2603:10b6:a03:339::33) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.245.5 via Frontend Transport; Fri, 17
+ Jul 2026 10:58:41 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
+ smtp.mailfrom=amd.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=amd.com;
+Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
+ 165.204.84.17 as permitted sender) receiver=protection.outlook.com;
+ client-ip=165.204.84.17; helo=satlexmb08.amd.com; pr=C
+Received: from satlexmb08.amd.com (165.204.84.17) by
+ SJ1PEPF00001CDE.mail.protection.outlook.com (10.167.242.6) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.245.5 via Frontend Transport; Fri, 17 Jul 2026 10:58:40 +0000
+Received: from satlexmb10.amd.com (10.181.42.219) by satlexmb08.amd.com
+ (10.181.42.217) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.41; Fri, 17 Jul
+ 2026 05:58:40 -0500
+Received: from satlexmb08.amd.com (10.181.42.217) by satlexmb10.amd.com
+ (10.181.42.219) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.41; Fri, 17 Jul
+ 2026 05:58:39 -0500
+Received: from xhdshubhraj40.xilinx.com (10.180.168.240) by satlexmb08.amd.com
+ (10.181.42.217) with Microsoft SMTP Server id 15.2.2562.41 via Frontend
+ Transport; Fri, 17 Jul 2026 05:58:36 -0500
+From: Shubham Patil <shubhamsanjay.patil@amd.com>
+To: <alexandre.belloni@bootlin.com>, <Frank.Li@nxp.com>, <robh@kernel.org>,
+	<krzk+dt@kernel.org>, <conor+dt@kernel.org>
+CC: <linux-i3c@lists.infradead.org>, <devicetree@vger.kernel.org>,
+	<linux-kernel@vger.kernel.org>, <radhey.shyam.pandey@amd.com>,
+	<michal.simek@amd.com>, Shubham Patil <shubhamsanjay.patil@amd.com>
+Subject: [PATCH] dt-bindings: i3c: dw: Document missing optional core reset
+Date: Fri, 17 Jul 2026 16:28:28 +0530
+Message-ID: <20260717105829.567522-1-shubhamsanjay.patil@amd.com>
+X-Mailer: git-send-email 2.49.1
 MIME-Version: 1.0
-X-Authority-Analysis: v=2.4 cv=KPRqylFo c=1 sm=1 tr=0 ts=6a59eed2 cx=c_pps
- a=oc9J++0uMp73DTRD5QyR2A==:117 a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10
- a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10 a=VkNPw1HP01LnGYTKEx00:22
- a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22 a=VwQbUJbxAAAA:8
- a=EUspDBNiAAAA:8 a=zGYnv34WkyyXCUjmJXsA:9 a=QEXdDO2ut3YA:10
- a=iYH6xdkBrDN1Jqds4HTS:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzE3MDA4OSBTYWx0ZWRfXyY5owXZYfT5K
- fsXyHJpcKw3mOsMjJQ0U4/5BseCQlJ0NqPi4uqm/FwB495zRzxxpVZd8QuzQ5+ayjs9l5KSGFMH
- 2SWLmcNPtFdnsld4ptOV5R3xkDZ+OwDXMpkxWZaDLpv8ag6clKT8H+rH0ODMpld3fjqw8lQoibZ
- Hg03CmGFPwujy6WXevkWmtt+UGarkuU8Cfiiwm+6CYRVkBtBGYNFRqrFatjX/D6zi/+3CI/LbBy
- a3cUo8MTcr4O2YXjfAKjW2MRi585sOxYXEM5DRqvT7bcz0FoLRJ28Liq0Nc1TdCDwqc0R+RC00o
- wfOYe0PpdjTTXObNh7CQyyRHD+HBRvRpdxDNChWYWEFIEVdH4LRxk0lysm6lX3dx9GdKot1A3Mo
- fA47N/Kn4XbEH7a6tA1BNzmiGZ/Sdp9eOOo6G/IR5tNihBcmixsiodt5HwPSgg73sk7SzZSerGS
- ty9auggnKNaZcVvhPQA==
-X-Proofpoint-Spam-Info: AW1haW4tMjYwNzE3MDA4OSBTYWx0ZWRfX0UE0j4YyRcAE
- QbbFRq/fmxHvB3LbZ+L1MZHxU4VOLaTmRoDrUqCYZBHaspKJRMJKh1aFm4fDkLqDfQBzCEwABxq
- Yyf6TMEAXezjICNG9NneykRZBmCfxto=
-X-Proofpoint-GUID: isPndoYRwjg5G-2fqdfW5lmtBtETkvi7
-X-Proofpoint-ORIG-GUID: isPndoYRwjg5G-2fqdfW5lmtBtETkvi7
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-07-17_02,2026-07-15_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 lowpriorityscore=0 adultscore=0 impostorscore=0
- clxscore=1011 malwarescore=0 bulkscore=0 spamscore=0 phishscore=0
- suspectscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
- definitions=main-2607170089
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: SJ1PEPF00001CDE:EE_|SA0PR12MB7073:EE_
+X-MS-Office365-Filtering-Correlation-Id: 7faba198-f05f-404f-f6c3-08dee3f25c8c
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|376014|1800799024|23010399003|36860700016|56012099006|11063799006|10067099003|18002099003;
+X-Microsoft-Antispam-Message-Info: lYs4TV3IdWSAD/zBFciJlGGzceqqwDhRcBCCUbT0LQChLfwkJjquULfLfwQxI3H9X0ErR7eEQG5jKQIrtYsciy7ygHc7TslQvLS3YjczFFnrAm5WAfnsiEY1HNH/ir1IRiIRmQ82Yzd8eSUoQGY8Jf5opj3Rvj+RHbz0RhW325pMFwufNfbCY9zgYyvloiZUFCYaHus0Aj17WllvKtceISpTWxvHYXY3qAiqdVTDTbKWxCIEZAKJcK3ngW8ofUNWmx0Y6qCOW6FbvwKN584IvZqwoz/XAPpoQ6mixNynWQyGawaO1FdHWjILDVkCUI4zBQmkVJYoavZlMh4ECmT5AGCFEyMV/tZLhrQl2LMLHPf/ciecM1do9Ytuf+pP1sPrYUq8AszJ8/crPWk/VRzuDBM1zRVsIUVnDdSPkWWP9X/vZ5xFskeXUlhXAR/z9dFwOBtNkxWBuZZXYgcBV3CXhmbg/cwBtOjwaoqG2Hjwo4YfmAu3eBwYfIPrYF2zvBQEiqO8687nCT3vDrHdc07D9L8XtWBYyONTYdKU2f02SJ43ae2QVGYMWMiB7C/tOGytuMDGyopui/L+Xf0qXdOL6wNksPHz4UpB1aLbeAp9t5GQQnF13DAzHjfhh4+VAhMctiltYZULVoH0ZCd1zHH/NrA+WLXb+gOnLq2jAoqRwFVsert5MMp9N4IRsdU1w2MqOlqib1FveTG03rrwwr0Cww==
+X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:satlexmb08.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(82310400026)(376014)(1800799024)(23010399003)(36860700016)(56012099006)(11063799006)(10067099003)(18002099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: MkyMauL5QDx6ZoVGB9d/VSYkiLEFUmf+EDL3/HPRVpTrhiB5QEWKzfv8ksAjKWqfOre+zB1bPuPGmUs9+65/RA2CPECBEQE2qQICtve9/Fnz2EnXaA6dSMwVNSKkSiXk6PvQeNg3E5wpQ6wjRU3xNIZxXt+EDZd8rmUc0sCRdTnqci2O70QFqdpDTxxX7KoiYFDsyLNroM9mQhYy+KjCncVHBkogTGVM1vweUk/Zj0XUUp9+R3yaRROGO/Nox5qPavmXc6vqAK/l+OK9JJvjZLm5e6lC29v8T8cgYBUfqhTCWPRyiCA28mH99wL63joajzkpMYv7FPRHTC6xuoyk80SZ4es7o03QI6WNWy598/LTP6jdOtl4xmVKyng6RVb4AZVtxx/VyF3xQKHAJn2VlzW+PrVr/9VZ2uz+yUa/IHdZuktbusqTanxd4FhTk06j
+X-OriginatorOrg: amd.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Jul 2026 10:58:40.6265
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7faba198-f05f-404f-f6c3-08dee3f25c8c
+X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[satlexmb08.amd.com]
+X-MS-Exchange-CrossTenant-AuthSource: SJ1PEPF00001CDE.namprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA0PR12MB7073
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260717_015859_623916_83224FE7 
-X-CRM114-Status: GOOD (  12.29  )
+X-CRM114-CacheID: sfid-20260717_035847_437555_11A5C97A 
+X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -162,27 +125,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+The DesignWare I3C master IP supports a core reset input, but the
+binding is missing the corresponding reset description.
 
-On Thu, 16 Jul 2026 20:51:07 -0700, Swark Yang wrote:
-> This series adds initial device tree support for the Axiado AX3005 SoC
-> and its evaluation board (EVK).
-> 
-> The AX3005 uses Cadence-derived UART/I2C/I3C/GPIO and Synopsys
-> DesignWare SPI IP blocks. These are already described by
-> existing bindings, so the device tree reuses the "axiado,ax3000-*",
-> "cdns,*" and "snps,*" compatible strings; only a new SoC/board
-> level compatible is added.
-> 
-> [...]
+Document the reset property and name in the binding. Keep the reset
+optional because the reset line is integration-specific..
 
-Applied, thanks!
+Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
+---
+Note:
+The DesignWare I3C driver support was added by
+1dd728f5d4d4 ("i3c: master: Add driver for Synopsys DesignWare IP").
 
-[2/8] dt-bindings: gpio: cdns: add Axiado AX3005 GPIO variant
-      https://git.kernel.org/brgl/c/e8a40b3566887c1c83d4cb87058d4e98ec8b4a14
+The original Synopsys DesignWare I3C binding was added by
+116e246a8bcd ("dt-binding: i3c: Document Synopsys DesignWare I3C"),
+but it did not document the optional core reset.
+---
+ .../devicetree/bindings/i3c/snps,dw-i3c-master.yaml         | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-Best regards,
+diff --git a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
+index e803457d3f55..822faf8d221b 100644
+--- a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
++++ b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
+@@ -38,6 +38,12 @@ properties:
+   interrupts:
+     maxItems: 1
+ 
++  resets:
++    maxItems: 1
++
++  reset-names:
++    const: core_rst
++
+   power-domains:
+     maxItems: 1
+ 
+
+base-commit: a13c140cc289c0b7b3770bce5b3ad42ab35074aa
 -- 
-Bartosz Golaszewski <bartosz.golaszewski@oss.qualcomm.com>
+2.49.1
+
 
 -- 
 linux-i3c mailing list
