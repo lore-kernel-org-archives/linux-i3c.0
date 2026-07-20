@@ -4,76 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C56F9C44515
-	for <linux-i3c@archiver.kernel.org>; Mon, 20 Jul 2026 17:01:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94C1BC44520
+	for <linux-i3c@archiver.kernel.org>; Mon, 20 Jul 2026 17:10:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PM99VB/2C+tDZmzCe2qoQKMMqERrSieIkSKqfsD/PYY=; b=SYqmAlQC5dfkRt
-	fcBuzcBvJtFJgAoGkGOQORYXpuRVJiyCHDwzGFazqEmViQjyZiTYBUuvl/wjinNZyt51RwGtFJDLW
-	SoBkJu5CSFUZYpYbe64bdVdgKsY1eP2cRnfOsExIikuk7kU0KPoJuNRmBLwgwHNuMdaFkPV6CbH/d
-	sqHeYnwzZ/m9VFll12bIiwNAIUQmeqYBSDLsMiPURpRJF7ybqugM8+M7jTyDEB7KPHd/NbwSKzJLt
-	rUQZGNK52fihNe9ZUZjLsogXaa1HPP5lD9GgEBr0NMem/JYX8dmwMQNCgNwWY+YCiZ8oxVkg5FeJg
-	cGAuG52mNg+N9jHEU0tQ==;
+	List-Owner; bh=+H7OwCUdApJrpVRvfITHBMPai2U7QKwvyeUzuaSYlSE=; b=gsJ9/1LGkbcLac
+	ZdRqdc4rJB3jfghL5CE92XeJ4kyFPk+mXTqKOTY4Nfe0vlG2cxKA7lNCAvJP1GRGBD2OtGt+INRby
+	ErOrcr1uxRPBbOHGeia29Gl0h+K7qyVrX+wSwHcp3eg7ILbBrHfF6oZspuZM5X8/hIMY/4jNk63FQ
+	MMxOaxLP/PK2zpWqji231Xqph3/1DP963/z1zB0o/uaESEEG77ufrxqlwANveMqWvThy2glDOj5g5
+	TzOyETbofLpdHD+ZiHs4f5CIgpkVor7Hn3ZhPmH4W4JxT0lmWEp8YYoafEMUB5RRcNygcpq0EEjVr
+	kd1zc6Hi9nUvxDUhlUOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlrMV-00000007Skd-23Zr;
-	Mon, 20 Jul 2026 17:01:03 +0000
+	id 1wlrVX-00000007U0F-0vyj;
+	Mon, 20 Jul 2026 17:10:23 +0000
 Received: from smtpout-02.galae.net ([185.246.84.56])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlrMS-00000007SjL-1WxR
+	id 1wlrVU-00000007Tz7-0IlJ
 	for linux-i3c@lists.infradead.org;
-	Mon, 20 Jul 2026 17:01:01 +0000
+	Mon, 20 Jul 2026 17:10:22 +0000
 Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-02.galae.net (Postfix) with ESMTPS id ADC061A10FF;
-	Mon, 20 Jul 2026 17:00:58 +0000 (UTC)
+	by smtpout-02.galae.net (Postfix) with ESMTPS id B812F1A10FF;
+	Mon, 20 Jul 2026 17:10:17 +0000 (UTC)
 Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 7C80260360;
-	Mon, 20 Jul 2026 17:00:58 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 2CC2111BD0382;
-	Mon, 20 Jul 2026 19:00:53 +0200 (CEST)
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 8C15760360;
+	Mon, 20 Jul 2026 17:10:17 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id A7D1211BD0382;
+	Mon, 20 Jul 2026 19:10:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1784566857; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=mZZOF6F/+6qbNKDZNrs6o2rZDEXs+kob5JewkcsaTMI=;
-	b=NO3JayVdQ3CLT/6I5bhNFXPmsyyk3gjtLO74861rznSjjAiL0jbKD4m/9c7UTOuXhyAZIE
-	hK/5x73D6QSBO6KzbYGfA8N2DK7QfB3w0lUQaN293kooZPGiZwXbqtSsOuOm0b/2gdyxe5
-	uoIfaTD8Y7wFX5SCHtuKQrQjcTq+1VykLD3I+wGic9mG0oGlfuOiV4pgz2WvJJABCwuE7i
-	fiRRx9Mq54xB5lnICoVgjRkZ+SYxwhArSIUOW8i5Hx2K2DiXxVsaKuEx+80N3eA+Yb8DZz
-	9FlCpISUFqqIZ+0NJrAH3crNikvFUwc3QiLr1vU1wpoqTvn1YUpNxlpOMtKdaw==
-Date: Mon, 20 Jul 2026 19:00:52 +0200
+	t=1784567416; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=QvUHF9fl6x0NnyzgRQM5iDkaGboTMjtA2Xhi7B6JVuQ=;
+	b=i52LgIET6QdPDSKvqgOHN4iWAnUkEOqVz0X986FfUrrbU7dbsUwGPHIsPyAwNFhSo/GYpb
+	tOejquCvArGNIeNq+0kNe/m0AYNci/2Bh4aB116IZLtRLxb+zNcbec0ECMAfD0tEjFwLxw
+	8IbxAe3I0H4hLQryF1VAPPO+RXfSceLEaWB0qxRyHOCSbW+zHn898/UemDX30XQfqpZQWM
+	dheiPgR/b8vJQEHu50rfcDwhCP8m3Uhd5buT9a41ixJyEcEvmdOfgcecQIoFVfYjfvNSMK
+	4qitxd9P3LNV5bABcWb6hRoRgcVqoj7VLwCZ07M9k+jx5G408ykcLbUR9SGxNQ==
+Date: Mon, 20 Jul 2026 19:10:14 +0200
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Harshit Shah <hshah@axiado.com>,
-	Linus Walleij <linusw@kernel.org>,
-	Bartosz Golaszewski <brgl@kernel.org>, Jan Kotas <jank@cadence.com>,
-	Michal Simek <michal.simek@amd.com>,
-	Andi Shyti <andi.shyti@kernel.org>,
-	=?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>,
-	Frank Li <Frank.Li@nxp.com>,
-	Boris Brezillon <bbrezillon@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Jiri Slaby <jirislaby@kernel.org>, Mark Brown <broonie@kernel.org>,
-	Mathias Nyman <mathias.nyman@intel.com>,
-	Swark Yang <syang@axiado.com>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
-	linux-i2c@vger.kernel.org, linux-i3c@lists.infradead.org,
-	linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
-	linux-usb@vger.kernel.org
-Subject: Re: (subset) [PATCH v3 4/8] dt-bindings: i3c: cdns: add Axiado
- AX3005 I3C variant
-Message-ID: <178456684519.97914.11616437803490580349.b4-ty@b4>
-References: <20260716-upstream-axiado-ax3005-upstream-v3-4-c429095143ec@axiado.com>
+To: jorge.marques@analog.com, Frank.Li@nxp.com,
+	Can Peng <pengcan@kylinos.cn>
+Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] i3c: master: adi: add OF module alias for autoloading
+Message-ID: <178456740837.100432.12678908203961675730.b4-ty@b4>
+References: <20260715012949.180245-1-pengcan@kylinos.cn>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260716-upstream-axiado-ax3005-upstream-v3-4-c429095143ec@axiado.com>
+In-Reply-To: <20260715012949.180245-1-pengcan@kylinos.cn>
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260720_100100_547958_0D416669 
-X-CRM114-Status: UNSURE (   6.09  )
+X-CRM114-CacheID: sfid-20260720_101020_252897_07274505 
+X-CRM114-Status: UNSURE (   6.51  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -91,14 +75,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, 16 Jul 2026 20:51:11 -0700, Swark Yang wrote:
-> Add binding for Axiado AX3005 I3C master. So far, no changes
-> are known, so it can fall back to the cdns,i3c-master compatible.
+On Wed, 15 Jul 2026 09:29:49 +0800, Can Peng wrote:
+> The Analog Devices I3C master driver can be built as a module and uses
+> adi_i3c_master_of_match as its OF match table, but the table is not
+> exported for module alias generation.
+> 
+> Add the MODULE_DEVICE_TABLE(of, ...) entry so modpost can generate OF
+> module aliases for OF based module autoloading.
+> 
+> [...]
 
 Applied, thanks!
 
-[4/8] dt-bindings: i3c: cdns: add Axiado AX3005 I3C variant
-      https://git.kernel.org/i3c/c/0dbcbd4c0b7a
+[1/1] i3c: master: adi: add OF module alias for autoloading
+      https://git.kernel.org/i3c/c/0043b9bb5806
 
 Best regards,
 
