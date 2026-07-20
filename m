@@ -4,64 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4BC9AC44520
-	for <linux-i3c@archiver.kernel.org>; Mon, 20 Jul 2026 16:07:14 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1C967C44520
+	for <linux-i3c@archiver.kernel.org>; Mon, 20 Jul 2026 16:11:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=946ssnzBvd5EI5r+HJmqY43lAO+4pJn8zrVL765YMeg=; b=wCqwJ7gF+AQFmj
-	fx6Df5mqVSBTlIJ7p5C1F1zbHiI6v3DDY+yg5LAUgS4Uahq0h3lAQxdNO5BlPuPz+rC8n1bY/I+c+
-	T0ptyqsulqy5uhu8QjJOdzbuks4u2Jsxf7m4ZY34ZmyQZyNOKKV/KrchHFS3JERB07GKzrczD6hyF
-	RKtwrK4gcwQCSV6JXy8WeOuFHBsNQMtpFVgXCv/lZbqtPI0wXZDy7u0p+VCzbHqb7WOgI0TGqMYdl
-	fNIdwN7et0JXChjHnb9BdSE06DwVlX9LzCBBMi5yD9AlnDPP/Q4qKykGKCSx9imqczxUEpM2XnU6I
-	cFTuVWYmPEtX1UN05qYA==;
+	List-Owner; bh=0V3wCoJ5VUyNBVFN8pOnk1vr86x8igzLGA3nlwSQhsw=; b=oDquIVKN14C6rq
+	ROmX+iyJwY8rTfBYAgKfhJdziCv3pdDDeeR1j6XCTEVBv+aEzldTBHs1NA/XFSs5a6Hb9ihsWg56k
+	PXZIGuOvu2rGfdWeifLb3V0XfnurJJrOdaLtZRWGm+AxI7tZvCFGLo4+t/Mc9YE0i2LFC2Z6FVZhj
+	bW4/p5MTNx6btp18rINV1aQfCMH3OZ03Q6e1EvYXytCodqkXcPb8uZ7Et5GA3cy304ZcvoLsCO+Th
+	oiC2nDr9RFcZ3sYQJ1eIqkFsFxOrAp/+DzCboKt6Y03F8VokIEKfc6mQwN/PwnubaNsgXs6fdo4I8
+	68aKaIPyf/h2BrQIvYPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlqWP-00000007JNr-3YY7;
-	Mon, 20 Jul 2026 16:07:13 +0000
-Received: from smtpout-03.galae.net ([185.246.85.4])
+	id 1wlqar-00000007Jyh-3Re5;
+	Mon, 20 Jul 2026 16:11:49 +0000
+Received: from smtpout-02.galae.net ([185.246.84.56])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlqWM-00000007JNK-0rkV
+	id 1wlqap-00000007Jy3-1cWh
 	for linux-i3c@lists.infradead.org;
-	Mon, 20 Jul 2026 16:07:12 +0000
+	Mon, 20 Jul 2026 16:11:48 +0000
 Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-03.galae.net (Postfix) with ESMTPS id 48B1B4E40E75;
-	Mon, 20 Jul 2026 16:07:05 +0000 (UTC)
+	by smtpout-02.galae.net (Postfix) with ESMTPS id 07BAC1A10FA;
+	Mon, 20 Jul 2026 16:11:45 +0000 (UTC)
 Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 18F8360360;
-	Mon, 20 Jul 2026 16:07:05 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id C6EC211BD3CC1;
-	Mon, 20 Jul 2026 18:07:01 +0200 (CEST)
+	by smtpout-01.galae.net (Postfix) with ESMTPS id CF91E60360;
+	Mon, 20 Jul 2026 16:11:44 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id D3D4611BD3CBB;
+	Mon, 20 Jul 2026 18:11:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1784563624; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=utWdvu19UNZoxJGvC9DGJv7trvlZp6J4sIOyLrpLToc=;
-	b=SfEVFH66oqT+dpdZlYmxW8cXj8hCgnZvQ97i28dcV+BpRyTibFoFlF/Oc1X5s32eT+PHe7
-	kWk35LUlaNlwXb+BsJPoSV2izZ1wPTJ6HUES4TVmdVnreurls+o6M6gwdyLnwWVNP1Uh6s
-	wlFjUNlZTqmESIhVINyYXkDn/+v7sVGy8sjtpvEaC9mKh6jxQAfDIZTshLJO6HURGVZdCC
-	uMY+fUKdbDbU4BUFDGRhmEAClWdR+bQqydFPF32+osTDh3fls/Jpd5fl3bhNF/e5kYCZbL
-	okwjeC9X6VESZV5XsND/gpGsei34x1TKpx7vXoV/I7KUh461x/+MHObPyANCtA==
-Date: Mon, 20 Jul 2026 18:07:01 +0200
+	t=1784563904; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=7zQAOgwqGimQJk4NUMye9WI1q6+ui1gQkPlR9udz7uU=;
+	b=BuckokiK1DbCFeMHW8m7wLj6lJxR+niVExpybXtkuFSomIpPEY4pOf+MKyRagALG5ozRUY
+	/L4paVHINwWIgy2Ot9g+D48Y/JWfhfAVkxEQqQhoqu1h/aIn7mBFhRMs4UWsamf0OR/h4t
+	3BxUqqgTpMnXDsrJZHB+h6QqWQGZoRHPwz0DUAGn5Gjt8YaihzEVhWxUCCDYChBq7PqMg9
+	LeTqoho6CL7HlLzo8Zdu6JAygkaI3Q0+iQRTVjVWPT+/aVatXtFGF3hEycaPmds44QLQQD
+	xxKe6FZuGBuj4DnaxwvsqnbrRaWK9btxHuBVF7+d3HYw675TT2O+lVm3n0tCzQ==
+Date: Mon, 20 Jul 2026 18:11:42 +0200
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Akhil R <akhilrajeev@nvidia.com>
-Cc: frank.li@oss.nxp.com, Frank.Li@kernel.org, conor+dt@kernel.org,
-	devicetree@vger.kernel.org, linux-hwmon@vger.kernel.org,
-	linux-i3c@lists.infradead.org, robh@kernel.org,
-	sashiko-reviews@lists.linux.dev
-Subject: Re: [PATCH v5 04/12] i3c: master: Add support for devices using
- SETAASA
-Message-ID: <202607201607012c70129a@mail.local>
-References: <aj0iG5xplWPWc6m_@SMW015318>
- <20260703090855.1519255-1-akhilrajeev@nvidia.com>
+To: Adrian Hunter <adrian.hunter@intel.com>
+Cc: Frank.Li@nxp.com, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] i3c: master: Fix device_register() error path
+Message-ID: <178456389671.83024.8072769249769459844.b4-ty@b4>
+References: <20260702183644.60827-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260703090855.1519255-1-akhilrajeev@nvidia.com>
+In-Reply-To: <20260702183644.60827-1-adrian.hunter@intel.com>
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260720_090710_383555_78232C3C 
-X-CRM114-Status: GOOD (  22.95  )
+X-CRM114-CacheID: sfid-20260720_091147_608777_74FFC8C5 
+X-CRM114-Status: UNSURE (   5.92  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,64 +75,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 03/07/2026 09:08:55+0000, Akhil R wrote:
-> On Thu, 25 Jun 2026 07:42:03 -0500 Frank Li wrote:
-> > On Thu, Jun 25, 2026 at 09:38:15AM +0000, Akhil R wrote:
-> >> On Wed, 24 Jun 2026 13:57:46 -0400, Frank Li wrote:
-> >> ...
-> >> ...
-> >> >> [Severity: High]
-> >> >> Is it possible that sending the SETAASA broadcast before direct SETDASA
-> >> >> assignments breaks initialization for devices that natively support SETAASA
-> >> >> but are configured for SETDASA?
-> >> >>
-> >> >> According to the I3C specification, any device on the bus natively supporting
-> >> >> SETAASA will respond to this broadcast by adopting its static address as its
-> >> >> dynamic address.
-> >> >>
-> >> >> After this broadcast, the driver iterates through devices and attempts to
-> >> >> assign custom dynamic addresses via direct SETDASA commands:
-> >> >>
-> >> >> drivers/i3c/master.c:i3c_master_early_i3c_dev_add() {
-> >> >>     ...
-> >> >> 	ret = i3c_master_setdasa_locked(master, i3cdev->info.static_addr,
-> >> >> 					i3cdev->boardinfo->init_dyn_addr);
-> >> >>     ...
-> >> >> }
-> >> >>
-> >> >> Since the target device already adopted its dynamic address during the
-> >> >> SETAASA broadcast, it is no longer in the unassigned state and will NACK
-> >> >> the subsequent SETDASA command.
-> >> >
-> >> > Look like correct, but I am not sure if target will NACK SETDASA. Or should
-> >> > use SETNEWDA for SETAASA method.
-> >>
-> >> Yes, this looks valid for mixed device buses. I can move
-> >> i3c_master_setaasa_locked() after the SETDASA handling and before
-> >> i3c_master_do_daa() in the same function, so SETDASA-assigned devices will
-> >> ignore the later SETAASA broadcast. Does that sound good to you?
-> > 
-> > yes, try it to follow spec.
+On Thu, 02 Jul 2026 21:36:44 +0300, Adrian Hunter wrote:
+> When device_register() fails in i3c_master_register_new_i3c_devs(),
+> put_device() is called to drop the reference taken by
+> device_register().  That drops the last reference, so the device's
+> release callback i3c_device_release() runs and frees the i3c_device.
 > 
-> I just noticed that the specification says: if both bits 0 and 1 are set,
-> meaning both SETDASA and SETAASA are supported, the I3C Bus Controller should
-> use SETDASA first.
+> Two problems follow from that:
 > 
-> So moving i3c_master_setaasa_locked() after SETDASA handling follows the spec.
-> 
-> I will wait a few more days before sending v6, to see if there are any other
-> concerns.
+> [...]
 
-No other concerns on my side.
+Applied, thanks!
 
-> 
-> Best Regards,
-> Akhil
-> 
-> -- 
-> linux-i3c mailing list
-> linux-i3c@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-i3c
+[1/1] i3c: master: Fix device_register() error path
+      https://git.kernel.org/i3c/c/a2714ef178e0
+
+Best regards,
 
 -- 
 linux-i3c mailing list
