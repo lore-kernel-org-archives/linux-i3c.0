@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D8367C44515
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0CD3C44521
 	for <linux-i3c@archiver.kernel.org>; Mon, 20 Jul 2026 07:35:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yH1Gye8/l88no7/DkjUGsOsLJ/OOTLpGOZiR7vSTI+Y=; b=YS36RWaPezHVQy
-	NCfAShu6OrNmfwndCSeGqwIMTu0aIsLW41AiXNKedbw7ZVe85KM/tfZr16HcJSQZOILa2jyhBIDtS
-	ZiGXSJEILk6oxxa8jYlycNL538MS22Jb5u6rJwU2FRM8gKDvhh8AhS+Y3badxGNqXJJUcXg/NQoGy
-	0N/qUCSzKMa3nm9OicyNck/Z+mMsJbbwMF55cPw+l7T7PphF2BQBhTmdg0PDhEy27mORJhFrB9Kbx
-	qaJRAjHpf1JGQ6JhCa5ozc3MYifcb7JQ0+OwQGjBiPK6sW3LQNTXWH4YfErJ9MG2YD60RPYVglI5s
-	jk3SPvzj6JVqwrQdE9Wg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RxhHB1XqaEL/Uktt+IB0cqIeobIToOui5GhIUhmkvlg=; b=bwjoyAng/3pkdG
+	R5IFJffCi/CZNcCmUJkag1MOBJJ5W8NyK3T2IYJcTZBTaicBvRKmV7GsT1l3bNFyQ8IdFjoPs86d1
+	jGtNQoltR8QjZFMiElO32UX1viACd1ME4dpSI5wIXEj/aQzbo8pRs++1SZIk93X8AwfdLxa++wMoE
+	TRX8Ikbk1jChCCYE4h0DCzITdvRLVx8MxaAH7xdQSpy7hCSfwZu8lKivvv+mSxjKJh++jMeRPXpcW
+	bj8UkgJ8gUJI1hQbpXX46elJ1aN1fP6LEeQYH6rUd7Vv2UT6Fh7eypQ84gx6RnRbpaGyklXlfZ0Ug
+	/6UQ4U2OB3VlIOGlDfKQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wliXH-000000066VF-2P1q;
+	id 1wliXH-000000066VL-2cNY;
 	Mon, 20 Jul 2026 07:35:35 +0000
-Received: from mail-eastus2azon11011036.outbound.protection.outlook.com ([52.101.57.36] helo=BN8PR05CU002.outbound.protection.outlook.com)
+Received: from mail-westcentralusazon11013021.outbound.protection.outlook.com ([40.93.201.21] helo=CY3PR05CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wliXD-000000066UT-0hT2
+	id 1wliXF-000000066Um-1VwC
 	for linux-i3c@lists.infradead.org;
-	Mon, 20 Jul 2026 07:35:33 +0000
+	Mon, 20 Jul 2026 07:35:34 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=elPBj4T8R5VSLT+37uR9DAcKFgwL2Q/kyeUr6QKSVSNlC3Ir8xaoaWa3o/4xVSZo4mNo+lTcYHcQ/Q4056kkFmOOOpvKocCLAEeFm8Xvw3NyJoYQ1DhlMV7ol/Xbp6WLyZLIY2tq80oQbvJWKdnkmrYI5Z9OtpmkzlKmPEsIQmnBE8R9D4nC6pBDNrfxnW9Yqu3vdIdGS1o4jIv/SRYSF3rLGSTvK8jVIPh9XH0R3c85HeInRhLpCCpyTL31ahLF/QZBgym0jE5Wi03LNiWxeKoJmDmzN4pnEkS3juDBdbb9MyUcF4pzP2seiZXi83US7+uGsMaJmzckwjCSaNroJg==
+ b=H94EMuA5qcUyVyms2OTMgiqNEiiOmqC4S/9krR7vVxGXpywTyXaWXN0pxC6euWzeJ5bOKDiA6ba8b5j4o9hKpo9hEgH1Q5iYGv6SK+d1+wp6TnUoGOaCMIHKfoVcQ72QgB2cwm/c63TMgTcwYk4fgVQJcwsp9q+aBL6X4TqBSKFWfef7JqEUsQTSpI+uiQ+o25DSRvvrAQRoTqvWls/m+OcYkfXslqPnGBwPc3p4dz4FSZ5c7uomNhUMzeN8OMZKF6yK9aFwZzyG1YFnskET9HwwcWYcXUYVsv3DX6SP/ZTAMJBlDUn3p4OD2qCewqhZtREyJ3RPaP4lK9pSOS+5DQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=kaWm6jhdhawTiWJmy8cXvT9rtaDYQ77js0w1f8IxmUQ=;
- b=Z2qgOw+u6OI6q5ZkHMvCd6DtRfAm/htAVOQ9+N/lFUTUFEILKvBttFLQmOVvTYItczkSRpDtijehnc/+KiUZLZdmfLS2tDgIzkrt7hWngc+DMKmanVqlpikRzDophCtA5NAHfa3iBypbhDJIxeNB/sB3eRF79caXOIpU0nzP8JVJldngf9b6F42LWmygWarFht7NT5HHgVmpIQzRTOEZRqSm5tNf5DCdxkr7CaTOSLlQMU3WF15BP5B7jTkqzDWWt7lzMiTOQ+j7RPNe0kPmaYHKDhBMHPtUw+0wGdsnXyHeMgA1XR/EXbab6JJKKX5tHXwzACUM++WW+hrc27XZsQ==
+ bh=Z+cEBPqCGzF93kxb9usyjKzpryk4ZoNOVS9qnDJKCkw=;
+ b=Sy5ndiAYzwZ/rM1VFpmPl/WjYaEfJ+Grz5slW9rm0IsGpZ6/CBmu0p+hg1h3bif/TQudK6zbXn6we4CzEpa9L/crQKcda7Ng79ngyIEAUCnTZo8HuHnpIX0/ddm2ATyHoff6g+4v7yH79PSbvynkowsG4MbLWUJLISGw8pdL3lI3SikfE1jNzdLAL12QmkBCQgiUn5PiBK2Az/0hFpf5xTlaS2OWr8hNMJEFEqNIMMteK1PwGiPsDsus7ic5QRduJE8OIfCEQfc/V4OdggY0skX79bw4ui1xgeAjsmUEfK0cKSxuSFbH4Rb6/Khp/4dRvm/VMo/VFRib6agfp3GVCQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  165.204.84.17) smtp.rcpttodomain=bootlin.com smtp.mailfrom=amd.com;
  dmarc=pass (p=quarantine sp=quarantine pct=100) action=none
  header.from=amd.com; dkim=none (message not signed); arc=none (0)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=kaWm6jhdhawTiWJmy8cXvT9rtaDYQ77js0w1f8IxmUQ=;
- b=s/ibA4s3XyhEoAX/qv16SAvSkhAv02RBqt0yfCz7QucOistgnUrMlVMJAT+z0IE9oYmDb3/4PKK3B5kW1Y+IF470zFDzwkxUfWhoaIIhcV8d3PqmQ6G6E/Vkkm+V9RPo+JtP26Xtv/xF/Ti8+zf4U+FgzbQViv0bcYRRQYb6064=
-Received: from SJ0PR03CA0086.namprd03.prod.outlook.com (2603:10b6:a03:331::31)
- by PH7PR12MB7428.namprd12.prod.outlook.com (2603:10b6:510:203::9) with
+ bh=Z+cEBPqCGzF93kxb9usyjKzpryk4ZoNOVS9qnDJKCkw=;
+ b=iUZhEmyGsDZhelsKwOEjUWYltJlL4fiSVmZ7M0EZYQNa3q3un5zCm+96A4WDtAp2DzV1++wloKiNUuM9816Xvin7vraYbrOZoGFZRK8qoiQsLfeeiB8ovFs2itzb7Rb+JP0fDZ2zYDv35HWYfmnMH6VpJC3tZC6EOhyBAhnkS+U=
+Received: from SJ0PR03CA0064.namprd03.prod.outlook.com (2603:10b6:a03:331::9)
+ by MW4PR12MB6974.namprd12.prod.outlook.com (2603:10b6:303:207::18) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.223.16; Mon, 20 Jul
- 2026 07:35:22 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.223.15; Mon, 20 Jul
+ 2026 07:35:18 +0000
 Received: from SJ1PEPF000023D4.namprd21.prod.outlook.com
- (2603:10b6:a03:331:cafe::a0) by SJ0PR03CA0086.outlook.office365.com
- (2603:10b6:a03:331::31) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.223.16 via Frontend Transport; Mon,
- 20 Jul 2026 07:35:22 +0000
+ (2603:10b6:a03:331:cafe::9c) by SJ0PR03CA0064.outlook.office365.com
+ (2603:10b6:a03:331::9) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.223.18 via Frontend Transport; Mon,
+ 20 Jul 2026 07:35:18 +0000
 X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
  smtp.mailfrom=amd.com; dkim=none (message not signed)
  header.d=none;dmarc=pass action=none header.from=amd.com;
@@ -61,56 +61,53 @@ Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
 Received: from satlexmb08.amd.com (165.204.84.17) by
  SJ1PEPF000023D4.mail.protection.outlook.com (10.167.244.69) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.270.0 via Frontend Transport; Mon, 20 Jul 2026 07:35:22 +0000
-Received: from satlexmb10.amd.com (10.181.42.219) by satlexmb08.amd.com
+ 15.21.270.0 via Frontend Transport; Mon, 20 Jul 2026 07:35:17 +0000
+Received: from Satlexmb09.amd.com (10.181.42.218) by satlexmb08.amd.com
  (10.181.42.217) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.41; Mon, 20 Jul
- 2026 02:35:22 -0500
-Received: from satlexmb07.amd.com (10.181.42.216) by satlexmb10.amd.com
- (10.181.42.219) with Microsoft SMTP Server (version=TLS1_2,
+ 2026 02:35:16 -0500
+Received: from satlexmb07.amd.com (10.181.42.216) by satlexmb09.amd.com
+ (10.181.42.218) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.41; Mon, 20 Jul
- 2026 02:35:21 -0500
+ 2026 00:35:16 -0700
 Received: from xhdshubhraj40.xilinx.com (10.180.168.240) by satlexmb07.amd.com
  (10.181.42.216) with Microsoft SMTP Server id 15.2.2562.41 via Frontend
- Transport; Mon, 20 Jul 2026 02:35:19 -0500
+ Transport; Mon, 20 Jul 2026 02:35:13 -0500
 From: Shubham Patil <shubhamsanjay.patil@amd.com>
 To: <alexandre.belloni@bootlin.com>, <Frank.Li@nxp.com>, <robh@kernel.org>,
 	<krzk+dt@kernel.org>, <conor+dt@kernel.org>
 CC: <linux-i3c@lists.infradead.org>, <devicetree@vger.kernel.org>,
 	<linux-kernel@vger.kernel.org>, <michal.simek@amd.com>,
 	<radhey.shyam.pandey@amd.com>, Shubham Patil <shubhamsanjay.patil@amd.com>
-Subject: [PATCH v2 1/2] dt-bindings: i3c: dw: Document missing optional core reset
-Date: Mon, 20 Jul 2026 13:05:09 +0530
-Message-ID: <20260720073510.1869623-2-shubhamsanjay.patil@amd.com>
+Subject: [PATCH v2 0/2] i3c: dw: Document optional core reset and drop redundant name
+Date: Mon, 20 Jul 2026 13:05:08 +0530
+Message-ID: <20260720073510.1869623-1-shubhamsanjay.patil@amd.com>
 X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20260720073510.1869623-1-shubhamsanjay.patil@amd.com>
-References: <20260720073510.1869623-1-shubhamsanjay.patil@amd.com>
 MIME-Version: 1.0
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SJ1PEPF000023D4:EE_|PH7PR12MB7428:EE_
-X-MS-Office365-Filtering-Correlation-Id: 39b359f4-74b5-47b7-956a-08dee6317526
+X-MS-TrafficTypeDiagnostic: SJ1PEPF000023D4:EE_|MW4PR12MB6974:EE_
+X-MS-Office365-Filtering-Correlation-Id: 51b0977e-b6bb-496a-435f-08dee63171f5
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|376014|23010399003|1800799024|36860700016|18002099003|22082099003|11063799006|10067099003|56012099006;
-X-Microsoft-Antispam-Message-Info: J+oqKrSzg7VLT03o5rU8DS4Yn+RnShTZS7/5Zst2jeLsMSkRI7+XgSewvqZA/V4jfNSKIysGlNX722NIOwmHzbXz+oYk1iaPrwohXcso9lL/NrQCrqQl0imG+KAsP5XdMZV96Hrp/Zvutg+4zBQVRbLnlG0zwUikvq4gKPfl/od2fXdqJBdOTXjr1VsGgy7CiD8VeMgqfYZBD/6gjbgl0ooENnUK76HdZnlBsfnVkOPAEa8g0sntTvXzIV0tXjT3j7onID4gPzfzdOneSCrhMDMaOpxTz7vPPjjXWB8TULgvzXJ+TPjJqiPzBhdOzRMEjfsfNshSLGK7DdBo1APPhO2iniqSntftmV7WNn8Yx1aXTn1XMMWd7wx8HuuzkR4eKxgTthD2aZEH0oxoH3YRy0cUfR5/fqMU/1VCknCVWLi1aLBNGmG1AI9zQOPHVLxtc0soLELJTbYaxwgpWhDByhDttw4T4m4FjCGHMRhDj68QY5Sio0kXWemKGtkkPZ+Lau5KtX8A7ivuHbbV/dUBsHGn+9mRytBGD0ChEctB180ChI/VAnExW9a1vMDFUXj5awjHUiysciJIyTeb1sW2Paa74rVEimnzS5DzBvRYiUQLsAdiPLzdh3b7de66lt/XFjY+ziMkKuwqBVuDl0hagQJ+854QY/6IVqYVoCLU93z3xrQuSJKjLfr9KCFG7On9S6r8TCLZbArngooxWJZC/g==
-X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:satlexmb08.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(82310400026)(376014)(23010399003)(1800799024)(36860700016)(18002099003)(22082099003)(11063799006)(10067099003)(56012099006);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|1800799024|36860700016|23010399003|376014|18002099003|10067099003|56012099006|11063799006;
+X-Microsoft-Antispam-Message-Info: 5MA3qf2s40Rgb2E8gz3SE6QEWWOwn6W1jcf84iNOdKpuizr5HJpp1+kCV4Z+xtmPuT0egvZRux2p1iLkgR907hAE+YvepiTCRWBTXXU3HD/ytHemOWK9k/ltZPMUsKGctv3JNR5gqoBDvYOGHKq6/Yh4MBcqRrnwf2vMONlIiOBIN73i9PAAPuR4v1eOFl/7PzjA8roOiTgE4kjSvr8OpsNKGWIn7rCbSBmdGeBHez3XnLOpNW8R0Y9EYKSQmBPI9H3C4livNIv8mu1qIZQxPfMcgyjyQ4xVBM3vEKa13FqvKwY4LLNUig8J1+dk6Bk9666Hkd6weJvToRzXRALGj5ybc7ZT6YnMByfgLDEMZSAvD+XX0H2cjWJJ8NtdGccvcoB/k0P2sywz0IT0RlKqgjBHgnZ/k9gwmgMtNpZV3h7DJkMVWX+U3wi4x7igBA8ZtdxPsNxpEHTgu9pDdlDbV85jiDVxGiAU2lz5wOlz3lfyhLyQH1i17Zgq47R2alYMBtGETYyUiryMOVo0CjG+8Q0KJ9liUWHYLVk6WVl7qHjKxh0EIH69b1YGf7psq2jfHVhiMWe0MLuUZDFtZ9/emBtewCJLmcxjXgvduq2mURZITVMX9OxOyn5poGS9qxDnqeIcp1Y+IGjoNGxyWYFfAz6HErCyS1j99Z1FFeuyy8ZYIhoZUZ5cZzpt6Aoqu1yfsCBUYZPezR8XgJC4lNdNGQ==
+X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:satlexmb08.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(82310400026)(1800799024)(36860700016)(23010399003)(376014)(18002099003)(10067099003)(56012099006)(11063799006);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: gsruY41X1GvmdNdqduWy6m1mtO05ACZgNHUeOp4xZNVA9678YHCFg8F7Zkarlcqhi1/9jpXbDX8aIwEFA/Ww9E9/Jjp86rjrqy6mwxxrnMwhzrPelHzPlx4M3qu0X4sJp5GL4uXVbdQI0NpoSe67vBhYzEqjv1g3r+ltssCFALt9eZbYyCtCTmV3MlH5LHvM7iYF3eK0toOqLzun8V3dDhIR8A8E/OGlw8Rh5MzsE+s8dLtoR7INrMzne/LsXSEoS63f6TWUvpXGA9Gxcaq4t7w+ZwH/5zFXbWeL7rbvjPd9SKz050G+46qij0UgpGgFWj7sB9Mxbam98cPPaNjUrOpoo/aI1/1Z1Zy2c8Ppsqzx6nxPdspoFr5aqempGNjiUrGW0KWus5hZ3eaI5znhoYDUpF7ABNm9rTcHVC8GvXucJBWeJppShVZy4aUz8wJM
+X-MS-Exchange-AntiSpam-MessageData-0: YtDgeCIr2DvdDmguA/khNhkmpB9w25c9pVILZ06mGjIbl656TrHdBA6ooRCrDoabHVe6IdALprV6sppvyUDwlAQJwF1KHM6FHcUspIX+F/uXkLWpjlKL6aNwUOId2slHE6btqeBv4+kzxBv84RnVeuBhG+20viIZIiGKytwdkqB7E7KXVpnn11/osJyccRJaOCV1DPofBWbQ8QtYmIcvaAQrG2SfqQI133fzfDEwmZR0lP5WKzhEwu4h1FBzt7BJgsxIyd0fNrUEq/8A6nsgH865CagOp5YfMZgBy8v+J6489oHXYn9eGCHikYgfzHnds/S++s5xVu+oz1V+tfNYV8pbXayZzXqz5H1V2BHNCcdaYsbRlLEivTHwusm0fD4TwvB/cdzq3bnVfHyRAFx6bj8NacR3WjITDUl7beD5VlIQhR6PcCSp+V7Hn6oPhheG
 X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Jul 2026 07:35:22.5408
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Jul 2026 07:35:17.1607
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 39b359f4-74b5-47b7-956a-08dee6317526
+X-MS-Exchange-CrossTenant-Network-Message-Id: 51b0977e-b6bb-496a-435f-08dee63171f5
 X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[satlexmb08.amd.com]
 X-MS-Exchange-CrossTenant-AuthSource: SJ1PEPF000023D4.namprd21.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH7PR12MB7428
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MW4PR12MB6974
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260720_003532_260751_A1941E6D 
-X-CRM114-Status: UNSURE (   9.04  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260720_003533_398610_30D3BD2D 
+X-CRM114-Status: GOOD (  12.66  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,35 +124,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The DesignWare I3C master IP supports a core reset input, but the
-binding is missing the corresponding reset description.
+This series documents the optional core reset for the Synopsys
+DesignWare I3C master and updates the driver to match the binding.
+The DesignWare I3C master IP has a single core reset input. The
+binding never documented this reset, and the driver looked it up by
+the "core_rst" name even though a name is redundant for a single
+reset line.
 
-Document the optional reset property. Keep it optional because the
-reset line is integration-specific.
+This series addresses both:
+  - Patch 1 documents the optional 'resets' property in the binding.
+    The reset is kept optional because the reset line is
+    integration-specific.
+  - Patch 2 removes the "core_rst" reset name from the driver and
+    looks the reset up by passing NULL, since the name is redundant
+    for a single reset.
 
-Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
----
 Changes in v2:
-- Updated commit description
-- Dropped reset-name from the binding
----
- Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml | 3 +++
- 1 file changed, 3 insertions(+)
+- Updated commit description for binding patch
+- Dropped reset-names from the binding
+- Added driver patch to remove redundant reset name
 
-diff --git a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
-index e803457d3f55..dc7ee38001d6 100644
---- a/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
-+++ b/Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml
-@@ -38,6 +38,9 @@ properties:
-   interrupts:
-     maxItems: 1
- 
-+  resets:
-+    maxItems: 1
-+
-   power-domains:
-     maxItems: 1
- 
+Note:
+The DesignWare I3C driver support was added by
+commit 1dd728f5d4d4 ("i3c: master: Add driver for Synopsys DesignWare IP").
+
+The original Synopsys DesignWare I3C binding was added by
+commit 116e246a8bcd ("dt-binding: i3c: Document Synopsys DesignWare I3C"),
+but it did not document the optional core reset.
+---
+Shubham Patil (2):
+  dt-bindings: i3c: dw: Document missing optional core reset
+  i3c: master: dw: Drop redundant core reset name
+
+ Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml | 3 +++
+ drivers/i3c/master/dw-i3c-master.c                            | 2 +-
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+
+base-commit: a13c140cc289c0b7b3770bce5b3ad42ab35074aa
 -- 
 2.34.1
 
