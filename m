@@ -4,53 +4,116 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB88EC4452F
-	for <linux-i3c@archiver.kernel.org>; Tue, 21 Jul 2026 03:47:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 37F21C44529
+	for <linux-i3c@archiver.kernel.org>; Tue, 21 Jul 2026 04:09:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3KbmLfVta0+/d/Xpyc2CcVsqAhH2SKXljKnh90BcwBA=; b=hvnnBIEVS7V0d8
-	sxYepe/6xh8cZsV24MKo644m+EmnSRmY5tGmHWdhXe4dXkimxZini3dSaHwDfA5Kozz8bjWnAS7JQ
-	PA/8VpDa51vfH9AAtUyOE82B9u1WVYTZ2985PG90lBpy5WzBAD27/0PMCRiic2piI2b4C+vHeLBZy
-	xN88FxHjtVsoiqQaSZA/eRd9T5Zw+qT7thbgc9hHJex/bkvWUCGj8x8ii7REDWk0CKYfNvL++z+Zb
-	U0PQyV8cKnDOgij7pF1vYgHsrvJHfIgbfJDPBl37LBEna0BJ1Bk86u9kHl87BK90y2TdfhBsQNn7p
-	fIXKwG/2iJbn8T0ykLRg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cKte8Ts7w79YfuiIUb6IQ7jDIai2tkpWnwRZPzujEeU=; b=Mk7cvkzy9GH+hB
+	kOyO9rL8FAMp7zQFJVhke2YUER9OEu2E44EzD/epaL+PJo1h0wgmvm5fl1ZM3LvayTzDplNTp1vR3
+	GDUROlULkWgiWOYGB9XPKfrX5s41Fx8LtTcW5GSSu1FCNCZ4mdLpJB9WVXusWjhKRLMfI6esB358Z
+	wH6i0xDIrYzwSfgsJwSO52NXcO+a+H1oFKTUg/c7TKDKyrnRsyg4IJy+0B05AISUFVk5P2B6CaDW6
+	wItUm3TWAVboThXHXIeOi7ez8kAXD80URTge10v/xX/UoWRJyhjKPj1UPr00786hCSQLZc+GeaaAm
+	X9ku/RHWMtUUTYl1+xkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm1ST-00000008LQG-1Os3;
-	Tue, 21 Jul 2026 03:47:53 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wm1mt-00000008M7P-3qzx;
+	Tue, 21 Jul 2026 04:08:59 +0000
+Received: from mail-eastusazon11011067.outbound.protection.outlook.com ([52.101.52.67] helo=BL2PR02CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm1SS-00000008LQ4-0hJU
+	id 1wm1mq-00000008M6k-43EW
 	for linux-i3c@lists.infradead.org;
-	Tue, 21 Jul 2026 03:47:52 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 9462241519;
-	Tue, 21 Jul 2026 03:47:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 35EE41F000E9;
-	Tue, 21 Jul 2026 03:47:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784605671;
-	bh=wCqwoxjo7VqO1l2s85ATE7pvS++m/MJZCw3FNZikLFw=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=FU1trdXBSEgKR+wIhLLj1Vi1SilpviA3TWNKzkYEMBjAyW0gvsWnewz6JIR2Wphp0
-	 jK1CZ3YSeRCRUqOrlwtddlQpJioZLXOuUDpjg4xUWUPjEv1hXP62AB/dT55R6shcog
-	 IGp+IvNPYgwncneu3YwugdRkAil5HHXG1eTfM27V43cB1J77hYf7510suqr1LjJw/Q
-	 J3s1ZVKNnA0wKo+naDSFGX6oY7tzRT9xI6CRwX3nLkiI7KC/253uiduTRcYADtQOYB
-	 8g8841Z+mWodP+6hpwAFnOXi8OTcUVymvK0+5+gvstyVOe93aCZavumoKouho7qC5V
-	 1iSp+/9o5jJUA==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v2] i3c: master: dw-i3c-master: fix OD timing for first
- broadcast
-To: tze.yee.ng@altera.com
-Cc: linux-i3c@lists.infradead.org, Frank.Li@kernel.org, "Alexandre Belloni" <alexandre.belloni@bootlin.com>
-In-Reply-To: <20260721033159.11789-1-tze.yee.ng@altera.com>
-References: <20260721033159.11789-1-tze.yee.ng@altera.com>
-Date: Tue, 21 Jul 2026 03:47:50 +0000
-Message-Id: <20260721034751.35EE41F000E9@smtp.kernel.org>
+	Tue, 21 Jul 2026 04:08:58 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=hqvdPX8qPVflBL2jxy7syhu0wGN6Lvz+ipX0BDh1XvUdnu/7R9pE/fsjz65dx5NZX8KuV8K4yihfFiJycDyREottespjozcF8wxahva0X1s7YTgqFG+Kbx/HiHrVL2HixL1N0HLfrqJsTfmHYMGmJNabmpjhgL1mOcBKYOq30hhSOSDZynNBa8M1GpAsqw+Sp439B+hiPLJPrbru8jHhVAnIwkzvwM8AhnzxeACQSQt/0Q7YdUmdQJQaidiqtMO7XDu8dxmH8dKDPC5Bn9aohUQFtG/L1MwHWRU7UaELmQiTnV78CSkiu8RieShxmgxYnQVJd8njH+qCF+3N0RQyrA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=9KEwUc+tl/wc7luFRn0A0eX1RU86KD7C4I/pzCQtV8w=;
+ b=IodA8WQO9Jy0jbjJj7PNfKxyQx1+1t6wRliHoF/uZboLvF6Pa9nz0SdHC/NGdEkkaj1UlgaOFOHnpZkY9avZV26INP4FNvjpmkY19rz1Td/xPzsLGJYXSc3npfIj0rg5b/U0O0EFQQ22Rh2KtirQ1VgHhoLtKxkxUgBxP0ddEoYuho332j4WTD1K8bdNIHjO7bTd0+FUlcmUg+z/JRoRWMLzGx4iGUTttSSuhJj0GZDj5UFHCbVYREQznQK0HYWTqK5LVS02G1fMaVzC40VD2MFE5QeTL1sTqmJl6yTxSgzGWlDNjQ2d1jFLGa1h1B2/hZ1ahkCGuH7RBN85Gzk1yQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.160) smtp.rcpttodomain=bootlin.com smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=9KEwUc+tl/wc7luFRn0A0eX1RU86KD7C4I/pzCQtV8w=;
+ b=h3SVaA/kfVSNRBFw+sP+jEN4Wnmuwf8ab8fBQIlXbNGYk7FV2qAE9hCOTMTtykIznzmuPMZK5YOSa1End2l++JrsEMZgpHxdlCIxV5Z370gPPw3jNH9Fsq6BWqign9eS2X9QqmfCOSmcsS+1k/rpUpA31FYEkZMoIwL+7ai2lLmyQI2b27JVDFlZCv9L22xdfRjDICldvk/hDktkBNF9R63/LYZbz8bXedvCmPkaLF5pt/N57zi1DPJLE/2I5bB4A8oCg7wKXq2UplAri/SNgM38WQKXdne9Drcc3onCO2f3vgU9jCboDMlM2eqm311aBtB5PHiv+kIgjyYyE7vBPA==
+Received: from SJ0PR13CA0185.namprd13.prod.outlook.com (2603:10b6:a03:2c3::10)
+ by SA6PR12MB999200.namprd12.prod.outlook.com (2603:10b6:806:450::24) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.181.15; Tue, 21 Jul
+ 2026 04:08:49 +0000
+Received: from CO1PEPF00012E82.namprd03.prod.outlook.com
+ (2603:10b6:a03:2c3:cafe::9a) by SJ0PR13CA0185.outlook.office365.com
+ (2603:10b6:a03:2c3::10) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.245.10 via Frontend Transport; Tue,
+ 21 Jul 2026 04:08:49 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.160) by
+ CO1PEPF00012E82.mail.protection.outlook.com (10.167.249.57) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.245.5 via Frontend Transport; Tue, 21 Jul 2026 04:08:48 +0000
+Received: from rnnvmail202.nvidia.com (10.129.68.7) by mail.nvidia.com
+ (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.45; Mon, 20 Jul
+ 2026 21:08:27 -0700
+Received: from rnnvmail204.nvidia.com (10.129.68.6) by rnnvmail202.nvidia.com
+ (10.129.68.7) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Mon, 20 Jul
+ 2026 21:08:27 -0700
+Received: from build-akhilrajeev-noble-20260602.internal (10.127.8.11) by
+ mail.nvidia.com (10.129.68.6) with Microsoft SMTP Server id 15.2.2562.20 via
+ Frontend Transport; Mon, 20 Jul 2026 21:08:22 -0700
+From: Akhil R <akhilrajeev@nvidia.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+CC: Frank Li <Frank.Li@nxp.com>, Miquel Raynal <miquel.raynal@bootlin.com>,
+	Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, Guenter Roeck <linux@roeck-us.net>,
+	Philipp Zabel <p.zabel@pengutronix.de>, Jon Hunter <jonathanh@nvidia.com>,
+	Thierry Reding <thierry.reding@kernel.org>, <linux-i3c@lists.infradead.org>,
+	<devicetree@vger.kernel.org>, <linux-hwmon@vger.kernel.org>,
+	<linux-tegra@vger.kernel.org>, <linux-kernel@vger.kernel.org>, Akhil R
+	<akhilrajeev@nvidia.com>
+Subject: [PATCH v6 00/12] Support ACPI and SETAASA device discovery
+Date: Tue, 21 Jul 2026 04:07:48 +0000
+Message-ID: <20260721040805.1696503-1-akhilrajeev@nvidia.com>
+X-Mailer: git-send-email 2.43.0
+MIME-Version: 1.0
+X-NV-OnPremToCloud: ExternallySecured
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: CO1PEPF00012E82:EE_|SA6PR12MB999200:EE_
+X-MS-Office365-Filtering-Correlation-Id: b8a233d6-e808-4e11-e4c0-08dee6ddc3f5
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|23010399003|7416014|1800799024|82310400026|36860700016|3023799007|11063799006|6133799003|10067099003|18002099003|56012099006;
+X-Microsoft-Antispam-Message-Info: wCLr+ce+KiOt3NtgK+HyFjXpBK55AcjjUgSaylR5JPZGOo5nyLpfcpTxD7VekRxj3V6qHkMJcmifcri3g/tFFhhVnDgJS4Up6rMmoi3qqMB2W9XcZPnitoKCDPUzZLYIQK1wuQA6s//260OsiYcRJ8YCcPMVmfiveOwkSGg7UQIfusBC6G9OfE2KxkNn9TlEfeEAg/oqQjEz+kAuf+Na3DeEpOfHB8u3XbZre3i7HTAGpNl1iJJ067URBB+bts05aWRbsneZZ0SkDNI4yjU4tORVTg2eBo54fFQOyEsF6tXoTlQsWofStYx++0wBlrJ7VBUVFkMr+Cmu2ad3UTT8cnud8yqx1LZLTZKKPT/d5Ln3bulXPpnZre8qDUnuImwVn8nhYZT21lu5Cyai4T39e/0wrs84kPBWDCyhvi9NuN+qPQZ+PCy86igirLNq3QNFc1RKUgz03HSEFGoM/XUrQL32AXm2b4ACsIGYCcQXks5gs84tNAb+M0vjMSe9VcUvQJzsy3MSaKDFaQflM04tRUvfW4iPeuXkVO+rIRA5qzmovCNzaTX0ejH+YXNuohbnlkRgxBaIB9xF+2+CkR24ZV8xDwSu4wHCkwXpWoJexD+3w19DKD6i90ti9HZyYtE6zxReXflm6JgtDBtzSy0iz+Q1dIQVwB80cYoBeopDEyh9yzGaAVBaDHccrvjcgTe7aI2EmSp3twmaH/TEDUuwrQ==
+X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(376014)(23010399003)(7416014)(1800799024)(82310400026)(36860700016)(3023799007)(11063799006)(6133799003)(10067099003)(18002099003)(56012099006);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: VMdH+791F70efttnsLrGybMTdHNyStCLJ7i0g8CSWZb3Z2POWrdM1LgoPTjGwqgv5O5FT97L2FfyhT4bt6Bv3QnT/6g6+PeXtL5s6gKFmswsqeSv5oagVAqU5Hbvp0EK5iHP/nUMLh17IvqJLKmW891smT9QwOU6huZSiO99A6CT4oIcUKjvD/RqIueT9DO7kOmbYN6z5CjaWXKlf8ZyW0QMzrn/dWiDtssXrOT6Zv+721lQUWDM1+oqq0lv7HegrIp16Y72/gltyYsXJ8aibCIwovi/S9dZrgx2iugMFUFIvDH8yaS5lm54C47RbdkbL+19TTRjRa65sf51rDbD9yLKU1ibrNToJBlQ15TlA8sjPHrV/jLoV+0zfEx3JIbjbSIcgqUQT81jld8toBiOfZjnYqMI9+u+O4JIi09/v9ZAjTD/Cn0EyTXt4qezCUfq
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Jul 2026 04:08:48.1646
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: b8a233d6-e808-4e11-e4c0-08dee6ddc3f5
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: CO1PEPF00012E82.namprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA6PR12MB999200
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260720_210857_013890_9CF44E5A 
+X-CRM114-Status: GOOD (  16.21  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,66 +125,118 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gVGhlIGNhbGN1bGF0
-aW9uIGZvciBgb2RfaGNudGAgY2FuIHNpbGVudGx5IG92ZXJmbG93IGl0cyA4LWJpdCBjYXBhY2l0
-eSBpZiB0aGUgY29yZSBjbG9jayByYXRlIGV4Y2VlZHMgfjEuMjggR0h6LCByZXN1bHRpbmcgaW4g
-YW4gaW5hcHByb3ByaWF0ZWx5IGZhc3Qgb3Blbi1kcmFpbiBzcGVlZC4KLSBbTG93XSBVc2luZyBE
-SVZfUk9VTkRfVVAoKSB3aXRoIGEgNjQtYml0IG51bWVyYXRvciBvciBkaXZpc29yIGNhdXNlcyBh
-IGxpbmtlciBlcnJvciAoX191ZGl2ZGkzIHVuZGVmaW5lZCkgb24gMzItYml0IHBsYXRmb3Jtcy4K
-LS0KCi0tLSBQYXRjaCBbMV06IFtQQVRDSCB2Ml0gaTNjOiBtYXN0ZXI6IGR3LWkzYy1tYXN0ZXI6
-IGZpeCBPRCB0aW1pbmcgZm9yIGZpcnN0IGJyb2FkY2FzdCAtLS0KY29tbWl0IGI4MmYyOWE1OWFl
-OThiZDE4Y2JiNTQ0ZGVkOWEzYmY4ZjhkNjBmYzYKQXV0aG9yOiBUemUgWWVlIE5nIDx0emUueWVl
-Lm5nQGFsdGVyYS5jb20+CgppM2M6IG1hc3RlcjogZHctaTNjLW1hc3RlcjogZml4IE9EIHRpbWlu
-ZyBmb3IgZmlyc3QgYnJvYWRjYXN0CgpUaGlzIGNvbW1pdCBpbXBsZW1lbnRzIC0+c2V0X3NwZWVk
-KCkgdG8gc3dpdGNoIG9wZW4tZHJhaW4gdGltaW5nIGZvciB0aGUKZmlyc3QgYnJvYWRjYXN0IGFk
-ZHJlc3MgYWNjb3JkaW5nIHRvIHRoZSBJM0Mgc3BlY2lmaWNhdGlvbi4gSXQgY2FjaGVzIHRoZQpu
-b3JtYWwgT0QgcmVnaXN0ZXIgdmFsdWUgZHVyaW5nIGluaXQgYW5kIHVzZXMgYSBzZXBhcmF0ZSBv
-ZF9oY250IGZvciB0aGUKc2xvdyBwYXRoIHNvIFNEUiBleHRlbmRlZCB0aW1pbmcgcmVtYWlucyBk
-ZXJpdmVkIGZyb20gdGhlIG5vcm1hbCBQUCBoY250LgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9p
-M2MvbWFzdGVyL2R3LWkzYy1tYXN0ZXIuYyBiL2RyaXZlcnMvaTNjL21hc3Rlci9kdy1pM2MtbWFz
-dGVyLmMKPiBpbmRleCA4NGZmY2IxODkzMzg5Li4wNzdmMmJmNGIwYjNmIDEwMDY0NAo+IC0tLSBh
-L2RyaXZlcnMvaTNjL21hc3Rlci9kdy1pM2MtbWFzdGVyLmMKPiArKysgYi9kcml2ZXJzL2kzYy9t
-YXN0ZXIvZHctaTNjLW1hc3Rlci5jCgpbIC4uLiBdCgo+IEBAIC0xNTEzLDYgKzE1MTksNDggQEAg
-c3RhdGljIGlycXJldHVybl90IGR3X2kzY19tYXN0ZXJfaXJxX2hhbmRsZXIoaW50IGlycSwgdm9p
-ZCAqZGV2X2lkKQo+ICAJcmV0dXJuIElSUV9IQU5ETEVEOwo+ICB9Cj4gIAo+ICtzdGF0aWMgaW50
-IGR3X2kzY19tYXN0ZXJfc2V0X3NwZWVkKHN0cnVjdCBpM2NfbWFzdGVyX2NvbnRyb2xsZXIgKm0s
-Cj4gKwkJCQkgICBlbnVtIGkzY19vcGVuX2RyYWluX3NwZWVkIHNwZWVkKQo+ICt7Cj4gKwlzdHJ1
-Y3QgZHdfaTNjX21hc3RlciAqbWFzdGVyID0gdG9fZHdfaTNjX21hc3RlcihtKTsKPiArCXVuc2ln
-bmVkIGxvbmcgY29yZV9yYXRlOwo+ICsJdTMyIHNjbF90aW1pbmc7Cj4gKwl1OCBvZF9oY250LCBs
-Y250Owo+ICsKPiArCVBNX1JVTlRJTUVfQUNRVUlSRV9BVVRPU1VTUEVORChtYXN0ZXItPmRldiwg
-cG0pOwo+ICsJaWYgKFBNX1JVTlRJTUVfQUNRVUlSRV9FUlIoJnBtKSkKPiArCQlyZXR1cm4gLUVO
-WElPOwo+ICsKPiArCXN3aXRjaCAoc3BlZWQpIHsKPiArCWNhc2UgSTNDX09QRU5fRFJBSU5fU0xP
-V19TUEVFRDoKPiArCQljb3JlX3JhdGUgPSBjbGtfZ2V0X3JhdGUobWFzdGVyLT5jb3JlX2Nsayk7
-Cj4gKwkJaWYgKCFjb3JlX3JhdGUpCj4gKwkJCXJldHVybiAtRUlOVkFMOwo+ICsKPiArCQlsY250
-ID0gU0NMX0kzQ19USU1JTkdfTENOVChtYXN0ZXItPmkzY19vZF90aW1pbmdfbm9ybWFsKTsKPiAr
-CQlvZF9oY250ID0gRElWX1JPVU5EX1VQKCh1NjQpSTNDX0JVU19USElHSF9JTklUX09EX01JTl9O
-UyAqIGNvcmVfcmF0ZSwKPiArCQkJCSAgICAgICAxMDAwMDAwMDAwVUxMKSAtIDE7CgpbU2V2ZXJp
-dHk6IExvd10KV2lsbCB0aGlzIGNhdXNlIGEgYnVpbGQgZmFpbHVyZSBvbiAzMi1iaXQgcGxhdGZv
-cm1zPwoKVXNpbmcgRElWX1JPVU5EX1VQKCkgd2l0aCBhIDY0LWJpdCBkaXZpc29yICgxMDAwMDAw
-MDAwVUxMKSB3aWxsIGxpa2VseQpyZXN1bHQgaW4gYSBsaW5rZXIgZXJyb3IgZm9yIF9fdWRpdmRp
-MyBvbiAzMi1iaXQgYXJjaGl0ZWN0dXJlcyBsaWtlIEFSTTMyCm9yIGkzODYuIFNob3VsZCB0aGlz
-IHVzZSBESVZfUk9VTkRfVVBfVUxMKCkgaW5zdGVhZD8KCltTZXZlcml0eTogTWVkaXVtXQpDYW4g
-b2RfaGNudCBzaWxlbnRseSBvdmVyZmxvdyBoZXJlPwoKQmVjYXVzZSBvZF9oY250IGlzIGRlY2xh
-cmVkIGFzIGEgdTggYXQgdGhlIHRvcCBvZiB0aGUgZnVuY3Rpb24sIGlmIHRoZQpjb3JlIGNsb2Nr
-IHJhdGUgZXhjZWVkcyB+MS4yOCBHSHosIHRoZSBjYWxjdWxhdGlvbiB3aWxsIGV2YWx1YXRlIHRv
-IGEKdmFsdWUgZ3JlYXRlciB0aGFuIDI1NS4KClRoaXMgd291bGQgdHJ1bmNhdGUgd2hlbiBhc3Np
-Z25lZCB0byBvZF9oY250LCBieXBhc3NpbmcgdGhlIG1pbmltdW0gMjAwbnMKcmVxdWlyZW1lbnQg
-YW5kIHBvdGVudGlhbGx5IGNhdXNpbmcgc3Bpa2UgZmlsdGVycyBvbiBkZXZpY2VzIHRvIGRyb3Ag
-dGhlCmJyb2FkY2FzdC4KCj4gKwkJaWYgKG9kX2hjbnQgPCBTQ0xfSTNDX1RJTUlOR19DTlRfTUlO
-KQo+ICsJCQlvZF9oY250ID0gU0NMX0kzQ19USU1JTkdfQ05UX01JTjsKPiArCQlzY2xfdGltaW5n
-ID0gU0NMX0kzQ19USU1JTkdfSENOVChvZF9oY250KSB8Cj4gKwkJCSAgICAgU0NMX0kzQ19USU1J
-TkdfTENOVChsY250KTsKPiArCQl3cml0ZWwoc2NsX3RpbWluZywgbWFzdGVyLT5yZWdzICsgU0NM
-X0kzQ19PRF9USU1JTkcpOwo+ICsJCW1hc3Rlci0+aTNjX29kX3RpbWluZyA9IHNjbF90aW1pbmc7
-Cj4gKwkJYnJlYWs7CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRl
-di8jL3BhdGNoc2V0LzIwMjYwNzIxMDMzMTU5LjExNzg5LTEtdHplLnllZS5uZ0BhbHRlcmEuY29t
-P3BhcnQ9MQoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgtaTNjQGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC1pM2MK
+This patch series adds SETAASA device discovery to the I3C subsystem,
+enabling support for SPD5118 temperature sensors found on DDR5 memory
+modules. The changes also add ACPI support for all existing DAA
+methods like SETDASA, SETNEWDA as well as I2C devices on I3C bus.
+
+SPD5118 and similar devices on DDR5 memory modules differ from typical
+I3C devices in their initialization. They use SETAASA broadcast CCC
+instead of ENTDAA for address assignment, and per JEDEC specification,
+are not required to have a Provisioned ID or implement standard device
+information CCC commands (GETPID, GETDCR, GETBCR).
+
+The series enables describing all I3C and I2C devices on both Device
+Tree and the ACPI table, using unified device property APIs throughout
+the I3C core and the Synopsys DesignWare I3C master driver.
+
+Please note that the series modifies drivers across multiple subsystems,
+like Device Tree bindings, ACPI, I3C and HWMON.
+
+v5->v6:
+  * Do not take an extra fwnode reference when assigning the boardinfo
+    fwnode to a newly registered I3C device.
+  * Issue SETAASA after SETDASA pre-assignment and before ENTDAA.
+  * Prefer SETDASA over SETAASA when a device advertises both methods
+    and an explicit dynamic address (assigned-address) is provided.
+  * Reject PID 0 for non-SETAASA I3C boardinfo entries.
+  * Drop OF/ACPI uevent modalias emission; keep OF/ACPI matching for
+    SETAASA devices only.
+  * Resolve DesignWare quirks before core clock acquisition and fail
+    probe early when the clock is missing without the ACPI skip quirk.
+
+v4->v5:
+  * Free ACPI I2C boardinfo when an ACPI child without an I2C resource is
+    ignored.
+  * Issue RSTDAA if SETAASA device attach fails after the static address is
+    used as the dynamic address.
+  * Emit OF and ACPI modaliases for firmware-matched I3C devices.
+  * Make the DesignWare core clock optional and use "clock-frequency" as
+    the fallback when core_clk is absent.
+  * Keep DesignWare pclk, reset, and match-data handling on their existing
+    optional paths.
+
+v3->v4:
+  * Clarify mipi-i3c-static-method bit semantics and assigned-address
+  * Add I3C_ADDR_METHOD_VENDOR
+  * Fix fwnode reference handling while converting child property parsing
+    to use unified firmware-node APIs.
+  * Align ACPI child enumeration with the I2C core for multiple
+    I2cSerialBus resources, ignore ACPI child entries without an I2C
+    resource, and populate I2C modalias information from ACPI.
+  * Update SETAASA handling to use the static address as the dynamic
+    address, skip device-info retrieval for SETAASA devices, and tolerate
+    M2 for SETHID/SETAASA similarly to ENTDAA.
+  * Reorder DesignWare I3C clock/reset to include optional clock in the
+    ACPI skip clock/reset quirk.
+  * Add prints for missing ACPI clock-frequency and SPD5118 I3C
+    device type read failures.
+  * Fix grammar in comments and commit messages.
+
+v2->v3:
+  * Fix maximum value and indent bit list for mipi-i3c-static-method.
+  * Move I3C_ADDR_METHOD_* macros to dt-bindings header.
+  * Drop ACPICA commit IDs, keep only the Link: tags.
+  * Revert the change which proceeds to register other devices if SETAASA
+    is not supported so that it aligns with the rest of the driver and to
+    avoid the issues pointed by Sashiko.
+  * Rework multiple commit messages.
+
+v1->v2:
+  * Added patch to remove 16-bit addressing support for SPD5118
+  * Guard ACPI calls with #ifdef CONFIG_ACPI
+  * Remove CONFIG_OF guard for of_alias_get_highest_id()
+  * Mask mipi-i3c-static-method in the driver to select only valid values.
+  * Proceed to register other devices if SETAASA is not supported.
+  * Update commit message and links in the description of multiple commits.
+
+Akhil R (12):
+  dt-bindings: i3c: Add mipi-i3c-static-method to support SETAASA
+  i3c: master: Use unified device property interface
+  i3c: master: Support ACPI enumeration of child devices
+  i3c: master: Add support for devices using SETAASA
+  i3c: master: Add support for devices without PID
+  i3c: master: match I3C device through DT and ACPI
+  i3c: dw-i3c-master: Add SETAASA as supported CCC
+  i3c: dw-i3c-master: Add ACPI core clock frequency quirk
+  i3c: dw-i3c-master: Add ACPI ID for Tegra410
+  hwmon: spd5118: Remove 16-bit addressing
+  hwmon: spd5118: Add I3C support
+  arm64: defconfig: Enable I3C and SPD5118 hwmon
+
+ .../devicetree/bindings/i3c/i3c.yaml          |  36 +-
+ arch/arm64/configs/defconfig                  |   3 +
+ drivers/hwmon/Kconfig                         |   9 +-
+ drivers/hwmon/spd5118.c                       | 119 +++---
+ drivers/i3c/master.c                          | 390 +++++++++++++++---
+ drivers/i3c/master/dw-i3c-master.c            |  59 ++-
+ include/dt-bindings/i3c/i3c.h                 |   4 +
+ include/linux/i3c/ccc.h                       |   1 +
+ include/linux/i3c/master.h                    |  20 +-
+ 9 files changed, 498 insertions(+), 143 deletions(-)
+
+
+base-commit: 6eb8711ece2ce27e52e327a5b7a628ed39b97f45
+-- 
+2.43.0
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
