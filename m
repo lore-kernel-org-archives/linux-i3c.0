@@ -4,125 +4,133 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 20388C4451C
-	for <linux-i3c@archiver.kernel.org>; Tue, 21 Jul 2026 16:43:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 687DFC4451C
+	for <linux-i3c@archiver.kernel.org>; Tue, 21 Jul 2026 16:52:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DezPxq1VPXdcA5uyNbgsQS0tusASbLMZpIZx5Df1oxA=; b=scIPusStau2FQp
-	XlEwm1Hhka42RRPzDzZZ+/tB6Aye5anDBA7p+OH+vDfI/Ao4MFIjA8cwBqEGo4TJPadMsI/gcQTB5
-	u7uLFPrq+zNm93i9vg39zZv1PmZL13PSSGaRzQEoE/9BEgYRV5eszj/jQKvkk4UqQNGGznFgG1JkJ
-	9lz+i1Mj18kdF+BOe43TeV/eppVNIRhPiXy8uP6ZzpT+xlj6ZU2GtKIqkU6im4xWZ/ls1OHIKiHJF
-	+Pu+NJiGea72FOkg/XSQxh55tm+Q6TZT2d+cqNAT/lQOF8THjHw3N+SgvVB3dnSnBz4h7OHi68qNW
-	DYxe88JPzJ1kefUFkQYg==;
+	List-Owner; bh=i/IvPk7E1fUk7sxs0sg9kLjO3d2Dt7QipLT1XBfHgRg=; b=vydE+HY92Qiro6
+	ru0pC79F2/004HB46pdldmdHG/34vv+UmK06lbgOKiC5JWBmbOSfsO21TrLP1rR/uQmCxwq3IZ+eU
+	cTzd4eh489UWeHk0Ov2SbvhiNi+/wfURNNptWyJkgh/Yi+rgCBN7Twasok+hOkIbnu266dpT2Tm0+
+	vTAofBOH2aGUXjEvDoRGFtRBJdfzZINbcF1xDDCOUYiBfrb7Cp55cZKDsvyGfz1F9+KZdGo9mH0IG
+	XTqwMglB+MOL6fuKvsNriIZtyiXaOG/zja4/P5u8vfcR46O4W9J41m2n5+noyaZ1PKF8PoS0pcUzX
+	pSCB8Zp2U8EV1p2f+4/g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmDZ9-00000009yEP-3NLF;
-	Tue, 21 Jul 2026 16:43:35 +0000
-Received: from mail-westeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c201::1] helo=AM0PR83CU005.outbound.protection.outlook.com)
+	id 1wmDhw-00000009zAm-0Bnu;
+	Tue, 21 Jul 2026 16:52:40 +0000
+Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmDZ7-00000009yD5-17bK
+	id 1wmDhu-00000009zAP-0Q9p
 	for linux-i3c@lists.infradead.org;
-	Tue, 21 Jul 2026 16:43:34 +0000
+	Tue, 21 Jul 2026 16:52:39 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=pFS9Wgxvp1w+S9uel7a1hsmK3zMCBLRmZY4Ndh7JKWi7sTzPXfX+Pn5kUFn9JK1h9W3Oi0c7R9GQHALljLmekKKj27x7VGaD2dHdqFPqOE38XqDzF7T9CwaLUeSEejZQinhZQ27u9yW+PxIF6lM9kvENhBYQ02tVO3Au6KH7nlqgVDEzSI0wKPM4VojWq6/IwuNORSVJVdFKFXD3Yvq36Yu4sYtbeneDRK8N1T++OPF0+9jGWyk5O2lExWifsS1VU2gc1vK8p3KDPFka0vieQih+wr8jVQZXeiHVa5biO8BL4Ima8tZbDzyrWTxEN1Ip8Q8kAe9Bl+Bg8xVUt1sH+w==
+ b=GtFvxv85D67D2fz2mqIItfW9ZQM1KKFYelC3x4u1z99kKMz0Oit7kDQ4wh+azPdO5DKUA4d3mMRinyA3AQ3jo07ExNOS3tTbFn7bEXSNwBrvH7u5iTWitrqEtxCuuRWc2HnZkou8wwvY2mqseh3fHnWjmSF6X9LQH5azjh4UrmoMn/OZsXspV0YXLTtoPLeqY7wNsFTn+qZ81nxnjtoqpjQkB3+zZx07iFINJkg0RYSULtrLDpDscR0QOLvM1WojxE7yu+sv0YrXcfzaDzXSTir0/L/Ski6M6Luoo1/wtsmknrYMJ5nkVyTiP8aFk1P8W4hrOf/6wepDV3K3yXQ6ig==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=+ihovp+XEVAuuJ8vtOtz/YWlDZlMfaCJRo1ny2W7J04=;
- b=wrd+X+d7SER5LAsLHwt7v1b2Ge/WaqPDrjoJ1g7SUv+l9cutJc3sIhCNbD/aKupB4zlBy05d28ZATOgUHC4+hGqBRm3WtZVl+1AN+fY72ja2QIKTzmcwLbXoPG4Nwd6AtsbYeN8Y4qvs44b/Do4AqUxl9V4/JiT/vpBMJfczsCEMDW2LZjF3jabEfx/fpnpY1xeLV3lwvoKApCa+Tna5oBA3VWGXNoydpNLQSDCGxkXcIsyvCzsLlDvgpoxDqqKTGIiWF7sJ1comnS9YCRpCJBMPjVKlc2C3MmV33ymgUhIbdzc1DJiEa+cDYIpDH7AKX/Du9yUQtYP01nEzyLzImQ==
+ bh=oC/2gIg5lNEGQDL6bz0lMofw3oL3pBjMAUGC70QYXuI=;
+ b=X7haz2WU7eRVhVa72bMtzgj0d2UDDhBTOM47IZwpdFZDGCMYY3dwdr08wZiuhFoxDZnE/khrh+yAgU9NbuSTwr1pEy3CHVBY+SUmGDjUmOEfUGdAEuLpSQ4uuaNGaA1GZ3Lm7QH5kPKmV4aoL00YYtDd9zthPHSSE2zvCNbxxqrWlhfp/32qunItOM/efktalkRMBQ0VToWz+Aa7qIoWBDT7IRyUiTWpeT2wirKsVM/l7sjEkaTbUJ0slHWWFu3JVDwITIgFlYMcNBnNk/YJblMRuzVpncIikIxPhZo4Sav8Lz2pl4AuPUuwBZ1iaJIYpTYl2vrBN/pnnsd94SNc1A==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
  dkim=pass header.d=oss.nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
  s=selector1-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+ihovp+XEVAuuJ8vtOtz/YWlDZlMfaCJRo1ny2W7J04=;
- b=ca8MX1QvikNA3SBYMxlXa1m01BLfBi2z6D0XfTtznWyrg1UbkY2YKjFWrSH8+z2aAeNoEL0W8tBvPok3S9y3/yme61UBaRjWeX1Pdvy7d4KiPxFNt/qYsuNY7pIOQXMvQFvVOPqW68kC6YOq/yTTR5xI7Pnmgch1o/ri7V7gBVtYE7xTSnOrNTubuh5UPanrN2489Z1jfPWQWX6WVeKzcLbncFGKG137ou6Npixi7wVnyHPXWEdRRd1KGlRp4oIGad7ubOYIYWvAjctfQCTR84SJws5D2Ybhd9qdayjpMN/ZpV0kI0nQAFwdwZF4lFKYrEZrLreZJgUEjyqXBXJZNQ==
+ bh=oC/2gIg5lNEGQDL6bz0lMofw3oL3pBjMAUGC70QYXuI=;
+ b=ja1sBYWuSk5aF/a4E++BHIb6x7VvZoIKaZIawHr07cSiKtYV3VygauRvksukQu5Q2jJKPBE333VFbt0EPGGFMZzVd9KJDMGTr8BanopaOLlE6B2H/SmMvE5s+z665369jVV1YmCn0kpEfVBy9czGJlv0zl3jfgORUs02hfXTM4ZKyvpt1qQIWJArOQCV4JezZh8/VmF7Waog0dFK52DXwssSXj1JUGmRXJM0Xz8f1JDiUyPS62WTqc1xwfSS/1fz8/m02bR7bAT2IZkxqjwM8RuxDeLf5IGLlOkm3kWWoHMIFlYD1c0qW1/d+hCdnJj/thmNInWX8PaesBP45j+zMw==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=oss.nxp.com;
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by GV4PR04MB11852.eurprd04.prod.outlook.com (2603:10a6:150:2dc::9) with
+ by AM9PR04MB8065.eurprd04.prod.outlook.com (2603:10a6:20b:3ee::8) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.223.18; Tue, 21 Jul
- 2026 16:43:27 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.245.10; Tue, 21 Jul
+ 2026 16:52:34 +0000
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0223.017; Tue, 21 Jul 2026
- 16:43:27 +0000
-Date: Tue, 21 Jul 2026 12:43:19 -0400
+ 16:52:30 +0000
+Date: Tue, 21 Jul 2026 12:52:23 -0400
 From: Frank Li <Frank.li@oss.nxp.com>
-To: Claudiu Beznea <claudiu.beznea+renesas@tuxon.dev>
-Cc: wsa+renesas@sang-engineering.com, tommaso.merciai.xr@bp.renesas.com,
-	alexandre.belloni@bootlin.com, Frank.Li@nxp.com,
-	claudiu.beznea@tuxon.dev, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
-	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-Subject: Re: [PATCH] i3c: renesas: Drop unused structure member
-Message-ID: <al-hpyAf7x2pI2hz@lizhi-Precision-Tower-5810>
-References: <20260721140928.1618736-1-claudiu.beznea+renesas@tuxon.dev>
+To: Akhil R <akhilrajeev@nvidia.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>,
+	Miquel Raynal <miquel.raynal@bootlin.com>,
+	Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,
+	Guenter Roeck <linux@roeck-us.net>,
+	Philipp Zabel <p.zabel@pengutronix.de>,
+	Jon Hunter <jonathanh@nvidia.com>,
+	Thierry Reding <thierry.reding@kernel.org>,
+	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-hwmon@vger.kernel.org, linux-tegra@vger.kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v6 00/12] Support ACPI and SETAASA device discovery
+Message-ID: <al-jx5AvUrxq8I75@lizhi-Precision-Tower-5810>
+References: <20260721040805.1696503-1-akhilrajeev@nvidia.com>
 Content-Disposition: inline
-In-Reply-To: <20260721140928.1618736-1-claudiu.beznea+renesas@tuxon.dev>
-X-ClientProxiedBy: SA0PR11CA0038.namprd11.prod.outlook.com
- (2603:10b6:806:d0::13) To GV2PR04MB11799.eurprd04.prod.outlook.com
+In-Reply-To: <20260721040805.1696503-1-akhilrajeev@nvidia.com>
+X-ClientProxiedBy: SA9PR11CA0010.namprd11.prod.outlook.com
+ (2603:10b6:806:6e::15) To GV2PR04MB11799.eurprd04.prod.outlook.com
  (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|GV4PR04MB11852:EE_
-X-MS-Office365-Filtering-Correlation-Id: ed87459f-7e92-4c2f-3e27-08dee7473011
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|AM9PR04MB8065:EE_
+X-MS-Office365-Filtering-Correlation-Id: a07b9732-e159-4f1a-e198-08dee748742a
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|23010399003|366016|19092799006|1800799024|11063799006|10067099003|56012099006|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: DTIysr7WzQJhrfFYm/mmUsQ+ts0Su3CDZq1gJMt71Hs5gyhKBvtCOjKITxcGWpYpSYpZ/2gnxV6guCJnFF72dd+WeZWQq0KHUmkyCAe6fTG7ZjFCFMWt/HPTzY8jSSGz8hu2qmfg5TyHMaC1BN49HT7/jYfxQ8/1OMv2orAzzFHD+lX4sEaCl2i6j9oYLXYBUC+B/T9FpvLyG0p9XjBZXLtZ72U+THNwAGbOYH+fvxS1OvjuJNCLIZIVRxlAtJ7YHbfyFTtuIysZgOsS+Z9/zCnnW3PVNgWK8gySQwCDfVqzAzM3vjx9IEtpu8ImmEHru5zbt0gZ2JwlCA6UGU1yWddZ12L8DlyNilVcOwNVrMRoeLfTtVEz2ZaHpXfcY0lOPsNlRfHHJXpIweyeBYdhecBDB9qUUqLJBt3LXxSoNHQApotAnTm9+32jXBCzBUns8P2oH4dwHXz+4EkCWdLKrDvgOTq7CCAwRnEhD5BfBgu+OOMF0vD7oN9Nq2ahHiD3X4MORo5DY0duk90qVSzxRXPL0gemz92NRqRqrrBaWv3bi21ZFMBsZ+rj5NTLgT6iKDEruwQQdBY/vtTBUFgcL/y9mp6l5cc6fl1RAKGWWddUSItXvTIpbAiCMj1oNOG0As6PvSzh3Q9VRr5n528nbAKLoRUC/KQEXRiHmUIbnZQ=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(23010399003)(366016)(19092799006)(1800799024)(11063799006)(10067099003)(56012099006)(18002099003)(22082099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|19092799006|366016|7416014|376014|1800799024|3023799007|56012099006|11063799006|10067099003|6133799003|18002099003|22082099003;
+X-Microsoft-Antispam-Message-Info: ZyhTqa/RyGYDrc9/Ov56/x9t5m3N6KrDL4JOdBaPjB1SQ2MbD6CxjO1QrT7hiBOjMmJjP6xlnLRPAc9MLJ6H7Ihba+PptSRH06TPLN4T/2IqUdLTSDiz1qL44vv3MUUdY116PTyN9u3qzaC7DsOiHGUZFhRA5hjAF8+OngAXAOaV6nt+GChamQIuoBjzs8+N/L6t0PCDvHsNE1tcVinKBzb+IuOJbGPql5Z5hXWI/DGe6FCjOH5qIoxUk4l+lIl2oPfD/dqKT7kMRuYr6t/U5Zy88S8nNQAxggTjkGgaeIS+mcURZw7BYsBVfnG/8AsfVFFKblplEfdeGHvshibhtysvjSdUjUfw9nGEz6EoqnCHvfN6u9Ix7jkMmKZZuLmTCIoFZlG/m5VKobeAGMNd1NJcjwxmfA84OZMWxnmUYReXL9Ay33nsfB10+39UgrsfyMhbzGud7aPXj8xyOfn1Pg8+q+V7CbPQPJwFG1Tr50+cKWtJdjddUt5WPJJM3yRFwiKJynkZYEgiFyp5f1EEqTAAES61NkGgsCemAkBrruhPxa8RgOT0DW1ZbC4VmwSVlbcQi9hTknN8o0WsaqvhWlPigkgjN01pfyt+/IUlPF8DgDX1S22NfwFmeTfqPhpWCaKX2mVdJJe2p22LzgyeVAz7ckYUAynDzJbi+QxxspU=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(19092799006)(366016)(7416014)(376014)(1800799024)(3023799007)(56012099006)(11063799006)(10067099003)(6133799003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?8qiDUyGHGJ8jSVNwAHLA6R3wpHOlPdPtCwV5Po280hunllUkPypSQGQn0x0Z?=
- =?us-ascii?Q?ot8cNziM/cNfL55VTuqTTDOv2GJtE0jWKm29fLcoRbqet43wGTVLG4I2nmfH?=
- =?us-ascii?Q?RMePtvebQI9KiO8jfo9puQuJW7LaG8rUDTSOwbAnxFrcditRntmMn6sN9ghp?=
- =?us-ascii?Q?KAtaDrWMKd+z/Q2zwok8T+4vUIp1kXBbZ01UTpbQeWZfya0Ein2iTy1jP8mA?=
- =?us-ascii?Q?rxrtzenK/JDWyecqBLrYKCPpUjI6ChAVOZn2hcdK12gm/1uNX89VyAEys6uv?=
- =?us-ascii?Q?FMV4OVJFVAfiAhPmYoVzDprbiNOUjhGrXqLddZu/OWp0wspVjj4ufCR35ztt?=
- =?us-ascii?Q?xsB7nevhlOwO9BeXPfRPxO3vAewQ3B/dQTuVtLGfHssDurklGWTRwv12pvAi?=
- =?us-ascii?Q?Xrbjy9oxH6cEGVznVpTsHoFPlYaJffulS4YRd3RxGBhGaBKQ5HZPJXsPlOBw?=
- =?us-ascii?Q?tadwcWELtTP+i8y+I9dnguAbugGH/DPZLis/B3QnGOC8Oe99cDOjUi/WMCaP?=
- =?us-ascii?Q?QOsrdsrIoz7VjKi98NmxaGbQpSf3B68vYioP5j5ieCydA8BSslt+DXccJCTR?=
- =?us-ascii?Q?vwNWwjOKUNGI4Tdr5V/PN/NgRJHkwKKcLtYkdfYd8bJYTz5GOuPTSVxmua3o?=
- =?us-ascii?Q?KmMLBRQIhE50kcW3o3Sm1eHR5Z1lCuh5Ut/YrcZuIb3U5ngHqEg9Szx1bEMu?=
- =?us-ascii?Q?a03u5v0KbeaOuCh3HTQXllS94r0dW2E//0AFtzFd6ON8Rw307FZaG/qbT/yj?=
- =?us-ascii?Q?W4o0KOPgt4rNc8ESI57sEwMLT/Gb19HIhatW67IxWfc6ClE4KlgtO7DB34zc?=
- =?us-ascii?Q?kYitBny/Pp6kpqqoj2NGdK9ICboqPrHsmZtI4SuJS627QN18qRfTwl9uh3J/?=
- =?us-ascii?Q?q5LPI/dW4qxHagomVylQNCZWaUbxNvGW1BMOk6Vs5lKECJmsuCPAckVrSk36?=
- =?us-ascii?Q?NAki2VA/QvO/7tkmDQq3m+tDtcjyrrUurDRcGV5Q5keZVyTkKR330nqScgrH?=
- =?us-ascii?Q?U+PTJQwnEp3wppVFGIkWKwdQ/PHYZcSK4zUuulqB4SJv2NoZiImesFAh9T47?=
- =?us-ascii?Q?pI3CRVjWwifF5i/KtjbLZ5WsxXsM6R8TR+wgAbkiCooF+KyZrnChvJlzlSoV?=
- =?us-ascii?Q?jbsayVkWoT3awCvzlbjUQUbtdPuFvmUh53alnokz/qYbywRRGKhckV1rDmJQ?=
- =?us-ascii?Q?0Kv8VENEwdRr9kW3uwyGqv05bWmcGLySIa/Asyu4lIYoaYumWOGaig7XfeY7?=
- =?us-ascii?Q?pyGawiWp/E0rHjayuru+zFdhBlMGd6UtOkGVErca74WEWdzT6tJ5AifFmFeF?=
- =?us-ascii?Q?waQppNrHq3wQLIHskfjEUfqmZMUzzDCTDWxrFsXQwHGSlgpAddkkPoz5gVyL?=
- =?us-ascii?Q?DlG1PgiCbSPbXYG3A8yKB6AhYlzPiaRXyM0ijLsLVPV+G59QmuiYHOFEmjw0?=
- =?us-ascii?Q?ROBe/1OyP5H+cyKHVP4Vo2dj0pxK+RgZg/esFQj//r8LQ4FBNEazs37/Cc0H?=
- =?us-ascii?Q?SAevWsiISqsGaLmMwyoy8eBIxAutIWbLfmSYWA2xc78uCMSgUPpkpXqKuqD/?=
- =?us-ascii?Q?BsFnCPC8tksEky/i8dz0mN+utqEn/ZdaDv5NT98nEBYlJgluBg+K8h1Onisf?=
- =?us-ascii?Q?Or6En95ArSF+yVxACX0LyobxtqV+Fi1BR9eYvX11dYt2IeHUt92EPPtV4ZBq?=
- =?us-ascii?Q?hYePBNgVrcwU0kKgY9/MArz9AC80a9TPhDiAb4Z8uyAxi43zCXCaEmspJot7?=
- =?us-ascii?Q?/Cft+35wn2rzCwa23J/KJntVDv4aSCVS49nTseovILa9zFIYrDEd?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?G1Yh1zgZelneM6AOln74DBFAqRcWjoLbpYPTrte6+cQYcBXGjPMfanFZlISC?=
+ =?us-ascii?Q?cjeIIWkgICZlsw3AycrN1ISCCdnn/a432qpyhm0XW3O1zLQS4UlXL5uFILy2?=
+ =?us-ascii?Q?d4Jv0ubrELD7JGQ0fxpj+YHwiJViQB3SaQZkh4sb6V5ggYL6f1JfXs5YI2Dx?=
+ =?us-ascii?Q?mSiuvpfPqMz5fQlrji0Eh7bgw/LjoyKTUDUAXXauIFoMliO2ztciO6/8mc9e?=
+ =?us-ascii?Q?LX7oRrPYdDj2xfy7NP1eM46LPjWYK1Oq96WN8oOz6uX7dnrXg8uBpv0Z4Qzn?=
+ =?us-ascii?Q?2CLA1tDtGx2RxqwgTaTEMHsxBjwmRcSuTTS4PkYaKyJeBeTZ5O00cx10g7Wq?=
+ =?us-ascii?Q?InqS+tpPiF7k+8p53E2wSKjIDMDaIrBJ94dMhMJ7KVTbUif6cg8DzNSWvyTN?=
+ =?us-ascii?Q?6AG5FvE2+8Td8WA1KBsUWSyR0uYbpkXTvhaQ3gUHGYzWHRcEgxHmGPSSMJms?=
+ =?us-ascii?Q?gvUtcsoRXDJYzTZB9NcOAETyNlwSXJHWiLlEo2JFt97zU1sL12XFd1SGnIbX?=
+ =?us-ascii?Q?nvbJB/VABT+I/tboakor3QSVb3mt876g1Ewy/V1BR1DriIQ5QcnN+ypkGZ9V?=
+ =?us-ascii?Q?FDmo4OMnqn7Zv+M/6NV9ITrQmXpKQVzhJ/tQMlsDy5adXbP1ucKCtXcDA5kI?=
+ =?us-ascii?Q?zXLV2G01F/632IHjs738q+mQN57BFiWmvohYPCCcBIb3UPf3GGIfBOHrwcDz?=
+ =?us-ascii?Q?NneZRZTBQMNYksG7/GQJFyV7KXMgaonX3J5S9prnX0GqRZnN9+1hwgLLh0Vk?=
+ =?us-ascii?Q?mjVtepFYOARcUHkuohJ+YrsjW2lkgcJHgfMcZ0JFoQH1f5BRCQRNRVKoQcBq?=
+ =?us-ascii?Q?iRPesFn/CrQr4I/XaHhbMMpvsrykX8mCHhoMKRSmvLjtcwxhcf9ReG0HjBOk?=
+ =?us-ascii?Q?SpqS8kUwsow/xlajWfDuzmS0zxj/OOlcWLqbAr3FQbeF2qP2bO1brEQgCLq9?=
+ =?us-ascii?Q?f8K1bThKSd80UO+sf5oVk4Nk6tQuxhukFd/WzjhCLnvjygptye0QlZTJE2nO?=
+ =?us-ascii?Q?s3T+sAXwdU+BfvMDwB0Az+yyWmT2nZ04nyoHczDj0TH3btUsdEa97MgDw2cC?=
+ =?us-ascii?Q?+f/gD1ZSR4/Rgnc4AQgW3gudAjqQl5ohbHBGLHVRxLfpNYIeWBbmKBkOQ5t+?=
+ =?us-ascii?Q?wji9CWIbnb4OsAoeo+6T+ee/4UILPmOi6bEmOwOe/hAgBZirj8Q3zpLIghaD?=
+ =?us-ascii?Q?VJYiO0qytQwSGu1zYX5+5eNPXKGQ0/KcC5LcoqpU9zTmCjkjbh6kWtUewDaM?=
+ =?us-ascii?Q?HNQ6+darfuRTBbeKPq0KvccIU31kdowJK6VB0Txd6bw+PF46ZJGzyaA9UDiV?=
+ =?us-ascii?Q?KY4wyjXpLBTYBpPTicrqnefoZwrmQvdaYkZZGcH340ucpYO+nS4aXl5gDHd1?=
+ =?us-ascii?Q?deibAoTQ57Nj3bDHmsgAw6U3vgZ2bJuzoS1XRrGNu0oHbaSRzgc8PWXajYa5?=
+ =?us-ascii?Q?Yfz89/Cta0h7PxfcjMfz9sMwCasQOGHlsuU6tQklYKh+XR1+F4iVb2inJ5EP?=
+ =?us-ascii?Q?7KJfdgCLmzVVX/JhbJIED+4chfuQxIV7hwa2SIPKKk6k3EnJFCSdJLVTHnOv?=
+ =?us-ascii?Q?8wh5ehXzxZahla5+HYzOKbZ+v92NZcW5athkh9qXCjCk6cXsvuqTsbfG6kv7?=
+ =?us-ascii?Q?5G9UhMHmw7cp0Pvhk6n7ZZNZcFep8q4QYppWvSFILN8OKVdUC9fUxo9qYQuv?=
+ =?us-ascii?Q?KAQw4brt5C/bURGEUY0UiqTS8SdWKfA8sXwrrLLwnGzpaP/eTJ6fFxE4VMdB?=
+ =?us-ascii?Q?vrSk305l0/jasR7ySVHe1ZbI/xSnxg4/xozzYt63T4lTEHHMxW6t?=
 X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ed87459f-7e92-4c2f-3e27-08dee7473011
+X-MS-Exchange-CrossTenant-Network-Message-Id: a07b9732-e159-4f1a-e198-08dee748742a
 X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Jul 2026 16:43:27.0411
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Jul 2026 16:52:30.7423
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 7/4b8WHGh16CgQNBix638TqqVzTKI9j/QAZHoubsXSkC8YOWuaOCfkhayGaW1XFd1L7t56/nrkPLOoGWy4Ip7MSTcOZRVDqJ8moLUbjypAtLxz18Rvsz5R9XdTDo7SaX
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV4PR04MB11852
+X-MS-Exchange-CrossTenant-UserPrincipalName: xPWRgMBoKGKcfVd26uILhoV4SI3bN3o4DTPZxPty03Vts4xEPIQ/su3c7utm5EjI+O0UWNRaX4sUlIeeW78iw8418gt6lismPZuM/iEERgGvnleXhVkZlJ7X5S8x74Mg
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB8065
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260721_094333_317970_587B6BA7 
-X-CRM114-Status: GOOD (  14.18  )
+X-CRM114-CacheID: sfid-20260721_095238_166609_625C45DB 
+X-CRM114-Status: GOOD (  29.76  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,36 +147,119 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 21, 2026 at 05:09:28PM +0300, Claudiu Beznea wrote:
-> From: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+On Tue, Jul 21, 2026 at 04:07:48AM +0000, Akhil R wrote:
+> This patch series adds SETAASA device discovery to the I3C subsystem,
+> enabling support for SPD5118 temperature sensors found on DDR5 memory
+> modules. The changes also add ACPI support for all existing DAA
+> methods like SETDASA, SETNEWDA as well as I2C devices on I3C bus.
+>
+> SPD5118 and similar devices on DDR5 memory modules differ from typical
+> I3C devices in their initialization. They use SETAASA broadcast CCC
+> instead of ENTDAA for address assignment, and per JEDEC specification,
+> are not required to have a Provisioned ID or implement standard device
+> information CCC commands (GETPID, GETDCR, GETBCR).
+>
+> The series enables describing all I3C and I2C devices on both Device
+> Tree and the ACPI table, using unified device property APIs throughout
+> the I3C core and the Synopsys DesignWare I3C master driver.
+>
+> Please note that the series modifies drivers across multiple subsystems,
+> like Device Tree bindings, ACPI, I3C and HWMON.
+>
+> v5->v6:
 
-subject:
+Thank you for hard work. I glance at there are some important sashiko AI
+review need be figured out. let me know if you think it is ready for me
+to do manual check.
 
-i3c: renesas: Drop unused structure member 'resuming'
+You can simple reply sashiko review result by providing your justify.
 
 Frank
+
+
+>   * Do not take an extra fwnode reference when assigning the boardinfo
+>     fwnode to a newly registered I3C device.
+>   * Issue SETAASA after SETDASA pre-assignment and before ENTDAA.
+>   * Prefer SETDASA over SETAASA when a device advertises both methods
+>     and an explicit dynamic address (assigned-address) is provided.
+>   * Reject PID 0 for non-SETAASA I3C boardinfo entries.
+>   * Drop OF/ACPI uevent modalias emission; keep OF/ACPI matching for
+>     SETAASA devices only.
+>   * Resolve DesignWare quirks before core clock acquisition and fail
+>     probe early when the clock is missing without the ACPI skip quirk.
 >
-> The struct renesas_i3c::resuming is a leftover from a rebase. It is not
-> used anywhere within the driver. Drop it.
+> v4->v5:
+>   * Free ACPI I2C boardinfo when an ACPI child without an I2C resource is
+>     ignored.
+>   * Issue RSTDAA if SETAASA device attach fails after the static address is
+>     used as the dynamic address.
+>   * Emit OF and ACPI modaliases for firmware-matched I3C devices.
+>   * Make the DesignWare core clock optional and use "clock-frequency" as
+>     the fallback when core_clk is absent.
+>   * Keep DesignWare pclk, reset, and match-data handling on their existing
+>     optional paths.
 >
-> Signed-off-by: Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
-> ---
+> v3->v4:
+>   * Clarify mipi-i3c-static-method bit semantics and assigned-address
+>   * Add I3C_ADDR_METHOD_VENDOR
+>   * Fix fwnode reference handling while converting child property parsing
+>     to use unified firmware-node APIs.
+>   * Align ACPI child enumeration with the I2C core for multiple
+>     I2cSerialBus resources, ignore ACPI child entries without an I2C
+>     resource, and populate I2C modalias information from ACPI.
+>   * Update SETAASA handling to use the static address as the dynamic
+>     address, skip device-info retrieval for SETAASA devices, and tolerate
+>     M2 for SETHID/SETAASA similarly to ENTDAA.
+>   * Reorder DesignWare I3C clock/reset to include optional clock in the
+>     ACPI skip clock/reset quirk.
+>   * Add prints for missing ACPI clock-frequency and SPD5118 I3C
+>     device type read failures.
+>   * Fix grammar in comments and commit messages.
 >
->  drivers/i3c/master/renesas-i3c.c | 1 -
->  1 file changed, 1 deletion(-)
+> v2->v3:
+>   * Fix maximum value and indent bit list for mipi-i3c-static-method.
+>   * Move I3C_ADDR_METHOD_* macros to dt-bindings header.
+>   * Drop ACPICA commit IDs, keep only the Link: tags.
+>   * Revert the change which proceeds to register other devices if SETAASA
+>     is not supported so that it aligns with the rest of the driver and to
+>     avoid the issues pointed by Sashiko.
+>   * Rework multiple commit messages.
 >
-> diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
-> index 2b501f31e874..ff1a243a802e 100644
-> --- a/drivers/i3c/master/renesas-i3c.c
-> +++ b/drivers/i3c/master/renesas-i3c.c
-> @@ -262,7 +262,6 @@ struct renesas_i3c {
->  	u8 addrs[RENESAS_I3C_MAX_DEVS];
->  	unsigned long rate;
->  	enum i3c_internal_state internal_state;
-> -	bool resuming;
->  	u32 free_pos;
->  	u32 dyn_addr;
->  	u32 i2c_STDBR;
+> v1->v2:
+>   * Added patch to remove 16-bit addressing support for SPD5118
+>   * Guard ACPI calls with #ifdef CONFIG_ACPI
+>   * Remove CONFIG_OF guard for of_alias_get_highest_id()
+>   * Mask mipi-i3c-static-method in the driver to select only valid values.
+>   * Proceed to register other devices if SETAASA is not supported.
+>   * Update commit message and links in the description of multiple commits.
+>
+> Akhil R (12):
+>   dt-bindings: i3c: Add mipi-i3c-static-method to support SETAASA
+>   i3c: master: Use unified device property interface
+>   i3c: master: Support ACPI enumeration of child devices
+>   i3c: master: Add support for devices using SETAASA
+>   i3c: master: Add support for devices without PID
+>   i3c: master: match I3C device through DT and ACPI
+>   i3c: dw-i3c-master: Add SETAASA as supported CCC
+>   i3c: dw-i3c-master: Add ACPI core clock frequency quirk
+>   i3c: dw-i3c-master: Add ACPI ID for Tegra410
+>   hwmon: spd5118: Remove 16-bit addressing
+>   hwmon: spd5118: Add I3C support
+>   arm64: defconfig: Enable I3C and SPD5118 hwmon
+>
+>  .../devicetree/bindings/i3c/i3c.yaml          |  36 +-
+>  arch/arm64/configs/defconfig                  |   3 +
+>  drivers/hwmon/Kconfig                         |   9 +-
+>  drivers/hwmon/spd5118.c                       | 119 +++---
+>  drivers/i3c/master.c                          | 390 +++++++++++++++---
+>  drivers/i3c/master/dw-i3c-master.c            |  59 ++-
+>  include/dt-bindings/i3c/i3c.h                 |   4 +
+>  include/linux/i3c/ccc.h                       |   1 +
+>  include/linux/i3c/master.h                    |  20 +-
+>  9 files changed, 498 insertions(+), 143 deletions(-)
+>
+>
+> base-commit: 6eb8711ece2ce27e52e327a5b7a628ed39b97f45
 > --
 > 2.43.0
 >
