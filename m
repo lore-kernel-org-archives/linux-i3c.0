@@ -4,55 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B692DC4451C
-	for <linux-i3c@archiver.kernel.org>; Tue, 21 Jul 2026 04:32:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1D581C4451C
+	for <linux-i3c@archiver.kernel.org>; Tue, 21 Jul 2026 04:35:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5QJyHLrMmJQVwynvn744i4xp0e5XuarCi7ys8K09U58=; b=0ocVYtbKynb3cB
-	Cu48iKjoHtfAQYgz6KugVCOlMrTpfzMn7Wr6E/InsGbpb5fF34ydmVhk3/IOyPCCmAo/nGz14hNk1
-	qyiR43DUGb88QZ5mosWu3aWh0eq8+WAzDll0h5umjdinbs8w9EIpGJaVkEIRmTU+r00w2Iev0sy5g
-	kstcjryDDw5aLtfNQ0PYzXRQe+YdOHueeQU7KgwN3Gr1GxRQxgPDbw96o/eDVwygsxhgmD8Rhjw1d
-	GRcUxNY6hvmjrk2dDWJn7oN8Iaqdqv77GYJ9qpTMMjvZKkQr69nqLJbtgdU/GRpwN4XxgZ6OsleNB
-	b7c7xkYGHS0xTqISu8XQ==;
+	List-Owner; bh=eAikl9AJCvi9NK70dI7TBK1JlS+EZNgBjqacB+q68qw=; b=BOfbaK9iyTLOc6
+	TIWbtw4Gqt+1ga4wvh8uoOundJC6HcVzXy/wpM84d6IQJTOJS+SQK83lETuJ4rUajzlV2+3geXH5+
+	3es8CQm8uCIPi12fFGDQzGiLFcPvIFACe1jTAnjMVOd2f08GRsl8jeXrENCXM1e7XBGroc410cVwG
+	sh+BnFe9+2sthgkKNi7FyPMlsFkCf5yMlJQ44Qke/84SSnOFeFMIr8VX54g7mhZTJDLPOkF1iMWua
+	p0txtxg69ka/fXCWxi21IQ3qEjUFKzj7LNiJ7k0y3PZpervRyd37qhRbpTb4eB0R52m+0fqCdEAK4
+	v5BMGetFJC93BWrhp9XQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm29H-00000008O1r-1kfp;
-	Tue, 21 Jul 2026 04:32:07 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wm2CL-00000008O8f-3Dpi;
+	Tue, 21 Jul 2026 04:35:17 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm29G-00000008O1c-0HEM
+	id 1wm2CK-00000008O8X-0r7X
 	for linux-i3c@lists.infradead.org;
-	Tue, 21 Jul 2026 04:32:06 +0000
+	Tue, 21 Jul 2026 04:35:16 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id CF9A84044E;
-	Tue, 21 Jul 2026 04:32:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4CD641F000E9;
-	Tue, 21 Jul 2026 04:32:05 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 7708B60A7A;
+	Tue, 21 Jul 2026 04:35:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B73AE1F000E9;
+	Tue, 21 Jul 2026 04:35:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784608325;
-	bh=gchuhNX3Cm3qEU9s8NSnllvg2K6FBI7zaHk54DYmSU4=;
+	s=k20260515; t=1784608515;
+	bh=FMehk5wCbL1iRb5X9b7BSoOkDg0AR3O9qECuG9IBz4w=;
 	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=Zv7rlnYrLtRmkNYiFtgMhvMxkjczpc3Ey/qubOapQUjZNydYxNeavpS+/N2/1iXqA
-	 bcFroxpVZ8eE6IymgDnQ7kUeBznVh7m9smdFqOepdsiXPyPKI/pyo9wfAIu5DDeVKq
-	 EuWYXrrFIazg2Iu7uhvuOGGAP9CosuETx5IuSh3rwdQuHIqU87Pt4W/1lnjGt5uHAS
-	 9gDGprWCWwQi+ldW9yTVJseRH35hAr38WBYhmmFUf+xGt3DjOfaj2uuNdY7plazQax
-	 VFP/d96ANZ/WIaT16R6ZI+c4cDAB4zITqgGzkNXiJhQIi0m6l1ZA+8LGVAYJdVLLlW
-	 Dlco/68hsA+/A==
+	b=osmua9jgoxJ4ulMKauEn+AbAFLNFg6mI6t2pc4RBe1nkR8cbKJ4wOxCpm2xxOEUrC
+	 snWMbwwgR/ewBqHQOafNxKR8pWuxhzqQ3UN4jyxlDw49+kKgFqhiJQMVrNfp/dIijj
+	 T0kyLPf2VQPSAONCsnNx+6mVH62/NPtydnj736uCm6ZeXDV3C82eRKS/tyBcjnASFj
+	 uqVzhNfX0Ixv2xHgmwz0FM+pjkCVJMEV+7k9DVqjCU6AHQW/KfWMEU9GAi5NQOdsdA
+	 Sk7+PqYviiOFBVZyfRfbJY709NlqXkBaCS1/MzhAtr9LoqmPQzljQGnAQpguuJMChs
+	 6cOpNmDPHtq1g==
 From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v6 03/12] i3c: master: Support ACPI enumeration of child
- devices
+Subject: Re: [PATCH v6 11/12] hwmon: spd5118: Add I3C support
 To: "Akhil R" <akhilrajeev@nvidia.com>
-Cc: Frank.Li@kernel.org, conor+dt@kernel.org, linux-hwmon@vger.kernel.org, linux-i3c@lists.infradead.org, robh@kernel.org, devicetree@vger.kernel.org, "Alexandre
- Belloni" <alexandre.belloni@bootlin.com>
-In-Reply-To: <20260721040805.1696503-4-akhilrajeev@nvidia.com>
+Cc: "Alexandre Belloni" <alexandre.belloni@bootlin.com>, linux-i3c@lists.infradead.org, conor+dt@kernel.org, devicetree@vger.kernel.org, robh@kernel.org, Frank.Li@kernel.org, linux-hwmon@vger.kernel.org
+In-Reply-To: <20260721040805.1696503-12-akhilrajeev@nvidia.com>
 References: <20260721040805.1696503-1-akhilrajeev@nvidia.com>
- <20260721040805.1696503-4-akhilrajeev@nvidia.com>
-Date: Tue, 21 Jul 2026 04:32:04 +0000
-Message-Id: <20260721043205.4CD641F000E9@smtp.kernel.org>
+ <20260721040805.1696503-12-akhilrajeev@nvidia.com>
+Date: Tue, 21 Jul 2026 04:35:14 +0000
+Message-Id: <20260721043514.B73AE1F000E9@smtp.kernel.org>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,24 +69,18 @@ Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-PiBBbHRob3VnaCB0aGUgZXhpc3Rpbmcgc3Vic3lzdGVtIGFsbG93cyBob3N0IGNvbnRyb2xsZXJz
-IHRvIHJlZ2lzdGVyCj4gdGhyb3VnaCB0aGUgQUNQSSB0YWJsZSwgaXQgd2FzIG5vdCBwb3NzaWJs
-ZSB0byBkZXNjcmliZSBJM0Mgb3IgSTJDCj4gZGV2aWNlcyB3aGVuIHVzaW5nIEFDUEkuIFRoaXMg
-aXMgYmVjYXVzZSB0aGUgZHJpdmVyIHJlbGllZCBvbiB0aGUgcmVnCj4gcHJvcGVydHkgdG8gcmV0
-cmlldmUgdGhlIFBJRCwgc3RhdGljIGFkZHJlc3MsIGV0Yy4sIHdoZXJlYXMgQUNQSSB1c2VzCj4g
-X0FEUiBvciBzZXJpYWwgcmVzb3VyY2VzIHRvIGRlc2NyaWJlIHN1Y2ggZGV2aWNlcy4KPiAKPiBS
-ZWFkIF9BRFIgYW5kIExWUiBmcm9tIEFDUEkgcmVzb3VyY2VzIGFuZCBleHRyYWN0IHRoZSBkYXRh
-IGFzIHBlciB0aGUKPiBBQ1BJIHNwZWNpZmljYXRpb24gZm9yIGFuIEkzQyBidXMuIEFsc28gcmVh
-ZCBtaXBpLWkzYy1zdGF0aWMtYWRkcmVzcyBhcwo+IHBlciB0aGUgTUlQSSBESVNDTyBzcGVjaWZp
-Y2F0aW9ucyBbMV0gdG8gZ2V0IHRoZSBzdGF0aWMgYWRkcmVzcyB0byBiZQo+IHVzZWQuCj4gCj4g
-RW5hYmxlIGRlc2NyaWJpbmcgSTNDIG9yIEkyQyBkZXZpY2VzIGluIHRoZSBBQ1BJIHRhYmxlLiBU
-aGlzIGlzIHJlcXVpcmVkCj4gaWYgdGhlIGRldmljZSB1c2VzIGEgc3RhdGljIGFkZHJlc3Mgb3Ig
-aWYgaXQgbmVlZHMgZGV2aWNlLXNwZWNpZmljCj4gcHJvcGVydGllcy4KPiAKPiBbMV0gaHR0cHM6
-Ly93d3cubWlwaS5vcmcvbWlwaS1kaXNjby1mb3ItaTNjLWRvd25sb2FkCj4gCj4gUmV2aWV3ZWQt
-Ynk6IEZyYW5rIExpIDxGcmFuay5MaUBueHAuY29tPgo+IFNpZ25lZC1vZmYtYnk6IEFraGlsIFIg
-PGFraGlscmFqZWV2QG52aWRpYS5jb20+CgpTYXNoaWtvIGhhcyByZXZpZXdlZCB0aGlzIHBhdGNo
-IGFuZCBmb3VuZCBubyBpc3N1ZXMuIEl0IGxvb2tzIGdyZWF0IQoKLS0gClNhc2hpa28gQUkgcmV2
-aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDcyMTA0MDgwNS4xNjk2
-NTAzLTEtYWtoaWxyYWplZXZAbnZpZGlhLmNvbT9wYXJ0PTMKCgotLSAKbGludXgtaTNjIG1haWxp
-bmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
-ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
+PiBBZGQgYSByZWdtYXAgY29uZmlnIGFuZCBhIHByb2JlIGZ1bmN0aW9uIHRvIHN1cHBvcnQgSTND
+LWJhc2VkCj4gY29tbXVuaWNhdGlvbiB3aXRoIFNQRDUxMTggZGV2aWNlcy4KPiAKPiBPbiBhbiBJ
+M0MgYnVzLCBTUEQ1MTE4IGRldmljZXMgYXJlIGVudW1lcmF0ZWQgdmlhIFNFVEFBU0EgYW5kIGFs
+d2F5cwo+IHJlcXVpcmUgYW4gQUNQSSBvciBkZXZpY2UgdHJlZSBlbnRyeS4gRGV2aWNlIG1hdGNo
+aW5nIGlzIGhlbmNlIHRocm91Z2gKPiB0aGUgT0YgbWF0Y2ggdGFibGVzIG9ubHkgYW5kIGRvZXMg
+bm90IG5lZWQgYW4gSTNDIGNsYXNzIG1hdGNoIHRhYmxlLiBUaGUKPiBkZXZpY2UgaWRlbnRpdHkg
+aXMgdmVyaWZpZWQgaW4gdGhlIHR5cGUgcmVnaXN0ZXJzIGJlZm9yZSBwcm9jZWVkaW5nIHRvCj4g
+dGhlIGNvbW1vbiBwcm9iZSBmdW5jdGlvbi4KPiAKPiBBY2tlZC1ieTogR3VlbnRlciBSb2VjayA8
+bGludXhAcm9lY2stdXMubmV0Pgo+IFNpZ25lZC1vZmYtYnk6IEFraGlsIFIgPGFraGlscmFqZWV2
+QG52aWRpYS5jb20+CgpTYXNoaWtvIGhhcyByZXZpZXdlZCB0aGlzIHBhdGNoIGFuZCBmb3VuZCBu
+byBpc3N1ZXMuIEl0IGxvb2tzIGdyZWF0IQoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBz
+Oi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDcyMTA0MDgwNS4xNjk2NTAzLTEtYWtoaWxy
+YWplZXZAbnZpZGlhLmNvbT9wYXJ0PTExCgoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGlu
+dXgtaTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
+bG1hbi9saXN0aW5mby9saW51eC1pM2MK
