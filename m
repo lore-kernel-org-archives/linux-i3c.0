@@ -4,133 +4,126 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 687DFC4451C
-	for <linux-i3c@archiver.kernel.org>; Tue, 21 Jul 2026 16:52:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A89EC4452B
+	for <linux-i3c@archiver.kernel.org>; Tue, 21 Jul 2026 16:58:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i/IvPk7E1fUk7sxs0sg9kLjO3d2Dt7QipLT1XBfHgRg=; b=vydE+HY92Qiro6
-	ru0pC79F2/004HB46pdldmdHG/34vv+UmK06lbgOKiC5JWBmbOSfsO21TrLP1rR/uQmCxwq3IZ+eU
-	cTzd4eh489UWeHk0Ov2SbvhiNi+/wfURNNptWyJkgh/Yi+rgCBN7Twasok+hOkIbnu266dpT2Tm0+
-	vTAofBOH2aGUXjEvDoRGFtRBJdfzZINbcF1xDDCOUYiBfrb7Cp55cZKDsvyGfz1F9+KZdGo9mH0IG
-	XTqwMglB+MOL6fuKvsNriIZtyiXaOG/zja4/P5u8vfcR46O4W9J41m2n5+noyaZ1PKF8PoS0pcUzX
-	pSCB8Zp2U8EV1p2f+4/g==;
+	List-Owner; bh=l+zlfqzrxPcyIWgW8XntzLtx/JxVLxYWgzjDutzOW+w=; b=Ko2+B/nlXYeD7D
+	VqYMLgvSAc4OEu3XECFWve8j+FZ6FJ7Z22sJXht9hLH5zenIG+C+Haw1L/l/4acEq6EMInjlJgU9u
+	MeR1abIS54e4Ab4SL+rHyn3sFK6rtSy0gQXajv9asLLjSMcaVACM3BqJ70V9linWLQxfzlfJYdvrk
+	hWJq781SG3IhLjEjZNZhm60HGgqUhHurLwb6HXikcJ7ce+nf2O3scA9CgSqcNAWeBqw3y9Lh69JPs
+	ZVJIh3GrLnDELeldR4xjW8BUo3QE2NUNaxCWF4ierC0xTs/Dl0QRQg9gREwkz3M0LlQx7QEFe+XH+
+	4FggZDxN2aP8od/I1k3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmDhw-00000009zAm-0Bnu;
-	Tue, 21 Jul 2026 16:52:40 +0000
-Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
+	id 1wmDnj-00000009zZd-2dhm;
+	Tue, 21 Jul 2026 16:58:39 +0000
+Received: from mail-francecentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20a::7] helo=PA4PR04CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmDhu-00000009zAP-0Q9p
+	id 1wmDnh-00000009zZ1-4A37
 	for linux-i3c@lists.infradead.org;
-	Tue, 21 Jul 2026 16:52:39 +0000
+	Tue, 21 Jul 2026 16:58:39 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=GtFvxv85D67D2fz2mqIItfW9ZQM1KKFYelC3x4u1z99kKMz0Oit7kDQ4wh+azPdO5DKUA4d3mMRinyA3AQ3jo07ExNOS3tTbFn7bEXSNwBrvH7u5iTWitrqEtxCuuRWc2HnZkou8wwvY2mqseh3fHnWjmSF6X9LQH5azjh4UrmoMn/OZsXspV0YXLTtoPLeqY7wNsFTn+qZ81nxnjtoqpjQkB3+zZx07iFINJkg0RYSULtrLDpDscR0QOLvM1WojxE7yu+sv0YrXcfzaDzXSTir0/L/Ski6M6Luoo1/wtsmknrYMJ5nkVyTiP8aFk1P8W4hrOf/6wepDV3K3yXQ6ig==
+ b=YRK4+pEhu0y2ursTNpMTyns9DrL6Rlfr9Y1g28RghnX5jx1xI0PQukXcOkC6m91tBcwV/LzPPa5/7USPn3CfjdCc9sQVvnlPqs0Sp/DBxcoh1op8A8fkIxjqHJChQzHuXWy8nLQ2vH567KDKNT8MwEx/5dY/UwHjdF6cL0ch7FoX3Wqi2TuhhOiFSaAL2lsPRIZ5/pkptxTcsDUBu8At5d34cql3p9IvQD1gnaCIDV3eDiioBYqhdB6VHxxyomNEg4xTYkOnoEcPac4f3ceS7trccwbhLJEKQMbcH8bZ9ZkfGQVe3dIB9yjbLCcOS6QpyPPT2F6r/Cb3X/abAXHuyQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=oC/2gIg5lNEGQDL6bz0lMofw3oL3pBjMAUGC70QYXuI=;
- b=X7haz2WU7eRVhVa72bMtzgj0d2UDDhBTOM47IZwpdFZDGCMYY3dwdr08wZiuhFoxDZnE/khrh+yAgU9NbuSTwr1pEy3CHVBY+SUmGDjUmOEfUGdAEuLpSQ4uuaNGaA1GZ3Lm7QH5kPKmV4aoL00YYtDd9zthPHSSE2zvCNbxxqrWlhfp/32qunItOM/efktalkRMBQ0VToWz+Aa7qIoWBDT7IRyUiTWpeT2wirKsVM/l7sjEkaTbUJ0slHWWFu3JVDwITIgFlYMcNBnNk/YJblMRuzVpncIikIxPhZo4Sav8Lz2pl4AuPUuwBZ1iaJIYpTYl2vrBN/pnnsd94SNc1A==
+ bh=qYKq+veDhBBNXsv47hFw4oHUFrFv4ezcrOScxxxaRH4=;
+ b=ddt57PLcyYQHFXWO/xZfHVclzzIgmNgMuxK9UwQxh9L+mfYOZyZq900JH6ZQTL5N9w64omdUpRN7OevJ64iqR27ipdy9uBSomnVUX9xhiygLQlbRu5KyO3Gnn+xXpfrzpN7t22RvLRsVfTHUFvxkOuT8k8FrolnP3DG73VrZydDSgd5+B3RxSxB83GTqbujDqb74kBW03TwRaUc+5LatFm48DT736f+fVI4Z4wURbxpr2MTna0rBBO7duON8FYm6J9nd9z83ckFyrlJI5KlM+/9xi3P0m5KMq05WkT6E1m92MqTa2SiR9670QbGF9TNdlZ8gtUGWJxih3oSM6029wA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
  dkim=pass header.d=oss.nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
  s=selector1-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=oC/2gIg5lNEGQDL6bz0lMofw3oL3pBjMAUGC70QYXuI=;
- b=ja1sBYWuSk5aF/a4E++BHIb6x7VvZoIKaZIawHr07cSiKtYV3VygauRvksukQu5Q2jJKPBE333VFbt0EPGGFMZzVd9KJDMGTr8BanopaOLlE6B2H/SmMvE5s+z665369jVV1YmCn0kpEfVBy9czGJlv0zl3jfgORUs02hfXTM4ZKyvpt1qQIWJArOQCV4JezZh8/VmF7Waog0dFK52DXwssSXj1JUGmRXJM0Xz8f1JDiUyPS62WTqc1xwfSS/1fz8/m02bR7bAT2IZkxqjwM8RuxDeLf5IGLlOkm3kWWoHMIFlYD1c0qW1/d+hCdnJj/thmNInWX8PaesBP45j+zMw==
+ bh=qYKq+veDhBBNXsv47hFw4oHUFrFv4ezcrOScxxxaRH4=;
+ b=RjV1XAOrnOrAq6HZQlftW7LmZ6YD2wx1T3FA5M75dpAH32NgXek1S0c9WE4FqHZJ7HVbzLIl52qLLddXaRCDucloECSDbzfpdLQiDsxwLqx/edbBTLanlMqe2mrob3drJ0SOV0/8PTOQjg7cys/xElbNroNsR7bbJrGd0jtPQp0Bwk3ijGJ4LYmloYHzXZDyrzGMTjcYhZAwqWVLk8cZPbYsf1ifNixMrLBfwTRXDLQqB3emKfnXEGLNq0F0qbkP7lo9+vNjvlM70ncntPFXPlDjVu0+uzAXfQUGD7IHuArXgqG0KiLw1JXWuVeSSKwd5UVqIe1VncDKtR2Cen9zFQ==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=oss.nxp.com;
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by AM9PR04MB8065.eurprd04.prod.outlook.com (2603:10a6:20b:3ee::8) with
+ by GV4PR04MB11379.eurprd04.prod.outlook.com (2603:10a6:150:29b::20) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.245.10; Tue, 21 Jul
- 2026 16:52:34 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.223.18; Tue, 21 Jul
+ 2026 16:58:33 +0000
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0223.017; Tue, 21 Jul 2026
- 16:52:30 +0000
-Date: Tue, 21 Jul 2026 12:52:23 -0400
+ 16:58:33 +0000
+Date: Tue, 21 Jul 2026 12:58:27 -0400
 From: Frank Li <Frank.li@oss.nxp.com>
-To: Akhil R <akhilrajeev@nvidia.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Guenter Roeck <linux@roeck-us.net>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Jon Hunter <jonathanh@nvidia.com>,
-	Thierry Reding <thierry.reding@kernel.org>,
-	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-hwmon@vger.kernel.org, linux-tegra@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v6 00/12] Support ACPI and SETAASA device discovery
-Message-ID: <al-jx5AvUrxq8I75@lizhi-Precision-Tower-5810>
-References: <20260721040805.1696503-1-akhilrajeev@nvidia.com>
+To: sashiko-reviews@lists.linux.dev
+Cc: tze.yee.ng@altera.com, linux-i3c@lists.infradead.org,
+	Frank.Li@kernel.org,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>
+Subject: Re: [PATCH v2] i3c: master: dw-i3c-master: fix OD timing for first
+ broadcast
+Message-ID: <al-lM4FdoekyTk4r@lizhi-Precision-Tower-5810>
+References: <20260721033159.11789-1-tze.yee.ng@altera.com>
+ <20260721034751.35EE41F000E9@smtp.kernel.org>
 Content-Disposition: inline
-In-Reply-To: <20260721040805.1696503-1-akhilrajeev@nvidia.com>
-X-ClientProxiedBy: SA9PR11CA0010.namprd11.prod.outlook.com
- (2603:10b6:806:6e::15) To GV2PR04MB11799.eurprd04.prod.outlook.com
+In-Reply-To: <20260721034751.35EE41F000E9@smtp.kernel.org>
+X-ClientProxiedBy: SA9PR13CA0146.namprd13.prod.outlook.com
+ (2603:10b6:806:27::31) To GV2PR04MB11799.eurprd04.prod.outlook.com
  (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|AM9PR04MB8065:EE_
-X-MS-Office365-Filtering-Correlation-Id: a07b9732-e159-4f1a-e198-08dee748742a
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|GV4PR04MB11379:EE_
+X-MS-Office365-Filtering-Correlation-Id: 7c4aec62-7553-4cc0-78e0-08dee7494c53
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|19092799006|366016|7416014|376014|1800799024|3023799007|56012099006|11063799006|10067099003|6133799003|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: ZyhTqa/RyGYDrc9/Ov56/x9t5m3N6KrDL4JOdBaPjB1SQ2MbD6CxjO1QrT7hiBOjMmJjP6xlnLRPAc9MLJ6H7Ihba+PptSRH06TPLN4T/2IqUdLTSDiz1qL44vv3MUUdY116PTyN9u3qzaC7DsOiHGUZFhRA5hjAF8+OngAXAOaV6nt+GChamQIuoBjzs8+N/L6t0PCDvHsNE1tcVinKBzb+IuOJbGPql5Z5hXWI/DGe6FCjOH5qIoxUk4l+lIl2oPfD/dqKT7kMRuYr6t/U5Zy88S8nNQAxggTjkGgaeIS+mcURZw7BYsBVfnG/8AsfVFFKblplEfdeGHvshibhtysvjSdUjUfw9nGEz6EoqnCHvfN6u9Ix7jkMmKZZuLmTCIoFZlG/m5VKobeAGMNd1NJcjwxmfA84OZMWxnmUYReXL9Ay33nsfB10+39UgrsfyMhbzGud7aPXj8xyOfn1Pg8+q+V7CbPQPJwFG1Tr50+cKWtJdjddUt5WPJJM3yRFwiKJynkZYEgiFyp5f1EEqTAAES61NkGgsCemAkBrruhPxa8RgOT0DW1ZbC4VmwSVlbcQi9hTknN8o0WsaqvhWlPigkgjN01pfyt+/IUlPF8DgDX1S22NfwFmeTfqPhpWCaKX2mVdJJe2p22LzgyeVAz7ckYUAynDzJbi+QxxspU=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(19092799006)(366016)(7416014)(376014)(1800799024)(3023799007)(56012099006)(11063799006)(10067099003)(6133799003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|19092799006|376014|1800799024|366016|10067099003|11063799006|4143699003|56012099006|18002099003|22082099003;
+X-Microsoft-Antispam-Message-Info: +rs9BaLLAXvEGb2evOiZTjw5ErJ1IJ8jGCU6S8sKEaus6i1UIpojOfnzmgEQwD0gLFFIurCWxFpDvIO23fokX/F090gDGLzR7+PiqvCTeQ5vY52T21u+aG9QPaIuEvAR6PF6gqOoKojj6Gu43OJFln6gTrFG3XFLpbrXEwToPRQ0Bh5hfKmfPDirEF+8hDQMOkJ9noF2Z7jF0YBZe7RbEwGmLnpMBhnmuUOTLggxycBaBm7civBu/wv+hPQZF3kvB+QJ+S2vWp6TOSIKfWjv02wzi2h8WAZwSKHibyOlVHBdBH7nyul0GWFvacCKicAuQFRr8h39y9FlEqew7kdIIgOQfnclRnCPHHhSMkRQ1pAbRUGUsqeuNtuNhk0UA5X01JNtQUpAWEtfrNUc85kGtLgS3WfunNtnCwIznUiI8ZTZkAVLIH8fLF4e6kCB3CSRUV88d5EcmQo8J3HEA+jmL/EnxVQGVpX+zhzacvkLRv3SnMOWd+42ic6bJ8FyFYXhPhTzgpUIdb0I2VXDWmJSMBMICnNTk7PRbEGETHZX5bK/PCKzwiBUHW97xbHbsQAx2MyLxcUmoxEFoFSvc4fac3bICWa9UR7j+oA9s0RxWBk=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(19092799006)(376014)(1800799024)(366016)(10067099003)(11063799006)(4143699003)(56012099006)(18002099003)(22082099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?G1Yh1zgZelneM6AOln74DBFAqRcWjoLbpYPTrte6+cQYcBXGjPMfanFZlISC?=
- =?us-ascii?Q?cjeIIWkgICZlsw3AycrN1ISCCdnn/a432qpyhm0XW3O1zLQS4UlXL5uFILy2?=
- =?us-ascii?Q?d4Jv0ubrELD7JGQ0fxpj+YHwiJViQB3SaQZkh4sb6V5ggYL6f1JfXs5YI2Dx?=
- =?us-ascii?Q?mSiuvpfPqMz5fQlrji0Eh7bgw/LjoyKTUDUAXXauIFoMliO2ztciO6/8mc9e?=
- =?us-ascii?Q?LX7oRrPYdDj2xfy7NP1eM46LPjWYK1Oq96WN8oOz6uX7dnrXg8uBpv0Z4Qzn?=
- =?us-ascii?Q?2CLA1tDtGx2RxqwgTaTEMHsxBjwmRcSuTTS4PkYaKyJeBeTZ5O00cx10g7Wq?=
- =?us-ascii?Q?InqS+tpPiF7k+8p53E2wSKjIDMDaIrBJ94dMhMJ7KVTbUif6cg8DzNSWvyTN?=
- =?us-ascii?Q?6AG5FvE2+8Td8WA1KBsUWSyR0uYbpkXTvhaQ3gUHGYzWHRcEgxHmGPSSMJms?=
- =?us-ascii?Q?gvUtcsoRXDJYzTZB9NcOAETyNlwSXJHWiLlEo2JFt97zU1sL12XFd1SGnIbX?=
- =?us-ascii?Q?nvbJB/VABT+I/tboakor3QSVb3mt876g1Ewy/V1BR1DriIQ5QcnN+ypkGZ9V?=
- =?us-ascii?Q?FDmo4OMnqn7Zv+M/6NV9ITrQmXpKQVzhJ/tQMlsDy5adXbP1ucKCtXcDA5kI?=
- =?us-ascii?Q?zXLV2G01F/632IHjs738q+mQN57BFiWmvohYPCCcBIb3UPf3GGIfBOHrwcDz?=
- =?us-ascii?Q?NneZRZTBQMNYksG7/GQJFyV7KXMgaonX3J5S9prnX0GqRZnN9+1hwgLLh0Vk?=
- =?us-ascii?Q?mjVtepFYOARcUHkuohJ+YrsjW2lkgcJHgfMcZ0JFoQH1f5BRCQRNRVKoQcBq?=
- =?us-ascii?Q?iRPesFn/CrQr4I/XaHhbMMpvsrykX8mCHhoMKRSmvLjtcwxhcf9ReG0HjBOk?=
- =?us-ascii?Q?SpqS8kUwsow/xlajWfDuzmS0zxj/OOlcWLqbAr3FQbeF2qP2bO1brEQgCLq9?=
- =?us-ascii?Q?f8K1bThKSd80UO+sf5oVk4Nk6tQuxhukFd/WzjhCLnvjygptye0QlZTJE2nO?=
- =?us-ascii?Q?s3T+sAXwdU+BfvMDwB0Az+yyWmT2nZ04nyoHczDj0TH3btUsdEa97MgDw2cC?=
- =?us-ascii?Q?+f/gD1ZSR4/Rgnc4AQgW3gudAjqQl5ohbHBGLHVRxLfpNYIeWBbmKBkOQ5t+?=
- =?us-ascii?Q?wji9CWIbnb4OsAoeo+6T+ee/4UILPmOi6bEmOwOe/hAgBZirj8Q3zpLIghaD?=
- =?us-ascii?Q?VJYiO0qytQwSGu1zYX5+5eNPXKGQ0/KcC5LcoqpU9zTmCjkjbh6kWtUewDaM?=
- =?us-ascii?Q?HNQ6+darfuRTBbeKPq0KvccIU31kdowJK6VB0Txd6bw+PF46ZJGzyaA9UDiV?=
- =?us-ascii?Q?KY4wyjXpLBTYBpPTicrqnefoZwrmQvdaYkZZGcH340ucpYO+nS4aXl5gDHd1?=
- =?us-ascii?Q?deibAoTQ57Nj3bDHmsgAw6U3vgZ2bJuzoS1XRrGNu0oHbaSRzgc8PWXajYa5?=
- =?us-ascii?Q?Yfz89/Cta0h7PxfcjMfz9sMwCasQOGHlsuU6tQklYKh+XR1+F4iVb2inJ5EP?=
- =?us-ascii?Q?7KJfdgCLmzVVX/JhbJIED+4chfuQxIV7hwa2SIPKKk6k3EnJFCSdJLVTHnOv?=
- =?us-ascii?Q?8wh5ehXzxZahla5+HYzOKbZ+v92NZcW5athkh9qXCjCk6cXsvuqTsbfG6kv7?=
- =?us-ascii?Q?5G9UhMHmw7cp0Pvhk6n7ZZNZcFep8q4QYppWvSFILN8OKVdUC9fUxo9qYQuv?=
- =?us-ascii?Q?KAQw4brt5C/bURGEUY0UiqTS8SdWKfA8sXwrrLLwnGzpaP/eTJ6fFxE4VMdB?=
- =?us-ascii?Q?vrSk305l0/jasR7ySVHe1ZbI/xSnxg4/xozzYt63T4lTEHHMxW6t?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?iso-8859-1?Q?Btx5Qx0V+vxd+qoAfD1twdC/1XTpjAO+nJnEoLaS5RrthAqjYaYAdhu2RG?=
+ =?iso-8859-1?Q?3xP/w5zgVy55kOEVPq8XNjCkC5Bh647RoiKoTjtpal2AzmA/vTMw1FLyZh?=
+ =?iso-8859-1?Q?+qGpbxvKF9xqqBXEL2Bv4laLaU7lTITB5qaWa/ABjHkhCC5WRZRJBlQy5H?=
+ =?iso-8859-1?Q?nabIVbNPwvBDrwhYnE1JadDh9IOF3gcq9xolrWm1dR1CBbI23m5I6XhGnD?=
+ =?iso-8859-1?Q?roEmJU4OlDvC+XlY4LkbiOouApZYDvtIkkgjBb1DmrBeGi3kNvfCi3da7/?=
+ =?iso-8859-1?Q?Qx0huaYEY3Np0e2/C4DxlxMsiVgVYfwhdUAybYYA38yWannXn1hkrNE0pB?=
+ =?iso-8859-1?Q?+a/MXeVXhGSAyLOWN0s6omd6dSqbDZ/LVgAm+DFlEiGQ8SSN/6FHkYrMhN?=
+ =?iso-8859-1?Q?qxeuC4bnxkiVZQg4BPSGUxN8C0YoHw/sPY7LmH1Rm6rTrHRNoX/1onNZgG?=
+ =?iso-8859-1?Q?ekezQ1e7D5PUTfgSZQ6Wlr7YHDY0rOvEXtrKHAcv/OUxBdFK2ni2k2Z3Va?=
+ =?iso-8859-1?Q?n5YyqvSc14fL51lbNbRIkxqZjWgFtCMS0IFiGqz4VVwMr5SzV+veaxrkau?=
+ =?iso-8859-1?Q?NZ/lhUQl59az8dyC/+Ljw+n40dQ0RVb7YqxLP+278deMwrJODMa4C+9q9S?=
+ =?iso-8859-1?Q?ojXtdZ09GE0zLqI74UdexJoQTxIq72DkPQobdghLokwqySaU0Ij079LgvF?=
+ =?iso-8859-1?Q?S4uzYAYBPRhSryRQ3J8fFEqbNDqsBPbZSUkSj+LEENF99u1dJ35a09PwGe?=
+ =?iso-8859-1?Q?H6AZNw2Gqpzo7jQK2dGbstAX2wNIMsePgLCgLFh31JTk02fW0/OJe0c6Kq?=
+ =?iso-8859-1?Q?2KbeH+hIswfSSc/mnpldS+Jcclk0APMBpQKcpozihHid2ofk+donEz/YrZ?=
+ =?iso-8859-1?Q?7xb5co0hDJNDLoQx7l3YwFu/fQsrzZtTNQZDe3eid/VKyEv6DsfxGQ5mBc?=
+ =?iso-8859-1?Q?1ES6pBD5bvSt/qOJTgKDAyhQJStHiNL1iR8PfVzVA979edCHvU15LQKnr6?=
+ =?iso-8859-1?Q?M//f7eji8uPPg+VnbE+zjCTil6SFP4SOaWjl910nJJJ40jdLuDtB9821RU?=
+ =?iso-8859-1?Q?leCI2SKZw0L7SFH4XxHs+2aUTt8INY0qpYT6TeIrgs+4uFnV2ULsZbkwom?=
+ =?iso-8859-1?Q?SpKO5QbMJ8+pt8+jksSbKv7rX+3SmjcXVsUF3O1ZRGd4tSdd6g8tnUQJMA?=
+ =?iso-8859-1?Q?2R/NCJM/12h2o9PDjH3DuRJcJKL/OmkEYnVEluDaRhBaUZNsLtF5KehUNB?=
+ =?iso-8859-1?Q?HmYcrQgx2zZGCgemkNeGfSvlt9wR6KAvKb5ia5t12pMa32DOjJYT0sK1hx?=
+ =?iso-8859-1?Q?It3qAyIc689CvoLWPyV+Jh3dLr/wohEFWoEHh4098BTIk1YCS2atA4DFKP?=
+ =?iso-8859-1?Q?Fh1yQGj97sIoPNqybCQuR6U9szbCoGfBfhAbH/WSbTkBZMET8tYtsAYl5G?=
+ =?iso-8859-1?Q?+75GiF4Ek4RHaxFHbgBTaJkXzsKbCW5xvsoQ7jU2aJerOf9Z2heYV2lQqs?=
+ =?iso-8859-1?Q?KAoVgnUsT8n8bKk1B49iJ38hrgR3DwcsIQjii4tePagGS7NkPNxEkSeJ3c?=
+ =?iso-8859-1?Q?dwdXZ8CLdRwGBMakcbnLoZRacwAF46tTZ9ftNZWqo3h0G7zT5yt96O1pNx?=
+ =?iso-8859-1?Q?UqGuRNS1JUY057lOZL9PvW7TARnNuc2cR91CB2zVcOfZxtoMZYrEvd1OTO?=
+ =?iso-8859-1?Q?s0CEcvgo3uuUTNiV1bYGD8Hk+dlxWpOxIBxKY22NkG4a/yeqB3wq6rZ/Vu?=
+ =?iso-8859-1?Q?ZniKQAALT4RseDp3rzsib2ZHiVaS43g4HnvsYLoojRJLyofVp9BWuCwBeo?=
+ =?iso-8859-1?Q?wbJMNtCZS3cA8SwMxI2Nu+W5dfXiDvCxfMvL1IwVLmEc5m0L2Od6?=
 X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a07b9732-e159-4f1a-e198-08dee748742a
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7c4aec62-7553-4cc0-78e0-08dee7494c53
 X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Jul 2026 16:52:30.7423
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Jul 2026 16:58:33.4937
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: xPWRgMBoKGKcfVd26uILhoV4SI3bN3o4DTPZxPty03Vts4xEPIQ/su3c7utm5EjI+O0UWNRaX4sUlIeeW78iw8418gt6lismPZuM/iEERgGvnleXhVkZlJ7X5S8x74Mg
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB8065
+X-MS-Exchange-CrossTenant-UserPrincipalName: uUCzGO/WPZMMXQrt7mpMsioAEqMpSwT/CHWZQ1depkGSMvlQTExcVAABZYvMxeJgtpPHiU8id+jYhUUH2mehdPVKbOkUPgGJcucd0aeHIXauTukotq6t9/pi1dNuiDAT
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV4PR04MB11379
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260721_095238_166609_625C45DB 
-X-CRM114-Status: GOOD (  29.76  )
+X-CRM114-CacheID: sfid-20260721_095838_035611_7C96ACC1 
+X-CRM114-Status: GOOD (  23.20  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -142,129 +135,114 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 21, 2026 at 04:07:48AM +0000, Akhil R wrote:
-> This patch series adds SETAASA device discovery to the I3C subsystem,
-> enabling support for SPD5118 temperature sensors found on DDR5 memory
-> modules. The changes also add ACPI support for all existing DAA
-> methods like SETDASA, SETNEWDA as well as I2C devices on I3C bus.
+On Tue, Jul 21, 2026 at 03:47:50AM +0000, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 2 potential issu=
+e(s) to consider:
+> - [Medium] The calculation for `od_hcnt` can silently overflow its 8-bit =
+capacity if the core clock rate exceeds ~1.28 GHz, resulting in an inapprop=
+riately fast open-drain speed.
+> - [Low] Using DIV_ROUND_UP() with a 64-bit numerator or divisor causes a =
+linker error (__udivdi3 undefined) on 32-bit platforms.
+> --
 >
-> SPD5118 and similar devices on DDR5 memory modules differ from typical
-> I3C devices in their initialization. They use SETAASA broadcast CCC
-> instead of ENTDAA for address assignment, and per JEDEC specification,
-> are not required to have a Provisioned ID or implement standard device
-> information CCC commands (GETPID, GETDCR, GETBCR).
+> --- Patch [1]: [PATCH v2] i3c: master: dw-i3c-master: fix OD timing for f=
+irst broadcast ---
+> commit b82f29a59ae98bd18cbb544ded9a3bf8f8d60fc6
+> Author: Tze Yee Ng <tze.yee.ng@altera.com>
 >
-> The series enables describing all I3C and I2C devices on both Device
-> Tree and the ACPI table, using unified device property APIs throughout
-> the I3C core and the Synopsys DesignWare I3C master driver.
+> i3c: master: dw-i3c-master: fix OD timing for first broadcast
 >
-> Please note that the series modifies drivers across multiple subsystems,
-> like Device Tree bindings, ACPI, I3C and HWMON.
+> This commit implements ->set_speed() to switch open-drain timing for the
+> first broadcast address according to the I3C specification. It caches the
+> normal OD register value during init and uses a separate od_hcnt for the
+> slow path so SDR extended timing remains derived from the normal PP hcnt.
 >
-> v5->v6:
+> > diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw=
+-i3c-master.c
+> > index 84ffcb1893389..077f2bf4b0b3f 100644
+> > --- a/drivers/i3c/master/dw-i3c-master.c
+> > +++ b/drivers/i3c/master/dw-i3c-master.c
+>
+> [ ... ]
+>
+> > @@ -1513,6 +1519,48 @@ static irqreturn_t dw_i3c_master_irq_handler(int=
+ irq, void *dev_id)
+> >  	return IRQ_HANDLED;
+> >  }
+> >
+> > +static int dw_i3c_master_set_speed(struct i3c_master_controller *m,
+> > +				   enum i3c_open_drain_speed speed)
+> > +{
+> > +	struct dw_i3c_master *master =3D to_dw_i3c_master(m);
+> > +	unsigned long core_rate;
+> > +	u32 scl_timing;
+> > +	u8 od_hcnt, lcnt;
+> > +
+> > +	PM_RUNTIME_ACQUIRE_AUTOSUSPEND(master->dev, pm);
+> > +	if (PM_RUNTIME_ACQUIRE_ERR(&pm))
+> > +		return -ENXIO;
+> > +
+> > +	switch (speed) {
+> > +	case I3C_OPEN_DRAIN_SLOW_SPEED:
+> > +		core_rate =3D clk_get_rate(master->core_clk);
+> > +		if (!core_rate)
+> > +			return -EINVAL;
+> > +
+> > +		lcnt =3D SCL_I3C_TIMING_LCNT(master->i3c_od_timing_normal);
+> > +		od_hcnt =3D DIV_ROUND_UP((u64)I3C_BUS_THIGH_INIT_OD_MIN_NS * core_ra=
+te,
+> > +				       1000000000ULL) - 1;
+>
+> [Severity: Low]
+> Will this cause a build failure on 32-bit platforms?
+>
+> Using DIV_ROUND_UP() with a 64-bit divisor (1000000000ULL) will likely
+> result in a linker error for __udivdi3 on 32-bit architectures like ARM32
+> or i386. Should this use DIV_ROUND_UP_ULL() instead?
+>
 
-Thank you for hard work. I glance at there are some important sashiko AI
-review need be figured out. let me know if you think it is ready for me
-to do manual check.
+make sense,
 
-You can simple reply sashiko review result by providing your justify.
+> [Severity: Medium]
+> Can od_hcnt silently overflow here?
+>
+> Because od_hcnt is declared as a u8 at the top of the function, if the
+> core clock rate exceeds ~1.28 GHz, the calculation will evaluate to a
+> value greater than 255.
+
+less possible, but suggest fix it.
 
 Frank
 
-
->   * Do not take an extra fwnode reference when assigning the boardinfo
->     fwnode to a newly registered I3C device.
->   * Issue SETAASA after SETDASA pre-assignment and before ENTDAA.
->   * Prefer SETDASA over SETAASA when a device advertises both methods
->     and an explicit dynamic address (assigned-address) is provided.
->   * Reject PID 0 for non-SETAASA I3C boardinfo entries.
->   * Drop OF/ACPI uevent modalias emission; keep OF/ACPI matching for
->     SETAASA devices only.
->   * Resolve DesignWare quirks before core clock acquisition and fail
->     probe early when the clock is missing without the ACPI skip quirk.
 >
-> v4->v5:
->   * Free ACPI I2C boardinfo when an ACPI child without an I2C resource is
->     ignored.
->   * Issue RSTDAA if SETAASA device attach fails after the static address is
->     used as the dynamic address.
->   * Emit OF and ACPI modaliases for firmware-matched I3C devices.
->   * Make the DesignWare core clock optional and use "clock-frequency" as
->     the fallback when core_clk is absent.
->   * Keep DesignWare pclk, reset, and match-data handling on their existing
->     optional paths.
+> This would truncate when assigned to od_hcnt, bypassing the minimum 200ns
+> requirement and potentially causing spike filters on devices to drop the
+> broadcast.
 >
-> v3->v4:
->   * Clarify mipi-i3c-static-method bit semantics and assigned-address
->   * Add I3C_ADDR_METHOD_VENDOR
->   * Fix fwnode reference handling while converting child property parsing
->     to use unified firmware-node APIs.
->   * Align ACPI child enumeration with the I2C core for multiple
->     I2cSerialBus resources, ignore ACPI child entries without an I2C
->     resource, and populate I2C modalias information from ACPI.
->   * Update SETAASA handling to use the static address as the dynamic
->     address, skip device-info retrieval for SETAASA devices, and tolerate
->     M2 for SETHID/SETAASA similarly to ENTDAA.
->   * Reorder DesignWare I3C clock/reset to include optional clock in the
->     ACPI skip clock/reset quirk.
->   * Add prints for missing ACPI clock-frequency and SPD5118 I3C
->     device type read failures.
->   * Fix grammar in comments and commit messages.
+> > +		if (od_hcnt < SCL_I3C_TIMING_CNT_MIN)
+> > +			od_hcnt =3D SCL_I3C_TIMING_CNT_MIN;
+> > +		scl_timing =3D SCL_I3C_TIMING_HCNT(od_hcnt) |
+> > +			     SCL_I3C_TIMING_LCNT(lcnt);
+> > +		writel(scl_timing, master->regs + SCL_I3C_OD_TIMING);
+> > +		master->i3c_od_timing =3D scl_timing;
+> > +		break;
 >
-> v2->v3:
->   * Fix maximum value and indent bit list for mipi-i3c-static-method.
->   * Move I3C_ADDR_METHOD_* macros to dt-bindings header.
->   * Drop ACPICA commit IDs, keep only the Link: tags.
->   * Revert the change which proceeds to register other devices if SETAASA
->     is not supported so that it aligns with the rest of the driver and to
->     avoid the issues pointed by Sashiko.
->   * Rework multiple commit messages.
->
-> v1->v2:
->   * Added patch to remove 16-bit addressing support for SPD5118
->   * Guard ACPI calls with #ifdef CONFIG_ACPI
->   * Remove CONFIG_OF guard for of_alias_get_highest_id()
->   * Mask mipi-i3c-static-method in the driver to select only valid values.
->   * Proceed to register other devices if SETAASA is not supported.
->   * Update commit message and links in the description of multiple commits.
->
-> Akhil R (12):
->   dt-bindings: i3c: Add mipi-i3c-static-method to support SETAASA
->   i3c: master: Use unified device property interface
->   i3c: master: Support ACPI enumeration of child devices
->   i3c: master: Add support for devices using SETAASA
->   i3c: master: Add support for devices without PID
->   i3c: master: match I3C device through DT and ACPI
->   i3c: dw-i3c-master: Add SETAASA as supported CCC
->   i3c: dw-i3c-master: Add ACPI core clock frequency quirk
->   i3c: dw-i3c-master: Add ACPI ID for Tegra410
->   hwmon: spd5118: Remove 16-bit addressing
->   hwmon: spd5118: Add I3C support
->   arm64: defconfig: Enable I3C and SPD5118 hwmon
->
->  .../devicetree/bindings/i3c/i3c.yaml          |  36 +-
->  arch/arm64/configs/defconfig                  |   3 +
->  drivers/hwmon/Kconfig                         |   9 +-
->  drivers/hwmon/spd5118.c                       | 119 +++---
->  drivers/i3c/master.c                          | 390 +++++++++++++++---
->  drivers/i3c/master/dw-i3c-master.c            |  59 ++-
->  include/dt-bindings/i3c/i3c.h                 |   4 +
->  include/linux/i3c/ccc.h                       |   1 +
->  include/linux/i3c/master.h                    |  20 +-
->  9 files changed, 498 insertions(+), 143 deletions(-)
->
->
-> base-commit: 6eb8711ece2ce27e52e327a5b7a628ed39b97f45
 > --
-> 2.43.0
+> Sashiko AI review =B7 https://sashiko.dev/#/patchset/20260721033159.11789=
+-1-tze.yee.ng@altera.com?part=3D1
 >
+> --
+> linux-i3c mailing list
+> linux-i3c@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-i3c
 
--- 
+-- =
+
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
