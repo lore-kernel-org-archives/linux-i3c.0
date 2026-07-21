@@ -4,60 +4,146 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 94C1BC44520
-	for <linux-i3c@archiver.kernel.org>; Mon, 20 Jul 2026 17:10:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F22FAC44520
+	for <linux-i3c@archiver.kernel.org>; Tue, 21 Jul 2026 02:38:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+H7OwCUdApJrpVRvfITHBMPai2U7QKwvyeUzuaSYlSE=; b=gsJ9/1LGkbcLac
-	ZdRqdc4rJB3jfghL5CE92XeJ4kyFPk+mXTqKOTY4Nfe0vlG2cxKA7lNCAvJP1GRGBD2OtGt+INRby
-	ErOrcr1uxRPBbOHGeia29Gl0h+K7qyVrX+wSwHcp3eg7ILbBrHfF6oZspuZM5X8/hIMY/4jNk63FQ
-	MMxOaxLP/PK2zpWqji231Xqph3/1DP963/z1zB0o/uaESEEG77ufrxqlwANveMqWvThy2glDOj5g5
-	TzOyETbofLpdHD+ZiHs4f5CIgpkVor7Hn3ZhPmH4W4JxT0lmWEp8YYoafEMUB5RRcNygcpq0EEjVr
-	kd1zc6Hi9nUvxDUhlUOg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
+	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=9GeS7Ogx/eXFDdSNvlWyr0SGtw2ShFPkf61vhtuequc=; b=sq+77+cxnVFCXtc1X0rDbYj9Lv
+	6fEwtC1gaQTOY6C58A1HE0VNwE7yJuiXn4BTbhoKx/2/97vbkwK76V7eVtFFO/6sZ7Z45W0Q1b3Zt
+	oWTjTSCgT5jXOEwqij9MKWykr6Rq/N3UQTvn/A1oHLbo9nuxoabwnYQsmN3JbnMu/LIqGBPWsR3oE
+	n5xktKxaU3nfw2gOmPxuqXPIKa37BAencgvFsH/aJp+M+zMMX/9QalFFXYVNAtlp/2emN6Furt1OV
+	9vvOuh4S+1/Ndemg1LuddPUhqrzmEo2RMk2eAv6F6J2bQztxzomnRqWshWICMMky6azb320nznEio
+	6dSY5DjA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlrVX-00000007U0F-0vyj;
-	Mon, 20 Jul 2026 17:10:23 +0000
-Received: from smtpout-02.galae.net ([185.246.84.56])
+	id 1wm0Mv-00000008GhV-2pnl;
+	Tue, 21 Jul 2026 02:38:05 +0000
+Received: from mail-centralusazon11021124.outbound.protection.outlook.com ([52.101.62.124] helo=DM5PR21CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wlrVU-00000007Tz7-0IlJ
-	for linux-i3c@lists.infradead.org;
-	Mon, 20 Jul 2026 17:10:22 +0000
-Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-02.galae.net (Postfix) with ESMTPS id B812F1A10FF;
-	Mon, 20 Jul 2026 17:10:17 +0000 (UTC)
-Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 8C15760360;
-	Mon, 20 Jul 2026 17:10:17 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id A7D1211BD0382;
-	Mon, 20 Jul 2026 19:10:15 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1784567416; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=QvUHF9fl6x0NnyzgRQM5iDkaGboTMjtA2Xhi7B6JVuQ=;
-	b=i52LgIET6QdPDSKvqgOHN4iWAnUkEOqVz0X986FfUrrbU7dbsUwGPHIsPyAwNFhSo/GYpb
-	tOejquCvArGNIeNq+0kNe/m0AYNci/2Bh4aB116IZLtRLxb+zNcbec0ECMAfD0tEjFwLxw
-	8IbxAe3I0H4hLQryF1VAPPO+RXfSceLEaWB0qxRyHOCSbW+zHn898/UemDX30XQfqpZQWM
-	dheiPgR/b8vJQEHu50rfcDwhCP8m3Uhd5buT9a41ixJyEcEvmdOfgcecQIoFVfYjfvNSMK
-	4qitxd9P3LNV5bABcWb6hRoRgcVqoj7VLwCZ07M9k+jx5G408ykcLbUR9SGxNQ==
-Date: Mon, 20 Jul 2026 19:10:14 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: jorge.marques@analog.com, Frank.Li@nxp.com,
-	Can Peng <pengcan@kylinos.cn>
-Cc: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] i3c: master: adi: add OF module alias for autoloading
-Message-ID: <178456740837.100432.12678908203961675730.b4-ty@b4>
-References: <20260715012949.180245-1-pengcan@kylinos.cn>
+	id 1wm0Mt-00000008Gh3-1H9J;
+	Tue, 21 Jul 2026 02:38:04 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=rkyvhp4aodVNbV3+1zMCeVbqgYQWo095Ddgo44f++RuaDgmLTmD4BJ++of/NEFMawrU4jTakkxd5Jgb3KiIj/MND6/VUo0atB8Y4HI1gYKY0MYRFpruz1QpI1VEYeC6UdhRvPuyVWbhkags8EsjPY/cH1tvk98yWGl/f6OhZM5m63+jsQzx2icFpK02A+lEMiF+qAzPbkuFggaNXkB8yTTnn1MC7toe9rrfGHJDgUIKlJuWbRlOmOu77H/kvn8jAuppPXyRgrI77pnR2BojilA468PxIJiQZteFZCNhyLmlluBKvzXPff5VKhcCcImPIGwX5tjDfuKKqaO98lAfdFw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ySIXdPdhME2HlNOfC00RoONp3xUI333VTobZPsvO+RI=;
+ b=yM1Chp0cP9QuQYb/76eejZHknp9SGHJxQUk7PM8Tjab1pOM2c4mvYLGTCuWDu+pt2aJ/gAPPJJT+XavgMRrG2wUSseRIXxz4P1WW1Eskg2V5e81mODrCC+WaRoFJy6MgjTXHbiTwyh9X5WBWaA1A1L55RzYxecratOU6oNtuInSNzo2bFttvmP3w9y7yHa5G+I6ywVRXQAHp7cnuI2KQaWqMzRZ7ISvc9Sm56QyB4liPucocA9aNpD35p99PtON5GyIYlgNBV13heHQCPalUoRxlaE08jme/hLSUgxF6TOGU5tWE/IWE+6N39iwUrKb9vqAiyyKgezTd/GAxWVD0Yw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=axiado.com; dmarc=pass action=none header.from=axiado.com;
+ dkim=pass header.d=axiado.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axiado.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ySIXdPdhME2HlNOfC00RoONp3xUI333VTobZPsvO+RI=;
+ b=RJAe26gjjN4s4jkJIMXSU2aqtvku44d2rFcujJ0+SiN8X5HyG3PAHgAox/W90DflB1zxK82vyimpoiYTu+bICVehmkIGFr2GJxSxXKyi4Tn/gaAqLyjiob2AP73XiHP27/pF1jcXM4bqoDTV9HvPpjpiCwFgl7JLDUVU+Vvnr8RSnkDb20jpAqDZsLpxPvzOmElimZIi1zaHvMdyc93YkmtZcFo7viMMXrfn+3kufPO31d8XjnE8u5Iq2+17YEM+gcJOIRH8d8y1Pc+y1y8cHvNqWrWOeXLmuQEqa1p3ntFJw2nFdvVOww9Ho1C38adlT8DBM5xHYXW9Engfo5Tzbg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=axiado.com;
+Received: from BL1PPF1B62FD55C.namprd18.prod.outlook.com
+ (2603:10b6:20f:fc04::d8c) by MW3PR18MB3628.namprd18.prod.outlook.com
+ (2603:10b6:303:55::23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.223.18; Tue, 21 Jul
+ 2026 02:37:56 +0000
+Received: from BL1PPF1B62FD55C.namprd18.prod.outlook.com
+ ([fe80::8726:2e55:848b:39e]) by BL1PPF1B62FD55C.namprd18.prod.outlook.com
+ ([fe80::8726:2e55:848b:39e%5]) with mapi id 15.21.0245.009; Tue, 21 Jul 2026
+ 02:37:56 +0000
+Message-ID: <4f2bfd4a-e696-4a53-9380-eb225e53338a@axiado.com>
+Date: Tue, 21 Jul 2026 10:37:48 +0800
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH v3 6/8] dt-bindings: spi: dw-apb-ssi: add Axiado AX3005
+ SPI variant
+To: Mark Brown <broonie@kernel.org>
+Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
+ Conor Dooley <conor+dt@kernel.org>, Harshit Shah <hshah@axiado.com>,
+ Linus Walleij <linusw@kernel.org>, Bartosz Golaszewski <brgl@kernel.org>,
+ Jan Kotas <jank@cadence.com>, Michal Simek <michal.simek@amd.com>,
+ Andi Shyti <andi.shyti@kernel.org>, =?UTF-8?Q?Przemys=C5=82aw_Gaj?=
+ <pgaj@cadence.com>, Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Frank Li <Frank.Li@nxp.com>, Boris Brezillon <bbrezillon@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Jiri Slaby <jirislaby@kernel.org>, Mathias Nyman <mathias.nyman@intel.com>,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-i2c@vger.kernel.org, linux-i3c@lists.infradead.org,
+ linux-serial@vger.kernel.org, linux-spi@vger.kernel.org,
+ linux-usb@vger.kernel.org
+References: <20260716-upstream-axiado-ax3005-upstream-v3-0-c429095143ec@axiado.com>
+ <20260716-upstream-axiado-ax3005-upstream-v3-6-c429095143ec@axiado.com>
+ <6d69cfd0-5f3b-4324-8d64-b4695cbb3e92@sirena.org.uk>
+Content-Language: en-US
+From: Swark Yang <syang@axiado.com>
+In-Reply-To: <6d69cfd0-5f3b-4324-8d64-b4695cbb3e92@sirena.org.uk>
+X-ClientProxiedBy: TP0P295CA0047.TWNP295.PROD.OUTLOOK.COM
+ (2603:1096:910:3::13) To BL1PPF1B62FD55C.namprd18.prod.outlook.com
+ (2603:10b6:20f:fc04::d8c)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260715012949.180245-1-pengcan@kylinos.cn>
-X-Last-TLS-Session-Version: TLSv1.3
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BL1PPF1B62FD55C:EE_|MW3PR18MB3628:EE_
+X-MS-Office365-Filtering-Correlation-Id: d6a58521-ec1c-48fc-b595-08dee6d11240
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|366016|7416014|376014|1800799024|56012099006|4143699003|10067099003|18002099003|22082099003;
+X-Microsoft-Antispam-Message-Info: w6hRFJc0nmQSFEbeaSvFlUhhYwsraoOmit/rYZw0S1Z+OEsvg7t+/LJPjAk042vtOU4uoYeNATyORr8PseK6jvLvtAWjpaJKh3kvPNeCXS2SvvhRYU3HDABKbPSDQqkr+kpUx7O6VvDkqZ12OEe7+s6tXJdzqQbmx037TysGZUJpsl3lSij6h4WvSrqaBpNKCasayJKFMGxXtpMCn5oNXeeKDaNl+wYN/aPMw19yQYmlVfb9nhmCgb5H1AfFVZkdhV1pzFD+9WAtzVKmUlBpl25e9FFTtayj/eQAzw10QO1nM86g/Zm4FQHRmfFc9v5FYWhGQ90z3lJsF/vxk6WRdawXjsq9jUy6bx7EhZmidFccoBi4XRuF6mgzBo2QtWKY53fUlZuid7ogHZUIRmkhRk2C9YIr7MA20M8oOq/z8zlehMvXihctMWRFepQrFfn7D/PNkMLGqiSvWIoULk59j/s8DVmsm5vD6SDaV9oHk8zIvtJOAiJ30eQV+/R53DjTzR53dVWOI6o7Z4+OxNt1FWnX2891zhUqAUFwJTUHhOZLLJLZjGaKVQ5UBCvS++F9BbRjsaMvPfdTT3zeVxzNJIzz33HP+RzFjRp2c8kZItgOJuLTm6zZQsAzCXrdQA/Ygy+1IPYAG5lcmJcZPDVeNV5IpvT+gdy0F+xN8/Do/7s=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BL1PPF1B62FD55C.namprd18.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(366016)(7416014)(376014)(1800799024)(56012099006)(4143699003)(10067099003)(18002099003)(22082099003);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?a0xsUnp0cnUxa0llQzRZdXViTThpNThBVGpYMCsvNUltZGJvUmZZcFo5WXlW?=
+ =?utf-8?B?c2I1S3Y3TWlFTUx1OGxZcHlWRG5YU05rVWRJR25NbU1HYWpBUE4vWi9tSEdl?=
+ =?utf-8?B?Q1FFUDUwU2hCaEdOY0VUaS9NSkZIYnQ4Y3BoTENYd3J4OEw2UWpxazVVNkdU?=
+ =?utf-8?B?Skh0V2pZdjJuWW01bFRnZmpHRFFXazZtdTFnQjdDWXVCTEdjN1RScitHdDMz?=
+ =?utf-8?B?MnhTVDZkYXdWM2ptRlRueUtOWStYendMaTNhaStUNmkvbkpQQ0djL2VxbEow?=
+ =?utf-8?B?ci9xUjh0RmNRRnlCYlo1djg5RVVxRWR6b1FIbkRVNllLd1c2bGdSa084ZXNz?=
+ =?utf-8?B?M0xKNTN1amplUVB0bkJBaUk0Wi8wWDBzK3FKSysvVVhUbXpuNXlzR0d4Q0w5?=
+ =?utf-8?B?cEZjczc2MzQySitPZWpNY2dVbzJ1M2xzeDV2aXBDZnpVenhBajVFdEM4eXZw?=
+ =?utf-8?B?RlVuaGhWTmlRS3NvSzBRS2lBNS9PNU4zelNycmd4TUlZbG5VN1ExSWs5MmdB?=
+ =?utf-8?B?REhSV2JPTHZjYXRQN0tGNVJ1YW40Q2luWVJmcTRqVS9NU3YzU3puQ2FtR055?=
+ =?utf-8?B?S2Z2SkRaeHZRMHZkT1BlR2loY2RlQkFZZ2FLR2lTcnkvclJIRncrTGJYMVZ4?=
+ =?utf-8?B?eURKK3JEYTlvRlFBbG05ekFSM0gwTll4T2kyRmc5OWlqclJlU1VKcUs3QW1V?=
+ =?utf-8?B?NlRPZFlJdncxVzh5M1ZmazBGdUgvaE9DMVgrcEJTU1JvQXZibGRjamllQ3RJ?=
+ =?utf-8?B?WldwRnRidG9OZWpGanQzZ0lXY1FoVFJBbGZURVdIN3JBY1hoUFcyOUtzRW13?=
+ =?utf-8?B?OGZwRVVFaEFPUHF6K3NRUWFDN1NIeC9lZXY4MlpIZXdFSE1MbnloZVI1VVJv?=
+ =?utf-8?B?cnRaZG1kNDZpbFBKV29HYnFrWkdFZ0xLUVNRRkUrZ2JTaFUvTzBEaWs4ay9k?=
+ =?utf-8?B?WkV3bWkwYUQvamJ1R2h6eUV0VjQxUGhzejI4amh3S0N3S3BieWp1QytkV1JR?=
+ =?utf-8?B?bDBRTTdCc0JTNFRicWFXNTRrd052TnRPRU1pL2EydWovRU1pdXgzWTZMcWxw?=
+ =?utf-8?B?LzFFdVh5SmVpSFM5dytoeGhzRmlNZnl3cWZXSitkVys3RDNFT3NVK0pnblNX?=
+ =?utf-8?B?ZlBmTXAxR1F4VDF1Vzh0Z2h3aS9Ua3h0SWZ4ZE9GZ1g3NXE4eW5lZ2FMT2xP?=
+ =?utf-8?B?MGllK2lFalpQTGVvVzRrMDlEOEU5Mks5bTBiWmRlNDkwVk9PeGg5TndpSXdr?=
+ =?utf-8?B?b256VHJQZDZYZ0JLUUM0NlZjSFZNT3JlRDdGS1ZxWjYvazJyUkJNckZnR1FQ?=
+ =?utf-8?B?d2RHWFdVdWllTzA1dXQ5M1ExcjFhdS9yRjBiQzJPVFBOSVlNOFp0anU0bXFM?=
+ =?utf-8?B?bkhYVEdPY09PZHJRbGdheERtTjRGWGt3czZZM0lKYkQyb2RjcHlKTWhhTDdz?=
+ =?utf-8?B?YTdmT2dGSER6WWpibFdlUTROY2dZUk5jRDZrTUhmVkh5VUpSUGs4dUQrVERK?=
+ =?utf-8?B?WTJWZjg3bFAxMlovU1o1RGZpQjRWVDFaemhtLzVQU2F5VWhxNUk2dFRkYW4r?=
+ =?utf-8?B?dUF0cW1sczNONVh4Ulg3YnhuZnNmeWdTc3hwT1JyWnlHbEx5eDBZblhMN2VJ?=
+ =?utf-8?B?VENOQVhTdmZqSkNsZUE3SmJaY1dUUzZHRWFtdXZaRTQ0a2k1ZFhIcWllN1hX?=
+ =?utf-8?B?c0c2bC9qT1A2WjN4STR0R2t4dFpxTmlXaFJsWnBoY0JYRE5qb1pHS2tzZmFy?=
+ =?utf-8?B?UFJXSGYxeTJqdDNGajR1WjFxTzFHT0tkeVo5M3E2QTJ2N3YxT0NoYVAxQmI3?=
+ =?utf-8?B?L0FoclNxREh4OCtZNG1RUUM5UUd3Y3p6RXE3R3g4Sk9SMk82K3hlSGY5UCs3?=
+ =?utf-8?B?Y2lzekViajlBTjZuc0p3aUVnYllTTDRTWkNlNkFKWGR6QmdOc0U0U2pzM042?=
+ =?utf-8?B?OURFOCs5RXJDclUwMmxzanR4MHhtNzFhOXdOMEh5KzgxZFIzbjFTc1JTSE9P?=
+ =?utf-8?B?YWNMZm45VE1NL25JQzJRMnlwYzBoZXdDSVFoWUNqL2QvQzlpR1NlQ3BaaGV4?=
+ =?utf-8?B?VEF3UjlPb20zcWdjSEhkODZRRW5CMnI3TzZUNmx2VXduU3o3ZGhmR2FKNUNV?=
+ =?utf-8?B?Q3RtajBXSUpUdGxEYTR1SUtWU3NHL1F0bmpPUm8wWWZEcEhNSW1zVW4rZlVZ?=
+ =?utf-8?B?NkVraTFjOS9VaHBPSmtaUUpmOG5yL2JBeWYyS2RhQnVJeDlVdWxic3lWWVNV?=
+ =?utf-8?B?OHVOd3dtYzMxNWxkRVRmdmF6eEdsOGJnRFRwbm1yd0NoM0ROYjlmTlpoblhl?=
+ =?utf-8?B?Y2cwOGVwaWdkUzIwNjA5UldHeTgwSG50bURkY3p6M2FRTlhvT1lvQT09?=
+X-OriginatorOrg: axiado.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d6a58521-ec1c-48fc-b595-08dee6d11240
+X-MS-Exchange-CrossTenant-AuthSource: BL1PPF1B62FD55C.namprd18.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Jul 2026 02:37:56.6359
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: ff2db17c-4338-408e-9036-2dee8e3e17d7
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: Zz69a/mBd8z9UxEoYvxjkC4nSrwB5sD8VfjPFvEmr0BNX46HWYdIilMGBwGCbc1Js6tyRZpPTOQaPx2mATSCLw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MW3PR18MB3628
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260720_101020_252897_07274505 
-X-CRM114-Status: UNSURE (   6.51  )
+X-CRM114-CacheID: sfid-20260720_193803_372077_FF6EEB2C 
+X-CRM114-Status: UNSURE (   8.61  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -70,27 +156,28 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Wed, 15 Jul 2026 09:29:49 +0800, Can Peng wrote:
-> The Analog Devices I3C master driver can be built as a module and uses
-> adi_i3c_master_of_match as its OF match table, but the table is not
-> exported for module alias generation.
-> 
-> Add the MODULE_DEVICE_TABLE(of, ...) entry so modpost can generate OF
-> module aliases for OF based module autoloading.
-> 
-> [...]
+On 7/17/2026 8:02 PM, Mark Brown wrote:
+> If there is no need for things to be part of a multi-subsystem series
+> (eg, dependencies) it's normally better to send each subsystem
+> separately.
 
-Applied, thanks!
+Hi Mark,
 
-[1/1] i3c: master: adi: add OF module alias for autoloading
-      https://git.kernel.org/i3c/c/0043b9bb5806
+Got it. I will split the series and send the SPI binding separately
+in the next iteration.
 
-Best regards,
+Quick question on the versioning: should I send the newly split SPI
+patch as a fresh v1, or continue with v4 to align with the rest of
+the SoC series?
+
+Best Regards,
+Swark
+
 
 -- 
 linux-i3c mailing list
