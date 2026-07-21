@@ -4,51 +4,36 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0874AC4451C
-	for <linux-i3c@archiver.kernel.org>; Tue, 21 Jul 2026 04:10:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 230B7C4451C
+	for <linux-i3c@archiver.kernel.org>; Tue, 21 Jul 2026 04:10:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=29qsB5ttXHZHq25LNnI3pzOAqDS9gI6RjZ/MUTcBI9k=; b=qV7rjspNsHjfR5
-	t+y10bqeU1Y3mE3+THb0ShkNeRk/BdGsipRUjxxu6EUC4sbPuK2ECYwQPIT6LeLmUUD0lQM80aZkk
-	HwK6FxFQt9oAI5pw7vU3ePsN2iIVwU7sA4ozXlvdB4o5XZis+btBUJ80l+4ATN5PMx3S9Td/WBtwj
-	kmTqViA+Vwl86rAg62I2vFnotVqgR1HF5al/Aq5ASurEHM42IIYiNaL5Qnr2JTDAaW4I4G1Z0yd+m
-	s7c+9F0M58Na8GsRC8yFzu30aEaBZFIgM27ukLf+5NKOxf5gTNqtEL2pvshND3rDp7up6m/rGHnY9
-	cjmiKmNTcoh0H5NeqTKg==;
+	List-Owner; bh=e/kqkZauAmrilZ16kzgVDzdgKNac/Mh0KoOnGgP2GNA=; b=saLhddiqQ99VOS
+	AxwsfoTAot5d8NaT0uC5/kZcwrZQGtynKN6xI61ajnC2VMmkdQxipNPkINOtTs8ZDcekspLpQeaKV
+	c1cfZHU3Hqw6fymjZi5G5FT9uAAgc2MAXbdDRdAiCo51MYInJch3gtm2a8inmdZOdJgElSQyb4ER6
+	5d3W/IxDHXUn+0epbjxXAhb6vIpvCMVMCDtT188EAbjA8jhl5zoFr0lwiUuRuAULWfspCSqGDtLP7
+	XKzwfQPb4iOoYKDE5Pyf+8KO8QEm1NIoWBEN3BqrORitxELG57vp0wm5i9rE2Ifa8hpa6U3Wds+As
+	K4we82LPEuy7Ba1sRnyQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm1oD-00000008MPs-32eM;
-	Tue, 21 Jul 2026 04:10:21 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1wm1oH-00000008MRh-3PEk;
+	Tue, 21 Jul 2026 04:10:25 +0000
+Received: from mail-eastus2azlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c110::3] helo=BN8PR05CU002.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wm1oD-00000008MPc-0vVn
-	for linux-i3c@bombadil.infradead.org;
-	Tue, 21 Jul 2026 04:10:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
-	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=unGLf+Uxex8MrwG2kOJpiBdUwqjgd3Iqf3Br6rTj0JI=; b=kiheE7+1oSwoHFGky0FexAnmOU
-	S+HXBMRGgIE15IslxSrbclxtUAe2vRSetNsiHxCnqKoSwt4Y/1PJr/npR70w5xxy9+kuYoFWcjRkx
-	SCyEmRFN8STok0AeIWiFhkThSYob1jAQUf+CdR50GEBIL/7+KcWbAKORG462H/kr7ag51aSSZ4wlG
-	/mTsJ3PAvJknfSswWWVhzw9DeoDWx4BF0fdCxZeEJqF9rspjxBznMidhUKoZrpC4kyLjOD3tq3uwp
-	cjGpsfi/D1zFr6QffF4mYO70pQQWTeTIJyUU6jgcNFtiwibS9UFqtA18VG8qyavkOF5FkQCRd5x8g
-	BI/n4wcQ==;
-Received: from mail-westcentralusazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c112::7] helo=CY3PR05CU001.outbound.protection.outlook.com)
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1wm1o7-0000000HBhr-0A6l
+	id 1wm1oF-00000008MQ9-1jr7
 	for linux-i3c@lists.infradead.org;
-	Tue, 21 Jul 2026 04:10:19 +0000
+	Tue, 21 Jul 2026 04:10:24 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=rJ3So4n+DpXhBm+P5ambA9ZZToMe6/x+uL/ZA2zkzll+buGfKbVWbTlGgTOHWiRfx/mPL4PbXKKfB5Ku2OCHdr9H9w4HhT5Ll1ELGlPWIqsVkEBs5lNVPEzqORprYfpPkySJ9YXYBF6Vwhww73NCvhhGZp8gOwmSoqdfD3hXvZWpuPTqQIX7MR5IPhZtEBosiU9xE9mT0HuOytZ4Bfdb6ExMr4ODKRoy59OaRBC5u7caWxs7UAjsCvcvCT/sADHyzgLy+yeMkmKaYnugZ6rMaLRViKcoUOIzdWu4a/EF+iRGnGRi0zPLqu9oTKxkqM5kAKDwtDiv4EA+J4xql5Prmg==
+ b=VQIJaVFdE+Fq2Tj3fWWJRugfJOGQw3cUGCcm8t7Oeoy7xiNJE6uShZwPvlRVdJAoNCLol/EsQIEiUWSzzHD8uwLv9wyl2GVMij558TFY5mx5JFISWO3ItkYUL4gfWXR3hX47mRa6BG4sqGj5TLPFPogB3wjJAN4p+HYAGqCoD03q0+dJlOmX6UonFU0t04qNKY2tqN3bUfHhaa+qJbZ/iI7JpXiu2cMGs55b1brnYHu1AJOUCL64V6d0nlAFFUP2gyOhmOmyPFuAo4/tSS3qiLaoqL0tjb8KPCDKNaAcnnCNASqQEL2fDvb7kaMEzfqDTCm46F8s9ty16IW0IfYLhg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=unGLf+Uxex8MrwG2kOJpiBdUwqjgd3Iqf3Br6rTj0JI=;
- b=vwFnJ/G0pAV0yHYz1w2j8hlOkmkZubw9x6oN6gfeM6aBacRemz2PMdm2RhxsArCxDwE1jLMv2k8YUKQ66o9vYG6EEUbZMKYouyc8z5GWcqIC9fnOvP6FeFzRQWf9H74D+vLOVeNImfEPvyuallt6LuDTTsq06/UdUfxcTlZoLQWjAJrNzYSpiUMRUzTq4bBM22Dlx/wCzaDHCH7s/nnLp007O4wVoPTx7She1ROVHfw6z78F4MQSPJBx58CXrxrWnPCmpNJD70HrRJmMawrHdFGADRVVNbRHN4Qzdl6pgM+0BhHTMra2jNf3hLRBs8sy0aRFOs+tQjNcxZPbH6k98w==
+ bh=m8gJs5Sgug3HHxAuVqwc8d8hvADhSGUOv/tXNoHT8jY=;
+ b=N+tfNU6A8zvAG2ynw60p2cFmnnsNlwlQtSIQFr2/4fWuZEQlmQkQwUGdmSXrJ1LoCu5yWkMLgQxWvOtYJZYo8TtzyStdOPsX4Ey0+qIiDGk/bKYjVYRykxqddoKZWjD28QMTYWpN+EcRUzL+6QcvozHGgjKEBmd9LOg7NqwvkinXquS7Wynqgve40Kp7S60r+l4Vx2UBRr+7G8gL+FiBU3Geez0nvv31oSkzo577bKQWL8VfGBxa0nwQ9ee0XrvKHP6TJ/KEoU70D0vyOD/VSlagWDGzycTTtGi05ppqTXYTcUjszxo/CGh32RdtHP7C54onqYiOpocF83frk/DysQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  216.228.117.161) smtp.rcpttodomain=bootlin.com smtp.mailfrom=nvidia.com;
  dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
@@ -56,18 +41,18 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=unGLf+Uxex8MrwG2kOJpiBdUwqjgd3Iqf3Br6rTj0JI=;
- b=KJgufUkRmOrGoilcEDkELcT1VBmgUVPaHmSMPDilYyQEJqDopOHesdyeaY+o8bLA4wlGKDb8/NiEcI/UcvyMD8e5Pu4Lp9Ohtb+7rfOLiZB+KDLDEcm/zJMYCq/XMQ8z+UrU5XOQJT+/AHC+iuqsyiFp/nuQH8/BvigYpftxKRSWPOj2VK3oQLp+8W8XQ/zpTE/svafBILFFssmzSptnt0m/y2rpab/sVLK02nvd9oxF5OL2Eco2I4nRArJSXIWUSGSeDHbZaIEQNCdk0ih6v1NFVJpW8YiWSmlieG3cVKmi3N+N57ZMX3SLfox23SmkRueH+bj8d9kz/izUwDyhrw==
-Received: from MN2PR08CA0008.namprd08.prod.outlook.com (2603:10b6:208:239::13)
- by PH7PR12MB6882.namprd12.prod.outlook.com (2603:10b6:510:1b8::12) with
+ bh=m8gJs5Sgug3HHxAuVqwc8d8hvADhSGUOv/tXNoHT8jY=;
+ b=dVGxnie7vbjAglloG8ngd/H5EFvOfG87w963QummsaHRuJO27ob9FhWhzOl5zRZUVV/6MTPamD6B8GjVVfA7n4ENLIhl1Z4IrvZ46UK5W4j+T4tnZ0qszFZLUnSQhRuc4f6mTJWrTu4gjL/3FCxmCy6pj47VAH2YAZtQgZxM0D81S6tJc1FyEwRDS2mLtny+ADWUzso5z5wLxMneP7F5LAVoWoOrRnSuwSmeSBRN9CpLn/MBdLbygbK56JPg/L6Jsi1W0XKSmxkrqqyGTlSZhvb8ugHAX5XuttCItwpuXEgP3ER+4lloDcfHg8A8DTyKsLaamxdA7eF4cz2dSE5Y1g==
+Received: from MN2PR01CA0042.prod.exchangelabs.com (2603:10b6:208:23f::11) by
+ PH7PR12MB7378.namprd12.prod.outlook.com (2603:10b6:510:20d::20) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.223.18; Tue, 21 Jul
- 2026 04:10:04 +0000
-Received: from BL02EPF0001A107.namprd05.prod.outlook.com
- (2603:10b6:208:239:cafe::1f) by MN2PR08CA0008.outlook.office365.com
- (2603:10b6:208:239::13) with Microsoft SMTP Server (version=TLS1_3,
+ 2026 04:10:13 +0000
+Received: from BL02EPF0001A102.namprd05.prod.outlook.com
+ (2603:10b6:208:23f:cafe::6b) by MN2PR01CA0042.outlook.office365.com
+ (2603:10b6:208:23f::11) with Microsoft SMTP Server (version=TLS1_3,
  cipher=TLS_AES_256_GCM_SHA384) id 15.21.223.16 via Frontend Transport; Tue,
- 21 Jul 2026 04:10:04 +0000
+ 21 Jul 2026 04:10:13 +0000
 X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.161)
  smtp.mailfrom=nvidia.com; dkim=none (message not signed)
  header.d=none;dmarc=pass action=none header.from=nvidia.com;
@@ -75,20 +60,20 @@ Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
  216.228.117.161 as permitted sender) receiver=protection.outlook.com;
  client-ip=216.228.117.161; helo=mail.nvidia.com; pr=C
 Received: from mail.nvidia.com (216.228.117.161) by
- BL02EPF0001A107.mail.protection.outlook.com (10.167.241.136) with Microsoft
+ BL02EPF0001A102.mail.protection.outlook.com (10.167.241.134) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.245.5 via Frontend Transport; Tue, 21 Jul 2026 04:10:03 +0000
+ 15.21.245.5 via Frontend Transport; Tue, 21 Jul 2026 04:10:12 +0000
 Received: from rnnvmail205.nvidia.com (10.129.68.10) by mail.nvidia.com
  (10.129.200.67) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Mon, 20 Jul
- 2026 21:09:50 -0700
+ 2026 21:10:00 -0700
 Received: from rnnvmail204.nvidia.com (10.129.68.6) by rnnvmail205.nvidia.com
  (10.129.68.10) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Mon, 20 Jul
- 2026 21:09:49 -0700
+ 2026 21:10:00 -0700
 Received: from build-akhilrajeev-noble-20260602.internal (10.127.8.11) by
  mail.nvidia.com (10.129.68.6) with Microsoft SMTP Server id 15.2.2562.20 via
- Frontend Transport; Mon, 20 Jul 2026 21:09:45 -0700
+ Frontend Transport; Mon, 20 Jul 2026 21:09:55 -0700
 From: Akhil R <akhilrajeev@nvidia.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>
 CC: Frank Li <Frank.Li@nxp.com>, Miquel Raynal <miquel.raynal@bootlin.com>,
@@ -99,9 +84,9 @@ CC: Frank Li <Frank.Li@nxp.com>, Miquel Raynal <miquel.raynal@bootlin.com>,
 	<devicetree@vger.kernel.org>, <linux-hwmon@vger.kernel.org>,
 	<linux-tegra@vger.kernel.org>, <linux-kernel@vger.kernel.org>, Akhil R
 	<akhilrajeev@nvidia.com>
-Subject: [PATCH v6 07/12] i3c: dw-i3c-master: Add SETAASA as supported CCC
-Date: Tue, 21 Jul 2026 04:07:55 +0000
-Message-ID: <20260721040805.1696503-8-akhilrajeev@nvidia.com>
+Subject: [PATCH v6 08/12] i3c: dw-i3c-master: Add ACPI core clock frequency quirk
+Date: Tue, 21 Jul 2026 04:07:56 +0000
+Message-ID: <20260721040805.1696503-9-akhilrajeev@nvidia.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20260721040805.1696503-1-akhilrajeev@nvidia.com>
 References: <20260721040805.1696503-1-akhilrajeev@nvidia.com>
@@ -109,29 +94,28 @@ MIME-Version: 1.0
 X-NV-OnPremToCloud: ExternallySecured
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BL02EPF0001A107:EE_|PH7PR12MB6882:EE_
-X-MS-Office365-Filtering-Correlation-Id: ab9c6609-372a-47d2-2ee2-08dee6ddf10e
+X-MS-TrafficTypeDiagnostic: BL02EPF0001A102:EE_|PH7PR12MB7378:EE_
+X-MS-Office365-Filtering-Correlation-Id: 5078e592-2081-439e-95cf-08dee6ddf64c
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|36860700016|23010399003|7416014|376014|82310400026|1800799024|56012099006|11063799006|10067099003|22082099003|18002099003|3023799007;
-X-Microsoft-Antispam-Message-Info: Xi1WjEM+G3zdYnVDyvpfV5glWfQDjvgtwd3MhWCS1PKg5zF8/nxjrMuyCPGLerWdCK68xRa+R25yCYQgtmcLN1moi79dFYt0vziQJPSbQ5+FhR5SIgV60kRdX8FT3eFzChvq0TzpDk5ik/GMVUz37p7itIuxmEz7gUGvFRyL77x0Xq7u+DZqp65nteCXUwa2nd78eGzSaTGcoRuQY6VkbLHWU/6oHUdEZGRm6QFaboCzm4DiP0jvheVsuLl4IVb+TX9mTYdc5AkXlUXb2IpXqtGDyys14ImLmRZH6KqDEUyGoufjYayay+mTJd8Ke1L/V2lrEGyoTSOK/O0DAJfKYxjEpi/8USPjhV8G4kOBXX0mdDv8H20mg8PPhDUGRWTMSrdRCGzXOORyDFxcsuq4/eYt2i3pt8xsE1fTlUX+WasorCl96aUUzQiecXh2Tg/TFl07wrXN+TMRhoP6aYOcQgjZAndMwXZLPvKDV/vcFrsvgAONvAvgk0Zejcp6Z9Qe/luxZnrODvoZDYtEF0jvD9syUT+wHeoqsTCBXzF+0rP5R9gYJYA/RuJXvbYBU6HbSD/Sk0BACi+2GEQ5kqyN4K3TqiBfDzmhXo5JKOqKKVeurZ5pa3AJCGKL5zYGx54Sm/ZpTgPGlFDZTaaizqnpLaPDoWGqiQausuJjL4CxsxMvdQmAnttZuIWC3CntSwMIbHLD5hDoZjNDPQvlaX5cBA==
-X-Forefront-Antispam-Report: CIP:216.228.117.161;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge2.nvidia.com;CAT:NONE;SFS:(13230040)(36860700016)(23010399003)(7416014)(376014)(82310400026)(1800799024)(56012099006)(11063799006)(10067099003)(22082099003)(18002099003)(3023799007);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|23010399003|1800799024|36860700016|376014|7416014|10067099003|3023799007|11063799006|56012099006|6133799003|18002099003|22082099003;
+X-Microsoft-Antispam-Message-Info: 2GMvhaSPuOzwlw/U7nBp7RzyZQzvVM5G5KcyG4/O6G6Yp94QdMMVXoVlx0n8E4e/3Og2sNoXzBH14cfPDfQ7q4ojIbyse6+ZI8T28RcBB8JtWcrhYfdNyKeHHPyV3T9meJ0BgBD7rOdHN7ShqgSez/p59KnE3vijmOFEXOGtIMglZU452WiZtJal2t/7SLqPTLjGSlEY/3E9ugTLPf5/gUVTuDDuNGZ2rYYpu3jbcWfHgpoMdLs5x8cL5+qZT/dwcdxOhnP17v7V+HE8XmqRH5yI/2Rt50nRuEGKdtkBFn9PG5k7ZL8IQGNkKnb0nILvcwvduExQXg+g/vUYV73aSWI7dB4un0T074U0sciVgrqqwuJMzJ7epK4CRhki+nuZh5heTdJXf9gsA2xQ+m0RPa1Hq5XetS3jyVs5SvYuXRRofYbQIz6XIEwui7y7V0/zbftnpau6cAoWg+O+K12Mptx7zOI7Qf/TyPuPBldT36gYBkMd1rWjOyOOYg9bHb/OAD9k5GnaorgjkmDt4vzxE1RYUfmIZTdhbXO+fcf4N07Fo4dpM952tPaBDxx/zbDGMdFZG2OUzrMovmcKBHIA4qvpfdq8RXiZWp2x5NmZaoHSVsOWnv/qD/jOpZdpXHV5kJyIhLYKGGaHZ7NQWSBEw06D5rBX+tiJlNt6cwWC2W4RSG48Ei/rLulTzg+4/dR4a1tLFDkLPvRMqMamyUGE6g==
+X-Forefront-Antispam-Report: CIP:216.228.117.161;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge2.nvidia.com;CAT:NONE;SFS:(13230040)(82310400026)(23010399003)(1800799024)(36860700016)(376014)(7416014)(10067099003)(3023799007)(11063799006)(56012099006)(6133799003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: T78rbpwLC9OMj4LM3lD5e4Q9s/Z8QHE8hchFkL+lgwIvzur3UlwOrKaOTCr3KlezY3gvoOuZIzmmukPqoCozhJxOUiQQch4yYiPAoVbYwBWNb20jzU64W2qy3F8yfNwAwwMHBMJpIlohBqhAYh3U8tj58XwyZLRjjVZEbjS5H0vW7UYWqr6eBjlga6cOBlN0Li+SrjiqPd3+/U2vQ6JeQ1wcnwpyjXW9ri7N6qKkXciH8Fj9xpYY+nVErhgAScFwILgTN6z32gZzXJ+sMg4PAlzHCjIbuBeHGaep+8uDiOOgoYP82YpK/NqHcpu7xgmyw78iGUPKS6qGpv4xCZ6AB7HWsrXJ6wMRU+Ng3ON8dbVyGKfiyHkm1s1b5Alg7esdq5uZVrohKN/E5TeYENf3JyqTvfFpuuCO3ytAyCO1jUtvZr6h5+WMD4WEI4XICnMp
+X-MS-Exchange-AntiSpam-MessageData-0: t5fVN7EXt92hd85VYn/8iTCaY8QqaxR1y6WV1Jy4kogKBJllJM23S8EJxdZNFUSW47EDmv6iNaVOpGRGrvgYiY+n/HNRrr2AxGG/NsZTjCwzifud3P8oNhdwaYReUBLznc5cvJAtlpkLu2Nj0WmwH1HW1idGv6NLOUvALD//SElEuIwKNuLBFwnjIU4JYHbMSyUAqX6fZNH97SVvaZWgIGG1edUoffULgMbpw1HzKFQ/0vMZcX3ozAZN08YRXA5hK5yzD4yTemlfcbEPXIAF/zdrFfYCi3N7+MPc13xVC6SG1e/4msmBjEoGRqhdY8eMhmiphjHZSPRzwkzar+gBhkg0nb17fON0lJ83FnOYpNyovPwuTG+hzYnpyY2TnMnkUZNMC9eJeR85rLwca971H+mOIYgmQ8W1afOqDJ0adPq8CrqZxAoYddha9X/WskPZ
 X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Jul 2026 04:10:03.7774
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Jul 2026 04:10:12.5649
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: ab9c6609-372a-47d2-2ee2-08dee6ddf10e
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5078e592-2081-439e-95cf-08dee6ddf64c
 X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.161];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: BL02EPF0001A107.namprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthSource: BL02EPF0001A102.namprd05.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH7PR12MB6882
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH7PR12MB7378
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260721_051015_581750_41239EE8 
-X-CRM114-Status: UNSURE (   9.12  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260720_211023_460609_68C31360 
+X-CRM114-Status: GOOD (  13.84  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -148,35 +132,126 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add SETAASA and SETHID to the supported list of CCC commands for
-DesignWare I3C host controller.
+Some ACPI-enumerated devices like Tegra410 do not expose the controller
+core clock through the clk framework. Unlike device tree, ACPI on Arm does
+not model clock providers. The hardware is expected to have its clocks
+enabled by firmware before the OS takes over.
 
-SETAASA is a broadcast command that assigns predefined static addresses
-to all I3C devices on the bus.
+Make the core clock optional and allow selected ACPI devices to provide the
+core clock rate through the "clock-frequency" _DSD property when the core
+clock is absent.
 
-SETHID is to stop HID bit flipping by the SPD Hub to which the SPD devices
-are connected. It is a prerequisite command to be sent before SETAASA as
-recommended by JESD300-5 and JESD403 sideband bus specifications.
+Resolve device quirks before acquiring the core clock so platforms without
+the ACPI skip-clock quirk still fail probe immediately when the clock is
+missing, before any MMIO access.
 
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
 Signed-off-by: Akhil R <akhilrajeev@nvidia.com>
 ---
- drivers/i3c/master/dw-i3c-master.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/i3c/master/dw-i3c-master.c | 50 +++++++++++++++++++++++-------
+ 1 file changed, 38 insertions(+), 12 deletions(-)
 
 diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-index 2f8c0c4683e0..29030fd9594a 100644
+index 29030fd9594a..3ec3ab1c13b4 100644
 --- a/drivers/i3c/master/dw-i3c-master.c
 +++ b/drivers/i3c/master/dw-i3c-master.c
-@@ -309,6 +309,8 @@ static bool dw_i3c_master_supports_ccc_cmd(struct i3c_master_controller *m,
- 	case I3C_CCC_GETSTATUS:
- 	case I3C_CCC_GETMXDS:
- 	case I3C_CCC_GETHDRCAP:
-+	case I3C_CCC_SETAASA:
-+	case I3C_CCC_VENDOR(0, true): /* SETHID */
- 		return true;
- 	default:
- 		return false;
+@@ -242,6 +242,7 @@
+ /* List of quirks */
+ #define AMD_I3C_OD_PP_TIMING		BIT(1)
+ #define DW_I3C_DISABLE_RUNTIME_PM_QUIRK	BIT(2)
++#define DW_I3C_ACPI_SKIP_CLK_RST	BIT(3)
+ 
+ struct dw_i3c_cmd {
+ 	u32 cmd_lo;
+@@ -556,13 +557,33 @@ static void dw_i3c_master_set_intr_regs(struct dw_i3c_master *master)
+ 	writel(IBI_REQ_REJECT_ALL, master->regs + IBI_MR_REQ_REJECT);
+ }
+ 
++static unsigned long dw_i3c_master_get_core_rate(struct dw_i3c_master *master)
++{
++	unsigned int core_rate_prop;
++
++	if (master->core_clk)
++		return clk_get_rate(master->core_clk);
++
++	if (!(master->quirks & DW_I3C_ACPI_SKIP_CLK_RST)) {
++		dev_err(master->dev, "missing core clock\n");
++		return 0;
++	}
++
++	if (device_property_read_u32(master->dev, "clock-frequency", &core_rate_prop)) {
++		dev_err(master->dev, "missing clock-frequency property\n");
++		return 0;
++	}
++
++	return core_rate_prop;
++}
++
+ static int dw_i3c_clk_cfg(struct dw_i3c_master *master)
+ {
+ 	unsigned long core_rate, core_period;
+ 	u32 scl_timing;
+ 	u8 hcnt, lcnt;
+ 
+-	core_rate = clk_get_rate(master->core_clk);
++	core_rate = dw_i3c_master_get_core_rate(master);
+ 	if (!core_rate)
+ 		return -EINVAL;
+ 
+@@ -615,7 +636,7 @@ static int dw_i2c_clk_cfg(struct dw_i3c_master *master)
+ 	u16 hcnt, lcnt;
+ 	u32 scl_timing;
+ 
+-	core_rate = clk_get_rate(master->core_clk);
++	core_rate = dw_i3c_master_get_core_rate(master);
+ 	if (!core_rate)
+ 		return -EINVAL;
+ 
+@@ -1573,14 +1594,28 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+ 
+ 	master->dev = &pdev->dev;
+ 
++	if (has_acpi_companion(&pdev->dev)) {
++		quirks = (unsigned long)device_get_match_data(&pdev->dev);
++	} else if (pdev->dev.of_node) {
++		drvdata = device_get_match_data(&pdev->dev);
++		if (drvdata)
++			quirks = drvdata->flags;
++	}
++	master->quirks = quirks;
++
+ 	master->regs = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(master->regs))
+ 		return PTR_ERR(master->regs);
+ 
+-	master->core_clk = devm_clk_get_enabled(&pdev->dev, NULL);
++	master->core_clk = devm_clk_get_optional_enabled(&pdev->dev, NULL);
+ 	if (IS_ERR(master->core_clk))
+ 		return PTR_ERR(master->core_clk);
+ 
++	if (!master->core_clk && !(master->quirks & DW_I3C_ACPI_SKIP_CLK_RST)) {
++		dev_err(&pdev->dev, "missing core clock\n");
++		return -EINVAL;
++	}
++
+ 	master->pclk = devm_clk_get_optional_enabled(&pdev->dev, "pclk");
+ 	if (IS_ERR(master->pclk))
+ 		return PTR_ERR(master->pclk);
+@@ -1636,15 +1671,6 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+ 		master->has_ibi_data = true;
+ 	writel(thld_ctrl, master->regs + QUEUE_THLD_CTRL);
+ 
+-	if (has_acpi_companion(&pdev->dev)) {
+-		quirks = (unsigned long)device_get_match_data(&pdev->dev);
+-	} else if (pdev->dev.of_node) {
+-		drvdata = device_get_match_data(&pdev->dev);
+-		if (drvdata)
+-			quirks = drvdata->flags;
+-	}
+-	master->quirks = quirks;
+-
+ 	/* Keep controller enabled by preventing runtime suspend */
+ 	if (master->quirks & DW_I3C_DISABLE_RUNTIME_PM_QUIRK)
+ 		pm_runtime_get_noresume(&pdev->dev);
 -- 
 2.43.0
 
