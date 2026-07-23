@@ -4,60 +4,138 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 24D03C531CB
-	for <linux-i3c@archiver.kernel.org>; Thu, 23 Jul 2026 12:34:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99C5FC531CA
+	for <linux-i3c@archiver.kernel.org>; Thu, 23 Jul 2026 12:37:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
+	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tVRBJPJGNXEEzS2D/g5sujPyHCGXwIXXKu+jXQM+4zo=; b=o9lCzu8+X7dU24
-	sAcbFf+C5nqRfkEoOm87/58P0YZjDrTmwwImP/VpgZTBfkor1pOZ9rZiO4PjuLh/7DCXPFMx8EhRx
-	tl3wjBYyCMEXnpz2NbWYyab3ohteZ7YkA4xYPaExY4UvG02w2IVJYRPspmpivjlXVirdf0SQBB5md
-	koI7OyGdNWRHcN0y8cLaycXnpJMN5J1ZXjcFDUVoO5iq+nf6tW6myb5epy+79HeWombCqQ9gaMvIM
-	lj+BRn7VAGsTGXduZ1sKSTf/faAm+U6VIj+jwfFfQbnXZ+d52O/4j3r1vE/IdcbW9qIlLatvMSWqV
-	M67dXZdXPKTeeS570CRQ==;
+	List-Owner; bh=4Narm5BO7oUCmo9SO5KgNdlkSdKd84Kdm2Tfeo5gIGU=; b=lf2vRSa7YeMurI
+	dW2oc2+r6tfCxeSwtyUkr3n01ezwd2fOroWAPi7XVDkYVxf3WkK0MwobRFbVn+nbGFQfs/x9+AhBJ
+	xMH5SAn5sckF+ZLmaDUFwXxJIrpcG1VYtwmaQfsroyzW/8I3njerUVYmqRDoIx4BmOrbvTx3PzUAw
+	MLN9CoioL9CjlU/00VygE1jqVHGVwrIHEkC69eqUB5VpaSln2GP74AzdBqhs3nuAcLnhgexECEBgK
+	Y5l/5rTmEW8p5Pv45qWdLZGrH1PcwdxwZWWhH0uGciN7WSlKddkZjiI1J/yaZXjGitc+cvDIWOYQ2
+	6AfwlfWsIdXOLwVXs3jQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmsdX-0000000EFJf-03CG;
-	Thu, 23 Jul 2026 12:34:51 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wmsfv-0000000EFQ9-1LUA;
+	Thu, 23 Jul 2026 12:37:19 +0000
+Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmsdV-0000000EFJY-3phc
+	id 1wmsfs-0000000EFPj-21iH
 	for linux-i3c@lists.infradead.org;
-	Thu, 23 Jul 2026 12:34:49 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4C6784371A;
-	Thu, 23 Jul 2026 12:34:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1B9FD1F000E9;
-	Thu, 23 Jul 2026 12:34:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784810089;
-	bh=/ZN6NxEs80aRr7QrkF1VpoYapstIntxXDhCLIl8yNNU=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=hhJ7y7phvR/9taXz/abMH66GhD2YBTeISvTvURlU/6UIDouJGRpEGb/3vtW6ITa7+
-	 VZNYVSW707u+1PMaed2EfHblOXE/YihdjmFvtFnzHD92+hpEV+gQNLU9WbEFa252y8
-	 ccd+UXy0lSQkVqI5L/DZqxx4iuYZcNcpr/2Yu/8LRtBEOGQBEdbSDhObkcZyeyvJNh
-	 6NLQWwgBSyA2biRYoxAeLY6meYq1x9no6xnErrQQM0/4tNfdKjPPfEokxOtPVQBvZD
-	 7pATU/QBFEXJrzSSvSNH1M38DYoI4WjLjaiNFaIJT+GIOE32m0D06mHN9e20VEDW7S
-	 KpY1WIex0SOsg==
-Date: Thu, 23 Jul 2026 13:34:43 +0100
-From: Lee Jones <lee@kernel.org>
-To: Lakshay Piplani <lakshay.piplani@nxp.com>
-Cc: linux-kernel@vger.kernel.org, linux-i3c@lists.infradead.org,
-	alexandre.belloni@bootlin.com, krzk+dt@kernel.org, robh@kernel.org,
-	conor+dt@kernel.org, devicetree@vger.kernel.org, broonie@kernel.org,
-	Frank.Li@nxp.com, lgirdwood@gmail.com, vikash.bansal@nxp.com,
-	priyanka.jain@nxp.com, aman.kumarpandey@nxp.com
-Subject: Re: [PATCH v14 4/8] mfd: p3h2x4x: Add driver for NXP P3H2x4x i3c hub
- and on-die regulator
-Message-ID: <20260723123443.GI3363113@google.com>
-References: <20260714092053.2461482-1-lakshay.piplani@nxp.com>
- <20260714092053.2461482-5-lakshay.piplani@nxp.com>
+	Thu, 23 Jul 2026 12:37:17 +0000
+Received: from pps.filterd (m0279871.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 66N8qkxX3642784
+	for <linux-i3c@lists.infradead.org>; Thu, 23 Jul 2026 12:37:14 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
+	cc:content-transfer-encoding:content-type:date:from:in-reply-to
+	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
+	jiJv4OSyGHajCnWG7/iQUwjk2Gu578Qylb8lkp9wWNI=; b=gN1j0lskuLL/8Rz4
+	5I/dkqBuAFZm25vkgMFD8Nqj7cL0J8K2MNBRLl3bpjm6ofZ/WyhONcK+QtID0by/
+	CgT0/ky278Hfl/fMQGGVlI0nLoaf2Wcu/2wfWTjiutOxISiAUoNi3QPO4tc8O2Eq
+	dyNzVwoFrn8ouy+2Z1gpGIJk9mcSKok/hjLhw9CkimGn2n/XutU5VZ3hsR5l59HC
+	2OKEx0jWJv8WrsDGtrGmBpUoqxLwqtsHipBmynRYlHRVL5AQ48Fp+AvvmOow9ilm
+	Fbbe4PQfYm0cJyh+NDgzBn4TIPL0xPBNJASw6B9Rwy1hKcvXwhzwT11Fewr1o/Lf
+	zOSAyA==
+Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fkayha21d-1
+	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+	for <linux-i3c@lists.infradead.org>; Thu, 23 Jul 2026 12:37:14 +0000 (GMT)
+Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2cc7e86e7c5so11236325ad.3
+        for <linux-i3c@lists.infradead.org>; Thu, 23 Jul 2026 05:37:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=oss.qualcomm.com; s=google; t=1784810233; x=1785415033; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=jiJv4OSyGHajCnWG7/iQUwjk2Gu578Qylb8lkp9wWNI=;
+        b=FOYhoPQPGlx563DNp1dg1kOkEKnLH5Go9L61NmoNxorVCCw3ITiFd5/iPCYezSCvjn
+         V+Pb6H6jEMreL9eY5JYqDFUzW/Sq49ka9ILpXROegmih2R0bJQ5mzfTM78M9nRo5Q+9d
+         CNbDMVlOdhGH2jIFOOFMfUwMGZL+fXMtcdxynfoXgN+t87jAsAmFzjlTBkvp8vu61m5e
+         RBQIj5vsX0O5fZwEBrDmPn12eqjE0cDgODGKhtawlg3/+nZLoaAxM96WasnRj+BLzGyF
+         fG5jFhKaBPwArivMOOZ3Gx5y7i8jCEfWFEV2vANhWAkrDPZJVfJZwp2D4dMUOelBBd+s
+         az0w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1784810233; x=1785415033;
+        h=content-transfer-encoding:content-type:in-reply-to:from
+         :content-language:references:cc:to:subject:user-agent:mime-version
+         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=jiJv4OSyGHajCnWG7/iQUwjk2Gu578Qylb8lkp9wWNI=;
+        b=qf2d+QbkPvXJdwC6h5NfOAG1SkDJENyre7eXRJAXobfhFsaJ/ixMk85soNTd72EkW7
+         5UbU1G52tBJoouy3WdrSzmtH2sw8SJYDVCDQkSBOWC7mEVw21bHio9hLjwew2JEjCdrZ
+         +5e5V/O9SezxkN6eG1Dsxv+dTGzBFA5jfJhpwNAEt6ICjqnQ03Y/gB0/SJv3uCyp/uZW
+         XBL/5RvnBBupWiS88AeuZlQ04C1ktNUCYgKNIx39EYXCLc+Vuh6ti83HipK+j72k3lsH
+         xHjs+vU4uOuV/4ENwDk+6lS5TLmP61jE+gSXIKMQ/eJvOPD1nryr0Bx3shqM9Gy0iC/o
+         vOlg==
+X-Forwarded-Encrypted: i=1; AHgh+RodOFPPdDYUPkmY15mSMP98JE5ZyYFtMEUwd8FrUfIFDYxouQEJEwcUQ6YWaHTNsVA1jS6BaPGlAe4=@lists.infradead.org
+X-Gm-Message-State: AOJu0YwpkFOjhxP7Sz9f0y7h2C7QzHXoDhFmxgsIVSApUPTQykQ76bq+
+	70CoydGZ0jtjFiOYOuDTPFH/lD0KIUb+UJqLurpVK+zmv3AMuceGfAEoYrGW4bmVOFkzC8QLA+A
+	Pg9FCcL9+U3msLCjzEkorckKNP3KsO1lkLsQEAwBdk621xiV44IxXi73sN9KMYF2K2Nx9
+X-Gm-Gg: AR+sD10FsCiJmxe49EpRAL3KEGoqXEI+rFtA4wpiyOOOXu7y7oJIEbaN/+hGOY/i7sb
+	uXQ/ZVp1OomOVD2s6lCX50n8qNwpo9OlG1nHNzaB0smxi0BqmdocFRwrv7Esjz78X3ztDURyz2W
+	hnWSSERjcZRV9Wa7Cqa8PhiQC1ujqSYZlJKb6XFVtQK1v8bIIRi74qLL/EOUGZq9Q6iu7Ik3Jar
+	7veY8JlIbYa+0pjukMHWgsPwdHNf25XBTzEnRX6TyOZiGeAAvXh3DF+hTimX5lYxyujvQMA3Hrs
+	O8HFA/mYkxcg+vzsZar8Wp7TCIg6ytQeeD1plcpnc4SwvAxYkcWq5KLXcp8TcrJycQXT5anoPza
+	qoJLNmPVgeYO2qMy63uQN8IUt3GLHKRBRTTg=
+X-Received: by 2002:a17:903:320d:b0:2cc:c9cb:371c with SMTP id d9443c01a7336-2cfa6c87609mr33999915ad.40.1784810233546;
+        Thu, 23 Jul 2026 05:37:13 -0700 (PDT)
+X-Received: by 2002:a17:903:320d:b0:2cc:c9cb:371c with SMTP id d9443c01a7336-2cfa6c87609mr33999535ad.40.1784810232995;
+        Thu, 23 Jul 2026 05:37:12 -0700 (PDT)
+Received: from [10.217.219.142] ([202.46.22.19])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2cf8f38a40fsm33202025ad.78.2026.07.23.05.37.09
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 23 Jul 2026 05:37:12 -0700 (PDT)
+Message-ID: <ca4b38b3-d32d-4aff-bb6a-6662562ec0bb@oss.qualcomm.com>
+Date: Thu, 23 Jul 2026 18:07:08 +0530
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260714092053.2461482-5-lakshay.piplani@nxp.com>
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] i3c: master: require dests for read CCC commands
+To: Adrian Ng Ho Yin <adrian.ho.yin.ng@altera.com>,
+        Alexandre Belloni <alexandre.belloni@bootlin.com>,
+        Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
+        linux-kernel@vger.kernel.org
+Cc: tze.yee.ng@altera.com, lkp@intel.com, Dan Carpenter <error27@gmail.com>
+References: <153608c2ff6504fe29f5f727a23c53c41768a44a.1784796086.git.adrian.ho.yin.ng@altera.com>
+Content-Language: en-US
+From: Mukesh Savaliya <mukesh.savaliya@oss.qualcomm.com>
+In-Reply-To: <153608c2ff6504fe29f5f727a23c53c41768a44a.1784796086.git.adrian.ho.yin.ng@altera.com>
+X-Authority-Analysis: v=2.4 cv=HZgkiCE8 c=1 sm=1 tr=0 ts=6a620afa cx=c_pps
+ a=IZJwPbhc+fLeJZngyXXI0A==:117 a=fChuTYTh2wq5r3m49p7fHw==:17
+ a=IkcTkHD0fZMA:10 a=RAioF0-LDSMA:10 a=s4-Qcg_JpJYA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=3WHJM1ZQz_JShphwDgj5:22
+ a=VwQbUJbxAAAA:8 a=QyXUC8HyAAAA:8 a=pGLkceISAAAA:8 a=yBYpec10AAAA:8
+ a=EUspDBNiAAAA:8 a=y2YDxqopTWoFPjg0B8cA:9 a=QEXdDO2ut3YA:10
+ a=uG9DUKGECoFWVXl0Dc02:22 a=zbxmTX4fiVD2UiCe4Dha:22
+X-Proofpoint-ORIG-GUID: EWdA4c8lpRAXpctK5KAt1TAg9_Oyq23j
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzIzMDEyNCBTYWx0ZWRfX3waJS/DDCWOj
+ SdPNu0KTgzXvPD9dBY+VLcONWySQgjsdRnK2HyOvW6vD1Gysx9hV4wYvFSX1d/i2lJY/QTNy5kG
+ cIiytlVuIKmLE3fFRKK1ZfdnnE0yWXSaCpf6PIPTKv6OIBXtpTecMKfyIDSruaRX9kNjckL+4wK
+ kftRa7cWlVUzggdOdS44ujl7hSZT/RNqZiZm6Jd8fqTgof24pPSOMrUE1FD//rkR4+hzLFCsq/K
+ eSPArsuGg/a5dk8uakbdXgiR/ymdruvTN6LeKFPJ9cukG+qMXYNkmW57m2atL4x4B6KXrDzZ9Cg
+ tOldNuizOSfrXb5H8d1FztajlzCa9LIZsO+/YCoW/3LdAYG6yWaJOmY7cCI+p85vbxINngNvTg2
+ 8cxeb/Hi3IWlyHnbCe28+uzgKS5PaZGm4I3EOCI2SF1NTWVUt/lIzHfJ3zzoujdOFpP8QIsTZC8
+ cos0RUD2Pr1e3sivWmQ==
+X-Proofpoint-GUID: EWdA4c8lpRAXpctK5KAt1TAg9_Oyq23j
+X-Proofpoint-Spam-Info: AW1haW4tMjYwNzIzMDEyNCBTYWx0ZWRfX2GU76qBfCTx/
+ 9/wxmf6HiujWU7BH5usHaLkC+5eMYmf5j6AAF9zYYST/jgqfHIaPGRoA0YPYSY7jC8Qhs8Wm9VA
+ s2arxXo5cITd+k2p88y77BvaFyEdkN4=
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.134,FMLib:17.12.100.49
+ definitions=2026-07-23_03,2026-07-22_02,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1011 malwarescore=0 phishscore=0 bulkscore=0 suspectscore=0
+ priorityscore=1501 adultscore=0 spamscore=0 impostorscore=0
+ lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
+ definitions=main-2607230124
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260723_053716_652669_1332230D 
+X-CRM114-Status: GOOD (  11.19  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,161 +147,28 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, 14 Jul 2026, Lakshay Piplani wrote:
 
-> From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+
+On 7/23/2026 2:53 PM, Adrian Ng Ho Yin wrote:
+> Read CCC commands (rnw set) always need a destination array to store
+> payload data. Extend the existing direct-CCC validation so cmd->dests
+> is guaranteed non-NULL when cmd->rnw is set.
 > 
-> Add core MFD support for the NXP P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841)
-> family of multiport I3C hub devices. These devices connect to a host via
-> I3C/I2C/SMBus and expose multiple downstream target ports.
-> 
-> Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
-> Signed-off-by: Lakshay Piplani <lakshay.piplani@nxp.com>
-> Reviewed-by: Frank Li <Frank.Li@nxp.com>
-> 
+> Reported-by: kernel test robot <lkp@intel.com>
+> Reported-by: Dan Carpenter <error27@gmail.com>
+> Closes: https://lore.kernel.org/r/202607222347.TXH6r6ie-lkp@intel.com/
+> Signed-off-by: Adrian Ng Ho Yin <adrian.ho.yin.ng@altera.com>
 > ---
-> Changes in v14:
->  - Clean up MFD driver comments, formatting, variable names and author
->    information
->  - Define and document the I3C hub DCR value in hexadecimal form
->  - Use direct regmap bit-width values instead of local macros
->  - Add a shared protected_reg_lock for protected register accesses across
->    P3H2X4X child drivers
+>   drivers/i3c/master.c | 3 ++-
+>   1 file changed, 2 insertions(+), 1 deletion(-)
 > 
-> Changes in v13:
->  - Use i3c_device helpers (i3cdev_to_dev()) instead of direct struct access
->    to maintain API abstraction
->  - Avoid including internal I3C headers and use public device headers instead
->  - Ensure proper device matching by relying on manufacturer ID checks in probe
-> 
-> Changes in v12:
->  - No change, added Reviewed-By tag
-> 
-> Changes in v11:
->  - Use MFD_CELL_NAME() for child device registration
->  - Rename local variables for consistency
->  - Rename driver names to follow subsystem conventions:
->    - Use '-' instead of '_' in driver names
->    - Drop the "_drv" suffix from driver names
-> 
-> Changes in v10:
->  - Drop redundant is_p3h2x4x_in_i3c flag
-> 
-> Changes in v9:
->  - Renamed macros to follow consistent uppercase naming conventions
->  - Made REGMAP selects in the P3H2X4X MFD Kconfig conditional,
->    to avoid I3C/I2C dependency issues
-> 
-> Changes in v8:
->  - No change
-> 
-> Changes in v7:
->  - Use new config I3C_OR_I2C
-> 
-> Changes in v6:
->  - No change
-> 
-> Changes in v5:
->  - Corrected the ordering in the Makefile and Kconfig for MFD_P3H2X4X
->  - Updated dev_err_probe() for regmap_init failure.
->  - Updated module description
-> 
-> Changes in v4:
->  - Split the driver into three separate patches(mfd, regulator and I3C hub)
->  - Added support for NXP P3H2x4x MFD functionality
-> ---
-> ---
->  MAINTAINERS                 |   2 +
->  drivers/mfd/Kconfig         |  13 ++++
->  drivers/mfd/Makefile        |   1 +
->  drivers/mfd/p3h2840.c       | 139 ++++++++++++++++++++++++++++++++++++
->  include/linux/i3c/device.h  |   2 +
->  include/linux/mfd/p3h2840.h |  25 +++++++
->  6 files changed, 182 insertions(+)
->  create mode 100644 drivers/mfd/p3h2840.c
->  create mode 100644 include/linux/mfd/p3h2840.h
-> 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index ba65ae5a008b..3420701a75c5 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -19311,6 +19311,8 @@ L:	linux-kernel@vger.kernel.org
->  L:	linux-i3c@lists.infradead.org
->  S:	Maintained
->  F:	Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
-> +F:	drivers/mfd/p3h2840.c
-> +F:	include/linux/mfd/p3h2840.h
->  
->  NXP PF5300/PF5301/PF5302 PMIC REGULATOR DEVICE DRIVER
->  M:	Woodrow Douglass <wdouglass@carnegierobotics.com>
-> diff --git a/drivers/mfd/Kconfig b/drivers/mfd/Kconfig
-> index 7192c9d1d268..405b50c3c77b 100644
-> --- a/drivers/mfd/Kconfig
-> +++ b/drivers/mfd/Kconfig
-> @@ -617,6 +617,19 @@ config MFD_MX25_TSADC
->  	  i.MX25 processors. They consist of a conversion queue for general
->  	  purpose ADC and a queue for Touchscreens.
->  
-> +config MFD_P3H2X4X
-> +	tristate "NXP P3H2X4X I3C Hub Device"
-> +	depends on I3C_OR_I2C
-> +	select MFD_CORE
-> +	select REGMAP_I3C if I3C
-> +	select REGMAP_I2C if I2C
-> +	help
-> +	  Enable Support for NXP P3H244x/P3H284x I3C HUB device using I3C/I2C
-> +	  communication interface.
-> +
-> +	  This driver provides support for I3C hub and regulator, each subdriver
-> +	  can be enabled independently depending on the required functionality.
-> +
->  config MFD_PF1550
->  	tristate "NXP PF1550 PMIC Support"
->  	depends on I2C=y && OF
-> diff --git a/drivers/mfd/Makefile b/drivers/mfd/Makefile
-> index e75e8045c28a..a284b22c7b13 100644
-> --- a/drivers/mfd/Makefile
-> +++ b/drivers/mfd/Makefile
-> @@ -122,6 +122,7 @@ obj-$(CONFIG_MFD_MC13XXX)	+= mc13xxx-core.o
->  obj-$(CONFIG_MFD_MC13XXX_SPI)	+= mc13xxx-spi.o
->  obj-$(CONFIG_MFD_MC13XXX_I2C)	+= mc13xxx-i2c.o
->  
-> +obj-$(CONFIG_MFD_P3H2X4X)	+= p3h2840.o
->  obj-$(CONFIG_MFD_PF1550)	+= pf1550.o
->  
->  obj-$(CONFIG_MFD_NCT6694)	+= nct6694.o
-> diff --git a/drivers/mfd/p3h2840.c b/drivers/mfd/p3h2840.c
-> new file mode 100644
-> index 000000000000..652077408dbd
-> --- /dev/null
-> +++ b/drivers/mfd/p3h2840.c
-> @@ -0,0 +1,139 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright 2025-2026 NXP
-> + *
-> + * Authors:
-> + *	Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> + *	Vikash Bansal <vikash.bansal@nxp.com>
-> + *	Lakshay Piplani <lakshay.piplani@nxp.com>
-> + *
-> + * P3H2X4X multi-function device driver.
 
-There is no such thing as an "MFD device driver".  You should describe
-what the device actually is: "Multiport I3C hub device", or whatever.
-
-If you end up re-spinning, I'd like you to change this in the next set.
-
-If not, then please provided with a follow-up patch.
-
--- 
-Lee Jones
+Acked-by: Mukesh Kumar Savaliya <mukesh.savaliya@oss.qualcomm.com>
 
 -- 
 linux-i3c mailing list
