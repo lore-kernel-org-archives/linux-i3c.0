@@ -4,123 +4,117 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0EC12C531D0
-	for <linux-i3c@archiver.kernel.org>; Thu, 23 Jul 2026 18:26:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 71FEDC53219
+	for <linux-i3c@archiver.kernel.org>; Mon, 27 Jul 2026 08:27:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4NDiAGy+ATCL3okSipCIWEG+HYXdrFH5A9jE5fen53k=; b=2IO342KI1shmQ9
-	d2K/wrSA45CHn5x2xF3aTcGdlR9nB03U1RrfHTR3Dpt6sty7rGiMj3OhSATAAqnHgPK74TMPC+SWa
-	b7XIaVGH/3KZoldTrqKkE7XHhT8I2rz0YAwxS5kzERBZON9RqXnoC7fIzYOL/JiLHzt/2nV3/77uT
-	h+e6HGKjc94Z8zeORXdD9J+FYzU0ecn9yo7JHlyRg7ABSU7Z3D7FyH2ZEf1eABQpdidrEjECSCizy
-	CaM03pHthwlxx0KPZUyqlwUo2DU44RPk1E6QD7lpCjqysjdwvxe5phSxmcsCtf18hfm/Wlpe7BDJh
-	uIx+KM00V7hHuoDr/Irw==;
+	List-Owner; bh=I8HFLeBHuetMxiEgG35eVMkCvZWf8frL7FeoUZ5fVHU=; b=jaRgAdO8Okn1cJ
+	V57dsWZQq11fATAgZ74y72bUDM8Dzi4cgSav4uLmif6rKY/gt1IZirovcn7wx2aZ/UuSBpR6ezMvN
+	QI2E2VDaUQo2y2F4k6Nhmv31SjPlNGHqVCKpB1Aif/xoyir6uOPNrFCCK8A0oWKke1tAyBBm3Pf5x
+	i2m45undwP/UPYFTnKZqYruGcpA6T2g/zvYVId7p095ray76cOMod6gqMyGaEEMvbsfiLLJWf8qUH
+	ElTLdCnrYWKRroNbg4FtSYdhoKZCzrCr3INv4V5rCN+nSK+F6gQTdAtoJEJO4zSwCXRLyYW17UFRS
+	b+mipZ7X0GG+KyoIaTzQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmy7V-0000000EsyE-2ksj;
-	Thu, 23 Jul 2026 18:26:09 +0000
-Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
+	id 1woGgG-00000002EXx-0WEy;
+	Mon, 27 Jul 2026 08:27:24 +0000
+Received: from mail-northcentralusazlp170120005.outbound.protection.outlook.com ([2a01:111:f403:c105::5] helo=CH5PR02CU005.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wmy7T-0000000Esxq-2K7h
+	id 1woGgD-00000002EXO-1QA0
 	for linux-i3c@lists.infradead.org;
-	Thu, 23 Jul 2026 18:26:08 +0000
+	Mon, 27 Jul 2026 08:27:22 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=iG8X45WA/qNMN5J/5pbkSpUzcdoTuJ7EX8yDlnyNo6xKennpsIDWNDPZkUl8b/8e5RsyMaJy7h+rWidfwEBmn31KjcPieaEa/ydOJYg6QrSy+5n0M2YQI9WdCof7L5vJw+BcrwTIrCj1k0nd1fyniND68e8ZxGWSEa/tCf6RnvnKpDMjyLkEgbzZ+iO8cWJTRBfQ1aSvOmPIo0vMCBEB3UMGNU5jOp1uHtsmGCiB6gbFxyBJvE8nyku13hLuo68I8QFCgcrQwVgJCHh7bB0lKlhquWEvAjQl3vh6mzj4SRwBnU16SodsL0YA8chbE29BZOkMHrSAKrskvijQJl9nyg==
+ b=lGKO/VEnmvS3Ulu38MzgfmmdC6Wg1bFDwB3ICwFs3lKX9XeIbhrp598sS4BUWK4OpQ3wFnKfLveL+lZHF6PqrmF5kpdl44CJ2gWLwuSR3WNnR74EipWiaqiERjSzpuuIoPBd86YgMHTIBx27QlC1KrGfWqnF4VVJbOBgtuaHlh88buk6RBIQVljM3TOSjxH0JYkJbqzmzs/+LFnpM96IpoqUfkEDsmqGW231SAeMXI7kKo0jk8mavfiQiwGiVGwY79jKAEdHdNp7ETqpKfaPNeZ0du5+bxuRFZIhCu0XIKB30RIxbzJCdEqmkwUIZynnsWRtIDZPhrulPA9WPXbWJw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=yV3njo92DVDpv5AK5dy9f6QwO2F/Y8Hx63DQ9HrNfZI=;
- b=uLaSyMy9OhGZbAyFgyA31xaW5KOsZgrfbBRxdfjlDQAXoov7TdFZxjDXtrVr29CEX5JrFPpYggP3mD7RY8V6aCQ5OLqwOrdmnAiiz+NcRWyXUl/7+QavceY2MrWWgexlAwL8/REHRlLBsFelAbca9rWm0FjKO24wHe/+dtHjI4B/Wlq+ZBSjmeNfN0RaUha/v9WwJA9Hf9hSuP+oLuxeB8n7hheRZlTKZhbnH7UKn7DbFXjbJKgRyldwDryxeGdXswRlKX6ccgxXrz3KYiy1Zjeljkp2h75cBgj9Mnljam+wxTtE+lYQvX0GV0ojX5yWtgksPiMCXYBHVBWm8VtiJQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
+ bh=PEUL6RMkO5Ob4+HE54L8S5nfpH2cYTERr0wxB3G7Eco=;
+ b=MRq6irCZ6BNe0Zwep4P/WzuFpp5/8oeMhUOlbUpJWUpL+bvB0Q46KLvc+jnj29WzShK73U9PPygWlz42v9uELulM6Pw4FKUHLWwLGTuBi442PwU+V5P8f8tzUCQCnoiVq9GBD2dFdxp7LwQE6hlB+QJSkJTDcwb+jb5FT1OjAqo4uaUzWEbdVVDDXn2kyX4MQ/8ZXsOXBGoFvAe4gCRIkWBKw8GSQlV/GWifh96mCYmZFzxfDrZlxSBVal6lYWlwCqoQkMjUbPQVMNf8qyzkWlaAUvVtXmiROMTac0bJPjJkdiKKrsBmoDfn6usUWheTq4IJqz/DUSOU5OnmXIKBcQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.161) smtp.rcpttodomain=intel.com smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=yV3njo92DVDpv5AK5dy9f6QwO2F/Y8Hx63DQ9HrNfZI=;
- b=VYlupkenSB1SHb0/cRmwpYVHd5WzHJF56z2yCzOV9Vqxe7gKRozfNPWZBrxpc5RZ4S2tuEcjubOYUqcTvdlGEy3e1Eot9lLQ0ukFDgfHTMeLHRJGUEscINADK8Pk1CjwElVJqFkmhpCIpLKm9Vzco4N2mmKRQ+7K5SxtKgopph8jqgg49D9kjdL8b1OrlKnYXi+l3V0svItl2Aoi2/RZwn84cZf3P65+5ikPHXL5eXcXWph/i0/o5v7OmAXdTIhUUwTxGmx0KcLOp/IyVeIdDPDl+LNLVnYHCtXNAzv21Ah4gU7//k3b+Iy9j9vazhnNRkOvWTEP1zIEuctq27Wyig==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by AS1PR04MB9333.eurprd04.prod.outlook.com (2603:10a6:20b:4df::7) with
+ bh=PEUL6RMkO5Ob4+HE54L8S5nfpH2cYTERr0wxB3G7Eco=;
+ b=GRqporGdiV3DWBQ6O+KmC6hkN1ZVeyfHbMD00FrLadX9lXDP2tfYBR0vwEtvkju3J00It9xWAX2/1awohluf5VruP9EhP6YKmY6kdi/SFOrZUMxq6/KcTxNnYebXBV4Hv1w7EVRtQbeEZZ5HpjelD8I6QO6akGNipwUyPUcZ9OyHbAfqgZjNlbNU2gw8n2Ikd3Ahkgq60UOVV/aag6iCXb7G86AU+lhxXBuUlg9HZ7Impj9zwn2A5jYmKNI+Mr8XcpdHdhMZVtbgLHVikfYPW0q6d0OJeYXsv4jaIMh8htiCHAlm6S34Rani93kv9nOaWEwoUeIGDJQ97xvX9RUUkQ==
+Received: from SA9P223CA0019.NAMP223.PROD.OUTLOOK.COM (2603:10b6:806:26::24)
+ by BL4PR12MB9506.namprd12.prod.outlook.com (2603:10b6:208:590::12) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.245.11; Thu, 23 Jul
- 2026 18:26:02 +0000
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0245.010; Thu, 23 Jul 2026
- 18:26:02 +0000
-Date: Thu, 23 Jul 2026 14:25:56 -0400
-From: Frank Li <Frank.li@oss.nxp.com>
-To: Adrian Hunter <adrian.hunter@intel.com>
-Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] i3c: master: Fix info leak and UAF in device unregister
- path
-Message-ID: <amJctAYeAwPdnyeb@lizhi-Precision-Tower-5810>
-References: <20260723075747.34049-1-adrian.hunter@intel.com>
-Content-Disposition: inline
-In-Reply-To: <20260723075747.34049-1-adrian.hunter@intel.com>
-X-ClientProxiedBy: PH5P222CA0003.NAMP222.PROD.OUTLOOK.COM
- (2603:10b6:510:34b::17) To GV2PR04MB11799.eurprd04.prod.outlook.com
- (2603:10a6:150:2cf::9)
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.245.13; Mon, 27 Jul
+ 2026 08:27:13 +0000
+Received: from SA2PEPF0000150A.namprd04.prod.outlook.com
+ (2603:10b6:806:26:cafe::c) by SA9P223CA0019.outlook.office365.com
+ (2603:10b6:806:26::24) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.245.13 via Frontend Transport; Mon,
+ 27 Jul 2026 08:27:13 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.161)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.161 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.161; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.161) by
+ SA2PEPF0000150A.mail.protection.outlook.com (10.167.242.42) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.270.5 via Frontend Transport; Mon, 27 Jul 2026 08:27:12 +0000
+Received: from rnnvmail205.nvidia.com (10.129.68.10) by mail.nvidia.com
+ (10.129.200.67) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Mon, 27 Jul
+ 2026 01:26:59 -0700
+Received: from rnnvmail202.nvidia.com (10.129.68.7) by rnnvmail205.nvidia.com
+ (10.129.68.10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Mon, 27 Jul
+ 2026 01:26:58 -0700
+Received: from build-akhilrajeev-noble-20260602.internal (10.127.8.11) by
+ mail.nvidia.com (10.129.68.7) with Microsoft SMTP Server id 15.2.2562.20 via
+ Frontend Transport; Mon, 27 Jul 2026 01:26:53 -0700
+From: Akhil R <akhilrajeev@nvidia.com>
+To: <adrian.hunter@intel.com>
+CC: <Frank.Li@nxp.com>, <akhilrajeev@nvidia.com>,
+	<alexandre.belloni@bootlin.com>, <conor+dt@kernel.org>,
+	<devicetree@vger.kernel.org>, <jonathanh@nvidia.com>, <krzk+dt@kernel.org>,
+	<linux-hwmon@vger.kernel.org>, <linux-i3c@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>, <linux-tegra@vger.kernel.org>,
+	<linux@roeck-us.net>, <miquel.raynal@bootlin.com>, <p.zabel@pengutronix.de>,
+	<robh@kernel.org>, <thierry.reding@kernel.org>
+Subject: Re: [PATCH v6 02/12] i3c: master: Use unified device property interface
+Date: Mon, 27 Jul 2026 08:26:52 +0000
+Message-ID: <20260727082652.93876-1-akhilrajeev@nvidia.com>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <97465893-3650-4f37-98b7-1db76fc6fd03@intel.com>
+References: <97465893-3650-4f37-98b7-1db76fc6fd03@intel.com>
 MIME-Version: 1.0
+X-NV-OnPremToCloud: ExternallySecured
+X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|AS1PR04MB9333:EE_
-X-MS-Office365-Filtering-Correlation-Id: efaa3e24-95c9-4315-e2d1-08dee8e7da08
+X-MS-TrafficTypeDiagnostic: SA2PEPF0000150A:EE_|BL4PR12MB9506:EE_
+X-MS-Office365-Filtering-Correlation-Id: ef116135-7537-40c2-aee1-08deebb8dbe6
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|19092799006|366016|376014|1800799024|6133799003|56012099006|11063799006|10067099003|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: iKgG1tjLPlRTXj7GXTvkwt1m6kXaynVN9VJ5+HQRvYJimWrvbrHRCzgz55jqD+Wa/VEh9hYygCsXELPD2RKTzHWiSC9ZaOYgrCw11nYr3vBcUgrSIJnFIMSHj7LrY1Ogd3SNZ174htmp2lW0KrABeCFZu9F9EXxZM5BOhJrWHzLpCCPfSKVogTkGuNhx3RisPIyaqm6Ly4GPmfi5TSs1gb8eMWiL2Kng6ijJ7M/7ZQOeyPYZnEB6U3KyEnNFZIABR5r+2I7o8y5SSMaIpfLaLcWBsplnuJSq/M8OjqjooZgKs9n9ep1Wn/5EPMTybP5JgMNtDFpIhPAyryfxwkHPG2yIcBhp09z4TwMuACziY9S2YS5axJmLS7W9143Ww/8KS51DyRiJIQyT2ny674ngdNJ7MqdteT5q7+NhHevpq1BwFPcDI+TfDgRw0S1JutzImCPP7ynRdi/uKWWxaN61QIONT206i+9F//ErsRa4rMkwwlE8KPA2fwto9HW3PnitGfz1qehWqcaNkbIWhBbB41pefsjGAOQ5YwssMy3xOn3u6lUEnVPAtsSNF1BpSciqPWSrlmjLwVU8NehLIsYJdOGUoYLd70ucn+20TsE1Nv4C5ULXVaHiHhf7x1bV7QDanLQ71LDN/t1YyhvGyOKNhXD4x8bRRyPy3+36+jvs7BY=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(19092799006)(366016)(376014)(1800799024)(6133799003)(56012099006)(11063799006)(10067099003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|1800799024|376014|82310400026|23010399003|36860700016|56012099006|11063799006|10067099003|6133799003|22082099003|18002099003;
+X-Microsoft-Antispam-Message-Info: atm8meFF8zNEjhxyQ0fttt7JWAesZwBCGU5KYWL//+dfucnLP9inHvV5p4kZ4aDvr89vlBg9fzIwCEkc4lEiWjiQXfZeR9yZPmxfvWkI7OGCopTGZe0vsiOREi9a3z+NmJmxxx+ZI8KsJKzQs7XkpkJ+3CYZP3TIIBz3S/DfUMrlLOukh+Eb5NM4q+gWLwqlm6aW4u0+VQxpc6zUBSZFEC6Wtop6k/93CK1upFAtsiyEP/E/5GaGPzuFBJEVlTvCKIcgL+jmb6nRwboai28ds0Y6xdENgcoraqoYYVHusYW/sjVMEhP7Hea1PpLD9KktC7u5k9l6BOamEXMLIcTnYg5nmGLTCWOOZyz2iPVRxH+PM6UW18AFVc5XNlQXoDjrtNVQrwg8vN6ZMAtZPF8wtd5UphhOlUHBwT80HGQVBd/1DqnEc5OqMwYIgbcfZgz6GyPSyDdolt162IVpM4ZYZs68YqW3ZlIvBHZYmod7mVI2cfZWF1TeDW94LjfPRFtby75hznEVmy8+G7tMUtvRvWh4zMVhQSZsHnlueh+yBsLdY9e3lKsy0qLhI5EY2m5RN0Zp4iZOthcF3F/FcGVMtZUkvGY4AFdJg0JEClLwPvg6xKWaU1Xbgf3UqLaJniyaM4L9b0znY7VuHUlxLaE9xQSomYnHH0nhlroVWk2vnFkH2PxrmOwzR6Nt8m4Uu7eYctp6wXMd6BlHf5uH4NI2RQ==
+X-Forefront-Antispam-Report: CIP:216.228.117.161;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge2.nvidia.com;CAT:NONE;SFS:(13230040)(7416014)(1800799024)(376014)(82310400026)(23010399003)(36860700016)(56012099006)(11063799006)(10067099003)(6133799003)(22082099003)(18002099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?m1TzNH11TrMw8Kz6sMXzcNMepFiM3ROiP3qke7sR8IwJfxsPBF1OqRM0ddv/?=
- =?us-ascii?Q?WiQhZHNiblwPrVXnDlEZ8zXZ7GWp+hssyPygbaBbM0w9NWri/03h8qeVjHMm?=
- =?us-ascii?Q?8uOXaliZkKgGSykhvh6LQs3xALJVtR9xvK4cCa1/xIYTrG3YV75eugmoH8f0?=
- =?us-ascii?Q?UJxZIk/2FPSzI5/cPNe6SV7K3BegcYzxpqulTAEY2KwabkY99y66m/oIaBwX?=
- =?us-ascii?Q?gWx2Se1phuNIQa2h+qccAALQk72cRGENxeKvapWGmNdVRFWQCaoXOyft8UEQ?=
- =?us-ascii?Q?4lecZHDAAt+obpJ/l7cU65Id/qHnwbEv8GWhOPoDf3PKDYLifqTN6qFZijLq?=
- =?us-ascii?Q?79TbbxtFhPi190J1ixzqshHScb080uNDd3CpWio2/OpymAOwwi3e4tbV//Ra?=
- =?us-ascii?Q?0iVqyHAakw0QzvM6WGlM529MH0MO9Zj/WDQoCje30GQHVZb0kC3lbKH42Xel?=
- =?us-ascii?Q?2iyhbjYrFCgdkp2JxveTRU/k9w05IYj8qffAp8P6etP7JzEbf5euQ6jegRUn?=
- =?us-ascii?Q?+a4TypM710v+59Akxm7ccghVDrWh2cggDPHlC1j3AAzgkbLIDkjwUrdyu3Lh?=
- =?us-ascii?Q?XfjUsXn6KRCLGmv27zxGQe3hFArya7IIVuDLhtk/SYbEVaayK4cY8a7UYa5J?=
- =?us-ascii?Q?OOThYO8D4nnekqi+dZO6aJI9kQpea9tpm2QUVor9biSo4t9tv6BytQUb4RZF?=
- =?us-ascii?Q?VTu349Zqc72GKb2o21a9hRw1RJOmotRARfzwgv7NJowksgvn90syfnsoZr5C?=
- =?us-ascii?Q?S1KkrUu+dIquQb/1mODTQR974bGe76a0a59DOqxZZUgSy/vzMKJ6XF8aMBIH?=
- =?us-ascii?Q?pbkxmrh+3ctSH1j8USQOYg9ZyBl9RifWSXVLvcrRea3IGFXapPeJrz8Q/TNI?=
- =?us-ascii?Q?2YQUFVyw4AKS5rqnARLQFE2wuSLckE1DdKh0dLtJ2b/eiEOL8mBIyjaXoFQg?=
- =?us-ascii?Q?ZN882Hv/vxCTYEqLilJhxc9I8Wo91WOY6QnbuAXkjyH+El+fb4gJ5H+qFYEB?=
- =?us-ascii?Q?N4lu3zM/2KqiRlOXT7ypod3jsV23LU9DzkcaZzx7xxbLaB4e14IrtRGbIXSm?=
- =?us-ascii?Q?IVS7bJGZjBrzNnrWVktuaCiUTRYHxbszex6jHLuFQqFcHt+ej1yic3lGMkte?=
- =?us-ascii?Q?QjXp4tTprFUgh+B1AOLqDdeVJ7XgJn+PbDFsW1aQxrbYGCtJYbSBKEPf1079?=
- =?us-ascii?Q?FiRTkN419+3MEOWiOREFmsagt9zLt5G5cE/s8mNZbtF1fT1rMgcIiZux4T65?=
- =?us-ascii?Q?5VEo4ASamts39ANXEPN5vZirCEgYpvxh3LGEndEgjkA2BjAqdD57UrOwma2Z?=
- =?us-ascii?Q?htFg0GI/0owNhWYrwaEGebxwwJ4uscgwKLHtsXCBlhoyzq4+GHCu+baO/hDu?=
- =?us-ascii?Q?R2pIFAq5VxHTqmKlj8Fw19/Kkj791BNYFrJ0B0LATgIiBu0o31a//OMJFBkV?=
- =?us-ascii?Q?Z7uBSNaDIDMZrQu31dGtfuNw9Ra8/RnU+fu+dXU2ZKJGc5D/BvRxsXjM9R2Q?=
- =?us-ascii?Q?zaUuEK8/+vCMZWyiLLbF+iKbVaJ/YEsMgAJHnGC8MiuC9a6s2smcOY9xJgSN?=
- =?us-ascii?Q?sxr3HME3zxHvl4cBV1cGcJGZBehmrv2PLPTp77/TnzKvS0I/dCjtcsbq1IZp?=
- =?us-ascii?Q?bD4mY1MaVJL5/7+hyTcD/5cJ3ErwyEUU3w/ZYv9qvOoUb5umvduvbEhthzPw?=
- =?us-ascii?Q?eF6IcxHpd4xt93gc2ziFoXUoh7RMl9r41Om23t7zy73xNNfyJIwII+xC7vEM?=
- =?us-ascii?Q?zD3hy33C4kvUmn9XjLv+Tbh1hAYhxBANams1ojsN4n8la2rHzxHC?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: efaa3e24-95c9-4315-e2d1-08dee8e7da08
-X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Jul 2026 18:26:02.8105
+X-MS-Exchange-AntiSpam-MessageData-0: WG1Qlm5MD9fTEFv9arBlGRqIlVhrVSw1KMccV8xkL7/G+8RUmYF+JlO5q4dVqorz+3gZZe9CQ5pzVikp4zkODT3GLJYe9eQef1ujCrIlSI6N9BB/A+XQ53UphHbzH9YxBM9dyBVc4IhYSGH5Xcjjm1xvw/joCmAEdf4RG+IWmwJd7F8JIXVyyK7C1WtAL09RM5PbVvCCJaS/1aqvfzhrXuvjxPziD9mIdQ72rUIkis2IY6ZNdsynei1hanBFEUObNjIMjjPLA/B7AVNJ5WV7EuutAKTyvRT2XpZqyYaTvPdm2idDBIjwNgunZ9C9R/g14vPp9gx0hZUdHorEn23xvB7OJm5OXR5xFQl57ld/Qg6FHBKdcLoYXdNjUeYJGwZx8jXCx9w7m8B3tWuxo7LevhcXpk6U0JaRi4lHNFjvAaOxnFsuuhooKaRTMMUUKQTC
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Jul 2026 08:27:12.4281
  (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 7nDwMHJ2724BoR1m/4ewfcwcTFa4xlvWmUGXhnQ8twq62KAckdHlk8aEiJxXzOswjM4dfarHKWRNVGVYyT03nSMRmTncoAgZKO04keAgsbidCQgldSOfd7xymD9F6HCw
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS1PR04MB9333
+X-MS-Exchange-CrossTenant-Network-Message-Id: ef116135-7537-40c2-aee1-08deebb8dbe6
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.161];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: SA2PEPF0000150A.namprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL4PR12MB9506
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260723_112607_630676_C50D526F 
-X-CRM114-Status: GOOD (  18.49  )
+X-CRM114-CacheID: sfid-20260727_012721_379599_053871ED 
+X-CRM114-Status: GOOD (  17.42  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,61 +131,102 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Jul 23, 2026 at 10:57:47AM +0300, Adrian Hunter wrote:
-> i3c_master_unregister_i3c_devs() clears i3cdev->dev->desc before
-> calling device_unregister().  During device_unregister(),
-> device_del() emits a KOBJ_REMOVE uevent and unbinds the driver while
-> the device descriptor is still expected to be valid.  As a result,
-> i3c_device_uevent() and a racing modalias_show() can observe a NULL
-> desc and fall back to an uninitialized stack struct i3c_device_info,
-> leaking kernel stack contents in the generated modalias.  Driver
-> .remove() callbacks may also encounter an unexpected NULL desc during
-> unbind.
->
-> Keep desc valid until device_unregister() has completed.  Since
-> device_unregister() drops the device reference and may free the device,
-> take an extra reference with get_device() before unregistering.  Clear
-> desc afterwards and release the extra reference with put_device().
-> This preserves the release-time invariant that desc must be NULL while
-> avoiding both the information leak and a potential use-after-free from
-> writing desc after the device has been released.
->
-> Reported-by: sashiko-bot@kernel.org
-> Link: https://lore.kernel.org/linux-i3c/20260702190003.8BF741F000E9@smtp.kernel.org/
-> Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
-> ---
+Hi Adrian,
 
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
+On Wed, 22 Jul 2026 13:38:43 +0300 Adrian Hunter wrote:
+> On 21/07/2026 07:07, Akhil R wrote:
+>> Replace all OF-specific functions with unified device property functions
+>> as a prerequisite to support both ACPI and device tree.
+>> 
+>> Reviewed-by: Frank Li <Frank.Li@nxp.com>
+>> Signed-off-by: Akhil R <akhilrajeev@nvidia.com>
+>> ---
+>>  drivers/i3c/master.c       | 77 +++++++++++++++++++++-----------------
+>>  include/linux/i3c/master.h |  5 ++-
+>>  2 files changed, 46 insertions(+), 36 deletions(-)
+>> 
+>> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+>> index f1be38a640ca..4b3d9628bc39 100644
+>> --- a/drivers/i3c/master.c
+>> +++ b/drivers/i3c/master.c
+>> @@ -13,10 +13,12 @@
+>>  #include <linux/dma-mapping.h>
+>>  #include <linux/err.h>
+>>  #include <linux/export.h>
+>> +#include <linux/i2c.h>
+>>  #include <linux/kernel.h>
+>>  #include <linux/list.h>
+>>  #include <linux/of.h>
+>>  #include <linux/pm_runtime.h>
+>> +#include <linux/property.h>
+>>  #include <linux/slab.h>
+>>  #include <linux/spinlock.h>
+>>  #include <linux/workqueue.h>
+>> @@ -491,7 +493,7 @@ static void i3c_bus_cleanup(struct i3c_bus *i3cbus)
+>>  	mutex_unlock(&i3c_core_lock);
+>>  }
+>>  
+>> -static int i3c_bus_init(struct i3c_bus *i3cbus, struct device_node *np)
+>> +static int i3c_bus_init(struct i3c_bus *i3cbus, struct fwnode_handle *fwnode)
+>>  {
+>>  	int ret, start, end, id = -1;
+>>  
+>> @@ -501,8 +503,8 @@ static int i3c_bus_init(struct i3c_bus *i3cbus, struct device_node *np)
+>>  	i3c_bus_init_addrslots(i3cbus);
+>>  	i3cbus->mode = I3C_BUS_MODE_PURE;
+>>  
+>> -	if (np)
+>> -		id = of_alias_get_id(np, "i3c");
+>> +	if (fwnode && is_of_node(fwnode))
+>> +		id = of_alias_get_id(to_of_node(fwnode), "i3c");
+>>  
+>>  	mutex_lock(&i3c_core_lock);
+>>  	if (id >= 0) {
+>> @@ -837,7 +839,7 @@ static void i3c_masterdev_release(struct device *dev)
+>>  	WARN_ON(!list_empty(&bus->devs.i2c) || !list_empty(&bus->devs.i3c));
+>>  	i3c_bus_cleanup(bus);
+>>  
+>> -	of_node_put(dev->of_node);
+>> +	fwnode_handle_put(dev->fwnode);
+>>  }
+>>  
+>>  static const struct device_type i3c_masterdev_type = {
+>> @@ -1044,7 +1046,7 @@ static void i3c_device_release(struct device *dev)
+>>  
+>>  	WARN_ON(i3cdev->desc);
+>>  
+>> -	of_node_put(i3cdev->dev.of_node);
+>> +	fwnode_handle_put(dev->fwnode);
+>>  	kfree(i3cdev);
+>>  }
+>>  
+>> @@ -1928,7 +1930,7 @@ i3c_master_register_new_i3c_devs(struct i3c_master_controller *master)
+>>  			     desc->info.pid);
+>>  
+>>  		if (desc->boardinfo)
+>> -			desc->dev->dev.of_node = desc->boardinfo->of_node;
+>> +			device_set_node(&desc->dev->dev, desc->boardinfo->fwnode);
+>
+> i3c_device_release() "puts" the node so there should be a "get" here.
+> Should probably fix that before switching to device properties.
+>
+> Also seems like the of_node_get() for boardinfo for both i3c and i2c
+> has no balancing put.  Again, it would be good to get that sorted out
+> before switching to device properties.
 
->  drivers/i3c/master.c | 9 +++++----
->  1 file changed, 5 insertions(+), 4 deletions(-)
->
-> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index 659c14c2c192..433dc7531701 100644
-> --- a/drivers/i3c/master.c
-> +++ b/drivers/i3c/master.c
-> @@ -3083,11 +3083,12 @@ static void i3c_master_unregister_i3c_devs(struct i3c_master_controller *master)
->  		if (!i3cdev->dev)
->  			continue;
->
-> -		i3cdev->dev->desc = NULL;
-> -		if (device_is_registered(&i3cdev->dev->dev))
-> +		if (device_is_registered(&i3cdev->dev->dev)) {
-> +			get_device(&i3cdev->dev->dev);
->  			device_unregister(&i3cdev->dev->dev);
-> -		else
-> -			put_device(&i3cdev->dev->dev);
-> +		}
-> +		i3cdev->dev->desc = NULL;
-> +		put_device(&i3cdev->dev->dev);
->  		i3cdev->dev = NULL;
->  	}
->  }
-> --
-> 2.53.0
->
+Thanks for the review.
+
+I understand the issue of unbalanced get/put, but given the size and
+spread of this series, mixing it up with fixes may make it difficult
+to review and may dilute its intent. This patch is a 1:1 of_node ->
+fwnode conversion and keeps the exact same get/put balance, so it
+should not regress anything.
+
+If you agree, the fixes and pre-existing issues can be taken up
+separately.
+
+Best Regards,
+Akhil
 
 -- 
 linux-i3c mailing list
