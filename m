@@ -4,75 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4EE19C54F5C
-	for <linux-i3c@archiver.kernel.org>; Tue, 28 Jul 2026 15:53:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5F893C54F4D
+	for <linux-i3c@archiver.kernel.org>; Tue, 28 Jul 2026 16:19:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tuddFME3pkKhHQyuOF3Z7BvWIes8oV6Uir5IwPa9CRc=; b=vpU+u3OFLmqdhc
-	Qu3S1zxbwWGNW5BNUuEjgZDMd12Z7kGSPPzNALDatlQYl9/kZUwjmedG5HVvtHSjuLgASII81ij/X
-	KQmBbDL+zfow7bvnFrVFIAg3x4PuWWPhnW+wtKbAaA2PKc8SnHcnpaWNesUE800bAJq4bHEiIue2v
-	nD++lyDV7acE5RTDDEIxHW1L+pTF0PWbreysHe4dShfoZjdvd8bCrjOSRLFLPzffYh7EvNiYFaLYZ
-	iZNQKGoeU9hVKNuN5Z89QmRXF8hgqRxH8Ktb4uAMsBp2BlCOxJqxKK3VQuS6H7pMxL/mkJaYAtwxy
-	cEp7MVqdVJQXYttFRmYw==;
+	List-Owner; bh=sATQyKKgM0SxvKZcunTizwNYMkFUG3jDdKm5UZhJfUs=; b=DTzvs/kiuQcIr9
+	bJE4CYT4NOFYbDR3mHHjWFeOjrDJ92hWor6hYWjgJy7t7+OwYElY+VMEpGRioDz4xOYSPWmDhlqqJ
+	KfVJovhjt1RiXDRcRmRnTigBlA7g8N4iLAbjfgNnRDj1th8ZvR/z11JpI3eEqUtoR4XOLXmKZwKDX
+	++neveB30vh4p4wEAHWlYcdYfq9i5fr9LAkBfzyv+9n71uwdxn8kLpMoIgvHIHvq0jqRhPoE/Ust9
+	0A6cQBkZ/hz4eZ4Tt3JIZ76dnLjCuRY/WYGzXLuXBC9D2xQ0NoMG3whRdXBMANujy7M+ANNiesgBx
+	EHzMY79vtyrZlrMrH3jg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wok7j-00000005jPY-4AzT;
-	Tue, 28 Jul 2026 15:53:43 +0000
-Received: from mgamail.intel.com ([198.175.65.21])
+	id 1wokWn-00000005oJH-2prT;
+	Tue, 28 Jul 2026 16:19:37 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wok7f-00000005jFt-0uGI
+	id 1wokWm-00000005oIu-2l7O
 	for linux-i3c@lists.infradead.org;
-	Tue, 28 Jul 2026 15:53:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1785254019; x=1816790019;
-  h=from:to:cc:subject:date:message-id:in-reply-to:
-   references:mime-version:content-transfer-encoding;
-  bh=TCb/nISARFE2W5GFqZKUbYAlrh6G+l/ILM+5Ecvs8Tw=;
-  b=GsJpF5amVnszQytQ/cBPpa/SY0IL2BvNrQidWTwrPfqEBVk5cGWfSzpH
-   FmzGPAjLkZ6gqI3YuVJwvIeYvXsDfHv4FLGH74B71O71H+hkDM5D0fJRs
-   broLGihfkp88xZNqmZhLZuLo5LQt/0Z7Fh1pZpdJ6006OgSyfHfi5fZ4l
-   wacnIWotw0bOogaxyTo3nJhiH6mb3WHXl+CHA+lOCVmwHxDoRAtJtporP
-   0bOuRsbOTiQMBFA1SR1LyyMY7CR2G94R4OLS+EKNLaRzcE94UjB1DWCzC
-   L+NdVWqtMvsklswnQXVtR+oangV6a9R9uLupEyt/XumRvkyY3FoKDDKv8
-   w==;
-X-CSE-ConnectionGUID: H0o1SJrQTtqNs072sLlbeg==
-X-CSE-MsgGUID: ZT5xT+M3QauwNKDjPeJmtQ==
-X-IronPort-AV: E=McAfee;i="6800,10657,11859"; a="85696814"
-X-IronPort-AV: E=Sophos;i="6.25,190,1779174000"; 
-   d="scan'208";a="85696814"
-Received: from fmviesa010.fm.intel.com ([10.60.135.150])
-  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Jul 2026 08:53:39 -0700
-X-CSE-ConnectionGUID: V+mtTotjT/2g1Lo2bFLyiA==
-X-CSE-MsgGUID: aPFZ2k8dT2y8u3eoGAZHfg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.25,190,1779174000"; 
-   d="scan'208";a="255817747"
-Received: from mkosciow-mobl1.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.244.126])
-  by fmviesa010-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Jul 2026 08:53:36 -0700
-From: Adrian Hunter <adrian.hunter@intel.com>
-To: alexandre.belloni@bootlin.com
-Cc: Frank.Li@nxp.com,
-	rafael@kernel.org,
-	linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org,
-	linux-pci@vger.kernel.org,
-	linux-pm@vger.kernel.org
-Subject: [PATCH V2 8/8] i3c: mipi-i3c-hci: Advertise IBI wakeup capability
-Date: Tue, 28 Jul 2026 18:53:08 +0300
-Message-ID: <20260728155308.142713-9-adrian.hunter@intel.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20260728155308.142713-1-adrian.hunter@intel.com>
+	Tue, 28 Jul 2026 16:19:36 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 2DD8342A21;
+	Tue, 28 Jul 2026 16:19:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C236F1F00A3A;
+	Tue, 28 Jul 2026 16:19:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1785255576;
+	bh=peruRkkKr+azNeAOQhOqjTEeC5FtrRlabTA5htTlFOA=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=Y0btHdfkjwL0gzq1s0PqOUlY3CsPtTmtOLrqnw40pBVKMez5Da3ejoxhhVOi/YneM
+	 OZcFINxFN4zwqGrSmMyVZznJ/MQ7iiiz3FWS1fW8dCZCwEmPLNbDXkN1300v2F9/6Q
+	 JbPhVMBJBnQ74ixqAqT9Nor30B3Agc3ehgtokogzqjI/BpkS903Zo870PgRdUPIclS
+	 VQNIx9UIvbJ46L6E0tdJuSVdd0zgy0i0citZsEZJSC8UGTyFufRI6ce/rdY1qrXP8E
+	 fb85w4TH6HsGur7q7i3nN9ZDEVK2FJwxwUFrWEJSgKBTpmgcntTbUyiatUImQLrEwh
+	 ICCovjhC9mQVw==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH V2 1/8] i3c: master: Fix recursive locking during device
+ registration
+To: "Adrian Hunter" <adrian.hunter@intel.com>
+Cc: Frank.Li@kernel.org, linux-pci@vger.kernel.org, linux-i3c@lists.infradead.org, "Alexandre
+ Belloni" <alexandre.belloni@bootlin.com>
+In-Reply-To: <20260728155308.142713-2-adrian.hunter@intel.com>
 References: <20260728155308.142713-1-adrian.hunter@intel.com>
-MIME-Version: 1.0
-Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260728_085340_460678_A933C773 
-X-CRM114-Status: GOOD (  11.60  )
+ <20260728155308.142713-2-adrian.hunter@intel.com>
+Date: Tue, 28 Jul 2026 16:19:35 +0000
+Message-Id: <20260728161935.C236F1F00A3A@smtp.kernel.org>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,61 +64,86 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Set master->ibi_wakeup during probe when the associated system device
-advertises wakeup capability, allowing the I3C core to mark IBI-capable
-I3C devices as wakeup capable.
-
-Tweak the comment for i3c_hci_sysdev() to mention the new usage.
-
-Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
----
-
-
-Changes in V2:
-
-	None
-
-
- drivers/i3c/master/mipi-i3c-hci/core.c | 9 ++++++---
- 1 file changed, 6 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-index 0212c9e984cf..5d92cf0645ef 100644
---- a/drivers/i3c/master/mipi-i3c-hci/core.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-@@ -120,9 +120,9 @@ static inline struct i3c_hci *to_i3c_hci(struct i3c_master_controller *m)
- 
- /*
-  * Determine the device that does PM / DMA and has IOMMU setup done for it in
-- * case of enabled IOMMU (for use with the DMA API).
-- * Such device is either "mipi-i3c-hci" platform device (OF/ACPI enumeration)
-- * parent or grandparent (PCI enumeration).
-+ * case of enabled IOMMU (for use with the DMA API). It is also used to check
-+ * for wakeup capability. Such device is either "mipi-i3c-hci" platform device
-+ * (OF/ACPI enumeration) parent or grandparent (PCI enumeration).
-  */
- struct device *i3c_hci_sysdev(struct device *dev)
- {
-@@ -1176,6 +1176,9 @@ static int i3c_hci_probe(struct platform_device *pdev)
- 	if (hci->quirks & HCI_QUIRK_RPM_IBI_ALLOWED)
- 		hci->master.rpm_ibi_allowed = true;
- 
-+	if (device_can_wakeup(i3c_hci_sysdev(&pdev->dev)))
-+		hci->master.ibi_wakeup = true;
-+
- 	return i3c_master_register(&hci->master, &pdev->dev, &i3c_hci_ops, false);
- }
- 
--- 
-2.53.0
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpOZXcgaXNzdWVzOgotIFtIaWdoXSBE
+cm9wcGluZyB0aGUgYnVzIG1haW50ZW5hbmNlIGxvY2sgYXJvdW5kIGRldmljZV9yZWdpc3Rlcigp
+IGV4cG9zZXMgaTNjX2RldmljZV91ZXZlbnQoKSBhbmQgZHJpdmVyIHByb2JlIGZ1bmN0aW9ucyB0
+byBhIFVzZS1BZnRlci1GcmVlIGlmIGEgY29uY3VycmVudCBEQUEgcmVwbGFjZXMgdGhlIGRldmlj
+ZS4KClByZS1leGlzdGluZyBpc3N1ZXM6Ci0gW0hpZ2hdIGkzY19kZXZpY2VfdWV2ZW50KCkgbGVh
+a3MgdW5pbml0aWFsaXplZCBzdGFjayBtZW1vcnkgdG8gdXNlcnNwYWNlIHdoZW4gaTNjZGV2LT5k
+ZXNjIGlzIE5VTEwuCi0tCgotLS0gUGF0Y2ggWzFdOiBbUEFUQ0ggVjIgMS84XSBpM2M6IG1hc3Rl
+cjogRml4IHJlY3Vyc2l2ZSBsb2NraW5nIGR1cmluZyBkZXZpY2UgcmVnaXN0cmF0aW9uIC0tLQpj
+b21taXQgMzNhNGRjZDZjNTYyNmZhZWY5NWJjN2NkMDJlYzRjNTZjNjcxMGM3OApBdXRob3I6IEFk
+cmlhbiBIdW50ZXIgPGFkcmlhbi5odW50ZXJAaW50ZWwuY29tPgoKaTNjOiBtYXN0ZXI6IEZpeCBy
+ZWN1cnNpdmUgbG9ja2luZyBkdXJpbmcgZGV2aWNlIHJlZ2lzdHJhdGlvbgoKVGhpcyBjb21taXQg
+c2VwYXJhdGVzIGRldmljZSBjcmVhdGlvbiBmcm9tIHJlZ2lzdHJhdGlvbiB0byBmaXggYSByZWN1
+cnNpdmUKbG9ja2luZyBpc3N1ZS4gSXQgZHJvcHMgdGhlIGJ1cyBtYWludGVuYW5jZSBsb2NrIGFy
+b3VuZCBkZXZpY2VfcmVnaXN0ZXIoKQp0byBwcmV2ZW50IGRlYWRsb2NrcyB3aGVuIHByb2JlIGNh
+bGxiYWNrcyBpbnZva2UgSTNDIGhlbHBlcnMuCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9pM2MvbWFz
+dGVyLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIuYwppbmRleCBmZDNlNzlkMTBjODQwLi44NzRmNmUx
+MWIyOTZkIDEwMDY0NAotLS0gYS9kcml2ZXJzL2kzYy9tYXN0ZXIuYworKysgYi9kcml2ZXJzL2kz
+Yy9tYXN0ZXIuYwpbIC4uLiBdCj4gQEAgLTE5OTksMjUgKzIwMDgsMzcgQEAgaTNjX21hc3Rlcl9y
+ZWdpc3Rlcl9uZXdfaTNjX2RldnMoc3RydWN0IGkzY19tYXN0ZXJfY29udHJvbGxlciAqbWFzdGVy
+KQo+ICAJCWlmIChkZXNjLT5ib2FyZGluZm8pCj4gIAkJCWRlc2MtPmRldi0+ZGV2Lm9mX25vZGUg
+PSBkZXNjLT5ib2FyZGluZm8tPm9mX25vZGU7Cj4gIAo+IC0JCXJldCA9IGRldmljZV9yZWdpc3Rl
+cigmZGVzYy0+ZGV2LT5kZXYpOwo+IC0JCWlmIChyZXQpIHsKPiAtCQkJZGV2X2VycigmbWFzdGVy
+LT5kZXYsCj4gLQkJCQkiRmFpbGVkIHRvIGFkZCBJM0MgZGV2aWNlIChlcnIgPSAlZClcbiIsIHJl
+dCk7Cj4gLQkJCWRlc2MtPmRldi0+ZGVzYyA9IE5VTEw7Cj4gLQkJCXB1dF9kZXZpY2UoJmRlc2Mt
+PmRldi0+ZGV2KTsKPiAtCQkJZGVzYy0+ZGV2ID0gTlVMTDsKPiAtCQl9Cj4gKwkJbGlzdF9hZGRf
+dGFpbCgmZGVzYy0+ZGV2LT5ub2RlLCAmaTNjX3VucmVnX2RldnMpOwo+ICsJfQo+ICsKPiArCWkz
+Y19idXNfbWFpbnRlbmFuY2VfdW5sb2NrKCZtYXN0ZXItPmJ1cyk7Cj4gKwo+ICsJbGlzdF9mb3Jf
+ZWFjaF9lbnRyeV9zYWZlKGkzY2RldiwgdG1wLCAmaTNjX3VucmVnX2RldnMsIG5vZGUpIHsKPiAr
+CQlyZXQgPSBkZXZpY2VfcmVnaXN0ZXIoJmkzY2Rldi0+ZGV2KTsKCltTZXZlcml0eTogSGlnaF0K
+RG9lcyBkcm9wcGluZyB0aGUgbWFpbnRlbmFuY2UgbG9jayBhcm91bmQgZGV2aWNlX3JlZ2lzdGVy
+KCkgZXhwb3NlCmkzY19kZXZpY2VfdWV2ZW50KCkgYW5kIGRyaXZlciBwcm9iZXMgdG8gYSB1c2Ut
+YWZ0ZXItZnJlZT8KCklmIGEgY29uY3VycmVudCBJM0MgaG90LWpvaW4gZXZlbnQgb3IgYSBzeXNm
+cyB3cml0ZSB0byBkb19kYWEgb2NjdXJzIHdoaWxlCmRldmljZV9yZWdpc3RlcigpIGlzIHJ1bm5p
+bmcgd2l0aG91dCB0aGUgbG9jaywKX19pM2NfbWFzdGVyX2FkZF9pM2NfZGV2X2xvY2tlZCgpIGNv
+dWxkIGZpbmQgYSBkdXBsaWNhdGUgUElEOgoKX19pM2NfbWFzdGVyX2FkZF9pM2NfZGV2X2xvY2tl
+ZCgpIHsKICAgICAgICBvbGRkZXYgPSBpM2NfbWFzdGVyX3NlYXJjaF9pM2NfZGV2X2R1cGxpY2F0
+ZShuZXdkZXYpOwogICAgICAgIGlmIChvbGRkZXYpIHsKICAgICAgICAgICAgICAgIG5ld2Rldi0+
+ZGV2ID0gb2xkZGV2LT5kZXY7CiAgICAgICAgICAgICAgICBpZiAobmV3ZGV2LT5kZXYpCiAgICAg
+ICAgICAgICAgICAgICAgICAgIG5ld2Rldi0+ZGV2LT5kZXNjID0gbmV3ZGV2OwogICAgICAgICAg
+ICAgICAgLi4uCiAgICAgICAgICAgICAgICBpM2NfbWFzdGVyX2RldGFjaF9pM2NfZGV2KG9sZGRl
+dik7CiAgICAgICAgICAgICAgICBpM2NfbWFzdGVyX2ZyZWVfaTNjX2RldihvbGRkZXYpOwogICAg
+ICAgIH0KfQoKTWVhbndoaWxlLCBkZXZpY2VfcmVnaXN0ZXIoKSB0cmlnZ2VycyBhIEtPQkpfQURE
+IHVldmVudC4gaTNjX2RldmljZV91ZXZlbnQoKQpyZWFkcyBpM2NkZXYtPmRlc2MgbG9ja2xlc3Ns
+eToKCmkzY19kZXZpY2VfdWV2ZW50KCkgewogICAgICAgIGlmIChpM2NkZXYtPmRlc2MpCiAgICAg
+ICAgICAgICAgICBkZXZpbmZvID0gaTNjZGV2LT5kZXNjLT5pbmZvOwp9CgpDb3VsZCB0aGlzIGxl
+YWQgdG8gaTNjX2RldmljZV91ZXZlbnQoKSBvciBkcml2ZXIgcHJvYmUgZnVuY3Rpb25zIGRlcmVm
+ZXJlbmNpbmcKdGhlIG9sZCBkZXNjcmlwdG9yIHdoaWxlIGl0IGlzIGJlaW5nIGZyZWVkPwoKPiAr
+CQlpZiAocmV0KQo+ICsJCQlkZXZfZXJyKCZtYXN0ZXItPmRldiwgIkZhaWxlZCB0byBhZGQgSTND
+IGRldmljZSAoZXJyID0gJWQpXG4iLCByZXQpOwo+ICsJCWVsc2UKPiArCQkJbGlzdF9kZWxfaW5p
+dCgmaTNjZGV2LT5ub2RlKTsKPiArCX0KPiArCj4gKwlpM2NfYnVzX21haW50ZW5hbmNlX2xvY2so
+Jm1hc3Rlci0+YnVzKTsKPiArCj4gKwlsaXN0X2Zvcl9lYWNoX2VudHJ5X3NhZmUoaTNjZGV2LCB0
+bXAsICZpM2NfdW5yZWdfZGV2cywgbm9kZSkgewo+ICsJCWxpc3RfZGVsKCZpM2NkZXYtPm5vZGUp
+Owo+ICsJCWRlc2MgPSBpM2NkZXYtPmRlc2M7Cj4gKwkJaTNjZGV2LT5kZXNjID0gTlVMTDsKCltT
+ZXZlcml0eTogSGlnaF0KVGhpcyBpcyBhIHByZS1leGlzdGluZyBpc3N1ZSwgYnV0IGRvZXMgc2V0
+dGluZyBpM2NkZXYtPmRlc2MgdG8gTlVMTCBiZWZvcmUKdW5yZWdpc3RyYXRpb24gb3IgY2xlYW51
+cCBsZWFkIHRvIGxlYWtpbmcgdW5pbml0aWFsaXplZCBzdGFjayBtZW1vcnkgaW4KaTNjX2Rldmlj
+ZV91ZXZlbnQoKT8KCldoZW4gYSBkZXZpY2UgaXMgdW5yZWdpc3RlcmVkIChvciBpZiByZWdpc3Ry
+YXRpb24gZmFpbHMgYW5kIHRyaWdnZXJzIGEgdWV2ZW50KSwKaTNjZGV2LT5kZXNjIGlzIHNldCB0
+byBOVUxMLiBUaGlzIGJ5cGFzc2VzIHRoZSBpbml0aWFsaXphdGlvbiBvZiBkZXZpbmZvCmluIGkz
+Y19kZXZpY2VfdWV2ZW50KCk6CgppM2NfZGV2aWNlX3VldmVudCgpIHsKICAgICAgICBzdHJ1Y3Qg
+aTNjX2RldmljZV9pbmZvIGRldmluZm87CiAgICAgICAgdTE2IG1hbnVmLCBwYXJ0LCBleHQ7Cgog
+ICAgICAgIGlmIChpM2NkZXYtPmRlc2MpCiAgICAgICAgICAgICAgICBkZXZpbmZvID0gaTNjZGV2
+LT5kZXNjLT5pbmZvOwoKICAgICAgICBtYW51ZiA9IEkzQ19QSURfTUFOVUZfSUQoZGV2aW5mby5w
+aWQpOwogICAgICAgIC4uLgogICAgICAgIHJldHVybiBhZGRfdWV2ZW50X3ZhcihlbnYsICJNT0RB
+TElBUz1pM2M6ZGNyJTAyWG1hbnVmJTA0WCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+IGRldmluZm8uZGNyLCBtYW51Zik7Cn0KClNpbmNlIGRldmluZm8gaXMgdW5pbml0aWFsaXplZCBv
+biB0aGUgc3RhY2sgd2hlbiBkZXNjIGlzIE5VTEwsIGNvdWxkIHRoaXMKYnJvYWRjYXN0IHVuaW5p
+dGlhbGl6ZWQga2VybmVsIHN0YWNrIGRhdGEgdG8gdXNlcnNwYWNlIHByb2Nlc3NlcyBsaXN0ZW5p
+bmcKdG8gbmV0bGluayB1ZXZlbnRzPwoKPiArCQlwdXRfZGV2aWNlKCZpM2NkZXYtPmRldik7Cj4g
+KwkJZGVzYy0+ZGV2ID0gTlVMTDsKPiAgCX0KPiArCj4gKwlpM2NfYnVzX21haW50ZW5hbmNlX3Vu
+bG9jaygmbWFzdGVyLT5idXMpOwo+ICB9CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6
+Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYwNzI4MTU1MzA4LjE0MjcxMy0xLWFkcmlhbi5o
+dW50ZXJAaW50ZWwuY29tP3BhcnQ9MQoKLS0gCmxpbnV4LWkzYyBtYWlsaW5nIGxpc3QKbGludXgt
+aTNjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1pM2MK
