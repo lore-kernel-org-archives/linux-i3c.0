@@ -4,54 +4,93 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 70562C53219
-	for <linux-i3c@archiver.kernel.org>; Tue, 28 Jul 2026 07:32:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 983B8C54EFC
+	for <linux-i3c@archiver.kernel.org>; Tue, 28 Jul 2026 09:33:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/V3dqBO24xAJrfL58AD4cD+iT988WbiFBlHjJ+gSv/s=; b=SJW/K5IKmItbew
-	Y6qJh3tRf/kLUWqazl/g3Xe0pAdm9YjHiTaxwrlgB4D+kI63L+7OOW2JPDmksnU+wirA1MAuYvv30
-	8a0Ly3l27UUP72pkW/jVudzZ7bOWID14qpJuacGBIhBcHojsjfgzu18x4XCUVqGC01UX//pA43edt
-	1abOtVudrOPSzz2JGCNWWsu58XUfiROSZHFSqpSec0OCnidnPtHRIr2cmfBxpZLPgLg7qj6Fjmd/B
-	ZIo7pCsUUwdpQ/5HMasdrt2s9s2zGd1P6ukDIxXFanAI7mZCKNwutXpb7mvGwyOUwVD0WOfFPuHDr
-	/NeUdk1dTHn8X4rvafzA==;
+	List-Owner; bh=jD3z7mr1AKnmCKuk1D3sOOkLRxVjA4L1TaT9tALks6w=; b=yTnCrSJ12nAqWu
+	D9YcBWlrbIwzUmU/fbbexH/mNquhyH9+tTmMj9O1sqfKo074/pD11tPYkEUljfem8kMMgYqjZpEgv
+	uVqbMZRghKBDi1WofVDSaB9cgTlxo63k9tzRQS7zpRmUa1FGlNeWbXczvq07qK3360Jdfj06k/s55
+	MMPEI0Xm1BGwv8YHZznM3Vxari/ULV5JWj9Z7k7noZEc8+EtopH9dmAsne3C6u55AmYt4Jh4qRufK
+	x63nCymMaJcJQ2AyVpClyKbvgA+gZTbwvLRgbl3zbYDeGQSl+h1sTIB7Wfo5PTPCWnkq0GZ0o37qO
+	A10hC86XITEZzeq2Xk+Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wocJ7-00000004dm6-032U;
-	Tue, 28 Jul 2026 07:32:57 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1woeBK-00000004pyu-1KTV;
+	Tue, 28 Jul 2026 09:33:02 +0000
+Received: from mail-pj1-x102c.google.com ([2607:f8b0:4864:20::102c])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wocJ5-00000004dly-3MO3
+	id 1woeBG-00000004pxg-3wVb
 	for linux-i3c@lists.infradead.org;
-	Tue, 28 Jul 2026 07:32:55 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id D146160A72;
-	Tue, 28 Jul 2026 07:32:54 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 20D781F000E9;
-	Tue, 28 Jul 2026 07:32:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1785223974;
-	bh=Tr1yk5M/1ibVUSlaQQlbBDhATqYoOLL3gJFQ801csDc=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=hM/7tnj/2FNoT+jLg+RIGOejkPQH5m44Qws6XLmtMLE5pgNoyrO7x5Jmmma8aQDHe
-	 osk1NNL0xsGJ+5gb8TnAWn4D3AxtvaUQt+3GPqFD2JnMMwH7DF1DVVIIpYJnZi2nRH
-	 hGOk5uRhh5zwhRS3AcA2rzrWsGbdPcK4BcPaWlyxUWiDN+uMKKNJFewzje7JKBYjlT
-	 8ET36qExiOGoTfY0ANJCYCrF2bT7qPaJy8D/oj2ZU92hry/b7HbiYv+xTjR6u7gQO+
-	 FgK72yKh1tGWucTKvvOrVMWyZHMhAHzMFFkr9J6M52Axux3Z95Xq8f+3ZdWjIzHLR4
-	 CmyMDjZQQjZgw==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v7 11/12] hwmon: spd5118: Add I3C support
-To: "Akhil R" <akhilrajeev@nvidia.com>
-Cc: robh@kernel.org, conor+dt@kernel.org, devicetree@vger.kernel.org, linux-hwmon@vger.kernel.org, Frank.Li@kernel.org, "Alexandre
- Belloni" <alexandre.belloni@bootlin.com>, linux-i3c@lists.infradead.org
-In-Reply-To: <20260728065955.809445-12-akhilrajeev@nvidia.com>
-References: <20260728065955.809445-1-akhilrajeev@nvidia.com>
- <20260728065955.809445-12-akhilrajeev@nvidia.com>
-Date: Tue, 28 Jul 2026 07:32:53 +0000
-Message-Id: <20260728073254.20D781F000E9@smtp.kernel.org>
+	Tue, 28 Jul 2026 09:33:00 +0000
+Received: by mail-pj1-x102c.google.com with SMTP id 98e67ed59e1d1-3856d6fbcb3so2714258a91.2
+        for <linux-i3c@lists.infradead.org>; Tue, 28 Jul 2026 02:32:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1785231178; x=1785835978; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to:content-type;
+        bh=YdUiqClYy+lUCnVC+2eitpCVhEPEfM4UIkHz4xO6XCA=;
+        b=l54i408b/44TZKF34O6Z1rCPJaDvSPAD4EbBhy1gA6HqS66tD9HqMDNtYmP2XUbIov
+         WY7kM6a6d/H3wJT5K2mLz+rjEGWHejj4QWwuz3rURQcelNb0wFzRksAc/f37I83zLnBY
+         YvpRqZZ6e2IdaLgK0sxLYU7hgngCM+p9w4g2qWDY7caIb7N84MNBxtM1Cc1Qz0eSMB2t
+         yLKurmsXsF0QzNZq8LZIAJZtW4E0rRsbtd8ksKT3q/pQcIheP1rGwWooNjy/pGwTqojZ
+         QQu81VhwP5tDzTUnajeYt2YYKpLnznHlewdGQheJOK2F505R/9UMVrcpiaCJSbG6DaVT
+         bX8Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1785231178; x=1785835978;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+         :to:cc:subject:date:message-id:reply-to:content-type;
+        bh=YdUiqClYy+lUCnVC+2eitpCVhEPEfM4UIkHz4xO6XCA=;
+        b=MUrGT8nbXYKpUWhkztD1zV1j8J6+S0dxB/rYa4h7sAiOfWgmpB3Z0CNgv41w5S6PeT
+         o2GqA9vRJyEPt/uPvDq7YHXjEq5fKeGRehhUkjWZeH8SyOkkCYSRZuljp+nWbgLUk5h+
+         tb9CN2g2l+D3QSPdAO7yEGznGBFZItrb6y4oNkTRTEozkXlaG+T6t6gv6+lGrL/P8+tf
+         7pUN/rlFk05X2c+se5ALeJCXSvWwX0mrnpqOIy5crddqZjjTGXYiL+X2F9fCE7jnXRTO
+         mwaGSVSC3fC//ybK3qzUVWZf0b/tRWqOY/UiKtN0yClKlUSEZcSIRL9nVIvcucf2H7XG
+         c/bQ==
+X-Forwarded-Encrypted: i=1; AHgh+RqI2KLjfiVwkS7YsPEqRK6W4ruPjBr7DlkAu+A+iC5TOFmV9zsusfPFRQqmimMvZejjZb14TZkTnzU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyKnvarpunLd0p7wrofF3M+W4ZuH9CXt0hISSMjLtApE2VPd8yY
+	FkNzeJy4u6Fq6dPZM96FcVbISjIn1ruULT/gcLX0g3SNMvMbzoQhC46X
+X-Gm-Gg: AR+sD13P0l703/5/K220SsdMSBbPhSs8jGVUNLOOcRlYZ1y6qGDKlhczLePLEmcct4X
+	sN5+8yINf9Q3GENf6Xqw27mKiiJH5I6f8cFcGTcpGVNjjxa13SbFE+uIhfm75dTxp81NvOnXWiO
+	noBr+TxLCXDeexkxvBRzYGPi7+yGZlblLKPbDUPRqTWXv3MjJqvvG2Btb6gOdvuFKFFYhYxVaZq
+	eDBXVPKTuRgfX28kLDr7ZErnZU/sSVtSQ/wIvTUJr6HVXh848HWEup/hQ76kQuq9nHndsGW6HwO
+	2ubrFBqaEZKR1PIcoiLpgWIdvTl+8PAFihTrMVlnTKGdCxpbsfIGWzucew5hLzeQz9YgRnpoMcN
+	cOmGGojk5XDuwYRXywOcKwSmLllqUHQLvolu5wH+VZpvgIQ+OkthclOK0/62s9Hj7fnjlp8e+3n
+	noP1eJIjtBIwCzr8qa8MS0DPXMk4DNFSlfKXujFx78WfPvCFu7DQjiH5yuazGzmjwwS1f4CpgHP
+	kvCT86UImDhlZRVfdKM9KsAT2knoyX8wuA=
+X-Received: by 2002:a17:90a:dfc4:b0:38e:485c:ebd3 with SMTP id 98e67ed59e1d1-38f6a303647mr1788498a91.15.1785231177751;
+        Tue, 28 Jul 2026 02:32:57 -0700 (PDT)
+Received: from jm-Lunar-Lake-Client-Platform.. (2001-b400-e14e-87ac-83f9-7a00-1613-f224.emome-ip6.hinet.net. [2001:b400:e14e:87ac:83f9:7a00:1613:f224])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-38f089e3472sm4592446a91.3.2026.07.28.02.32.52
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 28 Jul 2026 02:32:57 -0700 (PDT)
+From: Jian-Ming Liao <tim678910@gmail.com>
+X-Google-Original-From: Jian-Ming Liao <Jm_Liao@asmedia.com.tw>
+To: alexandre.belloni@bootlin.com
+Cc: Frank.Li@nxp.com,
+	adrian.hunter@intel.com,
+	jarkko.nikula@linux.intel.com,
+	linux-i3c@lists.infradead.org,
+	Jm_Liao@asmedia.com.tw,
+	Chloe_Chen@asmedia.com.tw,
+	Yd_Tseng@asmedia.com.tw,
+	Patrick_Yen@asmedia.com.tw
+Subject: [PATCH v2 0/3] i3c: mipi-i3c-hci: Add support for AMD_PT and improve IBI/PIO robustness
+Date: Tue, 28 Jul 2026 17:32:35 +0800
+Message-ID: <20260728093239.487156-1-Jm_Liao@asmedia.com.tw>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20260709071744.333403-1-Jm_Liao@asmedia.com.tw>
+References: <20260709071744.333403-1-Jm_Liao@asmedia.com.tw>
+MIME-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260728_023258_980299_59B820AF 
+X-CRM114-Status: GOOD (  11.07  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,25 +102,54 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-PiBBZGQgYSByZWdtYXAgY29uZmlnIGFuZCBhIHByb2JlIGZ1bmN0aW9uIHRvIHN1cHBvcnQgSTND
-LWJhc2VkCj4gY29tbXVuaWNhdGlvbiB3aXRoIFNQRDUxMTggZGV2aWNlcy4KPiAKPiBPbiBhbiBJ
-M0MgYnVzLCBTUEQ1MTE4IGRldmljZXMgYXJlIGVudW1lcmF0ZWQgdmlhIFNFVEFBU0EgYW5kIGFs
-d2F5cwo+IHJlcXVpcmUgYW4gQUNQSSBvciBkZXZpY2UgdHJlZSBlbnRyeS4gRGV2aWNlIG1hdGNo
-aW5nIGlzIGhlbmNlIHRocm91Z2gKPiB0aGUgT0YgbWF0Y2ggdGFibGVzIG9ubHkgYW5kIGRvZXMg
-bm90IG5lZWQgYW4gSTNDIGNsYXNzIG1hdGNoIHRhYmxlLiBUaGUKPiBkZXZpY2UgaWRlbnRpdHkg
-aXMgdmVyaWZpZWQgaW4gdGhlIHR5cGUgcmVnaXN0ZXJzIGJlZm9yZSBwcm9jZWVkaW5nIHRvCj4g
-dGhlIGNvbW1vbiBwcm9iZSBmdW5jdGlvbi4KPiAKPiBBY2tlZC1ieTogR3VlbnRlciBSb2VjayA8
-bGludXhAcm9lY2stdXMubmV0Pgo+IFNpZ25lZC1vZmYtYnk6IEFraGlsIFIgPGFraGlscmFqZWV2
-QG52aWRpYS5jb20+CgpTYXNoaWtvIGhhcyByZXZpZXdlZCB0aGlzIHBhdGNoIGFuZCBmb3VuZCBu
-byBpc3N1ZXMuIEl0IGxvb2tzIGdyZWF0IQoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBz
-Oi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDcyODA2NTk1NS44MDk0NDUtMS1ha2hpbHJh
-amVldkBudmlkaWEuY29tP3BhcnQ9MTEKCgotLSAKbGludXgtaTNjIG1haWxpbmcgbGlzdApsaW51
-eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
+This patch series introduces support for the AMD_PT I3C controller and
+includes several improvements to the MIPI I3C HCI driver to enhance
+stability and compliance with the latest specifications.
+
+Summary of changes:
+- Patch 1: Enables IBI threshold interrupts by default in PIO mode to
+  better handle early IBIs.
+- Patch 2: Adds explicit PIO queue management (enablement, starting, and
+  stop/restart logic) for compliance with HCI v1.2.
+- Patch 3: Adds the device ID and platform support for the AMD_PT I3C
+  controller.
+
+Changes in v2:
+- Patch 1: Removed unverified "Hot-Join" wording from comments and
+  commit message.
+- Patch 2: Addressed maintainer feedback:
+  - Removed '-' prefixes from commit message.
+  - Reverted unnecessary debug line movements and cleaned up 
+    macro alignments.
+  - Removed redundant manual kfree(pio) to prevent double-free issues.
+  - Adopted a helper macro for HCI version checks instead of hardcoding.
+
+Testing:
+These changes have been validated on the Intel Panther Lake (PTL) and
+AMD_PT platforms. No regressions were observed for existing controllers.
+
+Jian-Ming Liao (3):
+  i3c: mipi-i3c-hci: Enable IBI threshold interrupt by default in PIO
+    mode
+  i3c: mipi-i3c-hci: Add PIO queue management support for HCI v1.2
+  i3c: mipi-i3c-hci: Add support for AMD_PT I3C controller
+
+ drivers/i3c/master/mipi-i3c-hci/core.c        |  4 +
+ drivers/i3c/master/mipi-i3c-hci/hci.h         |  5 ++
+ .../master/mipi-i3c-hci/mipi-i3c-hci-pci.c    |  9 +++
+ drivers/i3c/master/mipi-i3c-hci/pio.c         | 76 +++++++++++++++++--
+ 4 files changed, 88 insertions(+), 6 deletions(-)
+
+-- 
+2.43.0
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
