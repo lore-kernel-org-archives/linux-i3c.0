@@ -4,56 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7277C53219
-	for <linux-i3c@archiver.kernel.org>; Tue, 28 Jul 2026 15:53:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1235BC54F4D
+	for <linux-i3c@archiver.kernel.org>; Tue, 28 Jul 2026 15:53:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/AtRjarXIqNw4z/MAl4Y/H0Tvq6PQ2Lds/ILdy78cng=; b=u5U75fFxBISfTZ
-	ZTnrD7QxtwxeY9E4vNfmibe42Fxswm1/7O0OcF9HHP62Pn/8ylglAixyzRJh0W0OANRfBd2ID68mm
-	K7Y1117Lw+W2NSpQOxDIump7phwo2tIXbRZrFGg+BG7pTTgxZZE2T2voPcP5tHYqZuWGh2Ddffg3n
-	hRQ13CrGeAViyAgkIZEd/mnHFbcNBKHBUBkxihxX07WMK9jrxAVZTGYIhBTlrJfNrgXJunmMS5t54
-	EluQXnPd/5lCDiY46BwMlJ/TlRSkkv7kD+BQupc5ake40BP+eMdTIGaS6E0wl7dn/qs7pQfQZHEXV
-	J9+N9hqzWMxahFAymKVA==;
+	List-Owner; bh=kY0jQ4Lgy5fsV4q5e+vxVVi6/8WCtIe4XAYouKRi0xo=; b=AiAhgpLTpHkfnM
+	31RajhgrjtCbfX6oap5bASNNp3WeepFPyjohBZyW+p/5Na0aauc49jzj6MVUSKPfmy9nGDSDbjf9T
+	jPX7j6XZfWITyfcXcOMKgNW9IjTp2QPDubfh8mc42Bm+Dt2m2X7rLmIiSX8DEEdPD/ugHHB+PK5ss
+	h1VBIh9+vVh//cMioub9iyu3hm5029Kuuxv1ok2oeOY9EnDd7C3IRMcr5TRWCn6eYsmKbxeVUd+cn
+	Xg5/kVy9yKRsRaiTjh5CVkQSM56ZrbZQeqN0WnfL3/ceV1+etrZ4CaxkUa9wulZL5IfEJI6I25vno
+	nOTc4SnFS2KTjm5X5tQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wok7W-00000005jGX-1Zp5;
-	Tue, 28 Jul 2026 15:53:30 +0000
+	id 1wok7Z-00000005jJ9-3HTG;
+	Tue, 28 Jul 2026 15:53:33 +0000
 Received: from mgamail.intel.com ([198.175.65.21])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wok7T-00000005jEm-3rBd
+	id 1wok7Y-00000005jFt-0c5Y
 	for linux-i3c@lists.infradead.org;
-	Tue, 28 Jul 2026 15:53:29 +0000
+	Tue, 28 Jul 2026 15:53:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1785254007; x=1816790007;
+  t=1785254012; x=1816790012;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=Rs3eLDm/z0MDQyS8v2EoxoDJjXfLNNwsxGZf+12I8AU=;
-  b=YBm/c7M4Nm4QgbcrWdQpnRnEY/WuxEjkhuanXTgltGmIxu7swhCBtkVH
-   oa1wcgP3eDKdRZlK38JuRp8hmeFFufHztFdPscksoKOY0vyjPAouaRACs
-   /Umq441W0HUMuxGVStjcpJ30buPHr8+VHgNk5T3dT9ons6f9WxgER7ST7
-   /SMpglkALoWBXakY90VOeedZZuhokvBNnI82yX84A7QGR+3blkfmF8mKe
-   MetaoU6UxWwuJG18u9YweCJWwJ1hDxvfkUZfxjDWUVZbM/JqSCsM93UO0
-   u8XjggEUT6HuXJr027DuOQLdZXK2saDpkcz8nG882sWfVf/mcWWJwYvAi
-   g==;
-X-CSE-ConnectionGUID: jNOPl8PvRDef/9/W5VmSzQ==
-X-CSE-MsgGUID: iQuSHXh3R7azSVnELlxL5Q==
-X-IronPort-AV: E=McAfee;i="6800,10657,11859"; a="85696575"
+  bh=GyQHeubSRZqQQ2yo6w+X4EKYG7SA6gkZFStluoIGdZo=;
+  b=mF4rzCEp0dubWiH3rRvOryXFDe7tfQpAfH8HHHEGeu9SiDtteOAdS4UH
+   QxqcqGm0grfeREJ6bni0ynb63gqKPLb8HCRS2V5Cnk2tPBKbA5RNNlqzS
+   dJrdA5L+C46igxg4ju8GQ0AebTBgkk3qHayoBVXUFpW0UcRK7EZKj7/BW
+   Fr334IwpH11EHCZpatalgvFwqB35kJEVP9Nyc4MhO/CS3UNoDjna+RwyR
+   WNTB+29hUg2+OoaOxH7n+Nm69ajkbHJ9KR8jUgmJztiMS569QS6mveQ6G
+   LTT7oaJzjmjlz0N946PW3zuBUK7ioPFb0FWD2VUpXbyWJy6nvRgUJRFMa
+   A==;
+X-CSE-ConnectionGUID: wgwA6GNAQcy8fUPxc0xqQg==
+X-CSE-MsgGUID: nk0E9dU3QaSsX0RYafIjTw==
+X-IronPort-AV: E=McAfee;i="6800,10657,11859"; a="85696672"
 X-IronPort-AV: E=Sophos;i="6.25,190,1779174000"; 
-   d="scan'208";a="85696575"
+   d="scan'208";a="85696672"
 Received: from fmviesa010.fm.intel.com ([10.60.135.150])
-  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Jul 2026 08:53:27 -0700
-X-CSE-ConnectionGUID: 4SQ7yB0wR32ZjYvt+EYDFw==
-X-CSE-MsgGUID: 97EhECoDS9isdhJDyCVbSA==
+  by orvoesa113.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Jul 2026 08:53:31 -0700
+X-CSE-ConnectionGUID: VLg11lL0TA2RDGulLAa/WQ==
+X-CSE-MsgGUID: 3i051EavRmaRr85RZlfRrA==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.25,190,1779174000"; 
-   d="scan'208";a="255817524"
+   d="scan'208";a="255817615"
 Received: from mkosciow-mobl1.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.244.126])
-  by fmviesa010-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Jul 2026 08:53:24 -0700
+  by fmviesa010-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 28 Jul 2026 08:53:29 -0700
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
@@ -62,18 +62,17 @@ Cc: Frank.Li@nxp.com,
 	linux-kernel@vger.kernel.org,
 	linux-pci@vger.kernel.org,
 	linux-pm@vger.kernel.org
-Subject: [PATCH V2 3/8] i3c: master: Report wakeup events for IBIs
-Date: Tue, 28 Jul 2026 18:53:03 +0300
-Message-ID: <20260728155308.142713-4-adrian.hunter@intel.com>
+Subject: [PATCH V2 5/8] i3c: master: Reject IBI requests from non-IBI-capable devices
+Date: Tue, 28 Jul 2026 18:53:05 +0300
+Message-ID: <20260728155308.142713-6-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20260728155308.142713-1-adrian.hunter@intel.com>
 References: <20260728155308.142713-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260728_085328_044114_E4F58ADC 
-X-CRM114-Status: UNSURE (   9.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260728_085332_234927_70B8080A 
+X-CRM114-Status: GOOD (  10.41  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,12 +89,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-An I3C device configured as a wakeup source can wake the system by
-generating an In-Band Interrupt (IBI).
+i3c_device_request_ibi() does not verify that a device advertises IBI
+support before attempting to set up IBI handling.
 
-When an IBI is queued for processing, record a wakeup event for the
-device if wakeup is enabled.  Use a 100 ms processing interval to give
-the I3C device driver time to process the IBI.
+Add a check for I3C_BCR_IBI_REQ_CAP and fail with -EOPNOTSUPP when IBI
+support is not reported by the device.  This keeps IBI setup consistent
+with other IBI-related functionality, such as exposing wakeup capability
+only for IBI-capable devices.
 
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 ---
@@ -106,33 +106,31 @@ Changes in V2:
 	None
 
 
- drivers/i3c/master.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+ drivers/i3c/device.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index cf3345265ac0..9d56ca08569a 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -3085,6 +3085,9 @@ static void i3c_master_unregister_i3c_devs(struct i3c_master_controller *master)
+diff --git a/drivers/i3c/device.c b/drivers/i3c/device.c
+index 101eaa77de68..307ca6dc04ca 100644
+--- a/drivers/i3c/device.c
++++ b/drivers/i3c/device.c
+@@ -205,12 +205,14 @@ int i3c_device_request_ibi(struct i3c_device *dev,
+ 		return ret;
+ 
+ 	i3c_bus_normaluse_lock(dev->bus);
+-	if (dev->desc) {
++	if (!dev->desc) {
++		ret = -ENOENT;
++	} else if (!(dev->desc->info.bcr & I3C_BCR_IBI_REQ_CAP)) {
++		ret = -EOPNOTSUPP;
++	} else {
+ 		mutex_lock(&dev->desc->ibi_lock);
+ 		ret = i3c_dev_request_ibi_locked(dev->desc, req);
+ 		mutex_unlock(&dev->desc->ibi_lock);
+-	} else {
+-		ret = -ENOENT;
  	}
- }
+ 	i3c_bus_normaluse_unlock(dev->bus);
  
-+/* Approximate time for IBI handler to run */
-+#define I3C_WAKEUP_PROCESSING_TIME_MS 100
-+
- /**
-  * i3c_master_queue_ibi() - Queue an IBI
-  * @dev: the device this IBI is coming from
-@@ -3098,6 +3101,9 @@ void i3c_master_queue_ibi(struct i3c_dev_desc *dev, struct i3c_ibi_slot *slot)
- 	if (!dev->ibi || !slot)
- 		return;
- 
-+	if (device_may_wakeup(&dev->dev->dev))
-+		pm_wakeup_event(&dev->dev->dev, I3C_WAKEUP_PROCESSING_TIME_MS);
-+
- 	atomic_inc(&dev->ibi->pending_ibis);
- 	queue_work(dev->ibi->wq, &slot->work);
- }
 -- 
 2.53.0
 
