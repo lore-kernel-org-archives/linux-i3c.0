@@ -4,66 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E56ACC54F55
-	for <linux-i3c@archiver.kernel.org>; Tue, 28 Jul 2026 15:11:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C9CF0C53219
+	for <linux-i3c@archiver.kernel.org>; Tue, 28 Jul 2026 15:24:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:Cc:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=83miJ2Hy9s6427ecUxfHZWbzXEaBezWW+cpZsv6kVXk=; b=ZQbCqsvele65ta
-	xKaFaZkCkhF/v1ppLx0EfBp6NkL7w2RJlXob8ScsA3sWZNHk/Hms0rUntS5zBvjiOw5+M5GuzscHW
-	HYixXQeAKorz+O5aP6drYemu/+3SwlG3ST/B591//9rqEM+smRhX9Vb3UB0lXiyDkNMkUq1qwtg3f
-	NXO8/FO1ToUiyvMeIqKfkOXDHsG02LZppXCqccT6zF7IG7qXebwyK3cIpEm1n7BxUYtlWWh6l1sJw
-	atwOY84X8u+95aVwog/5KnlNxmMZjiTbXpuYwEiLK32hEIxH4ITGVM1u56kWQ0o18B2Onxd3BfzoD
-	LlYjccdjJK4+n9edOUxg==;
+	List-Owner; bh=m/SVKwjNA6zIEoL95Cfa04d6I59PU8RiFZNU1tUr+g4=; b=LefIBFH1jX0kpK
+	3T1wy9jsLejpbLH9C6zfoAFeU+djvCDPq8Bd1eAv/LslBuQ9ZLlhfsukaYhGu9+GxDr4auLjQiY8Y
+	k4dWpkv4Z61QYrh418Jy1wfSuxkxlZuz87eepGeUk+n0DkhnQEnbdNHpbmk1uOLgmvTPfnjHSswZG
+	U1ZiIxI3X3WCfePUCoN7037EEoygybNRcurY2HFwKHE/FVnr7K4GKxK0j0icHSPU8rMq8x3R31iJG
+	CzM4Z5NJTmtgEFUpUtexldBB/0NaUyu4PIRDKzVtbIBk5QmuKbbSLxHpEzRaGqpimzsh1oU0jOTDt
+	2rYLN1jGoi1hKvtapuHQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wojSp-00000005bId-2dqk;
-	Tue, 28 Jul 2026 15:11:27 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wojfR-00000005dMD-27kL;
+	Tue, 28 Jul 2026 15:24:29 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wojSn-00000005bIG-1a2y;
-	Tue, 28 Jul 2026 15:11:25 +0000
+	id 1wojfP-00000005dLH-32xf;
+	Tue, 28 Jul 2026 15:24:27 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id BC2FA42AA4;
-	Tue, 28 Jul 2026 15:11:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7263F1F000E9;
-	Tue, 28 Jul 2026 15:11:23 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 298C441B61;
+	Tue, 28 Jul 2026 15:24:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id F40C91F00A3A;
+	Tue, 28 Jul 2026 15:24:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1785251484;
-	bh=P2h0zvhiWJL99Ql/LzjPEa4TBK4rGTdRlw5CNE1+M5o=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=EVhR5HlvuT1lZzNuSDVgOjAPEYxN1UXWOjDHMF42Al88ql5VBXHTz0zc/I1+qKmA1
-	 3TCF7yGMwxeewqJ6xW1vr+9JdpBYj8LfP6UxPQe2eOxOWRhbOtxsRwOxRvI2ewRJeH
-	 d59QIYqyLJg0iNCBH26m5PaV4O1hiXkKjh0Hr1cRzfdyU3be/BCsdycZsOguWMpQNL
-	 YmD+A3WKNSNcY9Fpm++V7tz8VB6duU88XPXLV55UnQWe9EdRVYWEBrkOvLhir+6m5V
-	 avDAn1aZWF4Y1XE4DuxO2tKudWhej7/euP+WBRN+liVa9XRbMqsAYIFYjPVAnHYNm7
-	 G8GpR9d8irT7A==
-Date: Tue, 28 Jul 2026 17:11:20 +0200
-From: Andi Shyti <andi.shyti@kernel.org>
+	s=k20260515; t=1785252267;
+	bh=+XBHM4Y2azxZZa9+2n0cn7/S1Zo1nqK1cbQKursEuU8=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References;
+	b=AQXRuwAnmeNsCUMnDuyVSTCYhTop9FeluTrtQtmzhUKpET33xZQPbfMa/FsniHPe1
+	 jKfwwk1BzCkD2McI7qFj+Og0wcyJNXZUUhx4U6VMOm9Eoa9EGoypukF4qlVj3O2uB6
+	 uGvGpkG4eP5IVy+v/62ogTjydHTTIE/miaHcxSY4VEUVO7BJSKABFvx9rmLuiGi4t3
+	 KXI2mJpnvGKmIrAAlzbTHjtIADZcaTAs3cN0rufVC9R9/xiv2Alg65YXlTUfbIYiYQ
+	 rhzjx4WpOV3R2iGo4RIZUFdh2JChcxhkwF3zdsg0BDMslT6rdF0xGzd5/602iK+WFb
+	 zVIQsy6+FquJw==
+Received: from sofa.misterjones.org ([185.219.108.64] helo=goblin-girl.misterjones.org)
+	by disco-boy.misterjones.org with esmtpsa  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <maz@kernel.org>)
+	id 1wojfM-00000009kmG-1Tn4;
+	Tue, 28 Jul 2026 15:24:24 +0000
+Date: Tue, 28 Jul 2026 16:24:23 +0100
+Message-ID: <86v79zcf2w.wl-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
 To: Swark Yang <syang@axiado.com>
-Cc: Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Harshit Shah <hshah@axiado.com>, Linus Walleij <linusw@kernel.org>, 
-	Bartosz Golaszewski <brgl@kernel.org>, Jan Kotas <jank@cadence.com>, 
-	Michal Simek <michal.simek@amd.com>, =?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>, 
-	Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li <Frank.Li@nxp.com>, 
-	Boris Brezillon <bbrezillon@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, 
-	Jiri Slaby <jirislaby@kernel.org>, Mark Brown <broonie@kernel.org>, 
-	Mathias Nyman <mathias.nyman@intel.com>, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
-	linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org, linux-i2c@vger.kernel.org, 
-	linux-i3c@lists.infradead.org, linux-serial@vger.kernel.org, linux-spi@vger.kernel.org, 
-	linux-usb@vger.kernel.org
-Subject: Re: [PATCH v3 3/8] dt-bindings: i2c: cdns: add Axiado AX3005 I2C
- variant
-Message-ID: <amjGh1ZQXTGXFv7q@zenone.zhora.eu>
+Cc: Rob Herring <robh@kernel.org>,	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>,	Harshit Shah <hshah@axiado.com>,	Linus
+ Walleij <linusw@kernel.org>,	Bartosz Golaszewski <brgl@kernel.org>,	Jan
+ Kotas <jank@cadence.com>,	Michal Simek <michal.simek@amd.com>,	Andi Shyti
+ <andi.shyti@kernel.org>,	=?UTF-8?B?UHJ6ZW15c8WCYXc=?= Gaj
+ <pgaj@cadence.com>,	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>,	Boris Brezillon <bbrezillon@kernel.org>,	Greg
+ Kroah-Hartman <gregkh@linuxfoundation.org>,	Jiri Slaby
+ <jirislaby@kernel.org>,	Mark Brown <broonie@kernel.org>,	Mathias Nyman
+ <mathias.nyman@intel.com>,	devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org,	linux-kernel@vger.kernel.org,
+	linux-gpio@vger.kernel.org,	linux-i2c@vger.kernel.org,
+	linux-i3c@lists.infradead.org,	linux-serial@vger.kernel.org,
+	linux-spi@vger.kernel.org,	linux-usb@vger.kernel.org
+Subject: Re: [PATCH v3 8/8] arm64: dts: axiado: Add initial support for AX3005 SoC and eval board
+In-Reply-To: <20260716-upstream-axiado-ax3005-upstream-v3-8-c429095143ec@axiado.com>
 References: <20260716-upstream-axiado-ax3005-upstream-v3-0-c429095143ec@axiado.com>
- <20260716-upstream-axiado-ax3005-upstream-v3-3-c429095143ec@axiado.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260716-upstream-axiado-ax3005-upstream-v3-3-c429095143ec@axiado.com>
+	<20260716-upstream-axiado-ax3005-upstream-v3-8-c429095143ec@axiado.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM-LB/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL-LB/10.8 EasyPG/1.0.0 Emacs/30.1
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+X-SA-Exim-Connect-IP: 185.219.108.64
+X-SA-Exim-Rcpt-To: syang@axiado.com, robh@kernel.org, krzk+dt@kernel.org, conor+dt@kernel.org, hshah@axiado.com, linusw@kernel.org, brgl@kernel.org, jank@cadence.com, michal.simek@amd.com, andi.shyti@kernel.org, pgaj@cadence.com, alexandre.belloni@bootlin.com, Frank.Li@nxp.com, bbrezillon@kernel.org, gregkh@linuxfoundation.org, jirislaby@kernel.org, broonie@kernel.org, mathias.nyman@intel.com, devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org, linux-i2c@vger.kernel.org, linux-i3c@lists.infradead.org, linux-serial@vger.kernel.org, linux-spi@vger.kernel.org, linux-usb@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org); SAEximRunCond expanded to false
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,18 +93,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Swark,
+On Fri, 17 Jul 2026 04:51:15 +0100,
+Swark Yang <syang@axiado.com> wrote:
+>
 
-On Thu, Jul 16, 2026 at 08:51:10PM -0700, Swark Yang wrote:
-> Add binding for Axiado AX3005 I2C controller. So far, no changes
-> are known, so it can fall back to the cdns,i2c-r1p14 compatible.
-> 
-> Signed-off-by: Swark Yang <syang@axiado.com>
+[...]
 
-merged to i2c/i2c.
+> +	soc {
+> +		compatible = "simple-bus";
+> +		#address-cells = <2>;
+> +		#size-cells = <2>;
+> +		interrupt-parent = <&gic500>;
+> +		ranges;
+> +
+> +		gic500: interrupt-controller@40400000 {
+> +			compatible = "arm,gic-v3";
+> +			reg = <0x0 0x40400000 0x0 0x10000>,
+> +			      <0x0 0x40500000 0x0 0xc0000>;
 
-Thanks,
-Andi
+This is missing the GICC, GICH and GICV regions that are implemented
+on Cortex-A53. See the binding document.
+
+> +			ranges;
+> +			#interrupt-cells = <3>;
+> +			interrupt-controller;
+> +			#address-cells = <2>;
+> +			#size-cells = <2>;
+> +			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_LOW>;
+> +			#redistributor-regions = <1>;
+
+This is the default, and isn't required.
+
+	M.
+
+-- 
+Without deviation from the norm, progress is not possible.
 
 -- 
 linux-i3c mailing list
