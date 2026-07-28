@@ -4,127 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9474CC531C9
-	for <linux-i3c@archiver.kernel.org>; Mon, 27 Jul 2026 16:19:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B18BFC54F4C
+	for <linux-i3c@archiver.kernel.org>; Tue, 28 Jul 2026 05:48:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zjCijKHWYVtKs3OnTfAFXFdaT1njpurmjbqlgVoi9tw=; b=bCwyMob1TC0pLu
-	GZr+BxLACWnvJIj2tShSN8pSLj62hzLQ8yXMWKD2gN3jw86TdL1gzL97ONFa7gAz1OOSZFX3vOokY
-	vAoquEzEZwKekMNg2Vqo/f1MeVhXWJV2unoW5rzhOLfuoDHpKjkIxuxR9oyJvw1PO2v8oix03oJLd
-	ohw62Xack+JT40S+4ff4r4nm31c1up/nnNHxu/WYg6JR4UWJ4MOo3W8k0+0gBrHZ24Ex0NYCrqRne
-	DvecUcLzQrxD1QnFyfOlrGVJmMdOORCrDZjDe1VS0JZOefs+EYOGhkbvoJlyVcFke9gHbgfOUFYbM
-	JeS3MrkV3uX+hgPE4zCg==;
+	List-Owner; bh=RCY32EzU1FNxEMZFL5AGot3Mb5SMqhg/DsIT1FXinxg=; b=F3UPF9auZ/nu5O
+	IniDQsrelSs4D+SRbKJ71c7TMToCPTDcEQdNihqW0u3olV8Igm+DcCYYC0Sp5SuVWHM+0JfC/2lJT
+	ozuGXBViuEXZvTZI0zvlnZfLr1wUeD/lXjI9JxEOguczU2R8KbRRdb4MB05iCe4Rv5kG36qUat7rT
+	uxz9rxdxSRzdL5IvMhcjsrT8jH0dvbP609Gf4uroTH/25JsKtktoJdTpLGPhzBzVces3Se5gvT8fq
+	89YZcfL+lxUI6xsMUcRcXFEWNHPholch98S8Wzf06blAk5ZZ6mV9Z2FtnSHV+kURDZAT2uhiKP/xp
+	mHK1d4QU7OOju5EUNwPA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woO3W-00000003I2X-1GL1;
-	Mon, 27 Jul 2026 16:19:54 +0000
-Received: from mail-norwayeastazon11013051.outbound.protection.outlook.com ([40.107.159.51] helo=OSPPR02CU001.outbound.protection.outlook.com)
+	id 1woafY-00000004UbU-1lMC;
+	Tue, 28 Jul 2026 05:48:00 +0000
+Received: from mail-westus3azlp170100009.outbound.protection.outlook.com ([2a01:111:f403:c107::9] helo=PH7PR06CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woO3T-00000003I2D-25xG
+	id 1woafV-00000004Ub3-2A1K
 	for linux-i3c@lists.infradead.org;
-	Mon, 27 Jul 2026 16:19:52 +0000
+	Tue, 28 Jul 2026 05:47:59 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Gzf5NWpHdAwImebPdbUwb5l2xNG/Ks7YQ/VyVqNvcpt8HUBTXl7Vfa2QZO2FmKAORl3iRIiDiimXPEgXo4WWoQCB/8IHv8hMBIUS9QK5WRlkV2AVn0IWGmGT0S9w6YuZHpn71+dvXRNID1PLxo02Y3UcP5MuCSsjU6yq+SfAM73fJs8KNuJHRURLcfZrHcigKR4U2R69z9tDL0k5IV5QFZX8zM+pcFWiaeZK4mzhtoG13mb3hlNteP3j3J7Gi478UElXYsV/v3vEyn3K6PV8hDkS5LLVo/jk/ZJgBlDXK1MHJWLNxo7i4zvf4HjKvtL0Ef5sWNK9c9YFj1rAeZPl+A==
+ b=lUyVXtnUfRZaKeEC8VTL3mUjIQUh/3988+s92Z4UEa0jhU8Grpd/wO5h91pNcnvBHG/f/s85Ei8Mr3jKxbxr/ybfQqDXzwAlGB/5BY19V8/5JB8TlFgI5P8fWzrOX9mIFNqsvQZ7B8uhTHffuneX8xRRLlTYzsucTkuYWmOY+zkwEFJpl06oscucZkEdtR0OPwHt2V3GQtthXTiUASGY7x6ouAeRmfmtw8ygPVzCp6/z6BS7fBefpZ4OzXdUF3XuSGaKNo5vsmKRU3DYVYlEHVDPggF/5MwZE6MEto1DXs4EvL5EpUaaSjFqkW3vy4BA5uzhAn67n8GJc5Sdoq5lrw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=2Z8hrKngAAWTivmddQUo14zPhH33D+vYUc0GJxZqsWw=;
- b=nqyascdRkhrSr4cVoUpth0jLBXZWKnjj85SdJGXZf4VBYnNriBvBSZXt0em6dXYPH1iq79S/SOvVkFuAHOQTexGg+BB2ZM6sU4LWij6Yz5Li72rDJTA8IRk2GrDVkTp6ERSGjOp19R/0ZvIjtA3bwOhi4+UKhaHLwtUuFI5WWARd/3bdmWxMC5/toH4GNLCHBjbDShvxQCNG5DMQ32wd9J98fYft0Fee7lkoNfzav4L6YaBB6nMQAXknXYgMil5nv1SStabFRfKZVQ6r4ZbAk8JArSoM4cA+dAVTkLsZhYJ3Rj3N2m8irk4J5EjUdIIVNVYFhPO8O5g4Cr0nm0tAAQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
+ bh=ceMkJo/kmqcEhMJ+WGWOYjuw6xZTTz6sLpP4vHRecUY=;
+ b=V7WJvkVRheHN5BtHVawJxmpxzN76vpL3nzAPRaLvycu4aclR5VEC/7I0qM7TikR950jUZI04POcQzNa51TheiSJv1Pk+O3MPHzs3WoUrCogRaxjMg7rEiC/D6nce/ayInrVhE/yPfVwNclb4LIj2dbCNMWqa1g/iiG6/U5x3PpoF4KfGCP8Fw1/0htHZSHhIzoDlWB/G5UzReoGTQNJ4GO+cxEBQVGbzXOA8yN60ARQ+VdIKNNhjyhgIrvQwp945BfMOCnLcOmfZLedD1m6vCdR0MZx9D+DBerqvhldpSNhQavNkHFZ0rTf7weYRCe2nwa2CXQ8NYI8r8EMwgogUrQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.160) smtp.rcpttodomain=oss.nxp.com smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2Z8hrKngAAWTivmddQUo14zPhH33D+vYUc0GJxZqsWw=;
- b=gprQ0ez/4OSZyukXplhIO+fhwHzNobMG+B082sNrQMMQP7/tegQ1plu6RBw9Ed9GHybeI4/7F8av75m7L+0n85hKPCO//RnAo6Vtg8DF1z+symI0UOXO3nOOrWEFr0Cdv7o4nciFpjbpi8qD4uGyINu6LT+jhxq+nP1wfCVkdurBlakgiaekHC4h+kVvioTRta1NFR+8+ig1tT2Q00dSZNkeuceprES5UT7/qQjuBr5xJ2Xux33hkrpRNfm2ZILW+22EmhYyta3VHpfRhe2B/mc+J2sEUjuFLv4Wz+2yYL1j6m8kg4RwzL74UTByYfshsIGvG4+BTf6zu/zTzXzcmQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by GV1PR04MB10194.eurprd04.prod.outlook.com (2603:10a6:150:1ac::11) with
+ bh=ceMkJo/kmqcEhMJ+WGWOYjuw6xZTTz6sLpP4vHRecUY=;
+ b=AQJxeJnYolw5FuF8DnN4IoduGfVx0STZdFo8Y88hfs67bF3aNXkUHdB6Xe4hvrwtJGUixd/hNQPTGVy5G2cSdn9Iz+LkamvsUGsf9z7mDMhaabVJm2Noifbk4i2kQbpU6ycetUJ/QYiOj+ciwEBYdSKZSZFK/CUSK9r/mRsgfe5vRnQ6n9BzekJxQgBYiwQuWtDPPq92CvsiiZtdcWRPbvIR5GOakCf+qDLfu8b2RCpoLupxFULzkvF+32jXUfA9rMUzqRjDR1lbHn1aARLB5bAohxTDO+rhZ4ypWSHx/f7HYtk5CDKuz+UKofUgfkuiIZEkULvE8S1pCV85U/Iyjw==
+Received: from DS7P222CA0008.NAMP222.PROD.OUTLOOK.COM (2603:10b6:8:2e::29) by
+ LV2PR12MB5967.namprd12.prod.outlook.com (2603:10b6:408:170::14) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.245.13; Mon, 27 Jul
- 2026 16:19:44 +0000
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c%6]) with mapi id 15.21.0245.012; Mon, 27 Jul 2026
- 16:19:44 +0000
-Date: Mon, 27 Jul 2026 12:19:36 -0400
-From: Frank Li <Frank.li@oss.nxp.com>
-To: Akhil R <akhilrajeev@nvidia.com>
-Cc: sashiko-bot@kernel.org, Frank.Li@kernel.org,
-	alexandre.belloni@bootlin.com, conor+dt@kernel.org,
-	devicetree@vger.kernel.org, linux-hwmon@vger.kernel.org,
-	linux-i3c@lists.infradead.org, robh@kernel.org,
-	sashiko-reviews@lists.linux.dev
-Subject: Re: [PATCH v6 08/12] i3c: dw-i3c-master: Add ACPI core clock
- frequency quirk
-Message-ID: <ameFGMYt7oEWbVIV@lizhi-Precision-Tower-5810>
-References: <20260721042615.E38721F000E9@smtp.kernel.org>
- <20260727144112.177391-1-akhilrajeev@nvidia.com>
-Content-Disposition: inline
-In-Reply-To: <20260727144112.177391-1-akhilrajeev@nvidia.com>
-X-ClientProxiedBy: PH7PR13CA0001.namprd13.prod.outlook.com
- (2603:10b6:510:174::7) To GV2PR04MB11799.eurprd04.prod.outlook.com
- (2603:10a6:150:2cf::9)
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.245.13; Tue, 28 Jul
+ 2026 05:47:49 +0000
+Received: from SN1PEPF0002BA4F.namprd03.prod.outlook.com
+ (2603:10b6:8:2e:cafe::7) by DS7P222CA0008.outlook.office365.com
+ (2603:10b6:8:2e::29) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.245.13 via Frontend Transport; Tue,
+ 28 Jul 2026 05:47:49 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.160) by
+ SN1PEPF0002BA4F.mail.protection.outlook.com (10.167.242.72) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.270.5 via Frontend Transport; Tue, 28 Jul 2026 05:47:48 +0000
+Received: from rnnvmail205.nvidia.com (10.129.68.10) by mail.nvidia.com
+ (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.45; Mon, 27 Jul
+ 2026 22:47:38 -0700
+Received: from rnnvmail205.nvidia.com (10.129.68.10) by rnnvmail205.nvidia.com
+ (10.129.68.10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Mon, 27 Jul
+ 2026 22:47:38 -0700
+Received: from build-akhilrajeev-noble-20260602.internal (10.127.8.11) by
+ mail.nvidia.com (10.129.68.10) with Microsoft SMTP Server id 15.2.2562.20 via
+ Frontend Transport; Mon, 27 Jul 2026 22:47:34 -0700
+From: Akhil R <akhilrajeev@nvidia.com>
+To: <frank.li@oss.nxp.com>
+CC: <Frank.Li@kernel.org>, <akhilrajeev@nvidia.com>,
+	<alexandre.belloni@bootlin.com>, <conor+dt@kernel.org>,
+	<devicetree@vger.kernel.org>, <linux-hwmon@vger.kernel.org>,
+	<linux-i3c@lists.infradead.org>, <robh@kernel.org>, <sashiko-bot@kernel.org>,
+	<sashiko-reviews@lists.linux.dev>
+Subject: Re: [PATCH v6 04/12] i3c: master: Add support for devices using SETAASA
+Date: Tue, 28 Jul 2026 05:47:33 +0000
+Message-ID: <20260728054733.541172-1-akhilrajeev@nvidia.com>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <ameDgqvp2pAKDEsE@lizhi-Precision-Tower-5810>
+References: <ameDgqvp2pAKDEsE@lizhi-Precision-Tower-5810>
 MIME-Version: 1.0
+X-NV-OnPremToCloud: ExternallySecured
+X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|GV1PR04MB10194:EE_
-X-MS-Office365-Filtering-Correlation-Id: ef6df572-8d9c-4b67-b5f0-08deebfade8a
+X-MS-TrafficTypeDiagnostic: SN1PEPF0002BA4F:EE_|LV2PR12MB5967:EE_
+X-MS-Office365-Filtering-Correlation-Id: dc4efbc3-5a01-479b-6695-08deec6bc1b0
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|7416014|366016|23010399003|19092799006|1800799024|6133799003|18002099003|22082099003|3023799007|56012099006|4143699003|11063799006|10067099003;
-X-Microsoft-Antispam-Message-Info: wui95OKALIl4PiQVl0EKXzfgV0X+j13b2t1mGH0gNOPF8UY1j/9LDVadfqqAb8hQewYbc1lqQQChK41vgAT6nxPJryHUUMSviVIZYpK+PVLEsgXyWggsxxxgxk3iqO+5QanpT+enycGZbwNd+j3fZZp4AATGnQ3P8hHjUGYcF8IRHWQ7arw3eB/96HH0qZmRB3jbt04iA9dGIchTR3yEIxq3BYVGyWfCer6iEZ4IISlSG9jhIPFbYnqDyM14KNHwacjvqzn36d5AxbMN8/jbFMcHFYbp02gAvCZtheZWdbRqkPBLbmMOZfQj/P4PxvC10n6y3AZSen9+ffpxL5uTcr/qJSFbN7PbBa4ysdCmDA8VwPwoBadYZAWKV3eEC1sJBD1g9Jv2w8ExOW4jEoTDNY2qc1YrUUrxRpexS85nAVg49RrABMw6xr3/AE/TuQ6ltSj6sTqMyK0vIPg1OpQrfi1tDhtHN2iM8uyXH0IbKXrNKNEfm5Yi+n7Zt2prYYs/QlYeCz5FtwS5OFOcsJzlRYsTW683UZn/rpZvOFjWBHOc8BM5x7wFDusWRAXJ5i/osNMbw3Drs41eO4cSjtUCDbppTFL0zdnZRqnU06tafXKs050/A9ujxat+E/IcCDdkFWHFL5slw4JH6U9X/suGumIpzw2TOu/79Fzn2RM00ak=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(366016)(23010399003)(19092799006)(1800799024)(6133799003)(18002099003)(22082099003)(3023799007)(56012099006)(4143699003)(11063799006)(10067099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|36860700016|1800799024|376014|82310400026|7416014|3023799007|11063799006|10067099003|56012099006|6133799003|22082099003|18002099003;
+X-Microsoft-Antispam-Message-Info: KljFiHqYO8gabeQORfHWDM9h81tpr/zRWesMNgHuj8MZGZmxLOTrVc0Na/JRpS8z03PSn1MWwAalQgTgETpEktIEopkG0/geJTwYT3i5CpFYLOoDYcBLR0TfFR4RKo+G8NxhrvdnX0HwbFxagrITZRCS3Twbsqsx1atGTOga4HixNNXsZjGojvrISUzif1pxEQ7Yj2zjJpc7d8GhJwYnKQ3MKX6j9z/HWDP3Ogn1ffD1eL9MB/uigyIVDsOQY1TtBMNCNj9Xfjrtc8BIgDkpYAsky8/71QAdD9FkrcS4wmS66Vc4rJM+OOoKvaRymF4X7iYFs7c7gRAW+yF5p/NSiW6OZ7elT/JUFo2PfEBvDKwrVXs1c5v7kjChAgTR4utonDWkTicrhFSEaAwmeKP+Wy4nUV8IpJPVcCrNUfKxuhQm8swiaZIbObMSWJx8ZsbU/Oc/JWgej6jJ6+LNL0HfWXNkBP7zsP8Clzg4XoHe+C2GE/JMlxp8/hcsmfwAyLClvPpxOqZej1h7PmnMx1HsfOr+q2Gu9ImkqpiFSkOof9TlXtXNiyp4V4mOjsSMtqMwH+58yOHh63zROuEHw7Fd794I26WEx0UwzIEs3oCamGaQKeL/HAbOqKnc6RX6Qtspg7L//OnvqYRWj7Nc9yu5HmnyVuqcTpSOOJdEmjWeFOMW/Ins8dlxXYaF93zdtcCFcqouHACCdNSLBbt1ezooWA==
+X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(23010399003)(36860700016)(1800799024)(376014)(82310400026)(7416014)(3023799007)(11063799006)(10067099003)(56012099006)(6133799003)(22082099003)(18002099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?6KvsrNxv7B9bcVrRm2hZ0GWgwbAT47hq5u2HM7lczqFjbDmy0Q6M7Gq6oj2s?=
- =?us-ascii?Q?dMkt6X435DjW/Ybh9caRG9p+5MAPxMfFC59ZzpUppAe9xcqVpll7g3JSdo+y?=
- =?us-ascii?Q?HlSE07HXScjLl6Q35ff1jF5Bg0HV1OYyaZgxmDZJkARrdVyTzI0DWIzkH5A7?=
- =?us-ascii?Q?VGPhKJNo7KhafFA5sDrNY3UrVp337qQa7AwvfC4DxQ5tHSHMdbq++M2q2835?=
- =?us-ascii?Q?6p8jIlapoknsAB9o1iIqLRWsz7IvRAZkTj2kI61JbzAtO3aFPURV3rsIkpkA?=
- =?us-ascii?Q?Up1wVOqJoVeSDVs4OCt/rKyjqjMJMUAnmEsykgU72ZRXS1ovh+yEOLM3VoNH?=
- =?us-ascii?Q?/tkYHw1YUCn/ktqdYg7DtrUX36z/ibscyWp3g9+AtcazEke3spDzIFeX4uu+?=
- =?us-ascii?Q?+W/OVh0vhwVwr+CXYHqgGfBa6+eGvmOhI9WqRslwtZZVY+MSWBqMoqc44B+7?=
- =?us-ascii?Q?sRP4DucIzy5Z3ESKLe8Qc1C+XDf5KmAKqpL4DvJKz6nw+a9auFowjXt20GsJ?=
- =?us-ascii?Q?c03FJJS18e9PY5TybYUCCNw9m7bPT7pOPmXPHMeEvIegWUAIh0uqGspG+/Wo?=
- =?us-ascii?Q?5F2SmhmTOno/drnvjYam3CC7MpSH32ev+XUnTW40p5A7NiigoyDaBDvd58mm?=
- =?us-ascii?Q?mIl/XFsTxIH1H9D95k2HagsqkFw4+GCj4c6H0A5mm1CIgT0FZqiUH5tzzPSR?=
- =?us-ascii?Q?Lw1MPuag/LrJW+namd27zrUJrmcoJPxXlE2ptKJThXBOZbWBWRi2pdr1Ymy8?=
- =?us-ascii?Q?Z9m6Yow7yFzQFmb+aIwNcC7oXYhJpKxT4Bc0CS83oAXdA/+M/eLprfieZSmU?=
- =?us-ascii?Q?7DG06u4rkWTElRSomMeMABtf9aDY7oD36QbTQmDTMv7CgmmiQsWqXlpwOQKg?=
- =?us-ascii?Q?eIW8tHuA74GQrfY+A7iF8jzIzxW8tHpyY524LAQ75LlD9HFjD+TXz50+FUyn?=
- =?us-ascii?Q?thco5OlynpRBH+WAuusq6JPI/ROaRzuXRrvBAFi8cY0vG+lGScKk+xRrawPR?=
- =?us-ascii?Q?i5gJw047uLI6Ha/dX1xCIjyXXaFEAz3Ky3hKmk39/sAjecu17tjEWbFpvQgc?=
- =?us-ascii?Q?82S7/8QvI7X3wFM6vymXFb0xXm5aph2dGRpCKKPEkZOXt5YTj+i/r5dbyCm1?=
- =?us-ascii?Q?grPXalfTqEnLwCewrgDiQL1lu9090UEBvHZxcgakFJLBUt9RswZQStPKu/X5?=
- =?us-ascii?Q?qKUdr785ob/eq2S0IagJq4beIfc1GeC80poy/D+gEKhyD8pZ8ADfxjdnkCaH?=
- =?us-ascii?Q?dWzB/mKXXhO0b4BFp4Ji5krqTbDRXQjpobeer1MxWjAksAVjjt4VFtyAh3kC?=
- =?us-ascii?Q?SoC2QzjloBRbBJ0XGCuArIysSNzZ+l35mJnQo18D/lMimQnDd4MZnFndaCz3?=
- =?us-ascii?Q?rrT/MNLvRfSKOzFsbISnc/81BVwBkobSdV6Xxuf2MFkNOJ3CeVI47mZcDKjA?=
- =?us-ascii?Q?aIzcq6DxKpGYcUY8duBu9EU5C5KFXauhrwS0EIHqihq9JI8Duyd4liB2UGgS?=
- =?us-ascii?Q?YHzUe+AFJwDI2QqWJiDK74yslZ7mHDoROg6zWxARxNwIfjYiBj6OgDSky8BG?=
- =?us-ascii?Q?mtqBvZP5cwy+Jc9ZsXCO1mbou6dOn2jSSegrzk9QU9e/DgvKdl5HdH/t+xk7?=
- =?us-ascii?Q?HkZFVxmDx9PwYliemZM2a+DEuAIifdyaOYrVfwm2+RAgXlbpI8nLJNOpDhqp?=
- =?us-ascii?Q?VBDyqkiGqCiuqK3TpS9cJgOEnlPqi1H0jyXRtr8c8Xc7EqmBkl5qPy0tyTXW?=
- =?us-ascii?Q?CO0TO0RFYLAGxsIn/SX1j+tjvvXMNC+iORvCcIn1SKISg1y3gDn5?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ef6df572-8d9c-4b67-b5f0-08deebfade8a
-X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Jul 2026 16:19:44.3148
+X-MS-Exchange-AntiSpam-MessageData-0: NzxzLUMvhFMB3Xe+r2EBxhStrLWmaY98gxnfwNw/y56RQw770M3PpVkWORoE3nyghHaXNtvOh7wXljj2R+DasdI2DYVbs1c1nFa7Aespocttopi3XhbRZ2avoUwvO31bBALZqCfByyA5PieL+z/MsSbUaTn5DlZb1VQkF7d7UwumQeY7tX034IJyGwMc45HLi7OBbMTRjsgGIJzjKqxHjd8qNJp1zjLh2SG2G6fZLQukGi8K2RpI3qbT9GhBtJuPKjdT1TJ9PrK3qlXVRyVeud78BnuW3WbK5945gIFkr60I0OIrQUhtYTutpAN2JyQSu16729nAFPhl6C29NvnBRtoHVEL6UXWT9qYuXf8NWFrILBrFN3ta06XyI1Gj/7rWJzyf0bL1CQOLtUSxyBdQpur2Udx2Z7GHK8Y1/AWy7EGNfyEKIlz/qLa9qcu47b/7
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Jul 2026 05:47:48.6928
  (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 7wY3yFe/vTbp7xtu9wzKHbGOBABjhuQZ4diOV5TPDOOiFQU6TrluU0XE4OQFZYb38TNZceSQeo9NbLukkoy26YNSD5zYNm8ZtzW5z/8M8+kiEaMJ8NpBSuqv6I2DoUUr
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR04MB10194
+X-MS-Exchange-CrossTenant-Network-Message-Id: dc4efbc3-5a01-479b-6695-08deec6bc1b0
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: SN1PEPF0002BA4F.namprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LV2PR12MB5967
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260727_091951_544545_0554D7F0 
-X-CRM114-Status: GOOD (  35.63  )
+X-CRM114-CacheID: sfid-20260727_224757_602001_B01EE2F9 
+X-CRM114-Status: GOOD (  39.16  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -141,126 +129,175 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jul 27, 2026 at 02:41:12PM +0000, Akhil R wrote:
-> On Tue, 21 Jul 2026 04:26:15 +0000, Sashiko AI review <sashiko-bot@kernel.org> wrote:
-> > commit f3333de342eb1c266eb94909516ea27afe8378d5
-> > Author: Akhil R <akhilrajeev@nvidia.com>
-> >
-> > i3c: dw-i3c-master: Add ACPI core clock frequency quirk
-> >
-> > Some ACPI-enumerated devices like Tegra410 do not expose the controller
-> > core clock through the clk framework. Unlike device tree, ACPI on Arm does
-> > not model clock providers. The hardware is expected to have its clocks
-> > enabled by firmware before the OS takes over.
-> >
-> > > diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-> > > index 29030fd9594aa..3ec3ab1c13b4c 100644
-> > > --- a/drivers/i3c/master/dw-i3c-master.c
-> > > +++ b/drivers/i3c/master/dw-i3c-master.c
-> >
-> > [ ... ]
-> >
-> > > @@ -556,13 +557,33 @@ static void dw_i3c_master_set_intr_regs(struct dw_i3c_master *master)
-> > > +static unsigned long dw_i3c_master_get_core_rate(struct dw_i3c_master *master)
-> > > +{
-> > > +	unsigned int core_rate_prop;
-> > > +
-> > > +	if (master->core_clk)
-> > > +		return clk_get_rate(master->core_clk);
-> > > +
-> > > +	if (!(master->quirks & DW_I3C_ACPI_SKIP_CLK_RST)) {
-> > > +		dev_err(master->dev, "missing core clock\n");
-> > > +		return 0;
-> > > +	}
-> >
-> > [Severity: Low]
-> > Is this check reachable?
-> >
-> > During initialization in dw_i3c_common_probe(), if the core clock is missing
-> > and DW_I3C_ACPI_SKIP_CLK_RST is not set, probe immediately aborts with -EINVAL.
-> >
-> > By the time dw_i3c_master_get_core_rate() is executed, it seems guaranteed
-> > that if core_clk is missing, the DW_I3C_ACPI_SKIP_CLK_RST quirk is already
-> > set, making this fallback check dead code.
->
-> The check is defensive and is harmless. I believe it adds to readability,
-> but can be cleaned up if preferred.
+On Mon, 27 Jul 2026 12:12:50 -0400 Frank Li wrote:
+> On Mon, Jul 27, 2026 at 12:57:45PM +0000, Akhil R wrote:
+>> On Tue, 21 Jul 2026 04:30:58 +0000, Sashiko AI review <sashiko-bot@kernel.org> wrote:
+>> > commit e158b576a9f733695d868ee16f34bacdb43285b3
+>> > Author: Akhil R <akhilrajeev@nvidia.com>
+>> >
+>> > i3c: master: Add support for devices using SETAASA
+>> >
+>> > This commit adds support for discovering I3C devices using the SETAASA
+>> > procedure, such as SPD5118 and SPD5108 attached to DDR5 memory modules. It
+>> > adds the SETAASA and SETHID CCC commands and updates the discovery logic.
+>> >
+>> > Link: https://www.mipi.org/mipi-disco-for-i3c-download
+>> >
+>> >> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+>> >> index 623c6b2247d9f..b18dda89c4737 100644
+>> >> --- a/drivers/i3c/master.c
+>> >> +++ b/drivers/i3c/master.c
+>> >
+>> > [ ... ]
+>> >
+>> >> @@ -1102,6 +1103,51 @@ static int i3c_master_rstdaa_locked(struct i3c_master_controller *master,
+>> >>  	return ret;
+>> >>  }
+>> >>
+>> >> +static int i3c_master_setaasa_locked(struct i3c_master_controller *master)
+>> >> +{
+>> >> +	struct i3c_ccc_cmd_dest dest;
+>> >> +	struct i3c_ccc_cmd cmd;
+>> >> +	int ret;
+>> >> +
+>> >> +	i3c_ccc_cmd_dest_init(&dest, I3C_BROADCAST_ADDR, 0);
+>> >> +	i3c_ccc_cmd_init(&cmd, false, I3C_CCC_VENDOR(0, true), &dest, 1);
+>> >> +	ret = i3c_master_send_ccc_cmd_locked(master, &cmd);
+>> >
+>> > [Severity: High]
+>> > Will this fail on most existing I3C master controllers?
+>> >
+>> > Looking at i3c_master_send_ccc_cmd_locked(), it calls
+>> > master->ops->supports_ccc_cmd() before sending. Many core controller drivers
+>> > (like dw-i3c-master.c) have strict switch-statement whitelists for supported
+>> > CCC IDs that do not include these new SETAASA (0x29) and SETHID (0x61)
+>> > commands.
+>> >
+>> > Would this result in returning -EOPNOTSUPP and aborting the entire bus
+>> > initialization on systems with these controllers?
+>>
+>> SETAASA/SETHID are only issued when a device opts in to the SETAASA method
+>> (i3c_master_setaasa_locked() is called solely when addr_method has
+>> I3C_ADDR_METHOD_SETAASA, and SETHID is sent from within it). Existing
+>> drivers are unaffected because SETAASA is a new capability they do not yet
+>> advertise; they can whitelist these CCCs when they add SETAASA support,
+>> which will have to be updated in the individual drivers. This patchset
+>> does that for the DesignWare contoller driver.
+>>
+>> > [ ... ]
+>> >
+>> >> @@ -1878,6 +1924,22 @@ static int i3c_master_early_i3c_dev_add(struct i3c_master_controller *master,
+>> >>  	if (ret)
+>> >>  		goto err_free_dev;
+>> >>
+>> >> +	if (i3cdev->boardinfo->static_addr_method & I3C_ADDR_METHOD_SETAASA) {
+>> >> +		i3cdev->info.dyn_addr = i3cdev->boardinfo->static_addr;
+>> >> +		ret = i3c_master_reattach_i3c_dev_locked(i3cdev, 0);
+>> >> +		if (ret)
+>> >> +			goto err_rstdaa;
+>> >
+>> > [Severity: High]
+>> > If i3c_master_reattach_i3c_dev_locked() fails here, we jump to err_rstdaa
+>> > and eventually free the device structure. However, i3c_master_bus_init()
+>> > later unconditionally broadcasts SETAASA to the bus.
+>> >
+>> > Won't the physical device claim this static address during the broadcast,
+>> > even though the controller software no longer tracks it? This could lead to
+>> > a bus collision when the software later tries to dynamically assign this
+>> > "free" address slot to a different device.
+>>
+>> Address conflicts between statically-addressed devices are rejected up
+>> front in i3c_master_get_i3c_addrs(), so it should not cause any address
+>> collision with other devices on the bus unless the same address is being
+>> assigned through ENTDAA. If this is a concern, we can avoid freeing the
+>> static address for SETAASA devices even if software attachment fails.
+>>
+>> Let me know if this needs to be done.
+> 
+> Try it.
+> 
+>>
+>> > [Severity: High]
+>> > This is a pre-existing issue, but does jumping to err_rstdaa correctly reset
+>> > the hardware if reattachment fails during SETDASA or SETAASA?
+>> >
+>> > If i3c_master_reattach_i3c_dev_locked() fails, its internal error path calls
+>> > i3c_master_put_i3c_addrs(), which marks the slot as I3C_ADDR_SLOT_FREE.
+>> >
+>> > When we reach the err_rstdaa path:
+>> >
+>> > err_rstdaa:
+>> >     i3c_master_rstdaa_locked(master, i3cdev->boardinfo->init_dyn_addr);
+>> >
+>> > i3c_master_rstdaa_locked() checks i3c_bus_get_addr_slot_status(). Because the
+>> > slot is already marked FREE, it returns -EINVAL and silently aborts without
+>> > sending the RSTDAA command to the hardware.
+>> >
+>> > Does this leave the physical device holding the address while the software
+>> > considers it free?
+>>
+>> Pre-existing; not introduced by this patch. Better addressed separately.
+>>
+>> >> +
+>> >> +		return 0;
+>> >> +	}
+>> >> +
+>> >>  	ret = i3c_master_setdasa_locked(master, i3cdev->info.static_addr,
+>> >>  					i3cdev->boardinfo->init_dyn_addr);
+>> >
+>> > [ ... ]
+>> >
+>> >> @@ -2741,7 +2816,19 @@ i3c_master_add_i3c_boardinfo(struct i3c_master_controller *master,
+>> >> +	if (boardinfo->static_addr_method & I3C_ADDR_METHOD_SETAASA) {
+>> >> +		/* For SETAASA, static address is taken as the dynamic address. */
+>> >> +		init_dyn_addr = boardinfo->static_addr;
+>> >> +	}
+>> >> +
+>> >> +	/* Update the address methods required for device discovery */
+>> >> +	master->addr_method |= boardinfo->static_addr_method;
+>> >> +
+>> >>  	boardinfo->pid = ((u64)reg[1] << 32) | reg[2];
+>> >>
+>> >>  	if ((boardinfo->pid & GENMASK_ULL(63, 48)) ||
+>> >
+>> > [Severity: High]
+>> > By relaxing the PID validation for SETAASA devices in this function, pid can
+>> > default to 0. If a system configures multiple SETAASA devices (like DDR5
+>> > SPDs) without PIDs, will this cause a kobject name collision?
+>> >
+>> > During registration, i3c_master_register_new_i3c_devs() names the device
+>> > using its bus ID and PID:
+>> >
+>> > dev_set_name(&desc->dev->dev, "%d-%llx", master->bus.id, desc->info.pid);
+>> >
+>> > If multiple devices have pid=0, they would all be named "0-0", causing
+>> > device_register() to fail with -EEXIST for subsequent devices and preventing
+>> > them from functioning.
+>>
+>> Static addressing requires each device to have a distinct static address on
+>> the bus,
+> 
+> Any check and report error if two devices have the same address?
+> 
 
-Yes, needn't double check if probe already checked.
+Yes. For SETAASA devices the static address is also the dynamic address, so a
+duplicate is caught in i3c_master_bus_init() while reserving the address slots
+before pre-assignment. It fails with -EBUSY and the bus initialization is
+aborted. For SETDASA devices, a duplicate static address is rejected in
+get_i3c_addrs() when the device is attached.
 
+The kobject conflict is resolved in the subsequent patch, where SETAASA or
+PID-less devices are named with the static address instead of the PID.
 
-Frank
+> 
+>> and PID-less devices are named from that unique static address
+>> ("%d-%02x"). The bus address-slot management also prevents two live devices
+>> from occupying the same address. So a collision would require a malformed
+>> description with duplicate static addresses, which is not a valid bus.
+>>
 
->
-> > > +
-> > > +	if (device_property_read_u32(master->dev, "clock-frequency", &core_rate_prop)) {
-> > > +		dev_err(master->dev, "missing clock-frequency property\n");
-> > > +		return 0;
-> > > +	}
-> > > +
-> > > +	return core_rate_prop;
-> > > +}
-> >
-> > [ ... ]
-> >
-> > > @@ -1573,14 +1594,28 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
-> > > +	if (has_acpi_companion(&pdev->dev)) {
-> > > +		quirks = (unsigned long)device_get_match_data(&pdev->dev);
-> > > +	} else if (pdev->dev.of_node) {
-> >
-> > [Severity: High]
-> > This isn't a bug introduced by this patch, but since this block was
-> > relocated, I noticed a potential issue for devices using ACPI PRP0001.
-> >
-> > If the device is instantiated via ACPI using the PRP0001 HID,
-> > device_get_match_data() correctly falls back to the OF match table and
-> > returns a pointer to struct dw_i3c_drvdata.
-> >
-> > Does casting this pointer to an unsigned long and assigning it to
-> > master->quirks cause random kernel pointers to be used as a quirk bitmask?
-> > Depending on the kernel layout, this might cause erratic driver behavior such
-> > as missing PM operations.
->
-> > > +		drvdata = device_get_match_data(&pdev->dev);
-> > > +		if (drvdata)
-> > > +			quirks = drvdata->flags;
-> > > +	}
-> > > +	master->quirks = quirks;
-> >
-> > [ ... ]
-> >
-> > > @@ -1636,15 +1671,6 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
-> > > -	if (has_acpi_companion(&pdev->dev)) {
-> > > -		quirks = (unsigned long)device_get_match_data(&pdev->dev);
-> > > -	} else if (pdev->dev.of_node) {
-> > > -		drvdata = device_get_match_data(&pdev->dev);
-> > > -		if (drvdata)
-> > > -			quirks = drvdata->flags;
-> > > -	}
-> > > -	master->quirks = quirks;
-> > > -
-> >
-> > [Severity: High]
-> > This is a pre-existing issue, but I noticed a potential problem in the device
-> > removal path regarding runtime PM state.
-> >
-> > When the driver is unbound, dw_i3c_common_remove() calls
-> > i3c_master_unregister(), which internally calls dw_i3c_master_bus_cleanup().
-> > The dw_i3c_master_bus_cleanup() function accesses the DEVICE_CTRL MMIO
-> > register. Because the driver does not wake the device via
-> > pm_runtime_get_sync() before unregistration, the device may be in a
-> > runtime-suspended state with its core clocks disabled.
-> >
-> > Could this cause a fatal bus fault on platforms like ARM due to unclocked MMIO
-> > accesses? Additionally, if the device remains suspended, will the subsequent
-> > devres cleanup attempt to disable the already-disabled clocks, causing a clock
-> > enable counter underflow warning?
->
-> These are existing issues in the driver. It would be better to address them
-> separately.
->
-> Best Regards,
-> Akhil
+Best Regards,
+Akhil
 
 -- 
 linux-i3c mailing list
