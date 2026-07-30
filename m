@@ -4,115 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 76CAEC54FDF
-	for <linux-i3c@archiver.kernel.org>; Thu, 30 Jul 2026 08:58:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0651C55162
+	for <linux-i3c@archiver.kernel.org>; Thu, 30 Jul 2026 14:33:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rp5wAV9FGL1wzPd/x4C3lDsrHjGT5YqsO1FN4hFVbbY=; b=rb4RCR20rrlMoQ
-	l4IujFnPmLWd8qIZIGtd5uuWkaI45hwKGgldk27jQxMBe3COLkxbYyD9/6OVOx5V8zumBnJz+JghS
-	lTeFZeKwXP2MnHeLcpTYZLfrHZeDYAb+XfjfW0AnnIVZk6pEiGvbQwywYxFzFAwrvrntFqDdMSnxB
-	wmXnPAxR1j5C4zinr8rBjOumtP6rP79+/xbFQ8ET1zNd1gvjQZwY98bxTBuA0wZnJS9jQ8A7pcCze
-	WFAe+JeH56cvY7eOs3lfUFV04T2YWFIfSsxVZzOtV2bl8ULri0jmbaeyXkuoF5B1UGXr60s9nDwDP
-	s6sSeb1+xz0rztY6ItAA==;
+	List-Owner; bh=CWuLobqntuPOQoskpywQBz9a8AaaqVlLSREEcfGoGeA=; b=36M0XC1rgQtLeh
+	i4yy2CpVpa0b3bA4e2zUBiUjqU4dve4hYU4iO83pChor5oUNLqQuMMj62krfb9x8zINXV58ftWpr6
+	dR7sWNevZiU1NsruAjTFHh4oIRjFsw9+BFuldJ1pFNC2wiHnhnRU2xs/HWqVrjKWMiCFBjbnbSVN/
+	W647eRlULZ40VP5e+7u/Hbnuit76Zs/C6la8dKweLOlIjiP7XPdYSemG5V98566xEVxTnbiTnrcpl
+	JztBhBcByNNZyXXusldIJ0kw26D0WlikJiVshGzBokmy4a+5XjIBzwF2lLkTfMx76/jDhECFLB2X2
+	Ylf49LHO2dulBBM9njGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpMaq-00000009w8e-0VyJ;
-	Thu, 30 Jul 2026 08:58:20 +0000
-Received: from mail-westus2azlp170100005.outbound.protection.outlook.com ([2a01:111:f403:c005::5] helo=CO1PR03CU002.outbound.protection.outlook.com)
+	id 1wpRp9-0000000Al2l-2Dau;
+	Thu, 30 Jul 2026 14:33:27 +0000
+Received: from smtpout-03.galae.net ([185.246.85.4])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpMan-00000009w7n-2e0e
+	id 1wpRp6-0000000Al1t-1Fi8
 	for linux-i3c@lists.infradead.org;
-	Thu, 30 Jul 2026 08:58:19 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=KTIr5CgT3KDSbz7P2qosdWui8lahRZJM+xMjJ9h0B+X7yHjonHiXnNKPGtvI4vnEM5FETdTvfZkW5NxHuqs3+GI7Si7qucow/iE2VyYsCEzmo2Cpdarq35sODMCjGNNoGFORncRpPnA1xBNlBoUkVs349dOT7W9bLgwROw4Z04cB7uw6HNqnSfsOX1Cc+wUN+WQx3I7VoCosK1MQgOLUyFuwXB1QI4Swo7+v5gCfE94iYitlDyV/mnjs+sJeWtRkMxBfYpJZs2BymnXp5PPhlSXYdZ9RIyEcDBNWwqukK2D9826FB/IoKCpz1nxfFG7gmNjtxyPqYFurHyMuAbmS4Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=UwXt1HBuG6tpgi6DB23CqREVkrDh6M3O1oJ4FCTC7ug=;
- b=pAdmflVAq1uLUjOO47GExFoTodRpxmjk8M8rNnDur79NKB9dZNF8K6oP5Gasyck36ea8QhEhfGwKHq1piTT0jofwMAg5510i02TMbiIuajppzAyKWR7MkcVRWgEMbVqABa+hJW8kupTks6mX0bpeGczW1VF+CYzk0npMTP8aCZPg6rbRNBYnOHLx0ydtBIzgni5L5+ykrlC/qr5sjKIc4buZ938fLPpynX5iLenZW8+WLZ3IhPR5n0eiO1L9FGf6OewvlG7MTC2y58aqc1xKhCsw1YGbtN21evB0SH6gK+u1ZPVbNQ8zg4acWNSoHsfWW2erd+tJ33T66gaxqLl5Jw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 216.228.118.233) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
- dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
- dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=UwXt1HBuG6tpgi6DB23CqREVkrDh6M3O1oJ4FCTC7ug=;
- b=D8Inl8+47CcFqujvEQQvAchfkyWqXUr1SRvEnGTiNrKovtIlHCT4J0ohGo1ha+TFojVP2gvJo1loGF+Lc2UEeLD5Lm7iSRhtdUOW7uCMjVgB4/xX2lUfDlihzHDMxoQb6N1WhHbD1qH8lwTfaB9wiwou2k0jw64jGNyw+8JYqI5m3O86wK5f6uoI7IYs8EzAzXF3Yoc2588XI8khn5hMCn93pm+6lX3fBh2kBubNL5KIlsfzaWDmf+cCH2ZvR3kk/oVX21So4Aom5oQYpplhOa1JthzcAAQ8SD0jQc7EWarJ77hZG2hGHPpbKQYRyJqjroBdSRjS3OaOV1ti595YTg==
-Received: from MN2PR15CA0044.namprd15.prod.outlook.com (2603:10b6:208:237::13)
- by DM4PR12MB7672.namprd12.prod.outlook.com (2603:10b6:8:103::18) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.270.14; Thu, 30 Jul
- 2026 08:58:09 +0000
-Received: from BL02EPF00029927.namprd02.prod.outlook.com
- (2603:10b6:208:237:cafe::91) by MN2PR15CA0044.outlook.office365.com
- (2603:10b6:208:237::13) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.270.14 via Frontend Transport; Thu,
- 30 Jul 2026 08:58:09 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.118.233)
- smtp.mailfrom=nvidia.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=nvidia.com;
-Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
- 216.228.118.233 as permitted sender) receiver=protection.outlook.com;
- client-ip=216.228.118.233; helo=mail.nvidia.com; pr=C
-Received: from mail.nvidia.com (216.228.118.233) by
- BL02EPF00029927.mail.protection.outlook.com (10.167.249.52) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.292.8 via Frontend Transport; Thu, 30 Jul 2026 08:58:09 +0000
-Received: from drhqmail203.nvidia.com (10.126.190.182) by mail.nvidia.com
- (10.127.129.6) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Thu, 30 Jul
- 2026 01:57:59 -0700
-Received: from drhqmail203.nvidia.com (10.126.190.182) by
- drhqmail203.nvidia.com (10.126.190.182) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.20; Thu, 30 Jul 2026 01:57:59 -0700
-Received: from build-akhilrajeev-noble-20260602.internal (10.127.8.11) by
- mail.nvidia.com (10.126.190.182) with Microsoft SMTP Server id 15.2.2562.20
- via Frontend Transport; Thu, 30 Jul 2026 01:57:56 -0700
-From: Akhil R <akhilrajeev@nvidia.com>
-To: <sashiko-bot@kernel.org>
-CC: <Frank.Li@kernel.org>, <akhilrajeev@nvidia.com>,
-	<alexandre.belloni@bootlin.com>, <conor+dt@kernel.org>,
-	<devicetree@vger.kernel.org>, <linux-hwmon@vger.kernel.org>,
-	<linux-i3c@lists.infradead.org>, <robh@kernel.org>,
-	<sashiko-reviews@lists.linux.dev>
-Subject: Re: [PATCH v7 05/12] i3c: master: Add support for devices without PID
-Date: Thu, 30 Jul 2026 08:57:55 +0000
-Message-ID: <20260730085755.2456630-1-akhilrajeev@nvidia.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20260728072040.9B1591F000E9@smtp.kernel.org>
-References: <20260728072040.9B1591F000E9@smtp.kernel.org>
+	Thu, 30 Jul 2026 14:33:26 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-03.galae.net (Postfix) with ESMTPS id 691764E41005;
+	Thu, 30 Jul 2026 14:33:20 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 3C02B602B8;
+	Thu, 30 Jul 2026 14:33:20 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 3C59E11C15D06;
+	Thu, 30 Jul 2026 16:33:16 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1785421998; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=mfA+QB9rWd3etPgxphn/JIAS9tjAN+8oo8iyiuZepxw=;
+	b=z9Oc/gM0gxr7ET4b9zJ9I5+4u06/ium0hAYYxNZOycRvAiobjn0Bc1jlsg6UGemiyy1gvx
+	+VHgcnA0+9BTG4vZgHE47u3WkXXnsP+vwoyp+IVJ0xTCgb/P9sn5npjIRheLgiZcR1/fb0
+	6L+BCFjQo4gvI+MZ5nwjdKoo9eR3lv9lUvsatG6388lJpxjo6LEHFKNCmU3cheWf4W9VmA
+	xmALTUiGn2ttWIx6JaZ4vbHX39GV4ilf+R68H93iG/EhFC25s2xTHlCvlggh2U6JRZ7Xdg
+	R0nMdKpr3NgWv+6GAFRB+ZAQZEwb7Pm/VwiaTR7NSjVXNk3Ste4jJULr1DYsLw==
+Date: Thu, 30 Jul 2026 16:33:15 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Frank.Li@nxp.com, robh@kernel.org, krzk+dt@kernel.org,
+	conor+dt@kernel.org, Shubham Patil <shubhamsanjay.patil@amd.com>
+Cc: linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, michal.simek@amd.com,
+	radhey.shyam.pandey@amd.com
+Subject: Re: [PATCH v2 0/2] i3c: dw: Document optional core reset and drop
+ redundant name
+Message-ID: <178542198409.1790758.601925059498244846.b4-ty@b4>
+References: <20260720073510.1869623-1-shubhamsanjay.patil@amd.com>
 MIME-Version: 1.0
-X-NV-OnPremToCloud: ExternallySecured
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BL02EPF00029927:EE_|DM4PR12MB7672:EE_
-X-MS-Office365-Filtering-Correlation-Id: e4ff30c2-2341-48a6-385c-08deee18ade4
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|23010399003|82310400026|36860700016|376014|18002099003|22082099003|6133799003|10067099003|11063799006|56012099006;
-X-Microsoft-Antispam-Message-Info: Ww7ih4NSmA23s8gq7p7AkAK91bKUDGia+LblEEvL+kGv8gtuimO8XTYarWtR8OZqP+maXFSDvkCu+f6uMOcHCTpItkSM6cfSPxlzKV1OIuqHMWvvcHUAmlZlfEK/zZUR2mVGRZGnmUEcJt421AL3LD7dmtpoxxFRFaNDB+DtMEkM1DVqb75HYw1wIemIDOx1vgHtPPqUtmUs7is73PKjhksU0we2yEF/GEMPl+G0WOOEtuieSHTB4k5WFTVln8o3hGXULWI/qseadjMUDECLxS3uFEh0QIjCd8Fx5RPaJZe23g3D9KP/W8XSrTyp5+jeGUzBDwZrv5Rh+0cbR1vOo+/EXTlpzgpxRpqKK+qQmCCIEa5D3uSpEdQAM5lwvZKT9eowZf0K5Xc5rA9h4n1lQWDbm1EgpeEZRxPimn0OYysKVhqq74P+r5tOCOQT4YWbnWSjKaf5pkZjY1hdx+3lC/TdMd75GTqISvBtGhr18lSOZmVTEBF1+VvN0dFUfY4hA6P/5GF8clKhTnjkOR7Bw6s1rnowbenTr4dlnmvxB1cGm3FAAJYumIp7/KI74S2UY5xzAe880QRG/YH88yN9p4X2WP9FFol/uPCaeGclo34Y7MRgWfsSMFJj0g4PPL6Z22B4lQhCnO3IVENkqxcW2ORtg7D9jE4WD6FsUM/1xoLPVHz2OBcceQTK7skaTL9wYigVUvRy2S8amrLIVpznZw==
-X-Forefront-Antispam-Report: CIP:216.228.118.233;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc7edge2.nvidia.com;CAT:NONE;SFS:(13230040)(1800799024)(23010399003)(82310400026)(36860700016)(376014)(18002099003)(22082099003)(6133799003)(10067099003)(11063799006)(56012099006);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: va6lLMEjNS2vI3GiW5qY71jqdFUo159KEfRIpP0YoVETLug4dgof1KEIfSKpJyoclbPMn2YsH/ll5aY4GQkICrra4lRcEZ1s4cZpBs+VBG3c3WWjUNUL6bPckfPQY532ZQUKm1mVYEQ+fFgVI2XUrRhj/7FionT71smAHcbZrwJOt2TWPmY/b45gPeDs6YGL0cg3U6hVo/9SlphJY/Hhw/S0hlu0eukUesICcGvWQY1ijA50NrXYFIXf2Gkz/u6ciKAZnexffPmetK9TMIKNjqMNzFM6rTQhM53n37Xzz/AP3LON3wu0H3CA/E3R3G/bc1MYU03EcLzHE1ou2SOgK9LAB51ylRGuDF2caVoHugYm8xrl7NNmoRK8FaZW/yYa8kGgnzusa1QrlvuziYJMcv1uWU8xghxRLH2g52nCJN4jYfxGK8dmk1qun7ylDuSK
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Jul 2026 08:58:09.5333
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: e4ff30c2-2341-48a6-385c-08deee18ade4
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.118.233];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: BL02EPF00029927.namprd02.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM4PR12MB7672
+Content-Disposition: inline
+In-Reply-To: <20260720073510.1869623-1-shubhamsanjay.patil@amd.com>
+X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260730_015817_674365_002AEC44 
-X-CRM114-Status: GOOD (  28.44  )
+X-CRM114-CacheID: sfid-20260730_073324_503313_DCF12A46 
+X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -129,112 +78,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, 28 Jul 2026 07:20:40 +0000, Sashiko AI review <sashiko-bot@kernel.org> wrote:
-> commit 978db33da88aedc2a14abd69fdc128b5e3961e92
-> Author: Akhil R <akhilrajeev@nvidia.com>
->
-> i3c: master: Add support for devices without PID
->
-> Devices using SETAASA for address assignment are not required to have
-> a 48-bit PID according to the I3C specification. Allow such devices to
-> register and use the static address where PID was required.
->
-> > diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> > index 87749a739e62d..488177d95e484 100644
-> > --- a/drivers/i3c/master.c
-> > +++ b/drivers/i3c/master.c
->
-> [ ... ]
->
-> [Severity: High]
-> This is a pre-existing issue, but does device_register() failure in this
-> function leave a dangling pointer that causes a use-after-free later?
->
-> When put_device() frees desc->dev->dev, desc->dev is not set to NULL.
-> Later, if the master is unregistered, i3c_master_unregister_i3c_devs()
-> iterates through the list and dereferences this dangling pointer.
->
-> Could desc->dev be set to NULL after put_device() to prevent this?
-> [ ... ]
->
-> > @@ -2401,8 +2410,18 @@ static void i3c_master_attach_boardinfo(struct i3c_dev_desc *i3cdev)
-> >  	list_for_each_entry(i3cboardinfo, &master->boardinfo.i3c, node) {
-> > -		if (i3cdev->info.pid != i3cboardinfo->pid)
-> > -			continue;
-> > +		if (i3cboardinfo->pid) {
-> > +			if (i3cdev->info.pid != i3cboardinfo->pid)
-> > +				continue;
-> > +		} else {
-> > +			if (!i3cboardinfo->static_addr ||
-> > +			    i3cdev->info.static_addr != i3cboardinfo->static_addr)
-> > +				continue;
-> > +		}
->
-> [Severity: High]
-> Will this fallback matching logic fail for SETAASA devices discovered
-> dynamically?
->
-> If a SETAASA device without a PID in the Device Tree loses its dynamic
-> address and asserts a Hot-Join, the master will execute Dynamic Address
-> Assignment (DAA).
->
-> During DAA, __i3c_master_add_i3c_dev_locked() allocates a new device
-> descriptor and initializes newdev's static_addr to 0, because the static
-> address cannot be retrieved via CCCs.
->
-> When i3c_master_attach_boardinfo(newdev) is then called,
-> i3cdev->info.static_addr will be 0. Would this cause the condition
-> i3cdev->info.static_addr != i3cboardinfo->static_addr to always evaluate
-> to true, skipping the boardinfo assignment and preventing the driver from
-> binding?
+On Mon, 20 Jul 2026 13:05:08 +0530, Shubham Patil wrote:
+> This series documents the optional core reset for the Synopsys
+> DesignWare I3C master and updates the driver to match the binding.
+> The DesignWare I3C master IP has a single core reset input. The
+> binding never documented this reset, and the driver looked it up by
+> the "core_rst" name even though a name is redundant for a single
+> reset line.
+> 
+> [...]
 
-A device without a PID cannot be discovered through DAA, so this should not
-happen. Per the MIPI I3C specification, a Target that supports ENTDAA shall
-have a 48-bit Provisioned ID (Section 5.1.4.1.1), which it transmits during
-the procedure, and Hot-Join is only compatible with ENTDAA - "Targets that
-do not support ENTDAA shall not use Hot-Join" (Section 5.1.5). A device
-that supports both SETAASA and ENTDAA does have a PID and is expected
-to describe it in DT/ACPI, in which case the PID match applies.
+Applied, thanks!
 
-> >  		i3cdev->boardinfo = i3cboardinfo;
-> >  		i3cdev->info.static_addr = i3cboardinfo->static_addr;
-> > @@ -2416,8 +2435,12 @@ i3c_master_search_i3c_dev_duplicate(struct i3c_dev_desc *refdev)
-> > +	if (!refdev->info.pid)
-> > +		return NULL;
-> > +
-> >  	i3c_bus_for_each_i3cdev(&master->bus, i3cdev) {
-> > -		if (i3cdev != refdev && i3cdev->info.pid == refdev->info.pid)
-> > +		if (i3cdev != refdev && i3cdev->info.pid &&
-> > +		    i3cdev->info.pid == refdev->info.pid)
-> >  			return i3cdev;
-> >  	}
->
-> [Severity: High]
-> Does this logic lead to duplicate device creation for SETAASA devices that
-> participate in Dynamic Address Assignment?
->
-> If a SETAASA device is defined in the DT without a PID, it is initially
-> added to the master's bus list with pid = 0. If the device later asserts a
-> Hot-Join, the master executes DAA, discovers the device, and retrieves its
-> true physical PID.
->
-> Since the existing device has pid = 0, the check here for i3cdev->info.pid
-> and i3cdev->info.pid == refdev->info.pid will fail to match the newly
-> discovered PID to the existing device. Will this cause the master to add
-> the newly discovered device instead of detaching and updating the existing
-> one, resulting in duplicate devices on the bus?
+[1/2] dt-bindings: i3c: dw: Document missing optional core reset
+      https://git.kernel.org/i3c/c/904473e58db7
+[2/2] i3c: master: dw: Drop redundant core reset name
+      https://git.kernel.org/i3c/c/283e91b86613
 
-This also needs a device without a PID to take part in ENTDAA, which the
-specification does not allow, as above. A device that already has a Dynamic
-Address assigned through SETAASA does not participate in ENTDAA either
-(Section 5.1.4.2).
+Best regards,
 
-The !pid checks are intentional in this patch. Devices without a PID have
-pid == 0 and would otherwise match each other, and one of them would be
-freed as a duplicate. Devices that do have a PID are matched as before.
-
-Best Regards,
-Akhil
+-- 
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-i3c mailing list
