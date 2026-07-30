@@ -4,72 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 487CBC5516E
-	for <linux-i3c@archiver.kernel.org>; Thu, 30 Jul 2026 14:36:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EDF20C55164
+	for <linux-i3c@archiver.kernel.org>; Thu, 30 Jul 2026 14:42:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
-	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
-	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Q347iAL/48CUookbE8LuKU1sUsOPLDZx4wGlQP3OI98=; b=GI12gaMIPc4Ibd62ZOQ0fbpPBJ
-	L59lMyBCz3+yVWsCXMN6QnNCI/6gJYltxrHt/dAAl6StvpPD+nLM5klOX8bUKDXNqlv/H+ay2nSXj
-	NAMQnh3DAoHmFGD0DsM6qxdHYn0s6ZKRqTz16r2hOJRocPh6J/+H1P/MSwbpR5WMhxqVTndI8DNQP
-	wwValORa28arVQc0VFcDVmvGLTQj2ck1UoTXkBOMoKn/gu2TXo2wcxl4CQh6zHqzAoUPC9fWdD0Xf
-	PuEJdJ1IzWfGvja70/lUau5Wy7Q4GxUhAbi+dwOXEmNY7YZiDjII1O6zC5yrDb7Tggh1cvpkQljmn
-	NzQhN74w==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DIxdzssBGJ/Hh8HGKMgu6QVPXULE0Zt4//bc4+nvEZI=; b=m9XxgM1HkcftAW
+	rCTBvQZs3w1OaVw4YLtsygLOytF44lMb9Z9bNqX+QJnMuL5IcgbBAmPK46fM6C/KN+OEjRfXNJKOJ
+	2JtreJhovnYJZssV2G9hkhMzWmCefflWcLVKSob1xVRy4zkOdoQbQQ0Hee3Z+mSg7W9YH8049c0rZ
+	uoGrS22PyMpx8lBaMuSx5boTSj4ErtR8WgjlWCgwvPMU5DGd6CQExbX0Yzh+VZS1+H2aJpCCfwDC3
+	CvuqQwbF3ghioQntJ48qJe8GOPYq59APz4CgeQKF4nFijb1yzL8c5O7/X8z4fT+lGfyGw1MOYegq1
+	mvxBzywwpmAOnIAdAoPw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpRrl-0000000AlmM-3qww;
-	Thu, 30 Jul 2026 14:36:09 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1wpRy1-0000000AmDp-2phi;
+	Thu, 30 Jul 2026 14:42:37 +0000
+Received: from smtpout-03.galae.net ([185.246.85.4])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wkhHA-00000002D3c-3fXJ;
-	Fri, 17 Jul 2026 12:02:44 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id B3F1460A6F;
-	Fri, 17 Jul 2026 12:02:43 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 03A1A1F000E9;
-	Fri, 17 Jul 2026 12:02:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1784289763;
-	bh=M6dliTL3upPz3AWTcFuW/Bf8sQHGqFSf/FvFJ52AEJY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=afG26BD5DJqcY9jFPHWwLoeF+nbY3GkVgbzmYISsj7xeZVCukUAa6Tdq4RdHOi1kv
-	 VhO0c4wlgnq8/uJ4G1UyEHvTyxI9wOPKKaqgViGb19EFGyS0cg19B9qoWfDnJR0YZm
-	 xD7VopeVKolG7iP9adxYqAQAtLV8auh9YJx/PsTDMa4HNn8peJiYCom6ppiEpBE6Ri
-	 O5VPY2KO8x4IepP8GFuNG7upUnYOFwAgzIaIiRLTvysiIiBbNcvkYDfO9/wew8cRsb
-	 l3JKPUr7GFFU/UKQZM1P948sh1G9gBvmTEg4KhGcT678i50OfZ6MBUBq9hVbqmsveD
-	 3Nyo9BqNTTjfQ==
-Date: Fri, 17 Jul 2026 13:02:35 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Swark Yang <syang@axiado.com>
-Cc: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>, Harshit Shah <hshah@axiado.com>,
-	Linus Walleij <linusw@kernel.org>,
-	Bartosz Golaszewski <brgl@kernel.org>, Jan Kotas <jank@cadence.com>,
-	Michal Simek <michal.simek@amd.com>,
-	Andi Shyti <andi.shyti@kernel.org>,
-	=?utf-8?Q?Przemys=C5=82aw?= Gaj <pgaj@cadence.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>,
-	Boris Brezillon <bbrezillon@kernel.org>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Jiri Slaby <jirislaby@kernel.org>,
-	Mathias Nyman <mathias.nyman@intel.com>, devicetree@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-gpio@vger.kernel.org, linux-i2c@vger.kernel.org,
-	linux-i3c@lists.infradead.org, linux-serial@vger.kernel.org,
-	linux-spi@vger.kernel.org, linux-usb@vger.kernel.org
-Subject: Re: [PATCH v3 6/8] dt-bindings: spi: dw-apb-ssi: add Axiado AX3005
- SPI variant
-Message-ID: <6d69cfd0-5f3b-4324-8d64-b4695cbb3e92@sirena.org.uk>
-References: <20260716-upstream-axiado-ax3005-upstream-v3-0-c429095143ec@axiado.com>
- <20260716-upstream-axiado-ax3005-upstream-v3-6-c429095143ec@axiado.com>
+	id 1wpRxy-0000000AmDP-49Uw
+	for linux-i3c@lists.infradead.org;
+	Thu, 30 Jul 2026 14:42:36 +0000
+Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
+	by smtpout-03.galae.net (Postfix) with ESMTPS id AB79F4E41009;
+	Thu, 30 Jul 2026 14:42:32 +0000 (UTC)
+Received: from mail.galae.net (mail.galae.net [212.83.136.155])
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 7F582602B8;
+	Thu, 30 Jul 2026 14:42:32 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 1B28811C15D15;
+	Thu, 30 Jul 2026 16:42:29 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
+	t=1785422552; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=hQpafsCqopHAhhKp4bzi6CGQb2lUfWck9EJDz5YyoaQ=;
+	b=NJ9nGMnhmdrZXv16VOX8hXEM/Ee7nruqSG9LYnvSmnP8HTzSpJaAoNXuIFWKIjhFtYfDxy
+	FH49KbOWqiyudpv/UojgwspXDtsOrqBsaFvWD4mQM+8Ou/vlwD4dCDTFLpCp5ytm5Rj/fD
+	7GQxX/ueAK1cSLKW97S1kkizjRIs0SmCSd4N6EUyiFDwjj1NRpMyWNZME+ZY34U9ZBIrsS
+	X1cVJMMO3hkY305y9KisjMSAgh8DcWNI/405432SmQ8u90bLTJn1jgNppVkhdRF1dGgAmY
+	Ud2fj2DDxCburpmOFdmh+pV/hCHrTcy7JSYSoRNlzSs+0QpyZJVf04ZVho8XJQ==
+Date: Thu, 30 Jul 2026 16:42:29 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Adrian Ng Ho Yin <adrian.ho.yin.ng@altera.com>
+Cc: tze.yee.ng@altera.com, lkp@intel.com, Dan Carpenter <error27@gmail.com>
+Subject: Re: [PATCH] i3c: master: require dests for read CCC commands
+Message-ID: <178542243598.1793527.5886324593354914574.b4-ty@b4>
+References: <153608c2ff6504fe29f5f727a23c53c41768a44a.1784796086.git.adrian.ho.yin.ng@altera.com>
 MIME-Version: 1.0
-In-Reply-To: <20260716-upstream-axiado-ax3005-upstream-v3-6-c429095143ec@axiado.com>
-X-Cookie: Enjoy yourself while you're still old.
-X-Mailman-Approved-At: Thu, 30 Jul 2026 07:36:08 -0700
+Content-Disposition: inline
+In-Reply-To: <153608c2ff6504fe29f5f727a23c53c41768a44a.1784796086.git.adrian.ho.yin.ng@altera.com>
+X-Last-TLS-Session-Version: TLSv1.3
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260730_074235_168598_E8105D0C 
+X-CRM114-Status: UNSURE (   4.04  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,64 +71,29 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============6393451709628847560=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+On Thu, 23 Jul 2026 17:23:10 +0800, Adrian Ng Ho Yin wrote:
+> Read CCC commands (rnw set) always need a destination array to store
+> payload data. Extend the existing direct-CCC validation so cmd->dests
+> is guaranteed non-NULL when cmd->rnw is set.
 
---===============6393451709628847560==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="70M3+S0UoM/WolbI"
-Content-Disposition: inline
+Applied, thanks!
 
+[1/1] i3c: master: require dests for read CCC commands
+      https://git.kernel.org/i3c/c/2a99006d4403
 
---70M3+S0UoM/WolbI
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Best regards,
 
-On Thu, Jul 16, 2026 at 08:51:13PM -0700, Swark Yang wrote:
-> Add binding for Axiado AX3005 SPI controller. So far, no changes
-> are known, so it can fall back to the snps,dwc-ssi-1.01a compatible.
-
-Please include human readable descriptions of things like commits and
-issues being discussed in e-mail in your mails, this makes them much
-easier for humans to read especially when they have no internet access.
-I do frequently catch up on my mail on flights or while otherwise
-travelling so this is even more pressing for me than just being about
-making things a bit easier to read.
-
-If there is no need for things to be part of a multi-subsystem series
-(eg, dependencies) it's normally better to send each subsystem
-separately.
-
---70M3+S0UoM/WolbI
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAmpaGdoACgkQJNaLcl1U
-h9CYYgf/a6ZXfaJE/jmFwdCosDxknw75RDj7nPAqr8ZtQ6OEKCVRSIVBgwrMG1B6
-7TPPAIzIrDPqOWeb/BZihDW7BKUj2aDsl7pZivADMe0txrRhev2UcBUZUMxW1sXn
-DgyCTELlXBzkCAltV41zPIZTn6Rwcy8lHkkDXAfh0JGD5azOUiDxKAusCY9IhML1
-YtCaED6Zm325NAZ+cUqXIKy177WK3d4XQrt4N/qPahtGnlsER6BwUocE9HGNpNLh
-l3iTBw5h+slXmMR6H40Ax4/E64jiKe5RpDEW3MeDQgZLROX+xs5G+fp3eE5NGFPQ
-Z9zQeNxaiqK3XtZlukPgm9tW3O9UDA==
-=i8XU
------END PGP SIGNATURE-----
-
---70M3+S0UoM/WolbI--
-
-
---===============6393451709628847560==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Alexandre Belloni, co-owner and COO, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
-
---===============6393451709628847560==--
-
