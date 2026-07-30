@@ -4,71 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1F953C55164
-	for <linux-i3c@archiver.kernel.org>; Thu, 30 Jul 2026 14:42:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 32793C55164
+	for <linux-i3c@archiver.kernel.org>; Thu, 30 Jul 2026 14:47:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qh+Bs01Zf13bpu11fCbHFHu9iPYVjczVxgLfwyUW4nU=; b=HNTIHPCbHxBQww
-	figiFUbkAuIuMtpkAVdGiHOaIOs87tVQQUswaEDzNP+1hXZwPfGHjsduUClRE3jiADavS9FROCIk4
-	4Pz66YLiENG1MesTSKZZHNWwNiRBDuh0+sfyecpxvyqfhTMNzT1kHSjwkCSssBrso6UI2urq+YmLh
-	OOI1Q467FhuoHw1j+etr/6tGtVzzGPN2IfLk4PM7tx3VQpKPhevLrvwrpH8qPydxGbb3WTDSEulsd
-	bjH8K2e4+/PKIsIE5tCLKOGZrL85lwdlqknsex3Trz5oWJSNCZlq1a5i/NUdCqaSOgn5rAI5UI49H
-	Zew+D62GYicysl9+Gkzw==;
+	List-Owner; bh=SXwjHM4XVV2GYrKHmPSzLseVDL/tiF94As10+PQm1aM=; b=jGuRsunXIXVHlq
+	2gjSMgVpJ+22XPumtUf6BU+4IbYZPhZXcwAi8ulL2287xP5Qmm+K8PLcMjeLXK0HwLkU7g5S3fjr9
+	29jUoBAq8RF5yu+gqYFBp5oHO1ZihwCbLbLfcW8O9UFxI7OAmTdrhmpKVy6BFgEE38qOvTxUOcgax
+	W3EME64nAfocbG2o1BFBzgoKnHCzZirg1A42YbkVb8ywy8iF4lnE5NNHW2xZoAsgoPWUKzve0ihSP
+	oI+yq2l3Qo6sTATPPqcEFddR5acB15VKvUOLO1O8Z3JfbmFMmYxsJuCkrz9yrcoaoAgUtDRs7h+WU
+	Ba1IAGZKdVFrQdfqY8ug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpRyF-0000000AmGK-3OCx;
-	Thu, 30 Jul 2026 14:42:51 +0000
-Received: from smtpout-02.galae.net ([185.246.84.56])
+	id 1wpS2s-0000000Amrh-3iOH;
+	Thu, 30 Jul 2026 14:47:38 +0000
+Received: from smtpout-03.galae.net ([185.246.85.4])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpRyD-0000000AmFm-3lx8
+	id 1wpS2p-0000000Amqq-3Isx
 	for linux-i3c@lists.infradead.org;
-	Thu, 30 Jul 2026 14:42:51 +0000
+	Thu, 30 Jul 2026 14:47:37 +0000
 Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-02.galae.net (Postfix) with ESMTPS id 716431A1323;
-	Thu, 30 Jul 2026 14:42:48 +0000 (UTC)
+	by smtpout-03.galae.net (Postfix) with ESMTPS id 9B53C4E40F47;
+	Thu, 30 Jul 2026 14:47:33 +0000 (UTC)
 Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id 448EE602B8;
-	Thu, 30 Jul 2026 14:42:48 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 63BF011C15D15;
-	Thu, 30 Jul 2026 16:42:44 +0200 (CEST)
+	by smtpout-01.galae.net (Postfix) with ESMTPS id 6E035602B8;
+	Thu, 30 Jul 2026 14:47:33 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 4E22B11C15D1D;
+	Thu, 30 Jul 2026 16:47:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1785422567; h=from:subject:date:message-id:to:cc:mime-version:content-type:
-	 in-reply-to:references; bh=B3Xem/yd6HxdRrGpt5FQHo1+1rP6Hx2c/XYOfq5hXmI=;
-	b=dzchbbPxKMn58sxhDW2/1rbG7yRh2+LuNtjeSqJYJArQfhmH04HU4fRUGFjq2cFrxlxF/q
-	NThYMHk5+E5+QGQv6VZ9o6y/iWCQ8rlWOiFJmgNzL8aNbmLg8YokqKqTOqhv1JcXhXnuoK
-	ILxT9+Q3E7jLtlv7Lc7eXYcjf5d/ITQPyx1NFLvYxoSQx4Tan/jSg0sEUYQ8xaMJIdu4FH
-	/P5woihU9F55wwh4pyOKiZLQP/qa6AT3s+qERz6Hmt8WOtgUnFHYprAFdANNrAjbuYd5L3
-	kPyiA6MoPqISedoQYQljEBmZJvk8P+qMeCHNLrez4coPDcPp6X8yWo6++Ilk/A==
-Date: Thu, 30 Jul 2026 16:42:44 +0200
+	t=1785422848; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=feo9Jm3yXHIvrDKdw9TVOwnY48iBlHT3LyvIl0cmFHs=;
+	b=jIqslaInDWAKhi+AQIcTTOUrtzN3b7rVfdOvEHSerw9G1op2Myk24dQ15aIPy/5uv3s0ZA
+	mqqDSB7IKincE+fTwIk9eC/9o7E6Jz2Gid8wz18VLbaoXsywjLGKDKQZNaTO/6lfjidKk1
+	0i1dgdPjzv1GAcpzXKY4h3/FWHZQ3AiT8uhBt0F4YE8mID+PwBPhlgn/7lG3cvprb45Lsx
+	k+lGrM/z3C6oCOPdXz5AKGOr8vIrQkpUvpmgKKzrIJ/amo7YOWEIRGU6rzD1x7o/uD8+6l
+	915Za/OqryNNTeokikDUHUFA2kJ0YEU1nkgj94KmW7mcJeEGGSxkf9w9qVjMGQ==
+Date: Thu, 30 Jul 2026 16:47:26 +0200
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Akhil R <akhilrajeev@nvidia.com>
-Cc: Frank Li <Frank.Li@nxp.com>, Frank Li <frank.li@oss.nxp.com>,
-	Miquel Raynal <miquel.raynal@bootlin.com>,
-	Rob Herring <robh@kernel.org>,
-	Krzysztof Kozlowski <krzk+dt@kernel.org>,
-	Conor Dooley <conor+dt@kernel.org>,
-	Guenter Roeck <linux@roeck-us.net>,
-	Philipp Zabel <p.zabel@pengutronix.de>,
-	Jon Hunter <jonathanh@nvidia.com>,
-	Thierry Reding <thierry.reding@kernel.org>,
-	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-hwmon@vger.kernel.org, linux-tegra@vger.kernel.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: (subset) [PATCH v7 00/12] Support ACPI and SETAASA device
- discovery
-Message-ID: <178542243604.1793527.10239518847754179179.b4-ty@b4>
-References: <20260728065955.809445-1-akhilrajeev@nvidia.com>
+To: wsa+renesas@sang-engineering.com, tommaso.merciai.xr@bp.renesas.com,
+	Frank.Li@nxp.com, Claudiu Beznea <claudiu.beznea+renesas@tuxon.dev>
+Cc: claudiu.beznea@tuxon.dev, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-renesas-soc@vger.kernel.org,
+	Claudiu Beznea <claudiu.beznea.uj@bp.renesas.com>
+Subject: Re: [PATCH v2] i3c: renesas: Drop unused structure member 'resuming'
+Message-ID: <178542283972.1795404.2499723599356198654.b4-ty@b4>
+References: <20260721191618.1850795-1-claudiu.beznea+renesas@tuxon.dev>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260728065955.809445-1-akhilrajeev@nvidia.com>
+In-Reply-To: <20260721191618.1850795-1-claudiu.beznea+renesas@tuxon.dev>
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260730_074250_078363_36E2F5DD 
-X-CRM114-Status: GOOD (  10.55  )
+X-CRM114-CacheID: sfid-20260730_074735_967882_0C54BD06 
+X-CRM114-Status: UNSURE (   5.41  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,44 +77,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, 28 Jul 2026 06:59:42 +0000, Akhil R wrote:
-> This patch series adds SETAASA device discovery to the I3C subsystem,
-> enabling support for SPD5118 temperature sensors found on DDR5 memory
-> modules. The changes also add ACPI support for all existing DAA
-> methods like SETDASA, SETNEWDA as well as I2C devices on I3C bus.
-> 
-> SPD5118 and similar devices on DDR5 memory modules differ from typical
-> I3C devices in their initialization. They use SETAASA broadcast CCC
-> instead of ENTDAA for address assignment, and per JEDEC specification,
-> are not required to have a Provisioned ID or implement standard device
-> information CCC commands (GETPID, GETDCR, GETBCR).
-> 
-> [...]
+On Tue, 21 Jul 2026 22:16:18 +0300, Claudiu Beznea wrote:
+> The struct renesas_i3c::resuming is a leftover from a rebase. It is not
+> used anywhere within the driver. Drop it.
 
 Applied, thanks!
 
-[01/12] dt-bindings: i3c: Add mipi-i3c-static-method to support SETAASA
-        https://git.kernel.org/i3c/c/29593f94a91c
-[02/12] i3c: master: Use unified device property interface
-        https://git.kernel.org/i3c/c/f1e00dcda80f
-[03/12] i3c: master: Support ACPI enumeration of child devices
-        https://git.kernel.org/i3c/c/c5cc24aebe83
-[04/12] i3c: master: Add support for devices using SETAASA
-        https://git.kernel.org/i3c/c/46276c855815
-[05/12] i3c: master: Add support for devices without PID
-        https://git.kernel.org/i3c/c/9885e8c54210
-[06/12] i3c: master: match I3C device through DT and ACPI
-        https://git.kernel.org/i3c/c/95bc66704fd5
-[07/12] i3c: dw-i3c-master: Add SETAASA as supported CCC
-        https://git.kernel.org/i3c/c/d3aa6f594db2
-[08/12] i3c: dw-i3c-master: Add ACPI core clock frequency quirk
-        https://git.kernel.org/i3c/c/581cca59b5fa
-[09/12] i3c: dw-i3c-master: Add ACPI ID for Tegra410
-        https://git.kernel.org/i3c/c/77de3d43f74d
-[10/12] hwmon: spd5118: Remove 16-bit addressing
-        https://git.kernel.org/i3c/c/89eee0b30226
-[11/12] hwmon: spd5118: Add I3C support
-        https://git.kernel.org/i3c/c/f76be53203bb
+[1/1] i3c: renesas: Drop unused structure member 'resuming'
+      https://git.kernel.org/i3c/c/279a9de1bb1b
 
 Best regards,
 
