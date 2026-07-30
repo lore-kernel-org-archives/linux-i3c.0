@@ -4,124 +4,61 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4E73FC53219
-	for <linux-i3c@archiver.kernel.org>; Tue, 28 Jul 2026 20:12:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E6FDC55160
+	for <linux-i3c@archiver.kernel.org>; Thu, 30 Jul 2026 02:32:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c0loduyc36HWXvWbWKEmEy2jNmlkBZ43W6259VO6fC0=; b=2ua0+mrptZ+eQ4
-	1byGpAVLDSCE+DEEDycdlU+GZrtPskAFQbK4UMe779p1ZyMIpz68ybmJ+TvtXsBy5IkG9K6LchtWT
-	Hobn3wY49xT8HRkazCgPY+wNvGXmRdqF4JKYRFDXYPvrqo5NnXWFCTpgqjmwu4dC3kZEbg3Zz8+6k
-	4eTDYSxbVXB7K7epI/iSzvPlWxCq95ZrhVr6O0PsCBWsUi+Bn/hSDrjaehxnk1DLpJGeHInp5ie+e
-	U6CyZBobHvZyR6Y3+hTXlqqFCYBi57mn3XT0papg5T6C8KApA8UVEp+9UqLFLkzrcBuXPW+NJPUMW
-	MX8ozF3C/UcBVuLRHJrg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:References:Subject:CC:To:MIME-Version:
+	From:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=JY8NCasPKyjxFg6Dsq++++7+2VApFJeYeqH8sNIeQFI=; b=kJgc2gXDUjxd4mYaWUn6v8ekcy
+	aODJw1508tQqpo84UsflCbULsHHupMBJDwCqpepDjpKpKw9ZnbpkIeVKljXtIThDjasn2WNre3QiO
+	jhMHSlOQcsWuDzmuUQ3dprlAnSXGw5iHG1BPtbajckCFiuWDDuEswigaSXzCxBk/P7sTzticNjBpd
+	rrnQ8Y2edOLmsBY2ut1blFYENjVdxId9TIL8g07PRWG5o6Xni/AhJn6n9/bicuSOXp/g3kaMDwfM0
+	PfAe7CCkK//lc+h7NM9kNI+t7P7L/m28crBpSu63TC8ZC4pNDHgb2hSat2+isITHyy88aDknEjN4O
+	OAzLXkCA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wooA2-00000006CWM-03t5;
-	Tue, 28 Jul 2026 20:12:22 +0000
-Received: from mail-norwayeastazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20f::7] helo=OSPPR02CU001.outbound.protection.outlook.com)
+	id 1wpGZk-00000009LzQ-3P9z;
+	Thu, 30 Jul 2026 02:32:48 +0000
+Received: from m16.mail.126.com ([220.197.31.8])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1woo9z-00000006CTY-3Kls
+	id 1wpGZh-00000009Lxe-3ph3
 	for linux-i3c@lists.infradead.org;
-	Tue, 28 Jul 2026 20:12:20 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=TkZrBgVoD2XSAZnnc+ziQWSUxsplPA7xYhq6qHyzMzA0twgQgjCr/L3QLDWTrnjnp+m55UlRffBSHKM2MxWUWJz2vPJ/T9S/XZhk8jNrgrzDp6oDFZ2wMyDgJtbUEi+KZVwTaaNWKL0Mwq+RAOOTzzM+GijTKn+obp0kVKsDdrzY3onAsStoP4IuHGWLgHqRx7fYgdmxfgRpS/ogHrtD9sCRzQC2Snvyk9oM/t3zLajBt4DewEPkJUCSBpuPVGjI0bHwV/N5YpAoqTtzULelMjyWM4HNfUIfuD+M438fIcs45hoVEfeU5i4sJf77lADHf8SGW1x5SIITESk28qAA+g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=O5FGkzxiNPG3CdnPwwIXHDkWX41HNiw+qqrtkEWFwhA=;
- b=OAeqsxdLx38SwbEPFOx3CAeVe6BKSCWIq4jBmFSVXAEBAbHmQz9EE7i6698Qla0ntjtLaMoPR2KBchrXbX0Bjuc++M1OiIgFdavQ5J2DOoPeLNhpmgDrcMXWdH6D1+ex9Y1dldKHFNNOCj9YCaS5tx6Iws14cidaExc59/kPcDq0II4tNvIt5ojctw+DJ/Wye+GI5zOktIt662pou6RFAhx7XtX+ZVD9JRQPfFGL8f9QKjiDLpv+Z7wbDFlH6KEnFsX/WN6+B6rBHYVvv1Fivw9RvdictmRKRaR1Or9O0lpxr6RSUCaRtJMiBlW/Pye/4AajffNxEwWHrfzPrhExeQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=O5FGkzxiNPG3CdnPwwIXHDkWX41HNiw+qqrtkEWFwhA=;
- b=XjGuwNayaGzevDEFOEaCdY5vl+JRnuIb4Fn3m9RTWRBu+JY+QHSJHaomzgIfN+a4LZmsYB/Vye1LtBnoXD6Pd8pjArGpS3MpNg9oEk3boZgqCh5dhI7uPQ8DJWlvFPXFLOfyG6EqenAKxdQdXmhb8tePloOqq2lEiFT8As92JLddbYRps6F4o9okEmb0aHaXHQQJoldQgurSzK2H51iT0uugNhqxPThSiXlaO3keR+5elbXFR5kFD/4vOmmGLi6Sr1ZZygv0sioFpfw32363VJSGhDa6/jhyQB6DLMcNUUVlGjr3NomLoZROvP2cxqXKMF3GcpwA7+l1dKWx+k34PQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by DB8PR04MB6890.eurprd04.prod.outlook.com (2603:10a6:10:117::8) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.270.12; Tue, 28 Jul
- 2026 20:12:14 +0000
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0270.009; Tue, 28 Jul 2026
- 20:12:13 +0000
-Date: Tue, 28 Jul 2026 16:12:07 -0400
-From: Frank Li <Frank.li@oss.nxp.com>
-To: Adrian Hunter <adrian.hunter@intel.com>
-Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com, rafael@kernel.org,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	linux-pci@vger.kernel.org, linux-pm@vger.kernel.org
-Subject: Re: [PATCH V2 8/8] i3c: mipi-i3c-hci: Advertise IBI wakeup capability
-Message-ID: <amkNF47xyCd4pJEE@lizhi-Precision-Tower-5810>
-References: <20260728155308.142713-1-adrian.hunter@intel.com>
- <20260728155308.142713-9-adrian.hunter@intel.com>
-Content-Disposition: inline
-In-Reply-To: <20260728155308.142713-9-adrian.hunter@intel.com>
-X-ClientProxiedBy: SN6PR2101CA0014.namprd21.prod.outlook.com
- (2603:10b6:805:106::24) To GV2PR04MB11799.eurprd04.prod.outlook.com
- (2603:10a6:150:2cf::9)
+	Thu, 30 Jul 2026 02:32:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=126.com;
+	s=s110527; h=Message-ID:Date:From:MIME-Version:To:Subject:
+	Content-Type; bh=m/T0DHccDvJu8DEt5Dl6kUCV+jlFNpuQHUTsYJoQVhU=;
+	b=AJEUkuASELeboJWDnvW9cnNpAaBreoL4qRUrRMUkO9OF5D+aJWh4GJbiStVx46
+	P4tSiAi/6vmRJR7jm+POqjeZFkuoLxLLZF7r+jSMz50DQHByiWg0MLBZPbA0lFUU
+	4PVz0bkOoWut4C+lM8Mr9QpXcPJ8BfzNDJOXLc33B5Ctc=
+Received: from localhost.localdomain (unknown [])
+	by gzsmtp5 (Coremail) with SMTP id QCkvCgDnD3ymt2pqpKo1EA--.54817S2;
+	Thu, 30 Jul 2026 10:32:06 +0800 (CST)
+Message-ID: <6A6AB796.1040906@126.com>
+Date: Thu, 30 Jul 2026 10:31:50 +0800
+From: Hongling Zeng <zhongling0719@126.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:31.0) Gecko/20100101 Thunderbird/31.2.0
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|DB8PR04MB6890:EE_
-X-MS-Office365-Filtering-Correlation-Id: b5fe4dd8-aa0f-4570-f64f-08deece48387
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|19092799006|23010399003|376014|1800799024|5023799004|11063799006|4143699003|56012099006|10067099003|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: MKAg0rHAJoEBqH56cnwc9qAewpFyBpS686WImySd4PHX9n5OqQQpB+6sOOaZ9AznE+tSsH5dOBQo9P7zveJxhtBAqR9yAz4zfigE7wka2/Gy4rjFV3ChvT7c3B+DDMv6EaBGNO5pRjNMo2znFf4frRUESLtNrjV/smE5xRsBFnPTMMlvYoY43p9KlxqDAyPhKTqH0/SIq/P919Blrw9bo/GnXhYBu7yFHPIrOlaV0UJs1gBxOrwtFueHMTDR5uFguap7RcfJ8wJkarz6WCgrCG2/l6PSEUaqqw1KoT9tFTJV/Yw5Tsy2ytUx4yhdlJQe2dxrlWvocZ8fx+W45yjDTiCk7D/EVSL6EUHUFpRbdFeGVOtlbV8CBiO4l71LVh6Ng4/mrQTillJPsCozACvcrA5jZlGbSSs5xcBWtmoPaZOLRh5b2bF1NdqvEVGIsGIPj3Tssv5wc6w1Ox3QNZCosROm/1NQjfZX5EOBjwQ7NyFgPt0oeQQK31rP6MW8zTbp5OsRLXlmgr4d2A/gzmTr7q6n3+xOvLGI930NHxy9xbt3qX5AA5qHGfi67Hegnh1Uzevq50sdPvkHX8UUHohRYf3nmTP3WETbojbVrqYLFaKadHPTQ9qzoOyJJ+dzzweCWiuqSO4h6LaRNgKwiFPCPqe4hrcXjQrtd/kAKlYzR44=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(19092799006)(23010399003)(376014)(1800799024)(5023799004)(11063799006)(4143699003)(56012099006)(10067099003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?/kcqzaHfsLBDcu/LRKhZnGnN5QlR5Y5rvNSjxG9f4DuiDoBT7WSEVcs3A4qP?=
- =?us-ascii?Q?ltSZJ+lEJY4K7oAR0TCq6h2c+u433uvYDMKFgq3XYZ2eJ2/OEfjo9wvjm1t8?=
- =?us-ascii?Q?YexgvaD/lnz666ZXRu7BGb84OkfpG8Otg3TCIjpsfeQgsGyQAMvuuKs+nT/u?=
- =?us-ascii?Q?QnDMOYWK8b6JnU4m3dKpM9cr0aNkJc9RsWYtBQaIckMktmmfZT+BDkCFjYK5?=
- =?us-ascii?Q?lTPGfPuS9goJb/LVD88efVimIvU6OLOqYEo5B5LdgAg/cBPZAatAuSmv3xtO?=
- =?us-ascii?Q?Om2JxO8XQZF0ZG+bYWods2XPoaCPcnNXGg1VlrNBKRKXnPAww45XLoFRQJ98?=
- =?us-ascii?Q?gZ0TlUN9JXqh/MILxMqFXubnbgx1rkQgrIJlVxkS0Z0lod7LnmlcHrcvtiSw?=
- =?us-ascii?Q?zHXG6w2GXeiX1s1aHsTWbJmr6pyW6i85XZkXXP9DTT3QDGlNz9TuzRc8s0ox?=
- =?us-ascii?Q?r/ZjrkzM5dFT0Ge3hVTIBrZpTWr5XdT5rtquq7fjQljQExf7mgOEvTCFQN0M?=
- =?us-ascii?Q?YU9kSR01CpiDaB24TA231PJ88T75g3qNCOeWl29I5YWejuH6fSa1uJS/n4CF?=
- =?us-ascii?Q?k131vwHZ1K6hag0r+9OknAsBYADQQrRloU9kVKyrwFYuNsoy990t0hydAVV9?=
- =?us-ascii?Q?b5/7EC+wTo+B8uEHVecwc1p9coWMeHQpiailAEJMfA8ZElsEDW3H+aaHvHMl?=
- =?us-ascii?Q?85ofhVvTHY9ql/YDj4d6PU405PUrRIQiTwnqfdfJV6zRg8PPRieTvKXoKXis?=
- =?us-ascii?Q?zQYPyeOfWIOg15EtmgsTnLonzzE7krfRGQNw9mdE/3vjtrxkQOzff28Vm5l4?=
- =?us-ascii?Q?lgnTGapgzK5js7mKivo4ovf6FOKD1FXlEnC+vvwS0Vg3+zWSFq0kovodN6Gd?=
- =?us-ascii?Q?YWlHb1VH7ZPD5m0hNTSfl+WUG+LJ0N5YmVxmGe+Sw4/T5gVOQ31kFKwKKiYv?=
- =?us-ascii?Q?5Nk5bEdTN7xgS/+uQ/JsItJHQsCJjDkJMQ8uBavXkjcj16zUYePPzxvznVcQ?=
- =?us-ascii?Q?jD9RFvIg8/V9hHltWaNJ257yJYgxMrv7lfhYi2JG37ZaYEdmw1X9AFKuMojz?=
- =?us-ascii?Q?40Xpwm10mJV0JwQgKKhdVyff1pnqa5iKARAd2p2UJ8mMv8CXVXzjO3wL0P0M?=
- =?us-ascii?Q?BJPQ6VCVgu4vb0fRVb0qcDb+94u4uVTOUepVwQZvnbuCxsXHHh6DZRY1vSSr?=
- =?us-ascii?Q?EcSUOl5v1BAKkywT8KtHE6LCvE05MMvPla/HydcqTmge+zXWNjAqJphkacH7?=
- =?us-ascii?Q?IpwuwYkESJ2nsLinMLQMlN5pnAAgAZDt7LDwPTKFmYwmYFOD24GGR7r5iM5D?=
- =?us-ascii?Q?tNsNX463OnjPuewrt2dkq7yaoZaNNxbv36qlDC/5SeaxwE2JkZYGq+he84Jw?=
- =?us-ascii?Q?OA0jr17lHd924CSzzb+wbB7FSqEs3FaePEI/R6WzMmYDxwKzyoAihQmA7anW?=
- =?us-ascii?Q?5JZHESIX5q1dBlPZk7ICKFBtIPWzczzGO95hvT2gLq61E7hhDS66PJVbrHMI?=
- =?us-ascii?Q?LzBvS0p5462mj2rWTx0ZgWyqQy45EowQyW/RAAVYIyTqenTYPdxssAo3Jwe8?=
- =?us-ascii?Q?4FyeJn62pKxYia0CD+gfQfbDFPE5zMkhtGHQtpXqiuwgZtbtAnOFZg9rUvRx?=
- =?us-ascii?Q?O1nx8RyHf9B4xAvPqqtK64PqnUzNyu5mexxoknSa7vGY2pEfU2PviHh0yFoR?=
- =?us-ascii?Q?HE0BcQo2Wd/RtpBUlrRJ45Q5B/tuCSnhZK7XPmGxRWwr5IE9Kc/Kra6nHgKO?=
- =?us-ascii?Q?DV+hPVCkGmwEmWnWV2coGO0iv/EfmohtWPQqlx2mUZJo4/2zJi/+?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b5fe4dd8-aa0f-4570-f64f-08deece48387
-X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Jul 2026 20:12:13.8291
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: fryoJYLO9Oh03WWeQ6mggBnFoxO5bWETjFV0vhimnkc7N+TywuH8YVWZ7Y46JLJvtVslvK8s3UWiGxxW5IHyKRMEcdwUG9Kw91b4FfXLybMlvQ5HKsDbS36++m5wIRHZ
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR04MB6890
+To: Mukesh Savaliya <mukesh.savaliya@oss.qualcomm.com>, 
+ Hongling Zeng <zenghongling@kylinos.cn>,
+ alexandre.belloni@bootlin.com, Frank.Li@nxp.com, amergnat@baylibre.com, 
+ tze.yee.ng@altera.com, adrian.ho.yin.ng@altera.com
+CC: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] i3c: fix potential NULL dereference in send_ccc_cmd_locked
+References: <20260728063045.73473-1-zenghongling@kylinos.cn> <5ac5f386-1b95-4b30-a7e2-c246c9bfad68@oss.qualcomm.com>
+In-Reply-To: <5ac5f386-1b95-4b30-a7e2-c246c9bfad68@oss.qualcomm.com>
+X-CM-TRANSID: QCkvCgDnD3ymt2pqpKo1EA--.54817S2
+X-Coremail-Antispam: 1Uf129KBjvJXoW7AFyrtFyfGr48ArWxJF4kXrb_yoW8WrWfp3
+	y8Ca10k348tFW8GF42qa13ZayYqwnIq3yrKF43X3ya9FWjyF1ktF1UWw1FvasrXFn5ArWY
+	qryYqa1UuFZ0v37anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07j8J5rUUUUU=
+X-Originating-IP: [112.64.161.44]
+X-CM-SenderInfo: x2kr0wpolqwiqxrzqiyswou0bp/xtbBrwdMHWpqt6fzLwAA31
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260728_131219_866942_1251C9AB 
-X-CRM114-Status: GOOD (  20.19  )
+X-CRM114-CacheID: sfid-20260729_193246_337145_C02E2093 
+X-CRM114-Status: GOOD (  14.90  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -133,65 +70,39 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 28, 2026 at 06:53:08PM +0300, Adrian Hunter wrote:
-> Set master->ibi_wakeup during probe when the associated system device
-> advertises wakeup capability, allowing the I3C core to mark IBI-capable
-> I3C devices as wakeup capable.
->
-> Tweak the comment for i3c_hci_sysdev() to mention the new usage.
->
-> Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
-> ---
-
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
-
->
->
-> Changes in V2:
->
-> 	None
->
->
->  drivers/i3c/master/mipi-i3c-hci/core.c | 9 ++++++---
->  1 file changed, 6 insertions(+), 3 deletions(-)
->
-> diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-> index 0212c9e984cf..5d92cf0645ef 100644
-> --- a/drivers/i3c/master/mipi-i3c-hci/core.c
-> +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-> @@ -120,9 +120,9 @@ static inline struct i3c_hci *to_i3c_hci(struct i3c_master_controller *m)
->
->  /*
->   * Determine the device that does PM / DMA and has IOMMU setup done for it in
-> - * case of enabled IOMMU (for use with the DMA API).
-> - * Such device is either "mipi-i3c-hci" platform device (OF/ACPI enumeration)
-> - * parent or grandparent (PCI enumeration).
-> + * case of enabled IOMMU (for use with the DMA API). It is also used to check
-> + * for wakeup capability. Such device is either "mipi-i3c-hci" platform device
-> + * (OF/ACPI enumeration) parent or grandparent (PCI enumeration).
->   */
->  struct device *i3c_hci_sysdev(struct device *dev)
->  {
-> @@ -1176,6 +1176,9 @@ static int i3c_hci_probe(struct platform_device *pdev)
->  	if (hci->quirks & HCI_QUIRK_RPM_IBI_ALLOWED)
->  		hci->master.rpm_ibi_allowed = true;
->
-> +	if (device_can_wakeup(i3c_hci_sysdev(&pdev->dev)))
-> +		hci->master.ibi_wakeup = true;
-> +
->  	return i3c_master_register(&hci->master, &pdev->dev, &i3c_hci_ops, false);
->  }
->
-> --
-> 2.53.0
->
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+CuWcqCAyMDI25bm0MDfmnIgyOOaXpSAxODoyNywgTXVrZXNoIFNhdmFsaXlhIOWGmemBkzoKPgo+
+Cj4gT24gNy8yOC8yMDI2IDEyOjAwIFBNLCBIb25nbGluZyBaZW5nIHdyb3RlOgo+PiBUaGUgcmV0
+cnkgbG9vcCBhZGRlZCBpbiBjb21taXQgMDJjYzgzMjE5MWRkICgiaTNjOiBtYXN0ZXI6IFZhbGlk
+YXRlIEdFVAo+PiAgIENDQyBwYXlsb2FkIGxlbmd0aCBhbmQgcmV0cnkgRGlyZWN0IEdFVCBvbmNl
+IikgcmVzZXRzIHBheWxvYWQgCj4+IGFjdHVhbF9sZW4KPj4gYmVmb3JlIGVhY2ggYXR0ZW1wdC4g
+SG93ZXZlciwgY21kLT5kZXN0cyBpcyBvbmx5IHZhbGlkYXRlZCBmb3IgRElSRUNUCj4+IENDQyBj
+b21tYW5kcyAoSTNDX0NDQ19ESVJFQ1QgYml0IHNldCkuIEZvciBicm9hZGNhc3QgY29tbWFuZHMs
+IGRlc3RzCj4+IGNhbiBiZSBOVUxMIHdoaWxlIG5kZXN0cyA+IDAsIGNhdXNpbmcgYSBOVUxMIHBv
+aW50ZXIgZGVyZWZlcmVuY2UgYXQKPj4gY21kLT5kZXN0c1tpXS5wYXlsb2FkLmFjdHVhbF9sZW4u
+Cj4+Cj4+IEZpeCBieSByZXN0cmljdGluZyB0aGUgYWN0dWFsX2xlbiByZXNldCB0byBESVJFQ1Qg
+Y29tbWFuZHMuCj4+Cj4+IEZpeGVzOiAwMmNjODMyMTkxZGQgKCJpM2M6IG1hc3RlcjogVmFsaWRh
+dGUgR0VUIENDQyBwYXlsb2FkIGxlbmd0aCAKPj4gYW5kIHJldHJ5IERpcmVjdCBHRVQgb25jZSIp
+Cj4+IFNpZ25lZC1vZmYtYnk6IEhvbmdsaW5nIFplbmcgPHplbmdob25nbGluZ0BreWxpbm9zLmNu
+Pgo+PiAtLS0KPj4gICBkcml2ZXJzL2kzYy9tYXN0ZXIuYyB8IDIgKy0KPj4gICAxIGZpbGUgY2hh
+bmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkKPj4KPj4gZGlmZiAtLWdpdCBhL2Ry
+aXZlcnMvaTNjL21hc3Rlci5jIGIvZHJpdmVycy9pM2MvbWFzdGVyLmMKPj4gaW5kZXggZmQzZTc5
+ZDEwYzg0Li4yMTIxMmMzNGMzMWUgMTAwNjQ0Cj4+IC0tLSBhL2RyaXZlcnMvaTNjL21hc3Rlci5j
+Cj4+ICsrKyBiL2RyaXZlcnMvaTNjL21hc3Rlci5jCj4+IEBAIC0xMDUxLDcgKzEwNTEsNyBAQCBz
+dGF0aWMgaW50IAo+PiBpM2NfbWFzdGVyX3NlbmRfY2NjX2NtZF9sb2NrZWQoc3RydWN0IGkzY19t
+YXN0ZXJfY29udHJvbGxlciAqbWFzdGVyLAo+PiAgICAgICBmb3IgKGF0dGVtcHQgPSAwOyBhdHRl
+bXB0IDwgbWF4X2F0dGVtcHRzOyBhdHRlbXB0KyspIHsKPj4gICAgICAgICAgIHVuc2lnbmVkIGlu
+dCBpOwo+PiAgIC0gICAgICAgIGlmIChjbWQtPnJudykKPj4gKyAgICAgICAgaWYgKGNtZC0+cm53
+ICYmIChjbWQtPmlkICYgSTNDX0NDQ19ESVJFQ1QpKQo+Cj4gUGxlYXNlIHJldmlldyB0aGlzIHJl
+Y2VudCBmaXggQAo+IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2FsbC9hbUphdTlMZ2VoWUxuUjIw
+QGxpemhpLVByZWNpc2lvbi1Ub3dlci01ODEwLwo+CnwKCnxUaGFua3MsIEFkcmlhbidzIGZpeCBt
+YWtlcyBtb3JlIHNlbnNlIGJ5IHZhbGlkYXRpbmcgdGhlIGlucHV0IGF0IHRoZQplbnRyeSBwb2lu
+dCByYXRoZXIgdGhhbiBmaXhpbmcgb25seSB0aGUgcmV0cnkgbG9vcCB1c2Ugc2l0ZS58Cgp8Cj4+
+ICAgICAgICAgICAgICAgZm9yIChpID0gMDsgaSA8IGNtZC0+bmRlc3RzOyBpKyspCj4+ICAgICAg
+ICAgICAgICAgICAgIGNtZC0+ZGVzdHNbaV0ucGF5bG9hZC5hY3R1YWxfbGVuID0gMDsKCgotLSAK
+bGludXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
+Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
