@@ -4,61 +4,115 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1E6FDC55160
-	for <linux-i3c@archiver.kernel.org>; Thu, 30 Jul 2026 02:32:49 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6711CC54FDF
+	for <linux-i3c@archiver.kernel.org>; Thu, 30 Jul 2026 08:57:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:References:Subject:CC:To:MIME-Version:
-	From:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=JY8NCasPKyjxFg6Dsq++++7+2VApFJeYeqH8sNIeQFI=; b=kJgc2gXDUjxd4mYaWUn6v8ekcy
-	aODJw1508tQqpo84UsflCbULsHHupMBJDwCqpepDjpKpKw9ZnbpkIeVKljXtIThDjasn2WNre3QiO
-	jhMHSlOQcsWuDzmuUQ3dprlAnSXGw5iHG1BPtbajckCFiuWDDuEswigaSXzCxBk/P7sTzticNjBpd
-	rrnQ8Y2edOLmsBY2ut1blFYENjVdxId9TIL8g07PRWG5o6Xni/AhJn6n9/bicuSOXp/g3kaMDwfM0
-	PfAe7CCkK//lc+h7NM9kNI+t7P7L/m28crBpSu63TC8ZC4pNDHgb2hSat2+isITHyy88aDknEjN4O
-	OAzLXkCA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fbU5TmJbAcXRODWajtDplTIhrPE8AI65xdasKe7OoaU=; b=eW06o/sbE8SR1d
+	1qRClbcyQ2aF4mj1ajSzGekN8lWO39zy9hicfLThx/OA/VMqT2f4OOLJpt6ggpX3HlnesI8+IBQit
+	mVrJpXIq44OVqWQrPZC+6db3a89ficJqS/gQJY0Mu6+73doVNwYLp2fecsbfB0RIGaNWZeTSw/wRH
+	YiAbCsrjZn1KEWzpwwKYnYtoNCg0U025C5zYNH1XlDpRyUKqP1a1gq5xM9R4ZWcVI5cNuVs5tycX/
+	2aKo/9lB5eGk8U0R+QKtzAva5Zf0L2sfaiEJscSfERtWZLDNh622EfABfL6NItX+n6dqwgA3K1Yvq
+	OVx8QY7IkLVkMk9h45Bg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpGZk-00000009LzQ-3P9z;
-	Thu, 30 Jul 2026 02:32:48 +0000
-Received: from m16.mail.126.com ([220.197.31.8])
+	id 1wpMaE-00000009w1u-05w4;
+	Thu, 30 Jul 2026 08:57:42 +0000
+Received: from mail-centralusazlp170100005.outbound.protection.outlook.com ([2a01:111:f403:c111::5] helo=DM1PR04CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wpGZh-00000009Lxe-3ph3
+	id 1wpMaB-00000009w1C-3KRJ
 	for linux-i3c@lists.infradead.org;
-	Thu, 30 Jul 2026 02:32:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=126.com;
-	s=s110527; h=Message-ID:Date:From:MIME-Version:To:Subject:
-	Content-Type; bh=m/T0DHccDvJu8DEt5Dl6kUCV+jlFNpuQHUTsYJoQVhU=;
-	b=AJEUkuASELeboJWDnvW9cnNpAaBreoL4qRUrRMUkO9OF5D+aJWh4GJbiStVx46
-	P4tSiAi/6vmRJR7jm+POqjeZFkuoLxLLZF7r+jSMz50DQHByiWg0MLBZPbA0lFUU
-	4PVz0bkOoWut4C+lM8Mr9QpXcPJ8BfzNDJOXLc33B5Ctc=
-Received: from localhost.localdomain (unknown [])
-	by gzsmtp5 (Coremail) with SMTP id QCkvCgDnD3ymt2pqpKo1EA--.54817S2;
-	Thu, 30 Jul 2026 10:32:06 +0800 (CST)
-Message-ID: <6A6AB796.1040906@126.com>
-Date: Thu, 30 Jul 2026 10:31:50 +0800
-From: Hongling Zeng <zhongling0719@126.com>
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:31.0) Gecko/20100101 Thunderbird/31.2.0
+	Thu, 30 Jul 2026 08:57:41 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=XYqiEgY6eMhgXPWS6XNuGaqbYpRM6G7MQIbKRaxXjG/6DN9XbW9EXSVIaJVpBLnUAqHnkoALPhYs1cNh2yFyH3R1LcOOYRYuv+RKdKvyRiiBr5e+6goSzEIA0inxWEIAou+mhGfr153M1fPl9BpFTAGfopfAzK1nbI/281/icT5lJvRTp6PqrtBZQcUFX4fY3SpBfp14uf90wfQ04ueoPuZelLiv2HrRiw/S8Fuh6xy67mEitOZHSXs8QKwNBwToRxcC0TluLc/xV94N7WDsTkhfPg9/bD+GjGawJHX1miMszFfdL5PKFuyjd4j/rID0mk/yFjBIjmDUdni5Gv935w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=PX5YtWwhoe9/u48fqRtRismSVpFKtRDiSICqHlebWhg=;
+ b=fFEqLIKw6Sy+NoijQMep6mvD7Xgsq4IR2flEK7Tf4yxzqaAKqejuBBlqMQeBuHp/bac7Farzi237d9tA6cOnuQr8Ys4QdnVf9wyoe7yij3dF+CJNUyJW0rbrBGhdQCCVSn5TWVcw++LPsOsv/vCvj9EePZZ57bIKs+BJhRoPlYyMrSKLJs+N0K99cp6l0hvsd32PPHIs+LPi7YklH677+mD156FWzJZleyP3MWmZOeMFCGK42E0GbZnAuKiWgRTLdTjBT9STccm7rUG6qyxmeY9VAeMek6RJVNDTPg1BDKqBs4UEbbjenlljmOOo4CkI80241riBSLjxrdpZY+keIw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.118.233) smtp.rcpttodomain=kernel.org smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=PX5YtWwhoe9/u48fqRtRismSVpFKtRDiSICqHlebWhg=;
+ b=hImeHIsG9m5eskmTBrI61MUXmE66cs/TVLfMEesVqWX+MS405wb1EwDkA3TbdcODy5MN94akbknHshRDIarAaHS8/qeF8DMEaEJ+ul31uEoT7gBQEt5jEBudO+d79xP9G+Xflc5LDXv8yr8NoqjZEnej7BbfHyReQ8UDPOZFumqOvyi5hz8X5euBq2EnWdadHnKttCJTg8QVvP9zlJvLmyUUMpPeL+yFmeMgc9Nb8VjsXeieJnWHl3TZbnO/qP9xxX8NhWJoYaTBHsEahvc6ANEBVWWKRGzcxnvZY+q9RfNBmSnvFARFyINHfDdHNKHEi5AxyVfAqedLWwnJ8YKohg==
+Received: from IA4P221CA0009.NAMP221.PROD.OUTLOOK.COM (2603:10b6:208:559::11)
+ by SAVPR12MB999119.namprd12.prod.outlook.com (2603:10b6:806:4e9::19) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.270.12; Thu, 30 Jul
+ 2026 08:57:32 +0000
+Received: from BL02EPF0002992C.namprd02.prod.outlook.com
+ (2603:10b6:208:559:cafe::96) by IA4P221CA0009.outlook.office365.com
+ (2603:10b6:208:559::11) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.270.15 via Frontend Transport; Thu,
+ 30 Jul 2026 08:57:32 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.118.233)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.118.233 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.118.233; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.118.233) by
+ BL02EPF0002992C.mail.protection.outlook.com (10.167.249.57) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.292.8 via Frontend Transport; Thu, 30 Jul 2026 08:57:32 +0000
+Received: from drhqmail203.nvidia.com (10.126.190.182) by mail.nvidia.com
+ (10.127.129.6) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Thu, 30 Jul
+ 2026 01:57:21 -0700
+Received: from drhqmail202.nvidia.com (10.126.190.181) by
+ drhqmail203.nvidia.com (10.126.190.182) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.20; Thu, 30 Jul 2026 01:57:20 -0700
+Received: from build-akhilrajeev-noble-20260602.internal (10.127.8.11) by
+ mail.nvidia.com (10.126.190.181) with Microsoft SMTP Server id 15.2.2562.20
+ via Frontend Transport; Thu, 30 Jul 2026 01:57:18 -0700
+From: Akhil R <akhilrajeev@nvidia.com>
+To: <sashiko-bot@kernel.org>
+CC: <Frank.Li@kernel.org>, <akhilrajeev@nvidia.com>,
+	<alexandre.belloni@bootlin.com>, <conor+dt@kernel.org>,
+	<devicetree@vger.kernel.org>, <linux-hwmon@vger.kernel.org>,
+	<linux-i3c@lists.infradead.org>, <robh@kernel.org>,
+	<sashiko-reviews@lists.linux.dev>
+Subject: Re: [PATCH v7 04/12] i3c: master: Add support for devices using SETAASA
+Date: Thu, 30 Jul 2026 08:57:16 +0000
+Message-ID: <20260730085717.2456089-1-akhilrajeev@nvidia.com>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20260728072201.AD0D31F000E9@smtp.kernel.org>
+References: <20260728072201.AD0D31F000E9@smtp.kernel.org>
 MIME-Version: 1.0
-To: Mukesh Savaliya <mukesh.savaliya@oss.qualcomm.com>, 
- Hongling Zeng <zenghongling@kylinos.cn>,
- alexandre.belloni@bootlin.com, Frank.Li@nxp.com, amergnat@baylibre.com, 
- tze.yee.ng@altera.com, adrian.ho.yin.ng@altera.com
-CC: linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] i3c: fix potential NULL dereference in send_ccc_cmd_locked
-References: <20260728063045.73473-1-zenghongling@kylinos.cn> <5ac5f386-1b95-4b30-a7e2-c246c9bfad68@oss.qualcomm.com>
-In-Reply-To: <5ac5f386-1b95-4b30-a7e2-c246c9bfad68@oss.qualcomm.com>
-X-CM-TRANSID: QCkvCgDnD3ymt2pqpKo1EA--.54817S2
-X-Coremail-Antispam: 1Uf129KBjvJXoW7AFyrtFyfGr48ArWxJF4kXrb_yoW8WrWfp3
-	y8Ca10k348tFW8GF42qa13ZayYqwnIq3yrKF43X3ya9FWjyF1ktF1UWw1FvasrXFn5ArWY
-	qryYqa1UuFZ0v37anT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
-	9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07j8J5rUUUUU=
-X-Originating-IP: [112.64.161.44]
-X-CM-SenderInfo: x2kr0wpolqwiqxrzqiyswou0bp/xtbBrwdMHWpqt6fzLwAA31
+X-NV-OnPremToCloud: ExternallySecured
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BL02EPF0002992C:EE_|SAVPR12MB999119:EE_
+X-MS-Office365-Filtering-Correlation-Id: f17ea34c-955f-4791-2eb0-08deee1897b3
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|376014|36860700016|82310400026|1800799024|6133799003|10067099003|56012099006|11063799006|18002099003|22082099003|3023799007;
+X-Microsoft-Antispam-Message-Info: SgWbX0gAuf1xEfw1LILJ9TyqLg2yP4G4k/NmYlrSwaqOTiV3PGsOa6e0G5Esso/4s7xuXIPVfh/o/vHx7JAcyJAuSYncR5xqQ76zHqCVJNupZN12Vo8truPP4P8CckracymHHuZYUY3H2RsojvI7OM30iOBTpvT8Lrqw8MtXScjz6/ROkp2LbdsPzpVv0W06Y1cscsbA0RrIFGEf3Dt3DNmn+US0ZRwQkJmCF12xU46WZMw7TO7LSTVxKBIwbed/i20h0Hm1ys1/EoBTxLvQptUhht4lmZ5rzVrFV1KL0fpXIPeDhNByhXAXgz1PSjgd6KHzaqKcJTkTvVQqKK0G3Nq64fvrWXrTWw5PplLAQjwFz0TjK7qVOsW/gklKrILSSU8fthMUTCc5/+WkfuuIVUPPdIo4BQHu8wu+Vv6aT32GhJy6x815P2K+OaPq9V6SUFw4gDI8ygEx/iwn/siGEY+fVPiY6AbaB177TjdrncF2IpkeHQjyQeqqKNK8olJF7HtYV1gJIG3LZa+uEfDA/kip1zciD7ZnjzvkjozT4GNcjv//Xy5i2JoXawpjQyEADvaoofwADBePXuc5FDvXTQNT72Lq7C38HhP4mxS3/hBY38De3pljcwudTE8q6RAGOsI6rICeC4jDkRhHlXy7PEqVlXJ4si09a7DjV6uMoCQBBO6hHla0e9WY+KGC0dZce5THyD3rYWKv+f8T/SWf6A==
+X-Forefront-Antispam-Report: CIP:216.228.118.233;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc7edge2.nvidia.com;CAT:NONE;SFS:(13230040)(23010399003)(376014)(36860700016)(82310400026)(1800799024)(6133799003)(10067099003)(56012099006)(11063799006)(18002099003)(22082099003)(3023799007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: k8NNX940pp4w3EYggpQhv6XJCRnyRVxsnZOBLSHJwF3QC5uUFteL3cXszO8dkoQpy3hM/dm51D5MDI42JVIpwknOrssMMSJCj1EYgBt5Z2KFFhjYUJoDLwlp5B+2f4VSiZYnGKjwDeOi0exEx/EyoX+wR3amCr4DofZtAONpIg5zTDqbxhuadEUeOzykzV8Ygrp2PsX01TCXJEU1b3xoUZZdCPtLJ7lKv44DzGGTDGUL2iLSx51xfRdCLAr49nr1sQym5S/Q71guZVQJbGY9cC+wLBVO2oi9OOajGERSnz8wcstZ+IEtnYWmppc6eJKtxYeaVCnLhlCWKuFAG5zLTBhLUlivCIe+hsrEHwOSNaxAotEjShBniGXwtGf7EpmLnSW8NLwsHlEDTSLZ/qCmd3CNDf6s2ppIbpGN9tz5oCblcQCxIieVC9zgQ2kXHQjo
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Jul 2026 08:57:32.3202
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: f17ea34c-955f-4791-2eb0-08deee1897b3
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.118.233];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: BL02EPF0002992C.namprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SAVPR12MB999119
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260729_193246_337145_C02E2093 
-X-CRM114-Status: GOOD (  14.90  )
+X-CRM114-CacheID: sfid-20260730_015739_838544_F5341FCC 
+X-CRM114-Status: GOOD (  24.12  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,39 +124,99 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-CuWcqCAyMDI25bm0MDfmnIgyOOaXpSAxODoyNywgTXVrZXNoIFNhdmFsaXlhIOWGmemBkzoKPgo+
-Cj4gT24gNy8yOC8yMDI2IDEyOjAwIFBNLCBIb25nbGluZyBaZW5nIHdyb3RlOgo+PiBUaGUgcmV0
-cnkgbG9vcCBhZGRlZCBpbiBjb21taXQgMDJjYzgzMjE5MWRkICgiaTNjOiBtYXN0ZXI6IFZhbGlk
-YXRlIEdFVAo+PiAgIENDQyBwYXlsb2FkIGxlbmd0aCBhbmQgcmV0cnkgRGlyZWN0IEdFVCBvbmNl
-IikgcmVzZXRzIHBheWxvYWQgCj4+IGFjdHVhbF9sZW4KPj4gYmVmb3JlIGVhY2ggYXR0ZW1wdC4g
-SG93ZXZlciwgY21kLT5kZXN0cyBpcyBvbmx5IHZhbGlkYXRlZCBmb3IgRElSRUNUCj4+IENDQyBj
-b21tYW5kcyAoSTNDX0NDQ19ESVJFQ1QgYml0IHNldCkuIEZvciBicm9hZGNhc3QgY29tbWFuZHMs
-IGRlc3RzCj4+IGNhbiBiZSBOVUxMIHdoaWxlIG5kZXN0cyA+IDAsIGNhdXNpbmcgYSBOVUxMIHBv
-aW50ZXIgZGVyZWZlcmVuY2UgYXQKPj4gY21kLT5kZXN0c1tpXS5wYXlsb2FkLmFjdHVhbF9sZW4u
-Cj4+Cj4+IEZpeCBieSByZXN0cmljdGluZyB0aGUgYWN0dWFsX2xlbiByZXNldCB0byBESVJFQ1Qg
-Y29tbWFuZHMuCj4+Cj4+IEZpeGVzOiAwMmNjODMyMTkxZGQgKCJpM2M6IG1hc3RlcjogVmFsaWRh
-dGUgR0VUIENDQyBwYXlsb2FkIGxlbmd0aCAKPj4gYW5kIHJldHJ5IERpcmVjdCBHRVQgb25jZSIp
-Cj4+IFNpZ25lZC1vZmYtYnk6IEhvbmdsaW5nIFplbmcgPHplbmdob25nbGluZ0BreWxpbm9zLmNu
-Pgo+PiAtLS0KPj4gICBkcml2ZXJzL2kzYy9tYXN0ZXIuYyB8IDIgKy0KPj4gICAxIGZpbGUgY2hh
-bmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkKPj4KPj4gZGlmZiAtLWdpdCBhL2Ry
-aXZlcnMvaTNjL21hc3Rlci5jIGIvZHJpdmVycy9pM2MvbWFzdGVyLmMKPj4gaW5kZXggZmQzZTc5
-ZDEwYzg0Li4yMTIxMmMzNGMzMWUgMTAwNjQ0Cj4+IC0tLSBhL2RyaXZlcnMvaTNjL21hc3Rlci5j
-Cj4+ICsrKyBiL2RyaXZlcnMvaTNjL21hc3Rlci5jCj4+IEBAIC0xMDUxLDcgKzEwNTEsNyBAQCBz
-dGF0aWMgaW50IAo+PiBpM2NfbWFzdGVyX3NlbmRfY2NjX2NtZF9sb2NrZWQoc3RydWN0IGkzY19t
-YXN0ZXJfY29udHJvbGxlciAqbWFzdGVyLAo+PiAgICAgICBmb3IgKGF0dGVtcHQgPSAwOyBhdHRl
-bXB0IDwgbWF4X2F0dGVtcHRzOyBhdHRlbXB0KyspIHsKPj4gICAgICAgICAgIHVuc2lnbmVkIGlu
-dCBpOwo+PiAgIC0gICAgICAgIGlmIChjbWQtPnJudykKPj4gKyAgICAgICAgaWYgKGNtZC0+cm53
-ICYmIChjbWQtPmlkICYgSTNDX0NDQ19ESVJFQ1QpKQo+Cj4gUGxlYXNlIHJldmlldyB0aGlzIHJl
-Y2VudCBmaXggQAo+IGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2FsbC9hbUphdTlMZ2VoWUxuUjIw
-QGxpemhpLVByZWNpc2lvbi1Ub3dlci01ODEwLwo+CnwKCnxUaGFua3MsIEFkcmlhbidzIGZpeCBt
-YWtlcyBtb3JlIHNlbnNlIGJ5IHZhbGlkYXRpbmcgdGhlIGlucHV0IGF0IHRoZQplbnRyeSBwb2lu
-dCByYXRoZXIgdGhhbiBmaXhpbmcgb25seSB0aGUgcmV0cnkgbG9vcCB1c2Ugc2l0ZS58Cgp8Cj4+
-ICAgICAgICAgICAgICAgZm9yIChpID0gMDsgaSA8IGNtZC0+bmRlc3RzOyBpKyspCj4+ICAgICAg
-ICAgICAgICAgICAgIGNtZC0+ZGVzdHNbaV0ucGF5bG9hZC5hY3R1YWxfbGVuID0gMDsKCgotLSAK
-bGludXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
+On Tue, 28 Jul 2026 07:22:01 +0000, Sashiko AI review <sashiko-bot@kernel.org> wrote:
+> commit 61911732853b10649effe5164454ca8a4a87e970
+> Author: Akhil R <akhilrajeev@nvidia.com>
+>
+> i3c: master: Add support for devices using SETAASA
+>
+> This patch adds support for discovering and configuring devices using the
+> SETAASA method, which statically assigns addresses without using ENTDAA.
+> It adheres to the MIPI Discovery and Configuration Specification.
+>
+> [ ... ]
+>
+> > @@ -1878,6 +1926,22 @@ static int i3c_master_early_i3c_dev_add(struct i3c_master_controller *master,
+> > +	if (i3cdev->boardinfo->static_addr_method & I3C_ADDR_METHOD_SETAASA) {
+> > +		i3cdev->info.dyn_addr = i3cdev->boardinfo->static_addr;
+> > +		ret = i3c_master_reattach_i3c_dev_locked(i3cdev, 0);
+> > +		if (ret)
+> > +			goto err_detach_dev;
+> > +
+> > +		return 0;
+> > +	}
+>
+> [Severity: High]
+> Does this early return prevent the device from acquiring a unique PID?
+>
+> Since PID validation is bypassed for SETAASA devices in
+> i3c_master_add_i3c_boardinfo(), multiple devices can share the same default
+> PID (like 0). Because this skips i3c_master_retrieve_dev_info(), the dummy
+> PID is never replaced by a real one.
+>
+> When i3c_master_register_new_i3c_devs() attempts to register these devices,
+> the sysfs registration fails due to duplicate names. The error handling calls
+> put_device() but leaves a dangling pointer in desc->dev.
+>
+> Could this dangling pointer lead to a use-after-free when
+> i3c_master_unregister_i3c_devs() later accesses and frees it again?
+
+As clarified in v6, devices without a PID are named using their static address
+in the next patch of this series, and two devices cannot share the same static
+address. The dangling desc->dev on device_register() failure is pre-existing
+and will have to be fixed separately.
+
+> [ ... ]
+>
+> > @@ -2272,6 +2346,19 @@ static int i3c_master_bus_init(struct i3c_master_controller *master)
+> > +	if (master->addr_method & I3C_ADDR_METHOD_SETAASA) {
+> > +		ret = i3c_master_setaasa_locked(master);
+> > +		if (ret)
+> > +			goto err_rstdaa;
+> > +	}
+>
+> [Severity: High]
+> What happens here if the underlying master controller driver rejects the
+> SETAASA and SETHID CCC commands?
+>
+> Most mainline I3C master drivers, like Cadence and DesignWare, implement a
+> strict allowlist in their supports_ccc_cmd callback. If they reject these
+> new commands, i3c_master_send_ccc_cmd_locked() returns -EOPNOTSUPP.
+>
+> Will this cause the entire I3C bus initialization to abort and detach all
+> devices, effectively breaking all I3C communications for that controller?
+
+This is clarified in v6. It's an opt-in property and existing drivers are
+unaffected.
+
+> [Severity: High]
+> How are SETAASA devices handled during system resume?
+>
+> During resume, i3c_master_do_daa_ext() issues an RSTDAA broadcast to reset
+> dynamic addresses and then calls ENTDAA. Since SETAASA devices do not
+> participate in ENTDAA, and SETAASA is not re-broadcasted there, will these
+> devices lose their dynamic address on the physical bus?
+>
+> If the kernel still retains the i3c_dev_desc with the dynamic address
+> uncleared, won't all subsequent I/O to these targets fail?
+
+i3c_master_do_daa_ext() is only reached through the mipi-i3c-hci driver when
+HCI_QUIRK_RPM_ALLOWED is set and not through dw-i3c-master. So this issue does
+not have any impact today since HCI_QUIRK_RPM_ALLOWED is set only by
+intel-lpss-i3c platform.
+
+The same issue also applies to other statically configured devices like SETDASA
+devices that do not implement ENTDAA. It will be better to fix this separately.
+
+Best Regards,
+Akhil
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
