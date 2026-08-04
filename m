@@ -4,136 +4,128 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9169AC55822
-	for <linux-i3c@archiver.kernel.org>; Tue,  4 Aug 2026 19:28:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0635C55822
+	for <linux-i3c@archiver.kernel.org>; Tue,  4 Aug 2026 22:11:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EpPj6KbMVi606lVVHr6QOh9xWl8Dw3Gf6UbEVsd8+Gg=; b=gGdM50FZDtm88p
-	gnkgHiKBpwpBcdA6ksiRQsd8J20Uof2pOzfjxjOKwLLnv/PoJy4Q0aFmB9AlJhcAM2wp9b9AxKoVE
-	vISEthOlLa8pkOCADez3pfXQlfAfoqME1aOGlGmJJ7UM9pfmQTiZUINs7H5gqaJDCVnGoG6O0GdpZ
-	gcqEWiFCX9d/xLobCdTCzYuXZdfyjdc2RjVPXih4TZh9LXRcDNmfbALCzrkqzXSYXVRQfB3oqi13X
-	Paq+zD4L+qlbvGEMqKijkJkdit4AjdK/Toutbq10SfgefYcSlJzyus/lpY3CVW3Lip3W4pmOhtJy+
-	tMLBxpCM3ihgzjCaX/6w==;
+	List-Owner; bh=Nos9g4aP6nKeitc958bmk8VT9ObhOm3BolFe8NCzyEE=; b=4E+qV9MLbs735h
+	VHPFs0kx5Kgwm6w0bi98pDdN6fGzHHTFwvlg7EJXrVs47pMTYu4Kp2lzw0eBGLizTie0a/wdcX9HP
+	Ao6jEtdhNK721VtprilB4zLRlD9FpolAOTreQYCPMU0ArD826p6IevlS7jwttSY6IVS7vQXnFBiBJ
+	d8Igq+8rFz5Jz8TD9UOzrbPc4ncBCXucgKo4pWgcoX+Hz7pZJsQskBddVryZX/82F1SKacSWHTR0Q
+	Wm9F2O2ylLLdj7lYoY0UWM2QLhveiTzwmAJ4PS+XYRCzaDeH1IDTbEmulft9Q7+dBa5rXCsZ+aMyI
+	9HPooRDnLAgHRxJPw+5g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrKog-00000002gFO-0AqM;
-	Tue, 04 Aug 2026 19:28:46 +0000
-Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
+	id 1wrNLg-00000002rJQ-1kyV;
+	Tue, 04 Aug 2026 22:11:00 +0000
+Received: from mail-northeuropeazon11010068.outbound.protection.outlook.com ([52.101.84.68] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrKod-00000002gF4-2m33
+	id 1wrNLe-00000002rJ2-1thF
 	for linux-i3c@lists.infradead.org;
-	Tue, 04 Aug 2026 19:28:45 +0000
-Received: from pps.filterd (m0279863.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 674J06XK668840
-	for <linux-i3c@lists.infradead.org>; Tue, 4 Aug 2026 19:28:43 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	MhA2IU8196JWiRByXGGWXt3G4pGVswpFZCS5BuGud3c=; b=FtoZWcBQaIRPkYal
-	jZp2fkeDjiWsLFp6JJZovb7cSZqmsLq3f2SU8fyla0+5dREDVS8kDvqBltSv+Ffb
-	gfGmdJxPsaIobwrsD5aKZakAqkBzV4UD1PiL1trVoG1XVlsJ/guKpsp/WHv9Gpqe
-	fGLOaOq18enyM+G6fB0eOCiFlv98DeIfb8N+nx/UzNIqbQhEOIpJ+4MoNhwuXqkU
-	grGy5whG2gKlk8jq54G1BPWhwE7FxPnexC8CLzaSsDd3ETy/+Ep7vx3t2DdELTep
-	ig7FGsXx7bWAdVhnOrKPAjju6YVHVK6NOSyJ34fKIATrpNEjmV1Lu7natRrkMpiz
-	dOUtIw==
-Received: from mail-pg1-f199.google.com (mail-pg1-f199.google.com [209.85.215.199])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fum56gps6-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-i3c@lists.infradead.org>; Tue, 04 Aug 2026 19:28:42 +0000 (GMT)
-Received: by mail-pg1-f199.google.com with SMTP id 41be03b00d2f7-c9fe4c5eb39so86697a12.1
-        for <linux-i3c@lists.infradead.org>; Tue, 04 Aug 2026 12:28:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1785871722; x=1786476522; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=MhA2IU8196JWiRByXGGWXt3G4pGVswpFZCS5BuGud3c=;
-        b=fsEzeXk7IH0+8UOlizvspKdL1+PWXcV0oyAc/hzx1kBjsNTnm46eCpsSzAQMAS9wM3
-         X33Wk8ZARs4YggarTE5Nc77iUwmsGdEH5abxamFgxvcRhV+RtsD035lkmX8DanZ7tU7T
-         KmLlUmA7AOUpES4rh+Qy++Ot8wUwfb6jVi8IHmbBPESPYb771ha/ORee9E4gf0kypQFM
-         76yle6FLhpolcU5z1LuJsWsy0owLWChdDVnqv3k5CwTrMNUgoU3vc978yuy57KE8EZVy
-         CljN5OU1F7y0nKzE5Hrmp58KEkmR4Ve+y5YXGWpYeRU4mWcnzcebxvgTlmRLEJmc60or
-         HmgQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1785871722; x=1786476522;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=MhA2IU8196JWiRByXGGWXt3G4pGVswpFZCS5BuGud3c=;
-        b=hMqYW7g4rUNL47NzcegyhMP+DlDKRtEujA9vOBIMQcbDLzkzHXB3rbOCpxKc4R0XH5
-         +LrVEX0eqOZYThI4bdwSJIyZKeDUoDL9G0U7kTgSbgxbsH+NmO+Mx5KCSimHwj8RRJ+l
-         uwe7OzfWH+PmJh1KSMU4PuxeY0yvBX/w9tuOGfAqML0ZDyVCupO1gY62KHSNISb1RvDX
-         V9IiGucRFZT/e1Krf9yWE7+9dbXS1gt8TIWUg2maEcJbVnZH26lQ9ZW7oPdCl/6J0WL0
-         T5GWjq6Ke+AXcsxJSNkGA23tX65Ypfs5/e5xmoev0tZ/6ZDZJQrBCbFnizTos8/kMiiQ
-         OA4A==
-X-Forwarded-Encrypted: i=1; AHgh+Rr9rVsIv/bLh1hjiNPuLOjowmT+w/ML5ChPz4JtPky3uf5b8wi0BU2LbZGH3LGUXNYe2YJw4949t58=@lists.infradead.org
-X-Gm-Message-State: AOJu0YwsJEYqLSs1zGFHRLZKO7IKwfPULyWLZTw+jGMVER/2DXIKqNY/
-	GP86lTN4T0Ugw5M782JG47iwo4ZOzuztNd2VAuJLSNHUpUAzIF9KWTtgsHTHnH9xUWmesbtvZ7r
-	KBv9ZikTR2UMLS9CZJLENuGx2FfdGrFHeLWw/s3T3jipbmMn747HgHS+nKi8fSzDOJiRT
-X-Gm-Gg: AR+sD12PAXW/Jv2iTkr0PIJXTc1+a7G8IAiwdSqIJFikQJf0V+tBc0T9cterY6wDVv3
-	z6U5ZTJhIGitPsBntISOIqxy+jcbSr0JlIhhQRk+bnypDB2VOWLBWmDwB4YXNHOTdIs6VM1fH4f
-	34SvRjE99/17/CC7wdiOVdLi6XFlN+eWLM7JzfNT53QgVzoJvOqi/BOhXuxBQTKEb+oK8Q4JJOM
-	LcXA2yMfxa9/yXr7YNxS4sEpLxYaWtGxiGBQrwe+BOO4zsaDRCr84s2VTNzZ438J0dTtS8i2bHK
-	oqJap57tecUZHbp08g/m3ktVC1qbDLZHxMii5Yhzgs909sWQc+2mYozJ0km53OA7rFQEegwPZPc
-	lKxDLs3pmm27ev/6cHji8gol90sz15hbD+w==
-X-Received: by 2002:a05:6a20:2447:b0:3bb:2883:a723 with SMTP id adf61e73a8af0-3cb86075abamr805120637.35.1785871722310;
-        Tue, 04 Aug 2026 12:28:42 -0700 (PDT)
-X-Received: by 2002:a05:6a20:2447:b0:3bb:2883:a723 with SMTP id adf61e73a8af0-3cb86075abamr805086637.35.1785871721856;
-        Tue, 04 Aug 2026 12:28:41 -0700 (PDT)
-Received: from [192.168.1.8] ([106.222.234.41])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-3158678ec37sm7150623eec.23.2026.08.04.12.28.38
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Tue, 04 Aug 2026 12:28:41 -0700 (PDT)
-Message-ID: <6698bed9-373f-40f3-819a-25203245f733@oss.qualcomm.com>
-Date: Wed, 5 Aug 2026 00:58:36 +0530
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V3 13/14] i3c: mipi-i3c-hci: Factor out i3c_hci_sysdev()
-To: Adrian Hunter <adrian.hunter@intel.com>, alexandre.belloni@bootlin.com
-Cc: Frank.Li@nxp.com, akhilrajeev@nvidia.com, rafael@kernel.org,
-        linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-        linux-pci@vger.kernel.org, linux-pm@vger.kernel.org
+	Tue, 04 Aug 2026 22:10:59 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=ZlVg4nDLP6RyTCkq/3Pso3wqp0FrWC8dJ3WxiF4jb6KcMJB3tScSs2sUBtTXnGGZnCDDw47/4ad77bUslbXB98b4bd16a8XwLD9DVskfFHa6X4guj62aHo+Vg+dw6UXv3DQyg2jZxkTjK/c98eHGktkia+r1lbaKQnpkI63OBEVXTgXvHKMWpcy+2zy501juVJ4UIKwK1AYJhwkdKG5CD80HuzNd4XY9UHFroLIabPmcx4OZlZq2tne3z5mWGw2MyRLOvZfzNQ939XK9Ggx23sOYL10JIShoEJXJUXKf7lImTdf0ExnFuEhOHqpUbAME3QUcrdtuRyKST7BxlJZTXQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=uQhbk+M0UtBncp1C0+tKZoxWKz/IJluPkKLJFrAddIA=;
+ b=HWpxObTjrC/hdXEvgfH4UMhaM1mlwKr2WrDZ+/5/mz1gz81WFUV70rqkuKs7eiUVvr1kuE4PymQICg4gLmLCT0DPkoJd6cNrcsnJjRbvVaI2w+Zcr6wQcOP8eTH+6jMYa9LY7UXGqTL45jy6yZ7k1QVcFuHyON4JokHQ/SVSjXsHAD3Bvp5bFjtvzHIfbz4Zo2/cOFoAVGtBGm5ZkdwkobUDTpUDAhYjw9jxZ2kwIDSEGCu30TH9K4Mq65dF12pv7BWm4eapJuoKMhBwKerL2XWneb7ufgKiK5KvgO6romllPJmDk+vn3COv3t3WWH3X9JCilnS+NCybVxcbrDgN6w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=uQhbk+M0UtBncp1C0+tKZoxWKz/IJluPkKLJFrAddIA=;
+ b=S8kh5Eps5eB6Akx8wYh2oNzouEKrB2O3rAoayfP4rl0Xxv+3fZI+900ZSNULuqYXHDt194xEoNOy3mOOsTNLFLuEkqqXRFNyAqi4zd+vMpakM9P9z6T6NwsunArlCFPq9im+yl81shde63GQ1IXSKqjdERQGPTjZe8zsxVe2YBJnLU6h+1qw5K3D8ib/htABOO7pGU8dvk6YpBTLQMRnDRmQR1WnP4/6gxu5VqVd7B7YFzHUJTeYljNFJhEqkInwlHQLD2vCnzbBCJK1xsNwx1ufQi5IGbSIpeApKGrrh+P8gq0QbCeMSwc/LzDljFT7RbPfm6itIWyTELoNqnzDvg==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
+ by DB8PR04MB7099.eurprd04.prod.outlook.com (2603:10a6:10:12b::19) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.292.16; Tue, 4 Aug
+ 2026 22:10:53 +0000
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0292.015; Tue, 4 Aug 2026
+ 22:10:53 +0000
+Date: Tue, 4 Aug 2026 17:10:44 -0500
+From: Frank Li <Frank.li@oss.nxp.com>
+To: Adrian Hunter <adrian.hunter@intel.com>
+Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com, akhilrajeev@nvidia.com,
+	rafael@kernel.org, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, linux-pci@vger.kernel.org,
+	linux-pm@vger.kernel.org
+Subject: Re: [PATCH V3 01/14] i3c: master: Fix recursive locking during
+ device registration
+Message-ID: <anJjZHxv16-bXnkp@SMW015318>
 References: <20260804133810.184905-1-adrian.hunter@intel.com>
- <20260804133810.184905-14-adrian.hunter@intel.com>
-Content-Language: en-US
-From: Mukesh Savaliya <mukesh.savaliya@oss.qualcomm.com>
-In-Reply-To: <20260804133810.184905-14-adrian.hunter@intel.com>
-X-Proofpoint-ORIG-GUID: YLywEAWUjY45tZwyGC_wPj65lDSRAxUQ
-X-Authority-Analysis: v=2.4 cv=Co+PtH4D c=1 sm=1 tr=0 ts=6a723d6a cx=c_pps
- a=Oh5Dbbf/trHjhBongsHeRQ==:117 a=/lQgZcjXNA7ZrIsIl4Cfeg==:17
- a=IkcTkHD0fZMA:10 a=Sv0fKeRqtYgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=yOCtJkima9RkubShWh1s:22
- a=RAI3vUJYwi-tdmbA44AA:9 a=QEXdDO2ut3YA:10 a=_Vgx9l1VpLgwpw_dHYaR:22
-X-Proofpoint-Spam-Info: AW1haW4tMjYwODA0MDE1NyBTYWx0ZWRfX515DKxGmwkyJ
- fEx4ZCT63Xrd7r9NhC6GI0kj4IThSDkDF8dynfNdtDfs8/raUFcKVg2OuAUSoQpIiKYHQ/GHk81
- PQ/HhJdVdxVZDRfdiKhYdVmg8O87ORk=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODA0MDE1NyBTYWx0ZWRfXxhLjSPw73dxw
- JcAZyme5hnzHfC0Q3R9THxDN3ikDrHwsK0exwf+I0++sPYwqCe+5IcRSsyZ6/iwk5IMQu9SwC5W
- p6a4bHggoqD4vk6zGVQnUS8u3nwn9UqxyDZFD9zZtws5HnKwJMtiTIY0jl5IoB/T70J76aq5ciU
- CrNLfJT0pKP+NcOnbw1jBVq1cTwjvWpSOn8bUgxJZ6ueyWxOGvrxT+mT8Iy1NLPBcn6VjqWIl0W
- wzndGxg5x71Qyo3g3caapd4FQ74I1U34C+qilhHr9jZV+adXURFaZ1RsezPqIqWmT+J67/xvhxX
- 7bPvvpjx/LXnRsPO1qAJ9rJ4X5I6g3A+JfUdLNffRRdFjGc3nDGxVdyZJEHZdgpENHMnZhaJxAE
- NjfJk4P070m2YHwWpE8OnJIozcImAb0gWEMW+eGPGqr9ZmrkvAuCT+0R8OfNoDHI6b3NMl6ZpbV
- 9WafHWY9dgzF4WKHHQQ==
-X-Proofpoint-GUID: YLywEAWUjY45tZwyGC_wPj65lDSRAxUQ
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-08-04_03,2026-08-04_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501 suspectscore=0 lowpriorityscore=0 clxscore=1015
- impostorscore=0 spamscore=0 phishscore=0 bulkscore=0 malwarescore=0
- adultscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2606150000
- definitions=main-2608040157
+ <20260804133810.184905-2-adrian.hunter@intel.com>
+ <anIXV7HvBxCtJLFD@lizhi-Precision-Tower-5810>
+ <5b0ed4bc-2f14-4d09-a099-9d69337fbba8@intel.com>
+Content-Disposition: inline
+In-Reply-To: <5b0ed4bc-2f14-4d09-a099-9d69337fbba8@intel.com>
+X-ClientProxiedBy: PH7PR03CA0006.namprd03.prod.outlook.com
+ (2603:10b6:510:339::25) To GV2PR04MB11799.eurprd04.prod.outlook.com
+ (2603:10a6:150:2cf::9)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|DB8PR04MB7099:EE_
+X-MS-Office365-Filtering-Correlation-Id: 63194c90-b6fb-45c3-ac7f-08def2753fcc
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|19092799006|1800799024|376014|23010399003|56012099006|5023799004|11063799006|4143699003|10067099003|6133799003|18002099003|22082099003;
+X-Microsoft-Antispam-Message-Info: F4BnwGO8bEGPkcbl5bUfIfT30zqvx+Sc/nuXgUaiAXwK1dwdY2vHmm3SsOkY1aGZjT7wD1q1dvIneISnBH913AywmFlT9LjKlDBC5VAb4mctTrLxWoU+a5jfUWPrOYzfgLU+Y9rsEsPKLxEwk/EZigHwRUHMq68Y1cmsnKAW/oqLWa9RWE+PE7qPfKGvLyJFfQUF7DifMdo02y0zPALD2+KTIAVE6W+WHKKta6xO9xgm3VHo2aZbqtV1T2EUznNhbpGcR9E1LT84po5mjE8TffKPvcan9ipfCQX0eCbhXhaiv8m7tcDZ7Ejd5tHxI6p1k3EWN3eEIFcmOalFOEdEUljLKmW2pxQ0xIvP8Sw4k+XU5x6yrZ21Dku5IzB6FbHg2yNLf18ejMhCYuEK7hHz+2LShvq9BP7kB+qGR9G1glU6UiMkPFFD6VMRrnM0fTi4/kt2T8xb9bFmIECoGNaifHt1jZJbjn8nugiV5fjQ2ho2QpGuvzeg9l8WIBfJh/t2xujmTObad3rgjWFPrbNy0xDmaQExqyAB5EnlBqhVdcTCcDA7tQ6iXB3u6foi+pzQnL/3sf1BSC5S5BAFPbAXJbZtWkeNuFX6f1CdtnzJ0sxGrZwByPqt/5WNvxGKG3lfC0r9a5tBkB6BVP86HygXWHWkQwq3HGJloF0T3vIEWt0=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(19092799006)(1800799024)(376014)(23010399003)(56012099006)(5023799004)(11063799006)(4143699003)(10067099003)(6133799003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?pZKm56j8UVawwSg3mvCOhF/XELvGcvZ0YZUZ7CAsmAQ5udvSp9fS6XKH+Yim?=
+ =?us-ascii?Q?EpPGgbcB4k9BAKKi3lzW21SCIkIEx8YFgTaG9afjLwzrcIPzyGkeBb085cQs?=
+ =?us-ascii?Q?TrlGrzUr3UP4+HLsFu/4k9mj6/HVgyN3BnMADKGNPTIdaH7mCK4sqY9joCLF?=
+ =?us-ascii?Q?GbIFtPtpfMUUVSMtCWzTmVQ8lSmRDmugfuhliv9aLsTPsmOPXYyd2kSkcSk+?=
+ =?us-ascii?Q?SAZDpQsA/XGZjs60WCZa5IhJXTJ4Tlm0dhpFA+9siMvl25iO2nfbUaWE3N25?=
+ =?us-ascii?Q?twHp+4Ql/TltHA+fI7vj6F86IcHbEIMQLyARg5V+j1b+sWW7MQd94qEkMgpH?=
+ =?us-ascii?Q?qyiX5niHVv5Dk3ets4d/cqFKRZb6dDW3cmuaXCUMIS8lTxkDsLMZIN1aKxzV?=
+ =?us-ascii?Q?cNimoidrsg5kotcf+p93mEwArg7ankFrhDOZkav9x3WMfnEyJVjMFw0sbWCG?=
+ =?us-ascii?Q?oP2D0214rKxi2EAHWo6fZ0u01EsO7MxRUTu/GK1C3ZyX9hTKNPkaQmzBqRIL?=
+ =?us-ascii?Q?5Niqrq87GDox2PvcdUrH3BHKgfKO4PVeJaZk+nL3Yc8DO6LbVJ7exAPyEbLe?=
+ =?us-ascii?Q?him/K+otSshPQM1ZKqS4/Rec/eMasUCSJ+Qsxxpfll82dSbnx7ndrdAxLQz5?=
+ =?us-ascii?Q?F8nhYGf5ltoaLyZ5dilthHLtXknOS3s/mgzRPDVrb6cRTfH/Cg3gEeNwb/aN?=
+ =?us-ascii?Q?3+06yCdVPHqNyT1fcEzX4oHmu7e+YW82JfOJWPNsmJ+6MiFcqrO8NJpIm4P8?=
+ =?us-ascii?Q?F/5St51oJXdX8BeYLKEp4waCeBbiQOZcJVP+Cbi6D0RsAIz4MToHc7JkpNED?=
+ =?us-ascii?Q?Vn+ZdB17+Z0Dle2adOmaUDUwYzs6b/YqrwJ8Zshw5jJTJ+RDUXR2zD5CEqE6?=
+ =?us-ascii?Q?8VZkYqY8Pq6MMsEafrp/0YF/PSGSLxK+KX0kZeaZCdNR37HHqQ3z7JTBN+rV?=
+ =?us-ascii?Q?nukMAsxyTgMv3hLS0wZgk2u7gSshn8hmAZq0sAX6EDD04m20phabK3WVLRIZ?=
+ =?us-ascii?Q?wc6/aRkZMvMZx5vTfe2PUe9z5RMKVyRNmq3/zOAI1sN640tAeac2bZDwFlDX?=
+ =?us-ascii?Q?rTo5oX/gqUE5c3kQ3ltKJFaND8D+qFKGgX9z+YzFO++ZZX2KEAe76IqmT2XK?=
+ =?us-ascii?Q?+qGcU88oji1rMPRy6iomX3/ay8mhDu9C3x8KWEBTdevjLrz3Z5QPpXWUQEay?=
+ =?us-ascii?Q?OEImGkbyJGwHj0TmjS+Gi2ZWDknJ/T9uXZNkoHhcDXymppx2+KTk+LstEvtl?=
+ =?us-ascii?Q?01x846JWsJDn8LdCvOhIYCvP/FLgHVAZtXmyJU6PWQiwdloCTJSWnDv+bdJe?=
+ =?us-ascii?Q?EDLlQ2ZgpWC14rDqNkk/l63eY5Vfp7+uFbL55F0HMCzefwKYKHIdhQp3wjfp?=
+ =?us-ascii?Q?8yOq126De49j0jH2IJPy8++B0TS7DZ74hQQyJvHF+EvF9k2Ht+2noaJktc2o?=
+ =?us-ascii?Q?9MXj+HuKbTzkaUzEzc8X5ItchZxUrFU36yp9nltfh/bY30rNfLr2nKB2tEEi?=
+ =?us-ascii?Q?c87DDrOBaPMP9NoNEo3PIrLDF6SGEjrKd6/0xd4+7xo/8BRaXbtSbSBfIYmb?=
+ =?us-ascii?Q?aTukvVu+5s0s2G45QXpDKE6dyefgb+80u6FwLkxc2fg5eqgtcMdlqvTcsOCt?=
+ =?us-ascii?Q?whwr+CfKpJ5+RL1DEwPv4UKGyPv2jVIM/861ctCjR6TKlP4vbpOQbdNXrk9C?=
+ =?us-ascii?Q?Yk6k2NUHOlLd7s+I5iZah1KUQpH5ir6yN0BK2AmS5ZHyEwKn0CyFNowuHUri?=
+ =?us-ascii?Q?nqQkbx0tzheWIqzmOm1erVarNrlvNizdW/5g9wgMzCGTM2WwguJg?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 63194c90-b6fb-45c3-ac7f-08def2753fcc
+X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Aug 2026 22:10:53.1445
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: fwl37Mywf8UesGlJK08mIZrIbiyspOU+2GTMEkP6yXUaRSTSjGv6IwsZ6oelGiUKB3e7ia2SfgR3g1gdvhZFgK6uj5xDk4gVgeaPSyIOx9tZ+tPlP+D0fIsAgF6peKX3
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR04MB7099
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260804_122843_706188_4EA3C8BD 
-X-CRM114-Status: GOOD (  22.35  )
+X-CRM114-CacheID: sfid-20260804_151058_528977_605C4693 
+X-CRM114-Status: GOOD (  33.83  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -145,111 +137,180 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Adrian,
+On Tue, Aug 04, 2026 at 07:50:35PM +0300, Adrian Hunter wrote:
+> On 04/08/2026 19:46, Frank Li wrote:
+> > On Tue, Aug 04, 2026 at 04:37:57PM +0300, Adrian Hunter wrote:
+> >> i3c_master_register_new_i3c_devs() registers newly discovered devices
+> >> while holding i3c_bus_normaluse_lock(), a down_read().  device_register()
+> >> can immediately probe the device, and probe callbacks typically invoke
+> >> I3C helpers that take i3c_bus_normaluse_lock() again, leading to a
+> >> recursive acquisition of the same rwsem.  rwsems do not support recursive
+> >> read locking and can deadlock when a writer is waiting.  See the
+> >> "Recursive read locks" section of Documentation/locking/lockdep-design.rst.
+> >>
+> >> For example, with Intel LPSS I3C, LOCKDEP generates a WARNING like:
+> >>   # echo intel-lpss-i3c.0 > /sys/bus/platform/drivers/mipi-i3c-hci/unbind
+> >>   # echo intel-lpss-i3c.0 > /sys/bus/platform/drivers/mipi-i3c-hci/bind
+> >>   WARNING: possible recursive locking detected
+> >>   kworker/5:1/94 is trying to acquire lock:
+> >>   ffff88811c810d78 (&i3cbus->lock){++++}-{4:4}, at: i3c_device_match_id+0x45/0x370
+> >>   but task is already holding lock:
+> >>   ffff88811c810d78 (&i3cbus->lock){++++}-{4:4}, at: i3c_master_reg_work_fn+0x21/0x5f0
+> >>
+> >> Fix this by separating device creation from device registration.
+> >> Populate desc->dev under the maintenance lock, collect the devices that
+> >> still need registration into a local list, then release the lock before
+> >> calling device_register().  Finally retake the lock and clean up any
+> >> devices that failed to register.
+> >>
+> >> Use the maintenance lock rather than the normal-use lock while adding
+> >> device objects.  A write-side maintenance lock prevents readers from
+> >> observing a partially initialized desc->dev during initial device
+> >> population, or desc->dev disappearing if registration fails.
+> >>
+> >> The local list requires a list node, so add a list node member to struct
+> >> i3c_device.
+> >>
+> >> Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
+> >> Cc: stable@vger.kernel.org
+> >> Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
+> >> ---
+> >>
+> >>
+> >> Changes in V3:
+> >>
+> >> 	Added Cc: stable@vger.kernel.org
+> >>
+> >> Changes in V2:
+> >>
+> >> 	New patch
+> >>
+> >>
+> >>  drivers/i3c/master.c       | 45 ++++++++++++++++++++++++++++----------
+> >>  include/linux/i3c/master.h |  2 ++
+> >>  2 files changed, 35 insertions(+), 12 deletions(-)
+> >>
+> >> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> >> index f485b98805cf..d2fb1a110521 100644
+> >> --- a/drivers/i3c/master.c
+> >> +++ b/drivers/i3c/master.c
+> >> @@ -2069,12 +2069,21 @@ static int i3c_master_early_i3c_dev_add(struct i3c_master_controller *master,
+> >>  static void
+> >>  i3c_master_register_new_i3c_devs(struct i3c_master_controller *master)
+> >>  {
+> >> +	struct i3c_device *i3cdev, *tmp;
+> >>  	struct i3c_dev_desc *desc;
+> >> +	LIST_HEAD(i3c_unreg_devs);
+> >>  	int ret;
+> >>
+> >>  	if (!master->init_done)
+> >>  		return;
+> >>
+> >> +	i3c_bus_maintenance_lock(&master->bus);
+> >> +
+> >> +	if (master->shutting_down) {
+> >> +		i3c_bus_maintenance_unlock(&master->bus);
+> >> +		return;
+> >> +	}
+> >> +
+> >>  	i3c_bus_for_each_i3cdev(&master->bus, desc) {
+> >>  		if (desc->dev || !desc->info.dyn_addr || desc == master->this)
+> >>  			continue;
+> >> @@ -2104,25 +2113,37 @@ i3c_master_register_new_i3c_devs(struct i3c_master_controller *master)
+> >>  		if (desc->boardinfo)
+> >>  			device_set_node(&desc->dev->dev, desc->boardinfo->fwnode);
+> >>
+> >> -		ret = device_register(&desc->dev->dev);
+> >> -		if (ret) {
+> >> -			dev_err(&master->dev,
+> >> -				"Failed to add I3C device (err = %d)\n", ret);
+> >> -			desc->dev->desc = NULL;
+> >> -			put_device(&desc->dev->dev);
+> >> -			desc->dev = NULL;
+> >> -		}
+> >> +		list_add_tail(&desc->dev->node, &i3c_unreg_devs);
+> >> +	}
+> >> +
+> >> +	i3c_bus_maintenance_unlock(&master->bus);
+> >> +
+> >> +	list_for_each_entry_safe(i3cdev, tmp, &i3c_unreg_devs, node) {
+> >> +		ret = device_register(&i3cdev->dev);
+> >> +		if (ret)
+> >> +			dev_err(&master->dev, "Failed to add I3C device (err = %d)\n", ret);
+> >> +		else
+> >> +			list_del_init(&i3cdev->node);
+> >
+> > Is it risk del node without acquire lock?
+>
+> The list head is local i3c_unreg_devs, and i3c_master_register_new_i3c_devs()
+> is not permitted to race with itself, by being called only from the work
+> function i3c_master_reg_work_fn()
 
-On 8/4/2026 7:08 PM, Adrian Hunter wrote:
+Add comments in struct list_head node; in case someone reuse it without
+lock at other place
 
-[...]
+Frank
 
-> @@ -117,6 +118,17 @@ static inline struct i3c_hci *to_i3c_hci(struct i3c_master_controller *m)
->   	return container_of(m, struct i3c_hci, master);
->   }
->   
-> +/*
-> + * Determine the device that does PM / DMA and has IOMMU setup done for it in
-> + * case of enabled IOMMU (for use with the DMA API).
-> + * Such device is either "mipi-i3c-hci" platform device (OF/ACPI enumeration)
-> + * parent or grandparent (PCI enumeration).
-> + */
-I was kind of confused and could not understand much (excuse me!). But 
-could draft below from function definition. I know comments removed from 
-below function and kept here.
-
-Hope this can be simplified or improved further if possible.
-
-/**
-* i3c_hci_sysdev() - Get the device used for system PM and DMA
-* operations
-* @dev: HCI device
-*
-* Return the PCI parent device when the HCI controller is attached
-* through PCI, otherwise return @dev itself. The returned device can
-* be used for system power management and wakeup configuration.
-*
-* Return: Device to use for system PM and wakeup handling.
-*/
-> +struct device *i3c_hci_sysdev(struct device *dev)
-> +{
-> +	return dev->parent && dev_is_pci(dev->parent) ? dev->parent : dev;
-> +}
-> +
->   static void i3c_hci_set_master_dyn_addr(struct i3c_hci *hci)
->   {
->   	reg_write(MASTER_DEVICE_ADDR,
-> diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
-> index 0672ed1132f8..7c2b20474130 100644
-> --- a/drivers/i3c/master/mipi-i3c-hci/dma.c
-> +++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
-> @@ -15,7 +15,6 @@
->   #include <linux/errno.h>
->   #include <linux/i3c/master.h>
->   #include <linux/io.h>
-> -#include <linux/pci.h>
->   
->   #include "hci.h"
->   #include "cmd.h"
-> @@ -301,23 +300,11 @@ static int hci_dma_init(struct i3c_hci *hci)
->   {
->   	struct hci_rings_data *rings;
->   	struct hci_rh_data *rh;
-> -	struct device *sysdev;
->   	u32 regval;
->   	unsigned int i, nr_rings, xfers_sz, resps_sz;
->   	unsigned int ibi_status_ring_sz, ibi_data_ring_sz;
->   	int ret;
->   
-> -	/*
-> -	 * Set pointer to a physical device that does DMA and has IOMMU setup
-> -	 * done for it in case of enabled IOMMU and use it with the DMA API.
-> -	 * Here such device is either
-> -	 * "mipi-i3c-hci" platform device (OF/ACPI enumeration) parent or
-> -	 * grandparent (PCI enumeration).
-> -	 */
-> -	sysdev = hci->master.dev.parent;
-> -	if (sysdev->parent && dev_is_pci(sysdev->parent))
-> -		sysdev = sysdev->parent;
-> -
->   	regval = rhs_reg_read(CONTROL);
->   	nr_rings = FIELD_GET(MAX_HEADER_COUNT_CAP, regval);
->   	dev_dbg(&hci->master.dev, "%d DMA rings available\n", nr_rings);
-> @@ -332,7 +319,7 @@ static int hci_dma_init(struct i3c_hci *hci)
->   		return -ENOMEM;
->   	hci->io_data = rings;
->   	rings->total = nr_rings;
-> -	rings->sysdev = sysdev;
-> +	rings->sysdev = i3c_hci_sysdev(hci->master.dev.parent);
->   
->   	for (i = 0; i < rings->total; i++) {
->   		u32 offset = rhs_reg_read(RHn_OFFSET(i));
-> diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
-> index b3d9803b1968..b8d2a3d680f8 100644
-> --- a/drivers/i3c/master/mipi-i3c-hci/hci.h
-> +++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
-> @@ -184,6 +184,8 @@ void amd_set_resp_buf_thld(struct i3c_hci *hci);
->   void i3c_hci_sync_irq_inactive(struct i3c_hci *hci);
->   int i3c_hci_process_xfer(struct i3c_hci *hci, struct hci_xfer *xfer, int n);
->   
-> +struct device *i3c_hci_sysdev(struct device *dev);
-> +
->   #define DEFAULT_AUTOSUSPEND_DELAY_MS 1000
->   
->   int i3c_hci_rpm_suspend(struct device *dev);
-
+>
+> >
+> > Frank
+> >
+> >> +	}
+> >> +
+> >> +	i3c_bus_maintenance_lock(&master->bus);
+> >> +
+> >> +	list_for_each_entry_safe(i3cdev, tmp, &i3c_unreg_devs, node) {
+> >> +		list_del(&i3cdev->node);
+> >> +		desc = i3cdev->desc;
+> >> +		i3cdev->desc = NULL;
+> >> +		put_device(&i3cdev->dev);
+> >> +		desc->dev = NULL;
+> >>  	}
+> >> +
+> >> +	i3c_bus_maintenance_unlock(&master->bus);
+> >>  }
+> >>
+> >>  static void i3c_master_reg_work_fn(struct work_struct *work)
+> >>  {
+> >>  	struct i3c_master_controller *master = container_of(work, typeof(*master), reg_work);
+> >>
+> >> -	i3c_bus_normaluse_lock(&master->bus);
+> >> -	if (!master->shutting_down)
+> >> -		i3c_master_register_new_i3c_devs(master);
+> >> -	i3c_bus_normaluse_unlock(&master->bus);
+> >> +	i3c_master_register_new_i3c_devs(master);
+> >>  }
+> >>
+> >>  /**
+> >> diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
+> >> index 2dc139a217bf..2b96c4ea75fb 100644
+> >> --- a/include/linux/i3c/master.h
+> >> +++ b/include/linux/i3c/master.h
+> >> @@ -238,6 +238,7 @@ struct i3c_dev_desc {
+> >>   *	  every time the I3C device is rediscovered with a different dynamic
+> >>   *	  address assigned
+> >>   * @bus: I3C bus this device is attached to
+> >> + * @node: unregistered device list node
+> >>   *
+> >>   * I3C device object exposed to I3C device drivers. The takes care of linking
+> >>   * this object to the relevant &struct_i3c_dev_desc one.
+> >> @@ -248,6 +249,7 @@ struct i3c_device {
+> >>  	struct device dev;
+> >>  	struct i3c_dev_desc *desc;
+> >>  	struct i3c_bus *bus;
+> >> +	struct list_head node;
+> >>  };
+> >>
+> >>  /*
+> >> --
+> >> 2.53.0
+> >>
+>
 
 -- 
 linux-i3c mailing list
