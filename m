@@ -4,36 +4,36 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8A9F4C5518F
-	for <linux-i3c@archiver.kernel.org>; Tue,  4 Aug 2026 10:14:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9DEBDC55172
+	for <linux-i3c@archiver.kernel.org>; Tue,  4 Aug 2026 10:14:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SZXAR37YatT4ockD695WdsK6EprO2PQBcgASgtfjWFM=; b=fYNrNs6naNxHs/
-	kBExLfE9AvzJLsfc6e3GbI/iU/g0F2Y9xevl6Kxhn3eZcZJsINuqsRZ+eEujDfLE1D5zbngY45Zrh
-	AdIpYHvRI2LeqsFtMJqIu7wSyDy5xUlTI2Aw5vxDL2KqYoJ2HZg4UPa94L4iXE/gnbS8WifC00uI/
-	UZViLtuxwPxPh8dVhUgyvjF9edAKr0MdYvq3GorcKxRidut91UGZKo5hhermlvKecplkPZytqGaHw
-	hAiivdzk7pIRHz/6if3QnR8VmkKv3l+OVUGq8015qLt2GqxUBXmYCEu+3u5VdpCRjFaP41DgGtGZJ
-	AYFKSC+2/5SmQm0NDtKg==;
+	List-Owner; bh=GFYuDT8aVv9KxsVr3iaVr99BT+2iEIa+0b5yZdRGeCg=; b=kk6vgxGnUxg+xi
+	fcpsG2ImegIS+JEZcYnmcxKwYTg0IRLSO+bJlnqf8n4Fijfcbe7pEdZgmKeiKH2eF7Mrq8wbBQ4zu
+	1Zue+u4LP+ykukzOhkLH6BuwZzae9No6VCp5yEFdUR1Uf5OsqKPYD8yeiwXKMYNs/FJn+6Ewugn2o
+	vzaip6ZfD9K3hMeOq/KNcfOY0kXDkzF2SZ1ttid4AFFvnAGS6QMA7TkkRGYAFwBiEuGz9UmXz5REX
+	Ol7m25GMKjjUJ0oORJBJng9XZe9wJMD52GWVpthFLE8zkp4ftSHz/PwXqSY/Ma8/YrKjj+IJNrKkR
+	UWXcIIYkSyKQD7/eOLQg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrC9r-00000001Wmx-1602;
-	Tue, 04 Aug 2026 10:14:03 +0000
-Received: from mail-centralusazon11010033.outbound.protection.outlook.com ([52.101.61.33] helo=DM1PR04CU001.outbound.protection.outlook.com)
+	id 1wrC9s-00000001WnN-1S68;
+	Tue, 04 Aug 2026 10:14:04 +0000
+Received: from mail-southcentralusazon11013044.outbound.protection.outlook.com ([40.93.196.44] helo=SA9PR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrC9o-00000001Wm4-37O3
+	id 1wrC9q-00000001WmX-0tc4
 	for linux-i3c@lists.infradead.org;
-	Tue, 04 Aug 2026 10:14:02 +0000
+	Tue, 04 Aug 2026 10:14:03 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=qR0r3GxC1srWlrFirVS5RigPrHITMhVS6rcJhTzJF06uqkJURTMJn+/9KrAOQbYYQagQnkFp4NhoXVOZuNGrFDvhCDdz/xtMuFNS35zXpVOXQB1zEsR//J6cRUCgdZjDZfbatV2F+LtXuPG/wZgTTaIYKPb5XaYULB/hkf17HDnBYwPATHmx9191fLEmBG1AKQ0blANanhqGC3YcFlMowLr5wonium0JM6gzAX0DnTJpgvMJU8quVlG8YnBQY+1wr0vxXZ5SzIQSSD3b4OwdszNWEP1Ot5eqt3op9Bm+2pNWgcWEmPJ1C5e3A3X+YxI4PJbun1s2GUm0n9pXBQpBWg==
+ b=FqhNoj49/qRwNII30w0oEcGjsDbiLGmWjUsyfCvWjiomh8wahi2zmp9ZPFellV2YEQF+zm3qH2DUf8YI7e0tCLSb/KXfsXeA4lyJlma0tw3rtFK0S7mr+ZlaAx1ad8CLzeNKZ3pbAsszmn4mtL7NJI49uo7TH7uKMkriFUOVijaizai1GzvA+cx7OexG1IM35RdBdc6RJjmhf9ZnlZ7PUT1eMc06wVlwdQzAfRm9Eyoce+/hSL2oYk00k0D522TGfF/pKC4WQmC5vCzIpw6Eiz/P6b0OXte63JOYW00GrUiqKoqcdG5nuemdSfcbN7PCoOapnhHbwhBYKqFzArqX3g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=ev2cf9LjZQbzdoul9Oqi6NMr67KFyKnHZBAAuVifTRE=;
- b=hgZZ4KndGZzrqm4mUninCrSYi8uGwendNw1OFSAokR2gt6VS74AqUXzqGT3cK7cvEXYvOzXOydyv8jSP5+ESDZkUMWoit4sr6J5FXzcXRz8L9U+lTYUdGffl4cFSG+GmTWWhtPDKdxkf2iuNN7j93piblCZHAwPwHuBT2AFa9Cv6MJYfU7/BtWrcJ8cNKIcL/VpUgUu5h42UvU5NNzCyEyRjOuw0OLPpgA3S0QpTgJQ8DlyPou7rMnTwr7jY1LINnHj/fZNByli7MRWrqYHlx1fE0Y6OFIbxTE+Fl2MYh2AcIpw/zLVAvQRAwf59V8gGHoPSzSkaWtU6JH+2Xa9Waw==
+ bh=u03ONxPYKfKnAR15K8uSlEqYVMj6IuyVyPSmp+8yqGw=;
+ b=nbEx2wmwERJzI0s11zyCdpyrHBaok4/ytmxpvFemuQdAfzslC73MewjLvD+Ri5XrW7fFCx+VsKL5TC/yy9fwysuTTVJYSli1/2XDAtv2yKs8nxBVqoxbAC5Qa+Tkh72kp3DPM6OoaE1tXD/fEgaL+CAXh2VOpC/VUmmoLtvmmeaXsFBd7BBs1mRMVzNhGrLDPMpy0K8lhheMzTXWPLmC0Ma2wkF6Yg9RSxPfoj1NVCpz+snuBTPwQ5JD387eqkfzvjAn7MjGUda6jU7R6T4rQwIgOIFe1AeeYPECwR7nbh24wnffn3kwRJN162YXhe9JRpLKMY7PelSacJbfwWVhRQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  216.228.117.160) smtp.rcpttodomain=bootlin.com smtp.mailfrom=nvidia.com;
  dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
@@ -41,18 +41,18 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ev2cf9LjZQbzdoul9Oqi6NMr67KFyKnHZBAAuVifTRE=;
- b=RZ9/NdBblOrp8DWy+taRLl28HHJfQSFUg6sL/Kk6FPRu6mKk4IpkiQL9y89MjYzKZ6rzi2qi0JGpBPem7TSOlDJ3leaXDIoB7RwjhhZir3Ydk0qMfb+gwjsJpbatkGM4mEdwAJiIejeKBXrPERbO5azkeJ9tg/XiWKPQInSH7BZBY+C9ROwtKTfPgvo0tau46H6Zt5K9BadKPnXxHdWpY+JXjNq8ZsFr4IxT1TXnT98oxEhKWAyzVlu0ph9kZ2YyuKpHyRxj3mciZpVGwkEFAgnPea/DwFemMextPUo8s1bRMfb5s9HM/w5MWF1Rs9Lj7RZwzL6wW+nmgQ4Rbx5Kew==
-Received: from BN9PR03CA0071.namprd03.prod.outlook.com (2603:10b6:408:fc::16)
- by CYYPR12MB8962.namprd12.prod.outlook.com (2603:10b6:930:c4::13) with
+ bh=u03ONxPYKfKnAR15K8uSlEqYVMj6IuyVyPSmp+8yqGw=;
+ b=BPalbaSf4H8tMvK1GM+3QRFwq3BBcTxys0cdi9PMLLtZ6hKm3PZCACTDnFIdbOzHB7G/RZ7/sKpEq++NsMvb6x62zgNhHYQpm5/L7buNB3u1N+S3kHE/8tiL2rS9AH8Fopt7o7FIyra64O9PnwANnP9OjiyJBLwhprbWPGx+aqF3GGGG/Or7As/kLFocHaQwbRcJcP18ZoH93WhP5HqHYS+n6Kzs1x0pmCZBNaz7d3S4IxrVF7icJJ/nP6viK2H79ScyN0ZY9zKmXfM2NTjV1xx5EDuWml7k/aOKILU0mEkU34RIOcyn24V/WxAooRJkT9OdYwMhb2jRZyYq+y9tkg==
+Received: from BN0PR04CA0197.namprd04.prod.outlook.com (2603:10b6:408:e9::22)
+ by CH3PR12MB8852.namprd12.prod.outlook.com (2603:10b6:610:17d::14) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.270.18; Tue, 4 Aug
- 2026 10:13:47 +0000
-Received: from BN2PEPF000044A3.namprd02.prod.outlook.com
- (2603:10b6:408:fc:cafe::49) by BN9PR03CA0071.outlook.office365.com
- (2603:10b6:408:fc::16) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.270.18 via Frontend Transport; Tue, 4
- Aug 2026 10:13:47 +0000
+ 2026 10:13:52 +0000
+Received: from BN2PEPF0000449D.namprd02.prod.outlook.com
+ (2603:10b6:408:e9:cafe::3b) by BN0PR04CA0197.outlook.office365.com
+ (2603:10b6:408:e9::22) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.292.16 via Frontend Transport; Tue, 4
+ Aug 2026 10:13:52 +0000
 X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
  smtp.mailfrom=nvidia.com; dkim=none (message not signed)
  header.d=none;dmarc=pass action=none header.from=nvidia.com;
@@ -60,28 +60,29 @@ Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
  216.228.117.160 as permitted sender) receiver=protection.outlook.com;
  client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
 Received: from mail.nvidia.com (216.228.117.160) by
- BN2PEPF000044A3.mail.protection.outlook.com (10.167.243.154) with Microsoft
+ BN2PEPF0000449D.mail.protection.outlook.com (10.167.243.148) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.292.8 via Frontend Transport; Tue, 4 Aug 2026 10:13:46 +0000
-Received: from rnnvmail201.nvidia.com (10.129.68.8) by mail.nvidia.com
+ 15.21.292.8 via Frontend Transport; Tue, 4 Aug 2026 10:13:52 +0000
+Received: from rnnvmail204.nvidia.com (10.129.68.6) by mail.nvidia.com
  (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.45; Tue, 4 Aug
- 2026 03:13:32 -0700
-Received: from rnnvmail201.nvidia.com (10.129.68.8) by rnnvmail201.nvidia.com
- (10.129.68.8) with Microsoft SMTP Server (version=TLS1_2,
+ 2026 03:13:38 -0700
+Received: from rnnvmail201.nvidia.com (10.129.68.8) by rnnvmail204.nvidia.com
+ (10.129.68.6) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Tue, 4 Aug
- 2026 03:13:32 -0700
+ 2026 03:13:37 -0700
 Received: from build-akhilrajeev-noble-20260602.internal (10.127.8.11) by
  mail.nvidia.com (10.129.68.8) with Microsoft SMTP Server id 15.2.2562.20 via
- Frontend Transport; Tue, 4 Aug 2026 03:13:30 -0700
+ Frontend Transport; Tue, 4 Aug 2026 03:13:35 -0700
 From: Akhil R <akhilrajeev@nvidia.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
 	<Frank.Li@nxp.com>, Adrian Hunter <adrian.hunter@intel.com>, Akhil R
 	<akhilrajeev@nvidia.com>, <linux-i3c@lists.infradead.org>,
 	<linux-kernel@vger.kernel.org>
-Subject: [PATCH 2/5] i3c: master: Fix refcount of i3c fwnode
-Date: Tue, 4 Aug 2026 10:12:58 +0000
-Message-ID: <20260804101301.2975911-3-akhilrajeev@nvidia.com>
+CC: Sashiko AI review <sashiko-bot@kernel.org>
+Subject: [PATCH 3/5] i3c: master: Do not release the addresses when reattach fails
+Date: Tue, 4 Aug 2026 10:12:59 +0000
+Message-ID: <20260804101301.2975911-4-akhilrajeev@nvidia.com>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20260804101301.2975911-1-akhilrajeev@nvidia.com>
 References: <20260804101301.2975911-1-akhilrajeev@nvidia.com>
@@ -89,28 +90,28 @@ MIME-Version: 1.0
 X-NV-OnPremToCloud: ExternallySecured
 X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BN2PEPF000044A3:EE_|CYYPR12MB8962:EE_
-X-MS-Office365-Filtering-Correlation-Id: addd7646-b7ca-48c9-126f-08def211127d
+X-MS-TrafficTypeDiagnostic: BN2PEPF0000449D:EE_|CH3PR12MB8852:EE_
+X-MS-Office365-Filtering-Correlation-Id: d6f44d16-d1b3-4ed5-cc19-08def211159c
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|36860700016|23010399003|376014|1800799024|56012099006|10067099003|11063799006|22082099003|18002099003;
-X-Microsoft-Antispam-Message-Info: zunJyVq450+GXid+6Xy4x+9JRpigyBOk7537lChlcyyXMCde5pzivJIhN5iN3l7j7x8p1nC7pa2xc+kWbNIgmE6tV7jIr+B10fn7IAJokHzFeMjXd20zmcZ5pu+6ibBt9EyrLKNNpMeUDSyN2vpA+7BjcvYyhxaGeY/AGodB2BrUr7MwtvTgbhUlnUChI+1CkG1Yg34/RRPUOm9pmgdpQKB5i/W8vIKZqLVKkhTaLuc9XK7JXRfcxszUWytixkUB/hwNe1qP5xKRN8wPR8ONgtnnXPBgAxkSBuZ1Q2xcQcgqAAVBPq5/dr6VBIkV8nRXNpPMefl3KcDUUmQUJ+gfoLLg5aomEwyNEmpuAXBeaVLxxd9S6u3FQwgEPiv5gRiyQKILpSgnLk3iGMgR7nDBprGuTxbDuXCImWadJmcBj/wbHL94A7POmILsYmhTBuK21X962XgirEfIZ8eNsQGWW8Vi2iBiFnbAMlytzwr6LMJ2IZFnQ4GCFHsDinItLOXBCyKOC5JJt6f2EijiYaYZq9On+yvmP+0Ds75cJNyIugixen2L3UYjAGMSmCXoNIePs7pZKlklVlPgXOLYRTmOJaiyJSKzTDAD4xLVMIL8/fQXEkUtho1ak4gQocLkmhsyXHczaXPplsutrTT3KRhfGL9RokNxOkIMMoPkXL3YFtNNtjlstSuJuyuJI6Pg4uyorcwdtW0mFMjmfdiPpRSsSg==
-X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(82310400026)(36860700016)(23010399003)(376014)(1800799024)(56012099006)(10067099003)(11063799006)(22082099003)(18002099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|1800799024|376014|36860700016|23010399003|18002099003|22082099003|11063799006|56012099006|13003099007|6133799003|10067099003;
+X-Microsoft-Antispam-Message-Info: hsDDr8wYDn4T8OE4+O/RHd+0E3zL0vULA7d8/xlMEUnnMkjIbN2ST+3evBmAIWfPgi0MZX1d3yjgIrVRboxKAsDeMHBx2nDtRiEAcUCd0pyGAKT7awt9n5SH87PQtL7NuXa+TuKkCLipbyD8mf+Rk5uI3tsGX1ZaibroivX8n2HtOsRXk/EOA4teT6/agPfCjzZgO5badi5Pg8R0LGP2XDv9/VVog+6yCgZTJaEG5I9Pl5oGk004zoCsDl0FQYuvkLDtZeYbulThD/Z2N2RGjB8p9k5bLJYAN+DKl2fV9XjPD4x8gBQwI3tqAat3mXCrF7FObz6srkd1Ge0rSYJg2ihwXuWFpSTf28WgSkwFpf9i2TBpJ7IaVcJgvrpsO6eTbDEXmfe6/zY9JtOo8YBHjSljZ5YRu3CytL+NVmao0Wm7pC/LgURXstWm7MJ0Da6/Sx4g3mu5nVmmLkceeRb9eZDDryKBPdAI7s1c3cNAUmU/vXlhAVZFh01Snhuy1OgVWSfe8rrVpVV0ti2Bk8WZxxM9gbvuqrU+rg64Ctz/x58Hp2opdWY71n+2I2lR8gB3EYFd2uxjtHx8+707poYaRdvQhenU6Q4D2OxhWx2P0g0INt9N/fEaGrSTWxep6mjdrsFoeedStGSmvsxRoA0QrnyMa8Ds+EgZFe6FlB2QYZicqSAITRl2exmDTnR5zNH89B5UAGuEeaP9/H4l/vU5DQ==
+X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(82310400026)(1800799024)(376014)(36860700016)(23010399003)(18002099003)(22082099003)(11063799006)(56012099006)(13003099007)(6133799003)(10067099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: PUqg9Dl9ltNfDTD///9pA+HpCGO2xfuyaNcrIMQU5UkbaOSL1NSNc88RcS705BuAqgcSrU7j5BQx5N16Q7otD50vHThDCwhRRuxGzE7/xiLSRsC8s68eb5dy2TQxctHQ+CoQfsUbEUsMVILOxyDs6gQCQjxI1Nb+sVZ+OSIntrbg+FTUySI5VHYJdsMMkXqSiIKz9CKWDzgWWy47IcwP1/PvHc8hv8vt8vrUkh6uI63HiPLYG9KoB2BprUswELOLhwLGLkCvaEKhO2y0KTvI0ollMJ7B9FUL4aW6q+no3i2WakvPPfh+Gs8nUgr3bmz7YWPuiMNmljkVDTrmuH+X5ykCJPE/EX9zQTX3L6P6PERXw9c74YwMbZoXoTcPS9OcFQ5LirfJS1vs9Xh3LsEZQ8ARUBUDpNGdxEOLc8XrI4zkLEzzuH4iUZZR7ySKuMAc
+X-MS-Exchange-AntiSpam-MessageData-0: fd9i1qI2SNjgpLzHwSusSVfVfODgl+AaCeQe8tMWR2YcW8eiSXflGbwzAt0FGth/cyrkvjj/8kodSfDdxXnK0oleYx61Q1OrjXvUWfNz40gxjkEI93J2U45Hl6yF/SvjWwDpssaFQkiDIhw9YX4NX3nY0l0gPBX/1WSOW5+7095kWwYI5ZP2DYyX3fzeEe4WwlYj+S7ovz2fCr4IkvwG5kWr84zLtXCgzN/4NIcUYSc85sYvYm9OWTkNL4UilYthw+ixMPCLizfrTyEtulFCzZFhq+LJ9hadOAvtAwOVwEqh5UkunbwUYbqCXj2xnzAnQJbrBFLaeXW9waxWWK08kiZ4EqGfZKNC0sDCm3nizGf+rl+kpoyzGMssVK7BALRXQ/ytBrn2/BaX6nni4NH47A8OJD3pon7bmpLKPkbrqFjEJ6MRDUUTjJMpFjYWv1Ol
 X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Aug 2026 10:13:46.9875
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Aug 2026 10:13:52.2293
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: addd7646-b7ca-48c9-126f-08def211127d
+X-MS-Exchange-CrossTenant-Network-Message-Id: d6f44d16-d1b3-4ed5-cc19-08def211159c
 X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
-X-MS-Exchange-CrossTenant-AuthSource: BN2PEPF000044A3.namprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthSource: BN2PEPF0000449D.namprd02.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CYYPR12MB8962
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH3PR12MB8852
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260804_031400_786582_BB87333D 
-X-CRM114-Status: GOOD (  12.58  )
+X-CRM114-CacheID: sfid-20260804_031402_254023_AF3B61D3 
+X-CRM114-Status: GOOD (  12.95  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,56 +128,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-i3c_master_add_i3c_boardinfo() takes a reference on the firmware node of
-every i3c child described for the bus and never drops it, while
-i3c_device_release() drops one that the device never took, as
-i3c_master_register_new_i3c_devs() assigns the node of the boardinfo as
-is.
+i3c_master_reattach_i3c_dev_locked() releases the address slots of the
+device when the controller callback fails, even though the target keeps
+responding to its dynamic address on the bus.
 
-The two mistakes cancel out for a device that is registered exactly once,
-which is why the imbalance goes unnoticed. Register it again, as happens
-when the bus is re-initialised, and the count underflows, so the node may
-be freed while the boardinfo still refers to it. A child that never joins
-the bus leaks its reference instead.
+i3c_master_early_i3c_dev_add() cannot take that address back afterwards.
+It jumps to err_rstdaa to reset the target, but i3c_master_rstdaa_locked()
+only accepts an address that is marked as assigned. It rejects the request
+with -EINVAL and sends no CCC, leaving the target responding to an address
+that the core considers free and hands out during dynamic address
+assignment.
 
-Take a reference where the node is handed to the device, so that the one
-the release callback drops is balanced, and drop the reference of the
-boardinfo with a device managed action, as it is done for the i2c
-boardinfo.
+i3c_master_reconcile_dyn_addrs() ignores the return value, so the device
+stays attached and in the bus list at the address that SETNEWDA just
+assigned to it, while the core is free to give the same address to another
+device.
+
+Leave the address slots to the callers. Those that cannot use the device
+any longer detach it, which releases the slots in
+i3c_master_detach_i3c_dev().
+
+No in-tree controller fails its ->reattach_i3c_dev callback today, so
+there is no known trigger for this. It is a robustness fix for the error
+path only.
 
 Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
-Reported-by: Adrian Hunter <adrian.hunter@intel.com>
-Closes: https://lore.kernel.org/all/97465893-3650-4f37-98b7-1db76fc6fd03@intel.com/
+Reported-by: Sashiko AI review <sashiko-bot@kernel.org>
+Closes: https://lore.kernel.org/all/20260721043058.C02B31F000E9@smtp.kernel.org/
 Assisted-by: Cursor:claude-opus-5
 Signed-off-by: Akhil R <akhilrajeev@nvidia.com>
 ---
- drivers/i3c/master.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ drivers/i3c/master.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
 diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 08dc10f172aa..568788e4cdb5 100644
+index 568788e4cdb5..23557ca2df68 100644
 --- a/drivers/i3c/master.c
 +++ b/drivers/i3c/master.c
-@@ -2102,7 +2102,8 @@ i3c_master_register_new_i3c_devs(struct i3c_master_controller *master)
- 				     desc->info.static_addr);
+@@ -1944,10 +1944,8 @@ int i3c_master_reattach_i3c_dev_locked(struct i3c_dev_desc *dev,
  
- 		if (desc->boardinfo)
--			device_set_node(&desc->dev->dev, desc->boardinfo->fwnode);
-+			device_set_node(&desc->dev->dev,
-+					fwnode_handle_get(desc->boardinfo->fwnode));
+ 	if (master->ops->reattach_i3c_dev) {
+ 		ret = master->ops->reattach_i3c_dev(dev, old_dyn_addr);
+-		if (ret) {
+-			i3c_master_put_i3c_addrs(dev);
++		if (ret)
+ 			return ret;
+-		}
+ 	}
  
- 		ret = device_register(&desc->dev->dev);
- 		if (ret) {
-@@ -2994,7 +2995,8 @@ i3c_master_add_i3c_boardinfo(struct i3c_master_controller *master,
- 	boardinfo->fwnode = fwnode_handle_get(fwnode);
- 	list_add_tail(&boardinfo->node, &master->boardinfo.i3c);
- 
--	return 0;
-+	return devm_add_action_or_reset(dev, i3c_master_put_boardinfo_fwnode,
-+					fwnode);
- }
- 
- static int i3c_master_add_of_dev(struct i3c_master_controller *master,
+ 	return 0;
 -- 
 2.43.0
 
