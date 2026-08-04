@@ -4,177 +4,173 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 82155C55822
-	for <linux-i3c@archiver.kernel.org>; Tue,  4 Aug 2026 16:50:52 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF2CAC55822
+	for <linux-i3c@archiver.kernel.org>; Tue,  4 Aug 2026 16:53:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:CC:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	References:To:Subject:Date:Message-ID:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=/LbgF8gVd5rOj0ymSGVRSwV2Fgx2viWj7tA5Pp2bnjg=; b=q8gsjtLeAuAbJMx4Bio41hk1+V
-	pO32AIAcu1NXY9NXsLisAC9YBgdPX12iJyJW8oI5OEn0MF9conCdtjYjs9rcL6zSdfj0Ony9QZnNn
-	X32nAqljXEMxlCMsBrSL9x1DxYm416GENoIv6ze4oc32SxOmxs7OkK4iRLu7sH2GvpjaZc9Lw37Wh
-	O1xY8Odf8HpOR9jC7frL8J/+eJzDjPThClKNDyJGyr9B284xfjGM0dz1iJ0JUNYLzEUWEsNORYVSC
-	FBIATmlkuQUKHRypyPJGooGC3squxw1RAtZyK3b5B7h0RWZhJAnku24IT3ITq4/o222nWaHH1D0oT
-	4bpy5Oww==;
+	bh=cKVvOzIcwXjZMyK/g/mV56ro9Hyif/NuwNCp6iCzp14=; b=C136/WdVCQc0Wf4HZf6GQr628x
+	l2NISAyOWelPDDxItp1qw99bHtcWoRa6JmMIZ+imSJ/FL5BpsTeMYcnGlTzFW4PdoyNFpJPzHc7yn
+	bZABHlJ5glau+TXpLEVHgqVdlHl6QplovwrG83GVAxf5Nn8f0Dg1hw8V8UD+2PHcFdOrUi75Glk2Z
+	pSQAjo8UaDOxssaem9BW9vSxTyXrRoGep6vYs28neWb78TmYQkaMugmxM3kdzFGfHUFdR854abAaW
+	Hk1MBeKDXILSdJ7FAbWP5qcp9NPm9pZqxz4U+SCfo14Vh0XyIuuBmFVuhMdoJJh5Ve537b5S7hOZ0
+	nP80Qdgw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrILs-00000002OUh-10jo;
-	Tue, 04 Aug 2026 16:50:52 +0000
-Received: from mgamail.intel.com ([198.175.65.18])
+	id 1wrIOE-00000002OoK-2ZOB;
+	Tue, 04 Aug 2026 16:53:18 +0000
+Received: from mgamail.intel.com ([198.175.65.12])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrILp-00000002OTj-0UJA
+	id 1wrIOC-00000002OnX-073v
 	for linux-i3c@lists.infradead.org;
-	Tue, 04 Aug 2026 16:50:50 +0000
+	Tue, 04 Aug 2026 16:53:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1785862249; x=1817398249;
-  h=message-id:date:subject:to:cc:references:from:
-   in-reply-to:content-transfer-encoding:mime-version;
-  bh=ZL7jAiTigAaAReaQxNOIuumzV4GUCQhHN4LFx39JAqk=;
-  b=D2731jJbA2x7aiiQVBliezQZmjMND5nhDJCcxySFt2btMZK7xNx9yUF8
-   nswV9UEB+QiSyVrL2fNrU9T3n67JqSPqLJTwbZdF+em/A06parvgUg69M
-   WbvdRMVUCdiYUz0H4CIzQUrzLJ7YNZYC7tPKSA8EqOHxnugGkVN92omxs
-   b5RMWhdQvCSW73c4TiGveyMzCRP5SgLPATmMlIZTol8EUZlArFCtISPxC
-   9owD4GHNDRZ0pXEONycPUwMFLsbzMS+XhGMxvwRCiXmeYw75cTfB7IbJT
-   SHsPqNOpzIhH6NWU7/NCBTRGXWqIDN5NT0qQWKTbGUbNlGAr8LeuYWm22
-   w==;
-X-CSE-ConnectionGUID: 6dSE9XMyRvCooF84HtYCLQ==
-X-CSE-MsgGUID: NEMndjRMSz+fROB2qMCnlw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11865"; a="86497527"
+  t=1785862396; x=1817398396;
+  h=message-id:date:subject:to:references:from:in-reply-to:
+   content-transfer-encoding:mime-version;
+  bh=w+iowspVZeyhal72PYFZ33mAiW9Ltx6NxhTDUtfIVAI=;
+  b=C2HBdfXfkBGaKTIsBOPQeEt/CZMwRODAxwfuDQdMBjSCGEEZMxo7vqzg
+   0M6w3FpScaxVHRL6dnWwS8doCuIhmCdCPcVZLrilqEnvjYSR18SQ51LKi
+   VzvUI2jqOHPJViw3pP4VTNbkPthcQc40pA+EJaNrT+zchHiK0ZqCtXbYY
+   KQ77M1sadlH2/pwsLLAS/a7DqMTZwMCfCkay0SfBzBv1tYtksmWFn8qaO
+   ZdMjlP4bTFcJTvhlqKX7kLqxacKMFdbU0yx4z2TYXRXgymewYsV3ny/lY
+   kSh4ntRMwaDozntTf/NDfnKo2kBI2sx2SX9zBCYx+k7l3cZZktUqJ+Xlc
+   A==;
+X-CSE-ConnectionGUID: hcgN6CIcT2CIUsjutREk2g==
+X-CSE-MsgGUID: W6SBpblZTPSz6ZwQf9YK8g==
+X-IronPort-AV: E=McAfee;i="6800,10657,11865"; a="97925640"
 X-IronPort-AV: E=Sophos;i="6.25,204,1779174000"; 
-   d="scan'208";a="86497527"
-Received: from fmviesa006.fm.intel.com ([10.60.135.146])
-  by orvoesa110.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Aug 2026 09:50:49 -0700
-X-CSE-ConnectionGUID: fYU3N9uHRiOkuYTJQG63Ig==
-X-CSE-MsgGUID: AqWYI8mZQ9iABCopLzaFkA==
+   d="scan'208";a="97925640"
+Received: from orviesa003.jf.intel.com ([10.64.159.143])
+  by orvoesa104.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Aug 2026 09:53:15 -0700
+X-CSE-ConnectionGUID: Qha5R5PCRN+2Bpo+iEc/QA==
+X-CSE-MsgGUID: xKPiKHkaSkKuCj+YPPYKYA==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.25,204,1779174000"; 
-   d="scan'208";a="257236264"
-Received: from orsmsx902.amr.corp.intel.com ([10.22.229.24])
-  by fmviesa006.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Aug 2026 09:50:48 -0700
-Received: from ORSMSX901.amr.corp.intel.com (10.22.229.23) by
- ORSMSX902.amr.corp.intel.com (10.22.229.24) with Microsoft SMTP Server
+   d="scan'208";a="265064255"
+Received: from fmsmsx903.amr.corp.intel.com ([10.18.126.92])
+  by orviesa003.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 04 Aug 2026 09:53:14 -0700
+Received: from FMSMSX901.amr.corp.intel.com (10.18.126.90) by
+ fmsmsx903.amr.corp.intel.com (10.18.126.92) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.45; Tue, 4 Aug 2026 09:50:47 -0700
-Received: from ORSEDG901.ED.cps.intel.com (10.7.248.11) by
- ORSMSX901.amr.corp.intel.com (10.22.229.23) with Microsoft SMTP Server
+ 15.2.2562.45; Tue, 4 Aug 2026 09:53:14 -0700
+Received: from fmsedg903.ED.cps.intel.com (10.1.192.145) by
+ FMSMSX901.amr.corp.intel.com (10.18.126.90) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.45 via Frontend Transport; Tue, 4 Aug 2026 09:50:47 -0700
-Received: from SN4PR0501CU005.outbound.protection.outlook.com (40.93.194.63)
- by edgegateway.intel.com (134.134.137.111) with Microsoft SMTP Server
+ 15.2.2562.45 via Frontend Transport; Tue, 4 Aug 2026 09:53:14 -0700
+Received: from MW6PR02CU001.outbound.protection.outlook.com (52.101.48.53) by
+ edgegateway.intel.com (192.55.55.83) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.45; Tue, 4 Aug 2026 09:50:47 -0700
+ 15.2.2562.45; Tue, 4 Aug 2026 09:53:09 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=yYH5JCtz+qz9n7rLE6f67rkfxeNdOGlnQynULdRly2nIh817vmi3PwzOSWa3beEDLkwlPfXvZ6EhXQcxG0gEKD11BIm4JwSaDs2FoWpH7WESVd1H0feB6BqUDWy1YW34oUw6cVwpdQTM5xNBxGCgRkHNZLLIb24PyFMWCykY8qqod47zw3Axx5agV0hsdEpEwL/4Bp99/WYizKVNiY1+H2JF9mJ9msmUjwcC7ClSXzSQyxOmMBKnOdcsLs58FYnwNVxeT6Wu9KFm5KWmS6HqxCPpQFCEZ5TO4oXnMqRDRUqcUSPVjjF42fQiQehC9bAxAqlpR24MGFCRHntQ42T4lQ==
+ b=R16e8VY+dWUCnkTCP+STqjF+p7mBrDpWSJZW9q5EBFeANN8ixzStdkpsYlYxQCkYyeESoDXwSfsbpwrnMFoXnIGctY4jXsCA763WKXpMdlDlfKHEgBKMMpXnclwDU4lnGojqqpzMVDtWyh2RQ/6+67jdM6M957l6YPfKr7P+Cu3Es0TZQYkXZaamwYmzv16i8dJGk4o6me/DRQ6cOlXLBmvzW4XET79HClYcFoGoUNLtBp08sUUYlMs1xMiG80M7VB1QBBffa/13+dXQOgNSIMEhTbFmvK4ra2oaTW9KwMe6XeUpp4vqf9Rtbgke/WHQAb0OLln6WefmLPOLLdYF1Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=iNzcbw+WCS/l45V/f4c80EqUCpFQKuRB7ml3Hz/QK2M=;
- b=k1lHyhVt+S3eWmAC99K1iSpl0KB/EwdjTfovGXvyrqZNm5i9HJ/HBkF600l7rNhC8jldXF/y/JxJw0dnxl/nibYpEdHhIU9KTmhapQ3MJG/vCv/MWOEaS1lQsX6UPdWdvMQ9r2WH4lTqTl8JPhari/bMcLEqukX+4MjmKqEPjGjzRppr9c9wJ2LePmaI1j8MJQu0O6trmSKjLtclmpZjHmcBj0ElvCS8xDF1LWIMwRWZv3LY1nu2poCIAhVITX9t9D89OjZo5QA2A3jnWX7xozEt7vmJ2CbAEO+z+9LjCRsSGHOTKundS30XD19Bao1BEpXT1Etiy8iS3okmpeVn/w==
+ bh=YgwoDAv64F4mgFdzi8xhfa7ZbqhrwtKAKwYQFUG80r8=;
+ b=vjrPRdLzkiiJb3J6ZO8sYuDjm7RjJXdE9pFw19t3NDNn080EZo8Pv9BW03cGSNNr+5xYgvxXBPEGybdBqmPTiZJ//VREUlw41mAzBVYG9SvLR3i+1PQGESFQuu+9av2QO5UBgD0l95N+HJgmTEJ9YoSU0yBHgfaf3qFCCOuZ/WwOS4kzkFbQdXFnUGmUD9+Bg8ZdXSADoLkihvj5Giv933cUfPnYOuv+LQpnxwWIrcfQFhRQaed9RQ7filbRiqAqLe3lls2koEAtLN2MBxjKgpOiB273dJnv0eXpglDWp0idicrBsfNUSi9b1Gm+Ax90bYmJWMeX30Xnmx5k2hnctA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
  dkim=pass header.d=intel.com; arc=none
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=intel.com;
 Received: from IA1PR11MB7198.namprd11.prod.outlook.com (2603:10b6:208:419::15)
- by PH0PR11MB9752.namprd11.prod.outlook.com (2603:10b6:510:397::12) with
+ by DSWPR11MB9558.namprd11.prod.outlook.com (2603:10b6:8:36c::13) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.292.16; Tue, 4 Aug
- 2026 16:50:40 +0000
+ 2026 16:53:08 +0000
 Received: from IA1PR11MB7198.namprd11.prod.outlook.com
  ([fe80::2c4e:e92a:4fa:a456]) by IA1PR11MB7198.namprd11.prod.outlook.com
  ([fe80::2c4e:e92a:4fa:a456%3]) with mapi id 15.21.0292.013; Tue, 4 Aug 2026
- 16:50:40 +0000
-Message-ID: <5b0ed4bc-2f14-4d09-a099-9d69337fbba8@intel.com>
-Date: Tue, 4 Aug 2026 19:50:35 +0300
+ 16:53:07 +0000
+Message-ID: <23a9e3da-1b71-4c24-b04b-6694ca9f6de2@intel.com>
+Date: Tue, 4 Aug 2026 19:53:03 +0300
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V3 01/14] i3c: master: Fix recursive locking during device
- registration
-To: Frank Li <Frank.li@oss.nxp.com>
-CC: <alexandre.belloni@bootlin.com>, <Frank.Li@nxp.com>,
-	<akhilrajeev@nvidia.com>, <rafael@kernel.org>,
-	<linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
-	<linux-pci@vger.kernel.org>, <linux-pm@vger.kernel.org>
-References: <20260804133810.184905-1-adrian.hunter@intel.com>
- <20260804133810.184905-2-adrian.hunter@intel.com>
- <anIXV7HvBxCtJLFD@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH 1/5] i3c: master: Release the fwnode of i2c boardinfo
+To: Akhil R <akhilrajeev@nvidia.com>, Alexandre Belloni
+	<alexandre.belloni@bootlin.com>, Frank Li <Frank.Li@nxp.com>,
+	<linux-i3c@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+References: <20260804101301.2975911-1-akhilrajeev@nvidia.com>
+ <20260804101301.2975911-2-akhilrajeev@nvidia.com>
 Content-Language: en-US
 From: Adrian Hunter <adrian.hunter@intel.com>
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park,
  6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 -
  4, Domiciled in Helsinki
-In-Reply-To: <anIXV7HvBxCtJLFD@lizhi-Precision-Tower-5810>
-X-ClientProxiedBy: DU6P191CA0027.EURP191.PROD.OUTLOOK.COM
- (2603:10a6:10:53f::27) To IA1PR11MB7198.namprd11.prod.outlook.com
+In-Reply-To: <20260804101301.2975911-2-akhilrajeev@nvidia.com>
+X-ClientProxiedBy: DU2PR04CA0245.eurprd04.prod.outlook.com
+ (2603:10a6:10:28e::10) To IA1PR11MB7198.namprd11.prod.outlook.com
  (2603:10b6:208:419::15)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: IA1PR11MB7198:EE_|PH0PR11MB9752:EE_
-X-MS-Office365-Filtering-Correlation-Id: ebd5a012-6f7c-4e61-92d4-08def248845a
+X-MS-TrafficTypeDiagnostic: IA1PR11MB7198:EE_|DSWPR11MB9558:EE_
+X-MS-Office365-Filtering-Correlation-Id: c3f630ae-c579-455e-6ec8-08def248dbe1
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|366016|1800799024|376014|22082099003|18002099003|11063799006|5023799004|4143699003|6133799003|10067099003|56012099006;
-X-Microsoft-Antispam-Message-Info: K1kYN4LzdEsgMF+oQB2+CDViSuWIRPkAY41F+SZYq+l9zctqG1kc44d4fr0icGntAYqKTasrur7muy6JNfSSU6WV1Np134oXQrY4cnm/mnj1g4abvZv/BJvBYaegloVzU2slOhLDc7BHN2DApzalhy6Stv33EcU4+JSsgny7tV8t4sUWiYS203pqJEx3YXeMaeBYR1vZr7qqkvVvG6T5PN8HfZHtYFbKRjaW3omnnzoBmgbVhRHNQ+FQ+M1a+If7xQdLNlC1XKmXopRB/811omUlpWNkhVuu1oXqCwNqx1/LM2hkuLqUlGrlcAL/aL9c/+OJwvwHCgbjsylww7+/oSWWd6SgR0AQFAIZvM36ET1vxsakdQMds7onTIEysQo6FuxYifbSBwy5LI+33rAmXDb+Oe9MGxtrQCHo+/a4/JQXJL0mfnfvxTR4PtpDLKmDQ6lg7RwsRi/twpvWBmYJJ3hUdDt1VZCPx3VAv6xw5Gjv29Ynz1Sd0EjLWDOyMNIQaEEZNDmW6FzLFvwV2+fMxB+jbgFeSnOEZDJpAyylhRN/n1uFoW2GYpf7XokbE4eL8umUWNMMYRCvb+54nYgoaYrWy9MGsSKebSJH0hh/D+1dr7TXR1vi/V2ZOZHKUj9awjsqV6TEhCozOqPzrqbtQmTA5h4JhQVaxUYLVJvEj88=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR11MB7198.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(366016)(1800799024)(376014)(22082099003)(18002099003)(11063799006)(5023799004)(4143699003)(6133799003)(10067099003)(56012099006);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|366016|1800799024|23010399003|22082099003|18002099003|4143699003|5023799004|11063799006|56012099006|10067099003;
+X-Microsoft-Antispam-Message-Info: 0R2WtAjcizA6yDlU/NXw1WJAZCwPZH0mHU6DECKtXtUG45l5WOSLAOjHd32Sl5ttJAScuETUITY2QJrt4Lnk7Cbd5flkbfxWdp2CH7d8SpXFqlcRd1oZU94QEGo82yHzSCMt6SgiRsj5jYzWZc3sdFn+tFu5NIEkRX7VBk7A06iD84GeTeMhTq3Tk80OEWaSskLJ5RL4fgEB5zX/m2nsyqa8q9CVq/hcLzMXGLeojBg/16E1DDAGyeqYYbWqWtVnVw+mpNj/yAQYSskR3xX+VDFmeJfYsyqAIv6Wa+TYdkSdkb07vYZ9dM+pbMtmL/9kW3Y8sCl29kX4xXxlEKjFp5Kx6Ir3tUtM0/iXBgWJ5ViTyYIV9y6Gv59LqOcaB8gLH70y2Pdw4nyGLGa4Kc/7iHXSgACb+ppAXBqa50CDd5OayC/DR3LWlfti2NCg1IRrqR4T/m77FF41z/1KRXtBsS8Nv3cCqqr3OLAElIIOBffWzgJxeyjChR5Tcbw7HFzVBrFMyntLZDk5xCDEquni3PeNeFBNmwo+HN+8nXJyPBU0nTh7CCQxxTTY9GnLx+kj1gT6hwzYq9GkdykM4puW8vjGctSH85G/29Y3CdgP7QoONLLgcty53Eojl4sBxD2HyAx975KLxgNorIxZq0ktPXg2RGzm7f6Z8ptEzSl3Mpk=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR11MB7198.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(1800799024)(23010399003)(22082099003)(18002099003)(4143699003)(5023799004)(11063799006)(56012099006)(10067099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?czRIRFRmN0hUWWNHZnNYUkNuL2dkczZCcDd1WnZsNTJYSUxtTHBGVnYvN05P?=
- =?utf-8?B?OTNzSWJqNlhIK0szOS82OHBGOXB5THkrVXNMeWs1Vkl5d0d1VEJUMlA0emFi?=
- =?utf-8?B?WUUxanB3elVMZGliK1EzbXBsQk4zS082MWhNcDJiLytpemg4eGNQYTZWRVFW?=
- =?utf-8?B?cG53NEQ2Wk55ZHhFTTByby85aDAyK3RHQlZhSHkvRSt3cDloU1ZQRkg3WUFV?=
- =?utf-8?B?T20xOFZUK1pJVzZQODhVdUpOeEhzd1QrZEJacTJwMEVZSllJZFFBTExpTExG?=
- =?utf-8?B?UUF2MWNIekJtZzBXWXEyQ3ZXclEyenBnbVN0NHNieDdSclQzRHNDbXlzY0Mv?=
- =?utf-8?B?ZHFzQy9GZUt1TWV1aWpZNVRLQ0FqUlMyMDRLZjNwb2NNZXBxb0htYWdieHd5?=
- =?utf-8?B?amFIalZURHZlMUZERm5lZncrUkFWVUJ6eEgrN0JDbDVUSnB3bVVicmMvT2V2?=
- =?utf-8?B?RzNpaWNwdjhucmR1ODljQm1kcTdyZ0VwREVWVU9DYXBlKzBxVDRlcStGQlRN?=
- =?utf-8?B?bEJLcFhmWXI2RThSOFg5MGp4N2pFT1A1WXZCbTM5dHRqWGhVQ3BUbGZQNGhz?=
- =?utf-8?B?bUVlaVlxTWV4QjU1YytFY1paZmFISmhSQ3FRV0dLY21MQ1V5SW45bnBVaVo5?=
- =?utf-8?B?ckZLZUJpM1JmSEhkc3pwRnNJZEl5RU1hU3FqMHFKcDcrN2tZMUphMlFpVnFR?=
- =?utf-8?B?NEoyY0xkcGhwdjIxUjFwcmdTS3B6Z1hKZlR0N2xOMGhaNFlBWVZNZmY2VlVT?=
- =?utf-8?B?Zk02WmdJZTdJYVhGNDFFTHFsKzlzMmR0dXFGOC9VM2s5UXI4YTA1QlZUakdH?=
- =?utf-8?B?dWlaMlhlZmhjc2c5Rm8zNU9rQ3NwY3MyMnVYTTFiUFd5dHpPTlg2NDE5YVpY?=
- =?utf-8?B?WUxQNndOM2F6L1lqaStTS1k4eXdjSjNOcUNaanNBbkRIWFdmOERFYVQyaUl4?=
- =?utf-8?B?Q21HUHVHTWtBZFcrbk5COTNNZWhEQUFSakdHUmpmTzVVVlBSMU0zQ2p5K0Ev?=
- =?utf-8?B?Nk80bWllcS9mRTZKMElUZzVYdFRQZENXRHN0aDBBVnNuVklMNTFVbGJvdVpF?=
- =?utf-8?B?ZWpXOEd6T0Vjd0VzbkMzRTJZNDYrSE5yUUZSODZ6YkR4akpYdUtJRzhjVlc1?=
- =?utf-8?B?UzhheUhib3MxYVRMdFZ2OWErSHlaWWl2TEFITlNoaisvVTAzK2hjY0hJYU5E?=
- =?utf-8?B?NllTUUI2cW04TUV1NDAyeWx6ckNHNFZ6QzJQM3hScVEzcE5kMlY3VkVkWmdG?=
- =?utf-8?B?WmNWNXBKb3JpQjZFRytaMnNzOWY2UUYzN2YxclFydEtwVzZoaEVQS0dGT1pu?=
- =?utf-8?B?eWNYalJvOGduUTRyNDdXV1E0MndNTGI3YWIzYVZmV1dtdy9adEYwZmk1S0NS?=
- =?utf-8?B?Q0tBaVQzek5VeEMrUXY5bTRKVURoZVpNcU1qcHBpejR3SDd5R05mM3krRnIw?=
- =?utf-8?B?bklQeE5MMks0Q3NDUUpLZ0xaMklyUWpTNHRWMmdGWlk0ZWdZWWg0VTV1ejVv?=
- =?utf-8?B?N2lEU2ZkTmJSbXlGN0xUUCtzN1ZWRnVxeklnZGhoTFQvOEtyQ0dGR3Ewcjk3?=
- =?utf-8?B?NC9LVGZtYVVOeFJsSnRuSWVCSXdITHpySW1kamFkOEM1ZGxmNkxKcFlpRkNM?=
- =?utf-8?B?dGljaE5YcGJBalo0bU9sZzlLZlU4V3Vza2xjYVJzS2FDZ2tOdDV6QnZFYmds?=
- =?utf-8?B?K3FmRkpmTFN4RkNlMDZXcFpQd1ZHQmk0cDhpT25POUJsS3psb1U5OVJ1TlNm?=
- =?utf-8?B?cno1UXRNRDZ5REcwOG9jNGNwSXVnNU1DQjg0TU55NWZkL3JMSUxUWmtIVzgy?=
- =?utf-8?B?cy9FQy9pMzcwc0tDRG4yd2cvbDRyQXNHN0M2WnFacVRkdXN1NllTZVZHOG53?=
- =?utf-8?B?WGYzclQ2cThocGNIWTlYYk1qbWJsd0ZPWi9wY0tYZElEL0FBVXBNV04xeXVw?=
- =?utf-8?B?c1RuWUJPOEZiN3piOWljWDRuYXVKSVBaSllCVWdmTm9ITlRlSDIxc09HVEdZ?=
- =?utf-8?B?d3lFcVZtNnoxS3dMVk9LbTArZGcvczZ4a2NTaUhUM0NhdEJTVlZJQWNQRnh6?=
- =?utf-8?B?ZGVNaldTaXRSeWJiVkRhcUhQL3BEb2V6eXpzNTJHMEgrd2NzZGZTWGFCRFkz?=
- =?utf-8?B?MmxTRXcreDNVVkVFZXFTTU5DZVhYUHBJaFBRbnVFZG1yclVkR0NtRXlDaGVk?=
- =?utf-8?B?NVZyT2RBSk5HWnRsVFVNdUh1dWt0bTJ3d1lNQWh6VXBtejRZL1FJcjErVXBU?=
- =?utf-8?B?N3lhNGVBZ3lIMmd6Rk5RQy9FcExrSDdBVXJqVVBpM0hTdmJwb0tqNDV2RktB?=
- =?utf-8?B?aHU4U09jK3cwdkZhaFMrMlhOQytKaTlEMUgzQm1NNkc2WUEwUlJZSnp3eXl0?=
- =?utf-8?Q?FFIjst2Qt/TVj5Ls=3D?=
-X-Exchange-RoutingPolicyChecked: dGTw3QHOu5Gqr0sbKqc24LrIUo1J5d9HXga8A+HOEbPGsdJv1+N0b3PGz+MvhxU1UmNKtBia3MeuNVPw9jYvFnCbaGHPVkLJZp5d/W5A4Xc0ML+qHGvLjldhlNFfG+nVCu5UEqSkTnddYPqpKZMUSETA/t7p3c44vHv0P0UFcHQnFQL/edeiF/XfdLNS/2updtpbPcNPCTZfTAK57W4iFofcMOWo3kWeGF91m2xocfoKmqLGzY1pqZfvwK2AIzXPVWQ3L082u2b2QbW0U0rL+4bLXrisRtpO9AA8yFQ3+gPY0CoQfTXl5l++SMq1BDD8Nxh8RdjOMPJFlL2mmP26oQ==
-X-MS-Exchange-CrossTenant-Network-Message-Id: ebd5a012-6f7c-4e61-92d4-08def248845a
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?YlFjTEJPWG1PSzYyMHp4NUdKMlljeXlpVmxER0t2WnJZK0hZQVNHZUtVYXI0?=
+ =?utf-8?B?anBjUUIrQjAwVXNvOVVBMTQrRlZma0lEWVU4SkNJZmw3ZTVzTjJjOXlYdzNi?=
+ =?utf-8?B?R2oyUWhHZ0QyRGdHY0FDZ2dTUjNYODAvbC9BV3A5QStQMDZxS3FNem1JaE1s?=
+ =?utf-8?B?MldQYWhIM2ppanZFM3owTmlNUGNtRnNhMFBGblBjVjZSYkFPeUZUZmxwZFMw?=
+ =?utf-8?B?WitScG1PQmxYQUlJY0hJTEFmR2pMSmZDYVJwUDduVE1HZHFNOVl2UDZYWERU?=
+ =?utf-8?B?djRZaUR3UkxHa1BTVmVJT2YwUlBVd3lKTUdkcDZNYzk3MTYzNkZnNG5EQ0hq?=
+ =?utf-8?B?bnFxOW1uUzZQakhhR2JyOUloaEQ5YjNVR3BsTEd4bFhUa2YyemdKY1V6eUpp?=
+ =?utf-8?B?dWJkclJySXFOSnNHaHpYYWJabXIzc2tpd2xMTUpZdWNJMnVuNkMwazNKMlpo?=
+ =?utf-8?B?eUw2YVF1YVhTZnludVNHTFdNUlQ3K01UejNCZjl2STdSbWFkZ2xNemRTS2NY?=
+ =?utf-8?B?alJJM0NhR3BacVdGR2FXb241OXNWSkJ2YUhxMHRnVEdQaEV5QXVWL2dVdjZj?=
+ =?utf-8?B?WlA0U0ppdVV1eTB4VnYyVkZNanJ2bkFtcFFXekxWeWphZ2pyTVkrUzN2SStS?=
+ =?utf-8?B?V2pvUnRTWllSNkhMVkM1N1gyeGJEOGxVWUVrNkxOVHMrMHFIN3JwNW52NjJX?=
+ =?utf-8?B?dGY0b0lMa1dIWUV1cndJckQ5S044SG5pMXROUGRaeTV3MUs2UU9aZkFmWHBH?=
+ =?utf-8?B?cEJkTVJMd0R3dnNqaU9abzJhS1lCQW9GOWZrV0YyZHFReDBpVnFpMVhJWXF4?=
+ =?utf-8?B?Ulh0WUQzRGZzWHRUK2VWUDdPMjRTS2orVHkwZ05DbTEzTW1rckNDcTdqMUZj?=
+ =?utf-8?B?ZGo5K1Y3R0dmMnpjWDFrMmdtdUhRSnZTY2x0Unlrd1hUTFo2QU9UcUNwVUQz?=
+ =?utf-8?B?aDZrVVkzZThaWUZDZVpHalJGWE5ObnFOQUZMcEo3bUlmbDZHb0NiRVRwdHh0?=
+ =?utf-8?B?MWdFNGNGeUVTZGpieDJnSjN4RHQrWVNmWkNlS0ErTkQ3Uk5BSUNUWkt6SWFp?=
+ =?utf-8?B?WUlxN05NSmhRaTBST3B0MkphRjhDSVhGN1g3L1lzaE1tL0JUanNLc0tTeXZO?=
+ =?utf-8?B?WW5kckU2bC9PUFhtbUJyckpDTkhUR2hOdS9MV3RYSllHUkNLWERMekRXVEpD?=
+ =?utf-8?B?VEpqck9NY3JJMG1YVGptMU1VcWRhTkYyaGIrQXR3WkZjak1icEZSQ1Y5RmFV?=
+ =?utf-8?B?NXRsT2crcnQ3cWxLS0YydGRIcVkxRi9aeXdHSkcreVNnU0lJNkMzcU1ud25i?=
+ =?utf-8?B?QW5ZS2Urc1ZKV1FGTjJTbWpJUDdCTjNudHR1cjdtUld0TFl2Tm9udTJPMm55?=
+ =?utf-8?B?S0RpdkxmQVNHSlpOai9PUEU0SHRVNTBLWFZOTVdLUWgyY1lDTkZydDV0c1Zx?=
+ =?utf-8?B?bktXb3JzTVNiWjFBbGZxUWRIUks4SnFLNkovTVBXTldWUm1JNUFGYXZxd0xq?=
+ =?utf-8?B?RDUxUWxzT3plVmVLVUZ3WGxYcHRyY0JTNUs5Ry85K3NpZmcwd010Umd2Nnha?=
+ =?utf-8?B?akV6M2NsOTh2eXJTTlBpSWtvUGRzVDIyUzZ2bEFmS0pHcDVWYzZyakRIbERa?=
+ =?utf-8?B?YjVRV205QWQ2QlVnN09pbGlET3pzRkhFS1V5ck1IMzhNUFlhWmVnVlF3S3M2?=
+ =?utf-8?B?bGJ6TEFwTXNRVFZsMFBJbW1kN1E1TGV4SllhSzNjb2orQ2N5TjdMcU1YZExH?=
+ =?utf-8?B?Vmt3Y2UyMFI1MWlQeERtYmVieHlwQXNJd0p3eFRMVjloSit0L3JGVzVjYUxD?=
+ =?utf-8?B?VkZwVnowbXpJVHFEQkZxemJ4MVVUSDJNTTVPb2lpN2V6TnE5aSsva1RBQ3ZE?=
+ =?utf-8?B?UXQvYVZTVURTMTV4UFpNczd1emMzd29mWHlpa3RteHd0QlpEYnNKdGtyOU9B?=
+ =?utf-8?B?NnlGODllTFkranc5bU9FRVdDMmlJMDRhdWFFYkVVaUZIT1pBWDZjU2V0Q1l3?=
+ =?utf-8?B?c2JvRDQvSmtZczZJdnhlUXNjTnQ0K2RJMG1ka1hNejF6ZGRNUUhsdm9iVDZH?=
+ =?utf-8?B?TE9sMXgwQXhEM21meFpyeWppMDdENi9ybTY2TnFSemtIQ1BXaEw0bWJXVHAw?=
+ =?utf-8?B?T2Q5OHh0bVNuamY2VGV4OEY3c2NCQTV5bW55aG1PK090ZFV4ZlJFdXlNK0gv?=
+ =?utf-8?B?Mm9sVTNacDJKQzIyakJCSzlkSDRQVExXSjlxZ0ladUpsMDJQQjduQW9aYVIr?=
+ =?utf-8?B?ZnNmenUyYlJnd2MzZnltcDcxNTVTaDJ3cVZ4bng5cE9EbnA1R2E1WWJHL2wx?=
+ =?utf-8?B?aWRHLzZ3eDkyR1VJV0hUcEFCMXA2M1hOZ1VqWGhmbGVCZ2ZqTjdwTExJT2Js?=
+ =?utf-8?Q?3G/rqijAcAzELM8A=3D?=
+X-Exchange-RoutingPolicyChecked: G4e98+zE1uC7VS0D7xTeQDjIKcUnDvwuYPXqgdCQyykV+7Ys4MeLAyCSAhC9pLncvEEO9TCw1gTd/UcPjCAq5i6ZglBWwaHZNpEkKN3c4nJlEFyu708Vg/r5oxCEOYWa4BQfSiBPAs/U3ucFubck7s3R0wXuFklIlcKI5MM/ATZB7khyVS3bJRfa5ZLPcVo/ZXlE9ulq92Q5jSY9X4UpgAtzQ2lGQLCm2A8JwCfjL8nfmDVsBtUxc6RuMZFUElb5pE7silYWonT/wAH9mt/qQksB9sOu9gF/p0yvpVxnh8plni7R2FJFrY83DXuc0n+YgMD7wBNiOWPIhSwpPn8UZg==
+X-MS-Exchange-CrossTenant-Network-Message-Id: c3f630ae-c579-455e-6ec8-08def248dbe1
 X-MS-Exchange-CrossTenant-AuthSource: IA1PR11MB7198.namprd11.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Aug 2026 16:50:40.7328
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Aug 2026 16:53:07.6580
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 46c98d88-e344-4ed4-8496-4ed7712e255d
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: vrcDBES0iJhokPw84EpSozWWM+1qFFhzlm49oaZfkhUUxzCPwzcpIdqCEBS4vzkz5VRjzW1Dd1llK3ovP1nDAA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH0PR11MB9752
+X-MS-Exchange-CrossTenant-UserPrincipalName: CK8KCcXyP10/Dyk1Ecm6GjXX0WEqtLipW5Ye54wqYbGjmv9Ij4AgmquzXf2x/83YiVAuuN1Hk/5OCG5OfTOztw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DSWPR11MB9558
 X-OriginatorOrg: intel.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260804_095049_296254_65580629 
-X-CRM114-Status: GOOD (  22.47  )
+X-CRM114-CacheID: sfid-20260804_095316_182289_23E3A0AB 
+X-CRM114-Status: GOOD (  19.15  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -191,167 +187,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 04/08/2026 19:46, Frank Li wrote:
-> On Tue, Aug 04, 2026 at 04:37:57PM +0300, Adrian Hunter wrote:
->> i3c_master_register_new_i3c_devs() registers newly discovered devices
->> while holding i3c_bus_normaluse_lock(), a down_read().  device_register()
->> can immediately probe the device, and probe callbacks typically invoke
->> I3C helpers that take i3c_bus_normaluse_lock() again, leading to a
->> recursive acquisition of the same rwsem.  rwsems do not support recursive
->> read locking and can deadlock when a writer is waiting.  See the
->> "Recursive read locks" section of Documentation/locking/lockdep-design.rst.
->>
->> For example, with Intel LPSS I3C, LOCKDEP generates a WARNING like:
->>   # echo intel-lpss-i3c.0 > /sys/bus/platform/drivers/mipi-i3c-hci/unbind
->>   # echo intel-lpss-i3c.0 > /sys/bus/platform/drivers/mipi-i3c-hci/bind
->>   WARNING: possible recursive locking detected
->>   kworker/5:1/94 is trying to acquire lock:
->>   ffff88811c810d78 (&i3cbus->lock){++++}-{4:4}, at: i3c_device_match_id+0x45/0x370
->>   but task is already holding lock:
->>   ffff88811c810d78 (&i3cbus->lock){++++}-{4:4}, at: i3c_master_reg_work_fn+0x21/0x5f0
->>
->> Fix this by separating device creation from device registration.
->> Populate desc->dev under the maintenance lock, collect the devices that
->> still need registration into a local list, then release the lock before
->> calling device_register().  Finally retake the lock and clean up any
->> devices that failed to register.
->>
->> Use the maintenance lock rather than the normal-use lock while adding
->> device objects.  A write-side maintenance lock prevents readers from
->> observing a partially initialized desc->dev during initial device
->> population, or desc->dev disappearing if registration fails.
->>
->> The local list requires a list node, so add a list node member to struct
->> i3c_device.
->>
->> Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
->> Cc: stable@vger.kernel.org
->> Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
->> ---
->>
->>
->> Changes in V3:
->>
->> 	Added Cc: stable@vger.kernel.org
->>
->> Changes in V2:
->>
->> 	New patch
->>
->>
->>  drivers/i3c/master.c       | 45 ++++++++++++++++++++++++++++----------
->>  include/linux/i3c/master.h |  2 ++
->>  2 files changed, 35 insertions(+), 12 deletions(-)
->>
->> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
->> index f485b98805cf..d2fb1a110521 100644
->> --- a/drivers/i3c/master.c
->> +++ b/drivers/i3c/master.c
->> @@ -2069,12 +2069,21 @@ static int i3c_master_early_i3c_dev_add(struct i3c_master_controller *master,
->>  static void
->>  i3c_master_register_new_i3c_devs(struct i3c_master_controller *master)
->>  {
->> +	struct i3c_device *i3cdev, *tmp;
->>  	struct i3c_dev_desc *desc;
->> +	LIST_HEAD(i3c_unreg_devs);
->>  	int ret;
->>
->>  	if (!master->init_done)
->>  		return;
->>
->> +	i3c_bus_maintenance_lock(&master->bus);
->> +
->> +	if (master->shutting_down) {
->> +		i3c_bus_maintenance_unlock(&master->bus);
->> +		return;
->> +	}
->> +
->>  	i3c_bus_for_each_i3cdev(&master->bus, desc) {
->>  		if (desc->dev || !desc->info.dyn_addr || desc == master->this)
->>  			continue;
->> @@ -2104,25 +2113,37 @@ i3c_master_register_new_i3c_devs(struct i3c_master_controller *master)
->>  		if (desc->boardinfo)
->>  			device_set_node(&desc->dev->dev, desc->boardinfo->fwnode);
->>
->> -		ret = device_register(&desc->dev->dev);
->> -		if (ret) {
->> -			dev_err(&master->dev,
->> -				"Failed to add I3C device (err = %d)\n", ret);
->> -			desc->dev->desc = NULL;
->> -			put_device(&desc->dev->dev);
->> -			desc->dev = NULL;
->> -		}
->> +		list_add_tail(&desc->dev->node, &i3c_unreg_devs);
->> +	}
->> +
->> +	i3c_bus_maintenance_unlock(&master->bus);
->> +
->> +	list_for_each_entry_safe(i3cdev, tmp, &i3c_unreg_devs, node) {
->> +		ret = device_register(&i3cdev->dev);
->> +		if (ret)
->> +			dev_err(&master->dev, "Failed to add I3C device (err = %d)\n", ret);
->> +		else
->> +			list_del_init(&i3cdev->node);
+On 04/08/2026 13:12, Akhil R wrote:
+> i3c_master_add_i2c_boardinfo() takes a reference on the firmware node of
+> every i2c child described for the bus, but nothing ever drops it. The i2c
+> core takes a reference of its own for the client that it creates, so this
+> one is never consumed. The nodes stay pinned for as long as the system
+> runs, and more references are leaked on every rebind of the controller
+> driver and on every failed probe.
 > 
-> Is it risk del node without acquire lock?
+> Drop the reference with a device managed action on the controller device,
+> next to where it is taken.
+> 
+> Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
+> Reported-by: Adrian Hunter <adrian.hunter@intel.com>
+> Closes: https://lore.kernel.org/all/97465893-3650-4f37-98b7-1db76fc6fd03@intel.com/
+> Assisted-by: Cursor:claude-opus-5
+> Signed-off-by: Akhil R <akhilrajeev@nvidia.com>
 
-The list head is local i3c_unreg_devs, and i3c_master_register_new_i3c_devs()
-is not permitted to race with itself, by being called only from the work
-function i3c_master_reg_work_fn()
+Cosmetic suggestion below, nevertheless:
 
+Reviewed-by: Adrian Hunter <adrian.hunter@intel.com>
+
+> ---
+>  drivers/i3c/master.c | 8 +++++++-
+>  1 file changed, 7 insertions(+), 1 deletion(-)
 > 
-> Frank
-> 
->> +	}
->> +
->> +	i3c_bus_maintenance_lock(&master->bus);
->> +
->> +	list_for_each_entry_safe(i3cdev, tmp, &i3c_unreg_devs, node) {
->> +		list_del(&i3cdev->node);
->> +		desc = i3cdev->desc;
->> +		i3cdev->desc = NULL;
->> +		put_device(&i3cdev->dev);
->> +		desc->dev = NULL;
->>  	}
->> +
->> +	i3c_bus_maintenance_unlock(&master->bus);
->>  }
->>
->>  static void i3c_master_reg_work_fn(struct work_struct *work)
->>  {
->>  	struct i3c_master_controller *master = container_of(work, typeof(*master), reg_work);
->>
->> -	i3c_bus_normaluse_lock(&master->bus);
->> -	if (!master->shutting_down)
->> -		i3c_master_register_new_i3c_devs(master);
->> -	i3c_bus_normaluse_unlock(&master->bus);
->> +	i3c_master_register_new_i3c_devs(master);
->>  }
->>
->>  /**
->> diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
->> index 2dc139a217bf..2b96c4ea75fb 100644
->> --- a/include/linux/i3c/master.h
->> +++ b/include/linux/i3c/master.h
->> @@ -238,6 +238,7 @@ struct i3c_dev_desc {
->>   *	  every time the I3C device is rediscovered with a different dynamic
->>   *	  address assigned
->>   * @bus: I3C bus this device is attached to
->> + * @node: unregistered device list node
->>   *
->>   * I3C device object exposed to I3C device drivers. The takes care of linking
->>   * this object to the relevant &struct_i3c_dev_desc one.
->> @@ -248,6 +249,7 @@ struct i3c_device {
->>  	struct device dev;
->>  	struct i3c_dev_desc *desc;
->>  	struct i3c_bus *bus;
->> +	struct list_head node;
->>  };
->>
->>  /*
->> --
->> 2.53.0
->>
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index f485b98805cf..08dc10f172aa 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -2871,6 +2871,11 @@ static inline int i3c_acpi_add_i2c_boardinfo(struct i2c_dev_boardinfo *boardinfo
+>  }
+>  #endif
+>  
+> +static void i3c_master_put_boardinfo_fwnode(void *fwnode)
+> +{
+> +	fwnode_handle_put(fwnode);
+> +}
+> +
+>  static int
+>  i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
+>  			     struct fwnode_handle *fwnode, u32 *reg)
+> @@ -2913,7 +2918,8 @@ i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
+>  	list_add_tail(&boardinfo->node, &master->boardinfo.i2c);
+>  	fwnode_handle_get(fwnode);
+>  
+> -	return 0;
+> +	return devm_add_action_or_reset(dev, i3c_master_put_boardinfo_fwnode,
+> +					fwnode);
+
+I'd suggest wrapping at 100 cols rather than 80.
+
+>  }
+>  
+>  static int
 
 
 -- 
