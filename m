@@ -4,56 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2842C56208
-	for <linux-i3c@archiver.kernel.org>; Thu,  6 Aug 2026 13:19:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CFD48C55ABF
+	for <linux-i3c@archiver.kernel.org>; Thu,  6 Aug 2026 13:19:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t9cK8cQ2rMF0OYHEutHrbfGtH3ucGBE1XNlvcFEb6Ks=; b=jrvJpxyVDlLBe/
-	M+Cx274Lt49rrlf1dp+tP9nxjPuvoABboWpTR8ZjaEs8QfSqATa+mdUAj9RVA+JVKfGIn3kQMK+Zo
-	XC/sRLqIvb87N77/o9fCLF4kmQ5QTmLJ6SHBM2M+AgBsvOf64huxdPyCacCsEvSmXsmiUshkq8qvr
-	eyMcJWTx+Fsz5QGZ2tYVAXVuNnEGcPbQzj83cPLWiXbg8+G9T/tEXlQkJS49qbC4+Xapbhq1g23yW
-	mgSc6XN0lnXxbOXHf5LfdR/Sj+pVZDjadA8yiTECV63sLPv0GwnrlwF+oq+cH3wue45fb0x6GY0pe
-	N2/c2/N4PGb/hXtU0zRQ==;
+	List-Owner; bh=646tV0WjevXeBuTfbDT74F1cSDBCry8dsIPyxnNQ06c=; b=yxmZjxtczeZkHC
+	b3SlFMi17j44AOVSGzY9SSETohSOIRXxcX5oysYA+iQ/XVoyCdbVeVaDRhT7Sr21IvFYPgc0RWfRe
+	tzFScw6fTuJvpVhvv7+5I/B06lnDzZ9Ai9XCcyV4ZLO1Sd11Vq3BjknAgS8ufBXCWUYJTcLMh8s3E
+	vOJj9E3SQDUSbGqtQO7l2d+UR5rpJGGR/7TfBPtnSYub4JHjTIS4eW6NgYUSvIxj+rMwRGpIOpu2g
+	PIStUA1y8abQzBz8bHCnEeSbOFV9lmugNr7Q3r1rKB/XJqtr1UnG4hwiBFxKZc5WJyHyL8Q5rLHET
+	XKpTgwxNx9GB6Yr1a71A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wry0O-00000005s3e-26NG;
-	Thu, 06 Aug 2026 13:19:28 +0000
+	id 1wry0R-00000005s5K-2Ioo;
+	Thu, 06 Aug 2026 13:19:31 +0000
 Received: from mgamail.intel.com ([192.198.163.16])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wry0M-00000005s2e-1gZH
+	id 1wry0Q-00000005s3x-0dIl
 	for linux-i3c@lists.infradead.org;
-	Thu, 06 Aug 2026 13:19:27 +0000
+	Thu, 06 Aug 2026 13:19:31 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
   d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1786022366; x=1817558366;
+  t=1786022370; x=1817558370;
   h=from:to:cc:subject:date:message-id:in-reply-to:
    references:mime-version:content-transfer-encoding;
-  bh=HlQruraA7agKiqxVYRqDPlUkqImO4uUYgYC2j57DVk0=;
-  b=jiYf80k5GP7nWPhUh4RhaZALZ4n29/cwEvJGU8V7dXwPVzp/Ws6mOrRs
-   M7VbSAFy+yc2VNgDPdoqeif4PFxzXo59WjK567p0bKv1GN5pNQW53nSJS
-   L4EN9Q3noUh6u9n+sL/EfEPxq+n9zSTY7EiYCnz5CsmRzM1VT4OlRliM4
-   umY81eRP7UUJcFPlumuWQqnudaf9G7ubrHfl80hgJc98G/6fWlXlaNmHY
-   Eb9ttnMEGMLWGnIwfs5NJwJNf5+b3Z5kN+GiwycLsw2XEyaVBbPwnHTyE
-   UAC+xLc/AFdISKvjcfKJ7fHdHrvOKT9RcA6md90CHwQHXBv2Do8ECwqqh
-   Q==;
-X-CSE-ConnectionGUID: Nd/kp1mpQSOuMuZOZ38h/w==
-X-CSE-MsgGUID: tpqvRD7YS4OaZ+wvAZF0Kg==
-X-IronPort-AV: E=McAfee;i="6800,10657,11867"; a="74149584"
+  bh=dRpafqq+wNMr/EYQqjCT5QMFngA9hTqwKopSC/ZJKuc=;
+  b=OROVv63yPS9LOjYLpWu1VBRnB+kVyLgckEeso1vMAi1gNKY/0BkiBRpk
+   9wi1CxNaP0bL7VofUgTHgRx9H5kOhWMb3hI/tAQfnibbNiBBV3w86t1uE
+   7/Tw+yClObkdadd8d4dNgxu5JR6ubpDf55qRTh+jgSwY31lzbbY4KGVJF
+   f6wwU1FSBLxvFybPXzEdUYJ9U+D7mfVlDBx2DYYecHnQKTU7RQq4pB5L+
+   0kUwvcVlApY9Wwktvg9OPakMEwgywTDnQubBUwD7R7UHJL6A+fvqjHzOr
+   QD6DBGnenp01hgz2S3V9BlI3xgANpsHHqKbXbQYAFALTNyo31TPHZk5Xp
+   g==;
+X-CSE-ConnectionGUID: lu6a6TRyT5qUYVbY6kR3sQ==
+X-CSE-MsgGUID: cefpcC1uRjeNwwFX9LRM4A==
+X-IronPort-AV: E=McAfee;i="6800,10657,11867"; a="74149596"
 X-IronPort-AV: E=Sophos;i="6.25,208,1779174000"; 
-   d="scan'208";a="74149584"
+   d="scan'208";a="74149596"
 Received: from orviesa006.jf.intel.com ([10.64.159.146])
-  by fmvoesa110.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Aug 2026 06:19:26 -0700
-X-CSE-ConnectionGUID: ECrO4ecXS0atukBeJI+Grw==
-X-CSE-MsgGUID: fXyMbzWIRK+RDz74/dKaqg==
+  by fmvoesa110.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Aug 2026 06:19:29 -0700
+X-CSE-ConnectionGUID: YwbflQISQ5GUyI0E/WfZEA==
+X-CSE-MsgGUID: /fyyX5WEStKvq9ym9PXVKw==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="6.25,208,1779174000"; 
-   d="scan'208";a="260338168"
+   d="scan'208";a="260338186"
 Received: from mkosciow-mobl1.ger.corp.intel.com (HELO ahunter6-desk) ([10.245.244.200])
-  by orviesa006-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Aug 2026 06:19:23 -0700
+  by orviesa006-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 06 Aug 2026 06:19:26 -0700
 From: Adrian Hunter <adrian.hunter@intel.com>
 To: alexandre.belloni@bootlin.com
 Cc: Frank.Li@nxp.com,
@@ -64,17 +64,17 @@ Cc: Frank.Li@nxp.com,
 	linux-kernel@vger.kernel.org,
 	linux-pci@vger.kernel.org,
 	linux-pm@vger.kernel.org
-Subject: [PATCH V4 06/14] i3c: master: Fix potential UAF in i3c_device_uevent()
-Date: Thu,  6 Aug 2026 16:18:49 +0300
-Message-ID: <20260806131857.119830-7-adrian.hunter@intel.com>
+Subject: [PATCH V4 07/14] i3c: master: Fix potential UAF in i3c_device_match()
+Date: Thu,  6 Aug 2026 16:18:50 +0300
+Message-ID: <20260806131857.119830-8-adrian.hunter@intel.com>
 X-Mailer: git-send-email 2.53.0
 In-Reply-To: <20260806131857.119830-1-adrian.hunter@intel.com>
 References: <20260806131857.119830-1-adrian.hunter@intel.com>
 MIME-Version: 1.0
 Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260806_061926_451534_FA6350F4 
-X-CRM114-Status: GOOD (  10.53  )
+X-CRM114-CacheID: sfid-20260806_061930_197465_30635E56 
+X-CRM114-Status: GOOD (  12.59  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,57 +91,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-i3c_device_uevent() dereferences i3cdev->desc without holding the bus
+i3c_device_match() dereferences i3cdev->desc without holding the bus
 normal-use lock.  Since the descriptor pointer can be replaced
-concurrently, including when a uevent is generated from sysfs, this can
-result in dereferencing a stale descriptor and lead to a use-after-free.
+concurrently, the dereference can race with descriptor replacement and
+result in a use-after-free.
 
-Use i3c_device_get_info() instead, which protects access to the
-descriptor with the normal-use lock.
-
-Commit 6cf7b65f7029 ("i3c: Use i3cdev->desc->info instead of calling
-i3c_device_get_info() to avoid deadlock") replaced the accessor with a
-direct descriptor dereference because i3c_device_get_info() would
-recursively acquire bus->lock during device registration.
+Protect access to i3cdev->desc with the normal-use lock.  While the lock
+is held, the descriptor is guaranteed to remain valid, so the NULL check
+is also unnecessary and can be removed.
 
 This change depends on "i3c: master: Fix recursive locking during device
-registration", which moves device registration out from under bus->lock
-and removes the possibility of that deadlock.  Without that change,
-restoring the i3c_device_get_info() call would reintroduce the deadlock.
+registration".  Prior to that change, taking the normal-use lock in
+i3c_device_match() could recurse on bus->lock during device
+registration.
 
-Fixes: 6cf7b65f7029 ("i3c: Use i3cdev->desc->info instead of calling i3c_device_get_info() to avoid deadlock")
-Cc: stable@vger.kernel.org # requires "i3c: master: Fix recursive locking during device registration"
+This fixes "i3c: master: match I3C device through DT and ACPI".
+
 Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
-Acked-by: Mukesh Savaliya <mukesh.savaliya@oss.qualcomm.com>
 ---
 
 
 Changes in V4:
 
-	Added Mukesh's Acked-by tag
+	None
 
 Changes in V3:
 
 	New patch
 
 
- drivers/i3c/master.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ drivers/i3c/master.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 2357874bb9d6..ee771ac0b203 100644
+index ee771ac0b203..83e04a2c202a 100644
 --- a/drivers/i3c/master.c
 +++ b/drivers/i3c/master.c
-@@ -316,8 +316,7 @@ static int i3c_device_uevent(const struct device *dev, struct kobj_uevent_env *e
- 	struct i3c_device_info devinfo;
- 	u16 manuf, part, ext;
+@@ -347,8 +347,10 @@ static int i3c_device_match(struct device *dev, const struct device_driver *drv)
+ 	i3cdev = dev_to_i3cdev(dev);
+ 	i3cdrv = drv_to_i3cdrv(drv);
  
--	if (i3cdev->desc)
--		devinfo = i3cdev->desc->info;
-+	i3c_device_get_info(i3cdev, &devinfo);
- 	manuf = I3C_PID_MANUF_ID(devinfo.pid);
- 	part = I3C_PID_PART_ID(devinfo.pid);
- 	ext = I3C_PID_EXTRA_INFO(devinfo.pid);
+-	if (i3cdev->desc && i3cdev->desc->boardinfo)
++	i3c_bus_normaluse_lock(i3cdev->bus);
++	if (i3cdev->desc->boardinfo)
+ 		static_addr_method = i3cdev->desc->boardinfo->static_addr_method;
++	i3c_bus_normaluse_unlock(i3cdev->bus);
+ 
+ 	/*
+ 	 * SETAASA-based devices need not always have a matching ID since
 -- 
 2.53.0
 
