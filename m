@@ -4,137 +4,75 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 069FCC5AC67
-	for <linux-i3c@archiver.kernel.org>; Thu,  6 Aug 2026 19:07:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 77E09C5AC7A
+	for <linux-i3c@archiver.kernel.org>; Fri,  7 Aug 2026 14:57:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZaYDRT0Te+ZbZHjVMpMrFvABKXYX9psjCfma8QVl4Wc=; b=V1sausfCrtnPxB
-	fq5tjjOTviAfiv6lkgKHfOO9c6jEaxGmcSrSBkqr78E7hIbscvdbrPwqMiszwPp8sp/J4qEiH6Iub
-	rLzVByNfwD2hyDqNFYYU/gbtjfyP8LPd0tTB53wUpDS4JCG4/s6L0XhRPFQ5gZddco4blGfryg2en
-	UO6C2w9xNudYh/iEmnm0MWsK11ihZdeLG7QuA1O0awxwIM2Jh7TbjyIHJgADYIxCzeaEGxtr4sdzf
-	G4yxrk2bdkXaVMRm08Kzg+ty+bD5QOZchc5ByGQ+0L9U3Gt6E+JRaIe3w0bpPI+ss/oAE+na7h07L
-	E4uOI65kpYqEPXaCFWgg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tZKUGm+Jv10TWhLNxCKsiJCV67wBBInNl5AAWxZvORI=; b=gFJMWiT+lNjz3/
+	wYf0X6a1qH2qprhRchZIEFEPWxtMDoT/4Wu1oW8JOtJ2LdNuhHODUxM7WL3WTx0d7qdTDoBIQOzIE
+	aG0P9+2Yv4xrE+frrxJKew2IQiNja9YQo82GmCNbCiI8jQNmmMcoxLo5zDhqmniBu9veGelGxNs1T
+	XnBtrY2xmRQHk/wyYLOm7fZ1NsadEc0KUmyRUwi0HVOTEBIxLAvyKmVEQjOzHw4GCt77bPu6c/+ZY
+	DLztP9fmK8Fip4Tlsdxprc4PC5Ez+BpJfc0qAIrEyVQbG/AyxfSTn1CA9Qw13vgpd+c6np3hQ43SM
+	jm8VOPY2sUKw0O37egEQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1ws3RD-00000006Xhc-3sEU;
-	Thu, 06 Aug 2026 19:07:31 +0000
-Received: from mx0b-0031df01.pphosted.com ([205.220.180.131])
+	id 1wsM0o-00000008Igi-0Y27;
+	Fri, 07 Aug 2026 14:57:30 +0000
+Received: from mgamail.intel.com ([198.175.65.20])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1ws3RB-00000006XhI-3Dax
+	id 1wsM0l-00000008Ifs-2pB2
 	for linux-i3c@lists.infradead.org;
-	Thu, 06 Aug 2026 19:07:30 +0000
-Received: from pps.filterd (m0279869.ppops.net [127.0.0.1])
-	by mx0a-0031df01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 676IHdKP3051102
-	for <linux-i3c@lists.infradead.org>; Thu, 6 Aug 2026 19:07:28 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qualcomm.com; h=
-	cc:content-transfer-encoding:content-type:date:from:in-reply-to
-	:message-id:mime-version:references:subject:to; s=qcppdkim1; bh=
-	BX8ZxjTul2K/taj0A4BXwYLfVRhcZVy2nUyT99KFjNc=; b=ZO8EtX9ZPSKmw4Ue
-	ogJdGGY6I4QD0zNOPjfdL9QOL3RlfvOOSMXfQu0xqprdpVaZsuvFCok89qPH5FZ3
-	tbNQD8Dxz7T/vFe9rWJZ8L8Sv7bX1oooCbgg/yG9TUqSqynI+Tkp6PWnaIvstz7R
-	F/b+0EhXTOOGkqvdwSngCmKDj1FHNQ/XpncKAwkM3LejzfY3Bs1YGiJfziQaDVWq
-	5Iv8opda3eogSjlSJL0eAYRCAE47unQFaK5MQIkTxBtRyPGBmj6rohHGjuWuUt01
-	ZC8FLRFSCOJ0gcdgrvTjkt7MFWBRVAaCjTasfZayeZn993kq2lJCkMljoRTG63XD
-	7CZgcA==
-Received: from mail-pl1-f200.google.com (mail-pl1-f200.google.com [209.85.214.200])
-	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 4fvy6grawb-1
-	(version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
-	for <linux-i3c@lists.infradead.org>; Thu, 06 Aug 2026 19:07:28 +0000 (GMT)
-Received: by mail-pl1-f200.google.com with SMTP id d9443c01a7336-2cd01a14e81so35661325ad.1
-        for <linux-i3c@lists.infradead.org>; Thu, 06 Aug 2026 12:07:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=oss.qualcomm.com; s=google; t=1786043247; x=1786648047; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=BX8ZxjTul2K/taj0A4BXwYLfVRhcZVy2nUyT99KFjNc=;
-        b=GfMiRGTtRPUAt/mVpm6MEtn7V4F8fAJVY1dtA/7crIindEe9BEHZS6ArjR6tdpZ7yL
-         xMRlXeVCW2O/i5N7iohWVoIpwXjy52xKnuSzMPxSy37qrCoFQKSPk15ls8KSFRVraNar
-         JSbLxCUSSWQMcR3z/iIOm5ZrptBh2+JlhzV9pEYCz2iPOSj+WAAL1oX3mgAuSaLPHrcz
-         gdoARrJmfwWZsjtRJKiJFfZd3j8fhw8EaxYfIvH7D0l6KKao+dMz4VCAA/xF0lNnWxTt
-         6bSykUjfy8D2D20iSgJhemrv/yJ5X36IYjd0wlz5OL73v2NcrclGMdcR+TAD65H968ek
-         Jg6g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1786043247; x=1786648047;
-        h=content-transfer-encoding:content-type:in-reply-to:from
-         :content-language:references:cc:to:subject:user-agent:mime-version
-         :date:message-id:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=BX8ZxjTul2K/taj0A4BXwYLfVRhcZVy2nUyT99KFjNc=;
-        b=gok/tlR0ojE6a9EMggnT3QUZe6XS8gWnLbigMtBmlN9rhtGgN7/7UB/xB494eoLKhP
-         HkQscZUWo4jejOvUHpPMHRCiywSkzoLOzEEo3EZWSfolboyekDdzSGBa6+xetj7vfhOJ
-         qKSljzZSBtWJeb1BxZXJAP90Z0/5JC1OkyoFkcu+ka+tKcaQx67h6C+URTXZlSspGxGQ
-         T/Ihw8zUAhiNo15T+MbZPEjx8oZuH5EHIbgzzukn1OMcoo1LPXOqbtT7svH4yynz3pMK
-         +G6zSF2QYMimYGNhjure5KrNkxL1ATDRMTwTYx2dM6hDPz2PPKwbqp3tsD2ui0irtRwa
-         KXnQ==
-X-Forwarded-Encrypted: i=1; AHgh+RoO5MAbauJhi2SlrL0mbbBEJqcp+gcFSwyjJ9HusgZuKEpTSqy3aYwaH9qLL44usWB9mO6pLoeJYz4=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzpOlzJYSsIDa+LdxUWzZykf7MNvjVDxKBoJNukKC/NAJrUhB3O
-	RAagzCWbLTqfF0TOnZf2bl6Z+zlZuKVoG/JKxHh6Fr3C5Vcn0rsjQ4TxqwBfbMylF4e/YL1DKMP
-	r4z3uPXYF97ib8/1QVcXP0NVHnQ+0SERqUc9w1F29I+ppQHtTpA+cPDH8nHoUBstwZgwqt2YiLv
-	bQ
-X-Gm-Gg: AR+sD12ItGQp/ZUjOBjp42MZfhstFtyRql2m1YOrgLhedKrzOXvbmXa8jOifSsj0xf1
-	c956/Js0RMJneuGdfItWRTpynBb2IfBXDlmY7zyKsWCTTMhXY4SWG1tIhd8zQWXs1esQGq3qpxg
-	mmVfEsDVxl4gqzwzW1IJJSWo0NnlN+XhMQlXtnpxOHcCizQ/alqtSWtpyHz9KQXToDPeaqhT/ql
-	AutHTb3djPtDyKNc9l6WDeyG6tblbZ5az2/3g4+k1L9f1smoRnQTgmC+8TgsVAp5694sGckyHy+
-	stQ/A4D5DTPkUZRdFlWW1uVAT7mB1wj/YM7FF1Pb4aCgA5ZyMMamX53K+rKOPbbXS33axVd8ZzR
-	14ErplLF8VfebhfN3WO7jF2nMDwT0h4fsDw==
-X-Received: by 2002:a05:6a20:7285:b0:3c3:7a0a:18a6 with SMTP id adf61e73a8af0-3cb85eea69cmr17032501637.18.1786043247158;
-        Thu, 06 Aug 2026 12:07:27 -0700 (PDT)
-X-Received: by 2002:a05:6a20:7285:b0:3c3:7a0a:18a6 with SMTP id adf61e73a8af0-3cb85eea69cmr17032424637.18.1786043246641;
-        Thu, 06 Aug 2026 12:07:26 -0700 (PDT)
-Received: from [192.168.1.8] ([106.222.231.86])
-        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-315ae6c1f9fsm7932348eec.17.2026.08.06.12.07.23
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Thu, 06 Aug 2026 12:07:26 -0700 (PDT)
-Message-ID: <f799295b-b3c9-4ddc-be3a-fabbfbb97b2f@oss.qualcomm.com>
-Date: Fri, 7 Aug 2026 00:37:21 +0530
+	Fri, 07 Aug 2026 14:57:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1786114647; x=1817650647;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=2WaCSZxGgKegINJiKaWcVoLXmsHSne+ig0soIFKdlOc=;
+  b=XayTku/rLNgOQi/roR27UuvfHcaG6xCzHpjRfUc2F2FSt3c0Lr5tTt5h
+   Czl5CMwh5p4JCis/tZ4pYOzqSg6dDpAvViD5F1td7Ty6aLOOsAQ2bSH7V
+   y4ssar8MHalkN2AwitDw7Qs+INKojqwl+/e7IF2h1wrpZaNf3I3wHjLqp
+   6fKC0yZ+7JCAgV5uDAElXEOqERfy50bPtdq7v8J8szy5+KbWoUHD5K+Cs
+   tT4Yho6LITIPDLBxTrnRBFmPGZFuM8xVAeXLRQJjoU+IUfRCS0KavS7Oe
+   FT+AJqyp8fxjJmHS/We3WL/HdYmwVDGv9sw4qEkVaqOkOeWL5FVaxuJbY
+   g==;
+X-CSE-ConnectionGUID: RIdTjxWzQM+2/NIy+pdHUg==
+X-CSE-MsgGUID: XTzhtFD/SF6EOv5mx3dxgg==
+X-IronPort-AV: E=McAfee;i="6800,10657,11868"; a="86485173"
+X-IronPort-AV: E=Sophos;i="6.25,210,1779174000"; 
+   d="scan'208";a="86485173"
+Received: from fmviesa008.fm.intel.com ([10.60.135.148])
+  by orvoesa112.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 07 Aug 2026 07:57:24 -0700
+X-CSE-ConnectionGUID: LTUT01a3QiGxeOn43IKJ6A==
+X-CSE-MsgGUID: AysX7V1uQ/OddxOyWtxgVQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.25,210,1779174000"; 
+   d="scan'208";a="259809873"
+Received: from amilburn-desk.amilburn-desk (HELO ahunter6-desk) ([10.245.245.114])
+  by fmviesa008-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 07 Aug 2026 07:56:46 -0700
+From: Adrian Hunter <adrian.hunter@intel.com>
+To: alexandre.belloni@bootlin.com
+Cc: Frank.Li@nxp.com,
+	akhilrajeev@nvidia.com,
+	mukesh.savaliya@oss.qualcomm.com,
+	rafael@kernel.org,
+	linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	linux-pci@vger.kernel.org,
+	linux-pm@vger.kernel.org
+Subject: [PATCH V5 00/14] i3c: Support IBI-based system wakeup
+Date: Fri,  7 Aug 2026 17:56:24 +0300
+Message-ID: <20260807145638.168865-1-adrian.hunter@intel.com>
+X-Mailer: git-send-email 2.53.0
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH V4 13/14] i3c: mipi-i3c-hci: Factor out i3c_hci_sysdev()
-To: Adrian Hunter <adrian.hunter@intel.com>, alexandre.belloni@bootlin.com
-Cc: Frank.Li@nxp.com, akhilrajeev@nvidia.com, rafael@kernel.org,
-        linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-        linux-pci@vger.kernel.org, linux-pm@vger.kernel.org
-References: <20260806131857.119830-1-adrian.hunter@intel.com>
- <20260806131857.119830-14-adrian.hunter@intel.com>
-Content-Language: en-US
-From: Mukesh Savaliya <mukesh.savaliya@oss.qualcomm.com>
-In-Reply-To: <20260806131857.119830-14-adrian.hunter@intel.com>
-X-Authority-Analysis: v=2.4 cv=frDsol4f c=1 sm=1 tr=0 ts=6a74db70 cx=c_pps
- a=IZJwPbhc+fLeJZngyXXI0A==:117 a=uB10XSru4U0CyR2DWkO06w==:17
- a=IkcTkHD0fZMA:10 a=Sv0fKeRqtYgA:10 a=s4-Qcg_JpJYA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=u7WPNUs3qKkmUXheDGA7:22 a=_glEPmIy2e8OvE2BGh3C:22
- a=QyXUC8HyAAAA:8 a=EUspDBNiAAAA:8 a=pIyxDqSOQZZ-Xg8wykEA:9 a=QEXdDO2ut3YA:10
- a=uG9DUKGECoFWVXl0Dc02:22
-X-Proofpoint-GUID: NlrMmu6blM_q-rQU6cjZZVNa6ICCvG2i
-X-Proofpoint-ORIG-GUID: NlrMmu6blM_q-rQU6cjZZVNa6ICCvG2i
-X-Proofpoint-Spam-Info: AW1haW4tMjYwODA2MDE0OSBTYWx0ZWRfX18B9PS4xrwuq
- WMZFSJWNLjQlEzWbiMPTMbz9q5clL0AlgdmqIsV5iR5JnUR3PFpzW8fn4e1HUKPLw9Y9WiUdYd4
- UbexHIWXsCbMx0O+5h9YZL2pve53fJQ=
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwODA2MDE0OSBTYWx0ZWRfX/i/DEEltP5/D
- DyWlWJlFbt0+M+tgbWPLDJjD6pidB5nr6tgw3aNVyPLI8/iOCoY/htmwblbKwyaeJ1mymyO5uxO
- N4TKuRZdI3qtgIkuXhH0LaxHHDpZ/UYPKcP2t4dK5fN2mZ1RoA5iVTjeqlYYFfea1RYg7XJ3fIq
- uPAqVPBTQKQ2IAID0WfC76cNTRTHT+qOYBhnkdQ5MDN9PXMPPbRt3gtkRXjnZQSRjBuAJIVFV4v
- ESIRU8azFMhAFfa7lxNrnryO1yOv6GhvfvtqbPIFOZEcMQlSuaKDlNBGFiAFWe5sCLvGzcsS6WH
- n2UxSQxJ4an0yAgiPnSQ2Svvpaybu8umx8h4BDxUvOxEnvYljj09wqhLGcZXV8I/CMZ+FSqUFki
- OY4X3SZ5AN5KlIUCAm3wuCQdfXVtiGjv02gSh8wWjhxLNZI90Z+SbybnrQXkM7dvgysHMBbHsVr
- RHVlqhlZFRo+jbrucTw==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1176,Hydra:6.1.134,FMLib:17.12.100.49
- definitions=2026-08-06_02,2026-08-06_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 priorityscore=1501 clxscore=1015 suspectscore=0 impostorscore=0
- malwarescore=0 lowpriorityscore=0 adultscore=0 phishscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2606150000 definitions=main-2608060149
+Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park, 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 - 4, Domiciled in Helsinki
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260806_120729_923727_2147087B 
-X-CRM114-Status: GOOD (  11.74  )
+X-CRM114-CacheID: sfid-20260807_075727_784622_9DA1E7F6 
+X-CRM114-Status: GOOD (  19.29  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -146,28 +84,181 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+Hi
 
 
-On 8/6/2026 6:48 PM, Adrian Hunter wrote:
-> The MIPI I3C HCI driver needs to identify the underlying system device
-> used for DMA mapping and PM operations. The logic for determining that
-> device is currently embedded in the DMA implementation.
-> 
-> Factor this code out into i3c_hci_sysdev() so it can be shared by other
-> parts of the driver and keep the device-selection logic in one place.
-> 
-> The explanatory comment moves with the code, reworked as kernel-doc now
-> that it documents a function rather than an inline block.
-> 
-> Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
-> ---
+	Note: all patches except patch 7 now have Frank's Rev'd-by
 
-Acked-by: Mukesh Savaliya <mukesh.savaliya@oss.qualcomm.com>
+
+Intel LPSS I3C controllers support up to two I3C busses and can wake the
+system from an In-Band Interrupt (IBI) via a PCI PME.  Today that wakeup
+capability lives only at the PCI function, with no way to express which
+I3C device is actually responsible for waking the system, and no way for
+user space to enable or disable wakeup on a per-device basis.
+
+This series pushes the wakeup capability down to the individual I3C
+devices and then aggregates the resulting wakeup state back up to the PCI
+device.
+
+An IBI-capable I3C device on a bus whose controller can wake the system
+is marked as wakeup capable, so it can be managed through the standard
+device wakeup framework (e.g. via power/wakeup in sysfs).  When such a
+device is enabled for wakeup, a wakeup event is reported each time it
+queues an IBI.
+
+At suspend time, the mipi-i3c-hci PCI driver aggregates the wakeup
+configuration of the I3C devices across its HCI instances (up to two I3C
+busses) and enables PCI wakeup (PME) only when at least one attached I3C
+device is enabled as a wakeup source and has IBI enabled.  This keeps
+the PCI wakeup state in sync with the actual requirements of the devices
+on the busses.
+
+The series is organised as follows:
+
+ - Patch 1 fixes a pre-existing recursive acquisition of the bus rwsem
+   in i3c_master_register_new_i3c_devs().  The remaining patches add
+   work to that same function, so the locking is corrected first.
+
+ - Patches 2-7 fix use-after-free and unlocked accesses of the i3c_device
+   desc pointer.  Moving device registration out from under the bus lock
+   in patch 1 is what makes it possible to take the bus lock in the
+   helpers that run during registration.
+
+ - Patches 8-11 add the generic I3C core support: an ibi_wakeup flag for
+   controllers, marking IBI-capable devices as wakeup capable, reporting
+   wakeup events on IBIs, a helper to query whether any device on a bus
+   has both wakeup and IBI enabled, and a fix to reject IBI requests
+   from devices that do not advertise IBI capability.
+
+ - Patches 12-14 wire this up for the mipi-i3c-hci driver: propagate the
+   aggregated I3C wakeup requirements to the PCI function, factor out
+   i3c_hci_sysdev() for the shared device lookup, and advertise IBI
+   wakeup capability when the underlying system device can wake the
+   system.
+
+Note, since the PCI wakeup state is now derived from the wakeup
+configuration of the attached I3C devices, the PCI device's
+power/wakeup sysfs attribute no longer provides independent wakeup
+control.
+
+
+Changes in V5:
+
+    Added Frank Li's Reviewed-by and Mukesh Savaliya's Acked-by tags.
+
+
+Changes in V4:
+
+    i3c: master: Fix recursive locking during device registration
+	Expanded the kernel-doc for the new struct i3c_device @node
+	member to note that it is only for use by
+	i3c_master_register_new_i3c_devs() and is not protected by a
+	lock.
+
+    i3c: master: Fix use-after-free of master->this
+	Also reset master->this and bus.cur_master to NULL on the
+	i3c_master_set_info() error path before freeing the allocated
+	device.  Tidied up the commit message wording.
+
+    i3c: master: Support IBI-based wakeup capability
+	Shortened the comment about IBI-capable devices being wakeup
+	capable.
+
+    i3c: master: Add helper to query bus wakeup requirements
+	Renamed i3c_master_any_wakeup_enabled() to
+	i3c_master_has_wakeup_enabled_devs().
+
+    i3c: mipi-i3c-hci-pci: Propagate I3C wakeup requirements to PCI
+	Updated for the rename of i3c_master_any_wakeup_enabled() to
+	i3c_master_has_wakeup_enabled_devs().
+
+    i3c: mipi-i3c-hci: Factor out i3c_hci_sysdev()
+	Reworked the comment that moves with the code into kernel-doc,
+	and mentioned that in the commit message.
+
+    i3c: mipi-i3c-hci: Advertise IBI wakeup capability
+	Updated the i3c_hci_sysdev() kernel-doc to mention system PM and
+	wakeup, in place of the old comment tweak.
+
+    Added Frank Li's Reviewed-by and Mukesh Savaliya's Acked-by tags.
+
+
+Changes in V3:
+
+    Added 6 patches (2-7) that fix use-after-free and unlocked accesses
+    of the i3c_device desc pointer.  Moving device registration out from
+    under the bus lock in patch 1 is what allows that pointer to be
+    protected in the helpers that run during registration.
+
+    i3c: master: Fix recursive locking during device registration
+	Added Cc: stable@vger.kernel.org
+
+    i3c: master: Add helper to query bus wakeup requirements
+	Skip the master device explicitly.  Noted in the kernel-doc that
+	wakeup enablement is user space policy, so the helper is meant to
+	be called from a system suspend callback.
+
+    Added Frank Li's Reviewed-by tags.
+
+    Rebased onto i3c/next.
+
+
+Changes in V2:
+
+    Dropped the RFC tag.
+
+    i3c: master: Fix recursive locking during device registration
+	New patch
+
+    i3c: master: Support IBI-based wakeup capability
+	Dropped the redundant #include <linux/pm_wakeup.h>.  That header
+	must not be included directly, and linux/device.h, which is
+	already included, provides device_set_wakeup_capable().
+
+    i3c: master: Add helper to query bus wakeup requirements
+	i3c_master_any_wakeup_enabled() now also requires the device to
+	have IBI enabled, not just system wakeup enabled, so that a
+	device with no active IBI request does not keep PCI PME enabled.
+	desc->ibi_lock is taken while checking.  The commit message and
+	kernel-doc are updated to match.
+
+    Rebased onto i3c/next.
+
+
+Adrian Hunter (14):
+      i3c: master: Fix recursive locking during device registration
+      i3c: Fix unlocked dereference of dev->desc in i3c_device_get_supported_xfer_mode()
+      i3c: master: Do not treat master device as a duplicate target
+      i3c: master: Fix use-after-free of master->this
+      i3c: Make dev->desc locking assumptions explicit
+      i3c: master: Fix potential UAF in i3c_device_uevent()
+      i3c: master: Fix potential UAF in i3c_device_match()
+      i3c: master: Support IBI-based wakeup capability
+      i3c: master: Report wakeup events for IBIs
+      i3c: master: Add helper to query bus wakeup requirements
+      i3c: master: Reject IBI requests from non-IBI-capable devices
+      i3c: mipi-i3c-hci-pci: Propagate I3C wakeup requirements to PCI
+      i3c: mipi-i3c-hci: Factor out i3c_hci_sysdev()
+      i3c: mipi-i3c-hci: Advertise IBI wakeup capability
+
+ drivers/i3c/device.c                               |  13 +--
+ drivers/i3c/internals.h                            |   5 +
+ drivers/i3c/master.c                               | 119 ++++++++++++++++-----
+ drivers/i3c/master/mipi-i3c-hci/core.c             |  20 ++++
+ drivers/i3c/master/mipi-i3c-hci/dma.c              |  15 +--
+ drivers/i3c/master/mipi-i3c-hci/hci.h              |   2 +
+ drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c |  23 +++-
+ include/linux/i3c/master.h                         |   6 ++
+ 8 files changed, 155 insertions(+), 48 deletions(-)
+
+
+Regards
+Adrian
 
 -- 
 linux-i3c mailing list
