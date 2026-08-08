@@ -4,68 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3FAAC5AC67
-	for <linux-i3c@archiver.kernel.org>; Sat,  8 Aug 2026 13:11:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 19B29C55174
+	for <linux-i3c@archiver.kernel.org>; Sat,  8 Aug 2026 13:13:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RJ57DJ3eHCW9jDR1dq7ev9afAvrOtsthRG8pdCGqUxY=; b=E+PtNFsoEWbL/g
-	sqzyB241ghujaz4vEzSLmlIFCaYFsHADePZAd0AUTHmcRlm2XEJ/kAHUHtywqZWo1UX4jva23ivI4
-	Bab49rmTf7bA5PlkMZSfxmlQN1IyG2ElbM1hcuDZOVlRBp3dP9s3eRj041uWsf7B5bMG6aACT+pZZ
-	ZuIJ277/Li5kk/3aPzox2BVmRWCpDutE2qgKoUp0Vg0U/++9Z1kEHrI1nbTqnMaWaxPaaSJQAp6fz
-	1IE+5xOfb5rPwBBcMQoIcKiNq0YndDWZ+FjELPfotsxip6suXcmSX5lwD2JRz4hNLH/SsY+c3oPB1
-	2NXGeAY//KBxtpIqKacA==;
+	List-Owner; bh=4lkiaCrZIlVLlX/HutO2zdmsVlOCqL0VRltbmfRbsIg=; b=L7xjXalNjyROlo
+	8J26FS2Pj6oroFzUE3L8JZ0ZW4WyjVgUXOcR0IqN0PXogTDx6jsxv8H+b4j6XPCTtDAuz2AuTzsLE
+	uC65IfxgTNcrLAPgVifFG2nDDtCll+mLN1Ze7VLX43vSTxCTmS0vDAdw7rwDvopIcHqXh0NwgLKpn
+	O/s5q67AXFvxVYAqkkzw2qLVVieCJI9tpL9Qsf05368kHYyAx4/VsgCPGh1n8zX5LQq4V7bbZYhkr
+	0yPmwEYRzoxTLfErg2h8ZK5NKTsxOingAPyAghe73jbAz2OE1KA3kLCV4rdoEu41lLpl2TvelZ4c0
+	kWj2hGLrMTFVBS+ICrRA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsgpL-00000009NVk-1oNk;
-	Sat, 08 Aug 2026 13:11:03 +0000
+	id 1wsgrM-00000009NcO-3M6O;
+	Sat, 08 Aug 2026 13:13:08 +0000
 Received: from smtpout-02.galae.net ([185.246.84.56])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wsgpI-00000009NVQ-2a5U
+	id 1wsgrK-00000009Nc2-0CSu
 	for linux-i3c@lists.infradead.org;
-	Sat, 08 Aug 2026 13:11:01 +0000
+	Sat, 08 Aug 2026 13:13:07 +0000
 Received: from smtpout-01.galae.net (smtpout-01.galae.net [212.83.139.233])
-	by smtpout-02.galae.net (Postfix) with ESMTPS id 0FA191A14D2;
-	Sat,  8 Aug 2026 13:10:59 +0000 (UTC)
+	by smtpout-02.galae.net (Postfix) with ESMTPS id E5DFE1A14D2;
+	Sat,  8 Aug 2026 13:13:03 +0000 (UTC)
 Received: from mail.galae.net (mail.galae.net [212.83.136.155])
-	by smtpout-01.galae.net (Postfix) with ESMTPS id D83766045E;
-	Sat,  8 Aug 2026 13:10:58 +0000 (UTC)
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 42DD411C484B3;
-	Sat,  8 Aug 2026 15:10:52 +0200 (CEST)
+	by smtpout-01.galae.net (Postfix) with ESMTPS id B237E6045E;
+	Sat,  8 Aug 2026 13:13:03 +0000 (UTC)
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 736D911C484B3;
+	Sat,  8 Aug 2026 15:12:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bootlin.com; s=dkim;
-	t=1786194654;
-	h=from:subject:date:message-id:to:mime-version:content-type:in-reply-to:
-	 references; bh=gaBcsh29d20Vv8HUNxBNk04mJcbldcEu6BbnQ8q8Xf8=;
-	b=wLe/tsGmUz8FSXP25PydvttoBGkzPvsThaIOQqQk1E1WIEWsBBz/EHg+AF1njspM16SuJG
-	5rbgZnmq4hIjor/VLvYQbwYS7F5Z7Zurc/Ead7y4AaHkGC+9ygvhWw9jwYapPytV9wGU4P
-	9sVroJsbJogn2PfnLAWQnOVGhBDVC4+Hv1FQtgNIF5O7C5nlnrngOlvnkODnZ/BexsABt7
-	aHnUe24i3yFthJDm+d0D6hxwanuak/Nwv2jnq7xB/uLnXtaKx1cmXLEtkCHMaXNmhu3bZR
-	S6EDnfuFuT8MgsbtRfnoovtxQxBB/urkVjzn8EZ98pAxLdctg3agBZie0iX0eA==
-Date: Sat, 8 Aug 2026 15:10:51 +0200
+	t=1786194779; h=from:subject:date:message-id:to:cc:mime-version:content-type:
+	 in-reply-to:references; bh=bfZAzk0HnJSBMWq+kezzbVkR28SVWwNouuhGImysDro=;
+	b=awwd2arIp9NVMhEcIaC0Fqugq1bq/CPpTeuRiPhdsKTHIoXycx+gmgIt0dE1mibhNjfFXM
+	OBM+6GekqTE6swwDXHOkl21P+w+vRse/2084OdEd0c5velW/+ymBUG6HT7jVeVhnReg4qf
+	Y0mLSNJMUNyP1ade9cIQTLyAn4GxiNhtXGIDoXrhIraqjWroYuSPe1IZmkGsP1jwW+wCLO
+	JucTilJGA7/1HrAMPIDy+dBjUggGBBQcRE7e/vX9UUtjXMdknEFDQ+uNBdhTjEPGjUvXz7
+	H3EMaAJjxoSGGjwtAgof6Kof5DjOUzCNSWJgloCnEp1MFlvHQz0HxOPtrfDjBg==
+Date: Sat, 8 Aug 2026 15:12:56 +0200
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Frank Li <Frank.Li@nxp.com>,
-	Adrian Ng Ho Yin <adrian.ho.yin.ng@altera.com>,
-	Felix Gu <ustc.gu@gmail.com>,
-	Adrian Hunter <adrian.hunter@intel.com>,
-	Akhil R <akhilrajeev@nvidia.com>,
-	Manikanta Guntupalli <manikanta.guntupalli@amd.com>,
-	Shubhrajyoti Datta <shubhrajyoti.datta@amd.com>,
-	linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org,
-	tze.yee.ng@altera.com
-Subject: Re: [PATCH v5] i3c: master: dw-i3c-master: fix OD timing for first
- broadcast
-Message-ID: <178619464541.3721483.13323020054578702831.b4-ty@b4>
-References: <d789219ca0418898a1ef2bf9295b4f96ca7b4209.1785484707.git.tze.yee.ng@altera.com>
+To: tomm.merciai@gmail.com,
+	Tommaso Merciai <tommaso.merciai.xr@bp.renesas.com>
+Cc: linux-renesas-soc@vger.kernel.org, claudiu.beznea.uj@bp.renesas.com,
+	biju.das.jz@bp.renesas.com,
+	Wolfram Sang <wsa+renesas@sang-engineering.com>,
+	Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] i3c: renesas: Don't register devices when ENTDAA times
+ out
+Message-ID: <178619476971.3722554.9292570008305281170.b4-ty@b4>
+References: <20260731070150.2519825-1-tommaso.merciai.xr@bp.renesas.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <d789219ca0418898a1ef2bf9295b4f96ca7b4209.1785484707.git.tze.yee.ng@altera.com>
+In-Reply-To: <20260731070150.2519825-1-tommaso.merciai.xr@bp.renesas.com>
 X-Last-TLS-Session-Version: TLSv1.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260808_061100_812313_3559491B 
-X-CRM114-Status: UNSURE (   5.63  )
+X-CRM114-CacheID: sfid-20260808_061306_248623_72A071D1 
+X-CRM114-Status: UNSURE (   8.78  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -83,20 +80,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, 31 Jul 2026 01:01:39 -0700, tze.yee.ng@altera.com wrote:
-> Implement ->set_speed() so the I3C core can switch open-drain timing for
-> the first broadcast address per spec: I3C_OPEN_DRAIN_SLOW_SPEED programs
-> tHIGH_INIT (200 ns) before RSTDAA, and I3C_OPEN_DRAIN_NORMAL_SPEED restores
-> normal OD timing afterward. Cache the normal OD register value during bus
-> init and use a separate od_hcnt for the slow path so SDR extended timing
-> remains derived from the normal PP hcnt.
+On Fri, 31 Jul 2026 09:01:46 +0200, Tommaso Merciai wrote:
+> renesas_i3c_daa() derives the number of newly assigned dynamic addresses
+> from cmd->rx_count, which the response ISR sets to the number of address
+> slots ENTDAA left unassigned. It starts out as zero, which already means
+> "every address was assigned", so a timed out transfer leaves that value
+> in place and it gets used as a result.
+> 
+> On a bus with no target connected the ENTDAA times out and the driver
+> registers RENESAS_I3C_MAX_DEVS devices that are not there, each costing
+> the core two seconds on a GETPID that can only time out:
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] i3c: master: dw-i3c-master: fix OD timing for first broadcast
-      https://git.kernel.org/i3c/c/7315aad228c2
+[1/1] i3c: renesas: Don't register devices when ENTDAA times out
+      https://git.kernel.org/i3c/c/b6e56fd8c8a8
 
 Best regards,
 
