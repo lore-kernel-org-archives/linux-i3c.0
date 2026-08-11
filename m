@@ -4,177 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 36D5DC5AC67
-	for <linux-i3c@archiver.kernel.org>; Tue, 11 Aug 2026 12:48:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3685C5B572
+	for <linux-i3c@archiver.kernel.org>; Tue, 11 Aug 2026 16:29:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
-	References:CC:To:Subject:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=V7Ix+9SqvLKWkRjuKxTRdMDLg4/xeBkXkWnZ9UmX9Zg=; b=DsmPxHS4cIAwBKCoS9Uz18GRvQ
-	IYIYn4GyOlUArHyNev+AJL4UdPAPHvFP1TVPef06XyKjX6p9dzx4bILd97O2wAbSzCeFfxaFJreA3
-	55TMtLxDp0U6ipPIFGo+EtYN7FK4ZlyS7mZcsD0B8Z2+7ujr96mqESv8T3ZwNRaxGzhkiJHMUHyrH
-	rBprDXcVgev5HIr4/1UzZAc8fQ1iaiad6Q5FT3Nhe4H+RB2mZuBBFLaajkJVjfAyAchBzfFkBjaKP
-	N9sXSfa1CF+mLiuZoXFVNtKMQ5x0tW0Ck3nUSAOq55tU7DWvgISw78r38lzrfnFaTpdmeV/tggDI3
-	4r5rYhSQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nvhzUsEEqvejZulRGKKYsGNx5wxbDXOTf9SjgAa+JDE=; b=M99jLDULTiqT7M
+	h1zuUrM0gH8UsZbj2c29BdCYfCnYZTMKGmWCr+aWxrpBDfJIHX/QNlJ+wG4vuIoE2ptInsJk/f5X4
+	lCEq7ILOHV7pL6PnH9QBET96KGMK/kTPwz9ctCJ/86M9Li9A2Oj2ZY5txfkAtrTeTSfGUaV8zx4x/
+	OUne8hpEbhxPUuJlbLnheV585oMX5GmV20V3m3cckxMVPowjbmeCP2ur4f80f+LYNUD4JbBMq6NJ/
+	yiK72sjjEiGAw+G2p9MqxhJ5Mj9EDN8EBlL+pgc4JjrG+t0pKbRpyLjgp5aJW9tvH9kBzenC4qXzW
+	uVjK1A0rFt1yj8ff/uLA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtluP-0000000E32K-3niY;
-	Tue, 11 Aug 2026 12:48:45 +0000
-Received: from mgamail.intel.com ([192.198.163.11])
+	id 1wtpM6-0000000EVIi-2mk4;
+	Tue, 11 Aug 2026 16:29:34 +0000
+Received: from mail-westusazlp170120002.outbound.protection.outlook.com ([2a01:111:f403:c001::2] helo=SJ2PR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wtluN-0000000E320-1BfX
+	id 1wtpM3-0000000EVI2-2ToB
 	for linux-i3c@lists.infradead.org;
-	Tue, 11 Aug 2026 12:48:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
-  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
-  t=1786452523; x=1817988523;
-  h=message-id:date:subject:to:cc:references:from:
-   in-reply-to:content-transfer-encoding:mime-version;
-  bh=WrzeEDaE4kvBUaTteGL0miRxEhOgrqxeVCmgykAb2IE=;
-  b=XoiSPgS5wfhM25CdNIAfGk/tnTkHPjd9vNBJyyiLYhbK8ygiMUNEZ83E
-   pL2i4vc+ehKDtaYStBTzVRPM04C8l7Q5TUP8NnC4TLhCHEmEUiOyGZV5d
-   lZMWpt11E82mOVGrOPcz5Eke51amXJDixuojHk5TjnR0uhmnee8FAJdIu
-   2LsOAZPr1FaVIAipvFS/EOC5u4c5L51PsYtlQkueuIoiSik05mjBQM2hV
-   tL3n1cScjVDxFWxhLtUGcSgysmRtHEUmcWAYQlVghSByfBLlfuBd7bYNk
-   YMuBmvCQmRYpAn+dgg94ALkAp3gJqs7hNohCym0xb98uZju1PqjX3jOYM
-   g==;
-X-CSE-ConnectionGUID: QqpTwE4zRC+i0trX03YwhQ==
-X-CSE-MsgGUID: Zv3BPteISPyh52OtOcuDyw==
-X-IronPort-AV: E=McAfee;i="6800,10657,11871"; a="97578987"
-X-IronPort-AV: E=Sophos;i="6.25,217,1779174000"; 
-   d="scan'208";a="97578987"
-Received: from orviesa005.jf.intel.com ([10.64.159.145])
-  by fmvoesa105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 11 Aug 2026 05:48:42 -0700
-X-CSE-ConnectionGUID: EZB7q1o4QfaXlTxZ9h5dQg==
-X-CSE-MsgGUID: 8Ziwo257RP+gTk+OX6BqFw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.25,217,1779174000"; 
-   d="scan'208";a="267606723"
-Received: from orsmsx901.amr.corp.intel.com ([10.22.229.23])
-  by orviesa005.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 11 Aug 2026 05:48:42 -0700
-Received: from ORSMSX903.amr.corp.intel.com (10.22.229.25) by
- ORSMSX901.amr.corp.intel.com (10.22.229.23) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.45; Tue, 11 Aug 2026 05:48:41 -0700
-Received: from ORSEDG902.ED.cps.intel.com (10.7.248.12) by
- ORSMSX903.amr.corp.intel.com (10.22.229.25) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.45 via Frontend Transport; Tue, 11 Aug 2026 05:48:41 -0700
-Received: from DM1PR04CU001.outbound.protection.outlook.com (52.101.61.33) by
- edgegateway.intel.com (134.134.137.112) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.2562.45; Tue, 11 Aug 2026 05:48:41 -0700
+	Tue, 11 Aug 2026 16:29:32 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=SWMOzFyVepph7jxKdyPF4+fT/4blvZKKMOZragSHZhjlQjT2yrBorCm0D2MfJBd0s/Tuxiq+M7vWAMP4ZvgK1awhlXQRauMfe4iLIjKDJFXZPlbePsFX+mdfkmQTXF16R+KFQWYyveP0t4Yrlbv+AvqXW3RRsf76L5tSMyyu8VAto/GOEI+8RqztQbxcCZdOLLC1SHux9koC6k/Q5D5UM96YewKytqX8z4yT79NA9nE/WDsEPWrdytgu8B7i14SHNgrSrpgbiWcrVGQzePU7zrOijEinoCxiSfs0y5uX2qbHCE2V0yULX313GsZeU4/QIGwn+a6kcJYAzbw4rON/mA==
+ b=nEw4VcZJNyFXP+Wp7nuDZZQoVR30r9iPlaGdnPJf0E7V5QYGZgj5/Hlpbc0RCUiBeP6+UpAOyQuM7DGBOHWC9SL7VZA5rRlhULjKtcU49oHbHOMdw8Gk+7l0eQiv9kxhP/1xytqfT8Q2O1avVaBfm+B298JlIMD7qhBH0zrCTkC+365iCtsf5CJVrimZ6PjVJlQ0j6PAJ68QPlDEe1MLORrnKcKyaVLA2nvmlehB+FWr8Kvwo1OyAQIMLGcwuhhQ5fZXN1EqKbT7bl3PV/pXFMx2jTEF6BeicHRQ/geRNRC/dY1VyPF3a7zVg0VPSAf7uaU/AaVv+SzY0jOobQgOug==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=NCgZSCfppujZomD9dbb8RtW9G2PU/wQ4QWLB7PheqrM=;
- b=vsUYS4n1kDFjJ/RFcDcfKkh0VmCLtY20K21ZwA0qiM+guFz34wy9653hbz43pMw8yBbNTGvxMra9bG7QJpJ3KRvpj+rVhwtR6Ad4A0FMsO9iuHX8R62Q8FpSApJNQZgb2i6HErpo99GKjPOfQDMoeoE8TIA3BxWM4jwagPqvsU5d3juQ18yRnwSDuu+Vrj4tvPEzSDc8dbbHr5oAA0spY3bMVuykhy/NNiBdfREE5qj81K7MM1YsMkPEZG1zNnJuBvj5HuxF5cf73JdkDPbNo0+hFN/Nl3hhkf0F1AqLgGtGYU2DI6O6OEHVL5945RdMf+SPjGvyMDpcv4ccX/P0yA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
- dkim=pass header.d=intel.com; arc=none
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=intel.com;
-Received: from IA1PR11MB7198.namprd11.prod.outlook.com (2603:10b6:208:419::15)
- by DM6PR11MB4625.namprd11.prod.outlook.com (2603:10b6:5:2a8::24) with
+ bh=WJWFbOPlA70e6+dnkUwuhcuvxSOZo6ZYtFpHWdbij3Y=;
+ b=djm2P1iRK5CY3C8ikjJlQriJ2gZ+2YZxb4S7pKaicfgkcFhuqUflSIDu9xM4mlYLAYEUl7of69OpA9Ezy8ESjM6eY5WxQfp2YtJ6V9z6CKaca9hUpWCq/uG38JRySQbxw9X4CR64OCbMPwhKLQTq1zQzkpra6RXk2xkFHogIRzkbPUeYFhaCegbeBtuyUjyMwR9eBVlfIBYOJ58LqnVabI4ENPwzZkh7sUmZ2+QOAEjeSt5GfQucJ/ghrEc/8NMyNOuLe0W460NWcK4f3bHkg80mKhF6l17AApPJ+es/mPN7mpGitF9VzRDvdnkqU19GK7fYgWdjlNPbo4l6hwvYsQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 216.228.117.160) smtp.rcpttodomain=oss.nxp.com smtp.mailfrom=nvidia.com;
+ dmarc=pass (p=reject sp=reject pct=100) action=none header.from=nvidia.com;
+ dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=WJWFbOPlA70e6+dnkUwuhcuvxSOZo6ZYtFpHWdbij3Y=;
+ b=k84zZzGPCEholFaSKAauUFZ+fgGb7Wd09D6FMO7zrN4i31CvNqtlygZNzsm+Lbgtga4DDLmtQ9HYchSxIqmNNfzgpc5NrnYK4CHA/mHMW6PVPx9TqTAmgh+6wGHX+TkRZZun9wWmz8kZ7kGM7ZaJM2FncTC6PunJ6OuewkrdzXNm114+v/mgCuUvA0W3myVaNsWTU/68Rrzd0gvXgV9JLi6fu71700K3GVLyX6K92US4b1aJeSqxfvS77R7dqx64Gwa7VrREAG1UxZ84KvGxHWkQNzE9jvYrLpMyisA+FvtFkc9ZyNg/eHjHcJN07tCURjZ9TXOaSjPb5bh2p0Jiuw==
+Received: from BN9P220CA0010.NAMP220.PROD.OUTLOOK.COM (2603:10b6:408:13e::15)
+ by IA1PR12MB8190.namprd12.prod.outlook.com (2603:10b6:208:3f2::7) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.315.11; Tue, 11 Aug
- 2026 12:48:38 +0000
-Received: from IA1PR11MB7198.namprd11.prod.outlook.com
- ([fe80::2c4e:e92a:4fa:a456]) by IA1PR11MB7198.namprd11.prod.outlook.com
- ([fe80::2c4e:e92a:4fa:a456%3]) with mapi id 15.21.0292.024; Tue, 11 Aug 2026
- 12:48:38 +0000
-Message-ID: <2be609c3-1c7f-41bd-b576-4a6b5f044d5e@intel.com>
-Date: Tue, 11 Aug 2026 15:48:33 +0300
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v2 3/3] i3c: mipi-i3c-hci: Add support for AMD_PT I3C
- controller
-To: Jian-Ming Liao <tim678910@gmail.com>, <alexandre.belloni@bootlin.com>
-CC: <Frank.Li@nxp.com>, <jarkko.nikula@linux.intel.com>,
-	<linux-i3c@lists.infradead.org>, <Jm_Liao@asmedia.com.tw>,
-	<Chloe_Chen@asmedia.com.tw>, <Yd_Tseng@asmedia.com.tw>,
-	<Patrick_Yen@asmedia.com.tw>
-References: <20260709071744.333403-1-Jm_Liao@asmedia.com.tw>
- <20260728093239.487156-1-Jm_Liao@asmedia.com.tw>
- <20260728093239.487156-4-Jm_Liao@asmedia.com.tw>
-Content-Language: en-US
-From: Adrian Hunter <adrian.hunter@intel.com>
-Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park,
- 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 -
- 4, Domiciled in Helsinki
-In-Reply-To: <20260728093239.487156-4-Jm_Liao@asmedia.com.tw>
-X-ClientProxiedBy: DUZPR01CA0154.eurprd01.prod.exchangelabs.com
- (2603:10a6:10:4bd::24) To IA1PR11MB7198.namprd11.prod.outlook.com
- (2603:10b6:208:419::15)
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.292.25; Tue, 11 Aug
+ 2026 16:29:19 +0000
+Received: from BN3PEPF0000B070.namprd21.prod.outlook.com
+ (2603:10b6:408:13e:cafe::a8) by BN9P220CA0010.outlook.office365.com
+ (2603:10b6:408:13e::15) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.292.25 via Frontend Transport; Tue,
+ 11 Aug 2026 16:29:19 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 216.228.117.160)
+ smtp.mailfrom=nvidia.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=nvidia.com;
+Received-SPF: Pass (protection.outlook.com: domain of nvidia.com designates
+ 216.228.117.160 as permitted sender) receiver=protection.outlook.com;
+ client-ip=216.228.117.160; helo=mail.nvidia.com; pr=C
+Received: from mail.nvidia.com (216.228.117.160) by
+ BN3PEPF0000B070.mail.protection.outlook.com (10.167.243.75) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.339.0 via Frontend Transport; Tue, 11 Aug 2026 16:29:19 +0000
+Received: from rnnvmail201.nvidia.com (10.129.68.8) by mail.nvidia.com
+ (10.129.200.66) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.45; Tue, 11 Aug
+ 2026 09:28:52 -0700
+Received: from rnnvmail205.nvidia.com (10.129.68.10) by rnnvmail201.nvidia.com
+ (10.129.68.8) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.20; Tue, 11 Aug
+ 2026 09:28:52 -0700
+Received: from build-akhilrajeev-noble-20260602.internal (10.127.8.11) by
+ mail.nvidia.com (10.129.68.10) with Microsoft SMTP Server id 15.2.2562.20 via
+ Frontend Transport; Tue, 11 Aug 2026 09:28:50 -0700
+From: Akhil R <akhilrajeev@nvidia.com>
+To: <frank.li@oss.nxp.com>
+CC: <Frank.Li@kernel.org>, <akhilrajeev@nvidia.com>,
+	<alexandre.belloni@bootlin.com>, <linux-i3c@lists.infradead.org>,
+	<sashiko-reviews@lists.linux.dev>
+Subject: Re: [PATCH 1/5] i3c: master: Release the fwnode of i2c boardinfo
+Date: Tue, 11 Aug 2026 16:28:49 +0000
+Message-ID: <20260811162849.1242167-1-akhilrajeev@nvidia.com>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <anOJ2V4_R0KFM_aQ@lizhi-Precision-Tower-5810>
+References: <anOJ2V4_R0KFM_aQ@lizhi-Precision-Tower-5810>
 MIME-Version: 1.0
+X-NV-OnPremToCloud: ExternallySecured
+X-EOPAttributedMessage: 0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: IA1PR11MB7198:EE_|DM6PR11MB4625:EE_
-X-MS-Office365-Filtering-Correlation-Id: 927691f1-8b6a-40a7-9323-08def7a6dd3b
+X-MS-TrafficTypeDiagnostic: BN3PEPF0000B070:EE_|IA1PR12MB8190:EE_
+X-MS-Office365-Filtering-Correlation-Id: d3662819-d53b-4b3b-656d-08def7c5b189
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|366016|1800799024|376014|10067099003|11063799006|56012099006|4143699003|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: DJ1JrwfP3eB4bo2GUKtqATveyjTPwWb0ai1UtfDItrXZn60/hSvel29A/sy5JjsEdilOnm5Lay8zNyxb3XV81VAIuKlluZLkp+PMXUUcxRiGNiL4P/ACvKbkyWi/ueQqZ92k9WRLuZ1K/Wq8XbsEu1bypNGwVIYS7LLBwB75VF3NK3X9v3eXJVC6iI9Z07ryPemjlnJyVk3tQ7A96SF6ErWJXjyvxK4GHtFSNXb4puDLjvy+eVOPWFn5zLcuXx7SjSkJVqgvg0bJyrHgZUsF1XzC1JqGtBOFrgrL8BLHR+GKwq6Th5KJhS+yxnh6ayuempJ7SPuwNEPZ7r9MkhR5q4Z9ci+82BrUeq0RMneO3jdDqTe4qXBxzfaRvT0S8fZVd5TigF0OuCkP0UvNCJBmKwXJN2+vZ9WEsEKe9+JnE9AuUyqhbH5PWcAq5tts3ljLn+i/ocDrvvqgG7P+0jX/452hIbmaLjNpgGwCWJDWRSKPnDGJnPXOVVMmlX5EGCSwi9fl7JKUsfJH36QmFzM15/myNzWlG4swguEU8TNWxiDrkS/+HpUT8k01LII0eDFUTfJNXvAwX5Sq+CP5qk+xpy/HOxlFR7dukCLSXJPYHUMq7x3SBvkd92monSkcWZZyBoKLfoP1LDOMkLSYOAgmB2ModOTNPdM2lsonK/9bhKY=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR11MB7198.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(366016)(1800799024)(376014)(10067099003)(11063799006)(56012099006)(4143699003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|376014|36860700016|1800799024|30052699003|82310400026|6133799003|10067099003|56012099006|11063799006|22082099003|18002099003;
+X-Microsoft-Antispam-Message-Info: dYivr4SLYioNWytnW37IxHQPeUY+WMHqLvVzcmztMSzIOiFfPu1fDJVJto+GwAtpdfzGagWwZ9O/p3qr8mrxv4aD/8i5sFOZ0zX5SPkI9BnbcviNU4X5XBRSxZpKRgyKXhD97aAahYS2a2kB6W67YjHPR/WrbHgM1vuTBgSvzQ8SB7G69ZZARYF/yYIhPw57p+9jfwASGuxJVDdftxmKM3e/pJic0QlOsROniVModhwb2wIuj59Rt59HuC0atz34VtNWraMS6++on0MsgyEN6qxzTcLEK61+/jF2dFXu5iu8yjsEKLeHmCAxIm5KthaZQF40Oj1bXPW377HcDp+Q3TXQ8TL3I0xctwbYuztacJPHDQenkrgpucbmrvxLDvXrsMLel9SVBa8QtA15+ahrmo5uiumd59Q8dkwfSYBF7LQrrbpFeCmmL/ZSdRXwoi615iYjZCB6x7q+3hNwl74/oDgZzriSvU5893JrRRpLoO66kOf/fTzAtta6Vpo2RVtzeZgK6gk4ERO1W+/Gd/q+Zqiw+hjESPqhISG7QRFoyXJZgObxWJm8N1XmEWVZRCj41Bxk21q88NNU4rS1nELK3I4XctwaYaSp3dAHVrsdBGFb3tab2sYxx8XhB8PpLutK+GM3Z6Arr4+Qqcdrv2qyWDL4NlThxhAnS0ToenLEcwRfFNPKOrO0y3Fefinj9CS7OShj4pc0fnif4M3n823dKw==
+X-Forefront-Antispam-Report: CIP:216.228.117.160;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.nvidia.com;PTR:dc6edge1.nvidia.com;CAT:NONE;SFS:(13230040)(23010399003)(376014)(36860700016)(1800799024)(30052699003)(82310400026)(6133799003)(10067099003)(56012099006)(11063799006)(22082099003)(18002099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?UW85UHJhbmRFRVhqTyt5QkxPK05yYWo1NWViekQ0VEs3Mmtmc0dSRmFFZ0du?=
- =?utf-8?B?MjQvSzlraWpkcVhNZlV5Zm8zMElldTV2dXcwQncvQVpPeUZERDZwZk1rVlVt?=
- =?utf-8?B?dUhIWDZTSG8ra0s4M1VmdXBqeitPMjE0ZjZWcDhiNUhESStVY1A2ZjRERUtV?=
- =?utf-8?B?RHFpa3ZPUmZ0cTZ5ZnJRNUYyTGdEMmRHUmZ1YjYvRGphcGZacElkaFU0VkFD?=
- =?utf-8?B?L3ZjdzYwZHBJWkVlWDFOdmMvTXdsSDUxekszd2Vud0ZvUk1SQlNXQnMySDNy?=
- =?utf-8?B?ejNyYklOYXJWZTZ6TjRMMXNhZWxkcEYrVm5XeDEyTlF0REQ1aFNrNmRBL25p?=
- =?utf-8?B?VlRuT1dSQkozN3p3Z0ppM1dLNFpKUGVBdU9ZSVpHK0JCY2o2dzFQWkxpK0Z1?=
- =?utf-8?B?UmVXRU5sQUFvQTdzSVN4NUw4aG9JWlRQNkthSkFZVTcza3BCOEpFVGc3akZV?=
- =?utf-8?B?VmhpbWpIdUVVa3RSZjhXZXFUSFZsVGxWazFFUmlzNUFpNlFFQXpjMUZyRFB1?=
- =?utf-8?B?YXVyV1JxR2JNcWtsZXRoSkx1MU11akRpc052OTk3UzAzaUNLclBsazNXTk9K?=
- =?utf-8?B?U1BiSEwxZWtGakpibTlKSkthOVVxTUkrb0dzRHNOcEVkVE1MZDJGdlVMV0o3?=
- =?utf-8?B?NFVULzM4ZGExQ3dYS1FXOGpqNWQwOW4zclhKbnNyeTNkVHpDUkJZb2wyb3dp?=
- =?utf-8?B?MUhSM3ZWWnlFSHJvUTh3QytEY1p4Y0Y4WlpZaUM1RUZOTXg5VFpOMTZ5ZHZW?=
- =?utf-8?B?Q0s1eWgzSzdEZzBsdUVpYTRoTTI3cVFEYWFSa2FwVytVR0lxV2c2UE9Bek03?=
- =?utf-8?B?STIwRzA2THgvNlZGZUVkamczVU1QSEJDTXhmQjlaZ1JYbitBWXhld0pUV2VX?=
- =?utf-8?B?czJNdEZGdTF2OVI3MXdNdU8xR0RhVGk2Y25vSjBudVlycjdFOENWOWF4K0JO?=
- =?utf-8?B?YUEyODY4Q0owUm9neHBUMzU1WFpCR3kyTHgvUU9mU09rRUdHMld0cTh5Z3NQ?=
- =?utf-8?B?Uml2WG5wWExRanJOTVZGTktuK0k3WDQrckRCK3dPakNGY3hIMFlIMzhzRTV6?=
- =?utf-8?B?cFpVNDdhdWtpUXE4WlJVTFIwUlBIZzAxSkpOUFo5REtPTTlBN0IwVzJpaU1Y?=
- =?utf-8?B?cXd1Q1J0eWk4RTRHbUhFUVBVZE51UzhEWTFBRkpDTW9TQStwcFFMcThueGl3?=
- =?utf-8?B?NXZKSzIvQ0RHMEp3VDJGV3NZSG9zUG9qQWUvU3NVKzBIelpDaEVzSFJCVjJP?=
- =?utf-8?B?cDcrRWNXdGIzYmRIYkVtZi9OMk0yMjhjQzIzOU9JMmpHNitBcG1LL09pOHl4?=
- =?utf-8?B?WWhsWTdwLzRGSUQ1TWI2VXlSdnJsY1hFMjdHelZSY09ja1NaaWRGcm5PYlha?=
- =?utf-8?B?Mno3d3ZTT2p3cVJ5TGtLbll0bWhqdkNQL1dhOE9rSVlhcUp6SlVDZzJDSUo4?=
- =?utf-8?B?b2ZyeEVFSm4zblBjbVNReW8vOWJNNGE4L29tbDVjSjJiamJXMjdTb1d6ZmVI?=
- =?utf-8?B?Rjd5Q29LbHJYdTJaWDBPQ0hFSXlieHdaNlZ2bzV4WDNMbjFCL3V6SVhnT0VI?=
- =?utf-8?B?enFnQk5uR3o3MWJvWkp6M0xmcnMxK2NrLzhDMlFhbFlzUmt6dk9wMlQ1R09Z?=
- =?utf-8?B?bWd6cjdEb1JieXcyNWxNYlU1TnVINTZWWjJOOHVyWjBwdEdzMVZyUVU0UStF?=
- =?utf-8?B?VVg3QlUxWmxGeEdZVEtQZnF1Y1ZKeCtSN2k1ek1YL2dlajZuRnlYT21MSU9t?=
- =?utf-8?B?akJNc1NuOUovMU1NZEd1cmNwYkpTa1JqQkIyUGlta2J5NG9aQ203UFMwQi8v?=
- =?utf-8?B?NG9lRmVScE9yUUVzQXFsOUtOSTVURDJNd2x2RFVCQzR1ajJ3cFZjNlRmdE9w?=
- =?utf-8?B?OUdLeW5ZVHJEVjhHTG9nM3dFbkpDRE5zcldMWllUV0NmalVuL2JlNjRPTHV2?=
- =?utf-8?B?M00ySldnU3Jqam9DbkFJQnJWYXpoOTcyYVNsWWpNT0k4SVhPSytZTVlodUlx?=
- =?utf-8?B?VjFtY0F3TEVoTFdFd0xFaE5aRm5oaExuMC9KZUV6MTRJYVU0SlZhci8veWRW?=
- =?utf-8?B?V3dGMzBSU3JtUmx4YmswWG9vSzdsaTAxV2VDZlFWV1UvdWxibUpQUE9GKytX?=
- =?utf-8?B?bU1mZUdwV3o3a2RxcTZTajZiWXhZUXpJUEFxcnEvVHQ4bEwvNGQ2dW1HTml6?=
- =?utf-8?B?VWVKa2N4YXNSVUNlZGhEaVd1cTQvTGZBWkt0MFlQUmdKSDQ0dzl5VUxrNlU5?=
- =?utf-8?B?UWN4Yi9MU1BjVlJ6ckplMmRmMkR2eFlaT2duTVpuOTJISWZHeHF4RU9hT1Y5?=
- =?utf-8?B?UjZCbDN0NFEzcW1Ea2dkbG96eEtBdHpGOVFNNkQvTFc0SlJORDJUTDRhYUdN?=
- =?utf-8?Q?cCX4RncOHzrnVub0=3D?=
-X-Exchange-RoutingPolicyChecked: lLWocvgmCm2lvxyCygP64hfupuXTq5aohaApII6G+pqcC0nmP+Wm0zt7GziKRGbm3WjfYBC0qkLDX76RwphUi8ZdWT+2uptOljSG4Xy5jux9MuQDdUqqox+3kaFyhR/oZ4ITdua/j6yepXkFoYP1CWojpvvDhPjnxv2keo0/j4EEbB4Fv/arGMmJw1LAa7LGhA/SL9IhFS840FuIDccq2lU2JvrwjCc42SRAChK78EuK5uK/quxP16nEEaIQdNpmX0nWIzKXPsMcQz6EhyrMXBRJQyzuVy+5Ggxjv8POP6TtP8a4sv6X29eWqBnQe5EgAApo6zZw06I0F0fAlPt02Q==
-X-MS-Exchange-CrossTenant-Network-Message-Id: 927691f1-8b6a-40a7-9323-08def7a6dd3b
-X-MS-Exchange-CrossTenant-AuthSource: IA1PR11MB7198.namprd11.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Aug 2026 12:48:38.3831
+X-MS-Exchange-AntiSpam-MessageData-0: to/cMYIIW+wEfwsZGrtY/h3AZay8V+RTiE/4ZyeXUzNOC7jZ3wm64w7Q1zYUF1OZ1/Z2l3hjyAZkZcMrJXSaVAxXtLmkCyCvwHsJRZIgusrMSO4VboazxOZGMs8hleBv1wcouvD7iBy7/bAO2Dj4b4Jg1zDWIAlrlAQzxqTEQMLnFOX+HHfRzKutNHRWUNrxl4+zpryS94YF+5//pL3XQ1XQrfgOQ92yYFyYytKoRb/LFQlxal5HoMJofYdTwgi0HqJ0JhBxMKpz8nzcQYCb050limGwCHHjymeLL9hK34Sk0z3vKQUAx5rRKmIhdHWZneXTqIET1+QtITT/UN7Ux28sj3BpRS/MnAbvJCht0v/fuVwlPEqTjH964lUk3HU5apBKFqlehLCbOZggwDnacj1/p3LLyiUHoTzw1H4bDTrKK5edAKF2Et04M80/xsxh
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Aug 2026 16:29:19.0446
  (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 46c98d88-e344-4ed4-8496-4ed7712e255d
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: e0IoFrWBkBLXtZXwnOSHA0WJ9NQLCV94+4e5HM9L6YtV/LeZRQ4MCa1dgTG4reiQNhjUggU1pw2wexuXIvxgmA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB4625
-X-OriginatorOrg: intel.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d3662819-d53b-4b3b-656d-08def7c5b189
+X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=43083d15-7273-40c1-b7db-39efd9ccc17a;Ip=[216.228.117.160];Helo=[mail.nvidia.com]
+X-MS-Exchange-CrossTenant-AuthSource: BN3PEPF0000B070.namprd21.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA1PR12MB8190
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260811_054843_391824_815B740A 
-X-CRM114-Status: GOOD (  18.22  )
+X-CRM114-CacheID: sfid-20260811_092931_687204_5AF644F4 
+X-CRM114-Status: GOOD (  12.99  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -191,80 +127,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 28/07/2026 12:32, Jian-Ming Liao wrote:
-> Add support for the AMD_PT I3C controller by introducing the following
-> changes:
-> - Add AMD_PT I3C controller platform device ID in core.c.
-> - Register AMD_PT I3C controller PCI ID in mipi-i3c-hci-pci.c.
+On Wed, 5 Aug 2026 15:07:05 -0400, Frank Li wrote:
+> On Tue, Aug 04, 2026 at 10:33:05AM +0000, sashiko-bot@kernel.org wrote:
+
+...
+
+>> [Severity: High]
+>> This is a pre-existing issue, but while fixing the leak for I2C devices, it
+>> looks like the identical leak was left behind in the I3C counterpart,
+>> i3c_master_add_i3c_boardinfo().
+>>
+>> However, would applying the same devm_add_action_or_reset() fix there
+>> trigger a double-put use-after-free for instantiated I3C devices?
+>>
+>> Looking at how the I3C devices are created, i3c_master_register_new_i3c_devs()
+>> assigns the boardinfo fwnode to the new device without taking an additional
+>> reference:
+>>
+>> drivers/i3c/master.c:i3c_master_register_new_i3c_devs() {
+>>     ...
+>>     device_set_node(&desc->dev->dev, desc->boardinfo->fwnode);
+>>     ...
+>> }
+>>
+>> And when the device is unregistered, i3c_device_release() unconditionally
+>> drops it:
+>>
+>> drivers/i3c/master.c:i3c_device_release() {
+>>     ...
+>>     fwnode_handle_put(dev->fwnode);
+>>     ...
+>> }
+>>
+>> If a devm action is added to i3c_master_add_i3c_boardinfo() to drop the
+>> reference on teardown, wouldn't we also need to add a fwnode_handle_get()
+>> in i3c_master_register_new_i3c_devs() to ensure i3c_device_release()
+>> doesn't consume the reference the devm action expects to drop?
 > 
-> Co-developed-by: Patrick Yen <Patrick_Yen@asmedia.com.tw>
-> Signed-off-by: Patrick Yen <Patrick_Yen@asmedia.com.tw>
-> Signed-off-by: Jian-Ming Liao <Jm_Liao@asmedia.com.tw>
+> Make sense, please make i2c/i3c handle fwnode consisent.
 
-WARNING: From:/Signed-off-by: email address mismatch: 'From: Jian-Ming Liao <tim678910@gmail.com>' != 'Signed-off-by: Jian-Ming Liao <Jm_Liao@asmedia.com.tw>'
+Patch 2 of this series ("i3c: master: Fix refcount of i3c fwnode") does
+that. It adds the same devm action for the i3c boardinfo and takes a
+reference in i3c_master_register_new_i3c_devs(), so the put in
+i3c_device_release() is balanced and there is no double put.
 
-Also missing Frank's Rev'd-by from V1
-
-> ---
-> v2:
->   - No changes (rebased on top of v2 patch series).
-> 
->  drivers/i3c/master/mipi-i3c-hci/core.c             | 3 +++
->  drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c | 9 +++++++++
->  2 files changed, 12 insertions(+)
-> 
-> diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-> index dccc974ef15a..15f9faed07c8 100644
-> --- a/drivers/i3c/master/mipi-i3c-hci/core.c
-> +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-> @@ -1198,6 +1198,9 @@ static const struct platform_device_id i3c_hci_driver_ids[] = {
->  			HCI_QUIRK_DMA_ABORT_REQUIRES_PIO_RESET |
->  			HCI_QUIRK_DMA_REQUIRES_HC_ABORT,
->  	},
-> +	{	.name = "amd-pt-i3c-hci",
-
-Perhaps put '{' on a separate line to match the entry above
-
-> +		.driver_data = HCI_QUIRK_RPM_ALLOWED,
-> +	},
->  	{ /* sentinel */ }
->  };
->  MODULE_DEVICE_TABLE(platform, i3c_hci_driver_ids);
-> diff --git a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-> index 5a9e2a43eff8..d7549edd5839 100644
-> --- a/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-> +++ b/drivers/i3c/master/mipi-i3c-hci/mipi-i3c-hci-pci.c
-> @@ -193,6 +193,13 @@ static void intel_i3c_exit(struct mipi_i3c_hci_pci *hci)
->  	intel_ltr_hide(&hci->pci->dev);
->  }
->  
-> +static const struct mipi_i3c_hci_pci_info amd_pt_info = {
-> +	.name = "amd-pt-i3c-hci",
-> +	.id = {0},
-> +	.instance_offset = {0},
-> +	.instance_count = 1,
-> +};
-
-Perhaps move this after the other struct mipi_i3c_hci_pci_info
-i.e. to approx. match the order in mipi_i3c_hci_pci_devices[]
-
-> +
->  static const struct mipi_i3c_hci_pci_info intel_mi_1_info = {
->  	.init = intel_i3c_init,
->  	.exit = intel_i3c_exit,
-> @@ -475,6 +482,8 @@ static const struct pci_device_id mipi_i3c_hci_pci_devices[] = {
->  	/* Nova Lake-H */
->  	{ PCI_VDEVICE(INTEL, 0xd37c), .driver_data = (kernel_ulong_t)&intel_mi_1_info },
->  	{ PCI_VDEVICE(INTEL, 0xd36f), .driver_data = (kernel_ulong_t)&intel_mi_2_info },
-> +	/* AMD_PT */
-> +	{ PCI_VDEVICE(AMD, 0x444c), .driver_data = (kernel_ulong_t)&amd_pt_info},
-
-Perhaps add a space before '}', just to match the ones above
-
->  	{ }
->  };
->  MODULE_DEVICE_TABLE(pci, mipi_i3c_hci_pci_devices);
-
+Best Regards,
+Akhil
 
 -- 
 linux-i3c mailing list
