@@ -4,53 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0905C5B572
-	for <linux-i3c@archiver.kernel.org>; Thu, 13 Aug 2026 05:10:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 5C924C5B572
+	for <linux-i3c@archiver.kernel.org>; Thu, 13 Aug 2026 05:15:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iW6wvj2zVpHDuHUYFy2pIkFXDbLqv9GvpYI35pXupgw=; b=bUU0Z8offige0g
-	kUzyeWOUz3G+fYPyGIUAIdegInHbQrdUk6eaVmUWf6qzEcmuAFGqRMNysaMpJEK/B/4+pd1+DcFzr
-	Tj8129zzZyA7Kr8I+ic4vf16HvLeZofRZFcM4Ax7+ARAHIRBkrVVMzxPhJfVS9bELx2HqFNLpkt/E
-	iAy/4QOdHTZtj5yKlMFNF/fWOjHdzkBI6iI2FGFiOr8qghEmz5X6jQlez89a4WpS1OAodTlkRGnfj
-	CRQzKHRT1vOZP3vZDSPrCh1bNrq1Pqn98eZS6iHVa4jeveISkJHqHRNEtdE6L54KeXmI7gipEBXXO
-	OA/SIxuMlO3xGXU1Tn+w==;
+	List-Owner; bh=1bChNVIOXH9fIRm+rtBxE+8BStA+WOe93S8dcyFQSJI=; b=qhe7KfnHQkEn2E
+	+fShpz0nE72zPgqjjf4gDG070qT5TzgvPEfrRvMHMql4Upvv6AJJ67FQ63+nDei2l59eOjdQ/e70/
+	rPV3vQ/z3vY/79hvq20l1ZH3Kac+MH/PRREAZYkBJVp+LWyXP7xPq+mI6OvQoDX09uKRZLh8mCUva
+	W64AmnARpOgtanckq5Fh5AAXqRyKCOpRvZUyagpPEtJnBgJWVZ6sQJJtaVDMMoMbw9kdTvEQi9Rfq
+	HtvY1L6mdOEAdfVa0x7sInuuPh6j0PrParlrmF3oljItAbuidU+972zeekDYwb1jdqk+LZGFhjhvB
+	VtPkGJGsMPseVJkbigFg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wuNi9-0000000HOHi-45Lh;
-	Thu, 13 Aug 2026 05:10:37 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wuNnC-0000000HOpc-4B7Q;
+	Thu, 13 Aug 2026 05:15:50 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wuNi7-0000000HOHa-3hES
+	id 1wuNnB-0000000HOpN-3tfN
 	for linux-i3c@lists.infradead.org;
-	Thu, 13 Aug 2026 05:10:35 +0000
+	Thu, 13 Aug 2026 05:15:49 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 4A5BA43C86;
-	Thu, 13 Aug 2026 05:10:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F2D511F00A3A;
-	Thu, 13 Aug 2026 05:10:34 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 10EE9600AF;
+	Thu, 13 Aug 2026 05:15:49 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6A1C61F000E9;
+	Thu, 13 Aug 2026 05:15:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786597835;
-	bh=h+Ip7O1mCbK6gVeSbFGBscP3nRztIERWPSPYaJ4D5RA=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=by4cw1PLON3itZRyeandsMZPDp9a6K7pU7ZbFGSOCE2qJt6kFgytWPwycYbJe6oAW
-	 DH0oECjBENuEmmG9AaTzfDOdtEqjVaa6sdlRdmFdbG5Y+/V76Ls/UdCtiNo1wCkVba
-	 spz5uwEZvWphnUiJlRaLISgGYNIvjEvmFoKc+sIbCwZUQjFEvd455+jDdILJO/lnpY
-	 /YrKQxFjNbkviP25G4uah5q1oSP5YCX214uZ/KXybsTkDLyHXg+40oeHxXAtoglljd
-	 5Ch5A6AZMmNpEXqBrbaIbx4N0/N/pj599/qFQkxerzOLAKtBaxGX7UnLB+EQz5+Gza
-	 MEuL78Hxog/fA==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH] i3c: dw: use COMMAND_PORT_TRANSFER_ARG instead of
- hardcoding
-To: "Jisheng Zhang" <jszhang@kernel.org>
-Cc: linux-i3c@lists.infradead.org, "Alexandre Belloni" <alexandre.belloni@bootlin.com>, Frank.Li@kernel.org
-In-Reply-To: <20260813044225.22237-1-jszhang@kernel.org>
-References: <20260813044225.22237-1-jszhang@kernel.org>
-Date: Thu, 13 Aug 2026 05:10:34 +0000
-Message-Id: <20260813051034.F2D511F00A3A@smtp.kernel.org>
+	s=k20260515; t=1786598148;
+	bh=WKuvTnxNoz0vSgFictYA5xVedVGpl4eFCS3zf+hHlCg=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=h+zpEqvVEqES2fAcvIQe5fa2Xkt8z/G0H2kCSMdLYQahVfkQxaKm/oHFV4FqP8sbR
+	 VKHgYw43QdKAH/+TycoCdPjrIdfCqH9aAkJ0BV+n5LEciN2PG6Kope9A3j3vMR9ZlX
+	 yle678XrFfinkKvQ3Sw6+YS7jyOfbHudIm/c/sbypiU9mcguSVdW13ZaN1GJCtK34O
+	 c57sutHMUpl0cnLuuKG9LLd6a+xY5uSjRLY/XmAeds3MGspJuXCemkqn/UtC7v5feh
+	 mpc2PTxLe8/lffNj2cRwQXjk+P/Fzqg2ccBKdmsD++L9aMX7iLJwiAxc1B//6LEqQX
+	 IWiVNFyBsfuGg==
+Date: Thu, 13 Aug 2026 12:56:09 +0800
+From: Jisheng Zhang <jszhang@kernel.org>
+To: Frank Li <Frank.li@oss.nxp.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] i3c: dw: reduce do_daa time if there's no client
+Message-ID: <an1OaevoSHlA8U1n@xhacker>
+References: <20260803140307.12665-1-jszhang@kernel.org>
+ <anOXjxCRfW4qfPaM@lizhi-Precision-Tower-5810>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <anOXjxCRfW4qfPaM@lizhi-Precision-Tower-5810>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,54 +66,62 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
-IFtIaWdoXSBNaXNzaW5nIGNoZWNrIGZvciB0aGUgdHJhbnNmZXIgZXJyb3Igc3RhdHVzIGFuZCB0
-aW1lb3V0IGluIGBkd19pM2NfbWFzdGVyX2RhYSgpYCBsZWFkcyB0byBpbmNvcnJlY3RseSByZWdp
-c3RlcmluZyBnaG9zdCBkZXZpY2VzIG9uIGFuIGVtcHR5IGJ1cyBvciB1cG9uIGhhcmR3YXJlIGZh
-aWx1cmUuCi0tCgotLS0gUGF0Y2ggWzFdOiBbUEFUQ0hdIGkzYzogZHc6IHVzZSBDT01NQU5EX1BP
-UlRfVFJBTlNGRVJfQVJHIGluc3RlYWQgb2YgaGFyZGNvZGluZyAtLS0KY29tbWl0IDIyOTk4ZjZi
-YmNiNDRkNjAwZTIzY2QxN2YxZTZjNWI0OGQyNjhlMzEKQXV0aG9yOiBKaXNoZW5nIFpoYW5nIDxq
-c3poYW5nQGtlcm5lbC5vcmc+CgppM2M6IGR3OiB1c2UgQ09NTUFORF9QT1JUX1RSQU5TRkVSX0FS
-RyBpbnN0ZWFkIG9mIGhhcmRjb2RpbmcKClRoaXMgY29tbWl0IHJlcGxhY2VzIHRoZSBoYXJkY29k
-ZWQgdmFsdWUgMSB3aXRoIHRoZSB3ZWxsIGRlZmluZWQKQ09NTUFORF9QT1JUX1RSQU5TRkVSX0FS
-RyBtYWNyby4KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaTNjL21hc3Rlci9kdy1pM2MtbWFzdGVy
-LmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvZHctaTNjLW1hc3Rlci5jCj4gaW5kZXggNDA1MDg5ZjE4
-MWM0ZC4uNzAzOGFhM2JmNGM3ZCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2kzYy9tYXN0ZXIvZHct
-aTNjLW1hc3Rlci5jCj4gKysrIGIvZHJpdmVycy9pM2MvbWFzdGVyL2R3LWkzYy1tYXN0ZXIuYwo+
-IEBAIC05MjEsNyArOTIxLDcgQEAgc3RhdGljIGludCBkd19pM2NfbWFzdGVyX2RhYShzdHJ1Y3Qg
-aTNjX21hc3Rlcl9jb250cm9sbGVyICptKQo+ICAJCWdvdG8gcnBtX291dDsKPiAgCX0KPiAgCWNt
-ZCA9ICZ4ZmVyLT5jbWRzWzBdOwo+IC0JY21kLT5jbWRfaGkgPSAweDE7Cj4gKwljbWQtPmNtZF9o
-aSA9IENPTU1BTkRfUE9SVF9UUkFOU0ZFUl9BUkc7Cj4gIAljbWQtPmNtZF9sbyA9IENPTU1BTkRf
-UE9SVF9ERVZfQ09VTlQobWFzdGVyLT5tYXhkZXZzIC0gcG9zKSB8Cj4gIAkJICAgICAgQ09NTUFO
-RF9QT1JUX0RFVl9JTkRFWChwb3MpIHwKPiAgCQkgICAgICBDT01NQU5EX1BPUlRfQ01EKEkzQ19D
-Q0NfRU5UREFBKSB8CgpbIC4uLiBdCgo+ICAJZHdfaTNjX21hc3Rlcl9lbnF1ZXVlX3hmZXIobWFz
-dGVyLCB4ZmVyKTsKPiAgCWlmICghd2FpdF9mb3JfY29tcGxldGlvbl90aW1lb3V0KCZ4ZmVyLT5j
-b21wLCBYRkVSX1RJTUVPVVQpKQo+ICAJCWR3X2kzY19tYXN0ZXJfZGVxdWV1ZV94ZmVyKG1hc3Rl
-ciwgeGZlcik7Cj4gIAo+ICAJLyoKPiAgCSAqIGNtZC0+cnhfbGVuIGhvbGRzIHRoZSBudW1iZXIg
-b2YgYWRkcmVzc2VzIEVOVERBQSBsZWZ0IHVuYXNzaWduZWQuCj4gIAkgKiBPbiBhbiBlbXB0eSBi
-dXMgcnhfbGVuID09IG1heGRldnMsIHNvIGF2b2lkIEdFTk1BU0soLTEsIDApLgo+ICAJICovCj4g
-IAlpZiAoY21kLT5yeF9sZW4gPj0gbWFzdGVyLT5tYXhkZXZzKQo+ICAJCW5ld2RldnMgPSAwOwo+
-ICAJZWxzZQo+ICAJCW5ld2RldnMgPSBHRU5NQVNLKG1hc3Rlci0+bWF4ZGV2cyAtIGNtZC0+cnhf
-bGVuIC0gMSwgMCk7CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXMgYSBwcmUtZXhpc3RpbmcgaXNz
-dWUsIGJ1dCBJIG5vdGljZWQgYSBwb3RlbnRpYWwgcHJvYmxlbSBpbiBob3cKdHJhbnNmZXIgZXJy
-b3JzIGFuZCB0aW1lb3V0cyBhcmUgaGFuZGxlZCBoZXJlIGluIGR3X2kzY19tYXN0ZXJfZGFhKCku
-CgpJZiB3YWl0X2Zvcl9jb21wbGV0aW9uX3RpbWVvdXQoKSB0aW1lcyBvdXQgZHVlIHRvIGEgbm9p
-c3kgb3IgdW5yZXNwb25zaXZlCkkzQyBidXMsIHRoZSBjb21wbGV0aW9uIHRpbWVvdXQgYW5kIGFu
-eSBoYXJkd2FyZSB0cmFuc2ZlciBlcnJvcnMgYXBwZWFyIHRvCmJlIGlnbm9yZWQuCgpJbiBhIHRp
-bWVvdXQgc2NlbmFyaW8sIGNtZC0+cnhfbGVuIHJlbWFpbnMgMC4gVGhlIGNvZGUgdGhlbiBmYWxs
-cyB0aHJvdWdoCmFuZCBjYWxjdWxhdGVzIG5ld2RldnMgPSBHRU5NQVNLKC4uLikgdXNpbmcgdGhh
-dCB6ZXJvIHZhbHVlLgoKQ291bGQgdGhpcyBjYXVzZSB0aGUgZHJpdmVyIHRvIGluY29ycmVjdGx5
-IGludGVycHJldCB0aGUgdGltZW91dCBhcyBhCnN1Y2Nlc3NmdWwgZGlzY292ZXJ5IG9mIGRldmlj
-ZXMgZm9yIGFsbCBmcmVlIHNsb3RzLCBsZWFkaW5nIGl0IHRvIHJlZ2lzdGVyCnBoYW50b20gZGV2
-aWNlcz8KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0
-Y2hzZXQvMjAyNjA4MTMwNDQyMjUuMjIyMzctMS1qc3poYW5nQGtlcm5lbC5vcmc/cGFydD0xCgot
-LSAKbGludXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
+On Wed, Aug 05, 2026 at 04:05:35PM -0400, Frank Li wrote:
+> On Mon, Aug 03, 2026 at 10:03:07PM +0800, Jisheng Zhang wrote:
+> > If there's no client, wait for completion will timeout, then there's no
+> > need to add i3c dev at all. This can save boot time by ~6s if there's
+> > no client connected to the i3c interface.
+> >
+> > Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
+> > ---
+> >  drivers/i3c/master/dw-i3c-master.c | 4 +++-
+> >  1 file changed, 3 insertions(+), 1 deletion(-)
+> >
+> > diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+> > index 0625587f1527..18ebf304029a 100644
+> > --- a/drivers/i3c/master/dw-i3c-master.c
+> > +++ b/drivers/i3c/master/dw-i3c-master.c
+> > @@ -885,8 +885,10 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
+> >  		      COMMAND_PORT_ROC;
+> >
+> >  	dw_i3c_master_enqueue_xfer(master, xfer);
+> > -	if (!wait_for_completion_timeout(&xfer->comp, XFER_TIMEOUT))
+> > +	if (!wait_for_completion_timeout(&xfer->comp, XFER_TIMEOUT)) {
+> >  		dw_i3c_master_dequeue_xfer(master, xfer);
+> > +		goto rpm_out;
+> 
+> not sure why save 6s. timeout already happen, does register i3c device
+> takes 6s?
+
+sorry, typo, s/6/4
+For example if the maxdev == 4, when there's no i3c device connected, the
+max cmd->rx_len = 0 after timeout, then newdevs = 0xf, then go through
+the i3c_master_add_i3c_dev_locked(), each take ~1s, so adds up to 4s
+
+> 
+> And if do_daa find 3 devices, then timeout, you skip register found 3
+> devices.
+
+It's the addr assign cmd timeout, so if 3 devices respond, the addr
+assign cmd won't timeout.
+
+> 
+> Frank
+> 
+> > +	}
+> >
+> >  	newdevs = GENMASK(master->maxdevs - cmd->rx_len - 1, 0);
+> >  	newdevs &= ~olddevs;
+> > --
+> > 2.53.0
+> >
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
