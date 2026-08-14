@@ -4,52 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0AF8CC5CFCF
-	for <linux-i3c@archiver.kernel.org>; Fri, 14 Aug 2026 04:36:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2AC7DC5CFC1
+	for <linux-i3c@archiver.kernel.org>; Fri, 14 Aug 2026 04:39:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZIjs7FdZ7M82Q4Y1MLO8ZgdHKH9GYUrn3CRKXv1Bc7A=; b=I/CBemijErVVKD
-	ThSITTdULsUrB6PgCmQnr+jjHDPpPW0K7H7uy9P5nL3t5STUrKs9DZxiZ2tUq0mC9/vhPnyweagJr
-	vX1p25VV8KFe92lfeZyEUnPcriBkk8W2zJHH2HStpY3twVyIF4eBM0xaPzGOutHPgyRH9anYI/vOS
-	frj2WWZuNGabND7HQ1fJOCDes9DF9Adbhj90KE0lSQbvDQwhQxqvmlkIINYczp6tTFfOQa3ROa1Sp
-	9Tut9cBfBBExZKUEVgVS0qk4dT5xJY1txPTYD8fC0XKlNMIMWYpxeaZJwz4vjnpOtjZcEfVdiEoYb
-	7rYu4CJWavsEOjG3aVsQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=N40gFB8JrkAPVS7CZbu9yqapWPQCj9TpiVVoIQMLFKo=; b=10r8t/55884Hgo
+	WuZEUCm8YoDEWlRThbrOdijnVJvUOhsB8CiG8838EI1Rypx/3BfOSJbVkx4z4wWP8X5m4CgIrTwBZ
+	m9q0NSyDEYB2E7W21ilh3FN9WDP8AJb0HXIofYRfe0Ymu/u3ZATtlj0Jd/wCreJaarWPXoD06ca2G
+	KoQZMWukzUsLi08G0XtaPRyHxLbWP8903qthiLaHrzV9Szk5xhpSa+2DHYoM2RDTPo/qfXo6McCeT
+	mHUkueI5+9ENzabe2bmLpW06hWNJuFni/WDzdP4IFVWOBSfr4Z/mlMyYxM+y504LG1M3D6fBjojap
+	3fcMUhJZuwGJDJhOCggg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wujeR-00000001wQb-12Rb;
-	Fri, 14 Aug 2026 04:36:15 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1wujhy-00000001wV0-3J8s;
+	Fri, 14 Aug 2026 04:39:54 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wujeO-00000001wQV-0D1L
+	id 1wujhx-00000001wUu-1YUU
 	for linux-i3c@lists.infradead.org;
-	Fri, 14 Aug 2026 04:36:13 +0000
+	Fri, 14 Aug 2026 04:39:53 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 793F141980;
-	Fri, 14 Aug 2026 04:36:11 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 243011F000E9;
-	Fri, 14 Aug 2026 04:36:11 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id DA41642339;
+	Fri, 14 Aug 2026 04:39:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0CB5A1F000E9;
+	Fri, 14 Aug 2026 04:39:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1786682171;
-	bh=InY+9y+qdwfTM80zhSPKcvSU6yz5fdCqeKIKm6jlcrs=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=oSTk3iZ6tPajSz/e/8uvtjViItu32iDxngLG1Ry1HYQOsoWOif15q8xjylRXSnPyM
-	 GGsKKt/E1deoTDWjprZi2rdQMfG6TXLJf4Bb2bcGNieHuH6gcA/KMSaRwthYdm91o6
-	 XD0eiEf4FoO66o9tGJFc8AUAgcf09/OHqPas4VlkbsUFKcY/KbdCn3PKcuiN3WSh1f
-	 DtfKhX0Z++8H3tTE7boX9Mg7gMOkGjFcdgUW6tB82whcbsQRmT3fNFQzkFSp6+5nWR
-	 OJBFGNnbZlsb+4eXvByZcTPVxEzQpuxqheOgRpWL/wZ7V0wl8JE0qYEeCU10CAxHt6
-	 /ysuSaEnCTeXw==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v2] i3c: dw: rename "pclk" to "apb" to match dt-binding
-To: "Jisheng Zhang" <jszhang@kernel.org>
-Cc: Frank.Li@kernel.org, "Alexandre Belloni" <alexandre.belloni@bootlin.com>, linux-i3c@lists.infradead.org
-In-Reply-To: <20260814040345.23033-1-jszhang@kernel.org>
-References: <20260814040345.23033-1-jszhang@kernel.org>
-Date: Fri, 14 Aug 2026 04:36:10 +0000
-Message-Id: <20260814043611.243011F000E9@smtp.kernel.org>
+	s=k20260515; t=1786682392;
+	bh=WA52jFGCTiWvUw93Fa+qfHMHLvnniBEtjegFKYacuuc=;
+	h=From:To:Cc:Subject:Date;
+	b=BJgXksi2XZJ52xB0GTCl2TDwgj1u1GYWGreRSSh0+fBSFRyS4AzpZDQ1/a5WyXvKB
+	 Pwu4kcJaOWTvrE9SB0pmXV34I+u4RlvVtN+GX8VPWGYR/u04EDGmP41v2JcmG+449w
+	 85knuOstYmiBLH393d617IQ6UGV9Xpm/CKxEZBsBuHh94h/+nhstsUZpQ1LeXQmURz
+	 LLCyKlMhKzgw4uJexlgiR4HgbFVd1rm7eFflZnxhxailZJ3e3QNXbLgGKbXjrnYAmf
+	 RxW2tHlgl4xx5tLiGqzy5VHCDpqPbN5W/ULbKAhry2tsNvsIkTlAeiQbsWyCxrQ7BG
+	 7Upxy1ak+eOtg==
+From: Jisheng Zhang <jszhang@kernel.org>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>
+Cc: linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v2] i3c: dw: reduce do_daa time if there's no client
+Date: Fri, 14 Aug 2026 12:20:15 +0800
+Message-ID: <20260814042015.25397-1-jszhang@kernel.org>
+X-Mailer: git-send-email 2.51.0
+MIME-Version: 1.0
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -61,47 +63,65 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
-IFtIaWdoXSBNaXNzaW5nIGVycm9yIGNoZWNrIGZvciBwbGF0Zm9ybV9nZXRfaXJxKCkgYnJlYWtz
-IHByb2JlIGRlZmVycmFsLgotLQoKLS0tIFBhdGNoIFsxXTogW1BBVENIIHYyXSBpM2M6IGR3OiBy
-ZW5hbWUgInBjbGsiIHRvICJhcGIiIHRvIG1hdGNoIGR0LWJpbmRpbmcgLS0tCmNvbW1pdCAzNDJh
-MzUwNGQ1ZWMwZmIwNWMwOGI5ZGU1MDc2ZmM1NjliY2RjNDNiCkF1dGhvcjogSmlzaGVuZyBaaGFu
-ZyA8anN6aGFuZ0BrZXJuZWwub3JnPgoKaTNjOiBkdzogcmVuYW1lICJwY2xrIiB0byAiYXBiIiB0
-byBtYXRjaCBkdC1iaW5kaW5nCgpDaGFuZ2UgY2xvY2sgbmFtZSAicGNsayIgdG8gImFwYiIgdG8g
-bWF0Y2ggZHQtYmluZGluZyBkb2MuIE5vIHVwc3RyZWFtCmRldmljZSB0cmVlIHNvdXJjZXMgY3Vy
-cmVudGx5IHVzZSB0aGUgInBjbGsiIGNsb2NrIG5hbWUsIHNvIG5vIGFueQpiYWNrd2FyZCBjb21w
-YXRpYmlsaXR5IGlzc3Vlcy4KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaTNjL21hc3Rlci9kdy1p
-M2MtbWFzdGVyLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvZHctaTNjLW1hc3Rlci5jCj4gaW5kZXgg
-MmY4YzBjNDY4M2UwNi4uMDYyNTU4N2YxNTI3NCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2kzYy9t
-YXN0ZXIvZHctaTNjLW1hc3Rlci5jCj4gKysrIGIvZHJpdmVycy9pM2MvbWFzdGVyL2R3LWkzYy1t
-YXN0ZXIuYwo+IEBAIC0xNTc5LDcgKzE1NzksNyBAQCBpbnQgZHdfaTNjX2NvbW1vbl9wcm9iZShz
-dHJ1Y3QgZHdfaTNjX21hc3RlciAqbWFzdGVyLAo+ICAJaWYgKElTX0VSUihtYXN0ZXItPmNvcmVf
-Y2xrKSkKPiAgCQlyZXR1cm4gUFRSX0VSUihtYXN0ZXItPmNvcmVfY2xrKTsKPiAgCj4gLQltYXN0
-ZXItPnBjbGsgPSBkZXZtX2Nsa19nZXRfb3B0aW9uYWxfZW5hYmxlZCgmcGRldi0+ZGV2LCAicGNs
-ayIpOwo+ICsJbWFzdGVyLT5wY2xrID0gZGV2bV9jbGtfZ2V0X29wdGlvbmFsX2VuYWJsZWQoJnBk
-ZXYtPmRldiwgImFwYiIpOwo+ICAJaWYgKElTX0VSUihtYXN0ZXItPnBjbGspKQo+ICAJCXJldHVy
-biBQVFJfRVJSKG1hc3Rlci0+cGNsayk7CgpbIC4uLiBdCgo+ICAJd3JpdGVsKElOVFJfQUxMLCBt
-YXN0ZXItPnJlZ3MgKyBJTlRSX1NUQVRVUyk7Cj4gIAlpcnEgPSBwbGF0Zm9ybV9nZXRfaXJxKHBk
-ZXYsIDApOwo+ICAJcmV0ID0gZGV2bV9yZXF1ZXN0X2lycSgmcGRldi0+ZGV2LCBpcnEsCj4gIAkJ
-CSAgICAgICBkd19pM2NfbWFzdGVyX2lycV9oYW5kbGVyLCAwLAo+ICAJCQkgICAgICAgZGV2X25h
-bWUoJnBkZXYtPmRldiksIG1hc3Rlcik7CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXNuJ3QgYSBi
-dWcgaW50cm9kdWNlZCBieSB0aGlzIHBhdGNoLCBidXQgaXMgaXQgcG9zc2libGUgZm9yCnBsYXRm
-b3JtX2dldF9pcnEoKSB0byByZXR1cm4gYSBuZWdhdGl2ZSBlcnJvciBjb2RlIGxpa2UgLUVQUk9C
-RV9ERUZFUiBoZXJlPwoKSWYgaXJxIGlzIG5lZ2F0aXZlLCBwYXNzaW5nIGl0IHRvIGRldm1fcmVx
-dWVzdF9pcnEoKSB3aXRob3V0IHZhbGlkYXRpb24KY2F1c2VzIGl0IHRvIGZhaWwgd2l0aCAtRUlO
-VkFMLCBvdmVycmlkaW5nIHRoZSBvcmlnaW5hbCAtRVBST0JFX0RFRkVSIGVycm9yCmNvZGUuIENv
-dWxkIHRoaXMgYnJlYWsgdGhlIHByb2JlIGRlZmVycmFsIG1lY2hhbmlzbSBmb3IgZHdfaTNjX2Nv
-bW1vbl9wcm9iZSgpCmluIGRyaXZlcnMvaTNjL21hc3Rlci9kdy1pM2MtbWFzdGVyLmMgYnkgcHJl
-dmVudGluZyBpdCBmcm9tIHJldHJ5aW5nIHdoZW4gdGhlCklSUSBjb250cm9sbGVyIGlzIHJlYWR5
-PwoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNl
-dC8yMDI2MDgxNDA0MDM0NS4yMzAzMy0xLWpzemhhbmdAa2VybmVsLm9yZz9wYXJ0PTEKCi0tIAps
-aW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNjCg==
+dw_i3c_master_daa() derives the number of newly assigned dynamic
+addresses from cmd->rx_len, the ISR sets it to the number of address
+slots ENTDAA left unassigned. It starts out as zero, which already
+means "every address was assigned", so a timed out transfer leaves
+that value in place and it gets used as a result.
+
+If there's no client connected, the addr assign cmd times out, then
+the driver calls i3c_master_add_i3c_dev_locked() to add devices that
+are not there, each costing about 1s, thus adds non necessary boot
+time up to (maxdev * 1)s.
+
+Start from maxdevs instead: no address is assigned before ENTDAA runs,
+and make newdevs as 0 if the existing rx_len >= maxdevs.
+
+Signed-off-by: Jisheng Zhang <jszhang@kernel.org>
+---
+
+since v1:
+ - use another method to remove the non-necessary calling of
+   i3c_master_add_i3c_dev_locked() if there's no client
+ - update commit msg
+
+ drivers/i3c/master/dw-i3c-master.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index 1053cfb05c05..883b542c7bfc 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -876,6 +876,7 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
+ 		goto rpm_out;
+ 	}
+ 	cmd = &xfer->cmds[0];
++	cmd->rx_len = master->maxdevs;
+ 	cmd->cmd_hi = COMMAND_PORT_TRANSFER_ARG;
+ 	cmd->cmd_lo = COMMAND_PORT_DEV_COUNT(master->maxdevs - pos) |
+ 		      COMMAND_PORT_DEV_INDEX(pos) |
+@@ -888,7 +889,10 @@ static int dw_i3c_master_daa(struct i3c_master_controller *m)
+ 	if (!wait_for_completion_timeout(&xfer->comp, XFER_TIMEOUT))
+ 		dw_i3c_master_dequeue_xfer(master, xfer);
+ 
+-	newdevs = GENMASK(master->maxdevs - cmd->rx_len - 1, 0);
++	if (cmd->rx_len >= master->maxdevs)
++		newdevs = 0;
++	else
++		newdevs = GENMASK(master->maxdevs - cmd->rx_len - 1, 0);
+ 	newdevs &= ~olddevs;
+ 
+ 	for (pos = 0; pos < master->maxdevs; pos++) {
+-- 
+2.51.0
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
