@@ -4,73 +4,73 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B60C2C5CFC1
-	for <linux-i3c@archiver.kernel.org>; Mon, 17 Aug 2026 08:27:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1DF3AC5CFC1
+	for <linux-i3c@archiver.kernel.org>; Mon, 17 Aug 2026 08:27:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TKnBXRn1hZRHrb5EYVghA0NKp/95nYXv57QX291b+9A=; b=V7JUzJMpmexSr5
-	00vFIfxRm26eoeTTNu+fxMJah9YA4xVDA1p87kV8qiOCBXhpQhSML/gE7plXjuKIFvrBueI5h1ONi
-	wDPP4RcKSRm5sMIMH7x2JnqICjpDysN1NkIrrLcJ72g9FaFjbBJykHY27gVVwKdGLu/Wicym3g0PJ
-	1QIbO/uyQFheDJ89tvk6lm8gARvo7MgQOhOUCJylvs30WCjaNDFPW+O/DZ6Eit9sv940EZ6l3PWz9
-	nlYRZiDIFo+/g9PmUIvR1MgWf19WnU1AoqyYMQKwLFzyVYU3s9UQVc68k58eCerGJTf0qx2cTi7Nb
-	U8hn+ldk3nnfITNTiWsQ==;
+	List-Owner; bh=D5u/hyhQqKoUpuWW/DkzknBb5DdZggO86qwN32W1g7E=; b=EnrvLFw4DRHLaq
+	xdOUVD3hBgB8Kpliqkw6bRaw7WuoghBw27YLyQZ7thGsYgNWVdpQtxsflc4ndyB9QfTPo3Vwbfk3m
+	Uz1J7mu71nN6owU49PY5ZCQfiwWDM1hrvM3rb0e/+SlEbwWBrjCW88O7UnaUTmsDmEmWs0llYvUs8
+	RROUNgvHiBi2auO4VNzyKOy0zf1LVks8ZoohuHcKR27oqqzrw3wQn/AyQbHoLCiUeq9YDgkh7AYgd
+	uk1dG0glqPhaiYFLGGr/z13CI+KGNcVGPuvpP5yt8fGanFEraItE5CLl4I7dtMsDMXr0uAxogX2MN
+	Z2z8kdO0et+h8itBpLTg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wvsgi-00000005gom-1Zdf;
-	Mon, 17 Aug 2026 08:27:20 +0000
-Received: from mail-pj1-x102e.google.com ([2607:f8b0:4864:20::102e])
+	id 1wvsgp-00000005gqv-1mn2;
+	Mon, 17 Aug 2026 08:27:27 +0000
+Received: from mail-pj1-x102d.google.com ([2607:f8b0:4864:20::102d])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wvsgf-00000005go1-46eG
+	id 1wvsgn-00000005gqK-2jM7
 	for linux-i3c@lists.infradead.org;
-	Mon, 17 Aug 2026 08:27:19 +0000
-Received: by mail-pj1-x102e.google.com with SMTP id 98e67ed59e1d1-38deea72eebso3054510a91.1
-        for <linux-i3c@lists.infradead.org>; Mon, 17 Aug 2026 01:27:17 -0700 (PDT)
+	Mon, 17 Aug 2026 08:27:26 +0000
+Received: by mail-pj1-x102d.google.com with SMTP id 98e67ed59e1d1-38511175ad3so2997875a91.2
+        for <linux-i3c@lists.infradead.org>; Mon, 17 Aug 2026 01:27:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1786955237; x=1787560037; darn=lists.infradead.org;
+        d=gmail.com; s=20251104; t=1786955245; x=1787560045; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to:content-type;
-        bh=HmHlZM07AF+DQ9COm6JvGuOoEBLfUqS6LiHo8d5ADR0=;
-        b=DUYLu4uI0V501vUg8spZL+ptJd8tNRoxyldHP87cKot6sOAZGSkMMi3h6jEmtRE8qT
-         j02ptADdKEhOadVVdunYvteiIMRV5BLGBKC0L6W6tVcCzveMyD/DFYIkY59f1Z+nazM6
-         tc2KAgMWXuw1pD58129LrRs/lFM0aEXwJ2FDaSI+R25PGUkQmzvX46EvCXJsyzq8hCJP
-         ybqgkZj0sOV+b6TajzfPiYZsZxy5/NcLLF4FyR5vqCSmv/5oOsT17J5evAxmkeTauP3W
-         f/C84aVhSY9dENAn4+dr8byvH1oI1ieRPkS0Ghbkly/cAIU4ytesyxgFDLVfe5QaqhXc
-         H8Ig==
+        bh=9Figj4/rD5er/rUVtgFlGDnLbnfbqd4trDHkkzalIkc=;
+        b=Sz38b2JTb6JCSwZHVL8atOph3GrTJjIXc5PYWQwmlTbdGB4xmku2go2YgtFf8sQLtb
+         /rk1F2brG87dPAB+uNkKrxz6nnLdubfzI3K+ERNqL3MQStHqgALza7ym9RAFSvOiEOzf
+         XqBVUtO5A5UybUEpgwQxwCuyTgrYT8wTR0dLyaNT+Wm0XfN+d4O6K8xtlHGETqdrtb6v
+         yGZt8erywyfgNe9uoOThEX2ycKPt2uMNSVuub009QyQVSsplX8l919Bv+Tuf+SLl5LU3
+         kpkZNrnGEsPYSqsBy6KKDibBdkWkLzQChO8KAr8pgyx6VA+PNPs9VHDu2TYncFvNsSQa
+         8KiQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1786955237; x=1787560037;
+        d=1e100.net; s=20251104; t=1786955245; x=1787560045;
         h=content-transfer-encoding:mime-version:references:in-reply-to
          :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=HmHlZM07AF+DQ9COm6JvGuOoEBLfUqS6LiHo8d5ADR0=;
-        b=Y/DpI+D132qAi451H/wLUa7O0+CrFT4W95Oj8XjIuhJhqQ1A6yQzNVTlnZUOF+n3pO
-         Zh82idrDscoFXBTUJRei9O329rjqecT4ZVXJn50aehgV+yBTAAH3FetG/a5u+9+JrUtw
-         JIV9Puv8zG24dKR4i3uVRB4ZAv3MNHmtTzXDMVHRnWqfQA12mFpYTIYe+SQs5mUjXGni
-         gxzJUCtP7QOdJlyMwvgA5wDD09f617yiw0cATm5ujTPY2jdP9fX3tXLucZoCUY/8hpgd
-         HlXD4wSVGTbJkqjb5BJmjs7LauAaKQfhTKlZsWnwr142HSM4WgY+vgOdrFFAFJSqjBgZ
-         yblg==
-X-Forwarded-Encrypted: i=1; AHgh+RpoX+gNpZjbnHYGGbv+jsngVpR5Ix5B/dHPFRMS2qqlU/Wgg1iIfx3h52cB2+099qjr5wmOmM4tUhs=@lists.infradead.org
-X-Gm-Message-State: AOJu0YzhN4BeV1717QPkTq+Og7//hGcu+B7DZD6iZoxdv1qxB1T+IKxP
-	YgzBpRcI9yE2lGIYxyA+XpD9RdPeEWyIgInY0FjouKeGB2HipnCxnE8G
-X-Gm-Gg: AR+sD10Im3k8EGRetiv/mdOWUcy6fL9LqPm1VkvYAYrtyIAaK0ocIVX/tHbOkleydos
-	vmXTsoay0vf0xAwybcZYUVcP+XkuZGVwWXcACEhqLmm9YNqionJ9gID8ew/8KnZQOImPwYJpW7T
-	2pOtRS/3bqijwN5oyX/8t1ga3cZnwAm5W2FGZqWP5GosuoLWG8yqYf+2scl8wVWPjmwB6CAR1mq
-	0w8zSWfgAI1Faz2UPU6rwBOt/nRNnisfhQXR5rhE9UPLYZ+Q0EzltYoTC6IbBY/WTPrm0PqhTbi
-	J/plyeAHcZ8g3wL2PraPS6HFvxjgHB4bUCcSzCLf2sGLo9Rizd1yS1j4V1RS+vDOXCBv9FjcAsy
-	QbThcSzs5ACnmVR/GHkLXTKw8xEU52UFJVjGRO4gi0KcPQqEq/HewtjgKVhx6Go+acI+YJFMArh
-	05l6nG6iIhxJE2vQre093NYOCahEdAjowwaeeG/UW53VltUIWLfktJf4oBXRTLPRARFDaOt5+ph
-	E3ZtZkG9B3RBBTWq7VwHYRoqu+dP2hh7XEVlmzOMPlNJxdjVRU2heC1ytEbVHcFha7cUKHwPuCl
-	PbAul7bJFAsaFXnZMg==
-X-Received: by 2002:a17:90b:2587:b0:38e:9045:bac0 with SMTP id 98e67ed59e1d1-3933b741419mr24211777a91.5.1786955236870;
-        Mon, 17 Aug 2026 01:27:16 -0700 (PDT)
+        bh=9Figj4/rD5er/rUVtgFlGDnLbnfbqd4trDHkkzalIkc=;
+        b=Ca4bruY7PYXe5TMXxWIdOUhHpvKlMNYeQo7/ssHCVEk+mNFUlHJqrQlcgzxqQJfesq
+         yzRwbh36AsgdEEbfIs6gKXSMfw/Xz0pIgZnetZsWOd5nurziPfLvOQkq+GcMaufRXoEq
+         jRt4zSiHpRPvU9QUz92MY+T0M6qxS56edY9WEqbuFSwQv+AbZqSFMRn8TSr2bJ3E/DWj
+         DEWbj+VNpyo3u59Hb78fAMvlzFw66ohlWJuPwiV41a8sjcg5dAq4poCvMe2Yh654G/4Z
+         N7ZMZyrouBqW9YSpRG5JA4sEUGMNmdLAAV8dRyzXpOm7MVop/35DB1hwBdxGpGxUS9Jw
+         MmXA==
+X-Forwarded-Encrypted: i=1; AHgh+RqnNCSGdCVKU55JAPj2NAOMZ+9EcXjQ2HgUj9cP99TT5GdKaefgEBeSutkyWlmYyOhAfNdWpSMAdmU=@lists.infradead.org
+X-Gm-Message-State: AOJu0YyUWGP+R0BVsimEY8mw9nDS11PXW2ZREZhDYQAbbh2EIxamo20H
+	fblun9jLBLGRou3r1oaDL6rJsxjK5hDJBuEdPuI5Gn/cCR0KgvU4wzc4
+X-Gm-Gg: AR+sD13QZJ64qiuEQAle+cRGG++riNj6AeH9xgUn4+6pGvvU7tdrB77biOuvVCsb+OP
+	7O4de0V2EERmiJiPgETf/0JeikjXYNqQmKq6lMqj6TPbPCxW2al6ySxIn0VRszpYgoc1dY/SR0J
+	s952PkztTkN0qGm3xRgWVS0XPqXOFrOPwZrClroYPOWbVfWzZHD6n+1fKPC7YkAiGAGqLHdRx8A
+	Ee1WDXWICjgIP+Q1Pk7WJ2kg0zFWVSnqiPowYrPQ9xX5Ox3KEyOfojB0vPZ5ivzWQx5aOJ+X6Kz
+	wNCm1/pNn+y+T2AxpgRv1IP46l01oYkDKVBd6Bep7Pgx6eKeaXA4gOqjDJFguT/zEojvW80pKiU
+	kPIPsKqpZWWnYvURtXWRdjOGRJqKSP+KiEXHjU4+2meL+DeL/3WVmpdhdgOsVvM1/Dm8+4/UvVr
+	b/XLs3vSYNfzy7QFf3uBJRP2TSO8+TzvEn2bEZBmBbD0D1uq58q0xBqDZXrW2y97SHcP4gk7hYA
+	Z4T6VUNAgsySs8BrvR7HBux6oC5EUfHpvsuE4YCnUinyJLbh59xqX2HXTck5z+x1Wk5UEq8IlA6
+	eciKe5gUatL2vhmuew==
+X-Received: by 2002:a17:90b:4f8b:b0:38e:8021:2ea9 with SMTP id 98e67ed59e1d1-3933bcc78a9mr23421572a91.19.1786955244596;
+        Mon, 17 Aug 2026 01:27:24 -0700 (PDT)
 Received: from jm-Lunar-Lake-Client-Platform.. (2001-b400-e15c-4d9e-e270-183b-5fe6-6f07.emome-ip6.hinet.net. [2001:b400:e15c:4d9e:e270:183b:5fe6:6f07])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3954d2b8080sm1393379a91.4.2026.08.17.01.27.12
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-3954d2b8080sm1393379a91.4.2026.08.17.01.27.20
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 17 Aug 2026 01:27:16 -0700 (PDT)
+        Mon, 17 Aug 2026 01:27:24 -0700 (PDT)
 From: Jian-Ming Liao <tim678910@gmail.com>
 X-Google-Original-From: Jian-Ming Liao <Jm_Liao@asmedia.com.tw>
 To: alexandre.belloni@bootlin.com
@@ -83,16 +83,16 @@ Cc: Frank.Li@nxp.com,
 	Patrick_Yen@asmedia.com.tw,
 	Chloe_Chen@asmedia.com.tw,
 	Yd_Tseng@asmedia.com.tw
-Subject: [PATCH v3 1/3] i3c: mipi-i3c-hci: Fix missing STAT_IBI_STATUS_THLD in PIO mode
-Date: Mon, 17 Aug 2026 16:26:45 +0800
-Message-ID: <20260817082647.612471-2-Jm_Liao@asmedia.com.tw>
+Subject: [PATCH v3 2/3] i3c: mipi-i3c-hci: Add PIO queue management support for HCI v1.2
+Date: Mon, 17 Aug 2026 16:26:46 +0800
+Message-ID: <20260817082647.612471-3-Jm_Liao@asmedia.com.tw>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20260817082647.612471-1-Jm_Liao@asmedia.com.tw>
 References: <20260817082647.612471-1-Jm_Liao@asmedia.com.tw>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260817_012718_021541_8C788EF7 
-X-CRM114-Status: GOOD (  10.75  )
+X-CRM114-CacheID: sfid-20260817_012725_717913_588967FA 
+X-CRM114-Status: GOOD (  15.62  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -109,51 +109,186 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-In PIO mode initialization, STAT_IBI_STATUS_THLD was missing from
-pio->enabled_irqs. As a result, the host controller interrupt signal for
-IBI threshold was never enabled when transfer starts, preventing IBI
-status descriptors from being properly processed in PIO mode.
+Support explicit enablement and starting of PIO queues as required by
+HCI v1.2.
+Handle alternate PIO queue sizes via ALT_QUEUE_SIZE register.
+Implement explicit PIO queue stopping/disabling and restart logic after
+errors.
 
-Include STAT_IBI_STATUS_THLD in pio->enabled_irqs so that the IBI
-threshold interrupt is activated alongside error interrupts upon the first
-transfer.
-
-Fixes: 9ad9a52cce28 ("i3c/master: introduce the mipi-i3c-hci driver")
 Co-developed-by: Patrick Yen <Patrick_Yen@asmedia.com.tw>
 Signed-off-by: Patrick Yen <Patrick_Yen@asmedia.com.tw>
 Signed-off-by: Jian-Ming Liao <Jm_Liao@asmedia.com.tw>
 ---
 v3:
- - Added Fixes tag (Adrian).
- - Updated commit message and code comment to accurately reflect that
-   STAT_IBI_STATUS_THLD is activated on the first transfer (Adrian).
+ - No functional code changes.
  - Aligned From: and Signed-off-by: email addresses (Adrian).
 v2:
- - Removed "Hot-Join" references from the commit message and comments,
-   as the change focuses strictly on enabling STAT_IBI_STATUS_THLD
-   for general IBI reception per HCI spec.
-   
- drivers/i3c/master/mipi-i3c-hci/pio.c | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
+ - Removed '-' prefixes from commit message (Frank).
+ - Aligned GENMASK bit definitions with existing macro styles (Frank).
+ - Reverted unnecessary dev_dbg line movements (Frank).
+ - Removed manual kfree(pio) as pio is devm managed (Frank).
+ - Introduced helper macro for HCI version checks (Frank).
 
+ drivers/i3c/master/mipi-i3c-hci/core.c |  1 +
+ drivers/i3c/master/mipi-i3c-hci/hci.h  |  5 ++
+ drivers/i3c/master/mipi-i3c-hci/pio.c  | 67 ++++++++++++++++++++++++--
+ 3 files changed, 69 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+index e80aa1f5722e..dccc974ef15a 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/core.c
++++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+@@ -1031,6 +1031,7 @@ static int i3c_hci_init(struct i3c_hci *hci)
+ 	switch (regval & ~0xf) {
+ 	case 0x100:	/* version 1.0 */
+ 	case 0x110:	/* version 1.1 */
++	case 0x120:	/* version 1.2 */
+ 	case 0x200:	/* version 2.0 */
+ 		break;
+ 	default:
+diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
+index b3d9803b1968..becccb1a8cf5 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/hci.h
++++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
+@@ -30,6 +30,11 @@
+ #define reg_set(r, v)		reg_write(r, reg_read(r) | (v))
+ #define reg_clear(r, v)		reg_write(r, reg_read(r) & ~(v))
+ 
++/* helper macro for HCI version check */
++#define hci_version_at_least(hci, maj, min) \
++	((hci)->version_major > (maj) || \
++	((hci)->version_major == (maj) && (hci)->version_minor >= (min)))
++
+ struct hci_cmd_ops;
+ 
+ struct dat_words {
 diff --git a/drivers/i3c/master/mipi-i3c-hci/pio.c b/drivers/i3c/master/mipi-i3c-hci/pio.c
-index ff2657ee220b..a1341d66bc65 100644
+index a1341d66bc65..439578a6eb54 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/pio.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/pio.c
-@@ -185,8 +185,11 @@ static void __hci_pio_init(struct i3c_hci *hci, u32 *size_val_ptr)
- 	pio_reg_write(INTR_SIGNAL_ENABLE, 0x0);
- 	pio_reg_write(INTR_STATUS_ENABLE, 0xffffffff);
+@@ -45,6 +45,11 @@
+ #define IBI_STATUS_SIZE			GENMASK(15, 8)
+ #define CR_QUEUE_SIZE			GENMASK(7, 0)
  
--	/* Always accept error interrupts (will be activated on first xfer) */
--	pio->enabled_irqs = STAT_ALL_ERRORS;
-+	/*
-+	 * Always accept error interrupts and IBI threshold interrupt
-+	 * (will be activated on first xfer).
-+	 */
-+	pio->enabled_irqs = STAT_ALL_ERRORS | STAT_IBI_STATUS_THLD;
++#define PIO_ALT_QUEUE_SIZE		0x1C
++#define EXT_IBI_QUEUE_EN		BIT(28)
++#define ALT_RESP_QUEUE_EN		BIT(24)
++#define ALT_RESP_QUEUE_SIZE		GENMASK(7, 0)
++
+ #define PIO_INTR_STATUS			0x20
+ #define PIO_INTR_STATUS_ENABLE		0x24
+ #define PIO_INTR_SIGNAL_ENABLE		0x28
+@@ -72,6 +77,11 @@
+ #define STAT_RX_THLD			BIT(1)
+ #define STAT_TX_THLD			BIT(0)
+ 
++#define PIO_CONTROL			0x30
++#define PIO_CONTROL_ABORT		BIT(2)
++#define PIO_CONTROL_RS			BIT(1)
++#define PIO_CONTROL_ENABLE		BIT(0)
++
+ #define PIO_QUEUE_CUR_STATUS		0x38
+ #define CUR_IBI_Q_LEVEL			GENMASK(28, 20)
+ #define CUR_RESP_Q_LEVEL		GENMASK(18, 10)
+@@ -173,6 +183,14 @@ static void __hci_pio_init(struct i3c_hci *hci, u32 *size_val_ptr)
+ 	 * IBI queue size within allowed bounds.
+ 	 */
+ 	ibi_val = FIELD_GET(IBI_STATUS_SIZE, size_val);
++	/* Adjust actual IBI queue size based on v1.2 ALT_QUEUE_SIZE */
++	if (hci_version_at_least(hci, 1, 2)) {
++		u32 alt_val = pio_reg_read(ALT_QUEUE_SIZE);
++
++		if (alt_val & EXT_IBI_QUEUE_EN)
++			ibi_val *= 8;
++	}
++
+ 	pio->max_ibi_thresh = clamp_val(ibi_val/2, 1, 63);
+ 	val = FIELD_PREP(QUEUE_IBI_STATUS_THLD, 1) |
+ 	      FIELD_PREP(QUEUE_IBI_DATA_THLD, pio->max_ibi_thresh) |
+@@ -190,6 +208,17 @@ static void __hci_pio_init(struct i3c_hci *hci, u32 *size_val_ptr)
+ 	 * (will be activated on first xfer).
+ 	 */
+ 	pio->enabled_irqs = STAT_ALL_ERRORS | STAT_IBI_STATUS_THLD;
++
++	/* MIPI I3C HCI v1.2 requires explicitly enabling and starting PIO queues */
++	if (hci_version_at_least(hci, 1, 2)) {
++		u32 ctl_val = pio_reg_read(CONTROL);
++
++		if (!(ctl_val & PIO_CONTROL_ENABLE)) {
++			ctl_val |= PIO_CONTROL_ENABLE;
++			pio_reg_write(CONTROL, ctl_val);
++		}
++		pio_reg_write(CONTROL, ctl_val | PIO_CONTROL_RS);
++	}
  }
  
  static void hci_pio_suspend(struct i3c_hci *hci)
+@@ -208,6 +237,7 @@ static int hci_pio_init(struct i3c_hci *hci)
+ {
+ 	struct hci_pio_data *pio;
+ 	u32 size_val;
++	u32 cmd_sz, resp_sz, ibi_val;
+ 
+ 	pio = devm_kzalloc(hci->master.dev.parent, sizeof(*pio), GFP_KERNEL);
+ 	if (!pio)
+@@ -217,10 +247,24 @@ static int hci_pio_init(struct i3c_hci *hci)
+ 
+ 	__hci_pio_init(hci, &size_val);
+ 
+-	dev_dbg(&hci->master.dev, "CMD/RESP FIFO = %ld entries\n",
+-		FIELD_GET(CR_QUEUE_SIZE, size_val));
+-	dev_dbg(&hci->master.dev, "IBI FIFO = %ld bytes\n",
+-		4 * FIELD_GET(IBI_STATUS_SIZE, size_val));
++	cmd_sz = FIELD_GET(CR_QUEUE_SIZE, size_val);
++	resp_sz = cmd_sz;
++	ibi_val = FIELD_GET(IBI_STATUS_SIZE, size_val);
++
++	/* MIPI I3C HCI v1.2 supports alternate RESP/IBI queue size */
++	if (hci_version_at_least(hci, 1, 2)) {
++		u32 alt_val = pio_reg_read(ALT_QUEUE_SIZE);
++
++		if (alt_val & ALT_RESP_QUEUE_EN)
++			resp_sz = FIELD_GET(ALT_RESP_QUEUE_SIZE, alt_val);
++		if (alt_val & EXT_IBI_QUEUE_EN)
++			ibi_val *= 8;
++	}
++
++	dev_dbg(&hci->master.dev, "CMD FIFO = %u, RESP FIFO = %u entries\n",
++		cmd_sz, resp_sz);
++	dev_dbg(&hci->master.dev, "IBI FIFO = %u bytes\n",
++		4 * ibi_val);
+ 	dev_dbg(&hci->master.dev, "RX data FIFO = %d bytes\n",
+ 		4 * (2 << FIELD_GET(RX_DATA_BUFFER_SIZE, size_val)));
+ 	dev_dbg(&hci->master.dev, "TX data FIFO = %d bytes\n",
+@@ -244,6 +288,9 @@ static void hci_pio_cleanup(struct i3c_hci *hci)
+ 		BUG_ON(pio->curr_rx);
+ 		BUG_ON(pio->curr_tx);
+ 		BUG_ON(pio->curr_resp);
++		/* MIPI I3C HCI v1.2 requires explicitly stopping and disabling PIO queues */
++		if (hci_version_at_least(hci, 1, 2))
++			pio_reg_write(CONTROL, 0x0);
+ 	}
+ }
+ 
+@@ -764,6 +811,18 @@ static void hci_pio_err(struct i3c_hci *hci, struct hci_pio_data *pio,
+ 		hci_pio_dequeue_xfer_common(hci, pio, pio->curr_tx, 1);
+ 	/* then reset the hardware */
+ 	mipi_i3c_hci_pio_reset(hci);
++
++	/* MIPI I3C HCI v1.2 requires explicitly restarting PIO queues after error/abort */
++	if (hci_version_at_least(hci, 1, 2)) {
++		u32 ctl_val = pio_reg_read(CONTROL);
++
++		if (!(ctl_val & PIO_CONTROL_ENABLE)) {
++			ctl_val |= PIO_CONTROL_ENABLE;
++			pio_reg_write(CONTROL, ctl_val);
++		}
++		pio_reg_write(CONTROL, ctl_val | PIO_CONTROL_RS);
++	}
++
+ 	mipi_i3c_hci_resume(hci);
+ 
+ 	dev_dbg(&hci->master.dev, "status=%#x/%#x",
 -- 
 2.43.0
 
