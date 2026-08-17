@@ -4,38 +4,38 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8036AC5DF7D
-	for <linux-i3c@archiver.kernel.org>; Mon, 17 Aug 2026 10:38:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BB770C5DF70
+	for <linux-i3c@archiver.kernel.org>; Mon, 17 Aug 2026 10:39:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=w5HwBAhSj+tpV59+ddIz1EejoDeIACAzyLIwCIpl4fk=; b=NL+7geN+kv6Phv
-	D+719C5zjrITO2jYtxRNOtvqIh5QFYhH/l7kiqF3QKB9ke/ce/LSObJdKWoQCZ7i5EZFc8jj1pG4W
-	NJl8AEIDjltqmbJxBWAwIXuCUbEJnVJ/HBd5DS+UYb/CeSb4y+/CjZqck752oXnghv4zZENywm5du
-	Gjy0ISL1vn+VmuuG8qj9bbnHoEDcxQY0MTZE5t6+l7zLIOzv4VlQEpv4o0bSDwUWjkUaZqa4x8Z6n
-	02qYdyZr9eS2o+R8zueeKhUPrTKtgZpGYihFCTYLd3g+g79wjeMyd3SY0y5ZrMrXVMRBnZchqW0Y0
-	0Xk4ROIKhWRbaG1Sj1JA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rLEp7mQJ6NaNGU1I3mxJ4Qg+2SXc/pXjqpIfUDoeUTo=; b=thlk25v+5Pyj3U
+	4Uprg7rEp5oTryPCNyubS4wPQ9Jzq0YJwydDWXM8+m7osNKFZaBlInruJNR9cD3fj/yzyN3+9aqx8
+	1IabxwMpTgz97C8x7xxHKdzN82y+iIMRrEkS2c6kEdsuUPY/j7qNSsCsjtgmctTbrhmuLW1x9p3qf
+	GUrl/cXNtvn8b94CuERAe+MDVrjIweuqaV3BGzUMmiaOXymGZjhW9Cw78RkfSBvDFxe1471177DoD
+	HtKEx2olpjdbs7xGzae121vgbWEj3pXLLU19bYWto5yGCnS64XkXooC6vQeBFsU/0FdUUodqh3hsc
+	yDTvzKIFoOAUiPgGbyHg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wvuk5-00000005wh1-0IRr;
-	Mon, 17 Aug 2026 10:38:57 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1wvukB-00000005wlU-1qXF;
+	Mon, 17 Aug 2026 10:39:03 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wvuk1-00000005wfJ-3vCu
+	id 1wvuk6-00000005whh-2w9p
 	for linux-i3c@lists.infradead.org;
-	Mon, 17 Aug 2026 10:38:55 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 37222200108;
-	Mon, 17 Aug 2026 12:38:50 +0200 (CEST)
+	Mon, 17 Aug 2026 10:39:00 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 46DFA1A0005;
+	Mon, 17 Aug 2026 12:38:57 +0200 (CEST)
 Received: from aprdc01srsp001v.ap-rdc01.nxp.com (aprdc01srsp001v.ap-rdc01.nxp.com [165.114.16.16])
-	by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id CB2A22000FD;
-	Mon, 17 Aug 2026 12:38:49 +0200 (CEST)
+	by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id D95341A01F9;
+	Mon, 17 Aug 2026 12:38:56 +0200 (CEST)
 Received: from lsv03900.swis.in-blr01.nxp.com (lsv03900.swis.in-blr01.nxp.com [10.12.177.15])
-	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 7921818000BF;
-	Mon, 17 Aug 2026 18:38:48 +0800 (+08)
+	by aprdc01srsp001v.ap-rdc01.nxp.com (Postfix) with ESMTP id 846F418000B0;
+	Mon, 17 Aug 2026 18:38:55 +0800 (+08)
 From: Lakshay Piplani <lakshay.piplani@nxp.com>
 To: linux-kernel@vger.kernel.org,
 	linux-i3c@lists.infradead.org,
@@ -51,16 +51,19 @@ To: linux-kernel@vger.kernel.org,
 Cc: vikash.bansal@nxp.com,
 	priyanka.jain@nxp.com,
 	aman.kumarpandey@nxp.com,
-	Lakshay Piplani <lakshay.piplani@nxp.com>
-Subject: [PATCH v15 0/8] Add support for NXP P3H2x4x I3C hub driver
-Date: Mon, 17 Aug 2026 16:08:36 +0530
-Message-Id: <20260817103844.2142802-1-lakshay.piplani@nxp.com>
+	Lakshay Piplani <lakshay.piplani@nxp.com>,
+	Frank Li <frank.li@nxp.com>
+Subject: [PATCH v15 5/8] regulator: p3h2x4x: Add driver for on-die regulators in NXP P3H2x4x i3c hub
+Date: Mon, 17 Aug 2026 16:08:41 +0530
+Message-Id: <20260817103844.2142802-6-lakshay.piplani@nxp.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20260817103844.2142802-1-lakshay.piplani@nxp.com>
+References: <20260817103844.2142802-1-lakshay.piplani@nxp.com>
 MIME-Version: 1.0
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260817_033854_390006_DA463004 
-X-CRM114-Status: GOOD (  22.26  )
+X-CRM114-CacheID: sfid-20260817_033859_166697_95120406 
+X-CRM114-Status: GOOD (  22.98  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,249 +80,408 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-This series adds support for the NXP P3H2x4x family of multi-port I3C
-hub devices, including their on-die regulators and downstream I3C/SMBus
-target ports
+From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
 
-The series introduces:
-- Core I3C master enhancements required for hub support
-- Generic I3C hub framework
-- MFD driver with regulator and I3C hub child drivers for the P3H2x4x I3C hub
+The NXP P3H2x4x family integrates on-die regulators alongside I3C hub
+functionality. This driver registers the regulators using the MFD
+framework and exposes them via the regulator subsystem.
 
-The dependency order within the series is:
+Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
+Signed-off-by: Lakshay Piplani <lakshay.piplani@nxp.com>
+Reviewed-by: Frank Li <frank.li@nxp.com>
+Reviewed-by: Mark Brown <broonie@kernel.org>
 
-- Patches 1 and 2 provide the I3C core helpers required by the generic
-  I3C hub framework
-- Patch 3 provides the P3H2x4x Device Tree binding
-- Patch 4 provides the MFD parent required by both the regulator and
-  P3H2x4x I3C hub child drivers
-- Patch 5 provides the regulator child driver and depends on patch 4
-- Patch 6 provides the generic I3C hub framework and depends on the
-  I3C core changes in patches 1 and 2
-- Patch 7 provides the P3H2x4x I3C hub child driver and depends on
-  patches 4 and 6
-- Patch 8 extends the P3H2x4x hub driver with SMBus slave mode support
-  and depends on patch 7
-
+---
 Changes in v15:
-- Replace the direct attach and detach APIs with controller-only helpers
-  that do not modify address-slot state, device lists or generic IBI
-  lifecycle state
-- Add controller-only helpers for device attach, reattach and detach,
-  and for requesting, freeing, enabling, disabling and recycling IBI
-  resources
-- Rework the generic hub architecture to keep downstream logical device
-  descriptors associated with their virtual controllers
-- Add a permanent parent-facing descriptor for each downstream device
-  and use it for operations handled by the physical parent controller
-- Remove temporary descriptor reparenting and temporary hub dynamic
-  address replacement from downstream transfer paths
-- Forward downstream private transfers and the complete IBI lifecycle,
-  including IBI slot recycling, through the parent-facing descriptor
-  with appropriate parent-bus locking
-- Add binding and MFD support for the P3H2440, P3H2441, P3H2840 and
-  P3H2841 variants
-- Fix the target-port reg schema and update the binding examples to use
-  SMBus target-port nodes
-- Read the device capability register to determine whether the device
-  provides four or eight target ports
-- Configure and register only the target ports implemented by the
-  selected device variant
-- Preserve the MFD parent's driver data and store the hub context in the
-  shared MFD structure for use by IBI callbacks
-- Validate target-port types and indices while ignoring non-target-port
-  children, such as the regulators node, during Device Tree parsing
-- Correct the SMBus transfer timeout calculation for 400 kHz operation
-- Use I2C adapter quirks to enforce the maximum supported read and write
-  payload lengths
-- Publish callback-visible SMBus adapter state before adapter
-  registration and roll it back if registration fails
-- Rework SMBus slave registration and unregistration to use the shared
-  protected-register lock and update software state only after the
-  corresponding hardware operation succeeds
-- Update the MFD source description to identify the device as an NXP
-  P3H2x4x multi-port I3C hub instead of referring to it as an "MFD
-  device driver"
-- Link to v14: https://lore.kernel.org/linux-i3c/20260714092053.2461482-1-lakshay.piplani@nxp.com/T/#u
+ - No change
 
 Changes in v14:
-- Add i3c_master_register_fwnode() for virtual I3C masters and use it instead of temporarily changing
-  parent dev->of_node
-- Add runtime PM handling in i3c_master_send_ccc_cmd()
-- Export i3c_bus_maintenance_lock()/unlock() and use them in hub paths
-- Fix IBI request/free cleanup to handle forwarded callbacks that clear dev->ibi, and destroy the
-  allocated IBI workqueue on request failure
-- Add a shared MFD protected_reg_lock and use it for protected register accesses across P3H2X4X
-  child drivers
-- Rework regulator protected-register handling to restore the original protection state after
-  each operation
-- Serialize hub route selection around DAA, CCC, private transfer and IBI paths
-- Hold the parent maintenance lock across temporary hub address reattach, transfer and address
-  restore
-- Fix SMBus polling interval calculation
-- Clean up already registered SMBus adapters on adapter allocation or registration failure
-- Fix SMBus slave receive status handling by clearing receive flags on error paths, using FIELD_GET()
-  and explicitly clearing overflow status
-- Link to v13: https://lore.kernel.org/linux-i3c/20260701065755.2067793-1-lakshay.piplani@nxp.com/T/#u
+ - Use the shared MFD protected_reg_lock instead of a regulator-private mutex
+   to serialize protected register access across P3H2X4X child drivers
+ - Rework protected register handling into explicit unprotect/protect helpers
+   and restore the original protection state after each regulator operation
+ - Ensure protected registers are restored even if enable, disable or
+   set_voltage_sel fails
 
 Changes in v13:
-- Fix I3C master address management in direct attach/detach paths by using i3c_master_get_i3c_addrs()
-  adding rollback on failure, skipping master self attach/detach, and properly releasing addresses to
-  avoid stale state and use-after-free issues.
-- Export and document address slot helper APIs for I3C hub support.
-- Reserve parent bus address slots for downstream devices with identical static and assigned addresses
-  by parsing target-port DT nodes prior to virtual controller registration, preventing DAA conflicts.
-- Keep broadcast RSTDAA blocked with added documentation, and clarify intentional no-op callbacks
-  and pending TODOs (e.g., IBI slot recycle).
-- Rework SMBus transaction handling to use polling instead of fixed delays
-  avoiding premature reads and data corruption.
-- Fix DT handling issues by preventing duplicate target-port node leaks and restoring dev->of_node
-  after temporary modification.
-- Improve resource management using devm-based cleanup for DT nodes, IBI setup, adapter unregister
-  and register relock paths.
-- Make IBI setup optional and robust to avoid probe failures on unsupported platforms, with proper cleanup.
-- Fix SMBus slave receive path by improving buffer handling, event delivery, and handling of unregistered ports.
-- Strengthen concurrency handling with proper locking around shared state.
-- Link to v12: https://lore.kernel.org/linux-i3c/20260617110355.1591844-1-lakshay.piplani@nxp.com/T/#u
+ - Serialize register unlock/modify/lock sequences using a device-level mutex to
+   avoid races between regulators.
+ - Ensure proper module auto-loading by adding platform device ID table.
+ - Improve error handling in register guard paths to avoid operating on locked hub.
 
 Changes in v12:
-- Rebased on i3c/next
-- Dropped patches 1/9 and 2/9 from v11 as they are already applied
-- Add address check in i3c_master_direct_detach_i3c_dev_locked() to skip
-  detach for unaddressed devices
-- Drop redundant depends on I3C from config I3C_HUB
-- Return -EOPNOTSUPP for unsupported I2C transfers in the generic hub ops
-- Correct default pull-up and drive-strength values
-- Add devm cleanup for the IBI request/enable path
-- Remove dead code and simplify cleanup by relying on devm-managed resources
-- Fix SMBus slave client NULL handling and unregister cleanup
-- Link to v11: https://lore.kernel.org/linux-i3c/20260612111816.3688240-1-lakshay.piplani@nxp.com/T/#u
+ - No change
 
 Changes in v11:
-- Convert i3c_master_supports_ccc_cmd() to return bool and align
-  semantics with CCC support checks used by the I3C core
-- Use MFD_CELL_NAME() for child device registration
-- Rename driver names to follow subsystem conventions:
-     - Use '-' instead of '_' in driver names
-     - Drop the "_drv" suffix from driver names
-- Fix virtual hub address reattach handling and parent bus locking
-- Fix IBI request and cleanup error paths
-- Improve SMBus slave mode payload validation and parsing
-- Link to v10: https://lore.kernel.org/linux-i3c/20260525064209.2263045-1-lakshay.piplani@nxp.com/T/#u
+ - No change, added Reviewed-By tag
 
 Changes in v10:
-- Rename i3c_master_reattach_i3c_dev() to *_locked to reflect required
-  bus locking
-- Rename i3c_master_direct_attach_i3c_dev() and i3c_master_direct_detach_i3c_dev()
-  to *_locked, as these APIs must be called with the bus lock held for write
-- Drop redundant is_p3h2x4x_in_i3c flag from p3h2840.h
-- Remove unnecessary ibi_lock handling in request/enable/disable/free
-  IBI APIs
-- Remove redundant parent pointer from struct i3c_hub and derive upstream
-  master from hub_dev
-- Split SMBus target/slave mode support, including IBI and MCTP receive handling,
-  into a separate patch
-- Link to v9: https://lore.kernel.org/linux-i3c/20260420105222.1562243-1-lakshay.piplani@nxp.com/T/#u
+ - No change
 
 Changes in v9:
-- Renamed macros to follow consistent uppercase naming conventions
-- Made REGMAP selects in the P3H2X4X MFD Kconfig conditional, to avoid I3C/I2C dependency issues
-- Referenced i3c.yaml and i2c-controller.yaml for child bus nodes
-- Dropped unnecessary #address-cells and #size-cells from child nodes
-- Added CONFIG_I2C_SLAVE guards where necessary to avoid build errors when I2C slave support is disabled
-- Link to v8: https://lore.kernel.org/linux-i3c/20260323062737.886728-1-lakshay.piplani@nxp.com/T/#u
+ - No change
 
 Changes in v8:
-- Add compatible in i3c example
-- Link to v7: https://lore.kernel.org/linux-i3c/20260319112441.3888957-1-lakshay.piplani@nxp.com/T/#u
+ - No change
 
 Changes in v7:
-- Fix kernel-doc warnings across I3C core and hub code
-- Rework DT binding schema and examples to pass dt_binding_check
-- Update MFD Kconfig to use I3C_OR_I2C
-- Convert CONFIG_I3C_HUB to tristate
-- Remove unnecessary CONFIG_I2C_SLAVE guards
-- Replace custom helpers with find_closest()
-- Use devm_regulator_get_enable_optional()
-- Link to v6: https://lore.kernel.org/linux-i3c/64c5070c-aa9e-427a-933e-91e168f0510c@kernel.org/T/#u
+ - No change, added Reviewed-By tag
 
 Changes in v6:
-- Update DT binding with vendor-prefixed properties
-- Add generic I3C hub support
-- Remove generic code from P3H2x4x driver
-- Link to v5: https://lore.kernel.org/linux-i3c/20260206120121.856471-1-aman.kumarpandey@nxp.com/T/#u
+ - Use DEFINE_LOCK_GUARD_1 for reg lock/unlock
 
 Changes in v5:
-- Update supply naming and descriptions
-- Improve MFD Kconfig/Makefile ordering
-- Link to v4: https://lore.kernel.org/linux-i3c/20260113114529.1692213-2-aman.kumarpandey@nxp.com/T/#u
+ - Updated dev_err_probe() for regmap_init failure.
+ - Updated module description
 
 Changes in v4:
-- Split driver into MFD, regulator and I3C hub parts
-- Update I3C master for hub support
-- Fix DT binding issues
-- Link to v3: https://lore.kernel.org/linux-i3c/20250811-bittern-of-abstract-prestige-aaeda9@kuoka/T/#u
-
-Changes in v3:
-- Add MFD support for hub and regulators
-- Add regulator integration
-- Link to v2: https://lore.kernel.org/linux-i3c/17145d2f-5d07-4939-8381-74e27cde303c@kernel.org/T/#u
-
-Changes in v2:
-- Fix DT binding warnings
-- Refine DT parsing logic
-- Link to v1: https://lore.kernel.org/linux-i3c/822d6dca-b2c6-4439-ade5-219620ebc435@kernel.org/T/#u
-
-Aman Kumar Pandey (5):
-  i3c: master: Add APIs for I3C hub support
-  dt-bindings: i3c: Add NXP P3H2x4x i3c-hub support
-  mfd: p3h2x4x: Add driver for NXP P3H2x4x i3c hub and on-die regulator
-  regulator: p3h2x4x: Add driver for on-die regulators in NXP P3H2x4x
-    i3c hub
-  i3c: hub: p3h2x4x: Add support for NXP P3H2x4x I3C hub functionality
-
-Lakshay Piplani (3):
-  i3c: master: Add controller-only device operation helpers
-  i3c: hub: Add support for the I3C interface in the I3C hub
-  i3c: hub: p3h2x4x: Add SMBus slave mode support
-
- .../devicetree/bindings/i3c/nxp,p3h2840.yaml  | 297 ++++++++
- MAINTAINERS                                   |  15 +
- drivers/i3c/Kconfig                           |  15 +
- drivers/i3c/Makefile                          |   2 +
- drivers/i3c/hub.c                             | 675 ++++++++++++++++++
- drivers/i3c/hub/Kconfig                       |  11 +
- drivers/i3c/hub/Makefile                      |   4 +
- drivers/i3c/hub/p3h2840_i3c_hub.h             | 350 +++++++++
- drivers/i3c/hub/p3h2840_i3c_hub_common.c      | 428 +++++++++++
- drivers/i3c/hub/p3h2840_i3c_hub_i3c.c         | 165 +++++
- drivers/i3c/hub/p3h2840_i3c_hub_smbus.c       | 623 ++++++++++++++++
- drivers/i3c/internals.h                       |  14 +
- drivers/i3c/master.c                          | 383 ++++++++--
- drivers/mfd/Kconfig                           |  13 +
- drivers/mfd/Makefile                          |   1 +
- drivers/mfd/p3h2840.c                         | 168 +++++
+ - Split the driver into three separate patches (mfd, regulator and I3C hub)
+ - Introduced driver for on-die regulators in NXP P3H2x4x I3C hub
+---
+---
+ MAINTAINERS                                   |   1 +
  drivers/regulator/Kconfig                     |  10 +
  drivers/regulator/Makefile                    |   1 +
- drivers/regulator/p3h2840_i3c_hub_regulator.c | 284 ++++++++
- include/linux/i3c/device.h                    |   2 +
- include/linux/i3c/hub.h                       |  92 +++
- include/linux/i3c/master.h                    |  17 +
- include/linux/mfd/p3h2840.h                   |  41 ++
- 23 files changed, 3558 insertions(+), 53 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
- create mode 100644 drivers/i3c/hub.c
- create mode 100644 drivers/i3c/hub/Kconfig
- create mode 100644 drivers/i3c/hub/Makefile
- create mode 100644 drivers/i3c/hub/p3h2840_i3c_hub.h
- create mode 100644 drivers/i3c/hub/p3h2840_i3c_hub_common.c
- create mode 100644 drivers/i3c/hub/p3h2840_i3c_hub_i3c.c
- create mode 100644 drivers/i3c/hub/p3h2840_i3c_hub_smbus.c
- create mode 100644 drivers/mfd/p3h2840.c
+ drivers/regulator/p3h2840_i3c_hub_regulator.c | 284 ++++++++++++++++++
+ 4 files changed, 296 insertions(+)
  create mode 100644 drivers/regulator/p3h2840_i3c_hub_regulator.c
- create mode 100644 include/linux/i3c/hub.h
- create mode 100644 include/linux/mfd/p3h2840.h
 
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 76861839f579..448c5017f665 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -19553,6 +19553,7 @@ L:	linux-i3c@lists.infradead.org
+ S:	Maintained
+ F:	Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+ F:	drivers/mfd/p3h2840.c
++F:	drivers/regulator/p3h2840_i3c_hub_regulator.c
+ F:	include/linux/mfd/p3h2840.h
+ 
+ NXP PF5300/PF5301/PF5302 PMIC REGULATOR DEVICE DRIVER
+diff --git a/drivers/regulator/Kconfig b/drivers/regulator/Kconfig
+index a54a549196fe..d0c6c5b65557 100644
+--- a/drivers/regulator/Kconfig
++++ b/drivers/regulator/Kconfig
+@@ -1020,6 +1020,16 @@ config REGULATOR_MTK_DVFSRC
+ 	  of Mediatek. It allows for voting on regulator state
+ 	  between multiple users.
+ 
++config REGULATOR_P3H2X4X
++       tristate "NXP P3H2X4X regulator support"
++       depends on MFD_P3H2X4X
++       help
++         This driver provides support for the voltage regulators of the
++         P3H244x/P3H284x multi-function I3C Hub device.
++
++         Say M here if you want to include support for this regulator as
++         a module. The module will be named "p3h2840_i3c_hub_regulator".
++
+ config REGULATOR_PALMAS
+ 	tristate "TI Palmas PMIC Regulators"
+ 	depends on MFD_PALMAS
+diff --git a/drivers/regulator/Makefile b/drivers/regulator/Makefile
+index 134eee274dbf..e3e40e3ffd11 100644
+--- a/drivers/regulator/Makefile
++++ b/drivers/regulator/Makefile
+@@ -128,6 +128,7 @@ obj-$(CONFIG_REGULATOR_QCOM_RPMH) += qcom-rpmh-regulator.o
+ obj-$(CONFIG_REGULATOR_QCOM_SMD_RPM) += qcom_smd-regulator.o
+ obj-$(CONFIG_REGULATOR_QCOM_SPMI) += qcom_spmi-regulator.o
+ obj-$(CONFIG_REGULATOR_QCOM_USB_VBUS) += qcom_usb_vbus-regulator.o
++obj-$(CONFIG_REGULATOR_P3H2X4X) += p3h2840_i3c_hub_regulator.o
+ obj-$(CONFIG_REGULATOR_PALMAS) += palmas-regulator.o
+ obj-$(CONFIG_REGULATOR_PCA9450) += pca9450-regulator.o
+ obj-$(CONFIG_REGULATOR_PF0900) += pf0900-regulator.o
+diff --git a/drivers/regulator/p3h2840_i3c_hub_regulator.c b/drivers/regulator/p3h2840_i3c_hub_regulator.c
+new file mode 100644
+index 000000000000..645d46ad7c2f
+--- /dev/null
++++ b/drivers/regulator/p3h2840_i3c_hub_regulator.c
+@@ -0,0 +1,284 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright 2025-2026 NXP
++ * NXP P3H2X4X regulator driver file contain functions for enable/disable regulator
++ * and voltage set/get.
++ */
++#include <linux/bitfield.h>
++#include <linux/cleanup.h>
++#include <linux/mfd/p3h2840.h>
++#include <linux/of.h>
++#include <linux/platform_device.h>
++#include <linux/regmap.h>
++#include <linux/regulator/driver.h>
++
++#define P3H2X4X_LDO_AND_PULLUP_CONF				0x19
++#define P3H2X4X_LDO_ENABLE_DISABLE_MASK				GENMASK(3, 0)
++#define P3H2X4X_CP0_EN_LDO				        BIT(0)
++#define P3H2X4X_CP1_EN_LDO				        BIT(1)
++#define P3H2X4X_TP0145_EN_LDO					BIT(2)
++#define P3H2X4X_TP2367_EN_LDO					BIT(3)
++
++#define P3H2X4X_NET_OPER_MODE_CONF				0x15
++#define P3H2X4X_VCCIO_LDO_CONF					0x16
++#define P3H2X4X_CP0_VCCIO_LDO_VOLTAGE_MASK			GENMASK(1, 0)
++#define P3H2X4X_CP0_VCCIO_LDO_VOLTAGE(x)	\
++		FIELD_PREP(P3H2X4X_CP0_VCCIO_LDO_VOLTAGE_MASK, x)
++#define P3H2X4X_CP1_VCCIO_LDO_VOLTAGE_MASK			GENMASK(3, 2)
++#define P3H2X4X_CP1_VCCIO_LDO_VOLTAGE(x)	\
++		FIELD_PREP(P3H2X4X_CP1_VCCIO_LDO_VOLTAGE_MASK, x)
++#define P3H2X4X_TP0145_VCCIO_LDO_VOLTAGE_MASK			GENMASK(5, 4)
++#define P3H2X4X_TP0145_VCCIO_LDO_VOLTAGE(x)	\
++		FIELD_PREP(P3H2X4X_TP0145_VCCIO_LDO_VOLTAGE_MASK, x)
++#define P3H2X4X_TP2367_VCCIO_LDO_VOLTAGE_MASK			GENMASK(7, 6)
++#define P3H2X4X_TP2367_VCCIO_LDO_VOLTAGE(x)	\
++		FIELD_PREP(P3H2X4X_TP2367_VCCIO_LDO_VOLTAGE_MASK, x)
++#define P3H2X4X_LDO_COUNT					4
++
++struct p3h2x4x_regulator_dev {
++	struct regulator_dev *rp3h2x4x_dev[P3H2X4X_LDO_COUNT];
++	struct p3h2x4x *p3h2x4x;
++	struct regmap *regmap;
++};
++
++struct p3h2x4x_reg_state {
++	unsigned int orig;
++	bool restore;
++};
++
++static void p3h2x4x_reg_guard_enter(struct regulator_dev *rdev)
++{
++	struct p3h2x4x_regulator_dev *priv = rdev_get_drvdata(rdev);
++
++	mutex_lock(&priv->p3h2x4x->protected_reg_lock);
++}
++
++static void p3h2x4x_reg_guard_exit(struct regulator_dev *rdev)
++{
++	struct p3h2x4x_regulator_dev *priv = rdev_get_drvdata(rdev);
++
++	mutex_unlock(&priv->p3h2x4x->protected_reg_lock);
++}
++
++DEFINE_LOCK_GUARD_1(p3h2x4x_reg, struct regulator_dev,
++		    p3h2x4x_reg_guard_enter(_T->lock),
++		    p3h2x4x_reg_guard_exit(_T->lock));
++
++static int p3h2x4x_reg_unprotect(struct regulator_dev *rdev,
++				 struct p3h2x4x_reg_state *state)
++{
++	int ret;
++
++	state->restore = false;
++
++	ret = regmap_read(rdev->regmap, P3H2X4X_DEV_REG_PROTECTION_CODE,
++			  &state->orig);
++	if (ret)
++		return ret;
++
++	if (state->orig == P3H2X4X_REGISTERS_UNLOCK_CODE)
++		return 0;
++
++	ret = regmap_write(rdev->regmap, P3H2X4X_DEV_REG_PROTECTION_CODE,
++			   P3H2X4X_REGISTERS_UNLOCK_CODE);
++	if (ret)
++		return ret;
++
++	state->restore = true;
++
++	return 0;
++}
++
++static int p3h2x4x_reg_protect(struct regulator_dev *rdev,
++			       struct p3h2x4x_reg_state *state)
++{
++	if (!state->restore)
++		return 0;
++
++	return regmap_write(rdev->regmap, P3H2X4X_DEV_REG_PROTECTION_CODE,
++			    state->orig);
++}
++
++static int p3h2x4x_regulator_enable(struct regulator_dev *rdev)
++{
++	struct p3h2x4x_reg_state state;
++	int ret, ret2;
++
++	guard(p3h2x4x_reg)(rdev);
++
++	ret = p3h2x4x_reg_unprotect(rdev, &state);
++	if (ret)
++		return ret;
++
++	ret = regulator_enable_regmap(rdev);
++	ret2 = p3h2x4x_reg_protect(rdev, &state);
++
++	return ret ? ret : ret2;
++}
++
++static int p3h2x4x_regulator_disable(struct regulator_dev *rdev)
++{
++	struct p3h2x4x_reg_state state;
++	int ret, ret2;
++
++	guard(p3h2x4x_reg)(rdev);
++
++	ret = p3h2x4x_reg_unprotect(rdev, &state);
++	if (ret)
++		return ret;
++
++	ret = regulator_disable_regmap(rdev);
++	ret2 = p3h2x4x_reg_protect(rdev, &state);
++
++	return ret ? ret : ret2;
++}
++
++static int p3h2x4x_regulator_set_voltage_sel(struct regulator_dev *rdev,
++					     unsigned int sel)
++{
++	struct p3h2x4x_reg_state state;
++	int ret, ret2;
++
++	guard(p3h2x4x_reg)(rdev);
++
++	ret = p3h2x4x_reg_unprotect(rdev, &state);
++	if (ret)
++		return ret;
++
++	ret = regulator_set_voltage_sel_regmap(rdev, sel);
++	ret2 = p3h2x4x_reg_protect(rdev, &state);
++
++	return ret ? ret : ret2;
++}
++
++static const struct regulator_ops p3h2x4x_ldo_ops = {
++	.list_voltage = regulator_list_voltage_table,
++	.map_voltage = regulator_map_voltage_iterate,
++	.set_voltage_sel = p3h2x4x_regulator_set_voltage_sel,
++	.get_voltage_sel = regulator_get_voltage_sel_regmap,
++	.enable = p3h2x4x_regulator_enable,
++	.disable = p3h2x4x_regulator_disable,
++	.is_enabled = regulator_is_enabled_regmap,
++};
++
++static const unsigned int p3h2x4x_voltage_table[] = {
++	1000000,
++	1100000,
++	1200000,
++	1800000,
++};
++
++static struct regulator_desc p3h2x4x_regulators[] = {
++	{
++		.name = "ldo-cp0",
++		.of_match = of_match_ptr("ldo-cp0"),
++		.regulators_node = of_match_ptr("regulators"),
++		.volt_table = p3h2x4x_voltage_table,
++		.n_voltages = ARRAY_SIZE(p3h2x4x_voltage_table),
++		.ops = &p3h2x4x_ldo_ops,
++		.type = REGULATOR_VOLTAGE,
++		.owner = THIS_MODULE,
++		.enable_reg = P3H2X4X_LDO_AND_PULLUP_CONF,
++		.enable_mask = P3H2X4X_CP0_EN_LDO,
++		.vsel_reg = P3H2X4X_VCCIO_LDO_CONF,
++		.vsel_mask = P3H2X4X_CP0_VCCIO_LDO_VOLTAGE_MASK,
++	},
++	{
++		.name = "ldo-cp1",
++		.of_match = of_match_ptr("ldo-cp1"),
++		.regulators_node = of_match_ptr("regulators"),
++		.volt_table = p3h2x4x_voltage_table,
++		.n_voltages = ARRAY_SIZE(p3h2x4x_voltage_table),
++		.ops = &p3h2x4x_ldo_ops,
++		.type = REGULATOR_VOLTAGE,
++		.owner = THIS_MODULE,
++		.enable_reg = P3H2X4X_LDO_AND_PULLUP_CONF,
++		.enable_mask = P3H2X4X_CP1_EN_LDO,
++		.vsel_reg = P3H2X4X_VCCIO_LDO_CONF,
++		.vsel_mask = P3H2X4X_CP1_VCCIO_LDO_VOLTAGE_MASK,
++	},
++	{
++		.name = "ldo-tpg0",
++		.of_match = of_match_ptr("ldo-tpg0"),
++		.regulators_node = of_match_ptr("regulators"),
++		.volt_table = p3h2x4x_voltage_table,
++		.n_voltages = ARRAY_SIZE(p3h2x4x_voltage_table),
++		.ops = &p3h2x4x_ldo_ops,
++		.type = REGULATOR_VOLTAGE,
++		.owner = THIS_MODULE,
++		.enable_reg = P3H2X4X_LDO_AND_PULLUP_CONF,
++		.enable_mask = P3H2X4X_TP0145_EN_LDO,
++		.vsel_reg = P3H2X4X_VCCIO_LDO_CONF,
++		.vsel_mask = P3H2X4X_TP0145_VCCIO_LDO_VOLTAGE_MASK,
++	},
++	{
++		.name = "ldo-tpg1",
++		.of_match = of_match_ptr("ldo-tpg1"),
++		.regulators_node = of_match_ptr("regulators"),
++		.volt_table = p3h2x4x_voltage_table,
++		.n_voltages = ARRAY_SIZE(p3h2x4x_voltage_table),
++		.ops = &p3h2x4x_ldo_ops,
++		.type = REGULATOR_VOLTAGE,
++		.owner = THIS_MODULE,
++		.enable_reg = P3H2X4X_LDO_AND_PULLUP_CONF,
++		.enable_mask = P3H2X4X_TP2367_EN_LDO,
++		.vsel_reg = P3H2X4X_VCCIO_LDO_CONF,
++		.vsel_mask = P3H2X4X_TP2367_VCCIO_LDO_VOLTAGE_MASK,
++	},
++};
++
++static int p3h2x4x_regulator_probe(struct platform_device *pdev)
++{
++	struct p3h2x4x *p3h2x4x = dev_get_drvdata(pdev->dev.parent);
++	struct p3h2x4x_regulator_dev *p3h2x4x_regulator;
++	struct regulator_config rcfg = { };
++	struct device *dev = &pdev->dev;
++	struct regulator_dev *rdev;
++	int i;
++
++	p3h2x4x_regulator = devm_kzalloc(dev, sizeof(*p3h2x4x_regulator), GFP_KERNEL);
++	if (!p3h2x4x_regulator)
++		return -ENOMEM;
++
++	p3h2x4x_regulator->p3h2x4x = p3h2x4x;
++	p3h2x4x_regulator->regmap = p3h2x4x->regmap;
++
++	platform_set_drvdata(pdev, p3h2x4x_regulator);
++
++	device_set_of_node_from_dev(dev, dev->parent);
++
++	rcfg.dev = dev;
++	rcfg.regmap = p3h2x4x_regulator->regmap;
++	rcfg.driver_data = p3h2x4x_regulator;
++
++	for (i = 0; i < ARRAY_SIZE(p3h2x4x_regulators); i++) {
++		rdev = devm_regulator_register(&pdev->dev, &p3h2x4x_regulators[i], &rcfg);
++		if (IS_ERR(rdev))
++			return dev_err_probe(dev, PTR_ERR(rdev), "Failed to register %s\n",
++					     p3h2x4x_regulators[i].name);
++		p3h2x4x_regulator->rp3h2x4x_dev[i] = rdev;
++	}
++	return 0;
++}
++
++static const struct platform_device_id p3h2x4x_regulator_id[] = {
++	{ "p3h2x4x-regulator" },
++	{ }
++};
++MODULE_DEVICE_TABLE(platform, p3h2x4x_regulator_id);
++
++static struct platform_driver p3h2x4x_regulator_driver = {
++	.driver = {
++		.name = "p3h2x4x-regulator",
++		.probe_type = PROBE_PREFER_ASYNCHRONOUS,
++	},
++	.probe = p3h2x4x_regulator_probe,
++	.id_table = p3h2x4x_regulator_id,
++};
++module_platform_driver(p3h2x4x_regulator_driver);
++
++MODULE_AUTHOR("Aman Kumar Pandey <aman.kumarpandey@nxp.com>");
++MODULE_AUTHOR("Vikash Bansal <vikash.bansal@nxp.com>");
++MODULE_AUTHOR("Lakshay Piplani <lakshay.piplani@nxp.com>");
++MODULE_DESCRIPTION("NXP P3H2X4X I3C HUB Regulator driver");
++MODULE_LICENSE("GPL");
 -- 
 2.25.1
 
