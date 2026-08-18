@@ -4,47 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0246EC5DF7D
-	for <linux-i3c@archiver.kernel.org>; Tue, 18 Aug 2026 10:41:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D9DEC5DF7E
+	for <linux-i3c@archiver.kernel.org>; Tue, 18 Aug 2026 10:42:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QGPFIJxxgnKpblzsq8Ll5JJVD3OmtCkhCjDiL5na9q0=; b=CBxT1/+3wzllom
-	z2gazjpPyeBlaG75Gl9FFwxZCZ8HF8XFWhjVwO6nxfU8qtW7S2NCGFoQADHMZBAsiISfYIdeSPBhC
-	oXKP2gm3wcpZtN/CsrHGcXUi3tcWwgRHe5NSTdSkkpv2yIPiKsS2ELGjPxwqMKEjSN4oOkLrvCbGb
-	2hLEQrJDmOg13SA0ANhsIQEJWWunuX0xdZL6/EaI88MklUoXbG4wchUbjSIl7N+cS47+CnsRs+5wn
-	4WZbAO41JSmqwfXuLtwavjKnRRvqpp0aomXMN9rSVDgrcuQjl8UD0f+Ljb3pFSkidO+LYIYCcnN5O
-	uW8QOvAfVXaFVmzGeOJQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NQc2BqKiY5D28Mqp0KrGho9RYexOqnE9o7Y99Cz1QXE=; b=22Xh3ztGwN+kA8
+	Ijy5Lw4cLY8ZdWigcsiZxA+NpUoeF3ij7o/lA/sXql2s4mrBsd4toG2JKHh6KQj2/sJBLJWzgqQZo
+	63WxV/6sNtv0N3DPdxBtHY8eQ2MeWRAKczGBQItGkrCKkgEX0iatBrbKQeEDaNZqhs2oP33gEKtjY
+	5mvSooaSeHgbLr201vburrHXwDYYKmHzUwKuoizafhECIe2obvQLUeCHdAD0YJakBTYmVIstgIIq4
+	15KXrCRWQwa0S0OM0kv4P9FcCY+7zaxs3jZGKe7WXsK5R6dZOoOLIYBvSQxAKOPg9wkrC+cclO/ZZ
+	ErZBrxJHexBgenGX8wrQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwHGX-00000007lbJ-2vx1;
-	Tue, 18 Aug 2026 10:41:57 +0000
+	id 1wwHGa-00000007lcB-02EK;
+	Tue, 18 Aug 2026 10:42:00 +0000
 Received: from ms.asus.com ([103.10.4.13])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwHGU-00000007laA-3Jot
+	id 1wwHGX-00000007laX-0k4F
 	for linux-i3c@lists.infradead.org;
-	Tue, 18 Aug 2026 10:41:56 +0000
+	Tue, 18 Aug 2026 10:41:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
   d=asmedia.com.tw; i=@asmedia.com.tw; q=dns/txt;
-  s=asmediacomtw; t=1787049715; x=1818585715;
-  h=from:to:cc:subject:date:message-id:mime-version:
-   content-transfer-encoding;
-  bh=q1PLEDl/ZR3JgXpW5Z61bz684z+10vVgV/m0xb/qe5Q=;
-  b=PWOLpCEkVtbpDEkAM24Gnd4nywjpvFeipaaewmNPojsx2CLRb9rBAurN
-   r90gPjFQFwV+UGb1tnurRti2+7bmqa3j9e3Z+KtSI/OrsnbzfK4WewLv+
-   H3/fPF7UldLsLspd+MEaOVZGEywFWpL1kbO/tvZzPyj0s2CMfjIgDJau3
-   c=;
-X-CSE-ConnectionGUID: XmTV/XWRSAii02aKJHfxvg==
-X-CSE-MsgGUID: 2YoqfDthRpOYuwuh/6EHaA==
+  s=asmediacomtw; t=1787049718; x=1818585718;
+  h=from:to:cc:subject:date:message-id:in-reply-to:
+   references:mime-version:content-transfer-encoding;
+  bh=r1hukYTpBAhlQXjTqHSzx2crMUIXV42JqW4ErYvsJhs=;
+  b=RKMRipkd9Uk16sHShWyyiBmRpokRgyvZGBFGpUrDKRgPVfm0AFaf1TG9
+   2btE7QWU6Or73EmJQdyrSvk4djtmCCSwYV2ys8tN3oWkd0ChHQ0tiEACq
+   b7tWovirdIsndDKpI2+bRKLO8z1UDDwF70OnSbo2wr0LVmWAkhErwlOkF
+   g=;
+X-CSE-ConnectionGUID: 9QdRliB7QlS1cvBVTxzFCg==
+X-CSE-MsgGUID: 34fqJwzgScip2n42eMyu6w==
 Received: from unknown (HELO APZA006TMD.corpnet.asus) ([172.22.47.66])
-  by ms.asus.com with ESMTP; 18 Aug 2026 18:41:48 +0800
+  by ms.asus.com with ESMTP; 18 Aug 2026 18:41:51 +0800
 Received: from mymail.asus.com (42.79.21.38) by APZA006TMD.corpnet.asus
  (172.22.47.66) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.46; Tue, 18 Aug
- 2026 18:41:45 +0800
+ 2026 18:41:49 +0800
 From: Jian-Ming Liao <Jm_Liao@asmedia.com.tw>
 To: <alexandre.belloni@bootlin.com>
 CC: <Frank.Li@nxp.com>, <adrian.hunter@intel.com>,
@@ -52,31 +52,32 @@ CC: <Frank.Li@nxp.com>, <adrian.hunter@intel.com>,
 	<linux-i3c@lists.infradead.org>, <Jm_Liao@asmedia.com.tw>,
 	<Patrick_Yen@asmedia.com.tw>, <Chloe_Chen@asmedia.com.tw>,
 	<Yd_Tseng@asmedia.com.tw>
-Subject: [PATCH v4 0/3] i3c: mipi-i3c-hci: Add support for AMD_PT and PIO fixes
-Date: Tue, 18 Aug 2026 18:41:03 +0800
-Message-ID: <20260818104106.763772-1-Jm_Liao@asmedia.com.tw>
+Subject: [PATCH v4 1/3] i3c: mipi-i3c-hci: Fix missing STAT_IBI_STATUS_THLD in PIO mode
+Date: Tue, 18 Aug 2026 18:41:04 +0800
+Message-ID: <20260818104106.763772-2-Jm_Liao@asmedia.com.tw>
 X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20260818104106.763772-1-Jm_Liao@asmedia.com.tw>
+References: <20260818104106.763772-1-Jm_Liao@asmedia.com.tw>
 MIME-Version: 1.0
 X-Originating-IP: [42.79.21.38]
 X-ClientProxiedBy: APZA001EXB.corpnet.asus (172.22.6.13) To
  APZA006TMD.corpnet.asus (172.22.47.66)
 X-TM-AS-Product-Ver: SMEX-14.0.0.3239-9.1.2019-30140.006
-X-TM-AS-Result: No-10--14.924100-8.000000
-X-TMASE-MatchedRID: rpN4nBFEV4ztZDpZlNWg4PfwPmegKHrjQahV9NsL7Q8kYXFfc6Ro56DD
-	tQuUOlIMuS0uXIHV7MOt6ykt5Q8avSzTx/dpNT7jtGVDVaCpEWI65AvqzCz4MyhTyngBnQHLrcT
-	PKdSSebj+aBIksyDWvKpa9LShBEW0x8vS9LM/i1Wq5lUH4/wnRlHdSSkRFiZk+wWpop+OSdwTl3
-	/mhBEIUm4ZAgGgB4wWTDcPFtIVA+vmZvdrars94XByeAh9HO8gnVW5D6U48fdG6bncN29QHAmnI
-	JNjpLCA3lm+1DRY284jnUGEYqYqjN6sobq2FdX6iVpFx0iXT0T47B/wARNYpv60mc1oTTHnOfKU
-	eIrSi7+B1cMHtlEKnMq80Y2YbRJTr54JIx46I6QU09woo4Lw2NvIAMT/07OiB9pfNDL2PYXlKOD
-	fT40pE7YURQHAp3zKF/vdJV8sGEzdezJgSuGIMTUkTr4ouAaAriQZsuO4XCSRNLqt+6DLdQ==
+X-TM-AS-Result: No-10--8.552600-8.000000
+X-TMASE-MatchedRID: F/FIGPscYWXLULYDu+Fb7J0UyaWO1QCnJbzZuwLx+4VsKxodnCpGd6U2
+	U/OoCvowScHjRvxSElWzbl+VPQZlQw/qdKL6q1thquZVB+P8J0ZR3UkpERYmZPsFqaKfjkncE5d
+	/5oQRCFL2KV//ZhZIP3ZbKubOxSU95gSSltqdMe4ZD7bjq+6lMGzY00haS8QoYcKx85MjSJVz3h
+	/NOzc2C33XOw7xn4JjrenqZh8kT1zwKwep2yrWF9h5c4TN8zbZXO2SJ/uvWJVyKUQT4+N7z1XOq
+	MYNeYhmthRFAcCnfMpb+mAWJViEhQB+LdKdm6AqGsvMcdPBBzNr0/W4hjWmJRNRe6x9srT3
 X-TM-AS-User-Approved-Sender: No
 X-TM-AS-User-Blocked-Sender: No
-X-TMASE-Result: 10--14.924100-8.000000
+X-TMASE-Result: 10--8.552600-8.000000
 X-TMASE-Version: SMEX-14.0.0.3239-9.1.2019-30140.006
-X-TM-SNTS-SMTP: B170A3C8E66BFA7D76EE77D6E651D4737A385F859D9CD4B3213B4D9B12C8DB852000:8
+X-TM-SNTS-SMTP: 61096335489586118A2D8ABA2F6E474C01599166C0187E225BD5E05B8AA16D942000:8
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260818_034155_158934_C60EFD8B 
-X-CRM114-Status: GOOD (  10.93  )
+X-CRM114-CacheID: sfid-20260818_034157_542260_AC2BADF0 
+X-CRM114-Status: UNSURE (   9.79  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,63 +94,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-This patch series introduces support for the AMD_PT I3C controller and
-includes several improvements to the MIPI I3C HCI driver to enhance
-stability and compliance with the latest specifications.
+In PIO mode initialization, STAT_IBI_STATUS_THLD was missing from
+pio->enabled_irqs. As a result, the host controller interrupt signal for
+IBI threshold was never enabled when transfer starts, preventing IBI
+status descriptors from being properly processed in PIO mode.
 
-Summary of changes:
-- Patch 1: Fix missing STAT_IBI_STATUS_THLD in PIO mode by enabling
-  IBI threshold interrupts alongside error interrupts.
-- Patch 2: Add explicit PIO queue management (enablement, starting,
-  and stop/restart logic) for compliance with HCI v1.2.
-- Patch 3: Add device ID and platform support for the AMD_PT I3C
-  controller.
+Include STAT_IBI_STATUS_THLD in pio->enabled_irqs so that the IBI
+threshold interrupt is activated alongside error interrupts upon the first
+transfer.
 
-Changes in v4:
-- No functional changes. Resent using corrected corporate SMTP relay
-  configuration to fix mismatched From: and Signed-off-by: addresses
-  reported by Frank Li on v3. The previous v3 send was relayed through
-  a personal Gmail SMTP server, which silently rewrote the From: header.
-- Patch 1: Added Reviewed-by tag from Frank Li (received on v3).
+Fixes: 9ad9a52cce28 ("i3c/master: introduce the mipi-i3c-hci driver")
+Co-developed-by: Patrick Yen <Patrick_Yen@asmedia.com.tw>
+Signed-off-by: Patrick Yen <Patrick_Yen@asmedia.com.tw>
+Signed-off-by: Jian-Ming Liao <Jm_Liao@asmedia.com.tw>
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+---
+v4:
+ - Added Reviewed-by: Frank Li <Frank.Li@nxp.com> (received on v3).
+ - No content changes otherwise. Resent to fix From:/Signed-off-by:
+   address mismatch caused by mail relay configuration (Frank).
+v3:
+ - Added Fixes tag (Adrian).
+ - Updated commit message and code comment to accurately reflect that
+   STAT_IBI_STATUS_THLD is activated on the first transfer (Adrian).
+ - Aligned From: and Signed-off-by: email addresses (Adrian).
+v2:
+ - Removed "Hot-Join" references from the commit message and comments,
+   as the change focuses strictly on enabling STAT_IBI_STATUS_THLD
+   for general IBI reception per HCI spec.
+   
+ drivers/i3c/master/mipi-i3c-hci/pio.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
 
-Changes in v3:
-- Addressed review feedback from Adrian Hunter:
-  - Patch 1: Added Fixes tag; updated commit message and code
-    comment to reflect missing STAT_IBI_STATUS_THLD and interrupt
-    activation on first transfer; aligned From: and Signed-off-by:.
-  - Patch 2: Aligned From: and Signed-off-by: email addresses.
-  - Patch 3: Restored Frank's Reviewed-by tag from v1; formatted
-    platform_device_id entry with '{' on a separate line; moved
-    amd_pt_info to match device table order; added space before
-    closing brace in PCI device table; aligned email addresses.
-
-Changes in v2:
-- Patch 1: Removed unverified "Hot-Join" wording from comments and
-  commit message.
-- Patch 2: Addressed review feedback from Frank Li:
-  - Removed '-' prefixes from commit message.
-  - Reverted unnecessary debug line movements and cleaned up 
-    macro alignments.
-  - Removed redundant manual kfree(pio) to prevent double-free issues.
-  - Adopted a helper macro for HCI version checks instead of hardcoding.
-- Patch 3: No changes (rebased).
-
-Testing:
-These changes have been validated on the Intel Panther Lake (PTL) and
-AMD_PT platforms. No regressions were observed for existing
-controllers.
-
-Jian-Ming Liao (3):
-  i3c: mipi-i3c-hci: Fix missing STAT_IBI_STATUS_THLD in PIO mode
-  i3c: mipi-i3c-hci: Add PIO queue management support for HCI v1.2
-  i3c: mipi-i3c-hci: Add support for AMD_PT I3C controller
-
- drivers/i3c/master/mipi-i3c-hci/core.c        |  5 ++
- drivers/i3c/master/mipi-i3c-hci/hci.h         |  5 ++
- .../master/mipi-i3c-hci/mipi-i3c-hci-pci.c    |  9 +++
- drivers/i3c/master/mipi-i3c-hci/pio.c         | 74 +++++++++++++++++--
- 4 files changed, 87 insertions(+), 6 deletions(-)
-
+diff --git a/drivers/i3c/master/mipi-i3c-hci/pio.c b/drivers/i3c/master/mipi-i3c-hci/pio.c
+index ff2657ee220b..a1341d66bc65 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/pio.c
++++ b/drivers/i3c/master/mipi-i3c-hci/pio.c
+@@ -185,8 +185,11 @@ static void __hci_pio_init(struct i3c_hci *hci, u32 *size_val_ptr)
+ 	pio_reg_write(INTR_SIGNAL_ENABLE, 0x0);
+ 	pio_reg_write(INTR_STATUS_ENABLE, 0xffffffff);
+ 
+-	/* Always accept error interrupts (will be activated on first xfer) */
+-	pio->enabled_irqs = STAT_ALL_ERRORS;
++	/*
++	 * Always accept error interrupts and IBI threshold interrupt
++	 * (will be activated on first xfer).
++	 */
++	pio->enabled_irqs = STAT_ALL_ERRORS | STAT_IBI_STATUS_THLD;
+ }
+ 
+ static void hci_pio_suspend(struct i3c_hci *hci)
 -- 
 2.43.0
 
