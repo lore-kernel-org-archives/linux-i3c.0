@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B33E1606A32C
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 50248606A31A
 	for <linux-i3c@archiver.kernel.org>; Tue, 27 Oct 2026 11:00:51 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=F7JdInIc;
-	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=R3WYGHec
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=DTCAzj2H;
+	dkim=fail reason="signature verification failed" (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=flXpyoPG
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
@@ -14,61 +14,58 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
 	:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=0lr8ZihHnWY0p3GO1WoXlCLqSz/94R266i1txfRjuys=; b=F7JdInIchyD66TLYZTPOZoluTl
-	qgzgd3PBhlav/3MLDtk2BiKqyJ2+QMHjf7BGYL+G3qH8LNUss3rWEuQk+cmR/kSTjouKHeqAlQex5
-	sjgQWRx9oEAnhFeCnA//oQ7t7fEMfNq1QL5wgYYKb2Oh/uloi434IuIn0QsT2IjmCRmg/bhMXxwHX
-	81NfDR1Awm/+fqKOSTSTbk0VWaOgU/gPYCjwacYbFNM2DQHESviUImZvrt2SQq1S8UZLQSuAcL/j9
-	0zHse/n6/KjYF4XOqDBFcHr581QcUJRfLnzjkcIUP9bh8wpDraJ07r+MetKBAbkiZHRRgxNeOPpa2
-	8hLKO4iA==;
+	bh=vt+naEPLNRVjJ6c2YRB3kGv8GerVuRvm9iFKpmConeE=; b=DTCAzj2Hxnjlfl3LDUGFE8cVAE
+	5VMsMe/+94p8ID7eue0P6sjXBIwmYfTGR4wVZJvFal+X9Cz/zISvgBHwq/bo9iQFem5WvmvgUvJMN
+	cB1kafACuKX0kyt7G2JG3abNR5x6VEG/bfgQTG6TMA++1RXSst/RJ+XHf6LqKmOSAYivTZkdAdYCO
+	cGz3QI1m52N7Befpv6XBad4PMroG+mvJHIEsl9MK1h6cAGi4wxo2kZDdhXmeNg6RFQdLZLU/B6Bx+
+	NPHnRAXaM+hWUQr2vY9durBRg5lSyLQq26RrTMt3F3aa159kjEVqUQamlY2GF0m5reaewvbARSJpV
+	MdzVSOYQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLevD-00000004NEL-1vt4;
+	id 1xLevD-00000004NDV-00WD;
 	Tue, 27 Oct 2026 11:00:51 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x94Ej-00000006Bjj-1ezt
+	id 1wwTFR-00000008ll6-1cjR
 	for linux-i3c@lists.infradead.org;
-	Tue, 22 Sep 2026 17:24:57 +0000
+	Tue, 18 Aug 2026 23:29:37 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id C1D5A43A8E;
-	Tue, 22 Sep 2026 17:24:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 56AF31F000FF;
-	Tue, 22 Sep 2026 17:24:54 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 9F2C141691;
+	Tue, 18 Aug 2026 23:29:36 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 407251F000E9;
+	Tue, 18 Aug 2026 23:29:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1790097896;
-	bh=kqcg//RK9J1hGxjYO0Ag5gWb1sgH7VyD5IOAC8lCeKw=;
+	s=k20260515; t=1787095776;
+	bh=3L7J+3RvgR+CG6vbfS3foUcxpD/Gh1qUulFzAN9WSJo=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=R3WYGHecbU9+Ibf9zY5MdkQmKuOsrjPQEL/MCiUNpcs6zoyvpKLQUVNSlFXs8erwM
-	 lR7hqJ12pGhbTlt3Jy6n+zDaa1W4Rwvpii7GJPeXvtRJXMzh0p3XVvmD0j2Lc7Yg0u
-	 wSPYWlUROPSQfHpEkBmmC8TLOfKqDQ0U9x7U3x22AMmlq0cLfywH0FZZaW0KX6QAkq
-	 UaUcSjDvi9of3xUBNl5L6DG0KZGva6brgyH4f7T8AYzzDOyeUtYeaeyZgPxu+nim8o
-	 kt23VAOdMNR3qzZ6in65nspPX3kqzNsYYdRkxbIWstCYQhGEzLv8F2zkR3GG8ZOuHE
-	 kEqnImGgcUEnA==
-Date: Tue, 22 Sep 2026 18:24:52 +0100
+	b=flXpyoPG008z9PydccA7CvtNasIsJihnz63vvpehdx4ffjAzgxH91F7xeoTvoTVUZ
+	 PCO/y8mLDZqCaORgn+UqOHFT8CFSmeY2Zsywdr9lny8axM/fpCOziv8KcJ2xfpc8+Q
+	 B0VJaxL0auq108d8KTmo44GJ+sEpNVMRL7zstJmEpA/3JQHaVspzI5M638436jLTic
+	 y7SNZi0QMPN96EjZ0Ll+P8myKKy59ISssVeSWL5eX/77INEJzM5fZWm2LqWURH4W34
+	 Yww9btz9L2DTmui0cJN0M/+39Oiaiy6N2ZhYlhcOo9Jo2yHzKcon6N6oKF7vLl5LZN
+	 RzTA4iwoUtpkA==
+Date: Wed, 19 Aug 2026 00:29:32 +0100
 From: Conor Dooley <conor@kernel.org>
-To: Frank Li <Frank.li@oss.nxp.com>
-Cc: Michal Simek <michal.simek@amd.com>,
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: "Patil, Shubham Sanjay" <shubpati@amd.com>,
 	Shubham Patil <shubhamsanjay.patil@amd.com>,
-	alexandre.belloni@bootlin.com, Frank.Li@kernel.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org,
-	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, git@amd.com
-Subject: Re: [PATCH v3 1/3] dt-bindings: i3c: xlnx: Add IBI and hot-join
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
+	Krzysztof Kozlowski <krzk+dt@kernel.org>,
+	Conor Dooley <conor+dt@kernel.org>, linux-i3c@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	"git (AMD-Xilinx)" <git@amd.com>
+Subject: Re: [PATCH 1/3] dt-bindings: i3c: xlnx: Add IBI and hot-join
  capability properties
-Message-ID: <20260922-purple-overnight-2cdd2ddd5270@spud>
-References: <20260908094257.3196120-2-shubhamsanjay.patil@amd.com>
- <20260908-groin-undivided-0af701135404@spud>
- <aqGHlWpQjpHEft3j@SMW015318>
- <aqKWTT47S_zPzvbN@squawk>
- <aqLQaHndX4t1kKLG@SMW015318>
- <778da629-2f23-412b-885f-e87827ce2b5c@amd.com>
- <20260922-ethics-flap-9760347e869d@spud>
- <20260922-bullpen-reprise-f62e01922d88@spud>
- <20260922-immersion-salvage-00450539f1ce@spud>
- <arKr-oapsl5qzo_E@SMW015318>
+Message-ID: <20260819-spoken-tiring-445e92a78235@spud>
+References: <20260814115155.3974988-1-shubhamsanjay.patil@amd.com>
+ <20260814115155.3974988-2-shubhamsanjay.patil@amd.com>
+ <20260817-spry-attentive-hamster-ea3c0f@quoll>
+ <372395b9-be14-40c5-984d-3d725f20cec9@amd.com>
+ <003fbd61-2e3d-4a31-9b92-60dfeb3bee34@kernel.org>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <arKr-oapsl5qzo_E@SMW015318>
+In-Reply-To: <003fbd61-2e3d-4a31-9b92-60dfeb3bee34@kernel.org>
 X-Mailman-Approved-At: Tue, 27 Oct 2026 04:00:48 -0700
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -79,258 +76,98 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============1121927760260506466=="
+Content-Type: multipart/mixed; boundary="===============9041789447728924806=="
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-9.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	INCLUDES_CR_TRAILER,MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS
-	autolearn=ham autolearn_force=no version=4.0.1
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
---===============1121927760260506466==
+--===============9041789447728924806==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="J3nqrcEMORpacz8T"
+	protocol="application/pgp-signature"; boundary="08fKKcYaq9ThlrUA"
 Content-Disposition: inline
 
---J3nqrcEMORpacz8T
+--08fKKcYaq9ThlrUA
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Tue, Sep 22, 2026 at 11:25:30AM -0500, Frank Li wrote:
-> On Tue, Sep 22, 2026 at 10:39:23AM +0100, Conor Dooley wrote:
-> > On Tue, Sep 22, 2026 at 10:38:17AM +0100, Conor Dooley wrote:
-> > > On Tue, Sep 22, 2026 at 10:33:44AM +0100, Conor Dooley wrote:
-> > > > On Thu, Sep 17, 2026 at 01:23:19PM +0200, Michal Simek wrote:
-> > > > >
-> > > > >
-> > > > > On 9/10/26 17:44, Frank Li wrote:
-> > > > > > On Thu, Sep 10, 2026 at 12:36:45PM +0100, Conor Dooley wrote:
-> > > > > > > On Wed, Sep 09, 2026 at 11:21:41AM -0500, Frank Li wrote:
-> > > > > > > > On Tue, Sep 08, 2026 at 06:54:31PM +0100, Conor Dooley wrot=
-e:
-> > > > > > > > > On Tue, Sep 08, 2026 at 03:12:55PM +0530, Shubham Patil w=
-rote:
-> > > > > > > > > > In-Band Interrupt and Hot-Join are synthesis-time optio=
-ns of the AXI I3C
-> > > > > > > > > > IP. Describe them with two boolean properties.
-> > > > > > > > > >
-> > > > > > > > > > A Hot-Join request is acknowledged by the IBI machinery=
-, so a hot-join
-> > > > > > > > > > capable design is always IBI capable as well. Both even=
-ts are reported
-> > > > > > > > > > through the controller interrupt, which is therefore re=
-quired whenever
-> > > > > > > > > > the capability is present.
-> > > > > > > > > >
-> > > > > > > > > > Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.c=
-om>
-> > > > > > > > > > ---
-> > > > > > > > > > Changes in V3:
-> > > > > > > > > > - Move in-band-interrupt-capable and hot-join-capable i=
-nto the common
-> > > > > > > > > >    i3c.yaml schema and drop the xlnx, prefix.
-> > > > > > > > > > - Keep dependencies in the AMD binding.
-> > > > > > > > > > - Update the commit description accordingly.
-> > > > > > > > > > - Conor Dooley acked v2 with the xlnx,-prefixed propert=
-ies in the AMD
-> > > > > > > > > >    binding [1].
-> > > > > > > > > >    That Acked-by is not carried here: the names lost th=
-e vendor prefix
-> > > > > > > > > >    and the definitions moved to i3c.yaml after Frank Li=
-'s comment.
-> > > > > > > > > >    [1]:https://lore.kernel.org/all/20260824-tightwad-im=
-pose-495476599087@spud/
-> > > > > > > > >
-> > > > > > > > > I disagree with Frank. These properties make sense for Xi=
-linx because it
-> > > > > > > > > is an FPGA IP and synthesis options impact this. For othe=
-r devices, this
-> > > > > > > > > should be determined from the compatible.
-> > > > > > > > > Please revert to how things were done in v2, especially a=
-s no rationale
-> > > > > > > > > was provided for why these should be common.
-> > > > > > > >
-> > > > > > > > It is common problems, when IP intergrate by SOC, which may=
- defeature some
-> > > > > > > > part, It is not appeared now just because IBI and HJ have n=
-ot enabled
-> > > > > > > > widely.
-> > > > > > > >
-> > > > > > > > IBI and HJ is optional features of I3C. Ideally it should b=
-e indicated by
-> > > > > > > > some registers. But not all vendor implement provide this C=
-AP registers.
-> > > > > > > >
-> > > > > > > > IBI and HJ depend on some slow clocks, which monitor SDA li=
-ne change.
-> > > > > > > > Some instances of IP may not have such slow clocks. Some IP=
-'s IBI and HJ
-> > > > > > > > use seperate IRQ line, but these irq line may not connect o=
-f difference
-> > > > > > > > instances.
-> > > > > > >
-> > > > > > > All of this should be able to be dealt with by appropriate us=
-e of
-> > > > > > > specific compatibles.
-> > > > > >
-> > > > > > I understand compatible can cover most cases. Need variance for=
- property.
-> > > > > >
-> > > > > > >
-> > > > > > > > like previous SPI vendor customized property, we takes effo=
-rts to convert
-> > > > > > > > to common one and also meet back compatiblity problem at co=
-nvert. I don't
-> > > > > > > > want to do it again. This kind property is most likely as b=
-elow.
-> > > > > > >
-> > > > > > > What SPI controller specific properties are you talking about=
- here?
-> > > > > > > There are relatively few properties in spi-controller.yaml, a=
-nd none of
-> > > > > > > them deal with these kinds of capabilities.
-> > > > > >
-> > > > > > num-cs vs fsl,espi-num-chipselects. Total number CS of IP is fi=
-xed, but
-> > > > > > some instances have not route all CS to pad.
-> > > > > >
-> > > > > > >
-> > > > > > > >
-> > > > > > > > default: 	decide by comaptible string or hardware cap
-> > > > > > > > force-disabled: force disable for some reason, like, miss c=
-onnect irq line
-> > > > > > > > or missed some clock, or IP bugs, or board desgin's some le=
-vel shift chip
-> > > > > > > > broken IBI/HJ timing requirements.
-> > > > > > >
-> > > > > > > Of these, only the last would be a valid reason for having a =
-property
-> > > > > > > for it. Missing interrupts, clocks or IP bugs should all be d=
-ealt with
-> > > > > > > using device specific compatibles.
-> > > > > > > If board wiring causes the breakage, the property may be more
-> > > > > > > appropriate at the i3c device level rather than the controlle=
-r given
-> > > > > > > that wiring to some devices on the bus may not have the probl=
-ems?
-> > > > > >
-> > > > > > I3C.yaml is for both master controller and devices now. I3C is =
-bus, which
-> > > > > > connect many devices, if wiring issue, whole bus can't support =
-IBI. And
-> > > > > > if any broken devices happen at address arbitation, whole bus c=
-an't support
-> > > > > > IBI.
-> > > > > >
-> > > > > > at beging, I suggest 3 state,
-> > > > > >
-> > > > > > [default, enable, disable], but now I think IBI_broken, HJ_brok=
-en is more
-> > > > > > reasonable to disable it, default value should be set by compat=
-ible
-> > > > > > string or DCR of I3C regiser.
-> > > > > >
-> > > > > > And some I3C device may be failure to work with IBI even DCR of=
- I3C register
-> > > > > > show it support IBI.
-> > > > > >
-> > > > > > I don't want to appear two similar property between vendor and =
-common, like
-> > > > > > num-cs vs fsl,espi-num-chipselects.
-> > > > > >
-> > > > > > such as IBI-broken can be used for controller and devices case.
-> > > > > >
-> > > > > > > That said, I think that problem should be dealt with when it =
-arises,
-> > > > > > > rather than starting a trend of adding capabilities propertie=
-s at the
-> > > > > > > controller level when I am not convinced that there's going t=
-o be other
-> > > > > > > users in the same vein.
-> > > > > >
-> > > >
-> > > > > > Understand, I3C is realtive new protocal. 'IBI-broken' is more =
-easy
-> > > > > > understand,  logically equial to in-band-interrupt-capable.
-> > > > > Conor: Any update on this one? I think this thread is stuck at th=
-is stage.
-> > > >
-> > > > I didn't think there was any need to reply. I took the first senten=
-ce of
-> > > > this snippet to be acceptance of what I was saying.
-> > > >
-> > > > If yous desperately want to have a generic property, the negative
-> > > > connotation of the "-broken" is probably better in that it'd be more
-> > > > likely to make people set stuff by compatible rather than have to u=
-se a
-> > > > property with that word in it.
-> > >
-> > > That said, technically this platform could be both
-> > > "amd,in-band-interrupt-capable" and "ibi-broken" at the same time, si=
-nce
-> > > one describes the way the IP has been compiled and the other wiring. =
-I'm
-> > > not entirely sure whether conflating the two is possible? Depends on =
-if
-> > > your IP's programming model changes if the option is enabled even if =
-it
-> > > cannot be used. Not beyond the realms of possibility.
-> > >
-> > > Also, ibi-broken doesn't work for your platform, since the default
-> > > before this patch is no ibi and requiring a property for no ibi would=
- be
-> > > an ABI break.
-> >
-> > The perils of FPGA IP I suppose, and not being quite careful enough to
-> > document all of the relevant options from the start. Been guilty of that
-> > myself.
-> >
+On Tue, Aug 18, 2026 at 08:36:16PM +0200, Krzysztof Kozlowski wrote:
+> On 18/08/2026 14:02, Patil, Shubham Sanjay wrote:
+> > Hi Krzysztof,
+> >=20
+> > On 8/17/2026 2:20 PM, Krzysztof Kozlowski wrote:
+> >> [You don't often get email from krzk@kernel.org. Learn why this is imp=
+ortant at https://aka.ms/LearnAboutSenderIdentification ]
+> >>
+> >> Caution: This message originated from an External Source. Use proper c=
+aution when opening attachments, clicking links, or responding.
+> >>
+> >>
+> >> On Fri, Aug 14, 2026 at 05:21:53PM +0530, Shubham Patil wrote:
+> >>> In-Band Interrupt and Hot-Join are synthesis-time options of the AXI =
+I3C
+> >>> IP. Describe them with two boolean properties.
+> >>>
+> >>> A Hot-Join request is acknowledged by the IBI machinery, so a hot-join
+> >>> capable design is always IBI capable as well. Both events are reported
+> >>> through the controller interrupt, which is therefore required whenever
+> >>> the capability is present.
+> >>>
+> >>> Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
+> >>> ---
+> >>>   .../bindings/i3c/xlnx,axi-i3c-1.0.yaml        | 23 ++++++++++++++++=
++++
+> >>>   1 file changed, 23 insertions(+)
+> >>>
+> >>
+> >> So the same SoC using this core will have different synthesis options?
+> >> IOW, why isn't this implied by a specific compatible?
+> >=20
+> > Yes. This core is not part of the SoC's fixed hardware: it is a design
+> > compiled into the FPGA fabric. When the core is added to a design in
+> > Vivado, IBI and Hot-Join are options that are turned on or off, so two
+> > builds -- or two instances in the same build -- can use the identical IP
+> > version and still differ in which features are present.
+> >=20
+> > The compatible string identifies the IP core and its version. It says=
+=20
 >=20
-> Check impliment code
+> Well, you miss SoC compatibles so you cannot use argument of IP core.
+> Although I do accept argument of two instances in a SoC having this
+> different.
+
+How are SoC compatibles relevant here? It's an IP for FPGA fabric, so
+even if you made some sort of zynq specific compatible (which I am not
+advocating for to be clear) the IP configuration options may vary
+between synthesis runs, so a SoC-specific compatible doesn't help.
+
 >=20
-> +       /*
-> +        * The interrupt only carries IBI events, so it is only described=
- for
-> +        * designs synthesized with that feature.
-> +        */
-> +       if (master->ibi_capable) {
-> +               xi3c_master_init_ibi_ops(master);
-> +
-> +               master->irq =3D platform_get_irq(pdev, 0);
-> +               if (master->irq < 0)
-> +                       return master->irq;
-> +
-> +               ret =3D devm_request_irq(master->dev, master->irq,
-> +                                      xi3c_master_irq_handler, IRQF_NO_A=
-UTOEN,
-> +                                      dev_name(master->dev), master);
-> +               if (ret)
-> +                       return dev_err_probe(master->dev, ret,
-> +                                            "Failed to request IRQ\n");
-> +       }
->=20
-> They can use master->irq is determinate if support IBI.
+> > nothing about which options were selected when
+> > that instance was built, so it cannot imply the capability.
+> >=20
+> > Thanks,
+> Best regards,
+> Krzysztof
 
-That seems viable. Where does that leave them for hot join though?
-
-
---J3nqrcEMORpacz8T
+--08fKKcYaq9ThlrUA
 Content-Type: application/pgp-signature; name=signature.asc
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCarK55AAKCRB4tDGHoIJi
-0pgrAQCZOUKpGZ97g8Pqr2PmEJ8iGu2CWN3e1h6AAb6t6XhAgwEAu45jKDI+1aBv
-fLMBFK82hDYeI+nh/MY6f6CJRebxVAE=
-=Dihe
+iHUEABYKAB0WIQRh246EGq/8RLhDjO14tDGHoIJi0gUCaoTq2AAKCRB4tDGHoIJi
+0mRUAQCUVBheGN5Ri7cXbx4L9owWPH5dJRoznAlDgPOp5AXEEAEA97+z2zTdFGpA
+Pe3QJaYr2Rjuuktm4K4mhgPPlUZ9+A4=
+=afvG
 -----END PGP SIGNATURE-----
 
---J3nqrcEMORpacz8T--
+--08fKKcYaq9ThlrUA--
 
 
---===============1121927760260506466==
+--===============9041789447728924806==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -341,5 +178,5 @@ linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
 
---===============1121927760260506466==--
+--===============9041789447728924806==--
 
