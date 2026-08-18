@@ -4,143 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 85A0EC5DF7E
-	for <linux-i3c@archiver.kernel.org>; Tue, 18 Aug 2026 10:39:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0246EC5DF7D
+	for <linux-i3c@archiver.kernel.org>; Tue, 18 Aug 2026 10:41:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:References:Cc:To:
-	Subject:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=c796C7f2plpsS7DjfIr+dscMUY05b+BzU5aGJbunG/U=; b=k91qUiTYBRgGUNR/BUWtmT/SaU
-	D8nJYAt3q9nYSUzjmyIvdoTyBL2nbeemoXzNgA4MLO8sC+u6CyyuBcrVHlFyqdaqKxGnmTFoWMTfz
-	dgUVtQmCcTosxtYDjWLY3VbBdf6gbon+NGPqAFNDWhaycqDckELJTfvR6NLy/sEPTpUIniqf5ZNKi
-	eUTyXDSCDZSK6Cizyhndg9ha4hQAI8XuUs4EE1CeCwUONbsHU8wo8ai3x+Im/g5iKDzniOVTk0sE2
-	wGBxZWnnODOIb0PCBEQZ7Cx15djXC4+xXibsa9EuuOh4kTvysQr9jnNIC43RkesmREtZN6y/tpK3/
-	WDiGUZ9g==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QGPFIJxxgnKpblzsq8Ll5JJVD3OmtCkhCjDiL5na9q0=; b=CBxT1/+3wzllom
+	z2gazjpPyeBlaG75Gl9FFwxZCZ8HF8XFWhjVwO6nxfU8qtW7S2NCGFoQADHMZBAsiISfYIdeSPBhC
+	oXKP2gm3wcpZtN/CsrHGcXUi3tcWwgRHe5NSTdSkkpv2yIPiKsS2ELGjPxwqMKEjSN4oOkLrvCbGb
+	2hLEQrJDmOg13SA0ANhsIQEJWWunuX0xdZL6/EaI88MklUoXbG4wchUbjSIl7N+cS47+CnsRs+5wn
+	4WZbAO41JSmqwfXuLtwavjKnRRvqpp0aomXMN9rSVDgrcuQjl8UD0f+Ljb3pFSkidO+LYIYCcnN5O
+	uW8QOvAfVXaFVmzGeOJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwHDo-00000007lMl-0rEB;
-	Tue, 18 Aug 2026 10:39:08 +0000
-Received: from mail-southcentralusazlp170120001.outbound.protection.outlook.com ([2a01:111:f403:c10d::1] helo=SN4PR2101CU001.outbound.protection.outlook.com)
+	id 1wwHGX-00000007lbJ-2vx1;
+	Tue, 18 Aug 2026 10:41:57 +0000
+Received: from ms.asus.com ([103.10.4.13])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwHDj-00000007lLE-2XXP
+	id 1wwHGU-00000007laA-3Jot
 	for linux-i3c@lists.infradead.org;
-	Tue, 18 Aug 2026 10:39:07 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=F4/EonZ8biEGJIYfFjwVXKni0ajNarvFM+FlTdH6P7+UCfd4IPfSFig24jc5r3u4z3Gxs5FTfoCM1NcckQzSTwvdVBS830aGQy6zK6YABvEyJHKJ32v8PCLtV4/8UsqwLSKV7JYSloWf+cUJT5/pnJZu/UDauMNMJurrcqEWi/beP+PA6HEyCzZrl1uFzb9GyMdDNYj7dPJBqzPAkWRIcTIkvDkzvwX2g9aOwfT71AWEMEC5rY8NX1JdigEeGQkFb4/Ot5s3j6hB5m19NXDU+sI/qYKgFGx8MDHD+jaQsInN2qsJG8vSroL5Z754FF6WgEejlnmjRrJySYzlTh4Fnw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=svTnHESUHiZ7novvD+TGtcXBBqeQjKu8sQP5qzFjiHA=;
- b=HFDrvt1fEbZVVuopWZvI1BxMUs+5DKBSXlkNmxGhMucednEW9DYtDCZwgicD+fEqSSJDs3VpcURpR7El0ob0d/vkz54q1AIW2nnspgSLFuR1JlS0dRwpSNFN/hGTO7RiCUBYEZp4OwOfgawhJK+MtDTafPDkPdlIb+u23by2NR8GQeOgvvYYY5oTNm14lI0AMMJS2MGLW4r93PUK+U2/rm8Y8vC4iBaLSmtOWePUL6F/Zym45+EhA+rkXppvZfwH8+yGg3e5wIV/lrTubyZS/c3zRI/IlCqINsmBG3cCg+JNL9G7LGnog5wbt7HSLS8OaX8KCisY96jS1zD9knRs+Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
- header.d=amd.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=svTnHESUHiZ7novvD+TGtcXBBqeQjKu8sQP5qzFjiHA=;
- b=FSj51g/AV7L1QC4R/iVXPEtasmL+OjNPZX/I6ItnyFxS/PcTJqjP0SgXEwfNtQww3xdtRiWUQo0O1F/EDPD/UoEIwebDdMstnpSmzB9M5rynDRka+H/zQlY1OI9htQB29Qczw2erTKtXvYb3YIFbfb7rRcLLKbHtYsIFVH6kBTI=
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=amd.com;
-Received: from IA1PR12MB8408.namprd12.prod.outlook.com (2603:10b6:208:3db::13)
- by LV8PR12MB9110.namprd12.prod.outlook.com (2603:10b6:408:18b::18) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.339.8; Tue, 18 Aug
- 2026 10:38:52 +0000
-Received: from IA1PR12MB8408.namprd12.prod.outlook.com
- ([fe80::10cf:64f0:2de6:e466]) by IA1PR12MB8408.namprd12.prod.outlook.com
- ([fe80::10cf:64f0:2de6:e466%7]) with mapi id 15.21.0315.016; Tue, 18 Aug 2026
- 10:38:52 +0000
-Message-ID: <88fb5132-3484-45d6-a9e6-9560002de249@amd.com>
-Date: Tue, 18 Aug 2026 16:08:44 +0530
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 1/3] dt-bindings: i3c: xlnx: Add IBI and hot-join
- capability properties
-To: Conor Dooley <conor@kernel.org>,
- Shubham Patil <shubhamsanjay.patil@amd.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>,
- Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley
- <conor+dt@kernel.org>, linux-i3c@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- "git (AMD-Xilinx)" <git@amd.com>, "Goud, Srinivas" <srinivas.goud@amd.com>,
- "Datta, Shubhrajyoti" <shubhrajyoti.datta@amd.com>,
- Michal Simek <michal.simek@amd.com>,
- "Pandey, Radhey Shyam" <radhey.shyam.pandey@amd.com>
-References: <20260814115155.3974988-1-shubhamsanjay.patil@amd.com>
- <20260814115155.3974988-2-shubhamsanjay.patil@amd.com>
- <20260814-cubical-transpire-413101a0c4c2@spud>
-Content-Language: en-US
-From: "Patil, Shubham Sanjay" <shubpati@amd.com>
-In-Reply-To: <20260814-cubical-transpire-413101a0c4c2@spud>
-X-ClientProxiedBy: MA5PR01CA0112.INDPRD01.PROD.OUTLOOK.COM
- (2603:1096:a01:1d1::17) To IA1PR12MB8408.namprd12.prod.outlook.com
- (2603:10b6:208:3db::13)
+	Tue, 18 Aug 2026 10:41:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+  d=asmedia.com.tw; i=@asmedia.com.tw; q=dns/txt;
+  s=asmediacomtw; t=1787049715; x=1818585715;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=q1PLEDl/ZR3JgXpW5Z61bz684z+10vVgV/m0xb/qe5Q=;
+  b=PWOLpCEkVtbpDEkAM24Gnd4nywjpvFeipaaewmNPojsx2CLRb9rBAurN
+   r90gPjFQFwV+UGb1tnurRti2+7bmqa3j9e3Z+KtSI/OrsnbzfK4WewLv+
+   H3/fPF7UldLsLspd+MEaOVZGEywFWpL1kbO/tvZzPyj0s2CMfjIgDJau3
+   c=;
+X-CSE-ConnectionGUID: XmTV/XWRSAii02aKJHfxvg==
+X-CSE-MsgGUID: 2YoqfDthRpOYuwuh/6EHaA==
+Received: from unknown (HELO APZA006TMD.corpnet.asus) ([172.22.47.66])
+  by ms.asus.com with ESMTP; 18 Aug 2026 18:41:48 +0800
+Received: from mymail.asus.com (42.79.21.38) by APZA006TMD.corpnet.asus
+ (172.22.47.66) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.46; Tue, 18 Aug
+ 2026 18:41:45 +0800
+From: Jian-Ming Liao <Jm_Liao@asmedia.com.tw>
+To: <alexandre.belloni@bootlin.com>
+CC: <Frank.Li@nxp.com>, <adrian.hunter@intel.com>,
+	<jarkko.nikula@linux.intel.com>, <boris.brezillon@collabora.com>,
+	<linux-i3c@lists.infradead.org>, <Jm_Liao@asmedia.com.tw>,
+	<Patrick_Yen@asmedia.com.tw>, <Chloe_Chen@asmedia.com.tw>,
+	<Yd_Tseng@asmedia.com.tw>
+Subject: [PATCH v4 0/3] i3c: mipi-i3c-hci: Add support for AMD_PT and PIO fixes
+Date: Tue, 18 Aug 2026 18:41:03 +0800
+Message-ID: <20260818104106.763772-1-Jm_Liao@asmedia.com.tw>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: IA1PR12MB8408:EE_|LV8PR12MB9110:EE_
-X-MS-Office365-Filtering-Correlation-Id: df9a6611-a649-4b1d-ff8c-08defd14e564
-X-LD-Processed: 3dd8961f-e488-4e60-8e11-a82d994e183d,ExtAddr
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|23010399003|376014|56012099006|10067099003|22082099003|18002099003|4143699003|5023799004|11063799006;
-X-Microsoft-Antispam-Message-Info: ImiC/ybuFl5OuDsyn6YmkWZEPTC28ZkC3kAjecoA2qRVbiJiog7xoFvI2WEpz+IQ/kPIoikOgBiVdOCRutuVOBTmQt76oEEpMwCHqfMg78YzluDtLhBD0RFvtZme3gzjzccAO7p3BjAo/2kn0uUVp8V4BQNMXowWj36tprf1Cz8yJvvZHffCGtYSQGE5MjsSuCio9auOeZpZlVP4xpFqJtsTPXDb2paBdQidaEWenVKHtQISmxHvGF7zQIQskO9lV3mahvkblZ9KARWXggkQQqS9Z9BDTsC0t2fu16Gk9WFBB5TzkUfBaNL+TlxZly5TLoC5qkrBWx4ae34RsfoK8w4DCgr10YjHlLBWR8pxN6yS7hxzYdkQkMaGi/6DxF4Gfeu+MceAfeQiopNC+mv2cEhBxUMqhMsikHEAt81LFiu3aTlJf0NBovJ/6USodaKMCRu/bf2C7lqiPev0yhg9iNLW2lnhiJYiSYnmRixSqShF91weF8iAKrbefHx1JpRaRnN4N9EfDIushkMOaEySxWebRM5gINJyzFJ7gUuCrqm+PZg5ZV0z+u5UgnSTS0G431axNfM8fleAqCUGUIWXzddYRCXDqcifOdzfyPmZBn9QlfuV9DHQ4dopGXs51DnGJypw3EzlCPHU94dhBTsSdNiLyxtrmjkmXWkqspfv6VI=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR12MB8408.namprd12.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(23010399003)(376014)(56012099006)(10067099003)(22082099003)(18002099003)(4143699003)(5023799004)(11063799006);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?anRjdFp4ZUw5RWdGSFdaUWRpUFdiaEVBRjM5WVVqOUdiVEdicGZFYXRjaWlV?=
- =?utf-8?B?UWtsOW15RWk0cm5EWFNLNU1Sb3lvQ1ZLSzN0S2lCOWQ1VzdmMG9jR2x2bzg4?=
- =?utf-8?B?VTV2eW5ObHh2R0QrNUM4SFhsUFRXbklRRC9IUVBzQzlUTmUvbnRSSnhhT1Bo?=
- =?utf-8?B?UFk2RHRXZmhBNk1xVWxORS9XYWlBa1lBS25vSC9VOWo4QVg4b3dvZUVaM3Va?=
- =?utf-8?B?Tk4vblR4dzlTSE5xa3JJaGRQdmtHY0JqQm1rQ3lCczBldDVUMjBHc3NWWTFV?=
- =?utf-8?B?dTZ3Qis4bldQbG5GOEU1VlFqZ1I3QlVPcWRpWGNjMUVUN1o0NkgxTkNzMEdS?=
- =?utf-8?B?a1hrOFlnNFpJZXlXeUJ2ZnVXQ2IzVS90TG1ZZFJlZmpVUnRBSmhiRExOVmFR?=
- =?utf-8?B?aGZ1Q1pERWx6L2NhSkZUcXJFa2U1clM1TWRxRGMrajVjRVRwQVpIZENHTk5N?=
- =?utf-8?B?aFEwU0pRZGF2UklJM0o3RW1UZElPMy9Cc0hxWDNLbGNwdDNEcGhraURXWGIv?=
- =?utf-8?B?TFRLczF3bzA3L0R4Q0Y3c0RlaGJsNXN6VGRCTytxaDc3ZGpDRURrRzV0bkFO?=
- =?utf-8?B?b3B5aHBvSWNSWEpKV0IwNExhUjdsQW9FZzkyQWxWZmlkcS9NalJrRkpneGtZ?=
- =?utf-8?B?Q0VBYlhWd2FVYTlyb1hMQVJVd0lrVzJuUC9HMWdvRHJZRWtsYzB6NzgxelRi?=
- =?utf-8?B?YVk1eTkwL3pIWFZ3d1dnTmxMamNicEk2TVEvMTBteTdMM2U1UnhHeUVKU0Z6?=
- =?utf-8?B?eVBqNHlHdkkyWDBDNGcyRjBaemZmaS9UdTVBTkpBSHkvOGI4eEU2S2h5SmFa?=
- =?utf-8?B?cEc3QnpuRDl5Y3JUQ3ZiM3Nvb2FKQmJqb3diOWtNSjB3ZGMxMzY3ei9maFZV?=
- =?utf-8?B?YzdyQmJZY3hEQzVFbTVQUlUzMi9mRmxnZ3hYVkJyd1NFVEFLWVgwNTRlRXVT?=
- =?utf-8?B?QjdSbklpT2U5YnNLZDlhUnY1OVlYcmo1akU2T1BTbkxDcDBOU1QweEo3RTE2?=
- =?utf-8?B?L3V4d1lZemRNOC9OOG1DWUgzM0NNRUVncVQ4bWNDOGFiMk1RczBKdUtqMm92?=
- =?utf-8?B?ay9JcU9QQzBVRTlJeEpJb0VBV3l3ZUZ1UG9mTDNQZitZNmRrRzRLNmw2UVJE?=
- =?utf-8?B?VnBydEFZYXB2ZzRHVWdJOFFWNW1reVZpdUlkQmx2VjFtdFBDV2kwdzYzRXRw?=
- =?utf-8?B?VG0zWWlFV2JSQVoyZjA2UmFTVFg4SW9SSGQ3Y2pabXRDUlZXdDdJQVFQbG13?=
- =?utf-8?B?b2p0N3Uzb0F5cWY5WDhXcFp4TXFUS29OU3VJeVM5TS9QQ2xMbEJFa3BBMEVD?=
- =?utf-8?B?T1E0TDRnaXNURFYwRmxFbkxWWmsvOE9Ud1ZUT3B2djR5K1lIbER2SXlKWmh0?=
- =?utf-8?B?cmNRMmVINDZJVmg4eW5GS3RXSU0xZVA0cmZIcENXUEZtbVVlTHVySjk4cVJC?=
- =?utf-8?B?dlhqRTJTNlN0Nk5GWmVDQmVpNVdibWcyOXoxOWZrbmRXWmhvT2RDL25JRURU?=
- =?utf-8?B?NFZhT3B2d0pDQVp0SnRwN2ZCQlc3V01FaDRaNkwrQ1QzMndoTTZQZVVoV3p4?=
- =?utf-8?B?eWdGNDczaEJ2NTd5dWh0TE5GMjJBaGoyZmlSYnhDRk1mYmt5bzZFMnFzSFBE?=
- =?utf-8?B?TGhzZWliWk9ZTi94OFJBalpaRmpPVVdCZWhXbHNwS3Y0MzIzanFFVm9ORk9p?=
- =?utf-8?B?TXBEVTA0SDJWY2xPbC9DSHN3TExZRldyajZCcVdKeEx1YVFCRVN6UGUzOEtD?=
- =?utf-8?B?MXorbW9kWUFHODFQOFFnbXlLenpIRTFVZGgyelNYL1gzdWJZcDFIOE92UU5K?=
- =?utf-8?B?Rk5JTEZaVzh3TGcxZVJFVXRjb2NBRE9ibk92UjJ0eGpKSGg1VXFrVW1jekNs?=
- =?utf-8?B?THhuOGpmQlIzSEFpNlFqaEd2WTE2RjlnUlNQKzVzT3ZSS0d0dm5BcWphZ0cy?=
- =?utf-8?B?K3crMTNPY3VUTjNFMFBHT2JLVi9nUW93b2M3SVVraUtsRFBybEhTV1NQeFZs?=
- =?utf-8?B?M1hHNzMvTythU1VsS0JEN2M5M3ZCQkFYUjMrbm5hWU5pNks2RG5OZ3NiczlU?=
- =?utf-8?B?QlQxdzAvbnpNZmh6cTIxanlFdjYwS052cnBROURMbllIZjFTU0RmZkxMdXNM?=
- =?utf-8?B?em5tZUdHVENuYmpRU0x1dVFIaWltRnZsTUtUb1Z0REd4RTRTYWwzT1NLQnFt?=
- =?utf-8?B?Z1BDQnB6ak9sSmNlbXEyOWt0UjZSSk44WU14UzBnZnZZa2MyWVhwVXVhbUM4?=
- =?utf-8?B?Vi9BdERBaU5manNFQUUzOXp6OWtyVEVkTEJyUTJaS3VkeUVoOTkzc0t0dUs4?=
- =?utf-8?B?eUs4ZzR3OFdWUUJGc29rMytpYWlCYlJpWXVDNlpid0JoZmRYMkRRdz09?=
-X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: df9a6611-a649-4b1d-ff8c-08defd14e564
-X-MS-Exchange-CrossTenant-AuthSource: IA1PR12MB8408.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Aug 2026 10:38:52.6364
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: W4d/ZhSOhWT5riDs21mbPrfjV6OYA+MXM81iKriTWXeIfcOtsWVJkHy+dvhnR8sVFqxIdBtA7/CsYBEqybi/ww==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: LV8PR12MB9110
+X-Originating-IP: [42.79.21.38]
+X-ClientProxiedBy: APZA001EXB.corpnet.asus (172.22.6.13) To
+ APZA006TMD.corpnet.asus (172.22.47.66)
+X-TM-AS-Product-Ver: SMEX-14.0.0.3239-9.1.2019-30140.006
+X-TM-AS-Result: No-10--14.924100-8.000000
+X-TMASE-MatchedRID: rpN4nBFEV4ztZDpZlNWg4PfwPmegKHrjQahV9NsL7Q8kYXFfc6Ro56DD
+	tQuUOlIMuS0uXIHV7MOt6ykt5Q8avSzTx/dpNT7jtGVDVaCpEWI65AvqzCz4MyhTyngBnQHLrcT
+	PKdSSebj+aBIksyDWvKpa9LShBEW0x8vS9LM/i1Wq5lUH4/wnRlHdSSkRFiZk+wWpop+OSdwTl3
+	/mhBEIUm4ZAgGgB4wWTDcPFtIVA+vmZvdrars94XByeAh9HO8gnVW5D6U48fdG6bncN29QHAmnI
+	JNjpLCA3lm+1DRY284jnUGEYqYqjN6sobq2FdX6iVpFx0iXT0T47B/wARNYpv60mc1oTTHnOfKU
+	eIrSi7+B1cMHtlEKnMq80Y2YbRJTr54JIx46I6QU09woo4Lw2NvIAMT/07OiB9pfNDL2PYXlKOD
+	fT40pE7YURQHAp3zKF/vdJV8sGEzdezJgSuGIMTUkTr4ouAaAriQZsuO4XCSRNLqt+6DLdQ==
+X-TM-AS-User-Approved-Sender: No
+X-TM-AS-User-Blocked-Sender: No
+X-TMASE-Result: 10--14.924100-8.000000
+X-TMASE-Version: SMEX-14.0.0.3239-9.1.2019-30140.006
+X-TM-SNTS-SMTP: B170A3C8E66BFA7D76EE77D6E651D4737A385F859D9CD4B3213B4D9B12C8DB852000:8
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260818_033903_662906_9217FD89 
-X-CRM114-Status: GOOD (  16.52  )
+X-CRM114-CacheID: sfid-20260818_034155_158934_C60EFD8B 
+X-CRM114-Status: GOOD (  10.93  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -152,104 +88,78 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Hi Conor,
+This patch series introduces support for the AMD_PT I3C controller and
+includes several improvements to the MIPI I3C HCI driver to enhance
+stability and compliance with the latest specifications.
 
-On 8/14/2026 9:08 PM, Conor Dooley wrote:
-> On Fri, Aug 14, 2026 at 05:21:53PM +0530, Shubham Patil wrote:
->> In-Band Interrupt and Hot-Join are synthesis-time options of the AXI I3C
->> IP. Describe them with two boolean properties.
->>
->> A Hot-Join request is acknowledged by the IBI machinery, so a hot-join
->> capable design is always IBI capable as well. Both events are reported
->> through the controller interrupt, which is therefore required whenever
->> the capability is present.
->>
->> Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
->> ---
->>   .../bindings/i3c/xlnx,axi-i3c-1.0.yaml        | 23 +++++++++++++++++++
->>   1 file changed, 23 insertions(+)
->>
->> diff --git a/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml b/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml
->> index 2caa245a8656..07e3d0b4d767 100644
->> --- a/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml
->> +++ b/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml
->> @@ -32,13 +32,34 @@ properties:
->>     interrupts:
->>       maxItems: 1
->>   
->> +  xlnx,ibi-capable:
->> +    type: boolean
->> +    description:
->> +      The IP is synthesized with In-Band Interrupt support. IBIs are reported
->> +      through the controller interrupt.
->> +
->> +  xlnx,hj-capable:
-> 
-> tbh, I'd prefer if these were spelt out a little bit more, characters
-> are cheap. Not a big deal though.
+Summary of changes:
+- Patch 1: Fix missing STAT_IBI_STATUS_THLD in PIO mode by enabling
+  IBI threshold interrupts alongside error interrupts.
+- Patch 2: Add explicit PIO queue management (enablement, starting,
+  and stop/restart logic) for compliance with HCI v1.2.
+- Patch 3: Add device ID and platform support for the AMD_PT I3C
+  controller.
 
-Fair enough. In v2 they become xlnx,in-band-interrupt-capable and
-xlnx,hot-join-capable, and I have expanded both descriptions to say what
-the features actually do.
+Changes in v4:
+- No functional changes. Resent using corrected corporate SMTP relay
+  configuration to fix mismatched From: and Signed-off-by: addresses
+  reported by Frank Li on v3. The previous v3 send was relayed through
+  a personal Gmail SMTP server, which silently rewrote the From: header.
+- Patch 1: Added Reviewed-by tag from Frank Li (received on v3).
 
-> 
->> +    type: boolean
->> +    description:
->> +      The IP is synthesized with Hot-Join support. A Hot-Join request is
->> +      acknowledged by the same machinery as an In-Band Interrupt.
->> +
->>   required:
->>     - compatible
->>     - reg
->>     - clocks
->>   
->> +dependencies:
->> +  xlnx,hj-capable: ["xlnx,ibi-capable"]
->> +
->>   allOf:
->>     - $ref: i3c.yaml#
->> +  - if:
->> +      required:
->> +        - xlnx,ibi-capable
->> +    then:
->> +      required:
->> +        - interrupts
-> 
-> Why is one dependency expressed this way, and the other expressed using
-> the dependencies property? Can the interrupts property be handled that
-> way too?
+Changes in v3:
+- Addressed review feedback from Adrian Hunter:
+  - Patch 1: Added Fixes tag; updated commit message and code
+    comment to reflect missing STAT_IBI_STATUS_THLD and interrupt
+    activation on first transfer; aligned From: and Signed-off-by:.
+  - Patch 2: Aligned From: and Signed-off-by: email addresses.
+  - Patch 3: Restored Frank's Reviewed-by tag from v1; formatted
+    platform_device_id entry with '{' on a separate line; moved
+    amd_pt_info to match device table order; added space before
+    closing brace in PCI device table; aligned email addresses.
 
-No reason other than an oversight on my part, and yes it can. Both are
-expressed with dependencies in v2.
+Changes in v2:
+- Patch 1: Removed unverified "Hot-Join" wording from comments and
+  commit message.
+- Patch 2: Addressed review feedback from Frank Li:
+  - Removed '-' prefixes from commit message.
+  - Reverted unnecessary debug line movements and cleaned up 
+    macro alignments.
+  - Removed redundant manual kfree(pio) to prevent double-free issues.
+  - Adopted a helper macro for HCI version checks instead of hardcoding.
+- Patch 3: No changes (rebased).
 
-Thanks,
-Shubham
+Testing:
+These changes have been validated on the Intel Panther Lake (PTL) and
+AMD_PT platforms. No regressions were observed for existing
+controllers.
 
-> 
-> Cheers,
-> Conor.
-> 
->>   
->>   unevaluatedProperties: false
->>   
->> @@ -54,5 +75,7 @@ examples:
->>           interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
->>           #address-cells = <3>;
->>           #size-cells = <0>;
->> +        xlnx,ibi-capable;
->> +        xlnx,hj-capable;
->>       };
->>   ...
->> -- 
->> 2.34.1
->>
+Jian-Ming Liao (3):
+  i3c: mipi-i3c-hci: Fix missing STAT_IBI_STATUS_THLD in PIO mode
+  i3c: mipi-i3c-hci: Add PIO queue management support for HCI v1.2
+  i3c: mipi-i3c-hci: Add support for AMD_PT I3C controller
 
+ drivers/i3c/master/mipi-i3c-hci/core.c        |  5 ++
+ drivers/i3c/master/mipi-i3c-hci/hci.h         |  5 ++
+ .../master/mipi-i3c-hci/mipi-i3c-hci-pci.c    |  9 +++
+ drivers/i3c/master/mipi-i3c-hci/pio.c         | 74 +++++++++++++++++--
+ 4 files changed, 87 insertions(+), 6 deletions(-)
 
+-- 
+2.43.0
+
+==================================================================================================================
+This email and any attachments to it contain confidential information and are intended solely for the use of the individual to whom it 
+is addressed.If you are not the intended recipient or receive it accidentally, please immediately notify the sender by e-mail and delete 
+the message and any attachments from your computer system, and destroy all hard copies. If any, please be advised that any unauthorized 
+disclosure, copying, distribution or any action taken or omitted in reliance on this, is illegal and prohibited. Furthermore, any views 
+or opinions expressed are solely those of the author and do not represent those of ASMedia Technology Inc. Thank you for your cooperation.
+==================================================================================================================
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
