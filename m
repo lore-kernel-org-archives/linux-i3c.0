@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F0677C5DF8C
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3714C5DF98
 	for <linux-i3c@archiver.kernel.org>; Sun, 23 Aug 2026 20:51:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,38 +12,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Date:Message-Id:
 	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F1yRu6F4SmqJvUzDAczOxXr13wxerfnPF9DBpjHLOMQ=; b=Ms7M6KomMh+RgP
-	39CzfVnwvNWUGzOQOyMX4BdxYd4q1Zq3HqS1mZ3xQQRJYbveDmHOkvQZnbCFLHPNW3pLaTAV2lV01
-	yonGPlSBpKAeQlQp1PAEWWP4GkMjz7kfNGYoznAYWZY2pydCoRMA192lGF/kF6K4DhStjc1onfWIN
-	4ouAgQSdWtOkcory8F8T4Yp9F7MFk4/4u/qLgjqmhPnetuLePBcEKtKbyjgqmP19KXCJFoyH8+43G
-	DCt75vFOPapLVFYvYG0FDSBVV7H3Xh40GzOW8/OV5QnKScHJTE+O2ZYniKciAoWFlSW6EWFn88ww4
-	xxrFZoVr3evej5ug1INQ==;
+	List-Owner; bh=F1yRu6F4SmqJvUzDAczOxXr13wxerfnPF9DBpjHLOMQ=; b=ILCMxf501tGvmF
+	XLBMH4XKWEShsSa+stXpxq70e2aXYyDY9VcRfwVxmk9O2YVYBreILquXHDdEfkZS9qE7mU/0NHFWi
+	NcOsI6Q/l7EK3mWBmP8NF8SW8OBlsJl9et7PKWCGZGVEwjihOjw5KYtijoeo2PR1rl1b81LwrRlCR
+	QCoq/ZI1WdunarkeLB+7xTG7VhZn8I9Xk6tCrROkR0lnsxFwBzY64MFecuIldFvQcibDlQ6s9Bbgv
+	EWlb3FW+UMEl68xJa75dld78l7AjnDA/DI4YUIIcmJEVL57m1251GDXbH3O6C8a4LoqGK5iAW+Y1R
+	SH6mtA/zMTpwZ1ROegOg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyFA3-0000000FbfI-2Eny;
+	id 1wyFA3-0000000FbfM-2TTq;
 	Sun, 23 Aug 2026 20:51:23 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyFA1-0000000Fbf7-32oM
+	id 1wyFA1-0000000Fbf6-3LYs
 	for linux-i3c@lists.infradead.org;
 	Sun, 23 Aug 2026 20:51:21 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 2342343D01;
+	by sea.source.kernel.org (Postfix) with ESMTP id 1FDE041E73;
 	Sun, 23 Aug 2026 20:51:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 07AB81F00A3A;
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 03F1E1F000E9;
 	Sun, 23 Aug 2026 20:51:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
 	s=k20260515; t=1787518281;
 	bh=hIp9vlWkfhAxsnjVpaciMgnuHKcVkcmphOncxyKUJ44=;
 	h=Subject:From:In-Reply-To:References:Date:To:Cc;
-	b=WUCpkgLSfZDrn7f/lUIDMS71HwY6ZeF7wRdTfZkqfCqgMOlMychWtA7uI1wWiLM2/
-	 2Z7qoJ3NoE6jMoQQ1Qjx7eBtvF5BDklghWnb6dCGUVexr/pMYKKwAtY18F5prgzQqr
-	 4/lkKYWg+lXIDtLvJf88GSUPKcbsFYlfmFaJhpBE6hbp5G8QRvXp4wnYjbbIuPsnIG
-	 ZD6avd4B4a3pCQWf8onwwEoAEo+jIUNCnjaxveTf3TX93J4AMD4CkId38u/gJeKFp2
-	 sPq15cQJ/Y/Y7h8rM7ngDwwJ9/DXE1At291C24c0e/Xva0wUqZZjOQUfYmuEvXfJz/
-	 eDxXJCawkiS6w==
+	b=WG5vm2ew8CGVZTZtgMXEQ6AeQfgm3p2/xjFkLMMlQhHz0NfYRqOF7l7yvB07HbUhj
+	 y4kH9WBKtHolUu6dm9RTGDZOBJ5/hVveuDE05HMB19eay9gHzuDikZAQ8ynCgvOGib
+	 wrroyDemfD9mmjgQBqy7jdYkN+otYX5pLAu4iQhiwnjyi0F0qrzl0fUt44LrHKJuV+
+	 z5iTngKpAjnkmiyL/MDQ3SVAs8NWKQ4Z82thz05FhyaK6F9Smrf/CLYqLEzudGgXiV
+	 aLyK4Y+cu/ADnQkfKvjS145hmUVn3K3daTlkRhHSS0iMTpcE7wzSbImKe20P47ETXu
+	 sGoeExhHR362Q==
 Received: from [10.30.226.235] (localhost [IPv6:::1])
-	by aws-us-west-2-korg-oddjob-rhel9-1.codeaurora.org (Postfix) with ESMTP id 57873380AA7D;
+	by aws-us-west-2-korg-oddjob-rhel9-1.codeaurora.org (Postfix) with ESMTP id 56B9B380AA78;
 	Sun, 23 Aug 2026 20:50:30 +0000 (UTC)
 Subject: Re: [GIT PULL] I3C changes for 7.3
 From: pr-tracker-bot@kernel.org
@@ -56,8 +56,8 @@ X-PR-Tracked-Commit-Id: cab40cfc9e116acd4d60f95b4b1264cab78f3803
 X-PR-Merge-Tree: torvalds/linux.git
 X-PR-Merge-Refname: refs/heads/master
 X-PR-Merge-Commit-Id: 4352b8aee98005853aa63f57d6377282de17a33f
-Message-Id: <178751823015.2148131.12577645259976653945.pr-tracker-bot@kernel.org>
-Date: Sun, 23 Aug 2026 20:50:30 +0000
+Message-Id: <178751822924.2147879.2143792467668529189.pr-tracker-bot@kernel.org>
+Date: Sun, 23 Aug 2026 20:50:29 +0000
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>
 Cc: Linus Torvalds <torvalds@linux-foundation.org>, linux-i3c@lists.infradead.org, linux-kernel@vger.kernel.org
 X-BeenThere: linux-i3c@lists.infradead.org
