@@ -4,108 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B5079C5DF94
-	for <linux-i3c@archiver.kernel.org>; Mon, 24 Aug 2026 04:49:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A7A2C5DF94
+	for <linux-i3c@archiver.kernel.org>; Mon, 24 Aug 2026 05:04:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CrmLdspET+AqR2WAFJaciXtgQ+lc+drhwpbonw5EiYw=; b=Tbm4ophHOpV13f
-	SJEc0TPbHk2HKuN7qFJZqZKHo/OHip3/0+quiJz4vjItt3KkHdylj5SQ4WwpVeakLoynBz8IpE46f
-	bAtdTTzSHLaiB6zsGnddBPHlkzYq/qRT9velxbTV/p8DY5bnwb+8eXmVIuX4V5elg2HIaYl02R9r6
-	pEQzGVr4US9IuY7+pqehbN+34VC4AiVW9egqqQGm9b0bgPyW+Sx+/7UKj8rviUIKWEkFeM2fUtSIC
-	GaxmhM+R96rZ1rWgXJV2tFN9sGlzUe4WOgP6fuiHxz1f5JJvQ30EIe22d1ARdmJ3TcvY+jdQw7Ign
-	ehZnCajJxx/RTJVSgxWw==;
+	List-Owner; bh=mGoF8jxlB+/29AuhVmFixOxC3ucqTduDqJ+VooPzDO0=; b=RENPeCQa4MAMFM
+	wwpJfJzHShpAViJgQIEFdeqivNhGlsHKsRMgEZH1MrJFoRwHA5b+4nnecZzA9HYwONXXHZFclgRpS
+	KLyCh7I0gzR/NGzjKpb6ppgUsbXDwrJCr6EkDdEUi81lnD7Qj6JTGamH8DqpQ7SfboP73ysdCf0rc
+	436o+ihSIfoD5HeH6IitlcXKDDiEBqjq7ge+snWO3YNxO9W21xt2vBOnrI8MEoQqqnNE6Nvcn5OQs
+	sicNSx2sltJLg1ryZ4yc+EiYcCqsabfJAvAqy3skYfE3hK/qZpjvuYNuPrxPu3pxIThaEv652ucGU
+	9lkbu/iLNU3tdPMcurlg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyMcS-0000000Fv4C-1wed;
-	Mon, 24 Aug 2026 04:49:12 +0000
-Received: from mail-northcentralusazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c105::7] helo=CH4PR04CU002.outbound.protection.outlook.com)
+	id 1wyMrB-0000000FvTa-3gAo;
+	Mon, 24 Aug 2026 05:04:25 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyMcO-0000000Fv3H-45N6
+	id 1wyMrA-0000000FvTU-3ZKj
 	for linux-i3c@lists.infradead.org;
-	Mon, 24 Aug 2026 04:49:10 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=cg2aOV7mdR2ylNnX0mNfn/lYkdu6IjSVwwYmObyC09aGr5NkSndWkd+vwQdk8Ruee7CR4vAZUwVBpX94fcVjh/7DwCYx14jr4g8JEXCQKybrBPJ7VuP8OZ5Pf0Zxv51PPTiJPbDWMNL/eUq1gYITP1Smh+gyL7aJM568HotWQzCw+MsGH1m2ORHlKL4aCWENgK8XUwQduAbVobQFgW8hA/ROiPT4v0qF7Oz0jhPJpgiZGR7XPWZbUbUQobwG6U7Fm6IKJdngMfDZqs/2tQzVwMutzfH9avYASWsRMfuncxiunsmMvH3mobNt8M4RUFWenfT/xNroyfI3AwRjd7pGLw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=r6L00UH4RVeMjq6M4wjoROUBOBFXWHo5sgHAvMQJMZY=;
- b=eryiOE8WM12iDwqcCmLzOVD7HPT0OoqUY+VQ8ME1pSbvWWo0iAvXuImv/atbw5Fh0hO3wHVE0RcDj9mjqcwH4O3zJQ4sPlPitUHw7Act/gwgA5e63YnqrP2jnk1txXxLpq7Xj+mS2OLCjTSm0t5ueoJCwVXy2RG92LqDKM0BflGjWX7nZZztdzhUXguFYO7gwVElKPLCujvOan1EQzIkSw95bIp4O1rCvUAVCqgXhXk/h4vsq1BHfng1O9y1g7JrQcDHCvVMh+B5Pufw/yeNpZWeJVXUOb5Uz68BaYELAHU+COuqiCIScT6wwfiVd0qC9r5F0NAVd0761vdYYXfUcQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 165.204.84.17) smtp.rcpttodomain=bootlin.com smtp.mailfrom=amd.com;
- dmarc=pass (p=quarantine sp=quarantine pct=100) action=none
- header.from=amd.com; dkim=none (message not signed); arc=none (0)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=r6L00UH4RVeMjq6M4wjoROUBOBFXWHo5sgHAvMQJMZY=;
- b=05V5IgCqAi4/PVYMLHXZusvbdJLnLjRyPhVRSbHWceO1GlGhbZoJW6WkgDWtuCk3PkvqfCYXTH774fTe+Mjyd+N5dPgJyphr8+I+GsxbURkRA9ElwAp3YdCgO2AroyyiJBhT5WvZNWAQ9fA9I5CjKvB8SlYhataXILxIE4JsnBc=
-Received: from BN9PR03CA0138.namprd03.prod.outlook.com (2603:10b6:408:fe::23)
- by CY5PR12MB6432.namprd12.prod.outlook.com (2603:10b6:930:38::8) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.339.12; Mon, 24 Aug
- 2026 04:49:00 +0000
-Received: from BN5PEPF0004698A.namprd02.prod.outlook.com
- (2603:10b6:408:fe:cafe::45) by BN9PR03CA0138.outlook.office365.com
- (2603:10b6:408:fe::23) with Microsoft SMTP Server (version=TLS1_3,
- cipher=TLS_AES_256_GCM_SHA384) id 15.21.339.12 via Frontend Transport; Mon,
- 24 Aug 2026 04:49:00 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
- smtp.mailfrom=amd.com; dkim=none (message not signed)
- header.d=none;dmarc=pass action=none header.from=amd.com;
-Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
- 165.204.84.17 as permitted sender) receiver=protection.outlook.com;
- client-ip=165.204.84.17; helo=satlexmb07.amd.com; pr=C
-Received: from satlexmb07.amd.com (165.204.84.17) by
- BN5PEPF0004698A.mail.protection.outlook.com (10.167.245.39) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.21.360.3 via Frontend Transport; Mon, 24 Aug 2026 04:48:59 +0000
-Received: from satlexmb07.amd.com (10.181.42.216) by satlexmb07.amd.com
- (10.181.42.216) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.45; Sun, 23 Aug
- 2026 23:48:58 -0500
-Received: from xhdshubhraj40.xilinx.com (10.180.168.240) by satlexmb07.amd.com
- (10.181.42.216) with Microsoft SMTP Server id 15.2.2562.45 via Frontend
- Transport; Sun, 23 Aug 2026 23:48:55 -0500
-From: Shubham Patil <shubhamsanjay.patil@amd.com>
-To: <alexandre.belloni@bootlin.com>, <Frank.Li@kernel.org>, <robh@kernel.org>,
-	<krzk+dt@kernel.org>, <conor+dt@kernel.org>
-CC: <linux-i3c@lists.infradead.org>, <devicetree@vger.kernel.org>,
-	<linux-kernel@vger.kernel.org>, <git@amd.com>, Shubham Patil
-	<shubhamsanjay.patil@amd.com>
-Subject: [PATCH v2 3/3] i3c: master: amd: Add hot-join support
-Date: Mon, 24 Aug 2026 10:18:35 +0530
-Message-ID: <20260824044835.2924141-4-shubhamsanjay.patil@amd.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <20260824044835.2924141-1-shubhamsanjay.patil@amd.com>
+	Mon, 24 Aug 2026 05:04:24 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id E9BEA43B97;
+	Mon, 24 Aug 2026 05:04:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 82D601F000E9;
+	Mon, 24 Aug 2026 05:04:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1787547863;
+	bh=f7wx6EGCh/T5ArQC2s1jZ97pGYD4zTjw2k8KAhE6maI=;
+	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
+	b=Ybl6PJIUfDWaiP+K+8SNk8EVxr/R/mwFBHtWDy2SLynj9dvNkPVaeoUmBUPgYEWQ5
+	 JtoyZA+NgIierYNUQG0/5ZF44t17/V1u1SSDYFAPDN1BDigf1/Dk3YpzUSjiKtBiyb
+	 GfekU/WStIcAOa6CX0yySC95OiS+bteYlL0gNUqqIOWM0OGUdEa0OQPD/hbQOi6mdc
+	 W2lJ1HtKEBtDnz9VkNJxNYhDd+IsoCbPkle7Z1JslIxFF+LMOQy0a2juvV+6lRNZlw
+	 oouH5I1/ycLcwsPUEk9jpxC4glX/Nr1JuRNQWq0J0RlJXQ2F37YoIUYNIhD1S6mQNb
+	 duV+tCcXme3NQ==
+From: sashiko-bot@kernel.org
+Subject: Re: [PATCH v2 2/3] i3c: master: amd: Add support for in-band
+ interrupts
+To: "Shubham Patil" <shubhamsanjay.patil@amd.com>
+Cc: robh@kernel.org, "Alexandre Belloni" <alexandre.belloni@bootlin.com>, linux-i3c@lists.infradead.org, Frank.Li@kernel.org, conor+dt@kernel.org, devicetree@vger.kernel.org
+In-Reply-To: <20260824044835.2924141-3-shubhamsanjay.patil@amd.com>
 References: <20260824044835.2924141-1-shubhamsanjay.patil@amd.com>
-MIME-Version: 1.0
-X-EOPAttributedMessage: 0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: BN5PEPF0004698A:EE_|CY5PR12MB6432:EE_
-X-MS-Office365-Filtering-Correlation-Id: bf1f64ff-de2c-4640-bfed-08df019b036d
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|36860700016|376014|1800799024|23010399003|10067099003|3023799007|56012099006|5023799004|11063799006|22082099003|18002099003;
-X-Microsoft-Antispam-Message-Info: /xTD99vbXD2HgRTYRPpQc8DriipbaQREk9LnF8EeqoFUI/jm9l1hloo+Wul8McZkf+yZILXJKJXvPkJhTaun3EHsJ79/6HYYl4pNsXRbuCH4nLAK2lUmAEtHWsopoGzxdd2UBK6tdwrae/Qw12NPx2Ruhd7ER5EOoKBFhenim3V3Immqd1WkcNEfyLKYqi/rZbkPbL+ufMb9L4Kgo1hlz1bvO+cI+ragcdId2lhv5KE47LyG2ja31q0F3+yKEC3AmLKOOuLwyTsjeTLSHd2H5Tbtc+MlRAIb9KK9g+vPJJZB+zNlbUT1ztOA4UW1qY5tcx2y2TYEUiK3cQU+NSXnyWXTH8Dkjf+REysGfdZ5AH4J6MWp5ANA2LDzKToEWQ3sSHHFWNGxGBkbGyE7j+eexC8rslkUsX2STa5v98dd3a6nax4PeJ9JwPRplmBHl2UzcwHLebAB/n7TyQfWKAqp7g5sltxb0Q56zwS3JdjvuhHioLIt2nKXCqu/H/fBzB0HBKdPeTE1jscunEVIAHTBWIDXnDbbgbkgPqOLLXhH4yS404SYdcg4rxaXx2B5Vf/4YqquHbfNW575eB3oZ+RdUNlUGd45NfOvry5TDxMiNv16HdG5GXsFWaM6FbmntEoZvBFuub8/JeLgnalPd4NfDLJXcoyNFv/Y5WM3yZ8vPpidXBPfYX4t4Mr0V7mJ9AusGRRveUdyNX1y9qEgEvmHZg==
-X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:satlexmb07.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(82310400026)(36860700016)(376014)(1800799024)(23010399003)(10067099003)(3023799007)(56012099006)(5023799004)(11063799006)(22082099003)(18002099003);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: Z7StdHjcrPmdPHzX/4sM178vt00RQDpbbwVvNou+Ro69wJMwrHAAoKh/BHqnPh7QfU8O5skOtZpqj4WHOP8AxD+q6CYSmXjCrpSfCh7xU3BNZDD7nNvykyf8ExRaUtFBHqa+c6uZkXNY7Q6MwnHTSayPXh999aotzGP+g1/gjPKi2hAU+hdzs9n6cacuR71WJiC3RRQSvnR3p83gG5oKvzC1rY1AydFMF3dha6tGRDJ98+o0uxMmFDR0cjVXpE6ZTGfbItjxfPKZzqdxrO7OLDUZk8K0aa7x43dMgIfuyHfVZH8qxjJ32gI88i1OhyzfU27GFNPqKqP2E4j9Yxx03gokDTA5HxG1qmjSCpDHtBAIlzqnelOvm7RKxcxkOL8o4PwzSO0DtIw7FkjWj0RAmzwcM0xCdausaFQUD1dT2FTXaXQ5JoSCWD7EACAaX6dR
-X-OriginatorOrg: amd.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Aug 2026 04:48:59.8548
- (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: bf1f64ff-de2c-4640-bfed-08df019b036d
-X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[satlexmb07.amd.com]
-X-MS-Exchange-CrossTenant-AuthSource: BN5PEPF0004698A.namprd02.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Anonymous
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY5PR12MB6432
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260823_214909_390762_21E36AD1 
-X-CRM114-Status: GOOD (  24.37  )
+ <20260824044835.2924141-3-shubhamsanjay.patil@amd.com>
+Date: Mon, 24 Aug 2026 05:04:23 +0000
+Message-Id: <20260824050423.82D601F000E9@smtp.kernel.org>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -117,170 +63,105 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: sashiko-reviews@lists.linux.dev
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Add hot-join support for the AMD AXI I3C master controller.
-By default, the hot-join acknowledgment is disabled. Users can use the
-sysfs entry to enable it. A hot-join event is handed to the i3c core
-with i3c_master_queue_hotjoin(), which runs DAA from the core workqueue
-so the new device is enumerated.
-
-Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
----
-Changes in V2:
-- Use the core's i3c_master_queue_hotjoin() instead of a private work
-  item, and only queue when hj_capable is set; the core owns the work
-  and cancels it on unregister.
-- Update the commit description accordingly.
----
- drivers/i3c/master/amd-i3c-master.c | 67 +++++++++++++++++++++++++----
- 1 file changed, 58 insertions(+), 9 deletions(-)
-
-diff --git a/drivers/i3c/master/amd-i3c-master.c b/drivers/i3c/master/amd-i3c-master.c
-index 92a9f43f8934..26ef2ba9f651 100644
---- a/drivers/i3c/master/amd-i3c-master.c
-+++ b/drivers/i3c/master/amd-i3c-master.c
-@@ -55,9 +55,11 @@
- #define XI3C_CR_EN_MASK				BIT(0)	/* Core Enable */
- #define XI3C_CR_RESUME_MASK			BIT(2)	/* Core Resume */
- #define XI3C_CR_IBI_MASK			BIT(3)	/* IBI ACK enable */
-+#define XI3C_CR_HJ_MASK				BIT(4)	/* Hot-Join ACK enable */
- #define XI3C_SR_RESP_NOT_EMPTY_MASK		BIT(4)	/* Resp Fifo not empty status mask */
- #define XI3C_RD_FIFO_NOT_EMPTY_MASK		BIT(15)	/* Read Fifo not empty status mask */
- #define XI3C_INTR_IBI_MASK			BIT(7)	/* IBI event (INTR status/enable) */
-+#define XI3C_INTR_HJ_MASK			BIT(8)	/* Hot-Join event */
- 
- #define XI3C_BCR_MASK				GENMASK(23, 16)
- #define XI3C_DCR_MASK				GENMASK(31, 24)
-@@ -191,11 +193,14 @@ struct xi3c_xfer {
-  *	       @xfer_resp_valid is set. Guarded by @lock.
-  * @xfer_resp_valid: True once the in-flight transfer's own response word has
-  *		     been taken from the shared response FIFO. Guarded by @lock.
-- * @irq: Controller interrupt line, used for IBI events. Only valid when
-- *	 @ibi_capable is set.
-+ * @irq: Controller interrupt line, used for IBI/Hot-Join events. Only valid
-+ *	 when @ibi_capable is set.
-  * @ibi_capable: True when the IP was synthesized with In-Band Interrupt
-- *		 support ("xlnx,in-band-interrupt-capable"); also the
-- *		 condition for the controller interrupt being present.
-+ *		 support ("xlnx,in-band-interrupt-capable"). Since Hot-Join
-+ *		 requests are ACKed by the IBI machinery, this is also the
-+ *		 condition for the controller interrupt being present at all.
-+ * @hj_capable: True when the IP was synthesized with Hot-Join support
-+ *		("xlnx,hot-join-capable"); implies @ibi_capable.
-  * @ops: Controller ops handed to the framework, assembled at probe time from
-  *	 the base ops plus the callbacks the design actually supports.
-  * @ibi: In-Band Interrupt slot tracking.
-@@ -224,6 +229,7 @@ struct xi3c_master {
- 	bool xfer_resp_valid;
- 	int irq;
- 	bool ibi_capable;
-+	bool hj_capable;
- 	struct i3c_master_controller_ops ops;
- 	struct {
- 		spinlock_t lock; /* protects slots[] against the IBI handler */
-@@ -1243,13 +1249,14 @@ static void xi3c_master_bus_cleanup(struct i3c_master_controller *m)
- 	struct xi3c_master *master = to_xi3c_master(m);
- 
- 	/*
--	 * Disarm all interrupt sources and the IBI ACK so the controller can't
--	 * assert once disabled; reset the refcount that tracks them.
-+	 * Disarm the interrupts and the IBI/Hot-Join ACKs so nothing is left
-+	 * armed for a later bus_init(); reset the refcount that tracks them.
- 	 */
- 	scoped_guard(spinlock_irqsave, &master->reg_lock) {
- 		iowrite32(0, master->membase + XI3C_INTR_RE_OFFSET);
- 		iowrite32(ioread32(master->membase + XI3C_CR_OFFSET) &
--			  ~XI3C_CR_IBI_MASK, master->membase + XI3C_CR_OFFSET);
-+			  ~(XI3C_CR_IBI_MASK | XI3C_CR_HJ_MASK),
-+			  master->membase + XI3C_CR_OFFSET);
- 		master->ibi.enabled_count = 0;
- 	}
- 
-@@ -1550,6 +1557,32 @@ static void xi3c_master_process_ibi(struct xi3c_master *master, u32 resp, u8 da)
- 	xi3c_master_drain_ibi_fifo(master, len);
- }
- 
-+static int xi3c_master_enable_hotjoin(struct i3c_master_controller *m)
-+{
-+	struct xi3c_master *master = to_xi3c_master(m);
-+
-+	guard(spinlock_irqsave)(&master->reg_lock);
-+	iowrite32(ioread32(master->membase + XI3C_CR_OFFSET) | XI3C_CR_HJ_MASK,
-+		  master->membase + XI3C_CR_OFFSET);
-+	iowrite32(ioread32(master->membase + XI3C_INTR_RE_OFFSET) |
-+		  XI3C_INTR_HJ_MASK, master->membase + XI3C_INTR_RE_OFFSET);
-+
-+	return 0;
-+}
-+
-+static int xi3c_master_disable_hotjoin(struct i3c_master_controller *m)
-+{
-+	struct xi3c_master *master = to_xi3c_master(m);
-+
-+	guard(spinlock_irqsave)(&master->reg_lock);
-+	iowrite32(ioread32(master->membase + XI3C_INTR_RE_OFFSET) &
-+		  ~XI3C_INTR_HJ_MASK, master->membase + XI3C_INTR_RE_OFFSET);
-+	iowrite32(ioread32(master->membase + XI3C_CR_OFFSET) & ~XI3C_CR_HJ_MASK,
-+		  master->membase + XI3C_CR_OFFSET);
-+
-+	return 0;
-+}
-+
- static irqreturn_t xi3c_master_irq_handler(int irq, void *dev_id)
- {
- 	struct xi3c_master *master = dev_id;
-@@ -1570,6 +1603,9 @@ static irqreturn_t xi3c_master_irq_handler(int irq, void *dev_id)
- 			xi3c_master_handle_ibi(master);
- 	}
- 
-+	if (master->hj_capable && (status & XI3C_INTR_HJ_MASK))
-+		i3c_master_queue_hotjoin(&master->base);
-+
- 	return IRQ_HANDLED;
- }
- 
-@@ -1590,6 +1626,11 @@ static void xi3c_master_init_ibi_ops(struct xi3c_master *master)
- 	master->ops.enable_ibi = xi3c_master_enable_ibi;
- 	master->ops.disable_ibi = xi3c_master_disable_ibi;
- 	master->ops.recycle_ibi_slot = xi3c_master_recycle_ibi_slot;
-+
-+	if (master->hj_capable) {
-+		master->ops.enable_hotjoin = xi3c_master_enable_hotjoin;
-+		master->ops.disable_hotjoin = xi3c_master_disable_hotjoin;
-+	}
- }
- 
- static int xi3c_master_probe(struct platform_device *pdev)
-@@ -1625,10 +1666,18 @@ static int xi3c_master_probe(struct platform_device *pdev)
- 	master->ibi_capable =
- 		device_property_read_bool(master->dev,
- 					  "xlnx,in-band-interrupt-capable");
-+	master->hj_capable =
-+		device_property_read_bool(master->dev,
-+					  "xlnx,hot-join-capable");
-+
-+	/* Hot-Join requests are ACKed by the IBI machinery. */
-+	if (master->hj_capable && !master->ibi_capable)
-+		return dev_err_probe(master->dev, -EINVAL,
-+				     "hot-join-capable requires in-band-interrupt-capable\n");
- 
- 	/*
--	 * The interrupt only carries IBI events, so it is only described for
--	 * designs synthesized with that feature.
-+	 * The interrupt only carries IBI and Hot-Join events, so it is only
-+	 * described for designs synthesized with those features.
- 	 */
- 	if (master->ibi_capable) {
- 		xi3c_master_init_ibi_ops(master);
--- 
-2.34.1
-
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
+MyBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIEluY29uc2lzdGVudCBy
+ZWdpc3RlciByZWFkIG9yZGVyIGNhdXNlcyB0aGUgcG9sbGVkIElCSSBoYW5kbGVyIHRvIHJlYWQg
+dGhlIHdyb25nIFRhcmdldCBBZGRyZXNzIChEQSkuCi0gW0hpZ2hdIFByZW1hdHVyZSBwdWJsaWNh
+dGlvbiBvZiB0aGUgSUJJIHNsb3QgY2F1c2VzIGEgTlVMTCBwb2ludGVyIGRlcmVmZXJlbmNlIGlu
+IHRoZSBJUlEgaGFuZGxlci4KLSBbSGlnaF0gRWFnZXIgcG9sbGluZyBvZiB0aGUgc2hhcmVkIFJY
+IEZJRk8gY29ycnVwdHMgcmVhZCB0cmFuc2ZlcnMgYW5kIGRyb3BzIElCSSBwYXlsb2Fkcy4KLS0K
+Ci0tLSBQYXRjaCBbMl06IFtQQVRDSCB2MiAyLzNdIGkzYzogbWFzdGVyOiBhbWQ6IEFkZCBzdXBw
+b3J0IGZvciBpbi1iYW5kIGludGVycnVwdHMgLS0tCmNvbW1pdCAwOWM1MzNjYjNjN2I2NzBhY2Ji
+ZDI1YTNiZGZkNzhlOTgzZWZiNjc2CkF1dGhvcjogU2h1YmhhbSBQYXRpbCA8c2h1YmhhbXNhbmph
+eS5wYXRpbEBhbWQuY29tPgoKaTNjOiBtYXN0ZXI6IGFtZDogQWRkIHN1cHBvcnQgZm9yIGluLWJh
+bmQgaW50ZXJydXB0cwoKVGhpcyBjb21taXQgYWRkcyBzdXBwb3J0IGZvciByZWNlaXZpbmcgYW5k
+IGRlcXVldWVpbmcgSTNDIGluLWJhbmQgaW50ZXJydXB0cy4KVGhlIElCSSBvcGVyYXRpb25zIGFy
+ZSBhc3NlbWJsZWQgYXQgcHJvYmUgdGltZSBpZiB0aGUgY2FwYWJpbGl0eSBpcyBwcmVzZW50IGlu
+CnRoZSBkZXZpY2UgdHJlZS4gSXQgYWxzbyBpbnRyb2R1Y2VzIGxvZ2ljIHRvIGhhbmRsZSBJQklz
+IHRoYXQgcmFjZSB3aXRoIG5vcm1hbAp0cmFuc2ZlcnMgYnkgZGVtdWx0aXBsZXhpbmcgdGhlIHJl
+c3BvbnNlIEZJRk8gYnkgVElELgoKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9pM2MvbWFzdGVyL2Ft
+ZC1pM2MtbWFzdGVyLmMgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvYW1kLWkzYy1tYXN0ZXIuYwo+IGlu
+ZGV4IGVmNWFkNWFiYjc4OGMuLjkyYTlmNDNmODkzNDQgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9p
+M2MvbWFzdGVyL2FtZC1pM2MtbWFzdGVyLmMKPiArKysgYi9kcml2ZXJzL2kzYy9tYXN0ZXIvYW1k
+LWkzYy1tYXN0ZXIuYwpbIC4uLiBdCj4gQEAgLTIwNiwyMyArMjczLDg4IEBAIHN0YXRpYyBpbmxp
+bmUgYm9vbCB4aTNjX2lzX3Jlc3BfYXZhaWxhYmxlKHN0cnVjdCB4aTNjX21hc3RlciAqbWFzdGVy
+KQpbIC4uLiBdCj4gK3N0YXRpYyBib29sIHhpM2NfeGZlcl9yZXNwX2F2YWlsYWJsZShzdHJ1Y3Qg
+eGkzY19tYXN0ZXIgKm1hc3RlcikKPiArewo+ICsJdTMyIHJlc3A7Cj4gKwl1OCBkYTsKPiArCj4g
+KwlpZiAobWFzdGVyLT54ZmVyX3Jlc3BfdmFsaWQpCj4gKwkJcmV0dXJuIHRydWU7Cj4gKwo+ICsJ
+d2hpbGUgKHhpM2NfaXNfcmVzcF9hdmFpbGFibGUobWFzdGVyKSkgewo+ICsJCXJlc3AgPSBpb3Jl
+YWQzMihtYXN0ZXItPm1lbWJhc2UgKyBYSTNDX1JFU1BfU1RBVFVTX0ZJRk9fT0ZGU0VUKTsKPiAr
+Cj4gKwkJaWYgKEZJRUxEX0dFVChYSTNDX1JFU1BfVElEX01BU0ssIHJlc3ApICE9IFhJM0NfSUJJ
+X1JFU1BfVElEKSB7Cj4gKwkJCW1hc3Rlci0+eGZlcl9yZXNwID0gcmVzcDsKPiArCQkJbWFzdGVy
+LT54ZmVyX3Jlc3BfdmFsaWQgPSB0cnVlOwo+ICsJCQlyZXR1cm4gdHJ1ZTsKPiArCQl9Cj4gKwo+
+ICsJCWRhID0gRklFTERfR0VUKFhJM0NfQUREUl9NQVNLLAo+ICsJCQkgICAgICAgaW9yZWFkMzIo
+bWFzdGVyLT5tZW1iYXNlICsgWEkzQ19JQklfVEFSR0VUX0FERFJfT0ZGU0VUKSk7CgpbU2V2ZXJp
+dHk6IEhpZ2hdCkRvZXMgcG9wcGluZyB0aGUgcmVzcG9uc2UgRklGTyBiZWZvcmUgcmVhZGluZyB0
+aGUgVGFyZ2V0IEFkZHJlc3MgcmVnaXN0ZXIKY2F1c2UgdGhlIHdyb25nIGFkZHJlc3MgdG8gYmUg
+cmVhZD8KCkluIHRoZSBoYXJkd2FyZSBJUlEgaGFuZGxlciwgdGhlIFRhcmdldCBBZGRyZXNzIGlz
+IHJlYWQgYmVmb3JlIHdhaXRpbmcgZm9yCmFuZCBwb3BwaW5nIHRoZSByZXNwb25zZSBGSUZPOgoK
+eGkzY19tYXN0ZXJfaGFuZGxlX2liaSgpIHsKICAgIGliaV9yZWcgPSBpb3JlYWQzMihtYXN0ZXIt
+Pm1lbWJhc2UgKyBYSTNDX0lCSV9UQVJHRVRfQUREUl9PRkZTRVQpOwogICAgZGEgPSBGSUVMRF9H
+RVQoWEkzQ19BRERSX01BU0ssIGliaV9yZWcpOwogICAgaWYgKHhpM2Nfd2FpdF9yZXNwX2F0b21p
+YyhtYXN0ZXIpKSB7IC4uLiB9CiAgICByZXNwID0gaW9yZWFkMzIobWFzdGVyLT5tZW1iYXNlICsg
+WEkzQ19SRVNQX1NUQVRVU19GSUZPX09GRlNFVCk7Cn0KCklmIHRoZSByZXNwb25zZSBpcyBwb3Bw
+ZWQgZmlyc3QgaGVyZSwgZG9lcyBpdCBhZHZhbmNlIHRoZSBGSUZPIGhlYWQgYW5kIGNhdXNlCnRo
+aXMgcmVhZCB0byByZXR1cm4gdGhlIGFkZHJlc3Mgb2YgdGhlIG5leHQgcXVldWVkIElCSSAob3Ig
+Z2FyYmFnZSkgaW5zdGVhZCBvZgp0aGUgY3VycmVudCBvbmU/Cgo+ICsJCWRldl9kYmdfcmF0ZWxp
+bWl0ZWQobWFzdGVyLT5kZXYsCj4gKwkJCQkgICAgIklCSSBmcm9tIDB4JTAyeCByYWNlZCB3aXRo
+IHRyYW5zZmVyXG4iLCBkYSk7Cj4gKwkJeGkzY19tYXN0ZXJfcHJvY2Vzc19pYmkobWFzdGVyLCBy
+ZXNwLCBkYSk7ClsgLi4uIF0KPiBAQCAtNDM3LDEzICs2MDUsMTkgQEAgc3RhdGljIGludCB4aTNj
+X21hc3Rlcl9yZWFkKHN0cnVjdCB4aTNjX21hc3RlciAqbWFzdGVyLCBzdHJ1Y3QgeGkzY19jbWQg
+KmNtZCkKWyAuLi4gXQo+ICAJLyogUmVhZCBkYXRhIGZyb20gcnggZmlmbyAqLwo+IC0Jd2hpbGUg
+KGNtZC0+cnhfbGVuID4gMCAmJiAheGkzY19pc19yZXNwX2F2YWlsYWJsZShtYXN0ZXIpKSB7Cj4g
+Kwl3aGlsZSAoY21kLT5yeF9sZW4gPiAwICYmICF4aTNjX3hmZXJfcmVzcF9hdmFpbGFibGUobWFz
+dGVyKSkgewo+ICAJCWlmICh0aW1lX2FmdGVyKGppZmZpZXMsIHRpbWVvdXQpKSB7Cj4gIAkJCWRl
+dl9lcnIobWFzdGVyLT5kZXYsICJYSTNDIHJlYWQgdGltZW91dFxuIik7Cj4gIAkJCXJldHVybiAt
+RUlPOwo+ICAJCX0KPiAgCQl4aTNjX21hc3Rlcl9yZF9mcm9tX3J4X2ZpZm8obWFzdGVyLCBjbWQp
+Owo+ICAJCXVzbGVlcF9yYW5nZShYSTNDX1BPTExfSU5URVJWQUxfVVMsIDIgKiBYSTNDX1BPTExf
+SU5URVJWQUxfVVMpOwo+ICAJfQoKW1NldmVyaXR5OiBIaWdoXQpEb2VzIHRoaXMgZWFnZXIgcG9s
+bGluZyBvZiB0aGUgc2hhcmVkIFJYIEZJRk8gcmlzayBjb25zdW1pbmcgYW4gSUJJIHBheWxvYWQK
+aW50byB0aGUgdHJhbnNmZXIgYnVmZmVyIGJlZm9yZSB0aGUgSUJJIHJlc3BvbnNlIGlzIHByb2Nl
+c3NlZD8KCklmIGFuIElCSSBleGVjdXRlcyByaWdodCBiZWZvcmUgYSByZWFkIHRyYW5zZmVyLCBp
+dHMgcGF5bG9hZCB3aWxsIGVudGVyIHRoZSBSWApGSUZPLiBTaW5jZSAheGkzY194ZmVyX3Jlc3Bf
+YXZhaWxhYmxlKCkgY2FuIGV2YWx1YXRlIHRvIHRydWUgaWYgdGhlIHJlc3BvbnNlCndvcmQgaGFz
+bid0IGJlZW4gcHVzaGVkIHRvIHRoZSBSZXNwb25zZSBGSUZPIHlldCwgdGhlIGxvb3AgbWlnaHQg
+Y2FsbAp4aTNjX21hc3Rlcl9yZF9mcm9tX3J4X2ZpZm8oKS4KCkNvdWxkIHRoaXMgYmxpbmRseSBj
+b3B5IHRoZSBJQkkgcGF5bG9hZCBpbnRvIHRoZSByZWFkIHRyYW5zZmVyJ3MgYnVmZmVyLCBsZWF2
+aW5nCmFuIGVtcHR5IFJYIEZJRk8gZm9yIHhpM2NfbWFzdGVyX3Byb2Nlc3NfaWJpKCkgYW5kIGRy
+b3BwaW5nIHRoZSBJQkkgZGF0YT8KClsgLi4uIF0KPiBAQCAtMTA1Miw5ICsxMjQyLDMzNyBAQCBz
+dGF0aWMgdm9pZCB4aTNjX21hc3Rlcl9idXNfY2xlYW51cChzdHJ1Y3QgaTNjX21hc3Rlcl9jb250
+cm9sbGVyICptKQpbIC4uLiBdCj4gK3N0YXRpYyBpbnQgeGkzY19tYXN0ZXJfcmVxdWVzdF9pYmko
+c3RydWN0IGkzY19kZXZfZGVzYyAqZGV2LAo+ICsJCQkJICAgY29uc3Qgc3RydWN0IGkzY19pYmlf
+c2V0dXAgKnJlcSkKPiArewpbIC4uLiBdCj4gKwlzcGluX2xvY2tfaXJxc2F2ZSgmbWFzdGVyLT5p
+YmkubG9jaywgZmxhZ3MpOwo+ICsJZm9yIChpID0gMDsgaSA8IEFSUkFZX1NJWkUobWFzdGVyLT5p
+Ymkuc2xvdHMpOyBpKyspIHsKPiArCQlpZiAoIW1hc3Rlci0+aWJpLnNsb3RzW2ldKSB7Cj4gKwkJ
+CWRhdGEtPmliaV9zbG90ID0gaTsKPiArCQkJbWFzdGVyLT5pYmkuc2xvdHNbaV0gPSBkZXY7Cj4g
+KwkJCWJyZWFrOwo+ICsJCX0KPiArCX0KPiArCXNwaW5fdW5sb2NrX2lycXJlc3RvcmUoJm1hc3Rl
+ci0+aWJpLmxvY2ssIGZsYWdzKTsKPiArCj4gKwlpZiAoZGF0YS0+aWJpX3Nsb3QgPCAwKSB7Cj4g
+KwkJZGV2X2VycihtYXN0ZXItPmRldiwgIklCSTogbm8gZnJlZSBzbG90IGZvciBhZGRyIDB4JTAy
+eFxuIiwKPiArCQkJZGV2LT5pbmZvLmR5bl9hZGRyKTsKPiArCQlpM2NfZ2VuZXJpY19pYmlfZnJl
+ZV9wb29sKGRhdGEtPmliaV9wb29sKTsKPiArCQlrZnJlZShkYXRhKTsKPiArCQlyZXR1cm4gLUVO
+T1NQQzsKPiArCX0KPiArCj4gKwlpM2NfZGV2X3NldF9tYXN0ZXJfZGF0YShkZXYsIGRhdGEpOwo+
+ICsKPiArCXJldHVybiAwOwo+ICt9CgpbU2V2ZXJpdHk6IEhpZ2hdCkNhbiBhbiBpbmNvbWluZyBJ
+QkkgdHJpZ2dlciBhIE5VTEwgcG9pbnRlciBkZXJlZmVyZW5jZSBpZiBpdCBhcnJpdmVzIHJpZ2h0
+CmFmdGVyIHRoZSBzbG90IGlzIHB1Ymxpc2hlZCBidXQgYmVmb3JlIHRoZSBtYXN0ZXIgZGF0YSBp
+cyBzZXQ/CgpJZiB0aGUgY29udHJvbGxlcidzIElCSSBBQ0sgaXMgYWxyZWFkeSBhcm1lZCBieSBh
+bm90aGVyIGRldmljZSwgYW5kIHRoZSBoYXJkd2FyZQpzZW5kcyBhbiBJQkkgYWZ0ZXIgbWFzdGVy
+LT5pYmkuc2xvdHNbaV0gPSBkZXYgYnV0IGJlZm9yZQppM2NfZGV2X3NldF9tYXN0ZXJfZGF0YShk
+ZXYsIGRhdGEpLCB0aGUgSVJRIGhhbmRsZXIgKHhpM2NfbWFzdGVyX3Byb2Nlc3NfaWJpKQpjb3Vs
+ZCBsb29rIHVwIHRoZSBkZXZpY2UgYW5kIGNhbGwgaTNjX2Rldl9nZXRfbWFzdGVyX2RhdGEoZGV2
+KS4KCldvdWxkIHRoaXMgcmV0dXJuIE5VTEwgYW5kIHJlc3VsdCBpbiBhIGNyYXNoIHdoZW4gYWNj
+ZXNzaW5nIGRhdGEtPmliaV9wb29sPwpTaG91bGQgaTNjX2Rldl9zZXRfbWFzdGVyX2RhdGEoZGV2
+LCBkYXRhKSBiZSBjYWxsZWQgYmVmb3JlIHRoZSBzbG90IGlzIG1hZGUKdmlzaWJsZSB0byB0aGUg
+SVJRIGhhbmRsZXI/CgotLSAKU2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRl
+di8jL3BhdGNoc2V0LzIwMjYwODI0MDQ0ODM1LjI5MjQxNDEtMS1zaHViaGFtc2FuamF5LnBhdGls
+QGFtZC5jb20/cGFydD0yCgotLSAKbGludXgtaTNjIG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWkzYwo=
