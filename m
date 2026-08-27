@@ -4,50 +4,50 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0365C61DB9
-	for <linux-i3c@archiver.kernel.org>; Thu, 27 Aug 2026 10:03:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6A798C61DC7
+	for <linux-i3c@archiver.kernel.org>; Thu, 27 Aug 2026 10:09:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R/Sjc+pJZutNmjxzPrMaJTE8mYMvlQHDCrjehQy0HCc=; b=iqditm9pH+ZBGh
-	Xo13geMchtOw/xohIQBOwZBIcXfdc7ym/VW3KHcXwD5oCTAJvT56hNy+Q2FJyiOTPiPdmr3Nt1iOt
-	LUIK9egirXpJNzjnyObv2G5Uv5Whrw7M7lwhQlW5hnrFfvlgaSsM4CtFQ+FZjexkwVjFzxfhyu3zx
-	kfWyxiziITWPvQPUbBcY8MRbPYr45j4EaTmF4u/TAefEJeiqnazfX5yhC3vpAd+mg0KFMPax98DDk
-	tJcJwFAaD7buatHbA3Jku7nuuREYCWY7UDV049+oLYHzbA5dVT4FE0UBtrTEz+Lw6NfHUJRhALuD7
-	gjsBJVh2EekkBjCIM2fw==;
+	List-Owner; bh=jEwugIKJYONK7t4/WrLdrIVY25TPqJJd3kaM9F64LGU=; b=w5Jb1DU/woXQ0w
+	FdkIOpQr4D9YBzWVg+AWR/2iX9t7eZa18LQJJEmQvdhel/+IBmxM3pcQFFLq0kiEeXJVDNvFcFk0h
+	zVZsLx+n5lpgsMosyklfUZI8QOggUdinmmNob0OgZaLMPpJUnNdfltcUbYky8uGk30uLPJcUR45MQ
+	8VTifQGs5lEnDPfm7S+he+qTv8sB8tdil/5RKlpGUjSnzOK4xchYG2oCmniXEPdEeAvjWxAB0SIpI
+	aV8yth5W6DhltsphaichyfjJURGxyIpVOEvKgT8jlt2kGqKOb6RRCOaB5PSukwj9rvtiqfQO/xKzN
+	8FL37MCqnKZV4I38E8ig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzWwv-00000003nYz-1U0j;
-	Thu, 27 Aug 2026 10:03:09 +0000
+	id 1wzX2z-00000003nq3-00Ex;
+	Thu, 27 Aug 2026 10:09:25 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzWwu-00000003nYt-49qF
+	id 1wzX2x-00000003npr-2V47
 	for linux-i3c@lists.infradead.org;
-	Thu, 27 Aug 2026 10:03:09 +0000
+	Thu, 27 Aug 2026 10:09:23 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 58D9C402DF;
-	Thu, 27 Aug 2026 10:03:08 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 638E41F000E9;
-	Thu, 27 Aug 2026 10:03:03 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 1BE5D435FB;
+	Thu, 27 Aug 2026 10:09:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5855D1F000E9;
+	Thu, 27 Aug 2026 10:09:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1787824988;
-	bh=cmiVNo81tZM/K5dCG3g7BxmRqbw/xaUsPhoPQNl1Zvg=;
+	s=k20260515; t=1787825363;
+	bh=9KOMROoAXkB3YgzHCVgdK+B6/2OE8JJaZ2Gy/q8sZjk=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=TiNVpR6+sOt3gHQ2H9FHjIhGrKxGB8hJu84iHOUGbVClf1gQEIwRvqJYpC31Wpv9U
-	 s1Qnd1QVvTNz9E5hH3dFdSbDNJJNryaO4e4/KI9kYg53iBYt8l3tr3lAUUcjW1Ava7
-	 RKf4okMeFFbZXVgPTs5Ow0BxOsapouGq922nDv4RLj0FsUF3Jp8ex6wzilNumhDM+d
-	 Q28QVSYF24CQJ1wJh6EIszv4skSDl2XqG6s3UpZXWIpFKvwf7v54LizHjvSbNskhvj
-	 zx2RuDvubi9GvseAgKdBIPPtvfFY8HM5NhsQVi3TPYywhHP9URk/5ckf32burS9HGz
-	 xFRAxbZmCWQnA==
-Message-ID: <43e67e46-f93e-4cad-81c6-d489663aa7c0@kernel.org>
-Date: Thu, 27 Aug 2026 12:03:00 +0200
+	b=JH8jmiFBJ5LJ4rQruDP8uNR5wUgeZL1ae5Rk0qlMF4EodouTVkZfqDB4L11ruAQB+
+	 KQSJN8X58+W4verLaRSgLlkcltQetoFHrxooZz4qqsEB5fg5mV0tnp9x9ZaZdjHKM0
+	 Ds2ADVkdMhM9p+Mt5qY8bpy3VxNWeUzu7Lwa8J3IR/2usCX/ZccwN4cEKQh+QoW5Dh
+	 32ZbinaNYkDU/mPB2Tml8hcXRZSH3W3uj+g6qMfCdGVW9L2dYR3FOg9KFODsNF0tjq
+	 tQk5frNN2hmxadAXLIrZShMKX/56Sn2TyIrDeU6GXM7jK7GjShdZH7Hq/TPUI6DMXU
+	 rU1Le6j6dG7JA==
+Message-ID: <b2d596af-ec24-406f-bcd7-813db0aebeb5@kernel.org>
+Date: Thu, 27 Aug 2026 12:09:16 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v16 4/8] mfd: p3h2x4x: Add driver for NXP P3H2x4x i3c hub
- and on-die regulator
+Subject: Re: [PATCH v16 6/8] i3c: hub: Add support for the I3C interface in
+ the I3C hub
 To: Lakshay Piplani <lakshay.piplani@nxp.com>, linux-kernel@vger.kernel.org,
  linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
  krzk+dt@kernel.org, robh@kernel.org, conor+dt@kernel.org,
@@ -55,7 +55,7 @@ To: Lakshay Piplani <lakshay.piplani@nxp.com>, linux-kernel@vger.kernel.org,
  Frank.Li@nxp.com, lgirdwood@gmail.com
 Cc: vikash.bansal@nxp.com, priyanka.jain@nxp.com, aman.kumarpandey@nxp.com
 References: <20260826103819.1614843-1-lakshay.piplani@nxp.com>
- <20260826103819.1614843-5-lakshay.piplani@nxp.com>
+ <20260826103819.1614843-7-lakshay.piplani@nxp.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -101,7 +101,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  K9bCVaboTA2T77QYkRcRJYSsO1alGX0ome/hMLD1daXlkrNUp1HWa3K4iytLRXjCSIorWiGs
  n+q3krnpXu3TFkA8qtOFZMdnIiFuiq1yLT8hptsV5xh1TA2nsVvSYiaCr3q4s4BKjS/KrLDb
  qoxzw8ISjdUp4pA85vb6YLCmb39NgidD+7PmAr65lBNveIFynTgsja1rRQ4=
-In-Reply-To: <20260826103819.1614843-5-lakshay.piplani@nxp.com>
+In-Reply-To: <20260826103819.1614843-7-lakshay.piplani@nxp.com>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -119,28 +119,71 @@ Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 On 26/08/2026 12:38, Lakshay Piplani wrote:
+> +/**
+> + * i3c_hub_init() - Initialize hub context
+> + * @hub: Hub instance
+> + * @ops: Vendor callbacks
+> + * @hub_dev: I3C hub device
+> + */
+> +void i3c_hub_init(struct i3c_hub *hub,
+> +		  const struct i3c_hub_ops *ops,
+> +		  struct i3c_device *hub_dev)
+> +{
+> +	struct i3c_master_controller *parent;
+> +	unsigned int depth;
+> +
+> +	hub->ops = ops;
+> +	hub->hub_dev = hub_dev;
+> +	mutex_init(&hub->lock);
+> +
+> +	if (!IS_ENABLED(CONFIG_LOCKDEP))
+
+So without lockdep you do not initialize? Honestly, kerneldoc is useless
+here and explains nothing. Kerneldoc is pretty clear - you initialize
+hub context thus why hub context should be uninitialized without lockdep?
+
+> +		return;
+> +
+> +	if (WARN_ON_ONCE(!hub_dev || !hub_dev->desc))
+> +		return;
+
+How is this possible? Why panicking the machine?
 
 > +
-> +static const struct i3c_device_id p3h2x4x_i3c_ids[] = {
-> +	I3C_CLASS(I3C_DCR_HUB, NULL),
-> +	{ /* sentinel */ },
-> +};
-> +MODULE_DEVICE_TABLE(i3c, p3h2x4x_i3c_ids);
-> +
-> +static const struct i2c_device_id p3h2x4x_i2c_id_table[] = {
-> +	{ .name = "nxp-i3c-hub" },
-> +	{ /* sentinel */ }
-> +};
-> +MODULE_DEVICE_TABLE(i2c, p3h2x4x_i2c_id_table);
-> +
-> +static const struct of_device_id p3h2x4x_i2c_of_match[] = {
-> +	{ .compatible = "nxp,p3h2440", },
-> +	{ .compatible = "nxp,p3h2441", },
-> +	{ .compatible = "nxp,p3h2840", },
-> +	{ .compatible = "nxp,p3h2841", },
+> +	parent = i3c_dev_get_master(hub_dev->desc);
+> +	if (WARN_ON_ONCE(!parent))
+> +		return;
 
-So devices are fully compatible? Why isn't this expressed in the
-binding? Or explained in the commit msg?
+Why panicking here (WARN on panic)?
+
+> +
+> +	/*
+> +	 * The routing mutex has the same hub nesting depth as the virtual
+> +	 * controllers this hub exposes, so the parent controller is one level
+> +	 * shallower. Keying it once here, rather than per port, avoids
+> +	 * reclassifying the single shared routing mutex from a later port that
+> +	 * may already have used it.
+> +	 */
+> +	depth = i3c_hub_controller_depth(parent) + 1;
+> +	if (WARN_ONCE(depth > I3C_HUB_MAX_LOCK_DEPTH,
+> +		      "i3c-hub: routing lock depth %u exceeds lockdep support\n",
+> +		      depth))
+
+
+> +		depth = I3C_HUB_MAX_LOCK_DEPTH;
+> +
+> +	lockdep_set_class(&hub->lock, &i3c_hub_routing_lock_keys[depth - 1]);
+> +}
+> +EXPORT_SYMBOL_GPL(i3c_hub_init);
+> +
+> +const struct i3c_master_controller_ops *i3c_hub_master_ops(void)
+> +{
+> +	return &i3c_hub_master_ops_data;
+> +}
+> +EXPORT_SYMBOL_GPL(i3c_hub_master_ops);
+
+Do you really need a wrapper call over single variable? Can the i3c hub
+core code be NOT present when your I3C hub driver is buillin?
 
 
 Best regards,
