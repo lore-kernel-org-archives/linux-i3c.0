@@ -4,104 +4,146 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 913EBC61DB9
-	for <linux-i3c@archiver.kernel.org>; Thu, 27 Aug 2026 10:16:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B3520C61DBD
+	for <linux-i3c@archiver.kernel.org>; Fri, 28 Aug 2026 16:13:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=swJBWD6fI7XARX6TQapVkT1nrO/T5/zXZ4Lu6zd4JW4=; b=xZsXWrrN9tKREC
-	ENCcPFy9Yhp0gSN4UnxcZmHjZANS29dXipu7MpnAlFqd2XjQyPJAg2A3hyPsg9esJ578MpCKtVOcm
-	pRRIVko3jMr2DAZazdGUnswPUXHZDzTMkV35F7Mrf7GazhlPfus6q7iKpuKC1yooTAVxUcslQ23uJ
-	uidKPk1R+950qaM/FJpvk60zztHDgMr4Jy1scoUBt30qsddMefM77AxuQxRqp61AJwdQ4XCIhBFQc
-	2xWLnNFqyOzM9SXap5uLPiQLmwnK9LccYZHSZSyEkeKrtRHdP140FKZExf5rKLQPOeRuLFzDS16wZ
-	6lirePrF9SeQUY9Y4Vyw==;
+	List-Owner; bh=HzYdRPa64MeUWYxBbSY59EN1Vb1rt1ZjyHAmvI0WWeE=; b=De6g/Eu40s0C/Y
+	YrReVPJaT4xDB+g8m+FH5Oy0s7SPkFchcGA1lqx9Tx47jcXHhkSK78DhUkapOHW7FgiZO2TrwAC/u
+	yHc1vjt7zckUM+elIbmlkkI0vObxGXcO8pKd3hyMscRmGa0YTlXGRjSdVkY7C3/ZtFICta85ai2Vd
+	os8x+b/fxL2lEeZleSsfd4Ztp2xX+T445xIDF/nRHZx40hXs91oZpgf+nqNU7W/lbomd2SsYaXLbJ
+	M/4/9dhA+wcJ2U4viRGAQph4yly2vbghkRv7Q+y+XfAS+/mbEknsmPEx45ME8SLQOS+qjO3E6UEu/
+	flBWt7Wj5A1Ep8e76QNQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzXAE-00000003oSF-15L9;
-	Thu, 27 Aug 2026 10:16:54 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wzzD2-00000006BGU-1z42;
+	Fri, 28 Aug 2026 16:13:40 +0000
+Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wzXAD-00000003oS4-2R4Q
+	id 1wzzD0-00000006BF9-2OrU
 	for linux-i3c@lists.infradead.org;
-	Thu, 27 Aug 2026 10:16:53 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 165C041570;
-	Thu, 27 Aug 2026 10:16:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AE6341F000E9;
-	Thu, 27 Aug 2026 10:16:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1787825813;
-	bh=GSFSKsvDnlEU0y2eCld40uwcZtAwLvmq/TjVFtBgspM=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=bP0BDM7vNHP/mN3GiCBJ/mfXhaWrYj+52OBTl+4mUAeGaEtWDRXwES3i9V3gA9a6U
-	 dQsmgDQC7n0cwIhJkxjsNGhQPmPhUeKyrwl6DSAs0JI+qk7hhV7W6aOuRFi6Okju8V
-	 ZKkovTImFNQ7qRTI9IxOE/J/9CjwHUWwU0KIP/Lu4oXzvh4uZWNRwYev4w0n8LZ048
-	 RNdUGvLVffUeZSzb1XnYaVarFts3QLevcR0gFfpGvyZUsrD039AbDb4ZnidQlSfLjF
-	 lP/fpif7S8rpYEUSce41duCYIKhV9IaXHTv4L2SIOKe46KmB6YiiQKO4kEIO9Qi5zF
-	 URlhqA7LmR4Fg==
-Message-ID: <91090730-b8b5-4346-a151-c11489abf2b3@kernel.org>
-Date: Thu, 27 Aug 2026 12:16:46 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v16 7/8] i3c: hub: p3h2x4x: Add support for NXP P3H2x4x
- I3C hub functionality
-To: Lakshay Piplani <lakshay.piplani@nxp.com>, linux-kernel@vger.kernel.org,
- linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
- krzk+dt@kernel.org, robh@kernel.org, conor+dt@kernel.org,
- devicetree@vger.kernel.org, broonie@kernel.org, lee@kernel.org,
- Frank.Li@nxp.com, lgirdwood@gmail.com
-Cc: vikash.bansal@nxp.com, priyanka.jain@nxp.com, aman.kumarpandey@nxp.com
+	Fri, 28 Aug 2026 16:13:39 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=sdGhd8Xh0RnIBdht1mHEpj0nGHktC6ebUVzBMKYCHwRw7axqbweE31CZXPWnYb0HnODwBE264AoTfjZTsznTPeylZv3f4RRBUesAm1fi6pRo8V0E/GFormkCySBg8UQCicUi7rn+Kj/n84XLZs8WHhg8YgNa7l81IBfWBrg6oWv/zesKyfIlyfS2umxmnrEgsS1kQWcT4cJlPpOA67WIvMyZrY5I1Kgqv8FeMcpCvAbTk4d6R98Iv3FelLBqynxGIuqROj68e6tGeAyfwutpv1LRjLPF3QCymHFYLgzdrDwMYswzPH3uha84ozjApc+O6uismEEoXaFrvK7fgpPFsw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=YbhUIMonwNPVBH4nlx2brgITEB8cNTxn1TfSuS86POI=;
+ b=ynXu8Cr6S/LN7W6uxv2xsyoC5TlO1Os1lo1+OS9xXCCSzrNJxs2+U6P5/U3ecd94DH537b3uoxzctEM/d4fJ8OejyAyxJ4WJg+omLg91aZABjEq0FAr6B9AkuisEEI5ljTWoRWT15Ts+UnOFXwGYdSkodZd4OU5yT6vaIq+irouEmkXa/2dlgIvD/at3osPLjfZYjb82KRhQmvNDF9bMM78icVz64YlN4be3ZBW+u918TkSrnO2PiIVl+PkJzYM7V/2n5DRmA+aNdoyfTDuZTT0zy/cK+GLphOwlxyoVQiyIhdOgzEy/PtllSSl/5VFgBFK5whg+EXrpgXjPFPJ7iQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=YbhUIMonwNPVBH4nlx2brgITEB8cNTxn1TfSuS86POI=;
+ b=PQTWzubq4e5Qo6ras+hKKdVQAeXrAIxRCzxBufkblqDNc4maKlHyj1TEu1TRoABPSRSBmsmPI3/J1JceV/hZCuJ85WWrCG4ONdbMXfwjEu4AdVdFKY/LtNgDcvx3KrMVp8FGH5VxD0BQVyFwp07AmRaoXZsn74IgKHhDUBm9l7+Yrs1Tcbpi/qT5jtQkVRoDTTpyGbeoVJAYFqE2/xLkUW5RkgZZRqeFxatuINg7PiK/dGx41hdexnk7fnx7d+73JCfnnzmCHz5SQrxQ5zaQCWYgQSPjf3jBGGKbdHsxAmVC2s1eTSIf+3EyXgRi0UFNgPMmc95q6Jzs6tIJD7FGOg==
+Received: from AS4PR04MB9362.eurprd04.prod.outlook.com (2603:10a6:20b:4e7::9)
+ by AM0PR04MB12122.eurprd04.prod.outlook.com (2603:10a6:20b:747::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.360.11; Fri, 28 Aug
+ 2026 16:13:32 +0000
+Received: from AS4PR04MB9362.eurprd04.prod.outlook.com
+ ([fe80::abe7:4a6e:a51:baf0]) by AS4PR04MB9362.eurprd04.prod.outlook.com
+ ([fe80::abe7:4a6e:a51:baf0%6]) with mapi id 15.21.0360.006; Fri, 28 Aug 2026
+ 16:13:31 +0000
+From: Lakshay Piplani <lakshay.piplani@nxp.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>, "linux-kernel@vger.kernel.org"
+	<linux-kernel@vger.kernel.org>, "linux-i3c@lists.infradead.org"
+	<linux-i3c@lists.infradead.org>, "alexandre.belloni@bootlin.com"
+	<alexandre.belloni@bootlin.com>, "krzk+dt@kernel.org" <krzk+dt@kernel.org>,
+	"robh@kernel.org" <robh@kernel.org>, "conor+dt@kernel.org"
+	<conor+dt@kernel.org>, "devicetree@vger.kernel.org"
+	<devicetree@vger.kernel.org>, "broonie@kernel.org" <broonie@kernel.org>,
+	"lee@kernel.org" <lee@kernel.org>, Frank Li <frank.li@nxp.com>,
+	"lgirdwood@gmail.com" <lgirdwood@gmail.com>
+CC: Vikash Bansal <vikash.bansal@nxp.com>, Priyanka Jain
+	<priyanka.jain@nxp.com>, Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+Subject: RE: [EXT] Re: [PATCH v16 4/8] mfd: p3h2x4x: Add driver for NXP
+ P3H2x4x i3c hub and on-die regulator
+Thread-Topic: [EXT] Re: [PATCH v16 4/8] mfd: p3h2x4x: Add driver for NXP
+ P3H2x4x i3c hub and on-die regulator
+Thread-Index: AQHdNUcOH4x/3jOMuUuWRgQstv9oGbaxq+0AgAH2kqA=
+Date: Fri, 28 Aug 2026 16:13:30 +0000
+Message-ID: <AS4PR04MB93626CB21700033FA2DD8AF8FBAC2@AS4PR04MB9362.eurprd04.prod.outlook.com>
 References: <20260826103819.1614843-1-lakshay.piplani@nxp.com>
- <20260826103819.1614843-8-lakshay.piplani@nxp.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
+ <20260826103819.1614843-5-lakshay.piplani@nxp.com>
+ <43e67e46-f93e-4cad-81c6-d489663aa7c0@kernel.org>
+In-Reply-To: <43e67e46-f93e-4cad-81c6-d489663aa7c0@kernel.org>
+Accept-Language: en-US
 Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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
-In-Reply-To: <20260826103819.1614843-8-lakshay.piplani@nxp.com>
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+msip_labels: MSIP_Label_0d9c909a-577b-4ba2-96de-69ada94b137a_Enabled=True;MSIP_Label_0d9c909a-577b-4ba2-96de-69ada94b137a_SiteId=686ea1d3-bc2b-4c6f-a92c-d99c5c301635;MSIP_Label_0d9c909a-577b-4ba2-96de-69ada94b137a_SetDate=2026-08-28T16:01:46.0000000Z;MSIP_Label_0d9c909a-577b-4ba2-96de-69ada94b137a_Name=NXP
+ Confidential;MSIP_Label_0d9c909a-577b-4ba2-96de-69ada94b137a_ContentBits=3;MSIP_Label_0d9c909a-577b-4ba2-96de-69ada94b137a_Method=Standard
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nxp.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: AS4PR04MB9362:EE_|AM0PR04MB12122:EE_
+x-ms-office365-filtering-correlation-id: 8af3a61a-4e12-401d-e9b1-08df051f4d02
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|19092799006|23010399003|376014|7416014|366016|1800799024|6133799003|10067099003|56012099006|4143699003|11063799006|18002099003|22082099003|921020|38070700021;
+x-microsoft-antispam-message-info: GzGZerf4+9uYH3YxiTHZ6XpJozyF4axGS+w1cEeB4CELPSyODyuuPJYgflic0x0PPvKAKRnXBy5icZYZdg6fAZ0yY2kPsyfyva1MdO+i+71GWpAo9Hr4PxJOhCekz8xi3/uvzxWxIQj3KYOYrzZrHHuoirLkLtv3BO1JLubfg5pdOCraC0Vb1139zwgvk+RYKeEl1aHZxZU9UsiVE1VWJYpwtrtrQ1aM+cUYvEpmbgtjW1jRhihmvYsLlVW4zVY1V8iYNBRu7ffrroi0ykK9hW+KtWPFWMhxodG2WAPV+PK+uQE2rNFjB6I9FnAk/08Ge6Qmi7G6LMrPuNcfIGzPLTC5fBC7h7tX3CqkkVgQJO+VRf4PymqCEdPaTYXHD9Pw3VZylLQpDMM54UzEA7vswTOS+8txxIxHkruqt9jrFLP4GGNgwkT4RtaZrcd1HeE7vhtys04GG7HdiNvMqYilkiCh0u2RNkNT/80KwLP5Oz0nkCciAwUdg32VsO4yH4ZlPgLSBuJqjOat0k0Rh4rl8RTSH7WQEKg1dsc4a8tu++SZ62JBb35aDTIEV73+p/icfuKP3VrfawlzAupaWMkHDu45G/aVdwHjlp9pJ6beEghk4Ophz5vE6jZCjJs2DRkCM+pPegXse16cEpjBgkoFSspYoMRGl/cdruEXwt63vTWtkXc2dRhHwoFJwO7cx/hO67x8ngxGqHUP8tidfGJ7DOwrrFooO+XraSPRJ5tKNc0ld0DIbvuT8eW69/jo27cR
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:AS4PR04MB9362.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(23010399003)(376014)(7416014)(366016)(1800799024)(6133799003)(10067099003)(56012099006)(4143699003)(11063799006)(18002099003)(22082099003)(921020)(38070700021);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?ZllpS2pYODUzRGNpU1p5SFJFWSt3RnBGbDlTOURBYmJlajNDVWlSZzRqd3Rv?=
+ =?utf-8?B?THpxVEhueStIR1pGRzRpdVRUT0d1V3FocmJ0Z2xtSk9uR3l0OWZRd3lTYVps?=
+ =?utf-8?B?RTdSN3gzYklEU0tPTUNhM3RUUTBia01WNDZ1Y0p3Q1FaTSt3dXNidmRPZVNx?=
+ =?utf-8?B?bG9DZEEyemNTNitES1Brb0xyV1BVTFg1R2dkaVVwQ0E0VE4xR0FidlJ6L29W?=
+ =?utf-8?B?eUwrZ3U3RHAvSlNIWDRXR2Z5emtRNUxGckJHSjZlamtaU3JvUFVkcXJobnIx?=
+ =?utf-8?B?N0YveExwV0lkVmR6dUl3cUh6T0NrMUNQUldUaDQ4V2JMZ25JbmtwUk9LL3U3?=
+ =?utf-8?B?SVBoL25yUWt0SkNVV2RJVXhoK0RRU2g1M1lQbERiOE5nNytNRit4QWdVRk5W?=
+ =?utf-8?B?L05FM1ViMmw4VEhIcExFbEQrRU11TmxqVXJkWDdudWtqOE5oVlErVmlscTlm?=
+ =?utf-8?B?ay82cFUySHpWbXhmcDYyUUt6cnI3YU9CTWFzTS9jZytkVDNCV1hkTlpkeXF5?=
+ =?utf-8?B?MGRuNDJuR0VoemswbU9ZRXJYdkNUNEx6WUhXRFpaUmJvSDJiU1AvV1BJYmFw?=
+ =?utf-8?B?RkNKTmRBZXliSm9SSG0xd3dpbE5wRWcxUlZsSDFsUTZCR1ZZM0loUGw0N3hV?=
+ =?utf-8?B?Qkx2WTgreGx5R2h5SHhqbThySUpWY3hmZkQ2c3VmdkhHTzJ3RzVvZ1JWUklh?=
+ =?utf-8?B?dUxUTnBxYkRrakRxMVE3THJHR1pQRHFHSStHZks1aEx1WjdLdFlycVpITDZG?=
+ =?utf-8?B?Y2JtOFpBNXkrVU5DL240b0U3RGlUOFRNMzNLdFNWNjRpNGlZcURGYkZ0S3JJ?=
+ =?utf-8?B?cTVOVlVnMktrOXhpTDJ3TzBNZlhBdDFzOVNkaWg4ek9HQUFrTXd3eVR1N0ZS?=
+ =?utf-8?B?b1lzLzVVb1hZU3hoTFdKb0JIbTlONm0zQWVjU1lONjA4SjI4SCtOdjE1Vy9M?=
+ =?utf-8?B?UjJsQW5MdXJSSC9IQU1hb1Bldm9CM1I4endvQkxtRnh1VVdjUnNZTFowVW94?=
+ =?utf-8?B?MEZlcXhkS3BNNXBveGNkeXpHWjl0Y0VyWHNVL3ZWM3hKRFU1R3BiRTNTZGV3?=
+ =?utf-8?B?Rnp2bXdEb0tRd21OQ0xWZUJ3YTBOTVp3YVlpYWszQTZ0em5iTW5tUy9CdWQv?=
+ =?utf-8?B?TXNiejRvTFNKQzl6WnVwanFmbUE4MnVYVzR3VkRadzNxTGxpN1FFTFBGY0JH?=
+ =?utf-8?B?NHVzcnVBUjhKQ2hBYTNVM0p3ZjZaeTJPZXlKdTJKMVdmYjR0Z3hNU2QxdUJw?=
+ =?utf-8?B?MWpRT3FTSUh3NnhNaVJIUjRaMjkwRkpRVzZYMFJDYktydHpEZmJtWEJGNXhv?=
+ =?utf-8?B?dkdnR3RmaUplazNmMTlvV1BpNCtJMERhSnA1Z0RmUzNseFhKVHRoYVJOekYw?=
+ =?utf-8?B?SWJneWlVd2NUVlA4MGtZZlYzRDJhZld0K04vWnlHM3FuTHVoMC9UaDA2ZlRn?=
+ =?utf-8?B?SWI1RjBQL1BVWGUwblNlcXI5U2c3bWdDbHV5UHNsV2hxTkhaLzhkZW1pZ1RE?=
+ =?utf-8?B?K0hNR1Y4MnlyWjc4S3pYR21LbGJOSG4rdUJmTndoSWVZK3JzaEhJUlJmTjU0?=
+ =?utf-8?B?UW11eExoMHlQcFVLOEtZYlpLTFVoTEY1bmkzaXZtUFVTMjNyb2dHMFFqZXlm?=
+ =?utf-8?B?aGJoMFh3QXE0djVmSEhqKy9CSG03a20xajJvRk9lYmg2REpJcTYxUjYyTThP?=
+ =?utf-8?B?cWowYmx1dUJNbi9udm10WHFsWFg2TGVaNHROODJXckV6YkRISFh1NHhZSEpN?=
+ =?utf-8?B?dlJlcmhIME53REZvYlhTQ0VBR0dLTEx2cDNGNDFnMlpUNEc4cXd6RTNIMHVI?=
+ =?utf-8?B?RDFyM0Mwdy9henlvRUo0aC84UStQMFQzUWJyTWYxd3NtUWxwY2pzWkJONzI2?=
+ =?utf-8?B?c3JYZ1FwQ29hdmJGdVFoblZXODRSQ0NhV3E4dkwxVE96dkYySmdDZVlXMTd0?=
+ =?utf-8?B?cCtPZm9xMmtoRXNJRWhyeUROQ0JOY3FBQWoxeGg5WVpHUUtwK1B3U1BLR3ZJ?=
+ =?utf-8?B?QkhJV0tkMkpIY1lZOWQrZnQyRVlkRFJmSVhicUhPWmpTZEVldGRWbVRBbENw?=
+ =?utf-8?B?ajI0anNnQTdKUW02YjU1cUd3VVdJUG1aaWpnTjFvL2ZodGFFN1Y5ZXBrRkgv?=
+ =?utf-8?B?ZGk3VmhkTUgwcTFXa0FOVmpkbzV5dWc5MUM0OE9TaUlkYkZSNTlvcUtsYUc0?=
+ =?utf-8?B?ZkhRbTluZ3lXWEpFa3ZybGNCd2E5emxHdGd1aWR4US9uVFRhdkdmNzYzcU91?=
+ =?utf-8?B?U3VaY0xsaXFYbjRRSzRhTjg0QlpTSzdrOTdVNmxWZmRiUEJOV24zbWxXY0lB?=
+ =?utf-8?B?QWh3WndZSjV4MWE5VFNSM3lUY1dBOVh4Wmkrem9jaFkrRURETEx1dz09?=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: AS4PR04MB9362.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8af3a61a-4e12-401d-e9b1-08df051f4d02
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Aug 2026 16:13:30.3767
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: CmgrKPwY/tNU3KBBYDRtknCXV3Y5cNqS3SGDuhmD5OZ5nCkp+eDl30zX1YN+LMFQ+HicLpZCOFL+RIVmM4UmYw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB12122
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260828_091338_630227_ADD065A0 
+X-CRM114-Status: GOOD (  11.56  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -118,301 +160,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 26/08/2026 12:38, Lakshay Piplani wrote:
-> +
-> +static int p3h2x4x_configure_ldo(struct device *dev)
-> +{
-> +	static const char * const supplies[] = {
-> +		"vcc1",
-> +		"vcc2",
-> +		"vcc3",
-> +		"vcc4"
-> +	};
-> +	int ret, i;
-> +
-> +	for (i = 0; i < ARRAY_SIZE(supplies); i++) {
-> +		ret = devm_regulator_get_enable_optional(dev, supplies[i]);
-> +		if (ret && ret != -ENODEV)
-> +			return dev_err_probe(dev, ret, "Failed to enable %s\n",
-> +					     supplies[i]);
-> +	}
-> +
-> +	/* This delay is required for the regulator to stabilize its output voltage */
-> +	fsleep(5000);
+Hi Krzysztof,
 
-Instead your regulators miss ramp delays.
+Thanks for the review.
 
-> +
-> +	return 0;
-> +}
+> > +static const struct of_device_id p3h2x4x_i2c_of_match[] = {
+> > +     { .compatible = "nxp,p3h2440", },
+> > +     { .compatible = "nxp,p3h2441", },
+> > +     { .compatible = "nxp,p3h2840", },
+> > +     { .compatible = "nxp,p3h2841", },
+>
+> So devices are fully compatible? Why isn't this expressed in the binding? Or
+> explained in the commit msg?
+>
 
+Yes, from this driver's point of view. All four share the register
+interface used by the driver; the port count is read at runtime from
+DEV_CAPAB. The x0/x1 variants differ in their default/debug power-up
+configuration, and the driver applies the DT configuration during probe.
 
-...
+I will explain this in the binding description and the commit message.
 
-> +
-> +static void p3h2x4x_get_target_port_dt_conf(struct device *dev,
-> +					    const struct device_node *node)
-> +{
-> +	struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub = dev_get_drvdata(dev);
-> +	struct p3h2x4x *p3h2x4x = dev_get_drvdata(dev->parent);
-> +	u64 tp_port;
-> +
-> +	for_each_available_child_of_node_scoped(node, dev_node) {
+Thanks
+Lakshay
 
-Why do you need scoped loop?
-
-> +		if (of_property_read_reg(dev_node, 0, &tp_port, NULL))
-> +			continue;
-> +
-> +		if (tp_port < p3h2x4x->num_target_ports) {
-> +			if (p3h2x4x_i3c_hub->tp_bus[tp_port].of_node) {
-> +				dev_warn(dev, "Duplicate target port %llu in DT\n", tp_port);
-> +				continue;
-> +			}
-> +
-> +			p3h2x4x_i3c_hub->tp_bus[tp_port].of_node = of_node_get(dev_node);
-> +			p3h2x4x_i3c_hub->tp_bus[tp_port].tp_mask = P3H2X4X_SET_BIT(tp_port);
-> +			p3h2x4x_i3c_hub->tp_bus[tp_port].p3h2x4x_i3c_hub = p3h2x4x_i3c_hub;
-> +			p3h2x4x_i3c_hub->tp_bus[tp_port].tp_port = tp_port;
-> +		}
-> +	}
-> +}
-> +
-> +static int p3h2x4x_parse_tp_dt_settings(struct device *dev,
-> +					const struct device_node *node,
-> +					struct tp_configuration tp_config[])
-> +{
-> +	struct p3h2x4x *p3h2x4x = dev_get_drvdata(dev->parent);
-> +	u64 id;
-> +	int ret;
-> +
-> +	for_each_available_child_of_node_scoped(node, tp_node) {
-> +		enum p3h2x4x_tp_mode mode;
-> +
-> +		/*
-> +		 * Only "i3c" and "smbus" children describe target ports. Skip any
-> +		 * other child (for example the MFD "regulators" container), which
-> +		 * has no "reg" property.
-> +		 */
-> +		if (of_node_name_eq(tp_node, "i3c"))
-> +			mode = P3H2X4X_TP_MODE_I3C;
-> +		else if (of_node_name_eq(tp_node, "smbus"))
-> +			mode = P3H2X4X_TP_MODE_SMBUS;
-> +		else
-> +			continue;
-> +
-> +		ret = of_property_read_reg(tp_node, 0, &id, NULL);
-> +		if (ret)
-> +			return dev_err_probe(dev, ret,
-> +					     "Failed to read reg for %pOF\n",
-> +					     tp_node);
-> +
-> +		if (id >= p3h2x4x->num_target_ports)
-> +			return dev_err_probe(dev, -EINVAL,
-> +					     "Invalid target port index %llu\n",
-> +					     id);
-> +
-> +		tp_config[id].mode = mode;
-> +		tp_config[id].pullup_en =
-> +			of_property_read_bool(tp_node, "nxp,pullup-enable");
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int p3h2x4x_get_hub_dt_conf(struct device *dev,
-> +				   const struct device_node *node)
-> +{
-> +	struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub = dev_get_drvdata(dev);
-> +
-> +	of_property_read_u32(node, "nxp,tp0145-pullup-ohms",
-> +			     &p3h2x4x_i3c_hub->hub_config.tp0145_pullup);
-> +	of_property_read_u32(node, "nxp,tp2367-pullup-ohms",
-> +			     &p3h2x4x_i3c_hub->hub_config.tp2367_pullup);
-> +	of_property_read_u32(node, "nxp,cp0-io-strength-ohms",
-> +			     &p3h2x4x_i3c_hub->hub_config.cp0_io_strength);
-> +	of_property_read_u32(node, "nxp,cp1-io-strength-ohms",
-> +			     &p3h2x4x_i3c_hub->hub_config.cp1_io_strength);
-> +	of_property_read_u32(node, "nxp,tp0145-io-strength-ohms",
-> +			     &p3h2x4x_i3c_hub->hub_config.tp0145_io_strength);
-> +	of_property_read_u32(node, "nxp,tp2367-io-strength-ohms",
-> +			     &p3h2x4x_i3c_hub->hub_config.tp2367_io_strength);
-> +
-> +	return p3h2x4x_parse_tp_dt_settings(dev, node,
-> +					    p3h2x4x_i3c_hub->hub_config.tp_config);
-> +}
-> +
-> +static void p3h2x4x_default_configuration(struct device *dev)
-> +{
-> +	struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub = dev_get_drvdata(dev);
-> +	int tp_count;
-> +
-> +	p3h2x4x_i3c_hub->hub_config.tp0145_pullup = P3H2X4X_DFT_TP_PULLUP_OHMS;
-> +	p3h2x4x_i3c_hub->hub_config.tp2367_pullup = P3H2X4X_DFT_TP_PULLUP_OHMS;
-> +	p3h2x4x_i3c_hub->hub_config.cp0_io_strength = P3H2X4X_DFT_IO_STRENGTH_OHMS;
-> +	p3h2x4x_i3c_hub->hub_config.cp1_io_strength = P3H2X4X_DFT_IO_STRENGTH_OHMS;
-> +	p3h2x4x_i3c_hub->hub_config.tp0145_io_strength = P3H2X4X_DFT_IO_STRENGTH_OHMS;
-> +	p3h2x4x_i3c_hub->hub_config.tp2367_io_strength = P3H2X4X_DFT_IO_STRENGTH_OHMS;
-> +
-> +	for (tp_count = 0; tp_count < P3H2X4X_TP_MAX_COUNT; ++tp_count)
-> +		p3h2x4x_i3c_hub->hub_config.tp_config[tp_count].mode = P3H2X4X_TP_MODE_I3C;
-> +}
-> +
-> +static void p3h2x4x_unregister_smbus_adapters_action(void *data)
-> +{
-> +	p3h2x4x_unregister_smbus_adapters(data);
-> +}
-> +
-> +static void p3h2x4x_put_target_port_of_nodes(void *data)
-> +{
-> +	struct p3h2x4x_i3c_hub_dev *hub = data;
-> +	int tp;
-> +
-> +	for (tp = 0; tp < P3H2X4X_TP_MAX_COUNT; tp++) {
-> +		of_node_put(hub->tp_bus[tp].of_node);
-> +		hub->tp_bus[tp].of_node = NULL;
-> +	}
-> +}
-> +
-> +static void p3h2x4x_clear_i3c_hub_priv(void *data)
-> +{
-> +	struct p3h2x4x *p3h2x4x = data;
-> +
-> +	/* Drop the IBI handler backpointer; see the ordering note at the registration site. */
-> +	p3h2x4x->i3c_hub_priv = NULL;
-> +}
-> +
-> +static int p3h2x4x_i3c_hub_probe(struct platform_device *pdev)
-> +{
-> +	struct p3h2x4x *p3h2x4x = dev_get_drvdata(pdev->dev.parent);
-> +	struct p3h2x4x_i3c_hub_dev *p3h2x4x_i3c_hub;
-> +	struct device *dev = &pdev->dev;
-> +	struct device_node *node;
-> +	int ret, i;
-> +
-> +	p3h2x4x_i3c_hub = devm_kzalloc(dev, sizeof(*p3h2x4x_i3c_hub), GFP_KERNEL);
-> +	if (!p3h2x4x_i3c_hub)
-> +		return -ENOMEM;
-> +
-> +	p3h2x4x_i3c_hub->regmap = p3h2x4x->regmap;
-> +	p3h2x4x_i3c_hub->dev = dev;
-> +
-> +	platform_set_drvdata(pdev, p3h2x4x_i3c_hub);
-> +	device_set_of_node_from_dev(dev, dev->parent);
-> +
-> +	p3h2x4x_default_configuration(dev);
-> +
-> +	ret = devm_mutex_init(dev, &p3h2x4x_i3c_hub->etx_mutex);
-> +	if (ret)
-> +		return ret;
-> +
-> +	for (i = 0; i < P3H2X4X_TP_MAX_COUNT; i++) {
-> +		ret = devm_mutex_init(dev, &p3h2x4x_i3c_hub->tp_bus[i].port_mutex);
-> +		if (ret)
-> +			return ret;
-> +	}
-> +
-> +	/* get hub node from DT */
-> +	node = dev_of_node(dev);
-> +	if (!node)
-> +		return dev_err_probe(dev, -ENODEV, "No Device Tree entry found\n");
-> +
-> +	ret = p3h2x4x_get_hub_dt_conf(dev, node);
-> +	if (ret)
-> +		return ret;
-> +
-> +	p3h2x4x_get_target_port_dt_conf(dev, node);
-> +
-> +	ret = devm_add_action_or_reset(dev,
-> +				       p3h2x4x_put_target_port_of_nodes,
-> +				       p3h2x4x_i3c_hub);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = p3h2x4x_configure_hw(dev);
-> +	if (ret)
-> +		return dev_err_probe(dev, ret, "Failed to configure the HUB\n");
-> +
-> +	/* Register virtual I3C master controllers for I3C target ports */
-> +	if (p3h2x4x->i3cdev) {
-> +		p3h2x4x_i3c_hub->i3cdev = p3h2x4x->i3cdev;
-> +		/*
-> +		 * Publish the hub context in the MFD parent struct rather than
-> +		 * via i3cdev_set_drvdata(), which would overwrite the parent's
-> +		 * drvdata (struct p3h2x4x) that the IBI handler and other MFD
-> +		 * callbacks rely on. Publish it before p3h2x4x_tp_i3c_algo()
-> +		 * enables IBI, since the IBI handler dereferences it.
-> +		 */
-> +		p3h2x4x->i3c_hub_priv = p3h2x4x_i3c_hub;
-> +
-> +		/*
-> +		 * Register the clear action before enabling IBI so that, on the
-> +		 * devm LIFO unwind (probe failure or removal), the pointer is
-> +		 * cleared only after IBI has been disabled and freed.
-> +		 */
-> +		ret = devm_add_action_or_reset(dev, p3h2x4x_clear_i3c_hub_priv,
-> +					       p3h2x4x);
-> +		if (ret)
-> +			return ret;
-> +
-> +		ret = p3h2x4x_tp_i3c_algo(p3h2x4x_i3c_hub);
-> +		if (ret)
-> +			return dev_err_probe(dev, ret, "Failed to register i3c bus\n");
-> +	}
-> +
-> +	/* Register virtual I2C adapters for SMBus target ports */
-> +	ret = p3h2x4x_tp_smbus_algo(p3h2x4x_i3c_hub);
-> +	if (ret)
-> +		return dev_err_probe(dev, ret, "Failed to add i2c adapter\n");
-> +
-> +	ret = devm_add_action_or_reset(dev,
-> +				       p3h2x4x_unregister_smbus_adapters_action,
-> +				       p3h2x4x_i3c_hub);
-> +	if (ret)
-> +		return ret;
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct platform_device_id p3h2x4x_i3c_hub_id[] = {
-> +	{ "p3h2x4x-i3c-hub" },
-
-Use named initializers. In every patch of yours.
-
-> +	{ }
-> +};
-
-..
-
-
-> +
-> +/**
-> + * p3h2x4x_tp_i3c_algo - Register I3C virtual masters for I3C target ports.
-> + * @p3h2x4x_hub: p3h2x4x device structure.
-> + * Return: 0 in case of success, negative error code on failure.
-> + */
-> +int p3h2x4x_tp_i3c_algo(struct p3h2x4x_i3c_hub_dev *p3h2x4x_hub)
-> +{
-> +	struct i3c_master_controller *parent = i3c_dev_get_master(p3h2x4x_hub->i3cdev->desc);
-> +	struct p3h2x4x *p3h2x4x = dev_get_drvdata(p3h2x4x_hub->dev->parent);
-> +	u8 tp, ntwk_mask = 0;
-> +	int ret;
-> +
-> +	p3h2x4x_hub->hub = devm_kzalloc(p3h2x4x_hub->dev,
-> +					sizeof(*p3h2x4x_hub->hub),
-> +					GFP_KERNEL);
-> +
-
-In multiple places you added blank lines between the call and if()
-check. Don't.
-
-> +	if (!p3h2x4x_hub->hub)
-> +		return -ENOMEM;
-
-
-Best regards,
-Krzysztof
-
+NXP Confidential
 -- 
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
