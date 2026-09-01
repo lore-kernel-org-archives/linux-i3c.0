@@ -4,55 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 61BBBC624C6
-	for <linux-i3c@archiver.kernel.org>; Mon, 31 Aug 2026 17:40:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EF6D9C624CF
+	for <linux-i3c@archiver.kernel.org>; Tue,  1 Sep 2026 11:35:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0Iczh7dfdTYa+u4w556jNS7mrSwhvkZIubkz6WaLGZs=; b=LmKuDodF4j9HXS
-	v+NC6SoxnHYc4S+6FeXPMw3O48q+penhpKFPSs3nLY3RsTe2kIy97DFO0MJNxfdwzVHtLPUL5g6DS
-	GTLziUwWypetQ4gSjvL4rZUcibSStakXV7sVUj2sPfmd5lVySP+bC74xTKbEc5rXZv1dQcvFLxDcf
-	E8Vrn+ugOpBNhfbWILbUGNRXlZ+EDuMmJ1VbmEtb2r3+cAnNArPphbQK4EyezcGyS5atAwsLTlXQD
-	Tj4va0XWMlXYpS6goqgy9NwW4uo8zhFNCqdrFMVsLWwPpNYWihuG2decAp8i1knJ7hjy2gyI8lIxU
-	El0BoetKmBufmymN8BmA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:CC:To:MIME-Version:Message-ID:Date:
+	Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=gntvOQlKfWu0tG6kULrDsXdiTwuYd6wWj9F1vZYfbe0=; b=mTS3vbTTiADTxJ
+	5502dPpvigxq3iP8DSnhABueTQDKPj5DIsFS3EG+M6I7GfyTmTXUuDjOBXDZN1Un/PhX9EAvbvM/F
+	iM7U1cRWKpaa2/7pTiElW1dkvs8tEye8MZczqBRetwBvDHIgu6Nh2FtInSqJhDsg60IHbqYIYj1bF
+	qQFN5lIx+xMBotnYZz4Z/rNoR05/ezZWRFBcvW4UnkdQ4X7eTAgBOzoPJFzIyWm+XNxTIq1ZPLEIj
+	6rtjHhmbYPg6Rpd8hlu6Gb/Ckt7j6BmUUDYI/oGaspZb7XFini/yLrvV58hq/2vg3lZgfhKJEjsUw
+	fL+d3LGFy4v+bMUDkgrg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x15zZ-0000000ADJS-3mJu;
-	Mon, 31 Aug 2026 17:40:21 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1x1MmQ-0000000BhV8-2KkK;
+	Tue, 01 Sep 2026 11:35:54 +0000
+Received: from mail.aspeedtech.com ([211.20.114.72] helo=twmbx01.aspeedtech.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x15zZ-0000000ADJ8-18ka
-	for linux-i3c@lists.infradead.org;
-	Mon, 31 Aug 2026 17:40:21 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id C97014019C;
-	Mon, 31 Aug 2026 17:40:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6033B1F000E9;
-	Mon, 31 Aug 2026 17:40:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788198020;
-	bh=26BF7/QGqh5Yc3HSL4QwvYiIw/xmbbyhjQI8a5/gRFw=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=NiEszkvczRW95ILt+5FqPNAXNjkBkoK0rMehGADLlmFsyr8itBcvt7WmCHAv3fI6/
-	 6TM/5hnvezO6JZy2yORK/OAraubV8JBOJs0wB2FHCopseLeLuB0zPdPTn/kFumOYpF
-	 zQRkQxN4FWZu1zgq8jQjVX5SkVFCcWaEdzMkWVxg5DJ/6T1koXBlqfsTNXdJJVHliT
-	 MmM0gkj9oXFBpKlvl7nKA0rYxQggHVrwLxM3dKoaxtX+5hvLzv01vtby+rp3dvx1eL
-	 RITUcdPJeQe3gZqJRC5Pl3ywR9BIGOUYucMOYt2DZYYmCUao6e2UsWBYvT4WMQVQxS
-	 ihzWOJryK7Brg==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH AUTOSEL 6.18] i3c: master: svc: Prevent IRQ storm from
- false SLVSTART on NPCM845
-To: "Sasha Levin" <sashal@kernel.org>
-Cc: linux-i3c@lists.infradead.org, Frank.Li@kernel.org, imx@lists.linux.dev, "Alexandre
- Belloni" <alexandre.belloni@bootlin.com>
-In-Reply-To: <20260831133314.4125787-647-sashal@kernel.org>
-References: <20260831133314.4125787-1-sashal@kernel.org>
- <20260831133314.4125787-647-sashal@kernel.org>
-Date: Mon, 31 Aug 2026 17:40:19 +0000
-Message-Id: <20260831174020.6033B1F000E9@smtp.kernel.org>
+	id 1x1MmN-0000000BhTz-1wsP;
+	Tue, 01 Sep 2026 11:35:53 +0000
+Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
+ (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Tue, 1 Sep
+ 2026 19:35:38 +0800
+Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
+ (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
+ Transport; Tue, 1 Sep 2026 19:35:38 +0800
+From: Billy Tsai <billy_tsai@aspeedtech.com>
+Subject: [PATCH 0/8] i3c: mipi-i3c-hci: Add Aspeed AST2700 support
+Date: Tue, 1 Sep 2026 19:35:27 +0800
+Message-ID: <20260901-b4-i3c-hci-ast2700-v1-0-19909e7cbd7e@aspeedtech.com>
+MIME-Version: 1.0
+X-B4-Tracking: v=1; b=H4sIAH+4lmoC/x3MPQqAMAxA4atIZgNpLBa8ijj0J2oWlVZEEO9uc
+ fyG9x4oklUKDM0DWS4tum8Vpm0grn5bBDVVAxP35IzFYFG7iGtU9OVkR4TBJ8e9MEUyUMMjy6z
+ 3Px2n9/0ATBpH5GQAAAA=
+X-Change-ID: 20260714-b4-i3c-hci-ast2700-bad726e20c01
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
+	<Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
+	<krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Joel Stanley
+	<joel@jms.id.au>, Andrew Jeffery <andrew@codeconstruct.com.au>, Philipp Zabel
+	<p.zabel@pengutronix.de>
+CC: <linux-i3c@lists.infradead.org>, <devicetree@vger.kernel.org>,
+	<linux-arm-kernel@lists.infradead.org>, <linux-aspeed@lists.ozlabs.org>,
+	<linux-kernel@vger.kernel.org>, Billy Tsai <billy_tsai@aspeedtech.com>
+X-Mailer: b4 0.14.3
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1788262538; l=4156;
+ i=billy_tsai@aspeedtech.com; s=20251118; h=from:subject:message-id;
+ bh=6FNYMuIcfyXeEFAvGyrxQVzcQ7QcTPfutEiaqj247O8=;
+ b=JSuRqICd5+CuJSS7QslnzoOY4wJMdTnNieoLv80R4Qr4ynq8wNsYgtHhu6eQ+Cu1kZLMZXUUV
+ 13DizEFAJhPC9hSC7Mq9LSrlAsyAWsET0ZmxCzLeRRAszNc+16zTndV
+X-Developer-Key: i=billy_tsai@aspeedtech.com; a=ed25519;
+ pk=/A8qvgZ6CPfnwKgT6/+k+nvXOkN477MshEGJvVdzeeQ=
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260901_043551_508432_B118FA87 
+X-CRM114-Status: GOOD (  12.79  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -64,58 +72,99 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
-IFtIaWdoXSBJbmNvbnNpc3RlbnQgdXNlIG9mIEkvTyBhY2Nlc3NvcnMgZm9yIEZJRk8gYWNjZXNz
-ZXMsIG1peGluZyBzdHJlYW0gYW5kIHJlZ2lzdGVyIGFjY2Vzc29ycywgd2hpY2ggY2F1c2VzIGRh
-dGEgY29ycnVwdGlvbiBvbiBiaWctZW5kaWFuIHN5c3RlbXMuCi0tCgpjb21taXQgYzI4MmU5MmY0
-YjkzZmJhNGM4NTRkNWU5YzM0YzFhYzEwMjEyODExZgpBdXRob3I6IFN0YW5sZXkgQ2h1IDx5c2No
-dUBudXZvdG9uLmNvbT4KCiAgICBpM2M6IG1hc3Rlcjogc3ZjOiBQcmV2ZW50IElSUSBzdG9ybSBm
-cm9tIGZhbHNlIFNMVlNUQVJUIG9uIE5QQ004NDUKClRoaXMgY29tbWl0IGFkZHMgYSBoYXJkd2Fy
-ZSBxdWlyayB3b3JrYXJvdW5kIGZvciB0aGUgTlBDTTg0NSBjb250cm9sbGVyLgpJdCBleHBsaWNp
-dGx5IGNsZWFycyB0aGUgU0xWU1RBUlQgc3RhdHVzIGJpdCBhZnRlciBlbWl0dGluZyBhIFNUT1AK
-Y29uZGl0aW9uIGluIHRoZSBNYXN0ZXIgUmVxdWVzdCBJQkkgaGFuZGxlciB0byBwcmV2ZW50IGFu
-IElSUSBzdG9ybSBjYXVzZWQKYnkgYSBzcHVyaW91cyBTTFZTVEFSVC4KCkxpbms6IGh0dHBzOi8v
-cGF0Y2gubXNnaWQubGluay8yMDI2MDQxMzAwNTA0MC4xMjExMTA3LTMteXNjaHVAbnV2b3Rvbi5j
-b20KCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaTNjL21hc3Rlci9zdmMtaTNjLW1hc3Rlci5jIGIv
-ZHJpdmVycy9pM2MvbWFzdGVyL3N2Yy1pM2MtbWFzdGVyLmMKPiBpbmRleCA5NjQxZTY2YTRlNWYy
-Li5lNzRiMjJjNmY4MDhjIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvaTNjL21hc3Rlci9zdmMtaTNj
-LW1hc3Rlci5jCj4gKysrIGIvZHJpdmVycy9pM2MvbWFzdGVyL3N2Yy1pM2MtbWFzdGVyLmMKClsg
-Li4uIF0KCltTZXZlcml0eTogSGlnaF0KVGhpcyBpc24ndCBhIGJ1ZyBpbnRyb2R1Y2VkIGJ5IHRo
-aXMgcGF0Y2gsIGJ1dCB0aGVyZSBpcyBhIHByZS1leGlzdGluZwppc3N1ZSBpbiB0aGlzIGZpbGUg
-cmVnYXJkaW5nIEkvTyBhY2Nlc3NvcnMgZm9yIEZJRk8gcmVnaXN0ZXJzLgoKSW4gc3ZjX2kzY19t
-YXN0ZXJfeGZlcigpLCBkb2VzIHRoaXMgY29kZSBtaXggYSBzdHJlYW0gYWNjZXNzb3IgKHdyaXRl
-c2IpCmZvciBidWxrIGRhdGEgd2l0aCBhIHJlZ2lzdGVyIGFjY2Vzc29yICh3cml0ZWwpIGZvciB0
-aGUgZmluYWwgYnl0ZSBvbiB0aGUKc2FtZSBGSUZPPwoKZHJpdmVycy9pM2MvbWFzdGVyL3N2Yy1p
-M2MtbWFzdGVyLmM6c3ZjX2kzY19tYXN0ZXJfeGZlcigpIHsKICAgIC4uLgogICAgd3JpdGVzYiht
-YXN0ZXItPnJlZ3MgKyBTVkNfSTNDX01XREFUQUIxLCBvdXQsIGxlbiAtIDEpOwogICAgLyogTWFy
-ayBFTkQgYml0IGlmIHRoaXMgaXMgdGhlIGxhc3QgYnl0ZSAqLwogICAgd3JpdGVsKG91dFtsZW4g
-LSAxXSB8IGVuZCwgbWFzdGVyLT5yZWdzICsgU1ZDX0kzQ19NV0RBVEFCKTsKICAgIC4uLgp9CgpV
-c2luZyB3cml0ZWwoKSBmb3IgdGhlIHJlbWFpbmRlciBieXRlIHBlcmZvcm1zIHVud2FudGVkIGJ5
-dGUtc3dhcHBpbmcgb24KYmlnLWVuZGlhbiBwbGF0Zm9ybXMsIHdoaWNoIGNhbiBjb3JydXB0IHRo
-ZSBkYXRhIHNlbnQgb24gdGhlIEkzQyBidXMuCgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXMgYWxz
-byBhIHByZS1leGlzdGluZyBpc3N1ZSwgYnV0IGRvIHRoZSByZWFkbCgpIGNhbGxzIGluCnN2Y19p
-M2NfbWFzdGVyX3JlYWQoKSBhbmQgc3ZjX2kzY19tYXN0ZXJfcmVhZGIoKSBwZXJmb3JtIGluY29y
-cmVjdApieXRlc3dhcHBpbmcgd2hlbiByZWFkaW5nIGZyb20gdGhlIE1SREFUQUIgRklGTz8KCmRy
-aXZlcnMvaTNjL21hc3Rlci9zdmMtaTNjLW1hc3Rlci5jOnN2Y19pM2NfbWFzdGVyX2hhbmRsZV9p
-YmkoKSB7CiAgICAuLi4KICAgIHJlYWRzYihtYXN0ZXItPnJlZ3MgKyBTVkNfSTNDX01SREFUQUIs
-IGJ1ZiwgY291bnQpOwogICAgLi4uCn0KCmRyaXZlcnMvaTNjL21hc3Rlci9zdmMtaTNjLW1hc3Rl
-ci5jOnN2Y19pM2NfbWFzdGVyX3JlYWQoKSB7CiAgICAuLi4KICAgIGluW29mZnNldCArIGldID0g
-cmVhZGwobWFzdGVyLT5yZWdzICsgU1ZDX0kzQ19NUkRBVEFCKTsKICAgIC4uLgp9Cgpkcml2ZXJz
-L2kzYy9tYXN0ZXIvc3ZjLWkzYy1tYXN0ZXIuYzpzdmNfaTNjX21hc3Rlcl9yZWFkYigpIHsKICAg
-IC4uLgogICAgZHN0W2ldID0gcmVhZGwobWFzdGVyLT5yZWdzICsgU1ZDX0kzQ19NUkRBVEFCKTsK
-ICAgIC4uLgp9CgpTaW5jZSByZWFkc2IoKSBpcyB1c2VkIGluIHN2Y19pM2NfbWFzdGVyX2hhbmRs
-ZV9pYmkoKSBmb3IgdGhlIHNhbWUKTVJEQVRBQiBGSUZPLCB1c2luZyByZWFkbCgpIHRvIHJlYWQg
-aW5kaXZpZHVhbCBieXRlcyBpbnRvIGEgdTggYnVmZmVyIGluCm90aGVyIGZ1bmN0aW9ucyBjb3Vs
-ZCByZXN1bHQgaW4gY29ycnVwdGVkIGRhdGEgb24gYmlnLWVuZGlhbiBzeXN0ZW1zLgoKLS0gClNh
-c2hpa28gQUkgcmV2aWV3IMK3IGh0dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDgz
-MTEzMzMxNC40MTI1Nzg3LTY0Ny1zYXNoYWxAa2VybmVsLm9yZz9wYXJ0PTEKCi0tIApsaW51eC1p
-M2MgbWFpbGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNjCg==
+The Aspeed AST2700 SoC integrates an I3C host controller based on the
+MIPI I3C HCI v1.1 programming model, extended with an in-house control
+block and a PHY programming window. Both extra register regions are
+advertised through a standard HCI vendor extended capability. This
+series teaches the existing mipi-i3c-hci driver to drive the AST2700
+controller without forking the driver.
+
+The AST2700 specifics are expressed in two ways:
+
+ - Deviations from generic HCI protocol behavior are expressed as
+   individual quirks in the match data: the existing
+   HCI_QUIRK_DMA_ABORT_REQUIRES_PIO_RESET, plus three new quirks for
+   address-indexed DAT slots (HCI_QUIRK_DAT_INDEX_IS_ADDR), 64-bit DMA
+   addressing (HCI_QUIRK_DMA_64BIT) and clearing the TX start threshold
+   in DMA mode (HCI_QUIRK_TX_START_THLD).
+
+ - Everything that depends on the ASPEED vendor capability actually
+   being present -- programming the vendor register blocks (master
+   mode init, PHY timing, the interrupt summary path, the IBI
+   termination threshold and the DAA index registers), and selecting
+   the IRQ handler and IRQF_SHARED at request_irq() time -- is keyed to
+   is_aspeed(), a single explicit check set from the devicetree
+   compatible in probe().
+
+Generic MIPI I3C HCI controllers are unaffected.
+
+The series is organised as follows:
+
+ - Patch 1 documents the devicetree binding.
+
+ - Patches 2-4 add the generic HCI quirks AST2700 needs --
+   address-indexed DAT slots, 64-bit DMA addressing, and clearing the
+   TX start threshold in DMA mode -- with no AST2700-specific code yet;
+   nothing sets these quirks until patch 5.
+
+ - Patch 5 ties it together: it recognizes the ASPEED vendor extended
+   capability, brings the controller up for transfers (master mode,
+   PHY timing, reset/clock resources, the interrupt summary path,
+   master clock stall), and enables the quirks from patches 2-4 plus
+   HCI_QUIRK_DMA_ABORT_REQUIRES_PIO_RESET for the
+   "aspeed,ast2700-i3c-hci" compatible.
+
+ - Patch 6 adds the IBI termination threshold, a safeguard against a
+   misbehaving device that never terminates a payload IBI on its own.
+
+ - Patches 7-8 tune bus behaviour: PIO TX queue utilization, and the
+   PHY's built-in pull-ups for boards without external resistors.
+
+Tested on an AST2700 EVB: the controller probes in DMA/PIO mode,
+completes DAA and runs CCC, IBI and private transfers.
+
+Assisted-by: Claude:claude-fable-5
+Signed-off-by: Billy Tsai <billy_tsai@aspeedtech.com>
+---
+Billy Tsai (8):
+      dt-bindings: i3c: Document the AST2700 I3C controller
+      i3c: mipi-i3c-hci: Support address-indexed DAT slots
+      i3c: mipi-i3c-hci: Add a quirk for 64-bit DMA addressing
+      i3c: mipi-i3c-hci: Add a quirk to clear the TX start threshold
+      i3c: mipi-i3c-hci: Add support for the AST2700 I3C controller
+      i3c: mipi-i3c-hci: Program AST2700 IBI termination threshold
+      i3c: mipi-i3c-hci: Improve AST2700 PIO TX queue utilization
+      i3c: mipi-i3c-hci: Support the AST2700 internal pull-ups
+
+ .../bindings/i3c/aspeed,ast2700-i3c-hci.yaml       | 133 +++++++
+ drivers/i3c/master/mipi-i3c-hci/Makefile           |   2 +-
+ drivers/i3c/master/mipi-i3c-hci/cmd_v1.c           |  56 ++-
+ drivers/i3c/master/mipi-i3c-hci/core.c             | 229 ++++++++++--
+ drivers/i3c/master/mipi-i3c-hci/dat.h              |   5 +-
+ drivers/i3c/master/mipi-i3c-hci/dat_v1.c           |  63 +++-
+ drivers/i3c/master/mipi-i3c-hci/ext_caps.c         |  15 +
+ drivers/i3c/master/mipi-i3c-hci/ext_caps.h         |   1 +
+ drivers/i3c/master/mipi-i3c-hci/hci.h              |   3 +
+ drivers/i3c/master/mipi-i3c-hci/pio.c              | 122 ++-----
+ drivers/i3c/master/mipi-i3c-hci/pio.h              | 109 ++++++
+ drivers/i3c/master/mipi-i3c-hci/vendor_aspeed.c    | 383 +++++++++++++++++++++
+ drivers/i3c/master/mipi-i3c-hci/vendor_aspeed.h    | 191 ++++++++++
+ 13 files changed, 1167 insertions(+), 145 deletions(-)
+---
+base-commit: 97f3c8379f91af507cbc3d491b87633f0583febc
+change-id: 20260714-b4-i3c-hci-ast2700-bad726e20c01
+
+Best regards,
+-- 
+Billy Tsai <billy_tsai@aspeedtech.com>
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
