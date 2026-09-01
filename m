@@ -4,28 +4,28 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3B8FDC624D6
-	for <linux-i3c@archiver.kernel.org>; Tue,  1 Sep 2026 11:36:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84396C624CF
+	for <linux-i3c@archiver.kernel.org>; Tue,  1 Sep 2026 11:36:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:CC:To:In-Reply-To:References:Message-ID
 	:MIME-Version:Subject:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nEmZAUzgrsqEgy4rIqrAUWtPc/+Ruhz0KHzMWHxfG3c=; b=uv0Spdv/KnkHgY
-	ZMMRVg+sMd8YvSryNJ1bIY/kyBgeWWniZWJ4huszzKd+ypgijj8t6iXMITXPS0SKpMqfUWQBHed2r
-	OaNbqAJSxY8fCguCRstZOwdT55T+OM6B52FWvm079GwmA/6iH4qRnvcFtEdevDKfHFw+cCwrUeBRU
-	tRoBGnlfV6Z1JhNb3VHCxz/AWC6oYqG0jEWGmphhGwqUNTc17w+ySOpLPbplOIMjqUPmhCaINpybv
-	uZR4si3g0Hyc5geb2S+F4JNWG0kUaLcnwTi7di61i8HmD9UbOiMv1HwOt18wDt5otNDS2BLHXfrI0
-	m8vCxaEZXDfTmw/lAW9w==;
+	List-Owner; bh=K+hy6BTTLaJmaKLA2wvm/7iKbLw/SnkLhj1Xe6PkRKQ=; b=uGkwmf7FG+gWYN
+	1157YxhCkptrmuN9oth98EDTq7eeO1PT83hkMSRZYIhdqinsrldsrmqJ2t2Y2ws2zk37kt1mCrj9f
+	TAFQCtYMXPuLlUS+7i3NlBQirSrecHzIf8PsINpZtG8lKI1CfJ4Ov/xVS6cUJEr6mbeF1Ud9zfige
+	fwgpdbT4KfK01QrTEPwZtm3WGwJUH4wFMQ36CCma8Jv+idGvzsiebED7RINCm4b7sX+43pb/qWDfc
+	CcTi1EwRddwUSe6G+bdNRO84rMB7QFEN2u6n5K/4YCYJXP8niUMZB/qUz8LCYU19C8E1s9zBmuSdc
+	s0GIedlqgrjk5a3/UjdA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1Mmc-0000000BhiW-3yUp;
-	Tue, 01 Sep 2026 11:36:06 +0000
+	id 1x1Mmf-0000000BhlW-0SAy;
+	Tue, 01 Sep 2026 11:36:09 +0000
 Received: from mail.aspeedtech.com ([211.20.114.72] helo=twmbx01.aspeedtech.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x1Mma-0000000BhTz-2Qhm;
-	Tue, 01 Sep 2026 11:36:05 +0000
+	id 1x1Mmc-0000000BhTz-1s09;
+	Tue, 01 Sep 2026 11:36:07 +0000
 Received: from TWMBX01.aspeed.com (192.168.0.62) by TWMBX01.aspeed.com
  (192.168.0.62) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1748.10; Tue, 1 Sep
@@ -34,11 +34,11 @@ Received: from [127.0.1.1] (192.168.10.13) by TWMBX01.aspeed.com
  (192.168.0.62) with Microsoft SMTP Server id 15.2.1748.10 via Frontend
  Transport; Tue, 1 Sep 2026 19:35:39 +0800
 From: Billy Tsai <billy_tsai@aspeedtech.com>
-Date: Tue, 1 Sep 2026 19:35:33 +0800
-Subject: [PATCH 6/8] i3c: mipi-i3c-hci: Program AST2700 IBI termination
- threshold
+Date: Tue, 1 Sep 2026 19:35:34 +0800
+Subject: [PATCH 7/8] i3c: mipi-i3c-hci: Improve AST2700 PIO TX queue
+ utilization
 MIME-Version: 1.0
-Message-ID: <20260901-b4-i3c-hci-ast2700-v1-6-19909e7cbd7e@aspeedtech.com>
+Message-ID: <20260901-b4-i3c-hci-ast2700-v1-7-19909e7cbd7e@aspeedtech.com>
 References: <20260901-b4-i3c-hci-ast2700-v1-0-19909e7cbd7e@aspeedtech.com>
 In-Reply-To: <20260901-b4-i3c-hci-ast2700-v1-0-19909e7cbd7e@aspeedtech.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
@@ -50,16 +50,16 @@ CC: <linux-i3c@lists.infradead.org>, <devicetree@vger.kernel.org>,
 	<linux-arm-kernel@lists.infradead.org>, <linux-aspeed@lists.ozlabs.org>,
 	<linux-kernel@vger.kernel.org>, Billy Tsai <billy_tsai@aspeedtech.com>
 X-Mailer: b4 0.14.3
-X-Developer-Signature: v=1; a=ed25519-sha256; t=1788262538; l=4578;
+X-Developer-Signature: v=1; a=ed25519-sha256; t=1788262538; l=5389;
  i=billy_tsai@aspeedtech.com; s=20251118; h=from:subject:message-id;
- bh=xOl9+Kul4dBwt8rxRnAINY0vnOHwaByTCuM9DbK+p3I=;
- b=qWtlv5VOUEegPE0YGyLI/BFbXn5JqLuelcacCgbJoGHuQrR+O8yF30Ewl63FfhKPpWughtyAl
- CyKmYJFamIQD4ibRMn+c7kGx+ZNZ05JfxmCg1tulc3aHN/RrVyURlUY
+ bh=oaf8rylZXdyfnF1JAoViZJfEllE3F20K/vr6f/aHROE=;
+ b=RYohPmXVU7MlqRAhyOatovdjRP4ydQzRQ7LkGAAOgee7Mv0uUdh/XLOduNYCIoVJYOpr5oaV6
+ WSWWqbdoS/iCxtJEqyf0uGiKli6UpiCiqM3aA+Od6cRFNwFmpZvFpmL
 X-Developer-Key: i=billy_tsai@aspeedtech.com; a=ed25519;
  pk=/A8qvgZ6CPfnwKgT6/+k+nvXOkN477MshEGJvVdzeeQ=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260901_043604_640773_92174372 
-X-CRM114-Status: GOOD (  14.71  )
+X-CRM114-CacheID: sfid-20260901_043606_520177_3B16FDF0 
+X-CRM114-Status: GOOD (  15.47  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,111 +76,133 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-For an IBI with payload, it's normally the device that decides when to
-stop sending payload bytes. A misbehaving device that never terminates
-can leave the controller stuck waiting on the transfer. AST2700 has an
-in-house IBI payload length threshold that, once enabled, forces
-termination once the received payload reaches it.
+The PIO TX path only pushes data once STAT_TX_THLD reports that
+tx_thresh_size words are free, with the threshold set to half the TX
+FIFO. The FIFO is therefore never filled beyond half from a single
+wait, which under-utilizes the queue, and sending buffers larger than
+the threshold makes software race against the hardware draining the
+FIFO, resulting in an unstable flow.
 
-When payload IBIs are requested, grow the AST2700 termination
-threshold to at least the requested payload length and enable
-termination on that value. The register is controller-wide while IBI
-requests for different devices can run in parallel, so the
-read-modify-write is serialized under the controller lock. Controllers
-without the vendor capability block keep the existing behavior.
+The AST2700 vendor block exposes the TX FIFO read and write pointers,
+which give the exact number of free entries. When is_aspeed() is true,
+size each burst from those pointers, using CIRC_SPACE() to derive the
+free-entry count, so the FIFO can be used up to its full depth. Other
+controllers keep the existing threshold-based flow.
 
 Signed-off-by: Billy Tsai <billy_tsai@aspeedtech.com>
 Assisted-by: Claude:claude-fable-5
 ---
- drivers/i3c/master/mipi-i3c-hci/core.c          | 14 ++++++++++----
- drivers/i3c/master/mipi-i3c-hci/vendor_aspeed.c | 20 ++++++++++++++++++++
- drivers/i3c/master/mipi-i3c-hci/vendor_aspeed.h |  5 +++++
- 3 files changed, 35 insertions(+), 4 deletions(-)
+ drivers/i3c/master/mipi-i3c-hci/pio.c           | 25 +++++++++++++++++++++----
+ drivers/i3c/master/mipi-i3c-hci/vendor_aspeed.c | 11 +++++++++++
+ drivers/i3c/master/mipi-i3c-hci/vendor_aspeed.h |  6 ++++++
+ 3 files changed, 38 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-index e0ee8148aa2f..3d52d8f277ad 100644
---- a/drivers/i3c/master/mipi-i3c-hci/core.c
-+++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-@@ -690,15 +690,21 @@ static void i3c_hci_detach_i2c_dev(struct i2c_dev_desc *dev)
- static int i3c_hci_request_ibi(struct i3c_dev_desc *dev,
- 			       const struct i3c_ibi_setup *req)
- {
--	struct i3c_master_controller *m = i3c_dev_get_master(dev);
--	struct i3c_hci *hci = to_i3c_hci(m);
- 	struct i3c_hci_dev_data *dev_data = i3c_dev_get_master_data(dev);
-+	struct i3c_master_controller *m = i3c_dev_get_master(dev);
-+	unsigned int ibi_max_len = req->max_payload_len;
- 	unsigned int dat_idx = dev_data->dat_idx;
-+	struct i3c_hci *hci = to_i3c_hci(m);
+diff --git a/drivers/i3c/master/mipi-i3c-hci/pio.c b/drivers/i3c/master/mipi-i3c-hci/pio.c
+index 6bd5e43364a1..3d70257dcc1d 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/pio.c
++++ b/drivers/i3c/master/mipi-i3c-hci/pio.c
+@@ -15,6 +15,7 @@
+ #include "cmd.h"
+ #include "ibi.h"
+ #include "pio.h"
++#include "vendor_aspeed.h"
  
--	if (req->max_payload_len != 0)
-+	if (req->max_payload_len != 0) {
- 		mipi_i3c_hci_dat_v1.set_flags(hci, dat_idx, DAT_0_IBI_PAYLOAD, 0);
--	else
-+
-+		if (is_aspeed(hci))
-+			aspeed_i3c_ibi_grow_threshold(hci, ibi_max_len);
-+	} else {
- 		mipi_i3c_hci_dat_v1.clear_flags(hci, dat_idx, DAT_0_IBI_PAYLOAD, 0);
-+	}
-+
- 	return hci->io->request_ibi(hci, dev, req);
- }
+ /*
+  * PIO Access Area
+@@ -295,11 +296,23 @@ static bool hci_pio_do_tx(struct i3c_hci *hci, struct hci_pio_data *pio)
+ 	p += (xfer->data_len - xfer->data_left) / 4;
  
+ 	while (xfer->data_left >= 4) {
+-		/* bail out if FIFO free space is below set threshold */
+-		if (!(pio_reg_read(INTR_STATUS) & STAT_TX_THLD))
++		unsigned int avail = pio->tx_thresh_size;
++
++		if (is_aspeed(hci)) {
++			/*
++			 * The vendor FIFO pointers give the exact free space,
++			 * allowing better TX FIFO utilization than the
++			 * threshold status.
++			 */
++			avail = aspeed_i3c_avail_tx_entries(hci);
++			if (!avail)
++				return false;
++		} else if (!(pio_reg_read(INTR_STATUS) & STAT_TX_THLD)) {
++			/* bail out if FIFO free space is below set threshold */
+ 			return false;
++		}
+ 		/* we can fill up to that TX threshold */
+-		nr_words = min(xfer->data_left / 4, pio->tx_thresh_size);
++		nr_words = min(xfer->data_left / 4, avail);
+ 		/* push data into the FIFO */
+ 		xfer->data_left -= nr_words * 4;
+ 		dev_dbg(&hci->master.dev, "now %d left %d",
+@@ -316,8 +329,12 @@ static bool hci_pio_do_tx(struct i3c_hci *hci, struct hci_pio_data *pio)
+ 		 * also get some bytes past the actual buffer but no one
+ 		 * should care as they won't be sent out.
+ 		 */
+-		if (!(pio_reg_read(INTR_STATUS) & STAT_TX_THLD))
++		if (is_aspeed(hci)) {
++			if (!aspeed_i3c_avail_tx_entries(hci))
++				return false;
++		} else if (!(pio_reg_read(INTR_STATUS) & STAT_TX_THLD)) {
+ 			return false;
++		}
+ 		dev_dbg(&hci->master.dev, "trailing %d", xfer->data_left);
+ 		pio_reg_write(XFER_DATA_PORT, *p);
+ 		xfer->data_left = 0;
 diff --git a/drivers/i3c/master/mipi-i3c-hci/vendor_aspeed.c b/drivers/i3c/master/mipi-i3c-hci/vendor_aspeed.c
-index b521fce4c084..e32dea0d5fc3 100644
+index e32dea0d5fc3..182111b857c9 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/vendor_aspeed.c
 +++ b/drivers/i3c/master/mipi-i3c-hci/vendor_aspeed.c
-@@ -25,6 +25,26 @@ void aspeed_i3c_write(struct i3c_hci *hci, u32 reg, u32 val)
- 	writel(val, to_aspeed_vendor_data(hci)->inhouse_regs + reg);
+@@ -6,6 +6,7 @@
+  */
+ 
+ #include <linux/bitfield.h>
++#include <linux/circ_buf.h>
+ #include <linux/clk.h>
+ #include <linux/device.h>
+ #include <linux/i3c/master.h>
+@@ -45,6 +46,16 @@ void aspeed_i3c_ibi_grow_threshold(struct i3c_hci *hci, unsigned int ibi_max_len
+ 			 FIELD_PREP(ASPEED_I3C_IBI_TERMINATE_LEN, ibi_max_len));
  }
  
-+void aspeed_i3c_ibi_grow_threshold(struct i3c_hci *hci, unsigned int ibi_max_len)
++/* Free TX FIFO entries derived from the vendor FIFO read/write pointers */
++unsigned int aspeed_i3c_avail_tx_entries(struct i3c_hci *hci)
 +{
-+	u32 mrl, cur_len;
++	u32 ptr = aspeed_i3c_read(hci, ASPEED_I3C_QUEUE_PTR0);
++	unsigned int w = FIELD_GET(ASPEED_I3C_QUEUE_PTR0_TX_W, ptr);
++	unsigned int r = FIELD_GET(ASPEED_I3C_QUEUE_PTR0_TX_R, ptr);
 +
-+	/*
-+	 * The termination threshold is controller-wide while IBI requests
-+	 * for different devices can run in parallel, so serialize the
-+	 * read-modify-write.
-+	 */
-+	guard(spinlock_irqsave)(&hci->lock);
-+
-+	mrl = aspeed_i3c_read(hci, ASPEED_I3C_MST_MRL);
-+	cur_len = FIELD_GET(ASPEED_I3C_IBI_TERMINATE_LEN, mrl);
-+
-+	ibi_max_len = max(ibi_max_len, cur_len);
-+	aspeed_i3c_write(hci, ASPEED_I3C_MST_MRL,
-+			 ASPEED_I3C_IBI_TERMINATE_EN |
-+			 FIELD_PREP(ASPEED_I3C_IBI_TERMINATE_LEN, ibi_max_len));
++	return CIRC_SPACE(w, r, ASPEED_I3C_TX_QUEUE_ENTRIES);
 +}
 +
  static void aspeed_i3c_phy_write(struct i3c_hci *hci, u32 reg, u32 val)
  {
  	writel(val, to_aspeed_vendor_data(hci)->phy_regs + reg);
 diff --git a/drivers/i3c/master/mipi-i3c-hci/vendor_aspeed.h b/drivers/i3c/master/mipi-i3c-hci/vendor_aspeed.h
-index 8760384d1c6f..84afb2bec956 100644
+index 84afb2bec956..7147abea830d 100644
 --- a/drivers/i3c/master/mipi-i3c-hci/vendor_aspeed.h
 +++ b/drivers/i3c/master/mipi-i3c-hci/vendor_aspeed.h
-@@ -51,6 +51,7 @@ static inline struct aspeed_i3c_vendor_data *to_aspeed_vendor_data(struct i3c_hc
- u32 aspeed_i3c_read(struct i3c_hci *hci, u32 reg);
+@@ -52,6 +52,7 @@ u32 aspeed_i3c_read(struct i3c_hci *hci, u32 reg);
  void aspeed_i3c_write(struct i3c_hci *hci, u32 reg, u32 val);
  int aspeed_i3c_phy_init(struct i3c_hci *hci);
-+void aspeed_i3c_ibi_grow_threshold(struct i3c_hci *hci, unsigned int ibi_max_len);
+ void aspeed_i3c_ibi_grow_threshold(struct i3c_hci *hci, unsigned int ibi_max_len);
++unsigned int aspeed_i3c_avail_tx_entries(struct i3c_hci *hci);
  
  #define ASPEED_I3C_CTRL				0x00
  #define ASPEED_I3C_CTRL_CLOCK_STALL_EN		BIT(14)
-@@ -58,6 +59,10 @@ int aspeed_i3c_phy_init(struct i3c_hci *hci);
- #define ASPEED_I3C_CTRL_INIT_MODE		GENMASK(1, 0)
- #define   ASPEED_I3C_INIT_MST_MODE		0
- 
-+#define ASPEED_I3C_MST_MRL			0x08
-+#define ASPEED_I3C_IBI_TERMINATE_EN		BIT(16)
-+#define ASPEED_I3C_IBI_TERMINATE_LEN		GENMASK(15, 0)
-+
- #define ASPEED_I3C_DAA_INDEX0			0x10
- #define ASPEED_I3C_DAA_INDEX1			0x14
+@@ -68,6 +69,11 @@ void aspeed_i3c_ibi_grow_threshold(struct i3c_hci *hci, unsigned int ibi_max_len
  #define ASPEED_I3C_DAA_INDEX2			0x18
+ #define ASPEED_I3C_DAA_INDEX3			0x1c
+ 
++#define ASPEED_I3C_QUEUE_PTR0			0xd8
++#define   ASPEED_I3C_QUEUE_PTR0_TX_R		GENMASK(24, 20)
++#define   ASPEED_I3C_QUEUE_PTR0_TX_W		GENMASK(16, 12)
++#define ASPEED_I3C_TX_QUEUE_ENTRIES		32
++
+ #define ASPEED_I3C_INTR_STATUS			0xe0
+ #define ASPEED_I3C_INTR_STATUS_ENABLE		0xe4
+ #define ASPEED_I3C_INTR_SIGNAL_ENABLE		0xe8
 
 -- 
 2.34.1
