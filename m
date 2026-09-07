@@ -4,59 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6065CC79F9E
-	for <linux-i3c@archiver.kernel.org>; Mon,  7 Sep 2026 06:28:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DA0E2C79F99
+	for <linux-i3c@archiver.kernel.org>; Mon,  7 Sep 2026 14:42:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oJxhbnU05cBKZ3AR7kQT9sU7dJS4M0Dfaymso58xAa0=; b=D2oKENDP3bS6N7
-	FzS9yZteHvbdX1A4n4f1y9vw1vK/gasqbccEbo+1dFrlt7DfZX9o6g3jYQA4kmZo/s8yowJLPw5AP
-	Mjvo0SJggNgwFN4yn0JkCesEPOH196xAIThxVDT28wlToJ+VssHw8EE/rUBmXR6QRMMvZc0rlEppx
-	km4NalSEMmNb9pYqUHofi2W4qnT8Xuz/rjnCSKscLOOyjAPlVGWI/RdNdUOn1xpr9ATNk/n7ewEQT
-	4DeJP/zHgjGFVjic3JKi9gcSLWSw2DOuJO6JUnkQE8AK70fv+t95Om4BsS32bw9eAI3eSGJYHENCu
-	cT1Jmf8KnYFZ+jyMngoQ==;
+	List-Owner; bh=H0OikU/1n6cIlMI6le8EDVyj20bHcER+O/Qn4hbFDWY=; b=HyKFUXdLal20Bk
+	7FLHE4dOt9Zx04f0J6QjukQzO8ZD3ztcVnXaMPHLuXxifJRYlIBFaco9QRNg45CdhxkSqpqqq0pyC
+	HZw2ZoieYmaC9hD72R8IVCK3SKMdyDTpo61FH+KKvVp2qUpWPpNQFFnPHIODyNQvYh4Gt94hzOPRx
+	Lw6SIvHiWJyItyEos8LLj7KsvOcWF1xYlyOodqFAJYwji73gl1H5nno1bI95FxFfw9HZ1sr7sr06a
+	rc6Hs4HN+nWeoMS2Cb3Oa15ykD7F6bLjKANBejFKa9LoX8TfF/6YwmskkOAU/CmKtxoa1UHDbynYE
+	i9gE7P71xjvCJvtyx+YA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3SqT-0000000619R-00QZ;
-	Mon, 07 Sep 2026 06:28:45 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1x3aYa-000000074Kb-2Lt0;
+	Mon, 07 Sep 2026 14:42:48 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3SqR-0000000618o-2MkV;
-	Mon, 07 Sep 2026 06:28:43 +0000
+	id 1x3aYY-000000074KV-3ZmV
+	for linux-i3c@lists.infradead.org;
+	Mon, 07 Sep 2026 14:42:46 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id D09444400F;
-	Mon,  7 Sep 2026 06:28:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 875B91F00A3E;
-	Mon,  7 Sep 2026 06:28:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788762522;
-	bh=Uhqq4SjaBmSEA8DrRzienxD9wkDqWA+Zx6N8pGJJeww=;
+	by sea.source.kernel.org (Postfix) with ESMTP id C7E2441B32;
+	Mon,  7 Sep 2026 14:42:43 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1C23D1F00A3A;
+	Mon,  7 Sep 2026 14:42:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linuxfoundation.org;
+	s=korg; t=1788792163;
+	bh=hdT6u1gNNq87E/Xh1itonhXL5BkgCb8J/RAJ9RiAg6g=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=IUwKfgSXh8wAdVB1uda8oKDagMq50nSkJhaFjwhDyuGAD3ciKsn5vjkrHlMvx/Obk
-	 JdYVD7Uam5OKyLbP7PFdopgxr+qqh/u+JqI0da9ll9OsitD7c0pnDc4XadVLHt1gIY
-	 oR9e+eMtkdoo6XVhED+5xhSTCB2IXUytDO0oFrVeQ06lXPfC+ryATeaf5ddDz3jQ6H
-	 OtaDsKNJIZxMgY2hiXHdid70AoC2fp4ka7dzh1NrgA+sNT80wVyk0cMTgAgoVuox85
-	 KPfmTPxlePELs0TMtduVJBl7T/OlMpDvdtadNObM97Ef7wulPvuJsw+YuxPTTwAMlc
-	 Ar3KFzJXHquRw==
-Date: Mon, 7 Sep 2026 08:28:38 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Billy Tsai <billy_tsai@aspeedtech.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
-	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, 
-	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
-	Joel Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@codeconstruct.com.au>, 
-	Philipp Zabel <p.zabel@pengutronix.de>, linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, 
-	linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 1/8] dt-bindings: i3c: Document the AST2700 I3C controller
-Message-ID: <20260907-imaginary-economic-oyster-57cdd6@quoll>
-References: <20260901-b4-i3c-hci-ast2700-v1-0-19909e7cbd7e@aspeedtech.com>
- <20260901-b4-i3c-hci-ast2700-v1-1-19909e7cbd7e@aspeedtech.com>
+	b=mnpOrYKWnzpUSewfqMNQbrrPQoJkKmSUNfHPj6wFWA1agrpWKktg4cocfkl3GQhLG
+	 WcfhhZg//ID6ozRlh9+PZ9zsLR5C6MKiD8gmG3oBiTmHldCQG1oEh83N0LWBM85aoi
+	 1tdB8LRQFEm6pRbuGg7PPWAwnLIh88wmIAhTWpLA=
+Date: Mon, 7 Sep 2026 16:40:38 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Sam Agazaryan <samagazaryan@google.com>
+Cc: linux-i3c@lists.infradead.org,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>, Arnd Bergmann <arnd@arndb.de>,
+	Vitor Soares <vitor.soares@toradex.com>,
+	Oleksandr Shulzhenko <oleksandr.shulzhenko.viktorovych@intel.com>,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v4 3/3] i3c: add i3cdev module to expose i3c dev in /dev
+Message-ID: <2026090737-unicycle-imprudent-dcd2@gregkh>
+References: <20260906202747.4041389-1-samagazaryan@google.com>
+ <20260906202747.4041389-4-samagazaryan@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260901-b4-i3c-hci-ast2700-v1-1-19909e7cbd7e@aspeedtech.com>
+In-Reply-To: <20260906202747.4041389-4-samagazaryan@google.com>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,161 +71,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Tue, Sep 01, 2026 at 07:35:28PM +0800, Billy Tsai wrote:
-> The AST2700 I3C controller implements the MIPI I3C HCI programming
-> model, extended with an ASPEED in-house control block and a PHY
-> programming window advertised through an HCI vendor extended
-> capability. Follow the existing aspeed,ast2600-i3c precedent of
-> describing SoC integrations of a common I3C IP in their own schema.
+On Sun, Sep 06, 2026 at 08:27:47PM +0000, Sam Agazaryan wrote:
+> +/**
+> + * struct i3c_ioc_priv_xfer - I3C SDR ioctl private transfer
+> + * @data: Holds pointer to userspace buffer with transmit data.
+> + * @len: Length of data buffer buffers, in bytes.
+> + * @rnw: encodes the transfer direction. true for a read, false for a write
 
-What precedent exactly?
+You do not describe the "pad" variable.
 
-Are you now bringing some LLM slop arguments here?
+And why not call "rnw" "direction"?
 
-> 
-> The controller takes a core clock for PHY timing and two reset-names
-> lines: its own reset and a DMA engine reset shared by all I3C
-> controllers on the SoC.
-> 
-> The PHY timings derived from the core clock and bus rate assume
-> nominal bus loading. Boards with long traces, weak pull-ups, or
-> capacitive loading need different ratios and setup periods, so
-> document properties to override the push-pull and open-drain SCL
-> periods, the SDA TX hold time, the tCAS/tCBP periods, and the SCL low
-> period used for a repeated START or STOP.
-> 
-> Boards without external I3C pull-up resistors can use the PHY's
-> built-in pull-ups instead. The achievable resistance depends on the
-> voltage domain of the pins (high-voltage vs low-voltage), which can be
-> determined from the pin group assigned to the bus. Reuse bias-pull-up
-> (pincfg-node.yaml) for the strength in Ohms; it is declared on this
-> node rather than a pin-config node since the pull-up switch is part of
-> the I3C PHY, not the broader SoC pin control IPs.
-> 
-> Signed-off-by: Billy Tsai <billy_tsai@aspeedtech.com>
-> Assisted-by: Claude:claude-fable-5
-> 
-> ---
-> We considered formally expressing bias-pull-up's dependency on a
-> pinctrl state in the schema, but couldn't find a clean way to say
-> "depends on whichever pinctrl-N is active" without hard-coding
-> pinctrl-0 specifically, which would be wrong in general (a node's
-> active pin state doesn't have to sit at index 0). We've added
-> pinctrl-0 to the example to illustrate the typical usage instead,
-> without a formal schema-level dependency.
-> ---
->  .../bindings/i3c/aspeed,ast2700-i3c-hci.yaml       | 133 +++++++++++++++++++++
->  1 file changed, 133 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/i3c/aspeed,ast2700-i3c-hci.yaml b/Documentation/devicetree/bindings/i3c/aspeed,ast2700-i3c-hci.yaml
-> new file mode 100644
-> index 000000000000..19ecb5b15038
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/i3c/aspeed,ast2700-i3c-hci.yaml
-> @@ -0,0 +1,133 @@
-> +# SPDX-License-Identifier: GPL-2.0 OR BSD-2-Clause
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/i3c/aspeed,ast2700-i3c-hci.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: ASPEED AST2700 I3C controller
-> +
-> +maintainers:
-> +  - Billy Tsai <billy_tsai@aspeedtech.com>
-> +
-> +description:
-> +  The AST2700 I3C controller implements the MIPI I3C HCI programming model,
-> +  extended with an ASPEED in-house control block and a PHY programming window
-> +  that are advertised through an HCI vendor extended capability.
-> +
-> +properties:
-> +  compatible:
-> +    const: aspeed,ast2700-i3c-hci
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  resets:
-> +    items:
-> +      - description: Core controller reset.
-> +      - description: DMA engine reset shared by all I3C controllers.
-> +
-> +  reset-names:
-> +    items:
-> +      - const: core
-> +      - const: dma
-> +
-> +  bias-pull-up:
-> +    $ref: /schemas/pinctrl/pincfg-node.yaml#/properties/bias-pull-up
-> +    enum: [177, 231, 261, 317, 400, 470, 550, 600, 750]
-> +    description:
-> +      Enable the PHY-internal pull-ups on SCL and SDA and select their
-> +      strength, in Ohms. High-voltage pins support 400, 470 or 600 Ohms,
-> +      and low-voltage pins support 177, 231, 261, 317, 400, 550 or 750
-> +      Ohms. When absent the internal pull-ups stay disabled and the bus
-> +      relies on external pull-ups.
-> +
-> +  aspeed,pp-scl-high-ns:
-> +    description:
-> +      Push-pull SCL high period. Overrides the value derived from the
-> +      i3c-scl-hz bus rate.
-> +
-> +  aspeed,pp-scl-low-ns:
-> +    description:
-> +      Push-pull SCL low period. Overrides the value derived from the
-> +      i3c-scl-hz bus rate.
-> +
-> +  aspeed,od-scl-high-ns:
-> +    default: 380
-> +    description:
-> +      Open-drain SCL high period.
-> +
-> +  aspeed,od-scl-low-ns:
-> +    default: 620
-> +    description:
-> +      Open-drain SCL low period.
-> +
-> +  aspeed,sda-tx-hold-ns:
-> +    default: 10
-> +    description:
-> +      SDA output hold time relative to the SCL edge.
-> +
-> +  aspeed,cas-ns:
-> +    minimum: 39
-> +    description:
-> +      Clock-after-start (tCAS) period driven after a START condition.
-> +      When absent it is derived from the SCL low period of the
-> +      applicable bus context, clamped to the protocol minimum.
-> +
-> +  aspeed,cbp-ns:
-> +    minimum: 20
-> +    description:
-> +      Clock-before-stop (tCBP) period driven before a STOP condition.
-> +      When absent it is derived from the SCL low period of the
-> +      applicable bus context, clamped to the protocol minimum.
-> +
-> +  aspeed,sr-p-scl-low-ns:
-> +    default: 40
-> +    description:
-> +      SCL low period used while preparing a repeated START or STOP
-> +      condition, kept separate from the push-pull SCL low period to
-> +      satisfy the MIPI I3C clock stalling requirements.
+> + */
+> +struct i3c_ioc_priv_xfer {
+> +	__u64 data;
+> +	__u16 len;
+> +	__u8 rnw;
+> +	__u8 pad[5];
 
-Probably I3C maintainers should weight in here and help - should these
-be made generic for all I3C controllers? I am surprised some "standard"
-I3C controller needs to configure this as the single one. No other ever
-needed...
+You do not enforce that pad[5] MUST be set to all 0.
 
-Best regards,
-Krzysztof
+thanks,
 
+greg k-h
 
 -- 
 linux-i3c mailing list
