@@ -4,53 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0799BC79F99
-	for <linux-i3c@archiver.kernel.org>; Sun,  6 Sep 2026 20:41:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6065CC79F9E
+	for <linux-i3c@archiver.kernel.org>; Mon,  7 Sep 2026 06:28:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e+xjXZKIVY8Cys/t/WokGQegBz99NNizrdx6tPmg0xE=; b=BztzEi9/A6Rd5n
-	tyKx3sW2xKFpQllC27gKJfWCI9bf5pASH54aDJEayENo8+dGDrNJkR4jL/zergk6sjpgaMf7SuJln
-	B0IQmclLqV3806JQ68iwXDTHZJxmDwBTZ7sRnZ4qa8dCXtTDXA/BrpbGLocl85CFowvRjERVmuW+n
-	uCxxWgcfJni7edFWlXq2+kecKbx69kc6nZnx7IwNrAZd7OrzUZ6ei0GgULYfULdf6a4dAdk19gvgI
-	AN3MsUT2z9KLrRtAdAD16FwKWVDirhauziiGdQI/3rxGAz+lJgeFLknJKOiWHXIOtlrdsuvNLT41q
-	KB6VXv9qJ+mGUemle4Ug==;
+	List-Owner; bh=oJxhbnU05cBKZ3AR7kQT9sU7dJS4M0Dfaymso58xAa0=; b=D2oKENDP3bS6N7
+	FzS9yZteHvbdX1A4n4f1y9vw1vK/gasqbccEbo+1dFrlt7DfZX9o6g3jYQA4kmZo/s8yowJLPw5AP
+	Mjvo0SJggNgwFN4yn0JkCesEPOH196xAIThxVDT28wlToJ+VssHw8EE/rUBmXR6QRMMvZc0rlEppx
+	km4NalSEMmNb9pYqUHofi2W4qnT8Xuz/rjnCSKscLOOyjAPlVGWI/RdNdUOn1xpr9ATNk/n7ewEQT
+	4DeJP/zHgjGFVjic3JKi9gcSLWSw2DOuJO6JUnkQE8AK70fv+t95Om4BsS32bw9eAI3eSGJYHENCu
+	cT1Jmf8KnYFZ+jyMngoQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3JgS-00000005ZDI-0FRJ;
-	Sun, 06 Sep 2026 20:41:50 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1x3SqT-0000000619R-00QZ;
+	Mon, 07 Sep 2026 06:28:45 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3JgR-00000005ZD9-1gFG
-	for linux-i3c@lists.infradead.org;
-	Sun, 06 Sep 2026 20:41:47 +0000
+	id 1x3SqR-0000000618o-2MkV;
+	Mon, 07 Sep 2026 06:28:43 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 9E5C1601DE;
-	Sun,  6 Sep 2026 20:41:46 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1C33C1F00A3A;
-	Sun,  6 Sep 2026 20:41:46 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id D09444400F;
+	Mon,  7 Sep 2026 06:28:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 875B91F00A3E;
+	Mon,  7 Sep 2026 06:28:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788727306;
-	bh=gOPONMEg3OerPiLJEy9z3z62G3woWKBXV1aOODcNHk8=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=UGz5lyj7zrhmjGHvsTV4D8pH50dyiredaLKfy0sbvMDAvQSX6/ONObB/Hn3yRo/Rn
-	 2KYIPYQdR/5PzRkAc+IojY+AQlwcG6vmk18fR/2R5QvqLjzQyaceAJ4y/T08gSvvwp
-	 CxcvW+mrO3UTN/RcqrCtOZ2dqTB/E/QIKaOS4f1MYkFmfr5iZO2r44M1N6m7hSkzRh
-	 8NZ62pjCSS/yYEgLbs5NUmuVY7KnQ9/8WIS1VTIBVgdeq6XcYq0njT+m6xgUYQWCi3
-	 RPdG00aKhM9SXx60IlUj0e7jqxi963NieqJi8poWpodT3KDLrXQLhypibiaSBl9DtI
-	 wNivCF1Oft6gQ==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v4 3/3] i3c: add i3cdev module to expose i3c dev in /dev
-To: "Sam Agazaryan" <samagazaryan@google.com>
-Cc: Frank.Li@kernel.org, linux-i3c@lists.infradead.org, "Alexandre Belloni" <alexandre.belloni@bootlin.com>
-In-Reply-To: <20260906202747.4041389-4-samagazaryan@google.com>
-References: <20260906202747.4041389-1-samagazaryan@google.com>
- <20260906202747.4041389-4-samagazaryan@google.com>
-Date: Sun, 06 Sep 2026 20:41:45 +0000
-Message-Id: <20260906204146.1C33C1F00A3A@smtp.kernel.org>
+	s=k20260515; t=1788762522;
+	bh=Uhqq4SjaBmSEA8DrRzienxD9wkDqWA+Zx6N8pGJJeww=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To;
+	b=IUwKfgSXh8wAdVB1uda8oKDagMq50nSkJhaFjwhDyuGAD3ciKsn5vjkrHlMvx/Obk
+	 JdYVD7Uam5OKyLbP7PFdopgxr+qqh/u+JqI0da9ll9OsitD7c0pnDc4XadVLHt1gIY
+	 oR9e+eMtkdoo6XVhED+5xhSTCB2IXUytDO0oFrVeQ06lXPfC+ryATeaf5ddDz3jQ6H
+	 OtaDsKNJIZxMgY2hiXHdid70AoC2fp4ka7dzh1NrgA+sNT80wVyk0cMTgAgoVuox85
+	 KPfmTPxlePELs0TMtduVJBl7T/OlMpDvdtadNObM97Ef7wulPvuJsw+YuxPTTwAMlc
+	 Ar3KFzJXHquRw==
+Date: Mon, 7 Sep 2026 08:28:38 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Billy Tsai <billy_tsai@aspeedtech.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, 
+	Frank Li <Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, 
+	Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, 
+	Joel Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@codeconstruct.com.au>, 
+	Philipp Zabel <p.zabel@pengutronix.de>, linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, 
+	linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 1/8] dt-bindings: i3c: Document the AST2700 I3C controller
+Message-ID: <20260907-imaginary-economic-oyster-57cdd6@quoll>
+References: <20260901-b4-i3c-hci-ast2700-v1-0-19909e7cbd7e@aspeedtech.com>
+ <20260901-b4-i3c-hci-ast2700-v1-1-19909e7cbd7e@aspeedtech.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260901-b4-i3c-hci-ast2700-v1-1-19909e7cbd7e@aspeedtech.com>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,138 +68,168 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-NSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIFNpbGVudCBpbnRlZ2Vy
-IHRydW5jYXRpb24gYW5kIHVuYm91bmRlZCBtZW1vcnkgYWxsb2NhdGlvbiBpbiBgaTNjZGV2X3Jl
-YWRgIGFuZCBgaTNjZGV2X3dyaXRlYCBkdWUgdG8gdW52YWxpZGF0ZWQgYHNpemVfdCBjb3VudGAu
-Ci0gW0hpZ2hdIFJhY2UgY29uZGl0aW9uIGR1cmluZyBpbml0aWFsaXphdGlvbiBsZWFkcyB0byBk
-b3VibGUgYXR0YWNobWVudCwgcmVzdWx0aW5nIGluIGEgbWVtb3J5IGxlYWsgYW5kIFVzZS1BZnRl
-ci1GcmVlIG9uIGRldmljZSByZW1vdmFsLgotIFtNZWRpdW1dIE1pc3NpbmcgaGFuZGxpbmcgb2Yg
-YEJVU19OT1RJRllfRFJJVkVSX05PVF9CT1VORGAgcGVybWFuZW50bHkgbGVhdmVzIHRoZSBkZXZp
-Y2UgaW5hY2Nlc3NpYmxlIGlmIHRoZSBrZXJuZWwgZHJpdmVyIHByb2JlIGZhaWxzLgotIFtNZWRp
-dW1dIEJ1cyBub3RpZmllciBjYWxsYmFjayBpbmNvcnJlY3RseSByZXR1cm5zIG5lZ2F0aXZlIGVy
-cm9yIGNvZGVzIGluc3RlYWQgb2YgTk9USUZZXyogY29uc3RhbnRzLCBicmVha2luZyB0aGUgbm90
-aWZpZXIgY2hhaW4uCi0gW01lZGl1bV0gYGlkYV9hbGxvY2AgbGFja3MgYW4gdXBwZXIgYm91bmQg
-Y2hlY2ssIHdoaWNoIGNhbiBsZWFkIHRvIGludmFsaWQgbWlub3IgZGV2aWNlIG51bWJlcnMuCi0t
-Cgpjb21taXQgYTgyMDlhNGMwNWRmYmFhYzQ4NjgzZWY5ZTllOTk4YzViMjk3ZWZiNgpBdXRob3I6
-IFZpdG9yIFNvYXJlcyA8dml0b3Iuc29hcmVzQHRvcmFkZXguY29tPgoKaTNjOiBhZGQgaTNjZGV2
-IG1vZHVsZSB0byBleHBvc2UgaTNjIGRldiBpbiAvZGV2CiAgICAKVGhpcyBwYXRjaCBhZGRzIHVz
-ZXJzcGFjZSBjaGFyYWN0ZXIgZGV2aWNlIHN1cHBvcnQgZm9yIEkzQyBTRFIgcHJpdmF0ZQp0cmFu
-c2ZlcnMgdmlhIC9kZXYuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2kzYy9pM2NkZXYuYyBiL2Ry
-aXZlcnMvaTNjL2kzY2Rldi5jCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiBpbmRleCAwMDAwMDAw
-MDAwMDAwLi45MDRlYmZkNDg3Njk2Cj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL2RyaXZlcnMvaTNj
-L2kzY2Rldi5jClsgLi4uIF0KPiArc3RhdGljIHN0cnVjdCBpM2NkZXZfZGF0YSAqZ2V0X2ZyZWVf
-aTNjZGV2KHN0cnVjdCBpM2NfZGV2aWNlICppM2MpCj4gK3sKPiArCXN0cnVjdCBpM2NkZXZfZGF0
-YSAqaTNjZGV2Owo+ICsJaW50IGlkOwo+ICsKPiArCWlkID0gaWRhX2FsbG9jKCZpM2NkZXZfaWRh
-LCBHRlBfS0VSTkVMKTsKCltTZXZlcml0eTogTWVkaXVtXQpTaW5jZSB0aGlzIGFsbG93cyBJRHMg
-dXAgdG8gSU5UX01BWCwgY291bGQgYW4gYXJ0aWZpY2lhbGx5IGluZmxhdGVkIElEQQppbmRleCBl
-eGNlZWQgTUlOT1JNQVNLPwoKSWYgdGhlIHJldHVybmVkIGlkIGV4Y2VlZHMgTUlOT1JNQVNLLCB0
-aGUgbWFjcm8gTUtERVYoTUFKT1IsIGlkKSB3aWxsCm92ZXJmbG93IHRoZSBpZCBpbnRvIHRoZSBt
-YWpvciBudW1iZXIgYml0cy4gU2hvdWxkIHRoaXMgdXNlCmlkYV9hbGxvY19tYXgoLi4uLCBNSU5P
-Uk1BU0ssIC4uLikgb3Igc2ltaWxhciB0byBwcmV2ZW50IGNoYXJhY3RlciBkZXZpY2UKbnVtYmVy
-IGNvcnJ1cHRpb24/CgpbIC4uLiBdCj4gK3N0YXRpYyBzc2l6ZV90Cj4gK2kzY2Rldl9yZWFkKHN0
-cnVjdCBmaWxlICpmaWxlLCBjaGFyIF9fdXNlciAqYnVmLCBzaXplX3QgY291bnQsIGxvZmZfdCAq
-Zl9wb3MpCj4gK3sKPiArCXN0cnVjdCBpM2NkZXZfZGF0YSAqaTNjZGV2ID0gZmlsZS0+cHJpdmF0
-ZV9kYXRhOwo+ICsJc3RydWN0IGkzY19kZXZpY2UgKmkzYzsKPiArCXN0cnVjdCBpM2NfeGZlciB4
-ZmVycyA9IHsKPiArCQkucm53ID0gdHJ1ZSwKPiArCQkubGVuID0gY291bnQsCj4gKwl9OwoKW1Nl
-dmVyaXR5OiBIaWdoXQpUaGUgY291bnQgdmFyaWFibGUgaXMgYSBzaXplX3QsIGJ1dCB4ZmVycy5s
-ZW4gaXMgYSB1MTYuIENvdWxkIHRoaXMgc2lsZW50bHkKdHJ1bmNhdGUgcmVhZCByZXF1ZXN0cyBs
-YXJnZXIgdGhhbiA2NTUzNSBieXRlcz8KCj4gKwlpbnQgcmV0ID0gLUVOT0RFVjsKPiArCWNoYXIg
-KnRtcDsKPiArCj4gKwltdXRleF9sb2NrKCZpM2NkZXYtPnhmZXJfbG9jayk7Cj4gKwlpM2MgPSBp
-M2NkZXYtPmkzYzsKPiArCWlmICghaTNjIHx8IGkzYy0+ZGV2LmRyaXZlcikKPiArCQlnb3RvIGVy
-cl9vdXQ7Cj4gKwo+ICsJdG1wID0ga3phbGxvYyhjb3VudCwgR0ZQX0tFUk5FTCk7CgpbU2V2ZXJp
-dHk6IEhpZ2hdClNpbmNlIGNvdW50IGlzIGRlcml2ZWQgZGlyZWN0bHkgZnJvbSB1c2Vyc3BhY2Ug
-d2l0aG91dCBib3VuZHMgY2hlY2tpbmcgaGVyZSwKY291bGQgYW4gZXh0cmVtZWx5IGxhcmdlIHJl
-YWQoKSByZXF1ZXN0IHRyaWdnZXIgdW5ib3VuZGVkIGtlcm5lbCBhbGxvY2F0aW9ucz8KClRoaXMg
-bWlnaHQgcmVzdWx0IGluIHBhZ2UgYWxsb2NhdGlvbiBmYWlsdXJlIHdhcm5pbmdzIGFuZCBkbWVz
-ZyBzcGFtLiBXb3VsZAppdCBtYWtlIHNlbnNlIHRvIGVuZm9yY2UgYSBzaXplIGxpbWl0IG9yIHVz
-ZSBfX0dGUF9OT1dBUk4/CgpbIC4uLiBdCj4gK3N0YXRpYyBzc2l6ZV90Cj4gK2kzY2Rldl93cml0
-ZShzdHJ1Y3QgZmlsZSAqZmlsZSwgY29uc3QgY2hhciBfX3VzZXIgKmJ1Ziwgc2l6ZV90IGNvdW50
-LAo+ICsJICAgICBsb2ZmX3QgKmZfcG9zKQo+ICt7Cj4gKwlzdHJ1Y3QgaTNjZGV2X2RhdGEgKmkz
-Y2RldiA9IGZpbGUtPnByaXZhdGVfZGF0YTsKPiArCXN0cnVjdCBpM2NfZGV2aWNlICppM2M7Cj4g
-KwlzdHJ1Y3QgaTNjX3hmZXIgeGZlcnMgPSB7Cj4gKwkJLnJudyA9IGZhbHNlLAo+ICsJCS5sZW4g
-PSBjb3VudCwKPiArCX07CgpbU2V2ZXJpdHk6IEhpZ2hdClNpbWlsYXIgdG8gdGhlIHJlYWQgcGF0
-aCwgY291bGQgdGhlIHNpemVfdCBjb3VudCBiZSBzaWxlbnRseSB0cnVuY2F0ZWQgdG8KdTE2IGhl
-cmU/CgpbIC4uLiBdCj4gKwlkZXZfZGJnKCZpM2MtPmRldiwgIldyaXRpbmcgJXp1IGJ5dGVzLlxu
-IiwgY291bnQpOwo+ICsKPiArCXJldCA9IGkzY19kZXZpY2VfZG9feGZlcnMoaTNjLCAmeGZlcnMs
-IDEsIEkzQ19TRFIpOwo+ICsJa2ZyZWUodG1wKTsKPiArCj4gK2Vycl9vdXQ6Cj4gKwltdXRleF91
-bmxvY2soJmkzY2Rldi0+eGZlcl9sb2NrKTsKPiArCXJldHVybiAoIXJldCkgPyBjb3VudCA6IHJl
-dDsKCltTZXZlcml0eTogSGlnaF0KSWYgY291bnQgd2FzIHRydW5jYXRlZCB3aGVuIHBhc3NlZCB0
-byB4ZmVycy5sZW4sIGRvZXMgcmV0dXJuaW5nIHRoZSBvcmlnaW5hbAp1bi10cnVuY2F0ZWQgY291
-bnQgbWlzbGVhZCB1c2Vyc3BhY2UgaW50byBiZWxpZXZpbmcgYWxsIGJ5dGVzIHdlcmUgd3JpdHRl
-bgp3aGVuIG9ubHkgdXAgdG8gNjU1MzUgYnl0ZXMgd2VyZSBhY3R1YWxseSBzZW50PwoKWyAuLi4g
-XQo+ICtzdGF0aWMgaW50IGkzY2Rldl9hdHRhY2goc3RydWN0IGRldmljZSAqZGV2LCB2b2lkICpk
-dW1teSkKPiArewo+ICsJc3RydWN0IGkzY2Rldl9kYXRhICppM2NkZXY7Cj4gKwlzdHJ1Y3QgaTNj
-X2RldmljZSAqaTNjOwo+ICsJaW50IHJlczsKPiArCj4gKwlpZiAoZGV2LT50eXBlID09ICZpM2Nf
-bWFzdGVyZGV2X3R5cGUgfHwgZGV2LT5kcml2ZXIpCj4gKwkJcmV0dXJuIDA7Cj4gKwo+ICsJaTNj
-ID0gZGV2X3RvX2kzY2RldihkZXYpOwo+ICsKPiArCS8qIEdldCBhIGRldmljZSAqLwo+ICsJaTNj
-ZGV2ID0gZ2V0X2ZyZWVfaTNjZGV2KGkzYyk7CgpbU2V2ZXJpdHk6IEhpZ2hdCkluIGkzY2Rldl9p
-bml0KCksIGJ1c19yZWdpc3Rlcl9ub3RpZmllcigpIGlzIGNhbGxlZCBiZWZvcmUKaTNjX2Zvcl9l
-YWNoX2RldigpLiBJZiBhIGRldmljZSBpcyBob3RwbHVnZ2VkIGNvbmN1cnJlbnRseSwgY291bGQK
-aTNjZGV2X2F0dGFjaCgpIGJlIGNhbGxlZCB0d2ljZSBmb3IgdGhlIHNhbWUgZGV2aWNlPwoKU2lu
-Y2UgZ2V0X2ZyZWVfaTNjZGV2KCkgdW5jb25kaXRpb25hbGx5IGFsbG9jYXRlcyBhIG5ldyBpM2Nk
-ZXZfZGF0YSBhbmQKY2FsbHMgaTNjZGV2X3NldF9kcnZkYXRhKCksIHdvdWxkIHRoZSBzZWNvbmQg
-Y2FsbCBvdmVyd3JpdGUgdGhlIGZpcnN0CmFsbG9jYXRpb24ncyBkYXRhLCBwZXJtYW5lbnRseSBs
-ZWFraW5nIHRoZSBmaXJzdCBpM2NkZXZfZGF0YSBhbmQgaXRzIGNkZXY/Cgo+ICsJaWYgKElTX0VS
-UihpM2NkZXYpKQo+ICsJCXJldHVybiBQVFJfRVJSKGkzY2Rldik7ClsgLi4uIF0KPiArCXJlcyA9
-IGNkZXZfZGV2aWNlX2FkZCgmaTNjZGV2LT5jZGV2LCAmaTNjZGV2LT5kZXYpOwo+ICsJaWYgKHJl
-cykKPiArCQlnb3RvIGVycm9yX3B1dF9kZXY7Cj4gKwo+ICsJcHJfZGVidWcoImkzY2RldjogSTND
-IGRldmljZSBbJXNdIHJlZ2lzdGVyZWQgYXMgbWlub3IgJWRcbiIsCj4gKwkJIGRldl9uYW1lKCZp
-M2MtPmRldiksIGkzY2Rldi0+aWQpOwo+ICsJcmV0dXJuIDA7Cj4gKwo+ICtlcnJvcl9wdXRfZGV2
-Ogo+ICsJaTNjZGV2X3NldF9kcnZkYXRhKGkzYywgTlVMTCk7CgpbU2V2ZXJpdHk6IEhpZ2hdCklm
-IGEgc2Vjb25kIGF0dGFjaCBhdHRlbXB0IGZyb20gdGhlIHJhY2UgY29uZGl0aW9uIGZhaWxzIGhl
-cmUgKGZvciBleGFtcGxlLApkdWUgdG8gYSBzeXNmcyBuYW1lIGNvbGxpc2lvbiBpbiBjZGV2X2Rl
-dmljZV9hZGQoKSksIGl0IHNldHMgZHJ2ZGF0YSB0byBOVUxMLgoKV291bGQgdGhpcyBsZWF2ZSB0
-aGUgc3VjY2Vzc2Z1bGx5IHJlZ2lzdGVyZWQgZmlyc3QgY2RldiB1bnRyYWNrZWQ/Cgo+ICsJcHV0
-X2RldmljZSgmaTNjZGV2LT5kZXYpOwo+ICsJcmV0dXJuIHJlczsKPiArfQo+ICsKPiArc3RhdGlj
-IGludCBpM2NkZXZfZGV0YWNoKHN0cnVjdCBkZXZpY2UgKmRldiwgdm9pZCAqZHVtbXkpCj4gK3sK
-PiArCXN0cnVjdCBpM2NkZXZfZGF0YSAqaTNjZGV2Owo+ICsJc3RydWN0IGkzY19kZXZpY2UgKmkz
-YzsKPiArCj4gKwlpZiAoZGV2LT50eXBlID09ICZpM2NfbWFzdGVyZGV2X3R5cGUpCj4gKwkJcmV0
-dXJuIDA7Cj4gKwo+ICsJaTNjID0gZGV2X3RvX2kzY2RldihkZXYpOwo+ICsKPiArCWkzY2RldiA9
-IGkzY2Rldl9nZXRfZHJ2ZGF0YShpM2MpOwo+ICsJaWYgKCFpM2NkZXYpCj4gKwkJcmV0dXJuIDA7
-CgpbU2V2ZXJpdHk6IEhpZ2hdCklmIHRoZSBkZXZpY2Ugd2FzIGxlZnQgd2l0aCBhIE5VTEwgZHJ2
-ZGF0YSBidXQgYW4gYWN0aXZlIGNkZXYgZHVlIHRvIHRoZQppbml0aWFsaXphdGlvbiByYWNlIGNv
-bmRpdGlvbiwgd291bGQgcmV0dXJuaW5nIGVhcmx5IGhlcmUgc2tpcApjZGV2X2RldmljZV9kZWwo
-KT8KCkNvdWxkIHRoaXMgbGVhdmUgdGhlIG9ycGhhbmVkIGNkZXYgYWNjZXNzaWJsZSBhbmQgdHJp
-Z2dlciBhIFVzZS1BZnRlci1GcmVlCndoZW4gdXNlcnNwYWNlIGFjY2Vzc2VzIHRoZSB1bmRlcmx5
-aW5nIGkzY19kZXZpY2UgYWZ0ZXIgaXQgaGFzIGJlZW4gZnJlZWQ/CgpbIC4uLiBdCj4gK3N0YXRp
-YyBpbnQgaTNjZGV2X25vdGlmaWVyX2NhbGwoc3RydWN0IG5vdGlmaWVyX2Jsb2NrICpuYiwKPiAr
-CQkJCXVuc2lnbmVkIGxvbmcgYWN0aW9uLAo+ICsJCQkJdm9pZCAqZGF0YSkKPiArewo+ICsJc3Ry
-dWN0IGRldmljZSAqZGV2ID0gZGF0YTsKPiArCj4gKwlzd2l0Y2ggKGFjdGlvbikgewo+ICsJY2Fz
-ZSBCVVNfTk9USUZZX0FERF9ERVZJQ0U6Cj4gKwljYXNlIEJVU19OT1RJRllfVU5CT1VORF9EUklW
-RVI6Cj4gKwkJcmV0dXJuIGkzY2Rldl9hdHRhY2goZGV2LCBOVUxMKTsKCltTZXZlcml0eTogTWVk
-aXVtXQpJZiBpM2NkZXZfYXR0YWNoKCkgZmFpbHMsIGl0IHJldHVybnMgYSBuZWdhdGl2ZSBlcnJv
-ciBjb2RlIChsaWtlIC1FTk9NRU0pLgpTaW5jZSBuZWdhdGl2ZSB2YWx1ZXMgaGF2ZSB0aGVpciBo
-aWdoIGJpdCBzZXQsIGRvZXMgcmV0dXJuaW5nIHRoZW0gaGVyZQphY2NpZGVudGFsbHkgc2V0IHRo
-ZSBOT1RJRllfU1RPUF9NQVNLICgweDgwMDApIGV4cGVjdGVkIGJ5IHRoZQpibG9ja2luZ19ub3Rp
-Zmllcl9jYWxsX2NoYWluIEFQST8KCkNvdWxkIHRoaXMgcHJlbWF0dXJlbHkgdGVybWluYXRlIHRo
-ZSBidXMgbm90aWZpZXIgY2hhaW4gYW5kIGJyZWFrIG90aGVyCnN1YnN5c3RlbXMgcmVseWluZyBv
-biBJM0MgYnVzIGV2ZW50cz8KCj4gKwljYXNlIEJVU19OT1RJRllfREVMX0RFVklDRToKPiArCWNh
-c2UgQlVTX05PVElGWV9SRU1PVkVEX0RFVklDRToKPiArCWNhc2UgQlVTX05PVElGWV9CSU5EX0RS
-SVZFUjoKPiArCQlyZXR1cm4gaTNjZGV2X2RldGFjaChkZXYsIE5VTEwpOwoKW1NldmVyaXR5OiBN
-ZWRpdW1dCklmIGEga2VybmVsIGRyaXZlciBwcm9iZSBmYWlscywgdGhlIGNvcmUgZW1pdHMgQlVT
-X05PVElGWV9EUklWRVJfTk9UX0JPVU5ELgpTaW5jZSB0aGlzIGFjdGlvbiBpcyBtaXNzaW5nIGZy
-b20gdGhlIHN3aXRjaCBibG9jaywgZG9lcyB0aGUgZGV2aWNlIGdldApwZXJtYW5lbnRseSBzdHVj
-ayB3aXRob3V0IGEgY2hhcmFjdGVyIGRldmljZSBpbnRlcmZhY2UgaWYgaXQgd2FzIGRldGFjaGVk
-CmR1cmluZyBCVVNfTk9USUZZX0JJTkRfRFJJVkVSPwoKPiArCX0KPiArCj4gKwlyZXR1cm4gMDsK
-PiArfQpbIC4uLiBdCj4gK3N0YXRpYyBpbnQgX19pbml0IGkzY2Rldl9pbml0KHZvaWQpCj4gK3sK
-WyAuLi4gXQo+ICsJLyogS2VlcCB0cmFjayBvZiBidXNzZXMgd2hpY2ggaGF2ZSBkZXZpY2VzIHRv
-IGFkZCBvciByZW1vdmUgbGF0ZXIgKi8KPiArCXJlcyA9IGJ1c19yZWdpc3Rlcl9ub3RpZmllcigm
-aTNjX2J1c190eXBlLCAmaTNjZGV2X25vdGlmaWVyKTsKPiArCWlmIChyZXMpCj4gKwkJZ290byBv
-dXRfdW5yZWdfY2xhc3M7Cj4gKwo+ICsJLyogQmluZCB0byBhbHJlYWR5IGV4aXN0aW5nIGRldmlj
-ZSB3aXRob3V0IGRyaXZlciByaWdodCBhd2F5ICovCj4gKwlpM2NfZm9yX2VhY2hfZGV2KE5VTEws
-IGkzY2Rldl9hdHRhY2gpOwoKW1NldmVyaXR5OiBIaWdoXQpBcyBtZW50aW9uZWQgZWFybGllciwg
-ZG9lcyB0aGlzIGluaXRpYWxpemF0aW9uIG9yZGVyIG9wZW4gYSByYWNlIHdpbmRvdyBmb3IKY29u
-Y3VycmVudCBkZXZpY2UgYWRkaXRpb25zLCBwb3RlbnRpYWxseSBsZWFkaW5nIHRvIHRoZSBkb3Vi
-bGUgYXR0YWNobWVudAphbmQgVUFGIGlzc3VlPwoKLS0gClNhc2hpa28gQUkgcmV2aWV3IMK3IGh0
-dHBzOi8vc2FzaGlrby5kZXYvIy9wYXRjaHNldC8yMDI2MDkwNjIwMjc0Ny40MDQxMzg5LTEtc2Ft
-YWdhemFyeWFuQGdvb2dsZS5jb20/cGFydD0zCgotLSAKbGludXgtaTNjIG1haWxpbmcgbGlzdAps
-aW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
+On Tue, Sep 01, 2026 at 07:35:28PM +0800, Billy Tsai wrote:
+> The AST2700 I3C controller implements the MIPI I3C HCI programming
+> model, extended with an ASPEED in-house control block and a PHY
+> programming window advertised through an HCI vendor extended
+> capability. Follow the existing aspeed,ast2600-i3c precedent of
+> describing SoC integrations of a common I3C IP in their own schema.
+
+What precedent exactly?
+
+Are you now bringing some LLM slop arguments here?
+
+> 
+> The controller takes a core clock for PHY timing and two reset-names
+> lines: its own reset and a DMA engine reset shared by all I3C
+> controllers on the SoC.
+> 
+> The PHY timings derived from the core clock and bus rate assume
+> nominal bus loading. Boards with long traces, weak pull-ups, or
+> capacitive loading need different ratios and setup periods, so
+> document properties to override the push-pull and open-drain SCL
+> periods, the SDA TX hold time, the tCAS/tCBP periods, and the SCL low
+> period used for a repeated START or STOP.
+> 
+> Boards without external I3C pull-up resistors can use the PHY's
+> built-in pull-ups instead. The achievable resistance depends on the
+> voltage domain of the pins (high-voltage vs low-voltage), which can be
+> determined from the pin group assigned to the bus. Reuse bias-pull-up
+> (pincfg-node.yaml) for the strength in Ohms; it is declared on this
+> node rather than a pin-config node since the pull-up switch is part of
+> the I3C PHY, not the broader SoC pin control IPs.
+> 
+> Signed-off-by: Billy Tsai <billy_tsai@aspeedtech.com>
+> Assisted-by: Claude:claude-fable-5
+> 
+> ---
+> We considered formally expressing bias-pull-up's dependency on a
+> pinctrl state in the schema, but couldn't find a clean way to say
+> "depends on whichever pinctrl-N is active" without hard-coding
+> pinctrl-0 specifically, which would be wrong in general (a node's
+> active pin state doesn't have to sit at index 0). We've added
+> pinctrl-0 to the example to illustrate the typical usage instead,
+> without a formal schema-level dependency.
+> ---
+>  .../bindings/i3c/aspeed,ast2700-i3c-hci.yaml       | 133 +++++++++++++++++++++
+>  1 file changed, 133 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/i3c/aspeed,ast2700-i3c-hci.yaml b/Documentation/devicetree/bindings/i3c/aspeed,ast2700-i3c-hci.yaml
+> new file mode 100644
+> index 000000000000..19ecb5b15038
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/i3c/aspeed,ast2700-i3c-hci.yaml
+> @@ -0,0 +1,133 @@
+> +# SPDX-License-Identifier: GPL-2.0 OR BSD-2-Clause
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/i3c/aspeed,ast2700-i3c-hci.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: ASPEED AST2700 I3C controller
+> +
+> +maintainers:
+> +  - Billy Tsai <billy_tsai@aspeedtech.com>
+> +
+> +description:
+> +  The AST2700 I3C controller implements the MIPI I3C HCI programming model,
+> +  extended with an ASPEED in-house control block and a PHY programming window
+> +  that are advertised through an HCI vendor extended capability.
+> +
+> +properties:
+> +  compatible:
+> +    const: aspeed,ast2700-i3c-hci
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    maxItems: 1
+> +
+> +  resets:
+> +    items:
+> +      - description: Core controller reset.
+> +      - description: DMA engine reset shared by all I3C controllers.
+> +
+> +  reset-names:
+> +    items:
+> +      - const: core
+> +      - const: dma
+> +
+> +  bias-pull-up:
+> +    $ref: /schemas/pinctrl/pincfg-node.yaml#/properties/bias-pull-up
+> +    enum: [177, 231, 261, 317, 400, 470, 550, 600, 750]
+> +    description:
+> +      Enable the PHY-internal pull-ups on SCL and SDA and select their
+> +      strength, in Ohms. High-voltage pins support 400, 470 or 600 Ohms,
+> +      and low-voltage pins support 177, 231, 261, 317, 400, 550 or 750
+> +      Ohms. When absent the internal pull-ups stay disabled and the bus
+> +      relies on external pull-ups.
+> +
+> +  aspeed,pp-scl-high-ns:
+> +    description:
+> +      Push-pull SCL high period. Overrides the value derived from the
+> +      i3c-scl-hz bus rate.
+> +
+> +  aspeed,pp-scl-low-ns:
+> +    description:
+> +      Push-pull SCL low period. Overrides the value derived from the
+> +      i3c-scl-hz bus rate.
+> +
+> +  aspeed,od-scl-high-ns:
+> +    default: 380
+> +    description:
+> +      Open-drain SCL high period.
+> +
+> +  aspeed,od-scl-low-ns:
+> +    default: 620
+> +    description:
+> +      Open-drain SCL low period.
+> +
+> +  aspeed,sda-tx-hold-ns:
+> +    default: 10
+> +    description:
+> +      SDA output hold time relative to the SCL edge.
+> +
+> +  aspeed,cas-ns:
+> +    minimum: 39
+> +    description:
+> +      Clock-after-start (tCAS) period driven after a START condition.
+> +      When absent it is derived from the SCL low period of the
+> +      applicable bus context, clamped to the protocol minimum.
+> +
+> +  aspeed,cbp-ns:
+> +    minimum: 20
+> +    description:
+> +      Clock-before-stop (tCBP) period driven before a STOP condition.
+> +      When absent it is derived from the SCL low period of the
+> +      applicable bus context, clamped to the protocol minimum.
+> +
+> +  aspeed,sr-p-scl-low-ns:
+> +    default: 40
+> +    description:
+> +      SCL low period used while preparing a repeated START or STOP
+> +      condition, kept separate from the push-pull SCL low period to
+> +      satisfy the MIPI I3C clock stalling requirements.
+
+Probably I3C maintainers should weight in here and help - should these
+be made generic for all I3C controllers? I am surprised some "standard"
+I3C controller needs to configure this as the single one. No other ever
+needed...
+
+Best regards,
+Krzysztof
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
