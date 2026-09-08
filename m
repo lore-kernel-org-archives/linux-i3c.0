@@ -4,53 +4,110 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 608DBC79F82
-	for <linux-i3c@archiver.kernel.org>; Tue,  8 Sep 2026 10:39:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2A2AC79FA1
+	for <linux-i3c@archiver.kernel.org>; Tue,  8 Sep 2026 10:59:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=69X2MoHAnOOquAR7Q/B/2eNlc98FQy7ZU5ChXwz73/E=; b=RcTU/ydl4KacPC
-	RKfgqbyELu7NQCIZvI6Ic6lyDLqjBRVFFYhrvihrtukgQQ6aHLpMIhHEFb26Ikd+KIQ9C69UTe3Bf
-	M4iNaPOr4JW8qNq1U7rR416bTJ0xO4glLKQpxVDYMqzJOkQlpZtaRO9llCjYwDSrX4ynEa75RbKLY
-	ilrasHeao9hp1Si8UBFnxE/DcC9hvI2/99Fqi1xKBh9X6uIwmh+EcqELu5w0pPD/WteyBO9b9qj4A
-	ZktUBG9tXmjjgjUdDy4OMM8HbCvB8lwlzx+SxDTXGU0qXx4gpt4ItrevZV1Fscg4JGkzLg8nXtjvr
-	mA0KCFJ7uoNs94FVCXIA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ie8hxUfaj2WmgHeP34RFMFVkI+0X5nBNgaf0Qy2cmEw=; b=pdkpazTSW84c8N
+	w8AFbgCtNYWE4VaWxnWN8fECtwVYTNZsCatDxMPWPajUVmA9qZIOktwYC/ZTTv39SkVY/e1vmWJj8
+	1denKoIggLiZHQ6ocJYBnB0HARTQk32GqdcG8GDoluBw1HlQLOlZGHmPgbkUHkO9Q9UIsxmxSLCO7
+	omuSJWXs8OcD8XqbC6VmvEfxD6yJAIw5DTYEiP2xY0gbZRglJj6aucWehjBsJz0KzfuVcWRkGbvWm
+	tu2wQuTznox9+9g7MSpzEvDiDpc9paVB3iuufOIgN+YWZTSHSu2ejjix0WpvcfnckuqaRWt87XMUZ
+	BP3RQJ1MPoJxVCSMOVUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3tEd-00000008nCy-0ZM0;
-	Tue, 08 Sep 2026 10:39:27 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1x3tY9-00000008pmT-2WzH;
+	Tue, 08 Sep 2026 10:59:39 +0000
+Received: from mail-westcentralusazlp170100005.outbound.protection.outlook.com ([2a01:111:f403:c112::5] helo=CY7PR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x3tEc-00000008nCl-174a
+	id 1x3tY6-00000008plw-1bIG
 	for linux-i3c@lists.infradead.org;
-	Tue, 08 Sep 2026 10:39:26 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id D51AB41688;
-	Tue,  8 Sep 2026 10:39:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 605631F00A3D;
-	Tue,  8 Sep 2026 10:39:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788863965;
-	bh=juJ4DzLhYeERpJWLTP8Alcr7dztbOTBzDRIhbo64Tk8=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=FSQejPjYrm3krgK95cXnMXshL+F3RaOB3FINbAYIfiFV1+ZdYZmtXKzkRDww43kL4
-	 2gUGn3PDsnNX6i2uttpodkV68SqdKdVYn2L+qH5r68OqTgNpvrLd7x0WfuKlwGhmi4
-	 npT9zOnf64trIgpXDVaCtO/5RPd3Vy6WIyYp0ERG++OZDtdSvoMyKcdPgMQTo8udW0
-	 SlVKtxtjcWS8kyvNaENAr6+WC0c20pOnWWKr8XstkHlC84wsffH379UCHvBGWKoZwY
-	 wA+YyYRT3ibaA2bchdFZ8otqCDyvJ3bvGR3uDwTjgWv1EvMa16dJyTaxFVZ/9ZF7qE
-	 mzJ1FLvmm3sZQ==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH] i3c: master: dw: Clamp GETMRL/GETMWL to controller FIFO
- limits
-To: "Shubham Patil" <shubhamsanjay.patil@amd.com>
-Cc: Frank.Li@kernel.org, "Alexandre Belloni" <alexandre.belloni@bootlin.com>, conor+dt@kernel.org, linux-i3c@lists.infradead.org, devicetree@vger.kernel.org, robh@kernel.org
-In-Reply-To: <20260908102724.3232660-1-shubhamsanjay.patil@amd.com>
-References: <20260908102724.3232660-1-shubhamsanjay.patil@amd.com>
-Date: Tue, 08 Sep 2026 10:39:24 +0000
-Message-Id: <20260908103925.605631F00A3D@smtp.kernel.org>
+	Tue, 08 Sep 2026 10:59:36 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=id2SmDncqASHBzJXfpMLDpOYtSv03izP67HYZOJM2CE4oF1j02NAzPW88Txrgp5Lkdb3NVJyzyF3eeQ4uCfvX8pGZ5bZIv8zOdyRN7kXxZ0iemMj1r7SEHeZlm9B+GFPugpIAZSeZC8J5aiwfNglzdEGgAPz+gRXMp1wXrkWcfbs4jEdRFJuLO2XJpmJEumK+6MHZY672sec+B4uAd7JTCBiezyef3vkZMIXWYTDSUpl+TcxHnP7xWFTNcuB4CEeQ5XFQhPR9sE8kqdvT34ryzCoWr81lc81p8ep10N86ib2FkOMveits01/onRrUQjogJUhMyErEOj7NXyjGPWcGg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=YXy66010Ea9bcSZVXjugEmNH/Q0BdGzKnqum6iQhNIE=;
+ b=DYoPzpMUgptGlkw+yE2pGUssbEFhYsXKf350w699iomVAGBO/PtpSgXCde/EaEM974qg05EKV+K3FzR0EYWmCsOTBt1vRQT/qfLTwc3SsWIrEVPzMG+eQialFzEaUgK/mFbt5vjh0ZvoUiRicwlCYoNjNjj/bm4OG0K0bB2QFQldNpOJ7O63e+llS2QivHGC0Q328HJKfSOheqd1G0fHmqH0IO/OKOO+A8U7QE1Jhk1DGnxJRLeKd/1AckvINdFpPgh33XKTOLTxDq4YCxyrxf6nP9UauEOUmtb6Vpgb5gpIEIMbZWo5UeA2+e2Pg581ddRhCW+LqoKUEy+bSZh+EA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 165.204.84.17) smtp.rcpttodomain=bootlin.com smtp.mailfrom=amd.com;
+ dmarc=pass (p=quarantine sp=quarantine pct=100) action=none
+ header.from=amd.com; dkim=none (message not signed); arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=amd.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=YXy66010Ea9bcSZVXjugEmNH/Q0BdGzKnqum6iQhNIE=;
+ b=lExnoWMsJHJgg+8epvaj0AnBTPlFbY9qHooSz4/i1O4RIDkZPR/YAeVwtCOaNk4nxbIb26hKcEnN8tf6RNsXabeyMk5fW5daM3BLu12Lv0Ief+dXKMGJ6nQeAbxIN3059KAN5Q/SwYdx3oup8eyXVSWZu3JxiJArxXDZawHiA0c=
+Received: from BN9PR03CA0512.namprd03.prod.outlook.com (2603:10b6:408:131::7)
+ by DS7PR12MB6072.namprd12.prod.outlook.com (2603:10b6:8:9c::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.382.15; Tue, 8 Sep
+ 2026 10:59:29 +0000
+Received: from BN1PEPF00004683.namprd03.prod.outlook.com
+ (2603:10b6:408:131:cafe::8d) by BN9PR03CA0512.outlook.office365.com
+ (2603:10b6:408:131::7) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.406.7 via Frontend Transport; Tue, 8
+ Sep 2026 10:59:28 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 165.204.84.17)
+ smtp.mailfrom=amd.com; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=amd.com;
+Received-SPF: Pass (protection.outlook.com: domain of amd.com designates
+ 165.204.84.17 as permitted sender) receiver=protection.outlook.com;
+ client-ip=165.204.84.17; helo=satlexmb07.amd.com; pr=C
+Received: from satlexmb07.amd.com (165.204.84.17) by
+ BN1PEPF00004683.mail.protection.outlook.com (10.167.243.89) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.21.406.5 via Frontend Transport; Tue, 8 Sep 2026 10:59:27 +0000
+Received: from satlexmb10.amd.com (10.181.42.219) by satlexmb07.amd.com
+ (10.181.42.216) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.46; Tue, 8 Sep
+ 2026 05:59:26 -0500
+Received: from satlexmb07.amd.com (10.181.42.216) by satlexmb10.amd.com
+ (10.181.42.219) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.46; Tue, 8 Sep
+ 2026 05:59:25 -0500
+Received: from xhdshubhraj40.xilinx.com (10.180.168.240) by satlexmb07.amd.com
+ (10.181.42.216) with Microsoft SMTP Server id 15.2.2562.46 via Frontend
+ Transport; Tue, 8 Sep 2026 05:59:23 -0500
+From: Shubham Patil <shubhamsanjay.patil@amd.com>
+To: Shubhrajyoti Datta <shubhrajyoti.datta@amd.com>, Alexandre Belloni
+	<alexandre.belloni@bootlin.com>
+CC: Frank Li <Frank.Li@nxp.com>, <linux-i3c@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>, <adrian.hunter@intel.com>, <git@amd.com>,
+	Shubham Patil <shubhamsanjay.patil@amd.com>
+Subject: [PATCH] i3c: master: amd: Report direct CCC read length in payload.actual_len
+Date: Tue, 8 Sep 2026 16:29:19 +0530
+Message-ID: <20260908105919.3262254-1-shubhamsanjay.patil@amd.com>
+X-Mailer: git-send-email 2.34.1
+MIME-Version: 1.0
+X-EOPAttributedMessage: 0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: BN1PEPF00004683:EE_|DS7PR12MB6072:EE_
+X-MS-Office365-Filtering-Correlation-Id: 579d5fd9-1f8b-48ef-204d-08df0d984098
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|82310400026|36860700016|1800799024|23010399003|376014|10067099003|56012099006|11063799006|18002099003;
+X-Microsoft-Antispam-Message-Info: 7twIX8GPzz0GvTlnUmHctlo8koibHYtp9vPkYSSlEQQ1zbHxDYBF2X3diVsbfwXSUmlbub2sadIrHaiW5iQx/E3UfpA+ZYvfrY8+8FBQaTV07Qm+/c2xnTxYTALJjAqiD7QwdNuX9a+0n2TxeV+Pmb+yCGssBgrL5bcqAL/8NdEeEQf5Xb49cTKokP5GtgGP2GyyClABjoLqSM+IyOhygLVoR2+pZpblCkA1z2A2m6raQtzAel7jdLLjeOgR8mmLCCMXuE5Yy5c8PNIPjzkl/Z4Z5INORv5jw5Qzn86eiAwFRejIkM6MmuxCRowuR8oihSpbGh+sNtJd2hW0nSxKbiVLkqukpYxz48vUFH+nLwPzsmjWlAEU13L036rzCzr8v6mThhXX7pyIDpp4QyqAjRaHSvTAsQ/A2Zme9pKPOtGJ6tIBxbLNIGe7prLNHhcA2K2yYuuGUph37Qa+sG1mDDUUqIMRMlFeEHCWGCHcM4A6HXRLTvynVypL+jeRm4a0k93lHS8uz0QjSrV+ReyYrFp1kSnn/O+0rfLInJu42XyAcnsOSOPeJH4khvKiQG3fR5sXK0trZKcYcGY7v5ETm/Uqb82yqNWLreYldd5v2RmGOhoakAOPt2PvQ9aOtbJY91yYscw1U2qP5FkF92SdkF+StXle/FCG/xzyoOT9N+DfJWFGU949JXbEZYkLp2uWa1QKSGFx4m8DMg37mp0iCQ==
+X-Forefront-Antispam-Report: CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:satlexmb07.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(82310400026)(36860700016)(1800799024)(23010399003)(376014)(10067099003)(56012099006)(11063799006)(18002099003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: jx/58ge0bDZI0WNWYwIDk1E05ttnkc2BidIEDHnstq2JFzlJw+/RHbNwlDvFPXSH9ZjFspzYWJjCcpJI3jCshidGgFTjJ2k0LC3cxcHpCS8ZAKTUCxdajNNIxoIoZLxjLFjovac+Cv7qkVy1yZiRe5tQbz0XM58GZPG7Ct+8yH4tslr2cK0hKWnGtcK1ylGpdR4tzcXx9e3uWtt+h+/1PNxJ+LBbsL7Wr3wZnBKUpUoRuBwMIbliOZJLFEMvd5eZWOm8ChzsU7TT3Ve09mLlaPh/j+9wHs53o1BlpFo1GyqJwMRCD4ef0kycyrFsFfB9YRylXBzU567zngx4mk8SdmH8glLpisGwkd5v4UwQs6nI5lKrVDm0b55LA44C/gi/kqc+IsNLbpDP4qAAuwJa3vQwG7xLqHoQw9A4hbtgQ7b166vI8PQOn7JiIqeyldXp
+X-OriginatorOrg: amd.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Sep 2026 10:59:27.9320
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 579d5fd9-1f8b-48ef-204d-08df0d984098
+X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[satlexmb07.amd.com]
+X-MS-Exchange-CrossTenant-AuthSource: BN1PEPF00004683.namprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS7PR12MB6072
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260908_035934_464585_25D01467 
+X-CRM114-Status: GOOD (  11.67  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,75 +119,43 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW01lZGl1bV0gVGhlIGNvbW1pdCBt
-ZXNzYWdlIGNvbnRyYWRpY3RzIHRoZSBpbXBsZW1lbnRhdGlvbiBhbmQgaW5saW5lIGNvbW1lbnRz
-IHJlZ2FyZGluZyBHRVQgYnVmZmVyIHVwZGF0ZXMgb24gYSBmYWlsZWQgU0VUIGNvbW1hbmQuCi0t
-Cgpjb21taXQgMDBkMmE1YjRkZmMxNGNmZjI0M2NlZTk0ZWFjMzdiMTczM2FkNWExZApBdXRob3I6
-IFNodWJoYW0gUGF0aWwgPHNodWJoYW1zYW5qYXkucGF0aWxAYW1kLmNvbT4KCmkzYzogbWFzdGVy
-OiBkdzogQ2xhbXAgR0VUTVJML0dFVE1XTCB0byBjb250cm9sbGVyIEZJRk8gbGltaXRzCiAgICAK
-VGhlIERXIG1hc3RlciByZWplY3RzIHByaXZhdGUgU0RSIHRyYW5zZmVycyBsYXJnZXIgdGhhbiBj
-YXBzLmRhdGFmaWZvZGVwdGgKd2l0aCAtRU9QTk9UU1VQUC4gVGFyZ2V0cyBvZnRlbiByZXBvcnQg
-TVJML01XTCB2YWx1ZXMgbGFyZ2VyIHRoYW4gdGhhdApGSUZPLCBzbyB0aGUgY29yZSBzdG9yZXMg
-bGltaXRzIHRoZSBjb250cm9sbGVyIGNhbm5vdCBtZWV0LgoKPiBBZnRlciBhIHN1Y2Nlc3NmdWwg
-R0VUTVJML0dFVE1XTCwgaXNzdWUgRGlyZWN0IFNFVE1STC9TRVRNV0wgdG8gdGhlCj4gc2FtZSB0
-YXJnZXQgd2l0aCBsZW5ndGhzIGNhcHBlZCB0byB0aGUgZGF0YSBGSUZPIChpbiBieXRlcyksIHRo
-ZW4KPiByZXdyaXRlIHRoZSBHRVQgcGF5bG9hZCBzbyB0aGUgY29yZSBrZWVwcyB0aGUgc2FtZSB2
-YWx1ZXMuIE9ubHkgdXBkYXRlCj4gdGhlIEdFVCBidWZmZXIgb25jZSBTRVQgaXMgYWNrZWQsIHNv
-IGEgZmFpbGVkIFNFVCBkb2VzIG5vdCBsZWF2ZSB0aGUKPiBjb3JlIGFuZCB0aGUgdGFyZ2V0IGRp
-c2FncmVlaW5nLgoKW1NldmVyaXR5OiBNZWRpdW1dCklzIHRoaXMgY29tbWl0IG1lc3NhZ2UgYWNj
-dXJhdGU/IFRoZSBpbXBsZW1lbnRhdGlvbiBjb3JyZWN0bHkgdXBkYXRlcyB0aGUgR0VUCmJ1ZmZl
-ciByZWdhcmRsZXNzIG9mIHRoZSBTRVQgb3V0Y29tZSB0byBwcm90ZWN0IHRoZSBjb250cm9sbGVy
-J3MgRklGTywgbWF0Y2hpbmcKdGhlIGlubGluZSBjb21tZW50cywgYnV0IHRoaXMgZGlyZWN0bHkg
-dmlvbGF0ZXMgdGhlIGNsYWltIGhlcmUgdGhhdCB0aGUgYnVmZmVyCmlzIG9ubHkgdXBkYXRlZCBp
-ZiBTRVQgaXMgYWNrZWQuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2kzYy9tYXN0ZXIvZHctaTNj
-LW1hc3Rlci5jIGIvZHJpdmVycy9pM2MvbWFzdGVyL2R3LWkzYy1tYXN0ZXIuYwo+IGluZGV4IDQ1
-NjNkODc2MWJhMGIuLjUxZGVmY2I1Nzc2MTkgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9pM2MvbWFz
-dGVyL2R3LWkzYy1tYXN0ZXIuYwo+ICsrKyBiL2RyaXZlcnMvaTNjL21hc3Rlci9kdy1pM2MtbWFz
-dGVyLmMKWyAuLi4gXQo+IEBAIC04NDQsNiArODUwLDEzMCBAQCBzdGF0aWMgaW50IGR3X2kzY19j
-Y2NfZ2V0KHN0cnVjdCBkd19pM2NfbWFzdGVyICptYXN0ZXIsIHN0cnVjdCBpM2NfY2NjX2NtZCAq
-Y2NjKQo+ICsvKgo+ICsgKiBDYXAgdGhlIGxpbWl0cyBhIHRhcmdldCByZXBvcnRlZCB0aHJvdWdo
-IEdFVE1STCB0byB3aGF0IHRoaXMgY29udHJvbGxlciBjYW4KPiArICogYWN0dWFsbHkgdHJhbnNm
-ZXIsIHNvIHRoZSBjb3JlIG5ldmVyIGFza3MgZm9yIGEgcHJpdmF0ZSByZWFkIHRoZSBkYXRhIEZJ
-Rk8KPiArICogY2Fubm90IGhvbGQuIFRoZSBvcHRpb25hbCBJQkkgcGF5bG9hZCBieXRlIGlzIGNh
-cHBlZCB0byB0aGUgSUJJIHF1ZXVlIGRlcHRoCj4gKyAqIGluc3RlYWQ7IHNpbmNlIHRoYXQgYnl0
-ZSBpcyBhIHU4LCB0aGUgSUJJIGNhcCBvbmx5IGV2ZXIgYXBwbGllcyB0bwo+ICsgKiBjb250cm9s
-bGVycyB3aG9zZSBJQkkgcXVldWUgaXMgc21hbGxlciB0aGFuIDI1NSBieXRlcy4KPiArICoKPiAr
-ICogRGlyZWN0IFNFVE1STCBpcyBvcHRpb25hbCwgc28gYSB0YXJnZXQgbWF5IGltcGxlbWVudCBH
-RVRNUkwgYW5kIE5BQ0sgdGhlIFNFVC4KPiArICogQ2xhbXAgdGhlIHZhbHVlcyBoYW5kZWQgYmFj
-ayB0byB0aGUgY29yZSBlaXRoZXIgd2F5OiBhIGZhaWxlZCBTRVQgb25seSBtZWFucwo+ICsgKiB0
-aGUgdGFyZ2V0IGtlZXBzIGl0cyBvd24gbGFyZ2VyIGxpbWl0LCB3aGljaCBpcyBoYXJtbGVzcyBh
-cyBsb25nIGFzIHRoZSBjb3JlCj4gKyAqIHN0YXlzIHdpdGhpbiBvdXJzLgo+ICsgKi8KPiArc3Rh
-dGljIGludCBkd19pM2NfbWFzdGVyX2NsYW1wX21ybChzdHJ1Y3QgZHdfaTNjX21hc3RlciAqbWFz
-dGVyLAo+ICsJCQkJICAgc3RydWN0IGkzY19jY2NfY21kICpjY2MpCj4gK3sKWyAuLi4gXQo+ICsJ
-cmV0ID0gZHdfaTNjX2NjY19zZXQobWFzdGVyLCAmc2V0X2NtZCk7Cj4gKwlpZiAocmV0KQo+ICsJ
-CWRldl9kYmcoJm1hc3Rlci0+YmFzZS5kZXYsCj4gKwkJCSJTRVRNUkwgbm90IGFjY2VwdGVkIGJ5
-IHRhcmdldDogJWRcbiIsIHJldCk7Cj4gKwo+ICsJaWYgKGNsYW1wX3JlYWQpIHsKPiArCQltcmwt
-PnJlYWRfbGVuID0gY3B1X3RvX2JlMTYobWF4X2ZpZm9fYnl0ZXMpOwo+ICsJCWRldl9kYmcoJm1h
-c3Rlci0+YmFzZS5kZXYsCj4gKwkJCSJjbGFtcGVkIHRhcmdldCBNUkwgZnJvbSAldSB0byAldSBi
-eXRlcyAoRklGTyBkZXB0aCBsaW1pdClcbiIsCj4gKwkJCXJlYWRfbGVuLCBtYXhfZmlmb19ieXRl
-cyk7Cj4gKwl9CgpbU2V2ZXJpdHk6IE1lZGl1bV0KQ291bGQgdGhpcyB1cGRhdGUgaW4gZHdfaTNj
-X21hc3Rlcl9jbGFtcF9tcmwoKSBsZWFkIHRvIGRldmVsb3BlciBjb25mdXNpb24KcmVnYXJkaW5n
-IGNvcmUgc3RhdGUgc3luY2hyb25pemF0aW9uPyBJdCB1cGRhdGVzIHRoZSBNUkwgYnVmZmVyIHVu
-Y29uZGl0aW9uYWxseQphZnRlciBhIHBvdGVudGlhbGx5IGZhaWxlZCBTRVQgY29tbWFuZCwgY29u
-dHJhcnkgdG8gdGhlIGNvbW1pdCBtZXNzYWdlLgoKWyAuLi4gXQo+ICtzdGF0aWMgaW50IGR3X2kz
-Y19tYXN0ZXJfY2xhbXBfbXdsKHN0cnVjdCBkd19pM2NfbWFzdGVyICptYXN0ZXIsCj4gKwkJCQkg
-ICBzdHJ1Y3QgaTNjX2NjY19jbWQgKmNjYykKPiArewpbIC4uLiBdCj4gKwlyZXQgPSBkd19pM2Nf
-Y2NjX3NldChtYXN0ZXIsICZzZXRfY21kKTsKPiArCWlmIChyZXQpCj4gKwkJZGV2X2RiZygmbWFz
-dGVyLT5iYXNlLmRldiwKPiArCQkJIlNFVE1XTCBub3QgYWNjZXB0ZWQgYnkgdGFyZ2V0OiAlZFxu
-IiwgcmV0KTsKPiArCj4gKwltd2wtPmxlbiA9IGNwdV90b19iZTE2KG1heF9maWZvX2J5dGVzKTsK
-CltTZXZlcml0eTogTWVkaXVtXQpTaW1pbGFybHksIGRvZXMgdGhpcyB1bmNvbmRpdGlvbmFsIHVw
-ZGF0ZSBpbiBkd19pM2NfbWFzdGVyX2NsYW1wX213bCgpIG5lZWQKY2xhcmlmaWNhdGlvbiBpbiB0
-aGUgY29tbWl0IG1lc3NhZ2UgdG8gYXZvaWQgY29uZnVzaW9uIGFib3V0IHdoZW4gdGhlIEdFVApi
-dWZmZXIgaXMgdXBkYXRlZD8KCi0tIApTYXNoaWtvIEFJIHJldmlldyDCtyBodHRwczovL3Nhc2hp
-a28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA5MDgxMDI3MjQuMzIzMjY2MC0xLXNodWJoYW1zYW5qYXku
-cGF0aWxAYW1kLmNvbT9wYXJ0PTEKCi0tIApsaW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4LWkz
-Y0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtaTNjCg==
+The I3C core expects master drivers to leave payload.len unchanged and
+report the number of bytes received on GET CCCs via payload.actual_len.
+The AMD driver was overwriting payload.len after direct read CCCs.
+
+Set payload.actual_len from the directed command's rx_actual in
+xi3c_master_send_direct_ccc_cmd() instead of modifying payload.len.
+
+Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
+---
+ drivers/i3c/master/amd-i3c-master.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/i3c/master/amd-i3c-master.c b/drivers/i3c/master/amd-i3c-master.c
+index ef5ad5abb788..f205aa06f9b8 100644
+--- a/drivers/i3c/master/amd-i3c-master.c
++++ b/drivers/i3c/master/amd-i3c-master.c
+@@ -806,8 +806,8 @@ static int xi3c_master_send_direct_ccc_cmd(struct xi3c_master *master,
+ 
+ 	/* Report actual byte count so the core sees the right length on short reads */
+ 	if (!ret && ccc->rnw)
+-		ccc->dests[0].payload.len = min(xfer->cmds[1].rx_actual,
+-						ccc->dests[0].payload.len);
++		ccc->dests[0].payload.actual_len = min(xfer->cmds[1].rx_actual,
++						       ccc->dests[0].payload.len);
+ 
+ 	return ret;
+ }
+-- 
+2.34.1
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
