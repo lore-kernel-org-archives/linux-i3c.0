@@ -4,103 +4,106 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0F54C79F8C
-	for <linux-i3c@archiver.kernel.org>; Wed,  9 Sep 2026 06:07:34 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8B5F6C79F8C
+	for <linux-i3c@archiver.kernel.org>; Wed,  9 Sep 2026 06:13:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xd+GK7tOvuna6j3Dwd7UQLc09vXnQgGYNKZDI/Jx6Dw=; b=tGHgnDyYSOlxZW
-	ideca5z7HeMymP7Swaq3F7bC3K3OVC1JY1JJ6wl+Iz50SPStiH9v42BQpqNPppSyLdvBLRDClG/RO
-	sY6WZVO24Y6DH8JLmT70NlXt1zhyNFO2vEvggiYJMUvM1BKjkTdenIyQGm+KfDgLVqNLTa60UL1Uk
-	Q02feSRdIaVwNcj6i0yn0kKyHNTJq5uiDOb3HB/ZUfZa+pjwNkFXB6qJ9iKwDmMiCrp8XvpxNKN3R
-	jHfAbnaG717GPqwjcE9nXjty2wCqVNiBOtVpCKLEvBPlJ1JH500A6TKlAAyVtIhVN6m7hEyRifK5U
-	5J48/5F357sa2hkt61Ew==;
+	List-Owner; bh=39ZyjigZ1KYHOyNJzCxDLWMlcUNR5KtJJ1fdlBYjHYg=; b=RM06Sa2iBnDpp0
+	QbRBzFVoZAGkOElLwYFPyjFFHcAN4l68NcfjOvX4qiTXyB3lmZOEbNoa/383dIQWS4PdjQz73vc+Y
+	R0yEyCGdQlyB6D2H/UMFp7qA2ZMxnfYcokFC2Dx5hP0J43DOeXXLTp9Rkah1R0TRD8MMsjh0ssxg1
+	p4drIHVniEN9E5eLi9gPCtjrYbi5nCpJhpseW/dMXCd8CKF6lc67l1R7xCHYvP/5rqViOlYtA+O1j
+	g9p2zXqZYBDV9L48bnz4e3jeBkG8Q/llbbCpzbs0cQo0nwAvtJWA1uygRYh2N0FZv8rLuaU3O6521
+	ZumOj8mirgf9XVbbPYKA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4BT4-0000000AqTr-2QCD;
-	Wed, 09 Sep 2026 06:07:34 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1x4BYy-0000000ArKS-2U2r;
+	Wed, 09 Sep 2026 06:13:40 +0000
+Received: from mail-yx1-xb12e.google.com ([2607:f8b0:4864:20::b12e])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4BT3-0000000AqTk-1AUb
+	id 1x4BYv-0000000ArJd-3MIZ
 	for linux-i3c@lists.infradead.org;
-	Wed, 09 Sep 2026 06:07:33 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id BBF86438C8;
-	Wed,  9 Sep 2026 06:07:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 51A151F00A3A;
-	Wed,  9 Sep 2026 06:07:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788934052;
-	bh=sCWgbO/HmDCGRypEbkff2kKanCBnA5ge8SwiD4kj4nE=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=XpUWj45GqaBHjC7KgWHyJJ8mkyoCrmnS8oxplKJtzUiPAYyp2VXO9uMlhlHwzAEAn
-	 O6xxRSvmBGBMVgFtJreNqWeAcFLg89J8Eof2t6k2as8BOlcpmDEYJZ0f1t4GHPybuw
-	 K+2aQ4AleUbjYRwzRTAJu7QY4cffwwHbaHu8qOCrfIecVK4dSTCNRswREiE8JPwW3X
-	 nx+n3oTLQBlQcN5jc5EGBFEbBIgcqmAM3RpiXKRKCEYo0KU9S3abtzaV8iOKsSckGp
-	 AZ6dYH3dGdSt+tz8g60fEo7ruI2ENaX/ta0arAyI2mbZcKB/qR9cNexAuJR2VLnXDa
-	 +wDokvJ8PZ3Bw==
-Message-ID: <f33ff763-136e-4c10-bd77-d40bb4baf02c@kernel.org>
-Date: Wed, 9 Sep 2026 08:07:23 +0200
+	Wed, 09 Sep 2026 06:13:39 +0000
+Received: by mail-yx1-xb12e.google.com with SMTP id 956f58d0204a3-66f78cba2e1so5545872d50.3
+        for <linux-i3c@lists.infradead.org>; Tue, 08 Sep 2026 23:13:35 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1788934414; cv=none;
+        d=google.com; s=arc-20260327;
+        b=AJwARTiyMbeAko/a6D1ni+9xVN/NTa5d2l+VZAGExeSy4jvA0vg1xa4cylDeDNisN6
+         SWQGSTHhgFDRaNlrVqMURtbfYPp7TVUFgsFCY98mywS7cg6GMyheMXHTxDbJzqgyfgh/
+         gvKqJOZuZEEAIx0hSzmYy5H6xVUYTT9b/lPSzzc/pgB2bUaTXuvmbUxhyshVB17Kgneg
+         DEOByUMF5H9C2OcMLl58LENHEBG58GMgi9XgnmLCe0MhP2rkg21qj5vFp9j4RRtGqjmX
+         tUYHzcbosP5OzhaO7a5WaIoy+wkquAkaeGgRS+6VnJSGAotcLrbOmhVZklEPvfOlmgsy
+         VmCQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:dkim-signature;
+        bh=Wxz/6GsfDWh0q3fSFDoUZfAlFdVqkOfqzbjc6fNOU7A=;
+        fh=EPnARbRvOgx7GHkuRAxMPUdhyZzEmS/E59Erxj54Sko=;
+        b=ixPeVj2UTDC9A/YTI2kPMMgvbNHfnet9do/eVn7onm8fSr32Bw3ZNt7YcmKRB1a+Ql
+         sOPc6TBFqeT0KNUjF/9ZMOBoE2Cct/Zeu7xp9VhlJfCoij0De+qa6KJxZwXGK8g7SW9h
+         Ue5HlNz9SBah44Bvw+Sv1UUKig/kA8+q/PV0ETUXtPvQE0UqKh8SS8xbDvD6/sFj4Ry7
+         Vjq0OY9UsthOhpNvVGzYX5Dcb9OT/jxo8f8Anazvc9lwhISbcRljF90tQhDql1JbVfO+
+         Fewxkimr0I4jcnO2Q+0bLjEY8vTgx93MIqsvPyW45Ew9HLd2iIB0PF2UBBcGGKXFJjk4
+         sjHQ==;
+        darn=lists.infradead.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20251104; t=1788934414; x=1789539214; darn=lists.infradead.org;
+        h=content-transfer-encoding:content-type:cc:to:subject:message-id
+         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=Wxz/6GsfDWh0q3fSFDoUZfAlFdVqkOfqzbjc6fNOU7A=;
+        b=enrB0pj1irJc1wyNT6gOjlrQpGkTqUs1AER0Z4pLhMzAwJzZpAZjVAPpiW/QoUDA8p
+         +p319u6VnALm5UHNz3L4tWMPLvy4c9KQo56f0jwDE1smlgQtiw4Jht1krdOHRfv9Zc1a
+         gNvvJk4GuKWlmQz2GWE0BYrFSrVL4c2DQpkndOpk/x0KMgf2K6P1AhkBiP115DNFhgTO
+         LEEVAs9Rey+GSd8E5zLAtppZ9TFmSwYJbJi1IPTonfz37/V8O4AIg66p6vnmKIZtWQ4+
+         EJu6Y8+f7UZ8ksU4rEyaN2gFC10ed5OQppaAbLAF4Uq9qw+PFbdVEMFQlwrV1Q3EeCLi
+         Z4hA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1788934414; x=1789539214;
+        h=content-transfer-encoding:content-type:cc:to:subject:message-id
+         :date:from:in-reply-to:references:mime-version:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=Wxz/6GsfDWh0q3fSFDoUZfAlFdVqkOfqzbjc6fNOU7A=;
+        b=GyHuGDPJGGyOJQzZW9RCTqs4EXVsKAxK51aVE9VwwsrerL0bEi+axSDCFO/b23B8Zl
+         A62BX6h8Ypv8w9awC7SIzpNI3al0JLp+vHirMxmfNbc1O0MQcnc4p0Mq6f5QvpoqQ37j
+         hIqf1KH9sPP/xfwXrXa6hLoN3QB8yuELWYijjvqXslMUvx1nt+WKvC8y7RV+JpvxlUOk
+         sQODiWMqonnGfp7Jp5KJsSR+3udIkuOC4r1OqEhMHe/fYmVOeEr0hDV5/5RVEJSFXhXq
+         LP9qpbMZZ33nCDv4cGUmdUX7EPNfRE1KdnCpemV7+R9GmsglfxnDCPZGvVkK2Px0Nq/C
+         It7A==
+X-Gm-Message-State: AFuF++nvr8e5C98/CIncpfXfbxOdKhxUoJo9DCOcwRRw9+1Yb5iHGTza
+	NfNDfOhs8P4sC1aUiy7kX50kwBRI2jUSt3ld+dNlynef9zOVQOulnAVdR5xviAVTga8jXY7RxG1
+	VWv6sdCdT9n92RqCeIu8OW2TNUwSqjdpWaoB/LGf9IXwrU5DLoW9DNA3e
+X-Gm-Gg: AYBFou30jppHmcDcj+v0gfrOmNlz5daimBsz8bWndexajda1Jw3oOfuHtOWas/SogyK
+	VGuoKx2X/EZvYVbzdKB236++yXoFt72M5Fz8b30zj0o1coqDZdIq60ohusjXow4Hvz310NYvXfy
+	8KgRSA1/gdm7n2jwWWMszFQnklFMa/gv38p214LCBlKrx6BBpqI5OYlp+FVQ66s+ue77dmj1Im5
+	WxAZV25hUqsZDfwoUZdx4PtG52PWjhFYjhbymIWVIJdZMP9+G1SmtUim32kt1y0BdcWxUjOnXEU
+	XeguYT/L88PiE0FlXpkuSSmhelaF+fhK3J4W6BHO8/7JRdlr8nqp5CJz1EehYZBbxZ1AdHCy14J
+	eEkVvi5tZKKU=
+X-Received: by 2002:a05:690e:c4a:b0:66c:e25c:f7ae with SMTP id
+ 956f58d0204a3-66fb5abd2d7mr10470629d50.40.1788934413842; Tue, 08 Sep 2026
+ 23:13:33 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH v18 3/8] dt-bindings: i3c: Add NXP P3H2x4x i3c-hub support
-To: Lakshay Piplani <lakshay.piplani@nxp.com>, linux-kernel@vger.kernel.org,
- linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
- krzk+dt@kernel.org, robh@kernel.org, conor+dt@kernel.org,
- devicetree@vger.kernel.org, broonie@kernel.org, lee@kernel.org,
- Frank.Li@nxp.com, lgirdwood@gmail.com
-Cc: vikash.bansal@nxp.com, priyanka.jain@nxp.com, aman.kumarpandey@nxp.com
-References: <20260903062108.2712296-1-lakshay.piplani@nxp.com>
- <20260903062108.2712296-4-lakshay.piplani@nxp.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Language: en-US
-Autocrypt: addr=krzk@kernel.org; keydata=
- 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
-In-Reply-To: <20260903062108.2712296-4-lakshay.piplani@nxp.com>
+References: <20260906202747.4041389-1-samagazaryan@google.com>
+ <20260906202747.4041389-4-samagazaryan@google.com> <2026090737-unicycle-imprudent-dcd2@gregkh>
+In-Reply-To: <2026090737-unicycle-imprudent-dcd2@gregkh>
+From: Sam Agazaryan <samagazaryan@google.com>
+Date: Tue, 8 Sep 2026 23:13:22 -0700
+X-Gm-Features: AcwNN1VGOtr2r7ZU5xoiRoYbwpSQVK1QddXIO_qLoJ-bckeoZOb5-01kaA5BeDA
+Message-ID: <CAHreonG1qHNuk755MYaN7SPFtp3Fg2PMW=Gg-3yZXO17v_c9Eg@mail.gmail.com>
+Subject: Re: [PATCH v4 3/3] i3c: add i3cdev module to expose i3c dev in /dev
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: linux-i3c@lists.infradead.org, 
+	Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li <Frank.Li@nxp.com>, 
+	Arnd Bergmann <arnd@arndb.de>, Vitor Soares <vitor.soares@toradex.com>, 
+	Oleksandr Shulzhenko <oleksandr.shulzhenko.viktorovych@intel.com>, linux-kernel@vger.kernel.org
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260908_231337_957573_6AA04AAB 
+X-CRM114-Status: GOOD (  13.91  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -112,158 +115,27 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 03/09/2026 08:21, Lakshay Piplani wrote:
-> From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> 
-> Add bindings for the NXP P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841)
-> multiport I3C hub family. These devices connect to a host via
-> I3C/I2C/SMBus and allow communication with multiple downstream
-> peripherals.
-> 
-> Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
-> Signed-off-by: Lakshay Piplani <lakshay.piplani@nxp.com>
-> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
-> Reviewed-by: Frank Li <Frank.Li@nxp.com>
-> 
-> ---
-> Changes in v18:
->  - Rebased onto v7.3-rc1; no intended driver behaviour changes
-> 
-> Changes in v17:
->  - Explain in the binding description that all variants share the same register
->    interface, software reads the target-port count from DEV_CAPAB, and
->    the x0/x1 variants differ only in power-up defaults that the driver
->    overrides
-> 
-> Changes in v16:
->  - Add an allOf/if-then block for the 4-port variants (nxp,p3h2440 and
->    nxp,p3h2441) that limits i3c@[0-3]/smbus@[0-3] and disallows target
->    ports [4-7], so DTs describing nonexistent ports fail validation
->  - Add #address-cells and #size-cells to the required list, since the hub
->    is a parent bus to the target-port child node
->  - Add an explicit minimum of 0 to the target-port reg constraints, retain
->    the maximum of 7, and restrict the maximum to 3 for four-port variants
-> 
-> Changes in v15:
->  - Add compatible strings for the P3H2440, P3H2441, P3H2840 and P3H2841
->    variants
->  - Fix the target-port reg schema to describe the single-cell port index
-> 
-> Changes in v14:
->  - No change
-> 
-> Changes in v13:
->  - Fix mismatch between example unit-address and reg property by correcting the reg value
->    to match the node name
-> 
-> Changes in v12:
->  - No change, added Reviewed-By tag
-> 
-> Changes in v11:
->  - No change
-> 
-> Changes in v10:
->  - No change, added Reviewed-By tag
-> 
-> Changes in v9:
->  - Referenced i3c.yaml and i2c-controller.yaml for child nodes
->  - Dropped unnecessary #address-cells and #size-cells from child nodes
-> 
-> Changes in v8:
->  - Add compatible in i3c example
-> 
-> Changes in v7:
->  - Fix schema validation issues
->  - Adjust required properties
->  - Add I2C example
-> 
-> Changes in v6:
->  - Use a vendor prefix for the attributes
-> 
-> Changes in v5:
->  - Removed SW properties: cp0-ldo-microvolt,cp1-ldo-microvolt,
->    tp0145-ldo-microvolt, tp2367-ldo-microvolt
->  - Changed supply entries and its descriptions
-> 
-> Changes in v4:
->  - Fixed DT binding check warning
->  - Removed SW properties: ibi-enable, local-dev, and always-enable
-> 
-> Changes in v3:
->  - Added MFD (Multi-Function Device) support for I3C hub and on-die regulator
->  - Added Regulator supply node
-> 
-> Changes in v2:
->  - Fixed DT binding check warning
->  - Revised logic for parsing DTS nodes
-> ---
-> ---
->  .../devicetree/bindings/i3c/nxp,p3h2840.yaml  | 328 ++++++++++++++++++
->  MAINTAINERS                                   |   9 +
->  2 files changed, 337 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml b/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
-> new file mode 100644
-> index 000000000000..6b0076b4487f
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
-> @@ -0,0 +1,328 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +# Copyright 2025-2026 NXP
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/i3c/nxp,p3h2840.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: NXP P3H2X4X I3C HUB
-> +
-> +maintainers:
-> +  - Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-> +  - Vikash Bansal <vikash.bansal@nxp.com>
-> +  - Lakshay Piplani <lakshay.piplani@nxp.com>
-> +
-> +description: |
-> +  P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841) is a family of multiport I3C
-> +  hub devices that connect to:-
-> +  1. A host CPU via I3C/I2C/SMBus bus on upstream side and connect to multiple
-> +     peripheral devices on the downstream  side.
-> +  2. Have two Controller Ports which can support either
-> +     I2C/SMBus or I3C buses and connect to a CPU, BMC or SOC.
-> +  3. P3H2840/ P3H2841 are 8 port I3C hub with eight Target Ports.
-> +  4. P3H2440/ P3H2441 are 4 port I3C hub with four Target Ports.
-> +     Target ports can be configured as SMBus or I3C and connect to
-> +     peripherals.
-> +
-> +  All variants use the same register interface. Software reads the number
-> +  of target ports from DEV_CAPAB. The x0/x1 variants differ in their
-> +  power-up defaults, which the driver replaces with the DT configuration.
-
-I don't understand what this driver reference means and what is its
-purpose here.
-
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - nxp,p3h2440
-> +      - nxp,p3h2441
-> +      - nxp,p3h2840
-> +      - nxp,p3h2841
-
-I don't see improvements.
-
-
-Best regards,
-Krzysztof
-
--- 
-linux-i3c mailing list
-linux-i3c@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-i3c
+T24gTW9uLCBTZXAgNywgMjAyNiBhdCA3OjQy4oCvQU0gR3JlZyBLcm9haC1IYXJ0bWFuCjxncmVn
+a2hAbGludXhmb3VuZGF0aW9uLm9yZz4gd3JvdGU6Cj4KPiBPbiBTdW4sIFNlcCAwNiwgMjAyNiBh
+dCAwODoyNzo0N1BNICswMDAwLCBTYW0gQWdhemFyeWFuIHdyb3RlOgo+ID4gKy8qKgo+ID4gKyAq
+IHN0cnVjdCBpM2NfaW9jX3ByaXZfeGZlciAtIEkzQyBTRFIgaW9jdGwgcHJpdmF0ZSB0cmFuc2Zl
+cgo+ID4gKyAqIEBkYXRhOiBIb2xkcyBwb2ludGVyIHRvIHVzZXJzcGFjZSBidWZmZXIgd2l0aCB0
+cmFuc21pdCBkYXRhLgo+ID4gKyAqIEBsZW46IExlbmd0aCBvZiBkYXRhIGJ1ZmZlciBidWZmZXJz
+LCBpbiBieXRlcy4KPiA+ICsgKiBAcm53OiBlbmNvZGVzIHRoZSB0cmFuc2ZlciBkaXJlY3Rpb24u
+IHRydWUgZm9yIGEgcmVhZCwgZmFsc2UgZm9yIGEgd3JpdGUKPgo+IFlvdSBkbyBub3QgZGVzY3Jp
+YmUgdGhlICJwYWQiIHZhcmlhYmxlLgoKSSdsbCBhZGQgYSBkZXNjcmlwdGlvbiBmb3IgInBhZCIu
+Cgo+IEFuZCB3aHkgbm90IGNhbGwgInJudyIgImRpcmVjdGlvbiI/CgpJJ2xsIHVwZGF0ZSAicm53
+IiB0byAiZGlyZWN0aW9uIiBzaW5jZSB0aGlzIGlzIGV4cG9zZWQgdG8gdXNlcmxhbmQuCgo+ID4g
+KyAqLwo+ID4gK3N0cnVjdCBpM2NfaW9jX3ByaXZfeGZlciB7Cj4gPiArICAgICBfX3U2NCBkYXRh
+Owo+ID4gKyAgICAgX191MTYgbGVuOwo+ID4gKyAgICAgX191OCBybnc7Cj4gPiArICAgICBfX3U4
+IHBhZFs1XTsKPgo+IFlvdSBkbyBub3QgZW5mb3JjZSB0aGF0IHBhZFs1XSBNVVNUIGJlIHNldCB0
+byBhbGwgMC4KCkknbGwgYWRkIGEgemVybyBjaGVjayBhZ2FpbnN0IHRoZSBwYWRkaW5nIHRvIGFk
+ZHJlc3MgdGhpcy4KClRoZSBuZXh0IHJldmlzaW9uIG9mIHRoZSBwYXRjaHNldCB3aWxsIGluY2x1
+ZGUgdGhlc2UgdXBkYXRlcy4KClRoYW5rcywKU2FtCgotLSAKbGludXgtaTNjIG1haWxpbmcgbGlz
+dApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
+Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
