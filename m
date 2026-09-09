@@ -4,129 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D769C79FB7
-	for <linux-i3c@archiver.kernel.org>; Wed,  9 Sep 2026 21:52:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A6C49C79FB7
+	for <linux-i3c@archiver.kernel.org>; Wed,  9 Sep 2026 21:55:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w8/fx3H0FxSjt0a187uXUdy2XOJHM1UqkZDv3GxjU8U=; b=hk+wrnkPXvnEHd
-	6QI28wOsXJJGFgy2D4RtCizAihqu9mg5qYxhMEo8DOcwGvFSE8OrFeJoYL3wzkmogimhMp2w+NfP4
-	rNOIGTXj7lSs50iQdnMr+cGbEqAuMJdvBgVkeEaE7g4seeKuTpuQDbN0n2kjWuqWOV+i4RCL7tOTk
-	45RPjmCfPQeZklTiAdDwC39oAlRj+Dikq9Qdb5bUmYqPGwNrnuQpQuJwXbfQiD2nO0SNoY/xk/ipE
-	dOr1A8rTbYWhXwqtlTZYsK3CdoqlGTUaj5nl+EQTBi6rgNtEqlSHpNmdPfgHqnH6h/1i1+aHTW/U/
-	D2oCel6anA6D/cj15/lg==;
+	List-Owner; bh=j0sKMCBXhJvH9R2/C56+G7ValqeYEMfAn/QrhxFPT8Q=; b=xSFhXHovkowapf
+	uaG/Hd8ZH97myyT/mA3zhgRk8yDg9SwxWis3nDMQbaswcQL3ELVypNGt38rM+fwFMjdCl1lHaZg0g
+	gCqdAuxkqrEiuhsSJY7ImFopUevFUO6YJRiboT7VKinAINPFmebC+QZ2PhITr9JvtnmE1dOfiIKjd
+	tjreYi2sTclZaV89OMNtw0ohxbqdH/v8YOdO9Rrmay8HeCWjBDMtUJe+ZJ7TUiyUtbEdvREJ7W3R7
+	o6jQ4KUVK+OHWcJhA47n+uZMzDYA4TZNxSvvrS3mFdyFGqsY7qNo8roH5EJHp3QzNetkBe//f4jJ7
+	4sRfC128NOBtt/I9+Iug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4QDE-0000000Cwub-02GD;
-	Wed, 09 Sep 2026 21:52:12 +0000
-Received: from mail-francesouthazon11011005.outbound.protection.outlook.com ([40.107.130.5] helo=MRWPR03CU001.outbound.protection.outlook.com)
+	id 1x4QGR-0000000CxCE-1XtF;
+	Wed, 09 Sep 2026 21:55:31 +0000
+Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4QDA-0000000CwtC-3gW0
+	id 1x4QGP-0000000CxBL-1gva
 	for linux-i3c@lists.infradead.org;
-	Wed, 09 Sep 2026 21:52:10 +0000
+	Wed, 09 Sep 2026 21:55:30 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=BQMqmu1BZhwrEge7mqCpu4mRqN6BQHUXqUQG2CLa34b1a6u8cq3aUO/0GMTxIvWm+DF9NRO5VEgo/fCVDyZkdfwGGvzOqWU+0x7ISTq0j1NlddQchzT5QSftlF7oxcN0l3f9C4l1yxXXBbCMlIe2391t4jbgzLk+N3DcI2PEoLsg5acldGnuLrNPCQW53l9xsQPNscFKnYpxhapClIo3xIEibtHvP1K4LTAd+Ml/hP1OBW4eL9mLMWMsKrGQjrUMxB9oA1C8ciS//p6hW5omuRSBiMfPXuc24eXvo4RHJjaXslAZmIhN3fmKh4AeFJ1Ei2tH8WOCWsi4iNDGmfe/Gg==
+ b=esMHpvuNYNN+0y5TPzCbKkNp3QMVH2jwJVU29GO0PEMAggSL5B99A9bxAB/mLwURJrtBwqms75ejt9DAHBGchjaVFOVYImH1E5rv2mS9cxzxlCR7XphO4F7WVIgMdi5+pCnDNdUjAGfoHXKTqrYwkzqo1idqpA/MNrI/nq3ClnbWkhxOiqEUxiRd963UqIDL6xmElDxl2oJtIe4gsnKCyhbRTmkxoUjAzlHZ4dRv95amlJAykut4Afma22bFvxxKVvdU7BuuUSMpVOPq8fQwMBtof+HfvvL2TuZV9UjmqkM/bwal9Spwogr2VhOd/2EB3D1VwIaKccZMD1+Mgtmj4w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=u7SJBtYkE3AzCdcA44jTnrdvNAfhN6ssyeKJHmro8xg=;
- b=TrCqF6y59eV0o9eiwVkR6wrMrtUj4oBrAbrEuHn7LuuRPZxfxRwX++UfQtjnwSqZ4DDSW+Oxyo5l1MpKEfgNuaLe+hofpp6QrDbNroue2i/ic1ieBI4+VuZO1RSs18MmcwV9JfU1ZJSo9cUKOTf2roI3jBI7kLgPVeXx6pAUq8Izn+Bxha45GUuwVzQloLgx/BEhGKO9me/22uyQURAI9AKkcbj0mW6TiLChHoV32kEcB2RPIsGGNC42YoejItv5wBmD9UnaiGU5NCuV1jbTu/86ho/ATcyX0GmCzc9H71INEBghA3Tx5MJpqOsXppo5Y0gI9HVND6hm0dyuJk4l0g==
+ bh=dq7ZSwOaUTGiU16nuWNax1u5Ehg5D2/UyxBZyh/g1c0=;
+ b=p5Ovb6WoZEBGx8J4Ub7tOGIdPh3lcieJw0XXuvsYnDBfj4S87PiA/Bh6pyg1iANJ74b2xNl9aUXQGd+MqtOmCbgCWGVs8aGPi7I1+EF1YbBSzKt+vp6ggu/R1NNiKFrfjhILlNhjmgtZOsLLHJdUbWEy3Zcmr3SQOAAwP81ONLj2zpsZrFDO33W3jHJZ+mV5jbkJhcVQqNqq+ds/sPMs3fswNzt6anMhh2uMcjUgRnjzH05ib330I5aRtSU50FgNwhbsIXMtDs9hzCEiTe+8OIyv1e3YPoOBXJgNK4FAICZM16FAS1HxmFNlgLeHjtRESpbSoHEaupgqIt+jIOUo4g==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
  dkim=pass header.d=oss.nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
  s=selector1-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=u7SJBtYkE3AzCdcA44jTnrdvNAfhN6ssyeKJHmro8xg=;
- b=JueGOe5+Y9mfQ71qGTOaukVot0PyD7fYwC4MFNu4iUNNGWuEnhdM93GtT6xcGJ7TrKmgctPoKlMz0R3N0Aok1GCpW3irIXJxNIeK91M0XZh0BuHA6ouySGkjNahDGmnKbFTy1vmYo3e+FLw7Ndgq9zMr5mr1aEVrwOYwamH6Fi+cRC9reJN5BRzQCP0xC+ZYsZ+uH+scofZwFILoQuU4q4BNG6pnAKW+OE+LVxSF3BLdaLCzsODYOf8hietfOI0D4X6skRk9dMOLDd1GRTLqNPMtvZ1Bu1Fa3+fshQINCBFzcefLygWJtrEC7AOyLcfYfe9eSMrsM+7bxNf7k1SelQ==
+ bh=dq7ZSwOaUTGiU16nuWNax1u5Ehg5D2/UyxBZyh/g1c0=;
+ b=TOfrBzHdNdaqake0VCj1UDCFfvwvfConQei9au0G1FT6P5rcDYVYGH8RN9sOQcgb4mssiMuohlr1/ZAJ96LGkDOszoWCsa89Pc7adGPMUnGczY1+WP9FMT00pwxsDbuFDU0ScjH6bwdb8phfPHWVTWFj3PUfmz2FNwpn4DRGmYybMTIUogvrWpxKx4sK8bJq/0Q2uK/5LpOpH8cru+FS+BXR/QmOe5loNVYL2w+l1bn68DW3YRTjRh+xnBRscqDAMQdwwRWybCJ0wBRvD8qnrlJSwsmodFwHa6rEXKWzEe8997B0nrkD9Z4ywNAYW4gqAwu5eVpjG80QftovzT7UpQ==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=oss.nxp.com;
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by AM9PR04MB7521.eurprd04.prod.outlook.com (2603:10a6:20b:2df::16) with
+ by PA4PR04MB7886.eurprd04.prod.outlook.com (2603:10a6:102:c1::10) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.406.7; Wed, 9 Sep 2026
- 21:52:03 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.382.15; Wed, 9 Sep
+ 2026 21:55:24 +0000
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0406.005; Wed, 9 Sep 2026
- 21:52:02 +0000
-Date: Wed, 9 Sep 2026 17:51:55 -0400
+ 21:55:24 +0000
+Date: Wed, 9 Sep 2026 17:55:16 -0400
 From: Frank Li <Frank.li@oss.nxp.com>
-To: Sam Agazaryan <samagazaryan@google.com>
-Cc: linux-i3c@lists.infradead.org,
+To: Shubham Patil <shubhamsanjay.patil@amd.com>
+Cc: Shubhrajyoti Datta <shubhrajyoti.datta@amd.com>,
 	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Arnd Bergmann <arnd@arndb.de>,
-	Vitor Soares <vitor.soares@toradex.com>,
-	Oleksandr Shulzhenko <oleksandr.shulzhenko.viktorovych@intel.com>,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v4 3/3] i3c: add i3cdev module to expose i3c dev in /dev
-Message-ID: <aqHU-6RV_AapSu3M@lizhi-Precision-Tower-5810>
-References: <20260906202747.4041389-1-samagazaryan@google.com>
- <20260906202747.4041389-4-samagazaryan@google.com>
+	Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org, adrian.hunter@intel.com, git@amd.com
+Subject: Re: [PATCH v2] i3c: master: amd: Report direct CCC read length in
+ payload.actual_len
+Message-ID: <aqHVxFH940BqvtCa@lizhi-Precision-Tower-5810>
+References: <20260908111207.3274407-1-shubhamsanjay.patil@amd.com>
 Content-Disposition: inline
-In-Reply-To: <20260906202747.4041389-4-samagazaryan@google.com>
-X-ClientProxiedBy: PH2PEPF00003855.namprd17.prod.outlook.com
- (2603:10b6:518:1::75) To GV2PR04MB11799.eurprd04.prod.outlook.com
+In-Reply-To: <20260908111207.3274407-1-shubhamsanjay.patil@amd.com>
+X-ClientProxiedBy: CY5PR16CA0029.namprd16.prod.outlook.com
+ (2603:10b6:930:10::12) To GV2PR04MB11799.eurprd04.prod.outlook.com
  (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|AM9PR04MB7521:EE_
-X-MS-Office365-Filtering-Correlation-Id: dfde627d-e31d-436b-e08a-08df0ebc94e7
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|PA4PR04MB7886:EE_
+X-MS-Office365-Filtering-Correlation-Id: 82506e34-0d23-4236-c01f-08df0ebd0cef
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|366016|376014|23010399003|1800799024|10067099003|3023799007|4143699003|11063799006|56012099006|6133799003|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: orGBLmKfkj8KtOwLL+umLUTWsgro329O39rAwSrjsRqwPVlDgB1fi1BNFzcMtgiGBZLnB80KRiuQC7yDMT0S85lHcGtHwpVuRPWtk4dC5145qiNRRtdKIGr9G0awUt1W/iNE4pBkrL6jxznEq6Nu5HAWH6MRNth9rYYeTq8n61Hzqp6t6tjnSe2FqCoWF7F3ovgedMw4SNmdowCV33dDdmbe4vXuKVzbPJKtsqTpdW0fTdPFkPhkHb2NyzDT/fOCsMvHVKQbQ9hUJJSEMo1KIpnbgYdCYCTGJUdBj2p/778hjD88mUc4RihTRP95lBI+V/01IMwjCedJ67hKLpLkAPwN5Kkp/QEKtxiEk3AmVs3Y2WOzy3I4TQTtodNycopOdjg7+09cGxip5jLvVBEg5dTknlgwJMm6N+fwrCoUvUt+uCOpfF95Uq9aXOfm3kJFXue/imaqCFSSXUGUWKF/AdJNtXpC+JCdLfawFlAc6AMTYp3HZzEnOt5+W8edbdkLWFm1aIEk12Bn2pnRSy0Oq6a979G4OVw+XmHYZ8ytWjypoRf5aXDSzFgAN1isMuM8kbFfg1HfYcVy1J7to/qreafM+NFHMo0nvGBjRxBPgth6pwN7qZaLir0dd54jACmoFzcfVK0N2sOhmt9CQJSNLRHnXB5249UuYudQ9PFJX94=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(366016)(376014)(23010399003)(1800799024)(10067099003)(3023799007)(4143699003)(11063799006)(56012099006)(6133799003)(18002099003)(22082099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|23010399003|366016|1800799024|376014|10067099003|22082099003|18002099003|11063799006|56012099006;
+X-Microsoft-Antispam-Message-Info: cj7zCGWMj2Wyr9yrqY/qtG7zGjj8xCYFT5bHP8NKJyEI2Ao7WSz+Yf9XWHPHF7f6BBngoLLfCoEV9oGh2em2/pVzCbBJqBWkBvPJQHcDrTChi5iikX6hmtduYIkCKfiyg8WM6GIYV8hCCy+MzUrIqoDRuDfXgobwo53oUjs+5u99PLiAoiUOHw6c8QY1lPinNhJfvYo9FR1ckwJ+WdZeyRvw6ySqnSLDoiuLAzPAQnmhpRNSsEk/ZVML8jlOV1JzCn9tNEojTgcuQVPyABaL8xQTyrukUG3m6Ya5XGHCYTQGT1fwIdNw7PBz9JVvrNfMSHZ0v8SbWY/KvzCii/ACVFhUu7ZAHTt36vnLHhT4dn/KiU0ZDiss4f49xGvABgz68DQr/t50Tz1MqPXBKjVaM8FEgy3LGHx5SsChm2dmCq50WIsG3Bs1Equ+5g9ev7SMe43wzs812Smqe71/2ps3rDSE5lwHVdz86mjBpGnlkM65NWgXCO31/NYFE6YIer0RjJ+qDoKDGva6cxg4/NQqovl7t/Ywu9q9GHrpGyishWv3CHf5/70VEh4n4jvJ8NzgjFxBkI2MtX3UyiOsDNqWXBiPZy0hAs1RdcZs9/xSh9CwRZP/DAjE+dgUfFFxfXJQo+COIGt19k4ZcUtRNkGTVdQemJyFipGQwcyqs84YhkY=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(23010399003)(366016)(1800799024)(376014)(10067099003)(22082099003)(18002099003)(11063799006)(56012099006);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?hE2lfpg6ZSjbpzBGJlWoi2IHcKuYMoc/vSV0MEQUSw/vdVzDqLbApU2CoXN1?=
- =?us-ascii?Q?6nIfp0yahu080wL8FliF4YaIxiUgY01v0IAtoiUkmyH4aRcoyXUVtqxFIFW/?=
- =?us-ascii?Q?EuaE6DdD9R7r8tdi/yGC/xr/uoR0ynnZwMDchig6IArJDKFqMRpNJqM/6YI4?=
- =?us-ascii?Q?8C9fiKvYqd8p44YqRSVWVCVr2X9WBGBN9Gzn6y0IFsnkgowjdcip4m3rbrA9?=
- =?us-ascii?Q?LaVf3s2GHSC1N6R52dkgsE7GynIKzRbAj0X+ZoxDZ6znj6JvvwugKeTq2RPM?=
- =?us-ascii?Q?cLNnLaO24ggv3uhuK/xndo7HQ//4cjS1QSS+p5w2zkORDTkr7M/zAjYEtxzK?=
- =?us-ascii?Q?cHTcSgePlnMfOgojio/W6p7GZjXkv//fJTsx5FDow7ktqTDmseJdQ2HffCux?=
- =?us-ascii?Q?rJBkoffUu5XWhA4MPpd53aE/WtXIoXQQ0z0PUH9B+oXPTjP9XT3PK7R8FDJw?=
- =?us-ascii?Q?LRhCiQSFdtQ88XerIHORjWapFrDvzyOcu3zPMzih3sWgo3SPlzmd9FN+sJiZ?=
- =?us-ascii?Q?s5VAm21HFJkUoXX8OEcxKfVJk8Ke3/s4LTVt1OMRsiq4mQlexhBGSSMzNbEl?=
- =?us-ascii?Q?LYE5KBc4sMUSEkICgM2OX5PNOUKto8CaSvr5+FwScthaGmnPVHQf4kjtf+Ba?=
- =?us-ascii?Q?jLIFyDRItjnDBH8yCrJbE8h6P3Yc/Ls4qbm95l3KNWvKwOtMjptODzohvV4H?=
- =?us-ascii?Q?Ta0PjjXk5iDprmcrCyiVMBkZvlZrNv4R82Z2UxtTQUZXup95FPNdH89DksRE?=
- =?us-ascii?Q?xHk7qXCv4VZvfTViz3NQGpRUspopeD1vNY3af8W6tZz5q0Fg5kRTLjrWGhXi?=
- =?us-ascii?Q?HIIHkaovC5ypi9XVMW9JALDsmyIeLmzVUPS+wcDd61RLL24mlq6CSCenvT/Z?=
- =?us-ascii?Q?mhoslX/PC980M6mVkC7KQ8F/PemmH9nUnKWAk6kPMvyt/HGzeDY/2iq9AZ14?=
- =?us-ascii?Q?mgS6MefaeH5S7HhYeriJQDQpIbVIjo1lKSxZ/3AK+bWfbQ96fCiqiP68kO1g?=
- =?us-ascii?Q?XnGpYjawlf4apIY0wr7yu2wKZofJ/GF4pKW4LMkurdE6UwZUkGEA1l0TNf4i?=
- =?us-ascii?Q?6qlXBbuHdfNPqq+SexyGTT2Gupd69jKNv+RNYo7ZKNifXqBbIrsUqPdtU4mK?=
- =?us-ascii?Q?u5d8LskmW1/HmOMXswMqBQTcqXwh1k2I6iZetyCiLo95eRp+0DNratKe+vUN?=
- =?us-ascii?Q?Hb8FHf/FVAUJYaq5aqDeh5+1ER8g/P258fEkZ6e6W5z7hI8eP53C3PrFnNvq?=
- =?us-ascii?Q?whvsf4V+F4ctfw3f6dRZ3px79EGtRemsatX9AtWRGV/dWSpDVxANYq8gjh9T?=
- =?us-ascii?Q?OcHu6XLMHktKG6oxCeXvXGC4NTNHhk8I0YTMu8OdH6eWHni3Y//qZYQOD2vo?=
- =?us-ascii?Q?xaVud3f7sfOWIZRzQzSIVkcdDhnWU9LnDMzwcyp9ORm0Fm6wYtPXVDkuGm/T?=
- =?us-ascii?Q?NH2+x6RSE0FXzDjqtUvBjhOqsLdHe+DyG5+IVGz2soeMD39gCmV3VTOTOboe?=
- =?us-ascii?Q?ZQjl7B2EK7gA/cbtoKC6yjiASq6Ra4x+bzaUzAWb6tuawI7hBQvkZWzmWhJa?=
- =?us-ascii?Q?Lu+STyUny9ZIW2hPyo9tbzVjF65zXwMwxPCGHAIdJzC/kbvRwfPW7hHwD0M8?=
- =?us-ascii?Q?nQKNMqHPpTBZTNsY5plybBdsA+oZ584In9CvXnJQQi5SqzR8raVczOOx0/zY?=
- =?us-ascii?Q?fs+9J5RFVCILzdwWxnpbKyCutfUHAi8AjYijy6P55wbvUVH2smEsD4EJziTZ?=
- =?us-ascii?Q?W85JaOWx4OBowcHs+7pV2JPEpcvIesepYCfEtF6pNvHYkrAI7kB4?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?bRjM4W/kjcPOQtqbxZjliFo3IlGu5uYha/56v0iMo3kiCMqeIxG953Nb5K+D?=
+ =?us-ascii?Q?BkPlZQJ9YTtdGkv/+/0T3fneUijWQ079WwQJDDSgjE9nBRRzvaF2LzCFEwFW?=
+ =?us-ascii?Q?87T1n4hLh8ZCEusW537KMyIAgo1IHv4XmXefNYkwebFCoLLGqpd64CnTZpPl?=
+ =?us-ascii?Q?MTZS/AgDRCnxuGJsxCrpP54KjnB5aboA84c9TQ/QoFyhBTgDiFegN9RrvMtp?=
+ =?us-ascii?Q?HBcUlMsU67/xxqZr39m7VpyGnsgszXT9yZAeRwZBRriGxW9+sXnyD/Ikova+?=
+ =?us-ascii?Q?B7HSp/RGqCmkd1ScBhzubdZ7CzwJ+UUDcXpIkwWSil/NEhfjgXdggKGIgfi4?=
+ =?us-ascii?Q?P876LjFgn4d+rHR0Tludj1RDcR+lQgOEq0czW8RRzbYdCtjyTj0Idc0Sf4s7?=
+ =?us-ascii?Q?ib+yXHrUh6ph9z6glXu9kRJixQujTwYxQO0ra1NPjA7JQVeX2uam/1/kSr5x?=
+ =?us-ascii?Q?OAzaeO6m+GQ8/q0ZHEhspnVbWtAUx3xf3lqYgFeobQAPFr6L2GxkiZVXJEmt?=
+ =?us-ascii?Q?kIBdcy97qGiVBWbUXy5T65uL1Y4Q1JhZliRtI5E0N2pYq+sWap0NXK9K2QYQ?=
+ =?us-ascii?Q?Wa+T5atB5ZVPpa1odbGyDTY9WAOal2ulGjICbgddnHjw2H9mJVhpjWq5QPVc?=
+ =?us-ascii?Q?AfuDZxBosaNnIOCLSuyua5+x0ZAi8OD/6ZMZobQLlZqnJpaJVeQCRQaR1/4Y?=
+ =?us-ascii?Q?IfOYpC6ya8Rurf8hT/0nBLdLp97bviqrzlPgrsRW9OwP6BCB0QLzaTzVSEHX?=
+ =?us-ascii?Q?i0AoM9wYpmbYUfgRkmrC5+XsEGqBpdb1haQa6GZa7OkoQo8gzNgkIgBSxUfX?=
+ =?us-ascii?Q?/c/dO9GhQaMDAUzN75LNhL4TOKpjZtL7XJMImd8KHW2LHFUVGTrUJLC54y/b?=
+ =?us-ascii?Q?sR9oEzG9gyiaqul0heFblSlixMt72PCBYfrEH18QkPUABt9tRRujWRdhr4Sy?=
+ =?us-ascii?Q?oRldvt0qOYG1GnAm3qUQdU2lEMjP6tbMp/Q6IGzNoq86ndQE813UwLgM7/Ku?=
+ =?us-ascii?Q?RG+EtderBqxmGZP7lqdchUYo1cl0vePgc/1tUtFJsKyqJI7hmo+qaqQ1Fo4R?=
+ =?us-ascii?Q?YesQ5wYGx9FxKZJbWYbD+BDdyXpkW4brx+FWKTTEjm6ROpzkCHcv/Pfzy4gx?=
+ =?us-ascii?Q?ucSXR87+wP5S1JRn0GamGqtvcmbRxS1IhJo5HpDwUsTOiqTY8GSmI2cRV5VU?=
+ =?us-ascii?Q?kDQ5aKInJM0ZDL6nT050Wev2UgaACZA5pZSEQM+QpGwCc/7D7OF+Ida9yWgo?=
+ =?us-ascii?Q?Gxshq/lYtLafDZpWuFO0ggLs9x23zNDPvpF3GXCsn5whSO0ICF66EOZ+kNlX?=
+ =?us-ascii?Q?oIjbE+4E9Hjkp9haqZTupPhkG5fODcWu/qZIM9ellNSkWZktEPMiAezPjN28?=
+ =?us-ascii?Q?K0z8lVLwDo6AI/G5rVP+Fny/7ZMSvFz9ruVdsQq1LSrm2FegGXFZfKXazBuo?=
+ =?us-ascii?Q?476HqQmnc4n9bHDa0JcaJ3c4gQiF6ckaQNHIRRd0UOXt9sbPK+iTQYYs6VFL?=
+ =?us-ascii?Q?JIfEfWpn5oBsytm5Sdj7LY/4l+gqy6gdz4DQ2Vd6n6UVP/VAf4h0NTt19eVO?=
+ =?us-ascii?Q?EvHZbwDiK3gxbAHhLqdpXECzFBnSs6i7+HFrgwXEDlG1yrEFTuX0uFWvPSJr?=
+ =?us-ascii?Q?XpiRD1daBQCqkzTwRhaHH2U16ZUnW95LictyO/kEf6swlVy7cxOvoFWFNdhj?=
+ =?us-ascii?Q?vIGh93G2cV6MeklL/iJDHv7FieGWlPjga8emy+jkMTCDT4vK/0TYh/QAk7ak?=
+ =?us-ascii?Q?5aez3mjMwpLnYXDzh3g64HKTSka36i565dh9ncnoEJgMKIZHHPju?=
 X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: dfde627d-e31d-436b-e08a-08df0ebc94e7
+X-MS-Exchange-CrossTenant-Network-Message-Id: 82506e34-0d23-4236-c01f-08df0ebd0cef
 X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Sep 2026 21:52:02.7639
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Sep 2026 21:55:24.0149
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: pLz1Wojx6fLZK8XgEzuv+KwBq9vpssiGIH4lBEkKjgGbM/P4l7nywm6sYtNuYhmoklAS9fOncl/VoWWShavjJTeEOhaMLM6xXK3oKfGJifmPVLKDMfHbd9rY/Pnl005Q
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB7521
+X-MS-Exchange-CrossTenant-UserPrincipalName: REBNA7rkr/00lSPG3S+6QD+dqIIkJvFaSUuv2/+IoETvtUqk2vbtVD/aFNcgQrEnQITICXgfLPdVCJv9HfXqaY0oXwkl5tTaMb9PiFp5zIFUqpqtHYUBziQMuqicD1AR
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB7886
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260909_145209_112160_A6E8949B 
-X-CRM114-Status: GOOD (  35.74  )
+X-CRM114-CacheID: sfid-20260909_145529_450070_A4FCA01A 
+X-CRM114-Status: GOOD (  17.25  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -143,622 +139,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Sun, Sep 06, 2026 at 08:27:47PM +0000, Sam Agazaryan wrote:
-> From: Vitor Soares <vitor.soares@toradex.com>
+On Tue, Sep 08, 2026 at 04:42:07PM +0530, Shubham Patil wrote:
+> The I3C core expects master drivers to leave payload.len unchanged and
+> report the number of bytes received on GET CCCs via payload.actual_len.
+> The AMD driver was overwriting payload.len after direct read CCCs.
 >
-> This patch adds userspace character device support for I3C SDR private
-> transfers via /dev.
-
-Add userspace character device ...
-
-Now frame already support HDR.
-
+> Set payload.actual_len from the directed command's rx_actual in
+> xi3c_master_send_direct_ccc_cmd() instead of modifying payload.len.
 >
-> The module allows userspace programs to interact directly with I3C
-> targets that do not have a kernel driver bound to them, such as devices
-> in ROM/bootloader recovery mode (e.g. OCP Secure Firmware Recovery v1.1
-> and Caliptra Silicon Root of Trust recovery flows).
->
-> Features:
->   - Dynamically exposes /dev/bus/i3c/<device> character devices for I3C
->     devices when unbound from kernel drivers.
->   - Dynamically allocates character device minor numbers using the IDA
->     allocator.
->   - Implements private SDR read/write transfers via I3C_IOC_PRIV_XFER ioctl
->     with 64-bit aligned UAPI data structures.
-
-Consider PRIV for SDR, need unified HDR also,
-
-I3C_IOC_XFER
-
->   - Supports compat_ptr_ioctl for 32-bit userspace on 64-bit kernels.
->   - Uses cdev_device_add/cdev_device_del with device refcounting to ensure
->     safe lifecycle management and prevent use-after-free on driver detach.
->
-> Signed-off-by: Vitor Soares <vitor.soares@toradex.com>
-> Co-developed-by: Oleksandr Shulzhenko <oleksandr.shulzhenko.viktorovych@intel.com>
-> Signed-off-by: Oleksandr Shulzhenko <oleksandr.shulzhenko.viktorovych@intel.com>
-> Co-developed-by: Sam Agazaryan <samagazaryan@google.com>
-> Signed-off-by: Sam Agazaryan <samagazaryan@google.com>
+> Fixes:629a6ddd1d9a ("i3c: master: Add driver for AMD AXI
+> I3C master controller")
+> Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
 > ---
->  MAINTAINERS                     |   1 +
->  drivers/i3c/Kconfig             |  11 +
->  drivers/i3c/Makefile            |   1 +
->  drivers/i3c/i3cdev.c            | 445 ++++++++++++++++++++++++++++++++
->  include/uapi/linux/i3c/i3cdev.h |  37 +++
->  5 files changed, 495 insertions(+)
->  create mode 100644 drivers/i3c/i3cdev.c
->  create mode 100644 include/uapi/linux/i3c/i3cdev.h
+
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+
+> Changes in v2:
+> - Added Fixes tag
+> ---
+>  drivers/i3c/master/amd-i3c-master.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
 >
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 81a9a02c919d..30a5cb12c4f0 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -12364,6 +12364,7 @@ F:	Documentation/driver-api/i3c
->  F:	drivers/i3c/
->  F:	include/dt-bindings/i3c/
->  F:	include/linux/i3c/
-> +F:	include/uapi/linux/i3c/
+> diff --git a/drivers/i3c/master/amd-i3c-master.c b/drivers/i3c/master/amd-i3c-master.c
+> index ef5ad5abb788..f205aa06f9b8 100644
+> --- a/drivers/i3c/master/amd-i3c-master.c
+> +++ b/drivers/i3c/master/amd-i3c-master.c
+> @@ -806,8 +806,8 @@ static int xi3c_master_send_direct_ccc_cmd(struct xi3c_master *master,
 >
->  IBM Operation Panel Input Driver
->  M:	Eddie James <eajames@linux.ibm.com>
-> diff --git a/drivers/i3c/Kconfig b/drivers/i3c/Kconfig
-> index 626c54b386d5..166875837ec6 100644
-> --- a/drivers/i3c/Kconfig
-> +++ b/drivers/i3c/Kconfig
-> @@ -20,6 +20,17 @@ menuconfig I3C
->  	  will be called i3c.
+>  	/* Report actual byte count so the core sees the right length on short reads */
+>  	if (!ret && ccc->rnw)
+> -		ccc->dests[0].payload.len = min(xfer->cmds[1].rx_actual,
+> -						ccc->dests[0].payload.len);
+> +		ccc->dests[0].payload.actual_len = min(xfer->cmds[1].rx_actual,
+> +						       ccc->dests[0].payload.len);
 >
->  if I3C
-> +
-> +config I3CDEV
-> +	tristate "I3C device interface"
-> +	help
-> +	  Say Y here to use i3c-* device files, usually found in the /dev
-> +	  directory on your system.  They make it possible to have user-space
-> +	  programs use the I3C devices.
-> +
-> +	  This support is also available as a module.  If so, the module
-> +	  will be called i3cdev.
-> +
->  source "drivers/i3c/master/Kconfig"
->  endif # I3C
->
-> diff --git a/drivers/i3c/Makefile b/drivers/i3c/Makefile
-> index 11982efbc6d9..606d422841b2 100644
-> --- a/drivers/i3c/Makefile
-> +++ b/drivers/i3c/Makefile
-> @@ -1,4 +1,5 @@
->  # SPDX-License-Identifier: GPL-2.0
->  i3c-y				:= device.o master.o
->  obj-$(CONFIG_I3C)		+= i3c.o
-> +obj-$(CONFIG_I3CDEV)		+= i3cdev.o
->  obj-$(CONFIG_I3C)		+= master/
-> diff --git a/drivers/i3c/i3cdev.c b/drivers/i3c/i3cdev.c
-> new file mode 100644
-> index 000000000000..904ebfd48769
-> --- /dev/null
-> +++ b/drivers/i3c/i3cdev.c
-> @@ -0,0 +1,445 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (c) 2020 Synopsys, Inc. and/or its affiliates.
-
-new post, should be 2026
-
-> + *
-> + * Author: Vitor Soares <soares@synopsys.com>
-> + */
-> +
-> +#include <linux/cdev.h>
-> +#include <linux/compat.h>
-> +#include <linux/device.h>
-> +#include <linux/fs.h>
-> +#include <linux/init.h>
-> +#include <linux/jiffies.h>
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/notifier.h>
-> +#include <linux/slab.h>
-> +#include <linux/uaccess.h>
-> +
-> +#include <linux/i3c/i3cdev.h>
-> +
-> +#include "internals.h"
-> +
-> +struct i3cdev_data {
-> +	struct i3c_device *i3c;
-> +	struct device dev;
-> +	struct mutex xfer_lock; /* prevent detach while transferring */
-> +	struct cdev cdev;
-> +	int id;
-> +};
-> +
-> +static DEFINE_IDA(i3cdev_ida);
-> +static dev_t i3cdev_number;
-> +#define I3C_MINORS (MINORMASK + 1)
-> +
-> +static void i3cdev_dev_release(struct device *dev)
-> +{
-> +	struct i3cdev_data *i3cdev = container_of(dev, struct i3cdev_data, dev);
-> +
-> +	ida_free(&i3cdev_ida, i3cdev->id);
-> +	kfree(i3cdev);
-> +}
-> +
-> +static struct i3cdev_data *get_free_i3cdev(struct i3c_device *i3c)
-> +{
-> +	struct i3cdev_data *i3cdev;
-> +	int id;
-> +
-> +	id = ida_alloc(&i3cdev_ida, GFP_KERNEL);
-> +	if (id < 0) {
-> +		pr_err("i3cdev: no minor number available!\n");
-> +		return ERR_PTR(id);
-> +	}
-> +
-> +	i3cdev = kzalloc(sizeof(*i3cdev), GFP_KERNEL);
-
-kzalloc_obj()
-
-> +	if (!i3cdev) {
-> +		ida_free(&i3cdev_ida, id);
-> +		return ERR_PTR(-ENOMEM);
-> +	}
-> +
-> +	i3cdev->i3c = i3c;
-> +	i3cdev->id = id;
-> +	i3cdev_set_drvdata(i3c, i3cdev);
-> +
-> +	return i3cdev;
-> +}
-> +
-> +static ssize_t
-> +i3cdev_read(struct file *file, char __user *buf, size_t count, loff_t *f_pos)
-> +{
-> +	struct i3cdev_data *i3cdev = file->private_data;
-> +	struct i3c_device *i3c;
-> +	struct i3c_xfer xfers = {
-> +		.rnw = true,
-> +		.len = count,
-> +	};
-> +	int ret = -ENODEV;
-> +	char *tmp;
-> +
-> +	mutex_lock(&i3cdev->xfer_lock);
-> +	i3c = i3cdev->i3c;
-> +	if (!i3c || i3c->dev.driver)
-> +		goto err_out;
-> +
-> +	tmp = kzalloc(count, GFP_KERNEL);
-> +	if (!tmp) {
-> +		ret = -ENOMEM;
-> +		goto err_out;
-> +	}
-> +
-> +	xfers.data.in = tmp;
-> +
-> +	dev_dbg(&i3c->dev, "Reading %zu bytes.\n", count);
-> +
-> +	ret = i3c_device_do_xfers(i3c, &xfers, 1, I3C_SDR);
-
-why force to SDR here.
-
-> +	if (!ret)
-> +		ret = copy_to_user(buf, tmp, xfers.len) ? -EFAULT : xfers.len;
-> +
-> +	kfree(tmp);
-> +
-> +err_out:
-> +	mutex_unlock(&i3cdev->xfer_lock);
-> +	return ret;
-> +}
-> +
-> +static ssize_t
-> +i3cdev_write(struct file *file, const char __user *buf, size_t count,
-> +	     loff_t *f_pos)
-> +{
-> +	struct i3cdev_data *i3cdev = file->private_data;
-> +	struct i3c_device *i3c;
-> +	struct i3c_xfer xfers = {
-> +		.rnw = false,
-> +		.len = count,
-> +	};
-> +	int ret = -ENODEV;
-> +	char *tmp;
-> +
-> +	mutex_lock(&i3cdev->xfer_lock);
-> +	i3c = i3cdev->i3c;
-> +	if (!i3c || i3c->dev.driver)
-> +		goto err_out;
-> +
-> +	tmp = memdup_user(buf, count);
-> +	if (IS_ERR(tmp)) {
-> +		ret = PTR_ERR(tmp);
-> +		goto err_out;
-> +	}
-> +
-> +	xfers.data.out = tmp;
-> +
-> +	dev_dbg(&i3c->dev, "Writing %zu bytes.\n", count);
-> +
-> +	ret = i3c_device_do_xfers(i3c, &xfers, 1, I3C_SDR);
-> +	kfree(tmp);
-> +
-> +err_out:
-> +	mutex_unlock(&i3cdev->xfer_lock);
-
-use cleanup guard()
-
-> +	return (!ret) ? count : ret;
-> +}
-> +
-> +static int
-> +i3cdev_do_priv_xfer(struct i3c_device *dev, struct i3c_ioc_priv_xfer *xfers,
-> +		    unsigned int nxfers)
-> +{
-> +	struct i3c_xfer *k_xfers;
-> +	u8 **data_ptrs;
-> +	int i, j, ret = 0;
-> +
-> +	/* Since we have nxfers we may allocate k_xfer + *data_ptrs together */
-> +	k_xfers = kcalloc(nxfers, sizeof(*k_xfers) + sizeof(*data_ptrs),
-> +			  GFP_KERNEL);
-> +	if (!k_xfers)
-> +		return -ENOMEM;
-> +
-> +	/* set data_ptrs to be after nxfers * i3c_xfer */
-> +	data_ptrs = (void *)k_xfers + (nxfers * sizeof(*k_xfers));
-> +
-> +	for (i = 0; i < nxfers; i++) {
-> +		if (xfers[i].rnw) {
-> +			data_ptrs[i] = kzalloc(xfers[i].len, GFP_KERNEL);
-> +			if (!data_ptrs[i]) {
-> +				ret = -ENOMEM;
-> +				break;
-> +			}
-> +			k_xfers[i].rnw = true;
-> +			k_xfers[i].data.in = data_ptrs[i];
-> +		} else {
-> +			data_ptrs[i] = memdup_user(u64_to_user_ptr(xfers[i].data),
-> +						   xfers[i].len);
-> +			if (IS_ERR(data_ptrs[i])) {
-> +				ret = PTR_ERR(data_ptrs[i]);
-> +				break;
-> +			}
-> +			k_xfers[i].rnw = false;
-> +			k_xfers[i].data.out = data_ptrs[i];
-> +		}
-> +
-> +		k_xfers[i].len = xfers[i].len;
-> +	}
-> +
-> +	if (ret < 0)
-> +		goto err_free_mem;
-> +
-> +	ret = i3c_device_do_xfers(dev, k_xfers, nxfers, I3C_SDR);
-> +	if (ret)
-> +		goto err_free_mem;
-> +
-> +	for (i = 0; i < nxfers; i++) {
-> +		if (xfers[i].rnw) {
-> +			if (copy_to_user(u64_to_user_ptr(xfers[i].data),
-> +					 data_ptrs[i], xfers[i].len))
-
-Use actual_len,
-
-> +				ret = -EFAULT;
-> +		}
-> +	}
-> +
-> +err_free_mem:
-> +	for (j = 0; j < i; j++)
-> +		kfree(data_ptrs[j]);
-> +	kfree(k_xfers);
-
-
-use clean up __free(kfree) when alloc.
-
-> +	return ret;
-> +}
-> +
-> +static struct i3c_ioc_priv_xfer *
-> +i3cdev_get_ioc_priv_xfer(unsigned int cmd, struct i3c_ioc_priv_xfer *u_xfers,
-> +			 unsigned int *nxfers)
-> +{
-> +	u32 tmp = _IOC_SIZE(cmd);
-> +
-> +	if ((tmp % sizeof(struct i3c_ioc_priv_xfer)) != 0)
-> +		return ERR_PTR(-EINVAL);
-> +
-> +	*nxfers = tmp / sizeof(struct i3c_ioc_priv_xfer);
-> +	if (*nxfers == 0)
-> +		return ERR_PTR(-EINVAL);
-> +
-> +	return memdup_user(u_xfers, tmp);
-> +}
-> +
-> +static int
-> +i3cdev_ioc_priv_xfer(struct i3c_device *i3c, unsigned int cmd,
-> +		     struct i3c_ioc_priv_xfer *u_xfers)
-> +{
-> +	struct i3c_ioc_priv_xfer *k_xfers;
-> +	unsigned int nxfers;
-> +	int ret;
-> +
-> +	k_xfers = i3cdev_get_ioc_priv_xfer(cmd, u_xfers, &nxfers);
-> +	if (IS_ERR(k_xfers))
-> +		return PTR_ERR(k_xfers);
-> +
-> +	ret = i3cdev_do_priv_xfer(i3c, k_xfers, nxfers);
-> +
-> +	kfree(k_xfers);
-> +
-> +	return ret;
-> +}
-> +
-> +static long
-> +i3cdev_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
-> +{
-> +	struct i3cdev_data *i3cdev = file->private_data;
-> +	struct i3c_device *i3c;
-> +	int ret = -ENODEV;
-> +
-> +	if (_IOC_TYPE(cmd) != I3C_DEV_IOC_MAGIC)
-> +		return -ENOTTY;
-> +
-> +	/* Use the xfer_lock to prevent device detach during ioctl call */
-> +	mutex_lock(&i3cdev->xfer_lock);
-> +	i3c = i3cdev->i3c;
-> +	if (!i3c || i3c->dev.driver)
-> +		goto err_no_dev;
-> +
-> +	dev_dbg(&i3c->dev, "ioctl, cmd=0x%02x, arg=0x%02lx\n", cmd, arg);
-> +
-> +	/* Check command number and direction */
-> +	if (_IOC_NR(cmd) == _IOC_NR(I3C_IOC_PRIV_XFER(0)) &&
-> +	    _IOC_DIR(cmd) == (_IOC_READ | _IOC_WRITE))
-> +		ret = i3cdev_ioc_priv_xfer(i3c, cmd,
-> +					(struct i3c_ioc_priv_xfer __user *)arg);
-> +	else
-> +		ret = -ENOTTY;
-> +
-> +err_no_dev:
-> +	mutex_unlock(&i3cdev->xfer_lock);
-> +	return ret;
-> +}
-> +
-> +static int i3cdev_open(struct inode *inode, struct file *file)
-> +{
-> +	struct i3cdev_data *i3cdev = container_of(inode->i_cdev,
-> +						  struct i3cdev_data,
-> +						  cdev);
-> +	file->private_data = i3cdev;
-> +
-> +	return 0;
-> +}
-> +
-> +static int i3cdev_release(struct inode *inode, struct file *file)
-> +{
-> +	file->private_data = NULL;
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct file_operations i3cdev_fops = {
-> +	.owner		= THIS_MODULE,
-> +	.read		= i3cdev_read,
-> +	.write		= i3cdev_write,
-> +	.unlocked_ioctl	= i3cdev_ioctl,
-> +	.compat_ioctl	= compat_ptr_ioctl,
-> +	.open		= i3cdev_open,
-> +	.release	= i3cdev_release,
-> +};
-> +
-> +/* ------------------------------------------------------------------------- */
-> +
-> +static const struct class i3cdev_class = {
-> +	.name = "i3cdev",
-> +};
-> +
-> +static int i3cdev_attach(struct device *dev, void *dummy)
-> +{
-> +	struct i3cdev_data *i3cdev;
-> +	struct i3c_device *i3c;
-> +	int res;
-> +
-> +	if (dev->type == &i3c_masterdev_type || dev->driver)
-> +		return 0;
-> +
-> +	i3c = dev_to_i3cdev(dev);
-> +
-> +	/* Get a device */
-> +	i3cdev = get_free_i3cdev(i3c);
-> +	if (IS_ERR(i3cdev))
-> +		return PTR_ERR(i3cdev);
-> +
-> +	mutex_init(&i3cdev->xfer_lock);
-> +	cdev_init(&i3cdev->cdev, &i3cdev_fops);
-> +	i3cdev->cdev.owner = THIS_MODULE;
-> +
-> +	device_initialize(&i3cdev->dev);
-> +	i3cdev->dev.devt = MKDEV(MAJOR(i3cdev_number), i3cdev->id);
-> +	i3cdev->dev.class = &i3cdev_class;
-> +	i3cdev->dev.parent = &i3c->dev;
-> +	i3cdev->dev.release = i3cdev_dev_release;
-> +
-> +	res = dev_set_name(&i3cdev->dev, "bus!i3c!%s", dev_name(&i3c->dev));
-> +	if (res)
-> +		goto error_put_dev;
-> +
-> +	res = cdev_device_add(&i3cdev->cdev, &i3cdev->dev);
-> +	if (res)
-> +		goto error_put_dev;
-> +
-> +	pr_debug("i3cdev: I3C device [%s] registered as minor %d\n",
-> +		 dev_name(&i3c->dev), i3cdev->id);
-> +	return 0;
-> +
-> +error_put_dev:
-> +	i3cdev_set_drvdata(i3c, NULL);
-> +	put_device(&i3cdev->dev);
-> +	return res;
-> +}
-> +
-> +static int i3cdev_detach(struct device *dev, void *dummy)
-> +{
-> +	struct i3cdev_data *i3cdev;
-> +	struct i3c_device *i3c;
-> +
-> +	if (dev->type == &i3c_masterdev_type)
-> +		return 0;
-> +
-> +	i3c = dev_to_i3cdev(dev);
-> +
-> +	i3cdev = i3cdev_get_drvdata(i3c);
-> +	if (!i3cdev)
-> +		return 0;
-> +
-> +	i3cdev_set_drvdata(i3c, NULL);
-> +
-> +	/* Prevent transfers while cdev removal */
-> +	mutex_lock(&i3cdev->xfer_lock);
-> +	i3cdev->i3c = NULL;
-> +	mutex_unlock(&i3cdev->xfer_lock);
-> +
-> +	cdev_device_del(&i3cdev->cdev, &i3cdev->dev);
-> +	put_device(&i3cdev->dev);
-> +
-> +	pr_debug("i3cdev: device [%s] unregistered\n", dev_name(&i3c->dev));
-> +
-> +	return 0;
-> +}
-> +
-> +static int i3cdev_notifier_call(struct notifier_block *nb,
-> +				unsigned long action,
-> +				void *data)
-> +{
-> +	struct device *dev = data;
-> +
-> +	switch (action) {
-> +	case BUS_NOTIFY_ADD_DEVICE:
-> +	case BUS_NOTIFY_UNBOUND_DRIVER:
-> +		return i3cdev_attach(dev, NULL);
-
-Does all i3c devices attach this driver?
-
-> +	case BUS_NOTIFY_DEL_DEVICE:
-> +	case BUS_NOTIFY_REMOVED_DEVICE:
-> +	case BUS_NOTIFY_BIND_DRIVER:
-> +		return i3cdev_detach(dev, NULL);
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static struct notifier_block i3cdev_notifier = {
-> +	.notifier_call = i3cdev_notifier_call,
-> +};
-> +
-> +static int __init i3cdev_init(void)
-> +{
-> +	int res;
-> +
-> +	/* Dynamically request unused major number */
-> +	res = alloc_chrdev_region(&i3cdev_number, 0, I3C_MINORS, "i3c");
-> +	if (res)
-> +		goto out;
-> +
-> +	/* Register device class to populate sysfs entries */
-> +	res = class_register(&i3cdev_class);
-> +	if (res)
-> +		goto out_unreg_chrdev;
-> +
-> +	/* Keep track of busses which have devices to add or remove later */
-> +	res = bus_register_notifier(&i3c_bus_type, &i3cdev_notifier);
-> +	if (res)
-> +		goto out_unreg_class;
-> +
-> +	/* Bind to already existing device without driver right away */
-> +	i3c_for_each_dev(NULL, i3cdev_attach);
-> +
-> +	return 0;
-> +
-> +out_unreg_class:
-> +	class_unregister(&i3cdev_class);
-> +out_unreg_chrdev:
-> +	unregister_chrdev_region(i3cdev_number, I3C_MINORS);
-> +out:
-> +	pr_err("%s: Driver Initialisation failed\n", __FILE__);
-> +	return res;
-> +}
-> +
-> +static void __exit i3cdev_exit(void)
-> +{
-> +	bus_unregister_notifier(&i3c_bus_type, &i3cdev_notifier);
-> +	i3c_for_each_dev(NULL, i3cdev_detach);
-> +	class_unregister(&i3cdev_class);
-> +	unregister_chrdev_region(i3cdev_number, I3C_MINORS);
-> +}
-> +
-> +MODULE_AUTHOR("Vitor Soares <soares@synopsys.com>");
-> +MODULE_DESCRIPTION("I3C /dev entries driver");
-> +MODULE_LICENSE("GPL");
-> +
-> +module_init(i3cdev_init);
-> +module_exit(i3cdev_exit);
-> diff --git a/include/uapi/linux/i3c/i3cdev.h b/include/uapi/linux/i3c/i3cdev.h
-> new file mode 100644
-> index 000000000000..5adc1e3e7c4f
-> --- /dev/null
-> +++ b/include/uapi/linux/i3c/i3cdev.h
-> @@ -0,0 +1,37 @@
-> +/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-> +/*
-> + * Copyright (c) 2020 Synopsys, Inc. and/or its affiliates.
-> + *
-> + * Author: Vitor Soares <vitor.soares@synopsys.com>
-> + */
-> +
-> +#ifndef _UAPI_I3C_DEV_H_
-> +#define _UAPI_I3C_DEV_H_
-> +
-> +#include <linux/types.h>
-> +#include <linux/ioctl.h>
-> +
-> +/* IOCTL commands */
-> +#define I3C_DEV_IOC_MAGIC	0x07
-> +
-> +/**
-> + * struct i3c_ioc_priv_xfer - I3C SDR ioctl private transfer
-> + * @data: Holds pointer to userspace buffer with transmit data.
-> + * @len: Length of data buffer buffers, in bytes.
-> + * @rnw: encodes the transfer direction. true for a read, false for a write
-> + */
-> +struct i3c_ioc_priv_xfer {
-> +	__u64 data;
-> +	__u16 len;
-> +	__u8 rnw;
-
-In HDR mode,  rnw is command.
-
-> +	__u8 pad[5];
-> +};
-> +
-> +#define I3C_PRIV_XFER_SIZE(N)	\
-> +	((((sizeof(struct i3c_ioc_priv_xfer)) * (N)) < (1 << _IOC_SIZEBITS)) \
-> +	? ((sizeof(struct i3c_ioc_priv_xfer)) * (N)) : 0)
-> +
-> +#define I3C_IOC_PRIV_XFER(N)	\
-> +	_IOC(_IOC_READ|_IOC_WRITE, I3C_DEV_IOC_MAGIC, 30, I3C_PRIV_XFER_SIZE(N))
-
-I3C_IOC_SDR_XFER, support DDR, TSP, TSL future.
-
-Frank
-> +
-> +#endif
+>  	return ret;
+>  }
 > --
-> 2.55.0.979.g7e5102b832-goog
+> 2.34.1
 >
 
 -- 
