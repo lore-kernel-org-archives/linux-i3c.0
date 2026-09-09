@@ -4,66 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 604AEC79FAD
-	for <linux-i3c@archiver.kernel.org>; Wed,  9 Sep 2026 05:38:20 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 129AFC79FB5
+	for <linux-i3c@archiver.kernel.org>; Wed,  9 Sep 2026 05:39:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bJWIZaOmeOfqd25y6CrhaFBNjgwooRtBhLT1IxkSOnk=; b=DVE5PXILQG0Grt
-	W6Tv+FhqXLe0+cmkd5/obIyKhY9nEt9IumqAcMRiSDBvMhdvgYixjItVwrEWnJVLWieGfB3lkbYer
-	RNJNRUPBwheavQvDcyQvhxS0zfTFM9xT0DgOGFcnPRzhYnjv1MFpG/m/jbZQ8phk/AEMtmjpfdmv7
-	YFuLS4RY11rRyv95SQNQnA3SUh1pdRKwcAcxS8hgl7zE8qtTZQAofquy77mijWnYYysG2eC+7fRAa
-	sZQJXQ4/3PMzNnc1BYvWxQOIiz/CByEn4Bjl2VZjSQ77ScBgAN+hptpa02jCh3IcMxaYP5H2YOCjl
-	mBMpl4R1WHdVEUe7SJIQ==;
+	List-Owner; bh=rh6JSxlCdGef/EjwjJLap4ge2yElPSYsB7ynnr6m3UE=; b=GEKmyHIgIB6Dl9
+	aMxEwt/rfh/R3OjgvKj9oYhUmxUAG+Im1AZYFsHuMSNVMZE8G4wt6cfraf2ayyBwlA2Ruv/uW9EF6
+	0bTiR7uFJ0Q77e/eem6JGc6WQ6vrGdyaKU0kfZQ33IRuQagnQGAcxRzgGJB3HwZzgsxwPVypPbRwQ
+	bzET5ZKf8nlfZLGpcif87q6Q3/XKd00+TNa7WEvF2JIFMADMnenW6cUQPQy6Q/jm7An56aiA39LCf
+	m6g9PC57pJlMVmC4xRmCSONiin+IlKV+6jXrHx5SaJatJ9cU3dgAZ7IiZm+oRtBNW4DZJsTCBKQUt
+	CeDDWjN80iuN1LD476kA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4B0j-0000000AoCJ-0WTd;
-	Wed, 09 Sep 2026 05:38:19 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1x4B1j-0000000AoKi-3A58;
+	Wed, 09 Sep 2026 05:39:19 +0000
+Received: from mail-koreacentralazlp170130006.outbound.protection.outlook.com ([2a01:111:f403:c40f::6] helo=SEYPR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4B0h-0000000AoBv-39gL;
-	Wed, 09 Sep 2026 05:38:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=MIME-Version:Content-Transfer-Encoding
-	:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:
-	Sender:Reply-To:Content-ID:Content-Description;
-	bh=W8rRTyZLPCFKS1rg0bxBKpOZ+GDK/gdtGwsDwqIVAOY=; b=YJI2801k5EH/6yMY2PhlzlXVo0
-	y1m277D09I2I95i82mI3qLuRBySj4DIzN5kRqIikbi+/K2O5ai5DR3GE/dCLKB8m/tznz6BBn8LoT
-	JU9D5Ybe3pxhrZmc3pBL+5g1tAeAWlIUAQ33Jo4OFj6i9xGZQXM0go5tK69ulyxhiVH2e1pIAnYdn
-	sGps7fqQoo9uqD557ANDHFN+qqZFRAY/C7MZR3tR0IzjyJmA6gEVoyAgtXteFnvfY/KzDtm6tM+Rl
-	NMYPVP/wKcCty1incm9DA9AxeR1PNfdOv+MkQMeYNtzWueKXNJMldVG+UxgJ2ogX5YJkXrVuc0tvG
-	bQXkWGPQ==;
-Received: from mail-japanwestazon11022114.outbound.protection.outlook.com ([40.107.75.114] helo=OS8PR02CU002.outbound.protection.outlook.com)
-	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1x4B0b-00000000ki9-3WAx;
-	Wed, 09 Sep 2026 05:38:13 +0000
+	id 1x4B1g-0000000AoJm-0fxL;
+	Wed, 09 Sep 2026 05:39:17 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Yju6VO+fjFfi8JtEofJsKZnlpdADWBT2KOaqiD7e/Fg3QLwF1q+zkhuPtfUG459Mt+R32P2c5IJvEmfM7wRi738eMtSgsW/oEszZIibXF8qSslN4l1/wMqDxd0H5DP8T7/JRygJqGmGTm1pnkfgC/r/HBojBZWo0dCnbhp7GbFmPj5+eIDEwoOlQAt0yxy0nilj40GGrZllkX8adDsmoEhHqdaVASJyGxodXekGc7nnAF5gNVjp9okiY5rKmlcSRhEIyc5CSA1IECiRj1I/qnyDCjP2xSDVWE7MPpAf77nKyGngOvFPWXfV+NkRQBMYj3YUWpE2vdv7SJKUpiYZoYw==
+ b=Z8uLUKK7Jj/EI2jtg/XaYgNs/ULv9bJItlOWdYg+mpqf3bc8Is0efAX57m/YfRquEprAvb9yk6I7KTyHLrs6vDj8sB4VGSGdiqXNm2n92ocXBSQolLWTn0ZG1j+tXLOWGvwyEyhbonimqUqcf0l3sgrEqa8Lz4teVtyM8ikW1f8x+MUmUqPg9LIXdq34ArrPCyoGwv616kxfFUTn7AWQRQyt3ppbOZJ4FLDwEMcLyNKi0hFWNS7dSQWQXu8vwbXkGgc5K7PiVV5NSomSZgr4wQYS8VZ6jjoPC3+qE4MvLxAruM8e6K3bJ6rIfo6uWLD63JRwywSp89bfzTaqI5g/NQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=W8rRTyZLPCFKS1rg0bxBKpOZ+GDK/gdtGwsDwqIVAOY=;
- b=Bja4+2tKy4nTaSLkCgWun5hTNBtn7D5HncgaGOk23XJg4ovqhbiFWsxyg95KQvE5a89zpr1M+P4Lxv6O4MwFg3EPhr1toRGuYGy2erT74hcLuf+ZnfDo7JT0BNKhq+vPUu3KwPAFkDCpN1X/t9SzCwsA5yANeRjCSdxX5QnugKgBhtMWjb5P5GQk6bjRl83+ry/jpz5xj8fOdcDF5A2VJiThmuHauBR/oY1TLDs1hobIEo34TzaoJi7WbNrGex9SD+wVX2ctG7Ftv0rDJpw2MJb/sCtea41fcWVx6gGC34uq9m4eu1AZyn7JQT3ddEqWq28u04DJ2STdDCsJWCmyGg==
+ bh=ZVuay2ygH6kVxVKvlz0Om1BuKM7dJq/bcF1Kl7hokGk=;
+ b=olvqwTseYghVZ2Kcqm3bnlCusdLAStir8jJaSwiZvhhAKRKrAQhywX+7hhz+hP/iqECSXIz9V75rHBNdKCldGkzd6ebUR20urnxCuGeo2mo1Huu6h8T2hdz23lYqqGKysLMgiPmXe6/xjrtNLhLfoD6dap3A97mX3FfoYyvqb49riRxgb7GH0/V6Fho2Vr7Y7MdW5AHyfrYoyC+oHp/xsEyLlcZmOsjJabciSiKSkZ+Jlsn8Z7pOUBWnnB1JYyvucKOiXw23YDzUSX+ShN/q+wR3wAcSQ/MjX8YEUlKo1DZslnAfANbwEEx/38zGsVmEMjCRtM8L4BUkv/bTUck1/g==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=aspeedtech.com; dmarc=pass action=none
  header.from=aspeedtech.com; dkim=pass header.d=aspeedtech.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aspeedtech.com;
  s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=W8rRTyZLPCFKS1rg0bxBKpOZ+GDK/gdtGwsDwqIVAOY=;
- b=YsrPYClqNuC+1xDyeDYTvdSDY3ELm++TaYJhpcluDfla1zFu8/cXDEW3uuRDll5BhDNPyYsgMJoQwaQk7P2YaOogpZE3fi8fklrZRYX9fEAmceLKn0SHcSJYuo02taIOphKALKiqGZhJhjppTmaD0ksO9bKI4+c8D7cT8QqH0boVnOSYOe1uXOg8hj8fTN3edT7UtVqZ/SqJO8ZM+tDK5jrKxkTa1pm+upSa8jUK+B0Nhn99eHmsAs2rQoABylCtU2AGU8XmstzUE9VVHufjS9VYqljKFZAcasq9wIWaQkkDcEtUCA5tvM1YvjUxxYVrTbPNEEVewFR+HNAytPcDwg==
+ bh=ZVuay2ygH6kVxVKvlz0Om1BuKM7dJq/bcF1Kl7hokGk=;
+ b=esLFwPSjn8dD9p9L8QzoNZejAA1iiyl1PjnT3YVP9dfTAlowHsK/V/AD1nOqVeBXKCdQrdgdBbBlMKhLFJ1OxgV7XGla0HjuixbQqVcYQV1IDixuJpxRTyD+nWP6rjoBH3URlyGYbo/vVvzHbgM+WdGZeLjkTO2tXPWrg5SLILDPGU8l8Fpb78x6iC7UFUP5p+uPgQc+ssZxPi+3MC308H9G5JBHvgtm+scShTYvpI5IvQ+/thC228EEbAsLlwd8KhLXxV2hI4VJ9BOyvAfaWL8RmHIfskTmb2EPPRxeBj6iN9NfiNEaQirm8J7F9q7twdGohtO8MRYJ+JZTPFKawg==
 Received: from OSQPR06MB7252.apcprd06.prod.outlook.com (2603:1096:604:29c::6)
  by TYZPR06MB6114.apcprd06.prod.outlook.com (2603:1096:400:33f::6) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.406.7; Wed, 9 Sep 2026
- 05:37:51 +0000
+ 05:38:51 +0000
 Received: from OSQPR06MB7252.apcprd06.prod.outlook.com
  ([fe80::92af:c9d9:8779:d19]) by OSQPR06MB7252.apcprd06.prod.outlook.com
  ([fe80::92af:c9d9:8779:d19%3]) with mapi id 15.21.0406.005; Wed, 9 Sep 2026
- 05:37:51 +0000
+ 05:38:49 +0000
 From: Billy Tsai <billy_tsai@aspeedtech.com>
 To: Frank Li <Frank.li@oss.nxp.com>
 CC: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
@@ -76,17 +62,17 @@ CC: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
 	<linux-arm-kernel@lists.infradead.org>, "linux-aspeed@lists.ozlabs.org"
 	<linux-aspeed@lists.ozlabs.org>, "linux-kernel@vger.kernel.org"
 	<linux-kernel@vger.kernel.org>
-Subject: =?big5?B?pl7C0DogW1BBVENIIDQvOF0gaTNjOiBtaXBpLWkzYy1oY2k6IEFkZCBhIHF1aXJr?=
- =?big5?Q?_to_clear_the_TX_start_threshold?=
-Thread-Topic: [PATCH 4/8] i3c: mipi-i3c-hci: Add a quirk to clear the TX start
- threshold
-Thread-Index: AQHdOgYGVnmzL1ICBk2lJkF62WpP7ra6NSQAgAuRcro=
-Date: Wed, 9 Sep 2026 05:37:51 +0000
-Message-ID: <OSQPR06MB72520B5A5ADC4F06F2CC6D2D8BB02@OSQPR06MB7252.apcprd06.prod.outlook.com>
+Subject: =?big5?B?pl7C0DogW1BBVENIIDUvOF0gaTNjOiBtaXBpLWkzYy1oY2k6IEFkZCBzdXBwb3J0?=
+ =?big5?Q?_for_the_AST2700_I3C_controller?=
+Thread-Topic: [PATCH 5/8] i3c: mipi-i3c-hci: Add support for the AST2700 I3C
+ controller
+Thread-Index: AQHdOgYHXIjcRyibb0mr6MeKR00DvLa6OvWAgAuL4KU=
+Date: Wed, 9 Sep 2026 05:38:49 +0000
+Message-ID: <OSQPR06MB72525B77F0B3F5D094C4F7BF8BB02@OSQPR06MB7252.apcprd06.prod.outlook.com>
 References: <20260901-b4-i3c-hci-ast2700-v1-0-19909e7cbd7e@aspeedtech.com>
- <20260901-b4-i3c-hci-ast2700-v1-4-19909e7cbd7e@aspeedtech.com>
- <apc8YiMT_8aBukeE@lizhi-Precision-Tower-5810>
-In-Reply-To: <apc8YiMT_8aBukeE@lizhi-Precision-Tower-5810>
+ <20260901-b4-i3c-hci-ast2700-v1-5-19909e7cbd7e@aspeedtech.com>
+ <apdBQ3GbChnlUk8b@lizhi-Precision-Tower-5810>
+In-Reply-To: <apdBQ3GbChnlUk8b@lizhi-Precision-Tower-5810>
 Accept-Language: zh-TW, en-US
 Content-Language: zh-TW
 X-MS-Has-Attach: 
@@ -96,66 +82,65 @@ authentication-results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=aspeedtech.com;
 x-ms-publictraffictype: Email
 x-ms-traffictypediagnostic: OSQPR06MB7252:EE_|TYZPR06MB6114:EE_
-x-ms-office365-filtering-correlation-id: a53d407b-275c-44df-f847-08df0e347d1e
+x-ms-office365-filtering-correlation-id: 03ac7aa1-e10f-4347-1257-08df0e34a018
 x-ms-exchange-senderadcheck: 1
 x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|376014|7416014|1800799024|23010399003|366016|10067099003|4143699003|56012099006|6133799003|18002099003|22082099003|38070700021;
-x-microsoft-antispam-message-info: T4LrKBHj2mywnl8wz8qoBqMUpPHKQAc8ZPB/okKE5seXx96xz8PWkfpj3K1EVuGvwCoT2e7ebW1qALx5yNo/ecQbSiLcyz6EJqBWUuXGEJDlOvdbkkCPfU2jNKP9vZuC44DL2mRoTEZluV8vNrlJdvaQOxLaVu78skNlYESRwG2bd/k6rX4ztciSc3I8Q0DD0JGbyizexxsOOS48SkkIUWMDU6T56KXM5r15unxR75B1R/wvEfKCEuyDBOqbZ6dan8KobIDuwbf/1ZylVgotdmwmOZ1sY42OqWs8Y+q2RU841aqhEWk60bW1/m5HNeTZNuOaMsINtOtMKN5Y+XaY3xx/mRt3k2pZ4dKakbDL1nZGG+PqefxcmFi/4kMIomegqhrqROkngHObp7oF1us60J93LFKePXlvsMuCC0PKZaAsKVkGRpDA1IPrbA875vxR0R1CIEJ2XDQ0m/cUB44+WiDlGvNS0nZaEih8joHQVbdkjotsrC7zZehCa+GyJpV0lJF7Occ70OeXNvu438tYvtTdUJY12QsCheYIp5HYODao4JIRM7UqNc0TRMTScVRlyq1lA368lzKitNVgbWjgjrojSrytNCo2kGbrcTKGizrbXVn23q4pApAJBPd9lNlWG08BjUi1q1p85GqLAt3TZ7pKqkhcIQX9CTkpT92FE73AIBWjzY+Pja0ruw15QrQdFq9G1/3vmIAzPhc7I24It5H87B/6m9mkpYE20U/pfd4=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:zh-tw;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:OSQPR06MB7252.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(1800799024)(23010399003)(366016)(10067099003)(4143699003)(56012099006)(6133799003)(18002099003)(22082099003)(38070700021);DIR:OUT;SFP:1102;
+x-microsoft-antispam: BCL:0;ARA:13230040|376014|7416014|1800799024|23010399003|366016|10067099003|4143699003|5023799004|56012099006|6133799003|18002099003|22082099003|38070700021;
+x-microsoft-antispam-message-info: zYay9naIoGlJnwA+kiAbXMVqlANQitLP3KD9Ctt9tl17jPag4DON9yI3KbPo/cG4SaOW1evCadjqDImISf3g6f776YFxc8Ieh4p3h04Q0OucSdxqXiwx6fTwEs2NGZaX29F6J4UHQHPeuG9JxpiltmbVIsAood6u9bbDmvx4voB49IldS3bMs54c+E7pvxRqKT0rzCxku7y7AGW+GwaJKfzfbpGhdBBqPkM5my9R1PrwY7o/z+jr5180iEX39pWBNz+1B77yrzVHAPwTLODBThu0tPsejRxMj99dFzMhSOC+1DiDkdy2GzXloYMIzDMtp/3RLu9MzTVFPNvBXL2yOy8u7o4eLQq1ufLLw2O1N4O0qNdketAJ8+8GU/2iwE1ondSGAT0d79Gd3kAXY1Q9ukRGiDXfFTlV0HZ1fbrwWoyvqM/cqOxi+1w9lY/p4KJqRpWxFic1Ckb0sOc6MP8GFB0scY8dypdHcEm27Q5pON8KlbVKFBXFbZ9UTQmO5t8BLKPeuBrbNKvnf3VEy/Akr7K96tFTZML3BZ8gS19MCcFVO15Tfgk+chK7eAm/cEdNgw7nMsti+L/OijQhJ6R09D5MBiMHf5dxQhJ2Q/E8m5aoHITvCUFy0ndOvCmvEItgIKx8Vz/Pvx4mgSE5erPGm4N0nWqve1W3xwx1GcEXkRWjvcB/5d87ZGsVZHbgJvoOYxG9rJxnpfV6vAgtVi62se4rjDch50T1pwL5iiw7ENg=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:zh-tw;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:OSQPR06MB7252.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(7416014)(1800799024)(23010399003)(366016)(10067099003)(4143699003)(5023799004)(56012099006)(6133799003)(18002099003)(22082099003)(38070700021);DIR:OUT;SFP:1102;
 x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?big5?B?VWl5UWZXWkFWN29zaGpVdlhsa3k4ZUxFSGJLRlNCQ2IvUGVSQU1QNTcwVzBYYjVs?=
- =?big5?B?TEdJakxxZkZvQ1plTnhMWkhmTDZwdFVWUzFXWG1sRFFkS1FqL2g3Vjd3K3pxaW1K?=
- =?big5?B?SU5BdkFwRHFxbUNXeWo2SkIrL0x6WWROODBha1hKaEJScVdOelk3VFNPZ3ZraUY3?=
- =?big5?B?QWRuTG5kMndtRko5ZHRvRjZsN1pjSmFLajMwdWJjSi9adk13OWs3d2wrT1pVMGNZ?=
- =?big5?B?R041VkNINWJwL1oyelUyQlRyT05qMUQ3d2RGeVNXNWgza21VUm5uQzlBQlNUTVFQ?=
- =?big5?B?T2t1M2hZUURIcit0ZCsyaHcwUDlqRGltVUVmVGpwTWZBWVVvVzczZTJ6Nm9ZMStY?=
- =?big5?B?Nkp2V1U5VlZVRlhiSS9ZdWd3OGs2RFhzNEtwb1kxN0xNYi91VmFDTnJQSEJtOUxU?=
- =?big5?B?ak1sUFZYSHNLYWxvaGZOUGZMbmZrcGhTVUlHR1ZpQXlNWHBNc1hRR2dVQkVZNDBi?=
- =?big5?B?TUNCbkZ1c2c4TXRDTm9EcHZ5NVRNWUc3bUFFdk40aVZNOUtoajFoMUgySFhMOTBa?=
- =?big5?B?ZzEwT25JQzhIRTJRNEZuS1NHMGJ6cWVVNmEwYWcwZG9CNlV1bzZrejBOZ01ZL0Fy?=
- =?big5?B?b2N3ZWRiTUNRRVBzcVkrc29DYU4rMFZ3L1o0NkJ1L1M4eXBDK1dJaTBMUms2YTRP?=
- =?big5?B?R2J2ZFE5RFBDdDkwWW1GZHZHWnhkTEFpVDB5N3dlSzE0U015dEJtK0VjN2pxN05C?=
- =?big5?B?Z05vWVZkUmo5Wk9pVStESjlQdDFVOTJiUklXZjNWYWJYdUJUL21SUnIySGQxWGdB?=
- =?big5?B?bmlKWWNaN3J0QUl4ZDViYVY0Q0Q3cW5aQmJ1N3lYeVlGRDhxaWVjVVBReTQ4OFNn?=
- =?big5?B?OXNXN2l5eFgvb01OQVdZYkhxT2haWGNRc1JGZE1vdnNlSEwvajdGU0kza2RjaFNj?=
- =?big5?B?blZYMFdsbmV3Zm5zbk9yekN3MFU3MjJoQWVtTkNvb3ZaZWJtUkdkTXhjWTAwTWZw?=
- =?big5?B?Z3BaMlR6NHlPRzYrMHN4ZlF5eUc0QlFxVEJJY0NJbkdtaXdMZWp0bDFpLzgrcTBP?=
- =?big5?B?WlNDU3YvMm5zOGlnbUg3NGFQNW5xTWcrSjRjSXV1UlZQRHN2clo0WTIyMzlwQUE0?=
- =?big5?B?aVBQc3VOL2pDdDB3UFptaWtNdzJiWDZnS1VoVUE2VW1TbFdoRTlsbTBBajN4ZERZ?=
- =?big5?B?RmdzMzlDd0tFVktHWncxbUZxQmxsbkhFQldjNXppak4vV2h4eUhTQkNVSi9ES0h2?=
- =?big5?B?THNwZGgwamFaYWZmd0NKV0loZzhLMlFSUFhQYjJsaDBtMUJXcDYzRU9yR1BxZmFZ?=
- =?big5?B?UkFxT0JHN3Zzelg4VS8zSDIycklxaGl2Z1BoYjExbGpWQlp3MnU2cHk5QWg1akhU?=
- =?big5?B?YXl0eFFEZmJxVHdSMEQxNzdCT21VUmQ2RVBNTFB3SXZVWXBzVXI0VnJ3ckJYVExG?=
- =?big5?B?d1RHWXkvNUJDYlMyT1FjM2FZYzBWMWtqY3NwU3NiNFBzM2VDc2lwL2x2aCtaVzdD?=
- =?big5?B?OGNLY3JGNENUcEtjcmpsWWtWR21tL0pqd2RLTGZoWDV2MVVPYWZSUGFlMnFaUWE3?=
- =?big5?B?aHZXWDVDOWFjOWliTlNnMEtObTFBdXdYTm5CT3FmZEE4THlNbGIrbTRkT3pGVE12?=
- =?big5?B?MFBJdmdZb2dYRTM0QWRNMUd2R3RPcTdCdUczak9PUnRYWnR5TVRMdjFLeGhYWHVR?=
- =?big5?B?MFVZRzIrSE1EcFIxK0JSTVAvV3lnSDZJNUJXWm9TOW5aUXJVdmxyTDJYNFRSNnp6?=
- =?big5?B?WWFPM3BFeXVLcmhuMXBqeE9EZVA4VGh3d3FOWld0TDBlVEV1TXYrTjZReklpVE5O?=
- =?big5?B?U1FkUFU3dWVJMDdxRktaMkk5Ky9QOERIcTY2UjNPRHNmUmVQcXNOZ0FPV0l6NEhm?=
- =?big5?B?aXBqaGZUa2tRdFh6SmV0MjE2S2pHRVZKcFF0eUZUdFlaQmkzVFh6UGxTSVlwMVd5?=
- =?big5?B?TDg2dHRMU2VueFhybkxGTVhkbExNN0x0NnkxQnpTckNXK2Z6T0M1bURwSVNVeWJv?=
- =?big5?B?bHByODY1eHU0S1NENVVpZjFwVkt6M0Y3d05DeS9rL3R2a2VQVnEzeFJRanUzL1VN?=
- =?big5?B?RnBoMGJRSWxIS3NwaU1lR3RWSU9EM0xuOHJkQ3J3a3BLcXVJRFlXa0l5bFlyYUpQ?=
- =?big5?B?czRQRlMzMEpTUHRCRmNoZHlkeVI0SGFlRjdWU3JaeHB0dThQUnVrcEd1UUI1Y1pK?=
- =?big5?B?bE5NMDA1WG9wOUZxVk9rOUs5WTVoWnB3TWdpbmdpK2pibjdVUXNJZnIzS09ta3J1?=
- =?big5?B?NDRVZ0IyQUtDZjlidTV2dmFvcklPdz09?=
+x-ms-exchange-antispam-messagedata-0: =?big5?B?K0pmRncwN1BIQ083Q0J5ZnZkSlJtVmRObExhNUNvWFNIcE1lK1ZHbHN6MGJUekEx?=
+ =?big5?B?T3lJN09rWjdnWjdQcTV3MFdaVVMwYUs5MERMZVdwWW5VUm11VEF5NG5LL2kyYVJL?=
+ =?big5?B?dlpRaGJ3aEhLNlk3eGczbFp5RXloeTZnRHg3eWpnZGhvZ2JOdzNwZkJac1FNVU5r?=
+ =?big5?B?bWNqalF1ZlhmWWVGZlQ4UzZqVDlYYngrSGlBSWhXeml3c3JPdFhlMjJQVzIxWGhM?=
+ =?big5?B?dnFMR2plTFc4VEpMb2JrTHdEMEUxVGQ0Y1YvM24xeDBWL0RqbnkvaHBvekwvK0Z6?=
+ =?big5?B?M2JNeFZ6Q2lBWitZUUlJNzBBenFmWDRRdndFajlGR2N4d0pPSGY1aDRHYTAzVzJ0?=
+ =?big5?B?UUZWbzg3MVBJbXRnd2VublNGbUhiUGE4MUxNUDJKaFI3aytUeXA0eGxYZXF4MURr?=
+ =?big5?B?M05xWjhDL2crd0VQMzNZc1pmNmtScUZMQVBPZ0FTL1RHN0k2UnhHcXM1TXhsV3lT?=
+ =?big5?B?VG80UVNxWTIyZFBBbXg3NDNFZmthRXhYRmdhRkQvUUswKzdMdnR0ZGdBZGdWY2ZW?=
+ =?big5?B?a3JsSzNBRWluaUlZSDlyVG9ESFBRR2QxQWEvK215K0JabG4wcDFrQUJES3BCRFNh?=
+ =?big5?B?dlFtWmxSZWsrb0wyS0pQVXZCZ0REWGR0WkU0YkRPVUNzS2hYK1U1a04rZGhJTTRL?=
+ =?big5?B?Ky91UkZoQkY0RGEwQjErMFJlSDU4ejQ2eHdIMjljQW9pNW9odmNydXFWKzE3WGxn?=
+ =?big5?B?b3A0eUduY243dldwUVBTdmlyd0F6Y1VxSlF1WlFlZk9uazJ5S1dYdHdHRUFFSHIw?=
+ =?big5?B?SFgvdTE3NE5wdHplc2tYV2hjTWYrSXA5L0dleTJFNFg3VThCb2dtcXp5cGpvYkM5?=
+ =?big5?B?cHQzVTRNcmtBQmNNbHB5ZUcydWxoa2JNTUtSMmZYdnZCd1hpekdmaXRRdmw5bmNh?=
+ =?big5?B?ZkJIVW1jb2pGYnNENzQ5OWx1UWNMaXU4ajdwR2Z6T2tuUmNqZjdEb3R3SHNRVS9u?=
+ =?big5?B?WGI1S1haZzdaejZZamhNYkV0Mk9yQlN2dzFnZWp3RjhQT242Mk9GRDI5OEJPVUpJ?=
+ =?big5?B?MkpXWnFmQVJlRkZLZEpYdTd2Rlh6SG1BMlk1cGtVcDZLMFBuM0ZBK3pSeVlEVUtR?=
+ =?big5?B?VGNheHZWSmkrL1FERTFjQUt0MERXMzFwM1lhdGdHM3FqRWdoSVRpQlZIbXIxWUYy?=
+ =?big5?B?azB3K09sK1BXTHM4dEo1aTFFTWZVSkZBSjBzZUlmcjFJYkhHWjF3UmwzanlCZnBV?=
+ =?big5?B?R0dVckdjeEFzcE9qSzMwbUcxNDd4bU5sditYNGVTUWRhdm51eW5DYWdxQWlJT0I3?=
+ =?big5?B?a2JPdHVySUdyejhlakZyNHQwMFNITHRISElyTERQMElQcU0xNVR3dExYbnJoMmd1?=
+ =?big5?B?bE9DaUhyZm9MY3hsZGNjRG5kNUllOU1nbVVTQVZ5a2c4aGtDUmRubGN0WlgwRHY0?=
+ =?big5?B?U2ZOeElxblUyTWhxZzBZaldibHBBVjJNM3ZKR3JJbGpRaW1xcjhiTlRNL2FKd1la?=
+ =?big5?B?S0kyUW0vRHU2b3RkUDlFdnVibXJLbDdqMU9lTitBWWtMZzRLL0M0d0RMSVBlZk5F?=
+ =?big5?B?bUlGN2J5M2IyVVRJeFJjUEFRTTFuQkVpeW5yN2Y0NU9TSTZWSWs1WUdwYkhCVS84?=
+ =?big5?B?M1JIeEtXZ2NvanluNTR0aUQzOFJJTzhNb09LcE5IWjV2K3pMMmNUbVI5Q1FtMHQ2?=
+ =?big5?B?UVBTT1Q1S25HeTc2NU8rZEJ2Mmk1NGFzdk9tZkJtK1JnSGNpWnhWMlA3RW1XU0tX?=
+ =?big5?B?NDhMeStFSzF4OHRtNSs1V2xnQWdaZ2lGUHZXZW1NK1A0R1I1Q0NnMngzUVFFcmV1?=
+ =?big5?B?WFZ5bWlNRVhMV0FkTnBmak5oMHQ2N2pWY0wvYzlSRFQzcnMrOHA2UW9RTzFZcktW?=
+ =?big5?B?UzN3ZzM3VlJKTndtN1NpMlVRNk9ndnVLTURNU2hrS2lkeURNOWNWSzNiZUgrRk1w?=
+ =?big5?B?WmZiUUJwWCtMMkVxQUprQVNYemNmZ2FKMmtpTTJMSFRxNzE4UFo5UUc5UjRmQXF2?=
+ =?big5?B?T1J2M1liTXdaeXNhZ1c5Qmw3MXpvOGNhbnBlQ2JHYUpZbVE0VTlzVkMyR1J6UWRu?=
+ =?big5?B?Si9HbjhHVjluU0hoYkZOOEtTajZrNmlWUmVSVDQ3R25ibUpMcjUvMXdSYm1VYnJh?=
+ =?big5?B?RVY2L21VZDAvU0FJS1hrajQyVllzRXVScjA0YjJGRVVnY3Nibk84SllBUDZXNHJW?=
+ =?big5?B?UUFlL0t1RThVQlg0YTQ0N1RXMDJJYmpFL01VWjF2dWIzT2hLWFgySjkybXBxTDBS?=
+ =?big5?B?VzNsak9oNXpkOWRiOVJEMUdrcTBGQT09?=
 MIME-Version: 1.0
 X-OriginatorOrg: aspeedtech.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
 X-MS-Exchange-CrossTenant-AuthSource: OSQPR06MB7252.apcprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a53d407b-275c-44df-f847-08df0e347d1e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Sep 2026 05:37:51.0144
+X-MS-Exchange-CrossTenant-Network-Message-Id: 03ac7aa1-e10f-4347-1257-08df0e34a018
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Sep 2026 05:38:49.6851
  (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 43d4aa98-e35b-4575-8939-080e90d5a249
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: cG5kB8eGieclwYhExUmZad3F8oG7Cl5F+R4UWhAjPAmdi9V16DSTPisjUDoSVn41t/+tqQmnGm9QqoCbzMIC5QbKlWhl8Lbn/lZ+4ufzY2Y=
+X-MS-Exchange-CrossTenant-userprincipalname: Q8GEelFfRanseuqX3O6XEVD33koVQ20lwkOY5IkvZOjOl4S2/yErdQSQFuabInzIKRK6uGiTQiDXSwk8yj9jDgA0Rr01QkogiJZsKX6iom0=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYZPR06MB6114
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260909_063811_403438_EADA3B34 
-X-CRM114-Status: UNSURE (   9.54  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260908_223916_202002_5DCF5C63 
+X-CRM114-Status: GOOD (  13.82  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -172,37 +157,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-> > +     if (dma && (hci->quirks & HCI_QUIRK_TX_START_THLD) && hci->PIO_regs) {
-> > +             void __iomem *thld_reg = hci->PIO_regs + PIO_DATA_BUFFER_THLD_CTRL;
-> > +             u32 thld_val = readl(thld_reg);
-> > +
-> > +             thld_val &= ~DATA_TX_START_THLD;
-> > +             writel(thld_val, thld_reg);
+> >  drivers/i3c/master/mipi-i3c-hci/vendor_aspeed.c | 234 ++++++++++++++++++++++++
+> >  drivers/i3c/master/mipi-i3c-hci/vendor_aspeed.h | 174 ++++++++++++++++++
 
-> don't move these defination, original isolate is quite good. Add API or
-> callback to implement clean DATA_TX_START_THLD.
+> needn't "vendor"
 
-Okay.
+Okay, I will rename vendor_aspeed.[ch] to aspeed.[ch]
 
-Will revert the pio.h split and keep the PIO Access Area
-register/bitfield definitions private to pio.c as before. Instead,
-add a small accessor there:
+> > +struct aspeed_i3c_vendor_data {
+> > +     void __iomem *inhouse_regs;
+> > +     void __iomem *phy_regs;
+> > +     struct reset_control *rst;
+> > +     struct reset_control *dma_rst;
+> > +     struct clk *clk;
+> > +};
 
-    void mipi_i3c_hci_pio_clr_tx_start_thld(struct i3c_hci *hci)
-    {
-            u32 val = pio_reg_read(DATA_BUFFER_THLD_CTRL);
+> should be in aspeed.c
 
-            pio_reg_write(DATA_BUFFER_THLD_CTRL, val & ~DATA_TX_START_THLD);
-    }
+Okay, I will move it into aspeed.c. The only place outside that file that
+touches its fields directly today is the reset/clock acquisition in
+probe() -- that's moving into aspeed.c as well (see below), so nothing
+outside aspeed.c will need the struct layout any more.
 
-declared in hci.h next to the other pio.c-implemented cross-file
-functions (mipi_i3c_hci_pio_reset(), mipi_i3c_hci_pio_reset_all_queues()).
-i3c_hci_set_io_mode() then just calls it:
+> > +static inline bool is_aspeed(struct i3c_hci *hci)
+> > +{
+> > +     return of_device_is_compatible(hci->master.dev.of_node,
+> > +                                     "aspeed,ast2700-i3c-hci");
+> > +}
 
-    if (dma && (hci->quirks & HCI_QUIRK_TX_START_THLD) && hci->PIO_regs)
-            mipi_i3c_hci_pio_clr_tx_start_thld(hci);
+> Don't suggest is_aspeed(), you split each feature and use drvdata like
+> previous QUIRK.
+>
+> It will become complex if new chip appear, such aspeed,ast2800-i3c-hci,
 
-core.c no longer needs to know the PIO register layout at all.
+Okay, I will drop is_aspeed() and split its 9 call sites into quirk
+bits set from the match table:
+
+- HCI_QUIRK_VENDOR_BUS_SETUP: bus_init() and do_reset_and_restore()
+performing vendor-specific controller setup, including clock-stall enable.
+
+- HCI_QUIRK_BOARD_PHY_TIMINGS: bus_init() and do_reset_and_restore()
+applying PHY timing settings from the board's DT properties through the
+vendor-specific PHY interface. The match-table bit identifies controllers
+that need this configuration path; the timing values come from DT.
+
+- HCI_QUIRK_VENDOR_INTR_SUMMARY: reset_and_init() enabling the vendor
+interrupt summary path, and probe() selecting the vendor IRQ handler
+with IRQF_SHARED dropped. These have to move together: enabling the
+summary path without the handler leaves vendor interrupts
+unserviced.
+
+- HCI_QUIRK_IBI_PAYLOAD_THLD: request_ibi() growing the payload IBI
+termination threshold.
+
+- HCI_QUIRK_VENDOR_RESOURCES: probe() allocating the vendor_data struct
+and acquiring the reset lines/clock -- this moves into aspeed.c
+wholesale, so core.c's probe() just calls one function gated by this
+bit instead of touching the struct's fields.
+
+- HCI_QUIRK_VENDOR_DAA_INDEX: the ENTDAA loop writing the DAT slot
+index into the vendor DAA index register.
+
+- HCI_QUIRK_VENDOR_TX_AVAIL: the PIO TX path using the vendor FIFO
+pointer registers instead of the generic STAT_TX_THLD bit.
 
 Billy
 -- 
