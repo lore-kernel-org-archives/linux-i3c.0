@@ -4,54 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 27FD4C79F8C
-	for <linux-i3c@archiver.kernel.org>; Wed,  9 Sep 2026 05:34:02 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 73FBDC79FAD
+	for <linux-i3c@archiver.kernel.org>; Wed,  9 Sep 2026 05:35:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zXZSB0ytmsmc6jXc/Ip9ARM/gaw929th25I61N54ywo=; b=DIMb7v2CAh8271
-	Mj2PlKi9W7FZS2NenjAAKbyNrmtk/ruAK5jR0Vlr32EYaehAJGyWNktWkoQQcH6nG3yqhbMUxCPqH
-	etjwXuZwiVFWXYONzD4AbIxh8wIqILgGoeajYCv/ehGMLO+ZCPvW66nmSR+xklwdRKNEEmrV9uUVl
-	6oU+ZtmyZYINZbO26OYVzkYDuSLmVXf0TT4QsAbzZaIC3M9wwczmZMmvviO4+kOdMb6bcnmdnHm49
-	fHmHei5eVlyriOUgTYbNhswaPbjlnPUXYROBZhf+UZtmREkkqPX90x3hNnGuI5y5M2BGZxfbZrKH5
-	lqhr2hrBc8s17D0FNZMA==;
+	List-Owner; bh=6dRHu0BJWo7wDjSQiAHNsYE4hfJSJxHTYEbZI33o1iA=; b=2LsG6FP+34mmsP
+	wTUCb6xzpR1bsNCztqEBpfAKasEKQmttwMZyr0/B4YwaEgRTuipRJNI0fBUKPqTMr5ggVW5hqTtzW
+	UzU+mrGBn4KMb+khHsnoYHl6IwGhSZqR4JUoyhA6L08itg9QIrAePeBoTADPhvVxjAhp/HFzuAayC
+	MbOOddXz0lFuXbzHOdAuzHE5uzql0SWpVmhKR5b1n8X61q71lsYqGWf0uBNY8UeJt3xxuPE5AaLvg
+	G3qUZNX8uH56tjD4pMICFxt+DEGDA+byZ3mBHzNqDh4rieLepLfeDfMvfP+TfC9o3Vm3ecHnst1Ez
+	buJXeNvy76545atK5ObA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4Awb-0000000Ane7-3E42;
-	Wed, 09 Sep 2026 05:34:01 +0000
-Received: from mail-japaneastazon11022089.outbound.protection.outlook.com ([52.101.126.89] helo=TYPPR03CU001.outbound.protection.outlook.com)
+	id 1x4Axt-0000000Anqn-0Wgl;
+	Wed, 09 Sep 2026 05:35:21 +0000
+Received: from mail-koreacentralazlp170130006.outbound.protection.outlook.com ([2a01:111:f403:c40f::6] helo=SEYPR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4AwY-0000000AncS-4A8n;
-	Wed, 09 Sep 2026 05:34:00 +0000
+	id 1x4Axo-0000000Anpo-2dFY;
+	Wed, 09 Sep 2026 05:35:19 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=wb245slhRaXbuG5XgxfoWQ7xMUSsZQmWmMX3O/Chu6/t3j/Myxa2/uWmNPxAvK4R5TAGNyQ4xFkPDq1XL7fgU3prr+WLZn8ebS2Elow/e9II2LwQ6WRo0SoUtQUNygZaEK9kT57P3wUhrZpdeXc/6HBSJbe5s1To38sn2JuYLfVIVZ5HGkFd4O/G37qEJfSQoVlG9oW162ixwfbr7KXHg7h3XqaVkQZG7065kOatqgTbf7JxtStcGP29gVD7q1sPv4ZDxgiBnS7mdj+1k7qBM/CohJVOHt82QDlTlJzWoSRpBmIKqhlRlLC8S4IZwcLEBTedna6cXlTsc0TZKAAVYQ==
+ b=qfBmvvoUcv1ee9xq/mG1UDQOa7W9OIZHxWGz16/07OAHBIN40SwvDS8fqDufIZbVnz86PSiWic9C3Bs0aXULA//azHFgbfKFuW4CdG0bipJGataz95L/0bzKQbkBTqA+JFyar+qHsebBdt7sGuLXYui92K+B+xw+mHq9yYC9MV0D5IYmuM+4cOjZQg5VSUdrTyM2EPpDLHlduIrUwq1rsC08QjRncUps/manhQYBvjV5CGmqM2Sjt75/p5dNpvcclptqeoCfi09EUed7VPrLQ+wlfZChRVhOoK8qFWaxOowkNvNAy4xacDpZI5IAmZL5GmHgvsgIi5lgFmwdJ3ywtg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=GmXUshcSAPWCHNFeuKN5VT32WbbKAccXyzAuGzO7zRQ=;
- b=GpdNYZokyus3G9+/vtypbLkICKLlMHi5cULh5Pwk/35UiTzP/ZUoIFzzKfRAaLkm+tvsaeWSq9Vus94TAZCB4c0ecvGz4uqA1BtysCbfaPtMX7YXbwKCNfjK4E3+qW8tALCP6PnDPLHJwc4zbRE8yUhP08/ZnxFMZzA2GDkbac8VR+JkpRGMKXa0cu1l9FQ7xANo0AMm/rjZ8AC0XJw+DHQpgNSLm++9uGf8FFFiAxuxst+G0J6my5itwQZOXnA+obDIoioW5rYaqtekSY1luKcpykiDqz66//3CNDq9iGQJmufu1YURUbFFZj7Z4o0azSziUEu89VtfnboFQDqyPQ==
+ bh=ITRuMVPXrYLT2kzwrRKpWj7N6S+3yauHcHmQV7FL0Lk=;
+ b=KqbXkx2GVO0E4HdOMa/J3WI6T6vR8htqxQjL+AD4L8G5VqCTaOmVkGxkMc8w9b8el9cSsPy8z/L/z2dhQXf9ezFN1VY72CEcwhrqKGnBz1aMnwLXkz6V57sIotOeRvRQEsnzF60GtevO8frqB9wnOs59mOmRToc6iWx8ViKhssaJW6cTTcdMRswUkIaP0NTzxBMjVivjc/sEKAWlhQ2FVNIF6Qh94PXDjxdX+K9xpRLpOzhr69hWxDMNBNJCIkyrSlbClKyJec2Hw1ZSwPuVBhnBEKslQrO5SJZdjq3fDOOLzKOjrdRdp7gxPs1qsHkO7kIstdzTB+xMZT+QosRKyA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=aspeedtech.com; dmarc=pass action=none
  header.from=aspeedtech.com; dkim=pass header.d=aspeedtech.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aspeedtech.com;
  s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=GmXUshcSAPWCHNFeuKN5VT32WbbKAccXyzAuGzO7zRQ=;
- b=BDhk/Zt03vJtTQrYHcNFvbrzGjUF+8/RBRn6l4Uud1Q/Clzxx8sgHmwWep0U5/xhUB9HkjB5yw82Q+6OCx3ke+W9GonutINML+LBYvcfFSD6n1kpcXP7AA13swfjGkA2z10pvusovwVgirsWIdILYqeEmGcWB5W4V1sv790B0FZoK1eNuM7Hp5hnBz9dz5EKW9G0nlhTjrY7y9Q2dj42PITo5wfr0+4OYINUmhuKN8tjcLcXyhwTaVEBzHJXipuOVzLmwqJc6XtJO13SxDa+VBXVDd3B9O6mk2SrELRHSYH4S7ok/iWem0twsXZPhdYWa4ziCmbGmcFRhaY1VGxW/A==
+ bh=ITRuMVPXrYLT2kzwrRKpWj7N6S+3yauHcHmQV7FL0Lk=;
+ b=FrH1kxOKUmSPiYYDX8k1hHx9emPvlvWwV0J5VzfsbBz2cFyKY+ybExhqa9JPX3DFe41664H46M+YxFzFhU/vyN2tRnGxjIpvKHjkPK+SV9/ZrnaMxTEJneg7XPY1ffdoWFcKkDQroptQCDnecepgC69ypr9VYl8pKJzeKgYxp0QX+H6/gJGgQTsc8jgAwrcVG+MNNSwhZA/2UClCdr0VJUgmUhRAatD1NDaQqzDzGGhE9bMNTip1N7Rig1vIWBBAwjR2vJtavtr7stRYsuIGFr1A17f6JUorndIY/czIRIqTnS7oHuTPShWUawCSp6NRt4XqsjMnYO0Nb0SQQwqJ7g==
 Received: from OSQPR06MB7252.apcprd06.prod.outlook.com (2603:1096:604:29c::6)
  by JH0PR06MB7268.apcprd06.prod.outlook.com (2603:1096:990:96::7) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.406.7; Wed, 9 Sep 2026
- 05:33:35 +0000
+ 05:35:09 +0000
 Received: from OSQPR06MB7252.apcprd06.prod.outlook.com
  ([fe80::92af:c9d9:8779:d19]) by OSQPR06MB7252.apcprd06.prod.outlook.com
  ([fe80::92af:c9d9:8779:d19%3]) with mapi id 15.21.0406.005; Wed, 9 Sep 2026
- 05:33:34 +0000
+ 05:35:09 +0000
 From: Billy Tsai <billy_tsai@aspeedtech.com>
-To: Frank Li <Frank.li@oss.nxp.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
 CC: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
 	<Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
 	<krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Joel Stanley
@@ -66,13 +66,13 @@ Subject: =?big5?B?pl7C0DogW1BBVENIIDEvOF0gZHQtYmluZGluZ3M6IGkzYzogRG9jdW1lbnQgdG
  =?big5?Q?_AST2700_I3C_controller?=
 Thread-Topic: [PATCH 1/8] dt-bindings: i3c: Document the AST2700 I3C
  controller
-Thread-Index: AQHdOgYGnk2AFkBmnEiGGqUqF4qN8ba6MFyAgAuTjww=
-Date: Wed, 9 Sep 2026 05:33:34 +0000
-Message-ID: <OSQPR06MB7252E8C6F9D3FF0DFB318B848BB02@OSQPR06MB7252.apcprd06.prod.outlook.com>
+Thread-Index: AQHdOgYGnk2AFkBmnEiGGqUqF4qN8bbCsC8AgAMVV8k=
+Date: Wed, 9 Sep 2026 05:35:08 +0000
+Message-ID: <OSQPR06MB72529022B91B6480A927385F8BB02@OSQPR06MB7252.apcprd06.prod.outlook.com>
 References: <20260901-b4-i3c-hci-ast2700-v1-0-19909e7cbd7e@aspeedtech.com>
  <20260901-b4-i3c-hci-ast2700-v1-1-19909e7cbd7e@aspeedtech.com>
- <apc4Xxv5F9jwAHxC@lizhi-Precision-Tower-5810>
-In-Reply-To: <apc4Xxv5F9jwAHxC@lizhi-Precision-Tower-5810>
+ <20260907-imaginary-economic-oyster-57cdd6@quoll>
+In-Reply-To: <20260907-imaginary-economic-oyster-57cdd6@quoll>
 Accept-Language: zh-TW, en-US
 Content-Language: zh-TW
 X-MS-Has-Attach: 
@@ -82,65 +82,65 @@ authentication-results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=aspeedtech.com;
 x-ms-publictraffictype: Email
 x-ms-traffictypediagnostic: OSQPR06MB7252:EE_|JH0PR06MB7268:EE_
-x-ms-office365-filtering-correlation-id: 09b2c89d-29c8-4f20-9977-08df0e33e45b
+x-ms-office365-filtering-correlation-id: c7cd7b17-3e56-4109-c9db-08df0e341c8f
 x-ms-exchange-senderadcheck: 1
 x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;ARA:13230040|7416014|376014|366016|23010399003|1800799024|38070700021|6133799003|3023799007|10067099003|4143699003|56012099006|22082099003|18002099003;
-x-microsoft-antispam-message-info: Db7CJ8tEwI054qCbSXVU/p9oZcFjqW82EzeKcCF8nRveRXi1kVJ42z0cl4wWeqSLgGZdnbGXIN3Kwyt3eU6089BPj0E1y8DFpBTWZtkOf84crrdBFCs4tWqEyG0wOsTWbsLLVJvM7hSocwq1kU3e3gcVDuSvAOR5c7B579ZkXnbkFSnHbPh8UBllCaZC9Lt8pQ9B3Q6ZUSBQOi1ubwL4eNNAAdoWVDguS/3nYGUDSlA8FsSB1sipbBPtQ8fwYyEj19jFtjIZ9Qq+FbweSAHv8Hg/o279cr3sGIECqbC7I4o7ZdnnUL3wwCsjCau3sU4z/neA7QXcokRW7zfZef/S/doO1/Shm3pZfs56LSex037K6OLcdUzoRKJrmAt5HhefUBumsdqVksLxhkkGRipHkDbdhmk8KQCrEorZzOzxOD5YgKlcdeyvDkl8ettfAOZfPK6FOXejy6wTHnrTo+9PfJaaRSetxZ3MfNM2ph3fEoDQ6GDcMk1H/dyjO6v3VPbgXtJphf+42HC4QOEpg2F+4JbS9RfPWjskGrAyN1SjmFpFBtw3TQacz5jzFZozcTX4r51a8PGzdog8QUkXmlJ7+v7J1H8VmWiEU9TNst/IyufwoVtvQAvvZe2Nk7w6B59GjM6L4/M78DAHz0FaNj26JLwX4OhI+Rdqg1PayK7BOICQeW29ZW1LPEQm8a8SjH111KYp6aMZyx8xMsvIyM8LUsNYMW1o/tBcwEuU9QX58ro=
-x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:zh-tw;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:OSQPR06MB7252.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(366016)(23010399003)(1800799024)(38070700021)(6133799003)(3023799007)(10067099003)(4143699003)(56012099006)(22082099003)(18002099003);DIR:OUT;SFP:1102;
+x-microsoft-antispam: BCL:0;ARA:13230040|23010399003|1800799024|7416014|376014|366016|10067099003|6133799003|3023799007|18002099003|22082099003|56012099006|4143699003|38070700021;
+x-microsoft-antispam-message-info: 5FnUqGRpjCP/igRauHJ/pv8dAxFRvxY1BJQzpuhvv5azPVsUj/Kgs4gR+BfNYw0a0x3XgKGo9ZPIqAZWsh4LBFN1eyk6fphWImE2YiOg8X96Mw4FsLThSZTtqwB52OMjUgYKK8RRw8QQEZRmIQuFUz3C98mQm7qJzvIFzz5uXMw2OTP+UP0/SOo7xAmAAnT7gEt/CU6XYK3BJIDCgc2MxC2K6s98iGYlTTNXx4xNRogLd7oJwseXboqViwhsx4JGCgLNodMfgIjhrDEaUfnKOWvNWg+lBJU4gKnpIwbSsskByiK6ZVKEjhe4YLA4nnVngsnaNSDSEk+nHbbJ517x0gr+Wqy28tX53D4pMTFUOdDk9MIpj+g+vvb3IonKk+rK4LRG2hROlC2yPO3H0AJ4+4y5BaoYYJGZ2fXbUEJDB2VvY1/X9YBNBnA2fTNT7LLDT8mlfI4C78nHh0RZUl/c3VEuV7HhxLE6dJfYw3TjAiV9s1vVHzKn/yUI4nelx/wif48r50fl7JJJN8i9xUgtcFJP24jZd27x544/pBhvtVCBW+qgh3MAGu8xgcbv9kJYt0Z4mQmOhoPo0MO/YmSTqmwWx3iYzx01LUxoW6w1POBIozWRf8RA57F/s8xbwrhNGlbEP017js6vqRFLUG2YcAT1982qP13UTDU4abZ46F/5LW4TOxnl7dVZzKuUW/w4vP3+NcaebEzvoOsEM/ry8CzV+jYNW/bOpu6ZP5M2PHM=
+x-forefront-antispam-report: CIP:255.255.255.255;CTRY:;LANG:zh-tw;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:OSQPR06MB7252.apcprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(1800799024)(7416014)(376014)(366016)(10067099003)(6133799003)(3023799007)(18002099003)(22082099003)(56012099006)(4143699003)(38070700021);DIR:OUT;SFP:1102;
 x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?big5?B?WTFiTUhZVC9zNzRlWGwzUzBwOUpYMHArTEhjaFEySXByVnQzMmtrRHl5UjlJWkZT?=
- =?big5?B?S3MweENDelVSbmlON1pnVkxLRmhwWEh4WGw5S21sSER1dEFzUERzelRyVFRYbXU0?=
- =?big5?B?YndUQUhnbjNpUks0dkZiTUlqNm9Tc04vQmJjd2ticzVBMEUvM2dpSVBZM0xPU1JD?=
- =?big5?B?SHNtVm5SNU13dEI5MlZZdnpBY0psU2pMNmV4R1lnQzRlUUxiWkk1MDNHN3pqNHhI?=
- =?big5?B?OUo3YWIwT0xKemlWSDgrY20yVEREcEdsZFAremE1UW85WG02UzBWT2JvU3BWaGsv?=
- =?big5?B?eG0vc3NIMDhsOFBZM1BTTGFGRDh4cnZYSy81NVlsVWROZlYvNDEwWGpQNkNCMHdZ?=
- =?big5?B?b29YSkFhZU05cmNqVVBnOGdrQ2NRM01mdEhPb2k1SHpncEs0TW1hZGtMcG5iMXNE?=
- =?big5?B?VFljN0ZFdHBVNkhNQmdnTHhMeVVwQVNGeWhHcm1PNUxLUklQZkpMckJQb0JaSWJP?=
- =?big5?B?Zll6eTM5cDR4YURyZnpUb1pPSk5Ib3dwZ05vZC9ZMm85em90a0I2enZ1TFdZNE5B?=
- =?big5?B?dllFUzY3V2ZNb3ZaNkNKQjZOM1Yzdm1odmZKTnlrTFVZYjNvd0x6Vll3SnZ6UFc0?=
- =?big5?B?Tm9RRlZKbzE4RGxXS0xTa01SVTBZZ0oxZXpHbnhjZWgrUGFTbUYvdEFQV2paZkNW?=
- =?big5?B?NFhoUGNnakFFbUQyd1QrazVqeFdqYjdxYW1xeTB3cDEyUDFKcStFKzk5bTZoR255?=
- =?big5?B?SzlXcDdUbWhieW01TTZXOFVDUFQ4Um1nQWdjU1BpZEFEQTZsanI5YkNjalJoNlRz?=
- =?big5?B?VWU1UnRXbU5tdXZRWXUycldzREw5WkEyaDRPNU9SK1BjRGRWT2U1SDBNdHgzZitJ?=
- =?big5?B?NEtrOEdUT016RUc4ajM3T3dHUFpRRGFZblRJOTE3eFB6L2hudVFZWFpvaERBeVJk?=
- =?big5?B?ck45d01CUTJwenZFK1l6TnRRWEI3cVcreTBUbnRMcEsxMHlaY0REd012TmwzaThp?=
- =?big5?B?T0lGcjA1VkpBNlRicDlZVkV4eFhOdnRGWDFra0ZxaVVlNkNXdGp3djV5bHpadHNk?=
- =?big5?B?WW1WMzVQa2hZTnVwNGJlbWc5R3ljRXBWbFpzK3RsejNjd2pOQWxWd0lsaHdRM1Bk?=
- =?big5?B?WkZwVW9ScHlpc1BQY0RYYUVpSjZ1NDNNN3ppVVhUTmJIbEVGTVY5K1BoU0NhNUpn?=
- =?big5?B?WDZmV21EOGxmUXcxaGFZY0JENWxLM2V6cjN2eGJHM1JLUkdDU1YvbThQZHN6SUk3?=
- =?big5?B?bEZ0MkJYeE1WeGROVWxxdFlNQlIxby9oWkxmcm5WQkg5SFZtZGRPa1lqU2RGOWN4?=
- =?big5?B?b3h1NE83SE9hSEdTNzZwTEtqY0d5UWN0RGwvZXJUQ1Z6UHdXUTVFNklic3ZpYWxk?=
- =?big5?B?bWVKdStndGxiSmJzM1NzSjBHcTVMOWFqb256blRBY2p6QTdrdXpMcnUwcWYvTTg4?=
- =?big5?B?NllQc0tScnpQcXBKSkNJODRWazdZQ0Z0b1FNTkpOaFpJejcvS1h4ZjNnYXYyTm1n?=
- =?big5?B?ZGU2ckUvMWlWSjVZaklObHhsQmRxQVdRVUViemRKZFkyZEhQZEpiV1ZveVEzZEUy?=
- =?big5?B?SThPSHQ3WU12TWJxbUZHZktNNU96Ulo1U1R4d1ZiS2NLbTU1OCtEeW9sNHdjTUdw?=
- =?big5?B?NUxWcCt4ZmhnWm9pN3Z3V2R1SjhGZ0RuV3Z1NXQwTDV0NVhaT0FmT1R0azNreDU0?=
- =?big5?B?eUxIZUJvMTJNOUFOVDFTQW1IY2ZQS202bVE0R0luekYya3ZDYmZjcld2Qkd6NzVH?=
- =?big5?B?d2ZFSFNYc21tdGZsV3BBNk9kczlyQ1hUYTllOFUyNi8veER6bitTNlRoMGw5VjdK?=
- =?big5?B?K1N1b2VDT2lYdE14UmE1WEFnQkhjeWgydDI3QXUzNlEyZW94VGt1SEVINXp5Qkky?=
- =?big5?B?N1NyNWZkQXRUMjB6TDRWNE9vbytmR3N6QmE0N0tlZkNyanlDbTc5M2NuN0hiV0d5?=
- =?big5?B?dHNZQXFHTE9IK0I0MUpnaUlKcjRVRlNNdHBOQUx6ODQvOXM4OHljdnF0M0JQN2Fn?=
- =?big5?B?NkpzUjh5UmtuWklFd3k4QkFNcVFsd29vWjhPN0hqdHRZNWlES2hMSkFydEl3WnRn?=
- =?big5?B?dXIwc1YzNzQzUklXNGdCdzhGSytIV05OMkZ6N2cwa2t2eGI1UFd4Q3BHa2hJT0tH?=
- =?big5?B?SmhhZ2NnZkpWSWhrRHg5ZkdzcEFmR0ZGT1Zzb1RZYzE5VXRqY0d6dS9Dd0l4R0Nj?=
- =?big5?B?WkRLOHNZSXIvRFVnZHBJbVBmWXRhOEsvUmNLZmZMT2kraTJjQ3JGdjdQU2RxbW1u?=
- =?big5?B?d1VxYmh4MHorQ05TTHVsblA3NFFlQT09?=
+x-ms-exchange-antispam-messagedata-0: =?big5?B?b1hyK2xZRmFpaE9kUTZXT2E2MWpjVmpXN3BBYit2RGN4WndvdzEzb3lUd3JxcG1T?=
+ =?big5?B?RmlWOVdRWE85bmFYRU9haEJGWWVBVWM4NEMvL2Z6Q3I1cnVaSnNsbUlmbXpSUHVz?=
+ =?big5?B?UmtmcnNQWGd0VzNydTBjZ0I1RGJlT0FaZUZhSFExTWxTNm4wK0pEUnVINWRNbGVF?=
+ =?big5?B?WXY3WU41OTV0dlBWY2xKaDVGbXl1SXdTZlhoZzZySGI3SGkvZmRxbWRyV3NuMVNs?=
+ =?big5?B?blFqV2Qxck5jZGt5STVndTJWTnRxeFlFNGRIdEpyS0tLSHNCM2xMZG9EV29NSzRz?=
+ =?big5?B?ajRNNld5UHNaM0dwNjB1c1ZFcnZkWE50YWNrQ0h2N25kaDZsdkxZM3I3b1Zwa3Rt?=
+ =?big5?B?bVB6ZTlra251dktNa3FJR1c3aUxFMEMrU2ZET1d0VHBiZVF1K1BhRXFUNkhFU2hP?=
+ =?big5?B?SE5LSzh4V3RFVlZWd2VxclBxVXp6dkxTamV4aUVFSFdtUnNEUnBPZzlzMG00K2lj?=
+ =?big5?B?Qk1xMlBLZGJNUkxidVRVRzVmV0t3Mm1hd0sxRWVYODVYRy9Ib01FMWFiQlRTY1BM?=
+ =?big5?B?Qzd5eFA2enVBZVNQN3lRdVh2cGdDUDZ2QWZlS044NkJkK3NCcEVSbXBuMjd0T0Zv?=
+ =?big5?B?SlI4VytXTjFDVGZud3V5NmxwVEhiVjk5NDhwS1A1aHU0MktLK1VkZ2pDM2NkZzJm?=
+ =?big5?B?S3o1RjVEWUpKeVJsWXorUURvbDN3NXBOdlhHc0hUc1pHNjFreUZHL0p3c2s2SGkw?=
+ =?big5?B?Qllic1NOVVZJa0NWSUhkVzVPMXEvUzRKb3gzck8ybFAxV1FMc0daZVk3emxHczRL?=
+ =?big5?B?K2ZBQWtnQ3FYenpCU004ZFNkTk1saUlQdDUxelhCbGY5Y0dudlYyZHNORnZrdi9l?=
+ =?big5?B?UjYrZ0N1SGpxdmYwRkxzTW9MTUF2a1FIbk9WNHhsd2JIaC9BTC94NnBjaVowV3I4?=
+ =?big5?B?YXloQVk0eVlpNTZ5dFc1R2dEOGNmbmY4d1EzZTl4dS9mbzhEa1ErY1czNDVtTStU?=
+ =?big5?B?d0hwUVE3b0FDT0RnQWpuNHZOa0pyZURoVW42bDRieVoxU1NuM09YM3VENFRPMk9F?=
+ =?big5?B?ZGh6N3pwNHJndHgzbG9YVXB1VndIUTIrdURlbmZ0alBJRDZ6T1JNNFdqR1JvNkVk?=
+ =?big5?B?V1JBZTgxL2ZMVXFiQW1EeVZHcTVUbm9vd2JvMDNDcHJqaUlyR0xRc3JORU9HVk9U?=
+ =?big5?B?M3hwM3FqV3pxQis2ckVvM0VMREpKVU5rZm9VNG94OS8zR0xoQVpUUVVJV2l3ejNX?=
+ =?big5?B?UWEyazlsKys4Z1FHSjVHcTRXeXJadUdVOTNBVENZc01HaWtjMjR0Vkc4RU5sWkpS?=
+ =?big5?B?aER6OGFqT082MUFmLzNMZ05EYVA3YW9rUTB1Z3h3dlRtdUx0WXZ0c0hudCtQWURD?=
+ =?big5?B?aks2QzN4Vll3emQzdmp6azFSejZXK1AxSjl5cVRyUmMvbzlleHdNeW9VbUNqQ2Rh?=
+ =?big5?B?UWYzS3EvU2dwN053OFRXY25qT2lTQ2Y5RC9SOXJ4eGVxbFVvb2UzZnpmYVp0N1ZW?=
+ =?big5?B?WG50Wlo4ZjRxOVhQUXV4WXZ4anYvd3ZUWGIwWjhtQzQzRnk2OVoySmszbGMzVlRv?=
+ =?big5?B?ZFJqZlAyYlJTcTNvd2VvY0JtY09WbDRqdWQ4Vjh3ZWkxSlFTNUNtZytNU0NuaSs4?=
+ =?big5?B?N0Y4U0VkS2xCVVE4bUk5YlkrSHRtWERWU2Y4djczQ1l4MUlxOWVscHoyK1NERGFo?=
+ =?big5?B?THdoVHlzZnBuZENKYkw4alBKWFdjaDY1S1doUXd6K1NBKzR3cXp0U0NwamdRRlBG?=
+ =?big5?B?azZvb3Y0cDNhY0xSc3F4aHdKclU0OVRJRTlDdkpUbmRxcUpuQnJ4a3NYUDJ4aXVq?=
+ =?big5?B?VVh0eHk2S09WWWlUdm0yMHFWRGxSamNQa1N5M3QwV3d1YlpCOVJpZEYyRkRhZ0lW?=
+ =?big5?B?L085czhjRmRzcFRVbmV2ZThVN0dYZ0gzMi8yVW02cWdsUjFFM2Y4NktPWm10Q1dq?=
+ =?big5?B?Q2VNVFVuWW00eGRNUy85WmNTb0Fpd1ozSDVlaHhXa2N5RGcrZ2J6ZmQ0S25aS1dH?=
+ =?big5?B?cmhNUDlwbWp1L0NWbXBPMnpkSlEzV0VOMWw0SjBGWTFQYThjVUpjR0xjU01mTXVZ?=
+ =?big5?B?VnFEWEtVU2J1azl5QlAweGNSZWZISXIvV0FUSnUrTXdEc25xTFIxUHNJdmVyZ01l?=
+ =?big5?B?cmVFNmhiMEFudHRMc0FIZEtoTE94RkdUeTkvbmFDamFlY3dMS3BXYUZrYlAyVElw?=
+ =?big5?B?aDM5YTE4S0l6dCtwR0ZqbUttMjhBWldaSVpmWHJCQjRzRjdqbEN2OUptQ0xkdDdu?=
+ =?big5?B?b2FDcGtmQWNpWGJJVVRiSWQ4WVdCQT09?=
 MIME-Version: 1.0
 X-OriginatorOrg: aspeedtech.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
 X-MS-Exchange-CrossTenant-AuthSource: OSQPR06MB7252.apcprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 09b2c89d-29c8-4f20-9977-08df0e33e45b
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Sep 2026 05:33:34.6853
+X-MS-Exchange-CrossTenant-Network-Message-Id: c7cd7b17-3e56-4109-c9db-08df0e341c8f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Sep 2026 05:35:08.9910
  (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 43d4aa98-e35b-4575-8939-080e90d5a249
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: pPaRpDfglVLeTjO4267fDlyfDJzZkGHcj+UyCkI1MiWhlPc+lhxkhDRUM90lTgQV1mre6R/+YyBi516hLF2BrXE8f027HOEThjhslod9dT8=
+X-MS-Exchange-CrossTenant-userprincipalname: 8AWbPf3ANHrb+AFZ6p8EDqX5Y32QM4qBk+R13XmX6Q8l6a6OhnNaOoU5vUVRBRUkc3ggvXekUPDUXJLneJBZfoOs+bqL5//OeKOPJTiOTiY=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: JH0PR06MB7268
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260908_223359_046311_A0169E9E 
-X-CRM114-Status: GOOD (  13.78  )
+X-CRM114-CacheID: sfid-20260908_223516_668550_77F20A57 
+X-CRM114-Status: GOOD (  17.05  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -157,24 +157,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-> > +  bias-pull-up:
-> > +    $ref: /schemas/pinctrl/pincfg-node.yaml#/properties/bias-pull-up
-> > +    enum: [177, 231, 261, 317, 400, 470, 550, 600, 750]
-> > +    description:
-> > +      Enable the PHY-internal pull-ups on SCL and SDA and select their
-> > +      strength, in Ohms. High-voltage pins support 400, 470 or 600 Ohms,
-> > +      and low-voltage pins support 177, 231, 261, 317, 400, 550 or 750
-> > +      Ohms. When absent the internal pull-ups stay disabled and the bus
-> > +      relies on external pull-ups.
+> > The AST2700 I3C controller implements the MIPI I3C HCI programming
+> > model, extended with an ASPEED in-house control block and a PHY
+> > programming window advertised through an HCI vendor extended
+> > capability. Follow the existing aspeed,ast2600-i3c precedent of
+> > describing SoC integrations of a common I3C IP in their own schema.
 
-> this one should go through pinctrl.
+> What precedent exactly?
+>
+> Are you now bringing some LLM slop arguments here?
 
-The only pinctrl capability of the device is to bias the pins via the PHY registers,
-so describing the device as a pin controller feels excessive by comparison to allowing
-a single property that already has an appropriate definition.
+My reason for proposing a separate schema was to keep the
+AST2700-specific properties (reset lines, pull-up strength, and
+timing overrides) and their validation together. Extending
+mipi-i3c-hci.yaml with a conditional, as was done for
+microchip,sama7d65-i3c-hci, is also a possible approach, but I think
+the trade-off comes down to how much AST2700-specific content would
+end up in the shared file. microchip only needed one conditional
+property (clocks), so folding it in barely touches the shared schema.
+AST2700 needs a constrained two-entry resets/reset-names pair,
+pull-up strength and eight timing overrides, which would turn into a
+much larger conditional block mixed into a file every other
+mipi-i3c-hci vendor also has to read.
 
-I'd prefer to keep this approach, but I'm open to reconsidering if there is a reason
-this control needs to be exposed using the usual pinctrl bindings.
+That said, this depends on where the timing properties end up. If
+they move into i3c.yaml as generic properties, per the proposal
+below, what's left AST2700-specific shrinks to the reset lines and
+pull-up strength, closer to the same size as microchip's single
+property. At that point I'd lean towards folding AST2700 into
+mipi-i3c-hci.yaml via if/then too, rather than keeping a separate
+file for such a small remainder.
 
 > > +  aspeed,pp-scl-high-ns:
 > > +    description:
@@ -188,14 +200,14 @@ this control needs to be exposed using the usual pinctrl bindings.
 > > +      condition, kept separate from the push-pull SCL low period to
 > > +      satisfy the MIPI I3C clock stalling requirements.
 
-> these value is i3c stardard defined value, why need put into dt-binding.
+> Probably I3C maintainers should weight in here and help - should these
+> be made generic for all I3C controllers? I am surprised some
+> "standard" I3C controller needs to configure this as the single one.
+> No other ever needed...
 
-The defaults are derived from i3c-scl-hz per the protocol formulas, but
-board-level trace length, pull-up strength and capacitive loading can
-require different high/low ratios, hold times and START/STOP setup
-periods than what those formulas produce for a given board. These
-properties only override the derived default when a specific board
-needs it; anything left unset keeps the spec-derived value.
+I considered doing this to begin with, but chose to make them vendor-specific
+for the initial proposal to keep the scope small. I can make them global
+properties for i3c if we get consensus.
 
 Billy
 -- 
