@@ -4,67 +4,57 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA4CBC79F8C
-	for <linux-i3c@archiver.kernel.org>; Wed,  9 Sep 2026 06:05:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E0F54C79F8C
+	for <linux-i3c@archiver.kernel.org>; Wed,  9 Sep 2026 06:07:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
 	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rnevXxeUITZFgnR2/VVrlQwd/zbIFgRj8keEt5mxSKc=; b=T8zFZwCeylwquo
-	KPh9FJ73oEzwQlPA5UUKEhOcsSMseewtjda/byKFHfM08xOE1WVW8JdC76BORDz72FLgMRfjM6tr/
-	WjHK8FEHqjKWPC5ATf4uOs+hCDp5r4oQbg7y9WFVoDY26n3Y74HX4EfnuIyAU5UsL7m84xqcKaoXA
-	FlFRhJP/tZnLD4DFAex04cm2o0mfbhBxUwo7x8PEEhk8nkeySu2vHI3hABiKJhjXXNTYijETgsbN0
-	f+aB66R6AAR1Y/c1bJK8qKUNu4DeMzxGgF+vNQ/NlhptGaf4eUl/QixZAWqnrajYDO8YmurvjY1hW
-	xuIH8f9jO+JB1Hc0NPWQ==;
+	List-Owner; bh=Xd+GK7tOvuna6j3Dwd7UQLc09vXnQgGYNKZDI/Jx6Dw=; b=tGHgnDyYSOlxZW
+	ideca5z7HeMymP7Swaq3F7bC3K3OVC1JY1JJ6wl+Iz50SPStiH9v42BQpqNPppSyLdvBLRDClG/RO
+	sY6WZVO24Y6DH8JLmT70NlXt1zhyNFO2vEvggiYJMUvM1BKjkTdenIyQGm+KfDgLVqNLTa60UL1Uk
+	Q02feSRdIaVwNcj6i0yn0kKyHNTJq5uiDOb3HB/ZUfZa+pjwNkFXB6qJ9iKwDmMiCrp8XvpxNKN3R
+	jHfAbnaG717GPqwjcE9nXjty2wCqVNiBOtVpCKLEvBPlJ1JH500A6TKlAAyVtIhVN6m7hEyRifK5U
+	5J48/5F357sa2hkt61Ew==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4BR7-0000000Aq8g-24hH;
-	Wed, 09 Sep 2026 06:05:33 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1x4BT4-0000000AqTr-2QCD;
+	Wed, 09 Sep 2026 06:07:34 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4BR6-0000000Aq8N-0akD
+	id 1x4BT3-0000000AqTk-1AUb
 	for linux-i3c@lists.infradead.org;
-	Wed, 09 Sep 2026 06:05:32 +0000
+	Wed, 09 Sep 2026 06:07:33 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 20326601FD;
-	Wed,  9 Sep 2026 06:05:31 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 038531F00A3A;
-	Wed,  9 Sep 2026 06:05:25 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id BBF86438C8;
+	Wed,  9 Sep 2026 06:07:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 51A151F00A3A;
+	Wed,  9 Sep 2026 06:07:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1788933930;
-	bh=VRmMjAOEgjzu9kTkNIFZgb36kRrDVAvnBqtog2U4v3I=;
+	s=k20260515; t=1788934052;
+	bh=sCWgbO/HmDCGRypEbkff2kKanCBnA5ge8SwiD4kj4nE=;
 	h=Date:Subject:To:Cc:References:From:In-Reply-To;
-	b=OZ8mzmw4F8hENLk4KZRZ7Dxmdx0a5v0vUEB6C2X40i2hfUR/KA+UY97+LqTRWnEYb
-	 xVmaCPH1p1ukIwJgSuJzsCeRG9IiC3nzJVnky+FPHCQJJZ7Cni0r0nMAcL8bNGNvXJ
-	 yTwitK8EDFYmcyJXu8NLWFQI9UmMmODSaSWbf0K60RTvF3/PqhA3TTXOXxTywFBtvj
-	 V9Uw1oMKQyB+q8Hk44XqmQ+9jEzc3f0EjgxOrcsD9aGNzOnDpm+k6pio1gOVPsY28v
-	 wy9kWKTrXyHLuiXbj4FjCVF7Lj6069qx2idsbGqW0Z5XMJDVQaaoGQJ2s9F/htoLL1
-	 J2hcJM4okOsNw==
-Message-ID: <19a4c144-460b-4dcf-b173-23d14677e2d5@kernel.org>
-Date: Wed, 9 Sep 2026 08:05:22 +0200
+	b=XpUWj45GqaBHjC7KgWHyJJ8mkyoCrmnS8oxplKJtzUiPAYyp2VXO9uMlhlHwzAEAn
+	 O6xxRSvmBGBMVgFtJreNqWeAcFLg89J8Eof2t6k2as8BOlcpmDEYJZ0f1t4GHPybuw
+	 K+2aQ4AleUbjYRwzRTAJu7QY4cffwwHbaHu8qOCrfIecVK4dSTCNRswREiE8JPwW3X
+	 nx+n3oTLQBlQcN5jc5EGBFEbBIgcqmAM3RpiXKRKCEYo0KU9S3abtzaV8iOKsSckGp
+	 AZ6dYH3dGdSt+tz8g60fEo7ruI2ENaX/ta0arAyI2mbZcKB/qR9cNexAuJR2VLnXDa
+	 +wDokvJ8PZ3Bw==
+Message-ID: <f33ff763-136e-4c10-bd77-d40bb4baf02c@kernel.org>
+Date: Wed, 9 Sep 2026 08:07:23 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-Subject: Re: [EXT] Re: [PATCH v16 4/8] mfd: p3h2x4x: Add driver for NXP
- P3H2x4x i3c hub and on-die regulator
-To: Lakshay Piplani <lakshay.piplani@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-i3c@lists.infradead.org" <linux-i3c@lists.infradead.org>,
- "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "krzk+dt@kernel.org" <krzk+dt@kernel.org>, "robh@kernel.org"
- <robh@kernel.org>, "conor+dt@kernel.org" <conor+dt@kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "broonie@kernel.org" <broonie@kernel.org>, "lee@kernel.org"
- <lee@kernel.org>, Frank Li <frank.li@nxp.com>,
- "lgirdwood@gmail.com" <lgirdwood@gmail.com>
-Cc: Vikash Bansal <vikash.bansal@nxp.com>,
- Priyanka Jain <priyanka.jain@nxp.com>,
- Aman Kumar Pandey <aman.kumarpandey@nxp.com>
-References: <20260826103819.1614843-1-lakshay.piplani@nxp.com>
- <20260826103819.1614843-5-lakshay.piplani@nxp.com>
- <43e67e46-f93e-4cad-81c6-d489663aa7c0@kernel.org>
- <AS4PR04MB93626CB21700033FA2DD8AF8FBAC2@AS4PR04MB9362.eurprd04.prod.outlook.com>
+Subject: Re: [PATCH v18 3/8] dt-bindings: i3c: Add NXP P3H2x4x i3c-hub support
+To: Lakshay Piplani <lakshay.piplani@nxp.com>, linux-kernel@vger.kernel.org,
+ linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
+ krzk+dt@kernel.org, robh@kernel.org, conor+dt@kernel.org,
+ devicetree@vger.kernel.org, broonie@kernel.org, lee@kernel.org,
+ Frank.Li@nxp.com, lgirdwood@gmail.com
+Cc: vikash.bansal@nxp.com, priyanka.jain@nxp.com, aman.kumarpandey@nxp.com
+References: <20260903062108.2712296-1-lakshay.piplani@nxp.com>
+ <20260903062108.2712296-4-lakshay.piplani@nxp.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
 Content-Language: en-US
 Autocrypt: addr=krzk@kernel.org; keydata=
@@ -110,7 +100,7 @@ Autocrypt: addr=krzk@kernel.org; keydata=
  K9bCVaboTA2T77QYkRcRJYSsO1alGX0ome/hMLD1daXlkrNUp1HWa3K4iytLRXjCSIorWiGs
  n+q3krnpXu3TFkA8qtOFZMdnIiFuiq1yLT8hptsV5xh1TA2nsVvSYiaCr3q4s4BKjS/KrLDb
  qoxzw8ISjdUp4pA85vb6YLCmb39NgidD+7PmAr65lBNveIFynTgsja1rRQ4=
-In-Reply-To: <AS4PR04MB93626CB21700033FA2DD8AF8FBAC2@AS4PR04MB9362.eurprd04.prod.outlook.com>
+In-Reply-To: <20260903062108.2712296-4-lakshay.piplani@nxp.com>
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -127,29 +117,148 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On 28/08/2026 18:13, Lakshay Piplani wrote:
-> Hi Krzysztof,
+On 03/09/2026 08:21, Lakshay Piplani wrote:
+> From: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
 > 
-> Thanks for the review.
+> Add bindings for the NXP P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841)
+> multiport I3C hub family. These devices connect to a host via
+> I3C/I2C/SMBus and allow communication with multiple downstream
+> peripherals.
 > 
->>> +static const struct of_device_id p3h2x4x_i2c_of_match[] = {
->>> +     { .compatible = "nxp,p3h2440", },
->>> +     { .compatible = "nxp,p3h2441", },
->>> +     { .compatible = "nxp,p3h2840", },
->>> +     { .compatible = "nxp,p3h2841", },
->>
->> So devices are fully compatible? Why isn't this expressed in the binding? Or
->> explained in the commit msg?
->>
+> Signed-off-by: Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+> Signed-off-by: Vikash Bansal <vikash.bansal@nxp.com>
+> Signed-off-by: Lakshay Piplani <lakshay.piplani@nxp.com>
+> Reviewed-by: Rob Herring (Arm) <robh@kernel.org>
+> Reviewed-by: Frank Li <Frank.Li@nxp.com>
 > 
-> Yes, from this driver's point of view. All four share the register
-> interface used by the driver; the port count is read at runtime from
-> DEV_CAPAB. The x0/x1 variants differ in their default/debug power-up
-> configuration, and the driver applies the DT configuration during probe.
+> ---
+> Changes in v18:
+>  - Rebased onto v7.3-rc1; no intended driver behaviour changes
 > 
-> I will explain this in the binding description and the commit message.
+> Changes in v17:
+>  - Explain in the binding description that all variants share the same register
+>    interface, software reads the target-port count from DEV_CAPAB, and
+>    the x0/x1 variants differ only in power-up defaults that the driver
+>    overrides
+> 
+> Changes in v16:
+>  - Add an allOf/if-then block for the 4-port variants (nxp,p3h2440 and
+>    nxp,p3h2441) that limits i3c@[0-3]/smbus@[0-3] and disallows target
+>    ports [4-7], so DTs describing nonexistent ports fail validation
+>  - Add #address-cells and #size-cells to the required list, since the hub
+>    is a parent bus to the target-port child node
+>  - Add an explicit minimum of 0 to the target-port reg constraints, retain
+>    the maximum of 7, and restrict the maximum to 3 for four-port variants
+> 
+> Changes in v15:
+>  - Add compatible strings for the P3H2440, P3H2441, P3H2840 and P3H2841
+>    variants
+>  - Fix the target-port reg schema to describe the single-cell port index
+> 
+> Changes in v14:
+>  - No change
+> 
+> Changes in v13:
+>  - Fix mismatch between example unit-address and reg property by correcting the reg value
+>    to match the node name
+> 
+> Changes in v12:
+>  - No change, added Reviewed-By tag
+> 
+> Changes in v11:
+>  - No change
+> 
+> Changes in v10:
+>  - No change, added Reviewed-By tag
+> 
+> Changes in v9:
+>  - Referenced i3c.yaml and i2c-controller.yaml for child nodes
+>  - Dropped unnecessary #address-cells and #size-cells from child nodes
+> 
+> Changes in v8:
+>  - Add compatible in i3c example
+> 
+> Changes in v7:
+>  - Fix schema validation issues
+>  - Adjust required properties
+>  - Add I2C example
+> 
+> Changes in v6:
+>  - Use a vendor prefix for the attributes
+> 
+> Changes in v5:
+>  - Removed SW properties: cp0-ldo-microvolt,cp1-ldo-microvolt,
+>    tp0145-ldo-microvolt, tp2367-ldo-microvolt
+>  - Changed supply entries and its descriptions
+> 
+> Changes in v4:
+>  - Fixed DT binding check warning
+>  - Removed SW properties: ibi-enable, local-dev, and always-enable
+> 
+> Changes in v3:
+>  - Added MFD (Multi-Function Device) support for I3C hub and on-die regulator
+>  - Added Regulator supply node
+> 
+> Changes in v2:
+>  - Fixed DT binding check warning
+>  - Revised logic for parsing DTS nodes
+> ---
+> ---
+>  .../devicetree/bindings/i3c/nxp,p3h2840.yaml  | 328 ++++++++++++++++++
+>  MAINTAINERS                                   |   9 +
+>  2 files changed, 337 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml b/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+> new file mode 100644
+> index 000000000000..6b0076b4487f
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/i3c/nxp,p3h2840.yaml
+> @@ -0,0 +1,328 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +# Copyright 2025-2026 NXP
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/i3c/nxp,p3h2840.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: NXP P3H2X4X I3C HUB
+> +
+> +maintainers:
+> +  - Aman Kumar Pandey <aman.kumarpandey@nxp.com>
+> +  - Vikash Bansal <vikash.bansal@nxp.com>
+> +  - Lakshay Piplani <lakshay.piplani@nxp.com>
+> +
+> +description: |
+> +  P3H2x4x (P3H2440/P3H2441/P3H2840/P3H2841) is a family of multiport I3C
+> +  hub devices that connect to:-
+> +  1. A host CPU via I3C/I2C/SMBus bus on upstream side and connect to multiple
+> +     peripheral devices on the downstream  side.
+> +  2. Have two Controller Ports which can support either
+> +     I2C/SMBus or I3C buses and connect to a CPU, BMC or SOC.
+> +  3. P3H2840/ P3H2841 are 8 port I3C hub with eight Target Ports.
+> +  4. P3H2440/ P3H2441 are 4 port I3C hub with four Target Ports.
+> +     Target ports can be configured as SMBus or I3C and connect to
+> +     peripherals.
+> +
+> +  All variants use the same register interface. Software reads the number
+> +  of target ports from DEV_CAPAB. The x0/x1 variants differ in their
+> +  power-up defaults, which the driver replaces with the DT configuration.
 
-This is not what I asked. Why they are not made compatible?
+I don't understand what this driver reference means and what is its
+purpose here.
+
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - nxp,p3h2440
+> +      - nxp,p3h2441
+> +      - nxp,p3h2840
+> +      - nxp,p3h2841
+
+I don't see improvements.
+
 
 Best regards,
 Krzysztof
