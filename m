@@ -4,59 +4,130 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C5FEC79FB7
-	for <linux-i3c@archiver.kernel.org>; Thu, 10 Sep 2026 04:55:06 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 178B2C79F9F
+	for <linux-i3c@archiver.kernel.org>; Thu, 10 Sep 2026 15:45:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IO+wJZE6YfL0LZBV8Dyye/mBRmyBggGZmP9NG38rGvA=; b=wSuDxL8KawBVtr
-	oBO+uFnYB/ah1B7coU7uXWgGvTNAQQmmICQoyF4Wgv2mV6C2DUQG/kNMnFYYSM2dnMvLMqtxewccS
-	Ae7W8QegW2d8nK0L7efFEYwjoljsxtI2FUfqPihmZ7byHWzJQ9n6baZd7G40zfhpTAVo7tzoQuEyF
-	7DYN9P1G+Bo36bOMpLMlBG2sUcqKSdnen7Appyx1BJ9J/s6wmgLpkENf2KuIbusezs+CtXT6Cx89T
-	YdAFAjJwd+nEeCk5stNtUvF6oA1nsKsmptpCpr3TFGU3C/Ygfn10XAh+cP1972caZGqwR9mbJdYxl
-	OHZ7iK3t8oujOID6u3/Q==;
+	List-Owner; bh=E/Eeyt86nnqlyXRKPdyc3RkIw+7gWNa7UOysTBjWgAM=; b=sagqnO6YIoJLJX
+	Y695vXaL9TM8tEFbp18e9q+JqA4URPlP49hL4KskVR1Bg1wYG46j65RPY8HKq2EU6ufMwXF/1KUHD
+	b9qBVUPPk6HICVLJzSecZZSeqHDagJHzAogN2TTWHH5CTyydjE1YMrvv3Ptyf3+/1o2hgEX3uc3Mi
+	ERmgBt/igslHstNKHSE2SpKpUSIUgejnOlLPTPmHJKwbpRuu63fWu6DbDgRUK58JsyjPbH9vu2/GR
+	RojW9ed9iuGdlaCblLLgEGOEVr5tWaXkan02QoPAEkBbdsJ6z6b4wLQiLNAo+QAPDzaqCHcXD8Xwy
+	RfAJd292wkdb862oCSbA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4WoU-0000000DPT3-0cq1;
-	Thu, 10 Sep 2026 04:55:06 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1x4gxS-0000000Er3B-3FR1;
+	Thu, 10 Sep 2026 15:45:02 +0000
+Received: from mail-westeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c201::1] helo=AM0PR83CU005.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4WoS-0000000DPSW-41ds
+	id 1x4gxP-0000000Er1P-2ZfW
 	for linux-i3c@lists.infradead.org;
-	Thu, 10 Sep 2026 04:55:04 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5E6DD409FE;
-	Thu, 10 Sep 2026 04:55:04 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1D5071F000FF;
-	Thu, 10 Sep 2026 04:55:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789016104;
-	bh=4b8PYqv4VWkKA9hB1zFAscNK0cfZC015fuLfwpBZ3G4=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To;
-	b=RH1pdJKJSnU7hItjQj34V4BOEhh1rua9xC9Ylp7MDPO+gzzNAlBT5xtpwojTqa/vq
-	 IEUD4jxF/GrqOzUkQRP9W2jr171jumcvrhD0cMekeaUp9zyOHZOEFCBsAXU/ndRMnV
-	 cjweQ/SRZzgVc5XMoQpBYvEiLHYFFlcSvSUYawGlFMzYyYgM/DiqfnFQ2vastSO2Uv
-	 QydTfLtgZa3tp0odhE1T6SryJVNFW2z5KzAYSuK/vCeOCc152pJxHNRhQ2GAlIiY6x
-	 3QHhP5Sb5HvxGTyuibtDNZzoppawOi08mzbokCUAkp1iSriLXJqNBl9ILbjR3dchnE
-	 iHFHigmJiNvRw==
-Date: Thu, 10 Sep 2026 12:35:14 +0800
-From: Jisheng Zhang <jszhang@kernel.org>
-To: Shubham Patil <shubhamsanjay.patil@amd.com>
-Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com, robh@kernel.org,
+	Thu, 10 Sep 2026 15:45:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=nyH8CP1MVAN/JJ0xD+jjG7PH0E0IQL7l+8nT7UlrjmNqN3PheJeU8zJcodkh7b3uRCP9kgoltZGtVH5yEu7VLChfG1t6duS8R09r9bjaG8C03EEqq38KLhQruzDYmpeXRj3pDDvO+i5y9VQbrrB8XjRnemV9ffx0dm5Ovro/kglpDVxte7hzpANM9OMa8/tljfDPHGHr37nYRbDp6NsljEDP5k0EX+St/P3bV9kwgQVFbQlyQ2ApaABKWI2CPcPsMxGnCB3H0YI/hU96Qje5A4qfsnuthSh0o6nGyRNDkUsSp11+yNyc7nlMV8jz7PUJC0mwg5eTUgnZ7VCqvZ44Yw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=vRK/rzqGR2ymF9gYV8aJYeyhOyiqtSL9Ji4ympNlQ4s=;
+ b=fIDq7W+qHYcn91ILGPHetUfg6GaLrWe4MWEStAOZ/XlK9y1AkPoYn115vD5CNKWUmNvU5BmINU2Hz1fNrY8Kp6teETffQ2YJ8xZMcExnv056HMzxBj5DB9Iik9E616KATRq4ofoRnE4r6GTbtzf1ZRYOY4Uc0xLo4ts6Yg3WIV5djkyx/KOcOutR3HnR5Z/Dc7bqwjMu1x6DXa8OY/aKa0h8pyFozA6pl1ocsoPB3Aq3q1NtBpqbNC0F3sb/uI7/FDV8lNP6DRQTfUVzNRUWY/1jA+tXiifm47Rkp/rb76HkaWbGVliMnOhyBzMkYtFzVZdazSA0TvdeyX6mhzx88g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vRK/rzqGR2ymF9gYV8aJYeyhOyiqtSL9Ji4ympNlQ4s=;
+ b=RJBGusEVZzd67k4PNuvOed2Z516jxZaQPO26IO/1fg1AwIVMuoVVjL1otayrEJ7W+LgiAz2DmpqbePeNDS0B8z4PwKWpQDqTZ/w7G+orsqq1pvV2mduL1rrhXQrMPSNufhyV/BDMfw4ax+pSUIYe9QNvsx8FFmt9NkzZhUKMOjSZX69sAKVoV6QGAX1iRzYW8NkxV9ovjlRhkRm9SQLSjUkVHBVYMxVe1AoR8TnI6J/ulHNQp/cuL265vv6uq+Mi34QoF87IEwUbxTe9H4BpDRpZs8oegSsyPtiUXun6gorqobMMVvFmhLIHjHXLQh+gTBGDAe7Iz3aRNZrLJujNAw==
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
+ by AS1PR04MB9238.eurprd04.prod.outlook.com (2603:10a6:20b:4c6::8) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.382.10; Thu, 10 Sep
+ 2026 15:44:50 +0000
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0406.005; Thu, 10 Sep 2026
+ 15:44:50 +0000
+Date: Thu, 10 Sep 2026 10:44:40 -0500
+From: Frank Li <Frank.li@oss.nxp.com>
+To: Conor Dooley <conor@kernel.org>
+Cc: Shubham Patil <shubhamsanjay.patil@amd.com>,
+	alexandre.belloni@bootlin.com, Frank.Li@kernel.org, robh@kernel.org,
 	krzk+dt@kernel.org, conor+dt@kernel.org,
 	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, michal.simek@amd.com,
-	radhey.shyam.pandey@amd.com
-Subject: Re: [PATCH v2 0/2] i3c: dw: Document optional core reset and drop
- redundant name
-Message-ID: <aqIzgh9hA7lcome_@xhacker>
-References: <20260720073510.1869623-1-shubhamsanjay.patil@amd.com>
-MIME-Version: 1.0
+	linux-kernel@vger.kernel.org, git@amd.com
+Subject: Re: [PATCH v3 1/3] dt-bindings: i3c: xlnx: Add IBI and hot-join
+ capability properties
+Message-ID: <aqLQaHndX4t1kKLG@SMW015318>
+References: <20260908094257.3196120-1-shubhamsanjay.patil@amd.com>
+ <20260908094257.3196120-2-shubhamsanjay.patil@amd.com>
+ <20260908-groin-undivided-0af701135404@spud>
+ <aqGHlWpQjpHEft3j@SMW015318>
+ <aqKWTT47S_zPzvbN@squawk>
 Content-Disposition: inline
-In-Reply-To: <20260720073510.1869623-1-shubhamsanjay.patil@amd.com>
+In-Reply-To: <aqKWTT47S_zPzvbN@squawk>
+X-ClientProxiedBy: PH7P220CA0035.NAMP220.PROD.OUTLOOK.COM
+ (2603:10b6:510:32b::30) To GV2PR04MB11799.eurprd04.prod.outlook.com
+ (2603:10a6:150:2cf::9)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|AS1PR04MB9238:EE_
+X-MS-Office365-Filtering-Correlation-Id: 154fa25c-357c-4588-9891-08df0f5272dd
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|376014|19092799006|1800799024|23010399003|366016|11063799006|5023799004|56012099006|4143699003|10067099003|6133799003|18002099003|22082099003|3023799007;
+X-Microsoft-Antispam-Message-Info: ZnZ3Dxm7KW2LISDJtxVTIbmHyEKRIGRjQOCcaTFrvXZThz8JVxsmODFkhQPNkvgn8oG1Bm3viOxUoua1g4q8lNfzO+1YFTy2dmkBY0Qh4y1THXmDhVK+LZ8hYM5dJ9mdyykREZ0ejxK8vVNJW37+fiwcSkpv8/+P7vsLhape6Dt24PtrtexzA1Ej5zGT6OTcMc77btzlEb54dJQf/gw+Eb64W1T+C9cvVz47crUTYB1PMhXhgiRodupQxYZCWGMjMHzQmV16LJ9RJmqEWLDpD6Ne4h9Hu01TiE3K0Cz1pprkIQIMIpQuZRyRDT16CU0ng/Rpy/3KV5IxWEw3vpKGFiwAO8wpi91h8KjlfByAudWT1jI9jtoD7kbSxbWy9MU1EuvIXrGZDMcGrFbRhwFGksqHn1UKradg9709Tcm21gIP1ldEYbZ8bxkpI9CCv95VbgO1art5ZiqoFNXxexWCsZHf9/Tomph4oqPAE83O4e8w+lfbljbJTITcKitzHeyOlwLdoHqkV7mGBCmAI3KAeATl1PY00pGggz/vBPbsgdue4/z1qS0PauKab5gzXrjN73KbTAoJ9PzV/HpLdESl6mUbI5F8eUKK4ojkQSTSJ4ix7iForlSpM3l0SqSVU0XPyuvwb8T0NpWRxYY8tONZYW/EMdWvRdX5GoToot45J0E=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(19092799006)(1800799024)(23010399003)(366016)(11063799006)(5023799004)(56012099006)(4143699003)(10067099003)(6133799003)(18002099003)(22082099003)(3023799007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Vyu9nWcLwOJMOgOFj8WgIMDZ9603/3aAzf8Y8zVZM5iPMnk2tZPaiGhiEUsQ?=
+ =?us-ascii?Q?pW9wTIbYE8i9Fy0S15FWn91aHG1xHlUQjnYOemYDQXbgdUU3wRPO21UqDGIr?=
+ =?us-ascii?Q?pf1jZswBMkgqP3uuQ0CjyrkaCnuLhZfvgcR3Xv505m7W55qgyV/ewQwaVVOq?=
+ =?us-ascii?Q?noK/8jJ1KQoRx7qozlO1CeUVTszG3ShgUzfvJ8yU2ChB00beXIok15mflgh6?=
+ =?us-ascii?Q?aI+YJCPdLwpyisXWtJcty/u3kX1PGeRObPFkU9xZvXbm0HppjZtWHg1hPZDR?=
+ =?us-ascii?Q?wlxZac2gp9rLvsWMf6qBC0GgOEqfbH+YlHw0airkTUcO7nMvo/IRWy1iSDy+?=
+ =?us-ascii?Q?1dn2ANnzF+KdKQgJLCf+EEu7HeYU3SKikM0yvYkrv/ce8swLm4W/2GvbdoU8?=
+ =?us-ascii?Q?LZlOfUOxrYfZYyvQCBERlmXHk94kF/rJwILG89UnN41mHGq46DmEG4zmGX9R?=
+ =?us-ascii?Q?vYdS9wLN0FREkJSFzXsNIoM+rz4nYBtkC7l7//8boA45zc07wlcfuplE783o?=
+ =?us-ascii?Q?CT8r5yYEPD2aNywotlllmm8DtYQn6df2luMZ0Pj0zk2Rbdh1+mrwjFxEz48m?=
+ =?us-ascii?Q?Eo8gPgvtl7WW24T18EN7I8UZCOtU5hQJOgfInUJ99OQCUsJXrBAs3hg89T1b?=
+ =?us-ascii?Q?/TsViLo/ELIfqroQcqoyrwkB4dFY01dSV2hn+pVYOb874mYuhiua7pa12jeB?=
+ =?us-ascii?Q?HQFTAfStDbefB6zSHlavCoDnJfwRvnihprju/bbLMh8KncmdlkaXM/KGqM5c?=
+ =?us-ascii?Q?PzS3gFVAjZMEUYdbmXefnu1NpwjIvsKoNK6uW4wZ+XVHN4AzNkuZlghI2n8m?=
+ =?us-ascii?Q?iH+UI3q++uh4gbPJYkmIG797RNcJvALSGMg2zOwkizn9q+GuOnFoG87+nOYk?=
+ =?us-ascii?Q?EkSGg6qLscb7JcG25/nYkA9hbc1uIIcS12Davh3b5uA/xLcMzXOp+pxUu3BV?=
+ =?us-ascii?Q?wGgmfe1Uq+qjqc9FZmdUi919xQ8iSedaQ/2C1TXb7pf+anrJ9kFS1ENNqVIC?=
+ =?us-ascii?Q?wkulcXNliliD6OUnf3oSjhjJ3xiPUkG0Hi0Y1ba9To8R/hJuKiI7YRlkzguQ?=
+ =?us-ascii?Q?kIPIPnKf2K9XhwRLC6uRHftFwXIiXsZv3xwIx3sVvHPQq85qPDOCHSzRj4oO?=
+ =?us-ascii?Q?mS0q5g1VRcvKLDSlW6aUjv+T5R8xEs7ain6rb117XzLAPPxGzEAJndQ6a9dK?=
+ =?us-ascii?Q?OQSgwroG6/E76fWvSpnm86IM5C0XLi5DFjdv164te1LsQukCgmFJoNYwZkJF?=
+ =?us-ascii?Q?kMCNlY9Zghnusgnvm64mcIfVZ9YifO3lPEDFBvzkNJHHSEdXSr10GCrSRjS4?=
+ =?us-ascii?Q?dfYu5+VWujFqTZidEJUwTLguoCwA0q7lGU+k2qGcXUzt40H3SAjyO8lYlufJ?=
+ =?us-ascii?Q?4SyuBZ6BYFkctTD62CSGu0/Q7Oy+JiO5u/zQFKKJgcLwwvmVAZAIAwSlsnJZ?=
+ =?us-ascii?Q?mFTwJTNNoBR+87HeX457o2/4Kx0/Tprx12wJHRcd6gPXSW+QHIgDuy05f+6E?=
+ =?us-ascii?Q?9Xi+HB3DdjTKtn5AwFIxvUBSXMOZVfB4BzaS5l7gCLfsnGuthMEYrQH7Y2se?=
+ =?us-ascii?Q?YTcoL3D0Grzi5rWdHSjYgchKeMGUIfGkYuZST+M0C7XFPTtGWK5RlQH6oJxI?=
+ =?us-ascii?Q?/MkYGObSkeDJ0b4ha7ilDbY95XXgNVxHe1JchTW3aGQMBQpGrmpv0lnJMaFQ?=
+ =?us-ascii?Q?9XUjCrUjfHFMeLzi7LOe/HF4n/9PYq+kU0wH9gV4ilQ8x9VNe1BRsQ+ruLOz?=
+ =?us-ascii?Q?+I142bVaOi31JX4ZZfGFx1fwTUoM8esgWg/H2lvwzHd5ewSsEs3o?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 154fa25c-357c-4588-9891-08df0f5272dd
+X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Sep 2026 15:44:50.3357
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: vzYEWIPsuuNPUFJzNOjc7AVB0lNLYU5Kg6ncrTvSNgywuX/uoU3Cbbe2VswqHykfX2vJs3WbCLJ+/xdhfji0tfJf0Bfr+fsDf0UrksJiBUe79U1PxDK3mirjlTax2ifT
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS1PR04MB9238
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260910_084459_795278_C6597B04 
+X-CRM114-Status: GOOD (  49.04  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,76 +144,190 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jul 20, 2026 at 01:05:08PM +0530, Shubham Patil wrote:
-> This series documents the optional core reset for the Synopsys
-> DesignWare I3C master and updates the driver to match the binding.
-> The DesignWare I3C master IP has a single core reset input. The
-> binding never documented this reset, and the driver looked it up by
-> the "core_rst" name even though a name is redundant for a single
-> reset line.
+On Thu, Sep 10, 2026 at 12:36:45PM +0100, Conor Dooley wrote:
+> On Wed, Sep 09, 2026 at 11:21:41AM -0500, Frank Li wrote:
+> > On Tue, Sep 08, 2026 at 06:54:31PM +0100, Conor Dooley wrote:
+> > > On Tue, Sep 08, 2026 at 03:12:55PM +0530, Shubham Patil wrote:
+> > > > In-Band Interrupt and Hot-Join are synthesis-time options of the AXI I3C
+> > > > IP. Describe them with two boolean properties.
+> > > >
+> > > > A Hot-Join request is acknowledged by the IBI machinery, so a hot-join
+> > > > capable design is always IBI capable as well. Both events are reported
+> > > > through the controller interrupt, which is therefore required whenever
+> > > > the capability is present.
+> > > >
+> > > > Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
+> > > > ---
+> > > > Changes in V3:
+> > > > - Move in-band-interrupt-capable and hot-join-capable into the common
+> > > >   i3c.yaml schema and drop the xlnx, prefix.
+> > > > - Keep dependencies in the AMD binding.
+> > > > - Update the commit description accordingly.
+> > > > - Conor Dooley acked v2 with the xlnx,-prefixed properties in the AMD
+> > > >   binding [1].
+> > > >   That Acked-by is not carried here: the names lost the vendor prefix
+> > > >   and the definitions moved to i3c.yaml after Frank Li's comment.
+> > > >   [1]:https://lore.kernel.org/all/20260824-tightwad-impose-495476599087@spud/
+> > >
+> > > I disagree with Frank. These properties make sense for Xilinx because it
+> > > is an FPGA IP and synthesis options impact this. For other devices, this
+> > > should be determined from the compatible.
+> > > Please revert to how things were done in v2, especially as no rationale
+> > > was provided for why these should be common.
+> >
+> > It is common problems, when IP intergrate by SOC, which may defeature some
+> > part, It is not appeared now just because IBI and HJ have not enabled
+> > widely.
+> >
+> > IBI and HJ is optional features of I3C. Ideally it should be indicated by
+> > some registers. But not all vendor implement provide this CAP registers.
+> >
+> > IBI and HJ depend on some slow clocks, which monitor SDA line change.
+> > Some instances of IP may not have such slow clocks. Some IP's IBI and HJ
+> > use seperate IRQ line, but these irq line may not connect of difference
+> > instances.
+>
+> All of this should be able to be dealt with by appropriate use of
+> specific compatibles.
 
-Hi DT maintainers,
+I understand compatible can cover most cases. Need variance for property.
 
-AIUI, the dw i3c explicitly says there are three reset signals in
-total:
-core_rstn, for core
-presetn, for apb
-dmareset, for dma
+>
+> > like previous SPI vendor customized property, we takes efforts to convert
+> > to common one and also meet back compatiblity problem at convert. I don't
+> > want to do it again. This kind property is most likely as below.
+>
+> What SPI controller specific properties are you talking about here?
+> There are relatively few properties in spi-controller.yaml, and none of
+> them deal with these kinds of capabilities.
 
-and I'm adding apb reset suppport, given this series has been applied,
-we have three choices:
+num-cs vs fsl,espi-num-chipselects. Total number CS of IP is fixed, but
+some instances have not route all CS to pad.
 
-1.revert patch2 and document the "core_rst" reset dt-binding. This
-equals to v1 of this series.
+>
+> >
+> > default: 	decide by comaptible string or hardware cap
+> > force-disabled: force disable for some reason, like, miss connect irq line
+> > or missed some clock, or IP bugs, or board desgin's some level shift chip
+> > broken IBI/HJ timing requirements.
+>
+> Of these, only the last would be a valid reason for having a property
+> for it. Missing interrupts, clocks or IP bugs should all be dealt with
+> using device specific compatibles.
+> If board wiring causes the breakage, the property may be more
+> appropriate at the i3c device level rather than the controller given
+> that wiring to some devices on the bus may not have the problems?
 
-2.add a patch to add the "core_rst" reset, but allow no reset name
+I3C.yaml is for both master controller and devices now. I3C is bus, which
+connect many devices, if wiring issue, whole bus can't support IBI. And
+if any broken devices happen at address arbitation, whole bus can't support
+IBI.
 
-3.add a patch to add the "core" reset, but allow no reset name
+at beging, I suggest 3 state,
 
-Which one do you prefer?
+[default, enable, disable], but now I think IBI_broken, HJ_broken is more
+reasonable to disable it, default value should be set by compatible
+string or DCR of I3C regiser.
 
-Thanks
+And some I3C device may be failure to work with IBI even DCR of I3C register
+show it support IBI.
 
-> 
-> This series addresses both:
->   - Patch 1 documents the optional 'resets' property in the binding.
->     The reset is kept optional because the reset line is
->     integration-specific.
->   - Patch 2 removes the "core_rst" reset name from the driver and
->     looks the reset up by passing NULL, since the name is redundant
->     for a single reset.
-> 
-> Changes in v2:
-> - Updated commit description for binding patch
-> - Dropped reset-names from the binding
-> - Added driver patch to remove redundant reset name
-> 
-> Note:
-> The DesignWare I3C driver support was added by
-> commit 1dd728f5d4d4 ("i3c: master: Add driver for Synopsys DesignWare IP").
-> 
-> The original Synopsys DesignWare I3C binding was added by
-> commit 116e246a8bcd ("dt-binding: i3c: Document Synopsys DesignWare I3C"),
-> but it did not document the optional core reset.
-> ---
-> Shubham Patil (2):
->   dt-bindings: i3c: dw: Document missing optional core reset
->   i3c: master: dw: Drop redundant core reset name
-> 
->  Documentation/devicetree/bindings/i3c/snps,dw-i3c-master.yaml | 3 +++
->  drivers/i3c/master/dw-i3c-master.c                            | 2 +-
->  2 files changed, 4 insertions(+), 1 deletion(-)
-> 
-> 
-> base-commit: a13c140cc289c0b7b3770bce5b3ad42ab35074aa
-> -- 
-> 2.34.1
-> 
-> 
-> -- 
-> linux-i3c mailing list
-> linux-i3c@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-i3c
+I don't want to appear two similar property between vendor and common, like
+num-cs vs fsl,espi-num-chipselects.
+
+such as IBI-broken can be used for controller and devices case.
+
+> That said, I think that problem should be dealt with when it arises,
+> rather than starting a trend of adding capabilities properties at the
+> controller level when I am not convinced that there's going to be other
+> users in the same vein.
+
+Understand, I3C is realtive new protocal. 'IBI-broken' is more easy
+understand,  logically equial to in-band-interrupt-capable.
+
+Frank
+
+>
+> Thanks,
+> Conor.
+>
+>
+> >
+> > Frank
+> >
+> > >
+> > > pw-bot: changes-requested
+> > >
+> > > Thanks,
+> > > Conor.
+> > >
+> > > >
+> > > > Changes in V2:
+> > > > - Rename the properties to "xlnx,in-band-interrupt-capable" and
+> > > >   "xlnx,hot-join-capable", and expand their descriptions.
+> > > > - Express the interrupt requirement with dependencies: instead of an
+> > > >   allOf/if-then clause.
+> > > > ---
+> > > >  Documentation/devicetree/bindings/i3c/i3c.yaml    | 15 +++++++++++++++
+> > > >  .../devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml |  6 ++++++
+> > > >  2 files changed, 21 insertions(+)
+> > > >
+> > > > diff --git a/Documentation/devicetree/bindings/i3c/i3c.yaml b/Documentation/devicetree/bindings/i3c/i3c.yaml
+> > > > index e25fa72fd7857..7430394cc6b9b 100644
+> > > > --- a/Documentation/devicetree/bindings/i3c/i3c.yaml
+> > > > +++ b/Documentation/devicetree/bindings/i3c/i3c.yaml
+> > > > @@ -61,6 +61,21 @@ properties:
+> > > >        Indicates that the system is accessible via this bus as an endpoint for
+> > > >        MCTP over I3C transport.
+> > > >
+> > > > +  in-band-interrupt-capable:
+> > > > +    type: boolean
+> > > > +    description:
+> > > > +      The controller supports In-Band Interrupts. A target can request
+> > > > +      attention on SDA/SCL by driving its dynamic address during bus
+> > > > +      arbitration, instead of using a dedicated side-band interrupt line.
+> > > > +
+> > > > +  hot-join-capable:
+> > > > +    type: boolean
+> > > > +    description:
+> > > > +      The controller supports Hot-Join. A target attached or powered up
+> > > > +      after the bus is already running can announce itself using the
+> > > > +      reserved Hot-Join address so the controller can assign it a dynamic
+> > > > +      address.
+> > > > +
+> > > >  required:
+> > > >    - "#address-cells"
+> > > >    - "#size-cells"
+> > > > diff --git a/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml b/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml
+> > > > index 2caa245a86568..9480de3fe8e1d 100644
+> > > > --- a/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml
+> > > > +++ b/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml
+> > > > @@ -37,6 +37,10 @@ required:
+> > > >    - reg
+> > > >    - clocks
+> > > >
+> > > > +dependentRequired:
+> > > > +  hot-join-capable: [ in-band-interrupt-capable ]
+> > > > +  in-band-interrupt-capable: [ interrupts ]
+> > > > +
+> > > >  allOf:
+> > > >    - $ref: i3c.yaml#
+> > > >
+> > > > @@ -54,5 +58,7 @@ examples:
+> > > >          interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
+> > > >          #address-cells = <3>;
+> > > >          #size-cells = <0>;
+> > > > +        hot-join-capable;
+> > > > +        in-band-interrupt-capable;
+> > > >      };
+> > > >  ...
+> > > > --
+> > > > 2.34.1
+> > > >
+> >
+> >
+
+
 
 -- 
 linux-i3c mailing list
