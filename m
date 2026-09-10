@@ -4,130 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 178B2C79F9F
-	for <linux-i3c@archiver.kernel.org>; Thu, 10 Sep 2026 15:45:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D086DC79FBF
+	for <linux-i3c@archiver.kernel.org>; Thu, 10 Sep 2026 18:34:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E/Eeyt86nnqlyXRKPdyc3RkIw+7gWNa7UOysTBjWgAM=; b=sagqnO6YIoJLJX
-	Y695vXaL9TM8tEFbp18e9q+JqA4URPlP49hL4KskVR1Bg1wYG46j65RPY8HKq2EU6ufMwXF/1KUHD
-	b9qBVUPPk6HICVLJzSecZZSeqHDagJHzAogN2TTWHH5CTyydjE1YMrvv3Ptyf3+/1o2hgEX3uc3Mi
-	ERmgBt/igslHstNKHSE2SpKpUSIUgejnOlLPTPmHJKwbpRuu63fWu6DbDgRUK58JsyjPbH9vu2/GR
-	RojW9ed9iuGdlaCblLLgEGOEVr5tWaXkan02QoPAEkBbdsJ6z6b4wLQiLNAo+QAPDzaqCHcXD8Xwy
-	RfAJd292wkdb862oCSbA==;
+	List-Owner; bh=kyXpujDY2G23VNqsIqdoKmnQAHDzogBFjhaX+fQiiyY=; b=PWhaZf/Wjs8NEc
+	8nnkxqQhisEmkgOE9Gbqj7GWsz0TRQ0HPp2uNXEOvotEWu2UObz38t8BeYkSp60N/4u+0qqK7rVCW
+	RRAXVBprpbb4yGHvyp4Ju9WR7f/EEiqFc2Oj2OfmzOm8dqK/JOURCGD0KVr0flBEgbkA5qRop825c
+	tJO6HLLwDNrazWOzrNRtpETRvt4qAmRMeTpk/X/AJ9BY7NSHj+2RMv1IXIpLVxcAd8SDrkthFBeZD
+	xymnBQw5elq/ZUpELW8MdtMqYVfMyw1vUsj0zUVeuoRFGehs52TLypJIrtdk+CHv5KRSuxxT/AkOr
+	bWbXOogacQgQw0f4Deeg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4gxS-0000000Er3B-3FR1;
-	Thu, 10 Sep 2026 15:45:02 +0000
-Received: from mail-westeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c201::1] helo=AM0PR83CU005.outbound.protection.outlook.com)
+	id 1x4jbN-0000000F9qQ-1y3f;
+	Thu, 10 Sep 2026 18:34:25 +0000
+Received: from mail-francecentralazon11013010.outbound.protection.outlook.com ([40.107.162.10] helo=PA4PR04CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x4gxP-0000000Er1P-2ZfW
+	id 1x4jbK-0000000F9pV-1Lka
 	for linux-i3c@lists.infradead.org;
-	Thu, 10 Sep 2026 15:45:01 +0000
+	Thu, 10 Sep 2026 18:34:24 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=nyH8CP1MVAN/JJ0xD+jjG7PH0E0IQL7l+8nT7UlrjmNqN3PheJeU8zJcodkh7b3uRCP9kgoltZGtVH5yEu7VLChfG1t6duS8R09r9bjaG8C03EEqq38KLhQruzDYmpeXRj3pDDvO+i5y9VQbrrB8XjRnemV9ffx0dm5Ovro/kglpDVxte7hzpANM9OMa8/tljfDPHGHr37nYRbDp6NsljEDP5k0EX+St/P3bV9kwgQVFbQlyQ2ApaABKWI2CPcPsMxGnCB3H0YI/hU96Qje5A4qfsnuthSh0o6nGyRNDkUsSp11+yNyc7nlMV8jz7PUJC0mwg5eTUgnZ7VCqvZ44Yw==
+ b=BKjeFcX4FFzpRvd5Aca650mxPE7FFIQ5+YKeWduly9FmV63fkyA/+/kyvJYL1LsGhupRGLwk1FOTHs4ZUELgyYI7I6kGpQlsxbaqVNpYdMKP3eCUFP7stQHd/NGVoaCIsBeJNlgm+IFhlHjZVZQR8RvI/lPsLK9/EFdCFwlHIXFhR7KR6hHUBKORTWKu+2ynjn+wJb2HIZkjxEF42LRi0e69mhLONOlyRACyks2GugpYJdECw2uyW+P4ryn+JugCwSi33buDCa8/kMuG9DL2rFmmsqWNVFrwkB/3Jq9Nd7gyrjFtv7m0YUMnw9HW02YG7ecQk1oP0FBNpENEfQdhRw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=vRK/rzqGR2ymF9gYV8aJYeyhOyiqtSL9Ji4ympNlQ4s=;
- b=fIDq7W+qHYcn91ILGPHetUfg6GaLrWe4MWEStAOZ/XlK9y1AkPoYn115vD5CNKWUmNvU5BmINU2Hz1fNrY8Kp6teETffQ2YJ8xZMcExnv056HMzxBj5DB9Iik9E616KATRq4ofoRnE4r6GTbtzf1ZRYOY4Uc0xLo4ts6Yg3WIV5djkyx/KOcOutR3HnR5Z/Dc7bqwjMu1x6DXa8OY/aKa0h8pyFozA6pl1ocsoPB3Aq3q1NtBpqbNC0F3sb/uI7/FDV8lNP6DRQTfUVzNRUWY/1jA+tXiifm47Rkp/rb76HkaWbGVliMnOhyBzMkYtFzVZdazSA0TvdeyX6mhzx88g==
+ bh=QiT/NDFsmJVOqHT5jWw8HxH9sYbvICEqJnMFr5WFvfs=;
+ b=yVzd4PeUHsNxW4QO/8mLjWb2Ryl+I3hmctE3NHj0jTLOFbGIhZ9s9G/yXKhR4+4YsD6CfbgnRtsqckyyCJmIKK7wzL9B9p2LsEYm2RbvgnXjwTwYV8V9MJ/cI6zQ3wmljGhQxyWWUtHlkECbwQPp9bbZHEx+od5Oe2SE3q68JdYATbtJAzrJ5aG7j9Rfn8NEI5kISmVAfoTeN8C29R/k1lUcquLjUJYuZri0ppatLUnuc5M+bfLoBdsKW8wkt7ZLvai6qtiwn1ejrWP8g0SWgms0a5bmWC+MZidoKVHx3Uq8rkEv2kNXLJsccWqjBscLfRuxSZRuXGGL03OMY3IcNw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
  dkim=pass header.d=oss.nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
  s=selector1-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=vRK/rzqGR2ymF9gYV8aJYeyhOyiqtSL9Ji4ympNlQ4s=;
- b=RJBGusEVZzd67k4PNuvOed2Z516jxZaQPO26IO/1fg1AwIVMuoVVjL1otayrEJ7W+LgiAz2DmpqbePeNDS0B8z4PwKWpQDqTZ/w7G+orsqq1pvV2mduL1rrhXQrMPSNufhyV/BDMfw4ax+pSUIYe9QNvsx8FFmt9NkzZhUKMOjSZX69sAKVoV6QGAX1iRzYW8NkxV9ovjlRhkRm9SQLSjUkVHBVYMxVe1AoR8TnI6J/ulHNQp/cuL265vv6uq+Mi34QoF87IEwUbxTe9H4BpDRpZs8oegSsyPtiUXun6gorqobMMVvFmhLIHjHXLQh+gTBGDAe7Iz3aRNZrLJujNAw==
+ bh=QiT/NDFsmJVOqHT5jWw8HxH9sYbvICEqJnMFr5WFvfs=;
+ b=faC3GW/3wFHJDYXzq272aYyuWQ8p8UrBLA0xyA+gi2zaRswY520KOQeDdJA25vMxPqJYiniYiZqtRoX0VQkQbKTaYBRG6/3DJmMQwXPpnP0creirLJADiPXV9v/h3jmO6v/yIgH2LM89El4zy6E5/d1nqsFvvbkUoND7gsyKN65uXHr72o3x0eUVeHFO+jMo52qmMUm/O0z5matSV7gP24OUfyyoQhzcfNEFWGpr/AoVVKPs8g9twF0Y0OB1djY8QYFo/nLR1qDnKi8hKeqjZucrjAZxN7lqJcKQPjYyb2wlNiNBSt872pyRtjttkwFWl8sLy/PcTjsHghiUHm53Yw==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=oss.nxp.com;
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by AS1PR04MB9238.eurprd04.prod.outlook.com (2603:10a6:20b:4c6::8) with
+ by PA1PR04MB10467.eurprd04.prod.outlook.com (2603:10a6:102:44e::13) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.382.10; Thu, 10 Sep
- 2026 15:44:50 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.406.9; Thu, 10 Sep
+ 2026 18:34:14 +0000
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0406.005; Thu, 10 Sep 2026
- 15:44:50 +0000
-Date: Thu, 10 Sep 2026 10:44:40 -0500
+ 18:34:13 +0000
+Date: Thu, 10 Sep 2026 14:34:05 -0400
 From: Frank Li <Frank.li@oss.nxp.com>
-To: Conor Dooley <conor@kernel.org>
-Cc: Shubham Patil <shubhamsanjay.patil@amd.com>,
-	alexandre.belloni@bootlin.com, Frank.Li@kernel.org, robh@kernel.org,
-	krzk+dt@kernel.org, conor+dt@kernel.org,
-	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
-	linux-kernel@vger.kernel.org, git@amd.com
-Subject: Re: [PATCH v3 1/3] dt-bindings: i3c: xlnx: Add IBI and hot-join
- capability properties
-Message-ID: <aqLQaHndX4t1kKLG@SMW015318>
-References: <20260908094257.3196120-1-shubhamsanjay.patil@amd.com>
- <20260908094257.3196120-2-shubhamsanjay.patil@amd.com>
- <20260908-groin-undivided-0af701135404@spud>
- <aqGHlWpQjpHEft3j@SMW015318>
- <aqKWTT47S_zPzvbN@squawk>
+To: Shubham Patil <shubhamsanjay.patil@amd.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
+	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+	meaganlloyd@linux.microsoft.com, git@amd.com
+Subject: Re: [PATCH] i3c: master: dw: Clamp GETMRL/GETMWL to controller FIFO
+ limits
+Message-ID: <aqL4HaQ1gjeaJYUQ@lizhi-Precision-Tower-5810>
+References: <20260908102724.3232660-1-shubhamsanjay.patil@amd.com>
 Content-Disposition: inline
-In-Reply-To: <aqKWTT47S_zPzvbN@squawk>
-X-ClientProxiedBy: PH7P220CA0035.NAMP220.PROD.OUTLOOK.COM
- (2603:10b6:510:32b::30) To GV2PR04MB11799.eurprd04.prod.outlook.com
+In-Reply-To: <20260908102724.3232660-1-shubhamsanjay.patil@amd.com>
+X-ClientProxiedBy: CYZPR14CA0018.namprd14.prod.outlook.com
+ (2603:10b6:930:8f::28) To GV2PR04MB11799.eurprd04.prod.outlook.com
  (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|AS1PR04MB9238:EE_
-X-MS-Office365-Filtering-Correlation-Id: 154fa25c-357c-4588-9891-08df0f5272dd
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|PA1PR04MB10467:EE_
+X-MS-Office365-Filtering-Correlation-Id: 703ed2c1-05f5-43e7-314e-08df0f6a1c71
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|7416014|376014|19092799006|1800799024|23010399003|366016|11063799006|5023799004|56012099006|4143699003|10067099003|6133799003|18002099003|22082099003|3023799007;
-X-Microsoft-Antispam-Message-Info: ZnZ3Dxm7KW2LISDJtxVTIbmHyEKRIGRjQOCcaTFrvXZThz8JVxsmODFkhQPNkvgn8oG1Bm3viOxUoua1g4q8lNfzO+1YFTy2dmkBY0Qh4y1THXmDhVK+LZ8hYM5dJ9mdyykREZ0ejxK8vVNJW37+fiwcSkpv8/+P7vsLhape6Dt24PtrtexzA1Ej5zGT6OTcMc77btzlEb54dJQf/gw+Eb64W1T+C9cvVz47crUTYB1PMhXhgiRodupQxYZCWGMjMHzQmV16LJ9RJmqEWLDpD6Ne4h9Hu01TiE3K0Cz1pprkIQIMIpQuZRyRDT16CU0ng/Rpy/3KV5IxWEw3vpKGFiwAO8wpi91h8KjlfByAudWT1jI9jtoD7kbSxbWy9MU1EuvIXrGZDMcGrFbRhwFGksqHn1UKradg9709Tcm21gIP1ldEYbZ8bxkpI9CCv95VbgO1art5ZiqoFNXxexWCsZHf9/Tomph4oqPAE83O4e8w+lfbljbJTITcKitzHeyOlwLdoHqkV7mGBCmAI3KAeATl1PY00pGggz/vBPbsgdue4/z1qS0PauKab5gzXrjN73KbTAoJ9PzV/HpLdESl6mUbI5F8eUKK4ojkQSTSJ4ix7iForlSpM3l0SqSVU0XPyuvwb8T0NpWRxYY8tONZYW/EMdWvRdX5GoToot45J0E=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7416014)(376014)(19092799006)(1800799024)(23010399003)(366016)(11063799006)(5023799004)(56012099006)(4143699003)(10067099003)(6133799003)(18002099003)(22082099003)(3023799007);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|23010399003|1800799024|366016|376014|10067099003|3023799007|22082099003|18002099003|56012099006|11063799006;
+X-Microsoft-Antispam-Message-Info: Uztp8Az4smfvMp6FtTJCD737NIJ0BGicE6YQEl49t7Wh+m1qgremanhn1dy+IEIFJRG0zOiOZ4yahYaTAl6foqrwvM548HffH08Skn0ZSfaI/Z3kV4yVw1QH1gCxDYvVqkzMrwEmlm6rHg0SXhhKXRJu42XtzoYf1+kBFSE7hs6/63uKNveoc1p5eGYCK1FiRPDoINhjP9yAl/vcL3nj1GR/ulXq8jPWLyZE2hPhxApRzK2MlnqTqWfcMO3Z/RvryzMf7h0uV8kdN2Jt3B1pPIXmytB0wa3uct21z9hMyvnSB/yY7cOQp0sPFeCgS7xLCq13FJXVI8HeKVum+Y5J4DPSGID2Bht3/tCg2gYUglGuVipz5YgQmY5ClyAYPrsGhHaoh/zVb+JbGFVkQnp8IXbRY4eoNR0ZvQC4xVR6pQIE3Q1vXEVler3TpVJT7+vIP+5iu4YtFKaFglQGOapbLGsL9jiOuwhiJuPAIY0/jTV3+5BaLxjVvFBCVIrv8tPrLX98pKMQ1gDtlskZSM4I/5lpgkDMP2YPbFt0eTgzPA//LcrzetTQakNl25dB68unQx4vIsMoXJq9f8Y8pCnSteR1/K1tP9uCpcPo9hDVRh8D+t8GPWEoWfQvR9mTOCG4fx0NVf2pxG4NgjjToNZTOUGgvygRNX/zMTkxcwyojFg=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(23010399003)(1800799024)(366016)(376014)(10067099003)(3023799007)(22082099003)(18002099003)(56012099006)(11063799006);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?Vyu9nWcLwOJMOgOFj8WgIMDZ9603/3aAzf8Y8zVZM5iPMnk2tZPaiGhiEUsQ?=
- =?us-ascii?Q?pW9wTIbYE8i9Fy0S15FWn91aHG1xHlUQjnYOemYDQXbgdUU3wRPO21UqDGIr?=
- =?us-ascii?Q?pf1jZswBMkgqP3uuQ0CjyrkaCnuLhZfvgcR3Xv505m7W55qgyV/ewQwaVVOq?=
- =?us-ascii?Q?noK/8jJ1KQoRx7qozlO1CeUVTszG3ShgUzfvJ8yU2ChB00beXIok15mflgh6?=
- =?us-ascii?Q?aI+YJCPdLwpyisXWtJcty/u3kX1PGeRObPFkU9xZvXbm0HppjZtWHg1hPZDR?=
- =?us-ascii?Q?wlxZac2gp9rLvsWMf6qBC0GgOEqfbH+YlHw0airkTUcO7nMvo/IRWy1iSDy+?=
- =?us-ascii?Q?1dn2ANnzF+KdKQgJLCf+EEu7HeYU3SKikM0yvYkrv/ce8swLm4W/2GvbdoU8?=
- =?us-ascii?Q?LZlOfUOxrYfZYyvQCBERlmXHk94kF/rJwILG89UnN41mHGq46DmEG4zmGX9R?=
- =?us-ascii?Q?vYdS9wLN0FREkJSFzXsNIoM+rz4nYBtkC7l7//8boA45zc07wlcfuplE783o?=
- =?us-ascii?Q?CT8r5yYEPD2aNywotlllmm8DtYQn6df2luMZ0Pj0zk2Rbdh1+mrwjFxEz48m?=
- =?us-ascii?Q?Eo8gPgvtl7WW24T18EN7I8UZCOtU5hQJOgfInUJ99OQCUsJXrBAs3hg89T1b?=
- =?us-ascii?Q?/TsViLo/ELIfqroQcqoyrwkB4dFY01dSV2hn+pVYOb874mYuhiua7pa12jeB?=
- =?us-ascii?Q?HQFTAfStDbefB6zSHlavCoDnJfwRvnihprju/bbLMh8KncmdlkaXM/KGqM5c?=
- =?us-ascii?Q?PzS3gFVAjZMEUYdbmXefnu1NpwjIvsKoNK6uW4wZ+XVHN4AzNkuZlghI2n8m?=
- =?us-ascii?Q?iH+UI3q++uh4gbPJYkmIG797RNcJvALSGMg2zOwkizn9q+GuOnFoG87+nOYk?=
- =?us-ascii?Q?EkSGg6qLscb7JcG25/nYkA9hbc1uIIcS12Davh3b5uA/xLcMzXOp+pxUu3BV?=
- =?us-ascii?Q?wGgmfe1Uq+qjqc9FZmdUi919xQ8iSedaQ/2C1TXb7pf+anrJ9kFS1ENNqVIC?=
- =?us-ascii?Q?wkulcXNliliD6OUnf3oSjhjJ3xiPUkG0Hi0Y1ba9To8R/hJuKiI7YRlkzguQ?=
- =?us-ascii?Q?kIPIPnKf2K9XhwRLC6uRHftFwXIiXsZv3xwIx3sVvHPQq85qPDOCHSzRj4oO?=
- =?us-ascii?Q?mS0q5g1VRcvKLDSlW6aUjv+T5R8xEs7ain6rb117XzLAPPxGzEAJndQ6a9dK?=
- =?us-ascii?Q?OQSgwroG6/E76fWvSpnm86IM5C0XLi5DFjdv164te1LsQukCgmFJoNYwZkJF?=
- =?us-ascii?Q?kMCNlY9Zghnusgnvm64mcIfVZ9YifO3lPEDFBvzkNJHHSEdXSr10GCrSRjS4?=
- =?us-ascii?Q?dfYu5+VWujFqTZidEJUwTLguoCwA0q7lGU+k2qGcXUzt40H3SAjyO8lYlufJ?=
- =?us-ascii?Q?4SyuBZ6BYFkctTD62CSGu0/Q7Oy+JiO5u/zQFKKJgcLwwvmVAZAIAwSlsnJZ?=
- =?us-ascii?Q?mFTwJTNNoBR+87HeX457o2/4Kx0/Tprx12wJHRcd6gPXSW+QHIgDuy05f+6E?=
- =?us-ascii?Q?9Xi+HB3DdjTKtn5AwFIxvUBSXMOZVfB4BzaS5l7gCLfsnGuthMEYrQH7Y2se?=
- =?us-ascii?Q?YTcoL3D0Grzi5rWdHSjYgchKeMGUIfGkYuZST+M0C7XFPTtGWK5RlQH6oJxI?=
- =?us-ascii?Q?/MkYGObSkeDJ0b4ha7ilDbY95XXgNVxHe1JchTW3aGQMBQpGrmpv0lnJMaFQ?=
- =?us-ascii?Q?9XUjCrUjfHFMeLzi7LOe/HF4n/9PYq+kU0wH9gV4ilQ8x9VNe1BRsQ+ruLOz?=
- =?us-ascii?Q?+I142bVaOi31JX4ZZfGFx1fwTUoM8esgWg/H2lvwzHd5ewSsEs3o?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?pVC8JNrmVpgt+yQ+4W2H6VslSjiehvSGQU87tJSzvSdMdqn4gqrnq9J51V74?=
+ =?us-ascii?Q?majzIqYWsXyXYtmt802Axgy5HIK3lR5hutmLi0Y4CVABBjBk3rPZFQURTQm4?=
+ =?us-ascii?Q?e1eBNa4NNH/lZ6BrQdrUBY23wvwKaaXqzLSvCmDL1gUxpkGpYZ3ElmtPuK0N?=
+ =?us-ascii?Q?W+c4GDH3KwEbOuxRGyBp2cLOaLTpUdOsUrAgvGQC7DWg6XRD/meGvRxRkodi?=
+ =?us-ascii?Q?xUVr2O+pohRR30nOBTFqZ7aRUQx4KpEEzsHAMgXe5tEa+DUIEIkgZJFh63i2?=
+ =?us-ascii?Q?0hhJrtG6iy7hUR/adclEXFui8ih6otG8YVCkkvQLmLCrIDhsvCyfemrwhAKz?=
+ =?us-ascii?Q?pvndGLavXSXltPfQ7YSIdDVwX5xoS+xcqejdNkgq83I6GqeqQEUIZD6QUN6V?=
+ =?us-ascii?Q?fhKP2KIpZpDD7qsg7nk5/VAoNUjKrWQdtE4OFhm+6NZhZL7xRekZZxko+Zfm?=
+ =?us-ascii?Q?bZv2uNxzWc91bj3TssEdCp3fqWgicsHihxSIBkKQD5W789m3xDzlw4r85OvN?=
+ =?us-ascii?Q?1qZecqSAQZQbI9TL5ko5Ef5TfQi3ZMQfcDm6Fz+8uxosmpZ2N+aciybxXCqX?=
+ =?us-ascii?Q?O9Xy5m6Am3X/HAg5JSbOImWxqLQ/fSAXA9uxFH6edu1HyMIoxZb+Yi8RbnBx?=
+ =?us-ascii?Q?DLbGNvI/34tl8vjs2xFaQl+rvPUB7JdrkMfpuyWKC3V8/xhnsgRkHSoy20C5?=
+ =?us-ascii?Q?uEBOC/LexpKcoBTz/dkNlpYsr28Fhi4UAoTd/+2tD1JEIS9gqxqe1gEfSHSJ?=
+ =?us-ascii?Q?3RLrVd1uLSQdjatL9aXGd1S44Qtn2MXKmIaxN7LWfz/iEEJD6CnwAIqsHllK?=
+ =?us-ascii?Q?wObdZV14NcX5s54SpEZy9Z+3P4922oNUdt7fLw39uSvx28J23KEBwlYDcb0i?=
+ =?us-ascii?Q?V4ylp9fLrw3Zi3Dm2jod5SE4fs32g5lo1JL9V+yaJCjZvGFVRNQipOtBkYL3?=
+ =?us-ascii?Q?TANCatGunFPEr/+aOI7wyXh4rJirxvZArHhTSmFXksKTM47ZPMxN/gd33hLD?=
+ =?us-ascii?Q?EeLL+egZIItllcSNpoToC0OhVfhwFd4gu9X1OmWnntxsFwpOB2xp4Q9vjRwz?=
+ =?us-ascii?Q?6iB3R+YqqKj0XUgA0jWPP7uFokd+gYHs+/VwmPiMq1pSH386p/PexQDYzygw?=
+ =?us-ascii?Q?zT3UDXdSSjDyfTElXMDa0jXp5CPSC0R4vqIj0UIHU0HHHT07IsvoMzvMv8xY?=
+ =?us-ascii?Q?09Kzv85b3XbuO+dbhoYwZ5S9bDxT/AEm4ZD1we1kJRCTHBLmMcSkDqp7psha?=
+ =?us-ascii?Q?IKRMFCt2e21f0LZ0ySpAGhZYE0Zjo4tm9IrylBni5YC+R0KoNchGg5CtDk1a?=
+ =?us-ascii?Q?LLq4lhanb+hVp633JsCrXAC1oqPnkrvvL6eV3ZejrFAVEQhEGhZcFVd2uX6X?=
+ =?us-ascii?Q?7qDSfI0bi43mixgdhFH9hFgQ+tS5+/SZw9zcAsMBK8IeEiOgd+UIvypkPVYu?=
+ =?us-ascii?Q?xtQ1xHcYna8qq3YqhMhhU/xeHDYni3smJIXSynj9RYBVo1X96ltiGfgh7OS9?=
+ =?us-ascii?Q?Jo/uQ6hT1dZ+mek+aoumUqOKxWhHGrOaCSXMwhbgpjW0j+ECNjnK81rEijH3?=
+ =?us-ascii?Q?EjVIHqHwJFXCzhXa0tjArLYVkP0aZPBDeytSw/gwPyZLwjkLEClh1nokwSOo?=
+ =?us-ascii?Q?5aRR/zfc3hOgJofjxpGLO2d73UWONuIL+JDNEe6doX5WUUREpXQ9jmpIaSSk?=
+ =?us-ascii?Q?+dXuFv/zCdqAFKKdwAkSufdTbCqwEzYhGr1giDJ7zNhlmZ4RD3SAOPZnUyun?=
+ =?us-ascii?Q?gnRdm4tElavWlacBblnMCn/ZbaTMTZ9hM74Jvot58pGGW4N6TYc/?=
 X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 154fa25c-357c-4588-9891-08df0f5272dd
+X-MS-Exchange-CrossTenant-Network-Message-Id: 703ed2c1-05f5-43e7-314e-08df0f6a1c71
 X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Sep 2026 15:44:50.3357
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Sep 2026 18:34:13.5120
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: vzYEWIPsuuNPUFJzNOjc7AVB0lNLYU5Kg6ncrTvSNgywuX/uoU3Cbbe2VswqHykfX2vJs3WbCLJ+/xdhfji0tfJf0Bfr+fsDf0UrksJiBUe79U1PxDK3mirjlTax2ifT
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS1PR04MB9238
+X-MS-Exchange-CrossTenant-UserPrincipalName: KzBjI9Q0Spv776VqNCXeAo52RSq2wG5VQsmrV2adv9yaS+nqDIyJpSQJBu74FmhN01dcS+9PBr6Grm9Po331LLywR7c7SCL0wyDf/vi3iduO2+z1eMRGyj95vkzALFCb
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA1PR04MB10467
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260910_084459_795278_C6597B04 
-X-CRM114-Status: GOOD (  49.04  )
+X-CRM114-CacheID: sfid-20260910_113422_525389_936E13EB 
+X-CRM114-Status: GOOD (  32.30  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -144,190 +139,235 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Sep 10, 2026 at 12:36:45PM +0100, Conor Dooley wrote:
-> On Wed, Sep 09, 2026 at 11:21:41AM -0500, Frank Li wrote:
-> > On Tue, Sep 08, 2026 at 06:54:31PM +0100, Conor Dooley wrote:
-> > > On Tue, Sep 08, 2026 at 03:12:55PM +0530, Shubham Patil wrote:
-> > > > In-Band Interrupt and Hot-Join are synthesis-time options of the AXI I3C
-> > > > IP. Describe them with two boolean properties.
-> > > >
-> > > > A Hot-Join request is acknowledged by the IBI machinery, so a hot-join
-> > > > capable design is always IBI capable as well. Both events are reported
-> > > > through the controller interrupt, which is therefore required whenever
-> > > > the capability is present.
-> > > >
-> > > > Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
-> > > > ---
-> > > > Changes in V3:
-> > > > - Move in-band-interrupt-capable and hot-join-capable into the common
-> > > >   i3c.yaml schema and drop the xlnx, prefix.
-> > > > - Keep dependencies in the AMD binding.
-> > > > - Update the commit description accordingly.
-> > > > - Conor Dooley acked v2 with the xlnx,-prefixed properties in the AMD
-> > > >   binding [1].
-> > > >   That Acked-by is not carried here: the names lost the vendor prefix
-> > > >   and the definitions moved to i3c.yaml after Frank Li's comment.
-> > > >   [1]:https://lore.kernel.org/all/20260824-tightwad-impose-495476599087@spud/
-> > >
-> > > I disagree with Frank. These properties make sense for Xilinx because it
-> > > is an FPGA IP and synthesis options impact this. For other devices, this
-> > > should be determined from the compatible.
-> > > Please revert to how things were done in v2, especially as no rationale
-> > > was provided for why these should be common.
-> >
-> > It is common problems, when IP intergrate by SOC, which may defeature some
-> > part, It is not appeared now just because IBI and HJ have not enabled
-> > widely.
-> >
-> > IBI and HJ is optional features of I3C. Ideally it should be indicated by
-> > some registers. But not all vendor implement provide this CAP registers.
-> >
-> > IBI and HJ depend on some slow clocks, which monitor SDA line change.
-> > Some instances of IP may not have such slow clocks. Some IP's IBI and HJ
-> > use seperate IRQ line, but these irq line may not connect of difference
-> > instances.
+On Tue, Sep 08, 2026 at 03:57:24PM +0530, Shubham Patil wrote:
+> The DW master rejects private SDR transfers larger than
+> caps.datafifodepth with -EOPNOTSUPP. Targets often report MRL/MWL
+> values larger than that FIFO, so the core stores limits the controller
+> cannot meet.
 >
-> All of this should be able to be dealt with by appropriate use of
-> specific compatibles.
+> After a successful GETMRL/GETMWL, issue Direct SETMRL/SETMWL to the
+> same target with lengths capped to the data FIFO (in bytes), then
+> rewrite the GET payload so the core keeps the same values. Only update
+> the GET buffer once SET is acked, so a failed SET does not leave the
+> core and the target disagreeing.
 
-I understand compatible can cover most cases. Need variance for property.
-
->
-> > like previous SPI vendor customized property, we takes efforts to convert
-> > to common one and also meet back compatiblity problem at convert. I don't
-> > want to do it again. This kind property is most likely as below.
->
-> What SPI controller specific properties are you talking about here?
-> There are relatively few properties in spi-controller.yaml, and none of
-> them deal with these kinds of capabilities.
-
-num-cs vs fsl,espi-num-chipselects. Total number CS of IP is fixed, but
-some instances have not route all CS to pad.
-
->
-> >
-> > default: 	decide by comaptible string or hardware cap
-> > force-disabled: force disable for some reason, like, miss connect irq line
-> > or missed some clock, or IP bugs, or board desgin's some level shift chip
-> > broken IBI/HJ timing requirements.
->
-> Of these, only the last would be a valid reason for having a property
-> for it. Missing interrupts, clocks or IP bugs should all be dealt with
-> using device specific compatibles.
-> If board wiring causes the breakage, the property may be more
-> appropriate at the i3c device level rather than the controller given
-> that wiring to some devices on the bus may not have the problems?
-
-I3C.yaml is for both master controller and devices now. I3C is bus, which
-connect many devices, if wiring issue, whole bus can't support IBI. And
-if any broken devices happen at address arbitation, whole bus can't support
-IBI.
-
-at beging, I suggest 3 state,
-
-[default, enable, disable], but now I think IBI_broken, HJ_broken is more
-reasonable to disable it, default value should be set by compatible
-string or DCR of I3C regiser.
-
-And some I3C device may be failure to work with IBI even DCR of I3C register
-show it support IBI.
-
-I don't want to appear two similar property between vendor and common, like
-num-cs vs fsl,espi-num-chipselects.
-
-such as IBI-broken can be used for controller and devices case.
-
-> That said, I think that problem should be dealt with when it arises,
-> rather than starting a trend of adding capabilities properties at the
-> controller level when I am not convinced that there's going to be other
-> users in the same vein.
-
-Understand, I3C is realtive new protocal. 'IBI-broken' is more easy
-understand,  logically equial to in-band-interrupt-capable.
+I think i3c device driver should know these information choose
+min value dring each xfer. even though you set devcie's MRL/MXL, device
+driver still issue a longer transfer.
 
 Frank
 
 >
-> Thanks,
-> Conor.
+> GETMRL is variable length: the optional third byte is max IBI payload
+> and is only present if the target returned it. Clamp that IBI byte to
+> the IBI queue depth from QUEUE_SIZE_CAPABILITY.IBI_BUF_SIZE (bits 19:16
+> at 0xe8, encoded as 2^(n+1) dwords).
 >
+> Rename the unused EXTENDED_CAPABILITY macro at 0xe8 to the databook
+> name QUEUE_SIZE_CAPABILITY.
 >
-> >
-> > Frank
-> >
-> > >
-> > > pw-bot: changes-requested
-> > >
-> > > Thanks,
-> > > Conor.
-> > >
-> > > >
-> > > > Changes in V2:
-> > > > - Rename the properties to "xlnx,in-band-interrupt-capable" and
-> > > >   "xlnx,hot-join-capable", and expand their descriptions.
-> > > > - Express the interrupt requirement with dependencies: instead of an
-> > > >   allOf/if-then clause.
-> > > > ---
-> > > >  Documentation/devicetree/bindings/i3c/i3c.yaml    | 15 +++++++++++++++
-> > > >  .../devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml |  6 ++++++
-> > > >  2 files changed, 21 insertions(+)
-> > > >
-> > > > diff --git a/Documentation/devicetree/bindings/i3c/i3c.yaml b/Documentation/devicetree/bindings/i3c/i3c.yaml
-> > > > index e25fa72fd7857..7430394cc6b9b 100644
-> > > > --- a/Documentation/devicetree/bindings/i3c/i3c.yaml
-> > > > +++ b/Documentation/devicetree/bindings/i3c/i3c.yaml
-> > > > @@ -61,6 +61,21 @@ properties:
-> > > >        Indicates that the system is accessible via this bus as an endpoint for
-> > > >        MCTP over I3C transport.
-> > > >
-> > > > +  in-band-interrupt-capable:
-> > > > +    type: boolean
-> > > > +    description:
-> > > > +      The controller supports In-Band Interrupts. A target can request
-> > > > +      attention on SDA/SCL by driving its dynamic address during bus
-> > > > +      arbitration, instead of using a dedicated side-band interrupt line.
-> > > > +
-> > > > +  hot-join-capable:
-> > > > +    type: boolean
-> > > > +    description:
-> > > > +      The controller supports Hot-Join. A target attached or powered up
-> > > > +      after the bus is already running can announce itself using the
-> > > > +      reserved Hot-Join address so the controller can assign it a dynamic
-> > > > +      address.
-> > > > +
-> > > >  required:
-> > > >    - "#address-cells"
-> > > >    - "#size-cells"
-> > > > diff --git a/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml b/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml
-> > > > index 2caa245a86568..9480de3fe8e1d 100644
-> > > > --- a/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml
-> > > > +++ b/Documentation/devicetree/bindings/i3c/xlnx,axi-i3c-1.0.yaml
-> > > > @@ -37,6 +37,10 @@ required:
-> > > >    - reg
-> > > >    - clocks
-> > > >
-> > > > +dependentRequired:
-> > > > +  hot-join-capable: [ in-band-interrupt-capable ]
-> > > > +  in-band-interrupt-capable: [ interrupts ]
-> > > > +
-> > > >  allOf:
-> > > >    - $ref: i3c.yaml#
-> > > >
-> > > > @@ -54,5 +58,7 @@ examples:
-> > > >          interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
-> > > >          #address-cells = <3>;
-> > > >          #size-cells = <0>;
-> > > > +        hot-join-capable;
-> > > > +        in-band-interrupt-capable;
-> > > >      };
-> > > >  ...
-> > > > --
-> > > > 2.34.1
-> > > >
-> >
-> >
-
-
+> Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
+> ---
+>  drivers/i3c/master/dw-i3c-master.c | 149 ++++++++++++++++++++++++++++-
+>  drivers/i3c/master/dw-i3c-master.h |   1 +
+>  2 files changed, 149 insertions(+), 1 deletion(-)
+>
+> diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+> index 4563d8761ba0..51defcb57761 100644
+> --- a/drivers/i3c/master/dw-i3c-master.c
+> +++ b/drivers/i3c/master/dw-i3c-master.c
+> @@ -203,7 +203,13 @@
+>  #define BUS_IDLE_TIMING			0xd8
+>  #define I3C_VER_ID			0xe0
+>  #define I3C_VER_TYPE			0xe4
+> -#define EXTENDED_CAPABILITY		0xe8
+> +#define QUEUE_SIZE_CAPABILITY		0xe8
+> +#define QUEUE_SIZE_CAPABILITY_IBI_BUF(x)	(((x) & GENMASK(19, 16)) >> 16)
+> +/*
+> + * IBI_BUF_SIZE is encoded as 2^(field + 1) dwords: the smallest buffer is
+> + * 2 dwords and each increment of the field doubles the depth.
+> + */
+> +#define QUEUE_SIZE_IBI_BUF_MIN_DWORDS	2
+>  #define SLAVE_CONFIG			0xec
+>
+>  #define DYN_ADDR_LO_MASK GENMASK(4, 0)
+> @@ -844,6 +850,130 @@ static int dw_i3c_ccc_get(struct dw_i3c_master *master, struct i3c_ccc_cmd *ccc)
+>  	return ret;
+>  }
+>
+> +/*
+> + * Cap the limits a target reported through GETMRL to what this controller can
+> + * actually transfer, so the core never asks for a private read the data FIFO
+> + * cannot hold. The optional IBI payload byte is capped to the IBI queue depth
+> + * instead; since that byte is a u8, the IBI cap only ever applies to
+> + * controllers whose IBI queue is smaller than 255 bytes.
+> + *
+> + * Direct SETMRL is optional, so a target may implement GETMRL and NACK the SET.
+> + * Clamp the values handed back to the core either way: a failed SET only means
+> + * the target keeps its own larger limit, which is harmless as long as the core
+> + * stays within ours.
+> + */
+> +static int dw_i3c_master_clamp_mrl(struct dw_i3c_master *master,
+> +				   struct i3c_ccc_cmd *ccc)
+> +{
+> +	u16 max_fifo_bytes = master->caps.datafifodepth * sizeof(u32);
+> +	u32 max_ibi_bytes = master->caps.ibififodepth * sizeof(u32);
+> +	u16 actual_len = ccc->dests[0].payload.actual_len;
+> +	struct i3c_ccc_cmd_dest set_dest = { };
+> +	struct i3c_ccc_cmd set_cmd = { };
+> +	struct i3c_ccc_mrl set_mrl;
+> +	struct i3c_ccc_mrl *mrl;
+> +	bool clamp_ibi = false;
+> +	bool clamp_read;
+> +	u8 ibi_len = 0;
+> +	u16 read_len;
+> +	int ret;
+> +
+> +	/* Need at least the 2-byte max read length field to act on. */
+> +	if (actual_len < 2)
+> +		return 0;
+> +
+> +	mrl = ccc->dests[0].payload.data;
+> +	read_len = be16_to_cpu(mrl->read_len);
+> +	clamp_read = read_len > max_fifo_bytes;
+> +
+> +	/* Optional third byte is valid only if the target returned it. */
+> +	if (actual_len > 2) {
+> +		ibi_len = mrl->ibi_len;
+> +		clamp_ibi = max_ibi_bytes && ibi_len > max_ibi_bytes;
+> +	}
+> +
+> +	if (!clamp_read && !clamp_ibi)
+> +		return 0;
+> +
+> +	set_mrl.read_len = cpu_to_be16(clamp_read ? max_fifo_bytes : read_len);
+> +	if (actual_len > 2)
+> +		set_mrl.ibi_len = clamp_ibi ? max_ibi_bytes : ibi_len;
+> +
+> +	set_dest.addr = ccc->dests[0].addr;
+> +	set_dest.payload.data = &set_mrl;
+> +	set_dest.payload.len = actual_len;
+> +
+> +	set_cmd.rnw = 0;
+> +	set_cmd.id = I3C_CCC_SETMRL(false);
+> +	set_cmd.ndests = 1;
+> +	set_cmd.dests = &set_dest;
+> +
+> +	ret = dw_i3c_ccc_set(master, &set_cmd);
+> +	if (ret)
+> +		dev_dbg(&master->base.dev,
+> +			"SETMRL not accepted by target: %d\n", ret);
+> +
+> +	if (clamp_read) {
+> +		mrl->read_len = cpu_to_be16(max_fifo_bytes);
+> +		dev_dbg(&master->base.dev,
+> +			"clamped target MRL from %u to %u bytes (FIFO depth limit)\n",
+> +			read_len, max_fifo_bytes);
+> +	}
+> +	if (clamp_ibi) {
+> +		mrl->ibi_len = max_ibi_bytes;
+> +		dev_dbg(&master->base.dev,
+> +			"clamped target IBI len from %u to %u bytes (IBI buffer limit)\n",
+> +			ibi_len, max_ibi_bytes);
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +/* Same contract as dw_i3c_master_clamp_mrl(), for the write direction. */
+> +static int dw_i3c_master_clamp_mwl(struct dw_i3c_master *master,
+> +				   struct i3c_ccc_cmd *ccc)
+> +{
+> +	u16 max_fifo_bytes = master->caps.datafifodepth * sizeof(u32);
+> +	struct i3c_ccc_cmd_dest set_dest = { };
+> +	struct i3c_ccc_cmd set_cmd = { };
+> +	struct i3c_ccc_mwl set_mwl;
+> +	struct i3c_ccc_mwl *mwl;
+> +	u16 write_len;
+> +	int ret;
+> +
+> +	if (ccc->dests[0].payload.actual_len < 2)
+> +		return 0;
+> +
+> +	mwl = ccc->dests[0].payload.data;
+> +	write_len = be16_to_cpu(mwl->len);
+> +
+> +	if (write_len <= max_fifo_bytes)
+> +		return 0;
+> +
+> +	set_mwl.len = cpu_to_be16(max_fifo_bytes);
+> +
+> +	set_dest.addr = ccc->dests[0].addr;
+> +	set_dest.payload.data = &set_mwl;
+> +	set_dest.payload.len = sizeof(set_mwl);
+> +
+> +	set_cmd.rnw = 0;
+> +	set_cmd.id = I3C_CCC_SETMWL(false);
+> +	set_cmd.ndests = 1;
+> +	set_cmd.dests = &set_dest;
+> +
+> +	ret = dw_i3c_ccc_set(master, &set_cmd);
+> +	if (ret)
+> +		dev_dbg(&master->base.dev,
+> +			"SETMWL not accepted by target: %d\n", ret);
+> +
+> +	mwl->len = cpu_to_be16(max_fifo_bytes);
+> +	dev_dbg(&master->base.dev,
+> +		"clamped target MWL from %u to %u bytes (FIFO depth limit)\n",
+> +		write_len, max_fifo_bytes);
+> +
+> +	return 0;
+> +}
+> +
+>  static int dw_i3c_master_send_ccc_cmd(struct i3c_master_controller *m,
+>  				      struct i3c_ccc_cmd *ccc)
+>  {
+> @@ -866,6 +996,18 @@ static int dw_i3c_master_send_ccc_cmd(struct i3c_master_controller *m,
+>  	else
+>  		ret = dw_i3c_ccc_set(master, ccc);
+>
+> +	/*
+> +	 * Clamp GETMRL/GETMWL responses to the data FIFO depth, and the
+> +	 * optional GETMRL IBI byte to the IBI queue depth. The GET itself has
+> +	 * already succeeded, so its result is never overridden here.
+> +	 */
+> +	if (!ret && ccc->rnw) {
+> +		if (ccc->id == I3C_CCC_GETMRL)
+> +			dw_i3c_master_clamp_mrl(master, ccc);
+> +		else if (ccc->id == I3C_CCC_GETMWL)
+> +			dw_i3c_master_clamp_mwl(master, ccc);
+> +	}
+> +
+>  	pm_runtime_put_autosuspend(master->dev);
+>  	return ret;
+>  }
+> @@ -1728,6 +1870,11 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
+>  	ret = readl(master->regs + DATA_BUFFER_STATUS_LEVEL);
+>  	master->caps.datafifodepth = DATA_BUFFER_STATUS_LEVEL_TX(ret);
+>
+> +	/* Read the IBI data buffer size advertised by the controller. */
+> +	ret = readl(master->regs + QUEUE_SIZE_CAPABILITY);
+> +	master->caps.ibififodepth = QUEUE_SIZE_IBI_BUF_MIN_DWORDS <<
+> +				    QUEUE_SIZE_CAPABILITY_IBI_BUF(ret);
+> +
+>  	ret = readl(master->regs + DEVICE_ADDR_TABLE_POINTER);
+>  	master->datstartaddr = ret;
+>  	master->maxdevs = ret >> 16;
+> diff --git a/drivers/i3c/master/dw-i3c-master.h b/drivers/i3c/master/dw-i3c-master.h
+> index 17ad817d1f8e..54c3912374c8 100644
+> --- a/drivers/i3c/master/dw-i3c-master.h
+> +++ b/drivers/i3c/master/dw-i3c-master.h
+> @@ -15,6 +15,7 @@
+>  struct dw_i3c_master_caps {
+>  	u8 cmdfifodepth;
+>  	u8 datafifodepth;
+> +	u32 ibififodepth;
+>  };
+>
+>  struct dw_i3c_dat_entry {
+> --
+> 2.34.1
+>
 
 -- 
 linux-i3c mailing list
