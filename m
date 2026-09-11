@@ -4,58 +4,108 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id ADC8BC88E45
-	for <linux-i3c@archiver.kernel.org>; Fri, 11 Sep 2026 23:29:22 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EE9A2C88E50
+	for <linux-i3c@archiver.kernel.org>; Fri, 11 Sep 2026 23:57:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:
-	Subject:MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7UgcvESEsoOXqNanpIxM5VoOuRPMsxSYpuntyHhAQZs=; b=tVmTKd3JFO3Md5
-	OxjVNf3/KGZyDeshFEpDu/ZDKsJsTv5oNMqEwamMYLGa9kKrn2aP5ugitBLWQBwE/xE6NbzQ2bBOA
-	lTySRwW3xMRE1Kld9f4WHQFQWhQ9wfVD2G0FeurPtLKGRZ5smEsyYjWyqKWcDD3JxxPs2HAWnXRtt
-	8Bk9DWYH7NR4GIkdGDt4Q+KVJ3CWduuEaJIerxyI2JHVEaaP1qbOFnB1CRdkTcTJyVKV0oRcyA1/v
-	QXZf/ZJEE4h/pGBLoMJZhPlOfimy7QaEOcXtLUrBPvqCZ3LXn0opjrGWROYEfsUyPTQSKzJRvELYR
-	krI2jc524vhQUn0jh+Bg==;
+	List-Owner; bh=UmhvU77sMIEIbsq4JkaU6Qz+Nha+I3DChtwg84v5Uyw=; b=4PcjVmLbMYXKk2
+	J9U8gsI+Q3RqpB8anLadN3PbMu/JHZNjBqUxp1eqOXho+6LdVOzy0wk5PmzW5IHjvdeKsrxgss0Bw
+	26w+QwKEVxhKxvnV282/VO7jeoDox2/Zz2RzIpucUYpnsvG6hVuh3tcc8/7Z4aGvGaptyQ6mC2txc
+	9DMKyASa/ETFFj+I7L+RIAqEjc6lgWDC1pAvSzxTCBHFDbOOj1QTuK4Pr9USiDemh2zxxulCAgI+m
+	S8e6PqbOMuSxiheYN7qIgh4iVyn2Xuswas8cmrs5tXHwD0FhuVmyYtwEp/LQZ7NQhBRhz3v3Nxpmk
+	zADO1saosX5zwoIC8bvw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5AgL-00000000MIO-1okV;
-	Fri, 11 Sep 2026 23:29:21 +0000
-Received: from [50.53.43.113] (helo=[192.168.254.34])
-	by bombadil.infradead.org with esmtpsa (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5AgH-00000000MHz-1aVp;
-	Fri, 11 Sep 2026 23:29:17 +0000
-Message-ID: <5cd22376-6921-4a2b-acba-371bcbbfa00f@infradead.org>
-Date: Fri, 11 Sep 2026 16:29:15 -0700
+	id 1x5B7q-00000000PFa-0yBr;
+	Fri, 11 Sep 2026 23:57:46 +0000
+Received: from mail-yx2-x10.google.com ([2607:f8b0:4864:41::10])
+	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
+	id 1x5B7o-00000000PFH-0jx7
+	for linux-i3c@lists.infradead.org;
+	Fri, 11 Sep 2026 23:57:45 +0000
+Received: by mail-yx2-x10.google.com with SMTP id 00721157ae682-85d43db0c16so1161417b3.1
+        for <linux-i3c@lists.infradead.org>; Fri, 11 Sep 2026 16:57:42 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1789171062; cv=none;
+        d=google.com; s=arc-20260327;
+        b=R8J6N5OBFw1wWImowOjyYQyyPnV8ymycfIznmQHkrfWeFLpALN7XfrNbZ4Hx974Z80
+         CeN2MFm3ZbCQJTXnXF1ndXH9OcrBobr+GDWgZMZQeILKI470YE3lAFHRCufX3fVIrXw7
+         6/g8pvsyi76miWuRTDpSN8IATLli5IHNvbLpIkPrJqKDYxv3VcAi30oxeOCOqx7RphNh
+         C6WcjjM5i1t/EWSUH7r+EGVFDpQ55SFaFlz2GmGiFfUVpWYhMKDRi4sV/ENOxql1Kkri
+         PQ4+DXkXK6jXk/yTKdnr112o4W0Sj9pLHOoRQQbLd4ThKMb+4mAOLgKhNLFBwLIUrU8s
+         JIfg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=WQq2pAxxltC3cCwqlUs0gtYpd6fcKoy7z/dHR1GPO7Q=;
+        fh=U/ZmURP1WhCNPRSyIWzrUaTM97yhfkNob/TLz4j6RcE=;
+        b=jSHi8HDb24WyteGr3GQqDWkBE52Rv5Ku5s4/qFHek64tgyrqiTSM7PsMSqZ4cH022d
+         fVKS/+yl1ZCn6NMUnHX6iFF9PwFCsql+ww8n079p92bGu4gBaAf7LmD3RTGqNHsEnltT
+         C1VkKn3fTG04pIZlzYMpJLB5epmkTdN7dMj42Ve1MzRr1ycAOtLebDX2urGTD8VwWiEJ
+         NCUCj551d8P1MT4T3s2RR5toLuYF4VCLA2S01wyVMxfMFW/drZfp3pyBSN9gqKy5q4p3
+         u6y/dKBz+tGsSKtOXWEKSfmq5iJN6knRWViwFdQkP3uaYYiZmoeAN0LXO+NxMdDAhHpp
+         QbEg==;
+        darn=lists.infradead.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20251104; t=1789171062; x=1789775862; darn=lists.infradead.org;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=WQq2pAxxltC3cCwqlUs0gtYpd6fcKoy7z/dHR1GPO7Q=;
+        b=tZ6MPDaIHyTyKQQavQSogmH8twgKRWMvt6/Ozd8639AvepkW3JoFlPPfsZYjJHnMcR
+         +l/53iIhbWB0d3ZLByF17Pp8pRFRczwQksJlx5/CtRaf9t0cSwQ4LxJFWM3uI65pqThI
+         aIyxUIrLF4EiyZEnXkEM+FHzpFzz8ZYaaPA2LWrMbnY7kJ2Y44Glsr8wUBIU3T19Oh70
+         586XWX2zAzJY/chDt4lgflp1200FP6ML9m0pGXBFFyH3zl3zQ4Re71QHDBh2mUL9JY0N
+         p+1MS3hHBjRGunhCuZ9R4+l3czos7eYnMEHJ8CLtucB7Y5Uri4Xlt8lZeM2Ai/JTf+pf
+         x/7w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1789171062; x=1789775862;
+        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
+         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to:content-type;
+        bh=WQq2pAxxltC3cCwqlUs0gtYpd6fcKoy7z/dHR1GPO7Q=;
+        b=NfJ24x+h8R2IVNJA5OqnNgaPv+nVrLkLgMB+3lgOiHh3HTokpOJgwYFdJkiVj6lU4T
+         lswQ/USPzQ0cgrUj5Cd233q4TyWCrSOCTY3C3JZ5mxd8stlepcUOzYXnYHQRVlVrsVYb
+         XrhuoR8QxUMpPIGOWZXc/06ShmFXUQuucErFEMJ8Ou9OwpF1b0BK+AK1nv2a4xl7Keea
+         yl8Xaqs5NkyGSlfDQpd+Fo80P39CVfI3zT1LLdApqYdIqf9pT/IhVgfPPh+bYrM6Akw4
+         B+8acJ6UPy9v7bT93opKChMePF2Ttn+Ruff+OZzIyo6YLvAcaH6v3DEQlcytK4X29OjK
+         RxKg==
+X-Gm-Message-State: AFuF++nZXkOCYK+JlP/V4Vgm6duEBRkguPObGXkCouD0PyhMUO8Vg0Iq
+	OjuvxGwEB0zE2lNFAdtuhZoB8h5/GhCcphZ3V7angD5sr4gEQ3OsPSX85mLlvrAW5Mr5zIAjDkV
+	BHHbOKWDJZA/d8/4bliB6+8V1SGClB/QWj9nDcMf1
+X-Gm-Gg: AYBFou2/5nQ1B7Iw1mObi5rn6PZX9KZHK7ZXLgcW1ttN/HSsfc2ThiWeeda4KAGtyZ8
+	MrGD0lwlYTWIKZOG/yKcT+AaBrRLrrP1rPh4bsIlz2ZAQIOai79DfrHCCmWH2gfsRpfHXJFG0ea
+	bjRy8USm5LRTF/v+caWd7h1qKp2xoJnPi4Mg1kT8SwNGmn36JX9skunNj0xsrIWg/oP5Uk7BnD9
+	qHbFENs6ycguVWW6Cms7cRJVbNpUnqiTJojAsm64p4qcKGBOGHx/5UEzRuy48DTG7fONmbVIK/C
+	fWVAtUj66TvtYtXiGXCpHjeuZ8eOCVMLf8N4FRpB9S5q0hg3vVwPTYb0+fJ98CkIpSygDMbPScP
+	ugevos/UU5Q==
+X-Received: by 2002:a05:690c:281:b0:869:adba:625b with SMTP id
+ 00721157ae682-887a87bf532mr2501367b3.25.1789171061244; Fri, 11 Sep 2026
+ 16:57:41 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/3] i3c: add i3cdev character device module for
- user-space access
-To: Meagan Lloyd <meaganlloyd@linux.microsoft.com>,
- linux-i3c@lists.infradead.org
-Cc: alexandre.belloni@bootlin.com, vitor.soares@toradex.com,
- samagazaryan@google.com, gregkh@linuxfoundation.org, arnd@arndb.de,
- boris.brezillon@collabora.com, oleksandr.shulzhenko.viktorovych@intel.com,
- tgopinath@linux.microsoft.com, corbet@lwn.net, skhan@linuxfoundation.org,
- linux@roeck-us.net, Frank.Li@nxp.com, jorge.marques@analog.com,
- pgaj@cadence.com, wsa+renesas@sang-engineering.com,
- tommaso.merciai.xr@bp.renesas.com, nuno.sa@analog.com,
- Michael.Hennerich@analog.com, jic23@kernel.org, dlechner@baylibre.com,
- andy@kernel.org, lorenzo@kernel.org, enelsonmoore@gmail.com,
- rppt@kernel.org, pratyush@kernel.org, giovanni.cabiddu@intel.com,
- gabewhigham@gmail.com, haren@linux.ibm.com, pasha.tatashin@soleen.com,
- jirislaby@kernel.org, adrian.ho.yin.ng@altera.com, ustc.gu@gmail.com,
- jszhang@kernel.org, adrian.hunter@intel.com, akhilrajeev@nvidia.com,
- tze.yee.ng@altera.com, manikanta.guntupalli@amd.com,
- shubhrajyoti.datta@amd.com, jarkko.nikula@linux.intel.com,
- linux-doc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-hwmon@vger.kernel.org, linux@analog.com, linux-iio@vger.kernel.org
-References: <20260911210935.1353126-1-meaganlloyd@linux.microsoft.com>
- <20260911210935.1353126-4-meaganlloyd@linux.microsoft.com>
-Content-Language: en-US
-From: Randy Dunlap <rdunlap@infradead.org>
-In-Reply-To: <20260911210935.1353126-4-meaganlloyd@linux.microsoft.com>
+References: <20260906202747.4041389-1-samagazaryan@google.com>
+ <20260906202747.4041389-4-samagazaryan@google.com> <aqHU-6RV_AapSu3M@lizhi-Precision-Tower-5810>
+ <DLC6ERLST1B6.6K3HLH38DQLK@google.com> <aqQZzqJohIxBwnk0@SMW015318>
+In-Reply-To: <aqQZzqJohIxBwnk0@SMW015318>
+From: Sam Agazaryan <samagazaryan@google.com>
+Date: Fri, 11 Sep 2026 16:57:30 -0700
+X-Gm-Features: AcwNN1WTU8WlhVvS_yNOKejgBbjum4EMT2blUBC4r1H9SFjK7U-mdGDrxdPBeGA
+Message-ID: <CAHreonG_BH_ri7_p1VQ6h=_iTpWxhqzVLksc=p7Kyro2D3nW=Q@mail.gmail.com>
+Subject: Re: [PATCH v4 3/3] i3c: add i3cdev module to expose i3c dev in /dev
+To: Frank Li <Frank.li@oss.nxp.com>
+Cc: linux-i3c@lists.infradead.org, 
+	Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li <Frank.Li@nxp.com>, 
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Arnd Bergmann <arnd@arndb.de>, 
+	Vitor Soares <vitor.soares@toradex.com>, 
+	Oleksandr Shulzhenko <oleksandr.shulzhenko.viktorovych@intel.com>, linux-kernel@vger.kernel.org
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260911_165744_250632_FB08A27A 
+X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -72,213 +122,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
+> this is problem, Maybe we can use ioctrl to set default cmd, hdr/ sdr(default).
 
+That makes sense.
 
-On 9/11/26 2:09 PM, Meagan Lloyd wrote:
-> The i3cdev driver is a character device driver that allows user-space
-> to control and interact with I3C devices.
-> 
-> Currently, it has the ability to perform Single Data Rate (SDR)
-> transfers - basic reads/writes.
-> 
-> With the addition of sysfs driver_override, there is now a
-> straightforward and direct way to match the i3cdev driver to any i3c
-> device without stepping on the toes of more specialized drivers that are
-> loaded automatically.
-> 
-> This is accomplished by the i3cdev driver not having any entries in the
-> i3c_device_id table. After boot, simply set the driver_override to
-> "i3cdev" and bind the device manually via the sysfs bind knob. This can
-> also be automated with udev rules as well.
-> 
-> The character device interface will be exposed at:
-> /dev/bus/i3c/<bus id>-<Provisional ID>
-> 
-> Signed-off-by: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
-> Assisted-by: Claude:claude-opus-4.8 copilot
-> ---
->  Documentation/userspace-api/i3c/i3cdev.rst    | 152 ++++
->  .../userspace-api/ioctl/ioctl-number.rst      |   1 +
->  MAINTAINERS                                   |   7 +
->  drivers/i3c/Kconfig                           |  12 +
->  drivers/i3c/Makefile                          |   1 +
->  drivers/i3c/i3cdev.c                          | 730 ++++++++++++++++++
->  include/uapi/linux/i3c/i3cdev.h               |  70 ++
->  7 files changed, 973 insertions(+)
->  create mode 100644 Documentation/userspace-api/i3c/i3cdev.rst
->  create mode 100644 drivers/i3c/i3cdev.c
->  create mode 100644 include/uapi/linux/i3c/i3cdev.h
-> 
-> diff --git a/Documentation/userspace-api/i3c/i3cdev.rst b/Documentation/userspace-api/i3c/i3cdev.rst
-> new file mode 100644
-> index 000000000000..ad246bf28919
-> --- /dev/null
-> +++ b/Documentation/userspace-api/i3c/i3cdev.rst
-> @@ -0,0 +1,152 @@
-> +.. SPDX-License-Identifier: GPL-2.0
-> +
-> +====================
-> +I3C Device Interface
-> +====================
-> +
-> +This interface allows access to I3C devices from userspace.
-> +
-> +As I3C devices adhere to the I3C protocol, simple transfers can be accomplished
-> +using a generic driver. Currently, this interface supports private Single Data
-> +Rate (SDR) read and write transfers.
-> +
-> +The i3cdev module will not auto-bind to devices. Userspace needs to explicitly
-> +bind the device to the driver. This is to avoid interfering with the binding of
-> +specialized drivers.
-> +
-> +Once bound, a character device interface will be created at:
-> +/dev/bus/i3c/<bus id>-<Provisional ID>.
-> +
-> +====================
-> +Usage
-> +====================
-> +
-> +Any discovered I3C devices by the I3C subsystem will have device folders under /sys/bus/i3c/devices/<bus id>-<Provisional ID>.
-> +To allow binding of a device with i3cdev driver, set the driver_override:
-> +
-> +::
-> +
-> +    # echo "i3cdev" > /sys/bus/i3c/devices/<bus id>-<Provisional ID>/driver_override
-> +
-> +If the i3cdev driver is not yet loaded, load it and it will cause the driver to bind
-> +to any devices with the override in place.
-> +
-> +If the i3cdev driver is already loaded, go ahead and perform a manual bind:
-> +
-> +::
-> +
-> +    # echo "<bus id>-<Provisional ID>" > /sys/bus/i3c/drivers/i3cdev/bind
-> +
-> +Set driver override
-> +::
-> +
-> +    # echo "i3cdev" > /sys/bus/i3c/devices/0-deadbeef001/driver_override
-> +    # echo "i3cdev" > /sys/bus/i3c/devices/0-deadbeef002/driver_override
-> +
-> +Bind the device to the driver
-> +::
-> +
-> +    # echo "0-deadbeef001" > /sys/bus/i3c/drivers/i3cdev/bind
-> +    # echo "0-deadbeef002" > /sys/bus/i3c/drivers/i3cdev/bind
-> +
-> +Observe the resulting character device files under /dev/bus/i3c/
-> +::
-> +
-> +    # ls -ltr /dev/bus/i3c/
-> +    crw-------    1 root     root      235,   1 Jun 30 17:49 0-deadbeef002
-> +    crw-------    1 root     root      235,   0 Jun 30 17:49 0-deadbeef001
-> +
-> +BASIC CHARACTER DEVICE API
-> +===============================
-> +The API supports private Single Data Rate (SDR) read and write transfers.
-> +Those transaction can be achieved by the following:
-> +
-> +``read(file, buffer, sizeof(buffer))``
-> +  The standard read() operation will work as a simple transaction of private
-> +  SDR read data followed a stop.
-> +  Return the number of bytes read on success, and a negative error otherwise.
-> +
-> +``write(file, buffer, sizeof(buffer))``
-> +  The standard write() operation will work as a simple transaction of private
-> +  SDR write data followed a stop.
-> +  Return the number of bytes written on success, and a negative error otherwise.
-> +
-> +``ioctl(file, I3CDEV_XFER, struct i3cdev_xfers *xfers)``
-> +  It combines read/write transactions without a stop in between.
-> +  Return 0 on success, and a negative error otherwise.
-> +
-> +C EXAMPLE (PSEUDO CODE)
-> +=======================
-> +You need to open (and get a file descriptor) to /dev/bus/i3c/<bus id>-<Provisional ID>,
-> +do your operations (read, write, ioctl), and then close it.
-> +
-> +The following header files should be included in an I3C program::
-> +
-> +#include <fcntl.h>
-> +#include <unistd.h>
-> +#include <sys/ioctl.h>
-> +#include <i3c/i3cdev.h>
-> +#include <stdint.h>
-> +
-> +These additionally are used by this example::
-> +
-> +#include <stdlib.h>
-> +#include <assert.h>
-> +
-> +To work with an I3C device, one must call open and get a file descriptor::
-> +
-> +	int fd;
-> +
-> +	fd = open("/dev/bus/i3c/0-deadbeef001", O_RDWR);
-> +	if (fd < 0)
-> +		exit(EXIT_FAILURE);
-> +
-> +Now that the file is open, we can do some operations::
-> +
-> +	int ret;
-> +
-> +	/* Write function */
-> +	uint8_t  buf[] = {0x00, 0xde, 0xad, 0xbe, 0xef};
-> +	ret = write(fd, buf, 5);
-> +	if (ret != 5) {
-> +		/* ERROR HANDLING: I3C transaction failed */
-> +	}
-> +
-> +	/*  Read function */
-> +	ret = read(fd, buf, 4);
-> +	if (ret < 0) {
-> +		/* ERROR HANDLING: I3C transaction failed */
-> +	} else {
-> +		/* Iterate over buf[] to get the read data */
-> +	}
-> +
-> +	/* IOCTL function */
-> +	struct i3cdev_xfer xfers[2] = {0}; /* Must zero out for compatibility */
-> +	struct i3cdev_xfers xfers_metadata = { .nxfers = 2,
-> +					       .xfers = (uintptr_t) xfers,
-> +					       .xfer_size = sizeof(struct i3cdev_xfer)
-> +					     };
-> +
-> +	uint8_t tx_buf[] = {0x00, 0xde, 0xad, 0xbe, 0xef};
-> +	uint8_t rx_buf[10];
-> +
-> +	xfers[0].data = (uintptr_t) tx_buf;
-> +	xfers[0].len = 5;
-> +	xfers[0].rnw = 0;
-> +	xfers[1].data = (uintptr_t) rx_buf;
-> +	xfers[1].len = 10;
-> +	xfers[1].rnw = 1;
-> +
-> +	ret = ioctl(fd, I3CDEV_XFER, (uintptr_t) &xfers_metadata);
-> +	if (ret < 0) {
-> +		/* ERROR HANDLING: I3C transaction failed */
-> +	} else {
-> +		/* For reads, optionally verify that the response matches expectations */
-> +		assert(xfers[1].len == xfers[1].actual_len);
-> +
-> +		/* For reads, iterate through response data using xfers[i].actual_len */
-> +	}
-> +
-> +The device can be closed when the open file descriptor is no longer required::
-> +
-> +	close(fd);
-> \ No newline at end of file
+We can keep read()/write() defaulting to I3C_SDR out of the box, and add an
+ioctl (e.g. I3C_IOC_SET_MODE) to allow configuring the default mode and
+command byte for that file descriptor if a user wants to use read()/write()
+with HDR. How does that sound?
 
-Fix the warning above, please.
-Also:
-Documentation/userspace-api/i3c/i3cdev.rst: WARNING: document isn't included in any toctree [toc.not_included]
+>How about this driver built-in and other devices build as modules, modules
+>load maybe later than this driver?
 
-add that file to the table of contents (somewhere).
+This scenario is handled automatically by our bus notifier
+(i3cdev_notifier_call):
 
-thanks.
--- 
-~Randy
+When i3cdev is built-in, it attaches to unbound target devices at boot. If a
+device driver module is loaded later (e.g. via modprobe), the driver core
+emits BUS_NOTIFY_BIND_DRIVER right before binding the new driver.
 
+Our notifier listens for BUS_NOTIFY_BIND_DRIVER and immediately calls
+i3cdev_detach(), which unregisters the device clears i3cdev->i3c.
+That way, i3cdev automatically steps aside whenever a dedicated driver
+loads. And if that module is ever unloaded later, BUS_NOTIFY_UNBOUND_DRIVER
+triggers i3cdev_attach() to re-expose the /dev node.
+
+Thanks,
+Sam
 
 -- 
 linux-i3c mailing list
