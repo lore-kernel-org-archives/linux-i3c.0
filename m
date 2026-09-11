@@ -4,39 +4,39 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 45DE6C88E53
-	for <linux-i3c@archiver.kernel.org>; Fri, 11 Sep 2026 21:10:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3841DC88E56
+	for <linux-i3c@archiver.kernel.org>; Fri, 11 Sep 2026 21:10:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=44Kl0VZvzrY2Y1xX7gE0yrDEBvqn0TAPdwi/f45LoQc=; b=VyfzrAicDliuSh
-	4dap71+UpWfuEeIvTyT0EJ7oD8DXY2PtrX1QWY72Cv0dc3QesDBYLk/t+W0tQkSZMFRyttMg0dco5
-	yvdLQmDBSC5hDBOpJ8Qrrugl2lj3A5wSl4nXAetW+gWsRZQZpAOZHI2gx+sC7kG1euYr2HqMBdGJT
-	z5qf9jnRXYT4wJYpeVN0p36yHVgFUD8q33MRTbdO6iCfqenv7BiEJ5EgQjDX1V1j85W0vb701DXgn
-	NgJgfZQL25dJaNw4eSF72Xlsd/WnWTpw12VCyyGi1T2/XyynqAdM07goZ+k14c0+n077AW+6DRmd0
-	/lJGomcct8M4DX4Ytn0A==;
+	List-Owner; bh=dJXTiz/civjHF4J4i25LNMdjO4J6/+W7yMSdS6tF+AU=; b=cS/24hfEgiWc8Z
+	w6xZXxzr9AACXmeWxuDZlaxqY0lKCES3GPBfaiRGFE/pY5G5mY5G4ew6rY6CvPew8MSkEL8Hp9rqK
+	vwLZz9h8/xlGoQsCJbmzhrMEuQInnEUOt3dgQyWCIkRAw+4goiddud4qLOQEaNpZhkx537CSzxgNp
+	sY+v7Zai0fG+EQ8MQv6fW9LfY/cz2h+WBD9biSwow9PDZPNgL/B2fObx+iQbiKG5u6KiC29Ua1Omw
+	ZaW9qZB6MrknF22PTu1BzdJu6f084gHh43+/2Y5+yVcdypIoDqsoLkx/u9rPprReKHbWdfxIsWjjz
+	iJ9j/xeT9M4zc2PGUc/Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x58W3-000000009AM-3zLF;
-	Fri, 11 Sep 2026 21:10:35 +0000
+	id 1x58W6-000000009B6-0BxM;
+	Fri, 11 Sep 2026 21:10:38 +0000
 Received: from linux.microsoft.com ([13.77.154.182])
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x58W1-0000000099W-2qCJ
+	id 1x58W3-000000009A1-1eYJ
 	for linux-i3c@lists.infradead.org;
-	Fri, 11 Sep 2026 21:10:34 +0000
+	Fri, 11 Sep 2026 21:10:36 +0000
 Received: by linux.microsoft.com (Postfix, from userid 1223)
-	id EB2D120B716A; Fri, 11 Sep 2026 14:09:50 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com EB2D120B716A
+	id 6E14A20B716C; Fri, 11 Sep 2026 14:09:53 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com 6E14A20B716C
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.microsoft.com;
-	s=default; t=1789160990;
-	bh=Z5BYHRojbzYvp+T4LUdSyrCMr6yXtuD1XFpIZRp+i8o=;
+	s=default; t=1789160993;
+	bh=gAccggQiR6cHWMQ7IKOcnlWbv/MGGLk9GbykqygO1Aw=;
 	h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
-	b=NqeRpJImOddxShGQf4U2xaHK7fZ7yH1CImhW9uttcgOKD7nUDRhJDQ/jrF6b0gbFZ
-	 9c6ouiUNd0IQS7ml/gWJWMg0/7w2doKxSPyqkMMBo4izTGZxg87yOrp3F85yLYyCby
-	 Ls7JJyMvfX0XHBllOBRKlcJwp0yzf4WWlMONKdVo=
+	b=nX6cfD4jd5TstRq/desWkVf3UEI4LCLq3aWR+9Z6bFQwQNLakk8uBV8lxE8WGbUkZ
+	 YZGdS1b8X8PVtVESD6YVqkCceT2AN/IBu+dxcbBmm13sp7N09gfZsgHt2C5LIBD4bk
+	 5Zs8rwJgSDaDEoJTTcdLn9x4/zWZeLutDRM5L6Qw=
 From: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
 To: linux-i3c@lists.infradead.org
 Cc: meaganlloyd@linux.microsoft.com,
@@ -84,16 +84,16 @@ Cc: meaganlloyd@linux.microsoft.com,
 	linux-hwmon@vger.kernel.org,
 	linux@analog.com,
 	linux-iio@vger.kernel.org
-Subject: [PATCH 1/3] i3c: master: enable driver_override for I3C
-Date: Fri, 11 Sep 2026 14:09:33 -0700
-Message-ID: <20260911210935.1353126-2-meaganlloyd@linux.microsoft.com>
+Subject: [PATCH 2/3] i3c: set i3c_xfer.actual_len in controller drivers
+Date: Fri, 11 Sep 2026 14:09:34 -0700
+Message-ID: <20260911210935.1353126-3-meaganlloyd@linux.microsoft.com>
 X-Mailer: git-send-email 2.43.7
 In-Reply-To: <20260911210935.1353126-1-meaganlloyd@linux.microsoft.com>
 References: <20260911210935.1353126-1-meaganlloyd@linux.microsoft.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260911_141033_738887_F6C52335 
-X-CRM114-Status: GOOD (  14.75  )
+X-CRM114-CacheID: sfid-20260911_141035_463408_276F2784 
+X-CRM114-Status: GOOD (  13.59  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -110,130 +110,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-Opt-in to driver_override sysfs functionality for I3C subsystem.
+Set i3c_xfer.actual_len for reads across the I3C Controller drivers.
 
-Update some I3C drivers that are assuming that if their .probe is
-invoked that the bus match function already checked the ID table. Go
-ahead and verify in .probe that i3c_device_match_id() returns a valid
-match before using the i3c_device_id pointer.
+actual_len provides a consistent location for device drivers to know the
+read response bytes without overriding the len field.
 
 Signed-off-by: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
-Assisted-by: Claude:claude-opus-4.8 copilot
 ---
- drivers/hwmon/lm75.c                        |  7 ++++++-
- drivers/hwmon/tmp108.c                      |  2 ++
- drivers/i3c/master.c                        |  6 ++++++
- drivers/iio/adc/ad4062.c                    | 10 ++++++++--
- drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c |  3 +++
- 5 files changed, 25 insertions(+), 3 deletions(-)
+ drivers/i3c/master/adi-i3c-master.c    | 5 ++++-
+ drivers/i3c/master/dw-i3c-master.c     | 4 +++-
+ drivers/i3c/master/i3c-master-cdns.c   | 5 ++++-
+ drivers/i3c/master/mipi-i3c-hci/core.c | 5 ++++-
+ drivers/i3c/master/renesas-i3c.c       | 3 +++
+ 5 files changed, 18 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/hwmon/lm75.c b/drivers/hwmon/lm75.c
-index 104149a03bad..0d3c843d1823 100644
---- a/drivers/hwmon/lm75.c
-+++ b/drivers/hwmon/lm75.c
-@@ -888,6 +888,7 @@ MODULE_DEVICE_TABLE(i3c, lm75_i3c_ids);
- static int lm75_i3c_probe(struct i3c_device *i3cdev)
- {
- 	struct device *dev = i3cdev_to_dev(i3cdev);
-+	const struct i3c_device_id *id;
- 	const struct lm75_i3c_device *id_data;
- 	struct regmap *regmap;
+diff --git a/drivers/i3c/master/adi-i3c-master.c b/drivers/i3c/master/adi-i3c-master.c
+index b35386260350..d033bfd4ecc2 100644
+--- a/drivers/i3c/master/adi-i3c-master.c
++++ b/drivers/i3c/master/adi-i3c-master.c
+@@ -412,8 +412,11 @@ static int adi_i3c_master_i3c_xfers(struct i3c_dev_desc *dev,
  
-@@ -895,7 +896,11 @@ static int lm75_i3c_probe(struct i3c_device *i3cdev)
- 	if (IS_ERR(regmap))
- 		return PTR_ERR(regmap);
+ 	ret = xfer->ret;
  
--	id_data = i3c_device_match_id(i3cdev, lm75_i3c_ids)->data;
-+	id = i3c_device_match_id(i3cdev, lm75_i3c_ids);
-+	if (!id)
-+		return -ENODEV;
-+
-+	id_data = id->data;
+-	for (i = 0; i < nxfers; i++)
++	for (i = 0; i < nxfers; i++) {
+ 		xfers[i].err = adi_i3c_cmd_get_err(&xfer->cmds[i]);
++		if (xfers[i].rnw)
++			xfers[i].actual_len = xfer->cmds[i].rx_len;
++	}
  
- 	return lm75_generic_probe(dev, id_data->name, id_data->type, 0, regmap);
+ 	return ret;
  }
-diff --git a/drivers/hwmon/tmp108.c b/drivers/hwmon/tmp108.c
-index 1c4a58855e2d..98076ae8dce8 100644
---- a/drivers/hwmon/tmp108.c
-+++ b/drivers/hwmon/tmp108.c
-@@ -581,6 +581,8 @@ static int p3t1085_i3c_probe(struct i3c_device *i3cdev)
- 				     "Failed to register i3c regmap\n");
+diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
+index 4563d8761ba0..54406e31c870 100644
+--- a/drivers/i3c/master/dw-i3c-master.c
++++ b/drivers/i3c/master/dw-i3c-master.c
+@@ -1028,8 +1028,10 @@ static int dw_i3c_master_i3c_xfers(struct i3c_dev_desc *dev,
+ 	for (i = 0; i < i3c_nxfers; i++) {
+ 		struct dw_i3c_cmd *cmd = &xfer->cmds[i];
  
- 	id = i3c_device_match_id(i3cdev, p3t1085_i3c_ids);
-+	if (!id)
-+		return -ENODEV;
+-		if (i3c_xfers[i].rnw)
++		if (i3c_xfers[i].rnw) {
+ 			i3c_xfers[i].len = cmd->rx_len;
++			i3c_xfers[i].actual_len = cmd->rx_len;
++		}
+ 	}
  
- 	return tmp108_common_probe(dev, regmap, "p3t1085_i3c", id->data);
- }
-diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index afcd7a21a3e6..42bc9a923d81 100644
---- a/drivers/i3c/master.c
-+++ b/drivers/i3c/master.c
-@@ -340,10 +340,15 @@ static int i3c_device_match(struct device *dev, const struct device_driver *drv)
- 	struct i3c_device *i3cdev;
- 	const struct i3c_driver *i3cdrv;
- 	u8 static_addr_method = 0;
-+	int ret;
+ 	ret = xfer->ret;
+diff --git a/drivers/i3c/master/i3c-master-cdns.c b/drivers/i3c/master/i3c-master-cdns.c
+index 2d98c1ce9b12..331062c10b31 100644
+--- a/drivers/i3c/master/i3c-master-cdns.c
++++ b/drivers/i3c/master/i3c-master-cdns.c
+@@ -795,8 +795,11 @@ static int cdns_i3c_master_i3c_xfers(struct i3c_dev_desc *dev,
  
- 	if (dev->type != &i3c_device_type)
- 		return 0;
+ 	ret = cdns_xfer->ret;
  
-+	ret = device_match_driver_override(dev, drv);
-+	if (ret >= 0)
-+		return ret;
+-	for (i = 0; i < nxfers; i++)
++	for (i = 0; i < nxfers; i++) {
+ 		xfers[i].err = cdns_i3c_cmd_get_err(&cdns_xfer->cmds[i]);
++		if (xfers[i].rnw)
++			xfers[i].actual_len = cdns_xfer->cmds[i].rx_len;
++	}
+ 
+ 	cdns_i3c_master_free_xfer(cdns_xfer);
+ 
+diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+index dadf049bd4b5..29fa68e29484 100644
+--- a/drivers/i3c/master/mipi-i3c-hci/core.c
++++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+@@ -508,8 +508,11 @@ static int i3c_hci_i3c_xfers(struct i3c_dev_desc *dev,
+ 	if (ret)
+ 		goto out;
+ 	for (i = 0; i < nxfers; i++) {
+-		if (i3c_xfers[i].rnw)
++		if (i3c_xfers[i].rnw) {
+ 			i3c_xfers[i].len = RESP_DATA_LENGTH(xfer[i].response);
++			i3c_xfers[i].actual_len = RESP_DATA_LENGTH(xfer[i].response);
++		}
 +
- 	i3cdev = dev_to_i3cdev(dev);
- 	i3cdrv = drv_to_i3cdrv(drv);
- 
-@@ -890,6 +895,7 @@ const struct bus_type i3c_bus_type = {
- 	.probe = i3c_device_probe,
- 	.remove = i3c_device_remove,
- 	.shutdown = i3c_device_shutdown,
-+	.driver_override = true,
- };
- EXPORT_SYMBOL_GPL(i3c_bus_type);
- 
-diff --git a/drivers/iio/adc/ad4062.c b/drivers/iio/adc/ad4062.c
-index 8e5984055b15..f28b503d16eb 100644
---- a/drivers/iio/adc/ad4062.c
-+++ b/drivers/iio/adc/ad4062.c
-@@ -1482,14 +1482,20 @@ MODULE_DEVICE_TABLE(i3c, ad4062_id_table);
- 
- static int ad4062_probe(struct i3c_device *i3cdev)
- {
--	const struct i3c_device_id *id = i3c_device_match_id(i3cdev, ad4062_id_table);
--	const struct ad4062_chip_info *chip = id->data;
-+	const struct i3c_device_id *id;
-+	const struct ad4062_chip_info *chip;
- 	struct device *dev = &i3cdev->dev;
- 	struct iio_dev *indio_dev;
- 	struct ad4062_state *st;
- 	bool ref_sel;
- 	int ret;
- 
-+	id = i3c_device_match_id(i3cdev, ad4062_id_table);
-+	if (!id)
-+		return -ENODEV;
+ 		if (RESP_STATUS(xfer[i].response) != RESP_SUCCESS) {
+ 			ret = -EIO;
+ 			goto out;
+diff --git a/drivers/i3c/master/renesas-i3c.c b/drivers/i3c/master/renesas-i3c.c
+index 28c0927a0179..a3dcb4cd9b0e 100644
+--- a/drivers/i3c/master/renesas-i3c.c
++++ b/drivers/i3c/master/renesas-i3c.c
+@@ -918,6 +918,9 @@ static int renesas_i3c_i3c_xfers(struct i3c_dev_desc *dev, struct i3c_xfer *i3c_
+ 		time_left = renesas_i3c_wait_xfer(i3c, xfer);
+ 		if (!time_left)
+ 			xfer_failed = true;
 +
-+	chip = id->data;
-+
- 	indio_dev = devm_iio_device_alloc(dev, sizeof(*st));
- 	if (!indio_dev)
- 		return -ENOMEM;
-diff --git a/drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c b/drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
-index cb5c5d7e1f3d..153a03e06801 100644
---- a/drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
-+++ b/drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
-@@ -32,6 +32,9 @@ static int st_lsm6dsx_i3c_probe(struct i3c_device *i3cdev)
- 	struct device *dev = i3cdev_to_dev(i3cdev);
- 	struct regmap *regmap;
++		if (i3c_xfers[i].rnw)
++			i3c_xfers[i].actual_len = cmd->rx_count;
+ 	}
  
-+	if (!id)
-+		return -ENODEV;
-+
- 	regmap = devm_regmap_init_i3c(i3cdev, &st_lsm6dsx_i3c_regmap_config);
- 	if (IS_ERR(regmap)) {
- 		dev_err(dev, "Failed to register i3c regmap %ld\n", PTR_ERR(regmap));
+ 	if (xfer_failed)
 -- 
 2.49.0
 
