@@ -4,88 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BBA8CC79FB6
-	for <linux-i3c@archiver.kernel.org>; Sat, 12 Sep 2026 10:14:57 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3A078C79FB6
+	for <linux-i3c@archiver.kernel.org>; Sat, 12 Sep 2026 11:12:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
-	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MZGUVyoSuFXi2t/UoGyJqYzOCc9ia7GgUMtEMqGaVyk=; b=gd1nMo12MVOb1v
-	7UwFObnNg/NmKEXNuWXWD3xqz8QQ0iO7S8jU26glyE0BszikynDyPD/RVaaD/ZlTpMwXssW3HNaFt
-	0k7dEYBvH6qk22e+gznxNVFAJb7TuSqLTJ0bSx0rBrDNqDvUmwF6UBFvjYglGoo+NcHB8c84cvJlf
-	g+87MvbMx942E3E5AIKCwB73ef+BXbtQPBXGsuJrClJa8AqYo+j+ul0IjTk4GSlwhfiStKPpINsWr
-	F25HpdPCAmNaHYotiYoCWf29+NNDMJdeTFRgUTaJG36M7K/L4ua6SZ8QLkQt4J1IGtqthe0NXSDw6
-	Hk0iSPjW5Lne49mTc8BA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SfaigyHxagsVwkx242JyqbE6ferFvDwg/xdA7T1hIrU=; b=uJnPjKO74li2zi
+	wzV+FulN0CwSQ2Q4xq/1VPOrqBkokKe516vZ2Ju1ZXFvymEw3nyG7PgAV5z8xpbeT/Gv29Pw9/jl/
+	VsrP48HIdj3j4E+T3xuRehKm5BvCvlGxUX2p5fQ2lzJoVGZLgfinVXZT9eiA4AB4tmN9LHFzmxzp1
+	zIjrCH2cnZIBuNlMmspP5RAH3envyT8iSxNQt+NHVpMqyKk2XwJLNqoDHG1AZKSmIRQ9s+2qlh2pN
+	1nBzJETrrp68erHzjHXn0vPj7OwvoS5jKKkjhI04biMVz7O3D1yNHoTZDWLhccpSo8CPE8R5fmoib
+	kn6k8o+AnBbS23VBUKbw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5Kl6-00000000ldr-3CTI;
-	Sat, 12 Sep 2026 10:14:56 +0000
-Received: from mail-wr2-x10.google.com ([2a00:1450:4864:30::10])
+	id 1x5LfC-00000000oc9-3iru;
+	Sat, 12 Sep 2026 11:12:54 +0000
+Received: from zeus03.de ([194.117.254.33] helo=mail.zeus03.de)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5Kl3-00000000ldJ-2oK9
+	id 1x5Lf7-00000000obe-27yX
 	for linux-i3c@lists.infradead.org;
-	Sat, 12 Sep 2026 10:14:54 +0000
-Received: by mail-wr2-x10.google.com with SMTP id ffacd0b85a97d-485933b2522so501335f8f.0
-        for <linux-i3c@lists.infradead.org>; Sat, 12 Sep 2026 03:14:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1789208092; x=1789812892; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to:content-type;
-        bh=H5x40OxYDvxFMzPZcVcWtoNFOUFKVGLR5yHPdEAqjHg=;
-        b=WfW0HdtdX21GNUmCZBkAZFww7AfRoMe98hOpAKKCW7+A3MYIlwyjMWn9XF+ZLv4XMi
-         reYCdBHKbrk3W8WRZvm+66PVruxCn9xEYtKgbS2RQzo8h9UicZ5xrRPu4FMwEnBU9Ldh
-         iL3GxF2q4y9XD8v5ty2QIsGtFTZ5reFyPz8FETnAj/0EDACE49FT7ltIyl3NjyG04/Mv
-         7KEwg01jc6q9e9+tx7dQoJy+gf7XxHViFadyUd7q+XYkz+5DFwa9Jb88xUxjmHFbzNC5
-         dUAry7Rw0SZTnIzfGVnJKqQ8FW3OFGKDpDw+wTNZEDI0NgTJrfDvrMWPFYWcHbBBwJkm
-         J/GA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1789208092; x=1789812892;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to:content-type;
-        bh=H5x40OxYDvxFMzPZcVcWtoNFOUFKVGLR5yHPdEAqjHg=;
-        b=D1lSZD1fes5O50AK/yIcsXtzAuKEyF8L3gxyZwmyLYibi9Uy6IBsmE/1eh3H98aBYU
-         wJrSVkIP2e/XaVZhuR95WdSXBGvThqMb6WI/qRgC71wIPsPzfrD3/4GYX0iNjcfT04di
-         3APFFto5Ww4Cai/PfpqetEbnHTi8VZrkSUKkqd3j7k/otduo53YPHauJpqgRSA21B6rX
-         NvqjCENq0BbKD4GogrlRL5fi8pZEbs/GqetmsHfgxPW1zPylg+HIL/s9igxqiNrHmGjE
-         Mko1SD40oDbt8NbFHoJ9tRF0jGLZqYF9TDMRbiBhy30i2O/huryF6XTgIZ8CBaUFvkx7
-         NOnw==
-X-Forwarded-Encrypted: i=1; AKwUvBxqmS5jBZHgSc4m6XWBm6NCoa9JXWvZnLXpT9MAiTpxuU3dEPjaoZ3oGfrYf+gsRZCcgT27Caxwrp8=@lists.infradead.org
-X-Gm-Message-State: AFuF++m/8ucRucl6FLmbXhASrRwXOncjHNL88njCB1rKrLp/vHTR4+hZ
-	qgr5VFC2frgEIVe9PjcwHQsXOWFinjIjoApqEbizJ7OCkUIUJBOEXA2s
-X-Gm-Gg: AYBFou1oG9KRUC+6Y+jn7PgbJuBjudM0CWiiloHxp4l5qPcvZ7/zZ4PkQNMaEgtLMdb
-	w02ntODeYA5cjqPks0YP9r9OEoU/GVfN9d1AS5hs/fTvIEANulZTSj1Yzb7Zs6bXS8fs+33z4wi
-	CWWNcWBay+KH4eU1a5PDwvr2sNtsotRuXU4ENB5FR+4OfZrfwU19Aeo2x98DeF+r599oxjv/Shy
-	HRjK1TjezKOggH5UISE5+GI8Ca888K/nq+375fsA3R9mhNFCqZkb1h/TlzvcbqFYfWrJOSK+9ci
-	TQ3epRBcL/V59UPcx2tBNrr+hyc1hSPL2iH1BXgFTbMjwT8tcC9/vnp5YVw8ArGXvqLkLwuPvXp
-	oAB88ZNM52ncWbdoKe9ALQ1zS4TyK1iwPqRIy1okqmEU6Qq17R44aocrFjohZwuWLQIjkTQgnjD
-	EMXerMApf/rgrW3QGxeGat4c0Hq4ZOGQDZIpfQ92elWNYBiSiG5wjEjuXDbf6gol3edbACvak11
-	+QAP55XL+xBwxRhqZGhzjssn+84M+9HuiT7KgT24zKU62ixmUCXteu3UewzQXrT/3u6AmoqQ2Sz
-	O/UUTE7Zha6+bLL9WZznZQBMheBiTH3H7Hfa8UnBKUp8JezxG8sh9wbmWzIhdxX4nbgSGItZ0AR
-	uKA==
-X-Received: by 2002:adf:e310:0:b0:484:3310:c4fe with SMTP id ffacd0b85a97d-486eb3522afmr14079509f8f.25.1789208091656;
-        Sat, 12 Sep 2026 03:14:51 -0700 (PDT)
-Received: from localhost.localdomain (dynamic-2a02-3100-b260-f201-9983-e8c4-aff5-7a36.310.pool.telefonica.de. [2a02:3100:b260:f201:9983:e8c4:aff5:7a36])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-486eb33ee5csm12085997f8f.20.2026.09.12.03.14.49
-        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
-        Sat, 12 Sep 2026 03:14:50 -0700 (PDT)
-From: Karl Mehltretter <kmehltretter@gmail.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Karl Mehltretter <kmehltretter@gmail.com>,
-	Boris Brezillon <boris.brezillon@collabora.com>,
+	Sat, 12 Sep 2026 11:12:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	sang-engineering.com; h=date:from:to:cc:subject:message-id
+	:references:mime-version:content-type:in-reply-to; s=k1; bh=97bh
+	hKMklXsw2yqKWEvcfcOq9VlutyKT3Iaes2zDJNc=; b=XJaWFpm9w4ZrmxkpcMf8
+	iQq0H2NwptLuHJ0CRTgrTiXxMarCZH767mle4CFo3vz2UDmwvXDuU4vXBMMc6koP
+	KqApJTvK6Qnzg68Ilus2TAm8OKEp4fIZb8E5zoSqeSRBb5del/tC9jlUdopqutCc
+	Ba7jjL9TDV9o2rYKE+DUfnQmqbUAikZ65p8F1ilRaFZbHoHtvO4U/RU2s47LuQTY
+	4QiYJe0y6sLKZ12nzY0PSHA7uyZ9Pyxtx4XZZFtymKL4s9+GK0LP0dgkRf/wx0Pt
+	3y7OAgzlaXipcEMyO9god2bjfDK7iYtLVlk6niwM5PSbdakOb2DO21MA4LHAZCVt
+	MA==
+Received: (qmail 5143 invoked from network); 12 Sep 2026 13:12:43 +0200
+Received: by mail.zeus03.de with ESMTPSA (TLS_AES_256_GCM_SHA384 encrypted, authenticated); 12 Sep 2026 13:12:43 +0200
+X-UD-Smtp-Session: l3s3148p1@6MOtR0dbupAujnsz
+Date: Sat, 12 Sep 2026 13:12:43 +0200
+From: Wolfram Sang <wsa+renesas@sang-engineering.com>
+To: Sam Agazaryan <samagazaryan@google.com>
+Cc: linux-i3c@lists.infradead.org,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
 	Frank Li <Frank.Li@nxp.com>,
-	linux-i3c@lists.infradead.org,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Arnd Bergmann <arnd@arndb.de>,
+	Vitor Soares <vitor.soares@toradex.com>,
+	Oleksandr Shulzhenko <oleksandr.shulzhenko.viktorovych@intel.com>,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH] i3c: master: Fix i2c_dev_get_master_data() reference in kernel-doc
-Date: Sat, 12 Sep 2026 12:14:46 +0200
-Message-Id: <20260912101446.86506-1-kmehltretter@gmail.com>
-X-Mailer: git-send-email 2.39.5 (Apple Git-154)
+Subject: Re: [PATCH v4 0/3] i3c: Introduce i3c device userspace interface
+Message-ID: <aqUzq9MIS8hBFDtD@ninjato>
+References: <20260906202747.4041389-1-samagazaryan@google.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20260906202747.4041389-1-samagazaryan@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260912_031453_717867_B74506BB 
-X-CRM114-Status: GOOD (  10.08  )
+X-CRM114-CacheID: sfid-20260912_041250_426315_62A81DBD 
+X-CRM114-Status: UNSURE (   6.61  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -102,32 +77,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The i2c_dev_set_master_data() comment names the corresponding getter as
-i2c_device_get_master_data(). The getter is i2c_dev_get_master_data().
-Correct the reference.
 
-Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
-Assisted-by: LLM
-Signed-off-by: Karl Mehltretter <kmehltretter@gmail.com>
----
- include/linux/i3c/master.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+> [2] https://github.com/vitor-soares-snps/i3c-tools
 
-diff --git a/include/linux/i3c/master.h b/include/linux/i3c/master.h
-index f7ceec2b447738a6612b974de1696d45b261d1ad..b8222bddd46e36cb23787685a3eaa9832d00645a 100644
---- a/include/linux/i3c/master.h
-+++ b/include/linux/i3c/master.h
-@@ -709,7 +709,7 @@ static inline void *i2c_dev_get_master_data(const struct i2c_dev_desc *dev)
-  * @data: private data
-  *
-  * This functions allows a master controller to attach per-device private data
-- * which can then be retrieved with i2c_device_get_master_data().
-+ * which can then be retrieved with i2c_dev_get_master_data().
-  */
- static inline void i2c_dev_set_master_data(struct i2c_dev_desc *dev,
- 					   void *data)
--- 
-2.39.5 (Apple Git-154)
+An idea: because this project only contains 'i3ctransfer' at the moment,
+it probably makes sense to provide this tool with the Kernel, placed in
+the 'tools' directory? We can seperate it again if it becomes too big or
+we want its own community there. But for now, I think it could make
+sense unless you want to maintain this repo as well?
+
+Happy hacking!
 
 
 -- 
