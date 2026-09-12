@@ -4,108 +4,107 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EE9A2C88E50
-	for <linux-i3c@archiver.kernel.org>; Fri, 11 Sep 2026 23:57:46 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 92260C88E50
+	for <linux-i3c@archiver.kernel.org>; Sat, 12 Sep 2026 00:12:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UmhvU77sMIEIbsq4JkaU6Qz+Nha+I3DChtwg84v5Uyw=; b=4PcjVmLbMYXKk2
-	J9U8gsI+Q3RqpB8anLadN3PbMu/JHZNjBqUxp1eqOXho+6LdVOzy0wk5PmzW5IHjvdeKsrxgss0Bw
-	26w+QwKEVxhKxvnV282/VO7jeoDox2/Zz2RzIpucUYpnsvG6hVuh3tcc8/7Z4aGvGaptyQ6mC2txc
-	9DMKyASa/ETFFj+I7L+RIAqEjc6lgWDC1pAvSzxTCBHFDbOOj1QTuK4Pr9USiDemh2zxxulCAgI+m
-	S8e6PqbOMuSxiheYN7qIgh4iVyn2Xuswas8cmrs5tXHwD0FhuVmyYtwEp/LQZ7NQhBRhz3v3Nxpmk
-	zADO1saosX5zwoIC8bvw==;
+	List-Owner; bh=4KBF9mTFChF+fHUvpIFONxaIhIebPiI7Ww5b6gvftL4=; b=vOOCzLt7RX+tlt
+	AuOCNY9vBtIZE5MiOJ3TiMf2cn8CT9cBEeSfOHufPsCVlok5FFefX7XXGZ+5txQf3aOoz08INj4kl
+	l9WCZgWPl1o3+IovE+mMlfJpsv018FU8E98S9P50x7/jYB8ZlIF/gsCTz/GS8gR3XHYz0M9W7/qBJ
+	ng+mq3wQDeN+gPkj0FPSH1vHHVVS0sHbRY6sDeqxCCUZSy5vetTg1Q9C1U0Cqtky7WfLt5X4k91ZK
+	R5G2hhwpeJOP7KtfzqlOanh0DnBGg+5ycbJJIke2K67ypPRfGFRY2mzrXlfNpZw+JwCX4m3YppegE
+	c6kuNK4DfZHv6q1Vn64w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5B7q-00000000PFa-0yBr;
-	Fri, 11 Sep 2026 23:57:46 +0000
+	id 1x5BMW-00000000Qsc-2Fyy;
+	Sat, 12 Sep 2026 00:12:58 +0000
 Received: from mail-yx2-x10.google.com ([2607:f8b0:4864:41::10])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5B7o-00000000PFH-0jx7
+	id 1x5BMT-00000000QsH-2qmJ
 	for linux-i3c@lists.infradead.org;
-	Fri, 11 Sep 2026 23:57:45 +0000
-Received: by mail-yx2-x10.google.com with SMTP id 00721157ae682-85d43db0c16so1161417b3.1
-        for <linux-i3c@lists.infradead.org>; Fri, 11 Sep 2026 16:57:42 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1789171062; cv=none;
+	Sat, 12 Sep 2026 00:12:54 +0000
+Received: by mail-yx2-x10.google.com with SMTP id 00721157ae682-85d4ddd179eso4333337b3.3
+        for <linux-i3c@lists.infradead.org>; Fri, 11 Sep 2026 17:12:53 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1789171972; cv=none;
         d=google.com; s=arc-20260327;
-        b=R8J6N5OBFw1wWImowOjyYQyyPnV8ymycfIznmQHkrfWeFLpALN7XfrNbZ4Hx974Z80
-         CeN2MFm3ZbCQJTXnXF1ndXH9OcrBobr+GDWgZMZQeILKI470YE3lAFHRCufX3fVIrXw7
-         6/g8pvsyi76miWuRTDpSN8IATLli5IHNvbLpIkPrJqKDYxv3VcAi30oxeOCOqx7RphNh
-         C6WcjjM5i1t/EWSUH7r+EGVFDpQ55SFaFlz2GmGiFfUVpWYhMKDRi4sV/ENOxql1Kkri
-         PQ4+DXkXK6jXk/yTKdnr112o4W0Sj9pLHOoRQQbLd4ThKMb+4mAOLgKhNLFBwLIUrU8s
-         JIfg==
+        b=WQYPjb6WfFY7mHRlqAqDJXYSh1Dx33v7PYQf/M91ixPXXYAG8Kp+pqmXjnpUnu4tJu
+         NyuIVuHfa0PCJJkyIPY0Hav7lvfi+WnFNpKfMsrP4ICJaKqJoDxQwDeQ+25j0GWQ0xy0
+         feAPY+ao/r1prWOmJt/bD6k3RFzS6GQb+5DQyOapuNdTLOrR5p4pVWxi17vgaKoshr2D
+         Oiv1bHumU45plOw0rlo2hh4Ic+DHhc/pRqKMEs42Qev+9r325T4xmDASaB702s/GIi/Z
+         QF0yKIu2a3oLOo7eVvxKDb04DqBefKl1VMVmQlOCB0KUDtIPqVyFrk0oaJAsM2lEIT2u
+         RXOA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
         h=cc:to:subject:message-id:date:from:in-reply-to:references
          :mime-version:dkim-signature;
-        bh=WQq2pAxxltC3cCwqlUs0gtYpd6fcKoy7z/dHR1GPO7Q=;
-        fh=U/ZmURP1WhCNPRSyIWzrUaTM97yhfkNob/TLz4j6RcE=;
-        b=jSHi8HDb24WyteGr3GQqDWkBE52Rv5Ku5s4/qFHek64tgyrqiTSM7PsMSqZ4cH022d
-         fVKS/+yl1ZCn6NMUnHX6iFF9PwFCsql+ww8n079p92bGu4gBaAf7LmD3RTGqNHsEnltT
-         C1VkKn3fTG04pIZlzYMpJLB5epmkTdN7dMj42Ve1MzRr1ycAOtLebDX2urGTD8VwWiEJ
-         NCUCj551d8P1MT4T3s2RR5toLuYF4VCLA2S01wyVMxfMFW/drZfp3pyBSN9gqKy5q4p3
-         u6y/dKBz+tGsSKtOXWEKSfmq5iJN6knRWViwFdQkP3uaYYiZmoeAN0LXO+NxMdDAhHpp
-         QbEg==;
+        bh=xQ76fY6ulaYNYKwPfApE+ipglZPuPZv8sU5oC2IS+ko=;
+        fh=A5pWKK+nf9vF5Bi3i1Ym6tdQvmG2NmeLe+sV/WVhclQ=;
+        b=rT2ViJM5KAXTvGH6+VexKwaFPUAXr5MPPIKICtJZUE81xdll2aIcRhFc/3E0g+Yft1
+         HuhfklCyNjPvXSxXc0XYGPdMp2N9AK0ZOs9WoAiqj+jDzQi4zI7nB0t3iDWuyvEUzzEY
+         8cJAbRodtc/GpTbwDe7Jvev3hBwBUS0zcoaABnQGtgumgn6MIaw4TxKpKiBwhzj5nQ4v
+         ghBrqEo1Gp5oQkNQ3c6jEYa5hyWTqCIKZbjHD0zphgQjb1gxkG4+NDn5cQU6h5mfluXu
+         PbfpDMhQkqLfjz4wVCkWhrsNMzi9nznbFJh9sUCiW82Dig7taRR5TcN41440lNpzY5ha
+         Pd0w==;
         darn=lists.infradead.org
 ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20251104; t=1789171062; x=1789775862; darn=lists.infradead.org;
+        d=google.com; s=20251104; t=1789171972; x=1789776772; darn=lists.infradead.org;
         h=content-type:cc:to:subject:message-id:date:from:in-reply-to
          :references:mime-version:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=WQq2pAxxltC3cCwqlUs0gtYpd6fcKoy7z/dHR1GPO7Q=;
-        b=tZ6MPDaIHyTyKQQavQSogmH8twgKRWMvt6/Ozd8639AvepkW3JoFlPPfsZYjJHnMcR
-         +l/53iIhbWB0d3ZLByF17Pp8pRFRczwQksJlx5/CtRaf9t0cSwQ4LxJFWM3uI65pqThI
-         aIyxUIrLF4EiyZEnXkEM+FHzpFzz8ZYaaPA2LWrMbnY7kJ2Y44Glsr8wUBIU3T19Oh70
-         586XWX2zAzJY/chDt4lgflp1200FP6ML9m0pGXBFFyH3zl3zQ4Re71QHDBh2mUL9JY0N
-         p+1MS3hHBjRGunhCuZ9R4+l3czos7eYnMEHJ8CLtucB7Y5Uri4Xlt8lZeM2Ai/JTf+pf
-         x/7w==
+        bh=xQ76fY6ulaYNYKwPfApE+ipglZPuPZv8sU5oC2IS+ko=;
+        b=M8xIJilh+PpjDQNSIfiApRiTxuXt0hJ3y1oYW/5IOaJUwVo/gIAgNpkvHH8kj+RErQ
+         6XgJThREUjrau5brs0FgqOAwIbfEFhKSg7pmS8Dx0p+olBTSjQjIHAWfZZd523HaMnGs
+         X8BglE8k6aeTba44mdljq6OXzIyfakGy9e3qVQ5CljGgR5YZ5aPxbzGlSsyRWKAj1ZoF
+         Zu0UNwxUA0uzHl23vDpUQBDvcq2TMdXhE44iZVPqGi13ZZ+giAsHpe86AelM0eLqlFB7
+         EHcA7IB+LjcPCABP6qnkxzu4c9pAy1MfT5DnsA/ihJeWrCykQic0vVAxYK1alWMy2Zw4
+         gWYA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1789171062; x=1789775862;
+        d=1e100.net; s=20251104; t=1789171972; x=1789776772;
         h=content-type:cc:to:subject:message-id:date:from:in-reply-to
          :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to:content-type;
-        bh=WQq2pAxxltC3cCwqlUs0gtYpd6fcKoy7z/dHR1GPO7Q=;
-        b=NfJ24x+h8R2IVNJA5OqnNgaPv+nVrLkLgMB+3lgOiHh3HTokpOJgwYFdJkiVj6lU4T
-         lswQ/USPzQ0cgrUj5Cd233q4TyWCrSOCTY3C3JZ5mxd8stlepcUOzYXnYHQRVlVrsVYb
-         XrhuoR8QxUMpPIGOWZXc/06ShmFXUQuucErFEMJ8Ou9OwpF1b0BK+AK1nv2a4xl7Keea
-         yl8Xaqs5NkyGSlfDQpd+Fo80P39CVfI3zT1LLdApqYdIqf9pT/IhVgfPPh+bYrM6Akw4
-         B+8acJ6UPy9v7bT93opKChMePF2Ttn+Ruff+OZzIyo6YLvAcaH6v3DEQlcytK4X29OjK
-         RxKg==
-X-Gm-Message-State: AFuF++nZXkOCYK+JlP/V4Vgm6duEBRkguPObGXkCouD0PyhMUO8Vg0Iq
-	OjuvxGwEB0zE2lNFAdtuhZoB8h5/GhCcphZ3V7angD5sr4gEQ3OsPSX85mLlvrAW5Mr5zIAjDkV
-	BHHbOKWDJZA/d8/4bliB6+8V1SGClB/QWj9nDcMf1
-X-Gm-Gg: AYBFou2/5nQ1B7Iw1mObi5rn6PZX9KZHK7ZXLgcW1ttN/HSsfc2ThiWeeda4KAGtyZ8
-	MrGD0lwlYTWIKZOG/yKcT+AaBrRLrrP1rPh4bsIlz2ZAQIOai79DfrHCCmWH2gfsRpfHXJFG0ea
-	bjRy8USm5LRTF/v+caWd7h1qKp2xoJnPi4Mg1kT8SwNGmn36JX9skunNj0xsrIWg/oP5Uk7BnD9
-	qHbFENs6ycguVWW6Cms7cRJVbNpUnqiTJojAsm64p4qcKGBOGHx/5UEzRuy48DTG7fONmbVIK/C
-	fWVAtUj66TvtYtXiGXCpHjeuZ8eOCVMLf8N4FRpB9S5q0hg3vVwPTYb0+fJ98CkIpSygDMbPScP
-	ugevos/UU5Q==
-X-Received: by 2002:a05:690c:281:b0:869:adba:625b with SMTP id
- 00721157ae682-887a87bf532mr2501367b3.25.1789171061244; Fri, 11 Sep 2026
- 16:57:41 -0700 (PDT)
+        bh=xQ76fY6ulaYNYKwPfApE+ipglZPuPZv8sU5oC2IS+ko=;
+        b=B8UiF7TMt4bhhO64Y7BN5wHhEWmCc/c3bbFZt6ihjr2tNqmi0RQ/4pdPTuGd9om/P+
+         2CJ0TKYyP+zOqwz/rLxjdRjNnkBh9kRiGpI5RceADPRbu5Z3kpiRoio3qJT7n5tiVIsS
+         zUSKiFfh4E7mWtf7B8E5tuUNoVJsTHB0LBNLK61SzcogCgZcr+nfe6pyE238elNWENvt
+         DQkQhGeHzm1shWD8b+sefxy6bBZDzbJY9fzoDzAJsb/F9JNadKYXRJ/0k67bvR3BSipx
+         JcrwldExsB64Si44MGpEhtLZRjAQDYqNB2NrqJlkiqoVJopsXa5G1k3EZmxMku0h50Kh
+         4MQQ==
+X-Gm-Message-State: AFuF++lU2lR0R2T5X3qVERRB6q86qS6/pK860t6Q2ISFYsRRwZnvFqLG
+	0puP+U4nKkiVOe0CvQoKW4pljv4wXl32DJ7n9+nimi5XIS8nMHMZUbBKeVpaPSy/DUcaF9uC7mm
+	HmYo9ozSuWDSdPx4dGtFYUtVBSmzCmRjcom9E4Nj2
+X-Gm-Gg: AYBFou1Ek5zguX4oyWYvZQHDhtp8i5/ONZIEiGQ7CI+JQqZQpjIgJktSjQlILe/Cl2W
+	xn3rsrASx84gucPP2caczMeGCQZIyKQoC6UYOrNFPRAXCaITrIbenodv0NTtx5q7rcVPEz33yKO
+	OQFFe2UBf8epWgpf5Q8UfWAPy28Bd8oIihK62B/G6c2k3RY+Jvda9KJ7Uul2FSH7GbrhSz+upL0
+	8N+BX5Uh3cTxpU602G7nPU+iI/yyI0yDUVGvc8E6ogg2ufZf3TGoPjYJck4P7UPJUMwAoLQx4cG
+	aW3CmjQXdIYVBKdBY8bcr62bUjkCffuvC3ZogJPHLoZ6pCGoAce5xJF/mVXjnet0LZQyQib5QVw
+	loZe+7igbRw==
+X-Received: by 2002:a05:690c:314:b0:886:30f8:ef85 with SMTP id
+ 00721157ae682-88630f8f5d1mr18380937b3.16.1789171971605; Fri, 11 Sep 2026
+ 17:12:51 -0700 (PDT)
 MIME-Version: 1.0
 References: <20260906202747.4041389-1-samagazaryan@google.com>
- <20260906202747.4041389-4-samagazaryan@google.com> <aqHU-6RV_AapSu3M@lizhi-Precision-Tower-5810>
- <DLC6ERLST1B6.6K3HLH38DQLK@google.com> <aqQZzqJohIxBwnk0@SMW015318>
-In-Reply-To: <aqQZzqJohIxBwnk0@SMW015318>
+ <20260906202747.4041389-4-samagazaryan@google.com> <20260911-d0e2d97df458cbf24fa42089@linux.microsoft.com>
+In-Reply-To: <20260911-d0e2d97df458cbf24fa42089@linux.microsoft.com>
 From: Sam Agazaryan <samagazaryan@google.com>
-Date: Fri, 11 Sep 2026 16:57:30 -0700
-X-Gm-Features: AcwNN1WTU8WlhVvS_yNOKejgBbjum4EMT2blUBC4r1H9SFjK7U-mdGDrxdPBeGA
-Message-ID: <CAHreonG_BH_ri7_p1VQ6h=_iTpWxhqzVLksc=p7Kyro2D3nW=Q@mail.gmail.com>
+Date: Fri, 11 Sep 2026 17:12:40 -0700
+X-Gm-Features: AcwNN1XGf5UCGIDj0-3n6mkuZTqdVzaLGdiWSNdFIbb-PgTGwHhfgg9zPWx-lbE
+Message-ID: <CAHreonH0b=spgb2LuUbVvWHarJWf3MOyL8qS5k_1X6gb_mjVkg@mail.gmail.com>
 Subject: Re: [PATCH v4 3/3] i3c: add i3cdev module to expose i3c dev in /dev
-To: Frank Li <Frank.li@oss.nxp.com>
+To: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
 Cc: linux-i3c@lists.infradead.org, 
 	Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li <Frank.Li@nxp.com>, 
 	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Arnd Bergmann <arnd@arndb.de>, 
 	Vitor Soares <vitor.soares@toradex.com>, 
-	Oleksandr Shulzhenko <oleksandr.shulzhenko.viktorovych@intel.com>, linux-kernel@vger.kernel.org
+	Oleksandr Shulzhenko <oleksandr.shulzhenko.viktorovych@intel.com>, linux-kernel@vger.kernel.org, 
+	tgopinath@linux.microsoft.com, boris.brezillon@collabora.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260911_165744_250632_FB08A27A 
-X-CRM114-Status: UNSURE (   9.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260911_171253_761597_D29CE24C 
+X-CRM114-Status: GOOD (  11.40  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -122,30 +121,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-> this is problem, Maybe we can use ioctrl to set default cmd, hdr/ sdr(default).
+Hey Meagan,
 
-That makes sense.
+Thanks for sharing your patch series.
 
-We can keep read()/write() defaulting to I3C_SDR out of the box, and add an
-ioctl (e.g. I3C_IOC_SET_MODE) to allow configuring the default mode and
-command byte for that file descriptor if a user wants to use read()/write()
-with HDR. How does that sound?
+ The reason we have the bus notifier system here is
+ 1. Dynamic module loading is handled automatically: if i3cdev is built-in and
+    a specialized driver module loads later, the bus notifier receives
+    BUS_NOTIFY_BIND_DRIVER and immediately calls i3cdev_detach().
+ 2. No cross-subsystem changes needed. The bus notifier avoids touching other
+    subsystems entirely.
+ 3. Boot-time recovery flows: For OCP Secure Firmware Recovery
+    devices come up unbound and need /dev/bus/i3c/<device> available
+    immediately without requiring udev rules or sysfs writes first.
 
->How about this driver built-in and other devices build as modules, modules
->load maybe later than this driver?
+Let me know what you think about that and if there's something I may be missing.
 
-This scenario is handled automatically by our bus notifier
-(i3cdev_notifier_call):
+It looks like we're both going in the same direction for UAPI integration too.
 
-When i3cdev is built-in, it attaches to unbound target devices at boot. If a
-device driver module is loaded later (e.g. via modprobe), the driver core
-emits BUS_NOTIFY_BIND_DRIVER right before binding the new driver.
+If you're open to collaborating, I think we can combine and converge on a single
+i3cdev driver - adopting all necessary fixes and ensuring the UAPI and features
+cover both of our use cases so we have one unified series (and any
+other use cases
+or desires we may want out of an i3cdev driver).
 
-Our notifier listens for BUS_NOTIFY_BIND_DRIVER and immediately calls
-i3cdev_detach(), which unregisters the device clears i3cdev->i3c.
-That way, i3cdev automatically steps aside whenever a dedicated driver
-loads. And if that module is ever unloaded later, BUS_NOTIFY_UNBOUND_DRIVER
-triggers i3cdev_attach() to re-expose the /dev node.
+I'd like to know what everyone thinks about taking that approach also
+if there are any
+other use cases we may be missing here, regardless of which patch set we choose.
+
+I guess just to get things moving, if we go one way and choose to go
+forward with
+the bus notifier approach, Meagan would you be okay with me incorporating your
+Patch 2/3 for actual_len for the i3c controller drivers? Of course
+with your authorship.
+
 
 Thanks,
 Sam
