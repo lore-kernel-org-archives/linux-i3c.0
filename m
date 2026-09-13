@@ -4,45 +4,45 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 860FEC88E56
-	for <linux-i3c@archiver.kernel.org>; Sun, 13 Sep 2026 00:24:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 326B9C88E53
+	for <linux-i3c@archiver.kernel.org>; Sun, 13 Sep 2026 00:26:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QMsUH3k1X2+jaCjFoNcOQILirAU8S/pXpk9j1B1oUuM=; b=HJetSZf0X9Cg8/
-	nex3BfFL9EW63GgjG8nIi3LnWzg0NekiJnqZmkMG49OulJt8AjLb3sy7td+lRoRICmTwm4G61ZhdK
-	9ExYGpQkDVyNPgrdJTNq/zxsaUVq8UszaJpZ1DxcEMMsnMH0KqrC+qFXyol8VErCsBkEX8Ni7Yydh
-	2OQIfKYlsGcTzrnL2g5FAgPUmv0D66juJl9VThpMOHJs0PzQO6GnXt5xFc2Xl8QGfEiZj4c2kipHy
-	lKD+LuzbsPHoQECmfdO4giknhizOeFOwF3R8XxJlA/js21LikIrjV/bEdvWaqvTFTUPICUtPyyVEB
-	JlAcOPv7Nfkwp2UrB6hg==;
+	List-Owner; bh=6sntj0W03XZ4D+mXtItgpg7qAukbasjq0BCRunaYg4o=; b=P5EJD6rQ/zjeUc
+	yw3si2d4fiAq9aymdP17zLuxPJmrhNd7Rj++G03kVV4fI1509fBoN1irT9cEVOAy05rflA5RRu51U
+	41vAdBz19DbZCIRcmojVubTpaWbXt2JtE3bW0YZFG4u8f2Ah+3jnz30lHmyHdiE0BoiY0a53LPCDv
+	H5JfDDL6I0ekBV+C3FD3LOmqOVTBrpyykGJ+SS0A/qyRBDEOtCnet+nwSx22V6hLyvtDhANxTYBDn
+	IafOCWbwAJsKCrgIaBMMXDA3ZI2SEETYlusLs0L8ttriLXmPcHeyy/lP+EeXsA4SXZrrRHf9GA+V1
+	BfBMUN98AF9RBa+DNgNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5Y1E-00000001Hwd-2o7S;
-	Sun, 13 Sep 2026 00:24:28 +0000
+	id 1x5Y31-00000001Hyw-3ZKC;
+	Sun, 13 Sep 2026 00:26:19 +0000
 Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x5Y1D-00000001HwX-48hR
+	id 1x5Y2y-00000001Hyq-2XMo
 	for linux-i3c@lists.infradead.org;
-	Sun, 13 Sep 2026 00:24:28 +0000
+	Sun, 13 Sep 2026 00:26:18 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id D2B976020A;
-	Sun, 13 Sep 2026 00:24:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 01B4A1F000FF;
-	Sun, 13 Sep 2026 00:24:20 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id C84D660008;
+	Sun, 13 Sep 2026 00:26:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4857E1F000FF;
+	Sun, 13 Sep 2026 00:26:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789259066;
-	bh=vF7Pz5geNKTrwe6MQe3Rpj1h2B4b6zWqQLr6eJLHVsc=;
+	s=k20260515; t=1789259175;
+	bh=hgNGnjGjckr62DBzsPqklyBYTtJwHtzKKZEQx/7I33M=;
 	h=Date:From:To:Cc:Subject:In-Reply-To:References;
-	b=Ca8uzHRHXYg6Xhz5oSUYO2NLCSNe73W6xG4/iyI9nBowK/XeiKRRF1/tFZQa4RIcn
-	 GpmMvf26YSI29hIfkdef++czx9owykFFnUalViGOUeAMesJ4d4tGXd2rOGqzHEghib
-	 9xuTroM1DFCuN0eHBSt+Nnlj9WldRcpmv/hjZVWmGFt9j3ETiNKIy3nJYxLxjRwBPS
-	 eMQ016L1a+i+LvMAUGMPF8BfCDmIr6PPOmCgDX3bwW0bxzXCzUa8YzIPAS8tNj4xMc
-	 ezJUMgM5NosfGcU/SudNvIHmKtY9iWtUkM2nscfbr5qBa8ilA5zpZfE6tFDtEJJqiI
-	 ZLl0j9aeUVpaA==
-Date: Sun, 13 Sep 2026 01:24:16 +0100
+	b=iRf7SFu/H6AlQpjq0c2D2war4hn932/GgR988qSkoQiIvtlRo3pYqwfqJ20MrF+y2
+	 VRuLAeqPkxpI4sLIvfhuWkssSxEBv9cR66eFzxNxVPtIxm7pFi+ZH6YsZk7okZ/2Ac
+	 6w1JV9lq0XdO0//qVFYnhhLIAlSr+GmxVg9qlB8pX86CkLMWFxB+OGyzkYxfuw5NpC
+	 iDNIzGSjCfISokc7dympuiZIM7OPsMXGygcRvY9XK3SzXn0Lps1j7Dz1j3JGsddUOI
+	 ihGD8/qQu7rGlLbWw0HAI4oqX0PUmpFlwqq2U10AOduF7fTi/FO7Y4FfDVAJdGnTbx
+	 CGHom3nbKRClA==
+Date: Sun, 13 Sep 2026 01:26:12 +0100
 From: Jonathan Cameron <jic23@kernel.org>
 To: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
 Cc: linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
@@ -62,11 +62,11 @@ Cc: linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
  shubhrajyoti.datta@amd.com, jarkko.nikula@linux.intel.com,
  linux-doc@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-hwmon@vger.kernel.org, linux@analog.com, linux-iio@vger.kernel.org
-Subject: Re: [PATCH 1/3] i3c: master: enable driver_override for I3C
-Message-ID: <20260913012416.165c5886@jic23-hlaptop>
-In-Reply-To: <20260911210935.1353126-2-meaganlloyd@linux.microsoft.com>
+Subject: Re: [PATCH 2/3] i3c: set i3c_xfer.actual_len in controller drivers
+Message-ID: <20260913012612.745247fa@jic23-hlaptop>
+In-Reply-To: <20260911210935.1353126-3-meaganlloyd@linux.microsoft.com>
 References: <20260911210935.1353126-1-meaganlloyd@linux.microsoft.com>
-	<20260911210935.1353126-2-meaganlloyd@linux.microsoft.com>
+	<20260911210935.1353126-3-meaganlloyd@linux.microsoft.com>
 X-Mailer: Claws Mail 4.4.0 (GTK 3.24.52; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-BeenThere: linux-i3c@lists.infradead.org
@@ -85,98 +85,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Fri, 11 Sep 2026 14:09:33 -0700
+On Fri, 11 Sep 2026 14:09:34 -0700
 Meagan Lloyd <meaganlloyd@linux.microsoft.com> wrote:
 
-> Opt-in to driver_override sysfs functionality for I3C subsystem.
+> Set i3c_xfer.actual_len for reads across the I3C Controller drivers.
 > 
-> Update some I3C drivers that are assuming that if their .probe is
-> invoked that the bus match function already checked the ID table. Go
-> ahead and verify in .probe that i3c_device_match_id() returns a valid
-> match before using the i3c_device_id pointer.
+> actual_len provides a consistent location for device drivers to know the
+> read response bytes without overriding the len field.
+
+Hi Meagan,
+
+Why is that useful in this series?  Currently this sounds like
+an unrelated change.
+
+Jonathan
+
+
 > 
 > Signed-off-by: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
-> Assisted-by: Claude:claude-opus-4.8 copilot
-
-Along with splitting these up as this is the sort of change that
-will sometimes need backporting in individual drivers because we are
-layering something on top, I'd look at adding some helpers to skip
-the id as that isn't much used and get the specific fields people
-want.
-
-> diff --git a/drivers/hwmon/tmp108.c b/drivers/hwmon/tmp108.c
-> index 1c4a58855e2d..98076ae8dce8 100644
-> --- a/drivers/hwmon/tmp108.c
-> +++ b/drivers/hwmon/tmp108.c
-> @@ -581,6 +581,8 @@ static int p3t1085_i3c_probe(struct i3c_device *i3cdev)
->  				     "Failed to register i3c regmap\n");
->  
->  	id = i3c_device_match_id(i3cdev, p3t1085_i3c_ids);
-> +	if (!id)
-> +		return -ENODEV;
->  
->  	return tmp108_common_probe(dev, regmap, "p3t1085_i3c", id->data);
-
-Similar to below, jumping directly to an i3c_device_match_data() helper
-in this series would avoid getting and id that these drivers don't
-need access to.
-
->  }
-
-> diff --git a/drivers/iio/adc/ad4062.c b/drivers/iio/adc/ad4062.c
-> index 8e5984055b15..f28b503d16eb 100644
-> --- a/drivers/iio/adc/ad4062.c
-> +++ b/drivers/iio/adc/ad4062.c
-> @@ -1482,14 +1482,20 @@ MODULE_DEVICE_TABLE(i3c, ad4062_id_table);
->  
->  static int ad4062_probe(struct i3c_device *i3cdev)
->  {
-> -	const struct i3c_device_id *id = i3c_device_match_id(i3cdev, ad4062_id_table);
-> -	const struct ad4062_chip_info *chip = id->data;
-> +	const struct i3c_device_id *id;
-> +	const struct ad4062_chip_info *chip;
->  	struct device *dev = &i3cdev->dev;
->  	struct iio_dev *indio_dev;
->  	struct ad4062_state *st;
->  	bool ref_sel;
->  	int ret;
->  
-> +	id = i3c_device_match_id(i3cdev, ad4062_id_table);
-> +	if (!id)
-> +		return -ENODEV;
-> +
-> +	chip = id->data;
-
-This might be a good opportunity to introduce
-
-i3c_device_match_data() as in many drivers we don't actually care about
-access to the id itself.
-
-> +
->  	indio_dev = devm_iio_device_alloc(dev, sizeof(*st));
->  	if (!indio_dev)
->  		return -ENOMEM;
-> diff --git a/drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c b/drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
-> index cb5c5d7e1f3d..153a03e06801 100644
-> --- a/drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
-> +++ b/drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c
-> @@ -32,6 +32,9 @@ static int st_lsm6dsx_i3c_probe(struct i3c_device *i3cdev)
->  	struct device *dev = i3cdev_to_dev(i3cdev);
->  	struct regmap *regmap;
->  
-
-Please bring the assignment down to above the check so
-
-	id = i3c_device_match_id(i3cdev,st_lsm6dsx_i3c_ids);
-
-Which is what you did in the previous driver...
-> +	if (!id)
-> +		return -ENODEV;
-> +
->  	regmap = devm_regmap_init_i3c(i3cdev, &st_lsm6dsx_i3c_regmap_config);
->  	if (IS_ERR(regmap)) {
->  		dev_err(dev, "Failed to register i3c regmap %ld\n", PTR_ERR(regmap));
-
 
 -- 
 linux-i3c mailing list
