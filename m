@@ -4,54 +4,174 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 58BEFC88E50
-	for <linux-i3c@archiver.kernel.org>; Mon, 14 Sep 2026 11:58:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49B33C88E64
+	for <linux-i3c@archiver.kernel.org>; Mon, 14 Sep 2026 12:54:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qtl2f41N7Sr0b9UBJiBaC6AbAEL3YXgfenSNAILCuVo=; b=PiepSFIewxMgBJ
-	La9GVykO+jXc9kbgwO5GXegLiU2Q1uo5haNLP6/f/2oQm+cAQ6SKve3A2GlKUdVm31/lYQ3Vo9CEV
-	NcCqw/5YOxEA8Sy2xAWEkEPbtma4GNNhT1hgLw4c+hu+INXlVBNSOOGVG9xMs7OnXns6quyfHFyDe
-	5Ijz8Hdxx6jRVHKxHQAeOc3vGT/WOqSq7TI97MLIEgxIpIIkYPf97o9Gom4G7TEzKWXww7lHbkDKu
-	SHk5ljjB8cHFWxu+DaAoro1YdX0WRo2ulMmP0hESFGDJ8OCyaYBE9V0237Gi5hzlPl7gJYH8wpbLg
-	RGi0eM2g4UDFnfecjkWg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:From:
+	References:CC:To:Subject:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=tqxGvU8dsj/TA3/z73F2HQgrlZTpdM1b94nbBNmBeJ0=; b=BuDY03AmNVQOPQq/4SyC5JF42Z
+	x50eqeXipQKDNqOO048TluYRRtkyEqVkcfvAN8wSSNzBM0y64+IIctXjv7IfKak/+Y4F/EHhlPx9/
+	Q0YDWhFUelsTHc0L/8LI6ynR0tZNojexDtZUOi4spBz4aD6H3ZBuL7drzMdJdczHelRvZEHgBK3cD
+	qh2Tlh4n2RtYclsS1rJh3wJ0ZKNss+SDwBxxcPaGA7xRXkqa9jksB0QM9j6kw+ADX1uieEim29cZC
+	GpIaaIdvcZg20ua8L4oIJ1MIBRJKLWcAprZj0uhcuaI66+bjbWBPG0aiyypvFOhaWhnJmp6L0Ae8C
+	WcGrNBkg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x65K0-00000003QQE-0dYG;
-	Mon, 14 Sep 2026 11:58:04 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1x66Cx-00000003fbF-3Xgx;
+	Mon, 14 Sep 2026 12:54:51 +0000
+Received: from mgamail.intel.com ([192.198.163.14])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x65Jy-00000003QPN-3bZc
+	id 1x66Cv-00000003fZc-1c1I
 	for linux-i3c@lists.infradead.org;
-	Mon, 14 Sep 2026 11:58:02 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 8185C43ADC;
-	Mon, 14 Sep 2026 11:58:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2C2951F00893;
-	Mon, 14 Sep 2026 11:58:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789387082;
-	bh=gSlVp5rIggAqHaNXHkM+ILHCTLB1/Hu2i0KvGp9qalc=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=H5oauwF9PxuMCtUCVcYzT2qH86xi49EUkfoVwWx8dZEHnYmaPTF17wmq84jl4j8UJ
-	 GnK6e7Bngay/pye5imxtHnYROjdsNqbcdnjQ0r4Jty2ImVKbBdRh26K9ozgNnqGMH2
-	 lHobq7527/iNlotSduSC/aTTqokmJ6hFWnNpzGjqxMgH1uHFcT+Vcd9hsRODHws6XZ
-	 JR2CVPOoRdEXma3BApIhKW2unC6OVCZMXM66CHNMRheoR1OrzUhfY+um10rNe+kll8
-	 ujWTnraQWpy/JIGAEmmGSGf1z9LzlSzBB+OojHS4PNuzHpv/+FVEJ+8x2fbr0SAG1Q
-	 Uzc2wpz/36Y1w==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH 08/17] i3c: mipi-i3c-hci: Fix runtime PM violation in
- i3c_hci_free_ibi()
-To: "Adrian Hunter" <adrian.hunter@intel.com>
-Cc: linux-i3c@lists.infradead.org, Frank.Li@kernel.org, "Alexandre Belloni" <alexandre.belloni@bootlin.com>
-In-Reply-To: <20260914113003.183150-9-adrian.hunter@intel.com>
+	Mon, 14 Sep 2026 12:54:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1789390489; x=1820926489;
+  h=message-id:date:subject:to:cc:references:from:
+   in-reply-to:content-transfer-encoding:mime-version;
+  bh=JqbOtt+OKa4U+Nr2Gg/hfQHZRW3q6HgNgIv2QcK+HSI=;
+  b=G0o/wdIG4w+4jB52Z51UBSpUUcYcZ+0F31to8YroBy0tN2o2R2We50aE
+   LzMpPIeNmdOSPIISOVWOZief8vpEWdBeBem1YpPfNDDRk5JUR8v5IpGEP
+   nsiHJJC02SWFtxOx14cHsJJRbYB/6ATXh1wfmNlRJEb3zQwGXGr1jvH7H
+   ZmOFdioZn7Lt+a98js8ih410UqvD4YvvCkhSTL0k/8IKwkU70Duc4iRn6
+   Uw9BfnuVLnZl6AWWlLDEHKPQkxUtRTmfsgxnhHS/HpMcjnAOEDBxBlmDp
+   mAu5NLXviQ7r8yg+9i+ig/ezUWZF1JPi2E7HhsNxQuk8ErlwgCsi4fWx8
+   Q==;
+X-CSE-ConnectionGUID: hrb/5zdCRPu6azQaMcj7sg==
+X-CSE-MsgGUID: MMdBHeWDR7KwITK5Xj6f3w==
+X-IronPort-AV: E=McAfee;i="6800,10657,11904"; a="89752228"
+X-IronPort-AV: E=Sophos;i="6.27,102,1787036400"; 
+   d="scan'208";a="89752228"
+Received: from orviesa001.jf.intel.com ([10.64.159.141])
+  by fmvoesa108.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Sep 2026 05:54:38 -0700
+X-CSE-ConnectionGUID: K7dp1JGtQX+QMuuL8o9+Iw==
+X-CSE-MsgGUID: 5YtK1tFISsqOak+c6BmebQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.27,102,1787036400"; 
+   d="scan'208";a="310909738"
+Received: from orsmsx903.amr.corp.intel.com ([10.22.229.25])
+  by orviesa001.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 14 Sep 2026 05:54:38 -0700
+Received: from ORSMSX901.amr.corp.intel.com (10.22.229.23) by
+ ORSMSX903.amr.corp.intel.com (10.22.229.25) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.46; Mon, 14 Sep 2026 05:54:37 -0700
+Received: from ORSEDG903.ED.cps.intel.com (10.7.248.13) by
+ ORSMSX901.amr.corp.intel.com (10.22.229.23) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.46 via Frontend Transport; Mon, 14 Sep 2026 05:54:37 -0700
+Received: from SN4PR2101CU001.outbound.protection.outlook.com (40.93.195.6) by
+ edgegateway.intel.com (134.134.137.113) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.2562.46; Mon, 14 Sep 2026 05:54:37 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=ioeCAOwB99bIMYrzKZJn39a24bzytukFPgxnLkvR9dTbV1+CNuVYreI+puF84EtmqwH8ps36as75XlJT/1pdnSW6WSBcfPvZtQQdTyDkEyrlRt/aeFNuQ5YNQEgw9dPMZrftSou/VMqSNiMJKe9XLGU3NA0D2ul8dEcbs7amECw7Ua9jJ+Vy9pzdg01VXoKZ6SPJzB9As6lJK2DFU1eRbb1MpWySB8SXVQSmy10bvpxEZBTCdhxb6oINOuYtZ8y9Mrt1wsRrqXESBsOBmahexz2k/xgSfNHE86sfiVxPXrjufXRcAGQED3SAHr4DtJB0fusqCK68mRXwP0fYaw/5pA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=g13P8WID/ipDD6pfQnPG4JJZtXe25R5ml3mAWqE14gs=;
+ b=XxHLYpGc6PxyjVr6XBY6JMNwQr+6RM1qKGpBWgg2tBcWQ7vTjUpFgbWomLDwn1h3UR4xpE9HbNMyctYKYPBWHQ0AOAPyujJ3a4/WAyMmSMeMBgZoemyRG7ru9s8v9miOM8KXp/d5MgeM1N+L4DhIbtztOmI/wT0YF9pVBZEYNA1/GBAcEyKnEUNoZiVFMSrN/Q8CzPUBkw53eOpVwQFLzPnhxmYvpoYxwkqvQbflTprSbluEODEiyNBZpzWchUvG4FhGZZ3TGn60RcKe+b0tyqXHLpSw4sZ6ohY7ZZ4HF/qgunQiZsf9w2WafaOA834m/kHQuRpKDV7VE2a+DDgCeQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
+ dkim=pass header.d=intel.com; arc=none
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=intel.com;
+Received: from IA1PR11MB7198.namprd11.prod.outlook.com (2603:10b6:208:419::15)
+ by SN4PR11MB9968.namprd11.prod.outlook.com (2603:10b6:806:4fe::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.406.12; Mon, 14 Sep
+ 2026 12:54:35 +0000
+Received: from IA1PR11MB7198.namprd11.prod.outlook.com
+ ([fe80::2c4e:e92a:4fa:a456]) by IA1PR11MB7198.namprd11.prod.outlook.com
+ ([fe80::2c4e:e92a:4fa:a456%3]) with mapi id 15.21.0406.007; Mon, 14 Sep 2026
+ 12:54:35 +0000
+Message-ID: <53ea27d2-1043-4b7f-b2a8-baabf6dfbfb8@intel.com>
+Date: Mon, 14 Sep 2026 15:54:31 +0300
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH 17/17] i3c: mipi-i3c-hci: Add HDR-DDR support
+To: <sashiko-reviews@lists.linux.dev>
+CC: Alexandre Belloni <alexandre.belloni@bootlin.com>, <Frank.Li@kernel.org>,
+	<linux-i3c@lists.infradead.org>
 References: <20260914113003.183150-1-adrian.hunter@intel.com>
- <20260914113003.183150-9-adrian.hunter@intel.com>
-Date: Mon, 14 Sep 2026 11:58:01 +0000
-Message-Id: <20260914115802.2C2951F00893@smtp.kernel.org>
+ <20260914113003.183150-18-adrian.hunter@intel.com>
+ <20260914115449.8A8971F000FF@smtp.kernel.org>
+Content-Language: en-US
+From: Adrian Hunter <adrian.hunter@intel.com>
+Organization: Intel Finland Oy, Registered Address: c/o Alberga Business Park,
+ 6 krs, Bertel Jungin Aukio 5, 02600 Espoo, Business Identity Code: 0357606 -
+ 4, Domiciled in Helsinki
+In-Reply-To: <20260914115449.8A8971F000FF@smtp.kernel.org>
+X-ClientProxiedBy: DU2PR04CA0269.eurprd04.prod.outlook.com
+ (2603:10a6:10:28e::34) To IA1PR11MB7198.namprd11.prod.outlook.com
+ (2603:10b6:208:419::15)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: IA1PR11MB7198:EE_|SN4PR11MB9968:EE_
+X-MS-Office365-Filtering-Correlation-Id: 129072c3-b1b1-4c8f-ef93-08df125f542c
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|23010399003|1800799024|366016|5023799004|11063799006|56012099006|4143699003|10067099003|22082099003|18002099003|3023799007;
+X-Microsoft-Antispam-Message-Info: XAij06yc4vG52IzkUU9ci5jvMgxGhydi2Gm+yMSi2v7aB01JcmChPQn+qR0VDU4mbJCutlaHqQVf3WneN+Rs/0Wdj1adfPFY244Yci5msjRPz/1EPbgWoC07c6lf+G+kf6JEaT8HqlfMTfYqS56dxevuWPBel+IcqjIRHlpbzwqTeN9KCzhorrhATBcenecsNUj/O0yZrXT9hlh6r3MT5+P80vxZhKo3Sr++/M4hi2Hr+NaLeLJO8rc6yLuyc/4lvdbeMInVoyc5iOBawj9l7P7Ey31jfUqn7vVdnaGF7fnChaYURPd4hdP0kE+06UEtfUnhLg31ockTYwt9HFENXJc3FFWoyZ3vT91JubBduU2fgoaDZpem4kK/CTwcDrbT71OccSX4JQ9hOBN8v68tuBjfLIJKqjTuPxbd+H1QtPUH9s5tTKE14EYrU9QTdy+cswq3XBvobnCmp3U+EHTEwnkR+S1i1de8B961gKCjklAYL/KJXzu8JHzXaV/6JcrqgFr4HYDE0hgut554+ZSarcltOZRDt+Mb730bryzeN0geX8GCWsh3fCScQDNlm2CKD8NvbAyPDiCkEHiovmN3vqMKnK5w2SVIAZpGczkrG+UXNZbO5gdCwKhY0neAMO28Ehp3Wagy629HL5Pwlk4z2UHiDxFW9VKXwMPm2jEvhI0=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:IA1PR11MB7198.namprd11.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(23010399003)(1800799024)(366016)(5023799004)(11063799006)(56012099006)(4143699003)(10067099003)(22082099003)(18002099003)(3023799007);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?NE1KQUE5eWkyRm83WkNsai9nYm43TFJ2TXMxaUVtdDg0dHQ2YUR6WDhRbTNk?=
+ =?utf-8?B?ZTBTZHJwYlZJcGIwdGxFakRRdFFQMWpKbmFDWHNaWVlMQjg4bHFWZVdNNUxx?=
+ =?utf-8?B?VTg3WnRPS082dVJHa1d5ck9rVFpJeGd4VGJObkM5Tmh2MC9TU2JhSzlNYzMv?=
+ =?utf-8?B?VXlsT3ZSekFvOFRQb2c3Z080VVVXT1c1M0hvVmIyWXNoeXc2anVRYysxdktV?=
+ =?utf-8?B?UEZIeHY0QUp3ZS9TNktUSlNGRHRtQWhzOU1pMXBvWjRRWVRoN2F2MWhKRlBV?=
+ =?utf-8?B?dklFbXlsaVRYQkcyMXA5S05ZdjlXajlXdFJpWkNUeWtZV1Y5bE1wcWVGY2h6?=
+ =?utf-8?B?aHlLUHdJRmVWWUNnd2J6TlAxSmxvNkdQR2pkM3hDMkUxTmpCRjJFdEovSUNM?=
+ =?utf-8?B?Ym5rZjdRakdJd29paXhCOUlva1J6M0FVL2Z6S0hNbHZJKzdZRTNLek14YUZR?=
+ =?utf-8?B?K0s2aDJvRitwM0piaTdIOVNSL21CM05YbDVxaFFSeWhGQmNyc2YvT3FJL1pn?=
+ =?utf-8?B?aHRoeXhwQnlMTThVVlBuZWQxaDdram9aWG44a0dibGJpNHV0TU1HMWo4K05C?=
+ =?utf-8?B?cnM4VSt1aW5mQ2dZeXZyUkxlcm1KNWxqSU13YmJ4M2cxK0tpLytWdU4xZ1F2?=
+ =?utf-8?B?R05peVBsdFl0U2hxMGhjdFE1dWF1amI4dncycEJiejV4RWI3TklWU2FlUEFa?=
+ =?utf-8?B?NE5tUTlicjZKQXcvQkFLU3g1TjZQWEJjYnZmUkl5elJGQVIvK3VlUDBPTzY5?=
+ =?utf-8?B?dVM1R082NHd3QS9pbFRldmRHTUZ1QlhjeXJJTmoyM2oydmZTS3VoTytDNzZO?=
+ =?utf-8?B?L0pJcWNiWmVCRmtFekRLOWVSa3hlOStIdCtNbktBb1RCYUZoK0h4bmRuWjlo?=
+ =?utf-8?B?Smt4T3F1dm8rY2RleVkxYXRKRmE0WjZPdEtQSTRFME1OcmpxMGc1WlQzSWt1?=
+ =?utf-8?B?S1B4cVZyZEE5RllheFdYazFsRlMwcFlDc1lJNUpsSVVhWFhSRXRTRmRJVXBG?=
+ =?utf-8?B?WTN5bkF4ckI3b24vNWxvaVcvVllZdlJmTy9XcjR5MDVzQ2pYVURpbjZtcU9P?=
+ =?utf-8?B?dGtTb245L21CTW5yeHZQOGVaRWZtc2ZQSlN4bzh0RGZIbll5UEFmcWdleVlU?=
+ =?utf-8?B?ak52WmFYTy9naU1Yc3h5YkVBU3p4aHFLSERyM0phK3I5cUMwa3hhUzhIZFdi?=
+ =?utf-8?B?cHNvUHI5bm51eDEwaFVCWFpseEpmSVBWZjhGL3hWVVI4UXV3YmpLU2F5VEJs?=
+ =?utf-8?B?MkFXTTNWZTVlL2IvK09McnlXaDMzVTdRTGl2NTJCbURkRTh5elRzUDFnSS9v?=
+ =?utf-8?B?U002YXJYdXRURXd0M09Mb2t6TnJYV2Uvcmw4WlNNakhqMVd3b1UxR0RWbm9O?=
+ =?utf-8?B?RHc0eUFuYWsyZmpaNjBSU01IRURYdWs4RFRpZkhhUWI5SHRvdHpxbnFTa2FI?=
+ =?utf-8?B?ejZTWFNoRmFzckVwVzFOYnk1S2x4VVVyd2YxMGVWb2lpRUkvTGVtSDY5RE5z?=
+ =?utf-8?B?cFlkbURDWnNUeWFYQkJ2R0ptQVJMT3R1RVRSczNrSWhOMWdyUWhEY2U5Q3Nl?=
+ =?utf-8?B?V2NvSkdvYlV1ZGJLRWJwYXZEamEwb1cyeXRiUjZMV29YWExPaVVkdEpPU2Zn?=
+ =?utf-8?B?eHp6dG01ak4wRnJLVmdQQ1lYaFFUNldzcXB0NUExSmpOc2xDYU9WbDRxYTlD?=
+ =?utf-8?B?U3BLaGVhclNacndLbm9wUjQrajVBQWFhNnlTMzcxZDJKK2lMekxzMkx5eFV3?=
+ =?utf-8?B?V0lkNlE2QXY3ajJhSHAwSHRqTkc4dEpHZkZnQUdIb1hWZkRlTTdpcUpka0Zn?=
+ =?utf-8?B?REc2c3FrZ3gyVEE3cVU1bzRQaGpYNjd6cnBJNExOMnh6UmYvRUlaeU85bFIy?=
+ =?utf-8?B?S2ZQbmlyTXNPWjB4ZTdzSm13WSsyOGlUS3VTQTRqUVNZSDZrMGNBdkt5eWxn?=
+ =?utf-8?B?SkJkdHFFZ3IxMlBKYWtmR01WUjdDUkJ6RmVRMW81VERndDEzcjdLdkVwNWwy?=
+ =?utf-8?B?dTg3azBxd0RHMjRKYjJjQjY5cStHVjVHWHhZNjFRWUR1bk81aGt6c0xaV203?=
+ =?utf-8?B?T1lUUlB3eXJDRjhrV2dqMEdlUWpTV28vSDBRMURlSmZvdzI5cUhXWFpkbS9W?=
+ =?utf-8?B?RUNPR2RaWGxpUVpoM295OXVueGNnaHVPeElwRXJrUG9nSzQwUk9UUFBTeUFO?=
+ =?utf-8?B?VFlHZDc4aEtXNjZGQWNKTjU5K3RpL25ib0kzbWovUng0MTJwci9LclRRZHln?=
+ =?utf-8?B?NHJZZjVhbnBHS0dJZmo5MnQ0aTEvRHV4UG04NWRlMXl4RUJPZFQ3Sk9MbzFi?=
+ =?utf-8?B?ZzlsY1pxcmdYYVRNLzFIb1BQNzBJZ0FEV09GMlhtT0JkZzFoTVg5MXlJKzY0?=
+ =?utf-8?Q?rl0pBMKEoz442O3E=3D?=
+X-Exchange-RoutingPolicyChecked: axakc5wdFpjIRaBG93/TXC+EHdAVkcG2LhGBhVzGKXJ1cEiHqHbVQMjak6CS7+pfG1boekkf7Di7IRXo1sxxHRYoHawVqDrA7FiELFRUoH7RTkUIkyj0Vej1K51ozjCK2jcry68HVBVNz0yVe8xlPVsiKfWUO6a256BtFP4e18As7a79SiuKJx2fXJECcP0aURqAOz7aLu+iQoxzxGt4E1YzA7A+N9k6HP8Lrd+Tv1s2GN2Pn81QXieXvBIqe77biQCI9IzHutg5m43wp2DT5YTwvIL0As7tWibMpeqGbETzTXFmdG0Yi87oDhruZAICMnrTmTuFty7UFGxu/0YLow==
+X-MS-Exchange-CrossTenant-Network-Message-Id: 129072c3-b1b1-4c8f-ef93-08df125f542c
+X-MS-Exchange-CrossTenant-AuthSource: IA1PR11MB7198.namprd11.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Sep 2026 12:54:35.5890
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 46c98d88-e344-4ed4-8496-4ed7712e255d
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 6Ad0CdRVov15kboF6InMHEK17KhuaFnsQ4A8Q5JaaQX9e/clRb3jkBiTG/Olqi76y6jUSCk0w9COPoO4VGihRg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN4PR11MB9968
+X-OriginatorOrg: intel.com
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260914_055449_447493_2EB44C70 
+X-CRM114-Status: GOOD (  21.19  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,84 +183,84 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MiBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6CgpQcmUtZXhpc3RpbmcgaXNzdWVzOgot
-IFtDcml0aWNhbF0gVXNlLWFmdGVyLWZyZWUgb2YgSUJJIHNsb3QgYW5kIHBheWxvYWQgYnVmZmVy
-IGR1cmluZyBJQkkgdGVhcmRvd24gZHVlIHRvIHByZW1hdHVyZSBtZW1vcnkgcG9vbCBmcmVlaW5n
-LgotIFtIaWdoXSBOVUxMIHBvaW50ZXIgZGVyZWZlcmVuY2Ugd2hlbiBwcm9jZXNzaW5nIElCSSBy
-ZXF1ZXN0cyBvbiB2MiBIQ0kgY29udHJvbGxlcnMuCi0tCgpjb21taXQgNzMyZDYzNTk0ZmM2ZDY5
-MWI4ODM5YzYwMDQ1NDYxMGM2ZGNiNjJlMgpBdXRob3I6IEFkcmlhbiBIdW50ZXIgPGFkcmlhbi5o
-dW50ZXJAaW50ZWwuY29tPgoKaTNjOiBtaXBpLWkzYy1oY2k6IEZpeCBydW50aW1lIFBNIHZpb2xh
-dGlvbiBpbiBpM2NfaGNpX2ZyZWVfaWJpKCkKClRoaXMgY29tbWl0IGFkZHJlc3NlcyBhIHJ1bnRp
-bWUgUE0gaXNzdWUgd2hlcmUgaTNjX2hjaV9mcmVlX2liaSgpIGNhbGxzCl9faTNjX2hjaV9kaXNh
-YmxlX2liaSgpIHdpdGhvdXQgcnVudGltZSBQTSBiZWluZyByZXN1bWVkLiBJdCBmaXhlcyB0aGUg
-aXNzdWUKYnkgcmVwbGFjaW5nIHRoZSBoYXJkd2FyZSBkaXNhYmxlIGNhbGwgd2l0aCBzb2Z0d2Fy
-ZSByZW1vdmFsIG9mIHRoZSBkZXZpY2UKZnJvbSB0aGUgaWJpX2RldnMgYXJyYXkuCgo+ICAgICAt
-IHJ1bnRpbWUgcmVzdW1lIGZhaWxlZCBpbiBpM2NfZGV2X2ZyZWVfaWJpX2xvY2tlZCgpLCBzbyBp
-dCBza2lwcyB0aGUKPiAgICAgICBJQkkgZGlzYWJsZSBidXQgc3RpbGwgcHJvY2VlZHMgdG8gY2Fs
-bCAtPmZyZWVfaWJpKCkKPiAgICAgLSB0aGUgZGV2aWNlIGhhcyBiZWVuIHJlLWVudW1lcmF0ZWQg
-dW5kZXIgYSBuZXcgZHluYW1pYyBhZGRyZXNzIGluCj4gICAgICAgX19pM2NfbWFzdGVyX2FkZF9p
-M2NfZGV2X2xvY2tlZCgpLCB3aGljaCB0ZWFycyBkb3duIHRoZSBvbGQgZGV2aWNlCj4gICAgICAg
-ZGVzY3JpcHRvciBhbmQgZGVsaWJlcmF0ZWx5IGNsZWFycyBvbGRkZXYtPmliaS0+ZW5hYmxlZCAo
-dG8gYXZvaWQKPiAgICAgICBzZW5kaW5nIGEgRElTRUMgdG8gdGhlIHN0YWxlIG9sZCBhZGRyZXNz
-KSBiZWZvcmUgY2FsbGluZwo+ICAgICAgIGkzY19kZXZfZnJlZV9pYmlfbG9ja2VkKCkuICBBcyBh
-IHJlc3VsdCAtPmZyZWVfaWJpKCkgaXMgcmVhY2hlZCB3aXRoCj4gICAgICAgbmVpdGhlciBhIGhh
-cmR3YXJlIElCSSBkaXNhYmxlIG5vciBydW50aW1lIFBNIHJlc3VtZWQuCgpbU2V2ZXJpdHk6IENy
-aXRpY2FsXQpUaGlzIGlzIGEgcHJlLWV4aXN0aW5nIGlzc3VlLCBidXQgZG9lcyBza2lwcGluZyB0
-aGUgZGlzYWJsZSBzdGVwIGluCmkzY19kZXZfZnJlZV9pYmlfbG9ja2VkKCkgbGVhZCB0byBhIHVz
-ZS1hZnRlci1mcmVlIHdoZW4gdGhlcmUgYXJlIHBlbmRpbmcgSUJJcz8KCldoZW4gaTNjX2Rldl9m
-cmVlX2liaV9sb2NrZWQoKSBza2lwcyBpM2NfZGV2X2Rpc2FibGVfaWJpX2xvY2tlZCgpLCBpdCBw
-cm9jZWVkcwp0byBjYWxsIG1hc3Rlci0+b3BzLT5mcmVlX2liaShkZXYpIHdoaWNoIGZyZWVzIHRo
-ZSBiYWNraW5nIG1lbW9yeSBwb29sOgoKZHJpdmVycy9pM2MvbWFzdGVyLmM6aTNjX2Rldl9mcmVl
-X2liaV9sb2NrZWQoKSB7CiAgICAuLi4KICAgIG1hc3Rlci0+b3BzLT5mcmVlX2liaShkZXYpOwoK
-ICAgIGlmIChkZXYtPmliaS0+d3EpIHsKICAgICAgICBkZXN0cm95X3dvcmtxdWV1ZShkZXYtPmli
-aS0+d3EpOwogICAgICAgIGRldi0+aWJpLT53cSA9IE5VTEw7CiAgICB9CiAgICAuLi4KfQoKQmVj
-YXVzZSBkZXN0cm95X3dvcmtxdWV1ZSgpIGZsdXNoZXMgYW5kIGV4ZWN1dGVzIHBlbmRpbmcgd29y
-a3MgYWZ0ZXIgdGhlIHBvb2wKaXMgYWxyZWFkeSBmcmVlZCwgY291bGQgdGhlIHdvcmsgaGFuZGxl
-ciBhY2Nlc3MgdGhlIGZyZWVkIHNsb3QgZGF0YT8KCmRyaXZlcnMvaTNjL21hc3Rlci5jOmkzY19t
-YXN0ZXJfaGFuZGxlX2liaSgpIHsKICAgIC4uLgogICAgcGF5bG9hZC5kYXRhID0gc2xvdC0+ZGF0
-YTsKICAgIHBheWxvYWQubGVuID0gc2xvdC0+bGVuOwoKICAgIGlmIChkZXYtPmRldikKICAgICAg
-ICBkZXYtPmliaS0+aGFuZGxlcihkZXYtPmRldiwgJnBheWxvYWQpOwogICAgLi4uCn0KCj4gZGlm
-ZiAtLWdpdCBhL2RyaXZlcnMvaTNjL21hc3Rlci9taXBpLWkzYy1oY2kvY29yZS5jIGIvZHJpdmVy
-cy9pM2MvbWFzdGVyL21pcGktaTNjLWhjaS9jb3JlLmMKPiBpbmRleCBmNmEzNGNlN2EyOTU1Li5i
-OWIyMDc5N2QwNDU0IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvaTNjL21hc3Rlci9taXBpLWkzYy1o
-Y2kvY29yZS5jCj4gKysrIGIvZHJpdmVycy9pM2MvbWFzdGVyL21pcGktaTNjLWhjaS9jb3JlLmMK
-PiBAQCAtNjc1LDExICs2NzUsMTMgQEAgc3RhdGljIHZvaWQgX19pM2NfaGNpX2Rpc2FibGVfaWJp
-KHN0cnVjdCBpM2NfaGNpICpoY2ksIHN0cnVjdCBpM2NfZGV2X2Rlc2MgKmRldikKPiAgCj4gIHN0
-YXRpYyB2b2lkIGkzY19oY2lfZnJlZV9pYmkoc3RydWN0IGkzY19kZXZfZGVzYyAqZGV2KQo+ICB7
-CgpbU2V2ZXJpdHk6IEhpZ2hdClRoaXMgaXNuJ3QgYSBidWcgaW50cm9kdWNlZCBieSB0aGlzIHBh
-dGNoLCBidXQgZG9lcyB0aGUgX19pM2NfaGNpX2Rpc2FibGVfaWJpKCkKZnVuY3Rpb24gKGFuZCBp
-M2NfaGNpX3JlcXVlc3RfaWJpKCkpIGNhdXNlIGEgTlVMTCBwb2ludGVyIGRlcmVmZXJlbmNlIG9u
-IHYyCkhDSSBjb250cm9sbGVycz8KCkZvciB2MiBjb250cm9sbGVycyAod2hlcmUgaGNpLT5jbWQg
-PT0gJm1pcGlfaTNjX2hjaV9jbWRfdjIpLCBpM2NfaGNpX2J1c19pbml0KCkKZG9lcyBub3QgaW5p
-dGlhbGl6ZSB0aGUgREFUIGFycmF5LCBsZWF2aW5nIGhjaS0+REFUIGFzIE5VTEwuIEhvd2V2ZXIs
-IHRoZSBJQkkKb3BzIHVuY29uZGl0aW9uYWxseSBpbnZva2UgdjEgREFUIG9wZXJhdGlvbnM6Cgpk
-cml2ZXJzL2kzYy9tYXN0ZXIvbWlwaS1pM2MtaGNpL2NvcmUuYzpfX2kzY19oY2lfZGlzYWJsZV9p
-YmkoKSB7CiAgICAuLi4KICAgIG1pcGlfaTNjX2hjaV9kYXRfdjEuc2V0X2ZsYWdzKGhjaSwgZGV2
-X2RhdGEtPmRhdF9pZHgsIERBVF8wX1NJUl9SRUpFQ1QsIDApOwogICAgLi4uCn0KCkFuZCBzaW1p
-bGFybHkgaW4gaTNjX2hjaV9yZXF1ZXN0X2liaSgpOgoKZHJpdmVycy9pM2MvbWFzdGVyL21pcGkt
-aTNjLWhjaS9jb3JlLmM6aTNjX2hjaV9yZXF1ZXN0X2liaSgpIHsKICAgIC4uLgogICAgaWYgKHJl
-cS0+bWF4X3BheWxvYWRfbGVuICE9IDApCiAgICAgICAgbWlwaV9pM2NfaGNpX2RhdF92MS5zZXRf
-ZmxhZ3MoaGNpLCBkYXRfaWR4LCBEQVRfMF9JQklfUEFZTE9BRCwgMCk7CiAgICAuLi4KfQoKV2ls
-bCB0aGVzZSB1bmNvbmRpdGlvbmFsbHkgZGVyZWZlcmVuY2UgdGhlIE5VTEwgaGNpLT5EQVQgcG9p
-bnRlciB2aWEKZGF0X3cwX3JlYWQoKSB3aGVuIGFuIElCSSBpcyByZXF1ZXN0ZWQgb3IgZGlzYWJs
-ZWQgb24gYSB2MiBjb250cm9sbGVyPwoKPiArCXN0cnVjdCBpM2NfaGNpX2Rldl9kYXRhICpkZXZf
-ZGF0YSA9IGkzY19kZXZfZ2V0X21hc3Rlcl9kYXRhKGRldik7Cj4gIAlzdHJ1Y3QgaTNjX21hc3Rl
-cl9jb250cm9sbGVyICptID0gaTNjX2Rldl9nZXRfbWFzdGVyKGRldik7Cj4gIAlzdHJ1Y3QgaTNj
-X2hjaSAqaGNpID0gdG9faTNjX2hjaShtKTsKPiAgCj4gLQkvKiBNdXN0IGVuc3VyZSB0aGUgSUJJ
-IGhhcyBiZWVuIGRpc2FibGVkICovCj4gLQlfX2kzY19oY2lfZGlzYWJsZV9pYmkoaGNpLCBkZXYp
-Owo+ICsJLyogTXVzdCBlbnN1cmUgSUJJcyBmb3IgdGhpcyBkZXZpY2Ugd2lsbCBubyBsb25nZXIg
-YmUgcHJvY2Vzc2VkICovCj4gKwlzY29wZWRfZ3VhcmQoc3BpbmxvY2tfaXJxc2F2ZSwgJmhjaS0+
-bG9jaykKPiArCQloY2ktPmliaV9kZXZzW2Rldl9kYXRhLT5kYXRfaWR4XSA9IE5VTEw7Cj4gIAlo
-Y2ktPmlvLT5mcmVlX2liaShoY2ksIGRldik7Cj4gIH0KCi0tIApTYXNoaWtvIEFJIHJldmlldyDC
-tyBodHRwczovL3Nhc2hpa28uZGV2LyMvcGF0Y2hzZXQvMjAyNjA5MTQxMTMwMDMuMTgzMTUwLTEt
-YWRyaWFuLmh1bnRlckBpbnRlbC5jb20/cGFydD04CgotLSAKbGludXgtaTNjIG1haWxpbmcgbGlz
-dApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
+On 14/09/2026 14:54, sashiko-bot@kernel.org wrote:
+> Thank you for your contribution! Sashiko AI review found 1 potential issue(s) to consider:
+> - [High] The HDR Command Code's RNW bit (bit 7) is incorrectly masked out when constructing the transfer descriptor, causing HDR read commands to be sent as write commands on the bus.
+> --
+> 
+> commit f1f61dea5df0e3000b1b519aa78a3886fbb61942
+> Author: Adrian Hunter <adrian.hunter@intel.com>
+> Subject: i3c: mipi-i3c-hci: Add HDR-DDR support
+> 
+> This patch adds support for HDR-DDR private transfers in the MIPI I3C HCI
+> driver. It encodes HDR-DDR Command Descriptors, advertises HDR-DDR capability
+> when supported by the controller, and enforces HDR-DDR transfer constraints.
+> 
+>> diff --git a/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c b/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
+>> index 9910df53c013d..78ad2ec2bd936 100644
+>> --- a/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
+>> +++ b/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
+>> @@ -215,14 +215,30 @@ static int hci_cmd_v1_prep_ccc(struct i3c_hci *hci,
+>>  
+>>  static void hci_cmd_v1_prep_i3c_xfer(struct i3c_hci *hci,
+>>  				     struct i3c_dev_desc *dev,
+>> -				     struct hci_xfer *xfer)
+>> +				     struct hci_xfer *xfer,
+>> +				     enum i3c_xfer_mode xfer_mode)
+>>  {
+>>  	struct i3c_hci_dev_data *dev_data = i3c_dev_get_master_data(dev);
+>>  	unsigned int dat_idx = dev_data->dat_idx;
+>> -	enum hci_cmd_mode mode = get_i3c_mode(hci);
+>> +	enum hci_cmd_mode mode;
+>>  	u8 *data = xfer->data;
+>>  	unsigned int data_len = xfer->data_len;
+>>  	bool rnw = xfer->rnw;
+>> +	u32 cp_cmd = 0;
+>> +
+>> +	if (xfer_mode == I3C_SDR) {
+>> +		mode = get_i3c_mode(hci);
+>> +	} else {
+>> +		/*
+>> +		 * HDR-DDR is the only advertised HDR Mode, so a non-SDR
+>> +		 * transfer uses the HDR-DDR Command Code encoding: CP marks CMD
+>> +		 * as valid, CMD carries bits[6:0], and RNW carries bit[7]. CP
+>> +		 * and CMD occupy the same descriptor bits in both command
+>> +		 * formats.
+>> +		 */
+>> +		mode = MODE_I3C_HDR_DDR;
+>> +		cp_cmd = CMD_R0_CP | CMD_R0_CMD(xfer->hdr_cmd & I3C_HDR_CMD_CODE);
+>                 ^^^^^^^^
+> 
+> [Severity: High]
+> Does masking xfer->hdr_cmd with I3C_HDR_CMD_CODE unintentionally strip the RNW
+> bit (bit 7) from the 8-bit HDR Command Code before it is placed into the
+> descriptor?
+
+No - it is intentional.
+
+> 
+> Since CMD_R0_CMD occupies an 8-bit field (bits 14:7) in the descriptor and
+> xfer->hdr_cmd is masked with 0x7F, bit 14 of the descriptor will always be
+> forced to 0.
+> 
+> If the hardware sends the 8-bit CMD field exactly as provided onto the bus
+> rather than automatically merging in CMD_R0_RNW (bit 29), will this cause HDR
+> read transfers to be transmitted as write commands? This could lead to bus
+> protocol errors or timeouts, as the target device will expect to receive data
+> instead of providing it.
+> 
+>>  	}
+>>  
+>>  	xfer->cmd_tid = hci_get_tid();
+> 
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
