@@ -4,125 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3EFFC88E72
-	for <linux-i3c@archiver.kernel.org>; Mon, 14 Sep 2026 18:21:54 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3915C88E6F
+	for <linux-i3c@archiver.kernel.org>; Mon, 14 Sep 2026 18:26:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CIvHwiKLWlQqbFpoDj9dofGENuzA+QMZ2+49ag7Qe58=; b=lAKyq3G0nNLXZo
-	hK5qKZLHTIJ5iAKmbZhWQulN+prPaGuSztI6drQ/CfGj/klm7ogow9YEqzc2mfyeovtgTkWEqKTQK
-	X5oXMUvzFxz1SpL8DwYhlna/2UcJzO3GzCJfzT/Bwf3In0m4kSmRUZOTA1bBo3eNbSVaRl3DpRec0
-	exFoTsZ5q6auuFJuwLqjBwa5sjHmkBT4Y3aBP0tnjApnexpubYJsW4J87lAJlJdIHaeOPTBCSBzo+
-	d8th4dmEegDTuA4qMTq3bjX9ypUziKWANNiNr7X8qy5VnXmH8JVeoXw89Wo9mdMX0CIgfsL6OifTC
-	i+K666E182ol16DBPy/Q==;
+	List-Owner; bh=5fEwlIkI3lnYELUahe7VDkmGB0gi7dyZr9Q3t6+KiPQ=; b=TDCY6GZDeV+mMa
+	Jx/wHzF8/Ml5nqLR1uJT/230kw3YRRgvY+9CuAUtPS7mJcgTCJBo1Sk2O0jxBrTjmuB4Y6p8Jp/lM
+	gg9Fhc96HPCFa205qfmenRtr/wZG+U+QZTza5ehlSg9bFtMS27BpGVKH86UBr8X2V4NO9rL21Whg2
+	vh+1bsR7dpJ/qzZbmb/Z66CxpZQHnZ8ACcT0+L4qWwUrHM0Terq+FpWI+FWfsx/BWHMk408fayFRT
+	0TfE3pdwDMUKlJIcrJTzKA2ZaHrGH2P9pOxjFBOnuSSjUkVe2Eqfgf9m3PGmBRbFL6ABjogjqhWSL
+	D77XG3/Y5WL111GmzRlQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6BJS-00000004RMz-2TwL;
-	Mon, 14 Sep 2026 18:21:54 +0000
-Received: from mail-norwayeastazon11013049.outbound.protection.outlook.com ([40.107.159.49] helo=OSPPR02CU001.outbound.protection.outlook.com)
+	id 1x6BNp-00000004Ren-2uv2;
+	Mon, 14 Sep 2026 18:26:25 +0000
+Received: from mail-norwayeastazon11013053.outbound.protection.outlook.com ([40.107.159.53] helo=OSPPR02CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6BJQ-00000004RMF-2GAM
+	id 1x6BNm-00000004Re7-3KLl
 	for linux-i3c@lists.infradead.org;
-	Mon, 14 Sep 2026 18:21:54 +0000
+	Mon, 14 Sep 2026 18:26:24 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=puAZM4PnQiVB0IJW8zTzA6ov/YBaN7sTpaHEeJaxP6/f6dJcFY9rJYtvdSERwAHX9FWpIKoa94AYtSGjW+BXy1gW/4DmC/4VKZRhHEWNbzRokw0FNXLUGaiZGcxvn6PeNjI+4KGJEeeaM/FAVisHVDnBGRWTU662i1HHwFXFU95uhesrwEyWju7uL+wX9YGnysHzPkZpF7NV/MF7Tm91qgqIjZSdeO5oY8OFaMY4B09sLtEACKq1Q4DNPIAxlNNH7KrvHlm9Fpm9/5AEVj5fdR9Af6Wh/5jbKDLje/bta9ZfZtiAC2TItIrHoyiB+2+wRPDuje8gKcoAbmusx+RgDQ==
+ b=PN5cHh24rdzvjGuXkIq0hN0jPyHJul3Fc14p4Y1JtFMN1q7z8iGZDx6MI3IldzR8KjnoI+ubIkGEmUxNsox9aVMgR/xldyL5aWhGUhTiRJ0RxA0rEnkmR/fHrFxcS5saHXfqWGTZYUeEFe+AY8Nnw3A2qPXIN/+GUnDuLLXH/DRISOAueQblltFQ/JPZoyk77lOhibGFrborsr7HWGqZtnLdVITZNTDxc2uVnJgHclxgZbMqvEyuZbSCQfaPhB3C8357pe8nXMQfyMuIulXsSRu7CJxX2d/jMlCRrWbFPetQq4RovM5Z1G3AwhyDr26pDmT5sOZeonjFOGkwSzEGOA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=Mtr92iM+aOjdjYVJ1mselK1Vo3oRvnAO37qXZOgQ4sc=;
- b=ArMWUIPrBych0Kxla0attxnfD7GXthERuJqF3WdGrlIcLoooL70hajZcpzxFzDixlyVrwD4w01ZJrdBirol9OtdP27eVMzRNoldRYEK8sNTTlPeAGT+9kN8eKObdBKI4g7RHtck9b6Ts6FX0/bXxqj15Bcb15VFX+dZMdJ9SvT3oAdEv04AQKFg3UoYrQxcg8xQ84CCZE5v8BNsIYz8gROUU+snAnKSI+OaBiSwjLctKt88m+ftO7zLSIQhXbeeLcIYid60u8WbK5kBJjA1CZrwx605e8i2mlqEbZnxrBCpzFFngnM4EXrMqDaTXiImJ5d670ksYKXYXFOkV08FbaA==
+ bh=rswoEnTEuLMMhKnkI+uacAOz/6gWJeA2odmbYwGzq7c=;
+ b=QASh7XV+pIEfwNTaPa1a+cgBZwlzHr3l3LhMxwVmIPqJAbWLCB9/PiBiiPPuMB8NBzs3CR4SUHxYplkbrjyGwZl6Y4PRD+ABDZ5Q1mW5mVLoiRuHYlUpcMX4qaBYtICAgRuv5DZUPCcd+vZeKz2wzF1Yw88jwt0R/kHAP1j2DNTRMSvY+aWztEbVTejl/NSUF8u5ZwGPwW1Gd2MRuzMIoLS3zdVURlRqTEH2rrkfrXwyM0J6J+cKgzybfgq71uncsyc3pb7f1mKtendxHkj+Em1VTpv9TwyjUzSetd0nui76Yib4OYZERa9hB4035GiBuO3YiIjpriL2r7vWmF/gSQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
  dkim=pass header.d=oss.nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
  s=selector1-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Mtr92iM+aOjdjYVJ1mselK1Vo3oRvnAO37qXZOgQ4sc=;
- b=PuMmrMVKK5whySO5o1Wv0Tv/1K00mbbib+LGHfxHZsTvaprL9zTsDfB0Pm/7zW4uqIXBSuw0wLfE4YX7ZMJ7dbYIxOF0lHGwkOTaYTgfmKZo9rOD38ZHFsbWD/nLXZz4r2U8OCM/puTkwkGMV8YbnTIYVKFL3E8S9pI3fIlKplVzq0rVjWzbrmrSuI2s0MBJ+E+81joV47ByfioM114P0b1sodYVD1FQV/OFbWvJuda1je6X5w2zpu93Gsybj3tLQUU52gt6daj82CBOv1XjtLm4vSocWNfXlQXa4Y+6SG8p0leihmM0lx7x4a7eO6YyhXOwhbNRnZ+9+mx5WcBfPg==
+ bh=rswoEnTEuLMMhKnkI+uacAOz/6gWJeA2odmbYwGzq7c=;
+ b=FEZa7cqa1dw2uCBliTWfGEcunonAqwyX/XdcB3gOTWKEVO+rnJQnmbYccyRRgM3wd6n4t9R6vrxsSghjkuGHUyyyozhAli5BfnMm037AQ1xuRk4ovU253z7Ra5IkyPlEeJhRxB6OQhznpAKOb2op0mBy7vopN3LNxHFnRHmeqXtROi5pO0dKZwtxukSrz/crmmNsVkgwTEFm8RPl7IxmHpTZYSobx7It3h90tJ8ocTsygkBR4dtsNRC4nO2cTm4ZXvuoq4x6zERg1rLPPxeTCUn5xx+HGZv0XNC968NNORhQIdcG7fEZex583+/sutWYw0R5DbtOf1OJTNfGGpYb4g==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=oss.nxp.com;
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
  by VI1PR04MB6877.eurprd04.prod.outlook.com (2603:10a6:803:131::23) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.382.15; Mon, 14 Sep
- 2026 18:21:46 +0000
+ 2026 18:26:19 +0000
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0406.007; Mon, 14 Sep 2026
- 18:21:46 +0000
-Date: Mon, 14 Sep 2026 14:21:38 -0400
+ 18:26:19 +0000
+Date: Mon, 14 Sep 2026 14:26:12 -0400
 From: Frank Li <Frank.li@oss.nxp.com>
 To: Adrian Hunter <adrian.hunter@intel.com>
 Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com,
 	billy_tsai@aspeedtech.com, linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 15/17] i3c: mipi-i3c-hci: Support configurable device
- NACK retries
-Message-ID: <aqg7Mhw8EpAoO5Fx@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH 16/17] i3c: Restrict HDR modes to those supported by the
+ bus and target
+Message-ID: <aqg8RL7KHiYDOXMM@lizhi-Precision-Tower-5810>
 References: <20260914113003.183150-1-adrian.hunter@intel.com>
- <20260914113003.183150-16-adrian.hunter@intel.com>
+ <20260914113003.183150-17-adrian.hunter@intel.com>
 Content-Disposition: inline
-In-Reply-To: <20260914113003.183150-16-adrian.hunter@intel.com>
-X-ClientProxiedBy: CYZPR17CA0005.namprd17.prod.outlook.com
- (2603:10b6:930:8c::21) To GV2PR04MB11799.eurprd04.prod.outlook.com
+In-Reply-To: <20260914113003.183150-17-adrian.hunter@intel.com>
+X-ClientProxiedBy: CYZPR20CA0011.namprd20.prod.outlook.com
+ (2603:10b6:930:a2::22) To GV2PR04MB11799.eurprd04.prod.outlook.com
  (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|VI1PR04MB6877:EE_
-X-MS-Office365-Filtering-Correlation-Id: 101ff28e-c625-4ad0-be90-08df128d08b3
+X-MS-Office365-Filtering-Correlation-Id: 5d9597b2-cfe6-4f1f-d9e6-08df128dabbc
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|23010399003|366016|1800799024|19092799006|10067099003|4143699003|56012099006|11063799006|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: f+yJpqHSELAAkj+EqvxFEiF9oXryeQfU7i01A7lVWGGZQzbI/g886q1jF8PMnUBR/TG5KQReoDmPJcM75sSSQg8heMb5ypUEZevPI2uY3y5r6AAGXkEdCmQ6ZDhEqEuLFJF1pMNIcGhLwCf1yn79FWZQiORxUqiFmmwIzH7m1kV88KCzXTRib3kpd01/dSMxPTvWtxYhigxpLiH061wlwlx+QM/tiVWCJXYqpi9EdsWVItP9MefvSIuJap01Ba06DrJFtXVwLEZFUUC/gPGI0VgL1I9tYxCZKeGYEoArkRjDwx6gpqcxYYDCmd3c+NHld/Ff7KjnpZtRoFtDmI1i2qFaX1naqyfODl6Wij/Rl2BpO6waU/KBwgYhjiGX5nP7PL+pwT4lItgJZnKgWp/7o/ZTAkBu5b314yAPfMuDHOGfZ+IXJbsB45BLD6TqWBJbX1f+P8C+lUUDLTY1TM87tvDrRmOCguONswJ919itDl8433TBQBAUXnLTJBoNl1R3ARwE2TsjBzUicQNW7Umc3gqNwO+YoGUvFTJ4DiLCW7pWltvRq2uz/xdLZ1KjyTBBiC6BAp9VRFEZNu17GU2zaeC9luuvdeiqOPYPidmnlts42IoKvL4fTxRDLvKBjXWlrrkiTlRSTINM0MlyaN98S/ph3YM49/71cT131RCIQc4=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(23010399003)(366016)(1800799024)(19092799006)(10067099003)(4143699003)(56012099006)(11063799006)(18002099003)(22082099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|23010399003|366016|1800799024|19092799006|10067099003|3023799007|6133799003|4143699003|56012099006|11063799006|18002099003|22082099003;
+X-Microsoft-Antispam-Message-Info: jF2AaP5nCSo0pfiUVgoBWlG1SYKBp4SkIh0Vf4fKE/RgK4KdDzCTt1ZtjDyJ7EItEHNyi2iWY5P9N9r1HE75RHNgNEivCxq032x9JglFuUSiR7cKXFk805zHb4HFncN0bCJtuebPuf/Z9hmm5hH//F+C/HVxVCfI0qXYIquYCbGXmQazcucfkVMa1cyW6SAHoyjVSnxh3ofx8y3XVGMWvAq4Y0EvZBDBwQ112degvOzlBt1L1n7gOKFnJYDm4zRvqfozw0ybejIzEi/s+e4S/5/EyiU8RVz0E+cq4X5OT+baRbtgxGbu0i4M3NAvBgILXTHdQJF9FK3p27r6LPdseghAeGjTWPvUBXwtdcaDCUYfSwScQ4pJych8K1DC0oHoOTvaRm4XcHRpqLiG7F8tPlw7Sm0lGZLv2eZ4m61FgyiKoxvYyHb5OV2Z5i04xTwhgOWtOVy+VaWXlIzXP13PhJk95uv3DoV1G93uxb6jwkNrHhB/WfiqjYtTV8T3TLAvBv59e/67uEbXU7ix0cVltmzbuaxkKhPe7OS7yiv8Nw2eFF0EbS+7k7lf8sZF1i1HtYPTLW8h4XYZ/NGdP/oS6Ihgj4ViiLrIx3PPlsdq81sVksVq3w21w5T5BEpNqUyU9o/ayO2IdXVEXvI5LeO+WyiTbDTkJCPFkpOySCyy+Rc=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(23010399003)(366016)(1800799024)(19092799006)(10067099003)(3023799007)(6133799003)(4143699003)(56012099006)(11063799006)(18002099003)(22082099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?8UsPgr9VoGkPfIwnJGrCJvk7C5saquEk3+LrMmBPWsfHX4WRq/2kaYuCY2D0?=
- =?us-ascii?Q?TqzodYGUG8Y6HivbRMRojubLxZs11YVooa9qfT3sqiexfOEkFNZcIT1ywzMz?=
- =?us-ascii?Q?V19QvoCtQpw1h++wfrYuIrc6Si9jHQrK8YG71/Z+0Q5oZ3rCgLXNWTj2uUkk?=
- =?us-ascii?Q?LFcmtsPTANp7yccyDvTW20MRKoZn5r5ZFLlJReK7KrAhmLA00cy3fxXYu/l/?=
- =?us-ascii?Q?60tdHEnM5JpPVOYZLsWpKgEoW8ni5Eqlft8aQ3jRQULqKjyvLOpdikm/2OFD?=
- =?us-ascii?Q?qYnfjPO38DLubVfojydoa9RHe3emZP8pyO0/6erq/84mo/M51sIfkctHuf1g?=
- =?us-ascii?Q?lQhm+37R6U65f0kk3Npsbftlov/o9QdxC7V50RKvXJeCI9xb1nNCns7vEv5n?=
- =?us-ascii?Q?dDdUeZdvVav2yF3qgxIWUCf3bo0JrYkxm9dL45jMKIBmd3OdsEc95GubHj0D?=
- =?us-ascii?Q?idWvmN443GrUnuSjlkks1c33UTweH2JgFgP4qSEcytd5OJS9ZMo4Qb76vmE4?=
- =?us-ascii?Q?kdtyXyvpTWR9SDxuUo5rcQtaxnsduR7weFz4NwM8qV0CszqMAraHAhath72n?=
- =?us-ascii?Q?/ZPqXM7G0lMQgXF6vOKSVHVN0DFIHdHdW+T6rFcUm1qBdBP2CQ6lPItBWGw3?=
- =?us-ascii?Q?tqW0n7aJBwAkU4lx8tJXJWdhFoimxq4nbnZF8km78ZyzMhdPk9AnHZidBqVu?=
- =?us-ascii?Q?3u2yeI5MBFThBjy4xxjVxD9QDCdSrjHXZinK8CP9VpVe7vyn/j1WmrR2L0Mf?=
- =?us-ascii?Q?D8Sn8TldKcsuGgLlAb2b5fHBHZQKf4AlBDyzTyHYw99qoPGpbWIj0mMX0top?=
- =?us-ascii?Q?/iJ8Y2g4FDXD7Md9PrKGQZC5cn4uBi6Z9neqaQA5eBvOj9SpBtHtojOtAXIL?=
- =?us-ascii?Q?BYR2dSTmHiP34+/VZT+nLRGi6V4r1wY25AthimMAjt37NVLeUjrfeX2iMkQ9?=
- =?us-ascii?Q?/F2UKeH3j8c35I8ACQZBBJ3AOqNeRKRUMbtxPvp1H6MsVvEGgn6hNVymvNgR?=
- =?us-ascii?Q?L7O8/WmyVcZwX2ObtdQV6vwqZKzelCokopVlbOHa2Hi7GG+CWK6gr+SjIb/4?=
- =?us-ascii?Q?F7RhVoBwMA+oC5Cw/w8DM3TQ7hc4nadJBUFTd8TmL2trHFqiQ7DJBhhGk0Ql?=
- =?us-ascii?Q?4ksNlEyVq1OxFQVR2lPCo9QMYIAFj5EmcIYCTLTLDFX3SIQw13faX0Y2Q02M?=
- =?us-ascii?Q?XFy+amtQn1rLzP4aVF0s0x3zvjWBI4NRbmLxjmjliS5VCp1ackzXUAE65mEq?=
- =?us-ascii?Q?cg8B8+HEbLOViZTZLq36QZ4L6SwyDcYdIhlW9ukYhJpn035cfy3U0VR1PviM?=
- =?us-ascii?Q?YtlYT6Ux7HGxq44n0y5kCffyhUpykxg2vP8ops9QD5Hn36ta4XV0INtZuv5a?=
- =?us-ascii?Q?lY4+bXlWAILsevXMNxjEVCQpUFiVD8ccQ/9Z6EWiK50A4++UClvNzyuBAq6E?=
- =?us-ascii?Q?vKoXq4UfVXdMBTCJsJP2kHHC2osUIFpHfvFI+5JHFIEoX3C9BkUycJuVwVZJ?=
- =?us-ascii?Q?6i95G6SyN1dc4DmiR5XsRR2QehfrT817/oYhHJHfh+rFhoi6A5awxjHhD0rG?=
- =?us-ascii?Q?nUxHiM9iePIfqdWY9B0/bkKVMb48tDKMqBo4YnLxUtThArwqCGFMAw0jZZqE?=
- =?us-ascii?Q?9q1k36u7teBdgP9bGzCEYG50l4Hczi77OEeqZ7z+1fbp1x5sXl06JdulGjJx?=
- =?us-ascii?Q?1cKCZSFDz2HuJa/xhq5NcxTTzlCr0ah6ZABLAPsi3jKBSlTapiQPTAdogYe6?=
- =?us-ascii?Q?sB6swp+6Yi40XFYIBfreEknX2sKp3e5wWEkcJHIf9FzoemVHPK+F?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?9EfWJkDawFUpbTHW/wpglR8KWeePN5uX4gOwwZddzy84PiZmKhcqv1hLbacC?=
+ =?us-ascii?Q?XtLxeV7nC5ro2tCTAfy3rqhLDE4SS+5kZVNmkmGP2jzBpOBQUl3ZYTFkof3k?=
+ =?us-ascii?Q?O1/MYqOhdXBm+o0YbtagwwBOOjqYQFQPcA1PkJQidoXeojrhteTa+mcV6zcm?=
+ =?us-ascii?Q?GzS+TJ3NibNyCUysxj0qNL6s4EbB4jxtIma17FbaqMbfGVgFa5PcggwLNIZa?=
+ =?us-ascii?Q?QMI8qKgDiyMMu2KWUBI0pdBBzA0jErBPLKY8tYD3gclMkqp4agUS32OufVaI?=
+ =?us-ascii?Q?wZL5dHfzozeDq3fj2ChiU1RJH2Vb6rNlCuENMQogBg3gBxlcp3gi+op9CKul?=
+ =?us-ascii?Q?L4TMHYIp+yGM4u7Zv/dv76MSq7p2Tv5/NpjQ+WN1OIUq0tMX5HcJ/U9aDyk/?=
+ =?us-ascii?Q?jafaW5wwKR5hjdeFdNrxDhuOza/nqlHieW3fL8KZh4vSZn9jFNdtX3QYHWf4?=
+ =?us-ascii?Q?SJJYNn4q/zIDQ/cadX6gcUud9XBLPWahJTQoDgxeZKr3d98wM/VCTXwZ2TBp?=
+ =?us-ascii?Q?695OkUvpFQJIx3HQMz9/SkimUkSrMpNL74cpfCjgOwHnsP92Mugjtf1unNN1?=
+ =?us-ascii?Q?NYxzO4WC27qrkb1rTHzybJj8LD5/5c3Vqv5efCYc9p5PvB4ykLHgcI8id2fP?=
+ =?us-ascii?Q?841B+6cO6208FIvTx6cFD9qhPXFnQjvFs7l7WKZRaptcp4XxuBJyIicnhIau?=
+ =?us-ascii?Q?0LvwM4B8MuyupYTryXboONOqFpqy+PCTwaNJdh974fGrZHqTDwBrW6nZTVTx?=
+ =?us-ascii?Q?hkZaeBuw3LC4oVeDjePoycI6595CyCq4F8aT6DtZQQTCbLKtTqm8kdSv6++V?=
+ =?us-ascii?Q?5fv8GcXv+IH/MLTwHoe/KqlgpD9QcjYfCn3zVzJXafqe2WpJ9/pLGLU+dXXj?=
+ =?us-ascii?Q?+9HBQuEU/1PkM8BqcK2DYSVxjlHorHh6yh4u8TK0r7pZDD0PGLcvtvDJpZAM?=
+ =?us-ascii?Q?/+8jAmNrEfgJcCUW7vXR6qfzOqCyXN5KXeB1WdsNX0hV1M9GySV18W797nD0?=
+ =?us-ascii?Q?mFtVdNf1rnc4dXaY4CfflkA6MnCYi/w1VHpQNuCAjWCZtmCTAvmW9/1K2g51?=
+ =?us-ascii?Q?yGNNH6h9yA+mO0wGIOMk8ES5glV0ySkJe5f6U61SEUG6xwTcRuRClN6IXqtx?=
+ =?us-ascii?Q?7FCJmlVIG45jOW6pdISgYW0Q0JS1BjalKtAsPZ4UEYcvdqDazQhcLoPcOMuA?=
+ =?us-ascii?Q?BSM9N4gtafzh/cCtwQAtSPInqB35vI+1OvjlYrj06v4BkS4crHNjiY65Syua?=
+ =?us-ascii?Q?45fJztwPCsPZfIWZI+5eYLQ6vejbeUc9XaVa+Mzad6QgPgxVplzr/GwgJXAU?=
+ =?us-ascii?Q?gOS9iZVOcFQgnsaaE6dIkRmyblOb2pUddGODza/faxUAwM+GXdtt/fa2yEXP?=
+ =?us-ascii?Q?HocyVM40n2ixg3gSEF1Lqhcoxudfh+BF/JglxpfP6bUWM/0IGs2X0kRIMQje?=
+ =?us-ascii?Q?Y5hXw5XP1cihhHlUb7PnwVicuR30hvx0RnJQ4qxJv39NoPMUDtvd/EZMiRMp?=
+ =?us-ascii?Q?6ohlp7HCQyHAtzGmK9x07zAKcIL8xwPQTPng98kXcmiRwUWUsLeGXCbdI5Za?=
+ =?us-ascii?Q?X9pNnQOrK6lTmz+MTpyUMbtrHNora1YVgoqkhIn+rKup4Vn0Icq5L9JNCmwJ?=
+ =?us-ascii?Q?0UsZwJFbOZ3L+GT8jSiPfLl5Zrb0PLoJDw0MNn7sKPpDgkQJ7cKj+j1Rno0k?=
+ =?us-ascii?Q?hGrpU+ZwDPWiQx6niw6/sf49wjn+iOzxNs2YLtlrOWJVj3ZpnPktOdRrYoNI?=
+ =?us-ascii?Q?s5zzlsT9fff7HpGVrSGkGjTrAWONhud4hXG9Jsv7YYUKN0WKq6aM?=
 X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 101ff28e-c625-4ad0-be90-08df128d08b3
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5d9597b2-cfe6-4f1f-d9e6-08df128dabbc
 X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Sep 2026 18:21:45.9949
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Sep 2026 18:26:19.2817
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: WyvYj6MnBxXYDTw3UFvOC3qR7LoZgFNqvQiFXZMzgFvPZBWjUtjF6+6u7oVgeMRj1+zYwXpdrOxsUGYphoekj6/BzRb6dQwl5hCJ2tKArKH1KT2vWl9U7PHHtqKUDydn
+X-MS-Exchange-CrossTenant-UserPrincipalName: jixx8OgT0UQsmYB6EPqOMZRO4YiSp4X3wVP+CUsB3qMFgwAe7+8eFi2TUQHddWn/howcIuM62f+1LCeTmYXg+KCtXpPCLWPpqMiJR+L6Hpga7SaVBFm/EzPT2WLLKPPz
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6877
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260914_112152_581459_878331E3 
-X-CRM114-Status: GOOD (  29.62  )
+X-CRM114-CacheID: sfid-20260914_112623_177339_F09984CD 
+X-CRM114-Status: GOOD (  35.36  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,167 +139,173 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, Sep 14, 2026 at 02:30:01PM +0300, Adrian Hunter wrote:
-> Implement the .set_dev_nack_retry() master operation using the
-> DAT_0_DEV_NACK_RETRY_CNT field in Device Address Table entries.
+On Mon, Sep 14, 2026 at 02:30:02PM +0300, Adrian Hunter wrote:
+> I3C v1.1.1 Table 9 defines which HDR Modes are permitted for each Bus
+> Configuration.  A Mixed Slow / Limited Bus permits no HDR Modes because
+> Legacy I2C Devices without a 50 ns SCL spike filter cannot be shielded
+> from HDR traffic.  A Mixed Fast Bus permits HDR-DDR and HDR-TSL, but not
+> HDR-TSP, since of the two Ternary Modes only HDR-TSL is defined for a Bus
+> that also has Legacy I2C Devices.
 >
-> Since the retry count is programmed per DAT entry, update all allocated
-> entries when the setting changes and initialize newly allocated entries
-> with the current value so that a consistent retry policy is applied
-> across all devices.
+> However, both i3c_device_get_supported_xfer_mode() and the transfer
+> validation in i3c_dev_do_xfers_locked() currently consider only the
+> controller's hdr_cap.  Since hdr_cap reflects controller capability
+> rather than bus or target constraints, HDR Modes can be advertised and
+> used even when the bus configuration forbids them.  Likewise, HDR Modes
+> unsupported by the target may be reported as available.
 >
-> Add DAT helper operations to update individual entries and all allocated
-> entries.  Return -ERANGE if the requested retry count exceeds the
-> hardware field width and -EOPNOTSUPP when the active command descriptor
-> model does not use DAT entries.
+> Add i3c_dev_supported_xfer_modes_locked(), which derives the usable
+> transfer modes from the intersection of:
 >
-> In addition, default the retry count to 1.  The I3C specification
-> mandates a retry when a Target NACKs its Dynamic Address.  HCI v1.1
-> explicitly preserves that behaviour for Direct CCCs even when
-> DEV_NACK_RETRY_CNT is programmed to 0, but HCI v1.0 defines the field
-> only as a device-specific retry count and does not provide the same
-> exception.  As a result, a v1.0 controller left at the reset value of 0
-> may perform no retry whereas a v1.1 controller will retry once.
-> Promoting 0 to 1 at probe time makes the behaviour consistent across
-> controller versions.  Userspace can still select 0 retries explicitly
-> via dev_nack_retry_count.
+>   - HDR Modes supported by the controller
+>   - HDR Modes allowed by the bus configuration
+>   - HDR Modes supported by the target
 >
+> Use this helper both when reporting supported transfer modes and when
+> validating transfers, ensuring that the advertised and permitted modes
+> remain consistent.
+>
+> GETHDRCAP is queried only when I3C_BCR_HDR_CAP is set, so a target
+> without that bit is treated as supporting no HDR Modes.
+>
+> i3c_device_get_supported_xfer_mode() now takes the normal-use bus lock
+> in order to access the device descriptor, matching
+> i3c_device_get_info().
+>
+> Also fix the kernel-doc reference to enum i3c_xfer_mode.
+>
+> Fixes: 256a21743d91 ("i3c: Add HDR API support")
+> Assisted-by: GitHub-Copilot:claude-opus-5
 > Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 > ---
->  drivers/i3c/master/mipi-i3c-hci/core.c   | 25 ++++++++++++++++++++++++
->  drivers/i3c/master/mipi-i3c-hci/dat.h    |  2 ++
->  drivers/i3c/master/mipi-i3c-hci/dat_v1.c | 25 ++++++++++++++++++++++++
->  3 files changed, 52 insertions(+)
+
+Reviewed-by: Frank Li <Frank.Li@nxp.com>
+
+>  drivers/i3c/device.c    | 15 ++++++++---
+>  drivers/i3c/internals.h |  2 ++
+>  drivers/i3c/master.c    | 57 ++++++++++++++++++++++++++++++++++++++++-
+>  3 files changed, 69 insertions(+), 5 deletions(-)
 >
-> diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-> index 7a39be64c4e1..57d84d7682d7 100644
-> --- a/drivers/i3c/master/mipi-i3c-hci/core.c
-> +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-> @@ -555,6 +555,11 @@ static int i3c_hci_i2c_xfers(struct i2c_dev_desc *dev,
->  	return ret;
->  }
+> diff --git a/drivers/i3c/device.c b/drivers/i3c/device.c
+> index f1ba363b22a1..4df4682af150 100644
+> --- a/drivers/i3c/device.c
+> +++ b/drivers/i3c/device.c
+> @@ -301,16 +301,23 @@ i3c_device_match_id(struct i3c_device *i3cdev,
+>  EXPORT_SYMBOL_GPL(i3c_device_match_id);
 >
-> +static void i3c_hci_dat_v1_set_curr_nack_retry(struct i3c_hci *hci, unsigned int dat_idx)
-> +{
-> +	mipi_i3c_hci_dat_v1.set_nack_retry(hci, dat_idx, hci->master.dev_nack_retry_count);
-> +}
-> +
->  static int i3c_hci_attach_i3c_dev(struct i3c_dev_desc *dev)
+>  /**
+> - * i3c_device_get_supported_xfer_mode - Returns the supported transfer mode by
+> - *					connected master controller.
+> + * i3c_device_get_supported_xfer_mode - Returns the transfer modes supported by
+> + *					the connected master controller and @dev,
+> + *					and allowed by the bus configuration.
+>   * @dev: I3C device
+>   *
+>   * Return: a bit mask, which supported transfer mode, bit position is defined at
+> - *	   enum i3c_hdr_mode
+> + *	   enum i3c_xfer_mode
+>   */
+>  u32 i3c_device_get_supported_xfer_mode(struct i3c_device *dev)
 >  {
->  	struct i3c_master_controller *m = i3c_dev_get_master(dev);
-> @@ -573,6 +578,7 @@ static int i3c_hci_attach_i3c_dev(struct i3c_dev_desc *dev)
->  		}
->  		mipi_i3c_hci_dat_v1.set_dynamic_addr(hci, ret,
->  						     dev->info.dyn_addr ?: dev->info.static_addr);
-> +		i3c_hci_dat_v1_set_curr_nack_retry(hci, ret);
->  		dev_data->dat_idx = ret;
->  	}
->  	i3c_dev_set_master_data(dev, dev_data);
-> @@ -622,6 +628,7 @@ static int i3c_hci_attach_i2c_dev(struct i2c_dev_desc *dev)
->  	}
->  	mipi_i3c_hci_dat_v1.set_static_addr(hci, ret, dev->addr);
->  	mipi_i3c_hci_dat_v1.set_flags(hci, ret, DAT_0_I2C_DEVICE, 0);
-> +	i3c_hci_dat_v1_set_curr_nack_retry(hci, ret);
->  	dev_data->dat_idx = ret;
->  	i2c_dev_set_master_data(dev, dev_data);
+> -	return i3c_bus_to_i3c_master(dev->bus)->this->info.hdr_cap | BIT(I3C_SDR);
+> +	u32 modes;
+> +
+> +	i3c_bus_normaluse_lock(dev->bus);
+> +	modes = i3c_dev_supported_xfer_modes_locked(dev->desc);
+> +	i3c_bus_normaluse_unlock(dev->bus);
+> +
+> +	return modes;
+>  }
+>  EXPORT_SYMBOL_GPL(i3c_device_get_supported_xfer_mode);
+>
+> diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
+> index 86a36b951e0d..9a6936e2c660 100644
+> --- a/drivers/i3c/internals.h
+> +++ b/drivers/i3c/internals.h
+> @@ -18,6 +18,8 @@ bool i3c_bus_rpm_ibi_allowed(struct i3c_bus *bus);
+>  void i3c_bus_normaluse_lock(struct i3c_bus *bus);
+>  void i3c_bus_normaluse_unlock(struct i3c_bus *bus);
+>
+> +u32 i3c_dev_supported_xfer_modes_locked(struct i3c_dev_desc *dev);
+> +
+>  int i3c_dev_setdasa_locked(struct i3c_dev_desc *dev);
+>  int i3c_dev_do_xfers_locked(struct i3c_dev_desc *dev,
+>  			    struct i3c_xfer *xfers,
+> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+> index 4296c51a9537..c8093708807c 100644
+> --- a/drivers/i3c/master.c
+> +++ b/drivers/i3c/master.c
+> @@ -938,6 +938,61 @@ static int i3c_bus_set_mode(struct i3c_bus *i3cbus, enum i3c_bus_mode mode,
 >  	return 0;
-> @@ -733,6 +740,16 @@ static void i3c_hci_recycle_ibi_slot(struct i3c_dev_desc *dev,
->  	hci->io->recycle_ibi_slot(hci, dev, slot);
 >  }
 >
-> +static int i3c_hci_set_dev_nack_retry(struct i3c_master_controller *m, unsigned int cnt)
+> +/*
+> + * I3C v1.1.1 Section 5.1.2.4 Table 9 lists the HDR Modes each Bus
+> + * Configuration allows.  A Mixed Slow / Limited Bus has Legacy I2C Devices
+> + * without a 50 ns spike filter, so there is no way to hide any HDR Mode from
+> + * them.  Of the two Ternary Modes, only HDR-TSL is defined for a Bus that
+> + * also has Legacy I2C Devices; HDR-TSP is defined for a Pure Bus.
+> + */
+> +static u32 i3c_bus_hdr_modes(struct i3c_bus *bus)
 > +{
-> +	struct i3c_hci *hci = to_i3c_hci(m);
-> +
-> +	if (hci->cmd != &mipi_i3c_hci_cmd_v1)
-> +		return -EOPNOTSUPP;
-> +
-> +	return mipi_i3c_hci_dat_v1.set_all_nack_retry(hci, cnt);
-> +}
-> +
->  static const struct i3c_master_controller_ops i3c_hci_ops = {
->  	.bus_init		= i3c_hci_bus_init,
->  	.bus_cleanup		= i3c_hci_bus_cleanup,
-> @@ -752,6 +769,7 @@ static const struct i3c_master_controller_ops i3c_hci_ops = {
->  	.recycle_ibi_slot	= i3c_hci_recycle_ibi_slot,
->  	.enable_hotjoin		= i3c_hci_enable_hotjoin,
->  	.disable_hotjoin	= i3c_hci_disable_hotjoin,
-> +	.set_dev_nack_retry	= i3c_hci_set_dev_nack_retry,
->  };
->
->  static irqreturn_t i3c_hci_irq_handler(int irq, void *dev_id)
-> @@ -1186,6 +1204,13 @@ static int i3c_hci_probe(struct platform_device *pdev)
->  	if (device_can_wakeup(i3c_hci_sysdev(&pdev->dev)))
->  		hci->master.ibi_wakeup = true;
->
-> +	/*
-> +	 * HCI v1.1 onward does 1 retry for Direct CCCs anyway, so for v1.0 to
-> +	 * be consistent, promote 0 to 1.
-> +	 */
-> +	if (!hci->master.dev_nack_retry_count)
-> +		hci->master.dev_nack_retry_count = 1;
-> +
->  	return i3c_master_register(&hci->master, &pdev->dev, &i3c_hci_ops, false);
->  }
->
-> diff --git a/drivers/i3c/master/mipi-i3c-hci/dat.h b/drivers/i3c/master/mipi-i3c-hci/dat.h
-> index 6881f19da77f..a07086bf717a 100644
-> --- a/drivers/i3c/master/mipi-i3c-hci/dat.h
-> +++ b/drivers/i3c/master/mipi-i3c-hci/dat.h
-> @@ -25,6 +25,8 @@ struct hci_dat_ops {
->  	void (*clear_flags)(struct i3c_hci *hci, unsigned int dat_idx, u32 w0, u32 w1);
->  	int (*get_index)(struct i3c_hci *hci, u8 address);
->  	void (*restore)(struct i3c_hci *hci);
-> +	void (*set_nack_retry)(struct i3c_hci *hci, unsigned int dat_idx, unsigned int cnt);
-> +	int (*set_all_nack_retry)(struct i3c_hci *hci, unsigned int cnt);
->  };
->
->  extern const struct hci_dat_ops mipi_i3c_hci_dat_v1;
-> diff --git a/drivers/i3c/master/mipi-i3c-hci/dat_v1.c b/drivers/i3c/master/mipi-i3c-hci/dat_v1.c
-> index 852966aa20d9..cb9aa43e69fb 100644
-> --- a/drivers/i3c/master/mipi-i3c-hci/dat_v1.c
-> +++ b/drivers/i3c/master/mipi-i3c-hci/dat_v1.c
-> @@ -189,6 +189,29 @@ static void hci_dat_v1_restore(struct i3c_hci *hci)
->  	}
->  }
->
-> +static void hci_dat_v1_set_nack_retry(struct i3c_hci *hci, unsigned int dat_idx, unsigned int cnt)
-> +{
-> +	u32 dat_w0;
-> +
-> +	dat_w0 = dat_w0_read(dat_idx);
-> +	dat_w0 &= ~DAT_0_DEV_NACK_RETRY_CNT;
-> +	dat_w0 |= FIELD_PREP(DAT_0_DEV_NACK_RETRY_CNT, cnt);
-> +	dat_w0_write(dat_idx, dat_w0);
-> +}
-> +
-> +static int hci_dat_v1_set_all_nack_retry(struct i3c_hci *hci, unsigned int cnt)
-> +{
-
-do you have other implement for set_all_nack_retry()?
-
-Frank
-> +	unsigned int dat_idx;
-> +
-> +	if (cnt > FIELD_MAX(DAT_0_DEV_NACK_RETRY_CNT))
-> +		return -ERANGE;
-> +
-> +	for_each_set_bit(dat_idx, hci->DAT_data, hci->DAT_entries)
-> +		hci_dat_v1_set_nack_retry(hci, dat_idx, cnt);
+> +	switch (bus->mode) {
+> +	case I3C_BUS_MODE_PURE:
+> +		return BIT(I3C_HDR_DDR) | BIT(I3C_HDR_TSP) | BIT(I3C_HDR_TSL);
+> +	case I3C_BUS_MODE_MIXED_FAST:
+> +		return BIT(I3C_HDR_DDR) | BIT(I3C_HDR_TSL);
+> +	case I3C_BUS_MODE_MIXED_LIMITED:
+> +	case I3C_BUS_MODE_MIXED_SLOW:
+> +		break;
+> +	}
 > +
 > +	return 0;
 > +}
 > +
->  const struct hci_dat_ops mipi_i3c_hci_dat_v1 = {
->  	.init			= hci_dat_v1_init,
->  	.alloc_entry		= hci_dat_v1_alloc_entry,
-> @@ -199,4 +222,6 @@ const struct hci_dat_ops mipi_i3c_hci_dat_v1 = {
->  	.clear_flags		= hci_dat_v1_clear_flags,
->  	.get_index		= hci_dat_v1_get_index,
->  	.restore		= hci_dat_v1_restore,
-> +	.set_nack_retry		= hci_dat_v1_set_nack_retry,
-> +	.set_all_nack_retry	= hci_dat_v1_set_all_nack_retry,
->  };
+> +static u32 i3c_dev_hdr_modes(struct i3c_dev_desc *dev)
+> +{
+> +	if (!(dev->info.bcr & I3C_BCR_HDR_CAP))
+> +		return 0;
+> +
+> +	return dev->info.hdr_cap;
+> +}
+> +
+> +/**
+> + * i3c_dev_supported_xfer_modes_locked() - Get the transfer modes usable with a
+> + *					   device
+> + * @dev: I3C device descriptor
+> + *
+> + * The HDR Modes the controller and @dev both support, restricted to those the
+> + * bus configuration allows.  SDR is always supported.
+> + *
+> + * The bus lock must be held in normal use mode.
+> + *
+> + * Return: a bit mask of &enum i3c_xfer_mode values.
+> + */
+> +u32 i3c_dev_supported_xfer_modes_locked(struct i3c_dev_desc *dev)
+> +{
+> +	struct i3c_master_controller *master = i3c_dev_get_master(dev);
+> +
+> +	/*
+> +	 * master->this->info.bcr is ignored because it describes the master's
+> +	 * target capability, not its controller capability.
+> +	 */
+> +	return (master->this->info.hdr_cap &
+> +		i3c_bus_hdr_modes(&master->bus) &
+> +		i3c_dev_hdr_modes(dev)) | BIT(I3C_SDR);
+> +}
+> +
+>  static struct i3c_master_controller *
+>  i2c_adapter_to_i3c_master(struct i2c_adapter *adap)
+>  {
+> @@ -3856,7 +3911,7 @@ int i3c_dev_do_xfers_locked(struct i3c_dev_desc *dev, struct i3c_xfer *xfers,
+>  	if (!master || !xfers)
+>  		return -EINVAL;
+>
+> -	if (mode != I3C_SDR && !(master->this->info.hdr_cap & BIT(mode)))
+> +	if (mode != I3C_SDR && !(i3c_dev_supported_xfer_modes_locked(dev) & BIT(mode)))
+>  		return -EOPNOTSUPP;
+>
+>  	return master->ops->i3c_xfers(dev, xfers, nxfers, mode);
 > --
 > 2.53.0
 >
