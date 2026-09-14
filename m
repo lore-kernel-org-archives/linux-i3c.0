@@ -4,125 +4,125 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EE341C88E78
-	for <linux-i3c@archiver.kernel.org>; Mon, 14 Sep 2026 16:59:01 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA753C88E6F
+	for <linux-i3c@archiver.kernel.org>; Mon, 14 Sep 2026 17:00:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9xSF7guSTFs7Y8ic7oovgbnt2Sfhnfxblze0YmweNsY=; b=gN+tPnYWymWZbL
-	WkTE0dsm+ZM0Q4MXKqAXzt6GfUEAzuO2P2or5IAo4l6WCJcB2OLV1nBmC56+BQLzOalmseetX1tDN
-	Kfk5yaGyXqvDKIvDD2z3Zh4jjNr9jWGJcHSLHcp3xD3DVh0VLBFAhYcwYDMAz3XkB6WnrQk7ogBs8
-	SGDXcb0OZFSyje9RdWGBEmiAKVo9PxkfLlqzzdG8xmRLOwz8ngCck3V9NXNDws+fAAmLJkAGQ4fnk
-	UVGWaAzKC2/9pM+h8dUyquc0yFnvBOjRVb4syKTDdRjZVoZeT2kRjCJ0gfejS3W/gXHbRczavwsqI
-	BRjKgvBHagZ+1p0Jngmg==;
+	List-Owner; bh=ScyryHQi39/l56eaSTL4BVkXceupBuPhCiN4gdlR+f0=; b=m1jIgSTxIH8qWS
+	+w1Q0nuS5loJpR2uWgrmwb8vbeAEm/E9VFXpsOtHTEvPl2bEpPI39EFMTR3hU7PZvJA0RsQUEPLXt
+	7A9p4xY1nlRp6rQC14FDZAGbdgUY4yL2rLcnbMqeMIKt3JwHrzN4u2jDAKgMGdc1mto3ZXNfKBmb2
+	pXHnhzLvZF/FF2Y7lsN/oweM6Xzth3O+X5PxH11XG8K3UJ7FsTxJi62AZq1QvQQkaRpL+HpeitMyq
+	0cONUH7Gf/GAyqICrx9/zNJ7N/Dw2qwZV3wQ5nTgMv5u0Do3CJDcEyCnT6NArC8ZmWo4fYxIdej+u
+	ZdpcLfQUBTt5EtBFvOnA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6A1F-00000004Lb9-1chL;
-	Mon, 14 Sep 2026 16:59:01 +0000
-Received: from mail-northeuropeazon11012016.outbound.protection.outlook.com ([52.101.66.16] helo=DUZPR83CU001.outbound.protection.outlook.com)
+	id 1x6A2S-00000004Ltf-2Cqk;
+	Mon, 14 Sep 2026 17:00:16 +0000
+Received: from mail-northeuropeazon11012011.outbound.protection.outlook.com ([52.101.66.11] helo=DUZPR83CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6A16-00000004LXj-2A1M
+	id 1x6A2N-00000004Lsu-3Qzj
 	for linux-i3c@lists.infradead.org;
-	Mon, 14 Sep 2026 16:58:54 +0000
+	Mon, 14 Sep 2026 17:00:14 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=FkHQWFF0zx5MTM5Mozds9PDQLGMvtRF32nOTqi54NLtWl7FjA+ZH7VAxx0W7R/Akfohy9Wtm7vTHz/mts6Dj0d5FSf8sxrxqds8yny5MbLG3SplYVD9y8DbSp9FKCFOLfzi+AE9q+2lr81EHlu2cskIeqb0Gz96GRFf0IffzFwr1XYXE5P5L2jAyoNYRXfTSCqw/UKN2J0qX6m6zDZHNM7aqFG7Cf8FuaSQYHhHvsa52/8K6K5iyn6ZBNxoJbQzc72cJZ9ZOUvoVNy0HAn82rfHiELfAIMeQTmkLwjYrE1BKaQNRYltBqpXvvP6ZYkkx5Juin06mpnVB4YevfI+IQA==
+ b=CPOURwSK5Rx+9cY/m8y3Kkpn+WErRju7mZ/17Ao+M/2Ijcb8gXl6p/YSXRpVMMwW/zQcPYt3VVDRDdMfKRRt+//k64kTeChIlxexN2F98B01Bw10fqN56pfJ3xpIS77t8VcXQScFxWHaf1XRGlGv3ItG4PnTgZLhx16CXIQWv+dBhEIMAOBwI5EBZcXhwgdzMgkmS1zmGhXJQDlWXArs6j9kx6dTToOEjLEYxsQ3X/oGEwxLEFwsCRXXbs3Hk4JJ1RuT5oG7WRMFofciUXcYajAH8d/zTzjBsZnkVQINF9UF1tug6MsPRQU/5WR70VFsJm23+GywdZ6HhBSgP966Cg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=BYp60AjC1vFqxoqukrJvyGYcKpVbfYz/FTHRkXj11A4=;
- b=A9T6A/r/b8QQaihF+Jg6xOYgKCS+a6x/+ULHOgdhmMc2VxftuUX0Wkq3fW8fvtcR0j1abmSBBzLgixONuXGRyqAHN701UxUYX1/WbZDXptMDB3JqKI6XNfcUeJCkW+juys6jxH0xU6dogHQTiv8kmaUcDKk4qOoWZzegck46c+MEwjr0g/ALHkRLsXHG2UhDmzvvEBUJMy3Dfgb8rpECCeoB5S3a1BlV4Hzv4huf0fF7Havcc6I4aA4Jd8K+54rKyLnkW2l+S1WS7c4R7w8Oam87FUmWI9zd5rw2PJ7ZkjiKPjhStHr5zJ6npMZvl+uTIBw3/FvhoWuBWUQwNRo0Iw==
+ bh=MiZZ84TlWP8aZlyGRLWZMhydMZzk61jpP61yy5VABCo=;
+ b=D+1u5dPR+Uf36+6lM5UDbpiNCZd3HYmkDgG+TBxkKvkXom7J4ER1kdMnw1ELQPvkdckYdiMHsMFlMm/Ey/lB/slrA88iCb2P9JMiip3kos63Mxg2pGhIID+YFl2jcgi6Vje9iaO2kIF8a/ozmpv7ZwV8PFWQrAkCQv82lJgEobIUPOuRqNwUrLqyhUaHrBLy2wdM4HElM0dLYMUsdHEEswKoAmAy6CoVCUXQlqwoTC0ODJ/XZJzUTxgLOIO1JK0EhN9DRczWu5u1Pzew0gogsL75682V65SEsHz78EdIygh+SeV7Xf/Fs+d00k/SKQT+B/nG7kd3IzTWFVnHsfPgMg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
  dkim=pass header.d=oss.nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
  s=selector1-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BYp60AjC1vFqxoqukrJvyGYcKpVbfYz/FTHRkXj11A4=;
- b=wdlEXLjB0QW3+XFHAtpB38qTuydh5CB8aOti0HOqujWdXkMq1syHAyjzHAwXNn4H++luGXBBxiF+80SVKj8DH9pYv+XyR3J5n1cud/DywW7I9vOF2du19JXCBL+YZjNjIhQPS+seGckgPgiseVNEs0wkdGhAF3TEDFvbo8aZP5rzv30IvuhUDbaY8Bh4FuElFObcxDN3C3PrMYMHYVz2B6awQdNQ1c42F4JeSyoSUZHESNuCPr5XmE7Ju67GlnYKk6O0JsX1T7TxpEmfRq11mwqXuaxOCPsIzUtfITi9AXbVSDjXSu9hIbBLLoCXPQwmwDERcuOW0Ro888/0Ni0Owg==
+ bh=MiZZ84TlWP8aZlyGRLWZMhydMZzk61jpP61yy5VABCo=;
+ b=afB5LIG+R7QjIJTYO38a7HS12B7DMTapVNB/0cDRSJ0XXvd7GHN1lJ8KF2WJ4GAkGOasoNb4EFLBrvLjcZQM/qaayZ2Y7+hFt1UpwqvtP68fkWgh7851X0W5wX7XykK3Uqtmai9evxePTkV/UueavACRDBLLkjE4wZDs/tFN+u7t/bNyI7OkZp477NnEnEu/13EW0bchYIgRQkfRLbJI3pOmZhiWXeCFkzbGedI6pSA9z3NT8Y8c1CcFn+eMCl+03SUMpIsukl+8S18SmjeozqRYJ05pmQg11n22yvwT2Hf/h+9VYhYW7rlTxKLljFz+yKOzQCVXbZBqgLEdlTMRtg==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=oss.nxp.com;
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by GV4PR04MB11876.eurprd04.prod.outlook.com (2603:10a6:150:2ee::6) with
+ by PA6PR04MB11950.eurprd04.prod.outlook.com (2603:10a6:102:516::14) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.406.12; Mon, 14 Sep
- 2026 16:58:48 +0000
+ 2026 17:00:08 +0000
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0406.007; Mon, 14 Sep 2026
- 16:58:48 +0000
-Date: Mon, 14 Sep 2026 12:58:41 -0400
+ 17:00:08 +0000
+Date: Mon, 14 Sep 2026 13:00:00 -0400
 From: Frank Li <Frank.li@oss.nxp.com>
 To: Adrian Hunter <adrian.hunter@intel.com>
 Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com,
 	billy_tsai@aspeedtech.com, linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 13/17] i3c: mipi-i3c-hci: Remove invalid transfer size
- limit
-Message-ID: <aqgnwdqZ56mUdwr9@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH 14/17] i3c: mipi-i3c-hci: Remove invalid HDR-BT and
+ Fm/Fm+ definitions
+Message-ID: <aqgoEBt365C4gJyv@lizhi-Precision-Tower-5810>
 References: <20260914113003.183150-1-adrian.hunter@intel.com>
- <20260914113003.183150-14-adrian.hunter@intel.com>
+ <20260914113003.183150-15-adrian.hunter@intel.com>
 Content-Disposition: inline
-In-Reply-To: <20260914113003.183150-14-adrian.hunter@intel.com>
-X-ClientProxiedBy: CYZPR17CA0021.namprd17.prod.outlook.com
- (2603:10b6:930:8c::26) To GV2PR04MB11799.eurprd04.prod.outlook.com
+In-Reply-To: <20260914113003.183150-15-adrian.hunter@intel.com>
+X-ClientProxiedBy: PH5P220CA0011.NAMP220.PROD.OUTLOOK.COM
+ (2603:10b6:510:34a::11) To GV2PR04MB11799.eurprd04.prod.outlook.com
  (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|GV4PR04MB11876:EE_
-X-MS-Office365-Filtering-Correlation-Id: 5903df75-703f-4c90-a755-08df128171ca
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|PA6PR04MB11950:EE_
+X-MS-Office365-Filtering-Correlation-Id: 17e296b2-4562-4e23-ee2c-08df1281a154
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|23010399003|376014|1800799024|19092799006|6133799003|3023799007|10067099003|4143699003|56012099006|11063799006|22082099003|18002099003;
-X-Microsoft-Antispam-Message-Info: z5CG0s6uc2FzDLVUz5lFkeXJ2/PPm4pNtpSZOpdeT5EAO8N+vy1TeUGLluYDSBqtYyyGNhDOh1R7CVMbNTuR6J64VFNqasXNCcy65kDwEBevBNhWdbYhk1UDQ5KiE9di40iXcPcZswSbNpyeu2aKFrxc29kW4sBOOU5cxFR4Q+cx/Etw7PkIK9FTjsMafCiP2xLX2Nt3yKSE9Zsk1jo45XH+wRHmNdaePefM4x/QBPOJvuv77Pd4XMMuTKVgWoLOtvmXOOeuCoMXjTdkLNdjU3a+A6f/+l8Km/sSEDgOLdDeD6LZGh1Livz/zy9BrdTfV7VegsZpFVhSjpxgEp/RfCtfoD5nFDdX2W05x3q0xbIQBiQjLg7IlNBy6SY9sAfkdXukkUA++MRQvuEplr61lDD6iKq19au2fAPDiDS/NOHDRqcwDn989rVIwhl2PdUzVWM6sNUmrIItAGdszdDTzU4JwbNqATYs1y+Hop1AKj011Qh2eWKjk8NyL0YynmIkBSP1BU/GM0sVV0tApsfawXv8Cwh2MjxeIvyNPldrOn0plHFoDm7Pv+QLPGj8CYATnOxu3Y/d7Tvt1M0Kx7kD3rYNKDGeLvvoS12P4UXaY3HZt6JX31VT/I9S/Ai55F0VeZaSxTO7R9IF2ciPv41uMlBprH/s4kEPoALweP2RtyM=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(23010399003)(376014)(1800799024)(19092799006)(6133799003)(3023799007)(10067099003)(4143699003)(56012099006)(11063799006)(22082099003)(18002099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|366016|1800799024|19092799006|376014|6133799003|22082099003|18002099003|3023799007|4143699003|10067099003|11063799006|56012099006|5023799004;
+X-Microsoft-Antispam-Message-Info: 8cHD0LB+Q9IVFwfNUvxYyxPcZ2f8M4XG8BXvzmWRIZ+6h46sAZ1JL7IMSWUekJFEJLpe5ean58rf5PxpslT6k14q7woput5w1k6TfLK4JUgJAb0kHBaFfJ7B7IKdGi0EBYlfqDPOGJCMTAa6RwHNNDRY6Wz9QmbZsYgOfC2F1LjO4epHZ8GV+WjnRnxG7z0Ttg9LOpVZdJjJ6nPQsoiKMTmgRmHLkYaArpSASsEapZKzcXGFoVizUD70dT1lZ/1XXiCw9qKj7I3yGJEPeYJ8g5KA9fvuLRISpzJ3crvTAV558kT7EErz06Ksn9dnKitSg3e/Y4Tlsmf6flogHJZn576AIZpYLOp1wzXcrYBsY3RppdCmduyxtS0xq+wp/N7IQtyEEz+NYGmkzAcLDJzO7iEG+rS3Z0Gc4L6FcVd9fZ5vzVEiLDoGeI83n2oTmVtvxlYvCLMUwECn4YqRhyIxbem9qSAf7K1bQsXIWwEsEqxz+I5NEwTzDBzZdz3+ocXC9RgkC5i/RV7J2yMpzUYMW7w4jpA5nOUI3g3t4iwKSTEDtF5ZJ2boo1ziVCdwjzPpHS9IengSNSlQyv0uN7t9ciT0v+HcIqesHbHquIRCtUN1jZx19W5k84o7fjzzMPAWuYyQzhG1qf8ot31I/5vLjAUSML6JICmRPZ9SUCkL99w=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(366016)(1800799024)(19092799006)(376014)(6133799003)(22082099003)(18002099003)(3023799007)(4143699003)(10067099003)(11063799006)(56012099006)(5023799004);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?vCT/uHb6mEJX6i2TqMcgyG/qPqJ5MkEIBItFlyUC6dDFNQxndbr23KYIi9JN?=
- =?us-ascii?Q?ZeuG4X65WCPuEJ8fhqwHq6Q+L1/2M3bpBx+2bsniuhq5qsZa0ddWQKQtHh0U?=
- =?us-ascii?Q?cTSHxcWAsqkQMv2hWZCx7cq8/OiZp3gr0S7q+Ru0LzqJDm8CuLILaOGfrXJz?=
- =?us-ascii?Q?SYpKasKwi7otG5R4DgodaDPmXZgy1VWvIAjXgSGTptS00Y9KflG7b3YBIYFN?=
- =?us-ascii?Q?NRLIEamaycJwRVkLyUopHRmzDeAHknvVgujIfxYLMYQjrY6N4ScFof/+YuK/?=
- =?us-ascii?Q?fUYxiMCZvBp9dycmN7pLsymjuTB+EVvKdqm62Ti0dyaWdcJFz9naxnHAz6eG?=
- =?us-ascii?Q?qYdiYmT4k9WWlVh1n42L3471q9NjWIx0aqRw/YKGt/ZPPUYCH/MHi7xDvQTi?=
- =?us-ascii?Q?edvLpRR64gS1u42eD1fQVGqNSIBAMlwZM/i64DvJw8YQGoqrHDVUS8n/vLGQ?=
- =?us-ascii?Q?UQrG7hrsBrVXlv/+rzDIMOsxw0EpxzsdakEysFJ1xqK00YNyNFWOABhHLCcX?=
- =?us-ascii?Q?lB/VKY57Q2R7nHQg39Z1/JUwOe1vjbhV1NSvPMPvM8LCinsqoG51IXsLtVfv?=
- =?us-ascii?Q?AA67dxzCCy9FB4LQv8xqZU7uJzDhZAY1mooj+h6DnryMNgPQ+15opIM6rLzm?=
- =?us-ascii?Q?cGWYVUhq7fIGcpe4jh5xbtDqgusX3EfkoW2iXSbpVsbA1ovmY05A42oIfCCO?=
- =?us-ascii?Q?aNJQ1pkoCbRpELqUT6eDie8d9tm/ULmq1cJpwjXJfTwV2ASeD95Zla8rXOwH?=
- =?us-ascii?Q?4gjUgZ9oxlWc6MovbqA8AkMpP6ddKb49L+OIwf4m+BTXg/yYuLx+YSODo13f?=
- =?us-ascii?Q?Qk7HnlEzwA4R5gzY1o13KcakTqIpLlI1ZTS0eUVTLe0PSuPMqOh5pf3JoMoY?=
- =?us-ascii?Q?TYzSobCEYoi5ptO0s5WrpqT2DJP+O7yCBua+RYwpBkrLFYezg8YNu+4V39rp?=
- =?us-ascii?Q?FXdgCZZHfuWxi0DxwiXQMx1qEGeZ6mB0EBcmdNfrV05zW5P4UAY93bpFnyQy?=
- =?us-ascii?Q?D7ncYYIaJL+wgxlOfIQXeTG9AuMqfyN8A8G5pazkE7HAjrW1CsaalF1j7nic?=
- =?us-ascii?Q?VRwPVAix6nwYFVbso/5p2J5PZKpzSHN02jTxwLrX7wwJk+n95byLJ3dmxLIg?=
- =?us-ascii?Q?h0R3RnkaMLcbD/aqMLwU947J+6ciHGn5y4Db7E9nxcq9zHYKa4Uw9FFMDKxm?=
- =?us-ascii?Q?eWjfXUvQoFysJre0f9hpMAGC2rO8uKjaloiqTtHpddAR2DBxv849U+TaOzTd?=
- =?us-ascii?Q?Dn1ZYUqzWYi+H2x+TrjuyNbZEljWQML0HHDGez11kbqGBxzptsQH7znB9mXh?=
- =?us-ascii?Q?+ZC0THWqq5HI8WaoAXi+iXKcIxHDQOHaBUtdy28Z4cRR8s/TABtqQ598+yhj?=
- =?us-ascii?Q?Edsqt6MzWnOpEGrVm3DH8g8BsEkUE4NP+/9cPbQLfmt+yGKj9A7JU4AoTyZ7?=
- =?us-ascii?Q?dN1xTp3UuJY2vP2h0vquwATUE7XaEqrmaqrpIPrxzSslBMPue4XMiLXAvKkZ?=
- =?us-ascii?Q?4wd7fjkmlFMODDt4UwbnrlesWr7W8H1PxI/9uzW9mnzJf5ySD8ukWDdrgV4Y?=
- =?us-ascii?Q?LJT/JRFfkzTJFvVHtXOR335ckMLUevKl2useMPzM4v1kWRLA1clqBI76UhQW?=
- =?us-ascii?Q?LhyeTCNRXABB0QJPmSZSSUizFr7wYWpZWSZ69trZ1UNqx0A72Lnmia5428Fj?=
- =?us-ascii?Q?o68dWa9HiURoYZ2fwwsh1q3fkinKcNV4wV0zZIL63v5hNvTm4YzARERdYkGs?=
- =?us-ascii?Q?smz5VKtk03Kvc60lxKf2PyPN3qlhlpgdx1o2dOOtDR9fGZuSzlbY?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?yLTOOhidrHBa7cpP3KfP+TZOej4qwhMLD9dU5UmQDKUIzsi2R4StC1OpWWwr?=
+ =?us-ascii?Q?HCIobBuKPIyFVPYshMn5n75Xk9a7lg8wSu5l4daEWGm8PueCmVz9mXRJE+EX?=
+ =?us-ascii?Q?3dITHQxzZ/7Pw2z+cbFLnupOoqveFVzgbCwfGmCXXaD7ztiXknUHeSr4WWBW?=
+ =?us-ascii?Q?OUB9g284EE1qQ5XJ7t9DlosbgO7kQM638h9F1h5SRMbJPe6DJoR5QJ/BtSjR?=
+ =?us-ascii?Q?k5Xqu+JwZL4k00GdEX8ofFQC0mC2xk3VZcFLdZHHeR85WaZTgshelYthiwLK?=
+ =?us-ascii?Q?nCsMNXJYRQdHX7RPqJPCkB6jtBNkLSYRQyGfKlCOKdO6q1euw6S5BHcARBMJ?=
+ =?us-ascii?Q?5/w7a7A8tnXcrQiTGZoJtNisTiA4ddAsSLCwLP6T/yszf+2ainIN+CUZ1fux?=
+ =?us-ascii?Q?DFanPSSDcroKUuq45JcFWOMn5cDUQNlrHkseA4QBS09/Hmtu+X5JQM5QktXl?=
+ =?us-ascii?Q?CrwqRDOQ/FMltkyCYgeb2u9M66seq67iExNlJXN33Vm2JDgDgVxfNPgVzBb4?=
+ =?us-ascii?Q?XTDHYlj89MplE79tFK/Dt0ymYitFwHp3kLx6UigS4SNr2beZ8B4K+dGs95rp?=
+ =?us-ascii?Q?4P0Ru+oZBYnnYGpthJfOhbMTF++LZP9BBr2PJvt9v+UmtcUg0Es+smaWSt+v?=
+ =?us-ascii?Q?1q/v7whGw4UEX62E0xw/J8TFprdkzj0Lb/gdFxaKmRFXW+y7D+ZgnDcpw5OC?=
+ =?us-ascii?Q?BAgYgAkB+QQgSlv1vVSxgpQWjBkTg+18d0Ehv4r8adl5wChMS8awxGVw5usV?=
+ =?us-ascii?Q?i66rk9d6Qhk0IFr28iRqB7VaDTEI6gw2KEYMMUqM/6vkxIPnwohFb4Wp6HHp?=
+ =?us-ascii?Q?cXoJk26eiJ/UVv7OhLJw546hOTR8cUGjM/vvVEa7s15ShmCPvkX4DN4YFHS2?=
+ =?us-ascii?Q?RHE/7+bl3Sbq4tTxz1SAztxAHpb66Gi2mXBlAOmgaRI8FjUeQ/tLJ5CEUCO2?=
+ =?us-ascii?Q?mWpKtTeAQFnzutc/nfqux1n0KkpxSv7djBKbcKqRYrzKtR87LnnNtyAwqnTb?=
+ =?us-ascii?Q?tWyvTB0WsmM/4IQYc8p5Mn4lBBoBLdg32rwA0cRfoF4eGm+yWXpm8hWTovdh?=
+ =?us-ascii?Q?WEdyRgRVWCZLdQg5qHW29sQb5xs1AwopbHkGrie5549z06+yXoPg4kLkPoJ+?=
+ =?us-ascii?Q?k7w/uYJ4UcEzFxz/vYJ/65j4PhWP6lQQJuAcHymKoOaaAYP65NZ5AFPAUb13?=
+ =?us-ascii?Q?7MGFdbh04fIQF8yApGWyx9n5mP9fv9KEDSIQXErLoDSvzwTTak1YwBTaStix?=
+ =?us-ascii?Q?u2sR0tFpxZ0sKGVPiBbKig6Gr6V15q/aMizNOlef2TwqoJ1Ad9UMkO12dUDX?=
+ =?us-ascii?Q?hMmxTdZ99O7nP2E0wjW83wEzz7kwH0PCt13psWvkEGJNFS0uThnK1lFx4wPt?=
+ =?us-ascii?Q?yFit2ZioEnVDkvRhVTuaDw3Rauldr6LBCvrvTfJG24HezaG30OWIMYrBQdnK?=
+ =?us-ascii?Q?rM8jkOT+jjiQMRPvmB+9nuofAGABqLPXDP9atWlejabZUBjAq1eC8n0bKfZh?=
+ =?us-ascii?Q?RYoDOmQPUwQJTSu0WE9+dardWYbGeftkXYa+DgpzG2hnlQT2AYnZySkNz1VC?=
+ =?us-ascii?Q?iouXOst3HT/iW3oSNjN92KZb/5zJnrsleUJPU91ba1QjgSJQvo7D0QLfb47M?=
+ =?us-ascii?Q?AUOn7+JQEB83Ir+gZjGjb21WSDZMlvx3TxKq/i2R7FM7+tifXMxF0K5jnlt0?=
+ =?us-ascii?Q?fYX94358NoOpJRiTM2MsYbPPaBPpGpuAaWQ143HsALlQkojEBO+GgLMzNUJy?=
+ =?us-ascii?Q?/L9oVqEH5OFLZt8K0qJHaVeFjHC9nUAhCAmHBYLeLkH/h2unlhU/?=
 X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5903df75-703f-4c90-a755-08df128171ca
+X-MS-Exchange-CrossTenant-Network-Message-Id: 17e296b2-4562-4e23-ee2c-08df1281a154
 X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Sep 2026 16:58:48.1417
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Sep 2026 17:00:07.9553
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: miRz2iIFFB45FT6Ki3H51oRK2XBT+rR3HKlu9nrkW43Go0xLYvelTO4sE3hWRn3UtUdhnKKCHt/cPtClXb84GJlPZ39MUgBPG0Jp/9PBczB/IGqLzwhWAjwczxoBWXDQ
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV4PR04MB11876
+X-MS-Exchange-CrossTenant-UserPrincipalName: GUPeKyveEJ9Hx7t7GTm2GHAGUvmYbYGc9yGIPHxY/fuKj6u7KSo5/bnLOn6ZoOQII3zQ++hURUaaw8CJUoOkSZsZgAD1zukk5K8jqQ8Je94uwE7t9bfxved1t+WabjnR
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA6PR04MB11950
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260914_095853_093606_BB7E62B6 
-X-CRM114-Status: GOOD (  21.39  )
+X-CRM114-CacheID: sfid-20260914_100013_441338_9A34D358 
+X-CRM114-Status: GOOD (  14.74  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,71 +139,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, Sep 14, 2026 at 02:29:59PM +0300, Adrian Hunter wrote:
-> The driver derives a maximum transfer size from
-> HC_CAP_MAX_DATA_LENGTH in HC_CAPABILITIES, but no published version of
-> the I3C HCI specification defines such a field.
+On Mon, Sep 14, 2026 at 02:30:00PM +0300, Adrian Hunter wrote:
+> Several HCI definitions describe capabilities or modes that are not
+> defined by any released version of the I3C HCI specification.
 >
-> HC_CAPABILITIES reserves Bits[31:8] in HCI v1.0 and Bits[27:22] in HCI
-> v1.1 and v1.2, so the bits used by HC_CAP_MAX_DATA_LENGTH are reserved
-> in all released HCI versions.  Neither the HCI nor the I3C TCRI
-> specifications define a maximum data length capability.
+> HC_CAP_HDR_BT_EN uses a reserved HC_CAPABILITIES bit. Similarly,
+> MODE_I3C_HDR_BT uses a MODE value reserved for I3C transfers, while
+> MODE_I3C_Fm_FmP cannot be encoded in the 3-bit Command Descriptor MODE
+> field.
 >
-> On compliant controllers reserved bits read as zero, making the
-> computed limit 65536 bytes.  Since struct i3c_xfer.len is u16,
-> transfers can never reach that size and the resulting -EFBIG check can
-> never trigger.
+> These definitions are currently unused, so there is no functional
+> change.  Remove them to avoid implying support for non-existent HCI
+> features and to prevent future misuse.
 >
-> Remove the unused capability definition and the dead size check.
->
-> The driver's effective limit remains unchanged. HCI specifications
-> define DATA_LENGTH as a 16-bit field and require larger transfers to be
-> split across multiple Transfer Descriptors.  The driver already relies
-> on the core's 16-bit length types elsewhere when constructing
-> descriptors.
->
+> Assisted-by: GitHub-Copilot:claude-opus-5
 > Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 > ---
 
 Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
->  drivers/i3c/master/mipi-i3c-hci/core.c | 7 -------
->  1 file changed, 7 deletions(-)
+>  drivers/i3c/master/mipi-i3c-hci/cmd_v1.c | 2 --
+>  drivers/i3c/master/mipi-i3c-hci/core.c   | 1 -
+>  2 files changed, 3 deletions(-)
 >
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c b/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
+> index 3b9345718d27..9910df53c013 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
+> +++ b/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
+> @@ -108,8 +108,6 @@ enum hci_cmd_mode {
+>  	MODE_I3C_SDR4		= 0x4,
+>  	MODE_I3C_HDR_TSx	= 0x5,
+>  	MODE_I3C_HDR_DDR	= 0x6,
+> -	MODE_I3C_HDR_BT		= 0x7,
+> -	MODE_I3C_Fm_FmP		= 0x8,
+>  	MODE_I2C_Fm		= 0x0,
+>  	MODE_I2C_FmP		= 0x1,
+>  	MODE_I2C_UD1		= 0x2,
 > diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
-> index b9b20797d045..4629a16debc9 100644
+> index 4629a16debc9..7a39be64c4e1 100644
 > --- a/drivers/i3c/master/mipi-i3c-hci/core.c
 > +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
-> @@ -51,7 +51,6 @@
->  #define HC_CAP_SG_DC_EN			BIT(30)
->  #define HC_CAP_SG_IBI_EN		BIT(29)
->  #define HC_CAP_SG_CR_EN			BIT(28)
-> -#define HC_CAP_MAX_DATA_LENGTH		GENMASK(24, 22)
->  #define HC_CAP_CMD_SIZE			GENMASK(21, 20)
+> @@ -55,7 +55,6 @@
 >  #define HC_CAP_DIRECT_COMMANDS_EN	BIT(18)
 >  #define HC_CAP_MULTI_LANE_EN		BIT(15)
-> @@ -473,7 +472,6 @@ static int i3c_hci_i3c_xfers(struct i3c_dev_desc *dev,
->  	struct i3c_hci *hci = to_i3c_hci(m);
->  	struct hci_xfer *xfer;
->  	DECLARE_COMPLETION_ONSTACK(done);
-> -	unsigned int size_limit;
->  	int i, last, ret = 0;
->
->  	dev_dbg(&hci->master.dev, "nxfers = %d", nxfers);
-> @@ -482,13 +480,8 @@ static int i3c_hci_i3c_xfers(struct i3c_dev_desc *dev,
->  	if (!xfer)
->  		return -ENOMEM;
->
-> -	size_limit = 1U << (16 + FIELD_GET(HC_CAP_MAX_DATA_LENGTH, hci->caps));
-> -
->  	for (i = 0; i < nxfers; i++) {
->  		xfer[i].data_len = i3c_xfers[i].len;
-> -		ret = -EFBIG;
-> -		if (xfer[i].data_len >= size_limit)
-> -			goto out;
->  		xfer[i].rnw = i3c_xfers[i].rnw;
->  		if (i3c_xfers[i].rnw) {
->  			xfer[i].data = i3c_xfers[i].data.in;
+>  #define HC_CAP_CMD_CCC_DEFBYTE		BIT(10)
+> -#define HC_CAP_HDR_BT_EN		BIT(8)
+>  #define HC_CAP_HDR_TS_EN		BIT(7)
+>  #define HC_CAP_HDR_DDR_EN		BIT(6)
+>  #define HC_CAP_NON_CURRENT_MASTER_CAP	BIT(5)	/* master handoff capable */
 > --
 > 2.53.0
 >
