@@ -4,125 +4,140 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4F96EC88E72
-	for <linux-i3c@archiver.kernel.org>; Mon, 14 Sep 2026 16:09:31 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43EB3C88E72
+	for <linux-i3c@archiver.kernel.org>; Mon, 14 Sep 2026 16:16:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J8cNubvrwVFg8qVWIntS9yfC/7yVsHoeFGyIC9wxXj0=; b=HZ3PJvQ1bjb3eZ
-	DeAAGBMNP5Zc6Txfzq1AK2KWKW95AwgmqyQo7Qij8qW+0HXdAQx0qtacSFOPR43EARcm5IiFLN6fX
-	KuL8i8uB3gEwUPJfO8+WLbQ5MipWxVuapp/evPS7Pkmt2UUSawjelyLMhm01kOqUG5ChnZa6Mbb21
-	cGFJELsetdh2tz+4MAMWiZmD4DYUlaRvrmGSbSMk7EN0v0yYne3Hl5Ha+z3Rpud+d/RA325okPT6j
-	cmv0QCuPPypzIN8OwyweAvQglFbP3jYXAU+dCVnJUPEsttfFNaoiT5nJ7T12ii6fGnykqlemo12lQ
-	PLpFUs1sVT6aAoEejy7g==;
+	List-Owner; bh=xRcD4GmkTZhLu6/2MnXTVdkghi+sMrGkeUB+2OG07Mc=; b=vdqTnz25kPi7Zk
+	vrW9jWu/P1VzB+U0ywHwPiO3heAYti51nlabMZ4c3krbmVKtauNi29hsJ7jWuA2eb6tdBRz7p4Dz2
+	1lgAlTIrCp4+YGEtm76v/g9d+jQJyDD79WdMQLU9kGM7pk68EyByf5FnEXugCHnXdd24vgG4jAlkA
+	eZvwqiPQJ8Pqw/TGR0XRAt4lFrfVl6Lx36yuMDERmISUogbMJeol6LbtlgsjAJXTvUsN1PTMpZ266
+	XcvuaeCSEErIgl0dErPEXUiWN/7LwQqzTxIpz8xstm66YfKolBU9L0NCamV7nRmSjW/8Y1nBIBaHr
+	uUlEIfMIErcSSdN908Pg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x69FK-00000004G9b-3oiC;
-	Mon, 14 Sep 2026 16:09:30 +0000
-Received: from mail-northeuropeazon11011057.outbound.protection.outlook.com ([52.101.65.57] helo=DU2PR03CU002.outbound.protection.outlook.com)
+	id 1x69MD-00000004GkA-28p9;
+	Mon, 14 Sep 2026 16:16:37 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x69FI-00000004G92-3eQO
+	id 1x69MB-00000004Gjg-3wFw
+	for linux-i3c@bombadil.infradead.org;
+	Mon, 14 Sep 2026 16:16:36 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=MIME-Version:In-Reply-To:Content-Type:
+	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=d+PpN7taF0Rmv8XnPCQ/3qhLVyEUWBq5e/SKkNzfKI4=; b=MbXrfInrV2rzq62OTfuTAe/PT1
+	eBduqws8FAK8jedgO52K8Jk2nK6PNUyAOOfk9MBbOuVTu6X4ECEmUu5kZfVYWiSYhMer8+rnJZVHZ
+	lxWaRFebUPqJLPJQDmEJCNoJM4VkGl9HRnVVxVslCMXzj302zzTiPizQ1QTmswTEoxXZV++HY9S0i
+	+R1NAaKGiofkmrvVl8RZzwo4Nl5s0cZLTTAWCQTNM8NY90WaPd2lQtyDGM/gd4ESdNuKYkgjSorPS
+	Q4UlbT82epyCBqFCOIrM4YoQRJRK0KlWKFvKSUjAeAuzf7a94qWsrv98N+Das9B2cbe9A0QPIDWtb
+	Q7MbrHLw==;
+Received: from mail-francecentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20a::7] helo=PA4PR04CU001.outbound.protection.outlook.com)
+	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
+	id 1x69M8-00000005pSE-49DW
 	for linux-i3c@lists.infradead.org;
-	Mon, 14 Sep 2026 16:09:29 +0000
+	Mon, 14 Sep 2026 16:16:34 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=xhiSjtU772+xWE9Lvh4NRj/6aRCSCkuRvpshbXZCYUWS5rp0UjIvBb363cdfVx9HSb0rp6NL+7DY/zF2yjJcpQwOWOOUy2ZSD8clZs6fiZYThTUFJ0OzcnrFIuaQSXPKcQZGUXkeD4zSJ1j5DfW8ZaeLcwPmNZvhEexn0oyrduxP9vcukWVks7eV4Ox55OYhUGcxHOogKfYBQnJBNho1Y1iKAKCx1zIgYKQELo7/SvYHgJYU+D8yeA8SVA2EkXFoXpRGFIzEyNnUXBo/iGXfsJvqZ969H/CQ+ByInYV/dI3ctdft0U4cHRCzlPvkQVKKrKRC4awkJnkSbd/CB0rbxw==
+ b=gy4aQiFAe2596obOaIlyIbVu4PlPndqAe3cYMmUvOjoJfVzlvI3kxTkGy29UbWTLhFGdd8q+Tzdseu0PjE9S8+NnsbYARrHUoCS7natudlrH2gi7+MIIeaVoJuPp1a4BKylI+Bj8ZNqXBu0EKaiLK7CBzzmHzFr0pzjtL33O/a+N42LciAYivFvooex/OWMgxWMvPcrQcfFZG6m9cLeqTVmWU1KO1kMJFV/fi0ejeeQQnOaa+2ht2aRoc1zZlzJbI32W76L7iiE5ZpICUq6dX5/c/3PRAEK2dcb8q45LklsDQHjxgFEMyOJde2O7+JvqdC9lA2BymfqyyXLnu4bP7w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=zbevxkp7/fXdXjTZgwcXTY+9eDscR5gfc+QMKEKmc3A=;
- b=hpBdNn2Oh9moPN8x0AiZOqHah62AvKyZNOfAMu3j1rob68y+9sAlzhZJdDcym2aE9M2RTkDyDL7fBKTBvZshtZggU4JwfqslVAZe2A+UtAzwO4HPIe0ahN0KbvLdWuWtY6p8rhV+PXQatDoBZTovPn+Q4c6Uw8vU7JF3veGU1lQqeISdfaCv7c3VawXjduU1iIK0t5ZPGtqSAkKg8vECPDt+Jy1YRjBGawYB0gHCmhS7UjY3sCf4uM4jU3LGuCn68YeaTqqC/83SU92AFQTis7mzqtXDEG7nNaI24VDOvz6piFiJdlH8FxAprxbxMTGtPjaEWonulVw1UlNl/2tPrg==
+ bh=d+PpN7taF0Rmv8XnPCQ/3qhLVyEUWBq5e/SKkNzfKI4=;
+ b=Bsv8n8a/zjSfQEO2cjdBDGTdRBMzyTvhs6nppn4rAKcFtcWBF2FIlNyN8O5ToojjjiEjF8cgsNHv44V+AgaEeU5CXiGdEixZ3PKpSYMEvVRj68HcQ9kP3PVr+URlWUXDP9kFY5KJjNiK22VAgTGnczpPZ0JW76QgW2vRLgHO/tVxhbwMRX6GETr3CifyBncbqbKlvqZsFKb3loIQz3PpuJu/AgSSBIwlvpynhNbJSccueCQDW6MHYfo0QxsQHmsLrnd/sblEltRX1I36swWO8hoMUfyCVNIDF5l7L5G0ypjDw22MxV6A1eWw9xWXQnlQeoICzzLb6FYpX+d/tZFrjw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
  dkim=pass header.d=oss.nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
  s=selector1-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zbevxkp7/fXdXjTZgwcXTY+9eDscR5gfc+QMKEKmc3A=;
- b=fNSSVYpw+fiolmo57xNfAE6foIINagwcL88SFg4eKS4cOwMqpil8xJYYVwnH7u6pQFxqCZTVmYBzh3KL2nz+OybNvBjkdi54jvIRQF4Urp191cSk+B0Xcx3u5QIo/jUFt/xDWDPNBOMQu6IrUyDYRAVaSRiyuSZmXFrPIUjX1FZv+UVyHjTPm/x5uYjskg3R1qqF+HP4SH6eFRCyobEWaRosPv3DJi+Y3kYIE0/Rm3WNYDKxYVjKDwsVf8MJtj9Uq/FFEH3s3jiELY+ruRgBXAWVtwa9jrPGnCxRS86erTw4nurpw8zHG+XY/JaKX1tmyDsraeq5ZUwiFXPjhS9Uqw==
+ bh=d+PpN7taF0Rmv8XnPCQ/3qhLVyEUWBq5e/SKkNzfKI4=;
+ b=WUqsR/Q/9l8V0QvlNTZJXmtktJliOWA1Bc9KsqjSsrzJalBmNd5i3H9UsHzvqOM3+uhIdnvX3D1+jQiEuDnZONefkx/UNq3gIDSL9ZT5lU/MMUirTZJgNh3BId/orl92ZZC/1Wct6HnEduyJ2P+Lh9Ld6kSCizQWAjMnbg5jvtImhhx3p9LHaUKsbPt0lGF6pT4C+rbxKRcxy61zw8+MCO91K0k+YvssX1BH+IGkfnYLXm7F53lxw+wjU1OVRRwNGcn68xFP1sVA0TIu541Bbp6aivspDziJz0onvPa0QoXNaZnwJ0S1L4l2VUjqY7kNWHvS9jqsqpbRZlsHOumcfQ==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=oss.nxp.com;
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by PAXPR04MB8389.eurprd04.prod.outlook.com (2603:10a6:102:1bf::6) with
+ by VI2PR04MB10570.eurprd04.prod.outlook.com (2603:10a6:800:27f::15) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.406.12; Mon, 14 Sep
- 2026 16:09:24 +0000
+ 2026 16:16:27 +0000
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0406.007; Mon, 14 Sep 2026
- 16:09:24 +0000
-Date: Mon, 14 Sep 2026 12:09:17 -0400
+ 16:16:27 +0000
+Date: Mon, 14 Sep 2026 12:16:20 -0400
 From: Frank Li <Frank.li@oss.nxp.com>
 To: Adrian Hunter <adrian.hunter@intel.com>
 Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com,
 	billy_tsai@aspeedtech.com, linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 01/17] i3c: master: Fix out-of-bounds read in DMA bounce
- buffer setup
-Message-ID: <aqgcLXl1REso_GCP@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH 02/17] i3c: mipi-i3c-hci: Bounce short reads irrespective
+ of the IOMMU
+Message-ID: <aqgd1H8B54JedV8u@lizhi-Precision-Tower-5810>
 References: <20260914113003.183150-1-adrian.hunter@intel.com>
- <20260914113003.183150-2-adrian.hunter@intel.com>
+ <20260914113003.183150-3-adrian.hunter@intel.com>
 Content-Disposition: inline
-In-Reply-To: <20260914113003.183150-2-adrian.hunter@intel.com>
-X-ClientProxiedBy: CYXP220CA0011.NAMP220.PROD.OUTLOOK.COM
- (2603:10b6:930:ee::14) To GV2PR04MB11799.eurprd04.prod.outlook.com
+In-Reply-To: <20260914113003.183150-3-adrian.hunter@intel.com>
+X-ClientProxiedBy: PH7P220CA0031.NAMP220.PROD.OUTLOOK.COM
+ (2603:10b6:510:32b::32) To GV2PR04MB11799.eurprd04.prod.outlook.com
  (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|PAXPR04MB8389:EE_
-X-MS-Office365-Filtering-Correlation-Id: 0d9b8732-85b3-4004-009c-08df127a8b0f
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|VI2PR04MB10570:EE_
+X-MS-Office365-Filtering-Correlation-Id: b15dacea-5528-4f9c-c006-08df127b878d
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|376014|1800799024|19092799006|366016|6133799003|22082099003|18002099003|4143699003|10067099003|56012099006|11063799006;
-X-Microsoft-Antispam-Message-Info: pT94XSbpPnNtlz59M1GQ8oZSUevLP6EvyFbp/0jCHFldwo7cvPi7MRXRqoAPVlSde6fq2CUNzFaB2J0D263IYDqMU04syvFpdSxUdM0Vxfjos60fGP3JAfYLq8+sK9NFsZG2YM4qPswb6eRntxRKZrAs9ip7pDF72SgHKXwEiorKoAvGhkMyXqYRRtma20aTqp63rJQCjguYmC5txKSa0dp88eT+xLtUINhQUPLDGM4q9R6P3UZoZaP7rLcS/dKYQinNLSwA9xwymnKpP8Fl8J91wv7EXtrD6BKDbtJuYjcIQh+CFVQo6W4Vy1yrHrpcrq7FBR12sxk2IQJnQ4NiwmR9qjGTLYvr43D/okhasDndVuTimNCofFnf2Ig+5bILT0Sx7SZB/XUDD+G9vfmP/piFXQDn1XQBDb5+9TakH55DuofA3wUjLTIN1rILwTY96d/Omt3Y68T9gQ2nn8kfYUaIleiqdf425BbUmDyDz+fCoAgAIo07PmEEXzbzrsTujGHqr+xyy2VoqryO9yOmgsAh8tmpmhoVii3qBYe4KOkOBx2+iPARlMTqQ/BpT9aNNjI+QH64pEJqSlDad77YWBi4lfRSKbdq+hSWWvvBIwa8TS0TceePIKAFCfXoYd5Nan2gDq7IJDdzLVH+bdtmbwMOjsOWYvXIHLNhJ3Vkpz0=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(376014)(1800799024)(19092799006)(366016)(6133799003)(22082099003)(18002099003)(4143699003)(10067099003)(56012099006)(11063799006);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|23010399003|366016|376014|1800799024|19092799006|10067099003|4143699003|56012099006|11063799006|18002099003|22082099003;
+X-Microsoft-Antispam-Message-Info: 8BnJSlp5FwEPtprjVz40ImAR0uYwLej7pqAoyXob2nCvhF2b36Kaiwyw+sv/aCFsTk/EnBtIYohUNpkx3c80HPFVMPD1jARnNaNv3beY8O3epTDbAx8Wi5CYVAPtJULsVzPTIGT4ZaZXdIg0aeKC6zRrY3KBtfJ7nAh/PXim9NYyb65ikEj/EgZ54EA31b0xftCat97ELFJEf5x2SY0S38LcAqN+/NwBKXni8IhbSTIleA7BN5jOIva0HVsg3doD9fqEzjpJPWEIrIHIdoxee+1Splz2IN+q20FMrBLiFUufXE78fos2IXC+zB2Jf6zKQCqnqLJiq3WPOgjMCFJmUQTo/2uIukDI0t/KyTuaTNvrm+nujqqxSIwKo4CA6SztnUe8y9gzoq1977RYEO7iaVBY5zkQvGYi4XFHs+tFp+qtc5pR0WLzslJfsvP8/kPFdMcJlThPEnHLqgHZM3ntkPq14/kVR5lFyZCtQ0GQM3FtCyh5RseZjUGiGC4Sdd40EUFzfwxz2VrMlgSwMxuNwjJCVXCAy5MjqOZsy0GxNF1rA/krSsS3cYmDvxB1MzHB20W8cEp+U2P1fkTr3lgGlzs9M0u6rLcqlXOevqo3LTWHr0GmnDmxVz0D2ZR038PafcW8VtXOchmeaPdJ7Sp3oOmdBmWGfPt79WirV1l/s0g=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(23010399003)(366016)(376014)(1800799024)(19092799006)(10067099003)(4143699003)(56012099006)(11063799006)(18002099003)(22082099003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?n/DN/s2D+O0wxji9i9+/hruDc4F0ff7bYkN4dDlfiQVmHd0dmKVntfRbIH75?=
- =?us-ascii?Q?UiahDVXOzKtwzQpMu90pBDN8ZB4/zP4c7Aa5cqS9uvHgPOXl9B03v80157Or?=
- =?us-ascii?Q?vtHUqlZTMz3I2NtYb5tdoHtYyNXJ9DPEvQjRjFgvTtVH7VFJEl6Fk5wqATAi?=
- =?us-ascii?Q?+tlDrS3zIRtXT4rzY8qr6pc1/fBbE8lAvsxBBXpf+cc/XA0om0Fp/ldSuWMW?=
- =?us-ascii?Q?8M9QchKMV/FU+Q27f9lytlyI9/vFlJtL0bAC7qfQNc2IuvM/FqnK+jx2CSwX?=
- =?us-ascii?Q?XZC3S/g/xY67TSzH0VO2nrUx3xN2pAGWwYk9HKqabOci/iM4HOf6Q59XlTX9?=
- =?us-ascii?Q?WaxeGo3lfk7r/0vgrNaQF4ynLYHiPaOwNkFBpSDT82PK1F9orwNbTsmJTIeO?=
- =?us-ascii?Q?VlAdl9l/I0k1UHaC3y98nbAQvx41dDprKkUg3RS0Ut1tgvqDe9Zcfd5cpHGs?=
- =?us-ascii?Q?c0HQrO4zAc/54PqEoQOa1eGxDKQ42GbRHDAvd/aE5q8ROZvxJ/HMcXyf/mMC?=
- =?us-ascii?Q?Q2rvvqBv7g27fEqoYrVna2fwDtjTEEW5I0h0IF4ZKStcE/bF2G6cQXzI1Mti?=
- =?us-ascii?Q?RRucc8pdF7sjM1geJkIwPad5BjossfHIarCeXudEr500IRg8du0hkuM63YfO?=
- =?us-ascii?Q?ooE4JRjzA3vZXcK3Dbx1lPj8ijTIZaS0h/l1H/hDEevc9XxjRxoZViehFpTw?=
- =?us-ascii?Q?/hMIflErvry5X75/U/chH81ymlnHpcDuCoPG8rIHVh2D4aBjV8EtzYkIJkmh?=
- =?us-ascii?Q?EdcsnGfdlZcvVhjahUXQv995HGkpDSs82XbCyvOowqZaK7YVHBhPlPrDipN/?=
- =?us-ascii?Q?nPo0tPu07JRFh6uIOGl+hW1RW8BmcnV+puRledPBhQyEyKLP803uEOtOEanO?=
- =?us-ascii?Q?G+fUT0BYaCycbg/DIYlu56kRaqyx/8MZFwKzUXdZo4xGLU9nDUZaiTdK7k4M?=
- =?us-ascii?Q?WNRLI6+ZRyuJYfgRUAkqREtoIg9rNq15pP1hF9yGmRyMROotNhHNGNiFj5d1?=
- =?us-ascii?Q?/33ORpnhU1ijQ78DhjqFMraRfvXmkHFc0C31vd6dWw7Xz/nYpIQh56CHdOYB?=
- =?us-ascii?Q?QCHSdZ7C9BuYw6W+890rJYfc+OF5fGn62dCh3fHt6MmLMGFANDUzXHr5wjLQ?=
- =?us-ascii?Q?CQ06qj0zXMKd86YcSPgKMoTCqB3s/ywHuCAL/dQlLGUgkbOuNLEWs1Q5ew6L?=
- =?us-ascii?Q?SQtHdB8IM7Izvd0L1uFiqU2ADzsKsqeDzR1UuFN8R+AcfZycy2YcuAj3dzIB?=
- =?us-ascii?Q?UJWbNTbJLeluxFrWBPOFkcseyraU1RiiZT7KPWMa8gRJuMH6VAcWte4QOk3s?=
- =?us-ascii?Q?A1lVMVGgr4FzKXSu3lAe5glFcz07UwCI9OTQXDihQCUJAvgVHA38TCR37nRt?=
- =?us-ascii?Q?QMWlzChPzbXiJzSDkWgkmnTSfNVHqaBZda1ILtVzovxrVaHr+i0DJIW1u3Nx?=
- =?us-ascii?Q?luXKKv9zvMdecjbdPl2M6WMeQtt8zL6L+DH5ohkt6LZxur3K0RU9S9N5pzNb?=
- =?us-ascii?Q?FufxCsbiVQAZWRNbRGG/u5dM6OWoAyNVgV4ZtR1nysXswseoy0IKf6OypdVH?=
- =?us-ascii?Q?lsWmhVtn9d7t+KTIgkfQ7jOAxwD8URTJXByyFcwrGn3p96WCfXlWabXLkAWG?=
- =?us-ascii?Q?Dr0cX6mrHywslanzn36xmMsrHZQFNXz87TJwnAV9tE/UFKP/dqpQr98klsfm?=
- =?us-ascii?Q?ylXWPg2+xRzD2tQ+MjpxF5g9V1lJ7Lp3SkABQ1PufMQJTAp+51ktO2a17+41?=
- =?us-ascii?Q?FN/H+4elRDeQRYejV0gBlRSchop2iVndQGT3IyUh7PywtJ6NxnIA?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?ooxYDrHMgjVqEmLfUCFDLjZKVaUmQqptkVX1WaHDCPeBTKk3lKqAfbRuu1fi?=
+ =?us-ascii?Q?KYiQyL3RkrWk9873wniA33U8C6EGNfattOhYEHmL0MQnd1EbmIkm6n/GGHrr?=
+ =?us-ascii?Q?nAVr6RCgvgq7LG/PmJQe3ydLJu8P7QneXIy8pvEtljrHjZFUphvha2KeoAhf?=
+ =?us-ascii?Q?WqOh6ggp9sSe8et3LqjmmRVqVNrJpnEhqu1xrendrZOOa6baQV8O1XTYQjoL?=
+ =?us-ascii?Q?g9hMB5bPEMGumg8VUfe4RmUAO1yJAEuRrI+ZrgISNCtmBbc0khOE9oLp6vfv?=
+ =?us-ascii?Q?gVJWELgxDOdmjjZsEYUZ0O19kKTYoUyy59asLU4eICMF9t6ak79hal3eVwjj?=
+ =?us-ascii?Q?qIwWZm4iZbV4rkyFk+EPuxUnLyU9WDPD/gSCFW3sQbLZB7mdRvV1orpA+liH?=
+ =?us-ascii?Q?XQqw6VE8embt+BPeNmpL9SEjU3Ky77R5PcMr0631YaOvzPQt2fgAdoU/IGWQ?=
+ =?us-ascii?Q?LRHh/sOA8KOeze3QAQN+ufslcInYY8YwhNJzfHnHmG5SdgFLeSy1RK56kOLt?=
+ =?us-ascii?Q?FaMjlZQcWTflsqk41a/rWRtO5JbQVtAcvR6yoi6bGp2b90AMJcORiwNAkiif?=
+ =?us-ascii?Q?EQw9o2j0b5vGjMsaDiB4KTkjCascylwg3s/J0j4zj3T+njpRZxuyB2XkiUvX?=
+ =?us-ascii?Q?xsbTFSgN7XKFOSc+axkT7OBCD03+zaiVmgdGMVc5yPhyYJ2hKSJaaaM+Qw8v?=
+ =?us-ascii?Q?9JjuvT7b8+TI6hZ+w8p5uc15mW25Qn74PNRiYTYeClVPMsfnRHElrNVuNo3L?=
+ =?us-ascii?Q?o2DovGB5ASwMMvKcSjXXo0blwft13QBSFz00gMXO1nQcWCahk050oqAVbVDE?=
+ =?us-ascii?Q?00twe+y4LOwUrn331ZegXj2QIMhV3T0ipzchpP09rCQyovECZsO1rRntMkO3?=
+ =?us-ascii?Q?AR3xtDwWyJcQb7LWSDIAt7Ir2Ws/VuqA/yedkbalCa3kunYPLlpLEspgWkmq?=
+ =?us-ascii?Q?1xaTMHTVtGgDmkCTKaTlTQ8WpisDPo5JOND/dgxuJmMZ0JjeKMVoPEq0SFEb?=
+ =?us-ascii?Q?SWH9kSzMmS5OjMQBu6JAu7JfTxNrmb0MOar6K4WbkQ5EU62lWGLRW8U4PF/Q?=
+ =?us-ascii?Q?aqGdsjiFHTrQA1iAq6RACbW/oiyGsO5Tc9jQAUwZb/Dx4DmxKdhy/YQHBg4s?=
+ =?us-ascii?Q?nBPxn5lZKs0ItK8C2x0T1CHmCFaHwHSLqJnGjwsgr14H9hlpjkG5krWlkVI7?=
+ =?us-ascii?Q?PhRNXpmoX1WCvhFqaRzMeAModapkNKwMdFLc7ubxKobWDpAaoGlRip6rbgII?=
+ =?us-ascii?Q?oV3IOoW/BF75jCELCyBVo/ji2rYMi7VpEUEqEThrEHrujFX9ORBzlv3ncTOK?=
+ =?us-ascii?Q?/UmH20BHxpqAET+oYK+W9GZhhFNo6hcshM91/e0rmeTWE63bReZ0ca/Bn2C0?=
+ =?us-ascii?Q?GhxQj5Ah9fgnWbRwOcdDqHau9QpB4nN4UBfxG2K/UZrBpUEISrGoH70OcPXk?=
+ =?us-ascii?Q?kW3gdZsiWWI6fEZopGRTFuXQJ4EPI3fCWXCZP22qc1bdSDg16p6tKHoEnQgL?=
+ =?us-ascii?Q?rnpehUXO/JrUh1QmXg5lQpLvrsLMw/FKoOg2SLug4ehJ6R0Kgnk1VIwg1ni6?=
+ =?us-ascii?Q?ioszNoLqKP9i2Kbom71f72zYrtSKmYxN1Uh/I3ahTWzPvN/Z0yot5mg+9dJU?=
+ =?us-ascii?Q?KmFmtPLM/RnSd/yqT/8hlq8aGUYN1UUD8iZswzdHqwyZMkCYxbv8Z4vpll/g?=
+ =?us-ascii?Q?7S2c2e8GJ81lzf0qmdCIR3jGmUWcmEeFu1Z2oWvMoR5SF5lFQ1HWLZwAI5zu?=
+ =?us-ascii?Q?3ZaIx0CVw+9F5ODGl3oGM/+sbIBZ+OzG1f9kSauZmfLWE2hHYvfx?=
 X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0d9b8732-85b3-4004-009c-08df127a8b0f
+X-MS-Exchange-CrossTenant-Network-Message-Id: b15dacea-5528-4f9c-c006-08df127b878d
 X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Sep 2026 16:09:24.0261
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Sep 2026 16:16:27.6277
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: rXIBrsNPCcrpbC/O2ZZ+i/VMsr53zckwQuYF2cmVvOV5zERsbsD0dFLz7TxTH1d6QRujR9GVvR7C52sWY4+ti2zlBj7xoXED5Mb9uhifI504x0p3OBnLfuq9jG/X+qIK
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXPR04MB8389
+X-MS-Exchange-CrossTenant-UserPrincipalName: mldbwprsgUVnEfw8GG5DYiMRvpDEJT9liJp1wcElRWRBOtcRRRwOD+BExXOPldUY3WY0D+2Xq3SJlLnK1DxMp/uSLUcAi0d0v/3RCp5jC6k2lMCUdlfutpF48ykVd4Tn
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI2PR04MB10570
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260914_090928_912148_41B9BCC2 
-X-CRM114-Status: GOOD (  21.03  )
+X-CRM114-CacheID: sfid-20260914_171633_197386_6AFDC995 
+X-CRM114-Status: GOOD (  20.15  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,57 +154,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, Sep 14, 2026 at 02:29:47PM +0300, Adrian Hunter wrote:
-> When a bounce buffer is required for DMA_TO_DEVICE transfers,
-> i3c_master_dma_map_single() rounds the DMA mapping length up to a
-> cache-line boundary:
+On Mon, Sep 14, 2026 at 02:29:48PM +0300, Adrian Hunter wrote:
+> The controller writes whole DWORDs, so a read whose length is not a
+                                         an i3c read
+
+> multiple of 4 overwrites up to 3 bytes past the end of the destination
+> buffer. That is a property of the controller, not of the IOMMU, but the
+> bounce buffer that works around it was used only when the device was
+> IOMMU mapped. Everywhere else the buffer is left unprotected.
 >
-> 	map_len = ALIGN(len, cache_line_size());
+> Drop the device_iommu_mapped() condition.
 >
-> It then allocates the bounce buffer with:
+> The overrun is easily seen with CONFIG_SLUB_DEBUG=y and kernel command
+> line options intel_iommu=off slub_debug=FZPU, which reports it as a
+> kmalloc redzone overwrite.
+
+Can you put a line kernel msg here ?
+
+
+Frank
 >
-> 	kmemdup(buf, map_len, GFP_KERNEL);
->
-> kmemdup() copies the full allocation size, causing it to read map_len
-> bytes from buf even though only len bytes are valid.  This results in an
-> out-of-bounds read of up to cache_line_size() - 1 bytes past the end of
-> the caller's buffer.
->
-> Fix the issue by allocating the bounce buffer with kzalloc() and copying
-> only len bytes from the original buffer.  The remaining bytes up to
-> map_len stay zero-filled, avoiding both the out-of-bounds read and
-> exposure of unrelated memory contents to the DMA engine.
->
-> Fixes: f8d9e56aeb87 ("i3c: master: Add helpers for DMA mapping and bounce buffer handling")
+> Fixes: 9e23897bca62 ("i3c: mipi-i3c-hci: Use physical device pointer with DMA API")
 > Cc: stable@vger.kernel.org
 > Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 > ---
-
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
-
->  drivers/i3c/master.c | 7 +++----
->  1 file changed, 3 insertions(+), 4 deletions(-)
+>  drivers/i3c/master/mipi-i3c-hci/dma.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 >
-> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index afcd7a21a3e6..f9a6c8560fab 100644
-> --- a/drivers/i3c/master.c
-> +++ b/drivers/i3c/master.c
-> @@ -2216,12 +2216,11 @@ struct i3c_dma *i3c_master_dma_map_single(struct device *dev, void *buf,
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/dma.c b/drivers/i3c/master/mipi-i3c-hci/dma.c
+> index 7c2b20474130..5b195978f376 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/dma.c
+> +++ b/drivers/i3c/master/mipi-i3c-hci/dma.c
+> @@ -428,7 +428,7 @@ static void hci_dma_unmap_xfer(struct i3c_hci *hci,
+>  static struct i3c_dma *hci_dma_map_xfer(struct device *dev, struct hci_xfer *xfer)
+>  {
+>  	enum dma_data_direction dir = xfer->rnw ? DMA_FROM_DEVICE : DMA_TO_DEVICE;
+> -	bool need_bounce = device_iommu_mapped(dev) && xfer->rnw && (xfer->data_len & 3);
+> +	bool need_bounce = xfer->rnw && (xfer->data_len & 3);
 >
->  	if (force_bounce) {
->  		dma_xfer->map_len = ALIGN(len, cache_line_size());
-> -		if (dir == DMA_FROM_DEVICE)
-> -			bounce = kzalloc(dma_xfer->map_len, GFP_KERNEL);
-> -		else
-> -			bounce = kmemdup(buf, dma_xfer->map_len, GFP_KERNEL);
-> +		bounce = kzalloc(dma_xfer->map_len, GFP_KERNEL);
->  		if (!bounce)
->  			return NULL;
-> +		if (dir != DMA_FROM_DEVICE)
-> +			memcpy(bounce, buf, len);
->  		dma_buf = bounce;
->  	}
->
+>  	return i3c_master_dma_map_single(dev, xfer->data, xfer->data_len, need_bounce, dir);
+>  }
 > --
 > 2.53.0
 >
