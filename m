@@ -4,125 +4,124 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3915C88E6F
-	for <linux-i3c@archiver.kernel.org>; Mon, 14 Sep 2026 18:26:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 46800C88E72
+	for <linux-i3c@archiver.kernel.org>; Mon, 14 Sep 2026 18:32:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5fEwlIkI3lnYELUahe7VDkmGB0gi7dyZr9Q3t6+KiPQ=; b=TDCY6GZDeV+mMa
-	Jx/wHzF8/Ml5nqLR1uJT/230kw3YRRgvY+9CuAUtPS7mJcgTCJBo1Sk2O0jxBrTjmuB4Y6p8Jp/lM
-	gg9Fhc96HPCFa205qfmenRtr/wZG+U+QZTza5ehlSg9bFtMS27BpGVKH86UBr8X2V4NO9rL21Whg2
-	vh+1bsR7dpJ/qzZbmb/Z66CxpZQHnZ8ACcT0+L4qWwUrHM0Terq+FpWI+FWfsx/BWHMk408fayFRT
-	0TfE3pdwDMUKlJIcrJTzKA2ZaHrGH2P9pOxjFBOnuSSjUkVe2Eqfgf9m3PGmBRbFL6ABjogjqhWSL
-	D77XG3/Y5WL111GmzRlQ==;
+	List-Owner; bh=mq7aqJOVEoN0csgMzr3Q8hS3LVQCksAE5FafcUV0X3o=; b=xpCInkg7Yrngmh
+	YlVxb+cXX8qmF+fnf8289p0Ou3ss752zcW/jet3VV0//BkM89MeidwvxbpvW2Bi0nlgUqOpymw/xy
+	pqGnaTregyEi93JQflRiTiwmV1M2tm16jsfb+Z3c+Df0RljSfd2NvHWbyUrQrbBRBmEOOxcKIiDP0
+	lJu2oD2dgHyE1EuVwz3fCy6TlMfgNvGW/j5EY8WAzVx8ret09Z2vSBGE8ZUcG/BO4CD/soFMhXpH1
+	Y+cFQsZKeE68IZJvg7G/3b3HaU+vQdSa95qRGcaZiMoDJU6o2oDOlVbBRa3VF5ewuA2gfJU/dRTNP
+	q1kpG6wqlPri8MgA0ULA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6BNp-00000004Ren-2uv2;
-	Mon, 14 Sep 2026 18:26:25 +0000
-Received: from mail-norwayeastazon11013053.outbound.protection.outlook.com ([40.107.159.53] helo=OSPPR02CU001.outbound.protection.outlook.com)
+	id 1x6BTo-00000004S7D-42aE;
+	Mon, 14 Sep 2026 18:32:36 +0000
+Received: from mail-francesouthazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c207::3] helo=MRWPR03CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6BNm-00000004Re7-3KLl
+	id 1x6BTl-00000004S66-34kM
 	for linux-i3c@lists.infradead.org;
-	Mon, 14 Sep 2026 18:26:24 +0000
+	Mon, 14 Sep 2026 18:32:35 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=PN5cHh24rdzvjGuXkIq0hN0jPyHJul3Fc14p4Y1JtFMN1q7z8iGZDx6MI3IldzR8KjnoI+ubIkGEmUxNsox9aVMgR/xldyL5aWhGUhTiRJ0RxA0rEnkmR/fHrFxcS5saHXfqWGTZYUeEFe+AY8Nnw3A2qPXIN/+GUnDuLLXH/DRISOAueQblltFQ/JPZoyk77lOhibGFrborsr7HWGqZtnLdVITZNTDxc2uVnJgHclxgZbMqvEyuZbSCQfaPhB3C8357pe8nXMQfyMuIulXsSRu7CJxX2d/jMlCRrWbFPetQq4RovM5Z1G3AwhyDr26pDmT5sOZeonjFOGkwSzEGOA==
+ b=osc+uC+MNbWgsx84kTiTYYixAfq1t9q0NtE9VOKhkwTkLRS5+faB4fpgJwdoOkE6cf/hESwVXVs9o4qNMv50i2nG9h6+Nu+171gCNx8bs+r23hDB9oPo8k6E44ulELj9+dlx+Pae7KYTYvmqgDhKuZIJsaeRcS7FbNs4dCFkCZuSJe0EE6T9U9n+4ohn+OCDvzzqKRGrvD0TbuopWGV0emTHBieU+1IdNMQckSOmJUHmogQ5SIHxSRWRAjPXUGp2tu+/iuLp/YExsQCOJMV4czZL2tVFySUsLA7CWlmIJiNkzB4G75La6aYIm9yHq2whFW0P2Hm8Z6yMWfdkc10Fjw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=rswoEnTEuLMMhKnkI+uacAOz/6gWJeA2odmbYwGzq7c=;
- b=QASh7XV+pIEfwNTaPa1a+cgBZwlzHr3l3LhMxwVmIPqJAbWLCB9/PiBiiPPuMB8NBzs3CR4SUHxYplkbrjyGwZl6Y4PRD+ABDZ5Q1mW5mVLoiRuHYlUpcMX4qaBYtICAgRuv5DZUPCcd+vZeKz2wzF1Yw88jwt0R/kHAP1j2DNTRMSvY+aWztEbVTejl/NSUF8u5ZwGPwW1Gd2MRuzMIoLS3zdVURlRqTEH2rrkfrXwyM0J6J+cKgzybfgq71uncsyc3pb7f1mKtendxHkj+Em1VTpv9TwyjUzSetd0nui76Yib4OYZERa9hB4035GiBuO3YiIjpriL2r7vWmF/gSQ==
+ bh=8wHywiAy0dQQKmOAosc27htFz4rxlqe2iI7rKps+ZQk=;
+ b=UorGBh8VPzAqNCwpNbu1vUXL2SokN6kt6vevvQwcobyoWogz1/JWuOHmSqrX3tZFaktk5jbTNevAPaf7OKEzXk2hkKR18QZ9dd9adINvFtErJdT9+czWSIGmYBI1jXJGAYe1oVmIkOuccxNbwOID0N4ndaiZ8czp9nRwSrHTx81O3IhNthkracG905rZQh74G1p7DA0ZPIDRJAyLMmBOpxHFnvGDXt3VKJMU6UytxFjUkDiJ9aAy8gpAOcbcF7B3OXvQ63u8jZU5eTqvqGvDOUyaWqDwTt7aDcyuOB0M3Zo/WXwUjF3hFaP9If76aU5GNxKbvSD+4YoOSg/LmpkDHQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
  dkim=pass header.d=oss.nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
  s=selector1-NXP1-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=rswoEnTEuLMMhKnkI+uacAOz/6gWJeA2odmbYwGzq7c=;
- b=FEZa7cqa1dw2uCBliTWfGEcunonAqwyX/XdcB3gOTWKEVO+rnJQnmbYccyRRgM3wd6n4t9R6vrxsSghjkuGHUyyyozhAli5BfnMm037AQ1xuRk4ovU253z7Ra5IkyPlEeJhRxB6OQhznpAKOb2op0mBy7vopN3LNxHFnRHmeqXtROi5pO0dKZwtxukSrz/crmmNsVkgwTEFm8RPl7IxmHpTZYSobx7It3h90tJ8ocTsygkBR4dtsNRC4nO2cTm4ZXvuoq4x6zERg1rLPPxeTCUn5xx+HGZv0XNC968NNORhQIdcG7fEZex583+/sutWYw0R5DbtOf1OJTNfGGpYb4g==
+ bh=8wHywiAy0dQQKmOAosc27htFz4rxlqe2iI7rKps+ZQk=;
+ b=G43ygnWqc6BEPD4nQ/ls6U4ClIqHvKvCYDKIdbOgSdJsc2eF9+5f14fIRLGY1bCPMofsvYBhww9pz6go2cToROtxIO+gBzi1rvzDlu49Th4zIuVBK0y88bqdzlskkc3FumXEye1o8oURcEjPdoCvsR7rLYfxJuYq5JqWX8ntqF9mZ8lGP3gas7SKTNszQidzdvyP3J9mnBoQVhskzGRV6dC23RZ7clhQfIRyOiv6MbSQ4Q7lkvg4zdj/ZuVUghAnNvCb56iJvYshXeWeCPJLPy/0xXfazJppbfDv3tJeozkt1nKA8s49CQmxkfyeuZm99qHpBnPfhDEMyMLYktT/iQ==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=oss.nxp.com;
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by VI1PR04MB6877.eurprd04.prod.outlook.com (2603:10a6:803:131::23) with
+ by AM9PR04MB8258.eurprd04.prod.outlook.com (2603:10a6:20b:3e2::6) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.382.15; Mon, 14 Sep
- 2026 18:26:19 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.406.12; Mon, 14 Sep
+ 2026 18:32:27 +0000
 Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
  ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0406.007; Mon, 14 Sep 2026
- 18:26:19 +0000
-Date: Mon, 14 Sep 2026 14:26:12 -0400
+ 18:32:27 +0000
+Date: Mon, 14 Sep 2026 14:32:20 -0400
 From: Frank Li <Frank.li@oss.nxp.com>
 To: Adrian Hunter <adrian.hunter@intel.com>
 Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com,
 	billy_tsai@aspeedtech.com, linux-i3c@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 16/17] i3c: Restrict HDR modes to those supported by the
- bus and target
-Message-ID: <aqg8RL7KHiYDOXMM@lizhi-Precision-Tower-5810>
+Subject: Re: [PATCH 17/17] i3c: mipi-i3c-hci: Add HDR-DDR support
+Message-ID: <aqg9tGJO7zzJ2ot3@lizhi-Precision-Tower-5810>
 References: <20260914113003.183150-1-adrian.hunter@intel.com>
- <20260914113003.183150-17-adrian.hunter@intel.com>
+ <20260914113003.183150-18-adrian.hunter@intel.com>
 Content-Disposition: inline
-In-Reply-To: <20260914113003.183150-17-adrian.hunter@intel.com>
-X-ClientProxiedBy: CYZPR20CA0011.namprd20.prod.outlook.com
- (2603:10b6:930:a2::22) To GV2PR04MB11799.eurprd04.prod.outlook.com
+In-Reply-To: <20260914113003.183150-18-adrian.hunter@intel.com>
+X-ClientProxiedBy: PH8P220CA0019.NAMP220.PROD.OUTLOOK.COM
+ (2603:10b6:510:345::10) To GV2PR04MB11799.eurprd04.prod.outlook.com
  (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|VI1PR04MB6877:EE_
-X-MS-Office365-Filtering-Correlation-Id: 5d9597b2-cfe6-4f1f-d9e6-08df128dabbc
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|AM9PR04MB8258:EE_
+X-MS-Office365-Filtering-Correlation-Id: 28bef0c4-ef28-474f-147d-08df128e86c2
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|23010399003|366016|1800799024|19092799006|10067099003|3023799007|6133799003|4143699003|56012099006|11063799006|18002099003|22082099003;
-X-Microsoft-Antispam-Message-Info: jF2AaP5nCSo0pfiUVgoBWlG1SYKBp4SkIh0Vf4fKE/RgK4KdDzCTt1ZtjDyJ7EItEHNyi2iWY5P9N9r1HE75RHNgNEivCxq032x9JglFuUSiR7cKXFk805zHb4HFncN0bCJtuebPuf/Z9hmm5hH//F+C/HVxVCfI0qXYIquYCbGXmQazcucfkVMa1cyW6SAHoyjVSnxh3ofx8y3XVGMWvAq4Y0EvZBDBwQ112degvOzlBt1L1n7gOKFnJYDm4zRvqfozw0ybejIzEi/s+e4S/5/EyiU8RVz0E+cq4X5OT+baRbtgxGbu0i4M3NAvBgILXTHdQJF9FK3p27r6LPdseghAeGjTWPvUBXwtdcaDCUYfSwScQ4pJych8K1DC0oHoOTvaRm4XcHRpqLiG7F8tPlw7Sm0lGZLv2eZ4m61FgyiKoxvYyHb5OV2Z5i04xTwhgOWtOVy+VaWXlIzXP13PhJk95uv3DoV1G93uxb6jwkNrHhB/WfiqjYtTV8T3TLAvBv59e/67uEbXU7ix0cVltmzbuaxkKhPe7OS7yiv8Nw2eFF0EbS+7k7lf8sZF1i1HtYPTLW8h4XYZ/NGdP/oS6Ihgj4ViiLrIx3PPlsdq81sVksVq3w21w5T5BEpNqUyU9o/ayO2IdXVEXvI5LeO+WyiTbDTkJCPFkpOySCyy+Rc=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(23010399003)(366016)(1800799024)(19092799006)(10067099003)(3023799007)(6133799003)(4143699003)(56012099006)(11063799006)(18002099003)(22082099003);DIR:OUT;SFP:1101;
+X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|1800799024|23010399003|376014|19092799006|10067099003|4143699003|18002099003|22082099003|56012099006|11063799006|5023799004;
+X-Microsoft-Antispam-Message-Info: RdGvDqHoVwX13zunmFa5OR2LkykqQndpjOa3n3tOgRCF2hz2DJBbTefQqAHGhv6PJZfSycEVU12ehpxJtwL32xgSukx9cjwD8uVNtPKwVGoWtwM/lDxt7tVjg5GOdRlmg3UYOQ0+SYMgZ1H3CES7XGSOhakTJLuGD53yhvBYcgmv6xFk+pKLwVXbUUux7bzgGjRR9RKI9dQVQxRrh2eptcDVJIfhBx7dA1dxcgZpnEfxczUktfZSYPI1ospX0wqfBtzuiDH3gORE6aLYEb78vziTV8UlT+sh1xkw6czm51LzNIQdo4JF2UC4BzeGddkKUX0KGLMVePmt0ITvSfd/A5zY8xnv5ftL3p6lU2/mcVAWUAav8VS3tBomhwlNm6v75RNWIepbIeDzShsD0zpdHuf/basoeWaOgR5FRZY+RC19LWMZjfE6l4m+ZPUbfc+yd/V86jnpiVNmP/G7fj02mljtA6y5r2OMpdw/SnCGEP2dCQCS4LDad7+psTK+i4gUehoKYGEAMLyYE/T1yNxk68JwskeMvA/X9qMkQ4M7K7S9UcghP8uYYYNOx8/DguXd+KwhEp6rSx8HnIrkokAVNJyvuwes2jqTA5vCvGiGiY9MRQeoVpRFqhdlKgjPM7bLSDNmDTiIbCxSzjliGLX8JtmSzLLYjjwC1Kpg04uWFpY=
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(23010399003)(376014)(19092799006)(10067099003)(4143699003)(18002099003)(22082099003)(56012099006)(11063799006)(5023799004);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?9EfWJkDawFUpbTHW/wpglR8KWeePN5uX4gOwwZddzy84PiZmKhcqv1hLbacC?=
- =?us-ascii?Q?XtLxeV7nC5ro2tCTAfy3rqhLDE4SS+5kZVNmkmGP2jzBpOBQUl3ZYTFkof3k?=
- =?us-ascii?Q?O1/MYqOhdXBm+o0YbtagwwBOOjqYQFQPcA1PkJQidoXeojrhteTa+mcV6zcm?=
- =?us-ascii?Q?GzS+TJ3NibNyCUysxj0qNL6s4EbB4jxtIma17FbaqMbfGVgFa5PcggwLNIZa?=
- =?us-ascii?Q?QMI8qKgDiyMMu2KWUBI0pdBBzA0jErBPLKY8tYD3gclMkqp4agUS32OufVaI?=
- =?us-ascii?Q?wZL5dHfzozeDq3fj2ChiU1RJH2Vb6rNlCuENMQogBg3gBxlcp3gi+op9CKul?=
- =?us-ascii?Q?L4TMHYIp+yGM4u7Zv/dv76MSq7p2Tv5/NpjQ+WN1OIUq0tMX5HcJ/U9aDyk/?=
- =?us-ascii?Q?jafaW5wwKR5hjdeFdNrxDhuOza/nqlHieW3fL8KZh4vSZn9jFNdtX3QYHWf4?=
- =?us-ascii?Q?SJJYNn4q/zIDQ/cadX6gcUud9XBLPWahJTQoDgxeZKr3d98wM/VCTXwZ2TBp?=
- =?us-ascii?Q?695OkUvpFQJIx3HQMz9/SkimUkSrMpNL74cpfCjgOwHnsP92Mugjtf1unNN1?=
- =?us-ascii?Q?NYxzO4WC27qrkb1rTHzybJj8LD5/5c3Vqv5efCYc9p5PvB4ykLHgcI8id2fP?=
- =?us-ascii?Q?841B+6cO6208FIvTx6cFD9qhPXFnQjvFs7l7WKZRaptcp4XxuBJyIicnhIau?=
- =?us-ascii?Q?0LvwM4B8MuyupYTryXboONOqFpqy+PCTwaNJdh974fGrZHqTDwBrW6nZTVTx?=
- =?us-ascii?Q?hkZaeBuw3LC4oVeDjePoycI6595CyCq4F8aT6DtZQQTCbLKtTqm8kdSv6++V?=
- =?us-ascii?Q?5fv8GcXv+IH/MLTwHoe/KqlgpD9QcjYfCn3zVzJXafqe2WpJ9/pLGLU+dXXj?=
- =?us-ascii?Q?+9HBQuEU/1PkM8BqcK2DYSVxjlHorHh6yh4u8TK0r7pZDD0PGLcvtvDJpZAM?=
- =?us-ascii?Q?/+8jAmNrEfgJcCUW7vXR6qfzOqCyXN5KXeB1WdsNX0hV1M9GySV18W797nD0?=
- =?us-ascii?Q?mFtVdNf1rnc4dXaY4CfflkA6MnCYi/w1VHpQNuCAjWCZtmCTAvmW9/1K2g51?=
- =?us-ascii?Q?yGNNH6h9yA+mO0wGIOMk8ES5glV0ySkJe5f6U61SEUG6xwTcRuRClN6IXqtx?=
- =?us-ascii?Q?7FCJmlVIG45jOW6pdISgYW0Q0JS1BjalKtAsPZ4UEYcvdqDazQhcLoPcOMuA?=
- =?us-ascii?Q?BSM9N4gtafzh/cCtwQAtSPInqB35vI+1OvjlYrj06v4BkS4crHNjiY65Syua?=
- =?us-ascii?Q?45fJztwPCsPZfIWZI+5eYLQ6vejbeUc9XaVa+Mzad6QgPgxVplzr/GwgJXAU?=
- =?us-ascii?Q?gOS9iZVOcFQgnsaaE6dIkRmyblOb2pUddGODza/faxUAwM+GXdtt/fa2yEXP?=
- =?us-ascii?Q?HocyVM40n2ixg3gSEF1Lqhcoxudfh+BF/JglxpfP6bUWM/0IGs2X0kRIMQje?=
- =?us-ascii?Q?Y5hXw5XP1cihhHlUb7PnwVicuR30hvx0RnJQ4qxJv39NoPMUDtvd/EZMiRMp?=
- =?us-ascii?Q?6ohlp7HCQyHAtzGmK9x07zAKcIL8xwPQTPng98kXcmiRwUWUsLeGXCbdI5Za?=
- =?us-ascii?Q?X9pNnQOrK6lTmz+MTpyUMbtrHNora1YVgoqkhIn+rKup4Vn0Icq5L9JNCmwJ?=
- =?us-ascii?Q?0UsZwJFbOZ3L+GT8jSiPfLl5Zrb0PLoJDw0MNn7sKPpDgkQJ7cKj+j1Rno0k?=
- =?us-ascii?Q?hGrpU+ZwDPWiQx6niw6/sf49wjn+iOzxNs2YLtlrOWJVj3ZpnPktOdRrYoNI?=
- =?us-ascii?Q?s5zzlsT9fff7HpGVrSGkGjTrAWONhud4hXG9Jsv7YYUKN0WKq6aM?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?RYJ0v4wPs41gD1ZfPuJ4mj9FcpryG5KuBi4mAYLoY0lKl5Y9sFXUqFUElFOS?=
+ =?us-ascii?Q?5IqcQ2svZqiO/VVqVaQeqU69dGuFh/YT1UaEr+zpKem33rOxV+obpyNeRSwe?=
+ =?us-ascii?Q?+v7MXmyhBrWQ2MAtxLq6NpuTjZOkDyLPW4Ukl3eQrb1aEvP0PWlarFMTZmmE?=
+ =?us-ascii?Q?UMoJNzAQ2g7WqrYBXJaTc6zH7ndhuT3cNJ4yyG6yXLMjTkFsSBrL3JDbgngU?=
+ =?us-ascii?Q?Z/EmzCkEMzGc3Sy2JAK/36yxaW2fW7HhAFNWnLZUEiTvYKs20zVhtkOINKE6?=
+ =?us-ascii?Q?UAMfk31Xg8hK29tGVVGFVnq+f406ypbeWWMd+yntCtWByWh9qhFIQU56290r?=
+ =?us-ascii?Q?+Q7G3cFN+K8lPGg4P1NRySi5X1tM3xHCzs9XuLBMzCM/f72LQ1yRXhTzNFy7?=
+ =?us-ascii?Q?P654DrmJByH73GCpAbvhNyo4XCK12PJfnASGPywkIgN/kg5nWizyHPI1FzAv?=
+ =?us-ascii?Q?4EvRaXOAdM+1gPFdLjQESRWNubnF5s8amSPD4+ZcB/zWTTF1UFxfcGW1XgtI?=
+ =?us-ascii?Q?cxAwvvB6NrjWEjJ/6V9MvHbW3wFTX1LFImwnPxGIs442Fqg1U7tz3ug5U8em?=
+ =?us-ascii?Q?YtzypYAVIeibB3EDI6bQ0TTCNXv4D0bSFMnteeDcgspvsrNg4kH7TYpluy4W?=
+ =?us-ascii?Q?4yc6e/AVvzaKeG4Zn1qhl/w+In5sdh8K5dSpgC9/f3X2QgWFj88Rmyjju5Rj?=
+ =?us-ascii?Q?JpdyVzfx9Fy/EnipzIJ6wo3SO/b6reS6oBB/XR0CnaYkOBFH/gTUfD8JAWgb?=
+ =?us-ascii?Q?ZQZxb4kqwJldwhopLgsnVuxVrrSIMGSLj05iRvomxzta+nVL9HyI3G2t4lz5?=
+ =?us-ascii?Q?OktxjgWoZO4Yl4cTK/Uos5XwknGfw6yx9FM/2Aio3Barg+jAj/wOrLk9jQ2D?=
+ =?us-ascii?Q?ir8LBON7lBusGdPADCv4ulgPwfPmKJgNYGhmKdDa+5ZeFeqHqRieyT/oddrJ?=
+ =?us-ascii?Q?DwXjwY/m5QffMy+Ff+smNY8NQ2hFyo3PtoNwgXbxVbQgS8X+55eDOuKdKoXi?=
+ =?us-ascii?Q?FmoH+vR+iHCLhWrOhhYC4/5mOfqZBUNQIY+YlHxhoJkUUdAzM7P9T5sMHDqZ?=
+ =?us-ascii?Q?M8jx6fp1Bb7klSwaS1GtIKVsACUHXDsfu3EE5MKbPapljzl1uMG9aZek8GYf?=
+ =?us-ascii?Q?UeprsSNopuwTnw919fZPblKv2DGq929cW0x69zhvOiroN+8G3+LTaxvqLPHZ?=
+ =?us-ascii?Q?LrnhQ7Pt8BLzflLwC8AYKOwPlAaJxnYjgK/CeT47175pt4Up7y7cif2jQVrg?=
+ =?us-ascii?Q?ZZ0AW3Mb+gsJon7wHl08M0LdU0VQZJNqrwfcjtd7R/PeUtJJQF5n7QwcYPhU?=
+ =?us-ascii?Q?CNASjJOkSNADiXYaLxXMWg5dzbMI4zKK9nobKzsqDl14z40CgzQkh/sb6TB6?=
+ =?us-ascii?Q?jEAT2tU7ooOjsku9TZXlGPT/gat7e3+8DxrmUSCpjTvbejlTcnRu+qQM3Dc7?=
+ =?us-ascii?Q?Pg6YHgd/8GTtsLq7pRT2m3j+VxmKXa//wu/d0i1Bp7Q8iSxEOueaXcAa9Niq?=
+ =?us-ascii?Q?kNvgADOr0ayDFZoJwgAvE/0/z0htDZweyhmIpQL9u5+mph+a1gVHptCqoZeH?=
+ =?us-ascii?Q?L5WMZD1lMeRXUc/0xtTr2eML1/bLzEgJ6Oy1xtwL7iMBrifcIUOZbt0Db/l4?=
+ =?us-ascii?Q?Nd/3WS9zfz7kl06sd0CNZzD32FEB2dbpxbqgKNOVnd5m57hFLAVrsH0j6rio?=
+ =?us-ascii?Q?6dEuTZ68TZuq0EDfyzptR6EmVt4DEPnQTCwWihJvluPDYv5l6YZ3tOkkveFw?=
+ =?us-ascii?Q?HvVLGHXJVvOflO+VtNzESPhf0h9CxlRJNnPGk0HNm/TSjxNQHLpk?=
 X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5d9597b2-cfe6-4f1f-d9e6-08df128dabbc
+X-MS-Exchange-CrossTenant-Network-Message-Id: 28bef0c4-ef28-474f-147d-08df128e86c2
 X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Sep 2026 18:26:19.2817
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Sep 2026 18:32:27.0020
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: jixx8OgT0UQsmYB6EPqOMZRO4YiSp4X3wVP+CUsB3qMFgwAe7+8eFi2TUQHddWn/howcIuM62f+1LCeTmYXg+KCtXpPCLWPpqMiJR+L6Hpga7SaVBFm/EzPT2WLLKPPz
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6877
+X-MS-Exchange-CrossTenant-UserPrincipalName: zvw7qHwVOYe+rBEjtNqAPHOgoUA16CkSw7Tp7XzQiUb4Tr45mmhez6GTuouYDjCs5qFcNw1VYu6MkD6Sq+d/RQUoZro7aZA3W2cW6nVIU+3ghOg2ukIxCy5DiwRnQQfM
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9PR04MB8258
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260914_112623_177339_F09984CD 
-X-CRM114-Status: GOOD (  35.36  )
+X-CRM114-CacheID: sfid-20260914_113234_619054_9DE1662C 
+X-CRM114-Status: GOOD (  32.46  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,173 +138,264 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Mon, Sep 14, 2026 at 02:30:02PM +0300, Adrian Hunter wrote:
-> I3C v1.1.1 Table 9 defines which HDR Modes are permitted for each Bus
-> Configuration.  A Mixed Slow / Limited Bus permits no HDR Modes because
-> Legacy I2C Devices without a 50 ns SCL spike filter cannot be shielded
-> from HDR traffic.  A Mixed Fast Bus permits HDR-DDR and HDR-TSL, but not
-> HDR-TSP, since of the two Ternary Modes only HDR-TSL is defined for a Bus
-> that also has Legacy I2C Devices.
+On Mon, Sep 14, 2026 at 02:30:03PM +0300, Adrian Hunter wrote:
+> Add support for HDR-DDR private transfers.  Encode HDR-DDR Command
+> Descriptors and advertise HDR-DDR capability when supported by the
+> controller.
 >
-> However, both i3c_device_get_supported_xfer_mode() and the transfer
-> validation in i3c_dev_do_xfers_locked() currently consider only the
-> controller's hdr_cap.  Since hdr_cap reflects controller capability
-> rather than bus or target constraints, HDR Modes can be advertised and
-> used even when the bus configuration forbids them.  Likewise, HDR Modes
-> unsupported by the target may be reported as available.
+> Carry the HDR Command Code in the descriptor CP, CMD and RNW fields.
+> Use the Immediate Data Transfer Command for writes of up to four bytes,
+> as is already done for SDR, and the Regular Data Transfer Command
+> otherwise.  The Immediate Data Transfer Command is write-only, which
+> suits HDR because the eighth bit of the HDR Command Code is field RNW,
+> so a write Command Code leaves that field zero as required.
 >
-> Add i3c_dev_supported_xfer_modes_locked(), which derives the usable
-> transfer modes from the intersection of:
+> Reject transfers shorter than one Data Word or with an odd byte count,
+> as HDR-DDR transfers are defined in whole Data Words and the I3C
+> specification requires at least one Data Word to follow the Command
+> Word.
 >
->   - HDR Modes supported by the controller
->   - HDR Modes allowed by the bus configuration
->   - HDR Modes supported by the target
+> Only advertise HDR-DDR capability when the driver can generate the
+> required descriptor format.
 >
-> Use this helper both when reporting supported transfer modes and when
-> validating transfers, ensuring that the advertised and permitted modes
-> remain consistent.
->
-> GETHDRCAP is queried only when I3C_BCR_HDR_CAP is set, so a target
-> without that bit is treated as supporting no HDR Modes.
->
-> i3c_device_get_supported_xfer_mode() now takes the normal-use bus lock
-> in order to access the device descriptor, matching
-> i3c_device_get_info().
->
-> Also fix the kernel-doc reference to enum i3c_xfer_mode.
->
-> Fixes: 256a21743d91 ("i3c: Add HDR API support")
 > Assisted-by: GitHub-Copilot:claude-opus-5
 > Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
 > ---
 
 Reviewed-by: Frank Li <Frank.Li@nxp.com>
 
->  drivers/i3c/device.c    | 15 ++++++++---
->  drivers/i3c/internals.h |  2 ++
->  drivers/i3c/master.c    | 57 ++++++++++++++++++++++++++++++++++++++++-
->  3 files changed, 69 insertions(+), 5 deletions(-)
+>  drivers/i3c/master/mipi-i3c-hci/cmd.h    |  2 +-
+>  drivers/i3c/master/mipi-i3c-hci/cmd_v1.c | 26 +++++++++++---
+>  drivers/i3c/master/mipi-i3c-hci/cmd_v2.c |  4 ++-
+>  drivers/i3c/master/mipi-i3c-hci/core.c   | 45 +++++++++++++++++++++---
+>  drivers/i3c/master/mipi-i3c-hci/hci.h    |  9 ++---
+>  include/linux/i3c/device.h               |  4 +++
+>  6 files changed, 76 insertions(+), 14 deletions(-)
 >
-> diff --git a/drivers/i3c/device.c b/drivers/i3c/device.c
-> index f1ba363b22a1..4df4682af150 100644
-> --- a/drivers/i3c/device.c
-> +++ b/drivers/i3c/device.c
-> @@ -301,16 +301,23 @@ i3c_device_match_id(struct i3c_device *i3cdev,
->  EXPORT_SYMBOL_GPL(i3c_device_match_id);
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/cmd.h b/drivers/i3c/master/mipi-i3c-hci/cmd.h
+> index e0d4a6e0e319..fa3107df7c51 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/cmd.h
+> +++ b/drivers/i3c/master/mipi-i3c-hci/cmd.h
+> @@ -55,7 +55,7 @@ struct hci_cmd_ops {
+>  	int (*prep_ccc)(struct i3c_hci *hci, struct hci_xfer *xfer,
+>  			u8 ccc_addr, u8 ccc_cmd, bool raw);
+>  	void (*prep_i3c_xfer)(struct i3c_hci *hci, struct i3c_dev_desc *dev,
+> -			      struct hci_xfer *xfer);
+> +			      struct hci_xfer *xfer, enum i3c_xfer_mode mode);
+>  	void (*prep_i2c_xfer)(struct i3c_hci *hci, struct i2c_dev_desc *dev,
+>  			      struct hci_xfer *xfer);
+>  	int (*perform_daa)(struct i3c_hci *hci);
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c b/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
+> index 9910df53c013..78ad2ec2bd93 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
+> +++ b/drivers/i3c/master/mipi-i3c-hci/cmd_v1.c
+> @@ -215,14 +215,30 @@ static int hci_cmd_v1_prep_ccc(struct i3c_hci *hci,
 >
->  /**
-> - * i3c_device_get_supported_xfer_mode - Returns the supported transfer mode by
-> - *					connected master controller.
-> + * i3c_device_get_supported_xfer_mode - Returns the transfer modes supported by
-> + *					the connected master controller and @dev,
-> + *					and allowed by the bus configuration.
->   * @dev: I3C device
->   *
->   * Return: a bit mask, which supported transfer mode, bit position is defined at
-> - *	   enum i3c_hdr_mode
-> + *	   enum i3c_xfer_mode
->   */
->  u32 i3c_device_get_supported_xfer_mode(struct i3c_device *dev)
+>  static void hci_cmd_v1_prep_i3c_xfer(struct i3c_hci *hci,
+>  				     struct i3c_dev_desc *dev,
+> -				     struct hci_xfer *xfer)
+> +				     struct hci_xfer *xfer,
+> +				     enum i3c_xfer_mode xfer_mode)
 >  {
-> -	return i3c_bus_to_i3c_master(dev->bus)->this->info.hdr_cap | BIT(I3C_SDR);
-> +	u32 modes;
+>  	struct i3c_hci_dev_data *dev_data = i3c_dev_get_master_data(dev);
+>  	unsigned int dat_idx = dev_data->dat_idx;
+> -	enum hci_cmd_mode mode = get_i3c_mode(hci);
+> +	enum hci_cmd_mode mode;
+>  	u8 *data = xfer->data;
+>  	unsigned int data_len = xfer->data_len;
+>  	bool rnw = xfer->rnw;
+> +	u32 cp_cmd = 0;
 > +
-> +	i3c_bus_normaluse_lock(dev->bus);
-> +	modes = i3c_dev_supported_xfer_modes_locked(dev->desc);
-> +	i3c_bus_normaluse_unlock(dev->bus);
-> +
-> +	return modes;
->  }
->  EXPORT_SYMBOL_GPL(i3c_device_get_supported_xfer_mode);
+> +	if (xfer_mode == I3C_SDR) {
+> +		mode = get_i3c_mode(hci);
+> +	} else {
+> +		/*
+> +		 * HDR-DDR is the only advertised HDR Mode, so a non-SDR
+> +		 * transfer uses the HDR-DDR Command Code encoding: CP marks CMD
+> +		 * as valid, CMD carries bits[6:0], and RNW carries bit[7]. CP
+> +		 * and CMD occupy the same descriptor bits in both command
+> +		 * formats.
+> +		 */
+> +		mode = MODE_I3C_HDR_DDR;
+> +		cp_cmd = CMD_R0_CP | CMD_R0_CMD(xfer->hdr_cmd & I3C_HDR_CMD_CODE);
+> +	}
 >
-> diff --git a/drivers/i3c/internals.h b/drivers/i3c/internals.h
-> index 86a36b951e0d..9a6936e2c660 100644
-> --- a/drivers/i3c/internals.h
-> +++ b/drivers/i3c/internals.h
-> @@ -18,6 +18,8 @@ bool i3c_bus_rpm_ibi_allowed(struct i3c_bus *bus);
->  void i3c_bus_normaluse_lock(struct i3c_bus *bus);
->  void i3c_bus_normaluse_unlock(struct i3c_bus *bus);
+>  	xfer->cmd_tid = hci_get_tid();
 >
-> +u32 i3c_dev_supported_xfer_modes_locked(struct i3c_dev_desc *dev);
-> +
->  int i3c_dev_setdasa_locked(struct i3c_dev_desc *dev);
->  int i3c_dev_do_xfers_locked(struct i3c_dev_desc *dev,
->  			    struct i3c_xfer *xfers,
-> diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-> index 4296c51a9537..c8093708807c 100644
-> --- a/drivers/i3c/master.c
-> +++ b/drivers/i3c/master.c
-> @@ -938,6 +938,61 @@ static int i3c_bus_set_mode(struct i3c_bus *i3cbus, enum i3c_bus_mode mode,
+> @@ -233,7 +249,8 @@ static void hci_cmd_v1_prep_i3c_xfer(struct i3c_hci *hci,
+>  			CMD_I0_TID(xfer->cmd_tid) |
+>  			CMD_I0_DEV_INDEX(dat_idx) |
+>  			CMD_I0_DTT(data_len) |
+> -			CMD_I0_MODE(mode);
+> +			CMD_I0_MODE(mode) |
+> +			cp_cmd;
+>  		fill_data_bytes(xfer, data, data_len);
+>  	} else {
+>  		/* we use a Regular Data Transfer Command */
+> @@ -242,7 +259,8 @@ static void hci_cmd_v1_prep_i3c_xfer(struct i3c_hci *hci,
+>  			CMD_R0_TID(xfer->cmd_tid) |
+>  			CMD_R0_DEV_INDEX(dat_idx) |
+>  			CMD_R0_MODE(mode) |
+> -			(rnw ? CMD_R0_RNW : 0);
+> +			(rnw ? CMD_R0_RNW : 0) |
+> +			cp_cmd;
+>  		xfer->cmd_desc[1] =
+>  			CMD_R1_DATA_LENGTH(data_len);
+>  	}
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/cmd_v2.c b/drivers/i3c/master/mipi-i3c-hci/cmd_v2.c
+> index 8d93748e858d..b5e25f05f03e 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/cmd_v2.c
+> +++ b/drivers/i3c/master/mipi-i3c-hci/cmd_v2.c
+> @@ -212,9 +212,11 @@ static int hci_cmd_v2_prep_ccc(struct i3c_hci *hci, struct hci_xfer *xfer,
 >  	return 0;
 >  }
 >
-> +/*
-> + * I3C v1.1.1 Section 5.1.2.4 Table 9 lists the HDR Modes each Bus
-> + * Configuration allows.  A Mixed Slow / Limited Bus has Legacy I2C Devices
-> + * without a 50 ns spike filter, so there is no way to hide any HDR Mode from
-> + * them.  Of the two Ternary Modes, only HDR-TSL is defined for a Bus that
-> + * also has Legacy I2C Devices; HDR-TSP is defined for a Pure Bus.
-> + */
-> +static u32 i3c_bus_hdr_modes(struct i3c_bus *bus)
+> +/* For cmd_v2, only SDR capability is advertised */
+>  static void hci_cmd_v2_prep_i3c_xfer(struct i3c_hci *hci,
+>  				     struct i3c_dev_desc *dev,
+> -				     struct hci_xfer *xfer)
+> +				     struct hci_xfer *xfer,
+> +				     enum i3c_xfer_mode xfer_mode)
+>  {
+>  	unsigned int mode = XFERMODE_IDX_I3C_SDR;
+>  	unsigned int rate = get_i3c_rate_idx(hci);
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/core.c b/drivers/i3c/master/mipi-i3c-hci/core.c
+> index 57d84d7682d7..c72522f702bb 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/core.c
+> +++ b/drivers/i3c/master/mipi-i3c-hci/core.c
+> @@ -116,6 +116,13 @@ static inline struct i3c_hci *to_i3c_hci(struct i3c_master_controller *m)
+>  	return container_of(m, struct i3c_hci, master);
+>  }
+>
+> +/* HDR support has been added for cmd_v1 only */
+> +static bool i3c_hci_hdr_ddr_capable(struct i3c_hci *hci)
 > +{
-> +	switch (bus->mode) {
-> +	case I3C_BUS_MODE_PURE:
-> +		return BIT(I3C_HDR_DDR) | BIT(I3C_HDR_TSP) | BIT(I3C_HDR_TSL);
-> +	case I3C_BUS_MODE_MIXED_FAST:
-> +		return BIT(I3C_HDR_DDR) | BIT(I3C_HDR_TSL);
-> +	case I3C_BUS_MODE_MIXED_LIMITED:
-> +	case I3C_BUS_MODE_MIXED_SLOW:
-> +		break;
-> +	}
+> +	return hci->cmd == &mipi_i3c_hci_cmd_v1 &&
+> +	       hci->caps & HC_CAP_HDR_DDR_EN;
+> +}
+> +
+>  /**
+>   * i3c_hci_sysdev() - Get the device to use for DMA and system PM
+>   * @dev: Device the HCI controller is bound to
+> @@ -158,6 +165,8 @@ static int i3c_hci_bus_init(struct i3c_master_controller *m)
+>  	i3c_hci_set_master_dyn_addr(hci);
+>  	memset(&info, 0, sizeof(info));
+>  	info.dyn_addr = hci->dyn_addr;
+> +	if (i3c_hci_hdr_ddr_capable(hci))
+> +		info.hdr_cap = BIT(I3C_HDR_DDR);
+>  	ret = i3c_master_set_info(m, &info);
+>  	if (ret)
+>  		return ret;
+> @@ -463,6 +472,27 @@ static int i3c_hci_daa(struct i3c_master_controller *m)
+>  	return ret;
+>  }
+>
+> +static bool i3c_hci_rnw(struct i3c_xfer *i3c_xfer, enum i3c_xfer_mode mode)
+> +{
+> +	if (mode == I3C_SDR)
+> +		return i3c_xfer->rnw;
+> +
+> +	return i3c_xfer->cmd & I3C_HDR_CMD_RNW;
+> +}
+> +
+> +static int i3c_hci_check_hdr_ddr_xfers(struct i3c_xfer *i3c_xfers, int nxfers)
+> +{
+> +	/*
+> +	 * HDR-DDR frames 16-bit Data Words, and at least one Data Word must
+> +	 * follow the Command Word.
+> +	 */
+> +	for (int i = 0; i < nxfers; i++)
+> +		if (i3c_xfers[i].len < 2 || i3c_xfers[i].len % 2)
+> +			return -EINVAL;
 > +
 > +	return 0;
 > +}
 > +
-> +static u32 i3c_dev_hdr_modes(struct i3c_dev_desc *dev)
-> +{
-> +	if (!(dev->info.bcr & I3C_BCR_HDR_CAP))
-> +		return 0;
-> +
-> +	return dev->info.hdr_cap;
-> +}
-> +
-> +/**
-> + * i3c_dev_supported_xfer_modes_locked() - Get the transfer modes usable with a
-> + *					   device
-> + * @dev: I3C device descriptor
-> + *
-> + * The HDR Modes the controller and @dev both support, restricted to those the
-> + * bus configuration allows.  SDR is always supported.
-> + *
-> + * The bus lock must be held in normal use mode.
-> + *
-> + * Return: a bit mask of &enum i3c_xfer_mode values.
-> + */
-> +u32 i3c_dev_supported_xfer_modes_locked(struct i3c_dev_desc *dev)
-> +{
-> +	struct i3c_master_controller *master = i3c_dev_get_master(dev);
-> +
-> +	/*
-> +	 * master->this->info.bcr is ignored because it describes the master's
-> +	 * target capability, not its controller capability.
-> +	 */
-> +	return (master->this->info.hdr_cap &
-> +		i3c_bus_hdr_modes(&master->bus) &
-> +		i3c_dev_hdr_modes(dev)) | BIT(I3C_SDR);
-> +}
-> +
->  static struct i3c_master_controller *
->  i2c_adapter_to_i3c_master(struct i2c_adapter *adap)
->  {
-> @@ -3856,7 +3911,7 @@ int i3c_dev_do_xfers_locked(struct i3c_dev_desc *dev, struct i3c_xfer *xfers,
->  	if (!master || !xfers)
->  		return -EINVAL;
+>  static int i3c_hci_i3c_xfers(struct i3c_dev_desc *dev,
+>  			     struct i3c_xfer *i3c_xfers, int nxfers,
+>  			     enum i3c_xfer_mode mode)
+> @@ -475,20 +505,27 @@ static int i3c_hci_i3c_xfers(struct i3c_dev_desc *dev,
 >
-> -	if (mode != I3C_SDR && !(master->this->info.hdr_cap & BIT(mode)))
-> +	if (mode != I3C_SDR && !(i3c_dev_supported_xfer_modes_locked(dev) & BIT(mode)))
->  		return -EOPNOTSUPP;
+>  	dev_dbg(&hci->master.dev, "nxfers = %d", nxfers);
 >
->  	return master->ops->i3c_xfers(dev, xfers, nxfers, mode);
+> +	if (mode == I3C_HDR_DDR) {
+> +		ret = i3c_hci_check_hdr_ddr_xfers(i3c_xfers, nxfers);
+> +		if (ret)
+> +			return ret;
+> +	}
+> +
+>  	xfer = hci_alloc_xfer(nxfers);
+>  	if (!xfer)
+>  		return -ENOMEM;
+>
+>  	for (i = 0; i < nxfers; i++) {
+>  		xfer[i].data_len = i3c_xfers[i].len;
+> -		xfer[i].rnw = i3c_xfers[i].rnw;
+> -		if (i3c_xfers[i].rnw) {
+> +		xfer[i].rnw = i3c_hci_rnw(i3c_xfers + i, mode);
+> +		xfer[i].hdr_cmd = i3c_xfers[i].cmd;
+> +		if (xfer[i].rnw) {
+>  			xfer[i].data = i3c_xfers[i].data.in;
+>  		} else {
+>  			/* silence the const qualifier warning with a cast */
+>  			xfer[i].data = (void *) i3c_xfers[i].data.out;
+>  		}
+> -		hci->cmd->prep_i3c_xfer(hci, dev, &xfer[i]);
+> +		hci->cmd->prep_i3c_xfer(hci, dev, &xfer[i], mode);
+>  		xfer[i].cmd_desc[0] |= CMD_0_ROC;
+>  	}
+>  	last = i - 1;
+> @@ -500,7 +537,7 @@ static int i3c_hci_i3c_xfers(struct i3c_dev_desc *dev,
+>  	if (ret)
+>  		goto out;
+>  	for (i = 0; i < nxfers; i++) {
+> -		if (i3c_xfers[i].rnw)
+> +		if (xfer[i].rnw)
+>  			i3c_xfers[i].len = RESP_DATA_LENGTH(xfer[i].response);
+>  		if (RESP_STATUS(xfer[i].response) != RESP_SUCCESS) {
+>  			ret = -EIO;
+> diff --git a/drivers/i3c/master/mipi-i3c-hci/hci.h b/drivers/i3c/master/mipi-i3c-hci/hci.h
+> index ee73f6e6756a..4288a1b5b491 100644
+> --- a/drivers/i3c/master/mipi-i3c-hci/hci.h
+> +++ b/drivers/i3c/master/mipi-i3c-hci/hci.h
+> @@ -85,10 +85,10 @@ struct i3c_hci {
+>
+>  /*
+>   * Structure to represent a master initiated transfer.
+> - * The rnw, data and data_len fields must be initialized before calling any
+> - * hci->cmd->*() method. The cmd method will initialize cmd_desc[] and
+> - * possibly modify (clear) the data field. Then xfer->cmd_desc[0] can
+> - * be augmented with CMD_0_ROC and/or CMD_0_TOC.
+> + * The rnw, data and data_len (and hdr_cmd for HDR) fields must be initialized
+> + * before calling any hci->cmd->*() method. The cmd method will initialize
+> + * cmd_desc[] and possibly modify (clear) the data field. Then xfer->cmd_desc[0]
+> + * can be augmented with CMD_0_ROC and/or CMD_0_TOC.
+>   * The completion field needs to be initialized before queueing with
+>   * hci->io->queue_xfer(), and requires CMD_0_ROC to be set.
+>   */
+> @@ -97,6 +97,7 @@ struct hci_xfer {
+>  	u32 response;
+>  	bool rnw;
+>  	bool started;
+> +	u8 hdr_cmd;
+>  	void *data;
+>  	unsigned int data_len;
+>  	unsigned int cmd_tid;
+> diff --git a/include/linux/i3c/device.h b/include/linux/i3c/device.h
+> index 0f065b883ee0..e30ea2cb13cb 100644
+> --- a/include/linux/i3c/device.h
+> +++ b/include/linux/i3c/device.h
+> @@ -79,6 +79,10 @@ struct i3c_xfer {
+>  	enum i3c_error_code err;
+>  };
+>
+> +/* For splitting 'cmd' from struct i3c_xfer */
+> +#define I3C_HDR_CMD_RNW			BIT(7)
+> +#define I3C_HDR_CMD_CODE		GENMASK(6, 0)
+> +
+>  /**
+>   * enum i3c_dcr - I3C DCR values
+>   * @I3C_DCR_GENERIC_DEVICE: generic I3C device
 > --
 > 2.53.0
 >
