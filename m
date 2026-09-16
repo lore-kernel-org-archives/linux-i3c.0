@@ -4,42 +4,42 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DDE8BC982C9
-	for <linux-i3c@archiver.kernel.org>; Wed, 16 Sep 2026 18:38:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2130DC88E7F
+	for <linux-i3c@archiver.kernel.org>; Wed, 16 Sep 2026 18:40:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dLXVrLb0l8lqgoYlsn/1E2QqXhMXx5yYdihiQpICpSA=; b=oG89Nli4SYm7F+
-	nzEgmBIF4qjdaZ/QoKmPPDNjQgNPNStLhgH+urhHYXimKMuQGxFP89lDLsoNOjeUMxzuXVN2p7kTZ
-	Cab24lXLLDlTta6MoHKWOV5G5yCjxzFFLj+O8I7bS9ZumrTVjAMzZqS7bBFECC1LyOZ4AAryyJWw/
-	MX8kz7dCdjx36fUqdhpcnzognqFJtNPhoe2FsbPAVsyK0+EPbglLCwgeghyUyOyAwxwk7ZhdFbBqy
-	ab6WFR5JGY4lAldUxyez355AHwroffAABkPajCbezqbSVj+EG3yMvGvHFQ4a3T4PTu4XtNqsKYaxq
-	WG9vFlLAatv8Dmurtm2A==;
+	List-Owner; bh=nK8nCFh7wRDWwGawBFmfLLKYtNWUNBYFtahLo9VhHSI=; b=E646KOkB/P1Exi
+	lq1M/pnJsGM9an7M9GEE4ELWnXg7suJNFwkxCSzCeAn/b0rcU3QvCNUOaX7ofXWabb5eN5qIsQfcJ
+	5Z/HeDTib9x3HOUtJNVjppIAU5BRy8ZDHtKQhMNafp/uyS8zkf0/WHvAPCrit/glcEvrH929/V6wd
+	ryRjZOxPoyLTfGCNBfsE2vpD5c9zL1ArxE+xcOuNo3qWsFKZ9odMsbDCetv9n/1JX1WiM/Km6i+nl
+	eq76xtKYcaA1tX8/1WPe+mTadYtYovZDaQXIGAEH4geyrRKGzVX1QCZbYM2iEkdvGGItBT7kdZhuK
+	SM0lIBh2fffppJA52NUQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6uWi-00000009yEk-2Mxe;
-	Wed, 16 Sep 2026 18:38:36 +0000
+	id 1x6uYb-00000009yPA-3846;
+	Wed, 16 Sep 2026 18:40:33 +0000
 Received: from linux.microsoft.com ([13.77.154.182])
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6uWg-00000009yE5-1tLF
+	id 1x6uYZ-00000009yOm-1TUO
 	for linux-i3c@lists.infradead.org;
-	Wed, 16 Sep 2026 18:38:35 +0000
+	Wed, 16 Sep 2026 18:40:32 +0000
 Received: by linux.microsoft.com (Postfix, from userid 1223)
-	id 1CEC920B7169; Wed, 16 Sep 2026 11:37:49 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com 1CEC920B7169
+	id D4DAE20B7169; Wed, 16 Sep 2026 11:39:45 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com D4DAE20B7169
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.microsoft.com;
-	s=default; t=1789583869;
-	bh=9wZWN3c7VtfU90nlylRqOxhet8YTp7k1kim88XV1ips=;
+	s=default; t=1789583985;
+	bh=8lK+5oMYPj6NqJmz8Ck8rGQ6ji2Aa8RX6M1pRCw0k50=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=rfvyhs86B1WHn0HXBT2/McElIEdN6Md26yOwXBHT06v6u7v4r6/Saj0sxJHRis2yS
-	 mGIVyLRBWCrUYRtKfaw0bwXCSYo4X3clSVvu4cjWoPtEFsjc/yCljS/i+9m+t2hNym
-	 Uwy3mV8kPJ1dQ+74YMB7IQwZpHEQgNCeLfPkYbcM=
-Date: Wed, 16 Sep 2026 11:37:49 -0700
+	b=FWiUM2N2gFXZJw07S+29h619H1s8PFSkSWlMg8+hGsUTHSD3M+KxJjpiqd8hEAL1r
+	 mBi0K3Rfp1JrvGbZ2f/h85Rkbt+u91WCFxzPbscplgi3y6ZRbbTX8DhG/+z50fCjh8
+	 YiBnIqduPbFabLtw8eRPpoL44+M2yHtsTKkpL7PE=
+Date: Wed, 16 Sep 2026 11:39:45 -0700
 From: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
-To: Randy Dunlap <rdunlap@infradead.org>
+To: Andy Shevchenko <andriy.shevchenko@intel.com>
 Cc: Meagan Lloyd <meaganlloyd@linux.microsoft.com>,
 	linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
 	vitor.soares@toradex.com, samagazaryan@google.com,
@@ -62,18 +62,17 @@ Cc: Meagan Lloyd <meaganlloyd@linux.microsoft.com>,
 	jarkko.nikula@linux.intel.com, linux-doc@vger.kernel.org,
 	linux-kernel@vger.kernel.org, linux-hwmon@vger.kernel.org,
 	linux@analog.com, linux-iio@vger.kernel.org
-Subject: Re: [PATCH 3/3] i3c: add i3cdev character device module for
- user-space access
-Message-ID: <20260916-6e1c9c4182821362eb097551@linux.microsoft.com>
+Subject: Re: [PATCH 1/3] i3c: master: enable driver_override for I3C
+Message-ID: <20260916-6e46fd06ccaca5d99fe1d30a@linux.microsoft.com>
 References: <20260911210935.1353126-1-meaganlloyd@linux.microsoft.com>
- <20260911210935.1353126-4-meaganlloyd@linux.microsoft.com>
- <5cd22376-6921-4a2b-acba-371bcbbfa00f@infradead.org>
+ <20260911210935.1353126-2-meaganlloyd@linux.microsoft.com>
+ <aqVR-jBabQKcsfjL@ashevche-desk.local>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <5cd22376-6921-4a2b-acba-371bcbbfa00f@infradead.org>
+In-Reply-To: <aqVR-jBabQKcsfjL@ashevche-desk.local>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260916_113834_516805_F9B6D32F 
-X-CRM114-Status: UNSURE (   8.86  )
+X-CRM114-CacheID: sfid-20260916_114031_416490_0D435ABB 
+X-CRM114-Status: UNSURE (   8.35  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -91,25 +90,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-> > +	close(fd);
-> > \ No newline at end of file
+> > Signed-off-by: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
+> > Assisted-by: Claude:claude-opus-4.8 copilot
 > 
-> Fix the warning above, please.
-> Also:
-> Documentation/userspace-api/i3c/i3cdev.rst: WARNING: document isn't included in any toctree [toc.not_included]
+> Assisted-by: LLM
+
+Sure, I can update the tag accordingly. Thanks!
+
 > 
-> add that file to the table of contents (somewhere).
+> ...
 > 
-> thanks.
+> >  drivers/hwmon/lm75.c                        |  7 ++++++-
+> >  drivers/hwmon/tmp108.c                      |  2 ++
+> >  drivers/i3c/master.c                        |  6 ++++++
+> >  drivers/iio/adc/ad4062.c                    | 10 ++++++++--
+> >  drivers/iio/imu/st_lsm6dsx/st_lsm6dsx_i3c.c |  3 +++
+> 
+> No, each IIO driver should have its own patch.
+> 
 > -- 
-> ~Randy
+> With Best Regards,
+> Andy Shevchenko
+> 
+Got it. Thanks for the feedback.
 
-Thanks for catching that! I'll add the newline at the end of the file as
-well as add this page to the table of contents.
-
-Best regards,
+Sincerely,
 Meagan
-
 
 -- 
 linux-i3c mailing list
