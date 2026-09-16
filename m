@@ -4,32 +4,32 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C553C982C9
-	for <linux-i3c@archiver.kernel.org>; Wed, 16 Sep 2026 16:04:38 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 333D5C982CF
+	for <linux-i3c@archiver.kernel.org>; Wed, 16 Sep 2026 16:07:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
 	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=28jxe75KPUE/uwL+tsuDYE7VPtYaJCzczr+kpPRfdTk=; b=PBoCzykljo4XwN
-	5+65u+smFKGmRZfboiV3UbFL9oKOdQLjXUFHxjMXqEAl11mal82xQ2XWejZihGRUmLAQyWtrFXuUX
-	NlLjMYgllK59meppHqSArZqNMpD+DBi0jnR73MmAaXL1KGOm7btwftg2s06FqX7gMQUEoKG10FuyI
-	n3592uXlLNnLrMjdzSpAbLhjzECBaSfnp/Rt4LH91VxWrWJIMndzmMv32jecDPCVI0qlu/wuGEYjE
-	SNkPn4+9Dau+47STvyKvKlOI6c3YO8MhyrAL1ApruYqrEmckKC30BCyd2t00dlrDkYRFl7+3ZceWA
-	Q0dsgQL7RrYbQCElXkvA==;
+	List-Owner; bh=llJqVeC6XJA3PFq0ujXXY0zmPXDxeQMwtX46d/EjGSc=; b=USlXvCXbdC2nSc
+	9Zmp++6zoB356+B0cetPVXtWs5UHL9gIkow8UwkCHPrr3jO6I0aCQLLGQVaRuZEj+FV8XINVOXQZ3
+	IQMu3Dvi8cRQc/l/u7xOxn/egPZdl1tszMJwypQFMuZ66x1gGu1+LScleJlTZuV4uadIyLVqEG62N
+	Oxxn2Gu+6W22J1wsIlcg9tDtBjozJ+KKn44uEoJbVQ4q9FK7FMA1alOIBuGxQNz2/TcLM9Yzjy/96
+	0YosStQUna8SMs42aAd1tEyINKM+YK/Kif/3ymeOcKPkxGnXiUkE6OtSm2xFwVJpwA4ufjXV5tWrM
+	VqkpjnJmW1Eia/kyoovQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6s7i-00000009gbo-0G0i;
-	Wed, 16 Sep 2026 16:04:38 +0000
+	id 1x6sAW-00000009gzn-3fY0;
+	Wed, 16 Sep 2026 16:07:32 +0000
 Received: from smtp25.cstnet.cn ([159.226.251.25] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6s7f-00000009gbK-1Opl
+	id 1x6sAS-00000009gxb-2Zev
 	for linux-i3c@lists.infradead.org;
-	Wed, 16 Sep 2026 16:04:36 +0000
+	Wed, 16 Sep 2026 16:07:31 +0000
 Received: from dfae2b116770.home.arpa (unknown [36.110.52.2])
-	by APP-05 (Coremail) with SMTP id zQCowABXiEIKvqpqIVRtCA--.21697S2;
-	Thu, 17 Sep 2026 00:04:26 +0800 (CST)
+	by APP-05 (Coremail) with SMTP id zQCowACnETy6vqpqjV5tCA--.44393S2;
+	Thu, 17 Sep 2026 00:07:22 +0800 (CST)
 From: Wentao Liang <vulab@iscas.ac.cn>
 To: Frank.Li@nxp.com
 Cc: alexandre.belloni@bootlin.com,
@@ -40,33 +40,33 @@ Cc: alexandre.belloni@bootlin.com,
 	linux-kernel@vger.kernel.org,
 	Wentao Liang <vulab@iscas.ac.cn>,
 	stable@vger.kernel.org
-Subject: [PATCH] i3c: master: Fix of_node reference leak in i3c_master_register()
-Date: Wed, 16 Sep 2026 16:03:58 +0000
-Message-Id: <20260916160358.2081087-1-vulab@iscas.ac.cn>
+Subject: [PATCH] i3c: master: Fix of_node reference leak in of_i3c_master_add_i2c_boardinfo()
+Date: Wed, 16 Sep 2026 16:06:54 +0000
+Message-Id: <20260916160654.2081795-1-vulab@iscas.ac.cn>
 X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-X-CM-TRANSID: zQCowABXiEIKvqpqIVRtCA--.21697S2
-X-Coremail-Antispam: 1UD129KBjvdXoW7Gr15trWkWr4Dtr1DGr17KFg_yoWDKFc_KF
-	48Wr92qr48Cr4vkr43GFW3urZFkFWqg34IkFWFyFyxW3y8XryDJ34UXrZ8AF4UCrWfZr9x
-	ArWDKr1rC3y7ujkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
-	9fnUUIcSsGvfJTRUUUb4kFF20E14v26r4j6ryUM7CY07I20VC2zVCF04k26cxKx2IYs7xG
-	6rWj6s0DM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rwA2F7IY1VAKz4vEj48ve4kI8w
-	A2z4x0Y4vE2Ix0cI8IcVAFwI0_Xr0_Ar1l84ACjcxK6xIIjxv20xvEc7CjxVAFwI0_Cr0_
-	Gr1UM28EF7xvwVC2z280aVAFwI0_Jr0_Gr1l84ACjcxK6I8E87Iv6xkF7I0E14v26r4j6r
-	4UJwAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC0VAKzVAqx4xG6I80ewAv7VC0
-	I7IYx2IY67AKxVWUAVWUtwAv7VC2z280aVAFwI0_Jr0_Gr1lOx8S6xCaFVCjc4AY6r1j6r
-	4UM4x0Y48IcxkI7VAKI48JM4x0x7Aq67IIx4CEVc8vx2IErcIFxwCY1x0262kKe7AKxVWU
-	tVW8ZwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkEbVWUJVW8JwC20s026c02F40E14
-	v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67AF67kF1VAFwI0_Jw0_GFylIxkG
-	c2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUCVW8JwCI42IY6xIIjxv20xvEc7CjxVAFwI
-	0_Cr0_Gr1UMIIF0xvE42xK8VAvwI8IcIk0rVWUJVWUCwCI42IY6I8E87Iv67AKxVWUJVW8
-	JwCI42IY6I8E87Iv6xkF7I0E14v26r4j6r4UJbIYCTnIWIevJa73UjIFyTuYvjfUoq2MUU
-	UUU
+X-CM-TRANSID: zQCowACnETy6vqpqjV5tCA--.44393S2
+X-Coremail-Antispam: 1UD129KBjvJXoW7uw1rAw4UJFyUWry8tw18Zrb_yoW8XF4rpw
+	48GFy5C348XF1xWF48XFyfuFZ0v3Z3trWUKw43Kw17urnxGw10qr1DJ3W0vr1fKryrAryj
+	yr45tw4UWa95ZFDanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+	9KBjDU0xBIdaVrnRJUUUkK14x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
+	rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
+	1l84ACjcxK6xIIjxv20xvE14v26ryj6F1UM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26F4j
+	6r4UJwA2z4x0Y4vEx4A2jsIE14v26r4j6F4UM28EF7xvwVC2z280aVCY1x0267AKxVW8JV
+	W8Jr1le2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E
+	2Ix0cI8IcVAFwI0_JF0_Jw1lYx0Ex4A2jsIE14v26r1j6r4UMcvjeVCFs4IE7xkEbVWUJV
+	W8JwACjcxG0xvY0x0EwIxGrwACjI8F5VA0II8E6IAqYI8I648v4I1lc7CjxVAaw2AFwI0_
+	Jw0_GFyl42xK82IYc2Ij64vIr41l4I8I3I0E4IkC6x0Yz7v_Jr0_Gr1lx2IqxVAqx4xG67
+	AKxVWUJVWUGwC20s026x8GjcxK67AKxVWUGVWUWwC2zVAF1VAY17CE14v26r1q6r43MIIY
+	rxkI7VAKI48JMIIF0xvE2Ix0cI8IcVAFwI0_JFI_Gr1lIxAIcVC0I7IYx2IY6xkF7I0E14
+	v26F4j6r4UJwCI42IY6xAIw20EY4v20xvaj40_Jr0_JF4lIxAIcVC2z280aVAFwI0_Jr0_
+	Gr1lIxAIcVC2z280aVCY1x0267AKxVW8JVW8JrUvcSsGvfC2KfnxnUUI43ZEXa7VUbtxhJ
+	UUUUU==
 X-Originating-IP: [36.110.52.2]
-X-CM-SenderInfo: pyxotu46lvutnvoduhdfq/1tbiBwcMA2qqpVg+UQAAsd
+X-CM-SenderInfo: pyxotu46lvutnvoduhdfq/1tbiDAEMA2qqpO9AQAABsI
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260916_090435_738540_FBA73F2F 
-X-CRM114-Status: UNSURE (   8.45  )
+X-CRM114-CacheID: sfid-20260916_090729_019789_282A75B9 
+X-CRM114-Status: UNSURE (   7.30  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -84,37 +84,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-The reference taken on the parent's device node with of_node_get() is
-normally dropped by i3c_masterdev_release() once the master device is
-unregistered. When i3c_master_rpm_get() fails, the function returns
-before device_initialize(), so put_device() is never called and the
-node reference is leaked.
+of_i2c_get_board_info() stores the device node in the board info's fwnode
+without taking a reference, so the board info relies on the trailing
+of_node_get() to keep the node alive. Nothing ever drops that reference:
+the board info is devres-allocated and has no release callback.
 
-Release the device node reference on the runtime PM failure path.
+Register the reference as a device-managed action of the I3C master so it
+is released on registration failure and on controller teardown.
 
 Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
 Cc: stable@vger.kernel.org
 Signed-off-by: Wentao Liang <vulab@iscas.ac.cn>
 ---
- drivers/i3c/master.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/i3c/master.c | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
-index 5cd4e5da2233..23f490a00591 100644
+index 23f490a00591..30b3822c530c 100644
 --- a/drivers/i3c/master.c
 +++ b/drivers/i3c/master.c
-@@ -3033,8 +3033,10 @@ int i3c_master_register(struct i3c_master_controller *master,
- 	INIT_LIST_HEAD(&master->boardinfo.i3c);
+@@ -2407,6 +2407,11 @@ EXPORT_SYMBOL_GPL(i3c_master_add_i3c_dev_locked);
  
- 	ret = i3c_master_rpm_get(master);
--	if (ret)
-+	if (ret) {
-+		of_node_put(master->dev.of_node);
- 		return ret;
-+	}
+ #define OF_I3C_REG1_IS_I2C_DEV			BIT(31)
  
- 	device_initialize(&master->dev);
++static void of_i3c_master_put_node(void *data)
++{
++	of_node_put(data);
++}
++
+ static int
+ of_i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
+ 				struct device_node *node, u32 *reg)
+@@ -2437,9 +2442,9 @@ of_i3c_master_add_i2c_boardinfo(struct i3c_master_controller *master,
+ 	boardinfo->lvr = reg[2];
  
+ 	list_add_tail(&boardinfo->node, &master->boardinfo.i2c);
+-	of_node_get(node);
+ 
+-	return 0;
++	return devm_add_action_or_reset(dev, of_i3c_master_put_node,
++					of_node_get(node));
+ }
+ 
+ static int
 -- 
 2.34.1
 
