@@ -4,53 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CA3C2C88E77
-	for <linux-i3c@archiver.kernel.org>; Wed, 16 Sep 2026 07:25:59 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C553C982C9
+	for <linux-i3c@archiver.kernel.org>; Wed, 16 Sep 2026 16:04:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	References:In-Reply-To:Cc:To:Subject:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3gR6dx6Fp2OUj5pJFsjBM1ICKXrJbLzF4zodJYUOBtk=; b=cxqul6dJl9vicY
-	baVriKyGY5qpIHg6a/+uGVa2IucsFEs0y6WOugEE62WJ0rafm6EnLy6fTJg101CLDBkkvXyN+SW3T
-	AGK4MBxBIg547CjKS2IjiAjm5Fk+9uyv5ntsjBYoNPuU/tsREMg0q1++txlNI2Cy6a1YAmjX7/Tuc
-	WLeO3u4jrUdV/3LA/utPoUx9fqdFyWjDys3raopeb51Qc08C1XpBkpzpG3MURb06XMvRWLdbya3jL
-	Fm9iACsiox/2n1zBNdcxRltnqj5NH+YB21VXXBb0vqzUEGWw7XrLMlRcVfYUvlp+nrwXyNGiPcNxZ
-	3FDiRNA9vFwERgFULDHQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:Cc
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=28jxe75KPUE/uwL+tsuDYE7VPtYaJCzczr+kpPRfdTk=; b=PBoCzykljo4XwN
+	5+65u+smFKGmRZfboiV3UbFL9oKOdQLjXUFHxjMXqEAl11mal82xQ2XWejZihGRUmLAQyWtrFXuUX
+	NlLjMYgllK59meppHqSArZqNMpD+DBi0jnR73MmAaXL1KGOm7btwftg2s06FqX7gMQUEoKG10FuyI
+	n3592uXlLNnLrMjdzSpAbLhjzECBaSfnp/Rt4LH91VxWrWJIMndzmMv32jecDPCVI0qlu/wuGEYjE
+	SNkPn4+9Dau+47STvyKvKlOI6c3YO8MhyrAL1ApruYqrEmckKC30BCyd2t00dlrDkYRFl7+3ZceWA
+	Q0dsgQL7RrYbQCElXkvA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6k1m-00000008aIL-48pf;
-	Wed, 16 Sep 2026 07:25:59 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1x6s7i-00000009gbo-0G0i;
+	Wed, 16 Sep 2026 16:04:38 +0000
+Received: from smtp25.cstnet.cn ([159.226.251.25] helo=cstnet.cn)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6k1m-00000008aID-05lJ
+	id 1x6s7f-00000009gbK-1Opl
 	for linux-i3c@lists.infradead.org;
-	Wed, 16 Sep 2026 07:25:58 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 30E146020C;
-	Wed, 16 Sep 2026 07:25:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 770B91F000FF;
-	Wed, 16 Sep 2026 07:25:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1789543556;
-	bh=1PfFTsIevggcVqLRkFwiay2Rq202T00HsUqDekTEDpY=;
-	h=From:Subject:Reply-To:To:Cc:In-Reply-To:References:Date;
-	b=ln+SPFS/pBjcIRe3GZz7svXkHRWa4ND7JTL/drJrX18AS4ROuJW3FPvjaDsqNiB+I
-	 tSbWENRqBQkhrXHC/1+ZMggoRVheFNvSMmZD11646PJaMjIEBLNKeWCv3IK9bK9g4/
-	 Mja9nYTrpVOPzDQt7yKwyCSECqB7cf7cALXOj2bwK5JbyrRRPTjfRiT/V/Xcw3MUMA
-	 GDtsu2a9Klq+gvR7E4DO39twVKwA1k+dhjwf+3Rg/ceuiIGegfbC6QKj7cPEMwMUMf
-	 m6QWKa5sa0smP1sHUkpFakGdxQvoDmj1Lx4Lpd+k8z9KTXaXckPUkEqZlxF631aZqV
-	 PZsI6qgw6d5jA==
-From: sashiko-bot@kernel.org
-Subject: Re: [PATCH v19 8/8] i3c: hub: p3h2x4x: Add SMBus slave mode support
-To: "Lakshay Piplani" <lakshay.piplani@nxp.com>
-Cc: "Alexandre Belloni" <alexandre.belloni@bootlin.com>, linux-i3c@lists.infradead.org, robh@kernel.org, conor+dt@kernel.org, Frank.Li@kernel.org, devicetree@vger.kernel.org
-In-Reply-To: <20260916070728.1088801-9-lakshay.piplani@nxp.com>
-References: <20260916070728.1088801-1-lakshay.piplani@nxp.com>
- <20260916070728.1088801-9-lakshay.piplani@nxp.com>
-Date: Wed, 16 Sep 2026 07:25:55 +0000
-Message-Id: <20260916072556.770B91F000FF@smtp.kernel.org>
+	Wed, 16 Sep 2026 16:04:36 +0000
+Received: from dfae2b116770.home.arpa (unknown [36.110.52.2])
+	by APP-05 (Coremail) with SMTP id zQCowABXiEIKvqpqIVRtCA--.21697S2;
+	Thu, 17 Sep 2026 00:04:26 +0800 (CST)
+From: Wentao Liang <vulab@iscas.ac.cn>
+To: Frank.Li@nxp.com
+Cc: alexandre.belloni@bootlin.com,
+	arnd@arndb.de,
+	bbrezillon@kernel.org,
+	gregkh@linuxfoundation.org,
+	linux-i3c@lists.infradead.org,
+	linux-kernel@vger.kernel.org,
+	Wentao Liang <vulab@iscas.ac.cn>,
+	stable@vger.kernel.org
+Subject: [PATCH] i3c: master: Fix of_node reference leak in i3c_master_register()
+Date: Wed, 16 Sep 2026 16:03:58 +0000
+Message-Id: <20260916160358.2081087-1-vulab@iscas.ac.cn>
+X-Mailer: git-send-email 2.34.1
+MIME-Version: 1.0
+X-CM-TRANSID: zQCowABXiEIKvqpqIVRtCA--.21697S2
+X-Coremail-Antispam: 1UD129KBjvdXoW7Gr15trWkWr4Dtr1DGr17KFg_yoWDKFc_KF
+	48Wr92qr48Cr4vkr43GFW3urZFkFWqg34IkFWFyFyxW3y8XryDJ34UXrZ8AF4UCrWfZr9x
+	ArWDKr1rC3y7ujkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+	9fnUUIcSsGvfJTRUUUb4kFF20E14v26r4j6ryUM7CY07I20VC2zVCF04k26cxKx2IYs7xG
+	6rWj6s0DM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rwA2F7IY1VAKz4vEj48ve4kI8w
+	A2z4x0Y4vE2Ix0cI8IcVAFwI0_Xr0_Ar1l84ACjcxK6xIIjxv20xvEc7CjxVAFwI0_Cr0_
+	Gr1UM28EF7xvwVC2z280aVAFwI0_Jr0_Gr1l84ACjcxK6I8E87Iv6xkF7I0E14v26r4j6r
+	4UJwAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC0VAKzVAqx4xG6I80ewAv7VC0
+	I7IYx2IY67AKxVWUAVWUtwAv7VC2z280aVAFwI0_Jr0_Gr1lOx8S6xCaFVCjc4AY6r1j6r
+	4UM4x0Y48IcxkI7VAKI48JM4x0x7Aq67IIx4CEVc8vx2IErcIFxwCY1x0262kKe7AKxVWU
+	tVW8ZwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkEbVWUJVW8JwC20s026c02F40E14
+	v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67AF67kF1VAFwI0_Jw0_GFylIxkG
+	c2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUCVW8JwCI42IY6xIIjxv20xvEc7CjxVAFwI
+	0_Cr0_Gr1UMIIF0xvE42xK8VAvwI8IcIk0rVWUJVWUCwCI42IY6I8E87Iv67AKxVWUJVW8
+	JwCI42IY6I8E87Iv6xkF7I0E14v26r4j6r4UJbIYCTnIWIevJa73UjIFyTuYvjfUoq2MUU
+	UUU
+X-Originating-IP: [36.110.52.2]
+X-CM-SenderInfo: pyxotu46lvutnvoduhdfq/1tbiBwcMA2qqpVg+UQAAsd
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260916_090435_738540_FBA73F2F 
+X-CRM114-Status: UNSURE (   8.45  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -62,53 +79,47 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Reply-To: sashiko-reviews@lists.linux.dev
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-VGhhbmsgeW91IGZvciB5b3VyIGNvbnRyaWJ1dGlvbiEgU2FzaGlrbyBBSSByZXZpZXcgZm91bmQg
-MSBwb3RlbnRpYWwgaXNzdWUocykgdG8gY29uc2lkZXI6Ci0gW0hpZ2hdIGkzYzogcDNoMng0eDog
-bG9zdCBTTUJ1cyBwYXlsb2FkcyBpbiBwM2gyeDR4X2liaV9oYW5kbGVyKCkgZHVlIHRvIHN0YXR1
-cyBmbGFnIHJhY2UKLS0KCmNvbW1pdCBhMzgyOTY4ZWU2YzU4YmJiOWM2YTZlZTc3NGFmODFiYjM1
-MWYyZjQ2CkF1dGhvcjogTGFrc2hheSBQaXBsYW5pIDxsYWtzaGF5LnBpcGxhbmlAbnhwLmNvbT4K
-CmkzYzogaHViOiBwM2gyeDR4OiBBZGQgU01CdXMgc2xhdmUgbW9kZSBzdXBwb3J0CgpUaGlzIGNv
-bW1pdCBhZGRzIFNNQnVzIHNsYXZlIG1vZGUgc3VwcG9ydCBmb3IgdGhlIFAzSDJ4NHggaHViIFNN
-QnVzIHRhcmdldApwb3J0cy4gVGhlIGh1YiBTTUJ1cyBzbGF2ZSBhZ2VudCBjYW4gbm93IHJlY2Vp
-dmUgZG93bnN0cmVhbSBwYXlsb2FkcyBpbnRvCnRhcmdldCBidWZmZXJzIGFuZCByZXBvcnQgcmVj
-ZWl2ZSBldmVudHMgdGhyb3VnaCBJQkkuCgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2kzYy9odWIv
-cDNoMjg0MF9pM2NfaHViX3NtYnVzLmMgYi9kcml2ZXJzL2kzYy9odWIvcDNoMjg0MF9pM2NfaHVi
-X3NtYnVzLmMKPiBpbmRleCBhMzMyNGNjMzY1OTU2Li43ZmRmYTc5ZGZlYjZjIDEwMDY0NAo+IC0t
-LSBhL2RyaXZlcnMvaTNjL2h1Yi9wM2gyODQwX2kzY19odWJfc21idXMuYwo+ICsrKyBiL2RyaXZl
-cnMvaTNjL2h1Yi9wM2gyODQwX2kzY19odWJfc21idXMuYwpbIC4uLiBdCj4gQEAgLTE1LDYgKzE3
-LDE3OCBAQCBlbnVtIHAzaDJ4NHhfc21idXNfZGVzY19pZHggewpbIC4uLiBdCj4gK3ZvaWQgcDNo
-Mng0eF9pYmlfaGFuZGxlcihzdHJ1Y3QgaTNjX2RldmljZSAqaTNjZGV2LAo+ICsJCQkgY29uc3Qg
-c3RydWN0IGkzY19pYmlfcGF5bG9hZCAqcGF5bG9hZCkKPiArewpbIC4uLiBdCj4gKwkJLyogcHJv
-Y2VzcyBkYXRhIHJlY2VpdmUgYnVmZmVyICovCj4gKwkJc3dpdGNoIChGSUVMRF9HRVQoQlVGX1JF
-Q0VJVkVEX0ZMQUdfTUFTSywgdGFyZ2V0X3BvcnRfc3RhdHVzKSkgewpbIC4uLiBdCj4gKwkJY2Fz
-ZSBQM0gyWDRYX1RBUkdFVF9CVUZfT1ZSRkxfVkFMOgo+ICsJCQlwM2gyeDR4X3JlYWRfc21idXNf
-YWdlbnRfcnhfYnVmKGkzY2RldiwgUkNWX0JVRl8wLCBpKTsKPiArCQkJcDNoMng0eF9yZWFkX3Nt
-YnVzX2FnZW50X3J4X2J1ZihpM2NkZXYsIFJDVl9CVUZfMSwgaSk7Cj4gKwkJCXJlZ21hcF93cml0
-ZShwM2gyeDR4X2kzY19odWItPnJlZ21hcCwgUDNIMlg0WF9UUDBfU01CVVNfQUdOVF9TVFMgKyBp
-LAo+ICsJCQkJICAgICBQM0gyWDRYX1RBUkdFVF9CVUZfT1ZSRkwpOwoKW1NldmVyaXR5OiBIaWdo
-XQpDb3VsZCB0aGlzIHNpbGVudGx5IGRyb3AgU01CdXMgcGF5bG9hZHMgZHVlIHRvIGEgc3RhdHVz
-IGZsYWcgcmFjZT8KCldoZW4gYW4gb3ZlcmZsb3cgb2NjdXJzLCB0aGlzIGJsb2NrIHNlcXVlbnRp
-YWxseSByZWFkcyBhbmQgY2xlYXJzIHRoZSByZWNlaXZlCmZsYWdzIGZvciBib3RoIGJ1ZmZlciAw
-IGFuZCBidWZmZXIgMSB2aWEgcDNoMng0eF9yZWFkX3NtYnVzX2FnZW50X3J4X2J1ZigpLgoKT25j
-ZSBidWZmZXIgMCBpcyByZWFkIGFuZCBpdHMgaW5kaXZpZHVhbCBmbGFnIChiaXQgMSkgaXMgY2xl
-YXJlZCwgdGhlCmhhcmR3YXJlIGNhbiBpbW1lZGlhdGVseSByZWNlaXZlIGEgbmV3bHkgYXJyaXZp
-bmcgU01CdXMgbWVzc2FnZSBpbnRvIGJ1ZmZlciAwLApzZXR0aW5nIGJpdCAxIGFnYWluLgoKVGhl
-IGhhbmRsZXIgdGhlbiBleHBsaWNpdGx5IGNsZWFycyB0aGUgb3ZlcmZsb3cgY29uZGl0aW9uIGJ5
-IHdyaXRpbmcKUDNIMlg0WF9UQVJHRVRfQlVGX09WUkZMICh3aGljaCBpcyBHRU5NQVNLKDMsIDEp
-KSB0byB0aGUgd3JpdGUtMS10by1jbGVhcgpzdGF0dXMgcmVnaXN0ZXIuIEJlY2F1c2UgdGhpcyBt
-YXNrIGVuY29tcGFzc2VzIGJpdHMgMSwgMiwgYW5kIDMsIHdyaXRpbmcgaXQKY2xvYmJlcnMgdGhl
-IGluZGl2aWR1YWwgYnVmZmVyIHJlY2VpdmUgZmxhZ3MgdGhhdCBtaWdodCBoYXZlIGp1c3QgYmVl
-biBzZXQgYnkKbmV3IGluY29taW5nIG1lc3NhZ2VzLCBjbGVhcmluZyB0aGVtIHdpdGhvdXQgcmVh
-ZGluZyB0aGUgZGF0YS4KCj4gKwkJCWRldl9lcnIoJmkzY2Rldi0+ZGV2LCAiT3ZlcmZsb3csIHJl
-YWRpbmcgYnVmZmVyIHplcm8gYW5kIG9uZVxuIik7Cj4gKwkJCWJyZWFrOwpbIC4uLiBdCgotLSAK
-U2FzaGlrbyBBSSByZXZpZXcgwrcgaHR0cHM6Ly9zYXNoaWtvLmRldi8jL3BhdGNoc2V0LzIwMjYw
-OTE2MDcwNzI4LjEwODg4MDEtMS1sYWtzaGF5LnBpcGxhbmlAbnhwLmNvbT9wYXJ0PTgKCi0tIAps
-aW51eC1pM2MgbWFpbGluZyBsaXN0CmxpbnV4LWkzY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtaTNjCg==
+The reference taken on the parent's device node with of_node_get() is
+normally dropped by i3c_masterdev_release() once the master device is
+unregistered. When i3c_master_rpm_get() fails, the function returns
+before device_initialize(), so put_device() is never called and the
+node reference is leaked.
+
+Release the device node reference on the runtime PM failure path.
+
+Fixes: 3a379bbcea0a ("i3c: Add core I3C infrastructure")
+Cc: stable@vger.kernel.org
+Signed-off-by: Wentao Liang <vulab@iscas.ac.cn>
+---
+ drivers/i3c/master.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/i3c/master.c b/drivers/i3c/master.c
+index 5cd4e5da2233..23f490a00591 100644
+--- a/drivers/i3c/master.c
++++ b/drivers/i3c/master.c
+@@ -3033,8 +3033,10 @@ int i3c_master_register(struct i3c_master_controller *master,
+ 	INIT_LIST_HEAD(&master->boardinfo.i3c);
+ 
+ 	ret = i3c_master_rpm_get(master);
+-	if (ret)
++	if (ret) {
++		of_node_put(master->dev.of_node);
+ 		return ret;
++	}
+ 
+ 	device_initialize(&master->dev);
+ 
+-- 
+2.34.1
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
