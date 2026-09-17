@@ -4,44 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96391C982C9
-	for <linux-i3c@archiver.kernel.org>; Wed, 16 Sep 2026 22:58:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 306ACC982C1
+	for <linux-i3c@archiver.kernel.org>; Thu, 17 Sep 2026 05:49:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PdKy5eYrQIkGl9I9WYnszc+x2NIk6CUA8xKjOSkxDfA=; b=qq4LzmG/6PfCVV
-	SbUnR8YKUu3yJ+nVRocEWqIlctM2jK2t1wglhuQ3hAChhA6sb255jG0sRxxlOFkpzTehtn08uTQrQ
-	xE++s3vhGBi39BhL+SqDZgoUIoef19PBgGnZPB9bZVTSNPjA3DkT0aGuS92/ytrJ5cv7tUr6SEUtS
-	3GD63OgmphJreWJE3RWElUCgsL60GbHojhl7Nw/n6oYGR0G0CXtirhYTW052ai2kwWyid/vxRgXtT
-	0DP/o5qO7qbrElfHCY5BaXdCfJW8eO2xcaS8ny5yE65aZkXE7xwlEd96ep6f5zTD6xXqYpEFq1i1V
-	AwXJBYMxokyfcQa83ESQ==;
+	List-Owner; bh=OIQcaTztMMv8IteZ03lqS06/yfHRsIig10JOYhvGpU4=; b=x9yesZqI55c4MY
+	I45ojiBbm2VO1YZvzGRXRl/JT1X9UBXpY49RtpZ7fBoEJ+0zLJHDMvUbjfKl78k356pQ+krv5c2Z0
+	nz9NvJeY27ol7xEBfPXaW1oJiu0FRV86FHIH+ci26RWimZVpi2wvoTbLbDo4blzTdlT8s85Us0Cwy
+	rBGEaeNeLDf0BO+tfGgkDb17TXcJAahc7PbT6YI2TA5aiH8IUhESJ0CTP4eIMIfv3skKUvBZGX/9i
+	9DK65vORzr0MfHo4U+Iozymk08TK9MHwVySBumcrrLxhKH731YPHNyZ0qy+NE5hcVZH2VgxbBKgLe
+	YNw4aDAgwhwm7D45PGhA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6yZj-0000000ADaU-2omg;
-	Wed, 16 Sep 2026 22:57:59 +0000
-Received: from linux.microsoft.com ([13.77.154.182])
-	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x6yZg-0000000ADa9-3jvm
+	id 1x750N-0000000Ad8K-3ZVn;
+	Thu, 17 Sep 2026 05:49:55 +0000
+Received: from mgamail.intel.com ([192.198.163.17])
+	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
+	id 1x750M-0000000Ad80-0j2P
 	for linux-i3c@lists.infradead.org;
-	Wed, 16 Sep 2026 22:57:58 +0000
-Received: by linux.microsoft.com (Postfix, from userid 1223)
-	id 9622420B7169; Wed, 16 Sep 2026 15:57:10 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com 9622420B7169
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.microsoft.com;
-	s=default; t=1789599430;
-	bh=0N7fIBRWd3/w9pGV5v/O/6SzjQp5f7M7FtwQz2jDFjc=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=oMNHj13yMDpsAxbsBEB4TdoxsOJUFK0CMVP4QtiWukYsqHK66WFNNHqJK+rG2msMn
-	 vLx2+IIAc+Ilq0yi7/xS8S8rtfuQKpfxLacDgtbk50xmASuuxqjRVSAos+PlqKqXGC
-	 lctB/o0//IR8mlYjqgJ2cfkO01n3HITlG17D2DrQ=
-Date: Wed, 16 Sep 2026 15:57:10 -0700
-From: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
-To: Andy Shevchenko <andriy.shevchenko@intel.com>
-Cc: Meagan Lloyd <meaganlloyd@linux.microsoft.com>,
-	linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
+	Thu, 17 Sep 2026 05:49:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
+  t=1789624194; x=1821160194;
+  h=date:from:to:cc:subject:message-id:references:
+   mime-version:content-transfer-encoding:in-reply-to;
+  bh=59P7Y18Ydw5mkPxnsBk+xpCbi1DdyDKJjxpEyzjpf20=;
+  b=F463VBGEKAczuhwC6Jsjl82F6sWgS2t8G5vMI7kmytwEK/5xd5A45hYb
+   R9nmTAHefGWaRMwt9/NrWCJrUIT7ZquJYWhe+GyO5REiDTT7yOeEznjrG
+   MJljYVVui2bL3eUfkbymPiBzKsco9SLs83X9uLQIRaQ0smJE8lax9kJxp
+   aaxIvtqKEs5P56ZkLQzpUHnx9vitpTggxziLS/09LJHpyewO+WGYiugg8
+   Q01yalujnX8k4HZnFCEPOnX4PLQ0Me6CsuFrUSVLtPKtg0jPkFRujyDyF
+   DdvfQO/YxLOYLvZGzuAMQoM+QrBuZguNaotdzUNORY+tQ921XH6m3+XSD
+   w==;
+X-CSE-ConnectionGUID: IWxLzIe8RmCwg3/EZs0JlA==
+X-CSE-MsgGUID: AYlHMFoLS5K4tElf0MPU4Q==
+X-IronPort-AV: E=McAfee;i="6800,10657,11905"; a="89876458"
+X-IronPort-AV: E=Sophos;i="6.27,103,1787036400"; 
+   d="scan'208";a="89876458"
+Received: from fmviesa001.fm.intel.com ([10.60.135.141])
+  by fmvoesa111.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Sep 2026 22:49:51 -0700
+X-CSE-ConnectionGUID: UtfYpDp6QsWxFvIddu146g==
+X-CSE-MsgGUID: nf4LjH4tSUCIbjYEGJPJxw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="6.27,103,1787036400"; 
+   d="scan'208";a="298668405"
+Received: from abityuts-desk1.ger.corp.intel.com (HELO localhost) ([10.245.245.11])
+  by smtpauth.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384; 16 Sep 2026 22:49:42 -0700
+Date: Thu, 17 Sep 2026 08:49:40 +0300
+From: Andy Shevchenko <andriy.shevchenko@intel.com>
+To: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
+Cc: linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
 	vitor.soares@toradex.com, samagazaryan@google.com,
 	gregkh@linuxfoundation.org, arnd@arndb.de,
 	boris.brezillon@collabora.com,
@@ -64,16 +80,19 @@ Cc: Meagan Lloyd <meaganlloyd@linux.microsoft.com>,
 	linux@analog.com, linux-iio@vger.kernel.org
 Subject: Re: [PATCH 3/3] i3c: add i3cdev character device module for
  user-space access
-Message-ID: <20260916-454d66ca84cc91479b195aa5@linux.microsoft.com>
+Message-ID: <aqt_dCazxTDR4cpk@ashevche-desk.local>
 References: <20260911210935.1353126-1-meaganlloyd@linux.microsoft.com>
  <20260911210935.1353126-4-meaganlloyd@linux.microsoft.com>
  <aqVUyYkpKT8iX4Jz@ashevche-desk.local>
+ <20260916-454d66ca84cc91479b195aa5@linux.microsoft.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <aqVUyYkpKT8iX4Jz@ashevche-desk.local>
+In-Reply-To: <20260916-454d66ca84cc91479b195aa5@linux.microsoft.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - c/o Alberga Business Park, 6
+ krs, Bertel Jungin Aukio 5, 02600 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260916_155756_958640_FB397532 
-X-CRM114-Status: GOOD (  37.24  )
+X-CRM114-CacheID: sfid-20260916_224954_231367_21AA2661 
+X-CRM114-Status: GOOD (  39.31  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -85,159 +104,138 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Sat, Sep 12, 2026 at 04:34:01PM +0300, Andy Shevchenko wrote:
-> On Fri, Sep 11, 2026 at 02:09:35PM -0700, Meagan Lloyd wrote:
-> > The i3cdev driver is a character device driver that allows user-space
-> > to control and interact with I3C devices.
-> 
-> > Currently, it has the ability to perform Single Data Rate (SDR)
-> > transfers - basic reads/writes.
-> > 
-> > With the addition of sysfs driver_override, there is now a
-> > straightforward and direct way to match the i3cdev driver to any i3c
-> > device without stepping on the toes of more specialized drivers that are
-> > loaded automatically.
-> 
-> Is it safe? Why on the earth do we need this? The commit message has not enough
-> information.
->
+On Wed, Sep 16, 2026 at 03:57:10PM -0700, Meagan Lloyd wrote:
+> On Sat, Sep 12, 2026 at 04:34:01PM +0300, Andy Shevchenko wrote:
+> > On Fri, Sep 11, 2026 at 02:09:35PM -0700, Meagan Lloyd wrote:
+> > > The i3cdev driver is a character device driver that allows user-space
+> > > to control and interact with I3C devices.
+> > =
 
-I can't see a reason that it'd be unsafe. To give additional confidence,
-it's already in-use in many bus_types:
+> > > Currently, it has the ability to perform Single Data Rate (SDR)
+> > > transfers - basic reads/writes.
+> > > =
 
-drivers/platform/wmi/core.c:    .driver_override = true,
-drivers/hv/vmbus_drv.c: .driver_override =      true,
-drivers/base/platform.c:        .driver_override = true,
-drivers/cdx/cdx.c:      .driver_override = true,
-drivers/s390/cio/css.c: .driver_override = true,
-drivers/vdpa/vdpa.c:    .driver_override = true,
-drivers/bus/fsl-mc/fsl-mc-bus.c:        .driver_override = true,
-drivers/pci/pci-driver.c:       .driver_override = true,
-drivers/rpmsg/rpmsg_core.c:     .driver_override = true,
-drivers/amba/bus.c:     .driver_override = true,
+> > > With the addition of sysfs driver_override, there is now a
+> > > straightforward and direct way to match the i3cdev driver to any i3c
+> > > device without stepping on the toes of more specialized drivers that =
+are
+> > > loaded automatically.
+> > =
 
-To answer why we need it:
-If we want to write i3cdev as a standard device driver, it can't
-actually match anything by default. This is because, some devices on the
-system may need specific drivers and i3cdev is generic and should
-technically match every device.
+> > Is it safe? Why on the earth do we need this? The commit message has no=
+t enough
+> > information.
+> =
 
-Since the driver_override is default NULL and is set via sysfs, this
-allows any specific drivers on boot to be loaded up and would allow
-explicit control on what device i3cdev gets bound to.
+> I can't see a reason that it'd be unsafe. To give additional confidence,
+> it's already in-use in many bus_types:
 
-This was my rational. I will refine the commit message with more details.
+This argument has nothing to do with i=B3c. Each bus is different on a phys=
+ical
+layer, electrical protocols and programming flow. Each of them has own
+constraints.
 
-> > This is accomplished by the i3cdev driver not having any entries in
-> > the i3c_device_id table. After boot, simply set the driver_override
-> > to "i3cdev" and bind the device manually via the sysfs bind knob.
-> > This can also be automated with udev rules as well.
-> > 
-> > The character device interface will be exposed at: /dev/bus/i3c/<bus
-> > id>-<Provisional ID>
-> 
-> ...
-> 
-> > +	struct i3c_xfer xfer = { +		.rnw = I3C_WRITE
-> 
-> In such cases always leave a trailing comma. It will reduce possible
-> churn in the future.
->
+> To answer why we need it:
+> If we want to write i3cdev as a standard device driver, it can't
+> actually match anything by default. This is because, some devices on the
+> system may need specific drivers and i3cdev is generic and should
+> technically match every device.
 
-Good point, I'll fix that.
- 
-> > +	};
-> 
-> ...
-> 
-> > +	return !ret ? len : ret;
-> 
-> My gosh, wouldn't Elvis just work naturally?
-> 
-> 	return ret ?: len;
-> 
+Yes, but I have seen no reason why we should expose i=B3c bus to the user
+space. With i=B2c we already know very well that it was (and still is)
+a bad idea. Why i=B3c is better (especially taking into account i=B2c
+compatible mode and more complex programming flow)?
 
-You're right, that is much nicer!
+> Since the driver_override is default NULL and is set via sysfs, this
+> allows any specific drivers on boot to be loaded up and would allow
+> explicit control on what device i3cdev gets bound to.
+> =
 
-> ...
-> 
-> > +	for (int i = 0; i < metadata->nxfers; i++) {
-> 
-> Why is 'i' signed?
->
+> This was my rational. I will refine the commit message with more details.
 
-Mostly for readability and to make sure the line length on loop headers
-is kept below 80 chars. As a precaution, to make sure that 'i' can
-represent any metadata->nxfers value without overflow during loops, I
-check that metadata->nxfers is less than/equal to INT_MAX in
-get_metadata().
- 
-> > +		ret = copy_struct_from_user(k_uxfer, +
-> > sizeof(*k_uxfers), + uxfer, + metadata->xfer_size); + if (ret) +
-> > goto out_free_k_uxfers; + +		/* Enforce that padding must be
-> > zero */ +		if (memchr_inv(k_uxfer->pad, 0,
-> > sizeof(k_uxfer->pad))) { +			ret = -EINVAL; + goto
-> > out_free_k_uxfers; +		} + +		uxfer +=
-> > metadata->xfer_size; /* u8 pointer so use xfer_size */ + k_uxfer++;
-> > /* struct i3cdev_xfer pointer */ + }
-> 
-> ...
-> 
-> > +		if (!ret) +			total_bytes +=
-> > i3c_xfers[i].len; +		else +			return ret;
-> 
-> Yeah, you really need to reconsider patterns you use in the code. Here
-> 'else' is redundant. Homework to understand how (#easy).
->
+Put a real life example why the exposing i=B3c devices into user space is
+absolutely necessary.
 
-Thanks for pointing this out. It would read better if I removed the else
-block, opting to bail out early if ret is non-zero.
- 
-> ...
-> 
-> > +/** + * print_i3c_err() - Prints the I3C error encountered during
-> > the prior + * call to the core's transfer function.  + * @i3cdev:
-> > i3cdev_data object + * @metadata: Kernel's copy of i3cdev_xfers
-> > (ioctl I3CDEV_XFER input) + * @i3c_xfers: i3c_xfer array that was
-> > sent to the I3C core
-> 
-> > + * Returns: void
-> 
-> Huh?! Where is this coming from?
-> 
+> > > This is accomplished by the i3cdev driver not having any entries in
+> > > the i3c_device_id table. After boot, simply set the driver_override
+> > > to "i3cdev" and bind the device manually via the sysfs bind knob.
+> > > This can also be automated with udev rules as well.
+> > > =
 
-In i3cdev_ioctl_do_xfers, if i3c_device_do_xfers failed, I wanted to
-print out the first I3C controller error encountered. The controller
-drivers can set this in the i3c_xfer.err field. Hence this function.
+> > > The character device interface will be exposed at: /dev/bus/i3c/<bus
+> > > id>-<Provisional ID>
 
-It's to aid debugging and provide useful error information.
-I can certainly refine the wording on the print_i3c_err documentation
-header to make this more clear.
+...
 
-> > + */
-> 
-> ...
-> 
-> Please, rely less on AI and more on the common sense and
-> proof-reading.
-> 
-> -- With Best Regards, Andy Shevchenko
+> > > +	for (int i =3D 0; i < metadata->nxfers; i++) {
+> > =
 
-I think I gave you the wrong impression. The new contributions in this
-series were written and developed by me. I used AI for quality assurance
-and cross-referencing. Since I incorporated some AI-flagged suggestions,
-I tried to acknowledge that with the Assisted-by tag.
+> > Why is 'i' signed?
 
-Thank you,
-Meagan
+> Mostly for readability and to make sure the line length on loop headers
+> is kept below 80 chars. As a precaution, to make sure that 'i' can
+> represent any metadata->nxfers value without overflow during loops, I
+> check that metadata->nxfers is less than/equal to INT_MAX in
+> get_metadata().
+
+No need to add useless checks.
+
+...
+
+> > > +/** + * print_i3c_err() - Prints the I3C error encountered during
+> > > the prior + * call to the core's transfer function.  + * @i3cdev:
+> > > i3cdev_data object + * @metadata: Kernel's copy of i3cdev_xfers
+> > > (ioctl I3CDEV_XFER input) + * @i3c_xfers: i3c_xfer array that was
+> > > sent to the I3C core
+> > =
+
+> > > + * Returns: void
+> > =
+
+> > Huh?! Where is this coming from?
+> =
+
+> In i3cdev_ioctl_do_xfers, if i3c_device_do_xfers failed, I wanted to
+> print out the first I3C controller error encountered. The controller
+> drivers can set this in the i3c_xfer.err field. Hence this function.
+> =
+
+> It's to aid debugging and provide useful error information.
+> I can certainly refine the wording on the print_i3c_err documentation
+> header to make this more clear.
+
+My point is about kernel-doc. Why do we need the return section for void?
+Where it comes from?
+
+> > > + */
+
+...
+
+> > Please, rely less on AI and more on the common sense and
+> > proof-reading.
+
+> I think I gave you the wrong impression. The new contributions in this
+> series were written and developed by me. I used AI for quality assurance
+> and cross-referencing. Since I incorporated some AI-flagged suggestions,
+> I tried to acknowledge that with the Assisted-by tag.
+
+I see, then there is a room to improve the code. But the main question is
+why do we even need this whole interface to begin with?
+
+-- =
+
+With Best Regards,
+Andy Shevchenko
 
 
--- 
+
+-- =
+
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
