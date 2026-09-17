@@ -4,125 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E7566C982D2
-	for <linux-i3c@archiver.kernel.org>; Thu, 17 Sep 2026 21:42:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9A31CC982D0
+	for <linux-i3c@archiver.kernel.org>; Thu, 17 Sep 2026 22:28:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ts7IbvB06SC5XcgJnp1NkK5YzZR5TbUODhA/v+5HFQo=; b=zav9wulba6S+nj
-	7rb2+hoPCa+RnILbH4WBiI2Cc88/Iui7JEYRnyNoRUgpshyPUxi2no+3qKA7GIjfqS80xH/xRHGzf
-	0K9J+qfPcomK9CdQEgnSkhs/VxIkuN67Zb10f1G2jqS1NU/OE5+arT+TzLN2kOF6W7k18bV3TSY1q
-	mZaeZoueYQ6oebSmIHRiLLPKRJwv2Bux0jAH3XFJ7wEpKQ3I0x2T30sRFuJVOsoI5kqdaSJmnvtvV
-	SZ4GZtsxCgU2Ae6NRfkKNTiYVEgLGA+1qP5/yFVAAWvCGI78PcpjkuBx9ciMka5RMNNrt2I885rUT
-	W+XhgTP5tvnH41EGSqjQ==;
+	List-Owner; bh=wEE5DQU4R45LG6EW4g4RHDXRtJXzxF3MQyw5wMe76NI=; b=JboB/dJwsltJ8M
+	AcEZrkxmy3TSTZF4ugPiAawWpOA4pyau+B1wIQkX2XyiZpmIAgp2ygeaPt1xCl9/SaQNtOg3JL+vw
+	QKuONqS15MkwiS+TH8Mu6Lm0/NSdtb/SaCUJ658krBZahBGtNMX9OfuKgFebJx7WpHioRLQ2P2hfB
+	Stal6Lag6ilXfLRYORcsw9g8fl6Um8WCKTT2E2VXQzIb5xzmuEibBcJJPWuAuOQ05LrUHIkxJU5Ly
+	WKAJo0UJIrmvYFWdqHBMplcz2lAWPFq0CLJczUQy6Ijof2cbox0atdSssqJR5m8nMJWSw6SVMghRm
+	XWpx4i3lSBZBPjMonwJA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7JsD-0000000CZkB-2gP7;
-	Thu, 17 Sep 2026 21:42:29 +0000
-Received: from mail-northeuropeazlp170110003.outbound.protection.outlook.com ([2a01:111:f403:c200::3] helo=DU2PR03CU002.outbound.protection.outlook.com)
+	id 1x7Kan-0000000Cev4-1QCw;
+	Thu, 17 Sep 2026 22:28:33 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7JsB-0000000CZjR-22Gf
+	id 1x7Kam-0000000Ceup-0evM
+	for linux-i3c@bombadil.infradead.org;
+	Thu, 17 Sep 2026 22:28:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=In-Reply-To:Content-Type:MIME-Version:
+	References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description;
+	bh=nvTjGmBhopEnZflh8i1ti4Hgs/iqhGxpq0Jv81TKxtw=; b=Ae2sxQT6Ukdz8KFLybgDPH6Tfz
+	j0tYdnV5GDR7HjDP4bpPr0tcBJvMggfJFRJJ1ipmcFqaIUwaufepjYM7EPrAxBxdhE/reYw2GE1je
+	YzR1nwTb4+wJ/nrEGwUjYEcbrFfSD5aO52+Lk48Wm9tk666zrUyg82RqmuIZVrY9WPD+7qCS7ieoW
+	jBJnZuxHSG79v61J3aKR7VPo6SD/ESREPwfTe4qBG3mOIdzvmHaN3jqhAI05q+i6s7K6TitZYQNh2
+	euS1pvMgM6uqk6KWq9/XW5OcwxWEYHyQhtF3T7RhEpPWNhAwh5xCGQDD0Ie6Q+Pp0sDmPwJxH59xA
+	PhFltfBw==;
+Received: from linux.microsoft.com ([13.77.154.182])
+	by desiato.infradead.org with esmtp (Exim 4.99.2 #2 (Red Hat Linux))
+	id 1x7Kaj-00000009KJs-0Pzp
 	for linux-i3c@lists.infradead.org;
-	Thu, 17 Sep 2026 21:42:28 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=AtJHYJdqt8SK6qvaGBYmz6/8GK7plEwLrDQAAPeNibbk6Tc5Wu90W/6qzPmLB/W38UzWUuS12V6+HsASlEAv2Ly8dtssmHH37A0p4fgKO/XlQll3c7U7HRnt9KXcSfESLfYl72iYeVnsrxQCoilsHijXH0Ht3hGgal5SFUIetW+WGA8n6nIk8mtemphRTq3bjJtu5mEMTQeZ8Hwq8sXmjLKCPw2wGrWPcAElOZRMCn65NtJQsEed/5HtFFBwwd70lMtPMESmQ+rtqWqfKkOSEgbHxvjzU83C7XKJ3q1x3/RY34DBcXU0fZJZrLi2l+c9xrQDu06JdWOypoUueq8iDw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=mZaxCBYiYfamLDt2oyUzBHeBuoVEhYN24E6AvblH9Io=;
- b=U2E6yPsUgY3qJCtaIcX0YLfvhtjDoV0pAFoSnz1AF/CynzWQA74Mca1vV2NBNEr2nhKZtOfRo8L85kTVJ7pO4yAALt1NQXIpnZt9uTFi6m+vOysJnQR7xndiCzwYu6/RVKPiwiZj9Eb4HgUC37t2Xk3+9NH27iAJJW6cOVJI3Hbm8uFv4mIbDKpO+DD4xXGE1ByGnIJUTFj8UXYHs5TyPf9nWAQp1/nUBUK6+qpvvP9CvOwZHMvxDl/eg2cDW9LfiKEkVFcGrKlwObGEokWpBrk9uMJ/0kCA45AazpRUUOvj27ZiMhHDF80YLY/owwNSCC7DAaI+6a7xMbLBcjrGYA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mZaxCBYiYfamLDt2oyUzBHeBuoVEhYN24E6AvblH9Io=;
- b=x1QVClm/mnzIaULvMqStWDQqKBTeRjQ7U17VELKz1BWaMRNbGWImbp1XX8tsN1KafSxh9R6OJNebmgRiuv8cbVD6vJPiDET0HQ//e6/Z7qM6yD4dvtyK/vcwi+qlGC7l+Sffkxhof8i8eZchmEaXAbGsKaWk7Cf5X6lm8Dw7HTnMnqEC77xSQo7RwOvWDHVasg8ogPL7iNbQYbZWwDQXTlVrYHo0T1t9catwqqyRo7ozGiH5e8ukILVwkgr5LW8SkOSB3ng95is7SRFxWvHnBfGj3Wr7UgIO+4OMYuPH01Azg4hDaV36884haRXarzhAq1Kg0fT8wWv2PvfgXQk/DQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by PA4PR04MB7519.eurprd04.prod.outlook.com (2603:10a6:102:f3::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.428.12; Thu, 17 Sep
- 2026 21:42:23 +0000
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0428.011; Thu, 17 Sep 2026
- 21:42:23 +0000
-Date: Thu, 17 Sep 2026 17:42:17 -0400
-From: Frank Li <Frank.li@oss.nxp.com>
-To: Adrian Hunter <adrian.hunter@intel.com>
-Cc: alexandre.belloni@bootlin.com, Frank.Li@nxp.com,
-	billy_tsai@aspeedtech.com, linux-i3c@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH V2 12/17] i3c: mipi-i3c-hci: Correct RESP_DATA_LENGTH to
- bits 15:0
-Message-ID: <aqxeuRHbRu_JRmR8@lizhi-Precision-Tower-5810>
-References: <20260917191356.133242-1-adrian.hunter@intel.com>
- <20260917191356.133242-13-adrian.hunter@intel.com>
-Content-Disposition: inline
-In-Reply-To: <20260917191356.133242-13-adrian.hunter@intel.com>
-X-ClientProxiedBy: PH7P220CA0046.NAMP220.PROD.OUTLOOK.COM
- (2603:10b6:510:32b::10) To DU4PR04MB11791.eurprd04.prod.outlook.com
- (2603:10a6:10:623::11)
+	Thu, 17 Sep 2026 22:28:30 +0000
+Received: by linux.microsoft.com (Postfix, from userid 1223)
+	id BE47D20B7169; Thu, 17 Sep 2026 15:27:38 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com BE47D20B7169
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.microsoft.com;
+	s=default; t=1789684058;
+	bh=nvTjGmBhopEnZflh8i1ti4Hgs/iqhGxpq0Jv81TKxtw=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=UJ3J9GpsZYJczyx4ypa/Bjs1XagLLfisPNn8YOFGXfdPXfeLWFRaV/v7Dls8fAaEo
+	 NlW3k+3jwiTWhfifHkDhCHe19GUhmXOO6ed1446XXgAzFID61SGE4kUnF21t16eA4b
+	 T3qMiuVw9zXEfOAqEr5S6YWLKpC8/WR0pB0qc4E8=
+Date: Thu, 17 Sep 2026 15:27:38 -0700
+From: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
+To: Sam Agazaryan <samagazaryan@google.com>
+Cc: Meagan Lloyd <meaganlloyd@linux.microsoft.com>,
+	linux-i3c@lists.infradead.org,
+	Alexandre Belloni <alexandre.belloni@bootlin.com>,
+	Frank Li <Frank.Li@nxp.com>,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+	Arnd Bergmann <arnd@arndb.de>,
+	Vitor Soares <vitor.soares@toradex.com>,
+	Oleksandr Shulzhenko <oleksandr.shulzhenko.viktorovych@intel.com>,
+	linux-kernel@vger.kernel.org, tgopinath@linux.microsoft.com,
+	boris.brezillon@collabora.com
+Subject: Re: [PATCH v4 3/3] i3c: add i3cdev module to expose i3c dev in /dev
+Message-ID: <20260917-b3831e748e890287325aae49@linux.microsoft.com>
+References: <20260906202747.4041389-1-samagazaryan@google.com>
+ <20260906202747.4041389-4-samagazaryan@google.com>
+ <20260911-d0e2d97df458cbf24fa42089@linux.microsoft.com>
+ <CAHreonH0b=spgb2LuUbVvWHarJWf3MOyL8qS5k_1X6gb_mjVkg@mail.gmail.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|PA4PR04MB7519:EE_
-X-MS-Office365-Filtering-Correlation-Id: 33c05f63-fd05-4e0a-5ec7-08df15048ead
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|376014|1800799024|19092799006|366016|23010399003|18002099003|22082099003|56012099006|10067099003|4143699003|11063799006;
-X-Microsoft-Antispam-Message-Info: b5/9WCEOLfYd3GPXroChhMkGmVCOLTOWSNyD0dO5R5YonWua99PyyJOtKNOgGO++qUVCwC0ilCFtVo1IQ3LHtAnnSOVf1WdBgQPl/ZQyTbD2F+D2sIZnY8K/zZTbrdTKXMObM3F7ZxIw02kGTDnAL58traZxeIX7w+7N4vFzZBukx+UfKVciEI/Lg4dECawUHfk2F2zCEwJwhg03nvqBOgDvTwH4bztKOyIz3kBCGTuiXwAxP6peFuacH8JMsV2ZIH3tNY2J1S478knLHRWLvM5c8xyceShTaQ86ps5aaQoXfcBCzLaiPHNJVrQEdFNXC9blY2UFFYn5l7ZsCUisdPm7uJOSRWPepVDBji0TJ/LzTiI4TR+HCk4cVZ4MZRHObJcUtALCUp3NVMVBiLfGYMqzPOLlhZcDATPtegMvhz/PO7JF5E6yizDxAPPLri08tLDiL04YNELd/wSiRFnI3Dhs+Qklh1xOZ96/m5grijjV2uCqlyFNLb+YeuzMD1T28LxGfBIoMGL6s2d+8y1QEhu8PHEnAKRRVDwUFONPCNBtlCUHzx5XhztMWMKy5AzDyvo4t8uuYYcaFXLvxGCzU4BH4WVTZ4JfjktAK3WPR/fA0pqh36UQzXlwmccyrtREhw2gLQvvq3yCxcPNPgBGfR3xdK4FqdGG6f4ixgzpGIE=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(19092799006)(366016)(23010399003)(18002099003)(22082099003)(56012099006)(10067099003)(4143699003)(11063799006);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?nE4G+SKvlFxCymHBsI87Kjwdi6N0bubBwD8cNINt+MOiuThpRJay5TTxrNIS?=
- =?us-ascii?Q?bmuZb2rjyEoMs9546/qpOoAS7F4LGmPzkplXBwRRoVo9rCGKIz2kOWs2+liO?=
- =?us-ascii?Q?pzzWGCaZgoT1JZbcKKxARv4oVFG1YY/9m3/TXYENd6jc7DrR0V+vIEjHyWKN?=
- =?us-ascii?Q?ebD0JVq/MLG4mZkF9xzXiAJwO8fCtVDnTivrkX5ioLtI8u9DFo8NQ8Va3K2d?=
- =?us-ascii?Q?XyxndTORiD8cgWmnRutFm93W1gv6MhzascSCtIAPesPogEe0qTAZvW6W/sZD?=
- =?us-ascii?Q?zOoMey94QnKIpvG+QcLucTVcZT13oKbbA9x8n8iCvLGiPSv7kwp0CayVHOIZ?=
- =?us-ascii?Q?PrQOPOPZ3OruT6PvogFj9Hgn0o/G6yeRCNWXghAWzyd25w/71ABS1gjMqHK8?=
- =?us-ascii?Q?siLMQ5Blb05lv+9MG2jp37BcFAB+yQJxeoAVFojj/LJWuIY27Tv9C//8Mj0s?=
- =?us-ascii?Q?JRZfd2BwQg6XqBKDnIN9gUfeijpnye7blE2tlIs+BpJuIAGaTvp7rJmAXWvI?=
- =?us-ascii?Q?RfEsk5lqYiM2vnD7AvJgJCP1qywWLWCbOF3l17gshBmk1to5HoFEKxLAurWb?=
- =?us-ascii?Q?BIqVXbA7ufNxP54eZ35cf7Q9Vg1cYD3PnrB6oaVCL6ja3TxxLR/2cPxE27RT?=
- =?us-ascii?Q?jYzthhTAWts+Ve07bUB09qpOq/AkmIw9PUeOMHKM9KIJCpwnbrp2k79Hob61?=
- =?us-ascii?Q?v012vP2skWZgjuwCUpUZWT36BmkRnk+DUVNJ1zCBkmyvAb4bvLKKxHhGr6z/?=
- =?us-ascii?Q?2f5AN7CFsAttIPKTRlJnoWdt+h9pRiKPZr3oF1apiHD6qxL51+5StDFT3Jh6?=
- =?us-ascii?Q?70caENPcO/avryKzdVVL+P8ho1ThrZ9WAuyLm38g4Ck/tR8aJ/ci5FZiPppj?=
- =?us-ascii?Q?CHaVHUobW86OPyHjUOxOsjsihG50Kn8CSJnfkeMligeS3CkjDexuZLw7Qw+x?=
- =?us-ascii?Q?AxxdkmugVtYsI0N4sS4IE6CKes5Hc9fyw2d75b9VhKxTrmkVZBnAyaxdxyLf?=
- =?us-ascii?Q?FQBINlh9dHJnSU9K4eMwPw3QbHigbnaQKnjd0n52UwqHb1VAYiuMNP9tkRbA?=
- =?us-ascii?Q?0dHqtTkdCUwCcZ3dQwtOC7mL1D4971RWL6uyJkNHsJAxeZ5UDFnn2WgE4Jto?=
- =?us-ascii?Q?9s/lOo/+lpJixaQYkLRDBwhyP97JXOzsZHEinGUN5uEFljNJTpiVRAEljWC5?=
- =?us-ascii?Q?8FUSDMWCnedtXiYC0xKgFJp/yumH+cJ3hUAManJQwuKYIJ2rj/oeu4dzodTT?=
- =?us-ascii?Q?o/izTNkN/7v4afuQX5fPSri/rgHcZ2xel9yC1XRzrjBiaP51qNAcXyl6mDph?=
- =?us-ascii?Q?XEFpKW1NiWRTxoiUd0ibkRQXy8cHoz+xCcl8AA6l2RuYZT0bMCClFvxa6aXM?=
- =?us-ascii?Q?+QAMIkL+Vbakh7SEhSwKDpp69EideQgWgnokZ3bq6JM1mhaFpMKVm6xEcLdX?=
- =?us-ascii?Q?dne97gPGtx3eD+/RKnxxRGOdiEPU1QccQ8X/oHlmi5vIwn5YKqEANIT3l09r?=
- =?us-ascii?Q?t8EmWrofrJR8V0gsXnOzs9EliMVd/pSS+wua8Nmin02uCIdHP3wUH948sNCu?=
- =?us-ascii?Q?8pSPRqkxHHictxMJvqRqKefFp6OhVIpjY2LtGmH5TZ0RhFnouy74yJtbBBa+?=
- =?us-ascii?Q?2F99iyyh4Flhc69g11WeFddck2OxoUqe91GiEsVlQSV72b7ouACYFtuE+nPB?=
- =?us-ascii?Q?a+6o01oc55LkO9sptE/hSxnjkBh3O7S0SigRsv6KnB98wTOylgNq1ZDMpA4+?=
- =?us-ascii?Q?cddiEc6Ns+f4aB+fYcXcx6HXeiKkfWSB9584G4Tgdao4eVhwjE5L?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 33c05f63-fd05-4e0a-5ec7-08df15048ead
-X-MS-Exchange-CrossTenant-AuthSource: DU4PR04MB11791.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Sep 2026 21:42:23.4705
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 6Td/g7pMZqq4TW4dZtAbsW9wIwh4nBtFrRSQUrZ3BsCEFtd/bXFiyi05PFjDXxyHRXS+Ir0dg9G66z4tX7JPUEJIiz3vzTWin7EvcdYv6BMv5THEeqZ1DxhHsWIhymkX
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4PR04MB7519
+Content-Disposition: inline
+In-Reply-To: <CAHreonH0b=spgb2LuUbVvWHarJWf3MOyL8qS5k_1X6gb_mjVkg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260917_144227_534000_75268D2E 
-X-CRM114-Status: GOOD (  15.37  )
+X-CRM114-CacheID: sfid-20260917_232829_429007_647BE719 
+X-CRM114-Status: GOOD (  25.55  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -139,51 +93,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Sep 17, 2026 at 10:13:51PM +0300, Adrian Hunter wrote:
-> The I3C HCI Response Descriptor defines DATA_LENGTH in Bits[15:0],
-> with Bits[23:16] reserved in all published HCI specification versions:
-> v1.0 (Table 91) and v1.1/v1.2 (Section 8.5). However,
-> RESP_DATA_LENGTH extracts Bits[21:0], incorrectly including six
-> reserved bits.
->
-> Update the mask to match the defined field width.
->
-> No functional change is expected because compliant controllers return
-> zero in reserved fields.
->
-> Signed-off-by: Adrian Hunter <adrian.hunter@intel.com>
-> ---
+On Fri, Sep 11, 2026 at 05:12:40PM -0700, Sam Agazaryan wrote:
+> Hey Meagan,
+> 
+> Thanks for sharing your patch series.
+> 
+>  The reason we have the bus notifier system here is
+>  1. Dynamic module loading is handled automatically: if i3cdev is built-in and
+>     a specialized driver module loads later, the bus notifier receives
+>     BUS_NOTIFY_BIND_DRIVER and immediately calls i3cdev_detach().
 
-Reviewed-by: Frank Li <Frank.Li@nxp.com>
+I think the bus notifier approach has the potential to hit some race
+conditions with other drivers.
 
->
->
-> Changes in V2:
->
-> 	Reworded the subject, which was previously "i3c: mipi-i3c-hci:
-> 	Fix Response Descriptor DATA_LENGTH mask", to name the macro and
-> 	the corrected bit range.
->
->
->  drivers/i3c/master/mipi-i3c-hci/cmd.h | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/drivers/i3c/master/mipi-i3c-hci/cmd.h b/drivers/i3c/master/mipi-i3c-hci/cmd.h
-> index 7bada7b4b2de..e0d4a6e0e319 100644
-> --- a/drivers/i3c/master/mipi-i3c-hci/cmd.h
-> +++ b/drivers/i3c/master/mipi-i3c-hci/cmd.h
-> @@ -24,7 +24,7 @@
->   */
->  #define RESP_STATUS(resp)		FIELD_GET(GENMASK(31, 28), resp)
->  #define RESP_TID(resp)			FIELD_GET(GENMASK(27, 24), resp)
-> -#define RESP_DATA_LENGTH(resp)		FIELD_GET(GENMASK(21,  0), resp)
-> +#define RESP_DATA_LENGTH(resp)		FIELD_GET(GENMASK(15,  0), resp)
->
->  #define RESP_ERR_FIELD			GENMASK(31, 28)
->
-> --
-> 2.53.0
->
+For example, drivers/base/dd.c, really_probe is the only spot in the
+source code that BUS_NOTIFY_BIND_DRIVER event occurs:
+    really_probe
+        driver_sysfs_add <- where BUS_NOTIFY_BIND_DRIVER occurs
+        call_driver_probe
+
+If a specialized driver's probe sets dev->driver_data, and i3cdev_detach
+gets to run afterwards, wouldn't it overwrite driver_data with
+NULL and clobber the driver_data?
+
+Similarly, a driver setting dev->driver_data could cause you to lose
+your i3cdev_data pointer - which you need for teardown in i3cdev_detach.
+
+The use of the dev->driver_data field when i3cdev isn't a registered 
+device driver was one of the feedback points flagged in v3 (2020).
+
+>  2. No cross-subsystem changes needed. The bus notifier avoids touching other
+>     subsystems entirely.
+
+That's true and certainly a plus!
+
+>  3. Boot-time recovery flows: For OCP Secure Firmware Recovery
+>     devices come up unbound and need /dev/bus/i3c/<device> available
+>     immediately without requiring udev rules or sysfs writes first.
+> 
+
+Why can't you use udev rules?
+
+You can use them to automatically set driver_override & bind to i3cdev.
+Once the rules are in-place, the setup of character device files in
+/dev/bus/i3c/<device> will be immediate and automatic on-boot and for any
+devices that join later.
+
+You can also do it for all I3C devices if that's what you want.
+
+> It looks like we're both going in the same direction for UAPI integration too.
+> 
+> If you're open to collaborating, I think we can combine and converge on a single
+> i3cdev driver - adopting all necessary fixes and ensuring the UAPI and features
+> cover both of our use cases so we have one unified series (and any
+> other use cases
+> or desires we may want out of an i3cdev driver).
+
+Yeah, I am up for that! :)
+
+> I'd like to know what everyone thinks about taking that approach also
+> if there are any
+> other use cases we may be missing here, regardless of which patch set we choose.
+> 
+> I guess just to get things moving, if we go one way and choose to go
+> forward with
+> the bus notifier approach, Meagan would you be okay with me incorporating your
+> Patch 2/3 for actual_len for the i3c controller drivers? Of course
+> with your authorship.
+
+Sure. I should have mentioned is that I only have a Designware I3C controller,
+so hopefully we can source help to test actual_len for other controller drivers.
+
+Thanks,
+Meagan
 
 -- 
 linux-i3c mailing list
