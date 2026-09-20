@@ -4,109 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C2AA5C982D7
-	for <linux-i3c@archiver.kernel.org>; Fri, 18 Sep 2026 22:47:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id ED18EC982CC
+	for <linux-i3c@archiver.kernel.org>; Sun, 20 Sep 2026 10:07:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SIOn6BwzjzslLakHFX+nAutcxbw0QyFYRPE+ZHx9V88=; b=RxCRxpw4E1zQa4
-	EhGHLKJgd0jDW49d/iDwQWx6r3Ddxba6IuiYtCTuR2h7tVWiIcIvHS6cmLokyUML5k7HwJIkwZ/qb
-	HZeRzpyxzaoNhSFeEsZD+fDWoFf4IfuxzDNY/5Fb6KW1uQVtFQuV3Kqr3mi4uV71Tc/guikMeTYk7
-	bJP4sBBR5wtjAS9a7+UwK4BvoKRzaZW4coi3XdZPSEs5WJbOxcmfXkxaw9Dh5qcThBRH7lGREDQfI
-	o6qHXpxWC7Np6rxbdm6lQvolJVFVGTYZsnbNF6r9XmlEyX2fiB95HAgfaWloXf1ofKBh+q+lfEVnE
-	8b2/NVJzzlVtP0OXVwRQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:CC
+	:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tHKbgqhoaBm3rGXcI9adbl/WaCabUftxy+3OewwqVXs=; b=4H5YUhFYDwyHR+
+	OnQMKyzcozxjGr1AxUBigqWqDm7KJuwsPQ1zbOzi5j2jci2mzoZNNUkPiEWo4zk3vAVV2wF2gVoZq
+	zU24p+RWBn6Zqh79r03LkBdsVOWfeaAsMK/CnqpN2YDgL62l7a2cDX79IKha+V9wHMkrjuQ6jWAcp
+	QxCNXVebRnwg3mWk+If8d7Z1M+T8f1CVlfRpFSi1rrOOCmwxojoH3CtznWUn/YArzwCEwMAMxo3VY
+	MOJi9kVX7l2G9tAUfubdJA95yVbzR8BZSjF0B/UwzhDFGh9qmrc/v+5nY+koy6Bg5MKTXoJDeupPj
+	zGiyS/xvV9vz3P3VgPSg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7hMe-0000000FfOO-233B;
-	Fri, 18 Sep 2026 22:47:28 +0000
-Received: from mail-yx2-x0f.google.com ([2607:f8b0:4864:41::f])
+	id 1x8ESV-0000000HEWF-2gmC;
+	Sun, 20 Sep 2026 10:07:43 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x7hMc-0000000FfNm-2Iwu
+	id 1x8EST-0000000HEVY-3UH4
+	for linux-i3c@bombadil.infradead.org;
+	Sun, 20 Sep 2026 10:07:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
+	:MIME-Version:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
+	Content-Description:In-Reply-To:References;
+	bh=083nYyWU7EF9vQoxB6Xuy+lqNgfZK71CJI9FUajjX7M=; b=JHE619tpwcKjvX5EtKY3XmwRao
+	RayHsp2BnOohDLxANp/jSMjQfE7i9VbiFI8Ro22a9s3RrqNFo6jWZRsOhvxiMl1px1G15XqpLcZ3P
+	WnfPSEb8uW3e7HKvIdmibTVEWkDprFtTaVvh3aiK7DaF5/nhmnM3rXS7gvjZv9hypZdBexqtv+puq
+	Rwt4Bcb6qFsaZ6/TiiZLIRzd0nzAy+nyrmYKrax2XNMDg7pLRILXry1j4xo+QIKe/XSgVsxAdVOxJ
+	uNZbksivABzMWmShJytPv3cHAaJo5WNUU1Rb8pFOurChEDWIs7HJHjynLnybb9Bu/DAD5SMa7xFMi
+	cvE/l7Xg==;
+Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
+	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
+	id 1x8ESP-0000000BJM4-0RJn
 	for linux-i3c@lists.infradead.org;
-	Fri, 18 Sep 2026 22:47:27 +0000
-Received: by mail-yx2-x0f.google.com with SMTP id 00721157ae682-895eaf30817so14157607b3.0
-        for <linux-i3c@lists.infradead.org>; Fri, 18 Sep 2026 15:47:25 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1789771644; cv=none;
-        d=google.com; s=arc-20260327;
-        b=ZjAoEuz5d4VxH6Ynnsjl3z+9MJX878pCIzVT6VysRpDuG4G/hmQ/agUsGlbkU6dBAA
-         VUx6I6anol8P+aGzd2zt9/BIzDzRRo7Z5jHUoEGJgOBgADqGFfIBHlDh7zWHbJgPO2kV
-         AQ9Otb693lsVncKLitI1wqI0KPu19dYuG/jIwUHEHrRFN4Po0e7YmDUZ4H7ft/dajpv5
-         buQkS7yAC9lzUo28/7VYPc1WC2SSfLB4cpm6by2a72z5V5wa0+ANmb+BMw4RuLWdLjnr
-         ren9ky1ne/+MOrB12OmjHpIaVAceZUnlMi0T+BjlS9O6C6P6IEAQW5L9ZaaH+vsVBJJJ
-         dodQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:in-reply-to:references
-         :mime-version:dkim-signature;
-        bh=W2+7bjdeLJB5DriPRtjevhF7uljn15Vp87Hxw0lnlm8=;
-        fh=A5pWKK+nf9vF5Bi3i1Ym6tdQvmG2NmeLe+sV/WVhclQ=;
-        b=e+3k1oOaHj5JJG1OWmOcUd7mAi6zm7dzBCNpQS4Akt+Qz/1bkFBN64IYfcJixwfXgr
-         JgbnonRLnWzX+pujEhAgGR3foz4cmamkbDCYcIBi6xovPPHs/CbgOiPQhjxV9IrjdCKz
-         tooHQiod4ozv3W2rNid+HWKNIlH7mw5GHYfgFeoK7KOQE1CtgjVSd2Qa9noBeRudUJNk
-         rDgQoeCtsAyLjteSCAl4NMu4V/DM6kc4oictQJJYpwNaZWR4GEPFm8jW6LfTgZu5NMwG
-         QIjQWOpkWZe9TW9vHoS2MpWx85wHXDAiFyR51JDNPKH+PeWmLHJ0lsNLU5hJcBbcWGCg
-         um7w==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=google.com; s=20251104; t=1789771644; x=1790376444; darn=lists.infradead.org;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=W2+7bjdeLJB5DriPRtjevhF7uljn15Vp87Hxw0lnlm8=;
-        b=eeRQGaSAqdOe8uFfFjtbY/tic+lAWzskf76eCpZ1GKGXwUrYsa4aqzEnwVoahI9N00
-         hqEDeVLTOrymM4r3iV5JiB9TC9tCoGRlhanF9UePZlby9idAa3eS9iybmMu7CAZfKpbx
-         uR6/f/ouRnXa81hO4GlnuH7e42X3t0S4O24M2SCFVc7YocE5dZu9aCE+/0qUCJS33AKc
-         PWgwvTU106TWgrmb03pBtkP2WtZXc2Fyk2i3dpMEH3YRG/oVJHPOgkeC+y4fHKMhrfb2
-         ZiL5y5x32HUs6fqiK3g3LDydYmpC5Orfta0f3As3iFtgDI0jZmv3My3rg8EttqHErx2Z
-         s6gQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20260707; t=1789771644; x=1790376444;
-        h=content-type:cc:to:subject:message-id:date:from:in-reply-to
-         :references:mime-version:x-gm-gg:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to:content-type;
-        bh=W2+7bjdeLJB5DriPRtjevhF7uljn15Vp87Hxw0lnlm8=;
-        b=zhOQkKEjs8azKsVv+BP/l3nFdxwk19FHNSTCWCO+LlNEyg876MqmwkV+Gzx4AY2P+Q
-         Od4GwYCuje8FljsAdR3Ev5/2BQECmO6V0/btDuPcTAmDqjMalVFpmHl1Xj5BVruoaVgT
-         BZbms+m+msfNOqG0boxfFbFga4GDViElMPngAfyVNpHYCHaRFEeHPskPE370ON/LVPGL
-         agVnENL/tD91Mk4VVxH7DWZt0dLs+Bw1YoFnfFW3CwU1f3VkyLtSzAt19skU0tXKTjNJ
-         s0pxr+l41IoChP24nyotTkowd6Yx2wdBsDuE9ZpdtAQWvmKQUK/eXqA9dgLv5fvOISra
-         Lwaw==
-X-Gm-Message-State: AFuF++kt/kuMNxWNF7gIQAd1mx3J4jgz5zC6ZMePlRFdOpq0urMEAp3C
-	JrHpTjHItsdxoILFUO6lwpiQ0zEPlzmhNKaKcmWhyuwtSaHQqsZUP4ZKxZC8AmOm8HAXLyQqu/s
-	uTlhLlae0qw0I5883zyH4al7pbjvEV03wmy8/d+/j
-X-Gm-Gg: AYBFou2+3gFr+row2zB1AY3h147WGyo3crB9UiB+rGdP7ZwS3kf0pCs3i0kF9397+ly
-	wpZYtbGTECJYTi5mJynP7BgOQMXQG3rsjxvsEwZaizi81O9QaDqtJDr86NLHoWxcNh3UXJJEH3H
-	8QpIiK7tk2NwWrc0FBqkQubkwln+xVNYxX384JfswNrkigNCQBJQPFRUmg/+nD+xO1YXTy7rvYA
-	yLEFKPV+AKvTYlI1KOG2S8h+sAy2AZd9biwJAyM+6lplnuKL3NfxwsyiaudPBMlDKBBkZ2V6I6i
-	Axp5Pbrx8sG0Z1APypORDWeAeVQdNdlOwgG6z5fw4x86g5Z5A3j1rKwFWL9THfrpccC8ryiaO3N
-	UlW1UOUMbvg==
-X-Received: by 2002:a05:690c:10d:b0:873:5bd1:98ca with SMTP id
- 00721157ae682-897383a138dmr12652817b3.60.1789771643744; Fri, 18 Sep 2026
- 15:47:23 -0700 (PDT)
+	Sun, 20 Sep 2026 10:07:40 +0000
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 68KA6NGb81619077, This message is accepted by code: ctloc85258
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realsil.com.cn;
+	s=dkim; t=1789898783;
+	bh=083nYyWU7EF9vQoxB6Xuy+lqNgfZK71CJI9FUajjX7M=;
+	h=From:To:CC:Subject:Date:Message-ID:MIME-Version:
+	 Content-Transfer-Encoding:Content-Type;
+	b=JLtLJPoFndxIwWTeoyvpaPL6/qaLgdV8aKmWG2/fzUIVYBV9n2x21g2gYjcZ0u9LI
+	 rufFHigz84oquydkr02OyTyFPsaMHK89K7Fx1uP6SDb11wjZN+1/rfv8Zyy424Uy2h
+	 ASc1E8XclIVOELxO7WsRaHkByxlOt0bq1uqdhufq9mpJTkzu+72QFUrE3uRHWIqmri
+	 1xqoHZuUkFfI78eZCnEq9vChgXeu/eo7X8nAuoXommUBDFpEaaNy0sjTw7HcerncQn
+	 FRSUseIkJMzKk0jSu75lZm+0Fp4bJChsjaSMW8wTS5kdZTvXk/HeY5idpP0AGebL/d
+	 M6YJTCOtntkrQ==
+Received: from RS-EX-MBS2.realsil.com.cn ([172.29.17.102])
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 68KA6NGb81619077
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+	Sun, 20 Sep 2026 18:06:23 +0800
+Received: from localhost (172.29.57.213) by RS-EX-MBS2.realsil.com.cn
+ (172.29.17.102) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.49; Sun, 20 Sep
+ 2026 18:06:23 +0800
+From: <zain_zhou@realsil.com.cn>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
+	<Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
+	<krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, Lee Jones
+	<lee@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>, Mark Brown
+	<broonie@kernel.org>, Vikash Bansal <vikash.bansal@nxp.com>, Aman Kumar
+ Pandey <aman.kumarpandey@nxp.com>, Lakshay Piplani <lakshay.piplani@nxp.com>
+CC: <devicetree@vger.kernel.org>, <linux-i3c@lists.infradead.org>,
+	<linux-kernel@vger.kernel.org>, <mfd@lists.linux.dev>, Wei Wang
+	<wei_wang@realsil.com.cn>, Yin Zhou <zain_zhou@realsil.com.cn>
+Subject: [RFC PATCH 0/4] Add support for Realtek RTS490x I3C hub
+Date: Sun, 20 Sep 2026 18:04:57 +0800
+Message-ID: <20260920100501.4091351-1-zain_zhou@realsil.com.cn>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-References: <20260906202747.4041389-1-samagazaryan@google.com>
- <20260906202747.4041389-4-samagazaryan@google.com> <20260911-d0e2d97df458cbf24fa42089@linux.microsoft.com>
- <CAHreonH0b=spgb2LuUbVvWHarJWf3MOyL8qS5k_1X6gb_mjVkg@mail.gmail.com>
- <20260917-b3831e748e890287325aae49@linux.microsoft.com> <20260918-bc8077794cfb7321acf66420@linux.microsoft.com>
-In-Reply-To: <20260918-bc8077794cfb7321acf66420@linux.microsoft.com>
-From: Sam Agazaryan <samagazaryan@google.com>
-Date: Fri, 18 Sep 2026 15:47:12 -0700
-X-Gm-Features: AcwNN1V4di_550pCxty93aMW3Wwt3uO84u73OJWwGphkReG6hvLmsGR_10uXSEM
-Message-ID: <CAHreonEaErnUVQp-oe2YLv0VPuFDSBhrq3a7d==Nie5i4tgN-A@mail.gmail.com>
-Subject: Re: [PATCH v4 3/3] i3c: add i3cdev module to expose i3c dev in /dev
-To: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
-Cc: linux-i3c@lists.infradead.org, 
-	Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li <Frank.Li@nxp.com>, 
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Arnd Bergmann <arnd@arndb.de>, 
-	Vitor Soares <vitor.soares@toradex.com>, 
-	Oleksandr Shulzhenko <oleksandr.shulzhenko.viktorovych@intel.com>, linux-kernel@vger.kernel.org, 
-	tgopinath@linux.microsoft.com, boris.brezillon@collabora.com
+X-Originating-IP: [172.29.57.213]
+X-ClientProxiedBy: RS-EX-MBS1.realsil.com.cn (172.29.17.101) To
+ RS-EX-MBS2.realsil.com.cn (172.29.17.102)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260918_154726_593751_534E18A9 
-X-CRM114-Status: GOOD (  11.72  )
+X-CRM114-CacheID: sfid-20260920_110738_217503_EAC8239D 
+X-CRM114-Status: GOOD (  16.11  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -123,34 +99,108 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-> I made an assumption in my previous analysis. I assumed that the
-> notification would be dispatched in its own thread. Digging more,
-> bus_notify just invokes all the registered .notifier_call callbacks, so
-> i3cdev_detach would be guaranteed to run before call_driver_probe.
+From: Yin Zhou <zain_zhou@realsil.com.cn>
 
-Looking at this again, I think there is an issue in this area regarding
-module deregistration.
+Hi all,
 
-If we deregister the module i3cdev_exit calls i3cdev_detach for all i3c
-devices including the ones bound to different drivers, which is very bad.
+This series adds support for the Realtek RTS490x family of I3C hubs.
+The devices provide four or eight downstream target ports, which can be
+configured as I3C buses or SMBus controller/target interfaces. They also
+provide four programmable LDO outputs for the controller and target-port
+power domains.
 
-i3c_for_each_dev(NULL, i3cdev_detach);
+This RFC is based on the NXP P3H2x4x generic I3C hub framework series v17:
 
-I can add a private LIST_HEAD (similar to i2c-dev) to track all devices
-that are specifically using i3cdev and use that list to manage detaching
-instead of dev->driver_data.
+  [PATCH v17 0/8] Add support for NXP P3H2x4x I3C hub driver
 
-I think there was another issue with the bus notifier that Sashiko was
-on the right track for.
-The core lock being used wasn't the right one to protect against
-attach and detach
-races. I removed that lock and updated the locking inside the attach
-and detach functions
-to account for races that may arise from module loading and device discovery.
+The NXP dependency series is not included below and must be applied first.
+It applies on top of current Linux mainline; the base commit used to build
+and test this RFC is:
 
+  940de590b839f71d6dc846160534bf202401b8b7
 
-Thanks,
-Sam
+The dependency status and the final generic-hub API shape are an explicit
+part of this RFC. If the generic framework is revised, this series will be
+rebased accordingly. NXP's later v19 series will be evaluated for a future
+revision of this RTS490x series and is not being used as the basis for this
+RFC v1.
+
+Patch overview:
+
+  1. dt-bindings: i3c: Add Realtek RTS490x I3C hub support
+     Add the RTS490x device-tree binding and register the binding with
+     MAINTAINERS.
+
+  2. mfd: Add driver for Realtek RTS490x I3C hub
+     Add the I3C-only MFD parent, shared regmap, manufacturer matching,
+     variant detection, protected-register lock, and child devices.
+
+  3. regulator: rts490x: Add driver for on-die regulators
+     Expose the four programmable LDOs through the regulator framework.
+     Only regulator nodes explicitly present and enabled in DT are
+     registered; omitted LDOs retain their existing hardware state.
+
+  4. i3c: hub: Add Realtek RTS490x I3C hub support
+     Add downstream I3C ports through the generic I3C hub framework and
+     SMBus ports through Linux I2C adapters. SMBus controller completion
+     and target receive handling use the hub self-IBI.
+
+The first RFC intentionally has a limited scope:
+
+  - The hub must be connected to the host through I3C.
+  - GPIO and GPIO IRQ support are deferred to a follow-up series.
+  - SMBus controller and target paths use IBI; polling fallback is not
+    included.
+  - Legacy I2C device discovery behind I3C-mode ports follows the existing
+    behavior of the generic I3C master framework and has not been
+    specifically validated on this hardware in this RFC.
+
+Testing:
+
+  - checkpatch.pl --strict, 0 errors/0 warnings across the series
+  - dt_binding_check for the RTS490x binding
+  - Cross-build validated for the MFD, regulator, and hub composite objects
+  - git diff --check across the series
+  - I3C and SMBus downstream ports have been functionally verified on
+    target hardware.
+
+Regards,
+Yin Zhou
+
+Yin Zhou (4):
+  dt-bindings: i3c: Add Realtek RTS490x I3C hub support
+  mfd: Add driver for Realtek RTS490x I3C hub
+  regulator: rts490x: Add driver for on-die regulators
+  i3c: hub: Add Realtek RTS490x I3C hub support
+
+ .../bindings/i3c/realtek,rts490x.yaml         | 266 ++++++
+ MAINTAINERS                                   |  11 +
+ drivers/i3c/hub/Kconfig                       |  11 +
+ drivers/i3c/hub/Makefile                      |   3 +
+ drivers/i3c/hub/rts490x-i3c-hub-core.c        | 444 +++++++++
+ drivers/i3c/hub/rts490x-i3c-hub-i3c.c         | 150 ++++
+ drivers/i3c/hub/rts490x-i3c-hub-smbus.c       | 839 ++++++++++++++++++
+ drivers/i3c/hub/rts490x-i3c-hub.h             | 150 ++++
+ drivers/mfd/Kconfig                           |  11 +
+ drivers/mfd/Makefile                          |   1 +
+ drivers/mfd/rts490x-core.c                    | 131 +++
+ drivers/regulator/Kconfig                     |   9 +
+ drivers/regulator/Makefile                    |   1 +
+ drivers/regulator/rts490x-regulator.c         | 284 ++++++
+ include/linux/mfd/rts490x.h                   |  53 ++
+ 15 files changed, 2364 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/i3c/realtek,rts490x.yaml
+ create mode 100644 drivers/i3c/hub/rts490x-i3c-hub-core.c
+ create mode 100644 drivers/i3c/hub/rts490x-i3c-hub-i3c.c
+ create mode 100644 drivers/i3c/hub/rts490x-i3c-hub-smbus.c
+ create mode 100644 drivers/i3c/hub/rts490x-i3c-hub.h
+ create mode 100644 drivers/mfd/rts490x-core.c
+ create mode 100644 drivers/regulator/rts490x-regulator.c
+ create mode 100644 include/linux/mfd/rts490x.h
+
+-- 
+2.34.1
+
 
 -- 
 linux-i3c mailing list
