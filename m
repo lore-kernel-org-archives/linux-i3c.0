@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15888C982EA
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 15835C982D0
 	for <linux-i3c@archiver.kernel.org>; Sun, 20 Sep 2026 10:07:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
@@ -12,56 +12,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:CC:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X3hbsenetQ4Sb6zP6bB0KRbzAIep6wArEuDXtcb6AeM=; b=4GQxyLS+HGDASN
-	coiT2AqE71FpjLIJ0bDjwNilkyI14c5IDVqrYrumcrggXkR9t2Hfvn9KQXdi1c8ToMVL8hcl3Ca2j
-	IEApgZ7+3/xAB5uO41o9Wws/oktjP60NJ9S1rmbAsqLXSPj1XKXmumRG/eLeP6VSR7Ix01ognCwmE
-	ra/DN+1+b3Sa1hM/sRFgQgelEULxdIQ44kfsXNWnE+kuVtFEFi9KQ8/T4xwg4TZV7wnbUZla8uAf4
-	dE0/fkGl8y5X2RQM4nSFF5USbQoTqQmtTjFGBPrmVRPoraCv6RPgOj9VDpXrRULVWyDJxJ/wo6OWs
-	lR2GYAo81TK9GYGbASLg==;
+	List-Owner; bh=5dL1j3sMY6rAA5nzsw54JKkxHeNLyyT8mmMdKKpZUvk=; b=zsQihPQRzHca8c
+	afXrZADYQ3YB4FjIhGlE2DzghEtyggGtMWoVlYKLPZQhrMttcGdkjJb0cC5rpCZB3xqHmMLguD/1h
+	RjXfdxlGt/V7/4GzjiLjeRETP3YfQjxIJ3IcsxJwJLlTwCy8LN7Og3Is6qeZ9rr1bKj7U+UzktJiw
+	r/0aWDURMnj5EzlPoxG5vasIh/rUVbcE8I/OdSrGs1xry6ZFDcODuZci44Z0NyBobW03SIHLm3XBi
+	k5+rByW+FdCnDfkkox56pC5Z+TXzw864qH+Tlm5diwYiMN4U5+AjPkA/0ggMAPjWsuW6K5G75T4K/
+	7AaTOB4Y664MgAX+/GQQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8ESV-0000000HEWS-35m4;
+	id 1x8ESV-0000000HEWM-2tfK;
 	Sun, 20 Sep 2026 10:07:43 +0000
 Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x8ESV-0000000HEVd-00C4
+	id 1x8ESU-0000000HEVb-3fiZ
 	for linux-i3c@bombadil.infradead.org;
 	Sun, 20 Sep 2026 10:07:43 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=infradead.org; s=desiato.20200630; h=Content-Type:Content-Transfer-Encoding
 	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From:
 	Sender:Reply-To:Content-ID:Content-Description;
-	bh=j43nH7uEp0ZdE08gu7yRxkYUVGjqH6GF5n9zSBeS+fs=; b=iJrhta2s4ci7C+8SpWH+kDswKM
-	H5uCK5YrwTbae6ozPx0GXZFvhrq5txzbi3joc7sOhzcHrGZTmkx4XTbSy9uy6+vgMr4CkCD9TGGZJ
-	tRpWRqaXLyUJ7kLwkLZIXgSTFen8yDKbF7/rrgaAaXTi326JloyYe2RmXRmSzwBcyIvkIpyYxkQbY
-	Qd/L6ArAe4/BXyWSYZbFjp4YuwwQe2iTkc1SS4yY+Lm/WjU3JTd06EdItdwLgprNqvk8nRk35mjEH
-	g/nw8riOZtvANJYlZrSHYAIQEs0HbLds2nK9tC7yFbJUfpbbLTXeAeej22abKpNIzpegGu2mUX8/K
-	3+vi2yqA==;
+	bh=k/55xTDmUL0AILwQ/vqtDUtBgq9gvHUQCy21hJdwVyM=; b=Mqb7WAYXNjC1Ag27S8nbeZTyzY
+	CERW6zyYnrf8e0pmBjF7H4wTq2tra7lce4Pwy5sR7rEVHwbLcPysNJ+caHWy/DkHqn/JuW+yU7fhp
+	SDMvJ4AMxLZabzAIH+r/pPQIPDzNC6Tu+nhHixeEkELBrziveYxEpk1tGv+c6qaVVU0xP/8vJCGLq
+	E8YuL8JYV1iduQqfV8+vteeNbr/Uovykp0l/9QvvEblKso4Pxrrp+8M7ginV6Bj8XplLPQOitTejv
+	oZlf3gqo//z3dwyLD70N1iQFOAveO2nZqZuO23ZVxZGQePKV3VOgm3mloN/lrGYJcA0QGShK6BoE0
+	Lh0/Y4pQ==;
 Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
 	by desiato.infradead.org with esmtps (Exim 4.99.2 #2 (Red Hat Linux))
-	id 1x8ESP-0000000BJM5-0Hgo
+	id 1x8ESP-0000000BJM6-0bNB
 	for linux-i3c@lists.infradead.org;
 	Sun, 20 Sep 2026 10:07:41 +0000
-X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 68KA6VyK41619108, This message is accepted by code: ctloc85258
+X-SpamFilter-By: ArmorX SpamTrap 5.80 with qID 68KA6aBsA1619123, This message is accepted by code: ctloc85258
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=realsil.com.cn;
-	s=dkim; t=1789898791;
-	bh=j43nH7uEp0ZdE08gu7yRxkYUVGjqH6GF5n9zSBeS+fs=;
+	s=dkim; t=1789898796;
+	bh=k/55xTDmUL0AILwQ/vqtDUtBgq9gvHUQCy21hJdwVyM=;
 	h=From:To:CC:Subject:Date:Message-ID:In-Reply-To:References:
 	 MIME-Version:Content-Transfer-Encoding:Content-Type;
-	b=OfQAsA2cmkHgyEky9a72dDpUq7PStK7hesrL1WGcsucj0JMd0itTPVXPyiZXEZD8b
-	 PmMvmLAWpUIa0iD2+/y4blbQrHKtDckQfHIAWBFiFDqJH7wJVQ4nb/8LKGV5K2MoKf
-	 XzdZcfwy5F9wMvcgCSRcu7WMEGgij0XuDKDOmGf8yeobbRZe+6ESzmJa+oOckeYmB5
-	 6tfdoqzlwllOTaxWr/iDJeg6hJBpuQW9BEIaZwlBG9M6eCarHtEa1Tkx8JMmUtIB4l
-	 IW69eVOc1AuLVf9Wu/DpBkK5HW9Zequ6euGlpb+coNQ7B6UBrnLchCOv9wvMgOoysy
-	 ZP2FFjxRMgKVw==
+	b=lHVfDLlNQNysUd8mgPwyaEMDswrFFGd7ig1tLatigY3oJI5kB3gtLpd84G0WjRTQO
+	 5aEU3FGR6wJcaq62ajHlz0x1WGmVzgPEvpk8GVa96aR0YG00el7RxBMnXNUsNYwON8
+	 EFbdczZCwUmiIJ0icSOpargE1jzuPWDApljsoE1L8GCH4Tp/gdx/5HIO/7TaSBx0/D
+	 oitu0beSXi8BMzctvDNVGCiZtfefpypcwBefihAeNN65zNlBY/AQf7H/WGHDExyt3E
+	 qFqnxJ1RQTPRfhoMaQSKp2YZFeh0Il8O+bPW+R8K1H4uWY2ljm7JFF6tn3a6vD7ZZU
+	 k86ZQ91b5U2kg==
 Received: from RS-EX-MBS2.realsil.com.cn ([172.29.17.102])
-	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 68KA6VyK41619108
+	by rtits2.realtek.com.tw (8.15.2/3.29/5.94) with ESMTPS id 68KA6aBsA1619123
 	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
-	Sun, 20 Sep 2026 18:06:31 +0800
+	Sun, 20 Sep 2026 18:06:36 +0800
 Received: from localhost (172.29.57.213) by RS-EX-MBS2.realsil.com.cn
  (172.29.17.102) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.2562.49; Sun, 20 Sep
- 2026 18:06:31 +0800
+ 2026 18:06:36 +0800
 From: <zain_zhou@realsil.com.cn>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
 	<Frank.Li@nxp.com>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski
@@ -72,9 +72,9 @@ To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Frank Li
 CC: <devicetree@vger.kernel.org>, <linux-i3c@lists.infradead.org>,
 	<linux-kernel@vger.kernel.org>, <mfd@lists.linux.dev>, Wei Wang
 	<wei_wang@realsil.com.cn>, Yin Zhou <zain_zhou@realsil.com.cn>
-Subject: [RFC PATCH 1/4] dt-bindings: i3c: Add Realtek RTS490x I3C hub support
-Date: Sun, 20 Sep 2026 18:04:58 +0800
-Message-ID: <20260920100501.4091351-2-zain_zhou@realsil.com.cn>
+Subject: [RFC PATCH 3/4] regulator: rts490x: Add driver for on-die regulators
+Date: Sun, 20 Sep 2026 18:05:00 +0800
+Message-ID: <20260920100501.4091351-4-zain_zhou@realsil.com.cn>
 X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20260920100501.4091351-1-zain_zhou@realsil.com.cn>
 References: <20260920100501.4091351-1-zain_zhou@realsil.com.cn>
@@ -83,8 +83,8 @@ X-Originating-IP: [172.29.57.213]
 X-ClientProxiedBy: RS-EX-MBS1.realsil.com.cn (172.29.17.101) To
  RS-EX-MBS2.realsil.com.cn (172.29.17.102)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260920_110738_251055_3BFBE938 
-X-CRM114-Status: GOOD (  17.96  )
+X-CRM114-CacheID: sfid-20260920_110738_255717_52D8B785 
+X-CRM114-Status: GOOD (  22.68  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,309 +103,354 @@ Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
 From: Yin Zhou <zain_zhou@realsil.com.cn>
 
-Add the device tree binding for the Realtek RTS490x family of I3C
-hubs. The hubs provide four or eight downstream target ports that can
-operate as I3C buses or SMBus controller and target interfaces, along
-with programmable LDO outputs for the controller and target-port
-power domains.
+Add regulator support for the four programmable LDO outputs in the
+Realtek RTS490x I3C hub. The driver exposes the LDO voltage and enable
+controls through the regulator framework while preserving protected
+register state across updates.
 
 Signed-off-by: Yin Zhou <zain_zhou@realsil.com.cn>
 ---
- .../bindings/i3c/realtek,rts490x.yaml         | 266 ++++++++++++++++++
- MAINTAINERS                                   |   7 +
- 2 files changed, 273 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/i3c/realtek,rts490x.yaml
+ MAINTAINERS                           |   1 +
+ drivers/regulator/Kconfig             |   9 +
+ drivers/regulator/Makefile            |   1 +
+ drivers/regulator/rts490x-regulator.c | 284 ++++++++++++++++++++++++++
+ 4 files changed, 295 insertions(+)
+ create mode 100644 drivers/regulator/rts490x-regulator.c
 
-diff --git a/Documentation/devicetree/bindings/i3c/realtek,rts490x.yaml b/Documentation/devicetree/bindings/i3c/realtek,rts490x.yaml
-new file mode 100644
-index 000000000000..92d5d73db435
---- /dev/null
-+++ b/Documentation/devicetree/bindings/i3c/realtek,rts490x.yaml
-@@ -0,0 +1,266 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+# Copyright 2025-2026 Realtek Semiconductor Corp.
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/i3c/realtek,rts490x.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Realtek RTS490x I3C hub
-+
-+maintainers:
-+  - Yin Zhou <zain_zhou@realsil.com.cn>
-+
-+description: |
-+  The Realtek RTS490x family provides four or eight downstream target ports.
-+  The hub is an I3C target and is accessed through an upstream I3C controller.
-+  Each target port can operate as an I3C bus or as an SMBus controller and
-+  target interface. The hub also provides four programmable LDO outputs for
-+  its controller and target-port power domains.
-+
-+properties:
-+  compatible:
-+    enum:
-+      - realtek,rts4900
-+      - realtek,rts4901
-+      - realtek,rts4902
-+      - realtek,rts4903
-+      - realtek,rts4904
-+      - realtek,rts4906
-+
-+  reg:
-+    maxItems: 1
-+
-+  '#address-cells':
-+    const: 1
-+
-+  '#size-cells':
-+    const: 0
-+
-+  assigned-address:
-+    maximum: 0x7f
-+
-+  realtek,tp0145-pullup-ohms:
-+    description:
-+      Pull-up resistance for target ports 0, 1, 4 and 5, in ohms. If omitted,
-+      the driver retains the current hardware setting.
-+    enum: [250, 500, 1000, 2000]
-+
-+  realtek,tp2367-pullup-ohms:
-+    description:
-+      Pull-up resistance for target ports 2, 3, 6 and 7, in ohms. If omitted,
-+      the driver retains the current hardware setting.
-+    enum: [250, 500, 1000, 2000]
-+
-+  realtek,cp0-io-strength-ohms:
-+    description:
-+      IO drive strength for controller port 0, in ohms. If omitted, the driver
-+      retains the current hardware setting.
-+    enum: [20, 30, 40, 50]
-+
-+  realtek,cp1-io-strength-ohms:
-+    description:
-+      IO drive strength for controller port 1, in ohms. If omitted, the driver
-+      retains the current hardware setting.
-+    enum: [20, 30, 40, 50]
-+
-+  realtek,tp0145-io-strength-ohms:
-+    description:
-+      IO drive strength for target ports 0, 1, 4 and 5, in ohms. If omitted,
-+      the driver retains the current hardware setting.
-+    enum: [20, 30, 40, 50]
-+
-+  realtek,tp2367-io-strength-ohms:
-+    description:
-+      IO drive strength for target ports 2, 3, 6 and 7, in ohms. If omitted,
-+      the driver retains the current hardware setting.
-+    enum: [20, 30, 40, 50]
-+
-+  vcc-cp0-supply:
-+    description:
-+      Optional external power supply for controller port 0. If omitted, the
-+      driver does not request or enable this supply.
-+
-+  vcc-cp1-supply:
-+    description:
-+      Optional external power supply for controller port 1. If omitted, the
-+      driver does not request or enable this supply.
-+
-+  vcc-tp0145-supply:
-+    description:
-+      Optional external power supply for target ports 0, 1, 4 and 5. If
-+      omitted, the driver does not request or enable this supply.
-+
-+  vcc-tp2367-supply:
-+    description:
-+      Optional external power supply for target ports 2, 3, 6 and 7. If
-+      omitted, the driver does not request or enable this supply.
-+
-+  regulators:
-+    type: object
-+    description:
-+      Optional container for the hub's programmable LDOs. Only enabled LDO
-+      child nodes are registered by the driver. An omitted or disabled LDO
-+      child is not registered and its hardware state is left unchanged.
-+    additionalProperties: false
-+
-+    properties:
-+      ldo-cp0:
-+        type: object
-+        $ref: /schemas/regulator/regulator.yaml#
-+        unevaluatedProperties: false
-+
-+      ldo-cp1:
-+        type: object
-+        $ref: /schemas/regulator/regulator.yaml#
-+        unevaluatedProperties: false
-+
-+      ldo-tp0145:
-+        type: object
-+        $ref: /schemas/regulator/regulator.yaml#
-+        unevaluatedProperties: false
-+
-+      ldo-tp2367:
-+        type: object
-+        $ref: /schemas/regulator/regulator.yaml#
-+        unevaluatedProperties: false
-+
-+required:
-+  - compatible
-+  - reg
-+  - '#address-cells'
-+  - '#size-cells'
-+
-+patternProperties:
-+  '^i3c@[0-7]$':
-+    type: object
-+    $ref: /schemas/i3c/i3c.yaml#
-+    unevaluatedProperties: false
-+
-+    properties:
-+      reg:
-+        description: Target-port number.
-+        items:
-+          - minimum: 0
-+            maximum: 7
-+
-+      realtek,pullup-enable:
-+        type: boolean
-+        description:
-+          Enable the on-chip pull-up for this target port. If omitted, the
-+          on-chip pull-up is disabled.
-+
-+    required:
-+      - reg
-+
-+  '^smbus@[0-7]$':
-+    type: object
-+    $ref: /schemas/i2c/i2c-controller.yaml#
-+    unevaluatedProperties: false
-+
-+    properties:
-+      reg:
-+        description: Target-port number.
-+        items:
-+          - minimum: 0
-+            maximum: 7
-+
-+      realtek,pullup-enable:
-+        type: boolean
-+        description:
-+          Enable the on-chip pull-up for this target port. If omitted, the
-+          on-chip pull-up is disabled.
-+
-+      clock-frequency:
-+        description:
-+          SMBus controller-agent clock frequency for this target port, in Hz.
-+          If omitted, the driver uses 400 kHz.
-+        enum: [100000, 200000, 400000, 1000000]
-+        default: 400000
-+
-+    required:
-+      - reg
-+
-+allOf:
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            enum:
-+              - realtek,rts4900
-+              - realtek,rts4901
-+              - realtek,rts4904
-+    then:
-+      patternProperties:
-+        '^i3c@[0-3]$':
-+          properties:
-+            reg:
-+              items:
-+                - maximum: 3
-+        '^smbus@[0-3]$':
-+          properties:
-+            reg:
-+              items:
-+                - maximum: 3
-+        '^i3c@[4-7]$': false
-+        '^smbus@[4-7]$': false
-+
-+unevaluatedProperties: false
-+
-+examples:
-+  - |
-+    i3c {
-+        #address-cells = <3>;
-+        #size-cells = <0>;
-+
-+        hub@70,4ba00000000 {
-+            compatible = "realtek,rts4900";
-+            reg = <0x70 0x4ba 0x00000000>;
-+            assigned-address = <0x70>;
-+            #address-cells = <1>;
-+            #size-cells = <0>;
-+
-+            realtek,tp0145-pullup-ohms = <1000>;
-+            realtek,cp0-io-strength-ohms = <20>;
-+            realtek,cp1-io-strength-ohms = <20>;
-+            realtek,tp0145-io-strength-ohms = <30>;
-+
-+            vcc-cp0-supply = <&ldo_cp0>;
-+            vcc-cp1-supply = <&ldo_cp1>;
-+            vcc-tp0145-supply = <&ldo_tp0145>;
-+
-+            regulators {
-+                ldo_cp0: ldo-cp0 {
-+                    regulator-name = "ldo-cp0";
-+                    regulator-min-microvolt = <1000000>;
-+                    regulator-max-microvolt = <1000000>;
-+                };
-+
-+                ldo_cp1: ldo-cp1 {
-+                    regulator-name = "ldo-cp1";
-+                    regulator-min-microvolt = <1000000>;
-+                    regulator-max-microvolt = <1000000>;
-+                };
-+
-+                ldo_tp0145: ldo-tp0145 {
-+                    regulator-name = "ldo-tp0145";
-+                    regulator-min-microvolt = <1800000>;
-+                    regulator-max-microvolt = <1800000>;
-+                };
-+            };
-+
-+            i3c@0 {
-+                reg = <0>;
-+                #address-cells = <3>;
-+                #size-cells = <0>;
-+                realtek,pullup-enable;
-+            };
-+
-+            smbus@1 {
-+                reg = <1>;
-+                #address-cells = <1>;
-+                #size-cells = <0>;
-+                clock-frequency = <400000>;
-+                realtek,pullup-enable;
-+            };
-+        };
-+    };
 diff --git a/MAINTAINERS b/MAINTAINERS
-index f76359fdebbf..a2c171a28cd2 100644
+index 659f553420eb..6e7cb4ca92f6 100644
 --- a/MAINTAINERS
 +++ b/MAINTAINERS
-@@ -22992,6 +22992,13 @@ S:	Maintained
- F:	include/sound/rt*.h
- F:	sound/soc/codecs/rt*
+@@ -22999,6 +22999,7 @@ L:	linux-kernel@vger.kernel.org
+ S:	Maintained
+ F:	Documentation/devicetree/bindings/i3c/realtek,rts490x.yaml
+ F:	drivers/mfd/rts490x-core.c
++F:	drivers/regulator/rts490x-regulator.c
+ F:	include/linux/mfd/rts490x.h
  
-+REALTEK RTS490X I3C HUB DRIVER
-+M:	Yin Zhou <zain_zhou@realsil.com.cn>
-+L:	linux-i3c@lists.infradead.org
-+L:	linux-kernel@vger.kernel.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/i3c/realtek,rts490x.yaml
-+
  REALTEK OTTO WATCHDOG
- M:	Sander Vanheule <sander@svanheule.net>
- L:	linux-watchdog@vger.kernel.org
+diff --git a/drivers/regulator/Kconfig b/drivers/regulator/Kconfig
+index 00b152d95d42..c65c319ee676 100644
+--- a/drivers/regulator/Kconfig
++++ b/drivers/regulator/Kconfig
+@@ -1030,6 +1030,15 @@ config REGULATOR_P3H2X4X
+ 	  Say M here if you want to include support for this regulator as
+ 	  a module. The module will be named "p3h2840_i3c_hub_regulator".
+ 
++config REGULATOR_RTS490X
++	tristate "Realtek RTS490x regulator support"
++	depends on MFD_RTS490X
++	help
++	  Enable support for the four programmable LDO outputs provided by
++	  Realtek RTS490x I3C hub devices. These outputs supply the controller
++	  ports and the two target-port groups. Their voltage and enable state
++	  are managed through the regulator framework.
++
+ config REGULATOR_PALMAS
+ 	tristate "TI Palmas PMIC Regulators"
+ 	depends on MFD_PALMAS
+diff --git a/drivers/regulator/Makefile b/drivers/regulator/Makefile
+index a07702a49be4..57a2eec77b53 100644
+--- a/drivers/regulator/Makefile
++++ b/drivers/regulator/Makefile
+@@ -130,6 +130,7 @@ obj-$(CONFIG_REGULATOR_QCOM_SPMI) += qcom_spmi-regulator.o
+ obj-$(CONFIG_REGULATOR_QCOM_USB_VBUS) += qcom_usb_vbus-regulator.o
+ obj-$(CONFIG_REGULATOR_P3H2X4X) += p3h2840_i3c_hub_regulator.o
+ obj-$(CONFIG_REGULATOR_PALMAS) += palmas-regulator.o
++obj-$(CONFIG_REGULATOR_RTS490X) += rts490x-regulator.o
+ obj-$(CONFIG_REGULATOR_PCA9450) += pca9450-regulator.o
+ obj-$(CONFIG_REGULATOR_PF0900) += pf0900-regulator.o
+ obj-$(CONFIG_REGULATOR_PF9453) += pf9453-regulator.o
+diff --git a/drivers/regulator/rts490x-regulator.c b/drivers/regulator/rts490x-regulator.c
+new file mode 100644
+index 000000000000..dda5f2b1bb95
+--- /dev/null
++++ b/drivers/regulator/rts490x-regulator.c
+@@ -0,0 +1,284 @@
++// SPDX-License-Identifier: GPL-2.0
++/* Copyright (c) 2025-2026 Realtek Semiconductor Corp. */
++
++#include <linux/cleanup.h>
++#include <linux/mfd/rts490x.h>
++#include <linux/of.h>
++#include <linux/platform_device.h>
++#include <linux/regmap.h>
++#include <linux/regulator/driver.h>
++
++#define RTS490X_LDO_COUNT		4
++
++#define RTS490X_CP0_LDO_ENABLE		BIT(0)
++#define RTS490X_CP1_LDO_ENABLE		BIT(1)
++#define RTS490X_TP0145_LDO_ENABLE	BIT(2)
++#define RTS490X_TP2367_LDO_ENABLE	BIT(3)
++
++#define RTS490X_CP0_LDO_VOLTAGE_MASK	GENMASK(1, 0)
++#define RTS490X_CP1_LDO_VOLTAGE_MASK	GENMASK(3, 2)
++#define RTS490X_TP0145_LDO_VOLTAGE_MASK	GENMASK(5, 4)
++#define RTS490X_TP2367_LDO_VOLTAGE_MASK	GENMASK(7, 6)
++
++struct rts490x_regulator {
++	struct rts490x *rts490x;
++};
++
++struct rts490x_reg_state {
++	unsigned int original;
++	bool restore;
++};
++
++static void rts490x_regulator_lock(struct regulator_dev *rdev)
++{
++	struct rts490x_regulator *priv = rdev_get_drvdata(rdev);
++
++	mutex_lock(&priv->rts490x->protected_reg_lock);
++}
++
++static void rts490x_regulator_unlock(struct regulator_dev *rdev)
++{
++	struct rts490x_regulator *priv = rdev_get_drvdata(rdev);
++
++	mutex_unlock(&priv->rts490x->protected_reg_lock);
++}
++
++DEFINE_LOCK_GUARD_1(rts490x_regulator, struct regulator_dev,
++		    rts490x_regulator_lock(_T->lock),
++		    rts490x_regulator_unlock(_T->lock));
++
++static int rts490x_regulator_unprotect(struct regulator_dev *rdev,
++				       struct rts490x_reg_state *state)
++{
++	int ret;
++
++	state->restore = false;
++
++	ret = regmap_read(rdev->regmap, RTS490X_PROTECTION_CODE,
++			  &state->original);
++	if (ret)
++		return ret;
++
++	if (state->original == RTS490X_REGISTERS_UNLOCK_CODE)
++		return 0;
++
++	ret = regmap_write(rdev->regmap, RTS490X_PROTECTION_CODE,
++			   RTS490X_REGISTERS_UNLOCK_CODE);
++	if (!ret)
++		state->restore = true;
++
++	return ret;
++}
++
++static int rts490x_regulator_protect(struct regulator_dev *rdev,
++				     const struct rts490x_reg_state *state)
++{
++	if (!state->restore)
++		return 0;
++
++	return regmap_write(rdev->regmap, RTS490X_PROTECTION_CODE,
++			    state->original);
++}
++
++static int rts490x_regulator_enable(struct regulator_dev *rdev)
++{
++	struct rts490x_reg_state state;
++	int ret, ret2;
++
++	guard(rts490x_regulator)(rdev);
++
++	ret = rts490x_regulator_unprotect(rdev, &state);
++	if (ret)
++		return ret;
++
++	ret = regulator_enable_regmap(rdev);
++	ret2 = rts490x_regulator_protect(rdev, &state);
++
++	return ret ?: ret2;
++}
++
++static int rts490x_regulator_disable(struct regulator_dev *rdev)
++{
++	struct rts490x_reg_state state;
++	int ret, ret2;
++
++	guard(rts490x_regulator)(rdev);
++
++	ret = rts490x_regulator_unprotect(rdev, &state);
++	if (ret)
++		return ret;
++
++	ret = regulator_disable_regmap(rdev);
++	ret2 = rts490x_regulator_protect(rdev, &state);
++
++	return ret ?: ret2;
++}
++
++static int rts490x_regulator_set_voltage_sel(struct regulator_dev *rdev,
++					     unsigned int selector)
++{
++	struct rts490x_reg_state state;
++	int ret, ret2;
++
++	guard(rts490x_regulator)(rdev);
++
++	ret = rts490x_regulator_unprotect(rdev, &state);
++	if (ret)
++		return ret;
++
++	ret = regulator_set_voltage_sel_regmap(rdev, selector);
++	ret2 = rts490x_regulator_protect(rdev, &state);
++
++	return ret ?: ret2;
++}
++
++static const struct regulator_ops rts490x_regulator_ops = {
++	.list_voltage = regulator_list_voltage_table,
++	.map_voltage = regulator_map_voltage_iterate,
++	.set_voltage_sel = rts490x_regulator_set_voltage_sel,
++	.get_voltage_sel = regulator_get_voltage_sel_regmap,
++	.enable = rts490x_regulator_enable,
++	.disable = rts490x_regulator_disable,
++	.is_enabled = regulator_is_enabled_regmap,
++};
++
++static const unsigned int rts490x_voltage_table[] = {
++	1000000,
++	1100000,
++	1200000,
++	1800000,
++};
++
++static const struct regulator_desc rts490x_regulators[] = {
++	{
++		.name = "ldo-cp0",
++		.of_match = of_match_ptr("ldo-cp0"),
++		.regulators_node = of_match_ptr("regulators"),
++		.volt_table = rts490x_voltage_table,
++		.n_voltages = ARRAY_SIZE(rts490x_voltage_table),
++		.ops = &rts490x_regulator_ops,
++		.type = REGULATOR_VOLTAGE,
++		.owner = THIS_MODULE,
++		.enable_reg = RTS490X_LDO_AND_PULLUP_CONF,
++		.enable_mask = RTS490X_CP0_LDO_ENABLE,
++		.enable_time = 5000,
++		.vsel_reg = RTS490X_LDO_CONF,
++		.vsel_mask = RTS490X_CP0_LDO_VOLTAGE_MASK,
++	},
++	{
++		.name = "ldo-cp1",
++		.of_match = of_match_ptr("ldo-cp1"),
++		.regulators_node = of_match_ptr("regulators"),
++		.volt_table = rts490x_voltage_table,
++		.n_voltages = ARRAY_SIZE(rts490x_voltage_table),
++		.ops = &rts490x_regulator_ops,
++		.type = REGULATOR_VOLTAGE,
++		.owner = THIS_MODULE,
++		.enable_reg = RTS490X_LDO_AND_PULLUP_CONF,
++		.enable_mask = RTS490X_CP1_LDO_ENABLE,
++		.enable_time = 5000,
++		.vsel_reg = RTS490X_LDO_CONF,
++		.vsel_mask = RTS490X_CP1_LDO_VOLTAGE_MASK,
++	},
++	{
++		.name = "ldo-tp0145",
++		.of_match = of_match_ptr("ldo-tp0145"),
++		.regulators_node = of_match_ptr("regulators"),
++		.volt_table = rts490x_voltage_table,
++		.n_voltages = ARRAY_SIZE(rts490x_voltage_table),
++		.ops = &rts490x_regulator_ops,
++		.type = REGULATOR_VOLTAGE,
++		.owner = THIS_MODULE,
++		.enable_reg = RTS490X_LDO_AND_PULLUP_CONF,
++		.enable_mask = RTS490X_TP0145_LDO_ENABLE,
++		.enable_time = 5000,
++		.vsel_reg = RTS490X_LDO_CONF,
++		.vsel_mask = RTS490X_TP0145_LDO_VOLTAGE_MASK,
++	},
++	{
++		.name = "ldo-tp2367",
++		.of_match = of_match_ptr("ldo-tp2367"),
++		.regulators_node = of_match_ptr("regulators"),
++		.volt_table = rts490x_voltage_table,
++		.n_voltages = ARRAY_SIZE(rts490x_voltage_table),
++		.ops = &rts490x_regulator_ops,
++		.type = REGULATOR_VOLTAGE,
++		.owner = THIS_MODULE,
++		.enable_reg = RTS490X_LDO_AND_PULLUP_CONF,
++		.enable_mask = RTS490X_TP2367_LDO_ENABLE,
++		.enable_time = 5000,
++		.vsel_reg = RTS490X_LDO_CONF,
++		.vsel_mask = RTS490X_TP2367_LDO_VOLTAGE_MASK,
++	},
++};
++
++static int rts490x_regulator_probe(struct platform_device *pdev)
++{
++	struct device_node *regulators __free(device_node) = NULL;
++	struct rts490x *rts490x = dev_get_drvdata(pdev->dev.parent);
++	struct rts490x_regulator *priv;
++	struct regulator_config config = { };
++	struct regulator_dev *rdev;
++	int i;
++
++	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
++	if (!priv)
++		return -ENOMEM;
++
++	priv->rts490x = rts490x;
++	platform_set_drvdata(pdev, priv);
++	device_set_of_node_from_dev(&pdev->dev, pdev->dev.parent);
++
++	if (!pdev->dev.of_node) {
++		dev_warn(&pdev->dev,
++			 "no OF node; skipping on-chip LDO registration\n");
++		return 0;
++	}
++
++	regulators = of_get_available_child_by_name(pdev->dev.of_node, "regulators");
++	if (!regulators)
++		return 0;
++
++	config.dev = &pdev->dev;
++	config.regmap = rts490x->regmap;
++	config.driver_data = priv;
++
++	for (i = 0; i < ARRAY_SIZE(rts490x_regulators); i++) {
++		struct device_node *node __free(device_node) = NULL;
++		const char *name = rts490x_regulators[i].of_match;
++
++		node = of_get_available_child_by_name(regulators, name);
++		if (!node)
++			continue;
++
++		config.of_node = node;
++		rdev = devm_regulator_register(&pdev->dev, &rts490x_regulators[i],
++					       &config);
++		if (IS_ERR(rdev))
++			return dev_err_probe(&pdev->dev, PTR_ERR(rdev),
++					     "failed to register %s\n",
++					     rts490x_regulators[i].name);
++	}
++
++	return 0;
++}
++
++static const struct platform_device_id rts490x_regulator_ids[] = {
++	{ "rts490x-regulator" },
++	{ }
++};
++MODULE_DEVICE_TABLE(platform, rts490x_regulator_ids);
++
++static struct platform_driver rts490x_regulator_driver = {
++	.driver = {
++		.name = "rts490x-regulator",
++		.probe_type = PROBE_PREFER_ASYNCHRONOUS,
++	},
++	.probe = rts490x_regulator_probe,
++	.id_table = rts490x_regulator_ids,
++};
++module_platform_driver(rts490x_regulator_driver);
++
++MODULE_AUTHOR("Yin Zhou <zain_zhou@realsil.com.cn>");
++MODULE_DESCRIPTION("Realtek RTS490x I3C hub regulator driver");
++MODULE_LICENSE("GPL");
 -- 
 2.34.1
 
