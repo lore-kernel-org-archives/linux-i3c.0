@@ -4,90 +4,136 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96349C982FA
-	for <linux-i3c@archiver.kernel.org>; Tue, 22 Sep 2026 20:53:35 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2D87CC98302
+	for <linux-i3c@archiver.kernel.org>; Tue, 22 Sep 2026 22:21:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:From:References:Cc:To:Subject:
-	MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fG1Yboly9IkbUkURGKs/JeWcwmcFp0dnUCmK1Kgu5qk=; b=AdZo1o41FHIhVh
-	Y2DuT00eQhC8Xi4YYby8irOslGcuYSMuaO2PVg1f+BMrvmNKCUiYYMv6NXfXmyOjPPbzyGWMefdTq
-	TPy8ZK5lvVqGUqYa972g24capM9oVcu+CJ44rSGnjz+luwL+o+UqLbOJWEZSzt0P5tUlQsZybVJXO
-	lv+iwvk9hR1FVhN9E8PlteVTtTwCs91JtGwVqE4f4EA++nqnayeODPu3WbKVWEZMdJ+qN/pBgdblu
-	fxP4jvTbSvdpG5KtJj9fxldQkb1dA1smGe3mhK14xXDmLrQGqy/K9ldh5fqshuQsSmatJoKbcZMYg
-	Zxzklr8LUUwGCFIXdHjQ==;
+	List-Owner; bh=ExVEuCePdFnfe/US9JOcbuKzGEbjf3cH0CXNxZWE67g=; b=Hez9oDFtZtH380
+	4JtBywuFrEoAMWIN9CCDlMCQfrO2Lwy6kDTH0ABN6BwQYVELEgntaf7HW5u1Yc5t4B6Oq5ByDCW8Y
+	CBfFmm/MTqIAc6pMUghVLjNQsc3nZ2L4DfTAqK8TtBx9UUJtZuBkFHLjoo13QOaskAVkK2TEF6YGT
+	VixONOTa4NgP1rfP5gYZLHJOpXLouGq84JmpMAmJwDwyR+lCOmWW8UYaVDpDGuR549UevL+7rKwVl
+	NAg5iVp2ZLcr9WOoogB+25ek6VsNK0EwdsKORmNE7wRZkODf5rQM/Mx/6WHYT77gUscfCdwDn3Adx
+	iVwK0cTzZrqTROoWhtXg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x97Ud-00000006ZaY-19HG;
-	Tue, 22 Sep 2026 20:53:35 +0000
-Received: from mout.gmx.net ([212.227.15.19])
+	id 1x98rw-00000006fjO-2Hd4;
+	Tue, 22 Sep 2026 22:21:44 +0000
+Received: from mail-francecentralazlp170130007.outbound.protection.outlook.com ([2a01:111:f403:c20a::7] helo=PA4PR04CU001.outbound.protection.outlook.com)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x97UZ-00000006ZZr-3bao
+	id 1x98rs-00000006fiz-4AIP
 	for linux-i3c@lists.infradead.org;
-	Tue, 22 Sep 2026 20:53:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmx.de;
-	s=s31663417; t=1790110398; x=1790715198; i=w_armin@gmx.de;
-	bh=T1i5F+7vGeVPTGvc0kwQ2jh2bLQUIAMPMdrJOa5e8Io=;
-	h=X-UI-Sender-Class:Message-ID:Date:MIME-Version:Subject:To:Cc:
-	 References:From:In-Reply-To:Content-Type:
-	 Content-Transfer-Encoding:cc:content-transfer-encoding:
-	 content-type:date:from:message-id:mime-version:reply-to:subject:
-	 to;
-	b=AjCDKuVV1+nHXyo94enzs1Rjqukf8n8vMi1m/j+HzVEoLbCBW8dL1hO8+5IDIomT
-	 +uENGR3HaJMLuFui5Be7YTdCq0AEjIhHptf2g6ztIx/ck1JijY/3pH9iEugwo/Prk
-	 BVyxwfv7NBKQD36lx4XRuWlvqgw8HBhsG7aJKDxwPRHR0KHvtvGchW0N6wjGxDkWc
-	 tvPsx+Ovkcy5+Xa7oEsPbFoq2WE2z3L6nOrIYcKLR6V1BPIi249yvxX+DMC0Sabkx
-	 MvGSyrlkJEmTuNHoETi6iX91Z20/tm1sofQRmxa1as8vO3lORjXpWgiXHXQVdyEBw
-	 pKTngYTftUEbb/gAfg==
-X-UI-Sender-Class: 724b4f7f-cbec-4199-ad4e-598c01a50d3a
-Received: from client.hidden.invalid by mail.gmx.net (mrgmx005
- [212.227.17.190]) with ESMTPSA (Nemesis) id 1MatRZ-1wbhPa1zZb-00aGCR; Tue, 22
- Sep 2026 22:53:17 +0200
-Message-ID: <f6eb60e0-e318-4846-a906-31cb965ccb15@gmx.de>
-Date: Tue, 22 Sep 2026 22:53:09 +0200
+	Tue, 22 Sep 2026 22:21:43 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=E1cgMiShGRFhCcTdhRSSh/PxzcD2IVnNLQcbntu3AGqSss+UBoC+LMPEEIarFX49W5hhGHnEMaocA69xRdMo7UasmFj0FFW7S7ZxAbLFXZ5dBgF8cmWZZQ6hjmEk3QQ3Ikxg4lYDHxjLPm8W7Se+LXs1yW07KcgMVC+EZD/6Q7W+9tRJcwsdq2gkeLmZyjv5n9agHqnyyc+JuJjLBvZCimnACckaIuR20TGzUeB5sHdKaW86wZLHx4m4XWEKVDlJF5cvpQAk/TMUExVsf30tb86QXvX8OVn//vCp0vtqsXca0dR5p2QPB8fUU+GYlrdNwyNeni3QZJepP1sufm6HOg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ccNznQ/zbAlqLm2L4ieg8kxlF7ShfOhEvB3rSVttcuU=;
+ b=c8Vl2n/tU8698SC0QZL5gAdavpqgkxoQxoSqczDpqr7gbOcV7mb+dTAGTm5hCtxJ4/fuHB38H/N/rNrUTHDWMbeufLAGYW85he7aMQkk2ErZy4iZbBnfvnWnHz7DOqWfxQAA43d16gdOhAX/3QF/pfpQFSKteU1MSrTw/QNcjK1GKzHUptWNLdHnQ3s+zxg/yfvbI1omwEXop5znV2p5K6fKseZET6j/YvAtMd4JvUJ3lyhGTaqc/Tq069TEzOfoA0xDMJl0ccvBp597leDHBhfiD+0kYkV8IIzdcEOXq79uZEFbVZmnY2uFxVHc2pizD6Zp9bjSfCJmoO2uiBfMdA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
+ s=selector1-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ccNznQ/zbAlqLm2L4ieg8kxlF7ShfOhEvB3rSVttcuU=;
+ b=BorYWOJyveb+H/B14g2WDGagXkcNX27fzAbP0lsFCp/PK/eg4rOlIn/X2FctONgKGJtiF9MVI+1dwPH6MypZRvytsw69TuAZiXvJiFEx2KAkVAq0CrNelzBMSSLhDD2PvgG5TLNPcAwWUBb/ZdTZ2q2NmUPmtz3QGJwNZCN0jb9MqhhjoJyNcXhe/tJqd6/1HT9jXvGN3SHdivioXvpjWnkM/SeTTPSno4eihUIAka/22J2Eb47flZixK45K8wDWKMCHnjc4FlhzpIg2Q1bfcQz09blTVPHqoCizFv+VAxyQqNB2EJ4KfnZ1jh4ebnFjZ0CRL0DWKy+YVKriAJDrQA==
+Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=oss.nxp.com;
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
+ by DBBPR04MB7850.eurprd04.prod.outlook.com (2603:10a6:10:1e8::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.451.14; Tue, 22 Sep
+ 2026 22:21:35 +0000
+Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
+ ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0428.015; Tue, 22 Sep 2026
+ 22:21:35 +0000
+Date: Tue, 22 Sep 2026 17:21:26 -0500
+From: Frank Li <Frank.li@oss.nxp.com>
+To: Conor Dooley <conor@kernel.org>
+Cc: Michal Simek <michal.simek@amd.com>,
+	Shubham Patil <shubhamsanjay.patil@amd.com>,
+	alexandre.belloni@bootlin.com, Frank.Li@kernel.org, robh@kernel.org,
+	krzk+dt@kernel.org, conor+dt@kernel.org,
+	linux-i3c@lists.infradead.org, devicetree@vger.kernel.org,
+	linux-kernel@vger.kernel.org, git@amd.com
+Subject: Re: [PATCH v3 1/3] dt-bindings: i3c: xlnx: Add IBI and hot-join
+ capability properties
+Message-ID: <arL_Zgi1r1IFpNIO@SMW015318>
+References: <aqKWTT47S_zPzvbN@squawk>
+ <aqLQaHndX4t1kKLG@SMW015318>
+ <778da629-2f23-412b-885f-e87827ce2b5c@amd.com>
+ <20260922-ethics-flap-9760347e869d@spud>
+ <20260922-bullpen-reprise-f62e01922d88@spud>
+ <20260922-immersion-salvage-00450539f1ce@spud>
+ <arKr-oapsl5qzo_E@SMW015318>
+ <20260922-purple-overnight-2cdd2ddd5270@spud>
+ <arLKWE1tJrKnzGdp@SMW015318>
+ <20260922-unadvised-stalling-5cbeff8f982a@spud>
+Content-Disposition: inline
+In-Reply-To: <20260922-unadvised-stalling-5cbeff8f982a@spud>
+X-ClientProxiedBy: PH8P220CA0015.NAMP220.PROD.OUTLOOK.COM
+ (2603:10b6:510:345::23) To GV2PR04MB11799.eurprd04.prod.outlook.com
+ (2603:10a6:150:2cf::9)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH 3/3] i3c: add i3cdev character device module for
- user-space access
-To: Andy Shevchenko <andriy.shevchenko@intel.com>,
- Meagan Lloyd <meaganlloyd@linux.microsoft.com>
-Cc: linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
- vitor.soares@toradex.com, samagazaryan@google.com,
- gregkh@linuxfoundation.org, arnd@arndb.de, boris.brezillon@collabora.com,
- oleksandr.shulzhenko.viktorovych@intel.com, tgopinath@linux.microsoft.com,
- corbet@lwn.net, skhan@linuxfoundation.org, linux@roeck-us.net,
- Frank.Li@nxp.com, jorge.marques@analog.com, pgaj@cadence.com,
- wsa+renesas@sang-engineering.com, tommaso.merciai.xr@bp.renesas.com,
- nuno.sa@analog.com, Michael.Hennerich@analog.com, jic23@kernel.org,
- dlechner@baylibre.com, andy@kernel.org, lorenzo@kernel.org,
- enelsonmoore@gmail.com, rppt@kernel.org, pratyush@kernel.org,
- giovanni.cabiddu@intel.com, gabewhigham@gmail.com, haren@linux.ibm.com,
- pasha.tatashin@soleen.com, jirislaby@kernel.org,
- adrian.ho.yin.ng@altera.com, ustc.gu@gmail.com, jszhang@kernel.org,
- adrian.hunter@intel.com, akhilrajeev@nvidia.com, tze.yee.ng@altera.com,
- manikanta.guntupalli@amd.com, shubhrajyoti.datta@amd.com,
- jarkko.nikula@linux.intel.com, linux-doc@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-hwmon@vger.kernel.org, linux@analog.com,
- linux-iio@vger.kernel.org
-References: <20260911210935.1353126-1-meaganlloyd@linux.microsoft.com>
- <20260911210935.1353126-4-meaganlloyd@linux.microsoft.com>
- <aqVUyYkpKT8iX4Jz@ashevche-desk.local>
- <20260916-454d66ca84cc91479b195aa5@linux.microsoft.com>
- <aqt_dCazxTDR4cpk@ashevche-desk.local>
-Content-Language: en-US
-From: Armin Wolf <W_Armin@gmx.de>
-In-Reply-To: <aqt_dCazxTDR4cpk@ashevche-desk.local>
-X-Provags-ID: V03:K1:bnFIj5lioxLUfSCVkhDACEAGRbIYvro8/B1Uqfve6Wu/9imE8AA
- tGXyI5tEGM+3UNdQsCjPwHc6zFq2QCWiIUFkDn+O7B0IqPW0tNpBSHDcILFUgNULxqED+yP
- 1AVMrP96RvBT2ibiJCOzovkRbVRiQpzVhIvlY8wFfb1zpB8FJKexabFK5bpm7/AM9reOC8m
- uijm5GfRvO3eT04MZ8JIA==
-UI-OutboundReport: notjunk:1;M01:P0:LxlTluHVd8Q=;OJD9y/fMc6uBWVOEV75Aac45Ygm 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 TqzQ1EJghxMiEqmYSlwXSW
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|DBBPR04MB7850:EE_
+X-MS-Office365-Filtering-Correlation-Id: 981625d9-1fb0-4bf3-6440-08df18f7dcb7
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|19092799006|1800799024|366016|7416014|23010399003|376014|11063799006|10067099003|6133799003|3023799007|22082099003|18002099003|56012099006|5023799004|4143699003;
+X-Microsoft-Antispam-Message-Info: GaSHVaIzqRjNdRZ94D/47eaM7mI/8Gf6EHbYyxJLD+bjLwg65mqfc5iVMJ2MYpgUgINl0TjtjmNZcFnVEDH1KBBHLCUBu/t5UFJg9dpqXkVKnwx4YCJT8EUU4lXVDh4eZuO/X+UvNyF0zjbA3sDG2kjfukVS2LrAgYOHs4poWTD3jHW8S2qzF7avs/BXvr5g8jt/7bSgjPzgw0em/IsqleysGSoeMiijtEPMyae4n6twW+AVsvBVe2VhT7Mjb8m3KtDQY0wywbdyYPks4EESrHNcYRpQjZlgkcZopURA+9aWiu2PwXpxbFx2m/voOtparWquoEBLG+i3ew4ticTzwOxe7phFLtOwUfzwf2PZz2XcncxeoSC/xIjrvzDuylUwRWhyKRKjVwJDFwtLYvcd8yQAzmOkoH9ZynNi1U0s6G09+aG0pCB8EmhWF25H7dxekrf1SqY16nP1ghVbrsF5JTDSr8zlsmdwmliSFc7N0ikuRWnPLdjiuuvBrT9NtX4R9ex6oaKvtbZZMQzkHK2QXYDesR7uR7JwVZROT+lRVwXHQ0KHElkSwtuvl7v+6IE5bz/yBodHgyEbd60g7dSGV51gZD8TCem5zPaUHMXqeOORJNybYrxZh2QelUj5d0s7
+X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(19092799006)(1800799024)(366016)(7416014)(23010399003)(376014)(11063799006)(10067099003)(6133799003)(3023799007)(22082099003)(18002099003)(56012099006)(5023799004)(4143699003);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?9N0EYFuVzXKh6cG05Cb4EjIDCJvA3e1dVUb4kaNFzWIYMfpdhSXgZTcfbRPf?=
+ =?us-ascii?Q?0nfMymLaKcHaISe76hbdq+izDmbeuA+s++rtiHkbio1uoGmxult7hsr1+s5p?=
+ =?us-ascii?Q?RkEzIKNVSbKBscJlzqACoXmRNiJsF+cBPgps6v1zXAFfJbH3j0MpwqD2tcMq?=
+ =?us-ascii?Q?oONbd0LwXfKn3mkdT8dFzLQBw7FpTmwB0LRE3S3Amu08650mux1lp1D/agoM?=
+ =?us-ascii?Q?its2lDWS/vIcysrWJHtRzqTBjXp51F2cgSLhNEQHOSlEdB78vbhjyknnF0t1?=
+ =?us-ascii?Q?eHn9JnhUUgGfRGforX4u5Z11cJkjnojqveKulmqlsEFwJbExUnD2D/gFeuLH?=
+ =?us-ascii?Q?wTYDZKG/vUV9uOL4PLeRsQFy780/oxC9LvCwTU5egaS170+kljyXZ9KgMwD2?=
+ =?us-ascii?Q?GAhAF31xIt7lB5dpgbQkA9PDElOk0wwDCqIe/+JevvIpe+ymplxtwL/MzMr6?=
+ =?us-ascii?Q?okg2vPD+vUyHryPuQALusXL4PxY3KDwtxJyUCajp0tqT6SOK/R00XVtCv4xd?=
+ =?us-ascii?Q?rDzH9WqXuRH95HnLyn94re1J+wvtd2SfCljDT7MJfk+26H1P8+h66bHr0q6M?=
+ =?us-ascii?Q?kRyn9BygkFYPQqYap8Eeq8jXsjOe9OPkUG+ispWocWWnyIaeZ2+bhgi5FpkR?=
+ =?us-ascii?Q?+3Y/r+K+3YRK+3EUeP3b6LMa+/RpwlSS0KzXbfk4DXwx23q7X1uqxbcTgdgZ?=
+ =?us-ascii?Q?xiBdPV2xqRMcxA7iMPSJJ/lSPOGq6FXLU5ndTRWfdbOdLnrd3fMZpZhEbXtk?=
+ =?us-ascii?Q?81wduwTVY0WJBqSqiNfNDn4Qouv5I+LNvG1F9ZNM1jYtrMGeLG06QkCH45aZ?=
+ =?us-ascii?Q?AXkSaljR11JaLpraWWqwWISYJOtxX1EmeUkFbYlQxHfoxGjw0W+GaYwjbczn?=
+ =?us-ascii?Q?w1Rk57z1OhsOr3Z1fHCh3J9rStjY04u3AUf6uour+tyl65NYQqnIeHaQoEiv?=
+ =?us-ascii?Q?Db5zFtFU0AfmmrGucKDiW4HrtvnVAeihJkQocpYYhUXgb5m4uu4f7eBgF7/T?=
+ =?us-ascii?Q?HEabQc7jR+Oh1tbQgUtN7jhGtOosq5xBxnnoruNcdHCUAD9iBy5rUuXT5KaP?=
+ =?us-ascii?Q?g22SoFFpZs70ebRft1OrF1tMGLddd7PvmNwzCYiGJ2uWs752SjqlSdwunAWl?=
+ =?us-ascii?Q?W5wwxq/F5BBgrkBwA58GfJQfcZsurXSff2kgB0ZAH9/IK1M+PE6fEIC+fZFV?=
+ =?us-ascii?Q?O0ZFhepVWi1JBkGoFoj40HXlCKhg5qd0WwYq4XZG28y7KAIRB8BsgMprp3Ti?=
+ =?us-ascii?Q?npNDxhy7pf7WTpTWfHkMB2HD0Bz3GGD0mC5RKA/zSIEpA0MFS3mb41tYB7A8?=
+ =?us-ascii?Q?tFvVIfMWTncD1+cHy0rvjZfCF5z6HiTiibEqg/6IpNk3ZhP92dFuohXjkH6T?=
+ =?us-ascii?Q?u5SRLu+XFWXKDPFCFOkcnPXzKGhWb7C7u6k+ENzE22nr5Zls5igzUGWCmC/8?=
+ =?us-ascii?Q?RC1PYdjC4WWGaJ6V8b8C3AP1U8cYwOg5VWrB2u80RI3MlfObXGadg4fp4/WB?=
+ =?us-ascii?Q?9Om1h68olPCik8WZ66GG9W8CXHmkRyWpSV0hlhW3NykbR2cDqyKL97cITXo1?=
+ =?us-ascii?Q?xKi7dyY7mYPzyKbPXXMmqJQWgHRVeAu2K4qkhthED0Q3GsBLJ2cwQZqPZB59?=
+ =?us-ascii?Q?ysRXKAuiiJv92/frT1HcxMVEGVjboI38JAFHxha9Xt1HInAycjLsBb0/8l67?=
+ =?us-ascii?Q?u7dkq/OqV6jUm52AwzYDfPxQiplBLT32EOkrZxrZMXoJdx5/n4VPhFZUYAWE?=
+ =?us-ascii?Q?l0vTCoOSgqRwv5IpZblKKQX7J1v4ovQr76Wj4biauGPHySop6wst?=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 981625d9-1fb0-4bf3-6440-08df18f7dcb7
+X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Sep 2026 22:21:35.1728
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: lb+4OLfU24tdeTq+fDEQ53XuD2fwZGWe1cY8MlQEA/ZXLLIp22cgSw8W+Qiqw1Qs4mX0xGg4VHNzyGQBkUrFbkkaQI2PbhhcSJicdCDzfWbC0KXKchmBBTGTGZEfs0w9
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DBBPR04MB7850
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260922_135332_205383_9D275D0C 
-X-CRM114-Status: GOOD (  31.59  )
+X-CRM114-CacheID: sfid-20260922_152141_196720_506A50DA 
+X-CRM114-Status: GOOD (  49.35  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -99,90 +145,196 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-QW0gMTcuMDkuMjYgdW0gMDc6NDkgc2NocmllYiBBbmR5IFNoZXZjaGVua286Cgo+IE9uIFdlZCwg
-U2VwIDE2LCAyMDI2IGF0IDAzOjU3OjEwUE0gLTA3MDAsIE1lYWdhbiBMbG95ZCB3cm90ZToKPj4g
-T24gU2F0LCBTZXAgMTIsIDIwMjYgYXQgMDQ6MzQ6MDFQTSArMDMwMCwgQW5keSBTaGV2Y2hlbmtv
-IHdyb3RlOgo+Pj4gT24gRnJpLCBTZXAgMTEsIDIwMjYgYXQgMDI6MDk6MzVQTSAtMDcwMCwgTWVh
-Z2FuIExsb3lkIHdyb3RlOgo+Pj4+IFRoZSBpM2NkZXYgZHJpdmVyIGlzIGEgY2hhcmFjdGVyIGRl
-dmljZSBkcml2ZXIgdGhhdCBhbGxvd3MgdXNlci1zcGFjZQo+Pj4+IHRvIGNvbnRyb2wgYW5kIGlu
-dGVyYWN0IHdpdGggSTNDIGRldmljZXMuCj4+Pj4gQ3VycmVudGx5LCBpdCBoYXMgdGhlIGFiaWxp
-dHkgdG8gcGVyZm9ybSBTaW5nbGUgRGF0YSBSYXRlIChTRFIpCj4+Pj4gdHJhbnNmZXJzIC0gYmFz
-aWMgcmVhZHMvd3JpdGVzLgo+Pj4+Cj4+Pj4gV2l0aCB0aGUgYWRkaXRpb24gb2Ygc3lzZnMgZHJp
-dmVyX292ZXJyaWRlLCB0aGVyZSBpcyBub3cgYQo+Pj4+IHN0cmFpZ2h0Zm9yd2FyZCBhbmQgZGly
-ZWN0IHdheSB0byBtYXRjaCB0aGUgaTNjZGV2IGRyaXZlciB0byBhbnkgaTNjCj4+Pj4gZGV2aWNl
-IHdpdGhvdXQgc3RlcHBpbmcgb24gdGhlIHRvZXMgb2YgbW9yZSBzcGVjaWFsaXplZCBkcml2ZXJz
-IHRoYXQgYXJlCj4+Pj4gbG9hZGVkIGF1dG9tYXRpY2FsbHkuCj4+PiBJcyBpdCBzYWZlPyBXaHkg
-b24gdGhlIGVhcnRoIGRvIHdlIG5lZWQgdGhpcz8gVGhlIGNvbW1pdCBtZXNzYWdlIGhhcyBub3Qg
-ZW5vdWdoCj4+PiBpbmZvcm1hdGlvbi4KPj4gSSBjYW4ndCBzZWUgYSByZWFzb24gdGhhdCBpdCdk
-IGJlIHVuc2FmZS4gVG8gZ2l2ZSBhZGRpdGlvbmFsIGNvbmZpZGVuY2UsCj4+IGl0J3MgYWxyZWFk
-eSBpbi11c2UgaW4gbWFueSBidXNfdHlwZXM6Cj4gVGhpcyBhcmd1bWVudCBoYXMgbm90aGluZyB0
-byBkbyB3aXRoIGnCs2MuIEVhY2ggYnVzIGlzIGRpZmZlcmVudCBvbiBhIHBoeXNpY2FsCj4gbGF5
-ZXIsIGVsZWN0cmljYWwgcHJvdG9jb2xzIGFuZCBwcm9ncmFtbWluZyBmbG93LiBFYWNoIG9mIHRo
-ZW0gaGFzIG93bgo+IGNvbnN0cmFpbnRzLgo+Cj4+IFRvIGFuc3dlciB3aHkgd2UgbmVlZCBpdDoK
-Pj4gSWYgd2Ugd2FudCB0byB3cml0ZSBpM2NkZXYgYXMgYSBzdGFuZGFyZCBkZXZpY2UgZHJpdmVy
-LCBpdCBjYW4ndAo+PiBhY3R1YWxseSBtYXRjaCBhbnl0aGluZyBieSBkZWZhdWx0LiBUaGlzIGlz
-IGJlY2F1c2UsIHNvbWUgZGV2aWNlcyBvbiB0aGUKPj4gc3lzdGVtIG1heSBuZWVkIHNwZWNpZmlj
-IGRyaXZlcnMgYW5kIGkzY2RldiBpcyBnZW5lcmljIGFuZCBzaG91bGQKPj4gdGVjaG5pY2FsbHkg
-bWF0Y2ggZXZlcnkgZGV2aWNlLgo+IFllcywgYnV0IEkgaGF2ZSBzZWVuIG5vIHJlYXNvbiB3aHkg
-d2Ugc2hvdWxkIGV4cG9zZSBpwrNjIGJ1cyB0byB0aGUgdXNlcgo+IHNwYWNlLiBXaXRoIGnCsmMg
-d2UgYWxyZWFkeSBrbm93IHZlcnkgd2VsbCB0aGF0IGl0IHdhcyAoYW5kIHN0aWxsIGlzKQo+IGEg
-YmFkIGlkZWEuIFdoeSBpwrNjIGlzIGJldHRlciAoZXNwZWNpYWxseSB0YWtpbmcgaW50byBhY2Nv
-dW50IGnCsmMKPiBjb21wYXRpYmxlIG1vZGUgYW5kIG1vcmUgY29tcGxleCBwcm9ncmFtbWluZyBm
-bG93KT8KCkhpLAoKaW4gbXkgZXhwZXJpZW5jZSBzb21ldGltZXMgZHVyaW5nIGRyaXZlciBkZXZl
-bG9wbWVudCB5b3Ugd2FudCB0byBhY2Nlc3MgdGhlIGRldmljZQpkaXJlY3RseSB0byB0ZXN0IHRo
-aW5ncywgYnV0IG9mIGNvdXJzZSB0aGlzIGlzIGluY3JlZGlibHkgdW5zYWZlLgoKSSB0aGluayB3
-ZSBzaG91bGQgdGFpbnQgdGhlIGtlcm5lbCBhcyBzb29uIGFzIHVzZXJzcGFjZSBhcHBsaWNhdGlv
-bnMgcGVyZm9ybSByYXcKaTNjIGFjY2Vzc2VzLCBidXQgdGhlIGlkZWEgaXRzZWxmIGlzIGZpbmUg
-ZnJvbSBteSBwb2ludCBvZiB2aWV3LgoKVGhhbmtzLApBcm1pbiBXb2xmCgo+PiBTaW5jZSB0aGUg
-ZHJpdmVyX292ZXJyaWRlIGlzIGRlZmF1bHQgTlVMTCBhbmQgaXMgc2V0IHZpYSBzeXNmcywgdGhp
-cwo+PiBhbGxvd3MgYW55IHNwZWNpZmljIGRyaXZlcnMgb24gYm9vdCB0byBiZSBsb2FkZWQgdXAg
-YW5kIHdvdWxkIGFsbG93Cj4+IGV4cGxpY2l0IGNvbnRyb2wgb24gd2hhdCBkZXZpY2UgaTNjZGV2
-IGdldHMgYm91bmQgdG8uCj4+Cj4+IFRoaXMgd2FzIG15IHJhdGlvbmFsLiBJIHdpbGwgcmVmaW5l
-IHRoZSBjb21taXQgbWVzc2FnZSB3aXRoIG1vcmUgZGV0YWlscy4KPiBQdXQgYSByZWFsIGxpZmUg
-ZXhhbXBsZSB3aHkgdGhlIGV4cG9zaW5nIGnCs2MgZGV2aWNlcyBpbnRvIHVzZXIgc3BhY2UgaXMK
-PiBhYnNvbHV0ZWx5IG5lY2Vzc2FyeS4KPgo+Pj4+IFRoaXMgaXMgYWNjb21wbGlzaGVkIGJ5IHRo
-ZSBpM2NkZXYgZHJpdmVyIG5vdCBoYXZpbmcgYW55IGVudHJpZXMgaW4KPj4+PiB0aGUgaTNjX2Rl
-dmljZV9pZCB0YWJsZS4gQWZ0ZXIgYm9vdCwgc2ltcGx5IHNldCB0aGUgZHJpdmVyX292ZXJyaWRl
-Cj4+Pj4gdG8gImkzY2RldiIgYW5kIGJpbmQgdGhlIGRldmljZSBtYW51YWxseSB2aWEgdGhlIHN5
-c2ZzIGJpbmQga25vYi4KPj4+PiBUaGlzIGNhbiBhbHNvIGJlIGF1dG9tYXRlZCB3aXRoIHVkZXYg
-cnVsZXMgYXMgd2VsbC4KPj4+Pgo+Pj4+IFRoZSBjaGFyYWN0ZXIgZGV2aWNlIGludGVyZmFjZSB3
-aWxsIGJlIGV4cG9zZWQgYXQ6IC9kZXYvYnVzL2kzYy88YnVzCj4+Pj4gaWQ+LTxQcm92aXNpb25h
-bCBJRD4KPiAuLi4KPgo+Pj4+ICsJZm9yIChpbnQgaSA9IDA7IGkgPCBtZXRhZGF0YS0+bnhmZXJz
-OyBpKyspIHsKPj4+IFdoeSBpcyAnaScgc2lnbmVkPwo+PiBNb3N0bHkgZm9yIHJlYWRhYmlsaXR5
-IGFuZCB0byBtYWtlIHN1cmUgdGhlIGxpbmUgbGVuZ3RoIG9uIGxvb3AgaGVhZGVycwo+PiBpcyBr
-ZXB0IGJlbG93IDgwIGNoYXJzLiBBcyBhIHByZWNhdXRpb24sIHRvIG1ha2Ugc3VyZSB0aGF0ICdp
-JyBjYW4KPj4gcmVwcmVzZW50IGFueSBtZXRhZGF0YS0+bnhmZXJzIHZhbHVlIHdpdGhvdXQgb3Zl
-cmZsb3cgZHVyaW5nIGxvb3BzLCBJCj4+IGNoZWNrIHRoYXQgbWV0YWRhdGEtPm54ZmVycyBpcyBs
-ZXNzIHRoYW4vZXF1YWwgdG8gSU5UX01BWCBpbgo+PiBnZXRfbWV0YWRhdGEoKS4KPiBObyBuZWVk
-IHRvIGFkZCB1c2VsZXNzIGNoZWNrcy4KPgo+IC4uLgo+Cj4+Pj4gKy8qKiArICogcHJpbnRfaTNj
-X2VycigpIC0gUHJpbnRzIHRoZSBJM0MgZXJyb3IgZW5jb3VudGVyZWQgZHVyaW5nCj4+Pj4gdGhl
-IHByaW9yICsgKiBjYWxsIHRvIHRoZSBjb3JlJ3MgdHJhbnNmZXIgZnVuY3Rpb24uICArICogQGkz
-Y2RldjoKPj4+PiBpM2NkZXZfZGF0YSBvYmplY3QgKyAqIEBtZXRhZGF0YTogS2VybmVsJ3MgY29w
-eSBvZiBpM2NkZXZfeGZlcnMKPj4+PiAoaW9jdGwgSTNDREVWX1hGRVIgaW5wdXQpICsgKiBAaTNj
-X3hmZXJzOiBpM2NfeGZlciBhcnJheSB0aGF0IHdhcwo+Pj4+IHNlbnQgdG8gdGhlIEkzQyBjb3Jl
-Cj4+Pj4gKyAqIFJldHVybnM6IHZvaWQKPj4+IEh1aD8hIFdoZXJlIGlzIHRoaXMgY29taW5nIGZy
-b20/Cj4+IEluIGkzY2Rldl9pb2N0bF9kb194ZmVycywgaWYgaTNjX2RldmljZV9kb194ZmVycyBm
-YWlsZWQsIEkgd2FudGVkIHRvCj4+IHByaW50IG91dCB0aGUgZmlyc3QgSTNDIGNvbnRyb2xsZXIg
-ZXJyb3IgZW5jb3VudGVyZWQuIFRoZSBjb250cm9sbGVyCj4+IGRyaXZlcnMgY2FuIHNldCB0aGlz
-IGluIHRoZSBpM2NfeGZlci5lcnIgZmllbGQuIEhlbmNlIHRoaXMgZnVuY3Rpb24uCj4+Cj4+IEl0
-J3MgdG8gYWlkIGRlYnVnZ2luZyBhbmQgcHJvdmlkZSB1c2VmdWwgZXJyb3IgaW5mb3JtYXRpb24u
-Cj4+IEkgY2FuIGNlcnRhaW5seSByZWZpbmUgdGhlIHdvcmRpbmcgb24gdGhlIHByaW50X2kzY19l
-cnIgZG9jdW1lbnRhdGlvbgo+PiBoZWFkZXIgdG8gbWFrZSB0aGlzIG1vcmUgY2xlYXIuCj4gTXkg
-cG9pbnQgaXMgYWJvdXQga2VybmVsLWRvYy4gV2h5IGRvIHdlIG5lZWQgdGhlIHJldHVybiBzZWN0
-aW9uIGZvciB2b2lkPwo+IFdoZXJlIGl0IGNvbWVzIGZyb20/Cj4KPj4+PiArICovCj4gLi4uCj4K
-Pj4+IFBsZWFzZSwgcmVseSBsZXNzIG9uIEFJIGFuZCBtb3JlIG9uIHRoZSBjb21tb24gc2Vuc2Ug
-YW5kCj4+PiBwcm9vZi1yZWFkaW5nLgo+PiBJIHRoaW5rIEkgZ2F2ZSB5b3UgdGhlIHdyb25nIGlt
-cHJlc3Npb24uIFRoZSBuZXcgY29udHJpYnV0aW9ucyBpbiB0aGlzCj4+IHNlcmllcyB3ZXJlIHdy
-aXR0ZW4gYW5kIGRldmVsb3BlZCBieSBtZS4gSSB1c2VkIEFJIGZvciBxdWFsaXR5IGFzc3VyYW5j
-ZQo+PiBhbmQgY3Jvc3MtcmVmZXJlbmNpbmcuIFNpbmNlIEkgaW5jb3Jwb3JhdGVkIHNvbWUgQUkt
-ZmxhZ2dlZCBzdWdnZXN0aW9ucywKPj4gSSB0cmllZCB0byBhY2tub3dsZWRnZSB0aGF0IHdpdGgg
-dGhlIEFzc2lzdGVkLWJ5IHRhZy4KPiBJIHNlZSwgdGhlbiB0aGVyZSBpcyBhIHJvb20gdG8gaW1w
-cm92ZSB0aGUgY29kZS4gQnV0IHRoZSBtYWluIHF1ZXN0aW9uIGlzCj4gd2h5IGRvIHdlIGV2ZW4g
-bmVlZCB0aGlzIHdob2xlIGludGVyZmFjZSB0byBiZWdpbiB3aXRoPwo+CgotLSAKbGludXgtaTNj
-IG1haWxpbmcgbGlzdApsaW51eC1pM2NAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWkzYwo=
+On Tue, Sep 22, 2026 at 10:29:31PM +0100, Conor Dooley wrote:
+> On Tue, Sep 22, 2026 at 01:35:04PM -0500, Frank Li wrote:
+> > On Tue, Sep 22, 2026 at 06:24:52PM +0100, Conor Dooley wrote:
+> > > On Tue, Sep 22, 2026 at 11:25:30AM -0500, Frank Li wrote:
+> > > > On Tue, Sep 22, 2026 at 10:39:23AM +0100, Conor Dooley wrote:
+> > > > > On Tue, Sep 22, 2026 at 10:38:17AM +0100, Conor Dooley wrote:
+> > > > > > On Tue, Sep 22, 2026 at 10:33:44AM +0100, Conor Dooley wrote:
+> > > > > > > On Thu, Sep 17, 2026 at 01:23:19PM +0200, Michal Simek wrote:
+> > > > > > > >
+> > > > > > > >
+> > > > > > > > On 9/10/26 17:44, Frank Li wrote:
+> > > > > > > > > On Thu, Sep 10, 2026 at 12:36:45PM +0100, Conor Dooley wrote:
+> > > > > > > > > > On Wed, Sep 09, 2026 at 11:21:41AM -0500, Frank Li wrote:
+> > > > > > > > > > > On Tue, Sep 08, 2026 at 06:54:31PM +0100, Conor Dooley wrote:
+> > > > > > > > > > > > On Tue, Sep 08, 2026 at 03:12:55PM +0530, Shubham Patil wrote:
+> > > > > > > > > > > > > In-Band Interrupt and Hot-Join are synthesis-time options of the AXI I3C
+> > > > > > > > > > > > > IP. Describe them with two boolean properties.
+> > > > > > > > > > > > >
+> > > > > > > > > > > > > A Hot-Join request is acknowledged by the IBI machinery, so a hot-join
+> > > > > > > > > > > > > capable design is always IBI capable as well. Both events are reported
+> > > > > > > > > > > > > through the controller interrupt, which is therefore required whenever
+> > > > > > > > > > > > > the capability is present.
+> > > > > > > > > > > > >
+> > > > > > > > > > > > > Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
+> > > > > > > > > > > > > ---
+> > > > > > > > > > > > > Changes in V3:
+> > > > > > > > > > > > > - Move in-band-interrupt-capable and hot-join-capable into the common
+> > > > > > > > > > > > >    i3c.yaml schema and drop the xlnx, prefix.
+> > > > > > > > > > > > > - Keep dependencies in the AMD binding.
+> > > > > > > > > > > > > - Update the commit description accordingly.
+> > > > > > > > > > > > > - Conor Dooley acked v2 with the xlnx,-prefixed properties in the AMD
+> > > > > > > > > > > > >    binding [1].
+> > > > > > > > > > > > >    That Acked-by is not carried here: the names lost the vendor prefix
+> > > > > > > > > > > > >    and the definitions moved to i3c.yaml after Frank Li's comment.
+> > > > > > > > > > > > >    [1]:https://lore.kernel.org/all/20260824-tightwad-impose-495476599087@spud/
+> > > > > > > > > > > >
+> > > > > > > > > > > > I disagree with Frank. These properties make sense for Xilinx because it
+> > > > > > > > > > > > is an FPGA IP and synthesis options impact this. For other devices, this
+> > > > > > > > > > > > should be determined from the compatible.
+> > > > > > > > > > > > Please revert to how things were done in v2, especially as no rationale
+> > > > > > > > > > > > was provided for why these should be common.
+> > > > > > > > > > >
+> > > > > > > > > > > It is common problems, when IP intergrate by SOC, which may defeature some
+> > > > > > > > > > > part, It is not appeared now just because IBI and HJ have not enabled
+> > > > > > > > > > > widely.
+> > > > > > > > > > >
+> > > > > > > > > > > IBI and HJ is optional features of I3C. Ideally it should be indicated by
+> > > > > > > > > > > some registers. But not all vendor implement provide this CAP registers.
+> > > > > > > > > > >
+> > > > > > > > > > > IBI and HJ depend on some slow clocks, which monitor SDA line change.
+> > > > > > > > > > > Some instances of IP may not have such slow clocks. Some IP's IBI and HJ
+> > > > > > > > > > > use seperate IRQ line, but these irq line may not connect of difference
+> > > > > > > > > > > instances.
+> > > > > > > > > >
+> > > > > > > > > > All of this should be able to be dealt with by appropriate use of
+> > > > > > > > > > specific compatibles.
+> > > > > > > > >
+> > > > > > > > > I understand compatible can cover most cases. Need variance for property.
+> > > > > > > > >
+> > > > > > > > > >
+> > > > > > > > > > > like previous SPI vendor customized property, we takes efforts to convert
+> > > > > > > > > > > to common one and also meet back compatiblity problem at convert. I don't
+> > > > > > > > > > > want to do it again. This kind property is most likely as below.
+> > > > > > > > > >
+> > > > > > > > > > What SPI controller specific properties are you talking about here?
+> > > > > > > > > > There are relatively few properties in spi-controller.yaml, and none of
+> > > > > > > > > > them deal with these kinds of capabilities.
+> > > > > > > > >
+> > > > > > > > > num-cs vs fsl,espi-num-chipselects. Total number CS of IP is fixed, but
+> > > > > > > > > some instances have not route all CS to pad.
+> > > > > > > > >
+> > > > > > > > > >
+> > > > > > > > > > >
+> > > > > > > > > > > default: 	decide by comaptible string or hardware cap
+> > > > > > > > > > > force-disabled: force disable for some reason, like, miss connect irq line
+> > > > > > > > > > > or missed some clock, or IP bugs, or board desgin's some level shift chip
+> > > > > > > > > > > broken IBI/HJ timing requirements.
+> > > > > > > > > >
+> > > > > > > > > > Of these, only the last would be a valid reason for having a property
+> > > > > > > > > > for it. Missing interrupts, clocks or IP bugs should all be dealt with
+> > > > > > > > > > using device specific compatibles.
+> > > > > > > > > > If board wiring causes the breakage, the property may be more
+> > > > > > > > > > appropriate at the i3c device level rather than the controller given
+> > > > > > > > > > that wiring to some devices on the bus may not have the problems?
+> > > > > > > > >
+> > > > > > > > > I3C.yaml is for both master controller and devices now. I3C is bus, which
+> > > > > > > > > connect many devices, if wiring issue, whole bus can't support IBI. And
+> > > > > > > > > if any broken devices happen at address arbitation, whole bus can't support
+> > > > > > > > > IBI.
+> > > > > > > > >
+> > > > > > > > > at beging, I suggest 3 state,
+> > > > > > > > >
+> > > > > > > > > [default, enable, disable], but now I think IBI_broken, HJ_broken is more
+> > > > > > > > > reasonable to disable it, default value should be set by compatible
+> > > > > > > > > string or DCR of I3C regiser.
+> > > > > > > > >
+> > > > > > > > > And some I3C device may be failure to work with IBI even DCR of I3C register
+> > > > > > > > > show it support IBI.
+> > > > > > > > >
+> > > > > > > > > I don't want to appear two similar property between vendor and common, like
+> > > > > > > > > num-cs vs fsl,espi-num-chipselects.
+> > > > > > > > >
+> > > > > > > > > such as IBI-broken can be used for controller and devices case.
+> > > > > > > > >
+> > > > > > > > > > That said, I think that problem should be dealt with when it arises,
+> > > > > > > > > > rather than starting a trend of adding capabilities properties at the
+> > > > > > > > > > controller level when I am not convinced that there's going to be other
+> > > > > > > > > > users in the same vein.
+> > > > > > > > >
+> > > > > > >
+> > > > > > > > > Understand, I3C is realtive new protocal. 'IBI-broken' is more easy
+> > > > > > > > > understand,  logically equial to in-band-interrupt-capable.
+> > > > > > > > Conor: Any update on this one? I think this thread is stuck at this stage.
+> > > > > > >
+> > > > > > > I didn't think there was any need to reply. I took the first sentence of
+> > > > > > > this snippet to be acceptance of what I was saying.
+> > > > > > >
+> > > > > > > If yous desperately want to have a generic property, the negative
+> > > > > > > connotation of the "-broken" is probably better in that it'd be more
+> > > > > > > likely to make people set stuff by compatible rather than have to use a
+> > > > > > > property with that word in it.
+> > > > > >
+> > > > > > That said, technically this platform could be both
+> > > > > > "amd,in-band-interrupt-capable" and "ibi-broken" at the same time, since
+> > > > > > one describes the way the IP has been compiled and the other wiring. I'm
+> > > > > > not entirely sure whether conflating the two is possible? Depends on if
+> > > > > > your IP's programming model changes if the option is enabled even if it
+> > > > > > cannot be used. Not beyond the realms of possibility.
+> > > > > >
+> > > > > > Also, ibi-broken doesn't work for your platform, since the default
+> > > > > > before this patch is no ibi and requiring a property for no ibi would be
+> > > > > > an ABI break.
+> > > > >
+> > > > > The perils of FPGA IP I suppose, and not being quite careful enough to
+> > > > > document all of the relevant options from the start. Been guilty of that
+> > > > > myself.
+> > > > >
+> > > >
+> > > > Check impliment code
+> > > >
+> > > > +       /*
+> > > > +        * The interrupt only carries IBI events, so it is only described for
+> > > > +        * designs synthesized with that feature.
+> > > > +        */
+> > > > +       if (master->ibi_capable) {
+> > > > +               xi3c_master_init_ibi_ops(master);
+> > > > +
+> > > > +               master->irq = platform_get_irq(pdev, 0);
+> > > > +               if (master->irq < 0)
+> > > > +                       return master->irq;
+> > > > +
+> > > > +               ret = devm_request_irq(master->dev, master->irq,
+> > > > +                                      xi3c_master_irq_handler, IRQF_NO_AUTOEN,
+> > > > +                                      dev_name(master->dev), master);
+> > > > +               if (ret)
+> > > > +                       return dev_err_probe(master->dev, ret,
+> > > > +                                            "Failed to request IRQ\n");
+> > > > +       }
+> > > >
+> > > > They can use master->irq is determinate if support IBI.
+> > >
+> > > That seems viable. Where does that leave them for hot join though?
+> >
+> > No reason to keep hj because the difference between HJ and IBI is the
+> > address when address arbitration. If hardware support IBI, it should support
+> > HJ. HJ just use special address 0x2.
+>
+> For this IP, they appear to be controlled by different configuration time
+> parameters, so I don't think conflating the two is the right thing to do
+> here:
+> https://docs.amd.com/r/en-US/pg439-axi-i3c/Configuration-Tab
+> Per this doc, and the original commit, hotjoin configuration is not
+> permitted when ibi is not supported but can be enabled and disabled
+> separately when it is.
+
+I am not sure why provide such flexiblity, only difference is that compare
+address 2 or other value.
+
+This feature may be quite common for i3c, if other soft IP provider such
+flexiblity, still common property is the better than vendor specific one.
+
+Frank
+
+
+-- 
+linux-i3c mailing list
+linux-i3c@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-i3c
