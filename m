@@ -4,43 +4,42 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86829C98318
-	for <linux-i3c@archiver.kernel.org>; Thu, 24 Sep 2026 22:11:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 964BFC9831E
+	for <linux-i3c@archiver.kernel.org>; Thu, 24 Sep 2026 23:27:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=083LX/+ArY4xmj2RqqMJuHjGHxwGPI+xUayH7xSd2iY=; b=VB0COtrlixJSzn
-	MwPQfnNxqrGjoQ3q2ibAfWftlobch3L45v+QMR29TxfWtroKY7fDhp704NmJdCl72EVzmzqkFV5ok
-	WpRG2mmDnLDQFoc95bquUXo/ZriGQ1K8Wv2llIOMSAdlyIHyTshIxb+1Q3QVVRVDS67UVOERDOTtA
-	dLJ3v53gkZm2nyl4HRxsxvsRqtVzKy2G5DRF0a5VkCl5+FdzytviVJgieuF6rJEVbr/ZQ4iuKul8g
-	zqY+L9y9F6/hyvh7kUXM6Jm6SmnFRa00E/SH3qV/LNoxJRrVhIfkUQu+ZIg9AigABTqXcofWqGo4c
-	jZz2A0GmDVz6T6IrBqJQ==;
+	List-Owner; bh=mmO2dZvkD4E4saAZLpfg9q5PqMMZxt6Bo57xdSdPCpU=; b=b5mn1lzDXn47Rq
+	FnbYC6nSxYinHycERFk3lrkgIGVzFwWOa7y89djFrGGndFVcb7yrGGlQRUL0gFwOLW0WVloe37X7c
+	XUs3WmeI6BFRL6hFQQLkDVxXfNeUjs2ZvULNh6SrduYjeinDtYKXt7ydQojK0Zs9eIhnADS7/DgrG
+	y4prNtihrLTJ1HIZ1eyEJsp4qj8bsa7aBtqPQBwIC9GAESvyhTEUehyVOwVttoDNKfIgVkvIZxj7w
+	oLmT85HJd7mmnrqgxNnH1cOvEMGVufQzwOHXRfaAko7o+lOKClhxpcFPm/qSN3rMwNGdy3/QDRzSF
+	QzlHXUtEx23GQPkJ3rBg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9rfN-0000000CGfT-0Eah;
-	Thu, 24 Sep 2026 22:11:45 +0000
+	id 1x9sqr-0000000CNZJ-3LQu;
+	Thu, 24 Sep 2026 23:27:41 +0000
 Received: from linux.microsoft.com ([13.77.154.182])
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9rfK-0000000CGf7-1vCv
+	id 1x9sqp-0000000CNYh-0IIb
 	for linux-i3c@lists.infradead.org;
-	Thu, 24 Sep 2026 22:11:43 +0000
+	Thu, 24 Sep 2026 23:27:40 +0000
 Received: by linux.microsoft.com (Postfix, from userid 1223)
-	id 22BFB20B7167; Thu, 24 Sep 2026 15:10:51 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com 22BFB20B7167
+	id 379CC20B7167; Thu, 24 Sep 2026 16:26:47 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com 379CC20B7167
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.microsoft.com;
-	s=default; t=1790287851;
-	bh=r3n8IcDEhgi+VEQtnJMrWd+GOlGZCNoe/fBGoTU0rkM=;
+	s=default; t=1790292407;
+	bh=Ol4Gw21epj/8o0vv4nhFU7uulVUuXLQX34MJO4d++BM=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=YW41R6azC4xYKKcnEtJJkEiFHG/tmwZMcdKv+DQcnTjv9Dmb4rhgfvVLnrVg80Ei6
-	 FAI63I7VWQFSfwHzIfBnWDX/uORWeG8i+fhrArgHwryFLCxjdPMSA3fvpRWp9m9O8g
-	 V+6A4YsyE4YnxBIc7Z7Mrkrs0N/JKwrXfUMzdZrE=
-Date: Thu, 24 Sep 2026 15:10:51 -0700
+	b=sKbbtKfJp0xwhazY6dZN1s6FSAhmDbLW451ldNLBpYkgVf4iN1FJt+VM8Y6mMelVu
+	 fvsVMsJolobwtOFvPAGnLafipE1deJZKFkIlT8Pnl6GDUUFSll4oiWvq3lRm/4wTMv
+	 NoJXAb4LeOHKFCTcZYfWKfAVmO54Y26EjTOYvHgs=
+Date: Thu, 24 Sep 2026 16:26:47 -0700
 From: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
-To: Andy Shevchenko <andriy.shevchenko@intel.com>,
-	y@linux.microsoft.com
+To: Andy Shevchenko <andriy.shevchenko@intel.com>
 Cc: Meagan Lloyd <meaganlloyd@linux.microsoft.com>,
 	linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
 	vitor.soares@toradex.com, samagazaryan@google.com,
@@ -65,7 +64,7 @@ Cc: Meagan Lloyd <meaganlloyd@linux.microsoft.com>,
 	linux@analog.com, linux-iio@vger.kernel.org, andi.shyti@kernel.org
 Subject: Re: [PATCH 3/3] i3c: add i3cdev character device module for
  user-space access
-Message-ID: <20260924-db82fe4537102d1920dd09bc@linux.microsoft.com>
+Message-ID: <20260924-86692413bdae0e78a12c1425@linux.microsoft.com>
 References: <20260911210935.1353126-1-meaganlloyd@linux.microsoft.com>
  <20260911210935.1353126-4-meaganlloyd@linux.microsoft.com>
  <aqVUyYkpKT8iX4Jz@ashevche-desk.local>
@@ -75,8 +74,8 @@ MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <aqt_dCazxTDR4cpk@ashevche-desk.local>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260924_151142_643169_561323EB 
-X-CRM114-Status: GOOD (  53.09  )
+X-CRM114-CacheID: sfid-20260924_162739_157342_B677CCAD 
+X-CRM114-Status: GOOD (  53.71  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -126,6 +125,11 @@ not enough
 ysical
 > layer, electrical protocols and programming flow. Each of them has own
 > constraints.
+> =
+
+
+(resending as my previous reply hit a snag and is probably marked as
+spam for most people)
 
 My take is that if you're using the i3cdev module, it's up to the
 programmer to review schematics/datasheets to know how to program
@@ -136,8 +140,6 @@ subsystem reviewers, so please continue any further discussion in the
 prevailing approach's thread:
 https://lore.kernel.org/linux-i3c/20260921230603.2518652-1-samagazaryan@goo=
 gle.com/T/#mb42d9b2785f8508d39eaf782b3d29189226b8029
-
-> =
 
 > > To answer why we need it:
 > > If we want to write i3cdev as a standard device driver, it can't
@@ -153,9 +155,9 @@ gle.com/T/#mb42d9b2785f8508d39eaf782b3d29189226b8029
 > =
 
 
-cc'ing Andy Shyti from I2C subsystem for context.
+cc'ing Andi Shyti from I2C subsystem for context.
 
-Andy, we're considering an I3C character device driver interface.
+Andi, we're considering an I3C character device driver interface.
 If you have any feedback from your experience with I2C, can you
 please share it in:
 https://lore.kernel.org/linux-i3c/20260921230603.2518652-1-samagazaryan@goo=
@@ -172,6 +174,8 @@ s.
 
 > Put a real life example why the exposing i=B3c devices into user space is
 > absolutely necessary.
+> =
+
 
 I'm supporting a kernel running on accelerator cards that plug into
 various server SKUs where hubs/devices along the bus are not physically
@@ -194,7 +198,6 @@ gle.com/T/#mb42d9b2785f8508d39eaf782b3d29189226b8029
 
 Thank you,
 Meagan
-> =
 
 > > > > This is accomplished by the i3cdev driver not having any entries in
 > > > > the i3c_device_id table. After boot, simply set the driver_override
