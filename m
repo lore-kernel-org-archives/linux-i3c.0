@@ -4,128 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A68EBC98318
-	for <linux-i3c@archiver.kernel.org>; Thu, 24 Sep 2026 15:28:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86829C98318
+	for <linux-i3c@archiver.kernel.org>; Thu, 24 Sep 2026 22:11:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z9uEjLpnvexLd9tDNWeRGrsAC5g25vV+YfQsQbNswgo=; b=PywtF4ihpo3O3a
-	fGCu/LWBgB8+/g+Ul2rovxjJJQQBXyiEEVofQgpm4YOMaqEYto0q1J7P901LblVXaqrAm/34S2d/g
-	lDn8jxN2qOjj/Ur3XRhAH4QkVsx0VCTuZI617ZNpJkFHyUWfVP2FthziT812UFVIbirKwJlW1ftni
-	kIPeqxVUGOzJAiP3MEC2pypO3ekWFuPfKprnbQkQnxd2NFYzndKlugOyCIMg5oLdOCUANmQGkqH71
-	cAF5M2+6xPu/oSddIFCylm9SiW+FlpTzUW6+DQunJwO+SL8AErAUsLM7xhK3iujPf9nNDBZRVZNEa
-	1WOQwrgrZBHC6Td3R2jw==;
+	List-Owner; bh=083LX/+ArY4xmj2RqqMJuHjGHxwGPI+xUayH7xSd2iY=; b=VB0COtrlixJSzn
+	MwPQfnNxqrGjoQ3q2ibAfWftlobch3L45v+QMR29TxfWtroKY7fDhp704NmJdCl72EVzmzqkFV5ok
+	WpRG2mmDnLDQFoc95bquUXo/ZriGQ1K8Wv2llIOMSAdlyIHyTshIxb+1Q3QVVRVDS67UVOERDOTtA
+	dLJ3v53gkZm2nyl4HRxsxvsRqtVzKy2G5DRF0a5VkCl5+FdzytviVJgieuF6rJEVbr/ZQ4iuKul8g
+	zqY+L9y9F6/hyvh7kUXM6Jm6SmnFRa00E/SH3qV/LNoxJRrVhIfkUQu+ZIg9AigABTqXcofWqGo4c
+	jZz2A0GmDVz6T6IrBqJQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9lMe-0000000BOTt-1O1r;
-	Thu, 24 Sep 2026 15:28:00 +0000
-Received: from mail-northeuropeazlp170100001.outbound.protection.outlook.com ([2a01:111:f403:c200::1] helo=DB3PR0202CU003.outbound.protection.outlook.com)
-	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x9lMX-0000000BOOe-0g83
+	id 1x9rfN-0000000CGfT-0Eah;
+	Thu, 24 Sep 2026 22:11:45 +0000
+Received: from linux.microsoft.com ([13.77.154.182])
+	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
+	id 1x9rfK-0000000CGf7-1vCv
 	for linux-i3c@lists.infradead.org;
-	Thu, 24 Sep 2026 15:27:56 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=aCmBztgYjgvq3Xo+itL1S11ydcp3zbSUhb5caPmPXawWDujnL7VvsgyIpinDM+vSU54T8VPrGvLZpyXmKZvEgt2n8KJXukFlnkVNOsJdhFF8791x51WRIy0woGeOPFNDP8fK9yhfS/m9Ryv9ZGE6KAQleDvKQavO2xZnM9BKmEGXPnxKBbdC7BnxFKA062B6BkwK1zAM2tKizh+7/sMboADIRYUWK1JjdLfzltGa5kamQkHBm2tLTgAbSpcHNnKxU90onJD8XEhyag4EMKlLF2AQ82pO+LlTNQcSoGUnhnGvlE7Osoxk/6Ij3q3hv8q1raptTJxWFrAI6a8UpkVFHw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=c1NJ3AEmqfqRDtLKd6NKC57jF8HYJ1IG4W3j5qSiGdY=;
- b=Z4Ce55B/sA6i2qk8+eSNc9LaGFqnIZfzokb+fc8B7Mr1svjcmTcFAnnzKTjN5z7TdFRGrQNNDgWV6S7bDB273c1CXcAyUAZwtQLDmDLHEqo6QYG6WkFaMoSqceNtuAJVZTuU5RC/KFHrNs0u8AHSq0kH9dL8zTf6v3DnMKcOZGba3eN0DZDztVnltLATyH0hpHsPh5yZ/uFuaGs/SM/h/FN8hwQq15xqA1RZVF82gsvoc9tB8bIlgQF15uL9aXiAaYGj0TJuTi4Tpu2Ix1fRoP738U1IEtRHmTV5myv6S0DrVnAh1C7qijT8+zNEcJCWu7bISJL+07hObonzFlvNWA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com;
- s=selector1-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=c1NJ3AEmqfqRDtLKd6NKC57jF8HYJ1IG4W3j5qSiGdY=;
- b=um+2z+bEAKMnrsK6awxNLpEuTgIyGZwA/BFe+q2NXQ+HNeI5NYXRZiI+iE32jIaHyN+J/Jj5+tKCPyU0rxqJcbpJFk4jU2dW+NUQ7bD56BfzmVDA9ClP9ciOPc+WvRNqReLnCNDkmj/E+31RR6+frTxdTJg9U30pwEd/vOSTZfrsKGqY86gdhm+l9HcrMz41uTssdMN9Mjyf7hfk+WHV4FsBsE8/cLFO40JZAh6yZxzbxSUiJKYunRPwWxCCN57zOaZYFDdwEGWYmGiBXxbKuBRwNxUeGg0EVW+lTJnqB/DmEKAj2k+B7lPZQcSUDHNsHdBfJMcYSFk5mcsRH3o1Kw==
-Authentication-Results: mx.microsoft.com 1; dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=oss.nxp.com;
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com (2603:10a6:150:2cf::9)
- by VI2PR04MB11027.eurprd04.prod.outlook.com (2603:10a6:800:276::15) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.451.18; Thu, 24 Sep
- 2026 15:27:42 +0000
-Received: from GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c]) by GV2PR04MB11799.eurprd04.prod.outlook.com
- ([fe80::2146:83a2:5329:b7c%7]) with mapi id 15.21.0451.014; Thu, 24 Sep 2026
- 15:27:42 +0000
-Date: Thu, 24 Sep 2026 11:27:35 -0400
-From: Frank Li <Frank.li@oss.nxp.com>
-To: "Patil, Shubham Sanjay" <shubpati@amd.com>
-Cc: Shubham Patil <shubhamsanjay.patil@amd.com>,
-	Alexandre Belloni <alexandre.belloni@bootlin.com>,
-	Frank Li <Frank.Li@nxp.com>, linux-i3c@lists.infradead.org,
-	devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
-	meaganlloyd@linux.microsoft.com, git@amd.com
-Subject: Re: [PATCH] i3c: master: dw: Clamp GETMRL/GETMWL to controller FIFO
- limits
-Message-ID: <arVBZ0j2noe0g0Wi@lizhi-Precision-Tower-5810>
-References: <20260908102724.3232660-1-shubhamsanjay.patil@amd.com>
- <aqL4HaQ1gjeaJYUQ@lizhi-Precision-Tower-5810>
- <eff031f6-e212-43a8-98c0-5f52a4b9317b@amd.com>
-Content-Disposition: inline
-In-Reply-To: <eff031f6-e212-43a8-98c0-5f52a4b9317b@amd.com>
-X-ClientProxiedBy: CY5PR19CA0042.namprd19.prod.outlook.com
- (2603:10b6:930:1a::26) To GV2PR04MB11799.eurprd04.prod.outlook.com
- (2603:10a6:150:2cf::9)
+	Thu, 24 Sep 2026 22:11:43 +0000
+Received: by linux.microsoft.com (Postfix, from userid 1223)
+	id 22BFB20B7167; Thu, 24 Sep 2026 15:10:51 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com 22BFB20B7167
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.microsoft.com;
+	s=default; t=1790287851;
+	bh=r3n8IcDEhgi+VEQtnJMrWd+GOlGZCNoe/fBGoTU0rkM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=YW41R6azC4xYKKcnEtJJkEiFHG/tmwZMcdKv+DQcnTjv9Dmb4rhgfvVLnrVg80Ei6
+	 FAI63I7VWQFSfwHzIfBnWDX/uORWeG8i+fhrArgHwryFLCxjdPMSA3fvpRWp9m9O8g
+	 V+6A4YsyE4YnxBIc7Z7Mrkrs0N/JKwrXfUMzdZrE=
+Date: Thu, 24 Sep 2026 15:10:51 -0700
+From: Meagan Lloyd <meaganlloyd@linux.microsoft.com>
+To: Andy Shevchenko <andriy.shevchenko@intel.com>,
+	y@linux.microsoft.com
+Cc: Meagan Lloyd <meaganlloyd@linux.microsoft.com>,
+	linux-i3c@lists.infradead.org, alexandre.belloni@bootlin.com,
+	vitor.soares@toradex.com, samagazaryan@google.com,
+	gregkh@linuxfoundation.org, arnd@arndb.de,
+	boris.brezillon@collabora.com,
+	oleksandr.shulzhenko.viktorovych@intel.com,
+	tgopinath@linux.microsoft.com, corbet@lwn.net,
+	skhan@linuxfoundation.org, linux@roeck-us.net, Frank.Li@nxp.com,
+	jorge.marques@analog.com, pgaj@cadence.com,
+	wsa+renesas@sang-engineering.com, tommaso.merciai.xr@bp.renesas.com,
+	nuno.sa@analog.com, Michael.Hennerich@analog.com, jic23@kernel.org,
+	dlechner@baylibre.com, andy@kernel.org, lorenzo@kernel.org,
+	enelsonmoore@gmail.com, rppt@kernel.org, pratyush@kernel.org,
+	giovanni.cabiddu@intel.com, gabewhigham@gmail.com,
+	haren@linux.ibm.com, pasha.tatashin@soleen.com,
+	jirislaby@kernel.org, adrian.ho.yin.ng@altera.com,
+	ustc.gu@gmail.com, jszhang@kernel.org, adrian.hunter@intel.com,
+	akhilrajeev@nvidia.com, tze.yee.ng@altera.com,
+	manikanta.guntupalli@amd.com, shubhrajyoti.datta@amd.com,
+	jarkko.nikula@linux.intel.com, linux-doc@vger.kernel.org,
+	linux-kernel@vger.kernel.org, linux-hwmon@vger.kernel.org,
+	linux@analog.com, linux-iio@vger.kernel.org, andi.shyti@kernel.org
+Subject: Re: [PATCH 3/3] i3c: add i3cdev character device module for
+ user-space access
+Message-ID: <20260924-db82fe4537102d1920dd09bc@linux.microsoft.com>
+References: <20260911210935.1353126-1-meaganlloyd@linux.microsoft.com>
+ <20260911210935.1353126-4-meaganlloyd@linux.microsoft.com>
+ <aqVUyYkpKT8iX4Jz@ashevche-desk.local>
+ <20260916-454d66ca84cc91479b195aa5@linux.microsoft.com>
+ <aqt_dCazxTDR4cpk@ashevche-desk.local>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: GV2PR04MB11799:EE_|VI2PR04MB11027:EE_
-X-MS-Office365-Filtering-Correlation-Id: 49f256fe-f4ff-4558-903c-08df1a506035
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|366016|376014|23010399003|1800799024|19092799006|4143699003|6133799003|10067099003|11063799006|56012099006|18002099003|22082099003|3023799007;
-X-Microsoft-Antispam-Message-Info: Zs4cOza+9FSla96bwear256PoyP+0RXzUi0h5Ol6sjxQ+lhtwB4GO65KYg/xQqqtIOMaK+5hhx0vl6ZRlKPPg5sLnRGOuL233NzvOiash9Nn7T9jZqjzALGzIXNKF6w2a4AaWqbJlAK4qQF0Vd1aPO2bv7TSrGUYptTglanAavAs7gwFZu6pjIsB8URjx9ZLB2jKNFcne6MrLezo+VQyvpp/ROF51d3hvX4Igi9B7dA5/uykriifTckN4eF9jflrxt1a+s5JN2aVeJ5SY+myZwYjZZQ3jTHtj1VenWc3+BSf5APB64/ZUyY0sZ1w2PXkqbyoACBXRW4zD7nqQJIlDu1DtRAgwkd/lJcyK/XFmctxC8nkgY05PuaoDEP2Z/kEoWeqR4qmqgTYiGCmbTgGfD6S12f5EgnLlRBbfq4DU+Nj6aOMkpvunCqGBXBEozH+1xSZAI8wxgPe96rHVoPHNAsrXC4gdTAPPZyyXZN3hqAA7whf8j3YptVP5ZHBXP2DRnwZQPY38Woe3ONBA1SftjWtP3ygeyR+6CWEXCQ1f1OrZcnYJuv0Hm1Nt55Kh25yvb6XuLRM3xBgvI/qC+2J96oOPi9eH8KEfz1yaHuuf617q04qxisRhaHSUYaxnOAyKyvrQxoEp4dnML0s1klzDSpnFhou7AUjA4ILZxTwxSk=
-X-Forefront-Antispam-Report: CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:GV2PR04MB11799.eurprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(23010399003)(1800799024)(19092799006)(4143699003)(6133799003)(10067099003)(11063799006)(56012099006)(18002099003)(22082099003)(3023799007);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?S8coz309MOxiS/iW2uhPnouh+ykeEDlpoWZbMlExd2rp1tAdMYswKRGy/zyw?=
- =?us-ascii?Q?tYNGt46rUJ9u3zjkHlmIHmXsNrrJQq9PjL2hcXdBzAV2jakfYjVs7hkh6CJS?=
- =?us-ascii?Q?Z2yNMfJymq6YgEIXuhtD5/zWIg/aX9/lkRsLn99/1x9lzS0s5oHFNQVIm97l?=
- =?us-ascii?Q?KBvEwMzATWix+JOVxpxEF8wA6dl9wPpeVvQEsN6VUC4uX8hgRt/BeOpGYU6G?=
- =?us-ascii?Q?sK3FSAcxqK6iwfzsYpIszULX8ko2Dp+JdRneAF5WUJUSmIy5NlPvfDXltm9C?=
- =?us-ascii?Q?uwF50aUnbZQXL4ThnulPqtYdfq7N9BwfDiVLsZA9r03knfvDmy1nPwSsGkwd?=
- =?us-ascii?Q?ZxqDnxJH8krcqGtgXR6r1CpXeplR6wHp+nOv+DorFyMGzowwOuIDrrQHlu3U?=
- =?us-ascii?Q?8z58ADwxmNHrOMvC3P9Y1R7ATd1WqL2l6iW/krD9J8qWzlahRBZhZlkV9psY?=
- =?us-ascii?Q?0GhZYZ6ZqpZb3J4JkP2XiO0xtcBS+LVXiHz23tIYWUhFGnclM7PZbQWU4LGo?=
- =?us-ascii?Q?wiH/9PYeE3XunxTaYWRAwpNL9Rh3OoWKDLYhre5rtM9P4dFcvlQRPj49GHcC?=
- =?us-ascii?Q?7/U0Gl1kRxHcmzn56JfYtGEOvhU80y2HRh7blR2S6twSNo9p2cigyhgwtqlx?=
- =?us-ascii?Q?RETxuTe5xX+4NOttlragGYJs6Gnwt/HZw813TaepAzdHbgz7BbO7THTZXS2B?=
- =?us-ascii?Q?V0pFgb32vw9Zm5MhmlQWoctlJKoRIRZ65y2DQ4Bxxbq8yc3wax27Ff96Lh5I?=
- =?us-ascii?Q?9Jrgu5yRKXLmnf5T00rL5oTKxo4c3ZrnMZSc6QISfH+swPhKF2VN5qZUtM8d?=
- =?us-ascii?Q?6LSGLsYZrIfg3Nu56msAvQVgPK4lmqaHWHUBxE/Y4DGPGc741yOwNXoIR207?=
- =?us-ascii?Q?uSvtnyEhsdnCIjMMuFaeFJrhfAkIDHyP8G+Qupob5W6eaWjVG7xmi1yihZOD?=
- =?us-ascii?Q?raadHdZNxhxtaLm4tUkvDKCMa9ojG9dbbgusJThYQ+Hr9/kMsLJ0pZP/jXq2?=
- =?us-ascii?Q?WqCGst9TKqdP//FDW3IG2wQgRXRttAjs8dcbFutUUUhiriYDmxyY2DnYLzvz?=
- =?us-ascii?Q?zmJXNVHv2bLU1bg5OsAehPtAfsKbYU+CJUn2NoC49lXzGbYiDQ+/mVbF+xnd?=
- =?us-ascii?Q?2l8Dl0RI1T4Ndc09Z2Kh5/XgTCnH4+yXAuh37xFhIhUgyE+QvITHuP2Y20xw?=
- =?us-ascii?Q?rIBSTYjejaxYKugKACbDZ36TFeAEpYEB9au738FAVRW+Pkq2W0IUvW3gw/k0?=
- =?us-ascii?Q?+CvjbMhdWTlQWP94GD47doHOUylWjbYpy5UWNVE5P/cnbsfj2w9snQZhGUGE?=
- =?us-ascii?Q?mnc0zFPUpimF8JNT1cAPO5JAFt7ktJeibLW2kKCmkqJrT00Vi8s9vTXYozre?=
- =?us-ascii?Q?qlBv7Vtpcg5spWpUhe1vNifm/xofO19DIml3x0Eo8Ygu5i9TlFZHaleazIWt?=
- =?us-ascii?Q?jEiTzmJlhjOaVdD5uJiYq8M3zJif+l37uXvDedwe/nN15xm3k2Yh2YTYmmIF?=
- =?us-ascii?Q?F94sWYVAB1rF9Y1rZXrJlzYsY5eFUw6g7oV4aKQxwWIl33rQu2anl1RamsM8?=
- =?us-ascii?Q?SuY1IVkRvffkNaA+CjvBhS63xB1E0cvL8mKhWIvDqhCioZPNXrD5/qjreFvf?=
- =?us-ascii?Q?UPwwM7BiJKRpYkgQAUJAyzcspmR4pNxheGd061QXnF/pBYhhXfqw4Ubmpp8A?=
- =?us-ascii?Q?p5ahJmKrOQOEIN7W2gJgXwNvVb+KFLM8C+yY1z6joekBsfklVTr4avM5MadN?=
- =?us-ascii?Q?W/0+1U8k0dtBNESuDpTas849AZXsofzFCTprEzBFmtxLT7ZMY3pc?=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 49f256fe-f4ff-4558-903c-08df1a506035
-X-MS-Exchange-CrossTenant-AuthSource: GV2PR04MB11799.eurprd04.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Sep 2026 15:27:42.5430
- (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: FerLtsYV/B+e80+rcCqfAVDbAelhJex7bICEk9sArBc2kJPYpe2ICAxD2o60et4Rzo79d9v8k9gi2d84IGFz78PBluvxfArjkQayjM+CPmdWKrTmeLS0eeQ7urtbQowF
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI2PR04MB11027
+Content-Disposition: inline
+In-Reply-To: <aqt_dCazxTDR4cpk@ashevche-desk.local>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260924_082753_390300_9F6DF74A 
-X-CRM114-Status: GOOD (  40.26  )
+X-CRM114-CacheID: sfid-20260924_151142_643169_561323EB 
+X-CRM114-Status: GOOD (  53.09  )
 X-BeenThere: linux-i3c@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -137,280 +88,211 @@ List-Post: <mailto:linux-i3c@lists.infradead.org>
 List-Help: <mailto:linux-i3c-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-i3c>,
  <mailto:linux-i3c-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-i3c" <linux-i3c-bounces@lists.infradead.org>
 Errors-To: linux-i3c-bounces+linux-i3c=archiver.kernel.org@lists.infradead.org
 
-On Thu, Sep 24, 2026 at 10:25:44AM +0530, Patil, Shubham Sanjay wrote:
->
->
-> On 9/11/2026 12:04 AM, Frank Li wrote:
-> > Caution: This message originated from an External Source. Use proper caution when opening attachments, clicking links, or responding.
-> >
-> >
-> > On Tue, Sep 08, 2026 at 03:57:24PM +0530, Shubham Patil wrote:
-> > > The DW master rejects private SDR transfers larger than
-> > > caps.datafifodepth with -EOPNOTSUPP. Targets often report MRL/MWL
-> > > values larger than that FIFO, so the core stores limits the controller
-> > > cannot meet.
-> > >
-> > > After a successful GETMRL/GETMWL, issue Direct SETMRL/SETMWL to the
-> > > same target with lengths capped to the data FIFO (in bytes), then
-> > > rewrite the GET payload so the core keeps the same values. Only update
-> > > the GET buffer once SET is acked, so a failed SET does not leave the
-> > > core and the target disagreeing.
-> >
-> > I think i3c device driver should know these information choose
-> > min value dring each xfer. even though you set devcie's MRL/MXL, device
-> > driver still issue a longer transfer.
-> >
-> > Frank
->
-> Understood - I will drop the SETMRL/SETMWL and stop rewriting the GET
-> payload, and instead expose the controller limit so the min is taken
-> per transfer. Two questions on how you want that done:
-> 1) Where should the min be taken?
->    a) In the core: the controller driver sets max_read_len /
->       max_write_len / max_ibi_len in struct i3c_master_controller, and
->       the core caps i3c_device_info to min(target, controller) after
->       GETMRL/GETMWL. Device drivers then use i3c_device_get_info()
->       as-is and cannot forget.
->    b) In each device driver: the core keeps reporting the raw target
->       values, and drivers do the min themselves.
+On Thu, Sep 17, 2026 at 08:49:40AM +0300, Andy Shevchenko wrote:
+> On Wed, Sep 16, 2026 at 03:57:10PM -0700, Meagan Lloyd wrote:
+> > On Sat, Sep 12, 2026 at 04:34:01PM +0300, Andy Shevchenko wrote:
+> > > On Fri, Sep 11, 2026 at 02:09:35PM -0700, Meagan Lloyd wrote:
+> > > > The i3cdev driver is a character device driver that allows user-spa=
+ce
+> > > > to control and interact with I3C devices.
+> > > =
 
-We can provide APIs for device driver to get whole data path required
-max_read/write_len.
+> > > > Currently, it has the ability to perform Single Data Rate (SDR)
+> > > > transfers - basic reads/writes.
+> > > > =
 
-> 2) Either way, a driver that ignores these limits still gets
->    -EOPNOTSUPP from dw_i3c_master_i3c_xfers() when the transfer does
->    not fit the data FIFO. Should the driver keep returning that, or
->    would you consider splitting an oversized private SDR transfer into
->    FIFO-sized chunks in the controller driver? My understanding is
->    no - splitting changes what the target sees on the bus - but I
->    want to be sure before v2.
+> > > > With the addition of sysfs driver_override, there is now a
+> > > > straightforward and direct way to match the i3cdev driver to any i3c
+> > > > device without stepping on the toes of more specialized drivers tha=
+t are
+> > > > loaded automatically.
+> > > =
 
-the decision about split transfer should be decided by device drivers.
-Not all device treat two continue repeat START as continue write/read.
+> > > Is it safe? Why on the earth do we need this? The commit message has =
+not enough
+> > > information.
+> > =
 
-Frank
->
-> Thanks,
-> Shubham>
-> > >
-> > > GETMRL is variable length: the optional third byte is max IBI payload
-> > > and is only present if the target returned it. Clamp that IBI byte to
-> > > the IBI queue depth from QUEUE_SIZE_CAPABILITY.IBI_BUF_SIZE (bits 19:16
-> > > at 0xe8, encoded as 2^(n+1) dwords).
-> > >
-> > > Rename the unused EXTENDED_CAPABILITY macro at 0xe8 to the databook
-> > > name QUEUE_SIZE_CAPABILITY.
-> > >
-> > > Signed-off-by: Shubham Patil <shubhamsanjay.patil@amd.com>
-> > > ---
-> > >   drivers/i3c/master/dw-i3c-master.c | 149 ++++++++++++++++++++++++++++-
-> > >   drivers/i3c/master/dw-i3c-master.h |   1 +
-> > >   2 files changed, 149 insertions(+), 1 deletion(-)
-> > >
-> > > diff --git a/drivers/i3c/master/dw-i3c-master.c b/drivers/i3c/master/dw-i3c-master.c
-> > > index 4563d8761ba0..51defcb57761 100644
-> > > --- a/drivers/i3c/master/dw-i3c-master.c
-> > > +++ b/drivers/i3c/master/dw-i3c-master.c
-> > > @@ -203,7 +203,13 @@
-> > >   #define BUS_IDLE_TIMING                      0xd8
-> > >   #define I3C_VER_ID                   0xe0
-> > >   #define I3C_VER_TYPE                 0xe4
-> > > -#define EXTENDED_CAPABILITY          0xe8
-> > > +#define QUEUE_SIZE_CAPABILITY                0xe8
-> > > +#define QUEUE_SIZE_CAPABILITY_IBI_BUF(x)     (((x) & GENMASK(19, 16)) >> 16)
-> > > +/*
-> > > + * IBI_BUF_SIZE is encoded as 2^(field + 1) dwords: the smallest buffer is
-> > > + * 2 dwords and each increment of the field doubles the depth.
-> > > + */
-> > > +#define QUEUE_SIZE_IBI_BUF_MIN_DWORDS        2
-> > >   #define SLAVE_CONFIG                 0xec
-> > >
-> > >   #define DYN_ADDR_LO_MASK GENMASK(4, 0)
-> > > @@ -844,6 +850,130 @@ static int dw_i3c_ccc_get(struct dw_i3c_master *master, struct i3c_ccc_cmd *ccc)
-> > >        return ret;
-> > >   }
-> > >
-> > > +/*
-> > > + * Cap the limits a target reported through GETMRL to what this controller can
-> > > + * actually transfer, so the core never asks for a private read the data FIFO
-> > > + * cannot hold. The optional IBI payload byte is capped to the IBI queue depth
-> > > + * instead; since that byte is a u8, the IBI cap only ever applies to
-> > > + * controllers whose IBI queue is smaller than 255 bytes.
-> > > + *
-> > > + * Direct SETMRL is optional, so a target may implement GETMRL and NACK the SET.
-> > > + * Clamp the values handed back to the core either way: a failed SET only means
-> > > + * the target keeps its own larger limit, which is harmless as long as the core
-> > > + * stays within ours.
-> > > + */
-> > > +static int dw_i3c_master_clamp_mrl(struct dw_i3c_master *master,
-> > > +                                struct i3c_ccc_cmd *ccc)
-> > > +{
-> > > +     u16 max_fifo_bytes = master->caps.datafifodepth * sizeof(u32);
-> > > +     u32 max_ibi_bytes = master->caps.ibififodepth * sizeof(u32);
-> > > +     u16 actual_len = ccc->dests[0].payload.actual_len;
-> > > +     struct i3c_ccc_cmd_dest set_dest = { };
-> > > +     struct i3c_ccc_cmd set_cmd = { };
-> > > +     struct i3c_ccc_mrl set_mrl;
-> > > +     struct i3c_ccc_mrl *mrl;
-> > > +     bool clamp_ibi = false;
-> > > +     bool clamp_read;
-> > > +     u8 ibi_len = 0;
-> > > +     u16 read_len;
-> > > +     int ret;
-> > > +
-> > > +     /* Need at least the 2-byte max read length field to act on. */
-> > > +     if (actual_len < 2)
-> > > +             return 0;
-> > > +
-> > > +     mrl = ccc->dests[0].payload.data;
-> > > +     read_len = be16_to_cpu(mrl->read_len);
-> > > +     clamp_read = read_len > max_fifo_bytes;
-> > > +
-> > > +     /* Optional third byte is valid only if the target returned it. */
-> > > +     if (actual_len > 2) {
-> > > +             ibi_len = mrl->ibi_len;
-> > > +             clamp_ibi = max_ibi_bytes && ibi_len > max_ibi_bytes;
-> > > +     }
-> > > +
-> > > +     if (!clamp_read && !clamp_ibi)
-> > > +             return 0;
-> > > +
-> > > +     set_mrl.read_len = cpu_to_be16(clamp_read ? max_fifo_bytes : read_len);
-> > > +     if (actual_len > 2)
-> > > +             set_mrl.ibi_len = clamp_ibi ? max_ibi_bytes : ibi_len;
-> > > +
-> > > +     set_dest.addr = ccc->dests[0].addr;
-> > > +     set_dest.payload.data = &set_mrl;
-> > > +     set_dest.payload.len = actual_len;
-> > > +
-> > > +     set_cmd.rnw = 0;
-> > > +     set_cmd.id = I3C_CCC_SETMRL(false);
-> > > +     set_cmd.ndests = 1;
-> > > +     set_cmd.dests = &set_dest;
-> > > +
-> > > +     ret = dw_i3c_ccc_set(master, &set_cmd);
-> > > +     if (ret)
-> > > +             dev_dbg(&master->base.dev,
-> > > +                     "SETMRL not accepted by target: %d\n", ret);
-> > > +
-> > > +     if (clamp_read) {
-> > > +             mrl->read_len = cpu_to_be16(max_fifo_bytes);
-> > > +             dev_dbg(&master->base.dev,
-> > > +                     "clamped target MRL from %u to %u bytes (FIFO depth limit)\n",
-> > > +                     read_len, max_fifo_bytes);
-> > > +     }
-> > > +     if (clamp_ibi) {
-> > > +             mrl->ibi_len = max_ibi_bytes;
-> > > +             dev_dbg(&master->base.dev,
-> > > +                     "clamped target IBI len from %u to %u bytes (IBI buffer limit)\n",
-> > > +                     ibi_len, max_ibi_bytes);
-> > > +     }
-> > > +
-> > > +     return 0;
-> > > +}
-> > > +
-> > > +/* Same contract as dw_i3c_master_clamp_mrl(), for the write direction. */
-> > > +static int dw_i3c_master_clamp_mwl(struct dw_i3c_master *master,
-> > > +                                struct i3c_ccc_cmd *ccc)
-> > > +{
-> > > +     u16 max_fifo_bytes = master->caps.datafifodepth * sizeof(u32);
-> > > +     struct i3c_ccc_cmd_dest set_dest = { };
-> > > +     struct i3c_ccc_cmd set_cmd = { };
-> > > +     struct i3c_ccc_mwl set_mwl;
-> > > +     struct i3c_ccc_mwl *mwl;
-> > > +     u16 write_len;
-> > > +     int ret;
-> > > +
-> > > +     if (ccc->dests[0].payload.actual_len < 2)
-> > > +             return 0;
-> > > +
-> > > +     mwl = ccc->dests[0].payload.data;
-> > > +     write_len = be16_to_cpu(mwl->len);
-> > > +
-> > > +     if (write_len <= max_fifo_bytes)
-> > > +             return 0;
-> > > +
-> > > +     set_mwl.len = cpu_to_be16(max_fifo_bytes);
-> > > +
-> > > +     set_dest.addr = ccc->dests[0].addr;
-> > > +     set_dest.payload.data = &set_mwl;
-> > > +     set_dest.payload.len = sizeof(set_mwl);
-> > > +
-> > > +     set_cmd.rnw = 0;
-> > > +     set_cmd.id = I3C_CCC_SETMWL(false);
-> > > +     set_cmd.ndests = 1;
-> > > +     set_cmd.dests = &set_dest;
-> > > +
-> > > +     ret = dw_i3c_ccc_set(master, &set_cmd);
-> > > +     if (ret)
-> > > +             dev_dbg(&master->base.dev,
-> > > +                     "SETMWL not accepted by target: %d\n", ret);
-> > > +
-> > > +     mwl->len = cpu_to_be16(max_fifo_bytes);
-> > > +     dev_dbg(&master->base.dev,
-> > > +             "clamped target MWL from %u to %u bytes (FIFO depth limit)\n",
-> > > +             write_len, max_fifo_bytes);
-> > > +
-> > > +     return 0;
-> > > +}
-> > > +
-> > >   static int dw_i3c_master_send_ccc_cmd(struct i3c_master_controller *m,
-> > >                                      struct i3c_ccc_cmd *ccc)
-> > >   {
-> > > @@ -866,6 +996,18 @@ static int dw_i3c_master_send_ccc_cmd(struct i3c_master_controller *m,
-> > >        else
-> > >                ret = dw_i3c_ccc_set(master, ccc);
-> > >
-> > > +     /*
-> > > +      * Clamp GETMRL/GETMWL responses to the data FIFO depth, and the
-> > > +      * optional GETMRL IBI byte to the IBI queue depth. The GET itself has
-> > > +      * already succeeded, so its result is never overridden here.
-> > > +      */
-> > > +     if (!ret && ccc->rnw) {
-> > > +             if (ccc->id == I3C_CCC_GETMRL)
-> > > +                     dw_i3c_master_clamp_mrl(master, ccc);
-> > > +             else if (ccc->id == I3C_CCC_GETMWL)
-> > > +                     dw_i3c_master_clamp_mwl(master, ccc);
-> > > +     }
-> > > +
-> > >        pm_runtime_put_autosuspend(master->dev);
-> > >        return ret;
-> > >   }
-> > > @@ -1728,6 +1870,11 @@ int dw_i3c_common_probe(struct dw_i3c_master *master,
-> > >        ret = readl(master->regs + DATA_BUFFER_STATUS_LEVEL);
-> > >        master->caps.datafifodepth = DATA_BUFFER_STATUS_LEVEL_TX(ret);
-> > >
-> > > +     /* Read the IBI data buffer size advertised by the controller. */
-> > > +     ret = readl(master->regs + QUEUE_SIZE_CAPABILITY);
-> > > +     master->caps.ibififodepth = QUEUE_SIZE_IBI_BUF_MIN_DWORDS <<
-> > > +                                 QUEUE_SIZE_CAPABILITY_IBI_BUF(ret);
-> > > +
-> > >        ret = readl(master->regs + DEVICE_ADDR_TABLE_POINTER);
-> > >        master->datstartaddr = ret;
-> > >        master->maxdevs = ret >> 16;
-> > > diff --git a/drivers/i3c/master/dw-i3c-master.h b/drivers/i3c/master/dw-i3c-master.h
-> > > index 17ad817d1f8e..54c3912374c8 100644
-> > > --- a/drivers/i3c/master/dw-i3c-master.h
-> > > +++ b/drivers/i3c/master/dw-i3c-master.h
-> > > @@ -15,6 +15,7 @@
-> > >   struct dw_i3c_master_caps {
-> > >        u8 cmdfifodepth;
-> > >        u8 datafifodepth;
-> > > +     u32 ibififodepth;
-> > >   };
-> > >
-> > >   struct dw_i3c_dat_entry {
-> > > --
-> > > 2.34.1
-> > >
->
+> > I can't see a reason that it'd be unsafe. To give additional confidence,
+> > it's already in-use in many bus_types:
+> =
 
--- 
+> This argument has nothing to do with i=B3c. Each bus is different on a ph=
+ysical
+> layer, electrical protocols and programming flow. Each of them has own
+> constraints.
+
+My take is that if you're using the i3cdev module, it's up to the
+programmer to review schematics/datasheets to know how to program
+the hardware devices and bus (in the case of hubs) correctly.
+
+Note, this thread's driver_override approach was not favored by the i3c
+subsystem reviewers, so please continue any further discussion in the
+prevailing approach's thread:
+https://lore.kernel.org/linux-i3c/20260921230603.2518652-1-samagazaryan@goo=
+gle.com/T/#mb42d9b2785f8508d39eaf782b3d29189226b8029
+
+> =
+
+> > To answer why we need it:
+> > If we want to write i3cdev as a standard device driver, it can't
+> > actually match anything by default. This is because, some devices on the
+> > system may need specific drivers and i3cdev is generic and should
+> > technically match every device.
+> =
+
+> Yes, but I have seen no reason why we should expose i=B3c bus to the user
+> space. With i=B2c we already know very well that it was (and still is)
+> a bad idea. Why i=B3c is better (especially taking into account i=B2c
+> compatible mode and more complex programming flow)?
+> =
+
+
+cc'ing Andy Shyti from I2C subsystem for context.
+
+Andy, we're considering an I3C character device driver interface.
+If you have any feedback from your experience with I2C, can you
+please share it in:
+https://lore.kernel.org/linux-i3c/20260921230603.2518652-1-samagazaryan@goo=
+gle.com/T/#mb42d9b2785f8508d39eaf782b3d29189226b8029
+
+> > Since the driver_override is default NULL and is set via sysfs, this
+> > allows any specific drivers on boot to be loaded up and would allow
+> > explicit control on what device i3cdev gets bound to.
+> > =
+
+> > This was my rational. I will refine the commit message with more detail=
+s.
+> =
+
+> Put a real life example why the exposing i=B3c devices into user space is
+> absolutely necessary.
+
+I'm supporting a kernel running on accelerator cards that plug into
+various server SKUs where hubs/devices along the bus are not physically
+on the card & may differ across SKUs. So, I'm looking to program hubs
+flexibly and dynamically from userspace to setup bus hardware paths.
+
+The hub drivers being posted to i3c subsystem require hard-coding in the
+devicetree to setup the ports physically according to intended
+bus/hardware design. As mentioned, these cards will not know what SKU it
+will be plugged into, so the devicetree hard-coding cannot reasonably be
+determined ahead of time. Theoretically, you may be able to add some
+bootloader support to go query SKU information from other server
+components and then populate the devicetree for the kernel, but that
+will require heavy lifting and plumbing between other server firmware
+components and the bootloader.
+
+Further replies and discussion can be routed here:
+https://lore.kernel.org/linux-i3c/20260921230603.2518652-1-samagazaryan@goo=
+gle.com/T/#mb42d9b2785f8508d39eaf782b3d29189226b8029
+
+Thank you,
+Meagan
+> =
+
+> > > > This is accomplished by the i3cdev driver not having any entries in
+> > > > the i3c_device_id table. After boot, simply set the driver_override
+> > > > to "i3cdev" and bind the device manually via the sysfs bind knob.
+> > > > This can also be automated with udev rules as well.
+> > > > =
+
+> > > > The character device interface will be exposed at: /dev/bus/i3c/<bus
+> > > > id>-<Provisional ID>
+> =
+
+> ...
+> =
+
+> > > > +	for (int i =3D 0; i < metadata->nxfers; i++) {
+> > > =
+
+> > > Why is 'i' signed?
+> =
+
+> > Mostly for readability and to make sure the line length on loop headers
+> > is kept below 80 chars. As a precaution, to make sure that 'i' can
+> > represent any metadata->nxfers value without overflow during loops, I
+> > check that metadata->nxfers is less than/equal to INT_MAX in
+> > get_metadata().
+> =
+
+> No need to add useless checks.
+> =
+
+> ...
+> =
+
+> > > > +/** + * print_i3c_err() - Prints the I3C error encountered during
+> > > > the prior + * call to the core's transfer function.  + * @i3cdev:
+> > > > i3cdev_data object + * @metadata: Kernel's copy of i3cdev_xfers
+> > > > (ioctl I3CDEV_XFER input) + * @i3c_xfers: i3c_xfer array that was
+> > > > sent to the I3C core
+> > > =
+
+> > > > + * Returns: void
+> > > =
+
+> > > Huh?! Where is this coming from?
+> > =
+
+> > In i3cdev_ioctl_do_xfers, if i3c_device_do_xfers failed, I wanted to
+> > print out the first I3C controller error encountered. The controller
+> > drivers can set this in the i3c_xfer.err field. Hence this function.
+> > =
+
+> > It's to aid debugging and provide useful error information.
+> > I can certainly refine the wording on the print_i3c_err documentation
+> > header to make this more clear.
+> =
+
+> My point is about kernel-doc. Why do we need the return section for void?
+> Where it comes from?
+> =
+
+> > > > + */
+> =
+
+> ...
+> =
+
+> > > Please, rely less on AI and more on the common sense and
+> > > proof-reading.
+> =
+
+> > I think I gave you the wrong impression. The new contributions in this
+> > series were written and developed by me. I used AI for quality assurance
+> > and cross-referencing. Since I incorporated some AI-flagged suggestions,
+> > I tried to acknowledge that with the Assisted-by tag.
+> =
+
+> I see, then there is a room to improve the code. But the main question is
+> why do we even need this whole interface to begin with?
+> =
+
+> -- =
+
+> With Best Regards,
+> Andy Shevchenko
+> =
+
+> =
+
+> =
+
+> -- =
+
+> linux-i3c mailing list
+> linux-i3c@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-i3c
+
+-- =
+
 linux-i3c mailing list
 linux-i3c@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-i3c
